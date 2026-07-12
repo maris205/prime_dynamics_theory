@@ -1,0 +1,586 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\Sig}{\Sigma}
+\newcommand{\sh}{\sigma}
+\newcommand{\ph}{\varphi}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\uc}{u_{\mathrm c}}
+\newcommand{\Kc}{K_{\mathrm c}}
+\newcommand{\Qinf}{Q_{\infty}}
+\newcommand{\Rinf}{R^{\infty}}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\orb}{orb}
+\DeclareMathOperator{\lcm}{lcm}
+
+\title{\textbf{From Sieve Words to Kneading Coordinates:}\\
+A Rigorous Reformulation of the One-Dimensional Prime-Sieve Correspondence}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We revisit the one-dimensional symbolic correspondence between cumulative Eratosthenes sieve words and the quadratic family $f_u(x)=1-u x^2$.  The correspondence was originally formulated through a finite-horizon topological admissibility hypothesis.  We separate three logically distinct issues: convergence in the ordered symbolic space, realizability as a kneading invariant, and topological conjugacy of dynamical systems.  First, without any prime-gap hypothesis, we prove that the cumulative sieve words are strictly increasing in the parity-lexicographic order and converge in the product topology to $RLR^\infty$, with first disagreement exactly at the next prime.  We identify the corresponding band-merging parameter as the unique root in $(1,2)$ of $u^3-2u^2+2u-2=0$, construct its three-state Markov partition, and obtain the exact entropy $\frac12\log 2$ and even-return rigidity.  We then prove that equality of the limiting sieve word with the kneading invariant does not yield a topological conjugacy: the natural shift orbit closure of $RLR^\infty$ has three points and entropy zero, whereas the quadratic attractor has positive entropy.
+
+At finite stages the universal admissibility hypothesis is false; we reproduce the explicit defect at sieve stage $k=3$.  A parity-gap lemma reduces every detected MSS defect to a prime gap of length at least $p_{k+1}-1$.  Combining this lemma with the Baker--Harman--Pintz theorem gives an unconditional admissible horizon of every length $H_k=p_{k+1}^{40/21-\eps}$, for fixed $\eps>0$ and all sufficiently large $k$.  Although current unconditional gap bounds do not reach the full physical horizon $p_{k+1}^2$, we prove unconditionally that the density of MSS defects there is $O(p_{k+1}^{-1})$.  The rigorous conclusion is therefore an ordered kneading-coordinate convergence and a parity factor, not an isomorphism between the prime sequence and a chaotic attractor.  No statement about the infinitude of prime constellations is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} sieve of Eratosthenes; kneading theory; parity-lexicographic order; logistic map; prime gaps; symbolic dynamics; topological entropy.
+
+\medskip
+\noindent\textbf{MSC 2020:} 37E05; 37B10; 11N35; 11A41.
+
+\section{Introduction}
+
+The Sieve of Eratosthenes is naturally expressed as a composition of periodic binary masks.  In \citet{Wang2026Published}, this elementary algebra was used to propose a symbolic correspondence with the quadratic family
+\begin{equation}\label{eq:quadratic-family}
+    f_u(x)=1-u x^2, \qquad x\in[-1,1],\quad 0<u\le 2,
+\end{equation}
+at the first band-merging parameter $\uc\approx1.543689$.  The proposed correspondence has two attractive features.  The cumulative sieve words move monotonically toward the word $RLR^\infty$, and the critical orbit of $f_{\uc}$ has the same itinerary.  A finite-horizon topological admissibility condition was introduced to interpret each sieve stage as a kneading coordinate.
+
+Subsequent analysis found that the finite-stage condition is not universally valid: explicit Metropolis--Stein--Stein (MSS) defects occur at $k=3$ and $k=5$ \citep{WangTransient2026}.  This does not destroy every part of the construction.  It instead forces a separation among three statements which are often conflated:
+\begin{enumerate}[label=(\roman*)]
+    \item a sequence may converge to a kneading word in the product topology;
+    \item a finite or infinite word may satisfy the MSS maximality inequalities and hence be realizable as kneading data;
+    \item two dynamical systems may be topologically conjugate.
+\end{enumerate}
+Statement (i) is purely combinatorial and, as we prove below, is unconditional.  Statement (ii) is the genuine role of topological admissibility.  Statement (iii) requires phase spaces, evolution maps, and a homeomorphism intertwining them; equality of two distinguished words is not sufficient.
+
+The broader program has also led to a sequential ergodic formulation \citep{WangSequential2026} and to numerical spectral models \citep{WangSpectral2026,WangHenon2026}.  The present paper deliberately isolates the topological layer.  Its proofs do not use numerical orbit fitting, a non-autonomous density ansatz, or any conjecture concerning twin primes.
+
+\subsection*{Main results}
+
+Our conclusions can be summarized as follows.
+
+\begin{enumerate}[label=\textbf{R\arabic*.},leftmargin=3.2em]
+    \item The sieve words $Q_k$ satisfy
+    \[
+        Q_1\prec Q_2\prec\cdots\prec \Kc=RLR^\infty,
+        \qquad d_\vartheta(Q_k,\Kc)=\vartheta^{p_{k+1}},
+    \]
+    for every standard symbolic metric $d_\vartheta$, without assuming admissibility.
+
+    \item The parameter $\uc$ associated with $RLR^\infty$ is algebraic.  A three-state Markov partition gives
+    \[
+        h_{\mathrm{top}}(f_{\uc})=\frac12\log 2
+    \]
+    and proves that successive visits to the $L$-region are separated by an even number of iterates.
+
+    \item Under the natural shift-space interpretation, the limiting sieve system cannot be topologically conjugate to the quadratic attractor: their topological entropies are respectively $0$ and $\frac12\log2$.
+
+    \item A detected finite-horizon MSS defect forces a prime gap of length at least $p_{k+1}-1$.  The established bound $G(X)\ll X^{21/40}$ therefore gives unconditional horizon admissibility up to every length
+    \[
+        H_k=p_{k+1}^{40/21-\eps}
+    \]
+    for fixed $\eps>0$ and all sufficiently large $k$.
+
+    \item At the full physical horizon $N_k=p_{k+1}^2$, the number of detected defects satisfies
+    \[
+        D_k\le \frac{N_k}{p_{k+1}-1}+1,
+        \qquad \frac{D_k}{N_k-1}=O(p_{k+1}^{-1}).
+    \]
+    This defect-density result is unconditional and does not require a finite-defect conjecture.
+\end{enumerate}
+
+These results retain a rigorous combinatorial skeleton of the original construction while placing a precise boundary around the word \emph{isomorphism}.  The finite sieve is an arithmetic mask, the limiting word is a kneading coordinate, and the quadratic system supplies a parity factor.  None of these facts identifies the actual prime indicator with a typical quadratic orbit.
+
+\section{Sieve words and the unimodal order}
+
+\subsection{Parity-lexicographic order}
+
+Let $\Sig=\{L,R\}^{\N_0}$ and let $\sh:\Sig\to\Sig$ be the left shift.  We use the base order $L<R$.
+
+\begin{definition}[Parity-lexicographic order]\label{def:paritylex}
+Let $S=(s_n)$ and $T=(t_n)$ be distinct elements of $\Sig$, and let
+\[
+    j=\min\{n\ge0:s_n\ne t_n\}.
+\]
+Let $r_j$ be the number of $R$ symbols in the common prefix $s_0\ldots s_{j-1}$.  If $r_j$ is even, compare $s_j$ and $t_j$ using $L<R$; if $r_j$ is odd, reverse the order.  The resulting order is denoted by $\prec$.
+\end{definition}
+
+This is the standard orientation-sensitive order for unimodal itineraries \citep{Metropolis1973,MilnorThurston1988}.  For a one-sided word without a critical symbol, the MSS maximality condition is
+\begin{equation}\label{eq:mss-infinite}
+    \sh^m(S)\preceq S \qquad(m\ge1).
+\end{equation}
+We call a word satisfying \eqref{eq:mss-infinite} \emph{self-admissible}.  Endpoint conventions and completions matter when a finite word is promoted to a full kneading invariant; our finite-horizon definition below only records comparisons which are decided inside the stated horizon.
+
+For $0<\vartheta<1$, define the standard symbolic metric
+\begin{equation}\label{eq:symbolic-metric}
+    d_\vartheta(S,T)=\vartheta^{n(S,T)},
+    \qquad
+    n(S,T)=\min\{j\ge0:s_j\ne t_j\},
+\end{equation}
+with $d_\vartheta(S,S)=0$.
+
+\subsection{Cumulative sieve masks}
+
+Let $2=p_1<p_2<\cdots$ be the primes and let
+\[
+    P_k=\prod_{j=1}^k p_j.
+\]
+The $k$th cumulative sieve word $Q_k\in\Sig$ is defined by
+\begin{equation}\label{eq:sieve-word}
+    Q_k(n)=
+    \begin{cases}
+        L,&\gcd(n,P_k)=1,\\
+        R,&\gcd(n,P_k)>1,
+    \end{cases}
+    \qquad n\ge1,
+    \qquad Q_k(0)=R.
+\end{equation}
+Thus $Q_k$ is periodic with period $P_k$.  Notice that the convention \eqref{eq:sieve-word} marks each sieving prime $p_j$, $j\le k$, by $R$ along with its multiples.  This convention is responsible both for the initial word $RLR\cdots$ and for the pointwise limit established below.
+
+\begin{lemma}[Initial shield]\label{lem:initial-shield}
+Let $p=p_{k+1}$.  Then
+\begin{equation}\label{eq:initial-shield}
+    Q_k(0)Q_k(1)\cdots Q_k(p)
+    =RLR^{p-2}L.
+\end{equation}
+Equivalently, $Q_k(n)=R$ for $2\le n<p$, while $Q_k(p)=L$.
+\end{lemma}
+
+\begin{proof}
+Every prime smaller than $p=p_{k+1}$ is among $p_1,\ldots,p_k$, and every composite $2\le n<p$ has a prime divisor smaller than $p$.  Hence every $n\in[2,p)$ has nontrivial greatest common divisor with $P_k$.  The next prime $p$ is coprime to $P_k$.
+\end{proof}
+
+Define
+\begin{equation}\label{eq:Kc-word}
+    \Kc=RLR^\infty.
+\end{equation}
+
+\begin{theorem}[Ordered symbolic convergence]\label{thm:ordered-convergence}
+For every $k\ge1$,
+\begin{equation}\label{eq:ordered-chain}
+    Q_k\prec Q_{k+1}\prec\Kc.
+\end{equation}
+The first disagreement between $Q_k$ and $\Kc$ occurs at index $p_{k+1}$, and therefore
+\begin{equation}\label{eq:exact-metric-rate}
+    d_\vartheta(Q_k,\Kc)=\vartheta^{p_{k+1}}.
+\end{equation}
+In particular $Q_k\to\Kc$ in the product topology and pointwise on $\N_0$.
+\end{theorem}
+
+\begin{proof}
+Put $p=p_{k+1}$.  Adding the new sieve factor $p$ does not alter any symbol with $1\le n<p$, while
+\[
+    Q_k(p)=L,\qquad Q_{k+1}(p)=R.
+\]
+By \cref{lem:initial-shield}, the common prefix at indices $0,\ldots,p-1$ is $RLR^{p-2}$.  It contains
+\[
+    1+(p-2)=p-1
+\]
+symbols $R$.  Since $p=p_{k+1}$ is odd for $k\ge1$, this number is even.  The comparison at index $p$ therefore uses the base order $L<R$, proving $Q_k\prec Q_{k+1}$.
+
+The same common prefix occurs when comparing $Q_k$ with $\Kc$, and at index $p$ one again compares $L$ in $Q_k$ with $R$ in $\Kc$.  Hence $Q_k\prec\Kc$, the first-disagreement index is exactly $p$, and \eqref{eq:exact-metric-rate} follows from \eqref{eq:symbolic-metric}.
+
+Finally, for each fixed $n\ge2$, choose $k$ large enough that a prime divisor of $n$ belongs to $\{p_1,\ldots,p_k\}$.  Then $Q_k(n)=R$ for all subsequent stages.  The symbols at $0$ and $1$ remain $R$ and $L$, respectively, proving pointwise convergence to $RLR^\infty$.
+\end{proof}
+
+\begin{remark}[The order of limits]\label{rem:order-limits}
+The limit in \cref{thm:ordered-convergence} is not the natural prime indicator.  In the pointwise limit every fixed prime is eventually used as a sieve factor and hence is marked $R$.  Thus $\Kc$ has exactly one $L$, at index $1$.  Retaining primes on a growing interval requires a diagonal choice of the sieve depth as the observation horizon grows.  Pointwise convergence in $k$, diagonal sieving in the integer variable, and convergence in natural density are distinct operations.
+\end{remark}
+
+\section{The band-merging parameter and its exact Markov skeleton}
+
+We now identify the quadratic parameter associated with \eqref{eq:Kc-word} without using any sieve admissibility assumption.
+
+\begin{proposition}[Algebraic band-merging parameter]\label{prop:uc}
+The polynomial
+\begin{equation}\label{eq:uc-polynomial}
+    F(u)=u^3-2u^2+2u-2
+\end{equation}
+has a unique zero $\uc$ in $(1,2)$.  Numerically,
+\[
+    \uc=1.543689012692\ldots.
+\]
+If $b=\uc-1$, then the critical orbit of $f_{\uc}$ satisfies
+\begin{equation}\label{eq:critical-orbit}
+    0\longmapsto1\longmapsto-b\longmapsto b\longmapsto b.
+\end{equation}
+Consequently the itinerary of the critical value $1$ under the partition $L=\{x<0\}$, $R=\{x>0\}$ is $RLR^\infty$.
+\end{proposition}
+
+\begin{proof}
+We have $F(1)=-1$ and $F(2)=2$.  Moreover
+\[
+    F'(u)=3u^2-4u+2=3\left(u-\frac23\right)^2+\frac23>0,
+\]
+so there is exactly one real zero in $(1,2)$.  Let $b=\uc-1$.  Equation $F(\uc)=0$ is equivalent to
+\[
+    1-\uc b^2=b.
+\]
+Therefore $f_{\uc}(1)=1-\uc=-b$ and
+\[
+    f_{\uc}(-b)=f_{\uc}(b)=1-\uc b^2=b,
+\]
+which proves \eqref{eq:critical-orbit} and its itinerary.
+\end{proof}
+
+\begin{theorem}[Markov partition, entropy, and even-return rigidity]\label{thm:markov}
+Let $b=\uc-1$ and define
+\[
+    J_L=[-b,0],\qquad J_0=[0,b],\qquad J_1=[b,1].
+\]
+Up to their common endpoints,
+\begin{equation}\label{eq:markov-images}
+    f_{\uc}(J_L)=J_1,\qquad
+    f_{\uc}(J_0)=J_1,\qquad
+    f_{\uc}(J_1)=J_L\cup J_0.
+\end{equation}
+The associated transition matrix is
+\begin{equation}\label{eq:markov-matrix}
+    A=
+    \begin{pmatrix}
+        0&0&1\\
+        0&0&1\\
+        1&1&0
+    \end{pmatrix},
+    \qquad \operatorname{spec}(A)=\{0,\sqrt2,-\sqrt2\}.
+\end{equation}
+Hence
+\begin{equation}\label{eq:entropy}
+    h_{\mathrm{top}}(f_{\uc})=\log\rho(A)=\frac12\log2.
+\end{equation}
+Furthermore, for every orbit which does not land on a partition endpoint, the time difference between two successive visits to $J_L$ is even.  In particular the word $LL$ is forbidden.
+\end{theorem}
+
+\begin{proof}
+On $[-b,0]$ the map is increasing, with endpoint values $f_{\uc}(-b)=b$ and $f_{\uc}(0)=1$.  On $[0,b]$ it is decreasing with the same image $[b,1]$.  On $[b,1]$ it is decreasing from $b$ to $-b$.  This proves \eqref{eq:markov-images} and \eqref{eq:markov-matrix}.  A direct determinant calculation gives
+\[
+    \det(\lambda I-A)=\lambda(\lambda^2-2),
+\]
+so the spectral radius is $\sqrt2$.  The standard entropy formula for a piecewise monotone Markov interval map yields \eqref{eq:entropy}; see, for example, \citet{deMeloVanStrien1993} and \citet[Ch.~4]{LindMarcus1995}.
+
+For the return parity, put $C=[-b,b]$ and $H=[b,1]$.  The image relations above give
+\[
+    f_{\uc}(C)=H,\qquad f_{\uc}(H)=C.
+\]
+Thus an orbit alternates between the two sets $C$ and $H$.  Since $J_L\subset C$, all visits to $J_L$ occur in the same parity class of the time variable.  Successive visit times therefore differ by an even integer.  In particular, a visit to $J_L$ is followed by a visit to $H\subset\{x\ge0\}$, excluding $LL$.
+\end{proof}
+
+\section{Kneading equality is not topological conjugacy}
+
+The phrase \emph{topological isomorphism} requires two dynamical systems, not merely two distinguished symbolic words.  The most direct shift-space realization of the limiting sieve word already gives a sharp obstruction.
+
+\begin{definition}
+Let
+\[
+    X_{\Kc}=\overline{\{\sh^n\Kc:n\ge0\}}\subset\Sig
+\]
+be the shift orbit closure of the limiting sieve word.
+\end{definition}
+
+\begin{theorem}[Entropy obstruction to conjugacy]\label{thm:no-conjugacy}
+The shift system $(X_{\Kc},\sh)$ is not topologically conjugate to $f_{\uc}$ on its invariant interval $[-b,1]$.
+\end{theorem}
+
+\begin{proof}
+Since $\Kc=RLR^\infty$,
+\[
+    X_{\Kc}=\{RLR^\infty,\,LR^\infty,\,R^\infty\}.
+\]
+It is a finite dynamical system and has topological entropy zero.  By \cref{thm:markov}, the quadratic map has topological entropy $\frac12\log2>0$.  Topological entropy is invariant under topological conjugacy, so no conjugacy exists.
+\end{proof}
+
+\begin{remark}
+The equality $\lim_k Q_k=K(f_{\uc})$ remains a correct statement about a coordinate in the ordered symbolic space.  It says that the limiting word is the kneading invariant which determines the boundary of the admissible language at $\uc$.  It does not say that the limiting word is a typical orbit, that its shift orbit closure is the quadratic attractor, or that the actual prime indicator has the same finite-word language as the quadratic system.
+\end{remark}
+
+\section{Finite-horizon admissibility and its failure at small stages}
+
+\subsection{Detected defects}
+
+Let $H\ge1$ and write $W_{k,H}=Q_k[0,H)$ for the prefix of length $H$.
+
+\begin{definition}[Detected MSS defect]\label{def:defect}
+A shift $m\in\{1,\ldots,H-1\}$ is a \emph{detected defect at horizon $H$} if there is a first index $j<H-m$ such that
+\[
+    Q_k(m+i)=Q_k(i)\quad(0\le i<j),
+\]
+and the parity-lexicographic comparison at $j$ gives
+\[
+    \sh^m(Q_k)\succ Q_k.
+\]
+Let $\cD_k(H)$ be the set of detected defects, $D_k(H)=|\cD_k(H)|$, and
+\[
+    \rho_k(H)=\frac{D_k(H)}{H-1}.
+\]
+The prefix is \emph{horizon-admissible} if $D_k(H)=0$.
+\end{definition}
+
+This convention makes no assertion when a comparison is not decided before the suffix exits the horizon.  It is exactly the finite information available in the sieve-valid window.
+
+\begin{proposition}[Explicit failure at $k=3$]\label{prop:k3-defect}
+At stage $k=3$, with sieve primes $2,3,5$ and physical horizon $H=p_4^2=49$, the shift $m=22$ is a detected MSS defect.
+\end{proposition}
+
+\begin{proof}
+The first ten symbols of $Q_3$ and its shift are
+\[
+\begin{array}{c|cccccccccc}
+ i&0&1&2&3&4&5&6&7&8&9\\
+ \midrule
+ Q_3(i)&R&L&R&R&R&R&R&L&R&R\\
+ Q_3(22+i)&R&L&R&R&R&R&R&L&R&L.
+\end{array}
+\]
+The common prefix of length nine contains seven $R$ symbols, so the order is reversed at the first disagreement.  At position $9$, $Q_3$ has $R$ and the shift has $L$; under the reversed order $R<L$.  Thus $Q_3\prec\sh^{22}Q_3$, and the disagreement is detected at the integer $22+9=31<49$.
+\end{proof}
+
+\begin{corollary}
+The assertion that every cumulative sieve stage is kneading-admissible on its entire physical horizon is false.
+\end{corollary}
+
+The analogous defect at $k=5$ is generated by the prime gap $113$--$127$; see \citet{WangTransient2026}.  We now prove the structural reduction which explains why such defects are rare.
+
+\section{The parity-gap reduction}
+
+For a prime $q$, let $q^+$ denote the next prime and write $g(q)=q^+-q$.  Define
+\begin{equation}\label{eq:G-def}
+    G(X)=\max\{g(q):q\le X,\ q\ \text{prime}\}.
+\end{equation}
+
+\begin{lemma}[Parity-gap lemma]\label{lem:parity-gap}
+Let $p=p_{k+1}$ and let $p<H\le p^2$.  If $m\in\cD_k(H)$, then
+\begin{enumerate}[label=(\roman*)]
+    \item $q=m+1$ is prime;
+    \item $g(q)\ge p-1$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+By \cref{lem:initial-shield}, the reference prefix begins
+\[
+    Q_k=RLR^{p-2}L\cdots.
+\]
+We compare $\sh^m Q_k$ with $Q_k$.
+
+At position $0$, if $Q_k(m)=L$, then the shift begins with $L$ while $Q_k$ begins with $R$.  The common prefix is empty, so the base order applies and the shift is smaller.  A defective shift must therefore satisfy $Q_k(m)=R$.  The common prefix now contains one $R$, and the order is reversed at the next disagreement.
+
+At position $1$, the reference word has $Q_k(1)=L$.  If $Q_k(m+1)=R$, then under the reversed order the shifted $R$ is smaller than the reference $L$, again defeating the shift.  Hence a defect requires $Q_k(m+1)=L$.  Since $2\le m+1<H\le p^2$, every composite integer in this range has a prime factor strictly smaller than $p$ and is marked $R$ by $Q_k$.  Therefore $q=m+1$ is prime.  In particular $q\ge p$ and is odd.
+
+Let $r<H-m$ be the first disagreement which detects the defect.  We claim that $r\ge p$.  Otherwise $2\le r\le p-1$, the reference symbol is $Q_k(r)=R$, and the shifted symbol must be $Q_k(m+r)=L$.  By the same sieve-validity argument, $m+r$ is prime.  Both $m+1$ and $m+r$ are odd primes, so their difference $r-1$ is even and hence $r$ is odd.  The common reference prefix through position $r-1$ contains
+\[
+    1+(r-2)=r-1
+\]
+symbols $R$, an even number.  The order at position $r$ is therefore unflipped, and the shifted symbol $L$ is smaller than the reference symbol $R$, contradicting that $r$ detects a defect.  Hence $r\ge p$.
+
+The two words therefore agree at every position $2\le j\le p-1$, so $Q_k(m+j)=R$ there.  Since $m+j>q\ge p$, each such integer is divisible by one of the sieving primes and is composite.  Equivalently, the integers
+\[
+    q+1,q+2,\ldots,q+p-2
+\]
+are all composite.  The next prime satisfies $q^+\ge q+p-1$, and hence $g(q)\ge p-1$.
+\end{proof}
+
+\begin{corollary}[Prime-gap sufficient condition]\label{cor:gap-condition}
+Let $p=p_{k+1}$ and $p<H\le p^2$.  If
+\begin{equation}\label{eq:gap-sufficient}
+    G(H)<p-1,
+\end{equation}
+then $W_{k,H}$ is horizon-admissible.
+\end{corollary}
+
+\begin{proof}
+The contrapositive of \cref{lem:parity-gap} states that a defect would produce a prime $q\le H$ with $g(q)\ge p-1$, contradicting \eqref{eq:gap-sufficient}.
+\end{proof}
+
+Condition \eqref{eq:gap-sufficient} is sufficient, not necessary.  In particular a long prime gap does not by itself force the parity of every later tie-breaker to create an MSS defect.
+
+\section{An unconditional long admissible horizon}
+
+The unconditional all-$x$ consecutive-prime estimate needed here is due to \citet{BakerHarmanPintz2001}:
+\begin{equation}\label{eq:BHP-gap}
+    p_{n+1}-p_n\ll p_n^{21/40},
+\end{equation}
+for all sufficiently large $n$.  In particular, $G(X)\ll X^{21/40}$.
+
+\begin{theorem}[BHP admissible-prefix theorem]\label{thm:BHP-horizon}
+Fix
+\[
+    0<\eps<\frac{19}{21}
+\]
+and put
+\begin{equation}\label{eq:Hk}
+    H_k=\left\lfloor p_{k+1}^{40/21-\eps}\right\rfloor.
+\end{equation}
+Then $W_{k,H_k}$ is horizon-admissible for all sufficiently large $k$.
+\end{theorem}
+
+\begin{proof}
+Let $p=p_{k+1}$.  Since $1<40/21-\eps<2$, we have $p<H_k<p^2$ for all sufficiently large $p$.  By \eqref{eq:BHP-gap},
+\[
+    G(H_k)
+    \ll H_k^{21/40}
+    \ll p^{(40/21-\eps)(21/40)}
+    =p^{1-(21/40)\eps}
+    =o(p).
+\]
+Thus $G(H_k)<p-1$ for sufficiently large $k$, and \cref{cor:gap-condition} applies.
+\end{proof}
+
+\begin{corollary}[Exponent criterion]\label{cor:exponent-criterion}
+Suppose an all-$X$ prime-gap theorem gives $G(X)\ll X^\theta$.  Then every horizon $H_k=p_{k+1}^{a}$ with
+\[
+    1<a<\min\{2,1/\theta\}
+\]
+is eventually horizon-admissible through \cref{cor:gap-condition}.  The full quadratic horizon $H_k=p_{k+1}^2$ follows from this route if $G(X)=o(X^{1/2})$.
+\end{corollary}
+
+\begin{remark}[Why the full horizon remains open by this method]
+At $X=p^2$, the Baker--Harman--Pintz exponent gives only
+\[
+    G(p^2)\ll p^{21/20},
+\]
+which is larger than the required shield $p-1$.  A Riemann-hypothesis bound of order $O(X^{1/2}\log X)$ also does not imply \eqref{eq:gap-sufficient} at $X=p^2$.  In contrast, Cram\'er-type polylogarithmic bounds \citep{Cramer1936} would imply eventual full-horizon admissibility.  The latter remains a conditional statement.
+\end{remark}
+
+\section{Unconditional decay of the defect density}
+
+Full admissibility is much stronger than the vanishing of the proportion of bad shifts.  The parity-gap lemma proves the latter unconditionally.
+
+\begin{theorem}[Defect-count bound]\label{thm:defect-density}
+Let $p=p_{k+1}$ and $p<H\le p^2$.  Then
+\begin{equation}\label{eq:defect-count}
+    D_k(H)\le \frac{H}{p-1}+1.
+\end{equation}
+Consequently, at the physical horizon $N_k=p_{k+1}^2$,
+\begin{equation}\label{eq:defect-density}
+    \rho_k(N_k)
+    \le \frac{1}{p_{k+1}-1}+O(p_{k+1}^{-2})
+    \longrightarrow0.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \cref{lem:parity-gap}, every defect $m$ determines the prime $q=m+1$ and a consecutive-prime interval $[q,q^+)$ of length at least $p-1$.  The map $m\mapsto q$ is injective, and consecutive-prime intervals associated with distinct $q$ are disjoint.
+
+All their left endpoints satisfy $q\le H$.  At most one of these disjoint intervals can cross the endpoint $H$.  The remaining intervals lie inside $[0,H]$, have total length at most $H$, and each has length at least $p-1$.  Hence there are at most $H/(p-1)$ of them, plus at most one crossing interval.  This proves \eqref{eq:defect-count}.  Dividing by $H-1$ and setting $H=p^2$ gives \eqref{eq:defect-density}.
+\end{proof}
+
+\begin{remark}[What defect density does not prove]\label{rem:defect-limitation}
+The limit $\rho_k(N_k)\to0$ proves asymptotic admissibility in the defect-density sense.  It does not by itself construct a true admissible word at Hamming distance $o(N_k)$ from $W_{k,N_k}$, nor does it prove shadowing by a quadratic orbit.  A sparse set of failed maximality comparisons is not the same object as a sparse set of symbol edits.  Any passage from \eqref{eq:defect-density} to equality of ergodic cylinder statistics requires an additional repair or shadowing theorem.
+\end{remark}
+
+\section{An alternative exact prime word and its tradeoff}
+
+The obstruction above is partly caused by marking each sieving prime itself as $R$.  If one instead uses the natural prime word, absolute self-admissibility becomes elementary, but the band-merging limit is lost.
+
+\begin{definition}
+Define $\cP\in\Sig$ by
+\[
+    \cP(0)=R,\qquad \cP(1)=L,
+\]
+and, for $n\ge2$,
+\[
+    \cP(n)=
+    \begin{cases}
+        L,&n\ \text{is prime},\\
+        R,&n\ \text{is composite}.
+    \end{cases}
+\]
+\end{definition}
+
+\begin{proposition}[Self-admissibility of the natural prime word]\label{prop:natural-prime}
+For every $m\ge1$,
+\[
+    \sh^m\cP\prec\cP.
+\]
+\end{proposition}
+
+\begin{proof}
+If $\cP(m)=L$, the comparison is decided at position $0$: the shift begins with $L$, while $\cP$ begins with $R$, so the shift is smaller in the base order.
+
+Suppose $\cP(m)=R$.  Then $m\ge4$ is composite and both words begin with $R$, so the order is reversed at the next disagreement.  If $\cP(m+1)=R$, position $1$ compares the shifted $R$ with $\cP(1)=L$; under the reversed order the shift is smaller.  If $\cP(m+1)=L$, then $m+1$ is an odd prime at least $5$, so $m+2$ is even and composite.  The words agree as $RL$ at positions $0,1$, the prefix still contains one $R$, and at position $2$ the shifted $R$ is smaller than $\cP(2)=L$ in the reversed order.  Thus every nonzero shift is defeated by position $2$ at the latest.
+\end{proof}
+
+\begin{remark}
+The proposition gives an unconditional inverse-kneading encoding of the prime indicator.  However, $\cP$ begins $RLLL\cdots$, not $RLR^\infty$, and therefore does not select the band-merging parameter $\uc$.  Exact prime coding and the particular one-dimensional band-merging skeleton are different constructions.
+\end{remark}
+
+\section{Interpretation and scope}
+
+The preceding results suggest the following replacement for the original strong isomorphism statement.
+
+\begin{quote}
+\emph{The cumulative sieve masks form a strictly ordered path in the full symbolic space and converge to the band-merging kneading coordinate $RLR^\infty$.  The quadratic map at that coordinate realizes the parity factor of the sieve grammar.  Finite-stage realization as kneading data is valid on an unconditional growing subquadratic horizon and has vanishing defect density on the full quadratic horizon.}
+\end{quote}
+
+This statement retains the exact algebraic and topological facts while avoiding four overextensions.
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{A finite prefix is not a unique parameter.}  Even when every comparison visible in a finite word is admissible, a completion rule is needed before the word becomes an infinite kneading invariant.  Different completions can determine an interval of parameters rather than a single $u_k$.
+
+    \item \textbf{Pointwise sieve convergence erases the primes.}  The word $RLR^\infty$ is a boundary coordinate, not the natural prime sequence; see \cref{rem:order-limits}.
+
+    \item \textbf{A kneading invariant is not a typical orbit.}  It controls the language of a unimodal system.  Equality of a limiting mask with a kneading word does not supply a conjugating homeomorphism; \cref{thm:no-conjugacy} rules out the natural shift-space version.
+
+    \item \textbf{Asymptotic admissibility is not arithmetic shadowing.}  The defect-density theorem is a genuine unconditional macroscopic statement, but the stronger orbit-shadowing problem remains separate; see \cref{rem:defect-limitation}.
+\end{enumerate}
+
+The numerical computations in \citet{Wang2026Published,WangTransient2026} remain useful in their proper role: they discovered the small-stage defects, quantified their scarcity over a large finite range, and motivated \cref{lem:parity-gap}.  The proofs in the present paper neither infer an infinite theorem from that finite range nor discard the numerical observations.  They identify exactly which conclusions are stable under the transition from computation to proof.
+
+\section{Conclusion}
+
+The topological admissibility condition is essential for assigning a sieve word itself as kneading data, but it is not needed for the ordered convergence
+\[
+    Q_k\nearrow RLR^\infty
+\]
+or for the algebraic identification of the band-merging parameter.  The universal finite-stage condition is false, while two rigorous replacements are available: an unconditional admissible prefix of length $p_{k+1}^{40/21-\eps}$ and an unconditional $O(p_{k+1}^{-1})$ defect density on the full physical horizon.
+
+At the same time, the entropy obstruction shows that the surviving result cannot be called a topological conjugacy between the limiting sieve word and the chaotic quadratic attractor.  The correct object is a kneading-coordinate convergence together with a parity factor.  This reformulation provides a stable base for subsequent spectral and non-autonomous work: stronger arithmetic conclusions must enter through a separately stated shadowing, shrinking-target, or sieve-remainder theorem, not through kneading equality alone.
+
+\section*{Data and code availability}
+
+All statements in this paper are proved analytically and require no numerical data.  Code and data associated with the motivating computations are available from the repositories cited in \citet{Wang2026Published,WangTransient2026} and from the author upon reasonable request.
+
+\section*{Acknowledgements}
+
+The author thanks the reviewers of the related manuscripts for comments that motivated a sharper separation between symbolic convergence, admissibility, and conjugacy.  AI-assisted tools were used for auxiliary typesetting and proof auditing; all mathematical statements and conclusions are the responsibility of the author.
+
+\section*{Disclosure statement}
+
+The author reports no competing interests.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
