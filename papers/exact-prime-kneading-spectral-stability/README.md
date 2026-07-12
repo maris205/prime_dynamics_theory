@@ -28,4 +28,4 @@ Reproduce the parameter-cylinder table with:
 python estimate_prime_parameter.py
 ```
 
-The numerical computation is auxiliary. The existence, uniqueness, repair, statistical-stability, and periodogram-stability results are analytic.
+The numerical computation is auxiliary. The existence, uniqueness, repair, statistical-stability, and periodogram-stability results are analytic. The manuscript also proves that the uncentered periodograms converge in total variation to the zero-frequency atom and that the empirically centered, energy-normalized periodograms converge weakly to Haar measure.

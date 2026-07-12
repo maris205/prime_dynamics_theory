@@ -72,13 +72,13 @@ We then quantify what the sparse repair preserves.  For every fixed block length
     \le \frac{2\sqrt{k}}{p}
     =O\!\left((p\log p)^{-1/2}\right).
 \]
-Consequently the sieve words and the exact prime kneading orbit have identical subsequential Fourier-spectral limits along the physical horizons.  The construction is inverse: the quadratic parameter encodes the prime word and does not independently predict primes.  No claim about phase-space shadowing, transfer-operator spectra, or Riemann zeros is made.
+We also identify the limits.  The uncentered prime and sieve periodograms converge in total variation to the zero-frequency atom $\delta_0$.  After empirical centering and normalization by the centered energy, the prime periodograms converge weakly to Haar measure on the circle.  A standard upper-bound sieve for fixed prime pairs proves this through the vanishing of every nonzero fixed Fourier coefficient.  The exact repair transfers the centered limit to $Q_k$, with total variation error $O(p^{-1/2})$.  These universal limits show that finer arithmetic information, if present, must be sought at growing lags or finer spectral scales.  The construction is inverse: the quadratic parameter encodes the prime word and does not independently predict primes.  No claim about phase-space shadowing, transfer-operator spectra, or Riemann zeros is made.
 \end{abstract}
 
-\noindent\textbf{Keywords:} prime indicator; sieve of Eratosthenes; kneading theory; sparse repair; symbolic shadowing; periodogram; spectral stability.
+\noindent\textbf{Keywords:} prime indicator; sieve of Eratosthenes; kneading theory; sparse repair; symbolic shadowing; periodogram; Haar measure; spectral stability.
 
 \medskip
-\noindent\textbf{MSC 2020:} 37E05; 37B10; 11A41; 42A16.
+\noindent\textbf{MSC 2020:} 37E05; 37B10; 11A41; 11N35; 42A16.
 
 \section{Introduction}
 
@@ -126,9 +126,27 @@ Write $2=p_1<p_2<\cdots$ for the primes and put $p=p_{k+1}$ and $N_k=p^2$.  The 
         =\frac{2\sqrt{k}}{p}.
     \]
     Along any fixed subsequence, weak convergence of one sequence of periodogram measures implies convergence of the other to the same limit.
+
+    \item The uncentered measures have the explicit total-variation limit
+    \[
+        \mu_{\cP,N}\longrightarrow\delta_0,
+        \qquad
+        \mu_{Q_k,N_k}\longrightarrow\delta_0.
+    \]
+    If the symbol vectors are instead centered by their empirical means and the periodograms are normalized by centered energy, then
+    \[
+        \mu^{\circ}_{\cP,N}\Rightarrow m_{\T},
+        \qquad
+        \mu^{\circ}_{Q_k,N_k}\Rightarrow m_{\T},
+    \]
+    where $m_{\T}$ is normalized Haar measure.  Moreover,
+    \[
+        \|\mu^{\circ}_{Q_k,N_k}-\mu^{\circ}_{\cP,N_k}\|_{\TV}
+        =O(p^{-1/2}).
+    \]
 \end{enumerate}
 
-Every theorem above is unconditional.  The prime number theorem is used only to display the sharp rates in terms of $p$; the convergence itself already follows from elementary bounds.
+Every theorem above is unconditional.  The identification of the centered limit uses only the prime number theorem and the standard upper-bound sieve for prime pairs; no prime-pair asymptotic or unproved gap hypothesis is required.
 
 \section{Symbolic and arithmetic setup}
 
@@ -465,8 +483,232 @@ Consequently, along any subsequence $k_j$, the measures $\mu_{Q_{k_j},N_{k_j}}$ 
 Insert $d=k$ and $N_k=p_{k+1}^2$ into \cref{thm:periodogram-stability}.  The rate follows from the prime number theorem.  Total variation convergence to zero implies equality of all weak subsequential limits.
 \end{proof}
 
-\begin{remark}[Centering]
-Subtracting the empirical mean before the discrete Fourier transform changes only the zero-frequency coefficient.  Thus the nonzero-frequency comparison is unchanged.  If one subsequently renormalizes the centered spectrum to unit mass, a separate lower bound on the centered energy is required.
+\subsection{The uncentered limit is a zero-frequency atom}
+
+The uncentered limit can be identified exactly, because primes have density zero.
+
+\begin{theorem}[Uncentered spectral limit]\label{thm:uncentered-limit}
+Put
+\begin{equation}\label{eq:prime-count-rN}
+    r_N=1+\pi(N-1),
+\end{equation}
+where the extra term counts the seed $\cP(1)=L$.  Then
+\begin{equation}\label{eq:prime-delta0-tv}
+    \|\mu_{\cP,N}-\delta_0\|_{\TV}
+    =4\frac{r_N}{N}\left(1-\frac{r_N}{N}\right)
+    \sim\frac4{\log N}.
+\end{equation}
+At $N_k=p_{k+1}^2$ one also has
+\begin{equation}\label{eq:sieve-delta0-tv}
+    \|\mu_{Q_k,N_k}-\delta_0\|_{\TV}
+    =4\frac{r_{N_k}-k}{N_k}
+      \left(1-\frac{r_{N_k}-k}{N_k}\right)
+    \sim\frac4{\log N_k}.
+\end{equation}
+In particular, both uncentered periodograms converge to $\delta_0$ in total variation.
+\end{theorem}
+
+\begin{proof}
+If a length-$N$ word has $r$ symbols equal to $L$, then its empirical mean is $2r/N-1$.  Hence the mass of its periodogram at zero is
+\[
+    \frac1N|\widehat a_0|^2
+    =\left(2\frac rN-1\right)^2.
+\]
+For any probability measure $\nu$, one has
+$\|\nu-\delta_0\|_{\TV}=1-\nu(\{0\})$.  It follows exactly that
+\begin{equation}\label{eq:exact-uncentered-tv-general}
+    \|\mu_{S,N}-\delta_0\|_{\TV}
+    =1-\left(2\frac rN-1\right)^2
+    =4\frac rN\left(1-\frac rN\right).
+\end{equation}
+For $\cP[0,N)$, one has $r=r_N$.  On the physical horizon, \cref{thm:exact-repair} changes precisely $k$ of those $L$ symbols to $R$, so $Q_k[0,N_k)$ has $r_{N_k}-k$ symbols equal to $L$.  Substitution into \eqref{eq:exact-uncentered-tv-general} proves the identities, and the asymptotics follow from the prime number theorem.
+\end{proof}
+
+Thus the uncentered normalization has a limit, but the limit records only the mean background symbol.  To remove this zero-frequency dominance, define the empirical mean, centered vector, and centered energy by
+\begin{equation}\label{eq:centered-vector}
+    \bar a_N(S)=\frac1N\sum_{n=0}^{N-1}a_n(S),
+    \qquad
+    a_n^{\circ}(S)=a_n(S)-\bar a_N(S),
+    \qquad
+    E_N(S)=\sum_{n=0}^{N-1}|a_n^{\circ}(S)|^2.
+\end{equation}
+Whenever $E_N(S)>0$, let
+\begin{equation}\label{eq:centered-periodogram}
+    \mu^{\circ}_{S,N}
+    =\frac1{E_N(S)}\sum_{j=0}^{N-1}
+      |\widehat a_j^{\circ}(S)|^2\,\delta_{j/N},
+\end{equation}
+where $\widehat a^{\circ}$ is the unitary discrete Fourier transform.  Parseval's identity makes \eqref{eq:centered-periodogram} a probability measure, and its zero-frequency mass is zero.
+
+\begin{proposition}[Mean-atom decomposition]\label{prop:mean-atom-decomposition}
+For every nonconstant word $S\in\{L,R\}^N$,
+\begin{equation}\label{eq:mean-atom-decomposition}
+    \mu_{S,N}
+    =\bar a_N(S)^2\delta_0
+     +\frac{E_N(S)}N\mu^{\circ}_{S,N},
+    \qquad
+    \frac{E_N(S)}N=1-\bar a_N(S)^2.
+\end{equation}
+If $S$ has $r$ symbols equal to $L$, then
+\begin{equation}\label{eq:binary-centered-energy}
+    \bar a_N(S)=2\frac rN-1,
+    \qquad
+    E_N(S)=4r\left(1-\frac rN\right).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Subtracting the empirical mean changes only the zero-frequency Fourier coefficient: $\widehat a_0(S)=\sqrt N\,\bar a_N(S)$, whereas $\widehat a_0^{\circ}(S)=0$, and $\widehat a_j^{\circ}(S)=\widehat a_j(S)$ for $j\ne0$.  This proves the measure decomposition.  Parseval and $|a_n(S)|=1$ give $E_N(S)=N-N\bar a_N(S)^2$.  The formulas in \eqref{eq:binary-centered-energy} follow by counting the two symbol values.
+\end{proof}
+
+\begin{theorem}[Centered periodogram stability]\label{thm:centered-stability}
+Let $S,T\in\{L,R\}^N$ have positive centered energies and let $d=d_H(S,T)$.  Then
+\begin{equation}\label{eq:centered-tv-bound}
+    \|\mu^{\circ}_{S,N}-\mu^{\circ}_{T,N}\|_{\TV}
+    \le
+    \frac{4\sqrt d}{\min\{\sqrt{E_N(S)},\sqrt{E_N(T)}\}}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let $P_N$ be the orthogonal projection in $\mathbb C^N$ onto the orthogonal complement of the constant vector.  Centering is exactly the operation $a^{\circ}(S)=P_Na(S)$.  Therefore
+\begin{equation}\label{eq:centered-vector-difference}
+    \|a^{\circ}(S)-a^{\circ}(T)\|_2
+    \le \|a(S)-a(T)\|_2
+    =2\sqrt d.
+\end{equation}
+For nonzero vectors $v,w$ in a Hilbert space,
+\begin{equation}\label{eq:normalized-vector-bound}
+    \left\|\frac v{\|v\|_2}-\frac w{\|w\|_2}\right\|_2
+    \le \frac{2\|v-w\|_2}{\min\{\|v\|_2,\|w\|_2\}}.
+\end{equation}
+Apply this inequality after the unitary discrete Fourier transform.  If $u$ and $v$ are the resulting normalized Fourier-amplitude vectors, then
+\[
+    \frac12\sum_j\bigl||u_j|^2-|v_j|^2\bigr|
+    \le \frac12(\|u\|_2+\|v\|_2)\|u-v\|_2
+    =\|u-v\|_2.
+\]
+Together with \eqref{eq:centered-vector-difference} and \eqref{eq:normalized-vector-bound}, this is \eqref{eq:centered-tv-bound}.
+\end{proof}
+
+\subsection{The centered prime spectrum is Haar}
+
+The lower bound on centered energy and the limiting measure can both be obtained unconditionally.  Write $m_{\T}$ for normalized Haar measure on $\T$ and use the Fourier convention
+\[
+    \widehat\nu(h)=\int_{\T}e^{2\pi i h x}\,d\nu(x),
+    \qquad h\in\mathbb Z.
+\]
+
+\begin{theorem}[Centered prime spectral limit]\label{thm:centered-prime-haar}
+As $N\to\infty$,
+\begin{equation}\label{eq:prime-haar-limit}
+    \mu^{\circ}_{\cP,N}\Rightarrow m_{\T}.
+\end{equation}
+More precisely, for every fixed nonzero integer $h$,
+\begin{equation}\label{eq:fixed-fourier-decay}
+    \widehat{\mu^{\circ}_{\cP,N}}(h)
+    =O_h\!\left(\frac1{\log N}\right).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let $x_n$ be $1$ when $n=1$ or $n$ is prime, and $0$ otherwise, for $0\le n<N$.  Thus $a_n(\cP)=2x_n-1$.  With
+\[
+    \rho_N=\frac1N\sum_{n<N}x_n=\frac{r_N}{N},
+\]
+one has
+\begin{equation}\label{eq:prime-centered-energy}
+    a_n^{\circ}(\cP)=2(x_n-\rho_N),
+    \qquad
+    E_N(\cP)=4N\rho_N(1-\rho_N)
+    \sim\frac{4N}{\log N}.
+\end{equation}
+
+Fix $h\ge1$.  All indices below are read modulo $N$, and put
+\[
+    A_N(h)=\sum_{n=0}^{N-1}x_nx_{n+h\bmod N}.
+\]
+Only $O_h(1)$ terms wrap around the endpoint.  The standard upper-bound sieve for the pair of linear forms $n$ and $n+h$ gives
+\begin{equation}\label{eq:prime-pair-upper-bound}
+    A_N(h)\ll_h\frac{N}{(\log N)^2};
+\end{equation}
+see, for example, \citet[Chapter~6]{IwaniecKowalski2004}.  This estimate is only an upper bound; no twin-prime or Hardy--Littlewood asymptotic is used.
+
+The discrete Wiener--Khinchin identity and \eqref{eq:prime-centered-energy} give
+\begin{align}
+    \widehat{\mu^{\circ}_{\cP,N}}(h)
+    &=\frac1{E_N(\cP)}
+      \sum_{n=0}^{N-1}a_n^{\circ}(\cP)
+      a_{n+h\bmod N}^{\circ}(\cP)\notag\\
+    &=\frac{A_N(h)-N\rho_N^2}
+      {N\rho_N(1-\rho_N)}.
+    \label{eq:prime-wiener-khinchin}
+\end{align}
+By the prime number theorem, $\rho_N\sim1/\log N$.  Combining this with \eqref{eq:prime-pair-upper-bound} proves \eqref{eq:fixed-fourier-decay}.  The same conclusion for negative $h$ follows by conjugation, while the zeroth coefficient is $1$.  Hence the Fourier coefficients converge pointwise to those of $m_{\T}$.  Density of the trigonometric polynomials in $C(\T)$ proves \eqref{eq:prime-haar-limit}.
+\end{proof}
+
+\begin{corollary}[Centered sieve spectral limit]\label{cor:centered-sieve-haar}
+Put $p=p_{k+1}$, $N=N_k=p^2$, $M=r_N$, and $m=M-k$.  Then
+\begin{equation}\label{eq:centered-prime-sieve-tv}
+\begin{split}
+    \|\mu^{\circ}_{Q_k,N}-\mu^{\circ}_{\cP,N}\|_{\TV}
+    &\le
+    \left(
+      2-2\sqrt{\frac{m(N-M)}{M(N-m)}}
+    \right)^{1/2}\\
+    &=\frac{\sqrt2+o(1)}{\sqrt p}.
+\end{split}
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:sieve-haar-limit}
+    \mu^{\circ}_{Q_k,N_k}\Rightarrow m_{\T}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Let $A\subset\{0,\ldots,N-1\}$ be the set of $L$ positions of $\cP$ and let $B$ be the corresponding set for $Q_k$.  The exact repair identity gives $B\subset A$, $|A|=M$, and $|B|=m$.  Put
+\[
+    x_A=\one_A-\frac MN\one,
+    \qquad
+    x_B=\one_B-\frac mN\one.
+\]
+The centered symbol vectors are $2x_A$ and $2x_B$.  Direct calculation, using $B\subset A$, gives
+\[
+    \|x_A\|_2^2=\frac{M(N-M)}N,
+    \qquad
+    \|x_B\|_2^2=\frac{m(N-m)}N,
+    \qquad
+    \langle x_A,x_B\rangle=\frac{m(N-M)}N.
+\]
+Hence the squared distance between the normalized centered vectors is
+\begin{equation}\label{eq:exact-normalized-repair-distance}
+    \left\|
+      \frac{x_A}{\|x_A\|_2}-\frac{x_B}{\|x_B\|_2}
+    \right\|_2^2
+    =2-2\sqrt{\frac{m(N-M)}{M(N-m)}}.
+\end{equation}
+As in the proof of \cref{thm:centered-stability}, unitarity of the discrete Fourier transform and Cauchy--Schwarz bound the total variation distance of the squared Fourier amplitudes by the vector distance in \eqref{eq:exact-normalized-repair-distance}.  This proves the first line of \eqref{eq:centered-prime-sieve-tv}.
+
+The prime number theorem gives
+\[
+    \frac{k}{M}\sim\frac2p,
+    \qquad
+    \frac{k}{N-M}=o(p^{-1}).
+\]
+Since
+\[
+    \sqrt{\frac{m(N-M)}{M(N-m)}}
+    =\sqrt{\frac{1-k/M}{1+k/(N-M)}},
+\]
+a first-order expansion proves the second line of \eqref{eq:centered-prime-sieve-tv}.  Combine this total-variation estimate with \cref{thm:centered-prime-haar} to obtain \eqref{eq:sieve-haar-limit}.
+\end{proof}
+
+\begin{remark}[Weak convergence cannot be strengthened to total variation]\label{rem:haar-not-tv}
+For every finite $N$, the measure $\mu^{\circ}_{\cP,N}$ is supported on a finite grid, whereas $m_{\T}$ is nonatomic.  Consequently
+\[
+    \|\mu^{\circ}_{\cP,N}-m_{\T}\|_{\TV}=1,
+\]
+and the same holds for $\mu^{\circ}_{Q_k,N_k}$.  The limits in \eqref{eq:prime-haar-limit} and \eqref{eq:sieve-haar-limit} are therefore genuinely weak limits.  By contrast, \eqref{eq:centered-prime-sieve-tv} compares two measures on the same finite grid and does tend to zero in total variation.
 \end{remark}
 
 \section{Nested prime-prefix cylinders and numerical parameter}
@@ -495,7 +737,6 @@ Suppose $v\ne\uP$ belonged to every closed cylinder.  Choose $w$ strictly betwee
 
 Monotone bisection of the cylinder endpoints gives the values in \cref{tab:parameter-cylinders}.  The computation used decimal arithmetic and direct iteration of $f_u$; it is auxiliary and is not used in any proof.
 
-\clearpage
 \begin{table}[ht]
 \centering
 \caption{Prime-prefix cylinders for the unique quadratic parameter.  The midpoint is rounded to 24 decimal places.}\label{tab:parameter-cylinders}
@@ -529,7 +770,7 @@ The results establish a rigorous bridge between cumulative sieving and a single 
     \cP[0,p_{k+1}^2)
     =K(f_{\uP})[0,p_{k+1}^2).
 \]
-The bridge preserves all fixed finite-block statistics, correlations away from the terminal boundary, and normalized finite Fourier periodograms with explicit error bounds.
+The bridge preserves all fixed finite-block statistics, correlations away from the terminal boundary, and both uncentered and centered normalized finite Fourier periodograms with explicit error bounds.
 
 Four distinctions are essential.
 
@@ -540,7 +781,7 @@ Four distinctions are essential.
 
     \item \textbf{Periodograms are not transfer-operator spectra.}  \Cref{thm:periodogram-stability} concerns the discrete Fourier power of finite symbol vectors.  It does not control eigenvalues or resonances of Perron--Frobenius, Koopman, or renormalization operators.
 
-    \item \textbf{Stability is not existence of a prime spectral limit.}  The estimates prove that $Q_k$ and $\cP$ share any subsequential Fourier limit.  Proving that a limit exists, identifying it, or relating it to Riemann zeros requires additional arithmetic input about prime correlations.
+    \item \textbf{The weak limits are universal.}  The uncentered limit $\delta_0$ is forced by zero prime density.  After centering and energy normalization, the fixed-frequency limit is Haar because an upper-bound sieve makes every nonzero fixed cyclic correlation negligible relative to the prime energy.  These facts do not identify mesoscopic correlations, growing-lag behavior, local spectral statistics, or any relation to Riemann zeros.
 \end{enumerate}
 
 Within these limits, the paper supplies the missing second layer between symbolic convergence and spectral modeling.  Subsequent work can start from a fixed admissible orbit and explicit perturbation norms, instead of assuming a finite-stage topological conjugacy.
@@ -549,9 +790,9 @@ Within these limits, the paper supplies the missing second layer between symboli
 
 The cumulative sieve word on its full quadratic validity horizon admits an exact and exceptionally sparse repair: change the $k$ sieving primes from $R$ to $L$.  The repaired word is the natural prime indicator, is strictly kneading-admissible, and determines a unique real quadratic parameter.  Thus the prime sequence has an exact inverse realization as a quadratic critical itinerary.
 
-The repair has density $k/p_{k+1}^2\sim1/(p_{k+1}\log p_{k+1})$.  This single identity yields quantitative stability for every fixed cylinder statistic, for correlations, and for normalized Fourier periodograms.  In particular, the cumulative sieve masks and the exact prime kneading orbit possess the same subsequential Fourier-spectral limits along $N_k=p_{k+1}^2$.
+The repair has density $k/p_{k+1}^2\sim1/(p_{k+1}\log p_{k+1})$.  This single identity yields quantitative stability for every fixed cylinder statistic, for correlations, and for normalized Fourier periodograms.  In particular, the cumulative sieve masks and the exact prime kneading orbit possess the same Fourier-spectral limits along $N_k=p_{k+1}^2$.
 
-The next theoretical obstruction is now sharply located.  One must prove existence and structure of the prime spectral limit itself, or establish stability for an operator whose spectrum has an independent dynamical meaning.  Those tasks require new arithmetic or operator-theoretic estimates; they do not follow from kneading realizability alone.
+Those limits can be identified unconditionally.  Without centering, both periodograms converge in total variation to $\delta_0$.  With empirical centering and energy normalization, both converge weakly to Haar measure.  Thus fixed-frequency weak convergence is too coarse to retain refined prime-pair information.  The next theoretical obstruction is sharply located at growing lags, mesoscopic spectral scales, or operators whose spectra have an independent dynamical meaning; none of these follows from kneading realizability alone.
 
 \section*{Data and code availability}
 
