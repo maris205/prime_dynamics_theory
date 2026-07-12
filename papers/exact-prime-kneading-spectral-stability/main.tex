@@ -1,0 +1,571 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\Sig}{\Sigma}
+\newcommand{\sh}{\sigma}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\uP}{u_{\mathcal P}}
+\newcommand{\bP}{b_{\mathcal P}}
+\newcommand{\TV}{\mathrm{TV}}
+\newcommand{\one}{\mathbf{1}}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\supp}{supp}
+
+\title{\textbf{An Exact Prime Kneading Orbit:}\\
+Sparse Admissible Repair and Fourier-Spectral Stability of Sieve Words}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let $Q_k$ be the cumulative Eratosthenes sieve word formed from the first $k$ primes, let $p=p_{k+1}$, and let $\cP$ be the natural prime word.  We prove that on the full sieve-valid horizon $[0,p^2)$ the two words disagree at exactly the $k$ sieving primes.  Thus
+\[
+    d_H\bigl(Q_k[0,p^2),\cP[0,p^2)\bigr)=k,
+\]
+so the repair density is $k/p^2\sim 1/(p\log p)$.  This is an explicit sparse repair, rather than an inference from a small density of failed maximality comparisons.
+
+The repaired word has an exact dynamical realization.  We prove directly that $\cP$ is strictly maximal in the parity-lexicographic order and is not eventually periodic.  The Milnor--Thurston realization theorem and density of hyperbolicity in the real quadratic family therefore yield a unique parameter $\uP\in(1,2)$ for which the critical-value itinerary of $f_u(x)=1-u x^2$ is exactly $\cP$.  Nested prime-prefix cylinders give the numerical value
+\[
+    \uP=1.962717631158954623214532\ldots.
+\]
+
+We then quantify what the sparse repair preserves.  For every fixed block length $r$, empirical $r$-cylinder distributions and all bounded $r$-local observables differ by $O(rk/p^2)$.  Fixed-lag correlations obey the same scale.  For the $\{\pm1\}$ coding, the normalized discrete periodogram measures satisfy
+\[
+    \bigl\|\mu_{Q_k,p^2}-\mu_{\cP,p^2}\bigr\|_{\TV}
+    \le \frac{2\sqrt{k}}{p}
+    =O\!\left((p\log p)^{-1/2}\right).
+\]
+Consequently the sieve words and the exact prime kneading orbit have identical subsequential Fourier-spectral limits along the physical horizons.  The construction is inverse: the quadratic parameter encodes the prime word and does not independently predict primes.  No claim about phase-space shadowing, transfer-operator spectra, or Riemann zeros is made.
+\end{abstract}
+
+\noindent\textbf{Keywords:} prime indicator; sieve of Eratosthenes; kneading theory; sparse repair; symbolic shadowing; periodogram; spectral stability.
+
+\medskip
+\noindent\textbf{MSC 2020:} 37E05; 37B10; 11A41; 42A16.
+
+\section{Introduction}
+
+The Sieve of Eratosthenes admits a natural binary formulation: each prime contributes a periodic mask and the cumulative mask removes integers with a small prime factor.  A proposed connection between these masks and quadratic dynamics was developed in \citet{Wang2026Published}.  A subsequent rigorous reformulation separated ordered symbolic convergence, kneading realizability, and topological conjugacy \citep{WangReformulation2026}.  That work proved unconditionally that the cumulative sieve words converge in the parity-lexicographic order to the band-merging coordinate $RLR^\infty$.  It also showed that universal finite-stage admissibility is false, while the density of detected maximality defects on the physical horizon tends to zero.
+
+Vanishing defect density is not yet a repair theorem.  A failed comparison is a property of a shift of a word, not a symbol which can simply be edited.  In general, a sparse collection of failed maximality comparisons need not imply small Hamming distance to the admissible language.  This logical gap is important for later statistical and spectral models \citep{WangSequential2026,WangSpectral2026,WangHenon2026}.
+
+The arithmetic structure of the Eratosthenes horizon supplies a much stronger and more explicit bridge.  Below $p_{k+1}^2$, the cumulative sieve correctly classifies every composite and every prime not already used as a sieve factor.  Its only disagreement with the natural prime indicator occurs at the $k$ sieving primes themselves.  The natural prime word is therefore an explicit sparse repair of the cumulative mask.
+
+The second observation is dynamical.  The natural prime word is not merely close to an admissible word: it is itself strictly admissible.  Classical fullness of the quadratic family then realizes it as a critical itinerary.  Since the word is aperiodic, density of hyperbolicity eliminates parameter plateaus and gives uniqueness.  This creates an exact inverse kneading encoding of the primes and permits deterministic stability estimates for local statistics and finite Fourier spectra.
+
+\subsection*{Main results}
+
+Write $2=p_1<p_2<\cdots$ for the primes and put $p=p_{k+1}$ and $N_k=p^2$.  The results are:
+
+\begin{enumerate}[label=\textbf{R\arabic*.},leftmargin=3.2em]
+    \item The natural prime word $\cP$ is strictly self-admissible and aperiodic.  There is a unique $\uP\in(1,2)$ such that
+    \[
+        K(f_{\uP})=\cP,
+        \qquad f_u(x)=1-u x^2.
+    \]
+
+    \item The cumulative sieve word has the exact repair identity
+    \[
+        \{0\le n<N_k:Q_k(n)\ne\cP(n)\}
+        =\{p_1,\ldots,p_k\}.
+    \]
+    Hence $d_H=k$ and $d_H/N_k\sim1/(p\log p)$.
+
+    \item If $\Phi$ depends on $r$ consecutive symbols, then its empirical averages along $Q_k$ and the exact quadratic itinerary $\cP$ differ by at most
+    \[
+        \frac{2r\|\Phi\|_\infty k}{N_k-r+1}.
+    \]
+
+    \item For the $\{\pm1\}$ coding and lag $\tau<N_k$, the finite correlations satisfy
+    \[
+        |C_\tau(Q_k;N_k)-C_\tau(\cP;N_k)|
+        \le \frac{4k}{N_k-\tau}.
+    \]
+
+    \item The normalized Fourier periodogram measures satisfy
+    \[
+        \|\mu_{Q_k,N_k}-\mu_{\cP,N_k}\|_{\TV}
+        \le 2\sqrt{\frac{k}{N_k}}
+        =\frac{2\sqrt{k}}{p}.
+    \]
+    Along any fixed subsequence, weak convergence of one sequence of periodogram measures implies convergence of the other to the same limit.
+\end{enumerate}
+
+Every theorem above is unconditional.  The prime number theorem is used only to display the sharp rates in terms of $p$; the convergence itself already follows from elementary bounds.
+
+\section{Symbolic and arithmetic setup}
+
+\subsection{Parity-lexicographic order}
+
+Let $\Sig=\{L,R\}^{\N_0}$ and let $\sh$ denote the left shift.  The base order is $L<R$.
+
+\begin{definition}[Parity-lexicographic order]\label{def:parity-order}
+Let $S,T\in\Sig$ be distinct and let
+\[
+    j=\min\{n\ge0:S(n)\ne T(n)\}.
+\]
+If the common prefix $S[0,j)=T[0,j)$ contains an even number of $R$ symbols, compare $S(j)$ and $T(j)$ by $L<R$.  If it contains an odd number, reverse the comparison.  The resulting order is denoted by $\prec$.
+\end{definition}
+
+An endpoint-free word $S$ is \emph{strictly self-admissible} if
+\begin{equation}\label{eq:strict-admissibility}
+    \sh^m S\prec S\qquad(m\ge1).
+\end{equation}
+For nonperiodic two-symbol itineraries, this is the strict MSS maximality condition.  It is equivalent to admissibility of the associated kneading determinant under the standard change from itinerary symbols to cumulative orientation signs; see \citet{MilnorThurston1988} and \citet{deMeloVanStrien1993}.  Some conventions code the critical point rather than the critical value, or interchange $L$ and $R$; these changes do not affect the arguments below.
+
+For two finite words $S,T$ of the same length $N$, define
+\begin{equation}\label{eq:hamming}
+    d_H(S,T)=|\{0\le n<N:S(n)\ne T(n)\}|.
+\end{equation}
+
+\subsection{Cumulative sieve and natural prime words}
+
+Let
+\[
+    P_k=\prod_{j=1}^k p_j.
+\]
+The cumulative sieve word $Q_k\in\Sig$ is
+\begin{equation}\label{eq:Qk}
+    Q_k(0)=R,
+    \qquad
+    Q_k(n)=
+    \begin{cases}
+        L,&\gcd(n,P_k)=1,\\
+        R,&\gcd(n,P_k)>1,
+    \end{cases}
+    \quad n\ge1.
+\end{equation}
+The natural prime word $\cP\in\Sig$ is
+\begin{equation}\label{eq:prime-word}
+    \cP(0)=R,
+    \qquad \cP(1)=L,
+    \qquad
+    \cP(n)=
+    \begin{cases}
+        L,&n\text{ is prime},\\
+        R,&n\text{ is composite},
+    \end{cases}
+    \quad n\ge2.
+\end{equation}
+The seed $\cP(1)=L$ is the normalization inherited from the sieve word; from index $2$ onward, $L$ is exactly the prime indicator.
+
+Let $p=p_{k+1}$.  The half-open interval
+\begin{equation}\label{eq:physical-horizon}
+    [0,N_k),\qquad N_k=p_{k+1}^2,
+\end{equation}
+is the full validity horizon for sieving by primes smaller than $p$.  The endpoint $p^2$ is excluded: it is the first composite whose least prime factor is not among $p_1,\ldots,p_k$.
+
+\section{The exact prime word is a unique quadratic kneading invariant}
+
+\begin{proposition}[Strict admissibility]\label{prop:prime-admissible}
+For every $m\ge1$,
+\[
+    \sh^m\cP\prec\cP.
+\]
+\end{proposition}
+
+\begin{proof}
+If $\cP(m)=L$, then the shift starts with $L$ while $\cP$ starts with $R$, so the comparison is decided at position $0$ in the base order and the shift is smaller.
+
+Suppose $\cP(m)=R$.  Then $m\ge4$ is composite.  Both words begin with $R$, so the order is reversed at the next disagreement.  If $\cP(m+1)=R$, position $1$ compares the shifted $R$ with $\cP(1)=L$; in the reversed order the shifted word is smaller.
+
+If $\cP(m+1)=L$, then $m+1$ is an odd prime at least $5$, hence $m+2$ is even and composite.  The two words agree as $RL$ at positions $0,1$.  Their common prefix still contains one $R$, and at position $2$ the shifted symbol $R$ is smaller, in the reversed order, than $\cP(2)=L$.  Every nonzero shift is therefore defeated by position $2$ at the latest.
+\end{proof}
+
+\begin{proposition}[Aperiodicity]\label{prop:prime-aperiodic}
+The word $\cP$ is not eventually periodic.
+\end{proposition}
+
+\begin{proof}
+Suppose that $\cP(n+T)=\cP(n)$ for every $n\ge n_0$ and some $T\ge1$.  Choose a prime $q>n_0$.  Then $\cP(q)=L$, and periodicity gives
+\[
+    \cP(q+qT)=\cP(q)=L.
+\]
+But $q+qT=q(1+T)$ is composite and is larger than $n_0$, a contradiction.
+\end{proof}
+
+For $0<u\le2$, let
+\begin{equation}\label{eq:quadratic-family}
+    f_u(x)=1-u x^2.
+\end{equation}
+Starting at the critical value $x_0=1$, put $x_{n+1}=f_u(x_n)$ and code $x_n>0$ by $R$ and $x_n<0$ by $L$.  The resulting word, when the orbit never reaches $0$, is denoted by $K(f_u)$.
+
+\begin{theorem}[Unique quadratic realization]\label{thm:unique-realization}
+There is a unique parameter $\uP\in(1,2)$ such that
+\begin{equation}\label{eq:prime-kneading}
+    K(f_{\uP})=\cP.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \cref{prop:prime-admissible}, $\cP$ satisfies the strict, nonperiodic MSS admissibility condition.  The realization theorem of \citet[Thm.~12.1]{MilnorThurston1988} states that every admissible kneading invariant occurs in the real quadratic family.  Equivalently, there is a logistic parameter $b\in(2,4]$ such that the critical-value itinerary of
+\[
+    g_b(t)=b t(1-t)
+\]
+is $\cP$.  The restriction $b>2$ follows from the first symbol $\cP(0)=R$, since the critical value $b/4$ must lie to the right of the critical point $1/2$.
+
+We next prove uniqueness.  The kneading invariant is monotone in $b$ \citep[Thm.~13.1]{MilnorThurston1988}.  If $b_1<b_2$ both realized the aperiodic word $\cP$, monotonicity would force every parameter in $[b_1,b_2]$ to have the same kneading invariant.  Hyperbolic parameters are dense in the real logistic family \citep{GraczykSwiatek1997}.  Hence the interval would contain a map with an attracting periodic orbit, whose critical itinerary is eventually periodic, contradicting \cref{prop:prime-aperiodic}.  Thus $b=\bP$ is unique.
+
+Finally define the orientation-preserving affine coordinate
+\[
+    h_b(t)=\frac{4}{b-2}\left(t-\frac12\right).
+\]
+A direct calculation gives
+\begin{equation}\label{eq:logistic-conjugacy}
+    h_b\circ g_b\circ h_b^{-1}(x)=1-u x^2,
+    \qquad
+    u=\frac{b(b-2)}4.
+\end{equation}
+The map $b\mapsto b(b-2)/4$ is strictly increasing on $(2,4]$, so existence and uniqueness transfer to $\uP$.  Since the second symbol of $\cP$ is $L$, one has $f_{\uP}(1)=1-\uP<0$, and hence $\uP>1$.
+\end{proof}
+
+\begin{remark}[Inverse encoding, not prediction]\label{rem:inverse}
+The parameter $\uP$ is selected by the complete prime word through inverse kneading theory.  Equation \eqref{eq:prime-kneading} is therefore an exact deterministic encoding, but it is not an independent generator of the primes.  Determining $\uP$ to enough precision to recover a long prime prefix already uses that prefix.
+\end{remark}
+
+\section{Exact sparse repair on the quadratic sieve horizon}
+
+\begin{theorem}[Exact repair identity]\label{thm:exact-repair}
+Let $p=p_{k+1}$ and $N_k=p^2$.  Then
+\begin{equation}\label{eq:difference-set}
+    \{0\le n<N_k:Q_k(n)\ne\cP(n)\}
+    =\{p_1,p_2,\ldots,p_k\}.
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:exact-hamming}
+    d_H\bigl(Q_k[0,N_k),\cP[0,N_k)\bigr)=k.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The words agree at $0$ and $1$.  Let $2\le n<p^2$.
+
+If $n$ is composite, its least prime factor is at most $\sqrt n<p$.  That factor is one of $p_1,\ldots,p_k$, so $\gcd(n,P_k)>1$ and both words mark $n$ by $R$.
+
+If $n$ is prime and $n<p$, then $n\in\{p_1,\ldots,p_k\}$.  The cumulative mask marks the sieve factor itself by $R$, whereas the natural prime word marks it by $L$.
+
+If $n$ is prime and $n\ge p$, then $n$ is coprime to $P_k$, so both words mark it by $L$.  These cases prove \eqref{eq:difference-set}, and \eqref{eq:exact-hamming} follows.
+\end{proof}
+
+\begin{corollary}[Vanishing repair density]\label{cor:repair-density}
+The exact repair density satisfies
+\begin{equation}\label{eq:repair-rate}
+    \frac{d_H(Q_k[0,N_k),\cP[0,N_k))}{N_k}
+    =\frac{k}{p_{k+1}^2}\longrightarrow 0.
+\end{equation}
+More precisely, the prime number theorem gives
+\begin{equation}\label{eq:repair-pnt}
+    \frac{k}{p_{k+1}^2}
+    \sim\frac{1}{p_{k+1}\log p_{k+1}}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The elementary inequality $k<p_{k+1}$ already makes the ratio in \eqref{eq:repair-rate} at most $1/p_{k+1}$.  The sharper relation \eqref{eq:repair-pnt} follows from $k=\pi(p_k)$ and the prime number theorem; see, for example, \citet{MontgomeryVaughan2007}.
+\end{proof}
+
+Combining \cref{thm:unique-realization,thm:exact-repair} gives an exact form of symbolic shadowing.
+
+\begin{corollary}[Sparse symbolic shadowing]\label{cor:symbolic-shadowing}
+On $[0,N_k)$, the sieve word $Q_k$ differs in exactly $k$ symbols from the critical-value itinerary of the single quadratic map $f_{\uP}$.
+\end{corollary}
+
+\begin{remark}[Why this is stronger than defect density]
+The defect-density theorem in \citet{WangReformulation2026} counts shifts which defeat a finite maximality comparison.  It does not, by itself, identify symbols whose modification repairs all comparisons.  The present repair is obtained independently from the arithmetic validity of Eratosthenes sieving below $p^2$.  The repair word is explicit, globally admissible, and realized by one fixed quadratic parameter.
+\end{remark}
+
+\section{Stability of cylinders and local observables}
+
+We first record a general finite-word estimate.  Let $S,T\in\{L,R\}^N$ and fix $1\le r\le N$.  For $w\in\{L,R\}^r$, define the empirical $r$-block distribution
+\begin{equation}\label{eq:block-distribution}
+    \nu_{S,N}^{(r)}(w)
+    =\frac{1}{N-r+1}
+      \bigl|\{0\le n\le N-r:S[n,n+r)=w\}\bigr|.
+\end{equation}
+
+\begin{theorem}[Finite-block stability]\label{thm:block-stability}
+If $d=d_H(S,T)$, then
+\begin{equation}\label{eq:block-tv}
+    \bigl\|\nu_{S,N}^{(r)}-\nu_{T,N}^{(r)}\bigr\|_{\TV}
+    \le \min\left\{1,\frac{rd}{N-r+1}\right\}.
+\end{equation}
+Equivalently, for every bounded function $\Phi:\{L,R\}^r\to\mathbb C$,
+\begin{equation}\label{eq:local-observable}
+\begin{split}
+    \left|
+    \frac{1}{N-r+1}\sum_{n=0}^{N-r}\Phi(S[n,n+r))
+    -\frac{1}{N-r+1}\sum_{n=0}^{N-r}\Phi(T[n,n+r))
+    \right|\\
+    \le \frac{2r\|\Phi\|_\infty d}{N-r+1}.
+\end{split}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+A mismatched symbol at index $j$ can affect only those length-$r$ windows whose starting index lies in $[j-r+1,j]$.  There are at most $r$ such windows.  Hence no more than $rd$ of the $N-r+1$ windows can differ.
+
+Replacing one observed block by another changes the $\ell^1$ distance between empirical distributions by at most $2/(N-r+1)$.  Therefore the total variation distance, one half of the $\ell^1$ distance, is bounded by $rd/(N-r+1)$, with the trivial upper bound $1$.  For \eqref{eq:local-observable}, each affected summand changes by at most $2\|\Phi\|_\infty$.
+\end{proof}
+
+\begin{corollary}[Prime-sieve cylinder stability]\label{cor:prime-blocks}
+Let $N_k=p_{k+1}^2$.  Then
+\begin{equation}\label{eq:prime-block-bound}
+    \bigl\|\nu_{Q_k,N_k}^{(r)}-\nu_{\cP,N_k}^{(r)}\bigr\|_{\TV}
+    \le\frac{rk}{N_k-r+1}.
+\end{equation}
+For every fixed $r$, the right-hand side is
+\[
+    O\!\left(\frac{r}{p_{k+1}\log p_{k+1}}\right).
+\]
+The same estimates compare $Q_k$ with the first $N_k$ symbols of $K(f_{\uP})$.
+\end{corollary}
+
+Thus every fixed finite pattern statistic is stable under the exact repair.  The statement is simultaneous for all $2^r$ cylinders and does not require the existence of a limiting prime-block distribution.
+
+\section{Correlation stability}
+
+Encode a word $S$ by
+\begin{equation}\label{eq:pm-encoding}
+    a_n(S)=
+    \begin{cases}
+        +1,&S(n)=L,\\
+        -1,&S(n)=R.
+    \end{cases}
+\end{equation}
+For a word of length $N$ and $0\le\tau<N$, define the finite correlation
+\begin{equation}\label{eq:correlation}
+    C_\tau(S;N)
+    =\frac{1}{N-\tau}
+      \sum_{n=0}^{N-\tau-1}a_n(S)a_{n+\tau}(S).
+\end{equation}
+
+\begin{theorem}[Correlation stability]\label{thm:correlation-stability}
+If $S,T\in\{L,R\}^N$ and $d_H(S,T)=d$, then
+\begin{equation}\label{eq:correlation-bound}
+    |C_\tau(S;N)-C_\tau(T;N)|
+    \le\min\left\{2,\frac{4d}{N-\tau}\right\}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+A mismatch at one index can affect at most two products in \eqref{eq:correlation}: one in which the index is the left endpoint and one in which it is the right endpoint.  Hence at most $2d$ products are affected.  Each product lies in $\{\pm1\}$ and changes by at most $2$, giving \eqref{eq:correlation-bound} after division by $N-\tau$.
+\end{proof}
+
+\begin{corollary}\label{cor:prime-correlations}
+For $N_k=p_{k+1}^2$,
+\begin{equation}\label{eq:prime-correlation-bound}
+    |C_\tau(Q_k;N_k)-C_\tau(\cP;N_k)|
+    \le \frac{4k}{N_k-\tau}.
+\end{equation}
+Uniformly for $0\le\tau\le\alpha N_k$, where $0\le\alpha<1$ is fixed, the right-hand side is
+\[
+    O_\alpha\!\left(\frac{1}{p_{k+1}\log p_{k+1}}\right).
+\]
+\end{corollary}
+
+The estimate includes fixed lags and lags growing as any fixed fraction below the horizon.  It does not assert that the prime correlations themselves converge; it says that the cumulative sieve and exact quadratic itinerary have the same asymptotic correlation behavior whenever either limit exists.
+
+\section{Fourier-periodogram stability}
+
+Let $S\in\{L,R\}^N$ and use the encoding \eqref{eq:pm-encoding}.  Its unitary discrete Fourier transform is
+\begin{equation}\label{eq:dft}
+    \widehat a_j(S)
+    =\frac{1}{\sqrt N}\sum_{n=0}^{N-1}
+      a_n(S)e^{-2\pi i jn/N},
+    \qquad 0\le j<N.
+\end{equation}
+Define the normalized periodogram measure on $\T=\R/\mathbb Z$ by
+\begin{equation}\label{eq:periodogram-measure}
+    \mu_{S,N}
+    =\frac1N\sum_{j=0}^{N-1}
+      |\widehat a_j(S)|^2\,\delta_{j/N}.
+\end{equation}
+Parseval's identity and $|a_n(S)|=1$ show that $\mu_{S,N}$ is a probability measure.
+
+\begin{theorem}[Periodogram stability]\label{thm:periodogram-stability}
+Let $S,T\in\{L,R\}^N$ and put $d=d_H(S,T)$.  Then
+\begin{equation}\label{eq:periodogram-tv}
+    \|\mu_{S,N}-\mu_{T,N}\|_{\TV}
+    \le 2\sqrt{\frac dN}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The two encoded vectors differ by $2$ in absolute value at precisely $d$ coordinates, so
+\[
+    \|a(S)-a(T)\|_2=2\sqrt d.
+\]
+The discrete Fourier transform in \eqref{eq:dft} is unitary.  Hence
+\begin{equation}\label{eq:parseval-difference}
+    \|\widehat a(S)-\widehat a(T)\|_2=2\sqrt d,
+    \qquad
+    \|\widehat a(S)\|_2=\|\widehat a(T)\|_2=\sqrt N.
+\end{equation}
+On the common Fourier grid, twice the total variation distance equals the $\ell^1$ distance between the weights.  By Cauchy--Schwarz,
+\begin{align*}
+    2\|\mu_{S,N}-\mu_{T,N}\|_{\TV}
+    &=\frac1N\sum_{j=0}^{N-1}
+      \left||\widehat a_j(S)|^2-|\widehat a_j(T)|^2\right|\\
+    &\le\frac1N
+      \bigl(\|\widehat a(S)\|_2+\|\widehat a(T)\|_2\bigr)
+      \|\widehat a(S)-\widehat a(T)\|_2\\
+    &=4\sqrt{\frac dN}.
+\end{align*}
+Dividing by $2$ proves \eqref{eq:periodogram-tv}.
+\end{proof}
+
+\begin{corollary}[Prime-sieve spectral equivalence]\label{cor:prime-periodogram}
+At $N_k=p_{k+1}^2$,
+\begin{equation}\label{eq:prime-periodogram}
+    \|\mu_{Q_k,N_k}-\mu_{\cP,N_k}\|_{\TV}
+    \le\frac{2\sqrt{k}}{p_{k+1}}
+    =O\!\left(\frac1{\sqrt{p_{k+1}\log p_{k+1}}}\right).
+\end{equation}
+Consequently, along any subsequence $k_j$, the measures $\mu_{Q_{k_j},N_{k_j}}$ converge weakly if and only if $\mu_{\cP,N_{k_j}}$ converge weakly, and their limits are equal.
+\end{corollary}
+
+\begin{proof}
+Insert $d=k$ and $N_k=p_{k+1}^2$ into \cref{thm:periodogram-stability}.  The rate follows from the prime number theorem.  Total variation convergence to zero implies equality of all weak subsequential limits.
+\end{proof}
+
+\begin{remark}[Centering]
+Subtracting the empirical mean before the discrete Fourier transform changes only the zero-frequency coefficient.  Thus the nonzero-frequency comparison is unchanged.  If one subsequently renormalizes the centered spectrum to unit mass, a separate lower bound on the centered energy is required.
+\end{remark}
+
+\section{Nested prime-prefix cylinders and numerical parameter}
+
+For $M\ge1$, define the parameter cylinder
+\begin{equation}\label{eq:parameter-cylinder}
+    I_M=\{u\in[1,2]:K(f_u)[0,M)=\cP[0,M)\}.
+\end{equation}
+
+\begin{proposition}[Shrinking cylinders]\label{prop:shrinking-cylinders}
+The sets $I_M$ are nonempty intervals, they are nested, and
+\begin{equation}\label{eq:cylinder-intersection}
+    \bigcap_{M\ge1}\overline{I_M}=\{\uP\}.
+\end{equation}
+In particular,
+\begin{equation}\label{eq:cylinder-diameter}
+    \diam(\overline{I_M})\longrightarrow0.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Nonemptiness follows from $\uP\in I_M$.  A fixed parity-lexicographic prefix determines an interval in the ordered kneading space, and the kneading invariant is monotone in the quadratic parameter.  Hence each $I_M$ is an interval.  The cylinders are nested because matching $M+1$ symbols implies matching $M$.
+
+Suppose $v\ne\uP$ belonged to every closed cylinder.  Choose $w$ strictly between $v$ and $\uP$.  Since each $I_M$ is an interval containing $\uP$ and having $v$ in its closure, one has $w\in I_M$ for every $M$.  The complete itinerary of $f_w$ would then equal $\cP$, contradicting uniqueness in \cref{thm:unique-realization}.  Thus the intersection is the singleton $\{\uP\}$.  Nested compact intervals with singleton intersection have diameters tending to zero.
+\end{proof}
+
+Monotone bisection of the cylinder endpoints gives the values in \cref{tab:parameter-cylinders}.  The computation used decimal arithmetic and direct iteration of $f_u$; it is auxiliary and is not used in any proof.
+
+\clearpage
+\begin{table}[ht]
+\centering
+\caption{Prime-prefix cylinders for the unique quadratic parameter.  The midpoint is rounded to 24 decimal places.}\label{tab:parameter-cylinders}
+\begin{tabular}{rcc}
+\toprule
+$M$ & midpoint of $I_M$ & $\diam(I_M)$\\
+\midrule
+10  & $1.963201513261313838134946$ & $1.646\times10^{-3}$\\
+20  & $1.962717993500556150425984$ & $1.852\times10^{-6}$\\
+40  & $1.962717631159734191771903$ & $2.618\times10^{-12}$\\
+80  & $1.962717631158954623214533$ & $4.515\times10^{-24}$\\
+120 & $1.962717631158954623214533$ & $8.377\times10^{-36}$\\
+160 & $1.962717631158954623214533$ & $1.463\times10^{-47}$\\
+200 & $1.962717631158954623214533$ & $2.465\times10^{-59}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The corresponding logistic parameter, from \eqref{eq:logistic-conjugacy}, is
+\begin{equation}\label{eq:prime-logistic-parameter}
+    \bP=1+\sqrt{1+4\uP}
+    =3.975041264358499363108264\ldots.
+\end{equation}
+
+\section{Interpretation and limits}
+
+The results establish a rigorous bridge between cumulative sieving and a single exact quadratic itinerary:
+\[
+    Q_k[0,p_{k+1}^2)
+    \xrightarrow[\text{exactly }k\text{ edits}]{}
+    \cP[0,p_{k+1}^2)
+    =K(f_{\uP})[0,p_{k+1}^2).
+\]
+The bridge preserves all fixed finite-block statistics, correlations away from the terminal boundary, and normalized finite Fourier periodograms with explicit error bounds.
+
+Four distinctions are essential.
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{The realization is inverse.}  The full prime word selects $\uP$.  The construction does not provide a shorter algorithm for deciding primality and does not explain the primes from an independently chosen physical parameter.
+
+    \item \textbf{Symbolic shadowing is not metric shadowing.}  Hamming closeness of itineraries does not bound $|f_{\uP}^n(1)-x_n|$ for an independently specified orbit.  Near the critical point, a single symbolic disagreement can correspond to delicate phase-space behavior.
+
+    \item \textbf{Periodograms are not transfer-operator spectra.}  \Cref{thm:periodogram-stability} concerns the discrete Fourier power of finite symbol vectors.  It does not control eigenvalues or resonances of Perron--Frobenius, Koopman, or renormalization operators.
+
+    \item \textbf{Stability is not existence of a prime spectral limit.}  The estimates prove that $Q_k$ and $\cP$ share any subsequential Fourier limit.  Proving that a limit exists, identifying it, or relating it to Riemann zeros requires additional arithmetic input about prime correlations.
+\end{enumerate}
+
+Within these limits, the paper supplies the missing second layer between symbolic convergence and spectral modeling.  Subsequent work can start from a fixed admissible orbit and explicit perturbation norms, instead of assuming a finite-stage topological conjugacy.
+
+\section{Conclusion}
+
+The cumulative sieve word on its full quadratic validity horizon admits an exact and exceptionally sparse repair: change the $k$ sieving primes from $R$ to $L$.  The repaired word is the natural prime indicator, is strictly kneading-admissible, and determines a unique real quadratic parameter.  Thus the prime sequence has an exact inverse realization as a quadratic critical itinerary.
+
+The repair has density $k/p_{k+1}^2\sim1/(p_{k+1}\log p_{k+1})$.  This single identity yields quantitative stability for every fixed cylinder statistic, for correlations, and for normalized Fourier periodograms.  In particular, the cumulative sieve masks and the exact prime kneading orbit possess the same subsequential Fourier-spectral limits along $N_k=p_{k+1}^2$.
+
+The next theoretical obstruction is now sharply located.  One must prove existence and structure of the prime spectral limit itself, or establish stability for an operator whose spectrum has an independent dynamical meaning.  Those tasks require new arithmetic or operator-theoretic estimates; they do not follow from kneading realizability alone.
+
+\section*{Data and code availability}
+
+All principal statements are analytic.  A standard-library decimal bisection script reproducing \cref{tab:parameter-cylinders} accompanies the manuscript.  The source, script, and verified PDF are available from the author's public repository cited in \citet{WangReformulation2026}.
+
+\section*{Acknowledgements}
+
+The author thanks the reviewers of the related manuscripts for comments which motivated a precise separation between symbolic repair, statistical stability, and operator spectra.  AI-assisted tools were used for auxiliary typesetting, numerical cross-checking, and proof auditing; all mathematical statements and conclusions are the responsibility of the author.
+
+\section*{Disclosure statement}
+
+The author reports no competing interests.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
