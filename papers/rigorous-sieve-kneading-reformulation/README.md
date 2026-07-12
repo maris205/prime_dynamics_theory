@@ -4,7 +4,7 @@ This folder contains the source for the first theory-focused follow-up paper.
 
 - `main.tex`: manuscript source
 - `references.bib`: bibliography
-- final verified PDF: `../../output/pdf/rigorous-sieve-kneading-reformulation.pdf`
+- `rigorous-sieve-kneading-reformulation.pdf`: final verified manuscript
 
 Build from this directory with:
 
