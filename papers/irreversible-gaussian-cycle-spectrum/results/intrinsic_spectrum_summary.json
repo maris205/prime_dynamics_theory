@@ -1,0 +1,150 @@
+{
+  "parameters": {
+    "u_critical": 1.5436890127,
+    "atlas_sigma": 0.05,
+    "atlas_dimension": 512,
+    "snapshot_dimension": 768,
+    "dobrushin_dimension": 512,
+    "atlas_points": 81,
+    "trace_dimensions": [
+      128,
+      192,
+      256,
+      384,
+      512,
+      768,
+      1024,
+      1536,
+      2048
+    ],
+    "target_data_loaded": false
+  },
+  "software": {
+    "python": "3.10.12",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.9"
+  },
+  "folding_audit": {
+    "dimension": 192,
+    "folded_dimension": 96,
+    "maximum_row_reflection_error": 8.326672684688674e-17,
+    "significant_folded_eigenvalues": 11,
+    "maximum_match_error_above_1e-4": 2.2625667615502887e-13,
+    "full_eigenvalues_below_1e-10": 158
+  },
+  "trace_convergence": {
+    "fits": {
+      "c2": {
+        "continuum_extrapolation": 0.26578323757741845,
+        "dimension_slope": -2.000130445569217,
+        "quadratic_in_h2_coefficients": [
+          -8.828582617623125,
+          -1.703660291684118,
+          0.26578323757741845
+        ]
+      },
+      "c3": {
+        "continuum_extrapolation": -0.8239175274256424,
+        "dimension_slope": -1.9897515116302111,
+        "quadratic_in_h2_coefficients": [
+          96.78134996532734,
+          -0.23947472300876296,
+          -0.8239175274256424
+        ]
+      },
+      "c4": {
+        "continuum_extrapolation": 1.087357907170955,
+        "dimension_slope": -1.9738660141018396,
+        "quadratic_in_h2_coefficients": [
+          -1665.733563929296,
+          1.661000191256034,
+          1.087357907170955
+        ]
+      },
+      "c5": {
+        "continuum_extrapolation": -0.840572834892542,
+        "dimension_slope": -2.00178766607853,
+        "quadratic_in_h2_coefficients": [
+          -1583.2242251729958,
+          -22.203363883695932,
+          -0.840572834892542
+        ]
+      },
+      "c6": {
+        "continuum_extrapolation": 0.6968930938955311,
+        "dimension_slope": -2.0037862563686564,
+        "quadratic_in_h2_coefficients": [
+          3750.731457122361,
+          24.99469446123113,
+          0.6968930938955311
+        ]
+      },
+      "dc2_du": {
+        "continuum_extrapolation": -2.1130926012613322,
+        "dimension_slope": -2.000520168091698,
+        "quadratic_in_h2_coefficients": [
+          192.83865709558233,
+          9.322270685301124,
+          -2.1130926012613322
+        ]
+      },
+      "dc3_du": {
+        "continuum_extrapolation": -0.17389315002074007,
+        "dimension_slope": -1.991627499576821,
+        "quadratic_in_h2_coefficients": [
+          4719.414679923784,
+          -14.30075801019189,
+          -0.17389315002074007
+        ]
+      },
+      "dc4_du": {
+        "continuum_extrapolation": -7.144876861776512,
+        "dimension_slope": -1.9995051841214673,
+        "quadratic_in_h2_coefficients": [
+          3651.817296267607,
+          -200.7921853622918,
+          -7.144876861776512
+        ]
+      },
+      "dc5_du": {
+        "continuum_extrapolation": 3.03474991861234,
+        "dimension_slope": -2.007317105173228,
+        "quadratic_in_h2_coefficients": [
+          -114745.81208132143,
+          -394.6252130811954,
+          3.03474991861234
+        ]
+      },
+      "dc6_du": {
+        "continuum_extrapolation": -2.946147729297907,
+        "dimension_slope": -2.0139568279601514,
+        "quadratic_in_h2_coefficients": [
+          -72501.56000855085,
+          -130.52536973351508,
+          -2.946147729297907
+        ]
+      }
+    }
+  },
+  "dobrushin": {
+    "continuum_one_step": {
+      "0.05": {
+        "lower_mean": -0.5436890127,
+        "upper_mean": 1.0,
+        "crossing": 0.22703294374704447,
+        "delta": 1.0,
+        "overlap": 1.3071385261544768e-53,
+        "log10_overlap": -52.88367838490871
+      },
+      "0.12": {
+        "lower_mean": -0.5436890127,
+        "upper_mean": 1.0,
+        "crossing": 0.2216902740942827,
+        "delta": 0.9999999998221847,
+        "overlap": 1.7781534354136996e-10,
+        "log10_overlap": -9.750030766831257
+      }
+    }
+  }
+}
