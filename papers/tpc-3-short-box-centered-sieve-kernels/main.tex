@@ -1,0 +1,904 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\F}{\mathbb F}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\whG}{\widehat G}
+
+\title{\textbf{Centered Local Sieve Kernels:}\\
+\textbf{Exact Character Decomposition and Subperiod Shift Mean Squares}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let $Q$ be the odd squarefree product of the primes in a finite window and let $G=(\Z/Q\Z)^\times$.  For an even shift $h$ we study the centered finite kernel obtained by excluding $ab+h\equiv0\pmod p$ at the primes $p\mid Q$ for which $p\nmid h$.  Finite multiplicative Fourier inversion gives its exact character expansion, conductor decomposition, and nonzero singular values; in particular, the smallest active prime gives a sharp complete-group obstruction.
+
+For fixed complex coefficients on two integer intervals, we then average the associated bilinear form over the fully active shifts $h=2\ell$ with $(\ell,Q)=1$.  The complete shift average is an exact Parseval sum.  If $\cL$ is an interval of $H$ consecutive values of $\ell$, direct inclusion--exclusion gives
+\[
+ \left|\sum_{\substack{\ell\in\cL\\(\ell,Q)=1}}|\cB_{2\ell}|^2
+ -\frac HQ\sum_{\ell\in G}|\cB_{2\ell}|^2\right|
+ \le E(Q)(L_\alpha L_\beta)^2,
+\]
+where $E(Q)=\kappa^{-2}4^{\omega(Q)}+2\kappa^{-1}3^{\omega(Q)}+2^{\omega(Q)}$.  For $Q=\prod_{w<p\le w^2}p$, intervals of length $M=N=Q/w^{3/2}$ and $H=Q^{1/\log w}$, this yields a normalized root mean square $O(w^{-1/4})$, uniformly for coefficients bounded by one.  Here $M=Q/(\log Q)^{3/4+o(1)}$, so the factor intervals are subperiod but not power-short.
+
+The result is an elementary statement about a periodic local kernel and fixed coefficients averaged over a thinned shift family.  A local character survives through a diagonal term, and ambient normalization can manufacture an $o(MN)$ bound when the unit support is sparse.  The theorem neither controls the prescribed shift $h=2$, nor contains prime weights, nor yields a prime-pair lower bound.
+\end{abstract}
+
+\noindent\textbf{Keywords:} sieve kernel; multiplicative character; conductor; subperiod sampling; shift mean square; sieve parity obstruction.
+
+\medskip
+\noindent\textbf{MSC 2020:} 11N35; 11L40; 11N25; 11B83.
+
+\section{Introduction}\label{sec:introduction}
+
+This paper studies a finite periodic kernel motivated by local rough-pair models.  It records divisibility by a prescribed finite set of primes and contains no prime-detecting weight.  Its relation to prime-pair problems is therefore diagnostic: it can identify local modes that a later argument would have to control, but it cannot by itself address parity or positivity.  The parity obstruction is already visible in classical sieve theory \citep{HeathBrown1982}; asymptotic and prime-producing sieve frameworks require additional prime-sensitive or Type~I/II input of a substantially different kind \citep{FriedlanderIwaniec1998,FordMaynard2024}.
+
+Let
+\[
+ Q=\prod_{w<p\le y}p
+\]
+and restrict both factor variables to units modulo $Q$.  The local condition for a factorization $N=mn$ is
+\[
+ p\nmid mn+h.
+\]
+After division by its local density and subtraction of the constant mode, this defines a centered matrix on the finite unit group.  The complete-period singular spectrum for $h=2$ is \citet[Theorem~6.1]{WangRoughPairs2026}.  We recall its short proof for self-containment and add the active/inactive-prime and conductor bookkeeping.  Relative to that complete-period calculation, the main new statement here is the explicit subperiod shift-completion bound for this particular kernel; the complete-period calculation by itself does not estimate a factor box when $Q$ is larger than the observation ranges.
+
+There are three logically different questions.
+\begin{enumerate}[label=\textbf{Q\arabic*.},leftmargin=3.2em]
+ \item Which local character modes survive after centering, and how do their conductors enter?
+ \item What part of the complete-period estimate remains valid on incomplete factor boxes?
+ \item Can averaging over substantially fewer than $Q$ shifts produce a rigorous mean-square estimate even when a deterministic fixed-shift bound is still trivial?
+\end{enumerate}
+
+We answer all three at the level of the local kernel.  The main results are as follows.
+\begin{enumerate}[label=\textbf{R\arabic*.},leftmargin=3.2em]
+ \item For a general nonzero even shift, primes dividing $h$ impose no shifted restriction on unit factors.  We give the resulting exact character expansion, its coefficient $\ell^1$ and $\ell^2$ masses, the full nonzero singular spectrum, and a conductor cutoff.
+ \item For a fixed shift, the bilinear form on an arbitrary finite box is bounded by the product of the two residue-discrepancy energies.  For unweighted intervals, all complete periods cancel and only the two cyclic tails remain.
+ \item For fully active shifts $h=2\ell$ with $(\ell,Q)=1$, averaging over a complete unit group gives an exact Parseval formula.  A direct inclusion--exclusion argument transfers this identity to an interval of $H$ consecutive values of $\ell$ with a completion error
+ \[
+  E(Q)=\kappa^{-2}4^{\omega(Q)}
+       +2\kappa^{-1}3^{\omega(Q)}+2^{\omega(Q)}.
+ \]
+ This can be far smaller than $Q$.
+ \item We exhibit a subperiod regime in which $M,N,H=o(Q)$ and the shift root mean square is $o(MN)$ uniformly over arbitrary bounded coefficients, although the deterministic fixed-shift estimate gives no saving.  The factor intervals have length $Q/(\log Q)^{3/4+o(1)}$, not $Q^{1-\eta}$.
+ \item We prove sharp obstruction statements.  A character supported on the smallest local prime saturates the complete-period norm and remains as a diagonal contribution under shift averaging.  We also separate genuine cancellation from the trivial smallness caused by sparse unit support.
+\end{enumerate}
+
+All proofs use finite character orthogonality and elementary Chinese-remainder inclusion--exclusion; we do not claim novelty for either tool.  The contribution is their kernel-specific formulation, the explicit subperiod sampling error, the obstruction analysis, and the exhibited parameter regime.  This is not a new large-sieve, Burgess-type, modular-hyperbola, or Type~II estimate.  Classical incomplete-character and modular-hyperbola estimates exploit multiplicative-character or congruence structure together with structured intervals or weights \citep{Bombieri1965,Burgess1962,MontgomeryVaughan2007,Shparlinski2012}; arbitrary bounded coefficients here may instead be chosen to match a surviving local character.
+
+Average-shift theorems must retain their quantifier.  Results on correlations of primes and almost primes for almost all shifts do not select a prescribed fixed displacement \citep{MatomakiRadziwillTao2019,Evans2023}.  Likewise, the kernel below contains no von Mangoldt weight.  Consequently, none of our statements is a Type~II theorem for primes or an implication toward the twin-prime conjecture.
+
+\subsection*{What is not claimed}
+
+The estimate in this paper averages a fixed coefficient pair over fully active shifts.  The coefficients may not be reselected for each shift.  Shifts having an inactive prime are not included and would require a separate stratification by $(h,Q)$.  We do not infer a result for $h=2$ from a density-one set of shifts, do not replace the local kernel by $\Lambda(mn+2)$, and do not claim that an $o(MN)$ error is on the $X/(\log X)^2$ scale needed for a prime-pair lower bound.  Empirical double-centering in the accompanying code is a finite diagnostic, not a proof that the raw box mean is small.
+
+\section{The local kernel and its exact character expansion}\label{sec:kernel}
+
+Fix real numbers $2\le w<y$ and put
+\begin{equation}\label{eq:prime-window}
+ \cP=\{p:w<p\le y,\ p\text{ prime}\},
+ \qquad
+ Q=\prod_{p\in\cP}p.
+\end{equation}
+We assume $\cP$ is nonempty.  The modulus $Q$ is odd and squarefree.  By the Chinese remainder theorem,
+\begin{equation}\label{eq:unit-group}
+ G=(\Z/Q\Z)^\times
+   \cong\prod_{p\in\cP}\F_p^\times,
+ \qquad g=|G|=\varphi(Q).
+\end{equation}
+
+Let $h\ne0$ be even.  The active local primes are
+\begin{equation}\label{eq:active-primes}
+ \cP_h=\{p\in\cP:p\nmid h\},
+ \qquad r_h=|\cP_h|.
+\end{equation}
+If $p\mid h$ and $a,b\in\F_p^\times$, then $ab+h\equiv ab\ne0\pmod p$; hence this prime imposes no shifted restriction.  It remains part of the unit support in \eqref{eq:unit-group}, but the kernel is constant in that local coordinate.
+
+Define
+\begin{align}
+ K_h(a,b)
+  &=\prod_{p\in\cP_h}\one_{a_pb_p\ne-h\bmod p},\label{eq:binary-kernel}\\
+ \kappa_h
+  &=\prod_{p\in\cP_h}\frac{p-2}{p-1},\label{eq:kappa-h}\\
+ K_h^\circ(a,b)
+  &=\kappa_h^{-1}K_h(a,b)-1.\label{eq:centered-kernel}
+\end{align}
+Empty products have value one, so $K_h^\circ\equiv0$ if $\cP_h$ is empty.
+
+Write a character of $G$ as $\chi=\bigotimes_{p\in\cP}\chi_p$.  Say that $\chi$ is $h$-active if $\chi_p$ is trivial for every $p\notin\cP_h$.  For an $h$-active character put
+\begin{equation}\label{eq:character-conductor-weight}
+ q_\chi=\prod_{\substack{p\in\cP_h\\\chi_p\ne\one}}p,
+ \qquad
+ d(\chi)=\prod_{\substack{p\in\cP_h\\\chi_p\ne\one}}\frac1{p-2}.
+\end{equation}
+We also use the active-coordinate notation
+\begin{equation}\label{eq:active-character-value}
+ \chi_h(-h)=\prod_{p\in\cP_h}\chi_p(-h\bmod p).
+\end{equation}
+Here $q_\chi$ records the local support of the character.  A local component can itself be imprimitive only in the trivial sense because its modulus is prime; $q_\chi$ is therefore the natural squarefree conductor parameter for this product model.
+
+\begin{lemma}[One-prime expansion]\label{lem:one-prime-expansion}
+Let $p\nmid h$ and $t\in\F_p^\times$.  Then
+\begin{equation}\label{eq:one-prime-expansion}
+ \frac{p-1}{p-2}\one_{t\ne-h}
+ =1-\frac1{p-2}
+ \sum_{\substack{\chi\in\widehat{\F_p^\times}\\\chi\ne\one}}
+ \overline{\chi(-h)}\chi(t).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For a nontrivial multiplicative character, the Fourier coefficient of the left side is
+\[
+ \frac1{p-2}\sum_{\substack{t\in\F_p^\times\\t\ne-h}}
+ \overline{\chi(t)}
+ =-\frac{\overline{\chi(-h)}}{p-2}.
+\]
+The trivial coefficient is one.  Fourier inversion on $\F_p^\times$ proves the identity.
+\end{proof}
+
+\begin{theorem}[Exact product expansion and spectrum]\label{thm:exact-product-spectrum}
+For $a,b\in G$,
+\begin{equation}\label{eq:product-character-expansion}
+ K_h^\circ(a,b)
+ =\sum_{\substack{\chi\ne\one\\\chi\ h\text{-active}}}
+ c_h(\chi)\chi(a)\chi(b),
+\end{equation}
+where
+\begin{equation}\label{eq:character-coefficient}
+ c_h(\chi)
+ =(-1)^{\omega(q_\chi)}d(\chi)\overline{\chi_h(-h)}.
+\end{equation}
+Moreover,
+\begin{align}
+ \sum_{\substack{\chi\ne\one\\\chi\ h\text{-active}}}|c_h(\chi)|
+  &=2^{r_h}-1,\label{eq:l1-coefficient-mass}\\
+ \sum_{\substack{\chi\ne\one\\\chi\ h\text{-active}}}|c_h(\chi)|^2
+  &=\kappa_h^{-1}-1.\label{eq:l2-coefficient-mass}
+\end{align}
+
+Let
+\begin{equation}\label{eq:centered-operator}
+ (T_hf)(a)=\frac1g\sum_{b\in G}K_h^\circ(a,b)f(b).
+\end{equation}
+Its nonzero singular values are the numbers $d(\chi)$ indexed by nontrivial $h$-active characters.  If $\cP_h$ is nonempty, let $p_h$ be its smallest prime and put
+\begin{equation}\label{eq:exact-mean-zero-norm}
+ \|T_h\|_{L^2_0(G)\to L^2_0(G)}
+ =\rho_h:=\frac1{p_h-2}.
+\end{equation}
+If $\cP_h$ is empty, set $\rho_h=0$; then the same norm identity holds.  Characters which are nontrivial on an inactive coordinate belong to the zero singular subspace.
+\end{theorem}
+
+\begin{proof}
+Multiply \eqref{eq:one-prime-expansion} over the active primes and subtract the all-trivial term.  This gives \eqref{eq:product-character-expansion} and \eqref{eq:character-coefficient}.
+
+For each active prime, the sum of the absolute values of the local Fourier coefficients, including the trivial coefficient, is
+\[
+ 1+(p-2)\frac1{p-2}=2.
+\]
+Taking the product and removing the global trivial term proves \eqref{eq:l1-coefficient-mass}.  The corresponding squared mass is
+\[
+ 1+(p-2)\frac1{(p-2)^2}=\frac{p-1}{p-2},
+\]
+which proves \eqref{eq:l2-coefficient-mass}.
+
+From \eqref{eq:product-character-expansion},
+\[
+ T_h\chi=c_h(\overline\chi)\overline\chi
+\]
+for an active character, while a character with a nontrivial inactive component is annihilated.  Complex conjugation permutes the character basis, so the absolute multipliers are exactly the nonzero singular values.  Among nontrivial active characters, $d(\chi)$ is largest when only a smallest active prime carries a nontrivial component.  This proves \eqref{eq:exact-mean-zero-norm}.
+\end{proof}
+
+\begin{remark}[Sharp local modes]\label{rem:sharp-local-modes}
+Assume that $\cP_h$ is nonempty.  Every character which is nontrivial only at $p_h$ attains the norm $\rho_h$.  Thus a uniform arbitrary-coefficient estimate cannot improve the local factor $(p_h-2)^{-1}$ without projecting out these modes or imposing character orthogonality on the coefficients.  Averaging over shifts changes their phases but not their absolute size.
+\end{remark}
+
+\section{Conductor projections and incomplete factor boxes}\label{sec:boxes}
+
+The exact expansion separates low local conductors from the remaining modes.  For $R\ge1$, let $P_{\le R}$ be the orthogonal projection onto the span of the $h$-active characters with $q_\chi\le R$, and let $P_{>R}$ be the corresponding active-character complement.  The zero subspace coming from inactive coordinates can be adjoined to either complement without changing the statements below.
+
+Define the high-conductor part of the centered kernel by
+\begin{equation}\label{eq:high-conductor-kernel}
+ K_{h,>R}^\circ(a,b)
+ =\sum_{\substack{\chi\ h\text{-active}\\q_\chi>R}}
+ c_h(\chi)\chi(a)\chi(b).
+\end{equation}
+
+\begin{proposition}[Exact conductor cutoff]\label{prop:conductor-cutoff}
+Define
+\begin{equation}\label{eq:rho-conductor}
+ \rho_{>R}
+ =\max_{\substack{\chi\ h\text{-active}\\q_\chi>R}}d(\chi),
+ \qquad
+ \Xi_h=\prod_{p\in\cP_h}\frac{p}{p-2},
+\end{equation}
+where a maximum over an empty set is zero.  Then
+\begin{equation}\label{eq:exact-high-conductor-norm}
+ \|T_hP_{>R}\|_{2\to2}=\rho_{>R}
+ \le\frac{\Xi_h}{R}.
+\end{equation}
+The exact Hilbert--Schmidt mass is
+\begin{equation}\label{eq:high-conductor-hs}
+ \|T_hP_{>R}\|_{\mathrm{HS}}^2
+ =\sum_{\substack{q\mid\prod_{p\in\cP_h}p\\q>R}}
+ \prod_{p\mid q}\frac1{p-2}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The operator sends a character to a scalar multiple of its conjugate and $q_{\overline\chi}=q_\chi$, so both conductor subspaces are invariant.  The first equality follows from the singular-value list in \cref{thm:exact-product-spectrum}.  Also
+\[
+ d(\chi)=\frac1{q_\chi}
+ \prod_{p\mid q_\chi}\frac{p}{p-2}
+ \le\frac{\Xi_h}{q_\chi},
+\]
+which proves the inequality.  For a fixed nonempty support $q$, there are $\prod_{p\mid q}(p-2)$ characters and each squared singular value is $\prod_{p\mid q}(p-2)^{-2}$.  Summing by support gives \eqref{eq:high-conductor-hs}.
+\end{proof}
+
+We next transfer the group estimate to arbitrary finite integer sets.  Let $I,J\subset\Z$ be finite and let $\alpha_m,\beta_n\in\C$.  Define the residue aggregates
+\begin{equation}\label{eq:residue-aggregates}
+ x_a=\sum_{\substack{m\in I\\(m,Q)=1\\m\equiv a\bmod Q}}\alpha_m,
+ \qquad
+ y_b=\sum_{\substack{n\in J\\(n,Q)=1\\n\equiv b\bmod Q}}\beta_n.
+\end{equation}
+Write
+\[
+ \langle x\rangle_G=\frac1g\sum_{a\in G}x_a,
+ \qquad
+ \|x\|_2^2=\sum_{a\in G}|x_a|^2,
+\]
+and similarly for $y$.
+For later reference, denote the corresponding fixed-shift box form by
+\begin{equation}\label{eq:fixed-shift-box-form}
+ \cB_h(I,J;\alpha,\beta)
+ =\sum_{\substack{m\in I,n\in J\\(mn,Q)=1}}
+ \alpha_m\beta_nK_h^\circ(m,n).
+\end{equation}
+
+\begin{theorem}[Discrepancy-product transfer]\label{thm:discrepancy-product}
+The complete-group centering is exact:
+\begin{equation}\label{eq:group-double-centering}
+ \sum_{b\in G}K_h^\circ(a,b)=0,
+ \qquad
+ \sum_{a\in G}K_h^\circ(a,b)=0.
+\end{equation}
+Consequently,
+\begin{align}
+ &\sum_{\substack{m\in I,n\in J\\(mn,Q)=1}}
+ \alpha_m\beta_nK_h^\circ(m,n)\notag\\
+ &\quad=\sum_{a,b\in G}
+ (x_a-\langle x\rangle_G)(y_b-\langle y\rangle_G)
+ K_h^\circ(a,b),\label{eq:box-double-centering}
+\end{align}
+and
+\begin{align}
+ \left|\sum_{\substack{m\in I,n\in J\\(mn,Q)=1}}
+ \alpha_m\beta_nK_h^\circ(m,n)\right|
+ &\le g\rho_h
+ \|x-\langle x\rangle_G\|_2
+ \|y-\langle y\rangle_G\|_2.\label{eq:discrepancy-product-bound}
+\end{align}
+More precisely, after deleting all active modes of conductor at most $R$,
+\begin{align}
+ &\left|\sum_{\substack{m\in I,n\in J\\(mn,Q)=1}}
+ \alpha_m\beta_nK_{h,>R}^\circ(m,n)\right|\notag\\
+ &\qquad\le g\rho_{>R}
+ \|P_{>R}(x-\langle x\rangle_G)\|_2
+ \|P_{>R}(y-\langle y\rangle_G)\|_2.
+ \label{eq:projected-discrepancy-product-bound}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:group-double-centering} follows either directly from the fact that one of the $p-1$ unit values is excluded at each active prime or from the absence of one-sided characters in \eqref{eq:product-character-expansion}.  It implies \eqref{eq:box-double-centering}.  The matrix $K_h^\circ$ is $gT_h$ in counting-measure normalization.  Cauchy--Schwarz and \eqref{eq:exact-mean-zero-norm} give \eqref{eq:discrepancy-product-bound}.  The projected version follows from \cref{prop:conductor-cutoff}.
+\end{proof}
+
+\begin{corollary}[Boundary-only completion]\label{cor:boundary-completion}
+Let $I,J$ be unweighted intervals.  Write
+\[
+ |I|=L_IQ+r_I,
+ \qquad 0\le r_I<Q,
+\]
+and let $s_I$ be the number of unit residue classes in the cyclic tail of length $r_I$ determined by the starting point of $I$.  Define $s_J$ analogously.  Then
+\begin{equation}\label{eq:boundary-only-bound}
+ \left|\sum_{\substack{m\in I,n\in J\\(mn,Q)=1}}
+ K_h^\circ(m,n)\right|
+ \le\rho_h
+ \sqrt{s_I(g-s_I)s_J(g-s_J)}.
+\end{equation}
+In particular, every complete $Q$-period cancels; only the two tails interact.
+\end{corollary}
+
+\begin{proof}
+Every unit residue occurs $L_I$ times, and precisely $s_I$ unit residues occur once more.  Hence the centered residue-count vector has exact energy
+\[
+ s_I\left(1-\frac{s_I}{g}\right)^2
+ +(g-s_I)\left(\frac{s_I}{g}\right)^2
+ =\frac{s_I(g-s_I)}g.
+\]
+Apply \eqref{eq:discrepancy-product-bound} to both intervals.
+\end{proof}
+
+For arbitrary weights bounded by one and intervals of lengths $M,N$, the residue aggregates satisfy
+\begin{equation}\label{eq:aggregate-energy-bound}
+ \sum_{a\in G}|x_a|^2
+ \le M\left\lceil\frac MQ\right\rceil,
+ \qquad
+ \sum_{b\in G}|y_b|^2
+ \le N\left\lceil\frac NQ\right\rceil.
+\end{equation}
+For balanced intervals $M=N=L<Q$, this coefficient-uniform deterministic estimate yields an $o(L^2)$ bound when
+\[
+ \frac{L}{\rho_h g}\longrightarrow\infty.
+\]
+Special coefficient pairs can have smaller residue energy.  The shift average below improves by one power of $\rho_h$ the threshold furnished by these uniform estimates.
+
+\begin{remark}[Empirical versus group centering]\label{rem:empirical-centering}
+The theoretical kernel is centered relative to the full group $G$.  If one takes a finite matrix and subtracts its empirical row means, column means, and grand mean, then its constant-coefficient sum becomes zero by definition.  Such empirical double-centering is useful for diagnosing whether a finite anomaly is a row, column, or genuinely bilinear effect, but it is not an estimate for the raw box sum in \eqref{eq:discrepancy-product-bound}.
+\end{remark}
+
+\section{Exact and incomplete shift mean squares}\label{sec:shift-means}
+
+In this section $Q$ and $\cP$ are fixed as in \eqref{eq:prime-window}.  We average the even shifts
+\begin{equation}\label{eq:fully-active-shifts}
+ h=2\ell,
+ \qquad \ell\in G.
+\end{equation}
+Every prime in $\cP$ is then active.  We write
+\begin{equation}\label{eq:global-kappa-rho}
+ r=\omega(Q),
+ \qquad
+ \kappa=\prod_{p\mid Q}\frac{p-2}{p-1},
+ \qquad
+ \rho=\frac1{p_{\min}-2},
+\end{equation}
+where $p_{\min}$ is the smallest prime factor of $Q$.
+
+For finite $I,J\subset\Z$ and fixed coefficients $\alpha_m,\beta_n\in\C$, set
+\begin{equation}\label{eq:shifted-bilinear-form}
+ \cB_{2\ell}(\alpha,\beta)
+ =\sum_{\substack{m\in I,n\in J\\(mn,Q)=1}}
+ \alpha_m\beta_nK_{2\ell}^\circ(m,n).
+\end{equation}
+The coefficients are fixed throughout the shift average.  Define
+\begin{equation}\label{eq:character-transforms}
+ A(\chi)=\sum_{\substack{m\in I\\(m,Q)=1}}\alpha_m\chi(m),
+ \qquad
+ C(\chi)=\sum_{\substack{n\in J\\(n,Q)=1}}\beta_n\chi(n).
+\end{equation}
+
+\begin{theorem}[Complete fully-active-shift Parseval identity]\label{thm:complete-shift-parseval}
+One has
+\begin{equation}\label{eq:complete-shift-parseval}
+ \frac1g\sum_{\ell\in G}|\cB_{2\ell}(\alpha,\beta)|^2
+ =\sum_{\substack{\chi\in\whG\\\chi\ne\one}}
+ d(\chi)^2|A(\chi)|^2|C(\chi)|^2.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+From \eqref{eq:character-coefficient},
+\[
+ c_{2\ell}(\chi)
+ =(-1)^{\omega(q_\chi)}d(\chi)
+  \overline{\chi(-2)}\,\overline{\chi(\ell)}.
+\]
+Substitute this in \eqref{eq:shifted-bilinear-form}.  On expanding the absolute square, character orthogonality gives
+\[
+ \frac1g\sum_{\ell\in G}
+ \overline{\chi(\ell)}\psi(\ell)
+ =\one_{\chi=\psi}.
+\]
+All off-diagonal terms vanish, proving the identity for complex coefficients.
+\end{proof}
+
+We now shorten the shift interval.  The following elementary discrepancy lemma is the only completion input.
+
+\begin{lemma}[Few forbidden residues]\label{lem:few-forbidden-residues}
+For each $p\mid Q$, let $R_p\subset\Z/p\Z$ contain at most $j$ residues, and put
+\[
+ W(\ell)=\prod_{p\mid Q}\one_{\ell\bmod p\notin R_p}.
+\]
+If $\cL$ is any interval containing $H$ consecutive integers, then
+\begin{equation}\label{eq:few-residue-discrepancy}
+ \left|\sum_{\ell\in\cL}W(\ell)
+ -\frac HQ\sum_{\ell\bmod Q}W(\ell)\right|
+ \le(j+1)^r.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Collapse coincident members of each $R_p$ and expand
+\[
+ \prod_{p\mid Q}\left(1-
+ \sum_{a\in R_p}\one_{\ell\equiv a\bmod p}\right).
+\]
+There are at most $\prod_{p\mid Q}(1+|R_p|)\le(j+1)^r$ terms.  Each nonconstant term specifies, by the Chinese remainder theorem, one residue class modulo a divisor $d$ of $Q$.  Its count in $\cL$ differs from $H/d$, equivalently from $H/Q$ times its count in a complete $Q$-period, by less than one.  The triangle inequality proves the claim.
+\end{proof}
+
+Define
+\begin{equation}\label{eq:completion-cost}
+ E(Q)=\kappa^{-2}4^r+2\kappa^{-1}3^r+2^r,
+\end{equation}
+and
+\begin{equation}\label{eq:l1-box-coefficients}
+ L_\alpha=\sum_{\substack{m\in I\\(m,Q)=1}}|\alpha_m|,
+ \qquad
+ L_\beta=\sum_{\substack{n\in J\\(n,Q)=1}}|\beta_n|.
+\end{equation}
+
+\begin{theorem}[Subperiod fully-active-shift completion]\label{thm:short-shift-completion}
+For every interval $\cL$ of $H$ consecutive integers,
+\begin{align}
+ &\left|
+ \sum_{\substack{\ell\in\cL\\(\ell,Q)=1}}
+ |\cB_{2\ell}(\alpha,\beta)|^2
+ -\frac HQ\sum_{\ell\in G}|\cB_{2\ell}(\alpha,\beta)|^2
+ \right|\notag\\
+ &\hspace{7em}\le E(Q)(L_\alpha L_\beta)^2.\label{eq:short-shift-completion}
+\end{align}
+The estimate is deterministic and uniform in the positions of $I,J$, and $\cL$.
+\end{theorem}
+
+\begin{proof}
+For a unit $t\bmod Q$, write
+\[
+ F_\ell(t)=\prod_{p\mid Q}\one_{t+2\ell\ne0\bmod p}.
+\]
+The kernel value is $\kappa^{-1}F_\ell(t)-1$.  For each unit pair $(m,n)$ in the box, put
+\[
+ u_{m,n}=\alpha_m\beta_n,
+ \qquad t_{m,n}=mn\bmod Q.
+\]
+Since $F_\ell$ is real-valued, the complex absolute square expands as
+\begin{align*}
+ |\cB_{2\ell}|^2
+ ={}&\sum_{\substack{m,n,m',n'\\(mnm'n',Q)=1}}
+ u_{m,n}\overline{u_{m',n'}}
+ \bigl(\kappa^{-1}F_\ell(t_{m,n})-1\bigr)\\
+ &\hspace{10em}\times
+ \bigl(\kappa^{-1}F_\ell(t_{m',n'})-1\bigr),
+\end{align*}
+where the four variables range over $I,J,I,J$, respectively.  It is therefore enough to compare, for every pair of unit residues $t,t'$, the interval and complete-period sums of
+\begin{equation}\label{eq:local-square-expansion}
+ \one_{(\ell,Q)=1}
+ \left(
+  \kappa^{-2}F_\ell(t)F_\ell(t')
+  -\kappa^{-1}F_\ell(t)
+  -\kappa^{-1}F_\ell(t')+1
+ \right).
+\end{equation}
+
+In the first term, each prime excludes at most the three residues
+\[
+ 0,\qquad -t/2,\qquad -t'/2.
+\]
+By \cref{lem:few-forbidden-residues}, its discrepancy is at most $4^r$.  Each one-kernel term excludes at most $0$ and $-t/2$, giving $3^r$, while the unit indicator alone gives $2^r$.  Multiplication by the four coefficients in \eqref{eq:local-square-expansion} yields $E(Q)$.  Finally,
+\[
+ \sum_{m,n,m',n'}
+ |\alpha_m\beta_n\overline{\alpha_{m'}\beta_{n'}}|
+ =(L_\alpha L_\beta)^2,
+\]
+which proves \eqref{eq:short-shift-completion}.
+\end{proof}
+
+\begin{remark}[Why the completion factor is $H/Q$]\label{rem:h-over-q}
+The left side of \eqref{eq:short-shift-completion} is sampled in an ordinary interval of integers.  A residue class modulo $d\mid Q$ occurs $H/d+O(1)$ times, while it occurs $Q/d$ times in one complete $Q$-period.  Thus the correct scaling is $H/Q$, not $H/\varphi(Q)$.
+\end{remark}
+
+\begin{remark}[Additive, not relative, completion]\label{rem:additive-completion}
+The error in \eqref{eq:short-shift-completion} is an additive uniform bound.  A coefficient-uniform relative asymptotic is impossible because the complete Parseval energy can vanish.  Since $|\cB_{2\ell}|^2\one_{(\ell,Q)=1}$ is nonnegative and $Q$-periodic, the displayed error may harmlessly be replaced by the minimum of $E(Q)(L_\alpha L_\beta)^2$ and the complete-period energy $\sum_{\ell\in G}|\cB_{2\ell}|^2$.  Indeed, write $H=kQ+s$ with $0\le s<Q$.  The $k$ complete periods cancel exactly, and both the remaining $s$-term tail and $s/Q$ times the complete-period energy lie between zero and the complete-period energy.  A direct pointwise estimate supplies a further crude bound of order $H(\kappa^{-1}+1)^2(L_\alpha L_\beta)^2$.  The explicit $E(Q)$ is useful when its growth is dominated by the shift length and the Parseval main term is not exceptionally small.
+\end{remark}
+
+Put
+\begin{equation}\label{eq:unit-density-and-HQ}
+ \delta_Q=\frac{\varphi(Q)}Q,
+ \qquad
+ H_Q=\#\{\ell\in\cL:(\ell,Q)=1\}.
+\end{equation}
+The case $j=1$ of \cref{lem:few-forbidden-residues} gives
+\begin{equation}\label{eq:H-Q-count}
+ |H_Q-H\delta_Q|\le2^r.
+\end{equation}
+Let $x,y$ be the residue aggregates from \eqref{eq:residue-aggregates} and set
+\begin{equation}\label{eq:aggregate-energies}
+ \cE_\alpha=\sum_{a\in G}|x_a|^2,
+ \qquad
+ \cE_\beta=\sum_{b\in G}|y_b|^2.
+\end{equation}
+
+\begin{corollary}[Uniform subperiod-box mean square]\label{cor:incomplete-box-mean-square}
+Let $I,J$ be intervals of lengths $M,N<Q$, and suppose $|\alpha_m|,|\beta_n|\le1$.  If $H\delta_Q\ge2^{r+1}$, then
+\begin{align}
+ &\frac1{MN}
+ \left(
+  \frac1{H_Q}
+  \sum_{\substack{\ell\in\cL\\(\ell,Q)=1}}
+  |\cB_{2\ell}(\alpha,\beta)|^2
+ \right)^{1/2}\notag\\
+ &\qquad\ll
+ \rho\sqrt{\frac{g}{\max(M,N)}}
+ +\sqrt{\frac{E(Q)}{H\delta_Q}}.
+ \label{eq:uniform-incomplete-box-rms}
+\end{align}
+The implied constant is absolute.
+\end{corollary}
+
+\begin{proof}
+Let
+\[
+ \cM(\alpha,\beta)
+ =\sum_{\chi\ne\one}d(\chi)^2|A(\chi)|^2|C(\chi)|^2.
+\]
+Parseval in the $m$ variable and the bound $|C(\chi)|\le L_\beta$ give
+\[
+ \cM(\alpha,\beta)
+ \le\rho^2g\cE_\alpha L_\beta^2.
+\]
+Interchanging the variables gives
+\begin{equation}\label{eq:M-upper-bound}
+ \cM(\alpha,\beta)
+ \le\rho^2g
+ \min\{\cE_\alpha L_\beta^2,
+       \cE_\beta L_\alpha^2\}.
+\end{equation}
+Since $M,N<Q$, each integer in either interval occupies a distinct residue class, so $\cE_\alpha\le M$, $\cE_\beta\le N$, $L_\alpha\le M$, and $L_\beta\le N$.  Therefore
+\[
+ \cM(\alpha,\beta)
+ \le\rho^2gMN\min(M,N).
+\]
+By \cref{thm:complete-shift-parseval,thm:short-shift-completion}, the numerator in \eqref{eq:uniform-incomplete-box-rms} is at most
+\[
+ H\delta_Q\cM(\alpha,\beta)+E(Q)(MN)^2.
+\]
+The assumption and \eqref{eq:H-Q-count} give
+\[
+ H_Q\ge H\delta_Q-2^r\ge\frac12H\delta_Q.
+\]
+Division and square roots prove the result.
+\end{proof}
+
+This estimate yields an $o(MN)$ contribution from its first term when
+\begin{equation}\label{eq:average-shift-threshold}
+ \frac{\max(M,N)}{\rho^2\varphi(Q)}\longrightarrow\infty.
+\end{equation}
+For a balanced fixed-shift box, the corresponding deterministic spectral estimate instead furnishes the condition $M/(\rho\varphi(Q))\to\infty$.  The fully active shift mean square therefore gains one factor of $\rho$ in the threshold furnished by these two estimates.
+
+\begin{remark}[Cutoff range]\label{rem:cutoff-range}
+The completion cost has the exact form
+\[
+ E(Q)=\kappa^{-2}4^r
+ \left[1+2\kappa\left(\frac34\right)^r
+          +\kappa^2\left(\frac12\right)^r\right],
+ \qquad
+ \log E(Q)=2\log\kappa^{-1}+r\log4+O(1).
+\]
+Hence the criterion furnished by this error bound for $H$ to dominate the leading completion cost is
+\begin{equation}\label{eq:completion-cutoff-criterion}
+ \log H-
+ \left(2\log\kappa^{-1}
+       +(\log4)\bigl(\pi(y)-\pi(w)\bigr)\right)
+ \longrightarrow+\infty.
+\end{equation}
+This is a sufficient condition for $E(Q)/H\to0$.  For the normalized error $E(Q)/(H\delta_Q)$ in \cref{cor:incomplete-box-mean-square}, one must add $\log\delta_Q^{-1}$ inside the parentheses.  These are criteria furnished by the present error bound, not necessary criteria for every possible method.  For example, if $w\le(1-\eta)y$ for some fixed $\eta>0$, $y=(\log X)^A$ with fixed $A>1$, and $H\le X$, then the prime number theorem makes $r\log4$ larger than $\log X$ by an unbounded factor.  Thus \eqref{eq:completion-cutoff-criterion} fails in that wide-window regime.  No such conclusion is asserted for an arbitrarily thin interval $(w,y]$.
+\end{remark}
+
+\section{An explicit subperiod regime}\label{sec:incomplete-regime}
+
+We now show that \cref{cor:incomplete-box-mean-square} is nontrivial with all three sampling lengths below $Q$, while sparse support does not explain the saving.
+
+\begin{theorem}[Polylogarithmically subperiod factor boxes]\label{thm:genuine-incomplete-regime}
+Let $w\to\infty$ and define
+\begin{equation}\label{eq:quadratic-prime-window}
+ \cP(w)=\{p:w<p\le w^2\},
+ \qquad
+ Q=\prod_{p\in\cP(w)}p.
+\end{equation}
+Let $I,J$ be arbitrary intervals of the common length
+\begin{equation}\label{eq:incomplete-box-length}
+ M=N=\left\lfloor\frac{Q}{w^{3/2}}\right\rfloor,
+\end{equation}
+and let $\cL$ be any interval of
+\begin{equation}\label{eq:incomplete-shift-length}
+ H=\left\lfloor Q^{1/\log w}\right\rfloor
+\end{equation}
+consecutive integers.  Uniformly over all complex coefficients with $|\alpha_m|,|\beta_n|\le1$,
+\begin{equation}\label{eq:genuine-incomplete-rms}
+ \frac1{MN}
+ \left(
+  \frac1{H_Q}
+  \sum_{\substack{\ell\in\cL\\(\ell,Q)=1}}
+  |\cB_{2\ell}(\alpha,\beta)|^2
+ \right)^{1/2}
+ =O(w^{-1/4}).
+\end{equation}
+In particular, the left side tends to zero, while
+\begin{equation}\label{eq:all-lengths-incomplete}
+ \frac MQ=\frac NQ\to0,
+ \qquad
+ \frac HQ\to0.
+\end{equation}
+Moreover,
+\begin{equation}\label{eq:factor-box-polylog-subperiod}
+ M=N=\frac{Q}{(\log Q)^{3/4+o(1)}},
+ \qquad H=Q^{o(1)}.
+\end{equation}
+Thus the factor intervals are only polylogarithmically below the period; this theorem does not reach $M,N\le Q^{1-\eta}$ for fixed $\eta>0$.  For the same boxes, the normalized prefactor furnished by the deterministic spectral estimate \eqref{eq:discrepancy-product-bound}, before taking the minimum with the pointwise trivial bound, is $\asymp w^{1/2}$; it supplies no $o(MN)$ cancellation.
+\end{theorem}
+
+\begin{proof}
+The prime number theorem and Mertens' product theorem give
+\begin{align}
+ \log Q&=(1+o(1))w^2,\label{eq:Q-asymptotic}\\
+ r=\omega(Q)&=(1+o(1))\frac{w^2}{2\log w},\label{eq:r-asymptotic}\\
+ \delta_Q&=\prod_{w<p\le w^2}\left(1-\frac1p\right)
+ =\frac12+o(1),\label{eq:delta-asymptotic}\\
+ \kappa&=\frac12+o(1),
+ \qquad
+ \rho=(1+o(1))\frac1w.\label{eq:kappa-rho-asymptotic}
+\end{align}
+The difference between the logarithms of the products defining $\delta_Q$ and $\kappa$ is $O(\sum_{p>w}p^{-2})=o(1)$.
+
+From \eqref{eq:completion-cost} and \eqref{eq:r-asymptotic},
+\begin{equation}\label{eq:E-asymptotic}
+ \log E(Q)
+ =(\log4+o(1))r
+ =(\log2+o(1))\frac{w^2}{\log w}.
+\end{equation}
+On the other hand,
+\begin{equation}\label{eq:H-asymptotic}
+ \log H=(1+o(1))\frac{w^2}{\log w}.
+\end{equation}
+Since $\log2<1$,
+\[
+ \sqrt{\frac{E(Q)}{H\delta_Q}}
+ =\exp\left(-\frac{1-\log2+o(1)}2
+                 \frac{w^2}{\log w}\right)
+ =o(w^{-1/4}),
+\]
+and the hypothesis on $H$ in \cref{cor:incomplete-box-mean-square} holds for large $w$.  Also
+\[
+ \rho\sqrt{\frac{g}{M}}
+ \asymp\frac1w\sqrt{w^{3/2}}
+ =w^{-1/4}.
+\]
+This proves \eqref{eq:genuine-incomplete-rms}.  Equations \eqref{eq:all-lengths-incomplete} and \eqref{eq:factor-box-polylog-subperiod} follow from the definitions and \eqref{eq:Q-asymptotic}.  Finally, the normalized prefactor in the fixed-shift discrepancy estimate is
+\[
+ \frac{\rho g}{M}\asymp w^{1/2},
+\]
+so that estimate, on its own, yields no cancellation in this regime.
+
+It remains to verify that the mean-square saving is not merely a sparse-support normalization.  Applying \cref{lem:few-forbidden-residues} with one forbidden residue per prime gives, uniformly in the positions of $I$ and $J$,
+\[
+ U_I:=\#\{m\in I:(m,Q)=1\},
+ \qquad
+ U_J:=\#\{n\in J:(n,Q)=1\},
+\]
+and
+\[
+ U_I=M\delta_Q+O(2^r)
+     =\left(\frac12+o(1)\right)M,
+ \qquad
+ U_J=N\delta_Q+O(2^r)
+     =\left(\frac12+o(1)\right)N.
+\]
+Here $2^r=o(M)$ follows from \eqref{eq:Q-asymptotic} and \eqref{eq:r-asymptotic}.  For every fixed $t\in G$, put $F_\ell(t)=\prod_{p\mid Q}\one_{t+2\ell\ne0\bmod p}$.  The conditions $(\ell,Q)=1$ and $F_\ell(t)=1$ exclude exactly the two distinct residues $0$ and $-t/2$ at each prime.  The same lemma with $j=2$ therefore gives
+\[
+ \#\{\ell\in\cL:(\ell,Q)=1,\ F_\ell(t)=1\}
+ =H\delta_Q\kappa+O(3^r)
+ =\left(\frac14+o(1)\right)H.
+\]
+Since $3^r=o(H)$ and \eqref{eq:H-Q-count} gives $H_Q=(1/2+o(1))H$, the conditional allowed density among the sampled fully active shifts is $1/2+o(1)$, uniformly in $t$.
+\end{proof}
+
+\begin{remark}[Not a sparsity effect]\label{rem:not-sparsity-effect}
+In \cref{thm:genuine-incomplete-regime}, both $\delta_Q$ and $\kappa$ tend to $1/2$, and the proof gives uniform finite-interval counts at those densities.  Thus neither the unit support nor the allowed-kernel support has vanishing density.  The $o(MN)$ root-mean-square bound is a consequence of box length and shift averaging, not of a degenerating support.
+\end{remark}
+
+\section{Sharp obstructions and normalization traps}\label{sec:obstructions}
+
+The previous theorem does not mean that shift averaging removes the local character modes.  It only makes their largest possible diagonal contribution tend to zero because $p_{\min}\to\infty$.
+
+\begin{proposition}[Local-character saturation]\label{prop:local-character-saturation}
+Let $\chi_0$ be nontrivial only at the smallest prime $p_{\min}\mid Q$.  On the complete group, take $x(a)=\overline{\chi_0(a)}$ and $y(b)=\overline{\chi_0(b)}$.  Then for every even fixed shift $h$ satisfying $(h,Q)=1$,
+\begin{equation}\label{eq:fixed-character-saturation}
+ \left|\sum_{a,b\in G}x(a)y(b)K_h^\circ(a,b)\right|
+ =\rho g^2.
+\end{equation}
+
+For integer intervals $I,J$ of lengths $M,N$, take $\alpha_m=\overline{\chi_0(m)}$ and $\beta_n=\overline{\chi_0(n)}$ on the unit support.  If
+\[
+ U_I=\#\{m\in I:(m,Q)=1\},
+ \qquad
+ U_J=\#\{n\in J:(n,Q)=1\},
+\]
+then
+\begin{equation}\label{eq:shift-character-lower-bound}
+ \frac1g\sum_{\ell\in G}|\cB_{2\ell}(\alpha,\beta)|^2
+ \ge\rho^2U_I^2U_J^2.
+\end{equation}
+For a short shift interval, the corresponding lower bound is
+\begin{equation}\label{eq:short-shift-character-lower}
+ \sum_{\substack{\ell\in\cL\\(\ell,Q)=1}}
+ |\cB_{2\ell}(\alpha,\beta)|^2
+ \ge H\delta_Q\rho^2U_I^2U_J^2-E(Q)(MN)^2.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Equation \eqref{eq:fixed-character-saturation} is equality in the singular mode from \cref{rem:sharp-local-modes}.  In the integer boxes,
+\[
+ A(\chi_0)=U_I,
+ \qquad C(\chi_0)=U_J.
+\]
+Retaining this one nonnegative diagonal term in \eqref{eq:complete-shift-parseval} proves \eqref{eq:shift-character-lower-bound}.  Apply \cref{thm:short-shift-completion} and use $L_\alpha\le M$, $L_\beta\le N$ to obtain \eqref{eq:short-shift-character-lower}.
+\end{proof}
+
+\begin{proposition}[Single-cell shift variance]\label{prop:single-cell-variance}
+For fixed units $m,n\bmod Q$,
+\begin{equation}\label{eq:single-cell-variance}
+ \frac1g\sum_{\ell\in G}|K_{2\ell}^\circ(m,n)|^2
+ =\kappa^{-1}-1.
+\end{equation}
+Thus a shift mean square cannot be $o(1)$ on one-point boxes unless $\kappa\to1$.
+\end{proposition}
+
+\begin{proof}
+As $\ell$ ranges uniformly over $G$, the binary value $K_{2\ell}(m,n)$ equals one with probability $\kappa$: at each prime, exactly one of the $p-1$ unit values of $\ell$ is excluded.  Since $\kappa^{-1}K-1$ has mean zero, its variance is $\kappa^{-1}-1$.
+\end{proof}
+
+Finally, define the exact support counts $U_I,U_J$ as above.  Pointwise,
+\begin{equation}\label{eq:pointwise-kernel-bound}
+ |K_h^\circ(a,b)|
+ \le C_{\kappa_h}:=\max\{1,\kappa_h^{-1}-1\}.
+\end{equation}
+Hence every bounded coefficient pair satisfies the sparsity bound
+\begin{equation}\label{eq:sparsity-trivial-bound}
+ |\cB_h(I,J;\alpha,\beta)|
+ \le C_{\kappa_h}U_IU_J.
+\end{equation}
+For fixed $h$ and $w\to\infty$, all primes in $(w,y]$ are eventually active.  Put
+\[
+ \delta_Q=\prod_{w<p\le y}\left(1-\frac1p\right),
+ \qquad
+ \kappa=\prod_{w<p\le y}\frac{p-2}{p-1}.
+\]
+Then
+\begin{equation}\label{eq:kappa-delta-comparison}
+ \log\kappa-\log\delta_Q
+ =O\left(\sum_{p>w}\frac1{p^2}\right)=o(1),
+ \qquad \kappa\sim\delta_Q.
+\end{equation}
+If a family of boxes happens to satisfy
+\[
+ U_I\sim M\prod_{w<p\le y}\left(1-\frac1p\right),
+ \qquad
+ U_J\sim N\prod_{w<p\le y}\left(1-\frac1p\right),
+\]
+then, in the regime $\delta_Q\to0$,
+\[
+ C_\kappa\delta_Q^2\sim\delta_Q
+ \sim\frac{\log w}{\log y}
+\]
+by \eqref{eq:kappa-delta-comparison} and Mertens' theorem.  Hence the right side of \eqref{eq:sparsity-trivial-bound}, divided by $MN$, can tend to zero without cancellation.  A meaningful finite diagnostic must therefore report both ambient and survivor normalizations, and an analytic theorem must compare its saving with \eqref{eq:sparsity-trivial-bound}.
+
+\section{Reproducible finite diagnostics}\label{sec:experiments}
+
+The accompanying \texttt{experiments/} directory contains a small exact reference implementation.  It is designed to validate definitions and locate finite obstructions, not to approximate the asymptotic theorem by scale extrapolation.  For a requested pair of integer intervals it performs the following checks.
+\begin{enumerate}[label=(\roman*),leftmargin=2.5em]
+ \item It constructs the binary kernel both prime by prime and by one exact greatest-common-divisor computation with the active modulus, and requires entrywise agreement.
+ \item It retains the full unit support modulo $Q$ even when a prime divides $h$, while deleting that prime only from the shifted restriction and from $\kappa_h$.
+ \item It reports the raw ambient normalization and the survivor normalization separately.
+ \item It constructs an exact integer certificate for empirical double-centering before converting the matrix to floating point.
+ \item For small matrices it computes the complete numerical singular-value list and verifies the one-prime complete-period spectrum.
+\end{enumerate}
+
+The data file \texttt{theorem-4.3-certificate.json} gives an exact rational regression check of \cref{thm:short-shift-completion}.  For
+\[
+ Q=15,
+ \qquad \kappa=\frac38,
+ \qquad H=23,
+\]
+it uses the required normalization $H/Q=23/15$ and obtains
+\[
+ \left|S_{\mathrm{short}}-\frac{H}{Q}S_{\mathrm{complete}}\right|
+ =\frac{1713481}{233280},
+ \qquad
+ E(Q)(L_\alpha L_\beta)^2
+ =\frac{132051325}{11664}.
+\]
+The exact slack is $2639313019/233280>0$.  This is a finite implementation certificate, not a proof of the theorem.
+
+The reference grid also checks the active/inactive convention without changing the underlying unit support.  In the three rows of \cref{tab:active-prime-regression}, the base primes are always $\{3,5,7,11,13\}$ and the same intervals leave $12$ rows and $11$ columns.
+\begin{table}[t]
+\centering
+\caption{Exact active-prime regression cases.}
+\label{tab:active-prime-regression}
+\begin{tabular}{cclc}
+\toprule
+$h$ & active primes & $\kappa_h$ & survivor shape \\
+\midrule
+$2$  & $\{3,5,7,11,13\}$ & $33/128$ & $12\times11$ \\
+$6$  & $\{5,7,11,13\}$   & $33/64$  & $12\times11$ \\
+$30$ & $\{7,11,13\}$     & $11/16$  & $12\times11$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The regression suite uses deterministic cases and covers positive and negative even shifts, local factors with $p\mid h$, the two independent constructions, exact zero margins after empirical double-centering, both normalizations, and the $p=5$ complete-period singular values.  NumPy/LAPACK singular values are finite numerical diagnostics; they are not certified uniform bounds.  In particular, a small empirical double-centered norm does not prove a raw subperiod-box estimate, and no finite calculation selects the shift $h=2$ from the averaged theorem.
+
+\section{Relation to prime-sensitive Type II estimates}\label{sec:type-II-boundary}
+
+The preceding results are not a Type~II transfer.  They are finite local identities and an averaged-shift sampling estimate.  At minimum, the following logically independent barriers remain; overcoming all of them would still not by itself prove a fixed prime-pair lower bound.
+\begin{enumerate}[label=\textbf{B\arabic*.},leftmargin=3.2em]
+ \item \emph{Low conductors.}  The diagonal contribution in \cref{prop:local-character-saturation} must be projected out or shown to be small for the actual sieve-generated coefficients.  Arbitrary bounded coefficients cannot do this, and the formal projection of the finite periodic kernel is not automatically available in the original counting problem.
+ \item \emph{Fixed shift.}  A statement for an interval of fully active shifts does not imply the same statement for $h=2$.  A fixed displacement can belong to every exceptional set.
+ \item \emph{Prime sensitivity.}  The local kernel only records divisibility by primes in $(w,y]$.  It does not estimate
+ \[
+  \Lambda(mn+2)-b_{mn}
+ \]
+ for a prime-producing comparison sequence $b_{mn}$.
+ \item \emph{Final scale.}  A prime-pair main term has size $X/(\log X)^2$.  Even a genuine $o(MN)$ local estimate is useful only if, after all factor boxes and sieve weights are restored, the accumulated error is $o(X/(\log X)^2)$.
+\end{enumerate}
+
+The asymptotic sieve demonstrates that independent bilinear information can break the parity barrier in specially structured sequences \citep{FriedlanderIwaniec1998}.  The framework of \citet{FordMaynard2024} gives sufficient Type~I/II hypotheses and identifies optimality boundaries within its general prime-producing-sieve setting.  Conversely, within the Selberg-sieve framework studied by \citet{DHJPolymath2014}, strong distribution estimates and the sieve argument do not automatically select gap two.  The present result is a finite averaged-shift model and obstruction classifier, not a parity-breaking theorem.
+
+\section{Conclusion}\label{sec:conclusion}
+
+The centered local sieve kernel admits a complete and conductor-sensitive character description.  On a fixed subperiod box, the complete-group spectral norm is bounded through the product of the two residue discrepancies, and low-conductor characters give sharp obstructions.  Averaging fixed coefficients over an interval of fully active shifts changes the available estimate: the complete-shift Parseval identity can be sampled with a cost $E(Q)=\exp(O(\omega(Q)))$, substantially below the full modulus.  This yields a concrete regime in which the factor boxes are polylogarithmically subperiod, the shift interval is $Q^{o(1)}$, and the root-mean-square bilinear form is $o(MN)$ for every bounded coefficient pair.
+
+The same theorem also locates its own boundary.  It retains the local-character diagonal, requires shift averaging, and contains no prime weight.  These qualifiers are structural, not editorial.  A next analytic step would have to control the low-conductor modes for a concrete sieve-generated coefficient class and then determine whether any part of the estimate survives for the prescribed shift $h=2$.
+
+\section*{Data and code availability}
+
+The exact small-box implementation, deterministic regression tests, and run instructions are included in the source repository.  The program emits an explicit warning that finite singular values are not asymptotic estimates or evidence for a prime-pair theorem.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

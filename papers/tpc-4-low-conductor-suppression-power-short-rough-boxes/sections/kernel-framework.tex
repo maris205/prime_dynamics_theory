@@ -1,0 +1,253 @@
+\section{The centered CRT pair kernel}\label{sec:kernel-framework}
+
+This section records the finite identities used later.  They are included to fix normalizations and to separate the new power-short consequences from the exact complete-period calculation.
+
+\subsection{Group, kernel, and conductor}
+
+Let $\cP$ be a nonempty finite set of odd primes and put
+\begin{equation}\label{eq:Q-G-definitions}
+ Q=\prod_{p\in\cP}p,
+ \qquad
+ G=(\Z/Q\Z)^\times,
+ \qquad
+ g=|G|=\varphi(Q),
+ \qquad
+ r=\omega(Q).
+\end{equation}
+We use normalized Haar expectation
+\[
+ \E_G f=\frac1g\sum_{a\in G}f(a).
+\]
+By the Chinese remainder theorem,
+\[
+ G\cong\prod_{p\mid Q}\F_p^\times,
+ \qquad
+ \whG\cong\prod_{p\mid Q}\widehat{\F_p^\times}.
+\]
+For $\chi=\bigotimes_{p\mid Q}\chi_p\in\whG$, define
+\begin{equation}\label{eq:local-prime-support-conductor}
+ \supp_{\cP}(\chi)=\{p\mid Q:\chi_p\ne\one\},
+ \qquad
+ q_\chi=\prod_{p\in\supp_{\cP}(\chi)}p.
+\end{equation}
+We extend $\chi$ by zero off the units.  Because $Q$ is squarefree and every nontrivial character modulo a prime is primitive, this Dirichlet character modulo $Q$ is induced by a primitive character $\chi^*$ of conductor exactly $q_\chi$.  Thus $q_\chi$ is both the local-prime-support product and the usual conductor; we use the latter term below.
+
+Let $h$ be an integer with $(h,Q)=1$.  Set
+\begin{align}
+ K_h(a,b)
+  &=\prod_{p\mid Q}\one_{a_pb_p\ne-h\bmod p},\label{eq:local-binary-kernel}\\
+ \kappa
+  &=\prod_{p\mid Q}\frac{p-2}{p-1},\label{eq:kappa-definition}\\
+ K_h^\circ(a,b)
+  &=\kappa^{-1}K_h(a,b)-1.\label{eq:centered-kernel-definition}
+\end{align}
+The normalization is exact: for either variable fixed,
+\begin{equation}\label{eq:exact-row-column-centering}
+ \E_{a\in G}K_h^\circ(a,b)
+ =\E_{b\in G}K_h^\circ(a,b)=0.
+\end{equation}
+For a nontrivial character define
+\begin{equation}\label{eq:dchi-definition}
+ d(\chi)=d(q_\chi)
+ :=\prod_{p\mid q_\chi}\frac1{p-2},
+ \qquad
+ \Xi=\prod_{p\mid Q}\frac p{p-2}.
+\end{equation}
+We use the empty-product convention $d(1)=1$.
+
+\begin{proposition}[Exact conductor expansion]\label{prop:exact-kernel-expansion}
+For $(h,Q)=1$ and $a,b\in G$,
+\begin{equation}\label{eq:exact-kernel-expansion}
+ K_h^\circ(a,b)
+ =\sum_{\substack{\chi\in\whG\\\chi\ne\one}}
+ c_h(\chi)\chi(a)\chi(b),
+\end{equation}
+where
+\begin{equation}\label{eq:exact-kernel-coefficient}
+ c_h(\chi)
+ =(-1)^{\omega(q_\chi)}d(\chi)\overline{\chi(-h)}.
+\end{equation}
+For every nonempty $q\mid Q$,
+\begin{align}
+ \#\{\chi\in\whG:q_\chi=q\}
+  &=\prod_{p\mid q}(p-2),\label{eq:number-exact-conductor-chars}\\
+ \sum_{q_\chi=q}|c_h(\chi)|&=1,\label{eq:l1-mass-per-conductor}\\
+ \sum_{q_\chi=q}|c_h(\chi)|^2&=d(q).\label{eq:l2-mass-per-conductor}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+For $p\nmid h$ and $t\in\F_p^\times$, character orthogonality gives
+\[
+ \frac{p-1}{p-2}\one_{t\ne-h}
+ =1-\frac1{p-2}
+ \sum_{\substack{\chi_p\in\widehat{\F_p^\times}\\\chi_p\ne\one}}
+ \overline{\chi_p(-h)}\chi_p(t).
+\]
+Multiplying over $p\mid Q$ and removing the all-trivial term proves \eqref{eq:exact-kernel-expansion}.  At each $p\mid q$ there are $p-2$ nontrivial local characters, each with coefficient modulus $(p-2)^{-1}$.  Multiplication over the support proves \eqref{eq:number-exact-conductor-chars}--\eqref{eq:l2-mass-per-conductor}.
+\end{proof}
+
+\subsection{Interval transforms and shift Parseval}
+
+Let $I,J\subset\Z$ be intervals of a common length $L<Q$.  Define
+\begin{align}
+ A_I(\chi)
+  &=\sum_{\substack{m\in I\\(m,Q)=1}}\chi(m),
+ &
+ A_J(\chi)
+  &=\sum_{\substack{n\in J\\(n,Q)=1}}\chi(n),\label{eq:rough-character-transforms}\\
+ U_I&=\#\{m\in I:(m,Q)=1\},
+ &
+ U_J&=\#\{n\in J:(n,Q)=1\}.
+\end{align}
+The fixed-shift box form is
+\begin{equation}\label{eq:fixed-local-box-form}
+ \cB_h(I,J)
+ =\sum_{\substack{m\in I,n\in J\\(mn,Q)=1}}
+ K_h^\circ(m,n).
+\end{equation}
+Substitution of \eqref{eq:exact-kernel-expansion} gives
+\begin{equation}\label{eq:fixed-box-character-expansion}
+ \cB_h(I,J)
+ =\sum_{\chi\ne\one}c_h(\chi)A_I(\chi)A_J(\chi).
+\end{equation}
+
+For $\ell\in G$, every prime dividing $Q$ is active for $h=2\ell$.  The phase in \eqref{eq:exact-kernel-coefficient} is a character of $\ell$, so orthogonality yields the following identity.
+
+\begin{proposition}[Complete fully-active-shift Parseval]\label{prop:complete-shift-parseval}
+For intervals $I,J$ as above,
+\begin{equation}\label{eq:complete-shift-parseval-new}
+ \frac1g\sum_{\ell\in G}|\cB_{2\ell}(I,J)|^2
+ =\sum_{\chi\ne\one}
+ d(\chi)^2|A_I(\chi)|^2|A_J(\chi)|^2.
+\end{equation}
+Equivalently, the contribution of exact conductor $q$ is
+\begin{equation}\label{eq:energy-exact-conductor}
+ \cE_q(I,J)
+ =d(q)^2
+ \sum_{q_\chi=q}|A_I(\chi)|^2|A_J(\chi)|^2
+ \ge0.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+By \eqref{eq:exact-kernel-coefficient},
+\[
+ c_{2\ell}(\chi)
+ =(-1)^{\omega(q_\chi)}d(\chi)
+   \overline{\chi(-2)}\,\overline{\chi(\ell)}.
+\]
+After expanding the square in \eqref{eq:fixed-box-character-expansion}, the average of $\overline{\chi(\ell)}\psi(\ell)$ over $G$ is $\one_{\chi=\psi}$.
+\end{proof}
+
+\subsection{The high-conductor side}
+
+The exact multiplier already controls high conductors.  Indeed,
+\begin{equation}\label{eq:dchi-high-conductor}
+ d(\chi)
+ =\frac1{q_\chi}\prod_{p\mid q_\chi}\frac p{p-2}
+ \le\frac{\Xi}{q_\chi}.
+\end{equation}
+
+\begin{proposition}[High-conductor estimates]\label{prop:high-conductor-estimates}
+For $R\ge1$, let the superscript $>R$ denote the portion of \eqref{eq:fixed-box-character-expansion} or \eqref{eq:complete-shift-parseval-new} with $q_\chi>R$.  Then
+\begin{align}
+ |\cB_h^{>R}(I,J)|
+  &\le\frac{\Xi g}{R}\sqrt{U_IU_J}
+  \le\frac{\Xi gL}{R},\label{eq:fixed-high-conductor-bound}\\
+ \cE^{>R}(I,J)
+  &\le\frac{\Xi^2gL^3}{R^2},\label{eq:shift-high-conductor-bound}
+\end{align}
+where $\cE^{>R}$ denotes the corresponding part of the normalized complete-shift mean square.
+\end{proposition}
+
+\begin{proof}
+Parseval on $G$ gives
+\begin{equation}\label{eq:interval-transform-parseval}
+ \sum_{\chi\in\whG}|A_I(\chi)|^2=gU_I,
+ \qquad
+ \sum_{\chi\in\whG}|A_J(\chi)|^2=gU_J.
+\end{equation}
+Use \eqref{eq:dchi-high-conductor}, Cauchy--Schwarz, and \eqref{eq:interval-transform-parseval} in \eqref{eq:fixed-box-character-expansion} to obtain \eqref{eq:fixed-high-conductor-bound}.  For \eqref{eq:shift-high-conductor-bound}, use $|A_J(\chi)|\le L$ and sum $|A_I(\chi)|^2$ by \eqref{eq:interval-transform-parseval}.
+\end{proof}
+
+\subsection{Sampling a short shift interval}
+
+Let $\cL$ be an interval of $H$ consecutive integers and put
+\begin{equation}\label{eq:H-Q-definitions-new}
+ H_Q=\#\{\ell\in\cL:(\ell,Q)=1\},
+ \qquad
+ \delta_Q=\frac{g}{Q}.
+\end{equation}
+Direct inclusion--exclusion gives
+\begin{equation}\label{eq:H-Q-discrepancy-new}
+ |H_Q-H\delta_Q|\le2^r.
+\end{equation}
+Set
+\begin{equation}\label{eq:completion-cost-new}
+ E(Q)=\kappa^{-2}4^r+2\kappa^{-1}3^r+2^r.
+\end{equation}
+
+\begin{proposition}[Deterministic shift completion]\label{prop:short-shift-completion-new}
+For every $I,J,\cL$ as above,
+\begin{align}
+ \left|
+ \sum_{\substack{\ell\in\cL\\(\ell,Q)=1}}
+ |\cB_{2\ell}(I,J)|^2
+ -\frac HQ\sum_{\ell\in G}|\cB_{2\ell}(I,J)|^2
+ \right|
+ \le E(Q)U_I^2U_J^2.
+ \label{eq:short-shift-completion-new}
+\end{align}
+If $H\delta_Q\ge2^{r+1}$, then
+\begin{align}
+ \frac1{L^2}
+ \left(
+  \frac1{H_Q}
+  \sum_{\substack{\ell\in\cL\\(\ell,Q)=1}}
+  |\cB_{2\ell}(I,J)|^2
+ \right)^{1/2}
+ \ll
+ \frac{\sqrt{\cE(I,J)}}{L^2}
+ +\sqrt{\frac{E(Q)}{H\delta_Q}},
+ \label{eq:short-shift-normalized-transfer}
+\end{align}
+where $\cE(I,J)$ is the left side of \eqref{eq:complete-shift-parseval-new}.
+\end{proposition}
+
+\begin{proof}
+For a fixed unit product $t=mn\bmod Q$, the binary condition in shift $2\ell$ excludes the residue $-t/2$ modulo every $p\mid Q$.  After expanding $|\cB_{2\ell}|^2$, a two-kernel term together with $(\ell,Q)=1$ excludes at most three residues per prime; a one-kernel term excludes at most two; and the unit condition excludes one.  Inclusion--exclusion therefore gives discrepancies bounded by $4^r$, $3^r$, and $2^r$, respectively.  Their coefficients are $\kappa^{-2}$, $-\kappa^{-1}$, $-\kappa^{-1}$, and $1$, which proves \eqref{eq:short-shift-completion-new}.  Under the stated hypothesis, \eqref{eq:H-Q-discrepancy-new} gives $H_Q\ge H\delta_Q/2$.  Divide \eqref{eq:short-shift-completion-new} by $H_Q$, use $U_IU_J\le L^2$, and take square roots.
+\end{proof}
+
+\subsection{The quadratic prime window}
+
+All logarithms in the asymptotic statements are natural.  The asymptotic results use
+\begin{equation}\label{eq:quadratic-window-new}
+ \cP(w)=\{p:w<p\le w^2\},
+ \qquad
+ Q=\prod_{p\in\cP(w)}p.
+\end{equation}
+The prime number theorem and Mertens' theorem imply
+\begin{align}
+ \log Q&=(1+o(1))w^2,\label{eq:logQ-asymptotic-new}\\
+ r&=(1+o(1))\frac{w^2}{2\log w},\label{eq:r-asymptotic-new}\\
+ \delta_Q&=\frac12+o(1),
+ &\kappa&=\frac12+o(1),
+ &\Xi&=4+o(1).\label{eq:local-products-asymptotic-new}
+\end{align}
+In particular, for every fixed $c>1$,
+\begin{equation}\label{eq:c-r-is-Q-o1}
+ c^r=Q^{o(1)}.
+\end{equation}
+For the shift length
+\begin{equation}\label{eq:H-subpower-choice-new}
+ H=\left\lfloor Q^{1/\log w}\right\rfloor,
+\end{equation}
+one has
+\begin{equation}\label{eq:completion-decay-new}
+ \frac{E(Q)}{H\delta_Q}
+ =\exp\left(
+  -\bigl(1-\log2+o(1)\bigr)\frac{w^2}{\log w}
+ \right)=o(1).
+\end{equation}
+Thus the completion interval is $Q^{o(1)}$, yet it dominates the explicit completion cost.
