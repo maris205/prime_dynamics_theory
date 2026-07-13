@@ -1,0 +1,168 @@
+\section{Certificates, comparison ledger, and boundaries}\label{sec:certificates-boundaries}
+
+\subsection{Exact reproducibility certificate}
+
+The directory \texttt{experiments/} contains a pure standard-library Python
+implementation of the finite witness in \cref{sec:finite-barriers}.  It uses
+integers and \texttt{Fraction} objects only; there is no floating-point
+arithmetic, random sampling, external primality library, or fitted parameter.
+The retained certificate is
+\begin{center}
+ \path{experiments/data/exact-certificate.json}.
+\end{center}
+Its SHA-256 digest is
+\begin{center}
+\small
+\texttt{0C6BDAC0FDBD5BAB3308AAA907F361D9903B5A88406F6F466B621490C9AB7004}.
+\end{center}
+The main exact entries are summarized in \cref{tab:certificate-summary}.
+
+\begin{table}[ht]
+\centering
+\caption{Exact finite witness retained in the certificate.}
+\label{tab:certificate-summary}
+\begin{tabular}{@{}ll@{}}
+\toprule
+quantity & exact value\\
+\midrule
+$Q,h$ & $385,2$\\
+square target & $148996=2^2\cdot193^2$\\
+prime target & $149381$\\
+common factor residue & $(1,384)\pmod{385}$\\
+common target residue & $1\pmod{385}$\\
+$\kappa_Q$ & $9/16$\\
+common $K_{Q,2}^{\circ}$ & $7/9$\\
+$L_{\rm prime}(v)$ & $-1$\\
+$L_\lambda(v)$ & $2$\\
+prime minimax lower bound & $1/2$\\
+Liouville minimax lower bound & $1$\\
+Lucas witness & $3$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Running
+\begin{verbatim}
+python exact_defect_certificate.py --output data/exact-certificate.json
+python -m unittest -v test_exact_defect_certificate.py
+\end{verbatim}
+recomputes the JSON object and verifies byte-for-byte equality with the
+tracked file.  The tests cover the two factorizations, the complete Lucas
+certificate, CRT pushforward equality, all three prime-window signatures,
+the exact centered-kernel value, both functional gaps, and both minimax
+bounds.
+
+\begin{remark}[What the certificate certifies]\label{rem:certificate-scope}
+The certificate is a proof aid for a finite algebraic witness.  It is not
+numerical evidence that a growing-window defect is small or large, and no
+asymptotic theorem depends on extrapolating its values.
+\end{remark}
+
+\subsection{What is already known for neighboring sums}
+
+The target-prime form changes character when the coefficient geometry
+changes.  Three nearby statements should not be confused.
+\begin{enumerate}[label=\textbf{K\arabic*.},leftmargin=3.2em]
+ \item The complete unweighted hyperbolic sum can be rewritten as a shifted
+ divisor problem:
+ \[
+  \sum_{mn+h\le X}\Lambda(mn+h)
+  =\sum_{k\le X}\Lambda(k)\tau(k-h)
+ \]
+ up to the elementary boundary convention.  Strong uniform asymptotics for
+ this type of sum are known \citep[Theorem~1.1]{AssingBlomerLi2021}; see
+ also \citet{Fouvry1985}.  We make no novelty claim for it.
+ \item The one-sided form with arbitrary $\alpha_m$ and no $\beta_n$ is
+ controlled by Bombieri--Vinogradov in the exact modulus range
+ \eqref{eq:one-sided-bv-range}; this is
+ \cref{thm:one-sided-bv-type-I}.  Inserting a free second coefficient
+ sequence destroys the direct arithmetic-progression reduction.
+ \item A balanced dyadic form
+ \[
+  \sum_{m\sim M}\sum_{n\sim N}
+  \alpha_m\beta_n\Lambda(mn+h)
+ \]
+ with broad coefficient classes is a genuinely different Type~II or
+ dispersion problem.  No theorem in this paper estimates it at a prescribed
+ shift.
+\end{enumerate}
+
+Likewise, the generalized Chen theorem recorded in
+\citet[Theorem~25.11]{FriedlanderIwaniec2010} supplies many primes $p$ for which
+$p-h$ has at most two prime factors, in an appropriate fixed-even-shift
+formulation.  It does not allocate the mass between the prime and exact
+semiprime sectors.  This is a classical near-miss, not a corollary of the CRT
+nullspace theorem.
+
+\subsection{A strict ledger of implications}
+
+The results proved here have the following one-way relationships:
+\begin{equation}\label{eq:implication-ledger}
+\begin{gathered}
+\text{finite CRT kernel}
+\quad+\quad
+\text{TPC-5 conductor estimates}
+\quad\Longrightarrow\quad
+\text{rough-target main term},\\
+\text{Bombieri--Vinogradov}
+\quad\Longrightarrow\quad
+\text{one-sided target-prime Type~I range},\\
+\text{full fixed-shift prime-pair asymptotic}
+\quad\Longleftrightarrow\quad
+\text{large-divisor tail cancellation in \cref{thm:large-source-tail-equivalence}}.
+\end{gathered}
+\end{equation}
+The first two lines do not combine automatically, because they control
+different weights and different coefficient norms.  The last line is an
+exact equivalence, not a proof of either side.
+
+The unresolved form produced by Vaughan's identity in
+\cref{subsec:compact-vaughan-ledger} has the multiplicative-surface geometry
+\begin{equation}\label{eq:hard-surface}
+ \ell k-mn=h.
+\end{equation}
+Finite target roughness only records whether the right side of $mn+h$ meets
+selected residue classes.  It gives neither cancellation between the two
+factorizations in \eqref{eq:hard-surface} nor positivity for a prime target.
+
+\subsection{Strict boundary of the claims}
+
+For clarity, none of the following is asserted.
+\begin{enumerate}[label=\textbf{B\arabic*.},leftmargin=3.2em]
+ \item We do not prove that $mn+h$ is prime for any infinite family of
+ factor pairs, and do not prove a lower bound for
+ $\Lambda(m)\Lambda(n)\Lambda(mn+h)$.
+ \item We do not estimate $\sum_n\Lambda(n)\Lambda(n+2)$ beyond the exact
+ decomposition of \cref{thm:large-source-tail-equivalence}.  The large-divisor tail
+ is the unsolved content.
+ \item The one-sided Bombieri--Vinogradov theorem has no arbitrary second
+ coefficient sequence.  Calling it a balanced Type~II estimate would be
+ false.
+ \item Vaughan's and Heath--Brown's identities are algebraic decompositions.
+ Merely naming their Type~I/II packets supplies no estimate for those packets.
+ \item The periodic-minorant and nullspace theorems concern a fixed finite
+ period.  They are not universal impossibility theorems for analytic number
+ theory and do not rule out increasing resolution or nonlocal input.
+ \item No spectral isomorphism between the logistic map and a prime-target
+ operator is claimed.  The dynamics used here consists of finite arithmetic
+ shifts, congruence graph involutions, and their exact Fourier spectra.
+\end{enumerate}
+
+\subsection{Conclusion}
+
+Within the present framework, two elementary exact identities separate the
+finite rough term from the target von Mangoldt term and decompose a finite
+divisor truncation into congruence involutions.  Classical
+Bombieri--Vinogradov theory evaluates the one-sided Type~I range up to
+$X^{1/2}(\log X)^{-B}$.  In the additive ledger, the standard main-term
+calculation for that signed truncation yields the full formal pair
+singular-series constant; the complementary fixed-shift tail remains
+unestimated.
+
+The negative theorems explain why this remainder cannot be replaced by a
+fixed periodic prime minorant or inferred from finite CRT spectra.  Within
+the present divisor/operator framework, a next advance would require a
+genuinely nonlocal estimate---for example a
+coefficient-stable Type~II or dispersion theorem for a specified portion of
+\eqref{eq:hard-surface}.  Any such theorem must state its coefficient class,
+scale, averaging variable, and fixed-shift quantifier explicitly.

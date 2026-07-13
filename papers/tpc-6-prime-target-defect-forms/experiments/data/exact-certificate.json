@@ -1,0 +1,175 @@
+{
+  "atoms": {
+    "prime_target": {
+      "centered_kernel": "7/9",
+      "factorization": {
+        "149381": 1
+      },
+      "is_prime": true,
+      "label": "prime_target",
+      "liouville": -1,
+      "local_signatures": {
+        "11": [
+          1,
+          10,
+          1
+        ],
+        "5": [
+          1,
+          4,
+          1
+        ],
+        "7": [
+          1,
+          6,
+          1
+        ]
+      },
+      "m": 1,
+      "n": 149379,
+      "pair_residue_mod_Q": [
+        1,
+        384
+      ],
+      "target": 149381,
+      "target_residue_mod_Q": 1,
+      "weight": 1,
+      "window_survivor": true
+    },
+    "square_target": {
+      "centered_kernel": "7/9",
+      "factorization": {
+        "193": 2,
+        "2": 2
+      },
+      "is_prime": false,
+      "label": "square_target",
+      "liouville": 1,
+      "local_signatures": {
+        "11": [
+          1,
+          10,
+          1
+        ],
+        "5": [
+          1,
+          4,
+          1
+        ],
+        "7": [
+          1,
+          6,
+          1
+        ]
+      },
+      "m": 1,
+      "n": 148994,
+      "pair_residue_mod_Q": [
+        1,
+        384
+      ],
+      "target": 148996,
+      "target_residue_mod_Q": 1,
+      "weight": 1,
+      "window_survivor": true
+    }
+  },
+  "common_local_data": {
+    "all_residue_class_observables_equal": true,
+    "local_signatures": {
+      "11": [
+        1,
+        10,
+        1
+      ],
+      "5": [
+        1,
+        4,
+        1
+      ],
+      "7": [
+        1,
+        6,
+        1
+      ]
+    },
+    "pair_residue_mod_Q": [
+      1,
+      384
+    ],
+    "same_residue_pushforward": true,
+    "second_coordinate_difference": 385,
+    "target_difference": 385,
+    "target_residue_mod_Q": 1
+  },
+  "defect_linear_algebra": {
+    "liouville_functional": {
+      "minimax_absolute_error_lower_bound": "1",
+      "null_vector_pairing": 2,
+      "prime_target": -1,
+      "square_target": 1
+    },
+    "local_pushforward_pairing": 0,
+    "prime_functional": {
+      "minimax_absolute_error_lower_bound": "1/2",
+      "null_vector_pairing": -1,
+      "prime_target": 1,
+      "square_target": 0
+    },
+    "signed_null_vector": {
+      "prime_target": -1,
+      "square_target": 1
+    }
+  },
+  "lucas_primality_certificate": {
+    "fermat_residue": 1,
+    "n": 149381,
+    "n_minus_1_factorization": {
+      "11": 1,
+      "2": 2,
+      "5": 1,
+      "7": 1,
+      "97": 1
+    },
+    "prime_divisor_checks": {
+      "11": {
+        "exponent": 13580,
+        "gcd_residue_minus_one_with_n": 1,
+        "residue": 38519
+      },
+      "2": {
+        "exponent": 74690,
+        "gcd_residue_minus_one_with_n": 1,
+        "residue": 149380
+      },
+      "5": {
+        "exponent": 29876,
+        "gcd_residue_minus_one_with_n": 1,
+        "residue": 11332
+      },
+      "7": {
+        "exponent": 21340,
+        "gcd_residue_minus_one_with_n": 1,
+        "residue": 34444
+      },
+      "97": {
+        "exponent": 1540,
+        "gcd_residue_minus_one_with_n": 1,
+        "residue": 28976
+      }
+    },
+    "witness": 3
+  },
+  "modulus": 385,
+  "normalization": {
+    "kappa": "9/16",
+    "survivor_centered_kernel": "7/9"
+  },
+  "primes": [
+    5,
+    7,
+    11
+  ],
+  "schema": "tpc6-exact-prime-target-defect-v1",
+  "shift": 2
+}

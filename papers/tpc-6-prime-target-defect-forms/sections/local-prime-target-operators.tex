@@ -1,0 +1,216 @@
+\section{Finite-resolution target-prime operators}\label{sec:local-operators}
+
+This section gives two exact comparisons.  The first is the rough-to-prime
+defect \eqref{eq:intro-exact-bridge}.  The second resolves a truncated von
+Mangoldt target into arithmetic involutions.  No asymptotic estimate is used.
+
+\subsection{The rough-to-prime bridge}
+
+Continue with the notation of \cref{sec:introduction}.  Coefficients are
+always finite and are extended by zero away from their stated support.
+
+\begin{proposition}[Exact rough-to-prime defect]\label{prop:exact-rough-prime-defect}
+Let $Q$ be odd and squarefree, let $(h,Q)=1$, and suppose $a_m,b_n$ are
+supported on $Q$-units.  Then \eqref{eq:intro-exact-bridge} holds exactly.
+In particular, no bound for $\cB_{Q,h}(a,b)$ alone implies a bound for the
+prime-target form unless $\cD_{Q,h}(a,b)$ is estimated independently.
+\end{proposition}
+
+\begin{proof}
+The definition of the centered kernel gives
+\[
+ K_{Q,h}=\kappa_Q(1+K_{Q,h}^{\circ}).
+\]
+After multiplication by $a_mb_n$ and summation,
+\[
+ \sum_{m,n}a_mb_nK_{Q,h}(m,n)
+ =\kappa_Q\{A_0B_0+\cB_{Q,h}(a,b)\}.
+\]
+Now add the definition
+$\Lambda(mn+h)=\delta_Q^{-1}K_{Q,h}(m,n)+D_{Q,h}(m,n)$.
+The Euler product in \eqref{eq:intro-local-factor} follows directly from the
+definitions of $\delta_Q$ and $\kappa_Q$.
+\end{proof}
+
+\begin{remark}[Two dangerous specializations]\label{rem:dangerous-specializations}
+At $h=2$, take $Q=1$, $a=\delta_1$, and
+$b_n=\Lambda(n)\one_{n\leq X}$.  Then
+\[
+ \cP_2(a,b)=\sum_{n\leq X}\Lambda(n)\Lambda(n+2).
+\]
+Thus a coefficient-uniform estimate strong enough to make the specialized
+defect $o(X)$, with the corresponding bridge main term retained, would give
+a positive linear-order asymptotic (indeed $\sim X$ in this $Q=1$
+normalization), and hence, after removing the $o(X)$ contribution of higher
+prime powers, infinitely many twin primes.  At growing factor
+scales, finite dyadic choices
+$a_m=\Lambda(m)\one_{m\in I}$ and
+$b_n=\Lambda(n)\one_{n\in J}$ ask for three prime conditions
+$m,n,mn+h$; this is not the additive twin-prime correlation, but it remains
+a deep prime-producing problem.  Neither specialization is supplied here.
+\end{remark}
+
+\subsection{Divisor resolution of the target weight}
+
+For $N\ge1$ and $R\ge1$, define
+\begin{equation}\label{eq:truncated-lambda}
+ \Lambda_{\le R}(N)
+ =-\sum_{\substack{d\mid N\\d\le R}}\mu(d)\log d,
+ \qquad
+ \Delta_R(N)=\Lambda(N)-\Lambda_{\le R}(N).
+\end{equation}
+The full identity $\Lambda=-\mu\log *\,\one$ gives
+\begin{equation}\label{eq:exact-target-remainder}
+ \Delta_R(N)
+ =-\sum_{\substack{d\mid N\\d>R}}\mu(d)\log d.
+\end{equation}
+Thus $\Delta_R$ is an exact unresolved tail, not a probabilistic error term.
+
+Let $I,J\subset\Z$ be finite, and let $a=(a_m)_{m\in I}$ and
+$b=(b_n)_{n\in J}$.  We assume
+\begin{equation}\label{eq:h-unit-support}
+ a_mb_n\ne0\quad\Longrightarrow\quad (mn,h)=1
+ \quad\hbox{and}\quad mn+h\ge2.
+\end{equation}
+This includes $h=2$ with both factor coordinates supported on odd integers.
+Define
+\begin{align}
+ \cT_{h,R}(a,b)
+ &=\sum_{m\in I}\sum_{n\in J}a_mb_n\Lambda_{\le R}(mn+h),
+ \label{eq:truncated-target-form}\\
+ \cD_{h,R}^{\mathrm{div}}(a,b)
+ &=\sum_{m\in I}\sum_{n\in J}a_mb_n\Delta_R(mn+h).
+ \label{eq:divisor-defect-form}
+\end{align}
+Then $\cP_h=\cT_{h,R}+\cD_{h,R}^{\mathrm{div}}$ exactly.
+
+For a modulus $d$ and a Dirichlet character modulo $d$, extended by zero off
+the units, put
+\begin{equation}\label{eq:resolution-transforms}
+ A_d(\chi)=\sum_{m\in I}a_m\chi(m),
+ \qquad
+ B_d(\chi)=\sum_{n\in J}b_n\chi(n).
+\end{equation}
+
+\begin{theorem}[Exact target-resolution expansion]\label{thm:target-resolution-expansion}
+Under \eqref{eq:h-unit-support},
+\begin{equation}\label{eq:target-resolution-expansion}
+ \cT_{h,R}(a,b)
+ =-\sum_{\substack{d\le R\\(d,h)=1}}
+ \frac{\mu(d)\log d}{\varphi(d)}
+ \sum_{\chi\bmod d}
+ \overline{\chi(-h)}A_d(\chi)B_d(\chi).
+\end{equation}
+Only squarefree $d$ contribute.  The complementary form is exactly
+\begin{equation}\label{eq:target-resolution-defect}
+ \cD_{h,R}^{\mathrm{div}}(a,b)
+ =-\sum_{m\in I}\sum_{n\in J}a_mb_n
+   \sum_{\substack{d\mid mn+h\\d>R}}\mu(d)\log d.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+If $d\mid mn+h$ and \eqref{eq:h-unit-support} holds, then $(d,h)=1$.
+Moreover $m,n$ are units modulo $d$.  Character orthogonality on
+$(\Z/d\Z)^\times$ therefore gives
+\begin{equation}\label{eq:congruence-character-identity}
+ \one_{mn\equiv-h\, (d)}
+ =\frac1{\varphi(d)}\sum_{\chi\bmod d}
+   \chi(mn)\overline{\chi(-h)}.
+\end{equation}
+Insert \eqref{eq:congruence-character-identity} in
+\eqref{eq:truncated-lambda} and interchange finite sums.  This proves
+\eqref{eq:target-resolution-expansion}.  Equation
+\eqref{eq:target-resolution-defect} is \eqref{eq:exact-target-remainder}
+summed against the factor coefficients.
+\end{proof}
+
+\subsection{Arithmetic involutions and the missing damping}
+
+For $(d,h)=1$, let $G_d=(\Z/d\Z)^\times$ with normalized counting measure
+and define
+\begin{equation}\label{eq:arithmetic-involution}
+ J_{h,d}(x)=-h x^{-1},
+ \qquad
+ (U_{h,d}f)(x)=f(J_{h,d}(x)).
+\end{equation}
+
+\begin{proposition}[Involution spectrum]\label{prop:involution-spectrum}
+The map $J_{h,d}$ is a measure-preserving involution.  Consequently
+$U_{h,d}$ is unitary, self-adjoint, and has spectrum contained in
+$\{+1,-1\}$.  For every character $\chi\in\widehat G_d$,
+\begin{equation}\label{eq:involution-on-characters}
+ U_{h,d}\chi=\chi(-h)\overline\chi.
+\end{equation}
+If $\chi=\overline\chi$, it is an eigenfunction with eigenvalue
+$\chi(-h)$.  Every nonreal pair $\{\chi,\overline\chi\}$ spans one
+$+1$ and one $-1$ eigenline.
+\end{proposition}
+
+\begin{proof}
+A direct calculation gives
+\[
+ J_{h,d}(J_{h,d}(x))
+ =-h(-hx^{-1})^{-1}=x.
+\]
+Thus $J_{h,d}$ is a bijective involution and preserves normalized counting
+measure.  Equation \eqref{eq:involution-on-characters} follows from
+$\chi(x^{-1})=\overline{\chi(x)}$.  The remaining statements follow from
+$U_{h,d}^2=I$ and the displayed action on each character pair.
+\end{proof}
+
+The normalized graph kernel of $U_{h,d}$ is
+\begin{equation}\label{eq:graph-kernel}
+ \Gamma_{h,d}(x,y)=\varphi(d)\one_{xy\equiv-h\, (d)}
+ =\sum_{\chi\bmod d}\chi(x)\chi(y)\overline{\chi(-h)}.
+\end{equation}
+Thus \eqref{eq:target-resolution-expansion} is a weighted bundle of finite
+Koopman graph operators.
+
+\begin{corollary}[Layer norms and failure of an absolute majorant]\label{cor:no-layer-damping}
+Assume $h\ne0$.  For squarefree $d>1$ with $(d,h)=1$, the $d$-layer in the
+M\"obius--logarithm resolution is
+\[
+ V_{h,d}=-\frac{\mu(d)\log d}{\varphi(d)}U_{h,d}
+\]
+and has operator norm
+\begin{equation}\label{eq:prime-layer-norm}
+ \|V_{h,d}\|_{2\to2}=\frac{\log d}{\varphi(d)}.
+\end{equation}
+Nevertheless the scalar absolute norms have no summable tail.  Already
+\begin{equation}\label{eq:prime-layer-mass}
+ \sum_{\substack{p\le R\\p\nmid h}}\|V_{h,p}\|_{2\to2}
+ =\sum_{\substack{p\le R\\p\nmid h}}\frac{\log p}{p-1}
+ =\log R+O_h(1).
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+For squarefree $d$, $|\mu(d)|=1$, and
+\cref{prop:involution-spectrum} gives $\|U_{h,d}\|_{2\to2}=1$.
+The last assertion follows from the prime number theorem and partial
+summation; replacing $p$ by $p-1$ changes the sum by a convergent amount.
+\end{proof}
+
+Because the operators $V_{h,d}$ act on different spaces $L^2(G_d)$,
+\eqref{eq:prime-layer-mass} is not the norm divergence of a single operator
+or of an unweighted direct-sum operator.  It shows only that the scalar layer
+norms do not furnish an absolutely summable majorant.  Hence the previous
+proof based on summing conductor norms cannot be transplanted verbatim;
+cancellation between moduli is neither excluded nor estimated here.
+
+For the centered rough kernel of the preceding papers, a character of exact
+conductor $q$ instead carries the multiplier
+\begin{equation}\label{eq:rough-kernel-multiplier-comparison}
+ d_Q(\chi)=\prod_{p\mid q}\frac1{p-2},
+\end{equation}
+which is multiplied by $1/(p-2)$ whenever a new prime $p\geq5$ enters the
+exact conductor (and is unchanged by the factor $p=3$)
+\citep{WangTPCThree2026,WangTPCFour2026}.
+Equations \eqref{eq:prime-layer-norm}--\eqref{eq:prime-layer-mass} and
+\eqref{eq:rough-kernel-multiplier-comparison} live in their respective
+normalizations, but the contrast is exact: the target-prime layers lack an
+absolutely summable scalar norm majorant, whereas the companion rough
+operator has a summable exact conductor-mass tail in its growing prime
+window.  Thus the old absolute-majorant proof does not by itself control the
+large-divisor tail in \eqref{eq:target-resolution-defect}.

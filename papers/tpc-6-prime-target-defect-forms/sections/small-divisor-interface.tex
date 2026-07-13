@@ -1,0 +1,572 @@
+\section{The Bombieri--Vinogradov small-divisor interface}
+\label{sec:small-divisor-interface}
+
+This section separates three statements which are easy to conflate.  First,
+expanding the first von Mangoldt weight gives an exact divisor ledger; a
+\emph{source divisor} means a divisor introduced by that expansion.  Second,
+the Bombieri--Vinogradov theorem evaluates the part with
+$d\le X^{1/2}(\log X)^{-B}$.  Third, the complementary large-divisor tail is
+still unestimated.  We also record a different one-sided application
+of Bombieri--Vinogradov in which one factor and the target are prime-weighted.
+None of these statements supplies a lower bound for a fixed prime pair.
+
+Throughout the first part of the section, $h\ne0$ is a fixed even integer,
+$W\in C_c^1((0,\infty))$ is supported in $[1,2]$, and
+\begin{equation}\label{eq:weight-mass}
+ \cI_W=\int_0^\infty W(u)\,du.
+\end{equation}
+The restriction to even $h$ is the admissible two-form case.  The same
+identities hold for odd $h$, but then the local singular series vanishes.
+
+\subsection{An exact source-divisor ledger}
+\label{subsec:source-divisor-ledger}
+
+Consider the smoothed fixed-shift correlation
+\begin{equation}\label{eq:pair-correlation}
+ \cC_h(X;W)
+ =\sum_{n\geq1}\Lambda(n)\Lambda(n+h)W(n/X),
+\end{equation}
+where $X$ is sufficiently large that every target in the support is positive.
+The elementary identity
+\begin{equation}\label{eq:mobius-log-source-identity}
+ \Lambda(n)=-\sum_{d\mid n}\mu(d)\log d
+\end{equation}
+gives the following finite decomposition.
+
+\begin{proposition}[Exact source M\"obius--log ledger]
+\label{prop:exact-source-ledger}
+For every $X$ and every $1\leq D\leq2X$,
+\begin{align}
+ \cC_h(X;W)
+ &=-\sum_{d\leq2X}\mu(d)\log d
+     \sum_{m\geq1}\Lambda(dm+h)W(dm/X)
+ \label{eq:exact-source-ledger}\\
+ &=\cC_{h,\leq D}(X;W)+\cT_{h,>D}(X;W),
+ \label{eq:exact-source-split}
+\end{align}
+where
+\begin{align}
+ \cC_{h,\leq D}(X;W)
+ &=-\sum_{d\leq D}\mu(d)\log d
+     \sum_{m\geq1}\Lambda(dm+h)W(dm/X),
+ \label{eq:short-source-ledger}\\
+ \cT_{h,>D}(X;W)
+ &=-\sum_{D<d\leq2X}\mu(d)\log d
+     \sum_{m\geq1}\Lambda(dm+h)W(dm/X).
+ \label{eq:large-source-tail}
+\end{align}
+All these identities are exact.
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:mobius-log-source-identity} into
+\eqref{eq:pair-correlation}, interchange two finite sums, and
+write $n=dm$.  Since $W(n/X)$ vanishes unless $X\leq n\leq2X$, no divisor
+larger than $2X$ occurs.  Splitting at $D$ proves
+\eqref{eq:exact-source-split}.
+\end{proof}
+
+Divisors not coprime to $h$ do not form the analytic obstruction.  They are
+supported on a finite collection of prime-power targets.
+
+\begin{lemma}[The non-coprime source part]
+\label{lem:noncoprime-source-part}
+For every $\eps>0$,
+\begin{equation}\label{eq:noncoprime-source-bound}
+ \sum_{\substack{d\leq2X\\(d,h)>1}}
+ |\mu(d)|\log(2d)
+ \sum_{m\geq1}\Lambda(dm+h)|W(dm/X)|
+ \ll_{h,W,\eps}X^\eps.
+\end{equation}
+The same bound holds after imposing either $d\leq D$ or $d>D$.
+\end{lemma}
+
+\begin{proof}
+After writing $n=dm$, the left side is at most
+\[
+ \sum_{n\asymp X}\Lambda(n+h)|W(n/X)|
+ \sum_{\substack{d\mid n\\(d,h)>1}}|\mu(d)|\log(2d).
+\]
+If the inner sum is nonempty, some prime $p\mid h$ divides $n$.  Hence
+$p\mid n+h$.  The condition $\Lambda(n+h)\ne0$ then forces
+$n+h=p^k$.  For each of the finitely many primes $p\mid h$, only
+$O_h(1)$ powers $p^k$ lie in an interval of the form $[X+h,2X+h]$.
+Finally,
+\[
+ \sum_{d\mid n}|\mu(d)|\log(2d)
+ \ll \tau(n)\log(2n)\ll_\eps X^\eps,
+\]
+after reducing $\eps$ if necessary.  This proves the claim.
+\end{proof}
+
+\subsection{The one-sided Bombieri--Vinogradov input}
+\label{subsec:one-sided-bv}
+
+We use the maximal form of the Bombieri--Vinogradov theorem.  This is a
+classical input, not a new distribution theorem
+\citep{Bombieri1965,Vinogradov1965,IwaniecKowalski2004}.
+
+\begin{theorem}[One-sided smooth Type~I estimate]
+\label{thm:one-sided-bv-type-I}
+Fix $h\ne0$, $A>0$, and $W\in C_c^1((0,\infty))$.  There is a constant
+$B=B(A,W)>0$ with the following properties.
+
+Let $x=MN$ be sufficiently large, let $M,N\geq2$, and suppose
+\begin{equation}\label{eq:one-sided-bv-range}
+ 2M\leq \frac{x^{1/2}}{(\log x)^B}.
+\end{equation}
+For arbitrary complex coefficients $|\alpha_m|\leq1$ supported on
+$M<m\leq2M$ and $(m,h)=1$,
+\begin{equation}\label{eq:one-sided-bv-row-form}
+ \sum_{M<m\leq2M}\alpha_m
+ \left\{
+   \sum_{n\geq1}\Lambda(mn+h)W(n/N)
+   -\frac{mN}{\varphi(m)}\cI_W
+ \right\}
+ \ll_{A,h,W}\frac{x}{(\log x)^A}.
+\end{equation}
+In particular, the main term in the $m$th row is
+$mN\cI_W/\varphi(m)$, not $N\cI_W$.
+
+There is also a fixed-source-scale form.  If $X$ is sufficiently large,
+\begin{equation}\label{eq:fixed-source-bv-range}
+ D\leq\frac{X^{1/2}}{(\log X)^B}
+\end{equation}
+and $|\alpha_d|\leq1$ is supported on $d\leq D$ and $(d,h)=1$, then
+\begin{equation}\label{eq:one-sided-bv-fixed-source}
+ \sum_{\substack{d\leq D\\(d,h)=1}}\alpha_d
+ \left\{
+   \sum_{m\geq1}\Lambda(dm+h)W(dm/X)
+   -\frac{X}{\varphi(d)}\cI_W
+ \right\}
+ \ll_{A,h,W}\frac{X}{(\log X)^A}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Put
+\[
+ E(y;q,a)=
+ \sum_{\substack{r\leq y\\r\equiv a\pmod q}}\Lambda(r)
+ -\frac{y}{\varphi(q)}
+ \qquad ((a,q)=1).
+\]
+The maximal Bombieri--Vinogradov theorem states that, after increasing
+$B$ in terms of $A$, the sum over $q$ up to the right side of
+\eqref{eq:one-sided-bv-range} of
+$\max_{(a,q)=1}\max_{y\leq Cx}|E(y;q,a)|$ is
+$O_A(x(\log x)^{-A})$; here $C$ depends only on the support of $W$.
+
+For fixed $m$, the substitution $r=mn+h$ places the target in the reduced
+class $h\pmod m$.  Stieltjes partial summation against
+$W((r-h)/(mN))$ shows that the expression in braces in
+\eqref{eq:one-sided-bv-row-form} is bounded by a constant depending on
+$W$ times
+\[
+ \max_{y\leq Cx+|h|}|E(y;m,h)|.
+\]
+The integral of the continuous main term is
+\[
+ \frac1{\varphi(m)}
+ \int_0^\infty W((t-h)/(mN))\,dt
+ =\frac{mN}{\varphi(m)}\cI_W.
+\]
+Summing the error with $|\alpha_m|\leq1$ proves
+\eqref{eq:one-sided-bv-row-form}.  The same argument with the weight
+$W((r-h)/X)$ gives \eqref{eq:one-sided-bv-fixed-source}; in that case the
+continuous main term is $X\cI_W/\varphi(d)$.
+\end{proof}
+
+The coefficient $\mu(d)\log d$ in the exact source ledger costs only one
+additional logarithm in \cref{thm:one-sided-bv-type-I}.  The main terms are
+summed by the following standard singular-series coefficient identity.
+
+\subsection{The singular coefficient and small-divisor evaluation}
+\label{subsec:singular-coefficient}
+
+For even $h\ne0$, define
+\begin{equation}\label{eq:pair-singular-series}
+ \mathfrak S(h)
+ =2\prod_{p>2}\left(1-\frac1{(p-1)^2}\right)
+   \prod_{\substack{p\mid h\\p>2}}\frac{p-1}{p-2}.
+\end{equation}
+
+\begin{lemma}[Singular-series coefficient]
+\label{lem:singular-series-coefficient}
+For every fixed even $h\ne0$ and every $A>0$,
+\begin{equation}\label{eq:singular-coefficient-limit}
+ -\sum_{\substack{d\leq z\\(d,h)=1}}
+   \frac{\mu(d)\log d}{\varphi(d)}
+ =\mathfrak S(h)+O_{A,h}((\log z)^{-A})
+ \qquad (z\geq3).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For $\Re s>0$, set
+\begin{align}
+ F_h(s)
+ &=\sum_{\substack{d\geq1\\(d,h)=1}}
+   \frac{\mu(d)}{\varphi(d)d^s}
+ =\prod_{p\nmid h}\left(1-\frac{p^{-s}}{p-1}\right)
+ \label{eq:singular-dirichlet-series}\\
+ &=\frac{G_h(s)}{\zeta(1+s)},
+ \label{eq:singular-zeta-factorization}
+\end{align}
+where
+\begin{equation}\label{eq:singular-G-product}
+ G_h(s)=
+ \prod_{p\mid h}(1-p^{-1-s})^{-1}
+ \prod_{p\nmid h}
+ \frac{1-p^{-s}/(p-1)}{1-p^{-1-s}}.
+\end{equation}
+The second product converges absolutely in a fixed half-plane containing
+$s=0$.  At zero its local factors give
+\begin{align*}
+ G_h(0)
+ &=2\prod_{\substack{p>2\\p\nmid h}}
+      \frac{p(p-2)}{(p-1)^2}
+    \prod_{\substack{p\mid h\\p>2}}\frac{p}{p-1}
+ =\mathfrak S(h).
+\end{align*}
+We now justify the truncation quantitatively rather than differentiate at the
+boundary of convergence.  Write
+\[
+ G_h(s)=\sum_{r\geq1}\frac{g_h(r)}{r^s}.
+\]
+The coefficients are multiplicative and, for $\nu\geq1$, satisfy
+\[
+ g_h(p^\nu)=
+ \begin{cases}
+  p^{-\nu},&p\mid h,\\
+  -\{p^\nu(p-1)\}^{-1},&p\nmid h.
+ \end{cases}
+\]
+Hence, for any fixed $0<\eta<1$, the Euler product of the absolute local
+sums converges: away from the finitely many primes dividing $h$, its
+nonconstant term is $O_\eta(p^{-2+\eta})$.  In particular,
+\begin{equation}\label{eq:G-coefficient-moment}
+ \sum_{r\geq1}|g_h(r)|r^\eta<\infty.
+\end{equation}
+
+Put
+\[
+ A_0(y)=\sum_{k\leq y}\frac{\mu(k)}k,
+ \qquad
+ A_1(y)=\sum_{k\leq y}\frac{\mu(k)\log k}{k}.
+\]
+The classical zero-free region and partial summation imply, for every
+$C>0$ and $y\geq1$,
+\begin{equation}\label{eq:mobius-over-n-estimates}
+ A_0(y)\ll_C(\log(2y))^{-C},
+ \qquad
+ A_1(y)=-1+O_C((\log(2y))^{-C});
+\end{equation}
+see \citet{IwaniecKowalski2004,MontgomeryVaughan2007}.
+In the common half-plane of absolute convergence,
+\eqref{eq:singular-zeta-factorization} gives the coefficient identity
+\[
+ \frac{\mu(d)\one_{(d,h)=1}}{\varphi(d)}
+ =\sum_{rk=d}g_h(r)\frac{\mu(k)}k.
+\]
+Consequently
+\begin{align}
+ -\sum_{\substack{d\leq z\\(d,h)=1}}
+   \frac{\mu(d)\log d}{\varphi(d)}
+ =-\sum_{r\leq z}g_h(r)
+ \left\{(\log r)A_0(z/r)+A_1(z/r)\right\}.
+ \label{eq:singular-coefficient-convolution}
+\end{align}
+For $r\leq z^{1/2}$, \eqref{eq:mobius-over-n-estimates}, with $C$
+chosen larger than $A+2$, makes the difference between the braces and $-1$
+equal to $O_{A,h}((1+\log r)(\log z)^{-A-1})$.  Its sum is admissible by
+\eqref{eq:G-coefficient-moment}.  For $r>z^{1/2}$, the elementary bounds
+$|A_0(y)|\ll\log(2y)$ and $|A_1(y)|\ll(\log(2y))^2$ combine with
+\eqref{eq:G-coefficient-moment} to give
+$O_{A,h}((\log z)^{-A})$.  The omitted tail
+$\sum_{r>z}g_h(r)$ has the same bound.  Thus
+\eqref{eq:singular-coefficient-convolution} equals
+$G_h(0)+O_{A,h}((\log z)^{-A})$, and
+$G_h(0)=\mathfrak S(h)$ proves the lemma.
+\end{proof}
+
+\begin{corollary}[Evaluation of the small source-divisor range]
+\label{cor:source-small-divisors}
+Fix $A>0$.  There is $B=B(A,h,W)>0$ such that, for all sufficiently
+large $X$, with
+\begin{equation}\label{eq:small-divisor-cutoff}
+ D=\left\lfloor\frac{X^{1/2}}{(\log X)^B}\right\rfloor,
+\end{equation}
+one has
+\begin{equation}\label{eq:short-source-main-term}
+ \cC_{h,\leq D}(X;W)
+ =\mathfrak S(h)X\cI_W
+  +O_{A,h,W}\left(\frac{X}{(\log X)^A}\right).
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+By \cref{lem:noncoprime-source-part}, the terms with $(d,h)>1$ contribute
+$O_{h,W,\eps}(X^\eps)$.  On the coprime terms, apply
+\eqref{eq:one-sided-bv-fixed-source} with
+\[
+ \alpha_d=-\frac{\mu(d)\log d}{\log D}.
+\]
+After multiplying back by $\log D$ and choosing the exponent in the
+Bombieri--Vinogradov error larger than $A+2$, this gives
+\[
+ \cC_{h,\leq D}(X;W)
+ =-X\cI_W
+  \sum_{\substack{d\leq D\\(d,h)=1}}
+  \frac{\mu(d)\log d}{\varphi(d)}
+ +O_{A,h,W}(X(\log X)^{-A}).
+\]
+Now use \cref{lem:singular-series-coefficient}.  Since
+$\log D\asymp\log X$, its truncation error is absorbed into the displayed
+error.  Taking, for example, $\eps=1/2$ absorbs the non-coprime part as
+well.
+\end{proof}
+
+The content of \cref{cor:source-small-divisors} is precisely limited
+to the short source-divisor range.  Combining it with the exact split gives
+an equivalence, not a solution.
+
+\begin{theorem}[Exact large-divisor-tail equivalence]
+\label{thm:large-source-tail-equivalence}
+For each $A>0$, choose $B=B(A,h,W)$ as in
+\cref{cor:source-small-divisors}, and let $D$ be given by
+\eqref{eq:small-divisor-cutoff}.  Then, for all sufficiently large $X$,
+\begin{equation}\label{eq:pair-minus-main-equals-tail}
+ \cC_h(X;W)-\mathfrak S(h)X\cI_W
+ =\cT_{h,>D}(X;W)
+  +O_{A,h,W}\left(\frac{X}{(\log X)^A}\right).
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:tail-equivalence-asymptotic}
+ \cC_h(X;W)\sim\mathfrak S(h)X\cI_W
+ \quad\Longleftrightarrow\quad
+ \cT_{h,>D}(X;W)=o(X),
+\end{equation}
+provided $\cI_W\ne0$.
+\end{theorem}
+
+\begin{proof}
+Substitute \eqref{eq:short-source-main-term} into the exact identity
+\eqref{eq:exact-source-split}.  This proves
+\eqref{eq:pair-minus-main-equals-tail}, and the equivalence follows.
+\end{proof}
+
+\begin{remark}[What the truncation evaluation does not say]
+\label{rem:small-divisor-tail-boundary}
+The right side of \eqref{eq:pair-minus-main-equals-tail} contains the
+divisors $d>D$, where the direct arithmetic-progression argument has no
+Bombieri--Vinogradov coverage.  The assertion that this tail is $o(X)$ is
+exactly the missing fixed-shift cancellation.  Naming the tail, or noting
+that its coefficients have signs, does not estimate it.  In particular,
+\cref{thm:large-source-tail-equivalence} is not a reduction of the twin-prime
+problem to an independently easier theorem.
+\end{remark}
+
+\subsection{A prime-factor/target-prime marginal}
+\label{subsec:prime-target-marginal}
+
+The same one-sided theorem gives a standard but distinct prime-target
+asymptotic.  Let $W_1,W_2\in C_c^1((0,\infty))$ be supported in $[1,2]$,
+put $x=MN$, and define
+\begin{align}
+ \mathcal M_h(M,N)
+ &=\sum_{m,n\geq1}
+   \Lambda(m)\Lambda(mn+h)
+   W_1(m/M)W_2(n/N),
+ \label{eq:prime-target-marginal}\\
+ \cP_h(M,N)
+ &=\sum_{m,n\geq1}
+   \Lambda(m)\Lambda(n)\Lambda(mn+h)
+   W_1(m/M)W_2(n/N),
+ \label{eq:three-prime-target-form}\\
+ \mathcal V_h(M,N)
+ &=\sum_{m,n\geq1}
+   \Lambda(m)(\Lambda(n)-1)\Lambda(mn+h)
+   W_1(m/M)W_2(n/N).
+ \label{eq:missing-prime-covariance}
+\end{align}
+
+\begin{proposition}[Marginal theorem and covariance ledger]
+\label{prop:marginal-covariance-ledger}
+Suppose $M,N\to\infty$ and, for a sufficiently large $B$,
+\begin{equation}\label{eq:marginal-bv-range}
+ 2M\leq\frac{x^{1/2}}{(\log x)^B}.
+\end{equation}
+Then
+\begin{equation}\label{eq:prime-target-marginal-asymptotic}
+ \mathcal M_h(M,N)
+ =MN\left(\int_0^\infty W_1\right)
+     \left(\int_0^\infty W_2\right)
+ +o(MN).
+\end{equation}
+Moreover, the identity
+\begin{equation}\label{eq:exact-marginal-covariance-ledger}
+ \cP_h(M,N)=\mathcal M_h(M,N)+\mathcal V_h(M,N)
+\end{equation}
+is exact.  Hence the expected three-prime asymptotic, written in a form
+that remains meaningful when a weight integral vanishes,
+\begin{equation}\label{eq:conjectural-three-prime-main}
+ \cP_h(M,N)
+ =\mathfrak S(h)MN
+ \left(\int_0^\infty W_1\right)
+ \left(\int_0^\infty W_2\right)
+ +o(MN),
+\end{equation}
+is equivalent, in this range, to
+\begin{equation}\label{eq:required-covariance-main}
+ \mathcal V_h(M,N)
+ =(\mathfrak S(h)-1)MN
+ \left(\int_0^\infty W_1\right)
+ \left(\int_0^\infty W_2\right)
+ +o(MN).
+\end{equation}
+In particular, when
+$(\mathfrak S(h)-1)(\int W_1)(\int W_2)\ne0$, the missing covariance is not
+predicted to be $o(MN)$.
+\end{proposition}
+
+\begin{proof}
+In \eqref{eq:one-sided-bv-row-form}, take
+\[
+ C_1=\max\{1,\lVert W_1\rVert_\infty\},
+ \qquad
+ \alpha_m=\frac{\Lambda(m)W_1(m/M)}{C_1\log(3M)}
+\]
+and then multiply the result by $C_1\log(3M)$.  Thus
+$|\alpha_m|\leq1$ on the support in question.  By choosing the logarithmic
+saving one power larger, the resulting error is $o(MN)$.  Rows with
+$(m,h)>1$ are negligible: if $\Lambda(m)\ne0$ and a prime $p\mid(m,h)$,
+then $m$ is a power of $p$, and $mn+h$ can carry von Mangoldt weight only
+when it too is a power of $p$.  For each $p\mid h$, a dyadic interval
+contains $O_h(1)$ relevant powers $m=p^a$, and the target interval contains
+$O_h(1)$ powers $mn+h=p^b$; their total contribution is
+$O_h((\log x)^2)=o(MN)$.
+
+The main term is
+\[
+ N\left(\int_0^\infty W_2\right)
+ \sum_m\Lambda(m)W_1(m/M)\frac{m}{\varphi(m)}.
+\]
+The prime number theorem and the negligible contribution of higher prime
+powers give
+\[
+ \sum_m\Lambda(m)W_1(m/M)\frac{m}{\varphi(m)}
+ =M\int_0^\infty W_1(u)\,du+o(M),
+\]
+which proves \eqref{eq:prime-target-marginal-asymptotic}.
+
+Equation \eqref{eq:exact-marginal-covariance-ledger} is obtained by writing
+$\Lambda(n)=1+(\Lambda(n)-1)$.  For completeness, the local factor of the
+three conditions $m,n,mn+h$ is indeed \eqref{eq:pair-singular-series}.  If
+$p\nmid h$, there are $(p-1)(p-2)$ pairs $(a,b)\in\mathbb F_p^2$ for which
+$a$, $b$, and $ab+h$ are all nonzero.  Relative to three independent prime
+conditions, the normalized factor is
+\[
+ \frac{(p-1)(p-2)/p^2}{(1-1/p)^3}
+ =\frac{p(p-2)}{(p-1)^2}.
+\]
+If $p\mid h$, there are $(p-1)^2$ admissible pairs and the factor is
+$p/(p-1)$.  Their product is $\mathfrak S(h)$.  Subtracting the unconditional
+marginal asymptotic from \eqref{eq:conjectural-three-prime-main} proves the
+equivalence with \eqref{eq:required-covariance-main}.
+\end{proof}
+
+\begin{remark}[Two marginals do not determine their intersection]
+\label{rem:marginals-do-not-intersect}
+The marginal theorem requires $m$ and $mn+h$ to be prime-weighted but leaves
+$n$ unrestricted.  The preceding local-kernel results require both factor
+variables to be prime-weighted but leave the target only rough.  These two
+statements cannot be intersected without estimating
+\eqref{eq:missing-prime-covariance}.  Whenever its coefficient is nonzero,
+the main term predicted in \eqref{eq:required-covariance-main} quantifies that
+missing dependence.
+\end{remark}
+
+\subsection{A compact target-side Vaughan ledger}
+\label{subsec:compact-vaughan-ledger}
+
+For later use, we finish with an exact target-side decomposition.  It is a
+standard form of Vaughan's identity
+\citep{Vaughan1977,IwaniecKowalski2004}; generalized identities produce more
+multilinear packets but do not estimate them by themselves
+\citep{HeathBrownVaughan1982}.
+
+\begin{proposition}[Exact Vaughan ledger]
+\label{prop:exact-vaughan-ledger}
+Let $F$ be any finitely supported function on the positive integers and let
+$U,V\geq1$.  Put
+\begin{equation}\label{eq:vaughan-beta-coefficient}
+ \beta_V(k)=\sum_{\substack{d\mid k\\d\leq V}}\mu(d).
+\end{equation}
+Then
+\begin{align}
+ \sum_t\Lambda(t)F(t)
+={}&\sum_{t\leq U}\Lambda(t)F(t)
+ -\sum_{\substack{\ell\leq U\\d\leq V}}
+   \Lambda(\ell)\mu(d)\sum_{r\geq1}F(\ell dr)
+ \notag\\
+ &+\sum_{d\leq V}\mu(d)\sum_{r\geq1}(\log r)F(dr)
+ -\sum_{\substack{\ell>U\\k>1}}
+   \Lambda(\ell)\beta_V(k)F(\ell k).
+ \label{eq:exact-vaughan-four-packets}
+\end{align}
+Moreover, $\beta_V(k)=0$ for $1<k\leq V$.
+\end{proposition}
+
+\begin{proof}
+Write $\mu_{\leq V}(d)=\mu(d)\one_{d\leq V}$, so that
+$\beta_V=\mu_{\leq V}*\one$.  The second term in
+\eqref{eq:exact-vaughan-four-packets} is
+$-(\Lambda_{\leq U}*\beta_V)(t)$, while the third is
+$(\mu_{\leq V}*\log)(t)$.  The last term equals
+\[
+ - (\Lambda_{>U}*\beta_V)(t)+\Lambda_{>U}(t),
+\]
+because the omitted value $k=1$ has $\beta_V(1)=1$.  Adding the first term
+therefore gives $\Lambda(t)$ plus
+\[
+ (\mu_{\leq V}*\log)(t)-(\Lambda*\mu_{\leq V}*\one)(t),
+\]
+which is zero because $\Lambda*\one=\log$.  Finally, if
+$1<k\leq V$, then every divisor of $k$ is at most $V$, and
+$\beta_V(k)=\sum_{d\mid k}\mu(d)=0$.
+\end{proof}
+
+To see the remaining geometry, take
+\begin{equation}\label{eq:vaughan-factor-incidence}
+ F_h^{a,b}(t)=\sum_{m,n}a_mb_n\one_{mn+h=t}.
+\end{equation}
+Here the coefficients are finite and satisfy
+$a_mb_n\ne0\Rightarrow mn+h\geq1$.
+The middle two packets in \eqref{eq:exact-vaughan-four-packets} become the
+Type~I congruence sums
+\begin{align}
+ &-\sum_{\substack{\ell\leq U\\d\leq V}}
+  \Lambda(\ell)\mu(d)
+  \sum_{mn\equiv-h\, (\mathrm{mod}\,\ell d)}a_mb_n,
+ \label{eq:vaughan-type-I-first}\\
+ &\sum_{d\leq V}\mu(d)
+  \sum_{mn\equiv-h\, (\mathrm{mod}\,d)}
+  a_mb_n\log\left(\frac{mn+h}{d}\right),
+ \label{eq:vaughan-type-I-second}
+\end{align}
+whereas the last packet is
+\begin{equation}\label{eq:vaughan-hard-packet}
+ -\sum_{\substack{\ell>U\\k>V}}
+  \Lambda(\ell)\beta_V(k)
+  \sum_{mn+h=\ell k}a_mb_n.
+\end{equation}
+Thus the unresolved fixed-shift object is supported on the shifted
+multiplicative surface
+\begin{equation}\label{eq:vaughan-shifted-surface}
+ \ell k-mn=h,
+ \qquad \ell>U,\quad k>V.
+\end{equation}
+The finite roughness kernel tests congruence avoidance by prescribed primes;
+it does not estimate \eqref{eq:vaughan-hard-packet}.  Consequently the exact
+Vaughan ledger identifies a Type~II interface but does not close it.

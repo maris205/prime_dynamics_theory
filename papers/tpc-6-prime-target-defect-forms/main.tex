@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Prime-Target Defect Forms: Arithmetic Involutions, a Bombieri--Vinogradov Small-Divisor Ledger, and Exact Fixed-CRT Barriers},
+ pdfauthor={Liang Wang},
+ pdfsubject={Finite sieve dynamics, target-prime defect forms, a Bombieri--Vinogradov small-divisor ledger, and fixed-CRT barriers},
+ pdfkeywords={prime pairs, von Mangoldt function, Bombieri--Vinogradov theorem, sieve parity, arithmetic involution, finite CRT dynamics}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\F}{\mathbb F}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\whG}{\widehat G}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Li}{\operatorname{Li}}
+
+\title{\textbf{Prime-Target Defect Forms:}\\
+\textbf{Arithmetic Involutions, a Bombieri--Vinogradov}\\
+\textbf{Small-Divisor Ledger, and Exact Fixed-CRT Barriers}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Finite prime-sieve dynamics detects whether a target $mn+h$ avoids prescribed local divisors, but a prime target requires the von Mangoldt weight $\Lambda(mn+h)$.  We record this transition exactly without treating it as a parity-breaking theorem.  The truncated divisor identity
+\[
+ \Lambda_{\le R}(N)=-\sum_{\substack{d\mid N\\d\le R}}\mu(d)\log d
+\]
+places every finite-resolution target-prime form in the same congruence algebra as the centered sieve kernels of the preceding papers.  For $(d,h)=1$, the congruence $xy\equiv-h\pmod d$ is the graph of the measure-preserving involution $x\mapsto-hx^{-1}$ on $(\Z/d\Z)^\times$.  We give its exact character expansion and spectrum.  The actual $d$-layer has norm $|\mu(d)|\log d/\varphi(d)$.  The prime-modulus layer norms have cumulative mass $\log R+O_h(1)$, so an argument based only on their absolute sum cannot inherit the summable conductor majorant used for the rough kernel.  Since the layers act on different finite spaces, this is not the norm divergence of a single operator.
+
+For the smoothed fixed-shift correlation, expanding the first von Mangoldt factor gives an exact divisor decomposition:
+\[
+ \cC_h(X;W)=\sum_n\Lambda(n)\Lambda(n+h)W(n/X).
+\]
+Classical Bombieri--Vinogradov theory evaluates the signed sub-sum with coprime divisors $d\le X^{1/2}(\log X)^{-B}$.  The main term of this truncation is
+\[
+ \mathfrak S(h)X\int_0^\infty W(t)\,dt+o(X),
+\]
+where $\mathfrak S(h)$ is the Hardy--Littlewood pair singular series.  The full correlation differs from that expression by an explicit complementary large-divisor M\"obius--prime tail, for which no estimate is obtained.  Consequently the conjectural asymptotic is equivalent to cancellation of that tail; the equivalence is an exact ledger, not an independently easier theorem.
+
+Finally, we prove two finite-information barriers.  Every nonnegative observable that is periodic in the two factor coordinates and is a pointwise minorant of $\one_{\Pp}(mn+h)$ on all sufficiently large pairs is identically zero.  We also construct two nonnegative point masses with identical pushforward modulo any fixed odd $Q$, hence identical finite CRT and character data, as well as identical centered-kernel data at $\operatorname{rad}(Q)$, while one target is prime and the other is a square with the opposite Liouville sign.  An exact integer certificate is supplied for $Q=5\cdot7\cdot11$.  These statements concern fixed finite local information; they do not rule out growing-resolution, dispersion, or Type~II methods.  No twin-prime lower bound is proved.
+\end{abstract}
+
+\noindent\textbf{Keywords:} prime-target defect; von Mangoldt function; Bombieri--Vinogradov theorem; arithmetic involution; sieve parity; finite CRT dynamics.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35; Secondary 11N13, 11N36, 37A30, 47B15.
+
+\input{sections/introduction-scope}
+\input{sections/local-prime-target-operators}
+\input{sections/small-divisor-interface}
+\input{sections/finite-information-barriers}
+\input{sections/certificates-boundaries}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

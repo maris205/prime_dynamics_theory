@@ -1,0 +1,176 @@
+\section{Introduction and scope}\label{sec:introduction}
+
+The preceding papers in this series moved from periodic prime-sieve words to
+centered two-factor kernels.  Complete finite correlations recover the local
+Hardy--Littlewood product, character decomposition identifies the exact local
+modes, classical incomplete-character estimates transfer those modes to
+power-short boxes, and a multiplicative-large-sieve argument permits von
+Mangoldt weights on the two factor coordinates
+\citep{WangTPCOne2026,WangTPCTwo2026,WangTPCThree2026,WangTPCFour2026,WangTPCFive2026}.
+The last result counts prime factors $p,q$ for which $pq+h$ avoids a growing
+finite set of primes.  It does not make $pq+h$ prime.
+
+Throughout, $\Lambda(t)$ and $\one_{\Pp}(t)$ are extended by zero for
+nonpositive integers $t$.
+
+This paper studies that missing target-prime interface.  There are two
+different transitions, and conflating them obscures the parity problem:
+\begin{enumerate}[label=\textbf{T\arabic*.},leftmargin=3.2em]
+ \item replace the local target indicator $\one_{(mn+h,Q)=1}$ by
+ $\Lambda(mn+h)$;
+ \item connect a two-factor target-prime form back to the additive
+ correlation $\sum_n\Lambda(n)\Lambda(n+h)$.
+\end{enumerate}
+The first transition is a kernel and bilinear-form comparison.  The second requires an
+exact convolution ledger and estimates for the resulting bilinear packets.
+Neither follows from a topological conjugacy, an ordinary spectral limit, or
+the finite character expansion alone.
+
+\subsection{The exact rough-to-prime defect}
+
+Let $Q$ be odd and squarefree, put
+\[
+ G=(\Z/Q\Z)^\times,
+ \qquad
+ \delta_Q=\frac{\varphi(Q)}Q,
+ \qquad
+ \kappa_Q=\prod_{p\mid Q}\frac{p-2}{p-1},
+\]
+and suppose $(h,Q)=1$.  On factor coordinates which are $Q$-units, define
+\[
+ K_{Q,h}(m,n)=\one_{(mn+h,Q)=1},
+ \qquad
+ K_{Q,h}^{\circ}=\kappa_Q^{-1}K_{Q,h}-1.
+\]
+For finite coefficient sequences $a=(a_m)$ and $b=(b_n)$ write
+\begin{align}
+ A_0&=\sum_m a_m,& B_0&=\sum_n b_n,\label{eq:intro-masses}\\
+ \cB_{Q,h}(a,b)&=\sum_{m,n}a_mb_nK_{Q,h}^{\circ}(m,n),\label{eq:intro-centered-form}\\
+ \cP_h(a,b)&=\sum_{m,n}a_mb_n\Lambda(mn+h).\label{eq:intro-prime-target-form}
+\end{align}
+The pointwise defect
+\begin{equation}\label{eq:intro-defect}
+ D_{Q,h}(m,n)
+ =\Lambda(mn+h)-\delta_Q^{-1}K_{Q,h}(m,n)
+\end{equation}
+gives the exact identity
+\begin{equation}\label{eq:intro-exact-bridge}
+ \cP_h(a,b)
+ =\frac{\kappa_Q}{\delta_Q}
+  \{A_0B_0+\cB_{Q,h}(a,b)\}
+  +\cD_{Q,h}(a,b),
+ \qquad
+ \cD_{Q,h}(a,b)=\sum_{m,n}a_mb_nD_{Q,h}(m,n).
+\end{equation}
+Here
+\begin{equation}\label{eq:intro-local-factor}
+ \frac{\kappa_Q}{\delta_Q}
+ =\prod_{p\mid Q}\frac{p(p-2)}{(p-1)^2}.
+\end{equation}
+Thus the preceding centered-kernel estimates control the first brace in
+\eqref{eq:intro-exact-bridge}; they do not estimate $\cD_{Q,h}$.  The
+identity is useful precisely because it prevents a local roughness theorem
+from being silently relabeled as a target-prime theorem.
+
+\subsection{Main results}
+
+The paper records the following exact identities, standard analytic
+consequences, and finite-information obstructions.  No new level of
+distribution or parity-breaking estimate is claimed; the contribution is
+their joint formulation within the finite-dynamics framework.
+\begin{enumerate}[label=\textbf{R\arabic*.},leftmargin=3.2em]
+ \item We resolve the finite truncation
+ \[
+  \Lambda_{\le R}(N)
+  =-\sum_{\substack{d\mid N\\d\le R}}\mu(d)\log d
+ \]
+ into exact congruence layers.  For $(d,h)=1$, the layer
+ $mn\equiv-h\pmod d$ is the graph of the involution
+ $x\mapsto-hx^{-1}$ on $(\Z/d\Z)^\times$.  We give its complete
+ Dirichlet-character expansion and show that its spectrum is contained in
+ $\{+1,-1\}$.
+ \item This comparison locates a structural loss.  The actual squarefree
+ $d$-layer has norm $\log d/\varphi(d)$, and the absolute norms over the
+ prime-modulus subfamily contribute $\sim\log R$.  Because different layers
+ act on different spaces, this is not the divergence of a single operator.
+ It says precisely that the summable scalar majorant used for the centered
+ rough kernel cannot be transplanted verbatim; cancellation between moduli
+ is neither excluded nor estimated.
+ \item We prove a one-sided Bombieri--Vinogradov Type~I theorem for
+ $\sum_m\alpha_m\sum_n\Lambda(mn+h)$, uniformly for $|\alpha_m|\le1$
+ when the modulus variable lies in the classical range
+ $m\le x^{1/2}(\log x)^{-B}$.
+ This is a direct consequence of the classical theorem, not a new level of
+ distribution.
+ \item Applying the same input to the exact M\"obius--logarithm expansion of
+ $\sum_n\Lambda(n)\Lambda(n+h)W(n/X)$ evaluates all coprime source divisors
+ through $X^{1/2}(\log X)^{-B}$.  The main term of this signed truncation
+ equals the full formal pair singular-series constant.  The
+ Hardy--Littlewood asymptotic is then equivalent, by the exact divisor
+ ledger, to cancellation of the complementary large-divisor
+ M\"obius--prime tail; that tail may still be of order $X$.
+ \item We prove that a nonnegative observable periodic in the two factor
+ coordinates cannot be a nonzero pointwise minorant for target primality on
+ all sufficiently large pairs.  We also give a nullspace theorem: modulo any
+ fixed odd $Q$, two nonnegative point masses can have identical finite CRT,
+ character, and centered-kernel data (the last at $\operatorname{rad}(Q)$)
+ while their targets have opposite primality and Liouville values.
+ \item At $Q=5\cdot7\cdot11$ we supply a deterministic integer certificate.
+ The locally indistinguishable targets are the square $148996$ and the prime
+ $149381$; the latter is accompanied by a Lucas certificate.
+\end{enumerate}
+
+The positive analytic result in R3 is deliberately one-sided.  It can place
+a prime weight on one factor and on the target in an unbalanced range, but it
+does not permit an arbitrary second factor coefficient.  In particular, the
+two true statements
+\[
+ \sum_{m,n}\Lambda(m)\Lambda(n)K_{Q,h}(m,n)
+ \quad\hbox{and}\quad
+ \sum_{m,n}\Lambda(m)\Lambda(mn+h)
+\]
+cannot be intersected to infer a theorem for
+\begin{equation}\label{eq:intro-triple-lambda}
+ \sum_{m,n}\Lambda(m)\Lambda(n)\Lambda(mn+h).
+\end{equation}
+The missing covariance is displayed explicitly in
+\cref{sec:small-divisor-interface}.
+
+\subsection{Position relative to known results}
+
+The Bombieri--Vinogradov input used below is classical
+\citep{Bombieri1965,Vinogradov1965,IwaniecKowalski2004}.  Vaughan's identity
+is used only as an exact ledger; a generalized Heath--Brown identity would
+produce more multilinear packets but would not estimate them
+\citep{Vaughan1977,HeathBrownVaughan1982}.  The asymptotic sieve of
+\citet{FriedlanderIwaniec1998} is an important positive comparison: in its
+axiomatic setting, additional M\"obius-weighted bilinear information can
+break the parity barrier.  The recent general framework of
+\citet{FordMaynard2024} likewise quantifies Type~I/II requirements within
+its stated class of nonnegative sequences.  We do not turn either framework
+into a theorem for \eqref{eq:intro-triple-lambda}.
+
+There are also stronger theorems for differently averaged objects.  Uniform
+Titchmarsh divisor results evaluate complete unweighted hyperbolic sums such
+as $\sum_{mn+h\le X}\Lambda(mn+h)$ with strong errors
+\citep[Theorem~1.1]{AssingBlomerLi2021}; see also \citet{Fouvry1985}.
+They do not provide a balanced dyadic rectangle estimate with arbitrary
+factor coefficients.  Chen's original theorem represents every sufficiently
+large even integer as a prime plus a $P_2$-number \citep{Chen1973}.  A
+generalized fixed-linear-form theorem
+\citep[Theorem~25.11]{FriedlanderIwaniec2010} implies, for each fixed
+admissible even $h$, a lower bound for primes $p$ with $p-h\in P_2$.
+Here $P_2$ means at most two prime factors and therefore includes the prime
+case; this theorem does not isolate $p=qr+h$ with $q,r$ both prime.  These
+are neighboring achievements, not consequences of our finite identities.
+
+\subsection*{What is not claimed}
+
+We do not estimate the large-divisor tail isolated below, prove
+\eqref{eq:intro-triple-lambda}, obtain a lower bound for twin primes, or prove
+a new Bombieri--Vinogradov, dispersion, or Type~II theorem.  The finite
+nullspace and periodic-minorant results concern fixed local resolution.  They
+do not exclude growing moduli, bilinear information, automorphic input,
+additive-combinatorial methods, or any other nonlocal argument.  Conversely,
+the exact rewriting of an open correlation as one remainder is not presented
+as an independently easier conjecture.
