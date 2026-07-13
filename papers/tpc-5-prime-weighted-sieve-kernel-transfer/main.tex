@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Prime-Weighted Transfer for Centered Sieve Kernels: Large-Sieve Fixed Shifts and Power-Short Shift Means},
+ pdfauthor={Liang Wang},
+ pdfsubject={Weighted centered sieve kernels, multiplicative large sieve, and prime-supported factor boxes},
+ pdfkeywords={sieve kernel, multiplicative large sieve, von Mangoldt function, Dirichlet character, rough product}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\F}{\mathbb F}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\whG}{\widehat G}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\E}{\mathbb E}
+
+\title{\textbf{Prime-Weighted Transfer for Centered Sieve Kernels:}\\
+\textbf{Large-Sieve Fixed Shifts and Power-Short Shift Means}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let $Q=\prod_{w<p\le w^2}p$, let $G=(\Z/Q\Z)^\times$, and let $K_h^\circ$ be the centered local kernel for the conditions $ab+h\not\equiv0\pmod p$, $p\mid Q$.  We develop a weighted transfer theory for the associated factor-box form.  The exact character expansion and fully active shift Parseval identity remain valid for arbitrary complex coefficients, while conductor localization permits two different analytic inputs.
+
+First, exact-conductor orthogonality gives coefficient-uniform complete-shift cancellation.  If $I,J$ have lengths $M,N<Q$ and the coefficients have modulus at most one, then the normalized complete fully-active-shift mean square is
+\[
+ \ll \frac1{\max\{M,N\}}+\frac1{w\log w}.
+\]
+The same asymptotic cancellation holds on every interval of $\lfloor Q^{1/\log w}\rfloor$ shift parameters, with an explicit deterministic completion error.  Second, the classical multiplicative large sieve gives, uniformly for $(h,Q)=1$, a fixed-shift estimate of the shape
+\[
+ |\cB_h(a,b)|
+ \ll \sqrt{E_aE_b}
+ \left\{
+  \frac{\sqrt{MN}}w+(\log Q)(\sqrt M+\sqrt N)+\sqrt Q
+ \right\},
+\]
+where $E_a,E_b$ are the coefficient energies on the $Q$-unit support.  Thus arbitrary bounded coefficients have fixed-shift cancellation whenever the two lengths are power-sized and $MN/Q\to\infty$.
+
+For von Mangoldt factor coefficients, we combine the same conductor decomposition with Siegel--Walfisz at small conductor.  On dyadic boxes $I=(X,2X]$, $J=(Y,2Y]$ with $X=Q^{\lambda+o(1)}$ and $Y=Q^{\nu+o(1)}$, double von Mangoldt weights have complete and subpower-shift mean-square cancellation for every fixed $0<\lambda,\nu<1$.  At a prescribed shift, including $h=2$, the conclusion holds when $\lambda+\nu>1$.  Removing prime powers yields an asymptotic count of prime pairs $(p,q)$ for which $pq+h$ avoids the primes in the window defining $Q$.
+
+The target $pq+h$ is only required to be rough with respect to this finite window.  We do not prove that it is prime, do not estimate $\Lambda(n)\Lambda(n+2)$, and do not obtain a twin-prime lower bound.  The ambient-volume condition $MN/Q\to\infty$ at a fixed shift is imposed by the present large-sieve argument and is not an asserted barrier.
+\end{abstract}
+
+\noindent\textbf{Keywords:} centered sieve kernel; multiplicative large sieve; von Mangoldt weight; Dirichlet character; fixed shift; rough product.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35; Secondary 11L40, 11N13.
+
+\input{sections/introduction-scope}
+\input{sections/weighted-kernel-large-sieve}
+\input{sections/prime-weighted-applications}
+\input{sections/certificates-boundaries}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

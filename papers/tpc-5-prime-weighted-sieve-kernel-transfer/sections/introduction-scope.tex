@@ -1,0 +1,269 @@
+\section{Introduction and scope}\label{sec:introduction}
+
+This paper makes a deliberately limited prime-weighted transfer.  The input
+from the preceding papers is an exact finite character expansion for a
+centered Chinese-remainder pair kernel, including its conductor multipliers
+and a Parseval identity after averaging fully active shifts
+\citep{WangCenteredKernels2026,WangPowerShortRoughBoxes2026}.  The analytic
+inputs used here are classical: the multiplicative large sieve and the
+Siegel--Walfisz theorem.  We assemble these ingredients first for arbitrary
+coefficients and then for von Mangoldt weights.  We do not prove a new large
+sieve inequality, a new Siegel--Walfisz estimate, or a new theorem on primes
+in arithmetic progressions.
+
+Let
+\begin{equation}\label{eq:intro-Q-G-kappa}
+ Q=\prod_{w<p\le w^2}p,
+ \qquad
+ G=(\Z/Q\Z)^\times,
+ \qquad
+ g=\varphi(Q),
+ \qquad
+ \kappa=\prod_{p\mid Q}\frac{p-2}{p-1}.
+\end{equation}
+For intervals $I,J\subset\Z$ of respective lengths $M,N<Q$, coefficient
+sequences $a=(a_m)_{m\in I}$ and $b=(b_n)_{n\in J}$, and $(h,Q)=1$, define
+\begin{equation}\label{eq:intro-weighted-box}
+ \cB_h(a,b)
+ =\sum_{\substack{m\in I,\ n\in J\\(mn,Q)=1}}
+ a_m b_n
+ \left\{
+  \kappa^{-1}\one_{(mn+h,Q)=1}-1
+ \right\}.
+\end{equation}
+The centering in \eqref{eq:intro-weighted-box} is the exact complete-group
+centering.  It is independent of the locations of the intervals and of the
+chosen coefficients.  Put
+\begin{equation}\label{eq:intro-coefficient-energies}
+ E_a=\sum_{\substack{m\in I\\(m,Q)=1}}|a_m|^2,
+ \qquad
+ E_b=\sum_{\substack{n\in J\\(n,Q)=1}}|b_n|^2.
+\end{equation}
+For $\chi\in\widehat G$, write $q_\chi$ for its primitive conductor and
+\begin{equation}\label{eq:intro-weighted-transforms}
+ A_{I,a}(\chi)
+ =\sum_{\substack{m\in I\\(m,Q)=1}}a_m\chi(m),
+ \qquad
+ A_{J,b}(\chi)
+ =\sum_{\substack{n\in J\\(n,Q)=1}}b_n\chi(n).
+\end{equation}
+The exact kernel coefficient attached to a nonprincipal character has
+modulus
+\begin{equation}\label{eq:intro-conductor-multiplier}
+ d(\chi)=\prod_{p\mid q_\chi}\frac1{p-2}
+ \ll \frac1{q_\chi}.
+\end{equation}
+This multiplier, rather than a generic estimate for a periodic kernel, is
+what permits conductor-by-conductor aggregation below.
+
+\subsection{Coefficient-uniform transfer}
+
+The first layer does not use the arithmetic nature of the coefficients.  If
+$|a_m|,|b_n|\le1$, exact-conductor orthogonality and the fully active shift
+Parseval identity give
+\begin{equation}\label{eq:intro-bounded-complete-shift}
+ \frac1{M^2N^2}
+ \frac1g\sum_{\ell\in G}|\cB_{2\ell}(a,b)|^2
+ \ll
+ \frac1{\max\{M,N\}}+\frac1{w\log w}.
+\end{equation}
+The estimate is uniform in the intervals and in all bounded coefficient
+sequences.  It is an average over shifts $2\ell$ for which every prime
+dividing $Q$ remains active; it is not a conclusion for each $\ell$.
+The exact identity and its coefficient-uniform consequence are stated in
+\cref{prop:weighted-shift-parseval,thm:weighted-complete-shift}.
+
+The complete shift mean can again be sampled on a subpower interval.  If
+$\cL$ is any interval of
+\begin{equation}\label{eq:intro-subpower-shift-length}
+ H=\left\lfloor Q^{1/\log w}\right\rfloor
+\end{equation}
+consecutive integers and
+$H_Q=\#\{\ell\in\cL:(\ell,Q)=1\}$, the deterministic completion argument
+transfers \eqref{eq:intro-bounded-complete-shift} to the average over those
+$H_Q$ shifts.  Although $H=Q^{o(1)}$, this remains a mean-square statement.
+In particular, it does not select a prescribed member of $\cL$.
+See \cref{cor:weighted-short-shift}.
+
+At a fixed shift, the character phases no longer diagonalize.  A dyadic
+conductor decomposition and the classical multiplicative large sieve yield
+the separate estimate
+\begin{equation}\label{eq:intro-weighted-fixed-shift}
+ |\cB_h(a,b)|
+ \ll
+ \sqrt{E_aE_b}
+ \left\{
+  \frac{\sqrt{MN}}w
+  +(\log Q)(\sqrt M+\sqrt N)
+  +\sqrt Q
+ \right\},
+ \qquad (h,Q)=1.
+\end{equation}
+The bound is uniform in the unit shift $h$.  Consequently, bounded
+coefficients have normalized fixed-shift cancellation whenever $M,N$ are
+fixed positive powers of $Q$ and $MN/Q\to\infty$.  A convenient uniform
+form is $M,N\ge Q^\delta$ and $MN\ge Q^{1+\delta}$ for fixed $\delta>0$.
+The ambient-volume threshold $MN=Q$ is the range furnished by this argument,
+not an asserted barrier.  The precise uniform estimate is
+\cref{thm:weighted-fixed-shift-large-sieve}.
+
+The large-sieve mechanism in \eqref{eq:intro-weighted-fixed-shift} is worth
+making explicit.  On a dyadic conductor block $T<q_\chi\le2T$, the factor
+$d(\chi)\ll T^{-1}$ and the multiplicative large sieve control the weighted
+second moment of each transform.  Cauchy--Schwarz is then applied within the
+same conductor block.  Summing the resulting geometric blocks up to a
+cutoff and using full character Parseval above that cutoff gives
+\eqref{eq:intro-weighted-fixed-shift}; choosing the cutoff near $\sqrt Q$
+balances the two sides.  Thus the estimate is not a pointwise bound for an
+individual prime-supported character sum.
+
+\subsection{Double von Mangoldt weights}
+
+We next take dyadic factor intervals
+\begin{equation}\label{eq:intro-dyadic-prime-boxes}
+ I_X=(X,2X]\cap\Z,
+ \qquad
+ I_Y=(Y,2Y]\cap\Z,
+ \qquad X,Y<Q,
+\end{equation}
+and insert $a_m=\Lambda(m)$ and $b_n=\Lambda(n)$.  Write the resulting form
+as $\cB_h^{\Lambda,\Lambda}(X,Y)$.  If
+\begin{equation}\label{eq:intro-power-sized-factors}
+ X=Q^{\lambda+o(1)},
+ \qquad
+ Y=Q^{\nu+o(1)}
+\end{equation}
+for fixed $0<\lambda,\nu<1$, then
+\begin{equation}\label{eq:intro-lambda-complete-rms}
+ \frac1{XY}
+ \left(
+  \frac1g\sum_{\ell\in G}
+  |\cB_{2\ell}^{\Lambda,\Lambda}(X,Y)|^2
+ \right)^{1/2}
+ =o(1).
+\end{equation}
+The same asymptotic conclusion holds on every shift interval of length
+\eqref{eq:intro-subpower-shift-length}.  Hence all but $o(H_Q)$ of its unit
+shift parameters satisfy the corresponding $o(XY)$ estimate.  This
+density-one conclusion still does not identify $\ell=1$ or any other
+prescribed shift.  These statements are
+\cref{thm:lambda-complete-shift-rms,cor:lambda-short-shift-rms,cor:lambda-density-one-shifts}.
+
+The fixed-shift large-sieve estimate supplies a complementary result.  For
+every $(h,Q)=1$, including $h=2$, we obtain
+\begin{equation}\label{eq:intro-lambda-fixed-result}
+ \cB_h^{\Lambda,\Lambda}(X,Y)=o(XY)
+ \qquad\text{when}\qquad \lambda+\nu>1.
+\end{equation}
+Uniform versions are stated in terms of fixed lower power bounds for $X,Y$
+and a fixed power separation of $XY$ from $Q$.  The distinction between
+\eqref{eq:intro-lambda-complete-rms} and
+\eqref{eq:intro-lambda-fixed-result} is structural: shift orthogonality
+allows every pair of positive power lengths in the mean-square theorem,
+whereas the present fixed-shift large-sieve argument requires $XY$ to exceed
+$Q$ by a power; see \cref{thm:lambda-fixed-shift}.
+
+At small conductor, the prime-weighted input is the classical
+Siegel--Walfisz theorem.  Uniformly for nonprincipal primitive characters of
+conductor at most a fixed power of $\log X$, it gives arbitrary logarithmic
+savings for the twisted summatory von Mangoldt function; see
+\citet{Siegel1935,Walfisz1936} and the modern formulation in
+\citet[Corollary~5.29]{IwaniecKowalski2004}.  Restricting to $(n,Q)=1$ does
+not create a new prime-character-sum problem here.  Since $\Lambda$ is
+supported on prime powers, the discrepancy from the unrestricted primitive
+twist is bounded by
+\begin{equation}\label{eq:intro-rough-lambda-comparison}
+ \sum_{p\mid Q}\sum_{\substack{k\ge1\\X<p^k\le2X}}\log p
+ \le \sum_{p\mid Q}\log p=\log Q,
+\end{equation}
+because $p>2$ makes a dyadic interval contain at most one power of each
+$p$.  This is negligible on the power scales in
+\eqref{eq:intro-power-sized-factors}.  At complete and short shift means,
+larger conductors are controlled by the summable exact multiplier tail.  At
+a prescribed shift, they are aggregated by the multiplicative large sieve of
+\citet{MontgomeryVaughan1973}; standard accounts include
+\citet[Chapter~7]{IwaniecKowalski2004}.  The elementary bounds
+$\sum_{n\le x}\Lambda(n)\ll x$ and
+$\sum_{n\le x}\Lambda(n)^2\ll x\log x$ provide the required coefficient
+mass and energy.  None of these analytic estimates is new here.
+
+Removing prime powers from \eqref{eq:intro-lambda-fixed-result} gives a
+concrete prime-supported consequence.  In its fixed-shift range,
+\begin{equation}\label{eq:intro-prime-prime-rough-asymptotic}
+ \sum_{\substack{X<p\le2X,\ Y<q\le2Y\\(pq+h,Q)=1}}
+ (\log p)(\log q)
+ =(\kappa+o(1))XY.
+\end{equation}
+Uniform partial summation gives the corresponding unweighted asymptotic
+with main term
+$\kappa XY/(\log X\log Y)$.  The condition on the target is exactly the one
+displayed: $pq+h$ avoids the primes in the finite window defining $Q$.
+The weighted and unweighted forms are recorded in
+\cref{cor:prime-prime-rough-target}.
+
+\subsection{Relation to classical prime-distribution methods}
+
+The multiplicative large sieve is a classical mean-square inequality for
+arbitrary coefficients; see the foundational developments
+\citep{Bombieri1965,DavenportHalberstam1966,Gallagher1967,MontgomeryVaughan1973}.
+Our use of it is specialized only through the exact multiplier
+\eqref{eq:intro-conductor-multiplier} and the fact that exact local support
+equals primitive conductor for the squarefree modulus $Q$.  We make no
+claim that the large-sieve inequality itself, or its application to a bare
+von Mangoldt transform, is new.
+
+This is also not a new Bombieri--Vinogradov theorem.  The classical theorem
+controls prime-distribution errors on average over a range of moduli
+\citep{Bombieri1965,Vinogradov1965}; variants for other multiplicative
+sequences require their own hypotheses and exceptional-character analysis
+\citep{GranvilleShao2018}.  Here $Q$ is one prescribed squarefree product.
+In \eqref{eq:intro-lambda-complete-rms} the average is over local shifts, not
+over moduli, while \eqref{eq:intro-lambda-fixed-result} is obtained from a
+weighted conductor decomposition internal to that single $Q$.  These are
+different averaging geometries.
+
+Vaughan's identity decomposes $\Lambda$ into Type~I and Type~II pieces
+\citep{Vaughan1977}, but the identity alone estimates neither piece.  The
+present proofs do not establish a new prime-sensitive Type~II or dispersion
+estimate.  Such estimates would become necessary if one replaced the local
+roughness indicator by a prime detector at the target, or tried to continue
+past the fixed-shift ranges supplied by \eqref{eq:intro-weighted-fixed-shift}.
+Likewise, results on prime-supported character sums in short progressions,
+such as \citet{Puchta2003}, address a different averaging and parameter
+regime and are not silently imported here.
+
+The large-modulus theorems of
+\citet{BombieriFriedlanderIwaniec1986} and the fixed-residue and
+well-factorable results of
+\citet{Maynard2025FixedResidue,Maynard2025WellFactorable} use additional
+structure in the residue class, modulus family, or modulus weights.  That
+structure is not supplied merely by factoring $Q$ into primes or by observing
+that $d(q)$ is multiplicative.  Those theorems are context for a possible
+future dispersion layer, not inputs that automatically strengthen the
+claims made here.
+
+\subsection{Strict boundary of the conclusions}
+
+The two factor variables in \eqref{eq:intro-prime-prime-rough-asymptotic}
+are prime, but the target $pq+h$ is only $Q$-rough.  In particular, even at
+$h=2$ the theorem does not assert that $pq+2$ is prime.  It is not an
+estimate for
+\[
+ \sum_{n\le x}\Lambda(n)\Lambda(n+2),
+\]
+and it gives no lower bound for twin primes.  The shift-mean statements
+cannot be specialized to $h=2$ without the independent fixed-shift theorem,
+and the latter still concerns a semiprime-type factor product followed by a
+finite roughness test.
+
+Finally, local divisibility information does not remove the parity
+obstruction of sieve theory; see \citet{HeathBrown1982} and the broader sieve
+framework in \citet{FriedlanderIwaniec2010}.  Prime-producing asymptotic
+sieves require further bilinear information absent here
+\citep{FriedlanderIwaniec1998}.  Accordingly, we do not describe
+\eqref{eq:intro-prime-prime-rough-asymptotic} as evidence for the twin-prime
+conjecture and make no priority claim.  The contribution is narrower: an
+exact CRT kernel converts classical Siegel--Walfisz and multiplicative
+large-sieve input into coefficient-uniform fixed-shift bounds and
+prime-weighted power-short shift means, with every remaining prime-detection
+interface left explicit.

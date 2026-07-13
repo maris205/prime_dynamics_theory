@@ -1,0 +1,131 @@
+\section{Exact finite certificate}\label{sec:finite-certificate}
+
+The reference implementation accompanying this paper uses only integers and rational numbers.  It checks the weighted centering, the exact-conductor reconstruction, complete-shift Parseval, conductor second moments, and deterministic short-shift completion.  None of these finite checks is used to infer an asymptotic statement.
+
+Take
+\[
+ Q=5\cdot7\cdot11=385,
+ \qquad
+ |G|=240,
+ \qquad
+ \kappa=\frac9{16},
+\]
+and the intervals
+\[
+ I=[19,61],
+ \qquad
+ J=[47,89].
+\]
+On the $Q$-unit elements of these intervals, put
+\[
+ a_m=((m^2+3m+1)\bmod 7)-3,
+ \qquad
+ b_n=((2n+5)\bmod 5)-2.
+\]
+Here the least nonnegative residue is used before the final subtraction.  All
+coefficient sums below are restricted to the displayed interval and to
+$Q$-units.  The exact coefficient statistics are
+\[
+ \sum_{\substack{m\in I\\(m,Q)=1}} a_m=41,
+ \quad \|a\|_1=57,
+ \quad E_a=137,
+ \qquad
+ \sum_{\substack{n\in J\\(n,Q)=1}} b_n=16,
+ \quad \|b\|_1=30,
+ \quad E_b=46.
+\]
+At $h=2$, direct counting gives
+\[
+ \sum_{\substack{m\in I,\ n\in J\\
+                  (mn,Q)=1,\ (mn+2,Q)=1}}a_mb_n=362,
+\]
+and hence
+\begin{equation}\label{eq:certificate-fixed-value}
+ \cB_2(a,b)
+ =\frac{16}{9}\,362-41\cdot16
+ =-\frac{112}{9}.
+\end{equation}
+For $1<q\mid Q$, define the fixed-shift conductor piece and its complete-shift
+energy by
+\[
+ \cB_{2,q}
+ =\sum_{q_\chi=q}c_2(\chi)A_a(\chi)A_b(\chi),
+ \qquad
+ \cE_q
+ =\sum_{q_\chi=q}d(\chi)^2|A_a(\chi)|^2|A_b(\chi)|^2.
+\]
+These exact-conductor quantities are listed in
+\cref{tab:certificate-weighted-supports}.
+
+\begin{table}[ht]
+\centering
+\caption{Weighted exact-conductor certificate at $Q=385$.}
+\label{tab:certificate-weighted-supports}
+\begin{tabular}{@{}rrrrrrrr@{}}
+\toprule
+$q$ & $5$ & $7$ & $11$ & $35$ & $55$ & $77$ & $385$\\
+\midrule
+$\cB_{2,q}$
+& $-92/3$ & $28$ & $-44/9$ & $-32/15$ & $8/27$ & $56/9$ & $-1252/135$\\
+$\cE_q$
+& $6104/9$ & $29228/25$ & $8824/81$ & $812/45$ & $3584/81$ & $210692/2025$ & $71996/1215$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The first row sums to \eqref{eq:certificate-fixed-value}.  Across all unit shifts, the exact mean is zero and
+\begin{equation}\label{eq:certificate-weighted-parseval}
+ \frac1{240}\sum_{\ell\in G}|\cB_{2\ell}(a,b)|^2
+ =\sum_{\substack{q\mid385\\q>1}}\cE_q
+ =\frac{2650976}{1215}.
+\end{equation}
+For every exact conductor, the program also evaluates the integer character-orthogonality kernel
+\[
+ \prod_{p\mid q}
+ \left((p-1)\one_{x\equiv y\, (\mathrm{mod}\,p)}-1\right)
+\]
+and verifies the second-moment bounds used before large-sieve aggregation.  On the shift interval $[23,53]$, there are $20$ unit shifts; the exact square-sum completion discrepancy is $199884544/31185$, below the elementary bound $895568800$.  These deliberately loose finite inequalities test scope and normalization, not sharp constants.
+
+\section{What has advanced and what remains open}\label{sec:boundaries}
+
+Relative to the preceding papers in this series, the new feature is genuine arithmetic weighting on the two factor coordinates.  In particular, the von Mangoldt applications are not obtained by treating $\Lambda$ as a bounded perturbation of the coefficient-one problem.  Small conductors use prime distribution.  At complete or short shift means, the remaining conductors are controlled by the summable exact multiplier tail; at a prescribed shift, they are controlled by the multiplicative large sieve together with that multiplier.
+
+This advance has four strict boundaries.
+
+\begin{enumerate}[label=\textbf{B\arabic*.},leftmargin=3.2em]
+ \item \textbf{The target is rough, not prime.}  The condition $(pq+h,Q)=1$ excludes the primes in one finite window from $pq+h$.  It neither asserts nor estimates the primality of $pq+h$.
+ \item \textbf{Factor weights are not a twin-prime correlation.}  The expression contains $\Lambda(m)\Lambda(n)$ on two independent factor coordinates.  It is not $\Lambda(n)\Lambda(n+2)$ and cannot be rewritten as that correlation.
+ \item \textbf{Shift averaging does not select $h=2$.}  The complete and subpower-shift mean-square theorems imply a density-one statement inside the averaged shift block.  They do not imply that the particular member $\ell=1$ is good.  The prescribed-shift theorem is separate.
+ \item \textbf{The fixed-shift product threshold is methodological.}  For arbitrary bounded coefficients, the present large-sieve argument requires $MN/Q\to\infty$ after harmless lower bounds on the individual lengths.  We prove neither an endpoint nor failure below this range.
+\end{enumerate}
+
+Calling the fixed-shift estimate ``Type~II-like'' refers only to its bilinear, coefficient-uniform form on a factor box.  After decomposing a target-prime weight such as $\Lambda(mn+h)$, a genuine Type~II term would carry additional convolution geometry.  Nothing here estimates such a term.
+
+\subsection{The next precise gap}
+
+Within the present framework, one next question is to cross the ambient-volume threshold by proving a fixed-shift estimate on boxes with
+\[
+ M=Q^{\lambda+o(1)},
+ \qquad
+ N=Q^{\nu+o(1)},
+ \qquad
+ \lambda+\nu\le1.
+\]
+The proof in this paper loses the phase of each conductor block through Cauchy--Schwarz and pays the $D^2$ term in the multiplicative large sieve.  Breaking that threshold would require additional dispersion, cancellation between conductor blocks, or structure in the coefficients.  Even a successful estimate of this kind would still leave the independent problem of placing a prime-sensitive weight on $mn+h$ and obtaining a positive main term despite the parity obstruction.
+
+Conversely, a rigorous example showing saturation of the conductor-block estimate for a proposed coefficient class would be a useful negative result: it would identify which version of the large-sieve route cannot reach the next scale.  The paper therefore supplies a falsifiable analytic interface rather than a claimed route around parity.
+
+\section{Conclusion}\label{sec:conclusion}
+
+The exact conductor decomposition of a centered CRT kernel remains effective after arithmetic weights are introduced.  Character orthogonality gives coefficient-uniform shift means, the multiplicative large sieve gives a fixed-shift estimate above the ambient-volume threshold $MN=Q$, and Siegel--Walfisz permits von Mangoldt weights to pass through the small-conductor range.  This yields both power-short prime-weighted shift means and a prescribed-shift prime-factor/rough-target asymptotic.
+
+These are strict local advances.  The target value is not proved prime, the fixed shift below the product threshold is not controlled, and parity is untouched.  The value of the result is the separation it enforces: factor-prime distribution, conductor aggregation, prescribed-shift cancellation, target-prime detection, and positivity are distinct interfaces and must be proved separately.
+
+\section*{Data and code availability}
+
+The manuscript source, exact rational certificate, and standard-library Python tests are included in the repository directory for this paper.  From the \texttt{experiments} directory, running
+\begin{verbatim}
+python exact_weighted_diagnostics.py --output data/exact-certificate.json
+python -m unittest -v test_exact_weighted_diagnostics.py
+\end{verbatim}
+regenerates the certificate and verifies the finite identities.  No random seed, floating-point Fourier transform, or external data set is used.

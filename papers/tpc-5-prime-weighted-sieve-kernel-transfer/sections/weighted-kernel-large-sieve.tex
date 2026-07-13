@@ -1,0 +1,553 @@
+\section{Weighted kernel identities and large-sieve transfer}
+\label{sec:weighted-kernel-large-sieve}
+
+This section develops the coefficient-uniform part of the argument.  All
+coefficients may be complex, and all interval estimates are uniform in the
+locations of the intervals.  We first retain the exact finite Fourier
+identities, then use two different kinds of orthogonality.  Orthogonality at
+one exact conductor controls complete shift means, while the classical
+multiplicative large sieve, summed over dyadic conductor blocks, controls a
+fixed shift in the range stated below.
+
+\subsection{The weighted centered form}
+
+Let $w\geq 5$, and put
+\begin{equation}\label{eq:weighted-Q-window}
+ \cP(w)=\{p:w<p\leq w^2\},
+ \qquad
+ Q=\prod_{p\in\cP(w)}p,
+ \qquad
+ G=(\Z/Q\Z)^\times,
+ \qquad
+ g=|G|=\varphi(Q).
+\end{equation}
+Write $r=\omega(Q)$ and
+\begin{equation}\label{eq:weighted-local-products}
+ \delta_Q=\frac{g}{Q},
+ \qquad
+ \kappa=\prod_{p\mid Q}\frac{p-2}{p-1},
+ \qquad
+ \Xi=\prod_{p\mid Q}\frac{p}{p-2}.
+\end{equation}
+For an integer $h$ satisfying $(h,Q)=1$ and $a,b\in G$, define
+\begin{align}
+ K_h(a,b)
+  &=\prod_{p\mid Q}\one_{ab+h\not\equiv0\pmod p},
+  \label{eq:weighted-binary-kernel}\\
+ K_h^\circ(a,b)
+  &=\kappa^{-1}K_h(a,b)-1.
+  \label{eq:weighted-centered-kernel}
+\end{align}
+The factor $\kappa$ is the exact row and column mean of $K_h$ on $G^2$.
+
+By the Chinese remainder theorem, every $\chi\in\whG$ has local components
+$\chi_p\in\widehat{\F_p^\times}$.  Set
+\begin{equation}\label{eq:weighted-character-conductor}
+ q_\chi=\prod_{\substack{p\mid Q\\\chi_p\ne\one}}p,
+ \qquad
+ d(\chi)=d(q_\chi)
+ =\prod_{p\mid q_\chi}\frac1{p-2}.
+\end{equation}
+We extend characters by zero off the units.  If $\chi\ne\one$, then it is
+induced by a primitive character of the squarefree conductor $q_\chi$.
+Local character orthogonality gives
+\begin{equation}\label{eq:weighted-exact-kernel-expansion}
+ K_h^\circ(a,b)
+ =\sum_{\substack{\chi\in\whG\\\chi\ne\one}}
+ c_h(\chi)\chi(a)\chi(b),
+ \qquad
+ c_h(\chi)
+ =(-1)^{\omega(q_\chi)}d(\chi)\overline{\chi(-h)}.
+\end{equation}
+In particular,
+\begin{equation}\label{eq:weighted-exact-conductor-count}
+ \#\{\chi\in\whG:q_\chi=q\}
+ =\prod_{p\mid q}(p-2)=d(q)^{-1}
+ \qquad (1<q\mid Q).
+\end{equation}
+
+Let $I,J\subset\Z$ be arbitrary integer intervals of respective lengths
+$1\leq M,N<Q$.  Let $(a_m)_{m\in I}$ and $(b_n)_{n\in J}$ be arbitrary
+complex coefficients.  We use the effective unit-support norms
+\begin{align}
+ L_a&=\sum_{\substack{m\in I\\(m,Q)=1}}|a_m|,
+ &E_a&=\sum_{\substack{m\in I\\(m,Q)=1}}|a_m|^2,
+ \label{eq:weighted-a-norms}\\
+ L_b&=\sum_{\substack{n\in J\\(n,Q)=1}}|b_n|,
+ &E_b&=\sum_{\substack{n\in J\\(n,Q)=1}}|b_n|^2,
+ \label{eq:weighted-b-norms}
+\end{align}
+and the transforms
+\begin{align}
+ A_a(\chi)&=\sum_{\substack{m\in I\\(m,Q)=1}}a_m\chi(m),
+ &A_b(\chi)&=\sum_{\substack{n\in J\\(n,Q)=1}}b_n\chi(n).
+ \label{eq:weighted-character-transforms}
+\end{align}
+The weighted centered box form is
+\begin{equation}\label{eq:weighted-box-form}
+ \cB_h(a,b)
+ =\sum_{\substack{m\in I,\ n\in J\\(mn,Q)=1}}
+ a_mb_nK_h^\circ(m,n).
+\end{equation}
+
+\begin{proposition}[Weighted character expansion and shift Parseval]
+\label{prop:weighted-shift-parseval}
+For every $(h,Q)=1$,
+\begin{equation}\label{eq:weighted-box-character-expansion}
+ \cB_h(a,b)
+ =\sum_{\substack{\chi\in\whG\\\chi\ne\one}}
+ c_h(\chi)A_a(\chi)A_b(\chi).
+\end{equation}
+Moreover, for the fully active shifts $h=2\ell$,
+\begin{equation}\label{eq:weighted-complete-shift-parseval}
+ \frac1g\sum_{\ell\in G}|\cB_{2\ell}(a,b)|^2
+ =\sum_{\substack{\chi\in\whG\\\chi\ne\one}}
+ d(\chi)^2|A_a(\chi)|^2|A_b(\chi)|^2.
+\end{equation}
+Both identities are exact.
+\end{proposition}
+
+\begin{proof}
+For $p\nmid h$ and $t\in\F_p^\times$, orthogonality on
+$\F_p^\times$ gives
+\[
+ \frac{p-1}{p-2}\one_{t\ne-h}
+ =1-\frac1{p-2}
+ \sum_{\substack{\chi_p\in\widehat{\F_p^\times}\\
+                   \chi_p\ne\one}}
+ \overline{\chi_p(-h)}\chi_p(t).
+\]
+Multiplying over $p\mid Q$ and deleting the all-principal term proves
+\eqref{eq:weighted-exact-kernel-expansion}.  Substitution into
+\eqref{eq:weighted-box-form}, followed by finite rearrangement, proves
+\eqref{eq:weighted-box-character-expansion}.
+
+For $h=2\ell$,
+\[
+ c_{2\ell}(\chi)
+ =(-1)^{\omega(q_\chi)}d(\chi)
+   \overline{\chi(-2)}\,\overline{\chi(\ell)}.
+\]
+After expanding the square in
+\eqref{eq:weighted-box-character-expansion}, the normalized average over
+$\ell\in G$ of $\overline{\chi(\ell)}\psi(\ell)$ is
+$\one_{\chi=\psi}$.  This proves
+\eqref{eq:weighted-complete-shift-parseval}; complex coefficients cause no
+change because the second copy of the box form is conjugated.
+\end{proof}
+
+\subsection{Deterministic completion of a shift interval}
+
+Let $\cL$ be an arbitrary interval of $H$ consecutive integers and set
+\begin{equation}\label{eq:weighted-shift-interval-count}
+ H_Q=\#\{\ell\in\cL:(\ell,Q)=1\}.
+\end{equation}
+Inclusion--exclusion gives
+\begin{equation}\label{eq:weighted-HQ-discrepancy}
+ |H_Q-H\delta_Q|\leq2^r.
+\end{equation}
+Define the explicit completion cost
+\begin{equation}\label{eq:weighted-completion-cost}
+ \mathfrak C(Q)
+ =\kappa^{-2}4^r+2\kappa^{-1}3^r+2^r.
+\end{equation}
+
+\begin{proposition}[Weighted deterministic shift completion]
+\label{prop:weighted-shift-completion}
+For arbitrary complex coefficients as above,
+\begin{align}
+ \left|
+ \sum_{\substack{\ell\in\cL\\(\ell,Q)=1}}
+ |\cB_{2\ell}(a,b)|^2
+ -\frac HQ\sum_{\ell\in G}|\cB_{2\ell}(a,b)|^2
+ \right|
+ \leq \mathfrak C(Q)L_a^2L_b^2.
+ \label{eq:weighted-shift-completion}
+\end{align}
+If $H\delta_Q\geq2^{r+1}$, then
+\begin{align}
+ \frac1{H_Q}
+ \sum_{\substack{\ell\in\cL\\(\ell,Q)=1}}
+ |\cB_{2\ell}(a,b)|^2
+ \ll
+ \frac1g\sum_{\ell\in G}|\cB_{2\ell}(a,b)|^2
+ +\frac{\mathfrak C(Q)}{H\delta_Q}L_a^2L_b^2.
+ \label{eq:weighted-short-shift-transfer}
+\end{align}
+The implied constant is absolute.
+\end{proposition}
+
+\begin{proof}
+Put
+\[
+ S_\ell
+ =\sum_{\substack{m\in I,\ n\in J\\(mn,Q)=1}}
+ a_mb_nK_{2\ell}(m,n),
+ \qquad
+ T=\left(\sum_{\substack{m\in I\\(m,Q)=1}}a_m\right)
+   \left(\sum_{\substack{n\in J\\(n,Q)=1}}b_n\right).
+\]
+Then $\cB_{2\ell}=\kappa^{-1}S_\ell-T$.  In the expansion of
+$|S_\ell|^2$, the unit condition on $\ell$ and the two kernel conditions
+exclude at most three residue classes modulo each $p\mid Q$.  Expanding
+these exclusions by inclusion--exclusion produces at most $4^r$ terms.
+Each term is a single residue class modulo some divisor of $Q$, and its
+count in an interval differs from $H/Q$ times its count in a complete
+period modulo $Q$ by at most one.
+The corresponding discrepancies for $S_\ell\overline T$ and $|T|^2$ are
+at most $3^r$ and $2^r$, respectively.  The total absolute coefficient
+masses of all four terms are at most $L_a^2L_b^2$.  The coefficients of
+the four terms in
+\[
+ |\kappa^{-1}S_\ell-T|^2
+ =\kappa^{-2}|S_\ell|^2
+  -\kappa^{-1}S_\ell\overline T
+  -\kappa^{-1}\overline{S_\ell}T+|T|^2
+\]
+therefore give exactly the right side of
+\eqref{eq:weighted-shift-completion}.
+
+Under the stated lower bound for $H\delta_Q$,
+\eqref{eq:weighted-HQ-discrepancy} implies
+$H_Q\geq H\delta_Q/2$.  Divide
+\eqref{eq:weighted-shift-completion} by $H_Q$ and use
+$(H/Q)g=H\delta_Q$ to obtain
+\eqref{eq:weighted-short-shift-transfer}.
+\end{proof}
+
+\subsection{Exact-conductor orthogonality}
+
+The next lemma is a fixed-modulus orthogonality estimate, not a new large
+sieve inequality.  Its advantage is that its modulus is the exact conductor
+$q$, rather than the ambient product $Q$.
+
+\begin{lemma}[Second moment at one exact conductor]
+\label{lem:weighted-exact-conductor-orthogonality}
+For every divisor $q>1$ of $Q$,
+\begin{align}
+ \sum_{\substack{\chi\in\whG\\q_\chi=q}}|A_a(\chi)|^2
+ &\leq(M+q)E_a,
+ \label{eq:weighted-exact-q-second-moment-a}\\
+ \sum_{\substack{\chi\in\whG\\q_\chi=q}}|A_b(\chi)|^2
+ &\leq(N+q)E_b.
+ \label{eq:weighted-exact-q-second-moment-b}
+\end{align}
+The estimates are uniform in the interval locations.
+\end{lemma}
+
+\begin{proof}
+Characters with $q_\chi=q$ are induced by primitive characters modulo $q$,
+so they form a subset of all Dirichlet characters modulo $q$.  Put
+$u_m=a_m\one_{(m,Q)=1}$.  On the support of $u_m$, the inflated character
+$\chi$ equals its inducing character modulo $q$.  Orthogonality modulo $q$
+therefore gives
+\[
+ \sum_{\chi\bmod q}
+ \left|\sum_{m\in I}u_m\chi(m)\right|^2
+ =\varphi(q)
+ \sum_{\substack{c\bmod q\\(c,q)=1}}
+ \left|\sum_{\substack{m\in I\\m\equiv c\pmod q}}u_m\right|^2.
+\]
+Every residue class contains at most $M/q+1$ members of $I$.  Cauchy's
+inequality inside each class, followed by $\varphi(q)\leq q$, bounds the
+last display by $(M+q)E_a$.  Restricting the nonnegative sum to the exact
+conductor characters proves
+\eqref{eq:weighted-exact-q-second-moment-a}.  The proof of
+\eqref{eq:weighted-exact-q-second-moment-b} is identical.
+\end{proof}
+
+We record the conductor masses which occur after applying the preceding
+lemma.  The final estimate, which removes the one-prime supports, is useful
+for prime-supported coefficients later in the paper.
+
+\begin{lemma}[Conductor masses in the quadratic window]
+\label{lem:weighted-conductor-masses}
+As $w\to\infty$,
+\begin{align}
+ \sum_{\substack{q\mid Q\\q>1}}q\,d(q)^2&=O(1),
+ \label{eq:weighted-q-d2-mass}\\
+ \sum_{\substack{q\mid Q\\q>1}}d(q)^2
+ &\ll\frac1{w\log w},
+ \label{eq:weighted-d2-mass}\\
+ \sum_{\substack{q\mid Q\\\omega(q)\geq2}}d(q)^2
+ &\ll\frac1{w^2(\log w)^2}.
+ \label{eq:weighted-d2-two-prime-tail}
+\end{align}
+Moreover, $\delta_Q=1/2+o(1)$, $\kappa=1/2+o(1)$, and
+$\Xi=4+o(1)$.
+\end{lemma}
+
+\begin{proof}
+Euler products give
+\begin{align*}
+ \sum_{q\mid Q}q\,d(q)^2
+ &=\prod_{p\mid Q}\left(1+\frac{p}{(p-2)^2}\right),\\
+ \sum_{q\mid Q}d(q)^2
+ &=\prod_{p\mid Q}\left(1+\frac1{(p-2)^2}\right).
+\end{align*}
+Mertens' theorem on $w<p\leq w^2$ shows that
+$\sum_{p\mid Q}p/(p-2)^2=O(1)$, proving
+\eqref{eq:weighted-q-d2-mass}.  Also
+\[
+ s_w:=\sum_{p\mid Q}\frac1{(p-2)^2}
+ \ll\frac1{w\log w}.
+\]
+Thus the nonempty part of the second Euler product is
+$O(s_w)$, which proves \eqref{eq:weighted-d2-mass}.  The portion containing
+at least two local factors is at most
+$e^{s_w}-1-s_w=O(s_w^2)$, proving
+\eqref{eq:weighted-d2-two-prime-tail}.  The remaining local-product
+asymptotics follow from the prime number theorem and Mertens' theorem.
+\end{proof}
+
+\begin{theorem}[Coefficient-uniform complete-shift mean square]
+\label{thm:weighted-complete-shift}
+For arbitrary complex coefficients,
+\begin{align}
+ \frac1g\sum_{\ell\in G}|\cB_{2\ell}(a,b)|^2
+ &\leq
+ L_b^2E_a
+ \sum_{\substack{q\mid Q\\q>1}}d(q)^2(M+q),
+ \label{eq:weighted-complete-one-sided-a}\\
+ \frac1g\sum_{\ell\in G}|\cB_{2\ell}(a,b)|^2
+ &\leq
+ L_a^2E_b
+ \sum_{\substack{q\mid Q\\q>1}}d(q)^2(N+q).
+ \label{eq:weighted-complete-one-sided-b}
+\end{align}
+In particular, if $|a_m|,|b_n|\leq1$, then
+\begin{equation}\label{eq:weighted-complete-bounded-coefficients}
+ \frac1{M^2N^2}
+ \frac1g\sum_{\ell\in G}|\cB_{2\ell}(a,b)|^2
+ \ll
+ \frac1{\max\{M,N\}}+\frac1{w\log w}.
+\end{equation}
+The implied constant is absolute for all sufficiently large $w$.
+\end{theorem}
+
+\begin{proof}
+In \eqref{eq:weighted-complete-shift-parseval}, group the characters by
+their exact conductor and use $|A_b(\chi)|\leq L_b$.
+\Cref{lem:weighted-exact-conductor-orthogonality} gives
+\[
+ \frac1g\sum_{\ell\in G}|\cB_{2\ell}(a,b)|^2
+ \leq L_b^2E_a
+ \sum_{\substack{q\mid Q\\q>1}}d(q)^2(M+q),
+\]
+which is \eqref{eq:weighted-complete-one-sided-a}.  Interchanging the two
+variables proves \eqref{eq:weighted-complete-one-sided-b}.
+
+For coefficients bounded by one, $L_a\leq M$, $E_a\leq M$,
+$L_b\leq N$, and $E_b\leq N$.  The first inequality, divided by
+$M^2N^2$, is at most
+\[
+ \frac1M\sum_{\substack{q\mid Q\\q>1}}q\,d(q)^2
+ +\sum_{\substack{q\mid Q\\q>1}}d(q)^2.
+\]
+The second inequality gives the same expression with $N$ in place of $M$.
+Take the smaller of the two bounds and apply
+\cref{lem:weighted-conductor-masses}.
+\end{proof}
+
+For the quadratic window, the prime number theorem gives
+\begin{equation}\label{eq:weighted-logQ-r-asymptotics}
+ \log Q=(1+o(1))w^2,
+ \qquad
+ r=(1+o(1))\frac{w^2}{2\log w}.
+\end{equation}
+Consequently, for
+\begin{equation}\label{eq:weighted-short-H-choice}
+ H=\left\lfloor Q^{1/\log w}\right\rfloor,
+\end{equation}
+one has
+\begin{equation}\label{eq:weighted-completion-decay}
+ \frac{\mathfrak C(Q)}{H\delta_Q}
+ =\exp\left(
+  -\bigl(1-\log2+o(1)\bigr)\frac{w^2}{\log w}
+ \right)=o(1).
+\end{equation}
+
+\begin{corollary}[Coefficient-uniform short-shift mean square]
+\label{cor:weighted-short-shift}
+Let $\cL$ be any interval of $H$ consecutive integers, with $H$ as in
+\eqref{eq:weighted-short-H-choice}.  If $|a_m|,|b_n|\leq1$, then
+\begin{align}
+ \frac1{M^2N^2}
+ \frac1{H_Q}
+ \sum_{\substack{\ell\in\cL\\(\ell,Q)=1}}
+ |\cB_{2\ell}(a,b)|^2
+ \ll
+ \frac1{\max\{M,N\}}+\frac1{w\log w}
+ +\frac{\mathfrak C(Q)}{H\delta_Q}.
+ \label{eq:weighted-short-bounded-coefficients}
+\end{align}
+In particular, the normalized root mean square is $o(1)$ whenever
+$\max\{M,N\}\to\infty$.
+\end{corollary}
+
+\begin{proof}
+For large $w$, \eqref{eq:weighted-completion-decay} implies
+$H\delta_Q\geq2^{r+1}$.  Apply
+\eqref{eq:weighted-short-shift-transfer}, use $L_a\leq M$ and
+$L_b\leq N$, and then invoke
+\cref{thm:weighted-complete-shift}.
+\end{proof}
+
+\subsection{A dyadic large-sieve estimate at a fixed shift}
+
+The preceding mean-square result exploits orthogonality in the shift.  At a
+fixed shift we instead sum exact conductors in dyadic blocks.  We use the
+classical multiplicative large sieve in the form
+\begin{equation}\label{eq:weighted-classical-multiplicative-large-sieve}
+ \sum_{q\leq S}\frac q{\varphi(q)}
+ \sum_{\chi\bmod q}^{*}
+ \left|\sum_{n\in\mathcal I}u_n\chi(n)\right|^2
+ \ll (|\mathcal I|+S^2)\sum_{n\in\mathcal I}|u_n|^2,
+\end{equation}
+where the star denotes primitive characters.  The estimate is uniform in
+the location of the integer interval $\mathcal I$; see, for example,
+\citet[Theorem~7.13]{IwaniecKowalski2004}.  We apply this classical result
+only to the sparse family of squarefree conductors dividing $Q$.
+
+For $R\geq1$, let $\cB_h^{>R}(a,b)$ denote the portion of
+\eqref{eq:weighted-box-character-expansion} with $q_\chi>R$.
+
+\begin{theorem}[Dyadic multiplicative-large-sieve bound]
+\label{thm:weighted-fixed-shift-large-sieve}
+Let $I,J$ be arbitrary integer intervals of lengths $M,N<Q$, let the
+coefficients be arbitrary complex numbers, and let $(h,Q)=1$.  Uniformly for
+$w\leq R\leq\sqrt Q$,
+\begin{equation}\label{eq:weighted-fixed-shift-tail-bound}
+ |\cB_h^{>R}(a,b)|
+ \ll
+ \sqrt{E_aE_b}
+ \left\{
+  \frac{\sqrt{MN}}R
+  +(\log Q)(\sqrt M+\sqrt N)
+  +\sqrt Q
+ \right\}.
+\end{equation}
+Since every nontrivial conductor $q_\chi$ is larger than $w$, the full form
+satisfies
+\begin{equation}\label{eq:weighted-fixed-shift-full-bound}
+ |\cB_h(a,b)|
+ \ll
+ \sqrt{E_aE_b}
+ \left\{
+  \frac{\sqrt{MN}}w
+  +(\log Q)(\sqrt M+\sqrt N)
+  +\sqrt Q
+ \right\}.
+\end{equation}
+All implied constants are absolute for sufficiently large $w$, and the
+estimates are uniform in $h$ and in the interval locations.
+\end{theorem}
+
+\begin{proof}
+Partition $R<q\leq\sqrt Q$ into geometric blocks
+$S<q\leq\min\{2S,\sqrt Q\}$, beginning with $S=R$.  Since
+\[
+ d(q)=\frac1q\prod_{p\mid q}\frac p{p-2}\leq\frac{\Xi}{q},
+\]
+Cauchy's inequality gives
+\begin{align*}
+ &\left|
+ \sum_{\substack{q\mid Q\\S<q\leq\min\{2S,\sqrt Q\}}}
+ \sum_{\substack{\chi\in\whG\\q_\chi=q}}
+ c_h(\chi)A_a(\chi)A_b(\chi)
+ \right|\\
+ &\qquad\leq\frac{\Xi}{S}
+ \left(
+  \sum_{\substack{q\mid Q\\S<q\leq\min\{2S,\sqrt Q\}}}
+  \sum_{q_\chi=q}|A_a(\chi)|^2
+ \right)^{1/2}
+ \left(
+  \sum_{\substack{q\mid Q\\S<q\leq\min\{2S,\sqrt Q\}}}
+  \sum_{q_\chi=q}|A_b(\chi)|^2
+ \right)^{1/2}.
+\end{align*}
+Every exact-conductor character in these sums is primitive modulo $q$.
+Apply \eqref{eq:weighted-classical-multiplicative-large-sieve} to
+$a_m\one_{(m,Q)=1}$ and $b_n\one_{(n,Q)=1}$, enlarging the conductor family
+to all primitive characters of modulus at most $2S$.  The block is at most
+\begin{align}
+ \frac{\Xi}{S}
+ \sqrt{(M+4S^2)(N+4S^2)}\sqrt{E_aE_b}
+ \notag\\
+ \leq
+ \Xi\sqrt{E_aE_b}
+ \left(
+  \frac{\sqrt{MN}}S+2\sqrt M+2\sqrt N+4S
+ \right).
+ \label{eq:weighted-one-dyadic-block}
+\end{align}
+Summing \eqref{eq:weighted-one-dyadic-block} over dyadic $S$ from $R$ to
+$\sqrt Q$ uses
+\[
+ \sum_S\frac1S\ll\frac1R,
+ \qquad
+ \#\{S\}\ll\log Q,
+ \qquad
+ \sum_S S\ll\sqrt Q.
+\]
+
+It remains to treat $q_\chi>\sqrt Q$.  Character Parseval on $G$ gives
+\begin{equation}\label{eq:weighted-ambient-character-parseval}
+ \sum_{\chi\in\whG}|A_a(\chi)|^2=gE_a,
+ \qquad
+ \sum_{\chi\in\whG}|A_b(\chi)|^2=gE_b.
+\end{equation}
+Here the hypothesis $M,N<Q$ ensures that no two integers in either interval
+occupy the same residue class modulo $Q$.  Since
+$d(\chi)\leq\Xi/q_\chi\leq\Xi/\sqrt Q$, Cauchy's inequality bounds this
+remaining portion by
+\[
+ \frac{\Xi}{\sqrt Q}\,g\sqrt{E_aE_b}
+ \leq\Xi\sqrt Q\sqrt{E_aE_b}.
+\]
+Combining the two conductor ranges and using $\Xi=O(1)$ proves
+\eqref{eq:weighted-fixed-shift-tail-bound}.  Finally, all primes dividing
+$Q$ exceed $w$, so every $q_\chi>1$ exceeds $w$.  The choice $R=w$ gives
+\eqref{eq:weighted-fixed-shift-full-bound}.
+\end{proof}
+
+\begin{corollary}[A fixed-shift cancellation range]
+\label{cor:weighted-fixed-shift-bounded}
+If $|a_m|,|b_n|\leq1$, then, uniformly for $(h,Q)=1$,
+\begin{equation}\label{eq:weighted-fixed-shift-normalized-bounded}
+ \frac{|\cB_h(a,b)|}{MN}
+ \ll
+ \frac1w
+ +(\log Q)\left(\frac1{\sqrt M}+\frac1{\sqrt N}\right)
+ +\sqrt{\frac Q{MN}}.
+\end{equation}
+Consequently, if
+\begin{equation}\label{eq:weighted-fixed-shift-range-conditions}
+ \frac{\min\{M,N\}}{(\log Q)^2}\longrightarrow\infty,
+ \qquad
+ \frac{MN}{Q}\longrightarrow\infty,
+\end{equation}
+then $\cB_h(a,b)=o(MN)$.  In particular, for
+$M=Q^{\lambda+o(1)}$ and $N=Q^{\nu+o(1)}$ with fixed
+$\lambda,\nu>0$, this holds whenever $\lambda+\nu>1$.
+\end{corollary}
+
+\begin{proof}
+Under the coefficient bound, $E_a\leq M$ and $E_b\leq N$.  Substitute
+these estimates in \eqref{eq:weighted-fixed-shift-full-bound} and divide by
+$MN$.
+\end{proof}
+
+\begin{remark}[Strict scope of the fixed-shift estimate]
+\label{rem:weighted-not-complete-type-II}
+The estimate in \cref{thm:weighted-fixed-shift-large-sieve} is a bilinear
+large-sieve transfer for this particular centered CRT kernel.  It requires
+the ambient-volume condition visible in
+\eqref{eq:weighted-fixed-shift-range-conditions}; it is not a complete
+prime-sensitive Type~II theorem.  The shift-mean results retain their shift
+average, while the fixed-shift result retains its length restriction.
+Furthermore, $K_h$ only tests whether a product plus $h$ avoids the primes
+dividing $Q$.  None of the results in this section tests whether that target
+is prime, estimates $\Lambda(n)\Lambda(n+2)$, overcomes sieve parity, or
+implies a twin-prime lower bound.
+\end{remark}

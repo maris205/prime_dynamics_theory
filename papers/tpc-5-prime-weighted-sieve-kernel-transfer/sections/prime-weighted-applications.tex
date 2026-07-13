@@ -1,0 +1,407 @@
+\section{Prime-weighted applications}
+\label{sec:prime-weighted-applications}
+
+This section inserts von Mangoldt weights in both factor coordinates.  The
+factor intervals are dyadic: throughout,
+\begin{equation}
+ I_X=(X,2X]\cap\mathbb Z,
+ \qquad
+ I_Y=(Y,2Y]\cap\mathbb Z,
+ \qquad
+ 2\le X,Y<Q.
+ \label{eq:lambda-dyadic-intervals}
+\end{equation}
+The condition that the length of each interval is below $Q$ will be used only
+when applying Parseval on $G$: no two integers in either interval then occupy
+the same residue class modulo $Q$.
+
+For $\chi\in\widehat G$, define the $Q$-unit von Mangoldt transform
+\begin{equation}
+ A_{\Lambda,X}(\chi)
+ :=\sum_{\substack{n\in I_X\\(n,Q)=1}}\Lambda(n)\chi(n),
+ \label{eq:lambda-Q-unit-transform}
+\end{equation}
+and define $A_{\Lambda,Y}$ analogously.  The corresponding weighted centered
+box form is
+\begin{equation}
+ \mathcal B_h^{\Lambda,\Lambda}(X,Y)
+ :=\sum_{\substack{m\in I_X,\ n\in I_Y\\(mn,Q)=1}}
+ \Lambda(m)\Lambda(n)K_h^\circ(m,n).
+ \label{eq:lambda-weighted-box-form}
+\end{equation}
+Thus, for $(h,Q)=1$, the general weighted character expansion gives
+\begin{equation}
+ \mathcal B_h^{\Lambda,\Lambda}(X,Y)
+ =\sum_{\substack{\chi\in\widehat G\\\chi\ne\mathbf 1}}
+ c_h(\chi)A_{\Lambda,X}(\chi)A_{\Lambda,Y}(\chi),
+ \qquad |c_h(\chi)|=d(\chi).
+ \label{eq:lambda-weighted-character-expansion}
+\end{equation}
+
+\subsection{Primitive comparison and small conductors}
+\label{subsec:lambda-small-conductors}
+
+The unit restriction in \eqref{eq:lambda-Q-unit-transform} causes no loss at
+polylogarithmic conductor.  The reason is special to $\Lambda$: a term removed
+by the restriction is a prime power, rather than a general multiple of a
+prime in the sieving window.
+
+\begin{lemma}[Primitive comparison for a dyadic Mangoldt sum]
+\label{lem:lambda-primitive-comparison}
+Let $\chi\in\widehat G$ have exact conductor $q=q_\chi>1$, and let
+$\chi^*$ be the primitive character modulo $q$ inducing $\chi$.  Then
+\begin{equation}
+ A_{\Lambda,X}(\chi)
+ =\sum_{X<n\le2X}\Lambda(n)\chi^*(n)+O(\log Q),
+ \label{eq:lambda-primitive-comparison}
+\end{equation}
+uniformly in $X<Q$ and in $\chi$.  Consequently, fix $\delta>0$ and
+$A,B>0$.  Uniformly for $Q^\delta\le X<Q$ and
+$1<q_\chi\le w^A$,
+\begin{equation}
+ |A_{\Lambda,X}(\chi)|
+ \ll_{A,B,\delta}X(\log X)^{-B}.
+ \label{eq:lambda-small-conductor-SW}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+On integers coprime to $Q$, the inflated character $\chi$ agrees with
+$\chi^*$.  If $\Lambda(n)\ne0$ and $(n,Q)>1$, then $n=p^k$ for a unique
+prime $p\mid Q$.  When $p\mid q$, the value $\chi^*(p^k)$ already vanishes.
+When $p\mid Q/q$, the term is deleted by the $Q$-unit restriction.  Since
+$p>2$, the dyadic interval $(X,2X]$ contains at most one power of a fixed
+$p$.  The total weight of all possibly deleted terms is therefore at most
+\[
+ \sum_{p\mid Q}\log p=\log Q,
+\]
+which proves \eqref{eq:lambda-primitive-comparison}.
+
+Every character under consideration is primitive and nonprincipal.  Moreover,
+when $X\ge Q^\delta$, one has
+$w^A\le(\log X)^{A/2+o(1)}$.  The classical Siegel--Walfisz theorem, in its
+character form, gives an arbitrary fixed logarithmic saving uniformly in this
+range \citep{Siegel1935,Walfisz1936,IwaniecKowalski2004}.  Increasing that
+saving if necessary absorbs the $O(\log Q)$ term and proves
+\eqref{eq:lambda-small-conductor-SW}.
+\end{proof}
+
+As usual for an unconditional Siegel--Walfisz estimate, the implied constants
+in \eqref{eq:lambda-small-conductor-SW}, and hence those in the prime-weighted
+$o(1)$ conclusions below, are ineffective.
+
+We also need a tail estimate for the exact conductor mass.  It is important
+here that the tail begins at a power of $w$, not at a power of $Q$.
+
+\begin{lemma}[Polylogarithmic conductor tail]
+\label{lem:lambda-polylog-conductor-tail}
+For every fixed $A>0$,
+\begin{equation}
+ \sum_{\substack{q\mid Q\\q>w^A}}d(q)\ll e^{-A},
+ \label{eq:lambda-polylog-conductor-tail}
+\end{equation}
+with an absolute implied constant for all sufficiently large $w$.
+\end{lemma}
+
+\begin{proof}
+Take $\theta=1/\log w$.  Rankin's inequality gives
+\begin{align*}
+ \sum_{\substack{q\mid Q\\q>w^A}}d(q)
+ &\le e^{-A}\sum_{q\mid Q}q^\theta d(q)\\
+ &=e^{-A}\prod_{p\mid Q}
+    \left(1+\frac{p^{1/\log w}}{p-2}\right).
+\end{align*}
+Since $w<p\le w^2$, the numerator in the local perturbation is at most
+$e^2$, and Mertens' theorem shows that the product is $O(1)$.
+\end{proof}
+
+\subsection{Two prime weights after complete or short shift averaging}
+\label{subsec:lambda-shift-means}
+
+The complete-shift identity takes the exact form
+\begin{equation}
+ \frac1g\sum_{\ell\in G}
+  |\mathcal B_{2\ell}^{\Lambda,\Lambda}(X,Y)|^2
+ =\sum_{\substack{\chi\in\widehat G\\\chi\ne\mathbf1}}
+ d(\chi)^2
+ |A_{\Lambda,X}(\chi)|^2|A_{\Lambda,Y}(\chi)|^2.
+ \label{eq:lambda-complete-shift-parseval}
+\end{equation}
+
+\begin{theorem}[Two Mangoldt weights on every fixed power scale]
+\label{thm:lambda-complete-shift-rms}
+Fix $0<\delta<1$.  Uniformly for
+\begin{equation}
+ Q^\delta\le X,Y<Q,
+ \label{eq:lambda-all-power-range}
+\end{equation}
+one has
+\begin{equation}
+ \frac1{XY}
+ \left(
+  \frac1g\sum_{\ell\in G}
+  |\mathcal B_{2\ell}^{\Lambda,\Lambda}(X,Y)|^2
+ \right)^{1/2}=o(1).
+ \label{eq:lambda-complete-shift-rms}
+\end{equation}
+In particular, the conclusion holds when
+$X=Q^{\lambda+o(1)}$ and $Y=Q^{\nu+o(1)}$ for arbitrary fixed
+$0<\lambda,\nu<1$.
+\end{theorem}
+
+\begin{proof}
+Fix $A>0$ temporarily and split \eqref{eq:lambda-complete-shift-parseval}
+at $q_\chi=w^A$.  For the low-conductor part,
+\cref{lem:lambda-primitive-comparison} and the identity
+\[
+ \sum_{q_\chi=q}d(\chi)^2=d(q)
+\]
+give, for any prescribed logarithmic saving,
+\begin{align*}
+ \frac1{X^2Y^2}
+ \sum_{1<q_\chi\le w^A}
+ d(\chi)^2|A_{\Lambda,X}(\chi)|^2
+              |A_{\Lambda,Y}(\chi)|^2=o(1),
+\end{align*}
+because $\sum_{q\mid Q}d(q)=\kappa^{-1}=O(1)$.
+
+For the complementary conductors, Chebyshev's bound gives
+\begin{equation}
+ |A_{\Lambda,X}(\chi)|\le\sum_{X<n\le2X}\Lambda(n)\ll X,
+ \label{eq:lambda-L1-Chebyshev}
+\end{equation}
+and likewise for $Y$.  Hence
+\begin{align*}
+ \frac1{X^2Y^2}
+ \sum_{q_\chi>w^A}d(\chi)^2
+ |A_{\Lambda,X}(\chi)|^2|A_{\Lambda,Y}(\chi)|^2
+ &\ll\sum_{\substack{q\mid Q\\q>w^A}}d(q)
+ \ll e^{-A}
+\end{align*}
+by \cref{lem:lambda-polylog-conductor-tail}.  First let $w\to\infty$ with
+$A$ fixed, and then let $A\to\infty$.  This proves
+\eqref{eq:lambda-complete-shift-rms}.
+\end{proof}
+
+Let $\mathcal L$ be an interval of
+\begin{equation}
+ H=\left\lfloor Q^{1/\log w}\right\rfloor
+ \label{eq:lambda-short-shift-length}
+\end{equation}
+consecutive integers, and put
+$H_Q=\#\{\ell\in\mathcal L:(\ell,Q)=1\}$.
+
+\begin{corollary}[A subpower interval of shifts]
+\label{cor:lambda-short-shift-rms}
+Under the hypotheses of \cref{thm:lambda-complete-shift-rms}, uniformly in
+the location of $\mathcal L$,
+\begin{equation}
+ \frac1{XY}
+ \left(
+  \frac1{H_Q}
+  \sum_{\substack{\ell\in\mathcal L\\(\ell,Q)=1}}
+  |\mathcal B_{2\ell}^{\Lambda,\Lambda}(X,Y)|^2
+ \right)^{1/2}=o(1).
+ \label{eq:lambda-short-shift-rms}
+\end{equation}
+Here $H=Q^{o(1)}$ and $H/Q\to0$.
+\end{corollary}
+
+\begin{proof}
+By \cref{prop:weighted-shift-completion}, the weighted deterministic
+completion estimate gives
+\begin{align*}
+ \left|
+ \sum_{\substack{\ell\in\mathcal L\\(\ell,Q)=1}}
+ |\mathcal B_{2\ell}^{\Lambda,\Lambda}(X,Y)|^2
+ -\frac HQ\sum_{\ell\in G}
+ |\mathcal B_{2\ell}^{\Lambda,\Lambda}(X,Y)|^2
+ \right|
+ \le \mathfrak C(Q)(L_{\Lambda,X}L_{\Lambda,Y})^2,
+\end{align*}
+where
+$L_{\Lambda,X}=\sum_{X<n\le2X,(n,Q)=1}\Lambda(n)\ll X$ and similarly
+$L_{\Lambda,Y}\ll Y$.  Also $H_Q\sim H g/Q$, and
+\eqref{eq:weighted-completion-decay} gives
+$\mathfrak C(Q)/(H\delta_Q)=o(1)$ for the quadratic prime window.  After
+division by $H_Q X^2Y^2$, the completion error is $o(1)$, while the completed
+term is $o(1)$ by \cref{thm:lambda-complete-shift-rms}.
+\end{proof}
+
+\begin{corollary}[Density-one shifts in every sampled block]
+\label{cor:lambda-density-one-shifts}
+Under the same hypotheses, there is a deterministic sequence
+$\varepsilon_w\to0$ such that, uniformly in the location of $\mathcal L$,
+\begin{equation}
+ \#\left\{
+  \substack{\ell\in\mathcal L:(\ell,Q)=1\\
+  |\mathcal B_{2\ell}^{\Lambda,\Lambda}(X,Y)|
+       >\varepsilon_w XY}
+ \right\}=o(H_Q).
+ \label{eq:lambda-density-one-shifts}
+\end{equation}
+This density-one statement does not imply the estimate for any prescribed
+shift, and in particular it does not select $\ell=1$.
+\end{corollary}
+
+\begin{proof}
+Let $S_w$ be the supremum, over the stated parameter range and shift blocks,
+of the normalized mean square in \eqref{eq:lambda-short-shift-rms}, and choose
+$\varepsilon_w=\max\{w^{-1},S_w^{1/4}\}$.  Uniformity in
+\cref{cor:lambda-short-shift-rms} gives $\varepsilon_w\to0$, while Markov's
+inequality bounds the exceptional proportion by
+$S_w/\varepsilon_w^2\le S_w^{1/2}=o(1)$.
+\end{proof}
+
+\subsection{A fixed-shift theorem above the product threshold}
+\label{subsec:lambda-fixed-shift}
+
+The shift average is not needed once both factor lengths are fixed positive
+powers of $Q$ and their product is larger than $Q$ by a fixed power.  The
+additional input is the classical
+multiplicative large sieve, aggregated on dyadic conductor blocks against the
+exact multiplier $d(q)$ \citep{MontgomeryVaughan1973,IwaniecKowalski2004}.
+
+\begin{theorem}[Two Mangoldt weights at a prescribed shift]
+\label{thm:lambda-fixed-shift}
+Fix $0<\delta<1$.  Suppose
+\begin{equation}
+ Q^\delta\le X,Y<Q,
+ \qquad
+ XY\ge Q^{1+\delta}.
+ \label{eq:lambda-fixed-shift-range}
+\end{equation}
+Then, uniformly for every $h$ with $(h,Q)=1$,
+\begin{equation}
+ \mathcal B_h^{\Lambda,\Lambda}(X,Y)=o(XY).
+ \label{eq:lambda-fixed-shift-o}
+\end{equation}
+In particular, \eqref{eq:lambda-fixed-shift-o} holds for the prescribed shift
+$h=2$.
+\end{theorem}
+
+\begin{proof}
+Choose a fixed $A>3$ and put $W=w^A$.  The characters with
+$q_\chi\le W$ contribute $o(XY)$ by
+\cref{lem:lambda-primitive-comparison}.  More explicitly, there are only
+$w^{O_A(1)}$ divisors $q\mid Q$ below $w^A$, and
+$d(q)\#\{\chi:q_\chi=q\}=1$ for each one.  Hence the triangle inequality and
+\eqref{eq:lambda-small-conductor-SW}, with a sufficiently large logarithmic
+saving, give
+\[
+ |\mathcal B_h^{q_\chi\le W}(X,Y)|
+ \le \sum_{\substack{q\mid Q\\1<q\le W}}
+ \max_{q_\chi=q}|A_{\Lambda,X}(\chi)|
+ \max_{q_\chi=q}|A_{\Lambda,Y}(\chi)|
+ =o(XY).
+\]
+
+For the remaining conductors, use the general dyadic large-sieve tail bound
+\eqref{eq:weighted-fixed-shift-tail-bound} with $R=W$.  Its coefficient
+energies satisfy
+\begin{equation}
+ E_{\Lambda,X}
+ :=\sum_{\substack{X<n\le2X\\(n,Q)=1}}\Lambda(n)^2
+ \le \log(2X)\sum_{X<n\le2X}\Lambda(n)
+ \ll X\log X,
+ \qquad
+ E_{\Lambda,Y}\ll Y\log Y,
+ \label{eq:lambda-second-moments}
+\end{equation}
+where the last inequality is Chebyshev's bound.  Consequently,
+\begin{align}
+ \frac{|\mathcal B_h^{q_\chi>W}(X,Y)|}{XY}
+ \ll \sqrt{\log X\log Y}\left\{
+  \frac1W
+  +(\log Q)\left(\frac1{\sqrt X}+\frac1{\sqrt Y}\right)
+  +\sqrt{\frac Q{XY}}
+ \right\}.
+ \label{eq:lambda-fixed-large-conductors}
+\end{align}
+The last term is $o(1)$ under
+\eqref{eq:lambda-fixed-shift-range}.  The $W$-term tends to zero because
+$A>3$ and $\sqrt{\log X\log Y}\ll\log Q\asymp w^2$, while the two interval
+terms are killed by $X,Y\ge Q^\delta$.  Together with the small-conductor
+estimate, this proves \eqref{eq:lambda-fixed-shift-o}.
+\end{proof}
+
+\subsection{Prime factors and a rough target}
+\label{subsec:lambda-prime-factor-corollary}
+
+The fixed-shift theorem has a positive prime-supported consequence.  It must
+not be confused with a theorem asserting that the target $pq+h$ is prime.
+
+\begin{corollary}[Prime factors with a locally rough shifted product]
+\label{cor:prime-prime-rough-target}
+Under the hypotheses of \cref{thm:lambda-fixed-shift}, for every fixed
+integer $h$ with $(h,Q)=1$,
+\begin{align}
+ &\sum_{\substack{p\in I_X,\ q\in I_Y\\(pq+h,Q)=1}}
+   \log p\log q
+ =\bigl(\kappa+o(1)\bigr)XY,
+ \label{eq:prime-prime-rough-target-weighted}\\
+ &\#\{(p,q)\in I_X\times I_Y:(pq+h,Q)=1\}
+ \sim\kappa\frac{XY}{\log X\log Y}.
+ \label{eq:prime-prime-rough-target-count}
+\end{align}
+Both statements include $h=2$.
+\end{corollary}
+
+\begin{proof}
+Write
+\[
+ L_{\Lambda,X}
+ =\sum_{\substack{n\in I_X\\(n,Q)=1}}\Lambda(n),
+ \qquad
+ L_{\Lambda,Y}
+ =\sum_{\substack{n\in I_Y\\(n,Q)=1}}\Lambda(n).
+\]
+The prime number theorem and the same prime-power deletion used in
+\cref{lem:lambda-primitive-comparison} give
+$L_{\Lambda,X}=X+o(X)$ and $L_{\Lambda,Y}=Y+o(Y)$.  Since
+$K_h=\kappa(1+K_h^\circ)$ on $G\times G$,
+\cref{thm:lambda-fixed-shift} yields
+\begin{align*}
+ &\sum_{\substack{m\in I_X,\ n\in I_Y\\
+                  (mn,Q)=1,\ (mn+h,Q)=1}}
+ \Lambda(m)\Lambda(n)\\
+ &\qquad=\kappa\left\{
+ L_{\Lambda,X}L_{\Lambda,Y}
+ +\mathcal B_h^{\Lambda,\Lambda}(X,Y)
+ \right\}
+ =\bigl(\kappa+o(1)\bigr)XY.
+\end{align*}
+
+The total von Mangoldt weight of proper prime powers in a dyadic interval is
+$O(X^{1/2}(\log X)^2)$, and similarly for $Y$.  Chebyshev's bound on the
+other coordinate therefore shows that all terms in which $m$ or $n$ is a
+proper prime power contribute $o(XY)$.  At this point the factor primes still
+carry the restriction $(pq,Q)=1$.  Restoring the omitted pairs with
+$p\mid Q$ or $q\mid Q$ changes the logarithmically weighted sum by at most
+\[
+ \left(\sum_{\substack{r\mid Q\\r\ {\rm prime}}}\log r\right)
+ \left(\sum_{\substack{q\in I_Y\\q\ {\rm prime}}}\log q\right)
+ +
+ \left(\sum_{\substack{p\in I_X\\p\ {\rm prime}}}\log p\right)
+ \left(\sum_{\substack{r\mid Q\\r\ {\rm prime}}}\log r\right)
+ \ll Y\log Q+X\log Q,
+\]
+with the doubly counted intersection bounded by $(\log Q)^2$.  This is
+$o(XY)$ because $X,Y\ge Q^\delta$.  (In fact, eventually
+$X,Y>w^2$, so no prime in either dyadic interval divides $Q$.)  This proves
+\eqref{eq:prime-prime-rough-target-weighted}.  Finally,
+$\log p=(1+o(1))\log X$ uniformly for $p\in I_X$, and similarly on $I_Y$;
+partial unweighting gives \eqref{eq:prime-prime-rough-target-count}.
+\end{proof}
+
+\begin{remark}[The target is rough, not prime]
+\label{rem:lambda-rough-not-prime}
+The condition $(pq+h,Q)=1$ only says that $pq+h$ avoids the primes in the
+finite window $(w,w^2]$.  Neither \cref{thm:lambda-fixed-shift} nor
+\cref{cor:prime-prime-rough-target} inserts $\Lambda(pq+h)$, proves that
+$pq+h$ is prime, gives a twin-prime lower bound, or bypasses parity.  Likewise,
+the density-one conclusion \cref{cor:lambda-density-one-shifts} cannot be used
+to select the prescribed value $\ell=1$.  The threshold $XY>Q$ in the
+fixed-shift theorem is a range of the present large-sieve cutoff argument,
+not an asserted barrier.
+\end{remark}
