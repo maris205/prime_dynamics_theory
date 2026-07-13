@@ -1,0 +1,860 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{benchmark}[theorem]{Open benchmark}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\crefname{benchmark}{Open benchmark}{Open benchmarks}
+\Crefname{benchmark}{Open benchmark}{Open benchmarks}
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\TV}{\mathrm{TV}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\dist}{\operatorname{dist}}
+
+\title{\textbf{Two-Scale Correlations in Finite Prime-Sieve Dynamics:}\\
+\textbf{Singular Series, Repair Stability, and a Local-Information Boundary}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We study the periodic binary systems obtained by sieving the integers by all primes up to a cutoff $y$.  The starting local calculation is classical: the Chinese remainder theorem gives the exact $r$-point correlation over one primorial period, and division by the $r$th power of the survivor density yields the Hardy--Littlewood singular series.  Our purpose is to determine which dynamical and spectral limits retain this local arithmetic information, which limits erase it, and what remains missing before one can count genuine prime pairs.
+
+The centered, energy-normalized spectral measures of the finite sieve systems converge weakly to Haar measure on the circle.  In contrast, the rare-event normalization of every fixed nonzero pair correlation converges to its singular-series factor; at displacement two the limit is the classical value $2C_2$.  We sharpen this separation by proving that a diagonal renormalization of the uncentered spectral measures converges in the sense of distributions to an object whose nonzero Fourier coefficients are the pair singular series.  This limit is not a finite signed measure, because those coefficients are unbounded along primorial displacements.
+
+For windows of length $X$, periodicity gives a quantitative double-limit theorem whenever $P_y=o(X\rho_y^r)$; in particular it applies for $y\le(1-\delta)\log X$ with fixed $0<\delta<1$.  We also establish a hierarchy of repair scales.  A Hamming perturbation of density $o(\rho_y)$ preserves the ordinary centered spectrum, whereas uniform preservation of an $r$-point rare-event limit is guaranteed at the stronger scale $o(\rho_y^r)$.  For pairs this $o(\rho_y^2)$ threshold is sharp in the worst case: a perturbation of order $\rho_y^2$ can annihilate a chosen pair correlation while leaving the Haar spectral limit unchanged.
+
+Finally, we give an exact survivor-to-prime decomposition.  After translating $\min\cH=0$, its remainder vanishes at the primality-exact cutoff $y=\sqrt{X+\max\cH}$, but the primorial period is then exponentially larger than the observation window.  We formulate a prime-sensitive benchmark of Hardy--Littlewood order and explicitly leave it open.  The paper proves no lower bound for twin primes, does not overcome the sieve parity problem, and makes no assertion that infinitely many twin primes exist.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Eratosthenes sieve; prime pairs; singular series; spectral measure; Haar limit; sparse repair; parity problem.
+
+\medskip
+\noindent\textbf{MSC 2020:} 11N35; 11N05; 37A30; 42A16; 37B10.
+
+\section{Introduction}
+
+The prime $k$-tuple conjecture separates naturally into local and global parts.  A finite set of shifts $\cH$ must avoid covering every residue class modulo any prime.  These local constraints combine into the Hardy--Littlewood singular series \citep{HardyLittlewood1923}.  The global assertion is much deeper: sufficiently many integers surviving every relevant local obstruction should make all the translated values $n+h$, $h\in\cH$, prime simultaneously.  For $\cH=\{0,2\}$ this is the twin-prime problem.
+
+Finite Eratosthenes sieve words encode the local part exactly.  They are also natural finite dynamical systems: each word is periodic on a cyclic group, its correlations are orbit averages, and its discrete Fourier transform defines a spectral measure.  This perspective is useful only if the normalization is stated precisely.  A centered variance normalization and a rare-event normalization answer different questions.  We prove that the first has a universal Haar limit while the second retains the singular series.  Thus the absence of fixed Fourier correlations in the ordinary spectral limit does not mean that the local pair factor has disappeared; it lies one asymptotic scale lower.
+
+The work continues a program that separates exact symbolic statements from numerical or heuristic identifications in prime dynamics.  A cumulative sieve-to-kneading correspondence was reformulated without a universal admissibility hypothesis in \citet{WangReformulation2026}.  The exact repair theorem of \citet{WangPrimeSpectrum2026} then showed that, below the next-prime-square horizon, the cumulative sieve word and the natural prime word differ only at the previously used sieving primes.  That repair preserves ordinary centered periodograms.  Here we determine the stronger repair scale needed to preserve rare pair events and show that the earlier exact repair meets this scale on its valid finite horizon.  This is a stability statement, not an evaluation of the prime-pair correlation.
+
+The local product used below is classical.  It is the same product appearing in the Hardy--Littlewood conjecture and in work on averages of singular series \citep{Gallagher1976,Pintz2010}.  We do not present the Chinese-remainder calculation or the twin constant as new.  The contributions are instead:
+
+\begin{enumerate}[label=\textbf{R\arabic*.},leftmargin=3.2em]
+    \item an exact finite-window regime in which a growing sieve cutoff still recovers the singular series by periodic averaging;
+    \item a two-scale theorem separating the Haar spectral limit from rare-event arithmetic correlations;
+    \item a distributional second-order spectral limit, together with a proof that no finite-measure limit can carry all of its Fourier coefficients;
+    \item a quantitative hierarchy between ordinary spectral stability and $r$-point rare-event stability, including a worst-case sharpness construction;
+    \item an exact decomposition of sieve survivors into genuine prime tuples and composite survivors, and a precise statement of the additional open lower bound.
+\end{enumerate}
+
+The final item is deliberately a boundary theorem rather than a claimed solution.  Classical sieve methods face a parity obstruction when one seeks a positive lower bound forcing specified linear forms to be prime \citep{HeathBrown1982,FriedlanderIwaniec2010}.  Chen's theorem reaches a prime plus an integer with at most two prime factors \citep{Chen1973}; the bounded-gap breakthroughs of Zhang, Maynard, and the Polymath project prove that some bounded even displacement recurs infinitely often, but they do not force displacement two \citep{Zhang2014,Maynard2015,DHJPolymath2014}.  Recent prime-producing sieve theory likewise emphasizes the need for additional Type~II or bilinear information beyond local divisibility data \citep{FordMaynard2024}.  Our model contains no such new bilinear estimate.
+
+\subsection*{What is not claimed}
+
+No theorem below proves that a fixed admissible tuple occurs at prime arguments, proves a positive lower bound for twin primes, improves the known bounded-gap constant, or overcomes the parity problem.  Recovering $2C_2$ from complete local residue data proves only that the local obstruction has been computed correctly.  The ordinary Haar spectral limit also supplies no prime-pair lower bound.  All normalized statements involving genuine prime tuples are labeled explicitly as open benchmarks.
+
+\section{Finite primorial systems and exact local correlations}\label{sec:crt}
+
+For a real cutoff $y\ge2$, put
+\begin{equation}\label{eq:primorial-density}
+    P_y=\prod_{p\le y}p,
+    \qquad
+    s_y(n)=\one_{\gcd(n,P_y)=1},
+    \qquad
+    \rho_y=\frac{\varphi(P_y)}{P_y}
+           =\prod_{p\le y}\left(1-\frac1p\right).
+\end{equation}
+The function $s_y:\Z\to\{0,1\}$ is $P_y$-periodic.  Let
+$\cH=\{h_1,\ldots,h_r\}\subset\Z$ be a set of $r$ distinct shifts, and write
+\begin{equation}\label{eq:nu-p}
+    \nu_p(\cH)=\#\{h_1,\ldots,h_r\pmod p\}.
+\end{equation}
+Its complete-period correlation is
+\begin{equation}\label{eq:complete-correlation}
+    C_y(\cH)
+    =\frac1{P_y}\sum_{n\bmod P_y}\prod_{h\in\cH}s_y(n+h).
+\end{equation}
+Equivalently, on the finite probability-preserving system
+\begin{equation}\label{eq:finite-dynamical-system}
+    G_y=\Z/P_y\Z,
+    \qquad T_y(n)=n+1\pmod{P_y},
+    \qquad m_y=\frac1{P_y}\sum_{n\bmod P_y}\delta_n,
+\end{equation}
+the sieve word is the observable $s_y$ and
+\begin{equation}\label{eq:orbit-correlation}
+    C_y(\cH)=\int_{G_y}\prod_{h\in\cH}s_y\circ T_y^h\,dm_y.
+\end{equation}
+
+\begin{definition}[Admissibility and singular series]\label{def:singular-series}
+The set $\cH$ is \emph{admissible} if $\nu_p(\cH)<p$ for every prime $p$.  For an admissible $\cH$, define
+\begin{equation}\label{eq:singular-series}
+    \mathfrak S(\cH)
+    =\prod_p
+      \left(1-\frac{\nu_p(\cH)}p\right)
+      \left(1-\frac1p\right)^{-r}.
+\end{equation}
+For an inadmissible set we put $\mathfrak S(\cH)=0$.
+\end{definition}
+
+\begin{theorem}[Exact local product]\label{thm:crt}
+For every $y\ge2$ and every finite set of distinct shifts $\cH$,
+\begin{equation}\label{eq:crt-product}
+    C_y(\cH)
+    =\prod_{p\le y}\left(1-\frac{\nu_p(\cH)}p\right).
+\end{equation}
+Consequently, with
+\begin{equation}\label{eq:truncated-singular-series}
+    \mathfrak S_y(\cH)
+    =\frac{C_y(\cH)}{\rho_y^r},
+\end{equation}
+one has
+\begin{equation}\label{eq:singular-limit}
+    \mathfrak S_y(\cH)\longrightarrow\mathfrak S(\cH)
+\end{equation}
+for every admissible $\cH$.  If $\cH$ is inadmissible, then $C_y(\cH)=0$ for all sufficiently large $y$.
+\end{theorem}
+
+\begin{proof}
+For a fixed prime $p\le y$, exactly $p-\nu_p(\cH)$ residue classes $n\pmod p$ avoid all congruences $n\equiv-h\pmod p$, $h\in\cH$.  The Chinese remainder theorem makes these choices independent over the primes dividing $P_y$.  Hence the number of allowed classes modulo $P_y$ is
+$\prod_{p\le y}(p-\nu_p(\cH))$, which gives \eqref{eq:crt-product} after division by $P_y$.
+
+If $p$ exceeds every nonzero difference $|h_i-h_j|$, then $\nu_p(\cH)=r$.  For such primes,
+\[
+ \log\left[\left(1-\frac rp\right)
+             \left(1-\frac1p\right)^{-r}\right]
+ =-\frac{r(r-1)}{2p^2}+O_r(p^{-3}).
+\]
+The tail therefore converges absolutely.  This proves \eqref{eq:singular-limit}.  In the inadmissible case, a prime $p_0$ has $\nu_{p_0}(\cH)=p_0$, so the corresponding factor vanishes whenever $y\ge p_0$.
+\end{proof}
+
+\begin{proposition}[Uniform tail after all shift collisions are seen]\label{prop:uniform-tail}
+Fix $r$.  If $y>\diam(\cH)$ and $\cH$ is admissible, then
+\begin{equation}\label{eq:uniform-tail}
+    \mathfrak S_y(\cH)
+    =\mathfrak S(\cH)
+      \left(1+O_r\left(\frac1{y\log y}\right)\right).
+\end{equation}
+The implied constant is independent of the particular shift set.
+\end{proposition}
+
+\begin{proof}
+For every $p>y>\diam(\cH)$ the residues of the distinct shifts remain distinct, so the omitted local factor depends only on $p$ and $r$.  Its logarithm is $O_r(p^{-2})$.  The prime number theorem and partial summation give
+$\sum_{p>y}p^{-2}=O((y\log y)^{-1})$.  Exponentiating the tail proves the claim.
+\end{proof}
+
+\begin{remark}[Classical status]\label{rem:classical}
+The local product \eqref{eq:crt-product}, its admissibility condition, and the limit \eqref{eq:singular-limit} are classical.  Their role here is to provide the exact local input for the spectral and stability theorems, not a new derivation of the prime-tuple conjecture.
+\end{remark}
+
+\begin{remark}[Relation to $\mathcal B$-free dynamics]\label{rem:b-free}
+Finite primorial words are finite $\mathcal B$-free systems, and product correlation formulas of Mirsky type are well established in $\mathcal B$-free dynamics \citep{ElAbdalaouiLemanczykDeLaRue2015,KasjanKellerLemanczyk2019}.  Taking $\mathcal B$ to be all primes does not produce a nontrivial positive-density infinite system: $\sum_p1/p$ diverges and the only positive integer avoiding every prime divisor is $1$.  The object studied here is instead a renormalized directed family of finite-prime systems as the cutoff grows.  No novelty claim is made for the unrenormalized local product.
+\end{remark}
+
+\subsection{The pair formula}
+
+For a nonzero integer $h$, abbreviate
+\[
+    C_y(h)=C_y(\{0,h\}),
+    \qquad
+    \mathfrak S_y(h)=\frac{C_y(h)}{\rho_y^2}.
+\]
+
+\begin{corollary}[Fixed pair displacement]\label{cor:pair-formula}
+For $y\ge2$, $C_y(h)=0$ when $h$ is odd.  When $h$ is even,
+\begin{equation}\label{eq:pair-truncated}
+ \mathfrak S_y(h)
+ =2\prod_{2<p\le y}\frac{p(p-2)}{(p-1)^2}
+   \prod_{\substack{2<p\le y\\p\mid h}}\frac{p-1}{p-2}.
+\end{equation}
+For every fixed $h\ne0$,
+\begin{equation}\label{eq:pair-limit}
+ \mathfrak S_y(h)\longrightarrow \mathfrak S(h)
+ =\begin{cases}
+ 0,&h\ \text{odd},\\[0.4em]
+ 2C_2\displaystyle\prod_{\substack{p\mid h\\p>2}}
+       \frac{p-1}{p-2},&h\ \text{even},
+ \end{cases}
+\end{equation}
+where
+\begin{equation}\label{eq:twin-constant}
+    C_2=\prod_{p>2}\frac{p(p-2)}{(p-1)^2}.
+\end{equation}
+In particular,
+\begin{equation}\label{eq:twin-local-limit}
+    \frac{C_y(2)}{\rho_y^2}\longrightarrow2C_2.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+If $h$ is odd, the two shifts occupy both classes modulo $2$.  If $h$ is even, the factor at $2$ is $(1-1/2)/(1-1/2)^2=2$.  For an odd prime, the two residues collide precisely when $p\mid h$.  Substituting these two cases into \eqref{eq:truncated-singular-series} gives \eqref{eq:pair-truncated} and its limit.
+\end{proof}
+
+Equation \eqref{eq:twin-local-limit} says that the finite sieve has the correct \emph{local} twin factor.  It does not say that any survivor pair consists of primes.
+
+\section{Growing windows below the primorial scale}\label{sec:windows}
+
+The complete-period average is exact but its period grows rapidly.  To state a controlled two-parameter limit, define
+\begin{equation}\label{eq:window-correlation}
+    A_{\cH}(X,y)
+    =\sum_{1\le n\le X}\prod_{h\in\cH}s_y(n+h),
+\end{equation}
+where replacing $X$ by $\lfloor X\rfloor$ is understood.
+
+\begin{theorem}[Periodic-window transfer]\label{thm:window}
+For every $X\ge1$,
+\begin{equation}\label{eq:window-error}
+    \left|A_{\cH}(X,y)-X C_y(\cH)\right|\le P_y+1.
+\end{equation}
+Consequently, if $y=y(X)\to\infty$ and
+\begin{equation}\label{eq:window-condition}
+    \frac{P_y}{X\rho_y^r}\longrightarrow0,
+\end{equation}
+then, for every fixed admissible $\cH$,
+\begin{equation}\label{eq:window-singular-limit}
+    \frac{A_{\cH}(X,y)}{X\rho_y^r}
+    \longrightarrow\mathfrak S(\cH).
+\end{equation}
+In particular, \eqref{eq:window-singular-limit} holds if, for some fixed $0<\delta<1$,
+\begin{equation}\label{eq:log-window}
+    y\le(1-\delta)\log X
+\end{equation}
+for all sufficiently large $X$.
+\end{theorem}
+
+\begin{proof}
+Write $\lfloor X\rfloor=qP_y+a$ with $0\le a<P_y$.  The $q$ complete blocks contribute $qP_yC_y(\cH)$, while the final block contributes a number between $0$ and $a$.  This proves \eqref{eq:window-error}, up to the harmless replacement of $X$ by its integer part.  Divide by $X\rho_y^r$ and use \cref{thm:crt}.
+
+For the final assertion, the prime number theorem gives
+\begin{equation}\label{eq:theta-asymptotic}
+    \log P_y=\sum_{p\le y}\log p=(1+o(1))y,
+\end{equation}
+and Mertens' product theorem gives \citep[Chaps.~2 and 6]{MontgomeryVaughan2007}
+\begin{equation}\label{eq:mertens-density}
+    \rho_y\sim\frac{e^{-\gamma}}{\log y}.
+\end{equation}
+Under \eqref{eq:log-window}, $P_y\le X^{1-\delta/2}$ for large $X$, whereas $\rho_y^{-r}=O_r((\log y)^r)$.  Thus \eqref{eq:window-condition} follows.
+\end{proof}
+
+\begin{remark}[What the window theorem does and does not do]\label{rem:window-limit}
+The theorem advances the exact cyclic calculation to a growing observation window and a growing cutoff.  It is not a record in analytic sieve theory: deeper sieve methods treat other cutoff ranges.  Its virtue is that the assumptions and error are completely explicit.  Most importantly, the periodicity estimate does not yield a vanishing relative error at the primality-exact cutoff $y\asymp\sqrt X$; \cref{sec:bridge} makes this incompatibility precise.
+\end{remark}
+
+\section{First-order Haar spectrum and second-order arithmetic}\label{sec:spectrum}
+
+Let $G_y=\Z/P_y\Z$ and put
+\begin{equation}\label{eq:centered-word}
+    x_y(n)=s_y(n)-\rho_y.
+\end{equation}
+For any $f:G_y\to\mathbb C$ and $0\le k<P_y$, use the unnormalized discrete Fourier transform
+\begin{equation}\label{eq:dft}
+    \widehat f(k)=\sum_{n\bmod P_y}f(n)e^{-2\pi i kn/P_y}.
+\end{equation}
+We apply this convention to $f=x_y$ and, below, to $f=s_y$.  Here ``spectral measure'' means the Fourier power-spectrum measure of a periodic word, not a Koopman- or transfer-operator spectrum.
+Define the centered, energy-normalized spectral probability measure
+\begin{equation}\label{eq:centered-spectral-measure}
+    \mu_y^\circ
+    =\frac1{P_y^2\rho_y(1-\rho_y)}
+      \sum_{k=0}^{P_y-1}|\widehat x_y(k)|^2\delta_{k/P_y}
+\end{equation}
+on $\T=\R/\Z$.  Parseval's identity shows that its total mass is one.
+
+\begin{lemma}[Spectral coefficients are centered correlations]\label{lem:spectral-coefficients}
+For every $h\in\Z$,
+\begin{equation}\label{eq:spectral-coefficient}
+    \widehat\mu_y^\circ(h)
+    =\int_{\T}e^{2\pi iht}\,d\mu_y^\circ(t)
+    =\frac{C_y(h)-\rho_y^2}{\rho_y(1-\rho_y)},
+\end{equation}
+where $C_y(0)=\rho_y$.
+\end{lemma}
+
+\begin{proof}
+Discrete Fourier inversion gives
+\[
+ \frac1{P_y^2}\sum_{k=0}^{P_y-1}|\widehat x_y(k)|^2e^{2\pi ikh/P_y}
+ =\frac1{P_y}\sum_{n\bmod P_y}x_y(n)x_y(n+h).
+\]
+Expanding $x_y=s_y-\rho_y$ turns the right-hand side into $C_y(h)-\rho_y^2$.  Division by the centered energy proves the formula.
+\end{proof}
+
+\begin{theorem}[Two normalization scales]\label{thm:two-scales}
+As $y\to\infty$,
+\begin{equation}\label{eq:haar-limit}
+    \mu_y^\circ\Rightarrow m_{\T},
+\end{equation}
+where $m_{\T}$ is normalized Haar measure.  More explicitly, for every fixed $h\ne0$,
+\begin{equation}\label{eq:first-order-vanish}
+    \widehat\mu_y^\circ(h)
+    =\frac{\rho_y}{1-\rho_y}
+       \bigl(\mathfrak S_y(h)-1\bigr)
+    \longrightarrow0,
+\end{equation}
+whereas the rare-event normalization satisfies
+\begin{equation}\label{eq:rare-event-limit}
+    \frac{C_y(h)}{\rho_y^2}
+    =\mathfrak S_y(h)\longrightarrow\mathfrak S(h).
+\end{equation}
+For $h=2$, the limit in \eqref{eq:rare-event-limit} is $2C_2$.
+\end{theorem}
+
+\begin{proof}
+For fixed $h\ne0$, \cref{cor:pair-formula} makes $\mathfrak S_y(h)$ convergent and hence bounded.  By \eqref{eq:mertens-density}, $\rho_y\to0$, so \eqref{eq:first-order-vanish} follows.  The zeroth coefficient is one.  Convergence of every Fourier coefficient of probability measures on the compact group $\T$ implies weak convergence to Haar measure.  Equation \eqref{eq:rare-event-limit} is \cref{cor:pair-formula}.
+\end{proof}
+
+\begin{remark}[Weak, not total-variation, convergence]\label{rem:not-tv}
+Every $\mu_y^\circ$ is atomic, while $m_{\T}$ is continuous.  Therefore their total-variation distance is one under the probability convention.  The convergence in \eqref{eq:haar-limit} is weak and controls fixed Fourier modes, not displacements or frequency windows growing arbitrarily with $y$.
+\end{remark}
+
+\begin{remark}[Comparison with counting diffraction of the primes]\label{rem:prime-diffraction}
+For the actual zero-density set of primes, \citet{HumeniukRamseyStrungaru2025} define a counting autocorrelation normalized by the number of observed points and prove, for a broad class of interval averages, that its diffraction is Lebesgue measure.  That result concerns the primes themselves and counting diffraction.  The measure $\mu_y^\circ$ here instead belongs to a cutoff-indexed family of finite primorial sieves and is normalized by centered energy; the family $\eta_y$ below uses a further rare-event renormalization.  The shared Haar background therefore does not identify the objects or their second-order limits.
+\end{remark}
+
+\subsection{A diagonal-renormalized spectral distribution}
+
+The singular series can be assembled into one second-order object, but the correct category is distributions rather than finite measures.  Define the uncentered spectral measure
+\begin{equation}\label{eq:uncentered-spectrum}
+    \alpha_y
+    =\frac1{P_y^2}\sum_{k=0}^{P_y-1}
+       |\widehat s_y(k)|^2\delta_{k/P_y},
+\end{equation}
+so that $\widehat\alpha_y(h)=C_y(h)$ and $\alpha_y(\T)=\rho_y$.  Let
+\begin{equation}\label{eq:diagonal-renormalization}
+    \eta_y=\rho_y^{-2}\alpha_y-\rho_y^{-1}m_{\T}.
+\end{equation}
+The subtraction removes the divergent diagonal coefficient $C_y(0)/\rho_y^2=1/\rho_y$.
+For the finite identity below only, extend the pair notation by
+$\mathfrak S_y(0):=C_y(0)/\rho_y^2=1/\rho_y$.
+
+For $q\ge1$, let
+\begin{equation}\label{eq:ramanujan-sum}
+    c_q(h)=\sum_{\substack{a\bmod q\\(a,q)=1}}e^{2\pi i ah/q}
+\end{equation}
+be the Ramanujan sum.
+
+\begin{proposition}[Classical Ramanujan expansion]\label{prop:ramanujan}
+For every $h\in\Z$,
+\begin{equation}\label{eq:finite-ramanujan}
+    \mathfrak S_y(h)
+    =\sum_{q\mid P_y}\frac{\mu(q)^2}{\varphi(q)^2}c_q(h).
+\end{equation}
+For every fixed $h\ne0$, the absolutely convergent limit is
+\begin{equation}\label{eq:infinite-ramanujan}
+    \mathfrak S(h)
+    =\sum_{q\ge1}\frac{\mu(q)^2}{\varphi(q)^2}c_q(h).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Because $P_y$ is squarefree, the right-hand side of \eqref{eq:finite-ramanujan} factors as
+\[
+    \prod_{p\le y}\left(1+\frac{c_p(h)}{(p-1)^2}\right).
+\]
+For a prime $p$, $c_p(h)=p-1$ when $p\mid h$ and $c_p(h)=-1$ otherwise.  The resulting local factors are respectively $p/(p-1)$ and $p(p-2)/(p-1)^2$, exactly those in \eqref{eq:pair-truncated}.  For fixed $h\ne0$, only finitely many primes divide $h$, while the remaining absolute Euler factors are $1+O(p^{-2})$.  This proves absolute convergence and \eqref{eq:infinite-ramanujan}.
+\end{proof}
+
+\begin{theorem}[Singular-series distribution]\label{thm:distribution-limit}
+There is a distribution $\eta\in\cD'(\T)$ such that
+\begin{equation}\label{eq:distribution-convergence}
+    \eta_y\longrightarrow\eta
+    \qquad\text{in }\cD'(\T).
+\end{equation}
+Its Fourier coefficients are
+\begin{equation}\label{eq:distribution-coefficients}
+    \widehat\eta(0)=0,
+    \qquad
+    \widehat\eta(h)=\mathfrak S(h)\quad(h\ne0).
+\end{equation}
+The limit $\eta$ is not a finite signed measure.
+
+Equivalently, the centered second-order family
+\begin{equation}\label{eq:centered-second-order}
+    \tau_y=\frac{\mu_y^\circ-m_{\T}}{\rho_y}
+\end{equation}
+converges in $\cD'(\T)$ to a distribution $\tau$ with
+\begin{equation}\label{eq:centered-second-coefficients}
+    \widehat\tau(0)=0,
+    \qquad
+    \widehat\tau(h)=\mathfrak S(h)-1\quad(h\ne0).
+\end{equation}
+This limit is also not a finite signed measure.
+\end{theorem}
+
+\begin{proof}
+From \eqref{eq:diagonal-renormalization},
+\begin{equation}\label{eq:eta-y-coefficients}
+    \widehat\eta_y(0)=0,
+    \qquad
+    \widehat\eta_y(h)=\mathfrak S_y(h)\quad(h\ne0).
+\end{equation}
+For odd $h$, these coefficients vanish.  For even $h\ne0$, \eqref{eq:pair-truncated} gives
+\[
+ 0\le\mathfrak S_y(h)
+ \le2\prod_{\substack{p\mid h\\p>2}}\frac{p-1}{p-2}.
+\]
+The ratio of $(p-1)/(p-2)$ to $p/(p-1)$ is $1+1/(p(p-2))$, whose product over odd primes is bounded.  Mertens' theorem then yields the uniform bound
+\begin{equation}\label{eq:singular-growth}
+    \sup_{y\ge2}|\mathfrak S_y(h)|
+    \ll\log(2+|h|).
+\end{equation}
+For any smooth test function, its Fourier coefficients decay faster than every power.  The pointwise convergence from \cref{cor:pair-formula} and the bound \eqref{eq:singular-growth} therefore permit dominated convergence in the Fourier pairing.  This defines $\eta$ and proves \eqref{eq:distribution-convergence}--\eqref{eq:distribution-coefficients}.
+
+Now take
+\[
+    h_z=2\prod_{2<p\le z}p.
+\]
+Then
+\[
+ \mathfrak S(h_z)
+ =2C_2\prod_{2<p\le z}\frac{p-1}{p-2}\longrightarrow\infty,
+\]
+because the logarithm of the product has divergent leading sum $\sum_{p\le z}1/p$.  Fourier coefficients of a finite signed measure are bounded by its total-variation norm.  Hence $\eta$ cannot be a finite signed measure.
+
+Finally, \eqref{eq:first-order-vanish} gives, for $h\ne0$,
+\[
+ \widehat\tau_y(h)
+ =\frac{\mathfrak S_y(h)-1}{1-\rho_y}
+ \longrightarrow\mathfrak S(h)-1.
+\]
+The same domination argument applies.  The limiting coefficients remain unbounded along $h_z$, so $\tau$ is not a finite signed measure.
+\end{proof}
+
+\begin{remark}[Why a distribution is necessary]\label{rem:distribution-not-measure}
+Calling $\eta$ or $\tau$ a ``limiting signed spectral measure'' would be false.  Every finite signed measure has uniformly bounded Fourier coefficients, while the singular-series profile is unbounded.  Distributional convergence is the natural rigorous statement.  It retains all fixed displacements but makes no positivity claim.
+\end{remark}
+
+\begin{remark}[Attribution of the Fourier coefficients]\label{rem:ramanujan-attribution}
+The Ramanujan expansion \eqref{eq:infinite-ramanujan} and its singular-series coefficients are classical; see, for example, \citet{GoldstonSuriajaya2021}.  The point specific to the present finite-sieve family is their realization as the $\cD'(\T)$ limit of the diagonal renormalizations \eqref{eq:diagonal-renormalization}, together with the explicit proof that the resulting object is not a finite signed measure.  We do not claim the coefficients themselves as new.
+\end{remark}
+
+\section{Sparse repair has two different stability thresholds}\label{sec:repair}
+
+Let $a,b:\Z/N\Z\to\{0,1\}$ be two binary words and let
+\begin{equation}\label{eq:hamming-density}
+    \eps=\frac1N\#\{n:a(n)\ne b(n)\}.
+\end{equation}
+Write $\alpha=N^{-1}\sum_na(n)$ and $\beta=N^{-1}\sum_nb(n)$.  For a set of shifts $\cH$, define $C_a(\cH)$ and $C_b(\cH)$ by cyclic averaging as in \eqref{eq:complete-correlation}.
+
+\begin{lemma}[Local observables are Hamming-Lipschitz]\label{lem:hamming-correlation}
+For $|\cH|=r$,
+\begin{equation}\label{eq:hamming-rpoint}
+    |C_a(\cH)-C_b(\cH)|\le r\eps.
+\end{equation}
+Also $|\alpha-\beta|\le\eps$.
+\end{lemma}
+
+\begin{proof}
+For binary numbers $a_j,b_j$,
+\[
+ \left|\prod_{j=1}^r a_j-\prod_{j=1}^r b_j\right|
+ \le\sum_{j=1}^r|a_j-b_j|.
+\]
+Average this inequality over cyclic translates.  Each changed coordinate is encountered once for each shift.  The density estimate is the case $r=1$.
+\end{proof}
+
+Let $\mu_a^\circ$ and $\mu_b^\circ$ denote the centered, energy-normalized periodogram probability measures, defined as in \eqref{eq:centered-spectral-measure} whenever the words are nonconstant.
+
+\begin{proposition}[Ordinary spectral stability]\label{prop:spectral-repair}
+If $0<\alpha<1$ and $b$ is nonconstant, then
+\begin{equation}\label{eq:spectral-repair-bound}
+    d_{\TV}(\mu_a^\circ,\mu_b^\circ)
+    \le2\sqrt{\frac{\eps}{\alpha(1-\alpha)}}.
+\end{equation}
+Consequently, a family of repairs of the sieve words preserves the Haar limit in \cref{thm:two-scales} whenever
+\begin{equation}\label{eq:first-order-repair-scale}
+    \eps_y=o(\rho_y).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Let $u=(a-\alpha)/\|a-\alpha\|_2$ and $v=(b-\beta)/\|b-\beta\|_2$.  Centering is orthogonal projection away from the constant vector, so
+\[
+ \|(a-\alpha)-(b-\beta)\|_2^2
+ =N\bigl(\eps-(\alpha-\beta)^2\bigr)\le N\eps.
+\]
+For nonzero vectors $x,z$, the elementary normalization inequality
+$\|x/\|x\|-z/\|z\|\|\le2\|x-z\|/\|x\|$ gives
+\[
+    \|u-v\|_2\le2\sqrt{\frac{\eps}{\alpha(1-\alpha)}}.
+\]
+The normalized discrete Fourier transform is unitary.  For unit vectors $U,V$, the total-variation distance between the probability vectors $(|U_j|^2)$ and $(|V_j|^2)$ is at most $\|U-V\|_2$.  This proves \eqref{eq:spectral-repair-bound}.  Apply it with $\alpha=\rho_y$.
+\end{proof}
+
+\begin{theorem}[Rare-event repair threshold]\label{thm:rare-repair}
+Let $a_y$ have density $\rho_y\to0$, and let $b_y$ differ from it on a fraction $\eps_y$ of a common cyclic domain.  For every fixed $r$ and every fixed $r$-shift set $\cH$, the sufficient uniform condition
+\begin{equation}\label{eq:rpoint-repair-scale}
+    \eps_y=o(\rho_y^r)
+\end{equation}
+implies
+\begin{equation}\label{eq:rpoint-transfer}
+ \frac{C_{b_y}(\cH)}{\beta_y^r}
+ -\frac{C_{a_y}(\cH)}{\rho_y^r}
+ \longrightarrow0,
+\end{equation}
+where $\beta_y$ is the density of $b_y$.
+
+For pair correlations of the prime-sieve words, the scale $\rho_y^2$ is sharp in the following worst-case sense.  Given a fixed admissible $h\ne0$, there are words $b_y$ with
+\begin{equation}\label{eq:sharp-repair-size}
+    \eps_y=C_y(h)\asymp\rho_y^2
+\end{equation}
+such that $C_{b_y}(h)=0$.  Nevertheless,
+\begin{equation}\label{eq:sharp-spectral-survival}
+    d_{\TV}(\mu_{s_y}^\circ,\mu_{b_y}^\circ)\longrightarrow0,
+\end{equation}
+so $\mu_{b_y}^\circ\Rightarrow m_{\T}$.
+\end{theorem}
+
+\begin{proof}
+By \cref{lem:hamming-correlation}, the numerator changes by at most $r\eps_y$.  Also $|\beta_y-\rho_y|\le\eps_y=o(\rho_y)$, so $\beta_y/\rho_y\to1$.  Since a product of binary coordinates is bounded by any one of its factors, $C_{a_y}(\cH)\le\rho_y$.  Hence, for all large $y$,
+\[
+ \begin{split}
+ \left|\frac{C_{b_y}(\cH)}{\beta_y^r}
+       -\frac{C_{a_y}(\cH)}{\rho_y^r}\right|
+ &\le \frac{r\eps_y}{\beta_y^r}
+   +C_{a_y}(\cH)\left|\beta_y^{-r}-\rho_y^{-r}\right|\\
+ &\ll_r \frac{\eps_y}{\rho_y^r}
+   +\rho_y\frac{\eps_y}{\rho_y^{r+1}}
+ =o(1),
+ \end{split}
+\]
+which proves \eqref{eq:rpoint-transfer}.
+
+For sharpness, on $G_y$ let
+\[
+    E_y=\{n:s_y(n)s_y(n+h)=1\}
+\]
+and obtain $b_y$ from $s_y$ by changing $s_y(n)$ from one to zero for every $n\in E_y$.  The Hamming density is $|E_y|/P_y=C_y(h)$.  If $b_y(n)b_y(n+h)=1$, then $n\in E_y$, but the construction makes $b_y(n)=0$, a contradiction.  Hence $C_{b_y}(h)=0$.  Since $h$ is admissible, \cref{cor:pair-formula} gives $C_y(h)\asymp\rho_y^2=o(\rho_y)$.  The spectral conclusion now follows from \cref{prop:spectral-repair}.
+\end{proof}
+
+\begin{remark}[A strict hierarchy]\label{rem:repair-hierarchy}
+The uniform sufficient scales are
+\[
+ \begin{array}{ccl}
+ \eps=o(1)&:&\text{unscaled fixed local statistics},\\
+ \eps=o(\rho_y)&:&\text{centered energy-normalized spectrum},\\
+ \eps=o(\rho_y^r)&:&\text{$r$-point rare-event normalization}.
+ \end{array}
+\]
+The last condition is a uniform sufficient scale.  For pairs it is sharp in the stated worst-case sense, not a claim that every structured perturbation of order $\rho_y^2$ changes the limit.  The construction in \cref{thm:rare-repair} shows that no uniformly weaker Hamming hypothesis can protect all pair correlations.
+\end{remark}
+
+\subsection{The next-prime-square repair is fine enough for pair stability}
+
+Identify the symbol $L$ with $1$ and $R$ with $0$.  On $0\le n<N$, define the natural prime word by
+\begin{equation}\label{eq:finite-natural-prime-word}
+    \mathcal P_N(n)=\one_{\{n=1\text{ or }n\text{ is prime}\}},
+    \qquad
+    \alpha_N=\frac1N\sum_{0\le n<N}\mathcal P_N(n)
+             =\frac{1+\pi(N-1)}N.
+\end{equation}
+For a binary word $a[0,N)$ and a fixed integer $h$ with $|h|<N$, define its linear pair average by
+\begin{equation}\label{eq:linear-pair-average}
+    C^{\mathrm{lin}}_{a,N}(h)
+    =\frac1{N-|h|}
+      \sum_{\substack{0\le n<N\\0\le n+h<N}}a(n)a(n+h).
+\end{equation}
+
+Let $Q_k$ be the cumulative sieve word from the first $k$ primes in this $0$--$1$ coding, let $p=p_{k+1}$, and put $N=p^2$.  The exact repair theorem of \citet{WangPrimeSpectrum2026} states that $Q_k[0,N)$ and $\mathcal P_N$ differ at exactly $k$ positions.  The prime number theorem gives
+\begin{equation}\label{eq:horizon-scales}
+    \eps_N=\frac{k}{p^2}\sim\frac1{p\log p},
+    \qquad
+    \alpha_N\asymp\frac1{\log N}\asymp\frac1{\log p}.
+\end{equation}
+Thus
+\begin{equation}\label{eq:horizon-pair-scale}
+    \frac{\eps_N}{\alpha_N^2}=O\left(\frac{\log p}{p}\right)\longrightarrow0.
+\end{equation}
+
+\begin{corollary}[Finite-horizon pair transfer]\label{cor:horizon-transfer}
+For every fixed displacement $h$,
+\begin{equation}\label{eq:horizon-linear-transfer}
+    \frac{C^{\mathrm{lin}}_{Q_k,N}(h)
+          -C^{\mathrm{lin}}_{\mathcal P_N,N}(h)}{\alpha_N^2}
+    \longrightarrow0.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+For the linear average, the argument of \cref{lem:hamming-correlation} gives an absolute difference at most $2k/(N-|h|)$.  Divide by $\alpha_N^2$ and use \eqref{eq:horizon-pair-scale}.
+\end{proof}
+
+\begin{remark}[Stability is not evaluation]\label{rem:stability-not-evaluation}
+The corollary transfers a pair statistic between two nearly identical finite words; it does not evaluate that statistic.  In particular, the full-period CRT formula for $s_y$ cannot simply be inserted at the next-prime-square horizon.  The relevant primorial period is far larger than the horizon, which is exactly the scale mismatch discussed next.
+\end{remark}
+
+\section{The exact survivor-to-prime gap}\label{sec:bridge}
+
+Translate $\cH$ so that $0=\min\cH$ and put $H=\max\cH$.  Let
+\begin{equation}\label{eq:prime-indicator}
+    \mathbf p(n)=\one_{\{n\text{ is prime}\}}.
+\end{equation}
+For $X>y$, define the candidate and genuine tuple counts above the cutoff:
+\begin{align}
+ A_{\cH}^{>y}(X,y)
+   &=\sum_{y<n\le X}\prod_{h\in\cH}s_y(n+h),
+       \label{eq:candidate-count}\\
+ T_{\cH}^{>y}(X)
+   &=\sum_{y<n\le X}\prod_{h\in\cH}\mathbf p(n+h).
+       \label{eq:prime-tuple-count}
+\end{align}
+We also write
+\begin{equation}\label{eq:full-prime-tuple-count}
+    T_{\cH}(X)=\sum_{1\le n\le X}
+       \prod_{h\in\cH}\mathbf p(n+h).
+\end{equation}
+Every prime greater than $y$ survives the sieve.  Hence the exact remainder
+\begin{equation}\label{eq:remainder-definition}
+    R_{\cH}(X,y)
+    =A_{\cH}^{>y}(X,y)-T_{\cH}^{>y}(X)
+\end{equation}
+is nonnegative and counts candidate tuples for which at least one translated value is a composite with no prime factor at most $y$.
+
+\begin{proposition}[Primality-exact endpoint]\label{prop:exact-endpoint}
+Set
+\begin{equation}\label{eq:critical-cutoff}
+    Y_X=\sqrt{X+H}.
+\end{equation}
+For all sufficiently large $X$, so that $X>Y_X$, one has
+\begin{equation}\label{eq:endpoint-exact}
+    R_{\cH}(X,Y_X)=0,
+    \qquad
+    A_{\cH}^{>Y_X}(X,Y_X)=T_{\cH}^{>Y_X}(X).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For $Y_X<n\le X$ and $h\in\cH$, one has
+$Y_X<n+h\le X+H=Y_X^2$.  If $n+h$ is composite, it has a prime divisor at most $\sqrt{n+h}\le Y_X$, so $s_{Y_X}(n+h)=0$.  Conversely every prime $n+h>Y_X$ is coprime to $P_{Y_X}$.  The two products in \eqref{eq:candidate-count} and \eqref{eq:prime-tuple-count} therefore agree term by term.
+\end{proof}
+
+\begin{proposition}[No overlap of the elementary averaging and primality-exact regimes]\label{prop:scale-mismatch}
+The periodic-window proof of \cref{thm:window} requires
+$P_y=o(X\rho_y^r)$ and is available, for example, at $y\le(1-\delta)\log X$.  The elementary factor-size argument guaranteeing primality-exact classification throughout the window uses $y\ge\sqrt{X+H}$.  These two sufficient regimes are disjoint for all large $X$.  Indeed, at the endpoint,
+\begin{equation}\label{eq:endpoint-period-growth}
+    \log P_{Y_X}=(1+o(1))\sqrt X,
+    \qquad
+    \frac{P_{Y_X}}X\longrightarrow\infty.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The first statements collect \cref{thm:window,prop:exact-endpoint}.  Equation \eqref{eq:endpoint-period-growth} follows from \eqref{eq:theta-asymptotic}, and it makes \eqref{eq:window-condition} impossible at $y=Y_X$.
+\end{proof}
+
+This is an incompatibility of two elementary arguments, not an impossibility theorem for every conceivable method.  More sophisticated sieve estimates use more than complete-period truncation.  What remains universal is that local congruence factors alone do not identify which rough survivors are prime.
+
+\begin{proposition}[Finite local features do not detect primality]\label{prop:finite-features}
+Let
+\begin{equation}\label{eq:local-feature-map}
+    \Phi_y(n)=\bigl(\one_{p\mid n}\bigr)_{p\le y}.
+\end{equation}
+Every $y$-rough integer has the same feature vector $\Phi_y(n)=0$, whether it is prime or a product of two or more primes exceeding $y$.  Therefore any statistic depending only on the vectors
+$\Phi_y(n+h)$, $h\in\cH$, is constant on locally surviving tuples and cannot by itself separate genuine prime tuples from the remainder $R_{\cH}(X,y)$.
+\end{proposition}
+
+\begin{proof}
+This is immediate from the definition: $\Phi_y(n)=0$ is equivalent to $\gcd(n,P_y)=1$.  Both a prime $q>y$ and a composite $q_1q_2$ with $q_1,q_2>y$ satisfy this condition.
+\end{proof}
+
+\begin{remark}[Relation to the parity problem]\label{rem:parity}
+\Cref{prop:finite-features} is a finite-feature manifestation of missing prime-sensitive information; it is not a new proof of the full classical parity theorem.  The parity problem says, more specifically, that standard sieve data and weights have difficulty distinguishing integers with odd and even numbers of prime factors and therefore do not generally yield the positive lower bounds needed for specified prime tuples.  Known results producing primes in special sequences use additional structure, often in the form of bilinear or Type~II estimates \citep{FriedlanderIwaniec1998,FordMaynard2024}.
+\end{remark}
+
+\subsection{Normalized open bridge benchmarks}
+
+The following statements isolate sufficient targets.  They are not hypotheses used in any unconditional theorem above.  Each functional is a normalized restatement of the missing prime-tuple lower bound, not a reduction of that problem to an easier estimate.
+
+\begin{benchmark}[Mesoscopic survivor-to-prime bridge]\label{crit:mesoscopic}
+Let $\cH$ be admissible, let $y=y(X)\to\infty$ satisfy, for a fixed $0<\delta<1$,
+$y\le(1-\delta)\log X$, and define
+\begin{equation}\label{eq:bridge-functional}
+    B_{\cH}(X,y)
+    =\left(\frac{\log X}{\log y}\right)^r
+      \frac{T_{\cH}^{>y}(X)}{A_{\cH}^{>y}(X,y)}.
+\end{equation}
+If
+\begin{equation}\label{eq:positive-bridge}
+    \limsup_{X\to\infty}B_{\cH}(X,y)>0,
+\end{equation}
+then $\cH$ occurs as a prime tuple infinitely often.  Moreover, the Hardy--Littlewood asymptotic
+\begin{equation}\label{eq:hl-asymptotic}
+    T_{\cH}(X)\sim\mathfrak S(\cH)\frac{X}{(\log X)^r}
+\end{equation}
+is equivalent, in this regime, to
+\begin{equation}\label{eq:bridge-hl-value}
+    B_{\cH}(X,y)\longrightarrow e^{r\gamma}.
+\end{equation}
+\end{benchmark}
+
+\begin{proof}
+Removing the first $y$ starting positions changes \eqref{eq:window-correlation} by at most $y=o(X\rho_y^r)$.  Also
+\begin{equation}\label{eq:mesoscopic-prime-head}
+    T_{\cH}^{>y}(X)=T_{\cH}(X)+O(y)
+    =T_{\cH}(X)+o\left(\frac{X}{(\log X)^r}\right).
+\end{equation}
+Thus \cref{thm:window} and Mertens' theorem give
+\begin{equation}\label{eq:candidate-asymptotic}
+ A_{\cH}^{>y}(X,y)
+ \sim e^{-r\gamma}\mathfrak S(\cH)
+       \frac{X}{(\log y)^r}.
+\end{equation}
+If \eqref{eq:positive-bridge} holds along a subsequence, then $T_{\cH}^{>y}(X)$ is bounded below there by a positive constant times $X/(\log X)^r$, which tends to infinity.  Combining \eqref{eq:candidate-asymptotic} with \eqref{eq:hl-asymptotic} proves the equivalence with \eqref{eq:bridge-hl-value}.
+More explicitly,
+\begin{equation}\label{eq:bridge-benchmark-identity}
+ B_{\cH}(X,y)
+ =\left(\frac{e^{r\gamma}}{\mathfrak S(\cH)}+o(1)\right)
+   \frac{T_{\cH}^{>y}(X)(\log X)^r}{X}.
+\end{equation}
+Thus estimating $B_{\cH}$ is exactly the original prime-tuple lower-bound problem at its natural scale.
+\end{proof}
+
+Equivalently, the still-open positive lower bound can be written as
+\begin{equation}\label{eq:remainder-target}
+ R_{\cH}(X,y)
+ \le A_{\cH}^{>y}(X,y)
+ \left[1-c\left(\frac{\log y}{\log X}\right)^r\right]
+\end{equation}
+along an unbounded sequence of $X$, for some $c>0$.  Requiring a fixed positive fraction of all $y$-rough candidates to be prime would be unrealistically strong; the natural survivor-to-prime proportion itself decreases like $(\log y/\log X)^r$.
+
+\begin{benchmark}[Endpoint coefficient]\label{crit:endpoint}
+Let $\cH$ be a fixed admissible shift set.  With $Y_X=\sqrt{X+H}$, set
+\begin{equation}\label{eq:endpoint-coefficient}
+    K_{\cH}(X)
+    =\frac{T_{\cH}^{>Y_X}(X)}{X C_{Y_X}(\cH)}.
+\end{equation}
+If $\limsup K_{\cH}(X)>0$, then $\cH$ occurs at prime arguments infinitely often.  The Hardy--Littlewood prediction \eqref{eq:hl-asymptotic} is equivalent to
+\begin{equation}\label{eq:endpoint-prediction}
+    K_{\cH}(X)\longrightarrow\frac{e^{r\gamma}}{2^r}.
+\end{equation}
+For twins, $r=2$ and the predicted endpoint factor is $e^{2\gamma}/4$.
+\end{benchmark}
+
+\begin{proof}
+The omitted initial segment satisfies
+\begin{equation}\label{eq:endpoint-prime-head}
+    T_{\cH}^{>Y_X}(X)=T_{\cH}(X)+O(Y_X)
+    =T_{\cH}(X)+o\left(\frac{X}{(\log X)^r}\right).
+\end{equation}
+By \cref{thm:crt} and Mertens' theorem,
+\[
+ X C_{Y_X}(\cH)
+ \sim \mathfrak S(\cH)e^{-r\gamma}
+       \frac{X}{(\log Y_X)^r}
+ \sim 2^r e^{-r\gamma}\mathfrak S(\cH)
+       \frac{X}{(\log X)^r}.
+\]
+This tends to infinity.  The two conclusions follow by comparison with the genuine prime-tuple count and with \eqref{eq:hl-asymptotic}.
+In fact,
+\begin{equation}\label{eq:endpoint-benchmark-identity}
+ K_{\cH}(X)
+ =\left(\frac{e^{r\gamma}}{2^r\mathfrak S(\cH)}+o(1)\right)
+   \frac{T_{\cH}^{>Y_X}(X)(\log X)^r}{X},
+\end{equation}
+so this coefficient is likewise a benchmark normalization, not an independently controlled quantity.
+\end{proof}
+
+Positivity of either benchmark is stronger than mere infinitude of the corresponding prime tuple: it asks for a Hardy--Littlewood-order lower bound along an unbounded sequence.  The benchmarks quantify the missing scale; they do not reduce the prime-tuple problem to an independently easier estimate.
+
+\begin{remark}[The endpoint coefficient is not evaluated here]\label{rem:endpoint-open}
+At $Y_X$ the candidate count equals the genuine prime-tuple count term by term, but its comparison with the complete-period mean $XC_{Y_X}(\cH)$ is precisely the unknown diagonal problem.  Writing $K_{\cH}$ does not estimate it.  For $\cH=\{0,2\}$, a positive lower bound for this coefficient would already imply infinitely many twin primes and is therefore explicitly outside the proved results.
+\end{remark}
+
+\section{Comparison with known prime-gap results}\label{sec:known-boundary}
+
+The distinctions above are consistent with the strongest established sieve results.
+
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+    \item Chen proved that infinitely many primes $p$ have $p+2=P_2$, where $P_2$ denotes an integer with at most two prime factors counted with multiplicity \citep{Chen1973}.  The second coordinate is not forced to be prime.
+
+    \item Zhang proved the first unconditional finite bound for gaps between consecutive primes \citep{Zhang2014}.  Maynard's multidimensional sieve gave $H_1\le600$, and the subsequent Polymath refinement proved $H_1\le246$ \citep{Maynard2015,DHJPolymath2014}.  The latter guarantees that at least one even displacement no larger than $246$ recurs infinitely often; it does not identify that displacement as $2$.
+
+    \item Even under the generalized Elliott--Halberstam conjecture, the cited Polymath Selberg-sieve framework reaches $H_1\le6$.  Within that framework, its parity construction shows why purely sieve-theoretic considerations alone do not improve the conditional value to $2$ \citep{DHJPolymath2014}.
+
+    \item In their general framework for nonnegative sequences, Ford and Maynard show that a substantial Type~II range is necessary to guarantee a nontrivial lower bound over primes \citep{FordMaynard2024}.  Other prime-detecting sieves can cross parity barriers for special sequences when suitable bilinear estimates are available \citep{FriedlanderIwaniec1998}.  The finite primorial dynamics studied here supplies exact local divisibility data but verifies no Type~II estimate of this kind.
+\end{enumerate}
+
+Thus the present results neither improve a numerical prime-gap bound nor compete with Maynard--Tao methods.  They identify, inside this dynamical model, the precise normalization and information boundary that a future argument would have to cross.
+
+\section{Discussion and limitations}\label{sec:discussion}
+
+The finite sieve has three logically separate layers.
+
+\begin{enumerate}[label=\textbf{L\arabic*.},leftmargin=3.2em]
+    \item \emph{Local congruence geometry.}  The CRT computes it exactly and yields the classical singular series.
+
+    \item \emph{Dynamical normalization.}  Centered energy normalization sees fluctuations of size $\rho_y$ and gives Haar measure.  Rare pair normalization sees events of size $\rho_y^2$ and retains $\mathfrak S(h)$.  The diagonal-renormalized distribution packages all fixed shifts but is not a finite measure.
+
+    \item \emph{Prime detection.}  This requires controlling the composite-survivor remainder $R_{\cH}(X,y)$ or, equivalently, proving a positive bridge functional.  No such lower bound is obtained here.
+\end{enumerate}
+
+The two-scale result also refines the interpretation of earlier spectral stability.  A universal Haar limit is robust under much larger perturbations than a fixed rare pair count.  Indeed, \cref{thm:rare-repair} constructs perturbations which are invisible in total variation at the level of centered spectral measures but remove every occurrence of a chosen pair displacement.  Consequently, ordinary spectral flatness cannot be used as a proxy for twin-prime behavior.
+
+Several limitations should remain explicit.
+
+\begin{itemize}[leftmargin=1.8em]
+    \item The convergence statements concern each fixed shift or fixed finite tuple.  They do not give arbitrary uniform control for shifts growing with $y$.
+
+    \item The window theorem uses only complete-period truncation.  Its logarithmic cutoff range must not be confused with the stronger ranges accessible to advanced analytic sieves.
+
+    \item The $o(\rho_y^r)$ repair condition is a uniform worst-case sufficient threshold.  Structured errors can cancel, but no such cancellation is assumed or proved for a sieve-to-prime bridge.
+
+    \item The endpoint identity at $y=\sqrt{X+H}$ classifies survivors exactly but does not estimate how that very short segment is distributed inside its enormous primorial period.
+
+    \item Finite computations can test $C_y(h)$, window discrepancies, and repair sensitivity.  They cannot establish the open lower bound \eqref{eq:positive-bridge} for all large $X$.
+\end{itemize}
+
+The rigorous advance is therefore modest but concrete: the local Euler product, the ordinary spectrum, the rare-event spectrum, and the prime-detection remainder now occupy separate mathematical statements.  Any future claim concerning twin primes in this framework must supply genuinely prime-sensitive information controlling $R_{\cH}(X,y)$ at the scale of \eqref{eq:remainder-target}; it cannot follow from the first three layers alone.
+
+\section*{Data and code availability}
+
+No external data are used.  The source of this manuscript and any accompanying verification code are available in the project repository at
+\url{https://github.com/maris205/prime_dynamics_theory}.
+
+\section*{Acknowledgments}
+
+The author thanks the developers of the open-source mathematical software used to check finite examples and typeset the manuscript.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
