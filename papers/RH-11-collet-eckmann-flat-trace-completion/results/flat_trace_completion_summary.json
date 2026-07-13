@@ -1,0 +1,43 @@
+{
+  "constants": {
+    "lambda_fixed": 1.6785735104283177,
+    "r_fixed": 0.5436890126920753,
+    "u_critical": 1.5436890126920753
+  },
+  "generated_utc": "2026-07-13T11:14:00.430251+00:00",
+  "numerical_audit": {
+    "flat_centered_tail_slope": -0.2581395938106601,
+    "flat_minus_weighted_tail_slope": -0.7694953298898766,
+    "flat_trace_at_maximum_length": 1.9985818867159983,
+    "last_component_scaled_centered": -0.9992905736093731,
+    "last_zeta_root": 1.6791563419696476,
+    "last_zeta_root_error": 0.0005828315413298757,
+    "maximum_component_pairing_error": 2.2982393765857978e-10,
+    "maximum_component_reconstruction_error": 6.439293542825908e-15,
+    "maximum_length": 28,
+    "physical_roots_at_maximum_length": 32767,
+    "reference_half_log_lambda": -0.2589721658946268,
+    "reference_three_half_log_lambda": -0.7769164976838804,
+    "weighted_centered_tail_slope": -0.2581046213503061,
+    "weighted_trace_at_maximum_length": 1.9985818874219279
+  },
+  "scope": {
+    "centered_zeta_zero_at_lambda": "numerical conjecture only",
+    "exponential_flat_trace_gap": "unconditional theorem via published Collet-Eckmann weighted-zeta and uniform-hyperbolicity results",
+    "sharp_lambda_rate": "numerical evidence only"
+  },
+  "software": {
+    "numpy": "2.2.6",
+    "platform": "Linux-5.15.0-177-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "scipy": "1.15.3"
+  },
+  "theorem_completion": {
+    "central_component_ce": "abs((T^n)'(T(c_C))) = lambda^(2n)",
+    "collet_eckmann_f": "abs((f^n)'(f(c))) = 2*u_c*lambda^(n-1)",
+    "flat_weight_comparison": "P_m-Q_m = O(theta_1^m)",
+    "high_component_ce": "abs((T^n)'(T(c_H))) = 2*u_c*lambda^(2n-1)",
+    "unconditional_flat_trace": "P_m = 1+(-1)^m+O(theta_2^m)",
+    "weighted_parity_trace": "Q_m = 1+(-1)^m+O(theta^m)"
+  }
+}

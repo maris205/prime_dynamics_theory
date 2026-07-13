@@ -1,0 +1,795 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\uc}{u_{\mathrm c}}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\one}{\mathbf 1}
+
+\title{\textbf{Unconditional Parity-Centered Flat Traces}\
+\textbf{at a Quadratic Band-Merging Map:}\\
+\large Collet--Eckmann Weighted Zeta Continuation and\
+Completion of the Small-Noise Double Limit}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+At the algebraic band-merging parameter of $f_u(x)=1-u x^2$, a previous
+long-cycle analysis reduced the deterministic problem to the hypothesis
+\[
+ P_m=1+(-1)^m+O(\theta^m),
+ \qquad
+ P_m=\sum_{f^m(x)=x}\frac{1}{|1-(f^m)'(x)|}.
+\]
+That estimate was deliberately left conditional because the ordinary
+correlation gap does not itself identify a flat trace.  We remove the
+hypothesis.
+
+Let $\uc$ solve $u^3-2u^2+2u-2=0$, put $r=\uc-1$, and
+$\lambda=2\uc r=1.678573510428\ldots$.  The critical value has the exact
+derivative growth
+\[
+ |(f^n)'(1)|=2\uc\lambda^{n-1}.
+\]
+Moreover $T=f^2$ restricts to two topologically mixing full-branch unimodal
+maps on $[-r,r]$ and $[r,1]$.  Their critical-value derivatives are exactly
+$\lambda^{2n}$ and $2\uc\lambda^{2n-1}$.  Thus both component maps satisfy the
+Collet--Eckmann condition with no numerical input.
+
+We apply the Keller--Nowicki weighted-zeta theorem to the two components.  For
+the standard Perron periodic weight
+\[
+ Q_m=\sum_{f^m(x)=x}\frac{1}{|(f^m)'(x)|},
+\]
+it yields $Q_m=1+(-1)^m+O(\rho^m)$ for some $\rho<1$.  Endpoint conventions
+change the component zeta functions only by the explicit repelling-boundary
+factor $1-z/\lambda^2$.  The two component sums are exactly equal, and their
+shared fixed point contributes $\lambda^{-2n}$.
+
+The remaining bridge from $Q_m$ to $P_m$ is elementary but essential.
+Uniform hyperbolicity on periodic orbits for Collet--Eckmann maps gives
+$\min_{f^m p=p}|(f^m)'(p)|\ge C\Lambda^m$.  Hence
+\[
+ |P_m-Q_m|
+ \le 2Q_m\left(\min_{f^m p=p}|(f^m)'(p)|\right)^{-1}
+ =O(\Lambda^{-m}).
+\]
+Consequently the parity-centered flat-trace gap is unconditional.  This
+completes the earlier noncommuting-limit theorem and proves analyticity of the
+deterministic centered determinant in a disk strictly larger than the unit
+disk.
+
+An exhaustive audit through $m=28$ verifies the component pairing and trace
+identities.  It also finds the sharper numerical laws
+$Q_{2n}-2\sim-2\lambda^{-n}$ and
+$P_{2n}-Q_{2n}=O(\lambda^{-3n})$.  The smallest positive zero of the degree-14
+centered component-zeta truncation is $1.67915634$, within
+$5.83\times10^{-4}$ of $\lambda$.  These sharp rates and the zero at
+$z=\lambda$ are stated as a conjecture, not used in the proof.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Collet--Eckmann map; weighted dynamical zeta
+function; flat trace; periodic orbit; parity decomposition; quadratic map;
+regularized determinant.
+
+\medskip
+\noindent\textbf{MSC 2020:} 37E05; 37C30; 37D25; 47A10; 47B10.
+
+\section{Introduction}
+
+For a smooth expanding map, periodic sums, transfer-operator eigenvalues, and
+dynamical zeta functions are different presentations of one spectral object.
+For a unimodal map with a critical point, the same statement requires an
+adapted Markov extension: the inverse derivative is singular at the critical
+value, and the invariant density has postcritical spikes.  An ordinary decay
+of correlations theorem therefore cannot simply be relabeled as a flat-trace
+theorem.
+
+This distinction arose in the long-cycle study of the normalized Gaussian
+perturbation of a quadratic band-merging map
+\citep{WangLongCycle2026}.  Exact Markov counting and inverse branches gave a
+logarithmic cycle-localization horizon, while compact strong positivity gave
+\begin{equation}\label{eq:noisy-long-limit-intro}
+ \tr\cK_\sigma^m\longrightarrow1
+ \qquad(m\to\infty)
+\end{equation}
+at every fixed $\sigma>0$.  For each fixed $m\ge2$, the small-noise theorem of
+\citet{WangSmallNoise2026} gave
+\begin{equation}\label{eq:fixed-length-intro}
+ \lim_{\sigma\downarrow0}\tr\cK_\sigma^m=P_m,
+ \qquad
+ P_m=\sum_{f^m(x)=x}|1-(f^m)'(x)|^{-1}.
+\end{equation}
+The opposite long-cycle limit was reduced to an explicit adapted flat-trace
+gap assumption.  The aim here is to discharge exactly that assumption.
+
+The key is to avoid asking the zeta theorem to produce the nonstandard
+denominator $|1-(f^m)'|$ directly.  Introduce first the standard Perron
+periodic weight
+\begin{equation}\label{eq:Q-intro}
+ Q_m=\sum_{f^m(x)=x}|(f^m)'(x)|^{-1}.
+\end{equation}
+The Keller--Nowicki theory was designed precisely for this weight at
+Collet--Eckmann unimodal maps: it constructs a quasicompact transfer operator
+on a Markov extension and identifies its isolated eigenvalues with zeta poles
+\citep{KellerNowicki1992}.  At the present parameter, the hypotheses can be
+checked algebraically and separately on the two mixing components of $f^2$.
+
+The second step is a uniform comparison.  If
+$D=|(f^m)'(p)|\ge2$, then
+\begin{equation}\label{eq:pointwise-comparison-intro}
+ \left|
+ \frac1{|1-(f^m)'(p)|}-\frac1D
+ \right|
+ \le\frac{2}{D^2}.
+\end{equation}
+Collet--Eckmann uniform hyperbolicity on periodic orbits makes the additional
+factor $D^{-1}$ exponentially small \citep{Nowicki1988}.  Thus the weighted
+zeta asymptotic transfers to the physical flat trace.
+
+\subsection*{Main results and status}
+
+\begin{enumerate}[label=\textbf{R\arabic*.},leftmargin=3.2em]
+ \item The critical orbit and all Collet--Eckmann constants needed here are
+ explicit.  No parameter-exclusion or almost-every-parameter result is used.
+
+ \item The two restrictions of $f^2$ are mixing full-branch $S$-unimodal
+ maps.  Keller--Nowicki weighted-zeta continuation gives a component periodic
+ weight $q_n=1+O(\rho^n)$.
+
+ \item The component weighted sums are exactly paired.  Accounting for the
+ shared fixed point gives
+ \[
+  Q_{2n}=2+O(\rho^n),
+  \qquad Q_{2n+1}=\lambda^{-(2n+1)}.
+ \]
+
+ \item Uniform periodic expansion and \eqref{eq:pointwise-comparison-intro}
+ prove $P_m-Q_m=O(\eta^m)$ for some $\eta<1$.  Therefore
+ \[
+  P_m=1+(-1)^m+O(\theta^m)
+ \]
+ unconditionally.
+
+ \item The two iterated small-noise/even-cycle limits are now unconditional:
+ \[
+  \lim_{\sigma\downarrow0}\lim_{n\to\infty}
+  \tr\cK_\sigma^{2n}=1,
+  \qquad
+  \lim_{n\to\infty}\lim_{\sigma\downarrow0}
+  \tr\cK_\sigma^{2n}=2.
+ \]
+
+ \item Numerically, the first centered component-zeta zero converges rapidly
+ to $\lambda$.  The associated sharp asymptotic is isolated as a conjecture.
+\end{enumerate}
+
+The new theorem is an application and completion theorem, not a replacement
+for the general results of Keller and Nowicki.  Its contribution is the exact
+verification at the band-merging map, the period-two component bookkeeping,
+and the bridge from the standard zeta weight to the physical Gaussian
+flat-trace coefficient.
+
+\section{Exact band-merging and component geometry}
+\label{sec:geometry}
+
+Let
+\begin{equation}\label{eq:family}
+ f_u(x)=1-u x^2,
+ \qquad I=[-1,1].
+\end{equation}
+Let $\uc$ be the root in $(1,2)$ of
+\begin{equation}\label{eq:parameter}
+ u^3-2u^2+2u-2=0,
+\end{equation}
+and put
+\begin{equation}\label{eq:constants}
+ r=\uc-1,
+ \qquad
+ \lambda=2\uc r.
+\end{equation}
+Then
+\begin{equation}\label{eq:critical-orbit}
+ 0\longmapsto1\longmapsto-r\longmapsto r\longmapsto r,
+ \qquad f'(r)=-\lambda,
+\end{equation}
+with
+\begin{equation}\label{eq:numerical-constants}
+ \uc=1.543689012692075\ldots,
+ \quad r=0.543689012692075\ldots,
+ \quad \lambda=1.678573510428318\ldots.
+\end{equation}
+
+The core $X=[-r,1]$ has the Markov partition
+\begin{equation}\label{eq:partition}
+ A=[-r,0],\qquad B=[0,r],\qquad C=[r,1],
+\end{equation}
+with $f(A)=f(B)=C$ and $f(C)=A\cup B$.  The corresponding transition matrix
+has spectrum $\{0,\sqrt2,-\sqrt2\}$, and the two cyclic components are
+\begin{equation}\label{eq:components}
+ X_0=[-r,r],
+ \qquad
+ X_1=[r,1].
+\end{equation}
+The exact geometry and parity eigenmode were developed in
+\citet{WangParity2026}.
+
+Put $T=f^2$.  On $X_0$, the two intervals $[-r,0]$ and $[0,r]$ are full
+branches of $T$ onto $X_0$; the unique critical point is $c_0=0$.  On $X_1$,
+put
+\begin{equation}\label{eq:high-critical}
+ c_1=\uc^{-1/2}.
+\end{equation}
+The intervals $[r,c_1]$ and $[c_1,1]$ are full branches of $T$ onto $X_1$.
+Both component transition matrices therefore have every entry equal to one
+and are topologically mixing.
+
+\begin{lemma}[Exact Collet--Eckmann growth]
+\label{lem:exact-ce}
+The original critical value satisfies, for every $n\ge1$,
+\begin{equation}\label{eq:f-ce}
+ |(f^n)'(f(0))|
+ =|(f^n)'(1)|
+ =2\uc\lambda^{n-1}.
+\end{equation}
+For the component maps $T_j=T|_{X_j}$,
+\begin{align}
+ |(T_0^n)'(T_0(c_0))|
+ &=\lambda^{2n},\label{eq:central-ce}\\
+ |(T_1^n)'(T_1(c_1))|
+ &=2\uc\lambda^{2n-1}.
+ \label{eq:high-ce}
+\end{align}
+In particular, $f,T_0,T_1$ satisfy the Collet--Eckmann condition.
+\end{lemma}
+
+\begin{proof}
+Starting from the critical value $1$, the derivative factors are
+$|f'(1)|=2\uc$, $|f'(-r)|=\lambda$, and then $|f'(r)|=\lambda$ forever.  This
+gives \eqref{eq:f-ce}.
+
+For $T_0$, the critical orbit is
+\begin{equation}\label{eq:central-critical-orbit}
+ c_0=0\longmapsto-r\longmapsto r\longmapsto r,
+\end{equation}
+and $|T'(-r)|=|T'(r)|=\lambda^2$.  For $T_1$,
+\begin{equation}\label{eq:high-critical-orbit}
+ c_1\longmapsto1\longmapsto r\longmapsto r,
+\end{equation}
+with $|T'(1)|=2\uc\lambda$ and $|T'(r)|=\lambda^2$.  The two formulas follow.
+\end{proof}
+
+The Schwarzian derivative of $f$ is
+\begin{equation}\label{eq:schwarzian}
+ Sf(x)=-\frac{3}{2x^2}<0
+\end{equation}
+away from the critical point.  The composition rule for the Schwarzian shows
+that each $T_j$ has negative Schwarzian away from its unique quadratic
+critical point.  Thus $T_0,T_1$ are mixing $C^3$ $S$-unimodal
+Collet--Eckmann maps.  Their absolutely continuous invariant probabilities
+exist by the classical Misiurewicz theory
+\citep{Misiurewicz1981,deMeloVanStrien1993,Young1992}.
+
+\section{Standard weighted traces and component pairing}
+\label{sec:weighted}
+
+Define
+\begin{equation}\label{eq:PQ}
+ P_m=\sum_{p\in\Fix(f^m)}\frac1{|1-(f^m)'(p)|},
+ \qquad
+ Q_m=\sum_{p\in\Fix(f^m)}\frac1{|(f^m)'(p)|}.
+\end{equation}
+For a component $X_j$, define its two-step weighted sum
+\begin{equation}\label{eq:component-q}
+ q_{j,n}
+ =\sum_{p\in X_j:\,T_j^n(p)=p}
+ \frac1{|(T_j^n)'(p)|}.
+\end{equation}
+The common endpoint $r$ is included in both component sums.
+
+\begin{lemma}[Exact component pairing]
+\label{lem:component-pairing}
+For every $n\ge1$,
+\begin{equation}\label{eq:q-pairing}
+ q_{0,n}=q_{1,n}=:q_n
+\end{equation}
+and
+\begin{equation}\label{eq:Q-reconstruction}
+ Q_{2n}=2q_n-\lambda^{-2n}.
+\end{equation}
+For odd $m$,
+\begin{equation}\label{eq:Q-odd}
+ Q_m=\lambda^{-m}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The map $f$ sends a fixed point of $T^n=f^{2n}$ in $X_0$ to one in $X_1$.
+This map is bijective on the fixed sets: the inverse along a periodic orbit is
+$f^{2n-1}$.  The multiplier is a cyclic product and is therefore unchanged.
+This proves \eqref{eq:q-pairing}.
+
+The two component fixed sets intersect only at $r$.  Its $2n$-step weighted
+contribution is $\lambda^{-2n}$, which has been counted twice in
+$q_{0,n}+q_{1,n}$; this proves \eqref{eq:Q-reconstruction}.  Finally, $f$
+interchanges $X_0\setminus\{r\}$ and $X_1\setminus\{r\}$.  An odd iterate can
+therefore fix only the shared endpoint $r$, giving \eqref{eq:Q-odd}.
+\end{proof}
+
+\section{The Collet--Eckmann weighted-zeta input}
+\label{sec:zeta-input}
+
+For a mixing interval map $S$ with regular periodic points, define the Perron
+weighted zeta function
+\begin{equation}\label{eq:perron-zeta}
+ \cZ_S(z)
+ =\exp\left[
+ \sum_{n\ge1}\frac{z^n}{n}
+ \sum_{S^n p=p}\frac1{|(S^n)'(p)|}
+ \right].
+\end{equation}
+
+We use the following published theorem in a specialized form.
+
+\begin{theorem}[Keller--Nowicki weighted-zeta corollary]
+\label{thm:KN}
+Let $S:J\to J$ be a topologically mixing $C^3$ $S$-unimodal map with a
+nonflat critical point.  Suppose $S$ satisfies the Collet--Eckmann condition
+and has an absolutely continuous invariant probability.  Then the Perron
+transfer operator on its Markov extension is quasicompact.  For some $R>1$,
+the inverse of \eqref{eq:perron-zeta}, with the standard finite correction for
+periodic partition boundaries, extends holomorphically to $|z|<R$; its zeros
+on the closed unit disk consist only of a simple zero at $z=1$.  Equivalently,
+the corrected zeta function is zero-free and meromorphic there, with a simple
+pole at $z=1$ and no other pole on the closed unit disk.  Consequently, there
+are $C>0$ and $0<\rho<1$ such that
+\begin{equation}\label{eq:KN-coefficients}
+ \sum_{S^n p=p}\frac1{|(S^n)'(p)|}
+ =1+O(\rho^n).
+\end{equation}
+\end{theorem}
+
+The spectral and zeta assertions are the Perron-weight specialization of
+\citet{KellerNowicki1992}; the Markov-extension/Fredholm mechanism is developed
+in \citet{Keller1989}.  We recall why the final coefficient conclusion follows.
+Finite boundary factors are holomorphic and nonzero on a neighborhood of the
+closed unit disk, so we may shrink $R$ and suppress them here; the factor in
+the present application is computed explicitly in \cref{rem:boundary}.
+After removing the simple pole, the Fredholm relation makes
+$(1-z)\cZ_S(z)$ holomorphic and nonzero on the closed unit disk.  Compactness
+therefore lets us choose $1<R_0<R$ before the next zero or pole.
+Then
+\begin{equation}\label{eq:log-derivative}
+ \frac{d}{dz}\log\bigl[(1-z)\cZ_S(z)\bigr]
+ =\sum_{n\ge1}\left(
+ \sum_{S^n p=p}|(S^n)'(p)|^{-1}-1
+ \right)z^{n-1}
+\end{equation}
+is holomorphic on $|z|<R_0$.  Cauchy's estimate gives
+\eqref{eq:KN-coefficients} with any $\rho>R_0^{-1}$.
+
+\begin{remark}[Boundary conventions]
+\label{rem:boundary}
+The zeta literature may include, omit, or multiply-code periodic endpoints of
+a monotonicity partition.  In the present component maps, the only periodic
+partition endpoint is $r$, with weight $\lambda^{-2n}$.  Adding or removing
+that coefficient multiplies the zeta function by
+\begin{equation}\label{eq:boundary-factor}
+ \exp\left(\pm\sum_{n\ge1}\frac{(z/\lambda^2)^n}{n}\right)
+ =(1-z/\lambda^2)^{\mp1}.
+\end{equation}
+This factor is holomorphic and nonzero on a neighborhood of the closed unit
+disk.  Therefore \eqref{eq:KN-coefficients} is invariant under all relevant
+endpoint conventions.
+\end{remark}
+
+Every assumption of \cref{thm:KN} for $T_0,T_1$ was verified in
+\cref{sec:geometry}.  We immediately obtain:
+
+\begin{proposition}[Unconditional standard weighted parity gap]
+\label{prop:Q-gap}
+There are $C_Q>0$ and $0<\theta_Q<1$ such that
+\begin{equation}\label{eq:Q-gap}
+ |Q_m-1-(-1)^m|\le C_Q\theta_Q^m
+ \qquad(m\ge1).
+\end{equation}
+More explicitly,
+\begin{equation}\label{eq:Q-parity}
+ Q_{2n}=2+O(\rho^n),
+ \qquad
+ Q_{2n+1}=\lambda^{-(2n+1)}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Apply \cref{thm:KN} and \cref{rem:boundary} to either component to obtain
+$q_n=1+O(\rho^n)$.  Insert this into
+\eqref{eq:Q-reconstruction}; the shared-endpoint correction is exponentially
+small.  The odd formula is \eqref{eq:Q-odd}.  Taking
+$\theta_Q=\max\{\sqrt\rho,\lambda^{-1}\}<1$ gives \eqref{eq:Q-gap}.
+\end{proof}
+
+\section{From the Perron weight to the physical flat trace}
+\label{sec:comparison}
+
+The remaining argument uses uniform periodic expansion.  The exact
+Collet--Eckmann identity \eqref{eq:f-ce}, negative Schwarzian, and the absence
+of an attracting cycle put this map under the uniform-hyperbolicity theorem of
+\citet{Nowicki1988}.  Hence there are constants $C_*>0$ and $\Lambda_*>1$ such
+that
+\begin{equation}\label{eq:uniform-periodic-expansion}
+ \min_{p\in\Fix(f^m)}|(f^m)'(p)|
+ \ge C_*\Lambda_*^m
+ \qquad(m\ge1).
+\end{equation}
+
+\begin{lemma}[Flat/weighted comparison]
+\label{lem:flat-weighted}
+There are $C_{PW}>0$ and $0<\theta_{PW}<1$ such that
+\begin{equation}\label{eq:flat-weighted-gap}
+ |P_m-Q_m|\le C_{PW}\theta_{PW}^m
+ \qquad(m\ge1).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put $a=(f^m)'(p)$ and $D=|a|$.  Once $m$ is large enough that the lower bound
+\eqref{eq:uniform-periodic-expansion} exceeds $2$,
+\begin{align}
+ \left|\frac1{|1-a|}-\frac1D\right|
+ &\le\frac{2}{D^2}.
+ \label{eq:pointwise-comparison}
+\end{align}
+Indeed, for $a>1$ the left side is $[D(D-1)]^{-1}$, and for $a<-1$ it is
+$[D(D+1)]^{-1}$.
+
+Let $D_m=\min_{f^m p=p}|(f^m)'(p)|$.  Summing
+\eqref{eq:pointwise-comparison} gives
+\begin{equation}\label{eq:summed-comparison}
+ |P_m-Q_m|
+ \le2\sum_{f^m p=p}D(p)^{-2}
+ \le\frac{2Q_m}{D_m}.
+\end{equation}
+By \cref{prop:Q-gap}, the sequence $Q_m$ is bounded.  Combining
+\eqref{eq:summed-comparison} with \eqref{eq:uniform-periodic-expansion} proves
+the result for all sufficiently large $m$ with
+$\theta_{PW}=\Lambda_*^{-1}$.  Enlarge the constant to absorb the finitely
+many remaining lengths.
+\end{proof}
+
+\begin{theorem}[Unconditional parity-centered flat-trace gap]
+\label{thm:flat-gap}
+There exist $C_P>0$ and $0<\theta_P<1$ such that
+\begin{equation}\label{eq:flat-gap}
+ \boxed{
+ |P_m-1-(-1)^m|\le C_P\theta_P^m
+ }
+ \qquad(m\ge1).
+\end{equation}
+In particular,
+\begin{equation}\label{eq:P-limits}
+ P_{2n}\longrightarrow2,
+ \qquad
+ P_{2n+1}\longrightarrow0
+\end{equation}
+exponentially.
+\end{theorem}
+
+\begin{proof}
+By the triangle inequality,
+\begin{equation}\label{eq:triangle-gap}
+ |P_m-1-(-1)^m|
+ \le |P_m-Q_m|+|Q_m-1-(-1)^m|.
+\end{equation}
+Use \cref{lem:flat-weighted,prop:Q-gap} and take
+$\theta_P=\max\{\theta_{PW},\theta_Q\}<1$.
+\end{proof}
+
+This theorem is precisely the ``adapted flat-trace gap'' that was an
+assumption in \citet{WangLongCycle2026}.  The proof also explains why it was
+not enough merely to cite exponential correlation decay: one first needs the
+weighted-zeta periodic sum and then the uniform comparison
+\eqref{eq:summed-comparison}.
+
+\section{Consequences for the double limit and determinant}
+\label{sec:consequences}
+
+\subsection{Unconditional noncommutation}
+
+Combining the fixed-noise limit \eqref{eq:noisy-long-limit-intro}, the
+fixed-length localization \eqref{eq:fixed-length-intro}, and
+\cref{thm:flat-gap} removes the last hypothesis from the long-cycle theorem.
+
+\begin{corollary}[Unconditional noncommuting limits]
+\label{cor:noncommuting}
+For the normalized Gaussian operator at the band-merging map,
+\begin{equation}\label{eq:noncommuting}
+ \lim_{\sigma\downarrow0}\lim_{n\to\infty}
+ \tr\cK_\sigma^{2n}=1,
+ \qquad
+ \lim_{n\to\infty}\lim_{\sigma\downarrow0}
+ \tr\cK_\sigma^{2n}=2.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The first inner limit is one by compact strong positivity at fixed noise
+\citep{WangLongCycle2026}.  In the opposite order, fixed-length localization
+gives $P_{2n}$, which tends to two by \cref{thm:flat-gap}.
+\end{proof}
+
+\subsection{A deterministic bulk determinant beyond the unit disk}
+
+Set
+\begin{equation}\label{eq:centered-c}
+ c_m=P_m-1-(-1)^m.
+\end{equation}
+By \cref{thm:flat-gap}, the series
+\begin{equation}\label{eq:bulk-det}
+ \widehat D_{0,\mathrm{bulk},2}(z)
+ =\exp\left[-\sum_{m\ge2}\frac{c_mz^m}{m}\right]
+\end{equation}
+is holomorphic and nonzero for
+$|z|<\theta_P^{-1}>1$.  The two peripheral coefficients give exactly
+\begin{equation}\label{eq:parity-factor}
+ \exp\left[-\sum_{m\ge2}
+ \frac{(1+(-1)^m)z^m}{m}\right]
+ =1-z^2.
+\end{equation}
+Thus the deterministic regularized cycle object has the unconditional local
+factorization
+\begin{equation}\label{eq:det-factorization}
+ \widehat D_{0,2}(z)
+ =(1-z^2)\widehat D_{0,\mathrm{bulk},2}(z),
+ \qquad |z|<\theta_P^{-1}.
+\end{equation}
+This is an analyticity statement in a genuine disk larger than the unit disk,
+not merely a formal coefficient identity.
+
+\section{Numerical weighted-zeta audit}
+\label{sec:numerics}
+
+The computations enumerate every closed Markov word, solve its contracting
+inverse-branch equation, remove the unique doubled endpoint code, and verify
+the physical root count before forming any trace.  The maximum length
+$m=28$ contains $32767$ distinct real fixed points.  Each component sum
+includes $r$, so \eqref{eq:Q-reconstruction} is tested directly.  NumPy,
+SciPy, and Matplotlib are used for the calculations
+\citep{HarrisEtAl2020,VirtanenEtAl2020,Hunter2007}.
+
+\subsection{Physical and Perron traces}
+
+\Cref{tab:trace-comparison} gives representative even lengths.  The component
+sums agree to at worst $2.30\times10^{-10}$ at the highest length, where
+forward multiplier conditioning is most severe.  The reconstruction
+$2q_n-\lambda^{-2n}=Q_{2n}$ holds to $6.5\times10^{-15}$ throughout.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Physical flat trace $P_m$, standard weighted trace $Q_m$, one
+component sum $q_{m/2}$, and their difference.}
+\label{tab:trace-comparison}
+\begin{tabular}{rrrrr}
+\toprule
+$m$ & $P_m$ & $Q_m$ & $q_{m/2}$ & $P_m-Q_m$\\
+\midrule
+2  & 1.1801429862 & 1.2745542220 & 0.8147325332 & $-9.44112\times10^{-2}$\\
+4  & 1.4198783447 & 1.4560685109 & 0.7910151092 & $-3.61902\times10^{-2}$\\
+6  & 1.6221410887 & 1.6327041008 & 0.8387046384 & $-1.05630\times10^{-2}$\\
+10 & 1.8555077105 & 1.8561606003 & 0.9308958703 & $-6.52890\times10^{-4}$\\
+16 & 1.9685180854 & 1.9685254266 & 0.9843885839 & $-7.34114\times10^{-6}$\\
+20 & 1.9887693744 & 1.9887697169 & 0.9944007133 & $-3.42499\times10^{-7}$\\
+24 & 1.9960068858 & 1.9960069014 & 0.9980054478 & $-1.56324\times10^{-8}$\\
+28 & 1.9985818867 & 1.9985818874 & 0.9992911952 & $-7.05929\times10^{-10}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Over even $14\le m\le28$, least-squares fits give
+\begin{align}
+ \log|P_m-2|&=-0.2581396\,m+O(1),\label{eq:P-fit}\\
+ \log|Q_m-2|&=-0.2581046\,m+O(1),\label{eq:Q-fit}\\
+ \log|P_m-Q_m|&=-0.7694953\,m+O(1).
+ \label{eq:PQ-fit}
+\end{align}
+For comparison,
+\begin{equation}\label{eq:reference-slopes}
+ -\frac12\log\lambda=-0.2589722,
+ \qquad
+ -\frac32\log\lambda=-0.7769165.
+\end{equation}
+These sharp slopes are not needed by \cref{thm:flat-gap}; the theorem only
+asserts some exponential rate.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/flat_trace_completion.pdf}
+\caption{Completion audit.  Top left: exact critical-value growth verifies the
+Collet--Eckmann input.  Top right: the physical and standard weighted traces
+share the parity limit.  Bottom left: their difference is exponentially
+smaller; the orange curve is the rigorous elementary bound, while the black
+line is only a sharp numerical reference.  Bottom right: minimum periodic
+multipliers display the uniform expansion used in the proof.}
+\label{fig:completion}
+\end{figure}
+
+\subsection{A sharp centered-zeta conjecture}
+
+For one component, write
+\begin{equation}\label{eq:component-zeta}
+ \cZ(z)=\exp\left(\sum_{n\ge1}\frac{q_nz^n}{n}\right),
+ \qquad
+ H(z)=(1-z)\cZ(z)
+ =\exp\left(\sum_{n\ge1}\frac{(q_n-1)z^n}{n}\right).
+\end{equation}
+Let $H_N$ be the degree-$N$ formal Taylor truncation obtained from
+$q_1,\ldots,q_N$.  The smallest positive real zero $z_N$ moves monotonically
+toward $\lambda$ in the computed range.
+
+\begin{table}[H]
+\centering
+\small
+\caption{First positive real zero of the centered component-zeta truncation.}
+\label{tab:zeta-zero}
+\begin{tabular}{rrr@{\qquad}rrr}
+\toprule
+$N$ & $z_N$ & $z_N-\lambda$ & $N$ & $z_N$ & $z_N-\lambda$\\
+\midrule
+3 & 1.99626296 & $3.17689\times10^{-1}$ & 9  & 1.68665677 & $8.08326\times10^{-3}$\\
+4 & 1.82963176 & $1.51058\times10^{-1}$ & 10 & 1.68331396 & $4.74045\times10^{-3}$\\
+5 & 1.75712092 & $7.85474\times10^{-2}$ & 11 & 1.68136868 & $2.79517\times10^{-3}$\\
+6 & 1.72150982 & $4.29363\times10^{-2}$ & 12 & 1.68022757 & $1.65406\times10^{-3}$\\
+7 & 1.70276673 & $2.41932\times10^{-2}$ & 13 & 1.67955462 & $9.81107\times10^{-4}$\\
+8 & 1.69247061 & $1.38971\times10^{-2}$ & 14 & 1.67915634 & $5.82832\times10^{-4}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The coefficients themselves show
+\begin{equation}\label{eq:scaled-q}
+ (q_n-1)\lambda^n
+ =-0.92089,-0.95377,-0.97281,\ldots,-0.99929
+\end{equation}
+for $n=5,6,7,\ldots,14$.  After adding $\lambda^{-n}$, the remainder scaled
+by $\lambda^{2n}$ approaches one; its value at $n=14$ is $1.00017$.
+
+\begin{conjecture}[Critical centered-zeta zero]
+\label{conj:sharp}
+The centered component zeta function has a simple zero at $z=\lambda$, and
+there is $R_*>\lambda$ such that
+\begin{equation}\label{eq:sharp-conjecture}
+ H(z)=(1-z/\lambda)G(z),
+\end{equation}
+where $G$ is holomorphic and nonzero on $|z|<R_*$.  More sharply, the observed
+coefficients are consistent with
+\begin{equation}\label{eq:q-sharp}
+ q_n=1-\lambda^{-n}+\lambda^{-2n}+O(\kappa^n)
+ \qquad\text{for some }\kappa<\lambda^{-2}.
+\end{equation}
+\end{conjecture}
+
+If \eqref{eq:q-sharp} holds, the exact shared-endpoint correction gives
+\begin{equation}\label{eq:Q-sharp}
+ Q_{2n}=2-2\lambda^{-n}+\lambda^{-2n}+O(\kappa^n),
+\end{equation}
+which explains the observed slope in \eqref{eq:Q-fit}.  The additional
+numerical law $P_{2n}-Q_{2n}=O(\lambda^{-3n})$ would then transfer the same two
+leading terms to the physical trace.  None of these sharper statements is
+used in the unconditional exponential theorem.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/centered_weighted_zeta.pdf}
+\caption{Centered component-zeta diagnostics.  Left: the scaled coefficient
+approaches $-1$.  Middle: the first positive truncation zero converges toward
+$\lambda$.  Right: successive centered-zeta polynomials stabilize their
+crossing near the dashed algebraic value.  These panels motivate
+\cref{conj:sharp} but are not its proof.}
+\label{fig:zeta}
+\end{figure}
+
+\FloatBarrier
+\section{Discussion}
+
+The deterministic flat-trace gap is now no longer a free-standing
+assumption.  The proof separates three mechanisms that had previously been
+compressed into one heuristic statement.
+
+First, the map is not merely a generic chaotic quadratic map: its
+Collet--Eckmann derivative growth is exact because the critical orbit lands on
+the repelling fixed point.  Second, parity is handled before mixing.  The raw
+map has period two, while each restriction of the square is mixing and falls
+directly under weighted-zeta theory.  Third, the physical denominator
+$|1-(f^m)'|$ is compared to the standard Perron weight only after uniform
+periodic expansion has been established.
+
+The resulting theorem is qualitative in its rate.  The numerics reveal more
+structure: the leading centered coefficient appears to be fixed by the same
+multiplier $\lambda$ that controls the postcritical orbit and the logarithmic
+boundary-crowding scale.  Proving \cref{conj:sharp} would require identifying
+the critical-orbit factor inside the adapted Fredholm or kneading determinant,
+rather than only using a zero-free annulus around the unit circle.
+
+On the noisy side, nothing here proves the previously observed
+$1+\lambda_-(\sigma)\asymp\sigma^{2/3}$ law.  The present result instead
+cleans the deterministic endpoint of that problem: any future simultaneous
+small-noise/long-cycle theorem can now use an unconditional deterministic
+bulk determinant.
+
+\section{Conclusion}
+
+The postcritically finite band-merging map satisfies the hypotheses of
+Collet--Eckmann weighted-zeta theory by exact algebraic identities.  Applying
+that theory to the two mixing components of the square gives the standard
+weighted parity trace.  Uniform hyperbolicity on periodic orbits then bridges
+the standard weight to the physical flat trace.  As a result,
+\[
+ P_m=1+(-1)^m+O(\theta^m)
+\]
+is unconditional, the two iterated small-noise/long-cycle limits are
+rigorously different, and the parity-renormalized deterministic determinant
+is analytic beyond the unit disk.
+
+The remaining sharp problem is narrower and more concrete: explain the
+apparent centered-zeta zero at the algebraic multiplier $\lambda$.  That zero
+is numerically stable but is kept outside the theorem layer until an adapted
+kneading or Fredholm factorization identifies it analytically.
+
+\section*{Data and code availability}
+
+The source, tests, exhaustive periodic data, centered-zeta coefficients, and
+figure-generation script are available in the companion repository
+\citep{WangFlatTraceCode2026}.  The test suite checks the exact critical orbit,
+Collet--Eckmann derivatives, component geometry, physical root counts,
+component pairing, endpoint reconstruction, flat/weighted comparison, odd
+trace formulas, and the finite centered-zeta algebra.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}

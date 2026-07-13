@@ -1,0 +1,880 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\uc}{u_{\mathrm c}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\TV}{\operatorname{TV}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\one}{\mathbf 1}
+
+\title{\textbf{Irreversible Resonance Geometry of Gaussian}\
+\textbf{Quadratic Markov Operators}\\
+\large Exact Folding, Dobrushin Enclosures, and Centered Cycle Determinants}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The fixed-noise Gaussian quadratic Markov operator has a rigorous continuum
+spectrum, but convergence of finite matrices does not identify the internal
+structure of that spectrum.  We derive exact reductions, contraction
+enclosures, and branch-free spectral invariants for the normalized kernel
+centered at $f_u(x)=1-u x^2$ on $[-1,1]$.
+
+Because every kernel row depends on the source only through $x^2$, the range
+of the operator is even.  Folding the destination states $y$ and $-y$ gives a
+positive Markov operator on $[0,1]$ whose spectrum, generalized eigenspaces,
+and algebraic multiplicities agree with the full operator away from zero.
+For the unreduced signed-state chain, the oriented three-cycle affinity is
+the exact polynomial
+\[
+ \log\frac{q(x,y)q(y,z)q(z,x)}{q(x,z)q(z,y)q(y,x)}
+ =\frac{u}{\sigma^2}(x-y)(y-z)(z-x).
+\]
+Thus the chain is reversible with respect to a positive density if and only
+if $u=0$; in particular, for $u\ne0$ no positive weighted-$L^2$
+self-adjoint realization exists.
+
+The one-step Dobrushin coefficient is evaluated exactly as the total
+variation distance between two endpoint truncated normal laws.  More
+strongly, if $\delta_n$ is the coefficient of the $n$-step kernel, then
+\[
+ r_\perp=\max_{\lambda\ne1}|\lambda|
+ =\lim_{n\to\infty}\delta_n^{1/n},
+\]
+so the multistep coefficients form computable resonance enclosures converging
+to the non-Perron spectral radius.
+
+After subtracting the stationary rank-one projector, the centered operator
+$\cN$ is Hilbert--Schmidt and $\cN^n$ is trace class for $n\ge2$.  Its power
+traces are centered cycle integrals,
+\[
+ c_n=\tr\cN^n
+ =\int q(x_0,x_1)\cdots q(x_{n-1},x_0)\,d\boldsymbol{x}-1
+ =\sum_{j\ge1}\lambda_j^n.
+\]
+They generate the regularized determinant $\det_2(I-z\cN)$, whose zeros are
+the reciprocal non-Perron resonances.  An exact score formula gives $c_n'(u)$
+without selecting or tracking individual eigenvalue branches, and midpoint
+Nystr\"om traces and their derivatives converge at order $d^{-2}$.
+
+Target-independent computations recover this second-order law, verify the
+folding reduction to near machine precision, exhibit the noisy remnant of the
+deterministic $-1$ parity mode, and show that centered traces remain smooth
+through numerically ill-conditioned resonance collisions.  These resonances
+are decay modes of a nonself-adjoint Markov operator.  They are not identified
+with Riemann zeros or self-adjoint energies.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Markov resonance; nonreversibility; Dobrushin
+coefficient; Hilbert--Schmidt operator; regularized determinant; cycle trace;
+quadratic map.
+
+\medskip
+\noindent\textbf{MSC 2020:} 47A10; 47B10; 47G10; 60J10; 37H20; 65R20.
+
+\section{Introduction}
+
+Finite transition matrices can display stable complex eigenvalues without
+revealing whether those values are intrinsic, reversible, or robust under
+branch collisions.  The distinction matters especially for nonnormal Markov
+operators: a visually continuous eigenvalue path can become badly
+conditioned, and sorting eigenvalues by modulus is not a spectral invariant.
+Trace powers and Fredholm determinants provide a complementary description
+that is symmetric in the eigenvalues and remains analytic when individual
+branches exchange labels \citep{Kato1995,Simon2005,Bornemann2010}.
+
+The prime-dynamics program began with a deterministic-chaos model of sieve
+words \citep{Wang2026Published}.  Subsequent work separated exact symbolic and
+parity statements from conjectural arithmetic interpretations.  At the first
+quadratic band-merging parameter
+\begin{equation}\label{eq:uc}
+ \uc^3-2\uc^2+2\uc-2=0,
+ \qquad \uc=1.543689012692\ldots,
+\end{equation}
+the deterministic map has a period-two decomposition and a Koopman
+eigenfunction with eigenvalue $-1$ \citep{WangParity2026}.  A later audit
+showed why smooth counting laws and conjugate symmetry can create excellent
+but non-diagnostic zero fits \citep{WangObstructions2026}.
+
+For the Gaussian-smoothed finite matrices, exact parameter derivatives,
+occupation-weighted response formulas, and second-order resolution scaling
+were then obtained \citep{WangGaussianResponse2026}.  The continuum step was
+completed in \citet{WangContinuum2026}: at fixed physical width $\sigma>0$,
+the normalized Gaussian kernel is a compact strongly positive analytic
+Markov family on $C([-1,1])$, and midpoint Nystr\"om matrices recover every
+nonzero isolated resonance without nonzero spectral pollution.
+
+The present paper begins the intrinsic spectral analysis of that continuum
+operator.  Three questions are basic.
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+ \item Can the exact quadratic symmetry reduce the nonzero eigenproblem?
+ \item Can irreversibility and the non-Perron spectral radius be described
+ quantitatively rather than inferred from a complex eigenvalue plot?
+ \item Is there a branch-free trace object that survives eigenvalue
+ collisions and can support later order-sensitive spectral work?
+\end{enumerate}
+
+The answers are respectively an exact folding to $[0,1]$, an explicit cycle
+affinity together with a convergent Dobrushin hierarchy, and a centered
+Hilbert--Schmidt determinant generated by periodic kernel integrals.  The
+cycle determinant is analogous in architecture, but not in arithmetic
+content, to dynamical determinants used for hyperbolic systems
+\citep{Ruelle1976,Baladi2018}.  No prime-orbit identity is asserted here.
+
+\subsection*{Main results}
+
+\begin{enumerate}[label=\textbf{R\arabic*.},leftmargin=3.2em]
+ \item Every nonzero generalized eigenfunction is even.  The folded Markov
+ operator on $[0,1]$ has exactly the nonzero spectrum of the signed-state
+ operator, including algebraic multiplicity.  The same statement is exact
+ for every even-dimensional midpoint matrix.
+
+ \item The normalized boundary factors cancel from every oriented three-cycle
+ ratio.  The resulting affinity is
+ $u(x-y)(y-z)(z-x)/\sigma^2$, which proves reversibility precisely at $u=0$
+ and excludes a self-adjoint realization in any positive stationary
+ weighted $L^2$ space when $u\ne0$.
+
+ \item The one-step Dobrushin coefficient has a closed truncated-normal
+ formula.  The $n$-step roots $\delta_n^{1/n}$ converge to the largest modulus
+ of the non-Perron spectrum; they are not merely sufficient upper bounds.
+
+ \item The centered operator $\cN=\cK-\Pi$ is Hilbert--Schmidt.  For $n\ge2$,
+ its trace $c_n$ is both a closed noisy-cycle integral and the absolutely
+ convergent power sum of the non-Perron resonances.  The regularized
+ determinant $\det_2(I-z\cN)$ is therefore an intrinsic spectral object.
+
+ \item Centered trace derivatives are cyclic score expectations.  They stay
+ analytic through eigenvalue collisions and avoid left--right normalization
+ of individual nonnormal eigenvectors.
+
+ \item Midpoint approximations of each fixed $c_n$ and $c_n'$ converge at
+ order $d^{-2}$.  Numerical experiments recover slopes between $-1.97$ and
+ $-2.01$ for the reported traces and responses.
+\end{enumerate}
+
+\subsection*{Scope}
+
+All operator statements concern fixed $\sigma>0$.  The numerical widths
+$0.03,0.05,0.08,0.12$ are a target-independent geometric grid; no zeta zero,
+zero table, fitted arithmetic scale, or inherited target-informed width is
+loaded.  The determinant zeros are reciprocal Markov resonances.  A compact
+nonnormal contraction is structurally different from the unbounded
+self-adjoint operator sought in the Hilbert--P\'olya program
+\citep{Edwards1974,BerryKeating1999,Connes1999}.
+
+\section{The Gaussian operator and exact folding}
+\label{sec:folding}
+
+Let $I=[-1,1]$, fix $\sigma>0$, and define
+\begin{align}
+ f_u(x)&=1-u x^2,\label{eq:map}\\
+ w_u(x,y)&=\exp\left[-\frac{(y-f_u(x))^2}{2\sigma^2}\right],\label{eq:weight}\\
+ Z_u(x)&=\int_Iw_u(x,z)\,dz,
+ \qquad q_u(x,y)=\frac{w_u(x,y)}{Z_u(x)}.\label{eq:kernel}
+\end{align}
+The Markov operator on observables is
+\begin{equation}\label{eq:operator}
+ (\cK_u g)(x)=\int_Iq_u(x,y)g(y)\,dy.
+\end{equation}
+The kernel is smooth and strictly positive on $I^2$.  Thus $\cK_u$ is a
+compact strongly positive contraction on $C(I)$, $\cK_u\one=\one$, the Perron
+root is algebraically simple, and every other spectral value has modulus
+strictly below one \citep{Schaefer1974,WangContinuum2026}.
+
+\subsection{Stationary centering}
+
+\begin{proposition}[Invariant density and centered decomposition]
+\label{prop:stationary}
+There is a unique invariant probability $\pi_u$, and it has a smooth strictly
+positive density $\rho_u$ with respect to Lebesgue measure.  On
+$H=L^2(I,dx)$ define
+\[
+ \varpi_u(g)=\int_I\rho_u(x)g(x)\,dx,
+ \qquad \Pi_u g=\varpi_u(g)\one,
+ \qquad \cN_u=\cK_u-\Pi_u.
+\]
+Then
+\[
+ \Pi_u^2=\Pi_u,
+ \qquad \cK_u\Pi_u=\Pi_u\cK_u=\Pi_u,
+ \qquad \cN_u^n=\cK_u^n-\Pi_u \quad(n\ge1).
+\]
+The nonzero spectrum of $\cN_u$ is precisely
+$\spec(\cK_u)\setminus\{1\}$, with algebraic multiplicity.
+\end{proposition}
+
+\begin{proof}
+Strong positivity and compactness give a unique invariant probability by the
+dual Krein--Rutman theorem.  If $\pi_u$ is invariant, then
+\[
+ \pi_u(dy)=\left(\int_Iq_u(x,y)\,d\pi_u(x)\right)dy.
+\]
+The expression in parentheses is smooth and strictly positive.  This proves
+the density assertion.  Invariance gives $\varpi_u\cK_u=\varpi_u$, while
+$\cK_u\one=\one$; the projection identities follow.  The direct decomposition
+$H=\operatorname{span}\{\one\}\oplus\ker\varpi_u$ is invariant.  On its first
+summand $\cN_u=0$, and on the second $\cN_u=\cK_u$, which proves the spectral
+statement.
+\end{proof}
+
+\subsection{The folded state space}
+
+Let $C_{\rm even}(I)$ be the even continuous functions and define the
+isometric isomorphism
+\[
+ E:C([0,1])\longrightarrow C_{\rm even}(I),
+ \qquad (Eh)(x)=h(|x|).
+\]
+For $r,s\in[0,1]$ put
+\begin{equation}\label{eq:folded-kernel}
+ p_u(r,s)=q_u(r,s)+q_u(r,-s),
+ \qquad
+ (\cP_u h)(r)=\int_0^1p_u(r,s)h(s)\,ds.
+\end{equation}
+Since $p_u>0$ and its rows integrate to one, $\cP_u$ is itself a compact
+strongly positive Markov operator.
+
+\begin{theorem}[Exact nonzero spectral folding]
+\label{thm:folding}
+The operator $\cK_u$ maps all of $C(I)$ into $C_{\rm even}(I)$, and
+\begin{equation}\label{eq:intertwining}
+ \cK_uE=E\cP_u.
+\end{equation}
+Every generalized eigenspace of $\cK_u$ belonging to $\lambda\ne0$ is even.
+Consequently,
+\begin{equation}\label{eq:folded-spectrum}
+ \spec(\cK_u)\setminus\{0\}
+ =\spec(\cP_u)\setminus\{0\},
+\end{equation}
+including algebraic multiplicities and Jordan structure.
+\end{theorem}
+
+\begin{proof}
+The identity $f_u(-x)=f_u(x)$ implies
+$q_u(-x,y)=q_u(x,y)$, so $\cK_ug$ is even for every $g$.  If $g=Eh$, split
+the integral in \eqref{eq:operator} into negative and positive halves and
+reflect the negative variable.  This gives \eqref{eq:intertwining}.
+
+Let $Q:C(I)\to C(I)/C_{\rm even}(I)$ be the quotient map.  Since the range of
+$\cK_u$ is even, the induced quotient operator is zero.  If
+$(\cK_u-\lambda I)^m g=0$ and $\lambda\ne0$, applying $Q$ gives
+$(-\lambda)^mQg=0$, hence $g$ is even.  Restriction to the even subspace and
+the similarity \eqref{eq:intertwining} now identify every nonzero generalized
+eigenspace.
+\end{proof}
+
+There is an exact finite-dimensional counterpart.  For even $d=2m$, let
+\[
+ c_j=-1+\frac{2}{d}\left(j-\frac12\right),
+ \qquad
+ K_{ij}^{(d)}(u)=
+ \frac{w_u(c_i,c_j)}{\sum_{k=1}^dw_u(c_i,c_k)}.
+\]
+Index the positive centers increasingly by $s_j=c_{m+j}$.  The folded matrix
+is
+\begin{equation}\label{eq:folded-matrix}
+ P_{ij}^{(d)}=K_{m+i,m+j}^{(d)}+K_{m+i,m+1-j}^{(d)},
+ \qquad 1\le i,j\le m.
+\end{equation}
+The same block argument proves that $P^{(d)}$ contains every nonzero
+eigenvalue of $K^{(d)}$, while the row-reflection symmetry forces at least
+$m$ zero eigenvalues of the full matrix.  Folding therefore reduces dense
+storage by a factor four and dense eigensolver work by approximately a factor
+eight without discarding a nonzero resonance.
+
+\section{Irreversibility and contraction geometry}
+\label{sec:irreversibility}
+
+\subsection{An exact three-cycle obstruction}
+
+For three states $x,y,z\in I$, define the oriented cycle affinity
+\begin{equation}\label{eq:affinity-def}
+ \mathcal A_u(x,y,z)
+ =\log\frac{q_u(x,y)q_u(y,z)q_u(z,x)}
+ {q_u(x,z)q_u(z,y)q_u(y,x)}.
+\end{equation}
+The row normalizers occur once in each orientation and cancel.
+
+\begin{theorem}[Cycle affinity and failure of detailed balance]
+\label{thm:affinity}
+For every $x,y,z\in I$,
+\begin{equation}\label{eq:affinity}
+ \mathcal A_u(x,y,z)
+ =\frac{u}{\sigma^2}(x-y)(y-z)(z-x).
+\end{equation}
+The Gaussian quadratic chain is reversible with respect to a positive density
+if and only if $u=0$.
+\end{theorem}
+
+\begin{proof}
+After cancellation of the normalizers, $-2\sigma^2\mathcal A_u$ is
+\begin{align*}
+ &(y-f_u(x))^2+(z-f_u(y))^2+(x-f_u(z))^2\\
+ &\quad -(z-f_u(x))^2-(y-f_u(z))^2-(x-f_u(y))^2.
+\end{align*}
+The pure squares cancel, leaving
+\[
+ \mathcal A_u=\frac{1}{\sigma^2}
+ \{f_u(x)(y-z)+f_u(y)(z-x)+f_u(z)(x-y)\}.
+\]
+The constant terms in $f_u=1-u(\cdot)^2$ cancel and the remaining alternating
+polynomial factors as \eqref{eq:affinity}.
+
+If detailed balance holds, multiplication of
+$\rho(x)q(x,y)=\rho(y)q(y,x)$ around any three-cycle gives
+$\mathcal A_u=0$ \citep{Kelly1979,Norris1997}.  For $u\ne0$, any three distinct
+states contradict this condition.  If $u=0$, the row density is independent
+of $x$; taking that common row as $\rho$ gives detailed balance.
+\end{proof}
+
+\begin{corollary}[No positive weighted self-adjoint realization]
+\label{cor:no-selfadjoint}
+If $u\ne0$, there is no strictly positive density $r$ for which $\cK_u$ is
+self-adjoint on $L^2(I,r(x)dx)$.
+\end{corollary}
+
+\begin{proof}
+Self-adjointness of the integral operator in the weighted space would imply
+\[
+ r(x)q_u(x,y)=r(y)q_u(y,x)
+\]
+almost everywhere.  Continuity promotes the identity to all $(x,y)$,
+contradicting \cref{thm:affinity}.
+\end{proof}
+
+The corollary is specific to self-adjointness by a positive change of density.
+It does not say that every resonance must be nonreal, nor does it exclude an
+unrelated self-adjoint operator constructed by adding new degrees of freedom.
+It does exclude the direct identification of this Markov kernel with a
+weighted self-adjoint Hamiltonian.
+
+\subsection{An exact Dobrushin coefficient}
+
+Write a row with Gaussian mean $m$ as
+\begin{equation}\label{eq:qmean}
+ q_m(y)=\frac{\exp(-(y-m)^2/(2\sigma^2))}{Z_\sigma(m)},
+ \qquad
+ Z_\sigma(m)=\int_{-1}^1\exp(-(y-m)^2/(2\sigma^2))\,dy,
+\end{equation}
+and let $F_m$ be its distribution function on $I$.  The possible means are
+the interval with endpoints $1-u$ and $1$.  Put
+\[
+ a=\min(1-u,1),\qquad b=\max(1-u,1).
+\]
+For $u\ne0$ define
+\begin{equation}\label{eq:crossing}
+ y_*=\frac{a+b}{2}+\frac{\sigma^2}{b-a}
+ \log\frac{Z_\sigma(b)}{Z_\sigma(a)}.
+\end{equation}
+
+For a Markov kernel $Q$, use the total-variation convention
+\begin{equation}\label{eq:dobrushin}
+ \delta(Q)=\frac12\sup_{x,x'}\int_I|Q(x,dy)-Q(x',dy)|.
+\end{equation}
+Let $q_u^{(n)}$ be the $n$-step density and $\delta_n=\delta(\cK_u^n)$.
+
+\begin{theorem}[Exact one-step coefficient and convergent enclosures]
+\label{thm:dobrushin}
+If $u=0$, then $\delta_1=0$.  If $u\ne0$, then $y_*\in(-1,1)$ and
+\begin{equation}\label{eq:delta-exact}
+ \delta_1=F_a(y_*)-F_b(y_*).
+\end{equation}
+Let
+\begin{equation}\label{eq:rperp}
+ r_\perp=\max\{|\lambda|:\lambda\in\spec(\cK_u),\ \lambda\ne1\},
+\end{equation}
+with $r_\perp=0$ if there is no nonzero non-Perron eigenvalue.  Then
+\begin{equation}\label{eq:dobrushin-limit}
+ r_\perp
+ =\lim_{n\to\infty}\delta_n^{1/n}
+ =\inf_{n\ge1}\delta_n^{1/n}.
+\end{equation}
+In particular, every $n$ gives the certified enclosure
+$|\lambda|\le\delta_n^{1/n}$ for all $\lambda\ne1$.
+\end{theorem}
+
+\begin{proof}
+Apart from a factor absorbed into the normalizer,
+\[
+ q_m(y)=\frac{e^{my/\sigma^2}e^{-y^2/(2\sigma^2)}}
+ {\int_Ie^{mt/\sigma^2}e^{-t^2/(2\sigma^2)}dt}.
+\]
+Thus $\{q_m\}$ is a strict monotone-likelihood-ratio family.  For $m_1<m_2$,
+the ratio $q_{m_2}/q_{m_1}$ is strictly increasing and crosses one exactly
+once.  Solving the crossing equation for the endpoint pair $(a,b)$ gives
+\eqref{eq:crossing}.  Hence
+\[
+ \TV(q_{m_1},q_{m_2})
+ =\max_t\{F_{m_1}(t)-F_{m_2}(t)\}.
+\]
+Stochastic ordering gives $F_a\ge F_{m_1}\ge F_{m_2}\ge F_b$ pointwise, so
+the largest pairwise distance occurs at $(a,b)$ and
+\eqref{eq:delta-exact} follows.
+
+Let $M(I)$ be the finite signed measures with total-variation norm and
+$M_0(I)=\{\nu:\nu(I)=0\}$.  The Dobrushin coefficient is exactly the operator
+norm of $\cK_u^*$ restricted to $M_0(I)$ \citep{Seneta2006}.  Therefore
+\[
+ \delta_n=\norm{(\cK_u^*|_{M_0})^n}.
+\]
+The Gelfand formula gives the limit in \eqref{eq:dobrushin-limit};
+submultiplicativity gives the infimum identity.  Since the adjoint of a compact
+operator is compact, every nonzero spectral value is an eigenvalue.  The
+simplicity of the Perron root and the identity
+$\cK_u^*\nu=\lambda\nu\Rightarrow(1-\lambda)\nu(I)=0$ show that the spectrum on
+$M_0$ is exactly the non-Perron spectrum.
+\end{proof}
+
+\begin{remark}[Why several steps matter]
+For small $\sigma$, the endpoint rows can have exponentially small overlap,
+so $\delta_1$ is mathematically below one but numerically indistinguishable
+from one.  Equation \eqref{eq:dobrushin-limit} shows that this is a limitation
+of a one-step minorization argument, not evidence for a peripheral resonance.
+The dynamics can create substantial overlap after several iterates.
+\end{remark}
+
+\section{Centered cycle traces and the regularized determinant}
+\label{sec:traces}
+
+The kernel $q_u$ belongs to $L^2(I^2)$, so \eqref{eq:operator} defines a
+Hilbert--Schmidt operator on $H=L^2(I,dx)$.  The nonzero spectra on $H$ and
+$C(I)$ agree: if $\cK_ug=\lambda g$ in $H$ and $\lambda\ne0$, then
+$g=\lambda^{-1}\cK_ug$ is smooth; the same induction applies to generalized
+eigenvectors.
+
+Enumerate the nonzero non-Perron resonances by
+$\lambda_1,\lambda_2,\ldots$, including algebraic multiplicity.
+
+\begin{theorem}[Centered cycle trace formula]
+\label{thm:trace}
+For every integer $n\ge2$, the operator $\cN_u^n$ is trace class and
+\begin{align}
+ c_n(u):=\tr\cN_u^n
+ &=\tr\cK_u^n-1\label{eq:centered-trace}\\
+ &=\int_{I^n}\prod_{j=0}^{n-1}q_u(x_j,x_{j+1})
+ \,dx_0\cdots dx_{n-1}-1\label{eq:cycle-integral}\\
+ &=\sum_{j\ge1}\lambda_j(u)^n,
+ \qquad x_n=x_0.\label{eq:power-sum}
+\end{align}
+The series in \eqref{eq:power-sum} is absolutely convergent.
+\end{theorem}
+
+\begin{proof}
+Both $\cK_u$ and the rank-one $\Pi_u$ are Hilbert--Schmidt, hence so is
+$\cN_u$.  The product of two Hilbert--Schmidt operators is trace class, so
+$\cN_u^n$ is trace class for $n\ge2$ \citep{Simon2005}.  By
+\cref{prop:stationary}, $\cN_u^n=\cK_u^n-\Pi_u$ and $\tr\Pi_u=\varpi_u(\one)=1$.
+
+The trace of a product of two Hilbert--Schmidt integral operators is the
+integral of the corresponding paired kernels.  Iteration and Fubini's theorem
+give the closed cycle integral \eqref{eq:cycle-integral}.  Finally, Lidskii's
+trace theorem applied to the trace-class operator $\cN_u^n$ gives the
+absolutely convergent eigenvalue sum.  Spectral mapping and
+\cref{prop:stationary} identify its nonzero eigenvalues as $\lambda_j^n$.
+\end{proof}
+
+Because $\cN_u$ is Hilbert--Schmidt, its two-regularized determinant is the
+entire function
+\begin{equation}\label{eq:det2}
+ \cD_u(z)=\det{}_2(I-z\cN_u)
+ =\prod_{j\ge1}(1-z\lambda_j)e^{z\lambda_j}.
+\end{equation}
+
+\begin{corollary}[Cycle determinant]
+\label{cor:determinant}
+The nonzero zeros of $\cD_u$ are exactly $z=\lambda_j^{-1}$, with algebraic
+multiplicity.  For sufficiently small $|z|$,
+\begin{equation}\label{eq:logdet}
+ \log\cD_u(z)=-\sum_{n=2}^{\infty}\frac{c_n(u)}{n}z^n.
+\end{equation}
+\end{corollary}
+
+This is a noisy-cycle determinant in a precise operator-theoretic sense.  It
+does not require a symbolic periodic-orbit coding: the coefficient $c_n+1$ is
+the total weight of all closed $n$-step kernel paths integrated over their
+base points.
+
+\subsection{Branch-free parameter response}
+
+Define the centered score
+\begin{equation}\label{eq:score}
+ s_u(x,y)=\partial_u\log q_u(x,y)
+ =-\frac{x^2}{\sigma^2}(y-f_u(x))
+ -\int_Iq_u(x,t)\left[-\frac{x^2}{\sigma^2}(t-f_u(x))\right]dt.
+\end{equation}
+Then $\partial_uq_u=q_us_u$ and every row score has mean zero
+\citep{WangGaussianResponse2026,WangContinuum2026}.
+
+\begin{theorem}[Centered trace response]
+\label{thm:trace-response}
+For $n\ge2$, the map $u\mapsto c_n(u)$ is real analytic and
+\begin{align}
+ c_n'(u)
+ &=n\tr(\cK_u'\cK_u^{n-1})\label{eq:trace-derivative}\\
+ &=n\int_{I^n}s_u(x_0,x_1)
+ \prod_{j=0}^{n-1}q_u(x_j,x_{j+1})
+ \,d\boldsymbol{x}.
+ \label{eq:score-cycle}
+\end{align}
+For sufficiently small $|z|$,
+\begin{equation}\label{eq:det-response}
+ \partial_u\log\cD_u(z)
+ =-\sum_{n=2}^{\infty}\frac{c_n'(u)}{n}z^n.
+\end{equation}
+These formulas remain analytic at parameters where individual eigenvalue
+branches collide or exchange labels.
+\end{theorem}
+
+\begin{proof}
+The kernel and all its $u$ derivatives are uniformly bounded on compact
+parameter intervals, so $u\mapsto\cK_u$ is analytic in Hilbert--Schmidt norm.
+Differentiate $\tr\cK_u^n$.  Cyclicity of the trace makes its $n$ summands
+equal and gives \eqref{eq:trace-derivative}.  Substituting
+$\cK_u'(x,y)=q_u(x,y)s_u(x,y)$ and writing the product kernel gives
+\eqref{eq:score-cycle}.  Termwise differentiation of \eqref{eq:logdet} in its
+disk of convergence proves \eqref{eq:det-response}.  Analyticity follows at
+the operator level and therefore does not depend on a local labeling of the
+roots \citep{Kato1995}.
+\end{proof}
+
+\subsection{Second-order midpoint cycle traces}
+
+Let $K_d(u)$ be the midpoint matrix in \cref{sec:folding}, set $h=2/d$, and
+define
+\begin{equation}\label{eq:discrete-traces}
+ c_{n,d}(u)=\tr K_d(u)^n-1,
+ \qquad
+ c_{n,d}'(u)=n\tr\left(K_d'(u)K_d(u)^{n-1}\right).
+\end{equation}
+
+\begin{theorem}[Nystr\"om cycle convergence]
+\label{thm:nystrom-traces}
+Fix $\sigma>0$, an integer $n\ge2$, and a compact real parameter interval.
+Then, uniformly on that interval,
+\begin{equation}\label{eq:trace-order}
+ c_{n,d}(u)=c_n(u)+O(h^2),
+ \qquad
+ c_{n,d}'(u)=c_n'(u)+O(h^2).
+\end{equation}
+The same quantities are obtained by replacing $K_d$ with its folded matrix
+$P_d$.
+\end{theorem}
+
+\begin{proof}
+Write
+\[
+ Z_{d,u}(x)=h\sum_{j=1}^dw_u(x,c_j),
+ \qquad q_{d,u}(x,c_j)=\frac{w_u(x,c_j)}{Z_{d,u}(x)}.
+\]
+Then $K_{ij}^{(d)}=h q_{d,u}(c_i,c_j)$.  Composite midpoint quadrature and
+its parameter derivative give
+$q_{d,u}=q_u+O(h^2)$ at all grid pairs, uniformly in $u$.  Expanding the
+matrix trace as a closed $n$-fold sum yields
+\[
+ \tr K_d^n
+ =h^n\sum_{i_0,\ldots,i_{n-1}}
+ \prod_{j=0}^{n-1}q_{d,u}(c_{i_j},c_{i_{j+1}}),
+ \qquad i_n=i_0.
+\]
+This is the $n$-dimensional midpoint rule for the smooth integrand in
+\eqref{eq:cycle-integral}, with a uniform $O(h^2)$ normalization perturbation
+\citep{Atkinson1997}.  Differentiation gives the same argument for the score
+integral.  Finally, the full and folded matrices have identical nonzero
+spectra, so their trace powers agree.
+\end{proof}
+
+\section{Target-independent numerical spectrum}
+\label{sec:numerics}
+
+All computations use the full, untruncated Gaussian kernel and symmetric
+midpoint grids.  The implementation uses NumPy, SciPy, and Matplotlib
+\citep{HarrisEtAl2020,VirtanenEtAl2020,Hunter2007}.  Machine-readable tables,
+tests, and plotting scripts accompany the manuscript.
+
+The algebraic parameter \eqref{eq:uc} is selected by deterministic quadratic
+dynamics, not by arithmetic data.  The widths
+\[
+ \sigma\in\{0.03,0.05,0.08,0.12\}
+\]
+were fixed before the spectral scan.  The code contains no zero ordinates,
+and the output metadata explicitly records that no target data were loaded.
+
+\subsection{Folding and the resonance atlas}
+
+At full dimension $d=192$ and $\sigma=0.12$, reflected rows agree to
+$8.3\times10^{-17}$.  All eleven folded eigenvalues with modulus above
+$10^{-4}$ match full-matrix eigenvalues within $2.3\times10^{-13}$.  The
+smallest computed eigenvalues are less reliable, as expected for a rapidly
+smoothing compact operator, but they do not affect the exact algebraic
+folding theorem.
+
+At $\uc$, the leading resonances are shown in \cref{tab:leading}.  A real
+negative eigenvalue is dominant for every displayed width and moves inward as
+the noise increases.  This is the natural noisy remnant of the exact
+deterministic parity eigenvalue $-1$ proved in \citet{WangParity2026}; the
+present computation does not claim a small-noise perturbation theorem for its
+discontinuous parity eigenfunction.
+
+\begin{table}[t]
+\centering
+\caption{Leading non-Perron resonances at $u=\uc$ from the folded matrix with
+full dimension $d=768$.  The complex value represents a conjugate pair.}
+\label{tab:leading}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$\sigma$ & leading resonance & next conjugate pair \\
+\midrule
+$0.03$ & $-0.9719815645$ & $-0.1898526749\pm0.5238126201i$ \\
+$0.05$ & $-0.9588415868$ & $-0.0267942799\pm0.5884576680i$ \\
+$0.08$ & $-0.9373468211$ & $-0.0030793741\pm0.4620424167i$ \\
+$0.12$ & $-0.9073047454$ & $\phantom{-}0.0078301206\pm0.2416781243i$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/resonance_atlas.pdf}
+\caption{Intrinsic resonance atlas.  Upper left: non-Perron spectra at the
+algebraic band-merging parameter for four untuned widths.  Upper right:
+ordered resonance moduli over $1.35\le u\le1.75$ at $\sigma=0.05$ and
+$d=512$; ordering by modulus is descriptive and is not branch tracking.
+Lower left: centered cycle traces remain smooth while roots rearrange.  Lower
+right: the largest left--right condition number among the eight leading
+finite-matrix eigenvalues, illustrating increasing branch sensitivity.  The
+dashed vertical line marks $\uc$.}
+\label{fig:atlas}
+\end{figure}
+
+The upper-right panel of \cref{fig:atlas} displays several rank exchanges.  A
+fine local inspection shows real-to-complex collisions near the interval
+$1.66$--$1.68$.  These are numerical exceptional-point candidates, not a
+continuum existence theorem.  The condition-number growth explains why a
+single sorted branch can be unstable there.  In contrast, the lower-left
+panel shows the symmetric trace combinations $c_2,\ldots,c_5$ varying
+smoothly, as guaranteed by \cref{thm:trace-response}.
+
+\subsection{Second-order centered traces}
+
+We computed $c_n$ and $c_n'$ for $2\le n\le6$ at dimensions from $128$ to
+$2048$.  A quadratic fit in $h^2$ over $d\ge384$ supplied the continuum
+intercept; log--log slopes use $d\ge256$.  The results in
+\cref{tab:trace-fits,fig:trace-convergence} recover the predicted second order
+without fitting a resonance.
+
+\begin{table}[t]
+\centering
+\caption{Centered trace and response extrapolations at
+$(u,\sigma)=(\uc,0.05)$.  Slopes are powers of the full dimension $d$.}
+\label{tab:trace-fits}
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+$n$ & $c_n(\infty)$ & error slope & $c_n'(\infty)$ & error slope \\
+\midrule
+2 & $\phantom{-}0.265783238$ & $-2.000$ & $-2.113092601$ & $-2.001$ \\
+3 & $-0.823917527$ & $-1.990$ & $-0.173893150$ & $-1.992$ \\
+4 & $\phantom{-}1.087357907$ & $-1.974$ & $-7.144876862$ & $-2.000$ \\
+5 & $-0.840572835$ & $-2.002$ & $\phantom{-}3.034749919$ & $-2.007$ \\
+6 & $\phantom{-}0.696893094$ & $-2.004$ & $-2.946147729$ & $-2.014$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/trace_convergence.pdf}
+\caption{Second-order midpoint convergence for centered cycle moments (left)
+and their exact parameter derivatives (right).  The displayed continuum
+values are extrapolated from a quadratic polynomial in $h^2$; dashed lines
+have slope $-2$.}
+\label{fig:trace-convergence}
+\end{figure}
+
+\subsection{Contraction roots and determinant zeros}
+
+For $\sigma=0.05$, the exact endpoint overlap $1-\delta_1$ is only
+$1.307\times10^{-53}$.  Thus a one-step Dobrushin estimate rounds to one in
+double precision even though strong positivity guarantees $\delta_1<1$.
+At $n=30$, the discretized enclosure has fallen to
+$\delta_{30}^{1/30}=0.963668$, close to the folded non-Perron radius
+$0.958873$.  For $\sigma=0.12$, the corresponding values are $0.913918$ and
+$0.907317$.  These finite calculations illustrate the exact limit in
+\cref{thm:dobrushin}; they are not used to prove it.
+
+The right panel of \cref{fig:determinant} evaluates the finite regularized
+product
+\[
+ \cD_d(z)=\prod_{j\ge1}(1-z\lambda_{j,d})e^{z\lambda_{j,d}}
+\]
+from the folded spectrum.  The visible depressions coincide with the marked
+reciprocal resonances.  Unlike an eigenvalue plot, the determinant is a single
+analytic scalar and its logarithmic Taylor coefficients are exactly the
+centered traces.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/dobrushin_determinant.pdf}
+\caption{Left: multistep Dobrushin roots and finite-matrix non-Perron radii at
+$u=\uc$, $d=512$.  The roots decrease toward the dashed spectral radii.
+Right: $\log|\det_2(I-zN_d)|$ at $\sigma=0.05$, with crosses at reciprocals of
+resonances having modulus above $0.1$.}
+\label{fig:determinant}
+\end{figure}
+
+\section{Implications for a longer spectral program}
+\label{sec:program}
+
+\subsection{What has been gained}
+
+The continuum theorem of \citet{WangContinuum2026} established that finite
+nonzero resonances converge.  The present results identify their internal
+organization.  Half of the signed state is redundant for the nonzero
+eigenproblem; the remaining operator is genuinely irreversible; its outer
+spectral radius has a convergent total-variation enclosure; and all of its
+resonances are encoded by one centered determinant.
+
+The trace response is especially useful for subsequent non-autonomous work.
+An individual nonnormal eigenvalue requires a simple isolated branch and a
+left--right normalization.  The scalar $c_n(u)$ is analytic without either
+choice.  For a slowly varying or order-sensitive product, centered cycle
+traces and determinant ratios therefore offer a more stable primitive than
+sorting instantaneous eigenphases.
+
+\subsection{Why this is not a Hilbert--P\'olya operator}
+
+The Hilbert--P\'olya idea seeks a self-adjoint spectral realization of the
+nontrivial zero ordinates.  Any successful realization would need, at a
+minimum, a real discrete spectrum, an appropriate high-energy counting law,
+and a trace or scattering formula carrying arithmetic prime-power data
+\citep{Edwards1974,BerryKeating1999,Connes1999}.  The present operator has none
+of these properties automatically:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+ \item $\cK_u$ is a compact nonself-adjoint contraction and its eigenvalues
+ accumulate at zero inside the unit disk;
+ \item \cref{thm:affinity} rules out detailed balance and hence rules out the
+ direct positive-weight symmetrization of $\cK_u$ for $u\ne0$;
+ \item the coefficients in \eqref{eq:cycle-integral} are smooth geometric
+ kernel integrals, not von Mangoldt-weighted prime sums; and
+ \item the zeros of \eqref{eq:det2} are reciprocal decay resonances, generally
+ complex, not real energy levels.
+\end{enumerate}
+
+Two standard constructions do not bridge this gap by themselves.  The
+multiplicative reversiblization $\cK_u^*\cK_u$ is positive and self-adjoint,
+but it records singular values and discards resonance phases.  A unitary
+dilation of a contraction introduces extra states and is not a canonical
+discrete Hamiltonian with the required counting law.  Either construction may
+be analytically useful, but self-adjointness alone is not a zero theorem.
+
+\subsection{A disciplined sequence of next questions}
+
+The centered determinant suggests a route of questions rather than a claimed
+construction:
+\begin{enumerate}[label=\textbf{S\arabic*.},leftmargin=3.1em]
+ \item Extend $c_n$ from frozen kernels to parity-resolved two-step products,
+ preserving temporal order and proving a continuum limit.
+ \item Analyze the small-noise limit in a function space adapted to the
+ deterministic two-component geometry, including the fate of the noisy
+ $-1$ resonance.
+ \item Determine whether a target-independent scaling limit of determinant
+ ratios has a unitary or scattering interpretation.  Complex Markov phases
+ alone are insufficient.
+ \item Before any arithmetic comparison, derive a trace identity whose
+ geometric side naturally produces prime-power weights.  Importing zero data
+ into $\sigma$, $u$, or the unfolding would invalidate this test.
+ \item Only after a self-adjoint generator, real spectrum, counting law, and
+ arithmetic trace identity are established should one test zero ordinates
+ out of sample.
+\end{enumerate}
+The present paper supplies the frozen intrinsic determinant needed for
+\textbf{S1}; it does not supply \textbf{S3}--\textbf{S5}.  Stating those gaps
+is part of the result, because it prevents a Markov resonance plot from being
+mistaken for a Hilbert--P\'olya construction.
+
+\section{Conclusion}
+
+The fixed-noise Gaussian quadratic operator has an exact and computable
+resonance geometry.  Its quadratic source symmetry folds every nonzero
+generalized eigenspace to $[0,1]$.  Its signed-state dynamics are irreversible
+for every $u\ne0$, with an oriented cycle affinity that is independent of the
+row normalizers.  Its Dobrushin roots converge to, rather than merely bound,
+the non-Perron spectral radius.
+
+After stationary centering, the operator is Hilbert--Schmidt and its powers
+have closed cycle traces.  These traces generate a regularized determinant,
+admit exact score derivatives, remain analytic through branch collisions, and
+converge under midpoint discretization at second order.  The target-independent
+experiments recover each of these numerical consequences and identify the
+dominant negative resonance as a finite-noise continuation of the deterministic
+parity geometry at the level of evidence, not theorem.
+
+The resulting determinant is a rigorous transfer-operator spectral object.
+It is not a self-adjoint energy determinant, contains no proved arithmetic
+trace formula, and does not identify or constrain Riemann zeros.  Its role is
+to provide a stable next layer on which order-sensitive and small-noise
+questions can be posed precisely.
+
+\section*{Data and code availability}
+
+The manuscript source, tested implementation, machine-readable results, and
+figure scripts are available at
+\url{https://github.com/maris205/prime_dynamics_theory/tree/main/papers/RH-7-irreversible-gaussian-cycle-spectrum}.
+The exact reproduction command is listed in the accompanying README.
+
+\section*{Acknowledgments}
+
+The author acknowledges the use of an AI language model for assistance with
+mathematical cross-checking, code auditing, manuscript organization, and
+typesetting.  The author verified the final arguments and assumes
+responsibility for the content.
+
+{\small
+\bibliographystyle{plainnat}
+\bibliography{references}
+}
+
+\end{document}
