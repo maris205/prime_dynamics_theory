@@ -1,0 +1,72 @@
+{
+  "parameters": {
+    "u_critical": 1.5436890127,
+    "sigma": 0.05,
+    "pair_dimension": 768,
+    "atlas_dimension": 384,
+    "curvature_dimension": 768,
+    "schedule_dimension": 512,
+    "target_data_loaded": false
+  },
+  "software": {
+    "python": "3.10.12",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.9"
+  },
+  "pair_order": {
+    "slopes": {
+      "operator_infinity_difference": 0.9998517768589971,
+      "stationary_total_variation": 0.9998796871094713,
+      "observable_difference": 1.0001018489052045,
+      "normalized_commutator_error": 1.9998646024422666
+    },
+    "leading_coefficients": {
+      "operator_difference_over_epsilon": 22.495504724870727,
+      "stationary_tv_over_epsilon": 9.19105440793109,
+      "observable_difference_over_epsilon": 0.021534190154562382
+    },
+    "spectral_audit": {
+      "significant_count": 22,
+      "maximum_match_error": 5.3049604510261655e-12,
+      "epsilon": 0.02,
+      "matrix_infinity_difference": 0.4440017782235658,
+      "stationary_transport_error": 4.7704895589362195e-17
+    }
+  },
+  "curvature_convergence": {
+    "fits": {
+      "one_step_curvature": {
+        "continuum_extrapolation": -1.5917137480760224,
+        "dimension_slope": -1.9971412500193952,
+        "quadratic_in_h2_coefficients": [
+          -84506.94061142544,
+          755.6398465220409,
+          -1.5917137480760224
+        ]
+      },
+      "parity_block_curvature": {
+        "continuum_extrapolation": 20.95896000688984,
+        "dimension_slope": -2.0011479951530666,
+        "quadratic_in_h2_coefficients": [
+          22396.01981270204,
+          439.88504727994285,
+          20.95896000688984
+        ]
+      }
+    }
+  },
+  "vandermonde_scaling": {
+    "one_step_relative_error": 2.000132965374429,
+    "six_step_relative_error": 1.9993254555493907,
+    "one_step_curvature": -1.5865931433691747,
+    "parity_block_curvature": 20.961944153101292
+  },
+  "schedule_limits": {
+    "scaled_vandermonde_limit": -0.6660493039778589,
+    "scaled_one_step_trace_limit": 1.0524932794460213,
+    "scaled_six_step_trace_limit": -13.964174823800464,
+    "normalized_half_increment_limit": -0.25,
+    "normalized_tail_limit": -0.125
+  }
+}
