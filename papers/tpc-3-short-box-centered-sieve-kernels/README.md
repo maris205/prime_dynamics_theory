@@ -44,7 +44,7 @@ From the repository root:
 
 ```bash
 python -m unittest discover \
-  -s papers/short-box-centered-sieve-kernels/experiments \
+  -s papers/tpc-3-short-box-centered-sieve-kernels/experiments \
   -p 'test_*.py' -v
 ```
 
