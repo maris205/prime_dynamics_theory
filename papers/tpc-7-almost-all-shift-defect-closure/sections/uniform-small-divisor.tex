@@ -1,0 +1,253 @@
+\section{A uniform small-divisor transfer theorem}
+\label{sec:uniform-small-divisor}
+
+The fixed-shift coefficient calculation in TPC-6 is not by itself sufficient
+for a window in which $h$ grows with $X$: its displayed error constant was
+allowed to depend on $h$.  We first remove that dependence over every
+polynomial range.  Uniform truncated singular-series estimates of this type
+also occur in the divisor-sum correlation work of
+\citet[Lemma~2.1]{GoldstonYildirim2003}; a coefficient-level proof adapted to
+the present weight is included for completeness.
+
+\subsection{The singular-series coefficient uniformly in the shift}
+\label{subsec:uniform-singular-coefficient}
+
+\begin{lemma}[Uniform singular-series coefficient]
+\label{lem:uniform-singular-coefficient}
+Fix $A,K>0$.  Uniformly for $z\ge3$ and integers $h$ satisfying
+$1\le|h|\le z^K$,
+\begin{equation}\label{eq:uniform-singular-coefficient}
+ -\sum_{\substack{d\le z\\(d,h)=1}}
+   \frac{\mu(d)\log d}{\varphi(d)}
+ =\mathfrak S(h)+O_{A,K}\bigl((\log z)^{-A}\bigr).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Set
+\[
+ a_h(d)=\one_{(d,h)=1}\frac{\mu(d)}{\varphi(d)}
+\]
+and, initially for $\Re s>0$, write
+\begin{equation}\label{eq:Fh-factorization}
+ F_h(s)=\sum_{d\ge1}\frac{a_h(d)}{d^s}
+ =\frac{G_h(s)}{\zeta(1+s)}.
+\end{equation}
+The Euler factors of $G_h$ are
+\begin{equation}\label{eq:Gh-local-factors}
+ G_{h,p}(s)=
+ \begin{cases}
+ \displaystyle
+ \frac{1-p^{-s}/(p-1)}{1-p^{-1-s}},&p\nmid h,\\[1.2ex]
+ (1-p^{-1-s})^{-1},&p\mid h.
+ \end{cases}
+\end{equation}
+Let $g_h$ be the multiplicative function whose Dirichlet series is $G_h$.
+Expanding \eqref{eq:Gh-local-factors} coefficient by coefficient gives, for
+$\nu\ge1$,
+\begin{equation}\label{eq:gh-prime-powers}
+ g_h(p^\nu)=
+ \begin{cases}
+ p^{-\nu},&p\mid h,\\[0.6ex]
+ \displaystyle-\frac1{p^\nu(p-1)},&p\nmid h.
+ \end{cases}
+\end{equation}
+Thus, in the half-plane of absolute convergence and hence as a coefficient
+identity,
+\begin{equation}\label{eq:uniform-coefficient-convolution}
+ a_h(n)=\sum_{rk=n}g_h(r)\frac{\mu(k)}k.
+\end{equation}
+
+We need two uniform bounds for $g_h$.  The absolute Euler product at $s=0$
+and its first logarithmic derivative give
+\begin{align}
+ \sum_{r\ge1}|g_h(r)|
+ &\ll \log\log(3|h|),
+ \label{eq:gh-zero-moment}\\
+ \sum_{r\ge1}|g_h(r)|(1+\log r)
+ &\ll \bigl(1+\log\log(3|h|)\bigr)^2.
+ \label{eq:gh-first-log-moment}
+\end{align}
+Indeed, the factors with $p\nmid h$ form an absolutely convergent product,
+while those with $p\mid h$ contribute at most
+$\prod_{p\mid h}(1-p^{-1})^{-1}\ll\log\log(3|h|)$ and
+$\sum_{p\mid h}\log p/(p-1)\ll1+\log\log(3|h|)$.
+
+For the tail we use a fixed Rankin exponent.  If $0<\delta<1/2$, then
+\begin{equation}\label{eq:gh-rankin-product}
+ \sum_{r\ge1}|g_h(r)|r^\delta
+ \ll_\delta
+ \exp\!\left(C_\delta(1+(\log(3|h|))^\delta)\right).
+\end{equation}
+For $p\nmid h$ the relevant local product converges because its nontrivial
+part is $O_\delta(p^{-2+\delta})$.  For $p\mid h$ it is
+$(1-p^{-1+\delta})^{-1}$.  The standard prime-rearrangement bound
+$\sum_{p\mid h}p^{-1+\delta}\ll_\delta
+1+(\log(3|h|))^\delta$ proves \eqref{eq:gh-rankin-product}.  We emphasize
+that no assertion about arbitrary high logarithmic moments is needed here.
+
+Put
+\[
+ U(y)=\sum_{k\le y}\frac{\mu(k)}k,
+ \qquad
+ V(y)=\sum_{k\le y}\frac{\mu(k)\log k}{k}.
+\]
+The classical zero-free-region form of the prime number theorem, followed
+by partial summation, gives
+\begin{equation}\label{eq:UV-uniform-pnt}
+ U(y)\ll \e^{-c\sqrt{\log y}},
+ \qquad
+ V(y)=-1+O\bigl(\e^{-c\sqrt{\log y}}\bigr)
+ \quad(y\ge3),
+\end{equation}
+with a possible change in the positive absolute constant $c$.
+Using \eqref{eq:uniform-coefficient-convolution}, the left side of
+\eqref{eq:uniform-singular-coefficient} equals
+\begin{equation}\label{eq:uniform-coefficient-r-sum}
+ \sum_{r\le z}g_h(r)
+ \left\{-\log r\,U(z/r)-V(z/r)\right\}.
+\end{equation}
+
+Split at $r=z^{1/2}$.  On the lower range,
+\eqref{eq:UV-uniform-pnt} and \eqref{eq:gh-first-log-moment} replace the
+quantity in braces by $1$ with error
+$O_{A,K}((\log z)^{-A})$.  On the upper range, the elementary bound
+\[
+ |\log r\,U(z/r)+V(z/r)|\ll(\log(2z))^2
+\]
+is sufficient.  From \eqref{eq:gh-rankin-product}, the assumptions
+$|h|\le z^K$ and $0<\delta<1/2$ give
+\[
+ \sum_{r>z^{1/2}}|g_h(r)|
+ \ll_{\delta,K}z^{-\delta/2}
+ \exp\bigl(O_{\delta,K}((\log z)^\delta)\bigr)
+ \ll_{\delta,K}z^{-\delta/3}
+\]
+for sufficiently large $z$.  The same estimate replaces
+$\sum_{r\le z^{1/2}}g_h(r)$ by $G_h(0)$.  Consequently
+\eqref{eq:uniform-coefficient-r-sum} is
+$G_h(0)+O_{A,K}((\log z)^{-A})$.
+
+Finally, evaluation of \eqref{eq:Gh-local-factors} at zero gives
+\begin{equation}\label{eq:Gh-zero-singular-series}
+ G_h(0)=
+ \prod_{p\mid h}\frac p{p-1}
+ \prod_{p\nmid h}\left(1-\frac1{(p-1)^2}\right)
+ =\mathfrak S(h).
+\end{equation}
+If $h$ is odd, the second product has a zero factor at $p=2$; if $h$ is
+even, separating the factor at $2$ gives \eqref{eq:intro-singular-series}.
+This proves the lemma.
+\end{proof}
+
+\begin{remark}[Why the uniform proof is separate]
+The fixed-$h$ estimate with an $O_{A,h}$ constant does not imply
+\cref{lem:uniform-singular-coefficient} when $h$ grows.  The Rankin tail in
+the proof is what absorbs the mild growth of the Euler factors belonging to
+primes dividing $h$.
+\end{remark}
+
+\subsection{Uniform evaluation of the short source-divisor part}
+\label{subsec:uniform-short-transfer}
+
+For real $y\ge0$ and a reduced residue class $a\pmod q$, put
+\begin{equation}\label{eq:AP-error-definition}
+ E(y;q,a)=
+ \sum_{\substack{n\le y\\n\equiv a\, (\mathrm{mod}\,q)}}\Lambda(n)
+ -\frac y{\varphi(q)}.
+\end{equation}
+
+\begin{lemma}[Uniform non-coprime contribution]
+\label{lem:uniform-noncoprime}
+Fix $0<\eps<1/2$.  Uniformly for
+$1\le|h|\le2X^{1-\eps}$ and $1\le D\le2X$,
+\begin{equation}\label{eq:uniform-noncoprime-bound}
+ \sum_{\substack{d\le D\\(d,h)>1}}
+ |\mu(d)|\log(2d)
+ \sum_{X<dm\le2X}\Lambda(dm+h)
+ \ll_{\eps,\eta}X^\eta
+\end{equation}
+for every $\eta>0$, provided $X$ is sufficiently large.
+\end{lemma}
+
+\begin{proof}
+Write $n=dm$.  If $(d,h)>1$, choose a prime $p\mid(d,h)$.  Then
+$p\mid n+h$.  The condition $\Lambda(n+h)\ne0$ forces $n+h=p^j$.
+For sufficiently large $X$, the target interval lies in $(X/2,3X]$.
+Consequently only $O_\eps(1)$ powers $p^j$ lie in $(X+h,2X+h]$ for each
+$p\mid h$.
+For each resulting $n$,
+\[
+ \sum_{d\mid n}|\mu(d)|\log(2d)
+ \ll\tau(n)\log(2n)\ll_\eta X^\eta.
+\]
+The number of prime divisors of $h$ and the von Mangoldt weight cost only
+powers of $\log X$, which are absorbed after decreasing $\eta$.
+\end{proof}
+
+\begin{theorem}[Uniform sharp small-divisor transfer]
+\label{thm:uniform-small-divisor-transfer}
+Fix $A>0$ and $0<\eps<1/2$.  There is
+$B=B(A,\eps)>0$ such that, with
+\begin{equation}\label{eq:theoretical-D-cutoff}
+ D=\left\lfloor\frac{X^{1/2}}{(\log X)^B}\right\rfloor,
+\end{equation}
+one has
+\begin{equation}\label{eq:uniform-short-main}
+ \cC_{h,\le D}(X)
+ =\mathfrak S(h)X
+ +O_{A,\eps}\left(\frac{X}{(\log X)^A}\right)
+\end{equation}
+uniformly for all integers
+\begin{equation}\label{eq:uniform-h-range}
+ 1\le|h|\le2X^{1-\eps}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Expanding $a_D$ and writing $n=dm$ gives
+\begin{equation}\label{eq:sharp-small-expanded}
+ \cC_{h,\le D}(X)
+ =-\sum_{d\le D}\mu(d)\log d
+   \sum_{X<dm\le2X}\Lambda(dm+h).
+\end{equation}
+The terms with $(d,h)>1$ contribute $O_{A,\eps}(X(\log X)^{-A})$ by
+\cref{lem:uniform-noncoprime}, after choosing a fixed small $\eta<1$.
+
+If $(d,h)=1$, the inner sum is
+\begin{equation}\label{eq:sharp-AP-row}
+ \frac X{\varphi(d)}
+ +E(2X+h;d,h)-E(X+h;d,h).
+\end{equation}
+The maximal Bombieri--Vinogradov theorem states, after taking $B$ large
+enough in terms of the requested logarithmic saving, that
+\begin{equation}\label{eq:maximal-BV-used}
+ \sum_{d\le D}
+ \max_{(a,d)=1}\max_{y\le3X}
+ |E(y;d,a)|
+ \ll_{A,\eps}\frac{X}{(\log X)^{A+2}}.
+\end{equation}
+The range \eqref{eq:uniform-h-range} ensures that both endpoints in
+\eqref{eq:sharp-AP-row} lie below $3X$ for sufficiently large $X$.
+Multiplication by $\log d$ costs at most one logarithm, so the total
+progression error in \eqref{eq:sharp-small-expanded} is
+$O_{A,\eps}(X(\log X)^{-A-1})$.
+
+The continuous main term is exactly
+\[
+ -X\sum_{\substack{d\le D\\(d,h)=1}}
+ \frac{\mu(d)\log d}{\varphi(d)}.
+\]
+Because $D=X^{1/2+o(1)}$ and
+$|h|\le2X^{1-\eps}\le D^3$ for all sufficiently large $X$,
+\cref{lem:uniform-singular-coefficient} with $K=3$ evaluates it as
+$\mathfrak S(h)X+O_{A,\eps}(X(\log X)^{-A})$.  Combining the three parts
+proves the theorem.
+\end{proof}
+
+\begin{remark}[Classical analytic input]
+The estimate \eqref{eq:maximal-BV-used} is the classical maximal
+Bombieri--Vinogradov theorem \citep{Bombieri1965,Vinogradov1965,
+IwaniecKowalski2004}.  \Cref{thm:uniform-small-divisor-transfer} is a uniform
+application of that theorem, not a new distribution result for primes.
+\end{remark}

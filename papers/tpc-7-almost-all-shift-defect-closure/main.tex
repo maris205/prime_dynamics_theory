@@ -1,0 +1,143 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={The Large-Divisor Prime-Pair Defect at Almost All Shifts: Uniform Small-Divisor Transfer, Fourier Coordinates, and Finite-Conductor Energy Escape},
+ pdfauthor={Liang Wang},
+ pdfsubject={An almost-all-shift closure theorem for the exact large-divisor defect in a prime-pair correlation},
+ pdfkeywords={prime pairs, von Mangoldt correlation, Bombieri--Vinogradov theorem, almost-all shifts, Fourier correlation, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\e}{\mathrm e}
+
+\title{\textbf{The Large-Divisor Prime-Pair Defect}\
+\textbf{at Almost All Shifts:}\
+\textbf{Uniform Small-Divisor Transfer, Fourier Coordinates,}\
+\textbf{and Finite-Conductor Energy Escape}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+For a cutoff $D$, write the von Mangoldt function as the exact sum of its
+short source-divisor part and its complementary defect,
+\[
+ a_D(n)=-\sum_{\substack{d\mid n\\d\le D}}\mu(d)\log d,
+ \qquad
+ r_D(n)=\Lambda(n)-a_D(n).
+\]
+The preceding paper in this series isolated
+\[
+ \cT_{h,>D}(X)=\sum_{X<n\le2X}r_D(n)\Lambda(n+h)
+\]
+as the complete large-divisor remainder left after a
+Bombieri--Vinogradov evaluation of the prime-pair correlation.  For a fixed
+nonzero even shift, estimating this remainder by $o(X)$ is equivalent to the
+expected Hardy--Littlewood asymptotic and is therefore open.
+
+Here the quantifier on the shift is changed and nothing else is removed from
+the defect.  We first prove, uniformly for
+$1\le |h|\le 2X^{1-\eps}$, that the short-divisor correlation with
+$D=X^{1/2}(\log X)^{-B}$ equals
+$\mathfrak S(h)X+O_A(X(\log X)^{-A})$.  Combining this uniform transfer with
+the averaged Hardy--Littlewood theorem of Matom\"aki, Radziwi\l\l, and Tao
+shows that, whenever
+\[
+ X^{8/33+\eps}\le H\le X^{1-\eps},
+\]
+the full defect satisfies
+\[
+ \cT_{h,>D}(X)=O_{A,\eps}(X(\log X)^{-A})
+\]
+for all but $O_{A,\eps}(H(\log X)^{-A})$ shifts in every permitted window of
+length $2H$.  The deep almost-all prime-pair theorem is an external input;
+the contribution here is the uniform defect transfer and its exact
+interpretation.  Fixed $h$, in particular $h=2$, is not controlled.
+
+We place the result in additive Fourier coordinates: the defect correlations
+are matrix coefficients of the integer translation representation and their
+global square sum is an exact weighted Fourier energy.  This is a spectral
+identity, not a new dispersion estimate.  Finally, if $V_q$ denotes the
+space of $q$-periodic functions on $(N,2N]$, we prove uniformly for
+$q\le N^{1-\delta}$ that
+\[
+ \|P_{V_q}(\Lambda-1)\|_2^2
+ \ll_\delta N\frac q{\varphi(q)}
+ \ll_\delta N\log\log(3q),
+\]
+whereas $\|\Lambda-1\|_2^2\sim N\log N$.  Thus sublinear finite-conductor
+models capture a vanishing proportion of the prime fluctuation's linear
+$L^2$ energy.  This is a periodic-approximation boundary, not an
+impossibility theorem for nonlocal sieve or Type~II methods.  No fixed-shift
+prime-pair lower bound is proved.
+\end{abstract}
+
+\noindent\textbf{Keywords:} prime-pair defect; von Mangoldt correlation;
+almost-all shifts; Bombieri--Vinogradov theorem; Fourier translation;
+finite-conductor approximation.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N36; Secondary 11N13, 11N35, 42A38,
+47B15.
+
+\input{sections/introduction-scope}
+\input{sections/uniform-small-divisor}
+\input{sections/almost-all-closure}
+\input{sections/spectral-density}
+\input{sections/finite-conductor-barriers}
+\input{sections/computations-conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

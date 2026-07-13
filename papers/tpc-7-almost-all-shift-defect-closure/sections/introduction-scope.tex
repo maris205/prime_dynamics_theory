@@ -1,0 +1,123 @@
+\section{Introduction and strict scope}
+\label{sec:introduction-scope}
+
+For a nonzero integer $h$ and $X\ge2$, put
+\begin{equation}\label{eq:intro-pair-correlation}
+ \cC_h(X)=\sum_{X<n\le2X}\Lambda(n)\Lambda(n+h),
+\end{equation}
+with the convention $\Lambda(t)=0$ for $t\le0$.  The Hardy--Littlewood
+prediction is
+\begin{equation}\label{eq:intro-hl-prediction}
+ \cC_h(X)\sim\mathfrak S(h)X
+\end{equation}
+for each fixed even $h$, where
+\begin{equation}\label{eq:intro-singular-series}
+ \mathfrak S(h)=
+ \begin{cases}
+ \displaystyle
+ 2\prod_{p>2}\left(1-\frac1{(p-1)^2}\right)
+ \prod_{\substack{p\mid h\\p>2}}\frac{p-1}{p-2},&2\mid h,\\[1.3ex]
+ 0,&2\nmid h.
+ \end{cases}
+\end{equation}
+Even an $o(X)$ error in \eqref{eq:intro-hl-prediction} is not known for any
+single nonzero even shift; the case $h=2$ would imply the twin-prime
+conjecture.  This paper does not alter that fixed-shift fact.
+
+The elementary identity
+\begin{equation}\label{eq:intro-mobius-log}
+ \Lambda(n)=-\sum_{d\mid n}\mu(d)\log d
+\end{equation}
+gives, for every $1\le D\le2X$, the exact decomposition
+\begin{align}
+ a_D(n)&=-\sum_{\substack{d\mid n\\d\le D}}\mu(d)\log d,
+ \label{eq:intro-short-weight}\\
+ r_D(n)&=\Lambda(n)-a_D(n)
+       =-\sum_{\substack{d\mid n\\d>D}}\mu(d)\log d,
+ \label{eq:intro-defect-weight}\end{align}
+and hence
+\begin{equation}\label{eq:intro-exact-split}
+ \cC_h(X)=\cC_{h,\le D}(X)+\cT_{h,>D}(X),
+\end{equation}
+where
+\begin{align}
+ \cC_{h,\le D}(X)
+ &=\sum_{X<n\le2X}a_D(n)\Lambda(n+h),
+ \label{eq:intro-short-correlation}\\
+ \cT_{h,>D}(X)
+ &=\sum_{X<n\le2X}r_D(n)\Lambda(n+h).
+ \label{eq:intro-large-defect}
+\end{align}
+The terminology \emph{source divisor} refers to a divisor introduced by
+expanding the first von Mangoldt factor in \eqref{eq:intro-mobius-log}.
+
+TPC-6 proved for each fixed nonzero even $h$ that classical
+Bombieri--Vinogradov theory
+evaluates \eqref{eq:intro-short-correlation} at
+$D=X^{1/2}(\log X)^{-B}$, and consequently that
+\eqref{eq:intro-hl-prediction} is equivalent to
+$\cT_{h,>D}(X)=o(X)$ \citep{WangTPCSix2026}.  That equivalence named the
+missing object but supplied no estimate for it.  The present paper retains
+the same complete remainder and changes the topology in the shift variable:
+pointwise control is replaced by control outside a set of asymptotic density
+zero in each sufficiently long shift window.
+
+\subsection{Main contributions and provenance}
+\label{subsec:intro-contributions}
+
+The logical inputs and outputs are separated as follows.
+\begin{enumerate}[label=\textbf{R\arabic*.},leftmargin=3.2em]
+ \item We prove a singular-series coefficient estimate uniform for
+ $1\le|h|\le z^K$.  Together with the maximal
+ Bombieri--Vinogradov theorem, it yields
+ \[
+  \cC_{h,\le D}(X)
+  =\mathfrak S(h)X+O_A(X(\log X)^{-A})
+ \]
+ simultaneously for all $1\le|h|\le2X^{1-\eps}$.  The analytic ingredients
+ are classical; the point is the uniformity needed for the growing shift
+ window.
+ \item We use the averaged Hardy--Littlewood theorem of
+ \citet[Theorem~1.3(i)]{MatomakiRadziwillTao2019}.  It gives the same main
+ term for the full correlation outside
+ $O_{A,\eps}(H(\log X)^{-A})$ shifts when
+ $H\ge X^{8/33+\eps}$.  Subtraction proves that the \emph{same full defect}
+ from TPC-6 is small at almost all such shifts.  The exponent $8/33$ and the
+ deep prime-correlation estimate are entirely due to those authors; we do
+ not claim a new circle-method, dispersion, or Type~II estimate.
+ \item We record the exact Fourier representation of the defect and its
+ Plancherel energy.  This gives a rigorous translation-dynamical interface,
+ but the identity alone contains no cancellation estimate.
+ \item We prove a finite-conductor energy-escape theorem.  Periodic
+ functions of every modulus $q\le N^{1-\delta}$ capture only
+ $O_\delta(\log\log(3q)/\log N)$ of the $L^2$ energy of $\Lambda-1$.  This
+ quantifies a linear periodic-approximation boundary and does not extend to
+ arbitrary nonlinear or nonlocal information.
+\end{enumerate}
+
+Earlier almost-all-shift prime-pair results culminated, for the present
+purpose, in the theorem of Matom\"aki, Radziwi\l\l, and Tao, which improved
+the shift-window threshold from $X^{1/3+\eps}$ to
+$X^{8/33+\eps}$ \citep{Mikawa1991,MatomakiRadziwillTao2019}.  Our result is
+not a further improvement of that threshold.  It transfers their theorem to
+the exact large-source-divisor coordinate singled out by the preceding
+operator and sieve analysis.
+
+\subsection{What is not claimed}
+\label{subsec:intro-not-claimed}
+
+For clarity, none of the following is asserted.
+\begin{enumerate}[label=\textbf{B\arabic*.},leftmargin=3.2em]
+ \item The exceptional set is not shown to avoid any prescribed shift.
+ In particular, it may contain $h=2$ for every $X$.
+ \item No individual dyadic layer of \eqref{eq:intro-defect-weight} is shown
+ to be small.  Cancellation may occur between different divisor scales.
+ \item The Fourier identity is not a spectral gap, an operator
+ isomorphism, or an estimate for a fixed Fourier coefficient.
+ \item The finite-conductor theorem concerns orthogonal approximation by a
+ single periodic linear space.  It is not a universal parity-barrier theorem
+ and does not rule out growing bilinear, dispersion, automorphic, or other
+ nonlocal methods.
+ \item No lower bound for twin primes, no fixed-shift asymptotic, and no new
+ level of distribution for the primes is proved.
+\end{enumerate}

@@ -1,0 +1,137 @@
+\section{Finite diagnostics and conclusion}
+\label{sec:computations-conclusion}
+
+The theorems above are analytic and do not depend on computation.  We
+nevertheless supply a deterministic finite diagnostic for three purposes:
+to test the exact divisor split, to expose the slow finite-scale behavior of
+the tail, and to illustrate the periodic-energy quantity in
+\cref{thm:finite-conductor-energy-escape}.
+
+\subsection{FFT defect certificate}
+\label{subsec:FFT-certificate}
+
+The script \texttt{experiments/defect\_shift\_diagnostics.py} constructs
+$\mu$ and $\Lambda$ by sieving.  For each cutoff it forms $a_D$ by adding
+$-\mu(d)\log d$ on the multiples of $d$, puts $r_D=\Lambda-a_D$, and computes
+all correlations
+\[
+ \sum_{X<n\le2X}r_D(n)\Lambda(n+h),
+ \qquad 1\le h\le H,
+\]
+with one zero-padded FFT convolution.  Direct dot products at selected
+shifts and a second FFT for the short part verify
+\begin{equation}\label{eq:finite-computational-identity}
+ \cC_h(X)-\cC_{h,\le D}(X)-\cT_{h,>D}(X)=0
+\end{equation}
+up to floating-point roundoff.
+
+The committed run uses $X=2^{18}$, $H=2^{15}$, and the exploratory cutoffs
+$D=\operatorname{round}(X^\theta)$.  The even-shift summaries are shown in
+\cref{tab:finite-defect-quantiles}.
+
+\begin{table}[ht]
+\centering
+\caption{Finite even-shift defect diagnostics.  Each statistic is normalized
+by $X$; it is not an asymptotic estimate.}
+\label{tab:finite-defect-quantiles}
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+$\theta$ & $D$ & median $|\cT|/X$ & $90\%$ quantile & RMS \\
+\midrule
+$0.25$ & $23$  & $0.3053$ & $1.8429$ & $0.9964$ \\
+$0.35$ & $79$  & $0.2801$ & $0.9830$ & $0.5807$ \\
+$0.45$ & $274$ & $0.1284$ & $0.4629$ & $0.3033$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The maximum discrepancy in \eqref{eq:finite-computational-identity} over
+the three runs is below $5.8\times10^{-10}$.  The sizable normalized tails
+in \cref{tab:finite-defect-quantiles} are a useful warning: the theorem
+contains a non-explicit logarithmic cutoff constant, and small power cutoffs
+at $X=2^{18}$ do not numerically realize its asymptotic regime.
+
+\subsection{Periodic projection diagnostic}
+\label{subsec:periodic-projection-diagnostic}
+
+For every residue class modulo $q$, the script averages $\Lambda-1$ on that
+class and evaluates the exact projection formula
+\eqref{eq:projection-exact-formula}.  Selected captured-energy ratios appear
+in \cref{tab:finite-periodic-energy}.
+
+\begin{table}[ht]
+\centering
+\caption{Finite ratios
+$\|P_q(\Lambda-1)\|_2^2/\|\Lambda-1\|_2^2$ on $(N,2N]$.}
+\label{tab:finite-periodic-energy}
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+$N$ & $q=2$ & $q=30$ & $q=210$ \\
+\midrule
+$2^{15}$ & $0.1022$ & $0.2811$ & $0.3462$ \\
+$2^{16}$ & $0.0957$ & $0.2632$ & $0.3237$ \\
+$2^{17}$ & $0.0895$ & $0.2462$ & $0.3026$ \\
+$2^{18}$ & $0.0844$ & $0.2322$ & $0.2852$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The decrease is qualitatively consistent with
+\eqref{eq:captured-energy-ratio}, whose convergence is only logarithmic.
+No statistical fit or extrapolation is used in a proof.
+
+\begin{samepage}
+The full machine-readable record is
+\texttt{experiments/data/defect-shift-certificate.json}.  Its canonical
+payload SHA-256 is
+\begin{center}
+\small\ttfamily
+6F822312CE0699722A0830F98E91189823F3AB9ABE1F47810340E081AFFDAB30.
+\end{center}
+Six unit tests check the arithmetic arrays, the complete-cutoff identity,
+the FFT convention, Euler's totient, the exact periodic projection, and
+small-input/generator handling.
+\end{samepage}
+
+\begin{remark}[Computational boundary]
+The finite values do not verify the hypothesis of an unproved conjecture,
+choose the exceptional set in \cref{thm:complete-defect-almost-all}, or
+provide evidence that $h=2$ is regular.  Their role is reproducibility and
+finite algebraic validation only.
+\end{remark}
+
+\subsection{Conclusion and the remaining route}
+\label{subsec:conclusion}
+
+TPC-6 isolated the full large-source-divisor remainder and proved that its
+cancellation at a fixed nonzero even shift is exactly the missing prime-pair
+content.  The present paper replaces the fixed-shift quantifier in that
+ledger by an almost-all-shift quantifier:
+\begin{equation}\label{eq:conclusion-ledger}
+\begin{gathered}
+\text{uniform Bombieri--Vinogradov}\\[-2pt]
+\text{short-divisor transfer}
+\quad+\quad
+\text{MRT almost-all prime-pair theorem}
+\\
+\Longrightarrow
+\text{complete large-divisor defect is small at almost all shifts}.
+\end{gathered}
+\end{equation}
+This gives an explicit estimate for that object within the TPC-6 ledger, but
+only in shift density.  The fixed-coordinate spike in
+\cref{prop:fixed-coordinate-spike} proves the quantifier gap.  The periodic
+energy escape in \cref{thm:finite-conductor-energy-escape} and the
+shifted-prime M\"obius slice \eqref{eq:outer-slice-shifted-primes} mark
+boundaries for two natural strategies that might otherwise be proposed to
+specialize \eqref{eq:conclusion-ledger} to a prescribed even shift.
+
+One plausible route toward a subsequent fixed-shift advance would seek a
+coefficient-stable nonlocal estimate.  A rigorous but narrower intermediate
+target is a low-conductor second-coefficient transfer, in which a periodic
+factor observable is passed through the prime target by
+Bombieri--Vinogradov theory.  Such a theorem can describe exact arithmetic
+involutions at growing polylogarithmic conductor, but
+\cref{thm:finite-conductor-energy-escape} shows why it must not be confused
+with approximation of the full weight $\Lambda-1$.  The broad fixed-shift
+Type~II problem remains open.

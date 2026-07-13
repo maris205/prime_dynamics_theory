@@ -1,0 +1,168 @@
+\section{Almost-all-shift closure of the complete defect}
+\label{sec:almost-all-closure}
+
+We now change only the quantifier on $h$.  The deep input is quoted in the
+exact sharp-interval form needed here.
+
+\begin{theorem}[Matom\"aki--Radziwi\l\l--Tao]
+\label{thm:MRT-averaged-HL}
+Let $A>0$, $0<\eps<1/2$, and
+\begin{equation}\label{eq:sigma-eight-thirty-three}
+ \sigma=\frac8{33}.
+\end{equation}
+Suppose
+\begin{equation}\label{eq:MRT-H-range}
+ X^{\sigma+\eps}\le H\le X^{1-\eps},
+ \qquad
+ 0\le h_0\le X^{1-\eps}.
+\end{equation}
+Then
+\begin{equation}\label{eq:MRT-pair-asymptotic}
+ \cC_h(X)=\mathfrak S(h)X
+ +O_{A,\eps}\left(\frac{X}{(\log X)^A}\right)
+\end{equation}
+for all but
+\begin{equation}\label{eq:MRT-exception-count}
+ O_{A,\eps}\left(\frac{H}{(\log X)^A}\right)
+\end{equation}
+integers $h$ satisfying $|h-h_0|\le H$.
+\end{theorem}
+
+This is \citet[Theorem~1.3(i)]{MatomakiRadziwillTao2019}.  Their convention
+includes $\Lambda(n)=0$ for nonpositive $n$.  We exclude $h=0$ below, since
+the diagonal correlation has a different scale.  One excluded coordinate is
+absorbed by \eqref{eq:MRT-exception-count} in the range
+\eqref{eq:MRT-H-range}.
+
+\begin{theorem}[Complete-defect closure at almost all shifts]
+\label{thm:complete-defect-almost-all}
+Fix $A>0$ and $0<\eps<1/2$.  There exists
+$B=B(A,\eps)>0$ such that, for
+\begin{equation}\label{eq:closure-D}
+ D=\left\lfloor\frac{X^{1/2}}{(\log X)^B}\right\rfloor,
+\end{equation}
+and every $(H,h_0)$ in the range \eqref{eq:MRT-H-range}, one has
+\begin{equation}\label{eq:complete-defect-small}
+ \cT_{h,>D}(X)
+ =O_{A,\eps}\left(\frac{X}{(\log X)^A}\right)
+\end{equation}
+for all but
+\begin{equation}\label{eq:complete-defect-exceptions}
+ O_{A,\eps}\left(\frac{H}{(\log X)^A}\right)
+\end{equation}
+nonzero integers $h$ with $|h-h_0|\le H$.
+\end{theorem}
+
+\begin{proof}
+Every shift in the stated window satisfies
+\[
+ |h|\le h_0+H\le2X^{1-\eps}.
+\]
+Choose the logarithmic saving in
+\cref{thm:uniform-small-divisor-transfer} slightly larger than $A$.
+Uniformly for every nonzero $h$ in the window, it gives
+\begin{equation}\label{eq:short-part-window}
+ \cC_{h,\le D}(X)
+ =\mathfrak S(h)X
+ +O_{A,\eps}\left(\frac{X}{(\log X)^A}\right).
+\end{equation}
+Outside the exceptional set in \cref{thm:MRT-averaged-HL}, the full
+correlation satisfies the same formula.  Subtract
+\eqref{eq:short-part-window} from \eqref{eq:MRT-pair-asymptotic} and use the
+exact identity \eqref{eq:intro-exact-split}.
+\end{proof}
+
+\begin{remark}[What is genuinely controlled]
+\Cref{thm:complete-defect-almost-all} estimates the entire sum over all
+source divisors $d>D$.  It is not a surrogate tail, a truncated Type~II
+packet, or a statement in which an extra coefficient has been removed.
+On the other hand, the proof does not estimate any prescribed divisor layer
+separately; different layers may cancel in the complete sum.
+\end{remark}
+
+\begin{remark}[Provenance and priority]
+The prime-pair asymptotic and the exponent $8/33$ in
+\cref{thm:MRT-averaged-HL} are not new.  Earlier work treated longer shift
+windows, and \citet{MatomakiRadziwillTao2019} obtained the quoted threshold.
+Large-/small-divisor decompositions in parity problems also have important
+precedents, including \citet{MurtyVatwani2017}.  The theorem here is a
+transfer statement for the exact TPC-6 defect coordinate, supported by the
+uniform small-divisor theorem of \cref{sec:uniform-small-divisor}; it is not
+presented as a new almost-all prime-pair theorem.
+\end{remark}
+
+\subsection{Density and \texorpdfstring{fixed-$L^p$}{fixed-Lp} formulations}
+\label{subsec:density-Lp}
+
+Let
+\begin{equation}\label{eq:shift-window-set}
+ \cH(X;H,h_0)=
+ \{h\in\Z\setminus\{0\}:|h-h_0|\le H\}.
+\end{equation}
+
+\begin{corollary}[Shift-density convergence]
+\label{cor:shift-density-convergence}
+Fix $A>0$ and $0<\eps<1/2$.  There is $B=B(A,\eps)>0$ such that, with
+$D$ as in \eqref{eq:closure-D}, for every $(H,h_0)$ in
+\eqref{eq:MRT-H-range},
+\begin{equation}\label{eq:density-tail-bound}
+ \frac1H\#\left\{h\in\cH(X;H,h_0):
+ \frac{|\cT_{h,>D}(X)|}{X}>(\log X)^{-A}\right\}
+ \ll_{A,\eps}(\log X)^{-A}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Apply \cref{thm:complete-defect-almost-all} with requested saving $A+2$.
+For sufficiently large $X$, its implicit constant times
+$(\log X)^{-A-2}$ is at most $(\log X)^{-A}$.  Every shift above the displayed
+threshold therefore belongs to that theorem's exceptional set, whose
+relative size is $O_{A,\eps}((\log X)^{-A-2})$.  This proves the stated,
+weaker bound.
+\end{proof}
+
+\begin{corollary}[Fixed-$L^p$ shift closure]
+\label{cor:fixed-Lp-closure}
+Fix $p\ge1$, $A>0$, and $0<\eps<1/2$.  There is
+$B=B(A,p,\eps)>0$ such that, with $D$ as in \eqref{eq:closure-D}, for every
+$(H,h_0)$ in \eqref{eq:MRT-H-range},
+\begin{equation}\label{eq:fixed-Lp-closure}
+ \left(
+  \frac1{\#\cH(X;H,h_0)}
+  \sum_{h\in\cH(X;H,h_0)}
+  \left|\frac{\cT_{h,>D}(X)}X\right|^p
+ \right)^{1/p}
+ \ll_{A,p,\eps}(\log X)^{-A}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The elementary pointwise bounds
+\begin{align*}
+ |\cC_h(X)|&\ll X(\log(3X))^2,\\
+ |\cC_{h,\le D}(X)|
+ &\le \log(3X)
+ \sum_{d\le D}\log(2d)\left(\frac Xd+1\right)
+ \ll X(\log(3X))^3
+\end{align*}
+give
+\begin{equation}\label{eq:defect-crude-pointwise}
+ |\cT_{h,>D}(X)|\ll X(\log(3X))^3.
+\end{equation}
+Choose a fixed auxiliary exponent $R>p(A+3)+1$ and apply
+\cref{thm:complete-defect-almost-all} with requested saving $R$.  On the
+regular shifts use that theorem, and on its $O(H(\log X)^{-R})$ exceptional
+set use \eqref{eq:defect-crude-pointwise}.  Since
+\[
+ \frac1{\#\cH(X;H,h_0)}
+ \sum_{h\in\cH(X;H,h_0)}
+ \left|\frac{\cT_{h,>D}(X)}X\right|^p
+ \ll_{R,p,\eps}(\log X)^{-Rp}+(\log X)^{3p-R},
+\]
+taking the $p$th root and absorbing the fixed constants proves
+\eqref{eq:fixed-Lp-closure}.
+\end{proof}
+
+The freedom to request arbitrary logarithmic saving in
+\cref{thm:MRT-averaged-HL} is what allows every fixed $p$.  No claim is made
+for $p$ growing with $X$ or for the supremum norm.

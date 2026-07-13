@@ -1,0 +1,117 @@
+\section{Translation dynamics and additive spectral coordinates}
+\label{sec:spectral-density}
+
+The shift variable has an exact and elementary dynamical realization.  This
+section records it in order to distinguish the resulting identity from the
+analytic estimate imported in \cref{thm:MRT-averaged-HL}.
+
+Put $\e(x)=\exp(2\pi i x)$.  For a finitely supported sequence
+$f:\Z\to\C$, define
+\begin{equation}\label{eq:additive-Fourier-transform}
+ \widehat f(\theta)=\sum_{n\in\Z}f(n)\e(n\theta),
+ \qquad \theta\in\T=\R/\Z.
+\end{equation}
+
+\begin{proposition}[Exact Fourier representation of correlations]
+\label{prop:exact-correlation-spectrum}
+Let $f,g:\Z\to\R$ be finitely supported and set
+\begin{equation}\label{eq:generic-shift-correlation}
+ C_h(f,g)=\sum_{n\in\Z}f(n)g(n+h).
+\end{equation}
+Then
+\begin{align}
+ C_h(f,g)
+ &=\int_{\T}
+   \overline{\widehat f(\theta)}\widehat g(\theta)
+   \e(-h\theta)\,d\theta,
+ \label{eq:correlation-Fourier-coefficient}\\
+ \sum_{h\in\Z}|C_h(f,g)|^2
+ &=\int_{\T}|\widehat f(\theta)|^2
+                  |\widehat g(\theta)|^2\,d\theta.
+ \label{eq:correlation-Plancherel}
+\end{align}
+Equivalently, if $U^h g(n)=g(n+h)$ is the unitary integer-translation
+representation on $\ell^2(\Z)$, then
+\begin{equation}\label{eq:translation-matrix-coefficient}
+ C_h(f,g)=\langle f,U^h g\rangle_{\ell^2(\Z)}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Expand the integrand in \eqref{eq:correlation-Fourier-coefficient}.  Fourier
+orthogonality retains exactly the pairs $t=n+h$.  Formula
+\eqref{eq:correlation-Plancherel} is Parseval applied to the Fourier
+coefficients in \eqref{eq:correlation-Fourier-coefficient}, and
+\eqref{eq:translation-matrix-coefficient} is the definition of $U^h$.
+\end{proof}
+
+For the defect application, let $Y=2X^{1-\eps}$ and define
+\begin{align}
+ f_{X,D}(n)&=r_D(n)\one_{X<n\le2X},
+ \label{eq:defect-Fourier-sequence}\\
+ g_{X,Y}(t)&=\Lambda(t)\one_{X-Y<t\le2X+Y}.
+ \label{eq:prime-Fourier-sequence}
+\end{align}
+For every $|h|\le Y$,
+\begin{equation}\label{eq:defect-as-matrix-coefficient}
+ \cT_{h,>D}(X)
+ =C_h(f_{X,D},g_{X,Y})
+ =\langle f_{X,D},U^h g_{X,Y}\rangle.
+\end{equation}
+Thus the complete defect is an inverse Fourier coefficient of
+\begin{equation}\label{eq:defect-spectral-product}
+ \overline{\widehat f_{X,D}(\theta)}
+ \widehat g_{X,Y}(\theta).
+\end{equation}
+The global energy identity is
+\begin{equation}\label{eq:defect-global-Fourier-energy}
+ \sum_{h\in\Z}|C_h(f_{X,D},g_{X,Y})|^2
+ =\int_{\T}|\widehat f_{X,D}(\theta)|^2
+             |\widehat g_{X,Y}(\theta)|^2\,d\theta.
+\end{equation}
+
+\begin{remark}[Identity versus estimate]
+Neither \eqref{eq:defect-spectral-product} nor
+\eqref{eq:defect-global-Fourier-energy} shows that a coefficient is small.
+The analytic content in \cref{thm:complete-defect-almost-all} comes from
+Bombieri--Vinogradov for the short divisor coordinate and from the theorem
+of Matom\"aki, Radziwi\l\l, and Tao for the full correlation.  Parseval does
+not replace those inputs.
+\end{remark}
+
+\begin{remark}[A triangular family, not a fixed mixing system]
+Both vectors in \eqref{eq:defect-as-matrix-coefficient}, the cutoff $D$, and
+the window grow with $X$.  Therefore
+\cref{cor:fixed-Lp-closure} is a statement about a triangular family of
+translation matrix coefficients.  It is not a mixing theorem for one fixed
+pair of vectors, a spectral gap for $U$, or a spectral isomorphism with a
+logistic map.
+\end{remark}
+
+\subsection{Why density convergence does not select a fixed shift}
+\label{subsec:density-does-not-select}
+
+The topology in \cref{cor:fixed-Lp-closure} deliberately forgets a set of
+vanishing relative size.  Evaluation at one coordinate is not uniformly
+continuous in that topology.
+
+\begin{proposition}[Fixed-coordinate spike]
+\label{prop:fixed-coordinate-spike}
+Let $\cH_X\subset\Z$ be finite sets with $|\cH_X|\to\infty$, all containing
+a fixed integer $h_\ast$.  Define
+\begin{equation}\label{eq:spike-sequence}
+ s_X(h)=\one_{h=h_\ast}.
+\end{equation}
+Then, for every fixed $1\le p<\infty$,
+\begin{equation}\label{eq:spike-Lp-vanishing}
+ \left(\frac1{|\cH_X|}\sum_{h\in\cH_X}|s_X(h)|^p\right)^{1/p}
+ =|\cH_X|^{-1/p}\longrightarrow0,
+\end{equation}
+while $s_X(h_\ast)=1$ for every $X$.
+\end{proposition}
+
+Consequently, no abstract passage from \eqref{eq:fixed-Lp-closure} to a
+bound at $h=2$ is possible.  In fact the allowance
+$O(H(\log X)^{-A})$ in \eqref{eq:complete-defect-exceptions} grows without
+bound in the permitted power-sized windows, so the exceptional set may
+contain any preassigned finite collection of shifts at every scale.

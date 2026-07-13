@@ -1,0 +1,161 @@
+\section{Finite-conductor energy escape and a layerwise boundary}
+\label{sec:finite-conductor-barriers}
+
+The almost-all-shift theorem uses genuinely nonlocal information about prime
+correlations.  We next quantify why simply fitting the prime fluctuation by a
+periodic observable does not recover comparable $L^2$ energy.
+
+\subsection{Orthogonal projection onto periodic observables}
+\label{subsec:periodic-projection}
+
+Let
+\begin{equation}\label{eq:dyadic-integer-interval}
+ I_N=\{n\in\Z:N<n\le2N\}
+\end{equation}
+and equip $\ell^2(I_N)$ with counting measure.  Let $V_q(N)$ be the subspace
+of restrictions to $I_N$ of $q$-periodic complex functions, and let $P_q$ be
+the orthogonal projection onto $V_q(N)$.
+
+\begin{theorem}[Finite-conductor energy escape]
+\label{thm:finite-conductor-energy-escape}
+Fix $0<\delta<1$.  Uniformly for integers
+\begin{equation}\label{eq:energy-q-range}
+ 1\le q\le N^{1-\delta},
+\end{equation}
+one has
+\begin{equation}\label{eq:periodic-projection-bound}
+ \|P_q(\Lambda-1)\|_{\ell^2(I_N)}^2
+ \ll_\delta N\frac q{\varphi(q)}
+ \ll_\delta N\log\log(3q).
+\end{equation}
+On the other hand,
+\begin{equation}\label{eq:prime-fluctuation-energy}
+ \|\Lambda-1\|_{\ell^2(I_N)}^2\sim N\log N.
+\end{equation}
+Consequently, uniformly in \eqref{eq:energy-q-range},
+\begin{align}
+ \frac{\|P_q(\Lambda-1)\|_2^2}{\|\Lambda-1\|_2^2}
+ &\ll_\delta\frac{\log\log(3q)}{\log N}=o_\delta(1),
+ \label{eq:captured-energy-ratio}\\
+ \inf_{b\in V_q(N)}\|\Lambda-1-b\|_2^2
+ &=(1-o_\delta(1))N\log N.
+ \label{eq:periodic-best-approximation}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+For $a\pmod q$, let
+\begin{equation}\label{eq:residue-class-count}
+ N_a=\#\{n\in I_N:n\equiv a\pmod q\}.
+\end{equation}
+The range \eqref{eq:energy-q-range} gives
+$N_a=N/q+O(1)\asymp_\delta N/q$ uniformly for sufficiently large $N$.
+For any $f\in\ell^2(I_N)$, the projection is the residue-class average, so
+\begin{equation}\label{eq:projection-exact-formula}
+ \|P_qf\|_2^2
+ =\sum_{a\, (\mathrm{mod}\,q)}
+  \frac1{N_a}
+  \left|\sum_{\substack{n\in I_N\\n\equiv a\, (\mathrm{mod}\,q)}}
+  f(n)\right|^2.
+\end{equation}
+
+Let $\Lambda_{\mathrm{pr}}(n)=\log n$ when $n$ is prime and zero otherwise.
+If $(a,q)=1$, the Brun--Titchmarsh inequality and
+$\log(N/q)\ge\delta\log N$ imply
+\begin{equation}\label{eq:BT-weighted-row}
+ \sum_{\substack{N<p\le2N\\p\equiv a\, (\mathrm{mod}\,q)}}\log p
+ \ll_\delta\frac N{\varphi(q)}.
+\end{equation}
+We use here only the classical Brun--Titchmarsh inequality; the other
+standard prime-number estimates in this proof may be found, for example, in
+\citet{MontgomeryVaughan2007}.
+Thus the residue sum of $\Lambda_{\mathrm{pr}}-1$ has absolute value
+$O_\delta(N/\varphi(q))$.  If $(a,q)>1$, no prime $p>N>q$ lies in that
+class, and the residue sum is simply $-N_a$.  Substitution into
+\eqref{eq:projection-exact-formula} yields
+\begin{equation}\label{eq:prime-only-projection}
+ \|P_q(\Lambda_{\mathrm{pr}}-1)\|_2^2
+ \ll_\delta N\frac q{\varphi(q)}+N
+ \ll_\delta N\frac q{\varphi(q)}.
+\end{equation}
+
+The prime-power remainder
+$R_{\mathrm{pp}}=\Lambda-\Lambda_{\mathrm{pr}}$ satisfies
+\begin{equation}\label{eq:prime-power-L2}
+ \|R_{\mathrm{pp}}\|_2^2
+ \le\sum_{\substack{N<p^k\le2N\\k\ge2}}(\log p)^2
+ \ll N^{1/2}(\log N)^2.
+\end{equation}
+Orthogonal projection is a contraction.  Combining
+\eqref{eq:prime-only-projection} and \eqref{eq:prime-power-L2}, using
+$\|u+v\|^2\le2\|u\|^2+2\|v\|^2$, proves the first bound in
+\eqref{eq:periodic-projection-bound}.  The standard estimate
+$q/\varphi(q)\ll\log\log(3q)$ proves the second.
+
+The prime number theorem and partial summation give
+\[
+ \sum_{n\in I_N}\Lambda(n)\sim N,
+ \qquad
+ \sum_{n\in I_N}\Lambda(n)^2\sim N\log N,
+\]
+which proves \eqref{eq:prime-fluctuation-energy}.  Finally, the orthogonal
+decomposition
+\[
+ \inf_{b\in V_q(N)}\|\Lambda-1-b\|_2^2
+ =\|(I-P_q)(\Lambda-1)\|_2^2
+ =\|\Lambda-1\|_2^2-\|P_q(\Lambda-1)\|_2^2
+\]
+gives \eqref{eq:captured-energy-ratio} and
+\eqref{eq:periodic-best-approximation}.
+\end{proof}
+
+\begin{remark}[Exact boundary of the theorem]
+The space $V_q(N)$ is a linear finite-conductor model.  A small projection
+onto $V_q(N)$ says nothing by itself about bilinear forms, adaptive weights,
+growing collections of moduli, or nonlinear sieve information.  Thus
+\cref{thm:finite-conductor-energy-escape} is not a general impossibility
+theorem for analytic number theory.
+\end{remark}
+
+\subsection{The outer divisor slice already sees shifted-prime M\"obius}
+\label{subsec:outer-divisor-slice}
+
+The exact defect can also be written
+\begin{equation}\label{eq:defect-hyperbolic-ledger}
+ \cT_{h,>D}(X)
+ =-\sum_{D<d\le2X}\mu(d)\log d
+   \sum_{X<dm\le2X}\Lambda(dm+h).
+\end{equation}
+If $d>X$, the inner variable is forced to be $m=1$.  Therefore the outermost
+slice is exactly
+\begin{equation}\label{eq:outermost-defect-slice}
+ \cO_h(X)
+ =-\sum_{X<d\le2X}\mu(d)\log d\,\Lambda(d+h).
+\end{equation}
+For fixed $h$, removing target prime powers of exponent at least two gives
+\begin{equation}\label{eq:outer-slice-shifted-primes}
+ \cO_h(X)
+ =-\sum_{X+h<p\le2X+h}
+   \mu(p-h)\log(p-h)\log p
+ +O_h\bigl(X^{1/2}(\log X)^2\bigr).
+\end{equation}
+
+The neighboring unweighted assertion
+\begin{equation}\label{eq:shifted-prime-mobius-folklore}
+ \sum_{p\le X}\mu(p+h)=o(\pi(X))
+\end{equation}
+for a fixed nonzero shift is a folklore open problem.  Averaged-shift forms
+of \eqref{eq:shifted-prime-mobius-folklore} are known
+\citep{Lichtman2022,LichtmanTeravainen2022}.  Formula
+\eqref{eq:outer-slice-shifted-primes} explains why a proposed proof that
+bounds every divisor slice separately already meets a difficult
+fixed-shift correlation at the outer edge.
+
+\begin{remark}[No inference for an individual layer]
+The smallness of the complete sum in
+\cref{thm:complete-defect-almost-all} does not imply that
+\eqref{eq:outermost-defect-slice} is small.  Other ranges of $d$ in
+\eqref{eq:defect-hyperbolic-ledger} may cancel it.  The observation above is
+a warning against layerwise absolute-value arguments, not a deduction from
+the complete-tail theorem.
+\end{remark}
