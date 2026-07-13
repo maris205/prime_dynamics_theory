@@ -1,0 +1,184 @@
+\section{Introduction and scope}\label{sec:introduction}
+
+This paper makes one specific transition: from an exact finite Fourier
+description of a centered Chinese-remainder pair kernel to asymptotic
+cancellation on genuinely power-short factor boxes.  The character-sum input
+is classical.  The new point is its conductor-by-conductor assembly against
+the exact multipliers and shift Parseval identity of the companion paper
+\citep{WangCenteredKernels2026}.  In particular, we do not prove a new
+P\'olya--Vinogradov or Burgess estimate.
+
+Let
+\begin{equation}\label{eq:intro-Q-G-kappa}
+ Q=\prod_{w<p\le w^2}p,
+ \qquad
+ G=(\Z/Q\Z)^\times,
+ \qquad
+ g=\varphi(Q),
+ \qquad
+ \kappa=\prod_{p\mid Q}\frac{p-2}{p-1}.
+\end{equation}
+For integer intervals $I,J$ of the same length $L<Q$, and for $(h,Q)=1$,
+write
+\begin{equation}\label{eq:intro-box-form}
+ \cB_h(I,J)
+ =\sum_{\substack{m\in I,\ n\in J\\(mn,Q)=1}}
+ \left\{
+  \kappa^{-1}\one_{(mn+h,Q)=1}-1
+ \right\}.
+\end{equation}
+Thus the coefficient on the unit support is identically one.  Arbitrary
+bounded coefficients are not included in the theorems below.  The centering
+in \eqref{eq:intro-box-form} is the exact complete-group centering, not an
+empirical centering chosen from the observed box.
+
+\subsection{Main results}
+
+Fix $0<\eta<1$ and put
+\begin{equation}\label{eq:intro-power-short-length}
+ L=\left\lceil Q^{1-\eta}\right\rceil.
+\end{equation}
+Uniformly in the locations of $I$ and $J$, we prove
+\begin{equation}\label{eq:intro-complete-shift-result}
+ \frac1{L^2}
+ \left(
+  \frac1g\sum_{\ell\in G}|\cB_{2\ell}(I,J)|^2
+ \right)^{1/2}
+ =o(1)
+ \qquad (w\to\infty).
+\end{equation}
+This is a complete fully-active-shift mean: $(\ell,Q)=1$ ensures that every
+prime in the window is active for $h=2\ell$.  It is not a conclusion for
+each shift separately.
+
+The complete average can be sampled on a much shorter interval.  Let $\cL$
+be any interval of
+\begin{equation}\label{eq:intro-short-shift-length}
+ H=\left\lfloor Q^{1/\log w}\right\rfloor
+\end{equation}
+consecutive integers and set
+$H_Q=\#\{\ell\in\cL:(\ell,Q)=1\}$.  Then, again for every fixed
+$0<\eta<1$ and uniformly in the locations of all three intervals,
+\begin{equation}\label{eq:intro-short-shift-result}
+ \frac1{L^2}
+ \left(
+  \frac1{H_Q}
+  \sum_{\substack{\ell\in\cL\\(\ell,Q)=1}}
+  |\cB_{2\ell}(I,J)|^2
+ \right)^{1/2}
+ =o(1).
+\end{equation}
+Although $H=Q^{o(1)}$, this remains an averaged theorem and does not select a
+prescribed member of $\cL$.
+
+For the prescribed local shift, the result is necessarily stated separately.
+For every fixed $0<\eta<4/5$,
+\begin{equation}\label{eq:intro-fixed-shift-result}
+ \frac{\cB_2(I,J)}{L^2}=o(1),
+\end{equation}
+uniformly in the locations of $I,J$.  The range comes from choosing a
+conductor cutoff $R=Q^\alpha$ with
+\begin{equation}\label{eq:intro-cutoff-compatibility}
+ \eta<\alpha<4(1-\eta):
+\end{equation}
+after choosing such an $\alpha$, one fixes a sufficiently large Burgess
+parameter so that the slightly stronger finite-parameter upper inequality
+also holds.  Low conductors are treated by Burgess and high conductors by the exact kernel
+multiplier.  We make no assertion at $\eta=1$ or $\eta=4/5$, and neither
+strict range is claimed to be optimal or to be a barrier for other methods.
+
+There is also a finite algebraic result of a different kind.  We construct a
+nonnegative shifted-divisor square which majorizes the relevant local
+residue-avoidance indicator and has every nonconstant one-prime Fourier mode
+equal to zero.  Its remaining nonconstant spectrum lies on two-prime
+conductors.  This construction explains both what an ordinary same-window
+divisor square cannot change on the unit group and what cross-prime coupling
+can change.  It is a finite spectral design, not a prime-detecting sieve
+asymptotic.
+
+\subsection{Where the power saving comes from}
+
+For a character $\chi\in\widehat G$, let $q_\chi$ be the product of the local
+primes on which $\chi$ is nontrivial.  Since $Q$ is squarefree, $\chi$ is
+induced from a primitive character of conductor exactly $q_\chi$.  The
+companion calculation gives, for $\chi\ne\one$, an exact kernel coefficient
+of modulus
+\begin{equation}\label{eq:intro-exact-multiplier}
+ d(\chi)=\prod_{p\mid q_\chi}\frac1{p-2},
+\end{equation}
+together with an exact diagonal Parseval formula after averaging the fully
+active shifts \citep{WangCenteredKernels2026}.  Reduction to the primitive
+conductor converts each rough interval transform into ordinary incomplete
+character sums.  P\'olya--Vinogradov, as presented for example in
+\citep[Section~9.4]{MontgomeryVaughan2007}, gives a useful intermediate
+power-short range.  The final ranges in all three main statements use the
+Burgess estimate for squarefree, hence cubefree, conductors
+\citep{Burgess1962,Burgess1963II}.  At high conductor,
+\eqref{eq:intro-exact-multiplier} itself supplies the decay.  The contribution
+here is this division of labor and the resulting exponents for the particular
+CRT pair kernel, not any strengthening of those classical character-sum
+theorems.
+
+The distinction from earlier sifted character sums is worth recording.
+Schlage-Puchta inserted a sifting device into a character sum in a specific
+application \citep{SchlagePuchta2006}; Puchta's short character sums over
+primes use a large-sieve inequality for prime-supported coefficients together
+with the Selberg sieve \citep{Puchta2003}.  Our sums instead have constant
+coefficients on the $Q$-unit support and a two-variable centered periodic
+kernel.  Those works provide important methodological context, but their
+prime-supported conclusions are neither inputs to nor consequences of
+\eqref{eq:intro-complete-shift-result}--\eqref{eq:intro-fixed-shift-result}.
+
+Low-conductor exceptional behavior also plays a central role in general
+Bombieri--Vinogradov theories for multiplicative functions
+\citep{GranvilleShao2018,GranvilleShao2019}.  Those theorems concern
+distribution in arithmetic progressions, averaged over moduli, under
+Siegel--Walfisz and related hypotheses.  Here the modulus $Q$ is one fixed
+squarefree product, the averaging in \eqref{eq:intro-complete-shift-result}
+is over local shifts, and the exact conductor weight comes from the kernel.
+Consequently, the present theorem is not a Bombieri--Vinogradov theorem for a
+new multiplicative function.
+
+The congruence $mn\equiv-h\pmod q$ also places the problem near the literature
+on modular hyperbolas; see the survey \citep{Shparlinski2012}.  Our condition,
+however, is a product of exclusions at the primes dividing $Q$, followed by
+exact CRT centering.  We use its specialized character factorization and do
+not claim a new point-count estimate for a modular hyperbola.
+
+Finally, factorability has a precise meaning in results on primes in
+arithmetic progressions.  The large-modulus work of
+\citet{BombieriFriedlanderIwaniec1986} and its extensions use structured
+averages that are far more than a formal factorization of one squarefree
+integer.  Maynard's fixed-residue-class theorem uses moduli
+with suitably placed divisors, whereas the well-factorable theorem averages
+prime-progression errors with suitably well-factorable modulus weights
+\citep{Maynard2025FixedResidue,Maynard2025WellFactorable}.  Neither condition
+is supplied merely by writing $Q$ as a product of primes.  Our shift average
+is not a well-factorable modulus average, and \eqref{eq:intro-fixed-shift-result}
+contains none of the prime-sensitive dispersion or Type~II input in those
+works.
+
+\subsection{Selberg form and strict boundary of the claims}
+
+The nonnegative shifted-divisor square is motivated by the algebraic form of
+Selberg sieve weights; standard sieve theory and modern smoothing questions
+are treated in \citep{FriedlanderIwaniec2010,GranvilleKoukoulopoulosMaynard2021}.
+Our use is deliberately finite: coefficients are chosen so that specified
+Fourier modes of a local function vanish exactly.  We do not optimize an
+asymptotic upper- or lower-bound sieve, and the label ``Selberg-form'' does not
+turn the weight into a detector of primes.
+
+More generally, every asymptotic box result in this paper concerns the
+coefficient-one periodic expression \eqref{eq:intro-box-form}; the separate
+quadratic design is a finite local weight.  There is no von Mangoldt function
+$\Lambda$, no prime-supported coefficient sequence, and no Type~II estimate
+for such a sequence.  An ambient estimate $o(L^2)$ is also not a positive main term on
+the prime-pair scale.  Classical sieve parity remains a separate obstruction
+\citep{HeathBrown1982}, and prime-producing asymptotic sieve arguments require
+additional information absent here \citep{FriedlanderIwaniec1998}.  Therefore
+none of \eqref{eq:intro-complete-shift-result}--\eqref{eq:intro-fixed-shift-result},
+nor the finite quadratic design, implies or provides evidence for the
+twin-prime conjecture.  The paper's claim is narrower: classical incomplete
+character-sum tools, combined with an exact CRT kernel, now reach power-short
+unweighted rough boxes and expose several concrete prime-sensitive interfaces
+that this local model does not control.

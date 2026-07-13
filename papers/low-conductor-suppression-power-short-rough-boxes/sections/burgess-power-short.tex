@@ -1,0 +1,500 @@
+\section{Primitive reduction and power-short rough boxes}
+\label{sec:burgess-power-short}
+
+The exact kernel identities become useful on power-short intervals only after
+one controls the interval transforms at low conductor.  This section supplies
+that input by a standard imprimitive-to-primitive reduction followed by
+classical character-sum estimates.  Neither the P\'olya--Vinogradov inequality
+nor the Burgess bound used below is new; our only use of them is through the
+rough transform dictated by the kernel.
+
+\subsection{The rough interval transform}
+\label{subsec:burgess-rough-transform}
+
+Let $q>1$ divide the squarefree modulus $Q$, and let $\chi^*$ be a primitive
+Dirichlet character of conductor $q$.  Inflating $\chi^*$ to modulus $Q$
+gives the character
+\begin{equation}\label{eq:burgess-inflated-character}
+ \chi_Q(n)=\chi^*(n)\one_{(n,Q/q)=1}.
+\end{equation}
+Thus $\chi_Q$ vanishes off the units modulo $Q$ and, on $G$, has exact local
+support product $q$.  For an integer interval $I$, define its
+\emph{$Q$-rough character transform} by
+\begin{equation}\label{eq:burgess-rough-interval-transform}
+ \mathfrak A_I(Q;\chi^*)
+ :=\sum_{n\in I}\chi_Q(n)
+ =\sum_{\substack{n\in I\\(n,Q)=1}}\chi^*(n).
+\end{equation}
+Under the identification in \eqref{eq:local-prime-support-conductor}, this is
+exactly $A_I(\chi)$ from \eqref{eq:rough-character-transforms}.
+
+For $d\mid Q/q$, put
+\begin{equation}\label{eq:burgess-dilated-interval}
+ I/d=\{m\in\Z:dm\in I\},
+ \qquad L_d=|I/d|.
+\end{equation}
+The set $I/d$ is an integer interval, possibly empty, and if $L=|I|$ then
+$L_d\le L/d+1$.  M\"obius inversion in \eqref{eq:burgess-inflated-character}
+gives the following exact reduction.
+
+\begin{lemma}[Imprimitive-to-primitive reduction]
+\label{lem:burgess-mobius-reduction}
+For every $q\mid Q$, $q>1$, every primitive $\chi^*\pmod q$, and every
+integer interval $I$,
+\begin{equation}\label{eq:burgess-mobius-reduction}
+ \mathfrak A_I(Q;\chi^*)
+ =\sum_{d\mid Q/q}\mu(d)\chi^*(d)
+   \sum_{m\in I/d}\chi^*(m).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Since $(d,q)=1$ for $d\mid Q/q$, inclusion--exclusion and complete
+multiplicativity give
+\begin{align*}
+ \mathfrak A_I(Q;\chi^*)
+ &=\sum_{n\in I}\chi^*(n)
+   \sum_{d\mid(n,Q/q)}\mu(d)\\
+ &=\sum_{d\mid Q/q}\mu(d)
+   \sum_{\substack{n\in I\\d\mid n}}\chi^*(n)
+ =\sum_{d\mid Q/q}\mu(d)\chi^*(d)
+   \sum_{m\in I/d}\chi^*(m).
+\end{align*}
+This also covers terms for which $(m,q)>1$, because both sides of
+$\chi^*(dm)=\chi^*(d)\chi^*(m)$ then vanish.
+\end{proof}
+
+We record three consequences in increasing analytic strength.  The first is
+only periodicity and the triangle inequality.  The second and third are the
+classical P\'olya--Vinogradov and Burgess bounds; see, for example,
+\citet{MontgomeryVaughan2007} and the original work of
+\citet{Burgess1962,Burgess1963II}.
+
+\begin{proposition}[Three classical bounds for the rough transform]
+\label{prop:burgess-three-rough-bounds}
+With the notation above, one has the elementary estimate
+\begin{align}
+ |\mathfrak A_I(Q;\chi^*)|
+ &\le \sum_{d\mid Q/q}\min\{L_d,q\}
+ \le \tau(Q/q)\min\{L+1,q\},
+ \label{eq:burgess-elementary-rough-bound}
+\end{align}
+and the P\'olya--Vinogradov estimate
+\begin{equation}\label{eq:burgess-pv-rough-bound}
+ |\mathfrak A_I(Q;\chi^*)|
+ \ll \tau(Q/q)\sqrt q\log(2q).
+\end{equation}
+For every integer $k\ge2$ and every $\eps>0$, the Burgess estimate is
+\begin{align}
+ |\mathfrak A_I(Q;\chi^*)|
+ &\ll_{k,\eps}
+ q^{(k+1)/(4k^2)+\eps}
+ \sum_{\substack{d\mid Q/q\\L_d>0}}L_d^{1-1/k}
+ \notag\\
+ &\le
+ \tau(Q/q)(L+1)^{1-1/k}
+ q^{(k+1)/(4k^2)+\eps}.
+ \label{eq:burgess-burgess-rough-bound}
+\end{align}
+All bounds are uniform in the location of $I$.  The implied constant in
+\eqref{eq:burgess-pv-rough-bound} is absolute, and that in
+\eqref{eq:burgess-burgess-rough-bound} depends only on $k$ and $\eps$.
+\end{proposition}
+
+\begin{proof}
+A nonprincipal character sums to zero over a complete period modulo $q$.
+After deleting complete periods, the trivial estimate for an interval of
+$L_d$ integers is therefore $\min\{L_d,q\}$.  Substitution in
+\eqref{eq:burgess-mobius-reduction} proves
+\eqref{eq:burgess-elementary-rough-bound}.
+
+P\'olya--Vinogradov gives
+\[
+ \left|\sum_{m\in I/d}\chi^*(m)\right|
+ \ll\sqrt q\log(2q)
+\]
+uniformly in $I/d$.  Summing over the $\tau(Q/q)$ divisors proves
+\eqref{eq:burgess-pv-rough-bound}.
+
+Finally, $q$ is squarefree and hence cubefree.  The classical cubefree-modulus
+form of Burgess is consequently available for every fixed integer $k\ge2$:
+after complete periods have been removed,
+\[
+ \left|\sum_{m\in I/d}\chi^*(m)\right|
+ \ll_{k,\eps}
+ L_d^{1-1/k}q^{(k+1)/(4k^2)+\eps}.
+\]
+Summing this inequality in \eqref{eq:burgess-mobius-reduction}, and then using
+$L_d\le L+1$, proves \eqref{eq:burgess-burgess-rough-bound}.  These steps do
+not assert a new character-sum estimate.
+\end{proof}
+
+\begin{remark}[Why unweighted intervals matter]
+\label{rem:burgess-unweighted-only}
+The exact reduction \eqref{eq:burgess-mobius-reduction} uses coefficient one
+on the rough integers.  It does not give the same bounds after inserting
+arbitrary coefficients, a von Mangoldt weight, or a prime-supported sequence.
+Such replacements require separate character-sum input.
+\end{remark}
+
+\subsection{Exact aggregation by local support}
+\label{subsec:burgess-support-aggregation}
+
+For $q\mid Q$, put
+\begin{equation}\label{eq:burgess-Dq-and-Xq}
+ D(q)=\prod_{p\mid q}(p-2)=d(q)^{-1},
+ \qquad
+ \mathfrak X(q)=\{\chi\in\whG:q_\chi=q\}.
+\end{equation}
+The characters in $\mathfrak X(q)$ are precisely the inflations of primitive
+characters of conductor $q$, and $|\mathfrak X(q)|=D(q)$.  Define the uniform
+rough-transform bounds
+\begin{equation}\label{eq:burgess-U-I-q}
+ \mathcal U_I(q)=\max_{\chi\in\mathfrak X(q)}|A_I(\chi)|,
+ \qquad
+ \mathcal U_J(q)=\max_{\chi\in\mathfrak X(q)}|A_J(\chi)|.
+\end{equation}
+
+The following bookkeeping is a direct support-by-support consequence of the
+exact kernel expansion recalled from \citet{WangCenteredKernels2026}.  It is
+stated explicitly because fixed-shift and shift-mean arguments use different
+coefficient masses.
+
+\begin{proposition}[Support-by-support kernel bounds]
+\label{prop:burgess-support-by-support}
+Let $(h,Q)=1$, and let $\cB_{h,q}$ be the portion of
+\eqref{eq:fixed-box-character-expansion} with $q_\chi=q$.  Then
+\begin{equation}\label{eq:burgess-fixed-support-bound}
+ |\cB_{h,q}(I,J)|
+ \le \mathcal U_I(q)\mathcal U_J(q).
+\end{equation}
+The exact-conductor contribution to the normalized complete fully-active-shift
+mean square satisfies
+\begin{equation}\label{eq:burgess-rms-support-bound}
+ \cE_q(I,J)
+ \le d(q)\mathcal U_I(q)^2\mathcal U_J(q)^2.
+\end{equation}
+Consequently, for every cutoff $R\ge1$,
+\begin{align}
+ |\cB_h^{\le R}(I,J)|
+ &\le\sum_{\substack{q\mid Q\\1<q\le R}}
+       \mathcal U_I(q)\mathcal U_J(q),
+ \label{eq:burgess-fixed-low-support-sum}\\
+ \cE^{\le R}(I,J)
+ &\le\sum_{\substack{q\mid Q\\1<q\le R}}
+       d(q)\mathcal U_I(q)^2\mathcal U_J(q)^2.
+ \label{eq:burgess-rms-low-support-sum}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+For exact conductor $q$, every coefficient in
+\eqref{eq:exact-kernel-coefficient} has modulus $d(q)$ and there are
+$D(q)=d(q)^{-1}$ such characters.  The triangle inequality therefore gives
+\eqref{eq:burgess-fixed-support-bound}.  Likewise,
+\eqref{eq:energy-exact-conductor} gives
+\[
+ \cE_q(I,J)
+ \le d(q)^2D(q)\mathcal U_I(q)^2\mathcal U_J(q)^2,
+\]
+which is \eqref{eq:burgess-rms-support-bound}.  Summation over $q$ proves the
+remaining assertions.
+\end{proof}
+
+\begin{corollary}[Elementary finite low-conductor envelopes]
+\label{cor:burgess-elementary-low-envelopes}
+Let $s=\omega(q_\chi)$.  For every nontrivial $\chi\in\whG$ and every
+integer interval $I$,
+\begin{equation}\label{eq:burgess-elementary-phi-bound}
+ |A_I(\chi)|
+ \le \varphi(q_\chi)2^{r-s}.
+\end{equation}
+Consequently, for every $R\ge1$, equal-length intervals $I,J$, and
+$(h,Q)=1$,
+\begin{align}
+ |\cB_h^{\le R}(I,J)|&\le5^rR^2,
+ \label{eq:burgess-elementary-fixed-low-envelope}\\
+ \cE^{\le R}(I,J)&\le17^rR^3.
+ \label{eq:burgess-elementary-energy-low-envelope}
+\end{align}
+These bounds are deliberately elementary; they are the finite envelopes
+checked by the accompanying exact certificate, not the estimates used for
+the final Burgess ranges.
+\end{corollary}
+
+\begin{proof}
+In each term of \eqref{eq:burgess-mobius-reduction}, delete complete periods
+modulo $q_\chi$.  The remaining interval has length below $q_\chi$ and
+contains at most $\varphi(q_\chi)$ unit residues.  There are
+$2^{r-s}$ divisors of $Q/q_\chi$, which proves
+\eqref{eq:burgess-elementary-phi-bound}.
+
+Use \eqref{eq:burgess-fixed-low-support-sum} and
+\eqref{eq:burgess-rms-low-support-sum}.  Since
+\[
+ \sum_{q\mid Q}4^{-\omega(q)}=\left(\frac54\right)^r,
+\]
+the fixed-shift sum is at most
+\[
+ R^2 4^r\sum_{q\mid Q}4^{-\omega(q)}=5^rR^2.
+\]
+For the energy, the primewise inequality
+\[
+ \frac{(p-1)^4}{p-2}\le p^3
+\]
+gives $d(q)\varphi(q)^4\le q^3$.  Therefore
+\[
+ \sum_{\substack{q\mid Q\\q\le R}}
+ d(q)\varphi(q)^4 16^{r-\omega(q)}
+ \le R^3 16^r\sum_{q\mid Q}16^{-\omega(q)}
+ =17^rR^3.
+\]
+\end{proof}
+
+\subsection{Low-conductor suppression and a conductor-tail estimate}
+\label{subsec:burgess-conductor-suppression}
+
+We now specialize to the quadratic window \eqref{eq:quadratic-window-new} and
+let $w\to\infty$.  The next lemma isolates the two estimates needed in both
+applications.
+
+\begin{lemma}[Burgess suppression below a power cutoff]
+\label{lem:burgess-power-cutoff-suppression}
+Let $\lambda>0$ and $\alpha>0$ be fixed with
+\begin{equation}\label{eq:burgess-low-cutoff-condition}
+ \alpha<4\lambda.
+\end{equation}
+There is a constant $c=c(\lambda,\alpha)>0$ such that, uniformly for every
+integer interval $I$ of length $L\ge Q^\lambda$ and every
+$\chi\in\whG$ with $1<q_\chi\le Q^\alpha$,
+\begin{equation}\label{eq:burgess-uniform-low-suppression}
+ \frac{|A_I(\chi)|}{L}\le Q^{-c+o(1)}.
+\end{equation}
+The $o(1)$ is uniform in $I$ and $\chi$.
+\end{lemma}
+
+\begin{proof}
+Choose an integer $k\ge2$ so large that
+\begin{equation}\label{eq:burgess-k-choice}
+ \frac{\alpha(k+1)}{4k}<\lambda.
+\end{equation}
+Then choose $\eps>0$ small enough that
+\[
+ c_0:=\frac\lambda k
+ -\alpha\left(\frac{k+1}{4k^2}+\eps\right)>0.
+\]
+By \eqref{eq:burgess-burgess-rough-bound}, $L\ge Q^\lambda$, and
+$q_\chi\le Q^\alpha$,
+\begin{align*}
+ \frac{|A_I(\chi)|}{L}
+ &\ll_{k,\eps}
+ \tau(Q/q_\chi)L^{-1/k}
+ q_\chi^{(k+1)/(4k^2)+\eps}\\
+ &\le \tau(Q)Q^{-c_0}.
+\end{align*}
+Here replacing $L+1$ by $L$ changes only an absolute factor.  Finally,
+\eqref{eq:c-r-is-Q-o1} with $c=2$ gives
+$\tau(Q)=2^{\omega(Q)}=Q^{o(1)}$.  Taking, for example, any fixed
+$c<c_0$ proves the claim for all sufficiently large $w$.
+\end{proof}
+
+The complete shift mean square has a stronger high-conductor estimate than
+the pointwise operator cutoff because its exact-conductor terms are
+nonnegative and carry the mass $d(q)$.
+
+\begin{lemma}[Tail of the exact-conductor mass]
+\label{lem:burgess-conductor-mass-tail}
+For every fixed $\alpha>0$,
+\begin{align}
+ \sum_{q\mid Q}d(q)&=\kappa^{-1}=2+o(1),
+ \label{eq:burgess-total-conductor-mass}\\
+ \sum_{\substack{q\mid Q\\q>Q^\alpha}}d(q)
+ &\ll Q^{-\alpha/\log w}
+ =\exp\left(-\bigl(\alpha+o(1)\bigr)
+                  \frac{w^2}{\log w}\right).
+ \label{eq:burgess-conductor-tail}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+The first identity follows from
+\[
+ \sum_{q\mid Q}d(q)
+ =\prod_{p\mid Q}\left(1+\frac1{p-2}\right)
+ =\prod_{p\mid Q}\frac{p-1}{p-2}=\kappa^{-1},
+\]
+and \eqref{eq:local-products-asymptotic-new}.
+
+For the tail, take $\theta=1/\log w$.  Rankin's trick gives
+\begin{align*}
+ \sum_{\substack{q\mid Q\\q>Q^\alpha}}d(q)
+ &\le Q^{-\alpha\theta}
+ \sum_{q\mid Q}q^\theta d(q)\\
+ &=Q^{-\alpha/\log w}
+   \prod_{p\mid Q}\left(1+\frac{p^{1/\log w}}{p-2}\right).
+\end{align*}
+For $w<p\le w^2$, one has $p^{1/\log w}\le e^2$.  Mertens' theorem gives
+$\sum_{w<p\le w^2}p^{-1}=\log2+o(1)$, so the last product is $O(1)$.
+Equation \eqref{eq:logQ-asymptotic-new} proves the final expression in
+\eqref{eq:burgess-conductor-tail}.
+\end{proof}
+
+\subsection{All power lengths after complete or short shift averaging}
+\label{subsec:burgess-shift-rms}
+
+\begin{theorem}[Complete-shift RMS on every fixed power length]
+\label{thm:burgess-complete-shift-all-powers}
+Fix $0<\eta<1$.  Let $I,J$ be arbitrary integer intervals of a common length
+$L$ satisfying
+\begin{equation}\label{eq:burgess-power-short-length}
+ Q^{1-\eta}\le L<Q.
+\end{equation}
+Then, uniformly in the locations of $I$ and $J$,
+\begin{equation}\label{eq:burgess-complete-shift-o1}
+ \frac1{L^2}
+ \left(
+  \frac1g\sum_{\ell\in G}|\cB_{2\ell}(I,J)|^2
+ \right)^{1/2}=o(1).
+\end{equation}
+Thus the complete fully-active-shift RMS reaches every fixed exponent
+$1-\eta>0$.  No endpoint assertion is made at $\eta=1$.
+\end{theorem}
+
+\begin{proof}
+Put $\lambda=1-\eta$ and choose a fixed
+\begin{equation}\label{eq:burgess-rms-alpha-choice}
+ 0<\alpha<\min\{1,4\lambda\}.
+\end{equation}
+Let $R=Q^\alpha$.  By
+\cref{lem:burgess-power-cutoff-suppression}, the normalized transform of every
+character with $1<q_\chi\le R$ is at most $Q^{-c+o(1)}$ for some $c>0$.
+Using \eqref{eq:burgess-rms-low-support-sum} and
+\eqref{eq:burgess-total-conductor-mass},
+\begin{equation}\label{eq:burgess-rms-low-estimate}
+ \frac{\cE^{\le R}(I,J)}{L^4}
+ \le Q^{-4c+o(1)}
+     \sum_{q\mid Q}d(q)
+ =Q^{-4c+o(1)}.
+\end{equation}
+For $q>R$, the trivial bounds $|A_I(\chi)|,|A_J(\chi)|\le L$ and the exact
+number $D(q)=d(q)^{-1}$ of characters give
+\begin{align}
+ \frac{\cE^{>R}(I,J)}{L^4}
+ &\le\sum_{\substack{q\mid Q\\q>R}}
+ d(q)^2D(q)
+ =\sum_{\substack{q\mid Q\\q>Q^\alpha}}d(q)
+ =o(1)
+ \label{eq:burgess-rms-high-tail-estimate}
+\end{align}
+by \cref{lem:burgess-conductor-mass-tail}.  Adding
+\eqref{eq:burgess-rms-low-estimate} and
+\eqref{eq:burgess-rms-high-tail-estimate}, and using the exact Parseval
+identity \eqref{eq:complete-shift-parseval-new}, proves
+\eqref{eq:burgess-complete-shift-o1}.
+\end{proof}
+
+The deterministic completion from \citet{WangCenteredKernels2026} preserves
+the preceding conclusion while using only a subpower number of shift
+parameters.
+
+\begin{corollary}[A subpower shift interval]
+\label{cor:burgess-short-shift-all-powers}
+Under the hypotheses of \cref{thm:burgess-complete-shift-all-powers}, let
+$\cL$ be any interval of
+\begin{equation}\label{eq:burgess-short-shift-H}
+ H=\left\lfloor Q^{1/\log w}\right\rfloor
+\end{equation}
+consecutive integers, and let
+$H_Q=\#\{\ell\in\cL:(\ell,Q)=1\}$.  Then
+\begin{equation}\label{eq:burgess-short-shift-o1}
+ \frac1{L^2}
+ \left(
+  \frac1{H_Q}
+  \sum_{\substack{\ell\in\cL\\(\ell,Q)=1}}
+  |\cB_{2\ell}(I,J)|^2
+ \right)^{1/2}=o(1),
+\end{equation}
+uniformly in the locations of all three intervals.  Moreover,
+$H=Q^{o(1)}$ and $H/Q\to0$.
+\end{corollary}
+
+\begin{proof}
+Equations \eqref{eq:r-asymptotic-new} and
+\eqref{eq:H-subpower-choice-new} show that
+$H\delta_Q\ge2^{r+1}$ for all sufficiently large $w$.  Hence
+\eqref{eq:short-shift-normalized-transfer} bounds the left side of
+\eqref{eq:burgess-short-shift-o1} by an absolute constant times the left side
+of \eqref{eq:burgess-complete-shift-o1}, plus
+\[
+ \sqrt{\frac{E(Q)}{H\delta_Q}}.
+\]
+The first term tends to zero by
+\cref{thm:burgess-complete-shift-all-powers}, and the second does so by
+\eqref{eq:completion-decay-new}.  Finally,
+$1/\log w\to0$ while $Q\to\infty$, proving the assertions about $H$.
+\end{proof}
+
+\subsection{The fixed shift and the \texorpdfstring{$4/5$}{4/5} cutoff range}
+\label{subsec:burgess-fixed-shift}
+
+The shift mean square can discard a high-conductor tail through its small
+total $d(q)$-mass.  At one prescribed shift, phases need not cancel, so we
+instead use the exact high-conductor operator multiplier
+\eqref{eq:dchi-high-conductor}.  The resulting compatibility condition
+explains the exponent below.
+
+\begin{theorem}[Fixed local shift on the Burgess cutoff range]
+\label{thm:burgess-fixed-shift-four-fifths}
+Fix $0<\eta<4/5$, and let $I,J$ be arbitrary integer intervals of a common
+length $L$ satisfying \eqref{eq:burgess-power-short-length}.  Then
+\begin{equation}\label{eq:burgess-fixed-shift-o1}
+ \frac{|\cB_2(I,J)|}{L^2}=o(1)
+\end{equation}
+uniformly in the locations of $I$ and $J$.
+\end{theorem}
+
+\begin{proof}
+Again put $\lambda=1-\eta$.  The inequality $\eta<4/5$ is equivalent to
+$\eta<4\lambda$.  We may therefore choose a fixed exponent $\alpha$ such
+that
+\begin{equation}\label{eq:burgess-fixed-alpha-window}
+ \eta<\alpha<\min\{1,4\lambda\},
+ \qquad R=Q^\alpha.
+\end{equation}
+For the low-conductor part,
+\cref{lem:burgess-power-cutoff-suppression} and
+\eqref{eq:burgess-fixed-low-support-sum} give
+\begin{align}
+ \frac{|\cB_2^{\le R}(I,J)|}{L^2}
+ &\le
+ \sum_{\substack{q\mid Q\\1<q\le R}}
+ \frac{\mathcal U_I(q)}L\frac{\mathcal U_J(q)}L
+ \notag\\
+ &\le \tau(Q)Q^{-2c+o(1)}=o(1),
+ \label{eq:burgess-fixed-low-o1}
+\end{align}
+where \eqref{eq:c-r-is-Q-o1} absorbs the number of divisors of $Q$.
+
+For the high-conductor part, \eqref{eq:fixed-high-conductor-bound},
+$U_I,U_J\le L$, $g\le Q$, and $\Xi=O(1)$ give
+\begin{align}
+ \frac{|\cB_2^{>R}(I,J)|}{L^2}
+ &\le\frac{\Xi g}{RL}
+ \ll Q^{1-\alpha-\lambda}
+ =Q^{\eta-\alpha}=o(1).
+ \label{eq:burgess-fixed-high-o1}
+\end{align}
+Adding \eqref{eq:burgess-fixed-low-o1} and
+\eqref{eq:burgess-fixed-high-o1} proves the theorem.
+\end{proof}
+
+\begin{remark}[A method range, not a barrier]
+\label{rem:burgess-four-fifths-not-barrier}
+The two strict requirements in \eqref{eq:burgess-fixed-alpha-window} have
+different origins.  Burgess suppression needs $\alpha<4(1-\eta)$, whereas
+the exact high-conductor multiplier needs $\alpha>\eta$.  Their overlap is
+equivalent to $\eta<4/5$.  This proves neither the endpoint nor failure beyond
+it; it is only the range furnished by this particular cutoff argument.
+Furthermore, \eqref{eq:burgess-fixed-shift-o1} concerns an unweighted finite
+local kernel.  It is not a prime-pair asymptotic or a twin-prime lower bound.
+\end{remark}

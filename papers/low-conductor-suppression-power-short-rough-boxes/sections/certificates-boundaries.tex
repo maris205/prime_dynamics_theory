@@ -1,0 +1,108 @@
+\section{Exact finite certificates}\label{sec:certificates}
+
+The accompanying reference implementation uses only integers and rational numbers.  It has three roles: to verify the finite inclusion--exclusion fiber bound, to pin down the shifted-square Fourier normalizations, and to check that the conductor decompositions reconstruct the directly counted finite kernel together with the elementary low/high conductor envelopes.  These are exact finite diagnostics, not inputs from which an asymptotic statement is inferred.
+
+Take
+\begin{equation}\label{eq:Q385-definition}
+ Q=5\cdot7\cdot11=385,
+ \qquad |G|=240.
+\end{equation}
+The shifted-divisor weight parameters, pattern table, Fourier coefficients,
+and exact Parseval identity at this modulus are given once in
+\cref{subsec:wt-385-certificate}.  The same rational program verifies those
+identities.  We now record the separate conductor decomposition of the local
+pair kernel.
+
+For the intervals
+\begin{equation}\label{eq:Q385-reference-intervals}
+ I=[19,101],
+ \qquad
+ J=[73,155],
+\end{equation}
+both of length $83$, the unit counts are $U_I=50$ and $U_J=51$.  Direct counting at $h=2$ gives $N_2=1439$, $\kappa=9/16$, and hence
+\begin{equation}\label{eq:Q385-fixed-box-value}
+ \cB_2=\kappa^{-1}N_2-U_IU_J=\frac{74}{9}.
+\end{equation}
+The exact-conductor decomposition is shown in \cref{tab:Q385-fixed-supports}.
+
+\begin{table}[ht]
+\centering
+\caption{Exact conductor contributions to the $Q=385$ reference box.}
+\label{tab:Q385-fixed-supports}
+\begin{tabular}{@{}rrrrrrrr@{}}
+\toprule
+$q$ & $5$ & $7$ & $11$ & $35$ & $55$ & $77$ & $385$\\
+\midrule
+$\cB_{2,q}$
+& $2/3$ & $0$ & $-10/9$ & $92/15$ & $82/27$ & $4/9$ & $-128/135$\\
+$\cE_q$
+& $4/3$ & $24/25$ & $160/81$ & $952/75$ & $10288/729$ & $7316/2025$ & $348044/18225$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The fixed contributions sum to $74/9$.  Across all $240$ unit shifts, the exact mean of $\cB_{2\ell}$ is zero and the exact mean square is
+\begin{equation}\label{eq:Q385-complete-shift-energy}
+ \frac1{240}\sum_{\ell\in G}|\cB_{2\ell}|^2
+ =\sum_{q\mid385,\,q>1}\cE_q
+ =\frac{65348}{1215}.
+\end{equation}
+The tests also cover all seven nonempty local supports, intervals crossing zero and complete periods, translation by $Q$, exchange of the two factor intervals, inactive primes, and the low/high conductor split.
+
+\section{What the theorems do and do not say}\label{sec:boundaries}
+
+The fixed-shift conclusion can be rewritten as an equidistribution statement for one finite local condition.  For $(h,Q)=1$, let
+\[
+ N_h(I,J)
+ =\#\{(m,n)\in I\times J:(mn,Q)=1,\ (mn+h,Q)=1\}.
+\]
+Then
+\begin{equation}\label{eq:local-count-relation}
+ N_h(I,J)=\kappa\bigl(U_IU_J+\cB_h(I,J)\bigr).
+\end{equation}
+Consequently, $\cB_2=o(L^2)$ says that the finitely many congruence exclusions defining $Q$ are equidistributed over the rough factor box at the ambient $L^2$ scale.  It does not say that $m$, $n$, or $mn+2$ is prime.
+
+\subsection{Four interfaces visible from the local model}
+
+The following list is neither exhaustive nor sufficient for a twin-prime theorem.  It records four interfaces for the present route that the local model makes visible; other routes may organize the missing input differently, and additional obstacles may remain.
+\begin{enumerate}[label=\textbf{G\arabic*.},leftmargin=3.2em]
+ \item \textbf{Prime-sensitive coefficients.}  The interval transforms in this paper have coefficient $1$ on $(n,Q)=1$.  Replacing them by $\Lambda$, a prime-supported sequence, or a bilinear convolution requires new character estimates.  Burgess for the unweighted character sum does not provide those estimates.
+ \item \textbf{A genuine Type~II transfer.}  The exact finite kernel supplies a useful conductor multiplier, but a prime-sensitive continuation would need new distribution input for the arithmetic coefficients, for example low-conductor estimates together with high-conductor bilinear control.  Well-factorability of a modulus weight does not automatically give either property to the factor coefficients.
+ \item \textbf{The prescribed-shift and positivity problem.}  Averaging shifts diagonalizes the finite phases.  A prime-sensitive theorem for $h=2$ would need a corresponding fixed-shift analysis.  To prove infinitely many prime pairs, one would need a positive lower bound in a clearly specified prime-counting range $X$; if the target is the Hardy--Littlewood order of magnitude, its expected scale is $X/(\log X)^2$.  An ambient $o(L^2)$ error supplies neither statement.
+ \item \textbf{Parity.}  Local divisibility data cannot distinguish integers with an even or odd number of unsieved prime factors.  A later argument must add input that bypasses the classical parity obstruction; no such input is present here.
+\end{enumerate}
+
+\begin{remark}[Method ranges, not barriers]\label{rem:method-ranges-not-barriers}
+The strict ranges $\eta<1$ for shift means and $\eta<4/5$ for a fixed local shift are ranges furnished by the present combination of Burgess and the exact high-conductor multiplier.  We do not assert either endpoint, optimality, or impossibility beyond them.
+\end{remark}
+
+\subsection{A precise next interface}
+
+The next analytic layer can be formulated without a conjectural conclusion.  For a structured sequence $\alpha_n$, define
+\[
+ A_{I,\alpha}(\chi)
+ =\sum_{\substack{n\in I\\(n,Q)=1}}\alpha_n\chi(n).
+\]
+After defining the correspondingly weighted box form, the character expansion and complete-shift diagonalization of \cref{sec:kernel-framework} retain the same algebraic form with $A_I$ replaced by $A_{I,\alpha}$.  The Parseval energies, high-conductor estimates, and completion error must instead be recomputed with the appropriate weighted norms.  Progress toward prime-sensitive applications would therefore require one or both of the following independently checkable statements:
+\begin{enumerate}[label=(\alph*),leftmargin=2.4em]
+ \item a Siegel--Walfisz-type estimate, or a zero-density argument implying an appropriate averaged transform bound, at low conductor and uniformly in the intended short intervals;
+ \item a bilinear or dispersion estimate that sums the high-conductor transforms more efficiently than the pointwise multiplier cutoff.
+\end{enumerate}
+If either statement fails for a proposed weight, that failure is itself a rigorous obstruction result for that route.  If both become available, the exact kernel formulas show where they enter, but positivity and parity would still remain separate tasks.
+
+\section{Conclusion}\label{sec:conclusion}
+
+The finite CRT kernel has enough spectral structure to turn classical character-sum information into power-short rough-box theorems.  Conductor-by-conductor aggregation is essential: low conductors are controlled by the primitive character sum, while high conductors are damped by the exact multiplier.  Burgess then yields normalized cancellation on every fixed power-length box after fully-active shift averaging, and up to $\eta<4/5$ for the fixed local shift $h=2$.
+
+The shifted-divisor quadratic design gives a complementary finite mechanism.  It is nonnegative, majorizes the desired residue-avoidance indicator, and removes all one-prime modes exactly by coupling different prime coordinates.  The same-window collapse result explains why an ordinary divisor square supported only on divisors of $Q$ cannot accomplish this on the unit group.
+
+These are strict local advances, not prime-pair theorems.  The resulting framework does, however, replace a vague analogy by a concrete division of labor: classical conductor estimates at low frequency, exact kernel damping at high frequency, and a non-exhaustive list of prime-sensitive, fixed-shift, positivity, and parity interfaces not controlled here.
+
+\section*{Data and code availability}
+
+The manuscript source, exact rational certificate, and standard-library Python tests are included in the repository directory for this paper.  Running
+\begin{verbatim}
+python exact_diagnostics.py --output data/exact-certificate.json
+python -m unittest -v test_exact_diagnostics.py
+\end{verbatim}
+inside the \texttt{experiments} directory regenerates the data and verifies the identities.  No random seed, floating-point Fourier transform, or external data set is used.

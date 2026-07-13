@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Low-Conductor Suppression in Centered Sieve Kernels: Power-Short Rough Boxes and a Shifted-Divisor Quadratic Design},
+ pdfauthor={Liang Wang},
+ pdfsubject={Finite centered sieve kernels and conductor-sensitive character sums},
+ pdfkeywords={sieve kernel, Dirichlet character, Burgess bound, conductor, rough interval}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\F}{\mathbb F}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\whG}{\widehat G}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\E}{\mathbb E}
+
+\title{\textbf{Low-Conductor Suppression in Centered Sieve Kernels:}\\
+\textbf{Power-Short Rough Boxes and a Shifted-Divisor Quadratic Design}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let $Q$ be the odd squarefree product of the primes in a finite window and let $G=(\Z/Q\Z)^\times$.  We study the centered local pair kernel obtained by excluding $ab+h\equiv0\pmod p$ for every $p\mid Q$.  A preceding finite Fourier calculation gives exact multipliers indexed by Dirichlet characters and weighted by their conductors.  Here we combine that kernel structure with the classical reduction of an imprimitive character to its primitive conductor and with P\'olya--Vinogradov and Burgess bounds.
+
+For the quadratic window $Q=\prod_{w<p\le w^2}p$ and arbitrary integer intervals $I,J$ of common length $L=\lceil Q^{1-\eta}\rceil$, we prove unconditionally, as $w\to\infty$, that the normalized complete fully-active-shift root mean square is $o(1)$ for every fixed $0<\eta<1$.  The same conclusion holds when averaging the fully active unit shifts contained in any interval of $H=\lfloor Q^{1/\log w}\rfloor$ consecutive integers.  For the prescribed local shift $h=2$, a conductor cutoff combining Burgess at low conductor with the exact kernel multiplier at high conductor gives $\cB_2(I,J)=o(L^2)$ for every fixed $0<\eta<4/5$.  The endpoints are not asserted and the ranges are not claimed to be optimal.
+
+For prime windows with every $p\ge5$, we also give a finite shifted-divisor Selberg-form square which pointwise majorizes a residue-avoidance indicator and annihilates every one-prime Fourier mode exactly; its nonconstant spectrum is supported only on two-prime conductors.  A rational certificate at $Q=5\cdot7\cdot11$ verifies the identities conductor by conductor.  All asymptotic box theorems use coefficient one on the unit support; the finite designed weight is local and not prime-sensitive.  The paper contains no von Mangoldt weight, no prime-sensitive Type~II estimate, and no implication toward a twin-prime lower bound.
+\end{abstract}
+
+\noindent\textbf{Keywords:} sieve kernel; Dirichlet character; Burgess bound; conductor; rough interval; Selberg-form square; parity boundary.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35; Secondary 11L40, 11N25.
+
+\input{sections/introduction-scope}
+\input{sections/kernel-framework}
+\input{sections/burgess-power-short}
+\input{sections/shifted-square-design}
+\input{sections/certificates-boundaries}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
