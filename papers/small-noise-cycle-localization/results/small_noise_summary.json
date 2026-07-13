@@ -1,0 +1,93 @@
+{
+  "deterministic_targets": {
+    "curvature_six": -3.114153424584272,
+    "curvature_three": -0.004873490984317172,
+    "directed_six": 0.004290861043719563,
+    "directed_three": -1.7114657240496767e-05,
+    "trace_six": 1.6221410887200325,
+    "trace_three": 0.1745333538262971
+  },
+  "fixed_point_audit": {
+    "autonomous_six": {
+      "count": 15,
+      "minimum_boundary_clearance": 0.0170301951837476,
+      "minimum_determinant": 8.00614642372763
+    },
+    "autonomous_three": {
+      "count": 1,
+      "minimum_boundary_clearance": 0.4563109873079152,
+      "minimum_determinant": 5.729563880352875
+    },
+    "directed_six_forward": {
+      "count": 11,
+      "minimum_boundary_clearance": 0.016242368042639233,
+      "minimum_determinant": 6.986805524354499
+    },
+    "directed_six_reverse": {
+      "count": 11,
+      "minimum_boundary_clearance": 0.01557876189497498,
+      "minimum_determinant": 8.138196045465675
+    },
+    "directed_three_forward": {
+      "count": 1,
+      "minimum_boundary_clearance": 0.44035488955137936,
+      "minimum_determinant": 5.702453241812104
+    },
+    "directed_three_reverse": {
+      "count": 1,
+      "minimum_boundary_clearance": 0.427628294448668,
+      "minimum_determinant": 5.701896762160407
+    }
+  },
+  "least_positive_boundary_actions": {
+    "autonomous_six": 0.028309237072720452,
+    "autonomous_three": 0.014154618536360221,
+    "directed_six_forward": 0.000773474721337138,
+    "directed_six_reverse": 0.0006154706481196597,
+    "directed_three_forward": 0.004907356765531398,
+    "directed_three_reverse": 0.0028306931797570834
+  },
+  "lowest_noise_resolution_spread": {
+    "directed_six": 1.7619118675149537e-07,
+    "directed_three": 3.0531133177191805e-16,
+    "trace_six": 1.1830344364138767e-06,
+    "trace_three": 6.106226635438361e-16
+  },
+  "parameters": {
+    "directed_triple": [
+      1.4236890126919999,
+      1.543689012692,
+      1.663689012692
+    ],
+    "folded_dimension_convention": "full dimension is twice the recorded dimension",
+    "u_critical": 1.543689012692
+  },
+  "small_noise_fits": {
+    "directed_three_error_power": 2.0022226294178305,
+    "trace_three_error_power": 2.0007145247728513
+  },
+  "smallest_noise": {
+    "dimension_times_sigma": 30.72,
+    "directed_six": 0.0032098005397178664,
+    "directed_six_error": 0.0010810605040016963,
+    "directed_six_target": 0.004290861043719563,
+    "directed_three": -1.7121777057094167e-05,
+    "directed_three_error": 7.1198165974006855e-09,
+    "directed_three_target": -1.7114657240496767e-05,
+    "folded_dimension": 7680,
+    "full_dimension": 15360,
+    "sigma": 0.004,
+    "trace_six": 1.6464969953151984,
+    "trace_six_error": 0.024355906595165955,
+    "trace_six_target": 1.6221410887200325,
+    "trace_three": 0.17454123039097277,
+    "trace_three_error": 7.876564675685094e-06,
+    "trace_three_target": 0.1745333538262971
+  },
+  "software": {
+    "matplotlib": "3.10.9",
+    "numpy": "2.2.6",
+    "python": "3.10.12",
+    "scipy": "1.15.3"
+  }
+}
