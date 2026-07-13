@@ -1,0 +1,924 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\T}{\mathbb T}
+\newcommand{\uc}{u_{\mathrm c}}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\trflat}{\operatorname{tr}^{\flat}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\iotaop}{\mathcal J}
+
+\title{\textbf{Postcritical Factorization of a Weighted Zeta Function}\\
+\textbf{at a Quadratic Band-Merging Map:}\\
+\large An Analytic Circle Lift, Equivariant Fredholm Determinants,\\
+and a Spectral Noncancellation Criterion}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let $f_u(x)=1-u x^2$ at the algebraic band-merging parameter
+$\uc^3-2\uc^2+2\uc-2=0$, put $r=\uc-1$, and set
+$\lambda=2\uc r=1.678573510428\ldots$.  For the central component
+$S=f_{\uc}^2|_{[-r,r]}$, a preceding weighted-zeta analysis found
+numerically
+\[
+ q_n=1-\lambda^{-n}+\lambda^{-2n}+o(\lambda^{-2n}),
+ \qquad
+ q_n=\sum_{S^n x=x}|(S^n)'(x)|^{-1},
+\]
+and conjectured a centered-zeta zero at $z=\lambda$.  We identify the exact
+mechanism behind those two postcritical terms.
+
+The branched coordinate $\pi(\theta)=-r\cos\theta$ lifts $S$ to a
+real-analytic, orientation-preserving, degree-two expanding circle map
+$F$ satisfying $\pi\circ F=S\circ\pi$.  Its derivative obeys
+\[
+ F'(\theta)^2=
+ \frac{16(1-\uc x^2)^2}
+ {\uc(2-\uc x^2)(1-x^2)},
+ \qquad x=-r\cos\theta,
+ \qquad \min F'=\lambda.
+\]
+Let $D_{\beta,+}$ and $D_{\beta,-}$ be the even and odd Fredholm
+determinants of the analytic transfer operator with weight $(F')^{-\beta}$.
+An equivariant fixed-point calculation gives, for every $n\ge1$, the exact
+trace identity
+\[
+ \boxed{q_n=E_{1,n}-O_{2,n}-\lambda^{-n}+\lambda^{-2n}},
+\]
+where $E_{1,n}$ is the even $\beta=1$ flat trace and $O_{2,n}$ is the odd
+$\beta=2$ flat trace.  Consequently the component zeta function has the
+exact meromorphic continuation
+\[
+ \boxed{
+ \cZ(z)=\frac{D_{2,-}(z)}{D_{1,+}(z)}
+ \frac{1-z/\lambda}{1-z/\lambda^2}.}
+\]
+The displayed rational factor is an orbifold-versus-interval correction at the
+repelling postcritical endpoint; it is not a fitted asymptotic.
+
+After removing the simple Perron zero of $D_{1,+}$ at $z=1$, a pressure
+argument proves $D_{2,-}(\lambda)\ne0$.  Thus the centered zeta has an actual
+simple zero at $\lambda$ if and only if $\lambda^{-1}$ is absent from the
+non-Perron spectrum of the even $\beta=1$ operator.  We do not assume or
+claim this last spectral noncancellation.  Exhaustive 50-decimal arithmetic
+through $2^{20}$ periodic words gives a deflated remainder ratio
+$0.20803502$ at $n=20$, tending toward the independent Fredholm estimate
+$0.20788030$, far below $\lambda^{-1}=0.59574394$.  The degree-20 centered
+zero is $1.6785994451$, and $G_{20}(\lambda)=1.1431449660$.  These values are
+strong evidence for noncancellation, explicitly separated from the theorem.
+\end{abstract}
+
+\noindent\textbf{Keywords:} weighted dynamical zeta function; postcritical
+orbit; analytic expanding circle map; equivariant transfer operator;
+Fredholm determinant; quadratic map; spectral noncancellation.
+
+\medskip
+\noindent\textbf{MSC 2020:} 37E10; 37C30; 37D20; 47A10; 47B10.
+
+\section{Introduction}
+\label{sec:introduction}
+
+Dynamical zeta functions often turn an exponentially small periodic-orbit
+term into a visible zero or pole.  The difficult part is not recognizing a
+stable numerical rate; it is identifying which geometric orbit produces the
+factor and proving that the factor is not canceled by the remaining transfer
+operator.  At a postcritically finite map these two questions should be
+separated.
+
+This paper studies one component of the square of the quadratic map
+$f_u(x)=1-u x^2$ at its first algebraic band-merging parameter.  The preceding
+flat-trace completion theorem established, without a rate formula, that the
+standard component weight
+\begin{equation}\label{eq:q-introduction}
+ q_n=\sum_{S^n x=x}\frac1{|(S^n)'(x)|}
+\end{equation}
+satisfies $q_n=1+O(\rho^n)$ for some $\rho<1$ by the
+Keller--Nowicki Collet--Eckmann weighted-zeta theory
+\citep{KellerNowicki1992,WangFlatTrace2026}.  Exhaustive data suggested the
+much sharper expansion
+\begin{equation}\label{eq:previous-sharp}
+ q_n=1-\lambda^{-n}+\lambda^{-2n}+O(\kappa^n),
+ \qquad \kappa<\lambda^{-2},
+\end{equation}
+and a zero at $z=\lambda$ of
+\begin{equation}\label{eq:H-introduction}
+ H(z)=(1-z)\exp\left(\sum_{n\ge1}\frac{q_nz^n}{n}\right).
+\end{equation}
+Those sharper statements were left as a conjecture.  The stated obstacle was
+precise: locate the critical-orbit factor inside an adapted Fredholm or
+kneading determinant.
+
+We do this by resolving the quadratic critical point geometrically.  The
+coordinate $x=-r\cos\theta$ is a two-sheeted branched cover of the component
+interval.  Under this cover the nonuniformly expanding unimodal map becomes
+an ordinary analytic expanding circle map.  The deck involution separates
+even and odd transfer sectors, and the one interval endpoint fixed by the
+dynamics becomes a branch point of the cover.  At that point the circle
+multiplier is $\lambda^n$, whereas the interval multiplier is $\lambda^{2n}$.
+The entire correction $-\lambda^{-n}+\lambda^{-2n}$ comes from this mismatch.
+
+The method is closely related in spirit to dynamical conjugacies and explicit
+postcritical factors for postcritically finite polynomials
+\citep{BaladiJiangRugh2002}.  Our object, however, is a real component Perron
+weight with an absolute multiplier and a deck-parity projection.  We
+therefore give the lift and the fixed-point bookkeeping directly rather than
+importing a complex-polynomial formula without checking conventions.
+
+\subsection*{Main results and logical status}
+
+The conclusions divide into exact, unconditional, and numerical parts.
+\begin{enumerate}[label=\textbf{R\arabic*.},leftmargin=3.2em]
+ \item The branched lift $F$ is a degree-two real-analytic expanding circle
+ map.  Its derivative is explicit and its minimum is exactly the
+ postcritical square-root multiplier $\lambda$.
+
+ \item The ordinary and deck-twisted fixed sets have the exact cardinalities
+ $2^n-1$ and $2^n+1$.  Their equivariant flat traces reconstruct the interval
+ weight by
+ \[
+  q_n=E_{1,n}-O_{2,n}-\lambda^{-n}+\lambda^{-2n}.
+ \]
+
+ \item The trace identity exponentiates to the exact meromorphic
+ factorization
+ \[
+  \cZ(z)=\frac{D_{2,-}(z)}{D_{1,+}(z)}
+  \frac{1-z/\lambda}{1-z/\lambda^2}.
+ \]
+
+ \item A strict pressure estimate proves that the odd $\beta=2$ determinant
+ is nonzero at $z=\lambda$.  Hence only one cancellation mechanism remains:
+ an even non-Perron eigenvalue exactly equal to $\lambda^{-1}$.
+
+ \item The statement ``$H$ has a simple zero at $\lambda$'' is proved
+ equivalent to the absence of that eigenvalue.  It is not promoted to an
+ unconditional theorem here.
+
+ \item Exhaustive multiprecision data and two independent determinant
+ truncations place the leading reduced resonances near $0.20788030$ and
+ $0.15252824$, both well below $\lambda^{-2}=0.35491084$.  These are
+ numerical diagnostics, not validated spectral enclosures.
+\end{enumerate}
+
+The exact factorization is stronger than a fitted coefficient law but weaker
+than a proved uncanceled zero.  Keeping these two statements distinct is the
+central logical point of the paper.
+
+\section{Algebraic component and analytic circle lift}
+\label{sec:lift}
+
+Let $\uc$ be the unique root in $(1,2)$ of
+\begin{equation}\label{eq:cubic}
+ u^3-2u^2+2u-2=0,
+\end{equation}
+and put
+\begin{equation}\label{eq:constants}
+ r=\uc-1,
+ \qquad
+ \lambda=2\uc r.
+\end{equation}
+At 80 decimal places,
+\begin{align}
+ \uc&=1.5436890126920763615708559718017479865\ldots,\nonumber\\
+ \lambda&=1.6785735104283222651037051293065732008\ldots.
+ \label{eq:constants-numerical}
+\end{align}
+The critical orbit is
+\begin{equation}\label{eq:critical-orbit}
+ 0\longmapsto1\longmapsto-r\longmapsto r\longmapsto r.
+\end{equation}
+
+Set $f=f_{\uc}$ and let
+\begin{equation}\label{eq:S-definition}
+ S=f^2|_{[-r,r]}.
+\end{equation}
+Direct expansion gives
+\begin{equation}\label{eq:S-polynomial}
+ S(x)=-r+2\uc^2x^2-\uc^3x^4,
+ \qquad
+ S'(x)=4\uc^2x(1-\uc x^2).
+\end{equation}
+The two restrictions to $[-r,0]$ and $[0,r]$ are full branches onto
+$[-r,r]$.  In particular $S(-r)=S(r)=r$, $S(0)=-r$, and
+\begin{equation}\label{eq:endpoint-multiplier}
+ S'(r)=\lambda^2.
+\end{equation}
+
+Consider the branched cover
+\begin{equation}\label{eq:pi}
+ \pi:\T\longrightarrow[-r,r],
+ \qquad
+ \pi(\theta)=-r\cos\theta,
+ \qquad
+ \T=\R/(2\pi\mathbb Z),
+\end{equation}
+with deck involution
+\begin{equation}\label{eq:iota}
+ \iota(\theta)=-\theta.
+\end{equation}
+
+\begin{proposition}[Analytic expanding lift]
+\label{prop:analytic-lift}
+There is a unique orientation-preserving degree-two circle map $F$ with the
+chosen lift $\widetilde F(0)=\pi$ such that
+\begin{equation}\label{eq:semiconjugacy}
+ \pi\circ F=S\circ\pi.
+\end{equation}
+The map $F$ is real analytic, commutes with $\iota$, and satisfies
+\begin{equation}\label{eq:half-period}
+ \widetilde F(\theta+\pi)=\widetilde F(\theta)+2\pi,
+ \qquad
+ \widetilde F(\theta+2\pi)=\widetilde F(\theta)+4\pi.
+\end{equation}
+Writing $x=-r\cos\theta$, its derivative is
+\begin{equation}\label{eq:lift-derivative}
+ \boxed{
+ F'(\theta)^2=
+ \frac{16(1-\uc x^2)^2}
+ {\uc(2-\uc x^2)(1-x^2)}.}
+\end{equation}
+Moreover
+\begin{equation}\label{eq:min-expansion}
+ \min_{\theta\in\T}F'(\theta)=\lambda>1,
+\end{equation}
+with equality exactly over the two interval endpoints $x=\pm r$.
+\end{proposition}
+
+\begin{proof}
+For an explicit construction, put
+\begin{equation}\label{eq:alpha}
+ \alpha(\theta)=
+ \arccos\left(-\frac{S(-r\cos\theta)}r\right)\in[0,\pi].
+\end{equation}
+On $0\le\theta\le2\pi$, define the real lift successively by
+\begin{equation}\label{eq:piecewise-lift}
+ \widetilde F(\theta)=
+ \begin{cases}
+  2\pi-\alpha(\theta),&0\le\theta\le\pi/2,\\
+  2\pi+\alpha(\theta),&\pi/2\le\theta\le\pi,\\
+  4\pi-\alpha(\theta),&\pi\le\theta\le3\pi/2,\\
+  4\pi+\alpha(\theta),&3\pi/2\le\theta\le2\pi.
+ \end{cases}
+\end{equation}
+The endpoint values are $\pi,2\pi,3\pi,4\pi,5\pi$, so the pieces join and
+give degree two.  Equation \eqref{eq:semiconjugacy} is immediate.  The
+quadratic zeros at the apparent arccosine singularities cancel the quadratic
+branching of $\pi$; the analytic square-root theorem in a local coordinate
+therefore shows that the joined map is real analytic.  The same conclusion
+also follows from the nonsingular derivative formula below.  Evenness of
+$S$ gives \eqref{eq:half-period}, and uniqueness of the increasing lift gives
+$F\iota=\iota F$ on the circle.
+
+Away from the branch points, differentiating
+\eqref{eq:semiconjugacy} and squaring yields
+\begin{equation}\label{eq:derivative-intermediate}
+ F'(\theta)^2
+ =S'(x)^2\frac{r^2-x^2}{r^2-S(x)^2}.
+\end{equation}
+Substitution of \eqref{eq:S-polynomial} and use of the cubic identity
+\eqref{eq:cubic} reduce this expression to
+\eqref{eq:lift-derivative}.  Its right side is positive and analytic for
+$|x|\le r$, and hence extends the formula across all joined points.
+
+It remains to locate the minimum.  Put $t=x^2$.  The logarithmic derivative
+of the right side of \eqref{eq:lift-derivative}, apart from a positive
+denominator, has numerator
+\begin{equation}\label{eq:log-derivative-numerator}
+ 2-3\uc+\uc^2t.
+\end{equation}
+The cubic changes sign between $3/2$ and $8/5$, so
+$3/2<\uc<8/5$ and $0<r<3/5$.  Therefore, for $0\le t\le r^2$,
+\begin{equation}\label{eq:numerator-negative}
+ 2-3\uc+\uc^2t
+ <2-\frac92+\left(\frac85\right)^2
+ \left(\frac35\right)^2<0.
+\end{equation}
+Thus $F'$ decreases as $|x|$ increases and is minimized at $|x|=r$.
+At $x=r$ the local quadratic semiconjugacy gives
+$F'(\theta)^2=S'(r)$, while at $x=-r$ it gives
+$F'(\theta)^2=-S'(-r)$; both values equal $\lambda^2$.  Positivity of the lift derivative proves
+\eqref{eq:min-expansion}.
+\end{proof}
+
+\begin{corollary}[Exact circle fixed-point counts]
+\label{cor:circle-counts}
+For every $n\ge1$,
+\begin{equation}\label{eq:circle-counts}
+ \#\Fix(F^n)=2^n-1,
+ \qquad
+ \#\Fix(\iota F^n)=2^n+1.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+For the increasing real lift, $\widetilde F^n(\theta)-\theta$ has positive
+derivative and gains $(2^n-1)2\pi$ over one fundamental interval.  It crosses
+each relevant multiple of $2\pi$ exactly once.  Likewise
+$\widetilde F^n(\theta)+\theta$ is increasing and gains
+$(2^n+1)2\pi$.
+\end{proof}
+
+\section{Deck-equivariant transfer operators}
+\label{sec:operators}
+
+For an integer $\beta\ge0$, define the analytic transfer operator
+\begin{equation}\label{eq:transfer}
+ (\cL_\beta\varphi)(\theta)
+ =\sum_{F(\eta)=\theta}
+ \frac{\varphi(\eta)}{F'(\eta)^\beta}.
+\end{equation}
+Because $F$ is real analytic and uniformly expanding, its inverse branches
+extend as strict holomorphic contractions on a sufficiently thin complex
+neighborhood of the circle.  On a standard holomorphic Banach space $\cB$,
+$\cL_\beta$ is nuclear of order zero, its Fredholm determinant is entire,
+and its nuclear traces are fixed-point traces
+\citep{Ruelle1976,BaladiRuelle1996,Baladi2000,Baladi2018}.  We use only these classical
+consequences.
+
+Let
+\begin{equation}\label{eq:J}
+ (\iotaop\varphi)(\theta)=\varphi(-\theta),
+ \qquad
+ P_\pm=\frac{I\pm\iotaop}{2}.
+\end{equation}
+Since $F$ commutes with $\iota$, so do $\cL_\beta$ and $\iotaop$.  Write
+\begin{equation}\label{eq:sector-operators}
+ \cL_{\beta,\pm}=\cL_\beta|_{P_\pm\cB},
+ \qquad
+ D_{\beta,\pm}(z)=\det(I-z\cL_{\beta,\pm}).
+\end{equation}
+
+For a periodic lift, put
+\begin{equation}\label{eq:Dn}
+ D_n(\theta)=(F^n)'(\theta)>1.
+\end{equation}
+Define the ordinary and twisted fixed-point traces
+\begin{align}
+ A_{\beta,n}
+ &=\sum_{F^n\theta=\theta}
+ \frac{D_n(\theta)^{-\beta}}
+ {1-D_n(\theta)^{-1}},\label{eq:A-trace}\\
+ B_{\beta,n}
+ &=\sum_{\iota F^n\theta=\theta}
+ \frac{D_n(\theta)^{-\beta}}
+ {1+D_n(\theta)^{-1}}.\label{eq:B-trace}
+\end{align}
+
+\begin{proposition}[Equivariant flat traces]
+\label{prop:equivariant-traces}
+The flat traces on the two deck sectors are
+\begin{equation}\label{eq:sector-traces}
+ \trflat(\cL_{\beta,+}^n)
+ =\frac{A_{\beta,n}+B_{\beta,n}}2,
+ \qquad
+ \trflat(\cL_{\beta,-}^n)
+ =\frac{A_{\beta,n}-B_{\beta,n}}2.
+\end{equation}
+Consequently
+\begin{equation}\label{eq:determinant-traces}
+ D_{\beta,\pm}(z)
+ =\exp\left[-\sum_{n\ge1}
+ \frac{z^n}{n}\trflat(\cL_{\beta,\pm}^n)\right]
+\end{equation}
+as a germ at zero and, by the analytic expanding-map theorem, as its entire
+Fredholm continuation.
+\end{proposition}
+
+\begin{proof}
+The trace of a weighted inverse branch $g$ at its fixed point is its weight
+divided by $1-g'$.  For an inverse branch of $F^n$, this gives
+$D_n^{-\beta}/(1-D_n^{-1})$.  Inserting $\iotaop$ changes the inverse-branch
+derivative to $-D_n^{-1}$ and gives the denominator $1+D_n^{-1}$.  Finally
+insert the projectors $P_\pm$ and use nuclear trace linearity.  Exponentiating
+the trace series is the Fredholm determinant identity.
+\end{proof}
+
+For the two sectors needed below, abbreviate
+\begin{equation}\label{eq:E-O}
+ E_{1,n}=\frac{A_{1,n}+B_{1,n}}2,
+ \qquad
+ O_{2,n}=\frac{A_{2,n}-B_{2,n}}2.
+\end{equation}
+
+\section{Exact interval trace reconstruction}
+\label{sec:trace-identity}
+
+Recall the component Perron periodic weight
+\begin{equation}\label{eq:q-definition}
+ q_n=\sum_{x\in\Fix(S^n)}\frac1{|(S^n)'(x)|}.
+\end{equation}
+Every inverse word of length $n$ has one fixed point, so $S^n$ has exactly
+$2^n$ fixed points, including the endpoint $r$.
+
+\begin{theorem}[Exact postcritical trace identity]
+\label{thm:trace-identity}
+For every integer $n\ge1$,
+\begin{equation}\label{eq:main-trace-identity}
+ \boxed{
+ q_n=E_{1,n}-O_{2,n}-\lambda^{-n}+\lambda^{-2n}.}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+First consider $x\in\Fix(S^n)$ with $x\ne r$.  Its two lifts are
+$\theta$ and $-\theta$.  There are two cases.
+
+If $F^n\theta=\theta$, both lifts occur in the ordinary fixed set and neither
+occurs in the twisted fixed set.  Put $a=D_n(\theta)^{-1}$.  Their combined
+contribution to $E_{1,n}-O_{2,n}$ is
+\begin{equation}\label{eq:untwisted-pair}
+ \frac{a}{1-a}-\frac{a^2}{1-a}=a.
+\end{equation}
+If instead $F^n\theta=-\theta$, both lifts occur in the twisted fixed set and
+their contribution is
+\begin{equation}\label{eq:twisted-pair}
+ \frac{a}{1+a}+\frac{a^2}{1+a}=a.
+\end{equation}
+Differentiating the semiconjugacy away from the branch points shows in both
+cases that $D_n(\theta)=|(S^n)'(x)|$.  Thus every nonbranch interval fixed
+point is counted with exactly its desired weight.
+
+It remains to inspect the branch fixed point.  The interval endpoint $r$ has
+weight
+\begin{equation}\label{eq:interval-branch-weight}
+ |(S^n)'(r)|^{-1}=\lambda^{-2n}.
+\end{equation}
+Its unique circle lift is $\theta=\pi$.  This point belongs to both
+$\Fix(F^n)$ and $\Fix(\iota F^n)$ and has $D_n(\pi)=\lambda^n$.  With
+$a=\lambda^{-n}$, its projected circle contribution is
+\begin{equation}\label{eq:orbifold-branch-weight}
+ \frac12\left(\frac a{1-a}+\frac a{1+a}\right)
+ -\frac12\left(\frac {a^2}{1-a}-\frac {a^2}{1+a}\right)
+ =a.
+\end{equation}
+The circle orbifold trace therefore assigns $\lambda^{-n}$ where the interval
+trace requires $\lambda^{-2n}$.  Subtracting the former and restoring the
+latter proves \eqref{eq:main-trace-identity}.
+\end{proof}
+
+\begin{remark}[Why two transfer weights appear]
+\label{rem:two-weights}
+Neither the $\beta=1$ nor the $\beta=2$ flat trace alone equals $q_n$.  The
+elementary identities
+\begin{equation}\label{eq:denominator-cancellation}
+ \frac{a}{1-a}-\frac{a^2}{1-a}=a,
+ \qquad
+ \frac{a}{1+a}+\frac{a^2}{1+a}=a
+\end{equation}
+remove the inverse-branch fixed-point denominator.  Deck parity selects the
+correct sign in the two lift cases.  This is the one-dimensional
+Lefschetz-type cancellation behind the factorization.
+\end{remark}
+
+\section{Fredholm factorization and noncancellation}
+\label{sec:factorization}
+
+Define the component weighted zeta function near the origin by
+\begin{equation}\label{eq:zeta-definition}
+ \cZ(z)=\exp\left(\sum_{n\ge1}\frac{q_nz^n}{n}\right).
+\end{equation}
+
+\begin{theorem}[Exact meromorphic postcritical factorization]
+\label{thm:factorization}
+As a formal germ at zero, and hence throughout its meromorphic continuation,
+\begin{equation}\label{eq:main-factorization}
+ \boxed{
+ \cZ(z)=
+ \frac{D_{2,-}(z)}{D_{1,+}(z)}
+ \frac{1-z/\lambda}{1-z/\lambda^2}.}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \cref{prop:equivariant-traces},
+\begin{equation}\label{eq:det-ratio-log}
+ \log\frac{D_{2,-}(z)}{D_{1,+}(z)}
+ =\sum_{n\ge1}\frac{(E_{1,n}-O_{2,n})z^n}{n}.
+\end{equation}
+The two endpoint terms exponentiate exactly:
+\begin{align}
+ \exp\left[\sum_{n\ge1}
+ \frac{(-\lambda^{-n}+\lambda^{-2n})z^n}{n}\right]
+ &=\frac{1-z/\lambda}{1-z/\lambda^2}.
+ \label{eq:postcritical-exponential}
+\end{align}
+Insert \cref{thm:trace-identity}.  The identity first holds where the trace
+series converge.  Since the sector Fredholm determinants are entire, the right
+side supplies the stated meromorphic continuation and uniqueness of analytic
+continuation finishes the proof.
+\end{proof}
+
+The Perron operator $\cL_1$ preserves Lebesgue integral and has a simple
+eigenvalue one because $F$ is topologically mixing.  Its invariant density is
+even by deck symmetry.  Therefore
+\begin{equation}\label{eq:perron-factor}
+ D_{1,+}(z)=(1-z)\widetilde D_{1,+}(z),
+\end{equation}
+where $\widetilde D_{1,+}$ is entire.  Define
+\begin{equation}\label{eq:G-definition}
+ G(z)=\frac{D_{2,-}(z)}{\widetilde D_{1,+}(z)}.
+\end{equation}
+Then \cref{thm:factorization} becomes
+\begin{equation}\label{eq:H-factorization}
+ H(z)=(1-z)\cZ(z)
+ =\frac{1-z/\lambda}{1-z/\lambda^2}G(z).
+\end{equation}
+The displayed numerator is an exact meromorphic factor.  Whether it is an
+actual zero is now a question about $G$ at one point.
+
+\subsection{The odd second-order sector cannot cancel}
+
+Let $P(\phi)$ denote topological pressure for the expanding circle map $F$.
+
+\begin{proposition}[Strict pressure bound]
+\label{prop:pressure-bound}
+The full $\beta=2$ transfer operator, and hence its odd restriction, satisfies
+\begin{equation}\label{eq:L2-bound}
+ r(\cL_{2,-})\le r(\cL_2)
+ =\exp P(-2\log F')<\lambda^{-1}.
+\end{equation}
+In particular,
+\begin{equation}\label{eq:D2-nonzero}
+ D_{2,-}(z)\ne0\quad\text{for }|z|\le\lambda.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+On a H\"older space, the spectral-radius/pressure identity is standard for a
+mixing expanding map \citep{Ruelle1989,Baladi2000}; the holomorphic
+realization used in the Fredholm determinant has no additional eigenvalues
+outside this bound.  Let $\mu_2$ be the
+equilibrium state of $-2\log F'$.  It has full support.  Put
+\begin{equation}\label{eq:chi}
+ \chi(\mu_2)=\int\log F'\,d\mu_2.
+\end{equation}
+By \cref{prop:analytic-lift}, $F'\ge\lambda$, with strict inequality on a
+nonempty open set.  Full support gives
+\begin{equation}\label{eq:strict-chi}
+ \chi(\mu_2)>\log\lambda.
+\end{equation}
+Ruelle's entropy inequality in dimension one gives
+$h_{\mu_2}(F)\le\chi(\mu_2)$.  Consequently
+\begin{align}
+ P(-2\log F')
+ &=h_{\mu_2}(F)-2\chi(\mu_2)\nonumber\\
+ &\le-\chi(\mu_2)<-\log\lambda.
+ \label{eq:pressure-chain}
+\end{align}
+This proves \eqref{eq:L2-bound}.  Fredholm zeros are reciprocals of nonzero
+eigenvalues with algebraic multiplicity, giving \eqref{eq:D2-nonzero}.
+\end{proof}
+
+\begin{corollary}[Exact noncancellation criterion]
+\label{cor:noncancellation}
+The following statements are equivalent:
+\begin{enumerate}[label=(\roman*),leftmargin=2.8em]
+ \item $H$ has a simple zero at $z=\lambda$;
+ \item $\widetilde D_{1,+}(\lambda)\ne0$;
+ \item $\lambda^{-1}$ is not a non-Perron eigenvalue of $\cL_{1,+}$.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+By \cref{prop:pressure-bound}, the numerator $D_{2,-}(\lambda)$ in
+\eqref{eq:G-definition} is nonzero.  Hence $G$ is holomorphic and nonzero at
+$\lambda$ exactly when $\widetilde D_{1,+}(\lambda)\ne0$.  In that case the
+explicit factor $1-z/\lambda$ in \eqref{eq:H-factorization} is a simple zero.
+If $\widetilde D_{1,+}$ vanishes to order $m\ge1$, the local order of $H$ at
+$\lambda$ is $1-m$, so it is not a simple zero.  The Fredholm spectral
+interpretation gives the equivalence with (iii).
+\end{proof}
+
+This corollary is deliberately an equivalence, not an assertion that (iii)
+holds.  It reduces a qualitative zeta conjecture to one sharply formulated
+spectral exclusion.
+
+\subsection{A stronger sufficient spectral gap}
+
+Let
+\begin{equation}\label{eq:reduced-radii}
+ r_1=\sup\{|\mu|:\mu\in\spec(\cL_{1,+}),\ \mu\ne1\},
+ \qquad
+ r_2=r(\cL_{2,-}).
+\end{equation}
+
+\begin{proposition}[Conditional sharp coefficient law]
+\label{prop:conditional-sharp}
+If
+\begin{equation}\label{eq:strong-gap}
+ \max\{r_1,r_2\}<\lambda^{-2},
+\end{equation}
+then, for every $\kappa$ with
+$\max\{r_1,r_2\}<\kappa<\lambda^{-2}$,
+\begin{equation}\label{eq:sharp-law-conditional}
+ q_n=1-\lambda^{-n}+\lambda^{-2n}+O(\kappa^n).
+\end{equation}
+Moreover $H$ has a simple zero at $\lambda$, a simple pole at $\lambda^2$,
+and $G$ is holomorphic and nonzero on a disk containing
+$\{|z|\le\lambda^2\}$.
+\end{proposition}
+
+\begin{proof}
+Condition \eqref{eq:strong-gap} makes both
+$\widetilde D_{1,+}$ and $D_{2,-}$ zero-free on a disk of radius strictly
+larger than $\lambda^2$.  Thus $G$ and $1/G$ are holomorphic there.  The
+logarithmic derivative of $G$ has Taylor coefficients
+$q_n-1+\lambda^{-n}-\lambda^{-2n}$; Cauchy's estimate gives
+\eqref{eq:sharp-law-conditional}.  Nonvanishing of $G$ at $\lambda$ and
+$\lambda^2$ leaves the two explicit factors in \eqref{eq:H-factorization}
+uncanceled.
+\end{proof}
+
+\section{Exhaustive numerical audit}
+\label{sec:numerics}
+
+The numerical work has three independent layers: direct interval inverse
+words, circle fixed-point traces, and finite Fredholm series.  NumPy, SciPy,
+mpmath, and Matplotlib were used for the implementation
+\citep{HarrisEtAl2020,VirtanenEtAl2020,JohanssonEtAl2025,Hunter2007}.
+
+\subsection{Interval inverse words and multiprecision tail}
+
+The positive inverse branch of $S$ is evaluated in the rationalized form
+\begin{equation}\label{eq:inverse-branch}
+ g(y)=
+ \sqrt{
+ \frac{y+r}{\uc^2\left(1+\sqrt{(1-y)/\uc}\right)}}.
+\end{equation}
+The two inverse branches are $\pm g$.  For every binary word of length $n$ we
+iterate the corresponding contraction to its unique fixed point and multiply
+the inverse derivatives along the word.  The main audit enumerates all
+$2^{20}=1{,}048{,}576$ words.  An independent mpmath calculation recomputes
+every contribution for $14\le n\le20$ at 50-decimal working precision, split
+over 64 processes.  The algebraic constants are separately solved at 80
+decimal places.
+
+Put
+\begin{equation}\label{eq:e-definition}
+ e_n=q_n-\left(1-\lambda^{-n}+\lambda^{-2n}\right).
+\end{equation}
+By \cref{thm:trace-identity}, this is also exactly
+\begin{equation}\label{eq:e-trace}
+ e_n=E_{1,n}-O_{2,n}-1.
+\end{equation}
+Representative multiprecision values are shown in \cref{tab:tail}.  The ratio
+decreases smoothly toward the Fredholm estimate below.  Ordinary long-double
+subtraction begins to lose the tiny remainder after $n\approx17$; the values
+in the table are the independent multiprecision results, not the
+precision-limited subtraction.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Multiprecision component trace and exact-postcritical remainder.}
+\label{tab:tail}
+\begin{tabular}{rrrr}
+\toprule
+$n$ & $q_n$ & $e_n$ & $e_n/e_{n-1}$\\
+\midrule
+14 & $0.999291195348810814$ & $2.77751561116\times10^{-10}$ & ---\\
+16 & $0.999748322267819715$ & $1.20764088766\times10^{-11}$ & $0.2084178054$\\
+18 & $0.999910662330463479$ & $5.23584683219\times10^{-13}$ & $0.2081683796$\\
+20 & $0.999968291264484914$ & $2.26661348637\times10^{-14}$ & $0.2080350182$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/postcritical_zeta_factorization.pdf}
+\caption{Postcritical factor audit.  Top left: the exact trace and the two
+explicit postcritical terms.  Top right: the remainder over thirteen orders
+of magnitude.  Bottom left: successive ratios approach approximately
+$0.20788$, slightly below the reference $\lambda^{-3}$.  Bottom right: the
+centered truncation zero approaches $\lambda$ while the deflated value at
+$\lambda$ stabilizes.  The tail points use 50-decimal arithmetic.}
+\label{fig:postcritical}
+\end{figure}
+
+\subsection{Circle traces and the exact reconstruction}
+
+For each $1\le n\le10$, the monotone lift equations
+\begin{equation}\label{eq:root-equations}
+ \widetilde F^n(\theta)-\theta=2\pi k,
+ \qquad
+ \widetilde F^n(\theta)+\theta=2\pi k
+\end{equation}
+are solved exhaustively.  The fixed-set cardinalities agree exactly with
+\cref{cor:circle-counts}, and \eqref{eq:main-trace-identity} agrees with the
+direct interval calculation to at worst $1.16\times10^{-14}$.  Selected rows
+are in \cref{tab:lift-audit}.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Deck-equivariant circle trace audit.}
+\label{tab:lift-audit}
+\begin{tabular}{rrrrr}
+\toprule
+$n$ & $\#\Fix(F^n)$ & $\#\Fix(\iota F^n)$
+& $E_{1,n}-O_{2,n}$ & reconstruction error\\
+\midrule
+1  & 1    & 3    & $1.05556563078010$ & $-1.11\times10^{-16}$\\
+4  & 15   & 17   & $1.00132623654253$ & $ 1.67\times10^{-15}$\\
+8  & 255  & 257  & $1.00000319448343$ & $ 1.15\times10^{-14}$\\
+10 & 1023 & 1025 & $1.00000014389139$ & $ 7.22\times10^{-15}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Centered zero and reduced Fredholm resonances}
+
+Let $H_N$ be the degree-$N$ Taylor polynomial obtained formally from
+$q_1,\ldots,q_N$.  Let
+\begin{equation}\label{eq:GN}
+ \log G_N(\lambda)=\sum_{n=1}^N\frac{e_n\lambda^n}{n}.
+\end{equation}
+The smallest positive zero $z_N$ of $H_N$ and the deflated value stabilize as
+in \cref{tab:zeta-convergence}.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Centered-zeta and deflated-value convergence.}
+\label{tab:zeta-convergence}
+\begin{tabular}{rrrr}
+\toprule
+$N$ & $z_N$ & $z_N-\lambda$ & $G_N(\lambda)$\\
+\midrule
+6  & $1.7215098224$ & $4.29363120\times10^{-2}$ & $1.1430116641$\\
+10 & $1.6833139574$ & $4.74044698\times10^{-3}$ & $1.1431435791$\\
+14 & $1.6791563531$ & $5.82842708\times10^{-4}$ & $1.1431449505$\\
+18 & $1.6786466196$ & $7.31091461\times10^{-5}$ & $1.1431449658$\\
+20 & $1.6785994451$ & $2.59346262\times10^{-5}$ & $1.1431449660$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The reduced determinant series are computed separately from
+$E_{1,n}-1$ and $O_{2,n}$:
+\begin{align}
+ \widetilde D_{1,+}(z)
+ &=\exp\left[-\sum_{n\ge1}\frac{(E_{1,n}-1)z^n}{n}\right],
+ \label{eq:D1-reduced-series}\\
+ D_{2,-}(z)
+ &=\exp\left[-\sum_{n\ge1}\frac{O_{2,n}z^n}{n}\right].
+ \label{eq:D2-series}
+\end{align}
+At truncation degree ten, the first positive zeros are
+\begin{equation}\label{eq:fredholm-zeros-numerical}
+ 4.81046066,
+ \qquad
+ 6.55616298,
+\end{equation}
+corresponding to inferred leading positive resonances
+\begin{equation}\label{eq:resonances-numerical}
+ \mu_{1,+}^{\mathrm{red}}\approx0.20788030,
+ \qquad
+ \mu_{2,-}\approx0.15252824.
+\end{equation}
+Both estimates stabilize by degree four in the displayed digits relevant
+here.  They are far below
+\begin{equation}\label{eq:thresholds}
+ \lambda^{-2}=0.3549108444\ldots,
+ \qquad
+ \lambda^{-1}=0.5957439420\ldots.
+\end{equation}
+They explain the tail ratio in \cref{tab:tail} and provide a large numerical
+noncancellation margin.  They remain polynomial-truncation estimates, not a
+computer-assisted proof that the full operator spectra obey these bounds.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/circle_lift_fredholm_audit.pdf}
+\caption{Circle-lift and Fredholm diagnostics.  Top left: the exact analytic
+lift derivative and its minimum $\lambda$.  Top right: interval traces
+reconstructed from ordinary and twisted circle traces.  Bottom left: the two
+reduced flat-trace sequences.  Bottom right: inferred leading resonances are
+well separated from the only possible cancellation value $\lambda^{-1}$.}
+\label{fig:lift-fredholm}
+\end{figure}
+
+\FloatBarrier
+\section{What is proved and what remains}
+\label{sec:status}
+
+The trace identity \eqref{eq:main-trace-identity} proves that the two terms
+$-\lambda^{-n}+\lambda^{-2n}$ are geometrically exact.  They are the
+difference between a square-root multiplier at a branch point of the circle
+cover and the true multiplier at the interval endpoint.  This identifies the
+postcritical rational factor in \eqref{eq:main-factorization} without any
+large-$n$ approximation.
+
+There are nevertheless two distinct meanings of the word ``factor.''  In a
+meromorphic identity, an explicit numerator may cancel a zero of the
+denominator.  An actual zeta zero requires the quotient to be holomorphic and
+nonzero at the point.  \Cref{prop:pressure-bound} eliminates the odd
+second-order determinant as a source of cancellation at $\lambda$.
+\Cref{cor:noncancellation} shows that the entire remaining issue is whether
+$\lambda^{-1}$ is an even non-Perron resonance of $\cL_1$.
+
+The stronger coefficient law \eqref{eq:previous-sharp} requires more than
+noncancellation at one point.  It follows from the disk bound
+\eqref{eq:strong-gap}, which also prevents cancellation of the pole at
+$\lambda^2$.  The data strongly support this bound:
+the two estimated reduced radii are $0.20788$ and $0.15253$, versus the
+threshold $0.35491$.  Turning that separation into a theorem would naturally
+require either an analytic cone/Lasota--Yorke estimate sharp enough for this
+specific lift or a validated approximation of the two Fredholm operators.
+
+We isolate the remaining statement for future use.
+
+\begin{conjecture}[Reduced-sector disk bound]
+\label{conj:disk-bound}
+For the analytic lift in \cref{prop:analytic-lift},
+\begin{equation}\label{eq:disk-bound-conjecture}
+ r_1<\lambda^{-2},
+ \qquad
+ r_2<\lambda^{-2},
+\end{equation}
+with $r_1,r_2$ defined in \eqref{eq:reduced-radii}.
+\end{conjecture}
+
+By \cref{prop:conditional-sharp}, this one operator statement implies the
+full sharp coefficient law conjectured in the preceding paper, including an
+uncanceled simple zero at $\lambda$ and an uncanceled simple pole at
+$\lambda^2$.  The present paper proves the factorization and the equivalence;
+it does not use \cref{conj:disk-bound} as an assumption in any unconditional
+result.
+
+\section{Conclusion}
+
+The critical point of the interval map can be removed by a two-sheeted cosine
+cover.  On the resulting analytic expanding circle map, deck parity and two
+adjacent transfer weights produce an exact Lefschetz cancellation.  The only
+place where the circle and interval traces disagree is the repelling branch
+endpoint, and that disagreement is exactly
+$-\lambda^{-n}+\lambda^{-2n}$.
+
+Exponentiation gives a closed Fredholm factorization of the weighted zeta
+function.  A strict pressure estimate rules out cancellation from the odd
+$\beta=2$ sector, reducing the previously conjectured zero to one explicit
+non-Perron spectral exclusion.  The multiprecision and Fredholm audits show a
+wide numerical margin for that exclusion but are not substituted for its
+proof.  Thus the main advance is both positive and sharply delimited: the
+postcritical factor is now exact; its global noncancellation remains a
+concrete operator bound.
+
+\section*{Reproducibility}
+
+The source code, tests, exhaustive periodic data, multiprecision tail,
+figures, and manuscript are archived with this paper
+\citep{WangPostcriticalCode2026}.  The test suite checks the algebraic
+parameter, semiconjugate lift, exact fixed-set counts, trace reconstruction,
+formal determinant algebra, and an independent mpmath calculation.  The
+parallel high-precision script records its working precision and process
+count in the output file.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

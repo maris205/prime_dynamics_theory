@@ -1,0 +1,41 @@
+{
+  "constants": {
+    "lambda_fixed_long_double": "1.678573510428322264993",
+    "lambda_inverse": 0.5957439419765593,
+    "lambda_inverse_squared": 0.3549108444017701,
+    "r_fixed_long_double": "0.543689012692076361548",
+    "u_critical_long_double": "1.543689012692076361548"
+  },
+  "exact_results": {
+    "component_trace_identity": "q_n=E_{1,n}-O_{2,n}-lambda^{-n}+lambda^{-2n}",
+    "lift_fixed_counts": "#Fix(F^n)=2^n-1 and #Fix(iota F^n)=2^n+1",
+    "zeta_factorization": "Z=(D_{2,-}/D_{1,+})*(1-z/lambda)/(1-z/lambda^2)"
+  },
+  "generated_utc": "2026-07-13T14:08:31.795674+00:00",
+  "logical_status": {
+    "odd_beta_two_at_lambda": "proved nonzero by a strict pressure bound",
+    "simple_zero_at_lambda": "equivalent to absence of the non-Perron eigenvalue lambda^{-1} in L_{1,+}",
+    "spectral_noncancellation": "high-precision numerical evidence; not a theorem"
+  },
+  "numerical_audit": {
+    "component_trace_at_maximum_length": "9.99968291264484913743e-01",
+    "degree_10_even_beta_one_resonance": 0.20788029889894039,
+    "degree_10_odd_beta_two_resonance": 0.15252823999575135,
+    "degree_20_centered_root": 1.6785994450544888,
+    "degree_20_root_error": 2.5934626166401742e-05,
+    "fixed_points_at_maximum_length": 1048576,
+    "maximum_component_length": 20,
+    "maximum_lift_reconstruction_error": 1.1546319456101628e-14,
+    "median_last_five_remainder_ratios": 0.2081683796369962,
+    "partial_G_at_lambda_degree_20": 1.1431449660070967,
+    "postcritical_remainder_at_maximum_length": "2.26661348636685720181e-14",
+    "tail_arithmetic": "50-decimal-place exhaustive mpmath"
+  },
+  "software": {
+    "mpmath": "1.4.1",
+    "numpy": "2.2.6",
+    "platform": "Linux-5.15.0-177-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "scipy": "1.15.3"
+  }
+}
