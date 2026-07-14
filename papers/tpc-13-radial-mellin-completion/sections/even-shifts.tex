@@ -1,0 +1,102 @@
+\section{Parity-conditioned even shifts}
+\label{sec:even-shifts}
+
+Restricting the ensemble to even shifts requires its own local centering.
+For $h\equiv0\pmod2$ and a product center $r$, put
+\begin{equation}
+ \eta_r^{(2)}(h)
+ :=\Lambda(r+h)-2\one_{2\nmid r}.
+ \label{eq:parity-centered-target}
+\end{equation}
+Define
+\begin{equation}
+ x^{(2)}_{a,b,k}(h;X,D)
+ :=u(ak)\eta_{abk^2}^{(2)}(h)W(abk^2/X)
+ \label{eq:even-radial-coefficient}
+\end{equation}
+and the fully radial parity-centered energy
+\begin{equation}
+ \cF^{(2)}_{h,D}(X)
+ :=\sum_{(a,b)=1}\sum_{\substack{k\geq1\\ak>D}}
+ |x^{(2)}_{a,b,k}(h;X,D)|^2.
+ \label{eq:even-radial-energy}
+\end{equation}
+The associated joint signal is obtained by multiplying
+$x^{(2)}_{a,b,k}$ by $(a/b)^{it}k^{is}$.
+
+\begin{theorem}[Short even-shift radial energy]
+\label{thm:short-even-radial-energy}
+Let $G\in C_c^1((0,\infty))$ be nonnegative and nonzero.  Under
+\eqref{eq:intro-parameter-range},
+\begin{equation}
+ \begin{aligned}
+ \sum_{h\equiv0\ (2)}G(h/H)\cF^{(2)}_{h,D}(X)
+ ={}&\frac14HX I_0(G)I_2(W)\log X\\
+ &\times\bigl((\log X)^2-(\log D)^2\bigr)
+ +O_{\eps,\eta,W,G}\bigl(HX(\log X)^2\bigr).
+ \end{aligned}
+ \label{eq:short-even-radial-energy}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The coordinate bijection gives
+\[
+ \cF^{(2)}_{h,D}(X)
+ =\sum_rA_D(r)|\eta_r^{(2)}(h)|^2.
+\]
+For odd $r$, the transferred target-square moment over even shifts is
+\[
+ \sum_{h\equiv0\ (2)}G(h/H)|\eta_r^{(2)}(h)|^2
+ =HI_0(G)\log X+O(H)
+\]
+outside the same stretched-exponentially sparse set used in TPC-12.  For
+even $r$, the target term is supported on powers of two.  Since
+$r+h\asymp X$ on the shift support, only $O_G(1)$ such powers occur and
+\[
+ \sum_{h\equiv0\ (2)}G(h/H)|\eta_r^{(2)}(h)|^2
+ \ll_G(\log X)^2.
+\]
+After multiplication by $A_D(r)$ and summation, these rows contribute
+\[
+ O_W(X(\log X)^4)=o(HX(\log X)^2)
+\]
+in the stated range.  The exceptional-set transfer applies to the odd
+rows with the same $A_D$ ledger, and their $O(H)$ errors sum to
+$O(H\cS_D)$.
+
+It remains to sum the source squares on odd product centers.  TPC-12
+proves
+\begin{equation}
+ \sum_{\substack{n>D,\ m\geq1\\2\nmid nm}}
+ u(n)^2|W(mn/X)|^2
+ =\frac14XI_2(W)
+ \bigl((\log X)^2-(\log D)^2\bigr)
+ +O_W(X\log X).
+ \label{eq:odd-product-source-diagonal}
+\end{equation}
+The factor $1/2$ from odd $m$ multiplies the $1/2$ in the full source
+diagonal.  Restricting $n$ to odd values changes only the lower-order
+linear logarithm.  Multiplication by $H\log X$ and the transferred
+exceptional error give \eqref{eq:short-even-radial-energy}.
+\end{proof}
+
+The normalized conditional average uses $2/H$ rather than $1/H$ because
+only half of the shifts are sampled.  Accordingly, after conditional
+normalization, the leading source coefficient is $1/2$; the
+unnormalized sum in \eqref{eq:short-even-radial-energy} has coefficient
+$1/4$.
+
+All exact dephasing statements in
+\cref{sec:two-dimensional-dephasing} apply coefficient by coefficient to
+$x^{(2)}_{a,b,k}$.  For example, the even-shift version of the global
+joint band has the right-hand side of
+\eqref{eq:short-shift-global-band} with $1/2$ replaced by $1/4$ and the
+same $O(TSHX(\log X)^2)$ error.
+
+\begin{remark}[No selected even gap]
+The support of $G(h/H)$ moves to infinity with $H$.  The theorem
+conditions the growing ensemble on parity but contains no prescribed
+even integer once $X$ is large.  In particular, it gives no information
+about the single shift $h=2$.
+\end{remark}

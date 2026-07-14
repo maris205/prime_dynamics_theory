@@ -1,0 +1,230 @@
+\section{Exact anisotropic dephasing}
+\label{sec:two-dimensional-dephasing}
+
+We use the Fourier convention
+\[
+ \widehat f(\xi)=\int_\R f(t)e^{-it\xi}\,dt
+\]
+and the normalized Fej\'er kernel
+\begin{equation}
+\kappa(t)=\frac2\pi\left(\frac{\sin(t/2)}t\right)^2,
+\qquad
+\widehat\kappa(\xi)=(1-|\xi|)_+.
+\label{eq:Fejer-kernel}
+\end{equation}
+Here $\kappa(0)=1/(2\pi)$ by continuity.  In particular,
+$\int_\R\kappa=1$, and the value of
+$\widehat\kappa$ at $|\xi|=1$ is zero.
+
+For arbitrary coefficients supported on $\mathscr I_R(X)$, write
+\begin{equation}
+\mathscr O_R(t,s)=
+ \sum_{(a,b,k)\in\mathscr I_R(X)}
+ x_{a,b,k}(a/b)^{it}k^{is}.
+\label{eq:sector-observation}
+\end{equation}
+
+\begin{proposition}[Exact pairwise Fej\'er criterion]
+\label{prop:pairwise-Fejer-criterion}
+Let $T,S>0$.  For any finite set of distinct joint frequencies
+$(\lambda_i,\rho_i)$, tensor-Fej\'er coefficient recovery and the
+Parseval identity hold for every coefficient vector if and only if, for
+each $i\ne j$,
+\begin{equation}
+ T|\lambda_i-\lambda_j|\geq1
+ \quad\text{or}\quad
+ S|\rho_i-\rho_j|\geq1.
+ \label{eq:pairwise-Fejer-criterion}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+After Fourier expansion, the multiplier of the $(i,j)$ term is
+\[
+ \widehat\kappa(T(\lambda_i-\lambda_j))
+ \widehat\kappa(S(\rho_i-\rho_j)).
+\]
+It vanishes exactly under \eqref{eq:pairwise-Fejer-criterion}.  If the
+condition fails for one pair, both factors are strictly positive.  A
+vector supported with equal phase on those two indices produces a
+nonzero cross term, and recovery of either coefficient has nonzero
+leakage.  This proves necessity as well as sufficiency.
+\end{proof}
+
+For a sparse fixed sector, \eqref{eq:pairwise-Fejer-criterion} can be
+weaker than two coordinatewise gap conditions.  The next theorem gives
+a uniform sufficient condition that depends only on $R,X$.
+
+\begin{theorem}[Exact sector recovery]
+\label{thm:exact-sector-recovery}
+Suppose
+\begin{equation}
+ T\delta_{\rm ray}(R)\geq1,
+ \qquad
+ S\delta_{\rm rad}(R,X)\geq1.
+ \label{eq:two-thresholds}
+\end{equation}
+Then every $(a_0,b_0,k_0)\in\mathscr I_R(X)$ satisfies
+\begin{equation}
+ \begin{aligned}
+ x_{a_0,b_0,k_0}
+ ={}&\frac1{TS}\iint_{\R^2}
+ \kappa(t/T)\kappa(s/S)\mathscr O_R(t,s)\\
+ &\quad\times
+ e^{-it\log(a_0/b_0)-is\log k_0}\,dt\,ds.
+ \end{aligned}
+ \label{eq:exact-coefficient-recovery}
+\end{equation}
+Moreover,
+\begin{equation}
+ \iint_{\R^2}
+ \kappa(t/T)\kappa(s/S)|\mathscr O_R(t,s)|^2\,dt\,ds
+ =TS\sum_{(a,b,k)\in\mathscr I_R(X)}|x_{a,b,k}|^2.
+ \label{eq:exact-sector-Parseval}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Scaling \eqref{eq:Fejer-kernel} gives
+\begin{equation}
+ \int_\R\kappa(t/T)e^{it(\lambda-\lambda_0)}dt
+ =T\widehat\kappa\bigl(T(\lambda_0-\lambda)\bigr).
+ \label{eq:scaled-Fejer-transform}
+\end{equation}
+Insert \eqref{eq:sector-observation} into
+\eqref{eq:exact-coefficient-recovery}.  If the primitive rays differ,
+the first Fourier factor vanishes by
+\eqref{eq:sector-ray-gap}--\eqref{eq:two-thresholds}.  If the rays agree
+but the triples differ, then their radial indices differ and the second
+factor vanishes by \eqref{eq:sector-radial-gap}.  Only the selected joint
+frequency remains.  This proves coefficient recovery.
+
+Expanding the square in \eqref{eq:exact-sector-Parseval} gives the same
+two Fourier factors for every pair of triples.  Every off-diagonal pair
+is killed in at least one coordinate, while a diagonal pair contributes
+$TS|x_{a,b,k}|^2$.
+\end{proof}
+
+The theorem is exact at the gap thresholds because the compact Fourier
+transform of the kernel vanishes at its endpoints.  It uses infinite
+physical tails in $(t,s)$; a hard rectangle behaves differently.
+
+\begin{theorem}[Hard-rectangle mean square]
+\label{thm:hard-rectangle}
+Let $I,J\subset\R$ be bounded intervals of lengths $L$ and $M$,
+respectively.  For coefficients supported on $\mathscr I_R(X)$,
+\begin{equation}
+ \begin{aligned}
+ \iint_{I\times J}|\mathscr O_R(t,s)|^2\,dt\,ds
+ ={}&LM\sum|x_{a,b,k}|^2\\
+ &+O\!\left(
+ \left\{
+ \frac{M}{\delta_{\rm ray}}
+ +\frac{L}{\delta_{\rm rad}}
+ +\frac1{\delta_{\rm ray}\delta_{\rm rad}}
+ \right\}
+ \sum|x_{a,b,k}|^2
+ \right),
+ \end{aligned}
+ \label{eq:hard-rectangle-law}
+\end{equation}
+where the gaps are those in \cref{lem:sector-joint-gaps} and the implied
+constant is absolute.  Consequently \eqref{eq:hard-rectangle-law} is an
+asymptotic uniformly for arbitrary coefficients if
+\begin{equation}
+ L\delta_{\rm ray}\longrightarrow\infty,
+ \qquad
+ M\delta_{\rm rad}\longrightarrow\infty.
+ \label{eq:hard-rectangle-asymptotic-range}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Group first by primitive ray:
+\[
+ \mathscr O_R(t,s)=
+ \sum_{(a,b)}F_{a,b}(s)e^{it\log(a/b)},
+ \qquad
+ F_{a,b}(s)=\sum_kx_{a,b,k}e^{is\log k}.
+\]
+For every fixed $s$, the generalized Hilbert inequality of
+\citet{MontgomeryVaughan1974} and the ray gap give
+\[
+ \int_I|\mathscr O_R(t,s)|^2dt
+ =L\sum_{(a,b)}|F_{a,b}(s)|^2
+ +O\!\left(\delta_{\rm ray}^{-1}
+ \sum_{(a,b)}|F_{a,b}(s)|^2\right).
+\]
+Integrate in $s$.  A second application of the same inequality, now to
+the $\delta_{\rm rad}$-separated frequencies $\log k$ on each ray,
+gives
+\[
+ \int_J|F_{a,b}(s)|^2ds
+ =M\sum_k|x_{a,b,k}|^2
+ +O\!\left(\delta_{\rm rad}^{-1}
+ \sum_k|x_{a,b,k}|^2\right).
+\]
+Substitution and expansion of the two error factors proves
+\eqref{eq:hard-rectangle-law}.  Division by $LM\sum|x|^2$ gives the
+last assertion.
+\end{proof}
+
+At the critical scales $L\asymp R$ and
+$M\asymp\sqrt{X/R}$, the hard-rectangle error is only bounded relative
+to the main term.  Exact equality at that scale is a special advantage
+of the compact-Fourier Fej\'er kernel.
+
+\subsection{Global and multiresolution forms}
+
+For the undecomposed signal, put
+\begin{equation}
+ \delta_X:=2\arsinh\!\left(\frac1{2\beta X}\right),
+ \qquad
+ \Delta_X:=\log\!\left(1+\frac1{\sqrt{\beta X}}\right).
+ \label{eq:global-gaps}
+\end{equation}
+The first is the global hyperbolic ratio gap from TPC-11; the second
+follows from $k\leq\sqrt{\beta X}$.  The same proof, using the global
+gaps in \eqref{eq:global-gaps}, gives the following deliberately more
+expensive statement.
+
+\begin{corollary}[Global exact radial Parseval identity]
+\label{cor:global-radial-Parseval}
+If $T\delta_X\geq1$ and $S\Delta_X\geq1$, then
+\begin{equation}
+ \iint_{\R^2}\kappa(t/T)\kappa(s/S)
+ |\cR^{\rad}_{h,D}(X;t,s)|^2\,dt\,ds
+ =TS\cF_{h,D}(X).
+ \label{eq:global-radial-Parseval}
+\end{equation}
+The analogous identity holds for the raw transform and its fully
+diagonal energy.
+\end{corollary}
+
+There is also an exact sector-adapted filter bank.  Let
+$\cR^{\rad}_{h,D;R}$ denote the restriction of
+\eqref{eq:intro-joint-expansion} to $R\leq ab<2R$.  Choose arbitrary
+$T_R,S_R$ satisfying \eqref{eq:two-thresholds} in each nonempty sector.
+Then
+\begin{equation}
+ \sum_{\substack{R\in\cD_X\\\mathscr I_R(X)\ne\varnothing}}
+ \frac1{T_RS_R}
+ \iint_{\R^2}\kappa(t/T_R)\kappa(s/S_R)
+ |\cR^{\rad}_{h,D;R}(X;t,s)|^2\,dt\,ds
+ =\cF_{h,D}(X).
+ \label{eq:multiresolution-Parseval}
+\end{equation}
+This is the rigorous meaning of using the sectorwise law
+$T_RS_R^2\asymp X$: the sectors are isolated before their
+squared observations are combined.
+
+\begin{remark}[Geometric sharpness along interior families only]
+Two equal-$k$ coefficients on the near-adjacent rays $(N,1)$ and
+$(N-1,1)$ retain a nonzero Fej\'er cross term if $T=o(N)$.  Two
+coefficients at consecutive $k$ on one ray retain a nonzero cross term
+if $S=o(k)$.  Along populated interior families containing these
+configurations, neither separate threshold can be uniformly reduced for
+arbitrary coefficient systems.  A sparse fixed sector can require less.
+This is a conditioning and resolution statement; it does not assert that
+the actual arithmetic coefficients saturate every geometric obstruction.
+\end{remark}

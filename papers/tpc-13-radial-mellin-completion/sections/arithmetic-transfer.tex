@@ -1,0 +1,180 @@
+\section{Arithmetic ledgers and short-interval transfer}
+\label{sec:arithmetic-transfer}
+
+The geometric lift changes the spectral fibres but not the product
+centers to which the short-interval theorem is applied.  For $r\geq1$
+put
+\begin{align}
+ A_D(r)
+ &:={}|W(r/X)|^2
+ \sum_{\substack{n\mid r\\n>D}}u(n)^2,
+ \label{eq:product-diagonal-weight}\\
+ B^{\rad}_{D,t,s}(r)
+ &:={}W(r/X)
+ \sum_{\substack{n\mid r\\n>D}}
+ u(n)(n^2/r)^{it}
+ \gcd(n,r/n)^{is}.
+ \label{eq:radial-signed-product-weight}
+\end{align}
+The first weight is unchanged from TPC-12.  The second is the coefficient
+obtained by grouping \eqref{eq:intro-centered-radial-transform} by
+$r=mn$.
+
+\begin{lemma}[Product ledgers]
+\label{lem:radial-product-ledgers}
+Uniformly in $D\geq1$ and $t,s\in\R$,
+\begin{align}
+ A_D(r)&\ll_W\one_{[\alpha X,\beta X]}(r)
+ \bigl((\log(2r))^2+\tau(r)\bigr),
+ \label{eq:A-pointwise}\\
+ |B^{\rad}_{D,t,s}(r)|
+ &\ll_W\one_{[\alpha X,\beta X]}(r)
+ \bigl(\log(2r)+\tau(r)\bigr),
+ \label{eq:B-radial-pointwise}
+\end{align}
+and
+\begin{align}
+ \sum_rA_D(r)^2&\ll_WX(\log(2X))^4,
+ \label{eq:A-second-moment}\\
+ \sum_r|B^{\rad}_{D,t,s}(r)|^2
+ &\ll_WX(\log(2X))^3.
+ \label{eq:B-radial-second-moment}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Since $(\Lambda-1)^2\leq2(1+\Lambda^2)$,
+\[
+ \sum_{d\mid r}u(d)^2
+ \leq2\tau(r)+2\sum_{p^j\mid r}(\log p)^2
+ \leq2\tau(r)+2(\log r)^2.
+\]
+Also, both phases in \eqref{eq:radial-signed-product-weight} have modulus
+one, so
+\[
+ |B^{\rad}_{D,t,s}(r)|
+ \leq\|W\|_\infty\sum_{d\mid r}|u(d)|
+ \leq\|W\|_\infty\bigl(\log r+\tau(r)\bigr).
+\]
+The second moments follow from
+$\sum_{r\leq y}\tau(r)^2\ll y(\log(2y))^3$.  This is the same proof as
+the product ledger in TPC-12; the new GCD phase costs nothing.
+\end{proof}
+
+Define the total source diagonal
+\begin{equation}
+ \cS_D(X):=\sum_rA_D(r)
+ =\sum_{\substack{n>D\\m\geq1}}
+ u(n)^2|W(mn/X)|^2.
+ \label{eq:source-diagonal-definition}
+\end{equation}
+
+\begin{lemma}[Source diagonal]
+\label{lem:source-diagonal}
+For every fixed $\eta>0$, uniformly for
+$1\leq D\leq X^{1-\eta}$,
+\begin{equation}
+ \cS_D(X)
+ =\frac12XI_2(W)
+ \bigl((\log X)^2-(\log D)^2\bigr)
+ +O_W(X\log(2X)).
+ \label{eq:source-diagonal}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Euler summation gives
+\[
+ \sum_{m\geq1}|W(mn/X)|^2
+ =\frac XnI_2(W)+O_W(1).
+\]
+The prime number theorem and partial summation give
+\[
+ \sum_{n\leq y}\frac{(\Lambda(n)-1)^2}{n}
+ =\frac12(\log y)^2-\log y+O(1),
+\]
+while $\sum_{n\leq y}u(n)^2\ll y\log(2y)$.  Subtracting the range
+$n\leq D$ proves the assertion; see also
+\citet[Chapter~5]{IwaniecKowalski2004} and TPC-12
+\citep{WangTPC12}.
+\end{proof}
+
+The following transferred moment is the deep arithmetic input.  It is
+quoted in the form proved as Proposition~4.2 of TPC-12.  Its proof starts
+from Corollary~1.4 of arXiv:2405.20552v2, the Guth--Maynard prime number
+theorem for almost all intervals of length
+$X^{2/15+\eps}$ \citep{GuthMaynard2026}.  The exceptional set has size
+$O(X\exp\{-c(\log X)^{1/4}\})$ for each discretized interval length;
+TPC-12 takes a controlled union over the lengths needed to smooth $G$.
+Cauchy--Schwarz and \eqref{eq:A-second-moment} then show that the
+exceptional centers carry negligible $A_D$-mass.
+For $H\leq X^{0.98}$ this is the almost-all argument.  For
+$H>X^{0.98}$, TPC-12 partitions the full shift interval into equal
+blocks of lengths in $[X^{0.97},2X^{0.97}]$ and applies the uniform
+$17/30$ short-interval theorem on every block; there is no exceptional
+center in that range.  These two cases cover the full upper range
+$H\leq X$ stated below.
+
+\begin{proposition}[Weighted target-square transfer]
+\label{prop:weighted-target-square}
+Let $G\in C_c^1((0,\infty))$ be nonnegative and nonzero.  Fix
+$0<\eps<13/15$ and $0<\eta<1$.  Uniformly for
+\eqref{eq:intro-parameter-range},
+\begin{equation}
+ \begin{aligned}
+ &\sum_rA_D(r)
+ \sum_hG(h/H)(\Lambda(r+h)-1)^2\\
+ &\qquad={}
+ HI_0(G)\log X\,\cS_D(X)
+ +O_{\eps,W,G}\bigl(HX(\log X)^2\bigr).
+ \end{aligned}
+ \label{eq:weighted-centered-target-square}
+\end{equation}
+The same formula holds with the target square replaced by
+$\Lambda(r+h)^2$.
+\end{proposition}
+
+\begin{proof}
+This is Proposition~4.2 of \citet{WangTPC12}.  Outside the transferred
+exceptional set, smooth
+partial summation gives
+\[
+ \sum_hG(h/H)(\Lambda(r+h)-1)^2
+ =HI_0(G)\log X+O(H).
+\]
+The $O(H)$ term sums to $O(H\cS_D)=O(HX(\log X)^2)$.  On the exceptional
+set, the pointwise $O(H(\log X)^2)$ bound and the arbitrarily large
+logarithmic saving in its $A_D$-mass give a smaller contribution.  The
+raw square is identical.
+\end{proof}
+
+The signed transfer also survives the new phase.
+
+\begin{theorem}[Radially completed short-shift first moment]
+\label{thm:radial-first-moment}
+Under \eqref{eq:intro-parameter-range}, for every $A>0$, uniformly in
+$t,s\in\R$,
+\begin{equation}
+ \frac1H\sum_hG(h/H)\cT^{\rad}_{h,D}(X;t,s)
+ =I_0(G)\cM^{\rad}_D(X;t,s)
+ +O_{A,\eps,W,G}\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:radial-first-moment}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Grouping by $r=mn$ gives
+\[
+ \frac1H\sum_hG(h/H)\cR^{\rad}_{h,D}(X;t,s)
+ =\sum_rB^{\rad}_{D,t,s}(r)
+ \left\{\frac1H\sum_hG(h/H)(\Lambda(r+h)-1)\right\}.
+\]
+On regular centers the braces save every fixed power of $\log X$.
+Equation \eqref{eq:B-radial-pointwise} and the mean order of $\tau$
+give $\sum_r|B^{\rad}_{D,t,s}(r)|\ll_WX\log(2X)$.  On the exceptional
+set, Cauchy--Schwarz, \eqref{eq:B-radial-second-moment}, and its
+stretched-exponential cardinality again save every logarithmic power.
+All bounds are uniform in both frequency variables because the added
+phase has modulus one.  Finally the Riemann-sum normalization of $G$
+produces the displayed model term.
+\end{proof}

@@ -1,0 +1,113 @@
+\section{The joint factor-coordinate dynamics}
+\label{sec:joint-dynamics}
+
+We first isolate the exact algebra, independently of the prime weights.
+
+\begin{proposition}[Primitive-ray and radial coordinates]
+\label{prop:coordinate-bijection}
+The map
+\begin{equation}
+ (m,n)\longmapsto
+ \left(a=\frac{n}{(m,n)},\ b=\frac{m}{(m,n)},\ k=(m,n)\right)
+ \label{eq:coordinate-map}
+\end{equation}
+is a bijection from $\N^2$ to the triples
+\[
+ (a,b,k)\in\N^3,\qquad (a,b)=1.
+\]
+Moreover,
+\begin{equation}
+ mn=abk^2,
+ \qquad \frac nm=\frac ab,
+ \qquad (m,n)=k.
+ \label{eq:coordinate-identities}
+\end{equation}
+Consequently the joint frequency map
+\begin{equation}
+ (a,b,k)\longmapsto
+ \lambda_{a,b,k}:=\bigl(\log(a/b),\log k\bigr)
+ \label{eq:joint-frequency-map}
+\end{equation}
+is injective.
+\end{proposition}
+
+\begin{proof}
+The GCD decomposition gives positive coprime $a,b$ and recovers
+$n=ak$, $m=bk$, proving bijectivity and
+\eqref{eq:coordinate-identities}.  If two joint frequencies agree, then
+$a/b=c/d$.  Reduced positive fractions are unique, so $(a,b)=(c,d)$;
+equality of $\log k$ and $\log\ell$ then gives $k=\ell$.
+\end{proof}
+
+The ratio-only map is the projection of \eqref{eq:joint-frequency-map}
+onto its first coordinate.  Its fibre over a primitive ray $(a,b)$ is
+the entire supported set of radial integers $k$.  This is exactly the
+compression diagnosed in TPC-12.
+
+\subsection{A commuting unitary representation}
+
+Let $\mathscr I\subset\{(a,b,k):(a,b)=1\}$ be any finite index set and
+put $\cH_{\mathscr I}=\ell^2(\mathscr I)$.  On its standard basis define
+two diagonal self-adjoint operators
+\begin{equation}
+ L_{\rm ray}e_{a,b,k}=\log(a/b)e_{a,b,k},
+ \qquad
+ L_{\rm rad}e_{a,b,k}=\log k\,e_{a,b,k}.
+ \label{eq:joint-generators}
+\end{equation}
+They commute, and hence generate the unitary $\R^2$-action
+\begin{equation}
+ U(t,s)=\exp\!\bigl(i tL_{\rm ray}+i sL_{\rm rad}\bigr).
+ \label{eq:joint-unitary-action}
+\end{equation}
+For a coefficient vector $x=(x_{a,b,k})$, the coordinate-sum observation
+is
+\begin{equation}
+ \mathscr O_x(t,s)
+ :=\sum_{(a,b,k)\in\mathscr I}
+ x_{a,b,k}e^{it\log(a/b)+is\log k}.
+ \label{eq:coordinate-sum-observation}
+\end{equation}
+The arithmetic transform \eqref{eq:intro-joint-expansion} is this
+observation with the finite set and coefficient vector selected by
+$X,h,D,W$.
+
+\begin{proposition}[Projection loss and joint completeness]
+\label{prop:projection-and-completeness}
+For a fixed primitive ray $(a,b)$, the restriction $s=0$ observes only
+\begin{equation}
+ e^{it\log(a/b)}\sum_kx_{a,b,k}.
+ \label{eq:one-coordinate-fibre-sum}
+\end{equation}
+In contrast, the full function $(t,s)\mapsto\mathscr O_x(t,s)$ uniquely
+determines every coefficient $x_{a,b,k}$.
+\end{proposition}
+
+\begin{proof}
+The first assertion is immediate.  For the second, the exponentials have
+distinct frequency vectors by \cref{prop:coordinate-bijection}.  A
+finite linear combination of distinct characters of $\R^2$ cannot
+vanish identically.  Explicit finite-resolution, Fej\'er-weighted
+recovery with quantitative sector thresholds is proved in
+\cref{thm:exact-sector-recovery}.
+\end{proof}
+
+\begin{remark}[What ``dynamics'' means here]
+The action \eqref{eq:joint-unitary-action} is an exact diagonal unitary
+action on the augmented factor-coordinate coefficient space.  Its generators and joint
+eigenvalues are explicitly defined logarithmic coordinates.  They are
+not asserted to be Koopman or transfer-operator eigenvalues of the
+logistic map, and they have no claimed identification with Riemann-zero
+ordinates.  This separation of meanings is essential to the scope of
+the paper.
+\end{remark}
+
+\begin{remark}[Why a product phase is not the same lift]
+Adding $(mn/X)^{is}$ would attach the frequency
+$\log(abk^2/X)=\log(ab/X)+2\log k$.  The unknown ray-dependent term
+$\log(ab/X)$ prevents a single global linear recombination with
+$\log(a/b)$ from producing $\log k$.  Once the primitive ray is known,
+one can nevertheless subtract that term and divide by two.  The GCD
+phase is therefore a direct ray-adapted observable, not a claim of more
+information than the complete ratio--product two-Mellin signal.
+\end{remark}

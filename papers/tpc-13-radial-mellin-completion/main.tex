@@ -1,0 +1,159 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Radial Completion of Factor-Ray Dynamics: A GCD-Mellin Joint Spectrum, Exact Anisotropic Dephasing, and the Fixed-Shift Boundary},
+ pdfauthor={Liang Wang},
+ pdfsubject={A two-coordinate spectral completion of factor-ray dynamics and its arithmetic boundary},
+ pdfkeywords={factor rays, Mellin transform, gcd coordinate, anisotropic dephasing, primes in short intervals, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\arsinh}{\operatorname{arsinh}}
+\newcommand{\rad}{\mathrm{rad}}
+\newcommand{\raw}{\mathrm{raw}}
+
+\title{\textbf{Radial Completion of Factor-Ray Dynamics:}\\
+\textbf{A GCD--Mellin Joint Spectrum, Exact Anisotropic}\\
+\textbf{Dephasing, and the Fixed-Shift Boundary}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Put $u(n)=\Lambda(n)-1$, let $W\in C_c^1((0,\infty);\R)$ with
+$\supp W\subset[\alpha,\beta]\subset(0,\infty)$, and consider
+the two-coordinate residual
+\[
+ \cR^{\rad}_{h,D}(X;t,s)=
+ \sum_{\substack{n>D\\m\geq1}}
+ u(n)(\Lambda(mn+h)-1)W(mn/X)
+ (n/m)^{it}(m,n)^{is}.
+\]
+Writing $n=ak$, $m=bk$, $(a,b)=1$, turns its joint frequency into
+$(\log(a/b),\log k)$.  Unlike the previous ratio-only Mellin signal,
+this GCD--Mellin lift separates every factor pair.  We formulate the lift
+as a commuting two-parameter unitary action and prove exact coefficient
+recovery, a tensor Fej\'er Parseval identity, and a rectangular
+Montgomery--Vaughan estimate.
+The lift is a ray-adapted coordinate system, not an information-theoretic
+enlargement of the full ratio--product two-Mellin continuum used in
+TPC-10.
+
+On a sector $R\leq ab<2R$, the two frequency gaps are bounded below by
+\[
+ \delta_{\rm ray}=2\arsinh(1/(4R)),\qquad
+ \delta_{\rm rad}=\log\!\left(1+\sqrt{R/(\beta X)}\right).
+\]
+Consequently exact tensor-Fej\'er dephasing occurs at the separate scale
+parameters
+$T_{\rm ray}\asymp R$ and
+$T_{\rm rad}\asymp\sqrt{X/R}$.  Both scales are sharp up to constants
+along populated interior sector families; their sectorwise invariant is
+$T_{\rm ray}T_{\rm rad}^2\asymp X$.  This is not a single global
+bandwidth law: the undecomposed signal has the worse simultaneous scales
+$X$ and $\sqrt X$.
+Hard rectangles are asymptotic only when both side lengths exceed the
+corresponding reciprocal gaps by unbounded factors.
+
+The fully dephased energy is exactly
+\[
+ \cF_{h,D}(X)=
+ \sum_{\substack{n>D\\m\geq1}}
+ u(n)^2(\Lambda(mn+h)-1)^2|W(mn/X)|^2.
+\]
+Let $G\in C_c^1((0,\infty))$ be nonnegative and nonzero, and put
+$I_0(G)=\int_0^\infty G(v)\,dv$ and
+$I_2(W)=\int_0^\infty|W(v)|^2\,dv$.
+Using the weighted exceptional-set transfer from TPC-12, for fixed
+$0<\eps<13/15$ and $0<\eta<1$, uniformly in
+$X^{2/15+\eps}\leq H\leq X$ and $1\leq D\leq X^{1-\eta}$, we prove
+\begin{align*}
+ \sum_hG(h/H)\cF_{h,D}(X)
+ ={}&\frac12HX I_0(G)I_2(W)\log X
+ \bigl((\log X)^2-(\log D)^2\bigr)\\
+ &+O\bigl(HX(\log X)^2\bigr).
+\end{align*}
+The same result holds for the raw target.  Radial dephasing removes the
+same-ray off-diagonal and hence the $\log\log X$ loss in TPC-12.  The
+unnormalized parity-centered sum over even shifts has coefficient $1/4$.
+
+The added coordinate repairs geometric information loss, not the fixed-
+shift arithmetic.  We prove that the $m=1$ endpoint of the dephased
+energy is, up to $O(X\log X)$, $(\log X)^2$ times the weighted
+Hardy--Littlewood prime-pair correlation.  Thus its predicted fixed-even-
+shift asymptotic is equivalent to that open correlation; for $h=2$ it
+is the weighted Hardy--Littlewood twin-prime asymptotic, which is
+strictly stronger than mere infinitude of twin primes.  No fixed-shift prime-pair asymptotic,
+twin-prime lower bound, new level of distribution, or breach of sieve
+parity is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} factor-ray dynamics; GCD--Mellin spectrum;
+anisotropic dephasing; primes in almost all short intervals; prime-pair
+boundary; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N05, 11N35; Secondary
+11N32, 42A05.
+
+\input{sections/introduction-scope}
+\input{sections/joint-dynamics}
+\input{sections/sector-geometry}
+\input{sections/two-dimensional-dephasing}
+\input{sections/arithmetic-transfer}
+\input{sections/short-shift-spectrum}
+\input{sections/even-shifts}
+\input{sections/fixed-shift-boundary}
+\input{sections/computation-conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

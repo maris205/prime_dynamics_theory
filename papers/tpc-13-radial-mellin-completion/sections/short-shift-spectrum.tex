@@ -1,0 +1,165 @@
+\section{Short-shift radial energy and spectral laws}
+\label{sec:short-shift-spectrum}
+
+The benefit of the added coordinate appears before any estimate is used.
+
+\begin{proposition}[Exact product-center identity]
+\label{prop:exact-product-center-identity}
+For every $h,D,X$,
+\begin{equation}
+ \cF_{h,D}(X)
+ =\sum_rA_D(r)(\Lambda(r+h)-1)^2.
+ \label{eq:radial-energy-product-center}
+\end{equation}
+If
+\begin{equation}
+ \cF^{\raw}_{h,D}(X):=
+ \sum_{\substack{n>D\\m\geq1}}
+ u(n)^2\Lambda(mn+h)^2|W(mn/X)|^2,
+ \label{eq:raw-radial-energy}
+\end{equation}
+then
+\begin{equation}
+ \cF^{\raw}_{h,D}(X)=\sum_rA_D(r)\Lambda(r+h)^2.
+ \label{eq:raw-radial-product-center}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+By \cref{prop:coordinate-bijection}, summing over primitive triples is
+the same as summing once over every factor pair $(m,n)$.  Group those
+pairs by $r=mn$.  The source squares on one product center sum to
+$A_D(r)$, proving both identities.
+\end{proof}
+
+No target with a different radial index occurs in
+\eqref{eq:radial-energy-product-center}.  In particular, no two-target
+upper sieve is needed.
+
+\begin{theorem}[Short-shift fully radial energy]
+\label{thm:short-shift-radial-energy}
+Let $G\in C_c^1((0,\infty))$ be nonnegative and nonzero.  Fix
+$0<\eps<13/15$ and $0<\eta<1$.  Uniformly for
+\eqref{eq:intro-parameter-range},
+\begin{equation}
+ \begin{aligned}
+ \sum_hG(h/H)\cF_{h,D}(X)
+ ={}&\frac12HX I_0(G)I_2(W)\log X\\
+ &\times\bigl((\log X)^2-(\log D)^2\bigr)
+ +O_{\eps,\eta,W,G}\bigl(HX(\log X)^2\bigr).
+ \end{aligned}
+ \label{eq:short-shift-radial-energy}
+\end{equation}
+The same asymptotic holds for $\cF^{\raw}_{h,D}(X)$.
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:radial-energy-product-center} and apply
+\cref{prop:weighted-target-square}.  This gives
+\[
+ \sum_hG(h/H)\cF_{h,D}(X)
+ =HI_0(G)\log X\,\cS_D(X)
+ +O(HX(\log X)^2).
+\]
+Now substitute \eqref{eq:source-diagonal}.  Its remainder, after
+multiplication by $H\log X$, is also $O(HX(\log X)^2)$.  The raw result
+follows from \eqref{eq:raw-radial-product-center} and the raw part of
+\cref{prop:weighted-target-square}.
+\end{proof}
+
+If $W\not\equiv0$, then $I_2(W)>0$ and
+\[
+ (\log X)^2-(\log D)^2
+ \geq(2\eta-\eta^2)(\log X)^2.
+\]
+Thus the relative error in \eqref{eq:short-shift-radial-energy} is
+$O_{\eta}(1/\log X)$.
+
+\begin{remark}[A changed observable, not a stronger estimate of the old one]
+The ratio-only ray energy of TPC-12 is
+\begin{equation}
+ \cE_{h,D}(X)
+ =\sum_{(a,b)=1}\left|\sum_kx_{a,b,k}\right|^2
+ =\cF_{h,D}(X)
+ +\sum_{(a,b)=1}\sum_{k\ne\ell}
+ x_{a,b,k}\overline{x_{a,b,\ell}}.
+ \label{eq:old-versus-new-energy}
+\end{equation}
+The $O(HX(\log X)^2\log\log X)$ error in TPC-12 bounds the last sum
+after shift averaging by a two-linear-forms Selberg upper sieve.  The
+present $O(HX(\log X)^2)$ error is smaller because
+\eqref{eq:intro-radial-energy} defines a different, fully separated
+observable in which the off-diagonal is absent.  We do not claim an
+improved error for $\cE_{h,D}$ itself.
+\end{remark}
+
+\subsection{Global two-dimensional Fej\'er band}
+
+Combining the arithmetic theorem with
+\cref{cor:global-radial-Parseval} gives a single-band statement.
+
+\begin{corollary}[Short-shift global joint band]
+\label{cor:short-shift-global-band}
+If $T\delta_X\geq1$ and $S\Delta_X\geq1$, then under the hypotheses of
+\cref{thm:short-shift-radial-energy},
+\begin{equation}
+ \begin{aligned}
+ &\sum_hG(h/H)\iint_{\R^2}
+ \kappa(t/T)\kappa(s/S)
+ |\cR^{\rad}_{h,D}(X;t,s)|^2\,dt\,ds\\
+ &\quad={}
+ \frac12TSHX I_0(G)I_2(W)\log X
+ \bigl((\log X)^2-(\log D)^2\bigr)\\
+ &\qquad\quad+O_{\eps,\eta,W,G}
+ \bigl(TSHX(\log X)^2\bigr).
+ \end{aligned}
+ \label{eq:short-shift-global-band}
+\end{equation}
+The same statement holds for the raw transform.
+\end{corollary}
+
+\begin{proof}
+For every $h$, \eqref{eq:global-radial-Parseval} turns the integral into
+$TS\cF_{h,D}(X)$.  Sum \cref{thm:short-shift-radial-energy}.
+\end{proof}
+
+\subsection{Sector-adapted multiresolution band}
+
+For each nonempty $R$-sector, choose $T_R,S_R$ satisfying
+\eqref{eq:two-thresholds}.  Define
+\begin{equation}
+ \begin{aligned}
+ \mathfrak P_{h,D}(X)
+ :={}&\sum_{\substack{R\in\cD_X\\\mathscr I_R(X)\ne\varnothing}}
+ \frac1{T_RS_R}
+ \iint_{\R^2}\kappa(t/T_R)\kappa(s/S_R)\\
+ &\hspace{6em}\times
+ |\cR^{\rad}_{h,D;R}(X;t,s)|^2\,dt\,ds.
+ \end{aligned}
+ \label{eq:multiresolution-functional}
+\end{equation}
+Equation \eqref{eq:multiresolution-Parseval} says exactly that
+\begin{equation}
+ \mathfrak P_{h,D}(X)=\cF_{h,D}(X).
+ \label{eq:multiresolution-equals-energy}
+\end{equation}
+We therefore obtain the sector-optimal version without needing an
+individual arithmetic asymptotic for each $R$.
+
+\begin{corollary}[Short-shift multiresolution spectrum]
+\label{cor:short-shift-multiresolution}
+Under \eqref{eq:intro-parameter-range},
+\begin{equation}
+ \begin{aligned}
+ \sum_hG(h/H)\mathfrak P_{h,D}(X)
+ ={}&\frac12HX I_0(G)I_2(W)\log X\\
+ &\times\bigl((\log X)^2-(\log D)^2\bigr)
+ +O\bigl(HX(\log X)^2\bigr).
+ \end{aligned}
+ \label{eq:short-shift-multiresolution}
+\end{equation}
+\end{corollary}
+
+This corollary combines sectorwise spectral resolutions only after each
+sector has been isolated and normalized.  It neither asserts a common
+small global band nor evaluates a specified fixed shift.

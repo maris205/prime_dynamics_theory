@@ -1,0 +1,135 @@
+\section{Dyadic factor-ray sectors and joint spacing}
+\label{sec:sector-geometry}
+
+The two coordinates have different natural resolutions.  To see them
+without mixing incompatible scales, let
+\begin{equation}
+ \cD_X:=\{2^j:j\in\Z_{\geq0},\ 2^j\leq\beta X\}
+ \label{eq:dyadic-scales}
+\end{equation}
+and, for $R\in\cD_X$, define the hyperbolic sector
+\begin{equation}
+ \mathscr I_R(X):=
+ \left\{(a,b,k):
+ \begin{array}{l}
+ (a,b)=1,\ R\leq ab<2R,\\
+ \alpha X\leq abk^2\leq\beta X
+ \end{array}
+ \right\}.
+ \label{eq:sector-index-set}
+\end{equation}
+Every coefficient supported by $W(abk^2/X)$ belongs to exactly one such
+sector.  The cutoff $ak>D$ may remove indices but cannot worsen the
+spacing.
+
+\begin{lemma}[Explicit uniform lower gaps in one sector]
+\label{lem:sector-joint-gaps}
+Let $(a,b,k),(c,d,\ell)\in\mathscr I_R(X)$.  If $(a,b)\ne(c,d)$, then
+\begin{equation}
+ \left|\log\frac ab-\log\frac cd\right|
+ \geq\delta_{\rm ray}(R),
+ \qquad
+ \delta_{\rm ray}(R):=2\arsinh\!\left(\frac1{4R}\right).
+ \label{eq:sector-ray-gap}
+\end{equation}
+If $k\ne\ell$, then
+\begin{equation}
+ |\log k-\log\ell|
+ \geq\delta_{\rm rad}(R,X),
+ \qquad
+ \delta_{\rm rad}(R,X)
+ :=\log\!\left(1+\sqrt{\frac{R}{\beta X}}\right).
+ \label{eq:sector-radial-gap}
+\end{equation}
+Uniformly for $1\leq R\leq\beta X$,
+\begin{equation}
+ \delta_{\rm ray}(R)^{-1}\asymp R,
+ \qquad
+ \delta_{\rm rad}(R,X)^{-1}\asymp_\beta\sqrt{X/R}.
+ \label{eq:sector-gap-scales}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For distinct reduced fractions, $|ad-bc|\geq1$.  The exact identity
+\[
+ 2\sinh\!\left(
+ \frac12\left|\log\frac{ad}{bc}\right|
+ \right)
+ =\frac{|ad-bc|}{\sqrt{abcd}}
+\]
+and $ab,cd<2R$ give
+\[
+ 2\sinh\!\left(
+ \frac12\left|\log\frac{a/b}{c/d}\right|
+ \right)>\frac1{2R},
+\]
+which implies \eqref{eq:sector-ray-gap}.
+
+Next, every supported radial index satisfies
+\[
+ k\leq\sqrt{\frac{\beta X}{ab}}
+ \leq\sqrt{\frac{\beta X}{R}}.
+\]
+If $1\leq k<\ell$, then
+\[
+ \frac\ell k\geq1+\frac1k
+ \geq1+\sqrt{\frac{R}{\beta X}},
+\]
+and \eqref{eq:sector-radial-gap} follows.  The final estimates use
+$\arsinh y\asymp y$ and $\log(1+y)\asymp y$ for $0<y\leq1$, with fixed
+$\beta$ absorbed into the constants.
+\end{proof}
+
+\begin{corollary}[The sectorwise resolution invariant]
+\label{cor:sector-resolution-invariant}
+The reciprocal gap scales obey
+\begin{equation}
+ \delta_{\rm ray}(R)^{-1}
+ \delta_{\rm rad}(R,X)^{-2}\asymp_\beta X.
+ \label{eq:sector-resolution-invariant}
+\end{equation}
+Thus the natural anisotropic resolution pair is
+\begin{equation}
+ T_{\rm ray}\asymp R,
+ \qquad
+ T_{\rm rad}\asymp\sqrt{X/R},
+ \qquad
+ T_{\rm ray}T_{\rm rad}^2\asymp X.
+ \label{eq:anisotropic-resolution-pair}
+\end{equation}
+\end{corollary}
+
+\begin{remark}[Separate inequalities, not a bandwidth trade]
+The last product is only a compact way to record the two gap scales.
+A very long radial window cannot distinguish two near-adjacent primitive
+rays having the same $k$, and a very long ray window cannot distinguish
+consecutive radial indices on one ray.  Exact dephasing below therefore
+requires two separate threshold inequalities.
+\end{remark}
+
+\begin{remark}[Why the statement is sectorwise]
+Without coefficient-side sectorization, all $ab\leq\beta X$ occur.
+The worst primitive-ray gap is then of order $X^{-1}$, while the worst
+radial gap is of order $X^{-1/2}$.  A single global rectangular band
+therefore needs
+\[
+ T_{\rm ray}\asymp X,
+ \qquad T_{\rm rad}\asymp\sqrt X,
+\]
+and has $T_{\rm ray}T_{\rm rad}^2\asymp X^2$.  One may instead filter
+each known dyadic sector at its own scales, but one may not replace that
+filter bank by one global band satisfying the smaller product law.
+\end{remark}
+
+\begin{remark}[Near-sharp populated interior families]
+The pairs of primitive rays $(N,1)$ and $(N-1,1)$ have log gap
+$N^{-1}+O(N^{-2})$.  On a fixed ray, consecutive radial indices $K$ and
+$K-1$ have log gap $K^{-1}+O(K^{-2})$.  Choosing $N\asymp R$ and
+$K\asymp\sqrt{X/R}$ along populated families with
+$R\to\infty$ and $X/R\to\infty$ inside a nondegenerate hyperbolic shell
+shows that both scales in \eqref{eq:sector-gap-scales} are sharp up to
+constants for general supported coefficient systems.  A particular
+empty or sparse sector may need only one of the two conditions, or
+neither.
+\end{remark}

@@ -1,0 +1,49 @@
+{
+  "all_checks_passed": true,
+  "checks": {
+    "coordinate_bijection": true,
+    "energy_minimax_witness": true,
+    "explicit_sector_gaps": true,
+    "joint_transform_compression": true,
+    "product_center_identity": true,
+    "tensor_fejer_parseval": true,
+    "tensor_fejer_recovery": true
+  },
+  "config": {
+    "D": 9,
+    "X": 360,
+    "alpha": 0.5,
+    "beta": 1.5,
+    "h": 4
+  },
+  "coordinate_and_energy": {
+    "coordinate_bijection": true,
+    "direct_energy": 7355.275918855293,
+    "factor_pair_count": 1486,
+    "grouped_energy": 7355.275918855292,
+    "joint_label_count": 1486,
+    "product_center_error": 9.094947017729282e-13,
+    "transform_errors": {
+      "0.00,0.00": 0.0,
+      "0.31,-0.27": 0.0,
+      "1.07,0.63": 0.0
+    }
+  },
+  "energy_minimax": {
+    "complement_estimator_error": 4.5,
+    "endpoint_estimator_error": 4.5,
+    "lower_bound": 4.5,
+    "observed_difference": 0.0,
+    "target_separation": 9.0
+  },
+  "payload_sha256": "1ed7b7f634c07127df62a0275ea10649c5b00d08df4dd46816fcc793d8a4c6c4",
+  "sector_dephasing": {
+    "max_coefficient_recovery_error": 0.0,
+    "max_normalized_parseval_error": 5.4569682106375694e-12,
+    "max_radial_gap_violation": 0.0,
+    "max_ray_gap_violation": 0.0,
+    "populated_sector_count": 10,
+    "radial_pair_sector_count": 7,
+    "ray_pair_sector_count": 9
+  }
+}

@@ -1,0 +1,101 @@
+\section{Finite certificate and reproducibility}
+\label{sec:computation}
+
+The analytic asymptotic imports the Guth--Maynard short-interval theorem
+and the weighted transfer proved in TPC-12.  No finite computation can
+verify those asymptotic inputs.  The included deterministic certificate
+checks the exact new algebra and the resolution interfaces.
+
+The script \texttt{experiments/radial\_mellin\_certificate.py} performs
+the following checks.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item It enumerates a finite factor box and verifies the bijection
+ $(m,n)\leftrightarrow(a,b,k)$, including reconstruction and injectivity
+ of $(a/b,k)$.
+
+ \item It compares the direct factor-pair transform with the compressed
+ two-coordinate expansion at several pairs $(t,s)$.
+
+ \item In every dyadic sector containing at least two distinct rays or
+ radial indices, respectively, it computes the corresponding actual
+ minimum log gap and verifies the lower bounds
+ \eqref{eq:sector-ray-gap}--\eqref{eq:sector-radial-gap}.
+
+ \item It evaluates the tensor Fourier-side Fej\'er quadratic form at
+ admissible scale parameters and verifies that every off-diagonal multiplier
+ is zero, leaving exactly $TS\sum|x_{a,b,k}|^2$.  It also checks the
+ coefficient-recovery multipliers.
+
+ \item It groups the same squared coefficients by $r=mn$ and verifies
+ the exact identity
+ $\cF_{h,D}=\sum_rA_D(r)(\Lambda(r+h)-1)^2$.
+
+ \item It constructs the two extremal vectors in
+ \cref{prop:energy-minimax}, confirming that identical total energy can
+ place all mass either in the endpoint or in its complement.
+\end{enumerate}
+
+The companion unit tests repeat these identities at independent
+parameter values.  Integer factorization and GCD data are exact;
+floating-point tolerances occur only in logarithms and phases.  The
+commands are
+\begin{verbatim}
+python experiments/radial_mellin_certificate.py
+python -m unittest experiments.test_radial_mellin_certificate
+\end{verbatim}
+The saved JSON output is a regression certificate for finite identities,
+not numerical evidence for a fixed-shift prime-pair or quadratic-prime
+asymptotic.
+
+\section{Conclusion and next analytic interface}
+\label{sec:conclusion}
+
+The coordinate omitted from the ratio-only factor-ray spectrum can be
+restored exactly after the observable is augmented with GCD data; it is
+not recovered from ratio-only samples.  The GCD--Mellin lift replaces each collapsed radial fibre by
+the injective joint frequency
+\[
+ (\log(a/b),\log k).
+\]
+On $ab\asymp R$, its two resolution scales are $R$ and
+$\sqrt{X/R}$; tensor Fej\'er kernels recover individual coefficients and
+their energy exactly.  A tensor Montgomery--Vaughan argument supplies a
+stable hard-rectangle asymptotic once both side lengths exceed their
+reciprocal-gap scales by unbounded factors.  This constructs an exact
+two-parameter diagonal unitary representation of the augmented
+coefficient array; no intrinsic prime, logistic, or transfer-operator
+spectrum is claimed.
+
+The arithmetic effect is equally explicit.  Full radial dephasing
+changes the ray energy into the pure product-center target-square
+diagonal.  TPC-12's weighted exceptional-set transfer then yields the
+short-shift asymptotic with error $O(HX\log^2X)$, removing the
+$\log\log X$ cost of the same-ray two-target upper sieve.  The gain is
+real, but it belongs to a new observable; the old ratio-only energy still
+contains its coherent radial cross terms.
+
+There is no corresponding fixed-shift breakthrough.  Exact inversion
+reveals the arithmetic coefficients rather than estimating them.  The
+$m=1$ slice is equivalent at natural precision to a weighted
+Hardy--Littlewood correlation, and the cutoff-free $(6,1)$ ray
+comparison is equivalent at natural precision to a weighted prime
+number theorem for $6k^2+1$.
+Retaining only total radial energy loses the endpoint label again, with
+the exact minimax loss in \eqref{eq:energy-minimax}.  These are positive
+and negative statements at matching normalizations.
+
+The next honest interface is therefore not a smaller formal bandwidth or
+the substitution $H=1$.  It is an arithmetic, label-preserving signed
+observable that can distinguish an endpoint or a controlled family of
+radial slices before squaring, together with an explicit source of
+Type-II or dispersion cancellation not reducible to an upper-bound
+sieve.  A viable next theorem may average an additional arithmetic
+parameter while retaining a specified radial selector.  A negative
+result would be equally informative if it proves that every proposed
+average still factors through parity-blind local data.  In either case,
+the endpoint and quadratic-ray equivalences above are mandatory tests.
+
+No fixed-shift prime-pair asymptotic, twin-prime lower bound,
+quadratic-prime theorem, new distribution level, or violation of sieve
+parity has been obtained.

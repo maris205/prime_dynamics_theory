@@ -1,0 +1,215 @@
+\section{Introduction and scope}
+\label{sec:introduction}
+
+The factor-ray program has reached a precise coordinate bottleneck.
+The ratio phase $(n/m)^{it}$ distinguishes primitive rays but is constant
+along each ray.  If
+\[
+ n=ak,\qquad m=bk,\qquad (a,b)=1,
+\]
+then $(n/m)^{it}=(a/b)^{it}$ and the radial coordinate $k=(m,n)$
+disappears.  TPC-10 had already used the full ratio--product two-Mellin
+continuum for endpoint selection \citep{WangTPC10}; that pair of
+variables is information-theoretically complete on a finite factor box.
+TPC-11 then isolated the ratio coordinate, proved exact long-band
+dephasing of the distinct ratios, and identified the remaining same-ray arithmetic
+\citep{WangTPC11}.  TPC-12 evaluated the squared ray coefficients after
+averaging the shift over
+\[
+ X^{2/15+\eps}\leq H\leq X
+\]
+by transferring the almost-all short-interval theorem of
+\citet{GuthMaynard2026} through an unbounded divisor weight
+\citep{WangTPC12}.  Its fixed-ray minimax theorem also showed that no
+amount of ratio bandwidth can reconstruct the lost $k$-profile.
+
+The next step should therefore restore the missing coordinate directly,
+not formally set $H=1$.  Relative to the ratio-only signal, we observe
+\begin{equation}
+ (m,n)^{is}=k^{is}.
+ \label{eq:intro-gcd-phase}
+\end{equation}
+It is important to distinguish this phase from a second product Mellin
+phase such as $(mn/X)^{is}$.  Since $mn=abk^2$, the latter mixes the
+primitive-ray product $ab$ with $k$; it is not transformed into
+\eqref{eq:intro-gcd-phase} by a global linear change of the two old
+frequency variables.  After a primitive ray is known, however, a
+ray-dependent shift and rescaling recovers $\log k$ from the product
+frequency.  Thus the GCD--Mellin coordinate is a new directly observed,
+ray-adapted parametrization, but it is not richer than TPC-10's full
+ratio--product continuum.
+
+The classical Mellin transform is Fourier analysis on the multiplicative
+group \citep{ButzerJansche1997}.  Our product-Fej\'er identities are
+elementary tensor Fourier inversion, and the hard-rectangle estimate is
+obtained by applying the one-dimensional Montgomery--Vaughan inequality
+twice.  We do not claim a new general multidimensional Mellin,
+Plancherel, or large-sieve theorem.  The novelty is the direct GCD lift
+of this factor-ray coefficient system, its explicit anisotropic sector
+gaps, and the arithmetic transfer for the resulting diagonal observable.
+
+\subsection{The two-coordinate lift}
+
+Throughout,
+\[
+ u(n)=\Lambda(n)-1,
+ \qquad \eta(q)=\Lambda(q)-1,
+\]
+and $W\in C_c^1((0,\infty);\R)$ has support in a fixed interval
+$[\alpha,\beta]\subset(0,\infty)$.  We extend
+$\Lambda(q)=0$ for nonpositive integers $q$; in every asymptotic
+application $X$ is large enough that the supported targets are positive.
+Define
+\begin{align}
+ \cT^{\rad}_{h,D}(X;t,s)
+ &:={}
+ \sum_{\substack{n>D\\m\geq1}}
+ u(n)\Lambda(mn+h)W(mn/X)(n/m)^{it}(m,n)^{is},
+ \label{eq:intro-raw-radial-transform}\\
+ \cM^{\rad}_{D}(X;t,s)
+ &:={}
+ \sum_{\substack{n>D\\m\geq1}}
+ u(n)W(mn/X)(n/m)^{it}(m,n)^{is},
+ \label{eq:intro-radial-model}\\
+ \cR^{\rad}_{h,D}
+ &:={}\cT^{\rad}_{h,D}-\cM^{\rad}_{D}.
+ \label{eq:intro-centered-radial-transform}
+\end{align}
+The unique GCD decomposition gives
+\begin{equation}
+ \cR^{\rad}_{h,D}(X;t,s)
+ =\sum_{\substack{a,b\geq1\\(a,b)=1}}
+ \sum_{\substack{k\geq1\\ak>D}}
+ x_{a,b,k}(h;X,D)(a/b)^{it}k^{is},
+ \label{eq:intro-joint-expansion}
+\end{equation}
+where
+\begin{equation}
+ x_{a,b,k}(h;X,D)
+ :=u(ak)\eta(abk^2+h)W(abk^2/X).
+ \label{eq:intro-joint-coefficient}
+\end{equation}
+The frequency map
+\[
+ (a,b,k)\longmapsto
+ \bigl(\log(a/b),\log k\bigr)
+\]
+is injective.  In dynamical language, it is the joint spectrum of two
+commuting diagonal generators.  This is a finite-support unitary
+representation attached to the factor coordinates; it is not a claim
+that prime gaps or zeta zeros are eigenvalues of a physical or transfer
+operator.
+
+The corresponding fully separated energy is
+\begin{align}
+ \cF_{h,D}(X)
+ &:={}
+ \sum_{\substack{a,b\geq1\\(a,b)=1}}
+ \sum_{\substack{k\geq1\\ak>D}}
+ |x_{a,b,k}(h;X,D)|^2
+ \label{eq:intro-radial-energy}\\
+ &=\sum_{\substack{n>D\\m\geq1}}
+ u(n)^2\eta(mn+h)^2|W(mn/X)|^2.
+ \label{eq:intro-factor-pair-energy}
+\end{align}
+The second line follows from the same bijection.  It is the target-square
+diagonal before any radial indices are combined.
+
+\subsection{Main advances}
+
+There are three distinct conclusions.
+
+First, on the dyadic factor-ray sector $R\leq ab<2R$, primitive ratios
+are separated at scale $R^{-1}$ and radial logarithms at scale
+$\sqrt{R/X}$.  A tensor Fej\'er kernel therefore recovers every
+coefficient and its squared norm exactly once the two scale parameters
+separately satisfy
+\[
+ T_{\rm ray}\gg R,
+ \qquad
+ T_{\rm rad}\gg\sqrt{X/R}.
+\]
+Both inequalities are sharp up to constants along populated interior
+sector families with adjacent rays or consecutive radial indices.  The relation
+\[
+ T_{\rm ray}T_{\rm rad}^2\asymp X
+\]
+is consequently a sectorwise resolution identity, not permission to
+trade one missing coordinate bandwidth against the other.
+For hard rectangles, an asymptotic requires both side lengths to exceed
+the displayed reciprocal-gap scales by unbounded factors.
+
+Second, the arithmetic average of \eqref{eq:intro-radial-energy} has a
+smaller error than the ratio-only ray energy.  For nonnegative, nonzero
+$G\in C_c^1((0,\infty))$, fixed $0<\eps<13/15$ and $0<\eta<1$, uniformly
+for
+\begin{equation}
+ X^{2/15+\eps}\leq H\leq X,
+ \qquad 1\leq D\leq X^{1-\eta},
+ \label{eq:intro-parameter-range}
+\end{equation}
+we prove
+\begin{equation}
+ \begin{aligned}
+ \sum_hG(h/H)\cF_{h,D}(X)
+ ={}&\frac12HX I_0(G)I_2(W)\log X\\
+ &\times\bigl((\log X)^2-(\log D)^2\bigr)
+ +O\bigl(HX(\log X)^2\bigr),
+ \end{aligned}
+ \label{eq:intro-main-energy}
+\end{equation}
+where
+\[
+ I_0(G)=\int_0^\infty G(v)\,dv,
+ \qquad
+ I_2(W)=\int_0^\infty|W(v)|^2\,dv.
+\]
+The raw target has the same formula.  The $\log\log X$ loss in TPC-12
+came from bounding $k\ne\ell$ on one ray by a two-target upper sieve.
+Here those terms are geometrically absent.  A parity-centered average
+over even shifts has coefficient $1/4$ and the same error order.
+
+Third, exact reconstruction does not evaluate the recovered arithmetic
+data.  The endpoint slice $m=1$ of \eqref{eq:intro-factor-pair-energy}
+satisfies, for each fixed nonzero $h$,
+\begin{equation}
+ \cF_h^{\rm end}(X)
+ =(\log X)^2
+ \sum_n\Lambda(n)\Lambda(n+h)|W(n/X)|^2
+ +O_{h,W}(X\log X).
+ \label{eq:intro-endpoint-reduction}
+\end{equation}
+Thus the predicted fixed-even-shift asymptotic for this positive spectral
+slice is equivalent to the corresponding weighted Hardy--Littlewood
+prime-pair asymptotic.  The new coordinate reaches the boundary cleanly;
+it does not cross it.
+
+\subsection{Claim ledger}
+
+\begin{center}
+\begin{tabular}{@{}p{0.31\textwidth}p{0.27\textwidth}p{0.31\textwidth}@{}}
+\toprule
+Statement & Status here & What it does not imply\\
+\midrule
+Joint GCD--Mellin spectrum
+ & Exact and injective on factor pairs
+ & Not recovered from ratio-only data\\
+Sector dephasing and reconstruction
+ & Exact after stated filtering
+ & No arithmetic coefficient is estimated\\
+Short-shift radial energy
+ & Unconditional in \eqref{eq:intro-parameter-range}
+ & No prescribed shift is selected\\
+Even-shift ensemble
+ & Unconditional after parity centering
+ & No conclusion for $h=2$\\
+Fixed endpoint
+ & Exact reduction \eqref{eq:intro-endpoint-reduction}
+ & Its predicted asymptotic remains open\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+No fixed-shift Hardy--Littlewood asymptotic, twin-prime lower bound,
+prime number theorem for a fixed quadratic polynomial, new level of
+distribution, or violation of the parity barrier is asserted.

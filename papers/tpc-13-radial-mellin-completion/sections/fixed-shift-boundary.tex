@@ -1,0 +1,242 @@
+\section{The fixed-shift arithmetic boundary}
+\label{sec:fixed-shift-boundary}
+
+The completed signal can recover every finite coefficient, but recovery
+is not evaluation.  Two exact slices locate the remaining arithmetic
+difficulty.
+
+\subsection{The endpoint prime-pair slice}
+
+The factor endpoint $m=1$ is characterized in primitive coordinates by
+\[
+ (a,b,k)=(n,1,1).
+\]
+Define its fully diagonal energy, independently of the source cutoff, by
+\begin{equation}
+ \cF_h^{\rm end}(X)
+ :=\sum_{n\geq1}
+ (\Lambda(n)-1)^2(\Lambda(n+h)-1)^2
+ |W(n/X)|^2.
+ \label{eq:endpoint-energy}
+\end{equation}
+For $D\leq X^{1-\eta}$ this is exactly the $m=1$ slice of
+$\cF_{h,D}(X)$ once $X$ is large, because $n\geq\alpha X>D$ on the
+support.
+
+\begin{proposition}[Endpoint reduction]
+\label{prop:endpoint-reduction}
+For every fixed nonzero integer $h$,
+\begin{equation}
+ \cF_h^{\rm end}(X)
+ =(\log X)^2
+ \sum_n\Lambda(n)\Lambda(n+h)|W(n/X)|^2
+ +O_{h,W}(X\log X).
+ \label{eq:endpoint-reduction}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+On the support, $n,n+h\asymp_WX$.  If both are prime, then
+\[
+ (\log n-1)^2(\log(n+h)-1)^2
+ =(\log X)^2\log n\log(n+h)+O_W((\log X)^3).
+\]
+The Selberg upper-bound sieve gives
+$O_{h,W}(X/(\log X)^2)$ simultaneous prime values, so their total error
+is $O(X\log X)$.  If exactly one of the two integers is prime and the
+other is not a prime power, the summand on the left is
+$O((\log X)^2)$; the prime number theorem bounds the total by
+$O(X\log X)$.  If neither is a prime power, the total is $O(X)$.
+
+Finally, the number of proper prime powers in an interval of size
+$O(X)$ is $O(\sqrt X)$ up to a harmless logarithmic factor.  Giving all
+terms involving one such value the trivial weight $O((\log X)^4)$
+produces $o(X\log X)$.  These cases also cover the proper-prime-power
+part of the von Mangoldt correlation on the right.
+\end{proof}
+
+For a fixed nonzero shift, let
+\begin{equation}
+ \mathfrak S(h):=
+ \begin{cases}
+ 2C_2\displaystyle\prod_{\substack{p\mid h\\p>2}}
+ \dfrac{p-1}{p-2},&2\mid h,\\[0.8em]
+ 0,&2\nmid h,
+ \end{cases}
+ \qquad
+ C_2:=\prod_{p>2}\left(1-\frac1{(p-1)^2}\right).
+ \label{eq:prime-pair-singular-series}
+\end{equation}
+This is the Hardy--Littlewood prime-pair singular series
+\citep{HardyLittlewood1923}; it is not assumed in the positive theorems.
+
+\begin{corollary}[Exact Hardy--Littlewood strength threshold]
+\label{cor:endpoint-HL-equivalence}
+For every fixed even $h\ne0$, the asymptotic
+\begin{equation}
+ \cF_h^{\rm end}(X)
+ =\mathfrak S(h)I_2(W)X(\log X)^2
+ +o_{h,W}(X(\log X)^2)
+ \label{eq:endpoint-predicted-asymptotic}
+\end{equation}
+holds if and only if
+\begin{equation}
+ \sum_n\Lambda(n)\Lambda(n+h)|W(n/X)|^2
+ =\mathfrak S(h)I_2(W)X+o_{h,W}(X).
+ \label{eq:weighted-HL-correlation}
+\end{equation}
+For $h=2$, this is the corresponding weighted twin-prime
+Hardy--Littlewood asymptotic.
+\end{corollary}
+
+\begin{proof}
+Subtract \eqref{eq:endpoint-reduction} and divide by $(\log X)^2$.
+Its error becomes $O(X/\log X)=o(X)$, proving both implications.
+\end{proof}
+
+When $W\not\equiv0$, \eqref{eq:weighted-HL-correlation} at $h=2$ would
+in particular imply infinitely many twin primes after proper prime
+powers are removed.  Neither side of the equivalence is proved here.
+For odd fixed $h$, elementary parity and the same case split as above
+give only the much smaller statement
+\begin{equation}
+ \cF_h^{\rm end}(X)=O_{h,W}(X\log X).
+\label{eq:odd-endpoint-bound}
+\end{equation}
+Indeed, a fixed odd difference excludes two prime values at height
+$X$; proper prime powers are negligible, and the terms with exactly one
+prime have total size $O(X\log X)$.
+
+\subsection{A fixed quadratic ray persists}
+
+There is an earlier obstruction before the endpoint correlation.  On
+the primitive ray $(a,b)=(6,1)$ and at $h=1$, the source value satisfies
+$u(6k)=-1$ for every $k\geq1$.  Define the cutoff-free comparison
+\begin{equation}
+ Q_6(X):=
+ \sum_{k\geq1}(\Lambda(6k^2+1)-1)^2|W(6k^2/X)|^2.
+\label{eq:quadratic-ray-energy}
+\end{equation}
+If $D<\sqrt{6\alpha X}$, then every supported $k$ satisfies $6k>D$, so
+$Q_6(X)$ is exactly the $(6,1)$-ray slice of $\cF_{1,D}(X)$.  For larger
+$D$ we make no such identification.
+Put
+\begin{equation}
+ P_6(X):=
+ \sum_{k\geq1}\Lambda(6k^2+1)|W(6k^2/X)|^2.
+ \label{eq:quadratic-prime-sum}
+\end{equation}
+
+\begin{proposition}[Quadratic-prime strength threshold]
+\label{prop:quadratic-prime-threshold}
+One has
+\begin{equation}
+ Q_6(X)=\log X\,P_6(X)+O_W(\sqrt X).
+ \label{eq:quadratic-ray-reduction}
+\end{equation}
+Consequently, for every fixed constant $C$,
+\begin{equation}
+ Q_6(X)=C\sqrt X\log X+o(\sqrt X\log X)
+ \label{eq:quadratic-energy-asymptotic}
+\end{equation}
+if and only if
+\begin{equation}
+ P_6(X)=C\sqrt X+o(\sqrt X).
+ \label{eq:quadratic-prime-asymptotic}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Put $K\asymp_W\sqrt X$ for the supported $k$-range.  The
+dimension-one Selberg upper-bound sieve for the irreducible quadratic
+$6k^2+1$ gives
+\[
+ \#\{k\asymp_WK:6k^2+1\ {\rm is\ prime}\}
+ \ll_W\frac K{\log K};
+\]
+see \citet{HalberstamRichert1974}.  Restoring the logarithmic
+weight yields $P_6(X)\ll_WK\ll_W\sqrt X$.
+
+For $r=1,2$, the proper-prime-power contribution satisfies
+\[
+ \sum_{\substack{k\asymp_W\sqrt X\\6k^2+1=p^j,\ j\geq2}}
+ \Lambda(6k^2+1)^r|W(6k^2/X)|^2
+ \ll_WX^{1/3}(\log X)^{r+1}+(\log X)^{r+1}
+ =o_W(\sqrt X).
+\]
+For even $j$ this follows from the associated Pell equation, which has
+$O_W(\log X)$ relevant solutions; for odd $j\geq3$, there are
+$O_W(X^{1/3}\log X)$ candidates.  These estimates are detailed in
+TPC-12 \citep{WangTPC12}.
+
+At prime values in the support,
+$\log(6k^2+1)=\log X+O_W(1)$.  Therefore
+\[
+ \begin{aligned}
+ Q_6(X)
+ &=
+ \sum_k\Lambda(6k^2+1)^2|W(6k^2/X)|^2
+ -2P_6(X)+\sum_k|W(6k^2/X)|^2\\
+ &=\log X\,P_6(X)+O_W(P_6(X))+O_W(\sqrt X)
+ =\log X\,P_6(X)+O_W(\sqrt X).
+ \end{aligned}
+\]
+The final equivalence follows after division by $\log X$.
+\end{proof}
+
+The asymptotic \eqref{eq:quadratic-prime-asymptotic} is a weighted prime
+number theorem for the fixed polynomial $6k^2+1$ and is open.  The radial
+coordinate separates the individual $k$-labels but supplies no new
+distribution theorem for their prime targets.
+
+\subsection{What is lost after retaining only total energy}
+
+The full two-coordinate signal is injective, but the scalar
+$\cF_{h,D}=\sum|x_{a,b,k}|^2$ again forgets where its energy lies.  The
+following coefficient-blind minimax identity, for arbitrary coefficient
+vectors, prevents an endpoint conclusion from the total energy alone.
+
+\begin{proposition}[Exact energy-only minimax boundary]
+\label{prop:energy-minimax}
+Let a finite index set $I$ be partitioned into nonempty sets $J$ and
+$I\setminus J$.  For $x\in\C^I$, define
+\[
+ S(x)=\sum_{i\in I}|x_i|^2,
+ \qquad
+ Q_J(x)=\sum_{i\in J}|x_i|^2.
+\]
+Then, for every $B>0$,
+\begin{equation}
+ \inf_{\mathcal A:[0,B^2]\to\R}
+ \sup_{\|x\|_2\leq B}
+ |Q_J(x)-\mathcal A(S(x))|
+ =\frac{B^2}{2}.
+ \label{eq:energy-minimax}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Take two vectors of norm $B$, one supported in $J$ and one in its
+complement.  They have the same observed value $S=B^2$, while their
+targets are $B^2$ and $0$.  Every estimator therefore has worst-case
+error at least $B^2/2$.  Conversely, the estimator
+$\mathcal A(S)=S/2$ obeys
+$|Q_J-S/2|\leq S/2\leq B^2/2$.
+\end{proof}
+
+For the endpoint, $J$ is the set $b=k=1$.  The complete joint signal can
+recover these coefficients by \eqref{eq:exact-coefficient-recovery}, but
+the total-energy asymptotic \eqref{eq:short-shift-radial-energy} cannot
+separate them from the bulk.  In particular,
+$\cF_{h,D}\geq\cF_h^{\rm end}$ supplies no twin-prime lower bound: the
+bulk may account for the entire known main term.
+For $W\not\equiv0$ and large $X$, both the endpoint and its complement
+are nonempty in the stated source-cutoff range.  The minimax statement
+does not rule out an estimator using additional special arithmetic
+information about the von Mangoldt coefficients.
+
+The classical sieve parity limitation explains why upper-bound sieve
+technology alone does not turn these reductions into lower bounds
+\citep{Selberg1952Parity,Polymath2014}.  The present paper repairs a
+geometric label collision and then stops exactly where new arithmetic
+input is required.
