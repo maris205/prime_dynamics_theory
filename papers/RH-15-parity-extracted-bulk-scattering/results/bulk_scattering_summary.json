@@ -1,0 +1,49 @@
+{
+  "analytic_results": {
+    "bulk_factorization": "D_bulk,2(z)=G(z)/(1-z^2/lambda)",
+    "even_trace": "P_2n=2E_1,n-2a_n/(1+a_n)-a_n^2/(1-a_n^2)",
+    "naive_entire_limit": false,
+    "nearest_poles": [
+      -1.2955977425220848,
+      1.2955977425220848
+    ],
+    "sharp_law": "P_2n=2-2lambda^(-n)+lambda^(-2n)+O(3^(-n))",
+    "threshold_radius": 0.7718445063460382
+  },
+  "generated_utc": "2026-07-14T05:44:32.727840+00:00",
+  "resolution": {
+    "degrees": [
+      5,
+      5,
+      5
+    ],
+    "radial_mean_spread": 1.8677758984675386e-05,
+    "sigma": 0.001
+  },
+  "smallest_noise_cloud": {
+    "bulk_radius": 0.7570230789796144,
+    "dimension": 204800,
+    "effective_degree": 7,
+    "eigenvalue_count": 14,
+    "phase_rms": 0.011237218058176728,
+    "radial_mean": 0.7302687845096624,
+    "sigma": 0.0001
+  },
+  "software": {
+    "numpy": "2.2.6",
+    "platform": "Linux-5.15.0-177-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "scipy": "1.15.3"
+  },
+  "source_sha256": {
+    "experiments/run_bulk_scattering_audit.py": "f8776374df56d8bdda9b42d620047a8b6016a5a81a40d55f1a126779bdb0766d",
+    "src/bulk_scattering/cloud.py": "52ddf80c8000334cad1eb2efc2208339dccee17d003493173a6078721fecb861",
+    "src/bulk_scattering/deterministic.py": "3c9d65add486a443f264e60232118ca395946a192b6988e70bd2c4ec4d11a1b9",
+    "src/bulk_scattering/operators.py": "aeca11b962074a3aa86d72287a81703f88f553272db4c640ff81ab95aadadb13"
+  },
+  "status": {
+    "exact_poles_and_normal_family_obstruction": "analytic",
+    "geometric_finite_section": "exact model theorem",
+    "noisy_cloud_matching": "floating-point diagnostic and conjectural scaling"
+  }
+}
