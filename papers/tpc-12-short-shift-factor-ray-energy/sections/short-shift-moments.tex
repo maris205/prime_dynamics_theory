@@ -1,0 +1,158 @@
+\section{Short-shift moments after weighted transfer}
+\label{sec:short-shift-moments}
+
+For the remainder of the positive theory, fix numbers
+$0<\eps<13/15$ and $0<\eta<1$.  Thus
+\begin{equation}
+ \frac2{15}+\eps<1,
+ \label{eq:nonempty-short-range}
+\end{equation}
+and assume
+\begin{equation}
+ X^{2/15+\eps}\leq H\leq X,
+ \qquad
+ 1\leq D\leq X^{1-\eta}.
+ \label{eq:main-short-range}
+\end{equation}
+The support of $G$ is contained in $(0,\infty)$, so the average samples a
+growing interval $h\asymp_GH$; it does not contain any fixed shift once
+$X$ is large.
+
+\subsection{The first-moment model}
+
+\begin{theorem}[Short-shift first moment]
+\label{thm:short-first-moment}
+For every $A>0$, uniformly for \eqref{eq:main-short-range} and all
+$t\in\R$,
+\begin{equation}
+ \frac1H\sum_hG(h/H)\cT_{h,D}(X;t)
+ =I_0(G)\cM_D(X;t)
+ +O_{A,\eps,W,G}\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:short-first-moment}
+\end{equation}
+Equivalently, the normalized smooth average of $\cR_{h,D}$ has the
+displayed error.
+\end{theorem}
+
+\begin{proof}
+Group the residual average by $r=mn$.  Equations
+\eqref{eq:intro-centered-transform} and
+\eqref{eq:product-signed-weight} give
+\begin{equation}
+ \frac1H\sum_hG(h/H)\cR_{h,D}(X;t)
+ =\sum_rB_{D,t}(r)
+ \left\{\frac1H\sum_hG(h/H)(\Lambda(r+h)-1)\right\}.
+ \label{eq:first-moment-grouped}
+\end{equation}
+On the complement of the exceptional set in
+\cref{lem:smooth-almost-all-moments}, the braces are
+$O_A((\log X)^{-A})$.  The pointwise estimate
+\eqref{eq:B-pointwise} and the classical mean order of $\tau$ give
+\[
+ \sum_r|B_{D,t}(r)|\ll_WX\log(2X).
+\]
+Request two additional logarithmic powers.
+
+On the exceptional set, the braces are $O_G(\log(2X))$ by the elementary
+upper-bound sieve for primes in an interval; the completely trivial
+$O_G((\log X)^2)$ would also suffice.  Apply
+ \eqref{eq:B-exception-transfer} with a larger value of $A$.  Both parts
+ are uniform in $t$ and show that the normalized average of
+ $\cR_{h,D}$ is $O_A(X(\log X)^{-A})$.  Finally,
+ \[
+  \frac1H\sum_hG(h/H)=I_0(G)+O_G(H^{-1})
+ \]
+ and the elementary bound $|\cM_D(X;t)|\ll_WX\log(2X)$ shows that the
+ Riemann-sum error is absorbed by the stated remainder, since
+ $H\geq X^{2/15+\eps}$.  This proves the displayed formula for
+ $\cT_{h,D}$.
+\end{proof}
+
+\subsection{The transferred target square}
+
+\begin{proposition}[Weighted target-square transfer]
+\label{prop:weighted-target-square}
+Uniformly in \eqref{eq:main-short-range},
+\begin{equation}
+ \begin{aligned}
+ &\sum_{r\geq1}A_D(r)
+ \sum_hG(h/H)(\Lambda(r+h)-1)^2\\
+ &\qquad={}
+ HI_0(G)\log X\,\cS_D(X)
+ +O_{\eps,W,G}\bigl(HX(\log X)^2\bigr).
+ \end{aligned}
+ \label{eq:weighted-target-square}
+\end{equation}
+The same formula holds with the target square replaced by
+$\Lambda(r+h)^2$.
+\end{proposition}
+
+\begin{proof}
+For $r$ outside the exceptional set, use
+\eqref{eq:smooth-eta-square-moment}; the total of its $O(H)$ error is
+$O(H\cS_D(X))=O(HX(\log X)^2)$ by
+\cref{lem:source-diagonal}.
+
+On the exceptional set, the whole inner target-square sum is at most
+$O_G(H(\log(2X))^2)$.  The same bound covers the main term being
+removed there.  Proposition~\ref{prop:weighted-exception-transfer}, with
+an arbitrarily large logarithmic saving, makes the exceptional
+contribution $O(HX(\log X)^{-10})$, say.  This proves the centered
+formula.  Equation \eqref{eq:smooth-Lambda-square-moment} proves the raw
+version in exactly the same way.
+\end{proof}
+
+The proposition is the point where the almost-all theorem becomes a
+complete asymptotic input: no product center is discarded from the final
+sum.
+
+\subsection{A uniform two-target upper sieve}
+
+For $q\ne0$, put
+\begin{equation}
+ \mathfrak S^+(q)=
+ \prod_{\substack{p\mid q\\p>2}}\frac{p-1}{p-2}.
+ \label{eq:upper-singular-factor}
+\end{equation}
+
+\begin{lemma}[Two translated targets in a short shift window]
+\label{lem:short-two-target-sieve}
+Let $r\ne r'$ lie in $[\alpha X,\beta X]$.  Uniformly for
+$H\geq X^{2/15+\eps}$ and $H\leq X$,
+\begin{equation}
+ \begin{aligned}
+ &\sum_hG(h/H)
+ \left|(\Lambda(r+h)-1)(\Lambda(r'+h)-1)\right|\\
+ &\qquad\ll_{\eps,W,G}H\mathfrak S^+(r-r')
+ \ll_{\eps,W,G}H\log\log(3X).
+ \end{aligned}
+ \label{eq:short-two-target-sieve}
+\end{equation}
+The first bound remains valid if one or both centered factors are
+replaced by $\Lambda$.
+\end{lemma}
+
+\begin{proof}
+The Selberg upper-bound sieve for the two linear forms $h+r$ and $h+r'$
+gives
+\[
+ \#\{h\asymp_GH:h+r,\ h+r'\text{ are prime}\}
+ \ll_G\frac{H}{(\log H)^2}\mathfrak S^+(r-r').
+\]
+Restoring the von Mangoldt weights costs $(\log X)^2$.  Since
+$H\geq X^{2/15+\eps}$, the ratio $\log X/\log H$ is bounded in terms of
+$\eps$, and the prime-prime contribution has the asserted size.  The
+constant and one-prime pieces follow from the corresponding one-linear-
+form upper sieve.
+
+If one target is a proper prime power, the local spacing argument used in
+\cref{lem:smooth-almost-all-moments} gives only a polylogarithmic term
+plus $O(HX^{-1/2}(\log X)^2)$, both $o_\eps(H)$.  Finally the standard
+maximal-order estimate
+\[
+ \mathfrak S^+(q)\ll\log\log(3|q|)
+\]
+follows by comparing with the product over the smallest primes.  Here
+$0<|r-r'|\ll_WX$.  See \citet[Chapter~6]{HalberstamRichert1974} for the
+upper sieve.
+\end{proof}

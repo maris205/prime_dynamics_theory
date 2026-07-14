@@ -1,0 +1,184 @@
+\section{Exceptional-set transfer at the two-fifteenths scale}
+\label{sec:exceptional-transfer}
+
+This section isolates the new analytic interface.  We first state the
+short-interval input in the precise form from which we need it.
+
+\begin{theorem}[Guth--Maynard short-interval inputs]
+\label{thm:GM-input}
+Fix $\rho>0$.  If
+$Y\in[X^{2/15+\rho},X^{0.99}]$, then all but (a set that may depend on
+$Y$)
+\begin{equation}
+ O_\rho\!\left(X\exp\{-c_\rho(\log X)^{1/4}\}\right)
+ \label{eq:GM-exception-size}
+\end{equation}
+integers $x\in[X,2X]$ satisfy
+\begin{equation}
+ \pi(x+Y)-\pi(x)
+ =\frac{Y}{\log x}
+ +O_\rho\!\left(Y\exp\{-c_\rho(\log X)^{1/4}\}\right).
+ \label{eq:GM-prime-count}
+\end{equation}
+If instead
+\[
+ Y\in[X^{17/30+\rho},X^{0.99}],
+\]
+then \eqref{eq:GM-prime-count} holds for every integer
+$x\in[X,2X]$.
+\end{theorem}
+
+These are Corollaries~1.3 and~1.4 of arXiv:2405.20552v2
+\citep{GuthMaynard2026}, after harmless changes in the positive constant
+in the stretched exponential.  The almost-all theorem is stated for
+integer centers, which is exactly what is needed here.
+
+\subsection{Smooth target moments outside a sparse set}
+
+Let $G\in C_c^1((0,\infty))$ be fixed.  Choose
+$0<\gamma<\Gamma$ with $\supp G\subset[\gamma,\Gamma]$.
+
+\begin{lemma}[Smooth translated moments]
+\label{lem:smooth-almost-all-moments}
+Fix $0<\eps<13/15$.  Uniformly for
+\begin{equation}
+ X^{2/15+\eps}\leq H\leq X,
+ \label{eq:short-H-range}
+\end{equation}
+ there is a set of integers
+ $\mathfrak E=\mathfrak E(X,H,G)\subset[\alpha X,\beta X]$ with
+\begin{equation}
+ |\mathfrak E|
+ \ll_{\eps,W,G}X
+ \exp\{-c_{\eps,G}(\log X)^{1/4}\}
+ \label{eq:smooth-exception-size}
+\end{equation}
+such that every $r\in[\alpha X,\beta X]\setminus\mathfrak E$ satisfies,
+for every $A>0$,
+\begin{align}
+ \sum_hG(h/H)\Lambda(r+h)
+ &=HI_0(G)+O_{A,\eps,G}\bigl(H(\log X)^{-A}\bigr),
+ \label{eq:smooth-Lambda-moment}\\
+ \sum_hG(h/H)\Lambda(r+h)^2
+ &=HI_0(G)\log X+O_{\eps,G}(H),
+ \label{eq:smooth-Lambda-square-moment}\\
+ \sum_hG(h/H)(\Lambda(r+h)-1)^2
+ &=HI_0(G)\log X+O_{\eps,G}(H).
+ \label{eq:smooth-eta-square-moment}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+ It is enough to treat $r$ in one of finitely many dyadic intervals
+ contained in $[\alpha X,\beta X]$.  We separate two ranges.
+
+ First suppose $H\leq X^{0.98}$.  Approximate $G$ by a step function on
+ \[
+  L=\left\lceil\exp\{(\log X)^{1/8}\}\right\rceil
+ \]
+ equal subintervals of $[\gamma,\Gamma]$.  The prime count
+ on each step is a difference of two cumulative counts with lengths
+ $y_jH$, where $\gamma\leq y_j\leq\Gamma$.  Apply the almost-all part of
+ \cref{thm:GM-input}, with its parameter smaller than $\eps$, to these
+ $O(L)$ lengths and take the union of their exceptional sets.  For large
+ $X$, the fixed endpoint factors put all these lengths between
+ $X^{2/15+\eps/2}$ and $X^{0.99}$.  Since
+ $\log L=(\log X)^{1/8}=o((\log X)^{1/4})$, the union does not change the
+ shape of \eqref{eq:smooth-exception-size}.  Partial summation gives the
+ prime part of \eqref{eq:smooth-Lambda-moment}; the step-approximation
+ error is $O(H/L)$ and is therefore smaller than
+ $H(\log X)^{-A}$ for every fixed $A$, using one exceptional set
+ independent of $A$.
+
+ Now suppose $H>X^{0.98}$.  Put
+ $N=\lfloor(\Gamma-\gamma)H/X^{0.97}\rfloor$ and partition
+ $[\gamma H,\Gamma H]$ into $N$ equal consecutive blocks.  For large
+ $X$, every block length lies between $X^{0.97}$ and $2X^{0.97}$, so
+ there is no short remainder; changing integer endpoints by $O(1)$ is
+ harmless.
+ Since $H\leq X$, every block starts at height comparable to
+ $X$.  The all-interval part of \cref{thm:GM-input}, with any fixed small
+ value of $\rho$, applies to every block for large $X$.  Freeze $G(h/H)$
+ on each block.  The total error from this freezing is
+ $O_G(X^{0.97})=O_{A,G}(H(\log X)^{-A})$ for every fixed $A$, while the
+ short-interval errors sum to
+ $O(H\exp\{-c(\log X)^{1/4}\})$.  Thus the prime part of
+ \eqref{eq:smooth-Lambda-moment} holds at every center in this range; we
+ may take $\mathfrak E=\varnothing$.
+
+ In both ranges, the omitted proper prime powers contribute at most
+ \[
+  \ll_G\left(HX^{-1/2}+\log(2X)\right)\log(2X)
+  =o_{A,\eps}\bigl(H(\log X)^{-A}\bigr)
+ \]
+ for every fixed $A$.  This completes the proof of
+ \eqref{eq:smooth-Lambda-moment} for the full von Mangoldt function.
+
+For the square, first restrict to prime target values.  On the support,
+$r+h\asymp X$, and
+\[
+ \Lambda(p)^2=(\log p)^2
+ =\log X\,\Lambda(p)+O_G(\Lambda(p)).
+\]
+Equations \eqref{eq:smooth-Lambda-moment} and partial summation therefore
+give the main term in \eqref{eq:smooth-Lambda-square-moment}, with an
+$O(H)$ remainder.  Proper prime powers in an interval of length $O(H)$
+at height $X$ contribute
+\[
+ \ll_G\left(HX^{-1/2}+\log(2X)\right)(\log(2X))^2=o_\eps(H).
+\]
+Indeed, for each exponent $j\geq2$, consecutive $j$th powers at height
+$X$ are separated by $\gg X^{1-1/j}$, and there are $O(\log X)$ possible
+exponents.  This proves \eqref{eq:smooth-Lambda-square-moment}.
+Finally expand $(\Lambda-1)^2=\Lambda^2-2\Lambda+1$ and use
+$\sum_hG(h/H)=HI_0(G)+O_G(1)$.
+\end{proof}
+
+\subsection{The weighted transfer}
+
+The preceding exceptional set could depend on $H$ and on the step
+approximation.  Its exact location is immaterial because its mass under
+the factor-product weights is negligible.
+
+\begin{proposition}[Weighted exceptional-set transfer]
+\label{prop:weighted-exception-transfer}
+Let $\mathfrak E\subset[\alpha X,\beta X]\cap\Z$ satisfy
+\begin{equation}
+ |\mathfrak E|\ll X
+ \exp\{-c(\log X)^{1/4}\}
+ \label{eq:generic-exception-size}
+\end{equation}
+for some fixed $c>0$.  Then, uniformly in $D\geq1$ and $t\in\R$, for
+every $A>0$,
+\begin{align}
+ \sum_{r\in\mathfrak E}A_D(r)
+ &\ll_{A,c,W}X(\log X)^{-A},
+ \label{eq:A-exception-transfer}\\
+ \sum_{r\in\mathfrak E}|B_{D,t}(r)|
+ &\ll_{A,c,W}X(\log X)^{-A}.
+ \label{eq:B-exception-transfer}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+Cauchy--Schwarz and \cref{lem:product-ledgers} give
+\[
+ \sum_{r\in\mathfrak E}A_D(r)
+ \leq|\mathfrak E|^{1/2}
+ \left(\sum_rA_D(r)^2\right)^{1/2}
+ \ll_WX(\log X)^2e^{-c(\log X)^{1/4}/2}.
+\]
+The stretched exponential absorbs every fixed power of $\log X$.  The
+same argument, using \eqref{eq:B-second-moment}, proves
+\eqref{eq:B-exception-transfer}.
+\end{proof}
+
+\begin{remark}[What is new and what is imported]
+The prime number theorem in almost all short intervals is the deep input
+of \citet{GuthMaynard2026}.  The step needed in the present factor-ray
+setting is
+\cref{prop:weighted-exception-transfer}: it verifies that their
+exceptional centers cannot concentrate on the product positions with the
+unbounded source weight generated by the factor-ray diagonal.  We do not
+claim a new short-interval prime number theorem.
+\end{remark}

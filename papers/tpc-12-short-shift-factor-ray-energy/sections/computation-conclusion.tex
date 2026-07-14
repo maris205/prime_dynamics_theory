@@ -1,0 +1,102 @@
+\section{Finite certificate and reproducibility}
+\label{sec:computation}
+
+The analytic asymptotic rests on the theorem of
+\citet{GuthMaynard2026}, the weighted transfer proved here, and the
+Selberg upper sieve.  A finite computation cannot verify those asymptotic
+inputs.  The included deterministic certificate instead checks the exact
+algebra and the explicit obstructions on which the interpretation rests.
+
+The script \texttt{experiments/short\_shift\_certificate.py} performs the
+following checks.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item It enumerates a finite factor box, groups it by the product center
+ $r=mn$, and verifies that the diagonal source mass equals
+ $\sum_rA_D(r)$.
+
+ \item It groups the same box by primitive rays and compares the direct
+ Mellin transform with the compressed ray transform at several
+ frequencies.
+
+ \item For a synthetic exceptional subset, it records the actual
+ $A_D$-mass and verifies the finite Cauchy--Schwarz transfer bound
+ $\sum_{r\in E}A_D(r)\leq |E|^{1/2}(\sum_rA_D(r)^2)^{1/2}$.
+
+ \item It verifies term by term the sign-coherent identity in
+ \cref{thm:sign-coherent-family} and the exact quadratic identity in
+ \cref{thm:quadratic-prime-ray}.
+
+ \item It checks the Euclidean instance of the radial minimax formula by
+ projecting a test vector onto the constant direction and its orthogonal
+ complement.
+\end{enumerate}
+
+The companion unit tests repeat the checks at independent parameter
+values.  Exact integer arithmetic is used for factorization, ray labels,
+and divisibility; floating-point tolerances occur only in logarithms and
+Fourier phases.  Reproduction requires only the Python standard library:
+\begin{verbatim}
+python experiments/short_shift_certificate.py
+python -m unittest experiments.test_short_shift_certificate
+\end{verbatim}
+The saved JSON file is a regression certificate for these finite
+identities.  It is not numerical evidence for a fixed-shift prime or
+prime-pair asymptotic.
+
+\section{Conclusion and next analytic interface}
+\label{sec:conclusion}
+
+TPC-11 separated primitive factor rays at fixed shift but used a shift
+window of length at least $X$ to evaluate the squared ray coefficients.
+The present paper fills the range
+\[
+ X^{2/15+\eps}\leq H\leq X.
+\]
+The exponent comes from the almost-all short-interval prime number
+theorem of \citet{GuthMaynard2026}.  The factor-ray contribution is the
+weighted exceptional-set transfer: the divisor-square ledger proves that
+the sparse exceptional centers cannot carry significant diagonal source
+mass.  Once this issue is closed, the same-ray off-diagonal remains within
+the reach of a two-linear-forms upper sieve.  The resulting energy and
+Mellin-band formulas are unconditional and retain explicit errors.
+
+The gain is substantial but its quantifiers remain those of a growing
+ensemble.  Any fixed finite collection of shifts has relative mass
+$O(1/H)$ and may remain exceptional forever.  More strongly, the actual
+coefficients exhibit sign-coherent locally obstructed rays for every
+fixed $h_0\geq2$.  After that obstruction is removed, one admissible ray
+already embeds the open weighted prime number theorem for $6k^2+1$.
+The radial minimax identity shows why no increase in the existing Mellin
+bandwidth can recover the missing $k$ coordinate without additional
+structure.
+
+Uniform shifted-divisor technology such as that of
+\citet{AssingBlomerLi2021} controls divisor-weighted shadows of the ray
+multiplicity.  It does not evaluate the $\Lambda^2$-weighted
+large-prime-divisor component that appears when a fixed ray is opened.
+Likewise, the quadratic averages of \citet{BaierZhao2009} and the
+almost-prime theorem of \citet{Iwaniec1978} do not supply a fixed
+quadratic-prime asymptotic.
+
+The next honest spectral target is therefore a radial completion rather
+than an extrapolation to $H=1$.  On a sector $ab\asymp R$, the original
+ray-frequency spacing is of order $R^{-1}$, while the radial length is
+of order $\sqrt{X/R}$.  A second Mellin coordinate attached to
+$k=(m,n)$ would test the geometric resolution pair
+\[
+ T_{\mathrm{ray}}\asymp R,
+ \qquad
+ T_{\mathrm{radial}}\asymp\sqrt{X/R},
+ \qquad
+ T_{\mathrm{ray}}T_{\mathrm{radial}}^2\asymp X.
+\]
+That lift can separate radial indices, but evaluating its fixed-shift
+diagonal still requires new arithmetic input.  The sign-coherent,
+quadratic-prime, and endpoint reductions in
+\cref{sec:fixed-boundary} provide the tests against which any such claim
+must be measured.
+
+No fixed-shift prime-pair asymptotic, twin-prime lower bound, prime number
+theorem for a fixed quadratic polynomial, new level of distribution, or
+violation of sieve parity has been obtained.

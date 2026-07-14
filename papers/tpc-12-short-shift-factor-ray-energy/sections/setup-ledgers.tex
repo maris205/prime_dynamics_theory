@@ -1,0 +1,230 @@
+\section{Factor-ray setup and source ledgers}
+\label{sec:setup}
+
+Fix numbers $0<\alpha<\beta$ such that
+$\supp W\subset[\alpha,\beta]$.  The shift is an integer, and $X$ is
+always large enough that every target selected by the weights is positive.
+All sums are finite.
+
+\subsection{Ray compression and the inherited spectral identities}
+
+For every factor pair, write uniquely
+\begin{equation}
+ n=ak,\qquad m=bk,\qquad (a,b)=1,\qquad k=(m,n).
+ \label{eq:ray-coordinates}
+\end{equation}
+Then $mn=abk^2$ and $n/m=a/b$, so substitution gives
+\eqref{eq:intro-ray-compression}--\eqref{eq:intro-ray-coefficient}.
+The raw ray coefficient is
+\begin{equation}
+ c^{\mathrm{raw}}_{a,b}(h;X,D)=
+ \sum_{\substack{k\geq1\\ak>D}}
+ u(ak)\Lambda(abk^2+h)W(abk^2/X),
+ \label{eq:raw-ray-coefficient}
+\end{equation}
+and its squared energy is denoted by $\cE^{\mathrm{raw}}_{h,D}(X)$.
+
+Two geometric facts from TPC-11 will be used below.  We record them to
+fix all normalizations.  Distinct primitive rays in the support satisfy
+\begin{equation}
+ \left|\log\frac ab-\log\frac cd\right|
+ \geq
+ \delta_X,
+ \qquad
+ \delta_X=2\arsinh\!\left(\frac1{2\beta X}\right).
+ \label{eq:ray-spacing}
+\end{equation}
+Indeed, $|ad-bc|\geq1$ and $abcd\leq(\beta X)^2$; the identity
+\[
+ 2\sinh\!\left(\frac12\left|\log\frac{ad}{bc}\right|\right)
+ =\frac{|ad-bc|}{\sqrt{abcd}}
+\]
+proves the claim.
+
+The generalized Hilbert inequality of \citet{MontgomeryVaughan1974}
+therefore gives, for every bounded interval $I\subset\R$,
+\begin{equation}
+ \int_I|\cR_{h,D}(X;t)|^2dt
+ =|I|\cE_{h,D}(X)+O_W\bigl(X\cE_{h,D}(X)\bigr).
+ \label{eq:MV-ray-law}
+\end{equation}
+The same identity holds for the raw transform.  With the Fourier convention
+$\widehat f(\xi)=\int_\R f(t)e^{-it\xi}\,dt$ and
+\begin{equation}
+ \kappa(t)=\frac2\pi\left(\frac{\sin(t/2)}t\right)^2,
+ \qquad
+ \widehat\kappa(\xi)=(1-|\xi|)_+,
+ \label{eq:Fejer-kernel}
+\end{equation}
+Fourier expansion gives the exact formula
+\begin{equation}
+ \int_\R\kappa(t/T)|\cR_{h,D}(X;t)|^2dt
+ =T\cE_{h,D}(X)
+ \quad\text{whenever }T\delta_X\geq1.
+ \label{eq:exact-Fejer-law}
+\end{equation}
+The endpoint value of $\widehat\kappa$ is zero, so equality is valid also
+when a scaled gap equals one.
+
+\subsection{Weights on product centers}
+
+For an integer $r\geq1$, define
+\begin{align}
+ A_D(r)
+ &:={}|W(r/X)|^2
+ \sum_{\substack{n\mid r\\n>D}}u(n)^2,
+ \label{eq:product-diagonal-weight}\\
+ B_{D,t}(r)
+ &:={}W(r/X)
+ \sum_{\substack{n\mid r\\n>D}}
+ u(n)(n^2/r)^{it}.
+ \label{eq:product-signed-weight}
+\end{align}
+The first is the source weight on the target-square diagonal.  The second
+is the coefficient that appears after the first-moment transform is
+grouped by $r=mn$.
+
+\begin{lemma}[Pointwise and quadratic product ledgers]
+\label{lem:product-ledgers}
+Uniformly in $D\geq1$ and $t\in\R$,
+\begin{align}
+ A_D(r)&\ll_W\one_{[\alpha X,\beta X]}(r)
+ \bigl((\log(2r))^2+\tau(r)\bigr),
+ \label{eq:A-pointwise}\\
+ |B_{D,t}(r)|&\ll_W\one_{[\alpha X,\beta X]}(r)
+ \bigl(\log(2r)+\tau(r)\bigr),
+ \label{eq:B-pointwise}
+\end{align}
+and
+\begin{align}
+ \sum_{r\geq1}A_D(r)^2&\ll_WX(\log(2X))^4,
+ \label{eq:A-second-moment}\\
+ \sum_{r\geq1}|B_{D,t}(r)|^2&\ll_WX(\log(2X))^3.
+ \label{eq:B-second-moment}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Since $(\Lambda-1)^2\leq2(1+\Lambda^2)$,
+\[
+ \sum_{d\mid r}u(d)^2
+ \leq2\tau(r)+2\sum_{p^j\mid r}(\log p)^2.
+\]
+If $r=\prod_pp^{v_p}$, then
+\[
+ \sum_{p^j\mid r}(\log p)^2
+ =\sum_pv_p(\log p)^2
+ \leq\left(\sum_pv_p\log p\right)^2=(\log r)^2.
+\]
+This proves \eqref{eq:A-pointwise}.  Also
+\[
+ \sum_{d\mid r}|u(d)|
+ \leq\sum_{d\mid r}\Lambda(d)+\tau(r)
+ =\log r+\tau(r),
+\]
+which proves \eqref{eq:B-pointwise}, uniformly because the phase has
+modulus one.  Finally use the classical estimate
+$\sum_{r\leq y}\tau(r)^2\ll y(\log(2y))^3$ and the fixed support of $W$.
+\end{proof}
+
+The total mass of $A_D$ has an asymptotic that will provide the main
+coefficient.
+
+\begin{lemma}[Source diagonal]
+\label{lem:source-diagonal}
+For every fixed $\eps>0$, uniformly for $1\leq D\leq X^{1-\eps}$,
+\begin{equation}
+ \begin{aligned}
+ \cS_D(X)
+ &:={}\sum_{r\geq1}A_D(r)
+ =\sum_{\substack{n>D\\m\geq1}}
+ u(n)^2|W(mn/X)|^2\\
+ &=\frac12XI_2(W)
+ \bigl((\log X)^2-(\log D)^2\bigr)
+ +O_W(X\log(2X)).
+ \end{aligned}
+ \label{eq:source-diagonal}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Euler summation gives
+\[
+ \sum_{m\geq1}|W(mn/X)|^2
+ =\frac XnI_2(W)+O_W(1).
+\]
+The classical zero-free-region prime number theorem and partial summation
+give \citep[Chapter~5]{IwaniecKowalski2004}
+\begin{equation}
+ \sum_{n\leq y}\frac{(\Lambda(n)-1)^2}{n}
+ =\frac12(\log y)^2-\log y+O(1),
+ \label{eq:u-square-harmonic}
+\end{equation}
+while $\sum_{n\leq y}u(n)^2\ll y\log(2y)$.  Insert the Euler estimate,
+subtract the range $n\leq D$, and absorb the fixed support endpoints into
+$O_W(X\log X)$.
+\end{proof}
+
+\subsection{The same-ray off-diagonal ledger}
+
+For later use put
+\begin{equation}
+ \begin{aligned}
+ \cL_D(X):={}&
+ \sum_{(a,b)=1}
+ \sum_{\substack{k\ne\ell\\ak,a\ell>D}}
+ |u(ak)u(a\ell)|\\
+ &\qquad\times
+ |W(abk^2/X)W(ab\ell^2/X)|.
+ \end{aligned}
+ \label{eq:source-offdiagonal-ledger}
+\end{equation}
+
+\begin{lemma}[Source-ray square and off-diagonal ledgers]
+\label{lem:source-ray-ledgers}
+Uniformly for $Y\geq2$,
+\begin{equation}
+ \sum_{ak^2\leq Y}\frac{u(ak)^2}{ak}
+ \ll(\log(2Y))^2,
+ \label{eq:source-ray-square}
+\end{equation}
+and, for every $D\geq1$,
+\begin{equation}
+ \cL_D(X)\ll_WX(\log(2X))^2.
+ \label{eq:source-offdiagonal-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For \eqref{eq:source-ray-square}, the contribution of the constant part
+of $u^2\leq2(1+\Lambda^2)$ is
+\[
+ \sum_{k\leq\sqrt Y}\frac1k
+ \sum_{a\leq Y/k^2}\frac1a
+ \ll(\log(2Y))^2.
+\]
+If $ak=p^j$, then $k=p^\ell$ and $a=p^{j-\ell}$.  Dropping the extra
+constraint $p^{j+\ell}\leq Y$ gives
+\[
+ \sum_{p^j\leq Y}(j+1)\frac{(\log p)^2}{p^j}
+ \ll(\log(2Y))^2.
+\]
+
+For the second assertion, let $K_{a,b}$ be the radial indices selected by
+the two weights and put $x_k=|u(ak)W(abk^2/X)|$.  Their fixed
+multiplicative support implies $|K_{a,b}|\ll_Wk$ for every
+$k\in K_{a,b}$.  Hence
+\[
+ \sum_{k\ne\ell}x_kx_\ell
+ \leq |K_{a,b}|\sum_kx_k^2
+ \ll_W\sum_{k\in K_{a,b}}k x_k^2.
+\]
+For fixed $a,k$, the number of supported $b$ is
+$O_W(X/(ak^2))$; the additive one is absorbed by support nonemptiness.
+Summing first over $b$ gives
+\[
+ \cL_D(X)
+ \ll_WX\sum_{ak^2\ll_WX}\frac{u(ak)^2}{ak},
+\]
+and \eqref{eq:source-ray-square} completes the proof.
+\end{proof}

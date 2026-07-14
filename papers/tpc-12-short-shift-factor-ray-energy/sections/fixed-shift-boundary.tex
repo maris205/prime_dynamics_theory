@@ -1,0 +1,252 @@
+\section{Fixed-shift obstructions inside one ray}
+\label{sec:fixed-boundary}
+
+The theorem above averages shifts in a window that grows and moves to
+infinity.  This section proves that the fixed-shift problem is not obtained
+by formally decreasing $H$.  The first obstruction is completely
+elementary and uses the actual von Mangoldt coefficients.
+
+Put
+\begin{equation}
+ J_W=\int_0^\infty W(s^2)\,ds
+ =\frac12\int_0^\infty W(v)v^{-1/2}\,dv.
+ \label{eq:JW-definition}
+\end{equation}
+
+\begin{theorem}[A sign-coherent local-obstruction family]
+\label{thm:sign-coherent-family}
+Fix an integer $h_0\geq2$, assume $W\geq0$ and $W\not\equiv0$, and let
+$(a,b)=1$ satisfy
+\begin{equation}
+ 6h_0^2\mid a,\qquad A:=ab=o(X).
+ \label{eq:sign-ray-hypotheses}
+\end{equation}
+Suppose the source cutoff is inactive on the radial support; the following
+explicit sufficient condition will be used:
+\begin{equation}
+ \frac Da<\sqrt{\frac{\alpha X}{A}}.
+ \label{eq:inactive-source-cutoff}
+\end{equation}
+Then
+\begin{equation}
+ c_{a,b}(h_0;X,D)
+ =\sum_{k\geq1}W(Ak^2/X)
+ =\sqrt{\frac XA}\,J_W+O_W(1).
+ \label{eq:sign-coherent-asymptotic}
+\end{equation}
+In particular, this coefficient is not
+$o(\sqrt{X/(ab)})$.
+\end{theorem}
+
+\begin{proof}
+Every $ak$ is divisible by both $2$ and $3$, hence is not a prime power.
+Thus $\Lambda(ak)=0$ and $u(ak)=-1$.  Also
+\begin{equation}
+ Ak^2+h_0
+ =h_0\left(\frac{A}{h_0}k^2+1\right).
+ \label{eq:target-local-factorization}
+\end{equation}
+Because $h_0^2\mid A$, the factor in parentheses is greater than one and
+coprime to $h_0$.  The product in
+\eqref{eq:target-local-factorization} is therefore not a prime power.
+Consequently $\eta(Ak^2+h_0)=-1$.  The two negative factors multiply to
+one on every supported radial index, and
+\eqref{eq:inactive-source-cutoff} ensures that none is removed.
+
+Finally, Euler summation after the scaling
+$k=\sqrt{X/A}\,s$ gives
+\[
+ \sum_kW(Ak^2/X)
+ =\sqrt{X/A}\int_0^\infty W(s^2)\,ds+O_W(1).
+\]
+Since $W$ is nonnegative and nonzero, $J_W>0$.
+\end{proof}
+
+The family is not confined to a single thin direction.  Taking $a$ to
+be a multiple of $6h_0^2$, $b=a+1$, and $a=o(\sqrt X)$ produces primitive
+balanced rays whenever \eqref{eq:inactive-source-cutoff} holds; this
+includes $D\leq c_W\sqrt X$ for a sufficiently small fixed $c_W>0$.
+These balanced examples are not asserted uniformly for larger cutoffs.
+By contrast, throughout the positive theorem's full range
+$D\leq X^{1-\eta}$, one may take $b=1$ and choose $a$ as a sufficiently
+large multiple of $6h_0^2$ with
+\[
+ a\asymp_{h_0,W}\max(1,D^2/X).
+\]
+Then \eqref{eq:inactive-source-cutoff} holds, $a=o(X)$, and the radial
+length is
+\[
+ \sqrt{X/a}\asymp\min(\sqrt X,X/D)
+ \geq X^{\min(\eta,1/2)}.
+\]
+Thus a uniform fixed-shift cancellation theorem must first replace the
+global center $1$ by an appropriate local model or exclude locally
+obstructed rays.  This does not contradict an averaged energy theorem.
+
+\subsection{An admissible quadratic-prime embedding}
+
+Eliminating the preceding fixed-divisor obstruction does not make the
+fixed-ray problem elementary.
+
+\begin{theorem}[Exact quadratic-prime ray]
+\label{thm:quadratic-prime-ray}
+Take $(a,b,h)=(6,1,1)$ and assume
+\begin{equation}
+ D<\sqrt{6\alpha X}.
+ \label{eq:quadratic-ray-cutoff}
+\end{equation}
+Then
+\begin{equation}
+ \begin{aligned}
+ c_{6,1}(1;X,D)
+ &=-\sum_{k\geq1}(\Lambda(6k^2+1)-1)W(6k^2/X)\\
+ &=N_W(X)-P_W(X),
+ \end{aligned}
+ \label{eq:quadratic-ray-identity}
+\end{equation}
+where
+\begin{align}
+ N_W(X)&=\sum_{k\geq1}W(6k^2/X)
+ =\sqrt{X/6}\,J_W+O_W(1),
+ \label{eq:quadratic-baseline}\\
+ P_W(X)&=\sum_{k\geq1}\Lambda(6k^2+1)W(6k^2/X).
+ \label{eq:quadratic-prime-sum}
+\end{align}
+Consequently, for every explicit model $M(X)$,
+\begin{equation}
+ c_{6,1}(1;X,D)=M(X)+o(\sqrt X)
+ \label{eq:coefficient-model}
+\end{equation}
+if and only if
+\begin{equation}
+ P_W(X)=N_W(X)-M(X)+o(\sqrt X).
+ \label{eq:quadratic-PNT-equivalence}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The integer $6k$ has at least two distinct prime factors, so
+$\Lambda(6k)=0$ and $u(6k)=-1$.  Condition
+\eqref{eq:quadratic-ray-cutoff} makes the source cutoff inactive on the
+support.  Substitution in \eqref{eq:intro-ray-coefficient} proves the
+first identity, and Euler summation proves
+\eqref{eq:quadratic-baseline}.  The equivalence is then pure algebra.
+\end{proof}
+
+The polynomial $6k^2+1$ is irreducible and has no fixed prime divisor.
+Proper prime powers do not change the natural-scale interpretation of
+$P_W$.  If $6k^2+1$ is an even power of a prime, it lies among solutions
+of a Pell equation and there are $O(\log X)$ possibilities in the
+support.  For odd exponents $j\geq3$, the crude bound
+$p\ll X^{1/j}$ gives $O(X^{1/3}\log X)$ possibilities in total.  Their
+aggregate von Mangoldt weight is
+$O(X^{1/3}(\log X)^2)=o(\sqrt X)$.  Thus
+\eqref{eq:quadratic-PNT-equivalence} is a weighted prime-number theorem
+for this fixed quadratic polynomial at its natural scale.  Bateman--Horn
+predicts it \citep{BatemanHorn1962}; it is not known.  Iwaniec's theorem
+that $n^2+1$ assumes infinitely many values with at most two prime factors
+does not provide such a prime asymptotic \citep{Iwaniec1978}.
+
+\subsection{Exact radial blindness of one Mellin coordinate}
+
+The arithmetic examples above concern the actual coefficients.  There is
+also a coefficient-independent information boundary.  Fix one primitive
+ray with frequency $\lambda=\log(a/b)$ and a finite radial set $K$.  For
+$x=(x_k)_{k\in K}$, all one-Mellin data on that ray are
+\begin{equation}
+ F_x(t)=e^{it\lambda}\sum_{k\in K}x_k.
+ \label{eq:one-ray-signal}
+\end{equation}
+
+\begin{proposition}[Radial-blindness minimax formula]
+\label{prop:radial-blindness}
+Let $K$ be nonempty, let $B\geq0$, let $1\leq p\leq\infty$, let $q$ be
+its conjugate exponent, and let $v\in\R^K$.  Among all, possibly
+nonlinear, real-valued algorithms using the full
+signal $F_x(t)$ for every $t\in\R$, the minimax error for recovering
+$L_v(x)=\sum_kv_kx_k$ on the ball $\|x\|_p\leq B$ is
+\begin{equation}
+ \inf_{\mathcal A}
+ \sup_{\|x\|_p\leq B}
+ |L_v(x)-\mathcal A(F_x)|
+ =B\dist_{\ell^q}\bigl(v,\operatorname{span}\{\one\}\bigr).
+ \label{eq:radial-minimax}
+\end{equation}
+For $p=1$, this equals
+\begin{equation}
+ \frac B2\left(\max_{k\in K}v_k-\min_{k\in K}v_k\right).
+ \label{eq:l1-radial-minimax}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For every constant $\gamma$, the estimator
+$\mathcal A(F_x)=\gamma\sum_kx_k$ has worst-case error at most
+$B\|v-\gamma\one\|_q$ by H\"older's inequality.  Minimize over
+$\gamma$.
+
+Conversely, if $z\in\ker(\sum_k)$, the two inputs $z$ and $-z$ have the
+same zero signal.  At least one of their recovery errors is
+$|L_v(z)|$.  Duality on the kernel gives
+\[
+ \sup_{\substack{\|z\|_p\leq B\\\sum z_k=0}}|L_v(z)|
+ =B\dist_{\ell^q}(v,\operatorname{span}\{\one\}),
+\]
+which proves the lower bound.  For $q=\infty$, the best constant is the
+midrange of $v$, giving \eqref{eq:l1-radial-minimax}.
+\end{proof}
+
+Increasing the Mellin bandwidth, or retaining any quadratic statistic
+built from the one-Mellin transform (including the determinant-layer
+statistics of TPC-11), does not change this
+minimax value: all such data depend only on the compressed coefficient
+$\sum_kx_k$.  The proposition does not say that arithmetic input is
+useless.  It says precisely that frequency resolution in the existing
+coordinate cannot by itself recover the radial indices.
+
+\subsection{The endpoint remains a prime-pair boundary}
+
+For comparison, define the cutoff-free endpoint energy
+\begin{equation}
+ \cE^{\mathrm{end}}_{h}(X)=
+ \sum_nu(n)^2\eta(n+h)^2W(n/X)^2.
+ \label{eq:endpoint-energy}
+\end{equation}
+In the positive range $D\leq X^{1-\eta}$ this is also the $m=1$ part of
+the fully radial diagonal energy for all large $X$, because the support
+condition forces $n\asymp_WX>D$.
+For every fixed nonzero $h$, the Selberg upper sieve and removal of proper
+prime powers give
+\begin{equation}
+ \begin{aligned}
+ \cE^{\mathrm{end}}_{h}(X)
+ ={}&(\log X)^2
+ \sum_n\Lambda(n)\Lambda(n+h)W(n/X)^2\\
+ &+O_{h,W}(X\log X).
+ \end{aligned}
+ \label{eq:endpoint-energy-reduction}
+\end{equation}
+Indeed, writing $L=\Lambda(n)$ and $M=\Lambda(n+h)$ gives
+\[
+ (L-1)^2(M-1)^2
+ =L^2M^2-2L^2M-2LM^2+4LM+L^2+M^2-2L-2M+1.
+\]
+The terms in which either target is a proper prime power contribute
+$O_{h,W}(X^{1/2}(\log X)^5)$, which is admissible.  On the remaining
+prime pairs,
+\[
+ L^2M^2
+ =\bigl((\log X)^2+O_{h,W}(\log X)\bigr)LM.
+\]
+The two-linear-forms upper sieve gives
+$\sum_nLMW(n/X)^2\ll_{h,W}X$; the mixed cubic terms are therefore
+$O_{h,W}(X\log X)$.  The prime-square and lower one-variable terms obey
+$\sum_{n\asymp X}\Lambda(n)^2\ll X\log X$, and all remaining terms are
+smaller.  This proves \eqref{eq:endpoint-energy-reduction}.
+
+For an admissible even $h$, an $X\log^2X$ asymptotic for
+\eqref{eq:endpoint-energy} with a specified leading constant is therefore
+equivalent to the corresponding weighted Hardy--Littlewood asymptotic.
+This is a reduction, not a proof of either assertion.  Together with
+\cref{thm:sign-coherent-family,thm:quadratic-prime-ray}, it shows why the
+growing-window theorem has no legitimate specialization to $H=O(1)$.

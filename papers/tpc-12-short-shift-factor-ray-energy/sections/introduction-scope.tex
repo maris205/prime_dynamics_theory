@@ -1,0 +1,196 @@
+\section{Introduction and scope}
+\label{sec:introduction}
+
+The factor-ray transform separates two different kinds of averaging.
+Continuous Mellin averaging separates distinct reduced ratios $a/b$,
+whereas arithmetic averaging of the shift $h$ controls the prime targets
+that remain coherent on a single ray.  TPC-11 established the first
+separation at fixed shift and evaluated the resulting ray energy after a
+smooth shift average of length $H\geq X$ \citep{WangTPC11}.  Its explicit
+next question was whether one can shorten the shift average without
+pretending that a fixed shift has been reached.
+
+The recent large-values theorem of \citet{GuthMaynard2026} changes the
+answer.  Among its consequences is a prime number theorem in intervals of
+length $X^{2/15+\eps}$ for all but a stretched-exponentially sparse set of
+integer starting points.  The exponent $2/15$ applies to almost all
+intervals; it is logically different from the exponent $17/30$ in their
+uniform short-interval theorem.  The exceptional-set framework and its
+current quantitative refinements are also discussed by
+\citet{GafniTao2026}.  We use the almost-all result because the ray energy
+already sums over the product center $r=mn$.
+
+That last sentence contains the main technical issue.  A set that is
+sparse among all integers could, in principle, carry most of a structured
+divisor weight.  The relevant weight here is not bounded:
+\[
+ A_D(r)=|W(r/X)|^2
+ \sum_{\substack{n\mid r\\n>D}}(\Lambda(n)-1)^2.
+\]
+We close this gap by proving a global second-moment bound for $A_D$ and
+then transferring the exceptional-set estimate by Cauchy--Schwarz.  This
+weighted transfer, rather than a pointwise short-interval theorem, is what
+allows the shift scale to fall below the uniform threshold.
+
+\subsection{Main results}
+
+Throughout the paper
+\[
+ u(n)=\Lambda(n)-1,
+ \qquad
+ \eta(q)=\Lambda(q)-1,
+\]
+and $W\in C_c^1((0,\infty);\R)$ has support in a fixed interval
+$[\alpha,\beta]\subset(0,\infty)$.  We write
+\begin{equation}
+ \cT_{h,D}(X;t)=
+ \sum_{\substack{n>D\\m\geq1}}
+ u(n)\Lambda(mn+h)W(mn/X)(n/m)^{it},
+ \label{eq:intro-raw-transform}
+\end{equation}
+\begin{equation}
+ \cM_D(X;t)=
+ \sum_{\substack{n>D\\m\geq1}}
+ u(n)W(mn/X)(n/m)^{it},
+ \qquad
+ \cR_{h,D}=\cT_{h,D}-\cM_D.
+ \label{eq:intro-centered-transform}
+\end{equation}
+The factorization $n=ak$, $m=bk$, $(a,b)=1$, gives
+\begin{equation}
+ \cR_{h,D}(X;t)=
+ \sum_{(a,b)=1}c_{a,b}(h;X,D)(a/b)^{it},
+ \label{eq:intro-ray-compression}
+\end{equation}
+where
+\begin{equation}
+ c_{a,b}(h;X,D)=
+ \sum_{\substack{k\geq1\\ak>D}}
+ u(ak)\eta(abk^2+h)W(abk^2/X).
+ \label{eq:intro-ray-coefficient}
+\end{equation}
+The centered ray energy is
+\begin{equation}
+ \cE_{h,D}(X)=\sum_{(a,b)=1}|c_{a,b}(h;X,D)|^2.
+ \label{eq:intro-ray-energy}
+\end{equation}
+
+Our first theorem transfers the almost-all short-interval prime number
+theorem through both the signed first-moment coefficients and the positive
+diagonal source weights.  In particular, for every $A>0$,
+\begin{equation}
+ \frac1H\sum_hG(h/H)\cT_{h,D}(X;t)
+ =I_0(G)\cM_D(X;t)+O_A\bigl(X(\log X)^{-A}\bigr)
+ \label{eq:intro-first-moment}
+\end{equation}
+uniformly in $t\in\R$ throughout the growing parameter range of the
+energy theorem below.
+
+The main energy theorem is the following.  Put
+\begin{equation}
+ I_0(G)=\int_0^\infty G(v)\,dv,
+ \qquad
+ I_2(W)=\int_0^\infty |W(v)|^2\,dv.
+ \label{eq:intro-moments}
+\end{equation}
+For fixed $0<\eps<13/15$ and $0<\eta<1$, uniformly in
+\[
+ X^{2/15+\eps}\leq H\leq X,
+ \qquad
+ 1\leq D\leq X^{1-\eta},
+\]
+we prove
+\begin{equation}
+ \begin{aligned}
+ \sum_hG(h/H)\cE_{h,D}(X)
+ ={}&\frac12HX I_0(G)I_2(W)\log X\\
+ &\times\bigl((\log X)^2-(\log D)^2\bigr)\\
+ &+O_{\eps,\eta,W,G}\!\left(
+ HX(\log X)^2\log\log(3X)\right).
+ \end{aligned}
+ \label{eq:intro-main-energy}
+\end{equation}
+The raw ray energy has the same asymptotic.  In this at-most-linear shift
+range the correct target logarithm is $\log X$, not $\log H$.
+
+The source diagonal is of order $X(\log X)^2$.  On a nonexceptional
+center, the target square contributes $H\log X$.  A two-linear-forms
+Selberg upper sieve bounds each same-ray off-diagonal by
+$H\log\log X$, after which the source off-diagonal ledger from TPC-11 is
+$O(X\log^2X)$.  Thus the extra logarithm on the diagonal remains the sole
+source of the asymptotic.  The proof does not obtain cancellation in an
+individual fixed-shift quadratic correlation.
+
+The exact factor-ray mean-square identities then convert
+\eqref{eq:intro-main-energy} into hard- and Fej\'er-band results over the
+same short shift window.  We also prove a parity-conditioned version over
+even shifts.  Its main coefficient is $1/4$ rather than $1/2$, and it
+does not select any prescribed even shift.
+
+\subsection{The fixed-shift boundary}
+
+Shrinking a growing average and setting $H=1$ are not interchangeable
+operations.  We make that failure concrete in three ways.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item For nonnegative, nonzero $W$ and every fixed $h_0\geq2$, there is
+ an infinite family of
+ primitive rays on which the actual arithmetic summands in
+ \eqref{eq:intro-ray-coefficient} have one sign and no cancellation at
+ all.  This includes balanced ray sectors whenever the cutoff is below
+ the square-root scale; a separate unbalanced construction covers the
+ full range $D\leq X^{1-\eta}$.
+
+ \item On the locally admissible ray $(a,b,h)=(6,1,1)$, the unknown part
+ of the coefficient is exactly
+ \[
+  \sum_k\Lambda(6k^2+1)W(6k^2/X).
+ \]
+ Therefore a natural-scale coefficient asymptotic is equivalent to the
+ corresponding weighted quadratic-prime asymptotic.  Bateman--Horn
+ predicts such an asymptotic \citep{BatemanHorn1962}, but it is not known;
+ the almost-prime theorem for $n^2+1$ does not supply it
+ \citep{Iwaniec1978}.
+
+ \item The whole one-Mellin signal on one ray is a known exponential
+ times the single scalar $\sum_kx_k$.  We give the exact minimax error for
+ recovering any other radial functional from that scalar.  This is an
+ information statement for coefficient-blind recovery, not a prohibition
+ on using additional arithmetic input.
+\end{enumerate}
+
+These statements identify both a local obstruction and an admissible open
+problem before the endpoint prime-pair layer is reached.  At the endpoint,
+the selector in TPC-11 already shows that a sufficiently strong
+fixed-shift band approximation would recover a weighted Hardy--Littlewood
+functional \citep{HardyLittlewood1923,WangTPC11}.
+
+\subsection{Claim ledger}
+
+\begin{center}
+\begin{tabular}{@{}p{0.31\textwidth}p{0.27\textwidth}p{0.31\textwidth}@{}}
+\toprule
+Statement & Status here & What it does not imply\\
+\midrule
+Weighted transfer of almost-all short-interval PNT
+ & Proved in the displayed growing range
+ & No prescribed shift is controlled\\
+Short-shift factor-ray energy asymptotic
+ & Proved with explicit error
+ & No individual ray or target pair is evaluated\\
+Even-shift ensemble
+ & Proved after parity centering
+ & No selection of a particular even shift\\
+Fixed-ray cancellation
+ & False on an explicit local-obstruction family
+ & Does not contradict averaged energy\\
+Admissible quadratic ray
+ & Exact algebraic reduction
+ & The quadratic-prime asymptotic remains open\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+No twin-prime lower bound, fixed-shift Hardy--Littlewood asymptotic,
+quadratic-prime theorem, new level of distribution, or breach of the
+sieve parity barrier is asserted.

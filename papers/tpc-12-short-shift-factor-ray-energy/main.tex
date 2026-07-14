@@ -1,0 +1,151 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Exceptional-Set Transfer for Short-Shift Factor-Ray Energies: The Two-Fifteenths Window, Parity Conditioning, and Fixed-Ray Obstructions},
+ pdfauthor={Liang Wang},
+ pdfsubject={Short-shift asymptotics and rigorous fixed-shift boundaries for factor-ray energies},
+ pdfkeywords={primes in short intervals, exceptional sets, factor rays, Mellin spectrum, Selberg sieve, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\arsinh}{\operatorname{arsinh}}
+
+\title{\textbf{Exceptional-Set Transfer for Short-Shift Factor-Ray Energies:}\\
+\textbf{The Two-Fifteenths Window, Parity Conditioning,}\\
+\textbf{and Fixed-Ray Obstructions}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Put $u(n)=\Lambda(n)-1$ and let $W\in C_c^1((0,\infty);\R)$.
+For a fixed integer shift $h$ consider
+\[
+ \cR_{h,D}(X;t)=
+ \sum_{\substack{n>D\\m\geq1}}
+ u(n)\bigl(\Lambda(mn+h)-1\bigr)
+ W(mn/X)(n/m)^{it}.
+\]
+Writing $n=ak$, $m=bk$, $(a,b)=1$, compresses equal Mellin
+frequencies into primitive factor rays and defines the ray energy
+$\cE_{h,D}(X)$ as the sum of the squared compressed coefficients.
+Earlier long-shift arguments evaluate this energy after averaging over
+$h$ on a scale $H\geq X$.  We lower that scale unconditionally.
+
+The new input is a weighted exceptional-set transfer.  Guth and Maynard
+proved a prime number theorem in intervals of length
+$H\geq X^{2/15+\eps}$ for all but a stretched-exponentially sparse set
+of integer centers.  The diagonal factor-product center $r=mn$ carries
+the weight
+\[
+ A_D(r)=|W(r/X)|^2
+ \sum_{\substack{n\mid r\\n>D}}(\Lambda(n)-1)^2.
+\]
+We prove $\sum_{r\asymp X}A_D(r)^2\ll X(\log X)^4$; hence every such
+exceptional set has $A_D$-mass smaller than $X(\log X)^{-A}$ for every
+$A>0$.  This rules out concentration of the short-interval exceptions
+on the factor products relevant to the ray energy.
+
+ Let $G\in C_c^1((0,\infty))$ be nonnegative and nonzero.  Fix
+ $0<\eps<13/15$ and $0<\eta<1$.  Uniformly for
+\[
+ X^{2/15+\eps}\leq H\leq X,
+ \qquad 1\leq D\leq X^{1-\eta},
+\]
+we prove
+\begin{align*}
+ \sum_hG(h/H)\cE_{h,D}(X)
+ ={}&\frac12HX I_0(G)I_2(W)\log X\\
+ &\times\bigl((\log X)^2-(\log D)^2\bigr)\\
+ &+O\!\left(HX(\log X)^2\log\log(3X)\right).
+\end{align*}
+The same formula holds for the raw target energy.  The diagonal target
+square supplies $\log X$; all same-ray off-diagonals use only a
+two-linear-forms Selberg upper sieve.  The first-moment model and the
+hard- and Fej\'er-band consequences extend to the same shift range.  A
+parity-conditioned even-shift ensemble has the corresponding coefficient
+$1/4$ and still selects no prescribed even shift.
+
+ We also prove exact fixed-shift boundaries.  For nonnegative, nonzero
+ $W$, at $h=2$ an explicit family of primitive rays (for example, those
+ with $24\mid a$, $ab=o(X)$, and the stated inactive cutoff) is sign
+ coherent and has coefficient of natural radial
+ size, so uniform individual-ray cancellation is false.  On the
+locally admissible ray $(a,b,h)=(6,1,1)$, coefficient evaluation is
+algebraically equivalent to a weighted prime number theorem for
+$6k^2+1$.  Finally, an exact minimax formula shows that one Mellin
+coordinate observes only the sum of the radial coefficients on a ray.
+These results explain why the growing-window theorem cannot be
+specialized to $H=O(1)$.  No fixed-shift prime-pair asymptotic,
+twin-prime lower bound, quadratic-prime theorem, new distribution level,
+or breach of the parity barrier is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} primes in almost all short intervals;
+exceptional-set transfer; factor-ray energy; Mellin spectrum; Selberg
+upper-bound sieve; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N05, 11N13, 11N36; Secondary
+11M06, 42A05.
+
+\input{sections/introduction-scope}
+\input{sections/setup-ledgers}
+\input{sections/exceptional-transfer}
+\input{sections/short-shift-moments}
+\input{sections/energy-band}
+\input{sections/even-shifts}
+\input{sections/fixed-shift-boundary}
+\input{sections/computation-conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

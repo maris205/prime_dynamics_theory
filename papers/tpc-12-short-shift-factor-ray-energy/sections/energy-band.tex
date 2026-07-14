@@ -1,0 +1,146 @@
+\section{Short-shift ray energy and Mellin-band consequences}
+\label{sec:energy-band}
+
+We now combine the transferred diagonal, the two-target upper sieve, and
+the source ledgers.
+
+\begin{theorem}[Short-shift factor-ray energy]
+\label{thm:short-shift-energy}
+Let $G\in C_c^1((0,\infty))$ be nonnegative and nonzero.  Under
+\eqref{eq:nonempty-short-range}--\eqref{eq:main-short-range},
+\begin{equation}
+ \begin{aligned}
+ \sum_hG(h/H)\cE_{h,D}(X)
+ ={}&\frac12HX I_0(G)I_2(W)\log X\\
+ &\times\bigl((\log X)^2-(\log D)^2\bigr)\\
+ &+O_{\eps,\eta,W,G}\!\left(
+ HX(\log X)^2\log\log(3X)\right).
+ \end{aligned}
+ \label{eq:short-shift-energy}
+\end{equation}
+The same asymptotic holds for the raw energy
+$\cE^{\mathrm{raw}}_{h,D}(X)$.
+\end{theorem}
+
+\begin{proof}
+Expand the square in \eqref{eq:intro-ray-energy} and interchange the
+finite sums.  On the radial diagonal $k=\ell$, the target position is
+$r=abk^2$.  The unique substitution $n=ak$, $m=bk$ identifies the
+diagonal contribution with the left-hand side of
+\eqref{eq:weighted-target-square}.  Proposition~\ref{prop:weighted-target-square}
+and \cref{lem:source-diagonal} give
+\begin{align*}
+ &HI_0(G)\log X
+ \left\{
+ \frac12XI_2(W)\bigl((\log X)^2-(\log D)^2\bigr)
+ +O_W(X\log X)
+ \right\}\\
+ &\hspace{7em}+O_{\eps,W,G}(HX(\log X)^2).
+\end{align*}
+This is the displayed main term with an admissible diagonal error.
+
+For $k\ne\ell$, the target positions $abk^2$ and $ab\ell^2$ are
+distinct.  Apply \cref{lem:short-two-target-sieve}, take absolute values
+of the source coefficients, and use
+\eqref{eq:source-offdiagonal-bound}.  The whole off-diagonal is
+\[
+ \ll_{\eps,W,G}
+ H\log\log(3X)\,\cL_D(X)
+ \ll_{\eps,W,G}
+ HX(\log X)^2\log\log(3X).
+\]
+This proves the centered theorem.  The raw diagonal is covered by the raw
+part of \cref{prop:weighted-target-square}, and the same upper-sieve
+ledger handles its off-diagonal.
+\end{proof}
+
+If $W\not\equiv0$, then $I_2(W)>0$.  Because
+$D\leq X^{1-\eta}$,
+\begin{equation}
+ (\log X)^2-(\log D)^2
+ \geq(2\eta-\eta^2)(\log X)^2.
+ \label{eq:D-main-lower-bound}
+\end{equation}
+Thus, for $W\not\equiv0$, the error in
+\eqref{eq:short-shift-energy} is smaller than the main
+term by $O_{\eta}(\log\log X/\log X)$.
+
+\begin{remark}[The exact advance over the long-shift theorem]
+TPC-11 used a prime number theorem at every translated center and hence
+assumed $H\geq X$.  Here the diagonal is summed over all product centers,
+so the exceptional-set transfer covers
+$X^{2/15+\eps}\leq H\leq X$.  No cancellation is claimed in one fixed-shift
+same-ray correlation.  The result is also distinct from the averaged
+quadratic-polynomial theorem of \citet{BaierZhao2009}: their averaging
+parameter is the additive coefficient of $n^2+k$, whereas ours is a
+short translation average after all primitive rays have been aggregated.
+Neither theorem yields a prime number theorem for one fixed quadratic
+polynomial.
+\end{remark}
+
+\begin{remark}[Context from other short-shift correlations]
+Higher-order von Mangoldt correlations averaged over one shift variable
+are studied by \citet{MatomakiEtAl2026}.  Their results provide important
+methodological context, but are not an input here: the diagonal transfer
+uses \citet{GuthMaynard2026}, and every off-diagonal is bounded by an
+upper sieve rather than evaluated asymptotically.
+\end{remark}
+
+\subsection{Hard Mellin bands}
+
+\begin{corollary}[Short-shift averaged hard band]
+\label{cor:short-hard-band}
+For every $T\geq1$, under the hypotheses of
+\cref{thm:short-shift-energy},
+\begin{equation}
+ \begin{aligned}
+ &\sum_hG(h/H)
+ \int_{-T}^{T}|\cR_{h,D}(X;t)|^2dt\\
+ &\quad={}
+ THX I_0(G)I_2(W)\log X
+ \bigl((\log X)^2-(\log D)^2\bigr)\\
+ &\qquad+O\!\left(
+ THX(\log X)^2\log\log(3X)
+ +HX^2(\log X)^3
+ \right),
+ \end{aligned}
+ \label{eq:short-hard-band}
+\end{equation}
+with constants depending on the fixed data.  In particular, if
+$T/X\to\infty$, the displayed main term is an asymptotic.  The same is
+true for the raw transform.
+\end{corollary}
+
+\begin{proof}
+Sum \eqref{eq:MV-ray-law} over $h$ with weight $G(h/H)$.  The main part is
+$2T$ times \eqref{eq:short-shift-energy}.  That theorem and
+\eqref{eq:D-main-lower-bound} also give
+$\sum_hG(h/H)\cE_{h,D}\ll HX(\log X)^3$, so the accumulated geometric
+error in \eqref{eq:MV-ray-law} is $O(HX^2(\log X)^3)$.
+\end{proof}
+
+\subsection{Exact Fej\'er dephasing}
+
+\begin{corollary}[Short-shift averaged Fej\'er band]
+\label{cor:short-Fejer-band}
+If $T\delta_X\geq1$, then
+\begin{equation}
+ \begin{aligned}
+ &\sum_hG(h/H)
+ \int_\R\kappa(t/T)|\cR_{h,D}(X;t)|^2dt\\
+ &\quad={}
+ \frac12THX I_0(G)I_2(W)\log X
+ \bigl((\log X)^2-(\log D)^2\bigr)\\
+ &\qquad+O\!\left(
+ THX(\log X)^2\log\log(3X)
+ \right).
+ \end{aligned}
+ \label{eq:short-Fejer-band}
+\end{equation}
+The same statement holds for the raw transform.
+\end{corollary}
+
+\begin{proof}
+Use the exact identity \eqref{eq:exact-Fejer-law} and sum
+\cref{thm:short-shift-energy} over the shift.
+\end{proof}

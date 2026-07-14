@@ -1,0 +1,117 @@
+\section{A parity-conditioned short even-shift ensemble}
+\label{sec:even-shifts}
+
+The positive theorem can be restricted to even shifts without selecting
+one of them.  The correct first-moment model is
+\begin{equation}
+ \cM_D^{(2)}(X;t)
+ :=2\sum_{\substack{n>D,\ m\geq1\\2\nmid mn}}
+ u(n)W(mn/X)(n/m)^{it}.
+ \label{eq:short-even-model}
+\end{equation}
+For even $h$, define
+\begin{equation}
+ \eta_r^{(2)}(h)=\Lambda(r+h)-2\one_{2\nmid r},
+ \qquad
+ \cR^{(2)}_{h,D}=\cT_{h,D}-\cM_D^{(2)}.
+ \label{eq:short-even-residual}
+\end{equation}
+Its factor-ray coefficient is
+\begin{equation}
+ c^{(2)}_{a,b}(h;X,D)=
+ \sum_{\substack{k\geq1\\ak>D}}
+ u(ak)\eta_{abk^2}^{(2)}(h)W(abk^2/X),
+ \label{eq:short-even-ray-coefficient}
+\end{equation}
+and $\cE^{(2)}_{h,D}$ denotes the corresponding squared ray energy.
+
+\begin{proposition}[Short even-shift first moment]
+\label{prop:short-even-first-moment}
+Under \eqref{eq:main-short-range}, uniformly in $t\in\R$ and for every
+$A>0$,
+\begin{equation}
+ \frac2H\sum_{h\equiv0\ (2)}G(h/H)\cT_{h,D}(X;t)
+ =I_0(G)\cM_D^{(2)}(X;t)
+ +O_{A,\eps,W,G}\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:short-even-first-moment}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+If $r$ is odd, then every prime target $r+h\asymp X$ has $h$ even, and
+the smooth sum over even $h$ is therefore the full prime sum from
+\eqref{eq:smooth-Lambda-moment}, apart from the irrelevant prime $2$.
+It equals $HI_0(G)+O_A(H(\log X)^{-A})$ outside the same exceptional
+set.  If $r$ is even, the target is even and its von Mangoldt weight is
+supported on powers of two, giving a negligible contribution.  Group by
+$r=mn$ and use the signed exceptional transfer exactly as in the proof of
+\cref{thm:short-first-moment}.  The normalization $2/H$ produces the
+factor two in \eqref{eq:short-even-model}.
+\end{proof}
+
+\begin{proposition}[Short even-shift ray energy]
+\label{prop:short-even-energy}
+Let $G\in C_c^1((0,\infty))$ be nonnegative and nonzero.  Under
+\eqref{eq:nonempty-short-range}--\eqref{eq:main-short-range},
+\begin{equation}
+ \begin{aligned}
+ \sum_{h\equiv0\ (2)}G(h/H)\cE^{(2)}_{h,D}(X)
+ ={}&\frac14HX I_0(G)I_2(W)\log X\\
+ &\times\bigl((\log X)^2-(\log D)^2\bigr)\\
+ &+O_{\eps,\eta,W,G}\!\left(
+ HX(\log X)^2\log\log(3X)\right).
+ \end{aligned}
+ \label{eq:short-even-energy}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For $r\in[\alpha X,\beta X]$, the argument above and the transferred
+target-square estimate give
+\begin{equation}
+ \sum_{h\equiv0\ (2)}G(h/H)|\eta_r^{(2)}(h)|^2
+ =HI_0(G)\log X\,\one_{2\nmid r}+O(H)
+ \label{eq:short-even-target-square}
+\end{equation}
+outside a stretched-exponentially sparse set.  The weighted exceptional
+transfer removes that set after summation.  The source diagonal on odd
+products is
+\begin{equation}
+ \begin{aligned}
+ &\sum_{\substack{n>D,\ m\geq1\\2\nmid mn}}
+ u(n)^2|W(mn/X)|^2\\
+ &\qquad=\frac14XI_2(W)
+ \bigl((\log X)^2-(\log D)^2\bigr)+O_W(X\log X).
+ \end{aligned}
+ \label{eq:short-even-source-diagonal}
+\end{equation}
+Indeed, the odd $m$ sum has half the continuous density.  Restricting
+$n$ to odd integers leaves the quadratic logarithmic term in the
+harmonic $u(n)^2$ sum unchanged and alters it by only $O(\log X)$; the
+prime $2$ itself contributes a bounded amount.
+
+For distinct target positions, two odd rows are handled by writing
+$h=2j$ and applying the two-linear-forms upper sieve.  If either row is
+even, its target weight is supported on powers of two, and the resulting
+term is smaller.  Thus the even-shift analogue of
+\eqref{eq:short-two-target-sieve} is
+\[
+ \sum_{h\equiv0\ (2)}G(h/H)
+ |\eta_r^{(2)}(h)\eta_{r'}^{(2)}(h)|
+ \ll_{\eps,W,G}H\log\log(3X).
+\]
+Now expand the squared ray coefficients, use
+\eqref{eq:short-even-target-square}--\eqref{eq:short-even-source-diagonal}
+on the diagonal and \eqref{eq:source-offdiagonal-bound} off it.
+\end{proof}
+
+The hard- and Fej\'er-band corollaries follow from
+\eqref{eq:MV-ray-law} and \eqref{eq:exact-Fejer-law}, with every leading
+coefficient exactly one half of its all-shift counterpart.
+
+\begin{remark}[No prescribed even shift]
+The support of $G(h/H)$ moves to infinity.  The proposition gives an
+asymptotic for a parity-conditioned ensemble; it neither contains nor
+selects any fixed even shift.  In particular, no conclusion about a
+specified prime gap follows.
+\end{remark}
