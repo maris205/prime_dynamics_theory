@@ -1,0 +1,253 @@
+\section{Residual energy and an exact translation matrix coefficient}
+\label{sec:energy-cross-spectrum}
+
+The finite model matches the local mean and the fixed-shift main term, but
+it does not approximate $\Lambda$ in mean square.  We quantify that fact
+before formulating the remaining gate spectrally.
+
+Put
+\begin{equation}
+ A_R=\sum_{q\le R}\frac{\mu(q)^2}{\varphi(q)}.
+ \label{eq:AR-definition}
+\end{equation}
+
+\begin{lemma}[The diagonal model mass]
+\label{lem:AR-asymptotic}
+One has
+\begin{equation}
+ A_R=\log R+C_0+o(1)
+ \label{eq:AR-asymptotic}
+\end{equation}
+for an absolute constant $C_0$.
+\end{lemma}
+
+\begin{proof}
+The Dirichlet series of $\mu(n)^2/\varphi(n)$ is
+\[
+ \prod_p\left(1+\frac1{(p-1)p^s}\right)
+ =\zeta(s+1)G(s),
+\]
+where the local factors of $G$ are
+\[
+ G_p(s)=1+\frac{p^{-s}-p^{-2s}}{p(p-1)}.
+\]
+Thus $G$ is absolutely analytic for $\Re s>-1/2$, and
+\[
+ G(0)=\prod_p\left(1+\frac1{p-1}\right)(1-1/p)=1.
+\]
+A standard Perron--Selberg--Delange argument gives
+\eqref{eq:AR-asymptotic}.
+\end{proof}
+
+\begin{theorem}[Exact leading residual energy]
+\label{thm:residual-energy-law}
+Let $F\in C_c^\infty((0,\infty);\R)$ be nonnegative.  For fixed
+$0<\delta<1/2$ and $R=\lfloor X^{1/2-\delta}\rfloor$,
+\begin{align}
+ \sum_n r_R(n)^2F(n/X)
+ ={}&X\log(X/R)I_0(F)+O_{F,\delta}(X).
+ \label{eq:residual-energy-law}
+\end{align}
+Equivalently,
+\begin{equation}
+ \sum_n r_R(n)^2F(n/X)
+ =\left(\frac12+\delta+o(1)\right)
+ X\log X\,I_0(F).
+ \label{eq:residual-energy-delta-form}
+\end{equation}
+Moreover,
+\begin{equation}
+ \sum_n r_R(n)\Lambda_R(n)F(n/X)=O_{F,\delta}(X),
+ \label{eq:asymptotic-energy-orthogonality}
+\end{equation}
+so the model and residual are asymptotically orthogonal at the
+$X\log X$ scale.
+\end{theorem}
+
+\begin{proof}
+The prime number theorem and partial summation give
+\begin{equation}
+ \sum_n\Lambda(n)^2F(n/X)
+ =X\log X\,I_0(F)+O_F(X).
+ \label{eq:Lambda-square-energy}
+\end{equation}
+Prime powers of exponent at least two contribute $o(X)$.
+
+If $p\asymp_FX$ is prime, then $p>R$ and $(p,q)=1$ for every $q\le R$.
+Hence $c_q(p)=\mu(q)$ and
+\begin{equation}
+ \Lambda_R(p)=A_R.
+ \label{eq:model-on-large-primes}
+\end{equation}
+The higher prime powers are again negligible using the divisor expansion
+and the divisor bound; explicitly, for a fixed support,
+\[
+ \sum_{\substack{p^\nu\asymp_FX\\\nu\ge2}}
+ \Lambda(p^\nu)|\Lambda_R(p^\nu)|
+ \ll_F X^{1/2}(\log X)^C=o(X)
+\]
+for some absolute $C$.  Therefore
+\begin{equation}
+ \sum_n\Lambda(n)\Lambda_R(n)F(n/X)
+ =XA_RI_0(F)+O_F(X).
+ \label{eq:prime-model-diagonal}
+\end{equation}
+
+Finally, insert the rational Fourier expansion of $\Lambda_R$ twice.
+The zero-frequency pairs give
+\[
+ XI_0(F)\sum_{q\le R}
+ \frac{\mu(q)^2c_q(0)}{\varphi(q)^2}
+ =XA_RI_0(F).
+\]
+All nonzero frequency differences are at least $R^{-2}$ apart.  The
+off-diagonal absolute bound furnished by Poisson summation is, for every
+$B>0$,
+\[
+ \ll_{B,F}XR^2\left(1+\frac X{R^2}\right)^{-B}.
+\]
+Since $R^2\le X^{1-2\delta}$, choosing $B$ in terms of $\delta$ gives
+arbitrary logarithmic saving, so
+\begin{equation}
+ \sum_n\Lambda_R(n)^2F(n/X)
+ =XA_RI_0(F)+O_{F,\delta}(X(\log X)^{-10}).
+ \label{eq:model-square-energy}
+\end{equation}
+Expanding $(\Lambda-\Lambda_R)^2$ and using
+\cref{lem:AR-asymptotic} proves \eqref{eq:residual-energy-law}.
+Subtracting \eqref{eq:model-square-energy} from
+\eqref{eq:prime-model-diagonal} gives
+\eqref{eq:asymptotic-energy-orthogonality}.
+\end{proof}
+
+\subsection{The hard packet as a translation correlation}
+
+Define the square-root Vaughan coefficient on the integer line by
+\begin{equation}
+ a_X(n)=W(n/X)
+ \sum_{\substack{\ell k=n\\\ell>M\\k>1}}\Lambda(\ell).
+ \label{eq:square-root-Vaughan-coefficient}
+\end{equation}
+Choose $\chi\in C_c^\infty((0,\infty))$ equal to $1$ on a fixed
+neighborhood of $\supp W$, and put
+\begin{equation}
+ g_X(n)=r_R(n)\chi(n/X).
+ \label{eq:localized-residual}
+\end{equation}
+Let $(T^hg)(n)=g(n+h)$.
+We use the convention
+\begin{equation}
+ \langle f,g\rangle_{\ell^2(\Z)}
+ =\sum_{n\in\Z}f(n)\overline{g(n)}.
+ \label{eq:inner-product-convention}
+\end{equation}
+
+\begin{proposition}[Translation and cross-spectrum identities]
+\label{prop:translation-cross-spectrum}
+For all sufficiently large $X$,
+\begin{equation}
+ \cH^\sharp_{h,R;M}(X)=
+ \langle a_X,T^hg_X\rangle_{\ell^2(\Z)}.
+ \label{eq:translation-matrix-coefficient}
+\end{equation}
+With Fourier convention
+\begin{equation}
+ \widehat f(\theta)=\sum_{n\in\Z}f(n)\e(-n\theta),
+ \label{eq:Fourier-convention}
+\end{equation}
+one has
+\begin{equation}
+ \cH^\sharp_{h,R;M}(X)=
+ \int_\T\widehat a_X(\theta)
+ \overline{\widehat g_X(\theta)}
+ \e(-h\theta)\,d\theta.
+ \label{eq:cross-spectrum-Fourier-coefficient}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Group \eqref{eq:Hsharp-definition} by $n=\ell k$.  Since $h$ is fixed
+and $\chi=1$ near $\supp W$, one has $g_X(n+h)=r_R(n+h)$ on the support
+for all sufficiently large $X$, proving
+\eqref{eq:translation-matrix-coefficient}.  Parseval and
+$\widehat{T^hg}(\theta)=\e(h\theta)\widehat g(\theta)$ give
+\eqref{eq:cross-spectrum-Fourier-coefficient}.
+\end{proof}
+
+The spectral language here is literal but elementary.  The eigenphases
+belong to translation on $\Z$ and are indexed by $\theta\in\T$; $h$ is a
+time lag.  Neither primes nor zeta zeros are asserted to be eigenvalues.
+
+\subsection{A quantitative angular corridor}
+
+The coefficient has sharp enough norm bounds for a normalized coherence
+to be meaningful.
+
+\begin{lemma}[Coefficient norm ledger]
+\label{lem:coefficient-norm-ledger}
+If $W\not\equiv0$, then
+\begin{equation}
+ c_WX\le\|a_X\|_2^2\le C_WX(\log X)^2.
+ \label{eq:aX-norm-bounds}
+\end{equation}
+Also,
+\begin{equation}
+ \|g_X\|_2^2
+ =\left(\frac12+\delta+o(1)\right)
+ X\log X\,I_0(\chi^2).
+ \label{eq:gX-norm}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The divisor identity $\sum_{d\mid n}\Lambda(d)=\log n$ gives
+\[
+ |a_X(n)|\le\|W\|_\infty\log n,
+\]
+which proves the upper bound.  For the lower bound, choose two compact
+prime intervals of scale $\sqrt X$ whose products lie where $|W|$ is
+bounded below.  For distinct primes $p,q$ in those intervals, both exceed
+$M$ and
+\[
+ a_X(pq)=W(pq/X)(\log p+\log q)=W(pq/X)\log(pq).
+\]
+The prime number theorem supplies $\gg_WX/(\log X)^2$ distinct such
+semiprimes, proving the lower bound.  Equation \eqref{eq:gX-norm} is
+\cref{thm:residual-energy-law} with $F=\chi^2$.
+\end{proof}
+
+Define the normalized fixed-shift coherence
+\begin{equation}
+ \kappa_{h,R}(X)=
+ \frac{\cH^\sharp_{h,R;M}(X)}
+ {\|a_X\|_2\|g_X\|_2}.
+ \label{eq:normalized-coherence}
+\end{equation}
+Then $|\kappa_{h,R}(X)|\le1$ by Cauchy--Schwarz and
+\begin{equation}
+ X\sqrt{\log X}
+ \ll_{W,\chi,\delta}\|a_X\|_2\|g_X\|_2
+ \ll_{W,\chi,\delta}X(\log X)^{3/2}.
+ \label{eq:norm-product-corridor}
+\end{equation}
+
+\begin{corollary}[Angular sufficient and necessary scales]
+\label{cor:angular-corridor}
+The estimate
+\begin{equation}
+ \kappa_{h,R}(X)=o((\log X)^{-3/2})
+ \label{eq:angular-sufficient}
+\end{equation}
+is sufficient for $\cH^\sharp=o(X)$.  Conversely,
+$\cH^\sharp=o(X)$ implies
+\begin{equation}
+ \kappa_{h,R}(X)=o((\log X)^{-1/2}).
+ \label{eq:angular-necessary}
+\end{equation}
+\end{corollary}
+
+The gap between the two logarithmic exponents comes only from the present
+upper and lower bounds for $\|a_X\|_2$.  More importantly, the theorem
+shows why energy decay cannot solve the gate: the residual energy in
+\eqref{eq:residual-energy-delta-form} is of order $X\log X$.  What is
+missing is a small angle with one specified arithmetic direction.

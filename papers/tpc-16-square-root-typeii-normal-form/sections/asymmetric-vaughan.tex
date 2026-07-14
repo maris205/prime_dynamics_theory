@@ -1,0 +1,125 @@
+\section{Asymmetric Vaughan normal forms}
+\label{sec:asymmetric-vaughan}
+
+For integers $U,V\ge1$, Vaughan's identity in the sign convention used
+here is
+\begin{align}
+ \sum_t\Lambda(t)F(t)
+ ={}&\sum_{t\le U}\Lambda(t)F(t)
+ -\sum_{\substack{\ell\le U\\d\le V}}
+ \Lambda(\ell)\mu(d)\sum_{j\ge1}F(\ell dj)
+ \notag\\
+ &+\sum_{d\le V}\mu(d)
+ \sum_{j\ge1}(\log j)F(dj)
+ -\sum_{\substack{\ell>U\\k>1}}
+ \Lambda(\ell)\beta_V(k)F(\ell k),
+ \label{eq:general-Vaughan-identity}
+\end{align}
+where $\beta_V$ is defined in \eqref{eq:betaV-intro}.  Since
+$\beta_V(k)=0$ for $1<k\le V$, the last term is supported on $k>V$.
+The identity is classical \citep{Vaughan1977,HeathBrown1982}.
+
+The TPC-15 proof did not require $U=V$.  Keeping the parameters free gives
+the following useful invariance.
+
+\begin{proposition}[Vaughan parameter invariance below the cutoff]
+\label{prop:Vaughan-parameter-invariance}
+Let $1\le U,V$ satisfy $UV\le R$.  Define
+\begin{equation}
+ \cH_{h,R;U,V}(X)=
+ \sum_{\substack{\ell>U\\k>V}}
+ \Lambda(\ell)\beta_V(k)r_R(\ell k+h)W(\ell k/X).
+ \label{eq:general-hard-packet}
+\end{equation}
+Then for every $A>0$,
+\begin{equation}
+ \cP_h(X;W)=\mathfrak S(h)XI_0(W)
+ -\cH_{h,R;U,V}(X)
+ +O_{A,h,W,\delta}\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:general-parameter-reduction}
+\end{equation}
+Consequently any two admissible parameter pairs give hard packets that
+differ by $O_A(X(\log X)^{-A})$.
+\end{proposition}
+
+\begin{proof}
+TPC-15 proves the model cross-correlation
+\begin{equation}
+ \sum_t\Lambda(t)\Lambda_R(t+h)W(t/X)
+ =\mathfrak S(h)XI_0(W)
+ +O_A\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:imported-model-cross}
+\end{equation}
+Apply \eqref{eq:general-Vaughan-identity} to
+$F(t)=r_R(t+h)W(t/X)$.  The support of $W$ makes the first packet zero
+because $U\le R=o(X)$.  In the second packet the row modulus is
+$m=\ell d\le UV\le R$, and its total coefficient at a fixed $m$ is at
+most $\sum_{\ell\mid m}\Lambda(\ell)=\log m$.  The third packet has
+$d\le V\le R$ and the standard logarithmic row multiplier.  The full
+bounded Type-I row theorem of TPC-15 controls both packets with arbitrary
+logarithmic saving.  The final term is
+$-\cH_{h,R;U,V}$.  Combining with \eqref{eq:imported-model-cross} proves
+the proposition.
+\end{proof}
+
+At the edge of \cref{prop:Vaughan-parameter-invariance}, the choice
+$U=R,V=1$ gives $\beta_1(k)=1$.  The recentered theorem permits $U$ to
+move much farther.
+
+\begin{theorem}[Square-root Vaughan normal form]
+\label{thm:square-root-normal-form}
+Let $M$ be given by \eqref{eq:near-square-root-M} and define
+\begin{equation}
+ \cH^\sharp_{h,R;M}(X)=
+ \sum_{\substack{\ell>M\\k>1}}
+ \Lambda(\ell)r_R(\ell k+h)W(\ell k/X).
+ \label{eq:Hsharp-definition}
+\end{equation}
+Then, for every $A>0$,
+\begin{equation}
+ \cP_h(X;W)=\mathfrak S(h)XI_0(W)
+ -\cH^\sharp_{h,R;M}(X)
+ +O_{A,h,W,\delta}\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:square-root-normal-form}
+\end{equation}
+In particular, when $h$ is an admissible even shift and $I_0(W)\ne0$,
+\begin{equation}
+ \cP_h(X;W)\sim\mathfrak S(h)XI_0(W)
+ \quad\Longleftrightarrow\quad
+ \cH^\sharp_{h,R;M}(X)=o(X).
+ \label{eq:Hsharp-gate}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Again split the target as $\Lambda(t+h)=\Lambda_R(t+h)+r_R(t+h)$ and
+use \eqref{eq:imported-model-cross}.  Apply
+\eqref{eq:general-Vaughan-identity} to the residual test function with
+$U=M,V=1$.  The first packet vanishes by support.  The second packet is
+\[
+ -\sum_{\ell\le M}\Lambda(\ell)
+ \sum_jr_R(\ell j+h)W(\ell j/X),
+\]
+which is $O_A(X(\log X)^{-A})$ by
+\cref{cor:bounded-log-rows}.  The third is precisely the modulus-one
+logarithmic row in \cref{lem:modulus-one-log-row}.  Finally,
+$\beta_1(k)=1$, so the last packet is
+$-\cH^\sharp_{h,R;M}$.  This proves \eqref{eq:square-root-normal-form}.
+The equivalence follows because the displayed remainder is $o(X)$ and
+the stated main coefficient is nonzero.
+\end{proof}
+
+\begin{corollary}[Equivalence with the TPC-15 packet]
+\label{cor:two-hard-packets-equivalent}
+With $U=V=\lfloor R^{1/2}\rfloor$,
+\begin{equation}
+ \cH^{\rm HB}_{h,R;U,V}(X)
+ =\cH^\sharp_{h,R;M}(X)
+ +O_A\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:packet-equivalence}
+\end{equation}
+\end{corollary}
+
+This equality is an equality of total signed packets.  It does not match
+individual factor pairs, and it must not be read as a positivity-preserving
+transport from one dyadic scale to another.

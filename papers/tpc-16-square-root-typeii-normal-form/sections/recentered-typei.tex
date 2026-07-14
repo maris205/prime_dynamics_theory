@@ -1,0 +1,144 @@
+\section{Recentered Type-I closure at the square-root wall}
+\label{sec:recentered-typei}
+
+The row identity \eqref{eq:row-drift-error-leakage} separates the part
+seen by Bombieri--Vinogradov from two elementary terms.  This permits the
+row modulus to extend beyond the spectral cutoff $R$.
+
+For $F\in C_c^1((0,\infty))$, write
+\begin{equation}
+ \cR_{m,h;R}(X;F)=
+ \sum_{j\ge1}r_R(mj+h)F(mj/X).
+ \label{eq:row-residual-definition}
+\end{equation}
+
+\begin{theorem}[Recentered full Type-I row ball]
+\label{thm:recentered-TypeI}
+Fix $h\ne0$, $0<\delta<1/2$, and
+$F\in C_c^1((0,\infty))$.  Put
+$R=\lfloor X^{1/2-\delta}\rfloor$.  For every $A>0$ there is
+$B=B(A,h,F)>0$ such that, whenever
+\begin{equation}
+ M\le\frac{X^{1/2}}{(\log X)^B},
+ \label{eq:BV-row-wall}
+\end{equation}
+one has uniformly over all $|\alpha_m|\le1$
+\begin{align}
+ &\left|
+ \sum_{m\le M}\alpha_m
+ \left(
+ \cR_{m,h;R}(X;F)
+ -\Delta_{h,R}(m)\frac Xm I_0(F)
+ \right)
+ \right|
+ \notag\\
+ &\qquad\ll_{A,h,F,\delta}
+ X(\log X)^{-A}+MR(\log(2R))^2.
+ \label{eq:recentered-TypeI-bound}
+\end{align}
+In particular, with $M$ as in \eqref{eq:near-square-root-M}, the right
+side is $O_A(X(\log X)^{-A})$ for every $A>0$.
+\end{theorem}
+
+\begin{proof}
+Suppose first that $(m,h)=1$.  Smooth maximal
+Bombieri--Vinogradov gives
+\begin{equation}
+ \sum_{\substack{m\le M\\(m,h)=1}}|\cE_{m,h}(X;F)|
+ \ll_{A,h,F}X(\log X)^{-A}
+ \label{eq:smooth-maximal-BV}
+\end{equation}
+after increasing the requested logarithmic exponent.  This is the usual
+fixed residue $h\pmod m$ application of the theorem
+\citep{Bombieri1965,Vinogradov1965,MontgomeryVaughan2007}.
+
+If $(m,h)>1$, a nonzero value $\Lambda(mj+h)$ forces $mj+h$ to be a
+power of one of the finitely many primes dividing $h$.  On the fixed
+multiplicative support of $F$, there are $O_{h,F}(1)$ relevant powers for
+each such prime.  Summing over $m$ counts divisors of the finitely many
+integers $p^a-h$, and therefore contributes
+$O_{h,F,\eps}(X^\eps)$.  The local density $\rho_h(m)$ is zero on these
+rows, so this is exactly the required treatment of
+\eqref{eq:prime-row-error}; no reduced residue-class main term is used.
+
+Insert \eqref{eq:row-drift-error-leakage}.  The prime errors are bounded
+by \eqref{eq:smooth-maximal-BV} and the preceding prime-power argument.
+The model leakage is uniform in $m$ and sums to
+$O_F(MR(\log(2R))^2)$.  Taking the supremum over the masks is harmless
+after the absolute sum over row errors.  This proves
+\eqref{eq:recentered-TypeI-bound}.
+
+For \eqref{eq:near-square-root-M}, one has
+$M\le X^{1/2}(\log X)^{-B}$ for every fixed $B$ and all sufficiently
+large $X$.  Also
+\[
+ MR(\log(2R))^2
+ \ll X^{1-\delta}\exp(-\sqrt{\log X})(\log X)^2,
+\]
+which is $O_A(X(\log X)^{-A})$ for every fixed $A$.
+Here and below this assertion is pointwise in each fixed $A$: the
+Bombieri--Vinogradov exponent and the threshold in $X$ may depend on
+$A$.  No estimate uniform in an unbounded parameter $A$ is intended.
+\end{proof}
+
+The drift itself remains negligible for the logarithmic coefficient
+vectors produced by Vaughan's identity.
+
+\begin{corollary}[Bounded-log uncentered rows]
+\label{cor:bounded-log-rows}
+Under the hypotheses of \cref{thm:recentered-TypeI}, take $M$ from
+\eqref{eq:near-square-root-M}.  Uniformly for $|a_m|\le\log X$,
+\begin{equation}
+ \sum_{m\le M}a_m\cR_{m,h;R}(X;F)
+ \ll_{A,h,F,\delta}X(\log X)^{-A}
+ +\frac XR(\log X)^3\log\log X.
+ \label{eq:bounded-log-raw-row-bound}
+\end{equation}
+Consequently the left side is $O_A(X(\log X)^{-A})$ for every $A>0$.
+\end{corollary}
+
+\begin{proof}
+Divide $a_m$ by $\log X$ and apply
+\cref{thm:recentered-TypeI} with one additional logarithmic saving.  By
+\cref{lem:drift-bounds}, the removed means contribute at most
+\[
+ X\log X\sum_{m\le M}\frac{|\Delta_{h,R}(m)|}{m}
+ \ll_h\frac XR(\log X)^2\log\log X.
+\]
+We recorded the slightly looser exponent in
+\eqref{eq:bounded-log-raw-row-bound}.  Since
+$R=X^{1/2-\delta+o(1)}$ and $\delta<1/2$, this power-saving term is
+$O_A(X(\log X)^{-A})$ for every fixed $A$.
+\end{proof}
+
+\begin{remark}[What has been extended]
+The finite model is exactly calibrated row by row only for $m\le R$.
+The theorem does not change that fact.  It proves instead that the
+explicit sum of missing local factors is harmless throughout the
+classical averaged progression range.  This is why the analytic row wall
+can move while the spectral cutoff remains fixed.
+\end{remark}
+
+We also need one elementary logarithmic row.  It is included for clarity
+rather than hidden in the Vaughan proof.
+
+\begin{lemma}[The modulus-one logarithmic row]
+\label{lem:modulus-one-log-row}
+For every $A>0$,
+\begin{equation}
+ \sum_{j\ge1}(\log j)r_R(j+h)W(j/X)
+ \ll_{A,h,W,\delta}X(\log X)^{-A}.
+ \label{eq:modulus-one-log-row}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The prime number theorem with its classical zero-free-region error and
+partial summation evaluate the $\Lambda(j+h)$ sum with continuous main
+term $\int (\log t)W(t/X)\,dt$.  The complete-period mean of
+$\Lambda_R(j+h)$ is $1$, and the logarithmic version of
+\cref{lem:finite-row-leakage} has error
+$O_W(R(\log(2XR))^3)$.  The two continuous main terms agree.  Since
+$R=X^{1/2-\delta+o(1)}$, both remaining errors have arbitrary logarithmic
+saving relative to $X$.
+\end{proof}

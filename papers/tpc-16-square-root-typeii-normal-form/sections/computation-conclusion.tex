@@ -1,0 +1,78 @@
+\section{Finite certificate and conclusion}
+\label{sec:computation-conclusion}
+
+The analytic theorems do not depend on computation.  The accompanying
+script
+\path{experiments/square_root_gate_certificate.py} checks the
+finite algebra underlying the paper:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item the arbitrary-modulus complete-period mean in
+ \cref{lem:arbitrary-row-mean};
+ \item the tail formula for $\Delta_{h,R}(m)$, including rows $m>R$;
+ \item Vaughan's identity for asymmetric parameters and arbitrary finite
+ test arrays;
+ \item the decomposition of $\beta_V(k)$ into the visible region
+ $\ell d\le R$ and invisible region $\ell d>R$;
+ \item the simplified drift \eqref{eq:simplified-wedge-drift};
+ \item the exponent ledger in \cref{cor:eleven-twenty-one-packet};
+ \item the direct and Fourier forms of the translation correlation in
+ \cref{prop:translation-cross-spectrum}.
+\end{enumerate}
+The committed JSON records the input sizes, exact rational checks, maximum
+floating-point Fourier discrepancy, and a SHA-256 digest of its canonical
+payload.  It tests conventions and finite identities only.  It does not
+test Bombieri--Vinogradov, Maynard's theorem, an asymptotic limit, or
+fixed-shift cancellation.
+
+\subsection{What changed from TPC-15}
+
+TPC-15 stopped at a broad calibrated Type-II packet.  The present paper
+adds four strict refinements.
+
+First, a row beyond the finite-model cutoff is not treated as an unknown
+black box.  Its complete-period model mean is explicit, and the missing
+Euler factors form the drift \eqref{eq:cutoff-drift-intro}.  This makes it
+possible to distinguish a genuine prime-progression error from a finite
+spectral truncation effect.
+
+Second, the drift is summably small throughout the classical averaged
+progression range.  The asymmetric choice $V=1$ then moves the source-row
+boundary from $X^{1/2-\delta}$ to $X^{1/2-o(1)}$.  The resulting normal
+form \eqref{eq:square-root-normal-form} is simpler than the symmetric
+TPC-15 packet and proves that the old left wing was not intrinsic.
+
+Third, the symmetric coordinates remain useful after the divisor label
+$d$ is retained.  The exact boundary is $\ell d=R$, and Maynard's
+fixed-residue theorem controls one nonempty exterior wedge approaching
+modulus size $X^{11/21}$.  This is a genuine $o(X)$ estimate for an actual
+piece of the hard packet.  It does not control the sum over all divisor
+scales.
+
+Fourth, the energy calculation rules out a misleading strategy.  The
+Ramanujan residual has leading energy $X\log(X/R)$, so it cannot be made
+small merely by increasing a finite local cutoff within the present
+range.  Translation and factor-phase identities show that the remaining
+task is angular: one must control a distinguished fixed-shift arithmetic
+direction, not merely total energy or a generic phase.
+
+\subsection{Next gate}
+
+The next layer has several honest outcomes.  One may try to enlarge the
+Maynard-admissible three-scale polytope, seek cancellation after summing a
+controlled family of $D$-slices, or prove a sharper bound for the actual
+directional coherence \eqref{eq:normalized-coherence}.  A negative result
+would also be informative if it exhibited a family of residual matrices
+with small phase averages and large zero-phase alignment under exactly
+the available local constraints.
+
+What cannot be done is to infer the zero-phase estimate from the phase
+mean square, to identify a fixed quotient slice as ordinary Type I, or to
+promote one factorable subpacket to the complete balanced block.  For an
+admissible even $h$, the final total condition remains
+\[
+ \cH^\sharp_{h,R;M}(X)=o(X),
+\]
+which is equivalent to the weighted Hardy--Littlewood asymptotic by
+\cref{thm:square-root-normal-form}.  No assertion is made that this
+condition has been proved for any prescribed $h$, and in particular not
+for $h=2$.

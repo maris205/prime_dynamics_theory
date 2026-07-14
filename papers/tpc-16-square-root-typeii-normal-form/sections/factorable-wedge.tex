@@ -1,0 +1,304 @@
+\section{Three-scale peeling and a near-\texorpdfstring{$11/21$}{11/21}
+factorable wedge}
+\label{sec:factorable-wedge}
+
+The square-root normal form is best for locating the source-row wall.  To
+use factorable-modulus distribution theorems, we return to the symmetric
+TPC-15 packet with $U=V=\lfloor R^{1/2}\rfloor$ and open
+\eqref{eq:betaV-intro}.  Writing $k=dj$ reveals the progression modulus
+\begin{equation}
+ q=\ell d.
+ \label{eq:true-progression-modulus}
+\end{equation}
+Thus the relevant geometry has three factor scales $(L,K,D)$, with the
+quotient length $J\asymp K/D$.
+
+\subsection{The exact invisible wedge}
+
+Define
+\begin{equation}
+ \gamma_{\ell;R,V}(k)=
+ \sum_{\substack{d\mid k\\d\le V\\\ell d>R}}\mu(d).
+ \label{eq:invisible-divisor-coefficient}
+\end{equation}
+
+\begin{proposition}[Hyperbolic Type-I peeling]
+\label{prop:hyperbolic-peeling}
+For every $A>0$,
+\begin{align}
+ \cH^{\rm HB}_{h,R;U,V}(X)
+ ={}&\sum_{\substack{\ell>U\\k>V}}
+ \Lambda(\ell)\gamma_{\ell;R,V}(k)
+ r_R(\ell k+h)W(\ell k/X)
+ \notag\\
+ &+O_{A,h,W,\delta}\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:hyperbolically-peeled-packet}
+\end{align}
+In particular, if $U<\ell\le R$, only divisors $d>R/\ell$ survive; if
+$\ell>R$, the coefficient is the full $\beta_V(k)$.
+\end{proposition}
+
+\begin{proof}
+The difference between \eqref{eq:TPC15-hard-packet} and the main term in
+\eqref{eq:hyperbolically-peeled-packet} is
+\begin{equation}
+ \sum_{\substack{\ell>U,\ d\le V\\\ell d\le R}}
+ \Lambda(\ell)\mu(d)
+ \sum_{j\ge1}r_R(\ell dj+h)W(\ell dj/X),
+ \label{eq:visible-wedge}
+\end{equation}
+for all sufficiently large $X$.  Indeed, on this support
+$\ell\le R$ and $\ell dj\asymp_WX$, so
+$k=dj\gg_WX/R\gg V$; the original restriction $k>V$ is automatic.
+
+Group \eqref{eq:visible-wedge} by $m=\ell d\le R$.  Its row coefficient
+is
+\[
+ A_m=\sum_{\substack{\ell d=m\\\ell>U,\ d\le V}}
+ \Lambda(\ell)\mu(d),
+ \qquad |A_m|\le\sum_{\ell\mid m}\Lambda(\ell)=\log m.
+\]
+The full bounded Type-I row theorem of TPC-15, with one extra logarithmic
+saving, makes \eqref{eq:visible-wedge}
+$O_A(X(\log X)^{-A})$.
+\end{proof}
+
+The curve $\ell d=R$ is an exact calibration boundary for this
+decomposition.  It is not an absolute boundary for all analytic methods;
+factorable-modulus theorems can enter part of the exterior.
+
+\subsection{An imported fixed-residue distribution theorem}
+
+We use the following consequence of \citet[Theorem~1.1]{Maynard2025I}.
+It is stated in a form adapted to smooth von Mangoldt sums.
+
+\begin{theorem}[Maynard, fixed residue and factorable moduli]
+\label{thm:Maynard-factorable}
+Fix $a\ne0$, $\eta>0$, and $A>0$.  Suppose
+\begin{equation}
+ Q_1Q_2^2\le X^{1-\eta},\qquad
+ Q_1^{12}Q_2^7\le X^{4-\eta},\qquad
+ Q_1^{20}Q_2^{19}\le X^{10-\eta}.
+ \label{eq:Maynard-three-inequalities}
+\end{equation}
+Let $G_{q_1,q_2}\in C_c^1((0,\infty))$ range over a family with a common
+compact support and a common $C^1$ bound.  Then
+\begin{align}
+ &\sum_{\substack{q_1\le Q_1,\ q_2\le Q_2\\(q_1q_2,a)=1}}
+ \left|
+ \sum_{\substack{n\ge1\\n\equiv a\ ({\rm mod}\ q_1q_2)}}
+ \Lambda(n)G_{q_1,q_2}((n-a)/X)
+ -\frac X{\varphi(q_1q_2)}I_0(G_{q_1,q_2})
+ \right|
+ \notag\\
+ &\hspace{16em}\ll_{a,\eta,A}X(\log X)^{-A}.
+ \label{eq:Maynard-smoothed-consequence}
+ \end{align}
+\end{theorem}
+
+\begin{proof}[Derivation of the stated smooth form]
+Maynard's theorem is stated for
+\[
+ E(t;q,a)=\pi(t;q,a)-\frac{\pi(t)}{\varphi(q)}.
+\]
+Stieltjes partial summation, followed by the triangle inequality and
+Fubini, bounds the sum of the prime-only weighted errors by a constant
+times
+\[
+ (\log X)\sup_{t\asymp X}\sum_{q_1,q_2}|E(t;q_1q_2,a)|
+ +\frac{\log X}{X}\int_{t\asymp X}
+ \sum_{q_1,q_2}|E(t;q_1q_2,a)|\,dt.
+\]
+The common support and $C^1$ bounds make this estimate uniform even
+though $G_{q_1,q_2}$ depends on the ordered modulus pair.  Apply
+\citet[Theorem~1.1]{Maynard2025I} pointwise in $t\asymp X$, with its
+parameter chosen smaller than $\eta/100$ and with two additional
+logarithmic powers requested.  This gives
+$O_A(X(\log X)^{-A})$.
+
+The global prime number theorem, uniformly for the same bounded weight
+family, gives
+\[
+ \sum_p(\log p)G_{q_1,q_2}((p-a)/X)
+ =XI_0(G_{q_1,q_2})
+ +O\left(X\exp(-c\sqrt{\log X})\right).
+\]
+Its aggregate error is negligible because
+\[
+ \sum_{q_1\le Q_1,q_2\le Q_2}
+ \frac1{\varphi(q_1q_2)}
+ \le
+ \left(\sum_{q_1\le Q_1}\frac1{\varphi(q_1)}\right)
+ \left(\sum_{q_2\le Q_2}\frac1{\varphi(q_2)}\right)
+ \ll(\log X)^C.
+\]
+Finally, restore target prime powers.  If $p^\nu\asymp X$, $\nu\ge2$,
+and $p^\nu\equiv a\pmod{q_1q_2}$, then $q_1q_2\mid p^\nu-a$.
+Consequently their total over the ordered pairs is
+\[
+ \ll\sum_{\substack{p^\nu\asymp X\\\nu\ge2}}
+ (\log p)\tau_3(|p^\nu-a|)
+ \ll_\eps X^{1/2+\eps}.
+\]
+This proves \eqref{eq:Maynard-smoothed-consequence}.  The absolute values
+in Maynard's theorem are what permit dyadic restrictions and bounded
+outer coefficients.  No new distribution estimate is proved here.
+\end{proof}
+
+Let $\Phi_1,\Phi_2,\Phi_3\in C_c^\infty([1,2])$.  Define the smooth
+$D$-resolved hard subpacket
+\begin{align}
+ \cH_{h,R}(L,K,D)
+ ={}&\sum_{\ell,d,j\ge1}
+ \Lambda(\ell)\mu(d)
+ \Phi_1(\ell/L)\Phi_2(d/D)\Phi_3(dj/K)
+ \notag\\
+ &\hspace{4.2em}\times
+ r_R(\ell dj+h)W(\ell dj/X).
+ \label{eq:three-scale-subpacket}
+\end{align}
+
+\begin{theorem}[A factorable exterior wedge]
+\label{thm:factorable-exterior-wedge}
+Fix $h\ne0$, $0<\delta<1/2$, and $\eta>0$.  Suppose the scales satisfy
+\begin{align}
+ &LK\asymp_WX,
+ \qquad 2D<R<L/2,
+ \qquad 2D\le V,
+ \qquad K>2V,
+ \qquad L>2U,
+ \label{eq:wedge-geometric-conditions}\\
+ &DL^2\le X^{1-\eta},
+ \qquad D^{12}L^7\le X^{4-\eta},
+ \qquad D^{20}L^{19}\le X^{10-\eta},
+ \label{eq:wedge-Maynard-conditions}\\
+ &LDR\le X^{1-\eta}.
+ \label{eq:wedge-leakage-condition}
+\end{align}
+Then for every $A>0$,
+\begin{equation}
+ \cH_{h,R}(L,K,D)
+ \ll_{A,h,W,\Phi_1,\Phi_2,\Phi_3,\delta,\eta}
+ X(\log X)^{-A}.
+ \label{eq:factorable-wedge-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The contribution of source prime powers $\ell=p^a$, $a\ge2$, is removed
+first.  The divisor expansion gives $|r_R(n)|\ll_\eps X^\eps$ on the
+support in question.  Hence their entire subpacket is
+\begin{equation}
+ \ll_\eps
+ L^{1/2}D\frac KD X^\eps
+ \ll X L^{-1/2+\eps},
+ \label{eq:source-prime-power-wedge}
+\end{equation}
+because $LK\asymp X$.  This has a fixed power saving since $L>2U$.
+We may therefore assume below that $\ell$ is prime.  In particular,
+$\ell>L>2R>|h|$ for all sufficiently large $X$.
+
+Fix $\ell\asymp L$ and $d\asymp D$, and set $q=\ell d$.  The inner sum
+is a smooth progression row of modulus $q$, with a family of weights
+whose supports and $C^1$ norms are uniform because $LK\asymp X$.
+Equation \eqref{eq:row-drift-error-leakage} decomposes it into prime error,
+cutoff drift, and model leakage.
+
+On rows with $(\ell d,h)=1$, apply
+\cref{thm:Maynard-factorable} with $Q_1=2D,Q_2=2L$.  The powers of $2$ are
+absorbed by the strict $X^{-\eta}$ margins.  The theorem sums absolute
+errors, so the restrictions $d\asymp D$, $\ell\asymp L$ and the weights
+$|\mu(d)|$, $\Lambda(\ell)\ll\log X$ cost only a change in the requested
+logarithmic saving.  This bounds the total prime-progression error by
+$O_A(X(\log X)^{-A})$.
+
+If $(\ell d,h)>1$, the common prime lies in $d$, because the remaining
+$\ell$ is prime and exceeds $|h|$.  If $p\mid(d,h)$, then
+$\ell dj+h$ is divisible by $p$; a nonzero von Mangoldt value therefore
+forces $\ell dj+h=p^\nu$.  For each of the finitely many $p\mid h$, only
+$O_{h,W}(1)$ exponents lie on the $X$ scale, and the number of ordered
+factorizations $\ell d\mid p^\nu-h$ is $O_\eps(X^\eps)$.  Thus the total
+prime part of the nonreduced rows is negligible.  Their complete model
+mean is zero: all divisors of $d$ lie below $R$, and their local Euler
+factor contains $1-1$ at a prime dividing $(d,h)$.
+
+The finite-row model leakage is
+$O(R(\log(2R))^2)$ per pair $(\ell,d)$.  After the outer logarithmic
+weight and the $O(LD)$ pairs, its total is
+\begin{equation}
+ \ll LDR(\log X)^3,
+ \label{eq:aggregate-model-leakage-wedge}
+\end{equation}
+which has a fixed power saving by \eqref{eq:wedge-leakage-condition}.
+
+It remains to treat the drift.  Since $d< R<\ell$ and $\mu(d)\ne0$, every
+divisor of $\ell d$ below $R$ is a divisor of $d$.  Therefore
+\begin{equation}
+ \Delta_{h,R}(\ell d)=
+ \begin{cases}
+ \displaystyle\frac{d}{\varphi(d)(\ell-1)},&(d,h)=1,\\[0.8em]
+ 0,&(d,h)>1.
+ \end{cases}
+ \label{eq:simplified-wedge-drift}
+\end{equation}
+Indeed, the model mean is $d/\varphi(d)$ and the prime mean is
+$\ell d/(\varphi(\ell)\varphi(d))$ in the first case; both are zero in
+the second.  The continuous drift contribution is consequently
+\begin{align}
+ &\ll X
+ \sum_{\ell\asymp L}
+ \frac{\Lambda(\ell)}{\ell(\ell-1)}
+ \sum_{d\asymp D}\frac{\mu(d)^2}{\varphi(d)}
+ \notag\\
+ &\ll \frac X L(\log(2D))^2.
+ \label{eq:wedge-drift-total}
+\end{align}
+This also has a fixed power saving.  Combining the three pieces proves
+\eqref{eq:factorable-wedge-bound}.
+\end{proof}
+
+\begin{corollary}[A packet near the \texorpdfstring{$11/21$}{11/21}
+factorable boundary]
+\label{cor:eleven-twenty-one-packet}
+Fix $0<\sigma<1/100$ and
+\begin{equation}
+ \frac1{42}+3\sigma<\delta<\frac14.
+ \label{eq:delta-sigma-range}
+\end{equation}
+Take
+\begin{equation}
+ D=X^{1/21-\sigma},
+ \qquad
+ L=X^{10/21-\sigma},
+ \qquad
+ K=X/L=X^{11/21+\sigma}.
+ \label{eq:explicit-wedge-scales}
+\end{equation}
+Then, taking $\eta=2\sigma$ in
+\cref{thm:factorable-exterior-wedge}, the packet
+\eqref{eq:three-scale-subpacket} is
+$O_A(X(\log X)^{-A})$ for every $A>0$.
+\end{corollary}
+
+\begin{proof}
+The three Maynard monomials have exponents
+\[
+ 1-3\sigma,
+ \qquad \frac{82}{21}-19\sigma<4,
+ \qquad 10-39\sigma.
+\]
+Moreover,
+\[
+ LDR=X^{1+1/42-2\sigma-\delta}
+ \le X^{1-5\sigma}
+\]
+by \eqref{eq:delta-sigma-range}.  The same range gives $R<L$; the upper
+bound $\delta<1/4$ ensures $2D<V$ for large $X$.  All remaining support
+conditions in \cref{thm:factorable-exterior-wedge} are immediate.
+\end{proof}
+
+Both $L$ and $K$ exceed $R$ in this corollary, so the packet lies inside
+the central $(L,K)$ corridor of the original TPC-15 representation.  The
+result is nevertheless only one $D$-resolved slice.  Summing over all
+$D$, or removing the Maynard factorization inequalities, is not justified
+by the theorem.

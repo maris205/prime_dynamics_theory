@@ -1,0 +1,166 @@
+\section{Finite Ramanujan rows beyond the cutoff}
+\label{sec:finite-row-drift}
+
+The Ramanujan sum is
+\begin{equation}
+ c_q(n)=\sum_{\substack{a\ ({\rm mod}\ q)\\(a,q)=1}}
+ \e(an/q).
+ \label{eq:ramanujan-sum}
+\end{equation}
+The model in \eqref{eq:finite-model} is periodic with period
+$\operatorname{lcm}(1,\ldots,R)$.  We first calculate its mean on every
+row, without assuming that the row modulus is visible below $R$.
+
+\begin{lemma}[Complete-period mean at arbitrary modulus]
+\label{lem:arbitrary-row-mean}
+For every $m\ge1$, the complete-period mean of
+$j\mapsto\Lambda_R(mj+h)$ is
+\begin{equation}
+ \rho_{h,R}(m)=
+ \sum_{\substack{q\mid m\\q\le R}}
+ \frac{\mu(q)c_q(h)}{\varphi(q)}.
+ \label{eq:arbitrary-model-row-mean}
+\end{equation}
+Moreover,
+\begin{equation}
+ \rho_h(m)=
+ \sum_{q\mid m}\frac{\mu(q)c_q(h)}{\varphi(q)}.
+ \label{eq:full-local-factor-sum}
+\end{equation}
+Consequently \eqref{eq:cutoff-drift-intro} holds, and
+$\Delta_{h,R}(m)=0$ whenever $m\le R$.
+\end{lemma}
+
+\begin{proof}
+For a fixed $q$, averaging the exponential definition gives
+\begin{equation}
+ \mathbb E_j c_q(mj+h)=
+ \begin{cases}
+ c_q(h),&q\mid m,\\
+ 0,&q\nmid m.
+ \end{cases}
+ \label{eq:cq-row-average}
+\end{equation}
+Indeed, for a reduced numerator $a$, the phase $amj/q$ has mean zero
+unless $q\mid m$.  Inserting \eqref{eq:cq-row-average} into the finite
+model proves \eqref{eq:arbitrary-model-row-mean}.
+
+The right side of \eqref{eq:full-local-factor-sum} is multiplicative in
+$m$.  At a prime $p\mid m$, its local factor is
+\[
+ 1+\frac{\mu(p)c_p(h)}{\varphi(p)}
+ =\begin{cases}
+ p/(p-1),&p\nmid h,\\
+ 0,&p\mid h.
+ \end{cases}
+\]
+Their product is exactly
+$\one_{(m,h)=1}m/\varphi(m)=\rho_h(m)$.  Subtracting the truncated sum
+gives the drift formula.
+\end{proof}
+
+The drift is pointwise small only after one pays for the number of
+divisors, but its averaged form is considerably cleaner.
+
+\begin{lemma}[Pointwise and aggregate cutoff drift]
+\label{lem:drift-bounds}
+For fixed $h\ne0$ and $2\le R\le M$,
+\begin{align}
+ |\Delta_{h,R}(m)|
+ &\ll_h \frac{\tau(m)\log\log(3m)}R,
+ \label{eq:pointwise-drift-bound}\\
+ \sum_{m\le M}\frac{|\Delta_{h,R}(m)|}{m}
+ &\ll_h \frac{\log(2M)\log\log(3M)}R.
+ \label{eq:aggregate-drift-bound}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+The standard bound $|c_q(h)|\le(q,h)\le|h|$ and
+$q/\varphi(q)\ll\log\log(3q)$ give
+\[
+ \frac{|c_q(h)|}{\varphi(q)}
+ \ll_h\frac{\log\log(3q)}q.
+\]
+Every term in the tail has $q>R$, which proves
+\eqref{eq:pointwise-drift-bound}.  For the aggregate estimate, write
+$m=qr$ and discard the condition $q\mid m$ only after making that
+substitution:
+\begin{align*}
+ \sum_{m\le M}\frac{|\Delta_{h,R}(m)|}{m}
+ &\le |h|\sum_{R<q\le M}\frac1{q\varphi(q)}
+ \sum_{r\le M/q}\frac1r\\
+ &\ll_h \log(2M)
+ \sum_{R<q\le M}\frac{\log\log(3q)}{q^2}.
+\end{align*}
+The last tail is $O(\log\log(3M)/R)$.
+\end{proof}
+
+We next record the finite-row formula that turns the complete-period mean
+into a smoothed progression estimate.  The finite model has the divisor
+expansion
+\begin{equation}
+ \Lambda_R(n)=\sum_{\substack{d\mid n\\d\le R}}\lambda'_R(d),
+ \qquad
+ \sum_{d\le R}|\lambda'_R(d)|\ll R(\log(2R))^2,
+ \label{eq:model-divisor-expansion-short}
+\end{equation}
+proved in TPC-15.  The second bound is deliberately nonoptimal but is
+uniform and sufficient here.
+We shall also use its pointwise form
+\begin{equation}
+ |\lambda'_R(d)|
+ \ll\frac d{\varphi(d)}\log(2R/d)
+ \ll(\log(2R))^2.
+ \label{eq:model-divisor-coefficient-pointwise}
+\end{equation}
+
+\begin{lemma}[Finite-row Ramanujan leakage]
+\label{lem:finite-row-leakage}
+Let $F\in C_c^1((0,\infty))$.  Uniformly for all $m,R\ge1$,
+\begin{equation}
+ \sum_{j\ge1}\Lambda_R(mj+h)F(mj/X)
+ =\rho_{h,R}(m)\frac Xm I_0(F)
+ +O_F\bigl(R(\log(2R))^2\bigr).
+ \label{eq:finite-row-model-formula}
+\end{equation}
+The same conclusion holds for a uniformly bounded family of compactly
+supported $C^1$ weights, with the implied constant depending only on a
+common support and $C^1$ bound.
+\end{lemma}
+
+\begin{proof}
+Insert \eqref{eq:model-divisor-expansion-short}.  For a fixed $d$, put
+$g=(d,m)$.  The congruence $d\mid mj+h$ is insoluble unless $g\mid h$;
+when it is soluble, it is one residue class modulo $d/g$.  Euler summation
+on this lattice gives
+\[
+ \sum_{\substack{j\ge1\\d\mid mj+h}}F(mj/X)
+ =\one_{g\mid h}\frac gd\frac Xm I_0(F)+O_F(1).
+\]
+The continuous coefficients recombine into the complete-period mean in
+\cref{lem:arbitrary-row-mean}.  Summing the lattice errors with
+\eqref{eq:model-divisor-expansion-short} proves the result.
+\end{proof}
+
+Combining \cref{lem:arbitrary-row-mean,lem:finite-row-leakage} gives the
+exact bookkeeping identity
+\begin{align}
+ \sum_j r_R(mj+h)F(mj/X)
+ ={}&\Delta_{h,R}(m)\frac Xm I_0(F)
+ +\cE_{m,h}(X;F)
+ \notag\\
+ &+O_F\bigl(R(\log(2R))^2\bigr),
+ \label{eq:row-drift-error-leakage}
+\end{align}
+where
+\begin{equation}
+ \cE_{m,h}(X;F)=
+ \sum_j\Lambda(mj+h)F(mj/X)
+ -\rho_h(m)\frac Xm I_0(F).
+ \label{eq:prime-row-error}
+\end{equation}
+Thus every row has three logically distinct pieces: an explicit cutoff
+drift, a prime-progression error, and finite-row Ramanujan leakage.  A raw
+row beyond $R$ should not be called centered until the first term has
+been removed.

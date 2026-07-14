@@ -1,0 +1,230 @@
+\section{Dyadic geometry and the surviving right wing}
+\label{sec:dyadic-corridor}
+
+Choose a nonnegative $\psi\in C_c^\infty([1/2,2])$ satisfying
+\begin{equation}
+ \sum_{j\in\Z}\psi(x/2^j)=1
+ \qquad(x>0).
+ \label{eq:dyadic-partition}
+\end{equation}
+For dyadic $L,K$, put
+\begin{align}
+ \cH^\sharp_{L,K}(h;X)
+ ={}&\sum_{\substack{\ell>M\\k>1}}
+ \Lambda(\ell)r_R(\ell k+h)W(\ell k/X)
+ \psi(\ell/L)\psi(k/K).
+ \label{eq:dyadic-Hsharp-block}
+\end{align}
+
+\begin{proposition}[Exact dyadic corridor]
+\label{prop:dyadic-corridor}
+One has the finite exact decomposition
+\begin{equation}
+ \cH^\sharp_{h,R;M}(X)=
+ \sum_{L,K}\cH^\sharp_{L,K}(h;X).
+ \label{eq:exact-dyadic-decomposition}
+\end{equation}
+If $\supp W\subset[a,b]\subset(0,\infty)$, every nonzero block satisfies
+\begin{equation}
+ \frac{aX}{4}\le LK\le4bX,
+ \qquad L>M/2,
+ \qquad K\ll_W X/M.
+ \label{eq:dyadic-support-ledger}
+\end{equation}
+There are $O_W(\log X)$ relevant pairs $(L,K)$.
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:dyadic-partition} in both variables.  Compact support of
+$W$ and the lower cutoffs make the sum finite.  If the two dyadic factors
+are nonzero, then $\ell\asymp L$, $k\asymp K$, and
+$\ell k\in[aX,bX]$, giving the product bounds.  For each $L$, the product
+condition permits only $O_W(1)$ dyadic values of $K$.  There are
+$O(\log X)$ possible $L$ between $M/2$ and $O_W(X)$.
+\end{proof}
+
+The normal form removes every physical term with $\ell\le M$.
+Consequently every dyadic block with $L\le M/2$ vanishes, while every
+surviving block satisfies $L>M/2$.  Up to the fixed support constants of
+the dyadic partition, the closed left wing is therefore
+\begin{equation}
+ L\ll X^{1/2}\exp(-\sqrt{\log X}).
+ \label{eq:closed-left-wing}
+\end{equation}
+The surviving set divides naturally into
+\begin{align}
+ &\text{near-square-root core:}
+ &&X^{1/2}\e^{-\sqrt{\log X}}
+ \ll L,K\ll
+ X^{1/2}\e^{\sqrt{\log X}},
+ \label{eq:near-square-root-core}\\
+ &\text{right wing:}
+ &&L\gg X^{1/2}\e^{\sqrt{\log X}},
+ \qquad
+ K\ll X^{1/2}\e^{-\sqrt{\log X}}.
+ \label{eq:right-wing}
+\end{align}
+Here and below $\e^x$ denotes the ordinary exponential in prose-style
+scale displays; it is unrelated to the additive character
+$\e(t)=\exp(2\pi it)$ used later.
+
+\begin{corollary}[Dyadic witness]
+\label{cor:dyadic-witness}
+If along a sequence $X_j$ one has
+$|\cH^\sharp_{h,R;M}(X_j)|\ge\eta X_j$ for some $\eta>0$, then for every
+such $X_j$ there is a relevant dyadic pair $(L_j,K_j)$ with
+\begin{equation}
+ |\cH^\sharp_{L,K}(h;X_j)|
+ \gg_W\frac{\eta X_j}{\log X_j}.
+ \label{eq:dyadic-witness-bound}
+\end{equation}
+Conversely, the uniform estimate
+\begin{equation}
+ \max_{L,K}|\cH^\sharp_{L,K}(h;X)|
+ =o\left(\frac X{\log X}\right)
+ \label{eq:uniform-block-sufficient}
+\end{equation}
+implies $\cH^\sharp=o(X)$.
+\end{corollary}
+
+The first assertion is only a pigeonhole statement.  It does not identify
+one fixed dyadic scale across all $X$, and the converse condition is
+sufficient rather than necessary because blocks can cancel.
+
+\subsection{A fixed quotient is already a two-form problem}
+
+It is tempting to call \eqref{eq:right-wing} easy because $k$ is small.
+The coefficient $\Lambda(\ell)$, however, depends on the quotient in the
+row $k\ell+h$.  Even a fixed slice contains an unresolved two-linear-form
+correlation.
+
+Fix $k\ge2$ and put $Y=X/k$.  Define
+\begin{align}
+ \cC_{k,h}(Y;W)
+ &=\sum_{\ell\ge1}\Lambda(\ell)\Lambda(k\ell+h)W(\ell/Y),
+ \label{eq:two-form-correlation}\\
+ \cE_{k,h;R}(Y;W)
+ &=\sum_{\ell\ge1}\Lambda(\ell)r_R(k\ell+h)W(\ell/Y).
+ \label{eq:fixed-k-residual-slice}
+\end{align}
+Let
+\begin{equation}
+ \mathfrak S(k,h)=
+ \prod_p\frac{1-\nu_p(k,h)/p}{(1-1/p)^2},
+ \quad
+ \nu_p(k,h)=
+ \#\{a\pmod p:a(ka+h)\equiv0\pmod p\}.
+ \label{eq:two-form-singular-series}
+\end{equation}
+For the finite model, put
+\begin{equation}
+ S_q(k,h)=
+ \sum_{\substack{a\ ({\rm mod}\ q)\\(a,q)=1}}c_q(ka+h),
+ \qquad
+ \mathfrak S_R(k,h)=
+ \sum_{q\le R}\frac{\mu(q)S_q(k,h)}{\varphi(q)^2}.
+ \label{eq:finite-two-form-singular-series}
+\end{equation}
+
+\begin{proposition}[Fixed-$k$ boundary]
+\label{prop:fixed-k-boundary}
+Assume that the two forms $n$ and $kn+h$ are admissible.  For fixed
+$k,h$ and $R=X^{1/2-\delta}$,
+\begin{equation}
+ \sum_\ell\Lambda(\ell)\Lambda_R(k\ell+h)W(\ell/Y)
+ =\mathfrak S(k,h)YI_0(W)+o_{k,h,W}(Y).
+ \label{eq:fixed-k-model-cross}
+\end{equation}
+Consequently
+\begin{equation}
+ \cC_{k,h}(Y;W)\sim\mathfrak S(k,h)YI_0(W)
+ \quad\Longleftrightarrow\quad
+ \cE_{k,h;R}(Y;W)=o(Y),
+ \label{eq:fixed-k-equivalence}
+\end{equation}
+provided $I_0(W)\ne0$.
+\end{proposition}
+
+\begin{proof}
+Admissibility implies $(k,h)=1$.  Since $k$ is fixed and $X=kY$,
+\begin{equation}
+ R=(kY)^{1/2-\delta}+O(1)
+ \le\frac{Y^{1/2}}{(\log Y)^B}
+ \label{eq:fixed-k-R-range}
+\end{equation}
+for every fixed $B$ and all sufficiently large $Y$.
+
+Insert the divisor expansion
+\eqref{eq:model-divisor-expansion-short}.  If $(d,k)>1$, the congruence
+$d\mid k\ell+h$ has no solution.  If $(d,k)=1$, it is the single class
+\begin{equation}
+ \ell\equiv-h\overline{k}\pmod d,
+ \label{eq:fixed-k-residue-class}
+\end{equation}
+which is reduced precisely when $(d,h)=1$.  Maximal
+Bombieri--Vinogradov, \eqref{eq:fixed-k-R-range}, and
+\eqref{eq:model-divisor-coefficient-pointwise} therefore give
+\begin{align}
+ &\sum_\ell\Lambda(\ell)\Lambda_R(k\ell+h)W(\ell/Y)
+ \notag\\
+ &\qquad={}
+ YI_0(W)
+ \sum_{\substack{d\le R\\(d,kh)=1}}
+ \frac{\lambda'_R(d)}{\varphi(d)}
+ +O_{A,k,h,W}\bigl(Y(\log Y)^{-A}\bigr).
+ \label{eq:fixed-k-divisor-main}
+\end{align}
+Indeed, the coefficient costs only two additional logarithmic powers.
+If $(d,k)=1$ but $(d,h)>1$, a nonzero source weight forces
+$\ell=p^\nu$ for one of the finitely many $p\mid h$.  Only
+$O_{h,W}(1)$ exponents lie on the support, and summing the divisor
+coefficients over divisors of $kp^\nu+h$ contributes
+$O_{k,h,W,\eps}(Y^\eps)$.
+
+A finite rearrangement of the divisor and Ramanujan expansions gives
+\begin{equation}
+ \sum_{\substack{d\le R\\(d,kh)=1}}
+ \frac{\lambda'_R(d)}{\varphi(d)}
+ =\mathfrak S_R(k,h).
+ \label{eq:fixed-k-finite-rearrangement}
+\end{equation}
+For completeness, this is also obtained by averaging
+$\Lambda_R(ka+h)$ over reduced residue classes $a$ at each Ramanujan
+denominator.
+
+For squarefree $q$, the summand in
+\eqref{eq:finite-two-form-singular-series} is multiplicative.  Its prime
+values are
+\begin{equation}
+ \frac{\mu(p)S_p(k,h)}{\varphi(p)^2}
+ =\begin{cases}
+ -1/(p-1)^2,&p\nmid kh,\\
+ 1/(p-1),&p\mid k,\ p\nmid h,\\
+ 1/(p-1),&p\mid h,\ p\nmid k,\\
+ -1,&p\mid(k,h).
+ \end{cases}
+ \label{eq:fixed-k-local-Ramanujan-values}
+\end{equation}
+Thus one plus the local value is exactly
+$(1-\nu_p(k,h)/p)/(1-1/p)^2$.  The last case is absent under
+admissibility.  The infinite Ramanujan series is absolutely convergent,
+equals \eqref{eq:two-form-singular-series}, and satisfies
+\begin{equation}
+ \mathfrak S_R(k,h)=\mathfrak S(k,h)
+ +O_{k,h}\left(\frac{(\log(2R))^2}{R}\right).
+ \label{eq:fixed-k-singular-tail}
+\end{equation}
+Combining \eqref{eq:fixed-k-divisor-main}--
+\eqref{eq:fixed-k-singular-tail} proves
+\eqref{eq:fixed-k-model-cross}.  Finally, split
+$\Lambda(k\ell+h)=\Lambda_R(k\ell+h)+r_R(k\ell+h)$ to obtain
+\eqref{eq:fixed-k-equivalence}.
+\end{proof}
+
+For example, when $h=2$ and $k$ is odd, the forms $n$ and $kn+2$ are
+admissible.  Their conjectural simultaneous primality is a special case of
+the Hardy--Littlewood/Dickson prime-tuples conjecture
+\citep{HardyLittlewood1923}.  The proposition does not say that a bound
+for the total right wing must solve every fixed-$k$ slice separately;
+cross-$k$ cancellation remains possible.  It does prove that the right
+wing cannot be discarded merely by relabeling it Type I.

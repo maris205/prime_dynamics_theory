@@ -1,0 +1,198 @@
+\section{Phase-averaged control and the distinguished zero phase}
+\label{sec:phase-masks}
+
+The angular formulation in \cref{sec:energy-cross-spectrum} is at the
+integer-translation level.  There is a complementary factor-coordinate
+test: modulate the source and quotient variables independently.  Define
+\begin{align}
+ \cH^\sharp(\alpha,\beta)
+ ={}&\sum_{\substack{\ell>M\\k>1}}
+ \Lambda(\ell)r_R(\ell k+h)W(\ell k/X)
+ \e(\alpha\ell+\beta k).
+ \label{eq:two-phase-hard-packet}
+\end{align}
+The original packet is the distinguished point
+$\cH^\sharp(0,0)$.
+
+For the dyadic estimates below, define
+\begin{align}
+ \cH^\sharp_{L,K}(\alpha,\beta)
+ ={}&\sum_{\substack{\ell>M\\k>1}}
+ \Lambda(\ell)r_R(\ell k+h)W(\ell k/X)
+ \psi(\ell/L)\psi(k/K)
+ \e(\alpha\ell+\beta k).
+ \label{eq:dyadic-two-phase-packet}
+\end{align}
+
+We use the elementary divisor bound
+\begin{equation}
+ |r_R(n)|\ll_{\eps,h,W,\delta}X^\eps
+ \qquad(n-h\asymp_WX).
+ \label{eq:residual-pointwise-divisor-bound}
+\end{equation}
+Indeed, \eqref{eq:model-divisor-expansion-short}, the pointwise estimate
+$|\lambda'_R(d)|\ll(d/\varphi(d))\log(2R/d)$, and the divisor bound give
+$|\Lambda_R(n)|\ll_\eps X^\eps$, while
+$\Lambda(n)\le\log n$.
+
+\begin{theorem}[Factor-phase mean squares]
+\label{thm:factor-phase-mean-squares}
+For every $\eps>0$,
+\begin{align}
+ \int_\T|\cH^\sharp(\alpha,0)|^2\,d\alpha
+ &\ll_{\eps,h,W,\delta}\frac{X^{2+\eps}}M,
+ \label{eq:one-phase-mean-square}\\
+ \int_\T\int_\T|\cH^\sharp(\alpha,\beta)|^2
+ \,d\alpha\,d\beta
+ &\ll_{\eps,h,W,\delta}X^{1+\eps}.
+ \label{eq:two-phase-mean-square}
+\end{align}
+For a dyadic block with $LK\asymp_WX$,
+\begin{align}
+ \int_\T|\cH^\sharp_{L,K}(\alpha,0)|^2\,d\alpha
+ &\ll_\eps\frac{X^{2+\eps}}L,
+ \label{eq:dyadic-row-phase}\\
+ \int_\T|\cH^\sharp_{L,K}(0,\beta)|^2\,d\beta
+ &\ll_\eps\frac{X^{2+\eps}}K,
+ \label{eq:dyadic-quotient-phase}\\
+ \int_\T\int_\T|\cH^\sharp_{L,K}(\alpha,\beta)|^2
+ \,d\alpha\,d\beta
+ &\ll_\eps X^{1+\eps}.
+ \label{eq:dyadic-two-phase}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Parseval in $\alpha$ gives
+\begin{equation}
+ \int_\T|\cH^\sharp(\alpha,0)|^2d\alpha
+ =\sum_{\ell>M}\Lambda(\ell)^2
+ \left|\sum_{k>1}r_R(\ell k+h)W(\ell k/X)\right|^2.
+ \label{eq:one-phase-Parseval}
+\end{equation}
+For each $\ell$, the inner sum has $O_W(X/\ell)$ terms.  Apply
+\eqref{eq:residual-pointwise-divisor-bound}, square, and use
+\[
+ \sum_{\ell>M}\frac{\Lambda(\ell)^2}{\ell^2}
+ \ll\frac{\log(2M)}M.
+\]
+The logarithm is absorbed by $X^\eps$, proving
+\eqref{eq:one-phase-mean-square}.
+
+Double Parseval gives the exact diagonal sum
+\begin{align*}
+ \int_\T\int_\T|\cH^\sharp(\alpha,\beta)|^2
+ \,d\alpha\,d\beta
+ =\sum_{\ell>M,k>1}
+ \Lambda(\ell)^2|r_R(\ell k+h)|^2|W(\ell k/X)|^2.
+\end{align*}
+The pointwise residual bound and
+$\sum_{\ell\le y}\Lambda(\ell)^2\ll y\log(2y)$ make this
+$O_\eps(X^{1+\eps})$.  Restricting the same arguments to
+$\ell\asymp L,k\asymp K$ proves
+\cref{eq:dyadic-row-phase,eq:dyadic-two-phase}.  For
+\eqref{eq:dyadic-quotient-phase}, Parseval in $\beta$ and Cauchy--Schwarz
+in $\ell$ give
+\[
+ \sum_{k\asymp K}
+ \left|\sum_{\ell\asymp L}\Lambda(\ell)
+ r_R(\ell k+h)W(\ell k/X)\psi(\ell/L)\right|^2
+ \ll_\eps KL^2X^\eps.
+\]
+Here we used
+$\sum_{\ell\asymp L}\Lambda(\ell)^2\ll L\log(2L)$ and absorbed the
+logarithm into $X^\eps$.  Since $LK\asymp X$, this is
+$O_\eps(X^{2+\eps}/K)$.
+\end{proof}
+
+Since $M=X^{1/2-o(1)}$, the root mean square in
+\eqref{eq:one-phase-mean-square} is $X^{3/4+o(1)}$, and the double-phase
+root mean square is $X^{1/2+o(1)}$.  More quantitatively, for every fixed
+$\eta>0$, Chebyshev's inequality shows at each $X$ that the set of row
+phases with $|\cH^\sharp(\alpha,0)|>X^{3/4+\eta}$ has measure
+$O_\eta(X^{-2\eta+o(1)})$; the analogous double-phase exceptional measure
+at threshold $X^{1/2+\eta}$ obeys the same bound.  Along a sufficiently
+sparse dyadic subsequence, Borel--Cantelli gives the corresponding
+almost-everywhere statements.  For independent Rademacher signs, the
+expectations of the squared magnitudes equal the matching diagonal sums
+in the Parseval calculations.
+
+\begin{remark}[Why the theorem does not evaluate the gate]
+The point $(\alpha,\beta)=(0,0)$ has Haar measure zero.  An $L^2$ estimate
+over phases can coexist with a spike at that point.  In the original
+arithmetic problem all rows are coherently unmodulated, so no phase
+average is available.  The theorem identifies a phase-averaged mask family
+with power cancellation; it does not transfer that cancellation to the
+fixed all-positive direction.
+\end{remark}
+
+\subsection{Operator norms and actual arithmetic directions}
+
+For a dyadic block define the residual matrix
+\begin{equation}
+ \mathsf R_{L,K}^{(h,R)}(\ell,k)=
+ r_R(\ell k+h)W(\ell k/X)\psi(\ell/L)\psi(k/K).
+ \label{eq:dyadic-residual-matrix}
+\end{equation}
+With $u_\ell=\Lambda(\ell)$ and, in the original TPC-15 coordinates,
+$v_k=\beta_V(k)$, the block is $u^*\mathsf Rv$.  Standard divisor moments
+give
+\begin{equation}
+ \|u\|_2^2\ll L\log(2L),
+ \qquad
+ \|v\|_2^2\ll K(\log(2K))^3.
+ \label{eq:arithmetic-vector-norms}
+\end{equation}
+Thus a uniform operator estimate
+\begin{equation}
+ \|\mathsf R_{L,K}^{(h,R)}\|_{2\to2}
+ =o\left(\frac{\sqrt X}{(\log X)^2}\right)
+ \label{eq:sufficient-operator-norm}
+\end{equation}
+would make that block $o(X)$.
+
+This is a sufficient condition for the actual arithmetic vectors.  It is
+necessary and sufficient only for the full pair of $\ell^2$ mask balls,
+because
+\begin{equation}
+ \sup_{\|x\|_2\le A,\ \|y\|_2\le B}
+ |x^*\mathsf Ry|=AB\|\mathsf R\|_{2\to2}.
+ \label{eq:operator-duality}
+\end{equation}
+The prime-pair problem asks for one specified coefficient
+$u^*\mathsf Rv$, not the largest singular direction.  Replacing the
+directional problem by \eqref{eq:sufficient-operator-norm} would therefore
+ask for a stronger theorem than is logically necessary.
+
+The available coarse Hilbert--Schmidt ledger is also not enough.  From
+\eqref{eq:residual-pointwise-divisor-bound} one obtains the coarse bound
+\begin{equation}
+ \|\mathsf R_{L,K}^{(h,R)}\|_{\rm HS}^2
+ \ll_\eps X^{1+\eps}.
+ \label{eq:Hilbert-Schmidt-ledger}
+\end{equation}
+This bound controls total matrix energy but gives no small angle with the
+vectors in \eqref{eq:arithmetic-vector-norms}.  The distinction mirrors
+\cref{thm:residual-energy-law,cor:angular-corridor}.
+
+\subsection{Boundary statement}
+
+The results can now be placed in a precise order:
+\begin{equation}
+ \begin{array}{c}
+ \text{finite local model and exact row drift}\\
+ \Downarrow\\
+ \text{all source rows below }X^{1/2-o(1)}\text{ are closed}\\
+ \Downarrow\\
+ \text{one factorable }(D,L,K)\text{ wedge is closed}\\
+ \Downarrow\\
+ \text{residual energy is large, but generic phases cancel}\\
+ \Downarrow\\
+ \text{the zero-phase fixed-shift directional coefficient remains.}
+ \end{array}
+ \label{eq:boundary-flow}
+\end{equation}
+The final arrow is not supplied by any theorem in the paper.  Existing
+beyond-square-root distribution results require additional factorization
+or coefficient structure; they do not by themselves overcome sieve
+parity or select $h=2$ \citep{Maynard2025I,Polymath2014,FordMaynard2024}.
