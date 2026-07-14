@@ -1,0 +1,54 @@
+{
+  "boundary_layer_constant": {
+    "endpoint_rate": 1.7534148544652393,
+    "kappa": 0.9533123910638268,
+    "quadrature_error_estimate": 1.778009912574173e-15,
+    "rho_c": 0.5626412544865719,
+    "value": 0.10525853593690787
+  },
+  "deterministic_density": {
+    "analytic_factor_at_zero": 0.9610190617045719,
+    "degree_120": 0.5626412544865719,
+    "degree_160": 0.5626412544865718,
+    "degree_80": 0.5626412544865719
+  },
+  "generated_utc": "2026-07-14T03:21:15.420368+00:00",
+  "resolution": {
+    "maximum_parity_spread": 6.397514904388224e-06,
+    "sigma": 0.001
+  },
+  "software": {
+    "numpy": "2.2.6",
+    "platform": "Linux-5.15.0-177-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "scipy": "1.15.3"
+  },
+  "source_sha256": {
+    "boundary_layer.py": "1feccdd4ed925c6f31e81e3f32c8538828056703d12d812c17d7ea895ca8c9bd",
+    "operators.py": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+  },
+  "spectral_crossover": {
+    "new_window": [
+      0.002,
+      0.0001
+    ],
+    "new_window_amplitude": 0.1387313190697642,
+    "new_window_power": 0.527490110921067,
+    "old_window": [
+      0.03,
+      0.01
+    ],
+    "old_window_amplitude": 0.28815048663119947,
+    "old_window_power": 0.667416108288313,
+    "smallest_gap": 0.0010831620235420836,
+    "smallest_local_power": 0.5161338481086011,
+    "smallest_scaled_gap": 0.10831620235420836,
+    "smallest_sigma": 0.0001
+  },
+  "theorem_target": {
+    "constant_positive": true,
+    "law": "1+lambda_-(sigma)=C_* sqrt(sigma)+o(sqrt(sigma))",
+    "parity_lifetime": "m_parity ~ 1/(C_* sqrt(sigma))",
+    "two_thirds_consequence": "(1+lambda_-)/sigma^(2/3) diverges"
+  }
+}
