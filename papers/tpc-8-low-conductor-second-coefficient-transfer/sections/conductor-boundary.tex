@@ -1,0 +1,140 @@
+\section{The finite-conductor boundary}
+\label{sec:conductor-boundary}
+
+The transfer theorem is uniform over a nontrivial coefficient class, but
+that class is small compared with the prime fluctuation.  This section makes
+the missing step quantitative.
+
+For an interval
+\begin{equation}\label{eq:I-N}
+ I_N=(N,2N]\cap\Z,
+\end{equation}
+let $V_q(N)\subset\C^{I_N}$ be the restrictions of all $q$-periodic
+functions, and let $P_{q,N}$ be orthogonal projection onto $V_q(N)$ in
+counting-measure $\ell^2(I_N)$.  Put
+\begin{equation}\label{eq:prime-fluctuation}
+ g_N(n)=\Lambda(n)-1.
+\end{equation}
+The preceding paper proves the following estimate
+\citep{WangTPCSeven2026}.
+
+\begin{theorem}[Finite-conductor energy escape]
+\label{thm:recalled-energy-escape}
+For every fixed $\delta>0$, uniformly for $q\leq N^{1-\delta}$,
+\begin{equation}\label{eq:projection-energy}
+ \|P_{q,N}g_N\|_2^2
+ \ll_\delta N\frac{q}{\varphi(q)}.
+\end{equation}
+Moreover,
+\begin{equation}\label{eq:full-prime-energy}
+ \|g_N\|_2^2\sim N\log N.
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:orthogonal-best-approximation}
+ \inf_{v\in V_q(N)}\|g_N-v\|_2^2
+ =\|g_N\|_2^2-\|P_{q,N}g_N\|_2^2,
+\end{equation}
+and hence
+\begin{equation}\label{eq:best-periodic-approximation}
+ \inf_{v\in V_q(N)}\|g_N-v\|_2^2
+ =N\log N+O_\delta\!\left(N\frac{q}{\varphi(q)}\right)
+ +o(N\log N).
+\end{equation}
+\end{theorem}
+
+For $q\leq(\log N)^C$, the standard estimate
+$q/\varphi(q)\ll\log\log(3q)$ gives
+\begin{equation}\label{eq:polylog-energy-ratio}
+ \frac{\|P_{q,N}g_N\|_2^2}{\|g_N\|_2^2}
+ \ll_C\frac{\log\log\log N}{\log N}=o(1).
+\end{equation}
+The precise triple logarithm is not important; the vanishing ratio is.
+
+\subsection{Why the prime coefficient cannot be inserted}
+
+Let $v_q=P_{q,N}g_N$ and $\rho_q=g_N-v_q$.  This is the best linear
+$q$-periodic approximation in $\ell^2(I_N)$.  The present theorem can
+transport a bounded unit-supported periodic coefficient of period
+$q\leq(\log x)^C$.  Even if one granted a separate extension of the
+transfer theorem covering $v_q$, \eqref{eq:best-periodic-approximation}
+shows that
+\begin{equation}\label{eq:residual-energy}
+ \|\rho_q\|_2^2=(1-o(1))N\log N.
+\end{equation}
+Thus the untransferred residual contains asymptotically all of the linear
+prime-fluctuation energy.
+
+\begin{proposition}[Strict non-specialization]
+\label{prop:strict-nonspecialization}
+Neither \cref{thm:operator-transfer} nor
+\cref{cor:prime-source-periodic-factor} can be specialized, by periodic
+projection alone, to $\beta(n)=\Lambda(n)-1$.  Doing so would require a new
+estimate for the residual $\rho_q$ in \eqref{eq:residual-energy}.  The
+finite-conductor transfer supplies no such estimate.
+\end{proposition}
+
+\begin{proof}
+The coefficient $\Lambda-1$ is neither bounded nor periodic.  More
+decisively, \eqref{eq:best-periodic-approximation} holds after optimizing
+over the entire linear space of $q$-periodic functions, which is larger than
+the unit-supported bounded class of \cref{thm:operator-transfer}.  Hence no
+choice in that class makes the $\ell^2$ residual negligible.  The transfer
+theorem contains no bilinear bound for the residual, so replacing it by zero
+would be an additional unproved assertion.
+\end{proof}
+
+This is a boundary of the present method and coefficient class.  It is not a
+proof that every nonlocal, nonlinear, dispersion, or Type~II construction
+must fail.  In particular, an $L^2$ energy statement alone does not determine
+the sign or cancellation of the residual prime-target form.
+
+\subsection{The scale inherited from the rough prime window}
+
+TPC-5 uses the squarefree rough modulus
+\begin{equation}\label{eq:TPC5-Qw}
+ Q(w)=\prod_{w<p\leq w^2}p,
+ \qquad
+ \log Q(w)=(1+o(1))w^2.
+\end{equation}
+To transfer an entire $Q(w)$-periodic observable through the present theorem,
+one needs $Q(w)\leq(\log x)^C$.  Therefore
+\begin{equation}\label{eq:w-polylog-scale}
+ w^2\leq(C+o(1))\log\log x,
+ \qquad
+ w=O(\sqrt{\log\log x}).
+\end{equation}
+The local prime window may grow, but only to this polylogarithmic-conductor
+scale under the direct Bombieri--Vinogradov proof.  Low exact-conductor
+modes inside a larger $Q(w)$ do not change its ambient unit cutoff, as noted
+in \cref{rem:combined-modulus-boundary}.
+
+\subsection{A precise next-step ledger}
+
+The current interface can be summarized as
+\begin{equation}\label{eq:gap-ledger}
+ \underbrace{\text{periodic low-conductor part}}_{\text{transferred here}}
+ \quad+\quad
+ \underbrace{\text{energy-bearing nonperiodic residual}}_{\text{uncontrolled at fixed }h}.
+\end{equation}
+Moving from \eqref{eq:gap-ledger} toward a fixed prime-pair problem requires
+at least one genuinely new ingredient.  Possible stages are:
+
+\begin{enumerate}[label=\textup{(\arabic*)}]
+ \item replace the residue-class triangle inequality by an $L^2$ or
+ coefficient-sensitive estimate and determine the largest rigorously
+ transferable periodic complexity;
+ \item construct a structured nonperiodic coefficient class whose residual
+ has provably smaller bilinear influence, not merely smaller local Fourier
+ data;
+ \item obtain Type~II or dispersion control for the energy-bearing residual
+ against $\Lambda(mn+h)$ at a prescribed $h$;
+ \item only after such control, reconnect the exact divisor ledger to a
+ fixed prime-pair correlation.
+\end{enumerate}
+
+Stages (2) and (3) are not supplied by classical Bombieri--Vinogradov.  They
+are the mathematical gap, rather than an omitted routine estimate.  A
+negative result showing that a proposed coefficient class cannot reduce
+\eqref{eq:residual-energy} would also be a legitimate outcome of the next
+stage; it would narrow the route without implying a universal parity
+impossibility theorem.

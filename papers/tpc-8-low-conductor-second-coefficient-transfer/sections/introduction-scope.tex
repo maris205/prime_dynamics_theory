@@ -1,0 +1,153 @@
+\section{Introduction and exact scope}
+\label{sec:introduction}
+
+The transition from a rough target to a prime target changes the analytic
+problem.  A finite sieve kernel can test the congruences
+$mn+h\not\equiv0\pmod p$ for prescribed primes $p$, but primality is encoded
+by the von Mangoldt weight $\Lambda(mn+h)$.  The preceding paper
+\citep{WangTPCSix2026} made this distinction explicit: a one-sided
+Bombieri--Vinogradov argument controls
+\begin{equation}\label{eq:intro-one-sided}
+ \sum_{M<m\leq2M}\alpha_m
+ \sum_{n\geq1}\Lambda(mn+h)W(n/N),
+ \qquad |\alpha_m|\leq1,
+\end{equation}
+in the Type~I range $M\leq x^{1/2}(\log x)^{-B}$, where $x=MN$.
+Inserting an arbitrary bounded coefficient $\beta_n$ in the $n$-sum destroys
+the direct reduction to one residue class modulo $m$.  The resulting form
+leads to the unresolved bilinear/Type~II interface isolated there.
+
+This paper treats a deliberately narrower coefficient class.  We suppose
+that $\beta$ is periodic modulo a small integer $q$ and is supported on the
+unit classes.  Splitting $n$ modulo $q$ turns each row into finitely many
+prime sums in reduced residue classes modulo
+\begin{equation}\label{eq:intro-combined-modulus}
+ mq.
+\end{equation}
+The classical maximal Bombieri--Vinogradov theorem can then be applied after
+two costs have been recorded: the level condition concerns $Mq$, and the
+triangle inequality over the residue classes costs at most $q$.  Both costs
+are harmless when
+\begin{equation}\label{eq:intro-safe-range}
+ q\leq(\log x)^C,
+ \qquad
+ 2Mq\leq\frac{x^{1/2}}{(\log x)^B}.
+\end{equation}
+They are not harmless for a general power-sized period.
+
+The principal point is not merely that a periodic coefficient can be
+handled.  Its main term retains a finite operator.  For an odd $q$ with
+$(q,h)=1$, put
+\begin{equation}\label{eq:intro-local-operator}
+ (\mathsf P_{q,h}\beta)(a)
+ =\frac1{\varphi(q)}
+  \sum_{\substack{b\in G_q\\(ab+h,q)=1}}\beta(b),
+ \qquad
+ G_q=(\Z/q\Z)^\times.
+\end{equation}
+The transfer theorem proved below has the rowwise main term
+\begin{equation}\label{eq:intro-row-main}
+ \frac{mN}{\varphi(m)}\left(\int_0^\infty W(t)\,dt\right)
+ (\mathsf P_{q,h}\beta)(m).
+\end{equation}
+Thus the prime target does not average $\beta$ to a scalar.  It transports
+the finite residue observable by $\mathsf P_{q,h}$.
+
+\subsection{Results and logical status}
+
+The paper contains four groups of statements.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item We determine $\mathsf P_{q,h}$ exactly.  After division by its row
+ density
+ \begin{equation}\label{eq:intro-kappa}
+  \kappa_q=\prod_{p\mid q}\frac{p-2}{p-1},
+ \end{equation}
+ it is a self-adjoint Markov operator.  If a local character has conductor
+ exponent at least two at some $p\mid q$, that mode is annihilated.  Every
+ surviving nonprincipal mode has squarefree exact conductor $r$ and is
+ exchanged with its conjugate with modulus
+ \begin{equation}\label{eq:intro-damping}
+  d(r)=\prod_{p\mid r}\frac1{p-2}.
+ \end{equation}
+ The phase is the arithmetic involution phase
+ $(-1)^{\omega(r)}\overline{\chi(-h)}$.  This is the same exact multiplier
+ that occurs in the rough centered kernel of
+ \citet{WangTPCFive2026}.  The structural contribution here is to identify
+ and prove the occurrence of this multiplier in the main term of the
+ two-scale prime-target form.
+
+ \item We prove an $\ell^1$ row-transfer theorem in the range
+ \eqref{eq:intro-safe-range}.  It is uniform over all bounded unit-supported
+ $q$-periodic coefficients and immediately gives coefficient-uniform
+ bilinear forms.  The only analytic input is the classical maximal
+ Bombieri--Vinogradov theorem
+ \citep{Bombieri1965,Vinogradov1965,IwaniecKowalski2004}.
+
+ \item We give exact character corollaries and add a Mangoldt weight in the
+ $m$-coordinate.  Siegel--Walfisz then removes every nonprincipal periodic
+ output mode.  This produces a two-prime/periodic-factor asymptotic in a
+ strongly unbalanced Type~I range.  It does not make the periodic factor
+ prime.
+
+ \item We combine the transfer theorem with the finite-conductor
+ energy-escape result of \citet{WangTPCSeven2026}.  Periods of size
+ $(\log x)^C$ capture a vanishing proportion of the $L^2$ energy of
+ $\Lambda-1$.  Therefore the present theorem cannot be specialized to the
+ missing prime coefficient.  We record this as a strict theorem-interface
+ statement, not as a universal impossibility result.
+\end{enumerate}
+
+The finite computations have the same separation.  An integer/rational
+certificate verifies the local identities, conductor multipliers,
+involutions, and exact arithmetic-progression reindexing.  A separate
+floating-point experiment displays finite Mangoldt rows.  No analytic
+theorem depends on either computation.
+
+\subsection{Relation to known distribution results}
+
+The estimate in this paper is an organized consequence of the standard
+square-root level of distribution.  It is not a new
+Bombieri--Vinogradov theorem.  Results beyond the square-root level are known
+for special well-factorable weights and fixed residue structures
+\citep{BombieriFriedlanderIwaniec1986,Maynard2025WellFactorable}; those
+hypotheses do not directly cover the residue $mb+h$ modulo the moving
+combined modulus $mq$ with an arbitrary periodic coefficient.
+
+Much deeper cancellation estimates are known for isolated shifted-prime
+character sums, beginning with earlier shifted-prime work and continuing
+through stronger bounds of Kerr, as well as for general trace functions over
+primes \citep{FriedlanderGongShparlinski2010,Kerr2021,
+FouvryKowalskiMichel2014}.  Our object and purpose are different: the source
+scale $m$ moves, the modulus is $mq$, arbitrary row coefficients are retained,
+and the desired output is the complete finite operator $\mathsf P_{q,h}$.  We
+make no priority claim for a new estimate of an isolated character sum.
+
+An $L^2$ treatment using Barban--Davenport--Halberstam or variational forms
+\citep{LewkoLewko2012} may reduce the elementary residue-splitting loss in
+some ranges.  In the small-modulus regime, however, standard formulations
+also contain terms that do not automatically yield the power-sized-period
+version of our coefficient-uniform statement.  Such an extension is left as
+an open analytic problem rather than inferred from an inapplicable mean
+square bound.
+
+\subsection{What is not proved}
+
+For clarity, none of the following is a consequence of this paper.
+
+\begin{itemize}
+ \item There is no estimate with an arbitrary bounded second coefficient.
+ \item There is no bound for the Vaughan Type~II hard packet identified in
+ \citet{WangTPCSix2026}.
+ \item There is no asymptotic for
+ $\sum_n\Lambda(n)\Lambda(n+2)$ and no twin-prime lower bound.
+ \item The parity obstruction is not broken.  The relevant limitations of
+ finite sieve information remain those discussed in the asymptotic-sieve
+ and parity literature \citep{FriedlanderIwaniec1998,Polymath2014}.
+ \item The finite Markov spectrum below is not a spectral realization of
+ the primes.  It is the exact Fourier form of a local congruence operator.
+\end{itemize}
+
+The gain is narrower but rigorous: one nontrivial second-coefficient class
+crosses the prime target at a prescribed shift, and the surviving arithmetic
+dynamics is computed exactly.

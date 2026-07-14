@@ -1,0 +1,165 @@
+\section{Exact certificate, numerical diagnostic, and conclusion}
+\label{sec:certificate-conclusion}
+
+The proofs above are analytic and do not depend on computation.  The
+accompanying package serves two more limited purposes: it checks every finite
+normalization entering the operator, and it makes the difference between an
+exact arithmetic identity and a finite Mangoldt experiment visible.
+
+\subsection{The integer/rational certificate}
+
+The reference certificate uses
+\begin{equation}\label{eq:certificate-parameters}
+ q=5\cdot7\cdot11=385,
+ \qquad h=2.
+\end{equation}
+Here $\varphi(q)=240$,
+\begin{equation}\label{eq:certificate-kappa}
+ \kappa_q=\frac9{16},
+ \qquad
+ R_q=\varphi(q)\kappa_q=135.
+\end{equation}
+The program
+\path{experiments/exact_transfer_certificate.py}
+uses only integers and exact rational arithmetic from the standard library.
+It verifies the following items.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item The pointwise inclusion-exclusion identity is checked for all
+ $240^2=57{,}600$ unit pairs.
+ \item For every $d\mid385$, the map $J_{2,d}(a)=-2a^{-1}$ is checked to be
+ an involution.  Its fixed points, two-cycles, and exact $\pm1$ eigenspace
+ dimensions are recorded.
+ \item The direct vector $\mathsf P_{385,2}\beta$ is compared entry by entry
+ with the involution-bundle formula \eqref{eq:involution-bundle} for a
+ deterministic signed observable.
+ \item The principal mode and the seven nonprincipal real quadratic modes of
+ exact conductor $d\mid385$ are checked.  Their normalized multiplier
+ magnitudes are exactly
+ \begin{equation}\label{eq:certificate-multipliers}
+  1,\ \frac13,\ \frac15,\ \frac19,\
+  \frac1{15},\ \frac1{27},\ \frac1{45},\ \frac1{135},
+ \end{equation}
+ corresponding respectively to
+ $d=1,5,7,11,35,55,77,385$.
+ \item The row-main identity
+ \begin{equation}\label{eq:certificate-row-main}
+  \frac{mN}{\varphi(mq)}
+  \sum_{\substack{b\in G_q\\(mb+h,q)=1}}\beta(b)
+  =\frac{mN}{\varphi(m)}(\mathsf P_{q,h}\beta)(m)
+ \end{equation}
+ is verified exactly on every eligible test row.
+ \item The reindexing \eqref{eq:AP-reindexing} is checked independently for
+ an arbitrary integer target weight.  It is also checked for a formal von
+ Mangoldt function represented as an integer coefficient vector in the
+ independent basis $\{\log p\}$; no floating logarithm is used.
+\end{enumerate}
+
+The canonical payload SHA-256 is
+\begin{center}
+\small\ttfamily
+030F20B495E68234CD3176795C1F3652D2F8792DE88C1BE49BC6A04F15FBCCFF.
+\end{center}
+The committed JSON file SHA-256 is
+\begin{center}
+\small\ttfamily
+2EEE645F124CCDA3A50F4FB349550AC7195321EA5FC4410853142CD655E1E37E.
+\end{center}
+Regeneration is byte deterministic.  These hashes certify finite data and
+code conventions, not the Bombieri--Vinogradov estimate.
+
+\subsection{A separate finite Mangoldt diagnostic}
+
+The optional NumPy script
+\texttt{experiments/lambda\_transfer\_diagnostics.py} sieves the genuine
+von Mangoldt function and computes each row twice: directly in $n$, and by
+target arithmetic progressions modulo $mq$.  It then compares the common
+row value with the exact rational local main term.  This is a sharp-box
+diagnostic on $N<n\leq2N$, corresponding formally to $\cI_W=1$, rather than
+an implementation of the smooth weight in the theorem.  A reference run takes
+\begin{equation}\label{eq:floating-parameters}
+ M=32,
+ \quad N=2^{19},
+ \quad X=MN=2^{24},
+ \quad q=35,
+ \quad h=2.
+\end{equation}
+There are $11$ eligible rows.  The reported quantities are shown in
+\cref{tab:floating-diagnostic}.  The conductor-$d$ observables are the real
+quadratic modes used by the script.
+
+\begin{table}[ht]
+\centering
+\caption{Finite Mangoldt row diagnostic at \eqref{eq:floating-parameters}.}
+\label{tab:floating-diagnostic}
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+$d$ & $\sum_m|\text{main}_m|/X$
+    & $\sum_m|\text{error}_m|/X$
+    & RMS$/N$ & max$/N$\\
+\midrule
+$1$  & $2.6569\times10^{-1}$ & $7.1598\times10^{-4}$
+     & $2.4501\times10^{-3}$ & $4.4714\times10^{-3}$\\
+$5$  & $8.8565\times10^{-2}$ & $6.9698\times10^{-4}$
+     & $3.0493\times10^{-3}$ & $8.0454\times10^{-3}$\\
+$7$  & $5.3139\times10^{-2}$ & $5.4323\times10^{-4}$
+     & $2.2140\times10^{-3}$ & $5.3955\times10^{-3}$\\
+$35$ & $1.7713\times10^{-2}$ & $8.6667\times10^{-4}$
+     & $2.8950\times10^{-3}$ & $4.7501\times10^{-3}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The largest discrepancy between the direct and progression computations is
+$1.17\times10^{-10}$, at floating precision.  The second numeric column is
+the finite supremum of the displayed row error over coefficients
+$|\alpha_m|\leq1$, normalized by $X$.
+
+This experiment is not a verification of
+\cref{thm:operator-transfer}.  At the reference scale,
+$2Mq/\sqrt X=0.546875$; the non-explicit logarithmic constant $B$ in the
+asymptotic theorem is not instantiated.  Nor does a small error for four
+finite modes say anything about the energy-bearing residual in
+\eqref{eq:residual-energy}.  The floating output is therefore intentionally
+separate from the canonical exact certificate.
+
+\subsection{Reproducibility commands}
+
+From the paper directory, the exact artifact and its zero-dependency test
+runner are produced first; the floating smoke test additionally requires
+NumPy:
+\begin{verbatim}
+python experiments/exact_transfer_certificate.py \
+  --output experiments/data/exact-certificate.json
+python experiments/test_exact_transfer_certificate.py
+python experiments/test_lambda_transfer_diagnostics.py
+\end{verbatim}
+The test modules are also discoverable by \texttt{pytest}.  The floating
+reference run is
+\begin{verbatim}
+python experiments/lambda_transfer_diagnostics.py \
+  --m 32 --n 524288 --q 35 --h 2 \
+  --conductors 1,5,7,35 \
+  --output experiments/data/lambda-diagnostic.json
+\end{verbatim}
+Its output is not part of the exact certificate.
+
+\subsection{Conclusion}
+
+The paper advances the fixed-shift program by one controlled layer.  An
+arbitrary second coefficient remains outside the one-sided
+Bombieri--Vinogradov reduction, but a bounded low-period coefficient can be
+passed through $\Lambda(mn+h)$ with an $\ell^1$ row error.  The leading term
+is not merely a density: it is the exact finite operator
+$\mathsf P_{q,h}$.  Its divisor-bundle involutions, conjugate-mode exchange,
+higher conductor-exponent kernel, damping factors, and even trace moments
+are all explicit.
+
+The same result also draws a sharper boundary.  The actual modulus is $mq$,
+the residue complexity costs $q$, and TPC-7 shows that the permitted
+polylogarithmic periodic spaces miss asymptotically all of the
+$\Lambda-1$ energy.  Thus the theorem genuinely reaches a prime target at a
+prescribed $h$, including $h=2$, while stopping before the Type~II residual
+that contains the fixed prime-pair difficulty.  That separation is the main
+conclusion: a finite arithmetic dynamics survives the prime target exactly,
+but it is not a substitute for the missing parity-sensitive estimate.

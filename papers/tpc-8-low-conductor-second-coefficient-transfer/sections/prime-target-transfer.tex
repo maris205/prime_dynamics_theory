@@ -1,0 +1,206 @@
+\section{A periodic coefficient through the prime target}
+\label{sec:prime-target-transfer}
+
+Fix a nonzero integer $h$ and a function $W\in C_c^1((0,\infty))$.
+Write
+\begin{equation}\label{eq:I-W}
+ \cI_W=\int_0^\infty W(t)\,dt.
+\end{equation}
+All constants below may depend on $h$ and $W$.  The parameter $h$ is fixed;
+in particular, $h=2$ is permitted.  The assertion is nevertheless a theorem
+about a periodic coefficient in a prime-target form, not a prime-pair
+theorem.
+
+Let $x=MN$, where $M,N\geq2$.  For an odd integer $q$ coprime to $h$, let
+$\beta:G_q\to\C$, extend it periodically to the integers, and set it equal
+to zero on the nonunit residue classes.  For $(m,hq)=1$, define the row
+\begin{equation}\label{eq:prime-target-row}
+ \cR_{m,h}^{(N)}(\beta)
+ =\sum_{n\geq1}\beta(n)\Lambda(mn+h)W(n/N).
+\end{equation}
+
+\subsection{The rowwise transfer theorem}
+
+We first state the classical input in the form used in the proof.  Put
+\begin{equation}\label{eq:Delta-definition}
+ \Delta(Y;r)=
+ \max_{\substack{a\bmod r\\(a,r)=1}}
+ \max_{y\leq Y}
+ \left|
+  \sum_{\substack{n\leq y\\n\equiv a\pmod r}}\Lambda(n)
+  -\frac{y}{\varphi(r)}
+ \right|.
+\end{equation}
+For every $L>0$, the maximal Bombieri--Vinogradov theorem gives a
+$B_0=B_0(L)>0$ such that
+\begin{equation}\label{eq:maximal-BV}
+ \sum_{r\leq Y^{1/2}(\log Y)^{-B_0}}\Delta(Y;r)
+ \ll_L \frac{Y}{(\log Y)^L}.
+\end{equation}
+This is the classical theorem
+\citep{Bombieri1965,Vinogradov1965,IwaniecKowalski2004}, not a result proved
+here.
+
+\begin{theorem}[Operator-valued periodic transfer]
+\label{thm:operator-transfer}
+Fix $A,C>0$.  There is $B=B(A,C,h,W)>0$ such that the following holds for
+all sufficiently large $x=MN$.  Suppose
+\begin{equation}\label{eq:transfer-q-range}
+ 3\leq q\leq(\log x)^C,
+ \qquad q\text{ odd},
+ \qquad (q,h)=1,
+\end{equation}
+and
+\begin{equation}\label{eq:transfer-modulus-range}
+ 2Mq\leq\frac{x^{1/2}}{(\log x)^B}.
+\end{equation}
+Uniformly for every $\beta:G_q\to\C$ with
+$\|\beta\|_\infty\leq1$,
+\begin{equation}\label{eq:l1-row-transfer}
+ \sum_{\substack{M<m\leq2M\\(m,hq)=1}}
+ \left|
+  \cR_{m,h}^{(N)}(\beta)
+  -\frac{mN}{\varphi(m)}\cI_W
+   (\mathsf P_{q,h}\beta)(m\bmod q)
+ \right|
+ \ll_{A,C,h,W}\frac{x}{(\log x)^A}.
+\end{equation}
+Consequently, for arbitrary complex coefficients $|\alpha_m|\leq1$
+supported on the same rows,
+\begin{align}
+ &\sum_{M<m\leq2M}\alpha_m
+   \sum_{n\geq1}\beta(n)\Lambda(mn+h)W(n/N)
+ \notag\\
+ &\quad=
+ N\cI_W
+ \sum_{M<m\leq2M}\alpha_m\frac{m}{\varphi(m)}
+ (\mathsf P_{q,h}\beta)(m)
+ +O_{A,C,h,W}\!\left(\frac{x}{(\log x)^A}\right).
+ \label{eq:bilinear-operator-transfer}
+\end{align}
+\end{theorem}
+
+The theorem is stronger than a single bilinear estimate: it controls the
+sum of the absolute row errors.  This is exactly the supremum of the error
+in \eqref{eq:bilinear-operator-transfer} over all row coefficients of modulus
+at most one.
+
+\begin{proof}
+Put
+\begin{equation}\label{eq:Lambda-q}
+ \Lambda_q(t)=\Lambda(t)\one_{(t,q)=1}.
+\end{equation}
+We first prove the result with $\Lambda_q$ in place of $\Lambda$.
+Split the $n$-sum into $b\in G_q$.  If $(mb+h,q)=1$, the substitution
+$t=mn+h$ gives the exact correspondence
+\begin{equation}\label{eq:AP-reindexing}
+ \left\{n\geq1:n\equiv b\pmod q\right\}
+ \longleftrightarrow
+ \left\{t\in\Z:t\equiv mb+h\pmod{mq},\ (t-h)/m\geq1\right\}.
+\end{equation}
+The class on the right is reduced.  Indeed,
+$(mb+h,m)=(h,m)=1$ and it is coprime to $q$ by assumption.  On this class
+$\Lambda_q(t)=\Lambda(t)$ whenever $t\geq1$.  Equivalently, after inserting
+the transformed weight $W((t-h)/(mN))$, the target sum is a weighted prime
+sum in that reduced class modulo $mq$.
+
+Stieltjes partial summation, applied to
+$W((t-h)/(mN))$, gives
+\begin{align}
+ &\sum_{\substack{n\geq1\\n\equiv b\pmod q}}
+  \Lambda_q(mn+h)W(n/N)
+ \notag\\
+ &\qquad=
+ \frac{mN}{\varphi(mq)}\cI_W+E_{m,b},
+ \label{eq:one-residue-main}
+\end{align}
+where, for a constant $C_W>0$,
+\begin{equation}\label{eq:one-residue-error}
+ |E_{m,b}|\ll_W\Delta(C_Wx;mq).
+\end{equation}
+For sufficiently large $x$, the support of the transformed weight lies in
+the positive $t$-axis.  The continuous main term is exactly
+\[
+ \frac1{\varphi(mq)}
+ \int_0^\infty W((t-h)/(mN))\,dt
+ =\frac{mN}{\varphi(mq)}\cI_W.
+\]
+If $(mb+h,q)>1$, the corresponding $\Lambda_q$ sum is identically zero.
+
+Because $(m,q)=1$, we have
+$\varphi(mq)=\varphi(m)\varphi(q)$.  Summing the main terms in
+\eqref{eq:one-residue-main} against $\beta(b)$ therefore gives
+\begin{align*}
+ \frac{mN}{\varphi(m)\varphi(q)}\cI_W
+ \sum_{\substack{b\in G_q\\(mb+h,q)=1}}\beta(b)
+ =\frac{mN}{\varphi(m)}\cI_W(\mathsf P_{q,h}\beta)(m).
+\end{align*}
+
+For the errors, the triangle inequality and \eqref{eq:one-residue-error}
+give
+\begin{align}
+ &\sum_{\substack{M<m\leq2M\\(m,hq)=1}}
+  \left|
+   \sum_{\substack{b\in G_q\\(mb+h,q)=1}}\beta(b)E_{m,b}
+  \right|
+ \notag\\
+ &\qquad\ll_W
+ \left(\sum_{b\in G_q}|\beta(b)|\right)
+ \sum_{r\leq2Mq}\Delta(C_Wx;r).
+ \label{eq:raw-BV-error}
+\end{align}
+Here we enlarged the moduli $mq$ to all $r\leq2Mq$.  Choose the exponent in
+\eqref{eq:maximal-BV} larger than $A+C+2$ and then choose $B$ in
+\eqref{eq:transfer-modulus-range} accordingly.  Since
+\begin{equation}\label{eq:l1-beta-cost}
+ \sum_{b\in G_q}|\beta(b)|\leq\varphi(q)\leq q\leq(\log x)^C,
+\end{equation}
+the right side of \eqref{eq:raw-BV-error} is
+$O_{A,C,h,W}(x(\log x)^{-A})$.
+
+It remains to restore the terms deleted in \eqref{eq:Lambda-q}.  If
+$(mn+h,q)>1$ and $\Lambda(mn+h)\ne0$, then
+\begin{equation}\label{eq:exceptional-prime-power}
+ mn+h=p^k
+\end{equation}
+for some prime $p\mid q$.  On the support of the two scales, $mn\asymp_W x$.
+For each $p$, only $O_W(1)$ powers $p^k$ lie in the resulting fixed-ratio
+interval.  For each such power, the number of pairs $(m,n)$ is at most
+$\tau(|p^k-h|)$.  Hence, for every fixed $\eta>0$, the total deleted
+contribution, even after absolute values over all rows, is
+\begin{equation}\label{eq:prime-power-error}
+ \ll_{\eta,h,W}x^\eta\sum_{p\mid q}\log p
+ \ll_{\eta,h,W}x^\eta\log(2q).
+\end{equation}
+The divisor bound $\tau(t)\ll_\eta t^\eta$ was used here.  Under
+\eqref{eq:transfer-q-range}, \eqref{eq:prime-power-error} is absorbed by
+$x(\log x)^{-A}$.  This proves \eqref{eq:l1-row-transfer}; multiplying the
+row errors by $\alpha_m$ proves \eqref{eq:bilinear-operator-transfer}.
+\end{proof}
+
+\begin{remark}[The unsimplified complexity bound]
+\label{rem:raw-complexity-bound}
+Before imposing $q\leq(\log x)^C$, the proof gives, for every $L>0$ and in
+the corresponding Bombieri--Vinogradov modulus range,
+\begin{equation}\label{eq:raw-complexity-bound}
+ \sum_m|\text{row error}_m|
+ \ll_{L,h,W}
+ \|\beta\|_{\ell^1(G_q)}\frac{x}{(\log x)^L}
+ +O_{\eta,h,W}(x^\eta\log(2q)).
+\end{equation}
+This formula explains the polylogarithmic condition.  The classical theorem
+controls the maximum of one reduced class for each modulus; summing an
+arbitrary observable over all $q$ classes is not free.
+\end{remark}
+
+\begin{remark}[The combined-modulus boundary]
+\label{rem:combined-modulus-boundary}
+The modulus in \eqref{eq:AP-reindexing} is $mq$.  It would be incorrect to
+retain the one-sided condition $M\leq x^{1/2}(\log x)^{-B}$ from
+\eqref{eq:intro-one-sided} after introducing a period $q$.  The valid direct
+condition is \eqref{eq:transfer-modulus-range}.  Likewise, a character of
+small exact conductor inflated to a much larger ambient period still
+contains the unit cutoff for that ambient period; its integer-period cost is
+the ambient $q$, unless the coefficient is rewritten at its genuinely
+smaller period.
+\end{remark}

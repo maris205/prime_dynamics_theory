@@ -1,0 +1,244 @@
+{
+  "arithmetic_involutions": {
+    "1": {
+      "fixed_points": 1,
+      "group_size": 1,
+      "minus_eigenspace_dimension": 0,
+      "modulus": 1,
+      "permutation_sha256": "D0BCA111F8628137ADC4C16F123496DCDD1D590D06CB5D9ACD68B39FE656FB97",
+      "plus_eigenspace_dimension": 1,
+      "two_cycles": 0
+    },
+    "11": {
+      "fixed_points": 2,
+      "group_size": 10,
+      "minus_eigenspace_dimension": 4,
+      "modulus": 11,
+      "permutation_sha256": "08F3F0EC741D497976AC602162DA540E115A2A786B4B965349FCD800ADAFC982",
+      "plus_eigenspace_dimension": 6,
+      "two_cycles": 4
+    },
+    "35": {
+      "fixed_points": 0,
+      "group_size": 24,
+      "minus_eigenspace_dimension": 12,
+      "modulus": 35,
+      "permutation_sha256": "4E25298B79E71974877F9BEB07799A7AC49A56254C90259326FD4129C2DBC5D9",
+      "plus_eigenspace_dimension": 12,
+      "two_cycles": 12
+    },
+    "385": {
+      "fixed_points": 0,
+      "group_size": 240,
+      "minus_eigenspace_dimension": 120,
+      "modulus": 385,
+      "permutation_sha256": "D695ED9967E29864025BCEAF6CA8440BBECFFABA6069C95440A6FF7240419938",
+      "plus_eigenspace_dimension": 120,
+      "two_cycles": 120
+    },
+    "5": {
+      "fixed_points": 0,
+      "group_size": 4,
+      "minus_eigenspace_dimension": 2,
+      "modulus": 5,
+      "permutation_sha256": "50486239096A041A490F3733C97824D906753E873350A58CC83639A4A9BDC6E2",
+      "plus_eigenspace_dimension": 2,
+      "two_cycles": 2
+    },
+    "55": {
+      "fixed_points": 0,
+      "group_size": 40,
+      "minus_eigenspace_dimension": 20,
+      "modulus": 55,
+      "permutation_sha256": "F0CCD2EBEED3761AC8FA748B93F787CE2F93D5CB61191E5E83F1977E1C2AE028",
+      "plus_eigenspace_dimension": 20,
+      "two_cycles": 20
+    },
+    "7": {
+      "fixed_points": 0,
+      "group_size": 6,
+      "minus_eigenspace_dimension": 3,
+      "modulus": 7,
+      "permutation_sha256": "3B3542F3EEF6EA63D57F2C787BE6DF56574CDA85321E4855C11000504BBD6735",
+      "plus_eigenspace_dimension": 3,
+      "two_cycles": 3
+    },
+    "77": {
+      "fixed_points": 0,
+      "group_size": 60,
+      "minus_eigenspace_dimension": 30,
+      "modulus": 77,
+      "permutation_sha256": "966675202BB836EC7B798A2025E865AF9EEB963DC6D133E2434CC60470CF1E15",
+      "plus_eigenspace_dimension": 30,
+      "two_cycles": 30
+    }
+  },
+  "bv_main_normalization": {
+    "all_rows_equal": true,
+    "eligible_rows_with_gcd_m_h_equal_one": 120,
+    "identity": "m*N*S_beta(m)/phi(mq)=(m*N/phi(m))*K_beta(m)",
+    "row_main_vector_sha256": "21A96158711AC27B7AB41B4A5A6C8E0AEA9458111328A773D8C3426D1CB773B2",
+    "test_scale_N": 997
+  },
+  "canonical_payload_sha256": "030F20B495E68234CD3176795C1F3652D2F8792DE88C1BE49BC6A04F15FBCCFF",
+  "exact_progression_reindexing": {
+    "eligible_rows": 6,
+    "formal_lambda_basis": "independent symbols log(p)",
+    "formal_lambda_nonzero_coefficients": 122,
+    "formal_lambda_reindexing_exact": true,
+    "formal_lambda_rows_sha256": "640F68A7EAB3E0CCE46422CB4DC7319F745EADBBEB072EB829B5DEAAB578120F",
+    "integer_reindexing_exact": true,
+    "integer_weight_rows_sha256": "448175552CE61095A4269F302C9897131EA72222F2EC58F00008247C0D1AC350",
+    "m_interval": {
+      "end_inclusive": 34,
+      "start_exclusive": 17
+    },
+    "modulus": 35,
+    "n_interval": {
+      "end_inclusive": 514,
+      "start_exclusive": 257
+    },
+    "shift": 2
+  },
+  "group_size": 240,
+  "interpretation_boundary": "All entries above are finite integer or rational identities. They do not estimate a Bombieri--Vinogradov error, verify an asymptotic range, or approximate Lambda-1 by periodic data.",
+  "involution_bundle": {
+    "all_rows_equal": true,
+    "bundle_vector_sha256": "9664CCA65BFE3D0414A13AFBA30FBE12BD4BB04806D81B2C837BBBFF1D4FE77C",
+    "direct_vector_sha256": "9664CCA65BFE3D0414A13AFBA30FBE12BD4BB04806D81B2C837BBBFF1D4FE77C",
+    "formula": "K=sum_(d|q) mu(d)/phi(d) U_(h,d) E_(q,d)"
+  },
+  "modulus": 385,
+  "normalization": {
+    "kappa": "9/16",
+    "normalized_operator_sends_one_to_one": true,
+    "survivors_per_row": 135,
+    "transfer_average_denominator": 240
+  },
+  "pointwise_inclusion_exclusion": {
+    "all_pairs_equal": true,
+    "checked_unit_pairs": 57600,
+    "survivor_indicator_sha256": "295D0C81943B6A972931BC15B47DA84F1B3DBEA4E25F8E5C9D04A893242645BC"
+  },
+  "primes": [
+    5,
+    7,
+    11
+  ],
+  "quadratic_exact_conductor_modes": {
+    "1": {
+      "exact_conductor": 1,
+      "formula_holds_on_all_rows": true,
+      "normalized_multiplier_absolute_value": "1",
+      "residue_sum_vector_sha256": "01A989EE1E1E4ED1106CF2AF949562C2E2E73F8054EC0018406AAD29E6703865",
+      "support_primes": [],
+      "unnormalized_residue_sum_counts": {
+        "135": 240
+      }
+    },
+    "11": {
+      "exact_conductor": 11,
+      "formula_holds_on_all_rows": true,
+      "normalized_multiplier_absolute_value": "1/9",
+      "residue_sum_vector_sha256": "BF262C2270D9A98EC812B267E9D03997B07540A9BFCAAA903049147A0AC1F6CD",
+      "support_primes": [
+        11
+      ],
+      "unnormalized_residue_sum_counts": {
+        "-15": 120,
+        "15": 120
+      }
+    },
+    "35": {
+      "exact_conductor": 35,
+      "formula_holds_on_all_rows": true,
+      "normalized_multiplier_absolute_value": "1/15",
+      "residue_sum_vector_sha256": "A5D5DFB93F43300E662F5D14908C49C137FBF8CF92129B2EAB4200D97EB640FF",
+      "support_primes": [
+        5,
+        7
+      ],
+      "unnormalized_residue_sum_counts": {
+        "-9": 120,
+        "9": 120
+      }
+    },
+    "385": {
+      "exact_conductor": 385,
+      "formula_holds_on_all_rows": true,
+      "normalized_multiplier_absolute_value": "1/135",
+      "residue_sum_vector_sha256": "47A903314B79276C17725AE8041820FD9A3BE625C2DE47F9C1048279E0AC4876",
+      "support_primes": [
+        5,
+        7,
+        11
+      ],
+      "unnormalized_residue_sum_counts": {
+        "-1": 120,
+        "1": 120
+      }
+    },
+    "5": {
+      "exact_conductor": 5,
+      "formula_holds_on_all_rows": true,
+      "normalized_multiplier_absolute_value": "1/3",
+      "residue_sum_vector_sha256": "D8C41E5D82A53BD9B585C8AD93FBB9A4282F46E6E5778F9F7744563FD4F33832",
+      "support_primes": [
+        5
+      ],
+      "unnormalized_residue_sum_counts": {
+        "-45": 120,
+        "45": 120
+      }
+    },
+    "55": {
+      "exact_conductor": 55,
+      "formula_holds_on_all_rows": true,
+      "normalized_multiplier_absolute_value": "1/27",
+      "residue_sum_vector_sha256": "530E2E7F714F455B59FAC9569C0372363B25732D4916A0B050B690E4A1A666E7",
+      "support_primes": [
+        5,
+        11
+      ],
+      "unnormalized_residue_sum_counts": {
+        "-5": 120,
+        "5": 120
+      }
+    },
+    "7": {
+      "exact_conductor": 7,
+      "formula_holds_on_all_rows": true,
+      "normalized_multiplier_absolute_value": "1/5",
+      "residue_sum_vector_sha256": "63522209D2274C775549712425B8493EC28162DB35EF5DB87B7BBE0D9C3AAB0A",
+      "support_primes": [
+        7
+      ],
+      "unnormalized_residue_sum_counts": {
+        "-27": 120,
+        "27": 120
+      }
+    },
+    "77": {
+      "exact_conductor": 77,
+      "formula_holds_on_all_rows": true,
+      "normalized_multiplier_absolute_value": "1/45",
+      "residue_sum_vector_sha256": "B9359023B3F2E5E175946BE999B82FCC46A15EBB35B3ADF37CF889D624F31363",
+      "support_primes": [
+        7,
+        11
+      ],
+      "unnormalized_residue_sum_counts": {
+        "-3": 120,
+        "3": 120
+      }
+    }
+  },
+  "schema": "tpc8-exact-low-conductor-transfer-v1",
+  "shift": 2,
+  "signed_observable": {
+    "l1": 818,
+    "l2_squared": 3864,
+    "sum": 6,
+    "support_size": 204
+  }
+}

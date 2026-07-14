@@ -1,0 +1,197 @@
+\section{Modal transfer and a prime-weighted source}
+\label{sec:modal-corollaries}
+
+The operator theorem becomes especially transparent in character
+coordinates.  Continue to use the Fourier convention
+\eqref{eq:Fourier-convention}.  Combining
+\cref{thm:operator-transfer,thm:exact-local-spectrum} gives the exact main
+term
+\begin{align}
+ &\sum_m\alpha_m\sum_n\beta(n)\Lambda(mn+h)W(n/N)
+ \notag\\
+ &\quad=\kappa_qN\cI_W
+ \sum_m\alpha_m\frac{m}{\varphi(m)}
+ \sum_{\substack{\chi\in\wh G_q\\\chi\ \mathrm{surviving}}}
+ B(\chi)c_h(\chi)\chi(m)
+ +O_{A,C,h,W}\!\left(\frac{x}{(\log x)^A}\right).
+ \label{eq:modal-transfer}
+\end{align}
+The sums over $m$ have the support and the range of
+\cref{thm:operator-transfer}.
+
+\subsection{One character mode}
+
+\begin{corollary}[Primitive squarefree mode]
+\label{cor:primitive-mode}
+Let $q$ be odd and squarefree, let $\chi$ be primitive modulo $q$, and
+suppose the hypotheses of \cref{thm:operator-transfer} hold.  Then
+\begin{align}
+ &\sum_m\alpha_m\sum_{n\geq1}
+  \overline{\chi(n)}\Lambda(mn+h)W(n/N)
+ \notag\\
+ &\quad=
+ \frac{\mu(q)\overline{\chi(-h)}}{\varphi(q)}
+ N\cI_W
+ \sum_m\alpha_m\frac{m}{\varphi(m)}\chi(m)
+ +O_{A,C,h,W}\!\left(\frac{x}{(\log x)^A}\right).
+ \label{eq:primitive-mode-transfer}
+\end{align}
+Here every Dirichlet character is extended by zero away from the unit
+classes.  Replacing $\overline\chi$ by $\chi$ conjugates the phase and the
+output character.
+\end{corollary}
+
+\begin{proof}
+For a primitive character of squarefree modulus $q$,
+$r_\chi=q$ and
+\[
+ \kappa_qc_h(\chi)
+ =\prod_{p\mid q}\frac{p-2}{p-1}
+  \frac{\mu(q)\overline{\chi(-h)}}{\prod_{p\mid q}(p-2)}
+ =\frac{\mu(q)\overline{\chi(-h)}}{\varphi(q)}.
+\]
+Now apply \eqref{eq:modal-transfer}.
+\end{proof}
+
+This formula displays the arithmetic involution directly:
+\begin{equation}\label{eq:mode-involution}
+ \overline\chi(n)
+ \quad\longmapsto\quad
+ \overline{\chi(-h)}\chi(m).
+\end{equation}
+The scalar $\mu(q)/\varphi(q)$ is not a heuristic independence factor.  It
+is the exact local main coefficient after the $q$ residue classes have been
+passed through the prime target.
+
+\begin{corollary}[Higher conductor-exponent annihilation]
+\label{cor:higher-exponent-annihilation}
+Let $\chi\in\wh G_q$ have local conductor exponent at least two at some
+$p\mid q$.  Under the hypotheses of \cref{thm:operator-transfer},
+\begin{equation}\label{eq:higher-mode-transfer}
+ \sum_m\alpha_m\sum_{n\geq1}
+ \overline{\chi(n)}\Lambda(mn+h)W(n/N)
+ \ll_{A,C,h,W}\frac{x}{(\log x)^A}.
+\end{equation}
+\end{corollary}
+
+The vanishing is a local algebraic cancellation in the leading term.  It is
+not a zero-free-region statement about the $L$-function of $\chi$.
+
+\subsection{Exact-conductor truncations}
+
+For $1\leq R\leq\rad(q)$, define the surviving low-conductor part
+\begin{equation}\label{eq:low-conductor-beta}
+ \beta_{\leq R}(b)
+ =\sum_{\substack{\chi\ \mathrm{surviving}\\r_\chi\leq R}}
+ B(\chi)\overline{\chi(b)}.
+\end{equation}
+Its transferred main term is obtained from \eqref{eq:modal-transfer} by
+restricting the same sum to $r_\chi\leq R$.  There is, however, a distinction
+between exact conductor and actual integer period.
+
+If \eqref{eq:low-conductor-beta} is retained as a function on $G_q$ and
+extended by zero off the units modulo $q$, its period remains $q$ because of
+the ambient unit cutoff.  The Bombieri--Vinogradov condition is then on
+$Mq$.  If one instead starts with a primitive character of its genuine
+modulus $r$, as in \cref{cor:primitive-mode}, the condition is on $Mr$.
+This prevents a low exact-conductor label inside an enormous ambient CRT
+space from being used to evade the combined-modulus boundary.
+
+For a finite sum of primitive modes of possibly different genuine periods,
+the proof applies term by term.  A sufficient polylogarithmic complexity
+budget, with every $r_j$ odd and $(r_j,h)=1$, is
+\begin{equation}\label{eq:mode-complexity-budget}
+ \sum_j|\gamma_j|r_j\leq(\log x)^C,
+ \qquad
+ 2M\max_j r_j\leq x^{1/2}(\log x)^{-B}.
+\end{equation}
+This is a convenient corollary of the residue-class proof, not an optimal
+large-sieve statement.
+
+\subsection{Adding a prime weight in the source coordinate}
+
+The nonprincipal output modes in \eqref{eq:modal-transfer} need not vanish
+for arbitrary $\alpha_m$: one may choose $\alpha_m$ to align with a character.
+They do vanish after placing a prime weight on the $m$-coordinate.
+
+\begin{corollary}[Prime source and periodic factor]
+\label{cor:prime-source-periodic-factor}
+Fix $\delta,A,C>0$, let $W_1,W_2\in C_c^1((0,\infty))$, and suppose
+$\supp W_1\subset[1,2]$.  Let $q\geq3$ be odd with $(q,h)=1$, let
+$\beta:G_q\to\C$ satisfy $\|\beta\|_\infty\leq1$, and extend $\beta$
+$q$-periodically to the integers and by zero on nonunit residue classes.
+Put $x=MN$ and assume
+\begin{equation}\label{eq:prime-source-range}
+ M\geq x^\delta,
+ \qquad
+ q\leq(\log M)^C,
+ \qquad
+ 2Mq\leq\frac{x^{1/2}}{(\log x)^B},
+\end{equation}
+where $B=B(A,C,\delta,h,W_1,W_2)$ is sufficiently large.  Then
+\begin{align}
+ &\sum_{\substack{m,n\geq1\\(m,hq)=1}}
+ \Lambda(m)W_1(m/M)\beta(n)
+ \Lambda(mn+h)W_2(n/N)
+ \notag\\
+ &\quad=
+ \kappa_q B(\one)MN
+ \left(\int_0^\infty W_1(u)\,du\right)
+ \left(\int_0^\infty W_2(v)\,dv\right)
+ +O_{A,C,\delta,h,W_1,W_2}\!\left(\frac{x}{(\log x)^A}\right),
+ \label{eq:prime-source-asymptotic}
+\end{align}
+where
+\begin{equation}\label{eq:beta-unit-mean}
+ B(\one)=\frac1{\varphi(q)}\sum_{b\in G_q}\beta(b).
+\end{equation}
+In particular, a unit-mean-zero periodic factor gives an arbitrary
+logarithmic saving.
+\end{corollary}
+
+\begin{proof}
+Apply \cref{thm:operator-transfer} with row coefficient
+$\Lambda(m)W_1(m/M)$.  Dividing this coefficient by $O(\log x)$ first and
+requesting one additional logarithmic saving justifies the application.
+Substitute \eqref{eq:P-Fourier-formula} in the main term.
+
+For the principal character, the prime number theorem and partial summation
+give
+\begin{equation}\label{eq:principal-prime-source}
+ \sum_m\Lambda(m)W_1(m/M)\frac{m}{\varphi(m)}
+ =M\int_0^\infty W_1(u)\,du
+ +O_A\!\left(\frac{M}{(\log M)^A}\right).
+\end{equation}
+The factor $m/\varphi(m)$ may be replaced by $1$: on primes the difference
+contributes $O_{W_1}(\log M)$, and higher prime powers contribute
+$O_{W_1}(M^{1/2}(\log M)^2)$.
+
+For every nonprincipal $\chi\in\wh G_q$, the Siegel--Walfisz theorem,
+uniformly for $q\leq(\log M)^C$, gives
+\begin{equation}\label{eq:nonprincipal-prime-source}
+ \sum_m\Lambda(m)W_1(m/M)\frac{m}{\varphi(m)}\chi(m)
+ \ll_{A,C,W_1}\frac{M}{(\log M)^A}.
+\end{equation}
+The rows inherit the condition $(m,hq)=1$.  Its excluded prime powers obey
+the uniform bound
+\begin{equation}\label{eq:excluded-prime-source-powers}
+ \sum_{\substack{M<p^k\leq2M\\p\mid hq}}
+ \Lambda(p^k)\frac{p}{p-1}
+ \ll_h\log(2q),
+\end{equation}
+because a fixed prime contributes only $O(1)$ powers to a dyadic interval.
+They are therefore absorbed in the same saving.  There are at most
+$\varphi(q)\leq(\log M)^C$
+surviving modes, while $|B(\chi)|,|c_h(\chi)|\leq1$.  Increasing the
+Siegel--Walfisz saving absorbs their total.  Finally
+$M\geq x^\delta$ makes $\log M$ comparable to $\log x$, proving
+\eqref{eq:prime-source-asymptotic}.
+\end{proof}
+
+The range \eqref{eq:prime-source-range} is strongly unbalanced.  Ignoring
+logarithmic factors, the combined-modulus condition says
+\begin{equation}\label{eq:type-I-imbalance}
+ N\gtrsim Mq^2.
+\end{equation}
+This is still a Type~I theorem.  The periodic factor has crossed the prime
+target, but it has not become a second unrestricted prime weight.

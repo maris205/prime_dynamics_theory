@@ -1,0 +1,140 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Periodic Second Coefficients through a Prime Target: A Bombieri--Vinogradov Transfer, Arithmetic Involutions, and the Combined-Modulus Boundary},
+ pdfauthor={Liang Wang},
+ pdfsubject={An exact low-conductor coefficient-transfer law for a two-scale prime-target form},
+ pdfkeywords={Bombieri--Vinogradov theorem, periodic coefficients, arithmetic involution, Dirichlet characters, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\wh}{\widehat}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\tr}{\operatorname{tr}}
+
+\title{\textbf{Periodic Second Coefficients through a Prime Target:}\\
+\textbf{A Bombieri--Vinogradov Transfer,}\\
+\textbf{Arithmetic Involutions,}\\
+\textbf{and the Combined-Modulus Boundary}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let $x=MN$, let $h\ne0$ be fixed, and let $q\geq3$ be odd with
+$(q,h)=1$.  For a bounded $q$-periodic function $\beta$ supported on the
+unit classes modulo $q$, we study the two-scale prime-target form
+\[
+ \sum_{M<m\leq2M}\alpha_m
+ \sum_{n\geq1}\beta(n)\Lambda(mn+h)W(n/N),
+ \qquad |\alpha_m|\leq1.
+\]
+Allowing an arbitrary bounded second coefficient leads to the unresolved
+bilinear/Type~II interface isolated in the preceding work.  In the
+low-period range
+\[
+ q\leq(\log x)^C,
+ \qquad
+ 2Mq\leq x^{1/2}(\log x)^{-B},
+\]
+we prove instead an exact coefficient-transfer law, with arbitrary logarithmic
+saving, by a direct application of the classical maximal
+Bombieri--Vinogradov theorem.  The main term is operator-valued:
+\[
+ N\!\int W\,
+ \sum_m\alpha_m\frac{m}{\varphi(m)}
+ (\mathsf P_{q,h}\beta)(m),
+ \qquad
+ (\mathsf P_{q,h}\beta)(a)
+ =\frac1{\varphi(q)}
+ \sum_{\substack{b\in(\Z/q\Z)^\times\\(ab+h,q)=1}}\beta(b).
+\]
+Thus the periodic coefficient is not replaced by its mean: it is transported
+by an explicit finite arithmetic operator.
+
+We determine this operator completely.  After row normalization it is a
+self-adjoint Markov operator.  Character modes with a conductor divisible by
+$p^2$ are annihilated.  A surviving character of exact squarefree conductor
+$r$ is exchanged with its conjugate and multiplied by
+\[
+ (-1)^{\omega(r)}\overline{\chi(-h)}
+ \prod_{p\mid r}(p-2)^{-1}.
+\]
+This is exactly the finite-conductor multiplier found for the centered rough
+kernel in the preceding work, now transferred through the genuine prime
+target $\Lambda(mn+h)$.  We also give the corresponding prime-weighted source
+corollary and an exact finite certificate.
+
+The analytic input is classical; no new level of distribution is asserted.
+The modulus is $mq$, not $m$, and residue splitting costs the period $q$.
+Moreover, the finite-conductor energy-escape theorem from the preceding paper
+shows that polylogarithmic periodic spaces capture a vanishing proportion of
+the $L^2$ energy of $\Lambda-1$.  Consequently one cannot substitute
+$\beta=\Lambda-1$, and the result gives neither a fixed-shift prime-pair
+asymptotic nor a twin-prime lower bound or a breach of the parity barrier.
+\end{abstract}
+
+\noindent\textbf{Keywords:} periodic coefficient; prime target;
+Bombieri--Vinogradov theorem; arithmetic involution; finite-conductor
+spectrum; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N13, 11N36; Secondary 11L40, 47A10.
+
+\input{sections/introduction-scope}
+\input{sections/local-operator}
+\input{sections/prime-target-transfer}
+\input{sections/modal-corollaries}
+\input{sections/conductor-boundary}
+\input{sections/certificate-conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

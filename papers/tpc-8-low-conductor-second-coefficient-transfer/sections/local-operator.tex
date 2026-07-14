@@ -1,0 +1,186 @@
+\section{The finite prime-target operator}
+\label{sec:local-operator}
+
+Throughout this section $q\geq3$ is odd, $(q,h)=1$, and
+$G_q=(\Z/q\Z)^\times$.  We use normalized counting measure on $G_q$.
+For $\beta:G_q\to\C$, define
+\begin{align}
+ (\mathsf P_{q,h}\beta)(a)
+ &=\frac1{\varphi(q)}
+   \sum_{\substack{b\in G_q\\(ab+h,q)=1}}\beta(b),
+ \label{eq:P-definition}\\
+ \kappa_q
+ &=\prod_{p\mid q}\frac{p-2}{p-1},
+ \qquad
+ \mathsf T_{q,h}=\kappa_q^{-1}\mathsf P_{q,h}.
+ \label{eq:T-definition}
+\end{align}
+For each $a$, exactly
+\begin{equation}\label{eq:row-degree}
+ R_q=\varphi(q)\kappa_q
+ =\prod_{p^e\parallel q}p^{e-1}(p-2)
+\end{equation}
+values of $b$ are admissible.  Consequently $\mathsf T_{q,h}$ is a Markov
+operator.  Its kernel is real and symmetric, because $ab+h=ba+h$, so it is
+self-adjoint on $L^2(G_q)$.
+
+\subsection{Inclusion-exclusion and the arithmetic involutions}
+
+For every squarefree $d\mid\rad(q)$ let
+\begin{equation}\label{eq:J-definition}
+ J_{h,d}(a)=-h a^{-1}\pmod d,
+ \qquad a\in G_d,
+\end{equation}
+and let $U_{h,d}f=f\circ J_{h,d}$.  Then $J_{h,d}^2$ is the identity, so
+$U_{h,d}$ is a self-adjoint unitary involution.  Define the normalized fiber
+average
+\begin{equation}\label{eq:fiber-average}
+ (E_{q,d}\beta)(u)
+ =\frac{\varphi(d)}{\varphi(q)}
+  \sum_{\substack{b\in G_q\\b\equiv u\pmod d}}\beta(b).
+\end{equation}
+
+\begin{proposition}[Exact involution bundle]
+\label{prop:involution-bundle}
+For every $\beta:G_q\to\C$ and $a\in G_q$,
+\begin{equation}\label{eq:involution-bundle}
+ (\mathsf P_{q,h}\beta)(a)
+ =\sum_{d\mid\rad(q)}
+   \frac{\mu(d)}{\varphi(d)}
+   \bigl(U_{h,d}E_{q,d}\beta\bigr)(a\bmod d).
+\end{equation}
+All terms in this identity are finite and exact.
+\end{proposition}
+
+\begin{proof}
+Inclusion-exclusion gives
+\[
+ \one_{(ab+h,q)=1}
+ =\sum_{\substack{d\mid\rad(q)\\ab\equiv-h\pmod d}}\mu(d).
+\]
+For fixed $a$ and $d$, the congruence selects the fiber
+$b\equiv J_{h,d}(a)\pmod d$.  By \eqref{eq:fiber-average}, its unnormalized
+sum is
+\[
+ \frac{\varphi(q)}{\varphi(d)}
+ (E_{q,d}\beta)(J_{h,d}(a)).
+\]
+Divide by $\varphi(q)$ and sum over $d$.
+\end{proof}
+
+This formula identifies the exact link with the target-divisor involutions
+of \citet{WangTPCSix2026}.  It is not a mixing assertion: each $U_{h,d}$ is
+an involution, while the damping comes from the normalized combination of
+all divisor layers and from the fiber averages.
+
+\subsection{Complete character-block decomposition}
+
+Let $\wh G_q$ be the character group.  We use the Fourier convention
+\begin{equation}\label{eq:Fourier-convention}
+ B(\chi)=\frac1{\varphi(q)}\sum_{b\in G_q}\beta(b)\chi(b),
+ \qquad
+ \beta(b)=\sum_{\chi\in\wh G_q}B(\chi)\overline{\chi(b)}.
+\end{equation}
+Write $q=\prod_{p^e\parallel q}p^e$.  Let $f_p(\chi)$ be the conductor
+exponent of the local component $\chi_p$ modulo $p^e$.
+
+Call $\chi$ \emph{surviving} if $f_p(\chi)\leq1$ for every $p\mid q$.
+For such a character put
+\begin{equation}\label{eq:exact-squarefree-conductor}
+ r_\chi=\prod_{\substack{p\mid q\\f_p(\chi)=1}}p,
+ \qquad
+ d(r_\chi)=\prod_{p\mid r_\chi}\frac1{p-2},
+\end{equation}
+and
+\begin{equation}\label{eq:c-multiplier}
+ c_h(\chi)
+ =(-1)^{\omega(r_\chi)}d(r_\chi)
+   \overline{\chi(-h)}.
+\end{equation}
+The principal character is surviving, with $r_\chi=1$ and $c_h(\chi)=1$.
+
+\begin{theorem}[Exact local spectrum]
+\label{thm:exact-local-spectrum}
+For every $\beta:G_q\to\C$,
+\begin{equation}\label{eq:P-Fourier-formula}
+ (\mathsf P_{q,h}\beta)(a)
+ =\kappa_q
+  \sum_{\substack{\chi\in\wh G_q\\\chi\ \mathrm{surviving}}}
+  B(\chi)c_h(\chi)\chi(a).
+\end{equation}
+Equivalently,
+\begin{equation}\label{eq:T-on-character}
+ \mathsf T_{q,h}\overline\chi
+ =\begin{cases}
+   c_h(\chi)\chi,&\chi\text{ surviving},\\
+   0,&\chi\text{ not surviving}.
+  \end{cases}
+\end{equation}
+In particular, on a surviving mode,
+\begin{equation}\label{eq:T-square-character}
+ \mathsf T_{q,h}^{2}\chi=d(r_\chi)^2\chi.
+\end{equation}
+
+The nonzero spectrum consists of $1$, the signed eigenvalues on real
+characters, and the pairs $\pm d(r_\chi)$ on nonreal conjugate pairs.  Zero
+has multiplicity
+\begin{equation}\label{eq:zero-multiplicity}
+ \varphi(q)-\varphi(\rad(q)).
+\end{equation}
+For every integer $k\geq1$,
+\begin{equation}\label{eq:even-trace}
+ \tr(\mathsf T_{q,h}^{2k})
+ =\prod_{p\mid q}\left(1+(p-2)^{1-2k}\right).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+It is enough to compute locally.  Fix $p^e\parallel q$, write $a$ for a
+unit modulo $p^e$, and consider the sum of $\overline{\chi_p(b)}$ over
+unit $b$ with $ab+h\not\equiv0\pmod p$.
+
+If $f_p=0$, the summand is $1$ and the sum is
+$p^{e-1}(p-2)$.  If $f_p=1$, the complete unit sum is zero and the excluded
+fiber has $p^{e-1}$ points, on all of which the character has the same
+value.  The allowed sum is therefore
+\[
+ -p^{e-1}\overline{\chi_p(-h)}\chi_p(a).
+\]
+If $f_p\geq2$, both the complete unit sum and the sum over the excluded
+fiber vanish: the restriction of $\chi_p$ to the kernel of reduction modulo
+$p$ is nonprincipal.  Hence this local factor is zero.
+
+Multiplying the local sums and dividing by $\varphi(q)$ proves
+\eqref{eq:P-Fourier-formula} and \eqref{eq:T-on-character}.  Since
+$c_h(\overline\chi)=\overline{c_h(\chi)}$ and
+$|c_h(\chi)|=d(r_\chi)$, applying $\mathsf T_{q,h}$ twice proves
+\eqref{eq:T-square-character}.  There are $p-1$ local characters with
+conductor exponent at most one, so the nonzero subspace has dimension
+$\prod_{p\mid q}(p-1)=\varphi(\rad(q))$.  Finally, group the surviving
+characters by exact conductor.  At a prime $p$, there is one principal
+choice and $p-2$ nonprincipal choices.  Thus
+\[
+ \sum_{\chi\ \mathrm{surviving}}d(r_\chi)^{2k}
+ =\prod_{p\mid q}\left(1+(p-2)(p-2)^{-2k}\right),
+\]
+which is \eqref{eq:even-trace}.
+\end{proof}
+
+\begin{corollary}[Gap and the prime $3$ obstruction]
+\label{cor:local-gap}
+Suppose $q$ is squarefree.  If $3\mid q$, a nonprincipal conductor-$3$
+mode has modulus-one eigenvalue, so there is no spectral gap on the
+mean-zero subspace.  If $3\nmid q$ and $p_{\min}$ is the least prime
+dividing $q$, then
+\begin{equation}\label{eq:mean-zero-norm}
+ \|\mathsf T_{q,h}\|_{\one^\perp\to\one^\perp}
+ =\frac1{p_{\min}-2}<1.
+\end{equation}
+For nonsquarefree $q$, the same norm formula holds on $\one^\perp$;
+equivalently, it holds on the mean-zero part of the surviving subspace.
+The orthogonal complement of the surviving subspace is killed in one step.
+\end{corollary}
+
+The finite chain can therefore have a genuine local gap.  This does not say
+that the primes, or the sequence $\Lambda(mn+h)$, form a mixing dynamical
+system.  The distinction will be maintained throughout.
