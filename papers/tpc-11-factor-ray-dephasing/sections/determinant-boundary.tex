@@ -1,0 +1,167 @@
+\section{Determinant layers and the mesoscopic boundary}
+\label{sec:determinant-boundary}
+
+The large-sieve theorem becomes diagonal only after an $O(X)$ resolution
+loss.  This section records exactly what survives below that scale.
+
+For a sharp band put
+\begin{equation}
+ K_T(x):=
+ \begin{cases}
+  2\sin(Tx)/x,&x\ne0,\\
+  2T,&x=0.
+ \end{cases}
+ \label{eq:sharp-band-kernel}
+\end{equation}
+Direct expansion of the original factor pairs gives
+\begin{equation}
+ \begin{aligned}
+ \int_{-T}^{T}|\cR_{h,D}(X;t)|^2dt
+ ={}&\sum_{\substack{n,m,n',m'\\n,n'>D}}
+ u(n)u(n')\eta(mn+h)\eta(m'n'+h)\\
+ &\quad\times W(mn/X)W(m'n'/X)
+ K_T\!\left(\log\frac{nm'}{mn'}\right),
+ \end{aligned}
+ \label{eq:fourfold-hard-band}
+\end{equation}
+where $\eta(q)=\Lambda(q)-1$.  The highest-degree von Mangoldt term in
+\eqref{eq:fourfold-hard-band} contains
+\[
+ \Lambda(n)\Lambda(n')\Lambda(mn+h)\Lambda(m'n'+h).
+\]
+Thus a small fixed-shift band is a genuine fourfold arithmetic
+correlation, not merely a divisor mean value.
+
+After ray compression, the same exact identity is
+\begin{equation}
+ \int_{-T}^{T}|\cR_{h,D}(X;t)|^2dt
+ =\sum_{\substack{(a,b)=1\\(c,d)=1}}
+ c_{a,b}\overline{c_{c,d}}
+ K_T\!\left(\log\frac{ad}{bc}\right).
+ \label{eq:ray-hard-kernel}
+\end{equation}
+The relevant near-resonance is measured by the integer
+\begin{equation}
+ \Delta((a,b),(c,d)):=ad-bc.
+ \label{eq:ray-determinant}
+\end{equation}
+
+\begin{proposition}[Compact-Fourier determinant layers]
+\label{prop:determinant-layers}
+Let $\Phi\in L^1(\R)$ and suppose, with the Fourier convention used in
+\eqref{eq:Fejer-transform}, that
+$\supp\widehat\Phi\subset[-L,L]$.  Then
+\begin{equation}
+ \begin{aligned}
+ \frac1T\int_\R\Phi(t/T)|\cR_{h,D}(X;t)|^2dt
+ ={}&\sum_{\substack{(a,b)=1\\(c,d)=1}}
+ c_{a,b}\overline{c_{c,d}}\\
+ &\quad\times
+ \widehat\Phi\!\left(T\log\frac{bc}{ad}\right).
+ \end{aligned}
+ \label{eq:compact-Fourier-layer-identity}
+\end{equation}
+If $L/T\leq1$, every nonzero summand satisfies
+\begin{equation}
+ |ad-bc|
+ \leq2\beta X\sinh\!\left(\frac{L}{2T}\right)
+ \ll_L\frac XT.
+ \label{eq:determinant-layer-range}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:ray-compression} and use Fourier inversion for the scaled
+weight.  A term can survive only if
+\[
+ \left|\log\frac{ad}{bc}\right|\leq\frac LT.
+\]
+The exact hyperbolic identity from \cref{lem:ratio-spacing} gives
+\[
+ |ad-bc|
+ =2\sqrt{abcd}\,
+ \sinh\!\left(\frac12\left|\log\frac{ad}{bc}\right|\right).
+\]
+Since $ab,cd\leq\beta X$, this is at most the right-hand side of
+\eqref{eq:determinant-layer-range}.
+\end{proof}
+
+At frequency scale $T=X^\theta$, the compact-Fourier mean square therefore
+contains only determinant layers
+\[
+ |\Delta|\ll X^{1-\theta}.
+\]
+For $T\gg X$, only $\Delta=0$ remains; primitive fractions then force
+$(a,b)=(c,d)$.  At $T\asymp X$, only finitely many nonzero determinant
+layers can remain.  For $T=o(X)$, the permitted determinant range grows
+and the number of potentially surviving layers is allowed to grow.  A
+diagonal law then requires new cancellation among their arithmetic
+coefficients.
+
+\begin{proposition}[Sharpness of the $X$ threshold]
+\label{prop:X-threshold-sharp}
+Let $\Phi\in L^1(\R)$ have continuous Fourier transform with
+$\widehat\Phi(0)\ne0$.  There are hyperbolic coefficient systems supported
+on two primitive rays for which the $\Phi$-weighted form has a nonzero
+off-diagonal term whenever $1\leq T\leq cX$, with $c>0$ depending only on the
+kernel and support band.
+Consequently the order $T\asymp X$ in
+\cref{thm:exact-Fejer-ray-Parseval} cannot be uniformly improved for
+arbitrary coefficients.
+\end{proposition}
+
+\begin{proof}
+Take the two rays $(N,1)$ and $(N-1,1)$ with $N\asymp X$, and assign both
+coefficient one.  Their determinant is $1$ and their frequency gap is
+$\log(N/(N-1))=N^{-1}+O(N^{-2})$.  Continuity and
+$\widehat\Phi(0)\ne0$ give an interval about zero on which
+$\widehat\Phi$ is nonzero.  Choose $c$ so that every scaled gap with
+$1\leq T\leq cX$ lies in that interval.  The cross term in
+\eqref{eq:compact-Fourier-layer-identity} then survives.
+\end{proof}
+
+\subsection{The fixed-shift arithmetic left inside one ray}
+
+The diagonal ray energy is not an elementary coefficient norm.  Expanding
+one term gives
+\begin{equation}
+ \begin{aligned}
+ |c_{a,b}|^2
+ ={}&\sum_{k,\ell}
+ u(ak)u(a\ell)
+ \eta(abk^2+h)\eta(ab\ell^2+h)\\
+ &\quad\times W(abk^2/X)W(ab\ell^2/X),
+ \end{aligned}
+ \label{eq:intra-ray-arithmetic}
+\end{equation}
+with the source cutoff understood.  Terms $k\ne\ell$ contain two target
+prime weights on the quadratic sequences
+\[
+ abk^2+h,\qquad ab\ell^2+h.
+\]
+For example, the ray $(a,b)=(1,1)$ has coefficient
+\begin{equation}
+ c_{1,1}(h;X,D)
+ =\sum_{k>D}u(k)\eta(k^2+h)W(k^2/X).
+ \label{eq:quadratic-prime-ray}
+\end{equation}
+No fixed-$h$ asymptotic for \eqref{eq:quadratic-prime-ray} or for the
+general off-diagonal \eqref{eq:intra-ray-arithmetic} is used or obtained.
+
+The role of the long shift average is now transparent.  It does not make
+the same-ray correlations disappear.  Rather, their total absolute
+contribution is upper-bounded, while the $k=\ell$ target square acquires
+the larger factor $\log H$.  Specializing the averaged theorem back to one
+fixed shift would remove precisely that advantage.
+
+\begin{remark}[The next analytic target]
+A genuine advance into the mesoscopic region $1\ll T\ll X$ would estimate
+the finitely many determinant-layer forms in
+\eqref{eq:compact-Fourier-layer-identity} using their arithmetic
+coefficients, rather than their absolute values.  Possible honest
+weakenings include averaging $h$ over shorter windows, averaging the
+determinant $\Delta$, or restricting $(a,b)$ to balanced subregions.  The
+present paper supplies the exact layer identity, the permitted determinant
+range, and the normalization against which such an estimate should be
+measured.
+\end{remark}

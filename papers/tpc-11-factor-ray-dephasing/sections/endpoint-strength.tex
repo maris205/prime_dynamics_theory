@@ -1,0 +1,232 @@
+\section{Endpoint recovery and the fixed-shift strength threshold}
+\label{sec:endpoint-strength}
+
+The ratio transform does not select $m=1$ by merely taking a long sharp
+frequency interval.  A fixed scale window does select it, but that window
+uses a coherent superposition of all frequencies.
+
+Assume in this section that
+\begin{equation}
+ \supp W\subset[\alpha,\beta],
+ \qquad \beta<4\alpha,
+ \qquad D<\alpha X.
+ \label{eq:endpoint-support-hypothesis}
+\end{equation}
+Choose $V\in C_c^\infty(\R)$ such that
+\begin{equation}
+ V(x)=1\quad(\log\alpha\leq x\leq\log\beta),
+ \qquad
+ V(x)=0\quad(x\leq\log(\beta/4)).
+ \label{eq:endpoint-window}
+\end{equation}
+
+\begin{proposition}[Exact one-Mellin endpoint selector]
+\label{prop:one-Mellin-endpoint-selector}
+Under \eqref{eq:endpoint-support-hypothesis},
+\begin{align}
+ \sum_n u(n)\Lambda(n+h)W(n/X)
+ &=\frac1{2\pi}\int_\R
+ \widehat V(t)X^{-it}\cT_{h,D}(X;t)dt,
+ \label{eq:raw-endpoint-selector}\\
+ \sum_n u(n)(\Lambda(n+h)-1)W(n/X)
+ &=\frac1{2\pi}\int_\R
+ \widehat V(t)X^{-it}\cR_{h,D}(X;t)dt,
+ \label{eq:centered-endpoint-selector}
+\end{align}
+where $\widehat V(t)=\int_\R V(x)e^{-itx}dx$.
+\end{proposition}
+
+\begin{proof}
+If $r=mn$ lies in the support of $W(r/X)$, then
+\begin{equation}
+ \log(n/m)-\log X=\log(r/X)-2\log m.
+ \label{eq:endpoint-coordinate}
+\end{equation}
+For $m=1$ this lies in $[\log\alpha,\log\beta]$, where $V=1$.  For
+$m\geq2$ it is at most $\log\beta-2\log2=\log(\beta/4)$, where $V=0$.
+Thus inserting $V(\log(n/m)-\log X)$ selects precisely $m=1$.
+The cutoff $D<\alpha X$ removes none of those rows.  Fourier inversion of
+$V$ gives \eqref{eq:raw-endpoint-selector}; subtracting the same identity
+for \eqref{eq:intro-source-model} gives
+\eqref{eq:centered-endpoint-selector}.
+\end{proof}
+
+\begin{remark}[General product supports]
+Every compact subinterval of $(0,\infty)$ is a finite union of intervals
+of multiplicative width less than four.  A smooth partition of unity in
+the product variable therefore reduces a general $W$ to finitely many
+selectors of the form above.
+\end{remark}
+
+\subsection{Truncating the coherent selector}
+
+The total variation of either factor-scale measure in
+\eqref{eq:raw-endpoint-selector}--\eqref{eq:centered-endpoint-selector}
+satisfies
+\begin{equation}
+ \sum_{\substack{n>D\\m\geq1}}
+ |u(n)|\bigl(1+\Lambda(mn+h)\bigr)|W(mn/X)|
+ \ll_{h,W}X\log(2X).
+ \label{eq:endpoint-total-variation}
+\end{equation}
+One way to see this is to put $r=mn$, use
+\[
+ \sum_{n\mid r}|u(n)|\leq\log r+\tau(r),
+\]
+and apply the prime number theorem to the logarithmic part and the
+standard shifted Titchmarsh upper bound to the divisor part
+\citep{AssingBlomerLi2021}.
+
+Since $V\in C_c^\infty$, for every $A>0$,
+\begin{equation}
+ \left|\int_{|t|>T}\widehat V(t)X^{-it}
+ \cR_{h,D}(X;t)dt\right|
+ \ll_{A,h,V,W}X\log(2X)T^{-A}.
+ \label{eq:endpoint-Fourier-tail}
+\end{equation}
+The same estimate holds for the raw transform and for the source model.
+Thus any positive power of $\log X$ is a sufficient truncation length for
+an $o(X)$ approximation, after choosing $A$ large.  The hard part is not
+the smooth Fourier tail; it is the accuracy of the arithmetic model on
+the retained band.
+
+\subsection{An exact \texorpdfstring{$L^2$}{L2} strength test}
+
+For a function $F$ for which the integral converges, define
+\begin{equation}
+ \mathscr L_X(F):=\frac1{2\pi}\int_\R
+ \widehat V(t)X^{-it}F(t)dt.
+ \label{eq:endpoint-functional}
+\end{equation}
+
+\begin{proposition}[Endpoint discrepancy forces band energy]
+\label{prop:endpoint-strength-test}
+Let $S$ and $M$ be two transforms and let
+\begin{equation}
+ \operatorname{Tail}_T(S-M)
+ :=\frac1{2\pi}
+ \left|\int_{|t|>T}\widehat V(t)X^{-it}(S(t)-M(t))dt\right|.
+ \label{eq:model-tail}
+\end{equation}
+Then
+\begin{equation}
+ \|S-M\|_{L^2[-T,T]}
+ \geq\frac{2\pi}{\|\widehat V\|_{L^2(\R)}}
+ \left(
+ |\mathscr L_X(S)-\mathscr L_X(M)|
+ -\operatorname{Tail}_T(S-M)
+ \right)_+.
+ \label{eq:endpoint-strength-lower-bound}
+\end{equation}
+Consequently, if the endpoint discrepancy is $\gg X$ and the Fourier tail
+is $o(X)$, then
+\begin{equation}
+ \int_{-T}^{T}|S(t)-M(t)|^2dt\gg X^2.
+ \label{eq:endpoint-X2-floor}
+\end{equation}
+Conversely, an absolute band error $o(X^2)$ together with an $o(X)$ tail
+forces the two endpoint functionals to agree up to $o(X)$.
+\end{proposition}
+
+\begin{proof}
+Split \eqref{eq:endpoint-functional} at $|t|=T$, apply the triangle
+inequality, and then apply Cauchy--Schwarz on $[-T,T]$:
+\[
+ |\mathscr L_X(S)-\mathscr L_X(M)|
+ \leq\frac{\|\widehat V\|_2}{2\pi}
+ \|S-M\|_{L^2[-T,T]}
+ +\operatorname{Tail}_T(S-M).
+\]
+Rearrangement proves \eqref{eq:endpoint-strength-lower-bound}.  The two
+consequences are immediate.
+\end{proof}
+
+The normalization is important.  A statement
+\[
+ \int_{-T}^{T}|S-M|^2dt=o(TX^2)
+\]
+is only a root-mean-square statement.  When $T\to\infty$, Cauchy--Schwarz
+allows an $o(X\sqrt T)$ coherent error and does not recover the endpoint.
+The absolute $o(X^2)$ threshold in
+\cref{prop:endpoint-strength-test} is strictly stronger.
+
+\subsection{The Hardy--Littlewood boundary}
+
+For a nonzero integer shift $h$, write the usual prime-pair singular
+series as
+\begin{equation}
+ \mathfrak S(h):=
+ \begin{cases}
+  2C_2\displaystyle\prod_{\substack{p\mid h\\p>2}}
+  \dfrac{p-1}{p-2},&2\mid h,\\[0.8em]
+  0,&2\nmid h,
+ \end{cases}
+ \qquad
+ C_2:=\prod_{p>2}\left(1-\frac1{(p-1)^2}\right).
+ \label{eq:prime-pair-singular-series}
+\end{equation}
+This is the constant in the corresponding Hardy--Littlewood prediction
+\citep{HardyLittlewood1923}; no such prediction is assumed below.
+
+For the raw prime-target transform, the selected endpoint is
+\begin{equation}
+ \begin{aligned}
+ \mathscr L_X(\cT_{h,D})
+ &=\sum_n(\Lambda(n)-1)\Lambda(n+h)W(n/X)\\
+ &=\sum_n\Lambda(n)\Lambda(n+h)W(n/X)
+ -X I_0(W)+o_{h,W}(X),
+ \end{aligned}
+ \label{eq:endpoint-HL-reduction}
+\end{equation}
+by the shifted prime number theorem.  Hence, for one fixed admissible even
+shift and one fixed $W$, evaluating \eqref{eq:endpoint-HL-reduction} with
+the predicted main term is equivalent to the corresponding single-weight
+Hardy--Littlewood assertion.  The centered endpoint has the same predicted
+leading term because
+$\sum_n(\Lambda(n)-1)W(n/X)=o_W(X)$.
+
+It follows from \cref{prop:endpoint-strength-test} that a fixed-shift band
+model with absolute $o(X^2)$ error, a compatible filtered model value, and
+$o(X)$ tails would already contain that Hardy--Littlewood endpoint.  The
+implication is one-way: the endpoint controls one filtered functional, not
+the entire band.
+
+There is an unconditional parity check on the natural source model.
+
+\begin{corollary}[Odd-shift model floor]
+\label{cor:odd-shift-model-floor}
+Assume $I_0(W)\ne0$ and fix an odd integer $h$.  Let
+$S=\cT_{h,D}$ and $M=\cM_D$.  If $T\to\infty$ so that the tail in
+\eqref{eq:model-tail} is $o(X)$---for example any fixed positive power of
+$\log X$---then
+\begin{equation}
+ \int_{-T}^{T}|\cT_{h,D}(X;t)-\cM_D(X;t)|^2dt
+ \gg_{h,V,W}X^2.
+ \label{eq:odd-shift-band-floor}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+If $h$ is odd, two prime-power-supported values $n$ and $n+h$ can both
+occur only when one is a power of two.  There are $O(\log X)$ such
+possibilities, so
+\[
+ \sum_n\Lambda(n)\Lambda(n+h)W(n/X)=o_{h,W}(X).
+\]
+The prime number theorem applied to the two linear terms in the centered
+endpoint then gives
+\[
+ \mathscr L_X(\cT_{h,D}-\cM_D)
+ =-X I_0(W)+o_{h,W}(X).
+\]
+Apply \cref{prop:endpoint-strength-test} and
+\eqref{eq:endpoint-Fourier-tail}.
+\end{proof}
+
+\begin{remark}[Why this is not a twin-prime lower bound]
+The odd-shift corollary is a local-parity sanity check: the target-free
+model does not encode the singular local factor.  For admissible even
+shifts, replacing the explicit odd-shift value by
+$(\mathfrak S(h)-1)XI_0(W)$ is exactly the unproved prime-pair step.  No
+such replacement is made here.
+\end{remark}

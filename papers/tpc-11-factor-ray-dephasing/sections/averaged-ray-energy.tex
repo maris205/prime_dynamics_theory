@@ -1,0 +1,266 @@
+\section{Arithmetic evaluation after averaging the shift}
+\label{sec:averaged-energy}
+
+We now square first and average the shift afterwards.  Let
+\[
+ G\in C_c^1((0,\infty)),\qquad G\geq0,
+\]
+with $I_0$ and $I_2$ as in \eqref{eq:moment-functionals}.
+The shift sum below is over all integers; the support of $G(h/H)$ makes it
+finite and positive for large $H$.
+
+\subsection{The first-moment model}
+
+\begin{proposition}[Long-shift first moment]
+\label{prop:first-moment-model}
+Fix $C\geq1$.  Uniformly for $X\leq H\leq X^C$, every real $t$, every
+$D\geq1$, and every $A>0$,
+\begin{equation}
+ \frac1H\sum_hG(h/H)\cT_{h,D}(X;t)
+ =I_0(G)\cM_D(X;t)+O_{A,C,W,G}\!\left(X(\log X)^{-A}\right).
+ \label{eq:first-moment-model}
+\end{equation}
+Equivalently, the same normalized average of $\cR_{h,D}$ is
+$O_A(X(\log X)^{-A})$.
+\end{proposition}
+
+\begin{proof}
+For $r\in[\alpha X,\beta X]$, the smooth prime number theorem gives,
+uniformly in $r$ and $H$ in the stated range,
+\begin{equation}
+ \sum_hG(h/H)(\Lambda(r+h)-1)
+ \ll_{A,C,W,G}H(\log X)^{-A}.
+ \label{eq:translated-smooth-PNT}
+\end{equation}
+Indeed, after the change of variable $q=r+h$, the weight
+$G((q-r)/H)$ has scale $H$ and is supported on $q\asymp_{C,G}H$.
+The classical zero-free-region prime number theorem is more than
+sufficient.
+
+The remaining source absolute mass satisfies
+\[
+ \sum_{\substack{n>D\\m\geq1}}|u(n)W(mn/X)|
+ \ll_W X\sum_{n\ll_W X}\frac{1+\Lambda(n)}n+O_W(X)
+ \ll_W X\log(2X).
+\]
+Insert \eqref{eq:translated-smooth-PNT}, request two additional powers of
+$\log X$, and divide by $H$.  The Mellin phase has modulus one, so the
+estimate is uniform in $t$.
+\end{proof}
+
+The coherent average in \cref{prop:first-moment-model} is not a theorem
+about most shifts.  That requires the second moment developed next.
+
+\subsection{The diagonal inputs}
+
+\begin{lemma}[Translated target second moment]
+\label{lem:target-second-moment}
+Uniformly for $r\in[\alpha X,\beta X]$ and $X\leq H\leq X^C$,
+\begin{equation}
+ \sum_hG(h/H)(\Lambda(r+h)-1)^2
+ =H I_0(G)\log H+O_{C,W,G}(H).
+ \label{eq:target-second-moment}
+\end{equation}
+The same formula, with the same leading term, holds with
+$(\Lambda(r+h)-1)^2$ replaced by $\Lambda(r+h)^2$.
+\end{lemma}
+
+\begin{proof}
+Expand $(\Lambda-1)^2=\Lambda^2-2\Lambda+1$.  Smooth partial summation and
+the prime number theorem give
+\[
+ \sum_hG(h/H)\Lambda(r+h)=H I_0(G)+O_A(H(\log H)^{-A})
+\]
+and
+\[
+ \sum_hG(h/H)=H I_0(G)+O_G(1).
+\]
+For the square, first restrict to prime target values.  One von Mangoldt
+factor supplies the prime number theorem, while the other is
+$\log H+O_{C,W,G}(1)$ on the support.  Thus the prime contribution is
+$H I_0(G)\log H+O_{C,W,G}(H)$.  Proper prime powers contribute
+$O_{C,W,G}(H^{1/2}(\log H)^2)$, which is absorbed.  Combining the three
+pieces proves the centered formula.
+\end{proof}
+
+\begin{lemma}[Source diagonal]
+\label{lem:source-diagonal}
+Uniformly for $1\leq D\leq X^{1-\eps}$,
+\begin{equation}
+ \begin{aligned}
+ \cS_D(X)
+ &:={}
+ \sum_{\substack{n>D\\m\geq1}}
+ u(n)^2|W(mn/X)|^2\\
+ &=\frac12X I_2(W)
+ \bigl((\log X)^2-(\log D)^2\bigr)
+ +O_W(X\log(2X)).
+ \end{aligned}
+ \label{eq:source-diagonal}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Euler summation gives, uniformly in $n$,
+\begin{equation}
+ \sum_{m\geq1}|W(mn/X)|^2
+ =\frac Xn I_2(W)+O_W(1).
+ \label{eq:W-square-Euler}
+\end{equation}
+The elementary weighted second moment
+\begin{equation}
+ \sum_{n\leq y}\frac{(\Lambda(n)-1)^2}{n}
+ =\frac12(\log y)^2-\log y+O(1)
+ \label{eq:source-weighted-second-moment}
+\end{equation}
+follows by expanding the square, using the classical zero-free-region
+prime number theorem for
+$\sum\Lambda(n)^2/n$ and $\sum\Lambda(n)/n$, and summing proper prime
+powers absolutely.  Also
+$\sum_{n\leq y}(\Lambda(n)-1)^2\ll y\log(2y)$.  Insert
+\eqref{eq:W-square-Euler}, subtract the ranges up to $D$, and absorb the
+fixed support endpoints into $O_W(X\log X)$.
+\end{proof}
+
+\subsection{The same-ray off-diagonal ledger}
+
+\begin{lemma}[Two-target upper sieve]
+\label{lem:two-target-upper-sieve}
+Let $r\ne r'$ lie in $[\alpha X,\beta X]$.  Uniformly for
+$X\leq H\leq X^C$,
+\begin{equation}
+ \begin{aligned}
+ &\sum_hG(h/H)
+ \left|(\Lambda(r+h)-1)(\Lambda(r'+h)-1)\right|\\
+ &\qquad\ll_{C,W,G}
+ H\prod_{\substack{p\mid r-r'\\p>2}}\frac{p-1}{p-2}
+ \ll_{C,W,G}H\log\log(3X).
+ \end{aligned}
+ \label{eq:two-target-upper-sieve}
+\end{equation}
+The same bound holds if either centered target factor is replaced by
+$\Lambda$.
+\end{lemma}
+
+\begin{proof}
+The constant and one-prime terms cost $O_G(H)$.  If both target values are
+prime, the Selberg upper-bound sieve for the two linear forms $h+r$ and
+$h+r'$ gives
+\[
+ \#\{h\asymp_G H:h+r,\ h+r'\ \hbox{prime}\}
+ \ll_G\frac{H}{(\log H)^2}
+ \prod_{\substack{p\mid r-r'\\p>2}}\frac{p-1}{p-2}.
+\]
+Restoring the two logarithmic weights proves the first bound for the
+prime-prime part.  If either target is a proper prime power, the aggregate
+contribution is $O_G(H^{1/2}(\log H)^2)$.
+
+Finally,
+\[
+ \prod_{\substack{p\mid q\\p>2}}\frac{p-1}{p-2}
+ \ll\log\log(3|q|)
+\]
+by the standard maximal-order comparison with the product over the
+smallest primes; here $0<|r-r'|\ll_W X$.  This proves
+\eqref{eq:two-target-upper-sieve}.  See, for example,
+\citet[Chapter~6]{HalberstamRichert1974} for the two-linear-forms upper
+sieve.
+\end{proof}
+
+\begin{lemma}[Same-ray source off-diagonal]
+\label{lem:same-ray-source-ledger}
+For every $D\geq1$,
+\begin{equation}
+ \begin{aligned}
+ \cL_D(X):={}&
+ \sum_{\substack{(a,b)=1}}
+ \sum_{\substack{k\ne\ell\\ak,a\ell>D}}
+ |u(ak)u(a\ell)|\\
+ &\quad\times
+ |W(abk^2/X)W(ab\ell^2/X)|
+ \ll_W X(\log(2X))^2.
+ \end{aligned}
+ \label{eq:same-ray-source-ledger}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For a fixed ray use the set $K_{a,b}$ from
+\cref{prop:fixed-ray-energy-bound} and put
+$x_k=|u(ak)W(abk^2/X)|$.  Then
+\[
+ \sum_{k\ne\ell}x_kx_\ell
+ \leq |K_{a,b}|\sum_kx_k^2
+ \ll_W\sum_{k\in K_{a,b}}k x_k^2
+\]
+by \eqref{eq:ray-cardinality}.  Summing over $b$ and applying
+\eqref{eq:number-of-b-rays} yields
+\[
+ \cL_D(X)
+ \ll_W X\sum_{ak^2\ll_W X}\frac{u(ak)^2}{ak}.
+\]
+Now use \cref{lem:source-ray-square-ledger}.
+\end{proof}
+
+\subsection{The averaged ray-energy theorem}
+
+\begin{theorem}[Averaged-shift ray energy]
+\label{thm:averaged-ray-energy}
+Fix $\eps>0$ and $C\geq1$.  Uniformly for
+\[
+ 1\leq D\leq X^{1-\eps},
+ \qquad X\leq H\leq X^C,
+\]
+one has
+\begin{equation}
+ \begin{aligned}
+ \sum_hG(h/H)\cE_{h,D}(X)
+ ={}&\frac12HX I_0(G)I_2(W)\log H\\
+ &\times\bigl((\log X)^2-(\log D)^2\bigr)\\
+ &+O_{\eps,C,W,G}\!\left(
+ HX(\log(2X))^2\log\log(3X)\right).
+ \end{aligned}
+ \label{eq:averaged-ray-energy}
+\end{equation}
+The same asymptotic holds for $\cE^{\mathrm{raw}}_{h,D}(X)$.
+\end{theorem}
+
+\begin{proof}
+Expand the square in \eqref{eq:ray-energy} and interchange the finite
+sums.  For $k=\ell$, the target argument is $r=abk^2$ and
+\cref{lem:target-second-moment} gives
+\[
+ H I_0(G)\log H\sum_{(a,b)=1}\sum_k
+ u(ak)^2|W(abk^2/X)|^2+O_G(H\cS_D(X)).
+\]
+The double source sum is exactly $\cS_D(X)$: the substitution
+$n=ak,m=bk$ is unique.  Inserting \cref{lem:source-diagonal} produces the
+main term in \eqref{eq:averaged-ray-energy}.  All diagonal errors are
+$O_{\eps,C,W,G}(HX(\log X)^2)$.
+
+For $k\ne\ell$, the two target arguments
+\[
+ r=abk^2,
+ \qquad r'=ab\ell^2
+\]
+are distinct.  Apply \cref{lem:two-target-upper-sieve}, take absolute
+values of the source coefficients, and then use
+\cref{lem:same-ray-source-ledger}.  The total off-diagonal contribution is
+\[
+ \ll_{C,W,G}H\log\log(3X)\,\cL_D(X)
+ \ll_{C,W,G}HX(\log X)^2\log\log(3X).
+\]
+This proves the centered theorem.  For the raw energy, the target
+diagonal $\Lambda^2$ has the same leading term by
+\cref{lem:target-second-moment}, and the same upper-sieve ledger handles
+the off-diagonal.
+\end{proof}
+
+\begin{remark}[Where the saving comes from]
+No cancellation is asserted in an individual same-ray prime correlation.
+The target diagonal contributes $H\log H$, while the absolute
+off-diagonal upper sieve contributes only $H\log\log X$.  The source
+diagonal is of order $X\log^2X$, and the entire source off-diagonal ledger
+has the same order.  The extra logarithm on the target diagonal is the
+sole reason an asymptotic results.
+\end{remark}

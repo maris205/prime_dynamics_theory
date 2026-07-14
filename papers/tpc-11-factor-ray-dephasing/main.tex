@@ -1,0 +1,146 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Factor-Ray Dephasing of a Prime-Target Residual: A Hyperbolic Mellin Large Sieve, Averaged-Shift Energy, and the Intra-Ray Boundary},
+ pdfauthor={Liang Wang},
+ pdfsubject={Continuous Mellin energy laws and exact arithmetic boundaries for a prime-target residual},
+ pdfkeywords={Mellin mean square, Montgomery--Vaughan inequality, shifted primes, Selberg sieve, factor rays, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\arsinh}{\operatorname{arsinh}}
+
+\title{\textbf{Factor-Ray Dephasing of a Prime-Target Residual:}\\
+\textbf{A Hyperbolic Mellin Large Sieve, Averaged-Shift Energy,}\\
+\textbf{and the Intra-Ray Boundary}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Put $u(n)=\Lambda(n)-1$, fix a real-valued
+$W\in C_c^1((0,\infty))$, and consider the large-source-factor transform
+\[
+ \cT_{h,D}(X;t)=
+ \sum_{\substack{n>D\\m\geq1}}
+ u(n)\Lambda(mn+h)W(mn/X)(n/m)^{it}.
+\]
+The target-free form $\cM_D$, obtained by replacing $\Lambda(mn+h)$ by
+$1$, is the first-moment model under a long smooth average of the shift.
+We study the centered transform $\cR_{h,D}=\cT_{h,D}-\cM_D$.
+
+Writing uniquely $n=ak$, $m=bk$, $(a,b)=1$, compresses every equal-ratio
+class into a primitive factor ray.  The resulting frequencies
+$\log(a/b)$ have spacing at least
+\[
+ \delta_X=2\arsinh\!\left(\frac{1}{2\beta X}\right)
+\]
+when $\supp W\subset[\alpha,\beta]$.  The generalized Hilbert inequality
+of Montgomery and Vaughan therefore gives, for every fixed shift and every
+$T\geq1$,
+\[
+ \int_{-T}^{T}|\cR_{h,D}(X;t)|^2dt
+ =2T\cE_{h,D}(X)+O_W(X\cE_{h,D}(X)),
+\]
+where $\cE_{h,D}$ is the exact squared ray energy.  A raywise Cauchy
+ledger proves $\cE_{h,D}\ll X(\log X)^4$.  Consequently every prescribed
+fixed integer shift has mean-square $o(X^2)$ per Mellin
+frequency on bands whose length grows faster than $(\log X)^4$.  This is
+frequency-density cancellation, not a fixed-frequency asymptotic.
+With a normalized Fej\'er kernel, distinct rays are removed exactly once
+$T\delta_X\geq1$.
+
+The ray energy itself becomes arithmetically evaluable after squaring first
+and then averaging the shift.  For nonnegative
+$G\in C_c^1((0,\infty))$, $X\leq H\leq X^C$, and
+$1\leq D\leq X^{1-\eps}$, we prove
+\begin{align*}
+ \sum_hG(h/H)\cE_{h,D}(X)
+ ={}&\frac12HX I_0(G)I_2(W)\log H\\
+ &\times\bigl((\log X)^2-(\log D)^2\bigr)\\
+ &+O\!\left(HX(\log X)^2\log\log(3X)\right).
+\end{align*}
+The diagonal $\Lambda^2$ term supplies the extra logarithm.  Every
+same-ray off-diagonal target correlation is handled only by a two-linear-
+forms Selberg upper sieve and an explicit $O(X\log^2X)$ source-ray ledger.
+This yields a genuine hard-band asymptotic for $T/X\to\infty$ and an exact
+Fej\'er-band asymptotic already at $T\asymp X$.
+
+Finally, a determinant-layer formula identifies the unresolved
+mesoscopic band, and a fixed smooth endpoint selector shows that an
+$o(X^2)$ fixed-shift band error, together with a compatible filtered model
+and $o(X)$ Fourier tails, would recover the $m=1$ Hardy--Littlewood
+functional.  Equal-ratio compression never
+separates the terms $\Lambda(abk^2+h)$ on one ray.  Thus no fixed-shift
+prime-pair asymptotic, twin-prime lower bound, new level of distribution,
+or breach of the parity barrier is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} prime-target residual; Mellin mean square;
+Montgomery--Vaughan inequality; factor rays; averaged shifts; Selberg
+upper-bound sieve; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N13, 11N36; Secondary 11M06,
+42A05.
+
+\input{sections/introduction-scope}
+\input{sections/ray-geometry}
+\input{sections/fixed-shift-dephasing}
+\input{sections/averaged-ray-energy}
+\input{sections/band-corollaries}
+\input{sections/determinant-boundary}
+\input{sections/endpoint-strength}
+\input{sections/computation-conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

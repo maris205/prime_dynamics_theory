@@ -1,0 +1,247 @@
+\section{Exact Fej\'er resolution and hard-band asymptotics}
+\label{sec:band-corollaries}
+
+The sharp interval in \cref{thm:fixed-ray-mean-square} leaves an
+$O(X\cE)$ boundary error.  A kernel whose Fourier transform has compact
+support removes that error exactly.
+
+Define the normalized Fej\'er kernel
+\begin{equation}
+ \kappa(t):=\frac2\pi\left(\frac{\sin(t/2)}t\right)^2,
+ \qquad \kappa(0):=\frac1{2\pi}.
+ \label{eq:normalized-Fejer-kernel}
+\end{equation}
+With the convention
+$\widehat\kappa(\xi)=\int_\R\kappa(t)e^{-it\xi}dt$, one has
+\begin{equation}
+ \widehat\kappa(\xi)=(1-|\xi|)_+,
+ \qquad \int_\R\kappa(t)dt=1.
+ \label{eq:Fejer-transform}
+\end{equation}
+
+\begin{theorem}[Exact factor-ray Parseval identity]
+\label{thm:exact-Fejer-ray-Parseval}
+If $T\delta_X\geq1$, where $\delta_X$ is defined in
+\eqref{eq:exact-ratio-spacing}, then
+\begin{equation}
+ \int_\R\kappa(t/T)|\cR_{h,D}(X;t)|^2dt
+ =T\cE_{h,D}(X).
+ \label{eq:exact-Fejer-ray-Parseval}
+\end{equation}
+The same identity holds for the raw transform and raw ray energy.
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:ray-compression}, expand the square, and use
+\eqref{eq:Fejer-transform}:
+\[
+ \int_\R\kappa(t/T)e^{it(\lambda_\rho-\lambda_{\rho'})}dt
+ =T\widehat\kappa\!\left(T(\lambda_{\rho'}-\lambda_\rho)\right).
+\]
+For distinct rays the argument has absolute value at least
+$T\delta_X\geq1$, so the triangle function vanishes, including at the
+endpoints.  Every diagonal term has multiplier $T$.
+\end{proof}
+
+Thus an effective bandwidth $T\asymp_W X$ exactly resolves all primitive
+factor rays.  It does not resolve different $k$ inside one ray; those terms
+have already been combined into $c_{a,b}$.
+
+\begin{corollary}[Averaged-shift Fej\'er-band asymptotic]
+\label{cor:averaged-Fejer-band}
+Under the hypotheses of \cref{thm:averaged-ray-energy}, suppose also that
+$T\delta_X\geq1$.  Then
+\begin{equation}
+ \begin{aligned}
+ &\sum_hG(h/H)
+ \int_\R\kappa(t/T)|\cT_{h,D}(X;t)-\cM_D(X;t)|^2dt\\
+ &\quad=\frac12THX I_0(G)I_2(W)\log H
+ \bigl((\log X)^2-(\log D)^2\bigr)\\
+ &\qquad\quad+O_{\eps,C,W,G}\!\left(
+ THX(\log(2X))^2\log\log(3X)\right).
+ \end{aligned}
+ \label{eq:averaged-Fejer-band}
+\end{equation}
+If $G\not\equiv0$ and $W\not\equiv0$, this is an asymptotic throughout
+the stated $D,H$ range.
+\end{corollary}
+
+\begin{proof}
+Sum \eqref{eq:exact-Fejer-ray-Parseval} with weight $G(h/H)$ and insert
+\eqref{eq:averaged-ray-energy}.  Since
+$D\leq X^{1-\eps}$ and $H\geq X$, the main term is
+$\gg_{\eps,G,W}THX(\log X)^3$ when $I_0(G)I_2(W)>0$, whereas the error is
+smaller by a factor $O(\log\log X/\log X)$.
+\end{proof}
+
+\begin{corollary}[Averaged-shift hard-band formula]
+\label{cor:averaged-hard-band}
+Under the hypotheses of \cref{thm:averaged-ray-energy}, for every
+$T\geq1$,
+\begin{equation}
+ \begin{aligned}
+ &\sum_hG(h/H)
+ \int_{-T}^{T}|\cT_{h,D}(X;t)-\cM_D(X;t)|^2dt\\
+ &\quad=THX I_0(G)I_2(W)\log H
+ \bigl((\log X)^2-(\log D)^2\bigr)\\
+ &\qquad\quad+O_{\eps,C,W,G}\!\left(
+ THX(\log(2X))^2\log\log(3X)
+ +HX^2(\log(2X))^3\right).
+ \end{aligned}
+ \label{eq:averaged-hard-band}
+\end{equation}
+Consequently \eqref{eq:averaged-hard-band} is an asymptotic whenever
+$T/X\to\infty$.
+\end{corollary}
+
+\begin{proof}
+Sum \eqref{eq:hard-band-ray-law} over $h$.  Twice the leading term in
+\eqref{eq:averaged-ray-energy} gives the displayed main term.  The first
+error is twice $T$ times the averaged ray-energy error.  For the
+Montgomery--Vaughan boundary error, \cref{thm:averaged-ray-energy} and its
+proof give
+\[
+ \sum_hG(h/H)\cE_{h,D}(X)\ll_{\eps,C,W,G}HX(\log X)^3.
+\]
+Multiplication by $X$ gives the second error in
+\eqref{eq:averaged-hard-band}.  Relative to the main term, the two errors
+are respectively $O(\log\log X/\log X)$ and $O(X/T)$.
+\end{proof}
+
+\begin{corollary}[The TPC--10 truncation]
+\label{cor:TPC10-truncation}
+Let
+\[
+ D=X^{1/2}(\log X)^{-B}
+\]
+with fixed $B>0$.  Then
+\begin{equation}
+ (\log X)^2-(\log D)^2
+ =\left(\frac34+o(1)\right)(\log X)^2.
+ \label{eq:three-quarter-source-energy}
+\end{equation}
+Thus the leading coefficient contributed by the source cutoff is
+$3/8$ in \eqref{eq:averaged-Fejer-band} and $3/4$ in
+\eqref{eq:averaged-hard-band}, before the common factors
+$THX I_0(G)I_2(W)\log H(\log X)^2$ are restored.
+\end{corollary}
+
+\begin{remark}[Raw target]
+By the raw part of \cref{thm:averaged-ray-energy}, both band corollaries
+remain valid with $\cT_{h,D}$ in place of $\cT_{h,D}-\cM_D$.  Centering is
+used because $\cM_D$ is the long-shift first-moment model, not because it
+changes the leading second-moment scale.
+\end{remark}
+
+\subsection{A parity-conditioned even-shift ensemble}
+
+The all-shift average above is not forced by the proof.  To isolate the
+local parity factor without selecting an individual shift, define
+\begin{equation}
+ \cM_D^{(2)}(X;t)
+ :=2\sum_{\substack{n>D,\ m\geq1\\2\nmid mn}}
+ u(n)W(mn/X)(n/m)^{it}
+ \label{eq:even-shift-model}
+\end{equation}
+For even $h$, put $\cR^{(2)}_{h,D}=\cT_{h,D}-\cM_D^{(2)}$ and define
+\begin{equation}
+ \eta_r^{(2)}(h):=\Lambda(r+h)-2\one_{2\nmid r}.
+ \label{eq:even-target-residual}
+\end{equation}
+Then the ray coefficient of $\cR^{(2)}_{h,D}$ is
+\begin{equation}
+ c^{(2)}_{a,b}(h;X,D)
+ =\sum_{\substack{k\geq1\\ak>D}}
+ u(ak)\eta_{abk^2}^{(2)}(h)W(abk^2/X),
+ \label{eq:even-ray-coefficient}
+\end{equation}
+and $\cE^{(2)}_{h,D}$ denotes the sum of its squared moduli.  The factor
+$2$ in \eqref{eq:even-shift-model} is fixed by the first-moment identity
+\begin{equation}
+ \frac2H\sum_{h\equiv0\ (2)}G(h/H)\cT_{h,D}(X;t)
+ =I_0(G)\cM_D^{(2)}(X;t)
+ +O_{A,C,W,G}\!\left(X(\log X)^{-A}\right),
+ \label{eq:even-first-moment}
+\end{equation}
+uniformly for real $t$ and $X\leq H\leq X^C$.
+
+\begin{proposition}[Even-shift ensemble]
+\label{prop:even-shift-ensemble}
+Under the hypotheses of \cref{thm:averaged-ray-energy}, the ray energy
+$\cE^{(2)}_{h,D}$ of $\cR^{(2)}_{h,D}$ satisfies
+\begin{equation}
+ \begin{aligned}
+ \sum_{h\equiv0\ (2)}G(h/H)\cE^{(2)}_{h,D}(X)
+ ={}&\frac14HX I_0(G)I_2(W)\log H\\
+ &\times\bigl((\log X)^2-(\log D)^2\bigr)\\
+ &+O_{\eps,C,W,G}\!\left(
+ HX(\log X)^2\log\log(3X)\right).
+ \end{aligned}
+ \label{eq:even-shift-ray-energy}
+\end{equation}
+Consequently the hard-band leading coefficient is one half of that in
+\eqref{eq:averaged-hard-band}, and the Fej\'er-band leading coefficient is
+one half of that in \eqref{eq:averaged-Fejer-band}.
+\end{proposition}
+
+\begin{proof}
+For $r\in[\alpha X,\beta X]$, the prime number theorem modulo $2$ gives
+\begin{equation}
+ \sum_{h\equiv0\ (2)}G(h/H)\Lambda(r+h)
+ =H I_0(G)\one_{2\nmid r}+O_A(H(\log H)^{-A}).
+ \label{eq:even-target-first-moment}
+\end{equation}
+Summing this estimate against the source rows proves
+\eqref{eq:even-first-moment}.  The same argument for $\Lambda^2$, followed
+by expansion of \eqref{eq:even-target-residual}, gives
+\begin{equation}
+ \sum_{h\equiv0\ (2)}G(h/H)|\eta_r^{(2)}(h)|^2
+ =H I_0(G)\log H\,\one_{2\nmid r}+O_{C,W,G}(H).
+ \label{eq:even-target-second-moment}
+\end{equation}
+Indeed, for odd $r$ the conditional density of primes in the odd residue
+class compensates for sampling half of the shifts.  For even $r$, the
+target is even and $\Lambda(r+h)$ is supported only on powers of two, so
+its contribution is absorbed by the error.
+
+For distinct $r,r'\in[\alpha X,\beta X]$, one also has
+\begin{equation}
+ \sum_{h\equiv0\ (2)}G(h/H)
+ |\eta_r^{(2)}(h)\eta_{r'}^{(2)}(h)|
+ \ll_{C,W,G}H\log\log(3X).
+ \label{eq:even-two-target-upper-sieve}
+\end{equation}
+If $r$ and $r'$ are odd, write $h=2j$ and apply the two-linear-forms
+Selberg upper sieve to $2j+r$ and $2j+r'$.  If either is even, its target
+factor is supported on powers of two; the resulting polylogarithmic
+contribution is smaller than the displayed bound.  This also covers the
+mixed-parity rows, which are present in \eqref{eq:even-ray-coefficient}.
+
+The odd-product source diagonal is
+\begin{equation}
+ \sum_{\substack{n>D,\ m\geq1\\2\nmid mn}}
+ u(n)^2|W(mn/X)|^2
+ =\frac14X I_2(W)
+ \bigl((\log X)^2-(\log D)^2\bigr)+O_W(X\log X).
+ \label{eq:even-source-diagonal}
+\end{equation}
+Indeed, the odd $m$ sum contributes one half of the continuous density,
+whereas removing the prime $2$ does not change the leading
+$\frac12\log^2 y$ term in the weighted $u(n)^2$ sum over odd $n$.
+
+Expand the squared ray coefficients.  Equations
+\eqref{eq:even-target-second-moment} and
+\eqref{eq:even-source-diagonal} give the displayed main term; even target
+diagonal rows contribute only $O(H\cS_D(X))$.  For $k\ne\ell$, apply
+\eqref{eq:even-two-target-upper-sieve} and then the full source ledger
+\eqref{eq:same-ray-source-ledger}.  The resulting error is
+$O(HX(\log X)^2\log\log(3X))$, proving
+\eqref{eq:even-shift-ray-energy}.  The band statements follow from the
+same factor-ray identities.
+\end{proof}
+
+\begin{remark}[No individual-shift selection]
+The ensemble in \cref{prop:even-shift-ensemble} contains only admissible
+parity shifts, but its exceptional behavior may still be concentrated at
+any prescribed even shift.  No individual shift is selected.
+\end{remark}

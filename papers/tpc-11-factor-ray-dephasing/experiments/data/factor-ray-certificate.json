@@ -1,0 +1,174 @@
+{
+  "all_checks_passed": true,
+  "checks": {
+    "determinant_counts_monotone": true,
+    "determinant_layer_bound": true,
+    "endpoint_selector_geometry": true,
+    "fejer_exact_diagonal": true,
+    "hard_kernel_compression": true,
+    "hyperbolic_spacing": true,
+    "ray_compression": true
+  },
+  "counts": {
+    "factor_pairs": 397,
+    "primitive_rays": 365
+  },
+  "determinant_layers": [
+    {
+      "T": 8.48528137423857,
+      "determinant_bound_verified": true,
+      "distinct_nonzero_determinants": 17,
+      "largest_allowed_determinant": 17,
+      "layer_counts": {
+        "1": 984,
+        "10": 200,
+        "11": 200,
+        "12": 166,
+        "13": 136,
+        "14": 88,
+        "15": 76,
+        "16": 52,
+        "17": 22,
+        "2": 496,
+        "3": 570,
+        "4": 416,
+        "5": 496,
+        "6": 260,
+        "7": 396,
+        "8": 276,
+        "9": 258
+      },
+      "support_allowed_ordered_off_diagonal_pairs": 5092,
+      "theoretical_determinant_bound": 19.102933553801314
+    },
+    {
+      "T": 36.0,
+      "determinant_bound_verified": true,
+      "distinct_nonzero_determinants": 4,
+      "largest_allowed_determinant": 4,
+      "layer_counts": {
+        "1": 596,
+        "2": 222,
+        "3": 136,
+        "4": 36
+      },
+      "support_allowed_ordered_off_diagonal_pairs": 990,
+      "theoretical_determinant_bound": 4.50014467732134
+    },
+    {
+      "T": 72,
+      "determinant_bound_verified": true,
+      "distinct_nonzero_determinants": 2,
+      "largest_allowed_determinant": 2,
+      "layer_counts": {
+        "1": 328,
+        "2": 32
+      },
+      "support_allowed_ordered_off_diagonal_pairs": 360,
+      "theoretical_determinant_bound": 2.2500180845343474
+    },
+    {
+      "T": 144.0,
+      "determinant_bound_verified": true,
+      "distinct_nonzero_determinants": 1,
+      "largest_allowed_determinant": 1,
+      "layer_counts": {
+        "1": 34
+      },
+      "support_allowed_ordered_off_diagonal_pairs": 34,
+      "theoretical_determinant_bound": 1.1250022605627052
+    }
+  ],
+  "endpoint_geometry": {
+    "D_less_than_alpha_X": true,
+    "beta_less_than_4alpha": true,
+    "m_at_least_2_rows": 290,
+    "m_equals_1_rows": 107,
+    "rejection_boundary_violations": 0,
+    "selected_window_violations": 0,
+    "selector_verified": true
+  },
+  "fejer_band": {
+    "T": 168.5244548272373,
+    "diagonal_form": 189798.064331297,
+    "full_form": 189798.06433129706,
+    "relative_error": 3.0668205768349956e-16,
+    "surviving_ordered_off_diagonal_pairs": 0
+  },
+  "hard_band": {
+    "T": 7.25,
+    "pair_form": 10472.284995619215,
+    "ray_form": 10472.284995619215,
+    "relative_error": 0.0
+  },
+  "parameters": {
+    "D": 4,
+    "X": 72,
+    "alpha": 0.75,
+    "beta": 2.25,
+    "h": 2,
+    "weight": "squared polynomial bump on (alpha,beta)"
+  },
+  "payload_sha256": "99ab3e708655c8c60be4fa0354c2fb324239b1b4f2c3e9388f3655ee2b404c0e",
+  "scope": "Finite algebraic regression certificate only; no prime-pair asymptotic or twin-prime inference.",
+  "spacing": {
+    "bound_verified": true,
+    "minimizing_rays": [
+      "160",
+      "161"
+    ],
+    "observed_min_gap": 0.006230549750636527,
+    "ratio": 1.0093506621064443,
+    "theoretical_delta_X": 0.0061728297058168125
+  },
+  "transform_checks": [
+    {
+      "compressed": [
+        71.36876128228471,
+        0.0
+      ],
+      "direct": [
+        71.36876128228471,
+        0.0
+      ],
+      "relative_error": 0.0,
+      "t": 0.0
+    },
+    {
+      "compressed": [
+        36.33486673701761,
+        34.67751243736125
+      ],
+      "direct": [
+        36.33486673701761,
+        34.67751243736125
+      ],
+      "relative_error": 0.0,
+      "t": 0.375
+    },
+    {
+      "compressed": [
+        2.3691447657505087,
+        -14.31423814205424
+      ],
+      "direct": [
+        2.3691447657505087,
+        -14.31423814205424
+      ],
+      "relative_error": 0.0,
+      "t": 1.25
+    },
+    {
+      "compressed": [
+        4.793544271875241,
+        -0.7209808656225323
+      ],
+      "direct": [
+        4.793544271875241,
+        -0.7209808656225322
+      ],
+      "relative_error": 2.2903185370526414e-17,
+      "t": 4.5
+    }
+  ]
+}

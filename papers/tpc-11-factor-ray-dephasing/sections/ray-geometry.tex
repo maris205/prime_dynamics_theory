@@ -1,0 +1,114 @@
+\section{Primitive factor rays and logarithmic separation}
+\label{sec:ray-geometry}
+
+The Mellin phase depends only on the reduced ratio of the two factors.
+This elementary observation is the structural starting point of the paper.
+
+\begin{proposition}[Exact factor-ray compression]
+\label{prop:ray-compression}
+For every $m,n\geq1$, write
+\[
+ k=(m,n),\qquad a=n/k,\qquad b=m/k.
+\]
+Then $(a,b)=1$, the representation $n=ak$, $m=bk$ is unique, and
+\begin{equation}
+ \cR_{h,D}(X;t)
+ =\sum_{\substack{a,b\geq1\\(a,b)=1}}
+ c_{a,b}(h;X,D)(a/b)^{it},
+ \label{eq:ray-compression}
+\end{equation}
+where
+\begin{equation}
+ c_{a,b}(h;X,D)
+ :=\sum_{\substack{k\geq1\\ak>D}}
+ u(ak)\bigl(\Lambda(abk^2+h)-1\bigr)
+ W(abk^2/X).
+ \label{eq:centered-ray-coefficient}
+\end{equation}
+Only rays with $ab\leq\beta X$ occur.  The raw transform
+$\cT_{h,D}$ has the same decomposition with the target factor in
+\eqref{eq:centered-ray-coefficient} replaced by $\Lambda(abk^2+h)$.
+\end{proposition}
+
+\begin{proof}
+The greatest-common-divisor decomposition is unique, and
+\[
+ mn=abk^2,\qquad \frac{n}{m}=\frac{a}{b}.
+\]
+Substitution in \eqref{eq:intro-centered-tail} gives
+\eqref{eq:ray-compression}.  If a term is nonzero, then
+$abk^2/X\in\supp W\subset[\alpha,\beta]$, hence $ab\leq\beta X$.
+\end{proof}
+
+\begin{definition}[Ray energy]
+\label{def:ray-energy}
+The centered factor-ray energy is
+\begin{equation}
+ \cE_{h,D}(X)
+ :=\sum_{\substack{a,b\geq1\\(a,b)=1}}
+ |c_{a,b}(h;X,D)|^2.
+ \label{eq:ray-energy}
+\end{equation}
+The analogous raw energy, with $\Lambda$ in place of $\Lambda-1$ at the
+target, is denoted by $\cE^{\mathrm{raw}}_{h,D}(X)$.
+\end{definition}
+
+Equal ratios have now been combined before any mean-square theorem is
+applied.  This is indispensable: separate pairs on one ray have exactly
+the same Mellin frequency and cannot be made orthogonal by increasing the
+length of the frequency interval.
+
+\begin{lemma}[Hyperbolic log-ratio spacing]
+\label{lem:ratio-spacing}
+Let $(a,b)=(c,d)=1$, let $ab,cd\leq\beta X$, and suppose
+$(a,b)\ne(c,d)$.  Then
+\begin{equation}
+ \left|\log\frac{a}{b}-\log\frac{c}{d}\right|
+ \geq
+ \delta_X,
+ \qquad
+ \delta_X:=2\arsinh\!\left(\frac{1}{2\beta X}\right).
+ \label{eq:exact-ratio-spacing}
+\end{equation}
+In particular, $\delta_X\asymp_W X^{-1}$.
+\end{lemma}
+
+\begin{proof}
+Put $A=ad$ and $B=bc$.  Since the two fractions are distinct,
+$|A-B|\geq1$.  Moreover,
+\[
+ AB=abcd=(ab)(cd)\leq(\beta X)^2.
+\]
+The exact identity
+\[
+ 2\sinh\!\left(\frac12\left|\log\frac{A}{B}\right|\right)
+ =\frac{|A-B|}{\sqrt{AB}}
+\]
+therefore gives
+\[
+ 2\sinh\!\left(\frac12\left|\log\frac{a/b}{c/d}\right|\right)
+ \geq\frac1{\beta X}.
+\]
+Applying the increasing inverse hyperbolic sine proves
+\eqref{eq:exact-ratio-spacing}.
+\end{proof}
+
+\begin{remark}[Why the scale is $X^{-1}$ rather than $X^{-2}$]
+The cross-products $ad$ and $bc$ could individually be large, but their
+product is at most $(\beta X)^2$.  Near equality they are therefore both
+$O_W(X)$, and the integer determinant $ad-bc$ supplies a gap of order
+$X^{-1}$.  Ignoring the hyperbolic constraints $ab,cd\ll X$ would lose
+this improvement.
+\end{remark}
+
+\begin{remark}[Near-sharp pairs]
+The rays $(N,1)$ and $(N-1,1)$ have determinant one and log gap
+\[
+ \log\frac{N}{N-1}=\frac1N+O(N^{-2}).
+\]
+Taking $N\asymp X$ shows that no uniform separation scale
+larger than a constant multiple of $X^{-1}$ is available for arbitrary
+hyperbolic coefficients.  Thus the $X^{-1}$ lower-bound scale is sharp up
+to constants; equivalently, no uniform resolution time $o(X)$ is possible.
+This threshold is geometric, before any prime weight is inserted.
+\end{remark}

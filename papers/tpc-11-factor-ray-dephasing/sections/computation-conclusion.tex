@@ -1,0 +1,87 @@
+\section{Finite certificate and reproducibility}
+\label{sec:computation}
+
+The proofs above are analytic.  A deterministic finite certificate is
+included only to test the exact algebra that precedes the estimates.  It
+does not test a prime-pair asymptotic.  The script
+\texttt{experiments/factor\_ray\_certificate.py} performs the following
+checks for a documented finite hyperbolic support.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item It enumerates every supported factor pair $(n,m)$ and groups it by
+ the reduced fraction $(a,b)=(n/(n,m),m/(n,m))$.  At several real
+ frequencies it compares the original factor-pair sum with the compressed
+ ray sum.
+
+ \item It computes all adjacent gaps between the ordered ray frequencies
+ (and hence their global minimum), verifies the exact hyperbolic lower
+ bound in \eqref{eq:exact-ratio-spacing}, and records the minimizing rays.
+
+ \item It evaluates the hard-band quadratic form in two ways: directly
+ from the factor pairs and from the compressed ray coefficients.  It also
+ verifies that the Fej\'er multiplier is diagonal once the finite frequency
+ bandwidth exceeds the reciprocal of the actual minimum ray gap.
+
+ \item It counts the determinant layers permitted by the compact-Fourier
+ support condition at a sequence of resolutions and verifies the endpoint classification
+ $m=1$ versus $m\geq2$ under \eqref{eq:endpoint-support-hypothesis}.
+\end{enumerate}
+
+The companion unit test repeats the certificate at smaller parameter
+values and uses exact rational arithmetic for the ray labels and
+determinants.  Floating-point comparisons occur only in exponential and
+logarithmic evaluations and are guarded by reported tolerances.  The
+machine-readable output is
+\texttt{experiments/data/factor-ray-certificate.json}.  Reproduction
+requires only the Python standard library:
+\begin{verbatim}
+python experiments/factor_ray_certificate.py
+python -m unittest experiments.test_factor_ray_certificate
+\end{verbatim}
+The saved output is a regression certificate for the identities, not
+evidence for the fixed-$h$ statements explicitly excluded in
+\cref{sec:introduction}.
+
+\section{Conclusion and next boundary}
+\label{sec:conclusion}
+
+This paper closes one well-defined step in the factor-scale program.  A
+complete large-factor prime-target residual is converted into a separated
+exponential polynomial by grouping factor pairs along primitive ratio
+rays.  At fixed shift this yields a hyperbolic Mellin large-sieve law, an
+$X\log^4X$ ray-energy upper bound, density-one cancellation in long
+frequency intervals, and exact Fej\'er diagonalization at the geometric
+resolution $T\asymp X$.  None of these conclusions evaluates a prescribed
+frequency.
+
+Squaring first and averaging $h$ over a window of length at least $X$
+adds arithmetic content.  The source diagonal admits an explicit
+asymptotic evaluation;
+the target square contributes $\log H$; and a two-linear-forms upper sieve
+is sufficient for every same-ray off-diagonal.  The result is an
+unconditional averaged-shift ray-energy asymptotic and its hard- and
+smooth-band consequences.  The even-shift version records the
+parity-conditioned local factor without selecting any individual even
+shift.
+
+The remaining fixed-shift obstruction is now explicit rather than hidden
+in a generic appeal to the parity problem.  Spectral separation removes
+different reduced ratios but leaves all radial indices $k$ coherent.
+Their coefficients contain quadratic target correlations
+$\Lambda(abk^2+h)\Lambda(ab\ell^2+h)$.  In the mesoscopic band, additional
+interactions are organized by the determinant $ad-bc$.  At the factor
+endpoint, a single smooth coherent functional recovers the weighted
+Hardy--Littlewood quantity of \citet{HardyLittlewood1923}; hence an
+absolute $o(X^2)$ fixed-shift band approximation, together with a
+compatible filtered model and $o(X)$ tails, would already have substantial
+prime-pair content.
+
+The next honest target is therefore not to assert a fixed-$h$ diagonal
+formula.  It is to find cancellation in one controlled weakening of the
+determinant-layer or intra-ray forms: a shorter shift average, a balanced
+ray sector, or an average over a bounded set of determinant layers.  Any
+such theorem must be compared with the endpoint strength test before it is
+interpreted arithmetically.  The classical sieve framework described by
+\citet{IwaniecKowalski2004} remains the relevant boundary: no twin-prime
+lower bound, Hardy--Littlewood asymptotic at $h=2$, or violation of sieve
+parity is obtained here.

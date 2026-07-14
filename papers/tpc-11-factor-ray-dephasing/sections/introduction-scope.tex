@@ -1,0 +1,164 @@
+\section{Introduction and claim ledger}
+\label{sec:introduction}
+
+The factor-scale coordinate introduced in TPC--9 and TPC--10 records a
+factorization $r=mn$ by
+\[
+ u_{m,n}=\log(n/m).
+\]
+At frequency zero, summing over all divisors gives the exact collapse
+\[
+ \sum_{n\mid r}(\Lambda(n)-1)=\log r-\tau(r),
+\]
+which leads to a fixed-shift Titchmarsh evaluation
+\citep{AssingBlomerLi2021,WangTPC9}.  TPC--10 proved coarse two-sided
+factor localization and arbitrary fixed smooth localization on the Type~I
+side.  It also showed that finitely many Mellin coordinates do not stably
+determine a local factor-scale window, and proposed a continuum-band mean
+square as the next analytic target \citep{WangTPC10}.
+
+The present paper treats that target in two different quantifier regimes.
+Let $X\geq2$, $h\in\Z$, and $D\geq1$.  Fix throughout
+\begin{equation}
+ u(n):=\Lambda(n)-1,
+ \qquad W\in C_c^1((0,\infty);\R),
+ \qquad \supp W\subset[\alpha,\beta]
+ \label{eq:intro-basic-data}
+\end{equation}
+with $0<\alpha<\beta<\infty$.  We extend $\Lambda(q)$ by zero for
+$q\leq0$.  For any integrable function $F$ on $(0,\infty)$, put
+\begin{equation}
+ I_0(F):=\int_0^\infty F(v)\,dv,
+ \qquad
+ I_2(F):=\int_0^\infty |F(v)|^2\,dv.
+ \label{eq:moment-functionals}
+\end{equation}
+All asymptotic statements are taken as $X\to\infty$; parameters declared
+fixed in a theorem are held fixed, while $D,H$, and $T$ may vary in the
+displayed ranges.
+Define
+\begin{align}
+ \cT_{h,D}(X;t)
+ &:={}
+ \sum_{\substack{n>D\\m\geq1}}
+ u(n)\Lambda(mn+h)W(mn/X)(n/m)^{it},
+ \label{eq:intro-raw-tail}\\
+ \cM_D(X;t)
+ &:={}
+ \sum_{\substack{n>D\\m\geq1}}
+ u(n)W(mn/X)(n/m)^{it},
+ \label{eq:intro-source-model}\\
+ \cR_{h,D}(X;t)
+ &:={}\cT_{h,D}(X;t)-\cM_D(X;t).
+ \label{eq:intro-centered-tail}
+\end{align}
+Thus $\cR_{h,D}$ is obtained by replacing the target factor
+$\Lambda(mn+h)$ by $\Lambda(mn+h)-1$.  The subtraction is algebraic for
+every fixed $h$.  It becomes a genuine first-moment model only after the
+long shift average proved in \cref{prop:first-moment-model}.
+
+\subsection{What is proved}
+
+There are four main outputs.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item Every factor pair admits a unique representation
+ \[
+  n=ak,\qquad m=bk,\qquad (a,b)=1.
+ \]
+ Equal ratios are thereby compressed into one primitive ray $(a,b)$.
+ Distinct ray frequencies $\log(a/b)$ have spacing $\gg_W X^{-1}$.
+ Applying the continuous mean-value theorem of
+ \citet{MontgomeryVaughan1974} gives an exact fixed-shift diagonal law up
+ to an $O(X)$ resolution error.
+
+ \item The ray energy has the unconditional fixed-shift bound
+ \[
+  \cE_{h,D}(X)\ll_{C,W}X(\log X)^4
+  \qquad (|h|\leq X^C).
+ \]
+ Hence a band of length $T\gg(\log X)^4$ gives $o(X)$ cancellation in
+ root-mean-square per frequency, for every prescribed shift.  This does
+ not evaluate any specified Mellin frequency.
+
+ \item After the error is squared, a smooth average over shifts
+ $h\asymp H$, $H\geq X$, permits a full arithmetic evaluation of the ray
+ energy.  The $k=\ell$ target diagonal has size $H\log H$.  Same-ray
+ terms $k\ne\ell$ require prime-pair upper bounds, but not prime-pair
+ asymptotics: a Selberg upper sieve costs only $H\log\log X$, and a
+ source-ray ledger sums their coefficients to $O_W(X\log^2X)$.  The
+ diagonal therefore wins by one logarithm.
+
+ \item A compact-Fourier-support kernel resolves the factor rays exactly
+ at the natural threshold $T\asymp X$.  Below that threshold, the
+ surviving interactions are indexed by the integer determinant
+ $ad-bc$.  At the opposite endpoint, a fixed smooth scale window can
+ select $m=1$ exactly on every product band of multiplicative width less
+ than four.  This gives a quantitative $o(X^2)$ strength threshold for
+ any fixed-shift continuum-band model that could imply the corresponding
+ Hardy--Littlewood functional.
+\end{enumerate}
+
+The generalized Hilbert inequality is the only input in the fixed-shift
+spectral theorem.  The averaged-shift energy theorem additionally uses
+the prime number theorem and a standard two-linear-forms Selberg upper
+sieve.  It does not import an averaged Hardy--Littlewood asymptotic.
+For comparison, Theorem~1.3(i) of
+\citet{MatomakiRadziwillTao2019} evaluates two-point prime correlations for
+almost all shifts in the substantially shorter range
+$X^{8/33+\eps}\leq H\leq X^{1-\eps}$; TPC--7 already transferred that
+result to a different complete defect \citep{WangTPC7}.  The later
+higher-uniformity theorem of
+\citet[Theorem~1.5]{MatomakiRadziwillShaoTaoTeravainen2026} treats higher
+orders while retaining the earlier two-point input.  Our theorem instead
+evaluates a continuum of Mellin frequencies after a longer second-moment
+shift average.
+
+\subsection{What is not proved}
+
+The order of averaging is essential.  We first form
+$|\cR_{h,D}(X;t)|^2$ and only then average $h$.  A coherent average of
+$\cR_{h,D}$ before squaring is much easier and says nothing about a
+typical shift.  Likewise, an average over Mellin frequencies does not
+select $t=0$ or any other prescribed frequency.
+
+On one primitive ray, the target arguments are
+\[
+ abk^2+h.
+\]
+No amount of separation between distinct values of $a/b$ decorrelates
+different $k$ on the same ray.  In particular, the ray $(1,1)$ already
+contains values of $k^2+h$, while the factor endpoint $b=1$, $k=1$
+contains the fixed-shift prime-pair functional.  We neither estimate these
+objects at a prescribed $h$ nor assert that such an estimate is
+impossible.  No twin-prime lower bound, fixed-shift Hardy--Littlewood
+asymptotic, new Type~II estimate, new distribution level, or parity-barrier
+breakthrough follows.
+
+For later reference, the logical ledger is displayed in
+\cref{tab:intro-ledger}.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{p{0.27\textwidth}p{0.33\textwidth}p{0.31\textwidth}}
+\toprule
+Input & Proved output & Not obtained\\
+\midrule
+Reduced factor ratios + Montgomery--Vaughan
+ & Fixed-$h$ continuum mean square and exact ray resolution
+ & Arithmetic evaluation of one fixed-$h$ ray energy\\
+Long smooth shift average + PNT + upper sieve
+ & Explicit averaged ray-energy and band asymptotics
+ & Any prescribed individual shift\\
+Compact-Fourier kernel
+ & Exact removal of distinct rays at $T\asymp X$
+ & Separation of different $k$ on one ray\\
+Endpoint scale selector
+ & Exact $m=1$ reduction and an $L^2$ strength threshold
+ & The Hardy--Littlewood value of that endpoint\\
+\bottomrule
+\end{tabular}
+\caption{Every implication used in the paper is one-way.}
+\label{tab:intro-ledger}
+\end{table}

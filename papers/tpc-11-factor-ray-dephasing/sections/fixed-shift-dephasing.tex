@@ -1,0 +1,190 @@
+\section{Fixed-shift continuum dephasing}
+\label{sec:fixed-shift}
+
+We first keep the shift completely prescribed.  The only cancellation in
+this section comes from integration in the Mellin frequency.
+
+\begin{theorem}[Fixed-shift factor-ray mean square]
+\label{thm:fixed-ray-mean-square}
+Let $I\subset\R$ be any bounded interval.  Then
+\begin{equation}
+ \int_I|\cR_{h,D}(X;t)|^2dt
+ =|I|\cE_{h,D}(X)+O_W\!\left(X\cE_{h,D}(X)\right).
+ \label{eq:general-interval-ray-law}
+\end{equation}
+In particular,
+\begin{equation}
+ \int_{-T}^{T}|\cR_{h,D}(X;t)|^2dt
+ =2T\cE_{h,D}(X)+O_W\!\left(X\cE_{h,D}(X)\right).
+ \label{eq:hard-band-ray-law}
+\end{equation}
+The same statements hold for $\cT_{h,D}$ and
+$\cE^{\mathrm{raw}}_{h,D}$.
+\end{theorem}
+
+\begin{proof}
+By \cref{prop:ray-compression}, the centered transform is an exponential
+polynomial with coefficients $c_{a,b}$ and distinct real frequencies
+$\lambda_{a,b}=\log(a/b)$.  The frequencies are $\delta_X$-separated by
+\cref{lem:ratio-spacing}.  Corollary~2, equations~(1.8)--(1.9), of the
+generalized Hilbert inequality of \citet{MontgomeryVaughan1974} gives
+\[
+ \int_I\left|\sum_\rho c_\rho e^{it\lambda_\rho}\right|^2dt
+ =|I|\sum_\rho|c_\rho|^2
+ +O\!\left(\delta_X^{-1}\sum_\rho|c_\rho|^2\right).
+\]
+Translation of $I$ only modulates the coefficients and does not change
+their squared norm.  Since $\delta_X^{-1}\ll_W X$, this is
+\eqref{eq:general-interval-ray-law}.  The raw form has the same frequency
+set.
+\end{proof}
+
+The arithmetic coefficients have a substantially better energy bound than
+one obtains by squaring the number of factor pairs.
+
+\begin{lemma}[A source-ray square ledger]
+\label{lem:source-ray-square-ledger}
+Uniformly for $Y\geq2$,
+\begin{equation}
+ \sum_{ak^2\leq Y}\frac{(\Lambda(ak)-1)^2}{ak}
+ \ll (\log(2Y))^2.
+ \label{eq:source-ray-square-ledger}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Use $(\Lambda-1)^2\leq2(1+\Lambda^2)$.  The contribution of $1$ is
+\[
+ \sum_{k\leq\sqrt Y}\frac1k
+ \sum_{a\leq Y/k^2}\frac1a
+ \ll(\log(2Y))^2.
+\]
+If $\Lambda(ak)\ne0$, write $ak=p^j$.  Every representation has
+$k=p^\ell$, $a=p^{j-\ell}$, and the extra constraint is
+$p^{j+\ell}\leq Y$.  Dropping that constraint except for $p^j\leq Y$
+gives
+\[
+ \sum_{p^j\leq Y}(j+1)\frac{(\log p)^2}{p^j}
+ \ll(\log(2Y))^2.
+\]
+The $j=1$ part has this order by partial summation and the Chebyshev
+bounds; the sum over $j\geq2$ is bounded.
+\end{proof}
+
+\begin{proposition}[Uniform fixed-shift energy bound]
+\label{prop:fixed-ray-energy-bound}
+Fix $C\geq1$.  Uniformly for $|h|\leq X^C$ and every $D\geq1$,
+\begin{equation}
+ \cE_{h,D}(X)+\cE^{\mathrm{raw}}_{h,D}(X)
+ \ll_{C,W}X(\log(2X))^4.
+ \label{eq:fixed-ray-energy-bound}
+\end{equation}
+Consequently,
+\begin{equation}
+ \int_I|\cR_{h,D}(X;t)|^2dt
+ \ll_{C,W}(|I|+X)X(\log(2X))^4.
+ \label{eq:fixed-continuum-upper-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For a ray $(a,b)$ let
+\[
+ K_{a,b}:=\{k\geq1:ak>D,\ abk^2/X\in\supp W\}.
+\]
+The support interval has fixed multiplicative width.  Hence, for every
+$k\in K_{a,b}$,
+\begin{equation}
+ |K_{a,b}|\ll_W k.
+ \label{eq:ray-cardinality}
+\end{equation}
+Cauchy's inequality and $|\Lambda(q)-1|\ll_C\log(2X)$ for the target
+arguments in question give
+\[
+ |c_{a,b}|^2
+ \ll_{C,W}(\log(2X))^2
+ \sum_{k\in K_{a,b}}k\,u(ak)^2|W(abk^2/X)|^2.
+\]
+For fixed $a,k$, the number of $b$ in the support is
+\begin{equation}
+ \ll_W\frac{X}{ak^2}.
+ \label{eq:number-of-b-rays}
+\end{equation}
+The possible additive $1$ is absorbed because nonemptiness implies
+$ak^2\ll_W X$.  Summing first over $b$ therefore gives
+\[
+ \cE_{h,D}(X)
+ \ll_{C,W}X(\log(2X))^2
+ \sum_{ak^2\ll_W X}\frac{u(ak)^2}{ak}.
+\]
+Apply \cref{lem:source-ray-square-ledger}.  The raw target obeys the same
+pointwise bound.  Finally insert \eqref{eq:fixed-ray-energy-bound} into
+\cref{thm:fixed-ray-mean-square}.
+\end{proof}
+
+\begin{corollary}[Density-one Mellin-frequency cancellation]
+\label{cor:density-one-frequency}
+Let $I_X$ be any intervals with lengths $L_X$ satisfying
+\[
+ \frac{L_X}{(\log X)^4}\longrightarrow\infty.
+\]
+For every fixed $h$ and every $D=D(X)$,
+\begin{equation}
+ \frac1{L_XX^2}\int_{I_X}|\cR_{h,D}(X;t)|^2dt=o(1).
+ \label{eq:frequency-rms-cancellation}
+\end{equation}
+In particular, outside a subset of relative measure $o(1)$ in $I_X$,
+one has $\cR_{h,D}(X;t)=o(X)$.
+\end{corollary}
+
+\begin{proof}
+Divide \eqref{eq:fixed-continuum-upper-bound} by $L_XX^2$:
+\[
+ \frac1{L_XX^2}\int_{I_X}|\cR_{h,D}|^2dt
+ \ll_{h,W}\frac{(\log X)^4}{X}
+ +\frac{(\log X)^4}{L_X}.
+\]
+Both terms tend to zero.  The density statement follows from Chebyshev's
+inequality, choosing an $o(X)$ threshold slowly enough.
+\end{proof}
+
+\begin{remark}[What the corollary does not select]
+The exceptional set in \cref{cor:density-one-frequency} may contain every
+prescribed frequency, including $t=0$, at every scale.  Moreover,
+\eqref{eq:frequency-rms-cancellation} is an average per unit frequency;
+it is not the absolute $o(X^2)$ band error needed by the endpoint recovery
+criterion in \cref{sec:endpoint-strength}.
+\end{remark}
+
+There is also an unconditional lower floor.  It will be useful when
+interpreting the averaged theorem.
+
+\begin{proposition}[Nonzero ray-energy floor]
+\label{prop:ray-energy-floor}
+Suppose $\beta<4\alpha$, let $D<\alpha X$, and fix an integer $h$.
+If $W\not\equiv0$, then
+\begin{equation}
+ \cE_{h,D}(X)\gg_{h,W}X\log X.
+ \label{eq:ray-energy-floor}
+\end{equation}
+The same lower bound holds for the raw ray energy.
+\end{proposition}
+
+\begin{proof}
+On a ray $(a,1)$ with $a/X\in\supp W$, the support condition
+$\beta<4\alpha$ excludes every $k\geq2$.  Hence
+\[
+ c_{a,1}=u(a)(\Lambda(a+h)-1)W(a/X).
+\]
+There is an absolute $c_*>0$ such that $u(a)^2\geq c_*$ for every
+$a\geq1$: off prime powers the value is $1$, and on prime powers it is
+$(\log p-1)^2$, whose minimum over primes is positive.  The prime number
+theorem and partial summation give
+\[
+ \sum_a(\Lambda(a+h)-1)^2|W(a/X)|^2
+ =X\log X\int_0^\infty|W(v)|^2dv+O_{h,W}(X).
+\]
+Keeping only these distinct rays proves \eqref{eq:ray-energy-floor}.
+Replacing $\Lambda-1$ by $\Lambda$ at the target uses the analogous
+second-moment formula for $\Lambda^2$.
+\end{proof}
