@@ -1,0 +1,164 @@
+\section{Fixed smooth scale windows in the Type-I range}
+\label{sec:type-i-localization}
+
+The bulk theorem removes only the two outer hard edges.  We now insert an
+arbitrary fixed smooth window in the logarithmic ratio, at the cost of restricting
+the source factor $n$ to the classical Type~I range.
+
+For $V\in C_c^1(\R)$, $s\in\R$ and $D\geq1$, define
+\begin{align}
+ \cA_{h,\leq D,V}(X;s)
+ ={}&\sum_{\substack{n\leq D\\m\geq1}}
+ (\Lambda(n)-1)\Lambda(mn+h)W(mn/X)
+ V\!\left(\log\frac{n}{m}-s\right).
+ \label{eq:Type-I-localized-definition}
+\end{align}
+
+\begin{theorem}[Type-I factor-scale localization]
+\label{thm:Type-I-scale-localization}
+Fix $h\ne0$, $W\in C_c^1((0,\infty))$, $V\in C_c^1(\R)$ and $A>0$.
+There is $B=B(A,h,W,V)>0$ such that, uniformly for every $s\in\R$ and
+\begin{equation}\label{eq:Type-I-D-range}
+ 1\leq D\leq \frac{X^{1/2}}{(\log X)^B},
+\end{equation}
+one has
+\begin{align}
+ \cA_{h,\leq D,V}(X;s)
+ ={}&X\sum_{\substack{n\leq D\\(n,h)=1}}
+ \frac{\Lambda(n)-1}{\varphi(n)}
+ \int_0^\infty W(u)
+ V\!\left(\log\frac{n^2}{Xu}-s\right)\,du
+\notag\\
+ &+O_{A,h,W,V}\!\left(\frac{X}{(\log X)^A}\right).
+ \label{eq:Type-I-localized-asymptotic}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+First suppose $(n,h)=1$ and put $t=nm+h$.  The target prime lies in the
+reduced residue class $h\pmod n$, and its row weight is
+\begin{equation}\label{eq:Type-I-row-weight}
+ F_{n,s}(t)
+ =W\!\left(\frac{t-h}{X}\right)
+ V\!\left(\log\frac{n^2}{t-h}-s\right).
+\end{equation}
+Choose $0<\alpha<\beta$ with $\supp W\subset[\alpha,\beta]$.  On the
+support of $F_{n,s}$,
+\begin{align}
+ F_{n,s}'(t)
+ ={}&\frac1XW'\!\left(\frac{t-h}{X}\right)
+ V\!\left(\log\frac{n^2}{t-h}-s\right)
+ \notag\\
+ &-\frac1{t-h}W\!\left(\frac{t-h}{X}\right)
+ V'\!\left(\log\frac{n^2}{t-h}-s\right).
+ \label{eq:Type-I-row-derivative}
+\end{align}
+Since $t-h\in[\alpha X,\beta X]$, it follows that
+\begin{equation}\label{eq:Type-I-uniform-variation}
+ \|F_{n,s}\|_\infty+\operatorname{Var}(F_{n,s})
+ \ll_{W,V}1
+\end{equation}
+uniformly in both $n$ and $s$.
+
+Stieltjes partial summation therefore bounds the row discrepancy by a
+constant times
+\[
+ \max_{y\ll_{h,W}X}
+ \left|
+  \sum_{\substack{t\leq y\\t\equiv h\pmod n}}\Lambda(t)
+  -\frac{y}{\varphi(n)}
+ \right|.
+\]
+Sum this quantity over $n\leq D$ and apply the maximal
+Bombieri--Vinogradov theorem
+\citep{Bombieri1965,Vinogradov1965,IwaniecKowalski2004}.  The outer
+coefficient causes no difficulty.  If $E_n$ denotes the nonnegative
+maximal row discrepancy above, then
+\[
+ \sum_{n\leq D}|\Lambda(n)-1|E_n
+ \leq(1+\log D)\sum_{n\leq D}E_n.
+\]
+Requesting three additional powers of $\log X$ in
+Bombieri--Vinogradov absorbs this factor and gives the required total
+error.
+
+The continuous row main term is exactly
+\begin{align*}
+ \frac1{\varphi(n)}\int_\R F_{n,s}(t)\,dt
+ =\frac{X}{\varphi(n)}\int_0^\infty
+ W(u)V\!\left(\log\frac{n^2}{Xu}-s\right)\,du.
+\end{align*}
+Finally, if $(n,h)>1$ and $\Lambda(nm+h)\ne0$, then
+$nm+h=p^k$ for a prime $p\mid h$.  Only $O_{h,W}(1)$ such powers lie in
+the fixed-ratio target interval.  Summing $\Lambda(n)+1$ over the divisors
+$n\mid p^k-h$ gives $X^\eps$ for every $\eps>0$, uniformly in $s$ because
+$V$ is bounded.  These rows are absorbed by the stated error.
+\end{proof}
+
+\begin{remark}[The center really may move]
+\label{rem:moving-center}
+If $u$ lies in the support of $W$, a row $n$ contributes to the main term
+only when
+\[
+ s=2\log n-\log X-\log u+O_V(1).
+\]
+Thus the center tracking $n\asymp N$ is approximately
+$s=\log(N^2/X)$.  A fixed center near zero eventually sees no rows deep in
+the range $n\leq X^{1/2}(\log X)^{-B}$.  Uniformity for all $s$ is what
+makes \cref{thm:Type-I-scale-localization} a useful localization statement.
+\end{remark}
+
+\begin{corollary}[A compact nonzero-Mellin band on the Type-I side]
+\label{cor:Type-I-Mellin-band}
+Fix $A,T>0$.  There is $B=B(A,h,W,T)>0$ such that, uniformly for
+$|t|\leq T$ and
+$D\leq X^{1/2}(\log X)^{-B}$,
+\begin{align}
+ &\sum_{\substack{n\leq D\\m\geq1}}
+ (\Lambda(n)-1)\Lambda(mn+h)W(mn/X)(n/m)^{it}
+ \notag\\
+ &\quad=X^{1-it}I_W(-it)
+ \sum_{\substack{n\leq D\\(n,h)=1}}
+ \frac{(\Lambda(n)-1)n^{2it}}{\varphi(n)}
+ +O_{A,h,W,T}\!\left(X(\log X)^{-A}\right),
+ \label{eq:Type-I-Mellin-band}
+\end{align}
+where
+\(
+ I_W(z)=\int_0^\infty W(u)u^z\,du
+\).
+\end{corollary}
+
+\begin{proof}
+Use
+$(n/m)^{it}=n^{2it}(mn)^{-it}$ and repeat the proof of
+\cref{thm:Type-I-scale-localization} with row weight
+$u^{-it}W(u)$.  Its supremum norm and total variation are
+$O_{W}(1+T)$.  The finite arithmetic sum in
+\eqref{eq:Type-I-Mellin-band} retains all prime-power source rows.
+\end{proof}
+
+\begin{remark}[No complete-tail subtraction at nonzero frequency]
+At $t=0$, the complete collapse \eqref{eq:intro-zero-collapse} can be
+combined with the Type~I evaluation and subtracted.  At $t\ne0$ the
+complete divisor coefficient is
+\[
+ r^{-it}\sum_{d\mid r}(\Lambda(d)-1)d^{2it},
+\]
+which does not collapse to $\log r-\tau(r)$.  Consequently
+\cref{cor:Type-I-Mellin-band} cannot be subtracted from
+\eqref{eq:intro-complete-zero-mode} to localize the large-factor tail.
+The unresolved term contains the $m=1$ fixed-prime-pair layer discussed in
+\cref{sec:taylor-selector-boundary}.
+\end{remark}
+
+There is nevertheless an exact scale-center average at every factor range.
+Fubini gives
+\begin{equation}\label{eq:center-average-identity}
+ \int_\R\cA_{h,\leq D,V}(X;s)\,ds
+ =\left(\int_\R V(v)\,dv\right)
+ \sum_{\substack{n\leq D\\m\geq1}}
+ (\Lambda(n)-1)\Lambda(mn+h)W(mn/X).
+\end{equation}
+The same identity holds without $n\leq D$.  It transfers a zero-mode
+asymptotic to an integral over all centers, but not to any specified center.

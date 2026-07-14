@@ -1,0 +1,365 @@
+\section{Taylor jets and the exact selector boundary}
+\label{sec:taylor-selector-boundary}
+
+The zero Mellin mode treated in TPC--9 is distinguished by the convolution
+identity $\Lambda*\mathbf 1=\log$ \citep{WangTPCNine2026}.  This section
+computes what happens at the first two jets away from that mode.  The
+calculation is exact at each finite $X$: it does not supply an asymptotic
+estimate for either jet.  We then identify precisely what additional Mellin
+information would recover the single factor layer $m=1$.  The resulting
+identity is a reduction to the fixed-shift Hardy--Littlewood problem, not an
+evaluation of that problem.
+
+Throughout this section, $h\in\mathbb Z\setminus\{0\}$ is fixed,
+$W\in C_c^1((0,\infty))$ is real-valued, and $\Lambda(q)$ is extended by
+zero to $q\leq 0$.  Recall the factor-scale Mellin polynomial
+\begin{equation}
+ \mathcal A_h(X;W;t)
+ =\sum_{m,n\geq1}(\Lambda(n)-1)\Lambda(mn+h)W(mn/X)
+   \left(\frac{n}{m}\right)^{it}.
+ \label{eq:taylor-global-polynomial}
+\end{equation}
+The sum is finite for every $X$, so it is an entire function of $t$.
+
+\subsection{The first three divisor-scale coefficients}
+\label{subsec:taylor-first-jets}
+
+Put $r=mn$ and use $d=n$ as the divisor variable.  The polynomial on the
+factor fibre above $r$ is
+\begin{equation}
+ B_r(t)
+ :=\sum_{d\mid r}(\Lambda(d)-1)
+       \exp\!\bigl(it(2\log d-\log r)\bigr).
+ \label{eq:taylor-Br-definition}
+\end{equation}
+Consequently,
+\begin{equation}
+ \mathcal A_h(X;W;t)
+ =\sum_{r\geq1}\Lambda(r+h)W(r/X)B_r(t).
+ \label{eq:taylor-r-aggregation}
+\end{equation}
+For $k\geq0$, define
+\begin{align}
+ D_k(r)&:=i^{-k}B_r^{(k)}(0)
+   =\sum_{d\mid r}(\Lambda(d)-1)
+      (2\log d-\log r)^k,
+ \label{eq:taylor-Dk-definition}\\
+ T_j(r)&:=\sum_{d\mid r}\Lambda(d)(\log d)^j,
+ \qquad
+ Q_k(r):=\sum_{d\mid r}(2\log d-\log r)^k.
+ \label{eq:taylor-Tj-Qk-definition}
+\end{align}
+Termwise differentiation in \eqref{eq:taylor-r-aggregation} gives
+\begin{equation}
+ i^{-k}\frac{\partial^k}{\partial t^k}
+ \mathcal A_h(X;W;t)\bigg|_{t=0}
+ =\sum_{r\geq1}\Lambda(r+h)W(r/X)D_k(r).
+ \label{eq:taylor-global-derivative}
+\end{equation}
+
+\begin{proposition}[Exact zeroth, first, and second jets]
+\label{prop:taylor-first-three-jets}
+Let $L=\log r$.  Then
+\begin{align}
+ D_0(r)&=L-\tau(r),
+ \label{eq:taylor-D0-basic}\\
+ D_1(r)&=2T_1(r)-L^2
+        =L^2-2(\Lambda*\Lambda*\mathbf 1)(r),
+ \label{eq:taylor-D1-convolution}\\
+ D_2(r)&=4T_2(r)-4LT_1(r)+L^3-Q_2(r)
+ \notag\\
+ &=L^3-Q_2(r)
+   -4\bigl((\mathfrak D\Lambda)*\Lambda*\mathbf 1\bigr)(r),
+ \label{eq:taylor-D2-convolution}
+\end{align}
+where $\mathfrak D f(q):=f(q)\log q$.  If
+$r=\prod_p p^{a_p}$, then
+\begin{equation}
+ Q_2(r)
+ =\frac{\tau(r)}{3}
+   \sum_{p^{a_p}\parallel r}a_p(a_p+2)(\log p)^2.
+ \label{eq:taylor-Q2-prime-factorization}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Expanding the power in \eqref{eq:taylor-Dk-definition} gives, for every
+$k\geq0$,
+\begin{equation}
+ D_k(r)
+ =\sum_{j=0}^k\binom{k}{j}2^j(-L)^{k-j}T_j(r)-Q_k(r).
+ \label{eq:taylor-Dk-binomial}
+\end{equation}
+The standard identities
+\[
+ T_0(r)=\sum_{d\mid r}\Lambda(d)=L,
+ \qquad Q_0(r)=\tau(r),
+\]
+prove \eqref{eq:taylor-D0-basic}.  Divisor pairing
+$d\leftrightarrow r/d$ shows that $Q_1(r)=0$.  Substituting $k=1$ and
+$k=2$ in \eqref{eq:taylor-Dk-binomial} therefore yields the first
+expressions in \eqref{eq:taylor-D1-convolution} and
+\eqref{eq:taylor-D2-convolution}.
+
+It remains to prove the convolution forms.  The operator $\mathfrak D$ is
+a derivation for Dirichlet convolution:
+\begin{equation}
+ \mathfrak D(f*g)=(\mathfrak Df)*g+f*(\mathfrak Dg).
+ \label{eq:taylor-arithmetic-derivation}
+\end{equation}
+Write $\ell(q)=\log q$.  Since
+$\Lambda*\mathbf 1=\ell$, applying \eqref{eq:taylor-arithmetic-derivation}
+once gives
+\[
+ \ell^2=(\mathfrak D\Lambda)*\mathbf 1
+          +\Lambda*\ell,
+\]
+where powers of $\ell$ denote pointwise powers.  On the other hand,
+\[
+ T_1=(\mathfrak D\Lambda)*\mathbf 1,
+ \qquad
+ \Lambda*\ell=\Lambda*\Lambda*\mathbf 1.
+\]
+Thus $2T_1-\ell^2=\ell^2-2\Lambda*\Lambda*\mathbf 1$, proving the
+second identity in \eqref{eq:taylor-D1-convolution}.
+
+For the second jet it is convenient to introduce
+\[
+ C_2(f,g)(r)
+ :=\sum_{d\mid r}f(d)g(r/d)
+       \bigl(\log d-\log(r/d)\bigr)^2.
+\]
+Then $D_2=C_2(\Lambda,\mathbf 1)-C_2(\mathbf 1,\mathbf 1)$ and
+$C_2(\mathbf 1,\mathbf 1)=Q_2$.  Expanding the square gives
+\[
+ C_2(\Lambda,\mathbf 1)
+ = (\mathfrak D^2\Lambda)*\mathbf 1
+   -2(\mathfrak D\Lambda)*\ell
+   +\Lambda*\ell^2.
+\]
+Applying $\mathfrak D^2$ to $\Lambda*\mathbf 1=\ell$ gives
+\[
+ \ell^3
+ = (\mathfrak D^2\Lambda)*\mathbf 1
+   +2(\mathfrak D\Lambda)*\ell
+   +\Lambda*\ell^2.
+\]
+Subtracting the middle terms proves
+\[
+ C_2(\Lambda,\mathbf 1)
+ =\ell^3-4(\mathfrak D\Lambda)*\ell
+ =\ell^3-4(\mathfrak D\Lambda)*\Lambda*\mathbf 1,
+\]
+which is \eqref{eq:taylor-D2-convolution}.
+
+Finally, write a divisor of $r$ as $d=\prod_p p^{j_p}$ with
+$0\leq j_p\leq a_p$.  Then
+\[
+ 2\log d-\log r
+ =\sum_p(2j_p-a_p)\log p.
+\]
+All mixed terms vanish after summation over the divisor box, since
+\[
+ \sum_{j=0}^a(2j-a)=0,
+\]
+while
+\[
+ \frac1{a+1}\sum_{j=0}^a(2j-a)^2=\frac{a(a+2)}3.
+\]
+Multiplying by the number $\tau(r)$ of divisors proves
+\eqref{eq:taylor-Q2-prime-factorization}.
+\end{proof}
+
+The convolution $\Lambda*\Lambda*\mathbf 1$ in the first derivative and
+the differentiated two-$\Lambda$ convolution in the second derivative are
+not Titchmarsh divisor weights.  Thus
+\cref{prop:taylor-first-three-jets} identifies the first arithmetic objects
+that must be estimated away from the zero mode; it does not estimate them
+or assert that cancellation in their shifted prime-target sums is
+impossible.
+
+\subsection{Even symmetrization does not remove the second interface}
+\label{subsec:taylor-even-symmetrization}
+
+Define the reversible part
+\begin{equation}
+ \mathcal A_h^{\mathrm{ev}}(X;W;t)
+ :=\frac12\bigl\{\mathcal A_h(X;W;t)
+                  +\mathcal A_h(X;W;-t)\bigr\}.
+ \label{eq:taylor-even-definition}
+\end{equation}
+Swapping $m$ and $n$ in the second summand gives the exact identity
+\begin{equation}
+ \mathcal A_h^{\mathrm{ev}}(X;W;t)
+ =\frac12\sum_{m,n\geq1}
+   \bigl(\Lambda(n)+\Lambda(m)-2\bigr)
+   \Lambda(mn+h)W(mn/X)
+   \left(\frac{n}{m}\right)^{it}.
+ \label{eq:taylor-even-swapped}
+\end{equation}
+The function is even, so all its odd derivatives at zero vanish.  This
+removes $D_1$ by construction, but
+\begin{equation}
+ \frac{\partial^2}{\partial t^2}
+ \mathcal A_h^{\mathrm{ev}}(X;W;t)\bigg|_{t=0}
+ =-\sum_{r\geq1}\Lambda(r+h)W(r/X)D_2(r).
+ \label{eq:taylor-even-second-derivative}
+\end{equation}
+In particular, the two-$\Lambda$ term in
+\eqref{eq:taylor-D2-convolution} remains.  Algebraic parity in the Mellin
+variable is therefore different from the sieve parity issue: killing odd
+Taylor coefficients does not evaluate the first surviving even
+coefficient.
+
+\subsection{Product demodulation and an exact
+\texorpdfstring{$m=1$}{m=1} selector}
+\label{subsec:selector-two-mellin}
+
+The variable $t$ in \eqref{eq:taylor-global-polynomial} records only the
+ratio $n/m$.  To separate a factor endpoint without conflating ratio and
+product, introduce the two-Mellin polynomial
+\begin{equation}
+ \mathcal M_h(X;W;t,s)
+ :=\sum_{m,n\geq1}(\Lambda(n)-1)\Lambda(mn+h)W(mn/X)
+   \left(\frac{n}{m}\right)^{it}
+   \left(\frac{mn}{X}\right)^{is}.
+ \label{eq:selector-two-mellin-definition}
+\end{equation}
+Along the demodulating line $s=-t$, set
+\begin{align}
+ E_{h,X}(t)
+ &:=X^{-it}\mathcal M_h(X;W;t,-t)
+ \notag\\
+ &=\sum_{m,n\geq1}(\Lambda(n)-1)\Lambda(mn+h)W(mn/X)m^{-2it}.
+ \label{eq:selector-demodulated-polynomial}
+\end{align}
+Equivalently, if $W_t(u)=u^{-it}W(u)$, then
+\begin{equation}
+ E_{h,X}(t)=X^{-it}\mathcal A_h(X;W_t;t).
+ \label{eq:selector-coupled-weight}
+\end{equation}
+Thus control of $E_{h,X}$ is a two-variable, or coupled-weight, statement;
+it is not supplied by a theorem for the single value
+$\mathcal A_h(X;W;0)$.
+
+For $a>0$, define
+\begin{equation}
+ \kappa_a(t)
+ :=\frac1{\pi a}\left(\frac{\sin(at)}{t}\right)^2,
+ \qquad \kappa_a(0):=\frac a\pi.
+ \label{eq:selector-sinc-kernel}
+\end{equation}
+With the Fourier convention
+$\widehat\kappa_a(\xi)=\int_{\mathbb R}\kappa_a(t)e^{-it\xi}\,dt$,
+one has
+\begin{equation}
+ \widehat\kappa_a(\xi)
+ =\left(1-\frac{|\xi|}{2a}\right)_+.
+ \label{eq:selector-triangle-transform}
+\end{equation}
+
+\begin{proposition}[Exact endpoint selector]
+\label{prop:selector-exact-m-one}
+For every $X>0$ and every $0<a\leq\log2$,
+\begin{equation}
+ \int_{\mathbb R}\kappa_a(t)E_{h,X}(t)\,dt
+ =\sum_{n\geq1}(\Lambda(n)-1)\Lambda(n+h)W(n/X).
+ \label{eq:selector-exact-m-one}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The transform formula \eqref{eq:selector-triangle-transform} follows by
+writing
+\[
+ \frac{\sin(at)}t=\frac12\int_{-a}^{a}e^{itu}\,du
+\]
+and convolving the two interval indicators.  With the convention used
+here, the Fourier transform of a product is $(2\pi)^{-1}$ times the
+convolution of the transforms; this gives precisely the normalization in
+\eqref{eq:selector-triangle-transform}.  In particular,
+$\kappa_a\geq0$, $\kappa_a\in L^1(\mathbb R)$, and
+$\int\kappa_a=\widehat\kappa_a(0)=1$.
+
+The sum defining $E_{h,X}$ is finite, so termwise integration is valid.
+Using \eqref{eq:selector-triangle-transform}, its integral is
+\begin{align*}
+ \int_{\mathbb R}\kappa_a(t)E_{h,X}(t)\,dt
+ ={}&\sum_{m,n\geq1}(\Lambda(n)-1)\Lambda(mn+h)W(mn/X)
+       \widehat\kappa_a(2\log m).
+\end{align*}
+For $m=1$ the final factor is one.  If $m\geq2$, then
+$2\log m\geq2\log2\geq2a$, and the final factor is zero.  Exactly the
+$m=1$ layer remains, proving \eqref{eq:selector-exact-m-one}.
+\end{proof}
+
+The kernel in \cref{prop:selector-exact-m-one} uses all real Mellin
+frequencies; its $t^{-2}$ tails are essential to the compact support of
+$\widehat\kappa_a$.  The proposition is therefore not a bounded-frequency
+localization theorem.
+
+\subsection{The Hardy--Littlewood equivalence boundary}
+\label{subsec:selector-HL-boundary}
+
+Let $h$ be an admissible fixed even shift, and let
+\begin{equation}
+ \mathfrak S(h)
+ :=\prod_p\frac{1-\nu_h(p)/p}{(1-1/p)^2},
+ \qquad
+ \nu_h(p):=\#\{b\bmod p:b(b+h)\equiv0\pmod{p}\}.
+ \label{eq:selector-singular-series}
+\end{equation}
+The weighted fixed-shift Hardy--Littlewood assertion is
+\begin{equation}
+ \sum_{n\geq1}\Lambda(n)\Lambda(n+h)W(n/X)
+ =\mathfrak S(h)X\int_0^\infty W(u)\,du+o_{h,W}(X).
+ \label{eq:selector-weighted-HL}
+\end{equation}
+The general fixed-shift assertion represented by
+\eqref{eq:selector-weighted-HL} remains open for every prescribed
+admissible shift, including $h=2$
+\citep{HardyLittlewood1923,IwaniecKowalski2004}.
+
+\begin{corollary}[Exact equivalence, not an asymptotic evaluation]
+\label{cor:selector-HL-equivalence}
+For the fixed shift $h$ and the fixed test function $W$ above, fix
+$0<a\leq\log2$.  The single weighted assertion
+\eqref{eq:selector-weighted-HL} is equivalent to
+\begin{equation}
+ \int_{\mathbb R}\kappa_a(t)E_{h,X}(t)\,dt
+ =\bigl(\mathfrak S(h)-1\bigr)X
+   \int_0^\infty W(u)\,du+o_{h,W}(X).
+ \label{eq:selector-filtered-HL-equivalent}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+By the shifted prime number theorem and partial summation,
+\begin{equation}
+ \sum_{n\geq1}\Lambda(n+h)W(n/X)
+ =X\int_0^\infty W(u)\,du+o_{h,W}(X);
+ \label{eq:selector-shifted-PNT}
+\end{equation}
+see, for example, \citet{IwaniecKowalski2004}.  Subtracting
+\eqref{eq:selector-shifted-PNT} from
+\eqref{eq:selector-weighted-HL}, and then applying the exact identity
+\eqref{eq:selector-exact-m-one}, gives
+\eqref{eq:selector-filtered-HL-equivalent}.  Reversing the subtraction
+proves the converse.
+\end{proof}
+
+\begin{remark}[Strict interpretation]
+\label{rem:selector-strict-boundary}
+Neither side of \eqref{eq:selector-filtered-HL-equivalent} is evaluated in
+this paper.  The equivalence is for the current fixed test function $W$;
+it should not be read as replacing the full family of Hardy--Littlewood
+statements by one possibly degenerate weight.  The exact selector says that
+an asymptotic theorem strong
+enough to control the all-frequency, coupled-weight expression on the left
+would already contain the fixed-shift Hardy--Littlewood problem.  It does
+not turn the zero-mode estimate of TPC--9 into such control.  Likewise, the
+identities for $D_1$ and $D_2$ expose parity-sensitive shifted convolution
+terms but prove neither their cancellation nor an impossibility theorem.
+No fixed-shift prime-pair asymptotic, twin-prime lower bound, new Type~II
+estimate, or breach of the sieve parity barrier is claimed.
+\end{remark}

@@ -1,0 +1,173 @@
+\section{Divisor-geometric null profiles and an exact certificate}
+\label{sec:geometric-certificates}
+
+The minimax identity is abstract.  We now show that its null directions
+occur on exact divisor grids, rather than only in a continuum model.
+
+\subsection{Prescribed finite samples and jets}
+
+\begin{theorem}[Geometric Mellin-null profile]
+\label{thm:geometric-null-profile}
+Let $t_1,\ldots,t_q\in\R$ and $s_1,\ldots,s_q\geq1$, and put
+\(
+ D=\sum_{\ell=1}^q s_\ell
+\).
+Fix a prime $p$, set $\Delta=2\log p$, and write
+\begin{equation}\label{eq:null-polynomial}
+ Q(z)=\prod_{\ell=1}^q
+ (z-e^{it_\ell\Delta})^{s_\ell}
+ =\sum_{j=0}^Dc_jz^j.
+\end{equation}
+On the factor pairs
+\begin{equation}\label{eq:prime-power-factor-pairs}
+ r=p^D,\qquad n_j=p^j,\qquad m_j=p^{D-j},\qquad0\leq j\leq D,
+\end{equation}
+the scale nodes are
+\begin{equation}\label{eq:prime-power-scale-nodes}
+ u_j=\log(n_j/m_j)=(-D+2j)\log p.
+\end{equation}
+The nonzero complex profile $c=(c_0,\ldots,c_D)$ satisfies
+\begin{equation}\label{eq:null-jet-identities}
+ \left.\frac{d^k}{dt^k}\sum_{j=0}^Dc_je^{itu_j}
+ \right|_{t=t_\ell}=0,
+ \qquad 1\leq\ell\leq q,\quad0\leq k<s_\ell.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The exponential polynomial of the profile factors exactly as
+\begin{align}
+ F_c(t)
+ &=\sum_{j=0}^Dc_je^{it(-D+2j)\log p}
+ \notag\\
+ &=e^{-itD\log p}Q(e^{it\Delta}).
+ \label{eq:null-profile-factorization}
+\end{align}
+At $t=t_\ell$, the last factor has a zero of order $s_\ell$, proving
+\eqref{eq:null-jet-identities}.
+\end{proof}
+
+If the sample multiset is invariant under $t\mapsto-t$, with equal
+multiplicities, then $Q$ has real coefficients.  If it also contains
+$t=0$, then
+\(
+ \sum_jc_j=Q(1)=0
+\).
+Writing $c=c^+-c^-$, the positive and negative parts have the same mass.
+After normalization they give two probability profiles on the same divisor
+nodes with identical prescribed samples and jets.  Their masses in a
+window $V$ differ whenever
+\(
+ \sum_jc_jV(u_j)\ne0
+\).
+
+\begin{corollary}[Zero jets are finite differences]
+\label{cor:zero-jets-finite-difference}
+For jets of orders $0,\ldots,K$ at $t=0$, take
+\begin{equation}\label{eq:finite-difference-coefficients}
+ Q(z)=(z-1)^{K+1},
+ \qquad
+ c_j=(-1)^{K+1-j}\binom{K+1}{j}.
+\end{equation}
+Then all scale moments through order $K$ vanish, while the response to a
+window is its $(K+1)$st finite difference on the divisor grid.
+\end{corollary}
+
+\begin{remark}[Arithmetic support versus arithmetic coefficients]
+The nodes \eqref{eq:prime-power-factor-pairs} are genuine factor pairs of
+one integer, but the profile $c$ is constructed adversarially.  It is not
+the restriction of $\Lambda(n)-1$.  Hence
+\cref{thm:geometric-null-profile} proves a limitation of finite-data
+recovery over coefficient classes; it is not a counterexample for the
+actual prime residual.
+\end{remark}
+
+\subsection{The row \texorpdfstring{$81+2=83$}{81+2=83}}
+
+We give a fully exact certificate whose target is prime.  Take
+\begin{equation}\label{eq:certificate-row}
+ h=2,\qquad r=3^4=81,\qquad r+h=83.
+\end{equation}
+The five factor pairs and normalized scale nodes are
+\begin{equation}\label{eq:certificate-nodes}
+ \begin{array}{c|ccccc}
+ j&0&1&2&3&4\\
+ \hline
+ (n_j,m_j)&(1,81)&(3,27)&(9,9)&(27,3)&(81,1)\\
+ x_j=u_j/\log3&-4&-2&0&2&4
+ \end{array}.
+\end{equation}
+Define two probability profiles
+\begin{equation}\label{eq:certificate-profiles}
+ \mu_+=\frac18(1,0,6,0,1),
+ \qquad
+ \mu_-=\frac18(0,4,0,4,0).
+\end{equation}
+
+\begin{proposition}[Exact four-jet ambiguity]
+\label{prop:exact-four-jet-certificate}
+The profiles in \eqref{eq:certificate-profiles} have the same moments of
+orders $0,1,2,3$:
+\begin{equation}\label{eq:certificate-common-moments}
+ (M_0,M_1,M_2,M_3)=(1,0,4,0).
+\end{equation}
+Consequently their Mellin transforms have identical derivatives through
+order three at $t=0$.  If $V\in C_c(\R)$ satisfies
+\begin{equation}\label{eq:certificate-window}
+ V(0)=1,\qquad \supp V\subset(-\log3,\log3),
+\end{equation}
+then
+\begin{equation}\label{eq:certificate-window-gap}
+ \int V\,d\mu_+=\frac34,
+ \qquad
+ \int V\,d\mu_-=0.
+\end{equation}
+On the prime-target row \eqref{eq:certificate-row}, the corresponding
+formal target-weighted gap is $(3/4)\log83$.
+\end{proposition}
+
+\begin{proof}
+Direct substitution at the five integer nodes in
+\eqref{eq:certificate-nodes} gives
+\eqref{eq:certificate-common-moments}.  Equality of derivatives follows
+because the $k$th derivative multiplies the $k$th moment by
+$(i\log3)^k$.  The support condition in
+\eqref{eq:certificate-window} makes the window-value vector
+$v=(0,0,1,0,0)$, so \eqref{eq:certificate-window-gap} follows from the
+central masses in \eqref{eq:certificate-profiles}.  Finally
+$\Lambda(83)=\log83$ is common to every factor pair of $r=81$.
+\end{proof}
+
+The certificate also has an exact minimax value.
+
+\begin{proposition}[Sharp five-node minimax radius]
+\label{prop:sharp-five-node-radius}
+On the nodes $x=(-4,-2,0,2,4)$, let $v=(0,0,1,0,0)$ and let
+$\cP_3$ be the restrictions of polynomials of degree at most three.  Then
+\begin{equation}\label{eq:sharp-five-node-radius}
+ \dist_{\ell^\infty}(v,\cP_3)=\frac38.
+\end{equation}
+An optimal polynomial is
+\begin{equation}\label{eq:certificate-best-polynomial}
+ q(x)=\frac58-\frac{x^2}{16}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The vector
+\begin{equation}\label{eq:certificate-annihilator}
+ c=(1,-4,6,-4,1)
+\end{equation}
+annihilates $1,x,x^2,x^3$ on the five nodes.  Since
+$\|c\|_1=16$ and $\langle c,v\rangle=6$, duality gives the lower bound
+$6/16=3/8$.  At the five nodes the residual $v-q$ for
+\eqref{eq:certificate-best-polynomial} alternates between $3/8$ and
+$-3/8$, proving the matching upper bound.
+\end{proof}
+
+The two probability profiles in \eqref{eq:certificate-profiles} are the
+normalized positive and negative parts of
+\eqref{eq:certificate-annihilator}.  Any estimator receiving their common
+four-jet data must therefore make error at least half of the $3/4$ window
+gap on one of them.  This realizes the radius in
+\eqref{eq:sharp-five-node-radius} without floating-point computation.

@@ -1,0 +1,261 @@
+\section{Optimal recovery from finite Mellin information}
+\label{sec:minimax-recovery}
+
+This section is deterministic.  It states exactly what follows from a
+finite list of Mellin samples or jets together with a total-variation
+bound, before any special property of the von Mangoldt coefficients is
+used.
+
+\subsection{The exact minimax radius}
+
+Let $K\subset\R$ be compact and let $\cM(K)$ denote the complex finite
+Borel measures on $K$, with total-variation norm.  For
+$\phi_1,\ldots,\phi_J,V\in C(K)$ define
+\begin{equation}\label{eq:information-map}
+ \cN\mu=\left(\int_K\phi_j\,d\mu\right)_{j=1}^J,
+ \qquad
+ L_V\mu=\int_K V\,d\mu.
+\end{equation}
+An algorithm is any map $\Phi:\C^J\to\C$; no linearity or continuity is
+assumed.
+
+\begin{theorem}[Exact finite-information minimax identity]
+\label{thm:exact-minimax}
+For every $R>0$,
+\begin{align}
+ &\inf_{\Phi:\C^J\to\C}
+ \sup_{\|\mu\|_{\TV}\leq R}
+ \left|L_V\mu-\Phi(\cN\mu)\right|
+ \notag\\
+ &\hspace{5em}=
+ R\,\dist_{C(K)}\!\left(V,
+ \operatorname{span}\{\phi_1,\ldots,\phi_J\}\right).
+ \label{eq:exact-minimax}
+\end{align}
+In particular, nonlinear reconstruction cannot improve on the best linear
+reconstruction.
+\end{theorem}
+
+\begin{proof}
+For $c=(c_j)\in\C^J$, the linear estimator
+$\Phi_c(y)=\sum_jc_jy_j$ has error at most
+\[
+ R\left\|V-\sum_jc_j\phi_j\right\|_{C(K)}.
+\]
+Taking the infimum over $c$ proves the upper bound.
+
+For the reverse inequality, fix any algorithm $\Phi$ and restrict to data
+$\cN\mu=0$.  The two measures $\mu$ and $-\mu$ produce the same data, and
+\[
+ \max\{|L_V\mu-\Phi(0)|,|-L_V\mu-\Phi(0)|\}\geq|L_V\mu|.
+\]
+Put $\cE_0=\operatorname{span}\{\phi_1,\ldots,\phi_J\}$.  Its annihilator
+in $\cM(K)=C(K)^*$ is
+$\cE_0^\perp=\ker\cN$.  The Hahn--Banach distance identity gives
+\begin{align*}
+ \sup_{\substack{\mu\in\ker\cN\\\|\mu\|_{\TV}\leq1}}|L_V\mu|
+ &=\dist_{C(K)}(V,\cE_0).
+\end{align*}
+Multiplication by $R$ completes the proof.  This is the scalar,
+centrally-symmetric form of the classical optimal-recovery principle
+\citep{MicchelliRivlin1977}.
+\end{proof}
+
+Take sample points $t_1,\ldots,t_q\in\R$ and multiplicities
+$s_1,\ldots,s_q\geq1$.  The observations
+\begin{equation}\label{eq:Mellin-jet-data}
+ \widehat\mu^{(k)}(t_\ell)
+ =\int_K(iu)^ke^{it_\ell u}\,d\mu(u),
+ \qquad 0\leq k<s_\ell,
+\end{equation}
+correspond to the information space
+\begin{equation}\label{eq:exponential-polynomial-space}
+ \cE(\boldsymbol t,\boldsymbol s)
+ =\operatorname{span}\{u^ke^{it_\ell u}:
+ 1\leq\ell\leq q,\ 0\leq k<s_\ell\}.
+\end{equation}
+Consequently \cref{thm:exact-minimax} becomes
+\begin{equation}\label{eq:Mellin-minimax-distance}
+ \inf_\Phi\sup_{\|\mu\|_{\TV}\leq R}
+ \left|L_V\mu-\Phi((\widehat\mu^{(k)}(t_\ell))_{\ell,k})\right|
+ =R\,\dist_{C(K)}(V,\cE(\boldsymbol t,\boldsymbol s)).
+\end{equation}
+If only the jets $0,\ldots,K_0$ at $t=0$ are known, the recovery space is
+the polynomial space $\cP_{K_0}$.
+
+\begin{proposition}[Exact noise--resolution tradeoff]
+\label{prop:noisy-minimax}
+Suppose the observed coordinates are
+\(
+ y_j=\int\phi_j\,d\mu+e_j
+\)
+with $\|\mu\|_{\TV}\leq R$, $|e_j|\leq\eps_j$, and every $\eps_j>0$.
+Then the worst-case
+minimax error is
+\begin{equation}\label{eq:noisy-minimax}
+ \inf_{c\in\C^J}
+ \left\{
+ R\left\|V-\sum_{j=1}^Jc_j\phi_j\right\|_\infty
+ +\sum_{j=1}^J\eps_j|c_j|
+ \right\}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Apply the proof of \cref{thm:exact-minimax} to the product variable
+$(\mu,e)$ with observation $\cN\mu+e$ and target $L_V\mu$.  The uncertainty
+set is the unit ball of
+\[
+ \max\left\{\|\mu\|_{\TV}/R,
+             \max_j|e_j|/\eps_j\right\},
+\]
+whose dual norm is
+$R\|f\|_\infty+\sum_j\eps_j|c_j|$.  The distance from $(V,0)$ to the
+range of the adjoint observation map is exactly
+\eqref{eq:noisy-minimax}.
+\end{proof}
+
+\subsection{A fixed finite data set becomes asymptotically trivial}
+
+The log-scale range of factor pairs with $mn\asymp X$ has length
+$2\log X+O_W(1)$.  On an expanding range, every fixed finite set of
+frequencies and jet orders eventually performs no better, in the minimax
+sense, than the constant midpoint approximation.
+
+\begin{theorem}[The fixed-data midpoint limit]
+\label{thm:midpoint-limit}
+Let $V\in C_c(\R)$ satisfy $0\leq V\leq M$ and $\max V=M>0$.  Fix a finite
+set of real frequencies and jet multiplicities, independent of $L$, and
+let $\cE$ be the associated space \eqref{eq:exponential-polynomial-space}.
+Assume $1\in\cE$.  Then
+\begin{equation}\label{eq:midpoint-limit}
+ \lim_{L\to\infty}\dist_{C([-L,L])}(V,\cE)=\frac{M}{2}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The constant $M/2$ gives the upper bound.  Suppose, to the contrary, that
+there are $\eta<M/2$, numbers $L_j\to\infty$, and $q_j\in\cE$ with
+\(
+ \|V-q_j\|_{C([-L_j,L_j])}\leq\eta
+\).
+On any fixed nondegenerate interval the restriction map on the
+finite-dimensional space $\cE$ is injective, so norm equivalence makes the
+coefficient vectors of $q_j$ bounded.  A subsequence converges in $\cE$ to
+an exponential polynomial $q$, and
+\begin{equation}\label{eq:global-midpoint-approximant}
+ \|V-q\|_{C(\R)}\leq\eta.
+\end{equation}
+
+In particular $q$ is bounded on $\R$.  A bounded exponential polynomial
+$\sum_\ell P_\ell(u)e^{it_\ell u}$ with distinct real $t_\ell$ has all
+$P_\ell$ constant: divide by the largest power of $u$ and use the positive
+mean square of a nonzero trigonometric polynomial.  Hence $q$ is a finite
+trigonometric polynomial.  Such a function is uniformly almost periodic;
+there are arbitrarily large $\tau$ for which
+\begin{equation}\label{eq:almost-periodic-return}
+ \sup_{u\in\R}|q(u+\tau)-q(u)|<\delta
+\end{equation}
+for any $\delta>0$; see \citep{Corduneanu1989}.
+
+Choose $u_0$ with $V(u_0)=M$ and then choose an almost period $\tau$ so
+large that $u_0+\tau\notin\supp V$.  From
+\eqref{eq:global-midpoint-approximant} and
+\eqref{eq:almost-periodic-return},
+\[
+ M-\eta\leq|q(u_0)|
+ \leq|q(u_0+\tau)|+\delta\leq\eta+\delta.
+\]
+Letting $\delta\downarrow0$ contradicts $\eta<M/2$.
+\end{proof}
+
+\begin{remark}[Fixed means fixed]
+The frequencies and jet multiplicities in
+\cref{thm:midpoint-limit} do not vary with $L$.  If they are allowed to
+depend on $X$, the exact distance formula
+\eqref{eq:Mellin-minimax-distance} remains true at each scale, but the
+limit \eqref{eq:midpoint-limit} does not follow from this argument.
+\end{remark}
+
+\subsection{How many zero-frequency jets are needed?}
+
+The next result gives the correct information-level order for an interior
+window.  It does not say that the required arithmetic derivatives can be
+estimated.
+
+\begin{theorem}[Interior jet complexity]
+\label{thm:jet-complexity}
+Let $0<w\leq L/2$, let $0\leq V\leq1$ on $[-L,L]$, and suppose
+$V(0)=1$ and $V(w)=0$.  If a polynomial $p$ of degree at most $K$ satisfies
+\begin{equation}\label{eq:jet-approximation-error}
+ \|V-p\|_{C([-L,L])}\leq\eps<\frac12,
+\end{equation}
+then
+\begin{equation}\label{eq:jet-complexity-lower}
+ K\geq
+ \frac{\sqrt3}{2}\frac{1-2\eps}{1+\eps}\frac{L}{w}.
+\end{equation}
+Conversely, if $V$ is Lipschitz with Lipschitz constant $O(1/w)$, Jackson's
+theorem gives a polynomial of degree $K$ with
+\begin{equation}\label{eq:jet-complexity-upper}
+ \|V-p_K\|_{C([-L,L])}\ll \min\left\{1,\frac{L}{Kw}\right\}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The mean-value theorem and \eqref{eq:jet-approximation-error} give a
+$\xi\in(0,w)$ such that
+\[
+ |p'(\xi)|\geq\frac{1-2\eps}{w}.
+\]
+Bernstein's interior inequality on $[-L,L]$ gives
+\[
+ |p'(\xi)|\leq
+ \frac{K}{\sqrt{L^2-\xi^2}}\|p\|_\infty
+ \leq\frac{2K(1+\eps)}{\sqrt3L}.
+\]
+This proves \eqref{eq:jet-complexity-lower}.  After rescaling
+$[-L,L]$ to $[-1,1]$, Jackson's inequality bounds the best degree-$K$
+error by a constant times the modulus of continuity at scale $1/K$,
+which is $O(L/(Kw))$ under the stated Lipschitz hypothesis; see
+\citep{Lorentz1986}.
+\end{proof}
+
+For factor scales, one may take $L=\log X+O_W(1)$.  Thus a fixed-width
+interior window requires $K\asymp\log X$ zero-frequency jets for constant
+accuracy at the deterministic recovery level.  Whether arithmetic can
+control that many jets is a separate and substantially harder question.
+
+\subsection{What a continuum band would provide}
+
+In this subsection assume additionally that
+$V\in C_c^k(\R)$ for some $k\geq2$.
+Let
+\(
+ \mathscr F V(t)=\int_\R V(u)e^{-itu}\,du
+\)
+and
+\(
+ \widehat\mu(t)=\int_\R e^{itu}\,d\mu(u)
+\).
+Fourier inversion gives
+\begin{equation}\label{eq:continuum-band-inversion}
+ \int_\R V\,d\mu
+ =\frac1{2\pi}\int_\R \mathscr F V(t)\widehat\mu(t)\,dt.
+\end{equation}
+If only $|t|\leq T$ is controlled, the deterministic truncation error is
+\begin{equation}\label{eq:continuum-band-error}
+ \leq\frac{\|\mu\|_{\TV}}{2\pi}
+ \int_{|t|>T}|\mathscr F V(t)|\,dt
+ \ll_k\|\mu\|_{\TV}\|V^{(k)}\|_1T^{1-k}
+\end{equation}
+for $k\geq2$.  Also, for
+$A_V(s)=\int V(u-s)\,d\mu(u)$, Plancherel yields
+\begin{equation}\label{eq:scale-center-Plancherel}
+ \int_\R|A_V(s)|^2\,ds
+ =\frac1{2\pi}\int_\R
+ |\mathscr F V(t)|^2|\widehat\mu(t)|^2\,dt.
+\end{equation}
+Thus a genuine continuum-band estimate can imply averaged scale
+localization.  Isolated finite samples cannot substitute for such an
+estimate without additional regularity information.

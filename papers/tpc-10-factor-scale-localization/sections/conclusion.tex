@@ -1,0 +1,71 @@
+\section{Conclusion and the next analytic target}
+\label{sec:conclusion}
+
+The factor-scale coordinate separates four levels of information that are
+easy to conflate.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item The zero Mellin mode admits the complete divisor collapse
+ \(
+  \sum_{d\mid r}(\Lambda(d)-1)=\log r-\tau(r)
+ \)
+ and hence a fixed-shift Titchmarsh evaluation.
+
+ \item Coarse two-sided localization is still possible: after deleting
+ every row with $m\leq Y$ or $n\leq Y$, the leading aggregate survives
+ whenever $\log Y=o(\log X)$.  This is the bulk theorem
+ \cref{thm:bulk-persistence}.
+
+ \item Fine localization is available on the Type~I side.  Maximal
+ Bombieri--Vinogradov evaluates an arbitrary fixed smooth window in
+ $\log(n/m)$, uniformly in its moving center, as long as the modulus
+ factor satisfies $n\leq X^{1/2}(\log X)^{-B}$.
+
+ \item Fine localization of the complete long tail cannot be read from a
+ fixed finite list of Mellin samples and a norm bound.  The exact error is
+ a best exponential-polynomial approximation distance, and divisor-power
+ fibres realize explicit blind directions.
+\end{enumerate}
+
+In spectral language, $u=\log(n/m)$ is the coordinate of the multiplicative
+dilation flow and $e^{itu}$ is its character.  The zero mode is the
+scale-invariant aggregate, derivatives at zero are generator moments, and
+a local window requires a frequency superposition.  This is a precise use
+of spectral coordinates; it does not identify zeta zeros, prime gaps, or
+any other arithmetic data with dynamical eigenvalues.
+
+The first Taylor derivatives explain why complete nonzero-Mellin control is
+harder than the zero mode.  Already $D_1$ and $D_2$ contain shifted
+two-von-Mangoldt convolution coefficients.  Even symmetrization removes
+the former but leaves the latter.  At the strongest endpoint, the exact
+sinc-squared filter recovers the $m=1$ fixed-prime-pair layer, showing that
+an all-frequency theorem of the predicted strength would be equivalent to
+the weighted Hardy--Littlewood assertion.
+
+The most concrete next analytic target is therefore intermediate between
+the results proved here and that endpoint.  One may seek a continuum-band
+mean-square estimate for the complete large-factor transform,
+\begin{equation}\label{eq:next-band-target}
+ \int_{|t|\leq T}
+ \left|
+  \sum_{\substack{n>D\\m\geq1}}
+  (\Lambda(n)-1)\Lambda(mn+h)W(mn/X)(n/m)^{it}
+  -\cM_{h,D}(X;t)
+ \right|^2dt,
+\end{equation}
+with an explicit model $\cM_{h,D}$ and a range $T=T(X)$ that grows.
+Together with a compatible inverse transform for $\cM_{h,D}$ and control
+of the weighted tail $|t|>T$---or, alternatively, for a band-limited
+window---\eqref{eq:scale-center-Plancherel} would turn such an estimate into
+an $L^2$ theorem over scale centers.  Averaging the shift $h$, enlarging
+the window width, or restricting the frequency band are honest weaker
+targets if the fixed-shift form \eqref{eq:next-band-target} proves
+inaccessible.
+
+Nothing in the present argument supplies signed Type~II cancellation,
+pointwise localization of the complete tail, a fixed-shift prime-pair
+asymptotic, a twin-prime lower bound, a new level of distribution, or a
+parity-barrier breakthrough.  The advance is instead a sharp map: two
+regions of rigorous localization, an exact finite-information boundary,
+and an explicit identification of the arithmetic object that the next
+layer must control.

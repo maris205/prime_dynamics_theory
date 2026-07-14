@@ -1,0 +1,186 @@
+\section{Introduction and claim ledger}
+\label{sec:introduction}
+
+The fixed-shift prime-pair problem asks for asymptotics of
+\(
+ \sum_n\Lambda(n)\Lambda(n+h)W(n/X)
+\)
+when $h$ is fixed.  For $h=2$ this contains the twin-prime conjecture.
+Classical sieve and distribution theorems give powerful one-sided or
+averaged information, but they do not supply the required fixed-shift
+two-prime lower bound; see, for example,
+\citep{HardyLittlewood1923,IwaniecKowalski2004,FriedlanderIwaniec1998,
+FordMaynard2024}.  The purpose of this paper is narrower.  We study which
+parts of a related factorized form can be localized using established
+theorems, and we quantify exactly what is not determined by finitely many
+Mellin coordinates.
+
+Fix throughout an integer $h\ne0$ and a real-valued function
+$W\in C_c^1((0,\infty))$.  Terms for which $mn+h\leq0$ are understood to
+vanish.  Put
+\begin{equation}\label{eq:intro-residual-measure}
+ \nu_{X,h}
+ =\sum_{m,n\geq1}
+   (\Lambda(n)-1)\Lambda(mn+h)W(mn/X)
+   \delta_{\log(n/m)}.
+\end{equation}
+Its Fourier--Mellin transform is the finite exponential polynomial
+\begin{equation}\label{eq:intro-mellin-transform}
+ \widehat\nu_{X,h}(t)
+ =\int_{\R}e^{itu}\,d\nu_{X,h}(u)
+ =\sum_{m,n\geq1}(\Lambda(n)-1)\Lambda(mn+h)W(mn/X)
+   (n/m)^{it}.
+\end{equation}
+For $V\in C_c^1(\R)$ and a center $s\in\R$, the corresponding local
+factor-scale observation is
+\begin{equation}\label{eq:intro-local-window}
+ \cA_{h,V}(X;s)
+ =\int_{\R}V(u-s)\,d\nu_{X,h}(u).
+\end{equation}
+
+The preceding paper \citep{WangTPCNine2026} evaluated only the total mass
+$\widehat\nu_{X,h}(0)$.  Write
+\begin{equation}\label{eq:intro-Ij}
+ I_0(W)=\int_0^\infty W(u)\,du,
+ \qquad
+ I_1(W)=\int_0^\infty W(u)\log u\,du,
+\end{equation}
+and
+\begin{equation}\label{eq:intro-Chs}
+ C_h(z)=
+ \prod_{p\mid h}(1-p^{-z-1})
+ \prod_{p\nmid h}\left(1+\frac1{(p-1)p^{z+1}}\right),
+ \qquad C_h=C_h(0).
+\end{equation}
+The exact divisor collapse
+\begin{equation}\label{eq:intro-zero-collapse}
+ \sum_{d\mid r}(\Lambda(d)-1)=\log r-\tau(r)
+\end{equation}
+and the uniform Titchmarsh theorem of Assing, Blomer and Li
+\citep{AssingBlomerLi2021} give, for every $A>0$,
+\begin{align}
+ \widehat\nu_{X,h}(0)
+ =X\Big[&(1-C_h)\{(\log X)I_0(W)+I_1(W)\}
+ \notag\\
+ &-2\{\gamma C_h+C_h'(0)\}I_0(W)\Big]
+ +O_{A,h,W}\!\left(X(\log X)^{-A}\right).
+ \label{eq:intro-complete-zero-mode}
+\end{align}
+Complete factor aggregation is decisive in
+\eqref{eq:intro-zero-collapse}; it also destroys the location of the
+individual divisor $d$.  The present paper separates three increasingly
+fine questions.
+
+\subsection{The positive results}
+
+The first result is a coarse but genuinely two-sided localization.  If
+$m,n\leq Y$ cannot occur on the support of $W$---as is automatic for
+$Y\leq X^{1/3}$ and large $X$---then removing the two hard edges costs at
+most $O(X\log(2Y))$.  Consequently the leading $X\log X$ coefficient in
+\eqref{eq:intro-complete-zero-mode} remains in the interior $m,n>Y$ when
+$\log Y=o(\log X)$.  The same statement holds for the unsigned
+prime-source form with coefficient $1$; see
+\cref{thm:bulk-persistence}.  This does not confine $n/m$ to a fixed
+dyadic window.  It says that the leading aggregate is not carried by any
+fixed, polylogarithmic, or subpower collection of factor-edge layers.
+
+The second result is fine localization on the directly accessible side.
+For
+\begin{equation}\label{eq:intro-Type-I-range}
+ D\leq X^{1/2}(\log X)^{-B},
+\end{equation}
+maximal Bombieri--Vinogradov evaluates
+\begin{equation}\label{eq:intro-Type-I-local-form}
+ \sum_{\substack{n\leq D\\m\geq1}}
+ (\Lambda(n)-1)\Lambda(mn+h)W(mn/X)
+ V(\log(n/m)-s)
+\end{equation}
+with an explicit main term, uniformly for every real center $s$; see
+\cref{thm:Type-I-scale-localization}.  Thus every fixed smooth log-scale
+window is available in the Type~I range.  The proof is an organization
+of the classical theorem, not an improvement of its distribution level.
+
+\subsection{The information boundary}
+
+A local window is an integral of the whole Mellin transform, rather than
+a function of finitely many frequencies.  We make that distinction exact.
+For a total-variation ball of coefficient measures, arbitrary nonlinear
+reconstruction from finitely many samples and jets has minimax error
+\begin{equation}\label{eq:intro-minimax-preview}
+ R\,\dist_\infty\!\left(
+ V,\operatorname{span}\{u^k e^{it_\ell u}:0\leq k<s_\ell\}
+ \right).
+\end{equation}
+This is the standard quotient-space principle of optimal recovery applied
+to the factor-scale coordinate; compare \citep{MicchelliRivlin1977}.
+What is arithmetic here is the explicit realization of null directions on
+actual divisor geometries.  The factor pairs of $r=p^D$ form an equally
+spaced log-scale grid, so a polynomial with prescribed unit-circle roots
+annihilates any specified finite set of samples and jets.
+
+For $h=2$, the row $r=3^4=81$ has prime target $83$.  On its five factor
+nodes we exhibit two probability profiles having the same Mellin jets
+through order three but different central-window mass.  This is an exact
+certificate on genuine divisor nodes and a genuine prime-target row, but
+the two profiles are deliberately adversarial: they are not the arithmetic
+weights $\Lambda(d)-1$.  The minimax theorem therefore rules out a
+deduction from finite Mellin data plus a norm bound alone.  It does not
+assert that the actual prime residual realizes a worst-case direction.
+
+\subsection{The first arithmetic jets and the endpoint boundary}
+
+For a fixed product $r$, define
+\[
+ B_r(t)=\sum_{d\mid r}(\Lambda(d)-1)
+ e^{it(2\log d-\log r)}.
+\]
+The zero coefficient is \eqref{eq:intro-zero-collapse}.  The next two
+coefficients already contain two-von-Mangoldt convolutions:
+\begin{align*}
+ i^{-1}B_r'(0)
+  &=(\log r)^2-2(\Lambda*\Lambda*\one)(r),\\
+ i^{-2}B_r''(0)
+  &=(\log r)^3-Q_2(r)
+    -4((\mathfrak D\Lambda)*\Lambda*\one)(r),
+\end{align*}
+where $(\mathfrak Df)(n)=f(n)\log n$ and $Q_2$ is explicit.  Even
+symmetrization removes the odd coefficient, but not the second one.
+These are exact identities, not cancellation estimates.
+
+At the opposite extreme, an all-frequency kernel after a two-variable
+Mellin demodulation selects the $m=1$ layer exactly.  Its evaluation with
+the Hardy--Littlewood main term is therefore equivalent to the weighted
+fixed-shift prime-pair asymptotic, rather than a proof of it.
+
+\subsection{One-way claim ledger}
+
+For clarity, the logical content is summarized in
+\cref{tab:intro-claim-ledger}.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}
+ >{\raggedright\arraybackslash}p{0.25\textwidth}
+ >{\raggedright\arraybackslash}p{0.31\textwidth}
+ >{\raggedright\arraybackslash}p{0.34\textwidth}@{}}
+\toprule
+Input & Proved output & Not obtained \\
+\midrule
+Complete zero mode + upper sieves
+& Bulk persistence after $m,n\leq Y$ are deleted
+& Fixed-ratio or signed Type~II cancellation \\
+Maximal Bombieri--Vinogradov
+& Smooth scale localization for $n\leq D$
+& Localization of the complete $n>D$ tail \\
+Finite Mellin samples/jets + a TV bound
+& Exact minimax radius and null profiles
+& Impossibility for the actual $\Lambda-1$ profile \\
+Taylor and Fourier identities
+& Explicit parity-sensitive interfaces and exact $m=1$ selector
+& Hardy--Littlewood asymptotic or twin-prime lower bound \\
+\bottomrule
+\end{tabular}
+\caption{Every implication in the paper is one-way.}
+\label{tab:intro-claim-ledger}
+\end{table}

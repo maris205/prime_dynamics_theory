@@ -1,0 +1,236 @@
+\section{Hard-edge removal and bulk persistence}
+\label{sec:scale-bulk}
+
+We begin with a coarse form of scale localization.  It removes both factor
+edges but leaves the ratio $n/m$ otherwise unrestricted.  Define
+\begin{align}
+ \cP_h(X;W)
+ &=\sum_{m,n\geq1}\Lambda(n)\Lambda(mn+h)W(mn/X),
+ \label{eq:prime-source-complete}\\
+ \cA_h(X;W)
+ &=\sum_{m,n\geq1}(\Lambda(n)-1)\Lambda(mn+h)W(mn/X),
+ \label{eq:residual-complete}
+\end{align}
+and let a superscript $\mathrm{bulk}(Y)$ mean that both $m>Y$ and $n>Y$
+are imposed.
+
+\subsection{The two complete collapses}
+
+The prime-source form has an even simpler zero-mode collapse than the
+residual form.
+
+\begin{proposition}[Complete prime-source collapse]
+\label{prop:prime-source-collapse}
+For every $A>0$,
+\begin{equation}\label{eq:prime-source-complete-asymptotic}
+ \cP_h(X;W)
+ =X\{(\log X)I_0(W)+I_1(W)\}
+ +O_{A,h,W}\!\left(X(\log X)^{-A}\right).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Put $r=mn$ and use $\sum_{n\mid r}\Lambda(n)=\log r$.  Then
+\[
+ \cP_h(X;W)=\sum_{r\geq1}(\log r)\Lambda(r+h)W(r/X).
+\]
+The fixed-shift prime number theorem and smooth partial summation give
+\[
+ \sum_r(\log r)\Lambda(r+h)W(r/X)
+ =\int_0^\infty (\log u)W(u/X)\,du
+ +O_{A,h,W}(X(\log X)^{-A}),
+\]
+and the integral is the main term in
+\eqref{eq:prime-source-complete-asymptotic}.
+\end{proof}
+
+The residual form is \eqref{eq:intro-complete-zero-mode}.  Only its leading
+coefficient is needed below:
+\begin{equation}\label{eq:residual-leading-only}
+ \cA_h(X;W)
+ =(1-C_h)I_0(W)X\log X+O_{h,W}(X).
+\end{equation}
+
+\subsection{An edge ledger}
+
+We record the upper bounds used to remove the two factor edges.  They are
+upper-sieve statements; no cancellation between rows is asserted.
+
+\begin{lemma}[One-prime edge]
+\label{lem:one-prime-edge}
+Uniformly for $2\leq Y\leq X^{1/3}$,
+\begin{align}
+ &\sum_{q\leq Y}(\Lambda(q)+1)
+   \sum_{k\geq1}\Lambda(qk+h)|W(qk/X)|
+ \ll_{h,W}X\log(2Y),
+ \label{eq:one-prime-q-edge}\\
+ &\sum_{q\leq Y}
+   \sum_{k\geq1}\Lambda(qk+h)|W(qk/X)|
+ \ll_{h,W}X\log(2Y).
+ \label{eq:one-prime-k-edge}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+For $(q,h)=1$, the weighted Brun--Titchmarsh inequality and partial
+summation give
+\begin{equation}\label{eq:weighted-BT-row}
+ \sum_{k\geq1}\Lambda(qk+h)|W(qk/X)|
+ \ll_{h,W}\frac{X}{\varphi(q)}
+\end{equation}
+uniformly for $q\leq X^{1/3}$.  The proper prime-power targets contribute
+at most $O_W(X^{1/2}(\log X)^2)$ in one row, which is
+$O(X/\varphi(q))$ in this range for large $X$: there are
+$O_W(X^{1/2})$ powers $p^a\asymp_W X$ with $a\geq2$, and each von
+Mangoldt weight is $O(\log X)$.  The elementary estimates
+\begin{equation}\label{eq:phi-harmonic-estimates}
+ \sum_{q\leq Y}\frac1{\varphi(q)}\ll\log(2Y),
+ \qquad
+ \sum_{q\leq Y}\frac{\Lambda(q)}{\varphi(q)}\ll\log(2Y)
+\end{equation}
+then prove the coprime part of both claims.
+
+If $(q,h)>1$ and $qk+h$ is in the support of $\Lambda$, some prime
+$p\mid h$ divides $qk+h$.  Hence $qk+h=p^a$.  For each of the finitely
+many $p\mid h$, only $O_{h,W}(1)$ powers lie in the fixed-ratio interval
+forced by $W(qk/X)$.  Summing the divisor weights over the corresponding
+$q\mid p^a-h$ costs $X^\eps$ for every $\eps>0$, which is absorbed by the
+right-hand sides.
+\end{proof}
+
+The other edge contains two prime weights.  Its standard Selberg-sieve
+bound is included with the local-factor calculation because that
+dependence on the varying coefficient $m$ is important.
+
+\begin{lemma}[Two-linear-forms edge]
+\label{lem:two-linear-forms-edge}
+Uniformly for $2\leq Y\leq X^{1/3}$,
+\begin{equation}\label{eq:two-linear-forms-edge}
+ \sum_{m\leq Y}\sum_{n\geq1}
+ \Lambda(n)\Lambda(mn+h)|W(mn/X)|
+ \ll_{h,W}X\log(2Y).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+First suppose $(m,h)=1$ and restrict both von Mangoldt factors to primes.
+On an interval $n\asymp_W X/m$, apply the Selberg upper-bound sieve to the
+two forms
+\[
+ n,\qquad mn+h.
+\]
+If $\nu_p$ is the number of roots of $n(mn+h)$ modulo $p$, then
+\[
+ \nu_p=
+ \begin{cases}
+  1,&p\mid mh,\\
+  2,&p\nmid mh.
+ \end{cases}
+\]
+If $m$ and $h$ are both odd, then $n$ and $mn+h$ cannot both be odd primes
+in the ranges $n\asymp_W X/m$ and $mn+h\asymp_W X$ once $X$ is large; the
+prime--prime contribution is then zero.  In the admissible cases the upper
+singular factor satisfies
+\begin{equation}\label{eq:upper-singular-factor}
+ \cS^+(m,h)
+ \ll_h\prod_{\substack{p\mid m\\p>2}}\frac{p-1}{p-2}
+ \ll_h\frac{m}{\varphi(m)}.
+\end{equation}
+Indeed, after comparison with $p/(p-1)$ the quotient of the two local
+factors is $1+O(p^{-2})$.  The standard dimension-two upper sieve
+\citep[Chapter~6]{IwaniecKowalski2004} therefore gives
+\begin{equation}\label{eq:two-prime-row-upper}
+ \sum_{\substack{n\geq1\\n,\,mn+h\ \mathrm{prime}}}
+ (\log n)\log(mn+h)|W(mn/X)|
+ \ll_{h,W}\frac{X}{\varphi(m)}.
+\end{equation}
+Summing \eqref{eq:two-prime-row-upper} and using
+\eqref{eq:phi-harmonic-estimates} costs $O_{h,W}(X\log(2Y))$.
+
+It remains to restore proper prime powers.  If $n$ is a proper prime
+power, their aggregate contribution is bounded by
+\[
+ \sum_{m\leq Y}(X/m)^{1/2}(\log X)^2
+ \ll \sqrt{XY}(\log X)^2.
+\]
+If $mn+h$ is a proper prime power, the crude aggregate bound
+\[
+ \sum_{m\leq Y}X^{1/2}(\log X)^2
+ \ll YX^{1/2}(\log X)^2
+\]
+suffices.  Both are $o(X)$ in the stated range.  Finally, if $(m,h)>1$
+and $\Lambda(mn+h)\ne0$, the same argument as in
+\cref{lem:one-prime-edge} forces $mn+h=p^a$ for a fixed prime $p\mid h$;
+the total is $X^{o(1)}$.  This proves the lemma.
+\end{proof}
+
+\begin{remark}[Why the power range is deliberately conservative]
+The exponent $1/3$ is not optimized.  It makes all proper-prime-power
+ledgers $o(X)$ with no need for a refined progression count.  The result
+below concerns subpower hard edges, for which this range is more than
+sufficient.
+\end{remark}
+
+\subsection{The bulk theorem}
+
+\begin{theorem}[Two-sided hard-edge bulk persistence]
+\label{thm:bulk-persistence}
+Fix $h\ne0$ and $W\in C_c^1((0,\infty))$.  Uniformly for
+\begin{equation}\label{eq:bulk-Y-range}
+ 2\leq Y\leq X^{1/3},
+\end{equation}
+one has
+\begin{align}
+ \cP_h^{\mathrm{bulk}(Y)}(X;W)
+ &=I_0(W)X\log X+O_{h,W}(X\log(2Y)),
+ \label{eq:prime-source-bulk}\\
+ \cA_h^{\mathrm{bulk}(Y)}(X;W)
+ &=(1-C_h)I_0(W)X\log X+O_{h,W}(X\log(2Y)).
+ \label{eq:residual-bulk}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Choose $0<\alpha<\beta$ with $\supp W\subset[\alpha,\beta]$.  In the
+range \eqref{eq:bulk-Y-range}, the intersection $m,n\leq Y$ is disjoint
+from $mn\asymp_W X$ once $X$ is sufficiently large.  Thus each bulk form
+is its complete form minus the $n\leq Y$ edge minus the $m\leq Y$ edge.
+
+For the prime-source form, the $n$-edge is bounded by the
+$\Lambda(q)$ part of \eqref{eq:one-prime-q-edge}; the $m$-edge is
+\cref{lem:two-linear-forms-edge}.  Insert
+\eqref{eq:prime-source-complete-asymptotic}.
+
+For the residual form, bound $|\Lambda(n)-1|\leq\Lambda(n)+1$.  The
+$n$-edge follows from \eqref{eq:one-prime-q-edge}.  On the $m$-edge, the
+$\Lambda(n)$ part is \cref{lem:two-linear-forms-edge}, and the constant
+part is \eqref{eq:one-prime-k-edge}.  Insert
+\eqref{eq:residual-leading-only}.  All discarded $O(X)$ terms are absorbed
+by $O(X\log(2Y))$.
+\end{proof}
+
+\begin{corollary}[Subpower edge removal]
+\label{cor:subpower-edge-removal}
+Suppose $2\leq Y=Y(X)\leq X^{1/3}$ and
+$\log(2Y)=o(\log X)$.  If $I_0(W)\ne0$, then
+\[
+ \cP_h^{\mathrm{bulk}(Y)}(X;W)\sim I_0(W)X\log X.
+\]
+If additionally $(1-C_h)I_0(W)\ne0$, then
+\[
+ \cA_h^{\mathrm{bulk}(Y)}(X;W)
+ \sim(1-C_h)I_0(W)X\log X.
+\]
+In particular, the conclusion applies to
+$Y=(\log X)^K$ and to $Y=\exp((\log X)^\alpha)$ for fixed $K>0$ and
+$0<\alpha<1$.
+\end{corollary}
+
+\begin{remark}[What persists and what does not]
+When $Y=X^\delta$, the error in
+\cref{thm:bulk-persistence} has the same order as the displayed main term;
+no unchanged coefficient is then asserted.  Even in the subpower range,
+the theorem controls a wide interior aggregate, not a fixed-width window
+in $\log(n/m)$.  It is therefore neither a Type~II estimate nor a
+prime-pair asymptotic.
+\end{remark}
