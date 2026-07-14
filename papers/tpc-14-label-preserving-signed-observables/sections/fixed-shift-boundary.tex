@@ -1,0 +1,157 @@
+\section{Why the positive theorems do not select a fixed prime pair}
+\label{sec:fixed-shift-boundary}
+
+There are two different losses in the preceding results.  The fixed-shift
+law retains the shell $k=1$ but aggregates its orientations.  The full-mask
+law retains every orientation but averages the shift.  Neither loss can be
+reversed by an algebraic change of coordinates alone.
+
+\subsection{One shift average does not recover one shift coordinate}
+
+The following Hilbert-space calculation isolates the quantifier loss.
+Let $Q$ be a finite shift set, let $w\in\C^Q\setminus\{0\}$, and observe
+only
+$A_w(z)=\langle z,w\rangle=\sum_{q\in Q}z_q\overline{w_q}$.
+
+\begin{proposition}[Exact coordinate-recovery minimax]
+\label{prop:shift-coordinate-minimax}
+For $q_\ast\in Q$ and $B>0$,
+\begin{align}
+ &\inf_{\Phi:\C\to\C}
+ \sup_{\|z\|_2\leq B}
+ |z_{q_\ast}-\Phi(A_w(z))|
+ \notag\\
+ &\qquad={}
+ B\left(
+ 1-\frac{|w_{q_\ast}|^2}{\|w\|_2^2}
+ \right)^{1/2}.
+ \label{eq:shift-coordinate-minimax}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+As in \cref{thm:local-minimax}, the exact radius is $B$ times the norm of
+the target functional on $\ker A_w$.  This is the distance from the
+coordinate vector $e_{q_\ast}$ to $\operatorname{span}\{w\}$, which is
+the right side of \eqref{eq:shift-coordinate-minimax}.  The orthogonal
+projection also gives the optimal linear decoder, so allowing nonlinear
+decoders does not reduce the radius.
+\end{proof}
+
+For the smooth weights in this paper,
+\begin{equation}
+ w_q=H^{-1}G(q/H),
+ \qquad
+ \|w\|_2^2\asymp_G H^{-1}.
+ \label{eq:smooth-shift-vector}
+\end{equation}
+If the selected coordinate lies in the support, then
+$|w_{q_\ast}|^2\ll_GH^{-2}$, and therefore the minimax radius is
+\begin{equation}
+ B\bigl(1-O_G(H^{-1})\bigr).
+ \label{eq:smooth-shift-minimax-limit}
+\end{equation}
+If the coordinate lies outside the sampled window, then $w_{q_\ast}=0$
+and the radius is exactly $B$.
+On an unrestricted response ball, a growing smooth mean retains
+asymptotically none of the stable information needed to recover one
+coordinate.  Arithmetic prime-pair vectors are not arbitrary vectors, so
+this proposition is not an impossibility theorem for twin primes.  It says
+precisely why the averaged theorem, by itself, cannot be inverted at
+$h=2$.
+
+\subsection{Why the fixed shell does not isolate the endpoint}
+
+At fixed $h$, the $k=1$ shell has the exact orientation decomposition
+\begin{equation}
+ \cK_h(X)=
+ \sum_{\substack{a>1,\ b\geq1\\(a,b)=1}}
+ u(a)\eta(ab+h)W(ab/X).
+ \label{eq:fixed-shell-orientation-decomposition}
+\end{equation}
+The proof of \cref{thm:fixed-shell-law} first sums all orientations with
+$ab=r$, producing the unitary-divisor coefficient
+$\log\rad(r)-d^*(r)+1$.  Biao Wang's theorem estimates that aggregate.
+It supplies no estimate uniform in a dual orientation mask and therefore
+cannot be combined with the exact Fej\'er selector to retain only $b=1$.
+For that mask the target is exactly
+\begin{equation}
+ \sum_a(\Lambda(a)-1)(\Lambda(a+h)-1)W(a/X),
+ \label{eq:fixed-endpoint-boundary}
+\end{equation}
+the unresolved fixed-shift covariance.
+
+The Hardy--Littlewood prime-pair conjecture predicts the local main-term
+coefficient
+\begin{equation}
+ \sum_a(\Lambda(a)-1)(\Lambda(a+h)-1)W(a/X)
+ \sim\bigl(\mathfrak S(h)-1\bigr)XI_0(W),
+ \label{eq:expected-fixed-covariance}
+\end{equation}
+where $\mathfrak S(h)$ is the prime-pair singular series
+\citep{HardyLittlewood1923}.  In particular,
+$\mathfrak S(2)=2C_2$, with
+\[
+ C_2=\prod_{p>2}\left(1-\frac1{(p-1)^2}\right).
+\]
+Thus the expected $h=2$ covariance is
+$(2C_2-1)XI_0(W)$, not zero.
+
+This distinction is easy to lose: exact coordinate recovery is an
+identity for a finite coefficient array, while an arithmetic asymptotic is
+a norm estimate uniform over the selector needed for inversion.  The
+former does not manufacture the latter.
+
+\subsection{Sparse rays fall outside the natural-scale transfer}
+
+The $\ell^2$ transfer is uniform over masks, but its absolute bound need
+not be sharp at the natural size of every sparse mask.  Fix a primitive
+orientation $(a_0,b_0)$.  Its product centers have the form
+\begin{equation}
+ r=a_0b_0k^2\asymp X,
+ \label{eq:quadratic-ray-centers}
+\end{equation}
+so only $O_{a_0,b_0}(X^{1/2})$ centers occur.  The source coefficient has
+\begin{equation}
+ \|c_{a_0,b_0}\|_2
+ \ll_{a_0,b_0,W}X^{1/4}\log X.
+ \label{eq:quadratic-ray-coefficient-norm}
+\end{equation}
+Combining this with the global residual norm
+\eqref{eq:translated-residual-l2} yields only
+\begin{equation}
+ \left|
+ \sum_{r=a_0b_0k^2}c_{a_0,b_0}(r)
+ \Delta_{X,H,h_0}(r)
+ \right|
+ \ll_A X^{3/4}(\log X)^{-A},
+ \label{eq:sparse-ray-global-l2-bound}
+\end{equation}
+after renaming $A$.  For every fixed $A$, this is not $o(X^{1/2})$.
+Thus the uniform theorem controls the full mask ball on the ambient
+$X$-scale, but it does not give natural-scale cancellation on an
+individual quadratic ray.  Such a result would require a restriction
+estimate for the translated residual on sparse polynomial centers.
+
+\subsection{The remaining fixed-shift gate}
+
+The results can now be placed in a strict logical order:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+ \item the joint GCD--Mellin coordinate preserves every finite factor
+ label exactly;
+ \item the fixed $k=1$ aggregate is evaluable at every prescribed
+ $h\ne0$;
+ \item all shift-independent signed labels are controllable after a
+ growing short-shift mean;
+ \item local divisor labels below the square-root gate possess an exact
+ prime/semiprime null direction;
+ \item a balanced bilinear row detects that direction, but estimating the
+ corresponding fixed-$h$ arithmetic packet remains open.
+\end{enumerate}
+
+Accordingly, the next useful target is not another algebraic inversion.
+It is a fixed-shift asymptotic, or cancellation after subtracting the
+correct local main term, for a sufficiently localized Type-II packet with
+enough uniformity to preserve the endpoint label.  Proving such an estimate
+would be genuine analytic progress.  The present paper neither assumes nor
+claims it.

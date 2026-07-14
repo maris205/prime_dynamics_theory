@@ -1,0 +1,129 @@
+\section{Exact signed selectors in the joint label space}
+\label{sec:dual-selectors}
+
+We record the bilinear form of the tensor-Fej\'er identity from TPC-13.  It
+is the precise sense in which a signed label is retained before any shift
+average.
+
+Let $J$ be a finite index set with pairwise distinct joint frequencies
+\begin{equation}
+ \xi_j=(\lambda_j,\rho_j)\in\R^2,
+ \qquad j\in J,
+ \label{eq:abstract-joint-frequencies}
+\end{equation}
+and define
+\begin{equation}
+ \cO_x(t,s)=\sum_{j\in J}x_j e^{i(t\lambda_j+s\rho_j)}.
+ \label{eq:abstract-observation}
+\end{equation}
+Use the normalized Fej\'er kernel
+\begin{equation}
+ \kappa(t)=\frac2\pi\left(\frac{\sin(t/2)}t\right)^2,
+ \qquad
+ \widehat\kappa(\xi)=(1-|\xi|)_+.
+ \label{eq:fejer-kernel}
+\end{equation}
+
+\begin{proposition}[Exact dual-mask identity]
+\label{prop:dual-mask-identity}
+Let $T,S>0$ and suppose that, for every $i\ne j$,
+\begin{equation}
+ T|\lambda_i-\lambda_j|\geq1
+ \quad\text{or}\quad
+ S|\rho_i-\rho_j|\geq1.
+ \label{eq:pairwise-mask-separation}
+\end{equation}
+For arbitrary coefficient and mask vectors $x,\omega\in\C^J$,
+\begin{equation}
+ \frac1{TS}\iint_{\R^2}
+ \kappa(t/T)\kappa(s/S)
+ \cO_x(t,s)\overline{\cO_\omega(t,s)}\,dt\,ds
+ =\sum_{j\in J}x_j\overline{\omega_j}.
+ \label{eq:dual-mask-identity}
+\end{equation}
+Conversely, if \eqref{eq:pairwise-mask-separation} fails for one pair,
+\eqref{eq:dual-mask-identity} fails for some $x,\omega$ supported on that
+pair.
+\end{proposition}
+
+\begin{proof}
+Expanding the integral, the $(i,j)$ term is multiplied by
+\[
+ \widehat\kappa(T(\lambda_i-\lambda_j))
+ \widehat\kappa(S(\rho_i-\rho_j)).
+\]
+The diagonal multiplier is $1$, and every off-diagonal multiplier vanishes
+under \eqref{eq:pairwise-mask-separation}.  If that condition fails for one
+pair, both multipliers are strictly positive; choosing $x$ and $\omega$ on
+the pair leaves a nonzero cross term.
+\end{proof}
+
+For the factor coordinates \eqref{eq:gcd-coordinates}, use
+\begin{equation}
+ \lambda_{a,b,k}=\log(a/b),
+ \qquad
+ \rho_{a,b,k}=\log k.
+ \label{eq:gcd-mellin-frequencies}
+\end{equation}
+The global gap bounds in TPC-13 permit
+$T\asymp X$ and $S\asymp\sqrt X$.  Sectorwise filters use the smaller
+anisotropic scales $T_R\asymp R$ and $S_R\asymp\sqrt{X/R}$ after each
+sector is isolated.  We import those gap estimates; no new large-sieve
+theorem is asserted here.
+
+For a fixed shift $h$, set
+\begin{equation}
+ x_{a,b,k}(h;X,D)=
+ \one_{ak>D}u(ak)\eta(abk^2+h)W(abk^2/X).
+ \label{eq:arithmetic-joint-coefficient}
+\end{equation}
+For an arithmetic mask $\omega$, apply
+\eqref{eq:dual-mask-identity} with dual vector $\overline\omega$.  It
+recovers
+\begin{equation}
+ \sum_{a,b,k\geq1}x_{a,b,k}(h;X,D)
+ \omega_{a,b,k}
+ \label{eq:masked-linear-functional}
+\end{equation}
+without first replacing $x$ by $|x|^2$.  In particular,
+\begin{align}
+ \omega^{\rm end}_{a,b,k}&=\one_{b=k=1},
+ \label{eq:endpoint-mask}\\
+ \omega^{(k_0)}_{a,b,k}&=\one_{k=k_0},
+ \label{eq:radial-layer-mask}\\
+ \omega^{(a_0,b_0)}_{a,b,k}&=\one_{(a,b)=(a_0,b_0)}
+ \label{eq:ray-mask}
+\end{align}
+select the endpoint, a radial layer, and a primitive ray, respectively.
+
+\begin{proposition}[Commutation with translation averaging]
+\label{prop:selector-translation-commutation}
+Let the mask be independent of $h$.  Under
+\eqref{eq:pairwise-mask-separation},
+\begin{align}
+ &\frac1H\sum_qG(q/H)
+ \sum_jx_j(h_0+q)\overline{\omega_j}
+ \notag\\
+ &\quad={}
+ \frac1{HTS}\sum_qG(q/H)
+ \iint_{\R^2}\kappa(t/T)\kappa(s/S)
+ \cO_{x(h_0+q)}(t,s)
+ \overline{\cO_\omega(t,s)}\,dt\,ds.
+ \label{eq:translation-mask-commutation}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+All sums are finite and the Fej\'er kernels are integrable, so the assertion
+is \cref{prop:dual-mask-identity} followed by Fubini's theorem.
+\end{proof}
+
+The proposition is an exact commuting-filter statement.  It does not make a
+shift-dependent target mask legal.  If $\omega$ is allowed to inspect
+$h$ and then retain only factorisations of $r+h$ favorable to primality,
+the coefficient vector itself changes with the translated von Mangoldt
+function and the short-interval transfer below does not apply.
+
+The mask symbol $\omega_{a,b,k}$ is unrelated to the standard arithmetic
+function $\omega(r)$ counting distinct prime divisors.  The context will
+always distinguish them.

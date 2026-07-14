@@ -1,0 +1,193 @@
+\section{The local-information null space and the Type-II gate}
+\label{sec:local-typeii-gate}
+
+The preceding theorems preserve arbitrary labels that are already present
+in a coefficient array.  They do not say whether a proposed label family
+contains enough information to distinguish primes from balanced
+semiprimes.  We make that question exact.
+
+\subsection{An exact minimax formula for a local pushforward}
+
+Let $I$ and $\Sigma$ be finite sets, let
+$\sigma:I\to\Sigma$ be a signature map, and let $w=(w_i)_{i\in I}$ be
+real weights.  The associated pushforward is
+\begin{equation}
+ (\cN_{\sigma,w}x)(s)
+ =\sum_{\substack{i\in I\\\sigma(i)=s}}w_i x_i,
+ \qquad s\in\Sigma.
+ \label{eq:local-pushforward}
+\end{equation}
+For $v\in\R^I$, write $L_v(x)=\sum_i v_ix_i$.
+
+\begin{theorem}[Exact local-data minimax radius]
+\label{thm:local-minimax}
+For $B>0$, even allowing an arbitrary nonlinear decoder
+$\Phi:\ran\cN_{\sigma,w}\to\R$, one has
+\begin{align}
+ &\inf_{\Phi}
+ \sup_{\|x\|_1\leq B}
+ \left|L_v(x)-\Phi(\cN_{\sigma,w}x)\right|
+ \notag\\
+ &\qquad={}
+ B\inf_{g:\Sigma\to\R}
+ \max_{i\in I}|v_i-w_i g(\sigma(i))|.
+ \label{eq:local-minimax}
+\end{align}
+Consequently exact recovery on the $\ell^1$ ball is possible if and only if
+\begin{equation}
+ v_i=w_i g(\sigma(i))
+ \quad(i\in I)
+ \label{eq:local-exact-recovery}
+\end{equation}
+for some $g$.  In the unweighted case $w_i=1$,
+\begin{equation}
+ e_B(v;\sigma)
+ =\frac B2\max_{s\in\Sigma}
+ \left(
+ \max_{\sigma(i)=s}v_i-\min_{\sigma(i)=s}v_i
+ \right).
+ \label{eq:unweighted-fiber-oscillation}
+\end{equation}
+Empty fibers are omitted from the maximum.
+\end{theorem}
+
+\begin{proof}
+Let $N=\cN_{\sigma,w}$.  Two points of the $\ell^1$ ball with the same
+observation differ by an element of $\ker N$ of norm at most $2B$.
+Conversely, if $z\in\ker N$ and $\|z\|_1\leq2B$, then $z/2$ and $-z/2$
+are such a pair.  The smallest worst-case radius of all observation fibers
+is therefore
+\[
+ B\sup_{\substack{z\in\ker N\\\|z\|_1\leq1}}|L_v(z)|.
+\]
+Finite-dimensional quotient duality identifies this norm with
+\[
+ B\,\dist_{\ell^\infty}
+ \bigl(v,\ran N^*\bigr).
+\]
+Since $(N^*g)_i=w_i g(\sigma(i))$, this is
+\eqref{eq:local-minimax}.  The zero-distance criterion gives
+\eqref{eq:local-exact-recovery}.  When $w_i=1$, the best constant on each
+fiber is the midpoint of the extreme $v_i$ values, proving
+\eqref{eq:unweighted-fiber-oscillation}.
+\end{proof}
+
+Thus adding nonlinear post-processing does not repair a missing row.  The
+obstruction is an exact null-space statement, not a limitation of a
+particular learning rule or inversion algorithm.
+
+\subsection{The square-root divisor-information dichotomy}
+
+For $t\in I_X=(X,2X]\cap\N$ and $R\geq2$, define the complete local divisor
+signature
+\begin{equation}
+ \sigma_R(t)=
+ \bigl(\one_{d\mid t,\ d<t}\bigr)_{2\leq d\leq R}.
+ \label{eq:divisor-signature}
+\end{equation}
+Thus only proper divisors are recorded, even if $R\geq t$.
+
+\begin{proposition}[Square-root information gate]
+\label{prop:square-root-information-gate}
+The following statements hold.
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item If $R\geq\sqrt{2X}$, then $\sigma_R(t)=0$ for
+ $t\in I_X$ if and only if $t$ is prime.
+ \item Fix $0<\delta<1$.  For all sufficiently large $X$, uniformly for
+ $R\leq(1-\delta)\sqrt{2X}$, there are a prime $p\in I_X$ and distinct
+ primes $q_1,q_2>R$ such that
+ \begin{equation}
+  s=q_1q_2\in I_X,
+  \qquad
+  \sigma_R(p)=\sigma_R(s)=0.
+  \label{eq:prime-semiprime-null-pair}
+ \end{equation}
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+If $t\leq2X$ is composite, it has a divisor $d$ with
+$2\leq d\leq\sqrt t\leq\sqrt{2X}$, proving (i).
+
+For (ii), put
+\[
+ c_0=\max\{1,(1-\delta)\sqrt2\}<\sqrt2
+\]
+and choose a closed interval $[c_1,c_2]$ strictly inside
+$(c_0,\sqrt2)$.  The prime number theorem supplies two distinct primes in
+$[c_1\sqrt X,c_2\sqrt X]$ for all sufficiently large $X$; after shrinking
+the interval if necessary, every product of two points in it lies in
+$(X,2X]$.  Call the primes $q_1,q_2$.  They exceed $R$, so their product
+has zero signature.  A prime $p\in(X,2X]$, again supplied by the prime
+number theorem, has the same signature.
+\end{proof}
+
+This is an information-resolution threshold.  It is not an analytic level
+of distribution and does not assert that sieving to $\sqrt{2X}$ can be
+carried out with a sufficiently accurate remainder.  It is a theorem about
+the specified data interface $\sigma_R$: an algorithm supplied with the
+integer $t$ itself or with additional arithmetic rows has more information.
+Its relation to the classical parity limitation is therefore diagnostic,
+not an alternative proof of that limitation \citep{Selberg1952Parity}.
+
+Take the unweighted pushforward by $\sigma_R$ and view an unknown
+$x\in\ell^1(I_X)$ as a signed mass distribution.  On the null pair in
+\eqref{eq:prime-semiprime-null-pair}, the prime indicator takes values
+$1$ and $0$, the Liouville function takes values $-1$ and $1$, and
+$\Lambda$ takes values $\log p$ and $0$.  Hence
+\cref{thm:local-minimax} gives, on the unit ball,
+\begin{align}
+ e_1(\one_{\mathbb P};\sigma_R)&=\frac12,
+ \label{eq:prime-indicator-minimax}\\
+ e_1(\lambda;\sigma_R)&=1,
+ \label{eq:liouville-minimax}\\
+ e_1(\Lambda;\sigma_R)&\geq\frac12\log p.
+ \label{eq:lambda-minimax}
+\end{align}
+The first two equalities also use the global ranges
+$\one_{\mathbb P}\in\{0,1\}$ and $\lambda\in\{-1,1\}$.
+
+\subsection{A balanced factor row sees the null direction}
+
+For coefficient sequences $\alpha,\beta$, define the bilinear observation
+on a response vector $x$ by
+\begin{equation}
+ \cB_{\alpha,\beta}(x)
+ =\sum_{m,n}\alpha_m\beta_n x(mn).
+ \label{eq:typeii-row}
+\end{equation}
+For the pair in \eqref{eq:prime-semiprime-null-pair},
+\begin{equation}
+ \cB_{\delta_{q_1},\delta_{q_2}}(\delta_p)=0,
+ \qquad
+ \cB_{\delta_{q_1},\delta_{q_2}}(\delta_s)=1.
+ \label{eq:typeii-separates-null-pair}
+\end{equation}
+Thus a single balanced factor row strictly enlarges this specified
+divisor-signature data model: it separates two points that every test
+$d\leq R$ identifies.
+
+The same distinction is visible in the hard coefficient from
+\eqref{eq:vaughan-identity}.  Remove the smooth weight and put
+\begin{equation}
+ H_{U,V}(N)=
+ -\sum_{\substack{\ell k=N\\\ell>U,\ k>V}}
+ \Lambda(\ell)\beta_V(k).
+ \label{eq:finite-vaughan-hard-row}
+\end{equation}
+If $p,q_1,q_2>\max\{U,V\}$ and $s=q_1q_2$, then
+\begin{equation}
+ H_{U,V}(p)=0,
+ \qquad
+ H_{U,V}(s)=-\log s.
+ \label{eq:vaughan-hard-null-witness}
+\end{equation}
+Indeed $\beta_V(q_i)=1$.  In Vaughan's identity the $d=1$ logarithmic
+packet contributes $+\log N$ to both inputs; the hard packet cancels it
+exactly for the semiprime and leaves it untouched for the prime.
+
+Equations \eqref{eq:typeii-separates-null-pair} and
+\eqref{eq:vaughan-hard-null-witness} certify that this balanced bilinear
+row contains information absent from the specified local signature.  They
+provide no cancellation estimate for a long Type-II sum.  That analytic
+estimate is the gate that remains.

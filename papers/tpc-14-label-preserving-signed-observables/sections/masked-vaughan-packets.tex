@@ -1,0 +1,144 @@
+\section{Masked Vaughan packets after target recentering}
+\label{sec:masked-vaughan}
+
+The full-label theorem controls factorisations of the source center
+$r=mn$.  A target-side Vaughan packet requires a different ordering of
+operations: first make the factorized target itself the center, and only
+then average its translated prime partner.
+
+For a finitely supported function $F$ and parameters $U,V\geq1$, put
+\begin{equation}
+ \beta_V(k)=\sum_{\substack{d\mid k\\d\leq V}}\mu(d).
+ \label{eq:vaughan-beta}
+\end{equation}
+The truncated M\"obius coefficient $\beta_V(k)$ is unrelated to the
+fixed-shift Euler factor $\beta_h$ in \eqref{eq:beta-h}.
+Vaughan's identity in the form used in TPC-6 \citep{WangTPC6} is
+\begin{align}
+ \sum_t\Lambda(t)F(t)
+={}&\sum_{t\leq U}\Lambda(t)F(t)
+ -\sum_{\substack{\ell\leq U\\d\leq V}}
+ \Lambda(\ell)\mu(d)\sum_{j\geq1}F(\ell dj)
+ \notag\\
+ &+\sum_{d\leq V}\mu(d)
+ \sum_{j\geq1}(\log j)F(dj)
+ -\sum_{\substack{\ell>U\\k>1}}
+ \Lambda(\ell)\beta_V(k)F(\ell k).
+ \label{eq:vaughan-identity}
+\end{align}
+Moreover,
+\begin{equation}
+ \beta_V(k)=0\qquad(1<k\leq V),
+ \label{eq:vaughan-beta-vanishing}
+\end{equation}
+so the last sum is supported on $\ell>U$, $k>V$.  The identity itself is
+classical \citep{Vaughan1977,HeathBrown1982}; we include it to fix signs and
+the factor labels.
+
+Consider the target-weighted prime-pair form
+\begin{equation}
+ \cC_h^{\rm tar}(X)=
+ \sum_t\Lambda(t)\Lambda(t+h)W(t/X).
+ \label{eq:target-weighted-pair-form}
+\end{equation}
+Taking $F(t)=\Lambda(t+h)W(t/X)$ in
+\eqref{eq:vaughan-identity}, the last term is the hard packet.  We permit an
+arbitrary bounded mask on its now fixed factorisation.
+
+\begin{definition}[Masked hard-packet coefficient]
+\label{def:masked-hard-packet}
+Let $|\omega_{\ell,k}|\leq1$ be independent of $h$.  Define
+\begin{align}
+ c_{U,V}^{\omega}(t)
+ &=-W(t/X)
+ \sum_{\substack{\ell k=t\\\ell>U,\ k>V}}
+ \omega_{\ell,k}\Lambda(\ell)\beta_V(k),
+ \label{eq:hard-packet-coefficient}\\
+ \cH_{h;U,V}^{\omega}(X)
+ &=\sum_tc_{U,V}^{\omega}(t)\Lambda(t+h),
+ \label{eq:raw-hard-packet}\\
+ \cH_{h;U,V}^{\omega,\circ}(X)
+ &=\sum_tc_{U,V}^{\omega}(t)\eta(t+h).
+ \label{eq:centered-hard-packet}
+\end{align}
+\end{definition}
+
+The unmasked case $\omega\equiv1$ is exactly the final term of Vaughan's
+identity for \eqref{eq:target-weighted-pair-form}.  A mask extracts a
+specified dyadic or signed subpacket; the extraction is made before the
+shift is sampled.
+
+\begin{lemma}[Uniform hard-packet ledger]
+\label{lem:hard-packet-ledger}
+Uniformly in $U,V\geq1$ and $\|\omega\|_\infty\leq1$,
+\begin{align}
+ |c_{U,V}^{\omega}(t)|
+ &\leq\|W\|_\infty\tau(t)\log t,
+ \label{eq:hard-packet-pointwise}\\
+ \sum_t|c_{U,V}^{\omega}(t)|^2
+ &\ll_WX(\log X)^5.
+ \label{eq:hard-packet-l2}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Equation \eqref{eq:vaughan-beta} gives
+$|\beta_V(k)|\leq\tau(k)\leq\tau(t)$ when $k\mid t$.  Hence
+\[
+ |c_{U,V}^{\omega}(t)|
+ \leq\|W\|_\infty\tau(t)
+ \sum_{\ell\mid t}\Lambda(\ell)
+ =\|W\|_\infty\tau(t)\log t.
+\]
+The second assertion follows from the classical second moment of $\tau$.
+\end{proof}
+
+\begin{theorem}[Short-shift averaged closure of every masked hard packet]
+\label{thm:masked-hard-packet-transfer}
+Fix $0<\eps<13/15$.  Under the range of
+\cref{thm:translated-residual-l2}, uniformly in $U,V$ and every bounded
+shift-independent mask,
+\begin{equation}
+ \frac1H\sum_qG(q/H)
+ \cH_{h_0+q;U,V}^{\omega,\circ}(X)
+ \ll_{A,\eps,W,G}X(\log X)^{-A}
+ \label{eq:centered-hard-packet-transfer}
+\end{equation}
+for every $A>0$.  Equivalently,
+\begin{align}
+ \frac1H\sum_qG(q/H)
+ \cH_{h_0+q;U,V}^{\omega}(X)
+ ={}&I_0(G)\sum_tc_{U,V}^{\omega}(t)
+ \notag\\
+ &+O_{A,\eps,W,G}\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:raw-hard-packet-transfer}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Apply \cref{cor:abstract-coefficient-transfer} with
+$c_X=c_{U,V}^{\omega}$ and use
+\eqref{eq:hard-packet-l2}.  The raw form follows from
+$\Lambda=1+\eta$ and Euler summation.  Indeed,
+$|\sum_t c_{U,V}^{\omega}(t)|\ll_WX(\log X)^{5/2}$ by Cauchy--Schwarz,
+so the $O_G(H^{-1})$ lattice error is absorbed by the polynomial lower
+bound on $H$.
+\end{proof}
+
+\begin{remark}[What has and has not become Type II]
+The coefficient in \eqref{eq:hard-packet-coefficient} is the bilinear hard
+packet left by Vaughan's identity, and the theorem controls every one of
+its fixed masks.  A balanced dyadic Type-II packet is obtained only after
+placing both factors in comparable prescribed ranges.  The cancellation in
+\eqref{eq:centered-hard-packet-transfer}, however, comes from averaging the
+second prime variable and importing the Guth--Maynard short-interval
+theorem.  We do not prove a new fixed-$h$ Type-II estimate.
+\end{remark}
+
+\begin{remark}[Why target recentering is mandatory]
+If $r$ remains the outer center and one masks a factorisation of $r+h$, the
+mask varies with $h$ and can align with the target primes.  Such a packet is
+not covered by \cref{thm:translated-residual-l2}.  In
+\eqref{eq:hard-packet-coefficient}, $t=\ell k$ is fixed first; only the
+partner $t+h$ is translated.  This is the legal order of operations.
+\end{remark}

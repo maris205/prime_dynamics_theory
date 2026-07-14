@@ -1,0 +1,219 @@
+\section{An \texorpdfstring{$\ell^2$}{l2} short-shift transfer for the full dual ball}
+\label{sec:l2-transfer}
+
+We now change the shift quantifier.  The underlying prime theorem is the
+almost-all short-interval result of \citet{GuthMaynard2026}; the point here
+is that its exceptional set yields a small vector in the full dual
+coefficient space.
+
+For integer $h_0$ and parameters satisfying
+\eqref{eq:short-shift-range} and
+\eqref{eq:translation-geometric-range}, define, on the product-center
+interval in \eqref{eq:W-support},
+\begin{equation}
+ \Delta_{X,H,h_0}(r)=
+ \frac1H\sum_{q\in\Z}G(q/H)\eta(r+h_0+q).
+ \label{eq:translated-residual-vector}
+\end{equation}
+
+\begin{theorem}[Translated prime residual in $\ell^2$]
+\label{thm:translated-residual-l2}
+Fix $0<\eps<13/15$.  For every $A>0$, uniformly in the stated geometric
+range,
+\begin{equation}
+ \left(
+ \sum_{\alpha X\leq r\leq\beta X}
+ |\Delta_{X,H,h_0}(r)|^2
+ \right)^{1/2}
+ \ll_{A,\eps,W,G}X^{1/2}(\log X)^{-A}.
+ \label{eq:translated-residual-l2}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+We give the smoothing argument because $G$ may have two-sided support.
+First suppose $H\leq X^{0.98}$ and put
+\[
+ L=\left\lceil\exp\{(\log X)^{1/8}\}\right\rceil.
+\]
+Partition a fixed interval containing $\supp G$ into $L$ equal pieces.
+The corresponding integer shift blocks have length
+$H/L+O(1)\geq X^{2/15+\eps/2}$ for large $X$, and at most
+$O(X^{0.98})$.  Apply Corollary~1.4 of \citet{GuthMaynard2026} to each
+forward block.  Negative shifts merely change the starting point, which
+remains comparable with $X$ by
+\eqref{eq:translation-geometric-range}.  Taking the union over $O(L)$
+blocks gives a set
+$\mathfrak E\subset[\alpha X,\beta X]\cap\Z$ with
+\begin{equation}
+ |\mathfrak E|\ll_{\eps,W,G}
+ X\exp\{-c_{\eps,G}(\log X)^{1/4}\}.
+ \label{eq:l2-exception-size}
+\end{equation}
+Outside this set, the prime number theorem holds on every block with a
+stretched-exponential relative error.  Freeze $G$ on each block.  Its
+$C^1$ variation contributes $O_G(H\log X/L)$ by the elementary bound
+$\Lambda\leq\log(3X)$, which is
+$O_{B,G}(H(\log X)^{-B})$ for every fixed $B$.  Partial summation and the
+negligible proper prime powers therefore give, outside $\mathfrak E$,
+\begin{equation}
+ |\Delta_{X,H,h_0}(r)|\ll_{B,\eps,G}(\log X)^{-B}
+ \label{eq:l2-regular-pointwise}
+\end{equation}
+for every $B>0$.
+
+If $H>X^{0.98}$, partition the shift range into consecutive blocks of
+length between $X^{0.97}$ and $2X^{0.97}$.  Corollary~1.3 of
+\citet{GuthMaynard2026}, whose all-interval range begins below this
+length, applies to every block.  Freezing $G$ now costs
+$O_G(X^{0.97}\log X)=O_{B,G}(H(\log X)^{-B})$.  Thus
+\eqref{eq:l2-regular-pointwise} holds at every center in the long-window
+range, and we take $\mathfrak E=\varnothing$.  This also explains why the
+claimed range extends beyond the $X^{0.99}$ upper endpoint of the
+almost-all corollary.
+
+At an exceptional center, the elementary upper-bound sieve, or simply the
+pointwise bound for $\Lambda$, gives
+\begin{equation}
+ |\Delta_{X,H,h_0}(r)|\ll_G\log(3X).
+ \label{eq:l2-exception-pointwise}
+\end{equation}
+Choose $B>A+2$.  Squaring \eqref{eq:l2-regular-pointwise} and summing over
+$O(X)$ regular centers gives $O(X(\log X)^{-2A})$.  Equations
+\eqref{eq:l2-exception-size}--\eqref{eq:l2-exception-pointwise} give a
+smaller bound on the exceptional set, because the stretched exponential
+absorbs every fixed logarithmic power.  Taking square roots proves the
+theorem.  The $O_G(H^{-1})$ Riemann-sum error in the constant part of
+$\eta=\Lambda-1$ is absorbed since $H$ is a fixed positive power of $X$.
+\end{proof}
+
+\begin{corollary}[Abstract coefficient-space transfer]
+\label{cor:abstract-coefficient-transfer}
+Suppose $c_X(r)$ is supported on $[\alpha X,\beta X]$ and, for some fixed
+$B\geq0$,
+\begin{equation}
+\sum_r|c_X(r)|^2\ll X(\log X)^B.
+\label{eq:coefficient-l2-hypothesis}
+\end{equation}
+Assume that the implied constant is independent of $X,H,h_0$.
+Then, for every $A>0$,
+\begin{equation}
+ \frac1H\sum_qG(q/H)
+ \sum_rc_X(r)\eta(r+h_0+q)
+ \ll_{A,B,\eps,W,G,c}X(\log X)^{-A}.
+ \label{eq:abstract-coefficient-transfer}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Cauchy--Schwarz and \cref{thm:translated-residual-l2}, requested with
+$A+B/2+2$ in place of $A$, give the result.
+\end{proof}
+
+We now verify that every bounded full-coordinate mask belongs to the same
+coefficient ball.  Group \eqref{eq:masked-residual} by $r=abk^2$:
+\begin{equation}
+ \cZ_{h,D}^{\omega}(X)
+ =\sum_rC_{\omega,D}(r)\eta(r+h),
+ \label{eq:masked-product-grouping}
+\end{equation}
+where
+\begin{equation}
+ C_{\omega,D}(r)=W(r/X)
+ \sum_{\substack{abk^2=r,\ (a,b)=1\\ak>D}}
+ \omega_{X,D}(a,b,k)u(ak).
+ \label{eq:masked-product-coefficient}
+\end{equation}
+
+\begin{lemma}[Uniform bounded-mask ledger]
+\label{lem:bounded-mask-ledger}
+Uniformly in $D\geq1$ and every mask satisfying
+\eqref{eq:bounded-mask},
+\begin{align}
+ |C_{\omega,D}(r)|
+ &\leq\|W\|_\infty\bigl(\log r+\tau(r)\bigr),
+ \label{eq:mask-pointwise-ledger}\\
+ \sum_r|C_{\omega,D}(r)|^2
+ &\ll_WX(\log X)^3.
+ \label{eq:mask-l2-ledger}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+The bijection \eqref{eq:gcd-coordinates} sends the triples with
+$abk^2=r$ to the factor pairs $(n,m)$ with $nm=r$, and $ak=n$.
+Therefore
+\[
+ |C_{\omega,D}(r)|
+ \leq\|W\|_\infty\sum_{n\mid r}|\Lambda(n)-1|
+ \leq\|W\|_\infty
+ \left(\sum_{n\mid r}\Lambda(n)+\tau(r)\right).
+\]
+The divisor identity $\sum_{n\mid r}\Lambda(n)=\log r$ proves
+\eqref{eq:mask-pointwise-ledger}.  The classical second moment
+\citep{MontgomeryVaughan2007}
+\[
+ \sum_{r\leq y}\tau(r)^2\ll y(\log(2y))^3
+\]
+then proves \eqref{eq:mask-l2-ledger}.
+\end{proof}
+
+\begin{theorem}[Uniform full-label mask transfer]
+\label{thm:uniform-mask-transfer}
+Fix $0<\eps<13/15$.  For every $A>0$, uniformly in $D\geq1$, every mask
+\eqref{eq:bounded-mask}, and the range of
+\cref{thm:translated-residual-l2},
+\begin{equation}
+ \frac1H\sum_qG(q/H)
+ \cZ_{h_0+q,D}^{\omega}(X)
+ \ll_{A,\eps,W,G}X(\log X)^{-A}.
+ \label{eq:uniform-mask-transfer}
+\end{equation}
+The implied constant is independent of the mask.
+\end{theorem}
+
+\begin{proof}
+Apply \cref{cor:abstract-coefficient-transfer} to
+\eqref{eq:masked-product-coefficient}, using
+\eqref{eq:mask-l2-ledger}.
+\end{proof}
+
+There is an equivalent raw-target formulation.  Put
+\begin{align}
+ \cT_{h,D}^{\omega}(X)
+ &=\sum_{\substack{a,b,k\geq1,\ (a,b)=1\\ak>D}}
+ \omega_{X,D}(a,b,k)u(ak)
+ \Lambda(abk^2+h)W(abk^2/X),
+ \label{eq:raw-masked-transform}\\
+ \cM_D^{\omega}(X)
+ &=\sum_{\substack{a,b,k\geq1,\ (a,b)=1\\ak>D}}
+ \omega_{X,D}(a,b,k)u(ak)W(abk^2/X).
+ \label{eq:raw-mask-model}
+\end{align}
+
+\begin{corollary}[Uniform raw mask model]
+\label{cor:uniform-raw-mask-model}
+Under the hypotheses of \cref{thm:uniform-mask-transfer},
+\begin{equation}
+ \frac1H\sum_qG(q/H)\cT_{h_0+q,D}^{\omega}(X)
+ =I_0(G)\cM_D^{\omega}(X)
+ +O_{A,\eps,W,G}\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:uniform-raw-mask-model}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Write $\Lambda=1+\eta$ and use
+\cref{thm:uniform-mask-transfer}.  Euler summation gives
+$H^{-1}\sum_qG(q/H)=I_0(G)+O_G(H^{-1})$.  The pointwise ledger and the
+mean order of $\tau$ give
+$|\cM_D^\omega|\ll_WX\log(2X)$, so the Riemann-sum error is absorbed in the
+displayed remainder.
+\end{proof}
+
+\begin{remark}[Uniform masks are not uniform target adaptation]
+The theorem permits a different mask for every $X,D,H$, including masks
+chosen after inspecting the source labels.  It does not permit
+$\omega=\omega_h$ to inspect each translated target.  Such a family could
+retain precisely the prime targets and would make the assertion circular.
+\end{remark}

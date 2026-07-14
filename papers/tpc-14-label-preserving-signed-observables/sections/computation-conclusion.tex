@@ -1,0 +1,63 @@
+\section{Finite certificate and conclusion}
+\label{sec:computation-conclusion}
+
+The accompanying script
+\texttt{experiments/signed\_label\_certificate.py} is a deterministic
+finite certificate.  It checks the following identities independently of
+the asymptotic proofs:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item the unitary-divisor shell coefficient
+ $\sum_{a\parallel r,a>1}(\Lambda(a)-1)
+ =\log\rad(r)-2^{\omega(r)}+1$ on a finite range;
+ \item the bijection between factor pairs $(n,m)$ and coordinates
+ $(a,b,k)$, including endpoint and radial masks;
+ \item Vaughan's identity and the hard-packet values on the finite
+ prime/semiprime witness;
+ \item the identical divisor signatures of
+ \begin{equation}
+  p=101,\qquad s=11\cdot13=143,\qquad R=10,
+  \label{eq:finite-null-witness}
+ \end{equation}
+ together with their separation by a balanced factor row;
+ \item the exact finite-fiber minimax radius and the Hilbert-space
+ shift-coordinate radius for sample weights.
+\end{enumerate}
+The script writes a JSON record with all parameters and residuals, and the
+unit test recomputes every assertion.  The certificate does not test the
+Guth--Maynard or unitary-divisor Titchmarsh inputs.
+
+The two quantifier regimes may be summarized without implication arrows:
+\begin{center}
+\small
+\begin{tabular}{
+ >{\raggedright\arraybackslash}p{0.17\textwidth}
+ >{\raggedright\arraybackslash}p{0.33\textwidth}
+ >{\raggedright\arraybackslash}p{0.33\textwidth}}
+\toprule
+ & All orientations $b$ & Endpoint orientation $b=1$\\
+\midrule
+Fixed $h$ & Fixed coprime-shell law in \cref{thm:fixed-shell-law}
+& Unresolved fixed prime-pair covariance\\
+Growing mean in $h$ & Full bounded-mask transfer
+& Endpoint corollaries in \cref{cor:endpoint-centered-mean,cor:raw-endpoint-mean}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The main conclusions are therefore separated cleanly by quantifier.
+At every fixed nonzero shift, one nontrivial exact radial shell has an
+explicit asymptotic; at $h=2$ its leading coefficient is
+$6/\pi^2-1/3$.  Under a growing short-shift average of length
+$H\geq X^{2/15+\eps}$, every bounded shift-independent label mask is
+controlled simultaneously, including the prime-pair endpoint and every
+masked target-recentered Vaughan packet.  An exact minimax theorem then
+locates the information missing from local divisor signatures, and a
+balanced bilinear row detects the resulting prime/semiprime null direction.
+
+What remains is analytic rather than representational: obtain a
+fixed-shift asymptotic, or cancellation after subtracting its correct local
+main term, for a sharply localized Type-II packet while retaining the
+endpoint label.  The fixed-shell law, the full-mask short-shift theorem,
+and the null-space witness provide three independently checkable footholds
+for that next step.  None is a fixed-shift prime-pair asymptotic or a
+breach of the parity barrier.

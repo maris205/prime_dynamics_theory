@@ -1,0 +1,242 @@
+\section{A fixed-shift law on the exact coprime shell}
+\label{sec:fixed-shell}
+
+We now prove \eqref{eq:intro-fixed-shell-law}.  The arithmetic function
+\begin{equation}
+ d^*(r)=2^{\omega(r)}
+ =\#\{(a,b)\in\N^2:ab=r,\ (a,b)=1\}
+ \label{eq:unitary-divisor-function}
+\end{equation}
+counts unitary divisors.  We use $a\parallel r$ to mean
+$a\mid r$ and $(a,r/a)=1$.
+
+\begin{lemma}[Exact shell coefficient]
+\label{lem:exact-shell-coefficient}
+For every $r\geq1$,
+\begin{equation}
+ \sum_{\substack{a\parallel r\\a>1}}u(a)
+ =\log\rad(r)-d^*(r)+1.
+ \label{eq:exact-shell-coefficient}
+\end{equation}
+Consequently
+\begin{equation}
+ \cK_h(X)=
+ \sum_{r\geq1}
+ \bigl(\log\rad(r)-d^*(r)+1\bigr)
+ \eta(r+h)W(r/X).
+ \label{eq:shell-product-ledger}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The unitary divisors of
+$r=\prod_pp^{\nu_p}$ are obtained by choosing, for each $p\mid r$, either
+$1$ or the complete prime-power block $p^{\nu_p}$.  Hence there are
+$2^{\omega(r)}$ of them.  The von Mangoldt weight is nonzero on a unitary
+divisor precisely when that divisor is one prime-power block, and therefore
+\[
+ \sum_{a\parallel r}\Lambda(a)
+ =\sum_{p\mid r}\log p=\log\rad(r).
+\]
+Since $u(1)=-1$, deleting $a=1$ adds $1$ and proves
+\eqref{eq:exact-shell-coefficient}.  Grouping \eqref{eq:intro-k-shell} by
+$r=ab$ proves \eqref{eq:shell-product-ledger}.
+\end{proof}
+
+The leading term comes entirely from the mismatch between the ordinary
+mean of $d^*$ and its mean at a shifted prime.
+
+\begin{theorem}[Unitary-divisor Titchmarsh input]
+\label{thm:unitary-titchmarsh-input}
+For every fixed nonzero integer $h$,
+\begin{equation}
+ \sum_{p\leq y}d^*(p-h)
+ =\beta_hy+O_h\left(\frac y{\log y}\right),
+ \label{eq:unitary-titchmarsh-input}
+\end{equation}
+where $d^*(n)=0$ for $n\leq0$ and $\beta_h$ is given by
+\eqref{eq:beta-h}.
+\end{theorem}
+
+This is the $k=2$ case of Corollary~1.2 of
+\citet{BiaoWang2026}.  In the notation of that paper, the displayed
+constant initially contains
+\[
+ \frac{\zeta(2)\zeta(3)}{\zeta(6)}
+ \prod_p\left(1-\frac1{p^2-p+1}\right).
+\]
+The local identity
+\[
+ \frac{1-p^{-6}}{(1-p^{-2})(1-p^{-3})}
+ \left(1-\frac1{p^2-p+1}\right)=1
+\]
+reduces it to \eqref{eq:beta-h}.
+
+\begin{lemma}[The two unitary-divisor means]
+\label{lem:two-unitary-means}
+For fixed $h\ne0$,
+\begin{align}
+ \sum_{r\geq1}d^*(r)W(r/X)
+ &=\frac{XI_0(W)}{\zeta(2)}\log X+O_W(X),
+ \label{eq:ordinary-unitary-mean}\\
+ \sum_{r\geq1}d^*(r)\Lambda(r+h)W(r/X)
+ &=\beta_hXI_0(W)\log X+O_{h,W}(X).
+ \label{eq:prime-unitary-mean}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+The Dirichlet series identity
+\begin{equation}
+ \sum_{r\geq1}\frac{d^*(r)}{r^s}
+ =\frac{\zeta(s)^2}{\zeta(2s)}
+ \qquad(\Re s>1)
+ \label{eq:unitary-dirichlet-series}
+\end{equation}
+has a double pole at $s=1$ with leading coefficient $1/\zeta(2)$.
+Standard Selberg--Delange summation, or the convolution identity obtained
+from \eqref{eq:unitary-dirichlet-series}, gives
+\[
+ \sum_{r\leq y}d^*(r)
+ =\frac y{\zeta(2)}\log y+O(y).
+\]
+Partial summation against $W(r/X)$ proves
+\eqref{eq:ordinary-unitary-mean}.  Only its $X\log X$ coefficient is used;
+all secondary $X$ terms are absorbed in the remainder.
+
+For \eqref{eq:prime-unitary-mean}, first restrict $r+h$ to primes and put
+$p=r+h$.  Partial summation in \eqref{eq:unitary-titchmarsh-input}, with
+the test function
+\[
+ y\longmapsto \log y\,W((y-h)/X),
+\]
+gives
+\[
+ \sum_p d^*(p-h)\log p\,W((p-h)/X)
+ =\beta_hXI_0(W)\log X+O_{h,W}(X).
+\]
+Here the main integral is
+\[
+ \int_0^\infty \log y\,W((y-h)/X)\,dy
+ =XI_0(W)\log X+O_{h,W}(X).
+\]
+The targets $r+h=p^j$, $j\geq2$, contribute $O_{h,W}(X^{3/4})$, say:
+there are $O(X^{1/2})$ such targets, and
+$d^*(p^j-h)\ll_\delta X^\delta$.  Taking $\delta=1/8$ and absorbing the
+remaining logarithm proves the displayed bound and hence the full von
+Mangoldt form.
+\end{proof}
+
+It remains to show that the logarithmic-radical part has no $X\log X$
+term.
+
+\begin{lemma}[Radical residual]
+\label{lem:radical-residual}
+For every fixed nonzero $h$,
+\begin{equation}
+ \sum_{r\geq1}\log\rad(r)\eta(r+h)W(r/X)
+ =O_{h,W}(X).
+ \label{eq:radical-residual}
+\end{equation}
+Also
+\begin{equation}
+ \sum_{r\geq1}\eta(r+h)W(r/X)=O_{h,W}(X/\log X).
+ \label{eq:constant-residual-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write
+\begin{equation}
+ L(r)=\log r-\log\rad(r)
+ =\sum_{\substack{p^j\mid r\\j\geq2}}\log p.
+ \label{eq:squarefull-log-correction}
+\end{equation}
+The classical zero-free-region prime number theorem, after translating the
+variable by fixed $h$ and applying smooth partial summation, gives
+\begin{equation}
+ \sum_r\log r\,\eta(r+h)W(r/X)=O_{h,W}(X).
+ \label{eq:log-residual-bound}
+\end{equation}
+The weaker error shown here is more than sufficient.
+
+We claim
+\begin{equation}
+ \sum_{r\asymp_WX}L(r)(1+\Lambda(r+h))\ll_{h,W}X.
+ \label{eq:squarefull-correction-bound}
+\end{equation}
+For the unweighted part, insert \eqref{eq:squarefull-log-correction}; the
+convergent sum
+$\sum_{p,j\geq2}(\log p)/p^j$ gives $O(X)$, and the endpoint cost is
+$O(X^{1/2}\log X)$.
+
+For the von Mangoldt part, first remove proper prime-power targets.  Since
+$L(r)\ll_W\log X$ on the support,
+\[
+ \sum_{\substack{\ell^\nu\asymp_W X\\\nu\geq2}}
+ (\log\ell)L(\ell^\nu-h)
+ \ll_{h,W}X^{1/2}\log X.
+\]
+It remains to consider prime targets.  First take $p^j\leq X^{1/2}$.  If
+$p\nmid h$, the Brun--Titchmarsh inequality in the reduced class
+$h\pmod{p^j}$ gives \citep{IwaniecKowalski2004}
+\[
+ \sum_{\substack{r\asymp_WX\\p^j\mid r}}
+ \one_{r+h\ {\rm prime}}\Lambda(r+h)
+ \ll_{h,W}\frac X{\varphi(p^j)}.
+\]
+Indeed,
+\[
+ \sum_p\sum_{j\geq2}\frac{\log p}{\varphi(p^j)}
+ =\sum_p\frac{\log p}{(p-1)^2}<\infty.
+\]
+If $p\mid h$, a prime target divisible by $p$ would have to equal $p$ and
+is absent from the support for large $X$.  For $p^j>X^{1/2}$, use
+$\Lambda\leq\log(3X)$ and count the $O(X/p^j+1)$ multiples.  Explicitly,
+\[
+ \log X
+ \sum_{\substack{j\geq2,\ p^j>X^{1/2}\\p^j\ll_W X}}
+ (\log p)\left(\frac X{p^j}+1\right)
+ \ll_W X^{3/4}\log X;
+\]
+the squares dominate, while $j\geq3$ is smaller.  This proves
+\eqref{eq:squarefull-correction-bound}.  Combining it with
+\eqref{eq:log-residual-bound} proves \eqref{eq:radical-residual}.
+
+Finally, \eqref{eq:constant-residual-bound} is the ordinary smooth prime
+number theorem, again after translating by fixed $h$.
+\end{proof}
+
+\begin{theorem}[Fixed-shift coprime-shell law]
+\label{thm:fixed-shell-law}
+Let $h\ne0$ be fixed.  Then
+\begin{equation}
+ \cK_h(X)=
+ \left(\frac1{\zeta(2)}-\beta_h\right)
+ XI_0(W)\log X+O_{h,W}(X).
+ \label{eq:fixed-shell-law}
+\end{equation}
+For $h=2$, the leading coefficient is
+$6/\pi^2-1/3$.
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:shell-product-ledger}.  The contribution of
+$-d^*(r)\eta(r+h)$ is the difference of
+\eqref{eq:ordinary-unitary-mean} and
+\eqref{eq:prime-unitary-mean}.  The radical and constant terms are
+$O(X)$ by \cref{lem:radical-residual}.
+\end{proof}
+
+\begin{remark}[Where the fixed shift was bought]
+The theorem does not estimate each orientation $b$ separately.  The exact
+sum over all $b$ produces $d^*(r)$, and the unitary-divisor Titchmarsh
+theorem evaluates that aggregate at shifted primes.  If one retains only
+$b=1$, the sum becomes
+\[
+ \sum_a(\Lambda(a)-1)(\Lambda(a+h)-1)W(a/X),
+\]
+which is the fixed-shift prime-pair covariance.  Thus
+\cref{thm:fixed-shell-law} is genuine fixed-$h$ progress at the radial-shell
+level, not an endpoint estimate in disguise.
+\end{remark}

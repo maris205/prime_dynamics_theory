@@ -1,0 +1,176 @@
+\section{Endpoint consequences and parity-conditioned shifts}
+\label{sec:endpoint-even}
+
+The endpoint is selected before the shift average by
+\eqref{eq:endpoint-mask}.  If $D\leq X^{1-\eta_0}$ for a fixed
+$\eta_0>0$, then $a>D$ automatically on the support of $W(a/X)$ for
+large $X$, and
+\begin{equation}
+ \cZ_h^{\rm end}(X)=
+ \sum_{n\geq1}u(n)\eta(n+h)W(n/X).
+ \label{eq:endpoint-centered-correlation}
+\end{equation}
+
+\begin{corollary}[Signed endpoint mean at the two-fifteenths scale]
+\label{cor:endpoint-centered-mean}
+Under the hypotheses of \cref{thm:uniform-mask-transfer}, for every
+$A>0$,
+\begin{equation}
+ \frac1H\sum_qG(q/H)
+ \sum_n u(n)\eta(n+h_0+q)W(n/X)
+ \ll_{A,\eps,W,G}X(\log X)^{-A}.
+ \label{eq:endpoint-centered-mean}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Take $D=1$ and $\omega=\omega^{\rm end}$ in
+\cref{thm:uniform-mask-transfer}.
+\end{proof}
+
+The raw form is a smooth average of prime-pair correlations.
+
+\begin{corollary}[Raw endpoint prime-pair mean]
+\label{cor:raw-endpoint-mean}
+Under the same hypotheses,
+\begin{align}
+ &\frac1H\sum_qG(q/H)
+ \sum_n\Lambda(n)\Lambda(n+h_0+q)W(n/X)
+ \notag\\
+ &\qquad={}
+ XI_0(W)I_0(G)+O_{A,\eps,W,G}
+ \bigl(X(\log X)^{-A}\bigr).
+ \label{eq:raw-endpoint-mean}
+\end{align}
+\end{corollary}
+
+\begin{proof}
+Apply \cref{cor:abstract-coefficient-transfer} to
+$c_X(n)=\Lambda(n)W(n/X)$.  Its hypothesis follows from the classical
+estimate
+\[
+ \sum_n\Lambda(n)^2|W(n/X)|^2\ll_WX\log X.
+\]
+This controls the centered target.  Now use
+\[
+ \frac1H\sum_qG(q/H)=I_0(G)+O_G(H^{-1})
+\]
+and the smooth prime number theorem
+$\sum_n\Lambda(n)W(n/X)=XI_0(W)+O_A(X(\log X)^{-A})$.
+The polynomial lower bound on $H$ absorbs the Riemann-sum error.
+\end{proof}
+
+This corollary has a different quantifier from the almost-all-shift theorem
+of \citet{MatomakiRadziwillTao2019}.  That theorem gives the
+singular-series asymptotic at almost every individual shift in its long
+window once $H\geq X^{8/33+\eps}$.  On the overlapping unmasked range it
+is stronger and yields such a mean.  Equation \eqref{eq:raw-endpoint-mean}
+reaches the shorter two-fifteenths scale and the ambient theorem permits
+arbitrary source masks, but it gives no individual-shift asymptotic.
+
+\subsection{Even shifts and the correct local center}
+
+Conditioning the shift on parity changes the local mean.  Suppose $h_0$ is
+even and sum only over even $q$.  For a product center $r$, define
+\begin{equation}
+ \eta_r^{(2)}(h)=
+ \Lambda(r+h)-2\one_{2\nmid r},
+ \qquad h\equiv0\pmod2.
+ \label{eq:parity-conditioned-residual}
+\end{equation}
+If $r$ is odd, the target runs over odd integers and has conditional von
+Mangoldt density $2$; if $r$ is even, the target is even and only powers of
+$2$ contribute.
+\begin{align}
+ C_H&=\frac1H\sum_qG(q/H),
+ &
+ C_H^{(2)}&=\frac2H\sum_{q\equiv0\ (2)}G(q/H),
+ \label{eq:parity-lattice-masses}\\
+ \Delta^{(2)}(r)
+ &=\frac2H\sum_{q\equiv0\ (2)}
+ G(q/H)\eta_r^{(2)}(h_0+q).
+ \label{eq:parity-translated-residual}
+\end{align}
+
+\begin{theorem}[Uniform even-shift mask transfer]
+\label{thm:even-mask-transfer}
+Under the hypotheses of \cref{thm:uniform-mask-transfer}, with $h_0$ even,
+for every $A>0$,
+\begin{align}
+ &\sup_{\|\omega\|_\infty\leq1}
+ \left|\frac2H
+ \sum_{\substack{q\in\Z\\q\equiv0\ (2)}}G(q/H)
+ \sum_{\substack{a,b,k\geq1,\ (a,b)=1\\ak>D}}
+ \omega_{X,D}(a,b,k)u(ak)
+ \eta_{abk^2}^{(2)}(h_0+q)W(abk^2/X)
+ \right|
+ \notag\\
+ &\qquad\ll_{A,\eps,W,G}X(\log X)^{-A}.
+ \label{eq:even-mask-transfer}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Euler summation gives
+\[
+ C_H=I_0(G)+O_G(H^{-1}),
+ \qquad
+ C_H^{(2)}=I_0(G)+O_G(H^{-1}).
+\]
+If $r$ is odd, then odd $q$ make $r+h_0+q$ even.  At height comparable
+with $X$, the von Mangoldt support on that lattice contains only
+$O_G(1)$ powers of $2$.  Consequently
+\[
+ \Delta^{(2)}(r)
+ =2\Delta_{X,H,h_0}(r)
+ +O_G\!\left(\frac{\log X}{H}\right).
+\]
+If $r$ is even, the even-$q$ target itself is even and
+\[
+ \Delta^{(2)}(r)
+ =O_G\!\left(\frac{\log X}{H}\right).
+\]
+The polynomial lower bound for $H$ therefore gives
+$\|\Delta^{(2)}\|_2\ll_A X^{1/2}(\log X)^{-A}$.
+Apply the mask ledger
+\eqref{eq:mask-l2-ledger} and Cauchy--Schwarz.
+\end{proof}
+
+\begin{corollary}[Conditional even prime-pair mean]
+\label{cor:even-prime-pair-mean}
+Under the hypotheses of \cref{thm:even-mask-transfer}, one has
+\begin{align}
+ &\frac2H\sum_{\substack{q\in\Z\\q\equiv0\ (2)}}G(q/H)
+ \sum_n\Lambda(n)\Lambda(n+h_0+q)W(n/X)
+ \notag\\
+ &\qquad={}
+ 2XI_0(W)I_0(G)+O_{A,\eps,W,G}
+ \bigl(X(\log X)^{-A}\bigr).
+ \label{eq:even-prime-pair-mean}
+\end{align}
+\end{corollary}
+
+\begin{proof}
+Let
+\[
+ P^{(2)}(n)=
+ \frac2H\sum_{q\equiv0\ (2)}
+ G(q/H)\Lambda(n+h_0+q).
+\]
+The preceding proof gives
+$P^{(2)}(n)=\Delta^{(2)}(n)+2C_H^{(2)}\one_{2\nmid n}$.
+By Cauchy--Schwarz, the contribution of $\Delta^{(2)}$ against
+$\Lambda(n)W(n/X)$ is $O_A(X(\log X)^{-A})$ after requesting a larger
+value of $A$.  The smooth prime number theorem, with the powers of $2$
+removed, gives
+\[
+ \sum_{2\nmid n}\Lambda(n)W(n/X)
+ =XI_0(W)+O_A(X(\log X)^{-A}).
+\]
+Since $C_H^{(2)}=I_0(G)+O_G(H^{-1})$, the asserted main term follows.
+\end{proof}
+
+The factor $2$ is the conditional mean of the prime-pair singular series on
+even shifts.  Without the normalization $2/H$, the leading coefficient is
+$1$, the same as in \eqref{eq:raw-endpoint-mean}.  Neither normalization
+selects the particular even shift $2$.

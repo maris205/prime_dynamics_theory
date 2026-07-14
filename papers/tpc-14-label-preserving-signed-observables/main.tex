@@ -1,0 +1,167 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Label-Preserving Signed Observables after Radial Completion: A Fixed-Shift Coprime-Shell Law, Uniform Short-Shift Masks, and the Type-II Gate},
+ pdfauthor={Liang Wang},
+ pdfsubject={Fixed-shift and short-shift theorems for signed GCD-Mellin label selectors},
+ pdfkeywords={prime correlations, GCD-Mellin transform, unitary divisors, Titchmarsh divisor problem, Vaughan identity, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ran}{\operatorname{ran}}
+
+\title{\textbf{Label-Preserving Signed Observables}\\
+\textbf{after Radial Completion:}\\
+\textbf{A Fixed-Shift Coprime-Shell Law, Uniform}\\
+\textbf{Short-Shift Masks, and the Type-II Gate}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let $u(n)=\Lambda(n)-1$, let
+$W\in C_c^1((0,\infty);\R)$ and $G\in C_c^1(\R;\R)$ be nonzero, and
+write every factor pair uniquely as
+$n=ak$, $m=bk$, $(a,b)=1$.  TPC-13 separated the joint labels
+$(\log(a/b),\log k)$ and proved diagonal-energy laws together with
+character-phase first moments.  Here we evaluate one fixed-shift aggregate
+and close the short-shift first moment from character phases to the full
+bounded-mask ball.
+
+The first result is at a prescribed fixed nonzero shift.  The exact radial
+shell $k=1$, with all primitive orientations retained, is
+\[
+ \cK_h(X)=
+ \sum_{\substack{a>1,\ b\geq1\\(a,b)=1}}
+ u(a)(\Lambda(ab+h)-1)W(ab/X).
+\]
+If
+\[
+ \beta_h=\prod_{p\mid h}
+ \left(1-\frac{p}{p^2-p+1}\right),
+\]
+then the unitary-divisor Titchmarsh theorem of Biao Wang implies
+\[
+ \cK_h(X)=
+ \left(\frac1{\zeta(2)}-\beta_h\right)
+ XI_0(W)\log X+O_{h,W}(X).
+\]
+Thus a nontrivial signed GCD--Mellin radial shell is evaluated for every
+fixed $h$, including $h=2$.  It still sums all primitive directions $b$;
+it does not isolate the endpoint $b=1$ and gives no twin-prime conclusion.
+
+The second result controls the full coefficient-space dual ball after a
+growing short-shift average.  For
+$X^{2/15+\eps}\leq H\leq X$ and every $A>0$, the Guth--Maynard
+short-interval inputs give, provided all translated targets remain at
+height comparable with $X$,
+\[
+ \left\|
+ \frac1H\sum_qG(q/H)(\Lambda(\,\cdot+h_0+q)-1)
+ \right\|_{\ell^2(r\asymp X)}
+ \ll_{A,\eps,G}X^{1/2}(\log X)^{-A}.
+\]
+Consequently, uniformly for every $D\geq1$, every bounded,
+shift-independent mask $|\omega(a,b,k)|\leq1$ satisfies
+\[
+ \begin{aligned}
+ &\frac1H\sum_qG(q/H)
+ \sum_{\substack{a,b,k\geq1,\ (a,b)=1\\ak>D}}
+ \omega(a,b,k)u(ak)\\
+ &\qquad{}\times
+ (\Lambda(abk^2+h_0+q)-1)W(abk^2/X)
+ \ll_A X(\log X)^{-A}.
+ \end{aligned}
+\]
+uniformly in the mask.  Taking $D=1$, this includes the exact endpoint
+$b=k=1$,
+individual radial layers, primitive rays, and arbitrary signed unions.
+It yields an averaged endpoint prime-pair asymptotic at the
+two-fifteenths scale, but no selected shift.
+
+After recentering on the factorized target variable, the same theorem
+controls every bounded mask of Vaughan's hard packet under the short-shift
+average.  Finally, an exact local-data minimax formula and a nearly sharp
+square-root divisor-signature dichotomy exhibit a prime/semiprime null
+direction.  A balanced bilinear factor row detects that direction exactly;
+detecting it is an information test, not an estimate for the arithmetic
+packet.  No fixed-shift prime-pair asymptotic, twin-prime lower bound, new
+level of distribution, or breach of sieve parity is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} GCD--Mellin labels; unitary divisors;
+Titchmarsh divisor problem; short-shift prime correlations; Vaughan
+identity; Type-II information; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N05, 11N37; Secondary
+11N35, 11N32, 42A05.
+
+\input{sections/introduction-scope}
+\input{sections/dual-label-selectors}
+\input{sections/fixed-coprime-shell}
+\input{sections/l2-short-shift-transfer}
+\input{sections/endpoint-even-shifts}
+\input{sections/masked-vaughan-packets}
+\input{sections/local-typeii-gate}
+\input{sections/fixed-shift-boundary}
+\input{sections/computation-conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

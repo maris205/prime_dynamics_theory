@@ -1,0 +1,214 @@
+\section{Introduction and scope}
+\label{sec:introduction}
+
+The sequence represented here by TPC-7, TPC-12, and TPC-13 separated
+three questions that are often compressed into one.  A complete
+multiplicative aggregate can be evaluated
+at a fixed shift, but may hide the factor scale.  A Mellin coordinate can
+resolve primitive ratio rays, but a ratio alone collapses every radial
+multiple.  Adding the GCD coordinate restores the full factor label, but
+exact inversion merely reveals the coefficient: it does not estimate the
+fixed-shift prime pair sitting at the endpoint.  See
+\citet{WangTPC7,WangTPC12,WangTPC13}.
+
+This paper takes the next step in two different quantifier regimes.  First,
+we keep one exact radial shell and retain a prescribed fixed shift.  Second,
+we keep an arbitrary signed label mask but average the shift over a growing
+window.  The distinction is essential.
+
+All asymptotics are as $X\to\infty$.  The functions $W,G$ and the
+fixed shift $h$ in the coprime-shell theorem are held fixed; uniform
+parameters are identified explicitly.
+
+Put
+\begin{equation}
+ u(n)=\Lambda(n)-1,
+ \qquad
+ \eta(t)=\Lambda(t)-1,
+ \label{eq:source-target-residuals}
+\end{equation}
+and fix nonzero real functions
+$W\in C_c^1((0,\infty))$ and $G\in C_c^1(\R)$, with
+\begin{equation}
+ \supp W\subset[\alpha,\beta]
+ \subset(0,\infty).
+ \label{eq:W-support}
+\end{equation}
+\begin{equation}
+ I_0(W)=\int_0^\infty W(v)\,dv,
+ \qquad
+ I_0(G)=\int_{\R}G(v)\,dv.
+ \label{eq:I0-definitions}
+\end{equation}
+Every factor pair has the unique representation
+\begin{equation}
+ n=ak,\qquad m=bk,\qquad (a,b)=1,
+ \label{eq:gcd-coordinates}
+\end{equation}
+and the product center is
+\begin{equation}
+ r=mn=abk^2.
+ \label{eq:product-center}
+\end{equation}
+
+\subsection{The fixed-shift radial shell}
+
+The shell $k=1$ consists of the coprime factor pairs $(a,b)$.  At source
+cutoff $D=1$, its signed residual is
+\begin{equation}
+ \cK_h(X)=
+ \sum_{\substack{a>1,\ b\ge1\\(a,b)=1}}
+ u(a)\eta(ab+h)W(ab/X).
+ \label{eq:intro-k-shell}
+\end{equation}
+For a fixed nonzero integer $h$, define
+\begin{equation}
+ \beta_h=
+ \prod_{p\mid h}
+ \left(1-\frac{p}{p^2-p+1}\right),
+ \label{eq:beta-h}
+\end{equation}
+where the product is over the prime divisors of $|h|$ and the empty product
+is $1$.  Our first main theorem is
+\begin{equation}
+ \cK_h(X)=
+ \left(\frac1{\zeta(2)}-\beta_h\right)
+ XI_0(W)\log X+O_{h,W}(X).
+ \label{eq:intro-fixed-shell-law}
+\end{equation}
+The proof is not a prime-pair estimate.  Grouping by $r=ab$ turns the source
+coefficient into
+\begin{equation}
+ \log\rad(r)-2^{\omega(r)}+1.
+ \label{eq:intro-unitary-coefficient}
+\end{equation}
+The term $2^{\omega(r)}$ is the unitary divisor function.  The fixed-shift
+prime target against this function is evaluated by the published
+unitary-divisor Titchmarsh theorem of \citet{BiaoWang2026}.  The remaining
+terms are elementary at the required precision.
+
+For $h=2$, \eqref{eq:beta-h} gives $\beta_2=1/3$ and the coefficient in
+\eqref{eq:intro-fixed-shell-law} is
+\begin{equation}
+ \frac6{\pi^2}-\frac13>0.
+ \label{eq:h-two-shell-coefficient}
+\end{equation}
+This is a fixed-$2$ theorem, but not a twin-prime theorem.  The shell retains
+$k=1$ and sums every primitive orientation $b$; the twin-prime endpoint is
+the single orientation $b=1$.
+
+\subsection{The complete dual mask under a short-shift mean}
+
+In the short-shift part we impose the geometric condition that all
+translated targets occurring on
+\eqref{eq:W-support} remain in a fixed positive dyadic multiple of $X$.
+For example, it is enough that
+\begin{equation}
+ |h_0|+H\max_{v\in\supp G}|v|\leq\frac{\alpha X}{2}.
+ \label{eq:translation-geometric-range}
+\end{equation}
+The one-sided version with $G$ supported in $(0,\infty)$ allows the same
+upper range as TPC-12 after changing the fixed dyadic constants.
+
+For an arbitrary shift-independent mask
+\begin{equation}
+ |\omega_{X,D}(a,b,k)|\leq1,
+ \label{eq:bounded-mask}
+\end{equation}
+define
+\begin{equation}
+ \cZ_{h,D}^{\omega}(X)=
+ \sum_{\substack{a,b,k\geq1,\ (a,b)=1\\ak>D}}
+ \omega_{X,D}(a,b,k)u(ak)
+ \eta(abk^2+h)W(abk^2/X).
+ \label{eq:masked-residual}
+\end{equation}
+The mask may depend on $X,D,H$ and may be discontinuous in every label, but
+it may not depend on the sampled shift $h$.
+
+For fixed $0<\eps<13/15$, uniformly in
+\begin{equation}
+ X^{2/15+\eps}\leq H\leq X
+ \label{eq:short-shift-range}
+\end{equation}
+subject to \eqref{eq:translation-geometric-range}, we prove that, for every
+$A>0$,
+\begin{equation}
+ \sup_{\|\omega\|_\infty\leq1}
+ \left|
+ \frac1H\sum_{q\in\Z}G(q/H)
+ \cZ_{h_0+q,D}^{\omega}(X)
+ \right|
+ \ll_{A,\eps,W,G}X(\log X)^{-A}.
+ \label{eq:intro-mask-theorem}
+\end{equation}
+This is stronger than uniformity in the two character phases
+$(a/b)^{it}k^{is}$.  It closes that phase family to the entire bounded
+$\ell^\infty$ coefficient-mask ball.  In particular it includes the exact endpoint mask
+$\one_{b=k=1}$, a single radial layer $\one_{k=k_0}$, one primitive ray,
+a dyadic source layer, and arbitrary signed unions of these sets.
+
+The analytic input is Corollary~1.4 of \citet{GuthMaynard2026}, which gives
+the prime number theorem in almost all intervals of length
+$X^{2/15+\eps}$.  Our contribution is an $\ell^2$ dual transfer.  The
+translated residual vector has arbitrarily small logarithmic norm, while
+every bounded GCD--Mellin mask has a divisor-controlled $\ell^2$ norm.
+This is not a new short-interval theorem.
+
+\subsection{Endpoint, hard packets, and the information gate}
+
+The endpoint mask yields
+\begin{equation}
+ \frac1H\sum_qG(q/H)
+ \sum_n u(n)\eta(n+h_0+q)W(n/X)
+ \ll_A X(\log X)^{-A}.
+ \label{eq:intro-endpoint-covariance}
+\end{equation}
+After adding back the one-prime terms, its raw form has main term
+$XI_0(W)I_0(G)$.  This reaches the endpoint before taking the mean, but the
+mean still samples $\asymp H$ shifts.  It gives no information about the
+coordinate $h=2$.
+
+There is also a legal target-side Vaughan formulation.  One first uses the
+factorized target $t=\ell k$ as the outer center; only then may one apply an
+arbitrary mask $\omega_{\ell,k}$.  The coefficient is independent of the
+subsequent translation, so \eqref{eq:intro-mask-theorem}'s abstract
+$\ell^2$ mechanism gives a short-shift averaged model for every masked hard
+packet.  Masking a factorization of $r+h$ while retaining $r$ as center
+would instead make the mask $h$-dependent and is not covered.
+
+Finally we give two exact boundary theorems.  First, nonlinear recovery from
+a specified local pushforward has minimax radius equal to an
+$\ell^\infty$ row-space distance.  Second, the complete divisor signature
+up to $R$ distinguishes primes from composites in $(X,2X]$ once
+$R\geq\sqrt{2X}$, whereas below
+$(1-\eps)\sqrt{2X}$ a prime and a squarefree semiprime have identical zero
+signatures.  A balanced bilinear factor row separates this null pair exactly.
+That is a test that the row contains new information, not a proof that its
+arithmetic sum is small.
+
+\subsection{Claim ledger and relation to earlier layers}
+
+\begin{center}
+\small
+\begin{tabular}{
+ >{\raggedright\arraybackslash}p{0.18\textwidth}
+ >{\raggedright\arraybackslash}p{0.25\textwidth}
+ >{\raggedright\arraybackslash}p{0.22\textwidth}
+ >{\raggedright\arraybackslash}p{0.18\textwidth}}
+\toprule
+Result & Label retained & Quantifier & Missing conclusion\\
+\midrule
+TPC-7 & complete large-divisor defect & almost all $h$, $H\geq X^{8/33+\eps}$ & prescribed $h$ and individual layers\\
+TPC-13 & every $(a,b,k)$ through character phases & signed first moment and squared energy & arbitrary bounded masks\\
+Fixed shell here & exact $k=1$ shell & every fixed $h\ne0$ & one orientation $b=1$\\
+Mask theorem here & arbitrary $(a,b,k)$ mask & signed mean, $H\geq X^{2/15+\eps}$ & any selected shift\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The constructed GCD--Mellin and translation actions below are coordinate
+representations of finite coefficient arrays.  We claim no intrinsic prime,
+logistic, transfer-operator, or zeta-zero spectrum.  We also prove no
+fixed-shift prime-pair asymptotic, twin-prime lower bound, new level of
+distribution, or violation of the classical sieve parity barrier.
