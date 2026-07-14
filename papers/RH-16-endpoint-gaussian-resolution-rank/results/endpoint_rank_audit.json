@@ -1,0 +1,74 @@
+{
+  "analytic_results": {
+    "actual_markov_resonance_count": "not proved",
+    "boundary_ladder": "delta_k=C_b*lambda^(-2k)*(1+o(1))",
+    "exact_affinity": "A(t,s)=exp(-(t-s)^2/8)Phi((t+s)/2)/sqrt(Phi(t)Phi(s))",
+    "hilbert_schmidt_energy": "||R_sigma||_S2^2=log(1/sigma)/(2log(lambda))+O(1)",
+    "power_universality": "the same energy and rank laws hold for every fixed beta>0, including linear rows beta=1",
+    "threshold_rank": "#{j:s_j(R_sigma)>eta}=log(1/sigma)/(2log(lambda))+O_eta(1), 0<eta<1"
+  },
+  "boundary_numerics": {
+    "asymptotic_constant": 0.46080514922172455,
+    "limiting_ratio": 0.3549108444017701
+  },
+  "cloud_comparison": {
+    "differences_model_minus_cloud": [
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "exact_matches": 6,
+    "maximum_absolute_difference": 1,
+    "noise_levels": 7,
+    "status": "floating-point comparison to archived RH-15 cloud selections"
+  },
+  "generated_utc": "2026-07-14T07:47:45.336468+00:00",
+  "rank_audit": {
+    "energy_defect_range": [
+      -2.066754801548117,
+      -1.8384469801494525
+    ],
+    "linear_row_energy_defect_range": [
+      -1.707828580408826,
+      -1.5038335506112936
+    ],
+    "linear_row_rank_defect_range": [
+      -2.114056818807569,
+      -1.115382387270973
+    ],
+    "rank_defect_range": [
+      -2.5570284094037845,
+      -1.4495994329132458
+    ],
+    "tail_resolution_counts": [
+      16,
+      16,
+      16,
+      16,
+      16
+    ],
+    "threshold": 0.7071067811865475
+  },
+  "software": {
+    "mpmath": "1.4.1",
+    "numpy": "2.2.6",
+    "platform": "Linux-5.15.0-177-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "scipy": "1.15.3"
+  },
+  "source_sha256": {
+    "experiments/run_endpoint_rank_audit.py": "e84b5877f0daf0125dbe7c47d013653aa15fcc9135604d1d50925b80cde0667d",
+    "src/endpoint_rank/boundary.py": "f6dc0f760ef795b313b242c221f94d760df16f8e798156fd1746b56b3686463d",
+    "src/endpoint_rank/hellinger.py": "6e462160692a14037a051d230199fc6f7d52149161ef9bcfd6ee024f85803cec"
+  },
+  "status": {
+    "boundary_constant_decimal": "high-precision numerical evaluation",
+    "cloud_rank_identification": "diagnostic, not a theorem",
+    "endpoint_rank_theorem": "analytic",
+    "shift_block_reduction": "open"
+  }
+}
