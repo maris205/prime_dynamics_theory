@@ -1,0 +1,120 @@
+\section{The small-factor transfer}
+\label{sec:small-factor-transfer}
+
+We next evaluate \eqref{eq:intro-small-residual}.  Here $n$ is the modulus
+seen by the target prime.  This is a one-sided Type~I problem, so the
+classical square-root level applies.
+
+\begin{theorem}[Coefficient-uniform fixed-product Type~I estimate]
+\label{thm:fixed-product-Type-I}
+Fix $h\ne0$, $W\in C_c^1((0,\infty))$, and $A>0$.  There is
+$B=B(A,h,W)>0$ such that, whenever
+\begin{equation}\label{eq:fixed-product-BV-range}
+ 1\leq D\leq\frac{X^{1/2}}{(\log X)^B},
+\end{equation}
+one has, uniformly for arbitrary coefficients $|a_n|\leq1$,
+\begin{equation}\label{eq:fixed-product-Type-I}
+ \sum_{\substack{n\leq D\\(n,h)=1}}a_n
+ \left\{
+   \sum_{m\geq1}\Lambda(nm+h)W(nm/X)
+   -\frac{X}{\varphi(n)}I_0(W)
+ \right\}
+ \ll_{A,h,W}\frac{X}{(\log X)^A}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For $(n,h)=1$, the substitution $t=nm+h$ places the target in the reduced
+class $h\pmod n$ and changes the weight to $W((t-h)/X)$.  Stieltjes partial
+summation bounds the row error by a constant depending on $W$ times
+\[
+ \max_{y\ll_W X+|h|}
+ \left|
+  \sum_{\substack{t\leq y\\t\equiv h\pmod n}}\Lambda(t)
+  -\frac{y}{\varphi(n)}
+ \right|.
+\]
+The continuous main term is exactly
+\[
+ \frac1{\varphi(n)}\int_0^\infty W((t-h)/X)\,dt
+ =\frac{X}{\varphi(n)}I_0(W).
+\]
+Sum the maximal row errors over $n\leq D$ and apply the classical maximal
+Bombieri--Vinogradov theorem with a slightly larger requested logarithmic
+saving \citep{Bombieri1965,Vinogradov1965,IwaniecKowalski2004}.
+\end{proof}
+
+Rows not coprime to $h$ are supported on a finite collection of
+prime-power targets.  We isolate this elementary point because the source
+coefficient is now $\Lambda(n)-1$, rather than a M\"obius divisor weight.
+
+\begin{lemma}[Noncoprime residual rows]
+\label{lem:noncoprime-residual-rows}
+For every $D\leq2X$ and every $\eps>0$,
+\begin{equation}\label{eq:noncoprime-residual-rows}
+ \sum_{\substack{n\leq D\\(n,h)>1}}
+ |\Lambda(n)-1|
+ \sum_{m\geq1}\Lambda(nm+h)|W(nm/X)|
+ \ll_{h,W,\eps}X^\eps.
+\end{equation}
+Without an artificial upper cutoff, one also has
+\begin{equation}\label{eq:noncoprime-residual-tail}
+ \sum_{\substack{m,n\geq1\\n>D\\(n,h)>1}}
+ |\Lambda(n)-1|\Lambda(nm+h)|W(nm/X)|
+ \ll_{h,W,\eps}X^\eps.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For either displayed sum, put $r=nm$ and enlarge the divisor range.  The
+relevant left-hand side is at most
+\[
+ \sum_{r\asymp_W X}\Lambda(r+h)|W(r/X)|
+ \sum_{\substack{n\mid r\\(n,h)>1}}(\Lambda(n)+1).
+\]
+If the inner sum is nonempty, some prime $p\mid h$ divides $r$.  Then
+$p\mid r+h$.  If $\Lambda(r+h)\ne0$, it follows that $r+h=p^k$.
+For each of the finitely many primes dividing $h$, only $O_{h,W}(1)$ powers
+lie in the fixed-ratio interval forced by the support of $W$.  Finally,
+\[
+ \sum_{n\mid r}(\Lambda(n)+1)=\log r+\tau(r)\ll_\eps X^\eps,
+\]
+after reducing $\eps$ to absorb the remaining logarithms.
+\end{proof}
+
+\begin{theorem}[Small-factor prime-residual transfer]
+\label{thm:small-factor-residual}
+Fix $A>0$ and choose $B=B(A,h,W)$ sufficiently large.  Uniformly for
+\begin{equation}\label{eq:small-factor-D-range}
+ 2\leq D\leq\frac{X^{1/2}}{(\log X)^B},
+\end{equation}
+one has
+\begin{equation}\label{eq:small-factor-residual}
+ \cA_{h,\leq D}(X;W)
+ =XI_0(W)
+  \sum_{\substack{n\leq D\\(n,h)=1}}
+  \frac{\Lambda(n)-1}{\varphi(n)}
+ +O_{A,h,W}\!\left(\frac{X}{(\log X)^A}\right).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The noncoprime rows are absorbed by
+\cref{lem:noncoprime-residual-rows}.  On the remaining rows apply
+\cref{thm:fixed-product-Type-I} with
+\[
+ a_n=\frac{\Lambda(n)-1}{1+\log D}.
+\]
+These coefficients have modulus at most one.  Multiply the result back by
+$1+\log D$ and request $A+3$ logarithmic saving in the Type~I theorem.
+This proves \eqref{eq:small-factor-residual}.
+\end{proof}
+
+\begin{remark}[Why the coefficient is permitted here]
+The source factor $\Lambda(n)-1$ is unbounded and nonperiodic, but in
+\cref{thm:small-factor-residual} it weights the \emph{modulus} average.
+After division by $1+\log D$, maximal Bombieri--Vinogradov is uniform in
+that row coefficient.  This does not create a free second coefficient
+inside an individual prime progression and therefore does not constitute a
+Type~II estimate.
+\end{remark}

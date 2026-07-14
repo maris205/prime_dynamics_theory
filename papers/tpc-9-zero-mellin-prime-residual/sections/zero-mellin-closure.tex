@@ -1,0 +1,170 @@
+\section{Complete factor aggregation and Titchmarsh closure}
+\label{sec:zero-mellin-closure}
+
+We first evaluate the complete sum \eqref{eq:intro-complete-residual}.
+The algebraic reduction is elementary, but it is the point at which the
+factor-scale geometry changes.
+
+\begin{proposition}[Exact zero-mode collapse]
+\label{prop:zero-mode-collapse}
+For every $X>0$,
+\begin{equation}\label{eq:complete-collapse}
+ \cA_h(X;W)
+ =\sum_{r\geq1}
+   (\log r-\tau(r))\Lambda(r+h)W(r/X).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Only finitely many pairs $(m,n)$ occur because $W$ is compactly supported.
+Group them by $r=mn$.  The coefficient of
+$\Lambda(r+h)W(r/X)$ becomes
+\[
+ \sum_{n\mid r}(\Lambda(n)-1)
+ =\sum_{n\mid r}\Lambda(n)-\sum_{n\mid r}1.
+\]
+The convolution identities
+\[
+ \Lambda*\one=\log,
+ \qquad
+ \one*\one=\tau
+\]
+give \eqref{eq:complete-collapse}.
+\end{proof}
+
+\subsection{The two analytic inputs}
+
+We record the smooth fixed-shift forms needed below.  The first is an
+elementary consequence of the prime number theorem; the second follows from
+the uniform Titchmarsh divisor theorem of \citet{AssingBlomerLi2021}.
+
+\begin{lemma}[Shifted logarithmic prime weight]
+\label{lem:shifted-log-prime}
+For every $A>0$,
+\begin{equation}\label{eq:shifted-log-prime}
+ \sum_{r\geq1}\log r\,\Lambda(r+h)W(r/X)
+ =X\{(\log X)I_0(W)+I_1(W)\}
+ +O_{A,h,W}\!\left(\frac{X}{(\log X)^A}\right).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put $t=r+h$ and apply the prime number theorem with its classical
+zero-free-region error to the Stieltjes integral against
+\[
+ F_X(t)=\log(t-h)W((t-h)/X).
+\]
+For sufficiently large $X$, the support stays in the positive $t$-axis.
+The continuous main term is
+\[
+ \int_0^\infty\log r\,W(r/X)\,dr
+ =X\{(\log X)I_0(W)+I_1(W)\}.
+\]
+The derivative of $F_X$ costs only a fixed power of $\log X$, which is
+absorbed by the zero-free-region saving.
+\end{proof}
+
+\begin{theorem}[Smooth uniform Titchmarsh input]
+\label{thm:ABL-smooth-input}
+For every $A>0$,
+\begin{align}
+ \sum_{r\geq1}\tau(r)\Lambda(r+h)W(r/X)
+ ={}&X C_h\{(\log X)I_0(W)+I_1(W)+2\gamma I_0(W)\}
+ \notag\\
+ &+2X C_h'I_0(W)
+ +O_{A,h,W}\!\left(\frac{X}{(\log X)^A}\right).
+ \label{eq:ABL-smooth-input}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Apply \citet[Theorem~1.1]{AssingBlomerLi2021} with prime variable
+$t=r+h$, sign parameter $\sigma=1$, and shift $f=-h$.  Their Euler product
+$c_s(f)$ is exactly $C_h(s)$ in \eqref{eq:intro-Chs}, since it depends on
+the prime divisors of $f$ only.  To check the endpoint hypotheses, enclose
+$\supp W$ in $[a,b]\subset(0,\infty)$.  On every sharp subinterval used in
+partial summation, let $Y<X_1$ denote the corresponding endpoints in the
+prime variable $t$.  Since $t=r+h\asymp X$ and $h$ is fixed, the conditions
+$f\ne0$, $\max(-f,0)\leq Y<X_1$, and $X_1+f\asymp X_1$ hold once $X$ is
+sufficiently large.  Their sharp-interval main term has
+derivative, in the $r$ variable,
+\[
+ C_h\log r+2\gamma C_h+2C_h'.
+\]
+Stieltjes partial summation against $W(r/X)$ therefore gives
+\eqref{eq:ABL-smooth-input}.  The cited theorem supplies an arbitrary
+power of $\log X$ in the error, so the fixed derivatives of $W$ are
+harmless.
+\end{proof}
+
+\begin{remark}[Provenance]
+The deep analytic content of \cref{thm:ABL-smooth-input} belongs to
+Assing--Blomer--Li.  We include the deduction to fix the shift convention,
+the derivative term $2C_h'$, and the smoothing normalization; no new
+Titchmarsh estimate is claimed.
+\end{remark}
+
+\subsection{The complete residual asymptotic}
+
+\begin{theorem}[Fixed-shift zero-Mellin closure]
+\label{thm:complete-residual-asymptotic}
+Fix $h\ne0$ and $W\in C_c^1((0,\infty))$.  For every $A>0$,
+\begin{align}
+ \cA_h(X;W)
+ =X\Big[&(1-C_h)\{(\log X)I_0(W)+I_1(W)\}
+ \notag\\
+ &-2(\gamma C_h+C_h')I_0(W)\Big]
+ +O_{A,h,W}\!\left(\frac{X}{(\log X)^A}\right).
+ \label{eq:complete-residual-asymptotic}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:shifted-log-prime} and
+\eqref{eq:ABL-smooth-input} into the exact identity
+\eqref{eq:complete-collapse} and subtract.
+\end{proof}
+
+The coefficient $1-C_h$ is not introduced by a heuristic independence
+model.  It is the exact difference between the logarithmic divisor mass and
+the leading Titchmarsh density in the completely aggregated coordinate.
+
+\begin{corollary}[The shift two constant]
+\label{cor:h-two-constant}
+For $h=2$,
+\begin{equation}\label{eq:C2-zeta-value}
+ C_2
+ =\frac13\frac{\zeta(2)\zeta(3)}{\zeta(6)}
+ =0.647865\ldots,
+\end{equation}
+so $1-C_2>0$.
+\end{corollary}
+
+\begin{proof}
+At $s=0$,
+\[
+ C_2=\frac12\prod_{p>2}\left(1+\frac1{p(p-1)}\right).
+\]
+The local identity
+\[
+ 1+\frac1{p(p-1)}
+ =\frac{1-p^{-6}}{(1-p^{-2})(1-p^{-3})}
+\]
+gives
+\[
+ \prod_p\left(1+\frac1{p(p-1)}\right)
+ =\frac{\zeta(2)\zeta(3)}{\zeta(6)}.
+\]
+Removing the $p=2$ factor $3/2$ proves the exact formula.  The numerical
+value is included only for orientation.
+\end{proof}
+
+\begin{remark}[Energy versus aggregated influence]
+On $(N,2N]$ one has
+$\|\Lambda-1\|_2^2\sim N\log N$.  Thus
+\cref{thm:complete-residual-asymptotic} does not come from a small source
+coefficient.  It shows instead that a large-energy coefficient can have a
+rigorously computable prime-target influence after a sufficiently nonlocal
+aggregation.  This is compatible with, and sharper in a different norm
+than, the finite-conductor energy escape in TPC-7.
+\end{remark}

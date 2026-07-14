@@ -1,0 +1,119 @@
+\section{Exact finite certificate and numerical orientation}
+\label{sec:certificate}
+
+The proof of the asymptotic theorem depends on the cited Titchmarsh and
+Bombieri--Vinogradov inputs, which no finite computation can certify.  The
+algebraic layer, however, admits an exact machine-checkable certificate.  We
+also record a separate floating-point diagnostic so that the two roles are
+not conflated.
+
+\subsection{Formal certificate}
+
+The program
+\texttt{experiments/exact\_zero\_mellin\_certificate.py} represents each
+$\log p$ and each product $\log p\log q$ by a formal basis symbol with an
+integer coefficient.  It therefore uses no floating approximation to the
+von Mangoldt function.  With
+\begin{equation}\label{eq:certificate-parameters}
+ 1000\leq r\leq2000,\qquad h=2,\qquad D=31,
+\end{equation}
+the committed certificate checks all of the following statements exactly:
+\begin{enumerate}[label=\textup{(\alph*)}]
+ \item for every one of the $1001$ product values,
+ \(
+   \sum_{d\mid r}(\Lambda(d)-1)=\log r-\tau(r);
+ \)
+ \item the direct sum over all $8465$ factor pairs equals the collapsed
+ product sum as a formal expression;
+ \item the $4035$ pairs with $d\leq31$ and the $4430$ pairs with $d>31$
+ recombine to the complete expression;
+ \item for every $1\leq d\leq31$, the substitution
+ $t=dm+h$ agrees exactly with the corresponding arithmetic-progression
+ indexing;
+ \item the local Euler factors at $s=0$ used in
+ \eqref{eq:phi-Dirichlet-series} agree as rational numbers for every prime
+ $p\leq19$.
+\end{enumerate}
+The resulting complete formal expression has $431$ nonzero basis terms.
+The canonical payload SHA--256 is
+\begin{center}
+ \nolinkurl{6686C9E926CCB05F4DB0BF56A6A8F2811D5DED9A020FB905AC8DC54D350EDAEE},
+\end{center}
+and the SHA--256 of the indented committed JSON file is
+\begin{center}
+ \nolinkurl{A0D6303B26118D756406677A748D74160065390E5B4A55F70FDD2F1549E2BE43}.
+\end{center}
+These hashes identify the finite conventions and artifact.  They do not
+certify \cref{thm:ABL-smooth-input,thm:fixed-product-Type-I}, nor are they
+used in their proofs.
+
+\subsection{A deliberately non-theorem diagnostic}
+
+For numerical orientation only, the second program replaces the smooth
+weight by the sharp box $X<r\leq2X$, takes $h=2$ and
+$D=\lfloor\sqrt X\rfloor$, and computes the exact decomposition using
+floating logarithms.  The entries in \cref{tab:sharp-box-diagnostic} are
+normalized by $X\log X$.  The last column is
+$X^{-1}\sum_{X<r\leq2X}\Lambda(r+2)$.
+
+\begin{table}[ht]
+\centering
+\caption{Sharp-box implementation diagnostic; this is not a verification
+of the smooth asymptotic theorem.}
+\label{tab:sharp-box-diagnostic}
+\begin{tabular}{rrrrrr}
+\toprule
+$X$ & $D$ & complete & $n\leq D$ & $n>D$ & target mass \\
+\midrule
+$2^{14}$ & 128  & 0.248166 & 0.039334 & 0.208832 & 0.996607 \\
+$2^{16}$ & 256  & 0.264715 & 0.054820 & 0.209896 & 1.001175 \\
+$2^{18}$ & 512  & 0.270705 & 0.071123 & 0.199581 & 1.001127 \\
+$2^{20}$ & 1024 & 0.277987 & 0.080975 & 0.197012 & 1.000196 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For comparison, the predicted leading complete ratio is
+$1-C_2=0.352134\ldots$, while the square-root tail leading ratio is
+$(1-C_2)/2=0.176067\ldots$.  The modest values of $X$, the discontinuous
+weight, lower-order terms, and the unspecified logarithmic loss in the
+admissible cutoff prevent this table from testing the theorem.  Its purpose
+is narrower: it detects implementation mistakes in the complete/small/tail
+bookkeeping and displays the slow finite-scale drift.
+
+Both layers are reproducible using only the Python standard library:
+\begin{verbatim}
+python experiments/exact_zero_mellin_certificate.py \
+  --output experiments/data/exact-zero-mellin-certificate.json
+python experiments/test_exact_zero_mellin_certificate.py
+python experiments/zero_mellin_diagnostic.py \
+  --powers 14,16,18,20 --h 2
+python experiments/test_zero_mellin_diagnostic.py
+\end{verbatim}
+
+\section{Conclusion and the next analytic interface}
+\label{sec:conclusion}
+
+The paper isolates one coordinate in which the full prime fluctuation can
+be passed through a prescribed fixed-shift prime target.  Complete
+factor-scale aggregation turns $\Lambda-1$ into $\log-\tau$ exactly.  A
+proven Titchmarsh theorem evaluates the total, classical
+Bombieri--Vinogradov evaluates the short factor range, and subtraction
+evaluates the complete long-factor tail.  When its leading coefficient is
+nonzero, the $X\log X$ coefficient at a square-root cutoff is one half of
+the complete-sum coefficient.
+
+This positive result is deliberately paired with its limitation.  It is a
+statement about one scalar scale coordinate, not about the distribution of
+the individual layers composing it.  Mellin inversion shows that a dyadic
+factor localization requires nonzero scale frequencies, for which the
+elementary divisor collapse disappears.  At the endpoint $m=1$, the
+missing localized estimate is already the fixed-shift prime-pair problem.
+
+The next defensible layer is therefore not to infer a localized theorem
+from the zero mode.  It is to study the nonzero Mellin family in a region
+where existing dispersion or Type~II estimates genuinely apply, keeping
+the coefficient class and averaging axes explicit.  A successful result
+there would quantify how much scale resolution can be recovered.  A
+negative result would still identify the exact norm or coefficient
+geometry that blocks recovery.  Neither outcome is assumed here.

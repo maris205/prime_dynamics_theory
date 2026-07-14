@@ -1,0 +1,164 @@
+\section{Introduction and exact scope}
+\label{sec:introduction}
+
+The preceding finite-conductor transfer result separates a bounded periodic
+second coefficient from the energy-bearing remainder of $\Lambda-1$.  The
+periodic part can be passed through $\Lambda(mn+h)$ in a one-sided
+Bombieri--Vinogradov range, but low-period spaces capture only a vanishing
+fraction of the $L^2$ energy of the prime fluctuation
+\citep{WangTPCSeven2026,WangTPCEight2026}.  The next question is therefore
+not whether that remainder is large---it is---but whether a specified
+prime-target form can nevertheless average it.
+
+This paper answers that question in one nonlocal coordinate.  Fix
+$h\in\Z\setminus\{0\}$ and $W\in C_c^1((0,\infty))$.  We extend
+$\Lambda(t)$ by zero for $t\leq0$ and define
+\begin{equation}\label{eq:intro-complete-residual}
+ \cA_h(X;W)
+ =\sum_{m,n\geq1}
+   (\Lambda(n)-1)\Lambda(mn+h)W(mn/X).
+\end{equation}
+For $D\geq1$, put
+\begin{align}
+ \cA_{h,\leq D}(X;W)
+ &=\sum_{\substack{m,n\geq1\\n\leq D}}
+   (\Lambda(n)-1)\Lambda(mn+h)W(mn/X),
+ \label{eq:intro-small-residual}\\
+ \cA_{h,>D}(X;W)
+ &=\sum_{\substack{m,n\geq1\\n>D}}
+   (\Lambda(n)-1)\Lambda(mn+h)W(mn/X).
+ \label{eq:intro-large-residual}
+\end{align}
+The split is exact:
+\begin{equation}\label{eq:intro-exact-split}
+ \cA_h=\cA_{h,\leq D}+\cA_{h,>D}.
+\end{equation}
+
+The form \eqref{eq:intro-complete-residual} does not localize $m$ and $n$
+separately.  It fixes their product scale and sums over every factorization.
+That distinction is the source of the theorem.  If $r=mn$, then
+\begin{equation}\label{eq:intro-zero-mode-collapse}
+ \sum_{n\mid r}(\Lambda(n)-1)
+ =\log r-\tau(r).
+\end{equation}
+Thus the full factor coordinate collapses to the difference between an
+elementary logarithmic weight and the divisor function.  The target remains
+prime-sensitive, but it is now precisely a Titchmarsh divisor problem.
+
+\subsection{The fixed-shift result}
+
+Set
+\begin{equation}\label{eq:intro-moments-W}
+ I_0(W)=\int_0^\infty W(u)\,du,
+ \qquad
+ I_1(W)=\int_0^\infty W(u)\log u\,du,
+\end{equation}
+and define the Euler product
+\begin{equation}\label{eq:intro-Chs}
+ C_h(s)=
+ \prod_{p\mid h}(1-p^{-s-1})
+ \prod_{p\nmid h}
+ \left(1+\frac1{(p-1)p^{s+1}}\right).
+\end{equation}
+It is holomorphic in a neighborhood of $s=0$.  We abbreviate
+\begin{equation}\label{eq:intro-Ch-notation}
+ C_h=C_h(0),\qquad C_h'=C_h'(0).
+\end{equation}
+Here and below, $\gamma$ denotes the Euler--Mascheroni constant.
+
+Our main theorem, stated precisely in \cref{thm:large-factor-tail}, gives
+\begin{align}
+ \cA_{h,>D}(X;W)
+={}&X\Big[(1-C_h)\{(\log X)I_0(W)+I_1(W)\}
+       -2(\gamma C_h+C_h')I_0(W)\Big]
+ \notag\\
+ &-XI_0(W)
+ \sum_{\substack{n\leq D\\(n,h)=1}}
+ \frac{\Lambda(n)-1}{\varphi(n)}
+ +O_{A,h,W}\!\left(\frac{X}{(\log X)^A}\right),
+ \label{eq:intro-tail-formula}
+\end{align}
+uniformly for
+\begin{equation}\label{eq:intro-D-range}
+ 2\leq D\leq X^{1/2}(\log X)^{-B},
+\end{equation}
+where $B=B(A,h,W)$ is sufficiently large.  An elementary Dirichlet-series
+calculation then shows
+\begin{equation}\label{eq:intro-coefficient-sum}
+ \sum_{\substack{n\leq D\\(n,h)=1}}
+ \frac{\Lambda(n)-1}{\varphi(n)}
+ =(1-C_h)\log D+\kappa_h+o_h(1)
+\end{equation}
+for an explicit finite constant $\kappa_h$.  Hence the leading tail is
+\begin{equation}\label{eq:intro-tail-leading}
+ (1-C_h)XI_0(W)\log(X/D).
+\end{equation}
+
+This is a fixed-shift theorem, including $h=2$.  It evaluates the complete
+range beyond the direct Bombieri--Vinogradov cutoff, but only after all of
+those factor scales have been added with their original signs.  No estimate
+for an individual dyadic $n$-layer follows.
+
+\subsection{What is new and what is imported}
+
+The analytic estimates used here are established results.  The complete
+sum is evaluated by the uniform Titchmarsh theorem of
+\citet{AssingBlomerLi2021}, whose work supplies strong errors and substantial
+uniformity in the shift.  Earlier decisive forms of the Titchmarsh divisor
+problem include work of \citet{Fouvry1985} and
+\citet{BombieriFriedlanderIwaniec1986}.  The range $n\leq D$ is evaluated by
+the classical maximal Bombieri--Vinogradov theorem
+\citep{Bombieri1965,Vinogradov1965}.  We prove no improvement to either
+input.
+
+The contribution is instead the exact residual coordinate and its boundary:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item the full prime fluctuation $\Lambda(n)-1$, not a bounded periodic
+ approximation, is inserted into a genuine fixed-shift prime target;
+ \item complete factor aggregation converts it exactly into
+ $\log r-\tau(r)$;
+ \item the small-factor Bombieri--Vinogradov evaluation is subtracted from
+ the complete Titchmarsh evaluation, yielding the entire large-factor tail;
+ \item Mellin twisting identifies why only the zero scale frequency
+ collapses and why factor localization reintroduces the unresolved bilinear
+ geometry.
+\end{enumerate}
+
+This distinction parallels a general lesson of the asymptotic sieve:
+distribution information and the bilinear information needed to overcome
+parity are separate inputs \citep{FriedlanderIwaniec1998}.  Recent work on
+prime-producing sieves makes the Type~I/Type~II ledger still more explicit
+\citep{FordMaynard2024}.  Our theorem resolves one aggregated coordinate; it
+does not verify the bilinear hypotheses required in those frameworks.
+
+For comparison, prime-pair asymptotics are known for almost all shifts in
+long windows, with the strongest two-point range relevant here due to
+\citet{MatomakiRadziwillTao2019}.  Newer higher-uniformity results handle
+arbitrary fixed one-parameter prime-shift patterns $n+a_i h$ in an
+almost-all-$h$ regime
+\citep{MatomakiRadziwillShaoTaoTeravainen2026}.  Neither statement selects a
+prescribed fixed shift such as $h=2$.
+
+\subsection{Strict claim boundary}
+
+The following statements are not consequences of this paper.
+\begin{enumerate}[label=\textbf{B\arabic*.},leftmargin=3.1em]
+ \item We do not prove an asymptotic for
+$\sum_n\Lambda(n)\Lambda(n+h)W(n/X)$ at any prescribed admissible even
+shift $h$; in particular, we do not treat $h=2$.
+ \item We do not estimate a fixed dyadic box
+ $m\asymp M$, $n\asymp N$ with two unrestricted coefficients.
+ \item The large-factor theorem permits cancellation between different
+ factor scales.  It supplies neither pointwise-in-scale control nor an
+ $L^2$ estimate in the scale variable.
+ \item No new level of distribution, dispersion theorem, Type~II estimate,
+ twin-prime lower bound, or breach of the sieve parity barrier is asserted.
+ \item The phrase ``zero Mellin mode'' refers to multiplicative factor-scale
+ aggregation.  It is not a spectral realization of the primes or an
+ isomorphism with a nonlinear map.
+\end{enumerate}
+
+The value of the result is precisely that both sides of the boundary are
+rigorous: the zero scale frequency closes at every fixed $h$, while the
+localization step that would isolate a prime-pair layer is displayed rather
+than assumed.

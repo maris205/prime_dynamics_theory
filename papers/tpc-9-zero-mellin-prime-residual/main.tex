@@ -1,0 +1,135 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={The Zero Mellin Mode of a Prime-Target Residual: Fixed-Shift Titchmarsh Closure, a Large-Factor Subtraction Formula, and the Scale-Localization Boundary},
+ pdfauthor={Liang Wang},
+ pdfsubject={A fixed-shift Titchmarsh evaluation and a large-factor subtraction formula for a fully scale-aggregated prime residual},
+ pdfkeywords={Titchmarsh divisor problem, von Mangoldt function, Bombieri--Vinogradov theorem, Mellin localization, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\supp}{\operatorname{supp}}
+
+\title{\textbf{The Zero Mellin Mode of a Prime-Target Residual:}\\
+\textbf{Fixed-Shift Titchmarsh Closure,}\\
+\textbf{a Large-Factor Subtraction Formula,}\\
+\textbf{and the Scale-Localization Boundary}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let $h\ne0$ be fixed and let $W\in C_c^1((0,\infty))$.  We study the
+prime-target residual aggregated over all factor scales,
+\[
+ \cA_h(X;W)=
+ \sum_{m,n\geq1}(\Lambda(n)-1)\Lambda(mn+h)W(mn/X),
+\]
+and its large-factor portion $\cA_{h,>D}$ obtained by imposing $n>D$.
+Although $\Lambda-1$ has $L^2$ energy of order $N\log N$ on a dyadic
+interval, the complete factor aggregation has the exact collapse
+\[
+ \sum_{n\mid r}(\Lambda(n)-1)=\log r-\tau(r).
+\]
+Consequently $\cA_h$ is a difference of a shifted prime number theorem and
+a Titchmarsh divisor sum.
+
+Write
+\[
+ C_h(s)=
+ \prod_{p\mid h}(1-p^{-s-1})
+ \prod_{p\nmid h}\left(1+\frac1{(p-1)p^{s+1}}\right),
+ \qquad C_h=C_h(0).
+\]
+Using the uniform Titchmarsh theorem of Assing--Blomer--Li, we obtain a
+fixed-$h$ asymptotic with arbitrary logarithmic saving.  Classical maximal
+Bombieri--Vinogradov then evaluates the whole range $n\leq D$, uniformly for
+\[
+ D\leq X^{1/2}(\log X)^{-B}.
+\]
+Subtracting gives an explicit asymptotic for the complementary range
+$n>D$, even though most of that range lies beyond the direct
+arithmetic-progression reduction.  When $D=D(X)\to\infty$, its logarithmic
+leading term is
+\[
+ (1-C_h)X\log(X/D)\int_0^\infty W(u)\,du.
+\]
+Whenever $(1-C_h)I_0(W)\ne0$, its $X\log X$ coefficient at the
+square-root cutoff is one half of the complete-sum coefficient.  For $h=2$,
+\[
+ C_2=\frac13\frac{\zeta(2)\zeta(3)}{\zeta(6)}
+ =0.647865\ldots,
+\]
+so the coefficient is explicitly nonzero.
+
+The result is a scale-aggregation theorem, not a new Titchmarsh,
+Bombieri--Vinogradov, dispersion, or Type~II estimate.  The factor collapse
+is the zero Mellin mode of the multiplicative scale variable.  Nonzero
+Mellin modes do not reduce to $\log r-\tau(r)$, and a single factor layer
+already contains fixed-shift prime-pair covariance.  In particular, the
+paper proves no fixed prime-pair asymptotic, twin-prime lower bound, or
+breach of the parity barrier.
+\end{abstract}
+
+\noindent\textbf{Keywords:} prime-target residual; Titchmarsh divisor
+problem; Bombieri--Vinogradov theorem; factor-scale aggregation; Mellin
+localization; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N13, 11N36; Secondary 11N35, 11M06.
+
+\input{sections/introduction-scope}
+\input{sections/zero-mellin-closure}
+\input{sections/small-factor-transfer}
+\input{sections/tail-mellin-boundary}
+\input{sections/certificate-conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

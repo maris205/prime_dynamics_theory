@@ -1,0 +1,242 @@
+\section{The large-factor tail and the scale-localization boundary}
+\label{sec:tail-mellin-boundary}
+
+We now subtract the direct Type~I range from the complete zero-mode
+asymptotic.  This evaluates an aggregate lying mostly beyond the
+Bombieri--Vinogradov cutoff.
+
+\begin{theorem}[Complete large-factor residual tail]
+\label{thm:large-factor-tail}
+Fix $h\ne0$, $W\in C_c^1((0,\infty))$, and $A>0$.  There is
+$B=B(A,h,W)>0$ such that, uniformly for
+\begin{equation}\label{eq:large-tail-D-range}
+ 2\leq D\leq\frac{X^{1/2}}{(\log X)^B},
+\end{equation}
+one has
+\begin{align}
+ \cA_{h,>D}(X;W)
+={}&X\Big[(1-C_h)\{(\log X)I_0(W)+I_1(W)\}
+       -2(\gamma C_h+C_h')I_0(W)\Big]
+ \notag\\
+ &-XI_0(W)
+ \sum_{\substack{n\leq D\\(n,h)=1}}
+ \frac{\Lambda(n)-1}{\varphi(n)}
+ +O_{A,h,W}\!\left(\frac{X}{(\log X)^A}\right).
+ \label{eq:large-factor-tail}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Use the exact split \eqref{eq:intro-exact-split}.  Substitute the complete
+evaluation \eqref{eq:complete-residual-asymptotic} and the small-factor
+evaluation \eqref{eq:small-factor-residual}, then subtract.
+\end{proof}
+
+The theorem keeps the finite coefficient sum visible because this gives an
+arbitrary logarithmic error uniformly throughout the stated range.  Its
+asymptotic shape follows from a Dirichlet-series calculation.
+
+\begin{lemma}[The residual coefficient average]
+\label{lem:residual-coefficient-average}
+There is a finite constant $\kappa_h$ such that
+\begin{equation}\label{eq:residual-coefficient-average}
+ \sum_{\substack{n\leq D\\(n,h)=1}}
+ \frac{\Lambda(n)-1}{\varphi(n)}
+ =(1-C_h)\log D+\kappa_h+o_h(1)
+ \qquad(D\to\infty).
+\end{equation}
+More precisely,
+\begin{equation}\label{eq:reciprocal-phi-average}
+ \sum_{\substack{n\leq D\\(n,h)=1}}\frac1{\varphi(n)}
+ =C_h\log D+\gamma C_h+C_h'+o_h(1),
+\end{equation}
+and
+\begin{equation}\label{eq:Lambda-over-phi-average}
+ \sum_{\substack{n\leq D\\(n,h)=1}}
+ \frac{\Lambda(n)}{\varphi(n)}
+ =\log D+\kappa_{\Lambda,h}+o_h(1),
+\end{equation}
+where
+\begin{equation}\label{eq:kappa-h-definition}
+ \kappa_h=\kappa_{\Lambda,h}-\gamma C_h-C_h'.
+\end{equation}
+One may take
+\begin{equation}\label{eq:kappa-Lambda-explicit}
+ \kappa_{\Lambda,h}
+ =-\gamma
+  +\sum_{p\nmid h}\frac{\log p}{(p-1)^2}
+  -\sum_{p\mid h}\frac{\log p}{p-1},
+\end{equation}
+whose infinite sum is absolutely convergent.
+\end{lemma}
+
+\begin{proof}
+For $\Re s>0$, an Euler-factor calculation gives
+\begin{equation}\label{eq:phi-Dirichlet-series}
+ \sum_{\substack{n\geq1\\(n,h)=1}}
+ \frac1{\varphi(n)n^s}
+ =\zeta(s+1)C_h(s).
+\end{equation}
+Indeed, for $p\nmid h$ the Euler factor left after removing the
+$\zeta(s+1)$ factor is
+\[
+ 1+\frac1{(p-1)p^{s+1}},
+\]
+whereas for $p\mid h$ it is $1-p^{-s-1}$.  The product $C_h(s)$ is
+absolutely convergent in a neighborhood to the right of
+$\Re s=-1/2$.  Convolving its coefficients with $1/n$, and using
+$\sum_{k\leq y}k^{-1}=\log y+\gamma+o(1)$, gives
+\eqref{eq:reciprocal-phi-average}; the constant term is
+$\gamma C_h+C_h'$.
+
+For the von Mangoldt numerator,
+\begin{equation}\label{eq:Lambda-phi-Dirichlet-series}
+ \sum_{\substack{n\geq1\\(n,h)=1}}
+ \frac{\Lambda(n)}{\varphi(n)n^s}
+ =\sum_{p\nmid h}
+ \frac{(\log p)p^{-s}}
+ {(p-1)(1-p^{-s-1})}.
+\end{equation}
+An explicit prime-power comparison avoids any Tauberian issue.  Namely,
+\begin{align*}
+ \sum_{\substack{n\leq D\\(n,h)=1}}\frac{\Lambda(n)}{\varphi(n)}
+ ={}&\sum_{n\leq D}\frac{\Lambda(n)}n
+ +\sum_{\substack{p\nmid h,\ k\geq1\\p^k\leq D}}
+   \frac{\log p}{p^k(p-1)}
+ -\sum_{\substack{p\mid h,\ k\geq1\\p^k\leq D}}
+   \frac{\log p}{p^k}.
+\end{align*}
+The last two sums converge absolutely as $D\to\infty$, while the standard
+prime number theorem consequence
+$\sum_{n\leq D}\Lambda(n)/n=\log D-\gamma+o(1)$ gives
+\eqref{eq:Lambda-over-phi-average} with
+\eqref{eq:kappa-Lambda-explicit}.  Subtracting
+\eqref{eq:reciprocal-phi-average} proves
+\eqref{eq:residual-coefficient-average} and
+\eqref{eq:kappa-h-definition}.
+\end{proof}
+
+\begin{corollary}[Asymptotic shape of the tail]
+\label{cor:large-tail-shape}
+Suppose $D=D(X)\to\infty$ and that \eqref{eq:large-tail-D-range} holds.
+Then
+\begin{align}
+ \cA_{h,>D}(X;W)
+={}&(1-C_h)XI_0(W)\log(X/D)
+ \notag\\
+ &+X\Big[(1-C_h)I_1(W)
+ -\{2(\gamma C_h+C_h')+\kappa_h\}I_0(W)\Big]
+ +o_{h,W}(X).
+ \label{eq:large-tail-shape}
+\end{align}
+\end{corollary}
+
+\begin{proof}
+Insert \eqref{eq:residual-coefficient-average} into
+\eqref{eq:large-factor-tail}.  Choose one fixed $A>1$; the displayed
+error is then $o(X)$.
+\end{proof}
+
+\begin{corollary}[Half of the leading logarithmic coefficient]
+\label{cor:half-leading-mass}
+Let
+\begin{equation}\label{eq:square-root-D}
+ D=\left\lfloor\frac{X^{1/2}}{(\log X)^B}\right\rfloor
+\end{equation}
+with fixed sufficiently large $B$.  If $(1-C_h)I_0(W)\ne0$, then
+\begin{equation}\label{eq:half-leading-mass}
+ \cA_{h,>D}(X;W)
+ =\frac{1-C_h}{2}XI_0(W)\log X
+ +O_{h,W,B}(X\log\log X).
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Use
+\[
+ \log(X/D)=\tfrac12\log X+B\log\log X+o(1)
+\]
+in \eqref{eq:large-tail-shape}.
+\end{proof}
+
+\begin{remark}[What ``beyond Bombieri--Vinogradov'' means]
+The moduli $n>D$ in \cref{thm:large-factor-tail} are not controlled one by
+one or in dyadic blocks by the proof.  Their \emph{complete signed sum} is
+known because it equals the Titchmarsh-evaluated total minus the
+Bombieri--Vinogradov-evaluated short part.  The theorem must not be read as a
+new level of distribution for those moduli.
+\end{remark}
+
+\subsection{Why the collapse is only the zero Mellin mode}
+\label{subsec:nonzero-Mellin}
+
+The factorization $r=mn$ carries a multiplicative scale coordinate.  To see
+what is lost by complete aggregation, twist the divisor pair by
+$(n/m)^{it}$.  For every real $t$,
+\begin{align}
+ \sum_{mn=r}(\Lambda(n)-1)(n/m)^{it}
+ =r^{-it}\left\{
+   \sum_{d\mid r}\Lambda(d)d^{2it}-\sigma_{2it}(r)
+ \right\}.
+ \label{eq:Mellin-twisted-divisor-sum}
+\end{align}
+At $t=0$ this is $\log r-\tau(r)$.  For $t\ne0$, the first divisor sum no
+longer collapses to $\log r$, and the second is a genuinely twisted divisor
+function; here $\sigma_z(r)=\sum_{d\mid r}d^z$.
+
+If $V$ is a smooth cutoff in the ratio $n/m$, Mellin inversion writes
+\begin{equation}\label{eq:Mellin-transform-convention}
+ \widehat V(t)=\int_0^\infty V(y)y^{-it}\,\frac{dy}{y},
+\end{equation}
+and, with this convention,
+\begin{equation}\label{eq:Mellin-inversion-scale}
+ V(n/m)=\frac1{2\pi}\int_{\R}\widehat V(t)(n/m)^{it}\,dt
+\end{equation}
+for a smooth compactly supported $V$.  Thus localizing a factor
+box requires a continuum of nonzero frequencies.  The value at $t=0$ does
+not control that integral, just as the mean of a function does not control
+its pointwise values.
+
+\subsection{The fixed layer already contains the prime-pair problem}
+
+The $m=1$ layer of the complete form is
+\begin{equation}\label{eq:m-one-layer}
+ \sum_{n\geq1}(\Lambda(n)-1)\Lambda(n+h)W(n/X).
+\end{equation}
+The prime number theorem evaluates the part with coefficient $-1$.  An
+asymptotic for the remaining product $\Lambda(n)\Lambda(n+h)$ at a fixed
+admissible $h$ is the Hardy--Littlewood prime-pair problem
+\citep{HardyLittlewood1923}.  At $h=2$ it is the twin-prime correlation.
+For the square-root choice of $D$, the full layer
+\eqref{eq:m-one-layer} lies inside $\cA_{h,>D}$, but
+\cref{thm:large-factor-tail} allows it to cancel against all $m\geq2$
+layers.  Therefore the aggregate theorem supplies no estimate for
+\eqref{eq:m-one-layer} by itself.
+
+Adding a prime weight in the other factor does not preserve the collapse.
+Indeed,
+\begin{equation}\label{eq:two-prime-source-convolution}
+ \sum_{mn=r}\Lambda(m)(\Lambda(n)-1)
+ =(\Lambda*\Lambda)(r)-\log r.
+\end{equation}
+The shifted target sum associated with $\Lambda*\Lambda$ is a
+parity-sensitive prime/semiprime correlation, not the Titchmarsh divisor
+sum in \cref{thm:ABL-smooth-input}.  This marks the next genuinely new
+analytic interface.
+
+\begin{remark}[A one-way implication ledger]
+The proved implications are
+\[
+ \begin{gathered}
+ \text{complete factor aggregation}
+ \ +\ \text{Assing--Blomer--Li}
+ \Longrightarrow \text{fixed-$h$ zero-mode asymptotic},\\
+ \text{maximal Bombieri--Vinogradov}
+ \Longrightarrow \text{small-factor residual asymptotic},\\
+ \text{the two evaluations and exact subtraction}
+ \Longrightarrow \text{complete large-factor tail asymptotic}.
+ \end{gathered}
+\]
+None of these arrows reverses to give a dyadic Type~II estimate or a
+fixed-layer prime-pair asymptotic.
+\end{remark}
