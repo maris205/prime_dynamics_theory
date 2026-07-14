@@ -1,0 +1,327 @@
+\section{Quarter-scale row masks at a fixed shift}
+\label{sec:quarter-mask-transfer}
+
+The global residual in \eqref{eq:global-row-residual-law} cannot be
+distributed among individual orientations by the fixed-shell theorem.
+There is, however, a full bounded-mask theorem on the one-sided Type-I
+range.  The loss from the square-root modulus range to the quarter-scale
+source-factor row range is caused by the coprimality condition $(a,b)=1$.
+
+We first record the precise weighted form of Bombieri--Vinogradov that is
+used below.  For $q\geq1$, define the smooth row discrepancy
+\begin{equation}
+ E_h(q;X):=
+ \sum_{j\geq1}\Lambda(qj+h)W(qj/X)
+ -\one_{(q,h)=1}\frac{XI_0(W)}{\varphi(q)}.
+ \label{eq:smooth-row-discrepancy}
+\end{equation}
+
+\begin{lemma}[Divisor-weighted maximal Bombieri--Vinogradov]
+\label{lem:divisor-weighted-maximal-BV}
+Fix an integer $J\geq0$.  For every $A>0$ there is
+$B=B(A,J,h,W)>0$ such that, whenever
+\begin{equation}
+ Q\leq\frac{X^{1/2}}{(\log X)^B},
+ \label{eq:weighted-BV-range}
+\end{equation}
+one has
+\begin{equation}
+ \sum_{q\leq Q}
+ (\log(2q))^J\tau(q)^J|E_h(q;X)|
+ \ll_{A,J,h,W}\frac{X}{(\log X)^A}.
+ \label{eq:divisor-weighted-maximal-BV}
+\end{equation}
+The same conclusion holds with the displayed weight replaced by any
+smaller nonnegative weight.
+\end{lemma}
+
+\begin{proof}
+For $(q,h)=1$, smooth partial summation bounds $|E_h(q;X)|$ by a fixed
+multiple of
+\[
+ \max_{y\ll_{h,W}X}
+ \left|
+  \sum_{\substack{n\leq y\\n\equiv h\ ({\rm mod}\ q)}}\Lambda(n)
+  -\frac{y}{\varphi(q)}
+ \right|.
+\]
+The maximal Bombieri--Vinogradov theorem controls the sum of these
+quantities over $q\leq Q$ with an arbitrarily large fixed logarithmic
+saving \citep{IwaniecKowalski2004,MontgomeryVaughan2007}.
+
+We explain why the divisor weight in
+\eqref{eq:divisor-weighted-maximal-BV} is legitimate.  It is not obtained
+by multiplying the unweighted theorem by the maximum of $\tau(q)^J$.
+Choose a large fixed $K$.  On the set
+$\tau(q)^J\leq(\log X)^K$, apply maximal Bombieri--Vinogradov with
+$A+K+J+3$ in place of $A$.  On the complementary set use the elementary
+bound
+\begin{equation}
+ |E_h(q;X)|\ll_{h,W}\frac{X\log(2X)}q
+ \qquad(q\leq X^{1/2}),
+ \label{eq:row-discrepancy-trivial-bound}
+\end{equation}
+where the main term is absorbed using
+$q/\varphi(q)\ll\log(2q)$.  If $J=0$, the complementary set is empty.
+If $J\geq1$, a fixed divisor moment handles it: more explicitly, on that
+set
+\[
+ \tau(q)^J
+ \leq(\log X)^{-K}\tau(q)^{2J},
+\]
+while, for a constant $C_J$ depending only on $J$,
+\[
+ \sum_{q\leq Q}\frac{\tau(q)^{2J}}q
+ \ll_J(\log(2Q))^{C_J}.
+\]
+Taking $K>C_J+A+2J+4$ makes this contribution admissible.  This proves
+the divisor-weighted extension in the reduced residue classes.
+
+It remains to justify the zero main term when $(q,h)>1$.  If
+$\Lambda(qj+h)\ne0$, then $qj+h=p^\nu$ for a prime $p\mid h$.  On the
+support of $W$, only $O_{h,W}(1)$ exponents $\nu$ occur for each of the
+finitely many $p\mid h$.  Moreover, $q\mid p^\nu-h$.  The standard
+divisor bound therefore makes the total contribution of all such $q$,
+even with the weight in \eqref{eq:divisor-weighted-maximal-BV},
+$O_{J,h,W,\epsilon}(X^\epsilon)$ for every $\epsilon>0$.  This is smaller
+than the asserted bound.  The lemma follows.
+\end{proof}
+
+Let $Y\geq2$, and let $\omega=(\omega_a)_{2\leq a\leq Y}$ be an arbitrary
+complex mask satisfying
+\begin{equation}
+ |\omega_a|\leq1.
+ \label{eq:quarter-mask-bound}
+\end{equation}
+Define its row-centered primitive-shell statistic by
+\begin{equation}
+ \cR_{h,\leq Y}^{\omega}(X):=
+ \sum_{\substack{2\leq a\leq Y,\ b\geq1\\(a,b)=1}}
+ \omega_a u(a)
+ \bigl(\Lambda(ab+h)-\rho_h(a)\bigr)W(ab/X).
+ \label{eq:masked-quarter-residual}
+\end{equation}
+
+\begin{theorem}[Uniform quarter-scale row-mask transfer]
+\label{thm:uniform-quarter-row-mask}
+For every $A>0$ there is $B=B(A,h,W)>0$ such that, uniformly over every
+mask satisfying \eqref{eq:quarter-mask-bound} and every $Y$ with
+\begin{equation}
+ Y^2\leq\frac{X^{1/2}}{(\log X)^B},
+ \label{eq:quarter-row-range}
+\end{equation}
+one has
+\begin{equation}
+ \cR_{h,\leq Y}^{\omega}(X)
+ \ll_{A,h,W}\frac{X}{(\log X)^A}.
+ \label{eq:uniform-quarter-row-mask}
+\end{equation}
+The implied constant is independent of $Y$ and of the mask.
+\end{theorem}
+
+\begin{proof}
+Insert
+\begin{equation}
+ \one_{(a,b)=1}=\sum_{\substack{d\mid a\\d\mid b}}\mu(d)
+ \label{eq:coprime-row-inclusion-exclusion}
+\end{equation}
+into the prime part of \eqref{eq:masked-quarter-residual}.  After writing
+$b=dj$, it becomes
+\begin{equation}
+ \sum_{a\leq Y}\omega_au(a)
+ \sum_{d\mid a}\mu(d)
+ \sum_{j\geq1}\Lambda(adj+h)W(adj/X),
+ \label{eq:masked-prime-row-expanded}
+\end{equation}
+where, if convenient, we set $\omega_1=0$ and retain the value $a=1$.
+Every resulting modulus is
+\[
+ q=ad\leq Y^2.
+\]
+Grouping \eqref{eq:masked-prime-row-expanded} by $q$ produces the
+coefficient
+\begin{equation}
+ \gamma_q=
+ \sum_{\substack{a\leq Y,\ d\mid a\\ad=q}}
+ \omega_au(a)\mu(d),
+ \qquad
+ |\gamma_q|\leq(1+\log(2q))\tau(q).
+ \label{eq:quarter-modulus-coefficient}
+\end{equation}
+Thus \cref{lem:divisor-weighted-maximal-BV}, with $J=2$ after increasing
+$B$, replaces every inner prime sum by its reduced-class main term with
+total error $O_A(X(\log X)^{-A})$.  If $(a,h)=1$, every $ad$ with $d\mid a$
+is also coprime to $h$, and the elementary multiplicative identity
+\begin{equation}
+ \sum_{d\mid a}\frac{\mu(d)}{\varphi(ad)}=\frac1a
+ \label{eq:local-density-divisor-identity}
+\end{equation}
+applies.  Indeed, at $a=p^\nu$ its left side is
+\[
+ \frac1{\varphi(p^\nu)}-\frac1{\varphi(p^{\nu+1})}
+ =\frac1{p^\nu}.
+\]
+If $(a,h)>1$, every modulus $ad$ is nonreduced and its main term is zero;
+the prime-power exceptions have already been included in the proof of
+\cref{lem:divisor-weighted-maximal-BV}.  Consequently
+\eqref{eq:masked-prime-row-expanded} equals
+\begin{equation}
+ XI_0(W)
+ \sum_{\substack{a\leq Y\\(a,h)=1}}
+ \frac{\omega_au(a)}a
+ +O_{A,h,W}\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:masked-prime-row-main}
+\end{equation}
+
+For the local model, another use of
+\eqref{eq:coprime-row-inclusion-exclusion} and Euler summation gives,
+uniformly in $a$,
+\begin{equation}
+ \sum_{\substack{b\geq1\\(a,b)=1}}W(ab/X)
+ =\frac{X\varphi(a)}{a^2}I_0(W)+O_W(\tau(a)).
+ \label{eq:coprime-row-Euler-sum}
+\end{equation}
+Multiplication by $\rho_h(a)$ turns its main term into
+$\one_{(a,h)=1}XI_0(W)/a$, exactly matching
+\eqref{eq:masked-prime-row-main}.  The accumulated Euler error is
+\[
+ \ll_W
+ \sum_{a\leq Y}|u(a)|\frac{a}{\varphi(a)}\tau(a)
+ \ll_WY(\log(2Y))^C
+\]
+for an absolute fixed $C$.  Under
+\eqref{eq:quarter-row-range}, this is
+$O_A(X(\log X)^{-A})$ for every fixed $A$.  Subtraction proves
+\eqref{eq:uniform-quarter-row-mask}.
+\end{proof}
+
+The theorem immediately evaluates the original, ambiently centered
+truncation.  Put
+\begin{align}
+ \cK_{h,\leq Y}^{\omega}(X)
+ &:={}
+ \sum_{\substack{2\leq a\leq Y,\ b\geq1\\(a,b)=1}}
+ \omega_au(a)\bigl(\Lambda(ab+h)-1\bigr)W(ab/X),
+ \label{eq:masked-original-truncation}\\
+ \cM_{h,\leq Y}^{\omega}(X)
+ &:={}
+ \sum_{\substack{2\leq a\leq Y,\ b\geq1\\(a,b)=1}}
+ \omega_au(a)\bigl(\rho_h(a)-1\bigr)W(ab/X).
+ \label{eq:masked-model-truncation}
+\end{align}
+
+\begin{corollary}[Original truncated shell with a bounded row mask]
+\label{cor:original-truncated-row-mask}
+Under the hypotheses of \cref{thm:uniform-quarter-row-mask},
+\begin{align}
+ \cK_{h,\leq Y}^{\omega}(X)
+ ={}&XI_0(W)
+ \sum_{2\leq a\leq Y}\omega_au(a)
+ \left(
+  \frac{\one_{(a,h)=1}}a-\frac{\varphi(a)}{a^2}
+ \right)
+ \notag\\
+ &+O_{A,h,W}\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:original-truncated-row-mask-main}
+\end{align}
+\end{corollary}
+
+\begin{proof}
+The exact identity
+\[
+ \cK_{h,\leq Y}^{\omega}
+ =\cM_{h,\leq Y}^{\omega}
+ +\cR_{h,\leq Y}^{\omega}
+\]
+and \cref{thm:uniform-quarter-row-mask} reduce the problem to the model.
+Apply \eqref{eq:coprime-row-Euler-sum}; since
+\[
+ (\rho_h(a)-1)\frac{\varphi(a)}{a^2}
+ =\frac{\one_{(a,h)=1}}a-\frac{\varphi(a)}{a^2},
+\]
+its main term is the displayed finite sum.  The accumulated Euler error
+is bounded exactly as in the proof of the theorem and is absorbed after
+increasing $B$.
+\end{proof}
+
+For the unmasked truncation, the finite arithmetic sum in
+\eqref{eq:original-truncated-row-mask-main} has a simple asymptotic.
+
+\begin{lemma}[Mean of the row-model coefficient]
+\label{lem:row-model-coefficient-mean}
+Uniformly for $y\geq2$,
+\begin{equation}
+ \sum_{2\leq a\leq y}u(a)
+ \left(
+  \frac{\one_{(a,h)=1}}a-\frac{\varphi(a)}{a^2}
+ \right)
+ =\kappa_h\log y+O_h(1).
+ \label{eq:row-model-coefficient-mean}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The constant part of $u=\Lambda-1$ contributes
+\[
+ \sum_{a\leq y}\frac{\varphi(a)}{a^2}
+ -\sum_{\substack{a\leq y\\(a,h)=1}}\frac1a
+ =\left(\frac1{\zeta(2)}-\frac{\varphi(|h|)}{|h|}\right)
+ \log y+O_h(1).
+\]
+For the $\Lambda$ part, write $a=p^j$.  If $p\nmid h$, the summand is
+$(\log p)/p^{j+1}$; if $p\mid h$, it is
+$-(p-1)(\log p)/p^{j+1}$.  The resulting prime-power series converges
+absolutely, so it contributes $O_h(1)$.  This proves the lemma.
+\end{proof}
+
+\begin{corollary}[Quarter-scale truncation and residual escape]
+\label{cor:quarter-tail-mass-escape}
+Suppose \eqref{eq:quarter-row-range} holds and take
+$\omega_a=1$.  Then
+\begin{align}
+ \cK_{h,\leq Y}(X)
+ &=\kappa_hXI_0(W)\log Y+O_{h,W}(X),
+ \label{eq:unmasked-quarter-truncation}\\
+ \cR_{h,\leq Y}(X)
+ &\ll_{A,h,W}X(\log X)^{-A}.
+ \label{eq:unmasked-quarter-residual}
+\end{align}
+If $\cK_{h,>Y}$, $\cM_{h,>Y}$, and $\cR_{h,>Y}$ denote the corresponding
+sums with $a>Y$, then
+\begin{align}
+ \cR_{h,>Y}(X)
+ &=\delta_hXI_0(W)\log X+O_{h,W}(X),
+ \label{eq:row-residual-tail-escape}\\
+ \cK_{h,>Y}(X)
+ ={}&\left(\frac1{\zeta(2)}-\beta_h\right)
+ XI_0(W)\log X
+ -\kappa_hXI_0(W)\log Y
+ +O_{h,W}(X).
+ \label{eq:original-shell-tail-law}
+\end{align}
+In particular, for $h=2$ the row-centered residual remaining beyond the
+quarter-scale range has leading coefficient $\delta_2=1/6$.
+\end{corollary}
+
+\begin{proof}
+Equation \eqref{eq:unmasked-quarter-truncation} follows from
+\cref{cor:original-truncated-row-mask,lem:row-model-coefficient-mean};
+\eqref{eq:unmasked-quarter-residual} is
+\cref{thm:uniform-quarter-row-mask}.  Subtract the latter from the global
+law \eqref{eq:global-row-residual-law} to obtain
+\eqref{eq:row-residual-tail-escape}.  Finally subtract
+\eqref{eq:unmasked-quarter-truncation} from
+\eqref{eq:imported-fixed-shell-law} to obtain
+\eqref{eq:original-shell-tail-law}.
+\end{proof}
+
+\begin{remark}[Strict interpretation of escape]
+\label{rem:quarter-tail-strict-interpretation}
+The word ``escape'' refers only to the $a$-coordinate: every bounded mask
+on $a\leq Y$ sees logarithmic cancellation after the correct row
+centering, while the complete residual has the main term in
+\eqref{eq:global-row-residual-law}.  The tail $a>Y$ still contains all
+allowed $b$, and \eqref{eq:row-residual-tail-escape} does not identify the
+endpoint $b=1$, a balanced Type-II sector, or any individual orientation.
+It gives no fixed-shift prime-pair asymptotic or twin-prime lower bound.
+\end{remark}

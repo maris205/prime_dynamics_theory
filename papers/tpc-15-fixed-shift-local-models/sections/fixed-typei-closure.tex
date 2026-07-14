@@ -1,0 +1,123 @@
+\section{Fixed-shift closure of the full Type-I row ball}
+\label{sec:fixed-typei-closure}
+
+The model is useful because its complete-period mean agrees exactly with
+the prime mean in every row whose modulus is visible at resolution $Q$.
+For $F\in C_c^1((0,\infty))$, define
+\begin{align}
+ R_{m,h;Q}(X;F)
+ &=\sum_{j\geq1}r_Q(mj+h)F(mj/X),
+ \label{eq:ordinary-TypeI-row}\\
+ R^{\log}_{m,h;Q}(X;F)
+ &=\sum_{j\geq1}(\log j)r_Q(mj+h)F(mj/X).
+ \label{eq:log-TypeI-row}
+\end{align}
+
+\begin{theorem}[Full bounded Type-I row masks]
+\label{thm:full-bounded-TypeI-rows}
+Fix $h\ne0$, $F\in C_c^1((0,\infty))$, and $\eta>0$.  Let
+$M\leq Q$ and suppose
+\begin{equation}
+ Q\leq\frac{X^{1/2}}{(\log X)^{B}},
+ \qquad
+ MQ\leq X^{1-\eta}.
+ \label{eq:TypeI-row-parameter-range}
+\end{equation}
+For every $A>0$, if $B=B(A,h,F,\eta)$ is sufficiently large, then
+uniformly over all coefficient vectors $|\alpha_m|\leq1$,
+\begin{align}
+ \sup_{|\alpha_m|\leq1}
+ \left|\sum_{m\leq M}\alpha_mR_{m,h;Q}(X;F)\right|
+ &\ll_{A,h,F,\eta}X(\log X)^{-A},
+ \label{eq:full-bounded-TypeI-row-closure}\\
+ \sup_{|\alpha_m|\leq1}
+ \left|\sum_{m\leq M}\alpha_mR^{\log}_{m,h;Q}(X;F)\right|
+ &\ll_{A,h,F,\eta}X(\log X)^{-A}.
+ \label{eq:full-bounded-log-TypeI-row-closure}
+\end{align}
+The masks may depend on $X,M,Q$ and on the source row $m$, but not on the
+quotient $j$.
+\end{theorem}
+
+\begin{proof}
+First assume $(m,h)=1$.  Maximal Bombieri--Vinogradov and smooth partial
+summation give
+\begin{align}
+ \sum_{j\geq1}\Lambda(mj+h)F(mj/X)
+ &=\frac X{\varphi(m)}I_0(F)+E_m,
+ \label{eq:prime-TypeI-row-main}\\
+ \sum_{m\leq M}|E_m|
+ &\ll_{A,h,F}X(\log X)^{-A},
+ \label{eq:prime-TypeI-row-BV-error}
+\end{align}
+after increasing the requested exponent.  On the other hand,
+\cref{lem:HB-complete-row-mean,lem:HB-incomplete-row-error} give
+\begin{equation}
+ \sum_{j\geq1}\Lambda_Q(mj+h)F(mj/X)
+ =\frac X{\varphi(m)}I_0(F)+E_m^{(Q)},
+ \qquad
+ |E_m^{(Q)}|\ll_FQ(\log(2Q))^2.
+ \label{eq:model-TypeI-row-main}
+\end{equation}
+Thus the local main terms cancel row by row, not merely after the $m$ sum.
+
+If $(m,h)>1$, the common local mean is zero.  A von Mangoldt value
+$\Lambda(mj+h)$ forces $mj+h$ to be a power of one of the finitely many
+primes dividing $h$.  Summed over all $m\leq M$, these exceptional rows
+contribute $O_{h,F,\eps}(X^\eps)$: for each relevant prime power one counts
+only divisors of a fixed integer.  The model rows still have mean zero by
+\cref{lem:HB-complete-row-mean}, and
+\[
+ \sum_{j\geq1}\Lambda_Q(mj+h)F(mj/X)=E_m^{(Q)},
+ \qquad |E_m^{(Q)}|\ll_FQ(\log(2Q))^2
+\]
+by \cref{lem:HB-incomplete-row-error}.
+
+Taking the supremum over the masks is now harmless.  The preceding
+reduced and nonreduced row estimates give
+\begin{equation}
+ \sup_{|\alpha_m|\leq1}
+ \left|\sum_{m\leq M}\alpha_mR_{m,h;Q}(X;F)\right|
+ \ll_A X(\log X)^{-A}+MQ(\log(2Q))^2+X^\eps.
+ \label{eq:TypeI-row-two-errors}
+\end{equation}
+The last two terms are absorbed by the power saving in
+\eqref{eq:TypeI-row-parameter-range}.
+
+For the logarithmic row, partial summation in maximal
+Bombieri--Vinogradov gives, when $(m,h)=1$,
+\begin{align*}
+ \sum_{j\geq1}(\log j)\Lambda(mj+h)F(mj/X)
+ &={}
+ \frac1{\varphi(m)}
+ \int_0^\infty\log(t/m)F(t/X)\,dt+E_m^{\log},\\
+ \sum_{m\leq M}|E_m^{\log}|
+ &\ll_A X(\log X)^{-A}.
+\end{align*}
+This main term equals the one in \eqref{eq:HB-log-row-lattice-error},
+because $\rho_h(m)/m=1/\varphi(m)$.  The prime part loses at most one
+power of $\log X$ in obtaining the displayed error.  The model lattice error is
+\eqref{eq:HB-log-row-lattice-error}; after summing over $m$ it is
+$O(MQ(\log(2XQ))^3)$.  Again the fixed power $X^{-\eta}$ absorbs every
+prescribed logarithmic factor.  On nonreduced rows, the same prime-power
+argument as above costs only an additional factor $O(\log X)$, while the
+model has zero mean and obeys the same logarithmic lattice bound.  This proves
+\eqref{eq:full-bounded-log-TypeI-row-closure}.
+\end{proof}
+
+\begin{corollary}[The power-separated calibration]
+\label{cor:power-separated-TypeI-calibration}
+Fix $0<\delta<1/2$ and take
+\begin{equation}
+ Q=\lfloor X^{1/2-\delta}\rfloor.
+ \label{eq:chosen-Q}
+\end{equation}
+Then \cref{thm:full-bounded-TypeI-rows} holds with
+$M\leq Q$, since $MQ\leq Q^2\leq X^{1-2\delta}$.
+\end{corollary}
+
+This is a fixed-shift full dual-ball statement, but only in the row
+variable.  Allowing a mask $\alpha_{m,j}$ that varies arbitrarily with the
+quotient would permit it to inspect $mj+h$ and select the target primes.
+Neither Bombieri--Vinogradov nor the theorem above permits that target-
+adaptive operation.

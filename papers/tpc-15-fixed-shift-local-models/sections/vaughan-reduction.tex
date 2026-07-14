@@ -1,0 +1,166 @@
+\section{A Ramanujan-calibrated Vaughan reduction}
+\label{sec:vaughan-reduction}
+
+We now isolate the precise packet not discharged by the preceding Type-I
+theorem.  For $U,V\geq1$, put
+\begin{equation}
+ \beta_V(k)=\sum_{\substack{d\mid k\\d\leq V}}\mu(d).
+ \label{eq:TPC15-vaughan-beta}
+\end{equation}
+Vaughan's identity, with signs fixed for later use, is
+\begin{align}
+ \sum_t\Lambda(t)F(t)
+ ={}&\sum_{t\leq U}\Lambda(t)F(t)
+ -\sum_{\substack{\ell\leq U\\d\leq V}}
+ \Lambda(\ell)\mu(d)\sum_{j\geq1}F(\ell dj)
+ \notag\\
+ &+\sum_{d\leq V}\mu(d)
+ \sum_{j\geq1}(\log j)F(dj)
+ -\sum_{\substack{\ell>U\\k>1}}
+ \Lambda(\ell)\beta_V(k)F(\ell k).
+ \label{eq:TPC15-vaughan-identity}
+\end{align}
+Moreover, $\beta_V(k)=0$ for $1<k\leq V$, so the last packet is supported
+on $\ell>U$, $k>V$.  This is the classical identity
+\citep{Vaughan1977,HeathBrown1982}; its use here is algebraic.
+
+Fix $0<\delta<1/2$ and choose
+\begin{equation}
+ Q=\left\lfloor X^{1/2-\delta}\right\rfloor,
+ \qquad
+ U=V=\left\lfloor Q^{1/2}\right\rfloor.
+ \label{eq:Vaughan-chosen-parameters}
+\end{equation}
+Then
+\begin{equation}
+ UV\leq Q,
+ \qquad
+ (UV)Q\leq X^{1-2\delta}.
+ \label{eq:Vaughan-parameter-ledger}
+\end{equation}
+The first inequality ensures that every Type-I row sees all of its local
+Ramanujan factors.  The second pays for the incomplete-period boundary
+errors.
+
+Define the calibrated hard packet
+\begin{align}
+ \cH^{\rm HB}_{h,Q;U,V}(X)
+ ={}&\sum_{\substack{\ell>U\\k>V}}
+ \Lambda(\ell)\beta_V(k)
+ r_Q(\ell k+h)W(\ell k/X).
+ \label{eq:HB-hard-packet}
+\end{align}
+For comparison with the sign convention in the introduction, set
+\begin{equation}
+ \cB_{h,\delta}(X):=-\cH^{\rm HB}_{h,Q;U,V}(X).
+ \label{eq:signed-HB-hard-packet}
+\end{equation}
+
+\begin{theorem}[Exact Type-II residual reduction]
+\label{thm:HB-Vaughan-reduction}
+Let $h\ne0$ be fixed and $W\in C_c^\infty((0,\infty))$.  With the
+parameters in \eqref{eq:Vaughan-chosen-parameters}, for every $A>0$,
+\begin{align}
+ &\sum_t\Lambda(t)\Lambda(t+h)W(t/X)
+ \notag\\
+ &\qquad={}
+ \mathfrak S(h)XI_0(W)
+ -\cH^{\rm HB}_{h,Q;U,V}(X)
+ +O_{A,h,W,\delta}\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:HB-Vaughan-main-reduction}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Split the target weight as $\Lambda(t+h)=\Lambda_Q(t+h)+r_Q(t+h)$.
+The first part is evaluated by
+\cref{thm:prime-model-cross-correlations,lem:finite-singular-calibration}:
+\begin{equation}
+ \sum_t\Lambda(t)\Lambda_Q(t+h)W(t/X)
+ =\mathfrak S(h)XI_0(W)
+ +O_A\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:Vaughan-model-part}
+\end{equation}
+
+Apply \eqref{eq:TPC15-vaughan-identity} to
+\begin{equation}
+ F(t)=r_Q(t+h)W(t/X).
+ \label{eq:Vaughan-residual-test}
+\end{equation}
+Because $W$ is supported in a compact subinterval of $(0,\infty)$ and
+$U=o(X)$, the first packet $t\leq U$ is identically zero for all
+sufficiently large $X$.
+
+For the second packet, group by $m=\ell d$.  Its row coefficient is
+\begin{equation}
+ A_{U,V}(m)=
+ \sum_{\substack{\ell d=m\\\ell\leq U, d\leq V}}
+ \Lambda(\ell)\mu(d),
+ \qquad
+ |A_{U,V}(m)|\leq\sum_{\ell\mid m}\Lambda(\ell)=\log m.
+ \label{eq:Vaughan-TypeI-row-coefficient}
+\end{equation}
+Every such $m$ satisfies $m\leq UV\leq Q$.  Divide the coefficient by
+$\log X$, apply \eqref{eq:full-bounded-TypeI-row-closure}, and request one
+additional logarithmic power.  The entire second packet is therefore
+$O_A(X(\log X)^{-A})$.
+
+The third packet is exactly a bounded mask of the logarithmic rows
+\eqref{eq:log-TypeI-row}, with $d\leq V\leq Q$.  Equation
+\eqref{eq:full-bounded-log-TypeI-row-closure} gives the same error.  The
+non-reduced rows in both packets are already included in
+\cref{thm:full-bounded-TypeI-rows}; their von Mangoldt support consists
+only of powers of the finitely many primes dividing $h$.
+
+Finally, \eqref{eq:TPC15-vaughan-beta} vanishes for $1<k\leq V$, so the
+last term in Vaughan's identity is
+$-\cH^{\rm HB}_{h,Q;U,V}(X)$.  Combining it with
+\eqref{eq:Vaughan-model-part} proves
+\eqref{eq:HB-Vaughan-main-reduction}.
+\end{proof}
+
+The reduction can also be compared directly with the global residual
+correlation.
+
+\begin{corollary}[Hard packet versus residual autocorrelation]
+\label{cor:hard-versus-residual-correlation}
+Under the hypotheses of \cref{thm:HB-Vaughan-reduction},
+\begin{align}
+ \cH^{\rm HB}_{h,Q;U,V}(X)
+ ={}&-\sum_nr_Q(n)r_Q(n+h)W(n/X)
+ \notag\\
+ &+O_{A,h,W,\delta}\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:hard-residual-autocorrelation-equivalence}
+\end{align}
+\end{corollary}
+
+\begin{proof}
+Compare \eqref{eq:HB-Vaughan-main-reduction} with
+\eqref{eq:Ramanujan-residual-correlation}.
+\end{proof}
+
+\begin{corollary}[The fixed-shift Type-II gate]
+\label{cor:fixed-shift-TypeII-gate}
+Assume that $h$ is an admissible even shift and that $I_0(W)\ne0$.  Then
+\begin{equation}
+ \sum_t\Lambda(t)\Lambda(t+h)W(t/X)
+ \sim\mathfrak S(h)XI_0(W)
+ \quad\Longleftrightarrow\quad
+ \cH^{\rm HB}_{h,Q;U,V}(X)=o(X).
+ \label{eq:fixed-shift-TypeII-iff}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+This is an immediate consequence of
+\eqref{eq:HB-Vaughan-main-reduction}, since its remainder is $o(X)$.
+\end{proof}
+
+On the support of the hard packet, $\ell k\asymp_WX$ and both factors
+exceed $X^{1/4-\delta/2}$; hence each is at most
+$O_W(X^{3/4+\delta/2})$.  This is a genuine broad Type-II region.  The
+theorem identifies it but does not estimate it.  In particular,
+\eqref{eq:fixed-shift-TypeII-iff} is not evidence that the right-hand
+condition holds for $h=2$.  The use of $r_Q$, rather than the raw
+von Mangoldt target, is also essential: asking the uncalibrated hard
+packet to be $o(X)$ would generally subtract the wrong local main term.

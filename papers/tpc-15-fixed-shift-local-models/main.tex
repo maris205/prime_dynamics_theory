@@ -1,0 +1,148 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Fixed-Shift Local Models within the Square-Root Distribution Range: Quarter-Scale Row Masks, Ramanujan Spectral Calibration, and a Vaughan Type-II Reduction},
+ pdfauthor={Liang Wang},
+ pdfsubject={Fixed-shift local models and a rigorous Type-II reduction for prime-pair correlations},
+ pdfkeywords={prime correlations, Ramanujan sums, Heath-Brown model, Vaughan identity, Bombieri-Vinogradov theorem, Type II sums, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\T}{\mathbb T}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\e}{\mathrm e}
+
+\title{\textbf{Fixed-Shift Local Models within the Square-Root}\\
+\textbf{Distribution Range: Quarter-Scale Row Masks,}\\
+\textbf{Ramanujan Spectral Calibration, and a Vaughan}\\
+\textbf{Type-II Reduction}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let $u(n)=\Lambda(n)-1$, fix a nonzero integer shift $h$, and let
+$W\in C_c^\infty((0,\infty);\R)$.  We develop two fixed-shift local
+models for the factor-coordinate program of TPC-10--TPC-14.
+
+First, on the primitive radial shell
+\[
+ \cK_h(X)=\sum_{\substack{a>1,\ b\geq1\\(a,b)=1}}
+ u(a)(\Lambda(ab+h)-1)W(ab/X),
+\]
+the correct row density is
+$\rho_h(a)=\one_{(a,h)=1}a/\varphi(a)$.  Every bounded source-factor row
+mask supported on $a\leq X^{1/4-\eps}$ has arbitrary logarithmic
+cancellation after centering by $\rho_h(a)$.  In contrast, the complete
+row-centered residual retains the explicit main term
+\[
+ \left(\frac{\varphi(|h|)}{|h|}-\beta_h\right)
+ XI_0(W)\log X,
+ \qquad
+ \beta_h=\prod_{p\mid h}\left(1-\frac{p}{p^2-p+1}\right).
+\]
+For $h=2$ the coefficient is $1/6$.  When $I_0(W)\ne0$, the residual
+logarithmic main term is therefore rigorously forced beyond the
+quarter-scale Type-I region; it is not an endpoint prime-pair estimate.
+
+Second, define the finite Heath--Brown Ramanujan model and its residual by
+\[
+ \Lambda_Q(n)=\sum_{q\leq Q}\frac{\mu(q)}{\varphi(q)}c_q(n),
+ \qquad r_Q(n)=\Lambda(n)-\Lambda_Q(n).
+\]
+Its rational translation spectrum has Farey spacing at least $Q^{-2}$,
+and its fixed-shift autocorrelation is the truncated singular series.
+For fixed $0<\delta<1/2$ and $Q=X^{1/2-\delta}$, maximal
+Bombieri--Vinogradov and the finite
+spectral large sieve give
+\[
+ \sum_n\Lambda(n)\Lambda(n+h)W(n/X)
+ =\mathfrak S(h)XI_0(W)+
+ \sum_nr_Q(n)r_Q(n+h)W(n/X)
+ +O_A(X(\log X)^{-A}).
+\]
+Moreover, all bounded fixed-shift Type-I row masks up to modulus $Q$ are
+controlled after this Ramanujan calibration.  Applying Vaughan's identity
+with $U=V=X^{1/4-\delta/2}$ then discharges every Type-I packet in that
+decomposition and yields an
+exact reduction of the remaining error to one explicitly displayed hard
+bilinear packet.  For an admissible even $h$ with $I_0(W)\ne0$, the
+Hardy--Littlewood fixed-shift asymptotic is equivalent to an $o(X)$ estimate
+for that packet.  We do not estimate it, prove a
+twin-prime lower bound, enlarge the level of distribution, or claim a
+breach of sieve parity.
+\end{abstract}
+
+\noindent\textbf{Keywords:} fixed-shift prime correlations; Ramanujan
+sums; Heath--Brown model; Bombieri--Vinogradov theorem; Vaughan identity;
+Type-II reduction; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N05, 11N37; Secondary
+11N35, 11N32, 42A05.
+
+\input{sections/introduction-scope}
+\input{sections/row-local-shell}
+\input{sections/quarter-mask-transfer}
+\input{sections/ramanujan-dynamics}
+\input{sections/ramanujan-correlations}
+\input{sections/fixed-typei-closure}
+\input{sections/vaughan-reduction}
+\input{sections/boundary-certificate}
+\input{sections/conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

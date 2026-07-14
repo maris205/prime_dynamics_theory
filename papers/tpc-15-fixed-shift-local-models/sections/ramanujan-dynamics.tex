@@ -1,0 +1,209 @@
+\section{The finite Ramanujan model as a rational translation spectrum}
+\label{sec:ramanujan-dynamics}
+
+Write $\e(x)=\exp(2\pi i x)$.  For $q\geq1$, the Ramanujan sum is
+\begin{equation}
+ c_q(n)=\sum_{\substack{a\ ({\rm mod}\ q)\\(a,q)=1}}
+ \e(an/q)
+ =\sum_{d\mid(q,n)}d\mu(q/d).
+ \label{eq:ramanujan-sum-def}
+\end{equation}
+For $Q\geq1$, define the finite Heath--Brown model and its residual by
+\begin{equation}
+ \Lambda_Q(n)=\sum_{q\leq Q}\frac{\mu(q)}{\varphi(q)}c_q(n),
+ \qquad
+ r_Q(n)=\Lambda(n)-\Lambda_Q(n).
+ \label{eq:HB-model-def}
+\end{equation}
+The adjective ``model'' is important: $\Lambda_Q$ is neither a pointwise
+minorant nor a pointwise approximation to $\Lambda$.
+
+\subsection{Translation spectrum and its resolution}
+
+Let
+\begin{equation}
+ \mathscr F_Q=
+ \left\{\frac aq\pmod1:1\leq q\leq Q, (a,q)=1\right\}.
+ \label{eq:farey-spectrum}
+\end{equation}
+Every element is represented in lowest terms, so distinct points
+$\xi=a/q$ and $\xi'=b/r$ satisfy
+\begin{equation}
+ \|\xi-\xi'\|_{\R/\Z}
+ \geq\frac1{qr}\geq Q^{-2}.
+ \label{eq:farey-gap}
+\end{equation}
+Let $L_Q=\operatorname{lcm}(1,\ldots,Q)$.  The functions below live on
+the finite cyclic group $\Z/L_Q\Z$.  On the subspace spanned by
+$e_\xi(n)=\e(n\xi)$, let translation act by
+\begin{equation}
+ T^he_\xi=\e(h\xi)e_\xi.
+ \label{eq:translation-spectrum-action}
+\end{equation}
+Thus $\Lambda_Q$ is a finite vector in a rational pure-point translation
+spectrum:
+\begin{equation}
+ \Lambda_Q(n)=
+ \sum_{\xi=a/q\in\mathscr F_Q}
+ z_\xi\e(n\xi),
+ \qquad z_{a/q}=\frac{\mu(q)}{\varphi(q)}.
+ \label{eq:HB-spectral-expansion}
+\end{equation}
+This is a spectral calibration of local congruence densities, not a
+dynamical representation of the primes themselves.
+
+We shall use the classical large-sieve inequality in the form
+\begin{equation}
+ \sum_{n\in I}
+ \left|\sum_{\xi\in\mathscr F_Q}z_\xi\e(n\xi)\right|^2
+ \leq (|I|+Q^2)
+ \sum_{\xi\in\mathscr F_Q}|z_\xi|^2,
+ \label{eq:farey-large-sieve}
+\end{equation}
+up to an absolute change in the constant \citep{MontgomeryVaughan1973}.
+The $Q^2$ term is precisely the
+reciprocal gap in \eqref{eq:farey-gap}.  In the range
+$Q=X^{1/2-\delta}$ it is $o(X)$ by a power.  We also use the following
+smoothed consequence of the same spacing.  If $W\in C_c^\infty((0,\infty))$,
+then for every $A>0$ and fixed $\delta>0$,
+\begin{align}
+ &\sum_n\Lambda_Q(n)\Lambda_Q(n+h)W(n/X)
+ \notag\\
+ &\qquad={}
+ XI_0(W)
+ \sum_{q\leq Q}\frac{\mu(q)^2c_q(h)}{\varphi(q)^2}
+ +O_{A,\delta,W}\bigl(X(\log X)^{-A}\bigr),
+ \label{eq:model-autocorrelation-preliminary}
+\end{align}
+uniformly for $Q\leq X^{1/2-\delta}$.  Indeed, insert
+\eqref{eq:HB-spectral-expansion}.  The zero frequency occurs precisely
+when the two reduced fractions have the same denominator and opposite
+numerators; its contribution is the displayed Ramanujan sum.  Every other
+pair has distance at least $Q^{-2}$ from an integer.  Poisson summation
+gives
+\[
+ \sum_nW(n/X)\e(n\theta)
+ \ll_{B,W}X(1+X\|\theta\|)^{-B}.
+\]
+Since the $\ell^1$ norm of the spectral coefficients is $O(Q)$, choosing
+$B$ in terms of $A$ and $\delta$ disposes of all nonzero frequencies.
+This argument also makes clear why a power gap between $Q^2$ and $X$ is
+kept below.
+
+\subsection{The divisor expansion and exact progression means}
+
+The spectral expansion has a complementary divisor form that is better
+suited to incomplete arithmetic progressions.
+
+\begin{lemma}[Finite divisor expansion]
+\label{lem:HB-divisor-expansion}
+For every positive integer $n$,
+\begin{equation}
+ \Lambda_Q(n)=\sum_{\substack{d\mid n\\d\leq Q}}\lambda'_Q(d),
+ \label{eq:HB-divisor-expansion}
+\end{equation}
+where
+\begin{align}
+ \lambda'_Q(d)
+ &=d\sum_{r\leq Q/d}
+ \frac{\mu(dr)\mu(r)}{\varphi(dr)}
+ \notag\\
+ &=\mu(d)\frac d{\varphi(d)}
+ \sum_{\substack{r\leq Q/d\\(r,d)=1}}
+ \frac{\mu(r)^2}{\varphi(r)}
+ \label{eq:HB-divisor-coefficient}
+\end{align}
+when $d$ is squarefree, and $\lambda'_Q(d)=0$ otherwise.  Uniformly in
+$Q\geq2$,
+\begin{align}
+ |\lambda'_Q(d)|&\ll
+ \frac d{\varphi(d)}\log(2Q/d),
+ \label{eq:HB-divisor-pointwise}\\
+ \sum_{d\leq Q}|\lambda'_Q(d)|&\ll Q(\log(2Q))^2.
+ \label{eq:HB-divisor-l1}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Insert the divisor identity in \eqref{eq:ramanujan-sum-def} into
+\eqref{eq:HB-model-def}, write $q=dr$, and interchange the finite sums.
+If $\mu(dr)\ne0$, then $d$ and $r$ are squarefree and coprime, which gives
+the second line of \eqref{eq:HB-divisor-coefficient}.  The standard bound
+\[
+ \sum_{r\leq y}\frac{\mu(r)^2}{\varphi(r)}\ll\log(2y)
+\]
+proves \eqref{eq:HB-divisor-pointwise}.  Summing it, or interchanging the
+$d,r$ sums once more and using $n/\varphi(n)\ll\log\log(3n)$, proves the
+deliberately nonoptimal but sufficient estimate
+\eqref{eq:HB-divisor-l1}.
+\end{proof}
+
+For fixed $h\ne0$, put
+\begin{equation}
+ \rho_h(m)=\one_{(m,h)=1}\frac m{\varphi(m)}.
+ \label{eq:ramanujan-row-density}
+\end{equation}
+
+\begin{lemma}[Exact complete-period row mean]
+\label{lem:HB-complete-row-mean}
+If $m\leq Q$, then the mean of $j\mapsto\Lambda_Q(mj+h)$ over a complete
+period is exactly $\rho_h(m)$.
+\end{lemma}
+
+\begin{proof}
+From the exponential definition,
+\begin{equation}
+ \mathbb E_j c_q(mj+h)=
+ \begin{cases}
+ c_q(h),&q\mid m,\\
+ 0,&q\nmid m.
+ \end{cases}
+ \label{eq:ramanujan-row-average}
+\end{equation}
+Indeed, a reduced numerator $a$ can make $am/q$ integral only when
+$q\mid m$.  Because $m\leq Q$, every divisor $q\mid m$ occurs in the
+finite model.  Hence the mean in question is
+\[
+ \sum_{q\mid m}\frac{\mu(q)c_q(h)}{\varphi(q)}.
+\]
+This is multiplicative in $m$.  If $p\mid m$ and $p\nmid h$, its local
+factor is $1+1/(p-1)=p/(p-1)$.  If $p\mid(m,h)$, the local factor is
+$1-1=0$.  Their product is \eqref{eq:ramanujan-row-density}.
+\end{proof}
+
+The condition $m\leq Q$ is structural, not cosmetic.  If a prime divisor
+of $m$ exceeds $Q$, its local factor is absent from the finite model, so
+the asserted row mean need not equal $m/\varphi(m)$.  This is the reason
+for the parameter inequality $UV\leq Q$ in the Vaughan reduction below.
+
+\begin{lemma}[Smoothed incomplete-row error]
+\label{lem:HB-incomplete-row-error}
+Let $F\in C_c^1((0,\infty))$.  Uniformly for $m\leq Q$,
+\begin{align}
+ &\sum_{j\geq1}\Lambda_Q(mj+h)F(mj/X)
+ -\rho_h(m)\frac Xm I_0(F)
+ \ll_F Q(\log(2Q))^2,
+ \label{eq:HB-row-lattice-error}\\
+ &\sum_{j\geq1}(\log j)\Lambda_Q(mj+h)F(mj/X)
+ -\rho_h(m)\frac1m
+ \int_0^\infty(\log(t/m))F(t/X)\,dt
+ \ll_F Q(\log(2XQ))^3.
+ \label{eq:HB-log-row-lattice-error}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Use \eqref{eq:HB-divisor-expansion}.  For a fixed $d$, the congruence
+$d\mid mj+h$ is either insoluble or is one residue class modulo
+$d/(d,m)$.  Euler summation on that lattice has an $O_F(1)$ error; with
+the multiplier $\log j$, partial summation costs $O_F(\log(2XQ))$.
+The continuous main terms recombine to the complete-period mean in
+\cref{lem:HB-complete-row-mean}.  Summing the boundary errors with
+\eqref{eq:HB-divisor-l1} proves both estimates.
+\end{proof}
+
+The last lemma avoids a common false estimate.  Taking absolute values
+separately over all reduced numerators in the Fourier expansion can lose
+$Q^2$ in one row.  The divisor expansion retains the congruence
+cancellation and costs only the $\ell^1$ norm in
+\eqref{eq:HB-divisor-l1}.

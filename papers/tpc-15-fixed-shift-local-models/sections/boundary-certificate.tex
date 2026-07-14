@@ -1,0 +1,208 @@
+\section{Boundary certificate: what the reduction does and does not prove}
+\label{sec:boundary-certificate}
+
+This section records the logical endpoint of the argument.  It separates
+three statements which have different observables, different natural
+scales, and different quantifiers: the row-centered primitive-shell
+residual, one prescribed prime-pair shift, and a finite bundle of candidate
+shifts.  None may be
+substituted for another without an additional theorem.
+
+\subsection{The shell and the endpoint live on different scales}
+
+For fixed $h\ne0$, put
+\[
+ \mathcal P_h(X):=\sum_n\Lambda(n)\Lambda(n+h)W(n/X).
+\]
+The fixed-shift upper-bound sieve gives
+\begin{equation}
+ \mathcal P_h(X)\ll_{h,W}X,
+ \label{eq:endpoint-upper-scale}
+\end{equation}
+with the prime-power terms absorbed in the same bound; see, for example,
+\citet{IwaniecKowalski2004}.  The Hardy--Littlewood prediction is the much
+sharper asymptotic
+\begin{equation}
+ \mathcal P_h(X)=\mathfrak S(h)XI_0(W)+o(X),
+ \label{eq:hl-endpoint-boundary}
+\end{equation}
+for admissible even $h$ \citep{HardyLittlewood1923}.  Thus the endpoint
+problem has natural scale $X$.
+
+By contrast, the complete row-centered primitive-shell residual proved
+above has the
+form
+\begin{equation}
+ \cR_h(X)
+ =\left(\frac{\varphi(|h|)}{|h|}-\beta_h\right)
+   XI_0(W)\log X+O_{h,W}(X).
+ \label{eq:shell-versus-endpoint-scale}
+\end{equation}
+When $\delta_hI_0(W)\ne0$, its scale is $X\log X$.  This extra logarithm is factor-coordinate
+multiplicity, not an extra logarithm in the endpoint correlation.
+Moreover, $\cR_h$ is a signed, centered sum over primitive
+factorizations, whereas $\mathcal P_h$ is a one-dimensional endpoint
+observable, nonnegative only when $W\geq0$.  No positivity-preserving comparison between the two quantities
+has been proved.  In particular, dividing
+\eqref{eq:shell-versus-endpoint-scale} by $\log X$ does not yield
+\eqref{eq:hl-endpoint-boundary}; even the positive coefficient $1/6$ when
+$h=2$ is not a twin-prime lower bound.  This is the same label-preservation
+boundary isolated in TPC-10 and TPC-14
+\citep{WangTPC10,WangTPC14}.
+
+\subsection{A finite selector theorem}
+
+There is nevertheless a rigorous existence mechanism when the shift bundle
+is fixed and finite.  It is useful to state it independently of the primes.
+
+\begin{theorem}[Finite selector]
+\label{thm:finite-coactivation-selector}
+Let $K\ge2$ be fixed and let
+$x(n)=(x_1(n),\ldots,x_K(n))\in\{0,1\}^K$.  Define
+\[
+ E(N):=\sum_{n\le N}\one_{\{\sum_i x_i(n)\ge2\}},
+ \qquad
+ C_{ij}(N):=\sum_{n\le N}x_i(n)x_j(n)
+ \quad (i<j).
+\]
+Then, for every $N$,
+\begin{equation}
+ E(N)\le\sum_{i<j}C_{ij}(N),
+ \qquad
+ \max_{i<j}C_{ij}(N)\ge\frac{E(N)}{\binom K2}.
+ \label{eq:finite-selector-bound}
+\end{equation}
+If $E(N)\to\infty$, there are a fixed pair $(i_*,j_*)$ and a sequence
+$N_r\to\infty$ for which
+\[
+ C_{i_*j_*}(N_r)\ge \frac{E(N_r)}{\binom K2}.
+\]
+In particular, $C_{i_*j_*}(N)\to\infty$.
+\end{theorem}
+
+\begin{proof}
+For each $n$,
+\[
+ \one_{\{\sum_i x_i(n)\ge2\}}
+ \le \sum_{i<j}x_i(n)x_j(n).
+\]
+Summing gives the first inequality in
+\eqref{eq:finite-selector-bound}, and averaging over the $\binom K2$ pairs
+gives the second.  Choose a maximizing pair for each $N$.  One pair occurs
+for infinitely many $N$ because the set of pairs is finite.  Passing to
+that subsequence proves the quantitative assertion.  Since $E(N_r)\to
+\infty$ and each $C_{ij}(N)$ is nondecreasing, the last conclusion follows.
+\end{proof}
+
+In symbolic-dynamical language, the set of states with at least two active
+coordinates is the finite union
+\[
+ \left\{x:\sum_i x_i\ge2\right\}
+   =\bigcup_{i<j}\{x:x_i=x_j=1\}.
+\]
+Infinite recurrence to this union therefore forces infinite recurrence to
+at least one fixed two-coordinate cylinder.  Finiteness is essential: the
+argument does not invert a normalized average over a growing family of
+shifts.
+
+\begin{corollary}[Standard bounded-gap consequence at an unidentified shift]
+\label{cor:unidentified-bounded-gap}
+There exists a fixed even integer $h_*$ with
+\[
+ 2\le h_*\le246
+\]
+such that $p$ and $p+h_*$ are simultaneously prime for infinitely many
+primes $p$.
+\end{corollary}
+
+\begin{proof}
+This is the Polymath8b bounded-gap theorem followed by finite pigeonhole;
+it is not a new bounded-gap theorem and is not used in the analytic
+reduction above.  Specifically, Theorems 16(i) and 17 of
+\citet{Polymath2014} give
+$\mathrm{DHL}[50;2]$ and $H(50)=246$.  Fix an admissible $50$-tuple
+\[
+ \cH=\{h_1<\cdots<h_{50}\}\subset[0,246]
+\]
+of diameter $246$, and apply
+\cref{thm:finite-coactivation-selector} to
+$x_i(n)=\one_{\mathbb P}(n+h_i)$.  The $\mathrm{DHL}[50;2]$ assertion says
+that $E(N)\to\infty$, so one fixed pair $(i_*,j_*)$ is coactive infinitely
+often.  Take $h_*=h_{j_*}-h_{i_*}$.  Admissibility modulo $2$ forces all
+$h_i$ to have the same parity; hence $h_*$ is even, and its diameter gives
+$2\le h_*\le246$.
+\end{proof}
+
+The corollary is an exact prime--prime recurrence statement, but its
+quantifier is ``there exists $h_*$''.  It neither identifies $h_*$ nor
+permits the substitution $h_*=2$.
+
+\subsection{Why the aggregate cannot identify the coordinate}
+
+The loss of the shift label is already exact in the abstract finite-channel
+model.
+
+\begin{proposition}[Aggregate non-identifiability]
+\label{prop:aggregate-nonidentifiability}
+Let $K\ge3$.  Knowledge of the entire aggregate path
+$\{E(N):N\ge1\}$, even together with
+$\{\sum_{i<j}C_{ij}(N):N\ge1\}$, does not determine which pair is
+coactive infinitely often on the class of binary $K$-channel sequences.
+\end{proposition}
+
+\begin{proof}
+Fix an infinite set $S\subset\N$ and two distinct coordinate pairs
+$e\ne f$.  In the first sequence set precisely the two coordinates in $e$
+equal to $1$ when $n\in S$, and set every coordinate to $0$ otherwise.
+Construct the second sequence in the same way with $f$ in place of $e$.
+For both sequences and every $N$,
+\[
+ E(N)=\sum_{i<j}C_{ij}(N)=|S\cap[1,N]|,
+\]
+but their unique recurrent coactivation pairs are different.
+\end{proof}
+
+This proposition is an information statement about the aggregate
+observable, not a claim of logical independence for the actual primes.
+Recovering a prescribed shift requires label-sensitive input that is absent
+from the aggregate.
+
+\subsection{The unresolved packet}
+
+The Ramanujan calibration and Vaughan decomposition above reduce the
+endpoint error to the displayed balanced Type-II packet, up to terms already
+shown to be $o(X)$.  Recall that
+$\cB_{h,\delta}=-\cH^{\rm HB}_{h,Q;U,V}$.  The present paper does not prove
+the required estimate
+\begin{equation}
+ \cH^{\rm HB}_{h,Q;U,V}(X)=o(X)
+ \label{eq:hard-packet-unproved}
+\end{equation}
+for that packet.  Consequently it does not prove
+\eqref{eq:hl-endpoint-boundary}, a positive lower bound for
+$\mathcal P_2(X)$, or the twin-prime conjecture.  The decomposition is a precise
+information gate: Type-I distribution and the finite Ramanujan spectrum
+have been discharged, while genuinely balanced, label-sensitive bilinear
+control remains.  Known parity-barrier analyses explain why such additional
+information cannot be replaced by formal sieve rearrangement alone
+\citep{Selberg1952Parity,FordMaynard2024}.
+
+For clarity, the final ledger is therefore:
+\begin{center}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.29\textwidth}
+                    >{\raggedright\arraybackslash}p{0.18\textwidth}
+                    >{\raggedright\arraybackslash}p{0.42\textwidth}@{}}
+\toprule
+Object & Natural scale & Status here \\
+\midrule
+Complete row-centered residual & $X\log X$ & Explicit asymptotic; still
+summed over all primitive orientations. \\
+Fixed-shift prime endpoint & $X$ & Upper-bound scale only; no
+Hardy--Littlewood asymptotic. \\
+Finite admissible shift bundle & recurrence & Some fixed even
+$h_*\le246$ is selected; its identity is not recovered. \\
+Balanced hard packet & $X$ target & Isolated exactly; the necessary
+$o(X)$ estimate is not proved. \\
+\bottomrule
+\end{tabular}
+\end{center}

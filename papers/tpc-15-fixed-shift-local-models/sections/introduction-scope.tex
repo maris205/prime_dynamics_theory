@@ -1,0 +1,259 @@
+\section{Introduction and scope}
+\label{sec:introduction}
+
+The preceding factor-coordinate papers separated two losses that are often
+conflated.  At a prescribed shift, TPC-14 evaluates the primitive radial
+shell only after summing all orientations.  After a growing short-shift
+mean, it controls every bounded orientation mask, including the endpoint
+mask, but the shift coordinate is then averaged \citep{WangTPC14}.  The
+remaining target was stated there in analytic rather than algebraic terms:
+subtract the correct local main term at fixed $h$, discharge the Type-I
+region, and identify the bilinear packet that still has to be estimated.
+
+This paper carries out that reduction.  All arithmetic inputs are
+classical: maximal Bombieri--Vinogradov, the finite Ramanujan model used by
+Heath--Brown, a separated-frequency mean-value inequality, and Vaughan's
+identity \citep{Bombieri1965,Vinogradov1965,HeathBrown1985,Vaughan1977}.
+The point is their label-preserving assembly at one fixed shift.  No new
+distribution theorem for primes is assumed.
+
+Fix throughout a nonzero integer $h$ and a real
+$W\in C_c^\infty((0,\infty))$.  Choose
+$0<\alpha<\beta$ with
+\begin{equation}
+ \supp W\subset[\alpha,\beta],
+ \label{eq:W-support}
+\end{equation}
+and put
+\begin{equation}
+ I_0(W)=\int_0^\infty W(u)\,du,
+ \qquad
+ I_1(W)=\int_0^\infty W(u)\log u\,du.
+ \label{eq:weight-integrals}
+\end{equation}
+All asymptotics are as $X\to\infty$ with $h$ and $W$ fixed.  The
+von Mangoldt function is extended by zero to nonpositive integers.
+
+\subsection{The shell-local density and the quarter-scale theorem}
+
+Write
+\begin{equation}
+ u(n)=\Lambda(n)-1,
+ \qquad
+ \rho_h(a)=\one_{(a,h)=1}\frac{a}{\varphi(a)}.
+ \label{eq:u-rho-definition}
+\end{equation}
+The exact $k=1$ shell from TPC-14 is
+\begin{equation}
+ \cK_h(X)=
+ \sum_{\substack{a>1,\ b\geq1\\(a,b)=1}}
+ u(a)(\Lambda(ab+h)-1)W(ab/X).
+ \label{eq:intro-shell}
+\end{equation}
+For a row with source factor $a$, the target $ab+h$ lies in a prime
+progression.  Its conditional density is $\rho_h(a)$, not $1$.  We split
+\begin{align}
+ \cK_h(X)&=\cM_h(X)+\cR_h(X),
+ \label{eq:intro-shell-split}\\
+ \cM_h(X)&=
+ \sum_{\substack{a>1,\ b\geq1\\(a,b)=1}}
+ u(a)(\rho_h(a)-1)W(ab/X),
+ \label{eq:intro-local-shell}\\
+ \cR_h(X)&=
+ \sum_{\substack{a>1,\ b\geq1\\(a,b)=1}}
+ u(a)(\Lambda(ab+h)-\rho_h(a))W(ab/X).
+ \label{eq:intro-residual-shell}
+\end{align}
+Let
+\begin{equation}
+ \beta_h=\prod_{p\mid h}
+ \left(1-\frac{p}{p^2-p+1}\right),
+ \quad
+ \kappa_h=\frac1{\zeta(2)}-\frac{\varphi(|h|)}{|h|},
+ \quad
+ \delta_h=\frac{\varphi(|h|)}{|h|}-\beta_h.
+ \label{eq:beta-kappa-delta}
+\end{equation}
+We prove
+\begin{equation}
+ \cM_h(X)=\kappa_hXI_0(W)\log X+O_{h,W}(X),
+ \qquad
+ \cR_h(X)=\delta_hXI_0(W)\log X+O_{h,W}(X).
+ \label{eq:intro-global-split-law}
+\end{equation}
+For $|h|>1$, $\delta_h>0$; for $h=2$,
+\begin{equation}
+ \kappa_2=\frac6{\pi^2}-\frac12,
+ \qquad \delta_2=\frac16.
+ \label{eq:intro-h2-split}
+\end{equation}
+
+The positive fixed-shift localization is uniform over a complete bounded
+row-mask ball.  For every $A>0$ there is $B>0$ such that, whenever
+\begin{equation}
+ Y^2\leq X^{1/2}(\log X)^{-B},
+ \label{eq:intro-quarter-range}
+\end{equation}
+one has uniformly for $|\omega_a|\leq1$
+\begin{equation}
+ \sum_{2\leq a\leq Y}\omega_a u(a)
+ \sum_{\substack{b\geq1\\(a,b)=1}}
+ (\Lambda(ab+h)-\rho_h(a))W(ab/X)
+ \ll_A X(\log X)^{-A}.
+ \label{eq:intro-quarter-mask}
+\end{equation}
+The square on $Y$ is genuine: inserting $(a,b)=1$ creates moduli
+$ad\leq a^2$.  Combining \eqref{eq:intro-quarter-mask} with
+\eqref{eq:intro-global-split-law} shows, when $\delta_hI_0(W)\ne0$, that
+the $\delta_hXI_0(W)\log X$ residual lies beyond this quarter-scale Type-I
+region.  It does not show
+that any one orientation, especially $b=1$, carries positive mass.
+
+\subsection{The finite Ramanujan local factor}
+
+Let
+\begin{equation}
+ c_q(n)=\sum_{\substack{a\bmod q\\(a,q)=1}}
+ \e^{2\pi ian/q},
+ \qquad
+ \Lambda_Q(n)=\sum_{q\leq Q}\frac{\mu(q)}{\varphi(q)}c_q(n),
+ \qquad
+ r_Q(n)=\Lambda(n)-\Lambda_Q(n).
+ \label{eq:intro-HB-model}
+\end{equation}
+This is the finite Heath--Brown Ramanujan model.  The reduced fractions
+$a/q$, $q\leq Q$, are the eigenfrequencies of translation on its finite
+periodic factor; distinct frequencies are separated by at least $Q^{-2}$.
+Its fixed-shift correlation is
+\begin{equation}
+ \mathfrak S_Q(h)=
+ \sum_{q\leq Q}\frac{\mu(q)^2}{\varphi(q)^2}c_q(h).
+ \label{eq:intro-truncated-singular-series}
+\end{equation}
+For fixed $h$, this converges absolutely to the prime-pair singular series
+\begin{equation}
+ \mathfrak S(h)=
+ \sum_{q\geq1}\frac{\mu(q)^2}{\varphi(q)^2}c_q(h).
+ \label{eq:intro-singular-series}
+\end{equation}
+Thus $\mathfrak S(h)=0$ for odd $h$, while for even $h$
+\begin{equation}
+ \mathfrak S(h)=
+ 2\prod_{p>2}\left(1-\frac1{(p-1)^2}\right)
+ \prod_{\substack{p\mid h\\p>2}}\frac{p-1}{p-2}.
+ \label{eq:intro-singular-product}
+\end{equation}
+
+For fixed $0<\delta<1/2$, put
+\begin{equation}
+ Q=\lfloor X^{1/2-\delta}\rfloor.
+ \label{eq:intro-Q-range}
+\end{equation}
+The finite-spectrum mean value theorem and maximal
+Bombieri--Vinogradov give, for every $A>0$,
+\begin{align}
+ \sum_n\Lambda_Q(n)\Lambda_Q(n+h)W(n/X)
+ &=\mathfrak S_Q(h)XI_0(W)+O_A(X(\log X)^{-A}),
+ \label{eq:intro-model-model}\\
+ \sum_n\Lambda(n)\Lambda_Q(n+h)W(n/X)
+ &=\mathfrak S_Q(h)XI_0(W)+O_A(X(\log X)^{-A}),
+ \label{eq:intro-prime-model}
+\end{align}
+and the analogous reversed cross term.  Consequently
+\begin{equation}
+ \sum_n\Lambda(n)\Lambda(n+h)W(n/X)
+ =\mathfrak S(h)XI_0(W)
+ +\sum_nr_Q(n)r_Q(n+h)W(n/X)
+ +O_A(X(\log X)^{-A}).
+ \label{eq:intro-residual-correlation}
+\end{equation}
+This is a local-factor decomposition, not a bound for its residual term.
+
+\subsection{The fixed-shift Type-II reduction}
+
+The model is calibrated on every progression modulus $m\leq Q$:
+\begin{equation}
+ \lim_{J\to\infty}\frac1J\sum_{j\leq J}\Lambda_Q(mj+h)
+ =\rho_h(m).
+ \label{eq:intro-progression-calibration}
+\end{equation}
+The equality uses the complete divisor set $q\mid m$; it can fail if
+$m>Q$.  Quantitatively, maximal Bombieri--Vinogradov and finite-period
+summation imply the full fixed-shift Type-I mask estimate
+\begin{equation}
+ \sup_{|\omega_m|\leq1}
+ \left|
+ \sum_{m\leq Q}\omega_m
+ \sum_jr_Q(mj+h)W(mj/X)
+ \right|
+ \ll_A X(\log X)^{-A}.
+ \label{eq:intro-typei-mask}
+\end{equation}
+
+Let
+\begin{equation}
+ U=V=\lfloor Q^{1/2}\rfloor
+ =X^{1/4-\delta/2}+O(1),
+ \qquad
+ \beta_V(k)=\sum_{\substack{d\mid k\\d\leq V}}\mu(d).
+ \label{eq:intro-Vaughan-parameters}
+\end{equation}
+Then $UV\leq Q$.  Applying
+Vaughan's identity to the one-sided residual form and using
+\eqref{eq:intro-typei-mask} gives
+\begin{align}
+ &\sum_n\Lambda(n)\Lambda(n+h)W(n/X)
+ \notag\\
+ &\quad=\mathfrak S(h)XI_0(W)+\cB_{h,\delta}(X)
+ +O_A(X(\log X)^{-A}),
+ \label{eq:intro-hard-reduction}\\
+ \cB_{h,\delta}(X)
+ &:=-\sum_{\substack{\ell>U,\ k>V}}
+ \Lambda(\ell)\beta_V(k)r_Q(\ell k+h)W(\ell k/X).
+ \label{eq:intro-hard-packet}
+\end{align}
+On the support, both factors lie in the corridor
+\begin{equation}
+ X^{1/4-\delta/2}<\ell,k\ll_WX^{3/4+\delta/2}.
+ \label{eq:intro-hard-corridor}
+\end{equation}
+For an admissible even $h$ with $I_0(W)\ne0$, the weighted
+Hardy--Littlewood asymptotic is therefore equivalent to
+$\cB_{h,\delta}(X)=o(X)$.  This identifies the
+remaining Type-II gate exactly.  The paper proves no estimate of that
+strength for $\cB_{h,\delta}$.
+
+\subsection{Claim ledger}
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.27\textwidth}
+                    >{\raggedright\arraybackslash}p{0.30\textwidth}
+                    >{\raggedright\arraybackslash}p{0.32\textwidth}@{}}
+\toprule
+Object & Result here & Strict boundary\\
+\midrule
+Primitive $k=1$ shell
+& Fixed-$h$ row centering and all bounded masks through the quarter scale
+& Orientations $b$ are still aggregated outside the mask variable\\
+Finite Ramanujan factor
+& Exact translation spectrum and singular-series main term through
+$Q=X^{1/2-\delta}$
+& The residual correlation is not bounded\\
+Type-I progression rows
+& Full bounded-mask closure at one prescribed $h$
+& Calibration requires every row modulus to be at most $Q$\\
+Vaughan decomposition
+& All Type-I packets produced here are discharged; one explicit hard packet remains
+& No fixed-$h$ Type-II cancellation is proved\\
+Endpoint $h=2$
+& Exact equivalence with the hard residual packet
+& No twin-prime asymptotic or lower bound\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The distinction in the last row is essential.  For nonnegative $W$, even
+a natural-scale positive lower bound for the $h=2$ prime-pair correlation
+would already imply infinitely many twin primes.  Nothing of that kind is
+deduced below.

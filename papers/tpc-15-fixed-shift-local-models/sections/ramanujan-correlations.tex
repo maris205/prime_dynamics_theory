@@ -1,0 +1,163 @@
+\section{Cross-correlations and extraction of the singular series}
+\label{sec:ramanujan-correlations}
+
+Define the finite singular series
+\begin{equation}
+ \mathfrak S_Q(h)=
+ \sum_{q\leq Q}\frac{\mu(q)^2c_q(h)}{\varphi(q)^2}.
+ \label{eq:finite-singular-series}
+\end{equation}
+For fixed $h\ne0$, the infinite series is absolutely convergent and equals
+the prime-pair singular series
+\begin{equation}
+ \mathfrak S(h)=
+ \sum_{q\geq1}\frac{\mu(q)^2c_q(h)}{\varphi(q)^2}.
+ \label{eq:singular-series-ramanujan}
+\end{equation}
+Thus $\mathfrak S(h)=0$ for odd $h$, while for even $h$
+\begin{equation}
+ \mathfrak S(h)=
+ 2\prod_{p>2}\left(1-\frac1{(p-1)^2}\right)
+ \prod_{\substack{p\mid h\\p>2}}\frac{p-1}{p-2}.
+ \label{eq:prime-pair-singular-series}
+\end{equation}
+
+\begin{lemma}[Finite calibration and its tail]
+\label{lem:finite-singular-calibration}
+For fixed $h\ne0$,
+\begin{equation}
+ \sum_{\substack{d\leq Q\\(d,h)=1}}
+ \frac{\lambda'_Q(d)}{\varphi(d)}
+ =\mathfrak S_Q(h),
+ \label{eq:divisor-singular-identity}
+\end{equation}
+and
+\begin{equation}
+ \mathfrak S_Q(h)=\mathfrak S(h)
+ +O_h\left(\frac{(\log(2Q))^2}{Q}\right).
+ \label{eq:finite-singular-tail}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For the first identity, insert \eqref{eq:HB-divisor-coefficient} and
+reverse the finite divisor rearrangement.  Equivalently, average
+$c_q(n+h)$ over the reduced residue classes occupied by a prime $n$.  For
+squarefree $q$,
+\begin{equation}
+ \sum_{\substack{a\ ({\rm mod}\ q)\\(a,q)=1}}c_q(a+h)
+ =\mu(q)c_q(h),
+ \label{eq:reduced-residue-ramanujan-average}
+\end{equation}
+which gives exactly \eqref{eq:divisor-singular-identity} after multiplying
+by $\mu(q)/\varphi(q)^2$.
+
+For the tail, write $g=(q,h)$.  Since $g$ ranges over the divisors of the
+fixed integer $h$, the standard estimates for $1/\varphi(n)$ reduce the
+absolute tail to
+$O_h(\sum_{r>Q/|h|}\varphi(r)^{-2})$, which is
+$O_h(Q^{-1}(\log(2Q))^2)$.  The Euler product of
+\eqref{eq:singular-series-ramanujan} gives
+\eqref{eq:prime-pair-singular-series}.
+\end{proof}
+
+We now compare the model with the primes.  We use the maximal
+Bombieri--Vinogradov theorem in its usual smooth form: for every $A>0$
+there is $B>0$ such that, if
+\begin{equation}
+ Q\leq \frac{X^{1/2}}{(\log X)^B},
+ \label{eq:BV-Q-range}
+\end{equation}
+then
+\begin{equation}
+ \sum_{q\leq Q}\max_{(a,q)=1}\max_{y\ll_W X}
+ \left|
+ \sum_{\substack{n\leq y\\n\equiv a\ ({\rm mod}\ q)}}\Lambda(n)
+ -\frac y{\varphi(q)}
+ \right|
+ \ll_{A,W}\frac{X}{(\log X)^A}.
+ \label{eq:maximal-BV-used}
+\end{equation}
+This is a classical input \citep{IwaniecKowalski2004,MontgomeryVaughan2007}.
+
+\begin{theorem}[Both prime--model cross-correlations]
+\label{thm:prime-model-cross-correlations}
+Fix $h\ne0$ and $W\in C_c^\infty((0,\infty))$.  For every $A>0$, after
+choosing $B$ in \eqref{eq:BV-Q-range} sufficiently large,
+\begin{align}
+ \sum_n\Lambda(n)\Lambda_Q(n+h)W(n/X)
+ &=\mathfrak S_Q(h)XI_0(W)
+ +O_{A,h,W}\bigl(X(\log X)^{-A}\bigr),
+ \label{eq:Lambda-model-cross-one}\\
+ \sum_n\Lambda_Q(n)\Lambda(n+h)W(n/X)
+ &=\mathfrak S_Q(h)XI_0(W)
+ +O_{A,h,W}\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:Lambda-model-cross-two}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+For \eqref{eq:Lambda-model-cross-one}, use
+\eqref{eq:HB-divisor-expansion} to obtain progressions
+$n\equiv-h\pmod d$.  If $(d,h)=1$, smooth partial summation in
+\eqref{eq:maximal-BV-used} replaces the prime sum by
+$XI_0(W)/\varphi(d)$.  The coefficient bound
+\begin{equation}
+ |\lambda'_Q(d)|\ll (\log(2Q))^2
+ \label{eq:lambda-prime-cross-weight}
+\end{equation}
+follows from \eqref{eq:HB-divisor-pointwise}; requesting a larger exponent
+in Bombieri--Vinogradov absorbs this logarithm.  The main terms give
+\eqref{eq:divisor-singular-identity}.
+
+If $(d,h)>1$, the residue class is not reduced.  Any von Mangoldt value in
+that class is a power of one of the finitely many primes dividing $h$.
+On the support of $W$, the total contribution is
+$O_{h,W,\eps}(X^\eps)$: for each relevant prime power, sum
+\eqref{eq:lambda-prime-cross-weight} only over the divisors of a fixed
+integer.  This is absorbed in the asserted error.
+
+For \eqref{eq:Lambda-model-cross-two}, the congruence is
+$n+h\equiv h\pmod d$ with $d\mid n$.  The same maximal theorem and the
+same non-reduced-class argument apply.  The two main terms agree because
+the singular series is invariant under replacing $h$ by $-h$.
+\end{proof}
+
+Combining the cross-correlations with the model autocorrelation produces
+an exact residual identity at natural scale.
+
+\begin{theorem}[Ramanujan-calibrated correlation identity]
+\label{thm:ramanujan-calibrated-correlation}
+Fix $0<\delta<1/2$ and put $Q=\lfloor X^{1/2-\delta}\rfloor$.  For every
+$A>0$,
+\begin{align}
+ &\sum_n\Lambda(n)\Lambda(n+h)W(n/X)
+ \notag\\
+ &\qquad={}
+ \mathfrak S(h)XI_0(W)
+ +\sum_nr_Q(n)r_Q(n+h)W(n/X)
+ +O_{A,h,W,\delta}\bigl(X(\log X)^{-A}\bigr).
+ \label{eq:Ramanujan-residual-correlation}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Expand $r_Q=\Lambda-\Lambda_Q$.  By
+\cref{thm:prime-model-cross-correlations}, both cross terms equal
+$\mathfrak S_Q(h)XI_0(W)$ up to arbitrary logarithmic savings.  By
+\eqref{eq:model-autocorrelation-preliminary}, the model autocorrelation
+has the same main term.  The elementary identity
+\[
+ \Lambda\Lambda_h
+ =\Lambda_Q(\Lambda_Q)_h
+ +r_Q(\Lambda_Q)_h+\Lambda_Q(r_Q)_h+r_Q(r_Q)_h
+\]
+therefore leaves one copy of $\mathfrak S_Q(h)XI_0(W)$.  Finally use
+\eqref{eq:finite-singular-tail}; its error is a power smaller than $X$.
+\end{proof}
+
+Equation \eqref{eq:Ramanujan-residual-correlation} is not an estimate for
+the residual autocorrelation.  For an even admissible shift, proving that
+the last sum is $o(X)$ would already yield the Hardy--Littlewood
+asymptotic.  The role of the finite model is to remove the correct local
+main term before the unresolved correlation is named.

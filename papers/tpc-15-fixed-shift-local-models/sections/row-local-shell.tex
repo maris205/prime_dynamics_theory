@@ -1,0 +1,249 @@
+\section{The row-local model on the primitive shell}
+\label{sec:row-local-shell}
+
+Throughout this section, $h\ne0$ is fixed.  Put
+\begin{equation}
+ \rho_h(a):=\one_{(a,h)=1}\frac{a}{\varphi(a)},
+ \qquad a\geq1.
+ \label{eq:row-local-density}
+\end{equation}
+This is the local von Mangoldt density on the row $ab+h$ after $b$ is
+restricted by $(a,b)=1$.  If $(a,h)>1$, every value $ab+h$ has a fixed
+prime divisor, apart from the exceptional possibility that it is a power
+of that prime; the appropriate main density is therefore zero.  If
+$(a,h)=1$, inclusion--exclusion over $(a,b)=1$ gives density
+$a/\varphi(a)$ rather than the ambient density one.
+
+Recall $u(a)=\Lambda(a)-1$.  Decompose the centered primitive shell as
+\begin{align}
+ \cK_h(X)
+ &:={}
+ \sum_{\substack{a>1,\ b\geq1\\(a,b)=1}}
+ u(a)\bigl(\Lambda(ab+h)-1\bigr)W(ab/X),
+ \label{eq:row-shell-K}\\
+ \cM_h(X)
+ &:={}
+ \sum_{\substack{a>1,\ b\geq1\\(a,b)=1}}
+ u(a)\bigl(\rho_h(a)-1\bigr)W(ab/X),
+ \label{eq:row-shell-M}\\
+ \cR_h(X)
+ &:={}
+ \sum_{\substack{a>1,\ b\geq1\\(a,b)=1}}
+ u(a)\bigl(\Lambda(ab+h)-\rho_h(a)\bigr)W(ab/X).
+ \label{eq:row-shell-R}
+\end{align}
+Thus, exactly at every finite $X$,
+\begin{equation}
+ \cK_h(X)=\cM_h(X)+\cR_h(X).
+ \label{eq:row-shell-decomposition}
+\end{equation}
+Define
+\begin{equation}
+ \kappa_h:=\frac1{\zeta(2)}-\frac{\varphi(|h|)}{|h|},
+ \qquad
+ \delta_h:=\frac{\varphi(|h|)}{|h|}-\beta_h.
+ \label{eq:kappa-delta-definitions}
+\end{equation}
+The two constants add to the coefficient in the fixed-shell theorem of
+TPC-14:
+\begin{equation}
+ \kappa_h+\delta_h=\frac1{\zeta(2)}-\beta_h.
+ \label{eq:kappa-delta-sum}
+\end{equation}
+Moreover,
+\begin{equation}
+ \beta_h=\frac{\varphi(|h|)}{|h|}
+ \prod_{p\mid h}\left(1-\frac1{p^2-p+1}\right).
+ \label{eq:beta-relative-to-phi}
+\end{equation}
+Hence $\delta_h>0$ whenever $|h|>1$, while
+$\delta_{1}=\delta_{-1}=0$.
+
+The main term of $\cM_h$ is not obtained by applying Euler summation to
+each row and then summing the individual endpoint errors.  That procedure
+is too wasteful when $a$ is as large as $X$.  We instead group by the
+product and compute the relevant Dirichlet series.
+
+For $r\geq1$, put
+\begin{equation}
+ m_h(r):=
+ \sum_{\substack{a\parallel r\\a>1}}
+ u(a)\bigl(\rho_h(a)-1\bigr),
+ \label{eq:row-model-product-coefficient}
+\end{equation}
+where $a\parallel r$ means that $a\mid r$ and $(a,r/a)=1$.  Then
+\begin{equation}
+ \cM_h(X)=\sum_{r\geq1}m_h(r)W(r/X).
+ \label{eq:row-model-product-grouping}
+\end{equation}
+
+\begin{lemma}[Dirichlet factorization of the row model]
+\label{lem:row-model-dirichlet-factorization}
+For $\Re s>1$,
+\begin{equation}
+ \sum_{r\geq1}\frac{m_h(r)}{r^s}
+ =\zeta(s)^2\left(\frac1{\zeta(2s)}-C_h(s)\right)
+ +\zeta(s)L_h(s),
+ \label{eq:row-model-dirichlet-factorization}
+\end{equation}
+where
+\begin{align}
+ C_h(s)
+ &:={}
+ \prod_{p\mid h}(1-p^{-s})
+ \prod_{p\nmid h}
+ (1-p^{-s})
+ \left(1+\frac{p^{1-s}}{p-1}\right),
+ \label{eq:Ch-euler-product}\\
+ L_h(s)
+ &:={}
+ \sum_{p\nmid h}\frac{\log p}{p-1}p^{-s}
+ -\sum_{p\mid h}(\log p)p^{-s}.
+ \label{eq:Lh-prime-series}
+\end{align}
+Both $C_h$ and $L_h$ are holomorphic in a neighborhood of $s=1$, and
+\begin{equation}
+ C_h(1)=\frac{\varphi(|h|)}{|h|}.
+ \label{eq:Ch-at-one}
+\end{equation}
+Consequently, the double-pole coefficient at $s=1$ in
+\eqref{eq:row-model-dirichlet-factorization} is $\kappa_h$.
+\end{lemma}
+
+\begin{proof}
+For fixed $a$ one has
+\[
+ \sum_{\substack{b\geq1\\(a,b)=1}}b^{-s}
+ =\zeta(s)\prod_{p\mid a}(1-p^{-s}).
+\]
+Since $\rho_h(1)=1$, the formally missing term $a=1$ contributes zero.
+It follows from \eqref{eq:row-model-product-coefficient} that the left
+side of \eqref{eq:row-model-dirichlet-factorization} equals
+\begin{equation}
+ \zeta(s)
+ \sum_{a\geq1}
+ \frac{(\Lambda(a)-1)(\rho_h(a)-1)}{a^s}
+ \prod_{p\mid a}(1-p^{-s}).
+ \label{eq:row-model-pre-factorization}
+\end{equation}
+
+We first treat the contribution of the constant part $-1$ in
+$\Lambda-1$.  The two multiplicative series appearing there are
+\begin{align*}
+ \sum_{a\geq1}\frac1{a^s}\prod_{p\mid a}(1-p^{-s})
+ &=\prod_p(1+p^{-s})=\frac{\zeta(s)}{\zeta(2s)},\\
+ \sum_{a\geq1}\frac{\rho_h(a)}{a^s}
+ \prod_{p\mid a}(1-p^{-s})
+ &=\prod_{p\nmid h}
+ \left(1+\frac{p^{1-s}}{p-1}\right)
+ =\zeta(s)C_h(s).
+\end{align*}
+For $p\nmid h$, the corresponding local factor in $C_h$ is
+\[
+ (1-p^{-s})\left(1+\frac{p^{1-s}}{p-1}\right)
+ =1+\frac{p^{-s}}{p-1}-\frac{p^{1-2s}}{p-1}.
+\]
+The product therefore converges normally on compact subsets of a
+half-plane containing $s=1$.  At $s=1$ this local factor is exactly one.
+Only the finitely many primes dividing $h$ remain, which proves
+\eqref{eq:Ch-at-one}.
+
+For the $\Lambda$ part, only prime powers occur.  If $p\nmid h$, their
+total contribution to the inner series in
+\eqref{eq:row-model-pre-factorization} is
+\[
+ \sum_{j\geq1}
+ (\log p)\left(\frac{p}{p-1}-1\right)
+ (1-p^{-s})p^{-js}
+ =\frac{\log p}{p-1}p^{-s}.
+\]
+If $p\mid h$, it is instead $-(\log p)p^{-s}$.  This gives
+\eqref{eq:Lh-prime-series}.  The first prime sum is normally convergent
+for $\Re s>0$, locally around $s=1$, and the second is finite.  Multiplying
+the resulting inner identity by the outer $\zeta(s)$ in
+\eqref{eq:row-model-pre-factorization} proves
+\eqref{eq:row-model-dirichlet-factorization}.  Its only double pole at
+$s=1$ comes from the first term, with coefficient
+$1/\zeta(2)-C_h(1)=\kappa_h$.
+\end{proof}
+
+\begin{theorem}[Global row-model law]
+\label{thm:global-row-model-law}
+For every fixed nonzero $h$,
+\begin{equation}
+ \cM_h(X)
+ =\kappa_hXI_0(W)\log X+O_{h,W}(X).
+ \label{eq:global-row-model-law}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The Euler products and prime series in
+\cref{lem:row-model-dirichlet-factorization} converge normally for
+$\Re s>1/2$ and $\Re s>0$, respectively.  Since $1/\zeta(2s)$ is
+holomorphic for $\Re s>1/2$, the factorization continues meromorphically
+to that half-plane, with its only pole on $\Re s\geq1$ at $s=1$.  It is a
+double pole with leading coefficient $\kappa_h$; all remaining terms have
+at most a simple pole there.
+
+Let $\widehat W(s)=\int_0^\infty W(x)x^{s-1}\,dx$.  Mellin inversion on
+$\Re s>1$, followed by a shift to $\Re s=1/2+\varepsilon$, is legitimate:
+$\widehat W$ decays faster than every power in vertical strips, while the
+other factors have polynomial vertical growth.  The residue at $s=1$
+therefore gives
+\[
+ \sum_rm_h(r)W(r/X)
+ =\kappa_hXI_0(W)\log X+c_{h,W}X+o_{h,W}(X)
+\]
+ for a finite secondary constant $c_{h,W}$, with an error
+$O_{h,W,\varepsilon}(X^{1/2+\varepsilon})$.  Absorbing the secondary term
+and using \eqref{eq:row-model-product-grouping} proves the theorem.
+\end{proof}
+
+TPC-14 \citep{WangTPC14} evaluates the original shell, for the same fixed
+$h$, as
+\begin{equation}
+ \cK_h(X)
+ =\left(\frac1{\zeta(2)}-\beta_h\right)
+ XI_0(W)\log X+O_{h,W}(X).
+ \label{eq:imported-fixed-shell-law}
+\end{equation}
+Subtracting the row model isolates what is not explained by local row
+density.
+
+\begin{corollary}[Global row-residual law]
+\label{cor:global-row-residual-law}
+For every fixed nonzero $h$,
+\begin{equation}
+ \cR_h(X)
+ =\delta_hXI_0(W)\log X+O_{h,W}(X).
+ \label{eq:global-row-residual-law}
+\end{equation}
+In particular,
+\begin{equation}
+ \kappa_2=\frac6{\pi^2}-\frac12,
+ \qquad
+ \delta_2=\frac16.
+ \label{eq:h-two-kappa-delta}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Use the exact identity \eqref{eq:row-shell-decomposition}, then subtract
+\eqref{eq:global-row-model-law} from
+\eqref{eq:imported-fixed-shell-law}.  The coefficient is
+\[
+ \left(\frac1{\zeta(2)}-\beta_h\right)-\kappa_h
+ =\frac{\varphi(|h|)}{|h|}-\beta_h=\delta_h.
+\]
+For $h=2$, one has $\varphi(2)/2=1/2$ and $\beta_2=1/3$.
+\end{proof}
+
+\begin{remark}[What the residual law says]
+\label{rem:global-row-residual-interpretation}
+The quantity $\cR_h$ is still summed over every primitive orientation
+$b$.  Equation \eqref{eq:global-row-residual-law} says that local
+row-density calibration does not explain the full fixed-shell main term.
+It neither assigns the remaining term to any individual orientation nor
+gives information about the endpoint $b=1$.
+\end{remark}
