@@ -1,0 +1,165 @@
+\section{The assembled-prefix theorem}
+\label{sec:assembly}
+
+We now pass from one dyadic divisor label to a complete initial
+segment.  We give a direct sharp-prefix proof: the coefficient
+$\one_{d\le D_0}$ is inserted into the bilinear distribution theorem
+itself.  This packages the cumulative statement without endpoint loss
+or dependence on a choice of dyadic partition.
+
+\begin{theorem}[Cumulative divisor-prefix cancellation]
+\label{thm:assembled-prefix}
+Fix $h\ne0$, $0<\delta<1/2$, and $\eta>0$.  Let $L,K,D_0$ satisfy
+\begin{align}
+ &LK\asymp_W X,
+ \qquad L>2R,
+ \qquad 1\le D_0<R,
+ \qquad D_0\le V,
+ \qquad K>2V,
+ \label{eq:assembly-geometry}\\
+ &(L,D_0)\in\mathfrak R_\eta,
+ \qquad LD_0R\le X^{1-\eta},
+ \label{eq:assembly-analysis}
+\end{align}
+where $\mathfrak R_\eta$ is any signed bilinear distribution profile
+with property $\mathrm{BD}_h$.  Then, for every $A>0$,
+\begin{equation}
+ \cC_{L,K}(D_0)
+ \ll_{A,h,W,\psi,\delta,\eta}X(\log X)^{-A}.
+ \label{eq:assembled-prefix-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Start from the opened expression \eqref{eq:opened-prefix-block}.  We
+first remove source prime powers $\ell=p^a$, $a\ge2$.  On the support,
+$j\asymp_W K/d$, and \eqref{eq:pointwise-residual} gives, for every
+fixed $\eps>0$,
+\begin{align}
+ &\sum_{\substack{p^a\asymp L\\a\ge2}}
+ \Lambda(p^a)
+ \sum_{d\le D_0}\sum_{j\asymp K/d}
+ |r_R(p^adj+h)|
+ \notag\\
+ &\hspace{6em}\ll_{W,\eps}
+ L^{1/2+\eps}K(\log(2D_0))X^\eps
+ \ll_{W,\eps}X^{1+2\eps}L^{-1/2}\log X.
+ \label{eq:assembled-source-powers}
+\end{align}
+Put $\rho_0=1/2-\delta>0$.  Since
+$L>2R=X^{\rho_0+o(1)}$, choosing $\eps<\rho_0/8$ makes the last
+quantity $O(X^{1-\rho_0/4})$.  Thus it has a fixed power saving.
+We may therefore restrict $\ell$ to primes.  In particular,
+$\ell>R>|h|$ for all sufficiently large $X$.
+
+For fixed $\ell,d$, apply the row decomposition
+\eqref{eq:row-decomposition} with
+\begin{equation}
+ F_{\ell,X}(u)
+ =W(u)\psi\!\left(\frac{Xu}{\ell K}\right).
+ \label{eq:assembly-row-weight}
+\end{equation}
+The family is uniformly supported and uniformly $C^1$ by
+$LK\asymp_WX$, and
+\[
+ F_{\ell,X}(\ell dj/X)
+ =W(\ell dj/X)\psi(dj/K).
+\]
+
+On the reduced rows $(\ell d,h)=1$, the aggregate prime-progression
+error is $O_A(X(\log X)^{-A})$ by
+\cref{lem:one-factor-smooth-transfer}, with
+\begin{equation}
+ a_\ell=\Lambda(\ell)\psi(\ell/L)\one_{\ell\,\mathrm{prime}},
+ \qquad
+ b_d=\mu(d)\one_{d\le D_0}.
+ \label{eq:assembly-separated-coefficients}
+\end{equation}
+The logarithm in $a_\ell$ is absorbed by requesting one additional
+logarithmic power.
+
+It remains to check the nonreduced rows.  Since $\ell>|h|$ is prime,
+$(\ell d,h)>1$ implies $(d,h)>1$.  If $p\mid(d,h)$, every integer
+$\ell dj+h$ is divisible by $p$; a nonzero von Mangoldt value therefore
+forces
+\begin{equation}
+ \ell dj+h=p^\nu.
+ \label{eq:nonreduced-prime-power-equation}
+\end{equation}
+For each of the finitely many $p\mid h$, only $O_{h,W}(1)$ exponents
+occur at scale $X$, while the number of ordered factorizations
+$\ell d\mid p^\nu-h$ is $O_{h,\eps}(X^\eps)$.  Hence the total prime
+part of the nonreduced rows is $O_{h,W,\eps}(X^\eps)$.  Their continuous
+prime mean and complete finite-model mean both vanish.  Indeed,
+$\mu(d)\ne0$ makes $d$ squarefree, every divisor of $d$ lies below
+$R$, and the local factor at $p\mid(d,h)$ is $1-1=0$.
+
+The finite-row lattice leakage in \eqref{eq:row-decomposition} is
+$O(R(\log(2R))^2)$ per ordered pair $(\ell,d)$.  Summing the outer
+weights gives
+\begin{equation}
+ \ll LD_0R(\log X)^3
+ \ll X^{1-\eta}(\log X)^3.
+ \label{eq:assembled-leakage}
+\end{equation}
+
+Finally consider the cutoff drift.  For prime $\ell>R$, squarefree
+$d<R$, and $\ell\nmid d$, all divisors of $\ell d$ below $R$ divide
+$d$.  Consequently
+\begin{equation}
+ \Delta_{h,R}(\ell d)=
+ \begin{cases}
+ \displaystyle\frac{d}{\varphi(d)(\ell-1)},&(d,h)=1,\\[0.7em]
+ 0,&(d,h)>1.
+ \end{cases}
+ \label{eq:assembled-drift-formula}
+\end{equation}
+After insertion into the continuous term of
+\eqref{eq:row-decomposition}, its total absolute value is
+\begin{align}
+ &\ll_W X
+ \sum_{\ell\asymp L}
+ \frac{\Lambda(\ell)}{\ell(\ell-1)}
+ \sum_{d\le D_0}\frac{\mu(d)^2}{\varphi(d)}
+ \notag\\
+ &\hspace{6em}\ll_W \frac XL(\log(2D_0))^2.
+ \label{eq:assembled-drift-total}
+\end{align}
+This again has a fixed power saving because $L>2R$.  The source powers,
+reduced prime errors, nonreduced rows, leakage, and drift are therefore
+all $O_A(X(\log X)^{-A})$, after shrinking fixed power margins if
+necessary.
+\end{proof}
+
+The conclusion has an exact and useful tail formulation.
+
+\begin{corollary}[Exact tail normal form]
+\label{cor:tail-normal-form}
+Under the hypotheses of \cref{thm:assembled-prefix},
+\begin{equation}
+ \cH^{\mathrm{HB}}_{L,K}
+ =\cT_{L,K}(D_0,V)
+ +O_{A,h,W,\psi,\delta,\eta}
+   \bigl(X(\log X)^{-A}\bigr)
+ \label{eq:tail-normal-form}
+\end{equation}
+for every $A>0$.
+\end{corollary}
+
+\begin{proof}
+Combine the exact coefficient split
+\eqref{eq:exact-prefix-tail-split} with
+\eqref{eq:assembled-prefix-bound}.
+\end{proof}
+
+\begin{remark}[What the normal form does and does not do]
+The tail coefficient
+\[
+ \beta_{(D_0,V]}(k)
+ =\sum_{\substack{d\mid k\\D_0<d\le V}}\mu(d)
+\]
+is signed.  Equation \eqref{eq:tail-normal-form} compresses the unknown
+part to a shorter divisor interval, but supplies neither positivity nor
+cancellation inside that interval.  In particular, it is not a
+prime-pair lower bound and does not evade the parity obstruction.
+\end{remark}

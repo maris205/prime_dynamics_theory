@@ -1,0 +1,59 @@
+\section{Finite certificate, maze exits, and conclusion}
+\label{sec:computation}
+
+The companion script
+\begin{center}
+\texttt{experiments/tpc17\_certificate.py}
+\end{center}
+performs four deterministic checks:
+\begin{enumerate}
+ \item it solves the Maynard and Li boundary intersections over exact
+ rational arithmetic and verifies the gap $9/17-11/21=2/357$;
+ \item it verifies the explicit monomial and $\delta$ ledgers at a
+ sample interior point;
+ \item it checks
+ $\beta_V=\beta_{\le D_0}+\beta_{(D_0,V]}$ on a finite range; and
+ \item it tests exact Nyquist Parseval and the $TT^*$ diagonal/off-diagonal
+ identity on a deterministic finite matrix.
+\end{enumerate}
+The generated JSON file records all inputs and residual errors.  These
+checks certify algebra and implementation only.  They are not evidence
+for an unproved prime-pair asymptotic and are not used in any proof.
+
+The resulting maze has three mathematically distinct exits.
+
+\begin{center}
+\small
+\begin{tabular}{p{0.18\textwidth}p{0.34\textwidth}p{0.37\textwidth}}
+\toprule
+Route & Target & Honest stopping result \\
+\midrule
+Tail route & Estimate a nontrivial subrange of
+$\beta_{(D_0,V]}$ by additional factor shape or cancellation &
+A larger exact prefix, or a theorem identifying which tail shapes are
+inaccessible to current distribution inputs \\
+Dispersion route & Prove $o(XL)$ for the averaged two-form correlation
+\eqref{eq:offdiagonal-correlation} &
+A zero-phase cancellation theorem on a restricted corridor, or a sharp
+lower-bound obstruction for existing $TT^*$ information \\
+Hybrid route & Use divisor-tail structure before the $TT^*$ expansion &
+A determinant-resolved normal form combining $d>D_0$ with
+$h(\ell_1-\ell_2)$, even if the final cancellation remains open \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The paper therefore advances on two fronts.  Analytically, it packages
+the factorable divisor slices as a complete initial segment and
+compresses the unresolved Vaughan coefficient to an exact tail.
+Spectrally, it turns a possible distinguished zero-mode failure into a
+sparse uncertainty-cell concentration and then into one explicit
+off-diagonal two-form correlation.  The countermodel proves that the
+phase mean-square ledgers available here, even together with pointwise
+and total-energy bounds, do not close that gate.
+
+The next useful theorem must consequently exploit arithmetic structure
+in either the Möbius tail or the determinant-resolved residual pair.
+This is a narrower and more falsifiable target than the original
+fixed-shift correlation, but it remains well short of a twin-prime or
+general Hardy--Littlewood theorem.

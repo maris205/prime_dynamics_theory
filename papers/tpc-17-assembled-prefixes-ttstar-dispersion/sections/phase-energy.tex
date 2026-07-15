@@ -1,0 +1,161 @@
+\section{Explicit phase energy and finite translation spectrum}
+\label{sec:phase-energy}
+
+We now return to the square-root packet
+\eqref{eq:square-root-hard-packet}.  This part is independent of both
+large-modulus inputs.  For a relevant dyadic pair $(L,K)$ define
+\begin{align}
+ c_{\ell k}
+ :={}&\Lambda(\ell)r_R(\ell k+h)W(\ell k/X)
+ \psi(\ell/L)\psi(k/K)
+ \one_{\ell>M}\one_{k>1},
+ \label{eq:phase-coefficients}\\
+ \cH_{L,K}(\alpha,\beta)
+ :={}&\sum_{\ell,k}c_{\ell k}
+ \e(\alpha\ell+\beta k),
+ \qquad (\alpha,\beta)\in\T^2,
+ \label{eq:two-phase-polynomial}\\
+ E_{L,K}:={}&\sum_{\ell,k}|c_{\ell k}|^2.
+ \label{eq:block-energy}
+\end{align}
+The zero phase is precisely the arithmetic dyadic block.  Every
+nonzero block has $LK\asymp_WX$ by \eqref{eq:product-ledger}.
+
+\begin{theorem}[Explicit block-energy ledger]
+\label{thm:explicit-block-energy}
+For every relevant pair $(L,K)$,
+\begin{equation}
+ E_{L,K}\ll_{h,W,\psi,\delta}X(\log X)^3.
+ \label{eq:explicit-block-energy}
+\end{equation}
+Moreover,
+\begin{align}
+ \int_\T|\cH_{L,K}(\alpha,0)|^2\,d\alpha
+ &\ll K E_{L,K}
+ \ll \frac{X^2(\log X)^3}{L},
+ \label{eq:alpha-phase-energy}\\
+ \int_\T|\cH_{L,K}(0,\beta)|^2\,d\beta
+ &\ll L E_{L,K}
+ \ll \frac{X^2(\log X)^3}{K},
+ \label{eq:beta-phase-energy}\\
+ \int_{\T^2}|\cH_{L,K}(\alpha,\beta)|^2
+ \,d\alpha\,d\beta
+ &=E_{L,K}.
+ \label{eq:two-phase-energy}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Group \eqref{eq:block-energy} by $n=\ell k$.  Since a divisor $d$ of
+$n$ has $\Lambda(d)\ne0$ only when $d=p^a$, one has
+\begin{equation}
+ \sum_{d\mid n}\Lambda(d)^2
+ =\sum_{p^a\parallel n}a(\log p)^2
+ \le(\log n)^2.
+ \label{eq:divisor-lambda-square}
+\end{equation}
+It follows that
+\begin{align}
+ E_{L,K}
+ &\ll_\psi
+ \sum_n r_R(n+h)^2|W(n/X)|^2
+ \sum_{\ell\mid n}\Lambda(\ell)^2
+ \notag\\
+ &\ll X(\log X)^3
+ \label{eq:block-energy-proof}
+\end{align}
+by \eqref{eq:shifted-residual-energy}.
+
+For the first one-phase identity, Parseval in $\ell$ and
+Cauchy--Schwarz in the $O(K)$ possible values of $k$ give
+\[
+ \int_\T|\cH(\alpha,0)|^2d\alpha
+ =\sum_\ell\left|\sum_kc_{\ell k}\right|^2
+ \ll K\sum_{\ell,k}|c_{\ell k}|^2.
+\]
+Interchanging the roles of $\ell,k$ proves
+\eqref{eq:beta-phase-energy}; two-dimensional Parseval proves
+\eqref{eq:two-phase-energy}.  Finally use $LK\asymp_WX$.
+\end{proof}
+
+The continuum identity has an exact finite counterpart.  Choose
+integers
+\begin{equation}
+ N_L>4L,
+ \qquad N_K>4K,
+ \qquad N_L\asymp L,
+ \qquad N_K\asymp K.
+ \label{eq:nyquist-grid-sizes}
+\end{equation}
+
+\begin{theorem}[Exact Nyquist Parseval and exceptional-phase count]
+\label{thm:nyquist-parseval}
+With \eqref{eq:nyquist-grid-sizes},
+\begin{equation}
+ \frac1{N_LN_K}
+ \sum_{a=0}^{N_L-1}\sum_{b=0}^{N_K-1}
+ \left|\cH_{L,K}\!\left(\frac a{N_L},\frac b{N_K}\right)\right|^2
+ =E_{L,K}.
+ \label{eq:exact-nyquist-parseval}
+\end{equation}
+Consequently, for every $A_0>0$,
+\begin{equation}
+ \#\left\{(a,b):
+ \left|\cH_{L,K}\!\left(\frac a{N_L},\frac b{N_K}\right)\right|
+ \ge A_0\right\}
+ \le\frac{N_LN_KE_{L,K}}{A_0^2}.
+ \label{eq:exceptional-phase-count}
+\end{equation}
+In particular, there are at most
+\begin{equation}
+ O_\eta((\log X)^3)
+ \quad\hbox{phases of height at least $\eta X$},
+ \label{eq:natural-phase-count}
+\end{equation}
+and at most $O_\eta((\log X)^5)$ phases of height at least
+$\eta X/\log X$.
+\end{theorem}
+
+\begin{proof}
+Discrete character orthogonality gives
+\[
+ \frac1{N_L}\sum_{a=0}^{N_L-1}
+ \e(a(\ell_1-\ell_2)/N_L)=\one_{\ell_1=\ell_2}
+\]
+on the frequency support, because $|\ell_1-\ell_2|<N_L$; the analogous
+identity holds in $k$.  This proves \eqref{eq:exact-nyquist-parseval}.
+Markov's inequality gives \eqref{eq:exceptional-phase-count}.  Now use
+$N_LN_K\asymp LK\asymp_WX$ and
+\eqref{eq:explicit-block-energy}.
+\end{proof}
+
+This sampling identity has a literal finite spectral interpretation.
+Embed $(c_{\ell k})$ into
+$\ell^2(\Z/N_L\Z\times\Z/N_K\Z)$ and set
+\begin{equation}
+ \Phi_{a,b}(\ell,k)
+ =\frac1{\sqrt{N_LN_K}}
+ \e\!\left(\frac{a\ell}{N_L}+\frac{bk}{N_K}\right).
+ \label{eq:finite-translation-characters}
+\end{equation}
+These are the joint eigencharacters of the two coordinate
+translations.  With the convention
+$\langle f,g\rangle=\sum f\overline g$, one has
+\begin{equation}
+ |\langle c,\Phi_{a,b}\rangle|^2
+ =\frac1{N_LN_K}
+ \left|\cH_{L,K}\!\left(-\frac a{N_L},-\frac b{N_K}\right)\right|^2.
+ \label{eq:phase-as-spectral-coefficient}
+\end{equation}
+Negating $(a,b)$ merely permutes the Nyquist grid.
+Removing a spectral projection of height at least $A_0$ therefore
+decreases Frobenius energy by at least $A_0^2/(N_LN_K)$.  At natural
+height only $O((\log X)^3)$ such increments are possible.
+
+\begin{remark}[No distinguished-phase conclusion from Parseval]
+The arithmetic point $(\alpha,\beta)=(0,0)$ is the constant translation
+character.  Equations \eqref{eq:exact-nyquist-parseval} and
+\eqref{eq:exceptional-phase-count} prove that large characters are
+sparse, but do not say that the constant one is absent.  No zeta-zero
+or prime ``eigenvalue'' is involved in this finite spectrum.
+\end{remark}

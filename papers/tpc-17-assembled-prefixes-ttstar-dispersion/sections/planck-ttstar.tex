@@ -1,0 +1,253 @@
+\section{\texorpdfstring{Uncertainty-cell concentration and a $TT^*$
+normal form}{Uncertainty-cell concentration and a TT* normal form}}
+\label{sec:planck-ttstar}
+
+The preceding energy theorem makes large phases sparse.  We next show
+that a large zero phase must occupy energy at the reciprocal resolution
+of the two factor coordinates.
+
+Choose $\vartheta\in C_c^\infty((0,\infty))$ equal to $1$ on
+$\supp\psi$, and define the periodic flat-top kernels
+\begin{equation}
+ V_L(\alpha)=\sum_{n\in\Z}\vartheta(n/L)\e(n\alpha),
+ \qquad
+ V_K(\beta)=\sum_{n\in\Z}\vartheta(n/K)\e(n\beta).
+ \label{eq:flat-top-kernels}
+\end{equation}
+Poisson summation gives, for every $B_0>0$,
+\begin{equation}
+ |V_L(\alpha)|\ll_{B_0,\vartheta}
+ L(1+L\|\alpha\|)^{-B_0},
+ \label{eq:flat-top-decay}
+\end{equation}
+and similarly for $V_K$.  For $T\ge2$, put
+\begin{equation}
+ \Omega_T=\left\{(\alpha,\beta)\in\T^2:
+ \|\alpha\|\le T/L,\quad \|\beta\|\le T/K\right\}.
+ \label{eq:uncertainty-cell}
+\end{equation}
+If one of the displayed radii exceeds $1/2$, the corresponding
+condition is interpreted as the whole circle.
+
+\begin{theorem}[Flat-top localization]
+\label{thm:flat-top-localization}
+For every $B_0>0$,
+\begin{equation}
+ |\cH_{L,K}(0,0)|
+ \le C_{B_0}\sqrt{LK}
+ \left[
+ \left(\int_{\Omega_T}|\cH_{L,K}(\alpha,\beta)|^2
+ \,d\alpha\,d\beta\right)^{1/2}
+ +T^{-B_0}E_{L,K}^{1/2}
+ \right].
+ \label{eq:flat-top-localization}
+\end{equation}
+Consequently, for each fixed $\eta>0$, one may choose a fixed
+$B>0$ such that, with $T=(\log X)^B$,
+\begin{align}
+ |\cH_{L,K}(0,0)|\ge\eta X
+ &\quad\Longrightarrow\quad
+ \int_{\Omega_T}|\cH_{L,K}|^2
+ \gg_\eta X,
+ \label{eq:natural-planck-concentration}\\
+ |\cH_{L,K}(0,0)|\ge\frac{\eta X}{\log X}
+ &\quad\Longrightarrow\quad
+ \int_{\Omega_T}|\cH_{L,K}|^2
+ \gg_\eta\frac{X}{(\log X)^2}.
+ \label{eq:witness-planck-concentration}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Fourier reproduction gives the exact identity
+\begin{equation}
+ \cH_{L,K}(0,0)
+ =\int_{\T^2}\cH_{L,K}(\alpha,\beta)
+ V_L(-\alpha)V_K(-\beta)\,d\alpha\,d\beta.
+ \label{eq:flat-top-reproduction}
+\end{equation}
+Indeed, integration selects the frequencies $n=\ell$ and $m=k$, on
+which both flat-top multipliers equal $1$.
+
+On $\Omega_T$, Cauchy--Schwarz and Parseval for the kernels give
+\[
+ \left|\int_{\Omega_T}\cH V_LV_K\right|
+ \ll\sqrt{LK}
+ \left(\int_{\Omega_T}|\cH|^2\right)^{1/2}.
+\]
+On the complement, apply Cauchy--Schwarz again, use
+\eqref{eq:two-phase-energy}, and integrate the rapid decay
+\eqref{eq:flat-top-decay}.  Taking the decay exponent larger than the
+requested $B_0$ yields
+\[
+ \left|\int_{\T^2\setminus\Omega_T}\cH V_LV_K\right|
+ \ll_{B_0}\sqrt{LK}\,T^{-B_0}E_{L,K}^{1/2}.
+\]
+This proves \eqref{eq:flat-top-localization}.
+
+Now $LK\asymp_WX$ and
+$E_{L,K}^{1/2}\ll\sqrt X(\log X)^{3/2}$.  Choose $B$ and then $B_0$
+so that the tail in \eqref{eq:flat-top-localization} is smaller than
+one half of the relevant threshold.  Rearranging proves
+\eqref{eq:natural-planck-concentration} and
+\eqref{eq:witness-planck-concentration}.
+\end{proof}
+
+The same obstruction has a more arithmetic formulation.  Put
+\begin{equation}
+ S_k=\sum_\ell c_{\ell k}
+ \label{eq:row-compressed-coefficient}
+\end{equation}
+and define
+\begin{align}
+ \cC^{\mathrm{off}}_{L,K}
+ :={}&\sum_{\ell_1\ne\ell_2}
+ \Lambda(\ell_1)\Lambda(\ell_2)
+ \psi(\ell_1/L)\psi(\ell_2/L)
+ \notag\\[-0.2em]
+ &\quad\times\sum_k
+ r_R(\ell_1k+h)r_R(\ell_2k+h)
+ W(\ell_1k/X)W(\ell_2k/X)
+ \notag\\[-0.2em]
+ &\hspace{12em}\times\psi(k/K)^2
+ \one_{\ell_1,\ell_2>M}\one_{k>1}.
+ \label{eq:offdiagonal-correlation}
+\end{align}
+All quantities are real because the weights are real.
+
+\begin{theorem}[$TT^*$ residual-pair reduction]
+\label{thm:ttstar-reduction}
+One has the exact identity
+\begin{equation}
+ \sum_k|S_k|^2=E_{L,K}+\cC^{\mathrm{off}}_{L,K}.
+ \label{eq:ttstar-identity}
+\end{equation}
+In particular,
+\begin{equation}
+ \cC^{\mathrm{off}}_{L,K}=o(XL)
+ \quad\Longrightarrow\quad
+ \cH_{L,K}(0,0)=o(X).
+ \label{eq:ttstar-sufficient-condition}
+\end{equation}
+Conversely, for every fixed $\eta>0$,
+\begin{align}
+ |\cH_{L,K}(0,0)|\ge\eta X
+ &\quad\Longrightarrow\quad
+ \cC^{\mathrm{off}}_{L,K}
+ \ge(c_W\eta^2+o(1))XL,
+ \label{eq:ttstar-natural-obstruction}\\
+ |\cH_{L,K}(0,0)|\ge\frac{\eta X}{\log X}
+ &\quad\Longrightarrow\quad
+ \cC^{\mathrm{off}}_{L,K}
+ \gg_{W,\eta}\frac{XL}{(\log X)^2}.
+ \label{eq:ttstar-witness-obstruction}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Expanding $\sum_k|S_k|^2$ separates the diagonal
+$\ell_1=\ell_2$, which is exactly $E_{L,K}$, from
+\eqref{eq:offdiagonal-correlation}.  This proves
+\eqref{eq:ttstar-identity}.  Since only $O(K)$ values of $k$ occur,
+\begin{equation}
+ |\cH_{L,K}(0,0)|^2
+ =\left|\sum_kS_k\right|^2
+ \ll K\bigl(E_{L,K}+\cC^{\mathrm{off}}_{L,K}\bigr).
+ \label{eq:ttstar-cauchy}
+\end{equation}
+Now $K\asymp_WX/L$ and
+\begin{equation}
+ E_{L,K}\ll X(\log X)^3=o(XL),
+ \label{eq:diagonal-negligible-for-ttstar}
+\end{equation}
+because every nonzero square-root block has
+$L\gg M=X^{1/2-o(1)}$.  The sufficient
+condition and both converse estimates follow from
+\eqref{eq:ttstar-cauchy}.
+\end{proof}
+
+\begin{corollary}[A failed total gate produces a two-form witness]
+\label{cor:failed-gate-witness}
+Suppose that along a sequence of $X$,
+\begin{equation}
+ |\cH^\sharp_{h,R;M}(X)|\ge\eta X
+ \label{eq:failed-total-gate}
+\end{equation}
+for some fixed $\eta>0$.  Then for one of the $O_W(\log X)$ relevant
+dyadic pairs $(L,K)$,
+\begin{equation}
+ |\cH_{L,K}(0,0)|\gg_{W,\eta}\frac X{\log X}
+ \label{eq:dyadic-zero-witness}
+\end{equation}
+and
+\begin{equation}
+ \cC^{\mathrm{off}}_{L,K}
+ \gg_{W,\eta}\frac{XL}{(\log X)^2}.
+ \label{eq:dyadic-ttstar-witness}
+\end{equation}
+After a further dyadic decomposition of
+$|\ell_1-\ell_2|$, one separation scale $\Delta$ carries a positive
+contribution
+\begin{equation}
+ \gg_{W,\eta}\frac{XL}{(\log X)^3}.
+ \label{eq:separation-scale-witness}
+\end{equation}
+The witness may be restricted to distinct prime
+$\ell_1,\ell_2\asymp L$: if
+$\cC^{\mathrm{off},\mathbb P}_{L,K}$ denotes
+\eqref{eq:offdiagonal-correlation} with both source variables restricted
+to primes, then
+\begin{equation}
+ \cC^{\mathrm{off},\mathbb P}_{L,K}
+ \gg_{W,\eta}\frac{XL}{(\log X)^2},
+ \label{eq:prime-restricted-ttstar-witness}
+\end{equation}
+and one prime separation scale contributes
+$\gg_{W,\eta}XL/(\log X)^3$.  The determinant of its two affine forms is
+\begin{equation}
+ \det\begin{pmatrix}\ell_1&h\\\ell_2&h\end{pmatrix}
+ =h(\ell_1-\ell_2).
+ \label{eq:two-form-determinant}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Insert the dyadic partition in the two factor coordinates.  The product
+constraint leaves $O_W(\log X)$ nonzero pairs, so the triangle
+inequality gives \eqref{eq:dyadic-zero-witness}; then apply
+\eqref{eq:ttstar-witness-obstruction}.  There are $O(\log L)$ dyadic
+ranges for the nonzero integer $|\ell_1-\ell_2|$, so at least one has a
+positive contribution of the size in
+\eqref{eq:separation-scale-witness}.
+
+Finally, define the prime-restricted coefficients
+$c^{\mathbb P}_{\ell k}=c_{\ell k}\one_{\ell\ {\rm prime}}$ and the
+associated polynomial $\cH^{\mathbb P}_{L,K}$.  The total zero-phase
+contribution of source prime powers
+$\ell=p^a$, $a\ge2$, is
+\begin{equation}
+ \ll_{W,\eps}X L^{-1/2+\eps}
+ =o(X/\log X),
+ \label{eq:source-powers-below-witness}
+\end{equation}
+by \eqref{eq:pointwise-residual} and $L\gg M$.  Removing it before the
+$TT^*$ expansion gives
+\[
+ |\cH^{\mathbb P}_{L,K}(0,0)|
+ \gg_{W,\eta}X/\log X.
+\]
+Now repeat the proof of \cref{thm:ttstar-reduction} for
+$c^{\mathbb P}$; its diagonal energy is at most $E_{L,K}$.  This proves
+\eqref{eq:prime-restricted-ttstar-witness}.  Decomposing this
+prime-restricted correlation by $|\ell_1-\ell_2|$ proves the stated
+prime separation-scale bound.  Formula
+\eqref{eq:two-form-determinant} is immediate.
+\end{proof}
+
+\begin{remark}[The next arithmetic gate]
+The target in \eqref{eq:offdiagonal-correlation} is weaker than a small
+operator norm for the whole residual matrix: only the source-prime
+direction and its $TT^*$ self-correlation matter.  A future theorem
+showing $o(XL)$ for this averaged two-form correlation would close the
+corresponding zero-phase block.  No such estimate is proved here.
+\end{remark}

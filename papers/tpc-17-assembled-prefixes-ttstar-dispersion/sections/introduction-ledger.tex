@@ -1,0 +1,206 @@
+\section{Introduction and theorem ledger}
+
+For fixed $h\ne0$, consider the smoothed correlation
+\begin{equation}
+ \cP_h(X;W)=\sum_{n\ge1}\Lambda(n)\Lambda(n+h)W(n/X).
+ \label{eq:prime-pair-correlation}
+\end{equation}
+Its Hardy--Littlewood main term is
+\begin{equation}
+ \mathfrak S(h)X I_0(W),
+ \qquad
+ I_0(W)=\int_0^\infty W(t)\,dt,
+ \label{eq:hl-main-term}
+\end{equation}
+where
+\begin{equation}
+ \mathfrak S(h)=
+ \prod_p\frac{1-\nu_p(h)/p}{(1-1/p)^2},
+ \qquad
+ \nu_p(h)=\#\{a\pmod p:a(a+h)\equiv0\pmod p\}.
+ \label{eq:singular-series}
+\end{equation}
+For an odd $h$ the factor at $2$ vanishes.  For a nonzero even $h$,
+\eqref{eq:hl-main-term} with a nonnegative nonzero $W$ would imply
+infinitely many prime pairs at distance $h$.  Nothing in this paper
+proves that asymptotic; the case $h=2$ remains open
+\citep{HardyLittlewood1923,Selberg1952Parity,Polymath2014}.
+
+TPC-15 introduced the finite Ramanujan model and reduced
+\eqref{eq:prime-pair-correlation} to a signed Vaughan Type-II packet
+\citep{WangTPC15}.  TPC-16 computed the exact row drift beyond the model
+cutoff, moved the source-row boundary to the classical square-root wall,
+and isolated both a factorable wedge and a distinguished phase
+coefficient \citep{WangTPC16}.  Its symmetric packet has the form
+\begin{equation}
+ \cH^{\mathrm{HB}}_{h,R;U,V}(X)
+ =
+ \sum_{\substack{\ell>U\\k>V}}
+ \Lambda(\ell)\beta_V(k)r_R(\ell k+h)W(\ell k/X),
+ \qquad
+ \beta_V(k)=\sum_{\substack{d\mid k\\d\le V}}\mu(d),
+ \label{eq:tpc16-symmetric-packet}
+\end{equation}
+with $U=V=\lfloor R^{1/2}\rfloor$.  Opening $k=dj$ makes the
+progression modulus $\ell d$.  TPC-16 controlled one smooth dyadic
+$D$-slice of this expansion.  A single slice, however, does not yet say
+that the sum of all smaller divisor labels is controlled.
+
+The first purpose of this paper is to perform that assembly exactly.
+For $D_0\le V$, put
+\begin{equation}
+ \beta_{\le D_0}(k)
+ =\sum_{\substack{d\mid k\\d\le D_0}}\mu(d),
+ \qquad
+ \beta_{(D_0,V]}(k)
+ =\sum_{\substack{d\mid k\\D_0<d\le V}}\mu(d).
+ \label{eq:prefix-tail-coefficients}
+\end{equation}
+Then $\beta_V=\beta_{\le D_0}+\beta_{(D_0,V]}$ exactly.  The new
+question is whether the complete first term, not merely one of its
+dyadic components, gives a negligible residual packet.
+
+\subsection{Two analytic layers}
+
+There are deliberately two distribution layers.
+
+The first layer uses only Maynard's formally published fixed-residue
+theorem \citep[Theorem~1.1]{Maynard2025I}.  It yields the three
+conditions
+\begin{equation}
+ D_0L^2\le X^{1-\eta},
+ \qquad
+ D_0^{12}L^7\le X^{4-\eta},
+ \qquad
+ D_0^{20}L^{19}\le X^{10-\eta}.
+ \label{eq:maynard-profile-intro}
+\end{equation}
+Under the geometric and finite-row leakage conditions stated later,
+the whole $d\le D_0$ packet is $O_A(X(\log X)^{-A})$.  In particular,
+near
+\begin{equation}
+ L=X^{10/21-o(1)},
+ \qquad
+ D_0=X^{1/21+o(1)},
+ \qquad
+ K=X^{11/21+o(1)},
+ \label{eq:published-scales-intro}
+\end{equation}
+all divisor slices up to $D_0$ are assembled.  This gives a direct
+sharp-prefix formulation of the full cumulative region, together with
+the exact tail normal form proved below.  It does not move the published
+exponent frontier.
+
+The second layer imports a newer signed bilinear theorem of Li
+\citep[Theorem~1.1]{Li2026v6}.  The cited input is explicitly locked to
+arXiv:2602.20917v6, revised 27 May 2026, and is currently unrefereed.
+It gives the shorter profile
+\begin{equation}
+ D_0L^2\le X^{1-\eta},
+ \qquad
+ D_0^{12}L^7\le X^{4-\eta}.
+ \label{eq:li-profile-intro}
+\end{equation}
+The two bounding lines meet at
+\begin{equation}
+ (\log_XL,\log_XD_0)
+ =\left(\frac8{17},\frac1{17}\right),
+ \qquad
+ \log_X(LD_0)=\frac9{17}.
+ \label{eq:li-vertex-intro}
+\end{equation}
+We prove the transfer from Li's signed prime-counting statement to the
+present smooth von Mangoldt rows.  The essential structural identity is
+that the target weight depends on $\ell$ but not independently on $d$.
+The preprint-dependent theorem is segregated from the published core:
+if the cited preprint is revised, the Maynard result and all spectral
+theorems in this paper remain unaffected.
+
+Neither layer estimates the tail $\beta_{(D_0,V]}$.  The conclusion is
+an exact compression of the unresolved coefficient, not a positive
+lower bound and not a parity-breaking step.
+
+\subsection{The phase and dispersion layer}
+
+The square-root normal form of TPC-16 reduces the remaining total gate
+to dyadic blocks
+\begin{equation}
+ \cH_{L,K}(\alpha,\beta)
+ =\sum_{\ell,k}c_{\ell,k}\e(\alpha\ell+\beta k),
+ \qquad LK\asymp_W X,
+ \label{eq:phase-block-intro}
+\end{equation}
+whose arithmetic value is $\cH_{L,K}(0,0)$.  We first replace an
+$X^{1+\eps}$ energy ledger by the explicit estimate
+\begin{equation}
+ E_{L,K}:=\sum_{\ell,k}|c_{\ell,k}|^2
+ \ll_{h,W,\delta}X(\log X)^3.
+ \label{eq:explicit-energy-intro}
+\end{equation}
+Exact finite Fourier sampling then implies that, at natural height
+$\eta X$, at most $O_\eta((\log X)^3)$ Nyquist phases can be large.
+This does not exclude the constant character $(0,0)$.
+
+A flat-top reproducing kernel makes the obstruction local.  If
+$|\cH_{L,K}(0,0)|\ge\eta X$, then a phase cell of dimensions
+\begin{equation}
+ \frac{(\log X)^B}{L}\times\frac{(\log X)^B}{K}
+ \label{eq:planck-cell-intro}
+\end{equation}
+around the origin carries energy $\gg_\eta X$, provided both radii are
+smaller than the circle scale.  If one factor length is at most
+polylogarithmic, that coordinate is the whole circle and the statement
+is one-coordinate localization.  Thus a large zero mode
+is not an isolated measure-zero accident; it is an uncertainty-scale
+concentration.
+
+Finally, $TT^*$ gives an arithmetic normal form.  A large block forces
+a positive off-diagonal correlation
+\begin{equation}
+ \sum_{\ell_1\ne\ell_2}\Lambda(\ell_1)\Lambda(\ell_2)
+ \sum_k r_R(\ell_1k+h)r_R(\ell_2k+h)\,\mathcal W_{\ell_1,\ell_2,k}
+ \label{eq:ttstar-correlation-intro}
+\end{equation}
+of size $\gg XL$ at natural block scale, or
+$\gg XL/(\log X)^2$ at the dyadic witness scale coming from a failed
+total estimate.  This is weaker than demanding a small operator norm
+for the whole residual matrix and identifies the next specific
+arithmetic correlation.
+
+\subsection{Claim and dependency ledger}
+
+\begin{center}
+\small
+\begin{tabular}{p{0.31\textwidth}p{0.29\textwidth}p{0.29\textwidth}}
+\toprule
+Result & External analytic input & Status if Li v6 changes \\
+\midrule
+Assembled prefix near $11/21$ & Maynard 2025, Theorem~1.1 & unchanged \\
+Assembled prefix near $9/17$ & Li arXiv v6, Theorem~1.1 & must be rechecked \\
+Finite row drift and leakage & TPC-16 and elementary estimates & unchanged \\
+Explicit phase energy & TPC-16 residual energy law & unchanged \\
+Nyquist and uncertainty-cell theorems & finite Fourier analysis & unchanged \\
+$TT^*$ residual-pair reduction & Cauchy--Schwarz and expansion & unchanged \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The paper does \emph{not} prove cancellation of
+$\beta_{(D_0,V]}$, $o(X)$ for every dyadic block, a fixed-$h$
+Hardy--Littlewood asymptotic, a new prime-distribution theorem, or a
+spectral realization of primes or zeta zeros.  The translation spectrum
+used below is the ordinary finite Fourier spectrum of the factor
+coordinates.
+
+\subsection{Organization}
+
+\Cref{sec:setup} records the TPC-16 interface.
+\Cref{sec:distribution-transfer} proves the one-factor-dependent smooth
+transfer.  \Cref{sec:assembly} proves the cumulative prefix theorem.
+\Cref{sec:published-core,sec:li-extension} give the published and
+version-locked exponent profiles.  \Cref{sec:phase-energy} derives the
+explicit phase ledger and finite spectrum.
+\Cref{sec:planck-ttstar} proves uncertainty-scale concentration and the
+$TT^*$ reduction.  \Cref{sec:sharp-boundary} records random-mask
+cancellation and the sharp abstract no-go model.  The finite certificate
+and next gate appear in \cref{sec:computation}.

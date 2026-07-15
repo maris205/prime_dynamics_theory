@@ -1,0 +1,119 @@
+\section{The published Maynard core}
+\label{sec:published-core}
+
+We first specialize the abstract assembly theorem using only the
+formally published distribution input.  Write
+\begin{equation}
+ \lambda=\log_XL,
+ \qquad \nu=\log_XD_0.
+ \label{eq:maynard-exponent-coordinates}
+\end{equation}
+Ignoring fixed power margins, the Maynard region is the polytope
+\begin{equation}
+ 2\lambda+\nu\le1,
+ \qquad
+ 7\lambda+12\nu\le4,
+ \qquad
+ 19\lambda+20\nu\le10.
+ \label{eq:maynard-exponent-polytope}
+\end{equation}
+The first and third faces meet at
+\begin{equation}
+ (\lambda,\nu)=\left(\frac{10}{21},\frac1{21}\right),
+ \qquad \lambda+\nu=\frac{11}{21},
+ \label{eq:maynard-assembly-vertex}
+\end{equation}
+and the second inequality is then strict.
+
+\begin{theorem}[Published assembled wedge]
+\label{thm:published-assembled-wedge}
+Fix $h\ne0$, $0<\delta<1/2$, and $\eta>0$.  Suppose
+\eqref{eq:assembly-geometry} and the finite-row leakage condition in
+\eqref{eq:assembly-analysis} hold, together with
+\begin{equation}
+ D_0L^2\le X^{1-\eta},
+ \qquad
+ D_0^{12}L^7\le X^{4-\eta},
+ \qquad
+ D_0^{20}L^{19}\le X^{10-\eta}.
+ \label{eq:published-assembly-conditions}
+\end{equation}
+Then, for every $A>0$,
+\begin{equation}
+ \cC_{L,K}(D_0)\ll_A X(\log X)^{-A},
+ \qquad
+ \cH^{\mathrm{HB}}_{L,K}
+ =\cT_{L,K}(D_0,V)+O_A(X(\log X)^{-A}).
+ \label{eq:published-assembled-conclusion}
+\end{equation}
+All implied constants may depend on the fixed data listed in
+\cref{thm:assembled-prefix}.
+\end{theorem}
+
+\begin{proof}
+The three inequalities place $(L,D_0)$ in
+$\mathfrak R^{\mathrm M}_\eta$.  Apply
+\cref{thm:assembled-prefix,cor:tail-normal-form}.
+\end{proof}
+
+The following explicit family reaches the vertex from the interior.
+
+\begin{corollary}[A complete prefix near the
+\texorpdfstring{$11/21$}{11/21} boundary]
+\label{cor:published-explicit-prefix}
+Fix $0<\sigma<1/100$ and
+\begin{equation}
+ \frac1{42}+3\sigma<\delta<\frac14.
+ \label{eq:published-delta-range}
+\end{equation}
+Set, up to harmless integer parts,
+\begin{equation}
+ L=X^{10/21-\sigma},
+ \qquad
+ D_0=X^{1/21-\sigma},
+ \qquad
+ K=X/L=X^{11/21+\sigma}.
+ \label{eq:published-explicit-scales}
+\end{equation}
+Then \eqref{eq:published-assembled-conclusion} holds for every $A>0$.
+Thus all divisor labels
+\begin{equation}
+ d\le X^{1/21-\sigma}
+ \label{eq:published-prefix-length}
+\end{equation}
+are removed in one cumulative packet.
+\end{corollary}
+
+\begin{proof}
+The three monomials in
+\eqref{eq:published-assembly-conditions} have exponents
+\begin{equation}
+ 1-3\sigma,
+ \qquad
+ \frac{82}{21}-19\sigma,
+ \qquad
+ 10-39\sigma.
+ \label{eq:published-monomial-check}
+\end{equation}
+They therefore have fixed power margins.  Moreover,
+\begin{equation}
+ LD_0R
+ =X^{\,1+1/42-2\sigma-\delta+o(1)}
+ \le X^{1-5\sigma+o(1)}
+ \label{eq:published-leakage-check}
+\end{equation}
+by \eqref{eq:published-delta-range}.  The same lower bound on $\delta$
+gives $L>2R$ for large $X$.  The upper bound $\delta<1/4$ gives
+$D_0<V$, while $K>2V$ is immediate.  Hence all hypotheses of
+\cref{thm:published-assembled-wedge} hold after choosing a fixed
+$\eta>0$ smaller than the displayed margins.
+\end{proof}
+
+\begin{remark}[The cumulative packaging of TPC-16 slices]
+TPC-16 proved the corresponding estimate for one smooth divisor slice
+$d\asymp D$.  Under uniform fixed margins, one could also sum
+$O(\log X)$ such estimates after requesting additional logarithmic
+saving.  The statement here instead inserts
+$\mu(d)\one_{d\le D_0}$ itself in one application and records the exact
+tail normal form.  It does not increase the published exponent vertex.
+\end{remark}

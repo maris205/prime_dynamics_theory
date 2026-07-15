@@ -1,0 +1,186 @@
+\section{The TPC-16 interface}
+\label{sec:setup}
+
+Throughout, $h\ne0$ is fixed, $0<\delta<1/2$, and
+\begin{equation}
+ R=\lfloor X^{1/2-\delta}\rfloor,
+ \qquad
+ U=V=\lfloor R^{1/2}\rfloor.
+ \label{eq:basic-parameters}
+\end{equation}
+The finite Heath--Brown Ramanujan model is
+\begin{equation}
+ \Lambda_R(n)=\sum_{q\le R}\frac{\mu(q)}{\varphi(q)}c_q(n),
+ \qquad
+ r_R(n)=\Lambda(n)-\Lambda_R(n),
+ \label{eq:finite-model}
+\end{equation}
+where
+\begin{equation}
+ c_q(n)=\sum_{\substack{a\pmod q\\(a,q)=1}}\e(an/q).
+ \label{eq:ramanujan-sum}
+\end{equation}
+All constants may depend on $h$, $\delta$, and fixed smooth weights.
+An estimate with subscript $A$ is asserted pointwise for each fixed
+$A>0$.
+
+\subsection{Exact row calibration}
+
+For every modulus $m\ge1$, define the prime progression density and the
+finite-model complete-period mean by
+\begin{equation}
+ \rho_h(m)=\one_{(m,h)=1}\frac{m}{\varphi(m)},
+ \qquad
+ \rho_{h,R}(m)=
+ \sum_{\substack{q\mid m\\q\le R}}
+ \frac{\mu(q)c_q(h)}{\varphi(q)}.
+ \label{eq:row-densities}
+\end{equation}
+TPC-16 proves the exact drift identity
+\begin{equation}
+ \Delta_{h,R}(m)
+ :=\rho_h(m)-\rho_{h,R}(m)
+ =\sum_{\substack{q\mid m\\q>R}}
+ \frac{\mu(q)c_q(h)}{\varphi(q)}.
+ \label{eq:row-drift}
+\end{equation}
+For a uniformly bounded compactly supported $C^1$ family $F$, its
+finite-row decomposition is
+\begin{align}
+ \sum_{j\ge1}r_R(mj+h)F(mj/X)
+ ={}&\Delta_{h,R}(m)\frac Xm I_0(F)
+     +\cE_{m,h}(X;F)
+     +O_F(R(\log(2R))^2),
+ \label{eq:row-decomposition}\\
+ \cE_{m,h}(X;F)
+ :={}&
+ \sum_{j\ge1}\Lambda(mj+h)F(mj/X)
+ -\rho_h(m)\frac Xm I_0(F).
+ \label{eq:prime-row-error}
+\end{align}
+Thus the residual row has three distinct pieces: prime-progression
+error, explicit cutoff drift, and finite-model lattice leakage.
+
+The divisor expansion from TPC-16 also gives, on $n\asymp X$,
+\begin{equation}
+ |\Lambda_R(n)|+|r_R(n)|\ll_\eps X^\eps.
+ \label{eq:pointwise-residual}
+\end{equation}
+This deliberately soft pointwise bound is enough for disposing of source
+and target prime powers.
+
+\subsection{Symmetric packet and divisor labels}
+
+With $\beta_V$ as in \eqref{eq:tpc16-symmetric-packet}, TPC-16 gives
+\begin{equation}
+ \cP_h(X;W)
+ =\mathfrak S(h)XI_0(W)
+ -\cH^{\mathrm{HB}}_{h,R;U,V}(X)
+ +O_A(X(\log X)^{-A}).
+ \label{eq:symmetric-normal-form}
+\end{equation}
+Opening $k=dj$ in the packet gives
+\begin{equation}
+ \cH^{\mathrm{HB}}_{h,R;U,V}(X)
+ =
+ \sum_{\substack{\ell>U,\ d\le V,\ j\ge1\\dj>V}}
+ \Lambda(\ell)\mu(d)r_R(\ell dj+h)W(\ell dj/X).
+ \label{eq:opened-symmetric-packet}
+\end{equation}
+The progression modulus in the inner $j$-row is $m=\ell d$.
+
+Choose a nonnegative $\psi\in C_c^\infty([1/2,2])$ such that
+\begin{equation}
+ \sum_{a\in\Z}\psi(x/2^a)=1
+ \qquad(x>0).
+ \label{eq:dyadic-partition}
+\end{equation}
+For dyadic $L,K$, put
+\begin{equation}
+ \cH^{\mathrm{HB}}_{L,K}
+ =
+ \sum_{\substack{\ell>U\\k>V}}
+ \Lambda(\ell)\beta_V(k)r_R(\ell k+h)W(\ell k/X)
+ \psi(\ell/L)\psi(k/K).
+ \label{eq:hb-dyadic-block}
+\end{equation}
+If $\supp W\subset[a,b]\Subset(0,\infty)$, every nonzero block obeys
+\begin{equation}
+ \frac{aX}{4}\le LK\le4bX.
+ \label{eq:product-ledger}
+\end{equation}
+There are $O_W(\log X)$ relevant pairs $(L,K)$.
+
+For $D_0\le V$, define the assembled prefix and tail blocks
+\begin{align}
+ \cC_{L,K}(D_0)
+ :={}&
+ \sum_{\substack{\ell>U\\k>V}}
+ \Lambda(\ell)\beta_{\le D_0}(k)r_R(\ell k+h)W(\ell k/X)
+ \psi(\ell/L)\psi(k/K),
+ \label{eq:prefix-block}\\
+ \cT_{L,K}(D_0,V)
+ :={}&
+ \sum_{\substack{\ell>U\\k>V}}
+ \Lambda(\ell)\beta_{(D_0,V]}(k)r_R(\ell k+h)W(\ell k/X)
+ \psi(\ell/L)\psi(k/K).
+ \label{eq:tail-block}
+\end{align}
+The coefficient identity \eqref{eq:prefix-tail-coefficients} gives the
+exact decomposition
+\begin{equation}
+ \cH^{\mathrm{HB}}_{L,K}
+ =\cC_{L,K}(D_0)+\cT_{L,K}(D_0,V).
+ \label{eq:exact-prefix-tail-split}
+\end{equation}
+If $L>2U$ and $K>2V$, the lower restrictions in
+\eqref{eq:prefix-block} are automatic on the support of the dyadic
+weights.  Opening the prefix gives
+\begin{equation}
+ \cC_{L,K}(D_0)
+ =\sum_{\ell,d,j\ge1}
+ \Lambda(\ell)\mu(d)\one_{d\le D_0}
+ \psi(\ell/L)\psi(dj/K)
+ r_R(\ell dj+h)W(\ell dj/X).
+ \label{eq:opened-prefix-block}
+\end{equation}
+
+The assembled theorem below will assume $L>2R$.  It follows that every
+row modulus $\ell d$ in \eqref{eq:opened-prefix-block} exceeds $R$.
+Thus the packet is genuinely beyond the finite-model cutoff, and the
+simple drift calculation of TPC-16 applies without a hidden
+$\ell d\le R$ component.
+
+\subsection{Square-root and residual-energy interfaces}
+
+TPC-16 also proves the asymmetric square-root normal form
+\begin{equation}
+ \cP_h(X;W)
+ =\mathfrak S(h)XI_0(W)-\cH^\sharp_{h,R;M}(X)
+ +O_A(X(\log X)^{-A}),
+ \label{eq:square-root-interface}
+\end{equation}
+where
+\begin{equation}
+ M=X^{1/2}\exp(-\sqrt{\log X}),
+ \qquad
+ \cH^\sharp_{h,R;M}(X)
+ =\sum_{\substack{\ell>M\\k>1}}
+ \Lambda(\ell)r_R(\ell k+h)W(\ell k/X).
+ \label{eq:square-root-hard-packet}
+\end{equation}
+The spectral analysis in \cref{sec:phase-energy,sec:planck-ttstar}
+uses this simpler packet, not the symmetric coefficient $\beta_V$.
+
+Finally, for nonnegative $F\in C_c^\infty((0,\infty))$, TPC-16 gives
+\begin{equation}
+ \sum_n r_R(n)^2F(n/X)
+ =X\log(X/R)I_0(F)+O_{F,\delta}(X).
+ \label{eq:residual-energy-interface}
+\end{equation}
+Changing $F(u)$ to $F(u-h/X)$ preserves a uniformly bounded smooth
+family.  Hence for fixed $h$,
+\begin{equation}
+ \sum_n r_R(n+h)^2F(n/X)\ll_{h,F,\delta}X\log X.
+ \label{eq:shifted-residual-energy}
+\end{equation}

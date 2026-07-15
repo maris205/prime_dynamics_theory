@@ -1,0 +1,161 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Assembly and Concentration at a Fixed-Shift Type-II Gate: Cumulative Divisor Prefixes, Bilinear Distribution Frontiers, and TT* Dispersion},
+ pdfauthor={Liang Wang},
+ pdfsubject={Cumulative factorable wedges and phase-concentration normal forms for a fixed-shift prime-pair Type-II gate},
+ pdfkeywords={prime correlations, factorable moduli, Ramanujan sums, Type II sums, phase concentration, TT star, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Imported input}
+\crefname{assumption}{Imported input}{Imported inputs}
+\Crefname{assumption}{Imported input}{Imported inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\T}{\mathbb T}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\e}{\mathrm e}
+
+\title{\textbf{Assembly and Concentration at a Fixed-Shift Type-II Gate:}\\
+\textbf{Cumulative Divisor Prefixes, Bilinear Distribution Frontiers,}\\
+\textbf{and \texorpdfstring{$TT^*$}{TT*} Dispersion}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Fix $h\ne0$, let $W\in C_c^\infty((0,\infty);\R)$, and write
+\[
+ \Lambda_R(n)=\sum_{q\le R}\frac{\mu(q)}{\varphi(q)}c_q(n),
+ \qquad r_R=\Lambda-\Lambda_R,
+ \qquad R=X^{1/2-\delta}.
+\]
+TPC-16 isolated a three-scale fixed-shift Type-II packet with source
+scale $L$, quotient scale $K$, and divisor label $D$, and proved
+cancellation for one $D$-resolved packet near the $11/21$ factorable
+boundary.  We replace that isolated slice by an assembled divisor
+prefix and then sharpen the spectral description of what remains.
+
+The published core uses Maynard's 2025 fixed-residue distribution
+theorem.  For a dyadic source block, all divisor labels $d\le D_0$ are
+summed at once through
+\[
+ \beta_{\le D_0}(k)=\sum_{\substack{d\mid k\\d\le D_0}}\mu(d).
+\]
+Under the three Maynard monomial conditions, the corresponding residual
+packet has arbitrary logarithmic saving.  In particular, the whole prefix
+$d\le X^{1/21-o(1)}$ is packaged directly near
+$L=X^{10/21-o(1)}$, yielding an exact tail normal form.
+
+An explicitly segregated extension imports Theorem~1.1 of Li's
+currently unrefereed arXiv:2602.20917v6, revised 27 May 2026.  Its
+signed bilinear estimate deletes the third Maynard monomial condition.
+The resulting exponent polytope has vertex
+\[
+ (\log_XL,\log_XD_0)=\left(\frac8{17},\frac1{17}\right),
+ \qquad \log_X(LD_0)=\frac9{17}.
+\]
+Thus, within the TPC-16 interface and using that version-locked imported
+theorem, an entire prefix $d\le X^{1/17+o(1)}$ is removed near
+$L=X^{8/17-o(1)}$.  The proof records why the target weight depends on
+the source factor but not on $d$; arbitrary pair-dependent masks are
+not covered.  The published Maynard layer remains intact under any
+later revision of the preprint.
+
+For the surviving dyadic block
+\[
+ \cH_{L,K}(\alpha,\beta)
+ =\sum_{\ell,k}c_{\ell,k}\e(\alpha\ell+\beta k),
+ \qquad LK\asymp X,
+\]
+we prove the explicit energy bound
+\[
+ \sum_{\ell,k}|c_{\ell,k}|^2\ll X(\log X)^3.
+\]
+Exact Nyquist Parseval makes every natural-size exceptional phase a
+finite translation-spectral atom.  A flat-top reproducing formula shows
+that failure at the distinguished zero phase forces quantitative energy
+inside a polylogarithmically enlarged uncertainty cell.  Finally,
+$TT^*$ reduces such failure to a positive off-diagonal correlation of
+the residuals $r_R(\ell_1k+h)$ and $r_R(\ell_2k+h)$ of size
+$\gg XL/(\log X)^2$ at a dyadic witness scale.  A sharp abstract
+countermodel shows that band limitation, total residual energy, and
+phase mean squares alone cannot exclude the zero mode.
+
+No fixed-shift prime-pair asymptotic, twin-prime lower bound, new
+distribution theorem, or breach of sieve parity is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} fixed-shift prime correlations; factorable
+moduli; cumulative divisor prefixes; Ramanujan residuals; Type-II sums;
+phase concentration; $TT^*$ dispersion; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N05, 11N13; Secondary
+11N35, 11N37, 42A05.
+
+\input{sections/introduction-ledger}
+\input{sections/setup-interface}
+\input{sections/distribution-transfer}
+\input{sections/assembled-prefix}
+\input{sections/published-maynard}
+\input{sections/li-extension}
+\input{sections/phase-energy}
+\input{sections/planck-ttstar}
+\input{sections/sharp-boundary}
+\input{sections/computation-conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

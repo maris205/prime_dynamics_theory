@@ -1,0 +1,56 @@
+{
+  "all_checks_passed": true,
+  "checks": {
+    "li_sample_delta_admissible": true,
+    "li_total_exceeds_published_total": true,
+    "li_vertex_exact": true,
+    "li_vertex_outside_maynard_third": true,
+    "maynard_second_face_strict": true,
+    "maynard_vertex_exact": true,
+    "nyquist_parseval": true,
+    "prefix_tail_identity_k_le_300": true,
+    "published_sample_delta_admissible": true,
+    "ttstar_identity": true
+  },
+  "description": "Exact exponent, prefix-tail, Nyquist, and TT* checks",
+  "exact_arithmetic": {
+    "chosen_delta": "1/20",
+    "li_deleted_third_face_value": "172/17",
+    "li_delta_lower": "517/17000",
+    "li_monomials_at_sigma": [
+      "3997/4000",
+      "7999/2000"
+    ],
+    "li_total_modulus": "9/17",
+    "li_vertex": [
+      "8/17",
+      "1/17"
+    ],
+    "maynard_second_face_value": "82/21",
+    "maynard_total_modulus": "11/21",
+    "maynard_vertex": [
+      "10/21",
+      "1/21"
+    ],
+    "published_delta_lower": "1063/42000",
+    "published_monomials_at_sigma": [
+      "1997/2000",
+      "163601/42000",
+      "19961/2000"
+    ],
+    "vertex_total_gap": "2/357"
+  },
+  "finite_fourier": {
+    "coefficient_energy": 16.25,
+    "nyquist_absolute_error": 7.105427357601002e-15,
+    "nyquist_average": 16.249999999999993,
+    "ttstar_absolute_error": 0.0,
+    "ttstar_diagonal_plus_off": 28.25,
+    "ttstar_left": 28.25
+  },
+  "paper": "TPC-17",
+  "parameters": {
+    "delta": "1/20",
+    "sigma": "1/2000"
+  }
+}

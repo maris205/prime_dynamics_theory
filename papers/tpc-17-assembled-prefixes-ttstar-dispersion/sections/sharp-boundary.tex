@@ -1,0 +1,171 @@
+\section{Random masks and a sharp information boundary}
+\label{sec:sharp-boundary}
+
+The zero-phase obstruction is deterministic.  Independent signs erase
+it uniformly over all phases at a much smaller scale, which separates a
+generic entropy statement from the arithmetic alignment that remains.
+
+\begin{theorem}[Uniform random-entry cancellation]
+\label{thm:random-entry-cancellation}
+Let $(\eps_{\ell k})$ be independent Rademacher variables and put
+\begin{equation}
+ \cH^\eps_{L,K}(\alpha,\beta)
+ =\sum_{\ell,k}\eps_{\ell k}c_{\ell k}
+ \e(\alpha\ell+\beta k).
+ \label{eq:random-entry-polynomial}
+\end{equation}
+There is an absolute $C>0$ such that, for $u\ge0$,
+\begin{equation}
+ \mathbb P\left(
+ \sup_{\alpha,\beta\in\T}|\cH^\eps_{L,K}(\alpha,\beta)|
+ >C\sqrt{E_{L,K}(\log(2LK)+u)}
+ \right)\le 2e^{-u}.
+ \label{eq:random-entry-tail}
+\end{equation}
+In particular, with probability $1-O(X^{-10})$,
+\begin{equation}
+ \sup_{\alpha,\beta}|\cH^\eps_{L,K}(\alpha,\beta)|
+ \ll\sqrt X(\log X)^2=o(X).
+ \label{eq:random-entry-uniform-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For each fixed phase, the Rademacher exponential-moment inequality gives
+\begin{equation}
+ \mathbb P(|\cH^\eps(\alpha,\beta)|>t)
+ \le2\exp(-c t^2/E_{L,K}).
+ \label{eq:fixed-phase-subgaussian}
+\end{equation}
+A rectangular grid with $O(LK)$ points and fixed oversampling controls
+the supremum of a trigonometric polynomial with degrees $O(L)$ and
+$O(K)$ up to an absolute constant; this follows, for example, from the
+Bernstein derivative inequality in each coordinate.  Apply
+\eqref{eq:fixed-phase-subgaussian} on that grid and take a union bound.
+This proves \eqref{eq:random-entry-tail}.  Choosing $u=12\log X$ and
+using \eqref{eq:explicit-block-energy} proves
+\eqref{eq:random-entry-uniform-bound}.  This is the standard
+Salem--Zygmund net argument; see \citet{Kahane1985,Zygmund2002}.
+\end{proof}
+
+Even one sign per source row is enough on the zero-$\beta$ slice, and
+hence at the distinguished zero phase.  Let
+\begin{equation}
+ A_\ell=\sum_kc_{\ell k}.
+ \label{eq:row-sums-for-randomization}
+\end{equation}
+
+\begin{corollary}[Uniform random-row cancellation]
+\label{cor:random-row-cancellation}
+For independent Rademacher signs $(\eps_\ell)$, with probability
+$1-O(X^{-10})$,
+\begin{equation}
+ \sup_{\alpha\in\T}
+ \left|\sum_\ell\eps_\ell A_\ell\e(\alpha\ell)\right|
+ \ll \frac{X(\log X)^2}{\sqrt L}
+ \le X^{3/4+o(1)}=o(X).
+ \label{eq:random-row-uniform-bound}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+By \eqref{eq:alpha-phase-energy},
+\begin{equation}
+ \sum_\ell|A_\ell|^2
+ =\int_\T|\cH_{L,K}(\alpha,0)|^2d\alpha
+ \ll\frac{X^2(\log X)^3}{L}.
+ \label{eq:row-sum-energy}
+\end{equation}
+The one-dimensional version of the preceding net argument contributes
+one further factor $\sqrt{\log X}$.  Finally, every nonzero square-root
+block has $L\gg M=X^{1/2-o(1)}$.
+\end{proof}
+
+Randomization is not available in the arithmetic packet.  The next
+proposition shows that this distinction is logically necessary: the
+phase-energy ledgers proved so far are compatible with a macroscopic
+deterministic zero mode.
+
+\begin{proposition}[Sharp abstract countermodel]
+\label{prop:abstract-countermodel}
+Fix a sequence of product blocks with $LK\asymp X$ and
+$\min(L,K)\to\infty$.  Suppose there are intervals of lengths
+$\asymp L$ and $\asymp K$ whose product rectangle lies in a region on
+which $|W|$ and both dyadic weights are uniformly bounded below.
+There exists a real sequence $r^\star_X(m)$ such that
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item $|r^\star_X(m)|\ll\sqrt{\log X}\ll_\eps X^\eps$;
+ \item its ambient energy on a fixed interval of length $\asymp X$ is
+       $\asymp X\log X$;
+ \item the corresponding block satisfies all upper bounds in
+       \cref{thm:explicit-block-energy,thm:nyquist-parseval};
+ \item nevertheless,
+ \begin{equation}
+  |\cH^\star_{L,K}(0,0)|\asymp X.
+  \label{eq:countermodel-large-zero}
+ \end{equation}
+\end{enumerate}
+This is an information-theoretic countermodel, not a statement about
+the arithmetic residual $r_R$.
+\end{proposition}
+
+\begin{proof}
+Let $\mathcal A$ be the set of target coordinates
+$m=\ell k+h$ occurring in the block with $\Lambda(\ell)\ne0$.  On
+these coordinates define
+\begin{equation}
+ r^\star_X(m)=\operatorname{sgn}W((m-h)/X),
+ \label{eq:countermodel-on-block}
+\end{equation}
+with an arbitrary choice at zeros of $W$.  Then
+\begin{equation}
+ \cH^\star_{L,K}(0,0)
+ =\sum_{\ell,k}\Lambda(\ell)|W(\ell k/X)|
+ \psi(\ell/L)\psi(k/K).
+ \label{eq:countermodel-positive-sum}
+\end{equation}
+After restricting to fixed subintervals on which the weights do not
+vanish, the prime number theorem in the $\ell$ coordinate gives
+\eqref{eq:countermodel-large-zero}.
+
+On the block, $|r^\star_X|=1$, so
+\begin{equation}
+ E^\star_{L,K}
+ \ll K\sum_{\ell\asymp L}\Lambda(\ell)^2
+ \ll X\log X.
+ \label{eq:countermodel-block-energy}
+\end{equation}
+All one- and two-phase upper bounds then follow from the same Parseval
+and Cauchy--Schwarz arguments as before; exact Nyquist Parseval is
+purely algebraic.
+
+The number of distinct block coordinates is at most the number of
+ordered pairs, hence
+\begin{equation}
+ |\mathcal A|
+ \ll K\#\{\ell\asymp L:\Lambda(\ell)\ne0\}
+ \le K\bigl(\pi(2L)+O(\sqrt L\log L)\bigr)
+ \ll\frac X{\log L}=o(X).
+ \label{eq:countermodel-used-coordinates}
+\end{equation}
+There are therefore $\asymp X$ unused target coordinates in a slightly
+larger fixed ambient interval.  Set $r^\star_X(m)=B_X$ on those coordinates,
+where $B_X\asymp\sqrt{\log X}$ is chosen to give any prescribed
+positive constant multiple of $X\log X$ ambient energy.  This does not
+change the block and proves all four assertions.
+\end{proof}
+
+\begin{remark}[Exact scope of the no-go statement]
+The constructed $r^\star_X$ is neither $\Lambda-\Lambda_R$ nor claimed
+to satisfy its divisor identities, progression laws, or local
+correlations.  The proposition proves only that
+\begin{equation}
+ \text{band limitation + pointwise size + total energy
+ + phase mean squares}
+ \label{eq:no-go-information-list}
+\end{equation}
+cannot, by themselves, force cancellation at the distinguished zero
+phase.  New progress must use additional arithmetic structure.  The
+$TT^*$ reduction identifies one precise place for it: the averaged
+two-form correlation \eqref{eq:offdiagonal-correlation}.
+\end{remark}

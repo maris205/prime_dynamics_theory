@@ -1,0 +1,226 @@
+\section{Bilinear distribution inputs and a one-factor smooth transfer}
+\label{sec:distribution-transfer}
+
+Write
+\begin{equation}
+ E_\pi(t;q,h)=\pi(t;q,h)-\frac{\pi(t)}{\varphi(q)}
+ \qquad ((q,h)=1).
+ \label{eq:pi-error}
+\end{equation}
+The two imported theorems used below have different logical strengths.
+Maynard controls the absolute double sum in a three-inequality region;
+Li controls a signed bilinear sum in a larger two-inequality region.
+We first formulate the common consequence actually needed by the
+assembled packet.
+
+\begin{definition}[Signed bilinear distribution profile]
+Fix $\eta>0$.  A set $\mathfrak R_\eta$ of pairs $(L,D)$ has property
+$\mathrm{BD}_h$ if, for every fixed $A,C>0$, every pair of sequences
+$a_\ell,b_d$ satisfying
+\[
+ |a_\ell|\le(\log X)^C,
+ \qquad |b_d|\le(\log X)^C,
+\]
+and every $t\asymp X$, one has
+\begin{equation}
+ \sum_{\substack{\ell\le2L,\ d\le D\\(\ell d,h)=1}}
+ a_\ell b_d E_\pi(t;\ell d,h)
+ \ll_{A,C,h,\eta}t(\log t)^{-A}
+ \label{eq:bd-profile}
+\end{equation}
+uniformly for $(L,D)\in\mathfrak R_\eta$.  The profile is understood
+with a fixed power margin, so replacing $X$ by $t\asymp X$ is harmless.
+\end{definition}
+
+The log-bounded formulation is deliberate.  It is the common
+consequence of the two imported inputs needed by this paper.  Li's
+signed theorem permits the stronger class of divisor-bounded
+coefficients, whereas Maynard's absolute unweighted estimate does not
+by itself permit arbitrary pointwise divisor weights.
+
+\subsection{The published and version-locked profiles}
+
+Maynard's theorem \citep[Theorem~1.1]{Maynard2025I} implies
+$\mathrm{BD}_h$ on
+\begin{equation}
+ \mathfrak R^{\mathrm M}_\eta
+ =\left\{(L,D):
+ DL^2\le X^{1-\eta},\quad
+ D^{12}L^7\le X^{4-\eta},\quad
+ D^{20}L^{19}\le X^{10-\eta}
+ \right\}.
+ \label{eq:maynard-profile}
+\end{equation}
+Here the orientation in Maynard's notation is
+$(Q_1,Q_2)=(D,2L)$; its three conditions are asymmetric.
+Indeed, his theorem bounds the sum of the absolute values of
+$E_\pi(t;d\ell,h)$ over the two factor ranges.  Hence log-bounded
+separated coefficients can be inserted after requesting additional
+logarithmic saving.
+
+The newer input is the following exact version of the result used here.
+
+\begin{assumption}[Li v6 bilinear theorem]
+\label{input:li-v6}
+Theorem~1.1 in version~6 of \citet{Li2026v6} states that, for fixed
+$h\ne0$ and arbitrary
+divisor-bounded complex sequences $a_{q_1},b_{q_2}$,
+\begin{equation}
+ \sum_{\substack{q_1\le Q_1,\ q_2\le Q_2\\(q_1q_2,h)=1}}
+ a_{q_1}b_{q_2}E_\pi(t;q_1q_2,h)
+ \ll_A t(\log t)^{-A}
+ \label{eq:li-v6-theorem}
+\end{equation}
+provided, with a fixed positive margin,
+\begin{equation}
+ Q_1^2Q_2\le t^{1-\eta},
+ \qquad
+ Q_1^7Q_2^{12}\le t^{4-\eta}.
+ \label{eq:li-v6-conditions}
+\end{equation}
+The cited document is an unrefereed preprint revised 27 May 2026; no
+part of its proof is reproduced or independently certified here.
+\end{assumption}
+
+For Li the orientation is instead $(Q_1,Q_2)=(2L,D)$.  Absorbing fixed
+factors into the power margin gives $\mathrm{BD}_h$ on
+\begin{equation}
+ \mathfrak R^{\mathrm L}_\eta
+ =\left\{(L,D):
+ DL^2\le X^{1-\eta},\quad
+ D^{12}L^7\le X^{4-\eta}
+ \right\}.
+ \label{eq:li-profile}
+\end{equation}
+The superscript $\mathrm L$ always denotes the version-locked Li input,
+not a theorem proved in this paper.
+
+\begin{remark}[Why other large-modulus theorems are not inserted]
+Maynard's $3/5$ well-factorable theorem \citep{Maynard2025II} applies to
+collapsed modulus weights possessing triple well-factorability.  The
+specific coefficient $\Lambda(\ell)\mu(d)$ with an independently
+resolved source factor has no such property in general.  Replacing it
+by a factorable sieve weight would change the exact Vaughan packet.
+Likewise, splitting a general $d$ into several independent factors
+fails for a divisor label that is itself a large prime.  We therefore do
+not promote a well-factorable or trilinear theorem to the present packet.
+\end{remark}
+
+\subsection{Smooth von Mangoldt transfer}
+
+The signed nature of \eqref{eq:li-v6-theorem} requires the test weight to
+preserve separated coefficients.  The following lemma records the exact
+allowable dependence.
+
+\begin{lemma}[One-factor-dependent smooth transfer]
+\label{lem:one-factor-smooth-transfer}
+Let $(L,D)$ belong to a $\mathrm{BD}_h$ profile.  For every $\ell\le2L$,
+let $F_{\ell,X}\in C_c^1((0,\infty))$ belong to a family with a common
+compact support and a common $C^1$ bound.  Let
+$|a_\ell|,|b_d|\le(\log X)^C$.  Then
+\begin{align}
+ &\sum_{\substack{\ell\le2L,\ d\le D\\(\ell d,h)=1}}
+ a_\ell b_d
+ \left[
+ \sum_{j\ge1}\Lambda(\ell dj+h)
+ F_{\ell,X}(\ell dj/X)
+ -\frac{X}{\varphi(\ell d)}I_0(F_{\ell,X})
+ \right]
+ \notag\\
+ &\hspace{8em}\ll_{A,C,h,\eta,\mathcal F}X(\log X)^{-A}
+ \label{eq:smooth-lambda-transfer}
+\end{align}
+for every fixed $A>0$, where $\mathcal F$ denotes the common support
+and $C^1$ bounds of the weight family.
+\end{lemma}
+
+\begin{proof}
+We give the transfer in detail because the one-factor restriction is
+essential.  First retain only target primes.  Put
+\begin{equation}
+ \omega_{\ell,X}(t)
+ = (\log t)F_{\ell,X}((t-h)/X).
+ \label{eq:stieltjes-weight}
+\end{equation}
+The support lies in one fixed interval $t\asymp X$, and
+\begin{equation}
+ |\omega_{\ell,X}'(t)|\ll\frac{\log X}{X}
+ \label{eq:weight-derivative}
+\end{equation}
+uniformly in $\ell$.  Stieltjes partial summation makes the difference
+between the prime progression sum and its global-prime counterpart
+equal to
+\begin{equation}
+ -\int
+ E_\pi(t;\ell d,h)\omega_{\ell,X}'(t)\,dt.
+ \label{eq:stieltjes-error}
+\end{equation}
+There are no endpoint terms after extending the compactly supported
+weight by zero.
+
+After summing \eqref{eq:stieltjes-error} over $\ell,d$, fix $t$ inside
+the integral.  The coefficient
+\begin{equation}
+ a_{\ell,t}=a_\ell\omega_{\ell,X}'(t)
+ \label{eq:t-dependent-source-coefficient}
+\end{equation}
+still depends only on $\ell$, while $b_d$ depends only on $d$.
+Write
+\[
+ a_{\ell,t}=\frac{\log X}{X}\widetilde a_{\ell,t},
+ \qquad |\widetilde a_{\ell,t}|\le(\log X)^{C'}
+\]
+using \eqref{eq:weight-derivative}.  The $\mathrm{BD}_h$ estimate
+applies pointwise to $\widetilde a_{\ell,t}$ and $b_d$, uniformly in
+$t$.  Its $t\asymp X$ scale is multiplied by $(\log X)/X$; integrating
+over an interval of length $O(X)$ restores the final $X$ scale and
+loses only one fixed logarithmic power.  Increasing the requested
+saving absorbs that loss.
+
+The global prime sum satisfies, uniformly over the same family,
+\begin{equation}
+ \sum_p(\log p)F_{\ell,X}((p-h)/X)
+ =XI_0(F_{\ell,X})+O(X\exp(-c\sqrt{\log X})).
+ \label{eq:global-pnt-family}
+\end{equation}
+The accumulated error is negligible because standard divisor estimates
+give
+\begin{equation}
+ \sum_{\ell\le2L,\ d\le D}
+ \frac{|a_\ell b_d|}{\varphi(\ell d)}
+ \ll_C(\log X)^{C'}.
+ \label{eq:inverse-totient-weight}
+\end{equation}
+
+It remains to restore target prime powers.  If $p^\nu\asymp X$,
+$\nu\ge2$, and $p^\nu\equiv h\pmod{\ell d}$, then
+$\ell d\mid p^\nu-h$.  Hence the total number of ordered pairs is
+bounded by a fixed divisor function, and
+\begin{equation}
+ \sum_{\substack{p^\nu\asymp X\\\nu\ge2}}
+ (\log p)\tau_3(|p^\nu-h|)^{C'}
+ \ll_{C',\eps}X^{1/2+\eps}.
+ \label{eq:target-prime-powers}
+\end{equation}
+This is absorbed by any prescribed logarithmic saving.  Combining the
+prime, global-main-term, and prime-power estimates proves
+\eqref{eq:smooth-lambda-transfer}.
+\end{proof}
+
+\begin{remark}[Forbidden pair dependence]
+The proof does not allow an arbitrary family $F_{\ell,d,X}$.  In the
+signed Li layer, the Stieltjes derivative of such a family would create
+a genuinely pair-dependent coefficient, outside
+\eqref{eq:li-v6-theorem}.  The packet used below is admissible because
+its weight has the exact form
+\begin{equation}
+ F_{\ell,X}(u)
+ =W(u)\psi\!\left(\frac{Xu}{\ell K}\right),
+ \qquad
+ F_{\ell,X}(\ell dj/X)
+ =W(\ell dj/X)\psi(dj/K),
+ \label{eq:one-factor-weight-identity}
+\end{equation}
+which is independent of $d$ once $\ell$ is fixed.  The product ledger
+$LK\asymp_WX$ supplies a common compact support and common $C^1$ bound.
+\end{remark}

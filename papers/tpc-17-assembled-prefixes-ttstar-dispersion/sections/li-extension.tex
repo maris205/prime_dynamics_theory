@@ -1,0 +1,126 @@
+\section{A version-locked enlargement from Li v6}
+\label{sec:li-extension}
+
+This section is logically separate from the published core.  It applies
+the imported input stated in \cref{input:li-v6}; every assertion here
+must be rechecked if that exact arXiv version changes.
+
+In the exponent coordinates \eqref{eq:maynard-exponent-coordinates},
+the Li profile is
+\begin{equation}
+ 2\lambda+\nu\le1,
+ \qquad
+ 7\lambda+12\nu\le4.
+ \label{eq:li-exponent-polytope}
+\end{equation}
+The two faces meet at
+\begin{equation}
+ (\lambda,\nu)=\left(\frac8{17},\frac1{17}\right),
+ \qquad \lambda+\nu=\frac9{17}.
+ \label{eq:li-exponent-vertex}
+\end{equation}
+At this point the deleted Maynard monomial has exponent
+\begin{equation}
+ 19\lambda+20\nu=\frac{172}{17}>10.
+ \label{eq:li-vertex-outside-maynard}
+\end{equation}
+Thus the enlargement is genuine and is not a relabelling of the
+published region.
+
+\begin{theorem}[Li-v6-dependent assembled wedge]
+\label{thm:li-assembled-wedge}
+Assume \cref{input:li-v6}.  Fix $h\ne0$, $0<\delta<1/2$, and $\eta>0$.
+Suppose \eqref{eq:assembly-geometry}, the leakage condition in
+\eqref{eq:assembly-analysis}, and
+\begin{equation}
+ D_0L^2\le X^{1-\eta},
+ \qquad
+ D_0^{12}L^7\le X^{4-\eta}
+ \label{eq:li-assembly-conditions}
+\end{equation}
+hold.  Then, for every $A>0$,
+\begin{equation}
+ \cC_{L,K}(D_0)\ll_A X(\log X)^{-A},
+ \qquad
+ \cH^{\mathrm{HB}}_{L,K}
+ =\cT_{L,K}(D_0,V)+O_A(X(\log X)^{-A}).
+ \label{eq:li-assembled-conclusion}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The two monomial conditions place $(L,D_0)$ in
+$\mathfrak R^{\mathrm L}_\eta$.  The assertion follows from
+\cref{thm:assembled-prefix,cor:tail-normal-form}.  The smooth-transfer
+step is valid here specifically because of
+\eqref{eq:one-factor-weight-identity}; it does not invoke a
+pair-dependent coefficient.
+\end{proof}
+
+There is a small family of interior approaches to the vertex.  The
+following one keeps the arithmetic transparent.
+
+\begin{corollary}[An explicit interior family]
+\label{cor:li-explicit-prefix}
+Assume \cref{input:li-v6}.  Fix
+\begin{equation}
+ 0<\sigma<\frac1{1000},
+ \qquad
+ \frac1{34}+2\sigma<\delta<\frac14,
+ \label{eq:li-delta-sigma-range}
+\end{equation}
+and set, up to integer parts,
+\begin{equation}
+ L=X^{8/17-\sigma},
+ \qquad
+ D_0=X^{1/17+\sigma/2},
+ \qquad
+ K=X/L=X^{9/17+\sigma}.
+ \label{eq:li-explicit-scales}
+\end{equation}
+Then \eqref{eq:li-assembled-conclusion} holds for every $A>0$.  The
+assembled modulus product has size
+\begin{equation}
+ LD_0=X^{9/17-\sigma/2},
+ \label{eq:li-total-modulus}
+\end{equation}
+which is strictly larger than $X^{11/21}$ throughout the stated
+$\sigma$ range.
+\end{corollary}
+
+\begin{proof}
+The exponents of the two monomials in
+\eqref{eq:li-assembly-conditions} are exactly
+\begin{equation}
+ 1-\frac32\sigma,
+ \qquad
+ 4-\sigma.
+ \label{eq:li-monomial-check}
+\end{equation}
+The finite-row leakage has exponent
+\begin{equation}
+ \log_X(LD_0R)
+ =1+\frac1{34}-\frac\sigma2-\delta+o(1)
+ <1-\frac52\sigma+o(1).
+ \label{eq:li-leakage-check}
+\end{equation}
+Also, $\delta>1/34+\sigma$ implies $L>2R$ for large $X$.
+The bounds $D_0<R$, $D_0<V$, and $K>2V$ follow from
+$\delta<1/4$.  Finally,
+\begin{equation}
+ \frac9{17}-\frac\sigma2-\frac{11}{21}
+ =\frac2{357}-\frac\sigma2>0
+ \label{eq:li-beats-eleven-twenty-one}
+\end{equation}
+for $\sigma<1/1000$.
+\end{proof}
+
+\begin{remark}[Status of the extension]
+The implication from \cref{input:li-v6} to
+\cref{thm:li-assembled-wedge} is a proved transfer, not a numerical
+heuristic.  Its external input is nevertheless a currently unrefereed,
+version-locked preprint.  Accordingly, the $9/17$ vertex is advertised
+only inside this segregated layer.  Theorems
+\ref{thm:assembled-prefix} and \ref{thm:published-assembled-wedge}, and
+all Fourier and $TT^*$ statements below, do not depend on Li's result.
+\end{remark}
