@@ -1,0 +1,284 @@
+\section{Conductor partition and exponent closure}
+\label{sec:exponent-closure}
+
+Write
+\begin{equation}
+ Q=X^{\beta+o(1)},\qquad J=X^{1-\beta+o(1)},\qquad
+ Y=X^{y+o(1)},\qquad F_i=X^{f_i+o(1)}.
+ \label{eq:exponent-notation}
+\end{equation}
+Since \(F_i\le R\),
+\begin{equation}
+ 0\le f_i\le r_0:=\frac12-\delta,
+ \qquad y\le1-2\delta.
+ \label{eq:exponent-ranges}
+\end{equation}
+Set
+\begin{equation}
+ k_i:=\max\{f_i,\beta-f_i\}.
+ \label{eq:k-def}
+\end{equation}
+Then
+\(\cK_Q(F_i)=X^{k_i+o(1)}\).
+
+The natural scale \eqref{eq:natural-scale} has exponent \(1+\beta\).
+The tensor-norm bound \eqref{eq:tensor-norm-scalar} has exponent
+\[
+ \beta+\frac{1-\beta+y+k_1+k_2}{2},
+\]
+and the direct bound \eqref{eq:direct-Gauss-bound} has exponent
+\[
+ \beta+f_1+f_2+\frac{k_1+k_2}{2}.
+\]
+Thus their saving exponents are
+\begin{equation}
+ \eta_A=\frac{\beta+1-y-k_1-k_2}{2},
+ \qquad
+ \eta_B=1-f_1-f_2-\frac{k_1+k_2}{2}.
+ \label{eq:eta-AB}
+\end{equation}
+For each block we use the larger of these two savings.
+
+\begin{proposition}[Three-cell conductor ledger]
+\label{prop:three-cell-ledger}
+Under \eqref{eq:exponent-ranges}, every conductor pair satisfies
+\begin{equation}
+ \max\{\eta_A,\eta_B\}\ge
+ \eta_*(\beta,\delta),
+ \label{eq:eta-star-bound}
+\end{equation}
+where
+\begin{equation}
+ \boxed{
+ \eta_*(\beta,\delta)=
+ \min\left\{
+ 1-\frac{3\beta}{2},\
+ \frac{\beta+4\delta-1}{2},\
+ \frac{6\delta-\beta}{4}
+ \right\}.}
+ \label{eq:eta-star}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+It suffices to take the worst denominator exponent
+\(y=1-2\delta\), since decreasing \(y\) improves \(\eta_A\).
+
+If \(f_1,f_2\le\beta/2\), then
+\[
+ k_1+k_2=2\beta-f_1-f_2.
+\]
+Consequently
+\[
+ \eta_B=1-\beta-\frac{f_1+f_2}{2}
+ \ge1-\frac{3\beta}{2}.
+\]
+
+If \(f_1,f_2\ge\beta/2\), then
+\[
+ k_1+k_2=f_1+f_2\le1-2\delta.
+\]
+Hence
+\[
+ \eta_A\ge\frac{\beta+4\delta-1}{2}.
+\]
+
+It remains to consider a mixed block.  Write
+\[
+ x\le\frac\beta2\le z,\qquad d=z-x\ge0.
+\]
+Then \(k_1+k_2=\beta+d\), after interchanging the coordinates if
+necessary, and
+\begin{equation}
+ \eta_A\ge\delta-\frac d2.
+ \label{eq:mixed-A}
+\end{equation}
+Since \(z\le1/2-\delta\), direct substitution in \(\eta_B\) gives
+\begin{equation}
+ \eta_B
+ =1-\frac\beta2-\frac x2-\frac{3z}{2}
+ \ge2\delta+\frac d2-\frac\beta2.
+ \label{eq:mixed-B}
+\end{equation}
+The maximum is at least the average of the right sides of
+\eqref{eq:mixed-A} and \eqref{eq:mixed-B}, namely
+\((6\delta-\beta)/4\).  Combining the three cases proves
+\eqref{eq:eta-star}.
+\end{proof}
+
+\begin{corollary}[Hybrid closure region]
+\label{cor:hybrid-closure-region}
+Assume the inherited no-wrap and polynomial tail-mass hypotheses used
+in \eqref{eq:inherited-norm-route}.  If
+\begin{equation}
+ 1-4\delta<\beta<\min\left\{\frac23,6\delta\right\}
+ \label{eq:hybrid-closure-region}
+\end{equation}
+with fixed margins, then \(\eta_*(\beta,\delta)>0\) with a fixed
+margin.  Summing all dyadic conductor blocks other than \((1,1)\)
+proves \eqref{eq:main-discrepancy-bound}.
+\end{corollary}
+
+\begin{proof}
+The three strict inequalities in
+\eqref{eq:hybrid-closure-region} are exactly the positivity conditions
+for the three entries in \eqref{eq:eta-star}.  There are
+\(O((\log X)^2)\) coordinate-conductor blocks.  Exact-conductor and
+divisor-pair refinements cost \(X^{o(1)}\), so choose \(\eps\) smaller
+than the fixed saving margin.  The principal block is the mean, not the
+discrepancy.
+\end{proof}
+
+\subsection{The occupancy alternative and its gap}
+
+TPC-21 occupancy gives on \(q\asymp Y\)
+\[
+ \sum_q\|D_q\|_2\ll_\eps Q^2\sqrt Y\,X^\eps.
+\]
+After \eqref{eq:inherited-norm-route}, its ratio to \(Q^2J\) is
+\(X^{(y-(1-\beta))/2+o(1)}\).  At the largest
+\(y=1-2\delta\), the saving is
+\begin{equation}
+ \eta_{\rm occ}=\frac{2\delta-\beta}{2}.
+ \label{eq:occupancy-saving}
+\end{equation}
+Thus occupancy closes every \(Y\le R^2\) only when
+\(\beta<2\delta\) with a fixed margin.  At equality the top block has
+zero margin.  If \(\delta<1/6\), the interval between \(2\delta\) and
+\(1-4\delta\) is a genuine gap between the two sufficient routes.  The
+actual profiles below avoid it; no general claim that the gap is empty
+is made.
+
+\begin{proof}[Proof of \cref{thm:main-closure}]
+In the occupancy alternative, \eqref{eq:occupancy-saving} and the fixed
+margin in \(\beta<2\delta\) give a uniform positive saving for every
+\(Y\le R^2\).  In the hybrid alternative,
+\cref{cor:hybrid-closure-region} gives the uniform positive saving
+\(\eta_*\).  In either case, choose \(\eta\) below the relevant fixed
+margin and absorb the logarithmically many dyadic blocks into
+\(X^\eps\).  The no-wrap hypothesis licenses
+\eqref{eq:inherited-norm-route}; since \(\cZ_1=X^{O(1)}\), its tail is
+absorbed by taking \(A\) sufficiently large.  Finally the strict
+single-leg condition licenses the inherited separated-packet
+reassembly.  This proves \eqref{eq:main-discrepancy-bound}; combining it
+with \eqref{eq:imported-mean-bound} closes exactly the selected packet
+claimed in the theorem.
+\end{proof}
+
+\subsection{The two inherited tail profiles}
+
+The TPC-18 tail has \(D>D_0\), not \(D\ge1\).  Hence a profile is a
+whole interval of row exponents.  We record the actual endpoints from
+the TPC-17 profile ledger \citep{WangTPC17}.
+
+\begin{corollary}[Published tail profile]
+\label{cor:published-profile}
+Assume the no-wrap and polynomial tail-mass hypotheses of
+\cref{thm:main-closure}.  Let
+\begin{equation}
+ L=X^{10/21-\sigma},\qquad
+ D_0=X^{1/21-\sigma},\qquad D_0<D\le R^{1/2}.
+ \label{eq:published-data}
+\end{equation}
+Then
+\begin{equation}
+ \frac{11}{21}-2\sigma<\beta
+ \le\frac{61}{84}-\sigma-\frac\delta2+o(1).
+ \label{eq:published-beta-range}
+\end{equation}
+Write
+\begin{equation}
+ \delta=\left(\frac{19}{126}-\frac23\sigma\right)+t,
+ \qquad t>0.
+ \label{eq:published-t}
+\end{equation}
+Assume also the inherited upper bound \(\delta<1/4\).
+Uniformly over \eqref{eq:published-beta-range}, the three entries in
+the ledger are bounded below by
+\begin{equation}
+ \frac1{42}+\sigma+\frac{3t}{4},\qquad
+ \frac4{63}-\frac{7\sigma}{3}+2t,\qquad
+ \frac4{63}-\frac{5\sigma}{6}+\frac{13t}{8}.
+ \label{eq:published-gains}
+\end{equation}
+In particular, the inherited range \(0<\sigma<1/100\) has a fixed
+positive conductor margin for every fixed \(t>0\), and
+\cref{thm:main-closure} applies to every tail slice.
+\end{corollary}
+
+\begin{proof}
+The lower endpoint is \(\log_X(LD_0)\); the upper endpoint is
+\(\log_X(LR^{1/2})\).  The low--low and mixed expressions in
+\eqref{eq:eta-star} are worst at the upper endpoint, while the
+high--high expression is worst at the lower endpoint.  Substitute
+\eqref{eq:published-t}.  Moreover,
+\[
+ \left(\frac12+\delta\right)-\beta_{\max}=\frac{3t}{2},
+\]
+so the strict single-leg margin is automatic.  The inherited bound
+\(1/100<4/147\) makes all
+three expressions positive even as \(t\downarrow0\).
+\end{proof}
+
+\begin{corollary}[Version-locked Li-v6 tail profile]
+\label{cor:li-profile}
+Assume the no-wrap and polynomial tail-mass hypotheses of
+\cref{thm:main-closure}.  Let
+\begin{equation}
+ L=X^{8/17-\sigma},\qquad
+ D_0=X^{1/17+\sigma/2},\qquad D_0<D\le R^{1/2}.
+ \label{eq:li-data}
+\end{equation}
+Then
+\begin{equation}
+ \frac9{17}-\frac\sigma2<\beta
+ \le\frac{49}{68}-\sigma-\frac\delta2+o(1).
+ \label{eq:li-beta-range}
+\end{equation}
+Write
+\begin{equation}
+ \delta=\left(\frac5{34}-\frac23\sigma\right)+t,
+ \qquad t>0.
+ \label{eq:li-t}
+\end{equation}
+Assume also the inherited upper bound \(\delta<1/4\).
+Uniformly over \eqref{eq:li-beta-range}, the three ledger entries are
+bounded below by
+\begin{equation}
+ \frac1{34}+\sigma+\frac{3t}{4},\qquad
+ \frac1{17}-\frac{19\sigma}{12}+2t,\qquad
+ \frac1{17}-\frac{5\sigma}{6}+\frac{13t}{8}.
+ \label{eq:li-gains}
+\end{equation}
+Thus the inherited range \(0<\sigma<1/1000\) has a fixed positive
+conductor margin for every fixed \(t>0\), and
+\cref{thm:main-closure} applies to every tail slice.
+\end{corollary}
+
+\begin{proof}
+As above, use the lower endpoint for the high--high entry and the upper
+endpoint for the other two.  Substitute \eqref{eq:li-t}.  Again,
+\[
+ \left(\frac12+\delta\right)-\beta_{\max}=\frac{3t}{2}.
+\]
+Here
+\(1/1000<12/323\).
+\end{proof}
+
+At \(\sigma=0\) and \(t\downarrow0\), the published ledger has endpoint
+margins
+\begin{equation}
+ \left(\frac1{42},\frac4{63},\frac4{63}\right),
+ \label{eq:published-zero-margins}
+\end{equation}
+and the Li ledger has
+\begin{equation}
+ \left(\frac1{34},\frac1{17},\frac1{17}\right).
+ \label{eq:li-zero-margins}
+\end{equation}
+More generally, \(4/147\) and \(12/323\) are the respective arithmetic
+thresholds for positivity uniformly as \(t\downarrow0\).  They are not
+absolute barriers: a larger fixed \(t\) can compensate a larger
+\(\sigma\), subject to the remaining inherited constraints.  Nor do
+these wider arithmetic thresholds extend the upstream profile theorem;
+the applications above use its original, stricter \(\sigma\)-ranges.

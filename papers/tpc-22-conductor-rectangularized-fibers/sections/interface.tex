@@ -1,0 +1,183 @@
+\section{The inherited selected short--short interface}
+\label{sec:interface}
+
+Fix \(h\in\Z\setminus\{0\}\), put \(H=\rad|h|\), and let
+\begin{equation}
+ R=\lfloor X^{1/2-\delta}\rfloor,\qquad 0<\delta<\frac12,
+ \label{eq:R-def}
+\end{equation}
+with \(R\ge H^2\).  In one separated row packet,
+\begin{equation}
+ Q=LD,\qquad QJ\asymp X,\qquad L>\max\{2R,2|h|\},
+ \label{eq:row-scales}
+\end{equation}
+and
+\begin{equation}
+ \omega=(\ell,d),\quad \ell\in[L/2,2L]\text{ prime},\quad
+ d\in[D,2D],\quad d\le R^{1/2},\quad m_\omega=\ell d\asymp Q.
+ \label{eq:rows}
+\end{equation}
+The large prime is unique, so \(m_\omega\) determines the row label.
+The bounded separated weights satisfy
+\begin{equation}
+ \|x\|_\infty+\|y\|_\infty\ll_\eps X^\eps,\qquad
+ \sum_m|x_m|^2+\sum_n|y_n|^2\ll QX^\eps.
+ \label{eq:row-energy}
+\end{equation}
+
+The actual generic mask is
+\begin{equation}
+ \mathfrak m(m,n)=\one_{\ell_m\ne\ell_n}
+ \one_{|m-n|>QX^{-\kappa_0}}
+ \one_{(d_m,d_n)\le X^{\kappa_0}},
+ \label{eq:generic-mask}
+\end{equation}
+where \(\kappa_0>0\) is fixed.  We use only
+\begin{equation}
+ |\mathfrak m(m,n)|\le1,\qquad \mathfrak m(m,m)=0,\qquad
+ \mathfrak m\text{ is independent of }u,v,q.
+ \label{eq:mask-properties}
+\end{equation}
+Thus the theorem applies to any fixed bounded off-diagonal row-pair mask
+with these properties, but not as stated to a modulus-dependent mask.
+
+The divisor coefficient is either
+\begin{equation}
+ \vartheta_R(u)=\lambda'_R(u)
+ \quad\text{or}\quad \vartheta_R(u)=b_R(u)\one_{u\le R}.
+ \label{eq:theta-choices}
+\end{equation}
+Both are real, squarefree-supported on \(u\le R\), and
+\begin{equation}
+ |\vartheta_R(u)|\ll_\eps X^\eps.
+ \label{eq:theta-bound}
+\end{equation}
+
+For squarefree \(u,v\le R\), put \(g=(u,v)\), \(q=[u,v]\), and retain
+only \((q,H)=1\).  A row pair is admissible when
+\begin{equation}
+ (u,mH)=(v,nH)=1,\qquad m\equiv n\pmod g.
+ \label{eq:pair-admissibility}
+\end{equation}
+It determines a unique \(\xi\in\cU_q=(\Z/q\Z)^\times\) through
+\begin{equation}
+ m\xi\equiv-h\pmod u,\qquad n\xi\equiv-h\pmod v.
+ \label{eq:joint-class}
+\end{equation}
+Define
+\begin{align}
+ Z_{u,v}(\xi)&=\sum_{m,n}x_my_n\mathfrak m(m,n)
+ \one_{m\equiv-h\overline\xi\ (u)}
+ \one_{n\equiv-h\overline\xi\ (v)},
+ \label{eq:pair-fiber}\\
+ Z_q(\xi)&=\sum_{\substack{u,v\le R\\\operatorname{lcm}(u,v)=q}}
+ \vartheta_R(u)\vartheta_R(v)Z_{u,v}(\xi).
+ \label{eq:lcm-fiber}
+\end{align}
+Inadmissible row--modulus combinations contribute zero.
+
+Let
+\begin{equation}
+ \overline Z_{u,v}=\frac1{\varphi(q)}\sum_{\xi\in\cU_q}Z_{u,v}(\xi),
+ \qquad D_{u,v}=Z_{u,v}-\overline Z_{u,v},
+ \label{eq:pair-centering}
+\end{equation}
+and define \(\overline Z_q,D_q\) similarly.  Centering is linear:
+\begin{equation}
+ D_q=\sum_{[u,v]=q}\vartheta_R(u)\vartheta_R(v)D_{u,v}.
+ \label{eq:centered-pair-sum}
+\end{equation}
+This licenses pairwise triangle inequalities, not orthogonality.
+
+We use the normalizations
+\begin{equation}
+ e(t)=e^{2\pi i t},\qquad e_q(t)=e(t/q),\qquad
+ c_s(r)=\sum_{\xi\in(\Z/s\Z)^\times}e_s(r\xi),
+ \label{eq:additive-normalizations}
+\end{equation}
+and, for a function \(W\) on \(\cU_q\),
+\begin{equation}
+ \|W\|_{2,\cU_q}^2
+ :=\sum_{\xi\in\cU_q}|W(\xi)|^2.
+ \label{eq:unnormalized-fiber-norm}
+\end{equation}
+
+For \(F\in C_c^\infty(\R)\), with
+\(\widehat F(t)=\int_\R F(x)e(-tx)\,dx\), put
+\begin{equation}
+ \cL_q=\frac{J}{Hq}\sum_{r\ne0}c_H(r)
+ \widehat F\left(\frac{rJ}{Hq}\right)
+ \sum_{\xi\in\cU_q}Z_q(\xi)e_q(r\overline H\xi).
+ \label{eq:scalar-packet}
+\end{equation}
+We write \(\cL_q^{\rm mean}\) and \(\cL_q^{\rm disc}\) for the same
+linear functional with \(Z_q\) replaced by \(\overline Z_q\) and
+\(D_q\), respectively; hence
+\(\cL_q=\cL_q^{\rm mean}+\cL_q^{\rm disc}\).
+TPC-21 proves for its mean part
+\begin{equation}
+ \sum_q|\cL_q^{\rm mean}|\ll_\eps Q^2X^\eps.
+ \label{eq:imported-mean-bound}
+\end{equation}
+For the discrepancy, TPC-20 supplies under its no-wrap and polynomial
+tail-mass hypotheses
+\begin{equation}
+ \sum_{q\in\cQ}|\cL_q^{\rm disc}|
+ \ll_{H,F,\eps}X^{\eps/2}\sqrt{\frac JH}
+ \sum_{q\in\cQ}\lVert D_q\rVert_{2,\cU_q}
+ +O_A(X^{-A}\cZ_1).
+ \label{eq:inherited-norm-route}
+\end{equation}
+Here \(\cZ_1\) is the total absolute coefficient mass of the separated
+packet.  The inherited polynomial tail-mass hypothesis includes
+\(\cZ_1=X^{O(1)}\), so the last term is smaller than any prescribed
+fixed power after choosing \(A\).
+The natural scale is
+\begin{equation}
+ Q^2J\asymp XQ.
+ \label{eq:natural-scale}
+\end{equation}
+
+We absorb dyadic decompositions and
+\begin{equation}
+ \tau(n)^C+3^{\omega(n)}\ll_{C,\eps}X^\eps
+ \qquad(n\le X^{O(1)})
+ \label{eq:divisor-soft}
+\end{equation}
+into \(X^\eps\).  A conductor block of size one contains exact
+conductor one.
+
+\begin{theorem}[Selected short--short connected closure]
+\label{thm:main-closure}
+Assume explicitly, for some fixed \(\eps_0>0\), the TPC-20 no-wrap
+condition \(J\ge4HX^{\eps_0}\) and its polynomial fiber-tail mass hypothesis
+used in \eqref{eq:inherited-norm-route}.  Write
+\(Q=X^{\beta+o(1)}\), \(J=X^{1-\beta+o(1)}\).  Suppose either
+\begin{equation}
+ \beta<2\delta
+ \label{eq:occupancy-region}
+\end{equation}
+with a fixed margin, or
+\begin{equation}
+ 1-4\delta<\beta<\min\left\{\frac23,6\delta\right\}
+ \label{eq:main-hybrid-region}
+\end{equation}
+with fixed margins.  Assume also the strict TPC-20 single-leg condition
+\begin{equation}
+ \beta<\frac12+\delta
+ \label{eq:main-single-leg}
+\end{equation}
+with a fixed margin.  Then some \(\eta>0\) satisfies, uniformly for
+every dyadic \(Y\le R^2\),
+\begin{equation}
+ \sum_{\substack{q\asymp Y\\q\text{ squarefree}\\(q,H)=1}}
+ |\cL_q^{\rm disc}|\ll_{F,H,\eps}XQ\,X^{-\eta+\eps}.
+ \label{eq:main-discrepancy-bound}
+\end{equation}
+After the inherited dyadic and separated-packet reassembly, this and
+\eqref{eq:imported-mean-bound} close the selected short--short packet.
+\end{theorem}
+
+At \(\beta=2\delta\), occupancy has no fixed-power margin on
+\(Y\asymp R^2\).  The second alternative is the new result.  Neither
+alternative includes the omitted large-divisor residual legs.

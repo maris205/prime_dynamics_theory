@@ -1,0 +1,175 @@
+\section{Tensor conductor energy with the mask retained}
+\label{sec:tensor-energy}
+
+For \(u=ga\), \(v=gb\), set
+\begin{equation}
+ C_{g,a,b}(\alpha,\beta)
+ :=\sum_{m,n}c_{m,n}^{(g)}\alpha(m)\beta(n),
+ \qquad
+ \alpha\in\mathfrak X(u),\quad\beta\in\mathfrak X(b).
+ \label{eq:rectangular-C}
+\end{equation}
+By \cref{thm:pairwise-rectangularization}, this is the full masked pair
+transform after removal of the harmless phase
+\(\overline{\chi(-h)}\).
+
+Put
+\begin{equation}
+ \cK_Q(F):=F+\frac QF.
+ \label{eq:KQ}
+\end{equation}
+For dyadic coordinate-conductor sizes \(F_1,F_2\), define the
+pair-separated energy
+\begin{align}
+ \cE_Y(F_1,F_2)
+ :={}&
+ \sum_{\substack{g,a,b\ {\rm pairwise\ coprime}\\
+                  ga,gb\le R,\ gab\asymp Y\\
+                  gab\ {\rm squarefree},\ (gab,H)=1}}
+ \frac{|\vartheta_R(ga)\vartheta_R(gb)|^2}{\varphi(gab)}
+ \notag\\
+ &\times
+ \sum_{\substack{\alpha\in\mathfrak X(ga)\\\cond\alpha\asymp F_1}}
+ \sum_{\substack{\beta\in\mathfrak X(b)\\\cond\beta\asymp F_2}}
+ |C_{g,a,b}(\alpha,\beta)|^2.
+ \label{eq:pair-energy}
+\end{align}
+This is intentionally a sum of pair energies, not the energy of a
+fictional global rectangular projection of \(Z_q\).
+
+\begin{theorem}[Arbitrary-matrix tensor conductor bound]
+\label{thm:tensor-energy}
+Uniformly for \(Y\le R^2\) and \(1\le F_i\le R\),
+\begin{equation}
+ \boxed{
+ \cE_Y(F_1,F_2)
+ \ll_\eps X^\eps Q^2
+ \cK_Q(F_1)\cK_Q(F_2).}
+ \label{eq:tensor-energy-bound}
+\end{equation}
+No separability assumption on \(c_{m,n}^{(g)}\) is made.
+\end{theorem}
+
+\begin{proof}
+Use \eqref{eq:theta-bound}, split \(u=ga\) and \(b\) into dyadic
+ranges, and fix \(g\).  Since \(q=gab=ub\) and \((u,b)=1\),
+\(\varphi(q)=\varphi(u)\varphi(b)\).  Retaining squarefreeness but
+removing the conditions
+\[
+ g\mid u,\qquad (u,b)=1,\qquad ub\asymp Y,\qquad gb\le R
+\]
+enlarges the nonnegative sum.  It is therefore enough to bound
+\begin{align}
+ &\sum_{\substack{u\asymp U\\u\ {\rm squarefree}}}\frac1{\varphi(u)}
+ \sum_{\substack{\alpha\in\mathfrak X(u)\\\cond\alpha\asymp F_1}}
+ \sum_{\substack{b\asymp B\\b\ {\rm squarefree}}}\frac1{\varphi(b)}
+ \sum_{\substack{\beta\in\mathfrak X(b)\\\cond\beta\asymp F_2}}
+ \left|\sum_{m,n}c_{m,n}^{(g)}\alpha(m)\beta(n)\right|^2.
+ \label{eq:enlarged-tensor-sum}
+\end{align}
+
+Fix \(b,\beta\) and apply
+\cref{thm:exact-conductor-large-sieve} in \(u,\alpha\) to
+\[
+ a_m(\beta)=\sum_n c_{m,n}^{(g)}\beta(n).
+\]
+This contributes \(\cK_Q(F_1)\) and leaves
+\[
+ \cK_Q(F_1)
+ \sum_{\substack{b\asymp B\\b\ {\rm squarefree}}}\frac1{\varphi(b)}
+ \sum_{\cond\beta\asymp F_2}
+ \sum_m\left|\sum_nc_{m,n}^{(g)}\beta(n)\right|^2.
+\]
+Apply the same theorem in \(b,\beta\), separately for each \(m\).
+The result is
+\begin{equation}
+ \ll_\eps X^\eps\cK_Q(F_1)\cK_Q(F_2)
+ \sum_{m,n}|c_{m,n}^{(g)}|^2.
+ \label{eq:fixed-g-tensor-bound}
+\end{equation}
+This is a composition of two Hilbert-space operator bounds, so it does
+not factor the coefficient matrix.
+
+Sum \eqref{eq:fixed-g-tensor-bound} over \(g\) and the logarithmically
+many dyadic \(u,b\)-ranges.  Then
+\cref{prop:compatibility-energy} proves
+\eqref{eq:tensor-energy-bound}.
+\end{proof}
+
+\subsection{The inherited norm route}
+
+For a fixed pair, multiplicative Parseval and
+\cref{cor:product-conductors} decompose its centered fiber into the
+blocks \((F_1,F_2)\ne(1,1)\).  Let
+\(D_{u,v}^{F_1,F_2}\) denote the inverse character transform of one such
+block, with the factor
+\(\vartheta_R(u)\vartheta_R(v)\) included.  Then
+\begin{equation}
+ \|D_{u,v}^{F_1,F_2}\|_{2,\cU_q}^2
+ =\frac{|\vartheta_R(u)\vartheta_R(v)|^2}{\varphi(q)}
+ \sum_{\substack{\cond\alpha\asymp F_1\\
+                  \cond\beta\asymp F_2}}
+ |C_{g,a,b}(\alpha,\beta)|^2.
+ \label{eq:pair-block-parseval}
+\end{equation}
+The phase \(\overline{\chi(-h)}\) has modulus one.
+
+Let \(\cL_{u,v}^{F_1,F_2}\) be the scalar packet
+\eqref{eq:scalar-packet} formed from this pair block, and define the
+pair-separated dyadic aggregate
+\begin{equation}
+ \mathfrak L_Y(F_1,F_2)
+ :=\sum_{\substack{g,a,b\ {\rm pairwise\ coprime}\\
+                   ga,gb\le R,\ gab\asymp Y\\
+                   gab\ {\rm squarefree},\ (gab,H)=1}}
+ |\cL_{ga,gb}^{F_1,F_2}|.
+ \label{eq:pair-separated-scalar-block}
+\end{equation}
+This is one object.  The subscripts \(A\) and \(B\) used informally
+below name two estimates for it, not two different projections.  By
+linearity, pairwise triangle inequality, and dyadic conductor
+decomposition,
+\begin{equation}
+ \sum_{q\asymp Y}|\cL_q^{\rm disc}|
+ \le\sum_{\substack{F_1,F_2\\(F_1,F_2)\ne(1,1)}}
+ \mathfrak L_Y(F_1,F_2).
+ \label{eq:block-reassembly-inequality}
+\end{equation}
+
+The number of triples \((g,a,b)\) with \(gab\asymp Y\) is
+\(\ll YX^\eps\), by \eqref{eq:lcm-pair-count}.  Cauchy--Schwarz and
+\cref{thm:tensor-energy} therefore give
+\begin{equation}
+ \sum_{\substack{q\asymp Y\\\operatorname{lcm}(u,v)=q}}
+ \|D_{u,v}^{F_1,F_2}\|_{2,\cU_q}
+ \ll_\eps
+ X^\eps Q\sqrt{Y\cK_Q(F_1)\cK_Q(F_2)}.
+ \label{eq:block-fiber-norm}
+\end{equation}
+The notation on the left means the sum over the pair contributions
+before their lcm reassembly.
+
+\begin{corollary}[Tensor-norm scalar bound]
+\label{cor:tensor-norm-route}
+Under the inherited hypotheses of \eqref{eq:inherited-norm-route}, every
+nonprincipal coordinate-conductor block satisfies
+\begin{equation}
+ \boxed{
+ \mathfrak L_Y(F_1,F_2)
+ \ll_\eps X^\eps Q
+ \sqrt{JY\cK_Q(F_1)\cK_Q(F_2)}.}
+ \label{eq:tensor-norm-scalar}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Use \eqref{eq:centered-pair-sum} and Minkowski before
+\eqref{eq:inherited-norm-route}, then insert
+\eqref{eq:block-fiber-norm}.  The Fourier-tail error is already part of
+the inherited polynomial-mass hypothesis.
+\end{proof}
+
+The pairwise triangle inequality may discard cancellation between lcm
+decompositions, but it costs no fixed power and is sufficient for the
+claimed closure.  The next section proves a second estimate for this
+same aggregate.

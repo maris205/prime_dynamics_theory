@@ -1,0 +1,83 @@
+\section{Exact finite certificate and conclusion}
+\label{sec:certificate-conclusion}
+
+The proofs above are symbolic.  A deterministic finite certificate is
+included to audit the identities most vulnerable to normalization or
+coordinate errors.  It is not numerical evidence for an unproved
+asymptotic and is not used to replace any analytic estimate.
+
+\subsection{Certificate design}
+
+The script
+\[
+ \texttt{experiments/tpc22\_certificate.py}
+\]
+uses only the Python standard library.  Roots of unity are represented
+exactly in \(\mathbf F_{61}\), whose multiplicative group contains the
+orders needed for the squarefree test moduli.  Rational exponent
+calculations use \texttt{fractions.Fraction}.
+
+The primary model is
+\[
+ q=30,\qquad (u,v)=(10,15),\qquad (g,a,b)=(5,2,3),
+\]
+together with the reversed divisor pair.  The certificate checks:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+ \item the shared-\(g\) convolution and
+ \eqref{eq:exact-rectangularization} character by character;
+ \item both product-coordinate choices and exact conductor
+ multiplication;
+ \item the identification of the global principal character with the
+ joint principal coordinate, while retaining one-sided principal modes;
+ \item the induced-character Gauss formula at every residue frequency,
+ including frequencies not coprime to \(q\);
+ \item the exact rational low--low, high--high, and mixed ledger;
+ \item the two actual-tail profile endpoint intervals, gains, and
+ arithmetic endpoint-stability thresholds.
+\end{enumerate}
+
+Hard-failure variants deliberately omit compatibility, replace
+\(b=v/g\) by \(v\), omit the shared \(g\)-character, retain an extra
+\(1/\varphi(g)\), or delete a one-sided principal block.  Each altered
+formula is required to disagree with the exact model.  The ordinary and
+\texttt{python -O} runs must produce byte-identical JSON, so correctness
+does not depend on Python assertions.  All flags for a twin-prime
+result, Hardy--Littlewood asymptotic, full residual closure, or parity
+breakthrough are set to false.
+
+The archived run performs \(346\) exact checks.  Its JSON and source
+SHA-256 hashes are, respectively,
+\begin{center}
+\nolinkurl{772aa4a68009d2ffb7960f2d27db287e52c7a80aa7cd915293e4fc8dea3fa934}
+
+\nolinkurl{2cc5e3fcdab3a51950f60c726ba8d64a96542c5fde115ac32545834be54e2964}
+\end{center}
+The certificate digest is
+\begin{center}
+\nolinkurl{c93ff8e6755ab0db536621e3b2c2b3f8332950da0a5784f60138912a2159fab8}.
+\end{center}
+
+\subsection{Conclusion}
+
+The shared-factor character convolution left by TPC-21 is not an
+irreducible fourth-moment obstruction.  Pairwise character
+orthogonality turns it into an arbitrary compatibility matrix tested by
+two independent character coordinates.  Exact conductor resolution
+then exposes two complementary estimates:
+\[
+ Q\sqrt{JY\cK_Q(F_1)\cK_Q(F_2)}
+\]
+from the inherited norm route, and
+\[
+ QF_1F_2\sqrt{\cK_Q(F_1)\cK_Q(F_2)}
+\]
+from the direct induced-Gauss route.  Neither dominates everywhere, but
+their conductor cells cover the complete selected short--short range in
+the stated profiles with a fixed power margin.
+
+This closes one concrete analytic gate and removes the arbitrary-fiber
+obstruction for the actual generic mask in that packet.  The remaining
+route to the full fixed-shift problem still includes the large-divisor
+legs and global residual reassembly, followed eventually by the
+classical parity obstruction.  Those are separate problems; no claim
+about them is encoded in the present closure theorem.

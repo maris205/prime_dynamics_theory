@@ -1,0 +1,166 @@
+\section{Exact pairwise conductor rectangularization}
+\label{sec:rectangularization}
+
+For \(s\ge1\), write
+\[
+ G_s=(\Z/s\Z)^\times,\qquad \mathfrak X(s)=\widehat G_s,
+\]
+with the modulus-one groups interpreted as trivial.  Characters are
+extended by zero away from the units, and
+\begin{equation}
+ \widehat W^{\,\times}(\chi)
+ =\sum_{\xi\in G_s}W(\xi)\overline{\chi(\xi)}.
+ \label{eq:multiplicative-transform}
+\end{equation}
+
+Fix one squarefree pair \((u,v)\), and write
+\begin{equation}
+ g=(u,v),\qquad u=ga,\qquad v=gb,\qquad q=gab.
+ \label{eq:gab}
+\end{equation}
+The factors \(g,a,b\) are pairwise coprime.  Decompose
+\[
+ \chi=\chi_g\boxtimes\chi_a\boxtimes\chi_b\in\mathfrak X(q).
+\]
+For \(\rho\in\mathfrak X(u)\), \(\sigma\in\mathfrak X(v)\), define
+\begin{equation}
+ \cB_{\mathfrak m}^{u,v}(\rho,\sigma)
+ =\sum_{m,n}x_my_n\mathfrak m(m,n)\rho(m)\sigma(n).
+ \label{eq:masked-B}
+\end{equation}
+
+\begin{theorem}[Pairwise rectangularization]
+\label{thm:pairwise-rectangularization}
+Put
+\begin{equation}
+ c_{m,n}^{(g)}
+ :=x_my_n\mathfrak m(m,n)\one_{m\equiv n\ (g)}.
+ \label{eq:cg-matrix}
+\end{equation}
+Then
+\begin{align}
+ \widehat Z_{u,v}^{\,\times}(\chi)
+ &=\frac{\overline{\chi(-h)}}{\varphi(g)}
+ \sum_{\psi\in\mathfrak X(g)}
+ \cB_{\mathfrak m}^{u,v}
+ \bigl((\chi_g\psi)\boxtimes\chi_a,
+       \overline\psi\boxtimes\chi_b\bigr)
+ \notag\\
+ &=\overline{\chi(-h)}
+ \sum_{m,n}c_{m,n}^{(g)}
+ (\chi_g\boxtimes\chi_a)(m)\chi_b(n).
+ \label{eq:exact-rectangularization}
+\end{align}
+There is no conjugation of the \(n\)-character in the last line and no
+remaining factor \(1/\varphi(g)\).
+\end{theorem}
+
+\begin{proof}
+The first equality is the exact shared-factor transform of TPC-21.
+Expanding its right side gives
+\[
+ \sum_{m,n}x_my_n\mathfrak m(m,n)
+ \chi_g(m)\chi_a(m)\chi_b(n)
+ \frac1{\varphi(g)}\sum_{\psi\in\mathfrak X(g)}
+ \psi(m)\overline{\psi(n)}.
+\]
+For \(m,n\in G_g\), the normalized inner sum is
+\(\one_{m\equiv n\ (g)}\).  If \(m\notin G_g\), then
+\(\chi_g(m)=0\).  If \(m\in G_g\) and \(m\equiv n\pmod g\), then
+\(n\in G_g\) automatically.  The zero-extended formula is therefore
+exactly \eqref{eq:exact-rectangularization}.
+\end{proof}
+
+Put
+\[
+ \alpha=\chi_g\boxtimes\chi_a\in\mathfrak X(u),
+ \qquad \beta=\chi_b\in\mathfrak X(b).
+\]
+
+\begin{corollary}[Product coordinates and conductors]
+\label{cor:product-conductors}
+The map \(\chi\mapsto(\alpha,\beta)\) is a bijection
+\begin{equation}
+ \mathfrak X(q)\simeq\mathfrak X(u)\times\mathfrak X(b).
+ \label{eq:character-product}
+\end{equation}
+If \(f_1=\cond\alpha\), \(f_2=\cond\beta\), then
+\begin{equation}
+ \cond\chi=f_1f_2.
+ \label{eq:conductor-product}
+\end{equation}
+The global principal character corresponds exactly to
+\((\mathbf1_u,\mathbf1_b)\).
+\end{corollary}
+
+\begin{proof}
+Since \(q=ub\) and \((u,b)=1\), CRT gives
+\(G_q=G_u\times G_b\), proving the bijection.  Exact conductors on
+coprime factors multiply.  The principal assertion follows locally.
+\end{proof}
+
+There is a symmetric coordinate choice
+\[
+ \mathfrak X(q)\simeq\mathfrak X(a)\times\mathfrak X(v),
+\]
+obtained by assigning the shared \(g\)-character to the second row.
+We use \eqref{eq:character-product}.
+
+\subsection{Why pairwise must not be replaced by global}
+
+For squarefree \(q\), every prime divisor can occur in the first modulus
+only, the second only, or both.  Thus
+\begin{equation}
+ \#\{(u,v):[u,v]=q\}=3^{\omega(q)}.
+ \label{eq:lcm-pair-count}
+\end{equation}
+Restrictions \(u,v\le R\) only reduce this count.  By
+\eqref{eq:centered-pair-sum}, either Minkowski in the fiber norm or
+Cauchy in character energy costs only \(X^{o(1)}\).
+
+The coordinate \(\mathfrak X(u)\times\mathfrak X(b)\) changes with the
+divisor pair.  We first split the scalar or norm into pair contributions,
+then split exact conductors in that pair's coordinates, and only
+afterward collect dyadic conductor sizes.
+
+\subsection{The shared-factor coefficient energy}
+
+\begin{proposition}[Total compatibility-matrix energy]
+\label{prop:compatibility-energy}
+Under \eqref{eq:row-energy} and \eqref{eq:mask-properties},
+\begin{equation}
+ \boxed{\sum_{g\le R}\sum_{m,n}|c_{m,n}^{(g)}|^2
+ \ll_\eps Q^2X^\eps.}
+ \label{eq:compatibility-energy}
+\end{equation}
+The estimate remains true after imposing squarefreeness,
+\((g,H)=1\), or any inherited divisor-pair restriction.
+\end{proposition}
+
+\begin{proof}
+The mask forces \(m\ne n\).  Therefore
+\begin{align*}
+ \sum_{g\le R}\sum_{m,n}|c_{m,n}^{(g)}|^2
+ &\le\sum_{m\ne n}|x_m|^2|y_n|^2\sum_{g\mid m-n}1\\
+ &\le \max_{0<|t|\ll Q}\tau(|t|)
+ \left(\sum_m|x_m|^2\right)
+ \left(\sum_n|y_n|^2\right).
+\end{align*}
+Use \eqref{eq:row-energy} and the divisor bound.  Every omitted
+restriction removes nonnegative summands.
+\end{proof}
+
+If the diagonal \(m=n\) were restored, every \(g\le R\) would divide
+the zero difference.  The divisor-count proof above would then acquire
+an additional diagonal term that must be estimated separately.  In the
+present bounded-weight interface that term is still acceptable, since
+\[
+ R\sum_m|x_my_m|^2
+ \le R\|x\|_\infty^2\|y\|_2^2
+ \ll_\eps RQX^\eps
+ \ll_\eps Q^2X^\eps,
+\]
+where \(R<Q\) follows from \eqref{eq:row-scales} and nonempty integer
+row support.  Thus retaining the
+actual mask is essential for the exact packet identity, but no false
+claim that the diagonal alone breaks the displayed scale is needed.

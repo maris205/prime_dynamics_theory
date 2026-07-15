@@ -1,0 +1,117 @@
+\section{Barriers, order of operations, and strict scope}
+\label{sec:barriers-scope}
+
+The positive theorem depends on several exact choices.  This section
+separates them from tempting but invalid shortcuts.
+
+\subsection{A low-conductor repetition no-go}
+
+The exact-conductor decomposition is not optional.  Set
+\(S\asymp N^{1/2}\), fix a nonprincipal primitive character
+\(\chi_0\bmod f_0\) of fixed squarefree conductor \(f_0>1\), and
+induce it to squarefree moduli \(s=f_0d\asymp S\).  Take
+\[
+ a_n=\overline{\chi_0(n)}\one_{1\le n\le N}.
+\]
+Restrict \(d\) to primes in a fixed dyadic interval, excluding the
+finitely many divisors of \(f_0\).  The prime number theorem and direct
+inclusion--exclusion give
+\[
+ \left|\sum_na_n\chi_s(n)\right|
+ =\sum_{\substack{n\le N\\(n,f_0d)=1}}1
+ =N\frac{\varphi(f_0d)}{f_0d}+O(\tau(f_0d))
+ \gg_{f_0}N.
+\]
+Consequently the weighted sum over these \(d\asymp S/f_0\) has size
+\begin{equation}
+ \gg \frac{N^2}{f_0\log S}.
+ \label{eq:induced-repetition-lower}
+\end{equation}
+An estimate treating these characters as primitive at ambient scale
+would have only \(N^{3/2+o(1)}\) on the
+right.  This is an operator obstruction to the false large sieve, not a
+lower bound for the actual TPC scalar packet.
+
+\subsection{Four orders that cannot be interchanged}
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item \emph{Divisor pair before rectangular coordinates.}
+ Different \((u,v)\) with the same lcm use different products
+ \(\mathfrak X(u)\times\mathfrak X(v/(u,v))\).  A common global
+ \((F_1,F_2)\)-coordinate is not defined.
+
+ \item \emph{Exact conductor before the Ramanujan frequency sum.}
+ Inside one dyadic block, \(c_{q/(f_1f_2)}(r)\) still depends on the
+ exact conductors.  We first apply \eqref{eq:exact-direct-bound} at
+ exact \(f_1,f_2\), then pay the divisor-soft dyadic reassembly.
+
+ \item \emph{Remove zero frequency before
+ \cref{lem:Ramanujan-Fourier}.}
+ If \(r=0\) were included, \(c_s(0)=\varphi(s)\) would destroy
+ \eqref{eq:Fourier-multiples} when \(e>K\).  The selected Poisson packet
+ already has \(r\ne0\).
+
+ \item \emph{Keep the mask before nonlinear energy.}
+ Estimate \eqref{eq:compatibility-energy} uses the actual off-diagonal
+ support.  Deleting the mask before squaring would restore \(m=n\), for
+ which every shared factor divides the difference.
+\end{enumerate}
+
+\subsection{Why this is not a projective-mask theorem}
+
+Some mask components admit inexpensive separated representations, but
+the divisor-gcd cutoff does not automatically have a sufficiently small
+naive projective norm.  The tensor proof avoids the issue:
+\(c_{m,n}^{(g)}\) is arbitrary.  It does require the same matrix while
+the output moduli vary for fixed \(g\).  A mask depending on \(u,v\) or
+\(q\) is therefore not covered without a new argument.
+
+The large shared-factor and moment-diagonal bounds obtainable directly
+from TPC-21 remain useful cross-checks, but they are not needed to
+manufacture the saving here.  The power saving comes from product
+coordinates, the weighted conductor large sieve, and the complementary
+induced-Gauss estimate.
+
+\subsection{Closed and open objects}
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.41\textwidth}
+                >{\raggedright\arraybackslash}p{0.48\textwidth}}
+\toprule
+Object & Status after TPC-22\\
+\midrule
+Ramanujan mean of the selected short--short packet
+& Closed in TPC-21 and imported through
+  \eqref{eq:imported-mean-bound}.\\
+\addlinespace
+Connected discrepancy of the same packet, with the actual
+row-pair-only generic mask
+& Closed in the parameter regions of
+  \cref{thm:main-closure}.\\
+\addlinespace
+One-sided residual terms with \(u>R\) or \(v>R\)
+& Not represented by \eqref{eq:lcm-fiber}; open.\\
+\addlinespace
+Uniform restoration of all earlier normal-form pieces and endpoint
+terms in the full TPC-18 residual
+& Not proved by the selected-packet estimate; open.\\
+\addlinespace
+Hardy--Littlewood asymptotic, twin-prime lower bound, or parity breach
+& Not claimed and not implied.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The phrase \emph{selected short--short closure} always refers to the
+first two rows of this table.  It is not an abbreviation for the full
+residual-dispersion theorem.
+
+\subsection{Parity}
+
+The character tensor supplies cancellation in a previously unresolved
+analytic norm.  It does not alter the sign-insensitivity of the
+underlying upper-bound sieve and does not produce a positive lower bound
+for prime pairs.  Nothing here distinguishes an actual prime-pair main
+term from every parity-compatible surrogate at the final sieve stage.
+The theorem is a rigorous advance inside the TPC normal form, not a
+claim to have crossed the classical parity barrier.

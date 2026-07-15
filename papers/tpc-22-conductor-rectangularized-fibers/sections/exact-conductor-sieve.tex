@@ -1,0 +1,105 @@
+\section{A weighted exact-conductor large sieve}
+\label{sec:exact-conductor-sieve}
+
+The primitive multiplicative large sieve states that, for coefficients
+on an interval of length \(N\),
+\begin{equation}
+ \sum_{f\le T}\frac f{\varphi(f)}
+ \sum_{\chi^*\ (\bmod f)}^*
+ \left|\sum_na_n\chi^*(n)\right|^2
+ \ll (T^2+N)\sum_n|a_n|^2
+ \label{eq:primitive-large-sieve}
+\end{equation}
+\citep[Chapter~7]{IwaniecKowalski2004}.  We need a normalization that
+keeps the exact conductor while the ambient modulus varies.
+
+\begin{theorem}[Weighted exact-conductor large sieve]
+\label{thm:exact-conductor-large-sieve}
+Let \(a_n\) be supported on an interval of length at most \(N\).  Let
+\(s\asymp S\) run over squarefree moduli, and let
+\(\cond\chi\asymp F\) denote a dyadic exact-conductor block, with the
+block \(F=1\) containing only conductor one.  If all parameters are at
+most \(X^{O(1)}\), then
+\begin{equation}
+ \boxed{
+ \sum_{\substack{s\asymp S\\s\ {\rm squarefree}}}
+ \frac1{\varphi(s)}
+ \sum_{\substack{\chi\in\mathfrak X(s)\\\cond\chi\asymp F}}
+ \left|\sum_na_n\chi(n)\right|^2
+ \ll_\eps X^\eps
+ \left(F+\frac NF\right)\sum_n|a_n|^2.}
+ \label{eq:exact-conductor-large-sieve}
+\end{equation}
+The implied constant is uniform in the location of the coefficient
+interval and in \(S\).
+\end{theorem}
+
+\begin{proof}
+First suppose \(F>1\).  If \(\chi\bmod s\) has exact conductor \(f\),
+then \(s=fd\), \((f,d)=1\), and the squarefree hypothesis makes the
+factorization unique.  For the inducing primitive character
+\(\chi^*\bmod f\),
+\begin{equation}
+ \chi(n)=\chi^*(n)\one_{(n,d)=1}.
+ \label{eq:induced-zero-extension}
+\end{equation}
+For fixed \(d\), set \(a_n^{(d)}=a_n\one_{(n,d)=1}\).  The conditions
+\(s\asymp S\), \(f\asymp F\) confine \(d\) to
+\(d\asymp S/F\), up to a bounded dyadic refinement.  Moreover
+\begin{equation}
+ \frac1{\varphi(fd)}
+ =\frac1{fd}\frac f{\varphi(f)}\frac d{\varphi(d)}
+ \ll_\eps \frac{X^\eps}{S}\frac f{\varphi(f)}.
+ \label{eq:exact-conductor-weight}
+\end{equation}
+Dropping coprimality and range restrictions only enlarges the
+nonnegative sum.  Applying \eqref{eq:primitive-large-sieve} in \(f\)
+for each \(d\) gives
+\[
+ \frac{X^\eps}{S}(F^2+N)\sum_n|a_n^{(d)}|^2
+ \le \frac{X^\eps}{S}(F^2+N)\sum_n|a_n|^2.
+\]
+There are \(O(S/F)\) possible \(d\), so the total is
+\[
+ \ll X^\eps \frac{F^2+N}{F}\sum_n|a_n|^2,
+\]
+which is \eqref{eq:exact-conductor-large-sieve}.
+
+For \(F=1\), the only character modulo \(s\) is the principal character
+induced from modulus one.  By Cauchy--Schwarz,
+\[
+ \left|\sum_{(n,s)=1}a_n\right|^2
+ \le N\sum_n|a_n|^2.
+\]
+The standard dyadic estimate
+\(\sum_{s\asymp S}1/\varphi(s)\ll_\eps X^\eps\) then gives
+\[
+ \ll X^\eps N\sum_n|a_n|^2,
+\]
+which is bounded by the right side of
+\eqref{eq:exact-conductor-large-sieve} with \(F=1\).
+\end{proof}
+
+\begin{remark}[Why conductor one matters]
+\label{rem:conductor-one}
+A fixed primitive character is repeated on every ambient modulus to
+which it induces, with an additional coprimality cutoff as in
+\eqref{eq:induced-zero-extension}.  Thus a principle treating all
+nonprincipal characters as primitive characters of size \(S\) is
+false.  The factor \(F+N/F\) retains low-conductor repetition.  In the
+two-dimensional application, blocks with \(F_1=1<F_2\) or
+\(F_2=1<F_1\) are genuine connected modes and must not be deleted.
+\end{remark}
+
+The theorem also has a Hilbert-valued form.  If \(a_n\) takes values in
+a finite-dimensional Hilbert space \(\mathcal H\), then
+\begin{equation}
+ \sum_{s\asymp S}\frac1{\varphi(s)}
+ \sum_{\cond\chi\asymp F}
+ \left\|\sum_na_n\chi(n)\right\|_{\mathcal H}^2
+ \ll_\eps X^\eps\left(F+\frac NF\right)
+ \sum_n\|a_n\|_{\mathcal H}^2.
+ \label{eq:Hilbert-exact-conductor}
+\end{equation}
+Expand in an orthonormal basis, apply
+\cref{thm:exact-conductor-large-sieve} coordinatewise, and sum.

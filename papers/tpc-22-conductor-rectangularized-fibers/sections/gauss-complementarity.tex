@@ -1,0 +1,201 @@
+\section{The direct Gauss--Ramanujan route}
+\label{sec:gauss-complementarity}
+
+The norm route does not use the conductor sensitivity of the additive
+Gauss factor.  We now exploit it before taking a fiber norm.  For
+\(\chi\in\mathfrak X(q)\), define
+\begin{equation}
+ G_q(\chi;t)=\sum_{\xi\in G_q}\chi(\xi)e_q(t\xi).
+ \label{eq:generalized-Gauss}
+\end{equation}
+
+\begin{lemma}[Induced Gauss factor at every frequency]
+\label{lem:induced-Gauss}
+Let \(q\) be squarefree, let \(f=\cond\chi\mid q\), let
+\(\chi^*\bmod f\) induce \(\chi\), and put \(d=q/f\).  Then
+\begin{equation}
+ G_q(\chi;t)=
+ \begin{cases}
+  \overline{\chi^*(t)}\chi^*(d)\tau_f(\chi^*)c_d(t),
+     &(t,f)=1,\\
+  0,&(t,f)>1.
+ \end{cases}
+ \label{eq:induced-Gauss}
+\end{equation}
+Here \(\tau_1(\mathbf1)=1\).  Consequently, for \(f>1\),
+\begin{equation}
+ |G_q(\chi;t)|
+ =\sqrt f\,|c_d(t)|\one_{(t,f)=1}.
+ \label{eq:induced-Gauss-size}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+CRT factors \eqref{eq:generalized-Gauss} into a primitive Gauss sum
+modulo \(f\) and a Ramanujan sum modulo \(d\).  The first factor
+vanishes when \((t,f)>1\); otherwise the usual change of variables
+gives \(\overline{\chi^*(t)}\chi^*(d)\tau_f(\chi^*)\).
+The second factor is \(c_d(t)\).  Primitive Gauss magnitude is
+\(\sqrt f\).
+\end{proof}
+
+Since \((H,q)=1\), replacing \(t\) by \(r\overline H\) does not change
+the condition \((r,f)=1\), and it changes only a unit-modulus character
+phase.
+
+\begin{lemma}[Ramanujan-weighted nonzero frequencies]
+\label{lem:Ramanujan-Fourier}
+If \(s\) is squarefree, \(K>0\), and \(F\) is fixed and smooth with
+rapidly decaying Fourier transform, then
+\begin{equation}
+ \boxed{
+ \sum_{r\ne0}|c_s(r)|\,|\widehat F(r/K)|
+ \ll_F K\tau(s).}
+ \label{eq:Ramanujan-Fourier}
+\end{equation}
+The exclusion of \(r=0\) is essential.
+\end{lemma}
+
+\begin{proof}
+For squarefree \(s\),
+\begin{equation}
+ |c_s(r)|=\varphi((s,r))
+ \le(s,r)=\sum_{e\mid(s,r)}\varphi(e).
+ \label{eq:Ramanujan-gcd}
+\end{equation}
+For every \(e\ge1\), rapid decay gives uniformly in \(K>0\)
+\begin{equation}
+ \sum_{\substack{r\ne0\\e\mid r}}|\widehat F(r/K)|
+ =\sum_{k\ne0}|\widehat F(ke/K)|
+ \ll_F \frac Ke.
+ \label{eq:Fourier-multiples}
+\end{equation}
+When \(e>K\), take two or more powers of decay; this is precisely where
+removing \(r=0\) matters.  Insert \eqref{eq:Ramanujan-gcd}, interchange
+the divisor and frequency sums, and use
+\(\sum_{e\mid s}\varphi(e)/e\le\tau(s)\).
+\end{proof}
+
+\subsection{One exact pair--conductor block}
+
+Fix \(g,a,b\), let \(u=ga\), \(v=gb\), \(q=gab\), and fix exact
+coordinate conductors
+\begin{equation}
+ f_1=\cond\alpha,\qquad f_2=\cond\beta,\qquad
+ f=f_1f_2,\qquad d=\frac qf.
+ \label{eq:exact-coordinate-conductors}
+\end{equation}
+Define
+\begin{equation}
+ A_{g,a,b;f_1,f_2}^2
+ :=|\vartheta_R(u)\vartheta_R(v)|^2
+ \sum_{\substack{\alpha\in\mathfrak X(u),\ \cond\alpha=f_1\\
+                  \beta\in\mathfrak X(b),\ \cond\beta=f_2}}
+ |C_{g,a,b}(\alpha,\beta)|^2.
+ \label{eq:exact-block-amplitude}
+\end{equation}
+By \eqref{eq:conductor-product}, all characters in this block have
+global conductor \(f\).  Let
+\(D_{g,a,b;f_1,f_2}\) be its inverse multiplicative-character transform,
+including the factor \(\vartheta_R(u)\vartheta_R(v)\) and the
+unit-modulus phase \(\overline{\chi(-h)}\), and define
+\begin{equation}
+ S_{g,a,b;f_1,f_2}(r)
+ :=\sum_{\xi\in\cU_q}D_{g,a,b;f_1,f_2}(\xi)
+ e_q(r\overline H\xi).
+ \label{eq:exact-block-additive-transform}
+\end{equation}
+Multiplicative inversion and \cref{lem:induced-Gauss} show that
+\begin{equation}
+ |S_{g,a,b;f_1,f_2}(r)|
+ \le \frac f{\varphi(q)}|c_d(r)|
+ A_{g,a,b;f_1,f_2}.
+ \label{eq:exact-block-S}
+\end{equation}
+Indeed, the number of primitive characters of conductor \(f\) is at
+most \(f\); Cauchy--Schwarz combines its square root with the Gauss
+magnitude \(\sqrt f\) to give exactly \(f\).  Terms with \((r,f)>1\)
+vanish and may be retained harmlessly on the right.
+
+Insert \eqref{eq:exact-block-S} into \eqref{eq:scalar-packet}.  Since
+\((H,d)=1\), multiplicativity gives
+\(|c_H(r)c_d(r)|=|c_{Hd}(r)|\).  Apply
+\cref{lem:Ramanujan-Fourier} with \(s=Hd\) and \(K=Hq/J\).  The factors
+\(J/(Hq)\) and \(Hq/J\) cancel, yielding
+\begin{align}
+ |\cL_{g,a,b;f_1,f_2}|
+ &\ll_{F,H}\frac f{\varphi(q)}\tau(Hd)
+ A_{g,a,b;f_1,f_2}\notag\\
+ &\ll_{F,H,\eps}X^\eps \frac fq
+ A_{g,a,b;f_1,f_2}.
+ \label{eq:exact-direct-bound}
+\end{align}
+The second line uses \(q/\varphi(q)\ll_\eps X^\eps\).  This estimate
+uses all nonzero frequencies, not merely those coprime to \(q\).
+
+\subsection{Dyadic conductor aggregation}
+
+Exact conductors must be split before dyadic aggregation: the
+Ramanujan factor \(c_{q/(f_1f_2)}(r)\) changes with the exact pair
+\((f_1,f_2)\).  The number of exact conductor pairs and lcm divisor
+pairs associated with a fixed squarefree \(q\) is
+\(\tau(q)^{O(1)}\), hence \(X^{o(1)}\).
+
+Sum \eqref{eq:exact-direct-bound} over
+\(f_i\asymp F_i\), over divisor pairs, and over \(q\asymp Y\).
+Weighted Cauchy--Schwarz gives
+\begin{align}
+ \sum \frac{A_{g,a,b;f_1,f_2}}q
+ &\le
+ \left(\sum \frac{A_{g,a,b;f_1,f_2}^2}{\varphi(q)}\right)^{1/2}
+ \left(\sum \frac{\varphi(q)}{q^2}\right)^{1/2}\notag\\
+ &\ll_\eps X^\eps\cE_Y(F_1,F_2)^{1/2}.
+ \label{eq:weighted-q-Cauchy}
+\end{align}
+More explicitly, if \(I=(g,a,b,f_1,f_2)\) is the full summation index,
+then
+\[
+ \sum_I\frac{\varphi(q_I)}{q_I^2}
+ \ll X^\eps\sum_{q\asymp Y}\frac{\varphi(q)}{q^2}
+ \ll X^\eps.
+\]
+There is no factor \(\sqrt Y\).
+
+\begin{theorem}[Direct-Gauss conductor bound]
+\label{thm:direct-Gauss-bound}
+Every nonprincipal dyadic coordinate-conductor block satisfies
+\begin{equation}
+ \boxed{
+ \mathfrak L_Y(F_1,F_2)
+ \ll_\eps X^\eps QF_1F_2
+ \sqrt{\cK_Q(F_1)\cK_Q(F_2)}.}
+ \label{eq:direct-Gauss-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Equations \eqref{eq:exact-direct-bound} and
+\eqref{eq:weighted-q-Cauchy} give
+\[
+ \mathfrak L_Y(F_1,F_2)
+ \ll_\eps X^\eps F_1F_2\cE_Y(F_1,F_2)^{1/2}.
+\]
+Insert \eqref{eq:tensor-energy-bound}.
+\end{proof}
+
+Combining \eqref{eq:tensor-norm-scalar} and
+\eqref{eq:direct-Gauss-bound} for the same object gives the compact
+cell estimate
+\begin{equation}
+ \boxed{
+ \mathfrak L_Y(F_1,F_2)
+ \ll_\eps X^\eps Q
+ \sqrt{\cK_Q(F_1)\cK_Q(F_2)}
+ \min\{\sqrt{JY},F_1F_2\}.}
+ \label{eq:combined-cell-bound}
+\end{equation}
+
+The block \((F_1,F_2)=(1,1)\) is the global principal character and
+belongs to the mean already handled in \eqref{eq:imported-mean-bound}.
+The one-sided blocks \((1,F_2)\) and \((F_1,1)\) with the other
+conductor nontrivial remain in \cref{thm:direct-Gauss-bound}.

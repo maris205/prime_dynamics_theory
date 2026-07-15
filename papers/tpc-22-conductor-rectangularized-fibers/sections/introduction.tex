@@ -1,0 +1,148 @@
+\section{Introduction}
+\label{sec:introduction}
+
+After smooth separation, one-leg completion, and compression of the
+compatible inverse phases, TPC-20 represents a selected short--short
+piece of a primitive M\"obius residual correlation by one finite Fourier
+transform on each unit fiber modulo a squarefree least common multiple
+\citep{WangTPC18,WangTPC20}.  TPC-21 closes the constant, or
+Ramanujan-mean, mode and identifies the centered part exactly as a
+nonprincipal multiplicative-character energy \citep{WangTPC21}.
+
+That energy retains the provenance of both rows, but its initial form
+appears coupled.  If
+\[
+ g=(u,v),\qquad u=ga,\qquad v=gb,\qquad q=[u,v]=gab,
+\]
+then \(g,a,b\) are pairwise coprime and TPC-21 obtains
+\begin{equation}
+ \widehat Z_{u,v}^{\,\mathfrak m,\times}(\chi)
+ =\frac{\overline{\chi(-h)}}{\varphi(g)}
+ \sum_{\psi\in\mathfrak X(g)}
+ \cB_{\mathfrak m}^{u,v}
+ \bigl((\chi_g\psi)\boxtimes\chi_a,
+       \overline\psi\boxtimes\chi_b\bigr).
+ \label{eq:intro-shared-convolution}
+\end{equation}
+The actual generic row-pair mask \(\mathfrak m\) cannot be discarded
+merely to factor \(\cB_{\mathfrak m}\) into two Dirichlet polynomials.
+
+The first observation here is that the convolution is exactly
+rectangular.  Character orthogonality gives
+\begin{equation}
+ \frac1{\varphi(g)}\sum_{\psi\bmod g}
+ \cB_{\mathfrak m}^{u,v}
+ \bigl((\chi_g\psi)\boxtimes\chi_a,
+       \overline\psi\boxtimes\chi_b\bigr)
+ =\sum_{m,n}c_{m,n}\one_{m\equiv n\ (g)}
+   (\chi_g\boxtimes\chi_a)(m)\chi_b(n),
+ \label{eq:intro-rectangularization}
+\end{equation}
+where \(c_{m,n}=x_my_n\mathfrak m(m,n)\).  Since \(q=ub\) and
+\((u,b)=1\),
+\begin{equation}
+ \mathfrak X(q)\simeq\mathfrak X(u)\times\mathfrak X(b),
+ \label{eq:intro-product-coordinates}
+\end{equation}
+and the two exact conductors multiply to \(\cond\chi\).  The shared
+factor remains, correctly, as compatibility inside an arbitrary matrix.
+
+The coordinates in \eqref{eq:intro-product-coordinates} depend on
+\((u,v)\).  Different lcm decompositions of the same \(q\) do not share
+one common rectangle.  We therefore split by divisor pair first, use
+triangle or Cauchy over at most \(3^{\omega(q)}\) pairs, and only then
+rectangularize.  The cost is \(X^{o(1)}\).
+
+\subsection{Two complementary conductor estimates}
+
+For coefficients on an interval of length \(N\), the primitive large
+sieve \citep[Chapter~7]{IwaniecKowalski2004} gives the weighted estimate
+\begin{equation}
+ \sum_{\substack{s\asymp S\\s\ {\rm squarefree}}}\frac1{\varphi(s)}
+ \sum_{\substack{\chi\ (\bmod s)\\\cond\chi\asymp F}}
+ \left|\sum_na_n\chi(n)\right|^2
+ \ll_\eps X^\eps
+ \left(F+\frac NF\right)\sum_n|a_n|^2.
+ \label{eq:intro-exact-conductor-LS}
+\end{equation}
+Conductor one is included, so repeated induced principal characters are
+not silently removed.  Applying this estimate in both coordinates of
+\eqref{eq:intro-rectangularization} works for an arbitrary matrix and
+does not require a rank-one decomposition of the mask.
+
+The second route uses the exact induced Gauss sum.  If
+\(f=\cond\chi\mid q\), \(d=q/f\), and \(q\) is squarefree, then
+\begin{equation}
+ |G_q(\chi;r\overline H)|
+ =\begin{cases}
+   \sqrt f\,|c_d(r)|,&(r,f)=1,\\
+   0,&(r,f)>1.
+  \end{cases}
+ \label{eq:intro-induced-Gauss}
+\end{equation}
+No condition \((r,q)=1\) is imposed.  Rapid Fourier decay gives
+\begin{equation}
+ \sum_{r\ne0}|c_d(r)|
+ \left|\widehat F\left(\frac{rJ}{Hq}\right)\right|
+ \ll_{F,H,\eps}X^\eps\frac qJ\tau(d),
+ \label{eq:intro-Ramanujan-weight}
+\end{equation}
+which cancels the Poisson normalization \(J/q\).  The direct-Gauss
+route is strongest at low coordinate conductor, while the inherited
+fiber-norm route is strongest at high conductor.
+
+\subsection{The saving ledger}
+
+Write
+\[
+ Q=X^{\beta+o(1)},\quad J=X^{1-\beta+o(1)},\quad
+ Y=X^{y+o(1)},\quad F_i=X^{f_i+o(1)},
+\]
+and put \(k_i=\max\{f_i,\beta-f_i\}\).  Relative to
+\(Q^2J=XQ\), the two routes save
+\begin{align}
+ \eta_A&=\frac{\beta+1-y-k_1-k_2}{2},
+ \label{eq:intro-eta-A}\\
+ \eta_B&=1-f_1-f_2-\frac{k_1+k_2}{2}.
+ \label{eq:intro-eta-B}
+\end{align}
+Since \(f_i\le1/2-\delta\) and \(y\le1-2\delta\), a low--low,
+high--high, and mixed split gives
+\begin{equation}
+ \eta_*(\beta,\delta)
+ =\min\left\{
+  1-\frac{3\beta}{2},
+  \frac{\beta+4\delta-1}{2},
+  \frac{6\delta-\beta}{4}
+ \right\}.
+ \label{eq:intro-eta-star}
+\end{equation}
+This certified lower bound is positive in the strict region
+\begin{equation}
+ 1-4\delta<\beta<\min\left\{\frac23,6\delta\right\}.
+ \label{eq:intro-hybrid-region}
+\end{equation}
+It is not claimed to be the exact minimax of the two estimates.
+
+For \(\beta<2\delta\) with a fixed margin, TPC-21 occupancy already
+closes every \(Y\le R^2\); equality has no top-block power margin.  In
+the two actual inherited tail profiles, \(\beta\) ranges from
+\(\log_X(LD_0)\) to \(\log_X(LR^{1/2})\).  The entire interval lies in
+\eqref{eq:intro-hybrid-region} in the strict ranges proved below.
+
+\subsection{Scope and organization}
+
+We close the centered discrepancy for the actual row-pair-only generic
+mask in the selected short--short packet of TPC-20--21.  With the
+already closed mean, this closes that selected packet.  We do not treat
+either residual leg with a divisor exceeding \(R\), prove the full
+TPC-18 residual-dispersion target, obtain a prime-pair asymptotic, or
+breach sieve parity.
+
+\Cref{sec:interface} fixes the packet.  \Cref{sec:rectangularization}
+proves the pairwise identity.  \Cref{sec:exact-conductor-sieve} proves
+\eqref{eq:intro-exact-conductor-LS}; \cref{sec:tensor-energy} tensorizes
+it with the mask retained.  \Cref{sec:gauss-complementarity} proves the
+all-frequency Gauss route, and \cref{sec:exponent-closure} completes the
+conductor and profile ledger.  The final sections record barriers,
+certification, and strict non-results.
