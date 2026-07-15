@@ -1,0 +1,136 @@
+\section{Introduction and claim ledger}
+\label{sec:introduction}
+
+The parity problem is not merely a shortage of numerical cancellation.
+It is a structural failure of ordinary sieve information to distinguish
+integers with an odd or even number of prime factors; see Selberg's
+classical discussion and modern sieve treatments
+\citep{Selberg1952Parity,FI2010}.  The fixed-shift prime-pair problem
+therefore provides a useful stress test for any proposed spectral or
+dynamical reformulation: an attractive change of variables is valuable
+only if every discarded term and every imported distribution theorem
+is made explicit.
+
+TPC-15--TPC-17 follow this discipline for the finite Ramanujan model
+\citep{WangTPC15,WangTPC16,WangTPC17}
+\[
+ \Lambda_R(n)=\sum_{q\le R}\frac{\mu(q)}{\varphi(q)}c_q(n),
+ \qquad r_R(n)=\Lambda(n)-\Lambda_R(n).
+\]
+TPC-17 proves cancellation for an assembled initial divisor segment
+and leaves, on certain symmetric Heath--Brown blocks, the exact
+coefficient
+\[
+ \beta_I(k)=\sum_{\substack{d\mid k\\d\in I}}\mu(d),
+ \qquad I=(D_0,V].
+\]
+It also proves a $TT^*$ stopping theorem for a different, asymmetric
+square-root packet.  The two statements are not interchangeable: the
+asymmetric packet has no factor $\beta_I(k)$, while squaring the latter
+changes both its row geometry and its coefficient class.  The first
+purpose of this paper is to construct the correct quadratic forms
+directly from the symmetric tail.
+
+\subsection{What is proved}
+
+There are four unconditional structural statements within the TPC
+interface.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item The square of the sharp divisor tail has an exact lcm expansion.
+Since $V^2\le R$, its new row label lies back inside the finite-model
+cutoff.  We call this \emph{lcm cutoff return}.
+
+\item If $D_0<V/2$, the associated divisor Gram form has an explicit
+positive lower bound coming from $r\in(V/2,V]$.  When
+$K/V^2\to\infty$, as in the two
+explicit TPC-17 profiles, this yields natural $k$-space $L^2$ mass.
+Thus neither Cauchy--Schwarz nor a claim that the tail coefficient is
+$L^2$-small can remove those remaining packets.  The Gram identity and
+terminal-octave mechanism are classical;
+our contribution is to place them exactly at the TPC-17 stopping gate.
+
+\item A different, $d$-first $TT^*$ expansion produces row moduli
+$m=\ell d$ and determinant $h(m_1-m_2)$.  We remove three degenerate
+families without any distribution theorem.  A failed slice must
+therefore concentrate in the generic channel
+\[
+ \ell_1\ne\ell_2,\qquad
+ |m_1-m_2|>QX^{-\kappa},\qquad
+ (d_1,d_2)\le X^\kappa.
+\]
+
+\item Splitting by $(k,h)$ reveals an exact asymmetry.  In the primitive
+sector the two target values have gcd dividing $\ell_1-\ell_2$.  In
+every nonprimitive sector the interior M\"obius interval cancels
+pointwise and only fixed-ratio endpoint bands remain.  Terms containing
+a target von Mangoldt factor reduce to prime powers, so the surviving
+correlation is, up to a power-saving error at the relevant scale, a
+finite-model correlation with an exact CRT kernel.
+\end{enumerate}
+
+The individual lcm, Gram, and inclusion--exclusion identities are
+classical or elementary.  The contribution claimed here is their exact
+coupling to the TPC-17 tail and the resulting stopping decomposition.
+The combined conclusion is a stopping theorem, not an asymptotic
+formula.  It converts a failed symmetric tail block into either a
+primitive large-determinant/low-gcd residual witness or a nonprimitive
+endpoint finite-model witness.
+
+\subsection{What is not proved}
+
+We do not prove any of the following:
+
+\begin{itemize}
+\item a fixed-$h$ Hardy--Littlewood asymptotic or infinitely many twin
+primes;
+\item cancellation of the primitive generic determinant correlation;
+\item a new level of distribution for primes;
+\item that the sharp M\"obius interval coefficient is well-factorable;
+\item that an exponent appearing in an existing one-prime progression
+theorem can be transplanted to the two-residual correlation here.
+\end{itemize}
+
+Indeed, the last sections explain that a uniform estimate strong enough
+to remove every relevant generic slice, combined with TPC-16 and
+TPC-17, would deliver the fixed-shift Hardy--Littlewood conclusion.
+This is why the remaining statement is recorded as a conditional input
+rather than advertised as a routine consequence of current dispersion
+technology.
+
+\subsection{Relation to classical and current work}
+
+The lcm Gram form belongs to the Selberg-sieve tradition.  Closely
+related M\"obius double sums were studied by
+\citet{DressIwaniecTenenbaum1983} and
+\citet{deLaBretecheDressTenenbaum2020}; smoothing and factorization issues
+are developed systematically by \citet{GranvilleKoukoulopoulosMaynard2021}.
+A recent preprint of \citet{RamareZunigaAlterman2026v3} makes the same
+terminal-octave obstruction especially transparent.  We therefore make
+no novelty claim for the bare Gram identity or its endpoint floor.
+
+For distribution beyond the square-root barrier, the relevant lesson
+from Maynard's published fixed-residue and well-factorable theorems
+\citep{Maynard2025I,Maynard2025II}, and from the more recent preprints
+of \citet{Lichtman2023} and \citet{Li2026v6}, is that coefficient shape
+matters as much as the numerical exponent.  The sharp interval
+$\mu(d)\one_I(d)$ contains isolated large primes and is not covered by
+their balanced factorization hypotheses.  Moreover, their conclusions
+concern one prime in progressions; the object left here is a correlation
+of two residual affine forms.  Kloosterman-fraction estimates such as
+\citet{BettinChandee2018} are important ingredients in dispersion
+arguments but do not, without a new reduction, estimate our
+variable-determinant form.
+
+\subsection{Organization}
+
+\Cref{sec:interface} fixes the inherited block and separates it from
+TPC-17's asymmetric packet.  \Cref{sec:lcm} proves cutoff return.
+\Cref{sec:gram} proves the coefficient no-go theorem.
+\Cref{sec:same-k} develops the first $TT^*$ witness.
+\Cref{sec:opened-d} proves the generic determinant theorem.
+\Cref{sec:content} gives the primitive/nonprimitive split and endpoint
+collapse.  \Cref{sec:crt} derives the finite-model CRT kernel.
+\Cref{sec:stopping} assembles the stopping theorem and states the exact
+conditional closure gate.  \Cref{sec:computation} describes the finite
+certificate and summarizes the boundary.

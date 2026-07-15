@@ -1,0 +1,124 @@
+\section{Divisor Gram positivity and the terminal-octave floor}
+\label{sec:gram}
+
+For a finitely supported sequence $u=(u_d)$, define
+\begin{equation}
+ \cQ(u)=\sum_{d,e}\frac{u_d\overline{u_e}}{[d,e]}.
+ \label{eq:Gram-Q}
+\end{equation}
+
+\begin{lemma}[Selberg divisor Gram factorization]
+\label{lem:Gram-factorization}
+For every finitely supported $u$,
+\begin{equation}
+ \boxed{\quad
+ \cQ(u)=\sum_{r\ge1}\varphi(r)
+ \left|\sum_{r\mid d}\frac{u_d}{d}\right|^2\ge0.
+ \quad}
+ \label{eq:Gram-factorization}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Use
+\[
+ \frac1{[d,e]}=\frac{(d,e)}{de}
+ =\frac1{de}\sum_{r\mid(d,e)}\varphi(r)
+\]
+and interchange the finite sums.
+\end{proof}
+
+Take $u_d=\mu(d)\one_{d\in I}$ and write
+\begin{equation}
+ Q_I=\sum_{d,e\in I}\frac{\mu(d)\mu(e)}{[d,e]}.
+ \label{eq:QI}
+\end{equation}
+
+\begin{theorem}[Terminal-octave rigidity]
+\label{thm:terminal-octave}
+If $D_0<V/2$, then
+\begin{align}
+ Q_I
+ &\ge\sum_{V/2<r\le V}\frac{\mu(r)^2\varphi(r)}{r^2}
+ \label{eq:terminal-octave-finite}\\
+ &=C_{\mathrm{sf}}\log2+o(1),
+ \qquad
+ C_{\mathrm{sf}}=\prod_p
+ \left(1-\frac2{p^2}+\frac1{p^3}\right)>0.
+ \label{eq:terminal-octave-asymptotic}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+In \eqref{eq:Gram-factorization}, retain only $V/2<r\le V$.
+The only multiple of such an $r$ not exceeding $V$ is $d=r$; because
+$D_0<V/2$, it belongs to $I$.  This proves
+\eqref{eq:terminal-octave-finite}.
+
+For completeness, put $a(n)=\mu(n)^2\varphi(n)/n$.  Its mean value is
+\[
+ \prod_p(1-p^{-1})\left(1+\frac{1-p^{-1}}p\right)
+ =\prod_p\left(1-2p^{-2}+p^{-3}\right)=C_{\mathrm{sf}}.
+\]
+Standard mean-value theory for multiplicative functions, followed by
+partial summation, gives
+\[
+ \sum_{y<r\le z}\frac{a(r)}r
+ =C_{\mathrm{sf}}\log(z/y)+o(1)
+\]
+when $z/y$ is fixed and $y\to\infty$.  Take $y=V/2$, $z=V$.
+\end{proof}
+
+The finite-$K$ meaning of this Gram mass is exact up to an elementary
+lattice error.
+
+\begin{proposition}[Weighted second moment]
+\label{prop:weighted-second-moment}
+Let $w\in C_c^1((0,\infty))$.  Then
+\begin{equation}
+ \sum_{k\ge1}\beta_I(k)^2w(k/K)
+ =K I_0(w)Q_I+O_w(V^2),
+ \qquad I_0(w)=\int_0^\infty w(t)\,dt.
+ \label{eq:weighted-beta-second-moment}
+\end{equation}
+In particular, if $w\ge0$, $I_0(w)>0$, $D_0<V/2$, and
+$K/V^2\to\infty$, then
+\begin{equation}
+ \sum_k\beta_I(k)^2w(k/K)\gg_w K.
+ \label{eq:beta-natural-L2}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:lcm-transform} and use
+\[
+ \sum_jw(qj/K)=\frac Kq I_0(w)+O_w(1).
+\]
+The main coefficient is
+\[
+ \sum_q\frac{\Gamma_I(q)}q
+ =\sum_{d,e\in I}\frac{\mu(d)\mu(e)}{[d,e]}=Q_I,
+\]
+while \eqref{eq:Gamma-l1} bounds the total error by $O_w(V^2)$.
+The final assertion follows from \cref{thm:terminal-octave}.
+\end{proof}
+
+\begin{remark}[A rigorous coefficient-shape obstruction]
+Suppose $D_0<\sqrt V$ and let $p\in(\sqrt V,V]$ be prime.  Then
+$\mu(p)\one_I(p)=-1$.  On the other hand, if $a$ and $b$ are both
+supported on $[1,\sqrt V]$, then $(a*b)(p)=0$.  Hence the exact sharp
+coefficient $\mu(d)\one_I(d)$ cannot be a finite linear combination of
+such balanced convolutions.  This elementary observation does not rule
+out every notion of factorability, but it does rule out the balanced
+shape needed for a direct invocation of the current well-factorable
+distribution theorems.  Together with \eqref{eq:beta-natural-L2}, it
+shows why neither a formal factor split nor coefficient $L^2$ smallness
+closes the tail.
+\end{remark}
+
+The identities in this section are classical Selberg diagonalization.
+The endpoint floor has close precedents in
+\citet{DressIwaniecTenenbaum1983,deLaBretecheDressTenenbaum2020,RamareZunigaAlterman2026v3}.
+The new role here is diagnostic: it identifies which tempting route at
+the TPC-17 tail gate is unavailable before any prime-correlation
+estimate is attempted.

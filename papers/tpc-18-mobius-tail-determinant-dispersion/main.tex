@@ -1,0 +1,145 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Two Quadraticizations of a Mobius Tail: LCM Cutoff Return, Generic Row Determinants, and Nonprimitive Endpoint Collapse},
+ pdfauthor={Liang Wang},
+ pdfsubject={A rigorous stopping theorem for the unresolved Mobius tail at a fixed-shift Type-II prime-pair gate},
+ pdfkeywords={Mobius tail, Linnik dispersion, TT star, least common multiple, determinant, sieve parity, twin primes}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Conditional input}
+\crefname{assumption}{Conditional input}{Conditional inputs}
+\Crefname{assumption}{Conditional input}{Conditional inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rad}{\operatorname{rad}}
+
+\title{\textbf{Two Quadraticizations of a M\texorpdfstring{$\ddot{\mathrm{o}}$}{o}bius Tail:}\\
+\textbf{LCM Cutoff Return, Generic Row Determinants,}\\
+\textbf{and Nonprimitive Endpoint Collapse}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Fix $h\ne0$.  TPC-17 reduces a family of symmetric fixed-shift
+Type-II blocks to the sharp M\"obius tail
+\[
+ \beta_I(k)=\sum_{\substack{d\mid k\\D_0<d\le V}}\mu(d),
+ \qquad I=(D_0,V],
+\]
+but its separate $TT^*$ theorem concerns an asymmetric packet and
+cannot be spliced into this tail.  We construct two quadraticizations
+inside the symmetric tail block itself.
+
+The first is an exact least-common-multiple transform
+\[
+ \beta_I(k)^2=\sum_{q\mid k}\Gamma_I(q),
+ \qquad
+ \Gamma_I(q)=\sum_{[d_1,d_2]=q}\mu(d_1)\mu(d_2).
+\]
+Because $V^2\le R$, every squared-tail row returns to the original
+Ramanujan cutoff $q\le R$.  If $D_0<V/2$, Selberg's classical divisor
+Gram factorization gives a positive terminal-octave Gram floor and, when
+$K/V^2\to\infty$ as in the explicit TPC-17 profiles, natural
+$k$-space $L^2$ mass; coefficient smallness cannot close it.  The second
+quadraticization first fixes $d\asymp D$, opens $k=dj$, and applies
+$TT^*$ in $j$.  With $m=\ell d$, $Q=LD$, and $J=K/D$, the determinant
+is $h(m_1-m_2)$.  We prove by elementary counting that the same-source,
+small-determinant, and large-$(d_1,d_2)$ channels are all negligible.
+Thus failure of a tail slice forces a quantitatively large correlation
+with distinct prime sources, large determinant, and low divisor gcd.
+
+There is a further exact split by $s=(k,h)$.  In every nonprimitive
+sector $s>1$, writing $H=\rad(s)$ gives
+\[
+ \beta_I(k)=\sum_{\substack{e\mid k\\(e,H)=1}}\mu(e)
+ \sum_{f\mid H}\mu(f)\one_{D_0<ef\le V},
+\]
+and the inner coefficient is supported only on
+$(D_0/H,D_0]\cup(V/H,V]$.  Hence the whole interior tail cancels
+pointwise.  Moreover, up to a negligible prime-power term, the
+nonprimitive residual correlation is a finite-model--finite-model
+correlation governed by three explicit Chinese-remainder conditions.
+
+These results identify a sharper stopping point; they do not estimate
+the remaining primitive generic correlation.  We state a conditional
+determinant-dispersion input that would close the tail and explain why,
+under an explicit all-block cover hypothesis for the previous normal form, it reaches
+the fixed-shift Hardy--Littlewood problem.  No twin-prime theorem, new
+level of distribution, or breach of sieve parity is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius tail; fixed-shift prime
+correlations; $TT^*$ dispersion; least common multiples; divisor Gram
+forms; affine determinants; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary
+11N05, 11N13, 11L07.
+
+\input{sections/introduction}
+\input{sections/tail-interface}
+\input{sections/lcm-cutoff-return}
+\input{sections/gram-floor}
+\input{sections/same-k-ttstar}
+\input{sections/opened-d-dispersion}
+\input{sections/content-endpoints}
+\input{sections/finite-model-crt}
+\input{sections/stopping-closure}
+\input{sections/computation-conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

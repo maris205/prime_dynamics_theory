@@ -1,0 +1,320 @@
+{
+  "all_checks_passed": true,
+  "beta_squared_lcm_transform": {
+    "failure_count": 0,
+    "identity_holds": true,
+    "k_range": [
+      1,
+      1296
+    ]
+  },
+  "certificate": "TPC-18 exact finite Mobius-tail determinant certificate",
+  "degenerate_channel_counts": {
+    "all_counting_checks_hold": true,
+    "d_values": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "determinant_window": 3,
+    "distinct_source_equal_slope_failure_count": 0,
+    "ell_values": [
+      37,
+      41,
+      43,
+      47
+    ],
+    "gcd_q_equals_gcd_d_failure_count": 0,
+    "gcd_threshold": 3,
+    "generic_remainder_count": 610,
+    "large_gcd_away_from_near": {
+      "divisor_union_bound": 204,
+      "exact_count": 144
+    },
+    "min_source_exceeds_max_d": true,
+    "near_determinant": {
+      "exact_count": 14,
+      "integer_interval_bound": 256
+    },
+    "ordered_off_diagonal_pairs": 992,
+    "partition_total": 992,
+    "same_source": {
+      "exact_count": 224,
+      "formula_count": 224
+    },
+    "source_primes_verified": true
+  },
+  "endpoint_floor": {
+    "finite_inequality_holds": true,
+    "gram": {
+      "denominator": 6545,
+      "numerator": 3354,
+      "text": "3354/6545"
+    },
+    "interpretation": "a finite nonnegative-coordinate lower bound, not an asymptotic",
+    "terminal_floor": {
+      "denominator": 130310230050,
+      "numerator": 41071395601,
+      "text": "41071395601/130310230050"
+    },
+    "terminal_indices": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "terminal_singleton_failure_count": 0
+  },
+  "excluded_claims": [
+    "no estimate of a residual-prime correlation",
+    "no asymptotic distribution theorem for primes",
+    "no fixed-shift Hardy--Littlewood asymptotic",
+    "no evidence for the twin-prime conjecture",
+    "no Kloosterman or spectral cancellation estimate"
+  ],
+  "finite_box_sum": {
+    "K": 840,
+    "K_times_gram": {
+      "denominator": 187,
+      "numerator": 80496,
+      "text": "80496/187"
+    },
+    "direct_integer_sum": 431,
+    "elementary_absolute_boundary_bound": 49,
+    "exact_boundary_term": {
+      "denominator": 187,
+      "numerator": 101,
+      "text": "101/187"
+    },
+    "gamma_floor_sum": 431,
+    "gamma_l1_absolute_boundary_bound": 43,
+    "identity_holds": true
+  },
+  "finite_ttstar": {
+    "array_kind": "synthetic deterministic integers; not prime data",
+    "cauchy_slack": 290566,
+    "column_sums": [
+      69,
+      135,
+      82,
+      -90,
+      -24,
+      -26,
+      108
+    ],
+    "d_values": [
+      7,
+      10,
+      11,
+      13,
+      14,
+      15,
+      17
+    ],
+    "diagonal": 44238,
+    "ell_values": [
+      37,
+      41,
+      43
+    ],
+    "energy": 50726,
+    "finite_cauchy_identity_holds": true,
+    "full_gram": 50726,
+    "j_values": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "off_diagonal": 6488,
+    "pair_difference_sum": 290566,
+    "total_sum": 254,
+    "ttstar_identity_holds": true
+  },
+  "gamma_inversion_and_gab": {
+    "direct_equals_inversion_equals_gab": true,
+    "failure_count": 0,
+    "gab_hypotheses": "g, a, b are squarefree and pairwise coprime",
+    "nonsquarefree_support_failure_count": 0,
+    "nonzero_gamma": {
+      "10": 1,
+      "105": -2,
+      "11": 1,
+      "110": -2,
+      "119": 2,
+      "13": 1,
+      "130": -2,
+      "14": -1,
+      "143": 2,
+      "15": 1,
+      "154": -2,
+      "165": -2,
+      "17": 1,
+      "170": -2,
+      "182": -2,
+      "187": 2,
+      "195": -2,
+      "210": 2,
+      "221": 2,
+      "238": -2,
+      "255": -2,
+      "30": 2,
+      "7": 1,
+      "77": 2,
+      "91": 2
+    },
+    "q_range": [
+      1,
+      324
+    ]
+  },
+  "generalized_crt_compatibility": {
+    "compatibility_and_unique_class_hold": true,
+    "compatible_count": 760,
+    "conditions": [
+      "gcd(ell_1,u)=gcd(ell_2,v)=1",
+      "gcd(q,u) divides h",
+      "gcd(q,v) divides h",
+      "gcd(u,v) divides h*(ell_1-ell_2)"
+    ],
+    "ell_1": 11,
+    "ell_2": 13,
+    "failure_count": 0,
+    "h": 6,
+    "incompatible_count": 240,
+    "q_u_v_range": [
+      1,
+      10
+    ],
+    "source_coprimality_hypothesis_verified": true,
+    "test_count": 1000
+  },
+  "gram_fraction_identity": {
+    "direct_lcm_sum": {
+      "denominator": 6545,
+      "numerator": 3354,
+      "text": "3354/6545"
+    },
+    "identity_holds": true,
+    "selberg_square_sum": {
+      "denominator": 6545,
+      "numerator": 3354,
+      "text": "3354/6545"
+    }
+  },
+  "nonprimitive_endpoint_collapse": {
+    "H_radicals": [
+      2,
+      3,
+      6
+    ],
+    "h": 6,
+    "identity_and_support_hold": true,
+    "identity_failure_count": 0,
+    "sectors": {
+      "2": {
+        "identity_failure_count": 0,
+        "nonzero_omega": {
+          "10": 1,
+          "11": 1,
+          "12": 1,
+          "13": 1,
+          "14": 1,
+          "15": 1,
+          "16": 1,
+          "17": 1,
+          "18": 1,
+          "4": -1,
+          "5": -1,
+          "6": -1
+        },
+        "support_failure_count": 0,
+        "tested_k_count": 120
+      },
+      "3": {
+        "identity_failure_count": 0,
+        "nonzero_omega": {
+          "10": 1,
+          "11": 1,
+          "12": 1,
+          "13": 1,
+          "14": 1,
+          "15": 1,
+          "16": 1,
+          "17": 1,
+          "18": 1,
+          "3": -1,
+          "4": -1,
+          "5": -1,
+          "6": -1,
+          "7": 1,
+          "8": 1,
+          "9": 1
+        },
+        "support_failure_count": 0,
+        "tested_k_count": 60
+      },
+      "6": {
+        "identity_failure_count": 0,
+        "nonzero_omega": {
+          "10": 1,
+          "11": 1,
+          "12": 1,
+          "13": 1,
+          "14": 1,
+          "15": 1,
+          "16": 1,
+          "17": 1,
+          "18": 1,
+          "2": 1,
+          "4": -2,
+          "5": -2,
+          "6": -2
+        },
+        "support_failure_count": 0,
+        "tested_k_count": 60
+      }
+    },
+    "support_description": "(D0/H,D0] union (V/H,V]",
+    "support_failure_count": 0,
+    "tested_k_count": 240,
+    "tested_k_range": [
+      1,
+      360
+    ]
+  },
+  "parameters": {
+    "D0": 6,
+    "V": 18,
+    "q_limit": 324,
+    "tail_interval": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ]
+  },
+  "prime_asymptotic_evidence": false,
+  "scope": "exact finite integer/rational identities and elementary counts only"
+}

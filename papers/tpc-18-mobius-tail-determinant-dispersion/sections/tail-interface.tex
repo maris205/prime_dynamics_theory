@@ -1,0 +1,106 @@
+\section{The symmetric-tail interface}
+\label{sec:interface}
+
+Fix $h\in\Z\setminus\{0\}$ and $0<\delta<1/2$.  Throughout,
+\begin{equation}
+ R=\lfloor X^{1/2-\delta}\rfloor,
+ \qquad
+ V=\lfloor R^{1/2}\rfloor.
+ \label{eq:RV}
+\end{equation}
+Let $W\in C_c^\infty((0,\infty);\R)$ and let
+$\psi\in C_c^\infty([1/2,2];[0,1])$.  We use the finite model
+\begin{equation}
+ \Lambda_R(n)=\sum_{q\le R}\frac{\mu(q)}{\varphi(q)}c_q(n),
+ \qquad
+ r_R(n)=\Lambda(n)-\Lambda_R(n),
+ \label{eq:finite-model}
+\end{equation}
+where $c_q$ is the Ramanujan sum.  The elementary divisor expansion
+used in TPC-16 \citep{WangTPC16} gives, uniformly for $n\asymp X$ and
+every $\eps>0$,
+\begin{equation}
+ |\Lambda_R(n)|+|r_R(n)|\ll_{\eps,h,W,\delta}X^\eps.
+ \label{eq:soft-pointwise}
+\end{equation}
+
+Let $D_0<V$ and put
+\begin{equation}
+ I=(D_0,V]\cap\N,
+ \qquad
+ \beta_I(k)=\sum_{\substack{d\mid k\\d\in I}}\mu(d).
+ \label{eq:beta-I}
+\end{equation}
+For dyadic $L,K$ satisfying
+\begin{equation}
+ LK\asymp_WX,\qquad L>2R,\qquad K>2V,
+ \label{eq:block-geometry}
+\end{equation}
+define the symmetric tail block
+\begin{equation}
+ \cT_{L,K}(I)
+ =\sum_{\ell,k\ge1}
+ \Lambda(\ell)\beta_I(k)r_R(\ell k+h)
+ W(\ell k/X)\psi(\ell/L)\psi(k/K).
+ \label{eq:tail-block}
+\end{equation}
+The lower conditions $\ell>R$ and $k>V$ are automatic on the support.
+This is precisely the tail normal form furnished by the assembled-prefix
+theorem of TPC-17 on each block satisfying its published or explicitly
+version-locked distribution hypotheses \citep{WangTPC17}.
+
+\begin{remark}[No asymmetric splice]
+\label{rem:no-splice}
+TPC-17 also studies an asymmetric packet with coefficient $1$ in the
+$k$ variable.  Its $TT^*$ theorem does not apply to
+\eqref{eq:tail-block}: replacing $1$ by $\beta_I(k)$ changes the squared
+weight and creates an lcm row label.  Every quadratic form below is
+derived anew from \eqref{eq:tail-block}.
+\end{remark}
+
+Let $\cT^{\mathbb P}_{L,K}(I)$ be the restriction of
+\eqref{eq:tail-block} to prime $\ell$, with source weight $\log\ell$.
+The source prime powers are negligible before either quadraticization.
+
+\begin{lemma}[Prime-source reduction]
+\label{lem:source-primes}
+For every fixed $\eps>0$,
+\begin{equation}
+ \cT_{L,K}(I)-\cT^{\mathbb P}_{L,K}(I)
+ \ll_{\eps,h,W,\psi,\delta}XL^{-1/2}X^\eps.
+ \label{eq:source-power-error}
+\end{equation}
+In particular this has arbitrary logarithmic saving when
+$L\ge X^{\lambda_0}$ for some fixed $\lambda_0>0$.
+\end{lemma}
+
+\begin{proof}
+The elementary bound $|\beta_I(k)|\le\tau(k)\ll_\eps X^\eps$ holds
+on the support.  The total von Mangoldt weight of prime powers
+$p^a\asymp L$, $a\ge2$, is $O_\eps(L^{1/2+\eps})$.  For each such
+source there are $O_W(K)$ possible $k$, and
+\eqref{eq:soft-pointwise} applies.  Hence the omitted contribution is
+\[
+ \ll L^{1/2+\eps}KX^{2\eps}
+ \ll_W XL^{-1/2}X^{3\eps},
+\]
+after using $LK\asymp_WX$ and renaming $3\eps$.
+\end{proof}
+
+We henceforth write
+\begin{equation}
+ \lambda_\ell=(\log\ell)\one_{\ell\ \mathrm{prime}}\psi(\ell/L),
+ \qquad
+ A_{\ell,k}=r_R(\ell k+h)W(\ell k/X)\psi(k/K),
+ \label{eq:lambda-A}
+\end{equation}
+so that
+\begin{equation}
+ \cT^{\mathbb P}_{L,K}(I)
+ =\sum_k\beta_I(k)S_k,
+ \qquad
+ S_k=\sum_\ell\lambda_\ell A_{\ell,k}.
+ \label{eq:tail-Sk}
+\end{equation}
+All weights and subsequent correlations are real.  Absolute values are
+retained in inequalities only for estimates.

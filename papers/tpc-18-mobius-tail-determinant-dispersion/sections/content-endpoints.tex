@@ -1,0 +1,156 @@
+\section{Primitive content and nonprimitive endpoint collapse}
+\label{sec:content}
+
+The determinant is only part of the common-divisor geometry.  For a
+given $k$, put
+\begin{equation}
+ s=(k,h),\qquad k=sk',\qquad h=sh',\qquad(k',h')=1.
+ \label{eq:content-decomposition}
+\end{equation}
+
+\begin{proposition}[Target gcd geometry]
+\label{prop:target-gcd}
+For distinct source primes $\ell_1,\ell_2$ there exists
+$t\mid(\ell_1-\ell_2)$ such that
+\begin{equation}
+ \gcd(\ell_1k+h,\ell_2k+h)=s\,t.
+ \label{eq:target-gcd}
+\end{equation}
+In particular, on the primitive sector $(k,h)=1$,
+\begin{equation}
+ \gcd(\ell_1k+h,\ell_2k+h)\mid|\ell_1-\ell_2|.
+ \label{eq:primitive-target-gcd}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+After removing $s$, the two target values are
+$\ell_i k'+h'$.  Their gcd divides their difference
+$(\ell_1-\ell_2)k'$.  It is coprime to $k'$, because
+$\gcd(\ell_i k'+h',k')=(h',k')=1$.  Hence it divides
+$\ell_1-\ell_2$.  Restoring $s$ proves the formula.
+\end{proof}
+
+For the lcm row $k=qj$, knowing $(q,h)$ alone does not determine the
+content.  Indeed, with $s_0=(q,h)$,
+\begin{equation}
+ (qj,h)=s_0\gcd\!\left(j,\frac h{s_0}\right).
+ \label{eq:qj-content}
+\end{equation}
+Thus a complete content split must also separate the finitely many
+divisors of $h/s_0$.  Since $h$ is fixed, this costs no power of
+$\log X$.
+
+The M\"obius coefficient undergoes an exact cancellation on every
+nonprimitive sector.
+
+\begin{theorem}[Nonprimitive endpoint collapse]
+\label{thm:endpoint-collapse}
+Let $s=(k,h)>1$ and $H=\rad(s)$.  Then
+\begin{equation}
+ \boxed{\quad
+ \beta_I(k)=
+ \sum_{\substack{e\mid k\\(e,H)=1}}\mu(e)\Omega_H(e),
+ \qquad
+ \Omega_H(e)=\sum_{f\mid H}\mu(f)
+ \one_{D_0<ef\le V}.
+ \quad}
+ \label{eq:endpoint-collapse}
+\end{equation}
+Moreover,
+\begin{equation}
+ \boxed{\quad
+ \supp\Omega_H\subset
+ (D_0/H,D_0]\cup(V/H,V].
+ \quad}
+ \label{eq:endpoint-support}
+\end{equation}
+Thus the full interior $D_0<e\le V/H$ cancels pointwise.
+\end{theorem}
+
+\begin{proof}
+Since $H\mid k$, every squarefree divisor $d\mid k$ has a unique
+factorization $d=ef$ with $f\mid H$ and $(e,H)=1$.  The two factors are
+coprime, so $\mu(d)=\mu(e)\mu(f)$.  Inserting the interval condition on
+$d$ proves \eqref{eq:endpoint-collapse}.
+
+If $e\le D_0/H$, then $ef\le D_0$ for every $f\mid H$, so
+$\Omega_H(e)=0$.  If $D_0<e\le V/H$, every $f\mid H$ satisfies
+$D_0<ef\le V$, and
+\[
+ \Omega_H(e)=\sum_{f\mid H}\mu(f)=0
+\]
+because $H>1$.  Finally $e>V$ gives no admissible $f$.  The only
+remaining possibilities lie in the two intervals in
+\eqref{eq:endpoint-support}.  The intervals may overlap, which causes
+no problem.
+\end{proof}
+
+Because $s\mid h$, one has $H\le|h|$.  Hence each surviving interval
+has a fixed multiplicative width depending only on $h$.  This is a
+strict pointwise identity, not an average cancellation statement.
+After squaring \eqref{eq:endpoint-collapse}, every nonprimitive
+$\beta_I(k)^2$ is assembled from two endpoint divisor labels
+$e_1,e_2$ in the same fixed union.
+
+We now show that a nonprimitive residual pair contains no genuinely new
+target-prime correlation.  For $s\mid h$, define
+\begin{align}
+ \cC_{I,s}^{\mathrm{off}}
+ :={}&\sum_{\ell_1\ne\ell_2}
+ \lambda_{\ell_1}\lambda_{\ell_2}
+ \sum_{\substack{k\\(k,h)=s}}
+ \beta_I(k)^2r_R(n_1)r_R(n_2)
+ \cW_{\ell_1,\ell_2}(k),
+ \label{eq:sector-residual-correlation}\\
+ n_i:={}&\ell_i k+h,
+ \notag
+\end{align}
+and let $\cC_{I,s}^{MM,\mathrm{off}}$ be the same expression with
+$r_R(n_1)r_R(n_2)$ replaced by
+$\Lambda_R(n_1)\Lambda_R(n_2)$.
+
+\begin{theorem}[Nonprimitive finite-model reduction]
+\label{thm:nonprimitive-MM}
+For each fixed divisor $s>1$ of $h$ and every $\eps>0$,
+\begin{equation}
+ \boxed{\quad
+ \cC_{I,s}^{\mathrm{off}}
+ =\cC_{I,s}^{MM,\mathrm{off}}
+ +O_{\eps,h,W,\psi}(LX^\eps).
+ \quad}
+ \label{eq:nonprimitive-MM}
+\end{equation}
+The coefficient in the finite-model correlation is endpoint-localized
+by \eqref{eq:endpoint-collapse}--\eqref{eq:endpoint-support}.
+\end{theorem}
+
+\begin{proof}
+Expand
+\begin{align*}
+ r_R(n_1)r_R(n_2)
+ ={}&\Lambda(n_1)\Lambda(n_2)
+ -\Lambda(n_1)\Lambda_R(n_2)
+ -\Lambda_R(n_1)\Lambda(n_2)\\
+ &+\Lambda_R(n_1)\Lambda_R(n_2).
+\end{align*}
+Choose a prime $p\mid s$.  Since $p\mid k$ and $p\mid h$, both
+$n_i$ are divisible by $p$.  If $\Lambda(n_i)\ne0$, then
+$n_i=p^\nu$.  On the fixed multiplicative support $n_i\asymp_WX$,
+there are $O_{h,W}(1)$ possible exponents $\nu$.  The equation
+\[
+ \ell_i k=p^\nu-h
+\]
+has $O_\eps(X^\eps)$ factor pairs.  Once one target von Mangoldt factor
+is fixed in this way, the other source variable has $O(L)$ choices.
+The soft bounds for $\beta_I$ and $\Lambda_R$, and all logarithmic
+weights, are absorbed into another $X^\eps$.  Thus every term containing
+at least one target $\Lambda$ is $O_{\eps,h,W,\psi}(LX^\eps)$.
+Only the last finite-model product remains.
+\end{proof}
+
+\begin{remark}
+Endpoint localization does not imply that the endpoint correlation is
+small.  It changes its algebraic type and removes the interior interval;
+an estimate for the remaining finite-model lattice sum is still needed.
+\end{remark}

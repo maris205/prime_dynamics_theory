@@ -1,0 +1,74 @@
+\section{Finite certificate and conclusion}
+\label{sec:computation}
+
+The accompanying script
+\texttt{experiments/tpc18\_certificate.py} performs exact finite checks
+of the algebraic layer.  It verifies:
+
+\begin{enumerate}
+\item the lcm transform \eqref{eq:lcm-transform}, its M\"obius
+inversion, and the $g,a,b$ parameterization;
+\item the Gram identity \eqref{eq:Gram-factorization} using rational
+arithmetic and the exact finite-box identity
+\[
+ \sum_{k\le K}\beta_I(k)^2
+ =\sum_q\Gamma_I(q)\left\lfloor\frac Kq\right\rfloor;
+\]
+\item the terminal-octave lower bound and a numerical partial Euler
+product for $C_{\mathrm{sf}}$;
+\item endpoint collapse for several nonprimitive contents;
+\item the three CRT compatibility conditions by exhaustive residue
+enumeration;
+\item a finite matrix $TT^*$ identity and elementary tuple counts for
+the same-source, near-determinant, and large-gcd channels.
+\end{enumerate}
+
+The generated JSON file records all parameters and results.  These
+checks are deterministic regression tests for exact identities.  They
+are not numerical evidence for a prime-pair asymptotic, for
+\eqref{eq:DD}, or for the twin-prime conjecture.
+
+\subsection{What moved forward}
+
+TPC-17 ended with a sharp M\"obius tail but no quadratic form adapted
+to that coefficient.  The present paper supplies two such forms and
+proves that they reveal different, compatible information:
+\begin{equation}
+ \begin{array}{ccl}
+ \text{same-$k$ square}
+ &\Longrightarrow& q=[d_1,d_2]\le V^2\le R,
+ \quad\text{explicit lcm/CRT cells},\\[0.3em]
+ \text{$d$-first square}
+ &\Longrightarrow& m_i=\ell_i d_i>R,
+ \quad h(m_1-m_2),\ \text{generic determinant channel}.
+ \end{array}
+ \label{eq:two-quadraticizations-summary}
+\end{equation}
+The first route also proves a coefficient no-go result: the terminal
+octave carries nonvanishing Gram mass.  The second route removes three
+large but elementary degeneracies.  The content split then shows that
+nonprimitive sectors are not simply smaller copies of the primitive
+problem: their interior tail cancels exactly and their target-prime
+terms collapse to sparse prime powers.
+
+The remaining primitive large-determinant/low-gcd correlation is a
+sharper and more testable gate than the undifferentiated tail.  It is
+also honestly hard: a uniform bound at all necessary row exponents,
+combined with the preceding papers, reaches the fixed-shift
+Hardy--Littlewood asymptotic.  Future progress can therefore proceed in
+three falsifiable directions:
+\begin{itemize}
+\item exploit additional factor shapes inside the generic channel
+without claiming coverage of the sharp tail as a whole;
+\item transform the variable determinant through dispersion,
+reciprocity, Poisson summation, and a Kuznetsov-type spectral step, with
+every incomplete-period error retained;
+\item first prove an averaged-shift or restricted-determinant theorem,
+then state precisely what extra uniformity is missing at fixed $h$.
+\end{itemize}
+
+Any one of these may yield a partial positive theorem or a rigorous
+no-go result.  What has been gained here is a stable junction at which
+such alternatives no longer conceal one another.  No parity barrier has
+been broken, but a broad unresolved packet has been reduced to two
+explicit and structurally different obstructions.

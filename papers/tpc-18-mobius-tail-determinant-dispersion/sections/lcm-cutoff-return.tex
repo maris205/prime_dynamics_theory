@@ -1,0 +1,104 @@
+\section{The lcm square map and cutoff return}
+\label{sec:lcm}
+
+Define the lcm coefficient
+\begin{equation}
+ \Gamma_I(q)=
+ \sum_{\substack{d_1,d_2\in I\\{}[d_1,d_2]=q}}
+ \mu(d_1)\mu(d_2).
+ \label{eq:Gamma-definition}
+\end{equation}
+
+\begin{theorem}[Exact lcm transform]
+\label{thm:lcm-transform}
+For every $k\ge1$,
+\begin{equation}
+ \boxed{\ \beta_I(k)^2=\sum_{q\mid k}\Gamma_I(q).\ }
+ \label{eq:lcm-transform}
+\end{equation}
+Consequently,
+\begin{equation}
+ \Gamma_I(q)=\sum_{a\mid q}\mu(q/a)\beta_I(a)^2.
+ \label{eq:Gamma-inversion}
+\end{equation}
+Moreover,
+\begin{equation}
+ \supp\Gamma_I\subset\{q\le V^2:q\ \text{squarefree}\},
+ \qquad
+ |\Gamma_I(q)|\le3^{\omega(q)},
+ \label{eq:Gamma-support-bound}
+\end{equation}
+and
+\begin{equation}
+ \sum_q|\Gamma_I(q)|\le V^2.
+ \label{eq:Gamma-l1}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Expand the square in \eqref{eq:beta-I}.  The conditions
+$d_1\mid k$ and $d_2\mid k$ are equivalent to $[d_1,d_2]\mid k$;
+grouping by that least common multiple proves \eqref{eq:lcm-transform}.
+Equation \eqref{eq:Gamma-inversion} is ordinary M\"obius inversion.
+
+Only squarefree $d_i$ contribute.  Hence their lcm is squarefree and at
+most $V^2$.  For a squarefree $q$, each prime divisor can lie in
+$d_1$ only, $d_2$ only, or both, giving at most $3^{\omega(q)}$
+ordered pairs.  Finally, summing absolute values before grouping by the
+lcm gives at most the number of ordered pairs $d_1,d_2\in I$, which is
+at most $V^2$.
+\end{proof}
+
+The sign structure becomes more transparent after separating the gcd.
+
+\begin{proposition}[Pairwise-coprime lcm coordinates]
+\label{prop:gab}
+One has the exact formula
+\begin{equation}
+ \Gamma_I(q)=
+ \sum_{\substack{gab=q\\
+ g,a,b\ \mathrm{squarefree}\\
+ (g,a)=(g,b)=(a,b)=1\\
+ D_0<ga\le V,\ D_0<gb\le V}}
+ \mu(a)\mu(b),
+ \label{eq:Gamma-gab}
+\end{equation}
+The squarefree condition is part of the summation range.
+\end{proposition}
+
+\begin{proof}
+For a nonzero pair in \eqref{eq:Gamma-definition}, put
+$g=(d_1,d_2)$, $a=d_1/g$, and $b=d_2/g$.  Squarefreeness makes
+$g,a,b$ pairwise coprime, $[d_1,d_2]=gab$, and
+\[
+ \mu(d_1)\mu(d_2)
+ =\mu(ga)\mu(gb)=\mu(g)^2\mu(a)\mu(b)=\mu(a)\mu(b).
+\]
+The construction is reversible.
+\end{proof}
+
+Since $V^2\le R$ by \eqref{eq:RV}, the lcm label created by squaring
+never leaves the finite Ramanujan cutoff:
+\begin{equation}
+ \boxed{\quad q=[d_1,d_2]\le V^2\le R.\quad}
+ \label{eq:cutoff-return}
+\end{equation}
+This is an algebraic support statement, not a cancellation estimate.
+In particular, the diagonal pair $d_1=d_2=q$ contributes
+\begin{equation}
+ \Gamma_I(q)=\mu(q)^2\one_{q\in I}+\Gamma_I^{\ne}(q),
+ \label{eq:Gamma-divisor-diagonal}
+\end{equation}
+and neither term on the right is automatically small.
+
+For later use, summing \eqref{eq:lcm-transform} against a test function
+$F$ gives the exact row assembly
+\begin{equation}
+ \sum_k\beta_I(k)^2F(k)
+ =\sum_{q\le R}\Gamma_I(q)\sum_jF(qj).
+ \label{eq:lcm-row-assembly}
+\end{equation}
+Thus the same-$k$ quadraticization has a small row label $q\le R$.
+The $d$-first quadraticization of \cref{sec:opened-d} instead has the
+large row label $\ell d>R$.  These are complementary normal forms, not
+two notations for the same modulus.

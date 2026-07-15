@@ -1,0 +1,151 @@
+\section{The same-\texorpdfstring{$k$}{k} quadraticization}
+\label{sec:same-k}
+
+We first apply Cauchy--Schwarz without opening a divisor.  With $S_k$
+as in \eqref{eq:tail-Sk}, define
+\begin{align}
+ \cD_I
+ :={}&\sum_{\ell,k}\beta_I(k)^2\lambda_\ell^2
+ |A_{\ell,k}|^2,
+ \label{eq:same-k-diagonal}\\
+ \cC_I^{\mathrm{off}}
+ :={}&\sum_{\ell_1\ne\ell_2}
+ \lambda_{\ell_1}\lambda_{\ell_2}
+ \sum_k\beta_I(k)^2
+ A_{\ell_1,k}A_{\ell_2,k}.
+ \label{eq:same-k-off}
+\end{align}
+
+\begin{theorem}[Tail-weighted $TT^*$ stopping theorem]
+\label{thm:same-k-ttstar}
+Assume \eqref{eq:block-geometry} and $L\ge X^{\lambda_0}$ for a fixed
+$\lambda_0>0$.  Then
+\begin{equation}
+ |\cT^{\mathbb P}_{L,K}(I)|^2
+ \ll_W K\bigl(\cD_I+\cC_I^{\mathrm{off}}\bigr),
+ \qquad
+ \cD_I\ll_{\eps}X^{1+\eps}.
+ \label{eq:same-k-TTstar}
+\end{equation}
+Consequently, for fixed $a\ge0$ and $\eta>0$,
+\begin{equation}
+ |\cT^{\mathbb P}_{L,K}(I)|
+ \ge\frac{\eta X}{(\log X)^a}
+ \quad\Longrightarrow\quad
+ \cC_I^{\mathrm{off}}
+ \gg_{\eta,W}\frac{XL}{(\log X)^{2a}}
+ \label{eq:same-k-witness}
+\end{equation}
+for all sufficiently large $X$.
+\end{theorem}
+
+\begin{proof}
+There are $O_W(K)$ integers on the $k$ support, so
+\[
+ \left|\sum_k\beta_I(k)S_k\right|^2
+ \ll_WK\sum_k\beta_I(k)^2|S_k|^2.
+\]
+Expanding the last square gives exactly
+$\cD_I+\cC_I^{\mathrm{off}}$.  The bounds
+$|\beta_I(k)|\ll_\eps X^\eps$,
+$|A_{\ell,k}|\ll_\eps X^\eps$, and
+$\lambda_\ell\ll\log X$, together with $LK\asymp_WX$, give
+$\cD_I\ll_\eps X^{1+\eps}$ after renaming $\eps$.
+
+If the hypothesis in \eqref{eq:same-k-witness} holds, Cauchy's lower
+bound and $K\asymp_WX/L$ give
+\[
+ \cD_I+\cC_I^{\mathrm{off}}
+ \gg_{\eta,W}\frac{XL}{(\log X)^{2a}}.
+\]
+Choose $\eps<\lambda_0/2$.  Then the diagonal is smaller than the
+right-hand side by a fixed power of $X$, proving the claim.
+\end{proof}
+
+Insert the lcm transform and write $k=qj$.  Equation
+\eqref{eq:same-k-off} becomes
+\begin{align}
+ \cC_I^{\mathrm{off}}
+ ={}&\sum_{\ell_1\ne\ell_2}
+ \lambda_{\ell_1}\lambda_{\ell_2}
+ \sum_{q\le R}\Gamma_I(q)
+ \sum_{j\ge1}
+ r_R(\ell_1qj+h)r_R(\ell_2qj+h)
+ \notag\\[-0.2em]
+ &\quad\times
+ W(\ell_1qj/X)W(\ell_2qj/X)\psi(qj/K)^2.
+ \label{eq:lcm-residual-correlation}
+\end{align}
+For fixed $q,\ell_1,\ell_2$, the two affine forms in $j$ have displayed
+determinant
+\begin{equation}
+ \det\begin{pmatrix}\ell_1q&h\\\ell_2q&h\end{pmatrix}
+ =hq(\ell_1-\ell_2).
+ \label{eq:lcm-j-determinant}
+\end{equation}
+In the original variable $k$, however, the transverse determinant is
+$h(\ell_1-\ell_2)$; $q$ records the separate row condition $q\mid k$.
+This distinction reappears exactly in the CRT conditions of
+\cref{sec:crt}.
+
+The $g,a,b$ coordinates of \cref{prop:gab} give the fully resolved
+version
+\begin{align}
+ \cC_I^{\mathrm{off}}
+ ={}&\sum_{\substack{g,a,b\\
+ g,a,b\ \mathrm{squarefree}\\
+ (g,a)=(g,b)=(a,b)=1\\
+ D_0<ga,gb\le V}}
+ \mu(a)\mu(b)
+ \sum_{\ell_1\ne\ell_2}
+ \lambda_{\ell_1}\lambda_{\ell_2}
+ \notag\\
+ &\quad\times\sum_j
+ r_R(\ell_1gabj+h)r_R(\ell_2gabj+h)
+ \cW_{\ell_1,\ell_2}(gabj),
+ \label{eq:gab-correlation}
+\end{align}
+where
+\[
+ \cW_{\ell_1,\ell_2}(k)
+ =W(\ell_1k/X)W(\ell_2k/X)\psi(k/K)^2.
+\]
+
+\begin{corollary}[Dyadic lcm witnesses]
+\label{cor:lcm-witnesses}
+Under the failure hypothesis in \eqref{eq:same-k-witness}, one of the
+$O(\log^2X)$ signed cells
+\[
+ q\asymp Q_0,\qquad
+ |\ell_1-\ell_2|\asymp\Delta
+\]
+in \eqref{eq:lcm-residual-correlation} has positive contribution
+\begin{equation}
+ \gg_{\eta,W}\frac{XL}{(\log X)^{2a+2}}.
+ \label{eq:q-Delta-witness}
+\end{equation}
+At the completely factor-resolved level, one of the
+$O(\log^4X)$ cells
+\[
+ g\asymp G,\quad a\asymp A,\quad b\asymp B,\quad
+ |\ell_1-\ell_2|\asymp\Delta
+\]
+has positive contribution
+\begin{equation}
+ \gg_{\eta,W}\frac{XL}{(\log X)^{2a+4}}.
+ \label{eq:GAB-Delta-witness}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Use \cref{thm:same-k-ttstar} and partition the positive total
+\eqref{eq:same-k-off} into dyadic signed subsums.  The triangle
+inequality bounds the number of cells by the stated powers of
+$\log X$; hence at least one cell is positive and carries at least the
+average share.  Empty endpoint ranges are omitted.
+\end{proof}
+
+The lcm route therefore returns every squared coefficient to a small
+row $q\le R$ and produces a detailed witness.  It does not by itself
+separate the elementary determinant degeneracies.  For that purpose we
+now open one divisor before applying $TT^*$.

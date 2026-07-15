@@ -1,0 +1,251 @@
+\section{The stopping dichotomy and a conditional closure gate}
+\label{sec:stopping}
+
+We assemble the two quadraticizations.  For each positive divisor
+$s\mid h$, put
+\begin{equation}
+ \cT_s^{\mathbb P}
+ =\sum_{\substack{k\\(k,h)=s}}\beta_I(k)S_k.
+ \label{eq:sector-tail}
+\end{equation}
+Write $\cC_{D,\mathrm{prim}}^{\mathrm{gen}}$ for the generic subsum
+$\cC_D^{\mathrm{gen}}$ of \cref{eq:d-off,eq:generic-set} with the
+fixed mask $\xi(d,j)=\one_{(dj,h)=1}$.
+
+\begin{theorem}[Primitive/nonprimitive stopping dichotomy]
+\label{thm:stopping-dichotomy}
+Assume \eqref{eq:block-geometry}, $D_0<V/2$, and
+$L\ge X^{\lambda_0}$ for a fixed $\lambda_0>0$.  Suppose that, for
+fixed $a\ge0$ and $\eta>0$,
+\begin{equation}
+ |\cT_{L,K}(I)|\ge\frac{\eta X}{(\log X)^a}.
+ \label{eq:tail-failure}
+\end{equation}
+Then, for every fixed $\kappa>0$ and all sufficiently large $X$, at
+least one of the following alternatives holds.
+
+\begin{enumerate}[label=\textup{(\Alph*)}]
+\item \textbf{Primitive generic determinant witness.}
+There is a dyadic $D\le V$, with $Q=LD$, such that the primitive
+$d$-slice has a generic correlation satisfying
+\begin{equation}
+ \cC_{D,\mathrm{prim}}^{\mathrm{gen}}
+ \gg_{\eta,h,W}
+ \frac{XQ}{(\log X)^{2a+2}},
+ \label{eq:primitive-generic-dichotomy}
+\end{equation}
+supported on
+\[
+ \ell_1\ne\ell_2,\qquad
+ |\ell_1d_1-\ell_2d_2|>QX^{-\kappa},\qquad
+ (d_1,d_2)\le X^\kappa,\qquad
+ (d_1j,h)=(d_2j,h)=1.
+\]
+
+\item \textbf{Nonprimitive endpoint finite-model witness.}
+There is a divisor $s>1$ of $h$ for which
+\begin{equation}
+ \cC_{I,s}^{MM,\mathrm{off}}
+ \gg_{\eta,h,W}\frac{XL}{(\log X)^{2a}}.
+ \label{eq:nonprimitive-dichotomy}
+\end{equation}
+Its M\"obius coefficients are supported only on the two endpoint
+bands in \eqref{eq:endpoint-support}.  After a dyadic split of
+$|\ell_1-\ell_2|$, one signed separation cell contributes
+\begin{equation}
+ \gg_{\eta,h,W}\frac{XL}{(\log X)^{2a+1}}.
+ \label{eq:nonprimitive-Delta-cell}
+\end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+By \cref{lem:source-primes}, the source prime-power error is smaller
+than \eqref{eq:tail-failure} by a fixed power.  Since $(k,h)$ can take
+only $O_h(1)$ values, one sector in \eqref{eq:sector-tail} has magnitude
+$\gg_{\eta,h}X(\log X)^{-a}$.
+
+If the large sector is $s=1$, open $\beta_I(k)$ and use a smooth dyadic
+partition on $d\in I$.  There are $O(\log X)$ slices, so one primitive
+slice \eqref{eq:TD}, with $\xi(d,j)=\one_{(dj,h)=1}$, has magnitude
+$\gg X(\log X)^{-a-1}$.  Apply
+\cref{thm:generic-stopping} with $a$ replaced by $a+1$ to obtain
+\eqref{eq:primitive-generic-dichotomy}.
+
+If the large sector has $s>1$, repeat the same-$k$ Cauchy argument of
+\cref{thm:same-k-ttstar} with the restriction $(k,h)=s$.  Its diagonal
+is still $O_\eps(X^{1+\eps})$, so
+\[
+ \cC_{I,s}^{\mathrm{off}}
+ \gg_{\eta,h,W}XL(\log X)^{-2a}.
+\]
+The error in \eqref{eq:nonprimitive-MM} is negligible at this scale,
+which proves \eqref{eq:nonprimitive-dichotomy}.  Endpoint localization
+follows by squaring \eqref{eq:endpoint-collapse}.  There are
+$O(\log X)$ nonempty dyadic source-separation ranges; since their signed
+sum is positive and has the displayed size, at least one proves
+\eqref{eq:nonprimitive-Delta-cell}.
+\end{proof}
+
+\begin{remark}[Block scope]
+\Cref{thm:stopping-dichotomy} is attached to a symmetric tail block
+for which the TPC-17 prefix theorem applies.  It does not assert that
+every possible failure of a fixed-shift prime-pair asymptotic must occur
+in this particular family of blocks.  That global statement requires
+the full preceding normal-form interface.
+\end{remark}
+
+We now isolate the exact analytic input that would remove alternative
+(A).  This input is deliberately stated rather than assumed true.
+
+\begin{assumption}[Generic determinant dispersion
+$\mathrm{DD}_h(\theta)$]
+\label{input:DD}
+Fix $\theta>1/2$.  For every fixed $\eps_0>0$, uniformly for every
+relevant slice \eqref{eq:TD} with
+$Q=LD\le X^{\theta-\eps_0}$, every fixed $\kappa>0$, every admissible
+fixed-residue mask $\xi$ described in \cref{sec:opened-d}, and every
+$A>0$, one has
+\begin{equation}
+ |\cC_D^{\mathrm{gen}}|
+ \ll_{A,\eps_0,\kappa,h,W,\psi}
+ XQ(\log X)^{-A}.
+ \label{eq:DD}
+\end{equation}
+\end{assumption}
+
+\begin{proposition}[Conditional slice and tail closure]
+\label{prop:conditional-closure}
+Assume the block geometry \eqref{eq:block-geometry}, so in particular
+$L\ge X^{\lambda_0}$ for some fixed $\lambda_0>0$, and assume
+$\mathrm{DD}_h(\theta)$ covers every member of the fixed bounded-overlap
+dyadic partition of a given symmetric tail block.  Then, for every
+$B>0$,
+\begin{equation}
+ \cT_{L,K}(I)\ll_BX(\log X)^{-B}.
+ \label{eq:conditional-tail-closure}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Combine \cref{thm:degenerate-removal,input:DD} with
+\eqref{eq:d-first-TTstar}.  For any requested $B$, take the logarithmic
+saving in \eqref{eq:DD} sufficiently large.  Since $J\asymp X/Q$,
+\begin{align*}
+ |\cT_D|
+ &\ll \sqrt{JX^{1+\eps}}
+     +\sqrt{JXQ}(\log X)^{-A/2}\\
+ &\ll XQ^{-1/2}X^{\eps/2}+X(\log X)^{-A/2}.
+\end{align*}
+The first term has a fixed power saving because $Q\ge L\ge
+X^{\lambda_0}$.  Sum the $O(\log X)$ divisor slices and restore the
+negligible source prime powers using \cref{lem:source-primes}.
+\end{proof}
+
+\subsection{How strong is the conditional input?}
+
+Write
+\[
+ L=X^{\lambda+o(1)},\qquad
+ V=X^{v+o(1)},\qquad
+ v=\frac14-\frac\delta2.
+\]
+The largest opened row has $Q=LV=X^{\lambda+v+o(1)}$.  Define the
+boundary exponent
+\begin{equation}
+ \theta_{\mathrm{tail}}=\lambda+\frac14-\frac\delta2.
+ \label{eq:theta-tail}
+\end{equation}
+Because \cref{input:DD} retains a fixed $\eps_0$ margin, full-tail
+closure requires $\theta>\theta_{\mathrm{tail}}$ by a fixed amount;
+equality is only the boundary value.  For the two explicit TPC-17
+profiles, let $\sigma>0$ denote the fixed power-saving slack, subject
+to $\sigma<1/100$ in the published row and $\sigma<1/1000$ in the
+version-locked Li row.  The boundary ledger is:
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+profile & $\lambda$ and allowed $\delta$ & range of $\theta_{\rm tail}$ \\
+\midrule
+published Maynard layer
+& $10/21-\sigma$, $1/42+3\sigma<\delta<1/4$
+& $101/168-\sigma$ to $5/7-(5/2)\sigma$ \\
+Li v6 extension
+& $8/17-\sigma$, $1/34+2\sigma<\delta<1/4$
+& $81/136-\sigma$ to $12/17-2\sigma$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+The endpoints in the table are limiting open endpoints and are not
+attained by the displayed strict $\delta$ ranges.
+Numerically the lower endpoints are about $0.6012$ and $0.5956$ when
+$\sigma$ is suppressed, while the upper endpoints are about $0.7143$
+and $0.7059$.  The Li row is version-locked to the unrefereed preprint
+used by TPC-17; the published theorem chain uses only the first row.
+
+Maynard's published well-factorable benchmark reaches level $3/5$ for
+its specified coefficient class \citep{Maynard2025II}.  Lichtman's
+preprint reaches $66/107\approx0.61682$ for triply well-factorable
+weights, with a conditional $5/8$ statement under an additional
+spectral conjecture \citep{Lichtman2023}.  The numerical overlap with
+the lower end of \eqref{eq:theta-tail} does not imply applicability:
+the sharp tail fails the balanced factor shape noted after
+\cref{prop:weighted-second-moment}, and \eqref{eq:DD} is a two-residual
+variable-determinant correlation rather than a one-prime progression
+estimate.  Exponent size is not the missing hypothesis.
+
+For clarity, the prime-pair singular series below is
+\begin{equation}
+ \mathfrak S(h)
+ =\prod_p\frac{1-\nu_h(p)/p}{(1-1/p)^2},
+ \qquad
+ \nu_h(p)=\#\{a\bmod p:a(a+h)\equiv0\pmod p\}.
+ \label{eq:singular-series}
+\end{equation}
+In particular it vanishes for odd $h$ and is positive for nonzero even
+$h$.
+
+\begin{corollary}[Why uniform closure reaches the fixed-shift problem]
+\label{cor:DD-HL-boundary}
+Assume the symmetric normal form of TPC-16 \citep{WangTPC16} and, as an additional global
+cover hypothesis, that its hard packet admits
+\begin{equation}
+ \cH^{\mathrm{HB}}_{h,R;V}(X)
+ =\sum_{b\in\mathcal B_X}(\cC_b+\cT_b)+o(X),
+ \qquad |\mathcal B_X|=O_W(\log X),
+ \label{eq:all-block-cover}
+\end{equation}
+where every block satisfies \eqref{eq:block-geometry}, the TPC-17
+assembled-prefix estimate for $\cC_b$, and the opened-$d$ geometry for
+$\cT_b$.  Assume also $\mathrm{DD}_h(\theta)$ with a fixed strict
+margin above every boundary in \eqref{eq:theta-tail}.  Then the
+resulting chain
+gives the weighted fixed-shift Hardy--Littlewood asymptotic
+\begin{equation}
+ \sum_n\Lambda(n)\Lambda(n+h)W(n/X)
+ =\mathfrak S(h)X I_0(W)+o(X).
+ \label{eq:conditional-HL}
+\end{equation}
+For $h=2$ and nonnegative nonzero $W$, this would imply infinitely many
+twin primes after the standard removal of prime powers.
+\end{corollary}
+
+\begin{proof}
+The assumed all-block prefix estimates remove the $\cC_b$ terms.
+Proposition \ref{prop:conditional-closure} removes each complementary
+$\cT_b$.  The global cover \eqref{eq:all-block-cover} and the TPC-16
+normal form identify the sum of those blocks with the difference
+between the left side of \eqref{eq:conditional-HL} and its calibrated
+singular-series main term.  There are only $O_W(\log X)$ blocks, so
+arbitrary logarithmic saving survives their sum.  The $h=2$ consequence
+follows from positivity and the fact that source or target prime powers
+contribute $o(X)$.
+\end{proof}
+
+This corollary is a logical strength test, not a proof of its
+hypotheses.  It explains why the primitive generic channel should not
+be dismissed as a routine Kloosterman estimate.  By contrast,
+\citet{MatomakiRadziwillTao2019} establish the expected prime
+correlations for almost all shifts in sufficiently long ranges.  That
+is a rigorous averaged-$h$ benchmark, but it supplies no direct
+fixed-$h$, lcm-row-resolved estimate for \eqref{eq:DD}.

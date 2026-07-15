@@ -1,0 +1,200 @@
+\section{The opened-\texorpdfstring{$d$}{d} dispersion form}
+\label{sec:opened-d}
+
+Let $\omega_D$ be a bounded smooth dyadic cutoff supported on
+$[D,2D]$, with $1\le D\le V$.  When slices are reassembled, the
+$\omega_D$ are taken from one fixed bounded-overlap partition of unity
+on $I$, satisfying
+\begin{equation}
+ \sum_D\omega_D(d)=1\quad(d\in I),
+ \qquad
+ \sup_DD^r\|\omega_D^{(r)}\|_\infty<\infty
+ \quad(r\ge0).
+ \label{eq:dyadic-d-partition}
+\end{equation}
+A $d$-resolved tail slice is
+\begin{align}
+ \cT_D
+ ={}&\sum_{j\ge1}\sum_{d\in I}
+ \mu(d)\omega_D(d)
+ \sum_\ell\lambda_\ell
+ r_R(\ell dj+h)W(\ell dj/X)\psi(dj/K)\xi(d,j),
+ \label{eq:TD}
+\end{align}
+where $|\xi(d,j)|\le1$.  The admissible masks are fixed real-valued
+functions of $(d,j)$ modulo $|h|$, from a family of complexity $O_h(1)$ and
+independent of $X$, $r_R$, and the source variables.  This includes the
+constant mask $\xi\equiv1$ and the primitive mask $(dj,h)=1$.  Put
+\begin{equation}
+ J=K/D,\qquad Q=LD.
+ \label{eq:JQ}
+\end{equation}
+On the support, $j\asymp J$, $m=\ell d\asymp Q$, and
+\begin{equation}
+ QJ\asymp_WX.
+ \label{eq:QJ-X}
+\end{equation}
+
+For a row label $\alpha=(\ell,d)$, write $m_\alpha=\ell d$ and absorb
+all bounded cutoffs into $B_\alpha(j)$.  Expanding after Cauchy in $j$
+gives
+\begin{align}
+ |\cT_D|^2
+ &\ll_WJ\bigl(\cE_D+\cC_D^{\mathrm{off}}\bigr),
+ \label{eq:d-first-TTstar}\\
+ \cE_D
+ &:=\sum_j\sum_\alpha
+ \mu(d)^2(\log\ell)^2r_R(m_\alpha j+h)^2|B_\alpha(j)|^2,
+ \label{eq:d-diagonal}\\
+ \cC_D^{\mathrm{off}}
+ &:=\sum_j\sum_{\substack{\alpha_1\ne\alpha_2}}
+ \mu(d_1)\mu(d_2)(\log\ell_1)(\log\ell_2)
+ r_R(m_1j+h)r_R(m_2j+h)
+ B_{\alpha_1}(j)B_{\alpha_2}(j).
+ \label{eq:d-off}
+\end{align}
+Here and below the prime and support restrictions from
+\eqref{eq:TD} are understood.
+
+Because $\ell\ge L/2>R\ge V\ge d_1,d_2$, unique factorization gives
+\begin{equation}
+ \ell_1d_1=\ell_2d_2
+ \quad\Longleftrightarrow\quad
+ (\ell_1,d_1)=(\ell_2,d_2).
+ \label{eq:row-unique}
+\end{equation}
+Thus every off-diagonal pair has $m_1\ne m_2$, and its two affine forms
+have determinant
+\begin{equation}
+ \boxed{\quad
+ \det\begin{pmatrix}m_1&h\\m_2&h\end{pmatrix}
+ =h(m_1-m_2)=h(\ell_1d_1-\ell_2d_2).
+ \quad}
+ \label{eq:row-determinant}
+\end{equation}
+For distinct sources the same size separation gives the exact identity
+\begin{equation}
+ (m_1,m_2)=(d_1,d_2).
+ \label{eq:row-gcd}
+\end{equation}
+
+\begin{lemma}[Diagonal energy]
+\label{lem:d-diagonal}
+For every $\eps>0$,
+\begin{equation}
+ \cE_D\ll_{\eps,h,W,\psi}X^{1+\eps}.
+ \label{eq:d-diagonal-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+There are $O(LDJ)=O(X)$ triples $(\ell,d,j)$ on the support.  Apply
+\eqref{eq:soft-pointwise}, the boundedness of the cutoffs, and absorb
+the logarithmic source weight into $X^\eps$.
+\end{proof}
+
+We next partition the off-diagonal pairs.  Fix $\kappa>0$ and let
+$\cC_D^{\mathrm{same}}$, $\cC_D^{\mathrm{near}}$,
+$\cC_D^{\mathrm{gcd}}$, and $\cC_D^{\mathrm{gen}}$ be the signed
+subsum of \eqref{eq:d-off} on, respectively,
+\begin{align}
+ \mathscr S={}&\{\ell_1=\ell_2,\ d_1\ne d_2\},
+ \label{eq:same-set}\\
+ \mathscr N={}&\{\ell_1\ne\ell_2,
+ 0<|m_1-m_2|\le QX^{-\kappa}\},
+ \label{eq:near-set}\\
+ \mathscr G={}&\{\ell_1\ne\ell_2,
+ |m_1-m_2|>QX^{-\kappa},\ (d_1,d_2)>X^\kappa\},
+ \label{eq:gcd-set}\\
+ \mathscr G\!en={}&\{\ell_1\ne\ell_2,
+ |m_1-m_2|>QX^{-\kappa},\ (d_1,d_2)\le X^\kappa\}.
+ \label{eq:generic-set}
+\end{align}
+These four sets form a disjoint partition.
+
+\begin{theorem}[Elementary removal of the degenerate channels]
+\label{thm:degenerate-removal}
+For every fixed $\eps>0$,
+\begin{align}
+ |\cC_D^{\mathrm{same}}|
+ &\ll_\eps XQ\,L^{-1}X^\eps,
+ \label{eq:same-bound}\\
+ |\cC_D^{\mathrm{near}}|
+ &\ll_\eps XQ\bigl(X^{-\kappa}+L^{-1}\bigr)X^\eps,
+ \label{eq:near-bound}\\
+ |\cC_D^{\mathrm{gcd}}|
+ &\ll_\eps XQ\,X^{-\kappa+\eps}.
+ \label{eq:gcd-bound}
+\end{align}
+If $L\ge X^{\lambda_0}$ for fixed $\lambda_0>0$, all three have a
+fixed power saving after choosing $\eps$ sufficiently small.  In
+particular they are $O_A(XQ(\log X)^{-A})$ for every fixed $A>0$.
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:soft-pointwise}, each summand is $O_\eps(X^\eps)$ after
+absorbing logarithms.  It therefore suffices to count tuples.
+
+For $\mathscr S$, there are $O(LD^2J)$ choices, which equals
+$O(XQ/L)$ because $Q=LD$ and $QJ\asymp X$.
+
+For $\mathscr N$, fix $\ell_1,d_1,d_2$.  The condition on
+$\ell_2d_2$ confines $\ell_2$ to an interval containing
+$O(QX^{-\kappa}/D+1)=O(LX^{-\kappa}+1)$ integers.  Thus the number of
+row pairs is
+\[
+ O\bigl(LD^2(LX^{-\kappa}+1)\bigr)
+ =O(Q^2X^{-\kappa}+LD^2).
+\]
+Multiplication by $O(J)$ possible $j$ gives
+$O(XQ(X^{-\kappa}+L^{-1}))$.
+
+Finally,
+\[
+ \#\{d_1,d_2\asymp D:(d_1,d_2)>X^\kappa\}
+ \ll\sum_{g>X^\kappa}(D/g)^2
+ \ll D^2X^{-\kappa}.
+\]
+There are $O(L^2)$ source pairs and $O(J)$ values of $j$, giving
+\eqref{eq:gcd-bound}.  The final assertion follows by taking the soft
+pointwise exponent smaller than a fixed fraction of
+$\min(\kappa,\lambda_0)$.
+\end{proof}
+
+\begin{theorem}[Generic determinant stopping theorem]
+\label{thm:generic-stopping}
+Fix $a\ge0$, $\eta>0$, $\kappa>0$, and $\lambda_0>0$.  Under
+\eqref{eq:block-geometry}, suppose $L\ge X^{\lambda_0}$ and
+\begin{equation}
+ |\cT_D|\ge\frac{\eta X}{(\log X)^a}.
+ \label{eq:TD-failure}
+\end{equation}
+Then, for sufficiently large $X$,
+\begin{equation}
+ \boxed{\quad
+ \cC_D^{\mathrm{gen}}
+ \gg_{\eta,W}\frac{XQ}{(\log X)^{2a}}.
+ \quad}
+ \label{eq:generic-witness}
+\end{equation}
+Thus a failed slice forces distinct prime sources, determinant
+$|h(m_1-m_2)|\gg_h QX^{-\kappa}$, and divisor gcd at most $X^\kappa$.
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:d-first-TTstar}, \eqref{eq:TD-failure}, and
+$J\asymp X/Q$,
+\[
+ \cE_D+\cC_D^{\mathrm{off}}
+ \gg_{\eta,W}\frac{XQ}{(\log X)^{2a}}.
+\]
+The diagonal bound is smaller by a fixed power because $Q\ge L$.
+The three degenerate pieces are smaller by
+\cref{thm:degenerate-removal}.  Since their signed sum together with
+$\cC_D^{\mathrm{gen}}$ equals $\cC_D^{\mathrm{off}}$, the displayed
+lower bound remains in the generic channel.
+\end{proof}
+
+This is an unconditional narrowing of the obstruction.  It is not an
+estimate for $\cC_D^{\mathrm{gen}}$; the residual signs in that channel
+remain the hard arithmetic input.

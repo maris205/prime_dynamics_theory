@@ -1,0 +1,135 @@
+\section{The exact finite-model CRT kernel}
+\label{sec:crt}
+
+The Ramanujan identity
+\[
+ c_q(n)=\sum_{u\mid(q,n)}u\mu(q/u)
+\]
+gives the finite divisor expansion
+\begin{equation}
+ \Lambda_R(n)=\sum_{\substack{u\mid n\\u\le R}}\lambda_R'(u),
+ \qquad
+ \lambda_R'(u)=u\sum_{m\le R/u}
+ \frac{\mu(um)\mu(m)}{\varphi(um)}.
+ \label{eq:lambda-prime-R}
+\end{equation}
+We derive the exact compatibility conditions for the small lcm row
+$q\mid k$ in \eqref{eq:lcm-residual-correlation}.
+
+\begin{lemma}[Three-modulus compatibility]
+\label{lem:CRT-compatibility}
+Let $q,u,v\le R$, and let $\ell_1,\ell_2>R$ be primes.  The system
+\begin{equation}
+ q\mid k,\qquad
+ u\mid\ell_1k+h,\qquad
+ v\mid\ell_2k+h
+ \label{eq:CRT-system}
+\end{equation}
+is soluble if and only if
+\begin{equation}
+ \boxed{\quad
+ (q,u)\mid h,\qquad
+ (q,v)\mid h,\qquad
+ (u,v)\mid h(\ell_1-\ell_2).
+ \quad}
+ \label{eq:CRT-conditions}
+\end{equation}
+When soluble, $k$ occupies one residue class modulo $[q,u,v]$.
+\end{lemma}
+
+\begin{proof}
+The sources are invertible modulo $u$ and $v$.  Thus
+\eqref{eq:CRT-system} is the system
+\[
+ k\equiv0\pmod q,\qquad
+ k\equiv-h\overline\ell_1\pmod u,\qquad
+ k\equiv-h\overline\ell_2\pmod v.
+\]
+The generalized Chinese remainder theorem says that pairwise
+compatibility is necessary and sufficient.  Compatibility of the first
+congruence with the second and third gives the first two divisibilities
+in \eqref{eq:CRT-conditions}.  If $g=(u,v)$, compatibility of the last
+two is
+$h(\overline\ell_1-\overline\ell_2)\equiv0\pmod g$.
+Multiplication by the unit $\ell_1\ell_2$ turns this into
+$g\mid h(\ell_1-\ell_2)$.  The final statement is the uniqueness part
+of the generalized CRT.
+\end{proof}
+
+Let $F\in C_c^1((0,\infty))$ and define the finite-model row
+\begin{equation}
+ \cM_R(q;\ell_1,\ell_2;F)
+ =\sum_{\substack{k\ge1\\q\mid k}}
+ \Lambda_R(\ell_1k+h)\Lambda_R(\ell_2k+h)F(k/K).
+ \label{eq:finite-model-row}
+\end{equation}
+
+\begin{theorem}[Explicit two-target density]
+\label{thm:finite-model-density}
+One has the exact expansion
+\begin{align}
+ \cM_R(q;\ell_1,\ell_2;F)
+ ={}&\sum_{u,v\le R}\lambda_R'(u)\lambda_R'(v)
+ \one_{(q,u)\mid h}\one_{(q,v)\mid h}
+ \one_{(u,v)\mid h(\ell_1-\ell_2)}
+ \notag\\[-0.2em]
+ &\quad\times
+ \sum_{\substack{k\equiv\kappa(q,u,v)\!
+  \pmod{[q,u,v]}}}F(k/K),
+ \label{eq:finite-model-exact-CRT}
+\end{align}
+where $\kappa(q,u,v)$ is the compatible class and an incompatible
+summand is zero.  Its complete-period density, normalized relative to
+the $q$-row, is
+\begin{equation}
+ \boxed{\quad
+ \rho^{(2)}_{h,R}(q;\ell_1,\ell_2)
+ =q\sum_{u,v\le R}\lambda_R'(u)\lambda_R'(v)
+ \frac{
+ \one_{(q,u)\mid h}\one_{(q,v)\mid h}
+ \one_{(u,v)\mid h(\ell_1-\ell_2)}}{[q,u,v]}.
+ \quad}
+ \label{eq:two-target-density}
+\end{equation}
+Consequently,
+\begin{equation}
+ \cM_R(q;\ell_1,\ell_2;F)
+ =\frac Kq\rho^{(2)}_{h,R}(q;\ell_1,\ell_2)I_0(F)
+ +\cE_R(q;\ell_1,\ell_2;F),
+ \label{eq:finite-model-main-error}
+\end{equation}
+with the elementary bound
+\begin{equation}
+ |\cE_R(q;\ell_1,\ell_2;F)|
+ \ll_F R^2(\log(2R))^4.
+ \label{eq:finite-model-crude-error}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:lambda-prime-R} twice in
+\eqref{eq:finite-model-row} and apply
+\cref{lem:CRT-compatibility}.  This proves the exact formula.  On a
+compatible residue class modulo $M=[q,u,v]$, Euler summation gives
+\[
+ \sum_{k\equiv\kappa\pmod M}F(k/K)
+ =\frac KM I_0(F)+O_F(1).
+\]
+The main terms assemble into \eqref{eq:two-target-density}.
+
+The formula \eqref{eq:lambda-prime-R} and the standard bound
+$n/\varphi(n)\ll\log\log(3n)$ give
+$|\lambda_R'(u)|\ll(\log(2R))^2$ uniformly.  Summing the $O_F(1)$
+errors over $u,v\le R$ proves \eqref{eq:finite-model-crude-error}.
+\end{proof}
+
+The third condition in \eqref{eq:CRT-conditions} contains the
+transverse determinant $h(\ell_1-\ell_2)$, whereas the first two retain
+the lcm row $q\mid k$.  This is why replacing the geometry by the single
+product $hq(\ell_1-\ell_2)$ loses information.
+
+The exact kernel is useful, but the crude error in
+\eqref{eq:finite-model-crude-error} is far too large after summing the
+two source variables.  Controlling incomplete periods requires genuine
+cancellation in the $u,v$ coefficients or a spectral/dispersion
+transformation.  We claim no asymptotic evaluation of this kernel here.
