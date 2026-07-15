@@ -1,0 +1,310 @@
+\section{Uniform removal of the finite calibration defect}
+\label{sec:tpc20-uniform-calibration}
+
+The formal identity
+\[
+ \sum_{\substack{n\ge1\\(n,M)=1}}
+ \frac{-\mu(n)\log n}{n}
+ =\frac{M}{\varphi(M)}
+\]
+is a conditionally convergent statement at \(s=1\).  Since the row
+modulus grows with \(X\), a fixed-\(M\) limit is not enough for
+\eqref{eq:tpc20-calibration-defect}.  We prove the required uniform
+form.
+
+\begin{theorem}[Uniform M\"obius calibration]
+\label{thm:tpc20-uniform-calibration}
+For every fixed \(A>0\) and \(C>0\), uniformly for
+\begin{equation}
+ U\ge3,\qquad 1\le M\le U^C,
+ \label{eq:tpc20-calibration-range}
+\end{equation}
+one has
+\begin{equation}
+ \boxed{
+ \sum_{\substack{n\le U\\(n,M)=1}}
+ \frac{-\mu(n)\log n}{n}
+ =\frac{M}{\varphi(M)}
+ +O_{A,C}\!\left(
+ \frac{M}{\varphi(M)}(\log U)^{-A}\right).}
+ \label{eq:tpc20-uniform-calibration}
+\end{equation}
+Squarefreeness of \(M\) is not required.
+\end{theorem}
+
+\begin{proof}
+Let
+\[
+ \mathscr S(M)=\{k\ge1:p\mid k\Longrightarrow p\mid M\},
+ \qquad
+ g_M(k)=\one_{k\in\mathscr S(M)}.
+\]
+Its Dirichlet series is
+\begin{equation}
+ G_M(s)=\sum_{k\in\mathscr S(M)}k^{-s}
+ =\prod_{p\mid M}(1-p^{-s})^{-1},
+ \qquad
+ G_M(1)=\frac{M}{\varphi(M)}.
+ \label{eq:tpc20-GM}
+\end{equation}
+Euler factors give the exact convolution
+\begin{equation}
+ \mu(n)\one_{(n,M)=1}=(\mu*g_M)(n).
+ \label{eq:tpc20-coprime-mobius-convolution}
+\end{equation}
+Put
+\[
+ \mathscr A(x)=\sum_{n\le x}\frac{-\mu(n)\log n}{n},
+ \qquad
+ \mathscr B(x)=\sum_{n\le x}\frac{\mu(n)}n.
+\]
+Opening \eqref{eq:tpc20-coprime-mobius-convolution} and using
+\(-\log(dk)=-\log d-\log k\) gives
+\begin{align}
+ S_M(U)
+ :={}&\sum_{\substack{n\le U\\(n,M)=1}}
+ \frac{-\mu(n)\log n}{n}
+ \notag\\
+ ={}&\sum_{\substack{k\le U\\k\in\mathscr S(M)}}
+ \frac{\mathscr A(U/k)}k
+ -\sum_{\substack{k\le U\\k\in\mathscr S(M)}}
+ \frac{\log k}{k}\mathscr B(U/k).
+ \label{eq:tpc20-calibration-convolution}
+\end{align}
+Therefore
+\begin{align}
+ S_M(U)-G_M(1)
+ ={}&\sum_{\substack{k\le U\\k\in\mathscr S(M)}}
+ \frac{\mathscr A(U/k)-1}{k}
+ \notag\\
+ &-\sum_{\substack{k\le U\\k\in\mathscr S(M)}}
+ \frac{\log k}{k}\mathscr B(U/k)
+ -\sum_{\substack{k>U\\k\in\mathscr S(M)}}\frac1k.
+ \label{eq:tpc20-calibration-error-split}
+\end{align}
+
+The classical zero-free region for \(\zeta(s)\), followed by partial
+summation, implies that for every \(B>0\)
+\begin{equation}
+ |\mathscr A(x)-1|+|\mathscr B(x)|
+ \ll_B(\log x)^{-B}\qquad(x\ge3).
+ \label{eq:tpc20-classical-mobius-input}
+\end{equation}
+See, for example, \citet[Chapter~5]{IwaniecKowalski2004}.
+The two limiting constants follow respectively from
+\((1/\zeta)'(1)=1\) and \(1/\zeta(1)=0\).  For \(x\ge1\), the crude
+bounds
+\begin{equation}
+ |\mathscr A(x)-1|\ll1+\log^2(2x),
+ \qquad
+ |\mathscr B(x)|\ll\log(2x)
+ \label{eq:tpc20-crude-mobius}
+\end{equation}
+will suffice.
+
+Write \(\mathscr L=\log U\) and choose
+\begin{equation}
+ \eta=\frac{C_0\log\mathscr L}{\mathscr L},
+ \qquad
+ P_0=\exp\!\left(\frac{\mathscr L}
+ {4C_0\log\mathscr L}\right),
+ \label{eq:tpc20-rankin-parameters}
+\end{equation}
+where \(C_0\) will be fixed at the end.  We claim
+\begin{equation}
+ G_M(1-\eta)\ll_{C,C_0}G_M(1).
+ \label{eq:tpc20-Euler-ratio}
+\end{equation}
+Indeed,
+\begin{align*}
+ \log\frac{G_M(1-\eta)}{G_M(1)}
+ &=
+ \int_{1-\eta}^{1}
+ \sum_{p\mid M}\frac{\log p}{p^\sigma-1}\,d\sigma.
+\end{align*}
+For \(p\le P_0\), the definition of \(P_0\) gives
+\(\eta\log p\le1/4\), and the contribution is
+\[
+ \ll\eta\sum_{p\le P_0}\frac{\log p}{p}\ll1.
+\]
+There are at most
+\(\log M/\log P_0\ll_{C,C_0}\log\mathscr L\) prime divisors
+\(p>P_0\), and their total contribution is
+\[
+ \ll_{C,C_0}(\log\mathscr L)P_0^{-1+\eta}=o(1).
+\]
+This proves \eqref{eq:tpc20-Euler-ratio}.  The same split gives
+\begin{equation}
+ \mathcal L_M(1-\eta)
+ :=\sum_{p\mid M}\frac{\log p}{p^{1-\eta}-1}
+ \ll_{C,C_0}\mathscr L.
+ \label{eq:tpc20-log-Euler-factor}
+\end{equation}
+
+Rankin's trick, \eqref{eq:tpc20-Euler-ratio}, and
+\eqref{eq:tpc20-log-Euler-factor} now give, for \(Y\ge1\),
+\begin{align}
+ \sum_{\substack{k>Y\\k\in\mathscr S(M)}}\frac1k
+ &\ll Y^{-\eta}G_M(1),
+ \label{eq:tpc20-rankin-unweighted}\\
+ \sum_{\substack{k>Y\\k\in\mathscr S(M)}}\frac{\log k}{k}
+ &\ll Y^{-\eta}G_M(1)\mathscr L.
+ \label{eq:tpc20-rankin-weighted}
+\end{align}
+
+Set
+\[
+ Z=\exp(\sqrt{\mathscr L}),\qquad Y_0=U/Z.
+\]
+For \(k\le Y_0\), one has
+\(\log(U/k)\ge\sqrt{\mathscr L}\).  Applying
+\eqref{eq:tpc20-classical-mobius-input} with exponent \(B_0\), and using
+\[
+ \sum_{k\in\mathscr S(M)}\frac{\log k}{k}
+ =-G_M'(1)
+ \ll_C G_M(1)\mathscr L,
+\]
+bounds the two central pieces of
+\eqref{eq:tpc20-calibration-error-split} by
+\begin{equation}
+ O\!\left(G_M(1)\mathscr L^{-B_0/2}\right)
+ +O\!\left(G_M(1)\mathscr L^{1-B_0/2}\right).
+ \label{eq:tpc20-central-calibration-error}
+\end{equation}
+Moreover,
+\[
+ \eta\log Y_0\ge\frac{C_0}{2}\log\mathscr L
+\]
+for sufficiently large \(U\).  Equations
+\eqref{eq:tpc20-rankin-unweighted} and
+\eqref{eq:tpc20-rankin-weighted}, combined with the crude bounds
+\eqref{eq:tpc20-crude-mobius} on \(Y_0<k\le U\), bound all three tail
+pieces by
+\begin{equation}
+ O\!\left(G_M(1)\mathscr L^{3/2-C_0/2}\right).
+ \label{eq:tpc20-tail-calibration-error}
+\end{equation}
+Taking \(B_0=C_0=2A+8\), and enlarging the constant for bounded \(U\),
+proves \eqref{eq:tpc20-uniform-calibration}.
+\end{proof}
+
+\begin{corollary}[The scalar defect in a separated TPC packet]
+\label{cor:tpc20-calibration-negligible}
+Take \(U\asymp_F X\) large enough for
+\eqref{eq:tpc20-target-horizon}.  Uniformly over the primitive row
+family,
+\begin{equation}
+ \eps_U(m)
+ \ll_{A,h,F}\rho_{P,H}(m)(\log X)^{-A}
+ \ll_{A,h,F,\epsilon}X^\epsilon(\log X)^{-A}.
+ \label{eq:tpc20-epsilon-bound}
+\end{equation}
+Let
+\begin{equation}
+ \widetilde Z_m(j)
+ =\sum_{\substack{u\le U\\(u,mH)=1}}
+ b_R(u)C_{m,u}(j).
+ \label{eq:tpc20-Z-tilde}
+\end{equation}
+Let \(\mathscr M\) be any set of rows in
+\eqref{eq:tpc20-row-support}, so that \(\#\mathscr M\ll Q\), and define
+\[
+ \mathcal C_\omega(A,B)
+ =\sum_{m_1,m_2\in\mathscr M}\omega_{m_1,m_2}
+   \sum_{\substack{j\in\Z\\(j,H)=1}}
+   F(j/J)A_{m_1}(j)B_{m_2}(j).
+\]
+For a fixed \(K\ge0\), assume
+\begin{equation}
+ \max_{m_1,m_2}|\omega_{m_1,m_2}|\le(\log X)^K,
+ \qquad R\le J(\log X)^K.
+ \label{eq:tpc20-calibration-packet-hypotheses}
+\end{equation}
+Then replacing \(Z\) by \(\widetilde Z\) changes the packet by
+\begin{equation}
+ \mathcal C_\omega(Z,Z)-\mathcal C_\omega(\widetilde Z,\widetilde Z)
+ =O_{B,K,h,F}\!\left(XQ(\log X)^{-B}\right)
+ \label{eq:tpc20-calibration-correlation-error}
+\end{equation}
+for every prescribed \(B>0\).
+In particular, the second condition in
+\eqref{eq:tpc20-calibration-packet-hypotheses} holds throughout the
+whole short--short strict-margin wedge of
+\cref{cor:tpc20-whole-single-range}.
+\end{corollary}
+
+\begin{proof}
+Apply \cref{thm:tpc20-uniform-calibration} with \(M=mH\).
+The row range is polynomial in \(X\), so a fixed \(C\) covers every
+row.  Also \(M/\varphi(M)=\rho_{P,H}(m)\ll_\epsilon X^\epsilon\);
+the sharper standard bound
+\(\rho_{P,H}(m)\ll_h\log\log(3X)\) will be used below.
+By \cref{thm:tpc20-common-recombination},
+\(Z_m-\widetilde Z_m=\eps_U(m)\).
+
+We first record an elementary \(L^1\) bound with no prime-distribution
+input.  From \eqref{eq:tpc20-lambda-positive},
+\begin{align}
+ \sum_{u\le R}\frac{|\lambda'_R(u)|}{u}
+ &\le
+ \sum_{\substack{ub\le R\\(u,b)=1}}
+ \frac{\mu(u)^2\mu(b)^2}{\varphi(u)\varphi(b)}
+ \ll(\log(2R))^2,
+ \label{eq:tpc20-lambda-l1-over-u}\\
+ \sum_{u\le R}|\lambda'_R(u)|
+ &\ll R(\log(2R))^2.
+ \label{eq:tpc20-lambda-l1}
+\end{align}
+The first estimate follows by majorizing with the Euler product
+\(\prod_{p\le R}(1+2/(p-1))\ll(\log(2R))^2\); the second follows by
+multiplying each summand by \(u\le R\).  Every \(u\) with a nonempty
+divisor congruence is coprime to \(m\) by
+\eqref{eq:tpc20-target-coprimality}; that congruence has at most
+\(O_F(J/u+1)\) solutions on the support of \(F(j/J)\).  Therefore
+\[
+ \sum_j|F(j/J)\Lambda_R(mj+h)|
+ \ll_F(J+R)(\log X)^2.
+\]
+The trivial inequality
+\(\Lambda(n)\le\log n\), the \(O_F(J)\) orbit support, and the standard
+bounds for the two local densities now give
+\begin{equation}
+ \sum_j|F(j/J)Z_m(j)|
+ +\sum_j|F(j/J)\widetilde Z_m(j)|
+ \ll_{h,F}(J+R)(\log X)^2.
+ \label{eq:tpc20-row-L1}
+\end{equation}
+
+Expanding
+\[
+ Z_{m_1}Z_{m_2}-\widetilde Z_{m_1}\widetilde Z_{m_2}
+ =\eps_U(m_1)\widetilde Z_{m_2}
+  +\eps_U(m_2)\widetilde Z_{m_1}
+  +\eps_U(m_1)\eps_U(m_2)
+\]
+and applying \eqref{eq:tpc20-row-L1},
+\(\#\mathscr M\ll Q\), and
+\eqref{eq:tpc20-calibration-packet-hypotheses} bounds the absolute
+packet error by
+\[
+ \ll_{A,K,h,F}
+ Q^2(\log X)^K
+ \left\{
+  (\log\log(3X))(\log X)^{-A}(J+R)(\log X)^2
+  +J(\log\log(3X))^2(\log X)^{-2A}
+ \right\}.
+\]
+Use \(R\le J(\log X)^K\), choose \(A\) in terms of \(B,K\), and invoke
+\(JQ^2\asymp XQ\) to prove
+\eqref{eq:tpc20-calibration-correlation-error}.
+\end{proof}
+
+\begin{remark}[No growing-modulus prime theorem is used]
+\label{rem:tpc20-no-PNT-AP}
+\Cref{thm:tpc20-uniform-calibration} concerns only the ordinary
+M\"obius Dirichlet series and finite Euler factors at primes dividing
+\(mH\).  It is not a prime number theorem in a progression of modulus
+\(mH\).  The genuinely difficult finite-window prime information
+remains inside the common centered kernel after
+\(\eps_U(m)\) has been removed.
+\end{remark}

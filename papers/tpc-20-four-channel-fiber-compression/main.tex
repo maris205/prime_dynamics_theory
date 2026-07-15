@@ -1,0 +1,167 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Four-Channel Compression in a Primitive Mobius Tail: Centered Divisor Kernels, a Single-Leg Completion Wedge, and CRT-Fiber Discrepancy},
+ pdfauthor={Liang Wang},
+ pdfsubject={Exact matched Fourier compression of the primitive residual-dispersion gate},
+ pdfkeywords={Mobius tail, Ramanujan model, centered divisor kernel, CRT fibers, Poisson summation, Kloosterman fractions, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Conditional input}
+\crefname{assumption}{Conditional input}{Conditional inputs}
+\Crefname{assumption}{Conditional input}{Conditional inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ee}[1]{\exp(2\pi i #1)}
+\newcommand{\eql}[2]{e_{#1}\!\left(#2\right)}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rad}{\operatorname{rad}}
+
+\title{\textbf{Four-Channel Compression in a Primitive M\"obius Tail:}\\
+\textbf{Centered Divisor Kernels, a Single-Leg Completion Wedge,}\\
+\textbf{and CRT-Fiber Discrepancy}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+TPC-19 shows that the primitive residual correlation left by TPC-18
+cannot be estimated by centering the prime--prime, prime--model, model--prime,
+and model--model channels separately.  We give the missing common
+algebraic reduction and then sharpen its long-period spectral gate.
+
+Let \(P_m\) and \(M_m\) be the locally calibrated prime and finite
+Ramanujan-model signals on a primitive affine row \(mj+h\), put
+\(H=\rad|h|\), and set \(Z_m=P_m-M_m\).  For a finite target horizon
+\(U\), we prove the
+pointwise identity
+\[
+ Z_m(j)=\eps_U(m)+
+ \sum_{\substack{u\le U\\(u,mH)=1}}
+ b_R(u)\left(\one_{u\mid mj+h}-\frac1u\right),
+ \qquad b_R(u)=-\mu(u)w_R(u),
+\]
+where \(w_R(u)>0\) is explicit.  A uniform M\"obius calibration
+theorem gives \(\eps_U(m)\ll_A \rho_{P,H}(m)(\log U)^{-A}\) throughout
+every fixed polynomial row range.  Thus the full
+\(PP-PM-MP+MM\) product has one coefficient and one centered divisor
+kernel, up to an arbitrarily logarithmically small scalar defect.  Its
+primitive-conditional centered-kernel \((u,v)\)-zero mode is
+\[
+ \frac{b_R(u)b_R(v)}{uv}
+ \bigl((u,v)\one_{(u,v)\mid m_1-m_2}-1\bigr),
+\]
+so the zero mode of every coprime divisor pair vanishes termwise in the
+matched channel.
+
+For \(g=(u,v)\), \(u=ga\), \(v=gb\), and
+\(l=[u,v]=gab\), we compute every Fourier coefficient of the primitive
+centered kernel on its true period \(Hl\).  When
+the two divisor congruences are compatible, all four phases align and
+the coefficient contains the exact multiplier
+\[
+ B_{g,a,b}(r)=g-\one_{b\mid r}-\one_{a\mid r}+\one_{l\mid r}.
+\]
+This yields a two-scale Poisson theorem.  If
+\(H\max(u,v)\le JX^{-\eta}\), the two single-indicator spectra and the
+constant spectrum complete with arbitrary power accuracy even when
+the joint period \(Hl\) is long.  For all \(u,v\le R=X^{1/2-\delta}\),
+the strict-margin range in which every single and constant spectrum
+completes is
+\(Q\le X^{1/2+\delta-\eta_0}\), substantially wider than the
+\(Q\le X^{2\delta-\eta_0}\) range obtained by completing the whole
+joint period at once.  In the genuinely remaining low-frequency
+joint packet, however, \(B_{g,a,b}(r)=g\); centering supplies no further
+nonzero-frequency cancellation.
+
+Finally, compatible row pairs are aggregated by their joint CRT class
+\(\kappa\bmod l\).  The three inverse phases of TPC-19 compress exactly
+to the ordinary finite Fourier transform of a single fiber vector
+\(Z_l(\kappa)\).  Splitting that vector into its unit-class mean and
+discrepancy produces an explicit Ramanujan bias and an exact Parseval
+identity for the fiber variance.  For this chosen compatible
+short--short packet, the remaining inputs are a bound for the explicit
+Ramanujan mean and a quantitative estimate for this modulus-dependent
+fiber discrepancy, or a norm-controlled low-rank substitute.  The cited
+large-sieve and Kloosterman-fraction theorems do not automatically
+provide those inputs for the sharp M\"obius row weights, and the
+large-divisor legs remain outside this reduction.  No residual-dispersion estimate,
+fixed-shift Hardy--Littlewood asymptotic, twin-prime theorem, or breach
+of sieve parity is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius tail; centered divisor kernel;
+determinant spectrum; Chinese remainder theorem; Poisson summation;
+CRT fibers; Ramanujan sums; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary
+11N05, 11L07, 11L20.
+
+\input{sections/introduction}
+\input{sections/interface}
+\input{sections/matched-recombination}
+\input{sections/uniform-calibration}
+\input{sections/kernel-fourier}
+\input{sections/single-leg-completion}
+\input{sections/fiber-compression}
+\input{sections/technology-boundary}
+\input{sections/certificate-conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

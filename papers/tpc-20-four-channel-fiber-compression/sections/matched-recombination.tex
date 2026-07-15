@@ -1,0 +1,206 @@
+\section{Exact recombination of the four centered channels}
+\label{sec:tpc20-recombination}
+
+We begin with the divisor coefficient of the finite model.  Put
+\begin{equation}
+ \lambda'_R(u)
+ =u\sum_{b\le R/u}
+ \frac{\mu(ub)\mu(b)}{\varphi(ub)}
+ \qquad(u\le R),
+ \label{eq:tpc20-lambda-prime}
+\end{equation}
+and set \(\lambda'_R(u)=0\) for \(u>R\).  The divisor formula for
+Ramanujan sums gives
+\begin{equation}
+ \Lambda_R(n)=\sum_{u\mid n}\lambda'_R(u).
+ \label{eq:tpc20-model-divisor}
+\end{equation}
+The coefficient is squarefree supported.  For squarefree \(u\le R\),
+\begin{equation}
+ \lambda'_R(u)
+ =\mu(u)\frac{u}{\varphi(u)}
+ \sum_{\substack{b\le R/u\\(b,u)=1}}
+ \frac{\mu(b)^2}{\varphi(b)}.
+ \label{eq:tpc20-lambda-positive}
+\end{equation}
+
+Define
+\begin{equation}
+ a(u)=-\mu(u)\log u,\qquad
+ b_R(u)=a(u)-\lambda'_R(u).
+ \label{eq:tpc20-ab-coefficients}
+\end{equation}
+For squarefree \(u\), put
+\begin{equation}
+ w_R(u)
+ =\log u+
+ \one_{u\le R}\frac{u}{\varphi(u)}
+ \sum_{\substack{b\le R/u\\(b,u)=1}}
+ \frac{\mu(b)^2}{\varphi(b)}.
+ \label{eq:tpc20-wR}
+\end{equation}
+Then \(w_R(u)>0\) and
+\begin{equation}
+ b_R(u)=-\mu(u)w_R(u),
+ \label{eq:tpc20-bR-mobius}
+\end{equation}
+with both sides understood as zero off the squarefree integers.
+
+Let \(U\ge R\) be an integer such that every target in the separated
+packet under consideration satisfies
+\begin{equation}
+ 1\le n_m(j)=mj+h\le U.
+ \label{eq:tpc20-target-horizon}
+\end{equation}
+For \((u,mH)=1\), define
+\begin{equation}
+ C_{m,u}(j)=\one_{u\mid mj+h}-\frac1u,
+ \label{eq:tpc20-common-centered-kernel}
+\end{equation}
+and define the finite prime-calibration defect
+\begin{equation}
+ \eps_U(m)
+ =\sum_{\substack{u\le U\\(u,mH)=1}}\frac{a(u)}u
+  -\rho_{P,H}(m).
+ \label{eq:tpc20-calibration-defect}
+\end{equation}
+
+\begin{theorem}[One coefficient for all four channels]
+\label{thm:tpc20-common-recombination}
+Under the setup of \cref{sec:tpc20-interface}, in particular
+\(dH\le R\), and under \cref{eq:tpc20-target-horizon}, one has
+pointwise
+\begin{equation}
+ \boxed{
+ Z_m(j)=\eps_U(m)+
+ \sum_{\substack{u\le U\\(u,mH)=1}}
+ b_R(u)C_{m,u}(j).}
+ \label{eq:tpc20-common-recombination}
+\end{equation}
+Consequently, with \(\eps_i=\eps_U(m_i)\),
+\begin{align}
+ Z_{m_1}(j)Z_{m_2}(j)
+ ={}&\eps_1\eps_2
+ +\eps_1\sum_v b_R(v)C_{m_2,v}(j)
+ +\eps_2\sum_u b_R(u)C_{m_1,u}(j)
+ \notag\\
+ &+\sum_{u,v}b_R(u)b_R(v)
+ C_{m_1,u}(j)C_{m_2,v}(j),
+ \label{eq:tpc20-four-channel-recombined}
+\end{align}
+where the last three sums carry the horizon and coprimality restrictions
+from \eqref{eq:tpc20-common-recombination}.  Thus the product
+\[
+ P_{m_1}P_{m_2}-P_{m_1}M_{m_2}
+ -M_{m_1}P_{m_2}+M_{m_1}M_{m_2}
+\]
+has a common coefficient and a common centered kernel before any
+absolute value is taken.
+\end{theorem}
+
+\begin{proof}
+The von Mangoldt divisor identity and
+\eqref{eq:tpc20-target-horizon} give
+\[
+ \Lambda(n_m(j))
+ =\sum_{\substack{u\le U\\u\mid n_m(j)}}a(u).
+\]
+Every divisor in this sum is coprime to \(mH\) by
+\eqref{eq:tpc20-target-coprimality}.  Adding and subtracting the density
+of each divisibility condition gives
+\begin{equation}
+ P_m(j)
+ =\eps_U(m)+
+ \sum_{\substack{u\le U\\(u,mH)=1}}a(u)C_{m,u}(j).
+ \label{eq:tpc20-prime-common-kernel}
+\end{equation}
+
+Similarly, \eqref{eq:tpc20-model-divisor} and the exact conditional
+mean \eqref{eq:tpc20-model-density} give
+\begin{equation}
+ M_m(j)
+ =\sum_{\substack{u\le R\\(u,mH)=1}}
+ \lambda'_R(u)C_{m,u}(j).
+ \label{eq:tpc20-model-common-kernel}
+\end{equation}
+Indeed, averaging the divisor indicators over the primitive classes
+shows that the sum of \(\lambda'_R(u)/u\) in
+\eqref{eq:tpc20-model-common-kernel} is exactly
+\(\rho_{M,H,R}(m)\).  Subtracting
+\eqref{eq:tpc20-model-common-kernel} from
+\eqref{eq:tpc20-prime-common-kernel} proves
+\eqref{eq:tpc20-common-recombination}; multiplication proves
+\eqref{eq:tpc20-four-channel-recombined}.
+\end{proof}
+
+\begin{remark}[What has and has not been matched]
+\label{rem:tpc20-recombination-scope}
+\Cref{thm:tpc20-common-recombination} is a finite, pointwise identity.
+It constructs the common divisor coefficient which TPC-19 left as an
+analytic requirement.  It is not a finite-window prime number theorem
+in progressions and does not estimate the resulting two-row sum.  The
+only scalar not absorbed into the common kernel is
+\(\eps_U(m)\); it is controlled uniformly in
+\cref{sec:tpc20-uniform-calibration}.
+\end{remark}
+
+For a periodic function of \(j\), let \(\mathbb E_H\) denote the
+complete-period average conditional on \((j,H)=1\).
+
+\begin{proposition}[Connected determinant zero mode]
+\label{prop:tpc20-common-zero-mode}
+Let \((u,m_1H)=(v,m_2H)=1\), put
+\[
+ g=(u,v),\qquad \Delta=m_1-m_2.
+\]
+Then
+\begin{equation}
+ \boxed{
+ \mathbb E_H\!
+ \left[C_{m_1,u}C_{m_2,v}\right]
+ =\frac1{uv}\left(g\one_{g\mid\Delta}-1\right).}
+ \label{eq:tpc20-common-zero-mode}
+\end{equation}
+In particular, every \(g=1\) zero mode in the recombined
+\(PP-PM-MP+MM\) channel vanishes termwise.  Moreover,
+\begin{equation}
+ g\one_{g\mid\Delta}-1
+ =\sum_{r=1}^{g-1}e_g(r\Delta).
+ \label{eq:tpc20-determinant-spectrum}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The two congruences for \(j\) are individually soluble and have
+conditional densities \(1/u\) and \(1/v\).  Their joint density is
+\(g/(uv)\) precisely when their reductions modulo \(g\) agree.
+Primitivity makes this compatibility equivalent to \(g\mid\Delta\);
+otherwise the joint density is zero.  Expanding the two centered
+indicators proves \eqref{eq:tpc20-common-zero-mode}.  The complete
+additive-character sum modulo \(g\), with its zero frequency removed,
+gives \eqref{eq:tpc20-determinant-spectrum}.
+\end{proof}
+
+The common coefficient also identifies exactly where the M\"obius signs
+remain.  On squarefree support write
+\begin{equation}
+ u=ga,\qquad v=gb,
+ \qquad g,a,b\text{ pairwise coprime}.
+ \label{eq:tpc20-squarefree-gab}
+\end{equation}
+Then
+\begin{equation}
+ b_R(ga)b_R(gb)
+ =\mu(a)\mu(b)w_R(ga)w_R(gb).
+ \label{eq:tpc20-common-sign-cancellation}
+\end{equation}
+The determinant content \(g\) is unsigned.  If the TPC-18 row signs
+\(\mu(d_1)\mu(d_2)\) are also included, the admissibility conditions
+imply \((a,d_1)=(b,d_2)=1\), and hence
+\begin{equation}
+ \mu(d_1)\mu(d_2)\mu(a)\mu(b)
+ =\mu(d_1a)\mu(d_2b).
+ \label{eq:tpc20-row-frequency-sign-fusion}
+\end{equation}
+No coprimality between \(d_1a\) and \(d_2b\) is asserted: \(d_1,d_2\)
+may intersect, as may \(a,d_2\) and \(b,d_1\).

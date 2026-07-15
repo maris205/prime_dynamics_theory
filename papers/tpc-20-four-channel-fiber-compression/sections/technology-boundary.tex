@@ -1,0 +1,221 @@
+\section{Technology interfaces and the coefficient gate}
+\label{sec:tpc20-technology-boundary}
+
+TPC-18 produces the primitive two-row residual correlation, and TPC-19
+separates its direct determinant-frequency and long-lcm Poisson
+interfaces \citep{WangTPC18,WangTPC19}.  The results above improve the
+second interface in two exact ways: the four centered channels are placed
+on one Fourier lattice before estimation, and the compatible triple
+inverse phase is compressed to the single fiber transform
+\eqref{eq:tpc20-aggregated-DFT}.  This section records how several cited
+estimates interface with those reductions, and which
+hypothesis on the chosen prime--M\"obius fiber vector is still missing.
+
+\subsection{The frequency-concentration interface}
+
+A particularly flexible input relevant here is the exceptional-spectrum
+large sieve of \citet{Pascadi2026LargeSieve}.  Put
+\(\mathbb T=\R/\Z\).  In its notation, for
+\(\alpha,\beta\in\mathbb T\), put
+\begin{equation}
+ T_N(\alpha,\beta)
+ =\min_{t\in\Z_{\ge1}}\bigl(t+N\lVert t\alpha\rVert_{\mathbb T}
+                         +N\lVert t\beta\rVert_{\mathbb T}\bigr),
+ \qquad
+ \mathcal I_N(\nu)
+ =\iint T_N(\alpha,\beta)\,
+       d|\nu|(\alpha)d|\nu|(\beta).
+ \label{eq:tpc20-Pascadi-functional}
+\end{equation}
+Theorem~5.2 of that paper treats a coefficient
+\(a_n=f(n/N)\check\nu(n)\).  Suppressing its standard smooth-cutoff,
+parameter, and cusp-normalization hypotheses, the theorem gives
+\begin{equation}
+ \sum_{\lambda_j<1/4}X^{2\theta_j}
+ \left|\sum_{n\asymp N}a_n\rho_{j\mathfrak a}(a_0n)\right|^2
+ \ll_\epsilon
+ (qa_0NX)^{2\epsilon}
+ \left(1+\frac{a_0N}{q}\right)\mathcal A^2,
+ \label{eq:tpc20-Pascadi-bound}
+\end{equation}
+provided, in particular,
+\begin{align}
+ \mathcal A
+ &\gg \lVert a\rVert_2
+ +\frac{\sqrt{(a_0,q)}N}{\sqrt{q+a_0N}}|\nu|(\mathbb T),
+ \label{eq:tpc20-Pascadi-size-gate}\\
+ X
+ &\ll \max\!\left(1,\frac q{a_0N}\right)
+       \max\!\left(1,\frac{\mathcal A^2}
+                           {\mathcal I_N(\nu)}\right).
+ \label{eq:tpc20-Pascadi-concentration-gate}
+\end{align}
+Thus this result is an interface theorem, not a black-box estimate for
+an arbitrary determinant sequence.  Before it can be used here one must
+derive one common spectral coefficient from the matched four-channel
+kernel, identify its spectral level \(q\), length \(N\), scalar
+\(a_0\), and exceptional parameter \(X\), construct a representing
+measure \(\nu\), and verify both
+\eqref{eq:tpc20-Pascadi-size-gate} and
+\eqref{eq:tpc20-Pascadi-concentration-gate}.  In particular, the
+spectral level called \(q\) in \eqref{eq:tpc20-Pascadi-bound} must not
+be identified with either the row scale or the fiber modulus merely
+because the same letter is traditionally used.  Applying the theorem
+separately to the joint, two single, and constant channels is not a
+substitute: the intervening triangle inequalities would discard the
+matching encoded by \eqref{eq:tpc20-compatible-Khat}.  The coefficient
+presented to the large sieve must be the combined coefficient whenever
+more than one channel survives on the block under consideration.
+
+There is a sharp positive benchmark.  Theorem~1.7 of
+\citet{Pascadi2026LargeSieve} applies to the smooth difference
+coefficient
+\[
+ \sum_{h_1\ell_1-h_2\ell_2=n}
+ \Phi_1(h_1/H_0)\Phi_2(h_2/H_0)
+ e(h_1\alpha_1+h_2\alpha_2),
+\]
+subject to its stated spectral-level and parameter conditions, including
+the regime in which the level is at least of order \(L^2\).  It does not
+cover the sharp coefficient isolated in TPC-19, where \(\omega_D\) is a
+\(1\)-bounded smooth cutoff supported on \(d\asymp D\):
+\begin{equation}
+ A_{\ell_1,\ell_2}(n)
+ =\sum_{\ell_1d_1-\ell_2d_2=n}
+ \mu(d_1)\mu(d_2)\omega_D(d_1)\omega_D(d_2).
+ \label{eq:tpc20-sharp-determinant-coefficient}
+\end{equation}
+Indeed, if
+\[
+ M_\ell(\alpha)
+ =\sum_d\mu(d)\omega_D(d)e(-\ell d\alpha),
+\]
+then
+\(\widehat A_{\ell_1,\ell_2}
+ =M_{\ell_1}\overline{M_{\ell_2}}\).  The natural representing measure
+has density \(\widehat A_{\ell_1,\ell_2}\), and hence total variation
+\begin{equation}
+ V_{\ell_1,\ell_2}
+ =\int_{\mathbb T}|M_{\ell_1}(\alpha)M_{\ell_2}(\alpha)|\,d\alpha
+ \ll D
+ \label{eq:tpc20-natural-measure-variation}
+\end{equation}
+by Parseval and Cauchy--Schwarz.  Indeed,
+\(\lVert M_\ell\rVert_2^2\le\sum_{d\asymp D}|\omega_D(d)|^2\ll D\).
+In the formal smooth-benchmark scaling
+\(N\asymp LD\), spectral level \(q\asymp L^2\), \(a_0=1\), and
+\(L>2D\), retaining \(\mathcal A=D^{1+o(1)}\) would already require
+\(V_{\ell_1,\ell_2}=D^{o(1)}\), together with the independent
+two-frequency condition
+\eqref{eq:tpc20-Pascadi-concentration-gate}.  Neither estimate follows
+from \eqref{eq:tpc20-natural-measure-variation}.
+
+Davenport's uniform M\"obius exponential-sum estimate, in the form
+recalled by \citet{GreenTao2008}, gives arbitrary logarithmic saving in
+\(\sup_\alpha|\sum_{d\leq D}\mu(d)e(d\alpha)|\).  After partial
+summation it also handles a standard smooth dyadic cutoff.  This is a
+one-frequency \(L^\infty\) statement.  It does not bound the product
+variation in \eqref{eq:tpc20-natural-measure-variation} at the scale
+required above and does not control the two-frequency functional
+\(\mathcal I_N\).  Consequently it does not verify Pascadi's two gates
+for \eqref{eq:tpc20-sharp-determinant-coefficient}.
+
+\subsection{What one-fraction estimates do and do not import}
+
+The classical bilinear estimate of
+\citet{DukeFriedlanderIwaniec1997} controls a single Kloosterman
+fraction \(e(a\overline m/n)\) with a separated coefficient
+\(\alpha_m\beta_n\).  The trilinear estimate of
+\citet{BettinChandee2018} admits a further separated coefficient
+\(\nu_a\), and the recent preprint \citet{Wright2026} treats a useful
+partially fixed denominator while retaining the same essential
+one-fraction and separability requirements.  The latter is presently a
+version-sensitive, non-peer-reviewed preprint, so only its explicitly
+stated current hypotheses may be used.  These results can therefore
+be invoked on a dyadic slice only after the slice has been reduced to
+their precise phase and coefficient forms and all of their size
+hypotheses have been checked.  They are not estimates for an arbitrary
+two-dimensional array indexed by a modulus and a residue class.
+
+The compression in \cref{thm:tpc20-fiber-DFT} supplies the needed
+single phase, but not the needed coefficient separation.  After
+aggregation, the relevant vector is
+\[
+ (q,\kappa)\longmapsto D_q(\kappa),
+ \qquad \kappa\in\mathcal U_q.
+\]
+Replacing \(\kappa\) by its inverse may display the phase as one
+Kloosterman fraction, but it simultaneously replaces the coefficient
+by \(D_q(\overline m)\); the joint dependence on \(q\) and \(m\)
+remains.  Likewise, Theorem~1 of \citet{BlomerMilicevic2015} averages
+complete Kloosterman sums over their modulus \(c\), with a residue weight
+modulo \(q_0\), a smooth \(c/X\) weight, and a cost measured by
+the \(\ell^1\)-norm of the \(q_0\)-Mellin transform of that residue
+weight.  It is not a direct estimate for the one-modulus fiber transform
+\(S_q(r)\).  The identity \eqref{eq:tpc20-aggregated-DFT} alone does not
+convert the fiber vector into that weighted-modulus average.
+None of the cited results is a separate \emph{long-lcm Poisson spectrum}
+theorem: Poisson summation gives the exact normal form, while the
+arithmetic estimate of its coefficient array is an additional step.
+
+The obstruction may be quantified.  On a dyadic modulus block
+\(q\asymp Q_0\), choose representatives \(0\leq\kappa<2Q_0\), extend
+\(D_q(\kappa)\) by zero outside \(\kappa\in\mathcal U_q\), and define
+the separable projective cost
+\begin{equation}
+ \mathfrak R_\pi(D;Q_0)
+ =\inf_{D_q(\kappa)=\sum_\nu x_\nu(q)y_\nu(\kappa)}
+   \sum_\nu\lVert x_\nu\rVert_2\lVert y_\nu\rVert_2.
+ \label{eq:tpc20-projective-rank-cost}
+\end{equation}
+A direct termwise use of a separated bilinear or trilinear theorem pays
+the decomposition cost in
+\eqref{eq:tpc20-projective-rank-cost}.  Small Hilbert-space norm or
+Parseval energy does not by itself imply a sufficiently small projective
+cost.  Thus ``one phase'' is a necessary structural reduction, whereas
+controlled projective rank is an additional arithmetic input.
+
+\subsection{A defensible next gate}
+
+For a family \(\mathcal Q\) of long denominators, set
+\begin{equation}
+ \mathfrak V(\mathcal Q)
+ =\sum_{q\in\mathcal Q}q
+   \sum_{\kappa\in\mathcal U_q}|D_q(\kappa)|^2.
+ \label{eq:tpc20-total-fiber-variance}
+\end{equation}
+By \eqref{eq:tpc20-discrepancy-parseval}, this is exactly the complete
+frequency energy of the discrepancy transforms.  It is not yet a
+restricted-frequency saving: the one-fiber example in
+\cref{prop:tpc20-fiber-nogo} retains an order-one coprime-frequency
+discrepancy after its mean is removed.  The direct next proof obligation is
+therefore the weighted \(\ell^1_q\ell^2_\kappa\) estimate stated in
+\eqref{eq:tpc20-fiber-gate}, or a stronger variance estimate that implies
+it with a fixed margin.  This route uses the exact restricted-frequency
+bound in \cref{prop:tpc20-restricted-fiber-bound} and requires no claim
+that any cited Kloosterman theorem accepts the fiber array.
+
+An alternative low-rank route must do all three of the following on each
+dyadic block: exhibit an explicit decomposition in
+\eqref{eq:tpc20-projective-rank-cost}; substitute the actual block
+parameters into one specified theorem of
+\citet{DukeFriedlanderIwaniec1997}, \citet{BettinChandee2018}, or
+\citet{Wright2026}; and prove that the imported bound multiplied by the
+full decomposition cost is below the TPC-18 obstruction scale with a
+fixed margin.  Low rank without this norm and parameter ledger is not a
+valid transfer theorem.  In either route the explicit Ramanujan mean
+packet \eqref{eq:tpc20-Ramanujan-mean-packet} remains a separate term;
+fiber discrepancy estimates do not cancel it.
+
+Finally, no estimate in this paper is taken from the January 2026
+withdrawn preprint entitled \emph{Bilinear forms with Kloosterman
+fractions and applications}.  Its withdrawal notice reports a missing
+factor in the claimed bound, and it is intentionally given no
+bibliographic entry here.  The unconditional boundary is therefore as
+follows: the results audited above supply rigorous smooth and separated
+benchmarks, while neither the sharp frequency-concentration gates nor
+the actual fiber-variance/projective-rank gate is proved here or supplied
+by those results.  In
+particular, the results above do not establish cancellation of the full
+TPC-18 residual, a fixed-shift prime-pair asymptotic, a twin-prime lower
+bound, or a breach of the sieve parity barrier.

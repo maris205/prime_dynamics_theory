@@ -1,0 +1,123 @@
+\section{Primitive rows and locally calibrated signals}
+\label{sec:tpc20-interface}
+
+Fix \(h\in\Z\setminus\{0\}\) and put
+\begin{equation}
+ H=\rad|h|.
+ \label{eq:tpc20-H}
+\end{equation}
+Let \(0<\delta<1/2\) and
+\begin{equation}
+ R=\lfloor X^{1/2-\delta}\rfloor,
+ \qquad V=\lfloor R^{1/2}\rfloor.
+ \label{eq:tpc20-RV}
+\end{equation}
+Throughout \(X\) is sufficiently large in terms of \(h\) and \(\delta\)
+that \(R\ge H^2\).  Hence \(dH\le R\) for every \(d\le V\) in the row
+support below.
+The finite Ramanujan model and its residual are
+\begin{equation}
+ \Lambda_R(n)=\sum_{q\le R}\frac{\mu(q)}{\varphi(q)}c_q(n),
+ \qquad r_R(n)=\Lambda(n)-\Lambda_R(n).
+ \label{eq:tpc20-model-residual}
+\end{equation}
+We write \(e_q(x)=\exp(2\pi i x/q)\), set \(e_1(x)=1\), and use
+\(
+ c_q(n)=\sum_{a\bmod q}^{*}e_q(an)
+\).
+
+Let \(L,D,J,Q\) satisfy
+\begin{equation}
+ Q=LD,\qquad QJ\asymp X,\qquad
+ L>\max(2R,2|h|),
+ \label{eq:tpc20-row-scales}
+\end{equation}
+and let
+\begin{equation}
+ \ell\in[L/2,2L]\text{ be prime},\qquad
+ d\in[D,2D]\cap[1,V]
+ \label{eq:tpc20-row-support}
+\end{equation}
+with \(d\) squarefree.  In the primitive sector
+\begin{equation}
+ (d,H)=1,\qquad (j,H)=1.
+ \label{eq:tpc20-primitive-mask}
+\end{equation}
+Put
+\begin{equation}
+ m=\ell d,\qquad n_m(j)=mj+h.
+ \label{eq:tpc20-row-target}
+\end{equation}
+Then \((m,H)=1\), and every divisor \(u\mid n_m(j)\) satisfies
+\begin{equation}
+ (u,mH)=1.
+ \label{eq:tpc20-target-coprimality}
+\end{equation}
+
+TPC-18 restricts the final primitive obstruction to generic row pairs
+\(m_i=\ell_i d_i\) satisfying
+\begin{equation}
+ \ell_1\ne\ell_2,\qquad
+ |m_1-m_2|>QX^{-\kappa},\qquad
+ (d_1,d_2)\le X^\kappa
+ \label{eq:tpc20-generic-rows}
+\end{equation}
+for a fixed \(\kappa>0\).  All exact identities below hold before this
+pruning; any row-pair restriction independent of \(j\) may therefore be
+imposed outside the identities.  Pruning does not, however, preserve a
+Gram or positive-semidefinite structure.
+
+The exact primitive conditional mean of the finite model is
+\begin{equation}
+ \rho_{M,H,R}(m)
+ =\frac{H}{\varphi(H)}\frac d{\varphi(d)},
+ \label{eq:tpc20-model-density}
+\end{equation}
+while the calibrated prime local density is
+\begin{equation}
+ \rho_{P,H}(m)
+ =\frac{H}{\varphi(H)}\frac m{\varphi(m)}
+ =\frac{mH}{\varphi(mH)}.
+ \label{eq:tpc20-prime-density}
+\end{equation}
+The second formula is a local calibration, not a prime number theorem
+for the growing modulus \(mH\).  Define
+\begin{equation}
+ P_m(j)=\Lambda(mj+h)-\rho_{P,H}(m),
+ \qquad
+ M_m(j)=\Lambda_R(mj+h)-\rho_{M,H,R}(m),
+ \label{eq:tpc20-PM-signals}
+\end{equation}
+and
+\begin{equation}
+ Z_m(j)=P_m(j)-M_m(j).
+ \label{eq:tpc20-Z-signal}
+\end{equation}
+TPC-19 proves the exact drift identity
+\begin{equation}
+ r_R(mj+h)=Z_m(j)+\delta_H(m),
+ \qquad
+ \delta_H(\ell d)
+ =\frac{H}{\varphi(H)}
+   \frac{d}{\varphi(d)(\ell-1)}.
+ \label{eq:tpc20-row-drift}
+\end{equation}
+The contribution of one drift to a full primitive row-pair correlation
+is \(O_{h,\eps}(XDX^\eps)\), and the two-drift contribution is
+\(O_{h,\eps}(XD L^{-1}X^\eps)\).  Both have a fixed power saving relative
+to the natural scale
+\begin{equation}
+ Q^2J\asymp XQ
+ \label{eq:tpc20-natural-scale}
+\end{equation}
+whenever \(L\ge X^{\lambda_0}\) for fixed \(\lambda_0>0\).
+
+Throughout, \(F\) belongs to a uniformly bounded subset of
+\(C_c^\infty(\R)\), and its support is chosen so that the target values
+are positive and \(n_m(j)\ll_F X\).  The actual TPC-18 weights also
+depend smoothly on \(mj/X\) and \(dj/K\).  Fourier inversion in
+logarithmic coordinates writes them as an absolutely convergent
+superposition of separated row and orbit weights; truncating the dual
+variables at a fixed power of \(X\) has arbitrary power accuracy.  It
+therefore suffices to prove the spectral identities for one separated
+packet with a common factor \(F(j/J)\), then restore that superposition.

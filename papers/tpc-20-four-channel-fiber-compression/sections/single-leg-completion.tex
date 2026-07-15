@@ -1,0 +1,229 @@
+\section{Single-leg completion and the intermediate exponent wedge}
+\label{sec:tpc20-single-leg}
+
+The four natural lattices in
+\cref{eq:tpc20-four-poisson-lattices} have different periods.  This
+allows both single-indicator channels to be completed even when the joint
+period \(H[u,v]\) is long.
+
+\begin{theorem}[Two-scale completion]
+\label{thm:tpc20-two-scale-completion}
+Fix \(\eta>0\), and let \(F\) range over a uniformly bounded subset of
+\(C_c^\infty(\mathbb R)\).  Suppose
+\begin{equation}
+ H\max(u,v)\le JX^{-\eta}.
+ \label{eq:tpc20-single-short-condition}
+\end{equation}
+Then, for every \(A>0\),
+\begin{align}
+ \sum_{j\in\mathbb Z}K_{u,v}^{m_1,m_2}(j)F(j/J)
+ ={}&J\widehat F(0)\frac{\varphi(H)}{Huv}(g\chi-1)
+ \notag\\
+ &+\chi\frac{J}{Hq}\sum_{n\ne0}
+ c_H(n)e_q(n\overline H\kappa)
+ \widehat F\!\left(\frac{nJ}{Hq}\right)
+ +O_{A,\eta,F}(X^{-A}),
+ \label{eq:tpc20-two-scale-completed}
+\end{align}
+where \(q=[u,v]\), \(\chi=\mathbf 1_{\{g\mid m_1-m_2\}}\), and the
+second line is absent when \(\chi=0\).  The error remains arbitrarily
+power-saving after any fixed polynomial number of row and finite-model
+divisor sums carrying polynomially bounded weights.
+\end{theorem}
+
+\begin{proof}
+In \eqref{eq:tpc20-four-poisson-lattices}, every nonzero frequency of
+the \(u\)-single channel has Fourier argument of size at least
+\(J/(Hu)\ge X^\eta\), and similarly for the \(v\)-single channel.  The
+constant channel has the still shorter period \(H\).  Repeated integration
+by parts removes all their nonzero frequencies with arbitrary power
+saving.  Their three zero modes add to
+\(-J\widehat F(0)\varphi(H)/(Huv)\).  The joint zero mode is
+\(J\widehat F(0)\varphi(H)g\chi/(Huv)\), and its nonzero frequencies
+are retained.  Choosing the number of integrations after the fixed
+polynomial multiplicity proves the last assertion.
+\end{proof}
+
+\begin{corollary}[Low-frequency joint packet]
+\label{cor:tpc20-low-frequency-joint}
+Under the hypotheses of \cref{thm:tpc20-two-scale-completion}, fix
+\(0<\epsilon<\eta\).  The joint remainder in
+\eqref{eq:tpc20-two-scale-completed} may be truncated to
+\begin{equation}
+ 0<|n|\le N_{q,\epsilon},
+ \qquad
+ N_{q,\epsilon}=X^\epsilon\frac{Hq}{J},
+ \label{eq:tpc20-dual-length}
+\end{equation}
+with arbitrary power error.  Whenever this range is nonempty,
+\begin{equation}
+ |n|<a,\qquad |n|<b,
+ \label{eq:tpc20-low-frequency-transverse}
+\end{equation}
+for all sufficiently large \(X\).  Consequently the compatible
+common-lattice multiplier satisfies
+\begin{equation}
+ B_{g,a,b}(n)=g
+ \qquad(0<|n|\le N_{q,\epsilon}).
+ \label{eq:tpc20-low-frequency-Bg}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+For \(|n|>N_{q,\epsilon}\), the Fourier argument in the joint sum has
+size greater than \(X^\epsilon\), so rapid decay of \(\widehat F\) gives
+the truncation.  Since \(q/b=u\) and \(q/a=v\),
+\[
+ \frac{N_{q,\epsilon}}b
+ =X^\epsilon\frac{Hu}{J}\le X^{\epsilon-\eta},
+ \qquad
+ \frac{N_{q,\epsilon}}a
+ =X^\epsilon\frac{Hv}{J}\le X^{\epsilon-\eta}.
+\]
+Thus a nonzero retained integer is divisible by neither \(a\) nor \(b\).
+It is not divisible by \(q\), and
+\eqref{eq:tpc20-common-multiplier} gives
+\eqref{eq:tpc20-low-frequency-Bg}.
+\end{proof}
+
+\begin{remark}[What matching does in this wedge]
+\label{rem:tpc20-low-frequency-nogo}
+In the regime of \cref{cor:tpc20-low-frequency-joint}, matching the four
+channels completes their common zero mode, but it produces no further
+algebraic cancellation on the retained nonzero frequencies: the multiplier
+there is exactly \(g\).  The remaining joint packet therefore requires
+cancellation in the row variables, the divisor variables, or both.  This is
+a low-frequency no-go statement, not a lower bound for the full TPC-18
+correlation.
+\end{remark}
+
+We now translate the new condition into the TPC scale.  Recall
+\begin{equation}
+ R=X^{1/2-\delta+o(1)},\qquad J\asymp X/Q,
+ \qquad 0<\delta<\frac12.
+ \label{eq:tpc20-RJ-scales}
+\end{equation}
+
+\begin{corollary}[Whole finite-model single-leg range]
+\label{cor:tpc20-whole-single-range}
+Fix \(\eta_0>0\).  If
+\begin{equation}
+ Q\le X^{1/2+\delta-\eta_0},
+ \label{eq:tpc20-single-exponent-range}
+\end{equation}
+then, for every fixed \(0<\eta<\eta_0\) and all sufficiently large
+\(X\), condition \eqref{eq:tpc20-single-short-condition} holds
+simultaneously for every \(u,v\le R\).  Thus every finite-model single
+and constant nonzero spectrum is power-saving, and only compatible joint
+packets can remain long.
+
+By comparison, completing every joint period by smoothness alone requires
+\begin{equation}
+ Q\le X^{2\delta-\eta_0}.
+ \label{eq:tpc20-joint-exponent-range}
+\end{equation}
+Hence the intermediate wedge
+\begin{equation}
+ X^{2\delta+\eta_1}<Q\le X^{1/2+\delta-\eta_0}
+ \label{eq:tpc20-intermediate-wedge}
+\end{equation}
+is nonempty for fixed sufficiently small positive margins
+\(\eta_0,\eta_1\).
+\end{corollary}
+
+\begin{proof}
+Uniformly for \(u,v\le R\),
+\[
+ \frac{H\max(u,v)}J
+ \ll_h QX^{-1/2-\delta+o(1)}.
+\]
+This is at most \(X^{-\eta}\) under
+\eqref{eq:tpc20-single-exponent-range}.  On the other hand,
+\(H[u,v]/J\le HR^2/J\ll_h QX^{-2\delta+o(1)}\), which gives
+\eqref{eq:tpc20-joint-exponent-range}.  Since
+\(1/2+\delta-2\delta=1/2-\delta>0\), fixed margins leave a nonempty
+wedge.
+\end{proof}
+
+\begin{corollary}[Endpoint ledger for the largest divisor slice]
+\label{cor:tpc20-profile-ledger}
+Write \(L=X^{\lambda+o(1)}\) and
+\(D\le V=X^{1/4-\delta/2+o(1)}\).  The largest row scale satisfies
+\begin{equation}
+ Q\le X^{\lambda+1/4-\delta/2+o(1)}.
+ \label{eq:tpc20-largest-row-exponent}
+\end{equation}
+It lies strictly inside the single-leg range whenever
+\begin{equation}
+ \delta>\frac23\left(\lambda-\frac14\right)
+ \label{eq:tpc20-profile-threshold}
+\end{equation}
+with a fixed margin.  Thus the published profile inherited from
+TPC-17 and TPC-18 \citep{WangTPC17,WangTPC18},
+\(\lambda=10/21-\sigma\), has threshold
+\begin{equation}
+ \delta>\frac{19}{126}-\frac23\sigma,
+ \label{eq:tpc20-published-threshold}
+\end{equation}
+and the version-locked Li-v6 profile
+\citep{Li2026v6,WangTPC17,WangTPC18},
+\(\lambda=8/17-\sigma\), has threshold
+\begin{equation}
+ \delta>\frac5{34}-\frac23\sigma.
+ \label{eq:tpc20-li-threshold}
+\end{equation}
+All three displayed inequalities are strict boundary statements; equality
+does not supply the power margin used by
+\cref{thm:tpc20-two-scale-completion}.
+\end{corollary}
+
+\begin{proof}
+Compare the exponent in \eqref{eq:tpc20-largest-row-exponent} with
+\(1/2+\delta\).  The resulting inequality is
+\(\lambda-1/4<3\delta/2\).  Substitution of the two values of
+\(\lambda\) gives \eqref{eq:tpc20-published-threshold} and
+\eqref{eq:tpc20-li-threshold}.
+\end{proof}
+
+\begin{proposition}[Sharp boundary of smooth single-leg completion]
+\label{prop:tpc20-single-boundary-nogo}
+Polynomial separation \(Hu\le JX^{-\eta}\) is the sufficient condition
+used above.  It cannot be replaced by the comparable-scale regime using
+rapid Fourier decay alone.  More precisely, for fixed
+\(0<c<C<\infty\), when
+\(c\le J/(Hu)\le C\), there exist a fixed smooth compactly supported
+\(F\) and an allowed class \(\kappa_1\bmod u\) for which the first
+nonzero term of the unnormalized primitive progression
+\begin{equation}
+ \frac{J}{Hu}c_H(1)e_u(\overline H\kappa_1)
+ \widehat F\!\left(\frac{J}{Hu}\right)
+ \label{eq:tpc20-first-single-mode}
+\end{equation}
+has size bounded below by a positive constant depending on \(H,F\).
+Consequently no extension beyond the exponent boundary
+\(Q= X^{1/2+\delta+o(1)}\) follows from smoothness alone.
+\end{proposition}
+
+\begin{proof}
+Choose a nonnegative, nonzero smooth \(F\), supported sufficiently close
+to zero that
+\[
+ \Re\widehat F(\xi)\ge\frac12\int_{\R}F(t)\,dt>0
+ \qquad(c\le\xi\le C).
+\]
+Since \(H\) is squarefree,
+\(c_H(1)=\mu(H)\ne0\), and the phase has modulus one.  The displayed
+mode is therefore bounded below uniformly in the stated range and is not
+power-saving.  This is a boundary for the termwise completion method;
+cancellation against other arithmetic sums would be an additional input.
+\end{proof}
+
+\begin{remark}[Scope]
+\label{rem:tpc20-single-scope}
+The kernel theorem is coefficient-independent.  Applied with
+\(\lambda'_R\), it concerns the centered finite model; applied with
+\(b_R\one_{u\le R}\), it concerns the short--short block of the matched
+residual.  It neither estimates the remaining compatible joint packet
+nor controls the residual terms with \(u>R\) or \(v>R\), and therefore
+does not prove the full primitive residual-dispersion target.
+\end{remark}

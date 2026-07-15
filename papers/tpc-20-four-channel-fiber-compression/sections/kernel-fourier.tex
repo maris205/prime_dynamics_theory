@@ -1,0 +1,280 @@
+\section{The exact four-channel Fourier kernel}
+\label{sec:tpc20-kernel-fourier}
+
+We first keep all four terms created by centering.  The calculation is
+coefficient-independent: it applies both to the finite-model coefficient
+and to every finite short--short block of the common residual coefficient
+in \cref{thm:tpc20-common-recombination}.  It does not yet estimate the
+sum over rows or the complementary large-divisor legs.
+
+Put
+\begin{equation}
+ g=(u,v),\qquad a=\frac{u}{g},\qquad b=\frac{v}{g},\qquad
+ q=[u,v]=gab,
+ \label{eq:tpc20-gabq}
+\end{equation}
+so that \((a,b)=1\).  The finite-model coefficients are squarefree
+supported, in which case \(g,a,b\) are pairwise coprime, but the first
+Fourier identities below do not require squarefreeness.  We assume
+\begin{equation}
+ (u,m_1H)=(v,m_2H)=1.
+ \label{eq:tpc20-primitive-moduli}
+\end{equation}
+Since \(H=\operatorname{rad}|h|\), this also makes \(h\) invertible modulo
+\(u\) and \(v\).  Define
+\begin{equation}
+ \kappa_1\equiv-h\overline{m_1}\pmod u,
+ \qquad
+ \kappa_2\equiv-h\overline{m_2}\pmod v.
+ \label{eq:tpc20-kappa12}
+\end{equation}
+Every inverse below is taken in the modulus of the character in which it
+occurs.  We use \(e_s(x)=\exp(2\pi i x/s)\), with \(e_1(x)=1\), and write
+\begin{equation}
+ c_H(r)=\sum_{c\bmod H}^{*}e_H(rc).
+ \label{eq:tpc20-cH}
+\end{equation}
+
+\begin{lemma}[Primitive compatibility]
+\label{lem:tpc20-primitive-compatibility}
+The classes in \eqref{eq:tpc20-kappa12} are compatible modulo \(g\) if
+and only if
+\begin{equation}
+ g\mid m_1-m_2.
+ \label{eq:tpc20-compatible-determinant}
+\end{equation}
+When this holds, they determine one class \(\kappa\bmod q\), and
+\((\kappa,q)=1\).
+\end{lemma}
+
+\begin{proof}
+Modulo \(g\), compatibility is equivalent to
+\(h(\overline{m_1}-\overline{m_2})\equiv0\).  Since \(h,m_1,m_2\) are
+units modulo \(g\), this is equivalent to
+\(m_2-m_1\equiv0\pmod g\).  The generalized
+Chinese remainder theorem gives the class modulo \([u,v]=q\).  Its
+reductions are a unit times \(h\), so it is a unit modulo both \(u\) and
+\(v\), hence modulo \(q\).
+\end{proof}
+
+For the two centered congruence indicators set
+\begin{equation}
+ C_{m,u}(j)=\mathbf 1_{\{u\mid mj+h\}}-\frac1u
+ \label{eq:tpc20-centered-indicator}
+\end{equation}
+and
+\begin{equation}
+ K_{u,v}^{m_1,m_2}(j)
+ =\mathbf 1_{\{(j,H)=1\}}C_{m_1,u}(j)C_{m_2,v}(j).
+ \label{eq:tpc20-periodic-kernel}
+\end{equation}
+This kernel has period \(T=Hq\).  Let
+\begin{equation}
+ \widehat K(r)=\frac1T\sum_{x\bmod T}K_{u,v}^{m_1,m_2}(x)e_T(-rx).
+ \label{eq:tpc20-Khat}
+\end{equation}
+
+\begin{theorem}[Exact joint, single, and constant Fourier coefficients]
+\label{thm:tpc20-four-channel-coefficients}
+Let
+\(\chi=\mathbf 1_{\{g\mid m_1-m_2\}}\).  If \(\chi=1\), let
+\(\kappa\bmod q\) be the class in
+\cref{lem:tpc20-primitive-compatibility}; when \(\chi=0\), the first term
+below is omitted.  For every \(r\bmod Hq\),
+\begin{align}
+ \widehat K(r)
+ =\frac{c_H(r)}{Huv}\Bigg[{}
+ &g\chi e_q(-r\overline H\kappa)
+ -\mathbf 1_{\{b\mid r\}}
+   e_u\!\left(-\frac rb\overline H\kappa_1\right)
+ \notag\\
+ &-\mathbf 1_{\{a\mid r\}}
+   e_v\!\left(-\frac ra\overline H\kappa_2\right)
+ +\mathbf 1_{\{q\mid r\}}\Bigg].
+ \label{eq:tpc20-four-channel-Khat}
+\end{align}
+In particular,
+\begin{equation}
+ \widehat K(0)
+ =\frac{\varphi(H)}{Huv}(g\chi-1).
+ \label{eq:tpc20-zero-mode}
+\end{equation}
+If \(\chi=1\), define
+\begin{equation}
+ B_{g,a,b}(r)
+ =g-\mathbf 1_{\{b\mid r\}}-\mathbf 1_{\{a\mid r\}}
+   +\mathbf 1_{\{q\mid r\}}.
+ \label{eq:tpc20-common-multiplier}
+\end{equation}
+Then the four terms have a common phase and
+\begin{equation}
+ \boxed{
+ \widehat K(r)
+ =\frac{c_H(r)}{Huv}e_q(-r\overline H\kappa)
+ B_{g,a,b}(r).}
+ \label{eq:tpc20-compatible-Khat}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Identify a class modulo \(Hq\) with \(c\bmod H\) and \(y\bmod q\).
+The additive character factors as
+\[
+ e_{Hq}(-rx)
+ =e_H(-rc\overline q)e_q(-ry\overline H).
+\]
+Summation over \((c,H)=1\) gives
+\(c_H(r\overline q)=c_H(r)\), because \(q\) is a unit modulo \(H\).
+The compatible joint class therefore contributes
+\[
+ \chi\frac{c_H(r)}{Hq}e_q(-r\overline H\kappa)
+ =\frac{c_H(r)}{Huv}g\chi e_q(-r\overline H\kappa).
+\]
+
+The class \(y\equiv\kappa_1\pmod u\) has \(b=q/u\) lifts modulo \(q\).
+Their character sum is zero unless \(b\mid r\); when \(r=bs\), it is
+\(b e_u(-s\overline H\kappa_1)\).  After multiplying by the centering
+coefficient \(-1/v\), this is the second term of
+\eqref{eq:tpc20-four-channel-Khat}.  The other single term is identical
+with \(u,v\) interchanged.  The constant term is supported on
+\(q\mid r\).  This proves the first formula and its zero mode.
+
+Suppose now that \(\chi=1\).  If \(b\mid r\), reduction of the joint
+phase modulo \(u\) gives
+\[
+ e_q(-r\overline H\kappa)
+ =e_u\!\left(-\frac rb\overline H\kappa_1\right).
+\]
+The analogous identity holds when \(a\mid r\), and the joint phase is
+one when \(q\mid r\).  Factoring it out gives
+\eqref{eq:tpc20-compatible-Khat}.
+\end{proof}
+
+\begin{remark}[Sign convention]
+\label{rem:tpc20-phase-sign}
+The coefficient \(\widehat K(r)\) uses \(e_{Hq}(-rx)\), hence the minus
+sign in \eqref{eq:tpc20-four-channel-Khat}.  Direct Poisson summation of
+a progression uses \(e_{Hq}(rx)\), and therefore has the conjugate phase.
+The two conventions are equivalent but should not be mixed in one formula.
+\end{remark}
+
+The next form is convenient because it retains the natural period of each
+of the four channels.
+
+\begin{lemma}[Primitive progression Poisson formula]
+\label{lem:tpc20-progression-poisson}
+Let \((s,H)=1\), let \(\rho\bmod s\), and let
+\(F\in C_c^\infty(\mathbb R)\).  With
+\(\widehat F(\xi)=\int_{\mathbb R}F(x)e(-x\xi)\,dx\),
+\begin{equation}
+ \sum_{\substack{j\in\mathbb Z\\(j,H)=1\\j\equiv\rho\ (\bmod s)}}
+ F(j/J)
+ =\frac{J}{Hs}\sum_{n\in\mathbb Z}
+ c_H(n)e_s(n\overline H\rho)
+ \widehat F\!\left(\frac{nJ}{Hs}\right).
+ \label{eq:tpc20-progression-poisson}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Combine each reduced class modulo \(H\) with \(\rho\bmod s\), apply
+Poisson summation to the resulting progressions modulo \(Hs\), and sum
+the phases over the reduced classes modulo \(H\).
+\end{proof}
+
+\begin{corollary}[Four natural lattices and one common lattice]
+\label{cor:tpc20-four-poisson-lattices}
+Under the hypotheses of \cref{thm:tpc20-four-channel-coefficients},
+\begin{align}
+ &\sum_{j\in\mathbb Z}K_{u,v}^{m_1,m_2}(j)F(j/J)
+ \notag\\
+ &=\frac{J}{Huv}\Bigg[
+ g\chi\sum_{n\in\mathbb Z}c_H(n)e_q(n\overline H\kappa)
+      \widehat F\!\left(\frac{nJ}{Hq}\right)
+ \notag\\
+ &\qquad-\sum_{n\in\mathbb Z}c_H(n)e_u(n\overline H\kappa_1)
+      \widehat F\!\left(\frac{nJ}{Hu}\right)
+ \notag\\
+ &\qquad-\sum_{n\in\mathbb Z}c_H(n)e_v(n\overline H\kappa_2)
+      \widehat F\!\left(\frac{nJ}{Hv}\right)
+ +\sum_{n\in\mathbb Z}c_H(n)
+      \widehat F\!\left(\frac{nJ}{H}\right)
+ \Bigg],
+ \label{eq:tpc20-four-poisson-lattices}
+\end{align}
+where the joint sum is omitted when \(\chi=0\).  If \(\chi=1\), this
+equals
+\begin{equation}
+ \boxed{
+ \frac{J}{Huv}\sum_{r\in\mathbb Z}
+ c_H(r)e_q(r\overline H\kappa)B_{g,a,b}(r)
+ \widehat F\!\left(\frac{rJ}{Hq}\right).}
+ \label{eq:tpc20-common-poisson-lattice}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Expand the product of the two centered indicators and apply
+\cref{lem:tpc20-progression-poisson} with moduli \(q,u,v,1\).  In the
+compatible case, lift the \(u\)-single frequency \(n\) to \(r=bn\), the
+\(v\)-single frequency to \(r=an\), and the constant frequency to
+\(r=qn\).  Since \((abq,H)=1\), multiplication by any of these lifting
+factors leaves \(c_H\) unchanged.  The phase alignments in the proof of
+\cref{thm:tpc20-four-channel-coefficients} then give
+\eqref{eq:tpc20-common-poisson-lattice}.
+\end{proof}
+
+\begin{proposition}[Exact multiplier and kernel energy]
+\label{prop:tpc20-multiplier-energy}
+In the compatible case,
+\begin{equation}
+ 0\le B_{g,a,b}(r)\le g
+ \label{eq:tpc20-B-range}
+\end{equation}
+and
+\begin{equation}
+ \sum_{r\bmod q}B_{g,a,b}(r)^2
+ =qg^2+(1-2g)(u+v)+4g-3.
+ \label{eq:tpc20-B-energy}
+\end{equation}
+Exactly
+\begin{equation}
+ q-u-v+g=g(a-1)(b-1)
+ \label{eq:tpc20-full-multiplier-count}
+\end{equation}
+frequencies satisfy \(B_{g,a,b}(r)=g\).  More generally, with
+\(\chi=\mathbf 1_{\{g\mid m_1-m_2\}}\),
+\begin{align}
+ \sum_{r\bmod Hq}|\widehat K(r)|^2
+ =\frac{\varphi(H)}H\Bigg[
+ &\frac{(u-1)(v-1)}{u^2v^2}
+ \notag\\
+ &+\frac{g\chi-1}{uv}
+ \left(1-\frac2u\right)\left(1-\frac2v\right)
+ \Bigg].
+ \label{eq:tpc20-kernel-energy}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+For \(g=1\), coprimality of \(a,b\) gives
+\[
+ B_{1,a,b}(r)
+ =(1-\mathbf 1_{\{a\mid r\}})
+  (1-\mathbf 1_{\{b\mid r\}}).
+\]
+For \(g\ge2\), the possible values are \(g,g-1,g-2\), proving
+\eqref{eq:tpc20-B-range}.  The counts of \(b\mid r\), \(a\mid r\),
+their intersection, and \(q\mid r\) modulo \(q\) are respectively
+\(u,v,g,1\).  Expanding the square proves
+\eqref{eq:tpc20-B-energy}; inclusion-exclusion proves
+\eqref{eq:tpc20-full-multiplier-count}.
+
+For the last identity use Plancherel on \(\mathbb Z/(Hq)\mathbb Z\).
+Conditional on \((j,H)=1\), the two divisibility events have
+probabilities \(1/u,1/v\) and joint probability \(g\chi/(uv)\).
+Writing a Bernoulli square as
+\((I-p)^2=(1-2p)I+p^2\) gives the bracket in
+\eqref{eq:tpc20-kernel-energy}; the primitive mask contributes the
+density \(\varphi(H)/H\).
+\end{proof}

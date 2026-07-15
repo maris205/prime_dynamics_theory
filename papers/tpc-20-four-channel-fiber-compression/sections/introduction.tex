@@ -1,0 +1,140 @@
+\section{Introduction}
+\label{sec:tpc20-introduction}
+
+TPC-18 reduces a failed symmetric fixed-shift tail block to a primitive,
+generic two-row correlation of the residual
+\(
+ r_R=\Lambda-\Lambda_R
+\), where
+\[
+ \Lambda_R(n)=\sum_{q\le R}\frac{\mu(q)}{\varphi(q)}c_q(n)
+\]
+and the row determinant is \(h(m_1-m_2)\)
+\citep{WangTPC18}.  TPC-19 then gives exact divisor and Poisson normal
+forms for this correlation \citep{WangTPC19}.  It also records a crucial
+negative fact: the centered model--model channel can have a nonzero
+complete-period mean on a primitive, distinct-source row pair.  A proof
+cannot therefore estimate
+\[
+ PP,\qquad PM,\qquad MP,\qquad MM
+\]
+independently after taking absolute values.  Either additional
+oscillation over the whole row family or a genuinely matched spectral
+argument is required.
+
+The first purpose of this paper is to carry out that matching at the
+algebraic level.  Let \(P_m\) and \(M_m\) denote the locally calibrated
+prime and finite-model signals on the row \(mj+h\), and put
+\(Z_m=P_m-M_m\).  The four products above are exactly the expansion of
+\(Z_{m_1}Z_{m_2}\).  We prove that, on every finite target horizon, this
+difference has one common centered-divisor representation
+\begin{equation}
+ Z_m(j)=\eps_U(m)+
+ \sum_u b_R(u)C_{m,u}(j),
+ \qquad
+ C_{m,u}(j)=\one_{u\mid mj+h}-\frac1u.
+ \label{eq:tpc20-intro-common-kernel}
+\end{equation}
+Here
+\(
+ b_R(u)=-\mu(u)w_R(u)
+\)
+is the actual residual coefficient found in TPC-19, not the coefficient
+of only one of the four channels.  The scalar \(\eps_U(m)\) is not
+discarded formally: we prove a uniform M\"obius calibration theorem
+which makes it arbitrarily logarithmically small for every polynomial
+row range.  Consequently the \((u,v)\)-term of the matched centered
+kernel has the primitive-conditional connected zero mode
+\begin{equation}
+ \frac{b_R(u)b_R(v)}{uv}
+ \left((u,v)\one_{(u,v)\mid m_1-m_2}-1\right).
+ \label{eq:tpc20-intro-connected-mode}
+\end{equation}
+The zero mode of every \((u,v)=1\) term vanishes before any estimate is
+made.
+
+The second purpose is to resolve the apparent three-phase complexity of
+the long-lcm Poisson spectrum.  Write
+\[
+ g=(u,v),\qquad u=ga,\qquad v=gb,\qquad q=[u,v]=gab.
+\]
+For compatible divisor congruences, all four centered Fourier terms
+align on the common period \(Hq\), where \(H=\rad|h|\).  Their exact
+multiplier is
+\begin{equation}
+ B_{g,a,b}(r)
+ =g-\one_{b\mid r}-\one_{a\mid r}+\one_{q\mid r}.
+ \label{eq:tpc20-intro-B}
+\end{equation}
+This alignment has two consequences.  First, the joint, two single, and
+constant terms should not all be completed at the longest period.  The
+single terms have periods \(Hu\) and \(Hv\).  Completing those shorter
+periods yields a strict-margin range
+\begin{equation}
+ Q\le X^{1/2+\delta-\eta_0}
+ \label{eq:tpc20-intro-new-wedge}
+\end{equation}
+for completing all single and constant terms across
+\(u,v\le R=X^{1/2-\delta}\), compared with
+\(Q\le X^{2\delta-\eta_0}\) when the full joint period is completed at
+once.  The compatible joint packet is retained.  Second, on its
+genuinely remaining low nonzero frequencies,
+the multiplier in \eqref{eq:tpc20-intro-B} is exactly \(g\).  The
+matched algebra has removed the spurious single spectra, but it has not
+created cancellation in the surviving joint packet.
+
+The third purpose is to identify that packet without inverse-phase
+notation obscuring its coefficient.  Compatible row residue pairs are
+parametrized by one unit class \(\kappa\bmod q\).  After aggregating the
+actual row weights on these fibers, the joint phase is the ordinary DFT
+\begin{equation}
+ S_q(r)=\sum_{\kappa\in(\Z/q\Z)^\times}
+ Z_q(\kappa)e_q(r\overline H\kappa).
+ \label{eq:tpc20-intro-fiber-dft}
+\end{equation}
+The three inverse phases displayed in TPC-19 are precisely the CRT
+factorization of this one character.  Splitting \(Z_q\) into its
+unit-class mean and discrepancy gives
+\[
+ S_q(r)=\overline Z_qc_q(r)+\widehat D_q(r)
+\]
+and the exact identity
+\begin{equation}
+ \sum_{r\bmod q}|\widehat D_q(r)|^2
+ =q\sum_{\kappa\in(\Z/q\Z)^\times}|D_q(\kappa)|^2.
+ \label{eq:tpc20-intro-fiber-parseval}
+\end{equation}
+Thus, for this chosen compatible short--short packet, the remaining
+gates are a quantitative theorem for the actual prime--M\"obius row
+weights across CRT fibers and a separate bound for the explicit
+Ramanujan mean packet.  The large-divisor legs \(u>R\) or \(v>R\)
+remain outside this reduction.  The fiber gate is not an unspecified
+need for cancellation among three unrelated inverse phases.
+
+These reductions are rigorous progress, but they do not supply the
+required estimates for this packet.  A coefficient concentrated on one CRT fiber
+saturates Parseval.  At the opposite extreme, a uniform fiber vector
+produces an explicit Ramanujan bias, and on coprime frequencies its
+transverse M\"obius sign migrates to the determinant content.  The cited
+bilinear and trilinear Kloosterman-fraction estimates apply only after a
+separable coefficient reduction, while the current fiber vector is a
+modulus-dependent joint array
+\citep{DukeFriedlanderIwaniec1997,BettinChandee2018,Wright2026}.
+Pascadi's frequency-concentration theorem gives a powerful abstract
+interface once a representing measure satisfying its size and
+two-frequency conditions has been constructed; it does not prove those
+conditions for the sharp coefficient here \citep{Pascadi2026LargeSieve}.
+
+The organization is as follows.  \Cref{sec:tpc20-interface} fixes the
+primitive row geometry.  \Cref{sec:tpc20-recombination} proves the
+common four-channel coefficient, and
+\cref{sec:tpc20-uniform-calibration} controls its scalar calibration
+defect uniformly and proves packet-scale negligibility under explicit
+packet hypotheses, which are satisfied for the separated packets in the
+single-leg range.  \Cref{sec:tpc20-kernel-fourier} computes the complete
+Fourier kernel.  \Cref{sec:tpc20-single-leg} proves the new completion
+wedge and its sharp smoothness boundary.
+\Cref{sec:tpc20-fiber-compression} gives the fiber DFT, Ramanujan mean,
+variance identity, and no-go results.  Current technology is audited in
+\cref{sec:tpc20-technology-boundary}; the exact certificate and conclusion
+are in \cref{sec:tpc20-certificate-conclusion}.

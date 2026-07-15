@@ -1,0 +1,696 @@
+{
+  "CRT_fiber_DFT_and_Parseval": {
+    "all_fiber_compression_and_energy_checks_hold": true,
+    "case_count": 2,
+    "cases": [
+      {
+        "DFT_sha256": "5a5e6b6e96a6af62894be52b81ee6c0e107e2168dd2ecea7a2023a9bd82c9bfe",
+        "H": 2,
+        "Z_sha256": "b085a71f8ed561a5f7935d212a7b8b1698bc8b6fce9d3ac108566d609c9a25a3",
+        "a": 3,
+        "all_checks_hold": true,
+        "b": 5,
+        "discrepancy_Parseval_holds": true,
+        "discrepancy_sha256": "4bdda52a5484f0add0d2d7218d31cec42b86aa7a97a72686c900c88ff2e654ba",
+        "fiber_Parseval_holds": true,
+        "finite_field": {
+          "prime": 61,
+          "primitive_generator": 2,
+          "root": 16,
+          "root_order": 15
+        },
+        "g": 1,
+        "mean": {
+          "denominator": 420,
+          "numerator": 43,
+          "text": "43/420"
+        },
+        "mean_discrepancy_split_holds": true,
+        "name": "fiber-F61-q15",
+        "nonzero_fiber_count": 1,
+        "one_fiber_saturation_holds": true,
+        "q": 15,
+        "row_pair_count": 26,
+        "three_phase_sha256": "5a5e6b6e96a6af62894be52b81ee6c0e107e2168dd2ecea7a2023a9bd82c9bfe",
+        "u": 3,
+        "unit_fiber_count": 8,
+        "v": 5
+      },
+      {
+        "DFT_sha256": "7c0297207943af95a670548cd69069ba13c9914e02140a89ae639e86bc9cb8a3",
+        "H": 2,
+        "Z_sha256": "832b9924e2abe3dca366bb29061121a0ae078a0662b109c9f70615917061bc71",
+        "a": 5,
+        "all_checks_hold": true,
+        "b": 7,
+        "discrepancy_Parseval_holds": true,
+        "discrepancy_sha256": "dfd6574e05a15ac6ce8c5a4f825fd577aa30e4df5d80be252c14df60458373fe",
+        "fiber_Parseval_holds": true,
+        "finite_field": {
+          "prime": 421,
+          "primitive_generator": 2,
+          "root": 16,
+          "root_order": 105
+        },
+        "g": 3,
+        "mean": {
+          "denominator": 1440,
+          "numerator": 17,
+          "text": "17/1440"
+        },
+        "mean_discrepancy_split_holds": true,
+        "name": "fiber-F421-q105",
+        "nonzero_fiber_count": 39,
+        "one_fiber_saturation_holds": true,
+        "q": 105,
+        "row_pair_count": 45,
+        "three_phase_sha256": "7c0297207943af95a670548cd69069ba13c9914e02140a89ae639e86bc9cb8a3",
+        "u": 15,
+        "unit_fiber_count": 48,
+        "v": 21
+      }
+    ],
+    "method": "ordinary DFT of exact CRT-fiber weights in finite fields"
+  },
+  "all_exact_checks_passed": true,
+  "asymptotic_evidence": false,
+  "certificate": "TPC-20 exact four-channel and CRT-fiber certificate",
+  "exponent_ledger": {
+    "all_exponent_ledger_checks_hold": true,
+    "joint_boundary": {
+      "delta": {
+        "denominator": 1,
+        "numerator": 2,
+        "text": "2"
+      }
+    },
+    "profiles": [
+      {
+        "critical_delta": {
+          "1": {
+            "denominator": 126,
+            "numerator": 19,
+            "text": "19/126"
+          },
+          "sigma": {
+            "denominator": 3,
+            "numerator": -2,
+            "text": "-2/3"
+          }
+        },
+        "identity": "margin=(3/2)(delta-critical_delta)",
+        "identity_holds": true,
+        "lambda": {
+          "1": {
+            "denominator": 21,
+            "numerator": 10,
+            "text": "10/21"
+          },
+          "sigma": {
+            "denominator": 1,
+            "numerator": -1,
+            "text": "-1"
+          }
+        },
+        "largest_row_exponent": {
+          "1": {
+            "denominator": 84,
+            "numerator": 61,
+            "text": "61/84"
+          },
+          "delta": {
+            "denominator": 2,
+            "numerator": -1,
+            "text": "-1/2"
+          },
+          "sigma": {
+            "denominator": 1,
+            "numerator": -1,
+            "text": "-1"
+          }
+        },
+        "name": "published",
+        "single_minus_largest_row": {
+          "1": {
+            "denominator": 84,
+            "numerator": -19,
+            "text": "-19/84"
+          },
+          "delta": {
+            "denominator": 2,
+            "numerator": 3,
+            "text": "3/2"
+          },
+          "sigma": {
+            "denominator": 1,
+            "numerator": 1,
+            "text": "1"
+          }
+        }
+      },
+      {
+        "critical_delta": {
+          "1": {
+            "denominator": 34,
+            "numerator": 5,
+            "text": "5/34"
+          },
+          "sigma": {
+            "denominator": 3,
+            "numerator": -2,
+            "text": "-2/3"
+          }
+        },
+        "identity": "margin=(3/2)(delta-critical_delta)",
+        "identity_holds": true,
+        "lambda": {
+          "1": {
+            "denominator": 17,
+            "numerator": 8,
+            "text": "8/17"
+          },
+          "sigma": {
+            "denominator": 1,
+            "numerator": -1,
+            "text": "-1"
+          }
+        },
+        "largest_row_exponent": {
+          "1": {
+            "denominator": 68,
+            "numerator": 49,
+            "text": "49/68"
+          },
+          "delta": {
+            "denominator": 2,
+            "numerator": -1,
+            "text": "-1/2"
+          },
+          "sigma": {
+            "denominator": 1,
+            "numerator": -1,
+            "text": "-1"
+          }
+        },
+        "name": "version_locked",
+        "single_minus_largest_row": {
+          "1": {
+            "denominator": 68,
+            "numerator": -15,
+            "text": "-15/68"
+          },
+          "delta": {
+            "denominator": 2,
+            "numerator": 3,
+            "text": "3/2"
+          },
+          "sigma": {
+            "denominator": 1,
+            "numerator": 1,
+            "text": "1"
+          }
+        }
+      }
+    ],
+    "single_boundary": {
+      "1": {
+        "denominator": 2,
+        "numerator": 1,
+        "text": "1/2"
+      },
+      "delta": {
+        "denominator": 1,
+        "numerator": 1,
+        "text": "1"
+      }
+    },
+    "wedge_width": {
+      "1": {
+        "denominator": 2,
+        "numerator": 1,
+        "text": "1/2"
+      },
+      "delta": {
+        "denominator": 1,
+        "numerator": -1,
+        "text": "-1"
+      }
+    }
+  },
+  "finite_calibration_convolution": {
+    "all_finite_convolution_checks_hold": true,
+    "cases": [
+      {
+        "M": 1,
+        "U": 20,
+        "convolution_sha256": "5b2bea8aac53b5546b98de59250fa2c71fa04d9d91aa6546ab3a958ad852f323",
+        "diagnostic_finite_magnitude": {
+          "analytic_evidence": false,
+          "interpretation": "finite evaluation only; not evidence for uniform calibration asymptotics",
+          "value": "1.151650927725e+00"
+        },
+        "direct_sha256": "5b2bea8aac53b5546b98de59250fa2c71fa04d9d91aa6546ab3a958ad852f323",
+        "formal_term_count": 8,
+        "identity_holds": true,
+        "pointwise_convolution_failure_count": 0
+      },
+      {
+        "M": 6,
+        "U": 30,
+        "convolution_sha256": "11066142e807db96d15ae8b762ec38589f9beab9b5af7d44520718d6661d1515",
+        "diagnostic_finite_magnitude": {
+          "analytic_evidence": false,
+          "interpretation": "finite evaluation only; not evidence for uniform calibration asymptotics",
+          "value": "1.589238588557e+00"
+        },
+        "direct_sha256": "11066142e807db96d15ae8b762ec38589f9beab9b5af7d44520718d6661d1515",
+        "formal_term_count": 8,
+        "identity_holds": true,
+        "pointwise_convolution_failure_count": 0
+      },
+      {
+        "M": 10,
+        "U": 45,
+        "convolution_sha256": "0e94a4c29a703f309edd48cb6b5af8e44b74038a44a04afd059abeea3c704196",
+        "diagnostic_finite_magnitude": {
+          "analytic_evidence": false,
+          "interpretation": "finite evaluation only; not evidence for uniform calibration asymptotics",
+          "value": "1.675096446054e+00"
+        },
+        "direct_sha256": "0e94a4c29a703f309edd48cb6b5af8e44b74038a44a04afd059abeea3c704196",
+        "formal_term_count": 12,
+        "identity_holds": true,
+        "pointwise_convolution_failure_count": 0
+      },
+      {
+        "M": 30,
+        "U": 60,
+        "convolution_sha256": "dcecd52af4953842e04f63e69bc5812ee0b1ce66be5b8c2747e759582d0fe8f0",
+        "diagnostic_finite_magnitude": {
+          "analytic_evidence": false,
+          "interpretation": "finite evaluation only; not evidence for uniform calibration asymptotics",
+          "value": "1.879701867860e+00"
+        },
+        "direct_sha256": "dcecd52af4953842e04f63e69bc5812ee0b1ce66be5b8c2747e759582d0fe8f0",
+        "formal_term_count": 14,
+        "identity_holds": true,
+        "pointwise_convolution_failure_count": 0
+      },
+      {
+        "M": 42,
+        "U": 75,
+        "convolution_sha256": "d806dc6ce7475d03a3b92229e6a88e169290f94084d2f2acce22e1d746cc5fb3",
+        "diagnostic_finite_magnitude": {
+          "analytic_evidence": false,
+          "interpretation": "finite evaluation only; not evidence for uniform calibration asymptotics",
+          "value": "2.035479483045e+00"
+        },
+        "direct_sha256": "d806dc6ce7475d03a3b92229e6a88e169290f94084d2f2acce22e1d746cc5fb3",
+        "formal_term_count": 18,
+        "identity_holds": true,
+        "pointwise_convolution_failure_count": 0
+      }
+    ],
+    "finite_magnitude_samples_are_diagnostic_only": true,
+    "identity": "mu(n)1_(n,M)=1 = (mu*g_M)(n) and its log convolution",
+    "pointwise_convolution_test_count": 230
+  },
+  "finite_diagnostics": {
+    "analytic_evidence": false,
+    "asymptotic_evidence": false,
+    "excluded_interpretations": [
+      "not evidence for a residual-dispersion estimate",
+      "not evidence for a prime-pair asymptotic",
+      "not evidence for the twin-prime conjecture",
+      "not a parity-barrier breakthrough"
+    ],
+    "kind": "finite deterministic regression magnitudes only",
+    "residual_dispersion_evidence": false,
+    "twin_prime_evidence": false
+  },
+  "formal_common_recombination": {
+    "H": 2,
+    "R": 10,
+    "all_common_recombination_checks_hold": true,
+    "arithmetic": "Fraction coefficients and formal prime-log polynomials",
+    "h": 2,
+    "horizon": 200,
+    "pointwise_case_count": 3,
+    "pointwise_cases": [
+      {
+        "common_product_sha256": "f6e80e13b61fc2ca6f3801b7379ce141443618265c893fbca1579f13e1cf15e4",
+        "common_product_term_count": 2,
+        "first_centered_term_count": 55,
+        "identity_holds": true,
+        "j": 1,
+        "raw_four_channel_sha256": "f6e80e13b61fc2ca6f3801b7379ce141443618265c893fbca1579f13e1cf15e4",
+        "recombined_four_channel_sha256": "f6e80e13b61fc2ca6f3801b7379ce141443618265c893fbca1579f13e1cf15e4",
+        "second_centered_term_count": 56,
+        "targets": [
+          35,
+          41
+        ]
+      },
+      {
+        "common_product_sha256": "f314095603d84ade9b944c077e22b379e935bd02d40a326b949f747c6fdb3122",
+        "common_product_term_count": 2,
+        "first_centered_term_count": 55,
+        "identity_holds": true,
+        "j": 3,
+        "raw_four_channel_sha256": "f314095603d84ade9b944c077e22b379e935bd02d40a326b949f747c6fdb3122",
+        "recombined_four_channel_sha256": "f314095603d84ade9b944c077e22b379e935bd02d40a326b949f747c6fdb3122",
+        "second_centered_term_count": 56,
+        "targets": [
+          101,
+          119
+        ]
+      },
+      {
+        "common_product_sha256": "94bf2b1f2350e6954a710b09571d380dee1177b7d2fafc1bd50be1a6c66c3f4a",
+        "common_product_term_count": 4,
+        "first_centered_term_count": 55,
+        "identity_holds": true,
+        "j": 5,
+        "raw_four_channel_sha256": "94bf2b1f2350e6954a710b09571d380dee1177b7d2fafc1bd50be1a6c66c3f4a",
+        "recombined_four_channel_sha256": "94bf2b1f2350e6954a710b09571d380dee1177b7d2fafc1bd50be1a6c66c3f4a",
+        "second_centered_term_count": 56,
+        "targets": [
+          167,
+          197
+        ]
+      }
+    ],
+    "rows": [
+      {
+        "d": 3,
+        "ell": 11
+      },
+      {
+        "d": 3,
+        "ell": 13
+      }
+    ]
+  },
+  "kernel_DFT_zero_mode_multiplier_and_Plancherel": {
+    "all_DFT_zero_mode_multiplier_and_Plancherel_checks_hold": true,
+    "case_count": 4,
+    "cases": [
+      {
+        "DFT_coefficient_count": 30,
+        "DFT_failure_count": 0,
+        "DFT_sha256": "1571f4c15d0ef981c3f2ba64a1a287853fcba9117a5b69ad02536c74e41bab75",
+        "H": 2,
+        "a": 3,
+        "all_checks_hold": true,
+        "b": 5,
+        "compatible": true,
+        "compatible_multiplier": {
+          "all_checks_hold": true,
+          "expected_full_value_count": 8,
+          "expected_square_energy": 8,
+          "full_value_count": 8,
+          "multiplier_sha256": "31e935ad5dfbae07c14766fe3cc3e5796c22c2d86265ef0f0b1c1822ca7c6719",
+          "square_energy": 8,
+          "value_range": [
+            0,
+            1
+          ]
+        },
+        "energy_direct": {
+          "denominator": 225,
+          "numerator": 4,
+          "text": "4/225"
+        },
+        "energy_formula": {
+          "denominator": 225,
+          "numerator": 4,
+          "text": "4/225"
+        },
+        "field_parseval_holds": true,
+        "finite_field": {
+          "exact_order_verified": true,
+          "prime": 61,
+          "primitive_generator": 2,
+          "root": 4,
+          "root_order": 30
+        },
+        "formula_DFT_sha256": "1571f4c15d0ef981c3f2ba64a1a287853fcba9117a5b69ad02536c74e41bab75",
+        "g": 1,
+        "h": 2,
+        "kappa": 13,
+        "kappa_1": 1,
+        "kappa_2": 3,
+        "m_1": 7,
+        "m_2": 11,
+        "name": "coprime-compatible-F61",
+        "period": 30,
+        "q_lcm": 15,
+        "u": 3,
+        "v": 5,
+        "zero_mode_direct": {
+          "denominator": 1,
+          "numerator": 0,
+          "text": "0"
+        },
+        "zero_mode_formula": {
+          "denominator": 1,
+          "numerator": 0,
+          "text": "0"
+        }
+      },
+      {
+        "DFT_coefficient_count": 210,
+        "DFT_failure_count": 0,
+        "DFT_sha256": "9cb47d47a907f826e18b506f141cce644fd0145a38339fc2752c1a8fc6beb257",
+        "H": 2,
+        "a": 5,
+        "all_checks_hold": true,
+        "b": 7,
+        "compatible": true,
+        "compatible_multiplier": {
+          "all_checks_hold": true,
+          "expected_full_value_count": 72,
+          "expected_square_energy": 774,
+          "full_value_count": 72,
+          "multiplier_sha256": "75807419223171d8b9c81794a4fef27c17e1f738bb8d875ae51261ea1b271674",
+          "square_energy": 774,
+          "value_range": [
+            1,
+            3
+          ]
+        },
+        "energy_direct": {
+          "denominator": 11025,
+          "numerator": 43,
+          "text": "43/11025"
+        },
+        "energy_formula": {
+          "denominator": 11025,
+          "numerator": 43,
+          "text": "43/11025"
+        },
+        "field_parseval_holds": true,
+        "finite_field": {
+          "exact_order_verified": true,
+          "prime": 421,
+          "primitive_generator": 2,
+          "root": 4,
+          "root_order": 210
+        },
+        "formula_DFT_sha256": "9cb47d47a907f826e18b506f141cce644fd0145a38339fc2752c1a8fc6beb257",
+        "g": 3,
+        "h": 2,
+        "kappa": 53,
+        "kappa_1": 8,
+        "kappa_2": 11,
+        "m_1": 11,
+        "m_2": 17,
+        "name": "shared-content-compatible-F421",
+        "period": 210,
+        "q_lcm": 105,
+        "u": 15,
+        "v": 21,
+        "zero_mode_direct": {
+          "denominator": 315,
+          "numerator": 1,
+          "text": "1/315"
+        },
+        "zero_mode_formula": {
+          "denominator": 315,
+          "numerator": 1,
+          "text": "1/315"
+        }
+      },
+      {
+        "DFT_coefficient_count": 210,
+        "DFT_failure_count": 0,
+        "DFT_sha256": "a4bf95e06c067fe3a6bcc20645b9cb6159781460332cea9dda27134ec6fe3338",
+        "H": 2,
+        "a": 5,
+        "all_checks_hold": true,
+        "b": 7,
+        "compatible": false,
+        "compatible_multiplier": null,
+        "energy_direct": {
+          "denominator": 66150,
+          "numerator": 11,
+          "text": "11/66150"
+        },
+        "energy_formula": {
+          "denominator": 66150,
+          "numerator": 11,
+          "text": "11/66150"
+        },
+        "field_parseval_holds": true,
+        "finite_field": {
+          "exact_order_verified": true,
+          "prime": 421,
+          "primitive_generator": 2,
+          "root": 4,
+          "root_order": 210
+        },
+        "formula_DFT_sha256": "a4bf95e06c067fe3a6bcc20645b9cb6159781460332cea9dda27134ec6fe3338",
+        "g": 3,
+        "h": 2,
+        "kappa": null,
+        "kappa_1": 8,
+        "kappa_2": 1,
+        "m_1": 11,
+        "m_2": 19,
+        "name": "shared-content-incompatible-F421",
+        "period": 210,
+        "q_lcm": 105,
+        "u": 15,
+        "v": 21,
+        "zero_mode_direct": {
+          "denominator": 630,
+          "numerator": -1,
+          "text": "-1/630"
+        },
+        "zero_mode_formula": {
+          "denominator": 630,
+          "numerator": -1,
+          "text": "-1/630"
+        }
+      },
+      {
+        "DFT_coefficient_count": 210,
+        "DFT_failure_count": 0,
+        "DFT_sha256": "971baf9b4240c6b2111750356e21ba90796ad2a06a5ad83c1ff98ad722713dae",
+        "H": 6,
+        "a": 5,
+        "all_checks_hold": true,
+        "b": 7,
+        "compatible": true,
+        "compatible_multiplier": {
+          "all_checks_hold": true,
+          "expected_full_value_count": 24,
+          "expected_square_energy": 24,
+          "full_value_count": 24,
+          "multiplier_sha256": "25bc6f6c6946d4a98d057dd031fca78b79f7b67f8c2209fe5e3ed31da7976721",
+          "square_energy": 24,
+          "value_range": [
+            0,
+            1
+          ]
+        },
+        "energy_direct": {
+          "denominator": 1225,
+          "numerator": 8,
+          "text": "8/1225"
+        },
+        "energy_formula": {
+          "denominator": 1225,
+          "numerator": 8,
+          "text": "8/1225"
+        },
+        "field_parseval_holds": true,
+        "finite_field": {
+          "exact_order_verified": true,
+          "prime": 421,
+          "primitive_generator": 2,
+          "root": 4,
+          "root_order": 210
+        },
+        "formula_DFT_sha256": "971baf9b4240c6b2111750356e21ba90796ad2a06a5ad83c1ff98ad722713dae",
+        "g": 1,
+        "h": 6,
+        "kappa": 34,
+        "kappa_1": 4,
+        "kappa_2": 6,
+        "m_1": 11,
+        "m_2": 13,
+        "name": "nontrivial-primitive-mask-F421",
+        "period": 210,
+        "q_lcm": 35,
+        "u": 5,
+        "v": 7,
+        "zero_mode_direct": {
+          "denominator": 1,
+          "numerator": 0,
+          "text": "0"
+        },
+        "zero_mode_formula": {
+          "denominator": 1,
+          "numerator": 0,
+          "text": "0"
+        }
+      }
+    ],
+    "finite_fields": [
+      61,
+      421
+    ],
+    "method": "exact roots of unity in finite prime fields"
+  },
+  "residual_dispersion_evidence": false,
+  "scope": "finite exact algebra only: integers, Fraction, formal prime-log polynomials, and finite fields with exact roots of unity",
+  "squarefree_sign_migration": {
+    "all_squarefree_sign_migration_checks_hold": true,
+    "coprime_frequency_count": 2032,
+    "test_count": 3012,
+    "triples": [
+      {
+        "a": 3,
+        "b": 5,
+        "g": 1,
+        "q": 15,
+        "tested_r_range": [
+          1,
+          30
+        ]
+      },
+      {
+        "a": 5,
+        "b": 7,
+        "g": 3,
+        "q": 105,
+        "tested_r_range": [
+          1,
+          210
+        ]
+      },
+      {
+        "a": 7,
+        "b": 11,
+        "g": 5,
+        "q": 385,
+        "tested_r_range": [
+          1,
+          770
+        ]
+      },
+      {
+        "a": 11,
+        "b": 13,
+        "g": 7,
+        "q": 1001,
+        "tested_r_range": [
+          1,
+          2002
+        ]
+      }
+    ]
+  },
+  "twin_prime_evidence": false
+}

@@ -1,0 +1,367 @@
+\section{CRT-fiber compression and the exact remaining gate}
+\label{sec:tpc20-fiber-compression}
+
+We now compress the compatible joint inverse phases.  Throughout this
+section the row and orbit weights have first been separated as in the
+smooth-separation step of the TPC interface, so that the same function
+\(F(j/J)\) occurs for every row pair in one packet.  The separated row
+weights are absorbed into coefficients \(z_{m_1,m_2}\).  The argument is
+exact for each separated packet; the usual rapidly convergent
+superposition may be restored afterwards.
+
+Fix \(u,v\) with \((uv,H)=1\), put \(q=[u,v]\), and let
+\(\mathscr R_{u,v}\) be any finite set of row pairs such that
+\((u,m_1)=(v,m_2)=1\) for every
+\((m_1,m_2)\in\mathscr R_{u,v}\), including any generic pruning
+independent of \(j\).  Retain only the compatible pairs
+\(g\mid m_1-m_2\).
+
+\begin{lemma}[Compatible row residues are CRT fibers]
+\label{lem:tpc20-row-fiber-bijection}
+The map which assigns to a compatible row pair its joint class
+\(\kappa\bmod q\) takes values in
+\begin{equation}
+ \mathcal U_q=(\mathbb Z/q\mathbb Z)^{\times}.
+ \label{eq:tpc20-unit-fibers}
+\end{equation}
+Conversely, a class \(\kappa\in\mathcal U_q\) determines the unique
+compatible pair of row residue classes
+\begin{equation}
+ m_1\equiv-h\overline\kappa\pmod u,
+ \qquad
+ m_2\equiv-h\overline\kappa\pmod v.
+ \label{eq:tpc20-row-residue-from-kappa}
+\end{equation}
+Thus compatible pairs of row residue classes are in bijection with
+\(\mathcal U_q\).
+\end{lemma}
+
+\begin{proof}
+The forward statement is
+\cref{lem:tpc20-primitive-compatibility}.  Conversely,
+\eqref{eq:tpc20-row-residue-from-kappa} makes
+\(m_i\kappa\equiv-h\) in the required modulus.  The two resulting
+classes are units and are compatible by construction.  Inversion modulo
+\(u\) and \(v\) shows uniqueness.
+\end{proof}
+
+Define the fiber coefficient
+\begin{equation}
+ Z_{u,v}(\kappa)
+ =\sum_{\substack{(m_1,m_2)\in\mathscr R_{u,v}\\
+ m_1\equiv-h\overline\kappa\ (\bmod u)\\
+ m_2\equiv-h\overline\kappa\ (\bmod v)}}
+ z_{m_1,m_2},
+ \qquad \kappa\in\mathcal U_q,
+ \label{eq:tpc20-fiber-coefficient}
+\end{equation}
+and its joint phase packet
+\begin{equation}
+ S_{u,v}(r)
+ =\sum_{\kappa\in\mathcal U_q}
+ Z_{u,v}(\kappa)e_q(r\overline H\kappa).
+ \label{eq:tpc20-fiber-DFT}
+\end{equation}
+
+\begin{theorem}[Triple inverse phases compress to one DFT]
+\label{thm:tpc20-fiber-DFT}
+The sum over compatible row pairs of the joint Poisson phase is exactly
+\(S_{u,v}(r)\).  If \(u\) and \(v\) are squarefree, as they are on both
+the \(\lambda'_R\)- and \(b_R\)-supports, then in the coordinates
+\(u=ga\), \(v=gb\) the integers \(g,a,b\) are pairwise coprime and each
+summand may equivalently be written as
+\begin{align}
+ e_q(r\overline H\kappa)
+ ={}&e_g\!\left(-hr\overline H\,\overline{m_1}\,
+                 \overline{ab}\right)
+ e_a\!\left(-hr\overline H\,\overline{m_1}\,
+                 \overline{gb}\right)
+ \notag\\
+ &\times
+ e_b\!\left(-hr\overline H\,\overline{m_2}\,
+                 \overline{ga}\right).
+ \label{eq:tpc20-three-phase-factorization}
+\end{align}
+with a modulus-one factor interpreted as \(1\).
+Thus the three displayed inverse phases are the CRT factorization of one
+ordinary Fourier character, not three independent spectra.  Moreover,
+\begin{equation}
+ \boxed{
+ \sum_{r\bmod q}|S_{u,v}(r)|^2
+ =q\sum_{\kappa\in\mathcal U_q}|Z_{u,v}(\kappa)|^2.}
+ \label{eq:tpc20-fiber-parseval}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The first assertion follows by grouping the row pairs according to the
+bijection in \cref{lem:tpc20-row-fiber-bijection}.  Under the stated
+squarefree hypothesis, the factorization in
+\eqref{eq:tpc20-three-phase-factorization} is CRT factorization of the
+character modulo the pairwise coprime moduli \(g,a,b\), followed by
+\(m_i\kappa\equiv-h\) in the appropriate factors.  Finally,
+\(r\mapsto r\overline H\) permutes the frequencies modulo \(q\), so
+ordinary finite-group Parseval proves \eqref{eq:tpc20-fiber-parseval}.
+\end{proof}
+
+All pairs \((u,v)\) with the same least common multiple may be combined
+before estimation.  In the single-leg range of
+\cref{cor:tpc20-whole-single-range}, let \(\vartheta_R(u)\) denote either
+the finite-model coefficient \(\lambda'_R(u)\), or the matched
+short--short residual coefficient \(b_R(u)\one_{u\le R}\), and put
+\begin{equation}
+ Z_q(\kappa)
+ =\sum_{\substack{u,v\le R\\\operatorname{lcm}(u,v)=q}}
+ \vartheta_R(u)\vartheta_R(v)Z_{u,v}(\kappa),
+ \label{eq:tpc20-aggregated-fiber}
+\end{equation}
+where an inadmissible row-modulus pair contributes zero.  Define
+\begin{equation}
+ S_q(r)=\sum_{\kappa\in\mathcal U_q}
+ Z_q(\kappa)e_q(r\overline H\kappa).
+ \label{eq:tpc20-aggregated-DFT}
+\end{equation}
+Then the compatible long-joint contribution at this denominator is
+\begin{equation}
+ \mathcal L_q
+ =\frac{J}{Hq}\sum_{r\ne0}
+ c_H(r)\widehat F\!\left(\frac{rJ}{Hq}\right)S_q(r).
+ \label{eq:tpc20-long-q-packet}
+\end{equation}
+This formula is a normal form for the chosen short--short joint
+remainder.  In the residual application it does not include the
+large-divisor legs \(u>R\) or \(v>R\).
+
+\begin{theorem}[Ramanujan mean and fiber discrepancy]
+\label{thm:tpc20-mean-discrepancy}
+Put
+\begin{equation}
+ \overline Z_q
+ =\frac1{\varphi(q)}\sum_{\kappa\in\mathcal U_q}Z_q(\kappa),
+ \qquad
+ D_q(\kappa)=Z_q(\kappa)-\overline Z_q.
+ \label{eq:tpc20-fiber-mean-discrepancy}
+\end{equation}
+Then
+\begin{equation}
+ S_q(r)
+ =\overline Z_q c_q(r)
+ +\sum_{\kappa\in\mathcal U_q}
+ D_q(\kappa)e_q(r\overline H\kappa),
+ \label{eq:tpc20-DFT-mean-split}
+\end{equation}
+and
+\begin{equation}
+ \boxed{
+ \sum_{r\bmod q}
+ |S_q(r)-\overline Z_qc_q(r)|^2
+ =q\sum_{\kappa\in\mathcal U_q}|D_q(\kappa)|^2.}
+ \label{eq:tpc20-discrepancy-parseval}
+\end{equation}
+Since \((H,q)=1\), the deterministic part of
+\eqref{eq:tpc20-long-q-packet} is the one-modulus Ramanujan packet
+\begin{equation}
+ \mathcal L_q^{\mathrm{mean}}
+ =\overline Z_q\frac{J}{Hq}\sum_{r\ne0}
+ c_{Hq}(r)\widehat F\!\left(\frac{rJ}{Hq}\right).
+ \label{eq:tpc20-Ramanujan-mean-packet}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Insert \(Z_q=\overline Z_q+D_q\) in
+\eqref{eq:tpc20-aggregated-DFT}.  The Fourier transform of the constant
+function on \(\mathcal U_q\) is \(c_q(r\overline H)=c_q(r)\).  Parseval
+applied to \(D_q\), extended by zero off \(\mathcal U_q\), gives
+\eqref{eq:tpc20-discrepancy-parseval}.  Multiplicativity of Ramanujan
+sums for coprime moduli gives \(c_H(r)c_q(r)=c_{Hq}(r)\).
+\end{proof}
+
+\begin{proposition}[Restricted-frequency fiber bound]
+\label{prop:tpc20-restricted-fiber-bound}
+Fix \(\epsilon>0\) and suppose
+\begin{equation}
+ J\ge 4HX^\epsilon.
+ \label{eq:tpc20-no-frequency-wrap}
+\end{equation}
+Write \(\mathcal L_{q,\le N}^{\mathrm{disc}}\) for the discrepancy
+part of \eqref{eq:tpc20-long-q-packet} truncated at
+\begin{equation}
+ 0<|r|\le N_{q,\epsilon}=X^\epsilon\frac{Hq}{J},
+ \label{eq:tpc20-fiber-window}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ |\mathcal L_{q,\le N}^{\mathrm{disc}}|
+ \ll_{H,F,\epsilon}
+ X^{\epsilon/2}\sqrt{\frac JH}
+ \left(\sum_{\kappa\in\mathcal U_q}|D_q(\kappa)|^2\right)^{1/2}}
+ \label{eq:tpc20-restricted-fiber-bound}
+\end{equation}
+and, for every \(A>0\),
+\begin{equation}
+ \mathcal L_q^{\mathrm{disc}}
+ =\mathcal L_{q,\le N}^{\mathrm{disc}}
+ +O_{A,F,H,\epsilon}\!\left(
+ X^{-A}\sum_{\kappa\in\mathcal U_q}|D_q(\kappa)|\right).
+ \label{eq:tpc20-fiber-tail-error}
+\end{equation}
+Let \(\mathcal Q\) be a family of long denominators and assume, for some
+fixed \(C_0\), the explicit polynomial mass bound
+\begin{equation}
+ \sum_{q\in\mathcal Q}\sum_{\kappa\in\mathcal U_q}
+ |D_q(\kappa)|\ll X^{C_0}.
+ \label{eq:tpc20-fiber-tail-mass}
+\end{equation}
+Then a sufficient discrepancy input is
+\begin{equation}
+ \sum_{q\in\mathcal Q}
+ \left(\sum_{\kappa\in\mathcal U_q}|D_q(\kappa)|^2\right)^{1/2}
+ \ll X^{-\epsilon}\frac{XQ}{\sqrt J}(\log X)^{-B},
+ \label{eq:tpc20-fiber-gate}
+\end{equation}
+with the harmless power of \(X^\epsilon\) adjusted as needed.  This
+controls only the discrepancy packets; the Ramanujan mean packets in
+\eqref{eq:tpc20-Ramanujan-mean-packet} remain separate.
+\end{proposition}
+
+\begin{proof}
+Rapid decay of \(\widehat F\), the trivial bound
+\[
+ \left|\sum_{\kappa\in\mathcal U_q}
+ D_q(\kappa)e_q(r\overline H\kappa)\right|
+ \le\sum_{\kappa\in\mathcal U_q}|D_q(\kappa)|,
+\]
+and summation of the Fourier tail give
+\eqref{eq:tpc20-fiber-tail-error}.  Under
+\eqref{eq:tpc20-no-frequency-wrap}, the retained positive and negative
+integers occupy distinct classes modulo \(q\).  Cauchy-Schwarz,
+\(|c_H(r)|\ll_H1\), and
+\eqref{eq:tpc20-discrepancy-parseval} give
+\begin{align*}
+ |\mathcal L_{q,\le N}^{\mathrm{disc}}|
+ &\ll_H\frac{J}{Hq}N_{q,\epsilon}^{1/2}
+ \left(q\sum_{\kappa\in\mathcal U_q}|D_q(\kappa)|^2\right)^{1/2}\\
+ &\ll_H X^{\epsilon/2}\sqrt{\frac JH}
+ \left(\sum_{\kappa\in\mathcal U_q}|D_q(\kappa)|^2\right)^{1/2}.
+\end{align*}
+Summation over \(q\) proves the sufficient gate after choosing the
+epsilon bookkeeping with the required margin.  Equation
+\eqref{eq:tpc20-fiber-tail-mass} makes the summed tails negligible by
+taking \(A>C_0+B+1\) in \eqref{eq:tpc20-fiber-tail-error}.
+\end{proof}
+
+The Ramanujan mean has a revealing interaction with the transverse
+M\"obius sign.  The following identity applies to each fixed
+squarefree \((u,v)\)-summand before the lcm aggregation in
+\eqref{eq:tpc20-aggregated-fiber}; it is not an estimate.
+
+\begin{proposition}[Migration of the transverse sign]
+\label{prop:tpc20-sign-migration}
+Assume \(q=gab\) is squarefree with \(g,a,b\) pairwise coprime.  Put
+\begin{equation}
+ d_g=(r,g),\qquad d_a=(r,a),\qquad d_b=(r,b).
+ \label{eq:tpc20-frequency-contents}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \mu(a)\mu(b)c_{gab}(r)
+ =\mu(g/d_g)\mu(d_a)\mu(d_b)
+  \varphi(d_gd_ad_b).}
+ \label{eq:tpc20-sign-migration}
+\end{equation}
+In particular,
+\begin{equation}
+ (r,gab)=1
+ \quad\Longrightarrow\quad
+ \mu(a)\mu(b)c_{gab}(r)=\mu(g).
+ \label{eq:tpc20-coprime-sign-migration}
+\end{equation}
+Thus fiber-uniformity of a fixed squarefree \((u,v)\)-summand does not
+preserve its transverse M\"obius sign; on frequencies coprime to \(q\),
+that sign is transferred to the associated determinant content
+\(g=(u,v)\).  No single-\(g\) conclusion is asserted after summing over
+all decompositions of \(q\).
+\end{proposition}
+
+\begin{proof}
+For squarefree \(q\),
+\[
+ c_q(r)=\mu\!\left(\frac{q}{(q,r)}\right)\varphi((q,r)).
+\]
+Factor this formula over the pairwise coprime integers \(g,a,b\).  Since
+\(\mu(a)\mu(a/d_a)=\mu(d_a)\), and similarly for \(b\), one obtains
+\eqref{eq:tpc20-sign-migration}.
+\end{proof}
+
+\begin{proposition}[Sharp algebraic no-go for arbitrary fibers]
+\label{prop:tpc20-fiber-nogo}
+CRT compression alone implies neither uniform pointwise decay of the
+restricted discrepancy transform nor a restricted-frequency saving for
+arbitrary fiber vectors.  Indeed, if an admissible coefficient
+vector is supported on one class \(\kappa_0\in\mathcal U_q\), say
+\(Z_q=A\one_{\{\kappa_0\}}\), then
+\begin{equation}
+ |S_q(r)|=|Z_q(\kappa_0)|
+ \qquad\text{for every }r.
+ \label{eq:tpc20-one-fiber-saturation}
+\end{equation}
+Moreover its mean-zero discrepancy transform is
+\begin{equation}
+ \widehat D_q(r)
+ =A\left(
+ e_q(r\overline H\kappa_0)-\frac{c_q(r)}{\varphi(q)}
+ \right).
+ \label{eq:tpc20-one-fiber-discrepancy}
+\end{equation}
+If \(\varphi(q)>1\) and \((r,q)=1\), then
+\begin{equation}
+ |\widehat D_q(r)|
+ \ge |A|\left(1-\frac1{\varphi(q)}\right).
+ \label{eq:tpc20-one-fiber-discrepancy-lower}
+\end{equation}
+Thus a nonempty retained window, which contains the coprime frequency
+\(r=1\), can still carry order-\(|A|\) discrepancy.
+Its uncentered Fourier energy is exactly \(q|A|^2\), distributed
+uniformly over all \(q\) frequencies.  A useful improvement of
+\eqref{eq:tpc20-restricted-fiber-bound} requires an arithmetic bound for
+the actual row-fiber discrepancy, or a separable low-rank decomposition
+whose coefficient cost is controlled.
+\end{proposition}
+
+\begin{proof}
+For a one-fiber vector,
+\(S_q(r)=Z_q(\kappa_0)e_q(r\overline H\kappa_0)\).  This proves
+\eqref{eq:tpc20-one-fiber-saturation} and equality in the corresponding
+Parseval identity.  Subtracting the unit-class mean gives
+\eqref{eq:tpc20-one-fiber-discrepancy}.  When \((r,q)=1\),
+\(c_q(r)=\mu(q)\), so the reverse triangle inequality proves
+\eqref{eq:tpc20-one-fiber-discrepancy-lower}.
+\end{proof}
+
+\begin{remark}[Why a generic additive large sieve does not close the gate]
+\label{rem:tpc20-generic-large-sieve-nogo}
+For denominators \(q\asymp Q_0\), the relevant dual length is
+\(N\asymp HQ_0/J\), whereas generic Farey spacing costs \(Q_0^2\).
+Thus the standard large-sieve constant \(N+Q_0^2\) is dominated by
+\(Q_0^2\) in the present low-frequency regime.  Likewise, existing
+bilinear or trilinear Kloosterman bounds require a separated coefficient
+array and do not accept an arbitrary modulus-dependent vector
+\(Z_q(\kappa)\).  The exact new gate is therefore a quantitative
+equidistribution or controlled-rank theorem for the actual
+prime-M\"obius row fibers, together with control or matching of the
+explicit Ramanujan mean packet.
+\end{remark}
+
+\begin{remark}[Scope of the compression]
+\label{rem:tpc20-fiber-scope}
+The compression theorem applies to a separated compatible joint packet.
+In the intermediate range of
+\cref{cor:tpc20-whole-single-range}, it describes the only nonzero
+spectrum left in the chosen short--short block after single-leg
+completion.  It does not by itself estimate that packet, control the
+large-divisor legs of the common residual coefficient, or prove the
+all-modulus primitive residual-dispersion target.
+\end{remark}

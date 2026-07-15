@@ -1,0 +1,109 @@
+\section{Finite dynamics, exact certificate, and conclusion}
+\label{sec:tpc20-certificate-conclusion}
+
+The word \emph{spectrum} in this paper has a finite and literal
+dynamical meaning.  For each divisor pair, translation
+\begin{equation}
+ \tau:j\longmapsto j+1
+ \qquad\text{on }\Z/(H[u,v])\Z
+ \label{eq:tpc20-cyclic-shift}
+\end{equation}
+is a finite measure-preserving dynamical system.  Its Koopman
+characters are \(e_{H[u,v]}(rj)\), and the coefficients computed in
+\cref{thm:tpc20-four-channel-coefficients} are exactly the spectral coordinates
+of the centered local divisor observable.  The Poisson step couples
+these finite cyclic spectra to the smooth orbit window, while
+\cref{thm:tpc20-fiber-DFT} reorganizes the compatible row weights on a
+single CRT fiber.  This terminology does not assert a spectral
+realization of the zeros of the Riemann zeta function.
+
+\subsection{Exact computational certificate}
+
+The standard-library Python certificate is located at
+\begin{center}
+ \texttt{experiments/tpc20\_certificate.py}.
+\end{center}
+Run it from the paper directory with
+\begin{verbatim}
+python experiments/tpc20_certificate.py
+python -O experiments/tpc20_certificate.py
+\end{verbatim}
+Both commands regenerate the deterministic file
+\texttt{experiments/tpc20\_certificate.json}.  The proof checks use
+integers, \texttt{fractions.Fraction}, formal prime-log polynomials, and
+finite prime fields containing roots of the exact required orders.
+They verify independently sampled instances of:
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+ \item the pointwise four-channel recombination into the single
+ coefficient \(b_R\), including its scalar calibration term;
+ \item the primitive complete-period zero mode and its termwise
+ disappearance for every coprime divisor pair;
+ \item the full four-term Fourier formula, the aligned multiplier
+ \(B_{g,a,b}\), its frequency counts and exact energy, and the kernel
+ Plancherel identity;
+ \item the CRT-fiber parametrization, finite Fourier transform,
+ Parseval formula, and mean--discrepancy decomposition;
+ \item the squarefree sign migration, completion exponent ledger, and
+ the convolution identity underlying the uniform calibration theorem.
+\end{enumerate}
+The certificate is a regression test for finite algebra; it is not
+numerical evidence for the unproved fiber-discrepancy estimate.  Its
+JSON therefore records
+\begin{center}
+ \texttt{twin\_prime\_evidence = false},\qquad
+ \texttt{residual\_dispersion\_evidence = false},\\
+ \texttt{asymptotic\_evidence = false}.
+\end{center}
+Its diagnostic scope also excludes a parity-barrier breakthrough.
+
+At the version archived with this paper, the generated JSON has
+SHA-256
+\begin{center}
+ \texttt{0F994F32950AC68B8249D2F90E7074176106C122A2AE53268370F03584B7C12B},
+\end{center}
+and the script has SHA-256
+\begin{center}
+ \texttt{55D9FA7DD4277C541ABE39C53231453F7F6A9107DEF40103F5227373B53E0174}.
+\end{center}
+
+\subsection{Conclusion}
+
+TPC-20 supplies the matched reduction that TPC-19 left open.  The
+prime--prime, prime--model, model--prime, and model--model channels combine
+pointwise into one centered divisor kernel with one residual
+coefficient.  A uniform M\"obius theorem makes the finite calibration
+defect arbitrarily logarithmically small throughout polynomial row
+ranges, and \cref{cor:tpc20-calibration-negligible} makes it negligible
+at packet scale under its explicit packet hypotheses, which hold for the
+separated packets in the single-leg range.  The resulting
+primitive-conditional zero mode is connected, and the zero mode of
+every coprime divisor pair vanishes before any triangle inequality is
+applied.
+
+The exact Fourier calculation then separates genuinely different
+period scales.  Completing the two single legs at periods \(Hu\) and
+\(Hv\), rather than artificially at \(H[u,v]\), identifies uniform
+single-leg completion up to
+\(Q\le X^{1/2+\delta-\eta_0}\), beyond the older whole-joint-period
+completion range \(Q\le X^{2\delta-\eta_0}\).  This removes two spurious long
+spectra.  It does not cancel the surviving joint packet: on its low
+nonzero frequencies the aligned multiplier equals \(g=(u,v)\).
+
+Finally, the apparent triple inverse phase of TPC-19 is one ordinary
+DFT after compatible row pairs are grouped by their joint CRT class.
+The transform splits exactly into a Ramanujan mean packet and a fiber
+discrepancy, with Parseval identifying the full discrepancy energy.
+For this chosen compatible short--short packet, the remaining
+obligations are concrete: prove the weighted restricted-frequency fiber
+gate (or an explicitly normed low-rank substitute) for the actual sharp
+M\"obius row weights, and separately control the Ramanujan mean.  The
+cited separated Kloosterman-fraction and frequency-concentration
+results do not automatically provide either input.  The large-divisor
+legs remain outside this reduction.
+
+Thus this paper advances the route by an exact common-channel
+compression, a wider unconditional single-leg completion range, and a
+sharply formulated coefficient gate.  It does not estimate the full TPC-18
+residual, prove a fixed-shift Hardy--Littlewood asymptotic or a
+twin-prime lower bound, breach the sieve parity barrier, or realize
+zeta zeros as dynamical eigenvalues.
