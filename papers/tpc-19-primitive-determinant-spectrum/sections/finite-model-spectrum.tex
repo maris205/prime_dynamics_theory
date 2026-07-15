@@ -1,0 +1,143 @@
+\section{The connected finite-model determinant spectrum}
+\label{sec:model-spectrum}
+
+We now compute the complete-period covariance of the centered model
+\(M_m\) in \eqref{eq:centered-signals}.  The result identifies exactly
+which modulus interactions survive centering.
+
+\begin{lemma}[Centered divisor form]
+\label{lem:centered-divisor-model}
+Under the hypotheses of \cref{lem:model-conditional-mean}, one has on
+the allowed classes \((j,H)=1\)
+\begin{equation}
+ M_m(j)=
+ \sum_{\substack{u\le R\\(u,mH)=1}}
+ \lambda'_R(u)
+ \left(\one_{u\mid mj+h}-\frac1u\right).
+ \label{eq:centered-divisor-model}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The divisor expansion \eqref{eq:model-divisor-expansion} may be
+restricted to \((u,mH)=1\) by \eqref{eq:target-coprime}.  Conditional
+on \((j,H)=1\), a congruence \(mj\equiv-h\pmod u\) with
+\((u,mH)=1\) occupies density \(1/u\).  Summing those densities gives
+the exact mean in \eqref{eq:model-density}, so subtraction proves the
+formula.
+\end{proof}
+
+\begin{theorem}[Connected determinant covariance]
+\label{thm:model-covariance}
+Let \(m_i=\ell_i d_i\) satisfy the primitive row hypotheses and
+\(d_iH\le R\).  Put \(\Delta=m_1-m_2\) and
+\begin{equation}
+ \kappa_R(m_1,m_2):=\mathbb E_H[M_{m_1}(j)M_{m_2}(j)].
+ \label{eq:kappa-definition}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{\quad
+ \kappa_R(m_1,m_2)
+ =\sum_{\substack{u,v\le R\\
+ (u,m_1H)=(v,m_2H)=1}}
+ \frac{\lambda'_R(u)\lambda'_R(v)}{uv}
+ \left((u,v)\one_{(u,v)\mid\Delta}-1\right).
+ \quad}
+ \label{eq:kappa-formula}
+\end{equation}
+Every term with \((u,v)=1\) vanishes individually.
+\end{theorem}
+
+\begin{proof}
+Fix \(u,v\) in \eqref{eq:centered-divisor-model} and set
+\(g=(u,v)\).  The two congruences for \(j\) are compatible exactly
+when \(g\mid\Delta\), by the same primitive CRT calculation as in
+\cref{thm:residual-crt}.  When compatible, their conditional joint
+density is
+\[
+ \frac1{[u,v]}=\frac g{uv};
+\]
+the modulus \(H\) is independent because \((uv,H)=1\).  The product of
+the two individual densities is \(1/(uv)\).  Expanding the centered
+indicators gives the bracket in \eqref{eq:kappa-formula}.  If \(g=1\),
+that bracket is \(1-1=0\).
+\end{proof}
+
+Since \(\lambda'_R\) is squarefree-supported, write
+\begin{equation}
+ u=ga,\qquad v=gb,\qquad g,a,b\ \text{pairwise coprime and squarefree}.
+ \label{eq:model-gab}
+\end{equation}
+Then \eqref{eq:kappa-formula} becomes
+\begin{align}
+ \kappa_R(m_1,m_2)
+ =\sum_{\substack{g,a,b\ \mathrm{pairwise\ coprime\ squarefree}\\
+ ga,gb\le R\\(ga,m_1H)=(gb,m_2H)=1}}
+ \frac{\lambda'_R(ga)\lambda'_R(gb)}{g^2ab}
+ \left(g\one_{g\mid\Delta}-1\right).
+ \label{eq:kappa-gab}
+\end{align}
+
+\begin{corollary}[Pointwise connected-kernel bound]
+\label{cor:kappa-bound}
+If \(\Delta\ne0\), then
+\begin{equation}
+ |\kappa_R(m_1,m_2)|
+ \ll (\log(2R))^6
+ \left(1+\sigma_{-1}(|\Delta|)\right),
+ \label{eq:kappa-bound}
+\end{equation}
+where \(\sigma_{-1}(n)=\sum_{d\mid n}d^{-1}\).  Hence
+\begin{equation}
+ |\kappa_R(m_1,m_2)|
+ \ll (\log(2R))^6\log\log(3|\Delta|).
+ \label{eq:kappa-loglog}
+\end{equation}
+No assertion in \eqref{eq:kappa-loglog} is made for \(\Delta=0\).
+\end{corollary}
+
+\begin{proof}
+Use \eqref{eq:lambda-bound} in \eqref{eq:kappa-gab}.  The contribution
+of the \(-1\) part is at most
+\[
+ (\log(2R))^4
+ \sum_{g\ge2}\frac1{g^2}
+ \left(\sum_{a\le R/g}\frac1a\right)
+ \left(\sum_{b\le R/g}\frac1b\right)
+ \ll(\log(2R))^6.
+\]
+For the determinant part, restrict \(g\) to divisors of \(\Delta\),
+replace \(g/g^2\) by \(1/g\), and use the same two harmonic sums.
+This gives \eqref{eq:kappa-bound}.  The classical maximal-order bound
+for \(\sigma_{-1}\) gives \eqref{eq:kappa-loglog}.
+\end{proof}
+
+\begin{proposition}[Positivity before generic pruning]
+\label{prop:model-psd}
+For every finite primitive row family \(\{m_\alpha\}\), the matrix
+\begin{equation}
+ \bigl[\kappa_R(m_\alpha,m_\beta)\bigr]_{\alpha,\beta}
+ \label{eq:kappa-matrix}
+\end{equation}
+is positive semidefinite.
+\end{proposition}
+
+\begin{proof}
+For arbitrary complex \(c_\alpha\), complete-period averaging gives
+\[
+ \sum_{\alpha,\beta}c_\alpha\overline{c_\beta}
+ \kappa_R(m_\alpha,m_\beta)
+ =\mathbb E_H\left|
+ \sum_\alpha c_\alpha M_{m_\alpha}(j)
+ \right|^2\ge0.
+\]
+\end{proof}
+
+\begin{remark}[Generic sums are not Gram matrices]
+Deleting the diagonal, same-source, near-determinant, or large-gcd
+edges changes the quadratic form.  The generic correlation retained by
+TPC-18 is not positive semidefinite merely because
+\eqref{eq:kappa-matrix} is.  We use positivity only for the complete
+row family and never transfer it to a pruned edge set.
+\end{remark}

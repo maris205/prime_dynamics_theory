@@ -1,0 +1,91 @@
+\section{Finite dynamical interpretation, exact certificate, and conclusion}
+\label{sec:computation}
+
+The term \emph{spectrum} here has a literal finite-dynamical meaning.
+For each divisor pair, translation
+\begin{equation}
+ \tau:j\longmapsto j+1\qquad\text{on }\Z/T\Z,
+ \quad T=H[u,v],
+ \label{eq:cyclic-dynamics}
+\end{equation}
+is a finite measure-preserving dynamical system.  Its Koopman
+eigenfunctions are \(e_T(rj)\).  The coefficients
+\(\widehat K(r)\) in \eqref{eq:kernel-fourier} are therefore the exact
+spectral coordinates of the centered local sieve observable.  The
+direct identity \eqref{eq:determinant-fourier} diagonalizes the shared
+determinant factor, whereas \eqref{eq:kernel-poisson} couples that
+finite spectrum to the long orbit window.  The required four-channel
+cancellation is consequently a matched-spectral statement; no claim
+of a spectral realization of zeta zeros is involved.
+
+\subsection{Exact computational certificate}
+
+The standard-library Python certificate is located at
+\begin{center}
+\texttt{experiments/tpc19\_certificate.py}.
+\end{center}
+Run it from the paper directory with
+\begin{verbatim}
+python experiments/tpc19_certificate.py
+python -O experiments/tpc19_certificate.py
+\end{verbatim}
+Both commands regenerate
+\texttt{experiments/tpc19\_certificate.json}.  The proof layer uses
+integers, \texttt{fractions.Fraction}, and formal prime-log
+indeterminates.  In particular, it checks:
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+ \item the Ramanujan definition of \(\Lambda_R\) against the divisor
+ form in 540 exact cases, including squarefree support and
+ \eqref{eq:lambda-positive-form};
+ \item the primitive masked means, the covariance formula, and
+ termwise cancellation of every \(g=1\) contribution;
+ \item equality of a four-row direct complete-period Gram matrix and
+ the CRT matrix, all 15 principal minors, and 625 integer-vector
+ quadratic forms;
+ \item the positive witness \(433/450\) and a separate negative
+ covariance regression \(-259/900\);
+ \item the full residual identity \eqref{eq:residual-divisor} for
+ \(n\le360\), and direct/divisor/CRT formal-polynomial reassembly of a
+ residual pair, including determinant support and common-\(g\) sign
+ cancellation.
+\end{enumerate}
+The direct periodic side loops over the original \(q\)-truncated
+Ramanujan model, whereas the comparison side assembles the
+\(u\)-divisor and CRT forms.  These are independently looped
+reorganizations, not wholly independent arithmetic libraries: the
+Ramanujan-sum routine itself uses the standard divisor formula for
+\(c_q(n)\).
+
+At the version archived with this paper, the generated JSON has
+SHA-256
+\begin{center}
+\texttt{B141ADC152C38CDABE46528BD872AA4622AFD7A8E9D1E8E719D283247AC05744},
+\end{center}
+and the script has SHA-256
+\begin{center}
+\texttt{60154632DB45B1DB023C8CF5BF6D4084481EEF9154851CD2121567C2DA96F61F}.
+\end{center}
+The optional prime-data diagnostics are isolated from every exact
+check and explicitly serialize
+\texttt{prime\_asymptotic\_evidence=false}.
+
+\subsection{Conclusion}
+
+TPC-19 advances the TPC chain by replacing an opaque variable-
+determinant residual correlation with exact, reusable normal forms.
+The actual residual has a positive-size squarefree divisor expansion
+with transverse M\"obius signs.  Primitive CRT identifies the shared
+divisor with the row determinant.  Exact centering removes a small row
+drift.  The complete-period \(j\)-zero mode of the finite model is
+supported on nonzero determinant frequencies, and CRT--Poisson duality
+turns its long-period part into coupled inverse phases.
+
+The negative theorem is equally informative: one local model channel
+can have a nonzero complete-period mean, so rowwise orbit cancellation
+is unavailable.  A future proof can seek extra oscillation over rows,
+or preserve matched cancellation and then pass either the sharp
+M\"obius frequency-concentration gate or the joint long-lcm
+Kloosterman gate.  These are narrower targets than the TPC-18 residual
+statement, but they remain open.  The paper therefore
+delivers a rigorous step and an auditable route map, not a twin-prime
+claim or a parity-barrier breakthrough.

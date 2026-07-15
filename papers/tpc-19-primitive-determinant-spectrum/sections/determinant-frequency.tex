@@ -1,0 +1,168 @@
+\section{Direct determinant frequencies and the M\"obius concentration gate}
+\label{sec:direct-frequency}
+
+Write \(e_q(x)=\exp(2\pi i x/q)\).  The connected kernel in
+\cref{eq:kappa-gab} has an elementary but useful exact spectrum.
+
+\begin{proposition}[Only nonzero determinant frequencies remain]
+\label{prop:determinant-fourier}
+For every integer \(g\ge1\) and \(\Delta\in\Z\),
+\begin{equation}
+ g\one_{g\mid\Delta}-1
+ =\sum_{r=1}^{g-1}e_g(r\Delta).
+ \label{eq:determinant-fourier}
+\end{equation}
+Consequently
+\begin{align}
+ \kappa_R(m_1,m_2)
+ ={}&\sum_{\substack{g,a,b\ \mathrm{pairwise\ coprime\ squarefree}\\
+ ga,gb\le R\\(ga,m_1H)=(gb,m_2H)=1}}
+ \frac{\lambda'_R(ga)\lambda'_R(gb)}{g^2ab}
+ \sum_{r=1}^{g-1}e_g\!\bigl(r(m_1-m_2)\bigr).
+ \label{eq:kappa-direct-spectrum}
+\end{align}
+In particular, centering removes every \(g=1\) contribution before
+any estimate is made.
+\end{proposition}
+
+\begin{proof}
+The complete additive-character sum is \(g\one_{g\mid\Delta}\).
+Removing its \(r=0\) term proves \eqref{eq:determinant-fourier}; insertion
+in \eqref{eq:kappa-gab} proves the second assertion.
+\end{proof}
+
+There is a second exact decomposition that separates genuine source
+dispersion from a deterministic reduced-class bias.  If
+\((g,\ell_1\ell_2d_1d_2)=1\), then
+\begin{align}
+ &g\one_{g\mid \ell_1d_1-\ell_2d_2}-1
+ \notag\\
+ &\quad={}
+ g\left(
+ \one_{\ell_1\equiv \ell_2d_2\overline{d_1}\ (\bmod g)}
+ -\frac1{\varphi(g)}
+ \right)
+ +\left(\frac g{\varphi(g)}-1\right).
+ \label{eq:source-bias-split}
+\end{align}
+Here and below a bar denotes an inverse in the displayed modulus.  The
+first term in \eqref{eq:source-bias-split} is the discrepancy of the
+prime source \(\ell_1\) in one reduced class.  The second term is a
+fixed local bias.  It is not small for a fixed small \(g\), so the
+model channel cannot be declared negligible from \(j\)-centering
+alone.  A separate global estimate would have to use additional row
+oscillation, or else retain the other three channels in
+\eqref{eq:four-channel}.
+
+We next isolate the bare dyadic M\"obius coefficient obtained by
+grouping only the determinant difference.  The full TPC kernel also
+contains the \(g,a,b\) restrictions, coprimality, generic pruning, and
+spectral weights; those are not encoded in the following sequence.
+Let \(\omega_D\) be a real smooth weight
+supported in an interval of length at most \(D\) inside \([D,2D]\),
+and let \(\ell_1\ne\ell_2\) be primes greater than \(2D\).  Define
+\begin{equation}
+ A_{\ell_1,\ell_2}(n)
+ :=\sum_{\ell_1d_1-\ell_2d_2=n}
+ \mu(d_1)\mu(d_2)\omega_D(d_1)\omega_D(d_2)
+ \label{eq:difference-coefficient}
+\end{equation}
+and
+\begin{equation}
+ M_\ell(\alpha)
+ :=\sum_d\mu(d)\omega_D(d)\ee{-\ell d\alpha}.
+ \label{eq:mobius-frequency-sum}
+\end{equation}
+
+\begin{theorem}[Injective determinant geometry and exact transform]
+\label{thm:difference-spectrum}
+Under the preceding hypotheses, the map
+\begin{equation}
+ (d_1,d_2)\longmapsto \ell_1d_1-\ell_2d_2
+ \label{eq:difference-map}
+\end{equation}
+is injective on the support of \(\omega_D\).  Therefore
+\begin{equation}
+ \sum_n|A_{\ell_1,\ell_2}(n)|^2
+ =\left(\sum_d\mu(d)^2\omega_D(d)^2\right)^2.
+ \label{eq:difference-l2}
+\end{equation}
+With the Fourier convention
+\(\widehat A(\alpha)=\sum_nA(n)\ee{-n\alpha}\), one also has
+\begin{equation}
+ \boxed{\quad
+ \widehat A_{\ell_1,\ell_2}(\alpha)
+ =M_{\ell_1}(\alpha)\overline{M_{\ell_2}(\alpha)}.
+ \quad}
+ \label{eq:difference-factorization}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+A collision in \eqref{eq:difference-map} gives
+\[
+ \ell_1(d_1-d'_1)=\ell_2(d_2-d'_2).
+\]
+Thus \(\ell_2\mid d_1-d'_1\).  The support interval has length at
+most \(D<\ell_2\), so \(d_1=d'_1\), and then \(d_2=d'_2\).
+The \(\ell^2\)-identity follows by opening the square.  Finally,
+Fourier inversion of the defining difference gives
+\[
+ \widehat A(\alpha)
+ =\sum_{d_1,d_2}\mu(d_1)\mu(d_2)
+ \omega_D(d_1)\omega_D(d_2)
+ \ee{-\ell_1d_1\alpha}\ee{\ell_2d_2\alpha},
+\]
+which is \eqref{eq:difference-factorization} because the weights are
+real.
+\end{proof}
+
+\begin{remark}[What \(\ell^2\) does and does not give]
+Suppose \(|\omega_D|\ll1\) and, for some fixed \(c,c'>0\),
+\(|\omega_D(d)|\ge c\) on at least \(c'D\) squarefree integers.  Then
+\eqref{eq:difference-l2} is \(\asymp_{c,c'}D^2\).  Thus injectivity
+gives an exact normalization, not a cancellation theorem.  Any gain
+must come from where the mass of the product in
+\eqref{eq:difference-factorization} lies in frequency, or from
+cancellation against the other locally calibrated channels.
+\end{remark}
+
+If the factors \(\mu(d_i)\) in
+\eqref{eq:difference-coefficient} are replaced by the permitted smooth
+weights and phases, the resulting M\"obius-free difference coefficient
+has the geometry covered by Pascadi's published large-sieve theorem
+for smooth dispersion coefficients
+\cite[Theorem~1.7]{Pascadi2026LargeSieve}, after dyadic and signed
+splitting.  The general theorem is governed by a representing
+measure for the \emph{pair sequence}
+\(A_{\ell_1,\ell_2}\), through a frequency-concentration functional
+\cite[Theorem~5.2]{Pascadi2026LargeSieve}.  It does not act separately
+on the two factors \(M_{\ell_i}\).
+
+\begin{remark}[Open sharp-M\"obius concentration gate]
+\label{rem:mobius-concentration}
+For the present coefficient, the representing measure for
+\(A_{\ell_1,\ell_2}\) must encode the sharp factors \(\mu(d_i)\);
+\eqref{eq:difference-factorization} identifies its Fourier density as
+a product of two M\"obius exponential sums.  The required scale
+parameter and rational-frequency windows depend on the preceding
+matched Kuznetsov/dispersion reduction, which has not yet been
+constructed.  We therefore do not state a numerical
+frequency-concentration hypothesis in isolation.  The open gate is to
+produce that matched reduction and then prove the exact
+Theorem~5.2 concentration bound it requires, with sufficient saving for
+\eqref{eq:residual-dd-target}.  This remark is a route specification,
+not a conditional theorem.
+\end{remark}
+
+\begin{remark}[Two missing pieces, not one]
+\Cref{rem:mobius-concentration} is not by itself a theorem about the
+original residual.  One must first produce a Kuznetsov or dispersion
+formula in which the \(PP,PM,MP,MM\) terms share the same spectral
+kernel and remain combined.  Only then can a frequency-concentration
+estimate be applied.  Current results for smooth dispersion
+coefficients, triply well-factorable weights, or separated bilinear
+divisor-bounded weights do not supply that matched reduction for the
+sharp prime--M\"obius coefficient left by TPC-18
+\citep{Pascadi2025Distribution,Li2026v6}.
+\end{remark}

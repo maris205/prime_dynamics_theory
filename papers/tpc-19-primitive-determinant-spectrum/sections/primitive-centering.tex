@@ -1,0 +1,142 @@
+\section{Exact primitive centering and removal of row drift}
+\label{sec:centering}
+
+The primitive mask changes the natural finite-model mean.  We record
+that mean exactly rather than treating it as a harmless constant.
+For a common period \(P\) divisible by \(H\) and by every integer at
+most \(R\), write
+\begin{equation}
+ \mathbb E_H f
+ :=\frac{1}{\#\{j\bmod P:(j,H)=1\}}
+ \sum_{\substack{j\bmod P\\(j,H)=1}}f(j).
+ \label{eq:conditional-average}
+\end{equation}
+The value is independent of the chosen common period for every
+\(P\)-periodic function under consideration.
+
+\begin{lemma}[Exact conditional mean of the finite model]
+\label{lem:model-conditional-mean}
+Assume \(dH\le R\), \(\ell>R\) is prime, \(d\) is squarefree, and
+\((d,H)=1\).  For \(m=\ell d\),
+\begin{equation}
+ \rho_{M,H,R}(m)
+ :=\mathbb E_H\Lambda_R(mj+h)
+ =\frac{H}{\varphi(H)}\frac d{\varphi(d)}.
+ \label{eq:model-density}
+\end{equation}
+Equivalently, the unnormalized complete-period mean is
+\begin{equation}
+ \frac1P\sum_{\substack{j\bmod P\\(j,H)=1}}
+ \Lambda_R(mj+h)=\frac d{\varphi(d)}.
+ \label{eq:unnormalized-model-density}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Average the Ramanujan expansion in \eqref{eq:model-residual} over
+allowed \(j\).  If a squarefree \(q\le R\) has a prime factor outside
+\(dH\), the corresponding local Ramanujan wave has mean zero.  If
+\(q\mid dH\), then \(q\le dH\le R\) and \(mj+h\) is coprime to \(q\)
+on every allowed class, so \(c_q(mj+h)=\mu(q)\).  Therefore
+\[
+ \mathbb E_H\Lambda_R(mj+h)
+ =\sum_{q\mid dH}\frac{\mu(q)^2}{\varphi(q)}
+ =\frac{dH}{\varphi(dH)}
+ =\frac{H}{\varphi(H)}\frac d{\varphi(d)}.
+\]
+Multiplication by the density \(\varphi(H)/H\) of the allowed classes
+gives \eqref{eq:unnormalized-model-density}.
+\end{proof}
+
+The calibrated prime density on those same classes is
+\begin{equation}
+ \rho_{P,H}(m)
+ :=\frac{H}{\varphi(H)}\frac m{\varphi(m)}.
+ \label{eq:prime-density}
+\end{equation}
+This is a local progression density, not a claim of a prime number
+theorem for the long modulus \(m\).
+
+Define the locally calibrated row signals
+\begin{equation}
+ P_m(j)=\Lambda(mj+h)-\rho_{P,H}(m),
+ \qquad
+ M_m(j)=\Lambda_R(mj+h)-\rho_{M,H,R}(m).
+ \label{eq:centered-signals}
+\end{equation}
+
+\begin{proposition}[Matched centering identity]
+\label{prop:matched-centering}
+Under the hypotheses of \cref{lem:model-conditional-mean},
+\begin{equation}
+ r_R(mj+h)=P_m(j)-M_m(j)+\delta_H(m),
+ \label{eq:matched-centering}
+\end{equation}
+where
+\begin{equation}
+ \boxed{\quad
+ \delta_H(\ell d)
+ =\frac{H}{\varphi(H)}
+ \frac{d}{\varphi(d)(\ell-1)}.
+ \quad}
+ \label{eq:row-drift}
+\end{equation}
+Consequently \(\delta_H(\ell d)\ll_{h,\eps}X^\eps/L\).
+\end{proposition}
+
+\begin{proof}
+Subtract \eqref{eq:model-density} from \eqref{eq:prime-density}.  Since
+\(\ell>R\ge d\), the prime \(\ell\) does not divide \(d\), and
+\[
+ \frac{\ell d}{\varphi(\ell d)}-
+ \frac d{\varphi(d)}
+ =\frac d{\varphi(d)}\left(\frac\ell{\ell-1}-1\right)
+ =\frac d{\varphi(d)(\ell-1)}.
+\]
+The standard bound \(d/\varphi(d)\ll X^\eps\) proves the estimate.
+\end{proof}
+
+\begin{theorem}[The drift has a power saving at the obstruction scale]
+\label{thm:drift-small}
+Assume \(L\ge X^{\lambda_0}\) for a fixed \(\lambda_0>0\), and let a
+primitive row-pair correlation have the geometry and bounded weights of
+\cref{sec:interface}.  Replacing every \(r_R(mj+h)\) by
+\begin{equation}
+ Z_m(j):=P_m(j)-M_m(j)
+ \label{eq:Z}
+\end{equation}
+changes the correlation by
+\begin{equation}
+ O_{h,\eps}(XD\,X^\eps)+O_{h,\eps}(XD/L\,X^\eps).
+ \label{eq:drift-correlation-error}
+\end{equation}
+For \(\eps<\lambda_0/3\), this has a fixed power saving relative to
+\(XQ=XLD\), and hence arbitrary logarithmic saving.
+\end{theorem}
+
+\begin{proof}
+On the support, the soft divisor bounds give
+\(|P_m(j)|+|M_m(j)|\ll X^\eps\), hence \(|Z_m(j)|\ll X^\eps\).
+By \eqref{eq:row-mass}, the total weighted row mass is \(O(QX^\eps)\),
+while the same mass with one drift inserted is
+\(O(QX^\eps/L)=O(DX^\eps)\).  There are \(O(J)\) values of \(j\).
+Thus all one-drift terms are
+\[
+ \ll J\,(Q/L)QX^\eps\asymp XDX^\eps,
+\]
+and the two-drift term is
+\[
+ \ll J\,(Q/L)^2X^\eps\asymp (XD/L)X^\eps.
+\]
+An off-diagonal or generic row restriction can only decrease these
+absolute majorants.
+\end{proof}
+
+\begin{remark}[What has been centered]
+The function \(M_m\) has exact zero conditional mean over its finite
+period.  The definition of \(P_m\) removes the predicted primitive
+progression density, but no finite-interval prime equidistribution or
+zero-mean statement for \(P_m\) is asserted.  The hard problem is to
+compare the locally calibrated prime spectrum with the exactly
+centered model spectrum in \(Z_m=P_m-M_m\).
+\end{remark}

@@ -1,0 +1,105 @@
+\section{The primitive row interface}
+\label{sec:interface}
+
+Fix \(h\in\Z\setminus\{0\}\) and put
+\begin{equation}
+ H=\rad|h|.
+ \label{eq:H}
+\end{equation}
+Let \(0<\delta<1/2\) and
+\begin{equation}
+ R=\lfloor X^{1/2-\delta}\rfloor,
+ \qquad V=\lfloor R^{1/2}\rfloor.
+ \label{eq:RV}
+\end{equation}
+The finite Ramanujan model and its residual are
+\begin{equation}
+ \Lambda_R(n)=\sum_{q\le R}\frac{\mu(q)}{\varphi(q)}c_q(n),
+ \qquad r_R(n)=\Lambda(n)-\Lambda_R(n).
+ \label{eq:model-residual}
+\end{equation}
+All target arguments below are positive integers.  We use the standard
+convention \(c_q(n)=\sum_{a\bmod q}^{*}\ee{an/q}\).
+
+Let \(L,D,J,Q\ge1\) be dyadic parameters satisfying
+\begin{equation}
+ Q=LD,\qquad QJ\asymp X,\qquad
+ L>\max(2R,2|h|),
+ \label{eq:row-geometry-a}
+\end{equation}
+and
+\begin{equation}
+ \ell\in[L/2,2L]\ \text{is prime},\qquad
+ d\in[D,2D]\cap[1,V].
+ \label{eq:row-geometry}
+\end{equation}
+The integer \(d\) is squarefree, and in the primitive sector
+\begin{equation}
+ (d,H)=1,\qquad (j,H)=1.
+ \label{eq:primitive-mask}
+\end{equation}
+Put
+\begin{equation}
+ m=\ell d\asymp Q,\qquad n_m(j)=mj+h.
+ \label{eq:m-row}
+\end{equation}
+Then \((m,H)=1\), and \eqref{eq:primitive-mask} implies
+\begin{equation}
+ (n_m(j),mH)=1.
+ \label{eq:target-coprime}
+\end{equation}
+
+TPC-18 reaches row pairs \(\alpha_i=(\ell_i,d_i)\) in the generic set
+\begin{equation}
+ \ell_1\ne\ell_2,\qquad
+ |m_1-m_2|>QX^{-\kappa},\qquad
+ (d_1,d_2)\le X^\kappa,
+ \label{eq:generic-rows}
+\end{equation}
+for fixed \(\kappa>0\).  The exact identities below hold before this
+pruning, so any row-pair restriction independent of \(j\), including
+\eqref{eq:generic-rows}, may be imposed outside them.
+
+For a uniformly smooth compactly supported family
+\(F_{\alpha_1,\alpha_2}\), supported where \(j\asymp J\) and both
+targets are positive, define the primitive residual correlation
+\begin{align}
+ \cC_D(\mathscr A)
+ :=\sum_{(\alpha_1,\alpha_2)\in\mathscr A}
+ z_{\alpha_1,\alpha_2}
+ \sum_{\substack{j\ge1\\(j,H)=1}}
+ r_R(n_{m_1}(j))r_R(n_{m_2}(j))
+ F_{\alpha_1,\alpha_2}(j/J),
+ \label{eq:abstract-correlation}
+\end{align}
+where \(|z_{\alpha_1,\alpha_2}|\ll X^\eps\) absorbs the source weights,
+the M\"obius row signs, and bounded dyadic cutoffs.  Uniform smoothness
+means that every derivative of every \(F_{\alpha_1,\alpha_2}\) is
+bounded independently of \(X\) and the row pair.  This hypothesis is
+essential in the Poisson-completion statements below.
+
+The weighted number of individual rows is
+\begin{equation}
+ \sum_{\ell\asymp L}\Lambda(\ell)
+ \sum_{d\asymp D}\mu(d)^2\ll LD\,X^\eps=QX^\eps.
+ \label{eq:row-mass}
+\end{equation}
+Consequently the row-pair--orbit scale is
+\begin{equation}
+ Q^2J\asymp XQ.
+ \label{eq:natural-scale}
+\end{equation}
+This is the natural size of the TPC-18 obstruction.  Every claim of
+negligibility below is measured against \(XQ(\log X)^{-A}\), with a
+fixed power margin whenever one is asserted.
+
+\begin{remark}[Smooth separation]
+The original TPC-18 weight contains smooth functions of \(mj/X\) and
+\(dj/K\), not merely a common function of \(j/J\).  Fourier inversion
+in logarithmic coordinates writes such a compactly supported smooth
+weight as an absolutely convergent superposition of separated row and
+\(j\) weights.  Truncating the dual variables at \(X^\eps\) has
+arbitrary power accuracy.  Thus the uniformly smooth family in
+\eqref{eq:abstract-correlation} is the stable interface for the exact
+identities; no sharp \(j\)-cutoff is being silently completed.
+\end{remark}

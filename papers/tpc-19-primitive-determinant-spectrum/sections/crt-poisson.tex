@@ -1,0 +1,200 @@
+\section{CRT--Poisson duality and the long-lcm gate}
+\label{sec:poisson}
+
+The direct spectrum in \cref{sec:direct-frequency} is organized by the
+determinant.  Completing the orbit variable \(j\) gives a dual
+description in inverse phases.  The factor \(H\) in the true period is
+kept explicit throughout.
+
+For admissible \(u,v\), set
+\begin{equation}
+ C_{m,u}(j):=\one_{u\mid mj+h}-\frac1u
+ \label{eq:centered-indicator}
+\end{equation}
+and
+\begin{equation}
+ K_{u,v}^{m_1,m_2}(j)
+ :=\one_{(j,H)=1}C_{m_1,u}(j)C_{m_2,v}(j).
+ \label{eq:periodic-kernel}
+\end{equation}
+Put \(g=(u,v)\) and
+\begin{equation}
+ T=H[u,v].
+ \label{eq:true-period}
+\end{equation}
+The kernel in \eqref{eq:periodic-kernel} is \(T\)-periodic.  With
+\begin{equation}
+ \widehat K(r):=\frac1T\sum_{x\bmod T}K(x)e_T(-rx),
+ \label{eq:kernel-fourier}
+\end{equation}
+its zero coefficient is exact.
+
+\begin{proposition}[Zero mode of the centered periodic kernel]
+\label{prop:kernel-zero-mode}
+If \((u,m_1H)=(v,m_2H)=1\), then
+\begin{equation}
+ \boxed{\quad
+ \widehat K(0)
+ =\frac{\varphi(H)}H\frac1{uv}
+ \left(g\one_{g\mid m_1-m_2}-1\right).
+ \quad}
+ \label{eq:kernel-zero-mode}
+\end{equation}
+Thus the complete \(j\)-zero mode is the same connected determinant
+spectrum as in \cref{thm:model-covariance}, multiplied only by the
+density of primitive classes.
+\end{proposition}
+
+\begin{proof}
+Conditional on \((j,H)=1\), the two divisibility events have
+individual densities \(1/u\) and \(1/v\).  Their joint density is
+\(g/(uv)\) when \(g\mid m_1-m_2\), and zero otherwise.  Multiplying
+the resulting conditional covariance by \(\varphi(H)/H\) proves
+\eqref{eq:kernel-zero-mode}.
+\end{proof}
+
+For \(F\in C_c^\infty(\R)\), use
+\begin{equation}
+ \widehat F(\xi)=\int_{\R}F(x)e(-x\xi)\,dx.
+ \label{eq:F-transform}
+\end{equation}
+Fourier expansion of \(K\), followed by Poisson summation, gives the
+exact identity
+\begin{equation}
+ \sum_{j\in\Z}K(j)F(j/J)
+ =J\sum_{r\bmod T}\widehat K(r)
+ \sum_{k\in\Z}\widehat F\!\left(J\left(k-\frac rT\right)\right).
+ \label{eq:kernel-poisson}
+\end{equation}
+The pair \((r,k)=(0,0)\) contributes
+\(J\widehat F(0)\widehat K(0)\).
+
+\begin{theorem}[Uniform completion of a short periodic kernel]
+\label{thm:short-period-completion}
+Fix \(\eta>0\), let \(\mathcal F\) be a uniformly bounded subset of
+\(C_c^\infty(\R)\), and take \(F\in\mathcal F\).  If
+\begin{equation}
+ H[u,v]\le JX^{-\eta},
+ \label{eq:short-period}
+\end{equation}
+then, for every \(A>0\),
+\begin{align}
+ \sum_{j\in\Z}K_{u,v}^{m_1,m_2}(j)F(j/J)
+ ={}&J\widehat F(0)\frac{\varphi(H)}H\frac1{uv}
+ \left(g\one_{g\mid m_1-m_2}-1\right)
+ +O_{A,\eta,\mathcal F}(X^{-A}).
+ \label{eq:short-period-completed}
+\end{align}
+The error remains \(O_A(X^{-A})\) after summing any fixed polynomial
+number of rows and divisor variables carrying polynomially bounded
+weights.
+\end{theorem}
+
+\begin{proof}
+For every term in \eqref{eq:kernel-poisson} other than \((0,0)\),
+the distance of \(k-r/T\) from zero is at least \(1/T\).  Hence its
+Fourier argument has size at least \(J/T\ge X^\eta\).  Repeated
+integration by parts gives
+\(\widehat F(\xi)\ll_N(1+|\xi|)^{-N}\), uniformly in the chosen
+family.  Since \(|\widehat K(r)|\ll1\), choosing \(N\) after the
+fixed polynomial multiplicity proves the assertion.
+\end{proof}
+
+\begin{corollary}[A strict-margin range for the whole finite model]
+\label{cor:whole-model-completion}
+Every divisor pair in the centered finite model is completable by
+\cref{thm:short-period-completion} if
+\begin{equation}
+ HR^2\le JX^{-\eta}.
+ \label{eq:whole-model-condition}
+\end{equation}
+Fix \(\eta_0>0\).  With \(R=X^{1/2-\delta}+O(1)\),
+\(J\asymp X/Q\), and fixed \(h\), suppose
+\begin{equation}
+ Q\le X^{2\delta-\eta_0}.
+ \label{eq:whole-model-exponent}
+\end{equation}
+Then for every fixed \(0<\eta<\eta_0\) and all sufficiently large
+\(X\), condition \eqref{eq:whole-model-condition} holds.  Consequently,
+for each primitive row pair,
+\begin{align}
+ &\sum_{\substack{j\in\Z\\(j,H)=1}}
+ M_{m_1}(j)M_{m_2}(j)F(j/J)
+ \notag\\
+ &\qquad={}
+ J\widehat F(0)\frac{\varphi(H)}H
+ \kappa_R(m_1,m_2)+O_A(X^{-A}),
+ \label{eq:whole-model-completed}
+\end{align}
+with arbitrary power accuracy after the polynomial row summation.
+\end{corollary}
+
+\begin{proof}
+Since \(u,v\le R\), one has
+\(H[u,v]\le Huv\le HR^2\).  The first assertion follows from
+\cref{thm:short-period-completion} and
+\eqref{eq:centered-divisor-model}; the sum of the zero modes is exactly
+\eqref{eq:kappa-formula}.  Moreover,
+\[
+ \frac{HR^2}{J}\ll_h QX^{-2\delta}
+ \le X^{-\eta_0+o(1)}\le X^{-\eta}
+\]
+for every fixed \(\eta<\eta_0\) and sufficiently large \(X\).  This
+proves the strict-margin statement.
+\end{proof}
+
+When \eqref{eq:whole-model-condition} fails, the same calculation gives
+an exact decomposition: split the divisor pairs according to
+\begin{equation}
+ H[u,v]\le JX^{-\eta}
+ \quad\text{or}\quad
+ H[u,v]>JX^{-\eta}.
+ \label{eq:short-long-split}
+\end{equation}
+The first range is replaced by its connected zero mode with arbitrary
+power accuracy.  The second range remains an explicit nonzero Poisson
+spectrum.  This is a short/long split, not a bound for the long range.  The
+same termwise split applies to the locally finite all-modulus residual
+form in \cref{thm:residual-crt}, but \eqref{eq:whole-model-exponent}
+only completes the finite-model divisors \(u,v\le R\).
+
+We finally display the inverse phase in the compatible joint-residue
+term.  Let \(u=ga\), \(v=gb\) as in \eqref{eq:model-gab}, assume
+\(g\mid m_1-m_2\), and let \(\kappa\bmod gab\) solve
+\eqref{eq:kappa-system}.  For each reduced class \(c\bmod H\), CRT
+combines \(j\equiv c\pmod H\) and \(j\equiv\kappa\pmod{gab}\).  The
+Poisson phase of the resulting class modulo \(Hgab\) is
+\begin{align}
+ &e_H\!\left(rc\,\overline{gab}\right)
+ e_{gab}\!\left(r\overline H\,\kappa\right)
+ \notag\\
+ &\quad={}
+ e_H\!\left(rc\,\overline{gab}\right)
+ e_g\!\left(-hr\overline H\,\overline{m_1}\,\overline{ab}\right)
+ e_a\!\left(-hr\overline H\,\overline{m_1}\,\overline{gb}\right)
+ e_b\!\left(-hr\overline H\,\overline{m_2}\,\overline{ga}\right).
+ \label{eq:three-inverse-phases}
+\end{align}
+Every inverse in \eqref{eq:three-inverse-phases} is taken in the
+modulus of its own character, with the convention
+\(e_1(\,\cdot\,)=1\) when one of \(g,a,b\) equals \(1\).  For \(H=1\),
+the first factor disappears and \(\overline H=1\).
+
+\begin{remark}[The phase belongs to one channel]
+The three inverse factors in \eqref{eq:three-inverse-phases} describe
+the compatible joint-indicator term.  The centered product
+\(C_{m_1,u}C_{m_2,v}\) also contains two single-indicator terms and a
+constant term.  Their Poisson spectra must be retained with the joint
+term until the four-channel matching has occurred.  Applying a
+Kloosterman estimate only to \eqref{eq:three-inverse-phases} would not
+estimate the locally calibrated residual combination.
+\end{remark}
+
+Classical spectral, bilinear, and trilinear Kloosterman estimates become
+relevant only after this phase has been produced
+\citep{DeshouillersIwaniec1982,DukeFriedlanderIwaniec1997,
+BettinChandee2018,Wright2026}.  The
+present long range has three coupled squarefree moduli, the determinant
+condition \(g\mid m_1-m_2\), and sharp M\"obius/source coefficients.
+We do not claim that this coefficient geometry satisfies an existing
+theorem.

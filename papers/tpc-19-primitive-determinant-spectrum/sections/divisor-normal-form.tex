@@ -1,0 +1,174 @@
+\section{An exact determinant--divisor normal form for the residual}
+\label{sec:divisor-normal}
+
+We begin by converting the Ramanujan model to divisor coordinates.  Set
+\begin{equation}
+ \lambda'_R(u)
+ :=u\sum_{b\le R/u}\frac{\mu(ub)\mu(b)}{\varphi(ub)}
+ \qquad (u\le R),
+ \label{eq:lambda-prime}
+\end{equation}
+and \(\lambda'_R(u)=0\) for \(u>R\).
+
+\begin{lemma}[Finite-model divisor coefficient]
+\label{lem:lambda-divisor}
+For every \(n\ge1\),
+\begin{equation}
+ \Lambda_R(n)=\sum_{u\mid n}\lambda'_R(u).
+ \label{eq:model-divisor-expansion}
+\end{equation}
+The coefficient \(\lambda'_R\) is supported on squarefree integers.
+For squarefree \(u\le R\),
+\begin{equation}
+ \lambda'_R(u)
+ =\mu(u)\frac{u}{\varphi(u)}
+ \sum_{\substack{b\le R/u\\(b,u)=1}}
+ \frac{\mu(b)^2}{\varphi(b)}.
+ \label{eq:lambda-positive-form}
+\end{equation}
+In particular,
+\begin{equation}
+ |\lambda'_R(u)|\ll (\log(2R))^2.
+ \label{eq:lambda-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Use the divisor formula
+\[
+ c_q(n)=\sum_{u\mid(q,n)}u\mu(q/u)
+\]
+in \eqref{eq:model-residual}, then write \(q=ub\) and interchange the
+finite sums.  This gives \eqref{eq:model-divisor-expansion} and
+\eqref{eq:lambda-prime}.  If \(u\) is not squarefree, every
+\(\mu(ub)\) vanishes.  If \(u\) is squarefree, a nonzero summand has
+\((b,u)=1\), and
+\(\mu(ub)\mu(b)=\mu(u)\mu(b)^2\); multiplicativity of \(\varphi\)
+gives \eqref{eq:lambda-positive-form}.  The standard estimates
+\(u/\varphi(u)\ll\log\log(3u)\) and
+\(\sum_{b\le y}\mu(b)^2/\varphi(b)\ll\log(2y)\) imply
+\eqref{eq:lambda-bound}.
+\end{proof}
+
+For squarefree \(u\), define the positive weight
+\begin{equation}
+ w_R(u)
+ :=\log u+\one_{u\le R}\frac{u}{\varphi(u)}
+ \sum_{\substack{b\le R/u\\(b,u)=1}}
+ \frac{\mu(b)^2}{\varphi(b)}.
+ \label{eq:wR}
+\end{equation}
+For \(u=1\), the first term is zero and the second is positive.
+
+\begin{theorem}[Exact squarefree residual expansion]
+\label{thm:residual-divisor}
+For every positive integer \(n\),
+\begin{equation}
+ \boxed{\quad
+ r_R(n)=-\sum_{\substack{u\mid n\\u\ \mathrm{squarefree}}}
+ \mu(u)w_R(u).
+ \quad}
+ \label{eq:residual-divisor}
+\end{equation}
+This is a finite identity; no limiting Ramanujan expansion is used.
+\end{theorem}
+
+\begin{proof}
+The von Mangoldt identity
+\[
+ \Lambda(n)=-\sum_{u\mid n}\mu(u)\log u
+\]
+and \cref{lem:lambda-divisor} give
+\[
+ r_R(n)=\sum_{u\mid n}
+ \bigl(-\mu(u)\log u-\lambda'_R(u)\bigr).
+\]
+Both coefficients vanish off squarefree \(u\), and
+\eqref{eq:lambda-positive-form} identifies the remaining coefficient
+with \(-\mu(u)w_R(u)\).
+\end{proof}
+
+The next theorem is the main algebraic reduction.  It applies row by
+row and hence survives every generic row-pair restriction.
+
+\begin{theorem}[Primitive determinant--divisor normal form]
+\label{thm:residual-crt}
+Let \(m_i=\ell_i d_i\) satisfy \cref{eq:row-geometry,eq:primitive-mask},
+put \(\Delta=m_1-m_2\), and let \(F\) be smooth and compactly supported
+where \(n_{m_i}(j)>0\).  Then
+\begin{align}
+ &\sum_{\substack{j\ge1\\(j,H)=1}}
+ r_R(m_1j+h)r_R(m_2j+h)F(j/J)
+ \notag\\
+ &\quad=
+ \sum_{\substack{g,a,b\ \mathrm{pairwise\ coprime\ squarefree}\\
+ (ga,m_1H)=(gb,m_2H)=1\\g\mid\Delta}}
+ \mu(a)\mu(b)w_R(ga)w_R(gb)
+ \sum_{\substack{j\equiv\kappa\ (\bmod\,gab)\\(j,H)=1}}
+ F(j/J),
+ \label{eq:residual-crt}
+\end{align}
+where \(\kappa\) is the unique class modulo \(gab\) satisfying
+\begin{equation}
+ m_1\kappa\equiv-h\pmod{ga},
+ \qquad
+ m_2\kappa\equiv-h\pmod{gb}.
+ \label{eq:kappa-system}
+\end{equation}
+The sum in \eqref{eq:residual-crt} is locally finite.  Equivalently one
+may impose \(ga\ll X\) and \(gb\ll X\), with constants determined by
+the support of \(F\).
+\end{theorem}
+
+\begin{proof}
+Apply \eqref{eq:residual-divisor} to both target values.  If
+\(u\mid m_1j+h\), then \eqref{eq:target-coprime} gives
+\((u,m_1H)=1\); similarly \((v,m_2H)=1\).  Write
+\[
+ g=(u,v),\qquad u=ga,\qquad v=gb.
+\]
+Squarefree support makes \(g,a,b\) pairwise coprime and squarefree.
+The two residual signs satisfy the exact cancellation
+\begin{equation}
+ \mu(ga)\mu(gb)=\mu(g)^2\mu(a)\mu(b)=\mu(a)\mu(b).
+ \label{eq:common-sign-cancel}
+\end{equation}
+
+The congruences for \(j\) are
+\[
+ j\equiv-h\overline{m_1}\pmod{ga},
+ \qquad
+ j\equiv-h\overline{m_2}\pmod{gb}.
+\]
+Their common modulus is \(g\).  Since \((g,h m_1m_2)=1\), compatibility
+is equivalent to
+\(\overline{m_1}\equiv\overline{m_2}\pmod g\), hence to
+\(g\mid m_1-m_2\).  The generalized Chinese remainder theorem then
+gives one class \(\kappa\pmod{gab}\).  Finally \((gab,H)=1\), so that
+class combines independently with the \(\varphi(H)\) permitted classes
+modulo \(H\).  This proves \eqref{eq:residual-crt}.
+\end{proof}
+
+\begin{corollary}[Where the parity sign remains]
+\label{cor:transverse-parity}
+In the exact residual normal form, determinant content \(g\) carries no
+M\"obius sign.  All oscillation inherited from the target divisor
+variables is transverse:
+\begin{equation}
+ \boxed{\text{determinant content }g\text{ is unsigned, while the
+ remaining sign is }\mu(a)\mu(b).}
+ \label{eq:parity-location}
+\end{equation}
+Thus taking absolute values before summing \(a,b\) removes the only
+explicit M\"obius cancellation left by the CRT reduction.
+\end{corollary}
+
+\begin{remark}[Why primitivity matters]
+The equivalence with \(g\mid\Delta\) used the individual solvability
+conditions and \((g,h)=1\).  Without the primitive mask one retains the
+necessary determinant condition \(g\mid h(m_1-m_2)\), together with
+the individual linear-congruence solvability conditions; it is no
+longer equivalent to \(g\mid\Delta\).  TPC-18 treats those
+nonprimitive sectors by a different endpoint-collapse mechanism; the
+present normal form is not silently being extended to them.
+\end{remark}

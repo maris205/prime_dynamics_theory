@@ -1,0 +1,736 @@
+{
+  "all_exact_checks_passed": true,
+  "certificate": "TPC-19 exact primitive determinant-spectrum certificate",
+  "excluded_claims": [
+    "no proof or numerical evidence for DD_h(theta)",
+    "no asymptotic distribution theorem for primes",
+    "no fixed-shift Hardy--Littlewood asymptotic",
+    "no evidence for the twin-prime conjecture",
+    "no parity-barrier breakthrough",
+    "no Kuznetsov or spectral cancellation estimate"
+  ],
+  "finite_model_algebra": {
+    "all_finite_model_algebra_checks_hold": true,
+    "coprime_mean_sum": {
+      "all_cases_hold": true,
+      "cases": [
+        {
+          "A": 1,
+          "R": 8,
+          "direct": {
+            "denominator": 1,
+            "numerator": 1,
+            "text": "1"
+          },
+          "expected": {
+            "denominator": 1,
+            "numerator": 1,
+            "text": "1"
+          },
+          "identity_holds": true
+        },
+        {
+          "A": 6,
+          "R": 8,
+          "direct": {
+            "denominator": 1,
+            "numerator": 3,
+            "text": "3"
+          },
+          "expected": {
+            "denominator": 1,
+            "numerator": 3,
+            "text": "3"
+          },
+          "identity_holds": true
+        },
+        {
+          "A": 6,
+          "R": 10,
+          "direct": {
+            "denominator": 1,
+            "numerator": 3,
+            "text": "3"
+          },
+          "expected": {
+            "denominator": 1,
+            "numerator": 3,
+            "text": "3"
+          },
+          "identity_holds": true
+        },
+        {
+          "A": 6,
+          "R": 12,
+          "direct": {
+            "denominator": 1,
+            "numerator": 3,
+            "text": "3"
+          },
+          "expected": {
+            "denominator": 1,
+            "numerator": 3,
+            "text": "3"
+          },
+          "identity_holds": true
+        },
+        {
+          "A": 10,
+          "R": 12,
+          "direct": {
+            "denominator": 2,
+            "numerator": 5,
+            "text": "5/2"
+          },
+          "expected": {
+            "denominator": 2,
+            "numerator": 5,
+            "text": "5/2"
+          },
+          "identity_holds": true
+        },
+        {
+          "A": 15,
+          "R": 18,
+          "direct": {
+            "denominator": 8,
+            "numerator": 15,
+            "text": "15/8"
+          },
+          "expected": {
+            "denominator": 8,
+            "numerator": 15,
+            "text": "15/8"
+          },
+          "identity_holds": true
+        }
+      ],
+      "failure_count": 0
+    },
+    "covariance_regression_cases": {
+      "positive_componentwise_no_go_witness": {
+        "R": 12,
+        "d_1": 3,
+        "d_2": 3,
+        "direct": {
+          "denominator": 450,
+          "numerator": 433,
+          "text": "433/450"
+        },
+        "ell_1": 31,
+        "ell_2": 41,
+        "expected": {
+          "denominator": 450,
+          "numerator": 433,
+          "text": "433/450"
+        },
+        "formula": {
+          "denominator": 450,
+          "numerator": 433,
+          "text": "433/450"
+        },
+        "h": 2,
+        "identity_holds": true,
+        "interpretation": "nonzero primitive distinct-source finite-model covariance; not a counterexample to residual DD_h"
+      },
+      "signed_negative_case": {
+        "R": 12,
+        "d_1": 3,
+        "d_2": 3,
+        "direct": {
+          "denominator": 900,
+          "numerator": -259,
+          "text": "-259/900"
+        },
+        "ell_1": 31,
+        "ell_2": 43,
+        "expected": {
+          "denominator": 900,
+          "numerator": -259,
+          "text": "-259/900"
+        },
+        "formula": {
+          "denominator": 900,
+          "numerator": -259,
+          "text": "-259/900"
+        },
+        "h": 2,
+        "identity_holds": true
+      }
+    },
+    "lambda_prime_squarefree_formula": {
+      "failure_count": 0,
+      "identity_and_support_hold": true,
+      "nonsquarefree_support_failure_count": 0,
+      "test_count": 48
+    },
+    "masked_row_means": [
+      {
+        "R": 8,
+        "allowed_residue_count": 420,
+        "conditional_mean": {
+          "denominator": 1,
+          "numerator": 3,
+          "text": "3"
+        },
+        "d": 3,
+        "ell": 11,
+        "expected_conditional_mean": {
+          "denominator": 1,
+          "numerator": 3,
+          "text": "3"
+        },
+        "h": 2,
+        "identity_holds": true,
+        "period": 840,
+        "unnormalized_mean": {
+          "denominator": 2,
+          "numerator": 3,
+          "text": "3/2"
+        }
+      },
+      {
+        "R": 10,
+        "allowed_residue_count": 1680,
+        "conditional_mean": {
+          "denominator": 1,
+          "numerator": 3,
+          "text": "3"
+        },
+        "d": 2,
+        "ell": 11,
+        "expected_conditional_mean": {
+          "denominator": 1,
+          "numerator": 3,
+          "text": "3"
+        },
+        "h": 3,
+        "identity_holds": true,
+        "period": 2520,
+        "unnormalized_mean": {
+          "denominator": 1,
+          "numerator": 2,
+          "text": "2"
+        }
+      },
+      {
+        "R": 12,
+        "allowed_residue_count": 13860,
+        "conditional_mean": {
+          "denominator": 1,
+          "numerator": 3,
+          "text": "3"
+        },
+        "d": 3,
+        "ell": 31,
+        "expected_conditional_mean": {
+          "denominator": 1,
+          "numerator": 3,
+          "text": "3"
+        },
+        "h": 2,
+        "identity_holds": true,
+        "period": 27720,
+        "unnormalized_mean": {
+          "denominator": 2,
+          "numerator": 3,
+          "text": "3/2"
+        }
+      }
+    ],
+    "ramanujan_to_divisor_model": {
+      "failure_count": 0,
+      "identity_holds": true,
+      "test_count": 540
+    }
+  },
+  "formal_full_residual": {
+    "R": 12,
+    "all_formal_residual_checks_hold": true,
+    "formal_samples": {
+      "1": {
+        "1": {
+          "denominator": 30,
+          "numerator": -113,
+          "text": "-113/30"
+        }
+      },
+      "121": {
+        "1": {
+          "denominator": 3,
+          "numerator": -8,
+          "text": "-8/3"
+        },
+        "log(11)": {
+          "denominator": 1,
+          "numerator": 1,
+          "text": "1"
+        }
+      },
+      "13": {
+        "1": {
+          "denominator": 30,
+          "numerator": -113,
+          "text": "-113/30"
+        },
+        "log(13)": {
+          "denominator": 1,
+          "numerator": 1,
+          "text": "1"
+        }
+      },
+      "210": {
+        "1": {
+          "denominator": 10,
+          "numerator": 9,
+          "text": "9/10"
+        }
+      },
+      "359": {
+        "1": {
+          "denominator": 30,
+          "numerator": -113,
+          "text": "-113/30"
+        },
+        "log(359)": {
+          "denominator": 1,
+          "numerator": 1,
+          "text": "1"
+        }
+      },
+      "77": {
+        "1": {
+          "denominator": 2,
+          "numerator": -3,
+          "text": "-3/2"
+        }
+      }
+    },
+    "nonsquarefree_support_failure_count": 0,
+    "pair_test": {
+      "crt_compatibility_failure_count": 0,
+      "crt_polynomial_sha256": "669e06d65c2146e8a704f25d4f21e82e0313b66afacf151ab68d014772a10c79",
+      "d": 3,
+      "determinant_support_failure_count": 0,
+      "direct_polynomial_sha256": "669e06d65c2146e8a704f25d4f21e82e0313b66afacf151ab68d014772a10c79",
+      "direct_polynomial_term_count": 17,
+      "divisor_polynomial_sha256": "669e06d65c2146e8a704f25d4f21e82e0313b66afacf151ab68d014772a10c79",
+      "ell_1": 31,
+      "ell_2": 41,
+      "formal_crt_reassembly_holds": true,
+      "formal_pair_identity_holds": true,
+      "g_channels": {
+        "1": {
+          "sha256": "5c325dd5af818eff6f3e80893f095011de8e234f7ec47e3df8b4a4aaa5cfc088",
+          "term_count": 22
+        },
+        "5": {
+          "sha256": "93f25921081127f747c1d756c93ac83608daad205454bc35d4e50c55709107de",
+          "term_count": 7
+        }
+      },
+      "gab_coordinate_failure_count": 0,
+      "gab_sign_failure_count": 0,
+      "h": 2,
+      "j_values": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "primitive_coprimality_failure_count": 0
+    },
+    "pointwise_identity_failure_count": 0,
+    "pointwise_n_range": [
+      1,
+      360
+    ],
+    "rho_equals_minus_mu_times_w_failure_count": 0,
+    "u_range": [
+      1,
+      120
+    ]
+  },
+  "g_equals_one_cancellation": {
+    "R": 12,
+    "all_g_equals_one_terms_cancel": true,
+    "d_1": 3,
+    "d_2": 3,
+    "eligible_ordered_uv_pairs": 13,
+    "h": 2,
+    "nonzero_bracket_count": 0,
+    "total_contribution": {
+      "denominator": 1,
+      "numerator": 0,
+      "text": "0"
+    }
+  },
+  "gram_and_psd": {
+    "R": 12,
+    "all_principal_minors_nonnegative": true,
+    "conditional_period_sample_count": 13860,
+    "direct_matrix_equals_crt_kernel": true,
+    "gram_psd_checks_hold": true,
+    "h": 2,
+    "matrix": [
+      [
+        {
+          "denominator": 15,
+          "numerator": 19,
+          "text": "19/15"
+        },
+        {
+          "denominator": 450,
+          "numerator": 433,
+          "text": "433/450"
+        },
+        {
+          "denominator": 900,
+          "numerator": -259,
+          "text": "-259/900"
+        },
+        {
+          "denominator": 900,
+          "numerator": -259,
+          "text": "-259/900"
+        }
+      ],
+      [
+        {
+          "denominator": 450,
+          "numerator": 433,
+          "text": "433/450"
+        },
+        {
+          "denominator": 15,
+          "numerator": 19,
+          "text": "19/15"
+        },
+        {
+          "denominator": 900,
+          "numerator": -259,
+          "text": "-259/900"
+        },
+        {
+          "denominator": 900,
+          "numerator": -259,
+          "text": "-259/900"
+        }
+      ],
+      [
+        {
+          "denominator": 900,
+          "numerator": -259,
+          "text": "-259/900"
+        },
+        {
+          "denominator": 900,
+          "numerator": -259,
+          "text": "-259/900"
+        },
+        {
+          "denominator": 15,
+          "numerator": 19,
+          "text": "19/15"
+        },
+        {
+          "denominator": 900,
+          "numerator": -259,
+          "text": "-259/900"
+        }
+      ],
+      [
+        {
+          "denominator": 900,
+          "numerator": -259,
+          "text": "-259/900"
+        },
+        {
+          "denominator": 900,
+          "numerator": -259,
+          "text": "-259/900"
+        },
+        {
+          "denominator": 900,
+          "numerator": -259,
+          "text": "-259/900"
+        },
+        {
+          "denominator": 15,
+          "numerator": 19,
+          "text": "19/15"
+        }
+      ]
+    ],
+    "minimum_tested_quadratic_value": {
+      "denominator": 1,
+      "numerator": 0,
+      "text": "0"
+    },
+    "principal_minors": [
+      {
+        "determinant": {
+          "denominator": 15,
+          "numerator": 19,
+          "text": "19/15"
+        },
+        "indices": [
+          0
+        ]
+      },
+      {
+        "determinant": {
+          "denominator": 15,
+          "numerator": 19,
+          "text": "19/15"
+        },
+        "indices": [
+          1
+        ]
+      },
+      {
+        "determinant": {
+          "denominator": 15,
+          "numerator": 19,
+          "text": "19/15"
+        },
+        "indices": [
+          2
+        ]
+      },
+      {
+        "determinant": {
+          "denominator": 15,
+          "numerator": 19,
+          "text": "19/15"
+        },
+        "indices": [
+          3
+        ]
+      },
+      {
+        "determinant": {
+          "denominator": 202500,
+          "numerator": 137411,
+          "text": "137411/202500"
+        },
+        "indices": [
+          0,
+          1
+        ]
+      },
+      {
+        "determinant": {
+          "denominator": 810000,
+          "numerator": 1232519,
+          "text": "1232519/810000"
+        },
+        "indices": [
+          0,
+          2
+        ]
+      },
+      {
+        "determinant": {
+          "denominator": 810000,
+          "numerator": 1232519,
+          "text": "1232519/810000"
+        },
+        "indices": [
+          0,
+          3
+        ]
+      },
+      {
+        "determinant": {
+          "denominator": 810000,
+          "numerator": 1232519,
+          "text": "1232519/810000"
+        },
+        "indices": [
+          1,
+          2
+        ]
+      },
+      {
+        "determinant": {
+          "denominator": 810000,
+          "numerator": 1232519,
+          "text": "1232519/810000"
+        },
+        "indices": [
+          1,
+          3
+        ]
+      },
+      {
+        "determinant": {
+          "denominator": 810000,
+          "numerator": 1232519,
+          "text": "1232519/810000"
+        },
+        "indices": [
+          2,
+          3
+        ]
+      },
+      {
+        "determinant": {
+          "denominator": 182250000,
+          "numerator": 147458443,
+          "text": "147458443/182250000"
+        },
+        "indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "determinant": {
+          "denominator": 182250000,
+          "numerator": 147458443,
+          "text": "147458443/182250000"
+        },
+        "indices": [
+          0,
+          1,
+          3
+        ]
+      },
+      {
+        "determinant": {
+          "denominator": 364500000,
+          "numerator": 608689511,
+          "text": "608689511/364500000"
+        },
+        "indices": [
+          0,
+          2,
+          3
+        ]
+      },
+      {
+        "determinant": {
+          "denominator": 364500000,
+          "numerator": 608689511,
+          "text": "608689511/364500000"
+        },
+        "indices": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "determinant": {
+          "denominator": 54675000000,
+          "numerator": 47882592301,
+          "text": "47882592301/54675000000"
+        },
+        "indices": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "rows": [
+      {
+        "d": 3,
+        "ell": 31
+      },
+      {
+        "d": 3,
+        "ell": 41
+      },
+      {
+        "d": 3,
+        "ell": 43
+      },
+      {
+        "d": 3,
+        "ell": 47
+      }
+    ],
+    "tested_integer_vectors": 625
+  },
+  "optional_prime_diagnostic": {
+    "cases": [
+      {
+        "D": 3,
+        "J": 80,
+        "L": 70,
+        "Q_scale": 210,
+        "R": 30,
+        "V": 5,
+        "X_scale": 16800,
+        "d_values": [
+          3,
+          5
+        ],
+        "ell_count": 15,
+        "h": 2,
+        "kappa": 0.15,
+        "normalized_components": {
+          "Lambda_Lambda": "1.031393495801e-02",
+          "Lambda_Lambda_R": "7.444882828493e-03",
+          "Lambda_R_Lambda": "7.444882828493e-03",
+          "Lambda_R_Lambda_R": "3.540094026454e-03",
+          "paired_centered_residual": "-1.035736672524e-03",
+          "raw_residual": "-2.342859878413e-03",
+          "serialization": "signed scientific-decimal strings, 12 digits"
+        },
+        "primitive_j_count": 40,
+        "row_count": 30
+      },
+      {
+        "D": 4,
+        "J": 100,
+        "L": 130,
+        "Q_scale": 520,
+        "R": 60,
+        "V": 7,
+        "X_scale": 52000,
+        "d_values": [
+          5,
+          7
+        ],
+        "ell_count": 24,
+        "h": 2,
+        "kappa": 0.15,
+        "normalized_components": {
+          "Lambda_Lambda": "5.607758263169e-02",
+          "Lambda_Lambda_R": "5.777355782739e-02",
+          "Lambda_R_Lambda": "5.777355782739e-02",
+          "Lambda_R_Lambda_R": "5.841897035691e-02",
+          "paired_centered_residual": "-1.050562666167e-03",
+          "raw_residual": "-1.072921900194e-03",
+          "serialization": "signed scientific-decimal strings, 12 digits"
+        },
+        "primitive_j_count": 50,
+        "row_count": 48
+      }
+    ],
+    "excluded_interpretations": [
+      "not evidence for DD_h(theta)",
+      "not evidence for a prime-pair asymptotic",
+      "not evidence for Hardy--Littlewood",
+      "not evidence for the twin-prime conjecture"
+    ],
+    "kind": "finite sharp-window numerical regression only",
+    "prime_asymptotic_evidence": false,
+    "uses_smooth_paper_cutoffs": false
+  },
+  "prime_asymptotic_evidence": false,
+  "scope": "exact finite integer/Fraction/formal-log identities; optional finite prime-data diagnostic is isolated and non-evidentiary"
+}

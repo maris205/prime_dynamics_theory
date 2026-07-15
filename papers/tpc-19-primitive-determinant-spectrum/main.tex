@@ -1,0 +1,175 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Matched-Spectrum Gates in a Primitive Mobius Tail: Exact Determinant-Divisor Normal Forms, CRT-Poisson Duality, and a Frequency-Concentration Gate},
+ pdfauthor={Liang Wang},
+ pdfsubject={Exact arithmetic and spectral normal forms for the primitive determinant obstruction in a fixed-shift prime-pair tail},
+ pdfkeywords={Mobius tail, Ramanujan model, determinant spectrum, Chinese remainder theorem, Poisson summation, Kloosterman fractions, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Conditional input}
+\crefname{assumption}{Conditional input}{Conditional inputs}
+\Crefname{assumption}{Conditional input}{Conditional inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ee}[1]{\exp(2\pi i #1)}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rad}{\operatorname{rad}}
+
+\title{\textbf{Matched-Spectrum Gates in a Primitive M\"obius Tail:}\\
+\textbf{Exact Determinant--Divisor Normal Forms, CRT--Poisson Duality,}\\
+\textbf{and a Frequency-Concentration Gate}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+TPC-18 reduces a failed symmetric fixed-shift M\"obius tail block to a
+primitive correlation of the Ramanujan residuals
+\(r_R=\Lambda-\Lambda_R\) on two affine rows
+\(m_i j+h\), where \(m_i=\ell_i d_i\), \(Q=LD\),
+\(J=X/Q\), and the determinant is \(h(m_1-m_2)\).  We replace that
+still-opaque correlation by exact divisor and spectral normal forms.
+
+Writing
+\[
+ \Lambda_R(n)=\sum_{u\mid n}\lambda'_R(u),
+\]
+we prove that the actual residual, not merely the finite model, has the
+identity
+\[
+ r_R(n)=-\sum_{\substack{u\mid n\\u\ \mathrm{squarefree}}}
+ \mu(u)w_R(u),
+ \qquad w_R(u)>0,
+\]
+with an explicit weight \(w_R\).  In the primitive sector put
+\(H=\rad|h|\).  For a pair of target divisors
+\(u=ga\), \(v=gb\), the integers \(g,a,b\) are pairwise coprime and
+squarefree, the shared sign cancels exactly,
+\[
+ \mu(ga)\mu(gb)=\mu(a)\mu(b),
+\]
+and the simultaneous congruences are soluble precisely when
+\(g\mid m_1-m_2\).  This gives an exact all-modulus
+determinant--divisor expansion of the primitive residual correlation.
+
+We next calibrate the prime and finite-model conditional row densities
+on \((j,H)=1\).  Their difference is an explicit
+\(O_{h,\eps}(L^{-1}X^\eps)\) bias, whose contribution has a fixed
+power saving relative to the natural \(XQ\) scale.  The
+centered finite-model covariance is
+\[
+ \sum_{u,v\le R}\frac{\lambda'_R(u)\lambda'_R(v)}{uv}
+ \bigl((u,v)\one_{(u,v)\mid m_1-m_2}-1\bigr),
+\]
+with the natural coprimality restrictions.  Every coprime
+\((u,v)\) term vanishes individually.  Moreover,
+\[
+ g\one_{g\mid\Delta}-1
+ =\sum_{0<r<g}\ee{r\Delta/g},
+\]
+so the complete-period \(j\)-zero mode is supported entirely on
+nonzero frequencies in the determinant \(\Delta\).
+
+There are then two exact analytic interfaces.  For the bare dyadic,
+separable determinant coefficient, Fourier grouping of
+\(\ell_1d_1-\ell_2d_2\) produces a transform that factors into two
+M\"obius exponential sums.  The full \(g,a,b\) masks and row-pair
+weights still require a matched reduction.  Alternatively, Poisson
+summation in the common \(j\)-class
+completes every \(H[u,v]\le JX^{-\eta}\) term.  In the remaining
+long-lcm range, the compatible joint residue has three coupled inverse
+phases of Kloosterman type; the centered single terms must be retained
+beside it.  We prove the corresponding short/long-lcm decomposition
+and give the strict-margin sufficient range
+\(Q\le X^{2\delta-\eta_0}\) on which the whole finite model is
+completable.
+
+Finally, an exact finite witness shows that one centered finite-model
+row pair can have linear complete-period mass.  Thus centering alone
+does not give rowwise cancellation in the four terms of
+\(r_R(n_1)r_R(n_2)\).  A separate global estimate could still use
+oscillation over the row variables; the matched-spectral route instead
+keeps the four local spectra together.  Current
+large-sieve theorems apply to smoother or differently factorable
+coefficient classes and do not establish that matching for the sharp
+M\"obius coefficient.  No determinant-dispersion estimate, fixed-shift
+Hardy--Littlewood asymptotic, twin-prime theorem, or breach of sieve
+parity is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius tail; Ramanujan residuals;
+determinant spectrum; Chinese remainder theorem; Poisson summation;
+Kloosterman fractions; frequency concentration; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary
+11N05, 11L07, 11L20.
+
+\input{sections/introduction}
+\input{sections/primitive-interface}
+\input{sections/divisor-normal-form}
+\input{sections/primitive-centering}
+\input{sections/finite-model-spectrum}
+\input{sections/determinant-frequency}
+\input{sections/crt-poisson}
+\input{sections/componentwise-nogo}
+\input{sections/euler-tail-gates}
+\input{sections/computation-conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

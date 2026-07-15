@@ -1,0 +1,145 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The fixed-shift prime-pair problem may be written as a sequence of
+normal-form and distribution gates.  TPC-15 through TPC-17 isolate and
+assemble the factorable prefix of a symmetric Type-II packet
+\citep{WangTPC15,WangTPC16,WangTPC17}.  TPC-18 proves that a surviving
+M\"obius tail cannot be removed by coefficient smallness and that a
+failed primitive slice forces a large two-row residual correlation with
+distinct prime sources, large determinant, and low divisor gcd
+\citep{WangTPC18}.  In the notation recalled below, its remaining
+arithmetic object has the schematic form
+\begin{equation}
+ \sum_j\sum_{\alpha_1\ne\alpha_2}
+ b_{\alpha_1,\alpha_2}(j)
+ r_R(m_1j+h)r_R(m_2j+h),
+ \qquad m_i=\ell_i d_i\asymp Q,
+ \label{eq:opaque-correlation}
+\end{equation}
+with determinant \(h(m_1-m_2)\).  The point of the present paper is to
+replace ``estimate a variable-determinant correlation'' by exact
+arithmetic objects on which one can test a proposed dispersion input.
+
+\subsection{Main advances}
+
+The first advance is an exact divisor normal form for the actual
+residual.  It is not a heuristic Ramanujan expansion.  It follows from
+the finite divisor expansion of \(\Lambda_R\) and the classical identity
+\(\Lambda(n)=-\sum_{u\mid n}\mu(u)\log u\).  The result has a fixed sign
+pattern: a positive size \(w_R(u)\) multiplied by \(-\mu(u)\).  When a
+pair \(u,v\) is written as
+\[
+ u=ga,\qquad v=gb,\qquad g=(u,v),
+\]
+the common factor \(g\) loses its M\"obius sign.  In a primitive affine
+row pair, the Chinese remainder theorem then says exactly
+\[
+ \text{joint divisibility}\quad\Longleftrightarrow\quad
+ g\mid m_1-m_2.
+\]
+Thus the parity-sensitive part is no longer hidden inside the values of
+\(r_R\): the determinant content \(g\) is unsigned, while the transverse
+variables retain the signs \(\mu(a)\mu(b)\).
+
+The second advance is exact model centering and local prime
+calibration.  On the allowed classes
+\((j,H)=1\), \(H=\rad|h|\), the prime and finite-model local densities
+are
+\[
+ \frac{H}{\varphi(H)}\frac{\ell d}{\varphi(\ell d)}
+ \quad\text{and}\quad
+ \frac{H}{\varphi(H)}\frac d{\varphi(d)},
+\]
+respectively.  Their difference is \(O(L^{-1}X^\eps)\), and we prove
+that it is negligible at the \(XQ\) obstruction scale.  The remaining
+problem is therefore a locally calibrated spectrum-matching problem,
+not an unnoticed row drift; only the finite model has been proved to
+have exact conditional mean zero.
+
+The third advance is a pair of dual spectral interfaces.  For the
+finite model, the connected complete density contains
+\[
+ g\one_{g\mid\Delta}-1,
+ \qquad \Delta=m_1-m_2.
+\]
+Its direct Fourier expansion produces additive phases
+\(\ee{r\ell d/g}\) and a determinant-difference coefficient.  Poisson
+summation in the common \(j\)-progression instead produces inverse
+phases in \(m_i\), hence a genuine Kloosterman-type interface.  These
+are different routes and have different coefficient obstructions.
+
+\subsection{A necessary negative result}
+
+It is tempting to expand
+\begin{equation}
+ r_R(n_1)r_R(n_2)
+ =\Lambda(n_1)\Lambda(n_2)
+ -\Lambda(n_1)\Lambda_R(n_2)
+ -\Lambda_R(n_1)\Lambda(n_2)
+ +\Lambda_R(n_1)\Lambda_R(n_2)
+ \label{eq:four-channel}
+\end{equation}
+and seek rowwise logarithmic saving from \(j\)-centering in all four
+terms.  We show rigorously that this stronger strategy is false.  A
+two-row finite example has centered
+finite-model covariance \(433/450\); repeating its complete period
+makes that component grow linearly.  Hence centering does not erase
+the local \(MM\) spectrum.  One may either seek additional global
+oscillation over the row variables or match the local spectra of all
+four channels before absolute values are taken.  This does not
+disprove the residual determinant-dispersion statement of TPC-18; it
+rules out a stronger rowwise componentwise substitute for it.
+
+\subsection{Relation to current large-sieve technology}
+
+The M\"obius-free smooth analogue of the direct determinant
+coefficient has the geometry treated by Pascadi's
+frequency-concentrated exceptional-spectrum large sieve: a coefficient
+\(
+ \sum_{d_1\ell_1-d_2\ell_2=n}
+ \Phi_1(d_1/D)\Phi_2(d_2/D)
+ \ee{d_1\alpha_1+d_2\alpha_2}
+\)
+is covered by Theorem~1.7 of the published paper
+\citep{Pascadi2026LargeSieve}, subject there to the spectral-level
+condition \(q\gg L^2\).  That \(q\) is not the present row scale
+\(Q=LD\); no parameter identification is valid before the missing
+Kuznetsov reduction.  The coefficient here also contains the sharp
+weights \(\mu(d_i)\omega_D(d_i)\).  Its Fourier transform factors
+exactly, but the cited theorems do not supply the required
+concentration estimate for those M\"obius weights.  Moreover, the reduction must
+preserve the four-channel matching in \eqref{eq:four-channel}.
+
+This distinction matters because the current numerical distribution
+frontier alone is not the missing input.  Pascadi's more recent work
+reaches level \(5/8-\eps\) for triply well-factorable prime weights
+\citep{Pascadi2025Distribution}; Li's version-locked bilinear theorem
+has the two monomial conditions used in TPC-17
+\citep{Li2026v6}.  Neither coefficient class contains the sharp
+prime--M\"obius row weight left here.  Classical and recent
+Kloosterman-fraction estimates likewise act after a suitable inverse
+phase has been produced \citep{DukeFriedlanderIwaniec1997,
+BettinChandee2018,Wright2026}.  We construct that
+phase algebraically, but do not assert that its three coupled moduli
+satisfy an existing theorem's hypotheses.
+
+\subsection{Scope and organization}
+
+All unconditional statements in this paper are algebraic, elementary
+analytic, or finite spectral identities.  We do not prove cancellation
+of the primitive TPC-18 witness.  In particular, we prove no
+fixed-shift Hardy--Littlewood asymptotic, no twin-prime lower bound, no
+new exponent of distribution, and no violation of the parity barrier.
+
+\Cref{sec:interface} fixes the primitive row geometry.
+\Cref{sec:divisor-normal} derives the exact residual divisor form and
+the \(g,a,b\) determinant expansion.  \Cref{sec:centering} removes the
+local bias.  \Cref{sec:model-spectrum} computes the connected finite
+model.  \Cref{sec:direct-frequency} gives the direct determinant
+Fourier gate.  \Cref{sec:poisson} gives the CRT--Poisson and inverse
+phase gate.  \Cref{sec:nogo} proves the rowwise componentwise no-go
+theorem.
+\Cref{sec:gates} records the high-prime local tail and the exact
+remaining alternatives.  \Cref{sec:computation} describes the exact
+certificate and concludes.

@@ -1,0 +1,148 @@
+\section{The high-prime local tail and the exact remaining gates}
+\label{sec:gates}
+
+We isolate only the local Euler tail contributed by individual primes
+\(p>R\).  This is not the whole arithmetic tail of the sharp
+\(q\le R\) Ramanujan cutoff: composite squarefree moduli \(q>R\)
+built entirely from primes at most \(R\) are also omitted and are not
+controlled by the theorem below.  Let \(m_1\ne m_2\), put
+\begin{equation}
+ A=m_1m_2(m_1-m_2),
+ \label{eq:A-discriminant}
+\end{equation}
+and, for each prime \(p\), let
+\begin{equation}
+ \nu_p=\#\{j\bmod p:(m_1j+h)(m_2j+h)\equiv0\pmod p\}.
+ \label{eq:nu-p}
+\end{equation}
+
+\begin{theorem}[Elementary high-prime Euler tail]
+\label{thm:euler-tail}
+Assume \(R>\max(2,|h|)\).  Then
+\begin{equation}
+ \left|
+ \log\prod_{p>R}
+ \frac{1-\nu_p/p}{(1-1/p)^2}
+ \right|
+ \ll
+ \frac1R+
+ \frac{\log(2|A|)}{R\log R}.
+ \label{eq:euler-tail}
+\end{equation}
+The implied constant is absolute.
+\end{theorem}
+
+\begin{proof}
+Since \(p>R>|h|\), no such prime divides \(h\).  If \(p\nmid A\),
+the two affine forms have two distinct roots, so \(\nu_p=2\), and
+\begin{equation}
+ \log\frac{1-2/p}{(1-1/p)^2}=O(p^{-2}).
+ \label{eq:generic-euler-factor}
+\end{equation}
+If \(p\mid A\), then \(0\le\nu_p\le2\) and the same logarithm is
+\(O(p^{-1})\).  Hence the left side of \eqref{eq:euler-tail} is at
+most
+\[
+ O\!\left(\sum_{p>R}p^{-2}\right)
+ +O\!\left(\sum_{\substack{p>R\\p\mid A}}p^{-1}\right).
+\]
+The first sum is \(O(R^{-1})\).  For the second, use
+\[
+ \frac1p\le\frac{\log p}{R\log R}
+ \quad(p>R),
+ \qquad
+ \sum_{p\mid A}\log p\le\log|A|,
+\]
+with \(\log(2|A|)\) covering \(|A|=1\).
+\end{proof}
+
+\begin{remark}[A local statement only]
+\Cref{thm:euler-tail} says that individual primes above \(R\) do not
+hide a large unrecorded local Euler factor.  It says nothing about the
+omitted composite moduli just described, and it is not an estimate for a
+finite \(j\)-correlation, a long-lcm Poisson remainder, a prime-pair
+sum, or any of the four locally calibrated channels.  In particular,
+it does not
+replace determinant dispersion.
+\end{remark}
+
+We can now state the remaining target without ambiguity.  Let
+\(\mathscr G\) be the generic row set in \eqref{eq:generic-rows} and
+let \(\cC_D(\mathscr G)\) be \eqref{eq:abstract-correlation} with the
+actual TPC-18 coefficients.
+
+\begin{definition}[Primitive residual-dispersion target]
+\label{def:residual-dd}
+For a prescribed \(B>0\), the target estimate is
+\begin{equation}
+ |\cC_D(\mathscr G)|
+ \ll_{B,h,\delta,\kappa}XQ(\log X)^{-B}
+ \label{eq:residual-dd-target}
+\end{equation}
+uniformly in the surviving dyadic parameters.  This definition is a
+named missing estimate, not a theorem of the present paper.
+\end{definition}
+
+The exact identities above split attempts at
+\eqref{eq:residual-dd-target} into two auditable routes.
+
+\begin{description}[leftmargin=2.1em,labelindent=0em,style=nextline]
+\item[Direct determinant-frequency route.]
+Derive a common Kuznetsov/dispersion form for the four terms in
+\eqref{eq:centered-four-channel}, before absolute values, so that their
+local main spectra cancel.  For the resulting pair-sequence measure,
+verify the precise hypotheses and concentration functional of
+\cite[Theorem~5.2]{Pascadi2026LargeSieve}, as described in
+\cref{rem:mobius-concentration}.  The explicit matched reduction and
+the sharp concentration estimate are both missing.
+
+\item[CRT--Poisson long-lcm route.]
+Apply the all-modulus residual CRT expansion termwise, or first derive
+an explicitly matched four-channel analogue.  Evaluate every
+short-period zero mode and bound the complete complementary long
+spectrum while keeping the joint, two single, and constant terms
+together.  \Cref{cor:whole-model-completion} supplies only the finite
+\(MM\) subcalculation.  The missing long estimate must tolerate the
+coupled \(g,a,b\) moduli, the determinant constraint, and the sharp
+source--M\"obius coefficients typified by
+\eqref{eq:three-inverse-phases}.
+\end{description}
+
+These two matched-spectrum routes are sufficient, not logically
+exhaustive.  A third possibility would be a separate global estimate
+for each channel that exploits cancellation over the full row family.
+\Cref{thm:model-witness} says only that such an estimate cannot come
+from rowwise complete-period centering of the \(MM\) term.
+
+\begin{remark}[Route ledger, not a closure theorem]
+The exact reductions identify the following sufficient future
+packages:
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+ \item an explicitly derived matched four-channel spectral reduction,
+ followed by verification of the precise concentration inequality
+ required for its resulting measure, with total error
+ \(O_B(XQ(\log X)^{-B})\);
+ \item an all-modulus residual or matched four-channel Poisson
+ decomposition, exact evaluation of all short zero modes, and a bound
+ \(O_B(XQ(\log X)^{-B})\) for the complete long spectrum.
+\end{enumerate}
+If a future work supplies either package with the displayed total
+error, then \cref{thm:drift-small,thm:residual-crt} show that the
+primitive block reaches \eqref{eq:residual-dd-target}.  This is a
+sufficiency ledger, not a quantitatively stated conditional result:
+neither package is supplied here.  \Cref{thm:euler-tail} separately
+records only that the local-factor ledger has no large omitted
+high-prime tail; it supplies no correlation estimate.
+\end{remark}
+
+\begin{remark}[What closing this ledger would mean]
+Even a proof of \eqref{eq:residual-dd-target} closes only the primitive
+residual block delivered by TPC-18.  A twin-prime theorem would still
+require every preceding decomposition, endpoint, positivity, and
+parameter-uniformity step in the full chain.  Conversely, a proof that
+a precisely stated concentration inequality fails in the required
+parameter range, or construction of a long-lcm packet that
+quantitatively violates the target bound, would be a rigorous
+obstruction result, not evidence for or against the twin-prime
+conjecture.
+\end{remark}

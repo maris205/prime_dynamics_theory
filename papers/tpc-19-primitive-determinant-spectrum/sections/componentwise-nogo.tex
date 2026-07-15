@@ -1,0 +1,115 @@
+\section{A rowwise componentwise no-go theorem}
+\label{sec:nogo}
+
+The finite model has a nonzero connected spectrum even for a primitive,
+distinct-source row pair.  The following exact example prevents a
+common but invalid proof strategy.
+
+\begin{theorem}[An exact nonzero model witness]
+\label{thm:model-witness}
+Take
+\begin{equation}
+ R=12,\qquad h=2,\qquad d_1=d_2=3,
+ \qquad \ell_1=31,\qquad \ell_2=41.
+ \label{eq:witness-data}
+\end{equation}
+Then \(H=2\), \(m_1=93\), \(m_2=123\), and all primitive centering
+hypotheses hold.  The exact conditional covariance is
+\begin{equation}
+ \boxed{\qquad \kappa_{12}(93,123)=\frac{433}{450}.\qquad}
+ \label{eq:witness-covariance}
+\end{equation}
+If \(P=\operatorname{lcm}(1,\ldots,12)=27720\), then for every
+integer \(T\ge1\),
+\begin{equation}
+ \sum_{\substack{1\le j\le TP\\(j,2)=1}}
+ M_{93}(j)M_{123}(j)
+ =TP\,\frac{433}{900}.
+ \label{eq:witness-linear-growth}
+\end{equation}
+Thus the centered finite-model component need not have logarithmic, or
+even \(o(TP)\), cancellation along these repeated complete periods.
+\end{theorem}
+
+\begin{proof}
+Insert \(R=12\), \(m_1=93\), \(m_2=123\), and
+\(\Delta=-30\) in the finite rational sum
+\eqref{eq:kappa-formula}.  Exact simplification gives \(433/450\).
+The functions \(M_{93}\) and \(M_{123}\) are periodic modulo \(P\).
+There are \(P/2\) odd classes, so the sum over one full period is
+\((P/2)(433/450)=P(433/900)\).  Repetition proves
+\eqref{eq:witness-linear-growth}.  The accompanying certificate
+described in \cref{sec:computation} verifies both the divisor formula
+and a direct complete-period Gram calculation using exact rational
+arithmetic.
+\end{proof}
+
+\begin{corollary}[No rowwise componentwise substitute]
+\label{cor:componentwise-nogo}
+Complete-period centering alone does not force the \(MM\) channel to
+have zero complete-period mean for every admissible finite primitive
+distinct-source parameter choice.  Consequently a proof of
+cancellation in
+\begin{equation}
+ Z_{m_1}Z_{m_2}
+ =P_{m_1}P_{m_2}-P_{m_1}M_{m_2}
+ -M_{m_1}P_{m_2}+M_{m_1}M_{m_2}
+ \label{eq:centered-four-channel}
+\end{equation}
+cannot obtain the required saving separately for all four terms from
+complete-period \(j\)-cancellation alone.
+\end{corollary}
+
+\begin{proof}
+The \(MM\) assertion already fails by
+\cref{thm:model-witness}.  Equation \eqref{eq:centered-four-channel}
+is the expansion of \((P_{m_1}-M_{m_1})(P_{m_2}-M_{m_2})\).
+Therefore a valid argument must either exploit additional cancellation
+over the row variables or combine the nonzero local model spectrum with
+the other channels before taking absolute values.
+\end{proof}
+
+\begin{remark}[What the witness does not prove]
+The witness is finite and exact.  It disproves a proposed uniform
+rowwise componentwise lemma; it does not show that the actual residual
+correlation is large, that an asymptotic generic row family has a
+positive main term, or that determinant dispersion is false.  The
+other three terms in \eqref{eq:centered-four-channel} may cancel the
+model spectrum.  Nor does the fixed-\(R\) example rule out a rowwise
+asymptotic as \(R\to\infty\), or cancellation after averaging the
+actual TPC row coefficients.  It proves only that complete-period
+centering is not an algebraic rowwise annihilator.  Spectral matching
+is one possible open route.
+\end{remark}
+
+There is also a structural reason not to recover positivity after
+row-pair pruning.  The full matrix
+\([\kappa_R(m_\alpha,m_\beta)]\) is a Gram matrix by
+\cref{prop:model-psd}; removing diagonal, near-determinant, or
+large-divisor-gcd entries is a Schur mask not known to preserve
+positive semidefiniteness.  Hence neither positivity nor the witness
+may be transferred automatically to the generic TPC-18 subgraph.
+
+For orientation only, the certificate contains two deterministic
+sharp-window diagnostics.  With the explicitly recorded finite windows
+and normalization, the four locally calibrated channel values are
+\begin{center}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+channel & \((R,L,D,J)=(30,70,3,80)\)
+& \((60,130,4,100)\) \\
+\midrule
+\(PP\) & \(1.0313935\times10^{-2}\) & \(5.6077583\times10^{-2}\) \\
+\(PM\) & \(7.4448828\times10^{-3}\) & \(5.7773558\times10^{-2}\) \\
+\(MP\) & \(7.4448828\times10^{-3}\) & \(5.7773558\times10^{-2}\) \\
+\(MM\) & \(3.5400940\times10^{-3}\) & \(5.8418970\times10^{-2}\) \\
+\(PP-PM-MP+MM\) & \(-1.0357367\times10^{-3}\)
+& \(-1.0505627\times10^{-3}\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+These decimal data are regression tests for the implemented channel
+bookkeeping, not asymptotic evidence.  The windows are sharp and are
+not the smooth weights of the theorems.  In particular, the
+machine-readable output sets
+\texttt{prime\_asymptotic\_evidence=false}.
