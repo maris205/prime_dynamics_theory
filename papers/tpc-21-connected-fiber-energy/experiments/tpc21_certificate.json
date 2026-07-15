@@ -1,0 +1,1350 @@
+{
+  "arithmetic_backends": [
+    "integers",
+    "fractions.Fraction",
+    "exact roots of unity in F_61"
+  ],
+  "certificate": "TPC-21 connected fiber energy exact finite certificate",
+  "certificate_digest_sha256": "67cb0d7c895f232e3b23e5ba309dc5307c8214e5d1effb9bb6680d9257c949fd",
+  "coverage": {
+    "additive_character_bridge_equalities": 30,
+    "additive_crt_and_primitive_sign_equalities": 39,
+    "compatible_fiber_equalities": 10,
+    "divisor_reassembly_and_covariance_equalities": 106,
+    "induced_gauss_and_conductor_equalities": 271,
+    "multiplicative_parseval_equalities": 9,
+    "rational_gain_ledger_equalities": 24,
+    "row_diagonal_spike_equalities": 42,
+    "shared_g_projector_phase_and_convolution_equalities": 594,
+    "squarefree_lcm_product_equalities": 24,
+    "total_exact_equalities": 1149
+  },
+  "deterministic": true,
+  "evidence_flags": {
+    "asymptotic_evidence": false,
+    "parity_breakthrough_evidence": false,
+    "residual_dispersion_evidence": false,
+    "twin_prime_evidence": false
+  },
+  "input_summary": {
+    "H_inverse_mod_q": 23,
+    "digest_sha256": "e52e75be1006ef4403972282cf24a54f3c564c5f2fb7e34b39cca3d248879fd6",
+    "finite_field": {
+      "generator": 2,
+      "prime": 61,
+      "supported_root_orders": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        15,
+        30
+      ]
+    },
+    "g": 5,
+    "generic_mask": {
+      "absolute_row_gap_strictly_greater_than": 70,
+      "d_gcd_at_most": 1,
+      "different_ell": true
+    },
+    "q": 30,
+    "radical_H": 47,
+    "rows": [
+      {
+        "d": 1,
+        "ell": 7,
+        "m": 7,
+        "x": 2,
+        "y": -1
+      },
+      {
+        "d": 7,
+        "ell": 11,
+        "m": 77,
+        "x": -3,
+        "y": 2
+      },
+      {
+        "d": 11,
+        "ell": 13,
+        "m": 143,
+        "x": 5,
+        "y": 3
+      },
+      {
+        "d": 13,
+        "ell": 17,
+        "m": 221,
+        "x": 1,
+        "y": -2
+      },
+      {
+        "d": 7,
+        "ell": 19,
+        "m": 133,
+        "x": -2,
+        "y": 5
+      },
+      {
+        "d": 11,
+        "ell": 23,
+        "m": 253,
+        "x": 4,
+        "y": 1
+      },
+      {
+        "d": 13,
+        "ell": 29,
+        "m": 377,
+        "x": -1,
+        "y": 4
+      },
+      {
+        "d": 7,
+        "ell": 31,
+        "m": 217,
+        "x": 3,
+        "y": -3
+      },
+      {
+        "d": 11,
+        "ell": 37,
+        "m": 407,
+        "x": 2,
+        "y": 2
+      },
+      {
+        "d": 13,
+        "ell": 41,
+        "m": 533,
+        "x": -4,
+        "y": 1
+      }
+    ],
+    "shared_factor_cases": [
+      {
+        "g": 5,
+        "q": 30,
+        "u": 10,
+        "v": 15
+      },
+      {
+        "g": 5,
+        "q": 30,
+        "u": 15,
+        "v": 10
+      }
+    ],
+    "shift_h": 47,
+    "theta": {
+      "1": {
+        "denominator": 1,
+        "numerator": 2,
+        "text": "2"
+      },
+      "10": {
+        "denominator": 4,
+        "numerator": 5,
+        "text": "5/4"
+      },
+      "15": {
+        "denominator": 2,
+        "numerator": -3,
+        "text": "-3/2"
+      },
+      "2": {
+        "denominator": 1,
+        "numerator": -1,
+        "text": "-1"
+      },
+      "3": {
+        "denominator": 2,
+        "numerator": 3,
+        "text": "3/2"
+      },
+      "30": {
+        "denominator": 5,
+        "numerator": 7,
+        "text": "7/5"
+      },
+      "5": {
+        "denominator": 3,
+        "numerator": -2,
+        "text": "-2/3"
+      },
+      "6": {
+        "denominator": 1,
+        "numerator": 1,
+        "text": "1"
+      }
+    },
+    "u": 10,
+    "v": 15
+  },
+  "optimized_mode_safe": true,
+  "results": {
+    "additive_character_bridge": {
+      "digest_sha256": "bf0e0fa407927d3111586f548c4484d98c21b17a23381025599f0bc4ed2972ef",
+      "frequencies": [
+        {
+          "r": 0,
+          "r_times_H_inverse_mod_q": 0,
+          "value_mod_61": 51
+        },
+        {
+          "r": 1,
+          "r_times_H_inverse_mod_q": 23,
+          "value_mod_61": 17
+        },
+        {
+          "r": 2,
+          "r_times_H_inverse_mod_q": 16,
+          "value_mod_61": 42
+        },
+        {
+          "r": 3,
+          "r_times_H_inverse_mod_q": 9,
+          "value_mod_61": 60
+        },
+        {
+          "r": 4,
+          "r_times_H_inverse_mod_q": 2,
+          "value_mod_61": 20
+        },
+        {
+          "r": 5,
+          "r_times_H_inverse_mod_q": 25,
+          "value_mod_61": 44
+        },
+        {
+          "r": 6,
+          "r_times_H_inverse_mod_q": 18,
+          "value_mod_61": 53
+        },
+        {
+          "r": 7,
+          "r_times_H_inverse_mod_q": 11,
+          "value_mod_61": 38
+        },
+        {
+          "r": 8,
+          "r_times_H_inverse_mod_q": 4,
+          "value_mod_61": 18
+        },
+        {
+          "r": 9,
+          "r_times_H_inverse_mod_q": 27,
+          "value_mod_61": 40
+        },
+        {
+          "r": 10,
+          "r_times_H_inverse_mod_q": 20,
+          "value_mod_61": 54
+        },
+        {
+          "r": 11,
+          "r_times_H_inverse_mod_q": 13,
+          "value_mod_61": 36
+        },
+        {
+          "r": 12,
+          "r_times_H_inverse_mod_q": 6,
+          "value_mod_61": 57
+        },
+        {
+          "r": 13,
+          "r_times_H_inverse_mod_q": 29,
+          "value_mod_61": 19
+        },
+        {
+          "r": 14,
+          "r_times_H_inverse_mod_q": 22,
+          "value_mod_61": 20
+        },
+        {
+          "r": 15,
+          "r_times_H_inverse_mod_q": 15,
+          "value_mod_61": 10
+        },
+        {
+          "r": 16,
+          "r_times_H_inverse_mod_q": 8,
+          "value_mod_61": 44
+        },
+        {
+          "r": 17,
+          "r_times_H_inverse_mod_q": 1,
+          "value_mod_61": 19
+        },
+        {
+          "r": 18,
+          "r_times_H_inverse_mod_q": 24,
+          "value_mod_61": 1
+        },
+        {
+          "r": 19,
+          "r_times_H_inverse_mod_q": 17,
+          "value_mod_61": 41
+        },
+        {
+          "r": 20,
+          "r_times_H_inverse_mod_q": 10,
+          "value_mod_61": 17
+        },
+        {
+          "r": 21,
+          "r_times_H_inverse_mod_q": 3,
+          "value_mod_61": 8
+        },
+        {
+          "r": 22,
+          "r_times_H_inverse_mod_q": 26,
+          "value_mod_61": 23
+        },
+        {
+          "r": 23,
+          "r_times_H_inverse_mod_q": 19,
+          "value_mod_61": 43
+        },
+        {
+          "r": 24,
+          "r_times_H_inverse_mod_q": 12,
+          "value_mod_61": 21
+        },
+        {
+          "r": 25,
+          "r_times_H_inverse_mod_q": 5,
+          "value_mod_61": 7
+        },
+        {
+          "r": 26,
+          "r_times_H_inverse_mod_q": 28,
+          "value_mod_61": 25
+        },
+        {
+          "r": 27,
+          "r_times_H_inverse_mod_q": 21,
+          "value_mod_61": 4
+        },
+        {
+          "r": 28,
+          "r_times_H_inverse_mod_q": 14,
+          "value_mod_61": 42
+        },
+        {
+          "r": 29,
+          "r_times_H_inverse_mod_q": 7,
+          "value_mod_61": 41
+        }
+      ]
+    },
+    "additive_crt_divisor_lift": {
+      "H_inverse_mod_q": 23,
+      "digest_sha256": "8dce39e857209e3eb00e85dfad8400b37557802fe6bad5138e926903c50375c1",
+      "failures_if_H_inverse_is_omitted": 28,
+      "field_modulus": 61,
+      "frequencies": [
+        {
+          "primitive": 0,
+          "r": 0,
+          "transform": 0
+        },
+        {
+          "primitive": 1,
+          "r": 1,
+          "transform": 3
+        },
+        {
+          "primitive": 0,
+          "r": 2,
+          "transform": 60
+        },
+        {
+          "primitive": 0,
+          "r": 3,
+          "transform": 32
+        },
+        {
+          "primitive": 0,
+          "r": 4,
+          "transform": 17
+        },
+        {
+          "primitive": 0,
+          "r": 5,
+          "transform": 52
+        },
+        {
+          "primitive": 0,
+          "r": 6,
+          "transform": 52
+        },
+        {
+          "primitive": 1,
+          "r": 7,
+          "transform": 1
+        },
+        {
+          "primitive": 0,
+          "r": 8,
+          "transform": 36
+        },
+        {
+          "primitive": 0,
+          "r": 9,
+          "transform": 22
+        },
+        {
+          "primitive": 0,
+          "r": 10,
+          "transform": 52
+        },
+        {
+          "primitive": 1,
+          "r": 11,
+          "transform": 49
+        },
+        {
+          "primitive": 0,
+          "r": 12,
+          "transform": 2
+        },
+        {
+          "primitive": 1,
+          "r": 13,
+          "transform": 4
+        },
+        {
+          "primitive": 0,
+          "r": 14,
+          "transform": 5
+        },
+        {
+          "primitive": 0,
+          "r": 15,
+          "transform": 0
+        },
+        {
+          "primitive": 0,
+          "r": 16,
+          "transform": 58
+        },
+        {
+          "primitive": 1,
+          "r": 17,
+          "transform": 1
+        },
+        {
+          "primitive": 0,
+          "r": 18,
+          "transform": 29
+        },
+        {
+          "primitive": 1,
+          "r": 19,
+          "transform": 44
+        },
+        {
+          "primitive": 0,
+          "r": 20,
+          "transform": 9
+        },
+        {
+          "primitive": 0,
+          "r": 21,
+          "transform": 9
+        },
+        {
+          "primitive": 0,
+          "r": 22,
+          "transform": 60
+        },
+        {
+          "primitive": 1,
+          "r": 23,
+          "transform": 25
+        },
+        {
+          "primitive": 0,
+          "r": 24,
+          "transform": 39
+        },
+        {
+          "primitive": 0,
+          "r": 25,
+          "transform": 9
+        },
+        {
+          "primitive": 0,
+          "r": 26,
+          "transform": 12
+        },
+        {
+          "primitive": 0,
+          "r": 27,
+          "transform": 59
+        },
+        {
+          "primitive": 0,
+          "r": 28,
+          "transform": 57
+        },
+        {
+          "primitive": 1,
+          "r": 29,
+          "transform": 56
+        }
+      ],
+      "primitive_frequency_count": 8
+    },
+    "compatible_fiber_total_and_mean": {
+      "cases": [
+        {
+          "compatible_pairs": 22,
+          "mean": {
+            "denominator": 4,
+            "numerator": -5,
+            "text": "-5/4"
+          },
+          "q": 30,
+          "total": {
+            "denominator": 1,
+            "numerator": -10,
+            "text": "-10"
+          },
+          "u": 10,
+          "v": 15
+        },
+        {
+          "compatible_pairs": 58,
+          "mean": {
+            "denominator": 1,
+            "numerator": 4,
+            "text": "4"
+          },
+          "q": 30,
+          "total": {
+            "denominator": 1,
+            "numerator": 32,
+            "text": "32"
+          },
+          "u": 6,
+          "v": 10
+        },
+        {
+          "compatible_pairs": 22,
+          "mean": {
+            "denominator": 4,
+            "numerator": -5,
+            "text": "-5/4"
+          },
+          "q": 15,
+          "total": {
+            "denominator": 1,
+            "numerator": -10,
+            "text": "-10"
+          },
+          "u": 5,
+          "v": 15
+        },
+        {
+          "compatible_pairs": 58,
+          "mean": {
+            "denominator": 1,
+            "numerator": 4,
+            "text": "4"
+          },
+          "q": 30,
+          "total": {
+            "denominator": 1,
+            "numerator": 32,
+            "text": "32"
+          },
+          "u": 1,
+          "v": 30
+        },
+        {
+          "compatible_pairs": 26,
+          "mean": {
+            "denominator": 8,
+            "numerator": -5,
+            "text": "-5/8"
+          },
+          "q": 30,
+          "total": {
+            "denominator": 1,
+            "numerator": -5,
+            "text": "-5"
+          },
+          "u": 6,
+          "v": 15
+        }
+      ],
+      "digest_sha256": "ff967c0cc1cf2ab28715f28384d2ef1330ad36e407f07b41b8d728a1b56459e7"
+    },
+    "divisor_lattice_reassembly": {
+      "digest_sha256": "65eae34e4bbee4290281504ea9829ee51148739c5db863464a6c5e8b94a601c7",
+      "layers": [
+        {
+          "centered_energy": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          "mean": {
+            "denominator": 1,
+            "numerator": 336,
+            "text": "336"
+          },
+          "q": 1
+        },
+        {
+          "centered_energy": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          "mean": {
+            "denominator": 1,
+            "numerator": -252,
+            "text": "-252"
+          },
+          "q": 2
+        },
+        {
+          "centered_energy": {
+            "denominator": 8,
+            "numerator": 53361,
+            "text": "53361/8"
+          },
+          "mean": {
+            "denominator": 4,
+            "numerator": 1071,
+            "text": "1071/4"
+          },
+          "q": 3
+        },
+        {
+          "centered_energy": {
+            "denominator": 27,
+            "numerator": 328192,
+            "text": "328192/27"
+          },
+          "mean": {
+            "denominator": 9,
+            "numerator": -464,
+            "text": "-464/9"
+          },
+          "q": 5
+        },
+        {
+          "centered_energy": {
+            "denominator": 1,
+            "numerator": 882,
+            "text": "882"
+          },
+          "mean": {
+            "denominator": 1,
+            "numerator": -14,
+            "text": "-14"
+          },
+          "q": 6
+        },
+        {
+          "centered_energy": {
+            "denominator": 288,
+            "numerator": 8500985,
+            "text": "8500985/288"
+          },
+          "mean": {
+            "denominator": 24,
+            "numerator": 1907,
+            "text": "1907/24"
+          },
+          "q": 10
+        },
+        {
+          "centered_energy": {
+            "denominator": 32,
+            "numerator": 2662743,
+            "text": "2662743/32"
+          },
+          "mean": {
+            "denominator": 16,
+            "numerator": -1409,
+            "text": "-1409/16"
+          },
+          "q": 15
+        },
+        {
+          "centered_energy": {
+            "denominator": 15000,
+            "numerator": 2153298673,
+            "text": "2153298673/15000"
+          },
+          "mean": {
+            "denominator": 600,
+            "numerator": 69061,
+            "text": "69061/600"
+          },
+          "q": 30
+        }
+      ]
+    },
+    "generic_mask_shared_g_convolution": {
+      "cases": [
+        {
+          "a": 2,
+          "b": 3,
+          "compatible_masked_pairs": 22,
+          "digest_sha256": "b1b025989924a14568409614652f0c1fad54b206186dd28383c67241c73a0176",
+          "failures_if_left_exclusive_character_is_omitted": 0,
+          "failures_if_one_over_phi_g_is_omitted": 8,
+          "failures_if_phase_conjugation_is_omitted": 4,
+          "failures_if_right_exclusive_character_is_omitted": 4,
+          "g": 5,
+          "nonzero_character_transforms": 8,
+          "normalization": {
+            "denominator": 4,
+            "numerator": 1,
+            "text": "1/4"
+          },
+          "q": 30,
+          "row_phase_checks": 176,
+          "transforms": [
+            {
+              "character": [
+                0,
+                0,
+                0
+              ],
+              "transform_mod_61": 51
+            },
+            {
+              "character": [
+                0,
+                0,
+                1
+              ],
+              "transform_mod_61": 49
+            },
+            {
+              "character": [
+                0,
+                0,
+                2
+              ],
+              "transform_mod_61": 51
+            },
+            {
+              "character": [
+                0,
+                0,
+                3
+              ],
+              "transform_mod_61": 49
+            },
+            {
+              "character": [
+                0,
+                1,
+                0
+              ],
+              "transform_mod_61": 33
+            },
+            {
+              "character": [
+                0,
+                1,
+                1
+              ],
+              "transform_mod_61": 26
+            },
+            {
+              "character": [
+                0,
+                1,
+                2
+              ],
+              "transform_mod_61": 33
+            },
+            {
+              "character": [
+                0,
+                1,
+                3
+              ],
+              "transform_mod_61": 26
+            }
+          ],
+          "u": 10,
+          "v": 15
+        },
+        {
+          "a": 3,
+          "b": 2,
+          "compatible_masked_pairs": 22,
+          "digest_sha256": "dba8ef4effe2d85ac8c522b521e12dfa785e800d9c9cce2654bd53c13f8cf6b4",
+          "failures_if_left_exclusive_character_is_omitted": 4,
+          "failures_if_one_over_phi_g_is_omitted": 8,
+          "failures_if_phase_conjugation_is_omitted": 4,
+          "failures_if_right_exclusive_character_is_omitted": 0,
+          "g": 5,
+          "nonzero_character_transforms": 8,
+          "normalization": {
+            "denominator": 4,
+            "numerator": 1,
+            "text": "1/4"
+          },
+          "q": 30,
+          "row_phase_checks": 176,
+          "transforms": [
+            {
+              "character": [
+                0,
+                0,
+                0
+              ],
+              "transform_mod_61": 51
+            },
+            {
+              "character": [
+                0,
+                0,
+                1
+              ],
+              "transform_mod_61": 49
+            },
+            {
+              "character": [
+                0,
+                0,
+                2
+              ],
+              "transform_mod_61": 51
+            },
+            {
+              "character": [
+                0,
+                0,
+                3
+              ],
+              "transform_mod_61": 49
+            },
+            {
+              "character": [
+                0,
+                1,
+                0
+              ],
+              "transform_mod_61": 31
+            },
+            {
+              "character": [
+                0,
+                1,
+                1
+              ],
+              "transform_mod_61": 10
+            },
+            {
+              "character": [
+                0,
+                1,
+                2
+              ],
+              "transform_mod_61": 31
+            },
+            {
+              "character": [
+                0,
+                1,
+                3
+              ],
+              "transform_mod_61": 10
+            }
+          ],
+          "u": 15,
+          "v": 10
+        }
+      ],
+      "digest_sha256": "d2dae81cba02d91d7b2a6fe36fbdc24d7d7099319a2f92355c731435e5d18e0c",
+      "total_failures_if_left_exclusive_character_is_omitted": 4,
+      "total_failures_if_one_over_phi_g_is_omitted": 16,
+      "total_failures_if_phase_conjugation_is_omitted": 8,
+      "total_failures_if_right_exclusive_character_is_omitted": 4
+    },
+    "induced_character_gauss_formula": {
+      "character_count": 8,
+      "characters": [
+        {
+          "character": [
+            0,
+            0,
+            0
+          ],
+          "conductor": 1,
+          "tau_mod_61": 1
+        },
+        {
+          "character": [
+            0,
+            0,
+            1
+          ],
+          "conductor": 5,
+          "tau_mod_61": 45
+        },
+        {
+          "character": [
+            0,
+            0,
+            2
+          ],
+          "conductor": 5,
+          "tau_mod_61": 26
+        },
+        {
+          "character": [
+            0,
+            0,
+            3
+          ],
+          "conductor": 5,
+          "tau_mod_61": 27
+        },
+        {
+          "character": [
+            0,
+            1,
+            0
+          ],
+          "conductor": 3,
+          "tau_mod_61": 34
+        },
+        {
+          "character": [
+            0,
+            1,
+            1
+          ],
+          "conductor": 15,
+          "tau_mod_61": 55
+        },
+        {
+          "character": [
+            0,
+            1,
+            2
+          ],
+          "conductor": 15,
+          "tau_mod_61": 30
+        },
+        {
+          "character": [
+            0,
+            1,
+            3
+          ],
+          "conductor": 15,
+          "tau_mod_61": 28
+        }
+      ],
+      "conductor_counts": {
+        "1": 1,
+        "15": 3,
+        "3": 1,
+        "5": 3
+      },
+      "conductor_mass": 64,
+      "digest_sha256": "d890d2850c3d2e24ce21e92a6dc33599cdaedf9f53a696e3fd06303931088a77",
+      "frequency_count": 30
+    },
+    "multiplicative_character_parseval": {
+      "cases": [
+        {
+          "character_count": 4,
+          "energy_mod_61": 38,
+          "modulus": 10
+        },
+        {
+          "character_count": 8,
+          "energy_mod_61": 1,
+          "modulus": 15
+        },
+        {
+          "character_count": 8,
+          "energy_mod_61": 28,
+          "modulus": 30
+        }
+      ],
+      "digest_sha256": "3fdba8bc4590479b1ec155c4e69b23d59d0f557fa4d13a51672f29a693a250b3"
+    },
+    "rational_gain_ledger": {
+      "cases": [
+        {
+          "beta": {
+            "denominator": 21000,
+            "numerator": 13729,
+            "text": "13729/21000"
+          },
+          "delta": {
+            "denominator": 7,
+            "numerator": 1,
+            "text": "1/7"
+          },
+          "j": {
+            "denominator": 21000,
+            "numerator": 7271,
+            "text": "7271/21000"
+          },
+          "profile": "published",
+          "required_omega": {
+            "denominator": 42000,
+            "numerator": 7729,
+            "text": "7729/42000"
+          },
+          "sigma0": {
+            "denominator": 1000,
+            "numerator": 1,
+            "text": "1/1000"
+          },
+          "tested_margin": {
+            "denominator": 100,
+            "numerator": 1,
+            "text": "1/100"
+          },
+          "y": {
+            "denominator": 7,
+            "numerator": 5,
+            "text": "5/7"
+          }
+        },
+        {
+          "beta": {
+            "denominator": 21000,
+            "numerator": 13633,
+            "text": "13633/21000"
+          },
+          "delta": {
+            "denominator": 20,
+            "numerator": 3,
+            "text": "3/20"
+          },
+          "j": {
+            "denominator": 21000,
+            "numerator": 7367,
+            "text": "7367/21000"
+          },
+          "profile": "published",
+          "required_omega": {
+            "denominator": 42000,
+            "numerator": 7333,
+            "text": "7333/42000"
+          },
+          "sigma0": {
+            "denominator": 500,
+            "numerator": 1,
+            "text": "1/500"
+          },
+          "tested_margin": {
+            "denominator": 100,
+            "numerator": 1,
+            "text": "1/100"
+          },
+          "y": {
+            "denominator": 10,
+            "numerator": 7,
+            "text": "7/10"
+          }
+        },
+        {
+          "beta": {
+            "denominator": 4200,
+            "numerator": 2693,
+            "text": "2693/4200"
+          },
+          "delta": {
+            "denominator": 25,
+            "numerator": 4,
+            "text": "4/25"
+          },
+          "j": {
+            "denominator": 4200,
+            "numerator": 1507,
+            "text": "1507/4200"
+          },
+          "profile": "published",
+          "required_omega": {
+            "denominator": 8400,
+            "numerator": 1349,
+            "text": "1349/8400"
+          },
+          "sigma0": {
+            "denominator": 200,
+            "numerator": 1,
+            "text": "1/200"
+          },
+          "tested_margin": {
+            "denominator": 100,
+            "numerator": 1,
+            "text": "1/100"
+          },
+          "y": {
+            "denominator": 25,
+            "numerator": 17,
+            "text": "17/25"
+          }
+        },
+        {
+          "beta": {
+            "denominator": 119000,
+            "numerator": 77131,
+            "text": "77131/119000"
+          },
+          "delta": {
+            "denominator": 7,
+            "numerator": 1,
+            "text": "1/7"
+          },
+          "j": {
+            "denominator": 119000,
+            "numerator": 41869,
+            "text": "41869/119000"
+          },
+          "profile": "li_v6",
+          "required_omega": {
+            "denominator": 238000,
+            "numerator": 43131,
+            "text": "43131/238000"
+          },
+          "sigma0": {
+            "denominator": 1000,
+            "numerator": 1,
+            "text": "1/1000"
+          },
+          "tested_margin": {
+            "denominator": 100,
+            "numerator": 1,
+            "text": "1/100"
+          },
+          "y": {
+            "denominator": 7,
+            "numerator": 5,
+            "text": "5/7"
+          }
+        },
+        {
+          "beta": {
+            "denominator": 17000,
+            "numerator": 10941,
+            "text": "10941/17000"
+          },
+          "delta": {
+            "denominator": 20,
+            "numerator": 3,
+            "text": "3/20"
+          },
+          "j": {
+            "denominator": 17000,
+            "numerator": 6059,
+            "text": "6059/17000"
+          },
+          "profile": "li_v6",
+          "required_omega": {
+            "denominator": 34000,
+            "numerator": 5841,
+            "text": "5841/34000"
+          },
+          "sigma0": {
+            "denominator": 500,
+            "numerator": 1,
+            "text": "1/500"
+          },
+          "tested_margin": {
+            "denominator": 100,
+            "numerator": 1,
+            "text": "1/100"
+          },
+          "y": {
+            "denominator": 10,
+            "numerator": 7,
+            "text": "7/10"
+          }
+        },
+        {
+          "beta": {
+            "denominator": 3400,
+            "numerator": 2161,
+            "text": "2161/3400"
+          },
+          "delta": {
+            "denominator": 25,
+            "numerator": 4,
+            "text": "4/25"
+          },
+          "j": {
+            "denominator": 3400,
+            "numerator": 1239,
+            "text": "1239/3400"
+          },
+          "profile": "li_v6",
+          "required_omega": {
+            "denominator": 6800,
+            "numerator": 1073,
+            "text": "1073/6800"
+          },
+          "sigma0": {
+            "denominator": 200,
+            "numerator": 1,
+            "text": "1/200"
+          },
+          "tested_margin": {
+            "denominator": 100,
+            "numerator": 1,
+            "text": "1/100"
+          },
+          "y": {
+            "denominator": 25,
+            "numerator": 17,
+            "text": "17/25"
+          }
+        }
+      ],
+      "digest_sha256": "f526c06cad2d768ca2e4872a9f4d04938040de13a77499478cef3c46b34aa859"
+    },
+    "row_diagonal_one_fiber_spike": {
+      "amplitude": {
+        "denominator": 25,
+        "numerator": 1036,
+        "text": "1036/25"
+      },
+      "centered_energy": {
+        "denominator": 625,
+        "numerator": 939134,
+        "text": "939134/625"
+      },
+      "gamma": {
+        "denominator": 25,
+        "numerator": 259,
+        "text": "259/25"
+      },
+      "kappa0": 19,
+      "mean": {
+        "denominator": 50,
+        "numerator": 259,
+        "text": "259/50"
+      },
+      "row_m": 7
+    },
+    "squarefree_lcm_occupancy_product": {
+      "cases": [
+        {
+          "q": 1,
+          "value": {
+            "denominator": 1,
+            "numerator": 1,
+            "text": "1"
+          }
+        },
+        {
+          "q": 2,
+          "value": {
+            "denominator": 4,
+            "numerator": 5,
+            "text": "5/4"
+          }
+        },
+        {
+          "q": 3,
+          "value": {
+            "denominator": 9,
+            "numerator": 7,
+            "text": "7/9"
+          }
+        },
+        {
+          "q": 5,
+          "value": {
+            "denominator": 25,
+            "numerator": 11,
+            "text": "11/25"
+          }
+        },
+        {
+          "q": 6,
+          "value": {
+            "denominator": 36,
+            "numerator": 35,
+            "text": "35/36"
+          }
+        },
+        {
+          "q": 10,
+          "value": {
+            "denominator": 20,
+            "numerator": 11,
+            "text": "11/20"
+          }
+        },
+        {
+          "q": 15,
+          "value": {
+            "denominator": 225,
+            "numerator": 77,
+            "text": "77/225"
+          }
+        },
+        {
+          "q": 30,
+          "value": {
+            "denominator": 180,
+            "numerator": 77,
+            "text": "77/180"
+          }
+        },
+        {
+          "q": 42,
+          "value": {
+            "denominator": 84,
+            "numerator": 25,
+            "text": "25/84"
+          }
+        },
+        {
+          "q": 70,
+          "value": {
+            "denominator": 196,
+            "numerator": 33,
+            "text": "33/196"
+          }
+        },
+        {
+          "q": 105,
+          "value": {
+            "denominator": 105,
+            "numerator": 11,
+            "text": "11/105"
+          }
+        },
+        {
+          "q": 210,
+          "value": {
+            "denominator": 84,
+            "numerator": 11,
+            "text": "11/84"
+          }
+        }
+      ],
+      "digest_sha256": "3801338251029aff3ddffa7d35f942062ef80e63ca432cca3beaa2975282b259"
+    }
+  },
+  "results_digest_sha256": "2baa3181ea2ef3c6877b9a6db68b70490301a168336132d8b2ac1753616bf6bb",
+  "schema_version": 1,
+  "scope_note": "Exact finite algebra only; no asymptotic, residual-dispersion, twin-prime, or parity-barrier claim.",
+  "source_sha256": "26268e848e0d66a3b50b6fd628e95d8af6931de3fa9fa31d55c722fb8bfb3cb3",
+  "status": "pass"
+}

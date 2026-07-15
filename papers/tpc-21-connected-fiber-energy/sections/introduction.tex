@@ -1,0 +1,173 @@
+\section{Introduction}
+\label{sec:tpc21-introduction}
+
+The symmetric M\"obius tail isolated in TPC-17 is reduced in TPC-18
+to a primitive two-row residual correlation.  After diagonal,
+same-source, near-determinant, and large-gcd pairs are removed by
+elementary counting, a failed block forces a generic correlation at the
+natural scale \(XQ\) \citep{WangTPC18}.  TPC-19 gives exact divisor and
+Poisson normal forms for that correlation, but its four locally centered
+channels cannot be estimated independently without losing their matching
+\citep{WangTPC19}.  TPC-20 performs the matching first.  In the strict
+single-leg range it completes the two one-divisor spectra and compresses
+the remaining compatible short--short joint spectrum into one ordinary
+finite Fourier transform on
+\(\cU_q=(\Z/q\Z)^\times\) \citep{WangTPC20}.
+
+The last compression has the exact split
+\begin{equation}
+ S_q(r)=\overline Z_q\,c_q(r)+\widehat D_q(r),
+ \qquad
+ \sum_{r\bmod q}|\widehat D_q(r)|^2
+ =q\sum_{\kappa\in\cU_q}|D_q(\kappa)|^2.
+ \label{eq:tpc21-intro-mean-discrepancy}
+\end{equation}
+TPC-20 deliberately leaves both terms on the right as analytic inputs.
+The purpose of the present paper is to decide which part is elementary,
+which part has additional row structure, and which part is still a new
+arithmetic estimate.
+
+\subsection{The mean packet closes absolutely}
+
+Our first result removes one of the two inputs.  For \(M\ge1\), define
+\begin{equation}
+ \Delta_M(F;J)
+ =\frac JM\sum_{r\ne0}c_M(r)
+   \widehat F\!\left(\frac{rJ}{M}\right).
+ \label{eq:tpc21-intro-delta}
+\end{equation}
+Reduced-class Poisson summation and ordinary M\"obius inversion give
+\begin{equation}
+ \Delta_M(F;J)
+ =\sum_{(j,M)=1}F(j/J)
+  -J\frac{\varphi(M)}M\widehat F(0),
+ \qquad
+ |\Delta_M(F;J)|\ll_F\tau(M).
+ \label{eq:tpc21-intro-delta-bound}
+\end{equation}
+The estimate is uniform through the transition \(M\asymp J\); it is a
+bounded smooth lattice discrepancy, not a long-modulus prime theorem.
+The TPC-20 mean packet is exactly
+\(\overline Z_q\Delta_{Hq}(F;J)\).  Under the standard separated-packet
+bound \(\mathcal Z_1\ll Q^2X^\eps\), summing it absolutely over all
+short--short lcm layers gives
+\begin{equation}
+ \sum_q|\cL_q^{\rm mean}|
+ \ll_\eps Q^2X^\eps,
+ \qquad
+ Q^2X^\eps\asymp\frac{XQ}{J}X^\eps.
+ \label{eq:tpc21-intro-mean-closure}
+\end{equation}
+Thus the mean is power-saving throughout the strict single-leg range.
+No cancellation between moduli is used.
+
+\subsection{What row occupancy proves, and where it stops}
+
+The fiber vector is not completely arbitrary.  Because \(u\le R<L/2\),
+fixing \(d\) and a row class modulo \(u\) confines the prime source
+\(\ell\) to one progression containing \(O(L/u)\) integers.  Consequently
+each fiber contains at most \(O(Q/u)\) rows on the \(u\)-side.  This gives
+the unconditional estimate
+\begin{equation}
+ \lVert D_q\rVert_{2,\cU_q}
+ \ll_\eps \frac{Q^2}{\sqrt q}X^\eps.
+ \label{eq:tpc21-intro-occupancy}
+\end{equation}
+For \(q\asymp Y\), insertion into the TPC-20 restricted-frequency
+inequality produces
+\begin{equation}
+ \sum_{q\asymp Y}|\cL_q^{\rm disc}|
+ \ll_\eps Q^2\sqrt{JY}\,X^\eps.
+ \label{eq:tpc21-intro-occupancy-scalar}
+\end{equation}
+Relative to \(XQ=Q^2J\), this saves a fixed power only when \(Y<J\)
+by a fixed power.  That is precisely the region where the whole joint
+period is already short.  Occupancy improves the abstract one-fiber
+bound, but it does not cross the long-lcm boundary.
+
+\subsection{Two provenance-preserving normal forms}
+
+The original \(TT^*\) row weights have rank-one provenance before the
+generic Schur mask is imposed.  For a separated bilinear packet, let
+\(A_u^x(\kappa)\) and \(A_u^y(\kappa)\) be the two one-row sums in the
+class \(m\kappa\equiv-h\pmod u\), and put
+\begin{equation}
+ B_s^x(\kappa)=\sum_{u\mid s}\vartheta_R(u)A_u^x(\kappa),
+ \qquad
+ B_s^y(\kappa)=\sum_{u\mid s}\vartheta_R(u)A_u^y(\kappa).
+ \label{eq:tpc21-intro-prefixes}
+\end{equation}
+The unmasked lcm layer has the exact divisor-lattice formula
+\begin{equation}
+ Z_q^{x,y}(\kappa)
+ =\sum_{s\mid q}\mu(q/s)
+ B_s^x(\kappa\bmod s)B_s^y(\kappa\bmod s).
+ \label{eq:tpc21-intro-divisor-reassembly}
+\end{equation}
+In the Hermitian case this is a M\"obius difference of cumulative
+nonnegative energies.  CRT lifting then shows that on frequencies
+coprime to \(q\), the outer lcm M\"obius signs all disappear.  This is
+structure, but not automatic cancellation.
+
+For the actual generic mask, multiplicative Fourier analysis is more
+faithful.  Write \(q=gab\), \(u=ga\), \(v=gb\), with \(g,a,b\) pairwise
+coprime.  If \(\chi=\chi_g\chi_a\chi_b\) is a character of
+\(\cU_q\), the fiber transform is exactly a convolution over characters
+\(\psi\) of the shared factor \(g\):
+\begin{equation}
+ \widehat Z_{u,v}^{\,\mathfrak m}(\chi)
+ =\frac{\overline{\chi(-h)}}{\varphi(g)}
+ \sum_{\psi\bmod g}
+ \cB_{\mathfrak m}
+ (\chi_g\chi_a\psi,\chi_b\overline\psi).
+ \label{eq:tpc21-intro-character-convolution}
+\end{equation}
+Here \(\mathfrak m(m_1,m_2)\) is the generic Schur mask and
+\(\cB_{\mathfrak m}\) is its masked two-row Dirichlet-character sum.
+When \(\mathfrak m\equiv1\), the latter factors into two one-row
+Dirichlet polynomials.  For the generic mask it does not.  Multiplicative
+Parseval therefore identifies the exact surviving input as a masked
+shared-factor character fourth moment.
+
+\subsection{Why scalar unpruning cannot be put inside the norm}
+
+The isolated short--short signal is \(O_\eps(X^\eps)\) pointwise.
+Hence the TPC-18 tuple counts allow the degenerate row pairs to be
+restored and removed at the level of the complete scalar correlation,
+with fixed-power error.  It is tempting to restore the full Gram packet,
+take its fiber \(L^2\) norm, and then subtract the degenerate scalar
+terms.  This is invalid because the norm is nonlinear.
+
+We make the failure exact.  A single row diagonal contributes to one
+class \(\kappa_q\) only:
+\begin{equation}
+ Z_{q,m}^{\rm rowdiag}(\kappa)
+ =|x_m|^2\Gamma_\vartheta(q)
+  \one_{\{\kappa=\kappa_q\}},
+ \label{eq:tpc21-intro-diagonal-spike}
+\end{equation}
+and its multiplicative Fourier magnitude is constant in every
+nonprincipal frequency.  Thus a row
+diagonal can saturate the one-fiber obstruction of TPC-20 even though
+its summed physical correlation is already negligible.  The generic
+mask must remain inside the connected character moment, or the
+degenerate pieces must be removed before a nonlinear norm is applied.
+
+The paper therefore makes a positive reduction without claiming a
+parity breakthrough: the Ramanujan mean is closed, the arbitrary fiber
+is replaced by an exact masked character object, and two insufficient
+shortcuts are ruled out quantitatively.  The masked fourth moment and
+the large-divisor legs remain open.
+
+\subsection{Organization}
+
+\Cref{sec:tpc21-interface} fixes the inherited packet and its generic
+mask.  \Cref{sec:tpc21-mean-closure} closes the Ramanujan mean.
+\Cref{sec:tpc21-occupancy-frontier} proves the occupancy frontier.
+\Cref{sec:tpc21-divisor} gives the divisor-lattice reassembly and its
+additive Fourier lift.  \Cref{sec:tpc21-character} derives the exact
+shared-factor character gate.  \Cref{sec:tpc21-nonlinear} proves the
+diagonal-spike obstruction and the scalar/norm distinction.
+\Cref{sec:tpc21-technology} audits the remaining analytic interface,
+and \Cref{sec:tpc21-certificate} records the exact finite certificate
+and the conclusion.

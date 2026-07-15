@@ -1,0 +1,183 @@
+\section{The inherited primitive fiber interface}
+\label{sec:tpc21-interface}
+
+Fix \(h\in\Z\setminus\{0\}\), put \(H=\rad|h|\), and let
+\[
+ e(t)=\exp(2\pi i t),\qquad e_s(t)=e(t/s).
+\]
+\begin{equation}
+ R=\lfloor X^{1/2-\delta}\rfloor,
+ \qquad
+ V=\lfloor R^{1/2}\rfloor,
+ \qquad 0<\delta<\frac12.
+ \label{eq:tpc21-RV}
+\end{equation}
+Take \(X\) large enough that \(R\ge H^2\).  Then the inherited
+restriction \(d\le V\) implies \(dH\le R\), as required in the TPC-20
+recombination.
+The row parameters satisfy
+\begin{equation}
+ Q=LD,\qquad QJ\asymp X,\qquad
+ L>\max(2R,2|h|),
+ \label{eq:tpc21-row-scales}
+\end{equation}
+and
+\begin{equation}
+ \ell\in[L/2,2L]\text{ is prime},
+ \qquad
+ d\in[D,2D]\cap[1,V],
+ \qquad
+ m=\ell d.
+ \label{eq:tpc21-row-support}
+\end{equation}
+The integer \(d\) is squarefree, \((d,H)=1\), and the orbit is restricted
+to \((j,H)=1\).  In particular \((m,H)=1\).  All implied constants may
+depend on \(h,\delta\), and fixed smooth weights.
+
+TPC-20 supplies two short--short coefficient choices,
+\begin{equation}
+ \vartheta_R(u)=\lambda'_R(u)
+ \quad\text{or}\quad
+ \vartheta_R(u)=b_R(u)\one_{u\le R},
+ \label{eq:tpc21-theta-choices}
+\end{equation}
+where both are supported on squarefree \(u\le R\) and, for every
+fixed \(\eps>0\),
+\begin{equation}
+ |\vartheta_R(u)|\ll_\eps X^\eps.
+ \label{eq:tpc21-theta-soft}
+\end{equation}
+Both coefficient choices are real-valued.  This fact is used whenever
+a Hermitian packet is written as an absolute square.
+The first choice is the centered finite Ramanujan model.  The second is
+the matched residual coefficient restricted to its two short divisor
+legs.  No statement below controls the complementary terms with
+\(u>R\) or \(v>R\).
+
+\subsection{Rows, masks, and fiber vectors}
+
+Let \(\cA\) be one finite separated row packet.  Its labels
+\(\alpha=(\ell,d)\) satisfy \eqref{eq:tpc21-row-support}, and its
+weighted cardinality obeys
+\begin{equation}
+ \sum_{\alpha\in\cA}|x_\alpha|
+ +\sum_{\alpha\in\cA}|y_\alpha|
+ \ll QX^\eps
+ \label{eq:tpc21-row-mass}
+\end{equation}
+for the bounded row weights used below.  The original smooth factors in
+\(mj/X\) and \(dj/K\) admit the standard rapidly convergent Mellin--Fourier
+separation.  Each separated term has a common \(F(j/J)\) and rank-one
+row weights \(x_{\alpha_1}y_{\alpha_2}\); the total projective mass of
+the truncated superposition is \(X^\eps\), with arbitrary power error.
+
+The generic TPC-18 row-pair mask is
+\begin{equation}
+ \mathfrak m(\alpha_1,\alpha_2)
+ =\one_{\{\ell_1\ne\ell_2\}}
+  \one_{\{|m_1-m_2|>QX^{-\kappa}\}}
+  \one_{\{(d_1,d_2)\le X^\kappa\}},
+ \label{eq:tpc21-generic-mask}
+\end{equation}
+where \(\kappa>0\) is fixed.  We also allow an arbitrary fixed
+row-pair restriction independent of \(j\), denoted by the same letter,
+when proving the exact fiber identities.
+
+For squarefree \(u,v\le R\), put
+\begin{equation}
+ g=(u,v),\qquad q=[u,v].
+ \label{eq:tpc21-gq}
+\end{equation}
+All aggregated layers used below are restricted to \((q,H)=1\).
+Layers with \((q,H)>1\) have empty admissible fibers and are omitted;
+in particular \(\overline H\pmod q\) is always defined.
+If
+\[
+ (u,m_1H)=(v,m_2H)=1,
+\]
+then the pair \((m_1,m_2)\) is compatible precisely when
+\(g\mid m_1-m_2\).  It then determines the unique unit class
+\begin{equation}
+ \kappa\in\cU_q=(\Z/q\Z)^\times,
+ \qquad
+ m_1\kappa\equiv-h\pmod u,
+ \quad
+ m_2\kappa\equiv-h\pmod v.
+ \label{eq:tpc21-joint-kappa}
+\end{equation}
+If either row--modulus admissibility condition fails, the corresponding
+fiber is zero.
+Define
+\begin{align}
+ Z_{u,v}^{\mathfrak m}(\kappa)
+ ={}&\sum_{\alpha_1,\alpha_2\in\cA}
+ x_{\alpha_1}y_{\alpha_2}
+ \mathfrak m(\alpha_1,\alpha_2)
+ \one_{\{m_1\equiv-h\overline\kappa\ (u)\}}
+ \one_{\{m_2\equiv-h\overline\kappa\ (v)\}},
+ \label{eq:tpc21-uv-fiber}\\
+ Z_q^{\mathfrak m}(\kappa)
+ ={}&\sum_{\substack{u,v\le R\\{}[u,v]=q}}
+ \vartheta_R(u)\vartheta_R(v)
+ Z_{u,v}^{\mathfrak m}(\kappa).
+ \label{eq:tpc21-q-fiber}
+\end{align}
+Congruences modulo \(1\) are vacuous.  An inadmissible divisor--row
+combination contributes zero.  In the retained low nonzero joint
+frequencies of TPC-20, the common multiplier is \(g\), and the factor
+\(g/(uv)=1/q\) gives the scalar packet
+\begin{equation}
+ \cL_q
+ =\frac{J}{Hq}\sum_{r\ne0}c_H(r)
+ \widehat F\!\left(\frac{rJ}{Hq}\right)
+ S_q(r),
+ \qquad
+ S_q(r)=\sum_{\kappa\in\cU_q}
+ Z_q^{\mathfrak m}(\kappa)e_q(r\overline H\kappa).
+ \label{eq:tpc21-long-packet}
+\end{equation}
+
+Put
+\begin{equation}
+ \overline Z_q^{\mathfrak m}
+ =\frac1{\varphi(q)}\sum_{\kappa\in\cU_q}
+ Z_q^{\mathfrak m}(\kappa),
+ \qquad
+ D_q^{\mathfrak m}(\kappa)
+ =Z_q^{\mathfrak m}(\kappa)-\overline Z_q^{\mathfrak m}.
+ \label{eq:tpc21-mean-discrepancy}
+\end{equation}
+Then
+\begin{equation}
+ S_q(r)=\overline Z_q^{\mathfrak m}c_q(r)
+ +\widehat D_q^{\mathfrak m}(r),
+ \qquad
+ \sum_{r\bmod q}|\widehat D_q^{\mathfrak m}(r)|^2
+ =q\lVert D_q^{\mathfrak m}\rVert_{2,\cU_q}^2.
+ \label{eq:tpc21-additive-parseval}
+\end{equation}
+The mean term is closed in \cref{sec:tpc21-mean-closure}; the discrepancy is
+the subject of the remaining sections.
+
+\subsection{The inherited restricted-frequency gate}
+
+For a long-modulus family \(\cQ\), TPC-20 proves, after truncating the
+rapidly decaying Fourier tail, that
+\begin{equation}
+ \sum_{q\in\cQ}|\cL_q^{\rm disc}|
+ \ll_{H,F,\eps}X^{\eps/2}\sqrt{\frac JH}
+ \sum_{q\in\cQ}\lVert D_q^{\mathfrak m}\rVert_{2,\cU_q}
+ +O_A(X^{-A}\cZ_1),
+ \label{eq:tpc21-inherited-gate}
+\end{equation}
+under its no-wrap and polynomial-mass hypotheses.  Here
+\(\cZ_1\) denotes the relevant total coefficient mass.  The natural
+row-pair--orbit scale is
+\begin{equation}
+ Q^2J\asymp XQ.
+ \label{eq:tpc21-natural-scale}
+\end{equation}
+Every use of \eqref{eq:tpc21-inherited-gate} below is compared with
+this scale.  The estimate is sufficient, not known to be necessary;
+in particular, scalar cancellation may be invisible to the nonlinear
+fiber norm.

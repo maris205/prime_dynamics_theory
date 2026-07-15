@@ -1,0 +1,313 @@
+\section{The Ramanujan mean as a coprime-lattice discrepancy}
+\label{sec:tpc21-mean-closure}
+
+We first dispose of the deterministic mean packet left by the
+CRT-fiber decomposition of TPC-20.  The argument applies to one
+separated compatible short--short packet.  Thus the same function
+\(F(j/J)\), with \(F\) in a uniformly bounded subset of
+\(C_c^\infty(\mathbb R)\), occurs for every row pair, and all separated
+row weights are absorbed into coefficients \(z_{m_1,m_2}\).  We use
+the Fourier convention
+\begin{equation}
+ \widehat F(\xi)=\int_{\mathbb R}F(x)e(-x\xi)\,dx.
+ \label{eq:tpc21-Fourier-convention}
+\end{equation}
+The divisor coefficient \(\vartheta_R\) denotes either
+\begin{equation}
+ \vartheta_R(u)=\lambda'_R(u)
+ \qquad\text{or}\qquad
+ \vartheta_R(u)=b_R(u)\mathbf 1_{\{u\le R\}},
+ \label{eq:tpc21-two-theta-choices}
+\end{equation}
+and is extended by zero outside its squarefree support.
+
+For admissible \(u,v\le R\), define the compatible row-pair mass
+\begin{align}
+ \mathfrak R_{u,v}
+ :={}&\sum_{(m_1,m_2)}z_{m_1,m_2}
+ \mathbf 1_{\{(u,m_1H)=1\}}
+ \mathbf 1_{\{(v,m_2H)=1\}}
+ \mathbf 1_{\{(u,v)\mid m_1-m_2\}}.
+ \label{eq:tpc21-compatible-row-mass}
+\end{align}
+Any row-pair restriction independent of the orbit variable may be
+included in this sum.  The compatible-fiber bijection implies
+\begin{equation}
+ \sum_{\kappa\in(\mathbb Z/[u,v]\mathbb Z)^\times}
+ Z_{u,v}(\kappa)=\mathfrak R_{u,v}.
+ \label{eq:tpc21-fiber-total-mass}
+\end{equation}
+Consequently, after aggregating all pairs with the same least common
+multiple,
+\begin{equation}
+ \boxed{
+ \overline Z_q
+ =\frac1{\varphi(q)}
+ \sum_{\substack{u,v\le R\\{}[u,v]=q}}
+ \vartheta_R(u)\vartheta_R(v)\mathfrak R_{u,v}.}
+ \label{eq:tpc21-aggregated-fiber-mean}
+\end{equation}
+Every nonzero term has \((q,H)=1\).  No equidistribution of the row
+weights among the unit fibers is used in
+\eqref{eq:tpc21-aggregated-fiber-mean}.
+
+\subsection{Exact reduced-class Poisson inversion}
+
+For an integer \(M\ge1\), put
+\begin{equation}
+ \Delta_M(F;J)
+ =\frac JM\sum_{r\in\mathbb Z\setminus\{0\}}
+ c_M(r)\widehat F\!\left(\frac{rJ}{M}\right).
+ \label{eq:tpc21-Delta-definition}
+\end{equation}
+
+\begin{proposition}[The Ramanujan spectrum is a coprime-lattice error]
+\label{prop:tpc21-coprime-lattice-identity}
+For every \(M\ge1\) and \(J>0\), one has the exact identity
+\begin{equation}
+ \boxed{
+ \Delta_M(F;J)
+ =\sum_{\substack{n\in\mathbb Z\\(n,M)=1}}F(n/J)
+ -\frac{\varphi(M)}M J\widehat F(0).}
+ \label{eq:tpc21-coprime-lattice-identity}
+\end{equation}
+Moreover, uniformly in \(M\) and \(J\),
+\begin{equation}
+ |\Delta_M(F;J)|\ll_F\tau(M).
+ \label{eq:tpc21-Delta-tau-bound}
+\end{equation}
+The implied constant is uniform when \(F\) ranges over a uniformly
+bounded subset of \(C_c^\infty(\mathbb R)\).
+\end{proposition}
+
+\begin{proof}
+For each reduced class \(a\bmod M\), Poisson summation on the
+progression \(a+M\mathbb Z\) gives
+\[
+ \sum_{k\in\mathbb Z}F\!\left(\frac{a+kM}{J}\right)
+ =\frac JM\sum_{r\in\mathbb Z}
+ e_M(ra)\widehat F\!\left(\frac{rJ}{M}\right).
+\]
+Summing over \(a\bmod M\) with \((a,M)=1\) produces \(c_M(r)\).
+The term \(r=0\) is
+\(J\varphi(M)\widehat F(0)/M\); removing it proves
+\eqref{eq:tpc21-coprime-lattice-identity}.
+
+For the uniform bound, insert
+\(
+ \mathbf 1_{\{(n,M)=1\}}=\sum_{d\mid(n,M)}\mu(d)
+\)
+in the physical-space side.  This gives
+\begin{equation}
+ \Delta_M(F;J)
+ =\sum_{d\mid M}\mu(d)
+ \left\{
+  \sum_{k\in\mathbb Z}F(dk/J)-\frac Jd\widehat F(0)
+ \right\}.
+ \label{eq:tpc21-Delta-Mobius-expansion}
+\end{equation}
+The expression in braces is \(O_F(1)\), uniformly for \(d,J>0\).
+Indeed, when \(J/d\ge1\), the standard bounded-variation estimate for
+a Riemann sum gives this bound.  When \(J/d<1\), compact support shows
+that the discrete sum contains \(O_F(1)\) points, while
+\((J/d)\widehat F(0)=O_F(1)\).  Summing over \(d\mid M\) proves
+\eqref{eq:tpc21-Delta-tau-bound}.
+\end{proof}
+
+The deterministic part of the TPC-20 long packet was
+\[
+ \mathcal L_q^{\mathrm{mean}}
+ =\overline Z_q\frac{J}{Hq}
+ \sum_{r\ne0}c_{Hq}(r)
+ \widehat F\!\left(\frac{rJ}{Hq}\right).
+\]
+Thus \cref{prop:tpc21-coprime-lattice-identity} gives the exact
+physical-space form
+\begin{equation}
+ \boxed{
+ \mathcal L_q^{\mathrm{mean}}
+ =\overline Z_q\,\Delta_{Hq}(F;J).}
+ \label{eq:tpc21-mean-packet-physical-form}
+\end{equation}
+This identity concerns only the chosen compatible short--short packet;
+it does not include either large-divisor leg of the full residual.
+
+\subsection{The arithmetic cost of all least common multiples}
+
+\begin{lemma}[Summable lcm cost]
+\label{lem:tpc21-lcm-arithmetic-cost}
+Assume \(R\le X\) and let \(\vartheta_R\) be either coefficient in
+\eqref{eq:tpc21-two-theta-choices}.  For every \(\varepsilon>0\),
+\begin{equation}
+ \boxed{
+ \sum_{u,v\le R}
+ \frac{|\vartheta_R(u)\vartheta_R(v)|
+       \tau(H[u,v])}{\varphi([u,v])}
+ \ll_{\varepsilon,H}X^\varepsilon.}
+ \label{eq:tpc21-lcm-arithmetic-cost}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The divisor formula for the finite model gives, on squarefree support,
+\[
+ |\lambda'_R(u)|
+ \le \frac u{\varphi(u)}
+ \sum_{b\le R/u}\frac{\mu(b)^2}{\varphi(b)}
+ \ll_\eta R^\eta
+\]
+for every \(\eta>0\).  Here one may use
+\(n/\varphi(n)\ll_\eta n^\eta\) and
+\(1/\varphi(b)\ll_\eta b^{-1+\eta}\).
+Since
+\(b_R(u)=-\mu(u)\log u-\lambda'_R(u)\), the same bound, after
+adjusting \(\eta\), holds for both choices of \(\vartheta_R\).
+
+Put \(q=[u,v]\).  The standard divisor estimates imply
+\[
+ \frac{\tau(Hq)}{\varphi(q)}
+ =\frac1q\tau(Hq)\frac q{\varphi(q)}
+ \ll_{\eta,H}\frac{X^\eta}{q},
+\]
+because \(q\le R^2\le X^2\).  It remains to note that
+\begin{align}
+ \sum_{u,v\le R}\frac1{[u,v]}
+ &\le
+ \sum_{g\le R}\frac1g
+ \left(\sum_{a\le R/g}\frac1a\right)
+ \left(\sum_{b\le R/g}\frac1b\right)
+ \notag\\
+ &\ll \log^3(2R).
+ \label{eq:tpc21-reciprocal-lcm-sum}
+\end{align}
+Indeed, write \(u=ga\), \(v=gb\) with \(g=(u,v)\), and then drop
+the restriction \((a,b)=1\).  Combining these estimates and choosing
+\(\eta\) as a sufficiently small fixed fraction of \(\varepsilon\)
+proves \eqref{eq:tpc21-lcm-arithmetic-cost}.
+\end{proof}
+
+\subsection{Absolute closure of the mean packets}
+
+Let
+\begin{equation}
+ \mathcal Z_1=\sum_{(m_1,m_2)}|z_{m_1,m_2}|
+ \label{eq:tpc21-row-pair-l1-mass}
+\end{equation}
+for the separated row packet under consideration.
+
+\begin{theorem}[Summed Ramanujan-mean closure]
+\label{thm:tpc21-summed-mean-closure}
+Let \(\mathcal Q\) be any collection of denominators arising from the
+chosen compatible short--short packet.  For either coefficient in
+\eqref{eq:tpc21-two-theta-choices},
+\begin{equation}
+ \boxed{
+ \sum_{q\in\mathcal Q}|\mathcal L_q^{\mathrm{mean}}|
+ \ll_{\varepsilon,F,H}\mathcal Z_1X^\varepsilon.}
+ \label{eq:tpc21-summed-mean-closure}
+\end{equation}
+In particular, if the TPC row packet satisfies
+\begin{equation}
+ \mathcal Z_1\ll Q^2X^\varepsilon,
+ \label{eq:tpc21-standard-row-pair-mass}
+\end{equation}
+then
+\begin{equation}
+ \sum_{q\in\mathcal Q}|\mathcal L_q^{\mathrm{mean}}|
+ \ll_{\varepsilon,F,H}Q^2X^\varepsilon.
+ \label{eq:tpc21-mean-Q2-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:tpc21-mean-packet-physical-form},
+\eqref{eq:tpc21-Delta-tau-bound}, and
+\eqref{eq:tpc21-aggregated-fiber-mean},
+\begin{align*}
+ \sum_{q\in\mathcal Q}|\mathcal L_q^{\mathrm{mean}}|
+ &\ll_F
+ \sum_{q\in\mathcal Q}\frac{\tau(Hq)}{\varphi(q)}
+ \sum_{\substack{u,v\le R\\{}[u,v]=q}}
+ |\vartheta_R(u)\vartheta_R(v)|
+ \sum_{(m_1,m_2)}|z_{m_1,m_2}|.
+\end{align*}
+Dropping the compatibility and row-admissibility indicators only
+increases this absolute majorant.  We may therefore interchange the
+row and divisor sums and apply
+\cref{lem:tpc21-lcm-arithmetic-cost}.  This proves
+\eqref{eq:tpc21-summed-mean-closure};
+\eqref{eq:tpc21-mean-Q2-bound} follows from
+\eqref{eq:tpc21-standard-row-pair-mass} after renaming
+\(\varepsilon\).
+\end{proof}
+
+\begin{corollary}[Fixed-power saving in the strict single-leg range]
+\label{cor:tpc21-strict-profile-mean-saving}
+Assume
+\begin{equation}
+ QJ\asymp X,
+ \qquad
+ Q\le X^{1/2+\delta-\eta_0},
+ \qquad 0<\delta<\frac12,\qquad \eta_0>0,
+ \label{eq:tpc21-strict-single-leg-range}
+\end{equation}
+and \eqref{eq:tpc21-standard-row-pair-mass}.  Then for every
+\(B>0\),
+\begin{equation}
+ \boxed{
+ \sum_{q\in\mathcal Q}|\mathcal L_q^{\mathrm{mean}}|
+ \ll_{B,F,H,\delta,\eta_0}
+ XQ(\log X)^{-B}.}
+ \label{eq:tpc21-strict-profile-mean-saving}
+\end{equation}
+More precisely, the ratio of
+\eqref{eq:tpc21-mean-Q2-bound} to the natural row-pair--orbit scale
+\(XQ=Q^2J\) is \(O(X^\varepsilon/J)\), while
+\begin{equation}
+ J\gg X^{1/2-\delta+\eta_0}.
+ \label{eq:tpc21-J-power-margin}
+\end{equation}
+For the largest divisor slice in the two profiles recorded in TPC-20,
+the corresponding orbit exponents are respectively
+\begin{equation}
+ J\ge X^{23/84+\sigma_0+\delta/2+o(1)}
+ \quad\text{and}\quad
+ J\ge X^{19/68+\sigma_0+\delta/2+o(1)}.
+ \label{eq:tpc21-two-profile-J-ledger}
+\end{equation}
+The second value inherits the same version lock as the Li-v6 profile
+in TPC-20.
+\end{corollary}
+
+\begin{proof}
+From \(QJ\asymp X\),
+\[
+ Q^2X^\varepsilon
+ \asymp \frac{XQ}{J}X^\varepsilon.
+\]
+Condition \eqref{eq:tpc21-strict-single-leg-range} gives
+\eqref{eq:tpc21-J-power-margin}.  Choose \(\varepsilon\) smaller than
+a fixed fraction of \(1/2-\delta+\eta_0\).  The resulting fixed power
+saving dominates every prescribed power of \(\log X\), proving
+\eqref{eq:tpc21-strict-profile-mean-saving}.
+
+For the profile ledger, write
+\(L=X^{\lambda+o(1)}\) and
+\(D\le X^{1/4-\delta/2+o(1)}\).  Then
+\[
+ J\asymp X/(LD)
+ \ge X^{3/4-\lambda+\delta/2+o(1)}.
+\]
+Substitution of \(\lambda=10/21-\sigma_0\) and
+\(\lambda=8/17-\sigma_0\) gives
+\eqref{eq:tpc21-two-profile-J-ledger}.
+\end{proof}
+
+\begin{remark}[What has been closed]
+\label{rem:tpc21-mean-closure-scope}
+The estimate is absolute in the lcm denominator and uses no
+cancellation between distinct \(q\)'s.  It closes the explicit
+Ramanujan mean of the chosen compatible short--short packet.  It does
+not estimate the centered fiber discrepancy, restore either
+large-divisor leg, or bound the full primitive residual correlation.
+\end{remark}

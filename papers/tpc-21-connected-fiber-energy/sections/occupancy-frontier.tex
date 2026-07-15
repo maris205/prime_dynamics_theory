@@ -1,0 +1,309 @@
+\section{Deterministic row occupancy and the long-lcm frontier}
+\label{sec:tpc21-occupancy-frontier}
+
+This section uses one feature which is absent from an arbitrary fiber
+vector: the fibers come from rows \(m=\ell d\), with
+\(\ell\asymp L\), \(d\asymp D\), and \(L>2R\).  It gives a genuine
+anti-concentration estimate, but the resulting discrepancy bound reaches
+only the already-completable side of the joint-period boundary.  The
+Ramanujan mean is handled separately and more strongly in
+\cref{sec:tpc21-mean-closure}.
+
+\subsection{Safe restoration of the Cartesian row packet}
+
+Put
+\begin{equation}
+ Z_m^{\mathrm{sh}}(j)
+ =\sum_{\substack{u\le R\\(u,mH)=1}}
+ b_R(u)\left(\one_{u\mid mj+h}-\frac1u\right).
+ \label{eq:tpc21-short-signal}
+\end{equation}
+Only the short coefficient \(b_R(u)\one_{u\le R}\) is used here.
+
+\begin{lemma}[Pointwise size of the isolated short signal]
+\label{lem:tpc21-short-pointwise}
+Uniformly on the TPC row and orbit support, for every fixed
+\(\epsilon>0\),
+\begin{equation}
+ |Z_m^{\mathrm{sh}}(j)|\ll_{\epsilon,h}X^\epsilon.
+ \label{eq:tpc21-short-pointwise}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The coefficient is squarefree supported and
+\begin{equation}
+ \max_{u\le R}|b_R(u)|\ll (\log(2R))^2,
+ \qquad
+ \sum_{u\le R}\frac{|b_R(u)|}{u}\ll(\log(2R))^2.
+ \label{eq:tpc21-b-short-bounds}
+\end{equation}
+Indeed, the first estimate follows from the positive formula for
+\(\lambda'_R\), while the second follows from
+\(b_R(u)=-\mu(u)\log u-\lambda'_R(u)\) and the Euler-product estimate
+\(\sum_{u\le R}|\lambda'_R(u)|/u\ll(\log(2R))^2\).
+Consequently
+\[
+ |Z_m^{\mathrm{sh}}(j)|
+ \le \tau(mj+h)\max_{u\le R}|b_R(u)|
+     +\sum_{u\le R}\frac{|b_R(u)|}{u}.
+\]
+The targets are \(O(X)\), so the standard divisor bound proves
+\eqref{eq:tpc21-short-pointwise}.
+\end{proof}
+
+\begin{proposition}[Scalar-safe unpruning]
+\label{prop:tpc21-scalar-unpruning}
+Fix \(\kappa,\lambda_0>0\), assume \(L\ge X^{\lambda_0}\), and let the
+row weights be polylogarithmically bounded.  In a scalar short--short
+correlation, the diagonal, same-source, near-determinant, and large
+row-gcd pairs may be restored at total cost
+\begin{align}
+ O_\epsilon\!\left(
+ X^{1+\epsilon}
+ +XQ\{L^{-1}+X^{-\kappa}\}X^\epsilon
+ \right).
+ \label{eq:tpc21-unpruning-error}
+\end{align}
+In particular, after taking \(\epsilon>0\) sufficiently small, this is
+\(O_A(XQ(\log X)^{-A})\) for every fixed \(A>0\).
+\end{proposition}
+
+\begin{proof}
+Apply \cref{lem:tpc21-short-pointwise} to both short signals and repeat
+the tuple counts in the TPC-18 degenerate-channel removal
+\citep{WangTPC18}.  The diagonal
+has \(O(LDJ)=O(X)\) tuples.  The same-source channel has
+\(O(LD^2J)=O(XQ/L)\) tuples, the near channel has
+\(O(XQ(X^{-\kappa}+L^{-1}))\), and the large-gcd channel has
+\(O(XQX^{-\kappa})\).  Source logarithms and bounded smooth weights are
+absorbed into \(X^\epsilon\).  Since \(Q\ge L\ge X^{\lambda_0}\), the
+diagonal also has a fixed power saving relative to \(XQ\).
+\end{proof}
+
+\begin{remark}[The order of operations matters]
+\label{rem:tpc21-unpruning-caveat}
+\Cref{prop:tpc21-scalar-unpruning} permits restoration of the full
+Cartesian row set in the \emph{total scalar short--short packet}.  It
+does not say that every individual \(q\)-fiber, Poisson frequency, or
+mean/discrepancy piece of the excluded rows is small.  Thus one must
+unprune before the fiber decomposition and keep
+\eqref{eq:tpc21-unpruning-error} outside it; coefficientwise unpruning
+would be an unjustified stronger assertion.
+\end{remark}
+
+\subsection{A row-fiber occupancy theorem}
+
+Let \(\mathscr A\) be the full row family
+\begin{equation}
+ \alpha=(\ell,d),\qquad
+ \ell\in[L/2,2L]\text{ prime},\qquad
+ d\in[D,2D]\cap[1,V],\qquad m_\alpha=\ell d,
+ \label{eq:tpc21-row-family}
+\end{equation}
+with any rowwise coprimality masks inserted into the coefficients.  A
+smooth separation of the original two-row weight gives bilinear packets
+\(x_\alpha y_\beta F(j/J)\).  We assume
+\begin{equation}
+ |x_\alpha|\le W_x,\qquad |y_\alpha|\le W_y,
+ \label{eq:tpc21-row-weight-size}
+\end{equation}
+where \(W_x,W_y\) are polylogarithmic in the application.  For
+squarefree \(u\le R\), \((u,H)=1\), define
+\begin{equation}
+ A_u^x(\kappa)
+ =\sum_{\substack{\alpha\in\mathscr A\\
+ m_\alpha\kappa\equiv-h\ (\bmod u)}}x_\alpha,
+ \qquad \kappa\in\mathcal U_u,
+ \label{eq:tpc21-one-row-fiber}
+\end{equation}
+and define \(A_u^y\) similarly.
+
+\begin{lemma}[Deterministic row anti-concentration]
+\label{lem:tpc21-row-occupancy}
+Uniformly for \(u\le R\),
+\begin{align}
+ \|A_u^x\|_\infty
+ &\ll W_x\frac Qu,
+ \label{eq:tpc21-row-linfty}\\
+ \sum_{\kappa\in\mathcal U_u}|A_u^x(\kappa)|
+ &\ll W_xQ,
+ \label{eq:tpc21-row-lone}\\
+ \|A_u^x\|_2
+ &\ll W_x\frac Q{\sqrt u}.
+ \label{eq:tpc21-row-ltwo}
+\end{align}
+The same estimates hold with \(x\) replaced by \(y\).
+\end{lemma}
+
+\begin{proof}
+Fix \(d\) and \(\kappa\).  The congruence in
+\eqref{eq:tpc21-one-row-fiber} confines \(\ell\) to one class modulo
+\(u\).  An interval of length \(O(L)\) contains
+\(O(L/u+1)=O(L/u)\) integers in that class because \(L>2R\ge2u\).
+There are \(O(D)\) choices of \(d\), proving
+\eqref{eq:tpc21-row-linfty}.  Every admissible row belongs to exactly
+one class \(\kappa\), so summing absolute values before grouping proves
+\eqref{eq:tpc21-row-lone}.  Finally,
+\(\|A\|_2^2\le\|A\|_\infty\|A\|_1\), which gives
+\eqref{eq:tpc21-row-ltwo}.
+\end{proof}
+
+Let \(\vartheta\) be supported on squarefree \(u\le R\), and suppose
+\begin{equation}
+ |\vartheta(u)|\le\Theta_R.
+ \label{eq:tpc21-theta-size}
+\end{equation}
+Both \(\lambda'_R(u)\) and \(b_R(u)\one_{u\le R}\) satisfy this with
+\(\Theta_R\ll(\log(2R))^2\).  For squarefree \(q\) with \((q,H)=1\),
+define the full
+bilinear lcm fiber
+\begin{equation}
+ Z_q^{x,y}(\kappa)
+ =\sum_{\substack{u,v\le R\\{}[u,v]=q}}
+ \vartheta(u)\vartheta(v)
+ A_u^x(\kappa\bmod u)A_v^y(\kappa\bmod v),
+ \qquad \kappa\in\mathcal U_q.
+ \label{eq:tpc21-full-lcm-fiber}
+\end{equation}
+No complex conjugation is implicit in \eqref{eq:tpc21-full-lcm-fiber};
+after Mellin separation the packet is bilinear.  A Hermitian square is
+the special case in which the second factor is conjugated.
+
+\begin{theorem}[Actual-fiber sup norm and variance]
+\label{thm:tpc21-occupancy-variance}
+Put
+\begin{equation}
+ \mathfrak g(q)=\prod_{p\mid q}\left(2+\frac1p\right).
+ \label{eq:tpc21-occupancy-gq}
+\end{equation}
+Then
+\begin{align}
+ \|Z_q^{x,y}\|_\infty
+ &\ll W_xW_y\Theta_R^2Q^2\frac{\mathfrak g(q)}q,
+ \label{eq:tpc21-fiber-linfty}\\
+ |\overline Z_q^{x,y}|
+ &\ll W_xW_y\Theta_R^2Q^2\frac{\mathfrak g(q)}q,
+ \label{eq:tpc21-fiber-mean-bound}\\
+ \|D_q^{x,y}\|_2
+ &\ll W_xW_y\Theta_R^2Q^2
+       \frac{\mathfrak g(q)}{\sqrt q},
+ \label{eq:tpc21-fiber-discrepancy-bound}
+\end{align}
+where \(D_q^{x,y}=Z_q^{x,y}-\overline Z_q^{x,y}\) and the mean is over
+\(\mathcal U_q\).  The same three estimates hold after multiplying
+each row pair in \eqref{eq:tpc21-full-lcm-fiber} by any Schur mask of
+modulus at most \(1\), in particular by the generic mask
+\eqref{eq:tpc21-generic-mask}.
+\end{theorem}
+
+\begin{proof}
+For squarefree \(q\), independent assignment of every prime divisor to
+\(u\) only, \(v\) only, or both gives the exact identity
+\begin{equation}
+ \sum_{\substack{u,v\mid q\\{}[u,v]=q}}\frac1{uv}
+ =\prod_{p\mid q}\left(\frac2p+\frac1{p^2}\right)
+ =\frac1q\prod_{p\mid q}\left(2+\frac1p\right).
+ \label{eq:tpc21-exact-lcm-product}
+\end{equation}
+The restrictions \(u,v\le R\) can only decrease the positive sum.
+Insert \eqref{eq:tpc21-row-linfty} in
+\eqref{eq:tpc21-full-lcm-fiber} and use
+\eqref{eq:tpc21-exact-lcm-product} to obtain
+\eqref{eq:tpc21-fiber-linfty}.  If a Schur mask
+\(\mathfrak m(\alpha,\beta)\) with \(|\mathfrak m|\le1\) is inserted,
+the absolute value of its \((u,v,\kappa)\)-fiber is at most
+\[
+ \left(\sum_{\alpha\ {\rm in\ the}\ u{\rm\mbox{-}fiber}}|x_\alpha|\right)
+ \left(\sum_{\beta\ {\rm in\ the}\ v{\rm\mbox{-}fiber}}|y_\beta|\right),
+\]
+so exactly the same majorant applies.  The mean bound is immediate.
+Finally,
+subtraction of the mean is orthogonal in
+\(\ell^2(\mathcal U_q)\), and therefore
+\[
+ \|D_q^{x,y}\|_2\le\|Z_q^{x,y}\|_2
+ \le\sqrt{\varphi(q)}\,\|Z_q^{x,y}\|_\infty.
+\]
+This proves \eqref{eq:tpc21-fiber-discrepancy-bound}.
+\end{proof}
+
+\subsection{What the occupancy bound buys}
+
+Let \(q\asymp Y\) be a dyadic denominator block and retain the
+low-frequency window of TPC-20.  Assume \(J\ge4HX^{\epsilon_0}\), so
+that the positive and negative retained frequencies do not wrap modulo
+\(q\), and assume the polynomial fiber-mass condition needed to remove
+the rapidly decaying Fourier tail.
+
+\begin{corollary}[Dyadic discrepancy consequence]
+\label{cor:tpc21-dyadic-occupancy}
+For fixed \(H\), with a summed Fourier tail smaller than every power of
+\(X\),
+\begin{equation}
+ \sum_{q\asymp Y}|\mathcal L_q^{\mathrm{disc}}|
+ \ll_{F,H,\epsilon_0}
+ X^{\epsilon_0/2}W_xW_y\Theta_R^2
+ Q^2\sqrt{JY}\log(2Y),
+ \label{eq:tpc21-dyadic-discrepancy}
+\end{equation}
+Relative to the
+natural scale \(XQ=Q^2J\), the right-hand side is
+\begin{equation}
+ \ll X^{\epsilon_0/2}W_xW_y\Theta_R^2\log(2Y)
+ \sqrt{\frac YJ}.
+ \label{eq:tpc21-occupancy-ratio}
+\end{equation}
+Consequently this method gives a fixed power saving when
+\(Y\le JX^{-\eta}\), after taking \(0<\epsilon_0<\eta\), but gives no
+fixed power saving in a genuinely long block \(Y\ge JX^\eta\).
+\end{corollary}
+
+\begin{proof}
+The restricted-frequency Parseval estimate of TPC-20 gives
+\[
+ |\mathcal L_q^{\mathrm{disc}}|
+ \ll X^{\epsilon_0/2}\sqrt J\,\|D_q^{x,y}\|_2.
+\]
+Moreover, for \(\Re s>1\),
+\[
+ \sum_{q\ge1}\frac{\mu^2(q)\mathfrak g(q)}{q^s}
+ =\zeta(s)^2\mathcal H(s),
+\]
+where the local factor of \(\mathcal H\) is
+\[
+ \left(1+\left(2+\frac1p\right)p^{-s}\right)(1-p^{-s})^2.
+\]
+After the linear terms \(2p^{-s}\) cancel, the remaining Euler product
+is absolutely convergent for \(\Re s>1/2\).  If
+\(\mathcal H(s)=\sum_n h(n)n^{-s}\), then in particular
+\(\sum_n|h(n)|/n<\infty\).  Dirichlet convolution with the divisor
+function, followed by
+\(\sum_{n\le T}\tau(n)\ll T\log(2T)\), gives
+\begin{equation}
+ \sum_{q\le T}\mu^2(q)\mathfrak g(q)\ll T\log(2T),
+ \qquad
+ \sum_{q\asymp Y}\frac{\mu^2(q)\mathfrak g(q)}{\sqrt q}
+ \ll\sqrt Y\log(2Y).
+ \label{eq:tpc21-gq-average}
+\end{equation}
+Sum \eqref{eq:tpc21-fiber-discrepancy-bound} and use
+\eqref{eq:tpc21-gq-average}.  Division by \(Q^2J\) proves
+\eqref{eq:tpc21-occupancy-ratio}.
+\end{proof}
+
+\begin{remark}[A normalization gain, not a long-lcm estimate]
+\label{rem:tpc21-occupancy-frontier}
+The factor \(q^{-1/2}\) in
+\eqref{eq:tpc21-fiber-discrepancy-bound} is a genuine improvement over
+treating \(Z_q(\kappa)\) as an arbitrary fiber vector.  Nevertheless,
+\eqref{eq:tpc21-occupancy-ratio} crosses the natural scale precisely at
+\(Y\asymp J\), which is also the joint-period completion boundary up to
+fixed powers of \(X\) and the fixed factor \(H\).  Thus deterministic
+row occupancy does not penetrate the long-lcm gate.  This is a limit of
+the stated estimate, not a lower bound for the arithmetic packet.
+\end{remark}
+
+The mean term behaves better: \cref{thm:tpc21-summed-mean-closure}
+closes it absolutely for the original masked packet, without restoring
+the Cartesian row family or invoking the occupancy estimate.

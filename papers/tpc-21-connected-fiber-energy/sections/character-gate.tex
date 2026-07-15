@@ -1,0 +1,432 @@
+\section{The shared-factor character gate}
+\label{sec:tpc21-character}
+
+The additive transform in \eqref{eq:tpc21-long-packet} is naturally
+defined on the full cyclic group modulo \(q\).  The coefficient itself,
+however, is supported on the unit group.  Multiplicative Fourier
+analysis on that unit group retains the provenance of both rows and,
+in particular, keeps the generic Schur mask inside the transform.  This
+section gives the exact change of basis.  It is an identity, not an
+estimate for the resulting character moment.
+
+For a positive integer \(s\), write
+
+\[
+ G_s=(\mathbb Z/s\mathbb Z)^\times,
+ \qquad
+ \mathfrak X(s)=\widehat G_s,
+\]
+
+with \(G_1\) and \(\mathfrak X(1)\) interpreted as trivial groups.  A
+character is extended by zero away from the units whenever it is
+evaluated on an integer.  For \(f:G_s\to\mathbb C\), use the convention
+\begin{equation}
+ \widehat f^{\,\times}(\chi)
+ =\sum_{k\in G_s}f(k)\overline{\chi(k)}.
+ \label{eq:tpc21-multiplicative-transform}
+\end{equation}
+Then
+\begin{align}
+ f(k)
+ &=\frac1{\varphi(s)}
+   \sum_{\chi\in\mathfrak X(s)}
+   \widehat f^{\,\times}(\chi)\chi(k),
+ \label{eq:tpc21-multiplicative-inversion}\\
+ \sum_{k\in G_s}|f(k)|^2
+ &=\frac1{\varphi(s)}
+   \sum_{\chi\in\mathfrak X(s)}
+   |\widehat f^{\,\times}(\chi)|^2.
+ \label{eq:tpc21-multiplicative-parseval}
+\end{align}
+In particular, if
+\(f^\circ=f-|G_s|^{-1}\sum_{k\in G_s}f(k)\), then
+\begin{equation}
+ \boxed{
+ \|f^\circ\|_{2,G_s}^2
+ =\frac1{\varphi(s)}
+  \sum_{\substack{\chi\in\mathfrak X(s)\\\chi\ne\mathbf1_s}}
+  |\widehat f^{\,\times}(\chi)|^2.}
+ \label{eq:tpc21-nonprincipal-parseval}
+\end{equation}
+Thus ``connected'' below means that the principal unit-group character,
+equivalently the fiber mean, has been removed.
+
+\subsection{The masked shared-\texorpdfstring{\(g\)}{g} convolution}
+
+Fix squarefree divisor moduli \(u,v\leq R\) with \((uv,H)=1\).
+Modulus pairs failing this coprimality condition have empty admissible
+fibers and are omitted.  Compatibility of the two row labels is imposed
+inside the fiber.  Write
+\begin{equation}
+ g=(u,v),\qquad u=ga,\qquad v=gb,\qquad q=[u,v]=gab.
+ \label{eq:tpc21-character-gab}
+\end{equation}
+The integers \(g,a,b\) are pairwise coprime.  CRT therefore identifies
+\(G_q=G_g\times G_a\times G_b\).  Write a character of \(G_q\) as
+
+\[
+ \chi=\chi_g\boxtimes\chi_a\boxtimes\chi_b,
+ \qquad
+ \chi_c\in\mathfrak X(c).
+\]
+
+For characters \(\alpha\in\mathfrak X(u)\) and
+\(\beta\in\mathfrak X(v)\), define the masked two-row
+Dirichlet-character sum
+\begin{equation}
+ \mathcal B_{\mathfrak m}^{u,v}(\alpha,\beta)
+ =\sum_{\omega_1,\omega_2\in\mathcal A}
+ x_{\omega_1}y_{\omega_2}
+ \mathfrak m(\omega_1,\omega_2)
+ \alpha(m_{\omega_1})\beta(m_{\omega_2}).
+ \label{eq:tpc21-masked-B}
+\end{equation}
+Here \(\omega_i=(\ell_i,d_i)\) is a row label.  The zero extension of
+the characters inserts the row--modulus coprimality conditions.  There
+is no compatibility indicator in \eqref{eq:tpc21-masked-B}; it will be
+created exactly by averaging a character of the shared factor \(g\).
+
+\begin{theorem}[Exact masked shared-factor transform]
+\label{thm:tpc21-masked-shared-character}
+With the conventions above,
+\begin{equation}
+ \boxed{
+ \widehat Z_{u,v}^{\,\mathfrak m,\times}(\chi)
+ =\frac{\overline{\chi(-h)}}{\varphi(g)}
+  \sum_{\psi\in\mathfrak X(g)}
+  \mathcal B_{\mathfrak m}^{u,v}
+  \left(
+   (\chi_g\psi)\boxtimes\chi_a,
+   \overline\psi\boxtimes\chi_b
+  \right).}
+ \label{eq:tpc21-masked-shared-character}
+\end{equation}
+The factor \(1/\varphi(g)\) is essential.  It is the normalized
+orthogonality projector onto compatible row pairs.
+\end{theorem}
+
+\begin{proof}
+Suppose first that a pair of rows contributes to
+\(Z_{u,v}^{\mathfrak m}(\kappa)\).  In the CRT coordinates of
+\eqref{eq:tpc21-character-gab},
+\[
+ \kappa_g\equiv-h\overline{m_1}
+             \equiv-h\overline{m_2}\pmod g,
+ \quad
+ \kappa_a\equiv-h\overline{m_1}\pmod a,
+ \quad
+ \kappa_b\equiv-h\overline{m_2}\pmod b.
+\]
+Consequently
+\begin{equation}
+ \overline{\chi(\kappa)}
+ =\overline{\chi(-h)}
+  \chi_g(m_1)\chi_a(m_1)\chi_b(m_2).
+ \label{eq:tpc21-row-character-phase}
+\end{equation}
+For unit rows, character orthogonality gives
+\begin{equation}
+ \one_{\{m_1\equiv m_2\ (g)\}}
+ =\frac1{\varphi(g)}
+  \sum_{\psi\in\mathfrak X(g)}
+  \psi(m_1)\overline{\psi(m_2)}.
+ \label{eq:tpc21-shared-character-projector}
+\end{equation}
+Insert \eqref{eq:tpc21-row-character-phase} and
+\eqref{eq:tpc21-shared-character-projector} in the definition of the
+multiplicative transform, then interchange the finite sums.  The two
+row variables carry respectively
+\((\chi_g\psi)\boxtimes\chi_a\) and
+\(\overline\psi\boxtimes\chi_b\), proving
+\eqref{eq:tpc21-masked-shared-character}.
+\end{proof}
+
+The unmasked identity has an additional factorization.  Define the
+one-row Dirichlet polynomials
+\begin{equation}
+ \mathcal A_x^{(s)}(\rho)
+ =\sum_{\omega\in\mathcal A}x_\omega\rho(m_\omega),
+ \qquad
+ \mathcal A_y^{(s)}(\rho)
+ =\sum_{\omega\in\mathcal A}y_\omega\rho(m_\omega),
+ \qquad \rho\in\mathfrak X(s).
+ \label{eq:tpc21-row-Dirichlet-polynomials}
+\end{equation}
+When no ambiguity is possible, the superscript \(s\) is suppressed.
+The relation \(k\equiv-h\overline m\pmod s\) also gives the useful
+one-row formula
+\begin{equation}
+ \sum_{k\in G_s}A_s^x(k)\overline{\rho(k)}
+ =\overline{\rho(-h)}\,\mathcal A_x^{(s)}(\rho),
+ \label{eq:tpc21-row-fiber-character}
+\end{equation}
+and likewise for \(y\).  Indeed,
+\(\overline{\rho(-h\overline m)}
+=\overline{\rho(-h)}\rho(m)\).
+
+\begin{corollary}[Unmasked row-polynomial factorization]
+\label{cor:tpc21-unmasked-character-factorization}
+If \(\mathfrak m\equiv1\), then
+\begin{align}
+ \mathcal B_1^{u,v}(\alpha,\beta)
+ &=\mathcal A_x^{(u)}(\alpha)
+   \mathcal A_y^{(v)}(\beta),
+ \label{eq:tpc21-unmasked-B-factorization}\\
+ \widehat Z_{u,v}^{\,1,\times}(\chi)
+ &=\frac{\overline{\chi(-h)}}{\varphi(g)}
+   \sum_{\psi\in\mathfrak X(g)}
+   \mathcal A_x^{(u)}
+    ((\chi_g\psi)\boxtimes\chi_a)
+   \mathcal A_y^{(v)}
+    (\overline\psi\boxtimes\chi_b).
+ \label{eq:tpc21-unmasked-shared-character}
+\end{align}
+No conjugation of the \(y\)-polynomial is implicit.  In a Hermitian
+packet it is already contained in the choice
+\(y_\omega=\overline{x_\omega}\).
+\end{corollary}
+
+For the generic mask \eqref{eq:tpc21-generic-mask}, the factorization
+\eqref{eq:tpc21-unmasked-B-factorization} is unavailable: the
+determinant, same-source, and divisor-gcd conditions jointly depend on
+both row labels.  Formula \eqref{eq:tpc21-masked-shared-character}
+remains exact because it never removes that mask.
+
+\subsection{Lcm aggregation and the exact fourth-moment gate}
+
+Fix an admissible squarefree \(q\), so that \((q,H)=1\).  For every
+ordered pair \(u,v\leq R\) with
+\([u,v]=q\), use the decomposition \eqref{eq:tpc21-character-gab} and
+restrict a given \(\chi\in\mathfrak X(q)\) to the corresponding CRT
+factors.  Define
+\begin{align}
+ \mathcal T_q^{\mathfrak m}(\chi)
+ &:=\sum_{\substack{u,v\leq R\\{}[u,v]=q}}
+ \frac{\vartheta_R(u)\vartheta_R(v)}{\varphi((u,v))}
+ \sum_{\psi\in\mathfrak X((u,v))}
+ \mathcal B_{\mathfrak m}^{u,v}
+ \left(
+  (\chi_g\psi)\boxtimes\chi_a,
+  \overline\psi\boxtimes\chi_b
+ \right).
+ \label{eq:tpc21-aggregated-character-coefficient}
+\end{align}
+Linearity and \cref{thm:tpc21-masked-shared-character} give
+\begin{equation}
+ \boxed{
+ \widehat Z_q^{\,\mathfrak m,\times}(\chi)
+ =\overline{\chi(-h)}\,
+  \mathcal T_q^{\mathfrak m}(\chi).}
+ \label{eq:tpc21-aggregated-character-transform}
+\end{equation}
+Since \((q,h)=1\), the phase on the right has modulus one.
+
+\begin{theorem}[Exact masked connected character moment]
+\label{thm:tpc21-exact-character-gate}
+Define
+\begin{equation}
+ \mathfrak F_q^{\mathfrak m}
+ =\frac1{\varphi(q)}
+  \sum_{\substack{\chi\in\mathfrak X(q)\\\chi\ne\mathbf1_q}}
+  |\mathcal T_q^{\mathfrak m}(\chi)|^2.
+ \label{eq:tpc21-masked-fourth-moment}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \mathfrak F_q^{\mathfrak m}
+ =\|D_q^{\mathfrak m}\|_{2,\mathcal U_q}^2.}
+ \label{eq:tpc21-character-gate-identity}
+\end{equation}
+Thus the inherited sufficient condition
+\eqref{eq:tpc21-inherited-gate} is exactly a bound for
+\begin{equation}
+ \sum_{q\in\mathcal Q}
+ \bigl(\mathfrak F_q^{\mathfrak m}\bigr)^{1/2}.
+ \label{eq:tpc21-family-character-gate}
+\end{equation}
+For example, with the epsilon bookkeeping of TPC-20, it suffices to
+prove
+\begin{equation}
+ \sum_{q\in\mathcal Q}
+ \bigl(\mathfrak F_q^{\mathfrak m}\bigr)^{1/2}
+ \ll X^{-\eps}\frac{XQ}{\sqrt J}(\log X)^{-B}.
+ \label{eq:tpc21-sufficient-character-gate}
+\end{equation}
+This is a sufficient input for the chosen short--short discrepancy
+packet, not a necessary condition for cancellation of the scalar
+correlation.
+\end{theorem}
+
+\begin{proof}
+Apply \eqref{eq:tpc21-nonprincipal-parseval} to
+\(f=Z_q^{\mathfrak m}\), and then use
+\eqref{eq:tpc21-aggregated-character-transform}.  The phase
+\(\overline{\chi(-h)}\) disappears after taking absolute values.
+\end{proof}
+
+In the unmasked case, substituting
+\eqref{eq:tpc21-unmasked-B-factorization} into
+\eqref{eq:tpc21-masked-fourth-moment} makes it literally a fourth
+moment of one-row Dirichlet polynomials, coupled by the shared
+\(g\)-character convolution and the outer lcm sum.  In the generic
+case it is the square of a masked two-row character sum, hence still a
+four-row moment, but not a product of two independent second moments.
+The word ``connected'' removes only the principal fiber mode.  The
+generic row mask must remain inside
+\(\mathcal B_{\mathfrak m}^{u,v}\); why scalar degenerate removal cannot
+be performed after this nonlinear norm is explained in
+\cref{sec:tpc21-nonlinear}.
+
+\subsection{The Gauss--conductor bridge back to additive frequency}
+
+Put \(e_s(z)=\exp(2\pi iz/s)\), and for
+\(\chi\in\mathfrak X(q)\) define the generalized Gauss sum
+\begin{equation}
+ G_q(\chi;t)
+ =\sum_{k\in G_q}\chi(k)e_q(tk).
+ \label{eq:tpc21-generalized-Gauss}
+\end{equation}
+Multiplicative inversion gives the exact bridge
+\begin{equation}
+ \boxed{
+ S_q(r)
+ =\frac1{\varphi(q)}
+  \sum_{\chi\in\mathfrak X(q)}
+  \overline{\chi(-h)}
+  \mathcal T_q^{\mathfrak m}(\chi)
+  G_q(\chi;r\overline H).}
+ \label{eq:tpc21-additive-character-bridge}
+\end{equation}
+
+For completeness, the Gauss factor in
+\eqref{eq:tpc21-additive-character-bridge} can be evaluated at every
+integer, not merely at primitive additive frequencies.
+
+\begin{proposition}[Induced-character Gauss factor]
+\label{prop:tpc21-induced-Gauss}
+Suppose that \(q\) is squarefree.  Let \(f\mid q\) be the conductor of
+\(\chi\), let \(\chi^*\pmod f\) be the inducing primitive character,
+and put \(d=q/f\).  Then, for every integer \(t\),
+\begin{equation}
+ G_q(\chi;t)
+ =
+ \begin{cases}
+  \overline{\chi^*(t)}\chi^*(d)
+  \tau_f(\chi^*)c_d(t),&(t,f)=1,\\
+  0,&(t,f)>1,
+ \end{cases}
+ \label{eq:tpc21-induced-Gauss}
+\end{equation}
+where
+\(\tau_f(\chi^*)=\sum_{x\bmod f}\chi^*(x)e_f(x)\), and the
+conductor-one conventions are \(\tau_1(\mathbf1)=1\) and
+\(\chi^*(d)=1\).
+\end{proposition}
+
+\begin{proof}
+Factor the sum by CRT modulo \(f\) and \(d\).  The two factors are
+\[
+ \sum_{x\in G_f}\chi^*(x)e_f(t\overline d\,x)
+ \quad\text{and}\quad
+ \sum_{y\in G_d}e_d(t\overline f\,y).
+\]
+The first vanishes when \((t,f)>1\), and otherwise equals
+\(\overline{\chi^*(t)}\chi^*(d)\tau_f(\chi^*)\); the second is
+\(c_d(t)\).
+\end{proof}
+
+As \((H,q)=1\), inserting \eqref{eq:tpc21-induced-Gauss} in
+\eqref{eq:tpc21-additive-character-bridge} yields
+\begin{align}
+ S_q(r)
+ ={}&\frac1{\varphi(q)}
+ \sum_{\substack{f\mid q\\(f,r)=1}}c_{q/f}(r)
+ \sum_{\chi^*\ (\bmod f)}^{*}
+ \chi^*(q/f)\tau_f(\chi^*)
+ \overline{\chi^*(-hr\overline H)}
+ \mathcal T_q^{\mathfrak m}(\chi_q),
+ \label{eq:tpc21-conductor-expansion}
+\end{align}
+where \(\chi_q\) is the character modulo \(q\) induced by \(\chi^*\),
+and the star denotes primitive characters.  The \(f=1\) term is exactly
+\begin{equation}
+ \frac{\mathcal T_q^{\mathfrak m}(\mathbf1_q)}{\varphi(q)}c_q(r)
+ =\overline Z_q^{\mathfrak m}c_q(r),
+ \label{eq:tpc21-conductor-principal-term}
+\end{equation}
+so the terms \(f>1\) give the additive discrepancy.
+
+The conductor normalization is important.  If \((r,f)=1\), then
+\begin{equation}
+ |G_q(\chi;r\overline H)|
+ =\sqrt f\,|c_{q/f}(r)|.
+ \label{eq:tpc21-Gauss-conductor-size}
+\end{equation}
+In particular, for \((r,q)=1\) the magnitude is \(\sqrt f\), not
+\(\sqrt q\) unless \(\chi\) is primitive modulo \(q\).  Applying the
+primitive Gauss magnitude \(\sqrt q\) to every character modulo \(q\)
+would therefore be incorrect.
+
+There is also no automatic average gain hidden in the conductors.  A
+local count at each prime \(p\mid q\) gives one principal character of
+conductor factor \(1\) and \(p-2\) nonprincipal characters of conductor
+factor \(p\).  Hence
+\begin{equation}
+ \sum_{\chi\in\mathfrak X(q)}\operatorname{cond}(\chi)
+ =\prod_{p\mid q}\bigl(1+p(p-2)\bigr)
+ =\varphi(q)^2.
+ \label{eq:tpc21-conductor-mass}
+\end{equation}
+For \((t,q)=1\), this is equivalently recovered by applying character
+Parseval to the unit-modulus function \(k\mapsto e_q(tk)\), which gives
+\(\sum_\chi|G_q(\chi;t)|^2=\varphi(q)^2\).  Thus a generic
+Cauchy--Schwarz estimate in the character variable merely transfers
+the full fiber energy; it does not create cancellation.
+
+\subsection{The naive large-sieve boundary}
+
+The standard multiplicative large sieve states, in one common
+normalization, that
+\begin{equation}
+ \sum_{s\leq S}\frac{s}{\varphi(s)}
+ \sum_{\chi\ (\bmod s)}^{*}
+ \left|\sum_{n\leq N}a_n\chi(n)\right|^2
+ \ll (S^2+N)\sum_{n\leq N}|a_n|^2
+ \label{eq:tpc21-standard-character-large-sieve}
+\end{equation}
+\cite[Chapter~7]{IwaniecKowalski2004}.  This applies directly to one
+of the polynomials in \eqref{eq:tpc21-row-Dirichlet-polynomials}.  It
+does not, without further work, estimate
+\eqref{eq:tpc21-masked-fourth-moment}: that expression contains a
+shared-\(g\) convolution, an lcm aggregation, the square of a bilinear
+row sum, and the genuinely two-row mask \(\mathfrak m\).  Dropping the
+mask to manufacture a product of polynomials changes the nonlinear
+quantity, as \cref{sec:tpc21-nonlinear} makes explicit.
+
+At a fixed modulus, complete character orthogonality already gives
+\begin{equation}
+ \frac1{\varphi(s)}
+ \sum_{\rho\in\mathfrak X(s)}
+ |\mathcal A_x^{(s)}(\rho)|^2
+ =\sum_{c\in G_s}
+  \left|\sum_{\substack{\omega\in\mathcal A\\m_\omega\equiv c\ (s)}}
+  x_\omega\right|^2.
+ \label{eq:tpc21-fixed-character-occupancy}
+\end{equation}
+Thus the naive second-moment route is exactly a row-occupancy bound
+unless additional cancellation in the actual coefficients is proved.
+The unconditional occupancy estimate developed in
+\cref{sec:tpc21-occupancy-frontier}, when inserted in the inherited
+restricted-frequency gate, has relative size
+\(X^{o(1)}\sqrt{Y/J}\) on \(q\asymp Y\).  It closes only the
+short-joint-period side \(Y<J\) with a fixed margin and supplies no
+fixed-power saving in a genuinely long block \(Y\geq JX^\eta\).
+
+Consequently the character change of basis does not by itself produce
+a new long-lcm wedge.  Such a wedge would require a theorem for the
+actual masked moment \eqref{eq:tpc21-masked-fourth-moment}, or another
+arithmetic estimate that retains its row-pair mask and beats the
+occupancy scale by a quantified margin.  No such estimate is claimed
+here; the large-divisor legs excluded in \eqref{eq:tpc21-theta-choices}
+also remain outside this reduction.

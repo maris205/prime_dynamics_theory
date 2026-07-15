@@ -1,0 +1,296 @@
+\section{Divisor-lattice reassembly of rank-one fibers}
+\label{sec:tpc21-divisor}
+
+This section records the exact extra structure present before the generic
+row-pair mask is imposed.  It applies to one separated rank-one packet;
+the two row weights need not be complex conjugates.  The distinction is
+important because smooth separation preserves bilinear rank one, but it
+does not make every individual separated packet positive semidefinite.
+All divisor layers in this section are admissible and hence coprime to
+\(H\); identically zero inadmissible layers are omitted.
+
+For \(u\le R\) and \(\xi\in\cU_u\), define
+\begin{equation}
+ A_u^x(\xi)
+ =\sum_{\substack{\alpha\in\cA\\
+        m_\alpha\equiv-h\overline\xi\ (u)}}x_\alpha,
+ \qquad
+ A_u^y(\xi)
+ =\sum_{\substack{\alpha\in\cA\\
+        m_\alpha\equiv-h\overline\xi\ (u)}}y_\alpha.
+ \label{eq:tpc21-one-row-fibers}
+\end{equation}
+The congruence forces \((m_\alpha,u)=1\).  If \(u\mid s\), we lift a
+function on \(\cU_u\) to \(\cU_s\) through reduction modulo \(u\),
+without changing its notation.  Put
+\begin{equation}
+ B_s^x(\xi)=\sum_{u\mid s}\vartheta_R(u)A_u^x(\xi\bmod u),
+ \qquad
+ B_s^y(\xi)=\sum_{u\mid s}\vartheta_R(u)A_u^y(\xi\bmod u).
+ \label{eq:tpc21-divisor-prefixes}
+\end{equation}
+The coefficient \(\vartheta_R\) is extended by zero, so divisors outside
+the chosen short support make no contribution.
+
+\begin{theorem}[Lcm layers are divisor M\"obius differences]
+\label{thm:tpc21-lcm-mobius-reassembly}
+For the unmasked packet \(\mathfrak m\equiv1\), one has pointwise on
+\(\cU_q\)
+\begin{equation}
+ \boxed{
+ Z_q^{1}(\kappa)
+ =\sum_{s\mid q}\mu(q/s)
+ B_s^x(\kappa\bmod s)B_s^y(\kappa\bmod s).}
+ \label{eq:tpc21-lcm-mobius-reassembly}
+\end{equation}
+Equivalently,
+\begin{equation}
+ \sum_{q\mid s}Z_q^{1}(\xi\bmod q)
+ =B_s^x(\xi)B_s^y(\xi).
+ \label{eq:tpc21-cumulative-rank-one}
+\end{equation}
+In the Hermitian case \(y_\alpha=\overline{x_\alpha}\), the right side
+of \eqref{eq:tpc21-cumulative-rank-one} is
+\(|B_s^x(\xi)|^2\ge0\).
+\end{theorem}
+
+\begin{proof}
+For fixed \(u,v\), the two row sums separate:
+\[
+ Z_{u,v}^{1}(\kappa)
+ =A_u^x(\kappa\bmod u)A_v^y(\kappa\bmod v).
+\]
+Therefore
+\begin{align*}
+ B_s^x(\xi)B_s^y(\xi)
+ &=\sum_{u,v\mid s}\vartheta_R(u)\vartheta_R(v)
+ A_u^x(\xi)A_v^y(\xi)\\
+ &=\sum_{q\mid s}Z_q^{1}(\xi\bmod q),
+\end{align*}
+because \(u,v\mid s\) is equivalent to \([u,v]\mid s\).  Ordinary
+M\"obius inversion on the divisor lattice proves
+\eqref{eq:tpc21-lcm-mobius-reassembly}.
+\end{proof}
+
+\subsection{Means, centered prefix products, and covariance}
+
+Define
+\begin{equation}
+ E_s^{x,y}
+ =\frac1{\varphi(s)}\sum_{\xi\in\cU_s}
+ B_s^x(\xi)B_s^y(\xi),
+ \qquad
+ d_s^{x,y}(\xi)
+ =B_s^x(\xi)B_s^y(\xi)-E_s^{x,y}.
+ \label{eq:tpc21-prefix-mean-discrepancy}
+\end{equation}
+The reduction map \(\cU_q\to\cU_s\) has exactly
+\(\varphi(q)/\varphi(s)\) elements in every fiber when \(s\mid q\).
+Taking means and then centering
+\eqref{eq:tpc21-lcm-mobius-reassembly} gives the following exact
+consequence.
+
+\begin{corollary}[Divisor lift of the unmasked discrepancy]
+\label{cor:tpc21-divisor-lift-discrepancy}
+For every squarefree \(q\),
+\begin{align}
+ \overline Z_q^{1}
+ &=\sum_{s\mid q}\mu(q/s)E_s^{x,y},
+ \label{eq:tpc21-divisor-lift-mean}\\
+ D_q^{1}(\kappa)
+ &=\sum_{s\mid q}\mu(q/s)
+ d_s^{x,y}(\kappa\bmod s).
+ \label{eq:tpc21-divisor-lift-D}
+\end{align}
+In the Hermitian case \(E_s^{x,\overline x}\ge0\), and
+\begin{equation}
+ \sum_{q\mid s}\overline Z_q^{1}=E_s^{x,\overline x}\ge0.
+ \label{eq:tpc21-cumulative-mean-positive}
+\end{equation}
+No positivity is asserted for an individual lcm layer.
+\end{corollary}
+
+For \(s_1,s_2\mid q\), put \(w=[s_1,s_2]\) and define the normalized
+prefix covariance
+\begin{equation}
+ \Gamma_{s_1,s_2}
+ =\frac1{\varphi(w)}\sum_{\xi\in\cU_w}
+ d_{s_1}^{x,y}(\xi\bmod s_1)
+ \overline{d_{s_2}^{x,y}(\xi\bmod s_2)}.
+ \label{eq:tpc21-prefix-covariance}
+\end{equation}
+Expanding the square in \eqref{eq:tpc21-divisor-lift-D} gives the exact
+variance formula
+\begin{equation}
+ \boxed{
+ \lVert D_q^{1}\rVert_{2,\cU_q}^{2}
+ =\varphi(q)\sum_{s_1,s_2\mid q}
+ \mu(q/s_1)\mu(q/s_2)\Gamma_{s_1,s_2}.}
+ \label{eq:tpc21-exact-divisor-covariance}
+\end{equation}
+Thus even the unmasked variance is a connected divisor covariance, not
+the sum of independent prefix variances.
+
+\subsection{Additive Fourier lifting and primitive sign loss}
+
+Use the additive transform
+\begin{equation}
+ \widehat d_s^{x,y}(a)
+ =\sum_{\xi\in\cU_s}d_s^{x,y}(\xi)
+ e_s(a\overline H\xi).
+ \label{eq:tpc21-ds-additive-transform}
+\end{equation}
+When \(s=1\), the centered function is zero.  For \(s\mid q\), put
+\(t=q/s\); because \(q\) is squarefree, \((s,t)=1\).  Let
+\(\overline t\) denote the inverse of \(t\pmod s\).
+
+\begin{theorem}[CRT lift of the divisor discrepancy]
+\label{thm:tpc21-additive-divisor-lift}
+For every \(r\in\Z\),
+\begin{equation}
+ \boxed{
+ \widehat D_q^{1}(r)
+ =\sum_{s\mid q}\mu(t)c_t(r)
+ \widehat d_s^{x,y}(r\overline t\bmod s),
+ \qquad t=q/s.}
+ \label{eq:tpc21-additive-divisor-lift}
+\end{equation}
+Since \(t\) is squarefree,
+\begin{equation}
+ \mu(t)c_t(r)
+ =\mu((t,r))\varphi((t,r)).
+ \label{eq:tpc21-mobius-Ramanujan-product}
+\end{equation}
+In particular, if \((r,q)=1\), then
+\begin{equation}
+ \boxed{
+ \widehat D_q^{1}(r)
+ =\sum_{s\mid q}
+ \widehat d_s^{x,y}(r\overline{q/s}\bmod s).}
+ \label{eq:tpc21-primitive-frequency-sign-loss}
+\end{equation}
+All outer lcm M\"obius signs have disappeared.  The summands may still
+cancel through their internal phases; no positivity of the Fourier
+coefficients is claimed.
+\end{theorem}
+
+\begin{proof}
+Lift one function \(d_s^{x,y}\) from \(\cU_s\) to \(\cU_q\).  CRT
+factorization with \(q=st\) gives
+\begin{align*}
+ &\sum_{\kappa\in\cU_q}d_s^{x,y}(\kappa\bmod s)
+ e_q(r\overline H\kappa)\\
+ &\qquad=
+ \widehat d_s^{x,y}(r\overline t\bmod s)
+ \sum_{\eta\in\cU_t}e_t(r\overline H\overline s\eta)\\
+ &\qquad=
+ c_t(r)\widehat d_s^{x,y}(r\overline t\bmod s).
+\end{align*}
+Insert \eqref{eq:tpc21-divisor-lift-D}.  For squarefree \(t\), the
+standard formula
+\(c_t(r)=\mu(t/(t,r))\varphi((t,r))\) proves
+\eqref{eq:tpc21-mobius-Ramanujan-product} and the primitive-frequency
+specialization.
+\end{proof}
+
+The same lifting gives a useful but generally lossy sufficient bound:
+\begin{equation}
+ \boxed{
+ \lVert D_q^{1}\rVert_{2,\cU_q}
+ \le\sum_{s\mid q}
+ \sqrt{\frac{\varphi(q)}{\varphi(s)}}
+ \lVert d_s^{x,y}\rVert_{2,\cU_s}.}
+ \label{eq:tpc21-prefix-triangle-bound}
+\end{equation}
+It follows by applying the triangle inequality to
+\eqref{eq:tpc21-divisor-lift-D}; the norm of a lifted function is
+multiplied by \(\sqrt{\varphi(q)/\varphi(s)}\).
+
+\subsection{Reduction to one-row second and fourth moments}
+
+Let
+\begin{equation}
+ C_s^x=\frac1{\varphi(s)}\sum_{\xi\in\cU_s}B_s^x(\xi),
+ \qquad
+ \mathcal E_s^x(\xi)=B_s^x(\xi)-C_s^x,
+ \label{eq:tpc21-one-row-centered-prefix}
+\end{equation}
+and define \(C_s^y,\mathcal E_s^y\) analogously.  Direct expansion gives
+\begin{align}
+ d_s^{x,y}
+ ={}&C_s^x\mathcal E_s^y+C_s^y\mathcal E_s^x
+ +\mathcal E_s^x\mathcal E_s^y
+ -\frac1{\varphi(s)}\sum_{\xi\in\cU_s}
+   \mathcal E_s^x(\xi)\mathcal E_s^y(\xi).
+ \label{eq:tpc21-prefix-error-expansion}
+\end{align}
+
+\begin{proposition}[One-row moment transfer]
+\label{prop:tpc21-one-row-moment-transfer}
+With unnormalized \(L^p(\cU_s)\) norms,
+\begin{equation}
+ \boxed{
+ \lVert d_s^{x,y}\rVert_2
+ \le |C_s^x|\lVert\mathcal E_s^y\rVert_2
+    +|C_s^y|\lVert\mathcal E_s^x\rVert_2
+    +2\lVert\mathcal E_s^x\rVert_4
+      \lVert\mathcal E_s^y\rVert_4.}
+ \label{eq:tpc21-one-row-moment-transfer}
+\end{equation}
+In the Hermitian case this becomes
+\begin{equation}
+ \lVert |B_s^x|^2-E_s^{x,\overline x}\rVert_2
+ \le2|C_s^x|\lVert\mathcal E_s^x\rVert_2
+ +2\lVert\mathcal E_s^x\rVert_4^2.
+ \label{eq:tpc21-hermitian-fourth-moment-gate}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Only the centered product in
+\eqref{eq:tpc21-prefix-error-expansion} needs attention.  H\"older gives
+\(\lVert\mathcal E_s^x\mathcal E_s^y\rVert_2
+ \le\lVert\mathcal E_s^x\rVert_4
+      \lVert\mathcal E_s^y\rVert_4\).
+Moreover,
+\[
+ \sqrt{\varphi(s)}
+ \left|\frac1{\varphi(s)}\sum_\xi
+ \mathcal E_s^x(\xi)\mathcal E_s^y(\xi)\right|
+ \le \lVert\mathcal E_s^x\rVert_4
+      \lVert\mathcal E_s^y\rVert_4.
+\]
+The triangle inequality proves the claim.
+\end{proof}
+
+The row means and errors in this proposition have a direct arithmetic
+interpretation.  Averaging \eqref{eq:tpc21-one-row-fibers} over
+\(\xi\in\cU_u\) yields
+\begin{equation}
+ \frac1{\varphi(u)}\sum_{\xi\in\cU_u}A_u^x(\xi)
+ =\frac1{\varphi(u)}
+  \sum_{\substack{\alpha\in\cA\\(m_\alpha,u)=1}}x_\alpha.
+ \label{eq:tpc21-Au-exact-mean}
+\end{equation}
+For the TPC rows, fixing \(d\) turns
+\(A_u^x(\xi)-\operatorname{avg}A_u^x\) into a prime-progression error
+for
+\begin{equation}
+ \ell\equiv-h\overline\xi\,\overline d\pmod u.
+ \label{eq:tpc21-row-prime-progression}
+\end{equation}
+Thus \eqref{eq:tpc21-one-row-moment-transfer} is a precise point of
+entry for progression second and fourth moments.  It is not itself such
+an estimate.
+
+\begin{remark}[Mask boundary]
+\label{rem:tpc21-divisor-mask-boundary}
+The divisor-lattice formulas in this section require a rank-one
+unmasked row packet.  A Schur mask depending jointly on \((m_1,m_2)\)
+does not factor through \eqref{eq:tpc21-one-row-fibers}.  The generic
+mask is treated without deletion in \cref{sec:tpc21-character}.
+Scalar degenerate removal does not justify inserting
+\(\mathfrak m\equiv1\) into the nonlinear norm
+\eqref{eq:tpc21-inherited-gate}; \cref{sec:tpc21-nonlinear} gives the
+exact counterexample.
+\end{remark}

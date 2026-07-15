@@ -1,0 +1,171 @@
+\section{The quantitative character-moment gate}
+\label{sec:tpc21-technology}
+
+The preceding sections remove the deterministic mean and identify two
+coefficient-independent bounds for the discrepancy.  This section
+records the exact improvement still required in a long dyadic lcm block
+and compares it with standard character and Kloosterman technology.
+
+\subsection{The gain ledger}
+
+Write
+\begin{equation}
+ q\asymp Y=X^{y+o(1)},\qquad
+ J=X^{j+o(1)},\qquad
+ Q=X^{\beta+o(1)},\qquad j=1-\beta.
+ \label{eq:tpc21-exponent-notation}
+\end{equation}
+The occupancy estimate gives, up to logarithms,
+\begin{equation}
+ \sum_{q\asymp Y}
+ \lVert D_q^{\mathfrak m}\rVert_{2,\cU_q}
+ \ll Q^2\sqrt Y\,X^\eps.
+ \label{eq:tpc21-occupancy-block-norm}
+\end{equation}
+Suppose a future arithmetic estimate improves this by a fixed power:
+\begin{equation}
+ \sum_{q\asymp Y}
+ \lVert D_q^{\mathfrak m}\rVert_{2,\cU_q}
+ \ll Q^2\sqrt Y\,X^{-\omega+\eps}.
+ \label{eq:tpc21-future-character-gain}
+\end{equation}
+
+\begin{proposition}[Gain threshold for the sufficient norm route]
+\label{prop:tpc21-required-gain}
+The combination of \eqref{eq:tpc21-future-character-gain} with the
+TPC-20 restricted-frequency inequality gives a fixed power saving
+relative to \(XQ=Q^2J\) whenever
+\begin{equation}
+ \boxed{\qquad
+ \omega>\frac{y-j}{2}
+ \qquad}
+ \label{eq:tpc21-required-gain}
+\end{equation}
+with a fixed margin.  At the maximal short--short denominator
+\begin{equation}
+ Y=R^2=X^{1-2\delta+o(1)},
+ \label{eq:tpc21-maximal-Y}
+\end{equation}
+condition \eqref{eq:tpc21-required-gain} becomes
+\begin{equation}
+ \omega>\frac{\beta-2\delta}{2}.
+ \label{eq:tpc21-top-required-gain}
+\end{equation}
+On the largest divisor slice,
+\(\beta=\lambda+1/4-\delta/2\), this is
+\begin{equation}
+ \boxed{\qquad
+ \omega>\frac{\lambda}{2}+\frac18-\frac{5\delta}{4}.
+ \qquad}
+ \label{eq:tpc21-profile-required-gain}
+\end{equation}
+These are requirements for this sufficient norm route, not lower bounds
+on every possible scalar method.
+\end{proposition}
+
+\begin{proof}
+Equations \eqref{eq:tpc21-inherited-gate} and
+\eqref{eq:tpc21-future-character-gain} give
+\[
+ \sum_{q\asymp Y}|\cL_q^{\rm disc}|
+ \ll Q^2\sqrt{JY}\,X^{-\omega+\eps}.
+\]
+After division by \(Q^2J\), the remaining factor is
+\(X^{(y-j)/2-\omega+\eps}\).  This is power-saving precisely under
+\eqref{eq:tpc21-required-gain} with a fixed margin.  Substitute
+\(y=1-2\delta\), \(j=1-\beta\), and then the displayed largest-slice
+value of \(\beta\).
+\end{proof}
+
+For the published TPC profile
+\(\lambda=10/21-\sigma_0\), the right side of
+\eqref{eq:tpc21-profile-required-gain} is
+\[
+ \frac{61}{168}-\frac{\sigma_0}{2}-\frac{5\delta}{4}.
+\]
+For the version-locked Li-v6 profile
+\(\lambda=8/17-\sigma_0\), it is
+\[
+ \frac{49}{136}-\frac{\sigma_0}{2}-\frac{5\delta}{4}.
+\]
+The symbol \(\sigma_0\) here is the inherited profile margin, while
+\(\omega\) denotes the new character-moment gain.  Neither displayed
+gain is proved in this paper.
+
+\subsection{What the ordinary character large sieve returns}
+
+The classical multiplicative large sieve in primitive-character form is
+recorded in \eqref{eq:tpc21-standard-character-large-sieve}; see also
+\citet[Chapter~7]{IwaniecKowalski2004}.  Passing between all and primitive
+characters costs only the usual divisor bookkeeping in the present
+squarefree setting.
+
+For a one-row TPC polynomial, the ambient length is \(N\asymp Q\) and
+the coefficient energy is \(O(QX^\eps)\).  When \(U\le\sqrt Q\),
+\eqref{eq:tpc21-standard-character-large-sieve} therefore has size
+\(Q^2X^\eps\), the same normalization already supplied by deterministic
+occupancy.  When \(U>\sqrt Q\), its \(U^2\) term is larger.  Applying
+Cauchy--Schwarz to the shared-\(g\) convolution in
+\cref{thm:tpc21-masked-shared-character} introduces a fourth
+moment rather than removing this cost.  Thus the ordinary large sieve,
+used without additional arithmetic structure, proves no
+\(\omega>0\) in a block with \(Y>J\).
+
+This comparison does not say that character methods are irrelevant.
+It says that the required input must exploit the specific masked
+convolution over the common factor \(g\), rather than apply the
+one-polynomial large sieve independently to every factor.
+
+\subsection{Why one-fraction black boxes do not yet apply}
+
+The bilinear Kloosterman-fraction estimate of
+\citet{DukeFriedlanderIwaniec1997} and the trilinear estimate of
+\citet{BettinChandee2018} take separated coefficient sequences.  The
+partially fixed-modulus preprint of \citet{Wright2026} retains an
+analogous separability requirement.  The generic transform in
+\cref{thm:tpc21-masked-shared-character} contains instead
+\[
+ \cB_{\mathfrak m}(\rho_1,\rho_2)
+ =\sum_{\alpha_1,\alpha_2}
+ x_{\alpha_1}y_{\alpha_2}
+ \mathfrak m(\alpha_1,\alpha_2)
+ \rho_1(m_1)\rho_2(m_2),
+\]
+where the determinant and gcd restrictions remain inside the two-row
+coefficient.  Replacing this by a product of one-row polynomials would
+delete the generic Schur mask before a nonlinear moment is taken, an
+operation not justified by the scalar estimate; see
+\cref{prop:tpc21-nonlinear-noncommutation}.
+
+Likewise, the exceptional-spectrum large sieve of
+\citet{Pascadi2026LargeSieve} requires a representing measure satisfying
+its size and two-frequency concentration hypotheses.  The exact
+character normal form derived here does not by itself verify those
+hypotheses.  None of these cited results is used as a black-box estimate
+for \eqref{eq:tpc21-future-character-gain}.
+
+\subsection{Three defensible next routes}
+
+The remaining short--short problem now has three explicit routes.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item Prove \eqref{eq:tpc21-future-character-gain} directly for the
+ masked shared-\(g\) transform, with the gain ledger
+ \eqref{eq:tpc21-required-gain}.
+ \item Decompose the generic Schur mask into separated pieces with a
+ fully controlled projective norm, then insert the exact parameters
+ into one specified character or Kloosterman theorem.  Merely counting
+ pieces is insufficient; the complete norm cost must retain a fixed
+ margin after \eqref{eq:tpc21-required-gain}.
+ \item Avoid the sufficient fiber norm and estimate the complete scalar
+ spectral sum while preserving cancellation between the connected
+ piece and the explicitly removable degenerate pieces.  This route must
+ keep the scalar order of operations in
+ \cref{rem:tpc21-legitimate-order}.
+\end{enumerate}
+
+Even a successful short--short estimate leaves the residual legs with
+\(u>R\) or \(v>R\).  Closing the full TPC-18 residual would additionally
+require uniform reassembly of the separated packets and all earlier
+endpoint estimates.  Nothing in this ledger is a twin-prime lower bound, a
+Hardy--Littlewood asymptotic, or a breach of the sieve parity barrier.

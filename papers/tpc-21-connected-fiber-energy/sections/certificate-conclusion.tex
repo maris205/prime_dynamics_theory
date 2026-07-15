@@ -1,0 +1,100 @@
+\section{Finite spectral meaning, certificate, and conclusion}
+\label{sec:tpc21-certificate}
+
+\subsection{Two finite dualities}
+
+The word \emph{spectrum} has two finite meanings in this paper.  After
+zero extension from \(\cU_q\) to \(\Z/q\Z\), the additive transform
+\[
+ r\longmapsto
+ \sum_{\kappa\in\cU_q}D_q(\kappa)e_q(r\overline H\kappa)
+\]
+is the spectral coordinate of the observable \(D_q\) for translation
+on the finite cycle \(\Z/q\Z\).  The multiplicative transform
+\[
+ \chi\longmapsto
+ \sum_{\kappa\in\cU_q}D_q(\kappa)\overline{\chi(\kappa)}
+\]
+is Fourier analysis on the finite abelian group \(\cU_q\).  The former
+couples directly to Poisson summation; the latter exposes the row
+Dirichlet polynomials and the shared-\(g\) convolution.  The induced
+character Gauss formula in \cref{prop:tpc21-induced-Gauss} is the exact
+bridge between them.
+
+These are literal spectra of finite group actions.  They do not assert
+that zeros of the Riemann zeta function are eigenvalues of a dynamical
+system, and no such interpretation is used anywhere in the proofs.
+
+\subsection{Exact computational certificate}
+
+The standard-library certificate is
+\begin{center}
+ \texttt{experiments/tpc21\_certificate.py}.
+\end{center}
+Run it from the paper directory with
+\begin{verbatim}
+python experiments/tpc21_certificate.py
+python -O experiments/tpc21_certificate.py
+\end{verbatim}
+Both commands regenerate
+\(\texttt{experiments/tpc21\_certificate.json}\).  The certificate performs
+1,149 exact equality checks.  Pass/fail checks use
+integers, rational arithmetic, and exact roots of unity in a finite
+prime field; floating-point comparisons are not used for the proof
+identities.  The certificate verifies:
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item compatible row-fiber totals and the unit-class mean;
+ \item the squarefree lcm occupancy product;
+ \item bilinear divisor-lattice M\"obius reassembly, centering, and the
+ additive CRT lift;
+ \item primitive-frequency loss of the outer M\"obius signs;
+ \item multiplicative-character Parseval and the exact shared-\(g\)
+ masked character convolution;
+ \item the conductor-sensitive induced-character Gauss formula;
+ \item the row-diagonal one-fiber spike and its centered energy; and
+ \item the rational exponent-gain ledger.
+\end{enumerate}
+
+The generated JSON explicitly records that these finite checks are not
+evidence for a twin-prime theorem, the residual-dispersion estimate, a
+parity breakthrough, or an asymptotic prime-pair formula.  For the
+archived version, the JSON SHA-256 is
+\nolinkurl{21AB51D5A8775832D8C44D90B4E21917C11FADAD1F150B896D234835740D5F74},
+and the script SHA-256 is
+\nolinkurl{26268E848E0D66A3B50B6FD628E95D8AF6931DE3FA9FA31D55C722FB8BFB3CB3}.
+The same hashes are recorded in the README.
+
+\subsection{Conclusion}
+
+TPC-20 left a Ramanujan mean packet and a centered CRT-fiber
+discrepancy.  The first is now closed.  Reduced-class Poisson summation
+identifies it with an ordinary smooth coprime-lattice discrepancy of
+size \(O_F(\tau(Hq))\), and the full lcm arithmetic cost is summable.
+The total mean is \(O_\eps(Q^2X^\eps)\), one complete orbit-length
+factor below the natural scale.
+
+For the discrepancy, deterministic row occupancy gives the genuine
+normalization \(Q^2q^{-1/2}\), but its dyadic sum crosses the target
+exactly at \(q\asymp J\).  It therefore does not penetrate the long-lcm
+range.  The new exact normal forms explain what extra information is
+needed.  Unmasked rank-one packets are divisor-lattice M\"obius
+differences of cumulative row-fiber products.  Generic packets are
+shared-factor convolutions of masked two-row Dirichlet-character sums,
+and their nonprincipal multiplicative energy is the connected fourth
+moment that remains to be bounded.
+
+The row-diagonal spike shows why the order matters: a contribution may
+be power-saving after the complete scalar orbit sum and still saturate
+the raw fiber norm relative to its coefficient amplitude.  Thus generic
+pruning cannot be removed inside a nonlinear norm merely by citing its
+scalar negligibility.  This rules out a
+tempting shortcut and leaves a quantitatively specified gain target,
+\(\omega>(y-j)/2\), for the sufficient character-moment route.
+
+Accordingly, this paper advances the short--short branch by one positive
+closure and one exact reduction.  It does not estimate the long
+connected character moment, control the large-divisor legs, prove the
+full TPC-18 residual-dispersion statement, breach sieve parity, or
+establish a fixed-shift Hardy--Littlewood asymptotic or a twin-prime
+lower bound.

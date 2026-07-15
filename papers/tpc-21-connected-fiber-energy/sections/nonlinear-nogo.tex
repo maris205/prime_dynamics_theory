@@ -1,0 +1,165 @@
+\section{Degenerate scalar savings do not commute with fiber energy}
+\label{sec:tpc21-nonlinear}
+
+The scalar unpruning statement in
+\cref{prop:tpc21-scalar-unpruning} is linear: after exact spectral
+reassembly, the excluded row-pair sums may be subtracted at fixed-power
+cost.  The sufficient gate \eqref{eq:tpc21-inherited-gate} is nonlinear
+because it takes a fiber \(L^2\) norm first.  We now show that moving the
+degenerate removal through this norm is not merely unproved; it is false
+as a formal implication.
+
+Assume for this section that the packet is Hermitian,
+\(y_\alpha=\overline{x_\alpha}\), and unmasked.  For a row \(m\) and
+squarefree \(q\) with \((q,mH)=1\), let
+\begin{equation}
+ \kappa_q(m)\equiv-h\overline m\pmod q.
+ \label{eq:tpc21-row-kappa}
+\end{equation}
+Define the lcm coefficient
+\begin{equation}
+ \Gamma_\vartheta(q)
+ =\sum_{\substack{u,v\le R\\{}[u,v]=q}}
+ \vartheta_R(u)\vartheta_R(v).
+ \label{eq:tpc21-Gamma-theta}
+\end{equation}
+The divisor-lattice identity also gives
+\begin{equation}
+ \Gamma_\vartheta(q)
+ =\sum_{s\mid q}\mu(q/s)
+ \left|\sum_{\substack{u\mid s\\u\le R}}
+ \vartheta_R(u)\right|^2.
+ \label{eq:tpc21-Gamma-prefix}
+\end{equation}
+
+\begin{proposition}[A row diagonal is an exact one-fiber spike]
+\label{prop:tpc21-row-diagonal-spike}
+The contribution of the single row pair \((m,m)\) to the unmasked
+aggregated \(q\)-fiber is
+\begin{equation}
+ \boxed{
+ Z_{q,m}^{\rm rowdiag}(\kappa)
+ =|x_m|^2\Gamma_\vartheta(q)
+  \one_{\{\kappa=\kappa_q(m)\}}.}
+ \label{eq:tpc21-row-diagonal-spike}
+\end{equation}
+If \(A=|x_m|^2\Gamma_\vartheta(q)\), then its centered fiber satisfies
+\begin{align}
+ \lVert D_{q,m}^{\rm rowdiag}\rVert_{2,\cU_q}^2
+ &=|A|^2\left(1-\frac1{\varphi(q)}\right),
+ \label{eq:tpc21-row-diagonal-L2}\\
+ \widehat D_{q,m}^{\rm rowdiag}(r)
+ &=A\left\{e_q(r\overline H\kappa_q(m))
+       -\frac{c_q(r)}{\varphi(q)}\right\}.
+ \label{eq:tpc21-row-diagonal-additive}
+\end{align}
+For every nonprincipal multiplicative character \(\chi\) of
+\(\cU_q\),
+\begin{equation}
+ \left|\sum_{\kappa\in\cU_q}
+ D_{q,m}^{\rm rowdiag}(\kappa)\overline{\chi(\kappa)}\right|
+ =|A|.
+ \label{eq:tpc21-row-diagonal-multiplicative}
+\end{equation}
+Thus the spike occupies every nonprincipal multiplicative mode with the
+same magnitude and, when \(\varphi(q)>1\), retains order-\(A\) additive
+discrepancy at every frequency coprime to \(q\).
+\end{proposition}
+
+\begin{proof}
+For each \(u\mid q\), the row \(m\) belongs to exactly the class
+\(\kappa_q(m)\bmod u\).  Hence every pair \(u,v\) with lcm \(q\)
+contributes at the same joint class, proving
+\eqref{eq:tpc21-row-diagonal-spike}.  Subtracting the unit-class mean
+\(A/\varphi(q)\) and summing the two possible squared values gives
+\eqref{eq:tpc21-row-diagonal-L2}.  The additive transform is immediate.
+For a nonprincipal \(\chi\), the constant mean has zero transform, so
+the transform is \(A\overline{\chi(\kappa_q(m))}\), of modulus
+\(|A|\).
+\end{proof}
+
+\begin{proposition}[The scalar estimate supplies no fiberwise saving]
+\label{prop:tpc21-nonlinear-noncommutation}
+For every \(q\) with \(\Gamma_\vartheta(q)\ne0\) and
+\(\varphi(q)>1\), the single-row diagonal satisfies the exact relative
+identity
+\begin{equation}
+ \frac{\lVert D_{q,m}^{\rm rowdiag}\rVert_2}
+ {|x_m|^2|\Gamma_\vartheta(q)|}
+ =\left(1-\frac1{\varphi(q)}\right)^{1/2}.
+ \label{eq:tpc21-no-fiberwise-saving}
+\end{equation}
+Consequently \cref{prop:tpc21-scalar-unpruning}, by itself, supplies no
+coefficientwise small factor for the row-diagonal fiber array and no
+bound for its sum of fiber norms.  In particular, that scalar estimate
+does not justify restoring the full Gram fiber inside a norm, applying
+the triangle inequality, and subtracting the degenerate scalar error
+afterwards.  This statement does not assert that the actual summed
+row-diagonal fiber norm is large; additional cancellation in
+\(\Gamma_\vartheta(q)\) or among rows is not ruled out.
+\end{proposition}
+
+\begin{proof}
+Identity \eqref{eq:tpc21-no-fiberwise-saving} is
+\eqref{eq:tpc21-row-diagonal-L2} divided by the spike amplitude.
+Its right-hand side tends to \(1\) as \(\varphi(q)\to\infty\), so the
+fiber norm has no uniform relative saving at the coefficient level.
+By contrast, the scalar estimate sums the diagonal along the physical
+orbit and uses the row count \(LDJ\asymp X\).  It contains no estimate
+for the coefficient array obtained after discarding the Poisson
+weights and taking a fiber norm.  Thus the displayed triangle-inequality
+inference does not follow from that scalar estimate.
+\end{proof}
+
+The correctly pruned off-diagonal object removes the row diagonal before
+the norm.
+For one fixed \(u,v\), put
+\begin{equation}
+ C_{u,v}^{\rm rowdiag}(\kappa)
+ =\sum_{\substack{\alpha\in\cA\\
+ m_\alpha\equiv-h\overline\kappa\ (q)}}x_\alpha y_\alpha,
+ \qquad q=[u,v],
+ \label{eq:tpc21-connected-diagonal-subtraction}
+\end{equation}
+with the summand restricted to rows admissible for both divisor legs.
+Then
+\(Z_{u,v}^{\ne}=Z_{u,v}^{1}-C_{u,v}^{\rm rowdiag}\)
+contains only distinct rows.  Its centered norm is nonnegative and has
+the multiplicative Parseval formula of
+\cref{sec:tpc21-character}.  Subtracting a scalar self-energy from an
+already squared raw norm would not give the same quantity and need not
+remain nonnegative.
+
+\begin{proposition}[Distinctness alone does not force fiber spread]
+\label{prop:tpc21-offdiagonal-spike}
+Even after row-diagonal subtraction, rank-one provenance and
+off-diagonal support alone imply no uniform fiber saving.  Fix one
+admissible divisor pair \(u,v\), put \(g=(u,v)\), \(q=[u,v]\), and take
+one distinct compatible row pair \(m\ne n\) with \(g\mid m-n\).
+If
+\[
+ A=\vartheta_R(u)\vartheta_R(v)x_my_n
+\]
+is its isolated \((u,v;m,n)\) amplitude, then the contribution is
+\(A\) at exactly one joint class and zero elsewhere.  After centering,
+its fiber \(L^2\) energy is exactly
+\begin{equation}
+ |A|^2\left(1-\frac1{\varphi(q)}\right).
+ \label{eq:tpc21-offdiagonal-spike-energy}
+\end{equation}
+Consequently a saving must use the distribution and signs of the full
+arithmetic row family, not only the labels \emph{Gram} or
+\emph{off diagonal}.
+\end{proposition}
+
+\begin{remark}[The legitimate order]
+\label{rem:tpc21-legitimate-order}
+There are two legitimate routes.  One may retain the generic Schur mask
+inside the exact character transform and estimate its connected moment.
+Alternatively, one may reassemble the complete scalar spectrum first,
+estimate its rank-one part without taking a lossy raw fiber norm, and
+then subtract the scalar degenerate contributions using
+\cref{prop:tpc21-scalar-unpruning}.  What is forbidden is to replace the
+generic fiber by the unpruned fiber inside a nonlinear norm merely
+because the excluded physical correlation is small.
+\end{remark}

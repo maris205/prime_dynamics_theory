@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Connected Fiber Energy in a Primitive Möbius Tail: Ramanujan-Mean Closure, Divisor-Lattice Reassembly, and a Shared-Factor Character Gate},
+ pdfauthor={Liang Wang},
+ pdfsubject={Exact mean closure and connected character normal forms for the primitive Möbius fiber discrepancy},
+ pdfkeywords={Möbius tail, Ramanujan sums, CRT fibers, divisor lattice, Dirichlet characters, fourth moments, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Conditional input}
+\crefname{assumption}{Conditional input}{Conditional inputs}
+\Crefname{assumption}{Conditional input}{Conditional inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\rad}{\operatorname{rad}}
+
+\title{\textbf{Connected Fiber Energy in a Primitive M\"obius Tail:}\\
+\textbf{Ramanujan-Mean Closure,}\\
+\textbf{Divisor-Lattice Reassembly, and}\\
+\textbf{a Shared-Factor Character Gate}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+TPC-20 compresses the compatible short--short part of a primitive
+M\"obius residual correlation into one finite Fourier transform on each
+unit fiber modulo \(q\).  Its exact mean--discrepancy split leaves two
+apparently separate analytic obligations.  We close the mean obligation
+and replace the remaining arbitrary-fiber formulation by two exact
+normal forms that retain the row provenance.
+
+Put \(H=\rad|h|\), \(QJ\asymp X\), and let \(F\in C_c^\infty(\R)\).
+The Ramanujan mean packet at modulus \(q\) is exactly
+\[
+ \overline Z_q\left\{
+ \sum_{(j,Hq)=1}F(j/J)
+ -J\frac{\varphi(Hq)}{Hq}\widehat F(0)\right\}.
+\]
+The expression in braces is \(O_F(\tau(Hq))\), uniformly even when
+\(Hq\asymp J\).  Under the standard separated-packet bound
+\(\mathcal Z_1\ll Q^2X^\eps\), absolute summation over every short--short
+divisor pair gives \(O_\eps(Q^2X^\eps)\); this scale is
+\(\asymp XQJ^{-1}X^\eps\).  Hence throughout
+the strict single-leg range of TPC-20 the complete Ramanujan mean has a
+fixed power saving and is negligible with arbitrary logarithmic saving.
+
+The actual row geometry also gives the unconditional occupancy bound
+\[
+ \lVert D_q\rVert_{2,\cU_q}\ll_\eps Q^2q^{-1/2}X^\eps.
+\]
+On \(q\asymp Y\), however, its insertion into the restricted-frequency
+estimate saves only when \(Y<J\) by a fixed power.  Thus occupancy alone
+recovers the already-completable joint-period range and does not enter
+the genuinely long regime.
+
+For a rank-one row packet, lcm aggregation is a divisor-lattice M\"obius
+difference of cumulative row-fiber products.  For the actual generic
+Schur mask, multiplicative Fourier inversion gives a sharper normal
+form: the nonprincipal fiber energy is exactly a shared-\(g\) convolution
+of masked two-row Dirichlet-character sums, where \(g=(u,v)\).  In the
+unmasked case these sums factor into one-row Dirichlet polynomials; in
+the generic case the determinant and gcd mask remains inside a connected
+fourth moment.
+
+We finally prove that scalar degenerate removal cannot be moved through
+the nonlinear fiber \(L^2\) norm merely by citing its scalar saving.  A
+single row diagonal produces exactly the one-fiber spike of TPC-20 and
+saturates every nonprincipal multiplicative frequency relative to its
+coefficient amplitude, although its complete scalar correlation is
+power-saving.  The correct next input is therefore a masked shared-factor
+character fourth-moment estimate, not an unpruned Gram norm.  We do not
+prove the short--short
+discrepancy estimate, control the large-divisor legs, breach sieve parity,
+or obtain a fixed-shift prime-pair asymptotic.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius tail; CRT fibers; Ramanujan sums;
+divisor-lattice inversion; Dirichlet characters; connected fourth moments;
+sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary
+11L05, 11L07, 11L40.
+
+\input{sections/introduction}
+\input{sections/interface}
+\input{sections/mean-closure}
+\input{sections/occupancy-frontier}
+\input{sections/divisor-reassembly}
+\input{sections/character-gate}
+\input{sections/nonlinear-nogo}
+\input{sections/technology-boundary}
+\input{sections/certificate-conclusion}
+
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}
