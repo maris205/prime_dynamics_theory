@@ -1,0 +1,188 @@
+\section{The remaining uniform gate and a stepwise roadmap}
+\label{sec:barriers-roadmap}
+
+The dynamic theorem and complement theorem meet at a precise boundary.
+Inside \(u,v\le S\), exact-conductor averaging supplies a fixed-power
+saving.  Outside, divisor reflection exposes affine M\"obius
+correlations.  This section records the order of operations needed to
+continue and the conclusions that are not available.
+
+\subsection{A quantitative form of the next gate}
+
+For a compatible complement pair, define the sharp fiber sum
+\begin{align}
+ \cM_{m_1,m_2;r,s}(W;S)
+ :={}&\sum_t W\left(\frac{j_0+[r,s]t}{J}\right)
+ \mu(U_{r,s}(t))\mu(V_{r,s}(t))
+ \notag\\
+ &\times\log U_{r,s}(t)\log V_{r,s}(t)
+ \one_{U_{r,s}(t)>S}\one_{V_{r,s}(t)>S}.
+ \label{eq:sharp-affine-fiber}
+\end{align}
+The smooth weight \(W\) ranges over a fixed family with uniformly
+bounded support and derivative seminorms.  The
+forms and their nonzero determinant are given by
+\cref{thm:affine-complement-fiber}.  The fiber has length
+\begin{equation}
+ \asymp 1+\frac{J}{[r,s]}.
+ \label{eq:fiber-length}
+\end{equation}
+
+Tao's theorem controls \eqref{eq:sharp-affine-fiber} when every
+coefficient is fixed, the average is cumulative logarithmic, and the
+limit is taken before the coefficients grow.  The TPC packet instead
+requires all of the following simultaneously:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item \(m_i\asymp Q=X^{\beta+o(1)}\) and complement divisors as large
+ as \(X/S\);
+ \item a prescribed smooth dyadic window of length \(J\), not merely a
+ cumulative \(dt/t\) average;
+ \item a rate strong enough to sum the row pairs, complement pairs,
+ determinant-content refinements, and separated smooth packets;
+ \item a separate treatment of the sparse range \([r,s]\gtrsim J\),
+ where a fiber has at most \(O(1)\) orbit points and no one-fiber
+ asymptotic can create cancellation.
+\end{enumerate}
+
+The next useful theorem would therefore be a \emph{uniform affine
+M\"obius dispersion estimate}, not a pointwise appeal to randomness.
+One possible sufficient interface is the following.
+
+\begin{assumption}[Dyadic affine-fiber dispersion]
+\label{ass:uniform-affine-dispersion}
+After inserting the actual row weights and generic row-pair mask, every
+dyadic block of compatible complement moduli with
+\([r,s]\le JX^{-\kappa}\) has total contribution from
+\eqref{eq:sharp-affine-fiber} at most
+\begin{equation}
+ XQ(\log X)^{-B}
+ \label{eq:uniform-affine-gate}
+\end{equation}
+for arbitrarily prescribed \(B>0\), uniformly over the separated
+weights.  The complementary sparse blocks admit the same total bound
+after using their exact determinant and incidence geometry rather than
+a one-fiber asymptotic.
+\end{assumption}
+
+This is deliberately an input, not a theorem of the present paper.  It
+keeps the two M\"obius signs together and specifies the growing
+parameters, sharp averaging, coefficient summation, and sparse regime
+that a usable result must cover.
+
+\subsection{Why several shortcuts fail}
+
+\begin{enumerate}[label=\textup{(\arabic*)}]
+ \item \emph{Taking absolute values fiber by fiber.}
+ \Cref{prop:absolute-nogo} gives natural-scale mass already on
+ \(r=s=1\).  The two M\"obius signs are the mechanism, not a nuisance
+ that can be discarded.
+
+ \item \emph{Replacing the reflected sign by \(\mu(r)\).}
+ The exact coefficient is \(\mu(n/r)\); see
+ \eqref{eq:exact-complement}.  The Liouville rewriting introduces the
+ global target phase \(\lambda(n)\) and a squarefree quotient cutoff.
+ It does not turn the coefficient into an ordinary short-divisor
+ M\"obius sum.
+
+ \item \emph{Assuming the two determinant contents are coprime.}
+ In a mixed large--short term, both the complement gcd and the
+ quotient--short-divisor gcd divide \(m_1-m_2\), but they may overlap
+ when the target has a square factor.  Declaring them coprime silently
+ deletes valid nonsquarefree targets.
+
+ \item \emph{Applying TPC-22 with an arbitrarily large cutoff.}
+ The dynamic conductor ledger loses its margin at the explicit faces
+ in \eqref{eq:etaS}, and TPC-20's Fourier-channel reduction loses the
+ strict Poisson-short condition at \(S\asymp J\).  Beyond those faces,
+ additional cancellation between joint and single spectra or a new
+ quotient-variable argument is required.
+
+ \item \emph{Using logarithmic Elliott as a black box for the full
+ packet.}
+ \Cref{cor:slow-window} is intentionally ineffective.  It supplies no
+ bound uniform over polynomially many forms, and logarithmic averaging
+ cannot simply be removed by partial summation.
+\end{enumerate}
+
+\subsection{A staged continuation}
+
+The exact reductions suggest the following sequence of independent
+tasks.
+
+\begin{enumerate}[label=\textup{Stage \arabic*:},leftmargin=6.2em]
+ \item Push the dynamic cutoff to the largest certified \(S\) on each
+ row slice, using \cref{thm:dynamic-closure}.  This has been completed
+ here for the full square \(u,v\le S\).
+
+ \item Split the remaining both-ultra terms by the complement modulus
+ \(q=[r,s]\), and the mixed terms by their complementary--short
+ modulus.  Preserve the row mask, the exact affine determinant
+ \(h(m_1-m_2)/(r,s)\), and the corresponding mixed gcd content.
+
+ \item In \(q\ll J\), seek a quantitative version of two-point
+ M\"obius cancellation that is uniform in the polynomial coefficients
+ generated by the complement fibers.  A logarithmically averaged or
+ averaged-row theorem would already be publishable if its precise
+ range exceeds the current slow diagonal window.
+
+ \item In \(q\gtrsim J\), use sparse incidence geometry, the equation
+\begin{equation}
+ m_2U r-m_1V s=h(m_2-m_1),
+ \label{eq:sparse-incidence-equation}
+\end{equation}
+ and the generic determinant/gcd pruning.  A theorem here need not
+ solve an individual two-point Chowla problem because each fiber is
+ short; it must instead save after summing the family.
+
+ \item Recombine the long and sparse complement blocks with the mixed
+ \(Z^{\le S}Z^{>S}\) terms.  Only after this scalar recombination may
+ one restore all separated packets and the earlier TPC-18 endpoint
+ pieces.
+
+ \item A full residual-dispersion estimate would still be an analytic
+ upper/cancellation theorem.  Converting it into a positive
+ Hardy--Littlewood main term or an infinite twin-prime conclusion is a
+ separate parity-sensitive step.
+\end{enumerate}
+
+Each stage has a useful fallback.  Failure of a uniform estimate can
+be recorded as a sharp exponent boundary or a componentwise no-go;
+success in a logarithmic, averaged-row, or shorter-parameter regime is
+still a rigorous intermediate theorem.
+
+\subsection{Status table}
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.42\textwidth}
+                >{\raggedright\arraybackslash}p{0.47\textwidth}}
+\toprule
+Object & Status after this paper\\
+\midrule
+Ramanujan mean for \(b_R(u)\one_{u\le S}\)
+& Closed absolutely by \cref{thm:dynamic-mean}.\\
+\addlinespace
+Centered connected packet \(u,v\le S\)
+& Closed with fixed-power saving in
+  \cref{thm:dynamic-closure,cor:closed-strip}.\\
+\addlinespace
+Mixed and both-large pieces newly included in
+\eqref{eq:new-support-pieces}
+& Closed; these are genuine coefficients beyond \(R\).\\
+\addlinespace
+Remaining terms with \(u>S\) or \(v>S\)
+& Exact complement-fiber form proved; polynomially uniform estimate
+  open.\\
+\addlinespace
+Every fixed complement fiber and fixed finite complement truncation
+& Closed only in cumulative logarithmic average by
+  \cref{prop:fixed-fiber-log,cor:finite-complement-log}.\\
+\addlinespace
+Full TPC-18 residual and all endpoint reassembly
+& Not proved.\\
+\addlinespace
+Hardy--Littlewood asymptotic, twin-prime lower bound, or a general
+parity breakthrough
+& Not claimed and not implied.\\
+\bottomrule
+\end{tabular}
+\end{center}

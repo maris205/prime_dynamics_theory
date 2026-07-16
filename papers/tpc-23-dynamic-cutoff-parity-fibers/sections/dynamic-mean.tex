@@ -1,0 +1,180 @@
+\section{Dynamic Ramanujan mean and scalar-tail removal}
+\label{sec:dynamic-mean}
+
+Two scalar issues must be settled before the conductor argument.  The
+principal character of the enlarged packet has to remain harmless, and
+the centered coefficient beyond \(S\) has to be replaced by its actual
+divisor sum without a formal deletion.
+
+\subsection{The mean packet for
+\texorpdfstring{\(u,v\le S\)}{u,v <= S}}
+
+Let \(\cZ_1=\sum_{m,n}|z_{m,n}|\) be the absolute row-pair mass in one
+separated packet.  The application has
+\begin{equation}
+ \cZ_1\ll Q^2X^\eps.
+ \label{eq:row-l1}
+\end{equation}
+For each compatible pair \(u,v\le S\), let
+\(\mathfrak R_{u,v}\) denote its row-pair mass after the primitive and
+row-pair masks.  If \(q=[u,v]\), the unit-fiber mean is
+\begin{equation}
+ \overline Z_{q,S}
+ =\frac1{\varphi(q)}
+ \sum_{\substack{u,v\le S\\\operatorname{lcm}(u,v)=q}}
+ \vartheta_{R,S}(u)\vartheta_{R,S}(v)\mathfrak R_{u,v}.
+ \label{eq:dynamic-fiber-mean}
+\end{equation}
+This is exact and uses no row equidistribution.
+
+For \(M\ge1\), define
+\begin{equation}
+ \Delta_M(F;J)
+ =\frac JM\sum_{r\ne0}c_M(r)
+   \widehat F\left(\frac{rJ}{M}\right).
+ \label{eq:Delta}
+\end{equation}
+Poisson summation over reduced classes gives
+\begin{equation}
+ \Delta_M(F;J)
+ =\sum_{(n,M)=1}F(n/J)
+  -\frac{\varphi(M)}M J\widehat F(0),
+ \qquad |\Delta_M(F;J)|\ll_F\tau(M).
+ \label{eq:Delta-bound}
+\end{equation}
+The mean scalar packet is exactly
+\begin{equation}
+ \cL_{q,S}^{\rm mean}=\overline Z_{q,S}\Delta_{Hq}(F;J).
+ \label{eq:mean-physical}
+\end{equation}
+
+\begin{lemma}[Dynamic lcm cost]
+\label{lem:dynamic-lcm-cost}
+For \(S\le X^{O(1)}\) and every \(\eps>0\),
+\begin{equation}
+ \boxed{
+ \sum_{u,v\le S}
+ \frac{|\vartheta_{R,S}(u)\vartheta_{R,S}(v)|
+       \tau(H[u,v])}{\varphi([u,v])}
+ \ll_{\eps,H}X^\eps.}
+ \label{eq:dynamic-lcm-cost}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:b-soft}, each coefficient is \(O(X^{\eps/4})\) after
+shrinking the auxiliary epsilon.  Also, uniformly for
+\(q\le S^2\le X^{O(1)}\),
+\[
+ \frac{\tau(Hq)}{\varphi(q)}\ll_{\eps,H}\frac{X^{\eps/4}}q.
+\]
+Writing \(u=ga,v=gb\), then dropping \((a,b)=1\), gives
+\begin{equation}
+ \sum_{u,v\le S}\frac1{[u,v]}
+ \le\sum_{g\le S}\frac1g
+ \left(\sum_{a\le S/g}\frac1a\right)^2
+ \ll\log^3(2S).
+ \label{eq:reciprocal-lcm}
+\end{equation}
+Absorb the logarithms and coefficient factors into \(X^\eps\).
+\end{proof}
+
+\begin{theorem}[Dynamic mean closure]
+\label{thm:dynamic-mean}
+For any collection of denominators from the selected packet
+\(u,v\le S\),
+\begin{equation}
+ \boxed{
+ \sum_q|\cL_{q,S}^{\rm mean}|
+ \ll_{\eps,F,H}\cZ_1X^\eps.}
+ \label{eq:dynamic-mean-bound}
+\end{equation}
+Under \eqref{eq:row-l1}, this is \(O(Q^2X^\eps)\), and therefore has
+a fixed-power saving relative to \(XQ=Q^2J\) whenever \(J\) has a
+fixed positive power of \(X\).
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:dynamic-fiber-mean} into
+\eqref{eq:mean-physical}, apply \eqref{eq:Delta-bound}, and bound the
+masked compatible row mass absolutely by \(\cZ_1\).  Interchanging the
+row and divisor sums leaves exactly \eqref{eq:dynamic-lcm-cost}.
+\end{proof}
+
+This proof is a genuine extension of the TPC-21 mean theorem: that
+theorem stated only the supports \(u\le R\).  The extension works
+because \(b_R(u)=a(u)\) for \(u>R\), not because the principal block is
+discarded.
+
+\subsection{Uniform removal of the ultra-long scalar tail}
+
+Put
+\begin{equation}
+ A_T(m)=\sum_{\substack{u\le T\\(u,mH)=1}}\frac{a(u)}u,
+ \qquad \rho_{P,H}(m)=\frac{mH}{\varphi(mH)}.
+ \label{eq:AT}
+\end{equation}
+The uniform M\"obius calibration theorem of TPC-20, based only on the
+classical zero-free region for \(\zeta(s)\), says that for every fixed
+\(A,C>0\), uniformly for \(mH\le T^C\),
+\begin{equation}
+ A_T(m)=\rho_{P,H}(m)
+ +O_{A,C}\left(\rho_{P,H}(m)(\log T)^{-A}\right).
+ \label{eq:uniform-calibration}
+\end{equation}
+In the present fixed-power ranges, one fixed \(C\) covers both
+\(T=S\) and \(T=U\asymp X\).
+
+\begin{proposition}[The centered ultra-long tail is its divisor tail]
+\label{prop:scalar-tail}
+Define
+\begin{equation}
+ \tau_{S,U}(m)=
+ \sum_{\substack{S<u\le U\\(u,mH)=1}}\frac{a(u)}u.
+ \label{eq:scalar-tail}
+\end{equation}
+Then, for every \(A>0\),
+\begin{equation}
+ \tau_{S,U}(m)
+ \ll_{A,h}\rho_{P,H}(m)(\log X)^{-A}
+ \ll_{A,h,\eps}X^\eps(\log X)^{-A}.
+ \label{eq:scalar-tail-small}
+\end{equation}
+Consequently
+\begin{equation}
+ Z_m^{>S}(j)=\cT_{m,S}(j)-\tau_{S,U}(m),
+ \qquad
+ \cT_{m,S}(j)=\sum_{\substack{u\mid n_m(j)\\u>S}}a(u).
+ \label{eq:centered-to-divisor-tail}
+\end{equation}
+Replacing every \(Z_m^{>S}\) by \(\cT_{m,S}\) in a separated two-row
+packet changes it by \(O_B(XQ(\log X)^{-B})\) for every prescribed
+\(B>0\).
+\end{proposition}
+
+\begin{proof}
+Equation \eqref{eq:scalar-tail} is \(A_U(m)-A_S(m)\), so
+\eqref{eq:scalar-tail-small} follows by applying
+\eqref{eq:uniform-calibration} at both endpoints.  Divisors of
+\(n_m(j)\) are automatically coprime to \(mH\), which proves
+\eqref{eq:centered-to-divisor-tail}.
+
+For the packet error, the elementary bounds
+\begin{equation}
+ |Z_m^{\le S}(j)|+|\cT_{m,S}(j)|
+ \ll_\eps X^\eps
+ \label{eq:pointwise-signals}
+\end{equation}
+follow from the divisor bound, \eqref{eq:b-soft}, and
+\(\sum_{u\le U}|b_R(u)|/u\ll(\log X)^2\).  Expand the product after
+inserting \eqref{eq:centered-to-divisor-tail}, use \(O(Q^2J)\) row--orbit
+tuples and \(Q^2J\asymp XQ\), then choose \(A\) in terms of \(B\).
+\end{proof}
+
+\begin{remark}[Calibration is not cancellation of the parity core]
+\label{rem:calibration-not-parity}
+The proposition removes only the deterministic densities \(a(u)/u\).
+It does not estimate the signed divisor tail \(\cT_{m,S}\).  In
+particular, its \(u=n_m(j)\) term remains present whenever the target is
+squarefree.
+\end{remark}

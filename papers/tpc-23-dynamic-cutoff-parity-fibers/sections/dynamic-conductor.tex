@@ -1,0 +1,217 @@
+\section{Conductor rectangularization at a dynamic cutoff}
+\label{sec:dynamic-conductor}
+
+We now prove that the centered part of the selected packet extends
+from \(u,v\le R\) to \(u,v\le S\).  Every step is performed before
+summing different lcm decompositions; there is no global character
+rectangle shared by all divisor pairs.
+
+\subsection{Pairwise coordinates and compatibility energy}
+
+For one squarefree pair, use \eqref{eq:gab}.  Since \(g,a,b\) are
+pairwise coprime,
+\begin{equation}
+ \mathfrak X(q)\simeq\mathfrak X(u)\times\mathfrak X(b),
+ \qquad \chi\longmapsto(\alpha,\gamma),
+ \label{eq:product-characters}
+\end{equation}
+and
+\begin{equation}
+ \cond\chi=(\cond\alpha)(\cond\gamma).
+ \label{eq:product-conductors}
+\end{equation}
+The global principal character is exactly the pair of coordinate
+principals.
+
+Put
+\begin{equation}
+ c_{m,n}^{(g)}
+ =x_my_n\mathfrak m(m,n)\one_{m\equiv n\pmod g}.
+ \label{eq:compatibility-matrix}
+\end{equation}
+Character orthogonality on the shared factor gives the exact pairwise
+transform
+\begin{equation}
+ \widehat Z_{u,v}^{\,\times}(\chi)
+ =\overline{\chi(-h)}
+ \sum_{m,n}c_{m,n}^{(g)}\alpha(m)\gamma(n).
+ \label{eq:pair-rectangularization}
+\end{equation}
+There is no residual \(1/\varphi(g)\), and the character on the second
+row is not conjugated.  This is the TPC-22 rectangularization, whose
+proof is purely finite-group algebra and is unchanged by \(u,v>R\).
+
+\begin{proposition}[Compatibility energy is cutoff-independent]
+\label{prop:compatibility-energy}
+Under \eqref{eq:row-energy}--\eqref{eq:mask},
+\begin{equation}
+ \boxed{
+ \sum_{g\le S}\sum_{m,n}|c_{m,n}^{(g)}|^2
+ \ll_\eps Q^2X^\eps.}
+ \label{eq:compatibility-energy}
+\end{equation}
+No comparison \(S<L/2\) is required.
+\end{proposition}
+
+\begin{proof}
+The mask removes \(m=n\).  Hence
+\[
+ \sum_{g\le S}\sum_{m,n}|c_{m,n}^{(g)}|^2
+ \le\sum_{m\ne n}|x_m|^2|y_n|^2
+       \sum_{g\mid m-n}1.
+\]
+The last multiplicity is at most \(\tau(|m-n|)\ll_\eps X^\eps\),
+independently of \(S\).  Apply \eqref{eq:row-energy}.
+\end{proof}
+
+The row-pair-only nature of the mask is used here and below.  If the
+mask changed with \(u,v,q\), the same matrix would no longer be tested
+over the ambient character moduli, and the tensor step would not follow.
+
+\subsection{The two estimates for one conductor cell}
+
+We recall the weighted exact-conductor large sieve in the normalization
+needed here.  If \(w\asymp W\) runs over squarefree moduli, \(a_n\) is
+supported on an interval of length \(N\), and exact conductors lie in a
+dyadic block \(f\asymp F\), then
+\begin{equation}
+ \sum_{w\asymp W}\frac1{\varphi(w)}
+ \sum_{\substack{\chi\in\mathfrak X(w)\\\cond\chi\asymp F}}
+ \left|\sum_na_n\chi(n)\right|^2
+ \ll_\eps X^\eps\left(F+\frac NF\right)
+ \sum_n|a_n|^2.
+ \label{eq:exact-conductor-LS}
+\end{equation}
+The block \(F=1\) contains conductor one.  The proof writes \(w=fd\),
+applies the primitive multiplicative large sieve at the true conductor
+\(f\), and sums the inducing factors \(d\); it is uniform in the
+ambient modulus \(W\).  This is Theorem~4.1 of TPC-22
+\citep{WangTPC22}, derived there from the primitive multiplicative
+large sieve \citep[Chapter~7]{IwaniecKowalski2004}.
+
+Put
+\begin{equation}
+ \cK_Q(F)=F+\frac QF.
+ \label{eq:KQ}
+\end{equation}
+For \(q=gab\asymp Y\), \(ga,gb\le S\), let
+\(\cE_{Y,S}(F_1,F_2)\) be the sum of the squared transforms
+\eqref{eq:pair-rectangularization}, weighted by
+\begin{equation}
+ \frac{|\vartheta_{R,S}(ga)\vartheta_{R,S}(gb)|^2}{\varphi(gab)},
+ \label{eq:cell-weight}
+\end{equation}
+over all pairwise-coprime \(g,a,b\), coordinate characters with
+\(\cond\alpha\asymp F_1\), \(\cond\gamma\asymp F_2\), and all
+inherited admissibility conditions.  This is a sum of pair energies,
+not the norm of a fictitious common projection.
+
+\begin{theorem}[Dynamic tensor conductor energy]
+\label{thm:dynamic-tensor-energy}
+Uniformly for \(Y\le S^2\) and \(1\le F_i\le S\),
+\begin{equation}
+ \boxed{
+ \cE_{Y,S}(F_1,F_2)
+ \ll_\eps Q^2X^\eps
+ \cK_Q(F_1)\cK_Q(F_2).}
+ \label{eq:dynamic-tensor-energy}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Fix \(g\), enlarge the nonnegative sum by dropping divisibility and
+coprimality restrictions among the ambient moduli, and apply
+\eqref{eq:exact-conductor-LS} in the \(m\)-coordinate.  Its
+Hilbert-valued form permits the entire \(n\)-coordinate to remain as a
+vector.  Apply the same theorem in the \(n\)-coordinate.  This gives
+\[
+ X^\eps\cK_Q(F_1)\cK_Q(F_2)
+ \sum_{m,n}|c_{m,n}^{(g)}|^2.
+\]
+Sum in \(g\), use \cref{prop:compatibility-energy}, and absorb the
+dyadic and divisor-pair multiplicities into \(X^\eps\).  The soft
+coefficient bound \eqref{eq:b-soft} is the only property of
+\(\vartheta_{R,S}\) used.
+\end{proof}
+
+Let \(\cL_{u,v}^{F_1,F_2}\) denote the scalar functional
+\eqref{eq:dynamic-scalar-packet} formed from the
+\((F_1,F_2)\)-coordinate-character projection of the unweighted
+centered pair \(D_{u,v}\); the dynamic divisor coefficients are
+inserted externally below.  Define the pair-separated cell sum
+\begin{equation}
+ \mathfrak L_{Y,S}(F_1,F_2)
+ =
+ \sum_{\substack{g,a,b\ {\rm pairwise\ coprime}\\
+                  ga,gb\le S,\ gab\asymp Y}}
+ |\vartheta_{R,S}(ga)\vartheta_{R,S}(gb)|
+ |\cL_{ga,gb}^{F_1,F_2}|.
+ \label{eq:dynamic-cell-definition}
+\end{equation}
+The inherited restricted-frequency norm route, licensed by
+\eqref{eq:no-wrap} and the polynomial tail-mass assumption, gives
+\begin{equation}
+ \mathfrak L_{Y,S}(F_1,F_2)
+ \ll_\eps QX^\eps
+ \sqrt{JY\cK_Q(F_1)\cK_Q(F_2)}.
+ \label{eq:dynamic-norm-route}
+\end{equation}
+
+There is a second estimate.  If a character modulo the squarefree
+\(q\) has exact conductor \(f\mid q\), its additive transform at every
+nonzero frequency factors into a primitive Gauss sum of size
+\(\sqrt f\) and a Ramanujan sum modulo \(q/f\).  Summing that Ramanujan
+factor against the smooth Fourier weight gives
+\begin{equation}
+ \sum_{r\ne0}|c_d(r)|
+ \left|\widehat F\left(\frac{rJ}{Hq}\right)\right|
+ \ll_{F,H} \frac{Hq}{J}\tau(d).
+ \label{eq:Ramanujan-frequency}
+\end{equation}
+The zero frequency must remain excluded.  Resolving exact conductors
+before this sum and applying \cref{thm:dynamic-tensor-energy} gives
+\begin{equation}
+\mathfrak L_{Y,S}(F_1,F_2)
+ \ll_\eps QF_1F_2X^\eps
+ \sqrt{\cK_Q(F_1)\cK_Q(F_2)}.
+ \label{eq:dynamic-Gauss-route}
+\end{equation}
+This is exactly the all-frequency argument of Lemmas~6.1--6.2 and
+Theorem~6.3 of TPC-22 \citep{WangTPC22}: replacing \(R\) by \(S\)
+changes only the ambient ranges \(q\le S^2\) and \(F_i\le S\).  The
+Ramanujan-frequency sum in \eqref{eq:Ramanujan-frequency} cancels the
+Poisson normalization, while the two primitive Gauss factors and
+Cauchy--Schwarz contribute \(F_1F_2\).
+
+Combining the two estimates for the same scalar cell proves the dynamic
+cell bound
+\begin{equation}
+ \boxed{
+ \mathfrak L_{Y,S}(F_1,F_2)
+ \ll_\eps QX^\eps
+ \sqrt{\cK_Q(F_1)\cK_Q(F_2)}
+ \min\{\sqrt{JY},F_1F_2\}.}
+ \label{eq:dynamic-cell-bound}
+\end{equation}
+The omitted block \((F_1,F_2)=(1,1)\) is the principal mean already
+treated in \cref{thm:dynamic-mean}; one-sided principal coordinate
+cells remain in \eqref{eq:dynamic-cell-bound}.  Linearity and the
+pairwise triangle inequality give the formal reassembly
+\begin{equation}
+ \sum_{q\asymp Y}|\cL_{q,S}^{\rm disc}|
+ \le
+ \sum_{\substack{F_1,F_2\\(F_1,F_2)\ne(1,1)}}
+ \mathfrak L_{Y,S}(F_1,F_2)
+ +O_A(X^{-A}\cZ_1),
+ \label{eq:dynamic-cell-reassembly}
+\end{equation}
+where the final term is the inherited polynomial Fourier-tail error.
+
+\begin{remark}[What was needed to cross \(R\)]
+\label{rem:no-L2S}
+Neither the character algebra nor the energy estimates require
+\(L>2S\).  The inherited condition \(L>2R\) belongs to the row/source
+construction.  For a target divisor \(u>R\), the necessary primitivity
+is supplied by \eqref{eq:target-coprime}.  The genuinely new analytic
+restriction is the Poisson-short condition \eqref{eq:S-single-leg}.
+\end{remark}

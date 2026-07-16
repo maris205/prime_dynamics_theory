@@ -1,0 +1,207 @@
+\section{Complementary divisors and affine parity fibers}
+\label{sec:complement-fibers}
+
+The dynamic theorem stops before the Poisson-short or conductor margin
+is exhausted.  We now give an exact normal form for what remains.  No
+estimate in this section assumes that a target is squarefree.
+
+\subsection{Hyperbola reflection}
+
+For \(n\ge1\) and \(Y\ge1\), put
+\begin{equation}
+ \cT_Y(n)=\sum_{\substack{u\mid n\\u>Y}}a(u),
+ \qquad a(u)=-\mu(u)\log u.
+ \label{eq:TY}
+\end{equation}
+
+\begin{proposition}[Exact complement and Liouville cocycle]
+\label{prop:complement-cocycle}
+For every \(n,Y\ge1\),
+\begin{align}
+ \cT_Y(n)
+ &=\sum_{\substack{r\mid n\\r<n/Y}}a(n/r)
+ \label{eq:exact-complement}\\
+ &=-\lambda(n)
+ \sum_{\substack{r\mid n\\r<n/Y}}
+ \lambda(r)\mu^2(n/r)\log(n/r).
+ \label{eq:exact-Liouville-cocycle}
+\end{align}
+Here \(\lambda\) is the Liouville function.  In particular, the sign on
+the reflected quotient is \(\mu(n/r)\), not \(\mu(r)\).
+\end{proposition}
+
+\begin{proof}
+The involution \(u\mapsto r=n/u\) bijects divisors satisfying \(u>Y\)
+with those satisfying \(r<n/Y\), proving
+\eqref{eq:exact-complement}.  Since
+\(\mu(k)=\lambda(k)\mu^2(k)\) and \(\lambda\) is completely
+multiplicative,
+\[
+ \mu(n/r)=\lambda(n/r)\mu^2(n/r)
+ =\lambda(n)\lambda(r)\mu^2(n/r).
+\]
+Insert this identity into \(a(n/r)\).
+\end{proof}
+
+If \(n>Y^2\), the tail has the exact hyperbola split
+\begin{equation}
+ \cT_Y(n)
+ =\underbrace{\sum_{\substack{r\mid n\\r\le Y}}a(n/r)}_{\cC_Y(n)}
+ +\underbrace{\sum_{\substack{r\mid n\\Y<r<n/Y}}a(n/r)}_{\cB_Y(n)},
+ \label{eq:balanced-split}
+\end{equation}
+with the evident adjustment when a boundary divisor occurs.  The first
+piece has a short complementary divisor.  In the second, both factors
+of \(n=r(n/r)\) exceed \(Y\); it is a genuine Type--II hyperbola band.
+Pairing divisors about \(\sqrt n\) gives
+\begin{align}
+ \cB_Y(n)
+ ={}&\sum_{\substack{d\mid n\\Y<d<\sqrt n}}
+ \{a(d)+a(n/d)\}
+ +\one_{n=z^2,\ z>Y}a(z).
+ \label{eq:folded-balanced-band}
+\end{align}
+On a squarefree target, the paired coefficient is
+\begin{equation}
+ a(d)+a(n/d)
+ =-\lambda(d)\{\log d+\lambda(n)\log(n/d)\}.
+ \label{eq:squarefree-parity-pair}
+\end{equation}
+Thus even and odd factor parity are different eigensectors of divisor
+reflection.  This is an identity, not a bound for either sector.
+
+For the TPC target \(n\asymp X\) and
+\(Y=R=X^{1/2-\delta}\), the balanced factor exponents lie between
+\(1/2-\delta\) and \(1/2+\delta\).  The dynamic theorem removes a
+strict lower part of this geometry before the quotient-M\"obius
+normal form is needed.
+
+\subsection{Two complement fibers}
+
+Fix distinct positive primitive rows \(m_1,m_2\), meaning
+\((m_1m_2,h)=1\), and write
+\begin{equation}
+ n_i(j)=m_i j+h\qquad(i=1,2).
+ \label{eq:two-targets}
+\end{equation}
+Let \(r,s\ge1\).  Since \((m_1m_2,h)=1\), any solution of
+\(r\mid n_1(j)\), \(s\mid n_2(j)\) necessarily satisfies
+\begin{equation}
+ (r,m_1)=(s,m_2)=1.
+ \label{eq:complement-primitivity}
+\end{equation}
+We restrict to such pairs and put
+\begin{equation}
+ d=(r,s),\qquad q=[r,s]=\frac{rs}{d}.
+ \label{eq:rsdq}
+\end{equation}
+
+\begin{theorem}[Exact affine complement fiber]
+\label{thm:affine-complement-fiber}
+The two congruences
+\begin{equation}
+ r\mid m_1j+h,
+ \qquad s\mid m_2j+h
+ \label{eq:two-complement-congruences}
+\end{equation}
+are jointly soluble if and only if
+\begin{equation}
+ d\mid h(m_1-m_2).
+ \label{eq:complement-compatibility}
+\end{equation}
+When they are soluble, they select a unique class \(j_0\pmod q\).
+Writing \(j=j_0+qt\), define
+\begin{align}
+ U_{r,s}(t)
+ &=\frac{m_1(j_0+qt)+h}{r}=A_1t+B_1,
+ \label{eq:U-form}\\
+ V_{r,s}(t)
+ &=\frac{m_2(j_0+qt)+h}{s}=A_2t+B_2.
+ \label{eq:V-form}
+\end{align}
+These are integer affine forms with
+\begin{equation}
+ \boxed{
+ A_1B_2-A_2B_1
+ =\frac{h(m_1-m_2)}d\ne0.}
+ \label{eq:affine-determinant}
+\end{equation}
+Consequently, for any finitely supported orbit weight \(W\),
+\begin{align}
+ &\sum_jW(j)\cT_S(n_1(j))\cT_S(n_2(j))
+ \notag\\
+ &\quad=
+ \sum_{\substack{r,s\ge1\\(r,m_1)=(s,m_2)=1\\
+                  (r,s)\mid h(m_1-m_2)}}
+ \ \sum_{t\in\Z}
+ W(j_0+qt)
+ a(U_{r,s}(t))a(V_{r,s}(t))
+ \one_{U_{r,s}(t)>S}
+ \one_{V_{r,s}(t)>S}.
+ \label{eq:exact-two-fiber-reassembly}
+\end{align}
+All terms with nonpositive targets or outside the finite horizon are
+understood to be absent.
+\end{theorem}
+
+\begin{proof}
+Each congruence in \eqref{eq:two-complement-congruences} selects one
+class modulo its divisor.  Their reductions modulo \(d\) agree exactly
+when
+\(-h\overline{m_1}\equiv-h\overline{m_2}\pmod d\).  Since
+\((m_1m_2,d)=1\), multiplication by \(m_1m_2\) shows that this is
+equivalent to
+\eqref{eq:complement-compatibility}.  The Chinese remainder theorem
+then gives one class modulo \(q\).
+
+The quantities in \eqref{eq:U-form}--\eqref{eq:V-form} are integers,
+with
+\[
+ A_1=\frac{m_1q}{r},\quad
+ B_1=\frac{m_1j_0+h}{r},\quad
+ A_2=\frac{m_2q}{s},\quad
+ B_2=\frac{m_2j_0+h}{s}.
+\]
+Direct calculation gives
+\[
+ A_1B_2-A_2B_1
+ =\frac{qh(m_1-m_2)}{rs}
+ =\frac{h(m_1-m_2)}d.
+\]
+It is nonzero because the generic mask has \(m_1\ne m_2\).
+Finally, expand both tails using \eqref{eq:exact-complement}, group by
+\((r,s)\), and parameterize the common progression.  The inequalities
+on \(U,V\) are exactly the original requirements that the quotient
+divisors exceed \(S\).
+\end{proof}
+
+Because \(a(U)a(V)=\mu(U)\mu(V)\log U\log V\),
+\eqref{eq:exact-two-fiber-reassembly} is an exact family of two-point
+affine M\"obius correlations.  The determinant content \(d=(r,s)\)
+divides \(h(m_1-m_2)\).  On the primitive orbit \((j,H)=1\), it is
+coprime to \(H\) and therefore divides the row difference.  In a mixed
+large--short leg there is also
+the original divisor gcd \((U,v)\mid m_1-m_2\); the two contents can
+overlap when the target has square factors.  They must not be declared
+coprime.
+
+\begin{remark}[The \(r=s=1\) parity core]
+\label{rem:unit-complement}
+The first complement fiber is always compatible and has
+\begin{equation}
+ U_{1,1}(j)=m_1j+h,\qquad
+ V_{1,1}(j)=m_2j+h.
+ \label{eq:unit-complement-forms}
+\end{equation}
+Its coefficient is
+\begin{equation}
+ \mu(m_1j+h)\mu(m_2j+h)
+ \log(m_1j+h)\log(m_2j+h).
+ \label{eq:unit-parity-coefficient}
+\end{equation}
+On prime targets, each individual factor
+\(-\mu(m_i j+h)\log(m_i j+h)\) is the positive prime weight.  Thus a
+generic assertion that this fiber is negligible by ``M\"obius
+randomness'' would be a parity-level overclaim; the precise averaging
+and uniformity are indispensable.
+\end{remark}

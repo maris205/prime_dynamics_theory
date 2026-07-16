@@ -1,0 +1,212 @@
+\section{Primitive packet and the dynamic residual support}
+\label{sec:interface}
+
+Fix \(h\in\Z\setminus\{0\}\), put \(H=\rad|h|\), and choose
+\begin{equation}
+ R=\lfloor X^{1/2-\delta}\rfloor,
+ \qquad 0<\delta<\frac12.
+ \label{eq:R}
+\end{equation}
+The finite Ramanujan model and residual are
+\begin{equation}
+ \Lambda_R(n)=\sum_{q\le R}\frac{\mu(q)}{\varphi(q)}c_q(n),
+ \qquad r_R(n)=\Lambda(n)-\Lambda_R(n).
+ \label{eq:finite-model}
+\end{equation}
+In one separated primitive row packet,
+\begin{equation}
+ Q=LD,\qquad QJ\asymp X,\qquad
+ L>\max\{2R,2|h|\},
+ \label{eq:row-scales}
+\end{equation}
+and the rows are
+\begin{equation}
+ m=\ell d\asymp Q,\qquad
+ \ell\in[L/2,2L]\text{ prime},\qquad
+ d\in[D,2D],\quad d\le R^{1/2}.
+ \label{eq:rows}
+\end{equation}
+We impose \((m,H)=1\), \((j,H)=1\), and put
+\begin{equation}
+ n_m(j)=mj+h.
+ \label{eq:target}
+\end{equation}
+Then
+\begin{equation}
+ (n_m(j),mH)=1.
+ \label{eq:target-coprime}
+\end{equation}
+In particular, every divisor of a target is coprime to the appropriate
+row and to \(H\); this exact fact replaces any unnecessary comparison
+between that divisor and the source prime \(\ell\).
+
+Let \(U\asymp X\) be a finite horizon containing all positive targets
+in the separated packet.  Define
+\begin{align}
+ \lambda'_R(u)
+ &=u\sum_{b\le R/u}\frac{\mu(ub)\mu(b)}{\varphi(ub)}
+ \quad(u\le R),
+ &\lambda'_R(u)&=0\quad(u>R),
+ \label{eq:lambda-prime}\\
+ a(u)&=-\mu(u)\log u,
+ &b_R(u)&=a(u)-\lambda'_R(u).
+ \label{eq:a-b}
+\end{align}
+Both coefficients are zero off squarefree integers, and for every
+fixed \(\eps>0\), uniformly for \(u\le U\),
+\begin{equation}
+ |b_R(u)|\ll_\eps X^\eps.
+ \label{eq:b-soft}
+\end{equation}
+Indeed, for \(u>R\) this is the elementary logarithmic bound, while for
+\(u\le R\) it follows from the positive divisor formula for
+\(\lambda'_R\).
+
+TPC-20 proves the pointwise matched representation
+\begin{equation}
+ Z_m(j)=\eps_U(m)+
+ \sum_{\substack{u\le U\\(u,mH)=1}}
+ b_R(u)\left(\one_{u\mid n_m(j)}-\frac1u\right),
+ \label{eq:matched-signal}
+\end{equation}
+where, for every \(A>0\),
+\begin{equation}
+ \eps_U(m)\ll_{A,h}X^\eps(\log X)^{-A}.
+ \label{eq:calibration-defect}
+\end{equation}
+No prime number theorem in a growing row progression is used in this
+calibration.
+
+Choose a dynamic residual cutoff
+\begin{equation}
+ R<S\le U,
+ \qquad S=X^{s+o(1)},
+ \label{eq:S}
+\end{equation}
+and put
+\begin{align}
+ \vartheta_{R,S}(u)&=b_R(u)\one_{u\le S},
+ \label{eq:theta-RS}\\
+ Z_m^{\le S}(j)
+ &=\sum_{\substack{u\le S\\(u,mH)=1}}
+ b_R(u)\left(\one_{u\mid n_m(j)}-\frac1u\right),
+ \label{eq:truncated-signal}\\
+ Z_m^{>S}(j)
+ &=\sum_{\substack{S<u\le U\\(u,mH)=1}}
+ a(u)\left(\one_{u\mid n_m(j)}-\frac1u\right).
+ \label{eq:ultra-signal}
+\end{align}
+Then \(Z_m=\eps_U(m)+Z_m^{\le S}+Z_m^{>S}\) exactly.  Notice that
+\(S\) truncates the residual expansion only; the model
+\eqref{eq:finite-model} still ends at \(R\).
+
+The separated row weights \(x_m,y_n\) satisfy
+\begin{equation}
+ \|x\|_\infty+\|y\|_\infty\ll_\eps X^\eps,
+ \qquad
+ \sum_m|x_m|^2+\sum_n|y_n|^2\ll QX^\eps.
+ \label{eq:row-energy}
+\end{equation}
+The actual generic Schur mask \(\mathfrak m(m,n)\) is independent of
+all divisor variables, obeys
+\begin{equation}
+ |\mathfrak m(m,n)|\le1,
+ \qquad \mathfrak m(m,m)=0,
+ \label{eq:mask}
+\end{equation}
+and may include the distinct-source, determinant-separation, and
+row-gcd restrictions of TPC-18.  The dynamic theorem below applies to
+this row-pair-only mask.  A modulus-dependent mask would require a new
+argument.
+
+For squarefree \(u,v\le S\), write
+\begin{equation}
+ g=(u,v),\qquad u=ga,\qquad v=gb,\qquad
+ q=[u,v]=gab.
+ \label{eq:gab}
+\end{equation}
+The compatible joint divisibility class exists precisely when
+\(g\mid m-n\), in addition to the primitive coprimality conditions.
+To make the dynamic scalar object explicit, put
+\(\cU_q=(\Z/q\Z)^\times\) and, for \(\xi\in\cU_q\), define
+\begin{align}
+ Z_{u,v}(\xi)
+ &=
+ \sum_{m,n}x_my_n\mathfrak m(m,n)
+ \one_{m\equiv-h\overline{\xi}\pmod{u}}
+ \one_{n\equiv-h\overline{\xi}\pmod{v}},
+ \label{eq:dynamic-pair-fiber}\\
+ Z_{q,S}(\xi)
+ &=
+ \sum_{\substack{u,v\le S\\\operatorname{lcm}(u,v)=q}}
+ \vartheta_{R,S}(u)\vartheta_{R,S}(v)Z_{u,v}(\xi).
+ \label{eq:dynamic-lcm-fiber}
+\end{align}
+Inadmissible row--modulus combinations contribute zero.  Let
+\begin{equation}
+ \overline Z_{u,v}
+ =\frac1{\varphi(q)}\sum_{\xi\in\cU_q}Z_{u,v}(\xi),
+ \qquad
+ D_{u,v}(\xi)=Z_{u,v}(\xi)-\overline Z_{u,v}.
+ \label{eq:dynamic-pair-centering}
+\end{equation}
+Then
+\begin{equation}
+ \overline Z_{q,S}
+ =\frac1{\varphi(q)}\sum_{\xi\in\cU_q}Z_{q,S}(\xi),
+ \qquad
+ D_{q,S}(\xi)=Z_{q,S}(\xi)-\overline Z_{q,S}.
+ \label{eq:dynamic-centering}
+\end{equation}
+Thus \(D_{q,S}\) is a centered function on \(\cU_q\); the centering is
+linear in the divisor-pair decomposition, and explicitly
+\begin{equation}
+ D_{q,S}
+ =
+ \sum_{\substack{u,v\le S\\\operatorname{lcm}(u,v)=q}}
+ \vartheta_{R,S}(u)\vartheta_{R,S}(v)D_{u,v}.
+ \label{eq:dynamic-centered-pair-sum}
+\end{equation}
+
+Use
+\[
+ e(t)=e^{2\pi it},\qquad e_q(t)=e(t/q),\qquad
+ c_H(r)=\sum_{\zeta\in(\Z/H\Z)^\times}e_H(r\zeta).
+\]
+For \(F\in C_c^\infty(\R)\), write
+\(\widehat F(t)=\int_\R F(x)e(-tx)\,dx\), and define
+\begin{equation}
+ \cL_{q,S}
+ =\frac{J}{Hq}\sum_{r\ne0}c_H(r)
+ \widehat F\left(\frac{rJ}{Hq}\right)
+ \sum_{\xi\in\cU_q}Z_{q,S}(\xi)e_q(r\overline H\xi).
+ \label{eq:dynamic-scalar-packet}
+\end{equation}
+Here \(\overline H\) is the inverse of \(H\bmod q\), which exists by
+target primitivity.  We write \(\cL_{q,S}^{\rm mean}\) and
+\(\cL_{q,S}^{\rm disc}\) for the same linear functional with
+\(Z_{q,S}\) replaced by \(\overline Z_{q,S}\) and \(D_{q,S}\),
+respectively.  Hence
+\[
+ \cL_{q,S}=\cL_{q,S}^{\rm mean}+\cL_{q,S}^{\rm disc}.
+\]
+
+We retain the TPC-20 hypotheses
+\begin{equation}
+ J\ge4HX^{\eps_0}
+ \label{eq:no-wrap}
+\end{equation}
+for some fixed \(\eps_0>0\), together with its polynomial bound for the
+total absolute Fourier-tail mass.  These assumptions are inherited
+interfaces, not consequences of the dynamic cutoff.
+
+Finally, TPC-20's two-scale completion applies simultaneously to all
+\(u,v\le S\) under the strict condition
+\begin{equation}
+ HS\le JX^{-\eta_0}
+ \label{eq:S-single-leg}
+\end{equation}
+for some fixed \(\eta_0>0\).  It removes the two single-indicator and
+constant nonzero spectra, leaving the compatible joint packet.  We
+refer to \eqref{eq:S-single-leg} as the \emph{Poisson-short condition};
+it must not be confused with a restriction to one support quadrant.

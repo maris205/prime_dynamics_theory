@@ -1,0 +1,260 @@
+\section{Exponent ledger and a closed strip beyond
+\texorpdfstring{\(R\)}{R}}
+\label{sec:exponent-strip}
+
+Write
+\begin{equation}
+ Q=X^{\beta+o(1)},\qquad J=X^{1-\beta+o(1)},
+ \qquad S=X^{s+o(1)},
+ \label{eq:exponent-main}
+\end{equation}
+and, on a denominator and conductor cell,
+\begin{equation}
+ Y=X^{y+o(1)},\qquad F_i=X^{f_i+o(1)}.
+ \label{eq:exponent-cells}
+\end{equation}
+The dynamic support gives
+\begin{equation}
+ 0\le y\le2s,\qquad 0\le f_i\le s.
+ \label{eq:dynamic-ranges}
+\end{equation}
+Put
+\begin{equation}
+ k_i=\max\{f_i,\beta-f_i\};
+ \label{eq:ki}
+\end{equation}
+then \(\cK_Q(F_i)=X^{k_i+o(1)}\).
+
+The natural scale has exponent \(1+\beta\).  The norm and direct-Gauss
+bounds in \eqref{eq:dynamic-cell-bound} have respective exponents
+\[
+ \beta+\frac{1-\beta+y+k_1+k_2}{2},
+ \qquad
+ \beta+f_1+f_2+\frac{k_1+k_2}{2}.
+\]
+Their saving exponents are therefore
+\begin{equation}
+ \eta_A=\frac{\beta+1-y-k_1-k_2}{2},
+ \qquad
+ \eta_B=1-f_1-f_2-\frac{k_1+k_2}{2}.
+ \label{eq:etaAB}
+\end{equation}
+
+\begin{proposition}[Dynamic three-cell ledger]
+\label{prop:dynamic-ledger}
+Every cell in \eqref{eq:dynamic-ranges} satisfies
+\begin{equation}
+ \max\{\eta_A,\eta_B\}\ge \eta_S(\beta,s),
+ \label{eq:etaS-bound}
+\end{equation}
+where
+\begin{equation}
+ \boxed{
+ \eta_S(\beta,s)=
+ \min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+1-4s}{2},
+ \frac{3-\beta-6s}{4}
+ \right\}.}
+ \label{eq:etaS}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Decreasing \(y\) improves \(\eta_A\), so take \(y=2s\).
+
+If \(f_1,f_2\le\beta/2\), then
+\(k_1+k_2=2\beta-f_1-f_2\), and
+\[
+ \eta_B=1-\beta-\frac{f_1+f_2}{2}
+ \ge1-\frac{3\beta}{2}.
+\]
+If \(f_1,f_2\ge\beta/2\), then
+\(k_1+k_2=f_1+f_2\le2s\), so
+\[
+ \eta_A\ge\frac{\beta+1-4s}{2}.
+\]
+
+In a mixed cell, write
+\(x\le\beta/2\le z\) and \(d=z-x\ge0\).  Then
+\(k_1+k_2=\beta+d\), whence
+\begin{equation}
+ \eta_A\ge\frac12-s-\frac d2.
+ \label{eq:mixed-A}
+\end{equation}
+Since \(z\le s\), direct substitution gives
+\begin{equation}
+ \eta_B=1-2z-\frac\beta2+\frac d2
+ \ge1-2s-\frac\beta2+\frac d2.
+ \label{eq:mixed-B}
+\end{equation}
+The maximum is at least the average of the two displayed lower bounds,
+namely \((3-\beta-6s)/4\).
+\end{proof}
+
+\begin{theorem}[Dynamic-cutoff closure]
+\label{thm:dynamic-closure}
+Assume the primitive interface of \cref{sec:interface}, including the
+row-pair-only off-diagonal mask, no-wrap condition, polynomial
+Fourier-tail mass, and the strict Poisson-short condition
+\begin{equation}
+ s<1-\beta
+ \label{eq:poisson-exponent}
+\end{equation}
+with a fixed margin.  If
+\begin{equation}
+ \eta_S(\beta,s)>0
+ \label{eq:hybrid-positive}
+\end{equation}
+with a fixed margin, then some \(\eta>0\) satisfies
+\begin{equation}
+ \boxed{
+ \sum_{q\le S^2}
+ \left|\cL_{q,S}^{\rm disc}\right|
+ \ll_{\eps,F,H}XQX^{-\eta+\eps}.}
+ \label{eq:dynamic-discrepancy-closure}
+\end{equation}
+Together with \cref{thm:dynamic-mean}, this closes the selected packet
+\(u,v\le S\), after the inherited dyadic and separated-packet
+reassembly.
+\end{theorem}
+
+\begin{proof}
+Apply \cref{prop:dynamic-ledger} to every dyadic nonprincipal
+coordinate-conductor cell in \eqref{eq:dynamic-cell-reassembly}, using
+\eqref{eq:dynamic-cell-bound}.  The fixed
+margin absorbs the \(X^\eps\), divisor-pair, and logarithmic conductor
+multiplicities.  Condition \eqref{eq:poisson-exponent} is precisely
+\eqref{eq:S-single-leg} at exponent level.  The inherited no-wrap and
+tail-mass hypotheses license the norm route and discard the smooth
+Fourier tail.  The principal cell is bounded by
+\cref{thm:dynamic-mean} at \(Q^2X^\eps=(XQ/J)X^\eps\), which is also
+power-saving because \(J=X^{1-\beta+o(1)}\).
+\end{proof}
+
+There is a useful alternative on the short-period side.  If the row
+source has the stronger margin \(L>2S\), the TPC-21 deterministic
+occupancy proof extends with \(S\) in place of \(R\) and closes the
+enlarged packet under
+\begin{equation}
+ 2s<1-\beta.
+ \label{eq:dynamic-occupancy}
+\end{equation}
+The extra condition \(L>2S\) is needed for that particular proof to
+replace \(O(L/u+1)\) by \(O(L/u)\); it is not needed in
+\cref{thm:dynamic-closure}.  We keep the hybrid theorem as the main
+cutoff-independent statement.
+
+\subsection{The polynomial collar}
+
+Return to \(R=X^{1/2-\delta+o(1)}\) and put
+\begin{equation}
+ S=RX^\rho,
+ \qquad s=\frac12-\delta+\rho.
+ \label{eq:S-collar}
+\end{equation}
+
+\begin{corollary}[A closed large-divisor strip]
+\label{cor:closed-strip}
+Suppose
+\begin{equation}
+ 1-4\delta<\beta<\min\left\{\frac23,6\delta\right\},
+ \qquad \beta<\frac12+\delta,
+ \label{eq:old-hybrid-interior}
+\end{equation}
+with fixed margins.  Then \cref{thm:dynamic-closure} applies for every
+fixed \(\rho>0\) satisfying
+\begin{equation}
+ \boxed{
+ \rho<\min\left\{
+ \frac12+\delta-\beta,
+ \frac{\beta+4\delta-1}{4},
+ \frac{6\delta-\beta}{6}
+ \right\}}
+ \label{eq:rho-range}
+\end{equation}
+with a fixed margin.  Hence the closed support grows from
+\([1,R]^2\) to \([1,RX^\rho]^2\).
+\end{corollary}
+
+\begin{proof}
+The three quantities in \eqref{eq:rho-range} are respectively the
+strict Poisson-short margin and the positivity margins of the second
+and third entries in \eqref{eq:etaS}.  The first entry of
+\eqref{eq:etaS} is positive exactly when \(\beta<2/3\).
+\end{proof}
+
+The conclusion contains all pairs in
+\begin{equation}
+ [1,R]\times(R,S],\qquad (R,S]\times[1,R],
+ \qquad (R,S]^2.
+ \label{eq:new-support-pieces}
+\end{equation}
+Thus it closes not only two mixed collars but also a genuine both-large
+square.  This is a support statement about the residual coefficient;
+it is stronger than completing a single Fourier channel at fixed
+\((u,v)\).
+
+\begin{corollary}[Poisson-short frontier for \(3/5<\beta<2/3\)]
+\label{cor:poisson-frontier}
+If \(3/5<\beta<2/3\), then every fixed-power cutoff
+\begin{equation}
+ S\le JX^{-\eta_0}
+ \label{eq:near-J-cutoff}
+\end{equation}
+with \(S>R\) and fixed \(\eta_0>0\) satisfies all three conductor
+inequalities in \eqref{eq:etaS} with a fixed margin.  Hence the hybrid
+method reaches the strict Poisson-short boundary.
+\end{corollary}
+
+\begin{proof}
+At the endpoint \(s=1-\beta\), the second and third numerators in
+\eqref{eq:etaS} both become \(5\beta-3\).  They are positive for
+\(\beta>3/5\).  Moving a fixed distance inside the endpoint supplies
+the required strict margins.
+\end{proof}
+
+\subsection{Uniform collar widths in the inherited profiles}
+
+For the published profile, let
+\begin{equation}
+ \frac{11}{21}-2\sigma<\beta
+ \le\frac{61}{84}-\sigma-\frac\delta2,
+ \qquad
+ \delta=\frac{19}{126}-\frac{2\sigma}{3}+t,
+ \label{eq:published-profile}
+\end{equation}
+where \(0<\sigma<1/100\) and \(t>0\), subject to the inherited
+admissibility conditions \(0<\delta<1/4\) and a nonempty displayed
+\(\beta\)-interval.  Uniformly over its entire
+\(\beta\)-interval, any fixed
+\begin{equation}
+ 0<\rho<\min\left\{
+ \frac{3t}{2},
+ \frac{2}{63}-\frac{7\sigma}{6}+t,
+ \frac{8}{189}-\frac{5\sigma}{9}+\frac{13t}{12}
+ \right\}
+ \label{eq:published-rho}
+\end{equation}
+is allowed.
+
+For the version-locked second profile,
+\begin{equation}
+ \frac9{17}-\frac\sigma2<\beta
+ \le\frac{49}{68}-\sigma-\frac\delta2,
+ \qquad
+ \delta=\frac5{34}-\frac{2\sigma}{3}+t,
+ \label{eq:li-profile}
+\end{equation}
+with \(0<\sigma<1/1000\), subject to \(0<\delta<1/4\) and a nonempty
+displayed \(\beta\)-interval, a uniform choice is
+\begin{equation}
+ 0<\rho<\min\left\{
+ \frac{3t}{2},
+ \frac1{34}-\frac{19\sigma}{24}+t,
+ \frac2{51}-\frac{5\sigma}{9}+\frac{13t}{12}
+ \right\}.
+ \label{eq:li-rho}
+\end{equation}
+The first entry in both ledgers tends to zero as \(t\downarrow0\): an
+endpoint equality supplies no fixed-power collar.

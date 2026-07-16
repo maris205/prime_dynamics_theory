@@ -1,0 +1,203 @@
+\section{A logarithmic bridge and an absolute-value no-go}
+\label{sec:logarithmic-bridge}
+
+The affine normal form permits one rigorous step through the parity
+gate, but only in a weaker averaging regime and without the uniformity
+required by the TPC packet.
+
+\subsection{Every fixed fiber cancels logarithmically}
+
+Tao proved the logarithmically averaged two-point Elliott conjecture
+\citep{Tao2016}.  In the special case needed here, if
+\begin{equation}
+ L_1(t)=A_1t+B_1,\qquad L_2(t)=A_2t+B_2,
+ \qquad A_1B_2-A_2B_1\ne0,
+ \label{eq:fixed-affine-forms}
+\end{equation}
+are fixed and positive for large \(t\), then
+\begin{equation}
+ \sum_{t\le T}\frac{\mu(L_1(t))\mu(L_2(t))}{t}
+ =o(\log T).
+ \label{eq:Tao-mu-correlation}
+\end{equation}
+This is Corollary~5 of \citet{Tao2016}, applied with
+\(g_1=g_2=\mu\) and \(\omega(T)=T\).  The M\"obius function satisfies
+the corrected strong nonpretentiousness condition used there; Tao
+deduces this from the classical zero-free region.  A fixed initial
+shift may be made first if one of the constants \(B_i\) is negative,
+so both forms lie in the positive integers throughout the sum.
+
+\begin{proposition}[Log-weighted cancellation on a fixed fiber]
+\label{prop:fixed-fiber-log}
+Under \eqref{eq:fixed-affine-forms},
+\begin{equation}
+ \boxed{
+ \sum_{t\le T}\frac{a(L_1(t))a(L_2(t))}{t}
+ =o((\log T)^3).}
+ \label{eq:fixed-fiber-log}
+\end{equation}
+In particular, every fixed fiber in
+\cref{thm:affine-complement-fiber} has logarithmically averaged
+cancellation.
+\end{proposition}
+
+\begin{proof}
+Set
+\[
+ A(x)=\sum_{t\le x}\frac{\mu(L_1(t))\mu(L_2(t))}{t}
+ =o(\log x)
+\]
+by \eqref{eq:Tao-mu-correlation}.  The weight
+\(w(t)=\log L_1(t)\log L_2(t)\) satisfies
+\[
+ w(t)\ll(\log(2t))^2,
+ \qquad w'(t)\ll\frac{\log(2t)}t
+\]
+away from a fixed initial interval.  Partial summation gives
+\[
+ A(T)w(T)-\int_2^T A(t)w'(t)\,dt=o((\log T)^3).
+\]
+The two minus signs in \(a(L_1)a(L_2)\) cancel.
+\end{proof}
+
+For a fixed complement cutoff \(Z\), define
+\begin{equation}
+ \cT_{m}^{[Z]}(j)
+ =\sum_{\substack{r\mid mj+h\\r\le Z}}a((mj+h)/r).
+ \label{eq:fixed-complement-truncation}
+\end{equation}
+
+\begin{corollary}[Finite complement reassembly]
+\label{cor:finite-complement-log}
+Fix \(h\ne0\), distinct positive rows \(m_1,m_2\) coprime to \(h\),
+and \(Z\ge1\).  Then
+\begin{equation}
+ \boxed{
+ \sum_{j\le J}\frac{
+  \cT_{m_1}^{[Z]}(j)\cT_{m_2}^{[Z]}(j)}j
+ =o_{m_1,m_2,h,Z}((\log J)^3).}
+ \label{eq:finite-complement-log}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Expand the two finite divisor sums.  For each fixed \(r,s\le Z\), the
+two divisibility conditions are either incompatible or select one
+class \(j=j_0+[r,s]t\).  In the latter case,
+\cref{thm:affine-complement-fiber} gives two affine quotient forms with
+nonzero determinant.  Also
+\[
+ \frac1{j_0+[r,s]t}
+ =\frac1{[r,s]t}+O_{r,s}(t^{-2}).
+\]
+Apply \cref{prop:fixed-fiber-log}; the \(t^{-2}\) error converges after
+the logarithmic weights.  There are only finitely many pairs.
+\end{proof}
+
+The fixedness can be relaxed only ineffectively by a diagonal argument.
+
+\begin{corollary}[An arbitrarily slow moving window]
+\label{cor:slow-window}
+For fixed \(h\ne0\), there exists a nondecreasing function
+\(K(J)\to\infty\) such that
+\begin{equation}
+ \max_{\substack{1\le m_1,m_2,Z\le K(J)\\m_1\ne m_2\\
+                  (m_1m_2,h)=1}}
+ \frac1{(\log J)^3}
+ \left|\sum_{j\le J}\frac{
+ \cT_{m_1}^{[Z]}(j)\cT_{m_2}^{[Z]}(j)}j\right|
+ \longrightarrow0.
+ \label{eq:slow-window}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+For each integer \(K\), \cref{cor:finite-complement-log} holds
+uniformly over the finite set of triples \(m_1,m_2,Z\le K\), with the
+maximum over an empty set interpreted as zero.  Choose
+strictly increasing thresholds \(J_K\ge K\) beyond which the normalized
+maximum is at most \(1/K\), and set
+\(K(J)=\max\{K:J_K\le J\}\), with \(K(J)=1\) below \(J_1\).
+\end{proof}
+
+This is a genuine moving-parameter consequence, but it supplies no
+effective rate at all.  It is many orders of magnitude weaker than
+the polynomial scales \(m_i\asymp Q=X^\beta\) and
+\(r,s\ll X/S\) in \eqref{eq:exact-two-fiber-reassembly}.
+
+\subsection{Why absolute values cannot replace the correlation}
+
+We next show that the unit-complement fiber is large after signs are
+removed.  This is a componentwise obstruction, not a lower bound for
+the complete signed residual packet.
+
+For fixed primitive rows, let \(\nu_p\) be the number of solutions
+\(j\pmod{p^2}\) of
+\begin{equation}
+ (m_1j+h)(m_2j+h)\equiv0\pmod{p^2}.
+ \label{eq:nu-p}
+\end{equation}
+Each form has at most one root modulo \(p^2\), and it has none if
+\(p\mid m_i\), because then \(p\nmid h\).  Hence \(0\le\nu_p\le2\),
+and
+\begin{equation}
+ \mathfrak S_{\rm sf}(m_1,m_2;h)
+ =\prod_p\left(1-\frac{\nu_p}{p^2}\right)>0.
+ \label{eq:squarefree-singular-series}
+\end{equation}
+
+\begin{lemma}[Simultaneous squarefree density]
+\label{lem:simultaneous-squarefree}
+For fixed \(m_1\ne m_2\) with \((m_1m_2,h)=1\),
+\begin{equation}
+ \sum_{j\le J}
+ \mu^2(m_1j+h)\mu^2(m_2j+h)
+ =\mathfrak S_{\rm sf}(m_1,m_2;h)J+o(J).
+ \label{eq:simultaneous-squarefree}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For a fixed prime bound \(P\), the Chinese remainder theorem gives the
+exact density
+\(\prod_{p\le P}(1-\nu_p/p^2)\) of classes avoiding all square
+divisors \(p^2\) with \(p\le P\), up to \(O_P(1/J)\).  The number of
+\(j\le J\) for which one of the two forms is divisible by \(p^2\) for
+some \(p>P\) is
+\[
+ \ll\sum_{P<p\ll\sqrt J}\left(\frac J{p^2}+1\right)
+ =O(J/P)+O(\sqrt J/\log J),
+\]
+where the implied constants may depend on the fixed rows and \(h\).
+Let \(J\to\infty\) and then \(P\to\infty\).  Absolute convergence and
+positivity of
+\eqref{eq:squarefree-singular-series} follow from \(\nu_p\le2\).
+\end{proof}
+
+\begin{proposition}[Absolute-mass no-go]
+\label{prop:absolute-nogo}
+For the unit-complement coefficient in
+\eqref{eq:unit-parity-coefficient},
+\begin{equation}
+ \boxed{
+ \sum_{J/2<j\le J}
+ \left|\mu(m_1j+h)\mu(m_2j+h)\right|
+ \log(m_1j+h)\log(m_2j+h)
+ \gg_{m_1,m_2,h}J(\log J)^2.}
+ \label{eq:absolute-nogo}
+\end{equation}
+Therefore a fiberwise triangle inequality or sign-blind estimate cannot
+make this fixed, unweighted component power-saving.
+\end{proposition}
+
+\begin{proof}
+By \cref{lem:simultaneous-squarefree}, a positive proportion of the
+integers in \((J/2,J]\) make both forms squarefree.  On that interval
+both logarithms are \(\asymp\log J\), and
+\(|\mu(n)|=\mu^2(n)\).
+\end{proof}
+
+There is no contradiction between
+\cref{prop:fixed-fiber-log,prop:absolute-nogo}: the first retains the
+product of the two M\"obius signs and uses logarithmic averaging; the
+second deliberately removes exactly that cancellation.

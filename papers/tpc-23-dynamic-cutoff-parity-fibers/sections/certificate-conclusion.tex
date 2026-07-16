@@ -1,0 +1,83 @@
+\section{Exact certificate and conclusion}
+\label{sec:certificate-conclusion}
+
+The analytic proofs above are symbolic.  We include a deterministic
+finite certificate to audit the identities and rational exponent
+ledger most vulnerable to normalization, boundary, or gcd errors.  It
+does not test the logarithmically averaged theorem, estimate primes, or
+replace any asymptotic argument.
+
+\subsection{Certificate}
+
+The script
+\begin{center}
+ \texttt{experiments/tpc23\_certificate.py}
+\end{center}
+uses only the Python standard library.  It represents
+\(-\mu(n)\log n\) exactly as a vector on the formal basis
+\(\{\log p:p\text{ prime}\}\), and uses
+\texttt{fractions.Fraction} for every exponent calculation.  It checks:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+ \item complement reflection \eqref{eq:exact-complement} for all
+ \(2\le n\le400\) and \(1\le Y\le24\), including nonsquarefree
+ targets;
+ \item the Liouville cocycle \eqref{eq:exact-Liouville-cocycle} and
+ balanced hyperbola split on the same models;
+ \item the general CRT compatibility
+ \((r,s)\mid h(m_1-m_2)\) and affine determinant
+ \eqref{eq:affine-determinant} over five primitive row--shift samples
+ and a finite modulus family that includes complements sharing primes
+ with \(h\);
+ \item a hard-failure variant which omits the factor \((r,s)\) from the
+ determinant and is required to disagree;
+ \item the dynamic three-cell inequality on an exact rational grid;
+ \item both inherited profile collar identities
+ \eqref{eq:published-rho} and \eqref{eq:li-rho}.
+\end{enumerate}
+
+Independent ordinary and \texttt{python -O} runs perform \(56{,}714\)
+exact checks and produce byte-identical output.  The hashes are
+\begin{center}
+\scriptsize
+\begin{tabular}{@{}ll@{}}
+\toprule
+JSON SHA-256
+&\nolinkurl{62e982d5da46d68fcf698f498a2d8fa66cb54ca9422d470f8516bc18f2aa08ab}\\
+source SHA-256
+&\nolinkurl{51640ec4cbc5c82d792ce40a170ec919ffa2593fade6f92eaffca25d612429be}\\
+certificate digest
+&\nolinkurl{c5054fcce65ccbdda59dba99c519f5fd9fbe147384f63f6b5d0e17265876be97}\\
+\bottomrule
+\end{tabular}
+\end{center}
+The JSON flags for asymptotic evidence, full residual closure,
+Hardy--Littlewood, twin primes, and a general parity breakthrough are
+all false.
+
+\subsection{Conclusion}
+
+The large-divisor support left after TPC-22 is not an indivisible black
+box.  The exact-conductor method is stable under a dynamic residual
+cutoff, and its new exponent ledger proves that every strict interior
+point of the old hybrid closure region contains a nonzero collar beyond
+\(R\).  The enlarged square \(u,v\le S\) includes two mixed pieces and
+a both-large piece.  This is a genuine fixed-power analytic advance,
+not a numerical observation or a renamed short--short theorem.
+
+At the next boundary, divisor reflection changes the problem.  It
+shortens the complementary modulus but transfers the coefficient to
+the quotient \(\mu((mj+h)/r)\).  On two rows, the quotient variables
+are nonproportional affine forms with exact determinant
+\(h(m_1-m_2)/(r,s)\).  This identifies a real two-point parity
+cocycle.  Known logarithmic Elliott theory cancels each fixed fiber and
+every fixed finite complement family; a diagonal argument even permits
+an ineffective slowly growing family.  The absolute-mass theorem shows
+why the signs cannot be removed.
+
+What remains is now narrower and more explicit: obtain a rate uniform
+over polynomially growing affine coefficients and complement fibers in
+the long range, and a summed incidence estimate in the sparse range.
+Either advance would move the full residual program forward.  Neither
+is supplied here, and neither may be replaced by an assertion of random
+M\"obius signs.  Full residual reassembly, a positive prime-pair main
+term, and the twin-prime conjecture remain separate open stages.

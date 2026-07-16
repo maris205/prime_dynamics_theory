@@ -1,0 +1,151 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Dynamic Cutoffs Beyond the Sieve Range: A Closed Large-Divisor Strip and the Remaining Affine Mobius Parity Fibers},
+ pdfauthor={Liang Wang},
+ pdfsubject={Dynamic-cutoff closure and complementary-divisor normal forms in a primitive Mobius residual},
+ pdfkeywords={Mobius tail, dynamic cutoff, exact conductors, large sieve, affine forms, logarithmic Elliott theorem, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Conditional input}
+\crefname{assumption}{conditional input}{conditional inputs}
+\Crefname{assumption}{Conditional input}{Conditional inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\cond}{\operatorname{cond}}
+\newcommand{\lcm}{\operatorname{lcm}}
+
+\title{\textbf{Dynamic Cutoffs Beyond the Sieve Range:}\\
+\textbf{A Closed Large-Divisor Strip and the Remaining}\\
+\textbf{Affine M\"obius Parity Fibers}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The matched divisor expansion of a primitive fixed-shift M\"obius
+residual has coefficient \(b_R(u)=-\mu(u)\log u\) beyond its finite
+Ramanujan cutoff \(R=X^{1/2-\delta+o(1)}\).  Earlier work closes only
+the selected packet \(u,v\le R\).  We replace the static support by a
+dynamic cutoff \(S=X^{s+o(1)}>R\), without changing the finite model,
+and prove that the conductor-rectangularized tensor and induced-Gauss
+estimates remain valid for \(u,v\le S\).  If
+\(Q=X^{\beta+o(1)}\), \(J=X^{1-\beta+o(1)}\), and the inherited
+no-wrap and polynomial Fourier-tail hypotheses hold, the enlarged
+packet has a fixed-power saving whenever \(s<1-\beta\) and
+\[
+ \eta_S=\min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+1-4s}{2},
+ \frac{3-\beta-6s}{4}
+ \right\}>0.
+\]
+Consequently every strict interior point of the earlier hybrid closure region
+admits a genuine fixed-power strip \(S=RX^\rho\) with \(\rho>0\).
+This closes parts of both mixed support quadrants and also the square
+\((R,S]^2\); it is the first estimate in this chain for divisor
+coefficients strictly beyond the sieve cutoff.  When
+\(3/5<\beta<2/3\), the hybrid argument reaches every fixed-power
+cutoff \(S<JX^{-\eta}\).
+
+For the remaining terms we prove an exact complementary-divisor normal
+form.  On a row \(n=mj+h\), the ultra-long tail is
+\[
+ \sum_{\substack{u\mid n\\u>S}}-\mu(u)\log u
+ =\sum_{\substack{r\mid n\\r<n/S}}
+   -\mu(n/r)\log(n/r).
+\]
+For two rows, fixing complementary divisors \(r,s\) parameterizes the
+orbit by one residue class and produces two affine forms whose
+determinant is exactly \(h(m_1-m_2)/(r,s)\ne0\).  The unresolved
+coefficient is therefore an affine two-point M\"obius correlation,
+not an arbitrary large-modulus fiber.  Tao's proved logarithmically
+averaged two-point Elliott theorem cancels every fixed complement
+fiber, and hence every fixed finite complement truncation.  We also
+prove that the absolute value of the unweighted \(r=s=1\) fiber for
+each fixed row pair has mass \(\gg J\log^2J\), so a coefficientwise
+triangle inequality on that fiber cannot close it.  The missing input
+is quantitative uniformity for polynomially
+growing rows and complement fibers in a sharp dyadic orbit window.
+No full residual-dispersion theorem, Hardy--Littlewood asymptotic,
+twin-prime lower bound, or general breach of sieve parity is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} primitive M\"obius tail; dynamic divisor
+cutoff; exact conductors; tensor large sieve; complementary divisors;
+affine M\"obius correlations; logarithmic Elliott theorem; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary
+11L07, 11L40.
+
+\input{sections/introduction}
+\input{sections/interface}
+\input{sections/dynamic-mean}
+\input{sections/dynamic-conductor}
+\input{sections/exponent-strip}
+\input{sections/complement-fibers}
+\input{sections/logarithmic-bridge}
+\input{sections/barriers-roadmap}
+\input{sections/certificate-conclusion}
+
+\clearpage
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

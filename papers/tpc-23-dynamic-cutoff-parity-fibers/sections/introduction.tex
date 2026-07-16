@@ -1,0 +1,166 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The primitive residual isolated in TPC-18--20 has an exact centered
+divisor expansion on every finite target horizon.  If
+\[
+ a(u)=-\mu(u)\log u,
+\]
+then its common four-channel coefficient is
+\begin{equation}
+ b_R(u)=a(u)-\lambda'_R(u),
+ \qquad \lambda'_R(u)=0\quad(u>R).
+ \label{eq:intro-bR}
+\end{equation}
+Thus \(b_R(u)=a(u)\) beyond the finite Ramanujan cutoff.  TPC-21
+removes the deterministic Ramanujan mean of the selected packet
+\(u,v\le R\), and TPC-22 closes its centered discrepancy in explicit
+parameter regions by exact-conductor rectangularization
+\citep{WangTPC18,WangTPC19,WangTPC20,WangTPC21,WangTPC22}.
+
+The support remaining after that result has four quadrants:
+\begin{equation}
+ \begin{array}{c|cc}
+  &v\le R&v>R\\ \hline
+ u\le R&\mathrm{SS}&\mathrm{SL}\\
+ u>R&\mathrm{LS}&\mathrm{LL}.
+ \end{array}
+ \label{eq:intro-four-quadrants}
+\end{equation}
+Only SS was previously closed.  In particular, both-large terms exist:
+one may take \(u=m_1j+h\) and \(v=m_2j+h\).  We therefore avoid the
+ambiguous phrase ``one-sided large-divisor terms'' for the whole
+complement.  We also distinguish support legs from the
+\emph{single-indicator Fourier channels} completed in TPC-20; the
+latter theorem did not estimate SL or LS in
+\eqref{eq:intro-four-quadrants}.
+
+\subsection{A dynamic cutoff}
+
+Our first result moves the closed support itself.  Choose
+\begin{equation}
+ R<S\le X^{1-o(1)},
+ \qquad \vartheta_{R,S}(u)=b_R(u)\one_{u\le S}.
+ \label{eq:intro-dynamic-coefficient}
+\end{equation}
+This does not replace the finite model cutoff \(R\): it truncates the
+\emph{residual} divisor coefficient at a later point.  The enlarged
+packet \(u,v\le S\) contains SS, both mixed collars, and the nonempty
+both-large square \((R,S]^2\).
+
+Write
+\[
+ Q=X^{\beta+o(1)},\qquad J=X^{1-\beta+o(1)},
+ \qquad S=X^{s+o(1)}.
+\]
+The TPC-22 character coordinates, exact-conductor large sieve, and
+all-frequency induced-Gauss estimate remain valid with \(S\) in place
+of \(R\).  The actual off-diagonal row-pair mask is essential: it gives
+\[
+ \sum_{g\le S}\sum_{m,n}|c_{m,n}^{(g)}|^2
+ \ll Q^2X^\eps
+\]
+because \(g\mid m-n\), not because \(S\) is below the row length.  No
+new hypothesis \(L>2S\) is required for the hybrid argument.  What
+changes is the denominator
+range \(q\le S^2\), the conductor range \(F_i\le S\), and the
+two-scale completion condition \(HS\ll JX^{-\eta}\).
+
+The resulting hybrid saving is
+\begin{equation}
+ \eta_S(\beta,s)=
+ \min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+1-4s}{2},
+ \frac{3-\beta-6s}{4}
+ \right\}.
+ \label{eq:intro-etaS}
+\end{equation}
+There is also an occupancy route when \(2s<1-\beta\), provided the
+stronger source margin \(L>2S\) is imposed.  Consequently,
+putting
+\[
+ s=\frac12-\delta+\rho
+\]
+gives a genuine strip beyond \(R\).  In the hybrid region it is enough
+that
+\begin{equation}
+ 0<\rho<\min\left\{
+ \frac12+\delta-\beta,
+ \frac{\beta+4\delta-1}{4},
+ \frac{6\delta-\beta}{6}
+ \right\},
+ \label{eq:intro-rho-hybrid}
+\end{equation}
+while the occupancy region permits
+\begin{equation}
+ 0<\rho<\frac{2\delta-\beta}{2}.
+ \label{eq:intro-rho-occupancy}
+\end{equation}
+Every bound is strict and carries a fixed margin.  These formulas show
+that every strict interior point of the TPC-22 hybrid closure region has
+a positive collar.  The occupancy branch has the same conclusion only
+when its additional source margin \(L>2S\) is available.  In either
+case, this is a rigorous estimate for genuinely new large-divisor
+coefficients under the inherited packet interfaces stated below.
+
+\subsection{What the next support looks like}
+
+Let \(n=mj+h\).  The part beyond \(S\), after a uniformly negligible
+scalar centering tail is removed, is
+\begin{equation}
+ \cT_{m,S}(j)
+ =\sum_{\substack{u\mid n\\u>S}}a(u)
+ =\sum_{\substack{r\mid n\\r<n/S}}a(n/r).
+ \label{eq:intro-complement}
+\end{equation}
+The second equality is exact and valid without assuming that \(n\) is
+squarefree.  Since \(\mu(k)=\lambda(k)\mu^2(k)\), it also gives the
+Liouville-cocycle identity
+\begin{equation}
+ \cT_{m,S}(j)
+ =-\lambda(n)
+ \sum_{\substack{r\mid n\\r<n/S}}
+ \lambda(r)\mu^2(n/r)\log(n/r).
+ \label{eq:intro-Liouville-cocycle}
+\end{equation}
+Thus divisor reflection turns geometric size into a target-dependent
+parity phase.
+
+More usefully for two rows, fix complement divisors \(r,s\).  Their two
+divisibility conditions select either no orbit points or one class
+\(j=j_0+[r,s]t\).  The quotient divisors are affine forms
+\[
+ U(t)=\frac{m_1(j_0+[r,s]t)+h}{r},\qquad
+ V(t)=\frac{m_2(j_0+[r,s]t)+h}{s},
+\]
+and
+\begin{equation}
+ \det(U,V)=\frac{h(m_1-m_2)}{(r,s)}\ne0.
+ \label{eq:intro-affine-determinant}
+\end{equation}
+The remaining LL coefficient is therefore
+\(\mu(U(t))\mu(V(t))\log U(t)\log V(t)\).  This exact normal form
+identifies the next analytic input: a quantitatively uniform two-point
+affine M\"obius estimate for growing coefficients, summed over moving
+complement fibers.
+
+For each fixed fiber, the logarithmically averaged estimate is already
+known: Tao's two-point Elliott theorem applies because
+\eqref{eq:intro-affine-determinant} is nonzero
+\citep{Tao2016}.  We record the corresponding log-weighted corollary
+and a finite-complement reassembly.  We also prove that the absolute
+value of the \(r=s=1\) fiber has positive squarefree density and mass
+of order \(J\log^2J\).  Hence a coefficientwise absolute-value estimate
+cannot close that component.
+
+The organization is as follows.  \Cref{sec:interface} fixes the exact
+primitive packet.  \Cref{sec:dynamic-mean} extends the Ramanujan-mean
+bound and removes the scalar ultra-long tail.
+\Cref{sec:dynamic-conductor,sec:exponent-strip} prove the dynamic-cutoff
+closure and its exponent ledgers.  \Cref{sec:complement-fibers} derives
+the complementary affine forms.  \Cref{sec:logarithmic-bridge} gives
+the fixed-fiber logarithmic theorem and the absolute-value no-go.
+\Cref{sec:barriers-roadmap} states the remaining uniform gate and strict
+scope.  The exact certificate and conclusion are in
+\cref{sec:certificate-conclusion}.
