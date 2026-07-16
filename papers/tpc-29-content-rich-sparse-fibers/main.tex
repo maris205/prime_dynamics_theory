@@ -1,0 +1,168 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,float}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Content-Rich Reflected Fibers in a Primitive Mobius Tail: Long-Fiber Pruning, a Sparse Incidence Wedge, and the Primitive-Core Barrier},
+ pdfauthor={Liang Wang},
+ pdfsubject={Incidence closure of a content-rich sparse wedge in the reflected ultra-long Mobius complement},
+ pdfkeywords={Mobius tail, divisor reflection, sparse fibers, incidence geometry, primitive lcm, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\rad}{\operatorname{rad}}
+
+\title{\textbf{Content-Rich Reflected Fibers in a Primitive M\"obius Tail:}\\
+\textbf{Long-Fiber Pruning, a Sparse Incidence Wedge,}\\
+\textbf{and the Primitive-Core Barrier}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let $P_{m,T}$ be the calibrated divisor prefix at the upper cutoff of
+a selected primitive opened-row packet, and let $U_0\asymp X$ contain
+all positive targets on its physical support.  The preceding
+conductor argument closes the truncated quadratic packet at $T$, but
+does not estimate the ultra-long complement.  We begin from the exact
+calibrated identity
+\[
+ P_{m,U_0}-P_{m,T}=C_{m;T,U_0},\qquad
+ C_{m;T,U_0}(j)=
+ \sum_{\substack{T<w\le U_0\\w\mid mj+h}}-\mu(w)\log w.
+\]
+It avoids a scalar-tail replacement whose available pointwise bounds
+do not by themselves imply arbitrary logarithmic saving.  Expanding
+the joint cutoff difference leaves three raw ultra channels and two
+row-drift legs; the latter are power-small from the existing
+$L^{-1}$ row factor.
+
+Reflect a long divisor $w$ to $r=(mj+h)/w$.  For distinct primitive
+rows $m,n$, dyadic complement variables
+\[
+ r\asymp A,\qquad s\asymp B,\qquad (r,s)\asymp G
+\]
+select, when compatible, one orbit class modulo $[r,s]$.  We prove the
+fixed-row incidence estimate
+\[
+ \cN_{m,n}(A,B,G)
+ \ll_{\eps,h}X^\eps
+ \min\left\{J,\frac{AB}{G^2}+\frac JG\right\}.
+\]
+The first term is the pointwise divisor bound.  For the second, each
+exact common content divides $h(m-n)$; after writing
+$r=dr_1$, $s=ds_1$, the number of coprime primitive pairs is
+$O(AB/d^2)$ and their orbit occupancy is
+$O(1+Jd/(AB))$.  This argument neither removes the M\"obius signs nor
+assumes that complement and quotient contents are coprime.
+
+The actual opened-row coefficients have one-row $\ell^1$ mass
+$O(Q)$.  Consequently every physical mixed or both-ultra dyadic block
+satisfies
+\[
+ |\cS(A,B,G)|
+ \ll_\eps Q^2X^\eps
+ \min\left\{J,\frac{AB}{G^2}+\frac JG\right\}.
+\]
+Writing $q=[r,s]$ and $g=(r,s)$, this gives the unconditional
+content-rich sparse wedge
+\[
+ q\ge J,\qquad \frac qg\le JX^{-\eta}
+ \quad\Longrightarrow\quad
+ \cS_{\rm rich}\ll_\eps XQX^{-\eta+\eps}.
+\]
+Here $q/g=(r/g)(s/g)$ is the primitive lcm after the shared content is
+removed.  On the complementary long-fiber side $q\le Y\le J$, row
+residue energy also gives
+\[
+ \cS_{q\le Y,\,(r,s)>D}
+ \ll_\eps X^\eps\left\{
+ \frac{XQ}{D}\log^2(2Y)+X\log^3(2Y)
+ \right\}.
+\]
+Thus every polynomially large shared-content sector is power-small on
+prescribed long-fiber scales as well.
+
+At the high-$\beta$ sample
+$\beta=267/400$, $T=X^{193/500+o(1)}$, the block
+$A=B=X^{1/4}$, $G=X^{1/10}$ is genuinely sparse and has the exact
+incidence margin $13/400$.
+
+This closes a nonempty exponent region of the ultra-long geometry
+without a Chowla or Elliott input.  It does not close the primitive sparse core,
+the dense long-fiber region, the complete residual, positivity, a
+Hardy--Littlewood asymptotic, twin primes, or the sieve parity problem.
+\end{abstract}
+
+\noindent\textbf{Keywords:} primitive M\"obius tail; divisor
+reflection; sparse fiber; incidence geometry; primitive lcm; sieve
+parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary
+11B25, 11D45.
+
+\input{sections/introduction}
+\input{sections/physical-interface}
+\input{sections/calibrated-difference}
+\input{sections/reflected-incidence}
+\input{sections/weighted-wedge}
+\input{sections/long-content-pruning}
+\input{sections/high-beta-ledger}
+\input{sections/primitive-boundary}
+\input{sections/certificate-scope}
+
+\clearpage
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

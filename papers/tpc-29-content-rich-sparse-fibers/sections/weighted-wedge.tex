@@ -1,0 +1,170 @@
+\section{Physical weighting and the content-rich sparse wedge}
+\label{sec:tpc29-weighted-wedge}
+
+We now restore the physical coefficients.  For one of the three raw
+channels in \eqref{eq:tpc29-five-term-identity}, let
+$\kappa_{\alpha,\gamma}(j,r,s)$ include its two divisor coefficients,
+its prefix or reflected support restrictions, and any fixed residue
+selectors.  Thus it is one of the types
+\begin{equation}
+ b_R(r)a(N_\gamma(j)/s),\qquad
+ a(N_\alpha(j)/r)b_R(s),\qquad
+ a(N_\alpha(j)/r)a(N_\gamma(j)/s),
+ \label{eq:tpc29-three-coefficient-types}
+\end{equation}
+on the appropriate divisor support, and is zero otherwise.  By
+\eqref{eq:tpc29-coefficient-envelope},
+\begin{equation}
+ |\kappa_{\alpha,\gamma}(j,r,s)|
+ \ll_{\mathscr D}(\log(2X))^6.
+ \label{eq:tpc29-kappa-envelope}
+\end{equation}
+
+Define the corresponding dyadic physical block
+\begin{align}
+ \cS(A,B,G)
+ :={}&\sum_{\alpha,\gamma}
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \mathfrak m(\alpha,\gamma)
+ \sum_j\Xi_{\alpha,\gamma}(j)
+ \cW_{\alpha,\gamma}(j/J)
+ \notag\\
+ &\times
+ \sum_{\substack{A<r\le2A,\ B<s\le2B\\
+                   G<(r,s)\le2G\\
+                   r\mid N_\alpha(j),\ s\mid N_\gamma(j)}}
+ \kappa_{\alpha,\gamma}(j,r,s).
+ \label{eq:tpc29-physical-block}
+\end{align}
+
+\begin{theorem}[Weighted block estimate]
+\label{thm:tpc29-weighted-block}
+Every mixed or both-ultra block of the form
+\eqref{eq:tpc29-physical-block} satisfies
+\begin{equation}
+ \boxed{
+ |\cS(A,B,G)|
+ \ll_{\eps,h,\mathscr D}Q^2X^\eps
+ \min\left\{J,\frac{AB}{G^2}+\frac JG\right\}.}
+ \label{eq:tpc29-weighted-block-bound}
+\end{equation}
+No Poisson, Fourier, conductor, or M\"obius-correlation theorem is used.
+\end{theorem}
+
+\begin{proof}
+Take absolute values in \eqref{eq:tpc29-physical-block}.  The mask,
+periodic factor, and smooth weight are bounded.  Absorb
+\eqref{eq:tpc29-kappa-envelope} into $X^\eps$, and apply
+\cref{thm:tpc29-incidence} to each off-diagonal row pair.  Finally use
+\[
+ \sum_{\alpha,\gamma}
+ |\gamma_\alpha^{(1)}\gamma_\gamma^{(2)}|
+ \le
+ \|\gamma^{(1)}\|_1\|\gamma^{(2)}\|_1
+ \ll_{\mathscr D}Q^2
+\]
+from \eqref{eq:tpc29-row-l1}.
+\end{proof}
+
+\subsection{Primitive lcm and the sparse theorem}
+
+For a divisor pair, put
+\begin{equation}
+ q=[r,s],\qquad g=(r,s),\qquad
+ q_{\rm prim}:=\frac qg
+ =\frac r{(r,s)}\frac s{(r,s)}.
+ \label{eq:tpc29-primitive-lcm}
+\end{equation}
+Thus $q_{\rm prim}$ is the product of the two coprime parts after the
+shared content is removed.
+
+\begin{definition}[Content-rich sparse region]
+\label{def:tpc29-rich-sparse}
+For fixed $\eta>0$, the content-rich sparse region consists of the
+divisor pairs satisfying
+\begin{equation}
+ q\ge J,
+ \qquad
+ q_{\rm prim}\le JX^{-\eta}.
+ \label{eq:tpc29-rich-sparse-region}
+\end{equation}
+Dyadic endpoint constants may be changed by fixed factors; all
+inequalities retain their fixed exponent margin.
+\end{definition}
+
+\begin{theorem}[Unconditional content-rich sparse closure]
+\label{thm:tpc29-rich-sparse}
+Let $\cS_{\rm rich}$ be the sum, over the three raw channels in
+\eqref{eq:tpc29-five-term-identity}, of all dyadic blocks restricted to
+\eqref{eq:tpc29-rich-sparse-region}.  Then
+\begin{equation}
+ \boxed{
+ |\cS_{\rm rich}|
+ \ll_{\eps,\eta,h,\mathscr D}
+ XQX^{-\eta+\eps}.}
+ \label{eq:tpc29-rich-sparse-closure}
+\end{equation}
+In particular it is fixed-power small for $0<\eps<\eta$.
+\end{theorem}
+
+\begin{proof}
+On a dyadic block, $q\asymp AB/G$ and
+$q_{\rm prim}\asymp AB/G^2$.  The second condition in
+\eqref{eq:tpc29-rich-sparse-region} gives
+\begin{equation}
+ \frac{AB}{G^2}\ll JX^{-\eta}.
+ \label{eq:tpc29-first-rich-term}
+\end{equation}
+Dividing the sparse lower bound for $q$ by the upper bound for
+$q_{\rm prim}$ gives
+\begin{equation}
+ G\gg X^\eta,
+ \qquad
+ \frac JG\ll JX^{-\eta}.
+ \label{eq:tpc29-second-rich-term}
+\end{equation}
+Insert \eqref{eq:tpc29-first-rich-term} and
+\eqref{eq:tpc29-second-rich-term} into
+\eqref{eq:tpc29-weighted-block-bound}.  Each block is
+$O(Q^2JX^{-\eta+\eps})$.  Since $Q^2J\asymp XQ$, summing the
+$O((\log X)^3)$ scale triples and the three channel types proves
+\eqref{eq:tpc29-rich-sparse-closure} after reducing the auxiliary
+exponent.
+\end{proof}
+
+\subsection{The exponent polytope}
+
+Write
+\begin{equation}
+ A=X^{a+o(1)},\qquad
+ B=X^{b+o(1)},\qquad
+ G=X^{c+o(1)},\qquad
+ \jmath=1-\beta.
+ \label{eq:tpc29-block-exponents}
+\end{equation}
+The sparse condition is
+\begin{equation}
+ a+b-c\ge\jmath.
+ \label{eq:tpc29-sparse-exponent}
+\end{equation}
+The weighted theorem gives the exact saving exponent available from
+this incidence method:
+\begin{equation}
+ \boxed{
+ \eta_{\rm sp}(a,b,c)
+ =\bigl(\jmath-a-b+2c\bigr)_+.}
+ \label{eq:tpc29-sparse-saving}
+\end{equation}
+Indeed, the exponent of the second entry in the minimum in
+\eqref{eq:tpc29-weighted-block-bound} is
+$\max\{a+b-2c,\jmath-c\}$.  Under
+\eqref{eq:tpc29-sparse-exponent}, one has
+$a+b-2c\ge\jmath-c$, so the first term is the larger one and
+\eqref{eq:tpc29-sparse-saving} follows.  Therefore a fixed saving
+$\eta_0$ is equivalent to the two strict faces
+\begin{equation}
+ a+b-c\ge\jmath,
+ \qquad
+ a+b-2c\le\jmath-\eta_0.
+ \label{eq:tpc29-rich-polytope}
+\end{equation}

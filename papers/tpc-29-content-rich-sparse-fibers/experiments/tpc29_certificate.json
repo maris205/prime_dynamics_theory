@@ -1,0 +1,132 @@
+{
+  "calibrated_prefix_cases": [
+    {
+      "R": 5,
+      "T": 8,
+      "U0": 200,
+      "checks": 780,
+      "h": 1,
+      "orbit_points": 4,
+      "rows": [
+        13,
+        17
+      ],
+      "sample_joint_polynomial": {
+        "log(2)": "-31/16",
+        "log(2)*log(5)": "-1",
+        "log(5)": "5/6"
+      }
+    },
+    {
+      "R": 6,
+      "T": 10,
+      "U0": 400,
+      "checks": 1179,
+      "h": 2,
+      "orbit_points": 3,
+      "rows": [
+        17,
+        57
+      ],
+      "sample_joint_polynomial": {
+        "log(3)": "41/12",
+        "log(3)*log(7)": "-1",
+        "log(7)": "3/8"
+      }
+    },
+    {
+      "R": 10,
+      "T": 14,
+      "U0": 1200,
+      "checks": 3567,
+      "h": 6,
+      "orbit_points": 3,
+      "rows": [
+        23,
+        145
+      ],
+      "sample_joint_polynomial": {
+        "log(1021)": "-251/66",
+        "log(167)": "-1277/336",
+        "log(167)*log(1021)": "1"
+      }
+    }
+  ],
+  "certificate": "content-rich reflected-fiber incidence",
+  "certificate_digest": "5c2858662e76278cf3e8b4f1e26a4ac024e3b863ca21a3be8866dcf921a162b1",
+  "claims": {
+    "breaks_sieve_parity": false,
+    "closes_complete_residual": false,
+    "closes_complete_ultra_difference": false,
+    "closes_dense_small_content_core": false,
+    "closes_primitive_sparse_core": false,
+    "finite_calibrated_cutoff_identity": true,
+    "finite_crt_fiber_identity": true,
+    "finite_explicit_constant_incidence_bound": true,
+    "finite_long_fiber_bookkeeping": true,
+    "finite_rational_exponent_ledger": true,
+    "proves_hardy_littlewood_asymptotic": false,
+    "proves_positivity": false,
+    "proves_twin_primes": false,
+    "uses_chowla_or_elliott_input": false
+  },
+  "crt_summary": {
+    "compatible_pairs": 1604,
+    "incompatible_pairs": 222,
+    "max_modulus": 18,
+    "nonsquarefree_shift_compatible_pairs": 88,
+    "nontrivial_content_pairs": 328,
+    "tested_modulus_pairs": 1826,
+    "zero_residue_classes": 19
+  },
+  "description": "finite exact regression for CRT, calibrated-prefix algebra, long-fiber bookkeeping, rational exponents, and an explicit-constant incidence inequality; not a numerical proof of an asymptotic Mobius estimate",
+  "exact_check_count": 37265,
+  "high_beta_exponent_summary": {
+    "A_exponent": "1/4",
+    "B_exponent": "1/4",
+    "G_exponent": "1/10",
+    "J_exponent": "133/400",
+    "beta": "267/400",
+    "grid_points": 3276,
+    "incidence_margin": "13/400",
+    "lcm_exponent": "2/5",
+    "long_content_cutoff_exponent": "1/10",
+    "long_content_saving": "1/10",
+    "primitive_lcm_exponent": "3/10",
+    "sparse_margin": "27/400"
+  },
+  "incidence_summary": {
+    "cells": 4536,
+    "compatible_pair_occurrences": 7242,
+    "finite_bound": "N <= C_arith * min(J, A*B/G^2 + J/G), C_arith=max(max_j tau(N_m)tau(N_n),9tau(|h(m-n)|))",
+    "incompatible_pair_occurrences": 2844,
+    "maximum_normalized_ratio": "2/27",
+    "maximum_ratio_cell": {
+      "A": 4,
+      "B": 5,
+      "C_arith": 27,
+      "G": 1,
+      "J": 1,
+      "count": 2,
+      "h": 1,
+      "m": 13,
+      "n": 17,
+      "ratio": "2/27"
+    },
+    "nonzero_cells": 653
+  },
+  "long_fiber_summary": {
+    "cells": 240,
+    "nonzero_cells": 106
+  },
+  "paper": "TPC-29",
+  "source_sha256": "13de31994c18d36f30975121daf485d8aca2f738f5a48dfc31e297130ed136c6",
+  "subcheck_counts": {
+    "calibrated_cutoff_and_five_term": 5526,
+    "crt_fibers": 13279,
+    "explicit_constant_incidence": 9074,
+    "long_fiber_bookkeeping": 3268,
+    "rational_exponent_ledger": 6104,
+    "scope_flags": 14
+  }
+}

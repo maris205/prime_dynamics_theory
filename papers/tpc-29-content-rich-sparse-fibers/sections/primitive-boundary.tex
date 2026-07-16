@@ -1,0 +1,147 @@
+\section{The primitive-core boundary and the next gate}
+\label{sec:tpc29-primitive-boundary}
+
+The two theorems remove large shared content on both sides of the
+fiber-length transition.  They do not remove the whole complement.
+This section records the exact remainder and prevents a sign-blind
+interpretation of the result.
+
+\subsection{The sparse method boundary}
+
+In exponent notation, a primitive complement pair has $c=0$.  The
+sparse condition \eqref{eq:tpc29-sparse-exponent} becomes
+\begin{equation}
+ a+b\ge\jmath,
+ \label{eq:tpc29-primitive-sparse-condition}
+\end{equation}
+whereas the incidence saving is
+\begin{equation}
+ \eta_{\rm sp}(a,b,0)
+ =(\jmath-a-b)_+=0.
+ \label{eq:tpc29-primitive-zero-saving}
+\end{equation}
+Thus \cref{thm:tpc29-weighted-block} reaches only the natural scale on
+the coprime sparse core.  This is a sharp boundary of the present
+absolute-incidence argument, not a lower bound for the signed
+arithmetic sum.
+
+For a fixed $\eta>0$, after removing
+\cref{thm:tpc29-rich-sparse}, the remaining sparse region may be
+written as
+\begin{equation}
+ [r,s]\ge J,
+ \qquad
+ \frac{[r,s]}{(r,s)}>JX^{-\eta}.
+ \label{eq:tpc29-remaining-sparse}
+\end{equation}
+It contains every coprime pair with $rs\ge J$.  Although each such
+fiber has $O(1)$ orbit points, the family has enough modulus pairs to
+restore the natural scale.  A short fiber by itself is therefore not a
+cancellation theorem.
+
+\subsection{The remaining long fibers}
+
+For $[r,s]\le J$, \cref{thm:tpc29-long-content} removes
+$(r,s)>X^\eta$ for any fixed $\eta>0$.  What remains has
+\begin{equation}
+ [r,s]\le J,\qquad (r,s)\le X^\eta.
+ \label{eq:tpc29-remaining-long}
+\end{equation}
+On any further subpacket carrying the additional generic row
+separation
+$|m-n|\ge QX^{-\eta}$, the affine determinant in
+\eqref{eq:tpc29-affine-determinant} satisfies
+\begin{equation}
+ \left|\frac{h(m-n)}{(r,s)}\right|
+ \gg_{h}QX^{-2\eta}.
+ \label{eq:tpc29-large-remaining-determinant}
+\end{equation}
+Thus the separated subpacket is not a small-determinant degeneracy.
+This conditional observation is not used in either closure theorem
+and does not remove any unseparated row pairs.  The remaining long
+problem consists of small-content, polynomial-slope one- and
+two-point reflected M\"obius families: one quotient M\"obius factor
+moves in a mixed channel, and two move in the both-ultra channel.
+
+For a fixed compatible quadruple $(m,n,r,s)$ in the both-ultra
+channel, the logarithmically averaged two-point Elliott theorem is a
+fixed-form cancellation benchmark for the two affine quotient forms
+in \eqref{eq:tpc29-U-form}--\eqref{eq:tpc29-V-form}
+\citep{Tao2016}.  A mixed channel has only a one-point moving M\"obius
+factor.  Neither fixed-form benchmark supplies an effective rate
+uniform over the polynomially growing slopes, the divisor family, and
+the physical row weights.  It therefore cannot simply be summed over
+\eqref{eq:tpc29-remaining-long}.
+
+\subsection{A sufficient next interface}
+
+The next useful statement is a family estimate, not a pointwise
+asymptotic for an $O(1)$-point fiber.  One possible interface is the
+following.
+
+\begin{definition}[Primitive reflected-family dispersion]
+\label{def:tpc29-next-interface}
+For a fixed content threshold $X^\eta$, let $\cP_\eta$ be the union of
+the remaining regions \eqref{eq:tpc29-remaining-sparse} and
+\eqref{eq:tpc29-remaining-long}, with the actual mixed and both-ultra
+coefficient types retained.  A primitive reflected-family dispersion
+estimate is a bound
+\begin{equation}
+ \sum_{\textup{three raw channels}}
+ \cS(\cP_\eta)
+ \ll_{B,\eta,h,\mathscr D}XQ(\log X)^{-B}
+ \label{eq:tpc29-next-dispersion}
+\end{equation}
+for every fixed $B>0$, uniformly over the physical opened-row weights
+and row-only mask.
+\end{definition}
+
+Equation \eqref{eq:tpc29-next-dispersion} is not assumed or proved in
+this paper.  Its formulation preserves the joint cutoff difference:
+one must not first assert that each complete mixed channel or the
+complete both-ultra channel is negligible.  The content-rich pieces
+may be removed separately only because the present theorems bound
+them absolutely.
+
+\subsection{Status after this paper}
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.43\textwidth}
+                >{\raggedright\arraybackslash}p{0.46\textwidth}}
+\toprule
+Object & Status \\
+\midrule
+Selected calibrated square through $T$
+& Closed in TPC-28 under its physical conductor interfaces. \\
+\addlinespace
+Two row-drift legs beyond $T$
+& Fixed-power small by \cref{prop:tpc29-drift-small}. \\
+\addlinespace
+Long fibers $[r,s]\le J$ with $(r,s)>X^\eta$
+& Closed with fixed-power saving by
+  \cref{thm:tpc29-long-content}. \\
+\addlinespace
+Sparse fibers with $[r,s]\ge J$ and
+$[r,s]/(r,s)\le JX^{-\eta}$
+& Closed with fixed-power saving by
+  \cref{thm:tpc29-rich-sparse}. \\
+\addlinespace
+Small-content long fibers and primitive sparse fibers
+& Open; require signed family dispersion such as
+  \eqref{eq:tpc29-next-dispersion}. \\
+\addlinespace
+Complete TPC-18 residual and endpoint reassembly
+& Not proved. \\
+\addlinespace
+Positivity, Hardy--Littlewood asymptotic, twin primes, or general
+parity breakthrough
+& Not claimed and not implied. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+This is a genuine reduction of the open complement geometry: the
+remaining long core has small gcd, whereas the remaining sparse core
+has large primitive lcm $[r,s]/(r,s)$.  Neither remaining condition is
+a signed cancellation theorem, and this is not a solution of the
+parity-sensitive core.

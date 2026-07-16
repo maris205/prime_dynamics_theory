@@ -1,0 +1,135 @@
+\section{The calibrated physical packet}
+\label{sec:tpc29-interface}
+
+Fix $h\in\Z\setminus\{0\}$ and put $H=\rad|h|$.  We retain one
+primitive opened-$d$ packet from TPC-25--TPC-28.  Its scales satisfy
+\begin{equation}
+ QJ\asymp X,\qquad
+ Q=X^{\beta+o(1)},\qquad
+ J=X^{1-\beta+o(1)},\qquad
+ 0<\beta<1.
+ \label{eq:tpc29-row-scales}
+\end{equation}
+The inherited sieve base satisfies $1\le R<L/2$.
+The row labels are $\alpha=(\ell_\alpha,d_\alpha)$, where each
+$\ell_\alpha\asymp L$ is prime, $d_\alpha$ is squarefree, and
+$d_\alpha\le R^{1/2}$.  They have distinct row integers
+\begin{equation}
+ m_\alpha=\ell_\alpha d_\alpha\asymp Q,
+ \qquad L\ge X^{\lambda_0}
+ \label{eq:tpc29-row-family}
+\end{equation}
+for a fixed $\lambda_0>0$.  The size separation in the opened packet
+makes $m_\alpha$ determine $\alpha$ uniquely.  We impose the primitive
+orbit conditions
+\begin{equation}
+ (m_\alpha,H)=1,\qquad (j,H)=1.
+ \label{eq:tpc29-primitive-orbit}
+\end{equation}
+Consequently, for
+\begin{equation}
+ N_\alpha(j)=m_\alpha j+h,
+ \label{eq:tpc29-target}
+\end{equation}
+every divisor of a positive target is coprime to $m_\alpha H$.
+
+The two opened-row coefficients have the form described in TPC-25
+\citep{WangTPC25} and satisfy
+\begin{align}
+ \sum_\alpha|\gamma_\alpha^{(i)}|&\ll_{\mathscr D}Q,
+ \label{eq:tpc29-row-l1}\\
+ \sum_\alpha|\gamma_\alpha^{(i)}|^2
+ &\ll_{\mathscr D}Q\log(2L),
+ \qquad i=1,2.
+ \label{eq:tpc29-row-l2}
+\end{align}
+Here and below $\mathscr D$ denotes the fixed smooth, residue, source,
+and support data.  The row-pair mask satisfies
+\begin{equation}
+ |\mathfrak m(\alpha,\gamma)|\le1,
+ \qquad
+ \mathfrak m(\alpha,\gamma)=0
+ \quad\text{if }m_\alpha=m_\gamma,
+ \label{eq:tpc29-row-mask}
+\end{equation}
+and is independent of every divisor variable.  The fixed-period
+factor $\Xi_{\alpha,\gamma}(j)$ and the smooth weight
+$\cW_{\alpha,\gamma}(j/J)$ are uniformly bounded.  Their joint support
+is contained in an interval of $O_{\mathscr D}(J)$ consecutive
+integers and satisfies
+\begin{equation}
+ c_{\mathscr D}X\le N_\alpha(j)\le C_{\mathscr D}X
+ \label{eq:tpc29-target-support}
+\end{equation}
+whenever it contributes.  In particular every target below is
+positive and nonzero.  Every $j$-sum below retains the primitive-orbit
+condition \eqref{eq:tpc29-primitive-orbit} and this joint physical
+support.
+
+\subsection{Divisor coefficients and prefixes}
+
+Let
+\begin{equation}
+ a(w)=-\mu(w)\log w,
+ \qquad
+ b_R(w)=a(w)-\lambda'_R(w),
+ \label{eq:tpc29-coefficients}
+\end{equation}
+where $\lambda'_R(w)=0$ for $w>R$.  In the polynomial support ranges
+used here,
+\begin{equation}
+ |a(w)|+|b_R(w)|\ll_{\mathscr D}(\log(2X))^3.
+ \label{eq:tpc29-coefficient-envelope}
+\end{equation}
+For $m=\ell d$, the calibrated row drift is
+\begin{equation}
+ \delta_H(m)
+ =\frac H{\varphi(H)}\frac d{\varphi(d)(\ell-1)}
+ \ll_{\eps,\mathscr D}L^{-1}X^\eps.
+ \label{eq:tpc29-row-drift}
+\end{equation}
+
+For $R\le W$, put
+\begin{align}
+ \mathsf A_{m,W}(j)
+ &:=\sum_{\substack{w\le W\\w\mid mj+h}}b_R(w),
+ \label{eq:tpc29-raw-prefix}\\
+ P_{m,W}(j)&:=\mathsf A_{m,W}(j)-\delta_H(m).
+ \label{eq:tpc29-calibrated-prefix}
+\end{align}
+The elementary divisor bound gives, uniformly on the physical support,
+\begin{equation}
+ |\mathsf A_{m,W}(j)|
+ \ll_{\eps,\mathscr D}X^\eps.
+ \label{eq:tpc29-prefix-pointwise}
+\end{equation}
+
+Choose an integer horizon $U_0\asymp_{\mathscr D}X$ larger than every
+positive target in \eqref{eq:tpc29-target-support}, and fix
+\begin{equation}
+ R\le T<U_0.
+ \label{eq:tpc29-cutoffs}
+\end{equation}
+The physical quadratic packet at cutoff $W$ is
+\begin{align}
+ \cQ_W^{\rm phys}
+ :={}&\sum_{\alpha,\gamma}
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \mathfrak m(\alpha,\gamma)
+ \sum_j\Xi_{\alpha,\gamma}(j)
+ \cW_{\alpha,\gamma}(j/J)
+ \notag\\
+ &\hspace{8em}\times
+ P_{m_\alpha,W}(j)P_{m_\gamma,W}(j).
+ \label{eq:tpc29-physical-packet}
+\end{align}
+Its natural absolute scale is
+\begin{equation}
+ JQ^2\asymp XQ.
+ \label{eq:tpc29-natural-scale}
+\end{equation}
+TPC-28 closes \eqref{eq:tpc29-physical-packet} at the selected upper
+cutoff $T$ under its additional conductor interfaces.  The estimates
+proved below concern specified regions of the exact difference
+$\cQ_{U_0}^{\rm phys}-\cQ_T^{\rm phys}$ and use only the physical-space
+interfaces displayed in this section.

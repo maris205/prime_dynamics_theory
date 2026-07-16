@@ -1,0 +1,142 @@
+\section{Large-content pruning on long fibers}
+\label{sec:tpc29-long-content}
+
+The $+1$ in \eqref{eq:tpc29-fiber-occupancy} is harmless when
+$q=[r,s]\le J$.  In that range we can sum the $J/q$ occupancy and use
+row residue energy to remove every polynomially large common content.
+
+For $d\ge1$, define the absolute row congruence mass
+\begin{equation}
+ \cR_d
+ :=\sum_{\alpha,\gamma}
+ |\gamma_\alpha^{(1)}\gamma_\gamma^{(2)}|
+ \one_{d\mid m_\alpha-m_\gamma}.
+ \label{eq:tpc29-row-congruence-mass}
+\end{equation}
+
+\begin{lemma}[Row residue energy]
+\label{lem:tpc29-row-residue-energy}
+Uniformly for $d\ge1$,
+\begin{equation}
+ \boxed{
+ \cR_d\ll_{\mathscr D}
+ \left(\frac{Q^2}{d}+Q\right)\log(2L).}
+ \label{eq:tpc29-row-residue-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For $i=1,2$ and $a\pmod d$, put
+\[
+ X_i(a)=\sum_{m_\alpha\equiv a\, (d)}|\gamma_\alpha^{(i)}|,
+ \qquad
+ E_i(a)=\sum_{m_\alpha\equiv a\, (d)}|\gamma_\alpha^{(i)}|^2.
+\]
+The distinct row integers lie in an interval of length
+$O_{\mathscr D}(Q)$, so each residue class contains
+$O_{\mathscr D}(Q/d+1)$ rows.  Cauchy--Schwarz gives
+\[
+ X_i(a)^2\ll_{\mathscr D}\left(\frac Qd+1\right)E_i(a).
+\]
+Hence
+\begin{align*}
+ \cR_d
+ &=\sum_{a\, (d)}X_1(a)X_2(a)\\
+ &\ll_{\mathscr D}\left(\frac Qd+1\right)
+ \left(\sum_aE_1(a)\right)^{1/2}
+ \left(\sum_aE_2(a)\right)^{1/2}.
+\end{align*}
+Apply \eqref{eq:tpc29-row-l2}.
+\end{proof}
+
+Let $\cS_{\le Y,>D}$ denote any one of the three raw ultra channels,
+restricted to
+\begin{equation}
+ [r,s]\le Y\le J,
+ \qquad
+ (r,s)>D.
+ \label{eq:tpc29-long-content-region}
+\end{equation}
+All original prefix and reflected-quotient support conditions remain
+in force.
+
+\begin{theorem}[Long-fiber large-content pruning]
+\label{thm:tpc29-long-content}
+Uniformly for $1\le D<Y\le J$,
+\begin{equation}
+ \boxed{
+ |\cS_{\le Y,>D}|
+ \ll_{\eps,h,\mathscr D}X^\eps
+ \left\{
+  \frac{XQ}{D}\log^2(2Y)+X\log^3(2Y)
+ \right\}.}
+ \label{eq:tpc29-long-content-bound}
+\end{equation}
+The same estimate holds for the sum of the three raw channels.
+If $D\ge X^\eta$ for fixed $\eta>0$, then
+\begin{equation}
+ |\cS_{\le Y,>D}|
+ \ll_{\eps,\eta,h,\mathscr D}
+ XQX^{-\min\{\eta,\beta\}+\eps}.
+ \label{eq:tpc29-long-content-power}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Put $d=(r,s)$ and write
+\[
+ r=da,\qquad s=db,\qquad(a,b)=1.
+\]
+By target primitivity, $(d,h)=1$; by
+\cref{lem:tpc29-reflected-crt}, compatibility therefore gives
+$d\mid m_\alpha-m_\gamma$.  Also
+\[
+ [r,s]=dab.
+\]
+For $dab\le Y\le J$, a compatible fiber has
+\begin{equation}
+ O_{\mathscr D}\left(\frac{J}{dab}\right)
+ \label{eq:tpc29-long-occupancy}
+\end{equation}
+orbit points, with the constant absorbing the endpoint $+1$.
+
+Take absolute values and absorb the divisor coefficients and fixed
+weights into $X^\eps$.  We retain the necessary condition
+$d\mid m_\alpha-m_\gamma$ and the common interval support used in
+\eqref{eq:tpc29-long-occupancy}, but delete the channel-specific
+prefix, reflection, and squarefreeness selectors.  For each exact
+$d$, the coprime parts contribute
+\begin{equation}
+ \sum_{\substack{a,b\ge1\\ab\le Y/d}}
+ \frac1{ab}
+ \ll\log^2(2Y).
+ \label{eq:tpc29-harmonic-pairs}
+\end{equation}
+Thus \cref{lem:tpc29-row-residue-energy} gives
+\begin{align}
+ |\cS_{\le Y,>D}|
+ &\ll X^\eps J\log^2(2Y)
+ \sum_{D<d\le Y}\frac1d
+ \left(\frac{Q^2}{d}+Q\right)
+ \notag\\
+ &\ll X^\eps\left\{
+  \frac{JQ^2}{D}\log^2(2Y)
+  +JQ\log^3(2Y)
+ \right\}.
+ \label{eq:tpc29-long-content-intermediate}
+\end{align}
+Use $JQ\asymp X$ to obtain
+\eqref{eq:tpc29-long-content-bound}.  If $D\ge X^\eta$ and
+$Q=X^{\beta+o(1)}$, the two terms save respectively $X^{-\eta}$ and
+$X^{-\beta}$ relative to $XQ$; logarithms and the $o(1)$ factors are
+absorbed into $X^\eps$.
+\end{proof}
+
+\begin{remark}[Two different content conditions]
+\label{rem:tpc29-two-content-conditions}
+For $q\le J$, the factor $J/q$ makes the simple condition
+$(r,s)>X^\eta$ sufficient.  For $q\ge J$, the occupancy is only
+$O(1)$ and a large gcd alone does not control the number of primitive
+pairs.  The sparse theorem therefore requires the sharper condition
+$q/(r,s)\le JX^{-\eta}$.
+\end{remark}

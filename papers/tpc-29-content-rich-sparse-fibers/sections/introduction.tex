@@ -1,0 +1,130 @@
+\section{Introduction and claim ledger}
+\label{sec:tpc29-introduction}
+
+The primitive residual program separates a fixed-shift prime-pair
+correlation into opened row packets before confronting the remaining
+M\"obius signs.  TPC-23 identified the exact affine fibers produced by
+reflecting divisors beyond a dynamic cutoff \citep{WangTPC23}.  TPC-26
+then treated a finite annular difference jointly, and TPC-28 closed a
+source-compatible selected square through an upper cutoff $T$, even
+though its base already exceeds the Poisson length
+\citep{WangTPC26,WangTPC28}.  The resulting statement is a rigorous
+truncated-packet estimate.  The terms with a divisor larger than $T$
+remain.
+
+The present paper removes a new, explicitly defined part of that
+remainder.  It does not ask for cancellation on any individual
+M\"obius fiber.  Instead it exploits the common content of the two
+reflected divisors.  If
+\[
+ r\mid mj+h,\qquad s\mid nj+h,
+\]
+then $(r,s)$ divides $h(m-n)$.  In the primitive physical packet it is
+coprime to $h$, hence divides the nonzero row difference.  A large
+shared content therefore has two simultaneous effects: it restricts
+the row pair and reduces the number of primitive modulus pairs.  These
+effects are strong enough to close two nonempty scale regions without
+using the signs of $\mu$.
+
+\subsection{The new results}
+
+The proof has four layers.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item We retain the calibrated prefix and take its exact cutoff
+ difference.  If $U_0$ contains all physical targets, then
+ \begin{equation}
+  P_{m,U_0}-P_{m,T}=C_{m;T,U_0}
+  \label{eq:tpc29-intro-cutoff-difference}
+ \end{equation}
+ with no scalar centering error.  The joint difference has three raw
+ ultra channels and two power-small row-drift legs.
+
+ \item For a fixed off-diagonal row pair and dyadic divisor scales
+ $A,B,G$, we prove
+ \begin{equation}
+  \cN_{m,n}(A,B,G)
+  \ll_{\eps,h}X^\eps
+  \min\left\{J,\frac{AB}{G^2}+\frac JG\right\}.
+  \label{eq:tpc29-intro-incidence}
+ \end{equation}
+ The estimate is a count with multiplicity.  It therefore applies
+ after inserting arbitrary signs and all physical support selectors.
+
+ \item The opened-row $\ell^1$ provenance converts
+ \eqref{eq:tpc29-intro-incidence} into a physical block bound.  In the
+ sparse range $q=[r,s]\ge J$, every fixed $\eta>0$ gives
+ \begin{equation}
+  \frac{q}{(r,s)}\le JX^{-\eta}
+  \quad\Longrightarrow\quad
+  \cS_{\rm rich}\ll_\eps XQX^{-\eta+\eps}.
+  \label{eq:tpc29-intro-sparse-wedge}
+ \end{equation}
+ Thus a short fiber is useful only after the number of primitive
+ modulus pairs is also controlled.
+
+ \item In the long-fiber region $q\le Y\le J$, an independent
+ row-residue argument removes every block with common content
+ $d=(r,s)>D$:
+ \begin{equation}
+  \cS_{q\le Y,\,d>D}
+  \ll_\eps X^\eps
+  \left\{
+   \frac{XQ}{D}\log^2(2Y)+X\log^3(2Y)
+  \right\}.
+  \label{eq:tpc29-intro-long-pruning}
+ \end{equation}
+ For $D\ge X^\eta$ this has a fixed-power saving relative to $XQ$.
+\end{enumerate}
+
+These two closure regions share the same mechanism but cover different
+fiber lengths.  The long theorem uses the $J/q$ occupancy and row
+residue energy.  The sparse theorem keeps the unavoidable $+1$ in the
+occupancy and compensates for it by requiring the primitive lcm
+$q/(r,s)$ to be short.
+
+At the TPC-28 high-$\beta$ sample,
+\[
+ \beta=\frac{267}{400},\qquad
+ J=X^{133/400+o(1)},\qquad
+ T=X^{193/500+o(1)},
+\]
+the dyadic choice
+\[
+ A=B=X^{1/4},\qquad G=X^{1/10}
+\]
+has lcm exponent $2/5$ and primitive-lcm exponent $3/10$.  It is
+sparse by $27/400$ and the new incidence saving is exactly $13/400$.
+This $13/400$ is unrelated to the smaller $13/1600$ conductor margin
+that closed the TPC-28 base.
+
+\subsection{What remains}
+
+The theorem does not estimate every short fiber.  When $(r,s)=1$ and
+$[r,s]\ge J$, the exponent delivered by
+\eqref{eq:tpc29-intro-incidence} is exactly the natural exponent.  A
+new signed estimate after summing the growing family is still needed.
+Nor does \eqref{eq:tpc29-intro-long-pruning} remove the long fibers
+with small content.  Their affine slopes grow polynomially with the
+row scale, whereas the fixed-form logarithmic Elliott theorem has no
+uniform rate that can be summed over the physical family
+\citep{Tao2016}.
+
+No conclusion below concerns positivity, a prime-pair main term, or
+infinitely many twin primes.  Even a future closure of every ultra
+channel would still have to be reassembled with the full TPC-18
+endpoint and block ledger before the residual-dispersion target was
+reached \citep{WangTPC18}.
+
+\subsection{Organization}
+
+\Cref{sec:tpc29-interface} fixes the physical packet.
+\Cref{sec:tpc29-calibrated-difference} proves the exact joint cutoff
+identity and removes the row drifts.
+\Cref{sec:tpc29-reflected-incidence} derives the reflected fibers and
+the incidence bound.  \Cref{sec:tpc29-weighted-wedge} proves the
+physical sparse theorem, while \cref{sec:tpc29-long-content} proves
+the long-fiber companion theorem.  \Cref{sec:tpc29-high-beta} gives
+the rational sample.  \Cref{sec:tpc29-primitive-boundary} identifies
+the remaining signed gate, and \cref{sec:tpc29-certificate-scope}
+records the certificate and exact scope.

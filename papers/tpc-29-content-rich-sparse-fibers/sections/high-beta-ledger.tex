@@ -1,0 +1,137 @@
+\section{The high-\texorpdfstring{$\beta$}{beta} ledger}
+\label{sec:tpc29-high-beta}
+
+We now place the two content theorems inside the exact parameter sample
+closed through $T$ in TPC-28.  The relevant exponents are
+\begin{equation}
+ \beta=\frac{267}{400},\qquad
+ \jmath=1-\beta=\frac{133}{400},\qquad
+ t=\frac{193}{500}.
+ \label{eq:tpc29-high-parameters}
+\end{equation}
+Thus
+\begin{equation}
+ Q=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ T=X^{193/500+o(1)}.
+ \label{eq:tpc29-high-scales}
+\end{equation}
+The reflected complement variables satisfy
+\begin{equation}
+ r,s\ll \frac XT=X^{307/500+o(1)}.
+ \label{eq:tpc29-reflected-upper-range}
+\end{equation}
+
+\subsection{A sparse content-rich cell}
+
+Choose the rational block exponents
+\begin{equation}
+ a=b=\frac14,
+ \qquad
+ c=\frac1{10}.
+ \label{eq:tpc29-high-block}
+\end{equation}
+The lcm and primitive-lcm exponents are
+\begin{align}
+ a+b-c&=\frac25,
+ \label{eq:tpc29-high-q-exponent}\\
+ a+b-2c&=\frac3{10}.
+ \label{eq:tpc29-high-primitive-exponent}
+\end{align}
+Hence the sparse margin is
+\begin{equation}
+ \frac25-\frac{133}{400}
+ =\boxed{\frac{27}{400}},
+ \label{eq:tpc29-high-sparse-margin}
+\end{equation}
+while the incidence saving from \eqref{eq:tpc29-sparse-saving} is
+\begin{equation}
+ \eta_{\rm sp}
+ =\frac{133}{400}-\frac3{10}
+ =\boxed{\frac{13}{400}}.
+ \label{eq:tpc29-high-saving}
+\end{equation}
+
+Both divisor scales $X^{1/4}$ lie below the reflected upper range
+\eqref{eq:tpc29-reflected-upper-range}.  In the both-ultra channel the
+two quotient divisors have size $X^{3/4+o(1)}>T$.  In a mixed channel,
+the original prefix divisor $X^{1/4}$ lies below $T$, while the
+reflected quotient on the other row again has size $X^{3/4+o(1)}$.
+Thus the same exponent cell is geometrically admissible in all three
+raw channels.
+
+Write $\cS_{1/4,1/4,1/10}$ for the sum of the three raw-channel
+dyadic blocks with
+$A=X^{1/4+o(1)}$, $B=X^{1/4+o(1)}$, and
+$G=X^{1/10+o(1)}$, with fixed dyadic endpoint constants.
+
+\begin{corollary}[Exact high-$\beta$ sparse margin]
+\label{cor:tpc29-high-sparse}
+For every fixed $\eta_0<13/400$, the sum of the three physical raw
+channels over the block
+\eqref{eq:tpc29-high-block} satisfies
+\begin{equation}
+ \boxed{
+ \cS_{1/4,1/4,1/10}
+ \ll_{\eta_0,h,\mathscr D}XQX^{-\eta_0}.}
+ \label{eq:tpc29-high-sparse-bound}
+\end{equation}
+Equivalently, the relaxed exponent ledger has exact margin $13/400$.
+\end{corollary}
+
+\begin{proof}
+Equations \eqref{eq:tpc29-high-q-exponent} and
+\eqref{eq:tpc29-high-primitive-exponent} verify the two faces in
+\eqref{eq:tpc29-rich-polytope} with every fixed margin below
+$13/400$.  Apply \cref{thm:tpc29-rich-sparse}.  The $o(1)$ scale
+factors are absorbed by the gap between $\eta_0$ and $13/400$.
+\end{proof}
+
+\begin{remark}[Two different numbers]
+\label{rem:tpc29-two-thirteens}
+The TPC-28 full-rectangle conductor margin at its base was $13/1600$.
+The number $13/400$ in \eqref{eq:tpc29-high-saving} is a new and
+larger incidence margin for one reflected complement cell.  The two
+fractions arise from different inequalities and must not be
+identified.
+\end{remark}
+
+\subsection{A long-fiber content cutoff}
+
+Take
+\begin{equation}
+ D=X^{1/10},\qquad X^{1/10}<Y\le J.
+ \label{eq:tpc29-high-long-cutoff}
+\end{equation}
+Since $\beta=267/400>1/10$,
+\cref{thm:tpc29-long-content} gives, for every fixed
+$\eta_1<1/10$,
+\begin{equation}
+ \boxed{
+ \cS_{[r,s]\le Y,\,(r,s)>X^{1/10}}
+ \ll_{\eta_1,h,\mathscr D}XQX^{-\eta_1}.}
+ \label{eq:tpc29-high-long-bound}
+\end{equation}
+For example, the scale $r\asymp s\asymp X^{1/10}$ lies in the long
+range and has quotient divisors of size $X^{9/10+o(1)}>T$.  Again,
+the theorem is an upper bound for an allowed region; it does not
+assert that every dyadic cell carries nonzero arithmetic mass.
+
+\begin{table}[t]
+\centering
+\caption{Exact exponent ledger at the TPC-28 high-$\beta$ sample.}
+\label{tab:tpc29-high-ledger}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Quantity & Exact value & Role \\
+\midrule
+Orbit exponent $\jmath$ & $133/400$ & natural fiber length \\
+Reflected upper exponent $1-t$ & $307/500$ & complement range \\
+Sparse lcm exponent $a+b-c$ & $2/5$ & exceeds $\jmath$ \\
+Sparse margin & $27/400$ & fiber is short \\
+Primitive-lcm exponent $a+b-2c$ & $3/10$ & content-rich cost \\
+Sparse incidence margin & $13/400$ & new fixed-power saving \\
+Long content cutoff exponent & $1/10$ & long-fiber pruning \\
+\bottomrule
+\end{tabular}
+\end{table}

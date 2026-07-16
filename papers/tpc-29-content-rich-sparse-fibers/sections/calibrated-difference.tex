@@ -1,0 +1,107 @@
+\section{The exact calibrated ultra difference}
+\label{sec:tpc29-calibrated-difference}
+
+Define the raw ultra-long increment
+\begin{equation}
+ C_{m;T,U_0}(j)
+ :=\sum_{\substack{T<w\le U_0\\w\mid mj+h}}a(w).
+ \label{eq:tpc29-ultra-increment}
+\end{equation}
+We often abbreviate it to $C_m(j)$.
+
+\begin{proposition}[Exact calibrated cutoff identity]
+\label{prop:tpc29-exact-cutoff}
+For every physical row and orbit point,
+\begin{equation}
+ \boxed{P_{m,U_0}(j)-P_{m,T}(j)=C_{m;T,U_0}(j).}
+ \label{eq:tpc29-exact-cutoff}
+\end{equation}
+Consequently, for two rows $m,n$,
+\begin{align}
+ &P_{m,U_0}P_{n,U_0}-P_{m,T}P_{n,T}
+ \notag\\
+ &\quad=
+ \mathsf A_{m,T}C_n+C_m\mathsf A_{n,T}+C_mC_n
+ -\delta_H(m)C_n-\delta_H(n)C_m.
+ \label{eq:tpc29-five-term-identity}
+\end{align}
+All identities are pointwise in $j$.
+\end{proposition}
+
+\begin{proof}
+The drift $\delta_H(m)$ is independent of the cutoff and cancels in
+the difference.  If $w>T\ge R$, then $\lambda'_R(w)=0$ and hence
+$b_R(w)=a(w)$.  Subtracting the two finite divisor prefixes proves
+\eqref{eq:tpc29-exact-cutoff}.  Now write
+$P_{m,T}=\mathsf A_{m,T}-\delta_H(m)$ and expand
+\[
+ (P_{m,T}+C_m)(P_{n,T}+C_n)-P_{m,T}P_{n,T}.
+\]
+This gives \eqref{eq:tpc29-five-term-identity}.
+\end{proof}
+
+The first three terms on the right of
+\eqref{eq:tpc29-five-term-identity} will be called the two mixed raw
+channels and the both-ultra raw channel.  They are not asserted to be
+small separately on their full supports.  Absolute estimates will be
+used only after restricting them to the content-rich regions defined
+later.
+
+\begin{proposition}[The two drift legs are power-small]
+\label{prop:tpc29-drift-small}
+Let $\cD_{T,U_0}^{\rm phys}$ denote the contribution of the last two
+terms in \eqref{eq:tpc29-five-term-identity} to
+$\cQ_{U_0}^{\rm phys}-\cQ_T^{\rm phys}$.  Then, for every fixed
+$\eps>0$,
+\begin{equation}
+ \boxed{
+ |\cD_{T,U_0}^{\rm phys}|
+ \ll_{\eps,\mathscr D}XQ\,L^{-1}X^\eps.}
+ \label{eq:tpc29-drift-small}
+\end{equation}
+Thus it has a fixed-power saving when $\eps<\lambda_0$.
+\end{proposition}
+
+\begin{proof}
+On the physical support,
+\begin{equation}
+ |C_m(j)|
+ \le \tau(N_m(j))\log(2X)
+ \ll_{\eps,\mathscr D}X^\eps.
+ \label{eq:tpc29-ultra-pointwise}
+\end{equation}
+Delete the bounded mask, periodic factor, and smooth weight.  Use
+\eqref{eq:tpc29-row-drift} on the drift row,
+\eqref{eq:tpc29-row-l1} on both row families, and the $O(J)$ orbit
+support.  Each leg is
+\[
+ \ll J\,(QL^{-1}X^\eps)QX^\eps
+ \ll XQ\,L^{-1}X^{3\eps},
+\]
+after $JQ\asymp X$.  Rename the auxiliary exponent.
+\end{proof}
+
+\subsection{Why the exact difference matters}
+
+One may instead center the ultra divisor sum by subtracting its scalar
+density
+\begin{equation}
+ \tau_{T,U_0}(m)
+ =\sum_{\substack{T<w\le U_0\\(w,mH)=1}}\frac{a(w)}w.
+ \label{eq:tpc29-scalar-tail}
+\end{equation}
+The pointwise centered-tail interface considered in TPC-23
+\citep{WangTPC23} supplies majorants of the shape
+\begin{equation}
+ \tau_{T,U_0}(m)\ll_{A,\eps}X^\eps(\log X)^{-A},
+ \qquad
+ C_m(j)\ll_\eps X^\eps.
+ \label{eq:tpc29-insufficient-pointwise-pair}
+\end{equation}
+These displayed majorants alone do not imply
+$O_B((\log X)^{-B})$ for every $B$: a fixed power $X^\eps$ cannot be
+absorbed by choosing a fixed logarithmic order.  An additional average
+tail norm would repair such a replacement, but it is not needed here.
+The exact identity \eqref{eq:tpc29-exact-cutoff} contains no scalar
+tail and therefore avoids this interface altogether.  We do not
+import that pointwise centered-tail replacement in any theorem below.

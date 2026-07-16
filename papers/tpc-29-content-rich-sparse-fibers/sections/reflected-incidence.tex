@@ -1,0 +1,193 @@
+\section{Reflected fibers and a sparse incidence theorem}
+\label{sec:tpc29-reflected-incidence}
+
+\subsection{Hyperbola reflection}
+
+For a positive target $N_m(j)=mj+h$, divisor reflection in
+\eqref{eq:tpc29-ultra-increment} gives the exact identity
+\begin{equation}
+ C_m(j)=
+ \sum_{\substack{r\mid N_m(j)\\r<N_m(j)/T}}
+ a\!\left(\frac{N_m(j)}r\right).
+ \label{eq:tpc29-reflected-ultra}
+\end{equation}
+The reflected variable $r$ is not required to be squarefree.  Only the
+quotient coefficient $a(N_m/r)$ vanishes off squarefree quotients.
+
+The both-ultra channel contains two variables of the form
+\eqref{eq:tpc29-reflected-ultra}.  In a mixed channel, one variable is
+an original prefix divisor $u\le T$ and the other is a reflected
+complement variable.  Both situations reduce to the same pair of
+divisibility conditions
+\begin{equation}
+ r\mid mj+h,\qquad s\mid nj+h.
+ \label{eq:tpc29-two-divisibilities}
+\end{equation}
+Support restrictions and coefficient types will be restored only
+after the common incidence count is proved.
+
+\begin{lemma}[Compatibility and the reflected determinant]
+\label{lem:tpc29-reflected-crt}
+Let $m\ne n$ be primitive physical rows, and let $r,s$ satisfy
+\eqref{eq:tpc29-two-divisibilities} for some primitive orbit point.
+Put
+\begin{equation}
+ d=(r,s),\qquad q=[r,s]=\frac{rs}{d}.
+ \label{eq:tpc29-dq}
+\end{equation}
+Then the two congruences in \eqref{eq:tpc29-two-divisibilities} are
+compatible if and only if
+\begin{equation}
+ d\mid h(m-n).
+ \label{eq:tpc29-compatibility}
+\end{equation}
+When compatible, they select a unique class $j_0\pmod q$.  Writing
+$j=j_0+qk$, the two quotient forms
+\begin{align}
+ U(k)&=\frac{m(j_0+qk)+h}{r}=A_1k+B_1,
+ \label{eq:tpc29-U-form}\\
+ V(k)&=\frac{n(j_0+qk)+h}{s}=A_2k+B_2
+ \label{eq:tpc29-V-form}
+\end{align}
+have integer coefficients and satisfy
+\begin{equation}
+ \boxed{A_1B_2-A_2B_1=\frac{h(m-n)}d\ne0.}
+ \label{eq:tpc29-affine-determinant}
+\end{equation}
+Moreover $(d,h)=1$, so compatibility implies $d\mid m-n$.
+\end{lemma}
+
+\begin{proof}
+Target primitivity gives $(r,m)=(s,n)=1$.  Hence the two congruences
+select
+\[
+ j\equiv-h\overline m\pmod r,
+ \qquad
+ j\equiv-h\overline n\pmod s.
+\]
+Their reductions modulo $d$ agree exactly when
+$d\mid h(m-n)$.  The generalized Chinese remainder theorem then gives
+one class modulo $q$.
+
+The affine coefficients are
+\[
+ A_1=\frac{mq}{r},\quad B_1=\frac{mj_0+h}{r},
+ \qquad
+ A_2=\frac{nq}{s},\quad B_2=\frac{nj_0+h}{s}.
+\]
+Their determinant equals
+\[
+ \frac{qh(m-n)}{rs}=\frac{h(m-n)}d.
+\]
+It is nonzero by the off-diagonal mask.  Finally, $d$ divides both
+positive targets.  Each target is coprime to $H=\rad|h|$, so
+$(d,h)=1$; cancel $h$ in \eqref{eq:tpc29-compatibility}.
+\end{proof}
+
+Equivalently, the quotient variables lie on the exact surface
+\begin{equation}
+ n\,rU-m\,sV=h(n-m).
+ \label{eq:tpc29-reflected-surface}
+\end{equation}
+No coprimality between $d$ and either quotient is asserted.  Such an
+assumption would be false for nonsquarefree targets and is not used
+below.
+
+\subsection{A dyadic count with multiplicity}
+
+Let $\cI\subset\Z$ be any set contained in an interval of at most
+$C_{\mathscr D}J$ consecutive integers, and suppose throughout this
+section that
+\begin{equation}
+ 1\le mj+h,\ nj+h\le X^{C_{\mathscr D}}
+ \qquad(j\in\cI).
+ \label{eq:tpc29-polynomial-target-window}
+\end{equation}
+The physical target window \eqref{eq:tpc29-target-support} is the case
+used later.  For $A,B,G\ge1$, define
+\begin{align}
+ \cN_{m,n}(A,B,G;\cI)
+ :={}&\#\bigl\{(j,r,s):j\in\cI,\ A<r\le2A,\ B<s\le2B,
+ \notag\\
+ &\hspace{7em}G<(r,s)\le2G,
+ \ r\mid mj+h,\ s\mid nj+h\bigr\}.
+ \label{eq:tpc29-incidence-count}
+\end{align}
+This is a triple count, not merely the number of occupied orbit
+points.  At the left endpoint of a dyadic decomposition, the $G=1$
+cell is understood as $1\le(r,s)\le2$; subsequent cells use the
+displayed half-open convention.
+
+\begin{theorem}[Fixed-row sparse incidence]
+\label{thm:tpc29-incidence}
+Uniformly for distinct physical rows $m,n$ and all $A,B,G\ge1$,
+\begin{equation}
+ \boxed{
+ \cN_{m,n}(A,B,G;\cI)
+ \ll_{\eps,h,\mathscr D}X^\eps
+ \min\left\{J,\frac{AB}{G^2}+\frac JG\right\}.}
+ \label{eq:tpc29-incidence-bound}
+\end{equation}
+Empty dyadic cells are understood to contribute zero.
+\end{theorem}
+
+\begin{proof}
+First fix an exact common content $d=(r,s)$.  By
+\cref{lem:tpc29-reflected-crt}, it must divide the nonzero integer
+$h(m-n)$.  The number of possible exact $d$ in the dyadic interval is
+therefore at most
+\begin{equation}
+ \tau(|h(m-n)|)\ll_{\eps,h,\mathscr D}X^\eps.
+ \label{eq:tpc29-content-count}
+\end{equation}
+Write
+\begin{equation}
+ r=dr_1,\qquad s=ds_1,\qquad(r_1,s_1)=1.
+ \label{eq:tpc29-primitive-parts}
+\end{equation}
+For a nonempty cell, $d\le2A$ and $d\le2B$.  Hence the number of
+candidate pairs at this fixed $d$ is
+\begin{equation}
+ \ll\left(\frac Ad+1\right)
+       \left(\frac Bd+1\right)
+ \ll\frac{AB}{d^2}.
+ \label{eq:tpc29-pair-count-fixed-d}
+\end{equation}
+Deleting the coprimality condition only enlarges the count.
+
+Each compatible pair selects one residue class modulo
+$q=rs/d$.  Since $r>A$ and $s>B$, its occupancy in $\cI$ is
+\begin{equation}
+ \ll_{\mathscr D}1+\frac Jq
+ \ll_{\mathscr D}1+\frac{Jd}{AB}.
+ \label{eq:tpc29-fiber-occupancy}
+\end{equation}
+Multiplying \eqref{eq:tpc29-pair-count-fixed-d} and
+\eqref{eq:tpc29-fiber-occupancy}, using $d\asymp G$ (also in the
+closed $G=1$ base cell), and then applying
+\eqref{eq:tpc29-content-count} gives
+\begin{equation}
+ \cN_{m,n}(A,B,G;\cI)
+ \ll X^\eps\left(\frac{AB}{G^2}+\frac JG\right).
+ \label{eq:tpc29-incidence-crt-side}
+\end{equation}
+
+There is a second bound.  For each fixed $j$, the numbers of possible
+$r$ and $s$ are at most $\tau(N_m(j))$ and $\tau(N_n(j))$.  The
+pointwise divisor bound and $\#\cI\ll J$ give
+\begin{equation}
+ \cN_{m,n}(A,B,G;\cI)\ll_{\eps,\mathscr D}JX^\eps.
+ \label{eq:tpc29-incidence-divisor-side}
+\end{equation}
+Taking the smaller of \eqref{eq:tpc29-incidence-crt-side} and
+\eqref{eq:tpc29-incidence-divisor-side} proves the theorem.
+\end{proof}
+
+\begin{remark}[The indispensable $+1$]
+\label{rem:tpc29-plus-one}
+When $q\ge J$, \eqref{eq:tpc29-fiber-occupancy} is $O(1)$, not
+$O(J/q)$.  Dropping this $+1$ would incorrectly turn every sparse
+family into a saving.  The term $AB/G^2$ in
+\eqref{eq:tpc29-incidence-bound} is precisely the total cost of those
+one-point occupancies.
+\end{remark}

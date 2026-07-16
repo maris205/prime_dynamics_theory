@@ -1,0 +1,104 @@
+\section{Exact certificate, dependencies, and scope}
+\label{sec:tpc29-certificate-scope}
+
+\subsection{Finite exact certificate}
+
+The standard-library script
+\begin{center}
+\texttt{experiments/tpc29\_certificate.py}
+\end{center}
+uses exception-based checks in both ordinary and optimized Python.  It
+verifies the finite algebra underlying the paper by independent direct
+and structured computations:
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item generalized-CRT compatibility, uniqueness of the orbit class,
+ and finite-window occupancy for primitive row and modulus pairs;
+ \item direct triple enumeration versus CRT enumeration for the
+ dyadic incidence count, together with an explicit-constant finite
+ version of \eqref{eq:tpc29-incidence-bound};
+ \item direct versus CRT long-fiber bookkeeping, including the exact
+ factorization $[r,s]=d(r/d)(s/d)$ for $d=(r,s)$;
+ \item the calibrated prefix identity
+ \eqref{eq:tpc29-exact-cutoff} and the five-term joint identity
+ \eqref{eq:tpc29-five-term-identity}, using formal prime-log vectors
+ rather than floating-point logarithms;
+ \item the rational exponent formula
+ \eqref{eq:tpc29-sparse-saving}, its boundary cases, and the exact
+ high-$\beta$ margins in
+ \eqref{eq:tpc29-high-sparse-margin}--\eqref{eq:tpc29-high-saving};
+ \item explicit negative scope flags for every prime-pair, positivity,
+ full-residual, and parity claim not proved here.
+\end{enumerate}
+
+The incidence regression checks a finite inequality with its explicit
+arithmetic multiplicity constant.  It does not assign constant one to
+the asymptotic $\ll$ symbol.  Nor does finite enumeration prove an
+asymptotic M\"obius estimate.  Ordinary and optimized Python both
+complete $37{,}265$ recorded top-level exact checks and regenerate
+byte-identical JSON.  The reproducibility values are
+\begin{itemize}
+ \item source SHA-256:
+ \nolinkurl{13de31994c18d36f30975121daf485d8aca2f738f5a48dfc31e297130ed136c6};
+ \item JSON SHA-256:
+ \nolinkurl{0cbe83d578f39246542d6b0480db3d4a3d9b02ed23036dd9f569671dd5e2242d};
+ \item certificate digest:
+ \nolinkurl{5c2858662e76278cf3e8b4f1e26a4ac024e3b863ca21a3be8866dcf921a162b1}.
+\end{itemize}
+The source hash normalizes newlines to LF; the final value hashes the
+canonical sorted payload before the digest field is inserted.
+
+\subsection{Dependency ledger}
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.34\textwidth}
+                >{\raggedright\arraybackslash}p{0.20\textwidth}
+                >{\raggedright\arraybackslash}p{0.37\textwidth}}
+\toprule
+Input or statement & Status & Use \\
+\midrule
+Opened-row $\ell^1/\ell^2$ provenance
+& Imported & TPC-25; physical pair mass and row residue energy. \\
+\addlinespace
+Calibrated prefix and $L^{-1}$ drift
+& Imported definition and bound & TPC-28; exact cutoff difference used here. \\
+\addlinespace
+Selected truncated closure at $T$
+& Imported & TPC-28; locates the new complement, not used to prove the
+incidence bounds. \\
+\addlinespace
+Cutoff difference, CRT fiber, incidence theorem
+& Proved here & Finite identity and elementary divisor-incidence
+geometry. \\
+\addlinespace
+Sparse content-rich and long large-content closure
+& Proved here & Absolute physical estimates; no M\"obius cancellation
+input. \\
+\addlinespace
+Fixed-form logarithmic Elliott theorem
+& External benchmark & Explains the fixed-fiber result but is not used
+in either main closure theorem. \\
+\addlinespace
+Primitive reflected-family dispersion
+& Open & Required for the remaining small-content signed core. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Claims deliberately excluded}
+
+The following statements are not consequences of this paper:
+\begin{itemize}
+ \item closure of every sparse fiber or every long fiber;
+ \item closure of the complete ultra-long cutoff difference;
+ \item closure of the full TPC-18 residual or every endpoint packet;
+ \item a positive lower bound, a Hardy--Littlewood asymptotic, or
+ infinitely many twin primes;
+ \item a general violation of the sieve parity barrier;
+ \item polynomially uniform two-point Chowla or Elliott cancellation.
+\end{itemize}
+
+The positive conclusion is narrower and exact: large shared content
+closes a complete long-fiber sector and a nonempty sparse incidence
+wedge in exponent space.  The remaining core is explicitly identified
+rather than treated as random.
