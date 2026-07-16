@@ -1,0 +1,468 @@
+\section{Primitive rows, calibrated prefixes, and the mixed packet}
+\label{sec:interface-prefixes}
+
+Fix \(h\in\Z\setminus\{0\}\), put \(H=\rad|h|\), and choose
+\begin{equation}
+ R=\lfloor X^{1/2-\delta}\rfloor,\qquad
+ 0<\delta<\frac12,\qquad R\ge H^2.
+ \label{eq:R-def}
+\end{equation}
+In one separated primitive row packet,
+\begin{equation}
+ Q=LD,\qquad QJ\asymp X,\qquad
+ L>\max\{2R,2|h|\},
+ \label{eq:row-scales}
+\end{equation}
+and
+\begin{equation}
+ m=\ell d_0\asymp Q,\qquad
+ \ell\in[L/2,2L]\text{ prime},\qquad
+ d_0\in[D,2D],\qquad d_0\le R^{1/2}.
+ \label{eq:row-support}
+\end{equation}
+The inherited primitive conditions include
+\((d_0,H)=1\), \((j,H)=1\), and \(d_0H\le R\).  Hence
+\begin{equation}
+ (w,mH)=1
+ \qquad\text{for every }w\mid mj+h.
+ \label{eq:target-primitivity}
+\end{equation}
+
+The separated row weights satisfy
+\begin{equation}
+ \|x\|_\infty+\|y\|_\infty\ll_\eps X^\eps,\qquad
+ \sum_m|x_m|^2+\sum_n|y_n|^2\ll QX^\eps,
+ \label{eq:row-energy}
+\end{equation}
+and their absolute pair mass is denoted by
+\begin{equation}
+ \cZ_1:=\sum_{m,n}|x_my_n\mathfrak m(m,n)|
+ \ll_\eps Q^2X^\eps.
+ \label{eq:row-pair-mass}
+\end{equation}
+Here \(\mathfrak m\) is the actual bounded generic row-pair mask.  We
+use only
+\begin{equation}
+ |\mathfrak m(m,n)|\le1,\qquad
+ \mathfrak m(m,m)=0,\qquad
+ \mathfrak m\text{ is independent of all divisor variables}.
+ \label{eq:mask}
+\end{equation}
+The last two properties are essential in different places: the
+conductor tensor uses divisor independence, while the large-\(g\)
+zero-mode argument uses \(m-n\ne0\).
+
+For the strongest logarithmic conclusion we state separately the
+fixed-projective-mass hypothesis
+\begin{equation}
+ \cZ_1\ll Q^2(\log X)^K
+ \label{eq:polylog-projective-mass}
+\end{equation}
+for some fixed \(K\ge0\).  If a scalar packet is reassembled from a
+projective sum \(\sum_\nu x^{(\nu)}\otimes y^{(\nu)}\), the left side
+of \eqref{eq:polylog-projective-mass} is replaced by
+\(\sum_\nu\|x^{(\nu)}\|_1\|y^{(\nu)}\|_1\).  The soft estimate
+\eqref{eq:row-pair-mass} does not imply
+\eqref{eq:polylog-projective-mass}; the two hypotheses are kept
+distinct throughout.
+
+\subsection{Fourier and fiber notation}
+
+We use
+\begin{equation}
+ e(t)=e^{2\pi it},\qquad e_q(t)=e(t/q),\qquad
+ c_q(r)=\sum_{\xi\in(\Z/q\Z)^\times}e_q(r\xi),
+ \label{eq:additive-normalizations}
+\end{equation}
+and
+\begin{equation}
+ \widehat F(t)=\int_{\R}F(x)e(-tx)\,dx.
+ \label{eq:Fourier-normalization}
+\end{equation}
+Write \(\cU_q=(\Z/q\Z)^\times\) and let
+\(\mathfrak X(q)\) be its group of Dirichlet characters.  Whenever
+\((H,q)=1\), the symbol \(\overline H\) denotes the inverse of \(H\)
+modulo \(q\).  Finally, the centered divisor indicator is
+\begin{equation}
+ C_{m,w}(j)=\one_{w\mid mj+h}-\frac1w.
+ \label{eq:centered-divisor-indicator}
+\end{equation}
+
+\subsection{Divisor coefficients and exact densities}
+
+Put
+\begin{equation}
+ a(w)=-\mu(w)\log w.
+ \label{eq:a-def}
+\end{equation}
+The finite Ramanujan model has the divisor expansion
+\begin{equation}
+ \Lambda_R(n)=\sum_{w\mid n}\lambda'_R(w),
+ \qquad
+ \lambda'_R(w)=
+ w\sum_{b\le R/w}\frac{\mu(wb)\mu(b)}{\varphi(wb)}
+ \quad(w\le R),
+ \label{eq:lambda-def}
+\end{equation}
+and \(\lambda'_R(w)=0\) for \(w>R\).  Define
+\begin{equation}
+ b_R(w)=a(w)-\lambda'_R(w).
+ \label{eq:b-def}
+\end{equation}
+All three coefficients are supported on squarefree integers, and
+uniformly for \(w\le X^{O(1)}\),
+\begin{equation}
+ |a(w)|+|b_R(w)|+|\lambda'_R(w)|
+ \ll_\eps X^\eps.
+ \label{eq:coefficient-soft}
+\end{equation}
+
+For a row \(m=\ell d_0\), the exact finite-model and calibrated prime
+densities are
+\begin{equation}
+ \rho_{M,H,R}(m)=
+ \frac{H}{\varphi(H)}\frac {d_0}{\varphi(d_0)},
+ \qquad
+ \rho_{P,H}(m)=\frac{mH}{\varphi(mH)}.
+ \label{eq:two-densities}
+\end{equation}
+TPC-19--20 prove the finite identity
+\begin{equation}
+ \sum_{\substack{w\le R\\(w,mH)=1}}
+ \frac{\lambda'_R(w)}w
+ =\rho_{M,H,R}(m)
+ \label{eq:model-density-identity}
+\end{equation}
+and the row drift formula
+\begin{equation}
+ \delta_H(m):=\rho_{P,H}(m)-\rho_{M,H,R}(m)
+ =
+ \frac{H}{\varphi(H)}
+ \frac{d_0}{\varphi(d_0)(\ell-1)}
+ \ll_{\eps,h}\frac{X^\eps}{L}.
+ \label{eq:row-drift}
+\end{equation}
+These are exact finite algebra, not prime distribution in a growing
+progression \citep{WangTPC19,WangTPC20}.
+
+\subsection{Uniform endpoint calibration}
+
+For \(M\ge1\) and \(Y\ge1\), set
+\begin{equation}
+ A_M(Y)=
+ \sum_{\substack{w\le Y\\(w,M)=1}}
+ \frac{-\mu(w)\log w}{w},
+ \qquad
+ B_M(Y)=
+ \sum_{\substack{w\le Y\\(w,M)=1}}\frac{\mu(w)}w.
+ \label{eq:ABM}
+\end{equation}
+
+\begin{lemma}[Uniform calibration and its companion]
+\label{lem:uniform-companion}
+For every fixed \(A,C>0\), uniformly for \(Y\ge3\) and
+\(M\le Y^C\),
+\begin{align}
+ A_M(Y)
+ &=
+ \frac M{\varphi(M)}
+ +O_{A,C}\left(
+ \frac M{\varphi(M)}(\log Y)^{-A}\right),
+ \label{eq:A-calibration}\\
+ B_M(Y)
+ &\ll_{A,C}
+ \frac M{\varphi(M)}(\log Y)^{-A}.
+ \label{eq:B-calibration}
+\end{align}
+Consequently, if \(Y_2\ge Y_1\ge X^\kappa\) and
+\(M\le X^{C_0}\), where \(C_0,\kappa>0\) are fixed, then for every
+\(A>0\),
+\begin{align}
+ A_M(Y_2)-A_M(Y_1)
+ &\ll_{A,C_0,\kappa}(\log X)^{-A+1},
+ \label{eq:A-interval}\\
+ B_M(Y_2)-B_M(Y_1)
+ &\ll_{A,C_0,\kappa}(\log X)^{-A+1},
+ \label{eq:B-interval}
+\end{align}
+uniformly with constants depending on \(A,C_0,\kappa\).
+\end{lemma}
+
+\begin{proof}
+Equation \eqref{eq:A-calibration} is the uniform M\"obius calibration
+theorem of TPC-20 \citep{WangTPC20}.  We recall why the same proof gives
+\eqref{eq:B-calibration}.  Let
+\[
+ \mathscr S(M)=\{k\ge1:p\mid k\Longrightarrow p\mid M\},
+ \qquad
+ G_M(s)=\prod_{p\mid M}(1-p^{-s})^{-1}.
+\]
+The exact convolution
+\[
+ \mu(n)\one_{(n,M)=1}=(\mu*\one_{\mathscr S(M)})(n)
+\]
+gives
+\begin{equation}
+ B_M(Y)=
+ \sum_{\substack{k\le Y\\k\in\mathscr S(M)}}
+ \frac1k
+ \sum_{r\le Y/k}\frac{\mu(r)}r.
+ \label{eq:B-convolution}
+\end{equation}
+The classical zero-free region for \(\zeta(s)\) implies
+\[
+ \sum_{r\le Z}\frac{\mu(r)}r\ll_A(\log Z)^{-A}
+ \qquad(Z\ge3).
+\]
+Split \eqref{eq:B-convolution} at
+\(k=Y/\exp(\sqrt{\log Y})\).  The central range is bounded with the
+displayed zero-free-region estimate.  The remaining range is handled
+by the same Rankin bound for \(G_M(1-\eta)\) used in the proof of
+\eqref{eq:A-calibration}; it is uniform for \(M\le Y^C\).
+This proves \eqref{eq:B-calibration}.
+
+Apply the first part with \(C=C_0/\kappa\), and subtract
+\eqref{eq:A-calibration} at \(Y_2\) and \(Y_1\): the common
+main term \(M/\varphi(M)\) cancels.  Do the same with
+\eqref{eq:B-calibration}, use
+\(M/\varphi(M)\ll\log\log(3M)\), and increase \(A\) to absorb this
+factor.  Since \(\log Y_1\ge\kappa\log X\), the interval estimates
+follow.  The only external analytic input is the classical zero-free
+region; see \citet[Chapter~5]{IwaniecKowalski2004}.
+\end{proof}
+
+\subsection{Complete prefixes}
+
+For \(R\le W\le U\), define
+\begin{equation}
+ \vartheta_W(w)=b_R(w)\one_{w\le W},
+ \qquad
+ E_W(m)=A_{mH}(W)-\rho_{P,H}(m),
+ \label{eq:theta-E}
+\end{equation}
+and
+\begin{equation}
+ P_{m,W}(j)=
+ E_W(m)+
+ \sum_{\substack{w\le W\\(w,mH)=1}}
+ b_R(w)C_{m,w}(j).
+ \label{eq:calibrated-prefix}
+\end{equation}
+
+\begin{proposition}[Exact calibrated-prefix identities]
+\label{prop:prefix-identities}
+For every \(R\le W\le U\),
+\begin{align}
+ \sum_{\substack{w\le W\\(w,mH)=1}}\frac{b_R(w)}w
+ &=\delta_H(m)+E_W(m),
+ \label{eq:prefix-density}\\
+ P_{m,W}(j)
+ &=
+ \sum_{\substack{w\le W\\w\mid mj+h}}b_R(w)-\delta_H(m).
+ \label{eq:prefix-indicator}\\
+ P_{m,T}(j)-P_{m,S}(j)
+ &=
+ \sum_{\substack{S<w\le T\\w\mid mj+h}}a(w).
+ \label{eq:prefix-increment}
+\end{align}
+If \(U\) contains every positive target in the packet, then
+\begin{equation}
+ P_{m,U}(j)=
+ \Lambda(mj+h)-\Lambda_R(mj+h)-\delta_H(m),
+ \label{eq:full-residual-prefix}
+\end{equation}
+which is the locally centered residual signal of TPC-20.
+\end{proposition}
+
+\begin{proof}
+Since \(\lambda'_R\) is supported on \(w\le R\),
+\[
+ \sum_{\substack{w\le W\\(w,mH)=1}}\frac{b_R(w)}w
+ =A_{mH}(W)-\rho_{M,H,R}(m).
+\]
+Insert \eqref{eq:two-densities} to obtain
+\eqref{eq:prefix-density}.  Expanding
+\(C_{m,w}=\one_{w\mid mj+h}-1/w\) in
+\eqref{eq:calibrated-prefix} then proves
+\eqref{eq:prefix-indicator}.  Subtract the formulas at \(T\) and
+\(S\); on \(w>R\), \(b_R(w)=a(w)\), proving
+\eqref{eq:prefix-increment}.  At the target horizon, the von Mangoldt
+divisor identity and \eqref{eq:lambda-def} give
+\eqref{eq:full-residual-prefix}.
+\end{proof}
+
+\begin{lemma}[Prefix coefficient mass]
+\label{lem:prefix-mass}
+For every fixed \(C>0\), uniformly for \(R\le W\le X^C\),
+\begin{equation}
+ \sum_{w\le W}\frac{|b_R(w)|}{w}\ll_C(\log(2X))^3.
+ \label{eq:prefix-L1}
+\end{equation}
+Moreover, uniformly in squarefree \(g\le W\),
+\begin{equation}
+ \sum_{\substack{c\le W/g\\(c,g)=1}}
+ \frac{|b_R(gc)|}{c}\ll_C(\log(2X))^4.
+ \label{eq:cofactor-L1}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The \(a\)-part is bounded by a harmonic logarithmic sum.  For the
+finite-model part use the positive formula
+\[
+ |\lambda'_R(w)|
+ \le\frac w{\varphi(w)}
+ \sum_{b\le R/w}\frac{\mu(b)^2}{\varphi(b)}
+ \qquad(w\text{ squarefree})
+\]
+and sum the resulting nonnegative double divisor series.  This gives
+\(\sum_{w\le R}|\lambda'_R(w)|/w\ll(\log(2R))^2\), hence
+\eqref{eq:prefix-L1}.  In \eqref{eq:cofactor-L1}, use
+\(\varphi(gc)=\varphi(g)\varphi(c)\) on \((g,c)=1\), and bound the
+two remaining harmonic divisor sums.  The harmless factor
+\(g/\varphi(g)\) is absorbed by one additional logarithm.
+\end{proof}
+
+\subsection{The calibrated mixed increment and inherited interfaces}
+
+Let \(F\) range over a uniformly bounded subset of
+\(C_c^\infty(\R)\), and put
+\begin{equation}
+ L_{m;S,T}(j):=P_{m,T}(j)-P_{m,S}(j)
+ =\sum_{\substack{S<w\le T\\w\mid mj+h}}a(w).
+ \label{eq:long-increment}
+\end{equation}
+The main packet is
+\begin{align}
+ \cI_{S,T}
+ :={}&
+ \sum_{m,n}x_my_n\mathfrak m(m,n)
+ \sum_{\substack{j\in\Z\\(j,H)=1}}F(j/J)
+ P_{m,S}(j)L_{n;S,T}(j).
+ \label{eq:mixed-packet}
+\end{align}
+Its natural scale is
+\begin{equation}
+ Q^2J\asymp XQ.
+ \label{eq:natural-scale}
+\end{equation}
+
+For a compatible pair \(u,v\), let \(q=[u,v]\) and let
+\(\rho_{m,n}^{u,v}\in\cU_q\) be the joint residue class determined by
+\[
+ u\mid m\rho_{m,n}^{u,v}+h,\qquad
+ v\mid n\rho_{m,n}^{u,v}+h.
+\]
+Define the exact joint fiber
+\begin{align}
+ Z_{q;S,T}(\xi)
+ :={}&
+ \sum_{\substack{u\le S,\ S<v\le T\\{}[u,v]=q}}
+ b_R(u)a(v)
+ \sum_{\substack{m,n\\(u,v)\mid m-n\\
+                  \rho_{m,n}^{u,v}\equiv\xi\pmod q}}
+ x_my_n\mathfrak m(m,n),
+ \label{eq:joint-fiber}
+\end{align}
+with all row and target-primitivity restrictions retained.  Put
+\begin{equation}
+ \overline Z_{q;S,T}
+ =\frac1{\varphi(q)}\sum_{\xi\in\cU_q}Z_{q;S,T}(\xi),
+ \qquad
+ D_{q;S,T}=Z_{q;S,T}-\overline Z_{q;S,T}.
+ \label{eq:joint-fiber-centering}
+\end{equation}
+The joint nonzero scalar packet is
+\begin{align}
+ \mathscr J_{q;S,T}^{\ne0}
+ ={}&\frac{J}{Hq}\sum_{r\ne0}c_H(r)
+ \widehat F\left(\frac{rJ}{Hq}\right)
+ \sum_{\xi\in\cU_q}Z_{q;S,T}(\xi)
+ e_q(r\overline H\xi).
+ \label{eq:joint-nonzero-scalar}
+\end{align}
+Its mean and discrepancy parts are obtained by replacing \(Z_{q;S,T}\)
+with \(\overline Z_{q;S,T}\) and \(D_{q;S,T}\), respectively.
+
+We assume explicitly the TPC-20 no-wrap condition
+\begin{equation}
+ J\ge4HX^{\epsilon_0}
+ \label{eq:no-wrap}
+\end{equation}
+for some fixed \(\epsilon_0>0\) \citep{WangTPC20}.  Fix once and for
+all
+\begin{equation}
+ 0<\omega<\epsilon_0.
+ \label{eq:Fourier-window-margin}
+\end{equation}
+To state the Fourier-tail interface quantitatively, define
+\begin{align}
+ \mathscr T_\omega
+ :={}&
+ \sum_{q\le ST}\frac{J}{Hq}
+ \sum_{|r|>X^\omega Hq/J}|c_H(r)|
+ \left|\widehat F\left(\frac{rJ}{Hq}\right)\right|
+ \sum_{\xi\in\cU_q}|Z_{q;S,T}(\xi)|.
+ \label{eq:Fourier-tail-mass}
+\end{align}
+The inherited polynomial tail-mass hypothesis is that for every fixed
+\(A>0\), the Fourier decay order may be chosen so that
+\begin{equation}
+ \mathscr T_\omega\ll_{A,F,H}X^{-A}\cZ_1.
+ \label{eq:Fourier-tail-interface}
+\end{equation}
+This is the precise tail discarded in the cell reassembly below.  The
+fixed inequality \(\omega<\epsilon_0\), not an \(A\)-dependent window,
+is what preserves no-wrap on the retained frequencies.
+Moreover,
+\[
+ \sum_{\xi\in\cU_q}|D_{q;S,T}(\xi)|
+ \le 2\sum_{\xi\in\cU_q}|Z_{q;S,T}(\xi)|,
+\]
+so \eqref{eq:Fourier-tail-interface} controls the discrepancy tail as
+well as the undecomposed joint tail.  On the retained window,
+\(|r|\le X^\omega Hq/J<q/4\) for all sufficiently large \(X\), by
+\eqref{eq:no-wrap} and \eqref{eq:Fourier-window-margin}.
+
+For the four-channel interpretation in
+\cref{sec:asymmetric-four-channel} we also record the short-side margin
+\begin{equation}
+ HS\le JX^{-\eta_0}
+ \label{eq:short-side}
+\end{equation}
+for some fixed \(\eta_0>0\).  The exact calibrated recombination and
+the conductor theorem themselves do not require
+\eqref{eq:short-side}.  No comparison between \(T\) and \(J\), or
+between \(L\) and \(T\), is imposed.
+
+\begin{proposition}[Exact joint-minus-drift recombination]
+\label{prop:joint-minus-drift}
+Pointwise in the two rows and the orbit variable,
+\begin{align}
+ P_{m,S}(j)L_{n;S,T}(j)
+ ={}&
+ \sum_{\substack{u\le S\\u\mid mj+h}}b_R(u)
+ \sum_{\substack{S<v\le T\\v\mid nj+h}}a(v)
+ -\delta_H(m)L_{n;S,T}(j).
+ \label{eq:joint-minus-drift}
+\end{align}
+Moreover, for every fixed \(\epsilon>0\), the drift contribution to
+\eqref{eq:mixed-packet} is
+\begin{equation}
+ \ll_{\epsilon,F,h}J\cZ_1L^{-1}X^\epsilon.
+ \label{eq:drift-packet-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The identity follows at once from
+\eqref{eq:prefix-indicator} and \eqref{eq:long-increment}.  Also
+\[
+ |L_{n;S,T}(j)|
+ \le \sum_{v\mid nj+h}|a(v)|
+ \le \tau(nj+h)\log(2X)\ll_{\epsilon,F}X^\epsilon.
+\]
+There are \(O_F(J)\) orbit points, and
+\eqref{eq:row-drift} and the definition of \(\cZ_1\) prove
+\eqref{eq:drift-packet-bound} after renaming \(\epsilon\).
+\end{proof}

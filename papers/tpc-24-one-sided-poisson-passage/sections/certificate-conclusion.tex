@@ -1,0 +1,96 @@
+\section{Exact certificate and conclusion}
+\label{sec:certificate-conclusion}
+
+The analytic arguments above are symbolic.  We include a deterministic
+finite certificate to audit the identities and rational exponent
+ledger most vulnerable to sign, gcd, normalization, or boundary
+errors.  It does not test the zero-free region, estimate a M\"obius
+shell asymptotically, or sample primes for evidential purposes.
+
+\subsection{Certificate}
+
+The standard-library script
+\begin{center}
+ \texttt{experiments/tpc24\_certificate.py}
+\end{center}
+uses \texttt{fractions.Fraction} throughout.  It represents
+\(\log n\) on the formal prime basis and represents products of two
+divisor coefficients as exact degree-two polynomials in those formal
+logarithms.  It checks:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+ \item the exact finite-model density
+ \eqref{eq:model-density-identity} on four primitive row models;
+ \item both calibrated-prefix identities
+ \eqref{eq:prefix-indicator} and \eqref{eq:prefix-increment} on the
+ same models;
+ \item the direct physical zero kernel
+ \eqref{eq:zero-kernel} against its exact gcd reparametrization
+ \eqref{eq:zero-gcd-reparametrization} on four finite families;
+ \item the coefficient split \eqref{eq:a-gd-split} on every tested
+ coprime squarefree pair;
+ \item the asymmetric three-cell inequality on an exact rational grid;
+ \item the specialization from \((\beta;s,t)\) to
+ \((\beta,\delta,\xi)\), including the rational crossing sample
+ \eqref{eq:rational-passage-sample};
+ \item the hard-failure response \eqref{eq:fixed-modulus-failure},
+ which is required to be nonzero with the predicted formal
+ \(\log p\)-coefficient.
+\end{enumerate}
+
+Independent ordinary and \texttt{python -O} runs perform \(55{,}084\)
+exact checks and produce byte-identical JSON.  The hashes are
+\begin{center}
+\scriptsize
+\begin{tabular}{@{}ll@{}}
+\toprule
+JSON SHA-256
+&\nolinkurl{f638ca06fa641a570277b89b1ed17d81aeac2eaa264cf80d5a317378efbd0fc6}\\
+source SHA-256
+&\nolinkurl{7b9ce64a93c5abb24c02ca9da6ea763fa5fbd97192bc1fd700fe47a7887ad33d}\\
+certificate digest
+&\nolinkurl{c684a7c10e7cf3bd2cc46f2305af94d8452f018494d445ecdd3483325df6f50d}\\
+\bottomrule
+\end{tabular}
+\end{center}
+The JSON records explicitly that the projective-mass condition is a
+hypothesis and that the mass-sensitive zero term has not been deleted.
+Its flags for asymptotic evidence, full residual closure,
+Hardy--Littlewood, twin primes, and a general parity breakthrough are
+all false.
+
+\subsection{Conclusion}
+
+The old Poisson-short boundary is not a wall for every residual
+component.  Once the object is organized as an exact calibrated-prefix
+increment, the misleading long single channel cancels algebraically.
+The remaining nonzero joint spectrum has a rectangular true-conductor
+decomposition, whose certified saving is
+\eqref{eq:eta-asymmetric}.  Its physical zero mode has a different
+mechanism: the complete long M\"obius shell cancels the common endpoint
+constant for small shared factor, while the off-diagonal row
+determinant controls large shared factor.
+
+This proves a genuine support advance.  The explicit region
+\eqref{eq:special-passage-window} contains parameters with
+\(S=R<J<T\), for example \eqref{eq:rational-passage-sample}.  The
+advance is stronger than a numerical observation: the nonzero spectrum
+has fixed-power saving, and the zero kernel has the pointwise theorem
+\eqref{eq:pointwise-zero-shell}.
+
+The paper also preserves the exact remaining boundary.  Pointwise
+shell cancellation becomes a packet estimate with the actual absolute
+row mass \(\cZ_1\).  Fixed-polylogarithmic projective mass yields the
+full logarithmic closure \eqref{eq:polylog-full-closure}; a mean-zero
+test function yields the soft-mass closure
+\eqref{eq:mean-zero-full-closure}.  Generic soft mass and nonzero
+physical mean leave the explicit term in
+\eqref{eq:mass-sensitive-main-theorem}.  Calling that term negligible
+would require a new row-averaged zero-mode estimate, not a change of
+notation.
+
+The next useful target is therefore precise: prove cancellation of the
+small-\(g\) zero kernel against the actual separated row family, or
+derive a fixed-polylog projective decomposition for the relevant
+packet, and then attack the both-new square.  Neither step is supplied
+here.  In particular, this one-sided passage is not a twin-prime
+theorem and is not described as a general breach of parity.

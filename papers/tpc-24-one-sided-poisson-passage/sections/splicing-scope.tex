@@ -1,0 +1,129 @@
+\section{Exact splicing, a failed shortcut, and scope}
+\label{sec:splicing-scope}
+
+\subsection{Where the mixed increment sits in the residual}
+
+Let \(U\) contain every positive target in the selected orbit packet.
+By \eqref{eq:full-residual-prefix},
+\begin{equation}
+ P_{m,U}(j)=
+ \Lambda(mj+h)-\Lambda_R(mj+h)-\delta_H(m).
+ \label{eq:full-calibrated-residual}
+\end{equation}
+For \(R\le S<T\le U\), the prefix has the exact decomposition
+\begin{equation}
+ P_{m,U}=P_{m,S}+L_{m;S,T}+L_{m;T,U}.
+ \label{eq:three-piece-prefix}
+\end{equation}
+Therefore a two-row residual product expands into nine explicitly
+labelled pieces.  The present theorem treats
+\begin{equation}
+ P_{m,S}L_{n;S,T}
+ \qquad\text{and, by transposition,}\qquad
+ L_{m;S,T}P_{n,S}.
+ \label{eq:treated-two-pieces}
+\end{equation}
+It does not estimate \(L_{m;S,T}L_{n;S,T}\), either component
+involving \(L_{\cdot;T,U}\), or the already studied base product
+\(P_{m,S}P_{n,S}\).  Consequently
+\eqref{eq:polylog-full-closure} is a closure of a genuine residual
+increment, but not a closure of the complete residual correlation from
+TPC-18 \citep{WangTPC18}.
+
+The shell lower endpoint is also structural.  In
+\eqref{eq:inner-endpoint-difference}, the main constant in
+\(A_M(Y)\) disappears only because the long divisor variable is summed
+over the difference \((S/g,T/g]\).  Replacing that shell by a single
+modulus destroys the mechanism.
+
+\subsection{Pointwise calibration at a fixed modulus is false}
+
+The last warning has a finite counterexample.  For a cutoff \(R\),
+define the centered response of the complete short prefix to one
+modulus \(v\) by
+\begin{equation}
+ \Gamma_R(v;\Delta)=
+ \sum_{u\le R}\frac{b_R(u)}u
+ \left((u,v)\one_{(u,v)\mid\Delta}-1\right),
+ \label{eq:fixed-modulus-response}
+\end{equation}
+temporarily suppressing row coprimality.  Choose a prime
+\(R/2<p\le R\), put \(v=p\), and take \(p\mid\Delta\).  For every
+\(u\le R\) other than \(u=p\), either \((u,p)=1\), in which case the
+bracket vanishes, or \(b_R(u)=0\) for a nonsquarefree multiple of
+\(p\).  Since only \(b=1\) occurs in \eqref{eq:lambda-def},
+\begin{equation}
+ \lambda'_R(p)=-\frac p{p-1},
+ \qquad
+ b_R(p)=\log p+\frac p{p-1}.
+ \label{eq:prime-edge-coefficient}
+\end{equation}
+Thus
+\begin{equation}
+ \Gamma_R(p;\Delta)
+ =\frac{p-1}{p}b_R(p)
+ =\left(1-\frac1p\right)\log p+1
+ \asymp\log R.
+ \label{eq:fixed-modulus-failure}
+\end{equation}
+Bertrand's postulate supplies such a prime for every sufficiently
+large \(R\).  Hence a uniform assertion
+\(\Gamma_R(v;\Delta)=o(1)\) is false.  This does not contradict
+\cref{thm:pointwise-zero-shell}: that theorem retains the full outer
+M\"obius shell and uses cancellation between its two endpoints.
+
+\subsection{What is unconditional, conditional, and still open}
+
+The result has three logically different levels.
+
+\begin{enumerate}[label=\textup{(\arabic*)}]
+ \item The prefix, four-channel, recombination, and gcd identities are
+ finite and exact.  So are the fixed-modulus counterexample and the
+ exponent ledger.
+ \item The nonzero conductor theorem and pointwise zero-shell theorem
+ are proved without conjectural number-theoretic input for packets
+ satisfying the displayed primitive, smoothness, no-wrap, and
+ fixed-power-range interfaces.  They use the primitive
+ multiplicative large sieve and the classical zero-free region for
+ \(\zeta(s)\), not a Chowla or Elliott conjecture.
+ \item Full logarithmic closure for general \(\widehat F(0)\ne0\)
+ additionally uses the explicit fixed-projective-mass hypothesis
+ \eqref{eq:polylog-projective-mass}.  Under only the generic soft mass,
+ the honest conclusion is \eqref{eq:mass-sensitive-main-theorem}; the
+ mean-zero test-function corollary
+ \eqref{eq:mean-zero-full-closure} remains fully closed.
+\end{enumerate}
+
+In particular, nothing here proves a Hardy--Littlewood asymptotic, a
+positive lower bound for prime pairs, the twin-prime conjecture, or a
+general violation of the sieve parity barrier.  The phrase ``passage
+beyond the Poisson boundary'' refers only to the support coordinate
+\(T>J\) in the calibrated mixed increment.
+
+\subsection{The next precise gates}
+
+The theorem leaves several separable research problems.
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item Replace absolute use of \(\cZ_1\) in
+ \eqref{eq:mass-sensitive-zero} by a row-averaged operator or
+ Hilbert--Schmidt estimate for the small-\(g\) kernel.  Such an estimate
+ would remove the fixed-projective-mass hypothesis without requiring
+ pointwise fixed-modulus calibration, which
+ \eqref{eq:fixed-modulus-failure} rules out.
+ \item Treat the both-new square
+ \(L_{m;S,T}L_{n;S,T}\).  It has two long legs and no calibrated short
+ prefix, so the present one-sided algebra does not apply.
+ \item Reassemble the remaining \(L_{\cdot;T,U}\) complement fibers.
+ TPC-23 identifies their affine M\"obius parity cocycle; polynomially
+ uniform cancellation over those growing fibers remains open
+ \citep{WangTPC23}.
+ \item Only after these analytic components have compatible bounds may
+ one return to the global endpoint and positivity ledgers.  A
+ prime-pair main term is a separate stage, not a consequence of mixed
+ shell cancellation alone.
+\end{enumerate}
+
+Each gate has a valid negative fallback: failure of a proposed uniform
+estimate can be recorded by an exact obstruction such as
+\eqref{eq:fixed-modulus-failure}, without being presented as evidence
+for or against the twin-prime conjecture.

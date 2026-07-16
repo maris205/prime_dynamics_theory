@@ -1,0 +1,173 @@
+\section{Shell-averaged control of the physical zero mode}
+\label{sec:zero-shell}
+
+The nonzero Ramanujan--Gauss estimate used later has no content at
+additive frequency zero.  We therefore isolate that frequency before
+introducing multiplicative characters.  For an off-diagonal row pair
+write \(\Delta=m-n\ne0\), and define
+\begin{align}
+ K^0_{S,T}(m,n)
+ :={}&
+ \sum_{\substack{u\le S,\ S<v\le T\\
+                  (u,mH)=(v,nH)=1}}
+ \frac{b_R(u)a(v)}{uv}
+ (u,v)\one_{(u,v)\mid\Delta}.
+ \label{eq:zero-kernel}
+\end{align}
+All effective summands are squarefree because both divisor
+coefficients are supported on squarefree integers.
+
+\begin{theorem}[Pointwise shell cancellation]
+\label{thm:pointwise-zero-shell}
+Suppose \(S=X^{s+o(1)}\), \(T\le X^{C_T}\), where \(s,C_T>0\) are
+fixed.  For every fixed \(A>0\) and \(0<\kappa<s\), uniformly over the
+retained off-diagonal row pairs,
+\begin{equation}
+ \boxed{
+ K^0_{S,T}(m,n)
+ \ll_{A,\kappa,C_T,h}
+ (\log X)^{-A}+X^{-s+\kappa+o(1)}.}
+ \label{eq:pointwise-zero-shell}
+\end{equation}
+The \(o(1)\) in the second term comes only from the divisor bound for
+the nonzero row determinant.
+\end{theorem}
+
+\begin{proof}
+Put \(g=(u,v)\), \(u=gc\), and \(v=gd\).  Exactness of the gcd and
+squarefree support make \(g,c,d\) pairwise coprime.  Reordering the
+finite sum gives
+\begin{align}
+ K^0_{S,T}(m,n)
+ ={}&
+ \sum_{\substack{g\mid\Delta\\g\ \mathrm{squarefree}\\
+                  (g,mnH)=1}}\frac1g
+ \sum_{\substack{c\le S/g\\(gc,mH)=1}}
+ \frac{b_R(gc)}c
+ \notag\\
+ &\quad\times
+ \sum_{\substack{S/g<d\le T/g\\(d,gcnH)=1}}
+ \frac{a(gd)}d.
+ \label{eq:zero-gcd-reparametrization}
+\end{align}
+The modulus in the innermost coprimality condition is exactly
+\(gcnH\): the factors \(g,c\) come from \((u,v)=g\), and \(nH\)
+comes from target primitivity on the second row.
+
+Split \eqref{eq:zero-gcd-reparametrization} at
+\begin{equation}
+ G=SX^{-\kappa}.
+ \label{eq:g-split}
+\end{equation}
+If \(g\le G\), then \(S/g\ge X^\kappa\).  Fix \(g,c\) and set
+\(M=gcnH\).  Since \(gc\le S\), \(n\asymp Q\), and every scale is a
+fixed power of \(X\), there is a fixed \(C_0\) such that
+\(M\le X^{C_0}\).  The coefficient identity
+\begin{equation}
+ a(gd)=\mu(g)a(d)-\mu(g)\log g\,\mu(d)
+ \label{eq:a-gd-split}
+\end{equation}
+therefore turns the inner sum into
+\begin{align}
+ \mu(g)\{A_M(T/g)-A_M(S/g)\}
+ -\mu(g)\log g\{B_M(T/g)-B_M(S/g)\}.
+ \label{eq:inner-endpoint-difference}
+\end{align}
+By \cref{lem:uniform-companion}, the main constants
+\(M/\varphi(M)\) in the first difference cancel exactly; both
+differences have arbitrary logarithmic decay.  Moreover,
+\[
+ \frac M{\varphi(M)}\ll\log\log(3X),\qquad
+ \sum_{g\mid\Delta}\frac1g\ll\log\log(3X),
+\]
+and \cref{lem:prefix-mass} bounds the \(c\)-sum by a fixed power of
+\(\log X\).  Increasing the calibration exponent in terms of the
+desired \(A\) proves
+\begin{equation}
+ K^{0,\,g\le G}_{S,T}(m,n)\ll_A(\log X)^{-A}.
+ \label{eq:small-g-zero}
+\end{equation}
+
+For \(g>G\), use absolute values.  The cofactor estimates
+\begin{align}
+ \sum_{c\le S/g}\frac{|b_R(gc)|}{c}
+ &\ll(\log(2X))^4,
+ \label{eq:large-g-c-mass}\\
+ \sum_{d\le T/g}\frac{|a(gd)|}{d}
+ &\ll(\log(2X))^2
+ \label{eq:large-g-d-mass}
+\end{align}
+follow from \cref{lem:prefix-mass} and a harmonic logarithmic sum.
+Since \(\Delta\ne0\),
+\begin{equation}
+ \sum_{\substack{g\mid\Delta\\g>G}}\frac1g
+ \le\frac{\tau(|\Delta|)}G
+ =X^{-s+\kappa+o(1)}.
+ \label{eq:large-g-divisor-saving}
+\end{equation}
+Combining \eqref{eq:small-g-zero}--
+\eqref{eq:large-g-divisor-saving} proves the theorem.
+\end{proof}
+
+\subsection{From one row pair to the packet}
+
+Let \(\cZ^0_{S,T}\) denote the contribution of
+\eqref{eq:raw-joint-zero} to the joint term in
+\eqref{eq:joint-minus-drift}.  Thus
+\begin{equation}
+ \cZ^0_{S,T}
+ =J\widehat F(0)\frac{\varphi(H)}H
+ \sum_{m,n}x_my_n\mathfrak m(m,n)K^0_{S,T}(m,n).
+ \label{eq:packet-zero-mode}
+\end{equation}
+
+\begin{corollary}[Mass-sensitive zero-mode theorem]
+\label{cor:mass-sensitive-zero}
+Under the hypotheses of \cref{thm:pointwise-zero-shell},
+\begin{equation}
+ \boxed{
+ |\cZ^0_{S,T}|
+ \ll_{A,\kappa,F,H}
+ J\cZ_1\left\{(\log X)^{-A}
+ +X^{-s+\kappa+o(1)}\right\}.}
+ \label{eq:mass-sensitive-zero}
+\end{equation}
+Consequently:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item under only \eqref{eq:row-pair-mass},
+ \begin{equation}
+  |\cZ^0_{S,T}|
+  \ll XQ\left\{X^\epsilon(\log X)^{-A}
+  +X^{-s+\kappa+\epsilon+o(1)}\right\};
+  \label{eq:soft-mass-zero}
+ \end{equation}
+ \item under \eqref{eq:polylog-projective-mass}, for every fixed
+ \(B>0\),
+ \begin{equation}
+  |\cZ^0_{S,T}|\ll_{B,K,F,H}XQ(\log X)^{-B};
+  \label{eq:polylog-mass-zero}
+ \end{equation}
+ \item if \(\widehat F(0)=0\), then \(\cZ^0_{S,T}=0\) identically,
+ independently of the row mass.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+Insert \eqref{eq:pointwise-zero-shell} into
+\eqref{eq:packet-zero-mode}.  Since \(JQ^2\asymp XQ\), the soft
+statement follows from \eqref{eq:row-pair-mass}.  It is important that
+\(X^\epsilon(\log X)^{-A}\) is retained: for fixed \(A,\epsilon>0\)
+it does not tend to zero.  Under
+\eqref{eq:polylog-projective-mass}, choose the calibration exponent in
+\cref{thm:pointwise-zero-shell} after \(B,K\); the large-\(g\) term
+has a fixed power saving because \(\kappa<s\).  The last statement is
+immediate from \eqref{eq:packet-zero-mode}.
+\end{proof}
+
+\begin{remark}[Why the diagonal mask is structural]
+\label{rem:zero-diagonal}
+If \(m=n\), then every \(g\) divides \(\Delta=0\), so
+\eqref{eq:large-g-divisor-saving} is unavailable.  The row-diagonal
+removal is therefore not a cosmetic pruning inherited from an earlier
+argument; it is used directly in the zero-mode theorem.
+\end{remark}

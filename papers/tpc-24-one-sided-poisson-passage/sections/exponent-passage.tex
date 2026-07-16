@@ -1,0 +1,282 @@
+\section{Exponent ledger and passage beyond the Poisson face}
+\label{sec:exponent-passage}
+
+Write
+\begin{equation}
+ Q=X^{\beta+o(1)},\qquad J=X^{1-\beta+o(1)},
+ \qquad S=X^{s+o(1)},\qquad T=X^{t+o(1)},
+ \label{eq:asym-exponent-main}
+\end{equation}
+with \(0<s\le t\).  On a denominator and conductor cell put
+\begin{equation}
+ Y=X^{y+o(1)},\qquad F_i=X^{f_i+o(1)},
+ \qquad k_i=\max\{f_i,\beta-f_i\}.
+ \label{eq:asym-cell-exponents}
+\end{equation}
+The rectangular support gives
+\begin{equation}
+ 0\le y\le s+t,\qquad 0\le f_1\le s,\qquad 0\le f_2\le t,
+ \label{eq:asym-cell-ranges}
+\end{equation}
+and \(\cK_Q(F_i)=X^{k_i+o(1)}\).
+
+The natural scale \(XQ=Q^2J\) has exponent \(1+\beta\).  The norm and
+direct-Gauss routes in \eqref{eq:asymmetric-cell-bound} have exponents
+\[
+ \beta+\frac{1-\beta+y+k_1+k_2}{2},
+ \qquad
+ \beta+f_1+f_2+\frac{k_1+k_2}{2},
+\]
+respectively.  Their saving exponents are therefore
+\begin{equation}
+ \eta_A=\frac{\beta+1-y-k_1-k_2}{2},
+ \qquad
+ \eta_B=1-f_1-f_2-\frac{k_1+k_2}{2}.
+ \label{eq:asym-etaAB}
+\end{equation}
+
+\begin{proposition}[Asymmetric three-cell conductor ledger]
+\label{prop:asymmetric-ledger}
+Every cell in \eqref{eq:asym-cell-ranges} satisfies
+\begin{equation}
+ \max\{\eta_A,\eta_B\}\ge
+ \eta_{\rm asym}(\beta;s,t),
+ \label{eq:asym-ledger-bound}
+\end{equation}
+where
+\begin{equation}
+ \boxed{
+ \eta_{\rm asym}(\beta;s,t)
+ =\min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+1-2s-2t}{2},
+ \frac{3-\beta-s-5t}{4}
+ \right\}.}
+ \label{eq:eta-asymmetric}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Decreasing \(y\) improves \(\eta_A\), so use \(y=s+t\).
+
+If \(f_1,f_2\le\beta/2\), then
+\(k_1+k_2=2\beta-f_1-f_2\), and
+\[
+ \eta_B=1-\beta-\frac{f_1+f_2}{2}
+ \ge1-\frac{3\beta}{2}.
+\]
+If \(f_1,f_2\ge\beta/2\), then
+\(k_1+k_2=f_1+f_2\le s+t\), whence
+\[
+ \eta_A\ge\frac{\beta+1-2s-2t}{2}.
+\]
+
+In a mixed cell write
+\(x\le\beta/2\le z\) and \(d=z-x\ge0\).  Then
+\(k_1+k_2=\beta+d\), so
+\begin{equation}
+ \eta_A\ge\frac{1-s-t-d}{2}.
+ \label{eq:asym-mixed-A}
+\end{equation}
+Since \(z\le t\),
+\begin{equation}
+ \eta_B=1-\frac\beta2-2z+\frac d2
+ \ge1-\frac\beta2-2t+\frac d2.
+ \label{eq:asym-mixed-B}
+\end{equation}
+The maximum is at least the average of the last two lower bounds,
+namely \((3-\beta-s-5t)/4\).  Combining the three cases proves the
+claim.
+\end{proof}
+
+\subsection{The mass-sensitive mixed-increment theorem}
+
+\begin{theorem}[One-sided calibrated-increment estimate]
+\label{thm:calibrated-increment-estimate}
+Assume the row and target-primitivity interfaces of
+\cref{sec:interface-prefixes}, together with the divisor-independent
+off-diagonal mask, \eqref{eq:no-wrap}, and
+\eqref{eq:Fourier-tail-interface}.  The short-side condition
+\eqref{eq:short-side} is not required for this calibrated formulation.
+Suppose
+\(\eta_{\rm asym}(\beta;s,t)>0\) with a fixed margin and
+\(0<\kappa<s\).  Then for every fixed \(A>0\) and every sufficiently
+small fixed \(\epsilon>0\), there is a fixed \(\eta>0\) such that
+\begin{align}
+ |\cI_{S,T}|
+ \ll{}&XQX^{-\eta}
+ \notag\\
+ &+J\cZ_1\left\{
+ (\log X)^{-A}+X^{-s+\kappa+o(1)}+L^{-1}X^\epsilon
+ \right\}.
+ \label{eq:mass-sensitive-main-theorem}
+\end{align}
+Here \(\eta\) may be any sufficiently small fixed number below the
+conductor margin and the principal-mean margin \(1-\beta\), after the
+auxiliary \(\epsilon\)'s are chosen.  The transpose packet obeys the
+same estimate.
+\end{theorem}
+
+\begin{proof}
+Use \cref{prop:joint-minus-drift}.  Reassemble the joint \(r\ne0\)
+discrepancy through \eqref{eq:asymmetric-cell-reassembly}.  Apply
+\cref{prop:asymmetric-ledger} and
+\eqref{eq:asymmetric-cell-bound}; the fixed margin absorbs all dyadic
+and divisor multiplicities.  The global principal cell is bounded by
+\eqref{eq:asymmetric-principal-mean}; under
+\eqref{eq:row-pair-mass} it is
+\(Q^2X^\epsilon=XQX^{-(1-\beta)+\epsilon}\).  The physical zero mode
+is \eqref{eq:mass-sensitive-zero}, and the drift is
+\eqref{eq:drift-packet-bound}.  The inherited Fourier tail is made
+smaller than the displayed fixed-power term by choosing the smooth
+truncation order after its polynomial mass.  This proves
+\eqref{eq:mass-sensitive-main-theorem}.
+\end{proof}
+
+\begin{corollary}[Two rigorous closure regimes]
+\label{cor:two-closure-regimes}
+Retain the hypotheses of
+\cref{thm:calibrated-increment-estimate}, and suppose
+\(L\ge X^{\lambda_0}\) for a fixed \(\lambda_0>0\).
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item If the total projective mass satisfies
+ \eqref{eq:polylog-projective-mass}, then for every fixed \(B>0\),
+ \begin{equation}
+  \boxed{\cI_{S,T}\ll_{B,K,F,H}XQ(\log X)^{-B}.}
+  \label{eq:polylog-full-closure}
+ \end{equation}
+ \item Under only the soft mass hypothesis
+ \eqref{eq:row-pair-mass}, if \(\widehat F(0)=0\), then some fixed
+ \(\eta'>0\) satisfies
+ \begin{equation}
+  \boxed{\cI_{S,T}\ll XQX^{-\eta'}.}
+  \label{eq:mean-zero-full-closure}
+ \end{equation}
+ after the conventional auxiliary \(X^\epsilon\) losses are chosen
+ smaller than the fixed margins.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+In (i), choose the calibration exponent \(A\) after \(B,K\).  The
+large-\(g\), drift, conductor, and principal-mean terms have fixed
+power savings.  In (ii), the physical zero mode is identically zero by
+\cref{cor:mass-sensitive-zero}; every remaining term has a fixed-power
+margin.
+\end{proof}
+
+\begin{remark}[What the soft theorem does not say]
+\label{rem:soft-not-log}
+With general \(\widehat F(0)\ne0\) and only
+\(\cZ_1\ll Q^2X^\epsilon\), the first term inside braces in
+\eqref{eq:mass-sensitive-main-theorem} remains
+\(XQX^\epsilon(\log X)^{-A}\).  It is neither asserted to be
+\(o(XQ)\) nor relabelled as logarithmic saving.
+\end{remark}
+
+\subsection{The general one-sided passage region}
+
+For a genuine crossing of the old Poisson face, require
+\begin{equation}
+ s<1-\beta<t.
+ \label{eq:general-poisson-crossing}
+\end{equation}
+Positivity of the three entries in \eqref{eq:eta-asymmetric} gives the
+explicit window
+\begin{equation}
+ \boxed{
+ 1-\beta<t<
+ \min\left\{
+ \frac{\beta+1}{2}-s,
+ \frac{3-\beta-s}{5}
+ \right\},}
+ \label{eq:general-passage-window}
+\end{equation}
+together with \(\beta<2/3\) and \(s<1-\beta\), all with fixed
+margins.  The interval in \eqref{eq:general-passage-window} is
+nonempty precisely when
+\begin{equation}
+ \max\left\{\frac{1+2s}{3},\frac{2+s}{4}\right\}
+ <\beta<\min\left\{\frac23,1-s\right\}.
+ \label{eq:general-beta-window}
+\end{equation}
+There exist \(\beta,t\) satisfying these inequalities if and only if
+\begin{equation}
+ \boxed{s<\frac25.}
+ \label{eq:general-s-frontier}
+\end{equation}
+These are sufficient faces for the certified three-cell ledger, not a
+claim that the two underlying cell bounds are globally optimal.
+
+\subsection{The baseline cutoff
+\texorpdfstring{\(S=R\)}{S=R}}
+
+Take
+\begin{equation}
+ s=\frac12-\delta,\qquad
+ t=\frac12-\delta+\xi.
+ \label{eq:Rxi-substitution}
+\end{equation}
+Then \eqref{eq:eta-asymmetric} becomes
+\begin{equation}
+ \boxed{
+ \eta_{\rm asym}(\beta,\delta,\xi)
+ =\min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+4\delta-1}{2}-\xi,
+ \frac{6\delta-\beta-5\xi}{4}
+ \right\}.}
+ \label{eq:eta-asym-special}
+\end{equation}
+At \(\xi=0\), this agrees with the TPC-22 square ledger; when
+\(s=t\), the general formula agrees with the TPC-23 dynamic-square
+ledger.
+
+The condition \(T>J\) is
+\begin{equation}
+ \xi>\frac12+\delta-\beta.
+ \label{eq:T-beyond-J}
+\end{equation}
+Together with positivity of \eqref{eq:eta-asym-special}, this proves
+the passage window
+\begin{equation}
+ \boxed{
+ \frac12+\delta-\beta<\xi<
+ \min\left\{
+ \frac{\beta+4\delta-1}{2},
+ \frac{6\delta-\beta}{5}
+ \right\},}
+ \label{eq:special-passage-window}
+\end{equation}
+under
+\begin{equation}
+ \beta<\frac23,\qquad \beta<\frac12+\delta.
+ \label{eq:special-beta-margins}
+\end{equation}
+The latter inequality keeps the baseline leg \(S=R\) strictly below
+\(J\).  A simple nonempty subregion is
+\begin{equation}
+ \boxed{
+ \delta>\frac1{10},\qquad
+ \frac58-\frac\delta4<\beta<
+ \min\left\{\frac23,\frac12+\delta\right\}.}
+ \label{eq:special-nonempty-region}
+\end{equation}
+
+For the exact rational sample
+\begin{equation}
+ \delta=\frac3{20},\qquad
+ \beta=\frac{31}{50},\qquad
+ \xi=\frac1{25},
+ \label{eq:rational-passage-sample}
+\end{equation}
+we have
+\[
+ R=X^{7/20},\qquad J=X^{19/50},\qquad
+ T=X^{39/100}>J,
+\]
+and the three entries of \eqref{eq:eta-asym-special} are
+\[
+ \frac7{100},\qquad\frac7{100},\qquad\frac1{50}.
+\]
+Thus the certified joint nonzero saving is \(1/50\).

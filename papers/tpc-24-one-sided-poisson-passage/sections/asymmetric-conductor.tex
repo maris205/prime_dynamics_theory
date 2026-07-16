@@ -1,0 +1,284 @@
+\section{The asymmetric exact-conductor rectangle}
+\label{sec:asymmetric-conductor}
+
+We now treat every nonzero additive frequency of the raw joint lattice
+\eqref{eq:raw-joint-poisson}.  Only the upper bounds \(u\le S\) and
+\(v\le T\) enter the nonnegative energy estimates; the lower
+restriction \(v>S\) may be discarded when enlarging such an estimate.
+
+\subsection{Pairwise character coordinates}
+
+For one squarefree pair use \eqref{eq:gcdq}.  Since \(q=ud\) and
+\((u,d)=1\), there is an exact product decomposition
+\begin{equation}
+ \mathfrak X(q)\simeq\mathfrak X(u)\times\mathfrak X(d),
+ \qquad \chi\longmapsto(\alpha,\gamma),
+ \label{eq:asym-product-characters}
+\end{equation}
+and
+\begin{equation}
+ \cond\chi=(\cond\alpha)(\cond\gamma).
+ \label{eq:asym-product-conductors}
+\end{equation}
+The shared factor \(g\) is assigned to the short-side coordinate
+\(\alpha\bmod u\).  Put
+\begin{equation}
+ c_{m,n}^{(g)}
+ =x_my_n\mathfrak m(m,n)\one_{m\equiv n\pmod g}.
+ \label{eq:asym-compatibility-matrix}
+\end{equation}
+For this fixed divisor pair, define its unweighted row fiber by
+\begin{equation}
+ Z_{u,v}(\xi)=
+ \sum_{\substack{m,n\\g\mid m-n\\
+                  \rho_{m,n}^{u,v}\equiv\xi\pmod q}}
+ x_my_n\mathfrak m(m,n),
+ \qquad \xi\in\cU_q,
+ \label{eq:pair-row-fiber}
+\end{equation}
+and put
+\begin{equation}
+ \overline Z_{u,v}
+ =\frac1{\varphi(q)}\sum_{\xi\in\cU_q}Z_{u,v}(\xi),
+ \qquad D_{u,v}=Z_{u,v}-\overline Z_{u,v}.
+ \label{eq:pair-row-centering}
+\end{equation}
+The exact pairwise transform from TPC-22 is
+\begin{equation}
+ \widehat Z_{u,v}^{\,\times}(\chi)
+ =\overline{\chi(-h)}
+ \sum_{m,n}c_{m,n}^{(g)}\alpha(m)\gamma(n).
+ \label{eq:asym-rectangularization}
+\end{equation}
+There is no residual factor \(1/\varphi(g)\), and the character on the
+second row is not conjugated \citep{WangTPC22}.
+
+\begin{lemma}[Asymmetric compatibility energy]
+\label{lem:asymmetric-compatibility-energy}
+Under \eqref{eq:row-energy} and \eqref{eq:mask},
+\begin{equation}
+ \boxed{
+ \sum_{g\le S}\sum_{m,n}|c_{m,n}^{(g)}|^2
+ \ll_\epsilon Q^2X^\epsilon.}
+ \label{eq:asym-compatibility-energy}
+\end{equation}
+No comparison between \(S\) and \(L\) is required.
+\end{lemma}
+
+\begin{proof}
+The mask removes \(m=n\).  Hence
+\[
+ \sum_{g\le S}\sum_{m,n}|c_{m,n}^{(g)}|^2
+ \le
+ \sum_{m\ne n}|x_m|^2|y_n|^2
+ \sum_{g\mid m-n}1.
+\]
+The last multiplicity is at most
+\(\tau(|m-n|)\ll_\epsilon X^\epsilon\), independently of \(S\).
+Apply \eqref{eq:row-energy} and rename \(\epsilon\).
+\end{proof}
+
+\subsection{Tensor energy at the true conductors}
+
+We use the weighted exact-conductor large sieve in the following
+normalization.  If \(w\asymp W\) runs over squarefree ambient moduli,
+\(a_r\) is supported on an interval of length \(N\), and the exact
+conductors lie in \(f\asymp F\), then
+\begin{equation}
+ \sum_{w\asymp W}\frac1{\varphi(w)}
+ \sum_{\substack{\chi\in\mathfrak X(w)\\\cond\chi\asymp F}}
+ \left|\sum_ra_r\chi(r)\right|^2
+ \ll_\epsilon X^\epsilon
+ \left(F+\frac NF\right)\sum_r|a_r|^2.
+ \label{eq:asym-exact-conductor-LS}
+\end{equation}
+TPC-22 derives this form from the primitive multiplicative large sieve
+at the true conductor \citep{WangTPC22}; the underlying large sieve is
+standard \citep[Chapter~7]{IwaniecKowalski2004}.  Put
+\begin{equation}
+ \cK_Q(F)=F+\frac QF.
+ \label{eq:asym-KQ}
+\end{equation}
+
+For dyadic \(Y,F_1,F_2\), let
+\begin{align}
+ \cE_{Y;S,T}(F_1,F_2)
+ :={}&
+ \sum_{\substack{g,c,d\ \mathrm{pairwise\ coprime}\\
+                  gc\le S,\ S<gd\le T,\ g\,c\,d\asymp Y}}
+ \frac{|b_R(gc)a(gd)|^2}{\varphi(g\,c\,d)}
+ \notag\\
+ &\quad\times
+ \sum_{\substack{\alpha\in\mathfrak X(gc)\\
+                  \cond\alpha\asymp F_1}}
+ \sum_{\substack{\gamma\in\mathfrak X(d)\\
+                  \cond\gamma\asymp F_2}}
+ \left|
+ \sum_{m,n}c_{m,n}^{(g)}\alpha(m)\gamma(n)
+ \right|^2.
+ \label{eq:asymmetric-energy}
+\end{align}
+All inherited primitive restrictions are understood.
+
+\begin{theorem}[Asymmetric tensor conductor energy]
+\label{thm:asymmetric-tensor-energy}
+Uniformly for \(Y\le ST\), \(F_1\le S\), and \(F_2\le T\),
+\begin{equation}
+ \boxed{
+ \cE_{Y;S,T}(F_1,F_2)
+ \ll_\epsilon Q^2X^\epsilon
+ \cK_Q(F_1)\cK_Q(F_2).}
+ \label{eq:asymmetric-tensor-energy}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Fix \(g\), split the two ambient moduli into dyadic ranges, and enlarge
+the nonnegative sum by dropping divisibility, coprimality, and shell
+restrictions after retaining those ranges.  Apply
+\eqref{eq:asym-exact-conductor-LS} in the \(m\)-coordinate in its
+Hilbert-valued form, leaving the \(n\)-coordinate as a vector, and then
+apply it in the \(n\)-coordinate.  Since both row variables lie in
+intervals of length \(O(Q)\), the result for fixed \(g\) is
+\[
+ \ll_\epsilon X^\epsilon
+ \cK_Q(F_1)\cK_Q(F_2)
+ \sum_{m,n}|c_{m,n}^{(g)}|^2.
+\]
+Sum in \(g\), invoke
+\cref{lem:asymmetric-compatibility-energy}, and absorb the soft
+coefficient bounds and logarithmically many subdivisions into
+\(X^\epsilon\).
+\end{proof}
+
+\subsection{Two estimates for the same nonzero cell}
+
+For a function \(D\) on \(\cU_q\), use the multiplicative Fourier
+normalization
+\[
+ \widehat D^{\,\times}(\chi)
+ =\sum_{\xi\in\cU_q}D(\xi)\overline{\chi(\xi)},
+ \qquad
+ D(\xi)=\frac1{\varphi(q)}
+ \sum_{\chi\in\mathfrak X(q)}
+ \widehat D^{\,\times}(\chi)\chi(\xi).
+\]
+For the fixed pair \(u=gc,v=gd\), let
+\(D_{u,v}^{F_1,F_2}\) be the inverse multiplicative transform of
+\(\widehat D_{u,v}^{\,\times}\), restricted under
+\eqref{eq:asym-product-characters}, to
+\[
+ \cond\alpha\asymp F_1,\qquad
+ \cond\gamma\asymp F_2.
+\]
+Define the corresponding retained-frequency scalar functional
+\begin{align}
+ \cL_{u,v}^{F_1,F_2,\le\omega}
+ :={}&
+ \frac{J}{Hq}\sum_{0<|r|\le X^\omega Hq/J}c_H(r)
+ \widehat F\left(\frac{rJ}{Hq}\right)
+ \sum_{\xi\in\cU_q}D_{u,v}^{F_1,F_2}(\xi)
+ e_q(r\overline H\xi),
+ \label{eq:pair-cell-functional}
+\end{align}
+and the pair-separated cell aggregate
+\begin{align}
+ \mathfrak L_{Y;S,T}^{\le\omega}(F_1,F_2)
+ :={}&
+ \sum_{\substack{g,c,d\ \mathrm{pairwise\ coprime}\\
+                  gc\le S,\ S<gd\le T,\ g\,c\,d\asymp Y}}
+ |b_R(gc)a(gd)|
+ |\cL_{gc,gd}^{F_1,F_2,\le\omega}|.
+ \label{eq:asymmetric-cell-definition}
+\end{align}
+This is a sum of pairwise scalar functionals, not the norm of a
+fictitious global rectangular projection.
+
+The restricted-frequency norm route, licensed by
+\eqref{eq:no-wrap}, gives
+\begin{equation}
+ \mathfrak L_{Y;S,T}^{\le\omega}(F_1,F_2)
+ \ll_\epsilon QX^\epsilon
+ \sqrt{JY\cK_Q(F_1)\cK_Q(F_2)}.
+ \label{eq:asymmetric-norm-route}
+\end{equation}
+
+There is a second estimate.  Resolve both exact conductors before
+summing additive frequencies.  If
+\(f_1=\cond\alpha\), \(f_2=\cond\gamma\), and
+\(e=q/(f_1f_2)\) is the inducing quotient, then at \(r\ne0\) the
+induced Gauss sum is a primitive Gauss factor times the Ramanujan sum
+\(c_e(r)\).  The smooth nonzero-frequency estimate
+\begin{equation}
+ \sum_{r\ne0}|c_e(r)|
+ \left|\widehat F\left(\frac{rJ}{Hq}\right)\right|
+ \ll_{F,H}\frac{Hq}{J}\tau(e)
+ \label{eq:asym-Ramanujan-frequency}
+\end{equation}
+then gives
+\begin{equation}
+ \mathfrak L_{Y;S,T}^{\le\omega}(F_1,F_2)
+ \ll_\epsilon QF_1F_2X^\epsilon
+ \sqrt{\cK_Q(F_1)\cK_Q(F_2)}.
+ \label{eq:asymmetric-Gauss-route}
+\end{equation}
+This is the TPC-22 induced-Gauss argument with rectangular ambient
+ranges; restricting its left side to the retained frequencies only
+makes the absolute majorant smaller.  Formula
+\eqref{eq:asym-Ramanujan-frequency} must not include
+\(r=0\), because \(c_e(0)=\varphi(e)\); that frequency was treated in
+\cref{sec:zero-shell}.
+
+Combining the two estimates for the same scalar cell gives
+\begin{equation}
+ \boxed{
+ \mathfrak L_{Y;S,T}^{\le\omega}(F_1,F_2)
+ \ll_\epsilon QX^\epsilon
+ \sqrt{\cK_Q(F_1)\cK_Q(F_2)}
+ \min\{\sqrt{JY},F_1F_2\}.}
+ \label{eq:asymmetric-cell-bound}
+\end{equation}
+One-sided principal coordinate cells \((1,F_2)\) and \((F_1,1)\)
+remain genuine discrepancy cells.
+
+Let \(\mathscr J_{q;S,T}^{\mathrm{disc},\ne0}\) denote the
+nonprincipal part of the joint \(r\ne0\) packet at denominator \(q\).
+Linearity, exact conductor decomposition, and pairwise triangle
+inequality give the formal reassembly
+\begin{equation}
+ \sum_{q\asymp Y}
+ |\mathscr J_{q;S,T}^{\mathrm{disc},\ne0}|
+ \le
+ \sum_{\substack{F_1,F_2\\(F_1,F_2)\ne(1,1)}}
+ \mathfrak L_{Y;S,T}^{\le\omega}(F_1,F_2)
+ +O_A(X^{-A}\cZ_1).
+ \label{eq:asymmetric-cell-reassembly}
+\end{equation}
+The last term is the single undecomposed smooth Fourier-tail error
+from \eqref{eq:Fourier-tail-interface}.  It is inserted before the
+exact-conductor projection; the retained cells above therefore never
+require a pair-separated tail estimate.
+
+The global principal cell \((1,1)\) is the Ramanujan mean.  The
+rectangular form of the TPC-23 mean argument \citep{WangTPC23} gives
+\begin{equation}
+ \sum_q|\mathscr J_{q;S,T}^{\mathrm{mean},\ne0}|
+ \ll_{\epsilon,F,H}\cZ_1X^\epsilon,
+ \label{eq:asymmetric-principal-mean}
+\end{equation}
+because
+\[
+ \sum_{u\le S,\,v\le T}\frac1{[u,v]}
+ \ll\log^3(2ST).
+\]
+Under \eqref{eq:row-pair-mass}, this is \(Q^2X^\epsilon\), a fixed
+power below \(XQ=Q^2J\) whenever \(J\) has fixed positive power.
+
+\begin{remark}[Long-side inequalities not used here]
+\label{rem:asymmetric-no-long-short}
+The conductor proof uses neither \(T<J\) nor \(L>2T\).  The shell
+lower bound \(v>S\) only reduces the nonnegative energy.  What remains
+essential is the divisor-independent off-diagonal row mask, the
+no-wrap interface for \eqref{eq:asymmetric-norm-route}, and polynomial
+control of the total Fourier tail.
+\end{remark}

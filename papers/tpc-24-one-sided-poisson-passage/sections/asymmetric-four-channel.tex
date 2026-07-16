@@ -1,0 +1,188 @@
+\section{Four channels and exact calibrated recombination}
+\label{sec:asymmetric-four-channel}
+
+This section explains why a bare centered mixed rectangle has an
+apparently dangerous long single channel, and why that channel is
+absent from the exact calibrated increment.  Fix squarefree
+\(u\le S<v\le T\), assume
+\begin{equation}
+ (u,mH)=(v,nH)=1,
+ \label{eq:pair-primitivity}
+\end{equation}
+and put
+\begin{equation}
+ g=(u,v),\qquad u=gc,\qquad v=gd,\qquad
+ q=[u,v]=g\,c\,d.
+ \label{eq:gcdq}
+\end{equation}
+Then \(g,c,d\) are pairwise coprime.  Write
+\begin{equation}
+ \iota_{m,n}(g)=\one_{g\mid m-n}.
+ \label{eq:compatibility-indicator}
+\end{equation}
+When \(\iota_{m,n}(g)=1\), the two divisibility congruences determine
+a unit class \(\rho\bmod q\).  Here \(\overline m\) and \(\overline n\)
+denote the inverses of \(m\) modulo \(u\) and of \(n\) modulo \(v\),
+respectively.  The two individual congruences determine
+\begin{equation}
+ \rho_1\equiv-h\overline m\pmod u,
+ \qquad
+ \rho_2\equiv-h\overline n\pmod v.
+ \label{eq:rho12}
+\end{equation}
+
+\subsection{The two surviving channels of a bare centered pair}
+
+\begin{theorem}[Two surviving channels]
+\label{thm:two-surviving-channels}
+Assume \eqref{eq:short-side}.  Uniformly for the pairs above and every
+prescribed \(A>0\),
+\begin{align}
+ &\sum_{\substack{j\in\Z\\(j,H)=1}}
+ F(j/J)C_{m,u}(j)C_{n,v}(j)
+ \notag\\
+ &\quad=
+ \frac{J}{Huv}\Bigg[
+ g\iota_{m,n}(g)
+ \sum_{r\in\Z}
+ c_H(r)e_q(r\overline H\rho)
+ \widehat F\left(\frac{rJ}{Hq}\right)
+ \notag\\
+ &\hspace{7.2em}
+ -\sum_{r\in\Z}
+ c_H(r)e_v(r\overline H\rho_2)
+ \widehat F\left(\frac{rJ}{Hv}\right)
+ \Bigg]
+ +O_{A,F,H,\eta_0}(X^{-A}).
+ \label{eq:two-surviving-formula}
+\end{align}
+The joint sum is omitted when \(\iota_{m,n}(g)=0\).  The error remains
+arbitrarily power-saving after all polynomially many row and divisor
+sums in the selected packet.  The additive zero frequency in
+\eqref{eq:two-surviving-formula} is
+\begin{equation}
+ J\widehat F(0)\frac{\varphi(H)}H
+ \frac{g\iota_{m,n}(g)-1}{uv}.
+ \label{eq:pair-zero-mode}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The four exact natural Poisson lattices are the joint, \(u\)-single,
+\(v\)-single, and constant lattices of TPC-20
+\citep{WangTPC20}.  In the normalization above their bracket is
+\begin{align*}
+ &g\iota_{m,n}(g)\sum_r
+ c_H(r)e_q(r\overline H\rho)
+ \widehat F\left(\frac{rJ}{Hq}\right)\\
+ &\quad-\sum_r c_H(r)e_u(r\overline H\rho_1)
+ \widehat F\left(\frac{rJ}{Hu}\right)
+ -\sum_r c_H(r)e_v(r\overline H\rho_2)
+ \widehat F\left(\frac{rJ}{Hv}\right)
+ +\sum_r c_H(r)\widehat F\left(\frac{rJ}{H}\right).
+\end{align*}
+By \eqref{eq:short-side}, every nonzero frequency in the
+\(u\)-single channel has Fourier argument at least \(X^{\eta_0}\).
+The constant channel is shorter still.  Repeated integration by parts
+removes their nonzero frequencies, including the fixed polynomial
+multiplicity.  Their zero frequencies have coefficients \(-1\) and
+\(+1\), so they cancel.  This proves
+\eqref{eq:two-surviving-formula}.  Since \(c_H(0)=\varphi(H)\), the
+two remaining zero modes give \eqref{eq:pair-zero-mode}.
+\end{proof}
+
+\begin{remark}[Why the long channel cannot be deleted]
+\label{rem:long-channel-retained}
+When \(v\) is comparable with or larger than \(J\), the first nonzero
+Fourier argument \(J/(Hv)\) need not grow.  Smoothness alone therefore
+does not remove the second sum in
+\eqref{eq:two-surviving-formula}.  Bounding a complete long M\"obius
+divisor shell pointwise gives only \(X^{o(1)}\), not a fixed power of
+\(\log X\); this distinction cannot be repaired by changing the
+letter \(\epsilon\).
+\end{remark}
+
+\subsection{Scalar terms restore the joint lattice}
+
+Define the two bare centered signals
+\begin{align}
+ Z_{m,S}(j)&=
+ \sum_{\substack{u\le S\\(u,mH)=1}}b_R(u)C_{m,u}(j),
+ \label{eq:bare-short-signal}\\
+ V_{n;S,T}(j)&=
+ \sum_{\substack{S<v\le T\\(v,nH)=1}}a(v)C_{n,v}(j),
+ \label{eq:bare-long-signal}
+\end{align}
+and the long scalar density
+\begin{equation}
+ \alpha_{n;S,T}
+ =\sum_{\substack{S<v\le T\\(v,nH)=1}}\frac{a(v)}v
+ =A_{nH}(T)-A_{nH}(S).
+ \label{eq:long-scalar-density}
+\end{equation}
+The prefix identities of \cref{prop:prefix-identities} say exactly
+\begin{equation}
+ P_{m,S}=Z_{m,S}+E_S(m),
+ \qquad
+ L_{n;S,T}=V_{n;S,T}+\alpha_{n;S,T}.
+ \label{eq:scalar-restoration}
+\end{equation}
+Hence
+\begin{align}
+ P_{m,S}L_{n;S,T}
+ ={}&Z_{m,S}V_{n;S,T}
+ +E_S(m)V_{n;S,T}
+ +\alpha_{n;S,T}Z_{m,S}
+ +E_S(m)\alpha_{n;S,T}.
+ \label{eq:four-piece-restoration}
+\end{align}
+
+In the first term of \eqref{eq:four-piece-restoration}, the long
+single channel of \cref{thm:two-surviving-channels} is multiplied by
+\begin{equation}
+ \sum_{\substack{u\le S\\(u,mH)=1}}\frac{b_R(u)}u
+ =\delta_H(m)+E_S(m).
+ \label{eq:bare-prefix-density}
+\end{equation}
+The remaining three scalar terms restore the channels removed by
+centering.  After exact recombination, the coefficient
+\(E_S(m)\) cancels rather than being bounded against a long divisor
+signal, and one recovers \eqref{eq:joint-minus-drift}.  Thus no estimate
+of the false form
+\(X^\epsilon(\log X)^{-A}\ll(\log X)^{-B}\) is used.
+
+Equivalently, one may apply Poisson summation directly to the raw joint
+indicator in \eqref{eq:joint-minus-drift}.  If the pair is compatible,
+the exact formula is
+\begin{align}
+ &\sum_{\substack{j\in\Z\\(j,H)=1}}F(j/J)
+ \one_{u\mid mj+h}\one_{v\mid nj+h}
+ \notag\\
+ &\quad=
+ \frac{J}{Hq}\sum_{r\in\Z}
+ c_H(r)e_q(r\overline H\rho)
+ \widehat F\left(\frac{rJ}{Hq}\right),
+ \label{eq:raw-joint-poisson}
+\end{align}
+and it is zero otherwise.  The zero frequency of
+\eqref{eq:raw-joint-poisson} is
+\begin{equation}
+ J\widehat F(0)\frac{\varphi(H)}H
+ \frac{g\iota_{m,n}(g)}{uv}.
+ \label{eq:raw-joint-zero}
+\end{equation}
+This is the kernel treated in \cref{sec:zero-shell}; every nonzero
+frequency is treated by the conductor rectangle in
+\cref{sec:asymmetric-conductor}.
+
+\begin{remark}[The centered zero kernel]
+\label{rem:centered-zero-kernel}
+For comparison, the zero kernel of the bare product
+\(Z_{m,S}V_{n;S,T}\) is obtained from
+\eqref{eq:raw-joint-zero} by replacing
+\(g\iota_{m,n}(g)\) with \(g\iota_{m,n}(g)-1\).  Its disconnected
+\(-1\) part factors into the complete short prefix and
+\(A_{nH}(T)-A_{nH}(S)\); the latter is an endpoint difference and has
+arbitrary logarithmic decay.  The main proof uses the cleaner
+calibrated identity instead.
+\end{remark}

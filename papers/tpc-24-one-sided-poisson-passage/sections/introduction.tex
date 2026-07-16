@@ -1,0 +1,250 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The primitive residual program has reached two different analytic
+boundaries.  The first is a conductor boundary: after exact
+shared-factor rectangularization, two complementary estimates for the
+same conductor cell can produce a fixed power saving.  The second is a
+Poisson boundary: the four centered divisibility channels have periods
+\([u,v]\), \(u\), \(v\), and \(1\), so a single channel is completed by
+smoothness only when its period is shorter than the orbit length.
+
+TPC-20 derived the exact four-channel formula and completed both single
+channels under
+\begin{equation}
+ H\max(u,v)\le JX^{-\eta_0}.
+ \label{eq:intro-both-short}
+\end{equation}
+TPC-22 closed the resulting joint short--short packet by exact
+conductors, and TPC-23 moved the common cutoff from
+\(R=X^{1/2-\delta+o(1)}\) to \(S>R\), still subject to
+\eqref{eq:intro-both-short}
+\citep{WangTPC20,WangTPC22,WangTPC23}.  The longer single channel, not
+the conductor tensor, stops that centered-block argument at \(S<J\).
+
+This paper moves only one divisor leg.  Let
+\begin{equation}
+ R\le S<T\le U,\qquad
+ S=X^{s+o(1)},\quad T=X^{t+o(1)},\quad 0<s\le t,
+ \label{eq:intro-ST}
+\end{equation}
+where \(U=X^{O(1)}\) is the finite target horizon.  Put
+\[
+ a(v)=-\mu(v)\log v,
+ \qquad
+ b_R(u)=a(u)-\lambda'_R(u),
+\]
+with \(\lambda'_R(u)=0\) for \(u>R\).  The new divisor region is the
+incremental rectangle
+\begin{equation}
+ u\le S,\qquad S<v\le T.
+ \label{eq:intro-mixed-shell}
+\end{equation}
+It is essential that the second leg is a complete M\"obius shell,
+not an isolated long modulus or an arbitrary dyadic subset.
+
+\subsection{The calibrated increment is the stable object}
+
+Let \(P_{m,W}(j)\) be the locally calibrated residual prefix defined in
+\cref{eq:calibrated-prefix}.  Its exact finite identity is
+\begin{equation}
+ P_{m,W}(j)
+ =\sum_{\substack{w\le W\\w\mid mj+h}}b_R(w)-\delta_H(m),
+ \qquad
+ \delta_H(\ell d_0)\ll_{\epsilon,h}\frac{X^\epsilon}{L}.
+ \label{eq:intro-calibrated-prefix}
+\end{equation}
+Because the finite model ends at \(R\), the increment is
+\begin{equation}
+ L_{m;S,T}(j):=P_{m,T}(j)-P_{m,S}(j)
+ =\sum_{\substack{S<w\le T\\w\mid mj+h}}a(w).
+ \label{eq:intro-exact-increment}
+\end{equation}
+We study the separated packet
+\begin{align}
+ \cI_{S,T}:={}&
+ \sum_{m,n}x_my_n\mathfrak m(m,n)
+ \sum_{\substack{j\in\Z\\(j,H)=1}}F(j/J)
+ P_{m,S}(j)L_{n;S,T}(j).
+ \label{eq:intro-calibrated-packet}
+\end{align}
+Its transpose is identical after exchanging the row labels.
+
+The pointwise product in \eqref{eq:intro-calibrated-packet} has the
+exact expansion
+\begin{align}
+ P_{m,S}(j)L_{n;S,T}(j)
+ ={}&
+ \sum_{\substack{u\le S\\u\mid mj+h}}b_R(u)
+ \sum_{\substack{S<v\le T\\v\mid nj+h}}a(v)
+ -\delta_H(m)L_{n;S,T}(j).
+ \label{eq:intro-joint-minus-drift}
+\end{align}
+This identity is the first structural result.  If one starts instead
+from two bare centered divisor sums, a long \(v\)-single Poisson
+channel survives and is multiplied by a merely logarithmically
+calibrated short density.  In the genuine prefix increment, the scalar
+calibration terms restore the omitted channels and cancel that long
+single exactly.  What remains is one joint congruence lattice and the
+already power-saving row drift in \eqref{eq:intro-calibrated-prefix}.
+
+\subsection{The asymmetric conductor rectangle}
+
+For one compatible pair, write
+\[
+ g=(u,v),\qquad u=gc,\qquad v=gd,\qquad q=[u,v]=g\,c\,d.
+\]
+The TPC-22 character coordinates and weighted exact-conductor large
+sieve extend to the rectangle \(u\le S\), \(v\le T\).  If
+\(Q=X^{\beta+o(1)}\), \(J=X^{1-\beta+o(1)}\), then every joint
+nonzero conductor cell has one of two complementary bounds.  Their
+three-cell ledger gives
+\begin{equation}
+ \boxed{
+ \eta_{\rm asym}(\beta;s,t)=
+ \min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+1-2s-2t}{2},
+ \frac{3-\beta-s-5t}{4}
+ \right\}.}
+ \label{eq:intro-asym-saving}
+\end{equation}
+Thus the joint nonzero discrepancy has a fixed power saving whenever
+\(\eta_{\rm asym}>0\) with a fixed margin.  No hypothesis \(T<J\) or
+\(L>2T\) occurs in this conductor estimate.
+
+\subsection{The physical zero mode and the mass ledger}
+
+The induced-Gauss and Ramanujan-frequency estimates explicitly exclude
+additive frequency zero.  For an off-diagonal row pair put
+\(\Delta=m-n\).  The zero-frequency kernel of the joint term in
+\eqref{eq:intro-joint-minus-drift} is
+\begin{equation}
+ K^0_{S,T}(m,n)=
+ \sum_{\substack{u\le S,\ S<v\le T\\
+                  (u,mH)=(v,nH)=1}}
+ \frac{b_R(u)a(v)}{uv}
+ (u,v)\one_{(u,v)\mid\Delta}.
+ \label{eq:intro-zero-kernel}
+\end{equation}
+Choose \(0<\kappa<s\).  Write \(u=gc\), \(v=gd\), with
+\(g\mid\Delta\).  If \(g\le SX^{-\kappa}\), then
+\(S/g\ge X^\kappa\).  For fixed \(g,c\), the inner \(d\)-sum is a
+difference of uniformly calibrated M\"obius sums at \(T/g\) and
+\(S/g\); their common main constant cancels.  If
+\(g>SX^{-\kappa}\), then the off-diagonal mask gives
+\begin{equation}
+ \sum_{\substack{g\mid\Delta\\g>SX^{-\kappa}}}\frac1g
+ \le \frac{X^\kappa}{S}\tau(|\Delta|).
+ \label{eq:intro-large-g}
+\end{equation}
+Consequently, for every fixed \(A>0\),
+\begin{equation}
+ \boxed{
+ K^0_{S,T}(m,n)
+ \ll_{A,\kappa}
+ (\log X)^{-A}+X^{-s+\kappa+o(1)}.}
+ \label{eq:intro-zero-bound}
+\end{equation}
+
+Let
+\begin{equation}
+ \cZ_1=\sum_{m,n}|x_my_n\mathfrak m(m,n)|.
+ \label{eq:intro-Z1}
+\end{equation}
+The full physical zero mode is therefore bounded by
+\begin{equation}
+ J\cZ_1\left\{(\log X)^{-A}
+              +X^{-s+\kappa+o(1)}\right\}.
+ \label{eq:intro-zero-mass-bound}
+\end{equation}
+The factor \(\cZ_1\) is deliberate.  From the soft estimate
+\(\cZ_1\ll Q^2X^\epsilon\), one may close the large-\(g\) term by
+choosing \(\epsilon<s-\kappa\), but one may not convert
+\(X^\epsilon(\log X)^{-A}\) into logarithmic saving.  Under the
+stronger and independently checkable projective hypothesis
+\begin{equation}
+ \cZ_1\ll Q^2(\log X)^K
+ \label{eq:intro-polylog-mass}
+\end{equation}
+for a fixed \(K\), the exponent \(A\) can be chosen after \(B,K\), and
+\eqref{eq:intro-zero-mass-bound} is
+\(O_B(XQ(\log X)^{-B})\).  This distinction is part of the theorem,
+not an \(X^\epsilon\)-notation convention.  If
+\(\widehat F(0)=0\), the entire mass-sensitive term vanishes and the
+soft row estimates suffice.
+
+\subsection{A genuine passage beyond
+\texorpdfstring{\(J\)}{J}}
+
+Specialize to
+\begin{equation}
+ S=R=X^{1/2-\delta+o(1)},\qquad T=RX^\xi.
+ \label{eq:intro-Rxi}
+\end{equation}
+Then \eqref{eq:intro-asym-saving} becomes
+\begin{equation}
+ \eta_{\rm asym}(\beta,\delta,\xi)=
+ \min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+4\delta-1}{2}-\xi,
+ \frac{6\delta-\beta-5\xi}{4}
+ \right\}.
+ \label{eq:intro-R-saving}
+\end{equation}
+The old Poisson face is
+\[
+ \xi_{\rm P}=\frac12+\delta-\beta,
+ \qquad T=J\ \Longleftrightarrow\ \xi=\xi_{\rm P}.
+\]
+Suppose
+\begin{equation}
+ \beta<\frac23,\qquad \beta<\frac12+\delta,
+ \label{eq:intro-beta-conditions}
+\end{equation}
+with fixed margins.  Then the strict interval
+\begin{equation}
+ \boxed{
+ \frac12+\delta-\beta<\xi<
+ \min\left\{
+ \frac{\beta+4\delta-1}{2},
+ \frac{6\delta-\beta}{5}
+ \right\}}
+ \label{eq:intro-passage-window}
+\end{equation}
+is a certified one-sided passage beyond \(J\).  A convenient nonempty
+region is
+\begin{equation}
+ \delta>\frac1{10},\qquad
+ \frac58-\frac\delta4<\beta<
+ \min\left\{\frac23,\frac12+\delta\right\}.
+ \label{eq:intro-nonempty-region}
+\end{equation}
+For example, \((\delta,\beta,\xi)=(0.15,0.62,0.04)\) gives
+\[
+ R=X^{0.35},\qquad J=X^{0.38},\qquad T=X^{0.39},
+ \qquad \eta_{\rm asym}=0.02.
+\]
+
+\subsection{Scope and organization}
+
+The theorem treats the incremental mixed shell
+\([1,S]\times(S,T]\), and by transposition its mirror.  Under
+\eqref{eq:intro-polylog-mass} it closes that calibrated increment,
+including physical frequency zero.  Under only the generic soft mass
+it proves the fixed-power nonzero theorem and the exact
+mass-sensitive zero estimate \eqref{eq:intro-zero-mass-bound}; this is
+not silently promoted to full closure.  The result does not re-prove
+the old base square, control the both-ultra region, restore every
+endpoint of the TPC-18 residual \citep{WangTPC18}, or produce a
+positive prime-pair main term.
+
+\Cref{sec:interface-prefixes} fixes the exact prefix and row
+interfaces.  \Cref{sec:asymmetric-four-channel} explains the
+four-channel cancellation behind \eqref{eq:intro-joint-minus-drift}.
+\Cref{sec:zero-shell} proves \eqref{eq:intro-zero-bound}.
+\Cref{sec:asymmetric-conductor} extends the conductor tensor to a
+rectangle, and \cref{sec:exponent-passage} proves the ledger and
+passage window.  Exact splicing, the failed pointwise shortcut, and
+the scope ledger are in \cref{sec:splicing-scope}.  The certificate and
+conclusion are in \cref{sec:certificate-conclusion}.

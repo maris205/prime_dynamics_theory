@@ -1,0 +1,183 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={One-Sided Passage Beyond the Poisson Boundary: Shell-Averaged Zero Modes and Asymmetric Conductor Rectangles in a Primitive Mobius Tail},
+ pdfauthor={Liang Wang},
+ pdfsubject={Asymmetric mixed-shell estimates beyond the Poisson-short boundary},
+ pdfkeywords={Mobius tail, Poisson boundary, zero mode, exact conductors, large sieve, mixed shell, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\cond}{\operatorname{cond}}
+\newcommand{\lcm}{\operatorname{lcm}}
+
+\title{\textbf{One-Sided Passage Beyond the Poisson Boundary:}\\
+\textbf{Shell-Averaged Zero Modes and Asymmetric}\\
+\textbf{Conductor Rectangles in a Primitive M\"obius Tail}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Fix \(h\in\mathbb Z\setminus\{0\}\), put \(H=\operatorname{rad}|h|\),
+and let \(R=X^{1/2-\delta+o(1)}\) be the finite Ramanujan cutoff in the
+matched divisor expansion of a primitive fixed-shift M\"obius
+residual.  The earlier centered-block argument closes a square
+\(u,v\le S\) under the condition that the common short prefix satisfies
+\(HS<JX^{-\eta_0}\).  We keep that prefix on one row but attach on the
+other row a new shell \(S<v\le T\), where \(T\) may exceed the
+Poisson length \(J=X^{1-\beta+o(1)}\).  We write
+\(Q=X^{\beta+o(1)}\), so that \(QJ\asymp X\).
+
+The correct object is the exact calibrated-prefix increment.  If
+\(P_{m,S}\) is the calibrated residual prefix and
+\(L_{n;S,T}=P_{n,T}-P_{n,S}\), then pointwise
+\[
+ P_{m,S}L_{n;S,T}
+ =\sum_{u\le S}\sum_{S<v\le T}
+ b_R(u)a(v)\one_{u\mid mj+h}\one_{v\mid nj+h}
+ -\delta_H(m)L_{n;S,T},
+\]
+where \(a(w)=-\mu(w)\log w\) and
+\(b_R(w)=a(w)-\lambda'_R(w)\), with the inherited coprimality
+conditions understood.  Thus the
+apparently surviving long single channel cancels algebraically; the
+remaining scalar drift satisfies
+\(\delta_H(\ell d_0)\ll X^{o(1)}/L\).  The joint nonzero channel admits
+an asymmetric exact-conductor rectangle.  If \(S=X^{s+o(1)}\),
+\(T=X^{t+o(1)}\), and \(s\le t\), its certified saving is
+\[
+ \eta_{\rm asym}(\beta;s,t)=
+ \min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+1-2s-2t}{2},
+ \frac{3-\beta-s-5t}{4}
+ \right\}.
+\]
+
+The additive zero frequency is not covered by the nonzero
+Ramanujan--Gauss estimate.  We prove a separate shell theorem.  For
+each off-diagonal row pair, split the shared factor
+\(g=(u,v)\mid m-n\) at \(SX^{-\kappa}\), where \(0<\kappa<s\).
+For small \(g\), uniform M\"obius calibration at the two endpoints
+\(S/g\) and \(T/g\) cancels the common main constant.  For large
+\(g\), divisibility of the nonzero row determinant gives a factor
+\(X^\kappa/S\).  If \(\mathcal Z_1\) is the absolute row-pair mass,
+then for every fixed \(A>0\) the resulting zero-mode bound is
+\[
+ \ll J\mathcal Z_1
+ \left\{(\log X)^{-A}+X^\kappa S^{-1}X^{o(1)}\right\}.
+\]
+This mass factor is not hidden: the usual soft estimate
+\(\mathcal Z_1\ll Q^2X^\varepsilon\) does not turn the first term into
+logarithmic saving.  When \(\eta_{\rm asym}>0\) with fixed margins and
+the stated interfaces hold, the explicit fixed-projective-mass
+hypothesis \(\mathcal Z_1\ll Q^2(\log X)^K\) makes the entire
+calibrated mixed increment
+\(O_B(XQ(\log X)^{-B})\) for every fixed \(B>0\).  With only the soft
+mass hypothesis, test functions with \(\widehat F(0)=0\) give
+fixed-power closure; the displayed zero mode remains the sole
+mass-sensitive term in general.
+
+For \(S=R\) and \(T=RX^\xi\), the joint saving becomes
+\[
+ \min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+4\delta-1}{2}-\xi,
+ \frac{6\delta-\beta-5\xi}{4}
+ \right\}.
+\]
+Consequently there is a strict one-sided passage beyond \(T=J\) when
+\[
+ \frac12+\delta-\beta<\xi<
+ \min\left\{
+ \frac{\beta+4\delta-1}{2},
+ \frac{6\delta-\beta}{5}
+ \right\},
+\]
+provided \(\beta<2/3\), \(\beta<1/2+\delta\), and all inequalities
+have fixed margins.  This is an incremental mixed-shell estimate,
+not a closure of the full residual, a Hardy--Littlewood asymptotic, a
+twin-prime lower bound, or a general breach of sieve parity.
+\end{abstract}
+
+\noindent\textbf{Keywords:} primitive M\"obius tail; Poisson boundary;
+mixed divisor shell; shell-averaged zero mode; exact conductors;
+tensor large sieve; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary
+11L07, 11L40.
+
+\input{sections/introduction}
+\input{sections/interface-prefixes}
+\input{sections/asymmetric-four-channel}
+\input{sections/zero-shell}
+\input{sections/asymmetric-conductor}
+\input{sections/exponent-passage}
+\input{sections/splicing-scope}
+\input{sections/certificate-conclusion}
+
+\clearpage
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}
