@@ -1,0 +1,71 @@
+{
+  "bracket_only": true,
+  "bracket_shifts": {
+    "minus": 0.0005,
+    "plus": 0.00056
+  },
+  "bracket_side": "minus",
+  "exact_channel_enclosure": true,
+  "grushin_dimension": 10255,
+  "grushin_matrix_error_frobenius_upper": 7.72488861566294e-12,
+  "lift_coefficient_lower": 0.9982758685443437,
+  "lift_coefficient_upper": 0.9982758685443439,
+  "pair_order": "colamd",
+  "pair_order_seconds": 12.303078413009644,
+  "peak_memory_mb": 8895.6328125,
+  "permc_spec": "NATURAL",
+  "physical_dimension": 5120,
+  "power_of_two_scales": [
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "shifted_factorizations": [
+    {
+      "backward_error": {
+        "absolute_lu_product_frobenius_upper": 880995.4769158867,
+        "gaussian_elimination_backward_error_upper": 6.420101507776922e-05,
+        "input_assembly_error_upper": 2.686139244673577e-11,
+        "ldl_center_conversion_error_upper": 1.4931240535448257e-07,
+        "ldl_conversion_error_upper": 4.557888845994115e-05,
+        "ldl_relation_defect_frobenius_upper": 9.070297141490127e-09,
+        "ldl_relation_formation_error_upper": 6.9617494292086905e-09,
+        "lower_frobenius_upper": 6525.597698759811,
+        "matrix_dimension": 20510,
+        "minimum_real_pivot_magnitude": 0.0020459257763915106,
+        "negative_pivots": 10255,
+        "positive_pivots": 10255,
+        "total_error_upper": 0.00010977993039910286,
+        "upper_frobenius_upper": 6993.753781752328
+      },
+      "column_permutation_is_identity": true,
+      "factor_nnz": 95229736,
+      "factor_seconds": 182.5469512939453,
+      "label": "minus",
+      "row_column_permutations_match": true,
+      "row_permutation_is_identity": true,
+      "shift": 0.0005,
+      "shift_assembly_roundoff_upper": 4.071379492843932e-13
+    }
+  ],
+  "sigma": 0.004,
+  "status": "rigorous_one_sided_shifted_ldl_certificate",
+  "threshold": 5.8730989592810334e-05,
+  "threshold_dimension": 20510,
+  "threshold_factor": 2.0,
+  "threshold_matrix_nnz": 25952734,
+  "threshold_transform_error_frobenius_upper": 2.645425449745137e-11,
+  "transform_seconds": 2.804182291030884
+}

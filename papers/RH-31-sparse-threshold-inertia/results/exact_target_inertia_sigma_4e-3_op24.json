@@ -1,0 +1,117 @@
+{
+  "derived_from": {
+    "original_operation_factor": 32,
+    "path": "results/exact_target_asymmetric_inertia_sigma_4e-3.json",
+    "rebound_operation_factor": 24,
+    "sha256": "495e4c7a5eb8dde8f284f136d5ec81f7ae3a8025420b26c8cc547b23a1d50c8b"
+  },
+  "exact_channel_enclosure": true,
+  "factor_seconds_total": 365.98583149909973,
+  "grushin_dimension": 10255,
+  "grushin_matrix_error_frobenius_upper": 7.72488861566294e-12,
+  "inertia_bracket": {
+    "admissible": true,
+    "lower_shift": 0.0005,
+    "lower_shift_error_upper": 9.373124159112437e-05,
+    "negative_count": 10255,
+    "positive_count": 10255,
+    "shift": null,
+    "upper_shift": 0.00056,
+    "upper_shift_error_upper": 9.044793508911471e-05
+  },
+  "lift_coefficient_lower": 0.9982758685443437,
+  "lift_coefficient_upper": 0.9982758685443439,
+  "pair_order": "colamd",
+  "peak_memory_mb_upper_across_runs": 8895.6328125,
+  "physical_dimension": 5120,
+  "power_of_two_scales": [
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "shifted_factorizations": [
+    {
+      "backward_error": {
+        "absolute_lu_product_frobenius_upper": 880995.4769158867,
+        "elimination_operation_factor": 24,
+        "gaussian_elimination_backward_error_upper": 4.8152326269790755e-05,
+        "input_assembly_error_upper": 2.686139244673577e-11,
+        "ldl_center_conversion_error_upper": 1.4931240535448257e-07,
+        "ldl_conversion_error_upper": 4.557888845994115e-05,
+        "ldl_relation_defect_frobenius_upper": 9.070297141490127e-09,
+        "ldl_relation_formation_error_upper": 6.9617494292086905e-09,
+        "lower_frobenius_upper": 6525.597698759811,
+        "matrix_dimension": 20510,
+        "minimum_real_pivot_magnitude": 0.0020459257763915106,
+        "negative_pivots": 10255,
+        "positive_pivots": 10255,
+        "total_error_upper": 9.373124159112437e-05,
+        "upper_frobenius_upper": 6993.753781752328
+      },
+      "column_permutation_is_identity": true,
+      "factor_nnz": 95229736,
+      "factor_seconds": 182.5469512939453,
+      "label": "minus",
+      "row_column_permutations_match": true,
+      "row_permutation_is_identity": true,
+      "shift": 0.0005,
+      "shift_assembly_roundoff_upper": 4.071379492843932e-13
+    },
+    {
+      "backward_error": {
+        "absolute_lu_product_frobenius_upper": 775386.5443252394,
+        "elimination_operation_factor": 24,
+        "gaussian_elimination_backward_error_upper": 4.238008803207423e-05,
+        "input_assembly_error_upper": 2.6861407710592923e-11,
+        "ldl_center_conversion_error_upper": 1.1892164315979254e-06,
+        "ldl_conversion_error_upper": 4.806782019563275e-05,
+        "ldl_relation_defect_frobenius_upper": 2.289294996833463e-08,
+        "ldl_relation_formation_error_upper": 1.3643927810012945e-08,
+        "lower_frobenius_upper": 3435.8583845358485,
+        "matrix_dimension": 20510,
+        "minimum_real_pivot_magnitude": 0.0050609111853577166,
+        "negative_pivots": 10255,
+        "positive_pivots": 10255,
+        "total_error_upper": 9.044793508911471e-05,
+        "upper_frobenius_upper": 4659.984773165925
+      },
+      "column_permutation_is_identity": true,
+      "factor_nnz": 95229736,
+      "factor_seconds": 183.43888020515442,
+      "label": "plus",
+      "row_column_permutations_match": true,
+      "row_permutation_is_identity": true,
+      "shift_assembly_roundoff_upper": 4.0715321314154634e-13
+    }
+  ],
+  "sigma": 0.004,
+  "source_results": {
+    "minus": {
+      "path": "results/exact_target_minus_sigma_4e-3.json",
+      "sha256": "a9e3c3e34ffb76c7fb71c6ebbabde00540fc8ff1b9ef57b370c9cc9c168df390"
+    },
+    "plus": {
+      "path": "results/exact_target_inertia_sigma_4e-3.json",
+      "sha256": "83331831340eac4f948d05d5a2275bce3b47587a66f4d923fafe8a5581ed0d6c"
+    }
+  },
+  "status": "rigorous_exact_target_asymmetric_threshold_inertia_certificate",
+  "theorem": "Weyl monotonicity with independent lower and upper shift distances",
+  "threshold": 5.8730989592810334e-05,
+  "threshold_dimension": 20510,
+  "threshold_factor": 2.0,
+  "threshold_matrix_nnz": 25952734,
+  "threshold_transform_error_frobenius_upper": 2.645425449745137e-11
+}

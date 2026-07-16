@@ -1,0 +1,114 @@
+{
+  "exact_channel_enclosure": true,
+  "factor_seconds_total": 2115.735939502716,
+  "grushin_dimension": 20497,
+  "grushin_matrix_error_frobenius_upper": 1.1789796416629252e-11,
+  "inertia_bracket": {
+    "admissible": true,
+    "lower_shift": 0.0015,
+    "lower_shift_error_upper": 0.0014303460443413076,
+    "negative_count": 20497,
+    "positive_count": 20497,
+    "shift": null,
+    "upper_shift": 0.0015,
+    "upper_shift_error_upper": 0.0014315175100058806
+  },
+  "lift_coefficient_lower": 0.9985736938232723,
+  "lift_coefficient_upper": 0.9985736938232725,
+  "pair_order": "colamd",
+  "peak_memory_mb_upper_across_runs": 26223.63671875,
+  "physical_dimension": 10240,
+  "power_of_two_scales": [
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "shifted_factorizations": [
+    {
+      "backward_error": {
+        "absolute_lu_product_frobenius_upper": 11461972.472863736,
+        "elimination_operation_factor": 24,
+        "gaussian_elimination_backward_error_upper": 0.0012520722188749144,
+        "input_assembly_error_upper": 4.052665932353582e-11,
+        "ldl_center_conversion_error_upper": 1.4228506335528896e-05,
+        "ldl_conversion_error_upper": 0.0001782737849397336,
+        "ldl_relation_defect_frobenius_upper": 3.074007101082117e-08,
+        "ldl_relation_formation_error_upper": 1.4179260650493673e-08,
+        "lower_frobenius_upper": 11569.381693994967,
+        "matrix_dimension": 40994,
+        "minimum_real_pivot_magnitude": 0.021415685252028305,
+        "negative_pivots": 20497,
+        "positive_pivots": 20497,
+        "total_error_upper": 0.0014303460443413076,
+        "upper_frobenius_upper": 8596.514908064348
+      },
+      "column_permutation_is_identity": true,
+      "factor_nnz": 297877182,
+      "factor_seconds": 1055.143183708191,
+      "label": "minus",
+      "row_column_permutations_match": true,
+      "row_permutation_is_identity": true,
+      "shift": 0.0015,
+      "shift_assembly_roundoff_upper": 5.835846516729788e-13
+    },
+    {
+      "backward_error": {
+        "absolute_lu_product_frobenius_upper": 10803182.904646559,
+        "elimination_operation_factor": 24,
+        "gaussian_elimination_backward_error_upper": 0.0011801079807473,
+        "input_assembly_error_upper": 4.052665932353582e-11,
+        "ldl_center_conversion_error_upper": 1.93070180162329e-06,
+        "ldl_conversion_error_upper": 0.000251409488731921,
+        "ldl_relation_defect_frobenius_upper": 2.873102636907612e-08,
+        "ldl_relation_formation_error_upper": 2.4072374036811948e-08,
+        "lower_frobenius_upper": 10363.696848046216,
+        "matrix_dimension": 40994,
+        "minimum_real_pivot_magnitude": 0.02055696956721209,
+        "negative_pivots": 20497,
+        "positive_pivots": 20497,
+        "total_error_upper": 0.0014315175100058806,
+        "upper_frobenius_upper": 13156.709599224776
+      },
+      "column_permutation_is_identity": true,
+      "factor_nnz": 297877182,
+      "factor_seconds": 1060.5927557945251,
+      "label": "plus",
+      "row_column_permutations_match": true,
+      "row_permutation_is_identity": true,
+      "shift": 0.0015,
+      "shift_assembly_roundoff_upper": 5.835846516729788e-13
+    }
+  ],
+  "sigma": 0.002,
+  "source_results": {
+    "minus": {
+      "path": "results/exact_target_minus_sigma_2e-3_op24.json",
+      "sha256": "74e2c4404b3512992b5bea0c90399d8bdaced91b9cfaa13b24586c5c51ec7f2b"
+    },
+    "plus": {
+      "path": "results/exact_target_plus_sigma_2e-3.json",
+      "sha256": "e161d887e182c34c22a1d0a959503e42010309ad823eb7d98c948a4fea2566c2"
+    }
+  },
+  "status": "rigorous_exact_target_asymmetric_threshold_inertia_certificate",
+  "theorem": "Weyl monotonicity with independent lower and upper shift distances",
+  "threshold": 2.253661681740832e-05,
+  "threshold_dimension": 40994,
+  "threshold_factor": 2.0,
+  "threshold_matrix_nnz": 54237218,
+  "threshold_transform_error_frobenius_upper": 3.9943074671862825e-11
+}
