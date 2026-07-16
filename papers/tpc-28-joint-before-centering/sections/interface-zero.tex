@@ -1,0 +1,294 @@
+\section{Physical interface and exact zero recombination}
+\label{sec:tpc28-interface-zero}
+
+We retain the physical packet before Mellin separation.  This section
+contains the only zero-frequency argument in the paper.
+
+\subsection{Rows, scales, and coefficients}
+
+Fix $h\in\Z\setminus\{0\}$, and put
+\begin{equation}
+ H=\rad|h|,\qquad H_0=|h|.
+ \label{eq:tpc28-H-H0}
+\end{equation}
+Let
+\begin{equation}
+ R=X^{r_0+o(1)},\qquad r_0=\frac12-\delta>0,
+ \qquad R\le S\le X^{C_S}.
+ \label{eq:tpc28-RS}
+\end{equation}
+Rows in one opened slice are
+\begin{equation}
+ \alpha=(\ell,d_\alpha),\qquad
+ m_\alpha=\ell d_\alpha\asymp Q=LD,
+ \label{eq:tpc28-row-index}
+\end{equation}
+where $\ell\asymp L$ is prime,
+$d_\alpha\asymp D$ is squarefree,
+$(d_\alpha,H)=1$, and
+\begin{equation}
+ d_\alpha\le R^{1/2},\qquad
+ QJ\asymp X,\qquad
+ L>\max\{2R,2H_0\},\qquad
+ L\ge X^{\lambda_0}
+ \label{eq:tpc28-row-scales}
+\end{equation}
+for a fixed $\lambda_0>0$.  All exponent inequalities have fixed
+positive margins.  The physical orbit support is chosen so that
+\begin{equation}
+ |m_\alpha j+h|\asymp X
+ \label{eq:tpc28-target-support}
+\end{equation}
+whenever its smooth weight is nonzero.  In particular the target is
+never zero.
+
+On the primitive orbit $(j,H)=1$, divisibility gives
+\begin{equation}
+ (u,m_\alpha H)=1
+ \quad\text{whenever}\quad u\mid m_\alpha j+h.
+ \label{eq:tpc28-target-primitivity}
+\end{equation}
+The two physical row coefficients have the opened-$d$ provenance
+\begin{equation}
+ \gamma_\alpha^{(i)}
+ =\mu(d_\alpha)(\log\ell)\omega_D^{(i)}(d_\alpha)
+ \psi_L^{(i)}(\ell/L)\zeta_\alpha^{(i)},
+ \qquad |\zeta_\alpha^{(i)}|\ll1,
+ \label{eq:tpc28-row-provenance}
+\end{equation}
+and satisfy
+\begin{align}
+ \sum_\alpha|\gamma_\alpha^{(i)}|&\ll Q,
+ \label{eq:tpc28-row-l1}\\
+ \|\gamma^{(i)}\|_2^2&\ll Q\log(2L).
+ \label{eq:tpc28-row-l2}
+\end{align}
+These are the physical provenance bounds isolated in TPC-25
+\citep{WangTPC25}.
+
+The mask $\mathfrak m(\alpha,\gamma)$ is bounded by one, independent
+of every divisor and conductor variable, and vanishes when
+$m_\alpha=m_\gamma$.  The periodic factor
+\(\Xi_{\alpha,\gamma}(j)\) has fixed period $H_0$.  The smooth
+row--orbit weight $\cW_{\alpha,\gamma}(j/J)$ belongs to the same
+factorable bounded $C_c^\infty$ family as in TPC-25--27.  Its support
+has $O(J)$ integer points, its zero Fourier functional is uniformly
+bounded, and its Mellin representation has finite weighted variation
+of every fixed order.  All fixed source, residue, smoothness, and
+margin data are denoted by $\mathscr D$.
+
+Put
+\begin{equation}
+ a(u)=-\mu(u)\log u,
+ \qquad
+ \lambda'_R(u)=
+ \begin{cases}
+ u\displaystyle\sum_{b\le R/u}
+ \dfrac{\mu(ub)\mu(b)}{\varphi(ub)},&u\le R,\\[7pt]
+ 0,&u>R,
+ \end{cases}
+ \qquad b_R(u)=a(u)-\lambda'_R(u).
+ \label{eq:tpc28-coefficients}
+\end{equation}
+All three sequences are supported on squarefree integers.  The elementary positive
+majorant used in TPC-24 and TPC-27 gives
+\begin{equation}
+ |b_R(u)|\ll_{\mathscr D}(\log(2X))^3
+ \qquad (u\le X^{C_S}).
+ \label{eq:tpc28-pointwise-b}
+\end{equation}
+Indeed, $u/\varphi(u)\ll\log\log(3X)$ and
+$\sum_{b\le R/u}\mu^2(b)/\varphi(b)\ll\log(2X)$; the displayed
+third power is a convenient uniform envelope.
+
+For $m=\ell d$, define the row drift
+\begin{equation}
+ \delta_H(m)
+ =\frac H{\varphi(H)}
+  \frac d{\varphi(d)(\ell-1)}
+ \ll_{\eps,\mathscr D}\frac{X^\eps}{L}.
+ \label{eq:tpc28-row-drift}
+\end{equation}
+
+\subsection{Raw, centered, and calibrated prefixes}
+
+For $R\le S$, let
+\begin{align}
+ \mathsf A_{m,S}(j)
+ &:=\sum_{\substack{u\le S\\u\mid mj+h}}b_R(u),
+ \label{eq:tpc28-raw-prefix}\\
+ D_{m,S}
+ &:=\sum_{\substack{u\le S\\(u,mH)=1}}\frac{b_R(u)}u,
+ \label{eq:tpc28-prefix-density}\\
+ Z_{m,S}(j)
+ &:=\sum_{\substack{u\le S\\(u,mH)=1}}
+ b_R(u)\left(\one_{u\mid mj+h}-\frac1u\right),
+ \label{eq:tpc28-centered-prefix}\\
+ P_{m,S}(j)
+ &:=\mathsf A_{m,S}(j)-\delta_H(m).
+ \label{eq:tpc28-calibrated-prefix}
+\end{align}
+The finite-model density identity and the proved uniform M\"obius
+calibration theorem give the exact relation
+\begin{equation}
+ D_{m,S}=\delta_H(m)+E_S(m),
+ \qquad
+ E_S(m)\ll_{A,\mathscr D}(\log X)^{-A}
+ \label{eq:tpc28-density-calibration}
+\end{equation}
+for every fixed $A>0$, uniformly in the retained polynomial row and
+cutoff ranges \citep{WangTPC20,WangTPC27}.  Consequently
+\begin{equation}
+ \boxed{P_{m,S}=\mathsf A_{m,S}-\delta_H(m)
+ =Z_{m,S}+E_S(m).}
+ \label{eq:tpc28-two-prefix-bridges}
+\end{equation}
+
+The physical base packet is
+\begin{align}
+ \cQ_S^{\rm phys}
+ :={}&\sum_{\alpha,\gamma}
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \mathfrak m(\alpha,\gamma)
+ \notag\\
+ &\quad\times
+ \sum_{\substack{j\in\Z\\(j,H)=1}}
+ \Xi_{\alpha,\gamma}(j)
+ \cW_{\alpha,\gamma}(j/J)
+ P_{m_\alpha,S}(j)P_{m_\gamma,S}(j).
+ \label{eq:tpc28-physical-base}
+\end{align}
+Its natural scale is
+\begin{equation}
+ JQ^2\asymp XQ.
+ \label{eq:tpc28-natural-scale}
+\end{equation}
+
+\subsection{The exact zero-frequency identity}
+
+For distinct rows $m,n$, put
+\begin{align}
+ \cR_S^0(m,n)
+ :={}&
+ \sum_{\substack{u,v\le S\\(u,mH)=1\\(v,nH)=1}}
+ \frac{b_R(u)b_R(v)}{uv}
+ (u,v)\one_{(u,v)\mid m-n},
+ \label{eq:tpc28-raw-zero-kernel}\\
+ K_S^0(m,n)
+ :={}&
+ \sum_{\substack{u,v\le S\\(u,mH)=1\\(v,nH)=1}}
+ \frac{b_R(u)b_R(v)}{uv}
+ \left((u,v)\one_{(u,v)\mid m-n}-1\right).
+ \label{eq:tpc28-connected-zero-kernel}
+\end{align}
+The fixed outer primitive density is suppressed in both definitions;
+it is restored once in the physical Poisson coefficient.  The same
+formulas hold inside a fixed residue class modulo $H_0$, up to one
+bounded local factor.
+
+\begin{proposition}[Raw-to-centered zero recombination]
+\label{prop:tpc28-zero-recombination}
+For every retained pair of rows,
+\begin{align}
+ \cR_S^0(m,n)&=K_S^0(m,n)+D_{m,S}D_{n,S},
+ \label{eq:tpc28-raw-connected-zero}\\
+ \cR_S^0(m,n)
+ -\delta_H(m)D_{n,S}
+ -\delta_H(n)D_{m,S}
+ +\delta_H(m)\delta_H(n)
+ &=K_S^0(m,n)+E_S(m)E_S(n).
+ \label{eq:tpc28-calibrated-zero-identity}
+\end{align}
+After factoring out the fixed outer primitive density, the left side
+of \eqref{eq:tpc28-calibrated-zero-identity} is exactly the
+complete-period arithmetic zero kernel of $P_{m,S}P_{n,S}$.
+\end{proposition}
+
+\begin{proof}
+The primitive CRT density of the two target congruences is
+\begin{equation}
+ \frac{(u,v)}{uv}\one_{(u,v)\mid m-n},
+ \label{eq:tpc28-joint-density}
+\end{equation}
+after suppressing the fixed outer density.  This proves that
+\eqref{eq:tpc28-raw-zero-kernel} is the raw zero kernel.  Subtracting
+\eqref{eq:tpc28-connected-zero-kernel} leaves
+\[
+ \sum_u\frac{b_R(u)}u
+ \sum_v\frac{b_R(v)}v
+ =D_{m,S}D_{n,S},
+\]
+with the row-coprimality restrictions in the corresponding factors.
+This proves \eqref{eq:tpc28-raw-connected-zero}.  Insert
+$D_{m,S}=\delta_H(m)+E_S(m)$ and expand.  The two mixed terms and the
+$\delta_H(m)\delta_H(n)$ term cancel exactly, giving
+\eqref{eq:tpc28-calibrated-zero-identity}.  The last assertion follows
+by taking the complete-period mean in
+$P_{m,S}=\mathsf A_{m,S}-\delta_H(m)$.
+\end{proof}
+
+\begin{remark}[Why the order matters]
+\label{rem:tpc28-zero-order}
+If one first takes absolute values of the three scalar channels in
+$(Z+E)(Z+E)$, the exact cancellation in
+\eqref{eq:tpc28-calibrated-zero-identity} is lost.  The identity is a
+frequency-zero statement for the complete calibrated product, not an
+estimate for its four expanded pieces.
+\end{remark}
+
+\subsection{Physical zero closure}
+
+TPC-27 proves that for every fixed $A>0$, every fixed
+\begin{equation}
+ 0<\kappa<\min\{s,r_0/2\},
+ \qquad S=X^{s+o(1)},
+ \label{eq:tpc28-kappa-range}
+\end{equation}
+and distinct retained rows,
+\begin{equation}
+ K_S^0(m,n)
+ \ll_{A,\mathscr D}
+ (\log X)^{-A}
+ +L^{-2}(\log\log(3X))^3
+ +X^{-\kappa+o(1)}.
+ \label{eq:tpc28-imported-zero-bound}
+\end{equation}
+This is the Ramanujan-square theorem; it has no hypothesis $S<J$
+\citep{WangTPC27}.
+
+\begin{theorem}[Physical calibrated zero closure]
+\label{thm:tpc28-physical-zero}
+Retain the physical interface above, the parameter range
+\eqref{eq:tpc28-kappa-range}, and the imported bound
+\eqref{eq:tpc28-imported-zero-bound}.  Then the additive zero
+contribution of the complete product in
+\eqref{eq:tpc28-physical-base} satisfies, for every fixed $B>0$,
+\begin{equation}
+ \boxed{
+ (\cQ_S^{\rm phys})^0
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}.}
+ \label{eq:tpc28-physical-zero-closure}
+\end{equation}
+No Poisson-short condition is assumed.
+\end{theorem}
+
+\begin{proof}
+Split the fixed $H_0$-periodic factor into its finitely many residue
+classes and take physical frequency zero before Mellin separation.
+The zero functional of the smooth weight and the fixed local density
+are uniformly bounded.  By
+\cref{prop:tpc28-zero-recombination}, the arithmetic kernel is
+$K_S^0(m,n)+E_S(m)E_S(n)$.  The mask deletes $m=n$, so
+\eqref{eq:tpc28-imported-zero-bound} applies.  Delete the bounded mask
+and zero functional, then use \eqref{eq:tpc28-row-l1} twice.  The
+result is
+\begin{align*}
+ |(\cQ_S^{\rm phys})^0|
+ \ll JQ^2\{&(\log X)^{-A}
+ +L^{-2}(\log\log(3X))^3
+ +X^{-\kappa+o(1)}
+ +(\log X)^{-2A}\}.
+\end{align*}
+Now use \eqref{eq:tpc28-natural-scale}, choose $A$ after $B$, and
+use $L\ge X^{\lambda_0}$ and $\kappa>0$.  This proves the theorem.
+\end{proof}

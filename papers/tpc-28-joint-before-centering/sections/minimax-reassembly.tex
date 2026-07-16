@@ -1,0 +1,303 @@
+\section{Sharp base minimax and nonzero reassembly}
+\label{sec:tpc28-minimax}
+
+We optimize \cref{thm:tpc28-cell-bound} over the complete base box and
+then restore the principal mean, Fourier tail, fixed residue cells, and
+physical Mellin components.
+
+\subsection{The exponent ledger}
+
+Write
+\begin{equation}
+ Q=X^{\beta+o(1)},\qquad
+ J=X^{1-\beta+o(1)},\qquad
+ S=X^{s+o(1)},
+ \qquad \frac12\le\beta<1.
+ \label{eq:tpc28-main-exponents}
+\end{equation}
+On one denominator and exact-conductor cell let
+\begin{equation}
+ Y=X^{y+o(1)},\qquad
+ F_i=X^{f_i+o(1)},\qquad
+ k_i=\max\{f_i,\beta-f_i\}.
+ \label{eq:tpc28-cell-exponents}
+\end{equation}
+The full rectangle gives
+\begin{equation}
+ 0\le y\le2s,\qquad 0\le f_1,f_2\le s.
+ \label{eq:tpc28-base-box}
+\end{equation}
+Relative to the natural exponent $1+\beta$, the norm and Gauss
+routes in \eqref{eq:tpc28-cell-bound} have savings
+\begin{align}
+ \eta_A(y,f_1,f_2)
+ &=\frac{\beta+1-y-k_1-k_2}{2},
+ \label{eq:tpc28-etaA}\\
+ \eta_B(f_1,f_2)
+ &=1-f_1-f_2-\frac{k_1+k_2}{2}.
+ \label{eq:tpc28-etaB}
+\end{align}
+Since decreasing $y$ improves $\eta_A$, define
+\begin{equation}
+ M_\beta(s)
+ :=\inf_{0\le f_1,f_2\le s}
+ \max\{\eta_A(2s,f_1,f_2),\eta_B(f_1,f_2)\}.
+ \label{eq:tpc28-Mbeta-definition}
+\end{equation}
+
+\begin{proposition}[Exact relaxed-box base minimax]
+\label{prop:tpc28-sharp-minimax}
+For $1/2\le\beta<1$,
+\begin{equation}
+ \boxed{
+ M_\beta(s)=
+ \begin{cases}
+ 1-\beta-s,
+ &0\le s\le(1-\beta)/2,\\[3pt]
+ \dfrac{3-3\beta-2s}{4},
+ &(1-\beta)/2\le s\le\beta/2,\\[7pt]
+ \dfrac{3-\beta-6s}{4},
+ &\beta/2\le s\le(3\beta-1)/2,\\[7pt]
+ \dfrac{\beta+1-4s}{2},
+ &s\ge(3\beta-1)/2.
+ \end{cases}}
+ \label{eq:tpc28-sharp-minimax}
+\end{equation}
+The formula is exact for the relaxed box
+\eqref{eq:tpc28-base-box}; occupied arithmetic cells form a subset.
+\end{proposition}
+
+\begin{proof}
+This is the same two-variable convex minimax that appears in the
+annular joint ledger, with the upper endpoint now equal to the base
+exponent $s$ \citep{WangTPC26}.  We include the optimization to make
+the initial-value theorem self-contained.
+
+If $f_i\le\beta/2$, put $\sigma=f_1+f_2$.  Then
+\begin{equation}
+ \eta_A=\frac{1-\beta-2s+\sigma}{2},
+ \qquad
+ \eta_B=1-\beta-\frac\sigma2.
+ \label{eq:tpc28-low-low}
+\end{equation}
+They meet at
+\begin{equation}
+ \sigma_*=s+\frac{1-\beta}{2},
+ \qquad
+ \eta_A=\eta_B=\frac{3-3\beta-2s}{4}.
+ \label{eq:tpc28-low-witness}
+\end{equation}
+For $s\le(1-\beta)/2$, this point lies beyond
+$0\le\sigma\le2s$, and the endpoint gives $1-\beta-s$.  It is
+available for $(1-\beta)/2\le s\le\beta/2$.
+
+Now suppose $s\ge\beta/2$.  On the high--high corner
+$f_1=f_2=s$, the two routes give
+\begin{equation}
+ \eta_A=\frac{\beta+1-4s}{2},
+ \qquad \eta_B=1-3s.
+ \label{eq:tpc28-high-high}
+\end{equation}
+Here
+\[
+ \eta_A-\eta_B=\frac{\beta-1+2s}{2}\ge0,
+\]
+so the relevant upper envelope is the first expression.  In a mixed cell
+write $x=f_{\rm low}\le\beta/2$ and
+$z=f_{\rm high}\ge\beta/2$.  Both savings decrease with $z$, so
+$z=s$.  The two remaining affine functions meet at
+\begin{equation}
+ x_*=\frac{1-\beta}{2},
+ \qquad
+ \eta_A=\eta_B=\frac{3-\beta-6s}{4}.
+ \label{eq:tpc28-mixed-witness}
+\end{equation}
+While the low--low intersection remains available, its value exceeds
+the mixed value by
+\[
+ \frac{3-3\beta-2s}{4}
+ -\frac{3-\beta-6s}{4}
+ =s-\frac\beta2\ge0.
+\]
+The high--high and mixed faces cross at
+$s=(3\beta-1)/2$.  Beyond that point the low--low endpoint is
+$1-3\beta/2$, which is also no smaller than the high--high face.
+This proves the last two branches.  Continuity at every boundary is
+immediate.
+\end{proof}
+
+\begin{remark}[Interpretation of the minimax]
+\label{rem:tpc28-minimax-scope}
+A nonpositive value means that the two displayed cell estimates do not
+give a uniform power saving over the relaxed box.  It is not an
+arithmetic impossibility theorem.  Conversely, a positive value is a
+valid lower bound for every occupied cell, whether or not all equality
+witnesses occur arithmetically.
+\end{remark}
+
+\subsection{Principal mean and Fourier tail}
+
+For fixed $q$, assemble the raw full-base unit fiber before taking
+any conductor projection:
+\begin{equation}
+ Z_{q;S}^{\rm base}(\xi)
+ :=\sum_{\substack{u,v\le S\\\operatorname{lcm}(u,v)=q}}
+ b_R(u)b_R(v)Z_{u,v}(\xi).
+ \label{eq:tpc28-assembled-fiber}
+\end{equation}
+For one Mellin parameter, write $G=\Phi_{\boldsymbol\tau}$ and define
+the nonzero principal-mean contribution at denominator $q$ by
+\begin{align}
+ \mathscr J_{q;S,\boldsymbol\tau}^{\rm mean,\ne0}
+ :={}&\frac{J}{Hq}\sum_{r\ne0}c_H(r)c_q(r)
+ \widehat G\left(\frac{rJ}{Hq}\right)
+ \notag\\
+ &\quad\times
+ \sum_{\substack{u,v\le S\\\operatorname{lcm}(u,v)=q}}
+ b_R(u)b_R(v)\overline Z_{u,v}.
+ \label{eq:tpc28-principal-mean-definition}
+\end{align}
+
+\begin{lemma}[Global principal mean]
+\label{lem:tpc28-principal-mean}
+For some fixed $C_{\mathscr D}>0$,
+\begin{align}
+ \sum_q|\mathscr J_{q;S,\boldsymbol\tau}^{\rm mean,\ne0}|
+ &\ll_{\eps,\mathscr D}X^\eps
+ (1+|\boldsymbol\tau|)^{C_{\mathscr D}}
+ \|x_{\boldsymbol\tau}\|_1\|y_{\boldsymbol\tau}\|_1,
+ \label{eq:tpc28-principal-mean-homogeneous}\\
+ \int\sum_q|\mathscr J_{q;S,\boldsymbol\tau}^{\rm mean,\ne0}|
+ \,d|\nu|(\boldsymbol\tau)
+ &\ll_{\eps,\mathscr D}Q^2X^\eps.
+ \label{eq:tpc28-principal-mean}
+\end{align}
+This includes $u=v=1$; cells with exactly one principal conductor
+coordinate remain in \cref{thm:tpc28-cell-bound}.
+\end{lemma}
+
+\begin{proof}
+The unit-fiber mean satisfies
+\[
+ |\overline Z_{u,v}|
+ \le\frac{\|x_{\boldsymbol\tau}\|_1
+ \|y_{\boldsymbol\tau}\|_1}{\varphi(q)},
+ \qquad q=[u,v].
+\]
+Put $a_q=J/(Hq)$.  The inequality
+$|c_q(r)|\le\sum_{d\mid(q,r)}d$, Schwartz decay, and the divisor bound
+give
+\[
+ a_q\sum_{r\ne0}|c_H(r)c_q(r)|
+ |\widehat G(a_qr)|
+ \ll_{\eps,\mathscr D}
+ (1+|\boldsymbol\tau|)^{C_{\mathscr D}}X^\eps.
+\]
+Finally,
+\begin{equation}
+ \sum_{u,v\le S}\frac1{[u,v]}\ll(\log(2S))^3,
+ \label{eq:tpc28-lcm-cost}
+\end{equation}
+while $1/\varphi(q)\ll_\eps X^\eps/q$ and
+\eqref{eq:tpc28-pointwise-b} absorbs the divisor coefficients.
+This proves \eqref{eq:tpc28-principal-mean-homogeneous}.  Integrate
+with \eqref{eq:tpc28-transfer-l1} to obtain
+\eqref{eq:tpc28-principal-mean}.  When $q=1$, the nonzero frequencies
+are even rapidly decreasing because $a_1\asymp J$.
+\end{proof}
+
+The discrepancy is projected inside each genuine unit fiber and then
+summed over the $O(\log^2(2S))$ conductor cells.  The retained part is
+bounded by \cref{thm:tpc28-cell-bound}.  The unprojected high-frequency
+tail is removed before this pairwise triangle inequality.
+
+\begin{lemma}[Automatic physical Fourier tail]
+\label{lem:tpc28-Fourier-tail}
+For every prescribed $A>0$, the complete raw-base frequency range
+\begin{equation}
+ |r|>X^\omega Hq/J
+ \label{eq:tpc28-tail-range}
+\end{equation}
+contributes $O_{A,\mathscr D}(X^{-A}Q^2)$ after fixed-residue and
+physical Mellin reassembly.
+\end{lemma}
+
+\begin{proof}
+For one component and divisor pair, delete the row mask in absolute
+value and use the $\ell^1$ fiber mass
+\(\sum_\xi|Z_{u,v}(\xi)|\le\|x\|_1\|y\|_1\).  Repeated integration by
+parts gives, for every $N$,
+\[
+ |\widehat\Phi_{\boldsymbol\tau}(y)|
+ \ll_N(1+|\boldsymbol\tau|)^N(1+|y|)^{-N}.
+\]
+With $a_q=J/(Hq)$, an integral comparison yields uniformly in $q$
+\begin{equation}
+ a_q\sum_{|r|>X^\omega/a_q}(1+a_q|r|)^{-N}
+ \ll_NX^{-\omega(N-1)}.
+ \label{eq:tpc28-tail-lattice}
+\end{equation}
+The prefactor therefore cancels the frequency-lattice spacing.  By
+\eqref{eq:tpc28-pointwise-b}, the total divisor coefficient mass on
+$u,v\le S$ is at most a fixed power of $X$.  Choose $N$ after
+$A$, integrate with \eqref{eq:tpc28-transfer-l1}, and sum the fixed
+residue cells.
+\end{proof}
+
+\subsection{The raw nonzero base theorem}
+
+Let $(\cQ_S^{\mathsf A\mathsf A})^{\ne0}$ denote the physical sum of
+all nonzero additive frequencies from
+$\mathsf A_{m_\alpha,S}\mathsf A_{m_\gamma,S}$, with the same row
+family, mask, periodic factor, and smooth weight as in
+\eqref{eq:tpc28-physical-base}.
+
+\begin{theorem}[Physical raw-joint nonzero closure]
+\label{thm:tpc28-raw-nonzero}
+Assume the physical interface of \cref{sec:tpc28-interface-zero}, the
+continuous transfer
+\eqref{eq:tpc28-continuous-transfer}--\eqref{eq:tpc28-transfer-l1},
+the no-wrap condition \eqref{eq:tpc28-no-wrap}, the fixed-power cutoff
+$S\le X^{C_S}$ from \eqref{eq:tpc28-RS}, and
+\begin{equation}
+ M_\beta(s)>0
+ \label{eq:tpc28-positive-base-ledger}
+\end{equation}
+with a fixed margin.  Then some fixed $\eta>0$ satisfies
+\begin{equation}
+ \boxed{
+ (\cQ_S^{\mathsf A\mathsf A})^{\ne0}
+ \ll_{\mathscr D}XQX^{-\eta}.}
+ \label{eq:tpc28-raw-nonzero-closure}
+\end{equation}
+No condition $S<J$ is used.
+\end{theorem}
+
+\begin{proof}
+For each dyadic $Y,F_1,F_2$, apply the physically integrated estimate
+\eqref{eq:tpc28-cell-bound}.  The exponent calculation
+\eqref{eq:tpc28-etaA}--\eqref{eq:tpc28-Mbeta-definition} and
+\cref{prop:tpc28-sharp-minimax} give a common fixed-power saving over
+all nonprincipal occupied cells.  The logarithmically many cells are
+absorbed by choosing $\eta<M_\beta(s)$ after the $X^\eps$ losses.
+
+The principal mean \eqref{eq:tpc28-principal-mean} saves the fixed
+power $J=X^{1-\beta+o(1)}$ against
+$XQ=JQ^2$.  Remove the unprojected Fourier tail with
+\cref{lem:tpc28-Fourier-tail}, restore the fixed residue cells, and
+note that the component integration has already been performed in
+\eqref{eq:tpc28-cell-bound}, \eqref{eq:tpc28-principal-mean}, and the
+proof of \cref{lem:tpc28-Fourier-tail}.  Thus one may take any
+sufficiently small fixed $\eta$ below both $M_\beta(s)$ and
+$1-\beta$, after the auxiliary losses are fixed.
+\end{proof}
+
+\begin{remark}[The removed old face]
+\label{rem:tpc28-old-face}
+The face $1-3\beta/2$ in
+\eqref{eq:tpc28-old-centered-ledger} belongs to the earlier centered
+base decomposition.  It does not appear in the raw joint minimax
+\eqref{eq:tpc28-sharp-minimax}.  This proves that the face is not an
+intrinsic boundary of the full-rectangle joint conductor method; it
+does not remove any barrier outside this selected packet.
+\end{remark}

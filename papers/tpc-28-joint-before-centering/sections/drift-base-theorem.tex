@@ -1,0 +1,194 @@
+\section{Drift restoration and the Poisson-long base theorem}
+\label{sec:tpc28-drift-base}
+
+The raw joint nonzero theorem estimates only the coefficient-one term
+in \eqref{eq:tpc28-intro-raw-expansion}.  We now restore the two drift
+legs and the constant term.  The key point is that $\delta_H(m)$ has
+a fixed-power saving, so a soft target-divisor bound is sufficient.
+
+\subsection{A uniform target-divisor bound}
+
+\begin{lemma}[Pointwise raw-prefix bound]
+\label{lem:tpc28-raw-prefix-bound}
+For every fixed $\eps>0$, uniformly on the physical orbit support,
+\begin{equation}
+ \boxed{
+ |\mathsf A_{m,S}(j)|\ll_{\eps,\mathscr D}X^\eps.}
+ \label{eq:tpc28-raw-prefix-bound}
+\end{equation}
+The estimate is independent of the comparison between $S$ and $J$.
+\end{lemma}
+
+\begin{proof}
+Put $N=mj+h$.  By \eqref{eq:tpc28-target-support},
+$1\le|N|\ll X^{C_0}$ for a fixed $C_0$.  Every effective $u$ in
+\eqref{eq:tpc28-raw-prefix} divides $N$.  Hence
+\begin{equation}
+ |\mathsf A_{m,S}(j)|
+ \le\tau(|N|)
+ \max_{\substack{u\mid N\\u\le S}}|b_R(u)|.
+ \label{eq:tpc28-divisor-majorant}
+\end{equation}
+Use \eqref{eq:tpc28-pointwise-b} and the classical divisor bound
+\(\tau(|N|)\ll_{\eps,C_0}X^\eps\), after reducing the auxiliary
+exponent.  The cutoff $u\le S$ only deletes divisors.
+\end{proof}
+
+\begin{remark}[Why the target cannot be zero]
+\label{rem:tpc28-nonzero-target}
+If $N=0$, every positive integer would divide $N$, and
+\cref{lem:tpc28-raw-prefix-bound} would be false.  The physical target
+support \eqref{eq:tpc28-target-support} explicitly excludes this case.
+Equivalently, in the underlying positive dyadic packet one has
+$mj+h\asymp X$.
+\end{remark}
+
+Let $\cD_S^{\rm phys}$ denote the physical contribution of the last
+three terms in
+\begin{equation}
+ P_{m,S}P_{n,S}
+ =\mathsf A_{m,S}\mathsf A_{n,S}
+ -\delta_H(m)\mathsf A_{n,S}
+ -\delta_H(n)\mathsf A_{m,S}
+ +\delta_H(m)\delta_H(n).
+ \label{eq:tpc28-raw-drift-expansion}
+\end{equation}
+It is the complete sampled orbit contribution, before any additive
+frequency projection.
+
+\begin{proposition}[Full and zero-frequency physical drift bounds]
+\label{prop:tpc28-drift-bound}
+For every fixed $\eps>0$,
+\begin{equation}
+ \boxed{
+ |\cD_S^{\rm phys}|+|(\cD_S^{\rm phys})^0|
+ \ll_{\eps,\mathscr D}
+ JQ^2\left(L^{-1}X^\eps+L^{-2}X^\eps\right).}
+ \label{eq:tpc28-drift-bound}
+\end{equation}
+Consequently, under $L\ge X^{\lambda_0}$, the drift has a fixed-power
+saving relative to $XQ\asymp JQ^2$.
+\end{proposition}
+
+\begin{proof}
+There are $O_{\mathscr D}(J)$ orbit points.  Delete the bounded mask,
+periodic factor, and smooth weight.  Apply
+\cref{lem:tpc28-raw-prefix-bound}, the drift estimate
+\eqref{eq:tpc28-row-drift}, and the two physical row
+\(\ell^1\)-bounds \eqref{eq:tpc28-row-l1}.  Each mixed drift leg is at
+most
+\[
+ J\cdot Q\cdot Q\cdot L^{-1}X^\eps.
+\]
+The constant term is at most $JQ^2L^{-2}X^\eps$.
+
+For the additive zero term, the complete-period mean of
+$\mathsf A_{m,S}$ is $D_{m,S}$.  Directly from
+\eqref{eq:tpc28-prefix-density}, \eqref{eq:tpc28-pointwise-b}, and
+$S\le X^{C_S}$,
+\[
+ |D_{m,S}|\ll_{\mathscr D}(\log(2X))^{O(1)}\ll_\eps X^\eps.
+\]
+The bounded zero Fourier functional, the same row $\ell^1$ estimates,
+and \eqref{eq:tpc28-row-drift} therefore give the identical bound for
+$|(\cD_S^{\rm phys})^0|$.  Renaming the auxiliary exponent proves
+\eqref{eq:tpc28-drift-bound}.
+\end{proof}
+
+\begin{remark}[Comparison with the centered scalar estimate]
+\label{rem:tpc28-drift-vs-E}
+The soft factor $X^\eps$ in \eqref{eq:tpc28-raw-prefix-bound} cannot
+be multiplied by $E_S(m)\ll_A(\log X)^{-A}$ and then absorbed by
+choosing $A$.  This is why the proof must use $P=Z+E$ only at
+frequency zero and $P=\mathsf A-\delta_H$ at nonzero frequency.  The
+fixed-power factor $L^{-1}$ in \(\delta_H\) does absorb the soft
+divisor loss.
+\end{remark}
+
+\subsection{Frequency-dependent assembly}
+
+For each finite divisor pair, fixed residue cell, and smooth Mellin
+component, Poisson summation decomposes the sampled orbit into its
+additive zero term and nonzero terms.  By linearity,
+\begin{equation}
+ \cQ_S^{\rm phys}
+ =(\cQ_S^{\rm phys})^0
+ +(\cQ_S^{\mathsf A\mathsf A})^{\ne0}
+ +(\cD_S^{\rm phys})^{\ne0}.
+ \label{eq:tpc28-frequency-dependent-assembly}
+\end{equation}
+The first term is the zero frequency of the complete calibrated
+product and is evaluated with $P=Z+E$.  The last two terms use
+$P=\mathsf A-\delta_H$.  In particular,
+\begin{equation}
+ |(\cD_S^{\rm phys})^{\ne0}|
+ \le|\cD_S^{\rm phys}|+|(\cD_S^{\rm phys})^0|,
+ \label{eq:tpc28-drift-nonzero-majorant}
+\end{equation}
+where the right side is bounded in
+\cref{prop:tpc28-drift-bound}.  This formula does not double-count the
+zero frequency: the first term already contains the exact
+recombination \eqref{eq:tpc28-calibrated-zero-identity}.
+
+\begin{theorem}[Calibrated Poisson-long base closure]
+\label{thm:tpc28-base-closure}
+Retain the physical opened-row provenance, row norms, common smooth
+weight, divisor-independent off-diagonal mask, and nonzero target
+support of \cref{sec:tpc28-interface-zero}.  Assume
+$R\le S\le X^{C_S}$, $L\ge X^{\lambda_0}$, the calibration and
+Ramanujan-square inputs
+\eqref{eq:tpc28-density-calibration}, \eqref{eq:tpc28-imported-zero-bound},
+the continuous transfer
+\eqref{eq:tpc28-continuous-transfer}--\eqref{eq:tpc28-transfer-l1},
+and the no-wrap margin \eqref{eq:tpc28-no-wrap}.  Suppose
+\begin{equation}
+ M_\beta(s)>0,
+ \qquad Q=X^{\beta+o(1)},\quad S=X^{s+o(1)},\quad
+ \frac12\le\beta<1,
+ \label{eq:tpc28-base-theorem-hypotheses}
+\end{equation}
+with fixed margins.  Then for every fixed $B>0$,
+\begin{equation}
+ \boxed{
+ \cQ_S^{\rm phys}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}.}
+ \label{eq:tpc28-base-closure}
+\end{equation}
+The theorem permits $S>J$; no Poisson-short hypothesis is present.
+\end{theorem}
+
+\begin{proof}
+Use the exact assembly
+\eqref{eq:tpc28-frequency-dependent-assembly}.  The complete
+calibrated zero term has arbitrary logarithmic saving by
+\cref{thm:tpc28-physical-zero}.  The raw joint nonzero term has a fixed
+power saving by \cref{thm:tpc28-raw-nonzero}.  The remaining nonzero
+drift is bounded by \cref{prop:tpc28-drift-bound}.  Choose the
+auxiliary $\eps<\lambda_0/3$; the drift then also has a fixed-power
+saving.  Each power-saving contribution is
+$O_B\!\left(XQ(\log X)^{-B}\right)$ for every fixed $B$ and
+sufficiently large $X$.
+The fixed
+dyadic, sign, content, and residue reassembly costs are absorbed by
+choosing the zero calibration order after $B$.
+\end{proof}
+
+\begin{corollary}[Beyond the old Poisson boundary]
+\label{cor:tpc28-beyond-Poisson}
+If the hypotheses of \cref{thm:tpc28-base-closure} hold together with
+\begin{equation}
+ s>1-\beta,
+ \label{eq:tpc28-Poisson-long}
+\end{equation}
+then \eqref{eq:tpc28-base-closure} is a calibrated initial-value
+estimate whose divisor cutoff is strictly longer than the orbit
+length $J=X^{1-\beta+o(1)}$.
+\end{corollary}
+
+\begin{remark}[What has and has not been bypassed]
+\label{rem:tpc28-bypassed-face}
+The theorem bypasses the Poisson-short condition only for the selected
+raw joint base packet.  It does so through exact zero recombination and
+row/conductor averaging.  It does not prove a uniform two-point
+M\"obius theorem for the reflected ultra-long complement.
+\end{remark}

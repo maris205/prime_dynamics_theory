@@ -1,0 +1,154 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,float}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Joint Before Centering at a Poisson-Long Base: Full-Rectangle Exact Conductors and High-Beta Initial-Value Closure},
+ pdfauthor={Liang Wang},
+ pdfsubject={Closure of a selected calibrated Poisson-long base packet in a primitive Mobius tail},
+ pdfkeywords={Mobius tail, Poisson-long base, exact conductor, raw joint rectangle, additive zero mode, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\cond}{\operatorname{cond}}
+\newcommand{\rad}{\operatorname{rad}}
+
+\title{\textbf{Joint Before Centering at a Poisson-Long Base:}\\
+\textbf{Full-Rectangle Exact Conductors and}\\
+\textbf{High-\(\boldsymbol\beta\) Initial-Value Closure}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let $P_{m,S}$ be the calibrated divisor prefix in a primitive
+opened row $m=\ell d$, and suppose that the base cutoff $S$ may
+already exceed the orbit length $J\asymp X/Q$.  The centered
+nonzero-spectrum theorem used previously requires $S<J$.  Treating
+its scalar correction terms separately also incurs the polynomial loss
+$1+S/J$.  We remove both appearances of that restriction by changing
+the order of the decomposition.
+
+Write
+\[
+ \mathsf A_{m,S}(j)=
+ \sum_{\substack{u\le S\\u\mid mj+h}}b_R(u),
+ \qquad P_{m,S}=\mathsf A_{m,S}-\delta_H(m).
+\]
+At additive frequency zero, the raw joint kernel, both drift legs, and
+the constant term recombine exactly as
+\[
+ \cR_S^0(m,n)-\delta_H(m)D_{n,S}
+ -\delta_H(n)D_{m,S}+\delta_H(m)\delta_H(n)
+ =K_S^0(m,n)+E_S(m)E_S(n).
+\]
+Here $D_{m,S}=\delta_H(m)+E_S(m)$, while $K_S^0$ is the
+Ramanujan-square connected kernel already known to have arbitrary
+logarithmic physical saving.  Thus no Poisson-short hypothesis is
+needed at zero frequency.
+
+Away from zero, we prove a full-rectangle version of the symmetric
+exact-conductor argument.  For $u,v\le S$, denominator
+$[u,v]\asymp Y$, and coordinate conductors $F_1,F_2$, the raw joint
+cell satisfies
+\[
+ \cL^{\rm base}_{Y;S}(F_1,F_2)
+ \ll QX^\eps
+ \sqrt{\cK_Q(F_1)\cK_Q(F_2)}
+ \min\{\sqrt{JY},F_1F_2\},
+ \qquad \cK_Q(F)=F+Q/F.
+\]
+The corresponding relaxed-box saving is the same piecewise function
+$M_\beta(s)$ that occurs in the annular joint problem.  A pointwise
+target-divisor bound gives
+$\mathsf A_{m,S}(j)\ll_\eps X^\eps$, so the two remaining drift legs
+are power-small from the existing row-prime condition
+$L\ge X^{\lambda_0}$; no factor $1+S/J$ remains.  Consequently
+$M_\beta(s)>0$, together with the physical row, no-wrap, Fourier-tail,
+and fixed-margin interfaces, closes the selected calibrated base
+packet even when $S>J$.
+
+For the exact source-compatible sample
+\[
+ \beta=\frac{267}{400},\qquad
+ s=\frac{23}{60},\qquad
+ t=\frac{193}{500},
+\]
+the old centered ledger has the negative face $-1/800$, whereas the
+full-rectangle base margin is $M_\beta(s)=13/1600$.  The row-prime
+exponent is $99979/210000$, and the inherited annular margin to
+$T=X^t$ is $33/8000$.  Hence the selected calibrated truncated square
+closes at this particular $\beta>2/3$ sample.  The ultra-long complement,
+positivity, a Hardy--Littlewood asymptotic, twin primes, and any general
+breach of the parity barrier remain outside the result.
+\end{abstract}
+
+\noindent\textbf{Keywords:} primitive M\"obius tail; Poisson-long
+base; raw joint rectangle; exact conductor; additive zero mode; sieve
+parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary
+11L07, 11L40.
+
+\input{sections/introduction}
+\input{sections/interface-zero}
+\input{sections/full-rectangle-conductor}
+\input{sections/minimax-reassembly}
+\input{sections/drift-base-theorem}
+\input{sections/high-beta-splice}
+\input{sections/certificate-scope}
+
+\clearpage
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

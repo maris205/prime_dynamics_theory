@@ -1,0 +1,380 @@
+\section{The full-base exact-conductor rectangle}
+\label{sec:tpc28-full-base}
+
+We now treat the nonzero additive spectrum of the coefficient-one term
+\(\mathsf A_{m,S}\mathsf A_{n,S}\) in
+\eqref{eq:tpc28-intro-raw-expansion}.  All divisor pairs $u,v\le S$
+are retained.  There is no annular lower cutoff.
+
+\subsection{Physical separation after zero extraction}
+
+After the zero term of \cref{thm:tpc28-physical-zero} has been removed,
+split the fixed $H_0$-periodic multiplier into its finitely many
+residue cells.  On one cell the physical coefficient--weight product
+has the continuous representation
+\begin{equation}
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \cW_{\alpha,\gamma}(j/J)
+ =\int
+ x_{\boldsymbol\tau}(\alpha)
+ y_{\boldsymbol\tau}(\gamma)
+ \Phi_{\boldsymbol\tau}(j/J)
+ \,d\nu(\boldsymbol\tau),
+ \label{eq:tpc28-continuous-transfer}
+\end{equation}
+where every fixed weighted moment satisfies
+\begin{align}
+ \int(1+|\boldsymbol\tau|)^M
+ \|x_{\boldsymbol\tau}\|_2
+ \|y_{\boldsymbol\tau}\|_2\,d|\nu|
+ &\ll_{M,\mathscr D}Q\log(2L),
+ \label{eq:tpc28-transfer-l2}\\
+ \int(1+|\boldsymbol\tau|)^M
+ \|x_{\boldsymbol\tau}\|_1
+ \|y_{\boldsymbol\tau}\|_1\,d|\nu|
+ &\ll_{M,\mathscr D}Q^2.
+ \label{eq:tpc28-transfer-l1}
+\end{align}
+The row scales, target primitivity, and divisor-independent mask are
+unchanged.  This is the physical transfer lemma of TPC-25--27 applied
+to the same provenance.  We prove the conductor estimates for one
+component and integrate only after reassembly.
+
+Fix one parameter $\boldsymbol\tau$ and abbreviate
+\begin{equation}
+ x=x_{\boldsymbol\tau},\qquad
+ y=y_{\boldsymbol\tau},\qquad
+ G=\Phi_{\boldsymbol\tau}.
+ \label{eq:tpc28-component-abbreviation}
+\end{equation}
+The Schwartz seminorms of $G$ grow at most polynomially in
+$1+|\boldsymbol\tau|$, and those powers are absorbed by the weighted
+moments in \cref{eq:tpc28-transfer-l2,eq:tpc28-transfer-l1}.
+
+Write
+\begin{equation}
+ e(t)=e^{2\pi it},\qquad e_q(t)=e(t/q),\qquad
+ \widehat G(y)=\int_\R G(x)e(-xy)\,dx.
+ \label{eq:tpc28-Fourier-conventions}
+\end{equation}
+For an effective squarefree pair, put
+\begin{equation}
+ g=(u,v),\qquad u=gc,\qquad v=gd,\qquad
+ q=[u,v]=g\,c\,d.
+ \label{eq:tpc28-gcd-coordinates}
+\end{equation}
+Then $g,c,d$ are pairwise coprime.  The target congruences are
+compatible exactly when
+\begin{equation}
+ g\mid m-n.
+ \label{eq:tpc28-compatibility}
+\end{equation}
+When compatible they determine one unit class
+\(\rho_{m,n}^{u,v}\pmod q\).  Suppressing the harmless fixed residue
+cell, Poisson summation gives
+\begin{align}
+ &\sum_{\substack{j\in\Z\\(j,H)=1}}
+ G(j/J)\one_{u\mid mj+h}\one_{v\mid nj+h}
+ \notag\\
+ &\qquad=
+ \frac{J}{Hq}\sum_{r\in\Z}c_H(r)
+ e_q(r\overline H\rho_{m,n}^{u,v})
+ \widehat G\left(\frac{rJ}{Hq}\right),
+ \label{eq:tpc28-joint-Poisson}
+\end{align}
+where $\overline H$ is the inverse of $H\pmod q$.  The term $r=0$
+has already been treated.
+
+\subsection{Pair fibers and exact coordinate conductors}
+
+From this point onward, row labels are written as $m,n$; the symbols
+$\alpha,\gamma$ denote multiplicative characters.
+Let $\mathfrak X(w)$ denote the character group of
+\((\Z/w\Z)^\times\).  Since $q=ud$ and $(u,d)=1$,
+\begin{equation}
+ \mathfrak X(q)\simeq\mathfrak X(u)\times\mathfrak X(d),
+ \qquad \chi=\alpha\otimes\gamma,
+ \qquad \cond\chi=(\cond\alpha)(\cond\gamma).
+ \label{eq:tpc28-product-characters}
+\end{equation}
+For separated row weights $x_m,y_n$, define
+\begin{equation}
+ c_{m,n}^{(g)}
+ =x_my_n\mathfrak m(m,n)\one_{g\mid m-n}.
+ \label{eq:tpc28-compatibility-matrix}
+\end{equation}
+The unit fiber and its discrepancy are
+\begin{align}
+ Z_{u,v}(\xi)
+ &:=\sum_{\substack{m,n\\g\mid m-n\\
+ \rho_{m,n}^{u,v}\equiv\xi\bmod q}}
+ x_my_n\mathfrak m(m,n),
+ \label{eq:tpc28-unit-fiber}\\
+ \overline Z_{u,v}
+ &:=\frac1{\varphi(q)}\sum_{\xi\in(\Z/q\Z)^\times}Z_{u,v}(\xi),
+ \qquad D_{u,v}=Z_{u,v}-\overline Z_{u,v}.
+ \label{eq:tpc28-unit-discrepancy}
+\end{align}
+Finite CRT algebra gives the exact multiplicative transform
+\begin{equation}
+ \widehat Z_{u,v}^{\,\times}(\alpha\otimes\gamma)
+ =\overline{(\alpha\otimes\gamma)(-h)}
+ \sum_{m,n}c_{m,n}^{(g)}\alpha(m)\gamma(n).
+ \label{eq:tpc28-exact-transform}
+\end{equation}
+For every nonprincipal pair, centering changes no transform.
+
+Let $\mathfrak X_F(w)$ be the characters modulo $w$ whose exact
+conductor lies in a dyadic interval $\asymp F$, with $F=1$
+denoting the principal character.  The pairwise conductor projection is
+\begin{align}
+ D_{u,v}^{F_1,F_2}(\xi)
+ :={}&\frac1{\varphi(q)}
+ \sum_{\alpha\in\mathfrak X_{F_1}(u)}
+ \sum_{\gamma\in\mathfrak X_{F_2}(d)}
+ \widehat D_{u,v}^{\,\times}(\alpha\otimes\gamma)
+ (\alpha\otimes\gamma)(\xi).
+ \label{eq:tpc28-pair-projection}
+\end{align}
+
+The off-diagonal mask gives the compatibility-energy bound
+\begin{equation}
+ \sum_{g\le S}\sum_{m,n}|c_{m,n}^{(g)}|^2
+ \ll_\eps X^\eps\|x\|_2^2\|y\|_2^2.
+ \label{eq:tpc28-compatibility-energy}
+\end{equation}
+Indeed, after reversing the order, the multiplicity is bounded by
+\(\tau(|m-n|)\ll_\eps X^\eps\).  This is the only use of
+$m\ne n$ in the nonzero energy.
+
+Put
+\begin{equation}
+ \cK_Q(F)=F+\frac QF.
+ \label{eq:tpc28-KQ}
+\end{equation}
+For dyadic $Y,F_1,F_2$, define the full-base tensor energy
+\begin{align}
+ \cE^{\rm base}_{Y;S}(F_1,F_2)
+ :={}&\sum_{\substack{g,c,d\ \mathrm{pairwise\ coprime}\\
+ gc,gd\le S\\g\,c\,d\asymp Y}}
+ \frac{|b_R(gc)b_R(gd)|^2}{\varphi(g\,c\,d)}
+ \notag\\
+ &\quad\times
+ \sum_{\alpha\in\mathfrak X_{F_1}(gc)}
+ \sum_{\gamma\in\mathfrak X_{F_2}(d)}
+ \left|\sum_{m,n}c_{m,n}^{(g)}
+ \alpha(m)\gamma(n)\right|^2.
+ \label{eq:tpc28-base-energy}
+\end{align}
+
+\begin{theorem}[Full-base tensor conductor energy]
+\label{thm:tpc28-base-energy}
+Uniformly for $Y\le S^2$ and $F_1,F_2\le S$,
+\begin{equation}
+ \boxed{
+ \cE^{\rm base}_{Y;S}(F_1,F_2)
+ \ll_\eps X^\eps\|x\|_2^2\|y\|_2^2
+ \cK_Q(F_1)\cK_Q(F_2).}
+ \label{eq:tpc28-base-energy-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Fix $g$ and split both ambient moduli dyadically.  Enlarge the
+nonnegative sum by deleting the divisibility and coprimality
+restrictions after the dyadic ranges have been retained.  Apply the
+exact-conductor multiplicative large sieve in the following
+normalization, where $(a_r)$ is supported in an interval of length
+$N$:
+\begin{equation}
+ \sum_{\substack{w\asymp W\\w\ {\rm squarefree}}}
+ \frac1{\varphi(w)}
+ \sum_{\substack{\chi\bmod w\\\cond\chi\asymp F}}
+ \left|\sum_ra_r\chi(r)\right|^2
+ \ll_\eps X^\eps\left(F+\frac NF\right)
+ \sum_r|a_r|^2,
+ \label{eq:tpc28-exact-conductor-LS}
+\end{equation}
+Here $F=1$ denotes the principal character induced from conductor
+one; the case $w=1$ is included and follows directly from Cauchy.
+Apply this inequality first in the $m$-coordinate in Hilbert-valued
+form and then in the
+$n$-coordinate \citep{IwaniecKowalski2004,WangTPC22,WangTPC26}.
+Both row intervals have length $O(Q)$, so the contribution for fixed
+$g$ is
+\[
+ \ll_\eps X^\eps\cK_Q(F_1)\cK_Q(F_2)
+ \sum_{m,n}|c_{m,n}^{(g)}|^2.
+\]
+The pointwise bound \eqref{eq:tpc28-pointwise-b}, the logarithmically
+many dyadic subdivisions, and squarefree multiplicities are absorbed
+by $X^\eps$.  Sum over $g$ and apply
+\eqref{eq:tpc28-compatibility-energy}.
+\end{proof}
+
+\begin{remark}[Why this is a full-base theorem]
+\label{rem:tpc28-not-endpoint-substitution}
+The energy proof resembles the annular proof because that proof also
+deleted its lower support restriction when enlarging a nonnegative
+sum.  Nevertheless, \eqref{eq:tpc28-base-energy} is a newly defined
+full rectangle.  No illegal substitution of a cutoff below $R$ is
+made in an annular prefix identity.
+\end{remark}
+
+\subsection{Two estimates for one nonzero cell}
+
+Assume the no-wrap margin
+\begin{equation}
+ J\ge4HX^{\eps_0}
+ \label{eq:tpc28-no-wrap}
+\end{equation}
+for a fixed $\eps_0>0$, and choose $0<\omega<\eps_0$.  For one
+divisor pair define the retained scalar
+\begin{align}
+ \cL_{u,v}^{F_1,F_2,\le\omega}
+ :={}&\frac{J}{Hq}
+ \sum_{0<|r|\le X^\omega Hq/J}
+ c_H(r)\widehat G\left(\frac{rJ}{Hq}\right)
+ \notag\\
+ &\quad\times
+ \sum_{\xi\in(\Z/q\Z)^\times}
+ D_{u,v}^{F_1,F_2}(\xi)e_q(r\overline H\xi).
+ \label{eq:tpc28-pair-cell-functional}
+\end{align}
+Aggregate it over the full rectangle by
+\begin{align}
+ \cL^{\rm base}_{Y;S,\boldsymbol\tau}(F_1,F_2)
+ :={}&\sum_{\substack{g,c,d\ \mathrm{pairwise\ coprime}\\
+ gc,gd\le S\\g\,c\,d\asymp Y}}
+ |b_R(gc)b_R(gd)|
+ |\cL_{gc,gd}^{F_1,F_2,\le\omega}|.
+ \label{eq:tpc28-base-cell}
+\end{align}
+
+For some fixed $C_{\mathscr D}>0$, the polynomial seminorm growth
+described after \eqref{eq:tpc28-component-abbreviation} gives the
+following two homogeneous bounds.
+
+\begin{lemma}[Restricted-frequency norm route]
+\label{lem:tpc28-norm-route}
+For every exact-conductor cell,
+\begin{equation}
+ \cL^{\rm base}_{Y;S,\boldsymbol\tau}(F_1,F_2)
+ \ll_{\eps,\mathscr D}X^\eps
+ (1+|\boldsymbol\tau|)^{C_{\mathscr D}}
+ \|x\|_2\|y\|_2
+ \sqrt{JY\cK_Q(F_1)\cK_Q(F_2)}.
+ \label{eq:tpc28-norm-route}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For one $q$, let
+\[
+ \cP_q(\xi)=\frac{J}{Hq}
+ \sum_{0<|r|\le X^\omega Hq/J}
+ c_H(r)\widehat G\left(\frac{rJ}{Hq}\right)
+ e_q(r\overline H\xi).
+\]
+The no-wrap condition makes the retained frequencies distinct modulo
+$q$.  Additive orthogonality on all residues and Schwartz decay give
+\begin{equation}
+ \sum_{\xi\in(\Z/q\Z)^\times}|\cP_q(\xi)|^2
+ \ll_{\mathscr D}(1+|\boldsymbol\tau|)^{C_{\mathscr D}}J.
+ \label{eq:tpc28-Pq-norm}
+\end{equation}
+Multiplicative Parseval then bounds one pair by
+\begin{equation}
+ |\cL_{u,v}^{F_1,F_2,\le\omega}|
+ \ll_{\mathscr D}(1+|\boldsymbol\tau|)^{C_{\mathscr D}}
+ \left\{\frac J{\varphi(q)}
+ \sum_{\alpha,\gamma}
+ |\widehat D_{u,v}^{\,\times}
+ (\alpha\otimes\gamma)|^2\right\}^{1/2},
+ \label{eq:tpc28-pair-norm-bound}
+\end{equation}
+where the characters lie in the displayed conductor cells.  There are
+$O_\eps(YX^\eps)$ pairwise-coprime triples with
+$g\,c\,d\asymp Y$.
+Apply Cauchy--Schwarz over the triples and then
+\cref{thm:tpc28-base-energy}.
+\end{proof}
+
+For the second route, let the exact conductors be $f_1,f_2$, put
+$f=f_1f_2$, and write $q=ef$.  Squarefreeness gives $(e,f)=1$.
+The induced Gauss sum satisfies
+\begin{equation}
+ \left|\sum_{\xi\in(\Z/q\Z)^\times}
+ (\alpha\otimes\gamma)(\xi)e_q(r\overline H\xi)\right|
+ \le(f_1f_2)^{1/2}|c_e(r)|.
+ \label{eq:tpc28-induced-Gauss}
+\end{equation}
+At $r\ne0$,
+\begin{equation}
+ \sum_{r\ne0}|c_H(r)c_e(r)|
+ \left|\widehat G\left(\frac{rJ}{Hq}\right)\right|
+ \ll_{\mathscr D}(1+|\boldsymbol\tau|)^{C_{\mathscr D}}
+ \frac{Hq}{J}\tau(e).
+ \label{eq:tpc28-Ramanujan-frequency}
+\end{equation}
+
+\begin{lemma}[Induced-Gauss route]
+\label{lem:tpc28-Gauss-route}
+For every nonprincipal exact-conductor cell,
+\begin{equation}
+ \cL^{\rm base}_{Y;S,\boldsymbol\tau}(F_1,F_2)
+ \ll_{\eps,\mathscr D}X^\eps
+ (1+|\boldsymbol\tau|)^{C_{\mathscr D}}
+ \|x\|_2\|y\|_2F_1F_2
+ \sqrt{\cK_Q(F_1)\cK_Q(F_2)}.
+ \label{eq:tpc28-Gauss-route}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Insert \eqref{eq:tpc28-pair-projection} into
+\eqref{eq:tpc28-pair-cell-functional}.  The elementary exact-conductor
+count is
+\(\#\mathfrak X_{F_i}(w)\ll_\eps F_iX^\eps\) for squarefree $w$.
+Use \eqref{eq:tpc28-induced-Gauss} and
+\eqref{eq:tpc28-Ramanujan-frequency}, followed by Cauchy--Schwarz in
+the characters.  Sum over divisor triples using Cauchy--Schwarz with
+weights $|b_R(u)b_R(v)|^2/\varphi(q)$ and $1/\varphi(q)$.  The
+second weight has total $O_\eps(X^\eps)$ on $q\asymp Y$, since the
+number of pairwise-coprime factorizations is at most
+$3^{\omega(q)}$.  The first is bounded by
+\cref{thm:tpc28-base-energy}.
+\end{proof}
+
+\begin{theorem}[Full-rectangle cell bound]
+\label{thm:tpc28-cell-bound}
+For every nonprincipal conductor cell,
+\begin{equation}
+ \cL^{\rm base}_{Y;S,\boldsymbol\tau}(F_1,F_2)
+ \ll_{\eps,\mathscr D}X^\eps
+ (1+|\boldsymbol\tau|)^{C_{\mathscr D}}
+ \|x_{\boldsymbol\tau}\|_2\|y_{\boldsymbol\tau}\|_2
+ \sqrt{\cK_Q(F_1)\cK_Q(F_2)}
+ \min\{\sqrt{JY},F_1F_2\}.
+ \label{eq:tpc28-cell-bound-homogeneous}
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{
+ \int\cL^{\rm base}_{Y;S,\boldsymbol\tau}(F_1,F_2)
+ \,d|\nu|(\boldsymbol\tau)
+ \ll_{\eps,\mathscr D}QX^\eps
+ \sqrt{\cK_Q(F_1)\cK_Q(F_2)}
+ \min\{\sqrt{JY},F_1F_2\}.}
+ \label{eq:tpc28-cell-bound}
+\end{equation}
+The global principal pair $(F_1,F_2)=(1,1)$ is excluded; cells with
+exactly one principal coordinate are included.
+\end{theorem}
+
+\begin{proof}
+Take the minimum of \cref{lem:tpc28-norm-route,lem:tpc28-Gauss-route}
+to obtain \eqref{eq:tpc28-cell-bound-homogeneous}.  Integrate once and
+use \eqref{eq:tpc28-transfer-l2}; the factor $\log(2L)$ is absorbed by
+$X^\eps$.  This proves \eqref{eq:tpc28-cell-bound}.
+\end{proof}

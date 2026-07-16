@@ -1,0 +1,252 @@
+{
+  "certificate": "joint-before-centering full-base closure",
+  "certificate_digest": "3cb8458021bd05d8b04154137a92a068633944679a038db9c5e4f342dff563a3",
+  "claims": {
+    "asymptotic_mobius_evidence": false,
+    "finite_crt_density": true,
+    "finite_minimax_grid": true,
+    "finite_raw_drift_identity": true,
+    "finite_zero_recombination": true,
+    "full_residual_closed": false,
+    "general_parity_breakthrough": false,
+    "hardy_littlewood": false,
+    "positivity": false,
+    "riemann_hypothesis": false,
+    "twin_primes": false,
+    "ultra_long_complement_closed": false
+  },
+  "crt_cases": [
+    {
+      "checks": 553,
+      "h": 1,
+      "h_radical": 1,
+      "m": 13,
+      "max_modulus": 12,
+      "modulus_pairs": 144,
+      "n": 17
+    },
+    {
+      "checks": 94,
+      "h": 2,
+      "h_radical": 2,
+      "m": 17,
+      "max_modulus": 12,
+      "modulus_pairs": 24,
+      "n": 57
+    },
+    {
+      "checks": 46,
+      "h": 6,
+      "h_radical": 6,
+      "m": 23,
+      "max_modulus": 11,
+      "modulus_pairs": 12,
+      "n": 145
+    },
+    {
+      "checks": 46,
+      "h": 12,
+      "h_radical": 6,
+      "m": 23,
+      "max_modulus": 11,
+      "modulus_pairs": 12,
+      "n": 145
+    },
+    {
+      "checks": 8,
+      "h": 30,
+      "h_radical": 30,
+      "m": 49,
+      "max_modulus": 10,
+      "modulus_pairs": 2,
+      "n": 121
+    }
+  ],
+  "exact_check_count": 33299,
+  "high_beta_source_sample": {
+    "D_exponent": "10049/52500",
+    "J_exponent": "133/400",
+    "S_exponent": "23/60",
+    "T_exponent": "193/500",
+    "V_exponent": "23/120",
+    "base_M": "13/1600",
+    "beta": "267/400",
+    "delta": "7/60",
+    "margins": {
+      "D_below_V": "9/35000",
+      "T_above_S": "1/375",
+      "base_above_J": "61/1200",
+      "beta_above_two_thirds": "1/1200",
+      "source_above_T": "18919/210000"
+    },
+    "old_centered_faces": [
+      "-1/800",
+      "161/2400",
+      "13/1600"
+    ],
+    "sigma": "1/10000",
+    "source_lambda": "99979/210000",
+    "upper_M": "33/8000"
+  },
+  "minimax_cases": [
+    {
+      "M_beta_s": "1/4",
+      "beta": "7/10",
+      "grid_points": "8125",
+      "region": "short-endpoint",
+      "s": "1/20"
+    },
+    {
+      "M_beta_s": "1/10",
+      "beta": "7/10",
+      "grid_points": "8125",
+      "region": "low-low",
+      "s": "1/4"
+    },
+    {
+      "M_beta_s": "13/1600",
+      "beta": "267/400",
+      "grid_points": "8125",
+      "region": "mixed",
+      "s": "23/60"
+    },
+    {
+      "M_beta_s": "13/120",
+      "beta": "11/20",
+      "grid_points": "8125",
+      "region": "high-high",
+      "s": "1/3"
+    }
+  ],
+  "minimax_grid_points": 32500,
+  "paper": "TPC-28",
+  "raw_drift_cases": [
+    {
+      "R": 5,
+      "S": 8,
+      "checks": 9,
+      "h": 1,
+      "orbit_points": 9,
+      "rows": [
+        13,
+        17
+      ]
+    },
+    {
+      "R": 6,
+      "S": 10,
+      "checks": 5,
+      "h": 2,
+      "orbit_points": 5,
+      "rows": [
+        17,
+        57
+      ]
+    },
+    {
+      "R": 10,
+      "S": 14,
+      "checks": 4,
+      "h": 6,
+      "orbit_points": 4,
+      "rows": [
+        23,
+        145
+      ]
+    }
+  ],
+  "sample_calibrated_zero_polynomial": {
+    "1": "234743/22176",
+    "log(11)": "-8033/13552",
+    "log(5)": "-379/560",
+    "log(5)*log(11)": "1/55",
+    "log(5)*log(7)": "1/35",
+    "log(7)": "-25331/25872",
+    "log(7)*log(11)": "2/77"
+  },
+  "source_sha256": "c3ad5c993e1823a4752c5c31ef5e348342982607c078e8bc4343697d5dad9948",
+  "subcheck_counts": {
+    "full_base_crt_density": 747,
+    "full_base_minimax": 32507,
+    "high_beta_sample": 18,
+    "raw_centered_calibrated_zero": 9,
+    "raw_drift_product_identity": 18
+  },
+  "zero_recombination_cases": [
+    {
+      "R": 5,
+      "S": 8,
+      "checks": 3,
+      "drifts": [
+        "1/12",
+        "1/16"
+      ],
+      "h": 1,
+      "monomial_count": 11,
+      "opened_rows": [
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ]
+      ],
+      "rows": [
+        13,
+        17
+      ]
+    },
+    {
+      "R": 6,
+      "S": 9,
+      "checks": 3,
+      "drifts": [
+        "1/8",
+        "1/6"
+      ],
+      "h": 2,
+      "monomial_count": 8,
+      "opened_rows": [
+        [
+          17,
+          1
+        ],
+        [
+          19,
+          3
+        ]
+      ],
+      "rows": [
+        17,
+        57
+      ]
+    },
+    {
+      "R": 9,
+      "S": 12,
+      "checks": 3,
+      "drifts": [
+        "3/22",
+        "15/112"
+      ],
+      "h": 12,
+      "monomial_count": 7,
+      "opened_rows": [
+        [
+          23,
+          1
+        ],
+        [
+          29,
+          5
+        ]
+      ],
+      "rows": [
+        23,
+        145
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+\section{Exact certificate, dependency ledger, and scope}
+\label{sec:tpc28-certificate-scope}
+
+The proof has one new finite algebraic identity, one new analytic
+full-rectangle theorem, and one exact rational sample.  We separate
+these from imported interfaces and from statements that remain open.
+
+\subsection{Exact finite certificate}
+
+The standard-library script
+\begin{center}
+\texttt{experiments/tpc28\_certificate.py}
+\end{center}
+uses rational arithmetic and formal prime-log polynomials.  It checks:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item the pointwise raw/drift product identity for finite opened rows;
+ \item the direct connected double sum and complete-period raw,
+ centered, and calibrated zero kernels, including
+ \eqref{eq:tpc28-calibrated-zero-identity} and a case with
+ $\rad|h|\ne|h|$;
+ \item CRT compatibility and primitive complete-period densities for
+ full-base divisor pairs, including pairs with one unit divisor;
+ \item the two-route minimax lower bound on exact rational grids and
+ the equality witnesses on every piece of
+ \eqref{eq:tpc28-sharp-minimax};
+ \item all rational source, Poisson-overrun, base, drift, and upper
+ margins in \cref{tab:tpc28-high-ledger}.
+\end{enumerate}
+Every assertion uses an exception-based checker, so running Python with
+optimization cannot delete a test.  The script writes a deterministic
+JSON summary and hashes its normalized source and a canonical payload.
+It checks finite algebra and rational bookkeeping only; it is not
+numerical evidence for an asymptotic M\"obius or prime-pair claim.
+Both ordinary and optimized Python complete $33{,}299$ exact checks
+and regenerate byte-identical JSON.  The final hashes are
+\begin{itemize}[leftmargin=2.2em]
+ \item source SHA-256:
+ \nolinkurl{c3ad5c993e1823a4752c5c31ef5e348342982607c078e8bc4343697d5dad9948};
+ \item JSON SHA-256:
+ \nolinkurl{e75a92e2eb78ce297fa305e5c8ea42eab0a6cec591e3ff989eb5566bd90ab6ec};
+ \item certificate digest:
+ \nolinkurl{3cb8458021bd05d8b04154137a92a068633944679a038db9c5e4f342dff563a3}.
+\end{itemize}
+
+\subsection{Dependency ledger}
+
+\begin{table}[H]
+\centering
+\caption{Logical status of the ingredients used in TPC-28.}
+\label{tab:tpc28-dependencies}
+\begin{tabular}{@{}
+ >{\raggedright\arraybackslash}p{0.31\textwidth}
+ >{\raggedright\arraybackslash}p{0.13\textwidth}
+ >{\raggedright\arraybackslash}p{0.46\textwidth}@{}}
+\toprule
+Ingredient & Status & Role \\
+\midrule
+Opened-row $\ell^1/\ell^2$ provenance
+& Imported
+& Gives physical row mass and continuous Mellin transfer; TPC-25.\\
+Uniform prefix calibration $D=\delta+E$
+& Imported
+& Gives arbitrary-logarithmic $E_S(m)$; TPC-20 and TPC-27.\\
+Ramanujan-square bound for $K_S^0$
+& Imported
+& Closes the connected physical zero mode for polynomial $S$; TPC-27.\\
+Raw/centered calibrated zero identity
+& New here
+& Cancels the two $E_SZ_S$ zero legs exactly.\\
+Full-base tensor energy and cell bound
+& New here
+& Extends the joint conductor mechanism to $u,v\le S$ without an annular lower cutoff.\\
+Pointwise target-divisor drift bound
+& New here
+& Restores nonzero scalar legs with the fixed-power $L^{-1}$ factor.\\
+Upper annular cutoff stability
+& Imported
+& Splices the newly closed base $S$ to $T$; TPC-26.\\
+High-$\beta$ initial and upper values
+& New here
+& Closes the selected source-compatible truncated square.\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The full-base conductor proof uses the classical exact-conductor large
+sieve, not an unproved distribution conjecture.  The zero theorem uses
+the proved uniform M\"obius calibration and the exact finite
+Ramanujan-square factorization.  Thus
+\cref{thm:tpc28-base-closure,thm:tpc28-high-upper} require no unproved
+conjecture beyond their explicitly stated physical packet hypotheses.
+
+\subsection{Three invalid shortcuts}
+
+The proof also identifies three tempting but invalid replacements:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+ \item One cannot estimate nonzero $EZ$ by multiplying
+ $E_S\ll_A(\log X)^{-A}$ with the soft bound $Z\ll X^\eps$.
+ A fixed $X^\eps$ is not absorbed by choosing $A$.  The nonzero
+ decomposition must use the power-small drift $\delta_H$.
+ \item One cannot obtain the full-base theorem by formally setting the
+ lower endpoint of an annular prefix theorem below $R$.  The full
+ unit fibers, energy, principal mean, and reassembly must be defined
+ directly, as in \cref{sec:tpc28-full-base,sec:tpc28-minimax}.
+ \item One cannot conductor-project the coherent additive zero terms
+ before their raw/centered recombination.  In particular $b_R(1)$ is
+ generally nonzero.  The zero identity
+ \eqref{eq:tpc28-calibrated-zero-identity} must be applied first.
+\end{enumerate}
+
+\subsection{What is new and what remains open}
+
+The new conclusions are:
+\begin{itemize}
+ \item a full-rectangle nonzero conductor theorem governed by
+ $M_\beta(s)$;
+ \item calibrated base closure without $S<J$;
+ \item closure of the particular source-compatible
+ $\beta=267/400>2/3$ initial value;
+ \item after importing TPC-26 cutoff stability, closure of the
+ corresponding selected square through $T=X^{193/500+o(1)}$.
+\end{itemize}
+
+The following are not conclusions of this paper:
+\begin{itemize}
+ \item the ultra-long complement beyond $T$;
+ \item the full TPC-18 residual or a complete original prime-pair
+ correlation;
+ \item a polynomially uniform affine two-point M\"obius theorem on the
+ reflected surface \eqref{eq:tpc28-reflected-surface};
+ \item positivity, a Hardy--Littlewood asymptotic, or a twin-prime
+ lower bound;
+ \item any general breach of the sieve parity barrier.
+\end{itemize}
+
+The next analytic gate is therefore cleaner than before: the selected
+high-$\beta$ square no longer lacks an initial value.  What remains on
+this branch is the reflected ultra-long complement, where the exact
+surface \eqref{eq:tpc28-reflected-surface} must be combined with orbit
+congruences, sparse incidence geometry, and genuine cancellation in
+growing affine M\"obius coefficients.  A positive theorem, a precise
+conditional reduction, or a sharp barrier theorem at that gate would
+all be logically downstream of the present result.

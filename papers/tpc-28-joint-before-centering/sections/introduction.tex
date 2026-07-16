@@ -1,0 +1,167 @@
+\section{Introduction}
+\label{sec:tpc28-introduction}
+
+This paper addresses one precise initial-value gap in the primitive
+M\"obius-tail program of TPC-18--27.  The target is not a prime-pair
+asymptotic.  It is a cancellation estimate for one selected calibrated
+quadratic packet that occurs before the ultra-long complement and
+before any positivity argument.
+
+The previous chain separates into two facts.  First, TPC-26 proves
+cutoff stability
+\begin{equation}
+ \cQ_T^{\rm phys}-\cQ_S^{\rm phys}
+ \ll_B XQ(\log X)^{-B}
+ \label{eq:tpc28-intro-annular}
+\end{equation}
+in a sharp joint-conductor region that can contain $S>J$ and $T>J$
+\citep{WangTPC26}.  Second, TPC-27 proves the matching initial value
+\begin{equation}
+ \cQ_S^{\rm phys}
+ \ll_B XQ(\log X)^{-B}
+ \label{eq:tpc28-intro-old-base}
+\end{equation}
+only when $S<J$ with a fixed power margin \citep{WangTPC27}.  The
+logical difference matters: \eqref{eq:tpc28-intro-annular} alone does
+not estimate either endpoint.
+
+The high-$\beta$ sample recorded in TPC-26 has
+\begin{equation}
+ \beta=\frac{267}{400},\qquad
+ J=X^{133/400+o(1)},\qquad
+ S=X^{23/60+o(1)},\qquad
+ T=X^{193/500+o(1)}.
+ \label{eq:tpc28-intro-high-sample}
+\end{equation}
+Both cutoffs exceed $J$.  Its annular margin is positive, but its
+initial value was therefore left open.
+
+\subsection{Why the earlier base proof stops}
+
+For a row $m=\ell d$, the calibrated prefix admits two exact
+representations:
+\begin{equation}
+ P_{m,S}=Z_{m,S}+E_S(m)
+ =\mathsf A_{m,S}-\delta_H(m).
+ \label{eq:tpc28-two-representations}
+\end{equation}
+The first uses a centered divisor process and a calibration error
+ $E_S(m)\ll_A(\log X)^{-A}$.  The second uses the raw divisor prefix
+\(\mathsf A_{m,S}\) and the row drift
+\(\delta_H(m)\ll X^\eps/L\).
+
+TPC-27 uses the centered representation at every frequency.  Its
+nonzero exact-conductor ledger is
+\begin{equation}
+ \eta_S(\beta,s)=
+ \min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+1-4s}{2},
+ \frac{3-\beta-6s}{4}
+ \right\}.
+ \label{eq:tpc28-old-centered-ledger}
+\end{equation}
+At \eqref{eq:tpc28-intro-high-sample}, its first entry is
+$-1/800$.  Moreover, estimating $E_SZ_S$ by an orbitwise
+\(\ell^1\) bound introduces $J+S$.  An error that is smaller than
+every logarithmic power cannot absorb the fixed power $S/J$.
+
+Neither obstruction occurs if the two representations in
+\eqref{eq:tpc28-two-representations} are used at different additive
+frequencies.  This is the central observation of the paper.
+
+\subsection{The frequency-dependent recombination}
+
+At additive frequency zero we keep the centered representation.  The
+complete-period mean of $Z_{m,S}$ vanishes, so the zero kernel of
+$P_{m,S}P_{n,S}$ is exactly
+\begin{equation}
+ K_S^0(m,n)+E_S(m)E_S(n).
+ \label{eq:tpc28-intro-zero-result}
+\end{equation}
+The potentially dangerous $EZ$ and $ZE$ terms are absent by exact
+algebra, not by an estimate.  TPC-27 already closes $K_S^0$ for every
+polynomial $S\ge R$; its zero theorem never required $S<J$.
+
+At nonzero frequency we instead expand
+\begin{equation}
+ \begin{aligned}
+ P_{m,S}P_{n,S}
+ ={}&\mathsf A_{m,S}\mathsf A_{n,S}
+ -\delta_H(m)\mathsf A_{n,S}
+ -\delta_H(n)\mathsf A_{m,S}
+ +\delta_H(m)\delta_H(n).
+ \end{aligned}
+ \label{eq:tpc28-intro-raw-expansion}
+\end{equation}
+The coefficient-one term is one raw joint rectangle $u,v\le S$.
+The other three terms contain the fixed-power row drift.  On the
+physical target support, a divisor bound gives
+\begin{equation}
+ \mathsf A_{m,S}(j)\ll_\eps X^\eps,
+ \label{eq:tpc28-intro-divisor-bound}
+\end{equation}
+uniformly in $S$.  Hence the full drift contribution is already
+power-small from $L\ge X^{\lambda_0}$; no $J+S$ loss is needed.
+
+For the raw joint rectangle we prove the full-base analogue of the
+TPC-26 annular cell theorem.  The annular lower restriction was deleted
+when enlarging the nonnegative tensor energy, but the full-base result
+is not obtained merely by setting an endpoint to zero.  We define the
+full fibers, their exact-conductor projections, principal mean, and
+Fourier reassembly anew.  The resulting cell estimate is
+\begin{equation}
+ \cL^{\rm base}_{Y;S}(F_1,F_2)
+ \ll_\eps QX^\eps
+ \sqrt{\cK_Q(F_1)\cK_Q(F_2)}
+ \min\{\sqrt{JY},F_1F_2\}.
+ \label{eq:tpc28-intro-cell-bound}
+\end{equation}
+It gives the sharp relaxed-box margin $M_\beta(s)$, without the old
+face $1-3\beta/2$.
+
+\subsection{Main consequence}
+
+Under the actual opened-row provenance, the divisor-independent
+off-diagonal mask, the common physical weight, no-wrap, and fixed
+Fourier-tail interfaces, we prove
+\begin{equation}
+ \boxed{
+ M_\beta(s)>0
+ \quad\Longrightarrow\quad
+ \cQ_S^{\rm phys}
+ \ll_B XQ(\log X)^{-B}}
+ \label{eq:tpc28-intro-main}
+\end{equation}
+for every fixed $B>0$.  There is no condition $S<J$.  At the high
+sample,
+\begin{equation}
+ M_{267/400}(23/60)=\frac{13}{1600}>0.
+ \label{eq:tpc28-intro-base-margin}
+\end{equation}
+Combining \eqref{eq:tpc28-intro-main} with the TPC-26 annular margin
+\begin{equation}
+ M_{267/400}(193/500)=\frac{33}{8000}>0
+ \label{eq:tpc28-intro-upper-margin}
+\end{equation}
+closes the selected calibrated truncated square through $T$.
+
+The improvement is a recombination theorem inside a specific analytic
+packet.  It does not estimate the complement beyond $T$, whose
+divisor reflection exposes polynomial families of affine two-point
+M\"obius correlations \citep{WangTPC23,WangTPC26}.  It also does not
+produce a positive main term.  In particular, the result neither
+implies twin primes nor claims a general breach of the sieve parity
+barrier.
+
+\subsection{Organization}
+
+\Cref{sec:tpc28-interface-zero} fixes the physical interface and proves
+the exact zero-frequency recombination.  \Cref{sec:tpc28-full-base}
+constructs the full-rectangle exact-conductor cells and proves the two
+cell estimates.  \Cref{sec:tpc28-minimax} optimizes and reassembles the
+nonzero spectrum.  \Cref{sec:tpc28-drift-base} restores the drift and
+proves the Poisson-long base theorem.  \Cref{sec:tpc28-high-splice}
+checks the exact high-$\beta$ ledger and splices to TPC-26.
+\Cref{sec:tpc28-certificate-scope} records the certificate, dependency
+ledger, and scope.

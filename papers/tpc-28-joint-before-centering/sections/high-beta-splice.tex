@@ -1,0 +1,223 @@
+\section{The high-\texorpdfstring{\(\beta\)}{beta} initial value and upper splice}
+\label{sec:tpc28-high-splice}
+
+We now verify the exact source-compatible sample that was left with an
+open initial value in TPC-26 and TPC-27.
+
+\subsection{Source geometry}
+
+Put
+\begin{equation}
+ \sigma=\frac1{10000},\qquad
+ \lambda=\frac{10}{21}-\sigma
+ =\frac{99979}{210000},\qquad
+ \delta=\frac7{60}.
+ \label{eq:tpc28-source-parameters}
+\end{equation}
+Take
+\begin{equation}
+ \beta=\frac{267}{400},\qquad
+ s=\frac{23}{60},\qquad
+ t=\frac{193}{500}.
+ \label{eq:tpc28-high-sample}
+\end{equation}
+Then
+\begin{equation}
+ R=S=X^{23/60+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ T=X^{193/500+o(1)}.
+ \label{eq:tpc28-high-scales}
+\end{equation}
+The opened-$d$ exponent and its available endpoint are
+\begin{equation}
+ d_*=\beta-\lambda=\frac{10049}{52500},
+ \qquad
+ v_*=\frac14-\frac\delta2=\frac{23}{120},
+ \label{eq:tpc28-dv-exponents}
+\end{equation}
+with
+\begin{equation}
+ v_*-d_*=\frac9{35000}>0.
+ \label{eq:tpc28-dv-margin}
+\end{equation}
+In the notation of TPC-26, the source relations
+$J=K/D$, $D_0<D\le V$, and $K>2V$ were verified for these exact
+exponents \citep{WangTPC26}.  We also have
+\begin{equation}
+ \lambda-t=\frac{18919}{210000}>0,
+ \label{eq:tpc28-L-above-T}
+\end{equation}
+so $L>2T\ge2S$ for all sufficiently large $X$.  The present proof
+requires only the weaker fixed-power condition $L\ge X^{\lambda_0}$,
+but \eqref{eq:tpc28-L-above-T} confirms the original source geometry.
+
+The base lies strictly beyond the Poisson length:
+\begin{equation}
+ s-(1-\beta)
+ =\frac{23}{60}-\frac{133}{400}
+ =\frac{61}{1200}>0.
+ \label{eq:tpc28-base-beyond-J}
+\end{equation}
+Thus the old Poisson-short base theorem cannot be invoked.
+
+\subsection{Old and new base ledgers}
+
+The three entries in the earlier centered base ledger are
+\begin{equation}
+ \left(
+ 1-\frac{3\beta}{2},
+ \frac{\beta+1-4s}{2},
+ \frac{3-\beta-6s}{4}
+ \right)
+ =\left(
+ -\frac1{800},
+ \frac{161}{2400},
+ \frac{13}{1600}
+ \right).
+ \label{eq:tpc28-old-ledger-sample}
+\end{equation}
+The first face is negative.  This records the exact failure of the old
+centered nonzero theorem; it is not a failure of the zero theorem.
+
+For the full raw rectangle,
+\begin{equation}
+ \frac\beta2=\frac{267}{800}
+ <s=\frac{23}{60}
+ <\frac{3\beta-1}{2}=\frac{401}{800}.
+ \label{eq:tpc28-base-branch}
+\end{equation}
+Therefore the third branch of
+\eqref{eq:tpc28-sharp-minimax} applies and gives
+\begin{equation}
+ \boxed{
+ M_{267/400}(23/60)
+ =\frac{3-267/400-6(23/60)}4
+ =\frac{13}{1600}.}
+ \label{eq:tpc28-base-saving}
+\end{equation}
+The competing high--high face is $161/2400$, so the mixed witness is
+the actual relaxed-box bottleneck.
+
+The drift has the independent fixed-power factor $L^{-1}$.  At this
+sample the source exponent is
+\begin{equation}
+ \lambda=\frac{99979}{210000}>0,
+ \label{eq:tpc28-drift-source-saving}
+\end{equation}
+and \cref{prop:tpc28-drift-bound} applies after choosing its soft
+$X^\eps$ loss below this fixed value.  In particular, no compensation
+for the Poisson overrun $61/1200$ is required.
+
+\begin{corollary}[Closed high-\(\beta\) initial value]
+\label{cor:tpc28-high-base}
+For the actual opened-row packet with the fixed primitive, mask,
+no-wrap, smooth-transfer, and target-support interfaces above, the
+parameters \eqref{eq:tpc28-source-parameters}--\eqref{eq:tpc28-high-sample}
+satisfy
+\begin{equation}
+ \boxed{
+ \cQ_S^{\rm phys}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}}
+ \label{eq:tpc28-high-base-closure}
+\end{equation}
+for every fixed $B>0$, although $S>J$.
+\end{corollary}
+
+\begin{proof}
+The exact source relations give the physical row interface.
+Equation \eqref{eq:tpc28-base-saving} supplies the positive
+full-rectangle conductor margin, while
+\eqref{eq:tpc28-drift-source-saving} supplies the existing fixed-power
+row-prime margin.  Apply \cref{thm:tpc28-base-closure}.
+\end{proof}
+
+\subsection{Splicing to the upper cutoff}
+
+TPC-26 proves annular cutoff stability between these same $S$ and
+$T$ whenever $M_\beta(t)>0$.  Here
+\begin{equation}
+ \frac\beta2<t<\frac{3\beta-1}{2},
+\end{equation}
+and the two upper faces are
+\begin{equation}
+ \frac{\beta+1-4t}{2}=\frac{247}{4000},
+ \qquad
+ \frac{3-\beta-6t}{4}=\frac{33}{8000}.
+ \label{eq:tpc28-upper-faces}
+\end{equation}
+Thus
+\begin{equation}
+ \boxed{M_{267/400}(193/500)=\frac{33}{8000}.}
+ \label{eq:tpc28-upper-saving}
+\end{equation}
+Also $t-s=1/375>0$.  The imported theorem gives
+\begin{equation}
+ \cQ_T^{\rm phys}-\cQ_S^{\rm phys}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}.
+ \label{eq:tpc28-imported-annular}
+\end{equation}
+Its remaining hypotheses use the same physical packet, common weight,
+mask, no-wrap, and source interfaces retained above.  Moreover
+$1-\beta=133/400>0$, $S<T$, and \eqref{eq:tpc28-L-above-T} provide
+the required fixed-power support and separation margins.
+
+\begin{theorem}[Closed high-\(\beta\) selected truncated square]
+\label{thm:tpc28-high-upper}
+Under the physical interfaces above, the exact sample
+\eqref{eq:tpc28-source-parameters}--\eqref{eq:tpc28-high-sample}
+satisfies, for every fixed $B>0$,
+\begin{equation}
+ \boxed{
+ \cQ_T^{\rm phys}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}.}
+ \label{eq:tpc28-high-upper-closure}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Use the exact identity
+\[
+ \cQ_T^{\rm phys}
+ =\cQ_S^{\rm phys}
+ +(\cQ_T^{\rm phys}-\cQ_S^{\rm phys})
+\]
+and combine \cref{cor:tpc28-high-base} with
+\eqref{eq:tpc28-imported-annular}.
+\end{proof}
+
+\begin{table}[t]
+\centering
+\caption{Exact margins in the high-\(\beta\) selected-square splice.}
+\label{tab:tpc28-high-ledger}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Gate & Exact value & Status \\
+\midrule
+Poisson overrun $s-(1-\beta)$ & $61/1200$ & base is long \\
+Old centered face $1-3\beta/2$ & $-1/800$ & old route fails \\
+Full raw-base minimax $M_\beta(s)$ & $13/1600$ & closed here \\
+Row-prime exponent $\lambda$ & $99979/210000$ & drift is power-small \\
+Annular minimax $M_\beta(t)$ & $33/8000$ & imported from TPC-26 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Exact scope of the splice}
+
+The conclusion estimates one selected calibrated square truncated at
+$T$.  It does not estimate the ultra-long complement
+\begin{equation}
+ \sum_{\substack{T<u\le U\\u\mid mj+h}}a(u),
+ \label{eq:tpc28-ultra-long-complement}
+\end{equation}
+nor the products involving that complement.  Writing the reflected
+quotient variables as
+$mj+h=ur'$ and $nj+h=vs'$, divisor reflection there produces the
+exact determinant surface
+\begin{equation}
+ n\,u\,r'-m\,v\,s'=h(n-m),
+ \label{eq:tpc28-reflected-surface}
+\end{equation}
+together with orbit congruences and growing two-point M\"obius
+coefficients.  No estimate for that surface is asserted here.  The
+separate positivity/main-term stage is also untouched.
