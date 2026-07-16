@@ -1,0 +1,148 @@
+\section{Introduction}
+\label{sec:tpc25-introduction}
+
+The primitive M\"obius-tail program of TPC-18--24 reorganizes a
+fixed-shift prime-pair residual into dyadic row packets
+\(m=\ell d\), with a large prime source \(\ell\) and a shorter
+squarefree factor \(d\) \citep{WangTPC18,WangTPC19,WangTPC20,WangTPC21,WangTPC22,WangTPC23,WangTPC24}.
+TPC-24 reaches a genuine one-sided divisor shell
+\[
+ u\le S<v\le T
+\]
+in which the new endpoint \(T\) may lie beyond the Poisson length
+\(J\).  Its nonzero additive frequencies are controlled by an
+asymmetric exact-conductor rectangle.  The physical additive zero
+frequency is treated separately through the shared divisor
+\(g=(u,v)\mid m-n\).  That argument gives, uniformly on every retained
+off-diagonal row pair,
+\begin{equation}
+ K^0_{S,T}(m,n)
+ \ll_{A,\kappa}
+ (\log X)^{-A}+X^{-s+\kappa+o(1)},
+ \qquad S=X^{s+o(1)},\quad 0<\kappa<s.
+ \label{eq:tpc25-inherited-pointwise}
+\end{equation}
+The first term comes from cancellation between the two endpoints of a
+complete M\"obius shell; the second comes from large shared factors of
+the nonzero row determinant.
+
+The remaining issue is not hidden in \eqref{eq:tpc25-inherited-pointwise}.
+TPC-24 states its separated row interface with
+\[
+ \|x\|_2^2+\|y\|_2^2\ll QX^\eps,
+ \qquad
+ \sum_{m,n}|x_my_n\mathfrak m(m,n)|\ll Q^2X^\eps.
+\]
+Multiplying the first term of \eqref{eq:tpc25-inherited-pointwise} by
+\(X^\eps\) does not produce decay for fixed \(A\) and \(\eps\).
+Accordingly TPC-24 keeps a separate fixed-polylogarithmic projective-
+mass hypothesis, or else assumes that the test function has zero
+physical mean.  Its conclusion section isolates two possible next
+steps: obtain a row-averaged operator estimate, or recover a
+fixed-polylogarithmic projective decomposition from the actual packet.
+
+The main point of the present paper is that the physical packet should
+not be separated before frequency zero is extracted.  Before that
+separation, the opened-\(d\) quadratic form has the explicit one-row
+provenance
+\begin{equation}
+ w_{\ell,d}=\mu(d)(\log\ell)\times
+ \text{a bounded dyadic factor}.
+ \label{eq:tpc25-row-provenance-preview}
+\end{equation}
+For fixed rows, Poisson frequency zero merely integrates the uniformly
+bounded orbit weight.  The resulting two-row scalar is still bounded,
+and Chebyshev's estimate gives
+\begin{equation}
+ \sum_{\ell,d}|w_{\ell,d}|\ll LD=Q.
+ \label{eq:tpc25-row-mass-preview}
+\end{equation}
+Thus the physical zero-frequency pair mass is \(O(Q^2)\).  This is a
+provenance statement about the actual TPC-18 packet, not a consequence
+of the abstract soft \(L^2\) interface.
+
+\subsection{Main results}
+
+The paper has three logically distinct conclusions.
+
+First, the zero-before-separation theorem inserts
+\eqref{eq:tpc25-row-mass-preview} directly into
+\eqref{eq:tpc25-inherited-pointwise}.  For one actual opened-\(d\)
+packet it gives
+\begin{equation}
+ |\cZ^0_{S,T}|
+ \ll JQ^2\left\{(\log X)^{-A}
+       +X^{-s+\kappa+o(1)}\right\}.
+ \label{eq:tpc25-zero-preview}
+\end{equation}
+Fixed bounded-overlap dyadic, content, and residue reassembly costs at
+most a fixed logarithmic power.  The calibration exponent \(A\) is
+then chosen after that cost.  Consequently the extra projective-mass
+hypothesis of TPC-24 is verified, rather than assumed, for the actual
+one-sided packet.
+
+Second, combine \eqref{eq:tpc25-zero-preview} with the nonzero-
+conductor theorem of TPC-24.  If
+\[
+ Q=X^{\beta+o(1)},\quad J=X^{1-\beta+o(1)},
+ \quad S=X^{s+o(1)},\quad T=X^{t+o(1)}
+\]
+and
+\begin{equation}
+ \eta_{\rm asym}(\beta;s,t)
+ =\min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+1-2s-2t}{2},
+ \frac{3-\beta-s-5t}{4}
+ \right\}>0
+ \label{eq:tpc25-eta-preview}
+\end{equation}
+with fixed margin, then the actual calibrated mixed increment has
+arbitrary logarithmic saving under the remaining inherited interfaces.
+This conclusion allows a general nonzero-mean fixed smooth test within
+the factorable provenance class.  At \(S=R=X^{1/2-\delta+o(1)}\) and
+\(T=RX^{\xi+o(1)}\), it retains the strict window \(R<J<T\) already
+identified by TPC-24.
+
+Third, we prove that this positive result cannot be promoted to
+arbitrary arrays satisfying only the soft row interfaces.  The shared
+factor \(g=1\) has no row oscillation.  A constant off-diagonal kernel
+whose entries are \(\exp(-\sqrt{\log X})\) is smaller than every fixed
+negative power of \(\log X\), yet suitable \(X^{o(1)}\)-sized row
+weights make its bilinear form saturate \(Q^2\).  This abstract
+countermodel is reflected by a finite exact M\"obius kernel:
+\[
+ H=1,\quad R=S=2,\quad T=3
+ \quad\Longrightarrow\quad
+ K^0_{2,3}(m,n)=\frac{(\log2-2)\log3}{6}
+\]
+for every pair of distinct prime rows larger than \(3\).  Hence the
+operator norm and Hilbert--Schmidt norm are both of order the number of
+rows; a direct Hilbert--Schmidt argument has no dimensional gain.
+
+We finally identify the complete low-row-frequency geometry in a
+prime-row no-long-wrap model.  The \(g\)-layer is constant on residue
+classes modulo \(g\), so the correlated part of the kernel lies in the
+span of residue-class indicators.  Projecting those spaces away gives
+an exact deflated operator estimate.  This is a concrete route for a
+future both-new-shell problem, but the generic Schur mask and the
+general \(d\)-block geometry must then be retained explicitly.
+
+\subsection{Logical scope}
+
+The positive closure in this paper concerns the physical provenance
+class \eqref{eq:tpc25-row-provenance-preview}.  It does not apply to an
+arbitrary uniformly smooth family \(F_{\alpha_1,\alpha_2}\) with
+arbitrary coefficients \(z_{\alpha_1,\alpha_2}\), nor does it prove
+that every energy-bounded row vector is balanced against the principal
+row mode.  Conversely, the energy-only countermodel is a logical
+non-implication, not a lower bound for the wide M\"obius shells in the
+target exponent region.
+
+Only one mixed component
+\(P_{m,S}(P_{n,T}-P_{n,S})\), and its transpose, is closed here.  The
+both-new square, the ultra-long complement fibers, the full residual
+reassembly, positivity, and a prime-pair main term remain separate
+stages.  In particular no assertion below is a Hardy--Littlewood
+asymptotic, a twin-prime theorem, or a general violation of the sieve
+parity barrier.

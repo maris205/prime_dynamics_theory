@@ -1,0 +1,262 @@
+\section{The actual opened-row provenance}
+\label{sec:tpc25-provenance}
+
+The logarithmic zero-mode loss in the abstract separated interface is
+not present in the packet from which that interface was obtained.  The
+point is elementary but order-sensitive: the original opened row has
+an explicit prime--M\"obius weight whose \(\ell^1\)-mass is \(O(Q)\).
+We record the provenance before taking any Mellin--Fourier separation.
+
+Fix \(h\in\mathbb Z\setminus\{0\}\), put
+\begin{equation}
+ H=\rad|h|,\qquad H_0=|h|,
+ \label{eq:tpc25-two-fixed-periods}
+\end{equation}
+and fix one dyadic opened-\(d\) slice.  Here \(H\) controls
+primitivity, while the fixed period \(H_0\) retains the full residue
+masks inherited from TPC-18.  Put
+\begin{equation}
+ R=X^{1/2-\delta+o(1)},\qquad V=R^{1/2+o(1)},
+ \qquad Q=LD,\qquad J=K/D,\qquad QJ\asymp X,
+ \label{eq:tpc25-row-scales}
+\end{equation}
+and assume
+\begin{equation}
+ L>\max\{2R,2|h|\}.
+ \label{eq:tpc25-large-prime-separation}
+\end{equation}
+Its rows are
+\begin{equation}
+ \begin{gathered}
+ \alpha=(\ell,d),\qquad
+ \ell\in[L/2,2L]\ \text{prime},\qquad m_\alpha=\ell d,\\
+ d\in[D,2D]\cap[1,V],\qquad
+ d\text{ squarefree},\qquad(d,H)=1.
+ \end{gathered}
+ \label{eq:tpc25-row-family}
+\end{equation}
+The size separation makes the integer row \(m_\alpha\) determine its
+label uniquely.  A typical one-row coefficient is
+\begin{equation}
+ \gamma_\alpha
+ =\mu(d)(\log\ell)\omega_D(d)\psi_L(\ell/L)\zeta_\alpha,
+ \qquad |\zeta_\alpha|\le C,
+ \label{eq:tpc25-row-coefficient}
+\end{equation}
+where \(\omega_D\) and \(\psi_L\) range over fixed bounded smooth
+families.  The harmless factor \(\zeta_\alpha\) permits fixed residue
+characters and unit-modulus phases.  The two sides of a bilinear packet
+may carry different coefficients \(\gamma_\alpha^{(1)}\) and
+\(\gamma_\alpha^{(2)}\) of this form.
+
+The orbit amplitude before separation is a product of fixed smooth
+factors such as
+\begin{equation}
+ W(m_\alpha j/X)\,\Psi(dj/K)
+ \label{eq:tpc25-one-row-smooth-weight}
+\end{equation}
+and a mask \(\xi(d,j)\) depending on \((d,j)\bmod H_0\).  After the
+quadratic expansion, the generic Schur mask
+\(\mathfrak m(\alpha_1,\alpha_2)\) is imposed on the row pair.  We use
+only
+\begin{equation}
+ |\mathfrak m(\alpha_1,\alpha_2)|\le1,
+ \qquad
+ \mathfrak m(\alpha_1,\alpha_2)=0
+ \quad\text{whenever }m_{\alpha_1}=m_{\alpha_2}.
+ \label{eq:tpc25-mask-properties}
+\end{equation}
+In particular, the mask never increases an absolute row-pair mass.
+
+\subsection{Chebyshev row mass}
+
+\begin{lemma}[Actual one-row \(\ell^1\)-mass]
+\label{lem:tpc25-row-l1}
+For each fixed opened slice and each of the two row factors,
+\begin{equation}
+ \boxed{\quad
+ \sum_{\alpha}|\gamma_\alpha^{(i)}|\ll Q,
+ \qquad i=1,2.
+ \quad}
+ \label{eq:tpc25-row-l1}
+\end{equation}
+The implied constant depends only on the fixed smooth and residue
+families.  No prime number theorem in an arithmetic progression is
+used.
+\end{lemma}
+
+\begin{proof}
+Chebyshev's estimate and boundedness of the source cutoff give
+\begin{equation}
+ \sum_{\substack{\ell\in[L/2,2L]\\ \ell\ {\rm prime}}}
+ (\log\ell)|\psi_L(\ell/L)|\ll L.
+ \label{eq:tpc25-Chebyshev}
+\end{equation}
+Also
+\begin{equation}
+ \sum_{d\in[D,2D]}|\mu(d)\omega_D(d)|\ll D.
+ \label{eq:tpc25-d-mass}
+\end{equation}
+Multiplication and \(LD=Q\) prove
+\eqref{eq:tpc25-row-l1}.  Notice that the factor \(\log\ell\) has
+already been summed by \eqref{eq:tpc25-Chebyshev}; replacing it by a
+generic \(X^\varepsilon\) bound at this point would lose genuine
+information.
+\end{proof}
+
+\begin{lemma}[Actual one-row energy]
+\label{lem:tpc25-row-energy}
+For each row factor in \eqref{eq:tpc25-row-coefficient},
+\begin{equation}
+ \|\gamma^{(i)}\|_\infty\ll\log(2L),
+ \qquad
+ \|\gamma^{(i)}\|_2^2\ll Q\log(2L),
+ \qquad i=1,2.
+ \label{eq:tpc25-row-energy}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The first estimate is immediate.  For the second, Chebyshev's estimate
+and \((\log\ell)^2\le\log(2L)\log\ell\) give
+\[
+ \sum_\alpha|\gamma^{(i)}_\alpha|^2
+ \ll D\sum_{\substack{\ell\asymp L\\\ell\ {\rm prime}}}
+ (\log\ell)^2
+ \ll DL\log(2L)=Q\log(2L).
+\]
+\end{proof}
+
+\begin{corollary}[Actual pair mass]
+\label{cor:tpc25-pair-mass}
+Uniformly for every bounded row-pair mask,
+\begin{equation}
+ \sum_{\alpha_1,\alpha_2}
+ |\gamma_{\alpha_1}^{(1)}\gamma_{\alpha_2}^{(2)}
+   \mathfrak m(\alpha_1,\alpha_2)|
+ \ll Q^2.
+ \label{eq:tpc25-pair-mass}
+\end{equation}
+The same conclusion holds after multiplication by any uniformly
+bounded scalar depending on the row pair.
+\end{corollary}
+
+\begin{proof}
+Delete the mask in absolute value and apply
+\cref{lem:tpc25-row-l1} to the two factors.
+\end{proof}
+
+\subsection{Smooth and finite-residue provenance}
+
+There are two different facts here.  The first, which is all that the
+physical zero frequency needs, is that the row-dependent smooth orbit
+weight has a uniformly bounded integral.  Indeed, on
+\eqref{eq:tpc25-row-scales}--\eqref{eq:tpc25-row-family},
+\begin{equation}
+ \frac{m_\alpha J}{X}\asymp1,
+ \qquad
+ \frac{dJ}{K}\asymp1.
+ \label{eq:tpc25-scaled-arguments}
+\end{equation}
+Consequently every product of the factors
+\eqref{eq:tpc25-one-row-smooth-weight}, written as a function of
+\(t=j/J\), belongs to a fixed bounded subset of
+\(C_c^\infty(\mathbb R)\).  In particular, if it is denoted by
+\(F_{\alpha_1,\alpha_2}(t)\), then
+\begin{equation}
+ \sup_{\alpha_1,\alpha_2}
+ \left|\widehat F_{\alpha_1,\alpha_2}(0)\right|
+ \le
+ \sup_{\alpha_1,\alpha_2}\int_{\mathbb R}
+ |F_{\alpha_1,\alpha_2}(t)|\,dt
+ \ll1.
+ \label{eq:tpc25-zero-functional-bound}
+\end{equation}
+
+The fixed residue mask introduces no growing complexity.  For example,
+Fourier inversion on \((\mathbb Z/H_0\mathbb Z)^2\) writes
+\begin{equation}
+ \xi(d,j)=
+ \sum_{a,b\bmod H_0}\widehat\xi_{H_0}(a,b)e_{H_0}(ad+bj),
+ \qquad
+ \sum_{a,b\bmod H_0}|\widehat\xi_{H_0}(a,b)|\ll_h1.
+ \label{eq:tpc25-finite-residue-separation}
+\end{equation}
+Equivalently, one may first split the \(O_h(1)\) residue cells.  In
+either description, the physical zero coefficient acquires only a
+bounded local factor.
+
+For completeness, the usual smooth separation also has no intrinsic
+\(X^\varepsilon\) projective loss.  If
+\begin{equation}
+ \widetilde W(\tau)=
+ \int_0^\infty W(z)z^{-i\tau}\frac{dz}{z},
+ \label{eq:tpc25-log-Mellin-transform}
+\end{equation}
+then \(\widetilde W\) is Schwartz and Mellin inversion separates
+\(W(mj/X)\) into a row phase and an orbit phase, both of modulus one
+on the positive support.  Applying this to the four smooth factors in
+a two-row packet gives a continuous projective representation
+\[
+ \boldsymbol\tau=(t_1,s_1,t_2,s_2),\qquad
+ d\nu(\boldsymbol\tau)
+ =(2\pi)^{-4}\widetilde W(t_1)\widetilde\Psi(s_1)
+   \widetilde W(t_2)\widetilde\Psi(s_2)\,
+   d\boldsymbol\tau,
+\]
+with the evident replacement when the two sides carry different fixed
+smooth functions.  The row phases and fixed coefficients are denoted
+by \(x_{\boldsymbol\tau},y_{\boldsymbol\tau}\), while all orbit phases
+are placed in \(\Phi_{\boldsymbol\tau}\).  Thus
+\begin{equation}
+ \gamma_{\alpha_1}^{(1)}\gamma_{\alpha_2}^{(2)}
+ F_{\alpha_1,\alpha_2}(j/J)
+ =\int_{\mathbb R^4}
+ x_{\boldsymbol\tau}(\alpha_1)
+ y_{\boldsymbol\tau}(\alpha_2)
+ \Phi_{\boldsymbol\tau}(j/J)\,
+ d\nu(\boldsymbol\tau),
+ \label{eq:tpc25-continuous-projective-representation}
+\end{equation}
+after the fixed row coefficients have been included in \(x\) and
+\(y\).  For every fixed integer \(M\ge0\), Schwartz decay and
+\cref{lem:tpc25-row-l1} give
+\begin{equation}
+ \int_{\mathbb R^4}(1+|\boldsymbol\tau|)^M
+ \|x_{\boldsymbol\tau}\|_1
+ \|y_{\boldsymbol\tau}\|_1\,d|\nu|(\boldsymbol\tau)
+ \ll_M Q^2.
+ \label{eq:tpc25-weighted-projective-mass}
+\end{equation}
+The residue expansion \eqref{eq:tpc25-finite-residue-separation}
+changes only the implied constant.  Formula
+\eqref{eq:tpc25-continuous-projective-representation} may be replaced
+by finite Riemann sums and passed to the limit by dominated
+convergence.  Thus there is no hidden infinite projective norm.
+
+The same representation supplies the nonzero-frequency norm interface
+used later.  Unit-modulus Mellin phases do not change
+\eqref{eq:tpc25-row-energy}, and Schwartz decay gives, for every fixed
+integer \(M\ge0\),
+\begin{equation}
+ \int_{\mathbb R^4}(1+|\boldsymbol\tau|)^M
+ \|x_{\boldsymbol\tau}\|_2
+ \|y_{\boldsymbol\tau}\|_2
+ \,d|\nu|(\boldsymbol\tau)
+ \ll_M Q\log(2L).
+ \label{eq:tpc25-weighted-energy-reassembly}
+\end{equation}
+Thus a separated estimate whose constant is polynomial in finitely
+many orbit seminorms may be integrated term by term.  The fixed
+\(H_0\)-residue expansion costs only \(O_h(1)\), and dominated
+convergence restores the complete smooth packet.
+
+The frequently used statement that one may truncate Mellin variables
+at \(X^\varepsilon\) with power accuracy is a convenient coarse
+interface, not a lower bound for the projective mass.  For a requested
+logarithmic accuracy one may either keep the absolutely convergent
+integral, as above, or truncate at a power of \(\log X\); the omitted
+tail is then arbitrarily logarithmically small by
+\eqref{eq:tpc25-weighted-projective-mass}.  More importantly, the next
+section shows that the physical zero frequency should be taken before
+any such separation.

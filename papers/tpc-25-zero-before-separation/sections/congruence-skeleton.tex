@@ -1,0 +1,219 @@
+\section{The congruence skeleton and a deflated row estimate}
+\label{sec:tpc25-congruence-skeleton}
+
+The principal-mode obstruction identifies what a genuine row-space
+argument must remove.  In this section we make that geometry exact in a
+prime-row model.  The model is deliberately narrower than the physical
+opened-\(d\) packet used in the positive theorem: it has no small row
+factor and no additional generic Schur pruning.  Its purpose is to
+identify the exceptional row subspaces, not to replace the provenance
+argument of \cref{sec:tpc25-zero-first}.
+
+Fix \(H\ge1\), let \(R\le S<T<L/2\), and take a finite set
+\begin{equation}
+ \cP_L\subset
+ \{p\in[L/2,2L]:p\text{ is prime},\ (p,H)=1\}.
+ \label{eq:tpc25-prime-row-set}
+\end{equation}
+In particular every row prime is larger than every divisor variable in
+the shell.  For \(1\le g\le S\), define
+\begin{align}
+ \omega_g
+ :={}&\frac1g
+ \sum_{\substack{c\le S/g\\(gc,H)=1}}
+ \frac{b_R(gc)}c
+ \sum_{\substack{S/g<d\le T/g\\(d,gcH)=1}}
+ \frac{a(gd)}d,
+ \label{eq:tpc25-omega-g}
+\end{align}
+with the convention that ineffective nonsquarefree terms vanish.  Also
+let \(A_g\) be the congruence matrix on \(\ell^2(\cP_L)\),
+\begin{equation}
+ A_g(m,n)=\one_{m\equiv n\pmod g}.
+ \label{eq:tpc25-congruence-matrix}
+\end{equation}
+
+\begin{theorem}[Exact prime-row congruence skeleton]
+\label{thm:tpc25-exact-congruence-skeleton}
+Let \(\mathbf K^0_{S,T}\) be the matrix whose off-diagonal entries are
+the physical zero kernel \eqref{eq:tpc25-zero-kernel} and whose diagonal
+entries are zero.  Then
+\begin{equation}
+ \boxed{
+ \mathbf K^0_{S,T}
+ =\sum_{g\le S}\omega_g(A_g-I).}
+ \label{eq:tpc25-kernel-skeleton}
+\end{equation}
+For
+\begin{equation}
+ v_{g,r}(m)=\one_{m\equiv r\pmod g},
+ \qquad r\bmod g,
+ \label{eq:tpc25-residue-vector}
+\end{equation}
+one has
+\begin{equation}
+ A_g=\sum_{r\bmod g}v_{g,r}v_{g,r}^{*},
+ \qquad
+ \rank A_g=\#\{m\bmod g:m\in\cP_L\}\le g.
+ \label{eq:tpc25-Ag-factorization}
+\end{equation}
+Moreover,
+\begin{equation}
+ \|A_g\|_{2\to2}
+ =\max_{r\bmod g}\#\{m\in\cP_L:m\equiv r\pmod g\}
+ \ll\frac Lg.
+ \label{eq:tpc25-Ag-operator}
+\end{equation}
+Thus the correlated part of every \(g\)-layer lies exactly in the
+residue-class constant space modulo \(g\).
+\end{theorem}
+
+\begin{proof}
+Because every row prime exceeds \(T\), the row coprimality conditions
+in \eqref{eq:tpc25-zero-kernel} reduce to coprimality with \(H\).  Put
+\(g=(u,v)\), \(u=gc\), and \(v=gd\).  Squarefree support makes
+\(g,c,d\) pairwise coprime on every effective term.  The exact gcd
+reparametrization becomes, for \(m\ne n\),
+\[
+ K^0_{S,T}(m,n)
+ =\sum_{\substack{g\le S\\g\mid m-n}}\omega_g.
+\]
+The matrix \(A_g-I\) has precisely the off-diagonal entries
+\(\one_{g\mid m-n}\) and zero diagonal, proving
+\eqref{eq:tpc25-kernel-skeleton}.
+
+The first identity in \eqref{eq:tpc25-Ag-factorization} follows by
+partitioning the rows by their residue class.  After this partition,
+\(A_g\) is a direct sum of all-ones blocks, one for each occupied class.
+Each nonempty block has rank one and its only nonzero eigenvalue is its
+cardinality.  This proves the rank formula and the first equality in
+\eqref{eq:tpc25-Ag-operator}.  An interval of length \(O(L)\) contains
+\(O(L/g+1)=O(L/g)\) integers in one class because
+\(g\le S<L/2\), proving the final estimate.
+\end{proof}
+
+The scalar diagonal in \eqref{eq:tpc25-kernel-skeleton} is harmless at
+the row-pair scale, but it must not be silently dropped.  Put
+\begin{equation}
+ \Omega_{S,T}=\sum_{g\le S}\omega_g,
+ \qquad
+ \cV_G=\operatorname{span}
+ \{v_{g,r}:1\le g\le G,\ r\bmod g\}.
+ \label{eq:tpc25-deflation-space}
+\end{equation}
+Then
+\[
+ \mathbf K^0_{S,T}
+ =\sum_{g\le S}\omega_gA_g-\Omega_{S,T}I.
+\]
+
+\begin{lemma}[Coefficient mass of one skeleton layer]
+\label{lem:tpc25-omega-bound}
+Uniformly for \(g\le S\),
+\begin{equation}
+ |\omega_g|\ll_{C_T,H}\frac{(\log(2X))^6}{g},
+ \qquad
+ |\Omega_{S,T}|\ll_{C_T,H}(\log(2X))^7,
+ \label{eq:tpc25-omega-bound}
+\end{equation}
+provided \(T\le X^{C_T}\).
+\end{lemma}
+
+\begin{proof}
+The prefix cofactor estimate of TPC-24 gives
+\[
+ \sum_{c\le S/g}\frac{|b_R(gc)|}{c}
+ \ll(\log(2X))^4,
+\]
+uniformly in squarefree \(g\).  The corresponding harmonic bound for
+the long coefficient is
+\[
+ \sum_{d\le T/g}\frac{|a(gd)|}{d}
+ \ll(\log(2X))^2.
+\]
+Insert these estimates into \eqref{eq:tpc25-omega-g}.  Summing
+\(1/g\) for \(g\le S\) proves the second assertion.
+\end{proof}
+
+\begin{theorem}[Deflated operator estimate]
+\label{thm:tpc25-deflated-operator}
+Let \(1\le G<S\).  If \(x\in\ell^2(\cP_L)\) satisfies
+\begin{equation}
+ x\perp\cV_G,
+ \label{eq:tpc25-exact-row-balance}
+\end{equation}
+then for every \(y\in\ell^2(\cP_L)\),
+\begin{equation}
+ \boxed{
+ |\langle x,\mathbf K^0_{S,T}y\rangle|
+ \ll_{C_T,H}
+ \left\{
+ \frac{L(\log(2X))^6}{G}
+ +(\log(2X))^7
+ \right\}\|x\|_2\|y\|_2.}
+ \label{eq:tpc25-deflated-operator}
+\end{equation}
+The same conclusion holds if the balance condition is imposed on
+\(y\) instead.
+\end{theorem}
+
+\begin{proof}
+For \(g\le G\), the range of \(A_g\) is contained in \(\cV_G\), so
+\(\langle x,A_gy\rangle=0\).  By
+\cref{thm:tpc25-exact-congruence-skeleton,lem:tpc25-omega-bound},
+\begin{align*}
+ |\langle x,\mathbf K^0_{S,T}y\rangle|
+ &\le
+ \left(
+ \sum_{g>G}|\omega_g|\|A_g\|_{2\to2}
+ +|\Omega_{S,T}|
+ \right)\|x\|_2\|y\|_2\notag\\
+ &\ll
+ \left(
+ L(\log(2X))^6\sum_{g>G}\frac1{g^2}
+ +(\log(2X))^7
+ \right)\|x\|_2\|y\|_2,
+\end{align*}
+which is \eqref{eq:tpc25-deflated-operator}.  Symmetry gives the last
+statement.
+\end{proof}
+
+For instance, if \(L=X^{\lambda+o(1)}\),
+\(G=X^{\gamma+o(1)}\) with \(0<\gamma<\min\{s,\lambda/2\}\), and
+\(\|x\|_2\|y\|_2\ll LX^\eps\), then
+\eqref{eq:tpc25-deflated-operator} is
+\begin{equation}
+ \ll L^2X^{-\gamma+\eps+o(1)}
+   +LX^{\eps+o(1)},
+ \label{eq:tpc25-deflated-power-saving}
+\end{equation}
+a fixed-power saving from the prime-row pair scale \(L^2\) after
+choosing \(\eps\) below the fixed margins.  This is a genuine
+row-averaged theorem, but its balance hypothesis is strong and
+explicit: since \(v_{1,0}=\mathbf1\), it first removes the principal
+row mode, and it then removes every residue-class constant mode up to
+\(G\).
+
+The balance space is nonvacuous for the full dyadic prime-row family:
+indeed \(\dim\cV_G\le\sum_{g\le G}g\ll G^2\), while the prime number
+theorem gives \(\#\cP_L\asymp L/\log L\).  Thus the displayed strict
+condition \(2\gamma<\lambda\) leaves a nonzero orthogonal complement
+for all sufficiently large \(X\).  For an arbitrary sparse subset
+\(\cP_L\), \eqref{eq:tpc25-deflated-operator} remains valid but the
+existence of a nonzero balanced vector must be checked separately.
+
+\begin{remark}[Why this is not the physical closure theorem]
+\label{rem:tpc25-skeleton-scope}
+The actual opened row is \(m=\ell d_0\).  Local coprimality inserts
+diagonal row multipliers, and for fixed \(d_0\) the exceptional spaces
+become residue-class constant spaces inside each \(d_0\)-block.  A
+global mean-zero condition need not center every such block.  Moreover,
+the near-determinant and row-gcd conditions form a Schur mask;
+entrywise masking does not preserve the exact ranges in
+\eqref{eq:tpc25-Ag-factorization}.  One must either enlarge
+\(\cV_G\) to include those blockwise multipliers and control the mask
+as a sparse operator perturbation, or use the zero-before-separation
+absolute-mass route.  The present paper takes the latter route for the
+one-sided physical packet.  No deflated estimate for the both-new
+physical square is claimed here.
+\end{remark}

@@ -1,0 +1,226 @@
+\section{Closure of the actual one-sided mixed increment}
+\label{sec:tpc25-one-sided-closure}
+
+We now splice the physical zero-frequency estimate into the nonzero
+exact-conductor result of TPC-24.  This section introduces no new
+conductor estimate.  Its role is to state precisely which former
+hypothesis has been discharged and which inherited interfaces remain.
+
+Write
+\begin{equation}
+ Q=X^{\beta+o(1)},\qquad J=X^{1-\beta+o(1)},
+ \qquad S=X^{s+o(1)},\qquad T=X^{t+o(1)},
+ \label{eq:tpc25-closure-exponents}
+\end{equation}
+where \(0<s\le t\), \(QJ\asymp X\), and put
+\begin{equation}
+ \eta_{\rm asym}(\beta;s,t)
+ :=\min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+1-2s-2t}{2},
+ \frac{3-\beta-s-5t}{4}
+ \right\}.
+ \label{eq:tpc25-eta-asym}
+\end{equation}
+The three entries are respectively the two-low-conductor, two-high-
+conductor, and mixed-conductor faces of the asymmetric rectangle.
+
+Let \(P_{m,W}\) denote the calibrated prefix of TPC-24 and set
+\[
+ L_{m;S,T}=P_{m,T}-P_{m,S}.
+\]
+For one actual primitive opened-\(d\) packet, with its original smooth
+row--orbit weight retained until after physical frequency zero is
+extracted, let \(\Xi_{\alpha,\gamma}(j)\) be its bounded periodic
+factor of fixed period \(H_0=|h|\), and write
+\begin{equation}
+ \cI^{\rm phys}_{S,T}
+ =\sum_{\alpha,\gamma}
+ \gamma^{(1)}_\alpha\gamma^{(2)}_\gamma
+ \mathfrak m(\alpha,\gamma)
+ \sum_{\substack{j\in\Z\\(j,H)=1}}
+ \Xi_{\alpha,\gamma}(j)\cW_{\alpha,\gamma}(j/J)
+ P_{m_\alpha,S}(j)L_{m_\gamma;S,T}(j).
+ \label{eq:tpc25-physical-increment}
+\end{equation}
+Here \(\gamma^{(1)},\gamma^{(2)}\), the rows, the mask, and the
+uniformly smooth amplitude are exactly those of the factorable
+provenance class in \cref{sec:tpc25-provenance}.  Equivalently, one may
+first split the \(O_h(1)\) classes modulo \(H_0\).
+
+\begin{lemma}[Transfer to the separated nonzero interface]
+\label{lem:tpc25-interface-transfer}
+The continuous Mellin representation
+\eqref{eq:tpc25-continuous-projective-representation} transfers
+\eqref{eq:tpc25-physical-increment}, restricted to nonzero additive
+frequencies, to the separated packet interface of TPC-24.  More
+precisely:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item every Mellin component satisfies
+ \(\|x\|_\infty+\|y\|_\infty\ll\log(2L)\) and
+ \(\|x\|_2^2+\|y\|_2^2\ll Q\log(2L)\);
+ \item the actual generic mask is unchanged, remains outside the
+ Mellin integral, and is independent of every divisor and conductor
+ variable;
+ \item every fixed orbit seminorm grows at most polynomially in the
+ Mellin variables, and its weighted total variation is finite; and
+ \item the TPC-24 discrepancy, principal-mean, and Fourier-tail bounds
+ may be integrated componentwise and restored by dominated
+ convergence.
+\end{enumerate}
+The row scales and hence the no-wrap inequalities are unchanged.
+\end{lemma}
+
+\begin{proof}
+Part (i) is \cref{lem:tpc25-row-energy}; the Mellin row phases have
+modulus one.  Part (ii) holds because smooth separation acts only on
+the original row--orbit amplitude.  Differentiating the orbit phases
+introduces a polynomial in \(\boldsymbol\tau\), so (iii) follows from
+the Schwartz moments in
+\cref{eq:tpc25-weighted-projective-mass,eq:tpc25-weighted-energy-reassembly}.
+The underlying nonzero-frequency packet is linear.  After the triangle
+inequality and Tonelli's theorem are applied to the Mellin
+representation, the reassembled Fourier tail is bounded by the
+integral of the component tail masses.  The same Schwartz moments
+dominate that integral and the polynomial constants in the inherited
+nonzero packet estimates.  Finite Riemann sums therefore obey those
+estimates uniformly, and dominated convergence proves (iv).  Splitting
+the fixed \(H_0\)-periodic factor costs only \(O_h(1)\).
+\end{proof}
+
+Let \(\mathscr D\) denote the fixed data consisting of \(h,\delta,C_T\),
+the positive row, no-wrap, Fourier-tail, and conductor margins, and the
+fixed smooth and residue families.
+
+\begin{theorem}[Actual one-sided closure]
+\label{thm:tpc25-actual-one-sided-closure}
+Assume the primitive row and target-coprimality conditions of TPC-24,
+its divisor-independent off-diagonal generic mask, its no-wrap and
+polynomial Fourier-tail interfaces, and \(L\ge X^{\lambda_0}\) for a
+fixed \(\lambda_0>0\).  Suppose
+\begin{equation}
+ R\le S<T\le U,\qquad T\le X^{C_T},
+ \label{eq:tpc25-shell-range}
+\end{equation}
+and
+\begin{equation}
+ \eta_{\rm asym}(\beta;s,t)>0
+ \label{eq:tpc25-positive-conductor-margin}
+\end{equation}
+with a fixed margin.  Then for every fixed \(B>0\),
+\begin{equation}
+ \boxed{
+ \cI^{\rm phys}_{S,T}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}.}
+ \label{eq:tpc25-actual-closure}
+\end{equation}
+The same estimate holds for the transpose packet and for a general
+nonzero-mean fixed smooth test within this factorable provenance
+class.  No separate fixed-projective-mass hypothesis and no mean-zero
+hypothesis on the fixed physical test are required.
+\end{theorem}
+
+\begin{proof}
+The exact calibrated-prefix identity of TPC-24 writes the product in
+\eqref{eq:tpc25-physical-increment} as the joint short--long divisor
+lattice minus the explicit row drift.  Treat the joint physical zero
+frequency before smooth separation.  The zero-before-separation
+theorem in \cref{sec:tpc25-zero-first} bounds it by
+\begin{equation}
+ XQ\left\{(\log X)^{-A}
+       +X^{-s+\kappa+o(1)}\right\}
+ \label{eq:tpc25-zero-in-closure}
+\end{equation}
+for every fixed \(A>0\) and \(0<\kappa<s\).  Fixed bounded-overlap
+reassembly costs only \((\log X)^{O(1)}\), so \(A\) may be chosen
+after \(B\).  The second term has a fixed power saving.
+
+For nonzero additive frequencies, apply
+\cref{lem:tpc25-interface-transfer} and the asymmetric exact-conductor
+estimate of TPC-24 \citep{WangTPC24}.  Positivity of
+\eqref{eq:tpc25-eta-asym} with fixed margin gives a fixed-power saving
+after all dyadic and divisor multiplicities.  The global principal
+conductor cell is \(O(Q^2X^\eps)\), hence has a fixed-power saving
+relative to \(Q^2J=XQ\) because \(J=X^{1-\beta+o(1)}\) has a fixed
+positive exponent in the stated region.  The polynomial Fourier tail
+is made smaller than any prescribed fixed power by choosing its
+integration-by-parts order after its polynomial mass.
+
+Finally, the calibrated row drift contributes
+\(O(JQ^2L^{-1}X^\eps)\).  Choose the auxiliary \(\eps\) smaller than
+the fixed \(L\)-margin.  Every term other than
+\eqref{eq:tpc25-zero-in-closure} then has a fixed-power saving, and the
+calibration exponent in that display supplies the requested arbitrary
+logarithmic saving.
+\end{proof}
+
+\begin{remark}[What was removed]
+\label{rem:tpc25-removed-hypothesis}
+TPC-24 proves the same conclusion for an abstract separated packet
+under the additional bound
+\(\sum_\nu\|x^{(\nu)}\|_1\|y^{(\nu)}\|_1
+ \ll Q^2(\log X)^K\).
+\Cref{thm:tpc25-actual-one-sided-closure} removes that as an
+\emph{independent} hypothesis only for the actual opened-\(d\)
+provenance class.  The no-wrap, polynomial Fourier-tail, row geometry,
+and positive conductor-margin assumptions have not been removed.
+\end{remark}
+
+\subsection{The strict crossing window}
+
+For a genuine crossing of the old Poisson face, impose
+\begin{equation}
+ s<1-\beta<t.
+ \label{eq:tpc25-poisson-crossing}
+\end{equation}
+The positivity conditions in \eqref{eq:tpc25-eta-asym} give
+\begin{equation}
+ 1-\beta<t<
+ \min\left\{
+ \frac{\beta+1}{2}-s,
+ \frac{3-\beta-s}{5}
+ \right\},
+ \label{eq:tpc25-general-passage}
+\end{equation}
+together with \(\beta<2/3\) and \(s<1-\beta\), all with fixed
+margins.
+
+At the baseline cutoff
+\begin{equation}
+ S=R=X^{1/2-\delta+o(1)},\qquad
+ T=RX^{\xi+o(1)},
+ \label{eq:tpc25-baseline}
+\end{equation}
+the saving becomes
+\begin{equation}
+ \eta_{\rm asym}(\beta,\delta,\xi)
+ =\min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+4\delta-1}{2}-\xi,
+ \frac{6\delta-\beta-5\xi}{4}
+ \right\}.
+ \label{eq:tpc25-special-eta}
+\end{equation}
+The strict passage \(R<J<T\) is certified when
+\begin{equation}
+ \boxed{
+ \frac12+\delta-\beta<\xi<
+ \min\left\{
+ \frac{\beta+4\delta-1}{2},
+ \frac{6\delta-\beta}{5}
+ \right\},}
+ \label{eq:tpc25-special-window}
+\end{equation}
+with \(\beta<2/3\) and \(\beta<1/2+\delta\).  For example,
+\begin{equation}
+ \delta=\frac3{20},\qquad
+ \beta=\frac{31}{50},\qquad
+ \xi=\frac1{25}
+ \label{eq:tpc25-rational-sample}
+\end{equation}
+gives
+\(R=X^{7/20}\), \(J=X^{19/50}\),
+\(T=X^{39/100}>J\), and nonzero-conductor saving \(1/50\).
+The new content is not a larger exponent window; it is that the
+physical packet now satisfies the general-mean conclusion throughout
+that window without an unverified projective-mass assumption.

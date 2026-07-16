@@ -1,0 +1,121 @@
+\section{Exact certificate, scope, and conclusion}
+\label{sec:tpc25-certificate-scope}
+
+The analytic input in this paper is symbolic: Chebyshev's upper bound,
+the TPC-24 endpoint calibration theorem, and the previously established
+nonzero-conductor estimates.  A deterministic finite certificate is
+included to audit the exact divisor and row-space identities that are
+most vulnerable to normalization, diagonal, or shared-factor errors.
+
+\subsection{Certificate}
+
+The standard-library script
+\begin{center}
+ \texttt{experiments/tpc25\_certificate.py}
+\end{center}
+uses \texttt{fractions.Fraction} throughout.  Logarithms are represented
+as formal prime variables, so no floating-point comparison enters the
+kernel tests.  It verifies:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+ \item the direct physical zero kernel against its exact congruence-
+ skeleton expansion on three finite prime-row families, including
+ nontrivial fixed target radicals;
+ \item the identity
+ \(K^0_{2,3}=((\log2-2)\log3)/6\) on every off-diagonal entry of a
+ five-row model;
+ \item the principal and contrast eigenvector relations for the exact
+ rank-one-plus-diagonal matrix;
+ \item the rank of each congruence matrix
+ \(A_g=(\one_{m\equiv n\pmod g})\), compared with the number of
+ occupied residue classes and the upper bound \(\rank A_g\le g\);
+ \item a rational finite saturation model for the energy-only
+ counterexample; and
+ \item the rational crossing sample and all three entries of the
+ asymmetric exponent ledger.
+\end{enumerate}
+
+Independent ordinary and \texttt{python -O} runs perform the same exact
+checks and are required to generate byte-identical JSON.  The archived
+JSON records false flags for asymptotic M\"obius evidence, full residual
+closure, Hardy--Littlewood, twin primes, and a general parity
+breakthrough.  Hashes are recorded in the repository README after the
+final source audit.
+
+The certificate does not test Chebyshev's theorem, the classical
+zero-free region, or any asymptotic cancellation statement.  Its role
+is regression control for finite algebra, not numerical evidence.
+
+\subsection{What is unconditional and what is inherited}
+
+Within one actual opened-\(d\) packet, the following statements are
+finite or elementary and unconditional:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item the row-provenance factorization and the \(O(Q)\) one-row
+ absolute mass;
+ \item extraction of physical frequency zero before smooth separation;
+ \item the resulting \(O(Q^2)\) zero-frequency pair mass;
+ \item the soft-energy countermodel and the finite exact M\"obius
+ principal mode; and
+ \item the congruence-skeleton and deflated operator identities in the
+ stated prime-row model.
+\end{enumerate}
+The arbitrary-logarithmic pointwise shell bound is imported from
+TPC-24; it ultimately uses the classical zero-free region for
+\(\zeta(s)\) in a uniform M\"obius calibration
+\citep{WangTPC24,IwaniecKowalski2004}.  The nonzero-frequency closure
+also imports the TPC-24 no-wrap, polynomial Fourier-tail, and
+exact-conductor hypotheses.  The present paper removes only the
+independent fixed-projective-mass condition for the actual physical
+packet.
+
+The operator obstruction must be read with equal precision.  It proves
+that the abstract soft interfaces do not logically imply a row-averaged
+saving and that the coherent direction occurs in exact finite M\"obius
+algebra.  It does not prove a lower bound for the intended growing
+shell, and therefore it does not show that a deeper arithmetic row-
+average theorem is false.
+
+\subsection{Conclusion and next gate}
+
+TPC-24 left the physical zero mode at a clean but mass-sensitive
+boundary.  Returning to the pre-separated packet resolves that boundary
+for the actual one-sided opened-\(d\) correlation.  A direct
+provenance proof is obtained in the following order:
+\begin{equation}
+ \boxed{
+ \begin{gathered}
+ \text{extract physical zero frequency}
+ \ \longrightarrow\ \text{use row provenance}\\
+ \longrightarrow\ \text{separate only the nonzero spectrum}
+ \end{gathered}}
+ \label{eq:tpc25-order-of-operations}
+\end{equation}
+This yields arbitrary logarithmic saving for a general nonzero-mean
+fixed smooth test in the factorable provenance class throughout the
+existing positive asymmetric-conductor region,
+without assuming a fixed projective norm that was not proved in
+TPC-24.
+
+The energy audit also prevents a false shortcut.  Entrywise
+arbitrary-logarithmic decay and soft \(L^2\) row energy cannot be fed
+into a black-box Hilbert--Schmidt estimate: the shared-factor block
+\(g=1\) contains a coherent principal row mode.  In the prime-row
+model the remaining small-\(g\) directions are exactly the
+residue-class constant spaces.  A future operator approach must
+therefore center those projections while keeping the actual generic
+Schur mask and the local coprimality multipliers inside the argument.
+
+The next analytic component is the both-new square
+\(L_{m;S,T}L_{n;S,T}\).  It lacks the calibrated short prefix whose two
+endpoint constants cancel in the one-sided argument.  One possible
+route is a row-space projection theorem for its low-\(g\) congruence
+skeleton followed by a nonprincipal additive large sieve.  A second is
+to exploit a different exact recombination before either divisor leg is
+estimated.  Failure of either route would still yield a precise
+operator or arithmetic obstruction; success would close only another
+residual component.
+
+Even after such a step, the ultra-long complement fibers, global
+endpoint reassembly, positivity, and the prime-pair main term remain.
+Accordingly this paper makes no Hardy--Littlewood, twin-prime, or
+general parity-breaking claim.

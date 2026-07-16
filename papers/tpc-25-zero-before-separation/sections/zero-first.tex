@@ -1,0 +1,209 @@
+\section{The physical zero frequency before smooth separation}
+\label{sec:tpc25-zero-first}
+
+We now apply the provenance of \cref{sec:tpc25-provenance} to the
+one-sided primitive M\"obius shell of TPC-24.  Put
+\begin{equation}
+ a(v)=-\mu(v)\log v,
+ \label{eq:tpc25-a-coefficient}
+\end{equation}
+and let \(b_R(u)\) be the calibrated prefix coefficient.  For an
+off-diagonal row pair \(m_1\ne m_2\), define its physical zero kernel
+by
+\begin{align}
+ K^0_{S,T}(m_1,m_2)
+ :={}&
+ \sum_{\substack{u\le S,\ S<v\le T\\
+                  (u,m_1H)=(v,m_2H)=1}}
+ \frac{b_R(u)a(v)}{uv}(u,v)
+ \mathbf 1_{(u,v)\mid m_1-m_2}.
+ \label{eq:tpc25-zero-kernel}
+\end{align}
+The pointwise shell theorem of TPC-24 states that, if
+\(R\le S<T\le U\), \(S=X^{s+o(1)}\), \(T\le X^{C_T}\), and
+\(0<\kappa<s\), then for
+every fixed \(A>0\), uniformly over the retained off-diagonal rows,
+\begin{equation}
+ K^0_{S,T}(m_1,m_2)
+ \ll_{A,\kappa,C_T,h}
+ (\log X)^{-A}+X^{-s+\kappa+o(1)}.
+ \label{eq:tpc25-imported-pointwise-zero}
+\end{equation}
+Its small-shared-factor term uses cancellation between the two complete
+endpoints \(S/(u,v)\) and \(T/(u,v)\); its large-shared-factor term
+uses divisibility of the nonzero row determinant.  We do not replace
+\eqref{eq:tpc25-imported-pointwise-zero} by a fixed-modulus
+calibration assertion.
+
+\subsection{Exact zero coefficient of the actual packet}
+
+Let \(F_{\alpha_1,\alpha_2}\) be the row-dependent smooth orbit
+amplitude before Mellin separation, and let
+\(\Xi_{\alpha_1,\alpha_2}(j)\) be its bounded real periodic factor of
+period \(H_0=|h|\).  Define
+\begin{equation}
+ \vartheta_{H_0}(\alpha_1,\alpha_2)
+ =\frac1{H_0}\sum_{r\bmod H_0}
+ \mathbf 1_{(r,H)=1}
+ \Xi_{\alpha_1,\alpha_2}(r).
+ \label{eq:tpc25-local-zero-factor}
+\end{equation}
+In the opened TPC-18 square one has, in particular,
+\(\Xi_{\alpha_1,\alpha_2}(r)=\xi(d_1,r)\xi(d_2,r)\).
+For a Hermitian convention the second factor is conjugated; the
+absolute estimate below is unchanged.  A general fixed finite family
+is handled cell by cell.  In every case
+\begin{equation}
+ |\vartheta_{H_0}(\alpha_1,\alpha_2)|\ll_h1.
+ \label{eq:tpc25-local-zero-bound}
+\end{equation}
+Poisson summation on each progression modulo \(H_0[u,v]\) shows that the
+physical zero contribution of one opened dyadic packet is exactly
+\begin{align}
+ \mathcal Z^0_{S,T}
+ ={}&J
+ \sum_{\alpha_1,\alpha_2}
+ \gamma^{(1)}_{\alpha_1}\gamma^{(2)}_{\alpha_2}
+ \mathfrak m(\alpha_1,\alpha_2)
+ \vartheta_{H_0}(\alpha_1,\alpha_2)
+ \widehat F_{\alpha_1,\alpha_2}(0)
+ K^0_{S,T}(m_{\alpha_1},m_{\alpha_2}).
+ \label{eq:tpc25-actual-zero-packet}
+\end{align}
+On the primitive row support \((d_i,H)=1\), the pure primitive mask
+gives the local factor
+\(\varphi(H_0)/H_0=\varphi(H)/H\), recovering the normalization in
+TPC-24.  Formula \eqref{eq:tpc25-actual-zero-packet}
+is taken before the smooth row--orbit weight is decomposed.  This is
+legitimate because evaluation at Fourier frequency zero is the bounded
+linear functional \(F\mapsto\widehat F(0)=\int F\).
+
+\begin{theorem}[Zero before separation]
+\label{thm:tpc25-zero-before-separation}
+Assume \(R\le S<T\le U\), \(T\le X^{C_T}\), the actual opened-row provenance
+\eqref{eq:tpc25-row-scales}--\eqref{eq:tpc25-one-row-smooth-weight},
+the bounded off-diagonal mask \eqref{eq:tpc25-mask-properties}, and the
+pointwise shell estimate \eqref{eq:tpc25-imported-pointwise-zero}.
+Then, for every fixed \(A>0\) and \(0<\kappa<s\),
+\begin{equation}
+ \boxed{
+ |\mathcal Z^0_{S,T}|
+ \ll_{A,\kappa,C_T,h}
+ JQ^2\left\{(\log X)^{-A}
+ +X^{-s+\kappa+o(1)}\right\}.}
+ \label{eq:tpc25-zero-first-bound}
+\end{equation}
+Since \(QJ\asymp X\), this is
+\begin{equation}
+ |\mathcal Z^0_{S,T}|
+ \ll XQ\left\{(\log X)^{-A}
+ +X^{-s+\kappa+o(1)}\right\}.
+ \label{eq:tpc25-zero-first-natural-scale}
+\end{equation}
+In particular, for every fixed \(B>0\),
+\begin{equation}
+ \boxed{\mathcal Z^0_{S,T}
+ \ll_{B,C_T,h}XQ(\log X)^{-B}.}
+ \label{eq:tpc25-zero-first-log-closure}
+\end{equation}
+No fixed-projective-mass hypothesis is required in addition to the
+actual TPC-18 opened-row provenance.
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:tpc25-zero-functional-bound} and
+\eqref{eq:tpc25-local-zero-bound}, the scalar multiplying
+\(\gamma^{(1)}_{\alpha_1}\gamma^{(2)}_{\alpha_2}
+\mathfrak m(\alpha_1,\alpha_2)\) in
+\eqref{eq:tpc25-actual-zero-packet}, apart from the zero kernel, is
+uniformly bounded.  Hence \cref{cor:tpc25-pair-mass} gives
+\begin{equation}
+ \sum_{\alpha_1,\alpha_2}
+ \left|
+ \gamma^{(1)}_{\alpha_1}\gamma^{(2)}_{\alpha_2}
+ \mathfrak m(\alpha_1,\alpha_2)
+ \vartheta_{H_0}(\alpha_1,\alpha_2)
+ \widehat F_{\alpha_1,\alpha_2}(0)
+ \right|
+ \ll_h Q^2.
+ \label{eq:tpc25-weighted-zero-mass}
+\end{equation}
+Insert \eqref{eq:tpc25-imported-pointwise-zero} into
+\eqref{eq:tpc25-actual-zero-packet} and use
+\eqref{eq:tpc25-weighted-zero-mass}.  This proves
+\eqref{eq:tpc25-zero-first-bound};
+\eqref{eq:tpc25-zero-first-natural-scale} follows from \(QJ\asymp X\).
+For \eqref{eq:tpc25-zero-first-log-closure}, first fix, for example,
+\(\kappa=s/2\).  The second term then has a fixed power saving and is
+smaller than every prescribed negative power of \(\log X\).  Choose
+the calibration exponent \(A\) after \(B\).
+\end{proof}
+
+\begin{remark}[Why the order removes the apparent \(X^\varepsilon\)]
+\label{rem:tpc25-order-of-zero}
+If one first truncates a generic Mellin superposition at
+\(X^\varepsilon\), counts all separated terms, and only then takes
+absolute values at frequency zero, the coarse bookkeeping can produce
+\(Q^2X^\varepsilon\).  Multiplication by an arbitrarily logarithmic
+pointwise error does not close that expression.  In
+\eqref{eq:tpc25-actual-zero-packet}, by contrast, the zero functional
+is applied directly to the uniformly smooth row-dependent amplitude;
+then Chebyshev summation gives the exact scale \(Q^2\).  No
+cancellation between rows is asserted or needed.
+\end{remark}
+
+\subsection{Polylogarithmic reassembly}
+
+The conclusion survives the finite bookkeeping used to return from an
+opened slice.  Suppose the original packet is the sum of dyadic,
+content, sign, and fixed-residue cells \(\mathfrak b\), with total
+complexity \(O((\log X)^{C_{\rm cell}})\).  Let the scale in cell
+\(\mathfrak b\) be \((Q_{\mathfrak b},J_{\mathfrak b})\), with
+\(Q_{\mathfrak b}J_{\mathfrak b}\asymp X\), and suppose the bounded
+partition coefficients have total variation
+\(O((\log X)^{C_{\rm cell}})\).  Summing
+\eqref{eq:tpc25-zero-first-bound} gives, for every \(B>0\),
+\begin{equation}
+ \sum_{\mathfrak b}|\mathcal Z^0_{S,T}(\mathfrak b)|
+ \ll_B
+ (\log X)^{-B}
+ \sum_{\mathfrak b}XQ_{\mathfrak b},
+ \label{eq:tpc25-polylog-reassembly}
+\end{equation}
+after choosing the calibration exponent beyond
+\(B+C_{\rm cell}\).  Equivalently, comparison with the largest cell
+costs only another fixed power of \(\log X\).  Prime-power removal and
+the degenerate row channels retain their previously proved fixed-power
+margins and are not part of the logarithmic zero-mode ledger.
+
+\subsection{Exact scope}
+
+The theorem concerns the actual opened TPC packet, not every object in
+the later abstract interface.  In particular:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item An arbitrary matrix \(z_{\alpha_1,\alpha_2}\) satisfying only
+ \(|z_{\alpha_1,\alpha_2}|\ll X^\varepsilon\) need not obey
+ \eqref{eq:tpc25-pair-mass}.  The conclusion cannot be transferred to
+ such a matrix by deleting its provenance.
+ \item An arbitrary uniformly smooth family
+ \(F_{\alpha_1,\alpha_2}\) does not by itself force the pair
+ coefficient to be a prime--M\"obius rank-one weight.  What is used is
+ the combination of the actual row factors
+ \eqref{eq:tpc25-row-coefficient}, the bounded zero functional
+ \eqref{eq:tpc25-zero-functional-bound}, and \(|\mathfrak m|\le1\).
+ \item The argument closes the physical zero frequency.  The nonzero
+ conductor cells still use the TPC-24 large-sieve, no-wrap, and Fourier
+ tail interfaces.  Their fixed-power margin is compatible with the
+ conventional \(X^\varepsilon\) smooth-separation loss.
+ \item Nothing here estimates the both-new square, the remaining
+ complementary residual legs, or a prime-pair main term.  In
+ particular, it is not a Hardy--Littlewood asymptotic, a twin-prime
+ lower bound, or a claim to cross the general sieve parity barrier.
+\end{enumerate}
+
+Thus the fixed-projective-mass condition in the abstract TPC-24
+corollary remains a valid sufficient hypothesis for arbitrary
+separated inputs, while \cref{thm:tpc25-zero-before-separation} proves
+that it is automatic---and can in fact be bypassed---for the physical
+zero mode of the packet that actually arises from the opened-\(d\)
+construction.

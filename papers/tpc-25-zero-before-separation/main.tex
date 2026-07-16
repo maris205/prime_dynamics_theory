@@ -1,0 +1,165 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Zero Before Separation in a Primitive Mobius Tail: Provenance-Weighted Closure and the Principal Row-Mode Boundary},
+ pdfauthor={Liang Wang},
+ pdfsubject={Physical zero-mode closure in a primitive Mobius tail},
+ pdfkeywords={Mobius tail, zero mode, projective mass, principal row mode, congruence skeleton, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\supp}{\operatorname{supp}}
+
+\title{\textbf{Zero Before Separation in a Primitive M\"obius Tail:}\\
+\textbf{Provenance-Weighted Closure and the}\\
+\textbf{Principal Row-Mode Boundary}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+TPC-24 proves pointwise arbitrary-logarithmic cancellation for the
+physical additive zero mode of a calibrated one-sided divisor shell,
+but its abstract packet theorem retains an additional fixed-projective-
+mass hypothesis.  We return here to the actual primitive opened-
+\(d\) packet before smooth row--orbit separation.  Its row coefficient
+has the provenance
+\(\mu(d)(\log\ell)\), up to fixed bounded cutoffs, where
+\(m=\ell d\), \(\ell\asymp L\) is prime, \(d\asymp D\), and
+\(Q=LD\).  Extracting Poisson frequency zero first turns the original
+row-dependent smooth orbit weight into a uniformly bounded integral.
+Chebyshev's estimate then gives
+\[
+ \sum_{\substack{\ell\asymp L\\ \ell\ \mathrm{prime}}}
+ (\log\ell)\sum_{d\asymp D}|\mu(d)|\ll LD=Q,
+\]
+so the physical zero-mode row-pair mass is \(O(Q^2)\), without a
+projective decomposition and without an \(X^\varepsilon\) loss.
+
+Combining this zero-before-separation principle with the pointwise shell
+kernel of TPC-24 yields, for \(S=X^{s+o(1)}\), every
+\(0<\kappa<s\), and every fixed \(A>0\),
+\[
+ |\mathcal Z^0_{S,T}|
+ \ll JQ^2\{(\log X)^{-A}+X^{-s+\kappa+o(1)}\}.
+\]
+Consequently the fixed-projective-mass condition in TPC-24 is automatic
+for the actual opened-\(d\) one-sided packet.  Under the remaining
+inherited row, no-wrap, Fourier-tail, and conductor interfaces, and
+when
+\[
+ \eta_{\rm asym}(\beta;s,t)=
+ \min\left\{1-\frac{3\beta}{2},
+ \frac{\beta+1-2s-2t}{2},
+ \frac{3-\beta-s-5t}{4}\right\}>0
+\]
+with fixed margin, the calibrated mixed increment has arbitrary
+logarithmic saving for a general nonzero-mean fixed smooth test within
+the factorable provenance class; no mean-zero hypothesis on the fixed
+physical test is needed.  This closes the mass gate for that
+specific physical packet, not for arbitrary abstract row arrays.
+
+We also prove that the distinction is necessary.  Soft row
+\(L^2\) energy, a divisor-independent off-diagonal mask, and an
+entrywise kernel bound smaller than every fixed logarithmic power do
+not imply a packet saving.  A dense constant row mode saturates the
+natural scale while obeying all three interfaces.  The same coherent
+direction occurs in the exact M\"obius algebra: for
+\(H=1\), \(R=S=2\), \(T=3\), and prime rows larger than \(3\),
+the raw kernel equals \(\kappa_0=((\log2-2)\log3)/6\) on every
+distinct row pair.  After off-diagonal masking its matrix is
+\[
+ \kappa_0(\mathbf1\mathbf1^{\mathsf T}-I).
+\]
+Thus a direct Hilbert--Schmidt upgrade has no dimension gain.  Finally,
+in a prime-row no-long-wrap model we decompose the whole kernel into
+residue-class constant spaces modulo the shared factor \(g\).  This
+gives an exact congruence skeleton and a deflated operator bound, while
+also showing precisely which extra row-balance statistics a future
+both-new-shell argument would have to control.  Nothing here proves a
+Hardy--Littlewood asymptotic, a twin-prime lower bound, or a general
+breach of the sieve parity barrier.
+\end{abstract}
+
+\noindent\textbf{Keywords:} primitive M\"obius tail; physical zero
+mode; row provenance; principal row mode; congruence skeleton;
+projective mass; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary
+11L07, 11L40.
+
+\input{sections/introduction}
+\input{sections/provenance}
+\input{sections/zero-first}
+\input{sections/one-sided-closure}
+\input{sections/energy-boundary}
+\input{sections/congruence-skeleton}
+\input{sections/certificate-scope}
+
+\clearpage
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

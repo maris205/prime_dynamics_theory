@@ -1,0 +1,326 @@
+\section{The principal row mode and the energy boundary}
+\label{sec:tpc25-energy-boundary}
+
+This section records a sharp limitation of the soft row interface.  The
+physical zero kernel may be very small at every individual row pair and
+still possess a coherent row direction whose singular value is the row
+cardinality times the pointwise size.  Consequently, the soft
+\(QX^{o(1)}\) row-energy interface, together with the
+Hilbert--Schmidt bound obtained only from entrywise control, cannot
+replace the absolute row-pair mass.  The obstruction already occurs in the
+shared-factor block \(g=1\), where compatibility supplies no oscillation
+in the row variables.
+
+\subsection{An abstract soft-energy saturation theorem}
+
+Let \(Q=X^{\beta+o(1)}\) for some fixed \(\beta>0\), and let
+\(\mathcal R_X\) be a row set of cardinality
+\begin{equation}
+ N=N_X=\left\lfloor\frac{Q}{\log(2Q)}\right\rfloor.
+ \label{eq:tpc25-row-cardinality}
+\end{equation}
+Write \(\mathbf 1\) for the constant vector on \(\mathcal R_X\), and
+put
+\begin{equation}
+ \rho_X=\exp\{-\sqrt{\log X}\}.
+ \label{eq:tpc25-rho}
+\end{equation}
+Thus \(\rho_X^{-1}=X^{o(1)}\), while for every fixed \(A>0\),
+\begin{equation}
+ \rho_X\ll_A(\log X)^{-A}.
+ \label{eq:tpc25-rho-log}
+\end{equation}
+
+\begin{theorem}[Soft \(\ell^2\) energy does not close a dense zero mode]
+\label{thm:tpc25-soft-energy-no-go}
+There are a divisor-independent off-diagonal row mask, a real kernel,
+and row weights satisfying
+\begin{equation}
+ \|x\|_\infty+\|y\|_\infty\ll_\epsilon X^\epsilon,
+ \qquad
+ \|x\|_2^2+\|y\|_2^2\ll_\epsilon QX^\epsilon
+ \label{eq:tpc25-soft-row-interface}
+\end{equation}
+for every fixed \(\epsilon>0\), such that the kernel obeys the
+arbitrary-logarithmic pointwise bound
+\begin{equation}
+ \sup_{m,n\in\mathcal R_X}|K_X(m,n)|
+ \ll_A(\log X)^{-A}
+ \label{eq:tpc25-pointwise-superlog}
+\end{equation}
+for every fixed \(A>0\), but
+\begin{equation}
+ \sum_{m,n\in\mathcal R_X}
+ x_my_n\mathfrak m_X(m,n)K_X(m,n)
+ =Q^2\{1+o(1)\}.
+ \label{eq:tpc25-natural-scale-saturation}
+\end{equation}
+In particular, the three properties in
+\eqref{eq:tpc25-soft-row-interface}--
+\eqref{eq:tpc25-pointwise-superlog} do not imply either a fixed-power
+saving or an arbitrary-logarithmic saving from the natural row scale
+\(Q^2\).
+\end{theorem}
+
+\begin{proof}
+Take
+\begin{equation}
+ \mathfrak m_X(m,n)=\mathbf 1_{\{m\ne n\}},
+ \qquad
+ K_X(m,n)=\rho_X,
+ \qquad
+ x_m=y_m=\frac{Q}{N\sqrt{\rho_X}}.
+ \label{eq:tpc25-saturating-data}
+\end{equation}
+The mask is bounded, off-diagonal, and independent of every divisor
+variable.  Equations \eqref{eq:tpc25-rho} and
+\eqref{eq:tpc25-row-cardinality} give
+\begin{align}
+ \|x\|_\infty=\|y\|_\infty
+ &=\frac{Q}{N\sqrt{\rho_X}}=X^{o(1)},
+ \label{eq:tpc25-saturating-linfty}\\
+ \|x\|_2^2+\|y\|_2^2
+ &=\frac{2Q^2}{N\rho_X}=QX^{o(1)}.
+ \label{eq:tpc25-saturating-ltwo}
+\end{align}
+This proves \eqref{eq:tpc25-soft-row-interface}, while
+\eqref{eq:tpc25-pointwise-superlog} is
+\eqref{eq:tpc25-rho-log}.  Finally,
+\[
+ \sum_{m,n}x_my_n\mathfrak m_X(m,n)K_X(m,n)
+ =\frac{Q^2}{N^2\rho_X}\rho_X N(N-1)
+ =Q^2\left(1-\frac1N\right),
+\]
+which proves \eqref{eq:tpc25-natural-scale-saturation}.
+\end{proof}
+
+For any fixed finite divisor set, or in the prime-row regime in which
+all rows exceed the divisor horizon, the construction can be placed on
+primitive rows coprime to every divisor variable under consideration.
+In the \(g=1\) block the
+compatibility condition is automatic, so target primitivity merely
+deletes inadmissible one-row factors; it does not create cancellation
+between different rows.  The theorem is intentionally an interface
+countermodel: \(K_X\) is not asserted to be the actual M\"obius shell
+kernel.
+
+\subsection{Operator norm, Hilbert--Schmidt norm, and stable rank}
+
+The masked matrix in the preceding proof is
+\begin{equation}
+ A_X=\rho_X(\mathbf1\mathbf1^{\mathsf T}-I_N).
+ \label{eq:tpc25-rank-one-plus-diagonal}
+\end{equation}
+The constant vector has eigenvalue \(\rho_X(N-1)\), while its
+orthogonal complement has eigenvalue \(-\rho_X\).  Hence
+\begin{align}
+ \|A_X\|_{2\to2}
+ &=\rho_X(N-1),
+ \label{eq:tpc25-op-norm}\\
+ \|A_X\|_{\mathrm{HS}}
+ &=\rho_X\sqrt{N(N-1)},
+ \label{eq:tpc25-hs-norm}\\
+ \operatorname{srank}(A_X)
+ :=\frac{\|A_X\|_{\mathrm{HS}}^2}
+ {\|A_X\|_{2\to2}^2}
+ &=\frac{N}{N-1}\longrightarrow1.
+ \label{eq:tpc25-stable-rank}
+\end{align}
+Thus the Hilbert--Schmidt norm has the same order as the operator norm.
+There is no square-root row gain to extract: after diagonal removal the
+dangerous matrix is rank one plus a scalar diagonal correction.
+
+More generally, for arbitrary row weights,
+\begin{equation}
+ x^{\mathsf T}(\mathbf1\mathbf1^{\mathsf T}-I_N)y
+ =\left(\sum_mx_m\right)\left(\sum_ny_n\right)
+ -\sum_mx_my_m.
+ \label{eq:tpc25-principal-row-identity}
+\end{equation}
+The off-diagonal mask removes only the second, diagonal expression.  It
+does not center either row sequence against the constant vector.
+
+\subsection{A finite exact M\"obius certificate}
+
+The coherent geometry above is present in the exact divisor algebra,
+not only in the abstract countermodel.  Recall
+\begin{equation}
+ a(w)=-\mu(w)\log w,
+ \qquad
+ \lambda'_R(w)
+ =w\sum_{b\le R/w}
+ \frac{\mu(wb)\mu(b)}{\varphi(wb)},
+ \qquad
+ b_R(w)=a(w)-\lambda'_R(w).
+ \label{eq:tpc25-divisor-coefficients}
+\end{equation}
+
+\begin{proposition}[An exact constant zero kernel]
+\label{prop:tpc25-finite-constant-kernel}
+Take
+\begin{equation}
+ H=1,\qquad R=S=2,\qquad T=3,
+ \label{eq:tpc25-finite-scales}
+\end{equation}
+and let the two row variables range over any finite set
+\(\mathcal R\) of at least two primes greater than \(3\).  Then for
+every distinct pair \(m,n\in\mathcal R\), the full physical zero
+kernel equals
+\begin{equation}
+ K^0_{2,3}(m,n)
+ =\kappa_0,
+ \qquad
+ \boxed{\kappa_0=
+ \frac{(\log2-2)\log3}{6}\ne0.}
+ \label{eq:tpc25-kappa-zero}
+\end{equation}
+Consequently, after applying
+\(\mathfrak m(m,n)=\mathbf 1_{\{m\ne n\}}\), its matrix is exactly
+\begin{equation}
+ \kappa_0(\mathbf1\mathbf1^{\mathsf T}-I_N).
+ \label{eq:tpc25-exact-mobius-matrix}
+\end{equation}
+Its operator norm, Hilbert--Schmidt norm, and stable rank are obtained
+from \eqref{eq:tpc25-op-norm}--\eqref{eq:tpc25-stable-rank} by replacing
+\(\rho_X\) with \(|\kappa_0|\).
+\end{proposition}
+
+\begin{proof}
+Here \(u\in\{1,2\}\) and the long shell contains only \(v=3\).
+Thus \((u,v)=1\) for every effective divisor pair.  Since the rows are
+primes greater than \(3\), all target-primitivity restrictions are
+automatic, and the compatibility indicator is identically one.
+Directly from \eqref{eq:tpc25-divisor-coefficients},
+\begin{align*}
+ \lambda'_2(1)&=2,
+ &\lambda'_2(2)&=-2,\\
+ b_2(1)&=-2,
+ &b_2(2)&=\log2+2,
+ &a(3)&=\log3.
+\end{align*}
+Therefore
+\begin{align*}
+ K^0_{2,3}(m,n)
+ &=\frac{a(3)}3
+ \left(b_2(1)+\frac{b_2(2)}2\right)\\
+ &=\frac{\log3}{3}
+ \left(-2+\frac{\log2+2}{2}\right)
+ =\frac{(\log2-2)\log3}{6}.
+\end{align*}
+The constant is negative, hence nonzero, because \(\log2<2\).  The
+matrix assertion follows by deleting its diagonal.
+\end{proof}
+
+\begin{remark}[What the finite certificate proves]
+\label{rem:tpc25-finite-certificate-scope}
+The proposition proves that the principal row direction is compatible
+with the genuine M\"obius coefficients, exact target primitivity, and
+exact shared-factor compatibility.  It also proves that diagonal
+deletion is not row centering.  It does not provide an asymptotic lower
+bound for a growing wide shell and therefore is not a counterexample to
+an eventual power-saving estimate for the actual TPC shell.
+\end{remark}
+
+\subsection{Interface obstruction versus number-theoretic obstruction}
+
+The preceding results have two deliberately different logical levels.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item \Cref{thm:tpc25-soft-energy-no-go} is a black-box
+ non-implication theorem.  It proves that soft \(X^{o(1)}\) row energy,
+ pointwise arbitrary-logarithmic decay, divisor independence of the
+ mask, and target primitivity do not by themselves imply a useful
+ bilinear estimate.
+ \item \Cref{prop:tpc25-finite-constant-kernel} is exact arithmetic.  It
+ proves that the coherent spectral geometry occurs in an actual finite
+ M\"obius shell.
+ \item Neither result says that the zero kernel in the intended growing
+ shell is large.  A genuine asymptotic counterexample would require a
+ quantitative lower bound along those growing shells and row weights
+ that arise in the original decomposition.  No such lower bound is
+ asserted here.
+\end{enumerate}
+
+There is a second black-box obstruction if a theorem is stated for
+every bounded row-pair mask.  Given any real off-diagonal matrix
+\(K(m,n)\), the row-only choice
+\(\mathfrak m(m,n)=\operatorname{sgn}K(m,n)\) converts its bilinear sum
+with positive constant weights into \(\sum_{m\ne n}|K(m,n)|\).  It is
+still independent of the individual divisor variables.  Therefore a
+positive row-cancellation theorem must either retain and analyze the
+actual generic mask or impose a quantitative structural norm on the
+class of masks; the entrywise bound \(|\mathfrak m|\le1\) is not enough.
+
+\subsection{Minimal additional inputs}
+
+The obstruction isolates three viable forms of extra information.
+
+\paragraph{Principal-row balance.}
+For the exact model \(\kappa(\mathbf1\mathbf1^{\mathsf T}-I_N)\),
+\eqref{eq:tpc25-principal-row-identity} shows that the minimal new datum
+is cancellation of at least one row sequence against the constant
+vector.  A quantitative form is
+\begin{equation}
+ \frac{|\langle x,\mathbf1\rangle|}
+ {\sqrt N\|x\|_2}
+ \frac{|\langle y,\mathbf1\rangle|}
+ {\sqrt N\|y\|_2}
+ \ll X^{-\sigma}
+ \label{eq:tpc25-principal-balance}
+\end{equation}
+for some fixed \(\sigma>0\); exact mean zero on either side is a
+stronger sufficient condition.  The remaining diagonal term is bounded
+by \(|\kappa|\|x\|_2\|y\|_2\), with no factor \(N\).
+
+For a shared factor \(g>1\), the analogous coherent subspace is spanned
+by the indicators of the admissible residue classes modulo \(g\), with
+the local coprimality multipliers included.  Thus a general positive
+theorem needs a uniform bound for the projections of the actual row
+weights onto these residue-class constant spaces.  Additive large-sieve
+energy may then be applied to the complementary, nonprincipal row
+frequencies.  It cannot treat \(g=1\), because that block has no
+nonprincipal row frequency.
+
+\paragraph{Structured-mask control.}
+Principal balance must be preserved after inserting the actual mask.
+One sufficient interface is a separated representation
+\begin{equation}
+ \mathfrak m(m,n)=\sum_\nu\alpha_\nu(m)\beta_\nu(n),
+ \qquad
+ \sum_\nu\|\alpha_\nu\|_\infty
+ \|\beta_\nu\|_\infty\ll(\log X)^C,
+ \label{eq:tpc25-mask-projective-control}
+\end{equation}
+together with \eqref{eq:tpc25-principal-balance} for every twisted pair
+\(x\alpha_\nu,y\beta_\nu\).  Alternatively one may work directly with
+the specific generic mask and prove that its exceptional part has a
+power-saving operator norm.  A generic bounded Schur mask cannot simply
+be discarded before taking the nonlinear norm.
+
+\paragraph{Fixed-polylogarithmic row energy.}
+There is also a simpler sufficient hypothesis which does not exploit
+row cancellation.  If \(\#\mathcal R_X\ll Q\) and
+\begin{equation}
+ \|x\|_2\|y\|_2\ll Q(\log X)^C,
+ \label{eq:tpc25-polylog-ltwo}
+\end{equation}
+then a pointwise bound
+\(\sup|K|\ll_A(\log X)^{-A}\) gives
+\[
+ |x^{\mathsf T}(\mathfrak m\circ K)y|
+ \le \|x\|_2\|y\|_2
+ \|\mathfrak m\circ K\|_{2\to2}
+ \ll_A Q^2(\log X)^{C-A}.
+\]
+Choosing \(A\) after the desired logarithmic saving closes the term.
+For a projective sum of row packets, the corresponding sum of the
+\(\ell^2\)-norm products must satisfy
+\eqref{eq:tpc25-polylog-ltwo}.  This route is rigorous but is a
+fixed-polylogarithmic mass input in another norm; it is not a consequence
+of the soft \(QX^\epsilon\) energy estimate.
+
+Absent a fixed-polylogarithmic mass input, a genuinely
+cancellation-based route is therefore not ``apply the entrywise
+Hilbert--Schmidt bound once more.''  It must isolate the principal row
+projections, prove a balance statement for the actual weights and mask,
+and only then use large-sieve energy on the complementary row spectrum.
