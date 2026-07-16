@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arcwise-rational-arnoldi-enclosure"
+version = "0.1.0"
+description = "Arcwise componentwise enclosures for stored rational Arnoldi Feshbach models"
+requires-python = ">=3.10"
+dependencies = [
+  "python-flint>=0.9",
+  "matplotlib>=3.7",
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "threadpoolctl>=3.5",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src",
+  "../RH-27-outward-rounded-primal-dual-residuals/src",
+]
+testpaths = ["tests"]
