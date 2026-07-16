@@ -1,0 +1,128 @@
+{
+  "approximate_inverse_frobenius_upper": 108.74478206784087,
+  "arc_disc_radius_upper": 0.00010066701278021832,
+  "assumptions": [
+    "stored binary64 factors are exact inputs",
+    "IEEE round-to-nearest with no overflow or harmful underflow",
+    "the archived triplet hash matches RH-29"
+  ],
+  "border_rank": 13,
+  "bordered_dimension": 4109,
+  "certificate_seconds": 32.085200548172,
+  "certified_budget_margin": 87.33673776220618,
+  "chunk_size": 256,
+  "chunks": [
+    {
+      "approximate_inverse_frobenius_upper": 37.87532117885422,
+      "first_column": 0,
+      "last_column_exclusive": 256,
+      "residual_center_frobenius_upper": 1.2590483695235739e-14,
+      "residual_frobenius_upper": 7.052716522739952e-11,
+      "residual_radius_frobenius_upper": 7.051457474370427e-11
+    },
+    {
+      "approximate_inverse_frobenius_upper": 37.88781178715645,
+      "first_column": 256,
+      "last_column_exclusive": 512,
+      "residual_center_frobenius_upper": 1.4762904543886518e-14,
+      "residual_frobenius_upper": 7.817446843756675e-11,
+      "residual_radius_frobenius_upper": 7.815970553302285e-11
+    },
+    {
+      "approximate_inverse_frobenius_upper": 37.90547814273448,
+      "first_column": 512,
+      "last_column_exclusive": 768,
+      "residual_center_frobenius_upper": 2.0302379405076636e-14,
+      "residual_frobenius_upper": 7.49463779869552e-11,
+      "residual_radius_frobenius_upper": 7.492607560755011e-11
+    },
+    {
+      "approximate_inverse_frobenius_upper": 38.04133632264036,
+      "first_column": 768,
+      "last_column_exclusive": 1024,
+      "residual_center_frobenius_upper": 2.839768646943453e-14,
+      "residual_frobenius_upper": 1.1149073604944484e-10,
+      "residual_radius_frobenius_upper": 1.114623383629754e-10
+    },
+    {
+      "approximate_inverse_frobenius_upper": 38.17913643461239,
+      "first_column": 1024,
+      "last_column_exclusive": 1280,
+      "residual_center_frobenius_upper": 6.722032283932355e-14,
+      "residual_frobenius_upper": 1.916661473849261e-10,
+      "residual_radius_frobenius_upper": 1.9159892706208675e-10
+    },
+    {
+      "approximate_inverse_frobenius_upper": 38.80594022219666,
+      "first_column": 1280,
+      "last_column_exclusive": 1536,
+      "residual_center_frobenius_upper": 5.175360999580347e-14,
+      "residual_frobenius_upper": 2.5920765490639353e-10,
+      "residual_radius_frobenius_upper": 2.591559012963977e-10
+    },
+    {
+      "approximate_inverse_frobenius_upper": 38.50834675932578,
+      "first_column": 1536,
+      "last_column_exclusive": 1792,
+      "residual_center_frobenius_upper": 3.595897117919197e-14,
+      "residual_frobenius_upper": 1.9838080964191277e-10,
+      "residual_radius_frobenius_upper": 1.9834485067073354e-10
+    },
+    {
+      "approximate_inverse_frobenius_upper": 40.31119723553684,
+      "first_column": 1792,
+      "last_column_exclusive": 2048,
+      "residual_center_frobenius_upper": 1.0891046082529519e-13,
+      "residual_frobenius_upper": 3.9683933436336704e-10,
+      "residual_radius_frobenius_upper": 3.967304239025417e-10
+    }
+  ],
+  "factor_fill_ratio": 3.4806326540225436,
+  "factor_nnz": 4507381,
+  "factor_seconds": 2.7856945991516113,
+  "generated_utc": "2026-07-16T06:23:45.249374+00:00",
+  "inverse_sha256": "171dc813e7307ef4f5d32fe79a7c590c1b597d4e784bfb11c5104937e98046fe",
+  "lift": 1.0,
+  "lifted_inverse_budget_lower": 9497.41451992225,
+  "lifted_inverse_two_norm_upper": 108.74478213029992,
+  "matrix_nnz": 1294989,
+  "normalized_left_residual_norm_upper": 4.4163482965152044e-11,
+  "normalized_lift_coefficient_lower": 0.9977132770241838,
+  "normalized_lift_coefficient_upper": 0.997713277024184,
+  "normalized_right_residual_norm_upper": 1.0462012738936694e-11,
+  "original_center_inverse_two_norm_upper": 545.0520168716026,
+  "original_lift_formula_denominator_lower": 0.002286721840728605,
+  "physical_dimension": 2048,
+  "residual_center_frobenius_upper": 1.4814392620772757e-13,
+  "residual_center_sha256": "a1fc1548b132250363c1048ba857bcfd40b7e11d9a8cc1bbd2bfafe9e861e7a8",
+  "residual_frobenius_upper": 5.743634700225225e-10,
+  "residual_radius_frobenius_upper": 5.742182978320722e-10,
+  "residual_radius_sha256": "07569f641578969084a76ccb5e1c69fe722b3ec8b2250b35679ed0bebea33c34",
+  "rh28_selected_arc_resolvent_budget_lower": 39725908713979.94,
+  "rh29_floating_lifted_inverse_candidate": 15.930154413993533,
+  "selected_arc_budget_margin": 68885530676.66339,
+  "selected_arc_inverse_two_norm_upper": 576.69452966032,
+  "sigma": 0.01,
+  "software": {
+    "numpy": "2.2.6",
+    "python": "3.10.12",
+    "python_flint": "0.9.0",
+    "scipy": "1.15.3"
+  },
+  "source_sha256": {
+    "certification.py": "b216b7ef40a9b6ac6524a5b64073141223d85b6df8f8c844d2c27caaa1ddcd2a",
+    "componentwise.py": "d18de48af4c56428e477e489a69cc21df76fd20d8c628aced89895bb0c8b5a8b",
+    "componentwise_graph.py": "43d13e8c2589fbb9731e705a4e52752292caa842978b4f39948020853e939ba5",
+    "enclosures.py": "e159f744c539b485fe126aa22d1822c6f80e570cdfaf27d753aa899b4e43a49e",
+    "linearization.py": "66abff3b8c63fe2c23d71b9fda771afc8ce3aad118fce319bbf614306f079b12",
+    "rh29_algebra.py": "9d14e86bcdd52ece0ef41fb20d68b8a8c3d5fad8a25e94f16dcc0b6c5567fc31",
+    "rh29_scale_summary.csv": "1e5df8d1614c8f4befe8eacd96a9617dffea23e8f53e893aa96dc4b34e141d97",
+    "run_stored_inverse_certificate.py": "c95ab9d43984f230d9f1089a2b0e877ad7aca44a4a9d08378ac9e9b25e759e23"
+  },
+  "spectral_parameter_imag": -0.4130514133515469,
+  "spectral_parameter_real": -0.09992358355749356,
+  "status": "rigorous_selected_arc_stored_model_closure",
+  "stored_singular_value": 0.002286722975816321,
+  "total_seconds": 35.25063920021057,
+  "triplet_sha256": "af8fe5811e128e1f97c072290856ef639a324a778f960fe8b0badc850c2add15"
+}

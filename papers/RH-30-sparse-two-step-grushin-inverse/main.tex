@@ -1,0 +1,819 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\Id}{\mathrm I}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\Atilde}{\widetilde A}
+\newcommand{\Gmat}{\mathcal G}
+\newcommand{\Lmat}{\mathcal L}
+\newcommand{\Rapp}{\mathcal R}
+
+\hypersetup{
+  pdftitle={Sparse Two-Step Grushin Linearization and Deterministic Lifted-Resolvent Closure},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact sparse Grushin algebra and outward-rounded stored-model inverse certificates},
+  pdfkeywords={Grushin problem, sparse linearization, resolvent, verified inverse, interval arithmetic, nonnormal matrix}
+}
+
+\title{\textbf{Sparse Two-Step Grushin Linearization and\\
+Deterministic Lifted-Resolvent Closure}\\[0.35em]
+\large Two Outward-Rounded Stored-Model Certificates\\
+at a Quadratic Band-Merging Map}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A preceding one-channel deflation reduced an unresolved nonnormal
+complement-resolvent estimate to a substantially better-conditioned lifted
+inverse gate.  The remaining task was to turn a floating smallest-singular-
+value candidate into an upper bound.  This paper closes that gate at two
+stored finite scales.
+
+Let $M$ be the stored sparse one-step transfer matrix,
+$U=M-R_{\rm p}\Lambda L_{\rm p}^{\mathsf T}$ its peripheral-mode-extracted
+factor, $Q=\Id-VW$ the packet complement, and
+$\widetilde A=z\Id-QU^2Q+cuv^*$.  We introduce the exact two-step
+linearization
+\[
+ \mathcal L_t=
+ \begin{pmatrix}
+  z\Id+cuv^* & -tQU\\
+  -t^{-1}UQ & \Id
+ \end{pmatrix}.
+\]
+Its leading inverse block is $\widetilde A^{-1}$.  Moreover,
+$M-QU=R_{\rm p}\Lambda L_{\rm p}^{\mathsf T}+V(WU)$ and
+$M-UQ=R_{\rm p}\Lambda L_{\rm p}^{\mathsf T}+(UV)W$, so
+$\mathcal L_t$ is a sparse block matrix plus $1+2p+2k$ rank-one channels.
+Bordering that correction produces a sparse Grushin matrix of dimension
+$2n+1+2p+2k$ whose first $n$ inverse coordinates again equal
+$\widetilde A^{-1}$.
+
+Sparse LU is used only to generate a binary64 approximate right inverse
+$\mathcal R$.  The certificate is independent of the LU backward error:
+the exact stored-factor graph directly encloses
+$E=\Id-\widetilde A\mathcal R$ componentwise, while Arb encloses the exact
+normalization coefficient in the rank-one lift.  The elementary estimate
+\[
+ \norm{\widetilde A^{-1}}_2
+ \leq \frac{\norm{\mathcal R}_F}{1-\norm{E}_F}
+\]
+then gives deterministic upper bounds.  At $\sigma=10^{-2}$ and
+$4\times10^{-3}$, respectively, the outward residual bounds are
+$5.744\times10^{-10}$ and $1.682\times10^{-9}$, and the certified lifted
+inverse bounds are $108.745$ and $151.491$.  The required conditional budgets
+are $9497.415$ and $34053.573$, leaving factors $87.3$ and $224.8$.
+Substitution into the preceding exact one-channel theorem gives original
+center-resolvent bounds $545.053$ and $730.494$, and selected-arc bounds
+$576.695$ and $746.234$.
+
+Floating sparse pilots remain favorable through $n=10240$, but the present
+all-column Frobenius certificate has quadratic-like measured cost.  Thus the
+spectral gate is closed at two selected arcs, while scalable deterministic
+closure of the remaining scales is left open.  No full-contour root count,
+continuum limit, Hilbert--P\'olya construction, statement about zeta zeros,
+or statement about the Riemann hypothesis is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} sparse Grushin problem; verified inverse;
+nonnormal resolvent; low-rank linearization; interval arithmetic;
+Frobenius--Neumann certificate.
+
+\medskip
+\noindent\textbf{MSC 2020:} 47A10; 47A55; 65F05; 65F35; 65F50; 65G20;
+65P30.
+
+
+\section{Introduction}
+\label{sec:introduction}
+
+The packet--complement program considered here studies finite noisy transfer
+matrices near a quadratic band-merging regime.  Earlier layers constructed a
+finite packet Feshbach reduction, a holomorphic shifted Arnoldi model,
+directional and primal--dual residual formulas, componentwise outward
+rounding, and an exact adaptive cover of a mathematical contour
+\citep{WangContourFeshbach2026,WangDirectionalRouche2026,
+WangPrimalDual2026,WangOutwardCode2026,WangArcwise2026}.  Those developments
+reduced a matrix Rouch\'e estimate to one unresolved input: an upper bound for
+the norm of a nonnormal complement resolvent.
+
+The immediate predecessor isolated one dangerous singular direction and
+proved an exact one-channel reduction \citep{WangDeflated2026}.  If
+$A=z_0\Id-B$, if $u,v$ are exact unit vectors obtained by normalizing stored
+binary64 vectors, and if
+\[
+ r=Av-\widehat s u,
+ \qquad
+ q=A^*u-\widehat s v,
+\]
+then the lifted matrix
+\begin{equation}
+ \Atilde=A+(\tau-\widehat s)uv^*
+ \label{eq:intro-lift}
+\end{equation}
+satisfies the following implication.  Any validated
+$K\geq\|\Atilde^{-1}\|_2$ in the admissible range gives
+\begin{equation}
+ \norm{A^{-1}}_2
+ \leq K+
+ \frac{|\tau-\widehat s|(1+K\|r\|_2)(1+K\|q\|_2)}
+ {\tau(\widehat s-|\tau-\widehat s|K\|r\|_2)}.
+ \label{eq:predecessor-bound}
+\end{equation}
+The associated downward budgets $K_*^-$ exceed floating lifted-inverse
+candidates by factors between $95.0$ and $1.73\times10^3$ across seven stored
+scales.  Simple accretivity cannot close the gate: a certified numerical-
+range witness places the origin inside the coarse lifted numerical range.
+
+The present paper takes the next route through the maze.  It avoids both a
+dense construction of $QU^2Q$ and a cancellation-free bound on sparse LU
+triangular factors.  The main contributions are:
+\begin{enumerate}
+ \item an exact sparse two-step linearization whose physical inverse block is
+       $\Atilde^{-1}$;
+ \item an explicit factorization with $1+2p+2k$ rank-one channels for every dense-looking
+       correction, including peripheral, packet, and lifted channels;
+ \item a direct Frobenius--Neumann certificate that uses sparse LU only to
+       generate an approximate inverse and then rechecks the exact stored
+       target with componentwise outward arithmetic;
+ \item rigorous stored-model lifted-inverse bounds at
+       $\sigma=10^{-2}$ and $4\times10^{-3}$, closing the selected RH-28 arc
+       at both scales;
+ \item a three-scale sparse audit separating the favorable sparse-factor
+       scaling from the present quadratic-like all-column certification
+       cost.
+\end{enumerate}
+
+The distinction between generating and certifying the inverse is essential.
+No statement relies on treating a computed singular value as a lower bound,
+and no theorem requires the floating sparse LU factors to be exact.  The
+computed inverse columns are merely stored trial data.  The final residual is
+reevaluated through the same exact stored-factor model used by the preceding
+outward-rounded papers.
+
+\subsection{Evidence hierarchy}
+
+Three levels are kept separate.
+\begin{enumerate}
+ \item \emph{Exact algebra}: the Schur-complement identities, low-rank
+       channel factorization, scaling invariances, and
+       Frobenius--Neumann inequality.
+ \item \emph{Rigorous stored-model computation}: the two componentwise
+       residual enclosures, exact-normalization intervals, lifted-inverse
+       upper bounds, and their consequences under
+       \cref{eq:predecessor-bound}.
+ \item \emph{Floating evidence}: inverse power iterations, full bordered
+       inverse candidates, LU fill ratios, timings, and empirical scaling
+       exponents.
+\end{enumerate}
+No floating candidate is used as an upper bound in a theorem.
+
+
+\section{Stored complement shifts and lifted budgets}
+\label{sec:model}
+
+Fix one stored scale and let $n$ be its folded physical dimension.  Let
+$M\in\C^{n\times n}$ be the stored sparse one-step matrix.  The two stored
+peripheral modes are collected in
+$R_{\rm p},L_{\rm p}\in\C^{n\times p}$, with $p=2$, and their values in the
+diagonal matrix $\Lambda\in\C^{p\times p}$.  Define
+\begin{equation}
+ U=M-R_{\rm p}\Lambda L_{\rm p}^{\mathsf T}.
+ \label{eq:stored-one-step}
+\end{equation}
+The packet synthesis and analysis maps are
+$V\in\C^{n\times k}$ and $W\in\C^{k\times n}$, and
+\begin{equation}
+ P=VW,
+ \qquad
+ Q=\Id-P.
+ \label{eq:packet-complement}
+\end{equation}
+No exact orthogonality assumption is needed below: these formulas use the
+stored matrices as given.
+
+The physical two-step complement block and its shift are
+\begin{equation}
+ B=QU^2Q,
+ \qquad
+ A(z)=z\Id-B.
+ \label{eq:physical-shift}
+\end{equation}
+For the budget-tightest archived RH-28 arc, write its disc center and radius
+as $z_0$ and $\rho$, and abbreviate $A=A(z_0)$.
+
+The archived dangerous vectors $u_0,v_0$ are binary64 arrays.  Their exact
+Euclidean norms, interpreted as norms of exact dyadic vectors, define
+\begin{equation}
+ u=\frac{u_0}{\|u_0\|_2},
+ \qquad
+ v=\frac{v_0}{\|v_0\|_2}.
+ \label{eq:exact-normalization}
+\end{equation}
+With the stored positive scalar $\widehat s$ and $\tau=1$, put
+\begin{equation}
+ c=\tau-\widehat s,
+ \qquad
+ \Atilde=z_0\Id-QU^2Q+cuv^*.
+ \label{eq:lifted-target}
+\end{equation}
+All later rigorous claims refer to this exact finite stored model.
+
+At the two scales certified below, the predecessor provides the downward
+budgets
+\begin{equation}
+ K_*^-=9497.41451992225
+ \quad(\sigma=10^{-2}),
+ \qquad
+ K_*^-=34053.572294052305
+ \quad(\sigma=4\times10^{-3}).
+ \label{eq:two-budgets}
+\end{equation}
+If a rigorous bound $K<K_*^-$ is supplied, then
+\cref{eq:predecessor-bound} and the archived center-to-arc Neumann transport
+close the selected arc.  The task is therefore precise: certify one lifted
+inverse norm, not infer a singular gap from a plot.
+
+
+\section{Exact sparse two-step Grushin linearization}
+\label{sec:linearization}
+
+For any $t>0$, define the $2n\times2n$ block matrix
+\begin{equation}
+ \Lmat_t=
+ \begin{pmatrix}
+  z_0\Id+cuv^* & -tQU\\
+  -t^{-1}UQ & \Id
+ \end{pmatrix}.
+ \label{eq:two-step-linearization}
+\end{equation}
+The parameter $t$ balances the two auxiliary directions without changing
+the physical inverse block.
+
+\begin{lemma}[Physical Schur complement]
+\label{lem:physical-schur}
+The Schur complement of the lower-right identity in
+\cref{eq:two-step-linearization} is exactly $\Atilde$.  Consequently,
+$\Lmat_t$ is invertible if and only if $\Atilde$ is invertible, and
+\begin{equation}
+ [\Lmat_t^{-1}]_{11}=\Atilde^{-1}.
+ \label{eq:physical-inverse-block}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The Schur complement is
+\[
+ z_0\Id+cuv^*-(-tQU)\Id^{-1}(-t^{-1}UQ)
+ =z_0\Id-QU^2Q+cuv^*=\Atilde.
+\]
+The standard block inverse formula gives
+\cref{eq:physical-inverse-block}.
+\end{proof}
+
+The point of \cref{eq:two-step-linearization} is that its apparently dense
+off-diagonal factors are low-rank corrections of $M$.  Put
+\begin{equation}
+ C_{\rm p}=R_{\rm p}\Lambda.
+\end{equation}
+Then exact algebra gives
+\begin{align}
+ M-QU
+ &=C_{\rm p}L_{\rm p}^{\mathsf T}+V(WU),
+ \label{eq:top-correction}\\
+ M-UQ
+ &=C_{\rm p}L_{\rm p}^{\mathsf T}+(UV)W.
+ \label{eq:bottom-correction}
+\end{align}
+Indeed, $QU=U-VWU$ and $UQ=U-UVW$, while
+$M-U=C_{\rm p}L_{\rm p}^{\mathsf T}$.
+
+Define the sparse base
+\begin{equation}
+ \Lmat_{0,t}=
+ \begin{pmatrix}
+  z_0\Id & -tM\\
+  -t^{-1}M & \Id
+ \end{pmatrix}.
+ \label{eq:sparse-base}
+\end{equation}
+The correction $\Lmat_t-\Lmat_{0,t}$ has
+$r=1+2p+2k$ channels.  For completeness, write a column channel as
+$x=(x_{\rm top},x_{\rm bottom})^{\mathsf T}$ and a row channel as
+$y=(y_{\rm left},y_{\rm right})$.  The channels are:
+\begin{align*}
+ &x_{\rm lift}=(cu,0)^{\mathsf T},
+ &&y_{\rm lift}=(v^*,0),\\
+ &x_{{\rm tp},j}=(t(C_{\rm p})_j,0)^{\mathsf T},
+ &&y_{{\rm tp},j}=(0,(L_{\rm p}^{\mathsf T})_j),\\
+ &x_{{\rm tk},j}=(tV_j,0)^{\mathsf T},
+ &&y_{{\rm tk},j}=(0,(WU)_j),\\
+ &x_{{\rm bp},j}=(0,t^{-1}(C_{\rm p})_j)^{\mathsf T},
+ &&y_{{\rm bp},j}=((L_{\rm p}^{\mathsf T})_j,0),\\
+ &x_{{\rm bk},j}=(0,t^{-1}(UV)_j)^{\mathsf T},
+ &&y_{{\rm bk},j}=(W_j,0).
+\end{align*}
+Collecting the columns and rows into
+$X\in\C^{2n\times r}$ and $Y\in\C^{r\times2n}$ gives
+\begin{equation}
+ \Lmat_t=\Lmat_{0,t}+XY.
+ \label{eq:low-rank-linearization}
+\end{equation}
+
+\begin{theorem}[Sparse bordered Grushin inverse]
+\label{thm:sparse-grushin}
+Let
+\begin{equation}
+ \Gmat_t=
+ \begin{pmatrix}
+  \Lmat_{0,t} & X\\
+  Y & -\Id_r
+ \end{pmatrix}.
+ \label{eq:bordered-grushin}
+\end{equation}
+Let $J_n:\C^n\to\C^{2n+r}$ inject a vector into the first $n$
+coordinates.  Then $\Gmat_t$ is invertible if and only if $\Atilde$ is
+invertible, and
+\begin{equation}
+ J_n^*\Gmat_t^{-1}J_n=\Atilde^{-1}.
+ \label{eq:grushin-physical-block}
+\end{equation}
+The bordered dimension is $2n+1+2p+2k$.
+\end{theorem}
+
+\begin{proof}
+The Schur complement of $-\Id_r$ in
+\cref{eq:bordered-grushin} is
+$\Lmat_{0,t}+XY=\Lmat_t$.  Hence the leading $2n$ block of
+$\Gmat_t^{-1}$ is $\Lmat_t^{-1}$.  Apply
+\cref{lem:physical-schur} to its first $n$ coordinates.
+\end{proof}
+
+\begin{proposition}[Free balancing invariances]
+\label{prop:balancing}
+Let $D$ be any invertible diagonal $r\times r$ matrix.  Replacing
+$X,Y$ by $XD,D^{-1}Y$ leaves \cref{eq:grushin-physical-block} unchanged.
+Likewise, changing $t>0$ leaves the physical inverse block unchanged.
+\end{proposition}
+
+\begin{proof}
+The channel transformation preserves $XY$ and is the similarity
+\[
+ \begin{pmatrix}\Id&0\\0&D^{-1}\end{pmatrix}
+ \Gmat_t
+ \begin{pmatrix}\Id&0\\0&D\end{pmatrix}.
+\]
+For the auxiliary scale, with $S_t=\operatorname{diag}(t\Id_n,\Id_n)$,
+$\Lmat_t=S_t\Lmat_1S_t^{-1}$, whose leading inverse block equals that of
+$\Lmat_1^{-1}$.
+\end{proof}
+
+In the implementation, every rank-one channel is balanced by multiplying its
+column by the square root of the row-to-column norm ratio and dividing its
+row by the same number.  This changes the norm of the full bordered inverse
+but not its physical block.
+
+
+\section{A direct Frobenius--Neumann certificate}
+\label{sec:certificate}
+
+The sparse Grushin matrix provides an efficient \emph{generator} for an
+approximate inverse.  It need not itself be promoted to exact arithmetic.
+Let $\widehat{\Gmat}_t$ denote its binary64 assembly and sparse LU
+factorization.  Solving
+\[
+ \widehat{\Gmat}_t x_j=J_ne_j,
+ \qquad j=1,\dots,n,
+\]
+and retaining the first $n$ coordinates gives a stored matrix
+\begin{equation}
+ \Rapp=[J_n^*x_1\ \cdots\ J_n^*x_n].
+ \label{eq:approximate-right-inverse}
+\end{equation}
+Rounding in the Grushin assembly and LU solve affects only the quality of
+$\Rapp$; it does not affect the validity of the next theorem.
+
+\begin{theorem}[Frobenius--Neumann inverse bound]
+\label{thm:frobenius-neumann}
+Let $T,R\in\C^{n\times n}$.  Suppose outward bounds $\rho,\varepsilon$
+satisfy
+\begin{equation}
+ \norm{R}_F\leq\rho,
+ \qquad
+ \norm{\Id-TR}_F\leq\varepsilon<1.
+ \label{eq:neumann-inputs}
+\end{equation}
+Then $T$ is invertible and
+\begin{equation}
+ \norm{T^{-1}}_2
+ \leq \frac{\rho}{1-\varepsilon}.
+ \label{eq:frobenius-neumann}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Set $E=\Id-TR$.  Since
+$\|E\|_2\leq\|E\|_F<1$, the matrix $\Id-E$ is invertible and
+\[
+ T\bigl(R(\Id-E)^{-1}\bigr)=\Id.
+\]
+A square matrix with a right inverse is invertible.  Therefore
+$T^{-1}=R(\Id-E)^{-1}$, and
+\[
+ \norm{T^{-1}}_2
+ \leq \norm{R}_2\frac{1}{1-\norm{E}_2}
+ \leq \frac{\norm{R}_F}{1-\norm{E}_F}.
+\]
+Apply \cref{eq:neumann-inputs}.
+\end{proof}
+
+The Frobenius norm is intentionally conservative.  It replaces a difficult
+global spectral upper bound by a deterministic all-column calculation.  The
+large RH-29 budgets make this trade useful at the first two scales.
+
+\subsection{Outward stored-factor residual}
+
+The exact target in the certificate is $T=\Atilde$ from
+\cref{eq:lifted-target}, not the rounded Schur complement of
+$\widehat{\Gmat}_t$.  Each binary64 input is interpreted as an exact dyadic
+number.  The stored-factor graph evaluates, for a componentwise complex-disc
+ball $X$,
+\begin{equation}
+ X\longmapsto z_0X-Q\bigl(U(U(QX))\bigr)+cuv^*X
+ \label{eq:stored-factor-action}
+\end{equation}
+with one outward radius per output entry.  Sparse and dense dot products use
+conservative Higham $\gamma_k$ factors under the usual IEEE round-to-nearest
+model \citep{Higham2002,Rump2010}.  Positive radius products are divided by a
+downward-rounded $1-\gamma_k$ before a final upward step.
+
+The coefficient multiplying the stored vectors is
+\begin{equation}
+ \frac{\tau-\widehat s}{\|u_0\|_2\|v_0\|_2}.
+ \label{eq:normalized-coefficient}
+\end{equation}
+Its exact dyadic numerator and exact norms are enclosed at 160-bit precision
+with Arb \citep{Johansson2017}; the resulting interval is propagated through
+the rank-one action.  Thus exact normalization is not silently replaced by
+binary64 normalization.
+
+Columns are processed in chunks.  If $\rho_j$ and $\varepsilon_j$ are
+outward Frobenius bounds for the approximate inverse and residual in chunk
+$j$, then
+\begin{equation}
+ \rho=\operatorname{up}\sqrt{\sum_j\rho_j^2},
+ \qquad
+ \varepsilon=\operatorname{up}\sqrt{\sum_j\varepsilon_j^2}
+ \label{eq:chunk-combination}
+\end{equation}
+are valid global bounds.  The archived implementation applies an upward
+step after each nonnegative addition, multiplication, and square root.
+
+\begin{remark}[Why this avoids an LU validation bottleneck]
+The LU factors can contain large cancellations.  Entrywise comparison
+triangular bounds discard those cancellations and can be useless even when
+the inverse is moderate.  In the present route, LU only proposes $\Rapp$.
+Every error in that proposal is measured by the direct exact-target residual
+$\Id-\Atilde\Rapp$ and absorbed by
+\cref{thm:frobenius-neumann}.
+\end{remark}
+
+
+\section{Floating sparse audit}
+\label{sec:floating-audit}
+
+Before the all-column calculation, we test whether the bordered inverse is
+numerically compatible with the RH-29 budgets.  These calculations are
+floating diagnostics only.  SuperLU with COLAMD ordering factors
+$\widehat{\Gmat}_t$, and inverse-normal power iteration is applied both to
+the physical block $J_n^*\widehat{\Gmat}_t^{-1}J_n$ and to the full bordered
+inverse.  Sparse direct methods and their fill behavior are discussed in
+\citep{Davis2006,GolubVanLoan2013}.
+
+At $\sigma=10^{-2}$, the auxiliary scales
+$t=0.25,0.5,1,2,4$ give full bordered inverse candidates approximately
+$41.36,25.78,21.19,24.86,43.48$.  Thus $t=1$ is the best of this small scan.
+The physical candidate is invariant to the displayed precision, as required
+by \cref{prop:balancing}.
+
+\begin{table}[H]
+\centering
+\caption{Floating sparse-LU audit at $t=1$.  The final column is the ratio of
+the rigorous RH-29 lifted budget to the \emph{floating} full bordered inverse
+candidate.  It is a feasibility diagnostic, not a certificate.}
+\label{tab:sparse-pilot}
+\scriptsize
+\begin{tabular}{rrrrrrrrr}
+\toprule
+$\sigma$ & $n$ & $\dim\Gmat$ & $\operatorname{nnz}\Gmat$ & fill & LU (s)
+& physical cand. & full cand. & budget/full\\
+\midrule
+$10^{-2}$ & 2048 & 4109 & $1.295\times10^6$ & 3.48 & 2.78
+& 15.93 & 21.19 & 448\\
+$4\times10^{-3}$ & 5120 & 10255 & $3.387\times10^6$ & 4.12 & 12.28
+& 29.36 & 41.09 & 829\\
+$2\times10^{-3}$ & 10240 & 20497 & $6.934\times10^6$ & 5.39 & 52.60
+& 62.93 & 89.44 & 992\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The physical inverse candidates reproduce the independent lifted values from
+RH-29.  More importantly, the full bordered inverse remains only a modest
+factor above the physical block and hundreds of times below the available
+budget.  Therefore certifying the full border would not be ruled out by
+norm inflation, although the direct physical residual route is sharper.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/sparse_grushin_scaling.pdf}
+\caption{Floating three-scale sparse audit.  Left: stored matrix and LU
+nonzeros.  Right: physical and full inverse candidates compared with the
+rigorous lifted budgets.  The lines summarize three finite data points and
+are not asymptotic theorems.}
+\label{fig:sparse-scaling}
+\end{figure}
+
+Power-law fits over only these three points give exponents $1.043$ for
+$\operatorname{nnz}\Gmat$, $1.310$ for LU nonzeros, and $1.817$ for LU wall
+time.  These empirical values show that sparse generation remains practical
+through $n=10240$ on the present machine.  They do not predict the finest
+stored scales.
+
+
+\section{Two rigorous stored-model closures}
+\label{sec:rigorous-results}
+
+We now apply \cref{thm:frobenius-neumann} to every physical column at the
+first two stored scales.  The sparse Grushin solve uses $t=1$ and balanced
+channels.  The exact target residual is then recomputed by
+\cref{eq:stored-factor-action}; 256 columns are processed per chunk in the
+archived runs.
+
+\begin{table}[H]
+\centering
+\caption{Outward-rounded stored-model inverse certificates.  Here
+$\rho\geq\|\Rapp\|_F$, $\varepsilon\geq\|\Id-\Atilde\Rapp\|_F$, and
+$K=\rho/(1-\varepsilon)$.  The last two columns follow from the exact
+one-channel formula and center-to-arc transport of RH-29.}
+\label{tab:rigorous-certificates}
+\scriptsize
+\begin{tabular}{rrrrrrrrr}
+\toprule
+$\sigma$ & $n$ & $\rho$ & $\varepsilon$ & $K$ & $K_*^-/K$
+& $\|A(z_0)^{-1}\|_2$ & selected arc & time (s)\\
+\midrule
+$10^{-2}$ & 2048 & 108.744783 & $5.744\times10^{-10}$
+& 108.744783 & 87.3 & 545.053 & 576.695 & 32.1\\
+$4\times10^{-3}$ & 5120 & 151.490497 & $1.682\times10^{-9}$
+& 151.490497 & 224.8 & 730.494 & 746.234 & 240.1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{theorem}[Computer-assisted selected-arc closure]
+\label{thm:computer-closure}
+Assume the archived binary64 factors are exact inputs and IEEE
+round-to-nearest arithmetic has no overflow or harmful underflow.  At
+$\sigma=10^{-2}$,
+\begin{equation}
+ \norm{\Atilde^{-1}}_2<108.745,
+ \qquad
+ \norm{A(z_0)^{-1}}_2<545.053,
+ \qquad
+ \sup_{z\text{ in selected arc}}\norm{A(z)^{-1}}_2<576.695.
+ \label{eq:coarse-certified}
+\end{equation}
+At $\sigma=4\times10^{-3}$,
+\begin{equation}
+ \norm{\Atilde^{-1}}_2<151.491,
+ \qquad
+ \norm{A(z_0)^{-1}}_2<730.494,
+ \qquad
+ \sup_{z\text{ in selected arc}}\norm{A(z)^{-1}}_2<746.234.
+ \label{eq:mid-certified}
+\end{equation}
+In particular, the RH-29 lifted budgets and the corresponding selected-arc
+resolvent gates are rigorously satisfied at both scales.
+\end{theorem}
+
+\begin{proof}
+At $\sigma=10^{-2}$, the archived outward computation gives
+\[
+ \norm{\Rapp}_F\leq108.74478206784087,
+ \qquad
+ \norm{\Id-\Atilde\Rapp}_F
+ \leq5.743634700225225\times10^{-10}.
+\]
+At $\sigma=4\times10^{-3}$, it gives
+\[
+ \norm{\Rapp}_F\leq151.4904965112043,
+ \qquad
+ \norm{\Id-\Atilde\Rapp}_F
+ \leq1.6813946390231736\times10^{-9}.
+\]
+Apply \cref{thm:frobenius-neumann}; outward division yields
+$108.74478213029992$ and $151.49049676591966$.  These are below the
+downward budgets in \cref{eq:two-budgets}.  Substituting them, together with
+the archived normalized right and left residual majorants, into the exact
+outward implementation of \cref{eq:predecessor-bound} gives center bounds
+$545.0520168716026$ and $730.4936951203142$.  The archived arc radii and an
+outward Neumann transport give $576.69452966032$ and
+$746.2336551496244$.  Rounding the displayed theorem bounds upward proves
+\cref{eq:coarse-certified,eq:mid-certified}.
+\end{proof}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/stored_inverse_closure.pdf}
+\caption{Left: floating physical candidates, rigorous Frobenius--Neumann
+upper bounds, and required RH-29 budgets.  Right: outward residuals remain
+far below one, while the deterministic all-column wall time grows rapidly.}
+\label{fig:rigorous-closure}
+\end{figure}
+
+The certified upper bounds are roughly $6.8$ and $5.2$ times the floating
+spectral candidates.  This gap is the price of replacing the spectral norm
+of the approximate inverse by its Frobenius norm.  The available budgets are
+large enough that the conservative replacement still succeeds decisively.
+
+At the coarse scale, repeating the full calculation with 128 rather than 256
+columns per chunk changes the final lifted bound by less than
+$4\times10^{-9}$.  This is a reproducibility cross-check, not an additional
+ingredient in the proof.
+
+
+\section{The remaining scaling barrier}
+\label{sec:scaling-barrier}
+
+The result is positive but deliberately partial.  Sparse factorization is
+not yet the bottleneck: at $n=10240$, the bordered factorization uses about
+$1.15$ GiB peak resident memory in the floating pilot and retains a full
+inverse candidate margin near $10^3$.  The expensive step is instead the
+deterministic Frobenius certificate, which solves and outwardly rechecks all
+$n$ physical columns.
+
+Between $n=2048$ and $n=5120$, the measured certificate time grows from
+$32.1$ to $240.1$ seconds, a two-point exponent $2.20$.  This is consistent
+with a quadratic-like all-column workload on the tested range.  It is a
+limitation of the present certificate, not evidence that the lifted inverse
+bound fails at smaller noise.
+
+Several next routes preserve the exact sparse linearization while avoiding
+all columns:
+\begin{enumerate}
+ \item a verified sparse Hermitian-inertia test at the threshold
+       $K_*^{-1}$, using a symmetry-preserving indefinite factorization;
+ \item a hierarchical or block-local approximate inverse with a deterministic
+       tail bound for omitted columns;
+ \item selected inversion combined with an operator-decay estimate;
+ \item a multilevel Grushin decomposition that replaces one ambient
+       Frobenius norm by certified norms of smaller diagonal blocks and a
+       low-rank coupling matrix.
+\end{enumerate}
+The first route tests the desired singular threshold directly.  The other
+three attempt to exploit locality and low rank.  None is assumed here.
+
+
+\section{Scope and limitations}
+\label{sec:limitations}
+
+The exact achievements are:
+\begin{enumerate}
+ \item a sparse two-step Grushin linearization with an exact physical inverse
+       block;
+ \item an explicit $1+2p+2k$-channel correction formula and free balancing
+       parameters;
+ \item a direct exact-target Frobenius--Neumann certificate;
+ \item rigorous selected-arc stored-model closures at two scales.
+\end{enumerate}
+
+The following are not proved.
+\begin{enumerate}
+ \item Only the budget-tightest selected arc is closed at each of two scales.
+       Other arcs and the remaining five stored scales are not certified.
+ \item Therefore no full-contour matrix Rouch\'e theorem or root count follows
+       from this paper alone.
+ \item The stored sparse transfer matrices are not enclosed relative to an
+       exact Gaussian integral operator, exact critical constants, or a
+       zero-noise continuum limit.
+ \item The work does not construct a self-adjoint Hilbert--P\'olya operator,
+       identify zeta zeros as eigenvalues, prove a prime-power trace formula,
+       or imply any statement about the Riemann hypothesis.
+\end{enumerate}
+
+The result should therefore be read as a finite-dimensional certified
+resolvent advance.  It removes one genuine conditional gate at two scales
+and identifies the next computational-mathematical barrier without
+extrapolating past it.
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+One-channel lifting created a large gap between the inverse bound required by
+the contour argument and the observed lifted inverse.  The present paper
+turns part of that gap into theorem.  A two-step auxiliary state keeps the
+physical square $QU^2Q$ out of the sparse matrix, while peripheral and packet
+corrections enter through only $1+2p+2k$ border channels.  Sparse LU then
+produces an approximate inverse whose exact stored-target residual can be
+checked independently.
+
+At the first two stored scales, the conservative Frobenius--Neumann bound is
+already far below the available lifted budget, so the selected complement-
+resolvent arcs close rigorously.  The next problem is no longer whether the
+sparse linearization has enough numerical margin.  It is how to certify that
+margin without processing every physical column.  That is a narrower and
+more structured next gate.
+
+
+\appendix
+
+\section{Implementation checks}
+\label{app:checks}
+
+The unit tests verify three exact identities on independent synthetic
+matrices:
+\begin{enumerate}
+ \item the first $n\times n$ block of $\Gmat_t^{-1}$ equals
+       $\Atilde^{-1}$;
+ \item channel balancing preserves $XY$;
+ \item changing $t$ preserves the physical inverse block.
+\end{enumerate}
+Two additional tests verify the Frobenius block-combination formula and the
+Neumann inverse bound against a directly inverted small matrix.
+
+The archived certificate stores SHA-256 hashes of the dangerous triplet,
+the generated approximate inverse stream, the residual centers and radii,
+the linearization and certification sources, the componentwise outward
+arithmetic, the RH-29 scalar algebra, and the RH-29 scale summary.
+
+\section{Reproduction}
+\label{app:reproduction}
+
+From the RH-30 directory, the principal commands are
+\begin{verbatim}
+PYTHONDONTWRITEBYTECODE=1 python -m pytest -q -p no:cacheprovider
+
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+  python experiments/run_sparse_grushin_pilot.py \
+  --sigma 1e-2 --auxiliary-scales 0.25 0.5 1 2 4 --iterations 30
+
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+  python experiments/run_stored_inverse_certificate.py \
+  --sigma 1e-2 --chunk-size 256
+
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+  python experiments/run_stored_inverse_certificate.py \
+  --sigma 4e-3 --chunk-size 256
+
+MPLCONFIGDIR=/tmp/rh30-mpl python experiments/make_figures.py
+\end{verbatim}
+The certificates assume finite intermediates, no overflow, no harmful
+underflow, and the standard round-to-nearest model used by the outward-error
+constants.  Sparse LU output can vary slightly across SuperLU builds; this
+does not invalidate the method because the resulting stored trial inverse is
+rechecked directly.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
