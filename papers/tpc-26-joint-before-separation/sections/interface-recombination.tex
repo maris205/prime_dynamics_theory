@@ -1,0 +1,304 @@
+\section{Physical rows and exact annular recombination}
+\label{sec:tpc26-interface-recombination}
+
+We fix the packet carefully because the cutoff identity is valid only
+when the two quadratic forms use the same physical rows, mask, and
+orbit weight.
+
+\subsection{Primitive opened rows}
+
+Fix \(h\in\Z\setminus\{0\}\), and put
+
+\begin{equation}
+ H=\rad|h|,
+ \qquad H_0=|h|.
+ \label{eq:tpc26-H-H0}
+\end{equation}
+
+Choose
+
+\begin{equation}
+ R=X^{1/2-\delta+o(1)},
+ \qquad 0<\delta<\frac12,
+ \qquad R\le S<T\le X^{C_T},
+ \label{eq:tpc26-RST}
+\end{equation}
+
+where all exponent inequalities used below have fixed margins.  In one
+opened-\(d\) slice the rows are indexed by
+
+\begin{equation}
+ \alpha=(\ell,d),
+ \qquad
+ m_\alpha=\ell d\asymp Q=LD,
+ \label{eq:tpc26-row-index}
+\end{equation}
+
+with
+
+\begin{equation}
+ \ell\in[L/2,2L]\text{ prime},
+ \qquad d\in[D,2D]\cap[1,R^{1/2}],
+ \qquad d\text{ squarefree},
+ \qquad(d,H)=1.
+ \label{eq:tpc26-row-support}
+\end{equation}
+
+We retain
+
+\begin{equation}
+ QJ\asymp X,
+ \qquad L>\max\{2R,2|h|\},
+ \qquad L\ge X^{\lambda_0}
+ \label{eq:tpc26-row-scales}
+\end{equation}
+
+for a fixed \(\lambda_0>0\).  Target primitivity gives
+
+\begin{equation}
+ (w,m_\alpha H)=1
+ \qquad\text{whenever }w\mid m_\alpha j+h.
+ \label{eq:tpc26-target-primitivity}
+\end{equation}
+
+The two row coefficients have the actual provenance
+
+\begin{equation}
+ \gamma_\alpha^{(i)}
+ =\mu(d)(\log\ell)\omega_D^{(i)}(d)
+ \psi_L^{(i)}(\ell/L)\zeta_\alpha^{(i)},
+ \qquad |\zeta_\alpha^{(i)}|\le C,
+ \qquad i=1,2,
+ \label{eq:tpc26-row-provenance}
+\end{equation}
+
+where the smooth dyadic and fixed residue factors range over bounded
+families.  TPC-25 proves, uniformly in such data,
+
+\begin{align}
+ \sum_\alpha|\gamma_\alpha^{(i)}|&\ll Q,
+ \label{eq:tpc26-row-l1}\\
+ \|\gamma^{(i)}\|_\infty&\ll\log(2L),
+ \qquad
+ \|\gamma^{(i)}\|_2^2\ll Q\log(2L).
+ \label{eq:tpc26-row-l2}
+\end{align}
+
+Let \(\mathfrak m(\alpha,\gamma)\) be the actual generic row-pair
+mask.  We use
+
+\begin{equation}
+ |\mathfrak m(\alpha,\gamma)|\le1,
+ \qquad
+ \mathfrak m(\alpha,\gamma)=0
+ \quad\text{if }m_\alpha=m_\gamma,
+ \label{eq:tpc26-mask}
+\end{equation}
+
+and assume that the mask is independent of every divisor and conductor
+variable.  The second condition is structural: the large-shared-factor
+zero estimate uses \(m_\alpha-m_\gamma\ne0\).
+
+Let \(\Xi_{\alpha,\gamma}\) be a uniformly bounded real periodic
+factor of fixed period \(H_0\), and let
+\(\cW_{\alpha,\gamma}\) range over the factorable row--orbit smooth
+family of TPC-25.  In particular, before smooth separation,
+
+\begin{equation}
+ \sup_{\alpha,\gamma}
+ \left|
+ \int_{\R}\cW_{\alpha,\gamma}(t)\,dt
+ \right|\ll1,
+ \label{eq:tpc26-zero-functional}
+\end{equation}
+
+and its continuous Mellin representation has finite weighted variation
+of every fixed order.  These conditions are automatic for the fixed
+dyadic physical cutoffs under consideration; they are not asserted for
+an arbitrary row-dependent smooth family.
+
+Throughout the paper, \(\mathscr D\) denotes the fixed data
+\[
+ h,\ H_0,\ C_T,\ \delta,\ \lambda_0,\ \eps_0,
+\]
+together with all fixed positive exponent margins and the bounded
+smooth, dyadic, sign, and residue families above.  Implied constants may
+depend on \(\mathscr D\), but not on \(X\) or on a row in the retained
+packet.
+
+The annular theorem below uses only this physical-shaped interface.
+When we identify a sample with the published Maynard source profile
+used in TPC-18, we additionally verify the source relations
+\[
+ J=K/D,\qquad D_0<D\le V,\qquad K>2V.
+\]
+Those extra relations certify provenance of that sample; they are not
+silently inserted into the abstract annular argument.
+
+\subsection{Calibrated prefixes}
+
+Put
+
+\begin{equation}
+ a(w)=-\mu(w)\log w,
+ \label{eq:tpc26-a}
+\end{equation}
+
+and define the finite Ramanujan coefficient
+
+\begin{equation}
+ \lambda'_R(w)
+ =w\sum_{b\le R/w}\frac{\mu(wb)\mu(b)}{\varphi(wb)}
+ \quad(w\le R),
+ \qquad
+ \lambda'_R(w)=0\quad(w>R).
+ \label{eq:tpc26-lambda-prime}
+\end{equation}
+
+Set
+
+\begin{equation}
+ b_R(w)=a(w)-\lambda'_R(w).
+ \label{eq:tpc26-bR}
+\end{equation}
+
+All three coefficients vanish off squarefree integers.  For a row
+\(m=\ell d\), let
+
+\begin{equation}
+ \delta_H(m)
+ =\frac{H}{\varphi(H)}
+ \frac{d}{\varphi(d)(\ell-1)}
+ \ll_{\eps,h}\frac{X^\eps}{L}.
+ \label{eq:tpc26-drift}
+\end{equation}
+
+The exact calibrated prefix from TPC-24 is
+
+\begin{equation}
+ P_{m,W}(j)
+ =
+ \sum_{\substack{w\le W\\w\mid mj+h}}b_R(w)-\delta_H(m),
+ \qquad R\le W.
+ \label{eq:tpc26-prefix}
+\end{equation}
+
+Consequently, for \(R\le S<T\),
+
+\begin{equation}
+ L_{m;S,T}(j)
+ :=P_{m,T}(j)-P_{m,S}(j)
+ =\sum_{\substack{S<w\le T\\w\mid mj+h}}a(w).
+ \label{eq:tpc26-long-shell}
+\end{equation}
+
+The restriction \(S\ge R\) is used here: it ensures
+\(b_R(w)=a(w)\) on the entire new shell.
+
+For later use define the raw prefix
+
+\begin{equation}
+ \mathsf A_{m,W}(j)
+ :=\sum_{\substack{w\le W\\w\mid mj+h}}b_R(w),
+ \qquad
+ P_{m,W}=\mathsf A_{m,W}-\delta_H(m).
+ \label{eq:tpc26-raw-prefix}
+\end{equation}
+
+\begin{proposition}[Exact annular prefix identity]
+\label{prop:tpc26-annular-identity}
+For \(R\le S<T\), pointwise in \(m,n,j\),
+
+\begin{align}
+ &P_{m,T}(j)P_{n,T}(j)-P_{m,S}(j)P_{n,S}(j)
+ \notag\\
+ &\quad=
+ \sum_{\substack{u,v\le T\\\max\{u,v\}>S}}
+ b_R(u)b_R(v)
+ \one_{u\mid mj+h}\one_{v\mid nj+h}
+ \notag\\
+ &\qquad
+ -\delta_H(m)L_{n;S,T}(j)
+ -\delta_H(n)L_{m;S,T}(j).
+ \label{eq:tpc26-annular-identity}
+\end{align}
+
+Equivalently, the raw annulus is the disjoint sum of the
+\(b_R\)--\(a\) mixed rectangle, its transpose, and the
+\(a\)--\(a\) both-new square.
+\end{proposition}
+
+\begin{proof}
+By \eqref{eq:tpc26-raw-prefix}, the difference of the two products is
+
+\begin{align*}
+ &\mathsf A_{m,T}\mathsf A_{n,T}
+ -\mathsf A_{m,S}\mathsf A_{n,S}
+ -\delta_H(m)(\mathsf A_{n,T}-\mathsf A_{n,S})\\
+ &\qquad
+ -\delta_H(n)(\mathsf A_{m,T}-\mathsf A_{m,S}).
+\end{align*}
+
+The \(\delta_H(m)\delta_H(n)\) terms cancel exactly.  The first
+difference is the raw joint sum over
+\(u,v\le T\) with \(\max\{u,v\}>S\), while each one-row difference
+is \eqref{eq:tpc26-long-shell}.  This proves the formula.
+\end{proof}
+
+\subsection{The physical quadratic packet}
+
+Using the same physical weight at both cutoffs, define
+
+\begin{align}
+ \cQ_W^{\rm phys}
+ :={}&
+ \sum_{\alpha,\gamma}
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \mathfrak m(\alpha,\gamma)
+ \notag\\
+ &\quad\times
+ \sum_{\substack{j\in\Z\\(j,H)=1}}
+ \Xi_{\alpha,\gamma}(j)
+ \cW_{\alpha,\gamma}(j/J)
+ P_{m_\alpha,W}(j)P_{m_\gamma,W}(j).
+ \label{eq:tpc26-physical-QW}
+\end{align}
+
+The natural row--orbit scale is
+
+\begin{equation}
+ JQ^2\asymp XQ.
+ \label{eq:tpc26-natural-scale}
+\end{equation}
+
+\begin{lemma}[Drift contribution]
+\label{lem:tpc26-drift-bound}
+The two drift terms in \eqref{eq:tpc26-annular-identity} contribute to
+\(\cQ_T^{\rm phys}-\cQ_S^{\rm phys}\) at most
+
+\begin{equation}
+ \ll_{\eps,\mathscr D}JQ^2L^{-1}X^\eps.
+ \label{eq:tpc26-drift-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+On the fixed orbit support,
+
+\[
+ |L_{m;S,T}(j)|
+ \le\sum_{w\mid mj+h}|a(w)|\ll_\eps X^\eps.
+\]
+
+There are \(O_{\mathscr D}(J)\) orbit points.  Apply
+\eqref{eq:tpc26-drift}, delete the bounded mask, and use
+\eqref{eq:tpc26-row-l1} on both row sides.
+\end{proof}
+
+\begin{remark}[Cutoff-independent physical weights]
+\label{rem:tpc26-fixed-weight}
+The identity compares two cutoffs inside one fixed physical packet.
+If the smooth partition, residue factor, row family, or mask is changed
+with \(W\), an additional weight-difference term appears and is not
+covered by \cref{prop:tpc26-annular-identity}.
+\end{remark}

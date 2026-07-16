@@ -1,0 +1,665 @@
+\section{The symmetric annular exact-conductor box}
+\label{sec:tpc26-symmetric-conductor}
+
+We treat every nonzero additive frequency of the raw annular joint
+lattice in \eqref{eq:tpc26-annular-identity}.  The lower annular
+restriction is retained in exact identities and may be discarded only
+when enlarging a nonnegative energy.
+
+\subsection{Joint Poisson and pairwise character coordinates}
+
+We fix all Fourier and finite-group normalizations in one place.  Write
+
+\begin{equation}
+ e(t)=e^{2\pi it},
+ \qquad
+ e_q(a)=e(a/q),
+ \qquad
+ c_H(r)=\sum_{a\in(\Z/H\Z)^\times}e_H(ra),
+ \qquad
+ \widehat F(y)=\int_{\R}F(x)e(-xy)\,dx.
+ \label{eq:tpc26-Fourier-normalizations}
+\end{equation}
+
+Here \(F\in C_c^\infty(\R)\) is the common orbit weight of one
+separated Mellin component; in particular it is the same function for
+every divisor pair in that component.  Put
+
+\begin{equation}
+ \cU_q=(\Z/q\Z)^\times,
+ \qquad
+ \mathfrak X(q)=\widehat{\cU_q}.
+ \label{eq:tpc26-unit-character-groups}
+\end{equation}
+
+Target primitivity gives \((H,q)=1\), and throughout this section
+\(\overline H\) denotes the inverse of \(H\) modulo \(q\).  For a
+function \(G:\cU_q\to\C\), our multiplicative Fourier convention is
+
+\begin{equation}
+ \widehat G^{\,\times}(\chi)
+ =\sum_{\xi\in\cU_q}G(\xi)\overline{\chi(\xi)},
+ \qquad
+ G(\xi)=\frac1{\varphi(q)}
+ \sum_{\chi\in\mathfrak X(q)}
+ \widehat G^{\,\times}(\chi)\chi(\xi).
+ \label{eq:tpc26-multiplicative-Fourier}
+\end{equation}
+
+For one effective squarefree divisor pair write
+
+\begin{equation}
+ g=(u,v),
+ \qquad u=gc,
+ \qquad v=gd,
+ \qquad q=[u,v]=g\,c\,d.
+ \label{eq:tpc26-gcdq}
+\end{equation}
+
+Then \(g,c,d\) are pairwise coprime.  The two target congruences are
+compatible exactly when
+
+\begin{equation}
+ g\mid m-n.
+ \label{eq:tpc26-compatibility}
+\end{equation}
+
+When compatible, they determine one unit residue class
+\(\rho_{m,n}^{u,v}\bmod q\).  Suppressing only the fixed \(H_0\)
+residue splitting, direct Poisson summation gives
+
+\begin{align}
+ &\sum_{\substack{j\in\Z\\(j,H)=1}}
+ F(j/J)
+ \one_{u\mid mj+h}\one_{v\mid nj+h}
+ \notag\\
+ &\qquad=
+ \frac{J}{Hq}\sum_{r\in\Z}c_H(r)
+ e_q(r\overline H\rho_{m,n}^{u,v})
+ \widehat F\left(\frac{rJ}{Hq}\right).
+ \label{eq:tpc26-raw-joint-poisson}
+\end{align}
+
+The fixed residue cells change only the bounded local factor and a
+fixed modulus; they do not change any exponent below.  Frequency zero
+was treated in \cref{sec:tpc26-physical-zero}.  We now assume \(r\ne0\).
+
+Since \(q=ud\) and \((u,d)=1\), there is an exact product
+decomposition
+
+\begin{equation}
+ \mathfrak X(q)\simeq\mathfrak X(u)\times\mathfrak X(d),
+ \qquad \chi\longmapsto(\alpha,\gamma),
+ \qquad
+ \cond\chi=(\cond\alpha)(\cond\gamma).
+ \label{eq:tpc26-product-characters}
+\end{equation}
+
+For separated row weights \(x_m,y_n\), put
+
+\begin{equation}
+ c_{m,n}^{(g)}
+ =x_my_n\mathfrak m(m,n)\one_{g\mid m-n}.
+ \label{eq:tpc26-compatibility-matrix}
+\end{equation}
+
+For this fixed pair, define the unweighted unit fiber
+
+\begin{equation}
+ Z_{u,v}(\xi)
+ =\sum_{\substack{m,n\\g\mid m-n\\
+                   \rho_{m,n}^{u,v}\equiv\xi\pmod q}}
+ x_my_n\mathfrak m(m,n),
+ \qquad \xi\in\cU_q,
+ \label{eq:tpc26-pair-unit-fiber}
+\end{equation}
+
+with all primitive row restrictions retained.  Its unit-fiber mean and
+discrepancy are
+
+\begin{equation}
+ \overline Z_{u,v}
+ =\frac1{\varphi(q)}\sum_{\xi\in\cU_q}Z_{u,v}(\xi),
+ \qquad
+ D_{u,v}(\xi)=Z_{u,v}(\xi)-\overline Z_{u,v}.
+ \label{eq:tpc26-pair-mean-discrepancy}
+\end{equation}
+
+The exact multiplicative transform of the pair row fiber is
+
+\begin{equation}
+ \widehat Z_{u,v}^{\,\times}(\chi)
+ =\overline{\chi(-h)}
+ \sum_{m,n}c_{m,n}^{(g)}\alpha(m)\gamma(n).
+ \label{eq:tpc26-pair-transform}
+\end{equation}
+
+There is no residual \(1/\varphi(g)\), and the second row character is
+not conjugated.  This is finite CRT algebra; see TPC-22--24
+\citep{WangTPC22,WangTPC23,WangTPC24}.
+
+For a dyadic conductor scale \(F_0\ge1\), let
+
+\begin{equation}
+ \mathfrak X_{F_0}(w)
+ =\{\chi\in\mathfrak X(w):\cond\chi\asymp F_0\},
+ \label{eq:tpc26-exact-conductor-family}
+\end{equation}
+
+where \(F_0=1\) means the unique principal character.  Under the CRT
+identification in \eqref{eq:tpc26-product-characters}, define the
+pairwise exact-conductor projection by
+
+\begin{align}
+ D_{u,v}^{F_1,F_2}(\xi)
+ :={}&\frac1{\varphi(q)}
+ \sum_{\alpha\in\mathfrak X_{F_1}(u)}
+ \sum_{\gamma\in\mathfrak X_{F_2}(d)}
+ \widehat D_{u,v}^{\,\times}(\alpha\otimes\gamma)
+ (\alpha\otimes\gamma)(\xi).
+ \label{eq:tpc26-pair-conductor-projection}
+\end{align}
+
+For every nonprincipal pair \((\alpha,\gamma)\ne(\mathbf1,\mathbf1)\),
+centering changes no transform:
+
+\begin{equation}
+ \widehat D_{u,v}^{\,\times}(\alpha\otimes\gamma)
+ =\widehat Z_{u,v}^{\,\times}(\alpha\otimes\gamma).
+ \label{eq:tpc26-centering-transform}
+\end{equation}
+
+\begin{lemma}[Annular compatibility energy]
+\label{lem:tpc26-compatibility-energy}
+For every separated Mellin component from
+\cref{lem:tpc26-physical-transfer},
+
+\begin{equation}
+ \boxed{
+ \sum_{g\le T}\sum_{m,n}|c_{m,n}^{(g)}|^2
+ \ll_\eps X^\eps\|x\|_2^2\|y\|_2^2
+ \ll_\eps Q^2X^\eps.}
+ \label{eq:tpc26-compatibility-energy}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The mask removes \(m=n\).  Therefore
+
+\[
+ \sum_{g\le T}\sum_{m,n}|c_{m,n}^{(g)}|^2
+ \le
+ \sum_{m\ne n}|x_m|^2|y_n|^2
+ \sum_{g\mid m-n}1.
+\]
+
+The last multiplicity is \(X^{o(1)}\), independently of \(T\), and
+the two row energies follow from
+\eqref{eq:tpc26-row-l2} after absorbing fixed logarithms into
+\(X^\eps\).
+\end{proof}
+
+\subsection{Tensor energy at the true conductors}
+
+We use the exact-conductor large sieve in the normalization
+
+\begin{equation}
+ \sum_{w\asymp W}\frac1{\varphi(w)}
+ \sum_{\substack{\chi\in\mathfrak X(w)\\\cond\chi\asymp F}}
+ \left|\sum_ra_r\chi(r)\right|^2
+ \ll_\eps X^\eps
+ \left(F+\frac NF\right)\sum_r|a_r|^2,
+ \label{eq:tpc26-exact-conductor-LS}
+\end{equation}
+
+where \(a_r\) lies in an interval of length \(N\).  It follows from the
+primitive multiplicative large sieve at the true conductor after
+summing the inducing quotient \citep{IwaniecKowalski2004,WangTPC22}.
+Put
+
+\begin{equation}
+ \cK_Q(F)=F+\frac QF.
+ \label{eq:tpc26-KQ}
+\end{equation}
+
+For dyadic \(Y,F_1,F_2\), let
+\(\cE^{\rm ann}_{Y;S,T}(F_1,F_2)\) be the sum
+
+\begin{align}
+ &\sum_{\substack{g,c,d\ \mathrm{pairwise\ coprime}\\
+                  gc,gd\le T,\ \max\{gc,gd\}>S\\
+                  g\,c\,d\asymp Y}}
+ \frac{|b_R(gc)b_R(gd)|^2}{\varphi(g\,c\,d)}
+ \notag\\
+ &\quad\times
+ \sum_{\alpha\in\mathfrak X_{F_1}(gc)}
+ \sum_{\gamma\in\mathfrak X_{F_2}(d)}
+ \left|
+ \sum_{m,n}c_{m,n}^{(g)}\alpha(m)\gamma(n)
+ \right|^2,
+ \label{eq:tpc26-annular-energy}
+\end{align}
+
+with every primitive row restriction retained.
+
+\begin{theorem}[Symmetric annular conductor energy]
+\label{thm:tpc26-symmetric-energy}
+Uniformly for \(Y\le T^2\) and \(F_1,F_2\le T\),
+
+\begin{equation}
+ \boxed{
+ \cE^{\rm ann}_{Y;S,T}(F_1,F_2)
+ \ll_\eps X^\eps\|x\|_2^2\|y\|_2^2
+ \cK_Q(F_1)\cK_Q(F_2)
+ \ll_\eps Q^2X^\eps
+ \cK_Q(F_1)\cK_Q(F_2).}
+ \label{eq:tpc26-symmetric-energy}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Fix \(g\), split the two ambient moduli dyadically, and enlarge the
+nonnegative sum by deleting the annular lower bound, divisibility, and
+coprimality restrictions after the dyadic ranges have been retained.
+Apply \eqref{eq:tpc26-exact-conductor-LS} in the \(m\)-coordinate in
+its Hilbert-valued form, leaving the \(n\)-coordinate as a vector, and
+then apply it in the \(n\)-coordinate.  Since both row variables occupy
+intervals of length \(O(Q)\), the result for fixed \(g\) is
+
+\[
+ \ll_\eps X^\eps
+ \cK_Q(F_1)\cK_Q(F_2)
+ \sum_{m,n}|c_{m,n}^{(g)}|^2.
+\]
+
+Sum over \(g\) and invoke
+\cref{lem:tpc26-compatibility-energy}.  The soft divisor coefficients
+and logarithmically many subdivisions are absorbed by \(X^\eps\).
+\end{proof}
+
+\subsection{Two estimates for one scalar cell}
+
+Assume the inherited no-wrap margin
+
+\begin{equation}
+ J\ge4HX^{\eps_0}
+ \label{eq:tpc26-no-wrap}
+\end{equation}
+
+for a fixed \(\eps_0>0\), and choose once and for all
+
+\begin{equation}
+ 0<\omega<\eps_0.
+ \label{eq:tpc26-omega}
+\end{equation}
+
+Restricting \eqref{eq:tpc26-raw-joint-poisson} to
+
+\begin{equation}
+ 0<|r|\le X^\omega Hq/J
+ \label{eq:tpc26-retained-frequency}
+\end{equation}
+
+keeps \(|r|<q/4\) for large \(X\).  For the fixed divisor pair
+\(u=gc,v=gd\), define the retained
+exact-conductor scalar
+
+\begin{align}
+ \cL_{u,v}^{F_1,F_2,\le\omega}
+ :={}&\frac{J}{Hq}
+ \sum_{0<|r|\le X^\omega Hq/J}
+ c_H(r)\widehat F\left(\frac{rJ}{Hq}\right)
+ \notag\\
+ &\qquad\qquad\qquad\times
+ \sum_{\xi\in\cU_q}D_{u,v}^{F_1,F_2}(\xi)
+ e_q(r\overline H\xi).
+ \label{eq:tpc26-pair-cell-functional}
+\end{align}
+
+The scalar annular cell is the pairwise absolute aggregate
+
+\begin{align}
+ \mathfrak L^{\rm ann}_{Y;S,T}(F_1,F_2)
+ :={}&
+ \sum_{\substack{g,c,d\ \mathrm{pairwise\ coprime}\\
+                  gc,gd\le T,\ \max\{gc,gd\}>S\\
+                  g\,c\,d\asymp Y}}
+ |b_R(gc)b_R(gd)|
+ |\cL_{gc,gd}^{F_1,F_2,\le\omega}|.
+ \label{eq:tpc26-annular-cell-definition}
+\end{align}
+
+Thus \(\mathfrak L^{\rm ann}\) is a sum of projections formed
+\emph{inside each genuine unit fiber}; it is not the norm of a
+fictitious global rectangular projection.
+
+\begin{lemma}[Homogeneous restricted-frequency norm route]
+\label{lem:tpc26-norm-route}
+For every exact-conductor cell,
+
+\begin{equation}
+ \mathfrak L^{\rm ann}_{Y;S,T}(F_1,F_2)
+ \ll_\eps X^\eps\|x\|_2\|y\|_2
+ \sqrt{JY\cK_Q(F_1)\cK_Q(F_2)}
+ \ll_\eps QX^\eps
+ \sqrt{JY\cK_Q(F_1)\cK_Q(F_2)}.
+ \label{eq:tpc26-norm-route}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For one \(q\), set
+
+\[
+ \cP_q(\xi)=\frac{J}{Hq}
+ \sum_{0<|r|\le X^\omega Hq/J}
+ c_H(r)\widehat F\left(\frac{rJ}{Hq}\right)
+ e_q(r\overline H\xi).
+\]
+
+Multiplicative Parseval gives the exact block identity
+
+\begin{equation}
+ \|D_{u,v}^{F_1,F_2}\|_{\ell^2(\cU_q)}^2
+ =\frac1{\varphi(q)}
+ \sum_{\substack{\alpha\in\mathfrak X_{F_1}(u)\\
+                  \gamma\in\mathfrak X_{F_2}(d)}}
+ |\widehat D_{u,v}^{\,\times}(\alpha\otimes\gamma)|^2.
+ \label{eq:tpc26-pair-block-Parseval}
+\end{equation}
+
+The no-wrap inequality makes distinct retained \(r\)'s incongruent
+modulo \(q\).  Additive orthogonality on all residues, followed by
+Schwartz decay of \(\widehat F\), therefore gives
+
+\begin{align}
+ \sum_{\xi\in\cU_q}|\cP_q(\xi)|^2
+ &\le \sum_{\xi\bmod q}|\cP_q(\xi)|^2
+ \notag\\
+ &=\frac{J^2}{H^2q}
+ \sum_{0<|r|\le X^\omega Hq/J}
+ |c_H(r)|^2
+ \left|\widehat F\left(\frac{rJ}{Hq}\right)\right|^2
+ \ll_{F,H}J.
+ \label{eq:tpc26-Pq-l2}
+\end{align}
+
+Multiplicative Parseval and Cauchy--Schwarz now imply
+
+\begin{align}
+ |\cL_{u,v}^{F_1,F_2,\le\omega}|
+ &\le \|\cP_q\|_{\ell^2(\cU_q)}
+       \|D_{u,v}^{F_1,F_2}\|_{\ell^2(\cU_q)}
+ \notag\\
+ &\ll_{F,H}
+ \left\{\frac{J}{\varphi(q)}
+ \sum_{\substack{\alpha\in\mathfrak X_{F_1}(u)\\
+                   \gamma\in\mathfrak X_{F_2}(d)}}
+ |\widehat D_{u,v}^{\,\times}(\alpha\otimes\gamma)|^2
+ \right\}^{1/2}.
+ \label{eq:tpc26-pair-norm-chain}
+\end{align}
+
+There are \(O_\eps(YX^\eps)\) squarefree triples
+\(g,c,d\) with \(g\,c\,d\asymp Y\).  Sum
+\eqref{eq:tpc26-pair-norm-chain} over those triples and apply
+Cauchy--Schwarz across divisor pairs.  By
+\eqref{eq:tpc26-centering-transform}, the resulting squared factor is
+bounded by \(\cE^{\rm ann}_{Y;S,T}(F_1,F_2)\), while the counting
+factor is \(O_\eps(JYX^\eps)\).  The homogeneous estimate in
+\cref{thm:tpc26-symmetric-energy} proves the first inequality in
+\eqref{eq:tpc26-norm-route}; \eqref{eq:tpc26-row-l2} proves the second.
+\end{proof}
+
+There is also an exact-conductor induced-Gauss route.  If
+\(f_1=\cond\alpha\) and \(f_2=\cond\gamma\), put
+\(f=f_1f_2\) and \(e=q/f\).  Squarefreeness and the product
+decomposition imply \((e,f)=1\), and finite CRT algebra
+gives
+
+\begin{equation}
+ \left|
+ \sum_{\xi\in\cU_q}(\alpha\otimes\gamma)(\xi)
+ e_q(r\overline H\xi)
+ \right|
+ \le (f_1f_2)^{1/2}|c_e(r)|.
+ \label{eq:tpc26-induced-Gauss-factor}
+\end{equation}
+
+The two primitive Gauss factors produce \((f_1f_2)^{1/2}\); the
+remaining inducing quotient produces the Ramanujan sum.  At nonzero
+frequency,
+
+\begin{equation}
+ \sum_{r\ne0}|c_H(r)c_e(r)|
+ \left|\widehat F\left(\frac{rJ}{Hq}\right)\right|
+ \ll_{F,H}\frac{Hq}{J}\tau(e).
+ \label{eq:tpc26-Ramanujan-frequency}
+\end{equation}
+
+The exclusion \(r\ne0\) is essential here: \(c_e(0)=\varphi(e)\), and
+that frequency belongs to the physical zero theorem.
+
+\begin{lemma}[Homogeneous induced-Gauss route]
+\label{lem:tpc26-Gauss-route}
+For every nonprincipal exact-conductor cell,
+
+\begin{equation}
+ \mathfrak L^{\rm ann}_{Y;S,T}(F_1,F_2)
+ \ll_\eps X^\eps\|x\|_2\|y\|_2F_1F_2
+ \sqrt{\cK_Q(F_1)\cK_Q(F_2)}
+ \ll_\eps QF_1F_2X^\eps
+ \sqrt{\cK_Q(F_1)\cK_Q(F_2)}.
+ \label{eq:tpc26-Gauss-route}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Insert \eqref{eq:tpc26-pair-conductor-projection} into
+\eqref{eq:tpc26-pair-cell-functional} before summing \(r\).  For fixed
+\(u,d\), squarefreeness gives the elementary character count
+
+\begin{equation}
+ \#\mathfrak X_{F_i}(w)\ll_\eps F_iX^\eps
+ \qquad(w\text{ squarefree}).
+ \label{eq:tpc26-cell-character-count}
+\end{equation}
+
+Indeed, there are \(X^\eps\) possible conductor divisors of \(w\), and
+each supports \(O(F_i)\) primitive characters.  Apply
+\eqref{eq:tpc26-induced-Gauss-factor} and
+\eqref{eq:tpc26-Ramanujan-frequency}; then Cauchy--Schwarz in the
+characters gives, for one divisor pair,
+
+\begin{align}
+ |\cL_{u,v}^{F_1,F_2,\le\omega}|
+ \ll_{\eps,F,H}{}&
+ \frac{F_1F_2X^\eps}{\varphi(q)}
+ \left\{
+ \sum_{\substack{\alpha\in\mathfrak X_{F_1}(u)\\
+                   \gamma\in\mathfrak X_{F_2}(d)}}
+ |\widehat D_{u,v}^{\,\times}(\alpha\otimes\gamma)|^2
+ \right\}^{1/2}.
+ \label{eq:tpc26-pair-Gauss-chain}
+\end{align}
+
+Restricting the frequency sum to the retained range only decreases this
+absolute majorant.  Sum \eqref{eq:tpc26-pair-Gauss-chain} over the
+annular divisor pairs and use Cauchy--Schwarz with weights
+
+\[
+ \frac{|b_R(u)b_R(v)|^2}{\varphi(q)}
+ \quad\hbox{and}\quad
+ \frac1{\varphi(q)}.
+\]
+
+The first factor is the square root of the conductor energy, and
+
+\begin{equation}
+ \sum_{\substack{g,c,d\ \mathrm{pairwise\ coprime}\\
+                  g\,c\,d\asymp Y}}
+ \frac1{\varphi(g\,c\,d)}
+ \ll_\eps X^\eps.
+ \label{eq:tpc26-reciprocal-phi-triples}
+\end{equation}
+
+Indeed, after grouping by \(q=g\,c\,d\), the number of pairwise
+coprime factorizations is at most \(3^{\omega(q)}\), while
+\(q/\varphi(q)\ll_\eps X^\eps\); summing \(1/q\) over \(q\asymp Y\)
+costs \(O(1)\).
+
+The homogeneous form of \cref{thm:tpc26-symmetric-energy} proves the
+first inequality in \eqref{eq:tpc26-Gauss-route}; the physical row
+energy proves the second.
+\end{proof}
+
+Both lemmas estimate the same pairwise scalar cell
+\eqref{eq:tpc26-annular-cell-definition}.  We may therefore take their
+minimum:
+
+\begin{theorem}[Symmetric annular cell bound]
+\label{thm:tpc26-cell-bound}
+For every nonprincipal conductor cell,
+
+\begin{equation}
+ \boxed{
+ \mathfrak L^{\rm ann}_{Y;S,T}(F_1,F_2)
+ \ll_\eps QX^\eps
+ \sqrt{\cK_Q(F_1)\cK_Q(F_2)}
+ \min\{\sqrt{JY},F_1F_2\}.}
+ \label{eq:tpc26-cell-bound}
+\end{equation}
+\end{theorem}
+
+The phrase ``nonprincipal'' excludes only the global cell
+\((F_1,F_2)=(1,1)\).  Cells with one principal coordinate remain in
+\eqref{eq:tpc26-cell-bound}.
+
+\subsection{Exact nonprincipal reassembly}
+
+For a fixed denominator \(q\), assemble the annular unit fiber before
+taking any conductor projection:
+
+\begin{align}
+ Z_{q;S,T}^{\rm ann}(\xi)
+ :={}&
+ \sum_{\substack{u,v\le T,\ \max\{u,v\}>S\\
+                  [u,v]=q}}
+ b_R(u)b_R(v)Z_{u,v}(\xi),
+ \qquad \xi\in\cU_q.
+ \label{eq:tpc26-assembled-annular-fiber}
+\end{align}
+
+Put
+
+\begin{equation}
+ \overline Z_{q;S,T}^{\rm ann}
+ =\frac1{\varphi(q)}
+ \sum_{\xi\in\cU_q}Z_{q;S,T}^{\rm ann}(\xi),
+ \qquad
+ D_{q;S,T}^{\rm ann}
+ =Z_{q;S,T}^{\rm ann}-\overline Z_{q;S,T}^{\rm ann}.
+ \label{eq:tpc26-assembled-annular-centering}
+\end{equation}
+
+The full nonzero discrepancy packet at \(q\) is
+
+\begin{align}
+ \mathscr J_{q;S,T}^{\rm disc,\ne0}
+ :={}&\frac{J}{Hq}\sum_{r\ne0}c_H(r)
+ \widehat F\left(\frac{rJ}{Hq}\right)
+ \sum_{\xi\in\cU_q}D_{q;S,T}^{\rm ann}(\xi)
+ e_q(r\overline H\xi).
+ \label{eq:tpc26-annular-discrepancy-packet}
+\end{align}
+
+Let \(\mathscr J_{q;S,T}^{\rm disc,\ne0,\le\omega}\) denote the same
+expression with \(0<|r|\le X^\omega Hq/J\).  At a fixed Mellin
+component, linearity of \eqref{eq:tpc26-pair-conductor-projection} and
+the pairwise triangle inequality give the retained reassembly bound
+
+\begin{equation}
+ \sum_{q\asymp Y}
+ |\mathscr J_{q;S,T}^{\rm disc,\ne0,\le\omega}|
+ \le
+ \sum_{\substack{F_1,F_2\le T\\
+                  (F_1,F_2)\ne(1,1)}}
+ \mathfrak L^{\rm ann}_{Y;S,T}(F_1,F_2).
+ \label{eq:tpc26-retained-nonprincipal-reassembly}
+\end{equation}
+
+The Fourier tail is removed from this single undecomposed packet,
+before exact-conductor projection.  Consequently, after restoring the
+fixed residue cells and integrating the Mellin representation from
+\cref{lem:tpc26-physical-transfer}, \eqref{eq:tpc26-retained-nonprincipal-reassembly}
+and \cref{lem:tpc26-automatic-tail} give, for each dyadic \(Y\),
+
+\[
+ \mathscr J_{q;S,T}^{\rm phys,disc,\ne0}
+ :=
+ \sum_{\text{fixed residue cells}}
+ \int_{\R^4}
+ \mathscr J_{q;S,T,\boldsymbol\tau}^{\rm disc,\ne0}
+ \,d\nu(\boldsymbol\tau).
+\]
+
+Thus
+
+\begin{equation}
+ \boxed{
+ \sum_{q\asymp Y}
+ |\mathscr J_{q;S,T}^{\rm phys,disc,\ne0}|
+ \le
+ \int
+ \sum_{\substack{F_1,F_2\le T\\
+                  (F_1,F_2)\ne(1,1)}}
+ \mathfrak L^{\rm ann}_{Y;S,T,\boldsymbol\tau}(F_1,F_2)
+ \,d|\nu|(\boldsymbol\tau)
+ +O_{A,\mathscr D}(X^{-A}Q^2).}
+ \label{eq:tpc26-nonprincipal-reassembly}
+\end{equation}
+
+Here the conductor scales are dyadic, so the right side has only
+\(O(\log^2(2T))\) cells.  The error is precisely the physical tail in
+\cref{lem:tpc26-automatic-tail}; no pair-separated tail hypothesis is
+being inserted.
+
+\subsection{Principal mean and reassembly}
+
+For one divisor pair the principal multiplicative character produces
+the unit-fiber mean.  In the notation above its assembled nonzero
+packet is
+
+\begin{align}
+ \mathscr J_{q;S,T}^{\rm mean,\ne0}
+ :={}&\frac{J}{Hq}\sum_{r\ne0}c_H(r)
+ \widehat F\left(\frac{rJ}{Hq}\right)
+ \overline Z_{q;S,T}^{\rm ann}
+ \sum_{\xi\in\cU_q}e_q(r\overline H\xi).
+ \label{eq:tpc26-annular-mean-packet}
+\end{align}
+
+Thus the last sum is the Ramanujan sum \(c_q(r)\).  Poisson summation
+over reduced classes and the elementary lcm cost
+
+\begin{equation}
+ \sum_{u,v\le T}\frac1{[u,v]}
+ \ll\log^3(2T)
+ \label{eq:tpc26-lcm-cost}
+\end{equation}
+
+give the annular principal estimate
+
+\begin{equation}
+ \sum_q|\mathscr J_{q;S,T}^{\rm mean,\ne0}|
+ \ll_{\eps,\mathscr D}Q^2X^\eps.
+ \label{eq:tpc26-principal-mean}
+\end{equation}
+
+It is power-saving relative to \(XQ=Q^2J\) whenever \(1-\beta>0\)
+with fixed margin.  The nonprincipal part reassembles according to
+\eqref{eq:tpc26-nonprincipal-reassembly}, whose single undecomposed
+frequency-tail error is arbitrarily power-saving.  No condition \(T<J\)
+is used: the
+raw annular identity has already removed the two long single channels
+before this section begins.

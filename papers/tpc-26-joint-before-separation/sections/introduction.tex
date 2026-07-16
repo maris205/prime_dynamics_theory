@@ -1,0 +1,246 @@
+\section{Introduction}
+\label{sec:tpc26-introduction}
+
+The primitive M\"obius-tail program of TPC-18--25 reorganizes a
+fixed-shift prime-pair residual into dyadic opened rows
+
+\[
+ m=\ell d,
+ \qquad \ell\asymp L\text{ prime},
+ \qquad d\asymp D,
+ \qquad Q=LD,
+ \qquad QJ\asymp X.
+\]
+
+TPC-18 isolates the generic off-diagonal row correlation, TPC-19--20
+derive its exact divisor and joint-Poisson normal forms, TPC-21 closes
+the Ramanujan mean, and TPC-22--23 control a selected square of divisor
+coordinates by exact-conductor large-sieve estimates
+\citep{WangTPC18,WangTPC19,WangTPC20,WangTPC21,WangTPC22,WangTPC23}.
+TPC-24 then lets one new divisor leg pass beyond the old Poisson length,
+and TPC-25 removes the remaining projective-mass hypothesis for the
+actual opened-\(d\) packet by extracting physical frequency zero before
+smooth row--orbit separation \citep{WangTPC24,WangTPC25}.
+
+The object left between those results is elementary to state.  For a
+calibrated residual prefix \(P_{m,W}\), put
+
+\begin{equation}
+ L_{m;S,T}=P_{m,T}-P_{m,S},
+ \qquad R\le S<T.
+ \label{eq:tpc26-intro-L}
+\end{equation}
+
+The quadratic cutoff difference expands as
+
+\begin{align}
+ P_{m,T}P_{n,T}-P_{m,S}P_{n,S}
+ ={}&P_{m,S}L_{n;S,T}
+ +L_{m;S,T}P_{n,S}
+ +L_{m;S,T}L_{n;S,T}.
+ \label{eq:tpc26-intro-three-pieces}
+\end{align}
+
+The first two pieces are the one-sided increments of TPC-24--25.  The
+third is the both-new square.  Estimating the three terms separately,
+however, hides a more useful exact identity.  The present paper first
+recombines the whole left side of
+\eqref{eq:tpc26-intro-three-pieces}, before either divisor leg is
+centered, Mellin-separated, or sent through a Fourier channel.
+
+\subsection{Joint before separation}
+
+Let
+
+\[
+ a(u)=-\mu(u)\log u,
+ \qquad b_R(u)=a(u)-\lambda'_R(u),
+ \qquad \lambda'_R(u)=0\quad(u>R).
+\]
+
+The calibrated prefix identity of TPC-24 is
+
+\begin{equation}
+ P_{m,W}(j)=
+ \sum_{\substack{u\le W\\u\mid mj+h}}b_R(u)-\delta_H(m).
+ \label{eq:tpc26-intro-prefix}
+\end{equation}
+
+Because \(S\ge R\), every new coefficient is \(b_R(u)=a(u)\).  Direct
+subtraction gives
+
+\begin{align}
+ &P_{m,T}(j)P_{n,T}(j)-P_{m,S}(j)P_{n,S}(j)
+ \notag\\
+ &\quad=
+ \sum_{\substack{u,v\le T\\\max\{u,v\}>S}}
+ b_R(u)b_R(v)
+ \one_{u\mid mj+h}\one_{v\mid nj+h}
+ \notag\\
+ &\qquad\quad
+ -\delta_H(m)L_{n;S,T}(j)
+ -\delta_H(n)L_{m;S,T}(j).
+ \label{eq:tpc26-intro-annular-identity}
+\end{align}
+
+The first term is one raw joint lattice on the annulus
+
+\[
+ \{(u,v):u,v\le T,\ \max\{u,v\}>S\}.
+\]
+
+It contains both mixed orientations and the both-new square.  More
+importantly, it contains no single-indicator Poisson channel.  The two
+remaining terms are explicit row drifts, smaller by \(L^{-1}\) on the
+physical packet.  This order of operations is the structural reason
+that the nonzero spectrum may be treated with a symmetric conductor
+box even when \(T>J\).
+
+\subsection{The new zero-mode theorem}
+
+The mixed parts of the annulus inherit the pointwise shell theorem of
+TPC-24.  For the new shell--shell corner, the zero kernel is
+
+\begin{equation}
+ K^{\square,0}_{S,T}(m,n)
+ =
+ \sum_{\substack{S<u,v\le T\\
+                  (u,mH)=(v,nH)=1}}
+ \frac{a(u)a(v)}{[u,v]}
+ \one_{(u,v)\mid m-n}.
+ \label{eq:tpc26-intro-square-zero}
+\end{equation}
+
+Writing \(g=(u,v)\), \(u=gc\), and \(v=gd\) makes
+\((g,c,d)\) pairwise coprime on the squarefree support.  If
+\(g\le SX^{-\kappa}\), the innermost \(d\)-sum is the difference of
+two complete M\"obius calibrations at \(T/g\) and \(S/g\); their common
+main constant cancels.  If \(g>SX^{-\kappa}\), the off-diagonal
+condition gives \(g\mid m-n\ne0\).  We obtain
+
+\begin{equation}
+ \boxed{
+ K^{\square,0}_{S,T}(m,n)
+ \ll_{A,\kappa}
+ (\log X)^{-A}+X^{-s+\kappa+o(1)}}
+ \label{eq:tpc26-intro-zero-bound}
+\end{equation}
+
+for \(S=X^{s+o(1)}\), every fixed \(A>0\), and every
+\(0<\kappa<s\).  TPC-25 proves that the actual prime--M\"obius row
+coefficients have \(O(Q^2)\) absolute pair mass before smooth
+separation.  Consequently \eqref{eq:tpc26-intro-zero-bound} closes the
+physical annular zero mode without a mean-zero test, a row-balance
+hypothesis, or a new projective norm.
+
+\subsection{A sharp symmetric conductor ledger}
+
+At nonzero additive frequency the annular restriction only reduces the
+nonnegative conductor energy.  Enlarge it to \(u,v\le T\), resolve the
+two exact coordinate conductors, and combine the restricted-frequency
+norm route with the induced-Gauss route.  Write
+
+\begin{equation}
+ Q=X^{\beta+o(1)},\qquad J=X^{1-\beta+o(1)},
+ \qquad T=X^{t+o(1)}.
+ \label{eq:tpc26-intro-exponents}
+\end{equation}
+
+For a denominator cell \(Y=X^{y+o(1)}\) and conductor cells
+\(F_i=X^{f_i+o(1)}\), put
+
+\[
+ k_i=\max\{f_i,\beta-f_i\}.
+\]
+
+The two saving exponents are
+
+\begin{equation}
+ \eta_A=\frac{\beta+1-y-k_1-k_2}{2},
+ \qquad
+ \eta_B=1-f_1-f_2-\frac{k_1+k_2}{2}.
+ \label{eq:tpc26-intro-etaAB}
+\end{equation}
+
+Here \(y\le2t\) and \(0\le f_i\le t\).  We compute the exact relaxed-
+box minimax
+
+\begin{equation}
+ M_\beta(t)=
+ \inf_{0\le f_1,f_2\le t}
+ \max\{\eta_A(2t,f_1,f_2),\eta_B(f_1,f_2)\}.
+ \label{eq:tpc26-intro-minimax}
+\end{equation}
+
+For \(1/2\le\beta<1\), it is the continuous piecewise-linear
+function
+
+\begin{equation}
+ M_\beta(t)=
+ \begin{cases}
+ 1-\beta-t,
+ &0\le t\le(1-\beta)/2,\\[2pt]
+ \dfrac{3-3\beta-2t}{4},
+ &(1-\beta)/2\le t\le\beta/2,\\[5pt]
+ \dfrac{3-\beta-6t}{4},
+ &\beta/2\le t\le(3\beta-1)/2,\\[5pt]
+ \dfrac{\beta+1-4t}{2},
+ &t\ge(3\beta-1)/2.
+ \end{cases}
+ \label{eq:tpc26-intro-sharp-ledger}
+\end{equation}
+
+The previous low--low lower bound \(1-3\beta/2\) is not an exact
+minimax face when \(t<\beta/2\).  In the region \(t>1-\beta\), some
+positive interval survives for every
+
+\begin{equation}
+ \frac35<\beta<1.
+ \label{eq:tpc26-intro-beta-range}
+\end{equation}
+
+This is a statement about the annular conductor problem, not about the
+base square or the complete residual.  The equality witnesses in the
+relaxed box need not all occur arithmetically; the minimax remains a
+valid sufficient bound because the arithmetic cells form a subset.
+
+\subsection{Main consequence and exact scope}
+
+Let \(\mathcal Q_W^{\rm phys}\) be the selected physical quadratic
+packet formed with \(P_{m,W}P_{n,W}\), the same row family, the same
+smooth orbit weight, and the same divisor-independent off-diagonal mask
+at both cutoffs.  Under the primitive opened-row interfaces and fixed
+positive margins, the main theorem gives
+
+\begin{equation}
+ \boxed{
+ \mathcal Q_T^{\rm phys}-\mathcal Q_S^{\rm phys}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}}
+ \label{eq:tpc26-intro-main}
+\end{equation}
+
+for every fixed \(B>0\), whenever \(M_\beta(t)>0\).  Here
+\(\mathscr D\) denotes the fixed shift, residue, smoothness, no-wrap,
+and source data.  The smooth Fourier tail is proved negligible for the
+actual provenance rather than retained as an independent packet
+hypothesis.
+
+If an independent matching calibrated \(S\)-cutoff estimate is
+available, \eqref{eq:tpc26-intro-main} closes the selected calibrated
+square through \(T\).  This implication is stated separately: cutoff
+stability alone does not estimate its initial value, and the scalar
+reassembly from the earlier centered base packet is not proved here.
+
+The first rational sample satisfies \(S<J<T\) and has conductor saving
+\(1/100\).  A second sample has \(\beta=267/400>2/3\) and saving
+\(33/8000\).  It lies inside the published opened-\(d\) row geometry,
+but both annular endpoints are already beyond \(J\), so it establishes
+only beyond-face cutoff stability.
+
+Nothing in the paper estimates \(L_{\cdot;T,U}\), the ultra-long
+complement identified in TPC-23.  That complement consists of growing
+two-point affine M\"obius fibers; known fixed-form logarithmic results
+do not supply the required polynomially uniform rate
+\citep{Tao2016,WangTPC23}.  Global endpoint reassembly, positivity,
+the prime-pair main term, Hardy--Littlewood, twin primes, and a general
+breach of the parity barrier therefore remain outside the conclusion.

@@ -1,0 +1,209 @@
+\section{Physical cutoff stability and truncated-square closure}
+\label{sec:tpc26-cutoff-stability}
+
+We now combine the exact annular identity, physical zero theorem, and
+sharp nonzero conductor ledger.
+
+\subsection{The nonzero physical packet}
+
+Let
+
+\[
+ (\cQ_T^{\rm phys}-\cQ_S^{\rm phys})^{\ne0}
+\]
+
+denote the sum of all nonzero additive frequencies of the raw annular
+joint lattice in \eqref{eq:tpc26-annular-identity}, after the two drift
+terms have been set aside.
+
+\begin{theorem}[Nonzero annular conductor theorem]
+\label{thm:tpc26-nonzero-annulus}
+Assume the primitive physical interface of
+\cref{sec:tpc26-interface-recombination}, the divisor-independent
+off-diagonal mask, the no-wrap margin \eqref{eq:tpc26-no-wrap}, and
+fixed-power support \(T\le X^{C_T}\).  Write
+\[
+ Q=X^{\beta+o(1)},\qquad
+ T=X^{t+o(1)},\qquad
+ \frac12\le\beta<1,
+\]
+with \(1-\beta\) bounded below by a fixed positive margin, and suppose
+
+\begin{equation}
+ M_\beta(t)>0
+ \label{eq:tpc26-positive-ledger}
+\end{equation}
+
+with a fixed margin.  Then there is a fixed \(\eta>0\) such that
+
+\begin{equation}
+ \boxed{
+ |(\cQ_T^{\rm phys}-\cQ_S^{\rm phys})^{\ne0}|
+ \ll_{\mathscr D}XQX^{-\eta}.}
+ \label{eq:tpc26-nonzero-bound}
+\end{equation}
+
+One may take any sufficiently small fixed \(\eta\) below the conductor
+margin \(M_\beta(t)\) and the principal-mean margin \(1-\beta\), after
+the auxiliary \(X^\eps\) losses are chosen.
+\end{theorem}
+
+\begin{proof}
+For one Mellin component, decompose the nonprincipal spectrum into
+dyadic denominator and coordinate-conductor cells.  Apply
+\cref{thm:tpc26-cell-bound} to each cell and
+\cref{prop:tpc26-sharp-minimax} to its exponents.  The fixed positive
+margin absorbs the logarithmically many cells and the row-energy
+factor in \eqref{eq:tpc26-transfer-l2}.  The global principal cell is
+\eqref{eq:tpc26-principal-mean}, which is below \(XQ=Q^2J\) by the
+fixed power \(J=X^{1-\beta+o(1)}\).  The physical Fourier tail is
+arbitrarily power-saving by \cref{lem:tpc26-automatic-tail}.  Finally,
+integrate the Mellin components using the weighted moments in
+\cref{lem:tpc26-physical-transfer}.  The fixed \(H_0\)-residue cells
+change only the implied constant.
+\end{proof}
+
+\subsection{Main cutoff theorem}
+
+We use the fixed-data convention \(\mathscr D\) introduced in
+\cref{sec:tpc26-interface-recombination}.
+
+\begin{theorem}[Physical annular cutoff stability]
+\label{thm:tpc26-cutoff-stability}
+Retain the hypotheses of \cref{thm:tpc26-nonzero-annulus}.  Assume
+
+\begin{equation}
+ S=X^{s+o(1)},
+ \qquad s>0,
+ \qquad
+ M_\beta(t)>0
+ \label{eq:tpc26-main-hypotheses}
+\end{equation}
+
+with fixed margins.  Then, for every fixed \(B>0\),
+
+\begin{equation}
+ \boxed{
+ \cQ_T^{\rm phys}-\cQ_S^{\rm phys}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}.}
+ \label{eq:tpc26-cutoff-stability}
+\end{equation}
+
+The same theorem applies to a finite bounded-overlap reassembly of
+physical dyadic, content, sign, and fixed-residue cells; its fixed
+polylogarithmic cost is absorbed by choosing the zero-mode calibration
+exponent afterward.
+\end{theorem}
+
+\begin{proof}
+Use \cref{prop:tpc26-annular-identity}.  The nonzero raw annular joint
+term has a fixed-power saving by
+\cref{thm:tpc26-nonzero-annulus}.  The physical zero contribution
+together with the two separately bounded full drifts has arbitrary
+logarithmic saving by \cref{cor:tpc26-zero-log-saving}.  A fixed-power
+saving is smaller than any
+prescribed negative power of \(\log X\) for sufficiently large \(X\),
+which proves \eqref{eq:tpc26-cutoff-stability}.  Finite cell reassembly
+costs only a fixed power of \(\log X\).
+\end{proof}
+
+\begin{remark}[What the theorem closes]
+\label{rem:tpc26-cutoff-vs-value}
+The theorem controls a cutoff difference.  It does not estimate
+\(\cQ_S^{\rm phys}\) and therefore does not by itself estimate
+\(\cQ_T^{\rm phys}\).  This distinction is essential in the
+high-\(\beta\) sample \eqref{eq:tpc26-high-sample}, where both \(S\)
+and \(T\) exceed \(J\).
+\end{remark}
+
+\begin{corollary}[Selected truncated-square closure]
+\label{cor:tpc26-truncated-square}
+In addition to the hypotheses of
+\cref{thm:tpc26-cutoff-stability}, suppose the same physical
+\(S\)-cutoff packet satisfies
+
+\begin{equation}
+ \cQ_S^{\rm phys}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}
+ \label{eq:tpc26-base-input}
+\end{equation}
+
+for every fixed \(B>0\).  Then
+
+\begin{equation}
+ \boxed{
+ \cQ_T^{\rm phys}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}.}
+ \label{eq:tpc26-truncated-square}
+\end{equation}
+
+The estimate \eqref{eq:tpc26-base-input} is an independent calibrated
+base input.  TPC-22--23 provide centered selected-square estimates, but
+the scalar terms required to pass from those centered packets to the
+present \(P_{m,S}P_{n,S}\) packet are not proved in this paper.
+Accordingly, this corollary is conditional even in the strict sample
+\eqref{eq:tpc26-old-sample}.
+\end{corollary}
+
+\begin{proof}
+Apply the triangle inequality to
+
+\[
+ \cQ_T^{\rm phys}
+ =\cQ_S^{\rm phys}
+ +(\cQ_T^{\rm phys}-\cQ_S^{\rm phys})
+\]
+
+and use \eqref{eq:tpc26-base-input} and
+\eqref{eq:tpc26-cutoff-stability}.
+\end{proof}
+
+\begin{corollary}[Vanishing physical zero functional]
+\label{cor:tpc26-zero-free-test}
+If
+\[
+ \vartheta_{H_0}(\alpha,\gamma)
+ \widehat{\cW}_{\alpha,\gamma}(0)=0
+\]
+for every retained row pair and residue cell, then the raw annular
+physical zero term vanishes.  The separately bounded full drifts remain.
+Under the same conductor hypotheses, some fixed \(\eta'>0\) satisfies
+
+\begin{equation}
+ \cQ_T^{\rm phys}-\cQ_S^{\rm phys}
+ \ll XQX^{-\eta'}.
+ \label{eq:tpc26-power-saving-test}
+\end{equation}
+\end{corollary}
+
+This last statement is optional extra cancellation.  The main theorem
+does not assume it.
+
+\subsection{The next analytic wall}
+
+Let \(U\asymp X\) contain the complete target support.  The theorem
+does not estimate
+
+\begin{equation}
+ L_{m;T,U}
+ =\sum_{\substack{T<u\le U\\u\mid mj+h}}a(u).
+ \label{eq:tpc26-ultra-long}
+\end{equation}
+
+TPC-23 reflects a divisor \(u>T\) to a complement \(r<(mj+h)/T\).
+For fixed complement divisors \(r,s\), the two quotient variables are
+affine forms whose determinant is
+
+\begin{equation}
+ \frac{h(m-n)}{(r,s)}\ne0.
+ \label{eq:tpc26-affine-determinant}
+\end{equation}
+
+The remaining coefficient is a two-point product of M\"obius signs.
+Taking absolute values already has natural-scale mass on the unit
+complement fiber, while the known logarithmically averaged fixed-form
+theorem has neither the required polynomial uniformity nor the sharp
+dyadic averaging \citep{Tao2016,WangTPC23}.  Continuing beyond \(T\)
+therefore requires a uniform affine-M\"obius dispersion theorem, a
+sparse incidence theorem, or a new exact recombination.  It is not a
+formal consequence of \cref{thm:tpc26-cutoff-stability}.

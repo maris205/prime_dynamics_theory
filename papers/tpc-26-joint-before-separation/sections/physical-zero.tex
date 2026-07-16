@@ -1,0 +1,324 @@
+\section{Physical zero before separation}
+\label{sec:tpc26-physical-zero}
+
+We now insert the arithmetic kernel into the actual opened-\(d\)
+packet.  The order matters: physical additive frequency zero is taken
+while the row-dependent orbit weight is still one bounded smooth
+function.
+
+\subsection{The fixed local factor}
+
+Because every effective joint modulus is coprime to \(H_0=|h|\), the
+fixed periodic factor may be split into finitely many residue cells.
+For one row pair define its zero-frequency local average by
+
+\begin{equation}
+ \vartheta_{H_0}(\alpha,\gamma)
+ =\frac1{H_0}
+ \sum_{\substack{r\bmod H_0\\(r,H)=1}}
+ \Xi_{\alpha,\gamma}(r).
+ \label{eq:tpc26-local-average}
+\end{equation}
+
+It is uniformly bounded.  The zero Fourier functional of the smooth
+orbit amplitude is
+
+\begin{equation}
+ \widehat{\cW}_{\alpha,\gamma}(0)
+ =\int_{\R}\cW_{\alpha,\gamma}(t)\,dt,
+ \qquad
+ \sup_{\alpha,\gamma}
+ |\widehat{\cW}_{\alpha,\gamma}(0)|\ll1.
+ \label{eq:tpc26-row-zero-integral}
+\end{equation}
+
+Thus, for one row pair, the raw annular zero contribution has the
+explicit form
+
+\begin{equation}
+ J\,\vartheta_{H_0}(\alpha,\gamma)
+ \widehat{\cW}_{\alpha,\gamma}(0)
+ K^{\rm ann,0}_{S,T}(m_\alpha,m_\gamma).
+ \label{eq:tpc26-one-pair-physical-zero}
+\end{equation}
+
+All factors preceding the kernel are uniformly bounded.  When
+\(\Xi\equiv1\), the local average reduces to the familiar fixed
+primitive density; the proof does not require that special case.
+
+\subsection{The provenance-weighted theorem}
+
+Let \(\cZ^{\rm ann,0}_{S,T}\) denote the physical zero-frequency
+contribution of the raw annular joint lattice in
+\eqref{eq:tpc26-annular-identity}, including the local factor
+\eqref{eq:tpc26-local-average}, but excluding the two separately
+displayed drift terms.
+
+\begin{theorem}[Physical annular zero theorem]
+\label{thm:tpc26-physical-zero}
+Retain the physical provenance
+\eqref{eq:tpc26-row-provenance}, the off-diagonal mask
+\eqref{eq:tpc26-mask}, and the hypotheses of
+\cref{thm:tpc26-both-new-zero}.  Then, for every fixed \(A>0\) and
+\(0<\kappa<s\),
+
+\begin{equation}
+ \boxed{
+ |\cZ^{\rm ann,0}_{S,T}|
+ \ll_{A,\kappa,\mathscr D}
+ JQ^2\left\{
+ (\log X)^{-A}+X^{-s+\kappa+o(1)}
+ \right\}.}
+ \label{eq:tpc26-physical-zero-bound}
+\end{equation}
+
+After the zero contribution is combined with the two separately
+bounded \emph{full} drift contributions,
+
+\begin{equation}
+ |\cZ^{\rm cutoff,0}_{S,T}|
+ \ll
+ JQ^2\left\{
+ (\log X)^{-A}+X^{-s+\kappa+o(1)}
+ +L^{-1}X^\eps
+ \right\}.
+ \label{eq:tpc26-full-zero-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \cref{cor:tpc26-annular-raw-zero}, each retained row pair has raw
+zero kernel bounded by the braces in
+\eqref{eq:tpc26-physical-zero-bound}.  Delete the bounded mask and the
+bounded local and smooth zero factors.  The actual row provenance gives
+
+\[
+ \sum_{\alpha,\gamma}
+ |\gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \mathfrak m(\alpha,\gamma)|
+ \le
+ \left(\sum_\alpha|\gamma_\alpha^{(1)}|\right)
+ \left(\sum_\gamma|\gamma_\gamma^{(2)}|\right)
+ \ll Q^2
+\]
+
+by \eqref{eq:tpc26-row-l1}.  Multiplication by the orbit length \(J\)
+proves the first assertion.  The second follows from
+\cref{lem:tpc26-drift-bound}.
+\end{proof}
+
+\begin{corollary}[Arbitrary logarithmic zero saving]
+\label{cor:tpc26-zero-log-saving}
+Assume \(s>0\) and \(\lambda_0>0\) with fixed margins.  For every fixed
+\(B>0\), choose \(\kappa<s\), the auxiliary \(\eps<\lambda_0\), and
+then the calibration exponent \(A\).  Since \(JQ^2\asymp XQ\),
+
+\begin{equation}
+ \boxed{
+ \cZ^{\rm cutoff,0}_{S,T}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}.}
+ \label{eq:tpc26-zero-log-saving}
+\end{equation}
+\end{corollary}
+
+No mean-zero condition is imposed on the fixed physical test.  The
+conclusion is a provenance theorem for the actual opened-\(d\) packet;
+it is not inferred from the abstract soft row-energy bound alone.
+
+\subsection{Transfer to the nonzero interface}
+
+Only after the zero frequency is removed do we separate the smooth
+row--orbit factors.  First split the fixed periodic multiplier into its
+\(O_h(1)\) residue cells:
+
+\begin{equation}
+ \Xi_{\alpha,\gamma}(j)
+ =\sum_{\varrho\bmod H_0}
+ \Xi_{\alpha,\gamma}(\varrho)
+ \one_{j\equiv\varrho\pmod{H_0}}.
+ \label{eq:tpc26-fixed-residue-split}
+\end{equation}
+
+On a fixed cell, the bounded row-pair coefficient
+\(\Xi_{\alpha,\gamma}(\varrho)\) is absorbed into the generic mask.
+It remains divisor-independent, bounded, and supported off the row
+diagonal.  The extra congruence changes the Poisson period by only the
+fixed factor \(H_0\), and hence changes none of the conductor exponents.
+The following is the precise form of the TPC-25 transfer lemma needed
+below.
+
+\begin{lemma}[Continuous physical transfer]
+\label{lem:tpc26-physical-transfer}
+For every fixed residue cell \(\varrho\bmod H_0\), the physical
+coefficient--weight product has the continuous projective
+representation
+
+\begin{equation}
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \cW_{\alpha,\gamma}(j/J)
+ =
+ \int_{\R^4}
+ x_{\boldsymbol\tau}(\alpha)
+ y_{\boldsymbol\tau}(\gamma)
+ \Phi_{\boldsymbol\tau}(j/J)
+ \,d\nu(\boldsymbol\tau).
+ \label{eq:tpc26-continuous-transfer}
+\end{equation}
+
+For every fixed integer \(M\ge0\), it may be chosen so that
+
+\begin{align}
+ \int_{\R^4}(1+|\boldsymbol\tau|)^M
+ \|x_{\boldsymbol\tau}\|_2
+ \|y_{\boldsymbol\tau}\|_2
+ \,d|\nu|(\boldsymbol\tau)
+ &\ll_M Q\log(2L),
+ \label{eq:tpc26-transfer-l2}\\
+ \int_{\R^4}(1+|\boldsymbol\tau|)^M
+ \|x_{\boldsymbol\tau}\|_1
+ \|y_{\boldsymbol\tau}\|_1
+ \,d|\nu|(\boldsymbol\tau)
+ &\ll_M Q^2.
+ \label{eq:tpc26-transfer-l1}
+\end{align}
+
+The row scales, target primitivity, and divisor-independent generic mask
+are unchanged.  Every fixed orbit seminorm grows at most polynomially
+in \(\boldsymbol\tau\), and summing the \(O_h(1)\) residue cells followed
+by dominated convergence restores the original physical packet after
+componentwise estimates.
+\end{lemma}
+
+\begin{proof}
+Mellin inversion separates each fixed smooth factor depending on
+\(m_\alpha j/X\), on the normalized opened-divisor argument
+\((d/D)(j/J)\), or on the corresponding second-row variables.
+Unit-modulus Mellin phases do not change the row norms
+\eqref{eq:tpc26-row-l2}.  Schwartz decay gives every weighted moment of
+the Mellin measure.  The \(\ell^1\) statement is
+\eqref{eq:tpc26-row-l1} before integration.  Differentiating the orbit
+phases produces a polynomial in \(\boldsymbol\tau\), which is absorbed
+by a higher Schwartz moment.  The generic mask depends only on the row
+pair and therefore remains outside the integral.  These are precisely
+the transfer steps established for the same physical provenance in
+TPC-25 \citep{WangTPC25}.
+\end{proof}
+
+\begin{lemma}[The physical Fourier tail is automatic]
+\label{lem:tpc26-automatic-tail}
+Fix \(0<\omega<\eps_0\), where the no-wrap margin below is
+\(J\ge4HX^{\eps_0}\).  For every prescribed \(A>0\), repeated
+integration by parts in the fixed smooth orbit weight makes the total
+annular frequency range
+
+\begin{equation}
+ |r|>X^\omega Hq/J
+ \label{eq:tpc26-tail-range}
+\end{equation}
+
+contribute \(O_{A,\mathscr D}(X^{-A}Q^2)\) after all row, divisor,
+fixed-residue, and Mellin integrations.
+\end{lemma}
+
+\begin{proof}
+Work first with one residue cell and one Mellin component.  For a
+squarefree pair \((u,v)\) in the annulus, put \(q=[u,v]\), and let
+\(Z_{u,v;\boldsymbol\tau}(\xi)\) be its unweighted row fiber on the
+joint unit class \(\xi\bmod q\).  Thus
+
+\begin{equation}
+ \sum_{\xi\in\cU_q}
+ |Z_{u,v;\boldsymbol\tau}(\xi)|
+ \le
+ \|x_{\boldsymbol\tau}\|_1
+ \|y_{\boldsymbol\tau}\|_1,
+ \label{eq:tpc26-tail-row-fiber-mass}
+\end{equation}
+
+because the bounded row-pair mask only deletes or attenuates terms.
+After the fixed \(H_0\)-cell is imposed, the Poisson formula has the
+same shape as the primitive formula, with its fixed modulus changed by
+an \(O_h(1)\) factor.  We use the normalization \(Hq\) below; replacing
+\(H\) by that fixed modulus changes only the implied constant.
+
+The absolute tail functional for this Mellin component is bounded by
+
+\begin{align}
+ \mathscr T^{\rm ann}_{\omega}(\boldsymbol\tau)
+ :={}&
+ \sum_{\substack{u,v\le T\\\max\{u,v\}>S}}
+ |b_R(u)b_R(v)|\frac{J}{Hq}
+ \sum_{|r|>X^\omega Hq/J}|c_H(r)|
+ \left|
+ \widehat\Phi_{\boldsymbol\tau}
+ \left(\frac{rJ}{Hq}\right)
+ \right|
+ \notag\\
+ &\hspace{9em}\times
+ \sum_{\xi\in\cU_q}
+ |Z_{u,v;\boldsymbol\tau}(\xi)|.
+ \label{eq:tpc26-physical-tail-functional}
+\end{align}
+
+This pairwise majorant also dominates a tail formed after lcm or
+conductor aggregation, by the triangle inequality.  For every
+\(N\ge2\), the Fourier transforms in the physical smooth family satisfy
+
+\[
+ |\widehat\Phi_{\boldsymbol\tau}(y)|
+ \ll_N(1+|\boldsymbol\tau|)^N(1+|y|)^{-N}.
+\]
+
+Write \(a_q=J/(Hq)\).  An integral comparison, with the first lattice
+point treated separately when \(X^\omega/a_q<1\), gives uniformly in
+\(q\)
+
+\begin{equation}
+ a_q
+ \sum_{|r|>X^\omega/a_q}
+ (1+a_q|r|)^{-N}
+ \ll_N X^{-\omega(N-1)}.
+ \label{eq:tpc26-tail-lattice-cancellation}
+\end{equation}
+
+This is the required cancellation of the Poisson prefactor
+\(J/(Hq)\) against the frequency-lattice spacing; no factor \(q/J\)
+remains.  Since \(H\) is fixed, \(|c_H(r)|\ll_H1\).  Moreover, the
+fixed-power support and the soft divisor-coefficient bound give a fixed
+constant \(C_{\rm div}\) such that
+
+\begin{equation}
+ \sum_{u,v\le T}|b_R(u)b_R(v)|
+ \ll X^{C_{\rm div}}.
+ \label{eq:tpc26-tail-divisor-mass}
+\end{equation}
+
+All lcm labels merely repartition these pairs, and the number and total
+variation of the fixed \(H_0\)-residue cells are \(O_h(1)\).  Combining
+\eqref{eq:tpc26-tail-row-fiber-mass}--
+\eqref{eq:tpc26-tail-divisor-mass} yields
+
+\begin{equation}
+ \mathscr T^{\rm ann}_{\omega}(\boldsymbol\tau)
+ \ll_{N,\mathscr D}
+ X^{C_{\rm div}-\omega(N-1)}
+ (1+|\boldsymbol\tau|)^N
+ \|x_{\boldsymbol\tau}\|_1
+ \|y_{\boldsymbol\tau}\|_1.
+ \label{eq:tpc26-tail-component-bound}
+\end{equation}
+
+Choose \(N\) so that
+\(\omega(N-1)>A+C_{\rm div}\), integrate against \(d|\nu|\), and use
+\eqref{eq:tpc26-transfer-l1} with the \(N\)-th weighted moment.  Finally
+sum the \(O_h(1)\) residue cells.  This proves
+
+\[
+ \int_{\R^4}
+ \mathscr T^{\rm ann}_{\omega}(\boldsymbol\tau)
+ \,d|\nu|(\boldsymbol\tau)
+ \ll_{A,\mathscr D}X^{-A}Q^2,
+\]
+
+as claimed.
+\end{proof}

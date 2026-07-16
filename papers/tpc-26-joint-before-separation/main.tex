@@ -1,0 +1,181 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Joint Before Separation in a Primitive Mobius Tail: Both-New Annuli, Sharp Symmetric Conductor Ledgers, and Cutoff Stability},
+ pdfauthor={Liang Wang},
+ pdfsubject={Annular cutoff stability in a primitive Mobius tail},
+ pdfkeywords={Mobius tail, both-new square, Poisson boundary, exact conductor, cutoff stability, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\cond}{\operatorname{cond}}
+\newcommand{\supp}{\operatorname{supp}}
+
+\title{\textbf{Joint Before Separation in a Primitive M\"obius Tail:}\\
+\textbf{Both-New Annuli, Sharp Symmetric Conductor Ledgers,}\\
+\textbf{and Cutoff Stability}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let \(P_{m,W}\) be the calibrated residual prefix in a primitive
+opened-\(d\) row and let \(R\le S<T\).  TPC-23 closes a centered
+selected square below the Poisson length, while TPC-24--25 close the two mixed
+increments obtained by replacing one prefix at \(S\) by the new shell
+\(L_{m;S,T}=P_{m,T}-P_{m,S}\).  The remaining component is the
+both-new square \(L_{m;S,T}L_{n;S,T}\).  We treat a stronger object:
+the whole quadratic cutoff increment
+
+\[
+ P_{m,T}P_{n,T}-P_{m,S}P_{n,S}.
+\]
+
+The decisive step is exact and precedes every smooth or spectral
+separation.  Writing
+
+\[
+ P_{m,W}(j)=
+ \sum_{\substack{u\le W\\u\mid mj+h}}b_R(u)-\delta_H(m),
+\]
+
+the cutoff difference is one raw annular joint divisor lattice,
+together with two explicit row-drift terms.  The annulus contains both
+mixed orientations and the both-new square, but no surviving
+single-indicator Poisson channel.
+
+For the new shell--shell physical zero kernel we prove, uniformly for
+off-diagonal rows, \(S=X^{s+o(1)}\), every \(0<\kappa<s\), and every
+fixed \(A>0\),
+
+\[
+ K^{\square,0}_{S,T}(m,n)
+ \ll (\log X)^{-A}+X^{-s+\kappa+o(1)}.
+\]
+
+The small shared factors are controlled by cancellation between the
+two endpoints of a complete M\"obius shell; the large shared factors
+divide the nonzero determinant \(m-n\).  TPC-25's actual
+prime--M\"obius row provenance supplies \(O(Q^2)\) absolute row-pair
+mass, so the complete annular zero frequency has arbitrary
+logarithmic saving for a general fixed nonzero-mean physical test.
+
+At nonzero frequency we prove a symmetric exact-conductor box theorem.
+If \(Q=X^{\beta+o(1)}\), \(J=X^{1-\beta+o(1)}\), and
+\(T=X^{t+o(1)}\), the exact minimax saving over the relaxed conductor
+rectangle is denoted by \(M_\beta(t)\).  In the Poisson-beyond region
+\(t>1-\beta\),
+
+\[
+ M_\beta(t)=
+ \begin{cases}
+ \dfrac{3(1-\beta)-2t}{4},
+ &1-\beta<t\le\beta/2,\\[5pt]
+ \displaystyle\min\left\{
+ \dfrac{\beta+1-4t}{2},
+ \dfrac{3-\beta-6t}{4}\right\},
+ &t\ge\beta/2.
+ \end{cases}
+\]
+
+Thus the annular conductor argument has a nonempty beyond-Poisson
+region for every \(3/5<\beta<1\); the former face
+\(\beta<2/3\) came from a nonsharp low--low estimate.  Under the
+inherited primitive, no-wrap, row-mask, and fixed-power interfaces,
+and with \(M_\beta(t)>0\) by a fixed margin, the actual physical cutoff
+increment is
+
+\[
+ \mathcal Q_T^{\rm phys}-\mathcal Q_S^{\rm phys}
+ \ll_B XQ(\log X)^{-B}
+\]
+
+for every fixed \(B>0\).  A strict sample with \(S<J<T\) has saving
+\(1/100\).  A second, narrower sample with \(\beta>2/3\) is compatible
+with the published opened-\(d\) source geometry and has saving
+\(33/8000\), but proves cutoff stability only: its base square is not
+imported as closed.  If an independent matching calibrated \(S\)-cutoff
+estimate is supplied, the result closes the selected calibrated square
+through \(T>J\).  Such a calibrated base estimate is not deduced here
+from the earlier centered-square results.  The paper does not estimate
+the ultra-long \((T,U]\) complement,
+prove positivity, produce a Hardy--Littlewood main term, imply twin
+primes, or breach the general sieve parity barrier.
+\end{abstract}
+
+\noindent\textbf{Keywords:} primitive M\"obius tail; both-new shell;
+Poisson boundary; exact conductor; cutoff stability; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary
+11L07, 11L40.
+
+\input{sections/introduction}
+\input{sections/interface-recombination}
+\input{sections/both-new-zero}
+\input{sections/physical-zero}
+\input{sections/symmetric-conductor}
+\input{sections/sharp-ledger}
+\input{sections/cutoff-stability}
+\input{sections/certificate-scope}
+
+\clearpage
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

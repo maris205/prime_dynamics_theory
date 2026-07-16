@@ -1,0 +1,276 @@
+\section{The both-new shell at physical frequency zero}
+\label{sec:tpc26-both-new-zero}
+
+The nonzero conductor argument has no information at additive
+frequency zero.  We therefore isolate that frequency before introducing
+characters or separating the physical row--orbit weight.
+
+\subsection{Uniform endpoint calibration}
+
+For \(M,Y\ge1\), set
+
+\begin{equation}
+ A_M(Y)=
+ \sum_{\substack{w\le Y\\(w,M)=1}}\frac{a(w)}w,
+ \qquad
+ B_M(Y)=
+ \sum_{\substack{w\le Y\\(w,M)=1}}\frac{\mu(w)}w.
+ \label{eq:tpc26-AB}
+\end{equation}
+
+We use the following uniform form proved in TPC-24 from the classical
+zero-free region for \(\zeta(s)\) \citep{WangTPC24,IwaniecKowalski2004}.
+
+\begin{lemma}[Uniform shell calibration]
+\label{lem:tpc26-uniform-calibration}
+For every fixed \(A,C>0\), uniformly for \(Y\ge3\) and \(M\le Y^C\),
+
+\begin{align}
+ A_M(Y)
+ &=\frac{M}{\varphi(M)}
+ +O_{A,C}\left(
+ \frac{M}{\varphi(M)}(\log Y)^{-A}\right),
+ \label{eq:tpc26-A-calibration}\\
+ B_M(Y)
+ &\ll_{A,C}
+ \frac{M}{\varphi(M)}(\log Y)^{-A}.
+ \label{eq:tpc26-B-calibration}
+\end{align}
+
+Consequently, if \(Y_2\ge Y_1\ge X^\kappa\) and
+\(M\le X^{C_0}\), then both endpoint differences
+
+\begin{equation}
+ A_M(Y_2)-A_M(Y_1),
+ \qquad B_M(Y_2)-B_M(Y_1)
+ \label{eq:tpc26-endpoint-differences}
+\end{equation}
+
+are \(O_{A,C_0,\kappa}((\log X)^{-A})\) after increasing the input
+calibration exponent by a fixed amount.
+\end{lemma}
+
+The first main constant \(M/\varphi(M)\) is independent of \(Y\), so
+it cancels only after the complete interval is retained.  This is not a
+pointwise fixed-modulus statement.
+
+\subsection{Exact gcd reparametrization}
+
+For an off-diagonal row pair \(m\ne n\), put
+
+\begin{equation}
+ \Delta=m-n\ne0.
+ \label{eq:tpc26-Delta}
+\end{equation}
+
+The raw Poisson zero frequency of the both-new joint shell is governed
+by
+
+\begin{equation}
+ K^{\square,0}_{S,T}(m,n)
+ =
+ \sum_{\substack{S<u,v\le T\\
+                  (u,mH)=(v,nH)=1}}
+ \frac{a(u)a(v)}{[u,v]}
+ \one_{(u,v)\mid\Delta}.
+ \label{eq:tpc26-square-zero-kernel}
+\end{equation}
+
+All effective variables are squarefree.
+
+\begin{lemma}[Both-new gcd normal form]
+\label{lem:tpc26-both-new-gcd}
+The kernel in \eqref{eq:tpc26-square-zero-kernel} equals
+
+\begin{align}
+ K^{\square,0}_{S,T}(m,n)
+ ={}&
+ \sum_{\substack{g\mid\Delta\\g\ \mathrm{squarefree}\\
+                  (g,mnH)=1}}
+ \frac1g
+ \sum_{\substack{S/g<c\le T/g\\(c,gmH)=1}}
+ \frac{a(gc)}c
+ \notag\\
+ &\quad\times
+ \sum_{\substack{S/g<d\le T/g\\(d,gcnH)=1}}
+ \frac{a(gd)}d.
+ \label{eq:tpc26-both-new-gcd}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+For one effective pair write
+
+\[
+ g=(u,v),\qquad u=gc,\qquad v=gd.
+\]
+
+Squarefree support and exactness of the gcd make \(g,c,d\) pairwise
+coprime.  Moreover,
+
+\[
+ [u,v]=g\,c\,d,
+ \qquad
+ \frac1{[u,v]}=\frac1{g\,c\,d}.
+\]
+
+Compatibility is precisely \(g\mid\Delta\).  The primitive conditions
+become \((g,mnH)=1\), \((c,gmH)=1\), and
+\((d,gcnH)=1\).  Substitution gives the formula.
+\end{proof}
+
+\subsection{Pointwise cancellation}
+
+\begin{theorem}[Both-new pointwise zero theorem]
+\label{thm:tpc26-both-new-zero}
+Suppose
+
+\begin{equation}
+ S=X^{s+o(1)},
+ \qquad T\le X^{C_T},
+ \qquad s,C_T>0.
+ \label{eq:tpc26-zero-scales}
+\end{equation}
+
+For every fixed \(A>0\) and \(0<\kappa<s\), uniformly over the
+retained off-diagonal row pairs,
+
+\begin{equation}
+ \boxed{
+ K^{\square,0}_{S,T}(m,n)
+ \ll_{A,\kappa,C_T,h}
+ (\log X)^{-A}+X^{-s+\kappa+o(1)}.}
+ \label{eq:tpc26-both-new-zero-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+In \eqref{eq:tpc26-both-new-gcd} split the shared factor at
+
+\begin{equation}
+ G_0=SX^{-\kappa}.
+ \label{eq:tpc26-G0}
+\end{equation}
+
+Suppose first that \(g\le G_0\).  Then \(S/g\ge X^\kappa\).  Fix
+\(g,c\), put
+
+\begin{equation}
+ M=gcnH,
+ \label{eq:tpc26-small-g-M}
+\end{equation}
+
+and note that \(M\le X^{C_0}\) for a fixed \(C_0\), uniformly on the
+physical fixed-power ranges.  On the effective coprime support,
+
+\begin{equation}
+ a(gd)=\mu(g)a(d)-\mu(g)(\log g)\mu(d).
+ \label{eq:tpc26-agd-split}
+\end{equation}
+
+Hence the innermost sum in \eqref{eq:tpc26-both-new-gcd} is exactly
+
+\begin{align}
+ &\mu(g)\{A_M(T/g)-A_M(S/g)\}
+ \notag\\
+ &\qquad
+ -\mu(g)(\log g)\{B_M(T/g)-B_M(S/g)\}.
+ \label{eq:tpc26-inner-endpoint}
+\end{align}
+
+By \cref{lem:tpc26-uniform-calibration}, this has arbitrary
+logarithmic decay.  The outer cofactor mass obeys
+
+\begin{equation}
+ \sum_{c\le T/g}\frac{|a(gc)|}{c}
+ \ll_{C_T}(\log(2X))^2,
+ \label{eq:tpc26-outer-mass}
+\end{equation}
+
+and
+
+\[
+ \sum_{g\mid\Delta}\frac1g\ll\log\log(3|\Delta|).
+\]
+
+Increasing the calibration exponent proves
+
+\begin{equation}
+ K^{\square,0,\,g\le G_0}_{S,T}(m,n)
+ \ll_A(\log X)^{-A}.
+ \label{eq:tpc26-small-g-bound}
+\end{equation}
+
+For \(g>G_0\), take absolute values in both cofactor sums.  Each is
+bounded by a fixed power of \(\log X\), and the nonzero determinant
+gives
+
+\begin{equation}
+ \sum_{\substack{g\mid\Delta\\g>G_0}}\frac1g
+ \le\frac{\tau(|\Delta|)}{G_0}
+ =X^{-s+\kappa+o(1)}.
+ \label{eq:tpc26-large-g-bound}
+\end{equation}
+
+Combining \eqref{eq:tpc26-small-g-bound} and
+\eqref{eq:tpc26-large-g-bound} proves the theorem.
+\end{proof}
+
+\begin{remark}[Why the principal row mode disappears here]
+\label{rem:tpc26-principal-mode-cancelled}
+TPC-25 exhibits a finite shell with a nonzero constant \(g=1\) row
+kernel.  In the complete both-new interval, the \(g=1\) coefficient is
+an endpoint difference of the form
+\eqref{eq:tpc26-inner-endpoint}; its main constant cancels.  Thus the
+physical proof does not require projection away from the constant row
+vector.  This conclusion depends on retaining the complete shell, not
+on a fixed-modulus calibration assertion.
+\end{remark}
+
+\subsection{The complete raw annulus}
+
+Define the two mixed kernels
+
+\begin{align}
+ K^{ba,0}_{S,T}(m,n)
+ :={}&
+ \sum_{\substack{u\le S,\ S<v\le T\\
+                  (u,mH)=(v,nH)=1}}
+ \frac{b_R(u)a(v)}{[u,v]}
+ \one_{(u,v)\mid\Delta},
+ \label{eq:tpc26-ba-kernel}\\
+ K^{ab,0}_{S,T}(m,n)
+ :={}&K^{ba,0}_{S,T}(n,m).
+ \label{eq:tpc26-ab-kernel}
+\end{align}
+
+The raw annular joint zero kernel is
+
+\begin{equation}
+ K^{\rm ann,0}_{S,T}(m,n)
+ =K^{ba,0}_{S,T}(m,n)+K^{ab,0}_{S,T}(m,n)
+ +K^{\square,0}_{S,T}(m,n).
+ \label{eq:tpc26-annular-zero-decomposition}
+\end{equation}
+
+TPC-24 proves the analogue of
+\eqref{eq:tpc26-both-new-zero-bound} for \(K^{ba,0}\), and transposition
+gives it for \(K^{ab,0}\).  We therefore obtain:
+
+\begin{corollary}[Annular raw zero kernel]
+\label{cor:tpc26-annular-raw-zero}
+Under the hypotheses of \cref{thm:tpc26-both-new-zero},
+
+\begin{equation}
+ \boxed{
+ K^{\rm ann,0}_{S,T}(m,n)
+ \ll_{A,\kappa,C_T,h}
+ (\log X)^{-A}+X^{-s+\kappa+o(1)}.}
+ \label{eq:tpc26-annular-raw-zero-bound}
+\end{equation}
+\end{corollary}
+
+The two single-density drift terms from
+\cref{prop:tpc26-annular-identity} are not part of
+\eqref{eq:tpc26-annular-zero-decomposition}; they remain explicit and
+are controlled by \cref{lem:tpc26-drift-bound}.

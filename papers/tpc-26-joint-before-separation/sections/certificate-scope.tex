@@ -1,0 +1,158 @@
+\section{Exact certificate, logical status, and conclusion}
+\label{sec:tpc26-certificate-scope}
+
+The analytic estimates in this paper are symbolic.  A deterministic
+finite certificate is included to audit the exact annular algebra,
+gcd normalization, and rational ledger identities most vulnerable to
+sign or boundary errors.
+
+\subsection{Certificate}
+
+The standard-library script
+
+\begin{center}
+ \texttt{experiments/tpc26\_certificate.py}
+\end{center}
+
+uses \texttt{fractions.Fraction} and formal prime-log vectors.  It
+checks:
+
+\begin{enumerate}[label=\textup{(\arabic*)}]
+ \item the exact identity
+ \(P_TP_T-P_SP_S\) against the raw annular joint lattice and both
+ negative drift terms on finite symbolic prefix data;
+ \item the partition of the raw annulus into the two mixed rectangles
+ and the both-new square;
+ \item the direct finite both-new zero kernel against the
+ \((g,c,d)\) normal form in \cref{lem:tpc26-both-new-gcd};
+ \item the coefficient identity
+ \eqref{eq:tpc26-agd-split} as an equality of formal logarithm vectors;
+ \item CRT compatibility and the joint zero density
+ \([u,v]^{-1}\one_{(u,v)\mid m-n}\) on finite primitive examples;
+ \item the sharp minimax regional witnesses and boundary continuity on
+ an exact rational grid;
+ \item the strict \(1/100\) passage sample; and
+ \item every source, support, row, and conductor margin in the
+ \(\beta>2/3\) sample, including the saving \(33/8000\).
+\end{enumerate}
+
+Independent ordinary and \texttt{python -O} runs are required to
+perform the same exact checks and generate byte-identical JSON.  The
+repository README records the final JSON, source, and certificate
+hashes after the source audit.  The archived JSON carries false flags
+for full residual closure, positivity, a Hardy--Littlewood asymptotic,
+twin primes, and a general parity breakthrough.
+
+The certificate does not test the classical zero-free region, the
+primitive multiplicative large sieve, any asymptotic M\"obius
+cancellation, or the truth of a prime-pair conjecture.  It is regression
+control for finite algebra and rational exponent arithmetic.
+
+\subsection{What is proved directly and what is inherited}
+
+The following parts are finite or elementary within the stated
+physical packet:
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item the calibrated prefix identity and exact annular recombination;
+ \item the both-new gcd normal form;
+ \item the division of the physical annular zero mode into mixed,
+ transpose, both-new, and two single-density drift terms;
+ \item the physical \(O(Q^2)\) absolute row-pair mass once the
+ TPC-25 provenance lemma is imported;
+ \item the symmetric pairwise character coordinates; and
+ \item the exact relaxed-box minimax and the two rational samples.
+\end{enumerate}
+
+The pointwise small-\(g\) zero estimate imports the uniform M\"obius
+calibration proved in TPC-24 from the classical zero-free region.  The
+nonzero spectrum imports the exact-conductor large-sieve mechanism of
+TPC-22--24.  The smooth transfer and row norms import the physical
+provenance established in TPC-25.  No conjectural Chowla or Elliott
+input is used in the cutoff theorem.
+
+The role of the present paper is to prove that those inherited tools
+remain compatible after the three new support regions are first
+recombined into one annular joint object, and to optimize their
+symmetric conductor ledger exactly.
+
+\subsection{Status table}
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.42\textwidth}
+                >{\raggedright\arraybackslash}p{0.47\textwidth}}
+\toprule
+Object & Status after this paper\\
+\midrule
+Both-new physical zero mode on \((S,T]^2\)
+& Closed with arbitrary logarithmic saving by endpoint calibration,
+  determinant divisibility, and actual \(O(Q^2)\) row mass.\\
+\addlinespace
+Raw annular joint nonzero spectrum
+& Closed with fixed-power saving whenever \(M_\beta(t)>0\).\\
+\addlinespace
+Physical cutoff difference
+\(\cQ_T^{\rm phys}-\cQ_S^{\rm phys}\)
+& Closed with arbitrary logarithmic saving when \(s>0\),
+  \(M_\beta(t)>0\), and all inherited interfaces hold with fixed
+  margins.\\
+\addlinespace
+Selected calibrated square through \(T>J\)
+& Closed only when the matching \(S\)-cutoff base estimate is also
+  available.\\
+\addlinespace
+High-\(\beta\) sample with \(\beta>2/3\)
+& Annular cutoff stability proved inside actual opened-row geometry;
+  no base-square closure imported.\\
+\addlinespace
+Ultra-long \((T,U]\) complement
+& Not estimated; exact affine two-point M\"obius fibers remain.\\
+\addlinespace
+Full TPC-18 residual and endpoint reassembly
+& Not proved.\\
+\addlinespace
+Hardy--Littlewood, positivity, twin primes, or general parity breach
+& Not claimed and not implied.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Conclusion}
+
+The both-new square is not blocked by the principal row mode found in
+TPC-25.  That mode arose when a shell coefficient was frozen before
+its full endpoint structure was used.  In the complete annulus the
+small-\(g\) main constants cancel, and the large-\(g\) layers are sparse
+divisors of the nonzero row determinant.
+
+The successful order is
+
+\begin{equation}
+ \boxed{
+ \begin{gathered}
+ \text{form the quadratic cutoff difference}
+ \ \longrightarrow\
+ \text{recombine the entire raw annulus}\\
+ \longrightarrow\
+ \text{extract physical zero}
+ \ \longrightarrow\
+ \text{separate and resolve only the nonzero spectrum}.
+ \end{gathered}}
+ \label{eq:tpc26-order}
+\end{equation}
+
+This closes a real missing component.  Conditional on an independent
+matching calibrated base estimate, it pushes the whole selected
+truncated square through an upper cutoff \(T>J\); that base estimate is
+not supplied here.  The exact minimax also shows that the annular
+conductor mechanism itself survives beyond \(\beta=2/3\), though that
+fact must not be transferred automatically to the base square or the
+complete residual.
+
+The next wall is qualitatively different.  Divisor reflection in the
+ultra-long complement places two growing affine M\"obius signs on the
+same short fiber.  A future advance must obtain polynomially uniform
+two-point cancellation, exploit sparse incidence after summing the
+family, or find another exact recombination.  Success would close one
+more analytic residual block; it would still not by itself produce a
+positive prime-pair main term.

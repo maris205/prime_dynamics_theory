@@ -1,0 +1,400 @@
+\section{The sharp symmetric conductor ledger}
+\label{sec:tpc26-sharp-ledger}
+
+We now optimize the two estimates in
+\cref{thm:tpc26-cell-bound} rather than retaining the earlier coarse
+low--low face.
+
+\subsection{Cell exponents}
+
+Write
+
+\begin{equation}
+ Q=X^{\beta+o(1)},
+ \qquad J=X^{1-\beta+o(1)},
+ \qquad T=X^{t+o(1)},
+ \label{eq:tpc26-main-exponents}
+\end{equation}
+
+and, on one denominator and conductor cell,
+
+\begin{equation}
+ Y=X^{y+o(1)},
+ \qquad F_i=X^{f_i+o(1)},
+ \qquad
+ k_i=\max\{f_i,\beta-f_i\}.
+ \label{eq:tpc26-cell-exponents}
+\end{equation}
+
+The symmetric upper box gives
+
+\begin{equation}
+ 0\le y\le2t,
+ \qquad 0\le f_1,f_2\le t.
+ \label{eq:tpc26-cell-box}
+\end{equation}
+
+The natural scale \(XQ\) has exponent \(1+\beta\).  The norm and
+Gauss routes in \eqref{eq:tpc26-cell-bound} have saving exponents
+
+\begin{equation}
+ \eta_A(y,f_1,f_2)
+ =\frac{\beta+1-y-k_1-k_2}{2},
+ \qquad
+ \eta_B(f_1,f_2)
+ =1-f_1-f_2-\frac{k_1+k_2}{2}.
+ \label{eq:tpc26-etaAB}
+\end{equation}
+
+Decreasing \(y\) only improves \(\eta_A\), so the relaxed-box minimax
+is
+
+\begin{equation}
+ M_\beta(t)
+ :=\inf_{0\le f_1,f_2\le t}
+ \max\{
+ \eta_A(2t,f_1,f_2),
+ \eta_B(f_1,f_2)
+ \}.
+ \label{eq:tpc26-Mbeta}
+\end{equation}
+
+\begin{proposition}[Exact relaxed-box minimax]
+\label{prop:tpc26-sharp-minimax}
+For \(1/2\le\beta<1\),
+
+\begin{equation}
+ \boxed{
+ M_\beta(t)=
+ \begin{cases}
+ 1-\beta-t,
+ &0\le t\le(1-\beta)/2,\\[3pt]
+ \dfrac{3-3\beta-2t}{4},
+ &(1-\beta)/2\le t\le\beta/2,\\[6pt]
+ \dfrac{3-\beta-6t}{4},
+ &\beta/2\le t\le(3\beta-1)/2,\\[6pt]
+ \dfrac{\beta+1-4t}{2},
+ &t\ge(3\beta-1)/2.
+ \end{cases}}
+ \label{eq:tpc26-sharp-minimax}
+\end{equation}
+
+The formula is exact for the relaxed rectangle
+\eqref{eq:tpc26-cell-box}.  It is therefore a valid lower bound for
+the occupied arithmetic cells, which form a subset of that rectangle.
+\end{proposition}
+
+\begin{proof}
+Suppose first that both conductors are low:
+\(f_i\le\beta/2\).  Put \(\sigma=f_1+f_2\).  Then
+
+\begin{equation}
+ \eta_A=\frac{1-\beta-2t+\sigma}{2},
+ \qquad
+ \eta_B=1-\beta-\frac\sigma2.
+ \label{eq:tpc26-low-low}
+\end{equation}
+
+The two affine functions meet at
+
+\begin{equation}
+ \sigma_*=t+\frac{1-\beta}{2},
+ \label{eq:tpc26-low-witness}
+\end{equation}
+
+where their common value is
+
+\begin{equation}
+ \frac{3-3\beta-2t}{4}.
+ \label{eq:tpc26-low-value}
+\end{equation}
+
+If \(0\le t\le(1-\beta)/2\), the meeting point lies beyond the
+available interval \(0\le\sigma\le2t\); the minimizing endpoint
+\(\sigma=2t\) gives \(1-\beta-t\).  If
+\((1-\beta)/2\le t\le\beta/2\), the meeting point is available and
+gives \eqref{eq:tpc26-low-value}.
+
+Now let \(t\ge\beta/2\).  In a high--high cell, both savings decrease
+as either conductor increases, so the regional minimizer is
+\(f_1=f_2=t\).  There
+
+\begin{equation}
+ \eta_A=\frac{\beta+1-4t}{2},
+ \qquad
+ \eta_B=1-3t.
+ \label{eq:tpc26-high-high}
+\end{equation}
+
+In the range relevant to the global transition, the first is the
+larger of the two.
+
+For a mixed cell write
+
+\[
+ x=f_{\rm low}\le\frac\beta2,
+ \qquad
+ z=f_{\rm high}\ge\frac\beta2.
+\]
+
+Increasing \(z\) decreases both savings, so \(z=t\).  At that edge,
+
+\begin{equation}
+ \eta_A=\frac{1-3t+x}{2},
+ \qquad
+ \eta_B=1-\frac\beta2-\frac{3t}{2}-\frac x2.
+ \label{eq:tpc26-mixed-functions}
+\end{equation}
+
+They meet at
+
+\begin{equation}
+ x_*=\frac{1-\beta}{2},
+ \qquad
+ \eta_A=\eta_B=\frac{3-\beta-6t}{4}.
+ \label{eq:tpc26-mixed-witness}
+\end{equation}
+
+The witness is admissible because \(\beta\ge1/2\).  The low--low
+regional value is never smaller than the mixed value when
+\(t\ge\beta/2\): their difference is \(t-\beta/2\) whenever the
+interior low witness is available, and the relevant boundary case is
+larger as well.  Thus the global minimum is the smaller of
+
+\[
+ \frac{3-\beta-6t}{4}
+ \quad\text{and}\quad
+ \frac{\beta+1-4t}{2}.
+\]
+
+These cross at \(t=(3\beta-1)/2\), proving the last two branches.
+Continuity at all three boundaries is immediate.
+\end{proof}
+
+\begin{remark}[What ``sharp'' means]
+\label{rem:tpc26-sharp-scope}
+The proposition exactly optimizes the two available conductor bounds
+over the relaxed box.  It does not assert that every equality witness
+is occupied by an arithmetic divisor cell, nor that no stronger third
+estimate exists.  Therefore a zero or negative value marks the boundary
+of this two-route method, not an arithmetic impossibility theorem.
+\end{remark}
+
+\subsection{Beyond the Poisson face}
+
+The upper cutoff lies beyond the old Poisson length when
+
+\begin{equation}
+ t>1-\beta.
+ \label{eq:tpc26-beyond-Poisson}
+\end{equation}
+
+In that region \cref{prop:tpc26-sharp-minimax} becomes
+
+\begin{equation}
+ M_\beta(t)=
+ \begin{cases}
+ \dfrac{3(1-\beta)-2t}{4},
+ &1-\beta<t\le\beta/2,\\[6pt]
+ \displaystyle\min\left\{
+ \dfrac{\beta+1-4t}{2},
+ \dfrac{3-\beta-6t}{4}\right\},
+ &t\ge\beta/2.
+ \end{cases}
+ \label{eq:tpc26-beyond-ledger}
+\end{equation}
+
+The low-conductor branch is positive in
+
+\begin{equation}
+ \boxed{
+ \frac23<\beta<1,
+ \qquad
+ 1-\beta<t<
+ \min\left\{\frac\beta2,
+ \frac{3(1-\beta)}2\right\}.}
+ \label{eq:tpc26-low-crossing-window}
+\end{equation}
+
+The high/mixed branch is positive in
+
+\begin{equation}
+ \boxed{
+ \frac35<\beta<\frac34,
+ \qquad
+ \max\left\{1-\beta,\frac\beta2\right\}
+ <t<
+ \min\left\{\frac{\beta+1}{4},
+ \frac{3-\beta}{6}\right\}.}
+ \label{eq:tpc26-high-crossing-window}
+\end{equation}
+
+Their union is nonempty for every
+
+\begin{equation}
+ \boxed{\frac35<\beta<1.}
+ \label{eq:tpc26-total-beta-window}
+\end{equation}
+
+The old face \(\beta<2/3\) is therefore not intrinsic to the two
+cell estimates in the annular joint problem.  Other parts of the
+residual program may still impose it.
+
+For a strict passage from below, one additionally requires
+
+\begin{equation}
+ s<1-\beta<t.
+ \label{eq:tpc26-strict-passage}
+\end{equation}
+
+With \(S=R=X^{1/2-\delta+o(1)}\) and
+\(T=RX^{\xi+o(1)}\), a strict high/mixed sufficient window is
+
+\begin{equation}
+ \boxed{\begin{gathered}
+ \frac35<\beta<\frac34,\qquad
+ \frac12-\delta<1-\beta,\\
+ \max\left\{
+ \frac12+\delta-\beta,\,
+ \frac{\beta-1+2\delta}{2}
+ \right\}<\xi<
+ \min\left\{
+ \frac{\beta+4\delta-1}{4},
+ \frac{6\delta-\beta}{6}
+ \right\}.
+ \end{gathered}}
+ \label{eq:tpc26-baseline-window}
+\end{equation}
+
+The first lower bound makes \(T>J\), the second makes
+\(t>\beta/2\), and the separate condition on \(\delta\) makes
+\(S<J\).  Omitting the branch condition \(t\ge\beta/2\) would make
+\eqref{eq:tpc26-baseline-window} false outside the high/mixed regime.
+
+All inequalities in this section are strict and must be used with a
+fixed margin.
+
+\subsection{Two exact rational samples}
+
+The first sample is
+
+\begin{equation}
+ \delta=\frac3{20},
+ \qquad
+ \beta=\frac{31}{50},
+ \qquad
+ s=\frac7{20},
+ \qquad
+ t=\frac{39}{100}.
+ \label{eq:tpc26-old-sample}
+\end{equation}
+
+Then
+
+\begin{equation}
+ S=X^{7/20}<J=X^{19/50}<T=X^{39/100},
+ \label{eq:tpc26-old-sample-scales}
+\end{equation}
+
+and
+
+\begin{equation}
+ \frac{\beta+1-4t}{2}=\frac3{100},
+ \qquad
+ \frac{3-\beta-6t}{4}=\frac1{100}.
+ \label{eq:tpc26-old-sample-ledger}
+\end{equation}
+
+Thus
+
+\begin{equation}
+ \boxed{M_\beta(t)=\frac1{100}.}
+ \label{eq:tpc26-old-sample-saving}
+\end{equation}
+
+This is a genuine strict passage sample.
+
+The second sample tests the sharp improvement against the published
+Maynard source profile used in TPC-18.  Put
+
+\begin{equation}
+ \sigma=\frac1{10000},
+ \qquad
+ \lambda=\frac{10}{21}-\sigma
+ =\frac{99979}{210000},
+ \qquad
+ \delta=\frac7{60},
+ \label{eq:tpc26-high-sample-source}
+\end{equation}
+
+and choose
+
+\begin{equation}
+ \beta=\frac{267}{400},
+ \qquad
+ s=\frac{23}{60},
+ \qquad
+ t=\frac{193}{500}.
+ \label{eq:tpc26-high-sample}
+\end{equation}
+
+The opened divisor exponent and its available endpoint are
+
+\begin{equation}
+ d_*=\beta-\lambda=\frac{10049}{52500},
+ \qquad
+ v_*=\frac14-\frac\delta2=\frac{23}{120},
+ \label{eq:tpc26-high-sample-dv}
+\end{equation}
+
+with exact margin
+
+\begin{equation}
+ v_*-d_*=\frac9{35000}>0.
+ \label{eq:tpc26-high-sample-row-margin}
+\end{equation}
+
+Moreover,
+
+\begin{equation}
+ \beta-\frac23=\frac1{1200},
+ \qquad
+ t-s=\frac1{375},
+ \qquad
+ \lambda-t=\frac{18919}{210000}>0.
+ \label{eq:tpc26-high-sample-margins}
+\end{equation}
+
+The two sharp conductor faces are
+
+\begin{equation}
+ \frac{\beta+1-4t}{2}=\frac{247}{4000},
+ \qquad
+ \frac{3-\beta-6t}{4}=\frac{33}{8000},
+ \label{eq:tpc26-high-sample-ledger}
+\end{equation}
+
+so
+
+\begin{equation}
+ \boxed{M_\beta(t)=\frac{33}{8000}.}
+ \label{eq:tpc26-high-sample-saving}
+\end{equation}
+
+Indeed,
+\[
+ \frac1{42}+3\sigma<\delta<\frac14,\qquad
+ D_0=X^{1/21-\sigma}<D\le V=X^{v_*},
+ \qquad K=X^{1-\lambda}>2V,
+\]
+with fixed exponent margins, and \(J=K/D\) has exponent
+\((1-\lambda)-d_*=1-\beta\).  Thus the sample is compatible with that
+source profile and even satisfies \(L>2T\).  However,
+
+\begin{equation}
+ J=X^{133/400}<S<T,
+ \label{eq:tpc26-high-sample-scope}
+\end{equation}
+
+so it proves annular cutoff stability beyond the Poisson face, not a
+strict passage from an independently closed calibrated base square.
