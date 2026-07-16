@@ -1,0 +1,55 @@
+{
+  "checks": {
+    "sigma_1e-02_rh24_rh28_center": true,
+    "sigma_1e-02_rh24_rh28_radius": true,
+    "sigma_1e-02_rh28_rh29_selected_budget": true,
+    "sigma_1e-02_rh28_rh29_selected_center": true,
+    "sigma_1e-02_rh28_rh29_selected_radius": true,
+    "sigma_1e-02_rh28_snapshot_depth": true,
+    "sigma_1e-02_rh28_snapshot_rank": true,
+    "sigma_1e-02_rh29_rh31_dimension": true,
+    "sigma_1e-02_rh29_rh31_threshold": true,
+    "sigma_1e-02_rh31_inverse_summary": true,
+    "sigma_2e-03_rh24_rh28_center": true,
+    "sigma_2e-03_rh24_rh28_radius": true,
+    "sigma_2e-03_rh28_rh29_selected_budget": true,
+    "sigma_2e-03_rh28_rh29_selected_center": true,
+    "sigma_2e-03_rh28_rh29_selected_radius": true,
+    "sigma_2e-03_rh28_snapshot_depth": true,
+    "sigma_2e-03_rh28_snapshot_rank": true,
+    "sigma_2e-03_rh29_rh31_dimension": true,
+    "sigma_2e-03_rh29_rh31_threshold": true,
+    "sigma_2e-03_rh31_inverse_summary": true,
+    "sigma_4e-03_rh24_rh28_center": true,
+    "sigma_4e-03_rh24_rh28_radius": true,
+    "sigma_4e-03_rh28_rh29_selected_budget": true,
+    "sigma_4e-03_rh28_rh29_selected_center": true,
+    "sigma_4e-03_rh28_rh29_selected_radius": true,
+    "sigma_4e-03_rh28_snapshot_depth": true,
+    "sigma_4e-03_rh28_snapshot_rank": true,
+    "sigma_4e-03_rh29_rh31_dimension": true,
+    "sigma_4e-03_rh29_rh31_threshold": true,
+    "sigma_4e-03_rh31_inverse_summary": true
+  },
+  "model_relationships": {
+    "1e-02": {
+      "bitwise_equal": false,
+      "maximum_absolute_entry_difference": 2.281112985447198e-07,
+      "rh24_discovery_model": "papers/RH-24-contour-feshbach-root-count/results/models/contour_model_sigma_1e-02.npz",
+      "rh28_snapshot": "papers/RH-32-end-to-end-certificate-ledger/results/models/rh28_base_model_sigma_1e-02.npz"
+    },
+    "2e-03": {
+      "bitwise_equal": false,
+      "maximum_absolute_entry_difference": 7.571816076912263e-09,
+      "rh24_discovery_model": "papers/RH-24-contour-feshbach-root-count/results/models/contour_model_sigma_2e-03.npz",
+      "rh28_snapshot": "papers/RH-32-end-to-end-certificate-ledger/results/models/rh28_base_model_sigma_2e-03.npz"
+    },
+    "4e-03": {
+      "bitwise_equal": false,
+      "maximum_absolute_entry_difference": 2.4274898202669704e-08,
+      "rh24_discovery_model": "papers/RH-24-contour-feshbach-root-count/results/models/contour_model_sigma_4e-03.npz",
+      "rh28_snapshot": "papers/RH-32-end-to-end-certificate-ledger/results/models/rh28_base_model_sigma_4e-03.npz"
+    }
+  },
+  "status": "all_cross_paper_object_identities_verified"
+}

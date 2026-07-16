@@ -1,0 +1,84 @@
+{
+  "construction": "RH-25 build_physical_extended_model, exactly the primal base-model path called by RH-28",
+  "important_nonidentity": "The RH-28 base snapshots are not silently identified with the earlier RH-24 discovery NPZ files.",
+  "scales": [
+    {
+      "base_depth": 36,
+      "bitwise_equal_to_rh24_discovery_model": false,
+      "distinct_fields": [
+        "hessenberg_0",
+        "coupling_0",
+        "hessenberg_1",
+        "coupling_1",
+        "hessenberg_2",
+        "coupling_2",
+        "hessenberg_3",
+        "coupling_3"
+      ],
+      "maximum_absolute_entry_difference": 2.281112985447198e-07,
+      "maximum_depth_built_by_rh28": 52,
+      "packet_rank": 4,
+      "rh24_discovery_model_path": "papers/RH-24-contour-feshbach-root-count/results/models/contour_model_sigma_1e-02.npz",
+      "rh24_discovery_model_sha256": "e634ea6a20f4defd8bd38580b45429de0848a1164b23a960adbb83b82d297b7c",
+      "sigma": 0.01,
+      "snapshot_path": "papers/RH-32-end-to-end-certificate-ledger/results/models/rh28_base_model_sigma_1e-02.npz",
+      "snapshot_sha256": "79e1b18fc6987d7afcd6422cb9070a79506b3ee61fe4f70349915cfca2049d2e",
+      "status": "distinct_deterministic_base_realization"
+    },
+    {
+      "base_depth": 42,
+      "bitwise_equal_to_rh24_discovery_model": false,
+      "distinct_fields": [
+        "hessenberg_0",
+        "coupling_0",
+        "hessenberg_1",
+        "coupling_1",
+        "hessenberg_2",
+        "coupling_2",
+        "hessenberg_3",
+        "coupling_3",
+        "hessenberg_4",
+        "coupling_4"
+      ],
+      "maximum_absolute_entry_difference": 2.4274898202669704e-08,
+      "maximum_depth_built_by_rh28": 58,
+      "packet_rank": 5,
+      "rh24_discovery_model_path": "papers/RH-24-contour-feshbach-root-count/results/models/contour_model_sigma_4e-03.npz",
+      "rh24_discovery_model_sha256": "b18d96970d19986cc83a288561f571e7523dbf12bcc9e3925e551de96c436fed",
+      "sigma": 0.004,
+      "snapshot_path": "papers/RH-32-end-to-end-certificate-ledger/results/models/rh28_base_model_sigma_4e-03.npz",
+      "snapshot_sha256": "196ac0a148ae535a3baa3d455e8affe1ff5699bccc7de5316ee48be108fce1ab",
+      "status": "distinct_deterministic_base_realization"
+    },
+    {
+      "base_depth": 46,
+      "bitwise_equal_to_rh24_discovery_model": false,
+      "distinct_fields": [
+        "reduced",
+        "forcing_norms",
+        "hessenberg_0",
+        "coupling_0",
+        "hessenberg_1",
+        "coupling_1",
+        "hessenberg_2",
+        "coupling_2",
+        "hessenberg_3",
+        "coupling_3",
+        "hessenberg_4",
+        "coupling_4",
+        "hessenberg_5",
+        "coupling_5"
+      ],
+      "maximum_absolute_entry_difference": 7.571816076912263e-09,
+      "maximum_depth_built_by_rh28": 62,
+      "packet_rank": 6,
+      "rh24_discovery_model_path": "papers/RH-24-contour-feshbach-root-count/results/models/contour_model_sigma_2e-03.npz",
+      "rh24_discovery_model_sha256": "d1ffe9578e3fe7d45106eaed2e5f8f11bccb262f06b6a6db95dbeca807465803",
+      "sigma": 0.002,
+      "snapshot_path": "papers/RH-32-end-to-end-certificate-ledger/results/models/rh28_base_model_sigma_2e-03.npz",
+      "snapshot_sha256": "9e146f830c851d48a862c099fb9442718f682d1bd822590e07b8de1ce75a088c",
+      "status": "distinct_deterministic_base_realization"
+    }
+  ],
+  "status": "deterministic_rh28_base_snapshots_archived"
+}

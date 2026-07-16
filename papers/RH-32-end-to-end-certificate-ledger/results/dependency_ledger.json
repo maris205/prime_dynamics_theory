@@ -1,0 +1,309 @@
+{
+  "checks": {
+    "rh24_source_audit_py_recorded_hash": true,
+    "rh24_source_model_py_recorded_hash": true,
+    "rh24_source_rh18_gaussian_operators_py_recorded_hash": true,
+    "rh24_source_rh21_biorthogonal_algebra_py_recorded_hash": true,
+    "rh24_source_rh23_packets_py_recorded_hash": true,
+    "rh25_source_algebra_py_recorded_hash": true,
+    "rh25_source_audit_py_recorded_hash": true,
+    "rh25_source_rh24_audit_py_recorded_hash": true,
+    "rh25_source_rh24_model_py_recorded_hash": true,
+    "rh28_base_snapshot_sigma_1e-02_reconstruction_hash": true,
+    "rh28_base_snapshot_sigma_2e-03_reconstruction_hash": true,
+    "rh28_base_snapshot_sigma_4e-03_reconstruction_hash": true,
+    "rh28_reconstruction_all_fields_exact": true,
+    "rh28_reconstruction_arc_hash": true,
+    "rh28_reconstruction_scale_hash": true,
+    "rh28_records_rh24_scale_hash": true,
+    "rh28_records_rh27_hybrid_hash": true,
+    "rh28_source_coordinates_py_recorded_hash": true,
+    "rh28_source_evaluator_py_recorded_hash": true,
+    "rh28_source_geometry_py_recorded_hash": true,
+    "rh28_source_relations_py_recorded_hash": true,
+    "rh28_source_run_arcwise_enclosure_py_recorded_hash": true,
+    "rh29_records_rh28_arc_hash": true,
+    "rh29_triplet_sigma_1e-02_recorded_hash": true,
+    "rh29_triplet_sigma_2e-03_recorded_hash": true,
+    "rh29_triplet_sigma_4e-03_recorded_hash": true,
+    "rh31_certificate_sigma_1e-02_row_hash": true,
+    "rh31_certificate_sigma_1e-02_summary_hash": true,
+    "rh31_certificate_sigma_2e-03_row_hash": true,
+    "rh31_certificate_sigma_2e-03_summary_hash": true,
+    "rh31_certificate_sigma_4e-03_row_hash": true,
+    "rh31_certificate_sigma_4e-03_summary_hash": true
+  },
+  "edges": [
+    {
+      "relation": "recorded input hash",
+      "source": "rh24_scale_summary",
+      "target": "rh28_arc_cover",
+      "verified": true
+    },
+    {
+      "relation": "recorded input hash",
+      "source": "rh27_hybrid_summary",
+      "target": "rh28_arc_cover",
+      "verified": true
+    },
+    {
+      "relation": "recorded input hash",
+      "source": "rh28_arc_cover",
+      "target": "rh29_scale_summary",
+      "verified": true
+    },
+    {
+      "relation": "all non-timing arc and scale fields reproduced exactly",
+      "source": "rh28_reconstruction_verification",
+      "target": "rh28_arc_cover",
+      "verified": true
+    },
+    {
+      "relation": "deterministic RH-28 base-depth reconstruction with recorded source hashes",
+      "source": "rh25_summary",
+      "target": "rh28_base_snapshot_sigma_1e-02",
+      "verified": true
+    },
+    {
+      "relation": "selected RH-28 arc and RH-29 recorded triplet hash",
+      "source": "rh28_arc_cover",
+      "target": "rh29_triplet_sigma_1e-02",
+      "verified": true
+    },
+    {
+      "relation": "same stored singular channel; scalar identity audited separately",
+      "source": "rh29_triplet_sigma_1e-02",
+      "target": "rh31_certificate_sigma_1e-02",
+      "verified": true
+    },
+    {
+      "relation": "deterministic RH-28 base-depth reconstruction with recorded source hashes",
+      "source": "rh25_summary",
+      "target": "rh28_base_snapshot_sigma_4e-03",
+      "verified": true
+    },
+    {
+      "relation": "selected RH-28 arc and RH-29 recorded triplet hash",
+      "source": "rh28_arc_cover",
+      "target": "rh29_triplet_sigma_4e-03",
+      "verified": true
+    },
+    {
+      "relation": "same stored singular channel; scalar identity audited separately",
+      "source": "rh29_triplet_sigma_4e-03",
+      "target": "rh31_certificate_sigma_4e-03",
+      "verified": true
+    },
+    {
+      "relation": "deterministic RH-28 base-depth reconstruction with recorded source hashes",
+      "source": "rh25_summary",
+      "target": "rh28_base_snapshot_sigma_2e-03",
+      "verified": true
+    },
+    {
+      "relation": "selected RH-28 arc and RH-29 recorded triplet hash",
+      "source": "rh28_arc_cover",
+      "target": "rh29_triplet_sigma_2e-03",
+      "verified": true
+    },
+    {
+      "relation": "same stored singular channel; scalar identity audited separately",
+      "source": "rh29_triplet_sigma_2e-03",
+      "target": "rh31_certificate_sigma_2e-03",
+      "verified": true
+    }
+  ],
+  "nodes": {
+    "rh24_discovery_model_sigma_1e-02": {
+      "path": "papers/RH-24-contour-feshbach-root-count/results/models/contour_model_sigma_1e-02.npz",
+      "role": "RH-24 discovery realization",
+      "sha256": "e634ea6a20f4defd8bd38580b45429de0848a1164b23a960adbb83b82d297b7c"
+    },
+    "rh24_discovery_model_sigma_2e-03": {
+      "path": "papers/RH-24-contour-feshbach-root-count/results/models/contour_model_sigma_2e-03.npz",
+      "role": "RH-24 discovery realization",
+      "sha256": "d1ffe9578e3fe7d45106eaed2e5f8f11bccb262f06b6a6db95dbeca807465803"
+    },
+    "rh24_discovery_model_sigma_4e-03": {
+      "path": "papers/RH-24-contour-feshbach-root-count/results/models/contour_model_sigma_4e-03.npz",
+      "role": "RH-24 discovery realization",
+      "sha256": "b18d96970d19986cc83a288561f571e7523dbf12bcc9e3925e551de96c436fed"
+    },
+    "rh24_scale_summary": {
+      "path": "papers/RH-24-contour-feshbach-root-count/results/scale_summary.csv",
+      "role": "stored contour geometry",
+      "sha256": "5adab612bfd3f625b7a4dce00bafa43d204899175dcd68ae0a53915846e719a2"
+    },
+    "rh24_source_audit_py": {
+      "path": "papers/RH-24-contour-feshbach-root-count/experiments/run_contour_feshbach_audit.py",
+      "role": "RH-24 deterministic model source",
+      "sha256": "fc46fcdd06d5278bd1293a1a78f751d5ce1472d308d9c0307611a835d720e9d1"
+    },
+    "rh24_source_model_py": {
+      "path": "papers/RH-24-contour-feshbach-root-count/src/contour_feshbach/model.py",
+      "role": "RH-24 deterministic model source",
+      "sha256": "815f7636798ad927599a8bde669bdcc0a254face13c7f05e052a98bc3d675fe2"
+    },
+    "rh24_source_rh18_gaussian_operators_py": {
+      "path": "papers/RH-18-branch-isolated-gaussian-return/src/gaussian_return/operators.py",
+      "role": "RH-24 deterministic model source",
+      "sha256": "58fe48b1d94e68fcc442d9d1e47a25a1da6264e9fcececd6e6541b6330a91bdc"
+    },
+    "rh24_source_rh21_biorthogonal_algebra_py": {
+      "path": "papers/RH-21-peripheral-biorthogonal-branch-collapse/src/biorthogonal_branches/algebra.py",
+      "role": "RH-24 deterministic model source",
+      "sha256": "1888f506ab8e2d333bf0fac376130dc6c5548c2d7d3ce0a7ca6c912b792e3f71"
+    },
+    "rh24_source_rh23_packets_py": {
+      "path": "papers/RH-23-physical-packet-complement-feshbach/src/physical_feshbach/packets.py",
+      "role": "RH-24 deterministic model source",
+      "sha256": "bf8cd283a9a4c81c203d2b3ce0a30562879e5200ef9c1cfba17d537a7ffbbbb5"
+    },
+    "rh24_summary": {
+      "path": "papers/RH-24-contour-feshbach-root-count/results/contour_feshbach_summary.json",
+      "role": "RH-24 source-hash index",
+      "sha256": "9c9b52853e7b23953a425c1acfde1cc7118cbe61c9cca442f1da4d397053cdd0"
+    },
+    "rh25_source_algebra_py": {
+      "path": "papers/RH-25-directional-rouche-closure/src/directional_rouche/algebra.py",
+      "role": "RH-25 extended-model source",
+      "sha256": "b8b26059a37c41fa98561c3bdd8f025db0948dd71f21d2b17651bbd0240afd69"
+    },
+    "rh25_source_audit_py": {
+      "path": "papers/RH-25-directional-rouche-closure/experiments/run_directional_closure_audit.py",
+      "role": "RH-25 extended-model source",
+      "sha256": "d7a18c6fdbc300dc37d76b5c3ceda4990ed17f3b5a8f31103a4fbf5a9761e9ec"
+    },
+    "rh25_source_rh24_audit_py": {
+      "path": "papers/RH-24-contour-feshbach-root-count/experiments/run_contour_feshbach_audit.py",
+      "role": "RH-25 extended-model source",
+      "sha256": "fc46fcdd06d5278bd1293a1a78f751d5ce1472d308d9c0307611a835d720e9d1"
+    },
+    "rh25_source_rh24_model_py": {
+      "path": "papers/RH-24-contour-feshbach-root-count/src/contour_feshbach/model.py",
+      "role": "RH-25 extended-model source",
+      "sha256": "815f7636798ad927599a8bde669bdcc0a254face13c7f05e052a98bc3d675fe2"
+    },
+    "rh25_summary": {
+      "path": "papers/RH-25-directional-rouche-closure/results/directional_closure_summary.json",
+      "role": "RH-25 source-hash index",
+      "sha256": "cdd3cdb51ea1f92172432424712f32aa3d4bc3bc7e17dfb3403bcce8d60bb35f"
+    },
+    "rh27_hybrid_summary": {
+      "path": "papers/RH-27-outward-rounded-primal-dual-residuals/results/hybrid_scale_summary.csv",
+      "role": "outward residual input",
+      "sha256": "38ff5a4622b66abc5fe50ac1486326a93d0522349bf58f1f3e3c25339be23d19"
+    },
+    "rh28_arc_cover": {
+      "path": "papers/RH-28-arcwise-rational-arnoldi-enclosure/results/arcwise_contour_arcs.csv",
+      "role": "exact dyadic arc cover and budgets",
+      "sha256": "dff01d5fe7564c7f0fcd3cea80fca328abcbca84d34c4ef7fb90f52690f92cdd"
+    },
+    "rh28_base_snapshot_sigma_1e-02": {
+      "path": "papers/RH-32-end-to-end-certificate-ledger/results/models/rh28_base_model_sigma_1e-02.npz",
+      "role": "deterministically reconstructed RH-28 base realization",
+      "sha256": "79e1b18fc6987d7afcd6422cb9070a79506b3ee61fe4f70349915cfca2049d2e"
+    },
+    "rh28_base_snapshot_sigma_2e-03": {
+      "path": "papers/RH-32-end-to-end-certificate-ledger/results/models/rh28_base_model_sigma_2e-03.npz",
+      "role": "deterministically reconstructed RH-28 base realization",
+      "sha256": "9e146f830c851d48a862c099fb9442718f682d1bd822590e07b8de1ce75a088c"
+    },
+    "rh28_base_snapshot_sigma_4e-03": {
+      "path": "papers/RH-32-end-to-end-certificate-ledger/results/models/rh28_base_model_sigma_4e-03.npz",
+      "role": "deterministically reconstructed RH-28 base realization",
+      "sha256": "196ac0a148ae535a3baa3d455e8affe1ff5699bccc7de5316ee48be108fce1ab"
+    },
+    "rh28_metadata": {
+      "path": "papers/RH-28-arcwise-rational-arnoldi-enclosure/results/arcwise_metadata.json",
+      "role": "RH-28 provenance metadata",
+      "sha256": "94010e3f02924943dfd54734c7be6228d76d7b1ccf8062b3712f9ed56b368003"
+    },
+    "rh28_reconstruction_verification": {
+      "path": "papers/RH-32-end-to-end-certificate-ledger/results/rh28_reconstruction_verification.json",
+      "role": "exact reproduction of all deterministic RH-28 archive fields",
+      "sha256": "89decbf5a8ee2d4ef1d6348071ba54815a7c8ba32eb80f223445789d167e4d01"
+    },
+    "rh28_scale_summary": {
+      "path": "papers/RH-28-arcwise-rational-arnoldi-enclosure/results/arcwise_scale_summary.csv",
+      "role": "RH-28 deterministic scale fields",
+      "sha256": "05c37d3be3fabdc936e0575e2a6ad6e7b0cf1fd4f0f59db5155cf93d7fd0086c"
+    },
+    "rh28_source_coordinates_py": {
+      "path": "papers/RH-28-arcwise-rational-arnoldi-enclosure/src/arcwise_feshbach/coordinates.py",
+      "role": "RH-28 arcwise construction source",
+      "sha256": "ff06616e13fcbcd951daab17160670f6260e376f4c3ed0af7cba7654ba0b502e"
+    },
+    "rh28_source_evaluator_py": {
+      "path": "papers/RH-28-arcwise-rational-arnoldi-enclosure/src/arcwise_feshbach/evaluator.py",
+      "role": "RH-28 arcwise construction source",
+      "sha256": "89b88f8adb3f1505d165a2a9504553da7d62e39937638c6fd6f6cf4aff841e90"
+    },
+    "rh28_source_geometry_py": {
+      "path": "papers/RH-28-arcwise-rational-arnoldi-enclosure/src/arcwise_feshbach/geometry.py",
+      "role": "RH-28 arcwise construction source",
+      "sha256": "b3442d663905d9140d3efa3168b66efdcc620aebf68c32beb73c45999f4993cf"
+    },
+    "rh28_source_relations_py": {
+      "path": "papers/RH-28-arcwise-rational-arnoldi-enclosure/src/arcwise_feshbach/relations.py",
+      "role": "RH-28 arcwise construction source",
+      "sha256": "aaa9e098075cb9c36bc2886077076479affd48ba69176f39b1476abcf18f8e71"
+    },
+    "rh28_source_run_arcwise_enclosure_py": {
+      "path": "papers/RH-28-arcwise-rational-arnoldi-enclosure/experiments/run_arcwise_enclosure.py",
+      "role": "RH-28 arcwise construction source",
+      "sha256": "36ba0d645b7034c8b51eaa6831c5182f49c088697787fa67356b15930792a590"
+    },
+    "rh29_metadata": {
+      "path": "papers/RH-29-deflated-complement-resolvent/results/deflated_metadata.json",
+      "role": "RH-29 provenance metadata",
+      "sha256": "f9e6f3f54ef39299d84fcec9bf394add8ae2845f477ec6994b4907799cccdfc1"
+    },
+    "rh29_scale_summary": {
+      "path": "papers/RH-29-deflated-complement-resolvent/results/deflated_scale_summary.csv",
+      "role": "one-channel residuals and lifted budgets",
+      "sha256": "1e5df8d1614c8f4befe8eacd96a9617dffea23e8f53e893aa96dc4b34e141d97"
+    },
+    "rh29_triplet_sigma_1e-02": {
+      "path": "papers/RH-29-deflated-complement-resolvent/results/triplets/dangerous_triplet_sigma_1e-02.npz",
+      "role": "stored dangerous singular channel",
+      "sha256": "af8fe5811e128e1f97c072290856ef639a324a778f960fe8b0badc850c2add15"
+    },
+    "rh29_triplet_sigma_2e-03": {
+      "path": "papers/RH-29-deflated-complement-resolvent/results/triplets/dangerous_triplet_sigma_2e-03.npz",
+      "role": "stored dangerous singular channel",
+      "sha256": "2bbed41101456d8cf1b664f62fc11c749655eeb4e87c8f4761690ba4f1cc634f"
+    },
+    "rh29_triplet_sigma_4e-03": {
+      "path": "papers/RH-29-deflated-complement-resolvent/results/triplets/dangerous_triplet_sigma_4e-03.npz",
+      "role": "stored dangerous singular channel",
+      "sha256": "a8dbf3b1b8d5573b14bbb626e08de7176c712c2016af031018e28d98eec15877"
+    },
+    "rh31_certificate_sigma_1e-02": {
+      "path": "papers/RH-31-sparse-threshold-inertia/results/exact_target_inertia_sigma_1e-2_op24.json",
+      "role": "exact-target sparse inertia certificate",
+      "sha256": "d4670e09951ec5aad6f1687f9a4a362a3371a01aa9e79da3332b11a433a30fbe"
+    },
+    "rh31_certificate_sigma_2e-03": {
+      "path": "papers/RH-31-sparse-threshold-inertia/results/exact_target_inertia_sigma_2e-3.json",
+      "role": "exact-target sparse inertia certificate",
+      "sha256": "a0f00e9a6bb2cda3c76113f1042bcd099327b9e02b54d8d779bc36362e924603"
+    },
+    "rh31_certificate_sigma_4e-03": {
+      "path": "papers/RH-31-sparse-threshold-inertia/results/exact_target_inertia_sigma_4e-3_op24.json",
+      "role": "exact-target sparse inertia certificate",
+      "sha256": "48959f6f5e36bf8d4e35a519430cca9d57b58824c6bc0241eeb27cb152f023c3"
+    },
+    "rh31_summary": {
+      "path": "papers/RH-31-sparse-threshold-inertia/results/summary.json",
+      "role": "RH-31 source-hash index",
+      "sha256": "c3ef77195a3cca9725dc05ee79a4cf7c1e4c38c43ebfee52aed07f9688e3724d"
+    },
+    "rh31_threshold_summary": {
+      "path": "papers/RH-31-sparse-threshold-inertia/results/threshold_inertia_summary.csv",
+      "role": "verified threshold-inertia bounds",
+      "sha256": "e2e4704db71409581fbe0d833b0fb1eb42ea5e294280fac3d29ea1d762a914f6"
+    }
+  },
+  "status": "all_recorded_upstream_hashes_verified"
+}

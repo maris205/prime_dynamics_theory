@@ -1,0 +1,825 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\Id}{\mathrm I}
+\newcommand{\D}{\mathbb D}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\wind}{\operatorname{wind}}
+\newcommand{\up}{\operatorname{up}}
+\newcommand{\down}{\operatorname{down}}
+\newcommand{\Atilde}{\widetilde A}
+
+\hypersetup{
+  pdftitle={Projected Winding Certification and an End-to-End Contour Ledger},
+  pdfauthor={Liang Wang},
+  pdfsubject={Rigorous projected counts, selected-arc composition, and an exact full-contour obstruction audit},
+  pdfkeywords={Feshbach map, argument principle, verified eigenvalues, Arb, Rouché theorem, nonnormal resolvent, provenance ledger}
+}
+
+\title{\textbf{Projected Winding Certification and an\
+End-to-End Contour Ledger}\\[0.35em]
+\large Exact Stored-Model Counts, Selected-Arc Closure, and a\
+Full-Contour Locality Obstruction}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A sequence of finite-dimensional studies near a quadratic band-merging
+regime constructed a rational Arnoldi Feshbach determinant, certified its
+arcwise approximation error conditionally on a complement-resolvent bound,
+isolated one dangerous singular channel, and finally proved sparse
+threshold-inertia bounds at three selected contour centers.  Two logical
+questions remained entangled: whether the projected base winding itself was
+rigorous, and whether one selected-center resolvent certificate closed the
+entire contour argument.
+
+This paper separates those questions by an end-to-end certificate ledger.
+For the exact binary64 primal base realizations actually used by RH-28 at
+$\sigma=10^{-2}$, $4\times10^{-3}$, and $2\times10^{-3}$, we reconstruct
+the archived source path, freeze deterministic snapshots, and construct the
+$148$, $215$, and $282$ dimensional augmented matrices and enclose every
+eigenvalue with 256-bit Arb arithmetic.  Every enclosure lies strictly
+inside or outside the stored circle.  At each scale exactly one augmented
+eigenvalue lies inside, all projected Hessenberg poles lie outside, and
+there is no ambiguous boundary ball.  Hence the projected determinant is
+holomorphic on the closed disk, has exactly one zero there, and has winding
+one.  A provenance audit also detects that these extended-Arnoldi base
+prefixes are not bitwise identical to the earlier RH-24 short-Arnoldi
+discovery files; the two model families are therefore certified separately
+rather than silently identified.
+
+We then compose the sparse inertia bound with the exact one-channel
+Sherman--Morrison estimate and the arcwise Neumann transport, using outward
+arithmetic throughout.  The resulting selected-arc inverse bounds are
+$1.0847\times10^4$, $3.5811\times10^4$, and $9.0858\times10^4$, all far
+below their corresponding arc budgets.  However, the same one-center
+transport reaches exactly one of $936$, $2065$, and $6368$ archived arcs.
+For the nearest unselected arc its Neumann product already has rigorous
+lower bounds $1.0439$, $1.0167$, and $1.0078$.  Thus the present local
+certificate cannot be promoted to a full-contour theorem.
+
+All consumed files are linked by SHA-256 and exact scalar-identity checks.
+A complete replay reproduces all 9,369 RH-28 arc rows in every one of their
+30 non-timing fields, all deterministic scale-summary fields, and every
+frozen base-array entry bitwise.
+The remaining mathematical gates are now explicit: validated complement
+resolvent bounds on every other arc and a rigorous complement pole count,
+equivalently interior analyticity of the exact finite Feshbach map.  No
+full-contour root count, continuum limit, Hilbert--P\'olya construction,
+zeta-zero identification, or Riemann-hypothesis implication is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Feshbach map; verified eigenvalue enclosure;
+argument principle; rational Arnoldi realization; matrix Rouch\'e theorem;
+nonnormal resolvent; reproducible certificate ledger.
+
+\medskip
+\noindent\textbf{MSC 2020:} 15A18; 47A10; 47A11; 65F15; 65F50; 65G20;
+65P30.
+
+
+\section{Introduction}
+\label{sec:introduction}
+
+The contour program studied in this series is finite-dimensional.  At each
+noise scale a stored transfer matrix is split into a small packet block and
+a large complement.  Eliminating the complement produces a matrix-valued
+Feshbach map whose determinant records a full-minus-complement spectral
+count.  A shift-invariant Arnoldi reduction then gives a small rational
+matrix valid on one complete contour
+\citep{WangContourFeshbach2026,SjoestrandZworski2007}.
+
+The subsequent layers made the comparison increasingly rigorous.  A
+primal--dual residual identity was enclosed with outward arithmetic; an
+adaptive dyadic arc cover converted sampled contour evidence into a finite
+family of conditional Rouch\'e inequalities
+\citep{WangArcwise2026,GohbergSigal1971}.  One-channel deflation reduced the
+missing complement inverse estimate to a lifted bulk inverse
+\citep{WangDeflated2026}.  Sparse Grushin linearization and threshold
+inertia then certified the lifted inverse at three selected centers
+\citep{WangSparseGrushin2026,WangThresholdInertia2026}.
+
+Those results do not automatically compose into a full-contour count.  The
+reason is simple but consequential.  The selected center lies on the arc
+with the smallest admissible \emph{budget}; this does not imply that it is
+the location of the largest complement resolvent.  A local inverse bound
+can be transported only while a resolvent-identity Neumann denominator
+remains positive.  Moreover, even a complete boundary comparison needs
+interior analyticity, which requires a complement pole count.
+
+There was a second, independent gap.  The rational projected model had a
+floating winding one, no numerically observed projected pole, and one
+augmented eigenvalue in the circle.  The determinant identity was exact,
+but the numerical eigenvalue classification itself had not been verified.
+Therefore ``base winding one'' remained evidence rather than a theorem.
+
+The present paper audits the complete implication chain and closes every
+tractable gate without merging logically different evidence levels.  Its
+contributions are:
+
+\begin{enumerate}
+ \item a verified eigenvalue-ball criterion converting an augmented
+       realization into an exact zero-minus-pole count;
+ \item 256-bit Arb certificates of projected winding one and projected
+       holomorphy on the stored disks at three scales;
+ \item exact reproduction of the RH-28 base snapshots and every
+       deterministic field in its three relevant arc archives;
+ \item an outward composition of the RH-31 threshold, the RH-29 rank-one
+       formula, and the RH-28 selected-arc transport;
+ \item a rigorous all-arc audit proving that this one-center transport
+       reaches exactly one archived arc at each scale;
+ \item a SHA-256 and scalar-identity dependency graph separating object
+       provenance from mathematical implication; and
+ \item a minimal conditional theorem stating exactly which two gates would
+       complete the finite stored-contour count.
+\end{enumerate}
+
+The distinction among statement types is maintained throughout:
+
+\begin{itemize}
+ \item algebraic determinant, resolvent, and Rouch\'e implications are exact
+       theorems;
+ \item Arb and sparse-inertia statements are rigorous computer-assisted
+       theorems for exact serialized binary64 inputs; and
+ \item no claim is made that those dyadic inputs enclose an exact continuum
+       kernel, exact critical constants, or a zero-noise limit.
+\end{itemize}
+
+
+\section{Stored rational realization and exact counting identity}
+\label{sec:realization}
+
+Let the packet rank be $m$.  The stored columnwise Arnoldi realization has
+reduced packet block $D\in\C^{m\times m}$, square Hessenberg blocks
+$H_i\in\C^{J\times J}$, output couplings
+$G_i\in\C^{m\times J}$, and forcing columns $\beta_i e_1$.  Set
+\begin{equation}
+ \mathcal H=\operatorname{diag}(H_1,\ldots,H_m),
+ \qquad
+ \mathcal G=[G_1\ \cdots\ G_m],
+ \label{eq:block-h}
+\end{equation}
+and let $\mathcal C\in\C^{mJ\times m}$ have $i$th block column
+$\beta_i e_1$.  The rational projected Feshbach matrix is
+\begin{equation}
+ F_J(z)=z\Id_m-D-\mathcal G(z\Id_{mJ}-\mathcal H)^{-1}\mathcal C.
+ \label{eq:projected-feshbach}
+\end{equation}
+Its augmented realization is
+\begin{equation}
+ M_J=
+ \begin{pmatrix}
+  D&\mathcal G\\
+  \mathcal C&\mathcal H
+ \end{pmatrix}
+ \in\C^{(m+mJ)\times(m+mJ)}.
+ \label{eq:augmented}
+\end{equation}
+
+\begin{proposition}[Augmented determinant identity]
+\label{prop:det-identity}
+For $z\notin\spec\mathcal H$,
+\begin{equation}
+ \det(z\Id-M_J)
+ =\det(z\Id-\mathcal H)\det F_J(z)
+ =\left[\prod_{i=1}^m\det(z\Id-H_i)\right]\det F_J(z).
+ \label{eq:det-identity}
+\end{equation}
+Consequently, for every contour $\Gamma$ avoiding both spectra,
+\begin{equation}
+ \wind_\Gamma\det F_J
+ =N_\Gamma(M_J)-\sum_{i=1}^m N_\Gamma(H_i),
+ \label{eq:count-identity}
+\end{equation}
+where eigenvalues are counted with algebraic multiplicity.
+\end{proposition}
+
+\begin{proof}
+Take the Schur complement of $z\Id-\mathcal H$ in $z\Id-M_J$.  This gives
+\cref{eq:det-identity}; the argument principle gives
+\cref{eq:count-identity}.
+\end{proof}
+
+The identity is exact and was already available in the preceding rational
+model.  What remained was to certify the two ordinary eigenvalue counts in
+\cref{eq:count-identity}.
+
+
+\section{Verified circle classification}
+\label{sec:verified-count}
+
+Let $\overline{\D}(c,R)=\{z:|z-c|\leq R\}$.  Suppose a validated
+eigensolver returns complex balls $E_1,\ldots,E_n$ enclosing all eigenvalues
+of a matrix, including multiplicity.  Define
+\begin{align}
+ E_j\text{ inside} &\quad\Longleftrightarrow\quad
+   \sup_{z\in E_j}|z-c|<R,\label{eq:inside-test}\\
+ E_j\text{ outside} &\quad\Longleftrightarrow\quad
+   \inf_{z\in E_j}|z-c|>R.\label{eq:outside-test}
+\end{align}
+A ball satisfying neither test is ambiguous and invalidates the count.
+
+\begin{theorem}[Verified projected disk count]
+\label{thm:verified-disk-count}
+Assume every eigenvalue ball of $M_J$ and every $H_i$ is classified
+strictly by \cref{eq:inside-test,eq:outside-test}.  Let $n_M$ and $n_H$ be
+the respective numbers of inside balls, counting repeated balls according
+to certified multiplicity.  Then
+\begin{equation}
+ \wind_{|z-c|=R}\det F_J(z)=n_M-n_H.
+ \label{eq:verified-winding}
+\end{equation}
+If $n_H=0$, then $F_J$ is holomorphic on a neighborhood of
+$\overline{\D}(c,R)$ and $\det F_J$ has exactly $n_M$ zeros in the disk,
+counting multiplicity.
+\end{theorem}
+
+\begin{proof}
+Strict classification excludes eigenvalues on the circle and gives the
+exact algebraic counts of $M_J$ and $\mathcal H$.  Apply
+\cref{prop:det-identity}.  If $n_H=0$, every pole of
+\cref{eq:projected-feshbach} lies outside the closed disk, so the projected
+map is holomorphic there and the zero-minus-pole count is an ordinary zero
+count.
+\end{proof}
+
+\subsection{Exact dyadic input convention}
+
+RH-28 builds an Arnoldi model to a deeper level and then uses its first
+$J$ columns as the base rational map.  We replay that exact source path,
+freeze the three base prefixes in deterministic NPZ archives, and verify
+them against a second fresh rebuild bit for bit.  Every real and imaginary
+component is then embedded as its exact dyadic real value in Arb, not as a
+decimal uncertainty interval.  The augmented matrices are assembled from
+those exact entries.  Python-flint's validated nonsymmetric
+eigensolver is run at 256-bit precision with multiple-eigenvalue handling;
+overlapping enclosures are allowed, provided each enclosure remains on one
+strict side of the circle.  Moduli and all boundary comparisons are Arb
+interval operations \citep{Johansson2017,Rump2010}.
+
+The replay is tied to the original RH-28 archive more strongly than by
+source hashes alone: all $936+2065+6368=9369$ accepted arc rows reproduce
+exactly in all 30 non-timing fields, and every deterministic scale-summary
+field also agrees exactly.  Timing fields are intentionally excluded.
+
+This convention proves a theorem about the serialized RH-28 realization itself.
+It does not absorb the earlier construction error from an exact integral
+operator into the NPZ entries.
+
+\subsection{Three computer-assisted counts}
+
+\begin{table}[H]
+\centering
+\caption{Verified projected disk counts.  Here $r_{\rm in}^+$ is the
+largest upper modulus among inside augmented balls, $r_{\rm out}^-$ the
+smallest lower modulus among outside augmented balls, and $p_{\rm out}^-$
+the corresponding minimum for all projected Hessenberg poles.}
+\label{tab:projected-counts}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{rrrrrrrrr}
+\toprule
+$\sigma$ & $m$ & $J$ & $\dim M_J$ & $R$ & $r_{\rm in}^+$
+& $r_{\rm out}^-$ & $p_{\rm out}^-$ & zeros/poles/winding\\
+\midrule
+$10^{-2}$ & 4 & 36 & 148
+& 0.2624987593 & 0.2480796556 & 0.2769178630 & 0.2769178630 & $1/0/1$\\
+$4\times10^{-3}$ & 5 & 42 & 215
+& 0.1505852342 & 0.1362292216 & 0.1649412468 & 0.1649412468 & $1/0/1$\\
+$2\times10^{-3}$ & 6 & 46 & 282
+& 0.1166106551 & 0.1058291258 & 0.1273921845 & 0.1273921845 & $1/0/1$\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+The minimum certified boundary clearances are respectively
+\begin{equation}
+ 1.44191037\times10^{-2},\qquad
+ 1.43560126\times10^{-2},\qquad
+ 1.07815294\times10^{-2}.
+ \label{eq:count-clearances}
+\end{equation}
+There are no ambiguous balls among $148+215+282$ augmented enclosures or
+among the $144+210+276$ projected-pole enclosures.
+
+\begin{theorem}[Three exact RH-28 base-model projected windings]
+\label{thm:three-projected-counts}
+For each of the three exact stored binary64 realizations in
+\cref{tab:projected-counts}, the rational projected Feshbach map is
+holomorphic on a neighborhood of the closed stored disk, its determinant
+has exactly one zero in that disk, and
+\begin{equation}
+ \wind_\Gamma\det F_J=1.
+ \label{eq:three-windings}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The archived Arb output gives complete strict classifications with one
+inside augmented ball and no inside projected-pole ball.  Apply
+\cref{thm:verified-disk-count}.
+\end{proof}
+
+This theorem closes the projected-base count missing from the earlier
+arcwise audit.  The earlier RH-24 discovery NPZ realizations have a separate
+archived Arb certificate with the same $1/0/1$ counts, but they are not used
+as substitutes in this theorem.  Nothing here yet concerns the exact
+complement map.
+
+
+\section{Outward composition of the selected-center certificates}
+\label{sec:composition}
+
+Fix one selected RH-28 arc with center $z_0$, disc radius $\rho$, and
+downward admissible budget $L^-$.  Write
+\begin{equation}
+ A=A(z_0)=z_0\Id-B
+ \label{eq:complement-center}
+\end{equation}
+for the stored complement shift.  The RH-29 singular-channel data consist
+of unit directions $u,v$, a stored scalar $\widehat s>0$, residuals
+\begin{equation}
+ r=Av-\widehat s u,
+ \qquad
+ q=A^*u-\widehat s v,
+ \label{eq:singular-residuals}
+\end{equation}
+and lift $\tau=1$.  With
+\begin{equation}
+ c=\tau-\widehat s,
+ \qquad
+ \Atilde=A+cuv^*,
+ \label{eq:lift}
+\end{equation}
+the exact rank-one estimate is
+\begin{equation}
+ \norm{A^{-1}}_2
+ \leq \Phi(K):=
+ K+\frac{|c|(1+K\norm r_2)(1+K\norm q_2)}
+ {\tau(\widehat s-|c|K\norm r_2)},
+ \label{eq:phi}
+\end{equation}
+provided $\norm{\Atilde^{-1}}_2\leq K$ and the denominator is positive
+\citep{WangDeflated2026}.
+
+RH-31 proves $s_{\min}(\mathcal G)>\alpha$ for a sparse Grushin matrix and
+hence
+\begin{equation}
+ \norm{\Atilde^{-1}}_2\leq\norm{\mathcal G^{-1}}_2<\alpha^{-1}.
+ \label{eq:rh31-bound}
+\end{equation}
+The archived threshold is the next binary64 value above $2/K_*^-$, where
+$K_*^-$ is the RH-29 admissible lifted budget.  In the present composition
+we recompute $K=\up(1/\alpha)$ in Arb instead of trusting the printed
+decimal inverse.
+
+\begin{lemma}[Center-to-disc resolvent transport]
+\label{lem:disc-transport}
+If $\norm{A(z_0)^{-1}}_2\leq M_0$ and
+\begin{equation}
+ dM_0<1,
+ \label{eq:neumann-premise}
+\end{equation}
+then every $z$ satisfying $|z-z_0|\leq d$ obeys
+\begin{equation}
+ \norm{A(z)^{-1}}_2\leq\frac{M_0}{1-dM_0}.
+ \label{eq:transported-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Factor
+$A(z)=A(z_0)[\Id+(z-z_0)A(z_0)^{-1}]$ and apply the Neumann lemma.
+\end{proof}
+
+For the selected arc take $d=\rho$.  Every scalar operation in
+\cref{eq:phi,eq:transported-bound} is evaluated with Arb; upstream upper
+bounds are embedded as exact dyadic upper constants and upstream lower
+budgets as exact dyadic lower constants.
+
+\begin{table}[H]
+\centering
+\caption{Rigorous RH-31 $\to$ RH-29 $\to$ RH-28 selected-arc composition.
+$\delta^-$ is the lower Sherman--Morrison denominator and $\mu^+=\rho
+\Phi(K)$ is the upper Neumann product.  The margin is $L^-/M_{\rm arc}^+$.}
+\label{tab:composition}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{rrrrrrrrr}
+\toprule
+$\sigma$ & $K^+$ & $\delta^-$ & $\Phi(K)^+$ & $\mu^+$
+& $M_{\rm arc}^+$ & $L^-$ & margin & selected arc\\
+\midrule
+$10^{-2}$
+& 4748.7073 & $2.28667\times10^{-3}$ & 5185.0239 & 0.521961
+& 10846.4422 & $3.97259\times10^{13}$ & $3.66258\times10^9$ & 433\\
+$4\times10^{-3}$
+& 17026.7862 & $1.72379\times10^{-3}$ & 17605.9030 & 0.508359
+& 35810.4951 & $5.93711\times10^{11}$ & $1.65792\times10^7$ & 1348\\
+$2\times10^{-3}$
+& 44372.2325 & $1.42478\times10^{-3}$ & 45073.1080 & 0.503913
+& 90857.2895 & $9.96888\times10^{10}$ & $1.09720\times10^6$ & 5453\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{theorem}[Three selected-arc closures]
+\label{thm:selected-arcs}
+Assume the exact stored-target hypotheses of the three RH-31 inertia
+certificates.  Then the corresponding exact stored complement inverses
+satisfy the RH-28 conditional Rouch\'e requirement throughout selected arcs
+$433$, $1348$, and $5453$ at
+$\sigma=10^{-2}$, $4\times10^{-3}$, and $2\times10^{-3}$, respectively.
+\end{theorem}
+
+\begin{proof}
+RH-31 gives \cref{eq:rh31-bound}.  The positive $\delta^-$ values in
+\cref{tab:composition} activate \cref{eq:phi}.  The products $\mu^+<1$
+activate \cref{lem:disc-transport}, and each transported upper bound is
+strictly below the corresponding downward RH-28 budget.
+\end{proof}
+
+
+\section{Why the selected arc does not close the contour}
+\label{sec:locality}
+
+Let the $a$th RH-28 arc be enclosed by the stored disc
+\begin{equation}
+ \overline{\D}(z_a,\rho_a).
+ \label{eq:arc-disc}
+\end{equation}
+Starting from the selected center $z_0$ and its certified bound $M_0$, the
+same one-center argument uses
+\begin{equation}
+ d_a=|z_a-z_0|+\rho_a,
+ \qquad
+ \mu_a=d_aM_0.
+ \label{eq:arc-distance}
+\end{equation}
+If $\mu_a<1$, the transported bound is
+$M_0/(1-\mu_a)$ and must then be compared with the arc-specific budget
+$L_a^-$.  If a rigorous lower bound for $\mu_a$ exceeds one, this particular
+certificate cannot even activate the Neumann lemma on arc $a$.
+
+\begin{proposition}[A budget minimizer is not a global resolvent theorem]
+\label{prop:budget-not-resolvent}
+Knowing that $a_*$ minimizes the numerical thresholds $L_a^-$ and proving a
+resolvent bound on $a_*$ imply no resolvent bound on any disjoint arc.
+\end{proposition}
+
+\begin{proof}
+The thresholds are coefficients in an approximation-error inequality; they
+contain no ordering information about $\norm{(z\Id-B)^{-1}}$.  Already in
+the scalar family $A(z)=z-\lambda$, one may place $\lambda$ on a second arc
+while keeping the selected arc disjoint from $\lambda$.  Then the selected
+arc has a finite inverse bound and the second arc contains a pole,
+independently of which threshold is smaller.
+\end{proof}
+
+The actual stored model gives a stronger quantitative audit than this
+logical counterexample.
+
+\begin{table}[H]
+\centering
+\caption{Rigorous one-center transport coverage.  The ``nearest other''
+column is the smallest lower Neumann product over every unselected arc.  It
+already exceeds one, so all remaining arcs fail the premise of
+\cref{lem:disc-transport} for the composed center bound.}
+\label{tab:coverage}
+\begin{tabular}{rrrrrrr}
+\toprule
+$\sigma$ & selected & total arcs & closed & failed & nearest other &
+$\min_{a\ne a_*}\mu_a^-$\\
+\midrule
+$10^{-2}$ & 433 & 936 & 1 & 935 & 432 & 1.0439217\\
+$4\times10^{-3}$ & 1348 & 2065 & 1 & 2064 & 1347 & 1.0167183\\
+$2\times10^{-3}$ & 5453 & 6368 & 1 & 6367 & 5452 & 1.0078263\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+There are no ambiguous Neumann classifications and no arc that passes the
+Neumann premise but fails only at the budget comparison.  Exactly the
+selected arc passes.  The gaps are small at the nearest neighbor, especially
+at $\sigma=2\times10^{-3}$, but strict failure is still failure.
+
+\begin{theorem}[Exact locality of the composed certificate]
+\label{thm:locality}
+At each of the three stored scales, the current RH-31 $\to$ RH-29
+one-center bound and the RH-28 archived disc geometry rigorously certify one
+arc and no other arc through \cref{lem:disc-transport}.  Therefore
+\cref{thm:selected-arcs} does not establish a full-contour Rouch\'e
+inequality.
+\end{theorem}
+
+\begin{proof}
+The selected upper products are below one by
+\cref{tab:composition}.  The minimum lower product over every unselected
+arc is above one by \cref{tab:coverage}.  Thus the sufficient Neumann
+premise is rigorously true only for the selected arc.  Since RH-28 requires
+the complement inequality on every leaf of its exact partition, the
+full-contour hypothesis is not proved.
+\end{proof}
+
+\begin{remark}
+The theorem concerns the reach of the \emph{current upper bound}.  It does
+not assert that the true complement inverse is large on the other arcs.  A
+sharper center bound, a new center, or a different nonnormal resolvent
+argument may close them.
+\end{remark}
+
+
+\section{The exact end-to-end implication and the two open gates}
+\label{sec:end-to-end}
+
+Let $\Omega$ be one stored circle interior and let $F$ denote the exact
+finite stored Feshbach map before rational Arnoldi projection.  The RH-28
+arc theorem proves
+\begin{equation}
+ \norm{F_J(z)^{-1}(F(z)-F_J(z))}_2<1
+ \label{eq:matrix-rouche}
+\end{equation}
+on an arc whenever its complement-resolvent requirement is met.  The
+following theorem records the minimal finite-dimensional closure.
+
+\begin{theorem}[Conditional full stored-contour closure]
+\label{thm:conditional-closure}
+Fix one of the three scales in \cref{thm:three-projected-counts}.  Suppose:
+\begin{enumerate}
+ \item $\spec B\cap\overline\Omega=\varnothing$, so the exact finite
+       Feshbach map $F$ is holomorphic on a neighborhood of
+       $\overline\Omega$;
+ \item on every RH-28 arc $a$,
+       $\sup_{z\in a}\norm{(z\Id-B)^{-1}}_2<L_a^-$.
+\end{enumerate}
+Then $F$ has determinant winding one and exactly one zero in $\Omega$,
+counting multiplicity.  Under the exact finite Schur determinant identity,
+the corresponding full stored matrix also has exactly one eigenvalue in
+$\Omega$.
+\end{theorem}
+
+\begin{proof}
+By \cref{thm:three-projected-counts}, $F_J$ is holomorphic on the closed
+disk and its determinant has one zero.  Assumption 1 makes $F$ holomorphic.
+Assumption 2 activates the RH-28 inequality
+\cref{eq:matrix-rouche} on every leaf of the exact dyadic cover, hence on
+the whole boundary.  Matrix Rouch\'e theory gives equal determinant winding
+and equal zero count for $F$ and $F_J$ \citep{GohbergSigal1971}.  Finally,
+the exact Schur determinant identity adds the complement eigenvalue count,
+which is zero by Assumption 1.
+\end{proof}
+
+\begin{corollary}[Current ledger status]
+\label{cor:current-status}
+The present archive proves the projected premise of
+\cref{thm:conditional-closure} and one selected arc at each scale.  It does
+not prove either full-contour assumption.  Therefore no exact full stored
+root count follows from the current chain.
+\end{corollary}
+
+The two open gates are independent:
+
+\begin{enumerate}
+ \item \textbf{Boundary resolvent atlas.}  Every remaining RH-28 arc needs
+       a validated complement inverse bound below its own budget.  A local
+       certificate at the budget minimizer is insufficient.
+ \item \textbf{Interior complement pole count.}  Even complete boundary
+       inequalities do not by themselves exclude complement eigenvalues in
+       $\Omega$.  One needs a pole-free homotopy, a complement argument-
+       principle count, or another rigorous interior spectral exclusion.
+\end{enumerate}
+
+The first gate controls the Rouch\'e comparison.  The second determines
+whether that comparison is an ordinary zero count or only a meromorphic
+zero-minus-pole statement.
+
+
+\section{Cross-paper object identity and provenance}
+\label{sec:provenance}
+
+Numerically compatible tables do not guarantee that two theorems concern
+the same serialized object.  RH-32 therefore verifies both file hashes and
+scalar identities.
+
+The hash graph checks:
+
+\begin{enumerate}
+ \item every model-construction source hash recorded by RH-24 and RH-25,
+       and every arc-construction source hash recorded by RH-28;
+ \item the RH-28 metadata-recorded SHA-256 values of the RH-24 contour
+       summary and RH-27 residual summary;
+ \item the RH-29 metadata-recorded SHA-256 value of the RH-28 arc file;
+ \item every RH-29 triplet hash printed in its scale table;
+ \item every RH-31 exact-target certificate hash recorded independently in
+       its summary JSON and threshold table; and
+ \item the deterministic RH-28 base snapshots consumed by the new Arb count
+       and the independent replay certificate linking them to all archived
+       arc fields.
+\end{enumerate}
+
+The exact object-identity audit checks, at each scale,
+\begin{align}
+ (c,R)_{\rm RH24}&=(c,R)_{\rm RH28},\label{eq:id-contour}\\
+ (z_0,\rho,L^-)_{\rm RH28}&=(z_0,\rho,L^-)_{\rm RH29},\label{eq:id-arc}\\
+ \alpha_{\rm RH31}
+ &=\operatorname{nextafter}\!\left(\frac{2}{K_{*,\rm RH29}^-},+\infty\right),
+ \label{eq:id-threshold}\\
+ K_{\rm RH31}^+
+ &=\operatorname{nextafter}(1/\alpha,+\infty).
+ \label{eq:id-inverse}
+\end{align}
+The physical dimensions and scale labels are also required to agree.
+Every check passes.
+
+One identity is deliberately \emph{not} asserted.  The RH-28 base snapshots
+are not bitwise equal to the earlier RH-24 discovery NPZ files.  Their
+maximum entrywise differences are $2.28\times10^{-7}$,
+$2.43\times10^{-8}$, and $7.57\times10^{-9}$ at the three scales.  This is
+consistent with constructing a deeper Arnoldi model and retaining its
+prefix rather than stopping Arnoldi at the discovery depth.  RH-32 records
+the nonidentity in
+\texttt{results/model\_reconstruction\_audit.json} and certifies both model
+families separately.  Treating them as one object would have been a
+provenance error even though their projected counts agree.
+
+\begin{table}[H]
+\centering
+\caption{Dependency ledger.  A hash edge proves object provenance, not the
+mathematical correctness of the source theorem; that remains a separate
+logical layer.}
+\label{tab:dependency}
+\begin{tabular}{p{0.25\textwidth}p{0.43\textwidth}p{0.16\textwidth}}
+\toprule
+edge & mechanism & status\\
+\midrule
+RH-24/RH-27 $\to$ RH-28 & metadata-recorded input SHA-256 & verified\\
+RH-24/25/28 source $\to$ RH-28 snapshot & recorded source hashes and bitwise fresh rebuild & verified\\
+RH-28 snapshot $\to$ arc archive & all non-timing arc and scale fields reproduced exactly & verified\\
+RH-28 $\to$ RH-29 & metadata-recorded arc-file SHA-256 & verified\\
+RH-29 triplets $\to$ RH-31 & triplet hashes plus exact selected-object identities & verified\\
+RH-31 $\to$ RH-32 & certificate hashes and threshold identities & verified\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The complete node list, edge list, actual hashes, expected hashes, and
+boolean checks are archived in \texttt{results/dependency\_ledger.json}.
+The full field-by-field replay is archived in
+\texttt{results/rh28\_reconstruction\_verification.json}.
+The 9,369 per-arc transport classifications are stored separately rather
+than summarized only in the manuscript.
+
+
+\section{Interpretation and next route}
+\label{sec:interpretation}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/end_to_end_ledger.pdf}
+\caption{Left: rigorous composition on the selected arc.  Right: the exact
+status of the finite stored-model gates.  Green means certified; red means
+open, not numerically false.}
+\label{fig:ledger}
+\end{figure}
+
+The result is simultaneously positive and negative.
+
+The positive part is structural.  The projected winding is no longer a
+phase-unwrapping observation.  It is an exact consequence of completely
+classified eigenvalue balls for the dyadic rational realization actually
+used by RH-28.  The audit also catches and resolves the distinct RH-24/RH-28
+Arnoldi prefixes rather than relying on their numerical closeness.  The
+selected local resolvent chain composes without a hidden change of center,
+radius, triplet, threshold, or rounding direction.
+
+The negative part prevents an invalid shortcut.  The smallest RH-28 budget
+identifies the strictest \emph{allowable error threshold}; it does not
+locate the maximum complement resolvent.  The actual one-center radius is
+so local that the nearest adjacent arc already lies just outside its
+certified Neumann domain.  Large selected-arc budget margins cannot repair
+this geometric failure.
+
+The nearest-neighbor products suggest a concrete next route.  They exceed
+one by only $4.39\%$, $1.67\%$, and $0.78\%$.  Rather than seek one global
+nonnormal resolvent bound, one may build a \emph{multi-center certified
+resolvent atlas}: certify selected centers, transport each certificate over
+its local neighborhood, and add centers only at uncovered frontier arcs.
+This converts the next question from ``can one center control the circle?''
+to ``how many rigorously linked local charts are needed?''  The interior
+pole count should remain a separate theorem rather than being inferred from
+boundary coverage.
+
+
+\section{Limitations}
+\label{sec:limitations}
+
+The following limitations are part of the result.
+
+\begin{enumerate}
+ \item The main verified eigenvalue counts concern three exactly replayed
+       RH-28 rational base models; the supplementary RH-24 discovery counts
+       concern a distinct model family.  Neither is the exact unprojected
+       complement or an infinite-dimensional operator.
+ \item The upstream sparse inertia certificates are inherited with their
+       stated IEEE, no-pivot, and exact-binary64 target assumptions.
+ \item Failure of the current Neumann premise on an arc is not evidence of
+       an actual pole or a large true resolvent there.
+ \item Hash agreement proves that the same archived objects were consumed;
+       it is not a substitute for the mathematical proofs attached to those
+       objects.
+ \item No limit as $\sigma\to0$, no self-adjoint generator, no
+       $T\log T$ counting law, no prime-power trace formula, and no relation
+       to Riemann zeros is established.
+\end{enumerate}
+
+
+\section{Reproducibility}
+\label{sec:reproducibility}
+
+The repository archives:
+
+\begin{itemize}
+ \item exact source for loading the rational realizations and constructing
+       $M_J$;
+ \item deterministic RH-28 base snapshots, a full 9,369-arc replay, and an
+       explicit nonidentity audit against the RH-24 discovery snapshots;
+ \item a strict inside/outside/ambiguous eigenvalue-ball classifier;
+ \item the 256-bit projected count certificates;
+ \item the outward RH-31 $\to$ RH-29 $\to$ RH-28 scalar composition;
+ \item all 9,369 per-arc transport classifications;
+ \item cross-paper object-identity and SHA-256 dependency ledgers;
+ \item nine fast tests, including synthetic ambiguous-ball rejection and
+       archive-hash verification; and
+ \item scripts for the figure, manuscript, and final archive audit.
+\end{itemize}
+
+The snapshot rebuild and full count recomputation take about three minutes
+on the archived server.  The complete RH-28 field replay is run one scale
+per process because the original pipeline uses Linux \texttt{fork} and
+should not continue ARPACK in the same interpreter afterward.  The
+composition and provenance layers can be rebuilt independently from the
+frozen projected-count JSON.  Code and data are available at
+\url{https://github.com/maris205/prime_dynamics_theory/tree/main/papers/RH-32-end-to-end-certificate-ledger}.
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+The end-to-end audit closes one genuine theoretical gap and exposes another
+without ambiguity.  At three finite stored scales, the exactly replayed
+RH-28 projected rational Feshbach determinant has a rigorous winding-one
+certificate, not merely a stable floating phase.  The audit identifies the
+distinct RH-24 discovery realization and certifies it separately.  The
+sparse threshold-inertia result also propagates rigorously through
+one-channel deflation and resolvent transport to the selected RH-28 arc.
+
+What does not follow is equally precise.  The selected-center certificate
+reaches exactly one arc, while the nearest other arc already violates its
+Neumann premise.  A full-contour result still needs a validated local atlas
+or another global complement-resolvent theorem, together with an independent
+interior complement pole count.  Those are now the only two finite stored-
+model gates between the present ledger and a legitimate contour root count.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
