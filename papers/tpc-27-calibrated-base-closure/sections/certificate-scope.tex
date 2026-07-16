@@ -1,0 +1,106 @@
+\section{Exact certificate, logical boundaries, and next gate}
+\label{sec:tpc27-certificate-scope}
+
+This final section separates finite algebra, imported analytic input,
+new analytic output, and statements that remain open.
+
+\subsection{Reproducible finite certificate}
+
+The standard-library script
+\begin{center}
+ \texttt{experiments/tpc27\_certificate.py}
+\end{center}
+uses exact rational arithmetic and formal prime-log variables.  It
+checks the Ramanujan compatibility resolution, the truncated and
+complete finite-model multiple identities, the formal prime-multiple
+identity, the Ramanujan-square zero factorization, the exact primitive
+orbit bridge \(P=Z+E\), the four-channel algebra, and both rational exponent
+ledgers.  It contains no floating-point tolerance and uses an explicit
+exception-based checker, so optimization cannot delete a test.
+
+Both
+\[
+ \begin{gathered}
+ \texttt{python experiments/tpc27\_certificate.py},\\
+ \texttt{python -O experiments/tpc27\_certificate.py}
+ \end{gathered}
+\]
+complete \(20{,}540\) exact checks and produce the same JSON file.
+\begin{samepage}
+The recorded hashes are
+\begin{center}
+\footnotesize
+\begin{tabular}{@{}>{\bfseries}l l@{}}
+Source SHA-256 & \texttt{59afa0a8f94bc208297478d1fcc41e85}\\[-0.15em]
+& \texttt{6cf88351c03bae3ef0e51690676a8e3d}\\
+JSON SHA-256 & \texttt{dd7033c1a170a6ba968d4bc478841e19}\\[-0.15em]
+& \texttt{978a5cbb38401a9c7d64681889bd2a48}\\
+Certificate digest & \texttt{ae5b89520111cf8be04cc193e85cd197}\\[-0.15em]
+& \texttt{b8159cbed1b9e0421b9d8f2a1af0e6c4}
+\end{tabular}
+\end{center}
+\end{samepage}
+The certificate controls finite algebra only; it is not asymptotic or
+prime-pair evidence.
+
+\subsection{Dependency and status ledger}
+
+\begin{center}
+\small
+\begin{tabular}{
+ >{\raggedright\arraybackslash}p{0.30\textwidth}
+ >{\raggedright\arraybackslash}p{0.18\textwidth}
+ >{\raggedright\arraybackslash}p{0.40\textwidth}}
+\toprule
+Item & Status & Source or limitation\\
+\midrule
+Ramanujan-square zero factorization & exact, unconditional &
+\Cref{thm:tpc27-Ramanujan-square}; finite sums only\\
+Finite-model multiple density & exact, unconditional &
+\Cref{prop:tpc27-model-multiple}; completeness uses \(kdH\le R\)\\
+Uniform prime-multiple calibration & proved imported input &
+Classical zero-free region in the polynomial modulus range used by
+TPC-20 and TPC-24\\
+Centered physical base zero & closed here &
+Off-diagonal mask, small/large \(k\) split, and actual row
+\(\ell^1\)-mass\\
+Centered physical base nonzero spectrum & closed by transfer &
+TPC-22 when \(S=R\), TPC-23 when \(S>R\), with the TPC-25--26
+continuous physical transfer\\
+Scalar channels \(EZ,ZE,EE\) & closed here &
+Uniform endpoint calibration and the strict Poisson-short orbit bound\\
+Sample \((3/20,31/50,7/20,39/100)\) & fully closed selected square &
+Centered nonzero conductor margin \(7/100\), annular margin \(1/100\),
+and arbitrary logarithmic saving in the calibrated conclusion\\
+High-\(\beta\) sample of TPC-26 & base open &
+Its lower cutoff already satisfies \(S/J=X^{61/1200+o(1)}\)\\
+Ultra-long complement and full residual & open &
+Requires new cancellation for affine two-point M\"obius families\\
+Positivity or Hardy--Littlewood main term & open &
+Not implied by a selected cancellation bound\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Why the interfaces cannot be silently dropped}
+
+Three finite examples isolate the logical boundaries.  First, if a
+bilinear form is \(\mathfrak B(x,y)=xy\), taking
+\(Z_1=Z_2=0\) and \(E_1=E_2=1\) makes the centered square vanish but
+the physical square equal one.  Thus a centered estimate does not
+restore the scalar channels.  Second, on an even orbit the two legs
+\(C(j)=(-1)^j/2\) each have mean zero, while the additive zero mode of
+\(C(j)^2\) is \(1/4\).  Separate centering does not remove the joint
+zero frequency.  Third, on the row diagonal,
+\(c_k(0)=\varphi(k)\), so the large-modulus \(K_0^{-1}\) tail used in
+\cref{thm:tpc27-pointwise-base-zero} disappears.  These examples
+explain, respectively, the explicit \(EZ,ZE,EE\) restoration, zero
+extraction before separation, and the off-diagonal mask.
+
+\subsection{Next analytic gate}
+
+The next step has two branches: prove a centered nonzero base theorem
+for \(S>J\), or isolate a verifiable affine two-point M\"obius subfamily
+in the reflected complement.  Failure can yield a precise barrier
+theorem; success would still require a separate positivity and
+main-term mechanism before twin primes.

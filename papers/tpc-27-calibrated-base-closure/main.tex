@@ -1,0 +1,178 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Calibrated Base Closure in a Primitive Mobius Tail: Ramanujan-Square Zero Modes and Passage Beyond the Poisson Length},
+ pdfauthor={Liang Wang},
+ pdfsubject={Closure of a calibrated base square in a primitive Mobius tail},
+ pdfkeywords={Mobius tail, additive zero mode, Ramanujan sums, calibrated base, Poisson boundary, sieve parity}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\cond}{\operatorname{cond}}
+\newcommand{\supp}{\operatorname{supp}}
+
+\title{\textbf{Calibrated Base Closure in a Primitive M\"obius Tail:}\\
+\textbf{Ramanujan-Square Zero Modes and Passage}\\
+\textbf{Beyond the Poisson Length}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let \(P_{m,S}\) be the calibrated residual prefix in a primitive
+opened row \(m=\ell d\), where \(\ell\asymp L\) is prime, \(d\) is
+squarefree, and \(R\le S\).  Earlier exact-conductor estimates close
+the retained nonzero additive spectrum of the centered selected square
+when \(S\) is strictly below the Poisson length.  They do not, by their
+displayed formulas, estimate the connected additive zero mode.  This
+paper closes that missing base mode for the actual opened-row
+provenance and then restores the calibrated physical square.
+
+On the primitive orbit \((j,H)=1\), write
+\[
+ Z_{m,S}(j)=\sum_{\substack{u\le S\\(u,mH)=1}}
+ b_R(u)\left(\one_{u\mid mj+h}-\frac1u\right),
+ \qquad P_{m,S}=Z_{m,S}+E_S(m).
+\]
+For distinct rows \(m,n\), the complete-period zero kernel of
+\(Z_{m,S}Z_{n,S}\) is
+\[
+ K_S^0(m,n)=
+ \sum_{u,v\le S}\frac{b_R(u)b_R(v)}{uv}
+ \left((u,v)\one_{(u,v)\mid m-n}-1\right),
+\]
+with the primitive row-coprimality restrictions understood.  The
+identity
+\[
+ g\one_{g\mid\Delta}-1
+ =\sum_{\substack{k\mid g\\k>1}}c_k(\Delta)
+\]
+factorizes it exactly as
+\[
+ K_S^0(m,n)=\sum_{k>1}c_k(m-n)B_{k,S}(m)B_{k,S}(n),
+ \qquad
+ B_{k,S}(m)=
+ \sum_{\substack{u\le S\\k\mid u\\(u,mH)=1}}
+ \frac{b_R(u)}u.
+\]
+For \(k\le X^\kappa\), an exact multiple-density identity for the
+finite Ramanujan model and the classical uniform M\"obius calibration
+give
+\[
+ B_{k,S}(m)=\frac{\mu(k)}{\varphi(k)}\delta_H(m)
+ +O_A\!\left(\frac1{\varphi(k)(\log X)^A}\right),
+ \qquad
+ \delta_H(m)\ll \frac{\log\log(3X)}L.
+\]
+For \(k>X^\kappa\), the cofactor mass bound and \(m-n\ne0\) yield a
+Ramanujan tail of size \(X^{-\kappa+o(1)}\).  Consequently, for every
+fixed \(A>0\) and every fixed
+\(0<\kappa<\min\{s,\tfrac12(\tfrac12-\delta)\}\),
+\[
+ K_S^0(m,n)
+ \ll_A (\log X)^{-A}
+ +L^{-2}(\log\log(3X))^3+X^{-\kappa+o(1)}.
+\]
+
+The actual physical row coefficients have \(O(Q)\) one-row absolute
+mass.  Extracting frequency zero before Mellin separation therefore
+closes the physical base zero mode.  Uniform endpoint calibration also
+closes the three scalar channels \(EZ,ZE,EE\).  Combining these facts
+with the inherited static or dynamic exact-conductor theorem proves
+\[
+ \mathcal Q_S^{\rm phys}
+ \ll_B XQ(\log X)^{-B}
+\]
+throughout its strict Poisson-short base region.  Splicing this base
+estimate with the annular cutoff-stability theorem closes the selected
+calibrated square at certain \(T>J\).  In particular, the rational
+sample
+\[
+ \delta=\frac3{20},\quad \beta=\frac{31}{50},\quad
+ s=\frac7{20},\quad t=\frac{39}{100}
+\]
+is upgraded from conditional cutoff stability to a closed selected
+truncated square.  The higher-\(\beta\) sample whose base already lies
+beyond the Poisson length is not covered.  No ultra-long complement,
+positivity statement, Hardy--Littlewood asymptotic, twin-prime theorem,
+or general parity breakthrough is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} primitive M\"obius tail; calibrated base;
+additive zero mode; Ramanujan sum; Poisson boundary; sieve parity.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary
+11L07, 11L40.
+
+\input{sections/introduction}
+\input{sections/interface-bridge}
+\input{sections/ramanujan-factorization}
+\input{sections/multiple-calibration}
+\input{sections/base-zero-closure}
+\input{sections/nonzero-scalar-reassembly}
+\input{sections/passage-theorem}
+\input{sections/certificate-scope}
+
+\clearpage
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

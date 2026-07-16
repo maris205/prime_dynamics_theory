@@ -1,0 +1,230 @@
+\section{Exact multiple densities and uniform cofactor calibration}
+\label{sec:tpc27-multiple-calibration}
+
+We now estimate the factors \(B_{k,S}(m)\) in
+\eqref{eq:tpc27-Ramanujan-square}.  The main cancellation is between an
+exact finite-model identity and the main term of a proved uniform
+M\"obius calibration theorem.
+
+\subsection{An exact finite-model multiple identity}
+
+Let \(m=\ell d_m\) be one retained row and put
+\begin{equation}
+ M_m=d_mH.
+ \label{eq:tpc27-Mm}
+\end{equation}
+The integer \(M_m\) is squarefree, while \(\ell>R\).
+
+\begin{proposition}[Exact model density on multiples]
+\label{prop:tpc27-model-multiple}
+Let \(k\) be squarefree and \((k,mH)=1\).  Then
+\begin{equation}
+ \boxed{
+ \sum_{\substack{u\le R\\k\mid u\\(u,mH)=1}}
+ \frac{\lambda'_R(u)}u
+ =\frac{\mu(k)}{\varphi(k)}
+ \sum_{\substack{a\mid M_m\\ak\le R}}
+ \frac1{\varphi(a)}.}
+ \label{eq:tpc27-truncated-model-multiple}
+\end{equation}
+In particular, if \(kM_m\le R\), then
+\begin{equation}
+ \boxed{
+ \sum_{\substack{u\le R\\k\mid u\\(u,mH)=1}}
+ \frac{\lambda'_R(u)}u
+ =\frac{\mu(k)}{\varphi(k)}
+ \rho_{M,H,R}(m).}
+ \label{eq:tpc27-model-multiple}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+From \eqref{eq:tpc27-lambda-prime}, the left side of
+\eqref{eq:tpc27-truncated-model-multiple} is
+\begin{equation}
+ \sum_{\substack{ub\le R\\k\mid u\\(u,mH)=1}}
+ \frac{\mu(ub)\mu(b)}{\varphi(ub)}.
+ \label{eq:tpc27-model-double-sum}
+\end{equation}
+Only squarefree \(q=ub\) contributes.  Grouping by \(q\) gives
+\begin{equation}
+ \sum_{q\le R}\frac{\mu(q)}{\varphi(q)}
+ \sum_{\substack{b\mid q\\k\mid q/b\\(q/b,mH)=1}}
+ \mu(b).
+ \label{eq:tpc27-model-group-q}
+\end{equation}
+Because \(\ell>R\), no \(q\le R\) contains the large row prime.  Put
+\(a=(q,M_m)\).  The condition \((q/b,M_m)=1\) forces \(a\mid b\).
+Since \((k,M_m)=1\), write \(q=a q_0\) and \(b=a b_0\).  The inner
+sum becomes
+\begin{equation}
+ \mu(a)\sum_{b_0\mid q_0/k}\mu(b_0),
+ \label{eq:tpc27-inner-Mobius-collapse}
+\end{equation}
+and is zero unless \(q_0=k\), in which case it equals \(\mu(a)\).
+Thus \(q=ak\) with \(a\mid M_m\), and the surviving summand is
+\begin{equation}
+ \frac{\mu(ak)\mu(a)}{\varphi(ak)}
+ =\frac{\mu(k)}{\varphi(k)\varphi(a)}.
+\end{equation}
+This proves \eqref{eq:tpc27-truncated-model-multiple}.  If
+\(kM_m\le R\), every divisor \(a\mid M_m\) occurs, and
+\begin{equation}
+ \sum_{a\mid M_m}\frac1{\varphi(a)}
+ =\prod_{p\mid M_m}\left(1+\frac1{p-1}\right)
+ =\frac{M_m}{\varphi(M_m)}
+ =\rho_{M,H,R}(m).
+\end{equation}
+This proves \eqref{eq:tpc27-model-multiple}.
+\end{proof}
+
+The cutoff condition in this proposition is why the opened-row bound
+\(d_m\le R^{1/2}\) matters.  It leaves a fixed-power range of
+multipliers \(k\) on which the model identity is complete.
+
+\subsection{The matching prime multiple}
+
+Define
+\begin{equation}
+ A_{k,S}^{\rm mult}(m)
+ :=\sum_{\substack{u\le S\\k\mid u\\(u,mH)=1}}
+ \frac{a(u)}u.
+ \label{eq:tpc27-prime-multiple-def}
+\end{equation}
+
+\begin{lemma}[Prime multiple calibration]
+\label{lem:tpc27-prime-multiple}
+Let \(k\) be squarefree and \((k,mH)=1\).  Then the exact identity
+\begin{equation}
+ A_{k,S}^{\rm mult}(m)
+ =\frac{\mu(k)}k
+ \left\{
+ A_{kmH}(S/k)-(\log k)C_{kmH}(S/k)
+ \right\}
+ \label{eq:tpc27-prime-multiple-exact}
+\end{equation}
+holds.  Fix \(0<\kappa<s\), where
+\(S=X^{s+o(1)}\).  Uniformly for \(k\le X^\kappa\) and every fixed
+\(A>0\),
+\begin{equation}
+ \boxed{
+ A_{k,S}^{\rm mult}(m)
+ =\frac{\mu(k)}{\varphi(k)}\rho_{P,H}(m)
+ +O_{A,\mathscr D}\!\left(
+ \frac{\rho_{P,H}(m)(1+\log k)}
+ {\varphi(k)(\log X)^A}
+ \right).}
+ \label{eq:tpc27-prime-multiple}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+On the squarefree support, write \(u=kw\).  Then
+\((w,kmH)=1\) and
+\begin{equation}
+ a(kw)=\mu(k)a(w)-\mu(k)\mu(w)\log k.
+ \label{eq:tpc27-a-kw}
+\end{equation}
+Division by \(kw\) and summation prove
+\eqref{eq:tpc27-prime-multiple-exact}.
+
+For \(k\le X^\kappa\), the calibration length
+\(Y=S/k\) is at least a fixed positive power of \(X\).  Also
+\(kmH\le X^{O(1)}\), so one fixed constant \(C\), depending only on
+the exponent data, gives \(kmH\le Y^C\).  Apply
+\cref{eq:tpc27-uniform-A,eq:tpc27-uniform-C} with a calibration
+exponent larger than the requested \(A\).  Since \((k,mH)=1\), the
+main term is
+\begin{equation}
+ \frac{\mu(k)}k\frac{kmH}{\varphi(kmH)}
+ =\frac{\mu(k)}{\varphi(k)}\rho_{P,H}(m).
+\end{equation}
+The two error terms are bounded by the displayed remainder because
+\(\log(S/k)\asymp\log X\) uniformly in this fixed-power range.  This
+proves \eqref{eq:tpc27-prime-multiple}.
+\end{proof}
+
+\subsection{Small and large multiple densities}
+
+Set
+\begin{equation}
+ K_0=X^{\kappa+o(1)},
+ \qquad
+ 0<\kappa<\min\left\{s,\frac{r_0}{2}\right\}.
+ \label{eq:tpc27-K0}
+\end{equation}
+Because \(d_m\le R^{1/2}\) and \(H\) is fixed, all sufficiently large
+\(X\) satisfy
+\begin{equation}
+ kM_m\le R
+ \qquad(k\le K_0).
+ \label{eq:tpc27-small-k-model-range}
+\end{equation}
+
+\begin{corollary}[Calibrated small multiples]
+\label{cor:tpc27-small-Bk}
+For every retained row, every effective squarefree \(k\le K_0\), and
+every fixed \(A>0\),
+\begin{equation}
+ \boxed{
+ B_{k,S}(m)
+ =\frac{\mu(k)}{\varphi(k)}\delta_H(m)
+ +O_{A,\mathscr D}\!\left(
+ \frac1{\varphi(k)(\log X)^A}
+ \right).}
+ \label{eq:tpc27-small-Bk}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+By \eqref{eq:tpc27-bR}, \(B_{k,S}(m)\) is the prime multiple
+\eqref{eq:tpc27-prime-multiple-def} minus the model multiple.  Apply
+\cref{prop:tpc27-model-multiple,lem:tpc27-prime-multiple} and use
+\eqref{eq:tpc27-row-drift}.  Since
+\(\rho_{P,H}(m)\ll_h\log\log(3X)\) and
+\(1+\log k\ll\log X\), invoke
+\cref{lem:tpc27-prime-multiple} with three additional logarithmic
+powers and then rename the exponent.  This absorbs the explicit
+polylogarithmic factors without introducing an \(X^\eps\) loss.
+\end{proof}
+
+For large \(k\), cancellation is unnecessary.  We import the elementary
+cofactor mass lemma of TPC-24: uniformly for squarefree \(k\le S\),
+\begin{equation}
+ \sum_{\substack{w\le S/k\\(w,k)=1}}
+ \frac{|b_R(kw)|}{w}
+ \ll_{C_S}(\log(2X))^4.
+ \label{eq:tpc27-cofactor-L1}
+\end{equation}
+It follows from the positive divisor formula for \(\lambda'_R\) and
+harmonic summation, and uses no cancellation
+\citep{WangTPC24}.
+
+\begin{lemma}[Absolute large-multiple bound]
+\label{lem:tpc27-large-Bk}
+Uniformly for every row and every \(k\ge1\),
+\begin{equation}
+ \boxed{
+ |B_{k,S}(m)|\ll_{\mathscr D}
+ \frac{(\log(2X))^4}{k}.}
+ \label{eq:tpc27-large-Bk}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+There is nothing to prove unless \(k\) is squarefree and
+\((k,mH)=1\).  Write \(u=kw\) in \eqref{eq:tpc27-Bks}.  Squarefree
+support forces \((w,k)=1\), while the remaining row-coprimality
+condition only decreases the absolute sum.  Thus
+\begin{equation*}
+ |B_{k,S}(m)|
+ \le\frac1k
+ \sum_{\substack{w\le S/k\\(w,k)=1}}
+ \frac{|b_R(kw)|}{w},
+\end{equation*}
+and \eqref{eq:tpc27-cofactor-L1} proves the result.
+\end{proof}
+
+The two bounds \eqref{eq:tpc27-small-Bk} and
+\eqref{eq:tpc27-large-Bk} concern the same exact one-row factor.  The
+split at \(K_0\) therefore loses no intermediate term.

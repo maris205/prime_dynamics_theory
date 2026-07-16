@@ -1,0 +1,211 @@
+\section{Ramanujan-square factorization of the connected zero mode}
+\label{sec:tpc27-Ramanujan-factorization}
+
+The base zero mode is finite and admits an exact one-row
+factorization.  This section contains no asymptotic estimate.
+
+\subsection{Primitive complete-period covariance}
+
+For admissible rows and divisors, recall
+\[
+ C_{m,u}(j)=\one_{u\mid mj+h}-\frac1u.
+\]
+Let \(\mathbb E_H\) denote the complete-period average conditional on
+\((j,H)=1\).  The primitive CRT calculation of TPC-20 gives
+\begin{equation}
+ \mathbb E_H\!\left[C_{m,u}C_{n,v}\right]
+ =\frac1{uv}
+ \left(g\one_{g\mid m-n}-1\right),
+ \qquad g=(u,v),
+ \label{eq:tpc27-connected-covariance}
+\end{equation}
+provided \((u,mH)=(v,nH)=1\)
+\citep{WangTPC20}.  The normalization in
+\eqref{eq:tpc27-connected-covariance} omits the fixed outer density
+\(\varphi(H)/H\); that density is restored in the physical Poisson
+zero coefficient and is harmless.
+
+Define the centered base zero kernel
+\begin{align}
+ K_S^0(m,n)
+ :={}&
+ \sum_{\substack{u,v\le S\\
+                   (u,mH)=1\\(v,nH)=1}}
+ \frac{b_R(u)b_R(v)}{uv}
+ \left((u,v)\one_{(u,v)\mid m-n}-1\right).
+ \label{eq:tpc27-base-zero-kernel}
+\end{align}
+It is exactly the arithmetic factor multiplying the physical additive
+zero functional for \(Z_{m,S}Z_{n,S}\).
+
+\begin{remark}[Fixed residue cells]
+\label{rem:tpc27-fixed-residue-zero}
+The physical factor \(\Xi_{\alpha,\gamma}\) may first be split into its
+finitely many classes \(j\equiv\varrho\pmod{H_0}\).  Every effective
+divisor is coprime to \(H_0\), so the joint and one-leg densities inside
+one such class are respectively \(1/(H_0[u,v])\), \(1/(H_0u)\), and
+\(1/(H_0v)\).  Thus \eqref{eq:tpc27-base-zero-kernel} is unchanged up
+to a bounded fixed local factor.  No growing residue complexity is
+hidden here.
+\end{remark}
+
+\subsection{The divisor identity}
+
+We use the Ramanujan sum
+\begin{equation}
+ c_k(a)=\sum_{\substack{x\bmod k\\(x,k)=1}}e_k(ax).
+ \label{eq:tpc27-Ramanujan-sum}
+\end{equation}
+
+\begin{lemma}[Ramanujan resolution of compatibility]
+\label{lem:tpc27-Ramanujan-resolution}
+For all positive integers \(g\) and all \(\Delta\in\Z\),
+\begin{equation}
+ \boxed{
+ g\one_{g\mid\Delta}-1
+ =\sum_{\substack{k\mid g\\k>1}}c_k(\Delta).}
+ \label{eq:tpc27-Ramanujan-resolution}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The standard divisor formula
+\begin{equation}
+ c_k(\Delta)=
+ \sum_{e\mid(k,\Delta)}e\,\mu(k/e)
+ \label{eq:tpc27-c-divisor-formula}
+\end{equation}
+gives
+\begin{align*}
+ \sum_{k\mid g}c_k(\Delta)
+ &=\sum_{e\mid(g,\Delta)}e
+   \sum_{r\mid g/e}\mu(r).
+\end{align*}
+The inner sum is nonzero only when \(e=g\), in which case it equals
+one.  Hence the full sum is \(g\) if \(g\mid\Delta\) and zero
+otherwise.  Subtract the \(k=1\) term \(c_1(\Delta)=1\).
+\end{proof}
+
+For \(k\ge1\), define the one-row multiple density
+\begin{equation}
+ B_{k,S}(m)
+ :=\sum_{\substack{u\le S\\k\mid u\\(u,mH)=1}}
+ \frac{b_R(u)}u.
+ \label{eq:tpc27-Bks}
+\end{equation}
+Because \(b_R\) is squarefree supported, \(B_{k,S}(m)=0\) unless
+\(k\) is squarefree and \((k,mH)=1\).
+
+\begin{theorem}[Exact Ramanujan-square factorization]
+\label{thm:tpc27-Ramanujan-square}
+For every pair of rows \(m,n\),
+\begin{equation}
+ \boxed{
+ K_S^0(m,n)=
+ \sum_{k>1}c_k(m-n)B_{k,S}(m)B_{k,S}(n).}
+ \label{eq:tpc27-Ramanujan-square}
+\end{equation}
+The sum is finite: only squarefree \(k\le S\) coprime to \(mnH\)
+can contribute.
+\end{theorem}
+
+\begin{proof}
+Insert \cref{lem:tpc27-Ramanujan-resolution} with
+\(g=(u,v)\) and \(\Delta=m-n\) into
+\eqref{eq:tpc27-base-zero-kernel}.  All sums are finite, so their order
+may be interchanged.  The condition \(k\mid(u,v)\) is the product of
+the two independent conditions \(k\mid u\) and \(k\mid v\).  The row
+coprimality restrictions also separate, giving
+\begin{align*}
+ K_S^0(m,n)
+ &=\sum_{k>1}c_k(m-n)
+ \left(
+  \sum_{\substack{u\le S\\k\mid u\\(u,mH)=1}}
+  \frac{b_R(u)}u
+ \right)
+ \left(
+  \sum_{\substack{v\le S\\k\mid v\\(v,nH)=1}}
+  \frac{b_R(v)}v
+ \right).
+\end{align*}
+This is \eqref{eq:tpc27-Ramanujan-square}.
+\end{proof}
+
+\begin{remark}[What the factorization removes]
+\label{rem:tpc27-g1-removal}
+The coherent \(g=1\) zero block vanishes identically in the centered
+base: its multiplier is \(1-1=0\).  This is different from an
+uncentered one-sided shell kernel, where a nonzero \(g=1\) principal
+row direction may remain.  The sum in
+\eqref{eq:tpc27-Ramanujan-square} therefore starts at \(k>1\) for an
+exact algebraic reason, not because a principal mode has been deleted.
+\end{remark}
+
+\subsection{Two Ramanujan ledgers}
+
+The following elementary bounds will be used after calibration.
+
+\begin{lemma}[Ramanujan weight and tail]
+\label{lem:tpc27-Ramanujan-ledgers}
+Let \(0<|\Delta|\le X^C\), and let \(2\le K\le X^C\).  Then
+\begin{align}
+ \sum_{\substack{k\ge1\\k\ \mathrm{squarefree}}}
+ \frac{|c_k(\Delta)|}{\varphi(k)^2}
+ &\ll
+ \frac{\rad|\Delta|}{\varphi(\rad|\Delta|)}
+ \ll_C\log\log(3|\Delta|),
+ \label{eq:tpc27-small-Ramanujan-ledger}\\
+ \sum_{k>K}\frac{|c_k(\Delta)|}{k^2}
+ &\ll \frac{\tau(|\Delta|)}K.
+ \label{eq:tpc27-large-Ramanujan-ledger}
+\end{align}
+The second estimate remains true after restricting to squarefree
+\(k\).
+\end{lemma}
+
+\begin{proof}
+For squarefree \(k\), multiplicativity and the prime identity
+\[
+ |c_p(\Delta)|=
+ \begin{cases}
+ p-1,&p\mid\Delta,\\
+ 1,&p\nmid\Delta
+ \end{cases}
+\]
+give the absolutely convergent Euler product
+\begin{align*}
+ \sum_{\substack{k\ge1\\k\ \mathrm{squarefree}}}
+ \frac{|c_k(\Delta)|}{\varphi(k)^2}
+ &=
+ \prod_{p\mid\Delta}\left(1+\frac1{p-1}\right)
+ \prod_{p\nmid\Delta}\left(1+\frac1{(p-1)^2}\right)\\
+ &\ll \prod_{p\mid\Delta}\frac p{p-1}
+ =\frac{\rad|\Delta|}{\varphi(\rad|\Delta|)}.
+\end{align*}
+The standard elementary maximal-order bound for \(n/\varphi(n)\)
+proves the last estimate in
+\eqref{eq:tpc27-small-Ramanujan-ledger}.
+
+For the tail, formula \eqref{eq:tpc27-c-divisor-formula} implies
+\begin{equation}
+ |c_k(\Delta)|\le(k,\Delta)
+ \le\sum_{e\mid(k,\Delta)}\varphi(e).
+ \label{eq:tpc27-c-gcd-bound}
+\end{equation}
+Apply this bound and write \(k=er\):
+\begin{align*}
+ \sum_{k>K}\frac{|c_k(\Delta)|}{k^2}
+ &\le
+ \sum_{e\mid\Delta}\frac{\varphi(e)}{e^2}
+ \sum_{r>K/e}\frac1{r^2}.
+\end{align*}
+If \(e\le K\), the inner sum is \(O(e/K)\); if \(e>K\), it is
+\(O(1)\).  Both ranges contribute
+\(O(\tau(|\Delta|)/K)\), proving
+\eqref{eq:tpc27-large-Ramanujan-ledger}.
+\end{proof}
+
+The second estimate fails in the form required here when
+\(\Delta=0\), because \(c_k(0)=\varphi(k)\).  This is precisely why
+the physical off-diagonal mask in \eqref{eq:tpc27-mask} cannot be
+removed before the zero-mode estimate.

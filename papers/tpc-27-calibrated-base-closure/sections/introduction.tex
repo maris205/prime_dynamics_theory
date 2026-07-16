@@ -1,0 +1,238 @@
+\section{Introduction}
+\label{sec:tpc27-introduction}
+
+The primitive M\"obius-tail program of TPC-20--26 rewrites a selected
+fixed-shift prime-pair residual as a bilinear correlation of opened rows
+\[
+ m=\ell d,
+ \qquad \ell\asymp L\text{ prime},
+ \qquad d\asymp D,
+ \qquad Q=LD,
+ \qquad QJ\asymp X.
+\]
+The common residual divisor coefficient is
+\begin{equation}
+ a(u)=-\mu(u)\log u,
+ \qquad
+ b_R(u)=a(u)-\lambda'_R(u),
+ \qquad
+ \lambda'_R(u)=0\quad(u>R).
+ \label{eq:tpc27-intro-coefficients}
+\end{equation}
+TPC-20 derives the exact four-channel centered kernel, TPC-21 closes
+its multiplicative-character mean at nonzero additive frequency, and
+TPC-22--23 close the corresponding connected fiber discrepancy in
+explicit short-support regions
+\citep{WangTPC20,WangTPC21,WangTPC22,WangTPC23}.  TPC-24--26 then use
+endpoint calibration and exact-conductor estimates to pass selected
+cutoffs across the old Poisson face
+\citep{WangTPC24,WangTPC25,WangTPC26}.
+
+There is a precise logical gap between those statements.  The scalar
+packets displayed and estimated in TPC-22--23 are sums over
+\(r\ne0\).  Their formulas do not estimate the additive zero term
+retained by the TPC-20 two-scale completion.  Moreover, the physical
+prefix used in TPC-26 is calibrated rather than merely centered.  Thus
+one cannot infer a physical base estimate by replacing the words
+``centered selected square'' with ``calibrated square.''  Two separate
+operations are required:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item close the connected additive zero mode of the centered square;
+ \item restore the scalar calibration channels without losing the
+ natural scale.
+\end{enumerate}
+The present paper performs both operations for the actual physical
+opened-row provenance.
+
+\subsection{The exact zero-mode factorization}
+
+For one row put
+\begin{equation}
+ Z_{m,S}(j)=
+ \sum_{\substack{u\le S\\(u,mH)=1}}
+ b_R(u)C_{m,u}(j),
+ \qquad
+ C_{m,u}(j)=\one_{u\mid mj+h}-\frac1u.
+ \label{eq:tpc27-intro-centered-signal}
+\end{equation}
+If \(m\ne n\), the primitive complete-period average of
+\(C_{m,u}C_{n,v}\) is
+\begin{equation}
+ \frac1{uv}
+ \left(g\one_{g\mid m-n}-1\right),
+ \qquad g=(u,v).
+ \label{eq:tpc27-intro-connected-zero}
+\end{equation}
+The elementary Ramanujan identity
+\begin{equation}
+ g\one_{g\mid\Delta}-1
+ =\sum_{\substack{k\mid g\\k>1}}c_k(\Delta)
+ \label{eq:tpc27-intro-Ramanujan-identity}
+\end{equation}
+turns the two-divisor zero kernel into a sum of products of one-row
+multiple densities:
+\begin{equation}
+ \boxed{
+ K_S^0(m,n)=
+ \sum_{k>1}c_k(m-n)B_{k,S}(m)B_{k,S}(n).}
+ \label{eq:tpc27-intro-factorization}
+\end{equation}
+Here
+\begin{equation}
+ B_{k,S}(m)=
+ \sum_{\substack{u\le S\\k\mid u\\(u,mH)=1}}
+ \frac{b_R(u)}u.
+ \label{eq:tpc27-intro-Bk}
+\end{equation}
+The row coprimality restrictions separate exactly; there is no
+approximation in \eqref{eq:tpc27-intro-factorization}.
+
+This factorization changes the nature of the problem.  It is not
+necessary to estimate the centered two-divisor kernel by an operator
+norm.  Instead, one calibrates each short one-row multiple density.
+For squarefree \(k\) coprime to the row, the finite model satisfies an
+exact identity
+\begin{equation}
+ \sum_{\substack{u\le R\\k\mid u\\(u,mH)=1}}
+ \frac{\lambda'_R(u)}u
+ =\frac{\mu(k)}{\varphi(k)}\rho_{M,H,R}(m)
+ \label{eq:tpc27-intro-model-multiple}
+\end{equation}
+whenever \(kdH\le R\).  The corresponding prime coefficient has main
+term
+\begin{equation}
+ \sum_{\substack{u\le S\\k\mid u\\(u,mH)=1}}
+ \frac{a(u)}u
+ =\frac{\mu(k)}{\varphi(k)}\rho_{P,H}(m)
+ +O_A\!\left(
+ \frac{\rho_{P,H}(m)(1+\log k)}
+ {\varphi(k)(\log X)^A}\right).
+ \label{eq:tpc27-intro-prime-multiple}
+\end{equation}
+Their difference is the already power-saving row drift
+\[
+ \delta_H(m)=\rho_{P,H}(m)-\rho_{M,H,R}(m)
+ \ll \frac{\log\log(3X)}L.
+\]
+
+Choose \(K_0=X^\kappa\) below \(R^{1/2}\).  The identities above
+control \(k\le K_0\).  For \(k>K_0\), the cofactor estimate
+\begin{equation}
+ |B_{k,S}(m)|\ll \frac{(\log X)^4}{k}
+ \label{eq:tpc27-intro-large-B}
+\end{equation}
+and the off-diagonal relation \(m-n\ne0\) give
+\begin{equation}
+ \sum_{k>K_0}\frac{|c_k(m-n)|}{k^2}
+ \ll X^{o(1)}K_0^{-1}.
+ \label{eq:tpc27-intro-Ramanujan-tail}
+\end{equation}
+This proves the pointwise zero theorem
+\begin{equation}
+ K_S^0(m,n)
+ \ll_A(\log X)^{-A}
+ +L^{-2}(\log\log(3X))^3+X^{-\kappa+o(1)}.
+ \label{eq:tpc27-intro-zero-theorem}
+\end{equation}
+The condition \(m\ne n\) is structural.  When \(m=n\), one has
+\(c_k(0)=\varphi(k)\), and the large-\(k\) argument does not give
+\eqref{eq:tpc27-intro-Ramanujan-tail}.
+
+\subsection{From the centered base to the physical prefix}
+
+TPC-24's exact calibration identity on the primitive orbit
+\((j,H)=1\) is
+\begin{equation}
+ P_{m,S}(j)=Z_{m,S}(j)+E_S(m),
+ \qquad
+ E_S(m)=A_{mH}(S)-\rho_{P,H}(m).
+ \label{eq:tpc27-intro-PZE}
+\end{equation}
+The classical zero-free region gives
+\(E_S(m)\ll_A(\log X)^{-A}\), uniformly in the polynomial
+row ranges used here.  Therefore
+\begin{equation}
+ P_{m,S}P_{n,S}
+ =ZZ+EZ+ZE+EE.
+ \label{eq:tpc27-intro-four-scalar-channels}
+\end{equation}
+The last three terms are bounded before spectral separation.  The
+actual one-row absolute masses are \(O(Q)\), while
+\[
+ \sum_j|Z_{m,S}(j)|\,|F(j/J)|
+ \ll (J+S)(\log(2X))^4.
+\]
+Thus the scalar channels have arbitrary logarithmic saving whenever
+\(S\le JX^{-\eta_0}\).  This is precisely the strict Poisson-short
+condition already required by the dynamic nonzero theorem.
+
+For the \(ZZ\) term, physical frequency zero is extracted before
+Mellin separation.  The new pointwise bound
+\eqref{eq:tpc27-intro-zero-theorem} combines with the actual
+\(O(Q^2)\) row-pair absolute mass.  Only the nonzero spectrum is then
+sent through the applicable TPC-22 static or TPC-23 dynamic conductor
+theorem.  The correct order is
+\begin{equation}
+ \boxed{
+ \begin{gathered}
+ \text{extract and factor the centered physical zero mode}\\
+ \longrightarrow\ \text{calibrate its one-row multiples}\\
+ \longrightarrow\ \text{separate the nonzero spectrum}\\
+ \longrightarrow\ \text{restore }EZ,ZE,EE.
+ \end{gathered}}
+ \label{eq:tpc27-intro-order}
+\end{equation}
+
+\subsection{Consequences and boundary}
+
+Write
+\begin{equation}
+ Q=X^{\beta+o(1)},
+ \qquad J=X^{1-\beta+o(1)},
+ \qquad S=X^{s+o(1)}.
+ \label{eq:tpc27-intro-exponents}
+\end{equation}
+Under the inherited no-wrap, physical provenance, off-diagonal mask,
+and fixed-margin hypotheses, the base closes when
+\begin{equation}
+ s<1-\beta,
+ \qquad
+ \eta_S(\beta,s)=
+ \min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+1-4s}{2},
+ \frac{3-\beta-6s}{4}
+ \right\}>0.
+ \label{eq:tpc27-intro-base-region}
+\end{equation}
+Combining this with the TPC-26 annular theorem closes a selected
+calibrated square at an upper cutoff \(T=X^{t+o(1)}>J\) whenever its
+annular minimax \(M_\beta(t)\) is positive.  The sample
+\begin{equation}
+ (\delta,\beta,s,t)=
+ \left(\frac3{20},\frac{31}{50},\frac7{20},\frac{39}{100}\right)
+ \label{eq:tpc27-intro-strict-sample}
+\end{equation}
+has centered nonzero conductor ledger margin \(7/100\) and annular
+minimax margin \(1/100\); the complete calibrated conclusion has arbitrary
+logarithmic saving.
+
+This does not make the higher-\(\beta\) cutoff-stability sample of
+TPC-26 into a closed square.  In that sample \(S>J\), so the inherited
+base nonzero theorem is unavailable.  Nor does the argument estimate
+the ultra-long complement after the upper cutoff.  It proves one
+selected physical upper-bound/cancellation statement; it does not
+produce positivity, a Hardy--Littlewood main term, twin primes, or a
+general breach of sieve parity.
+
+The paper is organized as follows.  \Cref{sec:tpc27-interface-bridge}
+fixes the physical packet and the exact centered-to-calibrated bridge.
+\Cref{sec:tpc27-Ramanujan-factorization} proves the zero-mode
+factorization.  \Cref{sec:tpc27-multiple-calibration} proves the exact
+model-multiple identity and its calibrated prime companion.
+\Cref{sec:tpc27-base-zero-closure} obtains the pointwise and physical
+zero theorems.  \Cref{sec:tpc27-nonzero-scalar} transfers the inherited
+nonzero theorem and closes the scalar channels.
+\Cref{sec:tpc27-passage-theorem} gives the base and upper-cutoff
+closure, and \cref{sec:tpc27-certificate-scope} records the exact
+certificate and strict scope.

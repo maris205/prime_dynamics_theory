@@ -1,0 +1,251 @@
+\section{Calibrated base closure and passage beyond the Poisson length}
+\label{sec:tpc27-passage-theorem}
+
+We can now state the complete selected-base theorem and splice it to the
+annular cutoff result of TPC-26.  Every conclusion concerns the same
+physical row family, mask, residue factor, and smooth orbit weight at
+the two cutoffs.
+
+\subsection{The calibrated base theorem}
+
+\begin{theorem}[Physical calibrated base closure]
+\label{thm:tpc27-calibrated-base}
+Retain all hypotheses and definitions of
+\cref{sec:tpc27-interface-bridge,sec:tpc27-multiple-calibration}, in
+particular \(R\le S\), the actual opened-row coefficients, and the
+divisor-independent off-diagonal mask.  Assume also the inherited
+TPC-20--23 primitive, no-wrap, Fourier-tail, and fixed-margin
+interfaces.  Write the scales as in \eqref{eq:tpc27-base-exponents}.
+If
+\begin{equation}
+ s<1-\beta,
+ \qquad
+ \eta_S(\beta,s)>0
+ \label{eq:tpc27-base-hypotheses}
+\end{equation}
+with fixed margins, then for every fixed \(B>0\),
+\begin{equation}
+ \boxed{
+ \cQ_S^{\rm phys}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}.}
+ \label{eq:tpc27-calibrated-base}
+\end{equation}
+Here \(\cQ_S^{\rm phys}\) is the calibrated physical packet
+\eqref{eq:tpc27-physical-base}; the theorem is not merely an estimate
+for its separated nonzero conductor cells.
+\end{theorem}
+
+\begin{proof}
+Use the exact decomposition
+\eqref{eq:tpc27-ZZ-EZ-ZE-EE}.  For \(ZZ\), first extract physical
+additive frequency zero before smooth separation and apply
+\cref{thm:tpc27-physical-base-zero}.  Then separate only the nonzero
+spectrum and apply \cref{thm:tpc27-physical-nonzero}.  The single and
+constant nonzero channels removed by the TPC-20 two-scale completion,
+the dynamic Ramanujan mean, and the physical Fourier tail are already
+included in that theorem's reassembly.  Finally apply
+\cref{thm:tpc27-scalar-closure} to \(EZ,ZE,EE\).  All fixed dyadic,
+sign, content, residue, and smooth decompositions cost at most a fixed
+power of \(\log X\), which is absorbed by choosing the calibration and
+tail orders after \(B\).
+\end{proof}
+
+\begin{remark}[Static base]
+\label{rem:tpc27-static-base}
+At \(S=R=X^{1/2-\delta+o(1)}\), the proof uses the TPC-22 static
+theorem for the nonzero component.  Its conductor saving is
+\[
+ \eta_*(\beta,\delta)=
+ \min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+4\delta-1}{2},
+ \frac{6\delta-\beta}{4}
+ \right\},
+\]
+which is exactly \(\eta_S(\beta,s)\) after
+\(s=1/2-\delta\).  The additive-zero and scalar bridges in the present
+paper are still required; the static conductor theorem alone does not
+display them.
+\end{remark}
+
+\subsection{Splicing to an upper cutoff}
+
+Let \(T=X^{t+o(1)}\) with \(S<T\).  TPC-26 proves, under its annular
+support and symmetric exact-conductor hypotheses, that
+\begin{equation}
+ \cQ_T^{\rm phys}-\cQ_S^{\rm phys}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}
+ \label{eq:tpc27-imported-annular-stability}
+\end{equation}
+whenever its sharp relaxed-box minimax \(M_\beta(t)\) is positive with
+a fixed margin \citep{WangTPC26}.  For \(1/2\le\beta<1\),
+\begin{equation}
+ M_\beta(t)=
+ \begin{cases}
+ 1-\beta-t,
+ &0\le t\le(1-\beta)/2,\\[2pt]
+ (3-3\beta-2t)/4,
+ &(1-\beta)/2\le t\le\beta/2,\\[2pt]
+ (3-\beta-6t)/4,
+ &\beta/2\le t\le(3\beta-1)/2,\\[2pt]
+ (\beta+1-4t)/2,
+ &t\ge(3\beta-1)/2.
+ \end{cases}
+ \label{eq:tpc27-Mbeta}
+\end{equation}
+
+\begin{corollary}[Selected calibrated passage]
+\label{cor:tpc27-selected-passage}
+Assume the hypotheses of \cref{thm:tpc27-calibrated-base}, with
+\(1/2\le\beta<1\).  Suppose also that \(R\le S<T\) lies in the
+TPC-26 annular interface and
+\begin{equation}
+ M_\beta(t)>0
+ \label{eq:tpc27-annular-positive}
+\end{equation}
+with a fixed margin.  Then, for every fixed \(B>0\),
+\begin{equation}
+ \boxed{
+ \cQ_T^{\rm phys}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}.}
+ \label{eq:tpc27-upper-closure}
+\end{equation}
+The upper cutoff \(T\) may exceed the Poisson length \(J\).
+If, in addition, \(s<1-\beta<t\), this is a genuine passage from a
+Poisson-short base to a Poisson-long upper cutoff.
+The row family, both coefficient sequences, mask, periodic residue
+factor, smooth orbit weight, and prefix definition are the same at
+the two cutoffs.
+\end{corollary}
+
+\begin{proof}
+Use the exact identity
+\[
+ \cQ_T^{\rm phys}
+ =\cQ_S^{\rm phys}
+ +(\cQ_T^{\rm phys}-\cQ_S^{\rm phys})
+\]
+and combine \eqref{eq:tpc27-calibrated-base} with
+\eqref{eq:tpc27-imported-annular-stability}.
+\end{proof}
+
+The conclusion is stronger than cutoff stability alone: the base value
+is now estimated in the overlap with the inherited Poisson-short
+region.  It remains a selected truncated-square theorem and does not
+restore the complement beyond \(T\).
+
+\subsection{An exact rational passage sample}
+
+Take
+\begin{equation}
+ \delta=\frac3{20},
+ \qquad
+ \beta=\frac{31}{50},
+ \qquad
+ s=\frac7{20},
+ \qquad
+ t=\frac{39}{100}.
+ \label{eq:tpc27-strict-sample}
+\end{equation}
+Then
+\begin{equation}
+ R=S=X^{7/20+o(1)},
+ \qquad
+ J=X^{19/50+o(1)},
+ \qquad
+ T=X^{39/100+o(1)},
+ \label{eq:tpc27-strict-order}
+\end{equation}
+so
+\begin{equation}
+ S<J<T.
+ \label{eq:tpc27-crossing-order}
+\end{equation}
+The strict Poisson-short margin is
+\begin{equation}
+ (1-\beta)-s
+ =\frac3{100}.
+ \label{eq:tpc27-single-margin}
+\end{equation}
+The three base conductor entries are
+\begin{equation}
+ \left(
+ 1-\frac{3\beta}{2},
+ \frac{\beta+1-4s}{2},
+ \frac{3-\beta-6s}{4}
+ \right)
+ =\left(\frac7{100},\frac{11}{100},\frac7{100}\right),
+ \label{eq:tpc27-base-sample-ledger}
+\end{equation}
+so the centered nonzero conductor ledger has margin \(7/100\).  The complete
+calibrated base conclusion remains the arbitrary-logarithmic estimate
+\eqref{eq:tpc27-calibrated-base}.  Since
+\begin{equation}
+ \frac\beta2=\frac{31}{100}
+ <\frac{39}{100}
+ <\frac{3\beta-1}{2}=\frac{43}{100},
+\end{equation}
+the third line of \eqref{eq:tpc27-Mbeta} applies and gives
+\begin{equation}
+ M_{31/50}(39/100)
+ =\frac{3-31/50-6(39/100)}4
+ =\frac1{100}.
+ \label{eq:tpc27-annular-sample-saving}
+\end{equation}
+Thus the annular minimax has margin \(1/100\); as usual, the estimates
+may use any fixed exponent strictly below the displayed ledger margin.
+
+\begin{corollary}[Closed strict crossing sample]
+\label{cor:tpc27-strict-sample}
+For the actual opened-row packet with the fixed interfaces above, the
+parameters \eqref{eq:tpc27-strict-sample} satisfy
+\begin{equation}
+ \cQ_T^{\rm phys}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}
+ \label{eq:tpc27-strict-sample-closure}
+\end{equation}
+for every fixed \(B>0\).  This upgrades the corresponding TPC-26
+sample from a conditional base splice to a closed selected calibrated
+truncated square.
+\end{corollary}
+
+\subsection{The high-\texorpdfstring{\(\beta\)}{beta} boundary}
+
+TPC-26 also records
+\begin{equation}
+ \beta=\frac{267}{400},
+ \qquad
+ s=\frac{23}{60},
+ \qquad
+ t=\frac{193}{500}.
+ \label{eq:tpc27-high-sample}
+\end{equation}
+Here
+\begin{equation}
+ s-(1-\beta)
+ =\frac{23}{60}-\frac{133}{400}
+ =\frac{61}{1200}>0.
+ \label{eq:tpc27-high-base-beyond-J}
+\end{equation}
+Thus the base already lies beyond \(J\), and
+\eqref{eq:tpc27-base-hypotheses} fails.  The annular theorem still
+proves cutoff stability between \(S\) and \(T\), but the present paper
+does not supply its initial value.  No high-\(\beta\) base closure is
+claimed.
+
+\subsection{What remains}
+
+After \cref{cor:tpc27-selected-passage}, three independent walls remain:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item a base nonzero theorem when the lower cutoff itself is beyond
+ the Poisson length, needed for samples such as
+ \eqref{eq:tpc27-high-sample};
+ \item the ultra-long complement beyond the selected upper cutoff,
+ whose divisor reflection produces polynomial families of two-point
+ affine M\"obius correlations;
+ \item the separate positivity and main-term problem required to pass
+ from an analytic upper/cancellation estimate to a prime-pair
+ asymptotic or lower bound.
+\end{enumerate}
+The first two are analytic cancellation gates.  The third remains
+parity-sensitive.  None is resolved by the calibrated base theorem.

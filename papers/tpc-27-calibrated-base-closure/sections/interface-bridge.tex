@@ -1,0 +1,258 @@
+\section{Physical interface and the exact calibration bridge}
+\label{sec:tpc27-interface-bridge}
+
+We retain the actual opened-row provenance before any Mellin or Fourier
+separation.  This is essential only at physical additive frequency
+zero; the nonzero spectrum will be separated later.
+
+\subsection{Rows, scales, and coefficients}
+
+Fix \(h\in\Z\setminus\{0\}\), and put
+\begin{equation}
+ H=\rad|h|,
+ \qquad H_0=|h|.
+ \label{eq:tpc27-H-H0}
+\end{equation}
+Let
+\begin{equation}
+ R=X^{r_0+o(1)},
+ \qquad r_0=\frac12-\delta>0,
+ \qquad R\le S\le X^{C_S},
+ \label{eq:tpc27-RS}
+\end{equation}
+where all exponent inequalities below have fixed positive margins.  In
+one opened slice, rows are indexed by
+\begin{equation}
+ \alpha=(\ell,d_\alpha),
+ \qquad m_\alpha=\ell d_\alpha\asymp Q=LD,
+ \label{eq:tpc27-row-index}
+\end{equation}
+with
+\begin{equation}
+ \ell\in[L/2,2L]\text{ prime},
+ \quad d_\alpha\in[D,2D]\cap[1,R^{1/2}],
+ \quad d_\alpha\text{ squarefree},
+ \quad(d_\alpha,H)=1.
+ \label{eq:tpc27-row-support}
+\end{equation}
+We assume
+\begin{equation}
+ QJ\asymp X,
+ \qquad L>\max\{2R,2H_0\},
+ \qquad L\ge X^{\lambda_0}
+ \label{eq:tpc27-row-scales}
+\end{equation}
+for a fixed \(\lambda_0>0\).  In particular, \(\ell>R\).  On the
+primitive orbit \((j,H)=1\), target primitivity gives
+\begin{equation}
+ (u,m_\alpha H)=1
+ \qquad\text{whenever }u\mid m_\alpha j+h
+ \text{ and }(j,H)=1.
+ \label{eq:tpc27-target-primitivity}
+\end{equation}
+Since \(H\) is fixed and \(d_\alpha\le R^{1/2}\), we also have
+\(d_\alpha H\le R\) for all sufficiently large \(X\).  This is the
+finite-model completeness condition used below.
+
+The two physical row coefficients have the form
+\begin{equation}
+ \gamma_\alpha^{(i)}
+ =\mu(d_\alpha)(\log\ell)\omega_D^{(i)}(d_\alpha)
+  \psi_L^{(i)}(\ell/L)\zeta_\alpha^{(i)},
+ \qquad |\zeta_\alpha^{(i)}|\ll1,
+ \qquad i=1,2,
+ \label{eq:tpc27-row-provenance}
+\end{equation}
+where the smooth and fixed-residue data range over fixed bounded
+families.  Chebyshev's estimate gives
+\begin{align}
+ \sum_\alpha|\gamma_\alpha^{(i)}|&\ll Q,
+ \label{eq:tpc27-row-l1}\\
+ \|\gamma^{(i)}\|_\infty&\ll\log(2L),
+ \qquad
+ \|\gamma^{(i)}\|_2^2\ll Q\log(2L).
+ \label{eq:tpc27-row-l2}
+\end{align}
+These are the provenance bounds of TPC-25
+\citep{WangTPC25}.  The generic row-pair mask satisfies
+\begin{equation}
+ |\mathfrak m(\alpha,\gamma)|\le1,
+ \qquad
+ \mathfrak m(\alpha,\gamma)=0
+ \quad\text{if }m_\alpha=m_\gamma,
+ \label{eq:tpc27-mask}
+\end{equation}
+and is independent of all divisor and conductor variables.  The second
+condition will be used in the large-Ramanujan-modulus tail.
+
+Let \(\Xi_{\alpha,\gamma}(j)\) be a uniformly bounded real periodic
+factor of fixed period \(H_0\).  The row--orbit weight
+\(\cW_{\alpha,\gamma}(j/J)\) belongs to the factorable physical family
+of TPC-25.  It is a uniformly bounded \(C_c^\infty\) family supported
+in one fixed compact interval, so its sampled orbit has length
+\(O(J)\).  In particular,
+\begin{equation}
+ \sup_{\alpha,\gamma}
+ \left|\int_\R\cW_{\alpha,\gamma}(t)\,dt\right|\ll1,
+ \label{eq:tpc27-zero-functional}
+\end{equation}
+and continuous Mellin separation has finite weighted variation in
+every fixed orbit seminorm.  We denote all fixed shift, smoothness,
+residue, source, and exponent-margin data by \(\mathscr D\).
+
+\subsection{Finite model, prime density, and row drift}
+
+Put
+\begin{equation}
+ a(u)=-\mu(u)\log u
+ \label{eq:tpc27-a}
+\end{equation}
+and
+\begin{equation}
+ \lambda'_R(u)
+ =u\sum_{b\le R/u}
+ \frac{\mu(ub)\mu(b)}{\varphi(ub)}
+ \quad(u\le R),
+ \qquad \lambda'_R(u)=0\quad(u>R).
+ \label{eq:tpc27-lambda-prime}
+\end{equation}
+Define
+\begin{equation}
+ b_R(u)=a(u)-\lambda'_R(u).
+ \label{eq:tpc27-bR}
+\end{equation}
+All three coefficients vanish off squarefree integers.  The finite-model
+and prime conditional densities are
+\begin{align}
+ \rho_{M,H,R}(m_\alpha)
+ &=\frac H{\varphi(H)}
+   \frac{d_\alpha}{\varphi(d_\alpha)},
+ \label{eq:tpc27-model-density}\\
+ \rho_{P,H}(m_\alpha)
+ &=\frac{m_\alpha H}{\varphi(m_\alpha H)}.
+ \label{eq:tpc27-prime-density}
+\end{align}
+Since \(\ell>R\), the large row prime occurs only in the second
+density.  Their difference is
+\begin{equation}
+ \delta_H(m_\alpha)
+ :=\rho_{P,H}(m_\alpha)-\rho_{M,H,R}(m_\alpha)
+ =\frac H{\varphi(H)}
+  \frac{d_\alpha}{\varphi(d_\alpha)(\ell-1)}
+ \ll_h\frac{\log\log(3X)}{L}.
+ \label{eq:tpc27-row-drift}
+\end{equation}
+
+For \(M,Y\ge1\), write
+\begin{align}
+ A_M(Y)&=
+ \sum_{\substack{u\le Y\\(u,M)=1}}
+ \frac{-\mu(u)\log u}{u},
+ \label{eq:tpc27-AM}\\
+ C_M(Y)&=
+ \sum_{\substack{u\le Y\\(u,M)=1}}
+ \frac{\mu(u)}u.
+ \label{eq:tpc27-CM}
+\end{align}
+The classical zero-free region for \(\zeta(s)\), in the uniform form
+proved and used in TPC-20 and TPC-24, gives for every fixed \(A,C>0\)
+\begin{align}
+ A_M(Y)&=\frac M{\varphi(M)}
+ +O_{A,C}\!\left(
+  \frac M{\varphi(M)}(\log Y)^{-A}\right),
+ \label{eq:tpc27-uniform-A}\\
+ C_M(Y)&\ll_{A,C}
+ \frac M{\varphi(M)}(\log Y)^{-A},
+ \label{eq:tpc27-uniform-C}
+\end{align}
+uniformly for \(Y\ge3\) and \(M\le Y^C\)
+\citep{IwaniecKowalski2004,WangTPC20,WangTPC24}.  These are proved
+theorems, not conjectural distribution hypotheses.
+
+\subsection{Centered and calibrated prefixes}
+
+For \(R\le S\), define
+\begin{align}
+ Z_{m,S}(j)
+ &:=\sum_{\substack{u\le S\\(u,mH)=1}}
+ b_R(u)\left(\one_{u\mid mj+h}-\frac1u\right),
+ \label{eq:tpc27-Zms}\\
+ E_S(m)&:=A_{mH}(S)-\rho_{P,H}(m),
+ \label{eq:tpc27-ES}\\
+ P_{m,S}(j)&:=
+ \sum_{\substack{u\le S\\u\mid mj+h}}b_R(u)-\delta_H(m).
+ \label{eq:tpc27-Pms}
+\end{align}
+
+\begin{proposition}[Exact centered-to-calibrated bridge]
+\label{prop:tpc27-PZE}
+For every retained row, every \(R\le S\), and every primitive orbit
+point \((j,H)=1\),
+\begin{equation}
+ \boxed{P_{m,S}(j)=Z_{m,S}(j)+E_S(m).}
+ \label{eq:tpc27-PZE}
+\end{equation}
+Moreover, for every fixed \(A>0\),
+\begin{equation}
+ \boxed{E_S(m)\ll_{A,\mathscr D}(\log X)^{-A}}
+ \label{eq:tpc27-E-bound}
+\end{equation}
+uniformly in the retained polynomial row and cutoff ranges.
+\end{proposition}
+
+\begin{proof}
+The finite model has the exact density identity
+\begin{equation}
+ \sum_{\substack{u\le R\\(u,mH)=1}}
+ \frac{\lambda'_R(u)}u=\rho_{M,H,R}(m).
+ \label{eq:tpc27-model-density-identity}
+\end{equation}
+Since \(\lambda'_R\) is supported on \(u\le R\), subtraction from
+\(A_{mH}(S)\) gives
+\begin{equation}
+ \sum_{\substack{u\le S\\(u,mH)=1}}
+ \frac{b_R(u)}u
+ =\delta_H(m)+E_S(m).
+ \label{eq:tpc27-prefix-density}
+\end{equation}
+Expand the centered indicator in \eqref{eq:tpc27-Zms}, insert
+\eqref{eq:tpc27-prefix-density}, and use target primitivity
+\eqref{eq:tpc27-target-primitivity}.  This proves
+\eqref{eq:tpc27-PZE}.  Estimate \eqref{eq:tpc27-E-bound} is
+\eqref{eq:tpc27-uniform-A} with \(M=mH\), since all relevant quantities
+are fixed powers of \(X\).  The factor
+\(mH/\varphi(mH)\ll_h\log\log(3X)\) is absorbed by first invoking
+\eqref{eq:tpc27-uniform-A} with one additional logarithmic power.
+\end{proof}
+
+The physical base packet is
+\begin{align}
+ \cQ_S^{\rm phys}
+ :={}&\sum_{\alpha,\gamma}
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \mathfrak m(\alpha,\gamma)
+ \notag\\
+ &\quad\times
+ \sum_{\substack{j\in\Z\\(j,H)=1}}
+ \Xi_{\alpha,\gamma}(j)
+ \cW_{\alpha,\gamma}(j/J)
+ P_{m_\alpha,S}(j)P_{m_\gamma,S}(j).
+ \label{eq:tpc27-physical-base}
+\end{align}
+The natural scale is
+\begin{equation}
+ JQ^2\asymp XQ.
+ \label{eq:tpc27-natural-scale}
+\end{equation}
+By \cref{prop:tpc27-PZE}, the integrand in
+\eqref{eq:tpc27-physical-base} has the exact four-term decomposition
+\begin{equation}
+ P_{m,S}P_{n,S}
+ =Z_{m,S}Z_{n,S}
+ +E_S(m)Z_{n,S}
+ +Z_{m,S}E_S(n)
+ +E_S(m)E_S(n).
+ \label{eq:tpc27-ZZ-EZ-ZE-EE}
+\end{equation}
+The first term contains the new additive-zero problem.  The last three
+will be closed directly in \cref{sec:tpc27-nonzero-scalar}.

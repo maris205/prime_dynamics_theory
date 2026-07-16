@@ -1,0 +1,234 @@
+\section{Nonzero transfer and scalar reassembly}
+\label{sec:tpc27-nonzero-scalar}
+
+The new work at additive frequency zero is complete.  We now transfer
+the inherited exact-conductor theorem to the same physical packet and
+then restore the three calibration channels in
+\eqref{eq:tpc27-ZZ-EZ-ZE-EE}.
+
+\subsection{The inherited dynamic conductor region}
+
+Write
+\begin{equation}
+ Q=X^{\beta+o(1)},
+ \qquad J=X^{1-\beta+o(1)},
+ \qquad S=X^{s+o(1)}.
+ \label{eq:tpc27-base-exponents}
+\end{equation}
+For the selected square \(u,v\le S\), the common exact-conductor
+ledger of TPC-22 at \(S=R\) and TPC-23 at \(S>R\) is
+\begin{equation}
+ \eta_S(\beta,s)
+ =\min\left\{
+ 1-\frac{3\beta}{2},
+ \frac{\beta+1-4s}{2},
+ \frac{3-\beta-6s}{4}
+ \right\}.
+ \label{eq:tpc27-etaS}
+\end{equation}
+The corresponding nonzero theorem assumes
+\begin{equation}
+ s<1-\beta,
+ \qquad \eta_S(\beta,s)>0
+ \label{eq:tpc27-dynamic-region}
+\end{equation}
+with fixed margins, together with the primitive row interface,
+divisor-independent off-diagonal mask, no-wrap condition, and the
+stated smooth Fourier-tail control
+\citep{WangTPC23}.  The first inequality is the strict Poisson-short
+condition
+\begin{equation}
+ HS\le JX^{-\eta_0}
+ \label{eq:tpc27-Poisson-short}
+\end{equation}
+for some fixed \(\eta_0>0\), after adjusting fixed constants.
+
+At the boundary \(S=R\) we use the static theorem of TPC-22; in the
+genuinely dynamic case \(S>R\) we use TPC-23.  The theorem acts on the
+retained nonzero joint packet.  Its global
+principal multiplicative-character cell is bounded absolutely by
+\(Q^2X^\eps\), while every nonprincipal exact-conductor cell has a
+fixed-power saving from \eqref{eq:tpc27-etaS}.  It does not include the
+additive zero kernel; that is why
+\cref{thm:tpc27-physical-base-zero} was needed.
+
+\subsection{Transfer of the nonzero spectrum}
+
+Let \(\cN_S^{ZZ,\ne0}\) be the complete physical contribution of all
+nonzero additive frequencies from the centered product
+\(Z_{m_\alpha,S}Z_{m_\gamma,S}\), after the additive zero term
+\eqref{eq:tpc27-physical-ZZ-zero} has been set aside.
+
+\begin{lemma}[Physical transfer to the dynamic interface]
+\label{lem:tpc27-physical-nonzero-transfer}
+After splitting the \(O_h(1)\) residue cells, the physical nonzero
+packet has a continuous representation
+\begin{equation}
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \cW_{\alpha,\gamma}(j/J)
+ =\int
+ x_{\boldsymbol\tau}(\alpha)
+ y_{\boldsymbol\tau}(\gamma)
+ \Phi_{\boldsymbol\tau}(j/J)
+ \,d\nu(\boldsymbol\tau),
+ \label{eq:tpc27-continuous-transfer}
+\end{equation}
+such that, for every fixed integer \(M\ge0\),
+\begin{align}
+ \int(1+|\boldsymbol\tau|)^M
+ \|x_{\boldsymbol\tau}\|_1
+ \|y_{\boldsymbol\tau}\|_1
+ \,d|\nu|(\boldsymbol\tau)
+ &\ll_{M,\mathscr D}Q^2,
+ \label{eq:tpc27-transfer-l1}\\
+ \int(1+|\boldsymbol\tau|)^M
+ \|x_{\boldsymbol\tau}\|_2
+ \|y_{\boldsymbol\tau}\|_2
+ \,d|\nu|(\boldsymbol\tau)
+ &\ll_{M,\mathscr D}Q\log(2L).
+ \label{eq:tpc27-transfer-l2}
+\end{align}
+Every component has the same divisor-independent mask, row scales,
+and no-wrap margins.  The applicable TPC-22 static or TPC-23 dynamic
+mean, discrepancy, and Fourier-tail bounds may be integrated
+componentwise.
+For a fixed cell \(j\equiv\varrho\pmod{H_0}\), the bounded factor
+\(\Xi_{\alpha,\gamma}(\varrho)\) is absorbed into the row-pair mask.
+It remains independent of every divisor, additive frequency, and
+conductor variable.
+\end{lemma}
+
+\begin{proof}
+This is the continuous log-Mellin separation proved for the same
+physical provenance in TPC-25.  Each fixed smooth row--orbit factor has
+a Schwartz Mellin transform.  Its row phase and orbit phase have
+modulus one, so the row norms are exactly
+\cref{eq:tpc27-row-l1,eq:tpc27-row-l2} up to the Schwartz density.
+Schwartz moments prove
+\cref{eq:tpc27-transfer-l1,eq:tpc27-transfer-l2}.  Smooth separation
+does not touch the generic mask.
+
+The constants in the applicable TPC-22 or TPC-23 component estimates
+grow at most
+polynomially in finitely many seminorms of
+\(\Phi_{\boldsymbol\tau}\), while the weighted moments above are finite.
+Apply the triangle inequality and Tonelli's theorem to finite Riemann
+sums, then use dominated convergence.  The physical Fourier tail is
+automatic for this provenance by the rapid-decay argument of TPC-26;
+the base support \(u,v\le S\) is a subfamily of the polynomial divisor
+box treated there.  This proves the transfer.
+\end{proof}
+
+\begin{theorem}[Physical nonzero centered-base closure]
+\label{thm:tpc27-physical-nonzero}
+Assume \eqref{eq:tpc27-dynamic-region} with fixed margins and all
+inherited primitive/no-wrap interfaces.  Then for every fixed \(B>0\),
+\begin{equation}
+ \boxed{
+ \cN_S^{ZZ,\ne0}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}.}
+ \label{eq:tpc27-physical-nonzero}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Apply \cref{lem:tpc27-physical-nonzero-transfer}.  On every Mellin
+component, TPC-20's two-scale completion removes the single-indicator
+and constant nonzero spectra under
+\eqref{eq:tpc27-Poisson-short}.  If \(S=R\), apply the TPC-22 static
+exact-conductor theorem; if \(S>R\), apply the TPC-23 dynamic theorem.
+Their common ledger \eqref{eq:tpc27-etaS} gives the same fixed-power
+saving.  The relevant Ramanujan-mean theorem bounds the global
+principal character cell by \(Q^2X^\eps\), a fixed-power saving from
+\(Q^2J\) because \(J\) is a fixed positive power.  Integrate the
+component estimates using \eqref{eq:tpc27-transfer-l2}, the mean using
+\eqref{eq:tpc27-transfer-l1}, and choose the Fourier-tail decay order
+after \(B\).  Every contribution is then
+\(O_B(XQ(\log X)^{-B})\).
+\end{proof}
+
+\subsection{The three calibration channels}
+
+The fact that \(E_S(m)\) depends on the row prevents it from being
+removed as one global scalar.  Uniform pointwise calibration and the
+actual physical \(\ell^1\)-mass nevertheless suffice.
+
+\begin{lemma}[Orbit mass of one centered prefix]
+\label{lem:tpc27-centered-orbit-mass}
+For every retained row and every uniformly bounded physical orbit
+test supported on an interval of length \(O(J)\),
+\begin{equation}
+ \sum_{j\in\Z}
+ \left|F(j/J)Z_{m,S}(j)\right|
+ \ll_{\mathscr D}(J+S)(\log(2X))^4.
+ \label{eq:tpc27-centered-orbit-mass}
+\end{equation}
+The same bound holds after imposing \((j,H)=1\) and a fixed residue
+cell modulo \(H_0\).
+\end{lemma}
+
+\begin{proof}
+For \((u,mH)=1\), the congruence \(u\mid mj+h\) selects one class
+modulo \(u\).  Hence its intersection with an interval of length
+\(O(J)\) has \(O(J/u+1)\) points.  From
+\eqref{eq:tpc27-Zms},
+\begin{align*}
+ \sum_j|F(j/J)Z_{m,S}(j)|
+ &\ll
+ \sum_{u\le S}|b_R(u)|\left(\frac Ju+1\right).
+\end{align*}
+TPC-24's prefix mass bound gives
+\(\sum_{u\le S}|b_R(u)|/u\ll(\log(2X))^3\).  Pointwise, the defining
+formula \eqref{eq:tpc27-lambda-prime} gives
+\[
+ |\lambda'_R(u)|
+ \le \frac{u}{\varphi(u)}
+ \sum_{b\le R/u}\frac{\mu^2(b)}{\varphi(b)}
+ \ll (\log(2X))^2
+\]
+on its squarefree support; also \(|a(u)|\le\log(2X)\).  Hence
+\(\sum_{u\le S}|b_R(u)|\ll S(\log(2X))^2\).  Combining these
+estimates proves \eqref{eq:tpc27-centered-orbit-mass}.  Additional
+fixed congruence restrictions only reduce the number of orbit points.
+\end{proof}
+
+Let \(\cE_S^{EZ}\), \(\cE_S^{ZE}\), and \(\cE_S^{EE}\) denote the
+three physical terms obtained from the last three summands of
+\eqref{eq:tpc27-ZZ-EZ-ZE-EE}.
+
+\begin{theorem}[Scalar calibration closure]
+\label{thm:tpc27-scalar-closure}
+Assume the actual physical provenance and the strict Poisson-short
+condition \eqref{eq:tpc27-Poisson-short}.  Then, for every fixed
+\(B>0\),
+\begin{equation}
+ \boxed{
+ |\cE_S^{EZ}|+|\cE_S^{ZE}|+|\cE_S^{EE}|
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}.}
+ \label{eq:tpc27-scalar-closure}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Choose the exponent \(A\) in \eqref{eq:tpc27-E-bound} after the
+requested \(B\).  Delete the bounded mask, residue factor, and orbit
+test in absolute value.  By
+\cref{eq:tpc27-row-l1,eq:tpc27-centered-orbit-mass},
+\begin{align}
+ |\cE_S^{EZ}|+|\cE_S^{ZE}|
+ &\ll_A
+ Q^2(J+S)(\log(2X))^4(\log X)^{-A},
+ \label{eq:tpc27-EZ-bound}\\
+ |\cE_S^{EE}|
+ &\ll_A
+ JQ^2(\log X)^{-2A}.
+ \label{eq:tpc27-EE-bound}
+\end{align}
+Condition \eqref{eq:tpc27-Poisson-short} gives \(J+S\asymp J\), and
+\(JQ^2\asymp XQ\).  Increase \(A\) after the requested \(B\) to
+obtain \eqref{eq:tpc27-scalar-closure}.
+\end{proof}
+
+This proof treats \(EZ,ZE,EE\) as genuine row-dependent channels.  It
+does not replace them by a single scalar or infer their smallness from
+the nonzero conductor theorem.

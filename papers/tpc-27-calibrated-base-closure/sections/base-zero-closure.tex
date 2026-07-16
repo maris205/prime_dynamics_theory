@@ -1,0 +1,172 @@
+\section{Pointwise and physical closure of the base zero mode}
+\label{sec:tpc27-base-zero-closure}
+
+We combine the exact factorization with the two multiple-density
+estimates.  The only use of the row off-diagonal condition is in the
+large-\(k\) Ramanujan tail.
+
+\subsection{The pointwise theorem}
+
+\begin{theorem}[Pointwise centered base-zero theorem]
+\label{thm:tpc27-pointwise-base-zero}
+Retain the row and cutoff hypotheses of
+\cref{sec:tpc27-interface-bridge}, and let \(K_0=X^{\kappa+o(1)}\)
+satisfy \eqref{eq:tpc27-K0}.  Uniformly for distinct retained rows
+\(m\ne n\) and every fixed \(A>0\),
+\begin{equation}
+ \boxed{
+ K_S^0(m,n)
+ \ll_{A,\mathscr D}
+ (\log X)^{-A}
+ +L^{-2}(\log\log(3X))^3
+ +X^{-\kappa+o(1)}.}
+ \label{eq:tpc27-pointwise-base-zero}
+\end{equation}
+No mean-zero condition on the row weights or the physical orbit test is
+assumed.
+\end{theorem}
+
+\begin{proof}
+Use the exact factorization
+\eqref{eq:tpc27-Ramanujan-square} and split its sum at \(K_0\).
+For \(k\le K_0\), write
+\begin{equation}
+ B_{k,S}(m)=
+ \frac{\mu(k)}{\varphi(k)}\delta_H(m)+e_k(m),
+ \qquad
+ |e_k(m)|\ll_A
+ \frac1{\varphi(k)(\log X)^{A+10}}.
+ \label{eq:tpc27-small-B-error}
+\end{equation}
+The harmless extra ten logarithms anticipate the fixed reassembly
+losses.  By \eqref{eq:tpc27-row-drift},
+\begin{equation}
+ |B_{k,S}(m)B_{k,S}(n)|
+ \ll_A\frac1{\varphi(k)^2}
+ \left\{
+ \frac{(\log\log(3X))^2}{L^2}
+ +(\log X)^{-A-5}
+ \right\}.
+ \label{eq:tpc27-small-product}
+\end{equation}
+Apply \eqref{eq:tpc27-small-Ramanujan-ledger} and increase the
+calibration exponent once more.  The small-\(k\) contribution is
+\begin{equation}
+ \ll_A
+ L^{-2}(\log\log(3X))^3+(\log X)^{-A}.
+ \label{eq:tpc27-small-k-zero}
+\end{equation}
+
+For \(k>K_0\), \cref{lem:tpc27-large-Bk} gives
+\begin{equation}
+ |B_{k,S}(m)B_{k,S}(n)|
+ \ll\frac{(\log(2X))^8}{k^2}.
+ \label{eq:tpc27-large-product}
+\end{equation}
+Since \(m\ne n\) and \(|m-n|\le X^{O(1)}\), apply
+\eqref{eq:tpc27-large-Ramanujan-ledger} with
+\(\Delta=m-n\).  The large-\(k\) contribution is
+\begin{equation}
+ \ll X^{-\kappa+o(1)}.
+ \label{eq:tpc27-large-k-zero}
+\end{equation}
+Combining \eqref{eq:tpc27-small-k-zero} and
+\eqref{eq:tpc27-large-k-zero} proves the theorem.
+\end{proof}
+
+\begin{remark}[Why no operator hypothesis remains]
+\label{rem:tpc27-no-zero-operator}
+Entrywise decay alone does not close a dense bilinear row matrix under
+only soft \(\ell^2\) energy; TPC-25 gives an exact interface
+counterexample.  The present physical packet has more information: its
+one-row \(\ell^1\)-mass is \(O(Q)\).  We use that actual provenance
+before separation.  Thus \cref{thm:tpc27-pointwise-base-zero} does not
+contradict the earlier operator obstruction and does not assert a
+black-box theorem for arbitrary soft-energy row families.
+\end{remark}
+
+\subsection{Physical frequency zero before separation}
+
+Let \(\cZ_S^{ZZ,0}\) denote the physical additive-zero contribution of
+the \(Z_{m_\alpha,S}Z_{m_\gamma,S}\) term in
+\eqref{eq:tpc27-ZZ-EZ-ZE-EE}.  It is taken before continuous Mellin
+separation.  After splitting the \(O_h(1)\) residue cells described in
+\cref{rem:tpc27-fixed-residue-zero}, it has the form
+\begin{align}
+ \cZ_S^{ZZ,0}
+ ={}&J\sum_{\alpha,\gamma}
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \mathfrak m(\alpha,\gamma)
+ \vartheta_{\alpha,\gamma}^{(0)}
+ K_S^0(m_\alpha,m_\gamma),
+ \label{eq:tpc27-physical-ZZ-zero}
+\end{align}
+where
+\begin{equation}
+ \vartheta_{\alpha,\gamma}^{(0)}
+ =\left(
+ \frac1{H_0}
+ \sum_{\substack{\varrho\bmod H_0\\(\varrho,H)=1}}
+ \Xi_{\alpha,\gamma}(\varrho)
+ \right)
+ \int_{\R}\cW_{\alpha,\gamma}(t)\,dt,
+ \qquad
+ |\vartheta_{\alpha,\gamma}^{(0)}|\ll_{\mathscr D}1.
+ \label{eq:tpc27-bounded-zero-factor}
+\end{equation}
+Thus the fixed primitive density, residue-cell coefficient, and zero
+Fourier functional occur exactly once.  The bound in
+\eqref{eq:tpc27-bounded-zero-factor} follows from
+\eqref{eq:tpc27-zero-functional}.
+
+\begin{theorem}[Physical centered base-zero closure]
+\label{thm:tpc27-physical-base-zero}
+Under the hypotheses of
+\cref{thm:tpc27-pointwise-base-zero}, for every fixed \(B>0\),
+\begin{equation}
+ \boxed{
+ \cZ_S^{ZZ,0}
+ \ll_{B,\mathscr D}XQ(\log X)^{-B}.}
+ \label{eq:tpc27-physical-base-zero}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The mask in \eqref{eq:tpc27-mask} restricts
+\eqref{eq:tpc27-physical-ZZ-zero} to \(m_\alpha\ne m_\gamma\), so
+\cref{thm:tpc27-pointwise-base-zero} applies.  Delete the bounded mask
+and zero functional, then use \eqref{eq:tpc27-row-l1} on both row
+sides.  This gives
+\begin{align}
+ |\cZ_S^{ZZ,0}|
+ \ll_{A,\mathscr D}
+ JQ^2\left\{
+ (\log X)^{-A}
+ +L^{-2}(\log\log(3X))^3
+ +X^{-\kappa+o(1)}
+ \right\}.
+ \label{eq:tpc27-physical-zero-prebound}
+\end{align}
+By \eqref{eq:tpc27-natural-scale}, \(JQ^2\asymp XQ\).  The last two
+terms have fixed-power savings because
+\(L\ge X^{\lambda_0}\) and \(\kappa>0\).  Choose \(A\) after \(B\)
+and after the fixed logarithmic residue/dyadic multiplicities.  This
+proves \eqref{eq:tpc27-physical-base-zero}.
+\end{proof}
+
+\begin{remark}[No mean-zero physical test]
+\label{rem:tpc27-general-mean}
+The proof uses only the bounded zero functional
+\eqref{eq:tpc27-zero-functional}; it does not require it to vanish.
+Thus the physical zero mode is closed for a general fixed nonzero-mean
+test in the factorable provenance class.
+\end{remark}
+
+\begin{remark}[Diagonal boundary]
+\label{rem:tpc27-diagonal-boundary}
+If the row diagonal were restored, the large-\(k\) argument would face
+\(c_k(0)=\varphi(k)\), and
+\eqref{eq:tpc27-large-Ramanujan-ledger} would no longer supply
+\(K_0^{-1}\).  The theorem therefore closes the actual generic
+off-diagonal packet.  It is not a diagonal second-moment theorem.
+\end{remark}
