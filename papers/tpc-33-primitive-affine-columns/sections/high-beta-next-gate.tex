@@ -1,0 +1,164 @@
+\section{The high-\texorpdfstring{\(\beta\)}{beta} ledger and the next gate}
+\label{sec:tpc33-high-beta-next-gate}
+
+We now specialize the exact interfaces to the source-compatible endpoint
+of TPC-28 \citep{WangTPC28}.  The purpose is to measure what one-fiber cancellation can and
+cannot accomplish, and to state the next target without implying that it
+has been proved.
+
+\subsection{Physical exponents}
+
+The row, orbit, prime-source, and opened-divisor exponents are
+\begin{align}
+ \beta&=\frac{267}{400},
+ &Q&=X^{267/400+o(1)},
+ &J&=X^{133/400+o(1)},
+ \label{eq:tpc33-high-QJ}\\
+ \lambda&=\frac{99979}{210000},
+ &\ell&=X^{\lambda+o(1)},
+ &d_*&=\frac{10049}{52500},
+ \label{eq:tpc33-high-LD}\\
+ D&=X^{d_*+o(1)},
+ &T&=X^{193/500+o(1)}.
+ \label{eq:tpc33-high-DT}
+\end{align}
+The exponent \(\lambda\) here is unrelated to the finite projector
+coefficient \(\lambda_G(v)\) from
+\cref{sec:tpc33-structured-mask}.
+Here \(Q=LD\) and \(QJ\asymp X\).  In an unprojected affine column,
+\begin{equation}
+ \ell j
+ =X^{\lambda+133/400+o(1)}
+ =X^{42451/52500+o(1)}.
+ \label{eq:tpc33-high-ellj}
+\end{equation}
+The reflected complement satisfies
+\begin{equation}
+ s\ll X/T=X^{307/500+o(1)}.
+ \label{eq:tpc33-high-s-range}
+\end{equation}
+After the row-gcd projection, the second slope is
+\begin{equation}
+ a=\ell jv,\qquad v\mid e,\qquad
+ a\le X^{1+o(1)},
+ \label{eq:tpc33-high-projected-slope}
+\end{equation}
+because
+\begin{equation}
+ \frac{42451}{52500}+\frac{10049}{52500}=1.
+ \label{eq:tpc33-high-slope-sum}
+\end{equation}
+The corresponding affine fiber has length
+\begin{equation}
+ |I|\ll1+X^{d_*+o(1)}/(sv).
+ \label{eq:tpc33-high-fiber-length}
+\end{equation}
+Thus many slope layers are arithmetically nondegenerate but contain only
+\(O(1)\) points.  Nonzero determinant alone does not create a long average.
+
+\subsection{Why square root on every long fiber is still insufficient}
+
+The longest possible affine fiber has length \(D\), attained only when the
+product \(sv\) is bounded.  Suppose, optimistically, that every such fiber
+could be bounded with square-root cancellation while all outer variables
+were reassembled absolutely.  The largest relative saving visible to that
+strategy would be
+\begin{equation}
+ D^{-1/2}
+ =X^{-10049/105000+o(1)}.
+ \label{eq:tpc33-single-fiber-sqrt-saving}
+\end{equation}
+Indeed, if the fiber lengths are \(n_i\le D\), then after absolute
+reassembly the ratio of square-root bounds to trivial masses is a weighted
+average of \(n_i^{-1/2}\), and hence cannot improve on \(D^{-1/2}\).
+The required amplitude saving is
+\begin{equation}
+ J^{-1}=X^{-133/400+o(1)}.
+ \label{eq:tpc33-required-J-saving}
+\end{equation}
+The exact missing exponent is
+\begin{equation}
+ \boxed{
+ \frac{133}{400}-\frac{10049}{105000}
+ =\frac{49727}{210000}
+ =0.236795\ldots.}
+ \label{eq:tpc33-single-fiber-gap}
+\end{equation}
+
+This is a limitation of a specified proof strategy, not a lower bound for
+the actual M\"obius sum.  It proves that even a pointwise square-root theorem
+for each longest fiber cannot close the endpoint if every remaining index
+is treated by the triangle inequality.  The missing gain must use collective
+averaging across some of
+\begin{equation}
+ \ell,\quad j,\quad s,\quad v,\quad
+ \text{and the opposite row}.
+ \label{eq:tpc33-outer-average-variables}
+\end{equation}
+
+\subsection{The restricted physical projective-energy problem}
+
+The next analytic target is exactly
+\begin{equation}
+ \boxed{
+ E_L+E_R\ll_{\eps,h,\mathscr D}X^\eps Q^3,}
+ \label{eq:tpc33-next-projective-energy}
+\end{equation}
+with \(E_L,E_R\) defined in
+\eqref{eq:tpc33-left-column-energy} and
+\eqref{eq:tpc33-right-column-energy}, and with each inner column expanded
+as in \cref{thm:tpc33-actual-mask-column}.  The estimate must retain:
+\begin{enumerate}[label=\textup{(\alph*)}]
+ \item both exact polarizations;
+ \item the actual row coefficients and row-gcd projection;
+ \item the fixed-period and smooth orbit factors;
+ \item the \(+1\) occupancy in \eqref{eq:tpc33-high-fiber-length}; and
+ \item the exceptional coefficient pairs allowed by determinant-fiber
+ averaging.
+\end{enumerate}
+
+There are several nonexclusive routes to
+\eqref{eq:tpc33-next-projective-energy}:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item prove an integer restricted-projective large sieve directly for
+ \(a=\ell jv\) and the physical \(s\)-range;
+ \item use a multi-modulus delta/circle decomposition to separate no-wrap
+ from slope coverage;
+ \item expose a genuine second long variable and apply a correlation
+ theorem in two variables before taking absolute values; or
+ \item split long and sparse fibers and combine a \(TT^*\) estimate on the
+ long range with an incidence-energy estimate on the \(O(1)\)-point range.
+\end{enumerate}
+Each route requires a new norm and conductor ledger.  The present paper
+does not select one as already successful.
+
+\subsection{Endpoint consequences if the gate is proved}
+
+At \eqref{eq:tpc33-high-QJ},
+\begin{equation}
+ Q^2=N_0J^{-1}
+ =N_0X^{-133/400+o(1)}.
+ \label{eq:tpc33-high-Q2-saving}
+\end{equation}
+Thus \eqref{eq:tpc33-next-projective-energy}, together with
+\cref{thm:tpc33-column-energy-transfer}, gives every strict saving below
+\(133/400\) for the matched raw shell.  The large-content correction at
+\(C=J\) has the same \(Q^2\) size.
+
+The drift term is smaller still.  From
+\eqref{eq:tpc33-high-QJ}--\eqref{eq:tpc33-high-LD},
+\begin{equation}
+ \frac{XQ/L}{Q^2}
+ =\frac JL
+ =X^{-15077/105000+o(1)}.
+ \label{eq:tpc33-high-drift-ratio}
+\end{equation}
+Consequently the calibrated shell would also be
+\(O(X^{o(1)}Q^2)\).
+
+Even that conditional endpoint closes only the residual packet inherited
+from the preceding reductions.  It does not supply the independent
+positivity and main-term reconstruction needed for a prime-pair theorem.
+The next gate is therefore substantial but sharply localized: it is a
+restricted projective \(L^2\) estimate, not a disguised assertion that
+the twin-prime conjecture has already been proved.

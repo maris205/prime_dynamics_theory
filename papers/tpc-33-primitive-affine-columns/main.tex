@@ -1,0 +1,199 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,float}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Primitive Affine Columns at a Distinguished Zero Frequency: Fixed-Determinant Projective Plancherel, Structured-Mask Disintegration, and the Q3 Energy Gate},
+ pdfauthor={Liang Wang},
+ pdfsubject={Exact affine-column reductions and a determinant-fiber second-moment theorem for the distinguished zero-frequency shell in a primitive Mobius residual},
+ pdfkeywords={Mobius correlation, affine forms, fixed determinant, projective Plancherel, squarefree sieve, structured mask, zero frequency, parity barrier}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Conditional input}
+\crefname{assumption}{conditional input}{conditional inputs}
+\Crefname{assumption}{Conditional input}{Conditional inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\F}{\mathbb F}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\e}[1]{e\!\left(#1\right)}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\BV}{\operatorname{BV}}
+
+\title{\textbf{Primitive Affine Columns at a Distinguished Zero Frequency:}\\
+\textbf{Fixed--Determinant Projective Plancherel,}\\
+\textbf{Structured--Mask Disintegration, and the \(Q^3\) Energy Gate}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We continue the analysis of the distinguished zero-frequency coefficient
+left by a matched prime--M\"obius cutoff shell.  The earlier reduction
+identifies the required physical amplitude but leaves its two-point
+M\"obius structure and actual row-pair mask entangled.  We first return
+from the abstract bounded-mask interface to the original mask
+\[
+ \one_{\ell\ne\ell'}
+ \one_{|\ell d-\ell'e|>QX^{-\kappa_0}}
+ \one_{(d,e)\le X^{\kappa_0}}.
+\]
+After fixing the opposite row, its gcd condition has the exact expansion
+\[
+ \one_{(d,e)\le G}
+ =\sum_{v\mid d,\ v\mid e}\lambda_G(v),
+ \qquad
+ \sum_{v\mid e}|\lambda_G(v)|\le3^{\omega(e)}=X^{o(1)}.
+\]
+The near-diagonal deletion cuts the remaining row interval into at most
+two pieces.  Opening one ultra divisor and reflecting its complementary
+factor therefore decomposes each physical column, with only
+\(X^{o(1)}\) coefficient mass, into primitive affine correlations
+\[
+ \sum_{r\in I}
+ \mu(\widetilde d_0+sr)
+ \mu(\widetilde u_0+\ell jv r)W(r),
+ \qquad
+ s\widetilde u_0-\ell jv\widetilde d_0=h,
+ \qquad
+ |I|\ll1+\frac{D}{sv}.
+\]
+This is a columnwise theorem for the actual mask, not a low-rank theorem
+for an arbitrary bounded mask.
+
+For the arithmetic core, every equation \(sU-aD=h\) with
+\((a,s)=1\) and \((as,h)=1\) is put into an integral
+\(SL_2\)-normal form
+\[
+ U_t=hx+at,\qquad D_t=hy+st,\qquad sx-ay=1.
+\]
+It yields the exact identities
+\[
+ (D_t,U_t)=(D_t,h)=(U_t,h)=(h,t)
+\]
+and converts the primitive M\"obius product into the reducible quadratic
+sequence \(\mu(D_tU_t)\), whose discriminant is \(h^2\).  With a balanced
+B\'ezout origin we prove uniformly for \(K=\max(a,s)\) that
+\[
+ \sum_{\substack{T<t\le2T\\(t,h)=1}}
+ \mu^2(D_t)\mu^2(U_t)
+ =\mathfrak S_{\rm sf}(a,s;h)T
+  +O_h\!\left(\frac{T}{\log(2T)}+\sqrt{KT}\right),
+\]
+where the Euler product is explicit and bounded below by a positive
+constant depending only on \(h\).  This controls squarefree support, not
+M\"obius signs.
+
+We then prove an exact fixed-determinant projective Plancherel identity.
+For a prime \(q\), \(h\ne0\pmod q\), and functions
+\(f,g:\F_q\to\C\), let
+\[
+ \cC_{a,s}^{(h)}(f,g)
+ =\sum_{D\in\F_q}f(D)g\bigl(s^{-1}(aD+h)\bigr).
+\]
+Writing \(f^\circ=f-\bar f\) and \(g^\circ=g-\bar g\), one has
+\[
+ \sum_{a,s\ne0}
+ \left|\cC_{a,s}^{(h)}-q\bar f\bar g\right|^2
+ =q\|f^\circ\|_2^2\|g^\circ\|_2^2
+ -\sum_{b\ne0}\left|\sum_Df^\circ(D)g^\circ(bD)\right|^2.
+\]
+Consequently the finite M\"obius model has \(o(q)\) correlation for all
+but \(O(q^{2-2\eta})\) nonzero coefficient pairs \((a,s)\), for every
+\(0<\eta<1/2\).  Complete \(a=\ell j\) orbits preserve this energy
+exactly, even if \(\ell\) is restricted to primes.
+
+Finally, the two exact polarizations of the physical shell define column
+energies \(E_L,E_R\).  We prove the conditional transfer
+\[
+ E_L+E_R\ll X^{o(1)}Q^3
+ \quad\Longrightarrow\quad
+ |\cS_{\rm sh}^{\rm all}|\ll X^{o(1)}Q^2.
+\]
+At \(Q=X^{267/400+o(1)}\), this is precisely the
+\(J^{-1}=X^{-133/400+o(1)}\) amplitude saving required by the preceding
+zero-frequency gate.  The \(Q^3\) estimate is not proved here.  A
+single-fiber square-root strategy falls short by
+\(49727/210000\), and a single finite-field modulus cannot
+simultaneously provide integer no-wrap and physical slope coverage.
+Thus the remaining target is a restricted physical projective-energy
+estimate, not pointwise two-point Chowla.  No prime-pair asymptotic,
+twin-prime theorem, positivity result, or breach of the parity barrier is
+claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} primitive M\"obius tail; affine M\"obius
+correlation; fixed determinant; projective Plancherel; squarefree sieve;
+structured row mask; zero frequency; parity barrier.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary 11B25,
+11L07, 11T23.
+
+\input{sections/introduction}
+\input{sections/physical-interface}
+\input{sections/affine-normal-form}
+\input{sections/squarefree-energy}
+\input{sections/structured-mask-columns}
+\input{sections/projective-plancherel}
+\input{sections/mobius-slope-corollaries}
+\input{sections/column-energy-transfer}
+\input{sections/obstructions-literature}
+\input{sections/high-beta-next-gate}
+\input{sections/certificate-scope}
+
+\clearpage
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

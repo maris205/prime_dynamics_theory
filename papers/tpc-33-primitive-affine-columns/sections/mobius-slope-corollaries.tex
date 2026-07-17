@@ -1,0 +1,165 @@
+\section{Finite M\"obius slopes and prime-product lifts}
+\label{sec:tpc33-mobius-corollaries}
+
+We derive two consequences of the exact second moment.  The first is an
+unconditional almost-all-pair theorem for a finite M\"obius model.  The
+second verifies that a complete product slope \(a=\ell j\) does not lose
+projective coverage merely because \(\ell\) is restricted.
+
+\subsection{A finite M\"obius model}
+
+For a prime \(q\), define \(\mu_q:\F_q\to\R\) by
+\begin{equation}
+ \mu_q(0)=0,\qquad
+ \mu_q(n)=\mu(n),\qquad 1\le n<q,
+ \label{eq:tpc33-finite-mobius-model}
+\end{equation}
+using the standard representatives.  Let
+\begin{equation}
+ M(x)=\sum_{n\le x}\mu(n).
+ \label{eq:tpc33-Mertens-function}
+\end{equation}
+Then
+\begin{equation}
+ \overline{\mu_q}=\frac{M(q-1)}q,
+ \qquad
+ \|\mu_q^\circ\|_2^2\le q.
+ \label{eq:tpc33-mobius-mean-energy}
+\end{equation}
+
+\begin{theorem}[Almost every finite determinant-fiber M\"obius pair]
+\label{thm:tpc33-mobius-almost-all-slopes}
+Fix \(0<\eta<1/2\).  For every prime \(q\) and every
+\(h\in\F_q^\times\), outside a set
+\(\cE_{q,h,\eta}\subset(\F_q^\times)^2\) satisfying
+\begin{equation}
+ |\cE_{q,h,\eta}|\le q^{2-2\eta},
+ \label{eq:tpc33-mobius-exception-set}
+\end{equation}
+one has
+\begin{equation}
+ \boxed{
+ \cC_{a,s}^{(h)}(\mu_q,\mu_q)
+ =\frac{M(q-1)^2}{q}+O(q^{1/2+\eta}).}
+ \label{eq:tpc33-mobius-almost-all-formula}
+\end{equation}
+Consequently,
+\begin{equation}
+ \cC_{a,s}^{(h)}(\mu_q,\mu_q)=o(q)
+ \label{eq:tpc33-mobius-almost-all-cancellation}
+\end{equation}
+for a proportion \(1-o(1)\) of coefficient pairs \((a,s)\) as
+\(q\to\infty\).
+\end{theorem}
+
+\begin{proof}
+Apply \cref{cor:tpc33-exceptional-projective-directions} with
+\(f=g=\mu_q\) and \(\Lambda=q^{1/2+\eta}\).  By
+\eqref{eq:tpc33-mobius-mean-energy}, the total variance is at most \(q^3\),
+so the exceptional count is at most
+\(q^3/q^{1+2\eta}=q^{2-2\eta}\).  The centered main term is
+\[
+ q\overline{\mu_q}^{\,2}=\frac{M(q-1)^2}{q},
+\]
+which proves \eqref{eq:tpc33-mobius-almost-all-formula}.  The prime number
+theorem is equivalent to \(M(x)=o(x)\), so this main term is \(o(q)\); the
+error is also \(o(q)\) because \(\eta<1/2\).
+\end{proof}
+
+\begin{remark}[Model boundary]
+The map \(n\mapsto\mu_q(n)\) is not a periodic multiplicative function on
+the integers; it is the finite vector obtained by truncating the ordinary
+M\"obius function before \(q\).  The theorem is therefore a modular model
+for determinant-fiber coefficient averaging, not a theorem about one
+integer affine fiber.
+\end{remark}
+
+\subsection{Complete and incomplete product slopes}
+
+Let \(\cL\subset\F_q^\times\) be arbitrary.  For a fixed
+\(\ell\in\cL\), multiplication by \(\ell\) permutes
+\(\F_q^\times\).
+
+\begin{proposition}[Exact product-slope lift]
+\label{prop:tpc33-product-slope-lift}
+For every \(f,g:\F_q\to\C\),
+\begin{align}
+ &\boxed{
+ \sum_{\ell\in\cL}
+ \sum_{j,s\in\F_q^\times}
+ \left|
+  \cC_{\ell j,s}^{(h)}(f,g)-q\bar f\bar g
+ \right|^2}
+ \notag\\[-0.2em]
+ &\boxed{\qquad
+ =|\cL|
+ \sum_{a,s\in\F_q^\times}
+ \left|
+  \cC_{a,s}^{(h)}(f,g)-q\bar f\bar g
+ \right|^2.}
+ \label{eq:tpc33-product-slope-lift}
+\end{align}
+In particular, restricting \(\cL\) to prime residue classes causes no
+coverage loss when \(j\) runs through a complete nonzero residue system.
+\end{proposition}
+
+\begin{proof}
+For each fixed \(\ell\ne0\), the substitution \(a=\ell j\) is a
+bijection of \(\F_q^\times\).  Apply it inside the \(j\)-sum and then sum
+over \(\ell\).
+\end{proof}
+
+For an incomplete integer set \(\cJ\), let
+\begin{equation}
+ \nu_{\cJ}(r)=\#\{j\in\cJ:j\equiv r\pmod q\},
+ \qquad
+ \nu_{\cJ}^*=\max_{r\in\F_q^\times}\nu_{\cJ}(r),
+ \label{eq:tpc33-residue-multiplicity}
+\end{equation}
+and define \(\nu_{\cS}^*\) similarly.  We restrict to elements nonzero
+modulo \(q\).
+
+\begin{corollary}[Incomplete product-slope energy]
+\label{cor:tpc33-incomplete-product-slope}
+For finite integer sets \(\cJ,\cS\) with no multiples of \(q\),
+\begin{align}
+ &\sum_{\ell\in\cL}\sum_{j\in\cJ}\sum_{s\in\cS}
+ \left|\cC_{\ell j,s}^{(h)}(f,g)-q\bar f\bar g\right|^2
+ \notag\\
+ &\qquad\le
+ |\cL|\nu_{\cJ}^*\nu_{\cS}^*
+ q\|f^\circ\|_2^2\|g^\circ\|_2^2.
+ \label{eq:tpc33-incomplete-product-slope-energy}
+\end{align}
+If \(\cJ,\cS\) are intervals of respective lengths \(J,S\), then
+\begin{equation}
+ \nu_{\cJ}^*\le J/q+1,
+ \qquad
+ \nu_{\cS}^*\le S/q+1.
+ \label{eq:tpc33-interval-residue-multiplicity}
+\end{equation}
+After division by \(|\cL|JS\), the rms loss relative to complete residue
+averaging is at most
+\begin{equation}
+ \boxed{
+ \left(1+\frac qJ\right)^{1/2}
+ \left(1+\frac qS\right)^{1/2}.}
+ \label{eq:tpc33-incomplete-rms-loss}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Group \(j,s\) by their nonzero residues.  Each pair is repeated at most
+\(\nu_{\cJ}^*\nu_{\cS}^*\) times.  Apply
+\cref{prop:tpc33-product-slope-lift} and then
+\eqref{eq:tpc33-projective-upper-bound}.  The interval bounds are
+elementary.  Dividing the resulting mean square by the complete-residue
+mean-square normalization introduces an additional factor
+\((q-1)/q\le1\); discarding it gives
+\eqref{eq:tpc33-incomplete-rms-loss}.
+\end{proof}
+
+The exact lift is useful only after the orbit variable covers residue
+classes economically.  When \(q\gg J\), the first factor in
+\eqref{eq:tpc33-incomplete-rms-loss} is large; this is the coverage side of
+the single-modulus obstruction proved later.

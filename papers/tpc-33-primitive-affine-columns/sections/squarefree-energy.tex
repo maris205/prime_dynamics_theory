@@ -1,0 +1,207 @@
+\section{A balanced moving-slope squarefree-energy theorem}
+\label{sec:tpc33-squarefree-energy}
+
+The normal form separates a support question from a sign question.  We now
+show that the squarefree support has the expected positive density in a
+genuine growing-slope range.  The proof is an elementary squarefree sieve
+tailored to the B\'ezout coordinates.  The origin must be balanced: an
+arbitrary transformation \((x,y)\mapsto(x+ak,y+sk)\) can make the heights
+of both forms arbitrarily large while \(a,s\), and the length of the
+parameter interval remain fixed.
+For general background on elementary squarefree sieves, see
+\citet{IwaniecKowalski2004}.
+
+\subsection{Balanced coordinates and the Euler product}
+
+Assume \eqref{eq:tpc33-affine-hypotheses}.  If \(a\ge2\), choose the unique
+integer \(x\) such that
+\begin{equation}
+ sx\equiv1\pmod a,\qquad -\frac a2<x\le\frac a2,
+ \label{eq:tpc33-balanced-x}
+\end{equation}
+and put \(y=(sx-1)/a\).  If \(a=1\), take \(x=0\), \(y=-1\).  Then
+\begin{equation}
+ sx-ay=1,\qquad |x|\le\frac a2,\qquad
+ |y|\le\frac s2+1.
+ \label{eq:tpc33-balanced-bounds}
+\end{equation}
+Use the forms \(D_t,U_t\) from
+\eqref{eq:tpc33-canonical-affine-forms} and put
+\begin{equation}
+ K=\max(a,s).
+ \label{eq:tpc33-K}
+\end{equation}
+For \(T\ge4(|h|+1)\) and \(T<t\le2T\), both forms are positive and
+\begin{equation}
+ \max(D_t,U_t)\ll_h KT.
+ \label{eq:tpc33-affine-height}
+\end{equation}
+
+Define
+\begin{equation}
+ E_{a,s,h}(T)
+ :=\sum_{\substack{T<t\le2T\\(t,h)=1}}
+ \mu^2(D_t)\mu^2(U_t)
+ \label{eq:tpc33-squarefree-energy}
+\end{equation}
+and
+\begin{equation}
+ \boxed{
+ \mathfrak S_{\rm sf}(a,s;h)
+ :=\prod_{p\mid h}\left(1-\frac1p\right)
+ \prod_{\substack{p\nmid h\\p\mid as}}
+       \left(1-\frac1{p^2}\right)
+ \prod_{p\nmid ash}\left(1-\frac2{p^2}\right).}
+ \label{eq:tpc33-squarefree-singular-series}
+\end{equation}
+
+\begin{theorem}[Uniform squarefree energy]
+\label{thm:tpc33-uniform-squarefree-energy}
+For fixed \(h\ne0\), uniformly over all positive \(a,s,T\) satisfying
+\eqref{eq:tpc33-affine-hypotheses} and \(T\ge4(|h|+1)\),
+\begin{equation}
+ \boxed{
+ E_{a,s,h}(T)
+ =\mathfrak S_{\rm sf}(a,s;h)T
+ +O_h\!\left(
+   \frac{T}{\log(2T)}+\sqrt{KT}
+  \right).}
+ \label{eq:tpc33-squarefree-asymptotic}
+\end{equation}
+Furthermore,
+\begin{equation}
+ \mathfrak S_{\rm sf}(a,s;h)\ge c_h>0
+ \label{eq:tpc33-squarefree-positive}
+\end{equation}
+uniformly in \(a,s\).  Consequently, for every fixed \(\eta>0\),
+\begin{equation}
+ K\le T^{1-\eta}
+ \quad\Longrightarrow\quad
+ E_{a,s,h}(T)
+ =\mathfrak S_{\rm sf}(a,s;h)T+o_{h,\eta}(T)
+ \label{eq:tpc33-squarefree-growing-slope-range}
+\end{equation}
+uniformly in that range.
+\end{theorem}
+
+\subsection{Local root counts}
+
+\begin{lemma}[The three local factors]
+\label{lem:tpc33-local-squarefree-factors}
+The local density of the conditions in
+\eqref{eq:tpc33-squarefree-energy} is:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item \(1-1/p\) if \(p\mid h\);
+ \item \(1-1/p^2\) if \(p\nmid h\) and \(p\mid as\);
+ \item \(1-2/p^2\) if \(p\nmid ash\).
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+If \(p\mid h\), then \(p\nmid as\).  The primitive condition excludes
+\(t\equiv0\pmod p\), and
+\[
+ D_t\equiv st\pmod p,
+ \qquad
+ U_t\equiv at\pmod p.
+\]
+Thus neither form is divisible by \(p\) on the retained classes, giving
+\(1-1/p\).
+
+Suppose \(p\nmid h\) and \(p\mid s\).  Then \(p\nmid a\), and
+\(sx-ay=1\) makes \(y\not\equiv0\pmod p\).  Hence \(D_t\equiv hy\not\equiv0
+\pmod p\), while \(U_t\) has exactly one root modulo \(p^2\).  The case
+\(p\mid a\) is symmetric.  This proves (ii).
+
+Finally suppose \(p\nmid ash\).  Each affine form has exactly one root
+modulo \(p^2\).  The roots are distinct: a common root would imply
+\(p^2\mid sU_t-aD_t=h\), which is impossible.  Thus precisely two classes
+modulo \(p^2\) are removed.  The argument includes \(p=2\).
+\end{proof}
+
+\subsection{Small primes and the large-square tail}
+
+\begin{proof}[Proof of \cref{thm:tpc33-uniform-squarefree-energy}]
+For \(z\ge2\), put
+\begin{equation}
+ M_z=\rad|h|
+ \prod_{\substack{p\le z\\p\nmid h}}p^2.
+ \label{eq:tpc33-small-prime-modulus}
+\end{equation}
+Let \(N_z(T)\) count \(T<t\le2T\) for which \((t,h)=1\) and neither
+form is divisible by \(p^2\) for any \(p\le z\), \(p\nmid h\).  The
+conditions are periodic modulo \(M_z\).  By the Chinese remainder theorem
+and \cref{lem:tpc33-local-squarefree-factors},
+\begin{equation}
+ N_z(T)=\mathfrak S_z(a,s;h)T+O(M_z),
+ \label{eq:tpc33-truncated-sieve-count}
+\end{equation}
+where \(\mathfrak S_z\) is the product in
+\eqref{eq:tpc33-squarefree-singular-series} truncated at primes at most
+\(z\), together with all fixed factors \(p\mid h\).  Absolute convergence
+gives, uniformly in \(a,s\),
+\begin{equation}
+ |\mathfrak S_z(a,s;h)-\mathfrak S_{\rm sf}(a,s;h)|
+ \ll_h\sum_{p>z}\frac1{p^2}
+ \ll_h\frac1z.
+ \label{eq:tpc33-singular-series-tail}
+\end{equation}
+
+It remains to remove integers for which a prime \(p>z\) has
+\(p^2\mid D_tU_t\).  If \(p\mid s\), the congruence \(p^2\mid D_t\)
+has no solution; otherwise it occupies at most one class modulo \(p^2\).
+The analogous statement holds for \(U_t\).  By
+\eqref{eq:tpc33-affine-height}, a relevant prime satisfies
+\(p\ll_h\sqrt{KT}\).  Therefore
+\begin{align}
+ |N_z(T)-E_{a,s,h}(T)|
+ &\ll_h
+ \sum_{z<p\ll_h\sqrt{KT}}
+ \left(\frac{T}{p^2}+1\right)
+ \notag\\
+ &\ll_h\frac{T}{z}+\sqrt{KT}.
+ \label{eq:tpc33-large-square-tail}
+\end{align}
+
+For all sufficiently large \(T\), Chebyshev's estimate
+\(\sum_{p\le z}\log p\ll z\) permits the choice
+\(z=c\log(2T)\), with a sufficiently small absolute \(c>0\), for which
+\(M_z\ll_h T^{1/2}\); the remaining bounded range is absorbed by the
+implied constant.  Combining
+\eqref{eq:tpc33-truncated-sieve-count}--
+\eqref{eq:tpc33-large-square-tail}, and absorbing the harmless
+\(T^{1/2}\) term, proves \eqref{eq:tpc33-squarefree-asymptotic}.
+
+For positivity, replacing a factor \(1-2/p^2\) by
+\(1-1/p^2\) can only increase the product.  Hence
+\begin{equation}
+ \mathfrak S_{\rm sf}(a,s;h)
+ \ge
+ \prod_{p\mid h}\left(1-\frac1p\right)
+ \prod_{p\nmid h}\left(1-\frac2{p^2}\right)
+ =:c_h>0.
+ \label{eq:tpc33-squarefree-lower-product}
+\end{equation}
+Finally, if \(K\le T^{1-\eta}\), the second error in
+\eqref{eq:tpc33-squarefree-asymptotic} is at most
+\(T^{1-\eta/2}\), proving
+\eqref{eq:tpc33-squarefree-growing-slope-range}.
+\end{proof}
+
+\begin{remark}[What the theorem does not give]
+\label{rem:tpc33-squarefree-not-signed}
+The summand in \eqref{eq:tpc33-squarefree-energy} is nonnegative.  The
+theorem proves that squarefree values persist uniformly in the stated
+moving-slope window; it gives no cancellation in
+\(\sum\mu(D_t)\mu(U_t)\).  In the physical high-\(\beta\) columns the slope
+can be much larger than the affine-fiber length, so even the asymptotic
+range \(K\le T^{1-\eta}\) need not apply.
+\end{remark}
+
+\begin{remark}[Why the dyadic origin matters]
+For a general interval \(T_0<t\le T_0+Y\), the same tail argument naturally
+contains
+\(\sqrt{K(|T_0|+Y)}\), not merely \(\sqrt{KY}\).  The balanced dyadic
+formulation is therefore a genuine hypothesis rather than a cosmetic
+normalization.
+\end{remark}

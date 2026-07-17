@@ -1,0 +1,167 @@
+\section{The physical \texorpdfstring{\(Q^3\)}{Q3} column-energy gate}
+\label{sec:tpc33-column-transfer}
+
+The affine disintegration identifies the correct inner sequences.  We now
+state exactly how much collective cancellation is needed from them.  The
+outer row coefficient must not be included twice in the column energy.
+
+\subsection{The two polarized column energies}
+
+For a fixed right row \(\gamma\), define the left-ultra column
+\begin{equation}
+ B_\gamma^L
+ :=\sum_\alpha\gamma_\alpha^{(1)}
+ \sum_j\mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ C_{m_\alpha}(j)\mathsf H_{m_\gamma}(j),
+ \label{eq:tpc33-left-column}
+\end{equation}
+and its energy
+\begin{equation}
+ E_L:=\sum_\gamma|B_\gamma^L|^2.
+ \label{eq:tpc33-left-column-energy}
+\end{equation}
+The coefficient \(\gamma_\gamma^{(2)}\) is outside
+\(B_\gamma^L\).  Symmetrically, for a fixed left row \(\alpha\), put
+\begin{align}
+ B_\alpha^R
+ &:=\sum_\gamma\gamma_\gamma^{(2)}
+ \sum_j\mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ \mathsf H_{m_\alpha}(j)C_{m_\gamma}(j),
+ \label{eq:tpc33-right-column}\\
+ E_R&:=\sum_\alpha|B_\alpha^R|^2.
+ \label{eq:tpc33-right-column-energy}
+\end{align}
+Here \(\gamma_\alpha^{(1)}\) is outside \(B_\alpha^R\).  Define the two
+scalar polarizations
+\begin{equation}
+ \cS_L=\sum_\gamma\gamma_\gamma^{(2)}B_\gamma^L,
+ \qquad
+ \cS_R=\sum_\alpha\gamma_\alpha^{(1)}B_\alpha^R.
+ \label{eq:tpc33-scalar-polarizations}
+\end{equation}
+The exact identity \eqref{eq:tpc33-matched-polarization} gives
+\begin{equation}
+ \cS_{\rm sh}^{\rm all}=\cS_L+\cS_R.
+ \label{eq:tpc33-shell-as-column-sum}
+\end{equation}
+
+\begin{theorem}[Matched polarized column-energy transfer]
+\label{thm:tpc33-column-energy-transfer}
+On the physical packet of \cref{sec:tpc33-physical-interface},
+\begin{equation}
+ \boxed{
+ |\cS_{\rm sh}^{\rm all}|
+ \ll_{\mathscr D}
+ \sqrt{Q\log(2L)}
+ \left(\sqrt{E_L}+\sqrt{E_R}\right).}
+ \label{eq:tpc33-exact-energy-transfer}
+\end{equation}
+Consequently, the additional estimate
+\begin{equation}
+ \boxed{
+ E_L+E_R\ll_{\eps,h,\mathscr D}X^\eps Q^3}
+ \label{eq:tpc33-Q3-energy-input}
+\end{equation}
+for every fixed \(\eps>0\) implies
+\begin{equation}
+ \boxed{
+ |\cS_{\rm sh}^{\rm all}|
+ \ll_{\eps,h,\mathscr D}X^\eps Q^2.}
+ \label{eq:tpc33-Q2-shell-output}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:tpc33-scalar-polarizations}, Cauchy--Schwarz, and the inherited
+row energy \eqref{eq:tpc33-row-l2},
+\begin{align}
+ |\cS_L|
+ &\le
+ \left(\sum_\gamma|\gamma_\gamma^{(2)}|^2\right)^{1/2}
+ \left(\sum_\gamma|B_\gamma^L|^2\right)^{1/2}
+ \notag\\
+ &\ll_{\mathscr D}\sqrt{Q\log(2L)}\sqrt{E_L},
+ \label{eq:tpc33-left-CS}
+\end{align}
+and similarly
+\begin{equation}
+ |\cS_R|
+ \ll_{\mathscr D}\sqrt{Q\log(2L)}\sqrt{E_R}.
+ \label{eq:tpc33-right-CS}
+\end{equation}
+Use \eqref{eq:tpc33-shell-as-column-sum} and the triangle inequality to
+obtain \eqref{eq:tpc33-exact-energy-transfer}.  If
+\eqref{eq:tpc33-Q3-energy-input} holds, then
+\[
+ \sqrt{E_L}+\sqrt{E_R}
+ \le\sqrt{2(E_L+E_R)}
+ \ll X^{\eps/2}Q^{3/2}.
+\]
+Applying the input with a smaller soft exponent and absorbing
+\(\log(2L)\) proves \eqref{eq:tpc33-Q2-shell-output}.
+\end{proof}
+
+\begin{remark}[Sufficient, not equivalent]
+The estimate \eqref{eq:tpc33-Q3-energy-input} controls the two
+polarizations separately.  It is a clean sufficient condition for the
+matched scalar shell, but cancellation between \(\cS_L\) and \(\cS_R\)
+could make the scalar sum smaller even when one energy is large.  No
+necessity or equivalence is asserted.
+\end{remark}
+
+\subsection{Splicing back to the distinguished zero coefficient}
+
+Assume \(J\ll_{\mathscr D}Q\), as holds at the high-\(\beta\) endpoint in
+\cref{sec:tpc33-high-beta-next-gate}.  Then \(C=\lfloor J\rfloor\) lies in the
+inherited range of \eqref{eq:tpc33-zero-splice}.  Since \(X\asymp QJ\),
+\begin{equation}
+ Q^2+\frac{XQ}{J}\asymp Q^2.
+ \label{eq:tpc33-content-at-J}
+\end{equation}
+
+\begin{corollary}[Conditional zero-frequency closure]
+\label{cor:tpc33-zero-frequency-closure}
+Suppose \(J\ll_{\mathscr D}Q\).  If
+\eqref{eq:tpc33-Q3-energy-input} holds, then the small-content
+distinguished coefficient from TPC-32 satisfies
+\begin{equation}
+ \boxed{
+ |\widehat A_{\lfloor J\rfloor,q}(0)|
+ \ll_{\eps,h,\mathscr D}X^\eps Q^2.}
+ \label{eq:tpc33-zero-frequency-Q2}
+\end{equation}
+With the inherited sign convention, define the complete calibrated cutoff
+difference by
+\begin{equation}
+ \cS_{\rm cal}^{\rm full}
+ :=\cS_{\rm sh}^{\rm all}+\cD^{\rm dr}(\text{all}).
+ \label{eq:tpc33-calibrated-full-definition}
+\end{equation}
+It satisfies
+\begin{equation}
+ \boxed{
+ |\cS_{\rm cal}^{\rm full}|
+ \ll_{\eps,h,\mathscr D}X^\eps
+ \left(Q^2+\frac{XQ}{L}\right).}
+ \label{eq:tpc33-calibrated-Q2}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+By \eqref{eq:tpc33-zero-splice},
+\[
+ |\widehat A_{\lfloor J\rfloor,q}(0)|
+ \le |\cS_{\rm sh}^{\rm all}|
+   +|\cS_{\rm sh}(c_{\alpha,\gamma}(j)>\lfloor J\rfloor)|.
+\]
+Use \eqref{eq:tpc33-Q2-shell-output},
+\eqref{eq:tpc33-large-content-bound}, and
+\eqref{eq:tpc33-content-at-J}.  The calibrated packet differs by the two
+drift legs bounded in \eqref{eq:tpc33-drift-bound}; adding them proves
+\eqref{eq:tpc33-calibrated-Q2}.
+\end{proof}
+
+This corollary is a direct amplitude estimate.  It matches the amplitude
+budget associated with the \(1/400\) flatness gate in TPC-32, but it does
+not prove the flatness-ratio inequality itself because no lower bound for
+\(\sum_n|A_C(n)|^2\) is available.

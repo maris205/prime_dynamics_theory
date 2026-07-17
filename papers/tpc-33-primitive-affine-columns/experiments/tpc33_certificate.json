@@ -1,0 +1,110 @@
+{
+  "affine_summary": {
+    "affine_points": 24790,
+    "identities": [
+      "sU-aD=h",
+      "(h,t)^T=[[s,-a],[-y,x]](U,D)^T",
+      "gcd(D,U)=gcd(D,h)=gcd(U,h)=gcd(h,t)",
+      "disc(D_t U_t)=h^2",
+      "mu(D)mu(U)=mu(g)^2 1_{(g,D'U')=1}mu(D'U')"
+    ],
+    "parameter_sets": 670,
+    "positive_mobius_layer_points": 12760
+  },
+  "certificate": "primitive affine columns",
+  "certificate_digest": "e5a28b8dcac36154ff620c2e644eed7fd163d00568fcd90d8e4443beafcfe37b",
+  "claims": {
+    "breaks_sieve_parity": false,
+    "certifies_asymptotic_squarefree_error_term": false,
+    "finite_SL2_affine_normal_form": true,
+    "finite_balanced_origin_checks": true,
+    "finite_column_Cauchy_Schwarz": true,
+    "finite_exact_product_slope_lift": true,
+    "finite_exact_projective_second_moment": true,
+    "finite_exact_row_gcd_mask_projector": true,
+    "finite_gcd_identities": true,
+    "finite_high_beta_fraction_ledger": true,
+    "finite_legendre_coherent_line_obstruction": true,
+    "finite_local_squarefree_root_counts": true,
+    "finite_mobius_gcd_layers": true,
+    "finite_projected_affine_column_determinant": true,
+    "finite_reduced_origin_checks": true,
+    "finite_square_discriminant": true,
+    "proves_complete_residual_closure": false,
+    "proves_hardy_littlewood_asymptotic": false,
+    "proves_physical_Q3_column_energy": false,
+    "proves_positivity": false,
+    "proves_signed_affine_mobius_cancellation": false,
+    "proves_twin_primes": false,
+    "proves_zero_frequency_flatness_ratio": false,
+    "uses_floating_point_roots_of_unity": false
+  },
+  "coherent_line_summary": {
+    "autocorrelation_cases": 25054,
+    "coherent_line_cases": 1364,
+    "coherent_value": "q-1",
+    "fourier_flatness_certificate": "cyclic autocorrelation is q-1 at zero and -1 off zero; finite-character orthogonality therefore gives |fhat(r)|^2=q for every nonzero r"
+  },
+  "column_transfer_summary": {
+    "finite_vector_cases": 210,
+    "transfer": "row l2 scale Q times column-energy scale Q^3 gives amplitude scale Q^2 after square roots"
+  },
+  "description": "finite exact regression for fixed-determinant affine normal forms, structured-mask projectors, projective second moments, product-slope lifts, coherent-line obstructions, and exact exponent ledgers; not evidence for asymptotic Mobius or prime-pair claims",
+  "exact_check_count": 506900,
+  "high_beta_summary": {
+    "D_exponent": "10049/52500",
+    "J_exponent": "133/400",
+    "J_over_L_exponent": "-15077/105000",
+    "L_exponent": "99979/210000",
+    "T_exponent": "193/500",
+    "beta": "267/400",
+    "ell_j_exponent": "42451/52500",
+    "ell_j_v_max_exponent": "1",
+    "missing_exponent_after_single_fiber_sqrt": "49727/210000",
+    "reflected_s_max_exponent": "307/500",
+    "single_fiber_square_root_saving": "10049/105000"
+  },
+  "mask_summary": {
+    "identity": "1_{gcd(d,e)<=G}=sum_{v|d,e}lambda_G(v)",
+    "maximum_mass_over_3_to_omega": "1",
+    "projector_cases": 128000,
+    "squarefree_column_mass_cases": 7320
+  },
+  "origin_summary": {
+    "projected_affine_points": 32760,
+    "projected_identity": "s U_r - ell*j*v D_r = h",
+    "reduced_origin_parameter_sets": 954
+  },
+  "paper": "TPC-33",
+  "projective_summary": {
+    "function_determinant_cases": 238,
+    "identity": "sum_{a,s!=0}|C-q fbar gbar|^2 = q||f0||^2||g0||^2-sum_{b!=0}|sum_D f0(D)g0(bD)|^2",
+    "largest_recorded_energy_numerator": 34976304,
+    "normalization": "unnormalized l2 norm and unnormalized finite sum",
+    "product_slope_lift_cases": 238
+  },
+  "source_sha256": "a55c3d71c0851870ea0b9bbd1e9ef9384e70885e5de1ddc685c309ec1ec12c67",
+  "squarefree_local_summary": {
+    "factors": {
+      "p_divides_as_not_h": "1-1/p^2",
+      "p_divides_h": "1-1/p",
+      "p_divides_neither_a_s_h": "1-2/p^2"
+    },
+    "local_case_counts": {
+      "generic": 3283,
+      "p_divides_h": 1093,
+      "p_divides_slope": 2194
+    }
+  },
+  "subcheck_counts": {
+    "actual_mask_gcd_projector": 135320,
+    "affine_normal_form_and_mobius_layers": 248914,
+    "column_cauchy_schwarz": 630,
+    "high_beta_fraction_ledger": 9,
+    "legendre_coherent_line": 27790,
+    "local_squarefree_root_counts": 9853,
+    "projective_plancherel_and_product_lift": 714,
+    "reduced_and_projected_origins": 83646,
+    "scope_flags": 24
+  }
+}

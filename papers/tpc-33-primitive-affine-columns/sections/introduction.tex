@@ -1,0 +1,200 @@
+\section{Introduction}
+\label{sec:tpc33-introduction}
+
+The purpose of this paper is to turn one exceptional Fourier coefficient
+into a concrete arithmetic average.  TPC-32 proves determinant-frequency
+dispersion for a matched prime--M\"obius cutoff shell, but the physical
+problem selects the coefficient at frequency zero
+\citep{WangTPC32}.  Ordinary frequencies are small outside a power-small
+exceptional set; membership of the distinguished coefficient in that set
+is not decided by Parseval.  The same paper shows that support size,
+\(\ell^1\)-mass, \(\ell^2\)-energy, and even perfect cancellation at every
+nonzero frequency do not force cancellation at zero.  Additional
+arithmetic structure is required.
+
+There are two logically separate questions.  First, what is the exact
+arithmetic sequence inside a zero-frequency column after the actual
+row-pair mask is restored?  Second, can averaging over the physical family
+of those sequences replace a pointwise two-point M\"obius theorem?  The
+present paper answers the first question and proves a finite-field model
+for the second.  It does not complete the final transfer to the integer
+physical packet.
+
+\subsection{From a bounded mask to the actual column}
+
+The abstract interface of TPC-25--TPC-32 deliberately retains the row-pair
+mask as an arbitrary bounded joint multiplier
+\citep{WangTPC25,WangTPC32}.  That is the correct interface for the earlier
+norm estimates, but it is too broad for an affine-column theorem: an
+arbitrary entrywise bounded matrix can align with any prescribed kernel.
+We therefore return to the actual mask inherited from TPC-18 and recorded
+in TPC-21 \citep{WangTPC21},
+\begin{equation}
+ \mathfrak m((\ell,d),(\ell',e))
+ =\one_{\ell\ne\ell'}
+  \one_{|\ell d-\ell'e|>QX^{-\kappa_0}}
+  \one_{(d,e)\le X^{\kappa_0}}.
+ \label{eq:tpc33-intro-actual-mask}
+\end{equation}
+Here \(d,e\) are squarefree and lie on one opened dyadic scale.  For a
+fixed opposite row \((\ell',e)\), the last indicator has a divisor
+expansion of total coefficient mass \(3^{\omega(e)}=X^{o(1)}\), while the
+middle indicator merely removes one interval from the \(d\)-line.  After
+one ultra divisor is reflected, the remaining inner variable lies on
+\begin{equation}
+ \widetilde d_r=\widetilde d_0+sr,
+ \qquad
+ \widetilde u_r=\widetilde u_0+\ell jv r,
+ \qquad
+ s\widetilde u_0-\ell jv\widetilde d_0=h.
+ \label{eq:tpc33-intro-affine-column}
+\end{equation}
+Thus the actual mask has small \emph{columnwise} expansion complexity.
+This does not say that the entire mask matrix has small projective or Schur
+norm.
+
+\subsection{Exact arithmetic of a fixed-determinant line}
+
+The equation
+\begin{equation}
+ sU-aD=h
+ \label{eq:tpc33-intro-determinant-line}
+\end{equation}
+is not merely a nonproportional pair of affine forms.  Under the physical
+primitivity conditions \((a,s)=1\) and \((as,h)=1\), it belongs to one
+unimodular orbit.  Choosing \(sx-ay=1\) gives
+\[
+ \binom{U_t}{D_t}
+ =\begin{pmatrix}x&a\\y&s\end{pmatrix}
+  \binom{h}{t}.
+\]
+The determinant-one matrix transfers all common divisors back to the two
+coordinates \((h,t)\).  In particular, the primitive part of the two-sign
+sequence is one M\"obius value on the reducible quadratic
+\begin{equation}
+ D_tU_t
+ =as t^2+h(sx+ay)t+h^2xy,
+ \qquad
+ \operatorname{disc}(D_tU_t)=h^2.
+ \label{eq:tpc33-intro-quadratic}
+\end{equation}
+This reformulation does not prove signed cancellation.  We do prove a
+uniform squarefree-support theorem for a balanced B\'ezout origin.  Its
+main term has a positive Euler product uniformly in the growing slopes
+when \(\max(a,s)=o(T)\) by a fixed power.
+
+\subsection{Projective averaging at fixed determinant}
+
+The central unconditional average theorem is finite and exact.  Over a
+prime field, the change of variables
+\begin{equation}
+ (a,s)\longmapsto(b,c)=(a/s,h/s)
+ \label{eq:tpc33-intro-projective-change}
+\end{equation}
+is a bijection of \((\F_q^\times)^2\).  Translation Parseval in \(c\),
+followed by summation over the slope \(b\), gives an exact second moment for
+every fixed nonzero determinant \(h\).  Outside \(O(q^{2-2\eta})\)
+coefficient pairs, it yields an \(O(q^{1/2+\eta})\) centered fluctuation and
+hence \(o(q)\) total correlation in the finite M\"obius model.
+Moreover, on a complete residue orbit the restriction \(a=\ell j\) loses
+no energy: multiplication by every fixed nonzero \(\ell\), prime or not,
+permutes \(j\in\F_q^\times\).
+
+This theorem rotates the earlier ``almost every determinant frequency''
+statement into ``fixed determinant, almost every nonzero coefficient pair.''
+The average runs over both \(b=a/s\) and the affine offset \(c=h/s\); by
+itself it is not an almost-every-\(b\) statement.  A
+direct physical consequence still fails for a precise reason.  Integer
+no-wrap needs a modulus on the ambient determinant scale, approximately
+\(X\), whereas complete coverage of the orbit parameter is available only
+for moduli at most \(J=X^{133/400+o(1)}\).  A single modulus cannot satisfy
+both requirements.
+
+\subsection{The exact conditional gate}
+
+Let \(C_m\) denote the ultra increment and \(\mathsf H_m\) the half-prefix
+from the exact polarization in TPC-32.  The full matched shell is
+\begin{equation}
+ \cK^{\rm sh}_{\alpha,\gamma}(j)
+ =C_{m_\alpha}(j)\mathsf H_{m_\gamma}(j)
+  +\mathsf H_{m_\alpha}(j)C_{m_\gamma}(j).
+ \label{eq:tpc33-intro-polarization}
+\end{equation}
+Keeping the opposite row outside each column defines two nonnegative
+column energies \(E_L,E_R\).  The inherited one-row estimate
+\(\|\gamma^{(i)}\|_2^2\ll Q\log(2L)\) gives the rigorous implication
+\begin{equation}
+ E_L+E_R\ll X^{o(1)}Q^3
+ \quad\Longrightarrow\quad
+ |\cS_{\rm sh}^{\rm all}|\ll X^{o(1)}Q^2.
+ \label{eq:tpc33-intro-energy-transfer}
+\end{equation}
+The left side is a new analytic input, not a consequence of the row-energy
+bound.  Separately estimating the two polarizations is sufficient but
+possibly stronger than estimating their scalar sum.
+
+At the source-compatible endpoint of TPC-28,
+\begin{equation}
+ Q=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ JQ\asymp X,
+ \label{eq:tpc33-intro-high-beta}
+\end{equation}
+and therefore \(Q^2=(JQ^2)J^{-1}\).  The right side of
+\eqref{eq:tpc33-intro-energy-transfer} is exactly the amplitude budget of
+the preceding zero-frequency gate.  It is important not to restate this as
+a proved flatness ratio: no matching lower bound for the determinant-cell
+energy is known.
+
+\subsection{Result ledger and scope}
+
+The logical status of the main statements is summarized in
+\cref{tab:tpc33-result-ledger}.
+
+\begin{table}[t]
+\centering
+\caption{Logical status of the TPC-33 interfaces.}
+\label{tab:tpc33-result-ledger}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.39\textwidth}
+>{\raggedright\arraybackslash}p{0.16\textwidth}
+>{\raggedright\arraybackslash}p{0.35\textwidth}@{}}
+\toprule
+Statement & Status & What it controls \\
+\midrule
+\(SL_2(\Z)\) affine normal form and gcd identities
+& unconditional & every primitive line \(sU-aD=h\) \\
+Balanced-origin squarefree energy
+& unconditional & support, not signs \\
+Actual-mask divisor expansion
+& unconditional & one fixed physical column \\
+Fixed-\(h\) projective Plancherel
+& unconditional & complete two-parameter finite family \\
+Finite M\"obius almost-all-coefficient-pair bound
+& unconditional & modular model, not integer shell \\
+\(Q^3\) column energy \(\Rightarrow Q^2\) shell
+& conditional transfer & distinguished physical zero mode \\
+Restricted physical \(Q^3\) energy
+& open & next analytic gate \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The new contribution should be read as an exact synthesis tailored to the
+TPC residual: the structured physical disintegration, the fixed-determinant
+projective identity with its prime-product lift, and the quantified energy
+splice.  Basic finite Fourier orthogonality and squarefree sieving have a
+large classical literature, so no priority claim is made for those
+ingredients in isolation.  Nor do the results imply a Hardy--Littlewood
+main term, positivity of a prime-pair correlation, infinitely many twin
+primes, or a general resolution of the sieve parity problem.
+
+The paper is organized as follows.  \Cref{sec:tpc33-physical-interface}
+fixes the matched shell and the actual mask.  \Cref{sec:tpc33-affine-normal}
+proves the integral normal form, and \cref{sec:tpc33-squarefree-energy}
+proves the support theorem.  \Cref{sec:tpc33-structured-mask} performs the
+physical column disintegration.  \Cref{sec:tpc33-projective-plancherel}
+proves the finite-field identity, and
+\cref{sec:tpc33-mobius-corollaries} derives its M\"obius and product-slope
+consequences.  \Cref{sec:tpc33-column-transfer} gives the \(Q^3\) transfer.
+The final sections record sharp obstructions, the literature boundary, the
+high-\(\beta\) ledger, and the exact computational certificate.

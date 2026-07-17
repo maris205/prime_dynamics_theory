@@ -1,0 +1,121 @@
+\section{Exact certificate and claim boundary}
+\label{sec:tpc33-certificate-scope}
+
+The accompanying standard-library certificate is
+\begin{center}
+ \texttt{experiments/tpc33\_certificate.py}.
+\end{center}
+It uses integer and \texttt{Fraction} arithmetic and exception-based
+checks.  No Python \texttt{assert} statement, floating-point root of unity,
+or random input is used.  Running
+\begin{verbatim}
+python experiments/tpc33_certificate.py
+python -O experiments/tpc33_certificate.py
+\end{verbatim}
+regenerates byte-identical JSON and identical standard output in both
+modes.
+
+\subsection{What is checked}
+
+The certificate performs \(506{,}900\) exact checks, distributed as in
+\cref{tab:tpc33-certificate-counts}.
+
+\begin{table}[H]
+\centering
+\caption{Exact finite checks in the TPC-33 certificate.}
+\label{tab:tpc33-certificate-counts}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Check family & Count \\
+\midrule
+Affine normal form, gcd identities, and M\"obius layers & \(248{,}914\) \\
+Reduced and projected affine origins & \(83{,}646\) \\
+Local squarefree root counts & \(9{,}853\) \\
+Actual-mask gcd projector and coefficient mass & \(135{,}320\) \\
+Projective second moment and product-slope lift & \(714\) \\
+Quadratic-character coherent-line obstruction & \(27{,}790\) \\
+Finite column Cauchy--Schwarz inequalities & \(630\) \\
+High-\(\beta\) rational ledger & \(9\) \\
+Scope flags & \(24\) \\
+\midrule
+Total & \(506{,}900\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The affine checks enumerate primitive coefficient triples and verify
+\begin{equation}
+ sU_t-aD_t=h,\qquad
+ \binom ht=\begin{pmatrix}s&-a\\-y&x\end{pmatrix}\binom{U_t}{D_t},
+ \label{eq:tpc33-certificate-affine}
+\end{equation}
+all four gcd identities, the nonprimitive M\"obius layer, and the
+discriminant \(h^2\).  The local sieve checks enumerate complete residue
+systems modulo \(p\) or \(p^2\) and verify the exact \(p-1\),
+\(p^2-1\), and \(p^2-2\) allowed-class counts.
+
+The mask checks verify
+\eqref{eq:tpc33-row-gcd-projector} and
+\eqref{eq:tpc33-row-gcd-projector-mass} on finite ranges.  The projective
+checks evaluate both sides of
+\eqref{eq:tpc33-projective-plancherel} directly over finite fields, without
+approximating additive characters.  The coherent-line check uses the exact
+quadratic-character autocorrelation
+\begin{equation}
+ \sum_x\chi(x)\chi(x+k)
+ =\begin{cases}q-1,&k=0,\\-1,&k\ne0,
+ \end{cases}
+ \label{eq:tpc33-certificate-character-autocorrelation}
+\end{equation}
+which certifies Fourier magnitude \(\sqrt q\) through finite-character
+orthogonality.
+
+\subsection{Reproducibility values}
+
+The archived run has:
+\begin{align}
+ \text{normalized source SHA-256}\quad
+ &\texttt{a55c3d71c0851870ea0b9bbd1e9ef938}
+ \notag\\[-0.2em]
+ &\texttt{4e70885e5de1ddc685c309ec1ec12c67},
+ \label{eq:tpc33-source-hash}\\
+ \text{JSON SHA-256}\quad
+ &\texttt{c7d08c9020590d81bc590a6caa7d0f36}
+ \notag\\[-0.2em]
+ &\texttt{ad3f553532e580fbdc03553638a0b3b5},
+ \label{eq:tpc33-json-hash}\\
+ \text{certificate digest}\quad
+ &\texttt{e5a28b8dcac36154ff620c2e644eed7f}
+ \notag\\[-0.2em]
+ &\texttt{d163d00568fcd90d8e4443beafcfe37b}.
+ \label{eq:tpc33-certificate-digest}
+\end{align}
+The normalized source hash replaces all line endings by line feeds before
+hashing.  The certificate digest hashes the canonical JSON payload before
+the digest field is appended.
+
+\subsection{What is not certified}
+
+Finite enumeration verifies algebra and exact bookkeeping, not an
+asymptotic analytic estimate.  In particular, the certificate does not:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item certify the error term in
+ \eqref{eq:tpc33-squarefree-asymptotic}; that term is proved in the text by
+ a CRT sieve and a large-square tail;
+ \item prove signed cancellation in any growing affine M\"obius family;
+ \item prove the physical \(Q^3\) input
+ \eqref{eq:tpc33-Q3-energy-input};
+ \item prove the zero-frequency flatness ratio of TPC-32;
+ \item close every residual packet in the earlier prime-pair reduction;
+ \item prove positivity or a Hardy--Littlewood asymptotic;
+ \item prove infinitely many twin primes; or
+ \item break the sieve parity barrier.
+\end{enumerate}
+
+The proved statements are the integral normal form, its squarefree-support
+theorem, the actual-mask column disintegration, the finite projective second
+moment and its corollaries, the exact conditional \(Q^3\)-to-\(Q^2\)
+transfer, and the sharp obstructions.  The remaining mathematical task is
+\eqref{eq:tpc33-next-projective-energy}, together with all later positivity
+ and reconstruction stages.  This delineates the proved, conditional, and
+ open parts of the argument.

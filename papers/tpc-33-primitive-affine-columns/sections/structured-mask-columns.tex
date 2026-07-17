@@ -1,0 +1,247 @@
+\section{Structured-mask disintegration of the physical columns}
+\label{sec:tpc33-structured-mask}
+
+We now prove the physical reduction announced in
+\eqref{eq:tpc33-intro-affine-column}.  The result uses the actual mask
+\eqref{eq:tpc33-actual-mask}.  It is false as a statement about every
+entrywise bounded mask.
+
+\subsection{An exact projection of the row-gcd mask}
+
+For \(G\ge1\), define
+\begin{equation}
+ \lambda_G(v)
+ :=\sum_{\substack{g\mid v\\g\le G}}\mu(v/g).
+ \label{eq:tpc33-truncated-gcd-coefficient}
+\end{equation}
+
+\begin{lemma}[Exact row-gcd projector]
+\label{lem:tpc33-row-gcd-projector}
+For every \(d,e\in\N\),
+\begin{equation}
+ \boxed{
+ \one_{(d,e)\le G}
+ =\sum_{\substack{v\mid d\\v\mid e}}\lambda_G(v).}
+ \label{eq:tpc33-row-gcd-projector}
+\end{equation}
+If \(e\) is squarefree, then
+\begin{equation}
+ \boxed{
+ \sum_{v\mid e}|\lambda_G(v)|
+ \le3^{\omega(e)}\ll_\eps e^\eps.}
+ \label{eq:tpc33-row-gcd-projector-mass}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put \(n=(d,e)\).  Reversing the two divisor sums gives
+\begin{align*}
+ \sum_{v\mid n}\lambda_G(v)
+ &=\sum_{\substack{g\mid n\\g\le G}}
+   \sum_{w\mid n/g}\mu(w)\\
+ &=\one_{n\le G}.
+\end{align*}
+This proves \eqref{eq:tpc33-row-gcd-projector}.  If \(e\) is squarefree,
+then
+\begin{align*}
+ \sum_{v\mid e}|\lambda_G(v)|
+ &\le\sum_{v\mid e}\sum_{g\mid v}|\mu(v/g)|
+ =\sum_{gw\mid e}1=3^{\omega(e)}.
+\end{align*}
+The final bound is the standard divisor estimate.
+\end{proof}
+
+The key point is the order of use.  After the opposite row is fixed,
+\(v\) ranges only over divisors of its squarefree coordinate \(e\), so the
+total coefficient mass is \(X^{o(1)}\).  Summing
+\eqref{eq:tpc33-row-gcd-projector} without fixing a column would not by
+itself prove a small operator norm for the full mask.
+
+\subsection{Reflecting one ultra leg}
+
+Fix a right row
+\begin{equation}
+ \gamma=(\ell',e),\qquad n=m_\gamma=\ell'e,
+ \label{eq:tpc33-fixed-right-column}
+\end{equation}
+and consider the left-ultra column
+\begin{equation}
+ B_\gamma^L
+ :=\sum_\alpha\gamma_\alpha^{(1)}
+ \sum_j\mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ C_{m_\alpha}(j)\mathsf H_{m_\gamma}(j).
+ \label{eq:tpc33-left-column-predefinition}
+\end{equation}
+Open the ultra increment.  For a nonzero term with
+\(m_\alpha=\ell d\), let \(u\) be its ultra divisor and put
+\begin{equation}
+ N_\alpha(j)=\ell dj+h=us.
+ \label{eq:tpc33-ultra-reflection}
+\end{equation}
+Then
+\begin{equation}
+ T<u\le U_0,\qquad
+ 1\le s<\frac{N_\alpha(j)}T\ll_{\mathscr D}\frac XT.
+ \label{eq:tpc33-reflected-range}
+\end{equation}
+The variable \(s\) is not required to be squarefree.  Target primitivity
+\eqref{eq:tpc33-divisor-primitivity} gives
+\begin{equation}
+ (s,\ell djH)=(u,\ell djH)=1.
+ \label{eq:tpc33-reflected-primitivity}
+\end{equation}
+It does not imply \((s,u)=1\).
+
+Fix \(\ell,j,s\).  Since \((s,\ell j)=1\), there is one residue
+\(d_0\pmod s\) satisfying
+\begin{equation}
+ \ell jd_0+h\equiv0\pmod s.
+ \label{eq:tpc33-d-residue}
+\end{equation}
+Writing \(d=d_0+s\tau\) gives
+\begin{equation}
+ u=u_0+\ell j\tau,\qquad
+ u_0=\frac{\ell jd_0+h}{s},\qquad
+ su_0-\ell jd_0=h.
+ \label{eq:tpc33-unprojected-affine-column}
+\end{equation}
+The physical dyadic restriction \(d\asymp D\) permits at most
+\begin{equation}
+ O\!\left(1+\frac Ds\right)
+ \label{eq:tpc33-unprojected-fiber-length}
+\end{equation}
+values of \(\tau\).
+
+\subsection{The full actual-mask column theorem}
+
+The row-gcd projector introduces the divisor \(v\).  On a nonempty term,
+\(v\mid d,e\), and \eqref{eq:tpc33-reflected-primitivity} implies
+\((v,s)=1\).  Write
+\begin{equation}
+ d=v\widetilde d.
+ \label{eq:tpc33-v-projected-row}
+\end{equation}
+Since \((s,\ell jv)=1\), there is a unique
+\(\widetilde d_0\pmod s\) such that
+\begin{equation}
+ \ell jv\widetilde d_0+h\equiv0\pmod s.
+ \label{eq:tpc33-projected-residue}
+\end{equation}
+Put
+\begin{equation}
+ \widetilde u_0=\frac{\ell jv\widetilde d_0+h}{s}.
+ \label{eq:tpc33-projected-u0}
+\end{equation}
+
+\begin{theorem}[Actual-mask affine-column disintegration]
+\label{thm:tpc33-actual-mask-column}
+Fix the right row \(\gamma=(\ell',e)\) in
+\eqref{eq:tpc33-left-column-predefinition}.  After opening the left ultra
+leg, the actual mask decomposes that column into the variables
+\(\ell,j,s,v\), with \(v\mid e\), and at most two intervals \(I\) on each
+such layer.  The inner arithmetic sequence has the exact form
+\begin{equation}
+ \boxed{
+ \sum_{r\in I}
+ \mu(\widetilde d_0+sr)
+ \mu(\widetilde u_0+\ell jv r)
+ \one_{(v,\, (\widetilde d_0+sr)
+                 (\widetilde u_0+\ell jv r))=1}
+ \rho(r)W(r),}
+ \label{eq:tpc33-standard-affine-column}
+\end{equation}
+where
+\begin{align}
+ s\widetilde u_0-\ell jv\widetilde d_0&=h,
+ \label{eq:tpc33-standard-affine-determinant}\\
+ |I|&\ll_{\mathscr D}1+\frac{D}{sv}.
+ \label{eq:tpc33-standard-affine-length}
+\end{align}
+Here \(\rho\) is a bounded fixed-period factor.  The weight \(W(r)\)
+includes the varying factor \(\log u_r\), the row smooth factors, and their
+Mellin/BV separations inherited from TPC-25; its seminorm cost is therefore
+at most logarithmic in addition to the inherited soft losses.  The
+coefficient outside \eqref{eq:tpc33-standard-affine-column} contains
+\(-\mu(v)\lambda_G(v)(\log\ell)\) and the remaining fixed physical
+factors.  Uniformly in the fixed column,
+\begin{equation}
+ \sum_{v\mid e}|\lambda_G(v)|\ll_\eps X^\eps.
+ \label{eq:tpc33-column-mask-complexity}
+\end{equation}
+The local coprimality indicator in
+\eqref{eq:tpc33-standard-affine-column} itself has a divisor expansion of
+total coefficient mass at most \(2^{\omega(v)}\ll_\eps X^\eps\).
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:tpc33-row-gcd-projector} into the last factor of
+\eqref{eq:tpc33-actual-mask}.  Because \(e\) is fixed and squarefree,
+\eqref{eq:tpc33-row-gcd-projector-mass} proves
+\eqref{eq:tpc33-column-mask-complexity}.  For one divisor \(v\mid e\),
+write \(d=v\widetilde d\) and use
+\eqref{eq:tpc33-projected-residue}--
+\eqref{eq:tpc33-projected-u0}.  Every solution is uniquely
+\begin{equation}
+ \widetilde d_r=\widetilde d_0+sr,
+ \qquad
+ u_r=\widetilde u_0+\ell jv r,
+ \label{eq:tpc33-projected-affine-forms}
+\end{equation}
+and these forms satisfy
+\eqref{eq:tpc33-standard-affine-determinant}.  The interval
+\(d=v\widetilde d\asymp D\) has length \(O(D/v)\); sampling it with step
+\(s\) proves \eqref{eq:tpc33-standard-affine-length}.
+
+For fixed \(\ell,\ell',e,v\), the same-source condition is constant.  The
+near-diagonal deletion is
+\[
+ |\ell v\widetilde d-\ell'e|>QX^{-\kappa_0}.
+\]
+Its complement is one interval on the \(\widetilde d\)-line, so the
+retained set is the union of at most two intervals.  The fixed residue
+factor is periodic with a modulus depending only on \(h\), and the smooth
+ factors have the Mellin/BV separations already recorded in TPC-25.  These
+ give \(\rho\) and \(W\) without an additional polynomial projective cost,
+ apart from the logarithmic and soft losses recorded above.
+
+The original row is squarefree, so \(v\) and \(\widetilde d_r\) are
+squarefree and coprime.  The ultra coefficient is supported on squarefree
+\(u_r\), and target primitivity makes \((v,u_r)=1\).  Therefore
+\begin{equation}
+ \mu(d)\bigl(-\mu(u_r)\log u_r\bigr)
+ =-\mu(v)\mu(\widetilde d_r)\mu(u_r)\log u_r
+ \label{eq:tpc33-projected-sign-fusion}
+\end{equation}
+on the physical support.  Restoring the coprimality by the displayed
+indicator yields \eqref{eq:tpc33-standard-affine-column}.  Finally,
+\[
+ \one_{(v,n)=1}=\sum_{c\mid(v,n)}\mu(c)
+\]
+has coefficient mass \(2^{\omega(v)}\), which is \(X^{o(1)}\) because
+\(v\mid e\ll X^{O(1)}\).
+\end{proof}
+
+\begin{corollary}[Both polarizations]
+\label{cor:tpc33-both-column-disintegrations}
+The right-ultra column obtained by fixing \(\alpha\) and opening
+\(C_{m_\gamma}\) has the symmetric disintegration
+\eqref{eq:tpc33-standard-affine-column}, with the two row labels exchanged.
+Thus both terms in \eqref{eq:tpc33-matched-polarization} are covered.
+\end{corollary}
+
+\begin{remark}[Column complexity versus matrix complexity]
+The theorem fixes the opposite row before expanding the gcd mask.  It does
+not give an \(X^{o(1)}\) projective decomposition of the full matrix
+\((\mathfrak m_{\rm act}(\alpha,\gamma))\).  In particular, it cannot be
+substituted into an abstract Schur-multiplier argument without retaining
+the outer column energy.
+\end{remark}
+
+\begin{remark}[Fixed determinant, growing slopes]
+The two slopes in \eqref{eq:tpc33-standard-affine-column} are
+\(s\) and \(a=\ell jv\).  Both are coprime to \(h\) and to one another,
+and their determinant is the fixed integer \(h\).  They nevertheless grow
+with \(X\), and the interval may contain only \(O(1)\) points when
+\(sv>D\).  A theorem for one fixed affine pair cannot simply be summed over
+these layers.
+\end{remark}

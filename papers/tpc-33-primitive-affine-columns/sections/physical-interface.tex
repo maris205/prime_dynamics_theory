@@ -1,0 +1,190 @@
+\section{The physical zero-frequency interface}
+\label{sec:tpc33-physical-interface}
+
+This section fixes notation for the physical object.  It imports only the
+proved identities and norm bounds needed below; no estimate from a later
+section is used to redefine the packet.
+
+\subsection{Rows, targets, and actual coefficients}
+
+Fix \(h\in\Z\setminus\{0\}\) and put \(H=\rad|h|\).  On one opened
+dyadic packet,
+\begin{equation}
+ Q=LD,\qquad QJ\asymp_{\mathscr D}X,\qquad
+ R\le T<U_0\asymp_{\mathscr D}X,
+ \label{eq:tpc33-physical-scales}
+\end{equation}
+where \(U_0\) exceeds every target.  A row is
+\begin{equation}
+ \alpha=(\ell_\alpha,d_\alpha),\qquad
+ m_\alpha=\ell_\alpha d_\alpha\asymp_{\mathscr D}Q.
+ \label{eq:tpc33-row-index}
+\end{equation}
+Here \(\ell_\alpha\asymp L\) is prime, \(d_\alpha\asymp D\) is
+squarefree, \((d_\alpha,H)=1\), and the source separation makes the integer
+\(m_\alpha\) determine its label.  The two row coefficients are
+\begin{equation}
+ \gamma_\alpha^{(i)}
+ =\mu(d_\alpha)(\log\ell_\alpha)
+  \omega_D^{(i)}(d_\alpha)
+  \psi_L^{(i)}(\ell_\alpha/L)\zeta_\alpha^{(i)},
+ \qquad i=1,2,
+ \label{eq:tpc33-row-coefficients}
+\end{equation}
+with fixed bounded smooth and residue factors.  TPC-25 proves
+\begin{align}
+ \sum_\alpha|\gamma_\alpha^{(i)}|
+ &\ll_{\mathscr D}Q,
+ \label{eq:tpc33-row-l1}\\
+ \sum_\alpha|\gamma_\alpha^{(i)}|^2
+ &\ll_{\mathscr D}Q\log(2L).
+ \label{eq:tpc33-row-l2}
+\end{align}
+
+For an orbit point \(j\), let
+\begin{equation}
+ N_\alpha(j)=m_\alpha j+h.
+ \label{eq:tpc33-target}
+\end{equation}
+Every effective term has \((m_\alpha j,H)=1\) and
+\(N_\alpha(j)\asymp_{\mathscr D}X\).  Hence every divisor
+\(w\mid N_\alpha(j)\) satisfies
+\begin{equation}
+ (w,m_\alpha jH)=1.
+ \label{eq:tpc33-divisor-primitivity}
+\end{equation}
+The joint orbit support contains \(O_{\mathscr D}(J)\) integers.
+
+The bounded fixed-period and smooth factors are denoted by
+\begin{equation}
+ \Xi_{\alpha,\gamma}(j)
+ \cW_{\alpha,\gamma}(j/J).
+ \label{eq:tpc33-smooth-residue-factor}
+\end{equation}
+TPC-25 gives a finite residue separation and an absolutely convergent
+Mellin representation whose total projective mass is bounded by a fixed
+constant at zero frequency.  We retain these factors rather than replace
+them by one.
+
+\subsection{Returning to the actual mask}
+
+The generic mask in TPC-21, and hence the actual mask studied here, is
+\begin{equation}
+ \boxed{
+ \mathfrak m_{\rm act}(\alpha,\gamma)
+ =\one_{\ell_\alpha\ne\ell_\gamma}
+  \one_{|m_\alpha-m_\gamma|>QX^{-\kappa_0}}
+  \one_{(d_\alpha,d_\gamma)\le G},
+ \qquad G=X^{\kappa_0}.}
+ \label{eq:tpc33-actual-mask}
+\end{equation}
+Here \(\kappa_0>0\) is the fixed pruning parameter.  Define
+\begin{equation}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ :=\mathfrak m_{\rm act}(\alpha,\gamma)
+   \Xi_{\alpha,\gamma}(j)
+   \cW_{\alpha,\gamma}(j/J).
+ \label{eq:tpc33-actual-joint-multiplier}
+\end{equation}
+It is uniformly bounded and vanishes on equal rows.  All physical
+column theorems in this paper use
+\eqref{eq:tpc33-actual-joint-multiplier}.  Statements valid only for an
+arbitrary entrywise bounded mask are explicitly labelled as abstract
+interfaces and are not used to infer the structured expansion in
+\cref{sec:tpc33-structured-mask}.
+
+\subsection{The exact matched polarization}
+
+Let
+\begin{equation}
+ a_R(w)=-\mu(w)\log w
+ \label{eq:tpc33-ultra-coefficient}
+\end{equation}
+and let \(b_R(w)\) be the matched residual divisor coefficient from
+TPC-32.  Both vanish unless \(w\) is squarefree, and
+\(b_R(w)=a_R(w)\) for \(w>R\).  Define
+\begin{align}
+ \mathsf A_{m,Y}(j)
+ &:=\sum_{\substack{w\le Y\\w\mid mj+h}}b_R(w),
+ \label{eq:tpc33-raw-prefix}\\
+ C_m(j)
+ &:=\sum_{\substack{T<w\le U_0\\w\mid mj+h}}a_R(w).
+ \label{eq:tpc33-ultra-increment}
+\end{align}
+Then
+\begin{equation}
+ \mathsf A_{m,U_0}(j)=\mathsf A_{m,T}(j)+C_m(j).
+ \label{eq:tpc33-prefix-increment}
+\end{equation}
+Put
+\begin{equation}
+ \mathsf H_m(j)
+ :=\frac{\mathsf A_{m,U_0}(j)+\mathsf A_{m,T}(j)}2
+ =\mathsf A_{m,T}(j)+\frac12C_m(j).
+ \label{eq:tpc33-half-prefix}
+\end{equation}
+The three raw cutoff channels combine pointwise as
+\begin{equation}
+ \boxed{
+ \cK^{\rm sh}_{\alpha,\gamma}(j)
+ =C_{m_\alpha}(j)\mathsf H_{m_\gamma}(j)
+  +\mathsf H_{m_\alpha}(j)C_{m_\gamma}(j).}
+ \label{eq:tpc33-matched-polarization}
+\end{equation}
+Neither term may be discarded.
+
+For an event \(\cE(\alpha,\gamma,j)\), write
+\begin{align}
+ \cS_{\rm sh}(\cE)
+ :={}&\sum_{\alpha,\gamma}
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \sum_j\mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ \cK^{\rm sh}_{\alpha,\gamma}(j)
+ \one_{\cE(\alpha,\gamma,j)},
+ \label{eq:tpc33-physical-functional}\\
+ \cS_{\rm sh}^{\rm all}
+ :={}&\cS_{\rm sh}(\text{all}).
+ \label{eq:tpc33-full-shell}
+\end{align}
+Its natural absolute scale is
+\begin{equation}
+ N_0=JQ^2\asymp XQ.
+ \label{eq:tpc33-natural-scale}
+\end{equation}
+
+If
+\begin{equation}
+ c_{\alpha,\gamma}(j)
+ =(N_\alpha(j),N_\gamma(j)),
+ \label{eq:tpc33-target-content}
+\end{equation}
+then TPC-30 and TPC-32 prove \citep{WangTPC30,WangTPC32}, for
+\(1\le C\ll_{\mathscr D}Q\) in the range of the inherited theorem,
+\begin{align}
+ \cS_{\rm sh}^{\rm all}
+ &=\widehat A_{C,q}(0)
+   +\cS_{\rm sh}(c_{\alpha,\gamma}(j)>C),
+ \label{eq:tpc33-zero-splice}\\
+ |\cS_{\rm sh}(c_{\alpha,\gamma}(j)>C)|
+ &\ll_{\eps,h,\mathscr D}
+ X^\eps\left(Q^2+\frac{XQ}{C}\right).
+ \label{eq:tpc33-large-content-bound}
+\end{align}
+The clean affine expansion below is performed on
+\(\cS_{\rm sh}^{\rm all}\).  Whenever \(J\ll_{\mathscr D}Q\), in particular
+at the high-\(\beta\) endpoint studied here, choosing \(C\asymp J\) restores
+the desired small-content zero coefficient with an \(O(X^\eps Q^2)\) error.
+This order
+avoids introducing the content-projector M\"obius factor into the affine
+sign product.
+
+Finally, let \(\cD^{\rm dr}(\cE)\) denote, with the sign convention of
+TPC-32, the contribution of the two additional drift legs under an event
+\(\cE\), and put \(\cD^{\rm dr}=\cD^{\rm dr}(\text{all})\).  Their already
+proved uniform bound is
+\begin{equation}
+ |\cD^{\rm dr}|
+ \ll_{\eps,h,\mathscr D}X^\eps\frac{XQ}{L}.
+ \label{eq:tpc33-drift-bound}
+\end{equation}
+They will be restored only after the raw matched shell has been estimated.

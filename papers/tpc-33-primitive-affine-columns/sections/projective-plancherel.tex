@@ -1,0 +1,142 @@
+\section{Fixed-determinant projective Plancherel}
+\label{sec:tpc33-projective-plancherel}
+
+We pass to a finite model in which the two-parameter affine coefficient
+family is complete.  The terminology ``projective Plancherel'' is
+descriptive: the proof is finite Fourier orthogonality in the coordinates
+\(b=a/s\) and \(c=h/s\).  Thus the second moment averages both the
+projective ratio \(b\) and the nonzero affine offset \(c\); it gives no
+almost-every-\(b\) statement by itself.  The useful feature here is its
+specialization to one nonzero determinant fiber and the explicit defect
+left by homogeneous dilations.
+
+Let \(q\) be prime, let \(h\in\F_q^\times\), and let
+\(f,g:\F_q\to\C\).  We use the unnormalized conventions
+\begin{align}
+ \bar f&=\frac1q\sum_{x\in\F_q}f(x),
+ &f^\circ&=f-\bar f,
+ \label{eq:tpc33-finite-centering}\\
+ \|f\|_2^2&=\sum_{x\in\F_q}|f(x)|^2,
+ &\widehat f(r)&=\sum_{x\in\F_q}f(x)e_q(-rx),
+ \label{eq:tpc33-finite-normalization}
+\end{align}
+where \(e_q(z)=\exp(2\pi iz/q)\).  For
+\(a,s\in\F_q^\times\), define
+\begin{equation}
+ \cC_{a,s}^{(h)}(f,g)
+ :=\sum_{D\in\F_q}
+ f(D)g\!\left(s^{-1}(aD+h)\right).
+ \label{eq:tpc33-projective-correlation}
+\end{equation}
+This is the correlation along the affine line \(sU-aD=h\).
+
+\begin{theorem}[Exact determinant-fiber second moment]
+\label{thm:tpc33-projective-plancherel}
+With the preceding conventions,
+\begin{align}
+ &\boxed{
+ \sum_{a,s\in\F_q^\times}
+ \left|
+  \cC_{a,s}^{(h)}(f,g)-q\bar f\bar g
+ \right|^2}
+ \notag\\[-0.2em]
+ &\boxed{\qquad
+ =q\|f^\circ\|_2^2\|g^\circ\|_2^2
+ -\sum_{b\in\F_q^\times}
+  \left|\sum_{D\in\F_q}f^\circ(D)g^\circ(bD)\right|^2.}
+ \label{eq:tpc33-projective-plancherel}
+\end{align}
+In particular,
+\begin{equation}
+ \boxed{
+ \sum_{a,s\in\F_q^\times}
+ \left|
+  \cC_{a,s}^{(h)}(f,g)-q\bar f\bar g
+ \right|^2
+ \le q\|f^\circ\|_2^2\|g^\circ\|_2^2.}
+ \label{eq:tpc33-projective-upper-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Put
+\begin{equation}
+ b=a/s,\qquad c=h/s.
+ \label{eq:tpc33-projective-coordinates}
+\end{equation}
+Because \(h\ne0\), the map
+\((a,s)\mapsto(b,c)\) is a bijection of
+\((\F_q^\times)^2\): its inverse is
+\(s=h/c\), \(a=bs\).  Centering both functions gives
+\begin{equation}
+ \cC_{a,s}^{(h)}(f,g)-q\bar f\bar g
+ =R_{b,c},
+ \qquad
+ R_{b,c}:=\sum_Df^\circ(D)g^\circ(bD+c).
+ \label{eq:tpc33-centered-affine-correlation}
+\end{equation}
+The mixed term containing \(g^\circ\) vanishes because an affine permutation
+preserves its zero sum, while the other vanishes because
+\(\sum_D f^\circ(D)=0\).
+
+Temporarily include \(c=0\).  Fourier transformation in \(c\) gives
+\begin{equation}
+ \widehat R_b(r)
+ :=\sum_{c\in\F_q}R_{b,c}e_q(-rc)
+ =\widehat f^\circ(-br)\widehat g^\circ(r).
+ \label{eq:tpc33-R-fourier}
+\end{equation}
+Parseval and \(\widehat f^\circ(0)=\widehat g^\circ(0)=0\) imply
+\begin{align}
+ \sum_{b\ne0}\sum_{c\in\F_q}|R_{b,c}|^2
+ &=\frac1q\sum_{r\ne0}|\widehat g^\circ(r)|^2
+   \sum_{b\ne0}|\widehat f^\circ(-br)|^2
+ \notag\\
+ &=\frac1q
+   \left(\sum_{\rho\ne0}|\widehat f^\circ(\rho)|^2\right)
+   \left(\sum_{r\ne0}|\widehat g^\circ(r)|^2\right)
+ \notag\\
+ &=q\|f^\circ\|_2^2\|g^\circ\|_2^2.
+ \label{eq:tpc33-complete-affine-energy}
+\end{align}
+The determinant-\(h\) family has \(c\ne0\).  Subtracting its omitted
+\(c=0\) energy,
+\[
+ \sum_{b\ne0}|R_{b,0}|^2
+ =\sum_{b\ne0}
+   \left|\sum_Df^\circ(D)g^\circ(bD)\right|^2,
+\]
+proves \eqref{eq:tpc33-projective-plancherel}.  Dropping this nonnegative
+term proves \eqref{eq:tpc33-projective-upper-bound}.
+\end{proof}
+
+\begin{remark}[The dilation-alignment defect]
+The subtracted term is the complete energy of the homogeneous lines
+\(U=bD\).  Thus the identity can be strictly smaller than its upper bound
+when \(f^\circ\) and a multiplicative dilation of \(g^\circ\) align.  No
+randomness assumption is made.
+\end{remark}
+
+\begin{corollary}[Exceptional determinant-fiber pairs]
+\label{cor:tpc33-exceptional-projective-directions}
+For every \(\Lambda>0\),
+\begin{align}
+ &\#\left\{(a,s)\in(\F_q^\times)^2:
+ \left|\cC_{a,s}^{(h)}(f,g)-q\bar f\bar g\right|>\Lambda
+ \right\}
+ \notag\\
+ &\qquad\le
+ \frac{q\|f^\circ\|_2^2\|g^\circ\|_2^2}{\Lambda^2}.
+ \label{eq:tpc33-projective-exception-count}
+\end{align}
+\end{corollary}
+
+\begin{proof}
+Apply Chebyshev's inequality to
+\eqref{eq:tpc33-projective-upper-bound}.
+\end{proof}
+
+The corollary is an average over the two-dimensional coefficient family
+\((a,s)\), equivalently over \((b,c)\).  It gives no pointwise cancellation
+for one prescribed physical pair \((a,s)\), nor an almost-every-\(b\)
+conclusion, unless an additional argument controls the remaining coordinate.

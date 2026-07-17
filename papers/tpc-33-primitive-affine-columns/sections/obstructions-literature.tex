@@ -1,0 +1,174 @@
+\section{Sharp obstructions and the existing-theorem boundary}
+\label{sec:tpc33-obstructions-literature}
+
+The preceding theorems create an average route around pointwise affine
+cancellation.  They do not make a prescribed direction small.  We record
+three exact obstructions before comparing the physical requirement with
+existing Chowla--Elliott technology.
+
+\subsection{Three sharp interface obstructions}
+\label{sec:tpc33-sharp-obstructions}
+
+\begin{proposition}[A fixed direction contains two-point Chowla]
+\label{prop:tpc33-chowla-subcase}
+The family \(sU-aD=h\) contains the shift-one M\"obius correlation.  In
+particular, take
+\begin{equation}
+ a=s=h=1,\qquad x=1,\qquad y=0.
+ \label{eq:tpc33-shift-one-parameters}
+\end{equation}
+Then
+\begin{equation}
+ D_t=t,\qquad U_t=t+1,\qquad
+ \mu(D_t)\mu(U_t)=\mu(t)\mu(t+1).
+ \label{eq:tpc33-shift-one-correlation}
+\end{equation}
+Thus an unweighted \(o(T)\) theorem uniform over every individual affine
+direction would imply the still open two-point M\"obius Chowla statement.
+\end{proposition}
+
+\begin{proof}
+The B\'ezout relation is \(sx-ay=1\).  Substitution in
+\eqref{eq:tpc33-canonical-affine-forms} gives
+\eqref{eq:tpc33-shift-one-correlation}.
+\end{proof}
+
+The next example shows why separate Fourier pseudorandomness of the two
+legs cannot control a prescribed pairing.
+
+\begin{proposition}[Fourier-flat legs with a coherent line]
+\label{prop:tpc33-coherent-line-counterexample}
+Let \(q\) be an odd prime, fix \(a_0,s_0,h\in\F_q^\times\), and let
+\(\chi\) be the quadratic character with \(\chi(0)=0\).  Define
+\begin{equation}
+ f(D)=\chi(D),
+ \qquad
+ g(U)=\chi\!\left(a_0^{-1}(s_0U-h)\right).
+ \label{eq:tpc33-legendre-coherent-functions}
+\end{equation}
+Then \(\bar f=\bar g=0\), and every nonzero additive Fourier coefficient
+of either function has modulus \(\sqrt q\).  Nevertheless,
+\begin{equation}
+ \boxed{
+ \cC_{a_0,s_0}^{(h)}(f,g)=q-1.}
+ \label{eq:tpc33-legendre-coherent-line}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Both functions are affine transforms of the quadratic character, so their
+means vanish and their nonzero Fourier coefficients are quadratic Gauss
+sums of modulus \(\sqrt q\).  On the selected line
+\(U=s_0^{-1}(a_0D+h)\),
+\[
+ g(U)=\chi\!\left(a_0^{-1}(a_0D+h-h)\right)=\chi(D)=f(D).
+\]
+Hence the correlation is \(\sum_D\chi(D)^2=q-1\).
+\end{proof}
+
+This counterexample concerns an abstract two-leg Fourier interface.  It
+does not assert that the M\"obius function possesses the same coherent
+structure; it proves that one-leg Fourier bounds alone cannot rule it out.
+
+\begin{proposition}[The single-modulus no-wrap conflict]
+\label{prop:tpc33-single-modulus-conflict}
+On the high-\(\beta\) physical packet, a single prime modulus cannot both
+turn the modular determinant condition into an exact integer equation on
+the ambient affine box and provide complete orbit-slope coverage.
+\end{proposition}
+
+\begin{proof}
+On a projected physical layer, the slopes are \(s\) and
+\(a=\ell jv\), while the \(\widetilde d\)-interval has ambient length
+\(\asymp D/v\).  Therefore the determinant expression varies on the scale
+\begin{equation}
+ a\frac Dv=\ell jD\asymp QJ\asymp X.
+ \label{eq:tpc33-ambient-determinant-span}
+\end{equation}
+An elementary no-wrap lift from
+\(sU-aD\equiv h\pmod q\) to equality throughout this ambient box requires
+\(q\gg X\).  In contrast, complete coverage by the orbit variable
+\(j\) requires \(q\lesssim J\); otherwise the rms factor in
+\eqref{eq:tpc33-incomplete-rms-loss} contains \((q/J)^{1/2}\).  At the
+physical endpoint \(J=X^{133/400+o(1)}\ll X\), these requirements are
+incompatible.
+\end{proof}
+
+The proposition rules out only the most direct one-modulus transplantation
+of \cref{thm:tpc33-projective-plancherel}.  It does not rule out a
+multi-modulus circle method, a delta symbol, a spectral decomposition, or a
+direct integer large-sieve inequality for the restricted slope set.
+
+\subsection{What the proved affine-correlation theorems supply}
+
+Several strong results control related averages.  Their hypotheses do not
+coincide with the physical column.  The comparison in
+\cref{tab:tpc33-literature-boundary} uses only the theorem forms stated in
+the cited primary sources.  The earlier TPC-23 paper already records the
+fixed-form logarithmic bridge in the present reduction
+\citep{WangTPC23}; it is not claimed again as a new theorem here.
+
+\begin{table}[t]
+\centering
+\caption{Existing affine-correlation inputs and the missing physical
+interfaces.}
+\label{tab:tpc33-literature-boundary}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.20\textwidth}
+>{\raggedright\arraybackslash}p{0.20\textwidth}
+>{\raggedright\arraybackslash}p{0.23\textwidth}
+>{\raggedright\arraybackslash}p{0.28\textwidth}@{}}
+\toprule
+Source & Coefficients & Averaging & Boundary for TPC-33 \\
+\midrule
+Tao, Cor.~1.5 \citep{Tao2016LogChowla}
+& fixed nonproportional affine forms
+& logarithmic window \(x/\omega(x)<n\le x\), \(\omega(x)\to\infty\)
+& applies to each frozen M\"obius pair; no stated uniformity for
+polynomially growing coefficients and not a fixed dyadic window \\
+Matom\"aki--Radziwi\l\l--Tao, Thm.~1.6
+\citep{MatomakiRadziwillTao2015}
+& coefficients bounded in terms of \(A\), with an \(A^2\) loss
+& unweighted average plus a free additive-shift average
+& applies also to M\"obius, but the displayed bound yields no saving when
+\(A=X^\theta\); the
+free shift is not the determinant-constrained family \\
+Frantzikinakis--Host, Thm.~2.6 \citep{FrantzikinakisHost2017}
+& fixed independent homogeneous linear forms
+& a full two-dimensional box
+& gives mean zero for aperiodic M\"obius, but not on the one-dimensional
+affine slice or for growing forms \\
+Matom\"aki et al., Cor.~1.11
+\citep{MatomakiEtAl2023HigherUniformity}
+& fixed distinct dilation coefficients
+& average over a common dilation
+& strong precedent for extra slope averaging; the displayed corollary is
+for Liouville and does not select one prescribed dilation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two further nearby boundaries are worth recording.  Ter\"av\"ainen proves
+a fixed gap from the trivial bound for certain roots-of-unity-valued
+multiplicative functions on fixed nonproportional affine forms
+\citep[Thm.~2.6]{Teravainen2024PolynomialArguments}; this is not a mean-zero theorem,
+and the roots-of-unity hypothesis does not directly permit \(\mu\), which
+also takes the value zero.  Pilatte proves a quantitative logarithmic
+shift-one result for the Liouville function
+\citep[Thm.~1.1]{Pilatte2025LogChowla}; it is a preprint result for a particular fixed
+pair, not a general growing-coefficient dyadic M\"obius theorem.
+
+In summary, no cited theorem simultaneously supplies:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item polynomially growing affine coefficients;
+ \item cancellation on every fixed dyadic shell;
+ \item averaging along the fixed-determinant constrained family;
+ \item the actual joint row mask and physical weights; and
+ \item a power ledger strong enough for \eqref{eq:tpc33-Q3-energy-input}.
+\end{enumerate}
+These requirements remain an additional analytic input.  The projective
+identity in this paper identifies one viable averaged geometry, but does
+not claim that existing Chowla--Elliott theorems already close it.
+The distinction between sign-sensitive prime detection and sign-blind
+sieve information is the classical parity boundary
+\citep{HeathBrown1982Parity}.
