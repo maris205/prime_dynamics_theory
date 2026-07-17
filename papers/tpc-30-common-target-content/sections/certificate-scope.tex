@@ -1,0 +1,132 @@
+\section{Exact certificate, dependencies, and scope}
+\label{sec:tpc30-certificate}
+
+\subsection{Finite exact certificate}
+
+The standard-library script
+\begin{center}
+\texttt{experiments/tpc30\_certificate.py}
+\end{center}
+uses exception-based checks in ordinary and optimized Python.  It
+verifies the finite algebra underlying the paper by independent direct
+and structured computations:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item the primitive identity
+ \[
+ (mj+h,nj+h)=(mj+h,m-n),
+ \]
+ together with an explicit nonprimitive counterexample;
+ \item exact-$c$ orbit layers, direct occupancy in finite windows
+ $\cI$ of length $O_{\mathscr D}(J)$, and the fixed-row large-content
+ inequality
+ \[
+ \#\{j\in\cI:(j,h)=1,\ \cG_{m,n}(j)>Z\}
+ \le\tau(|m-n|)\left(1+\frac JZ\right);
+ \]
+ \item the four-factor identity
+ \[
+ (rU,sV)
+ =(r,s)(U,V)(r/(r,s),V/(U,V))
+              (s/(r,s),U/(U,V));
+ \]
+ \item the explicit finite row-residue inequality
+ \[
+ \cR_c\le K_c\|\gamma^{(1)}\|_2\|\gamma^{(2)}\|_2,
+ \]
+ where $K_c$ is the largest row occupancy of a residue class;
+ \item the central rational high-$\beta$ ledger, including the old zero
+ saving and the relaxed margin $133/400$;
+ \item metadata regression assertions recording each full-residual,
+ positivity, prime-pair, and parity claim deliberately excluded here.
+\end{enumerate}
+
+The four-factor regression exhausts all $65{,}536$ quadruples
+$1\le r,s,U,V\le16$ and separately checks $116$ affine-target
+factorizations.  Ordinary and optimized Python both complete
+$773{,}361$ recorded top-level exact checks and regenerate
+byte-identical JSON.  The subcounts are
+\begin{itemize}
+ \item $441{,}578$ primitive target-gcd identity checks;
+ \item $1{,}924$ exact-content occupancy checks;
+ \item $1{,}135$ fixed-row large-content checks;
+ \item $197{,}313$ exact four-factor checks;
+ \item $131{,}301$ row-residue energy checks;
+ \item $90$ rational high-$\beta$ ledger checks;
+ \item $20$ scope and nonoverlap metadata regression assertions.
+\end{itemize}
+The reproducibility values are
+\begin{itemize}
+ \item source SHA-256:
+ \nolinkurl{f4813d6e89163098187fe1ce585934b354a384a09b7ca4332e3fad42d1a78610};
+ \item JSON SHA-256:
+ \nolinkurl{c466cd747c726d51074c0d8967a950ee0bcfb3e8a4658fcb8d3a81e52615c2e9};
+ \item certificate digest:
+ \nolinkurl{8c52338642c27d2c4dafd6807cb8cc56d52888ae16b27cd9aeda880ccc10f64d}.
+\end{itemize}
+The source hash normalizes source newlines to LF; the certificate
+digest hashes the canonical sorted payload before the digest field is
+inserted.
+
+These computations certify finite identities, explicit finite
+inequalities, and rational arithmetic.  They do not prove an
+asymptotic M\"obius estimate.  In particular, finite enumeration is
+not used as evidence that the high-$\beta$ cell contains a positive
+amount of mass.
+
+\subsection{Dependency ledger}
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.34\textwidth}
+                >{\raggedright\arraybackslash}p{0.20\textwidth}
+                >{\raggedright\arraybackslash}p{0.37\textwidth}}
+\toprule
+Input or statement & Status & Use \\
+\midrule
+Opened-row $\ell^1/\ell^2$ provenance
+& Imported & TPC-25; pair mass and the auxiliary exact-layer energy. \\
+\addlinespace
+Calibrated cutoff difference and pointwise divisor envelopes
+& Imported & TPC-28--TPC-29; defines the three raw channels. \\
+\addlinespace
+Primitive target-gcd divisibility
+& Inherited geometry & TPC-18; sharpened here to the exact opened-row
+identity and orbit class. \\
+\addlinespace
+Fixed-row large-content occupancy and weighted tail theorem
+& Proved here & Gives the $Q^2+XQ/Z$ physical estimate. \\
+\addlinespace
+Exact four-factor decomposition and cross-factor pruning
+& Elementary identity; pruning proved here & Reaches quotient-rich and
+cross-rich sectors. \\
+\addlinespace
+TPC-29 reflected-content theorems
+& Imported for comparison & Establishes strict nonoverlap of the
+high-$\beta$ sample. \\
+\addlinespace
+Fixed-form logarithmic Elliott theorem
+& External benchmark & Not used in any positive estimate here. \\
+\addlinespace
+Signed determinant-family dispersion
+& Open & Proposed next input for the present route. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Claims deliberately excluded}
+
+The following statements are not consequences of this paper:
+\begin{itemize}
+ \item cancellation or closure on every small-target-gcd fiber;
+ \item closure of the complete ultra-long cutoff difference or the
+ full TPC-18 residual;
+ \item an effective polynomially uniform Chowla--Elliott theorem;
+ \item a positive lower bound, a Hardy--Littlewood asymptotic, or
+ infinitely many twin primes;
+ \item a general violation or weakening of the sieve parity barrier.
+\end{itemize}
+The positive conclusion is narrower: within the retained three-channel
+physical packet, every polynomially large full-target-content sector
+is power-small, including quotient-rich and cross-rich sectors that
+are invisible to reflected content alone.
+The remaining small-target-content residual is not solved; its fully
+coprime sector is identified as the sharp model.

@@ -1,0 +1,205 @@
+\section{Row--orbit energy and common-target pruning}
+\label{sec:tpc30-row-orbit}
+
+For $c\ge1$, define the absolute row congruence mass
+\begin{equation}
+ \cR_c
+ :=\sum_{\alpha,\gamma}
+ |\gamma_\alpha^{(1)}\gamma_\gamma^{(2)}|
+ \one_{c\mid m_\alpha-m_\gamma}.
+ \label{eq:tpc30-row-congruence-mass}
+\end{equation}
+The following estimate was used for reflected content in TPC-29.  We
+record it in the present notation because it is now paired with the
+full target gcd rather than a selected divisor gcd.
+
+\begin{lemma}[Opened-row residue energy]
+\label{lem:tpc30-row-residue-energy}
+Uniformly for $c\ge1$,
+\begin{equation}
+ \boxed{
+ \cR_c
+ \ll_{\mathscr D}
+ \left(\frac{Q^2}{c}+Q\right)\log(2L).}
+ \label{eq:tpc30-row-residue-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For $i=1,2$ and $a\pmod c$, put
+\[
+ X_i(a)=\sum_{m_\alpha\equiv a\, (c)}
+ |\gamma_\alpha^{(i)}|,
+ \qquad
+ E_i(a)=\sum_{m_\alpha\equiv a\, (c)}
+ |\gamma_\alpha^{(i)}|^2.
+\]
+The row integers are distinct and lie in an interval of length
+$O_{\mathscr D}(Q)$.  Each residue class contains
+$O_{\mathscr D}(Q/c+1)$ rows, so Cauchy--Schwarz gives
+\[
+ X_i(a)^2
+ \ll_{\mathscr D}\left(\frac Qc+1\right)E_i(a).
+\]
+It follows that
+\begin{align*}
+ \cR_c
+ &=\sum_{a\, (c)}X_1(a)X_2(a)\\
+ &\ll_{\mathscr D}
+ \left(\frac Qc+1\right)
+ \left(\sum_aE_1(a)\right)^{1/2}
+ \left(\sum_aE_2(a)\right)^{1/2}.
+\end{align*}
+Apply the two estimates in \eqref{eq:tpc30-row-l2}.
+\end{proof}
+
+For a row pair and orbit point, abbreviate
+\begin{equation}
+ \cG_{\alpha,\gamma}(j)
+ :=(N_\alpha(j),N_\gamma(j)).
+ \label{eq:tpc30-physical-target-gcd}
+\end{equation}
+Taking absolute values in any raw channel gives
+\begin{equation}
+ |\cK^{(\nu)}_{\alpha,\gamma}(j)|
+ \ll_{\eps,\mathscr D}X^\eps,
+ \qquad 1\le\nu\le3,
+ \label{eq:tpc30-kernel-envelope}
+\end{equation}
+by \eqref{eq:tpc30-pointwise-envelope}.
+
+\begin{proposition}[A uniform exact-content layer]
+\label{prop:tpc30-exact-content-layer}
+For every integer $c\ge1$ and $1\le\nu\le3$,
+\begin{equation}
+ \boxed{
+ |\cS_\nu(\cG_{\alpha,\gamma}(j)=c)|
+ \ll_{\eps,h,\mathscr D}X^\eps
+ \left(1+\frac Jc\right)
+ \left(\frac{Q^2}{c}+Q\right).}
+ \label{eq:tpc30-exact-content-layer}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The mask in \eqref{eq:tpc30-row-mask} first deletes the diagonal rows.
+By \cref{lem:tpc30-target-gcd}, the exact layer is empty unless
+$c\mid m_\alpha-m_\gamma$.  For each surviving row pair,
+\cref{lem:tpc30-content-occupancy} gives
+$O_{\mathscr D}(1+J/c)$ orbit points.  Apply
+\eqref{eq:tpc30-kernel-envelope}, sum the row weights through
+$\cR_c$, and use \eqref{eq:tpc30-row-residue-bound}.
+\end{proof}
+
+Summing \eqref{eq:tpc30-exact-content-layer} over every integer
+$c>Z$ would introduce an avoidable endpoint term.  The stronger
+tail estimate comes from first fixing the row pair.
+
+\begin{lemma}[Fixed-row large-content occupancy]
+\label{lem:tpc30-fixed-row-large-content}
+Let $m\ne n$ be physical rows, let $\cI$ be an interval of
+$O_{\mathscr D}(J)$ consecutive integers, and let $Z\ge1$.  Then
+\begin{equation}
+ \boxed{
+ \#\{j\in\cI:(j,h)=1,\ \cG_{m,n}(j)>Z\}
+ \ll_{\eps,h,\mathscr D}
+ X^\eps\left(1+\frac JZ\right).}
+ \label{eq:tpc30-fixed-row-large-content}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put $\Delta=|m-n|\ne0$.  Every exact value
+$c=\cG_{m,n}(j)$ divides $\Delta$ by
+\cref{lem:tpc30-target-gcd}.  Grouping by the exact value and applying
+\cref{lem:tpc30-content-occupancy} gives
+\begin{align}
+ \#\{j\in\cI:(j,h)=1,\ \cG_{m,n}(j)>Z\}
+ &\le
+ \sum_{\substack{c\mid\Delta\\c>Z}}
+ O_{\mathscr D}\left(1+\frac Jc\right)
+ \notag\\
+ &\ll_{\mathscr D}
+ \tau(\Delta)\left(1+\frac JZ\right).
+ \label{eq:tpc30-fixed-row-divisor-sum}
+\end{align}
+Since $\Delta\ll_{\mathscr D}Q\ll X^{O_{\mathscr D}(1)}$, the standard
+divisor bound absorbs $\tau(\Delta)$ into $X^\eps$.
+\end{proof}
+
+\begin{theorem}[Common-target-content pruning]
+\label{thm:tpc30-common-target-pruning}
+Let $Z\ge1$.  For each $1\le\nu\le3$, the physical raw channel in
+\eqref{eq:tpc30-restricted-raw-channel}, restricted by
+\begin{equation}
+ \cE_Z(\alpha,\gamma,j)
+ :=\{\cG_{\alpha,\gamma}(j)>Z\},
+ \label{eq:tpc30-large-target-content-event}
+\end{equation}
+satisfies
+\begin{equation}
+ \boxed{
+ |\cS_\nu(\cE_Z)|
+ \ll_{\eps,h,\mathscr D}X^\eps Q^2
+ \left(1+\frac JZ\right)
+ \ll_{\eps,h,\mathscr D}X^\eps
+ \left(Q^2+\frac{XQ}{Z}\right).}
+ \label{eq:tpc30-main-content-bound}
+\end{equation}
+The same bound holds for the sum of the three raw channels.
+\end{theorem}
+
+\begin{proof}
+The off-diagonal mask gives $m_\alpha\ne m_\gamma$, so
+\cref{lem:tpc30-fixed-row-large-content} applies to every row pair.
+Use \eqref{eq:tpc30-kernel-envelope} and then the row $\ell^1$ bounds:
+\begin{align*}
+ |\cS_\nu(\cE_Z)|
+ &\ll X^\eps\left(1+\frac JZ\right)
+ \sum_{\alpha,\gamma}
+ |\gamma_\alpha^{(1)}\gamma_\gamma^{(2)}|\\
+ &\ll X^\eps Q^2\left(1+\frac JZ\right).
+\end{align*}
+Finally use $JQ\asymp X$.  If $Z\gg_{\mathscr D}Q$, the event is
+empty because
+\begin{equation}
+ \cG_{\alpha,\gamma}(j)
+ \mid m_\alpha-m_\gamma
+ \ll_{\mathscr D}Q.
+ \label{eq:tpc30-content-upper-range}
+\end{equation}
+\end{proof}
+
+\begin{corollary}[Power-saving form]
+\label{cor:tpc30-content-power-saving}
+Suppose \eqref{eq:tpc30-row-scales} holds and $Z\ge X^\eta$ for a
+fixed $\eta>0$.  Then, for every fixed
+\begin{equation}
+ \eta_0<\min\{\eta,1-\beta\},
+ \label{eq:tpc30-saving-exponent}
+\end{equation}
+one has
+\begin{equation}
+ \boxed{
+ \sum_{\nu=1}^3|\cS_\nu(\cE_Z)|
+ \ll_{\eta,\eta_0,h,\mathscr D}XQX^{-\eta_0}.}
+ \label{eq:tpc30-content-power-saving}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Relative to $XQ\asymp JQ^2$, the two terms in
+\eqref{eq:tpc30-main-content-bound} have respective ratios
+$J^{-1}$ and $Z^{-1}$.  Use \eqref{eq:tpc30-row-scales}; the strict
+gap in \eqref{eq:tpc30-saving-exponent} absorbs logarithms and the
+$o(1)$ scale factors.
+\end{proof}
+
+\begin{remark}[The absolute one-point floor]
+\label{rem:tpc30-one-point-floor}
+The term $Q^2$ comes from the $+1$ in the occupancy of each exact
+content class.  It is power-small because $J$ is a fixed power, but
+the present argument does not replace it by $JQ$.  This is a
+boundary of the absolute fixed-row proof, not an arithmetic lower
+bound or an optimality statement.
+\end{remark}

@@ -1,0 +1,153 @@
+\section{Comparison, the coprime core, and the next gate}
+\label{sec:tpc30-comparison}
+
+\subsection{The inherited identity and the new estimate}
+
+TPC-18 already observed that, on a primitive common orbit, the gcd of
+two affine targets divides the source-row difference
+\citep{WangTPC18}.  The Euclidean step behind
+\eqref{eq:tpc30-target-gcd-identity} is therefore inherited.  The
+present additions are:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item the exact identity for the actual composite opened rows
+ $m=\ell d$ and their physical primitive support;
+ \item the fixed-row large-content occupancy
+ \eqref{eq:tpc30-fixed-row-large-content};
+ \item the weighted family estimate
+ \eqref{eq:tpc30-main-content-bound} for all three raw channels;
+ \item the exact four-factor identity
+ \eqref{eq:tpc30-four-factor-identity} and its application to
+ quotient-rich and cross-rich divisor sectors.
+\end{enumerate}
+Thus there is no claim that the Euclidean gcd observation was unknown.
+The contribution within the present reduction is the physical
+family-level pruning bound obtained by placing that observation before
+divisor-variable separation.
+
+\subsection{Strict separation from the TPC-29 regions}
+
+Write
+\[
+ q=[r,s],\qquad g=(r,s).
+\]
+TPC-29 proves power saving in the two regions
+\begin{align}
+ q\le J,\qquad &g>X^\eta,
+ \label{eq:tpc30-old-long-region}\\
+ q\ge J,\qquad &q/g\le JX^{-\eta}.
+ \label{eq:tpc30-old-sparse-region}
+\end{align}
+The new theorem depends instead on the full target content
+\[
+ \cG=gexy.
+\]
+It is independent of whether $q$ is below or above $J$.  In
+particular, the high-$\beta$ block in
+\cref{sec:tpc30-high-beta} has $q>J$, $g=X^{o(1)}$, and $q/g>J$, so neither
+\eqref{eq:tpc30-old-long-region} nor
+\eqref{eq:tpc30-old-sparse-region} applies.  Its large quotient
+content $e$ nevertheless makes it power-small here.
+
+The result is also distinct from deleting near-diagonal rows.  The
+condition $\cG>Z$ implies that $m-n$ has a large divisor; it does not
+imply that $|m-n|$ is small.  The high-$\beta$ cell is compatible with
+$|m-n|=X^{\beta+o(1)}$, far from the near-row range.
+
+\subsection{The small-content residual}
+
+After applying \cref{thm:tpc30-common-target-pruning} with a fixed
+threshold $X^\eta$, what remains satisfies
+\begin{equation}
+ \boxed{
+ \cG_{m,n}(j)\le X^\eta.}
+ \label{eq:tpc30-small-content-core}
+\end{equation}
+The sharp model is the fully coprime target sector
+\begin{equation}
+ (N_m(j),N_n(j))=1.
+ \label{eq:tpc30-coprime-target-core}
+\end{equation}
+There
+\[
+ g=e=x=y=1
+\]
+for every selected factorization.  Neither shared content nor a
+repartition of the same factors supplies a power saving.
+
+For a reflected pair, compatibility still gives
+\[
+ g\mid m-n.
+\]
+The normalized row determinant
+\begin{equation}
+ \Delta_0=\frac{m-n}{g}
+ \label{eq:tpc30-normalized-determinant}
+\end{equation}
+is therefore an integer.  The next useful decomposition is by the
+number of allowed values of $\Delta_0$ in translated windows or residue
+classes, not by another neighborhood of $\Delta_0=0$.  Near-row windows
+have already been removed in the earlier pipeline; the genuinely new
+question concerns macroscopically separated rows whose normalized
+determinants occupy a thin additive spectrum.
+
+An absolute estimate for one thin determinant class would not by
+itself close \eqref{eq:tpc30-small-content-core}: summing all residue
+classes absolutely restores the natural scale.  For the present
+strategy, the next proposed gate is a signed family estimate that
+recombines these classes while retaining
+part of the single-class saving.  It must also preserve the two mixed
+channels and the both-ultra channel from the exact cutoff difference.
+Fixed-form logarithmically averaged Elliott cancellation
+\citep{Tao2016} is a useful benchmark, but it supplies neither an
+effective rate nor the required uniformity in the polynomially
+growing slopes, divisor families, rows, and masks.
+
+\subsection{Staged route after this paper}
+
+The resulting route is deliberately modular:
+\begin{enumerate}[label={\textup{TPC-\arabic*:}},start=31]
+ \item prove determinant-entropy bounds for translated windows and
+ individual normalized-determinant residue cells inside
+ \eqref{eq:tpc30-small-content-core};
+ \item seek signed dispersion across those cells, exploiting the
+ factorable row source rather than only an arbitrary bounded mask;
+ \item reassemble the mixed and both-ultra channels without separating
+ away the cancellation encoded by the exact cutoff difference;
+ \item return to the complete residual and endpoint packets only after
+ the family estimate is uniform on the physical parameter box.
+\end{enumerate}
+Failure at any one of these stages would still identify a sharp
+method boundary.  None of these future interfaces is assumed in the
+theorems of the present paper.
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.42\textwidth}
+                >{\raggedright\arraybackslash}p{0.47\textwidth}}
+\toprule
+Object & Status \\
+\midrule
+Primitive target-gcd Euclidean geometry
+& Inherited from TPC-18 and restated exactly for opened rows. \\
+\addlinespace
+Selected truncated packet through $T$
+& Closed under the TPC-28 physical conductor interfaces. \\
+\addlinespace
+Large reflected content and content-rich sparse wedge
+& Closed in TPC-29. \\
+\addlinespace
+Large full-target content $\,\cG>Z$
+& Power-saving bound proved here by
+\cref{thm:tpc30-common-target-pruning}. \\
+\addlinespace
+Large quotient or normalized cross-content
+& Power-saving bound proved here by
+\cref{cor:tpc30-cross-factor-pruning}. \\
+\addlinespace
+Small full-target-content and fully coprime core
+& Open; next determinant-entropy and signed-dispersion gate. \\
+\addlinespace
+Complete residual, positivity, prime-pair main term, or parity breach
+& Not proved and not implied. \\
+\bottomrule
+\end{tabular}
+\end{center}

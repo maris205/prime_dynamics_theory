@@ -1,0 +1,187 @@
+\section{Four-factor content and cross-factor pruning}
+\label{sec:tpc30-cross-content}
+
+The full target gcd can be read from any pair of target
+factorizations, but it is not usually the product of the two
+within-side gcds alone.
+
+\begin{proposition}[Exact four-factor content decomposition]
+\label{prop:tpc30-four-factor-content}
+Let
+\begin{equation}
+ N_m=rU,\qquad N_n=sV
+ \label{eq:tpc30-two-factorizations}
+\end{equation}
+with positive integers $r,s,U,V$.  Put
+\begin{equation}
+ g=(r,s),\qquad e=(U,V),
+ \label{eq:tpc30-within-contents}
+\end{equation}
+and write
+\begin{equation}
+ r=gr_0,\quad s=gs_0,\qquad
+ U=eU_0,\quad V=eV_0.
+ \label{eq:tpc30-primitive-factorizations}
+\end{equation}
+Thus $(r_0,s_0)=(U_0,V_0)=1$.  Define the two normalized
+cross-contents
+\begin{equation}
+ x=(r_0,V_0),\qquad y=(s_0,U_0).
+ \label{eq:tpc30-cross-contents}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ (N_m,N_n)=gexy.}
+ \label{eq:tpc30-four-factor-identity}
+\end{equation}
+In particular, on the primitive physical orbit,
+\begin{equation}
+ \boxed{
+ gexy=\cG_{m,n}(j)\mid m-n.}
+ \label{eq:tpc30-four-factor-determinant}
+\end{equation}
+No coprimality between $g$ and $e$ is asserted or required.
+\end{proposition}
+
+\begin{proof}
+Factoring the two common within-side contents gives
+\begin{equation}
+ (N_m,N_n)
+ =ge\,(r_0U_0,s_0V_0).
+ \label{eq:tpc30-remove-ge}
+\end{equation}
+We prove
+\begin{equation}
+ (r_0U_0,s_0V_0)
+ =(r_0,V_0)(s_0,U_0)
+ \label{eq:tpc30-cross-gcd-identity}
+\end{equation}
+prime by prime.  Fix a prime $p$ and write
+\[
+ a=v_p(r_0),\quad b=v_p(s_0),\quad
+ u=v_p(U_0),\quad v=v_p(V_0).
+\]
+The two primitive conditions give
+\[
+ \min\{a,b\}=0,\qquad \min\{u,v\}=0.
+\]
+If $a>0$, then $b=0$.  When $u>0$, one has $v=0$ and both sides of
+\begin{equation}
+ \min\{a+u,b+v\}
+ =\min\{a,v\}+\min\{b,u\}
+ \label{eq:tpc30-valuation-identity}
+\end{equation}
+are zero; when $v>0$, one has $u=0$ and both sides are
+$\min\{a,v\}$.  If $u=v=0$, both sides are again zero.  The case
+$b>0$ is symmetric, and the case
+$a=b=0$ is immediate.  This proves
+\eqref{eq:tpc30-cross-gcd-identity}.  Equations
+\eqref{eq:tpc30-remove-ge} and
+\eqref{eq:tpc30-target-gcd-identity} now give the result.
+\end{proof}
+
+\begin{remark}[Why the cross terms cannot be dropped]
+\label{rem:tpc30-cross-terms-needed}
+Take $r=2$, $U=3$, $s=3$, and $V=4$.  Then $g=e=1$, but
+\[
+ (rU,sV)=(6,12)=6.
+\]
+The missing factors are exactly
+$x=(2,4)=2$ and $y=(3,3)=3$.  Thus the generally valid statement is
+not $(N_m,N_n)=ge$, but the four-factor identity
+\eqref{eq:tpc30-four-factor-identity}.
+\end{remark}
+
+\subsection{Expanded divisor channels}
+
+Each kernel in \eqref{eq:tpc30-three-raw-kernels} is a finite sum over
+one divisor of each target.  In a mixed channel, one selected divisor
+comes from the prefix and the other from the ultra complement; in the
+both-ultra channel both are reflected complement variables.  For any
+chosen pair $r\mid N_m$, $s\mid N_n$, put
+\begin{equation}
+ U=N_m/r,\qquad V=N_n/s.
+ \label{eq:tpc30-co-divisors}
+\end{equation}
+Indeed, for a prefix leg and a reflected ultra leg, respectively,
+\begin{align}
+ \sum_{r\mid N_m}|b_R(r)|
+ &\ll \tau(N_m)(\log(2X))^3,
+ \label{eq:tpc30-prefix-absolute-mass}\\
+ \sum_{r\mid N_m}|a(N_m/r)|
+ &\ll \tau(N_m)\log(2X).
+ \label{eq:tpc30-ultra-absolute-mass}
+\end{align}
+The same estimates hold for $N_n$.  Since both targets are
+$O_{\mathscr D}(X)$, the divisor bound shows that the absolute product
+mass of any mixed or both-ultra subfamily is bounded by the full
+pointwise divisor envelope.  Here $\kappa^{(\nu)}(j,r,s)$ denotes the
+product of the two divisor coefficients in the expanded $\nu$-th
+kernel, so
+\begin{equation}
+ \sum_{\substack{r\mid N_m,\ s\mid N_n\\
+                  \textup{retained channel supports}}}
+ |\kappa^{(\nu)}(j,r,s)|
+ \ll_{\eps,\mathscr D}X^\eps.
+ \label{eq:tpc30-expanded-envelope}
+\end{equation}
+Consequently the proof of
+\cref{thm:tpc30-common-target-pruning} applies unchanged after
+restricting the expanded divisor sum to any condition implying
+$\cG_{m,n}(j)>Z$.
+
+\begin{corollary}[Cross-factor pruning]
+\label{cor:tpc30-cross-factor-pruning}
+For each mixed or both-ultra expanded channel, restrict its individual
+divisor terms by any one of
+\begin{equation}
+ ge>Z,\qquad e>Z,\qquad x>Z,\qquad y>Z,
+ \qquad\text{or more generally}\qquad gexy>Z.
+ \label{eq:tpc30-large-cross-events}
+\end{equation}
+The resulting physical contribution satisfies
+\begin{equation}
+ \boxed{
+ |\cS_{\rm cross>Z}|
+ \ll_{\eps,h,\mathscr D}X^\eps
+ \left(Q^2+\frac{XQ}{Z}\right).}
+ \label{eq:tpc30-cross-factor-bound}
+\end{equation}
+If $Z\ge X^\eta$, every fixed
+$\eta_0<\min\{\eta,1-\beta\}$ is a power-saving exponent.
+\end{corollary}
+
+\begin{proof}
+By \cref{prop:tpc30-four-factor-content}, each of the first four
+conditions in \eqref{eq:tpc30-large-cross-events} implies
+$\cG_{m,n}(j)>Z$, while the last is equivalent to that condition.
+Use \eqref{eq:tpc30-expanded-envelope} in place of
+\eqref{eq:tpc30-kernel-envelope} in the proof of
+\cref{thm:tpc30-common-target-pruning}.
+\end{proof}
+
+\subsection{What is new relative to reflected content}
+
+TPC-29 tracks
+\[
+ g=(r,s),\qquad q=[r,s],
+\]
+and proves a power-saving bound for a long-fiber sector with large $g$
+and a sparse sector in
+which the primitive reflected lcm $q/g$ is small.  The factors
+\[
+ e=(U,V),\qquad
+ x=(r/g,V/e),\qquad
+ y=(s/g,U/e)
+\]
+are invisible if the two selected divisor variables are considered
+without their co-divisors.  Thus
+\cref{cor:tpc30-cross-factor-pruning} can be effective with $g=1$ and
+$q/g$ large, exactly where the preceding absolute reflected-incidence
+argument reaches only the natural scale.
+
+No squarefreeness of $r$ or $s$ is used.  In an ultra term the
+co-divisor coefficient $a(U)$ or $a(V)$ vanishes unless the relevant
+co-divisor is squarefree, but the four-factor identity itself is an
+integer identity and requires no coefficient support.

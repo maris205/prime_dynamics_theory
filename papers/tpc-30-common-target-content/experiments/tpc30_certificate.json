@@ -1,0 +1,328 @@
+{
+  "certificate": "common-target content and row-orbit pruning",
+  "certificate_digest": "8c52338642c27d2c4dafd6807cb8cc56d52888ae16b27cd9aeda880ccc10f64d",
+  "claims": {
+    "breaks_sieve_parity": false,
+    "closes_complete_residual": false,
+    "closes_complete_ultra_difference": false,
+    "closes_small_target_gcd_core": false,
+    "finite_cross_content_divisibility": true,
+    "finite_exact_content_occupancy": true,
+    "finite_exact_four_factor_target_gcd": true,
+    "finite_fixed_row_large_content_bound": true,
+    "finite_rational_exponent_ledger": true,
+    "finite_row_residue_l2_inequality": true,
+    "finite_target_gcd_identity": true,
+    "proves_hardy_littlewood_asymptotic": false,
+    "proves_positivity": false,
+    "proves_twin_primes": false,
+    "sample_TPC29_incidence_saving_is_zero": true,
+    "sample_TPC30_target_content_saving_is_positive": true,
+    "sample_has_coprime_reflected_divisors": true,
+    "sample_has_positive_quotient_content": true,
+    "uses_chowla_or_elliott_input": false,
+    "uses_mobius_sign_cancellation": false
+  },
+  "cross_content_summary": {
+    "both_cross_couplings_nontrivial": 10,
+    "complete_box_nontrivial_cross_couplings": 23424,
+    "complete_factor_box_side": 16,
+    "complete_factor_quadruples": 65536,
+    "coprime_reflected_positive_quotient_content": 28,
+    "factorizations": 116,
+    "largest_sample": {
+      "N_m": 6,
+      "N_n": 12,
+      "U": 6,
+      "V": 12,
+      "base_cross_content": 6,
+      "exact_four_factor_content": 6,
+      "h": 1,
+      "j": 1,
+      "left_cross_gcd": 1,
+      "m": 5,
+      "n": 11,
+      "quotient_gcd": 6,
+      "r": 1,
+      "reflected_gcd": 1,
+      "right_cross_gcd": 1,
+      "s": 1,
+      "target_gcd": 6
+    },
+    "maximum_cross_content": 6,
+    "nontrivial_left_cross_couplings": 37,
+    "nontrivial_right_cross_couplings": 37,
+    "transparent_four_factor_witness": {
+      "U": 2,
+      "V": 3,
+      "h": 1,
+      "j": 1,
+      "left_cross_gcd": 3,
+      "m": 5,
+      "n": 11,
+      "quotient_gcd": 1,
+      "r": 3,
+      "reflected_gcd": 1,
+      "right_cross_gcd": 2,
+      "s": 4,
+      "target_gcd": 6
+    },
+    "transparent_nonoverlap_witness": {
+      "U": 6,
+      "V": 6,
+      "h": 1,
+      "j": 1,
+      "m": 29,
+      "n": 41,
+      "r": 5,
+      "s": 7
+    },
+    "verified_exact_identity": "G = g*e*gcd(r0,V0)*gcd(s0,U0)"
+  },
+  "description": "finite exact regression for the primitive target-gcd identity, exact content layers, the fixed-row large-content bound, the exact four-factor gcd decomposition, explicit row-residue energy constants, rational exponents, and non-overlap flags; not a numerical proof of asymptotic Mobius cancellation",
+  "exact_check_count": 773361,
+  "exact_content_occupancy_summary": {
+    "exact_layers": 420,
+    "horizons_per_case": 7,
+    "maximum_exact_layer_count": 43,
+    "nonzero_layers": 150,
+    "row_cases": 9,
+    "strict_subsets_of_divisibility_class": 98,
+    "verified_exact_formula": "#exact_c = sum_{d|Delta/c} mu(d) #primitive{cd|N_m(j)}",
+    "verified_window_bound": "#exact_c <= 1 + J/c"
+  },
+  "fixed_row_large_content_summary": {
+    "cells": 567,
+    "maximum_normalized_ratio": "5/24",
+    "maximum_ratio_case": {
+      "Delta": 6,
+      "J": 1,
+      "Z": "5",
+      "bound": "24/5",
+      "count": 1,
+      "h": 1,
+      "m": 5,
+      "n": 11,
+      "tau_Delta": 4
+    },
+    "nonzero_cells": 163,
+    "verified_bound": "#primitive{j<=J:G_j>Z} <= tau(|m-n|)(1+J/Z)"
+  },
+  "high_beta_exponent_summary": {
+    "J_exponent": "133/400",
+    "TPC29_incidence_saving": "0",
+    "TPC30_target_content_saving": "133/400",
+    "T_exponent": "193/500",
+    "U_exponent": "3/4",
+    "V_exponent": "3/4",
+    "beta": "267/400",
+    "cross_content_exponent": "2/5",
+    "grid_points": 75,
+    "primitive_lcm_exponent": "1/2",
+    "quotient_gcd_exponent": "2/5",
+    "r_exponent": "1/4",
+    "reflected_gcd_exponent": "0",
+    "reflected_lcm_exponent": "1/2",
+    "reflected_upper_exponent": "307/500",
+    "row_difference_room": "107/400",
+    "s_exponent": "1/4",
+    "sparse_margin": "67/400",
+    "theorem_term_gaps": [
+      "133/400",
+      "2/5"
+    ]
+  },
+  "paper": "TPC-30",
+  "row_residue_summary": {
+    "deterministic_constant_records": [
+      {
+        "K_c": 15,
+        "floor_bound": 33,
+        "modulus_c": 1,
+        "requested_bound": 33,
+        "span_W": 32
+      },
+      {
+        "K_c": 15,
+        "floor_bound": 17,
+        "modulus_c": 2,
+        "requested_bound": 17,
+        "span_W": 32
+      },
+      {
+        "K_c": 11,
+        "floor_bound": 11,
+        "modulus_c": 3,
+        "requested_bound": 12,
+        "span_W": 32
+      },
+      {
+        "K_c": 3,
+        "floor_bound": 7,
+        "modulus_c": 5,
+        "requested_bound": 8,
+        "span_W": 32
+      },
+      {
+        "K_c": 3,
+        "floor_bound": 5,
+        "modulus_c": 7,
+        "requested_bound": 6,
+        "span_W": 32
+      },
+      {
+        "K_c": 2,
+        "floor_bound": 3,
+        "modulus_c": 11,
+        "requested_bound": 4,
+        "span_W": 32
+      },
+      {
+        "K_c": 1,
+        "floor_bound": 2,
+        "modulus_c": 17,
+        "requested_bound": 3,
+        "span_W": 32
+      },
+      {
+        "K_c": 1,
+        "floor_bound": 2,
+        "modulus_c": 31,
+        "requested_bound": 3,
+        "span_W": 32
+      },
+      {
+        "K_c": 1,
+        "floor_bound": 1,
+        "modulus_c": 47,
+        "requested_bound": 2,
+        "span_W": 32
+      },
+      {
+        "K_c": 1,
+        "floor_bound": 1,
+        "modulus_c": 89,
+        "requested_bound": 2,
+        "span_W": 32
+      },
+      {
+        "K_c": 37,
+        "floor_bound": 46,
+        "modulus_c": 1,
+        "requested_bound": 46,
+        "span_W": 45
+      },
+      {
+        "K_c": 19,
+        "floor_bound": 23,
+        "modulus_c": 2,
+        "requested_bound": 24,
+        "span_W": 45
+      },
+      {
+        "K_c": 13,
+        "floor_bound": 16,
+        "modulus_c": 3,
+        "requested_bound": 16,
+        "span_W": 45
+      },
+      {
+        "K_c": 10,
+        "floor_bound": 10,
+        "modulus_c": 5,
+        "requested_bound": 10,
+        "span_W": 45
+      },
+      {
+        "K_c": 6,
+        "floor_bound": 7,
+        "modulus_c": 7,
+        "requested_bound": 8,
+        "span_W": 45
+      },
+      {
+        "K_c": 4,
+        "floor_bound": 5,
+        "modulus_c": 11,
+        "requested_bound": 6,
+        "span_W": 45
+      },
+      {
+        "K_c": 3,
+        "floor_bound": 3,
+        "modulus_c": 17,
+        "requested_bound": 4,
+        "span_W": 45
+      },
+      {
+        "K_c": 2,
+        "floor_bound": 2,
+        "modulus_c": 31,
+        "requested_bound": 3,
+        "span_W": 45
+      },
+      {
+        "K_c": 1,
+        "floor_bound": 1,
+        "modulus_c": 47,
+        "requested_bound": 2,
+        "span_W": 45
+      },
+      {
+        "K_c": 1,
+        "floor_bound": 1,
+        "modulus_c": 89,
+        "requested_bound": 2,
+        "span_W": 45
+      }
+    ],
+    "exhaustive_weight_alphabet": [
+      -1,
+      0,
+      1
+    ],
+    "maximum_squared_ratio": "1",
+    "sharp_case": {
+      "K_c": 4,
+      "kind": "exhaustive-ternary",
+      "left_weights": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "modulus": 1,
+      "right_weights": [
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    "tested_weight_pairs": 32825,
+    "verified_inequality": "R_c <= K_c ||gamma||_2 ||gamma'||_2, K_c <= floor(W/c)+1 <= ceil(W/c)+1"
+  },
+  "source_sha256": "f4813d6e89163098187fe1ce585934b354a384a09b7ca4332e3fad42d1a78610",
+  "subcheck_counts": {
+    "exact_content_occupancy": 1924,
+    "exact_four_factor_target_gcd": 197313,
+    "fixed_row_large_content": 1135,
+    "rational_high_beta_ledger": 90,
+    "row_residue_l2_inequality": 131301,
+    "scope_and_nonoverlap_flags": 20,
+    "target_gcd_identity": 441578
+  },
+  "target_gcd_summary": {
+    "maximum_target_content": 27,
+    "nonprimitive_boundary_witness": {
+      "h": 2,
+      "j": 2,
+      "left_gcd": 4,
+      "m": 1,
+      "n": 3,
+      "right_gcd": 2
+    },
+    "nontrivial_target_contents": 28148,
+    "primitive_cases": 147192
+  }
+}

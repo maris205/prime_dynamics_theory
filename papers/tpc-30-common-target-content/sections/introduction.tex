@@ -1,0 +1,173 @@
+\section{Introduction}
+\label{sec:tpc30-introduction}
+
+The ultra-long complement of a truncated divisor model is not made
+small merely by reflecting every long divisor across its target
+hyperbola.  Reflection replaces a long divisor by a shorter
+complement and makes the orbit fibers visible, but the resulting
+family still contains enough short fibers to recover the natural
+scale.  The preceding paper therefore used two kinds of shared
+content in the reflected variables: a large gcd on long fibers and a
+small primitive lcm on sparse fibers \citep{WangTPC29}.  Those
+arguments are absolute and leave the small-reflected-content core.
+
+This paper observes that the chosen divisor variables do not contain
+all of the available common-divisor information.  For two physical
+rows $m\ne n$, put
+\begin{equation}
+ N_m(j)=mj+h,
+ \qquad
+ N_n(j)=nj+h,
+ \qquad
+ \cG_{m,n}(j)=(N_m(j),N_n(j)).
+ \label{eq:tpc30-intro-target-gcd}
+\end{equation}
+The full target gcd is independent of how either target is factored.
+On the primitive orbit it satisfies
+\begin{equation}
+ \boxed{
+ \cG_{m,n}(j)=(N_m(j),m-n),
+ \qquad
+ \cG_{m,n}(j)\mid m-n.}
+ \label{eq:tpc30-intro-gcd-identity}
+\end{equation}
+The divisibility statement appeared in the earlier target-gcd
+geometry for prime source rows \citep{WangTPC18}.  The new point here
+is a weighted large-content pruning theorem for the actual opened rows
+$m=\ell d$, the orbit variable, and all three raw ultra channels.
+
+Let $Q$ be the row scale and $J$ the orbit length, with
+\begin{equation}
+ QJ\asymp X.
+ \label{eq:tpc30-intro-QJ}
+\end{equation}
+Let $\cI$ be the physical orbit interval, of length
+$O_{\mathscr D}(J)$.  For a fixed off-diagonal row pair, the exact values of
+$\cG_{m,n}(j)$ belong to the divisor set of $|m-n|$.  If
+$\cG_{m,n}(j)=c$, the orbit variable lies in one residue class modulo
+$c$.  It follows that
+\begin{equation}
+ \#\{j\in\cI:(j,h)=1,\ \cG_{m,n}(j)>Z\}
+ \ll_{\eps,\mathscr D}X^\eps
+ \left(1+\frac JZ\right).
+ \label{eq:tpc30-intro-fixed-row-occupancy}
+\end{equation}
+The physical row coefficients have one-row $\ell^1$ mass $O(Q)$.
+Summing \eqref{eq:tpc30-intro-fixed-row-occupancy} over the row pairs
+gives the main estimate.
+
+\begin{theorem}[Common-target-content pruning, informal form]
+\label{thm:tpc30-intro-main}
+For each of the two mixed raw channels and the both-ultra raw channel,
+the part on which $\cG_{m,n}(j)>Z$ satisfies
+\begin{equation}
+ \boxed{
+ |\cS_{\cG>Z}|
+ \ll_{\eps,h,\mathscr D}X^\eps
+ \left(
+ Q^2+\frac{JQ^2}{Z}
+ \right).}
+ \label{eq:tpc30-intro-main-bound}
+\end{equation}
+The same estimate holds for their sum.
+\end{theorem}
+
+Since $JQ^2\asymp XQ$ is the natural absolute scale, the two terms on
+the right of \eqref{eq:tpc30-intro-main-bound} save respectively
+$J^{-1}$ and $Z^{-1}$.  Thus if
+\begin{equation}
+ Q=X^{\beta+o(1)},\qquad
+ J=X^{1-\beta+o(1)},\qquad
+ Z\ge X^\eta,
+ \label{eq:tpc30-intro-exponents}
+\end{equation}
+then every fixed
+\begin{equation}
+ \eta_0<\min\{\eta,1-\beta\}
+ \label{eq:tpc30-intro-saving}
+\end{equation}
+is an available power saving.  No cancellation between M\"obius
+signs or between distinct rows is used.
+
+The factorization consequence is especially useful.  In the
+both-ultra channel write
+\begin{equation}
+ N_m=rU,
+ \qquad
+ N_n=sV.
+ \label{eq:tpc30-intro-factorizations}
+\end{equation}
+Put
+\begin{equation}
+ g=(r,s),\quad e=(U,V),\quad
+ r=gr_0,\quad s=gs_0,\quad U=eU_0,\quad V=eV_0.
+ \label{eq:tpc30-intro-primitive-factors}
+\end{equation}
+Then $(r_0,s_0)=(U_0,V_0)=1$ and the stronger exact identity is
+\begin{equation}
+ \boxed{
+ \cG_{m,n}(j)
+ =ge(r_0,V_0)(s_0,U_0).}
+ \label{eq:tpc30-intro-cross-content}
+\end{equation}
+No assumption such as $(g,e)=1$ is needed.  The two final factors are
+the cross-contents left after the within-side gcds are removed.
+Therefore \eqref{eq:tpc30-intro-main-bound} gives a power-saving upper
+bound for every retained sector on which the product in
+\eqref{eq:tpc30-intro-cross-content} exceeds $Z$.  The factor
+$g=(r,s)$ is the reflected content used in TPC-29;
+$e=(U,V)$ and the two cross-contents are new to the present reduction's
+bookkeeping.  In particular, the
+present estimate remains effective when $(r,s)=1$.
+
+At the exact high-$\beta$ sample inherited from TPC-28,
+\begin{equation}
+ \beta=\frac{267}{400},
+ \qquad
+ 1-\beta=\frac{133}{400},
+ \label{eq:tpc30-intro-high-beta}
+\end{equation}
+consider the exponent cell
+\begin{equation}
+ r,s=X^{1/4+o(1)},\qquad
+ (r,s)=X^{o(1)},\qquad
+ U,V=X^{3/4+o(1)},\qquad
+ (U,V)=X^{2/5+o(1)}.
+ \label{eq:tpc30-intro-high-cell}
+\end{equation}
+Its reflected lcm has exponent $1/2$, strictly above the orbit
+exponent $133/400$, and its primitive reflected lcm has the same
+exponent.  Hence the TPC-29 absolute-incidence saving is zero on this
+cell.  By contrast, the cross-content exponent is $2/5$, and the new
+relaxed margin is
+\begin{equation}
+ \min\left\{\frac25,\frac{133}{400}\right\}
+ =\boxed{\frac{133}{400}}.
+ \label{eq:tpc30-intro-high-margin}
+\end{equation}
+This is an upper bound for a support-compatible formal sector, not an assertion that
+the sector carries nonzero arithmetic mass.
+
+The result does not solve the residual problem.  Once all
+polynomially large target content is removed, the remaining core has
+\begin{equation}
+ \cG_{m,n}(j)\le X^\eta
+ \label{eq:tpc30-intro-small-core}
+\end{equation}
+for every fixed threshold used in the pruning, with the fully coprime
+case $\cG_{m,n}(j)=1$ as its sharp model.  An absolute gcd argument
+has no further power saving there.  The next plausible interface is a
+signed dispersion theorem across normalized determinant windows or
+determinant residue classes.  Fixed-form logarithmically averaged
+two-point results such as \citep{Tao2016} do not by themselves give a
+uniform estimate for the polynomially growing family retained here.
+
+\Cref{sec:tpc30-interface} records the physical packet and the three
+raw channels.  \Cref{sec:tpc30-target-geometry} proves the exact gcd
+and orbit-class identities.  \Cref{sec:tpc30-row-orbit} proves the
+weighted pruning theorem.  \Cref{sec:tpc30-cross-content} transfers it
+to cross-factor content, and \cref{sec:tpc30-high-beta} gives the
+exact rational ledger.  \Cref{sec:tpc30-comparison} separates the new
+region from earlier content and near-row reductions and formulates
+the next gate.  \Cref{sec:tpc30-certificate} records the finite exact
+certificate and the claim boundary.

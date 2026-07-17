@@ -1,0 +1,159 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,float}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Common-Target Content in a Primitive Mobius Tail: Row-Orbit Pruning, Cross-Factor Pruning, and the Coprime-Core Gate},
+ pdfauthor={Liang Wang},
+ pdfsubject={Unconditional pruning by the full common content of two affine targets in a primitive Mobius-tail residual},
+ pdfkeywords={Mobius tail, target gcd, row-orbit incidence, cross-content, sparse fibers}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\rad}{\operatorname{rad}}
+
+\title{\textbf{Common-Target Content in a Primitive M\"obius Tail:}\\
+\textbf{Row--Orbit Pruning, Cross-Factor Pruning,}\\
+\textbf{and the Coprime-Core Gate}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let
+\[
+ N_m(j)=mj+h,\qquad N_n(j)=nj+h
+\]
+be two positive affine targets in the primitive opened-row packet of
+the preceding M\"obius-tail reduction.  The orbit length is
+$J=X^{1-\beta+o(1)}$, the rows have size
+$Q=X^{\beta+o(1)}$, and $QJ\asymp X$; $\mathscr D$ below denotes the
+fixed packet data.  Previous reflected-incidence
+bounds prune sectors with large common content in the selected
+divisor variables.  They do not use the full target content
+\[
+ \cG_{m,n}(j):=(N_m(j),N_n(j)).
+\]
+
+On the primitive orbit we exploit the exact identity
+\[
+ \cG_{m,n}(j)=(N_m(j),m-n),
+\]
+so the full target gcd divides the row difference.  For a fixed row
+pair, its exact values therefore range over only the divisors of
+$|m-n|$.  Combining this divisor sparsity with the opened-row
+$\ell^1$ mass gives, for each of the two mixed raw channels and the
+both-ultra raw channel, the unconditional
+bound
+\[
+ \cS_{\cG>Z}
+ \ll_{\eps,h,\mathscr D}X^\eps
+ \left(Q^2+\frac{JQ^2}{Z}\right)
+ \ll_{\eps,h,\mathscr D}X^\eps
+ \left(Q^2+\frac{XQ}{Z}\right).
+\]
+Thus $Z\ge X^\eta$ produces a fixed-power saving from the natural
+scale $XQ$, with exponent
+$\min\{\eta,1-\beta\}$ up to endpoint losses.
+
+There is a second interpretation in the both-ultra channel.  If
+\[
+ N_m=rU,\qquad N_n=sV,
+\]
+put $g=(r,s)$, $e=(U,V)$ and write
+$r=gr_0$, $s=gs_0$, $U=eU_0$, $V=eV_0$.  Then, without any
+coprimality assumption between $g$ and $e$,
+\[
+ \cG_{m,n}(j)
+ =ge(r_0,V_0)(s_0,U_0)\mid m-n.
+\]
+Consequently every sector with polynomially large cross-content
+on the left is power-small.  This includes sectors with
+$(r,s)=1$, which are outside the large reflected-content theorem.
+
+At the high-$\beta$ sample $\beta=267/400$, take
+$r,s=X^{1/4+o(1)}$, $(r,s)=X^{o(1)}$, and
+$(U,V)=X^{2/5+o(1)}$.  The reflected lcm is
+$X^{1/2+o(1)}>J$, while the preceding absolute-incidence method has
+zero saving on this negligible-reflected-content cell.  The new
+target-content estimate
+has relaxed margin $133/400$: every fixed exponent below this value is
+available.
+
+The argument is absolute and uses neither M\"obius-sign cancellation
+nor a Chowla--Elliott input.  It does not close the small-target-content
+core or the complete ultra-long residual, and it yields no prime-pair
+asymptotic.  It isolates the next gate as signed dispersion on the
+small-target-content residual, with the fully coprime target sector as
+its sharp model.
+\end{abstract}
+
+\noindent\textbf{Keywords:} primitive M\"obius tail; common target
+content; row--orbit incidence; cross-factor gcd; sparse fiber.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary
+11B25, 11D45.
+
+\input{sections/introduction}
+\input{sections/physical-interface}
+\input{sections/target-gcd-geometry}
+\input{sections/row-orbit-pruning}
+\input{sections/cross-content}
+\input{sections/high-beta-ledger}
+\input{sections/comparison-next-gate}
+\input{sections/certificate-scope}
+
+\clearpage
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

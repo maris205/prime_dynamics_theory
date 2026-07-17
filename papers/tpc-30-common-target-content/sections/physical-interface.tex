@@ -1,0 +1,166 @@
+\section{The physical packet and its raw channels}
+\label{sec:tpc30-interface}
+
+Fix $h\in\Z\setminus\{0\}$ and put $H=\rad|h|$.  We retain the
+primitive opened-row packet used in TPC-25--TPC-29
+\citep{WangTPC25,WangTPC28,WangTPC29}.  Its scales satisfy
+\begin{equation}
+ QJ\asymp_{\mathscr D}X,
+ \qquad
+ Q=X^{\beta+o(1)},
+ \qquad
+ J=X^{1-\beta+o(1)},
+ \qquad 0<\beta<1.
+ \label{eq:tpc30-row-scales}
+\end{equation}
+Here $\mathscr D$ denotes the fixed smooth, residue, source, and
+support data.
+
+The row labels are $\alpha=(\ell_\alpha,d_\alpha)$, where
+$\ell_\alpha\asymp L$ is prime, $d_\alpha$ is squarefree, and
+\begin{equation}
+ m_\alpha=\ell_\alpha d_\alpha\asymp_{\mathscr D}Q.
+ \label{eq:tpc30-opened-rows}
+\end{equation}
+The size separation in the opened packet makes $m_\alpha$ determine
+$\alpha$ uniquely.  In particular, the distinct row integers lie in
+an interval of length $O_{\mathscr D}(Q)$.  The two row coefficients
+satisfy
+\begin{align}
+ \sum_\alpha|\gamma_\alpha^{(i)}|
+ &\ll_{\mathscr D}Q,
+ \label{eq:tpc30-row-l1}\\
+ \sum_\alpha|\gamma_\alpha^{(i)}|^2
+ &\ll_{\mathscr D}Q\log(2L),
+ \qquad i=1,2.
+ \label{eq:tpc30-row-l2}
+\end{align}
+
+Every contributing row and orbit point obeys
+\begin{equation}
+ (m_\alpha,H)=1,
+ \qquad
+ (j,H)=1.
+ \label{eq:tpc30-primitive-orbit}
+\end{equation}
+For
+\begin{equation}
+ N_\alpha(j)=m_\alpha j+h,
+ \label{eq:tpc30-target}
+\end{equation}
+the joint support is contained in $O_{\mathscr D}(J)$ consecutive
+integers and
+\begin{equation}
+ c_{\mathscr D}X\le N_\alpha(j)
+ \le C_{\mathscr D}X.
+ \label{eq:tpc30-target-window}
+\end{equation}
+Thus every target used below is positive.  Moreover
+\begin{equation}
+ (m_\alpha,h)=1,
+ \qquad
+ (j,h)=1,
+ \label{eq:tpc30-full-primitivity}
+\end{equation}
+because $H$ contains every prime divisor of $h$.
+
+The row-pair mask is independent of all orbit and divisor variables
+and satisfies
+\begin{equation}
+ |\mathfrak m(\alpha,\gamma)|\le1,
+ \qquad
+ \mathfrak m(\alpha,\gamma)=0
+ \quad\text{if }m_\alpha=m_\gamma.
+ \label{eq:tpc30-row-mask}
+\end{equation}
+The fixed-period factor $\Xi_{\alpha,\gamma}(j)$ and smooth weight
+$\cW_{\alpha,\gamma}(j/J)$ are uniformly bounded.  Their support may
+depend on the row pair, but it lies in an interval of
+$O_{\mathscr D}(J)$ consecutive integers.
+
+\subsection{The exact complement and pointwise envelopes}
+
+The inherited finite-model coefficient and the two residual
+coefficients are
+\begin{align}
+ \lambda'_R(w)
+ &:={}
+ \begin{cases}
+  \displaystyle
+  w\sum_{b\le R/w}\frac{\mu(wb)\mu(b)}{\varphi(wb)},&w\le R,\\[7pt]
+  0,&w>R,
+ \end{cases}
+ \label{eq:tpc30-lambda-coefficient}\\
+ a(w)&=-\mu(w)\log w,
+ \qquad
+ b_R(w)=a(w)-\lambda'_R(w).
+ \label{eq:tpc30-divisor-coefficients}
+\end{align}
+They are supported on squarefree integers, and throughout the
+polynomial support used here,
+\begin{equation}
+ |a(w)|+|b_R(w)|+|\lambda'_R(w)|
+ \ll_{\mathscr D}(\log(2X))^3.
+ \label{eq:tpc30-coefficient-envelope}
+\end{equation}
+For $R\le T<W_0$ and an integer
+$W_0\asymp_{\mathscr D}X$ above every target in
+\eqref{eq:tpc30-target-window}, define
+\begin{align}
+ \mathsf A_{m,T}(j)
+ &:=\sum_{\substack{w\le T\\w\mid mj+h}}b_R(w),
+ \label{eq:tpc30-raw-prefix}\\
+ C_m(j)
+ &:=\sum_{\substack{T<w\le W_0\\w\mid mj+h}}a(w).
+ \label{eq:tpc30-ultra-complement}
+\end{align}
+The elementary divisor bound and
+\eqref{eq:tpc30-coefficient-envelope} give, uniformly on the physical
+support,
+\begin{equation}
+ |\mathsf A_{m,T}(j)|+|C_m(j)|
+ \ll_{\eps,\mathscr D}X^\eps.
+ \label{eq:tpc30-pointwise-envelope}
+\end{equation}
+
+The exact calibrated cutoff identity in TPC-29 expands the joint
+difference into two mixed raw channels, one both-ultra raw channel,
+and two drift legs.  The drift legs already carry the independent
+$L^{-1}$ row saving \citep{WangTPC29}.  The three raw kernels relevant
+here are
+\begin{align}
+ \cK^{(1)}_{\alpha,\gamma}(j)
+ &=\mathsf A_{m_\alpha,T}(j)C_{m_\gamma}(j),
+ \notag\\
+ \cK^{(2)}_{\alpha,\gamma}(j)
+ &=C_{m_\alpha}(j)\mathsf A_{m_\gamma,T}(j),
+ \label{eq:tpc30-three-raw-kernels}\\
+ \cK^{(3)}_{\alpha,\gamma}(j)
+ &=C_{m_\alpha}(j)C_{m_\gamma}(j).
+ \notag
+\end{align}
+For any condition $\cE(\alpha,\gamma,j)$, define
+\begin{align}
+ \cS_\nu(\cE)
+ :={}&\sum_{\alpha,\gamma}
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \mathfrak m(\alpha,\gamma)
+ \sum_j\Xi_{\alpha,\gamma}(j)
+ \cW_{\alpha,\gamma}(j/J)
+ \notag\\
+ &\hspace{8em}\times
+ \cK^{(\nu)}_{\alpha,\gamma}(j)
+ \one_{\cE(\alpha,\gamma,j)},
+ \qquad 1\le\nu\le3.
+ \label{eq:tpc30-restricted-raw-channel}
+\end{align}
+By \eqref{eq:tpc30-row-l1},
+\eqref{eq:tpc30-pointwise-envelope}, and the orbit length, the natural
+absolute scale is
+\begin{equation}
+ JQ^2\asymp XQ.
+ \label{eq:tpc30-natural-scale}
+\end{equation}
+The goal is to gain a fixed power from this scale on a condition
+defined by the full targets, before choosing or reflecting any of
+their divisors.

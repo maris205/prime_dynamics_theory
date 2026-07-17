@@ -1,0 +1,201 @@
+\section{The high-\texorpdfstring{$\beta$}{beta} cross-content cell}
+\label{sec:tpc30-high-beta}
+
+We now insert the target-content theorem into the exact parameter
+sample closed through the selected cutoff in TPC-28.  The inherited
+exponents are
+\begin{equation}
+ \beta=\frac{267}{400},\qquad
+ \jmath=1-\beta=\frac{133}{400},\qquad
+ t=\frac{193}{500}.
+ \label{eq:tpc30-high-parameters}
+\end{equation}
+Thus
+\begin{equation}
+ Q=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ T=X^{193/500+o(1)},
+ \label{eq:tpc30-high-scales}
+\end{equation}
+and every reflected complement variable lies below
+\begin{equation}
+ \frac XT=X^{307/500+o(1)}.
+ \label{eq:tpc30-reflected-ceiling}
+\end{equation}
+
+\subsection{A reflected pair with negligible common content}
+
+In the both-ultra channel choose
+\begin{equation}
+ r,s=X^{1/4+o(1)},\qquad
+ g=(r,s)=X^{o(1)}.
+ \label{eq:tpc30-high-reflected-cell}
+\end{equation}
+The reflected lcm and its primitive part have exponents
+\begin{align}
+ [r,s]&=X^{1/2+o(1)},\label{eq:tpc30-high-lcm}\\
+ \frac{[r,s]}{(r,s)}
+ &=X^{1/2+o(1)}.\label{eq:tpc30-high-primitive-lcm}
+\end{align}
+Hence the fiber is sparse by
+\begin{equation}
+ \frac12-\frac{133}{400}
+ =\boxed{\frac{67}{400}}.
+ \label{eq:tpc30-high-sparse-margin}
+\end{equation}
+However, the TPC-29 absolute-incidence saving on this cell is
+\begin{equation}
+ \left(\frac{133}{400}-\frac12\right)_+
+ =\boxed{0}.
+ \label{eq:tpc30-old-zero-saving}
+\end{equation}
+Its content-rich sparse condition also fails because the primitive
+lcm in \eqref{eq:tpc30-high-primitive-lcm} is larger than $J$ by a
+fixed power.  The long-fiber theorem does not apply because
+$[r,s]>J$.
+
+Since each target is $X^{1+o(1)}$, the two co-divisors have size
+\begin{equation}
+ U,V=X^{3/4+o(1)}>T.
+ \label{eq:tpc30-high-quotient-size}
+\end{equation}
+Impose the quotient-content condition
+\begin{equation}
+ e=(U,V)=X^{2/5+o(1)}.
+ \label{eq:tpc30-high-quotient-content}
+\end{equation}
+Then
+\begin{equation}
+ U/e,\ V/e=X^{7/20+o(1)}.
+ \label{eq:tpc30-high-reduced-quotients}
+\end{equation}
+To give the exponent cell a literal meaning, for fixed $\delta>0$ let
+$\mathscr B_\delta(X)$ be the expanded both-ultra subfamily on which
+\begin{align}
+ X^{1/4-\delta}<r,s&\le X^{1/4+\delta},
+ &g&\le X^\delta,
+ \label{eq:tpc30-high-delta-reflected}\\
+ X^{3/4-\delta}<U,V&\le X^{3/4+\delta},
+ &X^{2/5-\delta}<e&\le X^{2/5+\delta}.
+ \label{eq:tpc30-high-delta-quotient}
+\end{align}
+A sequence of dyadic blocks has the exponents displayed in
+\eqref{eq:tpc30-high-reflected-cell},
+\eqref{eq:tpc30-high-quotient-size}, and
+\eqref{eq:tpc30-high-quotient-content} precisely when it belongs to
+$\mathscr B_\delta(X)$ eventually for every fixed $\delta>0$.  By
+\cref{prop:tpc30-four-factor-content}, every term in
+$\mathscr B_\delta(X)$ satisfies $\cG_{m,n}(j)\ge e$ and hence lies in
+the event
+\begin{equation}
+ \cG_{m,n}(j)>X^{2/5-\delta}.
+ \label{eq:tpc30-high-target-event}
+\end{equation}
+
+\begin{corollary}[High-\texorpdfstring{$\beta$}{beta}
+cross-content relaxed margin]
+\label{cor:tpc30-high-cross-content}
+For every fixed $\eta_0<133/400$, there is a $\delta_0>0$ such that,
+for every fixed $0<\delta<\delta_0$, the expanded physical both-ultra
+subsum $\cS_{\rm high,cross}(\delta)$ over
+$\mathscr B_\delta(X)$ satisfies
+\begin{equation}
+ \boxed{
+ |\cS_{\rm high,cross}(\delta)|
+ \ll_{\delta,\eta_0,h,\mathscr D}XQX^{-\eta_0}.}
+ \label{eq:tpc30-high-cross-bound}
+\end{equation}
+Equivalently, as $\delta\to0$, the supremal relaxed exponent in this
+ledger is $133/400$; the endpoint itself is not asserted.
+\end{corollary}
+
+\begin{proof}
+Choose $\delta_0$ small enough that
+\begin{equation}
+ \delta_0<\min\left\{\frac25-\eta_0,\frac{67}{1600}\right\}.
+ \label{eq:tpc30-high-delta-choice}
+\end{equation}
+The second restriction also gives
+$q/g=rs/g^2\ge X^{1/2-4\delta}>J$ and hence $q>J$ for all sufficiently
+large $X$, so the strict separation from the TPC-29 regions is uniform
+on this window.
+On $\mathscr B_\delta(X)$ use
+\cref{cor:tpc30-cross-factor-pruning} with
+$Z=X^{2/5-\delta}$.  The two terms in
+\eqref{eq:tpc30-main-content-bound}, relative to $XQ$, save
+\begin{equation}
+ 1-\beta=\frac{133}{400},
+ \qquad
+ \frac25-\delta.
+ \label{eq:tpc30-high-two-savings}
+\end{equation}
+The first is $133/400+o(1)$ at the inherited physical scale, and both
+exponents exceed $\eta_0$ for all sufficiently large $X$.  This proves
+the claimed bound.  Letting $\delta\to0$ gives the stated relaxed
+margin.
+\end{proof}
+
+\subsection{Consistency checks}
+
+The block is a support-compatible formal exponent cell.  First,
+$1/4<307/500$, so both reflected variables obey
+\eqref{eq:tpc30-reflected-ceiling}; and
+$3/4>193/500$, so both co-divisors are genuinely beyond the selected
+cutoff.  Second, the necessary divisibility $e\mid m-n$ is compatible
+with the row scale because
+\begin{equation}
+ \frac{267}{400}-\frac25
+ =\boxed{\frac{107}{400}}>0.
+ \label{eq:tpc30-high-row-content-gap}
+\end{equation}
+On the optional macroscopically separated row subcell
+$|m-n|=X^{\beta+o(1)}$, the reduced target difference
+$(N_m-N_n)/e=((m-n)j)/e$ and each reduced product have exponent
+\begin{align}
+ \left(\frac{267}{400}-\frac25\right)
+ +\frac{133}{400}
+ &=\frac35,
+ \label{eq:tpc30-high-row-orbit-balance}\\
+ \frac14+\frac7{20}
+ &=\frac35.
+ \label{eq:tpc30-high-factor-balance}
+\end{align}
+Thus, on that subcell, the row--orbit and factorization ledgers agree.
+
+Nor is this cell a relabeling of the TPC-29 reflected-content cell.
+Moving the quotient gcd into both reflected variables would produce
+the exponent
+\begin{equation}
+ \frac14+\frac25=\frac{13}{20}
+ >\frac{307}{500},
+ \label{eq:tpc30-high-not-reflected}
+\end{equation}
+above the reflected ceiling, while the reduced co-divisor exponent
+$7/20$ lies below $t=193/500$.  The quotient content therefore crosses
+the selected cutoff and cannot be absorbed into the old reflected
+variables while preserving their channel roles.
+
+\begin{table}[H]
+\centering
+\caption{Exact ledger for the high-$\beta$ cross-content cell.}
+\label{tab:tpc30-high-ledger}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Quantity & Exact value & Role \\
+\midrule
+Orbit exponent $\jmath$ & $133/400$ & natural fiber length \\
+Reflected exponent & $1/4$ & each of $r,s$ \\
+Reflected lcm exponent & $1/2$ & sparse by $67/400$ \\
+Old incidence saving & $0$ & primitive reflected core \\
+Co-divisor exponent & $3/4$ & both-ultra support \\
+Quotient-content exponent & $2/5$ & new full-target input \\
+Reduced co-divisor exponent & $7/20$ & after removing $e$ \\
+Row/content compatibility gap & $107/400$ & $e$ can divide $m-n$ \\
+Relaxed margin & $133/400$ & every smaller fixed exponent is available \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The corollary is an upper bound for this support-compatible formal block.
+It does not assert that the block is nonempty for every $X$, or that
+it carries a positive proportion of the original residual.

@@ -1,0 +1,106 @@
+\section{Full target content and orbit classes}
+\label{sec:tpc30-target-geometry}
+
+The following identity is the arithmetic reason that target content
+can be summed through the row family.  Its first divisibility
+consequence is the opened-row version of the target-gcd geometry in
+TPC-18 \citep{WangTPC18}; we include the short proof because the exact
+equality and the orbit class are used below.
+
+\begin{lemma}[Primitive target-gcd identity]
+\label{lem:tpc30-target-gcd}
+Let $m\ne n$ obey $(mn,h)=1$, and let $(j,h)=1$.  Put
+\begin{equation}
+ N_m=mj+h,
+ \qquad
+ N_n=nj+h,
+ \qquad
+ \cG_{m,n}(j)=(N_m,N_n).
+ \label{eq:tpc30-target-gcd-definition}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \cG_{m,n}(j)
+ =(N_m,m-n)\mid |m-n|.}
+ \label{eq:tpc30-target-gcd-identity}
+\end{equation}
+In addition,
+\begin{equation}
+ (\cG_{m,n}(j),mnh)=1.
+ \label{eq:tpc30-target-gcd-primitive}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Subtracting the two targets gives
+\[
+ (N_m,N_n)=(N_m,(n-m)j).
+\]
+But
+\[
+ (N_m,j)=(mj+h,j)=(h,j)=1.
+\]
+The factor $j$ may therefore be cancelled from the second argument,
+which proves \eqref{eq:tpc30-target-gcd-identity}.  If a prime divides
+$N_m$ and $m$, it divides $h$, contrary to $(m,h)=1$; the same holds
+with $n$.  Finally every prime dividing both $N_m$ and $h$ also
+divides $mj$ and hence $m$ or $j$ after using the relevant
+primitivity.  More directly,
+$(N_m,h)=(mj,h)=1$ because $(m,h)=(j,h)=1$.  This proves
+\eqref{eq:tpc30-target-gcd-primitive}.
+\end{proof}
+
+\begin{remark}[Why orbit primitivity is essential]
+\label{rem:tpc30-nonprimitive-gcd}
+Without $(j,h)=1$, the equality in
+\eqref{eq:tpc30-target-gcd-identity} need not hold: a factor shared by
+$j$ and $h$ can remain in both targets without dividing $m-n$.  The
+nonprimitive content was treated separately by endpoint collapse in
+TPC-18.  No such sector is silently included in the theorem below.
+\end{remark}
+
+The exact target gcd selects a row congruence and a single orbit
+class.
+
+\begin{lemma}[Exact-content orbit occupancy]
+\label{lem:tpc30-content-occupancy}
+Under the hypotheses of \cref{lem:tpc30-target-gcd}, suppose
+\begin{equation}
+ \cG_{m,n}(j)=c.
+ \label{eq:tpc30-exact-content-c}
+\end{equation}
+Then
+\begin{equation}
+ m\equiv n\pmod c,
+ \qquad
+ j\equiv-h\overline m\pmod c,
+ \label{eq:tpc30-content-congruences}
+\end{equation}
+where $\overline m$ is the inverse of $m$ modulo $c$.  Consequently,
+in any interval $\cI$ of at most $C_{\mathscr D}J$ consecutive
+integers,
+\begin{equation}
+ \#\{j\in\cI:(j,h)=1,\ \cG_{m,n}(j)=c\}
+ \ll_{\mathscr D}1+\frac Jc.
+ \label{eq:tpc30-exact-content-occupancy}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The first congruence follows from $c\mid m-n$ in
+\eqref{eq:tpc30-target-gcd-identity}.  Since $c\mid N_m$ and
+$(c,m)=1$ by \eqref{eq:tpc30-target-gcd-primitive}, the divisibility
+$c\mid mj+h$ selects the second congruence.  One residue class modulo
+$c$ occupies an interval of the stated length at most
+$O_{\mathscr D}(1+J/c)$ times.  Requiring the gcd to equal $c$, rather
+than merely to be divisible by $c$, can only reduce this number.
+\end{proof}
+
+\begin{remark}[Exact layers prevent multiplicity loss]
+\label{rem:tpc30-exact-layers}
+The proof of the main theorem groups each orbit point by the single
+integer $c=\cG_{m,n}(j)$.  It does not sum the condition
+$c\mid\cG_{m,n}(j)$ over every divisor $c$, so no additional divisor
+multiplicity is hidden in the content decomposition.
+\end{remark}
