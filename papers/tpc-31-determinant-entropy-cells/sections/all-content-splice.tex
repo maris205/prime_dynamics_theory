@@ -1,0 +1,234 @@
+\section{Splicing large content to low-complexity cells}
+\label{sec:tpc31-all-content}
+
+The preceding section assumes $c\le Z$.  TPC-30 supplies the
+complementary estimate
+\begin{equation}
+ |\cS_\nu(c>C)|
+ \ll_{\eps,h,\mathscr D}X^\eps
+ \left(Q^2+\frac{XQ}{C}\right)
+ \label{eq:tpc31-large-content-input}
+\end{equation}
+for every $C\ge1$ \citep{WangTPC30}.  Any further determinant
+restriction only reduces the absolute majorant in that theorem.  We
+now splice \eqref{eq:tpc31-large-content-input} to the small-content
+cell estimate.
+
+\subsection{A translated window in one residue class}
+
+Let $I\subset\R$ be any interval of length at most $W$, and fix one
+class $a\pmod q$.  Define the factorization-independent all-content
+event
+\begin{equation}
+ \cE(I;a,q)
+ :=\{\Delta^\#_{\alpha,\gamma}(j)\in I,
+      \ \Delta^\#_{\alpha,\gamma}(j)\equiv a\!\pmod q\}.
+ \label{eq:tpc31-all-content-cell-event}
+\end{equation}
+
+\begin{theorem}[All-content determinant-cell pruning]
+\label{thm:tpc31-all-content-cell}
+For every $1\le C\ll_{\mathscr D}Q$ and $1\le\nu\le3$,
+\begin{align}
+ |\cS_\nu(\cE(I;a,q))|
+ \ll_{\eps,h,\mathscr D}{}&X^\eps
+ \left\{
+ Q^2+\frac{XQ}{C}
+ \right.\notag\\[-0.2em]
+ &\left.\quad
+ +Q\log(2L)\left(1+\frac Wq\right)
+ \bigl(C+J\log(2C)\bigr)
+ \right\}
+ \label{eq:tpc31-all-content-cell-expanded}\\
+ \ll_{\eps,h,\mathscr D}{}&X^\eps XQ
+ \left[
+ \frac1J+\frac1C
+ +\left(1+\frac Wq\right)
+ \left(\frac CX+\frac1Q\right)
+ \right].
+ \label{eq:tpc31-all-content-cell}
+\end{align}
+The same estimate holds for the sum of the three raw channels.
+\end{theorem}
+
+\begin{proof}
+Split the event according to $c>C$ and $c\le C$.  The first part is a
+subevent of \eqref{eq:tpc31-large-content-input}.  For the second,
+apply \cref{cor:tpc31-small-window-residue} with the same interval and
+residue class for every $c\le C$.  This proves the expanded form.
+Use $JQ\asymp X$ and absorb logarithms into $X^\eps$ to obtain
+\eqref{eq:tpc31-all-content-cell}.
+\end{proof}
+
+The threshold $C$ is an optimization variable, not a condition in
+the event.  We give the exponent consequence with fixed margins.
+
+\begin{corollary}[Optimized all-content cell saving]
+\label{cor:tpc31-optimized-cell}
+Suppose
+\begin{equation}
+ \frac Wq+1\le X^{s+o(1)}
+ \label{eq:tpc31-cell-capacity-exponent}
+\end{equation}
+for a fixed $s\ge0$.  If $s<\beta$, then every fixed
+\begin{equation}
+ \boxed{
+ \sigma<\min\{1-\beta,\,\beta-s\}}
+ \label{eq:tpc31-optimized-cell-saving}
+\end{equation}
+is a power-saving exponent relative to $XQ$ in
+\eqref{eq:tpc31-all-content-cell}.
+\end{corollary}
+
+\begin{proof}
+Fix a $\sigma$ satisfying
+\eqref{eq:tpc31-optimized-cell-saving}.  Choose $\kappa$ strictly
+between
+\begin{equation}
+ \sigma<\kappa<\min\{\beta,1-s-\sigma\}.
+ \label{eq:tpc31-kappa-feasibility}
+\end{equation}
+This interval is nonempty: $\sigma<\beta$, and adding
+$\sigma<1-\beta$ to $\sigma<\beta-s$ gives
+\begin{equation}
+ 2\sigma<1-s.
+ \label{eq:tpc31-kappa-average}
+\end{equation}
+Take $C=\lfloor X^\kappa\rfloor$.  The four ratios in
+\eqref{eq:tpc31-all-content-cell} then save respectively
+$1-\beta$, $\kappa$, $1-\kappa-s$, and $\beta-s$, each strictly more
+than $\sigma$, up to $o(1)$.  The strict margins absorb the scale and
+logarithmic losses.
+\end{proof}
+
+\begin{remark}[Endpoint convention]
+\label{rem:tpc31-relaxed-endpoint}
+Equation \eqref{eq:tpc31-optimized-cell-saving} is a relaxed margin:
+every fixed exponent below the displayed endpoint is proved.  The
+endpoint itself is not asserted, because the physical scales contain
+$o(1)$ factors and the estimates contain logarithms.
+\end{remark}
+
+For an interval alone, take $q=1$.  If
+$W=X^{\omega+o(1)}$ and $\omega<\beta$, the relaxed all-content
+saving is
+\begin{equation}
+ \min\{1-\beta,\beta-\omega\}.
+ \label{eq:tpc31-all-window-saving}
+\end{equation}
+The interval may be macroscopically separated from zero.
+
+Such separation itself gives a further content collapse.
+
+\begin{proposition}[Macro-centered content collapse]
+\label{prop:tpc31-macro-content-collapse}
+Fix $\lambda>0$, and suppose the translated interval $I$ lies in
+\begin{equation}
+ \{\delta\in\R:|\delta|\ge\lambda Q\}.
+ \label{eq:tpc31-macro-center-condition}
+\end{equation}
+Then every physical triple with $\Delta^\#\in I$ has
+\begin{equation}
+ c_{\alpha,\gamma}(j)\ll_{\lambda,\mathscr D}1.
+ \label{eq:tpc31-macro-content-bounded}
+\end{equation}
+Consequently, for an interval of length at most $W$ and one class
+$a\pmod q$,
+\begin{equation}
+ \boxed{
+ |\cS_\nu(\cE(I;a,q))|
+ \ll_{\eps,h,\lambda,\mathscr D}
+ X^\eps JQ\log(2L)\left(1+\frac Wq\right).}
+ \label{eq:tpc31-macro-cell-bound}
+\end{equation}
+If $1+W/q\le X^{s+o(1)}$ with $s<\beta$, every fixed saving below
+$\beta-s$ is available relative to $XQ$.
+\end{proposition}
+
+\begin{proof}
+The physical row span gives
+$|m_\alpha-m_\gamma|\le B_{\mathscr D}Q$.  Since
+$m_\alpha-m_\gamma=c_{\alpha,\gamma}(j)\Delta^\#$,
+\eqref{eq:tpc31-macro-center-condition} implies
+$c_{\alpha,\gamma}(j)\le B_{\mathscr D}/\lambda$.  Apply
+\cref{cor:tpc31-small-window-residue} with this fixed content ceiling.
+The resulting content sum is $O_{\lambda,\mathscr D}(J)$, proving
+\eqref{eq:tpc31-macro-cell-bound}.  Divide by
+$XQ\asymp JQ^2$ for the exponent statement.
+\end{proof}
+
+\subsection{One residue class over the full range}
+
+Let
+\begin{equation}
+ \cE(a,q)
+ :=\{\Delta^\#_{\alpha,\gamma}(j)\equiv a\!\pmod q\}.
+ \label{eq:tpc31-full-residue-event}
+\end{equation}
+Using the content-dependent range in
+\eqref{eq:tpc31-full-residue-entropy} is sharper than enclosing every
+content in one interval of length $O(Q)$.
+
+\begin{theorem}[All-content residue-cell pruning]
+\label{thm:tpc31-all-content-residue}
+For every $1\le C\ll_{\mathscr D}Q$ and $1\le\nu\le3$,
+\begin{align}
+ |\cS_\nu(\cE(a,q))|
+ \ll_{\eps,h,\mathscr D}{}&X^\eps
+ \left(
+ Q^2+\frac{XQ}{C}
+ +QC+JQ\log(2C)
+ \right.\notag\\[-0.2em]
+ &\left.\hspace{8em}
+ +\frac{Q^2}q\log(2C)+\frac{JQ^2}q
+ \right)
+ \label{eq:tpc31-all-residue-expanded}\\
+ \ll_{\eps,h,\mathscr D}{}&X^\eps XQ
+ \left(
+ \frac1J+\frac1C+\frac CX+\frac1Q+\frac1q
+ \right).
+ \label{eq:tpc31-all-residue}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Use \eqref{eq:tpc31-large-content-input} for $c>C$ and
+\cref{cor:tpc31-small-residue} with $Z=C$ for the complementary
+part.  The simplified form follows as in
+\cref{thm:tpc31-all-content-cell}.
+\end{proof}
+
+\begin{corollary}[Optimized residue-cell saving]
+\label{cor:tpc31-optimized-residue}
+If $q=X^{\rho+o(1)}$ with $\rho\ge0$, then every fixed
+\begin{equation}
+ \boxed{
+ \sigma<\min\{1-\beta,\beta,\rho\}}
+ \label{eq:tpc31-optimized-residue-saving}
+\end{equation}
+is a power-saving exponent relative to $XQ$, provided the minimum is
+positive.
+\end{corollary}
+
+\begin{proof}
+Fix a $\sigma$ satisfying
+\eqref{eq:tpc31-optimized-residue-saving}.  Since
+$\sigma<\min\{\beta,1-\beta\}$, choose
+\begin{equation}
+ \sigma<\kappa<\min\{\beta,1-\sigma\}.
+ \label{eq:tpc31-residue-kappa-choice}
+\end{equation}
+Take $C=\lfloor X^\kappa\rfloor$.  In
+\eqref{eq:tpc31-all-residue}, the five displayed ratios save
+$1-\beta$, $\kappa$, $1-\kappa$, $\beta$, and $\rho$, respectively;
+all exceed $\sigma$.  The strict margins absorb the endpoint losses.
+\end{proof}
+
+\begin{remark}[What the splice adds]
+\label{rem:tpc31-splice-adds}
+TPC-30 alone estimates the event $c>C$ without seeing determinant
+support complexity.  The small-content theorem alone estimates a
+determinant cell only after imposing $c\le C$.  Their splice proves a cellwise
+statement for the entire retained raw packet.  It does not estimate
+the union of all cells with a power saving.
+\end{remark}

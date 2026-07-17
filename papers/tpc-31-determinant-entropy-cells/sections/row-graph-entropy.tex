@@ -1,0 +1,165 @@
+\section{Normalized-determinant graphs and support complexity}
+\label{sec:tpc31-row-entropy}
+
+Let $\cM$ be the finite set of physical row integers.  It is contained
+in an interval of length at most $C_{\mathscr D}Q$, and each integer in
+$\cM$ labels at most one row.  For $c\ge1$ and
+$\Omega\subset\Z\setminus\{0\}$, define the bipartite adjacency matrix
+\begin{equation}
+ A_{c,\Omega}(\alpha,\gamma)
+ =\one_{\,(m_\alpha-m_\gamma)/c\in\Omega}.
+ \label{eq:tpc31-adjacency}
+\end{equation}
+The indicator already forces $c\mid m_\alpha-m_\gamma$.  The exclusion
+of zero is consistent with the off-diagonal mask.
+
+\begin{definition}[Physical determinant support count]
+\label{def:tpc31-entropy}
+Choose once and for all a constant $B_{\mathscr D}$ larger than the
+row-span constant.  Put
+\begin{equation}
+ \cH_c(\Omega)
+ :=\#\left(
+ \Omega\cap
+ \left[-\frac{B_{\mathscr D}Q}{c},
+        \frac{B_{\mathscr D}Q}{c}\right]
+ \right).
+ \label{eq:tpc31-entropy}
+\end{equation}
+We call this cardinality the determinant support count, or support
+complexity, of $\Omega$ at content $c$.  Its logarithm would be the
+zero-order (Hartley) support entropy; no Shannon or metric entropy is
+used in the argument.  The estimates below are stated directly in
+terms of the count $\cH_c$.
+\end{definition}
+
+\begin{lemma}[Two-sided degree bound]
+\label{lem:tpc31-degree}
+Every row and every column of $A_{c,\Omega}$ contains at most
+$\cH_c(\Omega)$ nonzero entries.
+\end{lemma}
+
+\begin{proof}
+Fix a left row integer $m$.  For each allowed $\delta$, the equation
+\[
+ m-n=c\delta
+\]
+determines $n=m-c\delta$ uniquely.  Since row integers determine row
+labels uniquely, there is at most one right label for this value.
+Only values in the physical difference range can occur, so the row
+degree is at most \eqref{eq:tpc31-entropy}.  Interchanging $m$ and $n$
+gives the same column bound.
+\end{proof}
+
+\begin{lemma}[Bipartite Schur bound]
+\label{lem:tpc31-schur}
+Let $A=(A_{uv})$ be a finite zero--one matrix with maximum row degree
+$K_+$ and maximum column degree $K_-$.  Then, for arbitrary complex
+vectors $x$ and $y$,
+\begin{equation}
+ \left|\sum_{u,v}x_u y_v A_{uv}\right|^2
+ \le K_+K_-\|x\|_2^2\|y\|_2^2.
+ \label{eq:tpc31-schur}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For each $u$, Cauchy--Schwarz gives
+\[
+ \left|\sum_vA_{uv}y_v\right|^2
+ \le K_+\sum_vA_{uv}|y_v|^2.
+\]
+Summing in $u$ and using the column-degree bound yields
+\[
+ \|Ay\|_2^2\le K_+K_-\|y\|_2^2.
+\]
+Apply Cauchy--Schwarz to $\langle x,A y\rangle$.
+\end{proof}
+
+Combining the preceding two lemmas with the physical coefficient
+bound gives the row estimate used in every later section.
+
+\begin{proposition}[Weighted determinant-support bound]
+\label{prop:tpc31-row-entropy}
+For every $c\ge1$ and $\Omega\subset\Z\setminus\{0\}$,
+\begin{equation}
+ \boxed{
+ \sum_{\alpha,\gamma}
+ |\gamma_\alpha^{(1)}\gamma_\gamma^{(2)}|
+ A_{c,\Omega}(\alpha,\gamma)
+ \ll_{\mathscr D}
+ Q\log(2L)\,\cH_c(\Omega).}
+ \label{eq:tpc31-row-entropy-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Apply \cref{lem:tpc31-schur} to the nonnegative vectors
+$|\gamma^{(1)}|$ and $|\gamma^{(2)}|$, use
+\cref{lem:tpc31-degree}, and then use
+\eqref{eq:tpc31-row-l2} for the two norms.
+\end{proof}
+
+\subsection{Three useful support-count calculations}
+
+The first calculation is independent of the location of a window.
+
+\begin{lemma}[Translated windows and residue cells]
+\label{lem:tpc31-window-residue-entropy}
+Let $I\subset\R$ be any interval of length at most $W\ge0$.
+Then
+\begin{align}
+ \cH_c(I\cap\Z)&\le W+1,
+ \label{eq:tpc31-window-entropy}\\
+ \cH_c(\{\delta\in I\cap\Z:\delta\equiv a\!\pmod q\})
+ &\le 1+\frac Wq
+ \label{eq:tpc31-window-residue-entropy}
+\end{align}
+for every $q\ge1$ and $a\pmod q$.
+\end{lemma}
+
+\begin{proof}
+An interval of length $W$ contains at most $W+1$ integers.  Integers
+in one class modulo $q$ are spaced by $q$, so their number in the
+same interval is at most $1+W/q$.  Intersecting with the physical
+range can only reduce either count.
+\end{proof}
+
+For a residue class without an imposed window, the physical range
+retains the content dependence.
+
+\begin{lemma}[Full-range residue support]
+\label{lem:tpc31-full-residue-entropy}
+Uniformly for $q\ge1$ and $a\pmod q$,
+\begin{equation}
+ \boxed{
+ \cH_c(\{\delta\in\Z:\delta\equiv a\!\pmod q\})
+ \ll_{\mathscr D}1+\frac Q{cq}.}
+ \label{eq:tpc31-full-residue-entropy}
+\end{equation}
+No coprimality condition between $c$ and $q$ is needed.
+\end{lemma}
+
+\begin{proof}
+The physical normalized-determinant interval has length
+$O_{\mathscr D}(Q/c)$.  One class modulo $q$ occupies it at most
+$O_{\mathscr D}(1+Q/(cq))$ times.
+\end{proof}
+
+\begin{remark}[The endpoint one cannot be removed]
+\label{rem:tpc31-plus-one}
+If $q$ or $c$ is larger than the relevant span, a nonempty residue
+cell may still contain one normalized determinant.  The $+1$ terms in
+\eqref{eq:tpc31-window-residue-entropy} and
+\eqref{eq:tpc31-full-residue-entropy} are therefore genuine floors of
+the deterministic graph estimate.
+\end{remark}
+
+\begin{remark}[Macroscopic translation]
+\label{rem:tpc31-macroscopic-window}
+Nothing in \cref{lem:tpc31-window-residue-entropy} depends on the
+distance from $I$ to zero.  One may take
+$I\subset[\kappa Q/c,2\kappa Q/c]$ for a fixed $\kappa>0$ whenever
+that interval meets the physical difference range.  The resulting
+estimate is not another deletion of near-diagonal rows.
+\end{remark}

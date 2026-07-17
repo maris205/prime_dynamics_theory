@@ -1,0 +1,192 @@
+\section{Introduction}
+\label{sec:tpc31-introduction}
+
+The fixed-shift prime-pair problem separates local congruence
+compatibility from global signed cancellation.  Sieve methods can
+encode the local constraints with great precision, but a two-target
+lower bound encounters the parity barrier long before those local
+constraints become the whole problem.  The present paper does not
+claim to bypass that barrier \citep{HeathBrown1982Parity}.  It continues a narrower program: make
+the unresolved M\"obius-tail correlation successively more rigid,
+prove power saving on every sector accessible to exact incidence
+geometry, and state the remaining signed input without disguising it
+as a consequence of the absolute estimates.
+
+TPC-18 reduced a failed slice to a primitive off-diagonal two-row
+correlation with rows $m=\ell d$, orbit length $J$, row scale $Q$, and
+nonzero affine determinant $h(m-n)$ \citep{WangTPC18}.  TPC-19 and
+TPC-20 gave exact determinant-frequency and matched-channel normal
+forms, while also identifying coefficient and zero-frequency gates
+that the formal transforms do not estimate \citep{WangTPC19,WangTPC20}.
+TPC-28 closed the selected low-conductor packet before centering;
+TPC-29 removed large reflected-content and a content-rich sparse
+wedge; and TPC-30 used the full gcd of the two targets to prune the
+large-target-content sectors of the three retained raw channels
+\citep{WangTPC28,WangTPC29,WangTPC30}.
+
+The last of these steps leaves
+\begin{equation}
+ \cG_{m,n}(j):=(mj+h,nj+h)\le X^\eta,
+ \label{eq:tpc31-intro-small-content}
+\end{equation}
+with the fully coprime target sector as the sharp model.  The proposed
+next decomposition was by translated determinant windows and
+determinant residue classes.  There is, however, a definitional issue
+that must be settled before such a decomposition is legitimate.
+
+If $r\mid mj+h$ and $s\mid nj+h$ are selected divisor variables, then
+$g=(r,s)$ depends on that selection.  The quotient
+\[
+ \frac{m-n}{g}
+\]
+is useful inside the expanded divisor channel, but it is not a label
+of the unexpanded raw kernel: the same row--orbit triple has many
+factorizations and therefore potentially many values of $g$.  A
+cell decomposition made with this quotient cannot be inserted before
+the divisor sum without recording its multiplicity.
+
+The factorization-independent replacement is
+\begin{equation}
+ c=\cG_{m,n}(j),\qquad
+ \Delta^\#_{m,n}(j)=\frac{m-n}{c}.
+ \label{eq:tpc31-intro-canonical-pair}
+\end{equation}
+On the primitive orbit, TPC-30's Euclidean identity gives
+$c\mid m-n$, so $\Delta^\#$ is integral.  More is true.  Dividing the
+two targets by their full gcd produces coprime integers
+\[
+ U=\frac{mj+h}{c},\qquad V=\frac{nj+h}{c},
+\]
+and direct subtraction gives
+\begin{equation}
+ \boxed{mV-nU=h\Delta^\#.}
+ \label{eq:tpc31-intro-reduced-determinant}
+\end{equation}
+Thus $h\Delta^\#$ is the exact determinant of the canonically reduced
+target pair.  This is the invariant used throughout the paper.
+
+\subsection{The new cellwise estimate}
+
+Fix an exact content $c$ and a set $\Omega_c$ of allowed normalized
+determinants.  Since the physical row integers are distinct, for a
+fixed left row $m$ and a fixed $\delta\in\Omega_c$ there is at most
+one right row,
+\[
+ n=m-c\delta.
+\]
+The same statement holds with left and right reversed.  Hence the
+corresponding bipartite row graph has both degrees at most the number
+of allowed $\delta$ values in the physical difference range.  The
+Schur test and the two physical row $\ell^2$ bounds turn this degree
+bound into a weighted row estimate.  Exact content $c$ also confines
+the orbit variable to one residue class modulo $c$, giving the factor
+$1+J/c$.
+
+This proves the master estimate
+\begin{equation}
+ \left|\cS\bigl(c\le Z,\Delta^\#\in\Omega_c\bigr)\right|
+ \ll X^\eps Q\log(2L)
+ \sum_{c\le Z}\left(1+\frac Jc\right)
+ \cH_c(\Omega_c),
+ \label{eq:tpc31-intro-master}
+\end{equation}
+where $\cH_c$ is the number of allowed normalized determinants in the
+physical range.  The estimate is before divisor-variable expansion
+and therefore applies to each of the two mixed raw channels and the
+both-ultra raw channel.
+
+Two consequences are especially transparent.  For arbitrary
+translated intervals $I_c$ of length at most $W$,
+\begin{equation}
+ \left|\cS(c\le Z,\Delta^\#\in I_c)\right|
+ \ll X^\eps Q(W+1)\bigl(Z+J\log(2Z)\bigr).
+ \label{eq:tpc31-intro-window}
+\end{equation}
+For one residue class $a_c\pmod q$ at each content,
+\begin{equation}
+ \left|\cS(c\le Z,\Delta^\#\equiv a_c\!\pmod q)\right|
+ \ll X^\eps XQ
+ \left(\frac ZX+\frac1Q+\frac1q\right).
+ \label{eq:tpc31-intro-residue}
+\end{equation}
+The first estimate is translation-invariant: its interval may be
+centered at $|\Delta^\#|\asymp Q/c$, far from the deleted near-row
+sector.
+
+\subsection{Removing the small-content restriction}
+
+The cell estimate and TPC-30 are complementary.  Given a threshold
+$C$, the part with $c>C$ is bounded by the large-content theorem,
+whereas \eqref{eq:tpc31-intro-master} treats $c\le C$.  For a single
+translated interval $I$ of length $W$ and a residue class $a\pmod q$
+this gives
+\begin{align}
+ &\left|\cS(\Delta^\#\in I,
+ \Delta^\#\equiv a\!\pmod q)\right|
+ \notag\\
+ &\quad\ll X^\eps XQ\left[
+ \frac1J+\frac1C
+ +\left(1+\frac Wq\right)
+ \left(\frac CX+\frac1Q\right)
+ \right].
+ \label{eq:tpc31-intro-splice}
+\end{align}
+This is an all-content theorem: no condition such as
+\eqref{eq:tpc31-intro-small-content} remains in the event being
+estimated.  Optimization of $C$ gives a fixed power whenever
+$1+W/q$ is polynomially smaller than $Q$.
+
+For a residue class over the full normalized-determinant range, the
+dependence on $c$ improves the count and yields
+\begin{equation}
+ \left|\cS(\Delta^\#\equiv a\!\pmod q)\right|
+ \ll X^\eps XQ
+ \left(\frac1J+\frac1C+\frac CX+\frac1Q+\frac1q\right).
+ \label{eq:tpc31-intro-full-residue}
+\end{equation}
+Every fixed exponent below
+$\min\{1-\beta,\beta,\rho\}$ is therefore available when
+$q=X^{\rho+o(1)}$.
+
+\subsection{Why the theorem stops at one cell}
+
+The gain in \eqref{eq:tpc31-intro-master} is cardinality gain.  If a
+determinant range is partitioned into windows and every window is
+estimated absolutely, their cardinalities sum back to the size of the
+full range.  Likewise, summing the absolute majorants over all
+$a\pmod q$ exactly restores all row pairs in the layer $c\mid m-n$.
+There is no hidden global saving.
+
+For the signed physical amplitudes, the discrete Fourier transform in
+$a$ is exact.  Its $r=0$ coefficient is the unweighted sum over all
+residue cells, namely the original exact-content contribution.  This
+is an auxiliary residue-label transform, not the Poisson zero frequency
+in the orbit variable and not TPC-20's centered-kernel zero mode.
+Bounds for the nonzero frequencies or for equidistribution of the
+cells do not, by themselves, bound that mean.  A candidate next route
+must construct a factorable representation of the prime--M\"obius
+coefficient while retaining the fixed residue factors, pair mask, and
+matched channel structure; it cannot be obtained by merely repeating
+the present Schur estimate with a Fourier notation.
+
+\subsection{Scope}
+
+All estimates here are unconditional consequences of the inherited
+physical packet, TPC-30's proved large-content bound, and elementary
+finite-dimensional analysis.  They do not use a Chowla--Elliott
+hypothesis, a prime-pair conjecture, or an unverified transfer of a
+Kloosterman or spectral large-sieve theorem.  Fixed-form logarithmic
+two-point cancellation remains an important benchmark
+\citep{Tao2016}, but it does not provide the required uniformity in
+the polynomially growing row, content, cutoff, and mask families.
+
+\Cref{sec:tpc31-interface} states the physical interface.
+\Cref{sec:tpc31-canonical} proves the canonical reduction.
+\Cref{sec:tpc31-row-entropy} gives the row-graph theorem, and
+\cref{sec:tpc31-small-transfer} transfers it to the three raw
+channels.  The all-content splice is in
+\cref{sec:tpc31-all-content}; the high-$\beta$ ledger is in
+\cref{sec:tpc31-high-beta}.  The exact Fourier and reassembly boundary
+is isolated in \cref{sec:tpc31-zero-mode}.  The final sections compare
+the result with the preceding regions and record the finite
+certificate.

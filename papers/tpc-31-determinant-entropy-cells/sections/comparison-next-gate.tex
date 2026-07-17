@@ -1,0 +1,151 @@
+\section{Comparison, sharpness, and the next gate}
+\label{sec:tpc31-comparison}
+
+\subsection{What is inherited and what is new}
+
+The Euclidean identity
+\[
+ (mj+h,nj+h)\mid m-n
+\]
+and the single exact-content orbit class are inherited from TPC-30,
+with their earlier geometric origin in TPC-18
+\citep{WangTPC18,WangTPC30}.  TPC-19 already constructed determinant
+Fourier normal forms for an earlier centered model, and TPC-29 already
+computed the affine determinant associated with a selected reflected
+divisor pair \citep{WangTPC19,WangTPC29}.  We claim none of those
+identities as new.
+
+The additions here are:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item the factorization-independent reduced pair
+ $(U,V)$ and its canonical determinant
+ $mV-nU=h\Delta^\#$;
+ \item the two-sided degree and Schur bounds for arbitrary canonical
+ determinant spectra $\Omega_c$;
+ \item their transfer to all three unexpanded ultra-long raw channels;
+ \item translated-window, residue-cell, and window--residue bounds on
+ the complete small-content family;
+ \item the splice with TPC-30, producing all-content single-cell
+ estimates with optimized fixed-power margins;
+ \item the residue-cell energy and exceptional-frequency compression;
+ \item the exact identification of the small-content residue-cell
+ reassembly as the $r=0$ coefficient of an auxiliary residue-label
+ DFT.
+\end{enumerate}
+
+The word ``determinant'' here refers to the elementary $2\times2$
+identity \eqref{eq:tpc31-canonical-determinant-identity}.  The method
+is not the determinant method for counting rational or integral points
+on algebraic varieties \citep{HeathBrown2002Determinant}.  Its counting
+input is only the injectivity of $n=m-c\delta$ and a bipartite Schur
+estimate.
+
+\subsection{Why the regions are genuinely different}
+
+TPC-18 deleted a neighborhood of the row diagonal.  The present
+windows are translation-invariant and may be centered where
+$|m-n|\asymp Q$.  TPC-29 works after selecting divisor variables and
+uses their gcd and lcm.  The present cell is defined before divisor
+selection and remains meaningful for the whole raw kernel.  TPC-30
+deletes large full target content; the fully coprime layer $c=1$ is
+the sharp model for the new theorem.
+
+The all-content splice does overlap TPC-30 on $c>C$ by design.  Its
+new input is the low-complexity determinant estimate on $c\le C$; neither
+half alone yields \cref{thm:tpc31-all-content-cell}.  On expanded
+divisor subfamilies there may also be overlap with one of TPC-29's
+sparse wedges.  The theorem does not assert disjointness from every
+such subfamily.  It asserts a uniform raw-kernel bound requiring none
+of their selected-divisor hypotheses.
+
+\subsection{Sharp deterministic floors}
+
+The $Q^{-1}$ term in a residue cell comes from one possible row match
+per left row.  It cannot be removed from a theorem assuming only row
+uniqueness and $\ell^2$ control.  For example, take consecutive
+abstract row sets and the graph $m-n=1$.  Its degree is one, and
+constant nonnegative row weights attain the order of the Schur bound.
+In the physical target geometry, the same difference has exact content
+one at every primitive orbit point, because the target gcd divides
+$|m-n|=1$.
+
+Likewise, a translated window containing $K$ integer determinants can
+have degree $K$ on an interval of consecutive rows.  The cardinality
+factor in \eqref{eq:tpc31-row-entropy-bound} is therefore optimal under
+the abstract physical interface up to support edges and logarithmic
+normalization.  This is not an optimality theorem for the signed
+opened-row coefficients; their arithmetic provenance has not yet been
+used.
+
+\subsection{The refined route after TPC-31}
+
+The Fourier calculation in \cref{sec:tpc31-zero-mode} refines the
+phrase ``signed dispersion across determinant cells.''  Even the
+few-large-frequency estimate does not control the original sum,
+because that sum is exactly the $r=0$ coefficient $\widehat S(0)$ of
+the auxiliary residue-label transform.  The next stage must make this
+coefficient non-generic by using structure suppressed in the Schur
+majorant.
+
+The resulting staged route is:
+\begin{enumerate}[label={\textup{TPC-\arabic*:}},start=32]
+ \item construct a factorable representation of the prime--M\"obius
+ coefficient, incorporating
+ $\mu(d)(\log\ell)\omega_D(d)\psi_L(\ell/L)$ inside the canonical
+ determinant coefficient while retaining the fixed residue factors,
+ the bounded pair mask, and the remaining physical weights; derive a
+ matched $TT^*$ or spectral dispersion form without separating the two
+ mixed channels from the both-ultra channel;
+ \item prove cancellation of the auxiliary zero coefficient or a deconcentration inequality
+ strong enough to retain a fixed part of the cellwise margin;
+ \item reassemble the exact cutoff difference and propagate the
+ estimate uniformly over the physical parameter box;
+ \item return to the complete TPC-18 residual and endpoint packets
+ only after the preceding uniformity is proved.
+\end{enumerate}
+
+The exact matched-channel identity of TPC-20 is a natural algebraic
+interface for the first step \citep{WangTPC20}.  Classical large-sieve
+technology and modern Kloosterman-fraction or exceptional-spectrum
+estimates provide benchmarks
+\citep{IwaniecKowalski2004,DukeFriedlanderIwaniec1997,
+BettinChandee2018,Pascadi2026LargeSieve}.  They cannot be inserted
+merely by analogy: the actual coefficient, parameter range, mask, and
+auxiliary zero coefficient must first be reduced to the precise
+hypotheses of one stated theorem.  No such transfer is used in the
+present estimates.
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.43\textwidth}
+                >{\raggedright\arraybackslash}p{0.46\textwidth}}
+\toprule
+Object & Status \\
+\midrule
+Primitive target-gcd identity and exact-content orbit class
+& Inherited from TPC-30. \\
+\addlinespace
+Canonical reduced targets and determinant $h\Delta^\#$
+& Factorization-independent canonical packaging proved here. \\
+\addlinespace
+Arbitrary translated canonical determinant window
+& Explicit cellwise bound; power saving under the stated support-count
+condition, with a macro-centered sharpening. \\
+\addlinespace
+Individual normalized-determinant residue class
+& Explicit small-content and all-content bounds; power saving for a
+polynomially growing effective modulus. \\
+\addlinespace
+Residue-cell and determinant-frequency mean square
+& Unconditional bound proved here; an exceptional-frequency estimate follows. \\
+\addlinespace
+Absolute reassembly over all windows or classes
+& No saving; exact partition restores the full majorant. \\
+\addlinespace
+Signed auxiliary zero coefficient $\widehat S(0)$
+& Open; not controlled by the nonzero-frequency mean square. \\
+\addlinespace
+Complete residual, positivity, prime-pair asymptotic, or parity breach
+& Not proved and not implied. \\
+\bottomrule
+\end{tabular}
+\end{center}

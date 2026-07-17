@@ -1,0 +1,132 @@
+\section{The inherited physical packet}
+\label{sec:tpc31-interface}
+
+Fix $h\in\Z\setminus\{0\}$ and put $H=\operatorname{rad}|h|$.  We
+use the primitive opened-row packet of TPC-25--TPC-30
+\citep{WangTPC25,WangTPC28,WangTPC30}.  The scales satisfy
+\begin{equation}
+ QJ\asymp_{\mathscr D}X,
+ \qquad Q=X^{\beta+o(1)},
+ \qquad J=X^{1-\beta+o(1)},
+ \qquad 0<\beta<1.
+ \label{eq:tpc31-scales}
+\end{equation}
+Here $\mathscr D$ denotes fixed support, residue, smoothness, and
+margin data.
+
+Rows are indexed by $\alpha=(\ell_\alpha,d_\alpha)$ and have integer
+labels
+\begin{equation}
+ m_\alpha=\ell_\alpha d_\alpha\asymp_{\mathscr D}Q.
+ \label{eq:tpc31-rows}
+\end{equation}
+The opened packet has been separated so that $m_\alpha$ determines
+$\alpha$ uniquely.  All row integers lie in an interval of length
+$O_{\mathscr D}(Q)$.  Its two coefficient families obey
+\begin{align}
+ \sum_\alpha|\gamma_\alpha^{(i)}|
+ &\ll_{\mathscr D}Q,
+ \label{eq:tpc31-row-l1}\\
+ \sum_\alpha|\gamma_\alpha^{(i)}|^2
+ &\ll_{\mathscr D}Q\log(2L),
+ \qquad i=1,2.
+ \label{eq:tpc31-row-l2}
+\end{align}
+The second estimate, rather than the first, is the source of the
+cellwise determinant gain.
+
+Every contributing row and orbit point satisfies
+\begin{equation}
+ (m_\alpha,H)=1,
+ \qquad (j,H)=1.
+ \label{eq:tpc31-primitive-support}
+\end{equation}
+For
+\begin{equation}
+ N_\alpha(j)=m_\alpha j+h,
+ \label{eq:tpc31-target}
+\end{equation}
+the joint $j$-support lies in $O_{\mathscr D}(J)$ consecutive integers
+and
+\begin{equation}
+ c_{\mathscr D}X\le N_\alpha(j)\le C_{\mathscr D}X.
+ \label{eq:tpc31-target-window}
+\end{equation}
+In particular all targets are positive.  Since $H$ contains every
+prime divisor of $h$, \eqref{eq:tpc31-primitive-support} implies
+\begin{equation}
+ (m_\alpha,h)=(j,h)=1.
+ \label{eq:tpc31-full-primitivity}
+\end{equation}
+
+The row-pair mask satisfies
+\begin{equation}
+ |\mathfrak m(\alpha,\gamma)|\le1,
+ \qquad
+ \mathfrak m(\alpha,\gamma)=0
+ \quad\text{if }m_\alpha=m_\gamma.
+ \label{eq:tpc31-off-diagonal-mask}
+\end{equation}
+It is independent of the orbit and divisor variables.  The inherited
+fixed-period factor $\Xi_{\alpha,\gamma}(j)$ and smooth weight
+$\cW_{\alpha,\gamma}(j/J)$ are uniformly bounded; their common
+support has $O_{\mathscr D}(J)$ integer points.
+
+\subsection{The three retained raw channels}
+
+Let $\mathsf A_{m,T}(j)$ be the selected prefix residual and
+$C_m(j)$ the reflected ultra complement, in the exact notation of
+TPC-30.  Their divisor coefficients and the elementary divisor bound
+give, uniformly on the physical support,
+\begin{equation}
+ |\mathsf A_{m,T}(j)|+|C_m(j)|
+ \ll_{\eps,\mathscr D}X^\eps.
+ \label{eq:tpc31-pointwise-prefix-complement}
+\end{equation}
+The two mixed kernels and the both-ultra kernel are
+\begin{align}
+ \cK^{(1)}_{\alpha,\gamma}(j)
+ &=\mathsf A_{m_\alpha,T}(j)C_{m_\gamma}(j),
+ \notag\\
+ \cK^{(2)}_{\alpha,\gamma}(j)
+ &=C_{m_\alpha}(j)\mathsf A_{m_\gamma,T}(j),
+ \label{eq:tpc31-three-kernels}\\
+ \cK^{(3)}_{\alpha,\gamma}(j)
+ &=C_{m_\alpha}(j)C_{m_\gamma}(j).
+ \notag
+\end{align}
+Thus
+\begin{equation}
+ |\cK^{(\nu)}_{\alpha,\gamma}(j)|
+ \ll_{\eps,\mathscr D}X^\eps,
+ \qquad 1\le\nu\le3.
+ \label{eq:tpc31-kernel-envelope}
+\end{equation}
+
+For an event $\cE(\alpha,\gamma,j)$, define
+\begin{align}
+ \cS_\nu(\cE)
+ :={}&\sum_{\alpha,\gamma}
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \mathfrak m(\alpha,\gamma)
+ \sum_j\Xi_{\alpha,\gamma}(j)
+ \cW_{\alpha,\gamma}(j/J)
+ \notag\\
+ &\hspace{8em}\times
+ \cK^{(\nu)}_{\alpha,\gamma}(j)
+ \one_{\cE(\alpha,\gamma,j)}.
+ \label{eq:tpc31-raw-channel}
+\end{align}
+The natural absolute scale supplied by
+\eqref{eq:tpc31-row-l1} and the orbit length is
+\begin{equation}
+ JQ^2\asymp XQ.
+ \label{eq:tpc31-natural-scale}
+\end{equation}
+
+The two drift legs in the exact cutoff identity already carry the
+independent source-row saving established in TPC-29
+\citep{WangTPC29}.  The present
+paper changes none of their estimates.  Every theorem below applies
+separately to each kernel in \eqref{eq:tpc31-three-kernels}, and hence
+to their sum, without opening either divisor sum.

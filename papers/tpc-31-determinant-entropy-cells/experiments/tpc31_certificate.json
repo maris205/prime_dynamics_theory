@@ -1,0 +1,327 @@
+{
+  "cell_degree_summary": {
+    "maximum_actual_degree": 11,
+    "nonempty_cells": 1881,
+    "omega_cells": 84,
+    "residue_cells": 399,
+    "sharp_records": {
+      "residue": {
+        "bound": 6,
+        "c": 1,
+        "case": "dense",
+        "in_degree": 6,
+        "modulus": 2,
+        "out_degree": 6,
+        "residue": 1,
+        "span": 11
+      },
+      "window": {
+        "c": 1,
+        "case": "dense",
+        "in_degree": 1,
+        "out_degree": 1,
+        "start": -10,
+        "width": 1
+      }
+    },
+    "verified_bounds": {
+      "finite_Omega": "K_plus,K_minus <= #Omega",
+      "residue": "K_plus,K_minus <= floor(span/(c*q))+1",
+      "translated_window": "K_plus,K_minus <= window cardinality",
+      "window_residue": "K_plus,K_minus <= ceil(window cardinality/q)"
+    },
+    "window_cells": 252,
+    "window_residue_cells": 4788
+  },
+  "cell_partition_summary": {
+    "absolute_reassembly_checks": 60,
+    "edges_partitioned_with_multiplicity": 792,
+    "partitions": 60,
+    "signed_cancellation_witness": {
+      "c": 1,
+      "case": "dense",
+      "cell_signed_sums": [
+        14,
+        -27
+      ],
+      "h": 1,
+      "j": 1,
+      "left_weights": [
+        1,
+        -2,
+        3,
+        -1,
+        2,
+        -3,
+        1,
+        -2,
+        3
+      ],
+      "modulus": 2,
+      "right_weights": [
+        2,
+        1,
+        0,
+        -2,
+        1,
+        0,
+        -2,
+        -1,
+        0
+      ],
+      "rows": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "sum_absolute_cell_sums": 41,
+      "total_signed_sum": -13
+    },
+    "verified_absolute_no_gain": "sum_a absolute edge mass in cell a equals total absolute edge mass",
+    "verified_partition": "exact-c graph is the disjoint union of Delta_sharp mod q cells"
+  },
+  "certificate": "canonical determinant support cells",
+  "certificate_digest": "cd48ae70d7d5a39b54d128a28c695557f440de37582c7c3cec6405713eae0ab4",
+  "claims": {
+    "breaks_sieve_parity": false,
+    "closes_complete_residual": false,
+    "closes_complete_ultra_difference": false,
+    "closes_small_target_content_core": false,
+    "finite_Omega_degree_bound": true,
+    "finite_absolute_reassembly_identity": true,
+    "finite_exact_content_occupancy": true,
+    "finite_integer_weight_schur_bound": true,
+    "finite_primitive_target_content_identity": true,
+    "finite_rational_splice_optimization": true,
+    "finite_reduced_determinant_identity": true,
+    "finite_reduced_targets_coprime": true,
+    "finite_residue_cell_partition": true,
+    "finite_residue_degree_bound": true,
+    "finite_selected_divisor_multiplier": true,
+    "finite_window_degree_bound": true,
+    "finite_window_residue_degree_bound": true,
+    "proves_hardy_littlewood_asymptotic": false,
+    "proves_positivity": false,
+    "proves_signed_dispersion": false,
+    "proves_twin_primes": false,
+    "sample_W_equals_J_saving_positive": true,
+    "sample_W_half_saving_positive": true,
+    "sample_q_equals_J_saving_positive": true,
+    "uses_chowla_or_elliott_input": false,
+    "uses_mobius_sign_cancellation": false
+  },
+  "description": "finite exact regression for canonical target content, reduced determinants, selected-divisor multipliers, determinant-cell degrees, integer-weight Schur bounds, exact-content occupancy, cell reassembly, and rational splice optimization; not a numerical proof of asymptotic Mobius cancellation",
+  "exact_check_count": 876320,
+  "exact_content_occupancy_summary": {
+    "exact_layers": 480,
+    "maximum_occupancy": 11,
+    "maximum_record": {
+      "c": 2,
+      "h": 1,
+      "horizon": 31,
+      "m": 5,
+      "n": 11,
+      "orbits": [
+        9,
+        11,
+        15,
+        17,
+        21,
+        23,
+        27,
+        29,
+        33,
+        35,
+        39
+      ],
+      "start": 9
+    },
+    "nonempty_layers": 125,
+    "strict_subsets_of_c_divisibility": 58,
+    "verified_bound": "#exact_c in a length-J interval <= ceil(J/c)",
+    "verified_formula": "#exact_c = sum_{d|Delta/c} mu(d) #primitive{c*d divides N_m(j)}"
+  },
+  "integer_weight_schur_summary": {
+    "graph_names": [
+      "c=1:positive-window",
+      "c=1:negative-window",
+      "c=1:translated-window",
+      "c=1:residue-2-0",
+      "c=1:residue-3-1",
+      "c=1:window-residue",
+      "c=1:finite-omega",
+      "c=2:positive-window",
+      "c=2:negative-window",
+      "c=2:translated-window",
+      "c=2:residue-2-0",
+      "c=2:residue-3-1"
+    ],
+    "graphs": 12,
+    "maximum_squared_ratio": "1",
+    "row_set": [
+      5,
+      7,
+      11,
+      13
+    ],
+    "sharp_case": {
+      "bilinear_sum": 4,
+      "graph": "c=1:translated-window",
+      "in_degree": 2,
+      "left_energy": 2,
+      "left_weights": [
+        0,
+        0,
+        -1,
+        -1
+      ],
+      "out_degree": 2,
+      "right_energy": 2,
+      "right_weights": [
+        -1,
+        -1,
+        0,
+        0
+      ]
+    },
+    "tested_weight_pairs": 78732,
+    "verified_inequality": "|sum x_m y_n A(m,n)|^2 <= K_plus*K_minus*||x||_2^2*||y||_2^2",
+    "weight_alphabet": [
+      -1,
+      0,
+      1
+    ]
+  },
+  "paper": "TPC-31",
+  "primitive_reduced_summary": {
+    "largest_content": 25,
+    "largest_recorded_sample": {
+      "Delta_sharp": -1,
+      "N_m": 25,
+      "N_n": 725,
+      "c": 25,
+      "h": -3,
+      "j": 28,
+      "m": 1,
+      "n": 26,
+      "reduced_left": 1,
+      "reduced_right": 29
+    },
+    "negative_shift_cases": 43550,
+    "nonprimitive_boundary_witness": {
+      "euclidean_right_side": 2,
+      "h": 2,
+      "j": 2,
+      "m": 1,
+      "n": 3,
+      "target_content": 4
+    },
+    "nontrivial_contents": 18230,
+    "primitive_cases": 94456,
+    "verified_identities": [
+      "c = gcd(N_m,N_n) = gcd(N_m,m-n)",
+      "gcd(N_m/c,N_n/c) = 1",
+      "m*(N_n/c)-n*(N_m/c) = h*(m-n)/c"
+    ]
+  },
+  "rational_splice_summary": {
+    "formulas": {
+      "optimized_residue_cell_splice": "min(1-beta,beta,rho)",
+      "optimized_window_cell_splice": "min(1-beta,beta-s)_+",
+      "residue_cell_at_split": "min(1-beta,kappa,1-kappa,beta,rho)_+",
+      "window_cell_at_split": "min(1-beta,kappa,1-kappa-s,beta-s)_+"
+    },
+    "general_residue_cases": 580,
+    "general_window_cases": 290,
+    "high_beta": {
+      "J_exponent": "133/400",
+      "W_equals_J": {
+        "W_exponent": "133/400",
+        "optimal_saving": "133/400",
+        "optimal_split_exponent": "133/400"
+      },
+      "W_exponent_one_half": {
+        "W_exponent": "1/2",
+        "optimal_saving": "67/400",
+        "optimal_split_exponent": "67/400"
+      },
+      "additional_cell_margins": {
+        "fully_coprime_J_window": "67/200",
+        "general_window_residue_intersection": "133/400",
+        "macro_centered_all_content_J_window": "67/200",
+        "macro_centered_window_residue_intersection": "267/400"
+      },
+      "beta": "267/400",
+      "grid_regression": {
+        "W_equals_J": {
+          "first_maximizing_split_exponent": "133/400",
+          "grid_denominator": 1600,
+          "grid_points": 1069,
+          "last_maximizing_split_exponent": "67/200",
+          "optimum_saving": "133/400",
+          "parameter_exponent": "133/400"
+        },
+        "W_exponent_one_half": {
+          "first_maximizing_split_exponent": "67/400",
+          "grid_denominator": 1600,
+          "grid_points": 1069,
+          "last_maximizing_split_exponent": "133/400",
+          "optimum_saving": "67/400",
+          "parameter_exponent": "1/2"
+        },
+        "q_equals_J": {
+          "first_maximizing_split_exponent": "133/400",
+          "grid_denominator": 1600,
+          "grid_points": 1069,
+          "last_maximizing_split_exponent": "267/400",
+          "optimum_saving": "133/400",
+          "parameter_exponent": "133/400"
+        }
+      },
+      "q_equals_J": {
+        "optimal_saving": "133/400",
+        "optimal_split_exponent": "133/400",
+        "q_exponent": "133/400"
+      }
+    }
+  },
+  "selected_divisor_summary": {
+    "affine_factorizations": 5720,
+    "maximum_multiplier": 13,
+    "proper_multiplier_sample": {
+      "Delta_sharp": -1,
+      "N_m": 13,
+      "N_n": 169,
+      "c": 13,
+      "d": 1,
+      "h": 1,
+      "j": 12,
+      "m": 1,
+      "multiplier": 13,
+      "n": 14,
+      "r": 1,
+      "s": 1,
+      "selected_Delta": -13
+    },
+    "proper_selected_content_pairs": 21040,
+    "selected_divisor_pairs": 68734,
+    "verified_identity": "(m-n)/d = (c/d)*Delta_sharp"
+  },
+  "source_sha256": "7b4c984620ce733e7741d00b3c4b547e7d62efb05947902d91fc9dc54e133ff7",
+  "subcheck_counts": {
+    "cell_partition_and_absolute_reassembly": 301,
+    "determinant_cell_degrees": 5939,
+    "exact_content_occupancy": 1662,
+    "integer_weight_schur": 78746,
+    "primitive_and_reduced_target_identities": 566738,
+    "rational_splice_optimization": 16705,
+    "scope_flags": 26,
+    "selected_divisor_multiplier": 206203
+  }
+}

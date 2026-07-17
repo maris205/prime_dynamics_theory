@@ -1,0 +1,165 @@
+\section{Canonical target reduction}
+\label{sec:tpc31-canonical}
+
+The normalized determinant used here is attached to a row--orbit
+triple, not to one factorization of its targets.
+
+\begin{definition}[Full content and canonical determinant]
+\label{def:tpc31-canonical-determinant}
+For two distinct primitive rows $m,n$ and a primitive orbit point
+$j$, put
+\begin{equation}
+ c=\cG_{m,n}(j):=(mj+h,nj+h),
+ \qquad
+ \Delta^\#_{m,n}(j):=\frac{m-n}{c}.
+ \label{eq:tpc31-canonical-definition}
+\end{equation}
+When no confusion is possible we write simply $\Delta^\#$.
+\end{definition}
+
+\begin{proposition}[Canonical coprime target reduction]
+\label{prop:tpc31-canonical-reduction}
+Under the primitive hypotheses
+\begin{equation}
+ m\ne n,\qquad (mn,h)=1,\qquad (j,h)=1,
+ \label{eq:tpc31-canonical-hypotheses}
+\end{equation}
+let $c$ and $\Delta^\#$ be as in
+\eqref{eq:tpc31-canonical-definition}, and define
+\begin{equation}
+ U=\frac{mj+h}{c},
+ \qquad
+ V=\frac{nj+h}{c}.
+ \label{eq:tpc31-reduced-targets}
+\end{equation}
+Then
+\begin{align}
+ &c\mid m-n,\qquad (c,mnh)=1,
+ \label{eq:tpc31-content-properties}\\
+ &(U,V)=1,
+ \label{eq:tpc31-reduced-coprime}\\
+ &\boxed{mV-nU=h\Delta^\#\ne0.}
+ \label{eq:tpc31-canonical-determinant-identity}
+\end{align}
+In particular $\Delta^\#\in\Z\setminus\{0\}$ and is uniquely
+determined by $(m,n,j)$.
+\end{proposition}
+
+\begin{proof}
+The primitive target-gcd identity of TPC-30 gives
+\begin{equation}
+ c=(mj+h,m-n)\mid m-n
+ \label{eq:tpc31-inherited-content-identity}
+\end{equation}
+and $(c,mnh)=1$ \citep{WangTPC30}.  The two quotients in
+\eqref{eq:tpc31-reduced-targets} are integers, and dividing two
+integers by their full gcd proves \eqref{eq:tpc31-reduced-coprime}.
+Finally,
+\begin{align*}
+ mV-nU
+ &=\frac{m(nj+h)-n(mj+h)}c\\
+ &=\frac{h(m-n)}c
+ =h\Delta^\#.
+\end{align*}
+The last quantity is nonzero because $h\ne0$ and the row mask is
+off-diagonal.
+\end{proof}
+
+\begin{remark}[A determinant of a coprime pair]
+\label{rem:tpc31-coprime-pair-determinant}
+Equation \eqref{eq:tpc31-canonical-determinant-identity} may be written
+\[
+ \det\begin{pmatrix}m&U\\ n&V\end{pmatrix}
+ =h\Delta^\#.
+\]
+The columns are not asserted to be primitive as vectors, but the
+target column $(U,V)$ is a coprime pair.  This normalization uses every
+common target factor exactly once.
+\end{remark}
+
+\subsection{Relation to selected reflected divisors}
+
+Suppose a divisor expansion selects
+\begin{equation}
+ r\mid mj+h,\qquad s\mid nj+h,\qquad d=(r,s).
+ \label{eq:tpc31-selected-divisors}
+\end{equation}
+TPC-29 attaches to the resulting two quotient forms the determinant
+$h(m-n)/d$ \citep{WangTPC29}.  The following relation separates that
+factorization-dependent quantity from the canonical invariant.
+
+\begin{proposition}[Selected determinants are integral dilates]
+\label{prop:tpc31-selected-dilate}
+Under the hypotheses of
+\cref{prop:tpc31-canonical-reduction,eq:tpc31-selected-divisors},
+one has
+\begin{equation}
+ d\mid c
+ \label{eq:tpc31-selected-content-divides-full}
+\end{equation}
+and
+\begin{equation}
+ \boxed{
+ \frac{h(m-n)}d
+ =h\frac cd\,\Delta^\#.}
+ \label{eq:tpc31-selected-determinant-dilate}
+\end{equation}
+Thus every selected determinant is an integral dilate of the
+canonical determinant.  If $c=1$, then $d=1$ for every selected pair
+and all selected determinants equal $h\Delta^\#$.
+\end{proposition}
+
+\begin{proof}
+The integer $d$ divides both selected divisors, hence both targets.
+It therefore divides their full gcd $c$.  Substitute
+$m-n=c\Delta^\#$.
+\end{proof}
+
+\begin{remark}[Why selected content cannot label the raw kernel]
+\label{rem:tpc31-selected-not-canonical}
+Different divisor pairs $(r,s)$ of the same two targets may have
+different values of $d=(r,s)$.  Consequently $(m-n)/d$ is not a
+single-valued function of $(m,n,j)$.  By contrast, $c$ and
+$\Delta^\#$ are unique before either kernel in
+\eqref{eq:tpc31-three-kernels} is expanded.  This is why the physical
+cell theorems below use $\Delta^\#$.
+\end{remark}
+
+\begin{remark}[The small-content multiplier]
+\label{rem:tpc31-small-multiplier}
+On a layer $c\le C$, the dilation factor $c/d$ in
+\eqref{eq:tpc31-selected-determinant-dilate} is at most $C$.
+Nevertheless a congruence for $\Delta^\#$ modulo $q$ cannot be
+transported bijectively to the selected determinant unless the gcd of
+$c/d$ and $q$ is tracked.  No such invertibility is assumed in this
+paper.
+\end{remark}
+
+The exact content also controls the orbit occupancy.  We record the
+form needed below.
+
+\begin{lemma}[One orbit class for an exact content]
+\label{lem:tpc31-exact-content-orbit}
+Let $\cI$ be an interval containing $O_{\mathscr D}(J)$ consecutive
+integers.  For fixed primitive rows $m\ne n$ and $c\ge1$,
+\begin{equation}
+ \#\{j\in\cI:(j,h)=1,\ \cG_{m,n}(j)=c\}
+ \ll_{\mathscr D}1+\frac Jc.
+ \label{eq:tpc31-exact-content-orbit}
+\end{equation}
+The set is empty unless $c\mid m-n$; when nonempty, all of its points
+lie in the single class
+\begin{equation}
+ j\equiv-h\overline m\pmod c.
+ \label{eq:tpc31-exact-content-class}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+This is the exact-content occupancy lemma of TPC-30.  Indeed,
+$c\mid mj+h$ and $(c,m)=1$ select
+\eqref{eq:tpc31-exact-content-class}; one class modulo $c$ occurs in
+the interval at most $O_{\mathscr D}(1+J/c)$ times.  Requiring the gcd
+to equal $c$, rather than merely to be divisible by $c$, only removes
+points.
+\end{proof}

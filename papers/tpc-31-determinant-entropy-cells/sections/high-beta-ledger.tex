@@ -1,0 +1,229 @@
+\section{The high-\texorpdfstring{$\beta$}{beta} determinant-cell ledger}
+\label{sec:tpc31-high-beta}
+
+We insert the all-content theorems into the selected high-$\beta$
+packet closed in TPC-28.  Its exact exponents are
+\begin{equation}
+ \beta=\frac{267}{400},
+ \qquad
+ \jmath=1-\beta=\frac{133}{400}.
+ \label{eq:tpc31-high-parameters}
+\end{equation}
+Thus
+\begin{equation}
+ Q=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)}.
+ \label{eq:tpc31-high-QJ}
+\end{equation}
+Every conclusion in this section is an upper bound for a
+support-compatible cell.  It does not assert that the cell is
+nonempty or has positive asymptotic mass.
+
+\subsection{A translated orbit-scale window}
+
+Let $I_X$ be any interval satisfying
+\begin{equation}
+ |I_X|=X^{133/400+o(1)}=JX^{o(1)}.
+ \label{eq:tpc31-high-J-window}
+\end{equation}
+The interval is initially allowed any center.  For the fully coprime
+target layer, \cref{cor:tpc31-coprime-window} gives the relaxed margin
+\begin{equation}
+ \beta-\jmath
+ =\frac{267}{400}-\frac{133}{400}
+ =\frac{134}{400}
+ =\frac{67}{200}.
+ \label{eq:tpc31-high-coprime-J-window-margin}
+\end{equation}
+
+For all target contents, use
+\eqref{eq:tpc31-all-window-saving}.  The large-content side limits the
+splice to
+\begin{equation}
+ \min\left\{\frac{133}{400},\frac{134}{400}\right\}
+ =\boxed{\frac{133}{400}}.
+ \label{eq:tpc31-high-all-J-window-margin}
+\end{equation}
+
+\begin{corollary}[All-content orbit-scale translated window]
+\label{cor:tpc31-high-J-window}
+For every fixed $\sigma<133/400$, the sum of the three physical raw
+channels restricted by
+\begin{equation}
+ \Delta^\#_{\alpha,\gamma}(j)\in I_X
+ \label{eq:tpc31-high-J-window-event}
+\end{equation}
+satisfies
+\begin{equation}
+ \boxed{
+ \sum_{\nu=1}^3
+ |\cS_\nu(\Delta^\#\in I_X)|
+ \ll_{\sigma,h,\mathscr D}XQX^{-\sigma}.}
+ \label{eq:tpc31-high-J-window-bound}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+In \cref{cor:tpc31-optimized-cell}, take $q=1$ and
+$s=133/400$.  Equation
+\eqref{eq:tpc31-high-all-J-window-margin} is the resulting endpoint.
+The $o(1)$ in \eqref{eq:tpc31-high-J-window} is absorbed by the strict
+choice of $\sigma$.
+\end{proof}
+
+If the same window is genuinely macro-centered, the all-content result
+improves because large content cannot occur.
+
+\begin{corollary}[Macro-centered orbit-scale window]
+\label{cor:tpc31-high-macro-J-window}
+Assume in addition that, for a fixed $\lambda>0$,
+\begin{equation}
+ I_X\subset\{\delta:|\delta|\ge\lambda Q\}.
+ \label{eq:tpc31-high-macro-J-condition}
+\end{equation}
+Then every fixed $\sigma<67/200$ satisfies
+\begin{equation}
+ \boxed{
+ \sum_{\nu=1}^3|\cS_\nu(\Delta^\#\in I_X)|
+ \ll_{\sigma,h,\lambda,\mathscr D}XQX^{-\sigma}.}
+ \label{eq:tpc31-high-macro-J-bound}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Use \cref{prop:tpc31-macro-content-collapse} with $q=1$ and support
+exponent $s=133/400$.  The available margin is
+$\beta-s=134/400=67/200$.
+\end{proof}
+
+\subsection{A wider macroscopic window}
+
+Take instead
+\begin{equation}
+ |I_X|=X^{1/2+o(1)}
+ \label{eq:tpc31-high-half-window}
+\end{equation}
+and again allow the center to be $\asymp Q$.  Since
+\begin{equation}
+ \beta-\frac12
+ =\frac{267}{400}-\frac{200}{400}
+ =\boxed{\frac{67}{400}},
+ \label{eq:tpc31-high-half-margin}
+\end{equation}
+the cell remains power-small despite containing many more than $J$
+normalized determinant values.
+
+\begin{corollary}[All-content half-scale translated window]
+\label{cor:tpc31-high-half-window}
+For every fixed $\sigma<67/400$,
+\begin{equation}
+ \boxed{
+ \sum_{\nu=1}^3
+ |\cS_\nu(\Delta^\#\in I_X)|
+ \ll_{\sigma,h,\mathscr D}XQX^{-\sigma}}
+ \label{eq:tpc31-high-half-window-bound}
+\end{equation}
+whenever \eqref{eq:tpc31-high-half-window} holds.
+\end{corollary}
+
+\begin{proof}
+Use \eqref{eq:tpc31-all-window-saving} with window exponent $1/2$:
+\[
+ \min\left\{\frac{133}{400},
+             \frac{267}{400}-\frac12\right\}
+ =\frac{67}{400}.
+\]
+\end{proof}
+
+\subsection{One orbit-scale residue class}
+
+Let $q_X$ be any integer sequence with
+\begin{equation}
+ q_X=X^{133/400+o(1)}.
+ \label{eq:tpc31-high-residue-modulus}
+\end{equation}
+No primality or coprimality condition on $q_X$ is needed for the
+canonical determinant cell.  For every choice of
+$a_X\pmod{q_X}$, \cref{cor:tpc31-optimized-residue} gives
+\begin{equation}
+ \min\left\{\frac{133}{400},
+             \frac{267}{400},
+             \frac{133}{400}\right\}
+ =\boxed{\frac{133}{400}}.
+ \label{eq:tpc31-high-residue-margin}
+\end{equation}
+
+\begin{corollary}[All-content orbit-scale residue cell]
+\label{cor:tpc31-high-residue}
+For every fixed $\sigma<133/400$,
+\begin{equation}
+ \boxed{
+ \sum_{\nu=1}^3
+ |\cS_\nu(\Delta^\#\equiv a_X\!\pmod{q_X})|
+ \ll_{\sigma,h,\mathscr D}XQX^{-\sigma}.}
+ \label{eq:tpc31-high-residue-bound}
+\end{equation}
+\end{corollary}
+
+The intersection of an interval of length $\asymp J$ with one class
+modulo $q_X\asymp J$ contains $O(1)$ integers.  The general all-content
+splice has margin $133/400$.  On the fully coprime layer alone the
+margin is $\beta=267/400$; and if the interval is macro-centered as in
+\eqref{eq:tpc31-high-macro-J-condition},
+\cref{prop:tpc31-macro-content-collapse} shows that the same
+$267/400$ margin holds for all contents.  Without that location
+hypothesis, the stronger margin must not be quoted for the all-content
+cell.
+
+\subsection{Separation from earlier deletions}
+
+The translated intervals above may be chosen inside
+\begin{equation}
+ \kappa Q\le|\Delta^\#|\le2\kappa Q
+ \label{eq:tpc31-high-macro-center}
+\end{equation}
+for fixed $\kappa>0$, whenever the physical row support meets that
+annulus.  Then \cref{prop:tpc31-macro-content-collapse} gives
+$c\ll_{\kappa,\mathscr D}1$ and
+$|m_\alpha-m_\gamma|\asymp Q$, so this lies outside a near-row
+deletion.  On the fully coprime sublayer, every selected reflected gcd
+equals one by \cref{prop:tpc31-selected-dilate}; the
+large-full-content theorem of TPC-30 and the large-reflected-content
+part of TPC-29 do not estimate that subcell.  Some expanded divisor subfamilies may overlap a
+different TPC-29 sparse region, but the present bound is uniform for
+the complete unexpanded raw kernel and does not assume that sparse
+condition.
+
+\begin{table}[H]
+\centering
+\caption{Margins supplied by the high-$\beta$ determinant-cell bounds.}
+\label{tab:tpc31-high-ledger}
+\begin{tabular}{@{}
+ >{\raggedright\arraybackslash}p{0.46\textwidth}
+ >{\centering\arraybackslash}p{0.17\textwidth}
+ >{\raggedright\arraybackslash}p{0.26\textwidth}@{}}
+\toprule
+Cell & Available relaxed margin & Source \\
+\midrule
+Fully coprime $J$-window
+& $67/200$ & row support count $J/Q$ \\
+General all-content $J$-window
+& $133/400$ & large-content splice \\
+Macro-centered all-content $J$-window
+& $67/200$ & bounded-content collapse \\
+All-content $X^{1/2}$-window
+& $67/400$ & window cardinality \\
+All-content class modulo $J$
+& $133/400$ & modulus/splice \\
+General all-content intersection: $|I|\asymp q\asymp J$
+& $133/400$ & large-content splice \\
+Macro-centered all-content intersection
+& $267/400$ & bounded-content one-cell floor \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each table entry is the relaxed margin supplied by the stated bound,
+not an optimality claim.  Every strictly smaller fixed exponent is
+proved; no endpoint equality is claimed.

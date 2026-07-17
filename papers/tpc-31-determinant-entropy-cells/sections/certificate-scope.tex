@@ -1,0 +1,119 @@
+\section{Exact certificate and scope ledger}
+\label{sec:tpc31-certificate}
+
+The companion script
+\begin{center}
+\texttt{experiments/tpc31\_certificate.py}
+\end{center}
+is a standard-library Python certificate for the finite algebra,
+graph inequalities, and rational exponent ledger used in this paper.
+Run from the paper directory with Python 3.10 or later:
+\begin{verbatim}
+python experiments\tpc31_certificate.py
+python -O experiments\tpc31_certificate.py
+\end{verbatim}
+Both modes perform exactly
+\begin{equation}
+ \boxed{876{,}320}
+ \label{eq:tpc31-certificate-count}
+\end{equation}
+recorded checks and regenerate byte-identical JSON.
+
+The checks are divided as follows:
+\begin{center}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Finite check family & Recorded checks \\
+\midrule
+Primitive content and canonical reduced-target identities & $566{,}738$ \\
+Selected-divisor multiplier $d\mid c$ and determinant dilation & $206{,}203$ \\
+Determinant-cell degree calculations & $5{,}939$ \\
+Integer-weight Schur inequalities & $78{,}746$ \\
+Exact-content orbit occupancy & $1{,}662$ \\
+Residue partition and absolute reassembly & $301$ \\
+Rational splice and high-$\beta$ ledgers & $16{,}705$ \\
+Scope and nonoverlap flags & $26$ \\
+\midrule
+Total & $876{,}320$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The finite identity sweep verifies
+\[
+ c=(N_m,N_n),\quad c\mid m-n,\quad (c,mnh)=1,
+\]
+the coprimality of the reduced targets, and
+$mV-nU=h\Delta^\#$.  Over selected divisors it verifies
+$d=(r,s)\mid c$ and
+\[
+ \frac{m-n}{d}=\frac cd\Delta^\#.
+\]
+The graph tests cover positive, negative, crossing-zero, and
+macro-translated windows; $q=1$; noncoprime $c,q$; content-scaled
+moduli $cq$ beyond the row span (equivalently, $q$ beyond the
+normalized-determinant span); full residue cells; and window--residue
+intersections.  Exhaustive and deterministic integer weights verify
+the squared two-sided Schur inequality, including sharp $+1$ cases.
+
+The orbit tests compare direct exact-content counts with their finite
+M\"obius inversion and verify the one-class occupancy bound.  The
+partition tests check that the residue cells exactly reassemble the
+whole determinant layer and include signed cancellation witnesses,
+while making no claim about the asymptotic physical coefficient.  All
+exponent calculations use \texttt{fractions.Fraction}; no
+floating-point comparison is used in the high-$\beta$ or threshold
+optimization ledger.
+
+Reproducibility values are:
+\begin{align}
+ \text{normalized certificate-script source SHA-256}\qquad
+ &\texttt{7b4c984620ce733e7741d00b3c4b547e}\notag\\[-0.2em]
+ &\texttt{7d62efb05947902d91fc9dc54e133ff7},
+ \label{eq:tpc31-source-hash}\\
+ \text{JSON SHA-256}\qquad
+ &\texttt{5776b4310c04df512c47f940924253d4}\notag\\[-0.2em]
+ &\texttt{75ab51a2da3c8058a52201a643479fea},
+ \label{eq:tpc31-json-hash}\\
+ \text{certificate digest}\qquad
+ &\texttt{cd48ae70d7d5a39b54d128a28c695557}\notag\\[-0.2em]
+ &\texttt{f440de37582c7c3cec6405713eae0ab4}.
+ \label{eq:tpc31-certificate-digest}
+\end{align}
+
+The certificate is a regression check, not a computer-assisted proof
+of an asymptotic estimate.  In particular, it does not certify
+M\"obius cancellation, cancellation of the auxiliary residue-cell zero
+coefficient, a prime-pair main term, or the existence of infinitely
+many prime pairs.
+
+\subsection{Claim boundary}
+
+The proved statements in this paper are exactly:
+\begin{enumerate}[label=\textup{(\alph*)}]
+ \item canonical reduced-target algebra;
+ \item deterministic row-graph and Schur estimates;
+ \item absolute cellwise transfer to the three retained raw channels;
+ \item the TPC-30 large-content splice;
+ \item rational exponent consequences;
+ \item residue-cell energy and exceptional-frequency compression;
+ \item the exact auxiliary residue-cell zero-coefficient and
+ absolute-reassembly identities.
+\end{enumerate}
+\par\medskip\noindent
+They do not imply:
+\begin{enumerate}[label=\textup{(\alph*)}]
+ \item cancellation of the full coprime determinant spectrum;
+ \item smallness of the auxiliary residue-cell zero coefficient in
+ \eqref{eq:tpc31-zero-mode};
+ \item a complete M\"obius-tail estimate;
+ \item a Hardy--Littlewood asymptotic or positive prime-pair lower
+ bound;
+ \item the twin-prime conjecture or a breach of the sieve parity
+ barrier.
+\end{enumerate}
+
+The scope flags in the JSON archive encode these negative statements
+explicitly, making any future promotion of a finite certificate or a
+cellwise estimate into a global number-theoretic claim detectable in
+regression review.

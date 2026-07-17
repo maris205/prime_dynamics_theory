@@ -1,0 +1,203 @@
+\section{Cell energy, exceptional frequencies, and the auxiliary zero coefficient}
+\label{sec:tpc31-zero-mode}
+
+The cell theorems imply a useful mean-square statement, but they also
+show exactly why that statement does not estimate the full residual.
+Fix $C\ge1$, $q\ge1$, one raw channel $\nu$, and define the signed
+small-content cell amplitudes
+\begin{equation}
+ S_a
+ :=\cS_\nu(c_{\alpha,\gamma}(j)\le C,
+             \ \Delta^\#_{\alpha,\gamma}(j)
+                  \equiv a\!\pmod q),
+ \qquad a\pmod q.
+ \label{eq:tpc31-signed-cell-amplitudes}
+\end{equation}
+Let $A_a$ be the corresponding absolute majorant obtained from
+\eqref{eq:tpc31-raw-channel} by replacing every coefficient, kernel,
+mask, and weight by its absolute value.  Then
+\begin{equation}
+ |S_a|\le A_a.
+ \label{eq:tpc31-cell-majorization}
+\end{equation}
+
+\begin{remark}[Zero-mode nomenclature]
+\label{rem:tpc31-zero-mode-nomenclature}
+The transform below is a finite Fourier transform in the auxiliary
+residue label $a\pmod q$.  Its $r=0$ coefficient is not the Poisson
+zero frequency in the orbit variable $j$, and it is not the centered
+divisor-kernel zero mode of TPC-20.  We use ``residue-cell zero
+coefficient'' when this distinction matters.
+\end{remark}
+
+Because residue classes partition the exact-content triples,
+\begin{equation}
+ \sum_{a\, (q)}A_a
+ \ll_{\eps,h,\mathscr D}X^\eps JQ^2.
+ \label{eq:tpc31-total-absolute-cell-mass}
+\end{equation}
+On the other hand, the proof of
+\cref{cor:tpc31-small-residue} is an absolute proof and gives
+\begin{equation}
+ \max_{a\, (q)}A_a
+ \ll_{\eps,h,\mathscr D}X^\eps JQ^2
+ \left(\frac CX+\frac1Q+\frac1q\right).
+ \label{eq:tpc31-maximum-cell-mass}
+\end{equation}
+
+\begin{proposition}[Residue-cell energy]
+\label{prop:tpc31-cell-energy}
+The signed cells in \eqref{eq:tpc31-signed-cell-amplitudes} satisfy
+\begin{equation}
+ \boxed{
+ \sum_{a\, (q)}|S_a|^2
+ \ll_{\eps,h,\mathscr D}X^\eps(JQ^2)^2
+ \left(\frac CX+\frac1Q+\frac1q\right).}
+ \label{eq:tpc31-cell-energy}
+\end{equation}
+If $C\ll J$, this simplifies to
+\begin{equation}
+ \sum_{a\, (q)}|S_a|^2
+ \ll X^\eps(JQ^2)^2
+ \left(\frac1Q+\frac1q\right).
+ \label{eq:tpc31-cell-energy-C-below-J}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+By \eqref{eq:tpc31-cell-majorization},
+\[
+ \sum_a|S_a|^2
+ \le\sum_aA_a^2
+ \le(\max_aA_a)\sum_aA_a.
+\]
+Apply \eqref{eq:tpc31-total-absolute-cell-mass} and
+\eqref{eq:tpc31-maximum-cell-mass}, each with $\eps/2$, and relabel the
+resulting soft loss as $X^\eps$.  If $C\ll J$, then
+$C/X\ll1/Q$ because $JQ\asymp X$.
+\end{proof}
+
+Define the unnormalized discrete Fourier transform
+\begin{equation}
+ \widehat S(r)
+ :=\sum_{a\, (q)}S_a e_q(-ra),
+ \qquad
+ e_q(x)=\exp(2\pi i x/q).
+ \label{eq:tpc31-cell-DFT}
+\end{equation}
+Since each triple lies in the class
+$a\equiv\Delta^\#\pmod q$, this transform also has the exact physical
+form
+\begin{equation}
+ \widehat S(r)
+ =\cS_\nu(c\le C; e_q(-r\Delta^\#)),
+ \label{eq:tpc31-physical-frequency}
+\end{equation}
+where the notation on the right means that the phase is inserted into
+the raw summand.
+
+\begin{corollary}[Mean-square frequency compression]
+\label{cor:tpc31-frequency-compression}
+If $C\ll J$, then
+\begin{equation}
+ \boxed{
+ \frac1q\sum_{r\, (q)}|\widehat S(r)|^2
+ \ll_{\eps,h,\mathscr D}X^\eps(JQ^2)^2
+ \left(\frac1Q+\frac1q\right).}
+ \label{eq:tpc31-frequency-mean-square}
+\end{equation}
+In particular, if $q\le Q$ and $\sigma>0$, then
+\begin{equation}
+ \#\{r\pmod q:|\widehat S(r)|>JQ^2X^{-\sigma}\}
+ \ll_{\eps,h,\mathscr D}X^{2\sigma+\eps}.
+ \label{eq:tpc31-exceptional-frequency-count}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Parseval for \eqref{eq:tpc31-cell-DFT} gives
+\[
+ \frac1q\sum_r|\widehat S(r)|^2=\sum_a|S_a|^2.
+\]
+Use \eqref{eq:tpc31-cell-energy-C-below-J}.  If $q\le Q$, then
+\[
+ \sum_r|\widehat S(r)|^2
+ \ll X^\eps(JQ^2)^2.
+\]
+Chebyshev's inequality gives
+\eqref{eq:tpc31-exceptional-frequency-count}.
+\end{proof}
+
+More precisely, if $q=X^{\rho+o(1)}\le Q$ and
+$0<\sigma<\rho/2$, then one may choose the soft-loss exponent with
+$0<\eps<\rho-2\sigma$.  The exceptional set in
+\eqref{eq:tpc31-exceptional-frequency-count} is then power-smaller
+than the full set of $q$ frequencies.  This few-large-frequency bound
+is not, however, a bound for the coefficient needed by the original
+unweighted reassembly.
+
+\begin{proposition}[The exact residue-cell zero coefficient]
+\label{prop:tpc31-zero-mode}
+With the preceding notation,
+\begin{equation}
+ \boxed{
+ \widehat S(0)=\sum_{a\, (q)}S_a
+ =\cS_\nu(c_{\alpha,\gamma}(j)\le C).}
+ \label{eq:tpc31-zero-mode}
+\end{equation}
+Moreover, inversion gives
+\begin{equation}
+ S_a-\frac{\widehat S(0)}q
+ =\frac1q\sum_{r=1}^{q-1}\widehat S(r)e_q(ra),
+ \label{eq:tpc31-centered-cell-inversion}
+\end{equation}
+and hence
+\begin{equation}
+ \sum_{a\, (q)}
+ \left|S_a-\frac{\widehat S(0)}q\right|^2
+ =\frac1q\sum_{r=1}^{q-1}|\widehat S(r)|^2.
+ \label{eq:tpc31-centered-cell-parseval}
+\end{equation}
+Control of the nonzero-frequency side alone places no upper bound on
+$\widehat S(0)$.
+\end{proposition}
+
+\begin{proof}
+The first equality is the $r=0$ case of
+\eqref{eq:tpc31-cell-DFT}; the second follows because the residue cells
+partition the event $c\le C$.  Fourier inversion proves
+\eqref{eq:tpc31-centered-cell-inversion}, and Parseval proves
+\eqref{eq:tpc31-centered-cell-parseval}.  Finally, a constant vector
+$S_a=M/q$ has every nonzero Fourier coefficient equal to zero but has
+$\widehat S(0)=M$.  Thus no inequality involving only the nonzero
+ frequencies can control the residue-cell zero coefficient without an
+ additional input.
+\end{proof}
+
+\subsection{Absolute reassembly is exactly lossless}
+
+For the nonnegative majorants there is an even simpler obstruction:
+\begin{equation}
+ \boxed{
+ \sum_{a\, (q)}A_a=A_{\rm all},}
+ \label{eq:tpc31-absolute-residue-reassembly}
+\end{equation}
+where $A_{\rm all}$ is the absolute mass of the whole small-content
+event.  Likewise, if a normalized-determinant interval is partitioned
+into disjoint integer windows, the sum of their determinant
+cardinalities equals the cardinality of the original interval.
+Consequently the local gains $q^{-1}$ and $W/Q$ disappear when all
+cells are recombined by the triangle inequality.  This is an exact
+partition identity, not an assertion that the signed physical sum is
+large.
+
+The next analytic obligation is therefore sharper than ``prove that
+most nonzero determinant frequencies are small.''  One candidate is
+to construct a factorable representation of the prime--M\"obius
+coefficient while retaining the fixed residue factors, pair mask, and
+matched channel structure, and then control the residue-cell zero
+coefficient or cancel it across the mixed and both-ultra channels
+before separation.  The exact channel
+recombination of TPC-20 and the coefficient gates isolated in TPC-19
+provide relevant normal forms \citep{WangTPC19,WangTPC20}; the present
+paper does not supply the required signed estimate.

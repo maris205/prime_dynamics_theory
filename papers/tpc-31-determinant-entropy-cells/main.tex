@@ -1,0 +1,182 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,float}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Canonical Determinant Cells in a Primitive Mobius Tail: Support-Cardinality Bounds, All-Content Cell Pruning, and the Residue-Cell Zero-Mode Gate},
+ pdfauthor={Liang Wang},
+ pdfsubject={Unconditional pruning of canonical normalized-determinant windows and residue cells in a primitive Mobius-tail residual},
+ pdfkeywords={Mobius tail, normalized determinant, translated window, residue cell, Schur test, dispersion gate}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ee}[1]{e^{2\pi i #1}}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cW}{\mathcal W}
+
+\title{\textbf{Canonical Determinant Cells in a Primitive M\"obius Tail:}\\
+\textbf{Support--Cardinality Bounds, All--Content Cell Pruning,}\\
+\textbf{and the Residue--Cell Zero--Mode Gate}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let
+\[
+ N_m(j)=mj+h,\qquad N_n(j)=nj+h
+\]
+be two positive affine targets in the primitive opened-row packet of
+the preceding M\"obius-tail reduction.  The row and orbit scales are
+$Q=X^{\beta+o(1)}$ and $J=X^{1-\beta+o(1)}$, with $QJ\asymp X$.
+For each off-diagonal row--orbit triple define the full target content
+and the canonical normalized determinant by
+\[
+ c=(N_m(j),N_n(j)),\qquad
+ \Delta^\#=\frac{m-n}{c}.
+\]
+The first quantity is factorization-independent, and the primitive
+target identity makes $\Delta^\#$ an integer.  If
+$U=N_m(j)/c$ and $V=N_n(j)/c$, then
+\[
+ (U,V)=1,\qquad mV-nU=h\Delta^\#.
+\]
+Thus $\Delta^\#$ is the determinant of the canonically reduced target
+pair, rather than the determinant attached to one selected divisor
+factorization.
+
+For exact content $c$ and an allowed set $\Omega_c\subset\Z$, let
+\[
+ \cH_c(\Omega_c)
+ =\#\{\delta\in\Omega_c:|\delta|\ll Q/c\}.
+\]
+The difference graph $m-n=c\delta$ has both degrees at most
+$\cH_c(\Omega_c)$.  A Schur estimate, the physical row $\ell^2$
+bound, and the single orbit class modulo $c$ give, for each of the
+three retained raw channels,
+\[
+ \left|\cS\bigl(c\le Z,\ \Delta^\#\in\Omega_c\bigr)\right|
+ \ll_{\eps,h,\mathscr D}
+ X^\eps Q\log(2L)
+ \sum_{c\le Z}\left(1+\frac Jc\right)
+ \cH_c(\Omega_c).
+\]
+This is an unconditional capacity bound for every canonical
+determinant spectrum.  It gives power saving whenever the displayed
+orbit-weighted support count is polynomially smaller than $JQ$; the
+explicit cases below include translated windows far from the row
+diagonal and individual normalized-determinant residue cells.
+
+Splicing this estimate with the large-target-content theorem of the
+preceding paper removes the auxiliary restriction $c\le Z$.  If
+$I$ is any translated interval of length $W$ and $a\pmod q$ is one
+residue class, then for any splitting threshold $1\le C\ll Q$ the
+full physical cell satisfies
+\[
+ \left|\cS\bigl(\Delta^\#\in I,
+ \ \Delta^\#\equiv a\!\pmod q\bigr)\right|
+ \ll X^\eps XQ\left[
+ J^{-1}+C^{-1}
+ +\left(1+\frac Wq\right)
+ \left(\frac CX+\frac1Q\right)
+ \right].
+\]
+Consequently, if $1+W/q\le X^{s+o(1)}$ with $s\ge0$ and $s<\beta$,
+every fixed saving exponent below
+\[
+ \min\{1-\beta,\,\beta-s\}
+\]
+is available after optimizing $C$.  For one residue class over the
+entire determinant range, the relaxed saving is
+$\min\{1-\beta,\beta,\rho\}$ when $q=X^{\rho+o(1)}$.
+
+At $\beta=267/400$, an arbitrary translated $J$-window or a single
+class modulo $q\asymp J$ has every fixed saving below $133/400$ after
+the all-content splice.  If the $J$-window is centered at
+$|\Delta^\#|\asymp Q$, its content is automatically bounded and the
+margin improves to $67/200$.  A translated window of width
+$X^{1/2+o(1)}$ has every fixed saving below $67/400$.
+
+The result is cellwise.  Summing all determinant cells absolutely
+recovers the original row family, and an exact finite Fourier formula
+shows that the unweighted reassembly is the $r=0$ coefficient of an
+auxiliary residue-cell transform.  Nonzero cell energy alone therefore
+does not close the residual.  A candidate next route must restore the
+prime--M\"obius core while retaining the fixed residue factors, pair
+mask, and matched cutoff difference, and then estimate this coefficient.
+No such dispersion theorem,
+prime-pair asymptotic, positivity result, or breach of sieve parity is
+claimed here.
+\end{abstract}
+
+\noindent\textbf{Keywords:} primitive M\"obius tail; canonical
+normalized determinant; support cardinality; translated determinant
+window; residue cell; Schur bound; dispersion gate.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary 11B25.
+
+\input{sections/introduction}
+\input{sections/physical-interface}
+\input{sections/canonical-determinant}
+\input{sections/row-graph-entropy}
+\input{sections/small-content-transfer}
+\input{sections/all-content-splice}
+\input{sections/high-beta-ledger}
+\input{sections/fourier-zero-mode}
+\input{sections/comparison-next-gate}
+\input{sections/certificate-scope}
+
+\clearpage
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

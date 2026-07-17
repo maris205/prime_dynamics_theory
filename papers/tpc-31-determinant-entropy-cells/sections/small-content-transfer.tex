@@ -1,0 +1,240 @@
+\section{Physical transfer on the small-content side}
+\label{sec:tpc31-small-transfer}
+
+For a physical triple abbreviate
+\begin{equation}
+ c_{\alpha,\gamma}(j)
+ :=\cG_{m_\alpha,m_\gamma}(j),
+ \qquad
+ \Delta^\#_{\alpha,\gamma}(j)
+ :=\frac{m_\alpha-m_\gamma}{c_{\alpha,\gamma}(j)}.
+ \label{eq:tpc31-physical-c-delta}
+\end{equation}
+Both quantities are defined before opening any divisor sum.
+
+Let $Z\ge1$, and for each integer $1\le c\le Z$ choose an arbitrary
+set $\Omega_c\subset\Z\setminus\{0\}$.  Define the disjoint events
+\begin{equation}
+ \cE_c(\Omega_c)
+ :=\{c_{\alpha,\gamma}(j)=c,
+       \ \Delta^\#_{\alpha,\gamma}(j)\in\Omega_c\}
+ \label{eq:tpc31-exact-cell-event}
+\end{equation}
+and
+\begin{equation}
+ \cE_{\le Z}(\boldsymbol\Omega)
+ :=\bigcup_{1\le c\le Z}\cE_c(\Omega_c).
+ \label{eq:tpc31-small-cell-union}
+\end{equation}
+
+\begin{theorem}[Small-content determinant-support transfer]
+\label{thm:tpc31-small-content-transfer}
+For every $1\le\nu\le3$,
+\begin{equation}
+ \boxed{
+ |\cS_\nu(\cE_{\le Z}(\boldsymbol\Omega))|
+ \ll_{\eps,h,\mathscr D}
+ X^\eps Q\log(2L)
+ \sum_{1\le c\le Z}
+ \left(1+\frac Jc\right)\cH_c(\Omega_c).}
+ \label{eq:tpc31-small-content-transfer}
+\end{equation}
+The same bound, with a changed constant, holds for the sum of the
+three raw channels.
+\end{theorem}
+
+\begin{proof}
+Take absolute values and split the disjoint union by its exact content
+$c$.  For a fixed surviving row pair,
+\cref{lem:tpc31-exact-content-orbit} leaves at most
+$O_{\mathscr D}(1+J/c)$ orbit points.  The kernel, periodic factor,
+smooth weight, and mask have total pointwise size $O(X^\eps)$ by
+\eqref{eq:tpc31-off-diagonal-mask} and
+\eqref{eq:tpc31-kernel-envelope}.  The remaining row pair must satisfy
+\[
+ \frac{m_\alpha-m_\gamma}{c}\in\Omega_c.
+\]
+Apply \cref{prop:tpc31-row-entropy} and sum over $c$.  There are only
+three kernels.
+\end{proof}
+
+\begin{remark}[No divisor multiplicity]
+\label{rem:tpc31-no-divisor-multiplicity}
+The proof bounds each complete raw kernel through
+\eqref{eq:tpc31-kernel-envelope}.  It neither chooses a reflected
+divisor pair nor sums over selected gcd values.  Exact target content
+is single-valued, so \eqref{eq:tpc31-small-content-transfer} contains
+no unrecorded factorization multiplicity.
+\end{remark}
+
+\subsection{Translated determinant windows}
+
+Let $I_c\subset\R$ be arbitrary intervals, each of length at most
+$W$.  Apply \eqref{eq:tpc31-window-entropy} and the elementary bounds
+\begin{equation}
+ \sum_{c\le Z}1\le Z,
+ \qquad
+ \sum_{c\le Z}\frac1c\ll\log(2Z).
+ \label{eq:tpc31-harmonic-bounds}
+\end{equation}
+
+\begin{corollary}[Uniform translated-window pruning]
+\label{cor:tpc31-small-window}
+For every $1\le\nu\le3$,
+\begin{equation}
+ \boxed{
+ |\cS_\nu(c_{\alpha,\gamma}(j)\le Z,
+            \ \Delta^\#_{\alpha,\gamma}(j)\in I_c)|
+ \ll_{\eps,h,\mathscr D}
+ X^\eps Q\log(2L)(W+1)
+ \bigl(Z+J\log(2Z)\bigr).}
+ \label{eq:tpc31-small-window}
+\end{equation}
+Here the interval is allowed to depend on the exact content $c$.
+\end{corollary}
+
+\begin{proof}
+Use \cref{thm:tpc31-small-content-transfer} with
+$\Omega_c=I_c\cap\Z$ and apply
+\cref{eq:tpc31-window-entropy,eq:tpc31-harmonic-bounds}.
+\end{proof}
+
+In power form, suppose for fixed $z,\omega\ge0$ that
+\begin{equation}
+ Z\le X^{z+o(1)},
+ \qquad W+1\le X^{\omega+o(1)}.
+ \label{eq:tpc31-window-exponents}
+\end{equation}
+Relative to $XQ\asymp JQ^2$, the two terms in
+\eqref{eq:tpc31-small-window} have ratios
+\begin{equation}
+ X^{\omega+z-1+o(1)},
+ \qquad
+ X^{\omega-\beta+o(1)}.
+ \label{eq:tpc31-small-window-ratios}
+\end{equation}
+
+\begin{corollary}[Small-content window saving]
+\label{cor:tpc31-small-window-saving}
+If
+\begin{equation}
+ \omega<\min\{1-z,\beta\},
+ \label{eq:tpc31-small-window-positive}
+\end{equation}
+then every fixed
+\begin{equation}
+ \sigma<\min\{1-z,\beta\}-\omega
+ \label{eq:tpc31-small-window-saving-exponent}
+\end{equation}
+is a power-saving exponent relative to $XQ$ for the sum of the three
+raw channels in \eqref{eq:tpc31-small-window}.
+\end{corollary}
+
+\begin{proof}
+Use \eqref{eq:tpc31-scales} in
+\eqref{eq:tpc31-small-window-ratios}; the strict inequalities absorb
+the logarithms and all scale $o(1)$ terms.
+\end{proof}
+
+In particular, the fully coprime layer has $c=1$ and no content sum.
+
+\begin{corollary}[Fully coprime target window]
+\label{cor:tpc31-coprime-window}
+For any translated interval $I$ of length at most $W$,
+\begin{equation}
+ \boxed{
+ |\cS_\nu(c_{\alpha,\gamma}(j)=1,
+            \ \Delta^\#_{\alpha,\gamma}(j)\in I)|
+ \ll_{\eps,h,\mathscr D}
+ X^\eps JQ\log(2L)(W+1).}
+ \label{eq:tpc31-coprime-window}
+\end{equation}
+Thus, if $W=X^{\omega+o(1)}$ and $\omega<\beta$, every fixed saving
+below $\beta-\omega$ is available on this layer.
+\end{corollary}
+
+\begin{proof}
+Set $Z=1$ in \cref{thm:tpc31-small-content-transfer} and use
+$1+J\ll J$ on the asymptotic physical range.  Since $JQ\asymp X$,
+the ratio to $XQ$ is $X^{\omega-\beta+o(1)}$.
+\end{proof}
+
+\subsection{Individual residue cells}
+
+For each $c\le Z$, choose a residue $a_c\pmod q$.  By
+\cref{lem:tpc31-full-residue-entropy},
+\begin{align}
+ &\sum_{c\le Z}\left(1+\frac Jc\right)
+ \left(1+\frac Q{cq}\right)
+ \notag\\
+ &\quad\ll
+ Z+J\log(2Z)+\frac Qq\log(2Z)+\frac{JQ}q.
+ \label{eq:tpc31-residue-harmonic-sum}
+\end{align}
+
+\begin{corollary}[Small-content residue-cell pruning]
+\label{cor:tpc31-small-residue}
+For every $1\le\nu\le3$,
+\begin{align}
+ &|\cS_\nu(c_{\alpha,\gamma}(j)\le Z,
+ \ \Delta^\#_{\alpha,\gamma}(j)
+       \equiv a_c\!\pmod q)|
+ \notag\\
+ &\quad\ll_{\eps,h,\mathscr D}X^\eps\log(2L)
+ \left(
+ QZ+JQ\log(2Z)
+ +\frac{Q^2}q\log(2Z)+\frac{JQ^2}q
+ \right)
+ \label{eq:tpc31-small-residue-expanded}\\
+ &\quad\ll_{\eps,h,\mathscr D}
+ X^\eps XQ
+ \left(\frac ZX+\frac1Q+\frac1q\right).
+ \label{eq:tpc31-small-residue}
+\end{align}
+The residue $a_c$ may depend on $c$.
+\end{corollary}
+
+\begin{proof}
+Use \cref{thm:tpc31-small-content-transfer} and
+\eqref{eq:tpc31-residue-harmonic-sum}.  In the second form, enlarge
+$\eps$ to absorb logarithms, use $JQ\asymp X$, and note that
+$1/(Jq)\le1/q$.
+\end{proof}
+
+If $Z\le X^{z+o(1)}$ with $z<1$ and
+$q=X^{\rho+o(1)}$, every fixed
+\begin{equation}
+ \sigma<\min\{1-z,\beta,\rho\}
+ \label{eq:tpc31-small-residue-saving}
+\end{equation}
+is available.  For the fully coprime target layer this specializes to
+\begin{equation}
+ |\cS_\nu(c=1,\Delta^\#\equiv a\!\pmod q)|
+ \ll X^\eps XQ\left(\frac1Q+\frac1q\right).
+ \label{eq:tpc31-coprime-residue}
+\end{equation}
+
+\subsection{A window inside one residue class}
+
+Combining \eqref{eq:tpc31-window-residue-entropy} with the master
+theorem gives the most localized form.
+
+\begin{corollary}[Small-content window--residue cell]
+\label{cor:tpc31-small-window-residue}
+Let $I_c$ have length at most $W$, and choose $a_c\pmod q$.  Then
+\begin{align}
+ &|\cS_\nu(c_{\alpha,\gamma}(j)\le Z,
+ \ \Delta^\#_{\alpha,\gamma}(j)\in I_c,
+ \ \Delta^\#_{\alpha,\gamma}(j)\equiv a_c\!\pmod q)|
+ \notag\\
+ &\quad\ll_{\eps,h,\mathscr D}
+ X^\eps Q\log(2L)
+ \left(1+\frac Wq\right)
+ \bigl(Z+J\log(2Z)\bigr).
+ \label{eq:tpc31-small-window-residue}
+\end{align}
+\end{corollary}
+
+The bound depends only on the number of possible determinant values
+in the intersection, not on the location of the window or on
+$(c,q)$.
