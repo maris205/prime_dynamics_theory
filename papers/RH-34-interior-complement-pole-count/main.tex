@@ -1,0 +1,967 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\Id}{\mathrm I}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\wind}{\operatorname{wind}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\Maug}{\mathcal M_{\rm st}}
+\newcommand{\Tref}{T_{\rm ref}}
+\newcommand{\Rsch}{\mathcal R_{\rm Sch}}
+
+\hypersetup{
+  pdftitle={A Certified Schur-Similarity Closure of the Interior Complement Pole Count},
+  pdfauthor={Liang Wang},
+  pdfsubject={Outward-rounded Schur residual certification and an exact stored complement count},
+  pdfkeywords={Schur decomposition, spectral count, Feshbach map, verified numerical linear algebra, nonnormal matrix, outward rounding}
+}
+
+\title{\textbf{A Certified Schur-Similarity Closure of the\\
+Interior Complement Pole Count}\\[0.35em]
+\large From Relative Winding One to an Ordinary Stored Feshbach Zero}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A certified complement-resolvent atlas for a finite packet--complement
+spectral model proved a full-boundary Feshbach winding of one and the exact
+relative count
+\[
+ N_\Gamma(\Maug)-N_\Gamma(B)=1,
+\]
+but left the interior complement count \(N_\Gamma(B)\) open.  This paper
+closes that remaining gate for the exact \(2048\)-dimensional operator
+defined by the stored binary64 factors at \(\sigma=10^{-2}\).
+
+A floating complex Schur decomposition is used only to generate stored
+candidate matrices \(Z\) and
+\(\Tref=\operatorname{triu}(T)\).  The proof does not trust the computed
+eigenvalues or the floating Schur identity.  Instead, the complete
+componentwise stored-factor graph independently certifies
+\[
+ \norm{BZ-Z\Tref}_F\leq 9.55227\times10^{-10},
+ \qquad
+ \norm{Z^*Z-\Id}_F\leq5.33031\times10^{-9}.
+\]
+The second bound proves that \(Z\) is invertible.  For the exact similar
+matrix \(C=Z^{-1}BZ\), the first gives a rigorous perturbation bound from
+\(C\) to the exact stored upper-triangular matrix \(\Tref\).
+
+The \(949\)-leaf rational resolvent atlas from the preceding work is then
+transported through this similarity.  Its largest inherited complement
+resolvent bound is \(8.01138\times10^5\), while the largest rigorous
+Neumann product along the complete boundary homotopy from \(C\) to
+\(\Tref\) is only
+\[
+ 7.65268\times10^{-4}<1.
+\]
+Thus \(B\) and \(\Tref\) have the same eigenvalue count in the circle.
+Finally, every diagonal entry of \(\Tref\), the circle center, and the
+radius is treated as an exact dyadic number.  Exact rational signs place all
+\(2048\) diagonal entries outside the circle and none on its boundary.
+Consequently
+\[
+ N_\Gamma(B)=0,\qquad N_\Gamma(\Maug)=1.
+\]
+The stored Feshbach determinant is therefore holomorphic in the enclosed
+disk and has exactly one zero there, counted with multiplicity.
+
+This is a rigorous computer-assisted theorem for one exact finite stored
+model.  It is not a continuum or zero-noise result, does not identify the
+augmented stored block with the original physical discretization without
+an additional packet-pair argument, and makes no claim about zeta zeros,
+a Hilbert--P\'olya operator, or the Riemann hypothesis.
+\end{abstract}
+
+\noindent\textbf{Keywords:} certified Schur decomposition; spectral count;
+Feshbach map; complement pole; outward rounding; verified numerical linear
+algebra; nonnormal spectrum.
+
+\medskip
+\noindent\textbf{MSC 2020:} 15A18; 47A10; 47A11; 47A55; 65F15; 65F35;
+65G20; 65P30.
+
+\section{Introduction}
+\label{sec:introduction}
+
+Finite-dimensional Feshbach reductions separate a small retained packet
+from an ambient complement.  They are especially useful for nonnormal
+transfer matrices, where the retained determinant can be much smaller than
+the full operator but inherits poles from the complement resolvent.  A
+boundary winding of the reduced determinant is therefore naturally a
+\emph{relative} count: zeros of the augmented block minus poles contributed
+by the complement.
+
+The contour program considered here reached precisely that point in the
+preceding paper.  For a stored quadratic band-merging model at
+\(\sigma=10^{-2}\), a sparse Grushin construction and outward componentwise
+residual arithmetic produced \(109\) rigorous complement inverse
+certificates.  A \(256\)-bit Arb transport then covered the complete circle
+by \(949\) exact rational leaves.  Combined with an independently certified
+projected winding, this proved
+\[
+ \wind_\Gamma\det F=1,\qquad
+ N_\Gamma(\Maug)-N_\Gamma(B)=1
+\]
+for the exact finite matrices defined by the serialized binary64 factors
+\citep{WangLedger2026,WangAtlas2026}.  The statement was intentionally not
+promoted to an ordinary one-zero theorem: an unknown complement eigenvalue
+count could still contribute poles inside the circle.
+
+The remaining problem is an interior spectral count for a
+\(2048\times2048\) nonnormal dense-looking matrix
+\[
+ B=QU^2Q.
+\]
+Direct floating eigenvalues strongly suggest that the count is zero, but
+this is not a theorem.  Nonnormal eigenvalues can be highly sensitive, and
+an eigenvalue plot supplies neither a validated boundary homotopy nor a
+proof that a computed decomposition belongs to the exact stored target
+\citep{TrefethenEmbree2005}.  A direct interval eigensolve at dimension
+\(2048\) would also ignore the sparse-plus-low-rank factor structure already
+available from the preceding certificates.
+
+The route taken here is a posteriori and deliberately simple.  A standard
+floating Schur decomposition produces a candidate change of basis \(Z\)
+and an upper-triangular candidate \(\Tref\)
+\citep{GolubVanLoan2013}.  These candidates are merely stored matrices.
+The exact target \(B\) is then reapplied through the full outward-rounded
+factor graph, yielding a rigorous residual for
+\[
+ BZ-Z\Tref.
+\]
+An independent outward product certifies the near-unitarity defect
+\(Z^*Z-\Id\).  Once \(Z\) is proved invertible, exact similarity turns the
+target into \(C=Z^{-1}BZ\), and the certified residual becomes a norm bound
+for \(C-\Tref\).  The already available RH-33 boundary resolvent atlas then
+provides exactly the information required for a straight-line spectral
+homotopy from \(C\) to \(\Tref\).
+
+The contributions are:
+
+\begin{enumerate}
+ \item a general residual theorem converting a candidate Schur pair,
+       a certified unitarity defect, and a boundary resolvent bound into an
+       exact contour-count equivalence;
+ \item a blockwise componentwise certificate for
+       \(BZ-Z\Tref\) and \(Z^*Z-\Id\) against the exact stored-factor target;
+ \item a leafwise transport of all \(949\) RH-33 complement resolvent bounds
+       through the certified similarity;
+ \item an exact dyadic classification of the \(2048\) stored diagonal
+       entries of \(\Tref\) relative to the stored circle;
+ \item the first rigorous interior complement count for this chain,
+       \(N_\Gamma(B)=0\); and
+ \item the consequent ordinary count
+       \(N_\Gamma(\Maug)=1\) and one interior zero of the stored Feshbach
+       determinant.
+\end{enumerate}
+
+Three evidence levels remain separate throughout.
+
+\begin{itemize}
+ \item Similarity, singular-value inequalities, Schur triangular counting,
+       boundary homotopy, and the final count identities are exact algebra.
+ \item Residual, unitarity, and leafwise product bounds are rigorous
+       computer-assisted statements for exact stored binary64 inputs under
+       the stated floating-point assumptions.
+ \item The initial full-spectrum eigensolve, timings, and decimal boundary
+       distances are diagnostics only.  No floating eigenvalue is used to
+       establish the count.
+\end{itemize}
+
+\section{Stored model and inherited relative theorem}
+\label{sec:stored-model}
+
+\subsection{Exact stored factors}
+
+Fix \(\sigma=10^{-2}\) and \(n=2048\).  Every serialized binary64 real or
+complex component is interpreted as an exact dyadic number.  Let
+\(M\in\C^{n\times n}\) be the stored sparse one-step matrix,
+\(R_{\rm p},L_{\rm p}\in\C^{n\times p}\) the stored peripheral factors with
+\(p=2\), and \(\Lambda\in\C^{p\times p}\) the diagonal matrix of their
+stored values.  Put
+\begin{equation}
+ U=M-R_{\rm p}\Lambda L_{\rm p}^{\mathsf T}.
+ \label{eq:stored-u}
+\end{equation}
+Let \(V\in\C^{n\times m}\) and \(W\in\C^{m\times n}\), \(m=4\), be the
+stored packet synthesis and analysis matrices, and define
+\begin{equation}
+ Q=\Id-VW.
+ \label{eq:stored-q}
+\end{equation}
+No exact idempotence of this stored \(Q\) is assumed.  The complement and
+packet blocks are
+\begin{equation}
+ B=QU^2Q,\qquad
+ C_{\rm pck}=QU^2V,\qquad
+ D=WU^2V,\qquad
+ E=WU^2Q.
+ \label{eq:stored-blocks}
+\end{equation}
+The subscript on \(C_{\rm pck}\) distinguishes the packet forcing block from
+the similar matrix introduced later.
+
+For \(A(z)=z\Id_n-B\), define the exact stored Feshbach function wherever
+\(A(z)\) is invertible by
+\begin{equation}
+ F(z)=z\Id_m-D-EA(z)^{-1}C_{\rm pck}.
+ \label{eq:stored-feshbach}
+\end{equation}
+Its exact augmented block realization is
+\begin{equation}
+ \Maug=
+ \begin{pmatrix}
+  D&E\\
+  C_{\rm pck}&B
+ \end{pmatrix}.
+ \label{eq:stored-augmented}
+\end{equation}
+The Schur determinant identity gives
+\begin{equation}
+ \det(z\Id_{m+n}-\Maug)
+ =\det(z\Id_n-B)\det F(z)
+ \label{eq:schur-determinant-identity}
+\end{equation}
+whenever \(z\notin\spec B\).  Consequently, on any positively oriented
+simple contour meeting neither spectrum,
+\begin{equation}
+ \wind_\Gamma\det F
+ =N_\Gamma(\Maug)-N_\Gamma(B).
+ \label{eq:relative-count}
+\end{equation}
+These statements do not require \(Q^2=Q\).
+
+\subsection{The inherited circle and boundary atlas}
+
+The counting circle has the exact stored center and radius
+\begin{equation}
+ c=-0.3233504401504541-0.5508412474453575i,
+ \qquad
+ r=0.2624987592858511,
+ \label{eq:circle}
+\end{equation}
+and
+\[
+ \Gamma=\{c+r e^{i\theta}:0\leq\theta\leq2\pi\}.
+\]
+The decimals in \cref{eq:circle} name exact binary64 values, not exact
+decimal rationals.
+
+The preceding atlas theorem supplies the following input
+\citep{WangAtlas2026}.
+
+\begin{theorem}[Inherited stored-boundary theorem]
+\label{thm:inherited}
+For the exact stored matrix \(B\) and circle \(\Gamma\):
+\begin{enumerate}
+ \item \(z\Id-B\) is invertible for every \(z\in\Gamma\);
+ \item an exact rational partition of \(\Gamma\) into \(949\) leaves carries
+       rigorous bounds
+       \[
+        \norm{(z\Id-B)^{-1}}_2\leq M_\ell
+        \quad\text{for every \(z\) in leaf \(\ell\)};
+       \]
+ \item \(\max_\ell M_\ell=801137.5445371413\);
+ \item the stored Feshbach boundary winding is
+       \(\wind_\Gamma\det F=1\); and
+ \item the exact relative count is
+       \[
+        N_\Gamma(\Maug)-N_\Gamma(B)=1.
+       \]
+\end{enumerate}
+\end{theorem}
+
+The theorem controls the complete boundary but says nothing by itself about
+the number of complement eigenvalues in the disk.  That is the only
+spectral count addressed below.
+
+\section{A certified Schur-similarity count theorem}
+\label{sec:abstract-certificate}
+
+This section isolates the exact linear algebra used by the computation.
+The candidate matrices need not come from a stable algorithm and need not
+satisfy a floating Schur identity.
+
+\subsection{Near-unitarity and exact similarity}
+
+\begin{lemma}[Certified invertibility of a candidate basis]
+\label{lem:near-unitary}
+Let \(Z\in\C^{n\times n}\) and suppose
+\begin{equation}
+ \norm{Z^*Z-\Id}_2\leq\eta<1.
+ \label{eq:eta}
+\end{equation}
+Then \(Z\) is invertible and
+\begin{equation}
+ \norm{Z}_2\leq\sqrt{1+\eta},
+ \qquad
+ \norm{Z^{-1}}_2\leq\frac{1}{\sqrt{1-\eta}}.
+ \label{eq:z-bounds}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Every eigenvalue of the Hermitian matrix \(Z^*Z\) lies in
+\([1-\eta,1+\eta]\).  These eigenvalues are the squared singular values of
+\(Z\), so the lower endpoint is positive and \cref{eq:z-bounds} follows
+\citep{HornJohnson2013}.
+\end{proof}
+
+Let \(T\in\C^{n\times n}\) be arbitrary and define the exact residual
+\begin{equation}
+ R=BZ-ZT.
+ \label{eq:schur-residual}
+\end{equation}
+When \cref{eq:eta} holds, set
+\begin{equation}
+ \widetilde B=Z^{-1}BZ.
+ \label{eq:similar-b}
+\end{equation}
+This matrix is exactly similar to \(B\), regardless of how \(Z\) and \(T\)
+were generated.
+
+\begin{lemma}[Residual-to-perturbation conversion]
+\label{lem:residual-conversion}
+Under the assumptions of \cref{lem:near-unitary},
+\begin{align}
+ \norm{\widetilde B-T}_2
+ &\leq \norm{Z^{-1}}_2\norm{R}_2,
+ \label{eq:transformed-residual}\\
+ \norm{(z\Id-\widetilde B)^{-1}}_2
+ &\leq
+ \norm{Z^{-1}}_2\norm{Z}_2
+ \norm{(z\Id-B)^{-1}}_2
+ \label{eq:transformed-resolvent}
+\end{align}
+whenever \(z\notin\spec B\).
+\end{lemma}
+
+\begin{proof}
+From \cref{eq:schur-residual,eq:similar-b},
+\[
+ \widetilde B-T=Z^{-1}(BZ-ZT)=Z^{-1}R.
+\]
+Also
+\[
+ z\Id-\widetilde B=Z^{-1}(z\Id-B)Z,
+\]
+whose inverse is
+\(Z^{-1}(z\Id-B)^{-1}Z\).  Taking induced norms proves both bounds.
+\end{proof}
+
+\subsection{Boundary homotopy}
+
+For an available complement-resolvent upper bound \(M(z)\), define
+\begin{equation}
+ q(z)=
+ \frac{\sqrt{1+\eta}}{1-\eta}\,
+ M(z)\,\rho,
+ \qquad
+ \rho\geq\norm{R}_2.
+ \label{eq:q-definition}
+\end{equation}
+
+\begin{theorem}[Certified Schur-similarity contour count]
+\label{thm:schur-count}
+Let \(\Gamma\) be a positively oriented simple contour in the resolvent set
+of \(B\).  Let \(Z,T\in\C^{n\times n}\), and suppose rigorous bounds satisfy
+\[
+ \norm{Z^*Z-\Id}_2\leq\eta<1,\qquad
+ \norm{BZ-ZT}_2\leq\rho.
+\]
+If \(M(z)\geq\norm{(z\Id-B)^{-1}}_2\) on \(\Gamma\) and
+\begin{equation}
+ \sup_{z\in\Gamma}q(z)<1,
+ \label{eq:q-gate}
+\end{equation}
+then \(T\) has no eigenvalue on \(\Gamma\) and
+\begin{equation}
+ N_\Gamma(B)=N_\Gamma(T).
+ \label{eq:count-equivalence}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \cref{lem:near-unitary}, \(Z\) is invertible, so
+\(\widetilde B=Z^{-1}BZ\) is defined and has the same eigenvalues as \(B\).
+Let
+\[
+ H_s=(1-s)\widetilde B+sT
+     =\widetilde B-s(\widetilde B-T),
+ \qquad 0\leq s\leq1.
+\]
+For \(z\in\Gamma\),
+\begin{align*}
+ z\Id-H_s
+ &=(z\Id-\widetilde B)
+ \left[
+  \Id+s(z\Id-\widetilde B)^{-1}(\widetilde B-T)
+ \right].
+\end{align*}
+By \cref{lem:residual-conversion,eq:z-bounds},
+\begin{align*}
+ &\norm{(z\Id-\widetilde B)^{-1}(\widetilde B-T)}_2\\
+ &\quad\leq
+ \norm{Z^{-1}}_2^2\norm{Z}_2
+ \norm{(z\Id-B)^{-1}}_2\norm{R}_2\\
+ &\quad\leq
+ \frac{\sqrt{1+\eta}}{1-\eta}\,M(z)\rho
+ =q(z)<1.
+\end{align*}
+The bracket is therefore invertible by the Neumann lemma for every
+\((z,s)\in\Gamma\times[0,1]\).  No eigenvalue crosses the contour along the
+homotopy.  The argument principle, equivalently finite-dimensional spectral
+homotopy invariance, gives
+\[
+ N_\Gamma(B)=N_\Gamma(\widetilde B)=N_\Gamma(T)
+\]
+\citep{Ahlfors1979,Kato1995,GohbergSigal1971}.
+\end{proof}
+
+\begin{corollary}[Upper-triangular reference]
+\label{cor:triangular-count}
+If \(T\) in \cref{thm:schur-count} is upper triangular with diagonal
+\(\tau_1,\ldots,\tau_n\), then
+\begin{equation}
+ N_\Gamma(B)
+ =\#\{j:\tau_j\text{ lies inside }\Gamma\},
+ \label{eq:triangular-count}
+\end{equation}
+counting repeated diagonal values with multiplicity.
+\end{corollary}
+
+\begin{proof}
+The characteristic polynomial of \(T\) is
+\(\prod_{j=1}^n(z-\tau_j)\).
+\end{proof}
+
+\begin{remark}[Why this is not a trusted floating Schur theorem]
+\label{rem:not-floating-schur}
+The exact theorem uses only the stored matrices \(Z\) and \(T\), the
+independently certified residual \(BZ-ZT\), the independently certified
+defect \(Z^*Z-\Id\), and a rigorous boundary resolvent bound.  It does not
+assert that a floating LAPACK routine computed the exact Schur form of
+\(B\).  Any stored candidate pair that passes the same inequalities proves
+the same count.
+\end{remark}
+
+\section{Rigorous construction of the certificate}
+\label{sec:construction}
+
+\subsection{Candidate generation}
+
+For diagnostics, the factorized action is first applied in ordinary
+binary64 arithmetic to the identity, producing a dense floating center for
+\(B\).  A complex Schur decomposition of this center returns floating
+matrices \(T_{\rm fl}\) and \(Z\).  The exact stored reference is then
+defined by
+\begin{equation}
+ \Tref=\operatorname{triu}(T_{\rm fl}),
+ \label{eq:tref}
+\end{equation}
+where each retained binary64 component and every inserted lower-triangular
+zero is regarded as exact.  The floating eigensolve and Schur routine are
+candidate generators only.
+
+The ignored local workspace containing \(Z\) and \(\Tref\) has size
+approximately \(128\) MiB.  SHA-256 hashes of both exact stored arrays are
+committed.  A complete rerun regenerates the workspace and remeasures all
+decisive residuals; the compact verification suite checks the committed
+certificate ledgers.
+
+\subsection{Componentwise exact-target action}
+
+The RH-27 stored-factor graph evaluates
+\begin{equation}
+ X\longmapsto Q\bigl(U(U(QX))\bigr)
+ \label{eq:factor-action}
+\end{equation}
+without assembling the exact dense matrix \(B\)
+\citep{WangOutwardCode2026}.  Each computed center entry carries an outward
+complex-disc radius.  Sparse and dense dot products use conservative
+Higham \(\gamma_k\) factors, propagated radii are multiplied by entrywise
+absolute operators, and every positive scalar bound operation is rounded
+toward \(+\infty\) \citep{Higham2002,Rump2010}.
+
+The \(2048\) columns are partitioned into eight blocks of width \(256\).
+For a block \(J\), the graph encloses
+\begin{equation}
+ R_J=BZ_J-Z(\Tref)_J.
+ \label{eq:block-residual}
+\end{equation}
+Separately, direct componentwise dense multiplication encloses
+\begin{equation}
+ G_J=Z^*Z_J-\Id_J.
+ \label{eq:block-gram}
+\end{equation}
+If \(r_J\) and \(g_J\) are rigorous Frobenius upper bounds for the blocks,
+then outward Euclidean accumulation gives
+\begin{equation}
+ \rho_F=
+ \operatorname{up}\sqrt{\sum_J r_J^2},
+ \qquad
+ \eta_F=
+ \operatorname{up}\sqrt{\sum_J g_J^2}.
+ \label{eq:block-combination}
+\end{equation}
+Because the column blocks are disjoint,
+\[
+ \norm{BZ-Z\Tref}_2\leq\norm{BZ-Z\Tref}_F\leq\rho_F,
+ \qquad
+ \norm{Z^*Z-\Id}_2\leq\norm{Z^*Z-\Id}_F\leq\eta_F.
+\]
+
+This evaluation targets the exact algebraic matrix defined by
+\cref{eq:stored-u,eq:stored-q}, not the rounded dense center used to obtain
+the candidate Schur pair.  Errors in the candidate decomposition merely
+increase the measured residual.
+
+\subsection{Leafwise similarity transport}
+
+For every inherited RH-33 leaf \(\ell\), \(256\)-bit Arb arithmetic treats
+the binary64 upper bounds \(\eta_F,\rho_F,M_\ell\) as exact inputs and
+computes outward
+\begin{align}
+ z_{\max}&=\sqrt{1+\eta_F},
+ &
+ z_{\max}^{-}&=(1-\eta_F)^{-1/2},
+ \label{eq:arb-z}\\
+ \delta&=z_{\max}^{-}\rho_F,
+ &
+ K_\ell&=z_{\max}^{-}z_{\max}M_\ell,
+ \label{eq:arb-transport}\\
+ q_\ell&=K_\ell\delta.
+ \label{eq:leaf-product}
+\end{align}
+The committed leaf ledger stores \(M_\ell,K_\ell,\delta,q_\ell\), a
+downward bound for \(1-q_\ell\), and the exact rational leaf endpoints.
+Arb is used here for convenient directed high-precision scalar arithmetic
+\citep{Johansson2017}; the matrix residual enclosures themselves use the
+componentwise binary64 scheme.
+
+\subsection{Exact dyadic triangular classification}
+
+Write \(\tau_j=a_j+ib_j\) for a diagonal entry of \(\Tref\), and
+\(c=c_x+ic_y\) for the center in \cref{eq:circle}.  All five quantities
+\(a_j,b_j,c_x,c_y,r\) are exact dyadic rationals.  Define
+\begin{equation}
+ \Delta_j=(a_j-c_x)^2+(b_j-c_y)^2-r^2.
+ \label{eq:dyadic-margin}
+\end{equation}
+The implementation converts each binary64 value to its exact integer
+fraction and computes the sign of \(\Delta_j\) with integer arithmetic.
+Thus
+\[
+ \Delta_j<0,\quad \Delta_j=0,\quad \Delta_j>0
+\]
+classify the point as inside, on, or outside the circle with no rounding
+ambiguity.  Decimal distances are retained only as readable diagnostics.
+
+\section{Certified results}
+\label{sec:results}
+
+\subsection{Floating pilot}
+
+Before certification, an ordinary dense eigensolve of the assembled
+floating complement center found no eigenvalue inside the circle.  The
+nearest computed eigenvalue was
+\[
+ -0.0812451464-0.4164220167i
+\]
+with a floating boundary clearance of approximately \(0.0144191\).
+The floating spectral radius was \(0.458433\), and \(1932\) of the
+\(2048\) eigenvalues had modulus below \(10^{-10}\), suggesting a
+low-effective-rank spectral structure.
+
+These observations motivated the Schur route but prove nothing.  In
+particular, the count below does not use the floating eigenvalues.
+
+\subsection{Residual and similarity ledger}
+
+\Cref{tab:certificate} gives the decisive outward bounds.  The residual
+centers are near ordinary Schur backward-error scale, while the conservative
+componentwise radii dominate the final rigorous values.
+
+\begin{table}[H]
+\centering
+\caption{Certified Schur-similarity ledger for the exact stored
+\(n=2048\) complement at \(\sigma=10^{-2}\).}
+\label{tab:certificate}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Quantity & Rigorous value\\
+\midrule
+Residual-center Frobenius upper & \(1.18771\times10^{-14}\)\\
+Residual-radius Frobenius upper & \(9.55216\times10^{-10}\)\\
+\(\rho_F=\norm{BZ-Z\Tref}_F\) upper & \(9.55227\times10^{-10}\)\\
+Gram-defect-center Frobenius upper & \(5.22638\times10^{-13}\)\\
+Gram-defect-radius Frobenius upper & \(5.32980\times10^{-9}\)\\
+\(\eta_F=\norm{Z^*Z-\Id}_F\) upper & \(5.33031\times10^{-9}\)\\
+\(\norm{Z}_2\) upper & \(1.000000002666\)\\
+\(\norm{Z^{-1}}_2\) upper & \(1.000000002666\)\\
+Maximum inherited \(M_\ell\) & \(801137.544538\)\\
+Maximum transformed resolvent \(K_\ell\) & \(801137.548808\)\\
+Transformed residual \(\delta\) upper & \(9.55227\times10^{-10}\)\\
+Maximum \(q_\ell=K_\ell\delta\) & \(7.65268\times10^{-4}\)\\
+Minimum \(1-q_\ell\) lower & \(0.999234732068\)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The worst inherited leaf is the rational subarc with parent index \(878\),
+endpoints \(68/256\) and \(69/256\) in its archived turn convention, and
+center identifier \texttt{arc\_00879}.  Even there the homotopy product is
+more than three orders of magnitude below one.  All \(949\) rows close
+individually.
+
+\begin{theorem}[Full stored Schur homotopy]
+\label{thm:full-homotopy}
+Let \(Z\) and \(\Tref\) be the exact stored candidate matrices identified by
+the committed hashes.  Then \(Z\) is invertible, and the straight-line
+homotopy
+\[
+ H_s=(1-s)Z^{-1}BZ+s\Tref,\qquad 0\leq s\leq1,
+\]
+has no eigenvalue on \(\Gamma\).
+\end{theorem}
+
+\begin{proof}
+\Cref{tab:certificate} gives \(\eta_F<1\), so
+\cref{lem:near-unitary} proves invertibility.  Every point of \(\Gamma\)
+belongs to one of the \(949\) exact rational leaves from
+\cref{thm:inherited}.  On each leaf, the outward
+\cref{eq:arb-z,eq:arb-transport,eq:leaf-product} calculation gives
+\(q_\ell<1\).  Apply \cref{thm:schur-count} leaf by leaf.
+\end{proof}
+
+\subsection{Exact triangular count}
+
+The exact dyadic signs in \cref{eq:dyadic-margin} give
+\begin{equation}
+ \#\{\Delta_j<0\}=0,\qquad
+ \#\{\Delta_j=0\}=0,\qquad
+ \#\{\Delta_j>0\}=2048.
+ \label{eq:diagonal-counts}
+\end{equation}
+The nearest diagonal entry is index \(2\) in zero-based archive indexing,
+\[
+ \tau_2=
+ -0.08124514640528988
+ -0.41642201670804313i.
+\]
+Its exact squared margin is the positive rational
+\begin{equation}
+ \Delta_2=
+ \frac{
+ 10096296918145525881756484451617
+ }{
+ 1298074214633706907132624082305024
+ }>0.
+ \label{eq:nearest-exact-margin}
+\end{equation}
+The corresponding decimal boundary clearance \(0.0144191037\) is only a
+diagnostic; the sign in \cref{eq:nearest-exact-margin} is the proof.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/schur_similarity_closure.pdf}
+\caption{The certified count closure.  Top left: the exact stored
+triangular diagonal, plotted in floating coordinates, and the counting
+circle.  Top right: diagnostic boundary clearances; exact dyadic signs, not
+these decimal distances, establish the classification.  Bottom left: the
+inherited complement resolvent upper bounds and the transported homotopy
+products on all \(949\) leaves.  Bottom right: the exact logical count
+ledger.}
+\label{fig:closure}
+\end{figure}
+
+\subsection{Main count theorem}
+
+\begin{theorem}[Interior complement pole count]
+\label{thm:complement-zero}
+For the exact \(2048\times2048\) stored complement matrix \(B=QU^2Q\) at
+\(\sigma=10^{-2}\),
+\begin{equation}
+ N_\Gamma(B)=0.
+ \label{eq:complement-zero}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \cref{thm:full-homotopy},
+\[
+ N_\Gamma(B)=N_\Gamma(Z^{-1}BZ)=N_\Gamma(\Tref).
+\]
+The matrix \(\Tref\) is exact upper triangular.
+\Cref{eq:diagonal-counts,eq:triangular-count} give
+\(N_\Gamma(\Tref)=0\).
+\end{proof}
+
+\begin{corollary}[Ordinary stored count and Feshbach zero]
+\label{cor:ordinary-count}
+For the exact stored augmented block and Feshbach function,
+\begin{align}
+ N_\Gamma(\Maug)&=1,
+ \label{eq:augmented-one}\\
+ \wind_\Gamma\det F&=1,
+ \label{eq:feshbach-winding-one}
+\end{align}
+and \(\det F\) is holomorphic in the enclosed disk with exactly one zero
+there, counted with multiplicity.  Hence that scalar zero has multiplicity
+one.
+\end{corollary}
+
+\begin{proof}
+Combine \cref{thm:complement-zero} with the inherited relative identity in
+\cref{thm:inherited} to obtain \cref{eq:augmented-one}.  The same theorem
+already gives \cref{eq:feshbach-winding-one}.  Since \(B\) has no
+eigenvalue in the disk or on its boundary, \(A(z)^{-1}\) and \(F(z)\) are
+holomorphic throughout the disk.  The ordinary argument principle now
+turns the boundary winding into the number of zeros of \(\det F\), with no
+pole subtraction \citep{Ahlfors1979}.
+\end{proof}
+
+\begin{remark}[What has changed since the relative theorem]
+\label{rem:relative-to-ordinary}
+RH-33 proved winding one without assuming interior holomorphy of \(F\).
+The new statement is stronger for one precise reason:
+\cref{thm:complement-zero} removes all interior complement poles.  No new
+claim about a continuum operator or an external spectral sequence is
+inserted into that deduction.
+\end{remark}
+
+\section{Audit trail and reproducibility}
+\label{sec:audit}
+
+The committed archive separates compact verification from the full
+candidate regeneration.
+
+\begin{enumerate}
+ \item \texttt{schur\_similarity\_sigma\_1e-02.json} records all residual,
+       unitarity, similarity, count, timing, software, and hash fields.
+ \item \texttt{schur\_homotopy\_leaves\_sigma\_1e-02.csv} contains all
+       \(949\) inherited rational leaves and their transformed resolvent,
+       perturbation, Neumann product, and denominator bounds.
+ \item \texttt{schur\_diagonal\_sigma\_1e-02.csv} records each diagonal
+       component in decimal and exact binary64 hexadecimal notation,
+       together with its exact squared-margin sign.
+ \item \texttt{schur\_diagonal\_sigma\_1e-02.npz} stores the complete
+       triangular diagonal and circle data needed to rerun the exact dyadic
+       classification.
+ \item The dependency manifest hashes the consumed RH-28 scale geometry,
+       RH-33 theorem and leaf ledger, RH-27 componentwise arithmetic, and
+       every source file used to reconstruct the target and certificate.
+ \item The compact test suite reclassifies the diagonal exactly, checks all
+       \(949\) homotopies, verifies the count implications, and tests the
+       abstract theorem on synthetic matrices.
+\end{enumerate}
+
+The complete run takes approximately \(22.1\) seconds on the reported
+\(64\)-logical-core Linux server with NumPy \(2.2.6\), SciPy \(1.15.3\),
+and \(32\) OpenBLAS threads.  Timings are diagnostics and are not theorem
+inputs.
+
+The trusted arithmetic base is the same as in the outward residual work:
+IEEE binary64 round-to-nearest operations, conservative operation counts,
+directed outward bounds, no overflow, and no harmful underflow.  The
+floating Schur algorithm lies outside the trusted base.  It proposes
+\(Z,\Tref\); the exact-target residual audit decides whether those matrices
+are useful.
+
+\section{Scope, limitations, and next gates}
+\label{sec:limitations}
+
+The result closes one sharply delimited finite-dimensional gate.  It is
+important not to enlarge its meaning implicitly.
+
+\begin{enumerate}
+ \item The theorem concerns the exact matrix assembled algebraically from
+       the stored binary64 factors at \(\sigma=10^{-2}\).  The stored
+       factors are not interval enclosures of exact Gaussian integrals,
+       exact critical constants, or a continuum transfer operator.
+ \item No exact idempotence of \(Q=\Id-VW\) is assumed.  Therefore
+       \(\Maug\) is the exact block realization of the stored Feshbach
+       function, but it is not silently identified with the original
+       physical two-step discretization.  Such an identification needs an
+       exact packet-pair correction or a separate perturbation theorem.
+ \item The proof has not been repeated at the smaller stored noise scales.
+       The present Schur residual route is dense and scales cubically in
+       candidate generation, although the exact-target action remains
+       sparse-plus-low-rank.
+ \item The cluster of \(1932\) near-zero floating eigenvalues is a
+       diagnostic feature, not a theorem about exact rank or nullity.
+ \item No self-adjoint operator, prime-power trace identity,
+       \(T\log T\) counting law, zeta-zero identification,
+       Hilbert--P\'olya construction, or implication for the Riemann
+       hypothesis is obtained.
+\end{enumerate}
+
+The immediate stored-scale contour gate is now complete:
+boundary resolvent control, relative winding, and interior complement count
+are all certified.  Natural next problems lie in transferring this finite
+result rather than recounting the same matrix:
+
+\begin{enumerate}
+ \item certify an exact packet-pair correction relating the stored augmented
+       block to a chosen physical discretization;
+ \item repeat the count through a controlled sequence of smaller noise
+       scales and dimensions;
+ \item replace the dense Schur candidate by a compressed invariant-subspace
+       construction suggested by the observed low effective spectral rank;
+ \item study whether the count and the isolated stored zero persist under
+       a validated operator perturbation or double limit.
+\end{enumerate}
+
+Each item requires a new theorem.  The present count should be used as a
+finite anchor, not as a substitute for those limits.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+The previous boundary atlas reduced the open problem to one integer:
+\(N_\Gamma(B)\).  A floating spectrum suggested that the integer was zero,
+but nonnormality made that observation insufficient.  The certified Schur
+route resolves the issue without a full interval eigensolve.
+
+The key move is to demote the floating Schur decomposition from evidence to
+candidate generation.  Once the exact stored target independently encloses
+\(BZ-Z\Tref\) and \(Z^*Z-\Id\), exact similarity and the inherited resolvent
+atlas take over.  The worst boundary perturbation product is
+\(7.653\times10^{-4}\), and exact dyadic arithmetic places every triangular
+diagonal entry outside the circle.  Therefore the stored complement has no
+interior pole.
+
+This turns relative winding one into an ordinary theorem:
+the exact stored augmented block has one enclosed eigenvalue and the stored
+Feshbach determinant has one enclosed zero of multiplicity one.  The
+conclusion is finite, rigorous, and auditable.  Its value for a broader
+spectral program depends on the next bridges---packet correction, scale
+continuation, and continuum control---which remain explicitly open.
+
+\appendix
+
+\section{Blockwise certificate formulas}
+\label{app:blockwise}
+
+Let the column partition be
+\(\{1,\ldots,n\}=J_1\sqcup\cdots\sqcup J_s\), and let
+\(\mathcal B(X)\) denote the exact action \(BX\).  For each block, the
+componentwise graph returns centers and nonnegative radius arrays
+\[
+ \mathcal B(Z_{J_k})-Z(\Tref)_{J_k}
+ \in [\widehat R_k,P_k],
+\]
+meaning entrywise complex discs.  Thus
+\[
+ \norm{R_{J_k}}_F
+ \leq \norm{\widehat R_k}_F+\norm{P_k}_F=:r_k.
+\]
+The exact Frobenius identity for a column partition gives
+\[
+ \norm{R}_F^2=\sum_{k=1}^s\norm{R_{J_k}}_F^2
+ \leq\sum_{k=1}^s r_k^2.
+\]
+All norms and the sum of squares are rounded outward.  The same argument
+applies to the Gram defect blocks.
+
+For the archived run, the eight residual block bounds are
+\[
+\begin{array}{cccc}
+3.462{\times}10^{-10},&
+3.536{\times}10^{-10},&
+3.392{\times}10^{-10},&
+3.316{\times}10^{-10},\\
+3.327{\times}10^{-10},&
+3.381{\times}10^{-10},&
+3.393{\times}10^{-10},&
+3.201{\times}10^{-10}.
+\end{array}
+\]
+Their outward Euclidean combination is the \(\rho_F\) reported in
+\cref{tab:certificate}.
+
+\section{Exact circle test}
+\label{app:circle-test}
+
+Python's exact binary64 conversion maps a finite float to the unique
+rational represented by its sign, significand, and power-of-two exponent.
+For each diagonal entry, the implementation forms the exact fractions
+\[
+ a_j=\frac{A_j}{2^{\alpha_j}},\quad
+ b_j=\frac{B_j}{2^{\beta_j}},\quad
+ c_x=\frac{C_x}{2^{\gamma_x}},\quad
+ c_y=\frac{C_y}{2^{\gamma_y}},\quad
+ r=\frac{R}{2^\rho}.
+\]
+Clearing powers of two in \cref{eq:dyadic-margin} reduces the classification
+to the sign of one integer.  No transcendental evaluation of the contour
+parameter is needed because the reference spectrum is compared directly
+with the circle.
+
+\section{Reproduction}
+\label{app:reproduction}
+
+From this paper directory, the compact archive and figure are rebuilt by
+\begin{verbatim}
+PYTHONDONTWRITEBYTECODE=1 python -m pytest -q -p no:cacheprovider
+PYTHONDONTWRITEBYTECODE=1 python experiments/build_archive.py
+MPLBACKEND=Agg python experiments/make_figures.py
+python experiments/verify_archive.py
+\end{verbatim}
+The full Schur candidate and exact-target residual certificate are rebuilt
+by
+\begin{verbatim}
+OPENBLAS_NUM_THREADS=32 OMP_NUM_THREADS=32 \
+PYTHONDONTWRITEBYTECODE=1 python \
+  experiments/run_schur_similarity_certificate.py \
+  --sigma 0.01 --chunk-size 256
+\end{verbatim}
+For a local repeat with the ignored Schur workspace, append
+\texttt{--reuse-workspace}.  The formal manuscript is compiled with
+\begin{verbatim}
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+\end{verbatim}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

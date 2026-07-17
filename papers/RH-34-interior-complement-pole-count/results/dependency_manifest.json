@@ -1,0 +1,67 @@
+{
+  "inputs": {
+    "rh28_arcwise_scale_summary": {
+      "path": "papers/RH-28-arcwise-rational-arnoldi-enclosure/results/arcwise_scale_summary.csv",
+      "sha256": "05c37d3be3fabdc936e0575e2a6ad6e7b0cf1fd4f0f59db5155cf93d7fd0086c"
+    },
+    "rh33_refined_leaf_ledger": {
+      "path": "papers/RH-33-certified-complement-resolvent-atlas/results/refined_atlas_sigma_1e-02_leaves.csv",
+      "sha256": "7396a429a1d606fa3e24ce2800eb65d05382ec2d2202f8f5cfbcc23aa87ef6dd"
+    },
+    "rh33_summary": {
+      "path": "papers/RH-33-certified-complement-resolvent-atlas/results/summary.json",
+      "sha256": "7e5f21a170808f5c4402c69e7176752563c058233413b905792001db1e6184b7"
+    }
+  },
+  "sources": {
+    "rh24_physical_model": {
+      "path": "papers/RH-24-contour-feshbach-root-count/experiments/run_contour_feshbach_audit.py",
+      "sha256": "fc46fcdd06d5278bd1293a1a78f751d5ce1472d308d9c0307611a835d720e9d1"
+    },
+    "rh25_environment_builder": {
+      "path": "papers/RH-25-directional-rouche-closure/experiments/run_global_resolvent_probe.py",
+      "sha256": "978e16052baa9955f72a1be3273af2ec360d3be4031f7039fe45362777471157"
+    },
+    "rh27_componentwise_arithmetic": {
+      "path": "papers/RH-27-outward-rounded-primal-dual-residuals/src/outward_residuals/componentwise.py",
+      "sha256": "d18de48af4c56428e477e489a69cc21df76fd20d8c628aced89895bb0c8b5a8b"
+    },
+    "rh27_componentwise_factor_graph": {
+      "path": "papers/RH-27-outward-rounded-primal-dual-residuals/src/outward_residuals/componentwise_graph.py",
+      "sha256": "43d13e8c2589fbb9731e705a4e52752292caa842978b4f39948020853e939ba5"
+    },
+    "rh27_norm_enclosures": {
+      "path": "papers/RH-27-outward-rounded-primal-dual-residuals/src/outward_residuals/enclosures.py",
+      "sha256": "e159f744c539b485fe126aa22d1822c6f80e570cdfaf27d753aa899b4e43a49e"
+    },
+    "rh33_atlas_verification": {
+      "path": "papers/RH-33-certified-complement-resolvent-atlas/src/resolvent_atlas/archive.py",
+      "sha256": "e4a9299fe0954ae2ee003a2b65626aced06675fac928d951de7410c3620aea73"
+    },
+    "rh34_archive_builder": {
+      "path": "papers/RH-34-interior-complement-pole-count/experiments/build_archive.py",
+      "sha256": "468a19affe14b9f2d2eeddce9282aa51061f2e432f7ac3439e414aa6be67ccff"
+    },
+    "rh34_archive_verifier": {
+      "path": "papers/RH-34-interior-complement-pole-count/experiments/verify_archive.py",
+      "sha256": "3eadb6f57bfd36b90f6c3460fcef6fe52f17922d6b5f0cb5788abfb34fd6c6cc"
+    },
+    "rh34_certificate_core": {
+      "path": "papers/RH-34-interior-complement-pole-count/src/complement_poles/certificate.py",
+      "sha256": "d0f60abbe3546d2edb0c3e5b9fdf8c604c5e68a741394786818c49e551a148fc"
+    },
+    "rh34_certificate_driver": {
+      "path": "papers/RH-34-interior-complement-pole-count/experiments/run_schur_similarity_certificate.py",
+      "sha256": "b93c6398a2ed3229f91e0295f8615b098b829cc9af4eecec6b3e4589eaeb8b5e"
+    },
+    "rh34_figure_builder": {
+      "path": "papers/RH-34-interior-complement-pole-count/experiments/make_figures.py",
+      "sha256": "8fccee32743d19a5010e0d4566178cc4b868bb80d8e313ef9d8d3d6e932aa71f"
+    },
+    "rh34_floating_pilot": {
+      "path": "papers/RH-34-interior-complement-pole-count/experiments/run_full_complement_spectrum_pilot.py",
+      "sha256": "9a1f20401f4deabb32f293dff4fd976c08f809d411f740d6b8f5f4e2e47860eb"
+    }
+  },
+  "status": "all_consumed_inputs_and_sources_hashed"
+}
