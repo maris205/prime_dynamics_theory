@@ -1,0 +1,193 @@
+\section{Sharp interface obstructions and a primitive witness}
+\label{sec:tpc32-obstructions}
+
+The preceding mean-square estimate is nearly sufficient numerically, but
+it cannot select the coefficient $r=0$.  We give two exact models showing
+that this failure is structural at the current interface rather than an
+artifact of a loose inequality.
+
+\subsection{A flat determinant signal}
+
+\begin{proposition}[Perfect nonzero-frequency cancellation does not control
+zero]
+\label{prop:tpc32-flat-signal}
+Let $q$ be prime and let $I$ consist of $q$ consecutive integers.  Define
+\begin{equation}
+ A(n)=\frac{N_0}{q}\one_{n\in I}.
+ \label{eq:tpc32-flat-signal}
+\end{equation}
+Then
+\begin{equation}
+ \|A\|_1=N_0,
+ \qquad
+ \|A\|_\infty=\frac{N_0}{q},
+ \qquad
+ \|A\|_2^2=\frac{N_0^2}{q},
+ \label{eq:tpc32-flat-signal-norms}
+\end{equation}
+but its $q$-point determinant transform satisfies
+\begin{equation}
+ |\widehat A(0)|=N_0,
+ \qquad
+ \widehat A(r)=0\quad(1\le r<q).
+ \label{eq:tpc32-flat-signal-dft}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The norm formulas are immediate.  The consecutive integers in $I$ form a
+complete residue system modulo $q$, so
+\[
+ \widehat A(r)=\frac{N_0}{q}
+ e_q(-rn_0)\sum_{a=0}^{q-1}e_q(-ra).
+\]
+The geometric sum is $q$ for $r=0$ and zero otherwise.
+\end{proof}
+
+Taking $q\asymp Q$, \eqref{eq:tpc32-flat-signal-norms} saturates the
+$\ell^1$, $\ell^\infty$, and $\ell^2$ scales available for $A_C$.  Thus
+those three norms, the support length, and even exact vanishing of every
+nonzero Fourier coefficient cannot imply any positive flatness saving at
+zero.  This is an abstract interface countermodel; it is not a lower bound
+for the physical M\"obius shell.
+
+\subsection{The coherent mode of the content projector}
+
+For positive integers $N_1,\ldots,N_M$, define
+\begin{equation}
+ P_C(i,j)=\one_{(N_i,N_j)\le C}.
+ \label{eq:tpc32-content-matrix}
+\end{equation}
+The content-projector identity gives the exact signed rank-one expansion
+\begin{equation}
+ P_C=\sum_{t\ge1}\lambda_C(t)v_tv_t^{\mathsf T},
+ \qquad
+ v_t(i)=\one_{t\mid N_i}.
+ \label{eq:tpc32-content-rank-one-expansion}
+\end{equation}
+The coefficients are signed, so this is not a positive-semidefinite
+decomposition.
+
+\begin{proposition}[A coherent constant-row mode]
+\label{prop:tpc32-coherent-content}
+If the $N_i$ are pairwise coprime and $N_i>C$ for every $i$, then
+\begin{equation}
+ P_C=\mathbf J_M-I_M.
+ \label{eq:tpc32-J-minus-I}
+\end{equation}
+Its spectrum is
+\begin{equation}
+ M-1,\qquad -1\ \text{with multiplicity }M-1,
+ \label{eq:tpc32-J-minus-I-spectrum}
+\end{equation}
+and
+\begin{equation}
+ \|P_C\|_{2\to2}=M-1,
+ \qquad
+ \operatorname{srank}(P_C)
+ :=\frac{\|P_C\|_{F}^{2}}{\|P_C\|_{2\to2}^{2}}
+ =\frac{M}{M-1}.
+ \label{eq:tpc32-J-minus-I-stable-rank}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For $i\ne j$, pairwise coprimality gives $(N_i,N_j)=1\le C$; on the
+diagonal $(N_i,N_i)=N_i>C$.  This proves \eqref{eq:tpc32-J-minus-I}.
+The all-ones vector has eigenvalue $M-1$, and its orthogonal complement has
+eigenvalue $-1$.  Finally,
+$\|P_C\|_F^2=M(M-1)$, giving
+\eqref{eq:tpc32-J-minus-I-stable-rank}.
+\end{proof}
+
+The stable rank being close to one is not a gain here: it records that one
+coherent direction dominates the operator.  In particular, restricting to
+small canonical content is not a row-centering operation.
+
+\subsection{A finite primitive realization}
+
+The coherent model occurs inside the actual arithmetic interface.  Take
+\begin{equation}
+ h=2,
+ \quad j=1,
+ \quad d=1,
+ \quad R=12,
+ \quad T=50,
+ \quad U_0=200,
+ \quad C=30,
+ \label{eq:tpc32-witness-parameters}
+\end{equation}
+and the prime rows
+\begin{equation}
+ 59,71,101,107,137,149,179,191,197.
+ \label{eq:tpc32-witness-rows}
+\end{equation}
+Their targets $m+2$ are respectively
+\begin{equation}
+ 61,73,103,109,139,151,181,193,199,
+ \label{eq:tpc32-witness-targets}
+\end{equation}
+which are distinct primes exceeding $C$.  Hence the $9\times9$ content
+matrix is $\mathbf J_9-I_9$, with spectrum $8,-1,\ldots,-1$ and stable
+rank $9/8$.
+
+For completeness, the finite Ramanujan-model divisor coefficient is
+\begin{equation}
+ \lambda'_R(u)
+ =u\sum_{b\le R/u}\frac{\mu(ub)\mu(b)}{\varphi(ub)}
+ \qquad(u\le R).
+ \label{eq:tpc32-lambda-prime}
+\end{equation}
+At $R=12$,
+\begin{equation}
+ \lambda'_{12}(1)
+ =\sum_{b\le12}\frac{\mu(b)^2}{\varphi(b)}
+ =\frac{113}{30}.
+ \label{eq:tpc32-lambda-113}
+\end{equation}
+Since each target in \eqref{eq:tpc32-witness-targets} is prime and lies in
+$(T,U_0]$, its prefix and ultra increment are
+\begin{equation}
+ \mathsf A_{m,50}=-\frac{113}{30},
+ \qquad
+ C_m=\log(m+2).
+ \label{eq:tpc32-witness-prefix-tail}
+\end{equation}
+For two distinct witness rows with targets $p_i,p_j$, the sum of the three
+raw channels is therefore the formal prime-log polynomial
+\begin{equation}
+ \boxed{
+ \log p_i\log p_j
+ -\frac{113}{30}(\log p_i+\log p_j).}
+ \label{eq:tpc32-witness-polynomial}
+\end{equation}
+Its coefficient of $\log p_i\log p_j$ is one, so there is no universal
+algebraic annihilation among the three channels.
+
+This finite realization certifies the algebraic interface only.  Although
+the displayed rows happen to be members of a finite list of prime pairs at
+gap two, their presence proves neither a growing lower bound nor any
+asymptotic statement about twin primes.  It also does not prove that the
+physical shell has a coherent main term; cancellation from the remaining
+row coefficients and phases is still possible.
+
+\subsection{The arbitrary-mask obstruction}
+
+Low rank in divisor variables does not survive an uncontrolled conclusion
+about the row operator.  Given any finite kernel $K_{\alpha,\gamma}$, an
+entrywise bounded mask may be chosen to align its phases, for example
+\begin{equation}
+ \mathfrak m(\alpha,\gamma)=
+ \begin{cases}
+  \overline{K_{\alpha,\gamma}}/|K_{\alpha,\gamma}|,
+    &\alpha\ne\gamma\text{ and }K_{\alpha,\gamma}\ne0,\\
+  0,&\alpha=\gamma\text{ or }K_{\alpha,\gamma}=0.
+ \end{cases}
+ \label{eq:tpc32-sign-mask}
+\end{equation}
+Then the masked off-diagonal scalar sum is
+$\sum_{\alpha\ne\gamma}|K_{\alpha,\gamma}|$.  Therefore no
+theorem uniform over all entrywise bounded pair masks can deduce signed
+cancellation from the matched rank-two identity alone.  The actual mask
+may have additional structure, but that structure must be stated and
+quantified rather than inferred from \eqref{eq:tpc32-mask-bound}.

@@ -1,0 +1,204 @@
+\section{Introduction and route ledger}
+\label{sec:tpc32-introduction}
+
+The primitive M\"obius-tail programme has reached a sharply localized
+analytic question.  The preceding reductions first preserved the four
+prime/model channels long enough to recombine their divisor coefficients,
+then returned from a selected cutoff to the full physical cutoff, and
+finally removed target pairs with large common content
+\citep{WangTPC19,WangTPC20,WangTPC25,WangTPC29,WangTPC30}.  TPC-31
+introduced the factorization-independent coordinates
+\begin{equation}
+ N_m(j)=mj+h,
+ \qquad
+ c=(N_m(j),N_n(j)),
+ \qquad
+ \Delta^\#=\frac{m-n}{c},
+ \label{eq:tpc32-intro-canonical}
+\end{equation}
+and proved fixed-power estimates for individual translated windows and
+residue cells of $\Delta^\#$ \citep{WangTPC31}.  Absolute reassembly of all
+cells, however, returns the original shell.  Equivalently, the untwisted
+sum is the zero coefficient of an auxiliary finite Fourier transform.
+
+The purpose of this paper is to determine exactly how much of that Fourier
+problem follows from the available physical estimates, and exactly what
+new input is still missing.  Three features must remain visible at the
+same time:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item the two mixed cutoff channels and the both-ultra channel have to be
+ matched before absolute values are taken;
+ \item the outer M\"obius sign on an opened row has to be fused with the
+ reflected divisor sign;
+ \item the auxiliary determinant phase may be separated row by row, but
+ the actual pair mask must remain a joint multiplier unless a controlled
+ projective decomposition has been proved.
+\end{enumerate}
+Keeping these three points produces a rank-two algebraic core and an exact
+determinant-frequency representation.  The resulting mean-square theorem
+is strong enough on average, and at every frequency outside a power-small
+exceptional set.  What remains is a single distinguished coefficient.
+
+\subsection{The unconditional results}
+
+Write
+\begin{equation}
+ Q=X^{\beta+o(1)},
+ \qquad
+ J=X^{1-\beta+o(1)},
+ \qquad
+ QJ\asymp X,
+ \qquad
+ N_0=JQ^2\asymp XQ.
+ \label{eq:tpc32-intro-scales}
+\end{equation}
+The inherited prefix $\mathsf A_{m,T}$ and ultra increment $C_m$ obey
+the exact pointwise recombination
+\begin{equation}
+ \mathsf A_{m,T}C_n+C_m\mathsf A_{n,T}+C_mC_n
+ =\mathsf A_{m,U_0}\mathsf A_{n,U_0}
+  -\mathsf A_{m,T}\mathsf A_{n,T}.
+ \label{eq:tpc32-intro-shell}
+\end{equation}
+Thus the divisor-coefficient matrix is the difference of two rank-one
+tensors.  This low rank is an exact matching statement, not a cancellation
+estimate: a rank-one tensor may carry the entire coherent mass.
+
+There is also an exact arithmetic factorization.  For every $C,q\ge1$ and
+$r\pmod q$,
+\begin{align}
+ &\one_{(N_m,N_n)\le C}
+ e_q\!\left(-r\frac{m-n}{(N_m,N_n)}\right)
+ \notag\\
+ &\qquad=
+ \sum_{c\le C}\sum_{k\ge1}\mu(k)
+ \one_{ck\mid N_m}\one_{ck\mid N_n}
+ e_{cq}\!\left(-r(m-n)\right).
+ \label{eq:tpc32-intro-content-factorization}
+\end{align}
+The sum is finite.  Its phase splits as
+$e_{cq}(-rm)e_{cq}(rn)$, with no assumption that $(c,q)=1$.
+Together with \eqref{eq:tpc32-intro-shell}, this gives a factorable row
+core with the full joint physical multiplier retained.
+
+Let $A_C(n)$ be the signed amplitude of the matched three-channel shell
+with canonical content at most $C$ and normalized determinant $n$.  The
+TPC-31 singleton-cell estimate and total absolute mass imply, for
+$C\le J$ and $C\ll_{\mathscr D}Q$,
+\begin{equation}
+ \|A_C\|_1\ll X^\eps N_0,
+ \qquad
+ \|A_C\|_\infty\ll X^\eps Q(C+J),
+ \qquad
+ \|A_C\|_2^2\ll X^\eps\frac{N_0^2}{Q}.
+ \label{eq:tpc32-intro-norms}
+\end{equation}
+A prime modulus larger than the determinant span eliminates residue
+collisions, so Parseval is an identity for the physical determinant
+amplitudes, not merely for grouped residue classes.  It follows that
+\begin{equation}
+ \#\{r\pmod q:|\widehat A_{C,q}(r)|>N_0X^{-\sigma}\}
+ \ll X^{2\sigma+\eps}.
+ \label{eq:tpc32-intro-exceptional}
+\end{equation}
+The classical additive large sieve gives the analogous statement over
+reduced rational frequencies.  No spectral large sieve or unproved
+M\"obius hypothesis enters these conclusions.
+
+\subsection{The distinguished zero-frequency gate}
+
+Define
+\begin{equation}
+ \lambda_C(t)=\sum_{\substack{c\mid t\\c\le C}}\mu(t/c).
+ \label{eq:tpc32-intro-projector}
+\end{equation}
+Then
+\begin{equation}
+ \one_{(N_m,N_n)\le C}
+ =\sum_{t\mid N_m,\ t\mid N_n}\lambda_C(t),
+ \label{eq:tpc32-intro-projector-identity}
+\end{equation}
+while $\lambda_C(1)=1$ and, for $g=(N_m,N_n)$,
+\begin{equation}
+ \sum_{\substack{t\mid g\\t>1}}\lambda_C(t)
+ =-\one_{g>C}.
+ \label{eq:tpc32-intro-projector-reassembly}
+\end{equation}
+Thus the unit-divisor term is the untwisted full-content shell, and every
+nonunit projector term together is exactly minus the large-content
+correction already treated in TPC-30.  The cell decomposition does not
+center the coefficient needed by the original problem.
+
+To quantify the remaining input, we introduce a zero-frequency flatness
+exponent $\chi$ through
+\begin{equation}
+ |\widehat A_{C,q}(0)|^2
+ \le X^{\chi+o(1)}\sum_n|A_C(n)|^2.
+ \label{eq:tpc32-intro-flatness}
+\end{equation}
+This is a hypothesis, not a conclusion of the paper.  If
+$C=X^{\kappa+o(1)}\le J$ and $C\ll_{\mathscr D}Q$, the exact transfer theorem
+gives every saving exponent strictly below
+\begin{equation}
+ \min\left\{1-\beta,\ \kappa,\ \frac{\beta-\chi}{2}\right\}.
+ \label{eq:tpc32-intro-transfer-margin}
+\end{equation}
+At
+\begin{equation}
+ \beta=\frac{267}{400},
+ \qquad
+ C=\lfloor J\rfloor=X^{133/400+o(1)},
+ \label{eq:tpc32-intro-high-beta}
+\end{equation}
+the precise threshold for recovering every saving below $133/400$ is
+\begin{equation}
+ \boxed{\chi\le\frac1{400}.}
+ \label{eq:tpc32-intro-one-over-four-hundred}
+\end{equation}
+Unconditionally, all but an $X^{-1/400+o(1)}$ proportion of determinant
+frequencies already meet the target scale.  The theorem needed by the
+remaining hard raw component of the original calibrated residual is the
+assertion that the special frequency $r=0$ is not in that exceptional set,
+after the inherited large-content and drift terms are separated.
+
+\subsection{Why this is a genuine new gate}
+
+The interface obstruction is sharp.  A constant signal on one complete
+residue system has the norm bounds in \eqref{eq:tpc32-intro-norms}, has
+zero Fourier transform at every nonzero frequency, and nevertheless has
+maximal zero coefficient.  Likewise, the small-content projector on
+pairwise coprime targets is the matrix $\mathbf J-I$; it retains the
+constant-row direction with eigenvalue of order the number of rows.
+Therefore support length, $\ell^1/\ell^\infty/\ell^2$ control, low rank,
+and nonzero-frequency cancellation cannot by themselves prove
+\eqref{eq:tpc32-intro-one-over-four-hundred}.
+
+Opening one reflected ultra leg exposes the next arithmetic object.  A
+divisibility condition parametrizes the row variable by one progression,
+and the two M\"obius signs become a correlation of two nonproportional
+affine forms.  Classical one-frequency M\"obius estimates do not estimate
+that correlation, while known logarithmically averaged two-point results
+do not provide the uniform polynomial-scale physical estimate required
+here.  This identifies a concrete next problem without asserting that an
+existing theorem closes it.
+
+The conclusions of this paper are therefore deliberately asymmetric.  We
+prove the matched factorization, the almost-all-frequency theorem, the
+exact zero-frequency transfer, and the sharp no-go models.  We do not prove
+the flatness hypothesis, a full residual estimate, a Hardy--Littlewood
+main term, positivity of a prime-pair count, the twin-prime conjecture, or
+a breach of the sieve parity barrier \citep{HeathBrown1982Parity}.
+
+\subsection{Organization}
+
+The inherited packet and exact cutoff shell are recorded in
+\cref{sec:tpc32-physical-shell}.  Exact content factorization and the
+content projector are developed in \cref{sec:tpc32-canonical-factorization}.
+The actual prime--M\"obius sign and the joint-mask boundary are treated in
+\cref{sec:tpc32-prime-mobius}.  Determinant dispersion and zero-frequency
+transfer occupy
+\cref{sec:tpc32-determinant-dispersion,sec:tpc32-zero-frequency-gate},
+followed
+by the high-$\beta$ ledger.  The two sharp interface models and the
+primitive finite witness appear in \cref{sec:tpc32-obstructions}.
+We finish with the next affine-M\"obius gate and the exact certificate.

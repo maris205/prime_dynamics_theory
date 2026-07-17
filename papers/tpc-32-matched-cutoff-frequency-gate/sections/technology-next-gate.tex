@@ -1,0 +1,118 @@
+\section{Technology comparison and the next affine--M\"obius gate}
+\label{sec:tpc32-next-gate}
+
+The exact identities above expose several familiar analytic forms, but none
+of the cited technologies accepts the complete physical coefficient without
+an additional argument.  We record the boundary to prevent a formal
+rearrangement from being mistaken for a cancellation theorem.
+
+\subsection{One M\"obius sign versus two affine signs}
+
+Classical uniform bounds of Davenport type estimate a single oscillatory
+M\"obius sum
+\begin{equation}
+ \sum_{d\asymp D}\mu(d)\omega(d)e(\theta d)
+ \label{eq:tpc32-davenport-form}
+\end{equation}
+with arbitrary logarithmic saving when $D$ is a polynomial scale and
+$\omega$ has controlled smoothness; see, for example,
+\citet[Chapter~13]{IwaniecKowalski2004}.  Fixed-period characters and
+Mellin phases can be included without changing the essential one-variable
+form.  This is useful for a bare row coefficient, but opening a reflected
+ultra leg changes the arithmetic problem.
+
+Fix $\ell,j$ and a reflected divisor $s$ on primitive support.  The
+condition
+\begin{equation}
+ s\mid \ell dj+h
+ \label{eq:tpc32-reflected-divisibility}
+\end{equation}
+has a unique solution $d\equiv d_0\pmod s$, because
+$(s,\ell j)=1$.  Write $d=d_0+st$.  The complementary quotient is
+\begin{equation}
+ U(t)=\frac{\ell j(d_0+st)+h}{s}
+ =u_\star+\ell jt,
+ \qquad
+ u_\star=\frac{\ell jd_0+h}{s},
+ \label{eq:tpc32-affine-quotient}
+\end{equation}
+and the two affine forms satisfy the nondegeneracy identity
+\begin{equation}
+ \boxed{su_\star-\ell jd_0=h\ne0.}
+ \label{eq:tpc32-affine-determinant}
+\end{equation}
+After the exact sign fusion, a typical opened coefficient contains
+\begin{equation}
+ \mu(d_0+st)\mu(u_\star+\ell jt).
+ \label{eq:tpc32-affine-mobius-correlation}
+\end{equation}
+This is a two-point affine M\"obius correlation, not the one-sign sum
+\eqref{eq:tpc32-davenport-form}.
+
+Logarithmically averaged two-point Chowla--Elliott theorems control fixed
+nonproportional affine forms in an averaged regime \citep{Tao2016}.  The
+physical packet here asks additionally for uniformity as $s,\ell,j$ and the
+affine coefficients grow polynomially, for dyadic rather than logarithmic
+averaging, for fixed residue factors, and for reassembly over all rows and
+cutoffs.  We do not claim that the existing theorem supplies this package.
+
+\subsection{Spectral and Kloosterman technology}
+
+Bilinear and trilinear estimates for Kloosterman fractions can yield strong
+cancellation once the variables, moduli, smooth weights, and coefficient
+norms match the hypotheses of the relevant theorem
+\citep{DukeFriedlanderIwaniec1997,BettinChandee2018}.  Modern exceptional
+spectral large sieves provide further gains in carefully structured
+families \citep{Pascadi2026LargeSieve}.  In the present shell, however, the
+modulus is tied to reflected target divisors, the prime--M\"obius
+coefficient depends on a moving factorization, and the generic pair mask is
+still joint.  No parameter ledger in this paper verifies the hypotheses of
+one of those stronger estimates.  They are possible technologies for a
+future refined packet, not black boxes used in our theorems.
+
+\subsection{A concrete next target}
+
+The conditional transfer theorem reduces a high-$\beta$ closure of the raw
+shell to the exact boundary $\chi\le1/400$.  A robust route with a fixed
+margin is to
+prove, for the actual physical amplitude and $C\asymp J$, a power-saving
+estimate of the form
+\begin{equation}
+ \left|\sum_nA_C(n)\right|^2
+ \ll X^{1/400-\eta}\sum_n|A_C(n)|^2
+ \label{eq:tpc32-next-flatness-target}
+\end{equation}
+for some fixed $\eta>0$.  A viable proof would have to exploit information
+absent from the abstract norm interface, such as:
+\begin{enumerate}[label=\textup{(\alph*)}]
+ \item cancellation in the affine correlation
+ \eqref{eq:tpc32-affine-mobius-correlation} uniform over a controlled
+ subfamily;
+ \item a projective or operator-norm decomposition of the actual pair mask;
+ \item an additional centering identity that annihilates the coherent
+ determinant mode before absolute reassembly; or
+ \item a decomposition into spectral/Kloosterman ranges with a complete
+ conductor and norm ledger.
+\end{enumerate}
+Each option can be tested independently.  Failure of one does not refute
+the others, and a sharp impossibility result for any proposed interface
+would itself refine the route map.
+
+For the full calibrated cutoff difference, the two drift legs also impose
+the inherited saving $L^{-1}$; hence any final exponent must be intersected
+with the fixed prime-source margin.  Even a proof of
+\eqref{eq:tpc32-next-flatness-target} would close only this residual packet.
+It would not by itself supply positivity, undo all earlier reductions, or
+prove a prime-pair theorem.
+
+\subsection{Scope of the advance}
+
+The advance in this paper is that the determinant-frequency route no longer
+ends at the vague instruction ``control the zero mode.''  It proves that
+ordinary determinant frequencies already have the required size outside a
+power-small exceptional set, identifies the remaining hard raw component of
+the original calibrated residual with one special member of that set,
+quantifies the exact additional flatness needed, and
+shows that the current Hilbert-space data cannot force it.  The remaining
+door is narrow, but it is still an open analytic estimate rather than a
+claimed consequence of the existing large sieve.

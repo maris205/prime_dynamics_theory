@@ -1,0 +1,167 @@
+\section{Prime--M\"obius leg fusion and the joint-mask boundary}
+\label{sec:tpc32-prime-mobius}
+
+The factorization of the cutoff shell becomes useful only if the actual
+opened-row coefficient is retained.  We now restore that provenance and
+separate what is algebraically exact from what would require a new norm
+estimate.
+
+\subsection{The physical row coefficient}
+
+For $i\in\{1,2\}$, a row is $\alpha=(\ell,d)$ with
+\begin{equation}
+ \ell\asymp L\ \text{prime},
+ \qquad
+ d\asymp D\ \text{squarefree},
+ \qquad
+ (d,H)=1,
+ \qquad
+ m_\alpha=\ell d\asymp Q,
+ \label{eq:tpc32-row-provenance-fusion}
+\end{equation}
+and has coefficient
+\begin{equation}
+ \gamma_\alpha^{(i)}
+ =\mu(d)(\log\ell)\omega_D^{(i)}(d)
+   \psi_L^{(i)}(\ell/L)\zeta_\alpha^{(i)}.
+ \label{eq:tpc32-gamma}
+\end{equation}
+Here the $\omega_D^{(i)}$ and $\psi_L^{(i)}$ range over fixed bounded
+smooth families and $\zeta_\alpha^{(i)}$ contains fixed-period characters
+or phases.  The inherited estimates are
+\begin{equation}
+ \sum_\alpha|\gamma_\alpha^{(i)}|\ll Q,
+ \qquad
+ \sum_\alpha|\gamma_\alpha^{(i)}|^2\ll Q\log(2L).
+ \label{eq:tpc32-row-masses}
+\end{equation}
+These bounds use Chebyshev's estimate for the prime source and are stronger
+than replacing every logarithm by $X^\eps$ \citep{WangTPC25}.
+
+Recall the squarefree divisor coefficient
+\begin{equation}
+ b_R(w)=-\mu(w)w_R(w),
+ \label{eq:tpc32-bR-squarefree}
+\end{equation}
+where
+\begin{equation}
+ w_R(w)=\log w+\one_{w\le R}\frac{w}{\varphi(w)}
+ \sum_{\substack{a\le R/w\\(a,w)=1}}
+ \frac{\mu(a)^2}{\varphi(a)}
+ \label{eq:tpc32-wR-fusion}
+\end{equation}
+on squarefree $w$; both sides of \eqref{eq:tpc32-bR-squarefree} vanish off
+the inherited squarefree support.  For $w>T\ge R$ this reduces to
+\begin{equation}
+ b_R(w)=a(w)=-\mu(w)\log w.
+ \label{eq:tpc32-ultra-a}
+\end{equation}
+
+\begin{lemma}[Primitive one-leg sign fusion]
+\label{lem:tpc32-leg-fusion}
+Suppose that $w\mid m_\alpha j+h$ on the primitive physical support.
+Then $(w,d)=1$, and
+\begin{equation}
+ \boxed{
+ \gamma_\alpha^{(i)}b_R(w)
+ =-\mu(dw)(\log\ell)\omega_D^{(i)}(d)
+   \psi_L^{(i)}(\ell/L)\zeta_\alpha^{(i)}w_R(w).}
+ \label{eq:tpc32-leg-fusion}
+\end{equation}
+In the ultra range $w>T$,
+\begin{equation}
+ \mu(d)a(w)=-\mu(dw)\log w.
+ \label{eq:tpc32-ultra-leg-fusion}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If a prime $p$ divided both $w$ and $d$, then it would divide
+$m_\alpha=\ell d$ and $m_\alpha j+h$, hence $p\mid h$.  This contradicts
+$(d,H)=1$, because $H=\operatorname{rad}|h|$.  Thus $(w,d)=1$.
+The divisor coefficient is squarefree-supported, and $d$ is squarefree, so
+multiplicativity gives $\mu(d)\mu(w)=\mu(dw)$.  Substitute
+\eqref{eq:tpc32-bR-squarefree} into \eqref{eq:tpc32-gamma};
+\eqref{eq:tpc32-ultra-leg-fusion} follows from
+\eqref{eq:tpc32-ultra-a}.
+\end{proof}
+
+One may consequently write a cutoff row signal schematically as
+\begin{align}
+ \cT_W^{(i)}(j)
+ ={}&-\sum_{\ell,d}\sum_{\substack{w\le W\\w\mid\ell dj+h}}
+ \mu(dw)(\log\ell)w_R(w)
+ \omega_D^{(i)}(d)\psi_L^{(i)}(\ell/L)
+ \zeta_{\ell,d}^{(i)}\Phi_{\ell,d}^{(i)}(j)
+ \notag\\
+ &\quad+\text{the calibrated drift},
+ \label{eq:tpc32-one-row-signal}
+\end{align}
+where $\Phi$ retains the actual fixed-residue and smooth physical factors.
+Changing variables to $n=dw$ makes the outer sign a single $\mu(n)$, but
+the inner coefficient still contains the factorization $n=dw$, the prime
+source $\ell$, and the congruence $w\mid\ell dj+h$.  Thus
+\eqref{eq:tpc32-one-row-signal} is a prime--M\"obius normal form, not a
+claim that the resulting coefficient is well-factorable in the technical
+sieve-theoretic sense.
+
+\subsection{What the smooth and residue factors permit}
+
+Fixed-period masks have a finite Fourier expansion of bounded total mass.
+The smooth factors have an absolutely convergent Mellin projective
+representation; after the actual row coefficients have been included, its
+weighted projective $\ell^1$ mass is $O(Q^2)$ and its energy mass is
+$O(Q\log(2L))$ \citep{WangTPC25}.  Consequently these specific factors may
+be separated and reassembled without introducing an $X^\eps$ projective
+loss.
+
+The generic row-pair mask is different.  Write the full joint multiplier as
+\begin{equation}
+ \mathfrak A_{\alpha,\gamma}(j)
+ =\mathfrak m(\alpha,\gamma)
+   \Xi_{\alpha,\gamma}(j)
+   \cW_{\alpha,\gamma}(j/J).
+ \label{eq:tpc32-joint-multiplier-boundary}
+\end{equation}
+The inherited abstract interface assumes only
+\begin{equation}
+ |\mathfrak m(\alpha,\gamma)|\le1,
+ \qquad
+ \mathfrak m(\alpha,\gamma)=0
+ \quad\text{when }m_\alpha=m_\gamma.
+ \label{eq:tpc32-mask-bound}
+\end{equation}
+Entrywise multiplication by such a matrix need not preserve positivity,
+rank, or spectral norm.  Accordingly, the exact formula in
+\cref{sec:tpc32-canonical-factorization} is a factorable row core with
+\eqref{eq:tpc32-joint-multiplier} retained; it is not an unqualified product
+of two row sums.
+
+\begin{definition}[Controlled projective multiplier]
+\label{def:tpc32-projective-multiplier}
+We say that $\mathfrak A$ has projective cost $\mathfrak P$ on a fixed
+physical packet if it admits a representation
+\begin{equation}
+ \mathfrak A_{\alpha,\gamma}(j)
+ =\int_\Omega p_{\omega,j}(\alpha)q_{\omega,j}(\gamma)
+ \,d\nu(\omega)
+ \label{eq:tpc32-projective-decomposition}
+\end{equation}
+whose required row norms and orbit seminorms integrate to at most
+$\mathfrak P$.
+\end{definition}
+
+Under \eqref{eq:tpc32-projective-decomposition}, each bilinear core may be
+written as an integral of products of row sums and any estimate uniform in
+the displayed seminorms may be reassembled with cost $\mathfrak P$.
+Finite-dimensional singular-value decomposition alone does not give the
+needed theorem: its projective norm may be as large as the obstacle scale.
+No controlled decomposition for the generic pair mask is asserted here.
+
+\begin{remark}[Two different factorization statements]
+The cutoff coefficient has algebraic rank at most two in the divisor
+variables.  The pair mask is a Schur multiplier in the row variables.
+These are independent statements.  Low divisor rank does not remove an
+arbitrary joint row multiplier, and bounded entries do not imply bounded
+Schur or projective norm.
+\end{remark}

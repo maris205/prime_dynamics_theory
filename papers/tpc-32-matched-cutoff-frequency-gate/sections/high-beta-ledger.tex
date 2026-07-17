@@ -1,0 +1,244 @@
+\section{\texorpdfstring{The high-\(\beta\) ledger and the \(1/400\)
+gate}{The high-beta ledger and the 1/400 gate}}
+\label{sec:tpc32-high-beta-ledger}
+
+We now specialize the preceding unconditional and conditional statements
+to the high-row-scale packet inherited from TPC-28--TPC-31.  Its exponents
+are
+\begin{equation}
+ \boxed{
+ \beta=\frac{267}{400},
+ \qquad
+ 1-\beta=\frac{133}{400}.}
+ \label{eq:tpc32-high-beta-scales}
+\end{equation}
+Thus
+\begin{equation}
+ Q=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)},
+ \qquad
+ N_0=JQ^2\asymp XQ.
+ \label{eq:tpc32-high-beta-QJ}
+\end{equation}
+All endpoint statements below retain the usual strict-margin
+convention: every fixed exponent below the displayed endpoint is
+proved, but equality at an endpoint is not asserted.
+
+\subsection{Exact fraction arithmetic}
+
+The small numerical gap driving this section is best kept in exact
+fractions:
+\begin{align}
+ 1-\beta
+ &=\frac{133}{400}=\frac{266}{800},
+ \label{eq:tpc32-high-large-content-margin}\\
+ \frac\beta2
+ &=\frac{267}{800},
+ \label{eq:tpc32-high-rms-margin}\\
+ \frac\beta2-(1-\beta)
+ &=\frac{267}{800}-\frac{266}{800}
+ =\boxed{\frac1{800}},
+ \label{eq:tpc32-high-amplitude-slack}\\
+ 3\beta-2
+ &=\frac{801}{400}-\frac{800}{400}
+ =\boxed{\frac1{400}},
+ \label{eq:tpc32-high-energy-slack}\\
+ 2(1-\beta)-\beta
+ &=\frac{266}{400}-\frac{267}{400}
+ =-\boxed{\frac1{400}}.
+ \label{eq:tpc32-high-exception-density-exponent}
+\end{align}
+The $1/800$ quantity is an amplitude-exponent gap.  The $1/400$
+quantity is its squared-energy counterpart and also the density exponent
+for the exceptional frequency set at the large-content target scale.
+
+\subsection{An unconditional density-one frequency theorem}
+
+Take
+\begin{equation}
+ C\le J
+ \label{eq:tpc32-high-C-below-J}
+\end{equation}
+and choose the no-wrap prime $q\asymp Q$ from
+\cref{thm:tpc32-no-wrap-parseval}.  Then
+\begin{equation}
+ \left(
+ \frac1q\sum_{r\, (q)}|\widehat A_{C,q}(r)|^2
+ \right)^{1/2}
+ \ll X^{o(1)}N_0X^{-267/800}.
+ \label{eq:tpc32-high-rms-bound}
+\end{equation}
+Thus the rms determinant frequency has a saving larger than the
+TPC-30 large-content margin by exactly $1/800$ in the exponent.
+
+\begin{corollary}[High-$\beta$ almost-all-frequency saving]
+\label{cor:tpc32-high-almost-all-frequencies}
+Fix $0<\eta<133/400$ and put
+\begin{equation}
+ \sigma_\eta=\frac{133}{400}-\eta.
+ \label{eq:tpc32-high-sigma-eta}
+\end{equation}
+For every fixed $\eps>0$,
+\begin{align}
+ &\#\left\{r\pmod q:
+ |\widehat A_{C,q}(r)|>
+ N_0X^{-133/400+\eta}\right\}
+ \notag\\
+ &\hspace{9em}
+ \ll_{\eps,h,\mathscr D}
+ X^{266/400-2\eta+\eps},
+ \label{eq:tpc32-high-exception-count}\\
+ &\frac1q
+ \#\left\{r\pmod q:
+ |\widehat A_{C,q}(r)|>
+ N_0X^{-133/400+\eta}\right\}
+ \notag\\
+ &\hspace{9em}
+ \ll_{\eps,h,\mathscr D}
+ X^{-1/400-2\eta+\eps+o(1)}.
+ \label{eq:tpc32-high-exception-proportion}
+\end{align}
+In particular, after choosing $\eps<\eta$, a proportion
+$1-O(X^{-1/400-\eta+o(1)})$ of the frequencies has the stated saving.
+The exceptional set may contain $r=0$.
+\end{corollary}
+
+\begin{proof}
+Insert \eqref{eq:tpc32-high-sigma-eta} into
+\eqref{eq:tpc32-no-wrap-exceptional-count}:
+\[
+ 2\sigma_\eta
+ =\frac{266}{400}-2\eta.
+\]
+This proves \eqref{eq:tpc32-high-exception-count}.  Since
+$q=X^{267/400+o(1)}$, division by $q$ and
+\eqref{eq:tpc32-high-exception-density-exponent} give
+\eqref{eq:tpc32-high-exception-proportion}.
+\end{proof}
+
+The conclusion is stronger than merely saying that a generic frequency
+has some power saving.  It says that the precise saving required to meet
+the $133/400$ large-content floor already holds outside a set of relative
+density $X^{-1/400+o(1)}$.  It does not identify the distinguished zero
+frequency with the density-one set.
+
+The Farey-family version has the same rms endpoint $\beta/2$.  Taking
+$V=X^{267/800+o(1)}=Q^{1/2+o(1)}$ in
+\cref{thm:tpc32-farey-large-sieve} gives, outside a power-small
+proportion of reduced rational frequencies, every fixed saving below
+\begin{equation}
+ \min\left\{\frac{267}{800},\frac{267}{800}\right\}
+ =\frac{267}{800}.
+ \label{eq:tpc32-high-farey-rms-endpoint}
+\end{equation}
+Again, this family contains no copy of the zero rational frequency
+because its denominators begin at two.
+
+\subsection{The exact conditional threshold}
+
+For the full-shell splice choose
+\begin{equation}
+ C=\lfloor J\rfloor=X^{133/400+o(1)},
+ \qquad
+ \kappa=\frac{133}{400}.
+ \label{eq:tpc32-high-content-choice}
+\end{equation}
+The two large-content losses in
+\eqref{eq:tpc32-conditional-full-shell-bound} then both have endpoint
+$133/400$.  Because the conclusion asks for every strict saving below this
+endpoint, the flatness term reaches it precisely when
+\begin{align}
+ \frac{\beta-\chi}{2}
+ &\ge\frac{133}{400}
+ \notag\\
+ &\Longleftrightarrow
+ \chi\le\beta-\frac{266}{400}
+ =\frac{267}{400}-\frac{266}{400}
+ =\boxed{\frac1{400}}.
+ \label{eq:tpc32-high-chi-threshold}
+\end{align}
+
+\begin{corollary}[Conditional high-$\beta$ closure of the matched shell]
+\label{cor:tpc32-high-conditional-closure}
+Assume that the actual matched determinant coefficient with the choice
+\eqref{eq:tpc32-high-content-choice} satisfies
+\begin{equation}
+ \mathfrak F_0(A_C)\le X^{\chi+o(1)}
+ \qquad\text{for some fixed }\chi\le\frac1{400}.
+ \label{eq:tpc32-high-flatness-input}
+\end{equation}
+Then every fixed
+\begin{equation}
+ \boxed{\sigma<\frac{133}{400}}
+ \label{eq:tpc32-high-conditional-saving}
+\end{equation}
+is a power-saving exponent relative to $N_0\asymp XQ$ for the complete
+matched raw cutoff shell.
+\end{corollary}
+
+\begin{proof}
+Under \eqref{eq:tpc32-high-flatness-input},
+\eqref{eq:tpc32-high-chi-threshold} shows that the flatness margin is at
+least $133/400$.  The other two entries in
+\eqref{eq:tpc32-conditional-saving-range} both equal $133/400$ by
+\eqref{eq:tpc32-high-content-choice}.  Apply
+\cref{thm:tpc32-conditional-zero-transfer} with a strict final
+exponent.
+\end{proof}
+
+Condition \eqref{eq:tpc32-high-flatness-input} has a transparent
+amplitude interpretation.  By definition,
+\begin{equation}
+ |\widehat A_{C,q}(0)|
+ \le X^{\chi/2+o(1)}\|A_C\|_2.
+ \label{eq:tpc32-high-amplitude-flatness}
+\end{equation}
+Thus the boundary $\chi\le1/400$ permits the zero coefficient to be larger
+than the rms determinant coefficient by a factor at most
+\begin{equation}
+ X^{1/800+o(1)}.
+ \label{eq:tpc32-high-amplitude-inflation}
+\end{equation}
+At $\chi=0$, the zero frequency is no larger than the rms scale up to
+$X^{o(1)}$, and its saving endpoint is $267/800$; the final splice is
+still limited to $266/800=133/400$ by large content.  By contrast,
+the unconditional Cauchy bound permits
+$\mathfrak F_0(A_C)\asymp Q=X^{267/400+o(1)}$, which gives no saving at
+all.  Moving from that worst case to
+\eqref{eq:tpc32-high-flatness-input} is the genuine arithmetic task;
+the small numerical slack does not make it a soft consequence of the
+frequency average.
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.46\textwidth}
+                >{\centering\arraybackslash}p{0.20\textwidth}
+                >{\raggedright\arraybackslash}p{0.23\textwidth}}
+\toprule
+Quantity & Exact exponent & Status \\
+\midrule
+Large-content splice margin $1-\beta$
+& $133/400=266/800$ & Unconditional \\
+\addlinespace
+Rms determinant-frequency margin $\beta/2$
+& $267/800$ & Unconditional \\
+\addlinespace
+Rms amplitude slack over the splice
+& $1/800$ & Exact arithmetic \\
+\addlinespace
+Bad-frequency density exponent at the splice target
+& $1/400$ & Unconditional \\
+\addlinespace
+Allowed squared-flatness loss
+& $\chi\le1/400$ & Additional input \\
+\addlinespace
+Complete matched-shell saving
+& every $\sigma<133/400$ & Conditional on flatness \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The last row concerns only the matched raw cutoff shell delivered to
+this paper.  Even under the flatness input it does not, by itself,
+prove a prime-pair asymptotic, positivity, twin primes, or a breach of
+the sieve parity barrier.

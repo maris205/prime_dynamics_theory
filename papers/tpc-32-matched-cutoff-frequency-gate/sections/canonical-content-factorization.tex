@@ -1,0 +1,525 @@
+\section{Canonical-content inversion and the retained bilinear form}
+\label{sec:tpc32-canonical-factorization}
+
+We now place the canonical determinant phase inside the exact cutoff
+shell.  The central point is elementary but useful: exact target
+content can be imposed by a common-divisor M\"obius projector, and the
+normalized determinant character then splits into one character on
+each row.  The fixed residue factor, physical weight, and pair mask are
+not discarded in this operation.
+
+\subsection{Primitive common divisors}
+
+For two physical rows \(m=m_\alpha\) and \(n=m_\gamma\), abbreviate
+\begin{equation}
+ N_m=mj+h,\qquad N_n=nj+h,
+ \qquad G_{m,n}(j)=(N_m,N_n).
+ \label{eq:tpc32-two-targets-content}
+\end{equation}
+When \(m\ne n\), the canonical normalized determinant of TPC-31 is
+\begin{equation}
+ \Delta^\#_{m,n}(j)=\frac{m-n}{G_{m,n}(j)}.
+ \label{eq:tpc32-canonical-determinant}
+\end{equation}
+
+\begin{lemma}[Every common target divisor divides the row difference]
+\label{lem:tpc32-common-divisor-row-difference}
+Under \eqref{eq:tpc32-primitive-target-support}, if
+\begin{equation}
+ t\mid N_m,\qquad t\mid N_n,
+ \label{eq:tpc32-common-target-divisor}
+\end{equation}
+then
+\begin{equation}
+ (t,mnhj)=1,\qquad t\mid m-n.
+ \label{eq:tpc32-common-divisor-properties}
+\end{equation}
+In particular
+\begin{equation}
+ G_{m,n}(j)\mid m-n,
+ \label{eq:tpc32-content-divides-difference}
+\end{equation}
+so \eqref{eq:tpc32-canonical-determinant} is a nonzero integer.
+\end{lemma}
+
+\begin{proof}
+Target primitivity \eqref{eq:tpc32-target-divisor-primitivity} applied
+on each row gives \((t,mnH)=1\).  If a prime \(p\) divided both \(t\)
+and \(j\), then \(p\mid N_m-mj=h\), hence \(p\mid H\), a
+contradiction.  Thus \((t,j)=1\).  Finally
+\[
+ t\mid N_m-N_n=(m-n)j,
+\]
+and \(j\) may be cancelled modulo \(t\).  Taking \(t=G_{m,n}(j)\)
+proves the last assertion.  This is the primitive target-gcd geometry
+used in TPC-30 and TPC-31
+\citep{WangTPC30,WangTPC31}.
+\end{proof}
+
+\subsection{Exact-content M\"obius projectors}
+
+The following formulation is convenient for both cumulative and
+dyadic content ranges.
+
+\begin{definition}[Content projector]
+\label{def:tpc32-content-projector}
+For a finite set \(\mathscr C\subset\N\), define
+\begin{equation}
+ \eta_{\mathscr C}(t)
+ :=\sum_{\substack{c\mid t\\c\in\mathscr C}}
+ \mu(t/c).
+ \label{eq:tpc32-content-projector-coefficient}
+\end{equation}
+\end{definition}
+
+\begin{proposition}[Exact gcd M\"obius inversion]
+\label{prop:tpc32-gcd-mobius-inversion}
+For all positive integers \(N_1,N_2\), with \(G=(N_1,N_2)\),
+\begin{equation}
+ \boxed{
+ \one_{G\in\mathscr C}
+ =\sum_{\substack{t\mid N_1\\t\mid N_2}}
+   \eta_{\mathscr C}(t).}
+ \label{eq:tpc32-gcd-mobius-inversion}
+\end{equation}
+Equivalently,
+\begin{equation}
+ \one_{G=c}
+ =\sum_{k\ge1}\mu(k)
+   \one_{ck\mid N_1}\one_{ck\mid N_2}
+ \qquad(c\ge1).
+ \label{eq:tpc32-exact-content-inversion}
+\end{equation}
+All sums in these identities are finite.
+\end{proposition}
+
+\begin{proof}
+Interchanging the divisor sums gives
+\begin{align*}
+ \sum_{t\mid G}\eta_{\mathscr C}(t)
+ &=\sum_{\substack{c\mid G\\c\in\mathscr C}}
+   \sum_{k\mid G/c}\mu(k).
+\end{align*}
+The inner sum is one exactly when \(G/c=1\), and is zero otherwise.
+This proves \eqref{eq:tpc32-gcd-mobius-inversion}.  Taking
+\(\mathscr C=\{c\}\) gives
+\eqref{eq:tpc32-exact-content-inversion}.
+\end{proof}
+
+\begin{remark}[Size and sign]
+The coefficient \(\eta_{\mathscr C}\) is signed and need not be
+multiplicative.  The general pointwise estimate
+\begin{equation}
+ |\eta_{\mathscr C}(t)|\le\tau(t)
+ \label{eq:tpc32-projector-trivial-bound}
+\end{equation}
+does not by itself give cancellation after summation over \(t\).
+The value of the projector is its exact reassembly, not an individual
+smallness property of its coefficients.
+\end{remark}
+
+\subsection{Canonical determinant phases}
+
+Write
+\begin{equation}
+ e_q(x)=\exp(2\pi i x/q),\qquad q\ge1.
+ \label{eq:tpc32-additive-character}
+\end{equation}
+
+\begin{theorem}[Exact canonical phase splitting]
+\label{thm:tpc32-canonical-phase-splitting}
+Let \(q\ge1\), \(r\in\Z\), let \(m\ne n\), and let
+\(\mathscr C\subset\N\) be finite.  Under the hypotheses of
+\cref{lem:tpc32-common-divisor-row-difference},
+\begin{align}
+ &\one_{G_{m,n}(j)\in\mathscr C}
+ e_q\!\left(-r\Delta^\#_{m,n}(j)\right)
+ \notag\\
+ &\quad={}
+ \sum_{c\in\mathscr C}\sum_{k\ge1}\mu(k)
+ \one_{ck\mid N_m}\one_{ck\mid N_n}
+ e_{cq}\!\left(-r(m-n)\right).
+ \label{eq:tpc32-canonical-phase-inversion}
+\end{align}
+For every summand on the right,
+\begin{equation}
+ \boxed{
+ e_{cq}\!\left(-r(m-n)\right)
+ =e_{cq}(-rm)e_{cq}(rn).}
+ \label{eq:tpc32-canonical-phase-split}
+\end{equation}
+Neither identity requires \((c,q)=1\).
+\end{theorem}
+
+\begin{proof}
+Fix \(c\in\mathscr C\).  If \(ck\) divides both targets, then
+\cref{lem:tpc32-common-divisor-row-difference} gives \(c\mid m-n\),
+so every displayed character is well defined.  For the actual content
+\(G=G_{m,n}(j)\), the contribution of this \(c\) is zero unless
+\(c\mid G\); when \(c\mid G\), it equals
+\[
+ e_{cq}\!\left(-r(m-n)\right)
+ \sum_{k\mid G/c}\mu(k).
+\]
+M\"obius inversion kills it unless \(G=c\).  In the surviving case,
+\[
+ e_{cq}\!\left(-r(m-n)\right)
+ =e_q\!\left(-r\frac{m-n}{G}\right),
+\]
+which proves \eqref{eq:tpc32-canonical-phase-inversion}.  Equation
+\eqref{eq:tpc32-canonical-phase-split} is the additive-character
+identity obtained by expanding \(m-n\).  No modular inverse of \(c\)
+has been used, so no coprimality between \(c\) and \(q\) is present.
+\end{proof}
+
+\begin{remark}[Why the denominator is \(cq\)]
+It would be incorrect to replace division by \(c\) with multiplication
+by an inverse of \(c\pmod q\).  The phase is lifted from modulus \(q\)
+to modulus \(cq\); this is precisely what makes
+\eqref{eq:tpc32-canonical-phase-split} valid even when \((c,q)>1\).
+\end{remark}
+
+\subsection{The complete retained-multiplier factorization}
+
+For a finite content family \(\mathscr C\), define the matched
+determinant transform
+\begin{align}
+ \widehat{\cS}^{\mathrm{sh}}_{\mathscr C,q}(r)
+ :={}&\sum_{\substack{\alpha,\gamma\\m_\alpha\ne m_\gamma}}
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \sum_j\mathfrak A_{\alpha,\gamma}(j)
+ \cK^{\mathrm{sh}}_{\alpha,\gamma}(j)
+ \notag\\
+ &\qquad\times
+ \one_{G_{m_\alpha,m_\gamma}(j)\in\mathscr C}
+ e_q\!\left(-r\Delta^\#_{m_\alpha,m_\gamma}(j)\right).
+ \label{eq:tpc32-matched-determinant-transform}
+\end{align}
+This is the sum of the transforms of all three raw channels, before
+any triangle inequality.
+
+Put
+\begin{equation}
+ \epsilon_{U_0}=1,\qquad \epsilon_T=-1.
+ \label{eq:tpc32-cutoff-signs}
+\end{equation}
+For \(Y\in\{U_0,T\}\), define the two one-row factors
+\begin{align}
+ X^{(1)}_{\alpha;c,k,Y,r}(j)
+ :={}&\gamma_\alpha^{(1)}
+ \one_{ck\mid N_\alpha(j)}
+ \mathsf A_{m_\alpha,Y}(j)
+ e_{cq}(-rm_\alpha),
+ \label{eq:tpc32-left-row-factor}\\
+ X^{(2)}_{\gamma;c,k,Y,r}(j)
+ :={}&\gamma_\gamma^{(2)}
+ \one_{ck\mid N_\gamma(j)}
+ \mathsf A_{m_\gamma,Y}(j)
+ e_{cq}(rm_\gamma).
+ \label{eq:tpc32-right-row-factor}
+\end{align}
+
+\begin{theorem}[Matched bilinear factorization with joint multiplier]
+\label{thm:tpc32-retained-bilinear-factorization}
+Under the physical hypotheses of
+\cref{sec:tpc32-physical-shell}, for every finite
+\(\mathscr C\subset\N\), every \(q\ge1\), and every \(r\in\Z\),
+\begin{align}
+ \widehat{\cS}^{\mathrm{sh}}_{\mathscr C,q}(r)
+ ={}&\sum_{c\in\mathscr C}\sum_{k\ge1}\mu(k)
+ \sum_j\sum_{Y\in\{U_0,T\}}\epsilon_Y
+ \notag\\
+ &\times\sum_{\substack{\alpha,\gamma\\m_\alpha\ne m_\gamma}}
+ \mathfrak A_{\alpha,\gamma}(j)
+ X^{(1)}_{\alpha;c,k,Y,r}(j)
+ X^{(2)}_{\gamma;c,k,Y,r}(j).
+ \label{eq:tpc32-retained-bilinear-factorization}
+\end{align}
+The sums over \(k\) are finite.  Formula
+\eqref{eq:tpc32-retained-bilinear-factorization} retains the exact
+rank--two cutoff difference and the complete joint physical
+multiplier.
+\end{theorem}
+
+\begin{proof}
+Insert the cutoff difference
+\eqref{eq:tpc32-exact-cutoff-shell} into
+\eqref{eq:tpc32-matched-determinant-transform}.  Apply
+\cref{thm:tpc32-canonical-phase-splitting} to the content indicator and
+phase.  The two row characters in
+\eqref{eq:tpc32-canonical-phase-split}, the two common-divisibility
+indicators, the two row coefficients, and the two prefixes are exactly
+the factors in
+\eqref{eq:tpc32-left-row-factor}--
+\eqref{eq:tpc32-right-row-factor}.  The joint multiplier is never
+altered.  Since \(ck\) divides two targets of size
+\(O_{\mathscr D}(X)\), one has \(ck\ll_{\mathscr D}X\), proving
+finiteness.
+\end{proof}
+
+For fixed \(c,k,Y,r,j\), let
+\(M_j=(\mathfrak A_{\alpha,\gamma}(j))_{\alpha,\gamma}\).  The innermost
+sum in \eqref{eq:tpc32-retained-bilinear-factorization} is the bilinear
+form
+\begin{equation}
+ (X^{(1)}_{c,k,Y,r}(j))^{\mathsf T}
+ M_jX^{(2)}_{c,k,Y,r}(j).
+ \label{eq:tpc32-matrix-bilinear-form}
+\end{equation}
+No complex conjugation is implicit.  This notation makes the remaining
+boundary explicit: entrywise boundedness of \(M_j\) does not imply a
+bounded operator norm or a low-cost projective decomposition.
+
+\begin{corollary}[Conditional full product representation]
+\label{cor:tpc32-conditional-projective-factorization}
+Suppose, on a particular physical packet, that the retained multiplier
+has an explicit representation
+\begin{equation}
+ \mathfrak A_{\alpha,\gamma}(j)
+ =\int_\Omega
+ p_{\omega,j}(\alpha)q_{\omega,j}(\gamma)
+ \,d\nu(\omega),
+ \label{eq:tpc32-joint-projective-representation}
+\end{equation}
+with absolute convergence sufficient to interchange all finite sums.
+Then the row-pair sum in
+\eqref{eq:tpc32-retained-bilinear-factorization} equals
+\begin{align}
+ \int_\Omega
+ &\left(\sum_\alpha
+ p_{\omega,j}(\alpha)
+ X^{(1)}_{\alpha;c,k,Y,r}(j)\right)
+ \notag\\
+ &\times
+ \left(\sum_\gamma
+ q_{\omega,j}(\gamma)
+ X^{(2)}_{\gamma;c,k,Y,r}(j)\right)
+ \,d\nu(\omega).
+ \label{eq:tpc32-full-product-representation}
+\end{align}
+\end{corollary}
+
+\begin{proof}
+Substitute \eqref{eq:tpc32-joint-projective-representation} and
+interchange the absolutely convergent integral and sums.
+\end{proof}
+
+The fixed-residue and physical smooth factors have such bounded-cost
+representations in the inherited packet \citep{WangTPC25}.  The
+generic pair mask has not been proved to satisfy one with a sufficiently
+small projective norm.  Thus
+\cref{cor:tpc32-conditional-projective-factorization} is an exact
+conditional interface, not an estimate asserted from
+\eqref{eq:tpc32-joint-multiplier-bound}.
+
+\subsection{Dyadic projectors and exact zero-frequency reassembly}
+
+For \(C\ge1\), define the cumulative and dyadic coefficients
+\begin{align}
+ \eta_{\le C}(t)
+ &:=\sum_{\substack{c\mid t\\c\le C}}\mu(t/c),
+ \label{eq:tpc32-cumulative-projector}\\
+ \eta_{(C,2C]}(t)
+ &:=\sum_{\substack{c\mid t\\C<c\le2C}}\mu(t/c).
+ \label{eq:tpc32-dyadic-projector}
+\end{align}
+To match the cumulative notation used elsewhere in the paper, we also
+write
+\begin{equation}
+ \lambda_C(t):=\eta_{\le C}(t).
+ \label{eq:tpc32-lambda-projector-alias}
+\end{equation}
+
+\begin{lemma}[The first dyadic band]
+\label{lem:tpc32-first-dyadic-projector-band}
+For every \(C\ge1\),
+\begin{equation}
+ \boxed{
+ \lambda_C(1)=1,\qquad
+ \lambda_C(t)=0\ (2\le t\le C),\qquad
+ \lambda_C(t)=-1\ (C<t\le2C).}
+ \label{eq:tpc32-first-dyadic-projector-band}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The first equality is immediate.  If \(2\le t\le C\), every divisor of
+\(t\) is included in the definition, so
+\[
+ \lambda_C(t)=\sum_{c\mid t}\mu(t/c)
+ =\sum_{d\mid t}\mu(d)=0.
+\]
+If \(C<t\le2C\), every proper divisor of \(t\) is at most \(t/2\le C\),
+whereas \(c=t\) is omitted.  Therefore
+\[
+ \lambda_C(t)=\sum_{\substack{c\mid t\\c<t}}\mu(t/c)
+ =\sum_{\substack{d\mid t\\d>1}}\mu(d)
+ =-\mu(1)=-1.
+\]
+\end{proof}
+
+\begin{corollary}[Exact cumulative and dyadic content projectors]
+\label{cor:tpc32-dyadic-content-projector}
+For \(G=(N_1,N_2)\),
+\begin{align}
+ \one_{G\le C}
+ &=\sum_{t\mid N_1,\,t\mid N_2}\eta_{\le C}(t),
+ \label{eq:tpc32-cumulative-projector-identity}\\
+ \one_{C<G\le2C}
+ &=\sum_{t\mid N_1,\,t\mid N_2}\eta_{(C,2C]}(t).
+ \label{eq:tpc32-dyadic-projector-identity}
+\end{align}
+Moreover,
+\begin{equation}
+ \eta_{(C,2C]}(t)
+ =\eta_{\le2C}(t)-\eta_{\le C}(t).
+ \label{eq:tpc32-dyadic-projector-difference}
+\end{equation}
+Hence cumulative projectors telescope exactly into dyadic content
+layers, with an optionally truncated final layer.
+\end{corollary}
+
+\begin{proof}
+Apply \cref{prop:tpc32-gcd-mobius-inversion} to
+\(\mathscr C=[1,C]\cap\N\) and
+\(\mathscr C=(C,2C]\cap\N\).  The coefficient identity follows
+directly from the definitions.
+\end{proof}
+
+At determinant frequency zero, the exact-content labels may be
+reassembled into one common-divisor coefficient.  Indeed, setting
+\(r=0\) in \eqref{eq:tpc32-canonical-phase-inversion} and writing
+\(t=ck\) gives
+\begin{equation}
+ \one_{G\le C}
+ =\sum_{t\mid N_1,\,t\mid N_2}\eta_{\le C}(t).
+\end{equation}
+The term \(t=1\) is distinguished because
+\begin{equation}
+ \eta_{\le C}(1)=1.
+ \label{eq:tpc32-t-one-coefficient}
+\end{equation}
+
+\begin{proposition}[\(t=1\) and large-content reassembly]
+\label{prop:tpc32-t-one-large-reassembly}
+For every positive integer \(G\) and every \(C\ge1\),
+\begin{equation}
+ \boxed{
+ \sum_{\substack{t\mid G\\t>1}}\eta_{\le C}(t)
+ =-\one_{G>C}.}
+ \label{eq:tpc32-nontrivial-projector-reassembly}
+\end{equation}
+Thus the \(t=1\) term of the cumulative projector is the unrestricted
+amplitude, while all \(t>1\) terms reassemble exactly to the negative
+large-content amplitude.
+\end{proposition}
+
+\begin{proof}
+By \eqref{eq:tpc32-cumulative-projector-identity},
+\(\sum_{t\mid G}\eta_{\le C}(t)=\one_{G\le C}\).  Subtract the
+\(t=1\) value \eqref{eq:tpc32-t-one-coefficient} and use
+\(\one_{G\le C}-1=-\one_{G>C}\).
+\end{proof}
+
+To state the consequence for the physical shell, let
+\begin{align}
+ \cS_{\mathrm{full}}^{\mathrm{sh}}
+ &:={}
+ \cS[\cK^{\mathrm{sh}};\textup{true}],
+ \label{eq:tpc32-full-raw-shell}\\
+ \cS_{>C}^{\mathrm{sh}}
+ &:={}
+ \cS[\cK^{\mathrm{sh}};G_{m_\alpha,m_\gamma}(j)>C].
+ \label{eq:tpc32-large-content-raw-shell}
+\end{align}
+
+\begin{corollary}[Exact auxiliary-zero reassembly]
+\label{cor:tpc32-zero-reassembly}
+For every auxiliary modulus \(q\ge1\),
+\begin{equation}
+ \boxed{
+ \widehat{\cS}^{\mathrm{sh}}_{[1,C],q}(0)
+ =\cS_{\mathrm{full}}^{\mathrm{sh}}
+  -\cS_{>C}^{\mathrm{sh}}.}
+ \label{eq:tpc32-zero-reassembly}
+\end{equation}
+More precisely, the \(t=1\) term in the common-divisor expansion is
+\(\cS_{\mathrm{full}}^{\mathrm{sh}}\), and the sum of all \(t>1\)
+terms is \(-\cS_{>C}^{\mathrm{sh}}\).
+\end{corollary}
+
+\begin{proof}
+At \(r=0\), the phase in
+\eqref{eq:tpc32-matched-determinant-transform} is one.  Apply
+\cref{prop:tpc32-t-one-large-reassembly} pointwise to each physical
+row--orbit triple, then sum with the original signed coefficient and
+the retained multiplier.
+\end{proof}
+
+TPC-30 proves, uniformly for the sum of all three raw channels,
+\begin{equation}
+ |\cS_{>C}^{\mathrm{sh}}|
+ \ll_{\eps,h,\mathscr D}
+ X^\eps\left(Q^2+\frac{XQ}{C}\right)
+ \ll_{\mathscr D}X^\eps XQ
+ \left(\frac1J+\frac1C\right).
+ \label{eq:tpc32-inherited-large-content-bound}
+\end{equation}
+Combining this bound with
+\eqref{eq:tpc32-zero-reassembly} gives
+\begin{equation}
+ \left|
+ \widehat{\cS}^{\mathrm{sh}}_{[1,C],q}(0)
+ -\cS_{\mathrm{full}}^{\mathrm{sh}}
+ \right|
+ \ll X^\eps XQ\left(\frac1J+\frac1C\right).
+ \label{eq:tpc32-zero-full-equivalence}
+\end{equation}
+This is an equivalence up to an already controlled large-content
+error, not an estimate for the unrestricted shell.
+
+For the complete calibrated cutoff difference, the drift estimate
+\eqref{eq:tpc32-drift-boundary} yields the corresponding boundary
+\begin{align}
+ \cK^{\mathrm{cal}}_{\alpha,\gamma}(j)
+ &:=
+ P_{m_\alpha,U_0}(j)P_{m_\gamma,U_0}(j)
+ -P_{m_\alpha,T}(j)P_{m_\gamma,T}(j),
+ \label{eq:tpc32-calibrated-shell-kernel}\\
+ \cS_{\mathrm{full}}^{\mathrm{cal}}
+ &:=
+ \cS[\cK^{\mathrm{cal}};\textup{true}],
+ \notag\\
+ \widehat{\cS}^{\mathrm{cal}}_{[1,C],q}(0)
+ &:=
+ \cS[\cK^{\mathrm{cal}};G_{m_\alpha,m_\gamma}(j)\le C].
+ \label{eq:tpc32-calibrated-zero-definition}
+\end{align}
+The notation retains \(q\) to emphasize that this is the zero
+coefficient of the same auxiliary residue-label transform; its value
+is independent of \(q\).  One then has
+\begin{equation}
+ \boxed{
+ \left|
+ \widehat{\cS}^{\mathrm{cal}}_{[1,C],q}(0)
+ -\cS_{\mathrm{full}}^{\mathrm{cal}}
+ \right|
+ \ll_{\eps,h,\mathscr D}
+ X^\eps XQ
+ \left(\frac1J+\frac1C+\frac1L\right).}
+ \label{eq:tpc32-calibrated-zero-full-equivalence}
+\end{equation}
+Here both calibrated quantities are defined using the two-prefix
+difference in \eqref{eq:tpc32-calibrated-cutoff}; the \(L^{-1}\) term
+accounts for the two drift legs uniformly under either the small- or
+large-content restriction.
+
+\begin{remark}[The zero-frequency gate is not removed]
+Equation \eqref{eq:tpc32-zero-full-equivalence} shows that controlling
+the auxiliary residue-label zero coefficient is, within the inherited
+large-content margin, the same problem as controlling the unrestricted
+matched shell.  The exact M\"obius projector exposes this fact but does
+not make the \(t=1\) contribution oscillatory.  Bounds for nonzero
+determinant frequencies, or termwise absolute bounds for
+\(\eta_{\le C}(t)\), do not imply the missing estimate.
+\end{remark}

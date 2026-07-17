@@ -1,0 +1,127 @@
+\section{Exact certificate and scope ledger}
+\label{sec:tpc32-certificate}
+
+The companion script
+\begin{center}
+\texttt{experiments/tpc32\_certificate.py}
+\end{center}
+is a standard-library Python regression certificate for the finite algebra
+and rational bookkeeping used in this paper.  Run from the paper directory
+with Python 3.10 or later:
+\begin{verbatim}
+python experiments/tpc32_certificate.py
+python -O experiments/tpc32_certificate.py
+\end{verbatim}
+Both modes use exception-based checks rather than \texttt{assert}, perform
+exactly
+\begin{equation}
+ \boxed{488{,}845}
+ \label{eq:tpc32-certificate-count}
+\end{equation}
+recorded checks, and regenerate byte-identical JSON.
+
+The check families are:
+\begin{center}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Finite check family & Recorded checks \\
+\midrule
+Matched shell, rank at most two, and polarization & $4{,}017$ \\
+Exact content inversion and the \(\lambda_C\) projector & $410{,}980$ \\
+Canonical phase splitting, including \((c,q)>1\) & $22{,}850$ \\
+Primitive prime--M\"obius sign fusion & $22{,}254$ \\
+Exact Parseval and the flat-signal zero-frequency model & $8{,}490$ \\
+\(\ell^2\)-versus-\(\ell^1\ell^\infty\) inequality & $19{,}530$ \\
+High-\(\beta\) rational ledger and the \(1/400\) threshold & $20$ \\
+Coherent matrices and the primitive finite witness & $566$ \\
+\(\lambda'_{12}(1)\) and formal prime-log polynomials & $110$ \\
+Scope flags & $28$ \\
+\midrule
+Total & $488{,}845$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The certificate uses integers and \texttt{fractions.Fraction}.  Finite
+character orthogonality is represented in exact cyclotomic coordinates,
+not by floating-point roots of unity.  In particular, it checks:
+\begin{enumerate}[label=\textup{(\alph*)}]
+ \item the scalar and matrix matched-shell identities, symmetric
+ polarization, and rank bound;
+ \item exact gcd inversion, the cumulative content projector, and
+ \(\lambda_C(t)=0\) for \(2\le t\le C\) and
+ \(\lambda_C(t)=-1\) for \(C<t\le2C\);
+ \item the canonical phase lift to modulus \(cq\) in cases with
+ \((c,q)>1\), without introducing an inverse of \(c\bmod q\);
+ \item primitive target-divisor coprimality and both prime--M\"obius
+ fusion identities;
+ \item no-wrap character orthogonality, exact Parseval, and a constant
+ signal whose nonzero Fourier coefficients all vanish;
+ \item the exact high-\(\beta\) identities
+ \[
+  1-\frac{267}{400}=\frac{133}{400},\qquad
+  3\frac{267}{400}-2=\frac1{400};
+ \]
+ \item the spectrum and stable rank of \(\mathbf J_M-I_M\), including the
+ nine-row primitive realization;
+ \item
+ \(\lambda'_{12}(1)=113/30\) and the nonzero formal coefficient of
+ \(\log p_i\log p_j\) in the three-channel witness.
+\end{enumerate}
+
+Reproducibility values are:
+\begin{align}
+ \text{normalized certificate-script source SHA-256}\qquad
+ &\texttt{9ccb7e40d31b4bd23b79df09336fcee6}\notag\\[-0.2em]
+ &\texttt{230d95c7a9f1a85da0324fb6eb807d1e},
+ \label{eq:tpc32-source-hash}\\
+ \text{JSON SHA-256}\qquad
+ &\texttt{77ac56e2f4f3543224876e8a0374564}\notag\\[-0.2em]
+ &\texttt{c81c1b4a9f17800f18ca5249e12954d36},
+ \label{eq:tpc32-json-hash}\\
+ \text{certificate digest}\qquad
+ &\texttt{a890734f5450cda4a7a400f5e1d63796}\notag\\[-0.2em]
+ &\texttt{83eb4b9e53a05c8497f256edfdc82c78}.
+ \label{eq:tpc32-certificate-digest}
+\end{align}
+
+\subsection{Claim boundary}
+
+The unconditional mathematical statements established in this paper are:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item the exact matched cutoff shell, its rank-two divisor tensor, and its
+ calibrated drift boundary;
+ \item exact canonical-content inversion, determinant-phase splitting, and
+ the retained-multiplier bilinear representation;
+ \item the prime--M\"obius one-leg fusion and the explicit separation
+ boundary for a generic pair mask;
+ \item determinant \(\ell^1\), \(\ell^\infty\), and \(\ell^2\) bounds
+ inherited from the physical singleton-cell theorem;
+ \item no-wrap Parseval, exceptional-frequency compression, and the
+ classical Farey large-sieve estimate;
+ \item the exact equivalence of the auxiliary zero coefficient and the full
+ matched raw shell modulo the previously bounded large-content contribution;
+ \item the high-\(\beta\) almost-all-frequency proportion and the two sharp
+ finite interface obstructions.
+\end{enumerate}
+The flatness transfer theorem is a proved implication whose premise
+\[
+ |\widehat A_{C,q}(0)|^2
+ \le X^{\chi+o(1)}\sum_n|A_C(n)|^2
+\]
+is explicitly additional.  The paper does not prove this premise, does not
+show that \(r=0\) is a typical determinant frequency, and does not assert
+that the generic pair mask has bounded projective norm.
+
+Neither the certificate nor the analytic theorems prove:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item signed cancellation of the complete M\"obius-tail residual;
+ \item an improved level of distribution for primes;
+ \item a Hardy--Littlewood prime-pair asymptotic or positivity statement;
+ \item the twin-prime conjecture; or
+ \item a breach of the sieve parity barrier.
+\end{enumerate}
+The finite prime-row witness is an exact algebraic regression test only.
+The negative JSON scope flags make any future promotion of that witness, or
+of the conditional \(1/400\) gate, into an unconditional prime-pair claim
+detectable during review.

@@ -1,0 +1,219 @@
+{
+  "certificate": "matched cutoff frequency gate",
+  "certificate_digest": "a890734f5450cda4a7a400f5e1d6379683eb4b9e53a05c8497f256edfdc82c78",
+  "claims": {
+    "breaks_sieve_parity": false,
+    "closes_complete_residual": false,
+    "closes_complete_ultra_difference": false,
+    "finite_coherent_J_minus_I_spectrum": true,
+    "finite_dyadic_projector_band": true,
+    "finite_exact_character_orthogonality_parseval": true,
+    "finite_exact_content_inversion": true,
+    "finite_flat_signal_zero_frequency_no_go": true,
+    "finite_formal_prime_log_identity": true,
+    "finite_high_beta_fraction_ledger": true,
+    "finite_l2_l1_linf_inequality": true,
+    "finite_lambda_content_projector": true,
+    "finite_lambda_prime_12_value": true,
+    "finite_matched_shell_identity": true,
+    "finite_phase_split_without_content_modulus_coprimality": true,
+    "finite_polarization_identity": true,
+    "finite_prime_mobius_sign_fusion": true,
+    "finite_primitive_prime_row_witness": true,
+    "finite_rank_at_most_two": true,
+    "primitive_finite_witness_is_twin_prime_asymptotic_evidence": false,
+    "proves_a_new_distribution_level": false,
+    "proves_asymptotic_mobius_cancellation": false,
+    "proves_hardy_littlewood_asymptotic": false,
+    "proves_positivity": false,
+    "proves_signed_full_shell_cancellation": false,
+    "proves_twin_primes": false,
+    "proves_zero_frequency_flatness": false,
+    "uses_floating_point_roots_of_unity": false
+  },
+  "coherent_witness_summary": {
+    "coherent_matrix_sizes": 19,
+    "primitive_witness": {
+      "C": 30,
+      "L": 100,
+      "R": 12,
+      "T": 50,
+      "U0": 200,
+      "content_matrix": "J-I_9",
+      "d": 1,
+      "h": 2,
+      "j": 1,
+      "off_diagonal_pairs": 72,
+      "rows": [
+        59,
+        71,
+        101,
+        107,
+        137,
+        149,
+        179,
+        191,
+        197
+      ],
+      "spectrum": [
+        8,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "stable_rank": "9/8",
+      "targets": [
+        61,
+        73,
+        103,
+        109,
+        139,
+        151,
+        181,
+        193,
+        199
+      ]
+    },
+    "spectrum_formula": "{M-1 (once), -1 (multiplicity M-1)}",
+    "stable_rank_formula": "M/(M-1)"
+  },
+  "content_projector_summary": {
+    "cumulative_projector_cases": 150000,
+    "dyadic_beyond_band_bound_cases": 3660,
+    "dyadic_exact_range_cases": 3660,
+    "exact_content_inversion_cases": 250000,
+    "identities": [
+      "1_{gcd(x,y)=c} = 1_{c|x,y} sum_{k|gcd(x/c,y/c)} mu(k)",
+      "lambda_C(k) = sum_{c|k,c<=C} mu(k/c)",
+      "1_{gcd(x,y)<=C} = sum_{k|x,y} lambda_C(k)",
+      "lambda_C(1)=1, lambda_C(k)=0 for 2<=k<=C, lambda_C(k)=-1 for C<k<=2C"
+    ],
+    "lambda_band_cases": 3660
+  },
+  "description": "finite exact regression for matched cutoff shells, rank-two factorization, content inversion, noncoprime canonical phase splitting, prime-Mobius sign fusion, exact Parseval, norm and high-beta ledgers, and sharp zero-frequency interface obstructions; not evidence for an asymptotic prime-pair claim",
+  "exact_check_count": 488845,
+  "formal_log_summary": {
+    "formal_prime_log_pair_cases": 36,
+    "kernel_formula": "log(p_i)log(p_j) - (113/30)(log(p_i)+log(p_j))",
+    "lambda_prime_12_1": "113/30",
+    "sample_coefficients": {
+      "constant": "0",
+      "log_61": "-113/30",
+      "log_73": "-113/30",
+      "log_product": "1",
+      "pair": "(61,73)"
+    }
+  },
+  "high_beta_summary": {
+    "C_equals_J_exponent": "133/400",
+    "almost_all_frequency_saving": "133/400",
+    "beta": "267/400",
+    "checked_above_threshold": [
+      "1/300",
+      "1/200",
+      "1/100"
+    ],
+    "checked_below_threshold": [
+      "0",
+      "1/1000",
+      "1/800",
+      "1/500"
+    ],
+    "endpoint_flatness_exponent": "1/400",
+    "endpoint_transferred_saving": "133/400",
+    "exceptional_proportion_power": "1/400",
+    "flatness_threshold_3beta_minus_2": "1/400",
+    "orbit_exponent_1_minus_beta": "133/400"
+  },
+  "matched_shell_summary": {
+    "identities": [
+      "A_m C_n + C_m A_n + C_m C_n = (A_m+C_m)(A_n+C_n)-A_m A_n",
+      "2(U1 tensor U2-T1 tensor T2) = C1 tensor (U2+T2) + (U1+T1) tensor C2",
+      "||T+C||_2^2-||T||_2^2 = 2<T,C>+||C||_2^2"
+    ],
+    "matrix_rank_cases": 504,
+    "maximum_exact_rank": 2,
+    "rank_two_cases": 330,
+    "scalar_matched_shell_cases": 2401,
+    "symmetric_polarization_cases": 102
+  },
+  "norm_summary": {
+    "equality_cases": 2178,
+    "identity": "||A||_2^2 <= ||A||_1 ||A||_infinity",
+    "integer_signal_cases": 19530,
+    "zero_signal_cases": 6
+  },
+  "paper": "TPC-32",
+  "parseval_and_flat_no_go_summary": {
+    "exact_root_representation": "Q-basis 1,zeta,...,zeta^(p-2) with zeta^(p-1)=-(1+...+zeta^(p-2))",
+    "flat_signal_cases": 16,
+    "flat_signal_examples": [
+      {
+        "all_nonzero_frequencies": "0",
+        "modulus": 3,
+        "total_mass": "5",
+        "zero_frequency": "5"
+      },
+      {
+        "all_nonzero_frequencies": "0",
+        "modulus": 5,
+        "total_mass": "5",
+        "zero_frequency": "5"
+      },
+      {
+        "all_nonzero_frequencies": "0",
+        "modulus": 7,
+        "total_mass": "5",
+        "zero_frequency": "5"
+      },
+      {
+        "all_nonzero_frequencies": "0",
+        "modulus": 11,
+        "total_mass": "5",
+        "zero_frequency": "5"
+      }
+    ],
+    "no_wrap_pair_checks": 8250,
+    "parseval_cases": 66,
+    "parseval_identity": "sum_r |Ahat(r)|^2 = p sum_n |A(n)|^2, certified by exact finite-character orthogonality"
+  },
+  "phase_split_summary": {
+    "identity": "e_q(-r(m-n)/c) = e_{cq}(-rm)e_{cq}(rn) whenever c|(m-n); no inverse of c modulo q is used",
+    "noncoprime_content_modulus_cases": 8992,
+    "noncoprime_example": {
+      "content": 2,
+      "delta_sharp": -8,
+      "frequency": 0,
+      "left_row": 84,
+      "modulus": 2,
+      "right_row": 100
+    },
+    "phase_split_cases": 22848
+  },
+  "prime_mobius_fusion_summary": {
+    "abstract_coprime_squarefree_pairs": 1407,
+    "identities": [
+      "mu(d)b_R(w) = -mu(dw)w_R(w)",
+      "mu(d)a(w) = -mu(dw)log(w)"
+    ],
+    "primitive_target_divisor_cases": 9720
+  },
+  "source_sha256": "9ccb7e40d31b4bd23b79df09336fcee6230d95c7a9f1a85da0324fb6eb807d1e",
+  "subcheck_counts": {
+    "canonical_phase_exponent_split": 22850,
+    "coherent_matrix_and_primitive_witness": 566,
+    "content_inversion_and_lambda_projector": 410980,
+    "exact_parseval_and_flat_signal_no_go": 8490,
+    "high_beta_fraction_ledger": 20,
+    "l2_l1_linf_inequality": 19530,
+    "lambda_prime_and_formal_log_polynomials": 110,
+    "matched_shell_rank_and_polarization": 4017,
+    "prime_mobius_sign_fusion": 22254,
+    "scope_flags": 28
+  }
+}

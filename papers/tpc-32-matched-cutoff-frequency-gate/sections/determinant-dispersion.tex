@@ -1,0 +1,289 @@
+\section{Determinant coefficients and unconditional frequency dispersion}
+\label{sec:tpc32-determinant-dispersion}
+
+We now retain the three cutoff-shell channels in their matched signed
+combination.  Write
+\begin{equation}
+ \cS_{\rm sh}(\cE)
+ =\sum_{\alpha,\gamma,j}
+   \mathfrak a^{\rm sh}_{\alpha,\gamma,j}
+   \one_{\cE(\alpha,\gamma,j)},
+ \label{eq:tpc32-matched-physical-sum}
+\end{equation}
+where $\mathfrak a^{\rm sh}_{\alpha,\gamma,j}$ is the complete signed
+physical summand: it contains both opened-row coefficients, the actual
+row-pair mask, the fixed-period and smooth factors, and the matched
+kernel
+\[
+ \mathsf A_{m_\alpha,U_0}(j)\mathsf A_{m_\gamma,U_0}(j)
+ -\mathsf A_{m_\alpha,T}(j)\mathsf A_{m_\gamma,T}(j).
+\]
+Thus no triangle inequality separates the two mixed channels from the
+both-ultra channel in the definition below.
+
+Put
+\begin{equation}
+ c_{\alpha,\gamma}(j)
+ =(m_\alpha j+h,m_\gamma j+h),
+ \qquad
+ \Delta^\#_{\alpha,\gamma}(j)
+ =\frac{m_\alpha-m_\gamma}{c_{\alpha,\gamma}(j)}.
+ \label{eq:tpc32-dispersion-content-determinant}
+\end{equation}
+For $1\le C\ll_{\mathscr D}Q$, define the signed
+normalized-determinant coefficient
+\begin{equation}
+ A_C(n)
+ :=\cS_{\rm sh}
+ \bigl(c_{\alpha,\gamma}(j)\le C,
+       \ \Delta^\#_{\alpha,\gamma}(j)=n\bigr),
+ \qquad n\in\Z.
+ \label{eq:tpc32-determinant-coefficient}
+\end{equation}
+The off-diagonal row mask makes $A_C(0)=0$.  To avoid confusing this
+coefficient value with a Fourier frequency, we shall always write
+$\widehat A_{C,q}(0)$ for the latter.
+
+The physical row interval has length $O_{\mathscr D}(Q)$.  Fix a
+constant $B_{\mathscr D}\ge1$ such that
+\begin{equation}
+ \operatorname{supp}A_C
+ \subset
+ [-B_{\mathscr D}Q,B_{\mathscr D}Q]\cap
+ (\Z\setminus\{0\})
+ \label{eq:tpc32-determinant-support-interval}
+\end{equation}
+for every $C$.  Indeed,
+$|\Delta^\#|=|m_\alpha-m_\gamma|/c\le
+B_{\mathscr D}Q$.  In particular the diameter of this support, rather
+than merely its cardinality, is $O_{\mathscr D}(Q)$; this is the
+quantity entering the additive large sieve below.
+
+\subsection{\texorpdfstring{From the inherited \(\ell^1\) and singleton
+bounds to energy}{From the inherited l1 and singleton bounds to energy}}
+
+Let $A_C^+(n)$ be the absolute majorant formed by summing the absolute
+values of the complete matched physical summands in
+\eqref{eq:tpc32-determinant-coefficient}.  The physical absolute-mass
+interface and the singleton version of the determinant-support theorem
+of TPC-31 give, for every fixed $\eps>0$,
+\begin{align}
+ \sum_n A_C^+(n)
+ &\ll_{\eps,h,\mathscr D}X^\eps N_0,
+ \qquad N_0:=JQ^2\asymp XQ,
+ \label{eq:tpc32-inherited-det-l1}\\
+ \max_n A_C^+(n)
+ &\ll_{\eps,h,\mathscr D}
+ X^\eps Q\log(2L)
+ \{C+J\log(2C)\}.
+ \label{eq:tpc32-inherited-det-linfty}
+\end{align}
+For clarity, the second estimate follows by taking the allowed
+determinant set at each exact content to be the singleton $\{n\}$:
+its physical support count is at most one, and
+\[
+ \sum_{c\le C}\left(1+\frac Jc\right)
+ \ll C+J\log(2C).
+\]
+Both estimates remain valid for the matched sum because the absolute
+majorant of the sum of its three expanded channels is bounded by the
+sum of their TPC-31 majorants \citep{WangTPC31}.
+
+\begin{proposition}[Determinant coefficient norms]
+\label{prop:tpc32-determinant-norms}
+For every $1\le C\ll_{\mathscr D}Q$,
+\begin{align}
+ \|A_C\|_1
+ &\ll_{\eps,h,\mathscr D}X^\eps N_0,
+ \label{eq:tpc32-det-l1}\\
+ \|A_C\|_\infty
+ &\ll_{\eps,h,\mathscr D}X^\eps Q(C+J),
+ \label{eq:tpc32-det-linfty}\\
+ \|A_C\|_2^2
+ &\ll_{\eps,h,\mathscr D}
+ X^\eps JQ^3(C+J).
+ \label{eq:tpc32-det-l2-general}
+\end{align}
+If $C\le J$, then
+\begin{equation}
+ \boxed{
+ \|A_C\|_2^2
+ \ll_{\eps,h,\mathscr D}
+ X^\eps\frac{N_0^2}{Q}.}
+ \label{eq:tpc32-det-l2-C-below-J}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Since $|A_C(n)|\le A_C^+(n)$,
+\eqref{eq:tpc32-inherited-det-l1} gives
+\eqref{eq:tpc32-det-l1}.  Equation
+\eqref{eq:tpc32-inherited-det-linfty} gives
+\eqref{eq:tpc32-det-linfty} after enlarging the soft exponent to absorb
+$\log(2L)\log(2C)$.  Apply both inherited estimates with $\eps/2$ and
+use
+\[
+ \sum_n|A_C(n)|^2
+ \le\sum_n A_C^+(n)^2
+ \le \bigl(\max_nA_C^+(n)\bigr)
+       \sum_nA_C^+(n).
+\]
+This proves \eqref{eq:tpc32-det-l2-general}, after relabelling the
+soft exponent.  If $C\le J$, then
+\[
+ JQ^3(C+J)\ll J^2Q^3
+ =\frac{(JQ^2)^2}{Q}=\frac{N_0^2}{Q},
+\]
+which proves the last assertion.
+\end{proof}
+
+The argument is deliberately sign-blind only at the final norm bound.
+The coefficient $A_C$ itself was formed after the three physical
+channels were matched.  Thus every future improvement of
+\eqref{eq:tpc32-det-l2-C-below-J} coming from their signed interaction
+can be inserted without changing the Fourier statements below.
+
+\subsection{A no-wrap determinant Fourier transform}
+
+Choose an integer
+\[
+ Y>2B_{\mathscr D}Q+2.
+\]
+Bertrand's postulate supplies, for all sufficiently large $Q$, a prime
+$q$ with $Y<q<2Y$.  We fix $Y$ to be the least integer above the
+displayed threshold.  Consequently
+\begin{equation}
+ q\asymp_{\mathscr D}Q,
+ \qquad
+ q>\operatorname{diam}(\operatorname{supp}A_C).
+ \label{eq:tpc32-no-wrap-prime}
+\end{equation}
+Define
+\begin{equation}
+ \widehat A_{C,q}(r)
+ :=\sum_{n\in\Z}A_C(n)e_q(-rn),
+ \qquad
+ e_q(x)=\exp(2\pi ix/q),
+ \qquad r\pmod q.
+ \label{eq:tpc32-no-wrap-DFT}
+\end{equation}
+
+\begin{theorem}[No-wrap Parseval and exceptional frequencies]
+\label{thm:tpc32-no-wrap-parseval}
+Let $q$ satisfy \eqref{eq:tpc32-no-wrap-prime}.  Then
+\begin{equation}
+ \boxed{
+ \frac1q\sum_{r\, (q)}|\widehat A_{C,q}(r)|^2
+ =\sum_{n\in\Z}|A_C(n)|^2.}
+ \label{eq:tpc32-no-wrap-parseval}
+\end{equation}
+If $C\le J$ and $C\ll_{\mathscr D}Q$, then, for every $\sigma>0$,
+\begin{equation}
+ \boxed{
+ \#\left\{r\pmod q:
+ |\widehat A_{C,q}(r)|>N_0X^{-\sigma}\right\}
+ \ll_{\eps,h,\mathscr D}X^{2\sigma+\eps}.}
+ \label{eq:tpc32-no-wrap-exceptional-count}
+\end{equation}
+The exceptional set in \eqref{eq:tpc32-no-wrap-exceptional-count} is
+allowed to contain $r=0$.
+\end{theorem}
+
+\begin{proof}
+Ordinary finite Fourier Parseval gives
+\[
+ \frac1q\sum_{r\, (q)}|\widehat A_{C,q}(r)|^2
+ =\sum_{a\, (q)}
+   \left|\sum_{n\equiv a\, (q)}A_C(n)\right|^2.
+\]
+The diameter condition in \eqref{eq:tpc32-no-wrap-prime} makes reduction
+modulo $q$ injective on $\operatorname{supp}A_C$, so the last expression
+is exactly $\sum_n|A_C(n)|^2$.  If $E$ frequencies exceed the threshold
+in \eqref{eq:tpc32-no-wrap-exceptional-count}, then
+\[
+ E N_0^2X^{-2\sigma}
+ \le\sum_{r\, (q)}|\widehat A_{C,q}(r)|^2
+ =q\|A_C\|_2^2
+ \ll X^\eps\frac qQ N_0^2.
+\]
+Now $q\asymp_{\mathscr D}Q$, and the result follows.
+\end{proof}
+
+The no-wrap choice is useful but not cosmetic.  If one merely takes an
+arbitrary $q\asymp Q$, determinants separated by a multiple of $q$
+occupy the same residue cell, and the right side of Parseval is the
+energy of residue-cell sums rather than the coefficient energy itself.
+
+\subsection{Farey-family dispersion}
+
+For a reduced rational frequency $a/v$, put
+\begin{equation}
+ \widehat A_C(a/v)
+ :=\sum_n A_C(n)e_v(-an).
+ \label{eq:tpc32-rational-det-transform}
+\end{equation}
+The classical additive large sieve applies to an arbitrary complex
+coefficient sequence; no factorability hypothesis is needed here
+\citep{IwaniecKowalski2004}.
+
+\begin{theorem}[Additive large sieve for determinant frequencies]
+\label{thm:tpc32-farey-large-sieve}
+For $V\ge2$, $C\le J$, and $C\ll_{\mathscr D}Q$,
+\begin{equation}
+ \boxed{
+ \sum_{2\le v\le V}\ \sum_{a\, (v)}^{*}
+ |\widehat A_C(a/v)|^2
+ \ll_{\eps,h,\mathscr D}
+ X^\eps(Q+V^2)\frac{N_0^2}{Q}.}
+ \label{eq:tpc32-farey-large-sieve}
+\end{equation}
+Consequently
+\begin{align}
+ &\#\left\{(a,v):2\le v\le V, (a,v)=1,
+ |\widehat A_C(a/v)|>N_0X^{-\sigma}\right\}
+ \notag\\
+ &\hspace{8em}\ll_{\eps,h,\mathscr D}
+ X^{2\sigma+\eps}\left(1+\frac{V^2}{Q}\right).
+ \label{eq:tpc32-farey-exceptional-count}
+\end{align}
+If $Q=X^{\beta+o(1)}$ and $V=X^{\rho+o(1)}$ with $\rho>0$, the
+exceptional proportion among the $\asymp V^2$ reduced fractions is
+power-small for every fixed
+\begin{equation}
+ \boxed{\sigma<\min\{\rho,\beta/2\}.}
+ \label{eq:tpc32-farey-saving-range}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Translate the integer support interval in
+\eqref{eq:tpc32-determinant-support-interval} into an interval of
+positive integers.  Translation changes each transform by a
+unit-modulus factor.  The interval has length at most
+$2B_{\mathscr D}Q+1$, so the additive large sieve gives
+\[
+ \sum_{2\le v\le V}\sum_{a\, (v)}^*
+ |\widehat A_C(a/v)|^2
+ \ll_{\mathscr D}(Q+V^2)\|A_C\|_2^2.
+\]
+Insert \eqref{eq:tpc32-det-l2-C-below-J}.  Chebyshev's inequality gives
+\eqref{eq:tpc32-farey-exceptional-count}.
+
+The number of reduced fractions with denominator at most $V$ is
+$\asymp V^2$.  If $2\rho\le\beta$, division of
+\eqref{eq:tpc32-farey-exceptional-count} by $V^2$ gives the exponent
+$2\sigma-2\rho+o(1)$.  If $2\rho\ge\beta$, it gives
+$2\sigma-\beta+o(1)$.  Both are negative precisely in the strict range
+\eqref{eq:tpc32-farey-saving-range}.
+\end{proof}
+
+\begin{remark}[What the large sieve omits]
+The sum in \eqref{eq:tpc32-farey-large-sieve} begins at $v=2$, so all
+of its reduced frequencies are nonzero.  One may add the single point
+$0/1$ to the large-sieve family, but the inequality then permits that
+one value to be as large as the natural scale $N_0$.  A density-one
+conclusion for rational frequencies therefore says nothing about the
+distinguished coefficient $\widehat A_{C,q}(0)$ required by the
+untwisted physical reassembly.  The next section isolates exactly the
+extra input needed there.
+\end{remark}

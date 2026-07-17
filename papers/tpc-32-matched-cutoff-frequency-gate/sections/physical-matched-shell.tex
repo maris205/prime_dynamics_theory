@@ -1,0 +1,409 @@
+\section{The physical packet and the matched cutoff shell}
+\label{sec:tpc32-physical-shell}
+
+This section fixes the physical object before any determinant-frequency
+transform is taken.  The order is important: the two mixed channels and
+the both-ultra channel come from one difference of quadratic prefixes and
+must first be recombined.  The interface is inherited from
+TPC-25 and TPC-29--TPC-31
+\citep{WangTPC25,WangTPC29,WangTPC30,WangTPC31}.
+
+\subsection{Primitive opened rows}
+
+Fix \(h\in\Z\setminus\{0\}\), and put
+\begin{equation}
+ H=\operatorname{rad}|h|.
+ \label{eq:tpc32-H}
+\end{equation}
+Let \(X\) tend to infinity and fix \(0<\delta<1/2\).  In one opened
+dyadic packet the scales satisfy
+\begin{equation}
+ R=X^{1/2-\delta+o(1)},\qquad
+ Q=LD,\qquad QJ\asymp_{\mathscr D}X,
+ \label{eq:tpc32-physical-scales}
+\end{equation}
+with
+\begin{equation}
+ D\le R^{1/2+o(1)},\qquad
+ L>\max\{2R,2|h|\}.
+ \label{eq:tpc32-row-separation}
+\end{equation}
+Equivalently, when exponent notation is useful, we write
+\begin{equation}
+ Q=X^{\beta+o(1)},\qquad
+ J=X^{1-\beta+o(1)},\qquad 0<\beta<1.
+ \label{eq:tpc32-beta-scales}
+\end{equation}
+Here \(\mathscr D\) denotes all fixed support, smoothness, residue, and
+positive-margin data.
+
+Rows are indexed by
+\begin{equation}
+ \alpha=(\ell_\alpha,d_\alpha),\qquad
+ m_\alpha=\ell_\alpha d_\alpha\asymp_{\mathscr D}Q,
+ \label{eq:tpc32-row-index}
+\end{equation}
+where \(\ell_\alpha\in[L/2,2L]\) is prime and
+\(d_\alpha\in[D,2D]\cap[1,R^{1/2+o(1)}]\) is squarefree with
+\((d_\alpha,H)=1\).  The size separation makes \(m_\alpha\) determine
+\(\alpha\) uniquely.  The actual one-row coefficients have the
+prime--M\"obius provenance
+\begin{equation}
+ \gamma_\alpha^{(i)}
+ =\mu(d_\alpha)(\log\ell_\alpha)
+  \omega_D^{(i)}(d_\alpha)
+  \psi_L^{(i)}(\ell_\alpha/L)\zeta_\alpha^{(i)},
+ \qquad |\zeta_\alpha^{(i)}|\ll_{\mathscr D}1,
+ \quad i=1,2.
+ \label{eq:tpc32-row-provenance}
+\end{equation}
+The smooth dyadic families are fixed and bounded.  In particular
+\begin{align}
+ \sum_\alpha|\gamma_\alpha^{(i)}|
+ &\ll_{\mathscr D}Q,
+ \label{eq:tpc32-row-l1}\\
+ \sum_\alpha|\gamma_\alpha^{(i)}|^2
+ &\ll_{\mathscr D}Q\log(2L),
+ \qquad i=1,2.
+ \label{eq:tpc32-row-l2}
+\end{align}
+
+For an orbit point \(j\), set
+\begin{equation}
+ N_\alpha(j)=m_\alpha j+h.
+ \label{eq:tpc32-target}
+\end{equation}
+Every contributing row and orbit point obeys
+\begin{equation}
+ (m_\alpha,H)=(j,H)=1,
+ \qquad
+ c_{\mathscr D}X\le N_\alpha(j)\le C_{\mathscr D}X,
+ \label{eq:tpc32-primitive-target-support}
+\end{equation}
+and the joint \(j\)-support contains \(O_{\mathscr D}(J)\) integers.
+Consequently every divisor \(w\mid N_\alpha(j)\) satisfies
+\begin{equation}
+ (w,m_\alpha H)=1.
+ \label{eq:tpc32-target-divisor-primitivity}
+\end{equation}
+
+The row-pair mask and the remaining physical weights are retained in
+the single joint multiplier
+\begin{equation}
+ \mathfrak A_{\alpha,\gamma}(j)
+ :=\mathfrak m(\alpha,\gamma)
+   \Xi_{\alpha,\gamma}(j)
+   \cW_{\alpha,\gamma}(j/J).
+ \label{eq:tpc32-joint-multiplier}
+\end{equation}
+We use only
+\begin{equation}
+ |\mathfrak A_{\alpha,\gamma}(j)|\ll_{\mathscr D}1,
+ \qquad
+ \mathfrak A_{\alpha,\gamma}(j)=0
+ \quad\text{if }m_\alpha=m_\gamma,
+ \label{eq:tpc32-joint-multiplier-bound}
+\end{equation}
+and that \(\mathfrak m\) is independent of the divisor variables.  The
+fixed-residue and smooth parts of
+\eqref{eq:tpc32-joint-multiplier} possess the finite Fourier and Mellin
+separations recorded in TPC-25.  No separability of the generic
+row-pair mask is assumed here.
+
+For a kernel \(\cK_{\alpha,\gamma}(j)\) and an event
+\(\cE(\alpha,\gamma,j)\), define
+\begin{align}
+ \cS[\cK;\cE]
+ :={}&\sum_{\alpha,\gamma}
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \sum_j\mathfrak A_{\alpha,\gamma}(j)
+ \cK_{\alpha,\gamma}(j)
+ \one_{\cE(\alpha,\gamma,j)}.
+ \label{eq:tpc32-physical-functional}
+\end{align}
+The natural absolute scale is
+\begin{equation}
+ JQ^2\asymp XQ.
+ \label{eq:tpc32-natural-scale}
+\end{equation}
+
+\subsection{Divisor coefficients and exact prefixes}
+
+Put
+\begin{align}
+ a(w)&=-\mu(w)\log w,
+ \label{eq:tpc32-a-coefficient}\\
+ \lambda'_R(w)
+ &:={}
+ \begin{cases}
+ \displaystyle
+ w\sum_{b\le R/w}\frac{\mu(wb)\mu(b)}{\varphi(wb)},&w\le R,\\[7pt]
+ 0,&w>R,
+ \end{cases}
+ \label{eq:tpc32-lambda-coefficient}\\
+ b_R(w)&=a(w)-\lambda'_R(w).
+ \label{eq:tpc32-b-coefficient}
+\end{align}
+All three coefficients vanish off the squarefree integers.  On
+squarefree support,
+\begin{align}
+ b_R(w)&=-\mu(w)w_R(w),
+ \label{eq:tpc32-positive-coefficient-form}\\
+ w_R(w)
+ &:={}
+ \log w+\one_{w\le R}\frac{w}{\varphi(w)}
+ \sum_{\substack{b\le R/w\\(b,w)=1}}
+ \frac{\mu(b)^2}{\varphi(b)}>0.
+ \label{eq:tpc32-wR}
+\end{align}
+
+Choose integers
+\begin{equation}
+ R\le T<U_0,
+ \qquad U_0\asymp_{\mathscr D}X,
+ \label{eq:tpc32-cutoff-range}
+\end{equation}
+with \(U_0\) larger than every target on
+\eqref{eq:tpc32-primitive-target-support}.  Define the raw prefix
+\begin{equation}
+ \mathsf A_{m,Y}(j)
+ :=\sum_{\substack{w\le Y\\w\mid mj+h}}b_R(w),
+ \qquad R\le Y\le U_0,
+ \label{eq:tpc32-raw-prefix}
+\end{equation}
+and the ultra increment
+\begin{equation}
+ C_m(j)
+ :=\sum_{\substack{T<w\le U_0\\w\mid mj+h}}a(w).
+ \label{eq:tpc32-ultra-increment}
+\end{equation}
+Since \(T\ge R\), one has \(b_R(w)=a(w)\) throughout the new shell.
+Thus, pointwise in \(m,j\),
+\begin{equation}
+ \boxed{
+ \mathsf A_{m,U_0}(j)
+ =\mathsf A_{m,T}(j)+C_m(j).}
+ \label{eq:tpc32-exact-prefix-increment}
+\end{equation}
+The elementary divisor estimate gives, uniformly on the physical
+support,
+\begin{equation}
+ |\mathsf A_{m,T}(j)|+|\mathsf A_{m,U_0}(j)|+|C_m(j)|
+ \ll_{\eps,\mathscr D}X^\eps.
+ \label{eq:tpc32-prefix-envelope}
+\end{equation}
+
+The actual row coefficient and the divisor coefficient fuse on each
+leg without an extra hypothesis.
+
+\begin{lemma}[Prime--M\"obius sign fusion]
+\label{lem:tpc32-sign-fusion}
+If \(w\mid N_\alpha(j)\) and \(b_R(w)\ne0\), then
+\begin{equation}
+ \boxed{
+ \mu(d_\alpha)b_R(w)
+ =-\mu(d_\alpha w)w_R(w).}
+ \label{eq:tpc32-sign-fusion}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The support of \(b_R\) makes \(w\) squarefree, while
+\(d_\alpha\) is squarefree by construction.  Since
+\(d_\alpha\mid m_\alpha\), target primitivity
+\eqref{eq:tpc32-target-divisor-primitivity} gives
+\((d_\alpha,w)=1\).  Hence
+\(\mu(d_\alpha)\mu(w)=\mu(d_\alpha w)\), and
+\eqref{eq:tpc32-positive-coefficient-form} proves the claim.
+\end{proof}
+
+\begin{remark}[A fusion which is not available]
+The M\"obius factor introduced later by exact-content inversion may
+share prime factors with \(w\).  It therefore cannot be fused with
+\(\mu(w)\) unless an additional coprimality condition has first been
+proved.  No such fusion is used below.
+\end{remark}
+
+\subsection{Three raw channels as one rank--two shell}
+
+For two rows \(m=m_\alpha\) and \(n=m_\gamma\), define
+\begin{align}
+ \cK^{(1)}_{\alpha,\gamma}(j)
+ &=\mathsf A_{m,T}(j)C_n(j),
+ \notag\\
+ \cK^{(2)}_{\alpha,\gamma}(j)
+ &=C_m(j)\mathsf A_{n,T}(j),
+ \label{eq:tpc32-three-raw-kernels}\\
+ \cK^{(3)}_{\alpha,\gamma}(j)
+ &=C_m(j)C_n(j).
+ \notag
+\end{align}
+Their matched sum is
+\begin{equation}
+ \cK^{\mathrm{sh}}_{\alpha,\gamma}(j)
+ :=\sum_{\nu=1}^3\cK^{(\nu)}_{\alpha,\gamma}(j).
+ \label{eq:tpc32-matched-shell-definition}
+\end{equation}
+
+\begin{proposition}[Exact cutoff shell]
+\label{prop:tpc32-exact-cutoff-shell}
+Pointwise in every physical row pair and orbit point,
+\begin{equation}
+ \boxed{
+ \cK^{\mathrm{sh}}_{\alpha,\gamma}(j)
+ =\mathsf A_{m,U_0}(j)\mathsf A_{n,U_0}(j)
+  -\mathsf A_{m,T}(j)\mathsf A_{n,T}(j).}
+ \label{eq:tpc32-exact-cutoff-shell}
+\end{equation}
+Equivalently, after opening both divisor sums,
+\begin{align}
+ \cK^{\mathrm{sh}}_{\alpha,\gamma}(j)
+ ={}&\sum_{u,v\ge1}b_R(u)b_R(v)
+ \Theta_{T,U_0}(u,v)
+ \one_{u\mid N_\alpha(j)}\one_{v\mid N_\gamma(j)},
+ \label{eq:tpc32-opened-matched-shell}\\
+ \Theta_{T,U_0}(u,v)
+ :={}&\one_{u\le U_0}\one_{v\le U_0}
+       -\one_{u\le T}\one_{v\le T}.
+ \label{eq:tpc32-cutoff-tensor}
+\end{align}
+In particular \(\Theta_{T,U_0}\), viewed as a matrix in \(u,v\), has
+algebraic rank at most two.
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:tpc32-exact-prefix-increment} on both rows and expand
+the difference of products.  This gives the three terms in
+\eqref{eq:tpc32-three-raw-kernels}.  Opening the prefixes proves
+\eqref{eq:tpc32-opened-matched-shell}.  Finally, with
+\(p_Y(u)=\one_{u\le Y}\),
+\[
+ \Theta_{T,U_0}=p_{U_0}\otimes p_{U_0}-p_T\otimes p_T,
+\]
+a difference of two rank-one tensors.
+\end{proof}
+
+There is a useful symmetric polarization which keeps the same rank
+bound.  Put
+\begin{equation}
+ d_{T,U_0}=p_{U_0}-p_T,
+ \qquad
+ s_{T,U_0}=\frac{p_{U_0}+p_T}{2}.
+ \label{eq:tpc32-cutoff-polarization-vectors}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \Theta_{T,U_0}
+ =d_{T,U_0}\otimes s_{T,U_0}
+  +s_{T,U_0}\otimes d_{T,U_0}.}
+ \label{eq:tpc32-cutoff-polarization}
+\end{equation}
+At the level of the physical divisor sums, define
+\begin{equation}
+ \mathsf H_{m;T,U_0}(j)
+ :=\frac{\mathsf A_{m,U_0}(j)+\mathsf A_{m,T}(j)}2
+ =\mathsf A_{m,T}(j)+\frac12C_m(j).
+ \label{eq:tpc32-half-prefix}
+\end{equation}
+Then the exact polarized shell is
+\begin{equation}
+ \boxed{
+ \cK^{\mathrm{sh}}_{\alpha,\gamma}(j)
+ =C_m(j)\mathsf H_{n;T,U_0}(j)
+  +\mathsf H_{m;T,U_0}(j)C_n(j).}
+ \label{eq:tpc32-physical-polarization}
+\end{equation}
+Thus three rectangles become two polarized tensors before estimation.
+This is an algebraic rank statement.  It does not make the masked row
+form positive semidefinite and does not authorize deletion of either
+polarized term.
+
+\subsection{The complete calibrated difference and its drift boundary}
+
+For \(m=\ell d\), let
+\begin{equation}
+ \delta_H(m)
+ =\frac{H}{\varphi(H)}
+  \frac{d}{\varphi(d)(\ell-1)}
+ \ll_{\eps,h}\frac{X^\eps}{L},
+ \label{eq:tpc32-row-drift}
+\end{equation}
+and define the calibrated prefix
+\begin{equation}
+ P_{m,Y}(j)=\mathsf A_{m,Y}(j)-\delta_H(m).
+ \label{eq:tpc32-calibrated-prefix}
+\end{equation}
+
+\begin{proposition}[Exact calibrated cutoff difference]
+\label{prop:tpc32-calibrated-cutoff}
+For every physical \(m,n,j\),
+\begin{align}
+ &P_{m,U_0}(j)P_{n,U_0}(j)
+  -P_{m,T}(j)P_{n,T}(j)
+ \notag\\
+ &\quad={}
+ \cK^{\mathrm{sh}}_{\alpha,\gamma}(j)
+ -\delta_H(m)C_n(j)-\delta_H(n)C_m(j).
+ \label{eq:tpc32-calibrated-cutoff}
+\end{align}
+There is no two-drift term: it cancels between the two cutoff levels.
+\end{proposition}
+
+\begin{proof}
+Use \(P_{m,U_0}=P_{m,T}+C_m\), which follows from
+\eqref{eq:tpc32-exact-prefix-increment}, and expand.  Alternatively,
+insert \eqref{eq:tpc32-calibrated-prefix} into the difference in
+\eqref{eq:tpc32-exact-cutoff-shell}; the two copies of
+\(\delta_H(m)\delta_H(n)\) cancel.
+\end{proof}
+
+Let \(\cD^{\mathrm{dr}}(\cE)\) be the contribution of the final two
+terms in \eqref{eq:tpc32-calibrated-cutoff} to
+\eqref{eq:tpc32-physical-functional}, with any additional event
+\(\cE\).  Since an indicator or a unit-modulus determinant phase can
+only decrease its absolute majorant, the following estimate is uniform
+over every restriction used later.
+
+\begin{proposition}[Uniform drift boundary]
+\label{prop:tpc32-drift-boundary}
+For every fixed \(\eps>0\),
+\begin{equation}
+ \boxed{
+ |\cD^{\mathrm{dr}}(\cE)|
+ \ll_{\eps,h,\mathscr D}
+ X^\eps\frac{XQ}{L}.}
+ \label{eq:tpc32-drift-boundary}
+\end{equation}
+Consequently, if \(L\ge X^{\lambda_0}\) for fixed
+\(\lambda_0>0\), the drift legs have a fixed-power saving relative to
+\(XQ\), after choosing the soft-loss exponent below
+\(\lambda_0\).
+\end{proposition}
+
+\begin{proof}
+By \eqref{eq:tpc32-row-l1} and
+\eqref{eq:tpc32-row-drift},
+\[
+ \sum_\alpha|\gamma_\alpha^{(i)}|\delta_H(m_\alpha)
+ \ll X^\eps Q/L.
+\]
+Use this on the drift row, \eqref{eq:tpc32-row-l1} on the other row,
+\eqref{eq:tpc32-prefix-envelope} for the ultra increment, and the
+\(O_{\mathscr D}(J)\) orbit length.  Each of the two legs is
+\[
+ \ll X^\eps J(Q/L)Q
+ \asymp X^\eps XQ/L.
+\]
+Renaming the harmless soft-loss exponent proves the claim.
+\end{proof}
+
+\begin{remark}[What is carried into the next sections]
+The hard raw object is the single matched kernel
+\eqref{eq:tpc32-exact-cutoff-shell}, not three unrelated absolute
+sums.  The calibrated packet equals that object plus the rigorously
+bounded drift contribution \eqref{eq:tpc32-drift-boundary}.  Every
+factorization below retains the joint multiplier
+\eqref{eq:tpc32-joint-multiplier}; boundedness alone is not treated as
+a factorization theorem.
+\end{remark}

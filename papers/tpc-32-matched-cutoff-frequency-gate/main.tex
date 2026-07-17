@@ -1,0 +1,169 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,float}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Matched Prime-Mobius Cutoff Shells: Rank-Two Factorization, Determinant-Frequency Dispersion, and the Distinguished Zero-Frequency Gate},
+ pdfauthor={Liang Wang},
+ pdfsubject={Exact cutoff matching, determinant-frequency dispersion, and a quantified zero-frequency gate in a primitive Mobius tail},
+ pdfkeywords={Mobius tail, cutoff shell, determinant frequency, Parseval, large sieve, zero frequency, parity barrier}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\T}{\mathbb T}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\e}[1]{e\!\left(#1\right)}
+\newcommand{\eq}[1]{e_{#1}}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cW}{\mathcal W}
+
+\title{\textbf{Matched Prime--M\"obius Cutoff Shells:}\\
+\textbf{Rank--Two Factorization, Determinant--Frequency Dispersion,}\\
+\textbf{and the Distinguished Zero--Frequency Gate}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We continue the primitive M\"obius-tail reduction at the point where
+canonical determinant cells are individually sparse but their untwisted
+reassembly remains uncontrolled.  Let $Q=X^{\beta+o(1)}$ be the row scale,
+$J=X^{1-\beta+o(1)}$ the orbit scale, and $N_0=JQ^2\asymp XQ$ the natural
+two-row mass.  The two mixed ultra-cutoff channels and the both-ultra
+channel admit the pointwise identity
+\[
+ \mathsf A_{m,T}C_n+C_m\mathsf A_{n,T}+C_mC_n
+ =\mathsf A_{m,U_0}\mathsf A_{n,U_0}
+  -\mathsf A_{m,T}\mathsf A_{n,T}.
+\]
+Consequently, their divisor coefficient is the difference of two rank-one
+tensors and has rank at most two.  We retain this matching, the actual
+prime--M\"obius row coefficients, the canonical target content, and the
+joint physical multiplier in one exact bilinear formula.  The row sign and
+the reflected divisor sign fuse as
+\[
+ \mu(d)b_R(w)=-\mu(dw)w_R(w)
+ \qquad\bigl(w\mid \ell dj+h\bigr),
+\]
+while exact content and determinant phase factorize without requiring any
+coprimality between the content and the auxiliary Fourier modulus.
+
+For the signed amplitude $A_C(n)$ of the matched shell with canonical
+content at most $C\le J$, $C\ll_{\mathscr D}Q$, and normalized determinant
+$n$, the preceding
+singleton-cell estimate gives
+\[
+ \|A_C\|_1\ll X^\eps N_0,
+ \qquad
+ \|A_C\|_\infty\ll X^\eps Q(C+J),
+ \qquad
+ \|A_C\|_2^2\ll X^\eps\frac{N_0^2}{Q}.
+\]
+Choosing a prime Fourier modulus larger than the determinant span yields an
+exact no-wrap Parseval identity.  Hence all but
+$O(X^{2\sigma+\eps})$ frequencies satisfy
+$|\widehat A_{C,q}(r)|\le N_0X^{-\sigma}$.  A classical additive large sieve
+gives the corresponding Farey-family estimate.  At $\beta=267/400$, all
+but an $O(X^{-1/400+o(1)})$ proportion of determinant frequencies already
+have every fixed saving below $133/400$.
+
+The remaining hard raw component of the original calibrated residual is
+the distinguished coefficient $r=0$, not a generic frequency, modulo the
+already controlled large-content and drift terms.  We show exactly that
+the nontrivial terms of the
+small-content M\"obius projector reassemble to minus the previously bounded
+large-content shell, so the zero coefficient is equivalent, within the
+inherited large-content error, to the full raw cutoff shell.  If its flatness exponent
+$\chi$ satisfies
+\[
+ |\widehat A_{C,q}(0)|^2\le X^{\chi+o(1)}\sum_n|A_C(n)|^2,
+\]
+then, whenever $\chi<\beta$ and $\kappa>0$, the matched shell has every
+saving below
+\[
+ \min\left\{1-\beta,\,\kappa,\,\frac{\beta-\chi}{2}\right\},
+ \qquad C=X^{\kappa+o(1)}.
+\]
+At the high-$\beta$ endpoint with $C=\lfloor J\rfloor$, the precise
+remaining condition is $\chi\le1/400$.  This flatness estimate is not proved
+here.  A sharp finite
+Fourier model shows that the available support and norm bounds, even
+combined with perfect cancellation at every nonzero frequency, cannot
+control $r=0$.  A primitive finite witness likewise shows that the content
+projector retains a coherent row mode.  Thus the paper supplies an
+unconditional almost-all-frequency theorem, an exact conditional transfer,
+and a sharp interface obstruction; it does not prove a prime-pair
+asymptotic, twin primes, or a breach of the sieve parity barrier.
+\end{abstract}
+
+\noindent\textbf{Keywords:} primitive M\"obius tail; matched cutoff shell;
+rank-two factorization; canonical target content; determinant frequency;
+large sieve; zero-frequency flatness; parity barrier.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary 11B25, 11L07.
+
+\input{sections/introduction}
+\input{sections/physical-matched-shell}
+\input{sections/canonical-content-factorization}
+\input{sections/prime-mobius-mask-boundary}
+\input{sections/determinant-dispersion}
+\input{sections/zero-frequency-gate}
+\input{sections/high-beta-ledger}
+\input{sections/sharp-interface-obstructions}
+\input{sections/technology-next-gate}
+\input{sections/certificate-scope}
+
+\clearpage
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

@@ -1,0 +1,204 @@
+\section{The distinguished zero frequency and a conditional transfer theorem}
+\label{sec:tpc32-zero-frequency-gate}
+
+The notation in this section is connected to the canonical factorization by
+\begin{equation}
+ \widehat A_{C,q}(r)
+ =\widehat{\cS}^{\mathrm{sh}}_{[1,C],q}(r),
+ \qquad
+ \cS_{\rm sh}^{\rm all}=\cS_{\mathrm{full}}^{\mathrm{sh}},
+ \qquad
+ \cS_{\rm sh}(c>C)=\cS_{>C}^{\mathrm{sh}}.
+ \label{eq:tpc32-zero-notation-crosswalk}
+\end{equation}
+Here $r=0$ is the finite Fourier frequency of the normalized determinant.
+It is neither the orbit-variable Poisson zero mode nor the centered
+divisor-kernel zero mode used in earlier parts of the program.
+
+The frequency $r=0$ in
+\eqref{eq:tpc32-no-wrap-DFT} is independent of the auxiliary modulus:
+\begin{equation}
+ \widehat A_{C,q}(0)
+ =\sum_nA_C(n)
+ =\cS_{\rm sh}(c_{\alpha,\gamma}(j)\le C).
+ \label{eq:tpc32-zero-is-small-content}
+\end{equation}
+It is therefore the untwisted small-content shell, not a typical
+oscillatory determinant twist.  This section first records its exact
+relation to the complete raw shell and then states a quantitative
+additional hypothesis under which the TPC-30 large-content estimate
+closes the splice.
+
+\subsection{Equivalence to the full shell modulo large content}
+
+Let
+\begin{equation}
+ \cS_{\rm sh}^{\rm all}:=\cS_{\rm sh}(\text{all target contents}).
+ \label{eq:tpc32-full-matched-shell}
+\end{equation}
+Since exact contents partition the physical triples,
+\begin{equation}
+ \cS_{\rm sh}^{\rm all}
+ =\widehat A_{C,q}(0)
+  +\cS_{\rm sh}(c_{\alpha,\gamma}(j)>C).
+ \label{eq:tpc32-zero-full-partition}
+\end{equation}
+TPC-30 proves, separately for the two mixed channels and the both-ultra
+channel, the large-content estimate
+\begin{equation}
+ |\cS_{\rm sh}(c>C)|
+ \ll_{\eps,h,\mathscr D}
+ X^\eps\left(Q^2+\frac{XQ}{C}\right)
+ \ll_{\mathscr D}
+ X^\eps N_0\left(\frac1J+\frac1C\right),
+ \label{eq:tpc32-large-content-input}
+\end{equation}
+where the matched version follows by adding those three bounds
+\citep{WangTPC30,WangTPC31}.
+
+\begin{proposition}[Zero coefficient and full-shell equivalence]
+\label{prop:tpc32-zero-full-equivalence}
+For every $1\le C\ll_{\mathscr D}Q$ in the range of the inherited
+large-content theorem,
+\begin{equation}
+ \boxed{
+ |\cS_{\rm sh}^{\rm all}-\widehat A_{C,q}(0)|
+ \ll_{\eps,h,\mathscr D}
+ X^\eps N_0\left(\frac1J+\frac1C\right).}
+ \label{eq:tpc32-zero-full-splice-bound}
+\end{equation}
+Consequently, an estimate for the zero coefficient transfers to the
+complete matched raw shell with precisely the two displayed losses, and an
+estimate for the complete raw shell transfers back to the zero coefficient
+with the same losses.
+\end{proposition}
+
+\begin{proof}
+Subtract \eqref{eq:tpc32-zero-is-small-content} from
+\eqref{eq:tpc32-zero-full-partition} and apply
+\eqref{eq:tpc32-large-content-input}.  The reverse transfer is the same
+inequality with the two terms interchanged.
+\end{proof}
+
+The content-projector factorization gives the coefficient-level version
+of this elementary partition.  With \(\lambda_C\) defined in
+\eqref{eq:tpc32-lambda-projector-alias},
+\cref{prop:tpc32-t-one-large-reassembly} states exactly that
+\[
+ \lambda_C(1)=1,\qquad
+ \sum_{\substack{t\mid g\\t>1}}\lambda_C(t)=-\one_{g>C}.
+\]
+Thus the principal \(t=1\) term is the untwisted full-content shell, while
+all nonprincipal projector terms reassemble exactly to minus the
+large-content shell.  There is no unrecorded cancellation obtained by
+expanding the small-content indicator.
+
+\subsection{Zero-frequency flatness}
+
+The no-wrap Parseval identity identifies
+$\|A_C\|_2$ as the root-mean-square size of its determinant Fourier
+coefficients.  The missing statement is that the distinguished zero
+coefficient is not much larger than this rms scale.
+
+\begin{definition}[Zero-frequency flatness exponent]
+\label{def:tpc32-zero-flatness}
+Suppose $A_C$ is not identically zero.  Its zero-frequency concentration
+ratio is
+\begin{equation}
+ \mathfrak F_0(A_C)
+ :=\frac{|\sum_nA_C(n)|^2}{\sum_n|A_C(n)|^2}
+ =\frac{|\widehat A_{C,q}(0)|^2}{\|A_C\|_2^2}.
+ \label{eq:tpc32-zero-concentration-ratio}
+\end{equation}
+We say that the packet has flatness exponent at most $\chi$ if
+\begin{equation}
+ \boxed{
+ \mathfrak F_0(A_C)\le X^{\chi+o(1)}.}
+ \label{eq:tpc32-flatness-hypothesis}
+\end{equation}
+If $A_C\equiv0$, we set $\mathfrak F_0(A_C)=0$.
+\end{definition}
+
+Condition \eqref{eq:tpc32-flatness-hypothesis} is an additional
+arithmetic input.  It is not proved by Parseval, the additive large
+sieve, the matched rank-two identity, or any theorem in this paper.
+The notation ``flatness'' describes only the relative size of the
+distinguished Fourier coefficient; it is not a probabilistic
+assumption.
+
+\begin{theorem}[Conditional zero-frequency transfer]
+\label{thm:tpc32-conditional-zero-transfer}
+Assume
+\begin{equation}
+ Q=X^{\beta+o(1)},
+ \qquad
+ J=X^{1-\beta+o(1)},
+ \qquad 0<\beta<1,
+ \label{eq:tpc32-zero-transfer-scales}
+\end{equation}
+and choose
+\begin{equation}
+ C=X^{\kappa+o(1)}\le J,
+ \qquad C\ll_{\mathscr D}Q
+ \label{eq:tpc32-zero-transfer-content-scale}
+\end{equation}
+for a fixed $\kappa\ge0$.  If the actual matched coefficient $A_C$
+satisfies \eqref{eq:tpc32-flatness-hypothesis} for a fixed $\chi$, then
+\begin{align}
+ |\widehat A_{C,q}(0)|
+ &\ll X^{o(1)}N_0X^{-(\beta-\chi)/2},
+ \label{eq:tpc32-conditional-zero-bound}\\
+ |\cS_{\rm sh}^{\rm all}|
+ &\ll X^{o(1)}N_0
+ \left\{
+ X^{-(\beta-\chi)/2}
+ +X^{-(1-\beta)}
+ +X^{-\kappa}
+ \right\}.
+ \label{eq:tpc32-conditional-full-shell-bound}
+\end{align}
+In particular, if
+\begin{equation}
+ \chi<\beta,
+ \qquad \kappa>0,
+ \label{eq:tpc32-positive-conditional-margins}
+\end{equation}
+then every fixed
+\begin{equation}
+ \boxed{
+ \sigma<
+ \min\left\{
+ 1-\beta,\ \kappa,\ \frac{\beta-\chi}{2}
+ \right\}}
+ \label{eq:tpc32-conditional-saving-range}
+\end{equation}
+is a power-saving exponent relative to $N_0\asymp XQ$ for the complete
+matched raw shell.
+\end{theorem}
+
+\begin{proof}
+By the flatness hypothesis and
+\cref{prop:tpc32-determinant-norms},
+\[
+ |\widehat A_{C,q}(0)|
+ \le X^{\chi/2+o(1)}\|A_C\|_2
+ \ll X^{o(1)}N_0X^{-\beta/2+\chi/2},
+\]
+which is \eqref{eq:tpc32-conditional-zero-bound}.  Insert this estimate
+and the scale relations
+$J^{-1}=X^{-(1-\beta)+o(1)}$ and
+$C^{-1}=X^{-\kappa+o(1)}$ into
+\eqref{eq:tpc32-zero-full-splice-bound}.  This proves
+\eqref{eq:tpc32-conditional-full-shell-bound}.  The strict range
+\eqref{eq:tpc32-conditional-saving-range} absorbs all $o(1)$ and soft
+losses.
+\end{proof}
+
+\begin{remark}[Conditional means conditional]
+\label{rem:tpc32-flatness-not-proved}
+The conclusion of \cref{thm:tpc32-conditional-zero-transfer} is a
+rigorous implication, but it is not an unconditional estimate for the
+physical shell.  In particular, the fact that all but a power-small
+proportion of the nonzero frequencies obey the desired bound does not
+verify \eqref{eq:tpc32-flatness-hypothesis} at $r=0$.
+\end{remark}
