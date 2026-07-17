@@ -1,0 +1,72 @@
+{
+  "atlas_center_count": 170,
+  "atlas_leaf_count": 314,
+  "block_norm_uppers": {
+    "coarse_consistency": 0.0001988771765468915,
+    "coarse_to_detail": 0.011321437875219683,
+    "detail_block": 0.00013052207678363766,
+    "detail_to_coarse": 0.013722641666077897
+  },
+  "certificate_files": {
+    "coarse_count_replay": {
+      "path": "results/coarse_count_replay.json",
+      "sha256": "4c858e87d73bcc519c34bba75672c69618d00aa05579d9794a16d647cc471346"
+    },
+    "floating_spectrum_pilot": {
+      "path": "results/fine_spectrum_pilot_sigma_1e-02.json",
+      "sha256": "e35805fa0bd4453bf6b41d9145e92d49f2a60edbc98399d248aa9f12ebde0a7b"
+    },
+    "nested_block_certificate": {
+      "path": "results/nested_block_certificate_sigma_1e-02.json",
+      "sha256": "ee58b0f3cbc03d01ea005e484382034bb1cc2c4b0d4458d62914cc1ad6ab4e57"
+    },
+    "physical_resolvent_atlas": {
+      "path": "results/physical_resolvent_atlas.json",
+      "sha256": "29a697ffa7f8c3ff34a458fadbdf3f9ffd8938898670d230627e5a4d052aa6e4"
+    }
+  },
+  "coarse_count_replay": {
+    "leaf_count": 949,
+    "maximum_feshbach_rouche_product_upper": 0.5471840779308835,
+    "pair_defect_hash_match": true,
+    "transfer_ledger_hash_match": true
+  },
+  "coarse_dimension": 2048,
+  "coarse_physical_inside_count": 1,
+  "coarse_physical_inside_count_certified": true,
+  "detail_inside_count": 0,
+  "detail_inside_count_certified_zero": true,
+  "detail_resolvent_upper": 2.658831394912469,
+  "effective_perturbation_upper": 0.0006119533154024968,
+  "evidence_level": "rigorous_computer_assisted_stored_model_theorem",
+  "exact_dyadic_coordinate_decomposition": true,
+  "exact_schur_determinant_identity": true,
+  "fine_dimension": 4096,
+  "fine_physical_inside_count": 1,
+  "fine_physical_inside_count_certified": true,
+  "floating_localization": {
+    "coarse_inside_imag": -0.44420174264580303,
+    "coarse_inside_real": -0.09936041465371176,
+    "coarse_to_fine_displacement": 4.419299869873247e-05,
+    "evidence_level": "floating_not_validated",
+    "fine_inside_imag": -0.4441920040123497,
+    "fine_inside_real": -0.09940352126750185
+  },
+  "full_boundary_continuation_certified": true,
+  "limitations": [
+    "The theorem compares two exact finite stored binary64 matrices at one fixed noise scale.",
+    "It does not enclose either matrix relative to the continuum Gaussian operator.",
+    "It does not prove convergence for arbitrarily increasing dimensions.",
+    "It does not prove a zero-noise limit or identify any zeta zero.",
+    "It makes no Hilbert-Polya or Riemann-hypothesis claim."
+  ],
+  "maximum_continuation_product_upper": 0.8993497428917556,
+  "maximum_transported_coarse_resolvent_upper": 1469.637830624761,
+  "scope": "exact stored binary64 Perron/parity-extracted physical two-step matrices at sigma=1e-2 on the 2048 and 4096 midpoint grids",
+  "self_energy_upper": 0.0004130761388556052,
+  "sigma": 0.01,
+  "snapshot_sha256": "a1e2a6a3a32a6f7e68ec17b294bdb41d404c0dbeca1f5cb89aefe48ab4390d81",
+  "status": "rigorous_nested_grid_physical_count_one",
+  "stored_object_identity_verified": true,
+  "theorem_admissible_coarse_resolvent_upper": 1634.1115814402854
+}

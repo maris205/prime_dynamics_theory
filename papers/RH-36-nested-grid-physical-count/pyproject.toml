@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nested-grid-physical-count"
+version = "0.1.0"
+description = "Certified nested-grid continuation of a stored physical contour count"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=2.0",
+  "scipy>=1.14",
+  "python-flint>=0.7",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src",
+  "../RH-27-outward-rounded-primal-dual-residuals/src",
+  "../RH-30-sparse-two-step-grushin-inverse/src",
+]
+testpaths = ["tests"]

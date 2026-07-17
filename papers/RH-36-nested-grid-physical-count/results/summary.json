@@ -1,0 +1,37 @@
+{
+  "atlas_center_count": 170,
+  "atlas_leaf_count": 314,
+  "coarse_dimension": 2048,
+  "coarse_physical_inside_count": 1,
+  "detail_inside_count": 0,
+  "effective_perturbation_upper": 0.0006119533154024968,
+  "fine_dimension": 4096,
+  "fine_physical_inside_count": 1,
+  "limitations": [
+    "The theorem compares two exact finite stored binary64 matrices at one fixed noise scale.",
+    "It does not enclose either matrix relative to the continuum Gaussian operator.",
+    "It does not prove convergence for arbitrarily increasing dimensions.",
+    "It does not prove a zero-noise limit or identify any zeta zero.",
+    "It makes no Hilbert-Polya or Riemann-hypothesis claim."
+  ],
+  "maximum_continuation_product_upper": 0.8993497428917556,
+  "result_hashes": {
+    "results/coarse_count_replay.json": "4c858e87d73bcc519c34bba75672c69618d00aa05579d9794a16d647cc471346",
+    "results/coarse_count_replay_pair_defect.json": "a1c2b4561c5fe92bbf00b0e35626fd100ba037d4d7f6550d72370de41aa7393e",
+    "results/coarse_count_replay_transfer.csv": "97c5d033e7a6785ed3b98d919263c6ae23ad9f69ec89ed5f8f38d64584242eff",
+    "results/dependency_manifest.json": "4f3e9918304af5fb5ce6260789b3fc3a70b49661cac6eef32ee9284657ac2a0e",
+    "results/fine_spectrum_pilot_sigma_1e-02.json": "e35805fa0bd4453bf6b41d9145e92d49f2a60edbc98399d248aa9f12ebde0a7b",
+    "results/fine_spectrum_pilot_sigma_1e-02.npz": "a7955b5aa44058f2826cb46b40820bbfd4bbaf634630e67ed69b34f6ea18a26b",
+    "results/nested_block_certificate_sigma_1e-02.json": "ee58b0f3cbc03d01ea005e484382034bb1cc2c4b0d4458d62914cc1ad6ab4e57",
+    "results/nested_grid_physical_count_certificate.json": "76f3ca8ad40a48a7ac51fc36640edc187dfa29526cbfcabe089a4c14710520d4",
+    "results/nested_grid_snapshot_sigma_1e-02.json": "a2860362760e06b63893a6bf29aa7763860c2067f1b35235d7d09ae7cedbe29a",
+    "results/nested_grid_snapshot_sigma_1e-02.npz": "a1e2a6a3a32a6f7e68ec17b294bdb41d404c0dbeca1f5cb89aefe48ab4390d81",
+    "results/physical_center_manifest.json": "771d3241c463a08a997599b3675081cf7b477d2bb8e30b54f5e7d582c30b217c",
+    "results/physical_resolvent_atlas.json": "29a697ffa7f8c3ff34a458fadbdf3f9ffd8938898670d230627e5a4d052aa6e4",
+    "results/physical_resolvent_atlas_leaves.csv": "3b9663e892ce5343076ec88376e40208648554445494ec039d332fc9851096ab",
+    "results/physical_resolvent_centers.csv": "3707dff992008dfb65467952313e6bc059d4c5eb200b78f4a5f457b3c6b72b18"
+  },
+  "scope": "exact stored binary64 Perron/parity-extracted physical two-step matrices at sigma=1e-2 on the 2048 and 4096 midpoint grids",
+  "sigma": 0.01,
+  "status": "rigorous_nested_grid_physical_count_one"
+}

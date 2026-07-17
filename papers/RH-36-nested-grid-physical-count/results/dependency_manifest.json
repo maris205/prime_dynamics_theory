@@ -1,0 +1,47 @@
+{
+  "external_inputs": {
+    "rh28_arcwise_contour_arcs": {
+      "path": "papers/RH-28-arcwise-rational-arnoldi-enclosure/results/arcwise_contour_arcs.csv",
+      "sha256": "dff01d5fe7564c7f0fcd3cea80fca328abcbca84d34c4ef7fb90f52690f92cdd"
+    },
+    "rh28_arcwise_scale_summary": {
+      "path": "papers/RH-28-arcwise-rational-arnoldi-enclosure/results/arcwise_scale_summary.csv",
+      "sha256": "05c37d3be3fabdc936e0575e2a6ad6e7b0cf1fd4f0f59db5155cf93d7fd0086c"
+    },
+    "rh33_refined_leaf_ledger": {
+      "path": "papers/RH-33-certified-complement-resolvent-atlas/results/refined_atlas_sigma_1e-02_leaves.csv",
+      "sha256": "7396a429a1d606fa3e24ce2800eb65d05382ec2d2202f8f5cfbcc23aa87ef6dd"
+    },
+    "rh35_exact_pair_defect": {
+      "path": "papers/RH-35-exact-packet-pair-physical-count/results/exact_packet_defect_sigma_1e-02.json",
+      "sha256": "a1c2b4561c5fe92bbf00b0e35626fd100ba037d4d7f6550d72370de41aa7393e"
+    },
+    "rh35_physical_count_certificate": {
+      "path": "papers/RH-35-exact-packet-pair-physical-count/results/packet_pair_certificate_sigma_1e-02.json",
+      "sha256": "1ea4f205d61fa7982daced6ae91191c539aa99f0a15ef416c3006db87564537b"
+    },
+    "rh35_transfer_ledger": {
+      "path": "papers/RH-35-exact-packet-pair-physical-count/results/packet_pair_transfer_sigma_1e-02.csv",
+      "sha256": "97c5d033e7a6785ed3b98d919263c6ae23ad9f69ec89ed5f8f38d64584242eff"
+    }
+  },
+  "local_sources": {
+    "experiments/audit_physical_resolvent_atlas.py": "c9ac97103a5bede46b87329fcc690c043528e89356aa7861900b5ee9f4ba64c6",
+    "experiments/build_archive.py": "e1ff4010a8fcfbc86d20d434e3eebb1164dc3b5530f1958c56cf4d460afd98d0",
+    "experiments/build_final_certificate.py": "6f3bc402ade4a6ce31f75707d787f161b69f1aa8005ff1c85d590fda408a9f82",
+    "experiments/build_nested_grid_snapshot.py": "35ca10fc6273be6a233837b4473a5676494047aff2a0dbed7e44e09e8490f619",
+    "experiments/make_figures.py": "d831c50fec5cfcdd5a0b1cf8c87afbe3cc54b409f0b4e06e9390a228dc0cc223",
+    "experiments/replay_coarse_count.py": "a086e54062666d3aae3e33f6e1605ce92d8d1baa1e7a0d6715fd10478ad93893",
+    "experiments/run_coarse_resolvent_center.py": "75a9727a9138870dbd548b5f6c618000ab54445efa7ac07ab2e25f2b75c99fa4",
+    "experiments/run_fine_spectrum_pilot.py": "7745d6bfc48dde409cb5eee55b60e3b5e8d8c88b4e2bade0537ac7ed79907abe",
+    "experiments/run_nested_block_certificate.py": "2cfb350c5667e5f109acc5a0bf7328c62f3eb1e357ad3a9461fc0c44e68ab1a6",
+    "experiments/run_nested_grid_pilot.py": "65a1c4cb031b1c9bb12d9cc60887018bddb01748c6f388f8d2e7c82b281b5f61",
+    "experiments/run_physical_resolvent_batch.py": "2bb72ed7d4705018821d14730bb56a2cbe67eb305d7bf753243fc0a1775728ce",
+    "experiments/verify_archive.py": "7cd701124282cad620124892afb3a0d7152e204136521ec76583d848229e519d",
+    "src/nested_grid/__init__.py": "e020bb4912ee7866c27bae4a5c1abb8831175ae732789c5cd3168ce91091c386",
+    "src/nested_grid/certificate.py": "d6d98e0615e873d667172c230b5db9eb37c75b726c86df3ab454f4579058c28a",
+    "tests/test_archived_results.py": "208e2b04fa5ad1f8513a6a5a468ddd847c2f8a5f7ff3548c87f693e046ca2154",
+    "tests/test_nested_grid.py": "f131cf15c052914d4581700bc2d87bb18913d29e5b3932fee6edf1fcf2a3ba61"
+  },
+  "status": "all_consumed_inputs_and_sources_hashed"
+}
