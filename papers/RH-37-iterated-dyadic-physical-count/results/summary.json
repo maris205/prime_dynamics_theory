@@ -1,0 +1,43 @@
+{
+  "additional_center_count": 13,
+  "atlas_center_count": 183,
+  "atlas_leaf_count": 324,
+  "certified_count_chain": {
+    "A2048": 1,
+    "A4096": 1,
+    "A8192": 1
+  },
+  "limitations": [
+    "The theorem concerns three exact finite stored binary64 matrices at one fixed Gaussian width.",
+    "It does not enclose any discretization relative to a continuum transfer operator.",
+    "It proves one further dyadic step, not induction over all grid dimensions.",
+    "The observed quarter/half block scaling is diagnostic and is not promoted to an asymptotic theorem.",
+    "It does not prove a zero-noise limit or identify any zeta zero.",
+    "It makes no Hilbert-Polya or Riemann-hypothesis claim."
+  ],
+  "maximum_propagated_A4096_resolvent_upper": 4843.819104431207,
+  "maximum_second_continuation_product_upper": 0.7409188599618061,
+  "result_hashes": {
+    "results/coarse_resolvent_center_manifest.json": "cd4d3e69e1fd66fda1a6946acc5c11373c8ec6b81ce4a5fb29f8fa62f7d000d5",
+    "results/coarse_resolvent_centers.csv": "2a6dbc3dbc4aea50149ab5835b7a04d3f39a8983b906a061b3622f5f4c176af2",
+    "results/dependency_manifest.json": "b82d9999e1870a414bec228e6e549edfbd270f64fb33d6696a413bee720c2e45",
+    "results/inherited_A4096_count_replay.json": "66ce49f3c54edd68be78f56537b450fd4fa38012199be0c691250ad1d462fc61",
+    "results/iterated_dyadic_physical_count_certificate.json": "dd174bc324aa4134617a2b1dc1027cfb14ee41b3ec380253519f1f6d24eb518e",
+    "results/propagated_resolvent_atlas.json": "434df1b4c106160d77646b0bcdbe35a7a752266062fb6c7cbd2363f69977fa6d",
+    "results/propagated_resolvent_atlas_leaves.csv": "a2d4388d2a02cd6175e460361b4ee094078ad8c64b645a22d382005d5102dd5c",
+    "results/second_dyadic_block_certificate_sigma_1e-02.json": "8ede1dd07214d548f60634a92de0bb90c849ab551f5013921b383d24abacb5a5",
+    "results/second_dyadic_center_coarse_consistency_sigma_1e-02.npz": "063122c36789e58e23083ca26165d02a5cdbdcce9995177c815d0dd4f4da2c13",
+    "results/second_dyadic_center_coarse_to_detail_sigma_1e-02.npz": "0f3e022a4e67bdb8e627f3cacb6d32515431d332bdff076a8f78f644a272d942",
+    "results/second_dyadic_center_detail_block_sigma_1e-02.npz": "c5228b1b66d897d785322b06fa219ddc63664c6be6adeb18a63164c065d54f3e",
+    "results/second_dyadic_center_detail_to_coarse_sigma_1e-02.npz": "09ada5abad670b3b8d909f4488a0955ec160a4cba8057c097ce1c3b48153e1fa",
+    "results/second_dyadic_fine_object_sigma_1e-02.npz": "886c6985e3937b374e9f7ab40bef31d34351ad2f794d546b50011c100848544a",
+    "results/second_dyadic_pilot_sigma_1e-02.json": "5b47a62c75c6b1aa956b8a1597b80b55e4cc3c56f37174f2606991ec82b1e114",
+    "results/second_dyadic_snapshot_sigma_1e-02.json": "558cd7e20600d887bfeea53176a94d5311996f9ea1c97ba9ef68469e529a52ec",
+    "results/second_dyadic_spectrum_pilot_sigma_1e-02.json": "0f4898b8bb17150bcd561f2baec08a1096f7867db97fcb946baca35e7c38c374",
+    "results/second_dyadic_spectrum_pilot_sigma_1e-02.npz": "a05cb2364adef33103146b762ba27e5fc8724b792dd65142148f2a2b89f70b1e"
+  },
+  "scope": "exact stored binary64 Perron/parity-extracted physical two-step matrices at sigma=1e-2 on the 2048, 4096, and 8192 midpoint grids",
+  "second_effective_perturbation_upper": 0.00015296171140743076,
+  "sigma": 0.01,
+  "status": "rigorous_iterated_dyadic_physical_count_one"
+}

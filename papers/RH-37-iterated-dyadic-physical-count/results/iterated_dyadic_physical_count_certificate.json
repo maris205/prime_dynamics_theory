@@ -1,0 +1,102 @@
+{
+  "A8192_inside_count": 1,
+  "A8192_inside_count_certified": true,
+  "base_dimension": 2048,
+  "certificate_files": {
+    "floating_spectrum_pilot": {
+      "path": "results/second_dyadic_spectrum_pilot_sigma_1e-02.json",
+      "sha256": "0f4898b8bb17150bcd561f2baec08a1096f7867db97fcb946baca35e7c38c374"
+    },
+    "inherited_RH36_theorem": {
+      "path": "/root/math/prime_dynamics_theory/papers/RH-36-nested-grid-physical-count/results/nested_grid_physical_count_certificate.json",
+      "sha256": "76f3ca8ad40a48a7ac51fc36640edc187dfa29526cbfcabe089a4c14710520d4"
+    },
+    "inherited_count_replay": {
+      "path": "results/inherited_A4096_count_replay.json",
+      "sha256": "66ce49f3c54edd68be78f56537b450fd4fa38012199be0c691250ad1d462fc61"
+    },
+    "propagated_resolvent_atlas": {
+      "path": "results/propagated_resolvent_atlas.json",
+      "sha256": "434df1b4c106160d77646b0bcdbe35a7a752266062fb6c7cbd2363f69977fa6d"
+    },
+    "second_block_certificate": {
+      "path": "results/second_dyadic_block_certificate_sigma_1e-02.json",
+      "sha256": "8ede1dd07214d548f60634a92de0bb90c849ab551f5013921b383d24abacb5a5"
+    },
+    "snapshot_metadata": {
+      "path": "results/second_dyadic_snapshot_sigma_1e-02.json",
+      "sha256": "558cd7e20600d887bfeea53176a94d5311996f9ea1c97ba9ef68469e529a52ec"
+    }
+  },
+  "certified_count_chain": {
+    "A2048": 1,
+    "A4096": 1,
+    "A8192": 1
+  },
+  "coarse_dimension": 4096,
+  "evidence_level": "rigorous_computer_assisted_stored_model_theorem",
+  "exact_dyadic_coordinate_decomposition": true,
+  "exact_schur_determinant_identity_at_both_levels": true,
+  "fine_dimension": 8192,
+  "first_refinement": {
+    "block_norm_uppers": {
+      "coarse_consistency": 0.0001988771765468915,
+      "coarse_to_detail": 0.011321437875219683,
+      "detail_block": 0.00013052207678363766,
+      "detail_to_coarse": 0.013722641666077897
+    },
+    "detail_resolvent_upper": 2.658831394912469,
+    "effective_perturbation_upper": 0.0006119533154024968,
+    "source": "/root/math/prime_dynamics_theory/papers/RH-36-nested-grid-physical-count/results/nested_block_certificate_sigma_1e-02.json",
+    "source_sha256": "ee58b0f3cbc03d01ea005e484382034bb1cc2c4b0d4458d62914cc1ad6ab4e57"
+  },
+  "floating_localization": {
+    "A4096_inside_imag": -0.4441920040123497,
+    "A4096_inside_real": -0.09940352126750185,
+    "A4096_to_A8192_displacement": 1.103904185835658e-05,
+    "A8192_inside_imag": -0.4441895651017678,
+    "A8192_inside_real": -0.09941428751848927,
+    "evidence_level": "floating_not_validated"
+  },
+  "full_propagated_boundary_atlas_certified": true,
+  "inherited_A2048_inside_count": 1,
+  "inherited_A4096_inside_count": 1,
+  "inherited_A4096_inside_count_certified": true,
+  "limitations": [
+    "The theorem concerns three exact finite stored binary64 matrices at one fixed Gaussian width.",
+    "It does not enclose any discretization relative to a continuum transfer operator.",
+    "It proves one further dyadic step, not induction over all grid dimensions.",
+    "The observed quarter/half block scaling is diagnostic and is not promoted to an asymptotic theorem.",
+    "It does not prove a zero-noise limit or identify any zeta zero.",
+    "It makes no Hilbert-Polya or Riemann-hypothesis claim."
+  ],
+  "propagated_atlas": {
+    "additional_center_count": 13,
+    "inherited_center_count": 170,
+    "leaf_count": 324,
+    "maximum_first_effective_product_upper": 0.7474271469415178,
+    "maximum_propagated_A4096_resolvent_upper": 4843.819104431207,
+    "maximum_second_continuation_product_upper": 0.7409188599618061,
+    "maximum_transported_A2048_resolvent_upper": 1221.3793571000042,
+    "total_center_count": 183
+  },
+  "scope": "exact stored binary64 Perron/parity-extracted physical two-step matrices at sigma=1e-2 on the 2048, 4096, and 8192 midpoint grids",
+  "second_detail_inside_count": 0,
+  "second_detail_inside_count_certified_zero": true,
+  "second_refinement": {
+    "admissible_A4096_resolvent_upper": 6537.583757391333,
+    "block_norm_uppers": {
+      "coarse_consistency": 4.9703504365590696e-05,
+      "coarse_to_detail": 0.005661243048885059,
+      "detail_block": 3.263369856631532e-05,
+      "detail_to_coarse": 0.006861751717264048
+    },
+    "detail_resolvent_upper": 2.658139564401696,
+    "effective_perturbation_upper": 0.00015296171140743076,
+    "self_energy_upper": 0.00010325820704184003
+  },
+  "sigma": 0.01,
+  "split_snapshot_parts_verified": true,
+  "status": "rigorous_iterated_dyadic_physical_count_one",
+  "stored_object_identity_verified": true
+}
