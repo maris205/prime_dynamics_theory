@@ -1,0 +1,44 @@
+{
+  "arb_precision_bits": 224,
+  "critical_u_bracket": {
+    "lower": "1.543689012692076361570855971801747986525203297650983935240803",
+    "lower_polynomial_ball": "[-3.08669e-60 +/- 3.14e-66]",
+    "strict_sign_change": true,
+    "upper": "1.543689012692076361570855971801747986525203297650983935240805",
+    "upper_polynomial_ball": "[2.861655e-60 +/- 6.08e-67]"
+  },
+  "critical_u_exact_definition": "unique real root in (1.5,1.6) of u^3-2u^2+2u-2",
+  "dependencies": {
+    "rh41_midpoint_bridge_source": {
+      "path": "papers/RH-41-validated-parity-continuum-contour/experiments/build_midpoint_bridge_certificate.py",
+      "sha256": "c994fe0e4545732b66d029bdfc536d35334fca01431a2012ddadb8b9cfa87bc1"
+    },
+    "snapshot": {
+      "path": "papers/RH-36-nested-grid-physical-count/results/nested_grid_snapshot_sigma_1e-02.npz",
+      "sha256": "a1e2a6a3a32a6f7e68ec17b294bdb41d404c0dbeca1f5cb89aefe48ab4390d81"
+    }
+  },
+  "dimension": 4096,
+  "evidence_level": "224_bit_arb_exact_stored_binary64_frobenius_bridge",
+  "frobenius_norm_ball": "[1.055416712190960816920527137672228711299217517039087163e-5 +/- 1.28e-60]",
+  "frobenius_norm_upper": 1.055416712190961e-05,
+  "limitations": [
+    "The spectral upper is obtained from the Frobenius norm.",
+    "The bridge is at dimension 4096 and is not by itself a continuum theorem."
+  ],
+  "maximum_row_index": 284,
+  "maximum_row_l2_square_ball": "[5.182906694715039314500413092052568170688232828819475038e-13 +/- 8.74e-68]",
+  "maximum_row_l2_upper": 7.199240720183651e-07,
+  "minimum_center_floor_clearance": 9.71832443497078e-06,
+  "sigma_exact": "1/100",
+  "spectral_norm_upper": 1.055416712190961e-05,
+  "status": "arb_exact_stored_to_midpoint_euclidean_bridge",
+  "support_frobenius_square_ball": "[1.113904436371977270425266392642827426803007083197727824e-10 +/- 5.54e-65]",
+  "support_frobenius_square_upper": 1.1139044363719774e-10,
+  "support_geometry_verified_for_all_rows": true,
+  "support_half_width": 330,
+  "total_frobenius_square_ball": "[1.113904436371977419066659467496545003950271281700075004e-10 +/- 2.36e-65]",
+  "total_frobenius_square_upper": 1.1139044363719776e-10,
+  "uniform_omitted_midpoint_mass_ball": "[1.9049777585621691030184163912578652399018723368633519850375175093e-15 +/- 6.40e-80]",
+  "uniform_omitted_midpoint_mass_upper": 1.9049777585621693e-15
+}

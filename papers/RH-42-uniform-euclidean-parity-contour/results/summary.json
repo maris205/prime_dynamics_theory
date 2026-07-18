@@ -1,0 +1,269 @@
+{
+  "continuum_L2_conclusion": {
+    "contour_resolvent_upper": 266.6496824500989,
+    "eigenvalue_is_real_negative_and_simple": true,
+    "inside_count": 1
+  },
+  "contour": {
+    "center": -0.9865481927458079,
+    "maximum_modulus_upper": 1.036548192745808,
+    "minimum_modulus_lower": 0.9365481927458077,
+    "radius": 0.05
+  },
+  "dyadic_hilbert_galerkin_steps": {
+    "16384_to_32768": {
+      "blocks": {
+        "coarse_consistency": 0.0,
+        "coarse_dimension": 16384,
+        "coarse_to_detail": 0.0130064164287576,
+        "detail_block": 3.095226537079069e-05,
+        "detail_to_coarse": 0.007432624027617263
+      },
+      "inside_count_after_transfer": 1,
+      "resolvent_step": {
+        "bottom_left_upper": 1.5625582615686249,
+        "bottom_right_upper": 1.080187170457776,
+        "coarse_dimension": 16384,
+        "coarse_resolvent_upper": 111.21914442364216,
+        "count_transfers": true,
+        "detail_resolvent_upper": 1.0677860019821916,
+        "fine_resolvent_upper": 112.53041077187318,
+        "minimum_boundary_modulus": 0.9365481927458077,
+        "schur_inverse_upper": 112.51083334365755,
+        "schur_neumann_product_upper": 0.011480573751240149,
+        "self_energy_upper": 0.00010322479830909118,
+        "top_right_upper": 0.8929368164629959
+      }
+    },
+    "32768_to_65536": {
+      "blocks": {
+        "coarse_consistency": 0.0,
+        "coarse_dimension": 32768,
+        "coarse_to_detail": 0.0065032082143788,
+        "detail_block": 7.738066342697672e-06,
+        "detail_to_coarse": 0.0037163120138086316
+      },
+      "inside_count_after_transfer": 1,
+      "resolvent_step": {
+        "bottom_left_upper": 0.7836714195206987,
+        "bottom_right_upper": 1.0708692427541693,
+        "coarse_dimension": 32768,
+        "coarse_resolvent_upper": 112.53041077187318,
+        "count_transfers": true,
+        "detail_resolvent_upper": 1.06775953457585,
+        "fine_resolvent_upper": 112.86683027872749,
+        "minimum_boundary_modulus": 0.9365481927458077,
+        "schur_inverse_upper": 112.85814068423208,
+        "schur_neumann_product_upper": 0.0029039102573541527,
+        "self_energy_upper": 2.580555991429812e-05,
+        "top_right_upper": 0.44783550137667427
+      }
+    },
+    "4096_to_8192": {
+      "blocks": {
+        "coarse_consistency": 0.0,
+        "coarse_dimension": 4096,
+        "coarse_to_detail": 0.0520256657150304,
+        "detail_block": 0.000495236245932651,
+        "detail_to_coarse": 0.029730496110469053
+      },
+      "inside_count_after_transfer": 1,
+      "resolvent_step": {
+        "bottom_left_upper": 5.894456495722568,
+        "bottom_right_upper": 1.2555327214754295,
+        "coarse_dimension": 4096,
+        "coarse_resolvent_upper": 90.23979185532137,
+        "count_transfers": true,
+        "detail_resolvent_upper": 1.0683156257945476,
+        "fine_resolvent_upper": 106.27836875735898,
+        "minimum_boundary_modulus": 0.9365481927458077,
+        "schur_inverse_upper": 106.05387463955054,
+        "schur_neumann_product_upper": 0.14911367300796002,
+        "self_energy_upper": 0.0016524159679693106,
+        "top_right_upper": 3.3684358193379134
+      }
+    },
+    "8192_to_16384": {
+      "blocks": {
+        "coarse_consistency": 0.0,
+        "coarse_dimension": 8192,
+        "coarse_to_detail": 0.0260128328575152,
+        "detail_block": 0.00012380906148316275,
+        "detail_to_coarse": 0.014865248055234526
+      },
+      "inside_count_after_transfer": 1,
+      "resolvent_step": {
+        "bottom_left_upper": 3.0878088917926845,
+        "bottom_right_upper": 1.1169092383184234,
+        "coarse_dimension": 8192,
+        "coarse_resolvent_upper": 106.27836875735898,
+        "count_transfers": true,
+        "detail_resolvent_upper": 1.0678918847302332,
+        "fine_resolvent_upper": 111.21914442364216,
+        "minimum_boundary_modulus": 0.9365481927458077,
+        "schur_inverse_upper": 111.15665695735922,
+        "schur_neumann_product_upper": 0.043886604127286434,
+        "self_energy_upper": 0.0004129401367411146,
+        "top_right_upper": 1.7645538790442081
+      }
+    }
+  },
+  "evidence_level": "analytic_hilbert_operator_theorem_plus_outward_arb_and_binary64_certificates",
+  "galerkin_to_continuum_L2": {
+    "dimension": 65536,
+    "finite_rank_operator_resolvent_upper": 112.86683027872749,
+    "galerkin_matrix_resolvent_upper": 112.86683027872749,
+    "inside_count_after_transfer": 1,
+    "neumann_transfer": {
+      "admissible": true,
+      "base_resolvent_upper": 112.86683027872749,
+      "neumann_product_upper": 0.5767224275624271,
+      "perturbation_upper": 0.005109760114093718,
+      "transferred_resolvent_upper": 266.6496824500989
+    },
+    "operator_norm_defect_upper": 0.005109760114093718,
+    "zero_complement_resolvent_upper": 1.0677507123986456
+  },
+  "gate_summary": {
+    "all_gates_closed": true,
+    "continuum_product_upper": 0.5767224275624271,
+    "cutoff_product_upper": 1.6281695877396865e-10,
+    "maximum_dyadic_schur_product_upper": 0.14911367300796002,
+    "midpoint_family_product_upper": 0.6814692507211605,
+    "midpoint_to_galerkin_product_upper": 0.06823949740334896,
+    "normalization_product_upper": 0.0012966148099273645,
+    "stored_to_midpoint_product_upper": 0.0008866273425013429
+  },
+  "hilbert_schmidt_envelope": {
+    "kernel": 5.49854922404974,
+    "source_first": 669.4643679578433,
+    "source_second": 196077.82378278425,
+    "source_second_target_second": 14441048308.854256,
+    "source_target": 82003.43867251626,
+    "target_first": 382.5709390570679,
+    "target_second": 47446.59748497963
+  },
+  "limitations": [
+    "The theorem is at the fixed positive noise width sigma=1/100.",
+    "The all-dimension sparse family is an exact-real mathematical matrix family; no uniform theorem for every binary64 transcendental evaluation is claimed.",
+    "The fourth mixed derivative enclosure is deliberately coarse but contributes only at order h^4.",
+    "The result does not take a zero-noise limit or identify any zeta zero.",
+    "No self-adjoint Hilbert-Polya operator or Riemann-hypothesis claim is made."
+  ],
+  "midpoint_to_galerkin_4096": {
+    "inside_count_after_transfer": 1,
+    "neumann_transfer": {
+      "admissible": true,
+      "base_resolvent_upper": 84.08187381333138,
+      "neumann_product_upper": 0.06823949740334896,
+      "perturbation_upper": 0.0008115839277660032,
+      "transferred_resolvent_upper": 90.23979185532137
+    },
+    "spectral_norm_defect_upper": 0.0008115839277660032
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "659fa0e1e709143253982263bb45dd529f74f96591e94873364916c59aa84484",
+    "README.md": "ce3eb381c30915cefe1676520684edc5bfd295f52c57470525fcaaf0c26ff44d",
+    "figures/uniform_euclidean_parity_contour.pdf": "47ac8ffe53c20ae9581d8e1736f7654884746d3f5fd5d583f2500709c9f35eeb",
+    "figures/uniform_euclidean_parity_contour.png": "a3f1be116cdff771fdc16ca33629eec9257d3b9e4f4e8bbf6420fdb5ac5a6920",
+    "main.tex": "de8853aaf8e8e0fbdc24dfe5d97e8303997ec5a11eeed1a03f6724bae2913062",
+    "pyproject.toml": "ec9b4cc14e00d70e16f216970db3016ea3d4f797cfeddae78c30e4ca202b47a0",
+    "references.bib": "1a9d63c1bf70e4a471a235cda300f2ee4f2fb69dda18115f8a20fb9029e3ad3c",
+    "requirements.txt": "ec5853f9fb381ed75d2fcaadc5084ec947ca4b85c4b5d426fc1d327121a26e29",
+    "uniform-euclidean-parity-contour.pdf": "e9ff57a2984e78e4d191a1c320acb261b4d5f958599eb00105e8536d1f600b62"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "8a4e2b58b4853e624274d1b68b3a184f9efd531fdad4c2f1b93c83f9254bea6f",
+    "results/euclidean_grushin_contour_certificate.json": "54bebefa2c6d3da4f62776110475c4650177ff521702184e384baf50c28ecb0a",
+    "results/euclidean_stored_to_midpoint_bridge.json": "ab854c05497e26d88218458146a31361bedeb21e6fd6dcd35ba80398507612c2",
+    "results/hilbert_constants_pilot.json": "5e59bf29972f6351b4075d2a4bd03e26aa6c21585404596f5cb5454a077e65e9",
+    "results/hilbert_schmidt_envelope_certificate.json": "5870a1a9fae5617c1f11984488d16a4f11447e9433093ad6e0f1e3b6836223ac",
+    "results/uniform_euclidean_parity_certificate.json": "1792a0d7ad3ac7a8f4f636c566edb3c258839f72c7b64d801c30eb84e0b9f0eb"
+  },
+  "scope": "exact-real folded-Gaussian full and adaptive sparse midpoint Markov matrices at sigma=1/100, with Euclidean norm identified with the L2 cell basis",
+  "status": "rigorous_uniform_euclidean_adaptive_sparse_parity_contour",
+  "stored_euclidean_theorem": {
+    "contour_resolvent_upper": 84.0073245249997,
+    "dimension": 4096,
+    "inside_count": 1
+  },
+  "stored_to_exact_midpoint_4096": {
+    "inside_count_after_transfer": 1,
+    "neumann_transfer": {
+      "admissible": true,
+      "base_resolvent_upper": 84.0073245249997,
+      "neumann_product_upper": 0.0008866273425013429,
+      "perturbation_upper": 1.055416712190961e-05,
+      "transferred_resolvent_upper": 84.08187381333138
+    },
+    "spectral_norm_defect_upper": 1.055416712190961e-05
+  },
+  "uniform_matrix_family": {
+    "adaptive_family": {
+      "applies_to_every_larger_dimension": true,
+      "euclidean_cutoff_rate": "O(n^-2 (log n)^-1/4) after the growth branch begins",
+      "inside_count": 1,
+      "schedule": "L_n=max(8,2 sqrt(log n))",
+      "uniform_resolvent_upper": 838.2106716588748,
+      "weighted_riesz_bridge_is_second_order": true
+    },
+    "adaptive_schedule": "L_n=max(8,2 sqrt(log n)); the archived eight-sigma window is retained until growth is needed",
+    "applies_to_every_larger_dimension": true,
+    "certified_threshold_dimension": 131072,
+    "continuum_to_exact_midpoint_defect_upper_at_threshold": 0.002555672463059059,
+    "cutoff_defect_at_threshold": {
+      "declared_multiple": 8.0,
+      "dimension": 131072,
+      "infinity_norm_upper": 1.0511578980414632e-14,
+      "omitted_frobenius_square_upper": 1.1048922625580924e-26,
+      "omitted_mass_upper": 5.2557894902073145e-15,
+      "renormalization_frobenius_square_upper": 2.668160734386491e-26,
+      "spectral_norm_upper": 1.9424348115045161e-13
+    },
+    "cutoff_transfer": {
+      "admissible": true,
+      "base_resolvent_upper": 838.2106715223996,
+      "neumann_product_upper": 1.6281695877396865e-10,
+      "perturbation_upper": 1.9424348115045161e-13,
+      "transferred_resolvent_upper": 838.2106716588748
+    },
+    "declared_multiple_at_threshold": 8.0,
+    "discrete_normalization": {
+      "continuum_midpoint_norm_upper": 5.498550016455754,
+      "dimension": 131072,
+      "normalizer_lower": 0.012533141373155001,
+      "normalizer_midpoint_error_upper": 3.530473097417466e-09,
+      "relative_row_scaling_upper": 2.8169107702576734e-07,
+      "spectral_norm_defect_upper": 1.5488924762154726e-06
+    },
+    "discrete_normalization_transfer": {
+      "admissible": true,
+      "base_resolvent_upper": 837.1238351518642,
+      "neumann_product_upper": 0.0012966148099273645,
+      "perturbation_upper": 1.5488924762154726e-06,
+      "transferred_resolvent_upper": 838.2106715223996
+    },
+    "exact_midpoint_transfer": {
+      "admissible": true,
+      "base_resolvent_upper": 266.6496824500989,
+      "neumann_product_upper": 0.6814692507211605,
+      "perturbation_upper": 0.002555672463059059,
+      "transferred_resolvent_upper": 837.1238351518642
+    },
+    "fixed_eight_sigma_family": {
+      "applies_to_every_larger_dimension": true,
+      "comment": "the fixed window is uniformly tiny in Euclidean norm but has the nonzero row-defect floor proved in RH-39",
+      "inside_count": 1,
+      "row_norm_convergence_claimed": false,
+      "uniform_cutoff_defect_upper": 1.9424348115045161e-13,
+      "uniform_resolvent_upper": 838.2106716588748
+    },
+    "inside_count_for_full_and_adaptive_sparse_matrices": 1,
+    "normalizer_lower": 0.012533141373155001,
+    "normalizer_lower_ball": "[0.0125331413731550025120788264240552262650349337030496915831496178817 +/- 1.30e-68]",
+    "uniform_adaptive_sparse_resolvent_upper": 838.2106716588748,
+    "uniform_fixed_eight_weighted_riesz_difference_upper": 7.073141188685013e-09,
+    "uniform_full_matrix_resolvent_upper": 838.2106715223996,
+    "weighted_riesz_cutoff_perturbation_upper_at_threshold": 7.073141188685013e-09
+  }
+}
