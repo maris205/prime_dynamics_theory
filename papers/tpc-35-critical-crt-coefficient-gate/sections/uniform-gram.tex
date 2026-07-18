@@ -1,0 +1,235 @@
+\section{Aspect-ratio obstructions to uniform Gram gates}
+\label{sec:tpc35-uniform-gram}
+
+We first ask whether the uniform conditions
+\eqref{eq:tpc35-uniform-op-gate}--\eqref{eq:tpc35-uniform-HS-gate}
+could follow from the most visible geometry: \(n\) input rows, \(t\) orbit
+times, bounded phases, and deletion of the equal row.  The answer is no
+for that abstract information class.  The calculation is exact and is a
+frame identity rather than a probabilistic counterexample.
+TPC-34 already gives one coherent constant-phase witness at the
+sign-blind scale \citep{WangTPC34}.  The theorem below upgrades that
+witness to rank--trace lower bounds valid for every unit-phase
+equal-deletion frame and identifies the sharp Fourier case.
+
+\subsection{Equal-row deletion}
+
+Let \(n\ge3\), \(1\le t<n\), and let
+\begin{equation}
+ A=\mathbf1\mathbf1^*-I_n.
+ \label{eq:tpc35-equal-deletion-A}
+\end{equation}
+For \(1\le j\le t\), choose phases \(c_{j\alpha}\in\C\) with
+\(|c_{j\alpha}|=1\), and put
+\begin{equation}
+ D_j=\operatorname{diag}(c_{j1},\ldots,c_{jn}),\qquad
+ M_j=AD_j.
+ \label{eq:tpc35-phase-matrices}
+\end{equation}
+Let \(R=(c_{j\alpha})_{j,\alpha}\in\C^{t\times n}\), define
+\begin{equation}
+ G=\sum_{j=1}^tM_j^*M_j,
+ \label{eq:tpc35-abstract-Gram}
+\end{equation}
+and let \(O=G-\operatorname{diag}G\).
+
+\begin{theorem}[Exact equal-deletion Gram identity]
+\label{thm:tpc35-equal-deletion-Gram}
+With the preceding notation,
+\begin{align}
+ G&=tI_n+(n-2)R^*R,
+ \label{eq:tpc35-G-exact}\\
+ \operatorname{diag}G&=(n-1)tI_n,
+ \label{eq:tpc35-G-diagonal}\\
+ &\boxed{O=(n-2)(R^*R-tI_n).}
+ \label{eq:tpc35-O-exact}
+\end{align}
+Consequently
+\begin{equation}
+ \boxed{
+ \|O\|_{\op}\ge(n-2)\max\{t,n-t\},}
+ \label{eq:tpc35-O-op-lower}
+\end{equation}
+and
+\begin{equation}
+ \boxed{
+ \|O\|_{\HS}^2\ge(n-2)^2nt(n-t).}
+ \label{eq:tpc35-O-HS-lower}
+\end{equation}
+Both lower bounds are equalities when \(R\) consists of any \(t\) rows of
+an \(n\times n\) complex Fourier matrix.
+\end{theorem}
+
+\begin{proof}
+Writing \(J_n=\mathbf1\mathbf1^*\), one has
+\begin{equation}
+ A^2=(J_n-I_n)^2=I_n+(n-2)J_n.
+ \label{eq:tpc35-A-square}
+\end{equation}
+Moreover,
+\[
+ \sum_{j=1}^tD_j^*J_nD_j=R^*R.
+\]
+This proves \eqref{eq:tpc35-G-exact}.  Every diagonal entry of \(R^*R\)
+is \(t\), which gives \eqref{eq:tpc35-G-diagonal} and
+\eqref{eq:tpc35-O-exact}.
+
+Let \(\lambda_1,\ldots,\lambda_n\) be the eigenvalues of \(R^*R\).
+They are nonnegative,
+\begin{equation}
+ \operatorname{rank}(R^*R)\le t,
+ \qquad
+ \sum_i\lambda_i=\operatorname{tr}(R^*R)=nt.
+ \label{eq:tpc35-R-rank-trace}
+\end{equation}
+Because \(t<n\), zero is an eigenvalue, so
+\(\|R^*R-tI\|_{\op}\ge t\).  The largest eigenvalue is at least \(n\),
+since at most \(t\) nonzero eigenvalues have sum \(nt\).  Hence the same
+norm is at least \(n-t\), proving \eqref{eq:tpc35-O-op-lower}.
+
+For the Hilbert--Schmidt norm, Cauchy--Schwarz on the nonzero eigenvalues
+gives
+\[
+ \sum_i\lambda_i^2\ge\frac{(nt)^2}{t}=n^2t.
+\]
+Therefore
+\begin{align*}
+ \|R^*R-tI\|_{\HS}^2
+ &=\sum_i(\lambda_i-t)^2\\
+ &=\sum_i\lambda_i^2-2t(nt)+nt^2\\
+ &\ge nt(n-t),
+\end{align*}
+which proves \eqref{eq:tpc35-O-HS-lower}.
+
+For \(t\) Fourier rows, \(RR^*=nI_t\).  Thus the eigenvalues of \(R^*R\)
+are \(n\) with multiplicity \(t\) and zero with multiplicity \(n-t\),
+giving equality throughout.
+\end{proof}
+
+\begin{corollary}[Aspect-ratio gap]
+\label{cor:tpc35-aspect-ratio-gap}
+If \(n\asymp Q\), \(t\asymp J\), and \(J=o(Q)\), then every matrix in
+the model satisfies
+\begin{equation}
+ \|O\|_{\op}\gg Q^2,
+ \qquad
+ \|O\|_{\HS}^2\gg Q^4J.
+ \label{eq:tpc35-abstract-scales}
+\end{equation}
+Relative to \eqref{eq:tpc35-uniform-op-gate} and
+\eqref{eq:tpc35-uniform-HS-gate}, these scales are larger by factors
+\(J\) and \(J^3\), respectively.
+\end{corollary}
+
+\begin{proof}
+Since \(n-t\asymp Q\), the operator lower bound is
+\(\gg n(n-t)\asymp Q^2\).  The Hilbert--Schmidt lower bound is
+\[
+ (n-2)^2nt(n-t)\asymp n^4t\asymp Q^4J.
+\]
+The ratios to \(Q^2/J\) and \(Q^4/J^2\) are \(J\) and \(J^3\).
+\end{proof}
+
+\subsection{Same-source block deletion}
+
+The physical mask also deletes row pairs sharing the same prime source.
+The following block model shows that this deletion does not, by itself,
+remove the aspect--ratio effect.
+
+Suppose \(n=kr\) and partition the coordinates into \(k\) blocks of size
+\(r\).  Put
+\begin{equation}
+ B=\bigoplus_{g=1}^kJ_r,
+ \qquad A=J_n-B.
+ \label{eq:tpc35-block-deletion-A}
+\end{equation}
+Thus \(A_{\alpha\beta}=0\) when the two coordinates lie in the same
+source block.  Retain the phase matrices \(D_j\) and \(R\) above; let
+\(R_g\in\C^{t\times r}\) be the columns of \(R\) in block \(g\).
+
+\begin{theorem}[Exact same-source block formula]
+\label{thm:tpc35-block-Gram}
+Assume \(n\ge2r\).  For \(M_j=AD_j\), let
+\(G=\sum_jM_j^*M_j\) and \(O=G-\operatorname{diag}G\).  Then
+\begin{equation}
+ A^2=(n-2r)J_n+rB,
+ \label{eq:tpc35-block-A-square}
+\end{equation}
+and
+\begin{equation}
+ \boxed{
+ O=(n-2r)(R^*R-tI_n)
+ +r\bigoplus_{g=1}^k(R_g^*R_g-tI_r).}
+ \label{eq:tpc35-block-O}
+\end{equation}
+If \(t<n\), then
+\begin{equation}
+ \boxed{
+ \|O\|_{\op}
+ \ge (n-2r)(n-t)-rt}
+ \label{eq:tpc35-block-op-lower}
+\end{equation}
+whenever the right-hand side is positive.
+\end{theorem}
+
+\begin{proof}
+The block relations
+\[
+ J_n^2=nJ_n,\qquad J_nB=BJ_n=rJ_n,\qquad B^2=rB
+\]
+give \eqref{eq:tpc35-block-A-square}.  Conjugating by \(D_j\) and
+summing gives
+\[
+ G=(n-2r)R^*R+r\bigoplus_gR_g^*R_g.
+\]
+Every diagonal entry equals \(t(n-r)\), yielding
+\eqref{eq:tpc35-block-O}.
+
+Choose a unit eigenvector \(x\) for the largest eigenvalue \(\lambda\) of
+\(R^*R\).  As in \eqref{eq:tpc35-R-rank-trace}, \(\lambda\ge n\).
+Writing \(x=\bigoplus_gx_g\), positivity gives
+\begin{align*}
+ \langle Ox,x\rangle
+ &=(n-2r)(\lambda-t)
+ +r\sum_g\bigl(\|R_gx_g\|_2^2-t\|x_g\|_2^2\bigr)\\
+ &\ge(n-2r)(n-t)-rt.
+\end{align*}
+If this number is positive, it is bounded above by \(\|O\|_{\op}\).
+\end{proof}
+
+In the corresponding exponent-scale block model,
+\[
+ n=QX^{o(1)},\qquad r=DX^{o(1)},\qquad t=JX^{o(1)}.
+\]
+The inherited source separation
+\eqref{eq:tpc35-source-separation} and endpoint scales
+\eqref{eq:tpc35-high-beta-LD} imply \(D=o(Q)\), \(J=o(Q)\), and
+\(D J=o(Q^2)\).  Hence the right side of
+\eqref{eq:tpc35-block-op-lower} has exponent scale \(Q^2X^{o(1)}\).
+The same-source deletion alone therefore does not supply the factor \(J\)
+required by the uniform operator gate.
+
+\subsection{What the obstruction does and does not prove}
+
+\begin{corollary}[Coarse-data method boundary]
+\label{cor:tpc35-uniform-method-boundary}
+No argument valid for every equal-deletion phase model
+\eqref{eq:tpc35-phase-matrices}, using only \(n,t\), unit-modulus phase
+envelopes, and equal-row deletion, can certify the uniform scales in
+\eqref{eq:tpc35-uniform-op-gate} or
+\eqref{eq:tpc35-uniform-HS-gate} when \(n\asymp Q,t\asymp J\to\infty\).
+The same conclusion holds after same-source deletion for the block class
+above whenever the right side of \eqref{eq:tpc35-block-op-lower} is
+\(\asymp Q^2\).
+\end{corollary}
+
+The corollary is a quantifier statement about an abstract majorant class.
+It does not say that the actual \(O_L^{\rm orb}\) or \(O_R^{\rm orb}\)
+has size \(Q^2\).  The physical entries contain arithmetic zeros, an
+opened gcd projector, near--row deletion, smooth weights, and M\"obius
+coefficients.  Nor may one infer a physical lower bound by deleting
+entries from the abstract \(O\): an off--diagonal Hermitian matrix has no
+entrywise monotonicity for its operator norm.  The calculation instead
+forces the next proof to use some information absent from the broad
+phase model.  The physical vector \(\gamma^{(i)}\) in
+\eqref{eq:tpc35-coefficient-Gram} is the most economical such information.

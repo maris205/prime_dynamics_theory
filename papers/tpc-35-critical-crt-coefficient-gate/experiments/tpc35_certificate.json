@@ -1,0 +1,335 @@
+{
+  "arithmetic": "integer, Fraction, and Gaussian rational only",
+  "certificate_digest": "26b282b0b8a989e792524dc12ab1a6ed8215204fc36a0ef4493ab28982a7dae5",
+  "certificate_version": 1,
+  "check_total": 141803,
+  "claims": {
+    "breaks_sieve_parity": false,
+    "finite_aspect_ratio_gram_identity": true,
+    "finite_aspect_ratio_hs_bound_and_sharpness": true,
+    "finite_crt_lift_non_tensorization": true,
+    "finite_incomplete_plancherel_saturation": true,
+    "finite_integer_line_incidence_counts": true,
+    "finite_product_slope_character_spectrum": true,
+    "finite_same_source_block_identity": true,
+    "finite_same_source_lower_bound_witness": true,
+    "finite_short_orbit_congruence_operator": true,
+    "finite_three_four_modulus_alias_ladder": true,
+    "finite_ultra_crt_compatibility_and_occupancy": true,
+    "proves_Hardy_Littlewood_asymptotic": false,
+    "proves_Q3_column_energy_gate": false,
+    "proves_affine_Mobius_or_Chowla_cancellation": false,
+    "proves_asymptotic_integer_incidence_conductor": false,
+    "proves_coefficient_specific_Mobius_gate": false,
+    "proves_full_crt_tensorization": false,
+    "proves_joint_three_or_four_modulus_dispersion": false,
+    "proves_low_coordinate_crt_mode_suppression": false,
+    "proves_physical_same_ultra_asymptotic": false,
+    "proves_positivity": false,
+    "proves_twin_primes": false,
+    "proves_uniform_physical_operator_gate": false,
+    "proves_zero_frequency_flatness": false,
+    "uses_floating_point": false,
+    "uses_random_inputs": false
+  },
+  "normalized_source_sha256": "7e08d1d29dc88e40b9653176b06336ba2ed879db33fb080e2c697e79b94e948e",
+  "paper": "TPC-35",
+  "results": {
+    "alias_ladder": {
+      "bound": 1000,
+      "checks": 8736,
+      "coprime_prefixes": [
+        [
+          1,
+          5,
+          200
+        ],
+        [
+          2,
+          35,
+          28
+        ],
+        [
+          3,
+          385,
+          2
+        ],
+        [
+          4,
+          5005,
+          0
+        ]
+      ],
+      "exponents": [
+        "267/400",
+        "67/200",
+        "1/400",
+        "-33/100"
+      ]
+    },
+    "aspect_ratio_gram": {
+      "checks": 1260,
+      "generic_cases": [
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          7,
+          3,
+          1
+        ],
+        [
+          8,
+          3,
+          2
+        ],
+        [
+          9,
+          4,
+          3
+        ]
+      ],
+      "tight_frame_cases": [
+        [
+          4,
+          1
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          16,
+          5
+        ],
+        [
+          16,
+          8
+        ]
+      ]
+    },
+    "crt_non_tensorization": {
+      "alias_coverage_cases": 96,
+      "checks": 1338,
+      "crt_lift_cases": [
+        [
+          3,
+          2,
+          6
+        ],
+        [
+          3,
+          4,
+          12
+        ],
+        [
+          3,
+          5,
+          15
+        ],
+        [
+          3,
+          7,
+          21
+        ],
+        [
+          3,
+          8,
+          24
+        ],
+        [
+          5,
+          2,
+          10
+        ],
+        [
+          5,
+          3,
+          15
+        ],
+        [
+          5,
+          4,
+          20
+        ],
+        [
+          5,
+          6,
+          30
+        ],
+        [
+          5,
+          7,
+          35
+        ]
+      ]
+    },
+    "incomplete_plancherel": {
+      "checks": 18414,
+      "continuous_envelope_cases": 5847,
+      "residue_set_cases": 249
+    },
+    "integer_line_incidence": {
+      "box_cases": [
+        [
+          1,
+          39,
+          99,
+          86
+        ],
+        [
+          2,
+          49,
+          130,
+          106
+        ],
+        [
+          3,
+          47,
+          154,
+          107
+        ]
+      ],
+      "checks": 14618,
+      "sharp_point_multiplicity_cases": [
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          10
+        ]
+      ]
+    },
+    "product_slope_spectrum": {
+      "average_to_maximum_saturation_cases": 4,
+      "character_energy_and_witness_checks": 120,
+      "checks": 194,
+      "field_seed_shift_cases": 18
+    },
+    "same_source_blocks": {
+      "checks": 1311,
+      "identity_cases": [
+        [
+          6,
+          2,
+          2,
+          0
+        ],
+        [
+          8,
+          2,
+          3,
+          1
+        ],
+        [
+          12,
+          3,
+          4,
+          2
+        ],
+        [
+          12,
+          2,
+          3,
+          3
+        ]
+      ],
+      "lower_bound_witnesses": [
+        [
+          8,
+          2,
+          3,
+          14
+        ],
+        [
+          16,
+          2,
+          4,
+          136
+        ],
+        [
+          16,
+          4,
+          4,
+          80
+        ]
+      ]
+    },
+    "short_orbit_congruence": {
+      "cases": [
+        [
+          4,
+          5,
+          20,
+          5
+        ],
+        [
+          6,
+          7,
+          42,
+          7
+        ],
+        [
+          8,
+          9,
+          72,
+          9
+        ]
+      ],
+      "checks": 393
+    },
+    "source_constraints": {
+      "checks": 4
+    },
+    "ultra_crt": {
+      "checks": 95535,
+      "compatible_cases": 10659,
+      "interval_cases": 31977,
+      "missing_h_primitivity_counterexample": {
+        "h": 2,
+        "m1": 1,
+        "m2": 3,
+        "u1": 4,
+        "u2": 4
+      },
+      "parameter_cases": 11907,
+      "physically_primitive_cases": 7766
+    }
+  }
+}

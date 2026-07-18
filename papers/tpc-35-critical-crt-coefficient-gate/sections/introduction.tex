@@ -1,0 +1,199 @@
+\section{Introduction}
+\label{sec:tpc35-introduction}
+
+The matched residual chain now has a sharply localized unresolved object.
+TPC-32 isolates a distinguished zero--frequency shell, TPC-33 converts it
+to two physical column energies, and TPC-34 performs the corresponding
+\(TT^*\) expansion and orbit slicing
+\citep{WangTPC32,WangTPC33,WangTPC34}.  After closing the complete
+Gram--copy diagonal, the remaining sufficient estimate is
+\begin{equation}
+ V_L+V_R\ll X^{o(1)}\frac{Q^3}{J}.
+ \label{eq:tpc35-intro-orbit-gate}
+\end{equation}
+Its proved diagonal is \(O(X^{o(1)}Q^2J)\).  At the endpoint
+\begin{equation}
+ Q=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ T=X^{193/500+o(1)},
+ \label{eq:tpc35-intro-scales}
+\end{equation}
+the ratio between the allowance in \eqref{eq:tpc35-intro-orbit-gate}
+and that diagonal is only
+\begin{equation}
+ \frac{Q^3/J}{Q^2J}=\frac{Q}{J^2}
+ =X^{1/400+o(1)}.
+ \label{eq:tpc35-intro-margin}
+\end{equation}
+Thus a useful next step must distinguish a genuine near--diagonal
+mechanism from a norm inequality whose worst direction is irrelevant to
+the physical coefficients.
+
+This paper audits three routes suggested at the end of TPC-34:
+uniform Gram norms, one--modulus projective Plancherel, and multi--modulus
+or integer incidence.  The purpose is not to manufacture a stronger
+claim from a larger formalism.  It is to prove exactly which pieces close,
+which abstract information is insufficient, and what signed quantity a
+future theorem must control.
+
+\subsection{Uniform Gram norms: an exact aspect--ratio calculation}
+
+The operator and Hilbert--Schmidt conditions in TPC-34 were stated only as
+convenient sufficient interfaces.  We show that they cannot follow from
+the broad data used by a sign--blind majorant.  In the equal--deletion
+phase model, let
+\[
+ A=\mathbf1\mathbf1^*-I_n,\qquad
+ M_j=AD_j,\qquad 1\le j\le t<n,
+\]
+where the diagonal entries of every \(D_j\) have modulus one.  If \(R\)
+is the \(t\times n\) phase matrix, then the off--diagonal part of
+\(\sum_jM_j^*M_j\) is not merely bounded by a frame expression: it is
+exactly
+\begin{equation}
+ O=(n-2)(R^*R-tI_n).
+ \label{eq:tpc35-intro-exact-O}
+\end{equation}
+Rank and trace alone therefore give
+\begin{align}
+ \|O\|_{\op}
+ &\ge(n-2)\max\{t,n-t\},
+ \label{eq:tpc35-intro-op-lower}\\
+ \|O\|_{\HS}^2
+ &\ge(n-2)^2nt(n-t).
+ \label{eq:tpc35-intro-hs-lower}
+\end{align}
+The bounds are attained by a partial Fourier matrix.  At
+\(n\asymp Q,t\asymp J\), their scales are \(Q^2\) and \(Q^4J\), whereas
+the previous sufficient gates ask for \(Q^2/J\) and \(Q^4/J^2\).
+A block calculation shows that deleting every pair from the same prime
+source does not change this conclusion at the abstract scale.
+
+The quantifier is essential.  These theorems concern a class retaining
+only cardinality, unit--phase, and deletion data.  The physical matrix has
+additional gcd projectors, near--row deletion, smooth weights, M\"obius
+zeros, and a distinguished coefficient vector.  Entry deletion is not an
+order operation for a Hermitian off--diagonal matrix.  We therefore do
+\emph{not} prove that the physical operator is large or that its uniform
+gate is false.  We prove that the listed coarse data cannot prove that it
+is small.
+
+\subsection{From projective averages to a multiplicative spectrum}
+
+TPC-33 proves an exact projective Plancherel identity over
+\(\F_q\).  Its incomplete integer implementation is controlled by maximum
+residue multiplicities.  We normalize that right--hand side by the
+pointwise Cauchy scale and prove the universal lower bound
+\begin{equation}
+ \mathscr R_q\ge\min\{J_0,S_0\}^{-1/2}.
+ \label{eq:tpc35-intro-projective-saturation}
+\end{equation}
+Balanced nonzero-residue sets attain this scale up to constants.  This is
+a saturation theorem for that specific
+residue--multiplicity certificate; it is not a lower bound for the actual
+correlation energy and not a no--go theorem for all projective methods.
+
+The positive result is an exact diagonalization of a complete, separable
+coherent product--slope operator.  If
+\[
+ R_s(a)=\sum_D f(D)g\bigl(s^{-1}(aD+h)\bigr),\qquad
+ (Tb)(j,s)=\sum_{\ell\ne0}b(\ell)R_s(\ell j),
+\]
+then multiplicative characters diagonalize \(T\):
+\begin{equation}
+ \sum_{j,s}|Tb(j,s)|^2
+ =\frac1{q-1}\sum_\chi
+ |\widehat b(\bar\chi)|^2\cE_\chi,
+ \qquad
+ \|T\|_{\op}^2=\max_\chi\cE_\chi.
+ \label{eq:tpc35-intro-character-spectrum}
+\end{equation}
+The projective second moment is the average of the same
+\(\cE_\chi\).  Hence the passage from independent slope averaging to one
+coherent coefficient vector is precisely an average--versus--maximum
+problem in multiplicative character space.  The factor \(q-1\) can be
+attained by a single--character finite model.  At \(q\asymp J\), it is
+exactly the energy factor that the one--modulus route fails to supply.
+Applying this identity to the physical orbit energy would additionally
+require a controlled decomposition of its \(j\)-dependent mask and
+incomplete ranges into complete separable layers.  That reassembly lemma
+is not proved here.
+
+\subsection{The critical CRT ladder}
+
+For an integer affine determinant \(F\) with \(|F|\le B\asymp X\),
+simultaneous congruences modulo \(q_1,\ldots,q_r\) leave the exact aliases
+\[
+ F=k\,[q_1,\ldots,q_r],
+ \qquad |k|\le B/[q_1,\ldots,q_r].
+\]
+Taking pairwise coprime orbit--scale moduli \(q_i\asymp J\) gives
+\begin{equation}
+ \frac{X}{J^r}
+ =X^{1-r(133/400)+o(1)}.
+ \label{eq:tpc35-intro-alias-ladder}
+\end{equation}
+Three moduli are the first to reach the margin in
+\eqref{eq:tpc35-intro-margin}; four are the first to make the ambient
+box strictly no--wrap.  The numerical match
+\begin{equation}
+ \frac{X}{J^3}=\frac{Q}{J^2}=X^{1/400+o(1)}
+ \label{eq:tpc35-intro-critical-match}
+\end{equation}
+is exact at exponent level.
+
+It is only a route ledger.  We prove two reasons why separate one--modulus
+estimates cannot simply be multiplied.  First, a function lifted from one
+CRT coordinate has exactly the same normalized projective rms at the
+product modulus as it had at that one prime.  Second, the specified
+strategy of merging moduli to a single modulus \(P\) and then completing
+the \(J\)-long orbit incurs costs whose product obeys the bookkeeping
+inequality
+\begin{equation}
+ (1+X/P)(1+P/J)\ge X/J\asymp Q.
+ \label{eq:tpc35-intro-coverage-law}
+\end{equation}
+A viable three--modulus theorem must therefore keep the coordinates joint
+and suppress their principal and proper--coordinate faces in the actual
+coefficient direction.
+
+\subsection{A physical gain and the remaining boundary}
+
+Opening both ultra increments inside the orbit--sliced energy, we bound
+the block in which the two copies use the same divisor \(u>T\):
+\begin{equation}
+ \cV_{L,u=}+\cV_{R,u=}
+ \ll X^{o(1)}Q^2J(1+Q/T).
+ \label{eq:tpc35-intro-physical-ultra}
+\end{equation}
+At the endpoint it is \(O(X^{o(1)}Q^3J/T)\).  This is a true theorem for
+the physical mask and coefficient system.  It is one factor \(J\) smaller
+than the analogous two--time block in TPC-34, and it saves the full \(T\)
+from the orbit--sliced absolute baseline.  It nevertheless exceeds the
+required \(Q^3/J\) by \(J^2/T\).
+
+We also record the exact short--orbit incidence operator and an ambient
+integer--line Schur bound.  They explain why congruence uniqueness is
+valuable but does not by itself control how many different divisor atoms
+can land at the same orbit time.
+
+\subsection{Claim boundary and organization}
+
+The conclusions are route diagnostics and exact finite spectral
+identities.  They do not establish the coefficient--specific physical
+off--diagonal estimate.  In particular, this paper proves no suppression
+of all bad multiplicative characters, no controlled complete separable
+decomposition of the physical mask, no joint three--modulus dispersion
+theorem, no affine Chowla estimate, no positivity statement, no
+Hardy--Littlewood prime--pair asymptotic, no infinitely many twin primes,
+and no breach of sieve parity.
+
+\Cref{sec:tpc35-inherited-gate} restates the physical interface.
+\Cref{sec:tpc35-uniform-gram} proves the aspect--ratio theorems.
+\Cref{sec:tpc35-projective-saturation} proves one--modulus saturation.
+\Cref{sec:tpc35-product-spectrum} gives the exact character spectrum.
+\Cref{sec:tpc35-crt-alias} develops the CRT ladder and non--tensorization.
+\Cref{sec:tpc35-physical-ultra} proves the physical same--ultra estimate.
+\Cref{sec:tpc35-integer-incidence} treats short--orbit and integer
+incidence.  The final two sections give the endpoint ledger, next gate,
+certificate, and exact claim boundary.

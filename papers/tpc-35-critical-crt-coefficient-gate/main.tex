@@ -1,0 +1,195 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,float}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Orbit-Scale CRT Compression and Uniform Gram Obstructions: Product-Slope Character Spectrum, Three-Modulus Alias Reduction, and a Coefficient-Specific Gate},
+ pdfauthor={Liang Wang},
+ pdfsubject={Exact route diagnostics for an orbit-sliced Mobius energy gate},
+ pdfkeywords={Mobius correlation, Gram matrix, projective Plancherel, multiplicative characters, Chinese remainder theorem, aliasing, parity boundary}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Conditional input}
+\crefname{assumption}{conditional input}{conditional inputs}
+\Crefname{assumption}{Conditional input}{Conditional inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\F}{\mathbb F}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\op}{\operatorname{op}}
+\newcommand{\HS}{\operatorname{HS}}
+\newcommand{\lcm}{\operatorname{lcm}}
+
+\title{\textbf{Orbit--Scale CRT Compression and Uniform Gram Obstructions:}\\
+\textbf{Product--Slope Character Spectrum, Three--Modulus Alias Reduction,}\\
+\textbf{and a Coefficient--Specific Gate}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The preceding paper reduces a distinguished zero--frequency shell to an
+orbit--sliced row energy
+\[
+ V_L+V_R\ll X^{o(1)}Q^3/J,
+\]
+whose proved diagonal is only \(O(X^{o(1)}Q^2J)\).  Here we decide how
+far three natural routes can reach and identify the first
+coefficient--sensitive spectral quantity for the TPC-34 orbit--sliced
+product--slope interface.
+
+First, for the abstract equal--row deletion model
+
+\[
+ A=\mathbf1\mathbf1^*-I_n,\qquad M_j=AD_j,
+\]
+
+with \(t<n\) unit--phase observations, the off--diagonal Gram matrix is
+exactly
+
+\[
+ O=(n-2)(R^*R-tI_n).
+\]
+
+Consequently
+
+\[
+ \|O\|_{\rm op}\ge(n-2)\max\{t,n-t\},\qquad
+ \|O\|_{\rm HS}^2\ge(n-2)^2nt(n-t),
+\]
+
+with equality at the Fourier tight--frame scale.  A block version survives
+same--source deletion.  Thus cardinality, unit phases, and these deletions
+alone cannot certify the much smaller uniform operator or
+Hilbert--Schmidt gates proposed previously.  This is an abstract
+information obstruction, not a lower bound for the physical masked Gram
+matrix.
+
+Second, we prove that the residue--multiplicity implementation of one--prime
+projective Plancherel saturates at a normalized rms factor
+\(\min\{J_0,S_0\}^{-1/2}\), with balanced residue sets attaining this scale
+up to constants.  We then diagonalize a complete, separable coherent
+product--slope sum.  For centered
+\(f,g:\mathbb F_q\to\mathbb C\), its exact singular spectrum is indexed by
+multiplicative characters.  Projective Plancherel controls the average
+character energy, whereas a coherent weight sees its maximum; the possible
+average--to--maximum loss is exactly \(q-1\).  This selects a
+coefficient--specific finite-model interface rather than a uniform norm
+gate.  A controlled decomposition of the actual physical mask into such
+complete separable layers is not proved here.
+
+Third, simultaneous orbit--scale congruences have an exact alias ladder.
+For \(r\) pairwise coprime moduli \(q_i\asymp J\) and an affine determinant
+\(F\) of size \(O(X)\), the number of possible aliases is
+\(O(1+X/J^r)\).  At
+
+\[
+ Q=X^{267/400+o(1)},\quad
+ J=X^{133/400+o(1)},\quad
+ T=X^{193/500+o(1)},
+\]
+
+three moduli leave \(X/J^3=X^{1/400+o(1)}=Q/J^2\), exactly the allowance
+above the orbit diagonal, while four moduli are the first orbit--scale
+choice giving strict no--wrap.  We prove, however, that CRT coordinates do
+not automatically tensorize: data supported on one coordinate reproduce
+the one--prime normalized rms exactly.  The specified
+merge--then--complete strategy also obeys the bookkeeping inequality
+\((1+X/P)(1+P/J)\ge X/J\asymp Q\).
+
+On the physical side, the same--ultra block of the orbit--sliced energy
+satisfies
+
+\[
+ \cV_{L,u=}+\cV_{R,u=}
+ \ll X^{o(1)}Q^2J(1+Q/T)
+ \ll X^{o(1)}Q^3J/T.
+\]
+
+This removes one orbit factor from the earlier two--time estimate and saves
+the full factor \(T\), but it still misses the orbit gate by \(J^2/T\).
+The outcome is a precise next target: a joint three--modulus theorem that
+suppresses low--coordinate CRT modes in the actual coefficient direction,
+or an equivalent bound for the bad multiplicative--character mass,
+together with the missing complete separable reassembly lemma.  No such
+physical coefficient estimate or reassembly is proved here.  We claim no
+affine Chowla theorem, parity breach, Hardy--Littlewood asymptotic, or
+twin--prime result.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius correlation; orbit energy; Gram
+matrix; projective Plancherel; multiplicative character; CRT aliasing;
+parity boundary.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary 11L07,
+11A07, 15A18.
+
+\input{sections/introduction}
+\input{sections/inherited-gate}
+\input{sections/uniform-gram}
+\input{sections/projective-saturation}
+\input{sections/product-slope-spectrum}
+\input{sections/crt-alias}
+\input{sections/physical-ultra}
+\input{sections/integer-incidence}
+\input{sections/ledger-next-gate}
+\input{sections/certificate-scope}
+
+\clearpage
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

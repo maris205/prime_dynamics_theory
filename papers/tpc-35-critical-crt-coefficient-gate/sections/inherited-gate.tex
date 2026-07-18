@@ -1,0 +1,189 @@
+\section{The inherited orbit-sliced gate}
+\label{sec:tpc35-inherited-gate}
+
+We use the physical notation and proved estimates of TPC-32--TPC-34
+\citep{WangTPC32,WangTPC33,WangTPC34}.  They are restated to separate theorems about
+the actual M\"obius kernel from the abstract route diagnostics below.
+
+\subsection{Rows, orbit, and ultra increment}
+
+Fix \(h\in\Z\setminus\{0\}\), put \(H=\operatorname{rad}|h|\), and work
+on a dyadic packet with
+\begin{equation}
+ Q=LD,\qquad QJ\asymp X,\qquad R\le T<U_0\asymp X.
+ \label{eq:tpc35-scales}
+\end{equation}
+The inherited source-compatible packet also satisfies, for a fixed
+\(0<\delta<1/2\),
+\begin{equation}
+ R=X^{1/2-\delta+o(1)},\qquad
+ D\le R^{1/2+o(1)},\qquad
+ L>\max\{2R,2|h|\}.
+ \label{eq:tpc35-source-separation}
+\end{equation}
+A row is
+\begin{equation}
+ \alpha=(\ell_\alpha,d_\alpha),\qquad
+ m_\alpha=\ell_\alpha d_\alpha\asymp Q,
+ \label{eq:tpc35-row}
+\end{equation}
+where \(\ell_\alpha\asymp L\) is prime, \(d_\alpha\asymp D\) is
+squarefree, and \((d_\alpha,H)=1\).  The scale separation in
+\eqref{eq:tpc35-source-separation} makes the integer \(m_\alpha\)
+determine the row label \(\alpha\) uniquely.  There are \(O(Q)\) rows.
+The two physical coefficient systems obey
+\begin{align}
+ \sum_\alpha|\gamma_\alpha^{(i)}|&\ll X^{o(1)}Q,
+ \label{eq:tpc35-row-l1}\\
+ \sum_\alpha|\gamma_\alpha^{(i)}|^2&\ll X^{o(1)}Q,
+ \qquad i=1,2.
+ \label{eq:tpc35-row-l2}
+\end{align}
+The logarithm in the original \(L^2\) bound is absorbed into \(X^{o(1)}\).
+
+For \(j\) in an interval of length \(O(J)\), put
+\begin{equation}
+ N_\alpha(j)=m_\alpha j+h\asymp X.
+ \label{eq:tpc35-target}
+\end{equation}
+The inherited packet and its terminal horizon are chosen so that
+\begin{equation}
+ T<\min_{\alpha,j}N_\alpha(j)
+ \le \max_{\alpha,j}N_\alpha(j)<U_0.
+ \label{eq:tpc35-terminal-range}
+\end{equation}
+This is the terminal-range condition of TPC-34; in particular, the full
+target \(N_\alpha(j)\) is one of the ultra divisors retained below.
+Every divisor \(w\mid N_\alpha(j)\) on the physical support satisfies
+\begin{equation}
+ (w,m_\alpha jH)=1.
+ \label{eq:tpc35-divisor-primitivity}
+\end{equation}
+In particular \((w,j)=(w,h)=(w,m_\alpha)=1\).
+
+The actual bounded multiplier is
+\begin{equation}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ =\one_{\ell_\alpha\ne\ell_\gamma}
+  \one_{|m_\alpha-m_\gamma|>QX^{-\kappa_0}}
+  \one_{(d_\alpha,d_\gamma)\le X^{\kappa_0}}
+  \Xi_{\alpha,\gamma}(j)\cW_{\alpha,\gamma}(j/J),
+ \label{eq:tpc35-actual-multiplier}
+\end{equation}
+where the periodic and smooth factors are uniformly bounded.  Define
+\begin{equation}
+ a_R(u)=-\mu(u)\log u,\qquad
+ C_m(j)=\sum_{\substack{T<u\le U_0\\u\mid mj+h}}a_R(u).
+ \label{eq:tpc35-ultra-increment}
+\end{equation}
+Divisor bounds give \( |C_m(j)|\ll X^{o(1)}\), uniformly on the packet.
+
+\subsection{Orbit slicing and Gram decomposition}
+
+The left orbit slices and their energy are
+\begin{align}
+ Y_{\gamma,j}^L
+ &:=\sum_\alpha\gamma_\alpha^{(1)}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)C_{m_\alpha}(j),
+ \label{eq:tpc35-left-slice}\\
+ V_L&:=\sum_{\gamma,j}|Y_{\gamma,j}^L|^2.
+ \label{eq:tpc35-left-energy}
+\end{align}
+The right objects exchange the two row systems:
+\begin{align}
+ Y_{\alpha,j}^R
+ &:=\sum_\gamma\gamma_\gamma^{(2)}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)C_{m_\gamma}(j),
+ \label{eq:tpc35-right-slice}\\
+ V_R&:=\sum_{\alpha,j}|Y_{\alpha,j}^R|^2.
+ \label{eq:tpc35-right-energy}
+\end{align}
+TPC-34 proves that
+\begin{equation}
+ V_L+V_R\ll X^{o(1)}\frac{Q^3}{J}
+ \label{eq:tpc35-orbit-gate}
+\end{equation}
+is sufficient for the inherited scalar shell estimate.  It also proves
+the complete input--copy diagonal bound
+\begin{equation}
+ V_{L,\Delta}+V_{R,\Delta}\ll X^{o(1)}Q^2J.
+ \label{eq:tpc35-orbit-diagonal}
+\end{equation}
+
+For each \(j\), let
+\begin{equation}
+ (M_j^L)_{\gamma,\alpha}
+ =\mathfrak A_{\alpha,\gamma}^{\rm act}(j)C_{m_\alpha}(j),
+ \qquad
+ G_L^{\rm orb}=\sum_j(M_j^L)^*M_j^L.
+ \label{eq:tpc35-left-Gram}
+\end{equation}
+Write \(G_L^{\rm orb}=D_L^{\rm orb}+O_L^{\rm orb}\), with \(D\) the
+entrywise diagonal, and define the right objects symmetrically.  Then
+\begin{equation}
+ V_L=\langle G_L^{\rm orb}\gamma^{(1)},\gamma^{(1)}\rangle.
+ \label{eq:tpc35-coefficient-Gram}
+\end{equation}
+The previously displayed uniform sufficient condition is
+\begin{equation}
+ \|O_L^{\rm orb}\|_{\op}+\|O_R^{\rm orb}\|_{\op}
+ \ll X^{o(1)}\frac{Q^2}{J},
+ \label{eq:tpc35-uniform-op-gate}
+\end{equation}
+and a Hilbert--Schmidt sufficient interface has squared scale
+\begin{equation}
+ \|O_L^{\rm orb}\|_{\HS}^2+\|O_R^{\rm orb}\|_{\HS}^2
+ \ll X^{o(1)}\frac{Q^4}{J^2}.
+ \label{eq:tpc35-uniform-HS-gate}
+\end{equation}
+Neither estimate is inherited as a theorem.
+
+The direct coefficient--specific sufficient condition already identified
+in TPC-34 is
+\begin{equation}
+ |V_{L,\ne}|+|V_{R,\ne}|
+ \ll X^{o(1)}\frac{Q^3}{J}.
+ \label{eq:tpc35-coefficient-gate}
+\end{equation}
+It is stronger than logically necessary, because only the upper bound for
+their sum is needed, but it is much weaker than controlling every vector
+as in \eqref{eq:tpc35-uniform-op-gate}.  The role of this paper is to show
+why the two convenient uniform routes saturate in broad abstract classes
+and to identify a complete finite-model spectrum that could feed into
+\eqref{eq:tpc35-coefficient-gate} after a separate physical reassembly
+lemma; we do not claim to discover the coefficient gate for the first
+time.
+
+\subsection{Endpoint scales}
+
+At the high--\(\beta\) packet,
+\begin{equation}
+ Q=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ T=X^{193/500+o(1)}.
+ \label{eq:tpc35-high-beta-scales}
+\end{equation}
+The underlying source and row scales are
+\begin{equation}
+ L=X^{99979/210000+o(1)},\qquad
+ D=X^{10049/52500+o(1)}.
+ \label{eq:tpc35-high-beta-LD}
+\end{equation}
+In particular,
+\begin{equation}
+ D=o(Q),\qquad J=o(Q),\qquad DJ=o(Q^2),\qquad D\le X/T
+ \label{eq:tpc35-endpoint-consequences}
+\end{equation}
+for sufficiently large \(X\).
+The basic identities used repeatedly below are
+\begin{align}
+ QJ&=X^{1+o(1)},
+ &\frac{Q}{J^2}&=X^{1/400+o(1)},
+ \label{eq:tpc35-basic-ledger-one}\\
+ \frac{T}{J}&=X^{107/2000+o(1)},
+ &\frac{J^2}{T}&=X^{279/1000+o(1)}.
+ \label{eq:tpc35-basic-ledger-two}
+\end{align}
+Every assertion involving these exponents is an endpoint accounting
+statement; it does not replace a uniform estimate on the full parameter
+range.

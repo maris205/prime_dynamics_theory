@@ -1,0 +1,185 @@
+\section{Endpoint ledger and the next coefficient-specific gate}
+\label{sec:tpc35-ledger-next-gate}
+
+The results above have different logical status.  The Gram lower bounds
+hold for abstract phase classes, the projective saturation theorem concerns
+a particular right--hand side, the character formula is an exact finite
+diagonalization, the CRT ladder is exact arithmetic bookkeeping, and the
+same--ultra estimate is a physical upper bound.  We compare them without
+turning a method limitation into a physical lower bound.
+
+\subsection{Energy ledger}
+
+At
+\[
+ Q=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ T=X^{193/500+o(1)},
+\]
+the orbit-energy scales are as follows.
+
+\begin{table}[H]
+\centering
+\caption{Orbit-sliced energy ledger at the high--\(\beta\) endpoint.}
+\label{tab:tpc35-energy-ledger}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.39\textwidth}
+>{\raggedright\arraybackslash}p{0.25\textwidth}
+>{\raggedleft\arraybackslash}p{0.20\textwidth}@{}}
+\toprule
+Object & Scale & \(X\)-exponent \\
+\midrule
+Absolute orbit-sliced baseline & \(Q^3J\) & \(4670/2000\) \\
+One-modulus multiplicity certificate, optimistically applied
+ & \(Q^3\) & \(4005/2000\) \\
+Physical same-ultra block & \(Q^3J/T\) & \(3898/2000\) \\
+Sufficient orbit-sliced gate & \(Q^3/J\) & \(3340/2000\) \\
+Proved orbit-sliced diagonal & \(Q^2J\) & \(3335/2000\) \\
+Three-modulus aliases times diagonal & \((X/J^3)Q^2J\) & \(3340/2000\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The last row is conditional accounting: it assumes a diagonal-scale bound
+for every alias fiber.  The equality of its exponent with the gate is the
+critical match \eqref{eq:tpc35-critical-three-modulus}, not a proved
+estimate.
+
+The uniform norm comparison is even more decisive within the abstract
+phase class.
+
+\begin{table}[H]
+\centering
+\caption{Uniform Gram scales in the equal-deletion phase model.}
+\label{tab:tpc35-uniform-ledger}
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+Quantity & Abstract lower & Required scale & Ratio \\
+\midrule
+Operator norm & \(Q^2\) & \(Q^2/J\) & \(J\) \\
+Hilbert--Schmidt norm squared & \(Q^4J\) & \(Q^4/J^2\) & \(J^3\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+These ratios explain why replacing the physical coefficient direction by
+all unit vectors is too expensive in a broad model.  They do not determine
+the norms of the actual masked matrices.
+
+\subsection{Two viable next formulations}
+
+The exact product spectrum suggests a signed finite-field target.  On a
+layer already reduced to the complete separable form
+\eqref{eq:tpc35-product-operator}, the quantity to control is
+\begin{equation}
+ \mathfrak E_q(b;f,g)
+ :=\frac1{q-1}\sum_\chi
+ |\widehat b(\bar\chi)|^2\cE_\chi,
+ \label{eq:tpc35-signed-spectral-target}
+\end{equation}
+By \cref{thm:tpc35-product-spectrum}, this is exactly the coherent energy
+of that finite layer.  To feed it into
+\eqref{eq:tpc35-coefficient-gate}, one must first decompose the actual
+\(j\)-dependent mask and incomplete ranges into such layers with total
+cost \(X^{o(1)}\).  That physical interface lemma is not proved here.
+After it is supplied, a theorem showing that the resulting
+\(\widehat b\)'s avoid characters with large \(\cE_\chi\) would be
+sufficient; it need not bound \(\max_\chi\cE_\chi\) for every abstract
+coefficient vector.
+
+The CRT formulation keeps three pairwise coprime primes
+\(q_1,q_2,q_3\asymp J\) separate.  Its character expansion has eight
+coordinate faces:
+\begin{equation}
+ \varnothing,\quad
+ \{1\},\{2\},\{3\},\quad
+ \{1,2\},\{1,3\},\{2,3\},\quad
+ \{1,2,3\}.
+ \label{eq:tpc35-three-coordinate-faces}
+\end{equation}
+The empty face is the principal term; singleton and double faces are the
+non--tensor modes exposed by \cref{thm:tpc35-CRT-lift}; the full face is
+where three independent character oscillations may multiply.  A genuine
+joint theorem must separately control or eliminate the principal face;
+ordinary additive centering does not do so automatically, as
+\eqref{eq:tpc35-principal-energy} shows.  The proper faces must likewise
+be small, absorbed into previously bounded diagonals, or cancelled by the
+actual coefficients.  Estimating only the full face is insufficient.
+
+These are two descriptions of the same strategic requirement:
+do not replace the actual coefficient direction by a maximum over all
+characters, and do not replace joint CRT sampling by three independent
+applications of a one--modulus mean square.
+
+\subsection{Route menu}
+
+The next step may proceed along any of the following nonexclusive routes.
+\begin{enumerate}[label=\textup{Route \Alph*:},leftmargin=5.8em]
+ \item \emph{Coefficient-weighted multiplicative spectrum.}
+ First prove a controlled complete separable decomposition of the physical
+ mask, then establish a dyadically averaged bound for
+ \eqref{eq:tpc35-signed-spectral-target}, retaining the M\"obius row
+ coefficients, prime-source restriction, and actual gcd projector.  It is
+ enough to control spectral overlap, not every character separately.
+
+ \item \emph{Joint three-modulus dispersion.}
+ Expand the three CRT coordinates simultaneously, center before
+ separating them, and prove diagonal-scale reassembly for all aliases and
+ proper-coordinate modes.  The exact available alias budget is
+ \(X/J^3=Q/J^2\); four moduli may be used for no--wrap, but they add a
+ further coordinate face that also requires control.
+
+ \item \emph{Terminal/proper signed coupling.}
+ Use the terminal equality result to remove the same-divisor terminal
+ off--diagonal, disperse the proper-divisor layers through their
+ complementary factors, and retain cancellation between terminal and
+ proper layers.  A triangle inequality separating them may destroy the
+ needed cancellation.
+
+ \item \emph{Hybrid incidence--spectrum.}
+ Use short-orbit uniqueness and gcd/lcm pruning to lower the multiplicity
+ of the bad character fibers, then apply the coefficient-specific
+ spectrum only to the remaining high-degree points.  The ambient Schur
+ bound \eqref{eq:tpc35-physical-incidence-scale} shows that incidence
+ without signed spectral input is insufficient.
+\end{enumerate}
+
+The first two routes are now precise enough that failure can also be made
+mathematical.  A construction concentrating the physical coefficient
+mass on one bad character, or a lower-coordinate CRT mode surviving all
+available centerings, would be a scoped negative result.  Conversely, a
+positive estimate for only a restricted range of projector divisors or
+alias fibers would still close a nontrivial subpacket.
+
+\subsection{Relation to the preceding chain}
+
+TPC-19 supplies primitive determinant--divisor CRT normal forms
+\citep{WangTPC19}.  TPC-29 already proves the general reflected
+compatibility \(g\mid h(m_1-m_2)\), its primitive specialization, and the
+unique lcm class \citep{WangTPC29}.  The self-contained restatement in
+\cref{prop:tpc35-affine-CRT-compatibility} adds the reduced criterion
+\(g/(g,h)\mid m_1-m_2\) and records a counterexample to a tempting swapped
+coprimality hypothesis; the compatibility theorem itself is not claimed
+as new.  TPC-22 and TPC-24 already show that low conductor
+coordinates can survive a product decomposition
+\citep{WangTPC22,WangTPC24}; the new use here is at orbit-scale projective
+moduli with the explicit three/four threshold.  TPC-33 proves the
+unweighted complete product--slope lift and fixed-determinant projective
+Plancherel identity \citep{WangTPC33}.  The new spectral step is
+\cref{thm:tpc35-product-spectrum}, which diagonalizes a coherent weighted
+product--slope sum.  TPC-34 first states the coefficient-specific orbit
+gate, proves its diagonal, and gives a coherent constant-phase witness at
+the sign-blind scale \citep{WangTPC34}.  The present rank--trace theorem
+upgrades that witness to a lower bound for every unit-phase
+equal-deletion frame, with Fourier sharpness.  The new physical step is
+\cref{thm:tpc35-shared-ultra}, which proves a \(T\)-saving bound for the
+opened same-ultra block after orbit slicing.
+
+Even a future proof of \eqref{eq:tpc35-coefficient-gate} would close only
+the inherited matched residual shell.  Earlier packet reconstruction,
+main-term identification, and positivity stages would remain.  The word
+``dynamical'' here refers to deterministic affine traversal
+\(j\mapsto mj+h\) modulo divisor moduli.  No mixing theorem, logistic-map
+conjugacy, M\"obius disjointness theorem, or spectral interpretation of
+zeta zeros is asserted.

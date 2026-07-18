@@ -1,0 +1,156 @@
+\section{Exact certificate and claim boundary}
+\label{sec:tpc35-certificate-scope}
+
+The accompanying standard-library certificate is
+\begin{center}
+ \texttt{experiments/tpc35\_certificate.py}.
+\end{center}
+It uses integers, \texttt{Fraction}, and hand-written Gaussian-rational
+arithmetic.  It contains no floating-point calculation, random input,
+true division, or Python \texttt{assert} statement.  Running
+\begin{verbatim}
+python experiments/tpc35_certificate.py
+python -O experiments/tpc35_certificate.py
+\end{verbatim}
+performs the same checks and regenerates byte-identical JSON.
+
+\subsection{Finite checks}
+
+The archived run performs \(141{,}803\) exact checks.
+
+\begin{table}[H]
+\centering
+\caption{Exact finite checks in the TPC-35 certificate.}
+\label{tab:tpc35-certificate-counts}
+\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Check family & Count \\
+\midrule
+Aspect-ratio Gram, Hilbert--Schmidt, and tight-frame identities
+ & \(1{,}260\) \\
+Same-source block identity and Rayleigh lower bound
+ & \(1{,}311\) \\
+General and primitive ultra-CRT compatibility and occupancy
+ & \(95{,}535\) \\
+Short-orbit congruence operator
+ & \(393\) \\
+Incomplete multiplicity saturation
+ & \(18{,}414\) \\
+Product-slope character spectrum over \(q=3,5\)
+ & \(194\) \\
+Three/four-modulus alias ladder
+ & \(8{,}736\) \\
+CRT lift and normalized non-tensorization
+ & \(1{,}338\) \\
+Integer-line intersection, Schur count, and sharp pencil
+ & \(14{,}618\) \\
+Source constraints
+ & \(4\) \\
+\midrule
+Total & \(141{,}803\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The Gram suite constructs the matrices \(M_j\) entry by entry, forms
+\(\sum_jM_j^*M_j\), and compares it to
+\eqref{eq:tpc35-G-exact}.  It checks the complete eigenvalue-free
+operator and Hilbert--Schmidt inequalities and exact tight-frame
+sharpness using integer Hadamard phases.  The same-source suite checks
+\eqref{eq:tpc35-block-O} and the \(rt\), rather than \(r^2t\), subtraction
+in \eqref{eq:tpc35-block-op-lower} through an exact Rayleigh witness.
+
+The CRT suite enumerates the general criterion
+\eqref{eq:tpc35-general-compatibility}, the primitive specialization
+\eqref{eq:tpc35-primitive-compatibility}, the least-common-multiple joint
+class, and exact interval occupancy.  It includes the explicit
+\(h=2,u_1=u_2=4,m_1=1,m_2=3\) counterexample to the incorrectly swapped
+coprimality hypothesis.  The short-orbit suite compares the direct
+singular norm with the maximum time degree in
+\eqref{eq:tpc35-short-orbit-norm}.
+
+The projective suite checks the three pigeonhole ranges and the continuous
+envelope algebra with rational arithmetic.  The product-slope suite uses
+Gaussian rationals to verify every transform, energy, principal and
+nonprincipal formula for all centered test functions in finite exact
+families over \(q=3,5\).  It also verifies the single-character example
+attaining the factor \(q-1\).  The alias suite checks exact floor counts
+for the lcm fibers and the rational exponent ledger.  The CRT-lift suite
+compares both pointwise centered correlations and normalized rms values.
+The integer-line suite verifies intersection formulas, solution steps,
+point and line multiplicities, Schur row sums, and a sharp common-point
+pencil.
+
+\subsection{Reproducibility values}
+
+The archived outputs have:
+\begin{align}
+ \text{normalized source SHA-256}\quad
+ &\texttt{7e08d1d29dc88e40b9653176b06336ba}
+ \notag\\[-0.2em]
+ &\texttt{2ed879db33fb080e2c697e79b94e948e},
+ \label{eq:tpc35-source-hash}\\
+ \text{JSON SHA-256}\quad
+ &\texttt{02dea583a12f7078ee15ae8205f7e8d0}
+ \notag\\[-0.2em]
+ &\texttt{787f92c5c858c80a525396534357c134},
+ \label{eq:tpc35-json-hash}\\
+ \text{certificate digest}\quad
+ &\texttt{26b282b0b8a989e792524dc12ab1a6ed}
+ \notag\\[-0.2em]
+ &\texttt{8215204fc36a0ef4493ab28982a7dae5}.
+ \label{eq:tpc35-certificate-digest}
+\end{align}
+Line endings are normalized before the source hash is taken.  The
+certificate digest hashes the canonical JSON payload before its digest
+field is appended.
+
+\subsection{What is proved and what remains open}
+
+The unconditional abstract results are the equal-deletion and
+same-source Gram identities and lower bounds, the saturation of the
+residue-multiplicity certificate, the exact product-slope character
+spectrum, the CRT alias identity and threshold, proper-coordinate
+non-tensorization, the merge--complete cost ledger, the short-orbit
+operator identity, and the ambient integer-incidence bound.  The
+unconditional physical result is the same-ultra estimate
+\eqref{eq:tpc35-shared-ultra-bound}, together with terminal equality on
+that block.
+
+Finite enumeration certifies algebra, finite incidence, and rational
+bookkeeping.  It does not prove:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item asymptotic divisor, coefficient, or smooth-weight envelopes;
+ \item a lower bound for either physical orbit-Gram norm;
+ \item that the physical uniform operator gate is false;
+ \item an upper or lower bound for the actual correlation from the
+ multiplicity saturation theorem;
+ \item suppression of bad multiplicative characters for the physical
+ coefficient vector;
+ \item a complete separable product--slope decomposition of the actual
+ orbit-sliced mask with total cost \(X^{o(1)}\);
+ \item a joint three-modulus dispersion or diagonal-scale alias-fiber
+ estimate;
+ \item control of the distinct-ultra cross terms;
+ \item cancellation in the terminal four-M\"obius row correlation;
+ \item the coefficient-specific orbit gate
+ \eqref{eq:tpc35-coefficient-gate};
+ \item the inherited \(Q^3\) column-energy or scalar-shell gate;
+ \item an affine Chowla theorem, M\"obius disjointness theorem, or breach
+ of sieve parity;
+ \item positivity or a Hardy--Littlewood prime-pair asymptotic; or
+ \item infinitely many twin primes.
+\end{enumerate}
+
+The paper therefore advances the proof program in a deliberately bounded
+way: two tempting uniform shortcuts are shown to saturate in their stated
+abstract classes, one coherent product-slope operator is exactly
+diagonalized, the first orbit-scale alias depth compatible with the
+diagonal budget is identified, and
+one physical divisor block is improved.  The next unproved input is
+coefficient-sensitive cancellation in
+\eqref{eq:tpc35-signed-spectral-target}, or a joint CRT theorem strong
+enough to imply it after physical reassembly.  This scoped boundary is
+consistent with the classical parity phenomenon in sieve theory
+\citep{HeathBrown1982Parity}; it is not a parity-breaking theorem.

@@ -1,0 +1,272 @@
+\section{CRT alias compression and its non-tensor boundary}
+\label{sec:tpc35-crt-alias}
+
+The single--modulus conflict in TPC-33 is elementary: orbit coverage
+prefers \(q\lesssim J\), whereas no--wrap on an affine determinant of
+size \(X\) requires \(q\gg X\).  Several small moduli can increase the
+joint modulus without sacrificing local orbit coverage.  We now compute
+the exact threshold and then prove why independent one--coordinate bounds
+do not automatically multiply.
+
+\subsection{Exact alias identity}
+
+\begin{theorem}[Finite CRT alias decomposition]
+\label{thm:tpc35-alias-decomposition}
+Let \(q_1,\ldots,q_r\) be positive integers, let
+\begin{equation}
+ M=[q_1,\ldots,q_r],
+ \label{eq:tpc35-joint-modulus}
+\end{equation}
+and let \(F\in\Z\) satisfy \(|F|\le B\).  Then
+\begin{equation}
+ \boxed{
+ \prod_{i=1}^r\one_{q_i\mid F}
+ =\one_{M\mid F}
+ =\sum_{|k|\le\lfloor B/M\rfloor}\one_{F=kM}.}
+ \label{eq:tpc35-alias-identity}
+\end{equation}
+For all integers \(F\) in the ambient interval \(|F|\le B\), the joint
+congruence is equivalent to \(F=0\) if and only if \(M>B\).
+\end{theorem}
+
+\begin{proof}
+Divisibility by every \(q_i\) is equivalent to divisibility by their least
+common multiple \(M\).  Every multiple \(F=kM\) in the stated interval
+has \(|k|\le\lfloor B/M\rfloor\), proving the identity.  If \(M>B\), the
+only possible \(k\) is zero.  Conversely, if \(M\le B\), the value \(F=M\)
+is a nonzero counterexample to a uniform no--wrap assertion on the whole
+ambient interval.
+\end{proof}
+
+Applied to
+\begin{equation}
+ F=sU-aD-h,
+ \label{eq:tpc35-affine-determinant}
+\end{equation}
+whose physical ambient range is \(B\asymp X\), this is an exact
+decomposition of a congruence relaxation into parallel integer determinant
+fibers.  It does not bound the mass on any one fiber.
+
+\begin{corollary}[The orbit-scale alias ladder]
+\label{cor:tpc35-alias-ladder}
+Suppose \(q_1,\ldots,q_r\) are pairwise coprime and
+\(q_i\asymp J=X^{133/400+o(1)}\).  Then the number of possible \(k\) in
+\eqref{eq:tpc35-alias-identity} is
+\begin{equation}
+ O\!\left(1+\frac{X}{J^r}\right),
+ \qquad
+ \frac{X}{J^r}=X^{1-r(133/400)+o(1)}.
+ \label{eq:tpc35-alias-count}
+\end{equation}
+In particular,
+\begin{center}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+\(r\) & \(X/J^r\) & Interpretation \\
+\midrule
+1 & \(X^{267/400+o(1)}\) & one-modulus alias family \\
+2 & \(X^{134/400+o(1)}\) & two-modulus alias family \\
+3 & \(X^{1/400+o(1)}\) & first diagonal-budget scale \\
+4 & \(X^{-132/400+o(1)}\) & strict no-wrap for large \(X\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+Among orbit-scale choices \(q_i\asymp J\), four moduli are the first
+that force strict no--wrap on an \(O(X)\) ambient determinant interval.
+\end{corollary}
+
+Because \(QJ=X^{1+o(1)}\), the three--modulus endpoint is
+\begin{equation}
+ \boxed{
+ \frac{X}{J^3}=\frac{Q}{J^2}=X^{1/400+o(1)}.}
+ \label{eq:tpc35-critical-three-modulus}
+\end{equation}
+This is the same factor by which the allowed orbit energy \(Q^3/J\)
+exceeds the proved diagonal \(Q^2J\).  Hence the following accounting
+statement is exact: if a joint three--modulus decomposition has
+\(O(X^{o(1)}X/J^3)\) alias fibers and every fiber can be reassembled at
+scale \(O(X^{o(1)}Q^2J)\), then absolute reassembly gives
+\begin{equation}
+ \frac{X}{J^3}\,Q^2J
+ =\frac{Q^3}{J}.
+ \label{eq:tpc35-conditional-alias-reassembly}
+\end{equation}
+Neither the fiber estimate nor its uniformity is proved here.  In
+particular, \eqref{eq:tpc35-critical-three-modulus} is exponent
+compatibility, not closure of the physical gate.
+
+\subsection{The exact two-congruence compatibility condition}
+
+We record a small point needed to avoid a false CRT simplification.
+TPC-19 contains the primitive determinant--divisor normal form, while
+TPC-29 proves the general compatibility \(g\mid h(m_1-m_2)\), the unique
+lcm class, and its primitive specialization
+\citep{WangTPC19,WangTPC29}.  The self-contained restatement below makes
+the reduced divisor \(g/(g,h)\) explicit and records a useful
+counterexample; the compatibility principle itself is not new.
+
+\begin{proposition}[Affine CRT compatibility]
+\label{prop:tpc35-affine-CRT-compatibility}
+Let \(u_1,u_2\ge1\), let \(g=(u_1,u_2)\), and assume
+\((m_i,u_i)=1\).  Then the congruences
+\begin{equation}
+ m_i j\equiv-h\pmod{u_i},\qquad i=1,2,
+ \label{eq:tpc35-two-congruences}
+\end{equation}
+are compatible if and only if
+\begin{equation}
+ \boxed{g\mid h(m_1-m_2),}
+ \label{eq:tpc35-general-compatibility}
+\end{equation}
+equivalently
+\begin{equation}
+ \frac{g}{(g,h)}\mid m_1-m_2.
+ \label{eq:tpc35-reduced-compatibility}
+\end{equation}
+When compatible, they determine one residue class modulo
+\([u_1,u_2]\).  Under the physical primitive hypothesis
+\begin{equation}
+ (u_i,hm_i)=1,\qquad i=1,2,
+ \label{eq:tpc35-physical-primitive-CRT}
+\end{equation}
+compatibility reduces to
+\begin{equation}
+ \boxed{(u_1,u_2)\mid m_1-m_2.}
+ \label{eq:tpc35-primitive-compatibility}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The individual solutions are
+\[
+ j\equiv-hm_i^{-1}\pmod{u_i}.
+\]
+The generalized CRT says they are compatible exactly when the two
+residues agree modulo \(g\):
+\[
+ hm_1^{-1}\equiv hm_2^{-1}\pmod g.
+\]
+Multiplication by \(m_1m_2\), which is invertible modulo \(g\), gives
+\eqref{eq:tpc35-general-compatibility}.  Dividing by the common factor
+\((g,h)\) gives \eqref{eq:tpc35-reduced-compatibility}.  Under
+\eqref{eq:tpc35-physical-primitive-CRT}, \((g,h)=1\), giving
+\eqref{eq:tpc35-primitive-compatibility}.  The modulus of the joint class
+is the least common multiple by the generalized CRT.
+\end{proof}
+
+The condition \((m_i,hu_i)=1\) is not a substitute for
+\eqref{eq:tpc35-physical-primitive-CRT}: it makes \(m_i\) invertible but
+need not make \(h\) invertible modulo \(u_i\).  For example,
+\(h=2,u_1=u_2=4,m_1=1,m_2=3\) gives compatible congruences although
+\(4\nmid m_1-m_2\); the general criterion
+\eqref{eq:tpc35-general-compatibility} is correct.
+
+\subsection{CRT lifts do not force tensor gain}
+
+Let \(M=M_0M'\), where \((M_0,M')=1\).  For
+\(f,g:\Z/M_0\Z\to\C\), lift them to \(\Z/M\Z\) by
+\begin{equation}
+ F(D)=f(D\bmod M_0),\qquad G(U)=g(U\bmod M_0).
+ \label{eq:tpc35-coordinate-lifts}
+\end{equation}
+For units \(a,s\pmod M\), put
+\begin{equation}
+ \cC_M(a,s)
+ :=\sum_{D\bmod M}F(D)
+ G\!\left(s^{-1}(aD+h)\right).
+ \label{eq:tpc35-ring-correlation}
+\end{equation}
+Let \(\bar F=M^{-1}\sum_DF(D)\) and similarly for all means.
+
+\begin{theorem}[Proper-coordinate non-tensorization]
+\label{thm:tpc35-CRT-lift}
+With \(a_0,s_0,h_0\) denoting reduction modulo \(M_0\), one has
+\begin{equation}
+ \boxed{
+ \cC_M(a,s)-M\bar F\bar G
+ =M'\bigl(\cC_{M_0}(a_0,s_0)-M_0\bar f\bar g\bigr).}
+ \label{eq:tpc35-CRT-pointwise-lift}
+\end{equation}
+Consequently
+\begin{align}
+ &\boxed{
+ \sum_{a,s\in(\Z/M\Z)^\times}
+ |\cC_M(a,s)-M\bar F\bar G|^2}
+ \notag\\[-0.2em]
+ &\boxed{\qquad
+ =M'^2\varphi(M')^2
+ \sum_{a_0,s_0\in(\Z/M_0\Z)^\times}
+ |\cC_{M_0}(a_0,s_0)-M_0\bar f\bar g|^2.}
+ \label{eq:tpc35-CRT-energy-lift}
+\end{align}
+In the normalized rms
+\begin{equation}
+ \operatorname{rms}_M^2
+ :=\frac1{\varphi(M)^2}
+ \sum_{a,s\in(\Z/M\Z)^\times}
+ \left|\frac{\cC_M(a,s)-M\bar F\bar G}{M}\right|^2,
+ \label{eq:tpc35-normalized-ring-rms}
+\end{equation}
+the value is exactly \(\operatorname{rms}_{M_0}^2\).
+\end{theorem}
+
+\begin{proof}
+Every residue \(D_0\pmod {M_0}\) has exactly \(M'\) lifts modulo \(M\), while
+the lifted summand depends only on \(D_0,a_0,s_0\).  Hence
+\[
+ \cC_M(a,s)=M'\cC_{M_0}(a_0,s_0),
+ \qquad \bar F=\bar f,\quad\bar G=\bar g,
+\]
+which proves \eqref{eq:tpc35-CRT-pointwise-lift}.  Each pair
+\((a_0,s_0)\) has \(\varphi(M')^2\) unit lifts.  Squaring the pointwise
+identity and summing gives \eqref{eq:tpc35-CRT-energy-lift}.  Finally use
+\(
+ \varphi(M)=\varphi(M_0)\varphi(M')
+\)
+and \(M=M_0M'\) in \eqref{eq:tpc35-normalized-ring-rms}; all \(M'\)-factors
+cancel.
+\end{proof}
+
+Taking \(M_0\) to be the product of any proper subset of the prime
+coordinates shows that every proper-coordinate face of a squarefree CRT
+product may retain the normalized rms of the smaller product.  Extra
+coordinates only repeat data that do not depend on them.
+This is the orbit--scale form of the low-coordinate phenomenon already
+encountered in earlier conductor decompositions
+\citep{WangTPC22,WangTPC24}.  A joint three--modulus proof must control
+principal, singleton, and double-coordinate modes; the full-coordinate
+piece alone does not suffice.
+
+\subsection{Alias--coverage bookkeeping for a merged modulus}
+
+One might merge small moduli into \(P\), use
+\(O(1+X/P)\) aliases, and then complete the \(J\)-long orbit modulo \(P\),
+at cost \(O(1+P/J)\).  This specified route obeys an exact bookkeeping
+inequality.
+
+\begin{proposition}[Merge--then--complete cost ledger]
+\label{prop:tpc35-alias-coverage-law}
+For every \(P,X,J>0\),
+\begin{equation}
+ \boxed{
+ \left(1+\frac XP\right)
+ \left(1+\frac PJ\right)
+ \ge\frac XJ.}
+ \label{eq:tpc35-alias-coverage-law}
+\end{equation}
+When \(X\asymp QJ\), the right side is \(\asymp Q\).
+\end{proposition}
+
+\begin{proof}
+Expanding the left side produces the nonnegative terms
+\(1+X/P+P/J\) in addition to \(X/J\).
+\end{proof}
+
+At \(P\asymp J^3\), the alias factor reaches the critical
+\(X/J^3=X^{1/400+o(1)}\), but the completion factor is \(J^2\); their
+product still contains \(X/J\asymp Q\).  This proposition is not a no--go
+theorem for a joint delta method, circle method, multi--modulus
+large--sieve estimate, or tensor spectral estimate.  It rules out only
+the strategy that
+first forgets the separate CRT coordinates and then pays for complete
+coverage of the merged modulus.

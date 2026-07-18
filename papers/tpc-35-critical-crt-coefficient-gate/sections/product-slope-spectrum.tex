@@ -1,0 +1,233 @@
+\section{Exact multiplicative spectrum of the product-slope operator}
+\label{sec:tpc35-product-spectrum}
+
+The complete product--slope identity in TPC-33 sums the squared
+correlation separately over each source coefficient \(\ell\).  In the
+physical row sum, the \(\ell\)-coefficients are combined coherently before
+squaring.  Multiplicative Fourier analysis makes the distinction exact.
+
+\subsection{Definitions and diagonalization}
+
+Let \(q\) be prime, put \(G=\F_q^\times\), and fix
+\(h\in G\).  Let \(f,g:\F_q\to\C\) be centered:
+\begin{equation}
+ \sum_{x\in\F_q}f(x)=\sum_{x\in\F_q}g(x)=0.
+ \label{eq:tpc35-fg-centered}
+\end{equation}
+For \(a,s\in G\), define
+\begin{equation}
+ R_s(a)=\sum_{D\in\F_q}
+ f(D)g\!\left(s^{-1}(aD+h)\right).
+ \label{eq:tpc35-Rsa}
+\end{equation}
+For \(b:G\to\C\), the product--slope operator is
+\begin{equation}
+ (Tb)(j,s)=\sum_{\ell\in G}b(\ell)R_s(\ell j),
+ \qquad j,s\in G.
+ \label{eq:tpc35-product-operator}
+\end{equation}
+
+For a multiplicative character \(\chi\) of \(G\), use the unnormalized
+transform
+\begin{equation}
+ \widehat b(\chi)=\sum_{x\in G}b(x)\overline{\chi(x)},
+ \qquad
+ \widehat R_s(\chi)=\sum_{a\in G}R_s(a)\overline{\chi(a)},
+ \label{eq:tpc35-multiplicative-transform}
+\end{equation}
+and put
+\begin{equation}
+ \cE_\chi=\sum_{s\in G}|\widehat R_s(\chi)|^2.
+ \label{eq:tpc35-character-energy}
+\end{equation}
+
+\begin{theorem}[Product-slope singular spectrum]
+\label{thm:tpc35-product-spectrum}
+With the preceding conventions,
+\begin{equation}
+ \boxed{
+ \sum_{j,s\in G}|(Tb)(j,s)|^2
+ =\frac1{q-1}\sum_\chi
+ |\widehat b(\bar\chi)|^2\cE_\chi.}
+ \label{eq:tpc35-product-spectral-identity}
+\end{equation}
+Consequently
+\begin{equation}
+ \boxed{\|T\|_{\op}^2=\max_\chi\cE_\chi.}
+ \label{eq:tpc35-product-op-norm}
+\end{equation}
+For every nonprincipal character \(\chi\), extended by \(\chi(0)=0\),
+\begin{equation}
+ \boxed{
+ \cE_\chi
+ =\left|\sum_{D\ne0}f(D)\chi(D)\right|^2
+ \left(
+ q\|g\|_2^2
+ -\left|\sum_{U\ne0}g(U)\overline{\chi(U)}\right|^2
+ \right).}
+ \label{eq:tpc35-nonprincipal-energy}
+\end{equation}
+For the principal character \(\mathbf1\),
+\begin{equation}
+ \boxed{
+ \cE_{\mathbf1}
+ =q^2|f(0)|^2\bigl(\|g\|_2^2-|g(0)|^2\bigr).}
+ \label{eq:tpc35-principal-energy}
+\end{equation}
+Here \(\|g\|_2^2=\sum_{U\in\F_q}|g(U)|^2\).
+\end{theorem}
+
+\begin{proof}
+For fixed \(s\), take the multiplicative transform in \(j\).  The
+substitution \(a=\ell j\) gives
+\begin{align*}
+ \sum_{j\in G}(Tb)(j,s)\overline{\chi(j)}
+ &=\sum_{\ell\in G}b(\ell)\chi(\ell)
+   \sum_{a\in G}R_s(a)\overline{\chi(a)}\\
+ &=\widehat b(\bar\chi)\widehat R_s(\chi).
+\end{align*}
+Multiplicative Parseval, followed by summation over \(s\), proves
+\eqref{eq:tpc35-product-spectral-identity}.  Parseval also gives
+\[
+ \sum_{\ell\in G}|b(\ell)|^2
+ =\frac1{q-1}\sum_\chi|\widehat b(\chi)|^2.
+\]
+The quotient of the two diagonal forms is maximized by supporting the
+transform of \(b\) on a character of maximal \(\cE_\chi\), proving
+\eqref{eq:tpc35-product-op-norm}.
+
+Now let \(\chi\ne\mathbf1\).  The \(D=0\) part of
+\(\widehat R_s(\chi)\) vanishes because
+\(\sum_{a\in G}\overline{\chi(a)}=0\).  For \(D\ne0\), make the change
+of variables \(U=s^{-1}(aD+h)\).  Extending \(\chi\) by zero permits the
+omitted value \(a=0\) to be restored, and gives
+\begin{equation}
+ \widehat R_s(\chi)
+ =\left(\sum_{D\ne0}f(D)\chi(D)\right)
+  \left(\sum_{U\in\F_q}g(U)
+  \overline{\chi(sU-h)}\right).
+ \label{eq:tpc35-Rhat-factor}
+\end{equation}
+As \(s\) ranges over \(G\), \(t=h/s\) also ranges over \(G\), and the
+modulus of the second factor equals that of
+\(
+ \sum_Ug(U)\overline{\chi(U-t)}
+\).
+If \(t=0\) is temporarily included, additive Fourier Parseval and the
+standard nontrivial-character Gauss-sum modulus \(\sqrt q\) give
+\begin{equation}
+ \sum_{t\in\F_q}
+ \left|\sum_Ug(U)\overline{\chi(U-t)}\right|^2
+ =q\|g\|_2^2.
+ \label{eq:tpc35-shifted-character-energy}
+\end{equation}
+The zero additive frequency contributes nothing because \(g\) is
+centered.  Removing \(t=0\) subtracts
+\(
+ |\sum_{U\ne0}g(U)\overline{\chi(U)}|^2
+\), proving \eqref{eq:tpc35-nonprincipal-energy}.
+
+For \(\chi=\mathbf1\), sum \eqref{eq:tpc35-Rsa} over \(a\ne0\).  When
+\(D\ne0\), the affine variable \(s^{-1}(aD+h)\) runs over
+\(\F_q\setminus\{h/s\}\), so centeredness of \(g\) gives
+\(-g(h/s)\).  When \(D=0\), the contribution is
+\((q-1)f(0)g(h/s)\).  Since centeredness of \(f\) gives
+\(\sum_{D\ne0}f(D)=-f(0)\),
+\begin{equation}
+ \widehat R_s(\mathbf1)=qf(0)g(h/s).
+ \label{eq:tpc35-principal-Rhat}
+\end{equation}
+Squaring and summing over \(s\ne0\) proves
+\eqref{eq:tpc35-principal-energy}.
+\end{proof}
+
+\begin{remark}[Additive centering does not remove the principal character]
+The hypotheses \(\sum f=\sum g=0\) were used throughout, yet
+\eqref{eq:tpc35-principal-energy} can still be positive.  Ordinary
+additive centering therefore does not eliminate the principal
+multiplicative face.  A CRT or physical application must control that face
+separately, or impose additional vanishing such as \(f(0)=0\).
+\end{remark}
+
+\subsection{Average versus maximum}
+
+Multiplicative Parseval applied directly to \(a\mapsto R_s(a)\) gives
+\begin{equation}
+ \boxed{
+ \frac1{q-1}\sum_\chi\cE_\chi
+ =\sum_{a,s\in G}|R_s(a)|^2.}
+ \label{eq:tpc35-average-character-energy}
+\end{equation}
+The right side is exactly the centered projective second moment from
+TPC-33.  Thus independent complete product--slope averaging controls the
+\emph{average} multiplicative spectral energy, while a coherent weighted
+sum in \eqref{eq:tpc35-product-operator} has norm given by the
+\emph{maximum}.
+
+\begin{corollary}[Sharp average-to-maximum factor]
+\label{cor:tpc35-average-max-factor}
+For every centered pair \(f,g\),
+\begin{equation}
+ \max_\chi\cE_\chi
+ \le(q-1)\sum_{a,s\in G}|R_s(a)|^2.
+ \label{eq:tpc35-average-max-upper}
+\end{equation}
+For every \(q>2\), equality in the factor \(q-1\) is possible: there are
+nonzero centered \(f,g\) for which exactly one \(\cE_\chi\) is nonzero.
+\end{corollary}
+
+\begin{proof}
+The first assertion follows from nonnegativity and
+\eqref{eq:tpc35-average-character-energy}.  Choose a nonprincipal
+character \(\chi_0\) and put
+\begin{equation}
+ f(0)=0,\qquad f(D)=\overline{\chi_0(D)}\ (D\ne0),
+ \qquad g=\one_{\{0\}}-\one_{\{1\}}.
+ \label{eq:tpc35-single-character-example}
+\end{equation}
+Both functions are centered.  Character orthogonality gives
+\[
+ \sum_{D\ne0}f(D)\chi(D)=0
+ \quad\text{unless }\chi=\chi_0.
+\]
+The principal energy vanishes because \(f(0)=0\), while the bracket in
+\eqref{eq:tpc35-nonprincipal-energy} is \(2q-1>0\) at \(\chi_0\).
+Hence only \(\cE_{\chi_0}\) survives and the ratio of maximum to average
+is \(q-1\).
+\end{proof}
+
+\subsection{A finite-model coefficient-specific gate}
+
+The exact formula identifies the form of a useful new input for every
+layer that has already been reduced to the complete, separable form
+\eqref{eq:tpc35-product-operator}, with \(b(\ell)\) independent of
+\(j,s\).  On such a layer,
+\eqref{eq:tpc35-product-spectral-identity} asks not for
+\(\max_\chi\cE_\chi\) to be small for every possible \(b\), but for the
+weighted spectral mass
+\begin{equation}
+ \frac1{q-1}\sum_\chi
+ |\widehat b(\bar\chi)|^2\cE_\chi
+ \label{eq:tpc35-weighted-bad-spectrum}
+\end{equation}
+to satisfy the desired ledger.  A sufficient route on that finite model
+is to show that \(b\) has little mass on characters with large
+\(\cE_\chi\), or that the M\"obius-derived \(f,g\) have small
+\(\cE_\chi\) on the character support of \(b\).
+
+The actual multiplier
+\(\mathfrak A_{\alpha,\gamma}^{\rm act}(j)\) depends jointly on the input
+row, the opposite row, and \(j\); it also retains the \(d\)-variable,
+smooth weights, gcd projector, and near-row deletion.  We have not proved
+an \(X^{o(1)}\)-cost decomposition of that multiplier into complete
+separable product--slope layers, nor the completion of its \(j,s\) ranges.
+Thus \eqref{eq:tpc35-weighted-bad-spectrum} is an exact energy only after
+this missing physical interface lemma has been supplied.
+
+No physical spectral-overlap estimate or reassembly lemma is proved here.
+The formula is nevertheless more specific than a uniform operator norm:
+it exposes the signed finite Mellin data a future theorem would have to
+use after reassembly.  At \(q\asymp J\), the sharp
+average--to--maximum factor \(q-1\asymp J\) coincides with the missing
+energy factor in the optimistic one--modulus ledger
+\eqref{eq:tpc35-one-modulus-ledger}.

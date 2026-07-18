@@ -1,0 +1,154 @@
+\section{Saturation of the residue-multiplicity projective route}
+\label{sec:tpc35-projective-saturation}
+
+TPC-33 proves an exact determinant--fiber second moment over
+\(\F_q\) and extends it to incomplete integer slope sets by grouping
+elements into residue classes.  We now measure the strongest normalized
+factor that this specific multiplicity bound can certify.  This should not
+be confused with a lower bound on the correlations being estimated.
+
+\subsection{Normalization}
+
+Let \(q\) be prime and let \(\cJ,\cS\) be finite integer sets, with no
+element divisible by \(q\).  Write
+\begin{equation}
+ J_0=|\cJ|,\qquad S_0=|\cS|,
+ \label{eq:tpc35-set-sizes}
+\end{equation}
+and define
+\begin{equation}
+ \nu_{\cA}(r)=\#\{a\in\cA:a\equiv r\pmod q\},\qquad
+ \nu_{\cA}^*=\max_{r\in\F_q^\times}\nu_{\cA}(r).
+ \label{eq:tpc35-residue-multiplicity}
+\end{equation}
+The incomplete projective estimate in TPC-33 has, after suppressing the
+common coefficient and function norms, the right--hand side
+\[
+ q\nu_{\cJ}^*\nu_{\cS}^*.
+\]
+The pointwise Cauchy bound summed over the \(J_0S_0\) slope pairs has
+scale \(J_0S_0\).  We therefore define the squared certificate factor
+\begin{equation}
+ \mathscr R_q^2(\cJ,\cS)
+ :=\frac{q\nu_{\cJ}^*\nu_{\cS}^*}{J_0S_0}.
+ \label{eq:tpc35-certificate-factor}
+\end{equation}
+This is not the ``rms loss relative to complete residue averaging'' used
+in TPC-33.  It is a different normalization: the ratio of that
+multiplicity right--hand side to the total pointwise Cauchy scale.
+
+\subsection{Universal lower bound and balanced-set sharpness}
+
+\begin{theorem}[Incomplete multiplicity saturation]
+\label{thm:tpc35-multiplicity-saturation}
+For every prime \(q\) and every nonempty pair \(\cJ,\cS\) as above,
+\begin{equation}
+ \boxed{
+ \mathscr R_q^2(\cJ,\cS)
+ \ge\frac1{\min\{J_0,S_0\}},
+ \qquad
+ \mathscr R_q(\cJ,\cS)
+ \ge\min\{J_0,S_0\}^{-1/2}.}
+ \label{eq:tpc35-multiplicity-lower}
+\end{equation}
+Conversely, if \(M:=\min\{J_0,S_0\}\ge2\), there are a prime \(q\) and
+balanced nonzero-residue sets of those cardinalities for which
+\begin{equation}
+ \boxed{
+ \mathscr R_q^2(\cJ,\cS)<\frac4M.}
+ \label{eq:tpc35-balanced-sharpness}
+\end{equation}
+Thus the exponent in \eqref{eq:tpc35-multiplicity-lower} is sharp for
+this certificate.
+\end{theorem}
+
+\begin{proof}
+By symmetry assume \(J_0\le S_0\).  Pigeonhole gives
+\begin{equation}
+ \nu_{\cA}^*\ge
+ \max\left\{1,\frac{|\cA|}{q-1}\right\}.
+ \label{eq:tpc35-pigeonhole}
+\end{equation}
+There are three ranges.
+
+If \(q\le J_0\), apply the second term of
+\eqref{eq:tpc35-pigeonhole} to both sets:
+\[
+ \mathscr R_q^2
+ \ge\frac{q}{(q-1)^2}\ge\frac1q\ge\frac1{J_0}.
+\]
+If \(J_0<q\le S_0\), use \(\nu_{\cJ}^*\ge1\) and
+\(\nu_{\cS}^*\ge S_0/(q-1)\):
+\[
+ \mathscr R_q^2\ge\frac{q}{J_0(q-1)}\ge\frac1{J_0}.
+\]
+Finally, if \(q>S_0\), both multiplicities are at least one and
+\[
+ \mathscr R_q^2\ge\frac{q}{J_0S_0}>\frac1{J_0}.
+\]
+This proves \eqref{eq:tpc35-multiplicity-lower}.
+
+For sharpness, Bertrand's postulate supplies a prime
+\(J_0<q\le2J_0\).  Choose \(\cJ\) with one element in each of \(J_0\)
+distinct nonzero residue classes, so \(\nu_{\cJ}^*=1\).  Distribute the
+\(S_0\) elements of \(\cS\) as evenly as possible among the \(q-1\)
+nonzero classes.  Then
+\[
+ \nu_{\cS}^*\le\frac{S_0}{q-1}+1.
+\]
+Integer representatives with these residue multiplicities plainly
+exist.  Therefore
+\[
+ \mathscr R_q^2
+ \le\frac{q}{J_0(q-1)}+\frac{q}{J_0S_0}
+ <\frac2{J_0}+\frac2{S_0}
+ \le\frac4{J_0},
+\]
+which proves \eqref{eq:tpc35-balanced-sharpness}.
+\end{proof}
+
+\begin{remark}[The continuous proxy]
+The algebraic envelope
+\[
+ \Phi(q)=\frac1q+\frac1{J_0}+\frac1{S_0}
+ +\frac{q}{J_0S_0}
+\]
+is minimized at \(q=\sqrt{J_0S_0}\), with value
+\((J_0^{-1/2}+S_0^{-1/2})^2\).  This is a useful continuous ledger and is
+checked by the certificate.  It is not asserted to be an exact
+coefficient-one upper bound for an interval after its zero residue class
+has been removed.
+\end{remark}
+
+\begin{remark}[What is saturated]
+The theorem lower--bounds the best right--hand side factor available from
+maximum residue multiplicities.  The actual projective correlation may
+be zero even when \(\mathscr R_q\) is large.  A method using cancellation
+between residue classes, weights adapted to the coefficient vector, more
+than one modulus jointly, or a direct integer large--sieve estimate is not
+covered by the theorem; those belong to the broader large--sieve framework
+\citep{Bombieri1965,IwaniecKowalski2004}.
+\end{remark}
+
+\subsection{Endpoint consequence}
+
+In the orbit--slope application, \(J_0\asymp J\), while the other
+physical slope range may be shorter or longer.  Since
+\(\min\{J_0,S_0\}\le J_0\), even the most optimistic amplitude factor
+certified by the one--modulus multiplicity right--hand side cannot improve
+on \(J^{-1/2}\), or \(J^{-1}\) at energy level.  Applied optimistically to
+the orbit--sliced absolute scale \(Q^3J\), it reaches only
+\begin{equation}
+ Q^3J\cdot J^{-1}=Q^3.
+ \label{eq:tpc35-one-modulus-ledger}
+\end{equation}
+The desired energy is \(Q^3/J\).  With a common denominator \(2000\),
+\begin{equation}
+ Q^3J=X^{4670/2000+o(1)},\qquad
+ Q^3=X^{4005/2000+o(1)},\qquad
+ \frac{Q^3}{J}=X^{3340/2000+o(1)}.
+ \label{eq:tpc35-projective-exponent-ledger}
+\end{equation}
+Thus this certificate misses exactly one further factor \(J\) at energy
+level.  The next section identifies that factor as a possible
+average--to--maximum loss in multiplicative character space.

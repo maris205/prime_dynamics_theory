@@ -1,0 +1,187 @@
+\section{A physical same-ultra saving after orbit slicing}
+\label{sec:tpc35-physical-ultra}
+
+The preceding sections diagnose abstract routes.  We now return to the
+actual multiplier \eqref{eq:tpc35-actual-multiplier}, coefficient vectors,
+and ultra increments.  Orbit slicing removes one time sum from the
+shared-divisor estimate of TPC-34 and yields a genuine physical saving.
+
+\subsection{Opening the divisor copies}
+
+For the left slice \eqref{eq:tpc35-left-slice}, define
+\begin{equation}
+ Z_{\gamma,j,u}^L
+ :=a_R(u)
+ \sum_{\substack{\alpha\\u\mid N_\alpha(j)}}
+ \gamma_\alpha^{(1)}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j),
+ \qquad T<u\le U_0.
+ \label{eq:tpc35-left-u-slice}
+\end{equation}
+Then
+\begin{equation}
+ Y_{\gamma,j}^L=\sum_uZ_{\gamma,j,u}^L.
+ \label{eq:tpc35-Y-as-u-sum}
+\end{equation}
+The diagonal in the two opened ultra-divisor copies is
+\begin{equation}
+ \cV_{L,u=}:=\sum_{\gamma,j}\sum_{T<u\le U_0}
+ |Z_{\gamma,j,u}^L|^2.
+ \label{eq:tpc35-left-same-u}
+\end{equation}
+Define \(Z_{\alpha,j,u}^R\) and \(\cV_{R,u=}\) by exchanging the two row
+systems.  These quantities are nonnegative.  They are not, however,
+lower or upper bounds for \(V_L,V_R\), because the distinct-\(u\) cross
+terms in \eqref{eq:tpc35-Y-as-u-sum} may have either sign.
+
+For a termwise absolute comparison with TPC-34, also define
+\begin{equation}
+ \widetilde{\cV}_{L,u=}
+ :=\sum_{\gamma,j}\sum_{T<u\le U_0}|a_R(u)|^2
+ \left(
+ \sum_{\substack{\alpha\\u\mid N_\alpha(j)}}
+ \left|
+ \gamma_\alpha^{(1)}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ \right|
+ \right)^2,
+ \label{eq:tpc35-left-absolute-same-u}
+\end{equation}
+and symmetrically \(\widetilde{\cV}_{R,u=}\).  The triangle inequality
+gives
+\begin{equation}
+ \cV_{L,u=}\le\widetilde{\cV}_{L,u=},
+ \qquad
+ \cV_{R,u=}\le\widetilde{\cV}_{R,u=}.
+ \label{eq:tpc35-same-u-majorization}
+\end{equation}
+
+\subsection{Residue occupancy at one time}
+
+\begin{lemma}[Fixed-\((u,j)\) row occupancy]
+\label{lem:tpc35-fixed-uj-occupancy}
+On the physical support,
+\begin{equation}
+ \#\{\alpha:u\mid N_\alpha(j)\}
+ \ll_{\mathscr D}1+\frac Qu
+ \le 1+\frac QT.
+ \label{eq:tpc35-fixed-uj-occupancy}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Primitivity \eqref{eq:tpc35-divisor-primitivity} gives \((u,j)=1\).
+Hence
+\[
+ u\mid m_\alpha j+h
+ \quad\Longleftrightarrow\quad
+ m_\alpha\equiv-hj^{-1}\pmod u.
+\]
+The distinct row labels \(m_\alpha\) lie in an interval of length
+\(O_{\mathscr D}(Q)\), so one residue class modulo \(u\) contains
+\(O_{\mathscr D}(1+Q/u)\) of them.  Since \(u>T\), the second bound follows.
+\end{proof}
+
+\begin{theorem}[\(T\)-saving bound for the opened shared-ultra block]
+\label{thm:tpc35-shared-ultra}
+On the physical packet,
+\begin{equation}
+ \boxed{
+ \cV_{L,u=}+\cV_{R,u=}
+ \le\widetilde{\cV}_{L,u=}+\widetilde{\cV}_{R,u=}
+ \ll_{\eps,h,\mathscr D}
+ X^\eps Q^2J\left(1+\frac QT\right).}
+ \label{eq:tpc35-shared-ultra-bound}
+\end{equation}
+At the endpoint \eqref{eq:tpc35-high-beta-scales},
+\begin{equation}
+ \boxed{
+ \cV_{L,u=}+\cV_{R,u=}
+ \le\widetilde{\cV}_{L,u=}+\widetilde{\cV}_{R,u=}
+ \ll X^{o(1)}\frac{Q^3J}{T}.}
+ \label{eq:tpc35-shared-ultra-endpoint}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For fixed \(\gamma,j,u\), Cauchy--Schwarz and
+\cref{lem:tpc35-fixed-uj-occupancy} give
+\begin{align*}
+ &|a_R(u)|^2
+ \left(
+ \sum_{\substack{\alpha\\u\mid N_\alpha(j)}}
+ \left|\gamma_\alpha^{(1)}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)\right|
+ \right)^2\\
+ &\quad\le |a_R(u)|^2
+ \#\{\alpha:u\mid N_\alpha(j)\}
+ \sum_{\substack{\alpha\\u\mid N_\alpha(j)}}
+ |\gamma_\alpha^{(1)}|^2
+ |\mathfrak A_{\alpha,\gamma}^{\rm act}(j)|^2\\
+ &\ll X^\eps\left(1+\frac QT\right)
+ \sum_{\substack{\alpha\\u\mid N_\alpha(j)}}
+ |\gamma_\alpha^{(1)}|^2.
+\end{align*}
+Here logarithmic factors in \(a_R\) and the bounded multiplier are
+absorbed into \(X^\eps\).  Sum first over \(u\).  For each fixed
+\((\alpha,j)\), the number of divisors of \(N_\alpha(j)\asymp X\) is
+\(O_\eps(X^\eps)\).  Then sum over \(O(Q)\) opposite rows \(\gamma\), over
+\(O(J)\) orbit times, and use \eqref{eq:tpc35-row-l2}.  This yields
+\[
+ \widetilde{\cV}_{L,u=}
+ \ll X^\eps\left(1+\frac QT\right)QJ\cdot Q.
+\]
+The right side is identical.  Combine with
+\eqref{eq:tpc35-same-u-majorization}.  Since \(Q/T\to\infty\) at the
+endpoint, \eqref{eq:tpc35-shared-ultra-endpoint} follows.
+\end{proof}
+
+The absolute orbit--sliced baseline is \(Q^3J\), so
+\eqref{eq:tpc35-shared-ultra-endpoint} saves the full factor \(T\).  It is
+also one factor \(J\) below the two--time shared-ultra scale
+\(Q^3J^2/T\) proved in TPC-34.  Nevertheless
+\begin{equation}
+ \frac{Q^3J/T}{Q^3/J}=\frac{J^2}{T}
+ =X^{279/1000+o(1)},
+ \label{eq:tpc35-shared-ultra-gap}
+\end{equation}
+so the block does not close the orbit gate.
+
+\subsection{Terminal atoms on the same-\texorpdfstring{\(u\)}{u} diagonal}
+
+On the endpoint packet, the terminal divisor
+\begin{equation}
+ u=N_\alpha(j)=m_\alpha j+h
+ \label{eq:tpc35-terminal-divisor}
+\end{equation}
+lies in the ultra range.  At one fixed orbit time, equal terminal divisors
+have no off--diagonal row solutions.
+
+\begin{proposition}[Terminal equality is the row diagonal]
+\label{prop:tpc35-terminal-equality}
+If \(j>0\) and
+\begin{equation}
+ N_{\alpha_1}(j)=N_{\alpha_2}(j),
+ \label{eq:tpc35-terminal-equality}
+\end{equation}
+then \(m_{\alpha_1}=m_{\alpha_2}\), hence
+\(\alpha_1=\alpha_2\) under the row-label convention.
+\end{proposition}
+
+\begin{proof}
+Subtracting the two equalities gives
+\((m_{\alpha_1}-m_{\alpha_2})j=0\).  Since \(j>0\), the row labels agree.
+\end{proof}
+
+Thus the terminal--terminal contribution inside the same-\(u\) block is
+already contained in the proved Gram--copy diagonal.  This does not remove
+the terminal obstruction identified in TPC-34: two distinct terminal
+divisors occur in the cross-\(u\) part of
+\(
+ |\sum_uZ_{\gamma,j,u}^L|^2
+\), where the fused signs produce an averaged four--M\"obius row
+correlation.  Nor does the triangle inequality between terminal and
+proper-divisor layers give a converse bound, because those layers may
+cancel before squaring.  The theorem here proves a \(T\)-saving bound for
+one opened positive block and locates the remaining signed interaction
+more precisely; it does not break the parity boundary.

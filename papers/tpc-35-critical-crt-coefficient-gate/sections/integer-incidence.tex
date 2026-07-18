@@ -1,0 +1,202 @@
+\section{Short-orbit CRT and ambient integer incidence}
+\label{sec:tpc35-integer-incidence}
+
+Large ultra divisors give strong uniqueness along a \(J\)-long orbit.
+This section separates that fact from a different question: how many
+distinct divisor atoms can land at the same orbit time or integer point.
+
+\subsection{An exact short-orbit incidence norm}
+
+Let \(I\subset\Z\) be an interval of diameter strictly smaller than every
+modulus \(u_x\) in a finite atom set \(\cX\).  Associate to atom \(x\) one
+residue class \(r_x\pmod{u_x}\), and define the incidence matrix
+\begin{equation}
+ B_{x,j}=\one_{j\equiv r_x\,({\rm mod}\ u_x)},
+ \qquad x\in\cX,\quad j\in I.
+ \label{eq:tpc35-short-orbit-matrix}
+\end{equation}
+
+\begin{proposition}[Exact short-orbit norm]
+\label{prop:tpc35-short-orbit-norm}
+Every row of \(B\) has at most one nonzero entry, and
+\begin{equation}
+ \boxed{
+ \|B\|_{\op}^2
+ =\max_{j\in I}\#\{x\in\cX:j\equiv r_x\pmod{u_x}\}.}
+ \label{eq:tpc35-short-orbit-norm}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Two distinct integers in \(I\) differ by less than \(u_x\), so they cannot
+belong to the same residue class modulo \(u_x\).  Thus every row contains
+at most one \(1\).  It follows that \(B^*B\) is diagonal, and its \(j\)-th
+diagonal entry is the number of atoms incident to \(j\).  Its largest
+eigenvalue is the right side of \eqref{eq:tpc35-short-orbit-norm}.
+\end{proof}
+
+For a physical atom \((m,u)\), primitivity gives
+\((u,hm)=1\) and the residue is \(r\equiv-hm^{-1}\pmod u\).  Since
+\(u>T>J\) at the endpoint, the proposition applies to every ultra atom.
+For two atoms, \cref{prop:tpc35-affine-CRT-compatibility} determines
+whether their residue classes have a joint return modulo the least common
+multiple.  The remaining difficulty is precisely the column degree in
+\eqref{eq:tpc35-short-orbit-norm}: uniqueness for each atom does not bound
+how many different atoms choose the same time.
+
+\subsection{An integer fixed-determinant transform}
+
+Let \(h\ne0\) be fixed.  Consider primitive coefficient pairs
+\(
+ \lambda=(a,s)
+\)
+in a box where the \(a\)-interval has length at most \(A\) and
+\(1\le s\le S\).  Associate the integer line
+\begin{equation}
+ L_{a,s}=\{(x,y)\in\Z^2:sy-ax=h\},
+ \qquad (a,s)=1.
+ \label{eq:tpc35-integer-line}
+\end{equation}
+Let \(\cP\subset\Z_{>0}^2\) be contained in a box whose \(x\)-interval
+has length at most \(X_0\) and whose points satisfy \(y>T\).  Define
+\begin{equation}
+ (\cR F)(a,s)=\sum_{P\in L_{a,s}\cap\cP}F(P).
+ \label{eq:tpc35-integer-Radon}
+\end{equation}
+For a point \(P\), let
+\begin{equation}
+ r(P)=\#\{(a,s):P\in L_{a,s}\}.
+ \label{eq:tpc35-point-degree}
+\end{equation}
+
+\begin{lemma}[Primitive-line Schur bound]
+\label{lem:tpc35-line-Schur}
+One has
+\begin{equation}
+ \boxed{
+ \|\cR\|_{\op}^2
+ \le\max_{(a,s)}\sum_{P\in L_{a,s}\cap\cP}r(P).}
+ \label{eq:tpc35-line-Schur}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The kernel of \(\cR\cR^*\) is the nonnegative intersection count
+\[
+ (\cR\cR^*)((a,s),(a',s'))
+ =|L_{a,s}\cap L_{a',s'}\cap\cP|.
+\]
+Its row sum is
+\(
+ \sum_{P\in L_{a,s}\cap\cP}r(P)
+\).  Schur's test proves the result.
+\end{proof}
+
+Two distinct primitive lines have at most one rational intersection.  If
+\(a's-as'\ne0\), it is
+\begin{equation}
+ x=\frac{h(s'-s)}{a's-as'},
+ \qquad
+ y=\frac{h(a'-a)}{a's-as'}.
+ \label{eq:tpc35-line-intersection}
+\end{equation}
+The next theorem gives the corresponding integral degree bound without
+discarding parallel or nonintegral cases.
+
+\begin{theorem}[Ambient integer-incidence norm]
+\label{thm:tpc35-integer-incidence}
+With the preceding hypotheses, every point \(P=(x,y)\in\cP\) satisfies
+\begin{align}
+ r(x,y)
+ &\ll_h1+\min\left\{\frac Ay,\frac Sx\right\}
+ \le_h1+\frac AT,
+ \label{eq:tpc35-point-degree-bound}\\
+\intertext{and every line \(L_{a,s}\) in the coefficient family satisfies}
+ |L_{a,s}\cap\cP|
+ &\le1+\frac{X_0}{s}.
+ \label{eq:tpc35-line-point-bound}
+\end{align}
+Consequently
+\begin{equation}
+ \boxed{
+ \|\cR\|_{\op}^2
+ \ll_h\left(1+\frac{X_0}{s_{\min}}\right)
+ \left(1+\frac AT\right),}
+ \label{eq:tpc35-integer-incidence-bound}
+\end{equation}
+where \(s_{\min}\) is the least \(s\) in the coefficient family.
+\end{theorem}
+
+\begin{proof}
+Fix \(P=(x,y)\).  Any two coefficient solutions of
+\(sy-ax=h\) differ by
+\begin{equation}
+ \Delta s=\frac{x}{(x,y)}k,
+ \qquad
+ \Delta a=\frac{y}{(x,y)}k,
+ \qquad k\in\Z.
+ \label{eq:tpc35-coefficient-solution-step}
+\end{equation}
+If \(P\) lies on one of the lines, then \((x,y)\mid h\), so
+\((x,y)\le|h|\).  Counting the admissible \(k\)'s in the \(a\)- and
+\(s\)-intervals gives the first estimate in
+\eqref{eq:tpc35-point-degree-bound}; \(y>T\) gives the second.
+
+Now fix a primitive line.  Its integer points satisfy
+\[
+ ax\equiv-h\pmod s.
+\]
+Because \((a,s)=1\), this is one residue class for \(x\pmod s\).  An
+interval of length \(X_0\) contains at most \(1+X_0/s\) such integers,
+and \(y\) is then unique.  This proves \eqref{eq:tpc35-line-point-bound}.
+Insert the two bounds into \cref{lem:tpc35-line-Schur} and maximize over
+the line family.
+\end{proof}
+
+\subsection{Physical containing-box comparison}
+
+On a projected affine layer from TPC-33, the coefficient and point boxes
+have scales
+\begin{equation}
+ A\asymp LJv,\qquad X_0\asymp D/v,
+ \qquad 1\le v\le D,
+ \label{eq:tpc35-physical-box-scales}
+\end{equation}
+and the reflected complementary slope has \(s\ge1\).  Hence
+\begin{align}
+ \|\cR\|_{\op}^2
+ &\ll_h
+ \left(1+\frac{D}{s_{\min}v}\right)
+ \left(1+\frac{LJv}{T}\right)
+ \notag\\
+ &\ll_h1+\frac XT
+ \label{eq:tpc35-physical-incidence-scale}
+\end{align}
+at the endpoint.  Indeed \(LJD=QJ\asymp X\), the cross term is at most
+\(X/T\), and \(D\le X/T\) there.
+
+This containing-box bound is sharp in scale.  Take \(v\asymp D\), a point
+\(x=1,y\asymp T\), and coefficients
+\begin{equation}
+ a=sy-h.
+ \label{eq:tpc35-pencil-example}
+\end{equation}
+For \(\gg_h X/T\) values of \(s\le cX/T\) coprime to \(h\), these are
+primitive lines in an \(a\)-box of length \(O(X)\) passing through the
+same point.  Thus one can have \(r(P)\gg_h X/T\) in the ambient box.
+
+After extracting the outer row \(L^2\) mass \(Q\), the uniform orbit-Gram
+ledger would require an unsigned incidence constant of scale \(Q/J\).
+The ratio supplied by the containing-box relaxation is
+\begin{equation}
+ \frac{X/T}{Q/J}=\frac{J^2}{T}
+ =X^{279/1000+o(1)},
+ \label{eq:tpc35-incidence-gap}
+\end{equation}
+the same gap as \eqref{eq:tpc35-shared-ultra-gap}.  This does not prove
+that the physical incidence transform is sharp: the actual point set is
+selected by squarefree and M\"obius weights, gcd projectors, smooth
+supports, and coupled row labels.  It says that the unsigned ambient box
+alone reproduces, rather than removes, the shared-ultra loss.
+No norm comparison between the actual masked orbit Gram matrix and this
+containing-box transform is asserted.
