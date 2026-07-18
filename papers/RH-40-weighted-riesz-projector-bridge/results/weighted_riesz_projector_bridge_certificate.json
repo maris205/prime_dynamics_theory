@@ -1,0 +1,239 @@
+{
+  "analytic_statements": {
+    "adaptive_cutoff_transfer": "the RH-39 O(h^2) Markov bridge transfers to Q under a uniform contour resolvent",
+    "discrete_row_normalization": "positive C^2 raw kernels preserve the weighted-term O(h^2) bridge",
+    "nystrom_simple_cluster": "smooth simple isolated nonzero branches give ||Q_h-Q_h^circle||_2=O(h^2)",
+    "parity_status": "full-kernel bridge conditional on a simple isolated continuum negative resonance; cutoff transfer additionally needs a uniform Euclidean contour resolvent",
+    "perron_status": "unconditional for the full positive folded Gaussian kernel",
+    "resolvent_lipschitz": "||Q(A)-Q(B)|| <= length(Gamma)/(2 pi) max|z| M_A M_B ||A-B||",
+    "weighted_riesz_definition": "Q(K)=K Pi=(2 pi i)^-1 integral_Gamma z(z-K)^-1 dz"
+  },
+  "arb_precision_bits": 224,
+  "dependencies": {
+    "rh24_peripheral_mode_builder": {
+      "path": "papers/RH-24-contour-feshbach-root-count/experiments/run_contour_feshbach_audit.py",
+      "sha256": "fc46fcdd06d5278bd1293a1a78f751d5ce1472d308d9c0307611a835d720e9d1"
+    },
+    "rh36_factor_metadata": {
+      "path": "papers/RH-36-nested-grid-physical-count/results/nested_grid_snapshot_sigma_1e-02.json",
+      "sha256": "a2860362760e06b63893a6bf29aa7763860c2067f1b35235d7d09ae7cedbe29a"
+    },
+    "rh36_factor_snapshot": {
+      "path": "papers/RH-36-nested-grid-physical-count/results/nested_grid_snapshot_sigma_1e-02.npz",
+      "sha256": "a1e2a6a3a32a6f7e68ec17b294bdb41d404c0dbeca1f5cb89aefe48ab4390d81"
+    },
+    "rh37_fine_factor_metadata": {
+      "path": "papers/RH-37-iterated-dyadic-physical-count/results/second_dyadic_snapshot_sigma_1e-02.json",
+      "sha256": "558cd7e20600d887bfeea53176a94d5311996f9ea1c97ba9ef68469e529a52ec"
+    },
+    "rh37_fine_factor_snapshot": {
+      "path": "papers/RH-37-iterated-dyadic-physical-count/results/second_dyadic_fine_object_sigma_1e-02.npz",
+      "sha256": "886c6985e3937b374e9f7ab40bef31d34351ad2f794d546b50011c100848544a"
+    },
+    "rh38_decay_certificate": {
+      "path": "papers/RH-38-dyadic-haar-block-decay/results/dyadic_haar_block_decay_certificate.json",
+      "sha256": "052dc3ed3cd46017dd30922ad363a81c5866aa9dbc2ee444f1f5afe64ceb3a18"
+    },
+    "rh39_cutoff_certificate": {
+      "path": "papers/RH-39-uniform-gaussian-cutoff-bridge/results/uniform_gaussian_cutoff_bridge_certificate.json",
+      "sha256": "8d448588fda190a748df64a1d8fa35d050de9dcbfa3ee2a5203ae10b969ab136"
+    },
+    "rh6_continuum_nystrom_manuscript": {
+      "path": "papers/RH-6-continuum-spectral-double-limits/main.tex",
+      "sha256": "deb503ea37550fe81fe3ba7942fa97b6c30a2be6c47d3343adb6a9a2fc22aee9"
+    }
+  },
+  "evidence_levels": {
+    "analytic_theorem": "exact weighted-Riesz resolvent stability and second-order simple-branch theorem",
+    "spectral_isolation_audit": "floating leading-spectrum and eigen-residual diagnostic",
+    "stored_factor_ledger": "224-bit Arb enclosures of exact stored-factor Frobenius identities"
+  },
+  "exact_stored_biorthogonality": {
+    "2048": {
+      "arb_defect_ball": "[2.00696516940848037500646643427416238511892711890411190294420091116e-15 +/- 2.41e-81]",
+      "entry_balls": [
+        [
+          "[-1.01605454050718046853950728966903304031570553028508867872534062599e-15 +/- 4.34e-81]",
+          "[-9.34540650719379008892811225133157907315520444866789118294914916128e-16 +/- 4.97e-82]"
+        ],
+        [
+          "[1.41570583453745759593063176937682015315350647849402823404025261505e-15 +/- 4.93e-81]",
+          "[-3.43443043521270171605300155010760628260460166826172000638087937881e-16 +/- 3.62e-82]"
+        ]
+      ],
+      "frobenius_defect_upper": 2.006965169408481e-15,
+      "two_norm_defect_upper": 2.006965169408481e-15
+    },
+    "4096": {
+      "arb_defect_ball": "[2.88487543162300071930545167175168324855769833172205853244080443465e-15 +/- 1.15e-81]",
+      "entry_balls": [
+        [
+          "[1.85314965479664840592219094213922223677778926471147487371640520670e-16 +/- 2.80e-82]",
+          "[-1.31853626911104020183319177376547936058661021085559878980485851488e-15 +/- 4.35e-81]"
+        ],
+        [
+          "[1.16751310721366216182029199939613793694967874740583050460371002718e-15 +/- 3.09e-81]",
+          "[2.27739760935026532344662256516737320479457676473816815152359016773e-15 +/- 2.59e-81]"
+        ]
+      ],
+      "frobenius_defect_upper": 2.884875431623001e-15,
+      "two_norm_defect_upper": 2.884875431623001e-15
+    },
+    "8192": {
+      "arb_defect_ball": "[1.36739473061521387313107732325093867548972000565549407068893740845e-15 +/- 4.73e-81]",
+      "entry_balls": [
+        [
+          "[-2.32457781491799590639137629158076955914845665769745498081995382922e-16 +/- 1.40e-82]",
+          "[-1.01755227318587002950850781547070904950709130952856291634645064415e-15 +/- 6.70e-82]"
+        ],
+        [
+          "[-2.58077022854548641890566919727418190907266191185719067242725750138e-16 +/- 1.53e-82]",
+          "[-8.44816755721005677342899979746687025445511220092945398396018279759e-16 +/- 1.84e-82]"
+        ]
+      ],
+      "frobenius_defect_upper": 1.3673947306152141e-15,
+      "two_norm_defect_upper": 1.3673947306152141e-15
+    }
+  },
+  "exact_stored_frobenius_blocks": {
+    "2048_to_4096": {
+      "coarse_consistency": {
+        "arb_frobenius_ball": "[8.3508273021018242646675059963704330824534158601630841269e-5 +/- 5.21e-61]",
+        "frobenius_lower": 8.350827302101823e-05,
+        "frobenius_upper": 8.350827302101826e-05,
+        "spectral_norm_upper": 8.350827302101826e-05
+      },
+      "coarse_to_detail": {
+        "arb_frobenius_ball": "[0.00257435739398052365815823488372613352527205166765634075498513425399 +/- 1.01e-69]",
+        "frobenius_lower": 0.0025743573939805233,
+        "frobenius_upper": 0.002574357393980524,
+        "spectral_norm_upper": 0.002574357393980524
+      },
+      "detail_block": {
+        "arb_frobenius_ball": "[6.24450559912510972823821950812890916508785299140448402520078947827e-6 +/- 4.15e-72]",
+        "frobenius_lower": 6.244505599125109e-06,
+        "frobenius_upper": 6.244505599125111e-06,
+        "spectral_norm_upper": 6.244505599125111e-06
+      },
+      "detail_to_coarse": {
+        "arb_frobenius_ball": "[0.00352504194422577103185655729412689698147239018811922300019230596432 +/- 8.41e-69]",
+        "frobenius_lower": 0.0035250419442257705,
+        "frobenius_upper": 0.0035250419442257714,
+        "spectral_norm_upper": 0.0035250419442257714
+      }
+    },
+    "4096_to_8192": {
+      "coarse_consistency": {
+        "arb_frobenius_ball": "[2.086176416513942387162227592380602392236199627885592088e-5 +/- 4.10e-60]",
+        "frobenius_lower": 2.086176416513942e-05,
+        "frobenius_upper": 2.0861764165139426e-05,
+        "spectral_norm_upper": 2.0861764165139426e-05
+      },
+      "coarse_to_detail": {
+        "arb_frobenius_ball": "[0.00128725136040513352100308284887817080684593647108739209388165844705 +/- 8.21e-70]",
+        "frobenius_lower": 0.0012872513604051334,
+        "frobenius_upper": 0.0012872513604051338,
+        "spectral_norm_upper": 0.0012872513604051338
+      },
+      "detail_block": {
+        "arb_frobenius_ball": "[1.56130894641257382264123732686470759123975703094316441961380310759e-6 +/- 4.20e-72]",
+        "frobenius_lower": 1.5613089464125737e-06,
+        "frobenius_upper": 1.5613089464125741e-06,
+        "spectral_norm_upper": 1.5613089464125741e-06
+      },
+      "detail_to_coarse": {
+        "arb_frobenius_ball": "[0.0017626627492899792435289128012789721044044213780488957909049441531 +/- 4.75e-68]",
+        "frobenius_lower": 0.001762662749289979,
+        "frobenius_upper": 0.0017626627492899794,
+        "spectral_norm_upper": 0.0017626627492899794
+      }
+    }
+  },
+  "exact_stored_frobenius_ratios": {
+    "coarse_consistency": {
+      "lower": 0.2498167356411347,
+      "upper": 0.24981673564113488
+    },
+    "coarse_to_detail": {
+      "lower": 0.5000282258458135,
+      "upper": 0.5000282258458139
+    },
+    "detail_block": {
+      "lower": 0.25002923315999936,
+      "upper": 0.2500292331599995
+    },
+    "detail_to_coarse": {
+      "lower": 0.5000402199971905,
+      "upper": 0.5000402199971907
+    }
+  },
+  "floating_isolation_audit": {
+    "maximum_eigen_residual": 3.516430825983483e-15,
+    "maximum_projector_two_norm": 1.1480929125213273,
+    "maximum_weighted_term_two_norm": 1.2405495281670047,
+    "minimum_parity_to_observed_bulk_radial_gap": 0.31187762837401034
+  },
+  "limitations": [
+    "The Perron part is analytic and unconditional, but continuum simplicity and isolation of the negative parity resonance are not validated here.",
+    "The stored factors are exact binary64 data, while their claim to be exact Riesz modes remains based on floating residuals and spectral diagnostics.",
+    "The Arb ledger certifies low-rank Frobenius identities, not the full sparse eigensolver computation.",
+    "Only two dyadic refinements are stored; they do not prove an all-level constant without the continuum isolation hypothesis.",
+    "Binary64 construction of the underlying sparse Markov matrices is not interval-enclosed.",
+    "No zero-noise, zeta-zero, Hilbert-Polya, or Riemann-hypothesis claim is made."
+  ],
+  "maximum_exact_stored_biorthogonality_upper": 2.884875431623001e-15,
+  "parity_convergence": {
+    "first_increment_ball": "5.21085706606250198547058971598744392395019531250000000000000000000e-6",
+    "first_richardson_ball": "[-0.986546455793452496211652184380606437722841898600260416666666666667 +/- 3.96e-67]",
+    "increment_ratio_lower": 0.24985683017206403,
+    "increment_ratio_upper": 0.2498568301720641,
+    "richardson_disagreement_upper": 9.947166793959168e-10,
+    "second_increment_ball": "1.30196822900607855899579590186476707458496093750000000000000000000e-6",
+    "second_richardson_ball": "[-0.986546456788169175607568680182642613848050435384114583333333333333 +/- 3.59e-67]"
+  },
+  "pilot": {
+    "path": "results/weighted_projector_pilot_sigma_1e-02.json",
+    "sha256": "1dc39c9f5292e597f8e2b98609ba7fb7f1f91b17e1a726f29693919c8c37f8b3"
+  },
+  "renormalized_exact_stored_frobenius": {
+    "2048_to_4096": {
+      "coarse_consistency": {
+        "lower": 350.25908356514884,
+        "upper": 350.25908356514896
+      },
+      "coarse_to_detail": {
+        "lower": 5.272283942872112,
+        "upper": 5.2722839428721135
+      },
+      "detail_block": {
+        "lower": 26.19135481243284,
+        "upper": 26.19135481243285
+      },
+      "detail_to_coarse": {
+        "lower": 7.219285901774378,
+        "upper": 7.21928590177438
+      }
+    },
+    "4096_to_8192": {
+      "coarse_consistency": {
+        "lower": 350.0023235396037,
+        "upper": 350.0023235396038
+      },
+      "coarse_to_detail": {
+        "lower": 5.272581572219426,
+        "upper": 5.272581572219428
+      },
+      "detail_block": {
+        "lower": 26.194417436696174,
+        "upper": 26.19441743669618
+      },
+      "detail_to_coarse": {
+        "lower": 7.219866621091754,
+        "upper": 7.2198666210917555
+      }
+    }
+  },
+  "scope": "analytic full-kernel Nystr\u00f6m weighted Riesz terms plus exact stored binary64 peripheral factors at sigma=1e-2",
+  "status": "analytic_conditional_weighted_riesz_bridge_with_exact_stored_peripheral_ledger",
+  "stored_ledger_closed": true
+}

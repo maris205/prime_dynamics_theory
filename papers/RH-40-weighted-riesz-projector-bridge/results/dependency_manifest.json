@@ -1,0 +1,59 @@
+{
+  "external_inputs": {
+    "rh24_peripheral_mode_builder": {
+      "path": "papers/RH-24-contour-feshbach-root-count/experiments/run_contour_feshbach_audit.py",
+      "sha256": "fc46fcdd06d5278bd1293a1a78f751d5ce1472d308d9c0307611a835d720e9d1"
+    },
+    "rh36_factor_metadata": {
+      "path": "papers/RH-36-nested-grid-physical-count/results/nested_grid_snapshot_sigma_1e-02.json",
+      "sha256": "a2860362760e06b63893a6bf29aa7763860c2067f1b35235d7d09ae7cedbe29a"
+    },
+    "rh36_factor_snapshot": {
+      "path": "papers/RH-36-nested-grid-physical-count/results/nested_grid_snapshot_sigma_1e-02.npz",
+      "sha256": "a1e2a6a3a32a6f7e68ec17b294bdb41d404c0dbeca1f5cb89aefe48ab4390d81"
+    },
+    "rh37_fine_factor_metadata": {
+      "path": "papers/RH-37-iterated-dyadic-physical-count/results/second_dyadic_snapshot_sigma_1e-02.json",
+      "sha256": "558cd7e20600d887bfeea53176a94d5311996f9ea1c97ba9ef68469e529a52ec"
+    },
+    "rh37_fine_factor_snapshot": {
+      "path": "papers/RH-37-iterated-dyadic-physical-count/results/second_dyadic_fine_object_sigma_1e-02.npz",
+      "sha256": "886c6985e3937b374e9f7ab40bef31d34351ad2f794d546b50011c100848544a"
+    },
+    "rh38_decay_certificate": {
+      "path": "papers/RH-38-dyadic-haar-block-decay/results/dyadic_haar_block_decay_certificate.json",
+      "sha256": "052dc3ed3cd46017dd30922ad363a81c5866aa9dbc2ee444f1f5afe64ceb3a18"
+    },
+    "rh39_cutoff_certificate": {
+      "path": "papers/RH-39-uniform-gaussian-cutoff-bridge/results/uniform_gaussian_cutoff_bridge_certificate.json",
+      "sha256": "8d448588fda190a748df64a1d8fa35d050de9dcbfa3ee2a5203ae10b969ab136"
+    },
+    "rh6_continuum_nystrom_manuscript": {
+      "path": "papers/RH-6-continuum-spectral-double-limits/main.tex",
+      "sha256": "deb503ea37550fe81fe3ba7942fa97b6c30a2be6c47d3343adb6a9a2fc22aee9"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "46aa6a82f435b15ffb9901010ecfda3a5844b18ae1211977dbbe06f63752be93",
+    "experiments/build_projector_certificate.py": "c3d1feb1ae9f946622bf75652f2894db6426167b581f9266f484ef8975f2851d",
+    "experiments/make_figures.py": "7d78888afcdc9fda6a8056e30066f56249939789dcbee989738df1c1a368b8e6",
+    "experiments/run_projector_pilot.py": "a6926cf4aaba0c10b4013271199eee163216417c5dae34207b326491e3531aed",
+    "experiments/verify_archive.py": "e3ede7caa6847e26788e6d65d2dc3595d125b1a04bc85c15aeb0451c08f5add8",
+    "src/projector_bridge/__init__.py": "43caf1036cfbeb50b0a20d762ef2222e659e0d468dbb610bbdc7379166fc097d",
+    "src/projector_bridge/low_rank.py": "2927c41710a5d8f5ad419bdbbbc4b5afb359e7847b10e515a6d661fc62870b3e",
+    "tests/test_archived_results.py": "fd4a0bd466e7302b34dedcd3554768b890e6df868eeae40de8207206779ae66d",
+    "tests/test_projector_bridge.py": "12542bd14866d75e6fba459fbbaccae6638d180c96acc5e4adae64995a9c559d"
+  },
+  "publication_artifacts": {
+    ".gitignore": "659fa0e1e709143253982263bb45dd529f74f96591e94873364916c59aa84484",
+    "README.md": "1c56be13f8a02980aba30449cfa0e4fd5c58249d8a61db9727c3d82c7884d8ac",
+    "figures/weighted_riesz_projector_bridge.pdf": "8c3ca376b622377934d3023bf8e821c441bfc2284ef5d2e9d4ef196f1c956f10",
+    "figures/weighted_riesz_projector_bridge.png": "6aa5e2eb765b977593e3219baaa5cd50bc5e8ae6a64134a89b8e8ede10778401",
+    "main.tex": "a282fd132db2b2a3e553e0202d9a5c24299a6fa806bb7cd2e508130e5e63fb16",
+    "pyproject.toml": "ec9b4cc14e00d70e16f216970db3016ea3d4f797cfeddae78c30e4ca202b47a0",
+    "references.bib": "863d69914aea224d6440f586e5298961c0ddbed0884a0d2f87c9c85a0fc8e512",
+    "requirements.txt": "ec5853f9fb381ed75d2fcaadc5084ec947ca4b85c4b5d426fc1d327121a26e29",
+    "weighted-riesz-projector-bridge.pdf": "1e9e4f5df05565639a47e1b808efe339a85106caca070758f6df910d45f13627"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}
