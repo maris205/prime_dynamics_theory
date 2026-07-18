@@ -1,0 +1,42 @@
+{
+  "eight_sigma_crossover_dimension_floor": 8886110,
+  "evidence_levels": {
+    "analytic_theorem": "exact support, tail, Frobenius, Haar, and schedule inequalities",
+    "finite_grid_constants": "256-bit Arb interval enclosures",
+    "stored_grid_mechanism": "floating full-versus-cutoff diagnostic"
+  },
+  "fixed_eight_sigma_continuum_omitted_mass": 1.244192114854357e-15,
+  "fixed_eight_sigma_two_norm_uppers": {
+    "2048": 1.250868217858986e-13,
+    "4096": 1.5270216700905528e-13,
+    "8192": 1.6698632392816404e-13
+  },
+  "limitations": [
+    "The theorem closes only the hard-cutoff gate for the Markov component.",
+    "It does not enclose every binary64 transcendental and normalization operation used to build the stored sparse arrays.",
+    "It does not validate convergence of the computed Perron/parity projectors.",
+    "The fixed eight-sigma family has a tiny but mathematically nonzero full-kernel defect.",
+    "The adaptive schedule is a sufficient bound, not an optimal cutoff law.",
+    "The floating pilot is diagnostic and is not used as an interval enclosure.",
+    "No zero-noise, zeta-zero, Hilbert-Polya, or Riemann-hypothesis claim is made."
+  ],
+  "maximum_cutoff_upper_over_floating_markov_block": 3.5756303213285656e-09,
+  "publication_artifact_hashes": {
+    ".gitignore": "659fa0e1e709143253982263bb45dd529f74f96591e94873364916c59aa84484",
+    "README.md": "d548e49d88c8b5d92bf74ba4efe5c82f41052b57e8330d269688b6f54f08deb3",
+    "figures/uniform_gaussian_cutoff_bridge.pdf": "7b34c589f7fd8905db888b89e2ba9d9d452a8c414f784ed192cbd00535a202b2",
+    "figures/uniform_gaussian_cutoff_bridge.png": "ede9409843869235893fb7813d28b7ae7da466b3918b5d76925783afd919a01f",
+    "main.tex": "6f36c4ddd2201ca538e82da1ea394211d67358712d2f9d88d5170f7e2207df7d",
+    "pyproject.toml": "ec9b4cc14e00d70e16f216970db3016ea3d4f797cfeddae78c30e4ca202b47a0",
+    "references.bib": "04fc6461218c34ed608437d7c8042a71ebe80944cf476b6deae483832b55515c",
+    "requirements.txt": "ec5853f9fb381ed75d2fcaadc5084ec947ca4b85c4b5d426fc1d327121a26e29",
+    "uniform-gaussian-cutoff-bridge.pdf": "74784d259c500ce0b929815c6537704024a455d04448895cf550eea620a01df5"
+  },
+  "result_hashes": {
+    "results/cutoff_pilot_sigma_1e-02.json": "476ab1be40131884c376e3fb7b93433c912b71355b5f1b1bdb57b6301d056680",
+    "results/dependency_manifest.json": "d71820aeb823ae78a0971bacba356fd61aa2132441e5733623008b6db1eb03be",
+    "results/uniform_gaussian_cutoff_bridge_certificate.json": "8d448588fda190a748df64a1d8fa35d050de9dcbfa3ee2a5203ae10b969ab136"
+  },
+  "scope": "exact-real full versus hard-cutoff folded Gaussian midpoint Markov matrices using the archived support rule on [0,1] at fixed sigma=1e-2",
+  "status": "analytic_uniform_cutoff_bridge_with_arb_finite_grid_enclosures"
+}

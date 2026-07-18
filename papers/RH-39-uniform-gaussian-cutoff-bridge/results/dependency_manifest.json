@@ -1,0 +1,43 @@
+{
+  "external_inputs": {
+    "rh18_archived_sparse_builder": {
+      "path": "papers/RH-18-branch-isolated-gaussian-return/src/gaussian_return/operators.py",
+      "sha256": "58fe48b1d94e68fcc442d9d1e47a25a1da6264e9fcececd6e6541b6330a91bdc"
+    },
+    "rh38_component_pilot": {
+      "path": "papers/RH-38-dyadic-haar-block-decay/results/component_scaling_pilot_sigma_1e-02.json",
+      "sha256": "0235c81088af2a14babfeba4feb1a2c6270bbaa126bba22fd988e549f25c489e"
+    },
+    "rh38_decay_certificate": {
+      "path": "papers/RH-38-dyadic-haar-block-decay/results/dyadic_haar_block_decay_certificate.json",
+      "sha256": "052dc3ed3cd46017dd30922ad363a81c5866aa9dbc2ee444f1f5afe64ceb3a18"
+    },
+    "rh5_twice_tail_manuscript": {
+      "path": "papers/RH-5-renormalized-gaussian-response/main.tex",
+      "sha256": "4d365f33929cf1389179c73cfa1e4c4495322e3d0dc760b4c6a4f45df2a22612"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "4826059524d3cff6c6eb49daf67dd40393b342544ad023ee07b49890cf9bab01",
+    "experiments/build_cutoff_certificate.py": "9618fa2a01f2a1c8d7276eab5faf471d87543836565f536c3997d3e4f3bf12fc",
+    "experiments/make_figures.py": "6bcd3338049ed8ab6d5924a3c929b72474dfbcabdfeeaeb46b396023333fe0f5",
+    "experiments/run_cutoff_pilot.py": "e1a2e434677651cc64861c158aabf2000654a25b320c1196ef8dc2a1181c147b",
+    "experiments/verify_archive.py": "b2c317de36ebc8369d8221b5d83dbe5596a828326d99e63a20b3c48ec8f38fa1",
+    "src/cutoff_bridge/__init__.py": "6074194664f7e66fadc26a15c1a36a1b073ea9746cfa6c534901cb9594ab8aa4",
+    "src/cutoff_bridge/bounds.py": "bd2dfe9f0010fbfc3993af8255f6f49b2f5d2e0afaefbc748ab2abf9bb2f4872",
+    "tests/test_archived_results.py": "3f18001459ddc35f82a8464ed5fd33481b138e371dca0c85e02d863b23373229",
+    "tests/test_cutoff_bridge.py": "fd279b63a8b3e16b7424d1a1a810ec7aa58543db8de73c7d62132071b7221481"
+  },
+  "publication_artifacts": {
+    ".gitignore": "659fa0e1e709143253982263bb45dd529f74f96591e94873364916c59aa84484",
+    "README.md": "d548e49d88c8b5d92bf74ba4efe5c82f41052b57e8330d269688b6f54f08deb3",
+    "figures/uniform_gaussian_cutoff_bridge.pdf": "7b34c589f7fd8905db888b89e2ba9d9d452a8c414f784ed192cbd00535a202b2",
+    "figures/uniform_gaussian_cutoff_bridge.png": "ede9409843869235893fb7813d28b7ae7da466b3918b5d76925783afd919a01f",
+    "main.tex": "6f36c4ddd2201ca538e82da1ea394211d67358712d2f9d88d5170f7e2207df7d",
+    "pyproject.toml": "ec9b4cc14e00d70e16f216970db3016ea3d4f797cfeddae78c30e4ca202b47a0",
+    "references.bib": "04fc6461218c34ed608437d7c8042a71ebe80944cf476b6deae483832b55515c",
+    "requirements.txt": "ec5853f9fb381ed75d2fcaadc5084ec947ca4b85c4b5d426fc1d327121a26e29",
+    "uniform-gaussian-cutoff-bridge.pdf": "74784d259c500ce0b929815c6537704024a455d04448895cf550eea620a01df5"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}

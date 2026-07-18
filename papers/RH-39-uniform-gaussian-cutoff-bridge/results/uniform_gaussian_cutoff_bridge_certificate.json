@@ -1,0 +1,149 @@
+{
+  "analytic_statements": {
+    "adaptive_schedule": "L(h)=max(5,sqrt(4 log(1/h))) gives two-norm cutoff defect O(h^2)",
+    "fixed_multiple": "a fixed L has a positive continuum row defect and does not converge to the full kernel in the row-operator norm",
+    "haar_bridge": "cutoff contributions are epsilon_h+epsilon_h/2 for E and epsilon_h/2 for C,B,D",
+    "row_identity": "infinity-row error equals twice the omitted full-row mass",
+    "support_buffer": "every omitted midpoint has distance at least H_h h from |f(x)|, where H_h=ceil(L sigma/h)+2"
+  },
+  "arb_precision_bits": 256,
+  "dependencies": {
+    "rh18_archived_sparse_builder": {
+      "path": "papers/RH-18-branch-isolated-gaussian-return/src/gaussian_return/operators.py",
+      "sha256": "58fe48b1d94e68fcc442d9d1e47a25a1da6264e9fcececd6e6541b6330a91bdc"
+    },
+    "rh38_component_pilot": {
+      "path": "papers/RH-38-dyadic-haar-block-decay/results/component_scaling_pilot_sigma_1e-02.json",
+      "sha256": "0235c81088af2a14babfeba4feb1a2c6270bbaa126bba22fd988e549f25c489e"
+    },
+    "rh38_decay_certificate": {
+      "path": "papers/RH-38-dyadic-haar-block-decay/results/dyadic_haar_block_decay_certificate.json",
+      "sha256": "052dc3ed3cd46017dd30922ad363a81c5866aa9dbc2ee444f1f5afe64ceb3a18"
+    },
+    "rh5_twice_tail_manuscript": {
+      "path": "papers/RH-5-renormalized-gaussian-response/main.tex",
+      "sha256": "4d365f33929cf1389179c73cfa1e4c4495322e3d0dc760b4c6a4f45df2a22612"
+    }
+  },
+  "evidence_levels": {
+    "analytic_theorem": "exact support, tail, Frobenius, Haar, and schedule inequalities",
+    "finite_grid_constants": "256-bit Arb interval enclosures",
+    "stored_grid_mechanism": "floating full-versus-cutoff diagnostic"
+  },
+  "fixed_eight_sigma_levels": {
+    "2048": {
+      "arb_two_norm_ball": "[1.25086821785898594164319595049086000334863803566828974934755141057905051492e-13 +/- 3.06e-88]",
+      "dimension": 2048,
+      "effective_support_multiple": 8.105468750000002,
+      "infinity_norm_upper": 6.467115253284617e-15,
+      "mesh": 0.00048828125,
+      "omitted_frobenius_square_upper": 3.896794241196526e-27,
+      "omitted_mass_upper": 3.2335576266423087e-15,
+      "renormalization_frobenius_square_upper": 1.1749918743300631e-26,
+      "support_half_width": 166,
+      "two_norm_upper": 1.250868217858986e-13
+    },
+    "4096": {
+      "arb_two_norm_ball": "[1.52702167009055242718770399073093831073573225205767641326274149896747566962e-13 +/- 7.26e-88]",
+      "dimension": 4096,
+      "effective_support_multiple": 8.056640625000002,
+      "infinity_norm_upper": 8.069777360557604e-15,
+      "mesh": 0.000244140625,
+      "omitted_frobenius_square_upper": 6.3810597878197716e-27,
+      "omitted_mass_upper": 4.034888680278802e-15,
+      "renormalization_frobenius_square_upper": 1.6936892021441632e-26,
+      "support_half_width": 330,
+      "two_norm_upper": 1.5270216700905528e-13
+    },
+    "8192": {
+      "arb_two_norm_ball": "[1.66986323928164003208005592368088044215621292240806176052981323295924192614e-13 +/- 6.30e-88]",
+      "dimension": 8192,
+      "effective_support_multiple": 8.032226562500002,
+      "infinity_norm_upper": 8.927129614372945e-15,
+      "mesh": 0.0001220703125,
+      "omitted_frobenius_square_upper": 7.937667903712653e-27,
+      "omitted_mass_upper": 4.4635648071864726e-15,
+      "renormalization_frobenius_square_upper": 1.994676447532907e-26,
+      "support_half_width": 658,
+      "two_norm_upper": 1.6698632392816404e-13
+    }
+  },
+  "fixed_eight_sigma_nonvanishing_limit": {
+    "arb_omitted_mass_ball": "[1.24419211485435682470319903451763768449774345578005516030475270531372070075e-15 +/- 3.89e-90]",
+    "mean_zero_continuum_omitted_mass_lower": 1.2441921148543566e-15,
+    "mean_zero_continuum_omitted_mass_upper": 1.244192114854357e-15,
+    "mean_zero_continuum_row_error_lower": 2.488384229708713e-15
+  },
+  "floating_markov_relative_diagnostics": {
+    "2048_to_4096": {
+      "coarse_consistency": 7.769185242471283e-10,
+      "coarse_to_detail": 9.277118906330352e-12,
+      "detail_block": 6.265798042219747e-10,
+      "detail_to_coarse": 9.561452022973812e-12
+    },
+    "4096_to_8192": {
+      "coarse_consistency": 3.5756303213285656e-09,
+      "coarse_to_detail": 2.0286351185210032e-11,
+      "detail_block": 2.7400273260170046e-09,
+      "detail_to_coarse": 2.09106301681583e-11
+    }
+  },
+  "floating_pilot": {
+    "maximum_actual_frobenius_norm": 1.3286885745078437e-14,
+    "maximum_actual_omitted_mass": 9.570419819739632e-16,
+    "path": "results/cutoff_pilot_sigma_1e-02.json",
+    "sha256": "476ab1be40131884c376e3fb7b93433c912b71355b5f1b1bdb57b6301d056680"
+  },
+  "haar_cutoff_defect_uppers": {
+    "2048_to_4096": {
+      "coarse_consistency": 2.7778898879495387e-13,
+      "coarse_to_detail": 1.5270216700905526e-13,
+      "detail_block": 1.5270216700905526e-13,
+      "detail_to_coarse": 1.5270216700905526e-13
+    },
+    "4096_to_8192": {
+      "coarse_consistency": 3.1968849093721924e-13,
+      "coarse_to_detail": 1.6698632392816399e-13,
+      "detail_block": 1.6698632392816399e-13,
+      "detail_to_coarse": 1.6698632392816399e-13
+    }
+  },
+  "limitations": [
+    "The theorem closes only the hard-cutoff gate for the Markov component.",
+    "It does not enclose every binary64 transcendental and normalization operation used to build the stored sparse arrays.",
+    "It does not validate convergence of the computed Perron/parity projectors.",
+    "The fixed eight-sigma family has a tiny but mathematically nonzero full-kernel defect.",
+    "The adaptive schedule is a sufficient bound, not an optimal cutoff law.",
+    "The floating pilot is diagnostic and is not used as an interval enclosure.",
+    "No zero-noise, zeta-zero, Hilbert-Polya, or Riemann-hypothesis claim is made."
+  ],
+  "maximum_cutoff_upper_over_floating_markov_block": 3.5756303213285656e-09,
+  "schedule": {
+    "eight_sigma_crossover_dimension_floor": 8886110,
+    "formula": "max(5,sqrt(4 log(1/h)))",
+    "rows": [
+      {
+        "adaptive_multiple": 5.522542525380642,
+        "dimension": 2048,
+        "fixed_eight_exceeds_adaptive": true
+      },
+      {
+        "adaptive_multiple": 5.768107546403532,
+        "dimension": 4096,
+        "fixed_eight_exceeds_adaptive": true
+      },
+      {
+        "adaptive_multiple": 6.003636680306125,
+        "dimension": 8192,
+        "fixed_eight_exceeds_adaptive": true
+      },
+      {
+        "adaptive_multiple": 7.446594822118068,
+        "dimension": 1048576,
+        "fixed_eight_exceeds_adaptive": true
+      }
+    ]
+  },
+  "scope": "exact-real full versus hard-cutoff folded Gaussian midpoint Markov matrices using the archived support rule on [0,1] at fixed sigma=1e-2",
+  "status": "analytic_uniform_cutoff_bridge_with_arb_finite_grid_enclosures"
+}
