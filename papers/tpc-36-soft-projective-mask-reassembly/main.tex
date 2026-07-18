@@ -1,0 +1,196 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,float}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Soft Projective Reassembly of the Physical Row Mask: Orthogonal GCD Compression, Optimal Ferrers Separation, and Coherent Product-Slope Spectra},
+ pdfauthor={Liang Wang},
+ pdfsubject={A signed reassembly theorem and coherent spectral boundary for an orbit-sliced Mobius energy gate},
+ pdfkeywords={Mobius correlation, projective tensor norm, Ferrers matrix, multiplicative characters, orbit energy, parity boundary}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Conditional input}
+\crefname{assumption}{conditional input}{conditional inputs}
+\Crefname{assumption}{Conditional input}{Conditional inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\F}{\mathbb F}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\op}{\operatorname{op}}
+\newcommand{\pinf}{\pi_{\infty}}
+\newcommand{\pplus}{\pi_{+}}
+
+\title{\textbf{Soft Projective Reassembly of the Physical Row Mask:}\\
+\textbf{Orthogonal GCD Compression, Optimal Ferrers Separation,}\\
+\textbf{and Coherent Product--Slope Spectra}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The preceding orbit--sliced analysis leaves a concrete interface question:
+can the actual row-pair multiplier be reassembled into separable layers at
+only \(X^{o(1)}\) cost, without destroying the product slope that carries
+the multiplicative spectrum?  We answer the static part affirmatively and
+locate the next obstruction exactly.
+
+For a finite kernel \(K\), let \(\pinf(K)\) be its bounded projective norm.
+The physical row mask is
+\[
+ \mathfrak m_{\rm act}(\alpha,\gamma)
+ =\one_{\ell_\alpha\ne\ell_\gamma}
+  \one_{|m_\alpha-m_\gamma|>\Delta}
+  \one_{(d_\alpha,d_\gamma)\le G}.
+\]
+The same-source deletion has projective cost at most \(2\).  The near-row
+deletion is a finite interval kernel and has cost \(O(\log(2Q))\).  For the
+gcd threshold, an orthogonal random-sign compression of the exact divisor
+projector gives
+\[
+ \pinf\!\left(\one_{(d,e)\le G}\right)
+ \le(3+2\sqrt2)^{\omega_*},
+ \qquad
+ \omega_*:=\max_{\text{physical }d}\omega(d).
+\]
+Consequently
+\[
+ \boxed{
+ \pinf(\mathfrak m_{\rm act})
+ \ll\log(2Q)(3+2\sqrt2)^{\omega_*}=X^{o(1)}.}
+\]
+Together with the previously proved finite-residue and Mellin
+separations, this closes the static controlled-multiplier boundary in the
+retained TPC-32 factorization.  It is a projective-complexity theorem, not
+an operator-norm bound for the physical Gram matrix.
+
+Fixing the opposite row gives a stronger product-ready form.  The gcd and
+same-source conditions become unary weights, while the near-row cutoff is
+a difference of two Ferrers kernels.  After splitting the \(O_h(1)\)
+fixed orbit residue cells, finite Fourier inversion therefore decomposes
+each physical column exactly into
+\[
+ b_\rho(\ell)f_\rho(d)\eta_\rho(j)
+\]
+with \(O(D)\) discrete layers but total signed projective and orbit-seminorm
+cost \(X^{o(1)}\); in particular \(b_\rho\) is independent of \(j\) and of
+the complementary factor \(s\).  The logarithmic cost is optimal:
+for \(T_n=(\one_{k\le r})\),
+\[
+ \pinf(T_n)\asymp\log(2n),
+ \qquad
+ \pplus(T_n)=n.
+\]
+Thus signed Fourier reassembly is essential, whereas positive or
+raw column-by-column rectangle splitting is polynomially expensive.
+
+Termwise additive-frequency separation of the product phase is costly.
+For
+\(A_r(x,y)=e_q(rxy)\) on \(\F_q^\times\), \(r\ne0\),
+\[
+ \boxed{
+ \pinf(A_r)=\frac{(q-2)\sqrt q+1}{q-1}\asymp\sqrt q.}
+\]
+By contrast the multiplication kernel
+\(\one_{xy=a}\) has projective cost exactly \(1\).  Expanding that kernel
+additively and reassembling its frequencies absolutely manufactures a
+\(\sqrt q\) amplitude loss, which at \(q\asymp J\) is precisely one factor
+\(J\) in energy.
+
+Finally, we diagonalize the coherent complementary-factor sum.  For the
+TPC-35 product--slope operator \(T\) and an arbitrary weight \(w\),
+\[
+ \sum_j\left|\sum_sw(s)(Tb)(j,s)\right|^2
+ =\frac1{q-1}\sum_\chi|\widehat b(\bar\chi)|^2
+ \left|\sum_sw(s)\widehat R_s(\chi)\right|^2.
+\]
+If \(f,g\) are additively centered and \(w=1\), then
+\[
+ \sum_sR_s(a)=qg(0)f(-h/a),
+\]
+so complete \(s\)-coherence collapses to a residue-zero boundary trace.
+Nevertheless the factor \(q-1\) from Cauchy in \(s\) is sharp in the
+abstract centered nonprincipal class.  The remaining physical gate is
+therefore not static-mask separation: it is the joint control of
+incomplete \(s\)-weights, integer aliases, and the actual M\"obius
+coefficient mass in the resulting character spectrum.  We prove no
+coefficient-specific orbit gate, affine Chowla theorem, parity breach,
+Hardy--Littlewood asymptotic, or twin--prime result.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius correlation; projective tensor norm;
+Ferrers matrix; multiplicative character; orbit energy; parity boundary.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary 11L07,
+15A18, 15B05.
+
+\input{sections/introduction}
+\input{sections/physical-interface}
+\input{sections/projective-toolkit}
+\input{sections/global-mask}
+\input{sections/fixed-column}
+\input{sections/optimality-boundaries}
+\input{sections/coherent-spectrum}
+\input{sections/next-gate}
+\input{sections/certificate-claims}
+
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

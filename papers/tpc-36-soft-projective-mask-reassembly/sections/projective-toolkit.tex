@@ -1,0 +1,143 @@
+\section{Bounded projective norms and finite Fourier compression}
+\label{sec:tpc36-projective-toolkit}
+
+The relevant complexity is the normalized mass of a signed rank-one
+representation, not its number of summands.
+
+\subsection{The bounded projective norm}
+
+\begin{definition}[Bounded projective norm]
+\label{def:tpc36-projective-norm}
+For finite sets \(\cX,\cY\) and a kernel
+\(K:\cX\times\cY\to\C\), define
+\begin{equation}
+ \pinf(K)
+ :=\inf\int_\Omega
+ \|p_\omega\|_{\ell^\infty(\cX)}
+ \|q_\omega\|_{\ell^\infty(\cY)}\,d|\nu|(\omega),
+ \label{eq:tpc36-projective-norm}
+\end{equation}
+where the infimum runs over all finite signed or complex measures and
+representations
+\begin{equation}
+ K(x,y)=\int_\Omega p_\omega(x)q_\omega(y)\,d\nu(\omega).
+ \label{eq:tpc36-projective-representation}
+\end{equation}
+Finite sums suffice in finite dimensions; probability-space notation is
+convenient for orthogonal compression.
+\end{definition}
+
+The normalization permits the scalar coefficient of a layer to be placed
+in either factor or in the measure.  The following properties will be
+used repeatedly.
+
+\begin{lemma}[Elementary projective calculus]
+\label{lem:tpc36-projective-calculus}
+For finite kernels \(K,L\) on the same product set,
+\begin{align}
+ \|K\|_\infty&\le\pinf(K),
+ \label{eq:tpc36-entry-lower}\\
+ \pinf(K+L)&\le\pinf(K)+\pinf(L),
+ \label{eq:tpc36-triangle}\\
+ \pinf(K\circ L)&\le\pinf(K)\pinf(L),
+ \label{eq:tpc36-schur-submultiplicativity}
+\end{align}
+where \(\circ\) is entrywise multiplication.  If \(K\) is viewed as an
+\(m\times n\) matrix, then
+\begin{equation}
+ \boxed{
+ \pinf(K)\ge\frac{\|K\|_*}{\sqrt{mn}},}
+ \label{eq:tpc36-nuclear-lower}
+\end{equation}
+where \(\|K\|_*\) is its nuclear norm.
+\end{lemma}
+
+\begin{proof}
+The first two assertions follow directly from
+\eqref{eq:tpc36-projective-representation}.  Multiplying two such
+representations over the product measure proves
+\eqref{eq:tpc36-schur-submultiplicativity}.  A rank-one matrix
+\(pq^{\mathsf T}\) has nuclear norm
+\(\|p\|_2\|q\|_2\), which is at most
+\(\sqrt{mn}\|p\|_\infty\|q\|_\infty\).  Integrate and take the infimum.
+\end{proof}
+
+\begin{remark}[Projective complexity is not a Gram estimate]
+The norm \(\pinf\) controls the cost of passing a bilinear estimate through
+a Schur multiplier.  It does not imply that the multiplier matrix, or the
+off-diagonal Gram matrix obtained after inserting it, has small operator
+norm.  In particular, \eqref{eq:tpc36-nuclear-lower} is used below only
+for finite-model optimality statements.
+\end{remark}
+
+\subsection{A discrete interval lemma}
+
+Write \(e_M(t)=\exp(2\pi i t/M)\).  For \(1\le N<M/2\), define
+\begin{equation}
+ \kappa_N(t)=\one_{\{0,1,\ldots,N-1\}}(t),
+ \qquad t\in\Z/M\Z,
+ \label{eq:tpc36-cyclic-interval}
+\end{equation}
+and use the normalized Fourier transform
+\begin{equation}
+ \widehat\kappa_N(a)
+ =\frac1M\sum_{t=0}^{N-1}e_M(-at).
+ \label{eq:tpc36-interval-Fourier}
+\end{equation}
+
+\begin{lemma}[Discrete interval Fourier mass]
+\label{lem:tpc36-interval-Fourier}
+Uniformly for \(1\le N<M/2\),
+\begin{equation}
+ \sum_{a\bmod M}|\widehat\kappa_N(a)|
+ \ll1+\log(2N).
+ \label{eq:tpc36-interval-l1}
+\end{equation}
+Consequently the prefix kernel
+\begin{equation}
+ H_N(k,r)=\one_{1\le r\le k},
+ \qquad 0\le k\le N,\quad 1\le r\le N,
+ \label{eq:tpc36-prefix-kernel}
+\end{equation}
+has the exact representation
+\begin{equation}
+ H_N(k,r)=\sum_{a\bmod M}
+ \widehat\kappa_N(a)e_M(ak)e_M(-ar)
+ \label{eq:tpc36-prefix-Fourier}
+\end{equation}
+and satisfies
+\begin{equation}
+ \pinf(H_N)\ll1+\log(2N).
+ \label{eq:tpc36-prefix-projective-upper}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For \(a\ne0\), the geometric sum gives
+\begin{equation}
+ |\widehat\kappa_N(a)|
+ \le\min\left\{\frac NM,
+ \frac1{2\min(a,M-a)}\right\},
+ \label{eq:tpc36-Dirichlet-bound}
+\end{equation}
+after taking \(1\le a\le M-1\).  The terms with
+\(\min(a,M-a)\le M/N\) contribute \(O(1)\); the remaining harmonic sum
+is \(O(1+\log N)\).  Fourier inversion proves
+\eqref{eq:tpc36-prefix-Fourier}, because \(r\le k\) is equivalent to
+\(k-r\in\{0,\ldots,N-1\}\) when \(M\ge2N+1\).  The factors in that
+representation have modulus one, proving
+\eqref{eq:tpc36-prefix-projective-upper}.
+\end{proof}
+
+\subsection{Finite orthogonality as compression}
+
+If a finite set \(\cI\) is injected into \(\Z/M\Z\), then
+\begin{equation}
+ \frac1M\sum_{t\bmod M}
+ e_M\bigl(t(\iota(v)-\iota(w))\bigr)=\one_{v=w}.
+ \label{eq:tpc36-finite-orthogonality}
+\end{equation}
+This identity will compress a sum over common divisors.  The number \(M\)
+of formal phases can be large; the normalized measure \(M^{-1}\sum_t\)
+has mass one.  Replacing \eqref{eq:tpc36-finite-orthogonality} by
+independent Rademacher signs gives the same projective bound.

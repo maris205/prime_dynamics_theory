@@ -1,0 +1,221 @@
+\section{Sharp reassembly and order-of-operations boundaries}
+\label{sec:tpc36-optimality}
+
+The preceding constructions use cancellation between signed layers.  We
+now show that their logarithmic behavior is sharp and that the product
+phase belongs to a different complexity class.
+
+\subsection{The Ferrers logarithm is optimal}
+
+Let
+\begin{equation}
+ T_n=(\one_{k\le r})_{1\le r,k\le n}
+ \label{eq:tpc36-triangular-matrix}
+\end{equation}
+be the lower-triangular summation matrix.
+
+\begin{theorem}[Optimal signed Ferrers cost]
+\label{thm:tpc36-Ferrers-optimal}
+There are absolute constants \(c,C>0\) such that
+\begin{equation}
+ c\log(2n)\le\pinf(T_n)\le C\log(2n).
+ \label{eq:tpc36-Ferrers-theta-log}
+\end{equation}
+More precisely, the singular values of \(T_n\) are
+\begin{equation}
+ \boxed{
+ \sigma_k(T_n)
+ =\left[
+ 2\sin\frac{(2k-1)\pi}{4n+2}
+ \right]^{-1},
+ \qquad1\le k\le n.}
+ \label{eq:tpc36-Ferrers-singular-values}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The case \(n=1\) is immediate.  Assume \(n\ge2\).  The upper bound is
+\eqref{eq:tpc36-prefix-projective-upper}.  For the lower bound, the
+inverse of \(T_n\) is the lower bidiagonal first-difference
+matrix.  Direct substitution of the discrete sine vectors diagonalizes
+\((T_n^{-1})^*T_n^{-1}\) and gives eigenvalues
+\begin{equation}
+ 4\sin^2\frac{(2k-1)\pi}{4n+2},
+ \qquad1\le k\le n,
+ \label{eq:tpc36-difference-eigenvalues}
+\end{equation}
+which proves \eqref{eq:tpc36-Ferrers-singular-values}.  Since
+\(\sin x\le x\), the first \(\lfloor n/2\rfloor\) singular values give
+\begin{equation}
+ \|T_n\|_*
+ \gg n\sum_{k\le n/2}\frac1{2k-1}
+ \gg n\log(2n).
+ \label{eq:tpc36-Ferrers-nuclear-lower}
+\end{equation}
+Apply \eqref{eq:tpc36-nuclear-lower} with \(m=n\).
+\end{proof}
+
+Thus the \(O(\log D)\) cost in
+\cref{thm:tpc36-fixed-column-separation} cannot be replaced uniformly by
+a constant for arbitrary threshold profiles.
+
+\subsection{Positive layers have linear cost}
+
+Define the nonnegative projective cost
+\begin{equation}
+ \pplus(K)
+ :=\inf\sum_\rho c_\rho,
+ \label{eq:tpc36-positive-projective-norm}
+\end{equation}
+where the infimum is over exact decompositions
+\begin{equation}
+ K=\sum_\rho c_\rho x_\rho y_\rho^{\mathsf T},
+ \qquad
+ c_\rho\ge0,\quad
+ 0\le x_\rho,y_\rho\le1
+ \label{eq:tpc36-positive-decomposition}
+\end{equation}
+entrywise.
+
+\begin{proposition}[Exact nonnegative Ferrers cost]
+\label{prop:tpc36-positive-Ferrers}
+For every \(n\ge1\),
+\begin{equation}
+ \boxed{\pplus(T_n)=n.}
+ \label{eq:tpc36-positive-Ferrers-cost}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+An exact nonnegative rank-one layer supported in the lower triangle can
+meet at most one diagonal entry.  Indeed, if it is positive at both
+\((i,i)\) and \((j,j)\) with \(i<j\), then its \((i,j)\) entry is also
+positive, contradicting \((T_n)_{i,j}=0\).  Since every diagonal entry of
+\(T_n\) equals one and the factors in
+\eqref{eq:tpc36-positive-decomposition} are at most one, summing the
+diagonal identities gives \(\sum_\rho c_\rho\ge n\).  Conversely,
+\begin{equation}
+ T_n=\sum_{k=1}^n
+ \one_{\{r:r\ge k\}}e_k^{\mathsf T}
+ \label{eq:tpc36-positive-column-decomposition}
+\end{equation}
+has cost \(n\).
+\end{proof}
+
+This is the exact penalty for insisting that every intermediate layer be
+entrywise nonnegative.  A raw column splitting or nonnegative rectangle
+reassembly can therefore lose \(D\), whereas the signed proof loses only
+\(X^{o(1)}\).
+
+\subsection{The product phase has square-root projective cost}
+
+Let \(q>2\) be prime, put \(G_q=\F_q^\times\), and for
+\(r\in\F_q^\times\) define the \((q-1)\times(q-1)\) matrix
+\begin{equation}
+ A_r(x,y)=e_q(rxy),\qquad x,y\in G_q.
+ \label{eq:tpc36-product-phase-matrix}
+\end{equation}
+
+\begin{theorem}[Exact product-phase projective norm]
+\label{thm:tpc36-product-phase-norm}
+For every \(r\ne0\),
+\begin{equation}
+ A_rA_r^*=qI_{q-1}-J_{q-1},
+ \label{eq:tpc36-product-phase-Gram}
+\end{equation}
+and
+\begin{equation}
+ \boxed{
+ \pinf(A_r)
+ =\frac{(q-2)\sqrt q+1}{q-1}.}
+ \label{eq:tpc36-product-phase-exact-cost}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For \(x,x'\in G_q\), additive orthogonality gives
+\begin{equation}
+ \sum_{y\in G_q}e_q(r(x-x')y)
+ =\begin{cases}
+ q-1,&x=x',\\
+ -1,&x\ne x'.
+ \end{cases}
+ \label{eq:tpc36-product-phase-row-inner-product}
+\end{equation}
+This is \eqref{eq:tpc36-product-phase-Gram}.  Hence \(A_r\) has
+singular value \(\sqrt q\) with multiplicity \(q-2\) and singular value
+\(1\) with multiplicity one.  The nuclear lower bound
+\eqref{eq:tpc36-nuclear-lower} gives the right side of
+\eqref{eq:tpc36-product-phase-exact-cost}.
+
+For equality, use the multiplicative characters of \(G_q\) as an
+orthonormal basis.  Every normalized character vector has all coordinates
+of modulus \((q-1)^{-1/2}\).  The matrix \(A_r\) maps each such vector to a
+scalar multiple of the conjugate-character vector; the scalar is a Gauss
+sum of modulus \(\sqrt q\) for nonprincipal characters and modulus \(1\)
+for the principal character.  Its singular-value decomposition therefore
+has flat left and right singular vectors.  Rescaling each vector to
+supremum one makes the total projective mass exactly
+\(\|A_r\|_* /(q-1)\).
+\end{proof}
+
+\subsection{Absolute additive-frequency reassembly is costly}
+
+For \(a\in G_q\), let
+\begin{equation}
+ K_a(x,y)=\one_{xy=a}.
+ \label{eq:tpc36-product-permutation-kernel}
+\end{equation}
+
+\begin{proposition}[A cost-one product kernel]
+\label{prop:tpc36-product-kernel-cost}
+One has
+\begin{equation}
+ \boxed{\pinf(K_a)=1.}
+ \label{eq:tpc36-product-kernel-projective-cost}
+\end{equation}
+But its additive orthogonality expansion
+\begin{equation}
+ K_a(x,y)=\frac1q\sum_{r\in\F_q}e_q(-ra)A_r(x,y)
+ \label{eq:tpc36-additive-product-delta}
+\end{equation}
+has termwise absolute projective cost
+\begin{equation}
+ \frac1q\left[
+ 1+(q-1)\frac{(q-2)\sqrt q+1}{q-1}
+ \right]
+ \asymp\sqrt q.
+ \label{eq:tpc36-additive-reassembly-cost}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Multiplicative orthogonality gives
+\begin{equation}
+ K_a(x,y)=\frac1{q-1}\sum_\chi
+ \overline{\chi(a)}\chi(x)\chi(y),
+ \label{eq:tpc36-multiplicative-product-delta}
+\end{equation}
+whose projective mass is one.  Since \(K_a\) has an entry equal to one,
+\eqref{eq:tpc36-entry-lower} gives equality.  Formula
+\eqref{eq:tpc36-additive-product-delta} is ordinary additive
+orthogonality; insert \cref{thm:tpc36-product-phase-norm}, noting that
+\(A_0=J_{q-1}\) has cost one.
+\end{proof}
+
+\begin{corollary}[Cost of absolute additive-frequency separation]
+\label{cor:tpc36-retain-product-slope}
+At \(q\asymp J\), separating each nonzero additive frequency of
+\(e_q(r\ell j)\) and then reassembling absolutely introduces a sharp
+amplitude cost \(\asymp J^{1/2}\), hence an energy cost \(\asymp J\).
+Thus this additive-frequency expansion cannot be bounded at the critical
+scale by summing its nonzero-frequency costs separately.  The static mask
+may still be separated by \cref{thm:tpc36-global-static-mask}, while the
+multiplicative-character reconstruction
+\eqref{eq:tpc36-multiplicative-product-delta} avoids the loss.
+\end{corollary}
+
+This is a method-specific order-of-operations obstruction.  It is not a
+lower bound for the physical orbit energy: the cost-one identity
+\eqref{eq:tpc36-multiplicative-product-delta} demonstrates the cancellation
+that termwise additive separation discards.

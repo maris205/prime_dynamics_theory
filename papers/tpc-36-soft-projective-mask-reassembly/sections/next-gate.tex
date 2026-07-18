@@ -1,0 +1,258 @@
+\section{Endpoint ledger and the relocated coefficient gate}
+\label{sec:tpc36-next-gate}
+
+The static multiplier question is now resolved, but the physical energy
+still requires integer-to-finite-field completion in the correct coherent
+topology.  This section records exactly what the new theorems save and
+what they do not.
+
+\subsection{Complementary dyadic localization and a large-modulus realization}
+
+By \eqref{eq:tpc36-target}, there are fixed constants
+\(0<c_{\mathscr D}<C_{\mathscr D}\) such that
+\begin{equation}
+ c_{\mathscr D}X
+ \le N_{\ell d}(j):=\ell dj+h
+ \le C_{\mathscr D}X
+ \label{eq:tpc36-target-support-constants}
+\end{equation}
+throughout the packet.  Partition \(T<u\le U_0\) into disjoint half-open
+dyadic blocks
+\begin{equation}
+ \mathscr U:=\{2^kT:k\ge0,\ 2^kT<U_0\},
+ \qquad
+ \cU_U:=(U,2U]\cap(T,U_0],
+ \qquad |\mathscr U|=O(\log X),
+ \label{eq:tpc36-u-dyadic-blocks}
+\end{equation}
+and attach to each block the complementary interval
+\begin{equation}
+ \cS_U:=
+ \left\{s\in\N:
+ \frac{c_{\mathscr D}X}{2U}\le s
+ \le\frac{C_{\mathscr D}X}{U}\right\}.
+ \label{eq:tpc36-s-complementary-block}
+\end{equation}
+On an equality solution \(su=N_{\ell d}(j)\) with \(u\in\cU_U\), the
+indicator of \(\cS_U\) is identically one.  Hence the exact kernel identity
+\begin{equation}
+ \one_{T<u\le U_0}\one_{su=N_{\ell d}(j)}
+ =
+ \sum_{U\in\mathscr U}
+ \one_{u\in\cU_U}\one_{s\in\cS_U}
+ \one_{su=N_{\ell d}(j)}
+ \label{eq:tpc36-reciprocal-dyadic-identity}
+\end{equation}
+holds pointwise.  The new cutoffs are unary in \(u\) and \(s\), and
+summing the \(O(\log X)\) blocks costs only \(X^{o(1)}\).
+
+Now fix one such block and put
+\begin{equation}
+ F=s u-N_{\ell d}(j)=s u-\ell jd-h.
+ \label{eq:tpc36-affine-determinant}
+\end{equation}
+On the full Cartesian support
+\(u\in\cU_U\), \(s\in\cS_U\), one has
+\begin{equation}
+ su\le2C_{\mathscr D}X,
+ \qquad
+ |F|\le3C_{\mathscr D}X.
+ \label{eq:tpc36-block-determinant-bound}
+\end{equation}
+Enlarge a fixed constant \(C_0\) so that
+\(C_0\ge3C_{\mathscr D}\) and every individual physical variable is
+smaller than \(C_0X\).  By Bertrand's postulate, for large \(X\) one may
+choose a prime
+\begin{equation}
+ 2C_0X<q<4C_0X,
+ \label{eq:tpc36-large-modulus}
+\end{equation}
+and then
+\begin{equation}
+ F\equiv0\pmod q\quad\Longleftrightarrow\quad F=0.
+ \label{eq:tpc36-large-modulus-no-alias}
+\end{equation}
+Thus, block by block, the modular product-slope layer is pointwise
+identical to the integer layer after the physical variables are
+zero-extended to \(\F_q\).  Summing the dyadic blocks preserves this exact
+identity at soft cost.
+
+This is an unconditional algebraic realization, not an efficient analytic
+one.  In the standard completion route, the \(J\)-long orbit occupies only
+a proportion
+\begin{equation}
+ \frac Jq\asymp\frac JX\asymp\frac1Q
+ \label{eq:tpc36-large-modulus-coverage}
+\end{equation}
+of the large modulus.  Any argument that forgets this localization before
+using a complete normalized estimate may pay the coverage scale \(Q\).
+This is method-specific bookkeeping, not a universal lower bound for every
+large-modulus method.
+
+\subsection{Orbit-scale moduli and aliases}
+
+On each reciprocal dyadic block, at the useful scale \(q\asymp J\), the
+congruence \(F\equiv0\pmod q\) admits
+\begin{equation}
+ O(1+X/q)=O(Q)
+ \label{eq:tpc36-one-modulus-aliases}
+\end{equation}
+integer aliases.  The \(O(\log X)\) blocks are absorbed into \(X^{o(1)}\).
+TPC-35 proves the exact joint ladder: for pairwise
+coprime \(q_i\asymp J\), \(1\le i\le r\), the alias count is
+\begin{equation}
+ O\!\left(1+\frac X{J^r}\right).
+ \label{eq:tpc36-CRT-alias-ladder}
+\end{equation}
+In particular,
+\begin{equation}
+ \frac X{J^3}=\frac Q{J^2}=X^{1/400+o(1)},
+ \label{eq:tpc36-three-modulus-margin}
+\end{equation}
+while four moduli give strict no-wrap.  Equality
+\eqref{eq:tpc36-three-modulus-margin} is only an exponent-compatible
+ledger.  Reassembling every three-modulus alias at the diagonal scale and
+controlling all proper-coordinate character faces remain unproved.
+
+On every block, the complementary factor has length at most
+\begin{equation}
+ S_0\ll X/T.
+ \label{eq:tpc36-complementary-length}
+\end{equation}
+Reducing a bare interval of this length modulo \(q\asymp J\) gives maximum
+residue multiplicity
+\begin{equation}
+ \ll1+\frac{S_0}{q}
+ \ll1+\frac Q{T}
+ =X^{563/2000+o(1)}.
+ \label{eq:tpc36-s-residue-multiplicity}
+\end{equation}
+The actual weight is more structured than a bare interval, but
+\eqref{eq:tpc36-s-residue-multiplicity} shows that completeness in \(s\)
+cannot be treated as cost-free.
+
+\subsection{Resolved and unresolved scales}
+
+\begin{table}[H]
+\centering
+\caption{Status of the post-TPC-35 reassembly routes.}
+\label{tab:tpc36-status-ledger}
+\begin{tabular}{@{}
+ >{\raggedright\arraybackslash}p{0.42\textwidth}
+ >{\raggedright\arraybackslash}p{0.22\textwidth}
+ >{\raggedright\arraybackslash}p{0.25\textwidth}@{}}
+\toprule
+Object or operation & Scale or cost & Status \\
+\midrule
+Actual static row mask
+ & \(X^{o(1)}\) projective
+ & proved here \\
+Fixed-column source--\(d\) separation
+ & \(O(D)\) layers, \(X^{o(1)}\) mass
+ & proved here \\
+Signed Ferrers separation
+ & \(\Theta(\log D)\)
+ & proved sharp here \\
+Nonnegative Ferrers separation
+ & \(D\)
+ & proved sharp here; avoid \\
+Termwise additive product-phase split
+ & \(q^{1/2}\) amplitude
+ & proved sharp for that route; avoid \\
+Uniform complete-\(s\) Cauchy
+ & \(q\) energy
+ & proved sharp abstractly \\
+Large-modulus standard coverage
+ & \(q/J\asymp Q\)
+ & valid but inefficient route \\
+One orbit-scale modulus
+ & \(X/q\asymp Q\) aliases
+ & deterministic envelope; too many \\
+Three orbit-scale moduli
+ & \(X/J^3=Q/J^2\)
+ & critical ledger; reassembly open \\
+Actual weighted coherent spectrum
+ & \eqref{eq:tpc36-coherent-character-gate}
+ & exact object; estimate open \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two formerly conflated questions are now separate.  The first asks whether
+the mask can be put into signed product-ready form; the answer is yes.  The
+second asks whether the resulting actual coefficient direction has small
+weighted coherent character mass after aliases and incomplete ranges are
+restored; that is the new gate.
+
+\subsection{A coefficient-specific coherent target}
+
+For one completed finite-field layer, define
+\begin{equation}
+ \cG_q(b,f,g;w)
+ :=\frac1{q-1}\sum_\chi
+ |\widehat b(\bar\chi)|^2
+ \left|\sum_sw(s)\widehat R_s(\chi)\right|^2.
+ \label{eq:tpc36-coherent-gate-functional}
+\end{equation}
+By \cref{thm:tpc36-weighted-coherent-spectrum}, this is exactly
+\(\|S_w\|_2^2\), not a majorant.  The next physical theorem can therefore
+be pursued through either of two nonexclusive routes:
+\begin{enumerate}[label=(\alph*)]
+ \item prove an aggregate bound for
+ \eqref{eq:tpc36-coherent-gate-functional} over the actual reassembly
+ layers and aliases; or
+ \item prove a quantitative avoidance statement showing that the actual
+ \(b,f,g,w\) have negligible overlap with the character pairs on which
+ \eqref{eq:tpc36-coherent-character-gate} is large.
+\end{enumerate}
+Neither route asks for a maximum over all abstract coefficients.
+Conversely, \cref{thm:tpc36-s-Cauchy-sharp} shows that centeredness and
+ \(f(0)=0\) alone cannot prove the desired aggregate estimate.
+
+\subsection{Route menu for the next layer}
+
+The following routes are nonexclusive.
+
+\begin{description}[style=nextline,leftmargin=2.4em]
+ \item[Route A: residue-zero boundary extraction.]
+ Split the complete \(s\)-trace
+ \eqref{eq:tpc36-complete-s-trace} from the incomplete boundary weight.
+ Determine whether the actual centered ultra coefficient has a small or
+ diagonally absorbable \(g(0)\) component before estimating the remainder.
+
+ \item[Route B: weighted two-character dispersion.]
+ Expand the physical \(s\)-weight multiplicatively and estimate
+ \(\sum_sw(s)\widehat R_s(\chi)\) by the actual M\"obius character support,
+ rather than by Cauchy.  This is the closest continuation of the spectral
+ route.
+
+ \item[Route C: coherent three-modulus CRT.]
+ Keep three orbit-scale moduli separate, center each coordinate face, and
+ prove diagonal-scale reassembly simultaneously for principal, singleton,
+ double, and full-coordinate modes.  Static mask complexity no longer adds
+ a polynomial loss.
+
+ \item[Route D: a scoped negative theorem.]
+ If the physical coefficient family can be shown to concentrate on the
+ saturating \(s\)-coherent mode, or if a proper-coordinate alias survives
+ every admissible centering, that is a precise obstruction to this route.
+ It would not be a lower bound for twin-prime correlations themselves.
+\end{description}
+
+The first two routes now have exact finite-model targets; the third has the
+critical exponent budget.  Failure of any one route leaves the others
+available without changing the results proved in this paper.
+
+\subsection{Relation to the parity boundary}
+
+The factor \(q\asymp J\) appears twice: as the energy cost of splitting a
+product phase additively, and as the sharp uniform Cauchy cost in the
+coherent \(s\)-variable.  Avoiding the first is an algebraic
+order-of-operations theorem.  Avoiding the second requires arithmetic
+information about the actual coefficient family.  No estimate here
+supplies that information.
+
+Accordingly, the soft mask theorem is a genuine advance in the proof
+program, but it is not a parity-breaking theorem in the sense of classical
+sieve theory \citep{HeathBrown1982Parity,IwaniecKowalski2004}.  It removes
+one candidate obstruction and exposes the next one in an exact norm.

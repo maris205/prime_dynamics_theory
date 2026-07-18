@@ -1,0 +1,181 @@
+\section{The inherited physical interface}
+\label{sec:tpc36-physical-interface}
+
+We import the actual packet and proved orbit reduction from TPC-25 and
+TPC-32--TPC-35 \citep{WangTPC25,WangTPC32,WangTPC33,WangTPC34,WangTPC35}.
+This section makes clear which object is reassembled and which later
+completion remains open.
+
+\subsection{Rows, coefficients, and the joint multiplier}
+
+Fix \(h\in\Z\setminus\{0\}\), put \(H=\operatorname{rad}|h|\), and work
+on one source-compatible dyadic packet with
+\begin{equation}
+ Q=LD,\qquad QJ\asymp X,\qquad R\le T<U_0\asymp X.
+ \label{eq:tpc36-physical-scales}
+\end{equation}
+A row is
+\begin{equation}
+ \alpha=(\ell_\alpha,d_\alpha),\qquad
+ m_\alpha=\ell_\alpha d_\alpha\asymp Q,
+ \label{eq:tpc36-row}
+\end{equation}
+where \(\ell_\alpha\asymp L\) is prime, \(d_\alpha\asymp D\) is
+squarefree, and \((d_\alpha,H)=1\).  The source separation
+\begin{equation}
+ R=X^{1/2-\delta+o(1)},\qquad
+ D\le R^{1/2+o(1)},\qquad
+ L>\max\{2R,2|h|\}
+ \label{eq:tpc36-source-separation}
+\end{equation}
+makes the integer \(m_\alpha\) determine its row label uniquely.
+
+The two physical row coefficients are
+\begin{equation}
+ \gamma_\alpha^{(i)}
+ =\mu(d_\alpha)(\log\ell_\alpha)
+  \omega_D^{(i)}(d_\alpha)
+  \psi_L^{(i)}(\ell_\alpha/L)\zeta_\alpha^{(i)},
+ \qquad i=1,2,
+ \label{eq:tpc36-row-coefficients}
+\end{equation}
+with fixed smooth and finite-residue factors.  The inherited masses are
+\begin{align}
+ \sum_\alpha|\gamma_\alpha^{(i)}|
+ &\ll X^{o(1)}Q,
+ \label{eq:tpc36-row-l1}\\
+ \sum_\alpha|\gamma_\alpha^{(i)}|^2
+ &\ll X^{o(1)}Q.
+ \label{eq:tpc36-row-l2}
+\end{align}
+The logarithm in the original \(L^2\) estimate is absorbed into
+\(X^{o(1)}\).
+
+For \(j\) in an interval of \(O(J)\) integers, put
+\begin{equation}
+ N_\alpha(j)=m_\alpha j+h\asymp X.
+ \label{eq:tpc36-target}
+\end{equation}
+On the physical support every divisor \(u\mid N_\alpha(j)\) satisfies
+\begin{equation}
+ (u,m_\alpha jH)=1.
+ \label{eq:tpc36-target-primitivity}
+\end{equation}
+
+Let
+\begin{equation}
+ \Delta=QX^{-\kappa_0},\qquad G=X^{\kappa_0},
+ \label{eq:tpc36-pruning-scales}
+\end{equation}
+where \(\kappa_0>0\) is the inherited pruning parameter.  The actual
+static mask is
+\begin{equation}
+ \boxed{
+ \mathfrak m_{\rm act}(\alpha,\gamma)
+ =\one_{\ell_\alpha\ne\ell_\gamma}
+  \one_{|m_\alpha-m_\gamma|>\Delta}
+  \one_{(d_\alpha,d_\gamma)\le G}.}
+ \label{eq:tpc36-actual-static-mask}
+\end{equation}
+The full multiplier is
+\begin{equation}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ =\mathfrak m_{\rm act}(\alpha,\gamma)
+  \Xi_{\alpha,\gamma}(j)
+  \cW_{\alpha,\gamma}(j/J).
+ \label{eq:tpc36-actual-joint-multiplier}
+\end{equation}
+Let \(H_0=O_h(1)\) be a common period in \(j\) for the fixed-residue
+factor \(\Xi\).  TPC-25 proves that \(\Xi\) may be handled by first
+splitting the \(O_h(1)\) cells \(j\bmod H_0\), and that on each cell the
+smooth factor \(\cW\) has an absolutely convergent Mellin projective
+separation with polynomially weighted orbit-seminorm mass bounded
+independently of \(X\).  The new issue is therefore the nonsmooth mask
+\eqref{eq:tpc36-actual-static-mask}.
+
+\subsection{Orbit slicing and reflected columns}
+
+Let
+\begin{equation}
+ C_m(j)=\sum_{\substack{T<u\le U_0\\u\mid mj+h}}-\mu(u)\log u.
+ \label{eq:tpc36-ultra-increment}
+\end{equation}
+The left orbit slice is
+\begin{equation}
+ Y_{\gamma,j}^{L}
+ =\sum_\alpha\gamma_\alpha^{(1)}
+  \mathfrak A_{\alpha,\gamma}^{\rm act}(j)C_{m_\alpha}(j),
+ \qquad
+ V_L=\sum_{\gamma,j}|Y_{\gamma,j}^{L}|^2,
+ \label{eq:tpc36-left-orbit-slice}
+\end{equation}
+and the right slice exchanges the two row systems.  TPC-34 proves that
+the bound \eqref{eq:tpc36-inherited-gate-intro} is sufficient for the
+remaining scalar shell and proves the diagonal
+\eqref{eq:tpc36-inherited-diagonal-intro}.
+
+Open the ultra divisor in \eqref{eq:tpc36-left-orbit-slice}.  For a
+nonzero term write
+\begin{equation}
+ \ell dj+h=su,
+ \qquad
+ T<u\le U_0,\qquad
+ 1\le s\ll X/T.
+ \label{eq:tpc36-reflection}
+\end{equation}
+After one fixes \(\gamma\), a product-ready row decomposition would turn
+the inner contribution into layers of the schematic form
+\begin{equation}
+ \cZ_{\gamma,\rho}(j,s)
+ =\sum_{\ell,d,u}
+ b_{\gamma,\rho}(\ell)f_{\gamma,\rho}(d)
+ g_{\gamma,\rho}(u)
+ \one_{su=\ell jd+h}.
+ \label{eq:tpc36-integer-product-slope}
+\end{equation}
+The goal of \cref{sec:tpc36-fixed-column} is to prove the exact
+separation in \(\ell,d,j\) that precedes
+\eqref{eq:tpc36-integer-product-slope}.
+
+\subsection{What static reassembly does not include}
+
+Modulo a prime \(q\nmid h\), a complete version of
+\eqref{eq:tpc36-integer-product-slope} becomes
+\begin{align}
+ R_s(a)&=\sum_{D\in\F_q}f(D)
+ g\!\left(s^{-1}(aD+h)\right),
+ \label{eq:tpc36-Rsa-interface}\\
+ (Tb)(j,s)&=\sum_{\ell\in\F_q^\times}b(\ell)R_s(\ell j).
+ \label{eq:tpc36-T-interface}
+\end{align}
+TPC-35 gives the exact character spectrum of
+\eqref{eq:tpc36-T-interface}.  Passing from
+\eqref{eq:tpc36-integer-product-slope} to that complete finite-field
+operator additionally requires:
+\begin{enumerate}[label=(\roman*)]
+ \item controlling aliases between the integer equation and its modular
+ relaxation;
+ \item completing the physical \(j,d,u,s\) ranges without a polynomial
+ cost; and
+ \item retaining the coherent \(s\)-sum in the topology of
+ \eqref{eq:tpc36-left-orbit-slice}.
+\end{enumerate}
+None of these statements follows merely from a low projective norm for
+\eqref{eq:tpc36-actual-static-mask}.  We keep them separate throughout.
+
+\subsection{Endpoint scales}
+
+At the high--\(\beta\) endpoint,
+\begin{equation}
+ L=X^{99979/210000+o(1)},\qquad
+ D=X^{10049/52500+o(1)},
+ \label{eq:tpc36-LD-endpoint}
+\end{equation}
+in addition to \eqref{eq:tpc36-endpoint-intro}.  Hence
+\begin{equation}
+ D=o(J),\qquad J=o(Q),\qquad QJ=X^{1+o(1)}.
+ \label{eq:tpc36-endpoint-relations}
+\end{equation}
+The number of formal column layers \(O(D)\) below is polynomial, but its
+exponent is irrelevant to estimates that reassemble by signed projective
+mass.  Counting layers absolutely would be the wrong norm.

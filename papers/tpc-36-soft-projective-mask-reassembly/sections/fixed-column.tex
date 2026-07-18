@@ -1,0 +1,209 @@
+\section{Fixed-column product-ready reassembly}
+\label{sec:tpc36-fixed-column}
+
+The global theorem separates the two row labels, but a global factor may
+still depend jointly on the source \(\ell\) and divisor coordinate \(d\)
+through \(m=\ell d\).  The product--slope operator needs one further
+separation.  Orbit slicing provides the correct order: fix the opposite
+row first.
+
+\subsection{The exact Ferrers formula}
+
+Fix
+\begin{equation}
+ \gamma=(\ell_\gamma,e),\qquad n=m_\gamma=\ell_\gamma e.
+ \label{eq:tpc36-fixed-column}
+\end{equation}
+Let \(\cD=\{d_1<\cdots<d_{N_D}\}\) be an ambient integer set containing
+the physical \(d\)-support.  One may take the full dyadic integer interval,
+so
+\begin{equation}
+ N_D\ll D.
+ \label{eq:tpc36-divisor-count}
+\end{equation}
+Squarefreeness, coprimality, and smooth support are retained later as
+unary \(d\)-weights.  Write \(r(d_k)=k\).  For every source \(\ell\), put
+\begin{align}
+ k_-^\gamma(\ell)
+ &:=\#\{d\in\cD:\ell d<n-\Delta\},
+ \label{eq:tpc36-column-lower-rank}\\
+ k_+^\gamma(\ell)
+ &:=\#\{d\in\cD:\ell d\le n+\Delta\}.
+ \label{eq:tpc36-column-upper-rank}
+\end{align}
+Then
+\begin{equation}
+ \one_{|\ell d-n|>\Delta}
+ =1+H_{N_D}(k_-^\gamma(\ell),r(d))
+    -H_{N_D}(k_+^\gamma(\ell),r(d)).
+ \label{eq:tpc36-column-prefix}
+\end{equation}
+
+Choose \(M_D=2N_D+1\), and let
+\(\widehat\kappa_{N_D}\) be as in
+\eqref{eq:tpc36-interval-Fourier}.  Combining
+\eqref{eq:tpc36-column-prefix} with
+\eqref{eq:tpc36-prefix-Fourier} gives the pointwise identity
+\begin{align}
+ &\mathfrak m_{\rm act}((\ell,d),\gamma)
+ \notag\\
+ &\quad=\one_{\ell\ne\ell_\gamma}
+ \one_{(d,e)\le G}
+ \Bigg[1+\sum_{a\bmod M_D}
+ \widehat\kappa_{N_D}(a)
+ \bigl(
+ e_{M_D}(a k_-^\gamma(\ell))
+ -e_{M_D}(a k_+^\gamma(\ell))
+ \bigr)e_{M_D}(-a r(d))\Bigg].
+ \label{eq:tpc36-exact-column-Fourier}
+\end{align}
+Every factor outside the brackets is unary once \(\gamma\) is fixed.
+
+\begin{theorem}[Exact fixed-column source--divisor separation]
+\label{thm:tpc36-fixed-column-separation}
+For every fixed opposite row \(\gamma\), there are coefficients and
+bounded functions such that
+\begin{equation}
+ \mathfrak m_{\rm act}((\ell,d),\gamma)
+ =\sum_{\rho\in\cR_\gamma}
+ c_{\rho,\gamma}b_{\rho,\gamma}(\ell)
+ f_{\rho,\gamma}(d),
+ \label{eq:tpc36-column-separation}
+\end{equation}
+with
+\begin{align}
+ |\cR_\gamma|&\ll D,
+ \label{eq:tpc36-column-layer-count}\\
+ \sum_{\rho\in\cR_\gamma}|c_{\rho,\gamma}|
+ \|b_{\rho,\gamma}\|_\infty
+ \|f_{\rho,\gamma}\|_\infty
+ &\ll1+\log(2D)=X^{o(1)}.
+ \label{eq:tpc36-column-projective-cost}
+\end{align}
+The estimate is uniform in \(\gamma\).
+\end{theorem}
+
+\begin{proof}
+Use the constant term and the \(M_D\) Fourier terms displayed in
+\eqref{eq:tpc36-exact-column-Fourier}.  The source factor and the two
+threshold phases belong to \(b\); the gcd cutoff and rank phase belong to
+\(f\).  Their sup norms are bounded by \(2\) and \(1\), respectively.
+The layer count is \(1+M_D=O(D)\), while
+\eqref{eq:tpc36-interval-l1} proves the signed mass bound.  Importantly,
+the normalized Fourier coefficients are summed in absolute value; the
+raw layer count is not.
+\end{proof}
+
+\subsection{Including the physical row and orbit weights}
+
+The coefficient \eqref{eq:tpc36-row-coefficients} is already a product of
+a source weight and a \(d\)-weight, apart from a fixed-period factor.
+First split the \(O_h(1)\) orbit cells \(j\bmod H_0\); finite Fourier
+inversion in the remaining row residue variables has bounded total mass.
+On each cell, Mellin inversion separates every smooth factor
+\(W(\ell dj/X)\) into
+\(\ell^{it}d^{it}j^{it}\) and has Schwartz total variation
+\citep{WangTPC25}.  Multiplying these inherited representations by
+\eqref{eq:tpc36-column-separation}, and enlarging \(\cR_\gamma\) by only
+an \(O_h(1)\) factor, proves the physical form below.
+
+\begin{theorem}[Physical product-ready column]
+\label{thm:tpc36-physical-product-ready}
+For each fixed \(\gamma\), the actual left-column multiplier including its
+left row coefficient has the exact residue-cell representation
+\begin{equation}
+ \gamma_{(\ell,d)}^{(1)}
+ \mathfrak A_{(\ell,d),\gamma}^{\rm act}(j)
+ =\sum_{r\bmod H_0}\one_{j\equiv r\!\!\!\pmod{H_0}}
+ \int_{\Omega_r}\sum_{\rho\in\cR_\gamma}
+ c_{\rho,\omega,\gamma,r}
+ b_{\rho,\omega,\gamma,r}(\ell)
+ f_{\rho,\omega,\gamma,r}(d)
+ \eta_{\rho,\omega,\gamma,r}(j/J)\,d\nu_r(\omega).
+ \label{eq:tpc36-physical-product-ready}
+\end{equation}
+For every fixed \(B\ge0\), its normalized mass satisfies
+\begin{equation}
+ \sum_{r\bmod H_0}\int_{\Omega_r}\sum_{\rho\in\cR_\gamma}
+ |c_{\rho,\omega,\gamma,r}|
+ \|b_{\rho,\omega,\gamma,r}\|_\infty
+ \|f_{\rho,\omega,\gamma,r}\|_\infty
+ \|\eta_{\rho,\omega,\gamma,r}\|_{C^B}
+ \,d|\nu_r|(\omega)
+ \ll_B X^{o(1)},
+ \label{eq:tpc36-product-ready-cost}
+\end{equation}
+after the fixed logarithmic source weight is included in the soft factor.
+For fixed \(r\), the source function
+\(b_{\rho,\omega,\gamma,r}(\ell)\) is independent of \(j\), \(d\), and
+the complementary factor \(s\).
+\end{theorem}
+
+The statement is symmetric: fixing \(\alpha\) instead gives the analogous
+right-column representation with the two row systems exchanged.
+
+\begin{remark}[Coefficient normalization]
+If the factor \(\log\ell\) is not absorbed into \(X^{o(1)}\), the right
+side of \eqref{eq:tpc36-product-ready-cost} acquires the explicit harmless
+factor \(O(\log L)\).  The theorem does not sum the physical row
+coefficients in \(\ell^1\); it controls the multiplier representation
+uniformly before the row sum.
+\end{remark}
+
+\subsection{Opening the ultra divisor}
+
+Insert \eqref{eq:tpc36-physical-product-ready} into
+\eqref{eq:tpc36-left-orbit-slice}, work on one of the fixed residue cells,
+and open \eqref{eq:tpc36-ultra-increment}.  On each layer, all unary
+support and smooth factors may be absorbed into \(b,f,g\), and
+\eqref{eq:tpc36-reflection} gives
+\begin{equation}
+ \cZ_{\gamma,\rho,\omega}(j,s)
+ =\sum_{\ell,d,u}
+ b_{\gamma,\rho,\omega}(\ell)
+ f_{\gamma,\rho,\omega}(d)
+ g_{\gamma,\rho,\omega}(u)
+ \one_{su=\ell jd+h}.
+ \label{eq:tpc36-exact-integer-layer}
+\end{equation}
+This is the integer product-slope normal form.  Reducing
+\eqref{eq:tpc36-exact-integer-layer} modulo \(q\) produces
+\eqref{eq:tpc36-Rsa-interface}--\eqref{eq:tpc36-T-interface}; the source
+weight remains independent of \(j,s\).
+
+\begin{corollary}[The static half of the TPC-35 reassembly gate]
+\label{cor:tpc36-static-half-gate}
+The actual fixed-column mask, row coefficient, fixed-period factors, and
+smooth orbit factors admit an exact \(X^{o(1)}\)-cost decomposition into
+product-slope-ready layers.  What remains before the TPC-35 complete
+finite-field spectrum can be applied to
+\eqref{eq:tpc36-left-orbit-slice} is modular completion and coherent
+alias reassembly, not static row-mask separation.
+\end{corollary}
+
+\subsection{Compatibility with the projected affine column}
+
+TPC-33 alternatively opens the gcd projector after fixing
+\(\gamma=(\ell_\gamma,e)\).  For \(v\mid e\), write \(d=vD'\).  Applying
+\cref{thm:tpc36-fixed-column-separation} on each projected \(D'\)-range
+gives at most
+\begin{equation}
+ \sum_{v\mid e}O\!\left(1+\frac Dv\right)
+ \ll DX^{o(1)}
+ \label{eq:tpc36-projected-layer-count}
+\end{equation}
+formal layers.  TPC-33 proves
+\begin{equation}
+ \sum_{v\mid e}|\lambda_G(v)|\le3^{\omega(e)},
+ \label{eq:tpc36-fixed-column-gcd-mass}
+\end{equation}
+so their total signed Ferrers mass is
+\begin{equation}
+ \ll3^{\omega(e)}\log(2D)=X^{o(1)}.
+ \label{eq:tpc36-projected-projective-cost}
+\end{equation}
+This version retains the affine determinant form of TPC-33, with product
+slope \(\ell jv\).  Since \(v\ll D=o(J)\), multiplication by \(v\) is a
+permutation modulo every prime \(q\asymp J\).  The direct version above is
+shorter; the projected version confirms compatibility with the previous
+M\"obius sign-fusion normal form.

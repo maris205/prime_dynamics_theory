@@ -1,0 +1,138 @@
+\section{Exact certificate and claim boundary}
+\label{sec:tpc36-certificate}
+
+The accompanying standard-library certificate is
+\begin{center}
+\texttt{experiments/tpc36\_certificate.py}.
+\end{center}
+It uses integers, \texttt{Fraction}, and symbolic finite-group
+orthogonality.  It contains no floating-point calculation, random input,
+true division, or Python \texttt{assert} statement.  Running
+\begin{verbatim}
+python experiments/tpc36_certificate.py
+python -O experiments/tpc36_certificate.py
+\end{verbatim}
+performs the same checks and regenerates byte-identical JSON.
+
+\subsection{Finite exact checks}
+
+The archived run performs \(137{,}083\) checks.
+
+\begin{table}[H]
+\centering
+\caption{Exact check families in the TPC-36 certificate.}
+\label{tab:tpc36-certificate-checks}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Check family & Count \\
+\midrule
+Gcd projector and orthogonal compression & 120,116 \\
+Source equality and inequality compression & 970 \\
+Ferrers Fourier reconstruction and far-row endpoints & 1,671 \\
+Triangular Gram, inverse, and eigen-polynomial identities & 42 \\
+Product-phase Gram \(qI-J\) & 3,350 \\
+Multiplicative permutation-kernel reconstruction & 7,286 \\
+Coherent \(s\)-trace and sharpness example & 3,644 \\
+Source constraints & 4 \\
+\midrule
+Total & 137,083 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For the gcd suite, the script enumerates squarefree packets and cutoff
+values, verifies \eqref{eq:tpc36-gcd-projector}, and then verifies the
+Walsh analogue of \eqref{eq:tpc36-global-gcd-factorization} coefficient
+by coefficient.  The source suite checks the normalized orthogonality
+identity and its complement.  The Ferrers suite represents roots of unity
+symbolically, reconstructs every prefix entry, and checks
+\eqref{eq:tpc36-near-row-prefix} at both exact endpoints
+\(m_\gamma-\Delta\) and \(m_\gamma+\Delta\).
+
+The triangular suite constructs \(T_nT_n^*\), verifies its exact
+first-difference inverse, and compares the inverse characteristic
+polynomial with its recurrence for \(n\le7\).  The
+product-phase suite counts exponent residues to verify
+\eqref{eq:tpc36-product-phase-Gram}; the multiplication suite uses discrete
+logarithms to check \eqref{eq:tpc36-multiplicative-product-delta}.  The
+last suite enumerates centered finite-field data for
+\eqref{eq:tpc36-complete-s-trace} and checks the nonprincipal construction
+\eqref{eq:tpc36-sharp-f}--\eqref{eq:tpc36-sharp-T}.
+
+\subsection{Reproducibility values}
+
+Line endings are normalized before the source digest is taken.  The
+archived values are
+\begin{align}
+ \text{normalized source SHA-256}\quad
+ &\texttt{ed669550fbf29aecdc31062f98fc64463}
+ \notag\\[-0.3em]
+ &\texttt{67871505f46d6a4bf0e20d7625a7151},
+ \label{eq:tpc36-source-hash}\\
+ \text{JSON SHA-256}\quad
+ &\texttt{9fbbc133d77ca53ed978e75461900917b}
+ \notag\\[-0.3em]
+ &\texttt{188bfdb9abf3bd436c1df5e4cfd09b6},
+ \label{eq:tpc36-json-hash}\\
+ \text{certificate digest}\quad
+ &\texttt{4718f7216d8e67a87e84e3ebf6c550af}
+ \notag\\[-0.3em]
+ &\texttt{ca725c27c7980070f11ca6025ce7ff85}.
+ \label{eq:tpc36-certificate-digest}
+\end{align}
+The certificate digest hashes the canonical payload before its digest
+field is appended.
+
+\subsection{What is proved}
+
+The unconditional new results of this paper are:
+\begin{enumerate}[label=(\roman*)]
+ \item the exact global orthogonal compression
+ \eqref{eq:tpc36-global-gcd-factorization} and soft gcd projective bound;
+ \item the global actual-mask theorem
+ \eqref{eq:tpc36-global-static-mask-bound};
+ \item the fixed-column source--divisor representation
+ \eqref{eq:tpc36-exact-column-Fourier} with logarithmic signed mass;
+ \item the exact Ferrers singular values, the optimal signed logarithmic
+ cost, and the exact nonnegative cost \(n\);
+ \item the product-phase Gram and exact projective norm
+ \eqref{eq:tpc36-product-phase-exact-cost};
+ \item the cost-one multiplication kernel and the sharp loss for its
+ termwise additive-frequency reassembly;
+ \item the weighted coherent spectrum
+ \eqref{eq:tpc36-weighted-coherent-spectrum}; and
+ \item the complete \(s\)-trace, its residue-zero energy formula, and the
+ sharp centered nonprincipal Cauchy example.
+\end{enumerate}
+The physical product-ready column theorem also uses the fixed
+residue-cell split and Mellin separation already proved in TPC-25.  Its
+dependence on that prior result is explicit rather than re-proved here.
+
+\subsection{What is not proved}
+
+Finite enumeration certifies algebra on the tested families; it does not
+prove asymptotic analytic estimates.  Neither the manuscript nor the
+certificate proves:
+\begin{enumerate}[label=(\roman*)]
+ \item an operator or Hilbert--Schmidt bound for the actual orbit-Gram
+ off-diagonal;
+ \item the coefficient-specific physical gate
+ \(V_L+V_R\ll X^{o(1)}Q^3/J\);
+ \item a complete integer-to-modular reassembly at \(q\asymp J\);
+ \item control of one-modulus or three-modulus alias fibers at diagonal
+ scale;
+ \item a bound for the actual weighted coherent functional
+ \eqref{eq:tpc36-coherent-gate-functional};
+ \item vanishing of the actual centered residue-zero boundary \(g(0)\);
+ \item cancellation of the terminal/proper-divisor cross terms;
+ \item an affine Chowla estimate or M\"obius disjointness theorem;
+ \item a breach of sieve parity, positivity, or a Hardy--Littlewood
+ prime-pair asymptotic; or
+ \item infinitely many twin primes.
+\end{enumerate}
+
+The precise advance is narrower and reusable: static physical-mask
+complexity is no longer an unresolved polynomial obstruction.  Signed
+reassembly places the real next gate at weighted coherent spectral overlap
+and joint alias control.  A positive or negative theorem about that new
+functional would be the next logically meaningful layer.

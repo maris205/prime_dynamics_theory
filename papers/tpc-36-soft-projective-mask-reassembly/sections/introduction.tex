@@ -1,0 +1,190 @@
+\section{Introduction}
+\label{sec:tpc36-introduction}
+
+The matched residual chain has reached a useful separation of tasks.
+TPC-32 keeps the exact rank--two cutoff polarization but leaves the joint
+row multiplier inside a bilinear form.  TPC-33 opens one ultra divisor and
+obtains a fixed-determinant affine column after the opposite row is fixed.
+TPC-34 converts the distinguished shell to orbit--sliced row energies, and
+TPC-35 identifies the coefficient-specific multiplicative spectrum that
+would be available after complete product--slope reassembly
+\citep{WangTPC32,WangTPC33,WangTPC34,WangTPC35}.
+
+The inherited sufficient gate is
+\begin{equation}
+ V_L+V_R\ll X^{o(1)}\frac{Q^3}{J},
+ \label{eq:tpc36-inherited-gate-intro}
+\end{equation}
+whereas the proved Gram-copy diagonal is
+\begin{equation}
+ V_{L,\Delta}+V_{R,\Delta}
+ \ll X^{o(1)}Q^2J.
+ \label{eq:tpc36-inherited-diagonal-intro}
+\end{equation}
+At the endpoint
+\begin{equation}
+ Q=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ T=X^{193/500+o(1)},
+ \label{eq:tpc36-endpoint-intro}
+\end{equation}
+the allowance between \eqref{eq:tpc36-inherited-gate-intro} and
+\eqref{eq:tpc36-inherited-diagonal-intro} is only
+\begin{equation}
+ \frac{Q}{J^2}=X^{1/400+o(1)}.
+ \label{eq:tpc36-margin-intro}
+\end{equation}
+One cannot afford a new fixed power of \(X\).
+
+TPC-35 therefore left a precise preliminary question: does the actual
+physical multiplier admit a signed separable representation of soft cost,
+or is the multiplier itself another polynomial obstruction?  The answer
+is positive.  The more delicate conclusion is that this does not close
+\eqref{eq:tpc36-inherited-gate-intro}; it relocates the gap to completion,
+aliases, and coherent complementary-factor spectra.
+
+\subsection{The static multiplier is softly projective}
+
+For a kernel \(K\) on two finite sets, write \(\pinf(K)\) for its bounded
+projective norm; see \cref{sec:tpc36-projective-toolkit}.  The physical
+static mask has three factors:
+\begin{equation}
+ \mathfrak m_{\rm act}(\alpha,\gamma)
+ =\one_{\ell_\alpha\ne\ell_\gamma}
+  \one_{|m_\alpha-m_\gamma|>\Delta}
+  \one_{(d_\alpha,d_\gamma)\le G},
+ \qquad
+ \Delta=QX^{-\kappa_0},\quad G=X^{\kappa_0}.
+ \label{eq:tpc36-static-mask-intro}
+\end{equation}
+The same-source factor is compressed by source orthogonality.  The
+near-row factor is a one-dimensional interval kernel.  The new step is a
+global orthogonal compression of the row-gcd projector.  If
+\(\omega_*=\max_\alpha\omega(d_\alpha)\), then
+\begin{equation}
+ \boxed{
+ \pinf(\mathfrak m_{\rm act})
+ \ll\log(2Q)(3+2\sqrt2)^{\omega_*}=X^{o(1)}.}
+ \label{eq:tpc36-global-mask-intro}
+\end{equation}
+The equality \(X^{o(1)}\) uses only the standard fixed-base divisor
+estimate \(C^{\omega(n)}\ll_{C,\eps}n^\eps\).  It is uniform in the
+pruning threshold \(G\).
+
+The distinction between layer count and projective mass is essential.
+The exact finite representation may contain polynomially many layers, but
+their normalized total variation is soft.  Every estimate uniform in the
+bounded factors may therefore be integrated without paying for the raw
+number of layers.
+
+\subsection{Columnwise separation and its optimal cost}
+
+The orbit energy first fixes the opposite row.  For
+\(\gamma=(\ell_\gamma,e)\), the gcd cutoff in
+\eqref{eq:tpc36-static-mask-intro} is then a unary \(d\)-weight.  Ordering
+the physical \(d\)-values turns the near-row condition into the difference
+of two prefix, or Ferrers, kernels.  After splitting the fixed
+\(O_h(1)\) orbit residue cells, finite Fourier inversion gives the exact
+representation
+\begin{equation}
+ \gamma_{(\ell,d)}^{(1)}
+ \mathfrak A^{\rm act}_{(\ell,d),\gamma}(j)
+ =\sum_{r\bmod H_0}\one_{j\equiv r\!\!\!\pmod{H_0}}
+ \int\sum_\rho
+ c_{\rho,\omega,\gamma,r}
+ b_{\rho,\omega,\gamma,r}(\ell)
+ f_{\rho,\omega,\gamma,r}(d)
+ \eta_{\rho,\omega,\gamma,r}(j/J)\,d\nu_r(\omega),
+ \label{eq:tpc36-product-ready-intro}
+\end{equation}
+with \(O(D)\) discrete layers and \(X^{o(1)}\) total signed
+orbit-seminorm cost.  In particular \(b(\ell)\) is independent of \(j\)
+and of the reflected complementary factor \(s\).  This proves the static
+product-ready shape asked for in TPC-35.
+
+The logarithm is not an artifact.  For the triangular Ferrers matrix
+\begin{equation}
+ T_n=(\one_{k\le r})_{1\le r,k\le n},
+ \label{eq:tpc36-triangular-intro}
+\end{equation}
+we prove
+\begin{equation}
+ \pinf(T_n)\asymp\log(2n).
+ \label{eq:tpc36-ferrers-optimal-intro}
+\end{equation}
+If every rank-one layer is required to be nonnegative, its exact cost is
+instead \(n\).  Thus requiring every rectangle layer to be entrywise
+nonnegative destroys the gain that signed Fourier orthogonality supplies.
+
+\subsection{The cost of absolute additive-frequency separation}
+
+The product slope is not another harmless smooth factor.  For prime \(q\)
+and \(r\ne0\), put
+\begin{equation}
+ A_r(x,y)=e_q(rxy),\qquad x,y\in\F_q^\times.
+ \label{eq:tpc36-product-phase-intro}
+\end{equation}
+Multiplicative characters give a flat singular-vector basis and the exact
+projective norm
+\begin{equation}
+ \boxed{
+ \pinf(A_r)=\frac{(q-2)\sqrt q+1}{q-1}.}
+ \label{eq:tpc36-product-phase-cost-intro}
+\end{equation}
+On the other hand, \(K_a(x,y)=\one_{xy=a}\) is a permutation kernel and
+\(\pinf(K_a)=1\).  The additive delta expansion of \(K_a\), followed by
+termwise absolute reassembly of its nonzero frequencies, costs
+\(\asymp\sqrt q\).  At \(q\asymp J\), this is exactly a factor \(J\) after
+squaring.  Thus the additive-frequency expansion cannot be estimated at
+the critical scale by summing its frequency costs separately.  The
+multiplicative-character reconstruction keeps projective cost one.
+
+\subsection{The coherent complementary-factor spectrum}
+
+TPC-35 diagonalizes the complete square energy
+\(\sum_{j,s}|(Tb)(j,s)|^2\).  The physical column first sums over the
+complementary factor \(s\) and then squares.  We prove the corresponding
+weighted identity.  For \(G_q=\F_q^\times\), any \(w:G_q\to\C\), and
+\begin{equation}
+ S_w(j)=\sum_{s\in G_q}w(s)(Tb)(j,s),
+ \label{eq:tpc36-weighted-trace-intro}
+\end{equation}
+one has
+\begin{equation}
+ \boxed{
+ \sum_j|S_w(j)|^2
+ =\frac1{q-1}\sum_\chi
+ |\widehat b(\bar\chi)|^2
+ \left|\sum_sw(s)\widehat R_s(\chi)\right|^2.}
+ \label{eq:tpc36-weighted-spectrum-intro}
+\end{equation}
+For the complete weight \(w=1\), additive centering gives the exact trace
+\begin{equation}
+ \sum_{s\in G_q}R_s(a)=qg(0)f(-h/a).
+ \label{eq:tpc36-complete-trace-intro}
+\end{equation}
+Thus full \(s\)-coherence collapses to a residue-zero boundary term.  Yet
+there are centered nonprincipal data for which \((Tb)(j,s)\) is independent
+of \(s\), so the factor \(q-1\) from Cauchy in \(s\) is sharp.  A physical
+gain must use the actual M\"obius-derived \(g\), the actual incomplete
+weight \(w\), or joint alias cancellation.
+
+\subsection{Claim boundary and organization}
+
+The paper resolves a missing interface, not the twin-prime problem.  It
+proves soft projective complexity of the actual static mask, an exact
+columnwise product-ready decomposition, two sharp order-of-operations
+obstructions, and coherent finite-field spectra.  It does not prove a
+small physical Gram norm, the coefficient gate
+\eqref{eq:tpc36-inherited-gate-intro}, a three-modulus alias theorem, an
+affine Chowla estimate, positivity, or a Hardy--Littlewood asymptotic.
+
+\Cref{sec:tpc36-physical-interface} fixes the inherited object.
+\Cref{sec:tpc36-projective-toolkit} develops the projective tools.
+\Cref{sec:tpc36-global-mask} proves \eqref{eq:tpc36-global-mask-intro}.
+\Cref{sec:tpc36-fixed-column} proves the product-ready column theorem.
+\Cref{sec:tpc36-optimality} gives the sharp Ferrers and product-phase
+boundaries.  \Cref{sec:tpc36-coherent-spectrum} proves
+\eqref{eq:tpc36-weighted-spectrum-intro}--
+\eqref{eq:tpc36-complete-trace-intro}.  The last two sections record the
+endpoint ledger, next gate, exact certificate, and formal claim boundary.

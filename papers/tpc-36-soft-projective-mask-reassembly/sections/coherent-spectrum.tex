@@ -1,0 +1,211 @@
+\section{Exact spectra for coherent complementary-factor sums}
+\label{sec:tpc36-coherent-spectrum}
+
+The fixed-column theorem reaches the product-slope shape, but the topology
+of the physical orbit slice is not the square function in \(s\) treated in
+TPC-35.  We now diagonalize the operation that sums in \(s\) first.
+
+\subsection{The complete product-slope operator}
+
+Let \(q>2\) be prime, put \(G_q=\F_q^\times\), and fix \(h\in G_q\).
+Let \(f,g:\F_q\to\C\) be additively centered:
+\begin{equation}
+ \sum_{D\in\F_q}f(D)=0,
+ \qquad
+ \sum_{U\in\F_q}g(U)=0.
+ \label{eq:tpc36-centered-fg}
+\end{equation}
+Define
+\begin{align}
+ R_s(a)
+ &:=\sum_{D\in\F_q}f(D)
+ g\!\left(s^{-1}(aD+h)\right),
+ \qquad a,s\in G_q,
+ \label{eq:tpc36-Rsa}\\
+ (Tb)(j,s)
+ &:=\sum_{\ell\in G_q}b(\ell)R_s(\ell j),
+ \qquad j,s\in G_q.
+ \label{eq:tpc36-Tb}
+\end{align}
+For a multiplicative character \(\chi\) of \(G_q\), use
+\begin{equation}
+ \widehat b(\chi)=\sum_{x\in G_q}b(x)\overline{\chi(x)},
+ \qquad
+ \widehat R_s(\chi)=\sum_{a\in G_q}R_s(a)\overline{\chi(a)}.
+ \label{eq:tpc36-multiplicative-transforms}
+\end{equation}
+TPC-35 proves the square-function identity
+\begin{equation}
+ \sum_{j,s}|(Tb)(j,s)|^2
+ =\frac1{q-1}\sum_\chi
+ |\widehat b(\bar\chi)|^2
+ \sum_s|\widehat R_s(\chi)|^2.
+ \label{eq:tpc36-TPC35-square-spectrum}
+\end{equation}
+
+\subsection{A weighted coherent spectrum}
+
+For an arbitrary weight \(w:G_q\to\C\), put
+\begin{equation}
+ S_w(j)=\sum_{s\in G_q}w(s)(Tb)(j,s).
+ \label{eq:tpc36-Sw}
+\end{equation}
+
+\begin{theorem}[Weighted coherent product-slope spectrum]
+\label{thm:tpc36-weighted-coherent-spectrum}
+With the preceding conventions,
+\begin{equation}
+ \boxed{
+ \sum_{j\in G_q}|S_w(j)|^2
+ =\frac1{q-1}\sum_\chi
+ |\widehat b(\bar\chi)|^2
+ \left|\sum_{s\in G_q}w(s)\widehat R_s(\chi)\right|^2.}
+ \label{eq:tpc36-weighted-coherent-spectrum}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For fixed \(s\), the substitution \(a=\ell j\) gives
+\begin{equation}
+ \sum_{j\in G_q}(Tb)(j,s)\overline{\chi(j)}
+ =\widehat b(\bar\chi)\widehat R_s(\chi).
+ \label{eq:tpc36-fixed-s-transform}
+\end{equation}
+Multiply by \(w(s)\), sum over \(s\), and apply multiplicative Parseval
+in \(j\).
+\end{proof}
+
+The square function \eqref{eq:tpc36-TPC35-square-spectrum} contains
+\(\sum_s|\widehat R_s(\chi)|^2\).  The coherent topology contains instead
+\begin{equation}
+ \left|\sum_sw(s)\widehat R_s(\chi)\right|^2.
+ \label{eq:tpc36-coherent-character-gate}
+\end{equation}
+This is the exact character-level quantity that a physical theorem must
+control after static reassembly.
+
+\subsection{The complete complementary-factor trace}
+
+The complete weight \(w=1\) has an unexpectedly simple closed form.
+
+\begin{theorem}[Residue-zero boundary trace]
+\label{thm:tpc36-complete-s-trace}
+For every \(a\in G_q\),
+\begin{equation}
+ \boxed{
+ \sum_{s\in G_q}R_s(a)=qg(0)f(-h/a).}
+ \label{eq:tpc36-complete-s-trace}
+\end{equation}
+Consequently
+\begin{align}
+ \sum_{j\in G_q}\left|\sum_{s\in G_q}(Tb)(j,s)\right|^2
+ ={}&\frac{q^2|g(0)|^2}{q-1}
+ \sum_\chi|\widehat b(\bar\chi)|^2
+ \left|\sum_{D\ne0}f(D)\chi(D)\right|^2.
+ \label{eq:tpc36-complete-s-energy}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Fix \(a\) and let \(D_0=-h/a\).  For \(D=D_0\), the argument of \(g\)
+is zero for every \(s\), so its contribution to the \(s\)-sum is
+\((q-1)f(D_0)g(0)\).  For \(D\ne D_0\), the element \(aD+h\) is nonzero
+and \(s^{-1}(aD+h)\) runs once through \(G_q\).  Additive centering gives
+\begin{equation}
+ \sum_{U\in G_q}g(U)=-g(0).
+ \label{eq:tpc36-nonzero-g-sum}
+\end{equation}
+Also \(\sum_{D\ne D_0}f(D)=-f(D_0)\).  The remaining contribution is
+therefore \(f(D_0)g(0)\), proving
+\eqref{eq:tpc36-complete-s-trace}.
+
+Now
+\begin{equation}
+ \sum_s(Tb)(j,s)
+ =qg(0)\sum_{\ell\in G_q}
+ b(\ell)f\!\left(-\frac h{\ell j}\right).
+ \label{eq:tpc36-complete-T-trace}
+\end{equation}
+Taking the multiplicative transform in \(j\), the substitution
+\(D=-h/(\ell j)\) gives, up to the unit phase
+\(\overline{\chi(-h)}\),
+\begin{equation}
+ \widehat b(\bar\chi)
+ \sum_{D\ne0}f(D)\chi(D).
+ \label{eq:tpc36-trace-transform}
+\end{equation}
+Parseval proves \eqref{eq:tpc36-complete-s-energy}.
+\end{proof}
+
+\begin{corollary}[Exact complete cancellation when \(g(0)=0\)]
+\label{cor:tpc36-gzero-cancellation}
+If \(g(0)=0\), then
+\begin{equation}
+ \sum_{s\in G_q}(Tb)(j,s)=0
+ \label{eq:tpc36-gzero-cancellation}
+\end{equation}
+for every \(b\) and every \(j\).
+\end{corollary}
+
+Ordinary additive centering does not force \(g(0)=0\).  If an uncentered
+physical \(g\) is supported away from zero and is then centered by
+subtracting its mean, its new value at zero is generally the negative of
+that mean.  The boundary trace must therefore be extracted, cancelled, or
+estimated; it cannot be deleted by notation.
+
+\subsection{Sharpness of complementary-factor Cauchy}
+
+The exact trace does not imply a uniform gain for all centered data.
+
+\begin{theorem}[Sharp coherent-\(s\) saturation]
+\label{thm:tpc36-s-Cauchy-sharp}
+For every prime \(q>2\), there are nonzero centered \(f,g\) and \(b\), with
+\(f(0)=0\), such that
+\begin{equation}
+ \boxed{
+ \sum_j\left|\sum_s(Tb)(j,s)\right|^2
+ =(q-1)\sum_{j,s}|(Tb)(j,s)|^2.}
+ \label{eq:tpc36-s-Cauchy-equality}
+\end{equation}
+Thus the Cauchy factor \(\#G_q=q-1\) is sharp even after the principal
+energy arising from \(f(0)\) has been removed.
+\end{theorem}
+
+\begin{proof}
+Choose a nonprincipal multiplicative character \(\chi\) and extend it by
+zero.  Put
+\begin{equation}
+ f(D)=\overline{\chi(D)}\ (D\ne0),\qquad f(0)=0,
+ \label{eq:tpc36-sharp-f}
+\end{equation}
+\begin{equation}
+ g(U)=\one_{\{0\}}(U)-\frac1q,
+ \qquad
+ b(\ell)=\overline{\chi(\ell)}.
+ \label{eq:tpc36-sharp-gb}
+\end{equation}
+Both \(f\) and \(g\) are additively centered.  The constant part of \(g\)
+contributes zero to \(R_s(a)\) by character orthogonality.  The remaining
+delta selects \(D=-h/a\), so
+\begin{equation}
+ R_s(a)=\overline{\chi(-h)}\chi(a),
+ \label{eq:tpc36-sharp-R}
+\end{equation}
+independently of \(s\).  Hence
+\begin{equation}
+ (Tb)(j,s)
+ =(q-1)\overline{\chi(-h)}\chi(j),
+ \label{eq:tpc36-sharp-T}
+\end{equation}
+also independently of \(s\).  Equality in Cauchy follows pointwise in
+\(j\), and summing proves \eqref{eq:tpc36-s-Cauchy-equality}.
+\end{proof}
+
+\begin{remark}[Two independent critical \(J\)-losses]
+At \(q\asymp J\), termwise additive separation of the product phase loses
+\(J\) in energy by \cref{cor:tpc36-retain-product-slope}.  Uniform Cauchy
+in the complete \(s\)-variable can also lose \(J\) by
+\cref{thm:tpc36-s-Cauchy-sharp}.  The mechanisms are distinct.  The first
+is avoided by retaining product slopes; the second requires a bound for
+the actual weighted trace \eqref{eq:tpc36-coherent-character-gate}.
+\end{remark}

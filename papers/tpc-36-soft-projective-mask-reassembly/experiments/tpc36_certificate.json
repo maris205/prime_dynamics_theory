@@ -1,0 +1,534 @@
+{
+  "arithmetic": "integer and Fraction; roots of unity symbolic",
+  "certificate_digest": "4718f7216d8e67a87e84e3ebf6c550afca725c27c7980070f11ca6025ce7ff85",
+  "certificate_version": 1,
+  "check_total": 137083,
+  "claims": {
+    "breaks_sieve_parity": false,
+    "finite_complete_coherent_s_trace": true,
+    "finite_far_row_two_prefix_reduction": true,
+    "finite_ferrers_harmonic_mass_bookkeeping": true,
+    "finite_ferrers_prefix_fourier_reconstruction": true,
+    "finite_gcd_orthogonal_compression": true,
+    "finite_gcd_projector_identity": true,
+    "finite_multiplicative_permutation_kernel": true,
+    "finite_nonprincipal_sharp_cauchy_example": true,
+    "finite_product_phase_gram_qI_minus_J": true,
+    "finite_source_equality_compression": true,
+    "finite_triangular_gram_inverse_and_eigen_polynomial": true,
+    "proves_coefficient_specific_Mobius_gate": false,
+    "proves_integer_to_modular_alias_control": false,
+    "proves_physical_complete_separable_completion": false,
+    "proves_twin_primes": false,
+    "proves_weighted_physical_character_overlap": false,
+    "uses_floating_point": false,
+    "uses_random_inputs": false
+  },
+  "normalized_source_sha256": "ed669550fbf29aecdc31062f98fc6446367871505f46d6a4bf0e20d7625a7151",
+  "paper": "TPC-36",
+  "results": {
+    "coherent_s_trace_and_sharpness": {
+      "checks": 3644,
+      "sharp_cases": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          17,
+          2
+        ]
+      ],
+      "trace_cases": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          4
+        ],
+        [
+          3,
+          1,
+          9
+        ],
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          4
+        ],
+        [
+          3,
+          2,
+          9
+        ],
+        [
+          5,
+          1,
+          1
+        ],
+        [
+          5,
+          1,
+          4
+        ],
+        [
+          5,
+          1,
+          9
+        ],
+        [
+          5,
+          2,
+          1
+        ],
+        [
+          5,
+          2,
+          4
+        ],
+        [
+          5,
+          2,
+          9
+        ],
+        [
+          7,
+          1,
+          1
+        ],
+        [
+          7,
+          1,
+          4
+        ],
+        [
+          7,
+          1,
+          9
+        ],
+        [
+          7,
+          2,
+          1
+        ],
+        [
+          7,
+          2,
+          4
+        ],
+        [
+          7,
+          2,
+          9
+        ],
+        [
+          11,
+          1,
+          1
+        ],
+        [
+          11,
+          1,
+          4
+        ],
+        [
+          11,
+          1,
+          9
+        ],
+        [
+          11,
+          2,
+          1
+        ],
+        [
+          11,
+          2,
+          4
+        ],
+        [
+          11,
+          2,
+          9
+        ],
+        [
+          13,
+          1,
+          1
+        ],
+        [
+          13,
+          1,
+          4
+        ],
+        [
+          13,
+          1,
+          9
+        ],
+        [
+          13,
+          2,
+          1
+        ],
+        [
+          13,
+          2,
+          4
+        ],
+        [
+          13,
+          2,
+          9
+        ],
+        [
+          17,
+          1,
+          1
+        ],
+        [
+          17,
+          1,
+          4
+        ],
+        [
+          17,
+          1,
+          9
+        ],
+        [
+          17,
+          2,
+          1
+        ],
+        [
+          17,
+          2,
+          4
+        ],
+        [
+          17,
+          2,
+          9
+        ]
+      ]
+    },
+    "ferrers_prefix_fourier": {
+      "band_cases": [
+        [
+          [
+            5,
+            7,
+            11
+          ],
+          140,
+          10
+        ],
+        [
+          [
+            7,
+            13,
+            17
+          ],
+          247,
+          19
+        ],
+        [
+          [
+            11,
+            19,
+            23
+          ],
+          391,
+          25
+        ]
+      ],
+      "cases": [
+        {
+          "harmonic_envelope": "4/3",
+          "modulus": 3,
+          "size": 1
+        },
+        {
+          "harmonic_envelope": "19/10",
+          "modulus": 5,
+          "size": 2
+        },
+        {
+          "harmonic_envelope": "95/42",
+          "modulus": 7,
+          "size": 3
+        },
+        {
+          "harmonic_envelope": "1807/660",
+          "modulus": 11,
+          "size": 5
+        },
+        {
+          "harmonic_envelope": "15177/4760",
+          "modulus": 17,
+          "size": 8
+        },
+        {
+          "harmonic_envelope": "3958499/1081080",
+          "modulus": 27,
+          "size": 13
+        },
+        {
+          "harmonic_envelope": "919532807/222446224",
+          "modulus": 43,
+          "size": 21
+        }
+      ],
+      "checks": 1671
+    },
+    "gcd_projector_and_orthogonal_compression": {
+      "cases": [
+        {
+          "cutoff": 1,
+          "feature_count": 15,
+          "packet_size": 12,
+          "projective_envelope": 16,
+          "walsh_order": 16
+        },
+        {
+          "cutoff": 2,
+          "feature_count": 22,
+          "packet_size": 16,
+          "projective_envelope": 32,
+          "walsh_order": 32
+        },
+        {
+          "cutoff": 3,
+          "feature_count": 30,
+          "packet_size": 20,
+          "projective_envelope": 32,
+          "walsh_order": 32
+        },
+        {
+          "cutoff": 5,
+          "feature_count": 36,
+          "packet_size": 23,
+          "projective_envelope": 48,
+          "walsh_order": 64
+        }
+      ],
+      "checks": 120116
+    },
+    "multiplicative_permutation_kernel": {
+      "cases": [
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          17,
+          3
+        ]
+      ],
+      "checks": 7286
+    },
+    "product_phase_gram": {
+      "cases": [
+        {
+          "nonzero_frequency_count": 2,
+          "prime": 3,
+          "symbolic_gram": "q I_(q-1) - J_(q-1)"
+        },
+        {
+          "nonzero_frequency_count": 4,
+          "prime": 5,
+          "symbolic_gram": "q I_(q-1) - J_(q-1)"
+        },
+        {
+          "nonzero_frequency_count": 6,
+          "prime": 7,
+          "symbolic_gram": "q I_(q-1) - J_(q-1)"
+        },
+        {
+          "nonzero_frequency_count": 10,
+          "prime": 11,
+          "symbolic_gram": "q I_(q-1) - J_(q-1)"
+        },
+        {
+          "nonzero_frequency_count": 12,
+          "prime": 13,
+          "symbolic_gram": "q I_(q-1) - J_(q-1)"
+        }
+      ],
+      "checks": 3350
+    },
+    "source_constraints": {
+      "checks": 4
+    },
+    "source_equality_compression": {
+      "cases": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          16,
+          16
+        ]
+      ],
+      "checks": 970
+    },
+    "triangular_gram_eigen_polynomial": {
+      "cases": [
+        {
+          "characteristic_coefficients": [
+            -1,
+            1
+          ],
+          "size": 1
+        },
+        {
+          "characteristic_coefficients": [
+            1,
+            -3,
+            1
+          ],
+          "size": 2
+        },
+        {
+          "characteristic_coefficients": [
+            -1,
+            6,
+            -5,
+            1
+          ],
+          "size": 3
+        },
+        {
+          "characteristic_coefficients": [
+            1,
+            -10,
+            15,
+            -7,
+            1
+          ],
+          "size": 4
+        },
+        {
+          "characteristic_coefficients": [
+            -1,
+            15,
+            -35,
+            28,
+            -9,
+            1
+          ],
+          "size": 5
+        },
+        {
+          "characteristic_coefficients": [
+            1,
+            -21,
+            70,
+            -84,
+            45,
+            -11,
+            1
+          ],
+          "size": 6
+        },
+        {
+          "characteristic_coefficients": [
+            -1,
+            28,
+            -126,
+            210,
+            -165,
+            66,
+            -13,
+            1
+          ],
+          "size": 7
+        }
+      ],
+      "checks": 42
+    }
+  }
+}

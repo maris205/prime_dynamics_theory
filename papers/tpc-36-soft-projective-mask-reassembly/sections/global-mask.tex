@@ -1,0 +1,234 @@
+\section{Global soft reassembly of the actual static mask}
+\label{sec:tpc36-global-mask}
+
+We now handle the three factors of
+\eqref{eq:tpc36-actual-static-mask}.  Every identity in this section is
+pointwise on the finite physical row set.
+
+\subsection{Same-source deletion}
+
+Let \(\cL\) be the finite set of prime sources in the packet.  Inject it
+into \(\Z/M_L\Z\).  Orthogonality gives
+\begin{equation}
+ \one_{\ell=\ell'}
+ =\frac1{M_L}\sum_{t\bmod M_L}
+ e_{M_L}(t\iota(\ell))e_{M_L}(-t\iota(\ell')).
+ \label{eq:tpc36-source-equality}
+\end{equation}
+Hence
+\begin{equation}
+ \pinf(\one_{\ell=\ell'})=1,
+ \qquad
+ \pinf(\one_{\ell\ne\ell'})\le2.
+ \label{eq:tpc36-source-cost}
+\end{equation}
+The equality in the first formula follows also from the entrywise lower
+bound.  There is no factor equal to the number of prime sources.
+
+\subsection{Near-row deletion}
+
+Order the \(N\) physical rows so that
+\begin{equation}
+ m_1<m_2<\cdots<m_N,
+ \label{eq:tpc36-row-order}
+\end{equation}
+which is possible by the inherited row-label injectivity.  Write
+\(r(\alpha)\) for the rank of \(m_\alpha\).  For a fixed right row
+\(\gamma\), define
+\begin{align}
+ k_-(\gamma)
+ &:=\#\{\alpha:m_\alpha<m_\gamma-\Delta\},
+ \label{eq:tpc36-lower-rank}\\
+ k_+(\gamma)
+ &:=\#\{\alpha:m_\alpha\le m_\gamma+\Delta\}.
+ \label{eq:tpc36-upper-rank}
+\end{align}
+Then, including all endpoint conventions exactly,
+\begin{equation}
+ \boxed{
+ \one_{|m_\alpha-m_\gamma|>\Delta}
+ =1+H_N(k_-(\gamma),r(\alpha))
+    -H_N(k_+(\gamma),r(\alpha)).}
+ \label{eq:tpc36-near-row-prefix}
+\end{equation}
+
+\begin{proposition}[Near-row Fourier reassembly]
+\label{prop:tpc36-near-row-projective}
+For every \(\Delta\ge0\),
+\begin{equation}
+ \pinf\!\left(\one_{|m_\alpha-m_\gamma|>\Delta}\right)
+ \ll1+\log(2N)\ll\log(2Q).
+ \label{eq:tpc36-near-row-projective}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:tpc36-prefix-Fourier} into the two prefix kernels in
+\eqref{eq:tpc36-near-row-prefix}, then apply the triangle inequality.
+The physical row count is \(N\ll QX^{o(1)}\), so
+\(\log(2N)\ll\log(2Q)\).
+\end{proof}
+
+The proof uses only the order of the row labels.  It does not require the
+near band to have constant width or the labels to fill an integer interval.
+
+\subsection{Orthogonal compression of the row-gcd projector}
+
+TPC-33 proves the exact identity
+\begin{equation}
+ \one_{(d,e)\le G}
+ =\sum_{\substack{v\mid d\\v\mid e}}\lambda_G(v),
+ \qquad
+ \lambda_G(v)=\sum_{\substack{g\mid v\\g\le G}}\mu(v/g).
+ \label{eq:tpc36-gcd-projector}
+\end{equation}
+We upgrade its fixed-column absolute complexity to a global signed
+projective representation.
+
+Let \(\cI_G\) be the finite set of \(v\) dividing at least one physical
+squarefree row coordinate, and inject \(\cI_G\) into
+\(\Z/M_G\Z\).  Put
+\begin{align}
+ P_t(d)
+ &:=\sum_{v\mid d}
+ \operatorname{sgn}(\lambda_G(v))
+ \sqrt{|\lambda_G(v)|}\,e_{M_G}(t\iota(v)),
+ \label{eq:tpc36-gcd-P}\\
+ Q_t(e)
+ &:=\sum_{v\mid e}
+ \sqrt{|\lambda_G(v)|}\,e_{M_G}(-t\iota(v)),
+ \label{eq:tpc36-gcd-Q}
+\end{align}
+with \(\operatorname{sgn}(0)=0\).
+
+\begin{theorem}[Global orthogonal gcd compression]
+\label{thm:tpc36-global-gcd}
+For physical squarefree \(d,e\),
+\begin{equation}
+ \boxed{
+ \one_{(d,e)\le G}
+ =\frac1{M_G}\sum_{t\bmod M_G}P_t(d)Q_t(e).}
+ \label{eq:tpc36-global-gcd-factorization}
+\end{equation}
+If
+\(\omega_*=\max\{\omega(d):d\text{ occurs in the packet}\}\), then
+\begin{equation}
+ \boxed{
+ \pinf\!\left(\one_{(d,e)\le G}\right)
+ \le(3+2\sqrt2)^{\omega_*}=X^{o(1)}.}
+ \label{eq:tpc36-global-gcd-cost}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:tpc36-gcd-P}--\eqref{eq:tpc36-gcd-Q}, average over
+\(t\), and apply \eqref{eq:tpc36-finite-orthogonality}.  Only equal
+divisors survive, giving \(\sum_{v\mid d,e}\lambda_G(v)\), which is
+\eqref{eq:tpc36-gcd-projector}.
+
+For squarefree \(v\),
+\begin{equation}
+ |\lambda_G(v)|
+ \le\sum_{g\mid v}|\mu(v/g)|
+ =2^{\omega(v)}.
+ \label{eq:tpc36-lambda-bound}
+\end{equation}
+Therefore, uniformly in \(t\),
+\begin{align}
+ |P_t(d)|
+ &\le\sum_{v\mid d}2^{\omega(v)/2}
+ =(1+\sqrt2)^{\omega(d)},
+ \label{eq:tpc36-P-bound}\\
+ |Q_t(e)|
+ &\le(1+\sqrt2)^{\omega(e)}.
+ \label{eq:tpc36-Q-bound}
+\end{align}
+The normalized counting measure in
+\eqref{eq:tpc36-global-gcd-factorization} has total mass one.  Multiplying
+the two suprema gives
+\((1+\sqrt2)^{2\omega_*}=(3+2\sqrt2)^{\omega_*}\).
+Finally, \(C^{\omega(n)}\ll_{C,\eps}n^\eps\) for each fixed \(C>1\),
+and \(d,e\ll X^{O(1)}\).
+\end{proof}
+
+\begin{remark}[Why absolute divisor expansion looked expensive]
+The raw set \(\cI_G\) can have polynomial size.  Summing one rank-one
+term per \(v\) in absolute value ignores orthogonality between divisor
+coordinates.  The average in
+\eqref{eq:tpc36-global-gcd-factorization} has the same number of formal
+phases but normalized mass one; only the divisor suprema remain.
+\end{remark}
+
+\subsection{The complete static-mask theorem}
+
+\begin{theorem}[Soft projective reassembly of the actual mask]
+\label{thm:tpc36-global-static-mask}
+On every inherited physical packet,
+\begin{equation}
+ \boxed{
+ \pinf(\mathfrak m_{\rm act})
+ \ll\log(2Q)(3+2\sqrt2)^{\omega_*}
+ =X^{o(1)}.}
+ \label{eq:tpc36-global-static-mask-bound}
+\end{equation}
+The estimate is uniform in the fixed pruning parameter and its threshold
+\(G=X^{\kappa_0}\).
+\end{theorem}
+
+\begin{proof}
+The mask \eqref{eq:tpc36-actual-static-mask} is the Schur product of the
+three kernels treated in \eqref{eq:tpc36-source-cost},
+\eqref{eq:tpc36-near-row-projective}, and
+\eqref{eq:tpc36-global-gcd-cost}.  Apply
+\eqref{eq:tpc36-schur-submultiplicativity}.
+\end{proof}
+
+\begin{corollary}[The retained-multiplier interface]
+\label{cor:tpc36-full-multiplier-reassembly}
+After multiplication by the actual fixed-period and smooth factors in
+\eqref{eq:tpc36-actual-joint-multiplier}, the joint multiplier has the
+residue-cell representation
+\begin{equation}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ =\sum_{r\bmod H_0}\one_{j\equiv r\!\!\!\pmod{H_0}}
+ \int_{\Omega_r}p_{\omega,r}(\alpha)q_{\omega,r}(\gamma)
+ \phi_{\omega,r}(j/J)\,d\nu_r(\omega)
+ \label{eq:tpc36-full-multiplier-reassembly}
+\end{equation}
+such that, for every fixed \(B\ge0\),
+\begin{equation}
+ \sum_{r\bmod H_0}\int_{\Omega_r}
+ \|p_{\omega,r}\|_\infty\|q_{\omega,r}\|_\infty
+ \|\phi_{\omega,r}\|_{C^B}\,d|\nu_r|(\omega)
+ \ll_B X^{o(1)}.
+ \label{eq:tpc36-orbit-seminorm-cost}
+\end{equation}
+Thus, after the fixed \(O_h(1)\) residue-cell split, the conditional
+projective product representation of TPC-32 is unconditional for the
+actual multiplier on this packet.
+\end{corollary}
+
+\begin{proof}
+TPC-25 supplies the finite residue-cell split and, on each cell, an
+absolutely convergent Mellin separation for the smooth row--orbit factors,
+with every fixed orbit seminorm integrable \citep{WangTPC25}.  The
+periodic \(j\)-factor is constant on a cell and is not differentiated as a
+function of \(j/J\).  Take the product with the representation in
+\cref{thm:tpc36-global-static-mask}; the static factors do not change the
+orbit seminorms.  Summing the fixed number of cells proves the claim.
+\end{proof}
+
+\begin{corollary}[A trace-norm consequence]
+\label{cor:tpc36-static-trace-norm}
+If the physical row set has cardinality \(N\), then
+\begin{equation}
+ \|\mathfrak m_{\rm act}\|_*
+ \le N\pinf(\mathfrak m_{\rm act})
+ \ll QX^{o(1)}.
+ \label{eq:tpc36-static-trace-bound}
+\end{equation}
+\end{corollary}
+
+This is an upper bound for the static mask matrix.  It is not an upper
+bound of size \(Q^2/J\) for either orbit-Gram off-diagonal matrix, whose
+entries contain an additional sum over time and arithmetic coefficients.
