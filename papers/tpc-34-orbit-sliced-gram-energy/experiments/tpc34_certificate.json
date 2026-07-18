@@ -1,0 +1,100 @@
+{
+  "arithmetic": "integer, Fraction, and Gaussian rational only",
+  "certificate_digest": "da2a05161550265582a881a0b7017a3b0be540c62df3cab187c58dbeaab9d9be",
+  "certificate_version": 1,
+  "check_total": 213976,
+  "claims": {
+    "breaks_sieve_parity": false,
+    "finite_coherent_majorant_model": true,
+    "finite_divisor_incidence_reindexing": true,
+    "finite_exact_row_gram_split": true,
+    "finite_exact_ttstar_identity": true,
+    "finite_high_beta_fraction_ledger": true,
+    "finite_large_lag_overcount": true,
+    "finite_lcm_support_count": true,
+    "finite_orbit_sliced_cauchy": true,
+    "finite_same_row_target_gcd": true,
+    "finite_shared_ultra_congruence": true,
+    "finite_target_collision_fiber_identity": true,
+    "proves_Hardy_Littlewood_asymptotic": false,
+    "proves_Q3_column_energy_gate": false,
+    "proves_affine_Mobius_or_Chowla_cancellation": false,
+    "proves_asymptotic_divisor_bound": false,
+    "proves_complete_residual_closure": false,
+    "proves_offdiagonal_orbit_operator_bound": false,
+    "proves_orbit_sliced_V_gate": false,
+    "proves_physical_shared_ultra_asymptotic": false,
+    "proves_positivity": false,
+    "proves_prefix_Xepsilon_envelope": false,
+    "proves_twin_primes": false,
+    "proves_zero_frequency_flatness": false,
+    "uses_floating_point": false,
+    "uses_random_inputs": false
+  },
+  "normalized_source_sha256": "92db9e309593faa815b1806cc4a656bfc02b4ffab5eb1eb4f61c7b973a24168f",
+  "paper": "TPC-34",
+  "results": {
+    "coherent_majorant": {
+      "cases": 228,
+      "checks": 35340
+    },
+    "divisor_incidence_gram": {
+      "checks": 3368,
+      "opened_indices": 64,
+      "orbit_points": 3,
+      "rows": 4
+    },
+    "high_beta_ledger": {
+      "beta": "267/400",
+      "checks": 14,
+      "eta": "133/400",
+      "exponent_numerators_over_2000": {
+        "Q2J": 3335,
+        "Q2J2": 4000,
+        "Q3": 4005,
+        "Q3J": 4670,
+        "Q3J2": 5335,
+        "Q3J2_over_T": 4563,
+        "Q3_over_J": 3340
+      },
+      "theta": "193/500"
+    },
+    "orbit_sliced_cauchy": {
+      "cases": 40,
+      "checks": 80
+    },
+    "same_row_gcd_and_lag": {
+      "checks": 172434,
+      "gcd_cases": 12384,
+      "lag_cases": 621
+    },
+    "shared_ultra": {
+      "cases": 4,
+      "checks": 2379
+    },
+    "target_collision": {
+      "cases": 9,
+      "checks": 255
+    },
+    "ttstar_identities": {
+      "cases": [
+        [
+          3,
+          2,
+          3
+        ],
+        [
+          4,
+          3,
+          2
+        ],
+        [
+          5,
+          4,
+          4
+        ]
+      ],
+      "checks": 106
+    }
+  }
+}

@@ -1,0 +1,343 @@
+\section{Unconditional Gram blocks and two-time orbit content}
+\label{sec:tpc34-unconditional-blocks}
+
+The full energy can be large even when each individual column entry has
+the expected pointwise size.  We now identify the parts that are already
+small for purely structural reasons.  Throughout this section a
+\emph{mass} means the sum of absolute values of the specified terms in
+the opened Gram expansion; it is therefore an upper bound for the
+magnitude of that restricted contribution.
+
+\subsection{Closure of the Gram-copy diagonal}
+
+Expanding \(E_L=\|K^L\gamma^{(1)}\|_2^2\) before opening divisors gives
+\begin{align}
+ E_L
+ &=E_{L,\Delta}+E_{L,\ne},
+ \label{eq:tpc34-Gram-copy-split}\\
+ E_{L,\Delta}
+ &:=
+ \sum_{\gamma,\alpha}|\gamma_\alpha^{(1)}|^2
+ |K^L_{\gamma,\alpha}|^2,
+ \label{eq:tpc34-left-Gram-copy-diagonal}\\
+ E_{L,\ne}
+ &:=
+ \sum_\gamma\sum_{\alpha_1\ne\alpha_2}
+ \gamma_{\alpha_1}^{(1)}
+ \overline{\gamma_{\alpha_2}^{(1)}}
+ K^L_{\gamma,\alpha_1}
+ \overline{K^L_{\gamma,\alpha_2}}.
+ \label{eq:tpc34-left-Gram-copy-offdiagonal}
+\end{align}
+The off-diagonal term is real but need not be nonnegative.  Define
+\(E_{R,\Delta},E_{R,\ne}\) symmetrically.
+
+\begin{theorem}[Unconditional Gram-copy diagonal closure]
+\label{thm:tpc34-row-diagonal}
+On the physical packet,
+\begin{equation}
+ \boxed{
+ E_{L,\Delta}+E_{R,\Delta}
+ \ll_{\eps,\mathscr D}X^\eps Q^2J^2.}
+ \label{eq:tpc34-row-diagonal-bound}
+\end{equation}
+If \(Q=X^{\beta+o(1)}\), \(J=X^{1-\beta+o(1)}\), this is within the
+\(Q^3\) budget whenever \(\beta\ge2/3\).  At
+\(\beta=267/400\),
+\begin{equation}
+ E_{L,\Delta}+E_{R,\Delta}
+ \ll X^{o(1)}Q^3X^{-1/400}.
+ \label{eq:tpc34-row-diagonal-margin}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The orbit and prefix envelopes give
+\[
+ |K^L_{\gamma,\alpha}|\ll X^\eps J.
+\]
+There are \(O(Q)\) opposite rows.  Hence
+\[
+ E_{L,\Delta}
+ \ll X^\eps QJ^2
+ \sum_\alpha|\gamma_\alpha^{(1)}|^2
+ \ll X^\eps Q^2J^2.
+\]
+The right polarization is identical.  Finally,
+\[
+ \frac{Q^2J^2}{Q^3}=\frac{J^2}{Q}
+ =X^{2-3\beta+o(1)}.
+\]
+This is \(O(X^{o(1)})\) for \(\beta\ge2/3\) and equals
+\(X^{-1/400+o(1)}\) at \(\beta=267/400\).
+\end{proof}
+
+\begin{remark}
+This theorem concerns \(\alpha_1=\alpha_2\) in the duplicated Gram
+variables.  It does not restore the deleted physical pair
+\(\alpha=\gamma\); see \cref{rem:tpc34-two-diagonals}.
+\end{remark}
+
+\subsection{Exact target collisions}
+
+For a row-time pair define its opened absolute divisor mass
+\begin{equation}
+ \mathfrak d(\alpha,j)
+ :=
+ \left(
+ \sum_{\substack{T<u\le U_0\\u\mid N_\alpha(j)}}|a_R(u)|
+ \right)
+ \left(\sum_{v\mid d_\alpha}|\lambda_G(v)|\right).
+ \label{eq:tpc34-opened-divisor-mass}
+\end{equation}
+The divisor bound and \eqref{eq:tpc34-gcd-projector-mass} imply
+\begin{equation}
+ \mathfrak d(\alpha,j)\ll_\eps X^\eps.
+ \label{eq:tpc34-opened-divisor-envelope}
+\end{equation}
+
+Let \(\cM_{L,\mathrm{tar}}\) be the absolute mass in
+\eqref{eq:tpc34-exact-left-Gram} restricted by
+\begin{equation}
+ m_{\alpha_1}j_1=m_{\alpha_2}j_2.
+ \label{eq:tpc34-target-collision-condition}
+\end{equation}
+This condition is equivalent to
+\(N_{\alpha_1}(j_1)=N_{\alpha_2}(j_2)\).
+
+\begin{proposition}[Target-collision saving]
+\label{prop:tpc34-target-collision}
+One has
+\begin{equation}
+ \boxed{
+ \cM_{L,\mathrm{tar}}+\cM_{R,\mathrm{tar}}
+ \ll_{\eps,\mathscr D}X^\eps Q^2J.}
+ \label{eq:tpc34-target-collision-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Put
+\[
+ r(p)=\#\{(\alpha,j):m_\alpha j=p\}.
+\]
+The row integer \(m_\alpha\) determines \(\alpha\), and every
+representation supplies a divisor \(m_\alpha\mid p\).  Here \(p\ne0\)
+on the physical support because \(m_\alpha\asymp Q\) and
+\(j\asymp_{\mathscr D}J>0\).  Hence
+\[
+ r(p)\le\tau(|p|)\ll_\eps X^\eps.
+\]
+If
+\[
+ S(p)=\sum_{m_\alpha j=p}|\gamma_\alpha^{(1)}|,
+\]
+then Cauchy--Schwarz gives
+\[
+ \sum_pS(p)^2
+ \le \max_p r(p)
+ \sum_p\sum_{m_\alpha j=p}|\gamma_\alpha^{(1)}|^2
+ \ll X^\eps J\sum_\alpha|\gamma_\alpha^{(1)}|^2
+ \ll X^\eps QJ.
+\]
+The divisor masses in \eqref{eq:tpc34-opened-divisor-envelope} are soft,
+and the crude Gram-kernel bound is \(O(X^\eps Q)\).  Their product with
+the last display proves the left estimate.  Exchange the row roles for
+the right estimate.
+\end{proof}
+
+At the endpoint, \(Q^2J=Q^3X^{-134/400+o(1)}\).  Thus this collision is
+not merely sparse relative to the absolute baseline; it is already well
+inside the required energy budget.
+
+\subsection{Shared ultra divisors}
+
+Let \(\cM_{L,u=}\) denote the absolute mass in the opened left Gram
+expansion with \(u_1=u_2\).  The common value is automatically \(>T\).
+
+\begin{proposition}[Shared-ultra incidence]
+\label{prop:tpc34-shared-ultra}
+For an orbit interval of length \(O_{\mathscr D}(J)\),
+\begin{align}
+ \cM_{L,u=}+\cM_{R,u=}
+ &\ll_{\eps,\mathscr D}
+ X^\eps Q^2J
+ \min\left\{
+ Q\left(1+\frac JT\right),
+ J\left(1+\frac QT\right)
+ \right\}.
+ \label{eq:tpc34-shared-ultra-bound}
+\end{align}
+In particular, on the high-\(\beta\) packet,
+\begin{equation}
+ \boxed{
+ \cM_{L,u=}+\cM_{R,u=}
+ \ll X^{o(1)}\frac{Q^3J^2}{T}.}
+ \label{eq:tpc34-shared-ultra-high-beta}
+\end{equation}
+If one also imposes \(\alpha_1=\alpha_2\) and the orbit-support diameter
+is \(<T\), then
+\begin{equation}
+ \cM_{L,u=,\Delta}+\cM_{R,u=,\Delta}
+ \ll X^\eps Q^2J.
+ \label{eq:tpc34-shared-ultra-same-row}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For the left polarization put
+\[
+ A_u=|a_R(u)|
+ \sum_{\substack{\alpha,j\\u\mid N_\alpha(j)}}
+ |\gamma_\alpha^{(1)}|.
+\]
+The projector-divisor masses are soft by
+\eqref{eq:tpc34-gcd-projector-mass}.  By
+\eqref{eq:tpc34-primitivity}, both \((u,m_\alpha)=1\) and \((u,j)=1\).
+For fixed \(\alpha,u\), the congruence
+\[
+ m_\alpha j\equiv-h\pmod u
+\]
+selects one residue class modulo \(u\).  This gives
+\[
+ A_u\ll X^\eps Q(1+J/T).
+\]
+For fixed \(j,u\), the same congruence selects one row integer
+\(m_\alpha\) modulo \(u\).  The row integers are distinct in an interval
+of length \(O(Q)\), and the individual coefficients in
+\eqref{eq:tpc34-row-coefficients} are \(O(X^\eps)\).  Therefore
+\[
+ A_u\ll X^\eps J(1+Q/T).
+\]
+Finally, each target has \(X^\eps\) divisors, so
+\[
+ \sum_uA_u\ll X^\eps QJ.
+\]
+It follows that
+\[
+ \sum_uA_u^2
+ \le(\max_uA_u)\sum_uA_u
+ \ll X^\eps QJ
+ \min\left\{
+ Q(1+J/T),J(1+Q/T)
+ \right\}.
+\]
+Multiplication by the \(O(X^\eps Q)\) opposite-row kernel proves
+\eqref{eq:tpc34-shared-ultra-bound}.
+
+At the endpoint, \(T\gg J\) and \(Q\gg T\), so the second member of the
+minimum is \(X^{o(1)}JQ/T\); this gives
+\eqref{eq:tpc34-shared-ultra-high-beta}.
+
+For the same-input-row refinement, the two divisibilities imply
+\[
+ u\mid m_\alpha(j_1-j_2).
+\]
+Since \((u,m_\alpha)=1\), \(u\mid j_1-j_2\).  When the orbit diameter is
+\(<T<u\), this forces \(j_1=j_2\).  Summing
+\(|\gamma_\alpha^{(1)}|^2\) over \(\alpha\), the \(O(J)\) possible times,
+the soft divisor multiplicity, and \(O(Q)\) opposite rows gives
+\eqref{eq:tpc34-shared-ultra-same-row}.  The right side is symmetric.
+\end{proof}
+
+\begin{remark}[A saving, not closure]
+\label{rem:tpc34-shared-u-not-closure}
+The estimate \eqref{eq:tpc34-shared-ultra-high-beta} saves the full factor
+\(T=X^{193/500+o(1)}\) over
+\eqref{eq:tpc34-absolute-baseline}.  It nevertheless exceeds the
+\(Q^3\) gate by
+\[
+ \frac{J^2}{T}=X^{279/1000+o(1)}.
+\]
+Shared-divisor incidence is quantitatively useful here but does not close
+the layer.
+\end{remark}
+
+\subsection{The transposed target-content identity}
+
+TPC-30 studies two rows at one orbit time and uses common target content
+to constrain the row difference \citep{WangTPC30}.  The Gram expansion
+naturally asks for the transpose: one row at two times.
+
+\begin{lemma}[Two-time target content]
+\label{lem:tpc34-two-time-content}
+Let \((m,h)=1\).  For all integers \(j,j'\),
+\begin{equation}
+ \boxed{
+ (mj+h,mj'+h)=(mj+h,j'-j).}
+ \label{eq:tpc34-two-time-gcd}
+\end{equation}
+In particular, if \(j\ne j'\), the common target content is at most
+\(|j'-j|\).
+\end{lemma}
+
+\begin{proof}
+The Euclidean algorithm gives
+\[
+ (mj+h,mj'+h)=(mj+h,m(j'-j)).
+\]
+Since \((mj+h,m)=(h,m)=1\), the factor \(m\) may be removed from the
+second argument.
+\end{proof}
+
+This is an exact modular-return statement.  Under the same hypothesis
+\((m,h)=1\), for \(c\ge1\), a simultaneous hit at two times is equivalent
+to
+\begin{equation}
+ c\mid N_m(j),\ c\mid N_m(j')
+ \quad\Longleftrightarrow\quad
+ (c,m)=1,\quad c\mid j'-j,\quad
+ j\equiv-hm^{-1}\pmod c,
+ \label{eq:tpc34-modular-return}
+\end{equation}
+where the inverse is defined by the displayed coprimality condition.
+
+\begin{proposition}[Large lag-content count]
+\label{prop:tpc34-large-lag-content}
+Let \(\cI\) be an interval of \(J_0\) consecutive integers and
+\((m,h)=1\).  For \(1\le Z<J_0\),
+\begin{align}
+ &\#\{(j,j')\in\cI^2:j\ne j',
+ (mj+h,mj'+h)>Z\}
+ \notag\\
+ &\hspace{3em}\ll
+ \frac{J_0^2}{Z}+J_0\log(2J_0).
+ \label{eq:tpc34-large-lag-count}
+\end{align}
+Consequently the absolute left or right off-Gram mass restricted by
+large content on the common opposite row is
+\begin{equation}
+ \ll_{\eps,\mathscr D}
+ X^\eps Q^3\left(\frac{J^2}{Z}+J\right).
+ \label{eq:tpc34-physical-lag-content-mass}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For \(0<|r|<J_0\), every pair with \(j'-j=r\) and gcd \(>Z\) contributes
+to
+\[
+ \sum_{\substack{c\mid r\\c>Z\\(c,m)=1}}
+ \one_{j\equiv-hm^{-1}\,(\mathrm{mod}\ c)}.
+\]
+For fixed \(r,c\), the number of possible \(j\)'s is at most
+\(J_0/c+1\).  Summing first over multiples of \(c\) gives
+\[
+ \ll
+ J_0^2\sum_{c>Z}\frac1{c^2}
+ +J_0\sum_{Z<c<J_0}\frac1c
+ \ll \frac{J_0^2}{Z}+J_0\log(2J_0).
+\]
+For \eqref{eq:tpc34-physical-lag-content-mass}, sum this count over
+\(O(Q)\) common opposite rows and use
+\((\sum_\alpha|\gamma_\alpha^{(i)}|)^2\ll Q^2\), together with all
+pointwise envelopes.
+\end{proof}
+
+The \(j=j'\) temporal diagonal has content \(N_m(j)\asymp X\) and
+absolute scale \(Q^3J\).  For \(j\ne j'\), choosing
+\(Z=J^{1-\eta}\) in \eqref{eq:tpc34-physical-lag-content-mass} saves
+almost one orbit factor over the \(Q^3J^2\) baseline, but the remaining
+\(J^{1+\eta}\) scale still does not cross the \(Q^3\) gate.  The result is
+therefore a rigorous pruning theorem, not a substitute for signed
+off-diagonal cancellation.

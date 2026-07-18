@@ -1,0 +1,209 @@
+\section{The inherited physical interface}
+\label{sec:tpc34-physical-interface}
+
+We use the notation and proved bounds of TPC-32 and TPC-33
+\citep{WangTPC32,WangTPC33}.  They are restated here so that every new
+estimate can be checked without changing the physical packet.
+
+\subsection{Rows, orbit, and cutoff factors}
+
+Fix \(h\in\Z\setminus\{0\}\), put \(H=\rad|h|\), and work on one opened
+dyadic packet with
+\begin{equation}
+ Q=LD,\qquad QJ\asymp_{\mathscr D}X,\qquad
+ R\le T<U_0\asymp_{\mathscr D}X.
+ \label{eq:tpc34-scales}
+\end{equation}
+The number \(U_0\) is chosen above every target.  A row is
+\begin{equation}
+ \alpha=(\ell_\alpha,d_\alpha),\qquad
+ m_\alpha=\ell_\alpha d_\alpha\asymp_{\mathscr D}Q,
+ \label{eq:tpc34-row}
+\end{equation}
+where \(\ell_\alpha\asymp L\) is prime,
+\(d_\alpha\asymp D\) is squarefree, \((d_\alpha,H)=1\), and \(m_\alpha\)
+determines its row label.  In particular,
+\begin{equation}
+ \#\{\alpha\}\ll_{\mathscr D}Q.
+ \label{eq:tpc34-row-count}
+\end{equation}
+The two coefficient systems have the form
+\begin{equation}
+ \gamma_\alpha^{(i)}
+ =\mu(d_\alpha)(\log\ell_\alpha)
+  \omega_D^{(i)}(d_\alpha)
+  \psi_L^{(i)}(\ell_\alpha/L)\zeta_\alpha^{(i)},
+ \qquad i=1,2,
+ \label{eq:tpc34-row-coefficients}
+\end{equation}
+and satisfy
+\begin{align}
+ \sum_\alpha|\gamma_\alpha^{(i)}|
+ &\ll_{\mathscr D}Q,
+ \label{eq:tpc34-row-l1}\\
+ \sum_\alpha|\gamma_\alpha^{(i)}|^2
+ &\ll_{\mathscr D}Q\log(2L).
+ \label{eq:tpc34-row-l2}
+\end{align}
+
+For \(j\) in a fixed interval containing the joint support, of length
+\(O_{\mathscr D}(J)\), define
+\begin{equation}
+ N_\alpha(j)=m_\alpha j+h.
+ \label{eq:tpc34-target}
+\end{equation}
+Every effective term has \((m_\alpha j,H)=1\), every target is
+\(\asymp_{\mathscr D}X\), and each divisor \(w\mid N_\alpha(j)\) on the
+physical support satisfies
+\begin{equation}
+ (w,m_\alpha jH)=1.
+ \label{eq:tpc34-primitivity}
+\end{equation}
+Since \(H=\rad|h|\), the first condition implies
+\((m_\alpha,h)=1\); the displayed divisor condition also implies
+\((w,m_\alpha)=1\).
+For sufficiently large \(X\), the target condition together with
+\(m_\alpha\asymp_{\mathscr D}Q\) implies
+\(j\asymp_{\mathscr D}J>0\).
+
+Here \(\kappa_0>0\) is a fixed pruning parameter.  The actual row-pair
+mask and multiplier are
+\begin{align}
+ \mathfrak m_{\rm act}(\alpha,\gamma)
+ &:=
+ \one_{\ell_\alpha\ne\ell_\gamma}
+ \one_{|m_\alpha-m_\gamma|>QX^{-\kappa_0}}
+ \one_{(d_\alpha,d_\gamma)\le G},
+ \qquad G=X^{\kappa_0},
+ \label{eq:tpc34-actual-mask}\\
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ &:=
+ \mathfrak m_{\rm act}(\alpha,\gamma)
+ \Xi_{\alpha,\gamma}(j)
+ \cW_{\alpha,\gamma}(j/J).
+ \label{eq:tpc34-actual-multiplier}
+\end{align}
+The fixed-period and smooth factors are uniformly bounded.  It will be
+convenient to remove only the row-gcd indicator and write
+\begin{equation}
+ \mathfrak B_{\alpha,\gamma}(j)
+ :=
+ \one_{\ell_\alpha\ne\ell_\gamma}
+ \one_{|m_\alpha-m_\gamma|>QX^{-\kappa_0}}
+ \Xi_{\alpha,\gamma}(j)\cW_{\alpha,\gamma}(j/J).
+ \label{eq:tpc34-mask-without-gcd}
+\end{equation}
+
+\subsection{Ultra increment and matched polarization}
+
+Let
+\begin{equation}
+ a_R(u)=-\mu(u)\log u
+ \label{eq:tpc34-ultra-coefficient}
+\end{equation}
+and define
+\begin{align}
+ C_m(j)
+ &:=\sum_{\substack{T<u\le U_0\\u\mid mj+h}}a_R(u),
+ \label{eq:tpc34-ultra-increment}\\
+ \mathsf H_m(j)
+ &:=\frac{\mathsf A_{m,U_0}(j)+\mathsf A_{m,T}(j)}2.
+ \label{eq:tpc34-half-prefix}
+\end{align}
+The earlier divisor-prefix analysis proves, uniformly on the packet,
+\begin{equation}
+ |C_m(j)|+|\mathsf H_m(j)|
+ \ll_{\eps,\mathscr D}X^\eps.
+ \label{eq:tpc34-prefix-envelope}
+\end{equation}
+As usual, every divisor-count and logarithmic loss below is absorbed by
+applying such an estimate with a smaller soft exponent.
+
+The left and right kernel matrices are
+\begin{align}
+ K^L_{\gamma,\alpha}
+ &:=
+ \sum_j\mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ C_{m_\alpha}(j)\mathsf H_{m_\gamma}(j),
+ \label{eq:tpc34-left-matrix}\\
+ K^R_{\alpha,\gamma}
+ &:=
+ \sum_j\mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ \mathsf H_{m_\alpha}(j)C_{m_\gamma}(j).
+ \label{eq:tpc34-right-matrix}
+\end{align}
+Thus
+\begin{align}
+ B_\gamma^L
+ &=\sum_\alpha\gamma_\alpha^{(1)}K^L_{\gamma,\alpha},
+ &E_L&=\sum_\gamma|B_\gamma^L|^2,
+ \label{eq:tpc34-left-energy}\\
+ B_\alpha^R
+ &=\sum_\gamma\gamma_\gamma^{(2)}K^R_{\alpha,\gamma},
+ &E_R&=\sum_\alpha|B_\alpha^R|^2.
+ \label{eq:tpc34-right-energy}
+\end{align}
+The opposite outer coefficient is not included in \(E_L\) or \(E_R\).
+TPC-33 proves the exact transfer
+\begin{equation}
+ |\cS_{\rm sh}^{\rm all}|
+ \ll_{\mathscr D}\sqrt{Q\log(2L)}
+ \left(\sqrt{E_L}+\sqrt{E_R}\right).
+ \label{eq:tpc34-inherited-energy-transfer}
+\end{equation}
+Consequently \eqref{eq:tpc34-inherited-Q3-gate} implies
+\begin{equation}
+ |\cS_{\rm sh}^{\rm all}|
+ \ll_{\eps,h,\mathscr D}X^\eps Q^2.
+ \label{eq:tpc34-inherited-Q2-output}
+\end{equation}
+This paper improves the structural analysis of \(E_L,E_R\); it does not
+assume \eqref{eq:tpc34-inherited-Q3-gate}.
+
+\subsection{The row-gcd projector}
+
+TPC-33 proves the exact identity
+\begin{equation}
+ \one_{(d,e)\le G}
+ =\sum_{\substack{v\mid d\\v\mid e}}\lambda_G(v),
+ \qquad
+ \lambda_G(v)=\sum_{\substack{g\mid v\\g\le G}}\mu(v/g).
+ \label{eq:tpc34-gcd-projector}
+\end{equation}
+For every squarefree \(d\),
+\begin{equation}
+ \sum_{v\mid d}|\lambda_G(v)|
+ \le3^{\omega(d)}
+ \ll_\eps d^\eps.
+ \label{eq:tpc34-gcd-projector-mass}
+\end{equation}
+This estimate is columnwise.  We do not infer a small operator norm for
+the full mask from it.
+
+\subsection{The high-\texorpdfstring{\(\beta\)}{beta} packet}
+
+The endpoint specialization used in the ledger is
+\begin{equation}
+ Q=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ T=X^{193/500+o(1)}.
+ \label{eq:tpc34-high-beta-scales}
+\end{equation}
+In particular,
+\begin{equation}
+ \frac TJ=X^{107/2000+o(1)}\longrightarrow\infty.
+ \label{eq:tpc34-T-over-J}
+\end{equation}
+Whenever the shared-ultra argument is stated away from this packet, its
+explicit hypothesis is that the orbit-support diameter is \(<T\).
+For the terminal-divisor splitting in
+\cref{sec:tpc34-terminal-barrier}, we also use the endpoint fact that,
+for sufficiently large \(X\),
+\begin{equation}
+ T<\min_{\alpha,j}N_\alpha(j)
+ \le\max_{\alpha,j}N_\alpha(j)<U_0.
+ \label{eq:tpc34-terminal-range-condition}
+\end{equation}
+The first inequality follows from \(T=X^{193/500+o(1)}=o(X)\) and
+\(N_\alpha(j)\asymp_{\mathscr D}X\); the second is the chosen upper
+cutoff.

@@ -1,0 +1,182 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,float}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Orbit-Sliced Gram Energy at the Q3 Gate: Gram-Copy Diagonal Closure, Collision Savings, and the Terminal Mobius Boundary},
+ pdfauthor={Liang Wang},
+ pdfsubject={An exact TT-star decomposition and an orbit-sliced energy reduction for the distinguished zero-frequency shell in a primitive Mobius residual},
+ pdfkeywords={Mobius correlation, TT-star, Gram matrix, orbit energy, divisor incidence, zero frequency, parity boundary}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Conditional input}
+\crefname{assumption}{conditional input}{conditional inputs}
+\Crefname{assumption}{Conditional input}{Conditional inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\op}{\operatorname{op}}
+
+\title{\textbf{Orbit--Sliced Gram Energy at the \(Q^3\) Gate:}\\
+\textbf{Gram--Copy Diagonal Closure, Collision Savings,}\\
+\textbf{and the Terminal M\"obius Boundary}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We continue the distinguished zero--frequency analysis of a matched
+prime--M\"obius cutoff shell.  The preceding paper reduces the remaining
+physical amplitude to two column energies \(E_L,E_R\) and shows that
+
+\[
+ E_L+E_R\ll X^{o(1)}Q^3
+ \quad\Longrightarrow\quad
+ |\mathcal S_{\rm sh}^{\rm all}|\ll X^{o(1)}Q^2.
+\]
+
+Here we perform the corresponding physical \(TT^*\) expansion.  Opening
+the ultra divisor and the actual row-gcd projector gives an exact Gram
+kernel.  If \(v_1,v_2\) are the two projector divisors, then
+
+\[
+ |\cG_L(\xi_1,\xi_2)|
+ \ll X^{o(1)}\left(L+\frac{Q}{[v_1,v_2]}\right),
+\]
+
+with a symmetric right-hand statement.  This incidence gain degenerates
+on the principal layer \(v_1=v_2=1\), so it is not itself the required
+energy estimate.
+
+We then isolate several unconditional pieces.  The whole Gram-copy
+(same-input-row) diagonal satisfies
+
+\[
+ E_{L,\Delta}+E_{R,\Delta}\ll X^{o(1)}Q^2J^2.
+\]
+
+At \(Q=X^{267/400+o(1)}\) and \(J=X^{133/400+o(1)}\), this is
+\(Q^3X^{-1/400+o(1)}\): the complete Gram-copy diagonal crosses the \(Q^3\)
+gate with a genuine power margin.  The absolute target-collision mass
+with \(m_1j_1=m_2j_2\) is smaller, \(O(X^{o(1)}Q^2J)\).  The absolute
+shared-ultra mass with \(u_1=u_2>T\gg J\) is
+\(O(X^{o(1)}Q^3J^2/T)\), saving the full factor \(T\) from the
+absolute baseline but still missing the gate by \(J^2/T\).  On a fixed
+row it forces the two orbit times to be equal.  More generally,
+
+\[
+ (mj+h,mj'+h)=(mj+h,j-j'),
+\]
+
+which is the two-time counterpart of the earlier two-row target-content
+identity.
+
+The main reduction is an orbit-sliced energy.  Put
+
+\[
+ Y^L_{\gamma,j}
+ =\sum_\alpha\gamma_\alpha^{(1)}
+   \mathfrak A_{\alpha,\gamma}^{\rm act}(j)C_{m_\alpha}(j),
+ \qquad
+ V_L=\sum_{\gamma,j}|Y^L_{\gamma,j}|^2,
+\]
+
+and define \(V_R\) symmetrically.  Exact Cauchy--Schwarz gives
+
+\[
+ E_L+E_R\ll X^{o(1)}J(V_L+V_R).
+\]
+
+Consequently \(V_L+V_R\ll X^{o(1)}Q^3/J\) is sufficient for the former
+\(Q^3\) gate.  Its orbit-sliced Gram-copy diagonal is only
+\(O(X^{o(1)}Q^2J)\), smaller than
+the allowance by \(X^{1/400+o(1)}\).  Thus the unresolved object is a
+near-diagonal-scale, same-time averaged row correlation rather than the
+original two-time column energy.
+
+Finally, on the high--\(\beta\) endpoint packet, the divisor range in
+each ultra increment contains the terminal value \(u=mj+h\); its
+coefficient is zero when \(\mu(mj+h)=0\).  On this layer the row and
+target signs fuse as
+\(\mu(d)\mu(\ell dj+h)\), and \(TT^*\) produces an averaged four-M\"obius
+row correlation.  An exact coherent zero-pair-diagonal model attains
+\(E\asymp Q^3J^2\), proving that cardinality, equal-pair deletion, and
+absolute envelopes alone cannot yield the desired \(Q^3\) bound.
+This is a method obstruction, not a lower bound for the physical energy.
+No affine Chowla estimate, prime-pair asymptotic, positivity theorem,
+twin-prime theorem, or breach of sieve parity is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius correlation; \(TT^*\) dispersion;
+Gram energy; orbit slicing; divisor collision; zero frequency; parity
+boundary.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N37; Secondary 11B25,
+11L07, 15A18.
+
+\input{sections/introduction}
+\input{sections/physical-interface}
+\input{sections/exact-gram}
+\input{sections/unconditional-blocks}
+\input{sections/orbit-sliced-reduction}
+\input{sections/terminal-barrier}
+\input{sections/high-beta-roadmap}
+\input{sections/certificate-scope}
+
+\clearpage
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

@@ -1,0 +1,182 @@
+\section{Introduction}
+\label{sec:tpc34-introduction}
+
+The zero-frequency coefficient left by the matched cutoff construction is
+no longer an unspecified parity remainder.  TPC-32 identifies the exact
+distinguished coefficient and the \(1/400\) endpoint ledger
+\citep{WangTPC32}; TPC-33 returns to the physical row mask, opens a
+primitive affine column, proves a fixed-determinant finite-field second
+moment, and reduces the scalar shell to the energy condition
+\begin{equation}
+ E_L+E_R\ll_{\eps,h,\mathscr D}X^\eps Q^3.
+ \label{eq:tpc34-inherited-Q3-gate}
+\end{equation}
+The implication from \eqref{eq:tpc34-inherited-Q3-gate} to the required
+\(Q^2\) scalar amplitude is proved in TPC-33 and is recalled in
+\cref{sec:tpc34-physical-interface}.  The estimate itself is not inherited
+\citep{WangTPC33}.
+
+The purpose of this paper is to determine what a literal \(TT^*\)
+analysis does and does not prove at that gate.  This is useful for two
+reasons.  First, the column energy hides two independent duplications: a
+row duplication and an orbit-time duplication.  Treating both as one
+generic off-diagonal discards a small but decisive endpoint margin.
+Second, opening the actual row-gcd projector creates genuine divisor
+incidence, but the principal divisor \(v=1\) survives with no gain.  The
+remaining obstruction can therefore be stated as a concrete averaged
+M\"obius row energy rather than as a vague request for more
+pseudorandomness.
+
+The algebraic \(TT^*\) principle and the large sieve are classical
+\citep{Bombieri1965,IwaniecKowalski2004}.  The contribution here is not a
+new abstract Hilbert-space inequality.  It is the exact placement of that
+inequality inside the physical matched shell, including the true mask,
+the ultra-divisor variable, the endpoint exponents, and the sign-sensitive
+terminal layer.
+
+\subsection{Main results}
+
+Let
+\[
+ K^L_{\gamma,\alpha}
+ =\sum_j\mathfrak A^{\rm act}_{\alpha,\gamma}(j)
+ C_{m_\alpha}(j)\mathsf H_{m_\gamma}(j),
+ \qquad
+ E_L=\|K^L\gamma^{(1)}\|_2^2,
+\]
+with \(K^R,E_R\) defined by exchanging the two rows and the two cutoff
+legs.  Opening both the ultra increment \(C\) and the row-gcd projector
+gives an exact synthesis matrix \(T_L=(\Phi_\gamma(\xi))\), where
+\(\xi=(\alpha,j,u,v)\), and
+\begin{equation}
+ E_L
+ =\sum_{\xi_1,\xi_2}
+ \overline{z_L(\xi_1)}z_L(\xi_2)
+ \cG_L(\xi_1,\xi_2),
+ \qquad \cG_L=T_L^*T_L.
+ \label{eq:tpc34-intro-Gram}
+\end{equation}
+The physical opposite-row count gives
+\begin{equation}
+ |\cG_L(\xi_1,\xi_2)|
+ \ll X^\eps\left(L+\frac{Q}{[v_1,v_2]}\right).
+ \label{eq:tpc34-intro-kernel-bound}
+\end{equation}
+This is strongest when the two gcd-projector divisors have a large least
+common multiple and is trivial on \(v_1=v_2=1\).
+
+The first positive theorem closes the entire Gram-copy
+(same-input-row) diagonal:
+\begin{equation}
+ E_{L,\Delta}+E_{R,\Delta}
+ \ll X^\eps Q^2J^2.
+ \label{eq:tpc34-intro-row-diagonal}
+\end{equation}
+When \(Q=X^\beta\), \(J=X^{1-\beta}\), this crosses the \(Q^3\) gate as
+soon as \(\beta>2/3\).  At the physical endpoint
+\(\beta=267/400\), its ratio to \(Q^3\) is exactly
+\begin{equation}
+ \frac{Q^2J^2}{Q^3}=\frac{J^2}{Q}
+ =X^{-1/400+o(1)}.
+ \label{eq:tpc34-intro-margin}
+\end{equation}
+The margin is small, but it is a real power and no conjectural input is
+used.
+
+Two further collision estimates locate the remaining mass.  The absolute
+Gram mass with equal targets,
+\(m_{\alpha_1}j_1=m_{\alpha_2}j_2\), is
+\begin{equation}
+ \ll X^\eps Q^2J.
+ \label{eq:tpc34-intro-target-collision}
+\end{equation}
+The absolute mass with the same ultra divisor \(u_1=u_2>T\gg J\) is
+\begin{equation}
+ \ll X^\eps\frac{Q^3J^2}{T}.
+ \label{eq:tpc34-intro-ultra-collision}
+\end{equation}
+Thus shared-divisor incidence saves the factor \(T\) from the absolute
+baseline but still misses the \(Q^3\) gate by \(J^2/T\).  On the same
+row, however, a shared ultra divisor forces the orbit times to coincide,
+because
+\begin{equation}
+ (mj+h,mj'+h)=(mj+h,j-j').
+ \label{eq:tpc34-intro-transposed-gcd}
+\end{equation}
+
+The cleanest next interface is obtained before duplicating orbit time.
+Define \(V_L,V_R\) by freezing \(j\) inside the row sum.  Then
+\begin{equation}
+ E_L+E_R\ll X^\eps J(V_L+V_R).
+ \label{eq:tpc34-intro-orbit-transfer}
+\end{equation}
+Hence
+\begin{equation}
+ V_L+V_R\ll X^\eps Q^3/J
+ \label{eq:tpc34-intro-V-gate}
+\end{equation}
+is sufficient for \eqref{eq:tpc34-inherited-Q3-gate}.  The Gram-copy diagonal of
+this new energy is \(O(X^\eps Q^2J)\), and
+\begin{equation}
+ \frac{Q^3/J}{Q^2J}=\frac{Q}{J^2}
+ =X^{1/400+o(1)}.
+ \label{eq:tpc34-intro-V-allowance}
+\end{equation}
+The permissible total is therefore only a small power above the natural
+diagonal scale.  Proving the stronger diagonal-scale estimate
+\(V_L+V_R\ll X^\eps Q^2J\) would return
+\[
+ E_L+E_R
+ \ll X^\eps Q^2J^2
+ \ll_{\mathscr D}X^{2+\eps}
+ =X^{\eps+o(1)}Q^3X^{-1/400}.
+\]
+
+\subsection{The terminal sign boundary}
+
+On the high--\(\beta\) endpoint packet,
+\eqref{eq:tpc34-terminal-range-condition} gives
+\(T<N_m(j)<U_0\).  Thus the divisor range in \(C_m(j)\) contains the
+terminal value \(u=N_m(j)=mj+h\).  Its coefficient is
+\begin{equation}
+ a_R(N_m(j))=-\mu(N_m(j))\log N_m(j),
+ \label{eq:tpc34-intro-terminal}
+\end{equation}
+and vanishes when \(\mu(N_m(j))=0\).  Together with the row sign \(\mu(d)\), this produces
+\(\mu(d)\mu(\ell dj+h)\).  The same-time energy consequently contains an
+average of four M\"obius factors after expansion.  Existing fixed-form or
+logarithmically averaged Chowla results do not directly provide the
+growing-coefficient, dyadic, physically masked estimate
+\eqref{eq:tpc34-intro-V-gate}; see the precise boundary already recorded
+in TPC-33 and the primary sources cited there
+\citep{Tao2016LogChowla,MatomakiRadziwillTao2015,WangTPC33}.
+
+An abstract sign-blind model satisfying the same cardinality and
+pointwise envelopes has \(E\asymp Q^3J^2\).  It follows that cardinality,
+equal-pair deletion, and pointwise envelopes alone cannot establish
+\eqref{eq:tpc34-inherited-Q3-gate} uniformly over that abstract class.
+This statement is deliberately methodological.  It is not a physical
+lower bound, and it leaves open a proof using the fused M\"obius signs or
+cancellation between terminal and proper-divisor layers, as well as a
+proof using additional arithmetic incidence.  The appearance of this
+sign-sensitive boundary is consistent with the classical parity problem
+in sieve theory \citep{HeathBrown1982Parity}.
+
+\subsection{Organization and claim boundary}
+
+\Cref{sec:tpc34-physical-interface} imports the physical definitions.
+\Cref{sec:tpc34-exact-gram} proves the exact Gram expansion and its
+divisor-incidence kernel bound.  \Cref{sec:tpc34-unconditional-blocks}
+closes the Gram-copy diagonal and target collision, proves the shared-ultra and
+two-time content estimates, and distinguishes savings from closure.
+\Cref{sec:tpc34-orbit-sliced} proves the orbit-sliced transfer.
+\Cref{sec:tpc34-terminal-barrier} isolates the terminal M\"obius layer and
+the sign-blind obstruction.  \Cref{sec:tpc34-high-beta} gives the exact
+endpoint ledger and the next theorem menu.  The accompanying certificate
+checks only finite algebra and rational bookkeeping.
+
+No estimate of the off-diagonal energy in
+\eqref{eq:tpc34-intro-V-gate} is proved.  In particular, this paper does
+not prove an unweighted affine Chowla theorem, the zero-frequency
+flatness statement of TPC-32, a Hardy--Littlewood prime-pair asymptotic,
+positivity, infinitely many twin primes, or a breach of sieve parity.

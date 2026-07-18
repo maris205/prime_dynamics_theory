@@ -1,0 +1,160 @@
+\section{The exact physical Gram expansion}
+\label{sec:tpc34-exact-gram}
+
+We first open the two structures that are invisible in the compact matrix
+\(K^L\): the ultra divisor \(u\) and the row-gcd projector divisor \(v\).
+All sums are finite, so the rearrangements below are identities.
+
+\subsection{A synthesis matrix for the left polarization}
+
+Let \(\mathfrak X_L\) be the set of quadruples
+\begin{equation}
+ \xi=(\alpha,j,u,v)
+ \label{eq:tpc34-xi}
+\end{equation}
+on the physical support such that
+\begin{equation}
+ T<u\le U_0,\qquad u\mid N_\alpha(j),\qquad v\mid d_\alpha.
+ \label{eq:tpc34-xi-conditions}
+\end{equation}
+Define
+\begin{align}
+ z_L(\xi)
+ &:=
+ \gamma_\alpha^{(1)}a_R(u)\lambda_G(v),
+ \label{eq:tpc34-z-left}\\
+ \Phi_\gamma^L(\xi)
+ &:=
+ \one_{v\mid d_\gamma}
+ \mathfrak B_{\alpha,\gamma}(j)
+ \mathsf H_{m_\gamma}(j).
+ \label{eq:tpc34-Phi-left}
+\end{align}
+The conditions in \eqref{eq:tpc34-xi-conditions} are part of the index
+set and therefore are not repeated as indicators in \(z_L\).
+
+\begin{theorem}[Exact opened \(TT^*\) identity]
+\label{thm:tpc34-exact-Gram}
+Let \(T_L:\C^{\mathfrak X_L}\to\C^{\{\gamma\}}\) be the synthesis matrix
+\begin{equation}
+ (T_Lz)(\gamma)=\sum_{\xi\in\mathfrak X_L}
+ \Phi_\gamma^L(\xi)z(\xi).
+ \label{eq:tpc34-synthesis-map}
+\end{equation}
+Then
+\begin{align}
+ B_\gamma^L
+ &=\sum_{\xi\in\mathfrak X_L}
+ \Phi_\gamma^L(\xi)z_L(\xi),
+ \label{eq:tpc34-opened-left-column}\\
+ E_L
+ &=\|T_Lz_L\|_2^2
+ \notag\\
+ &=\sum_{\xi_1,\xi_2\in\mathfrak X_L}
+ \overline{z_L(\xi_1)}z_L(\xi_2)
+ \cG_L(\xi_1,\xi_2),
+ \label{eq:tpc34-exact-left-Gram}\\
+ \cG_L(\xi_1,\xi_2)
+ &:=
+ \sum_\gamma
+ \overline{\Phi_\gamma^L(\xi_1)}
+ \Phi_\gamma^L(\xi_2)
+ =(T_L^*T_L)(\xi_1,\xi_2).
+ \label{eq:tpc34-left-Gram-kernel}
+\end{align}
+In particular \(\cG_L\) is positive semidefinite.  There is an identical
+right-polarized identity after exchanging \(\alpha\) and \(\gamma\).
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:tpc34-ultra-increment} and
+\eqref{eq:tpc34-gcd-projector} into
+\eqref{eq:tpc34-left-energy}.  The part of the physical multiplier not
+belonging to the row-gcd indicator is exactly
+\(\mathfrak B_{\alpha,\gamma}(j)\).  This gives
+\eqref{eq:tpc34-opened-left-column}.  Squaring, summing over \(\gamma\),
+and interchanging finite sums gives
+\eqref{eq:tpc34-exact-left-Gram}.  The last identity is the definition of
+the adjoint product.
+\end{proof}
+
+\begin{remark}[Which diagonal is meant]
+\label{rem:tpc34-two-diagonals}
+The actual mask vanishes on the physical pair diagonal \(\alpha=\gamma\).
+The new Gram expansion contains two independent copies
+\(\alpha_1,\alpha_2\) of the \emph{input} row.  Its diagonal
+\(\alpha_1=\alpha_2\) is not deleted by the mask; each copy may still be
+different from the common opposite row \(\gamma\).  We call this the
+Gram-copy or same-input-row diagonal.
+\end{remark}
+
+\subsection{Divisor incidence in the Gram kernel}
+
+\begin{proposition}[Least-common-multiple incidence]
+\label{prop:tpc34-Gram-incidence}
+Write \(\xi_i=(\alpha_i,j_i,u_i,v_i)\).  Uniformly on the physical packet,
+\begin{equation}
+ \boxed{
+ |\cG_L(\xi_1,\xi_2)|
+ \ll_{\eps,\mathscr D}
+ X^\eps\left(L+\frac{Q}{[v_1,v_2]}\right).}
+ \label{eq:tpc34-Gram-incidence}
+\end{equation}
+The same estimate holds for the right Gram kernel.
+\end{proposition}
+
+\begin{proof}
+A nonzero summand in \eqref{eq:tpc34-left-Gram-kernel} requires
+\[
+ v_1\mid d_\gamma,\qquad v_2\mid d_\gamma,
+\]
+and hence \([v_1,v_2]\mid d_\gamma\).  For each permitted prime
+\(\ell_\gamma\asymp L\), the number of integers
+\(d_\gamma\asymp D\) divisible by \([v_1,v_2]\) is at most
+\[
+ O_{\mathscr D}\!\left(1+\frac{D}{[v_1,v_2]}\right).
+\]
+There are \(O(L)\) possible prime labels, and the remaining factors in
+\(\Phi_\gamma^L\) have an \(X^\eps\) pointwise envelope by
+\eqref{eq:tpc34-prefix-envelope}.  Since \(LD=Q\), this proves
+\eqref{eq:tpc34-Gram-incidence}.  The proof for the other polarization is
+the same.
+\end{proof}
+
+\begin{remark}[The principal projector layer]
+\label{rem:tpc34-principal-v}
+When \(v_1=v_2=1\), the right-hand side of
+\eqref{eq:tpc34-Gram-incidence} is \(O(X^\eps Q)\), the full opposite-row
+count.  Thus the projector supplies a real gain on large-lcm layers but
+does not suppress its principal layer.  The columnwise coefficient-mass
+bound \eqref{eq:tpc34-gcd-projector-mass} cannot change this conclusion.
+\end{remark}
+
+\subsection{The absolute baseline}
+
+\begin{proposition}[Sign-blind baseline]
+\label{prop:tpc34-absolute-baseline}
+Without using cancellation between input rows or orbit points,
+\begin{equation}
+ \boxed{
+ E_L+E_R\ll_{\eps,\mathscr D}X^\eps Q^3J^2.}
+ \label{eq:tpc34-absolute-baseline}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+By \eqref{eq:tpc34-prefix-envelope},
+\eqref{eq:tpc34-row-l1}, and the \(O(J)\) orbit support,
+\[
+ |B_\gamma^L|
+ \ll X^\eps J\sum_\alpha|\gamma_\alpha^{(1)}|
+ \ll X^\eps QJ.
+\]
+Summing its square over \(O(Q)\) opposite rows proves the left estimate.
+The right estimate is symmetric.
+\end{proof}
+
+The factor \(J^2\) in \eqref{eq:tpc34-absolute-baseline} comes from
+coherent duplication of the two orbit times.  The next section proves
+that several geometrically defined subfamilies are much smaller, but also
+shows where the unsigned incidence estimates proved here stop.

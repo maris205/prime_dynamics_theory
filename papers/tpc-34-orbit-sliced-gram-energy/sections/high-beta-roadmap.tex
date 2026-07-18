@@ -1,0 +1,164 @@
+\section{The high-\texorpdfstring{\(\beta\)}{beta} ledger and the next gate}
+\label{sec:tpc34-high-beta}
+
+The preceding estimates have different meanings: some cross the \(Q^3\)
+threshold, some merely save a full structural factor, and some are
+conditional reductions.  We collect them with a common exponent
+denominator before choosing the next route.
+
+\subsection{Exact endpoint comparison}
+
+At
+\[
+ Q=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ T=X^{193/500+o(1)},
+\]
+the exponent ledger is as follows.
+
+\begin{table}[H]
+\centering
+\caption{Physical energy and orbit-sliced scales at the endpoint.}
+\label{tab:tpc34-high-beta-ledger}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.34\textwidth}
+>{\raggedright\arraybackslash}p{0.25\textwidth}
+>{\raggedleft\arraybackslash}p{0.23\textwidth}@{}}
+\toprule
+Object & Bound or target & \(X\)-exponent \\
+\midrule
+Required column energy & \(Q^3\) & \(4005/2000\) \\
+Absolute two-time baseline & \(Q^3J^2\) & \(5335/2000\) \\
+Gram-copy diagonal & \(Q^2J^2\) & \(4000/2000\) \\
+Exact target collision & \(Q^2J\) & \(3335/2000\) \\
+Shared ultra divisor & \(Q^3J^2/T\) & \(4563/2000\) \\
+Absolute orbit-sliced baseline & \(Q^3J\) & \(4670/2000\) \\
+Sufficient orbit-sliced gate & \(Q^3/J\) & \(3340/2000\) \\
+Orbit-sliced diagonal & \(Q^2J\) & \(3335/2000\) \\
+Diagonal-scale orbit target & \(Q^2J\) & \(3335/2000\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The table has four immediate consequences.
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item The Gram-copy diagonal closes with margin
+ \(5/2000=1/400\).
+ \item The exact target collision lies \(670/2000=134/400\) below the
+ energy target.
+ \item Shared-ultra incidence saves the entire factor \(T\) from the
+ absolute baseline, but still misses the energy gate by
+ \(558/2000=279/1000\), which is \(J^2/T\).
+ \item The orbit-sliced diagonal lies only \(5/2000=1/400\) below the
+ allowed orbit energy.  Thus the new interface is quantitatively tight:
+ it asks for a near-diagonal-scale row theorem, not a generic
+ square-root estimate on each original column.
+\end{enumerate}
+
+\subsection{The remaining coefficient-specific form}
+
+Write
+\begin{equation}
+ V_L+V_R
+ =
+ V_{L,\Delta}+V_{R,\Delta}
+ +V_{L,\ne}+V_{R,\ne}.
+ \label{eq:tpc34-V-full-split}
+\end{equation}
+The first two terms are controlled by
+\cref{prop:tpc34-V-diagonal}.  A direct coefficient-specific sufficient
+condition is therefore
+\begin{equation}
+ |V_{L,\ne}|+|V_{R,\ne}|
+ \ll X^\eps\frac{Q^3}{J}.
+ \label{eq:tpc34-coefficient-off-V-gate}
+\end{equation}
+The off-diagonal quantities are real but may have either sign; replacing
+them by their termwise absolute values would return to the failed
+sign-blind scale.
+
+The uniform operator gate
+\eqref{eq:tpc34-orbit-operator-gate} is stronger than
+\eqref{eq:tpc34-coefficient-off-V-gate}.  Two standard sufficient
+interfaces for it are
+\begin{align}
+ \sum_{\alpha_1\ne\alpha_2}
+ |O_L^{\rm orb}(\alpha_1,\alpha_2)|^2
+ &\ll X^\eps\frac{Q^4}{J^2},
+ \label{eq:tpc34-HS-next-gate}\\
+ \max_{\alpha_1}
+ \sum_{\alpha_2\ne\alpha_1}
+ |O_L^{\rm orb}(\alpha_1,\alpha_2)|
+ &\ll X^\eps\frac{Q^2}{J},
+ \label{eq:tpc34-Schur-next-gate}
+\end{align}
+with the analogous right-hand estimates.  The first is a
+Hilbert--Schmidt second moment and the second a Schur row-sum bound.
+Neither is proved here, and neither should be confused with a consequence
+of the diagonal estimate.
+
+\subsection{A route menu}
+
+The exact reductions leave several nonexclusive ways forward.
+\begin{enumerate}[label=\textup{Route \Alph*:},leftmargin=5.8em]
+ \item \emph{Same-time projective energy.}  Apply the finite
+ fixed-determinant Plancherel geometry of TPC-33 after orbit slicing,
+ using several moduli or an integer large sieve so that the physical
+ slope set is averaged without the single-modulus no-wrap conflict.
+ The target is \eqref{eq:tpc34-HS-next-gate}, not pointwise cancellation
+ on every affine line.
+
+ \item \emph{Terminal/proper dispersion.}  Use
+ \eqref{eq:tpc34-terminal-split}.  The proper-divisor layers retain a
+ nontrivial complementary factor and may admit bilinear dispersion.
+ The terminal layer requires control of the fused-sign correlation
+ \(\mu(d)\mu(\ell dj+h)\), cancellation between this layer and the
+ proper layers, or stronger arithmetic incidence not captured by the
+ estimates proved here.
+
+ \item \emph{Lag-content plus zero-lag analysis.}  Combine
+ \cref{prop:tpc34-large-lag-content} with a dyadic decomposition in the
+ modular-return divisor.  Large lag content is sparse; the zero-lag and
+ small-content pieces must then be treated by a signed row-operator
+ estimate or by additional arithmetic incidence beyond the bounds
+ proved here.
+
+ \item \emph{Restricted averaged Chowla input.}  Prove only the
+ physically weighted family average in
+ \eqref{eq:tpc34-coefficient-off-V-gate}.  This is weaker than a uniform
+ theorem for every growing affine direction, but stronger than the
+ sign-blind incidence currently available.
+\end{enumerate}
+
+The first route is the most compatible with the average projective
+identity already proved; the second exposes most clearly where
+parity-sensitive signs enter the present interface.  A failed attempt
+along either route remains informative if it
+produces a sharp operator obstruction or a quantitative range in which
+one of the proper-divisor layers closes.
+
+\subsection{Relation to the preceding chain}
+
+TPC-28 closes selected truncated base packets before the present
+ultra-long shell \citep{WangTPC28}.  TPC-30 supplies the two-row,
+one-time target-content geometry \citep{WangTPC30}.  TPC-31 develops
+determinant cells and proposes a matched \(TT^*\) route
+\citep{WangTPC31}; it does not perform the Gram-copy closure above.
+TPC-32 supplies the matched polarization and the distinguished
+zero-frequency gate \citep{WangTPC32}.  TPC-33 defines the physical
+column energies and proves their scalar transfer
+\citep{WangTPC33}.  The new step is the exact Gram expansion of those
+energies, unconditional closure of its copy diagonal and target
+collision, the transposed two-time content theorem, and the
+orbit-sliced reduction.
+
+Modulo a divisor \(c\), the map \(j\mapsto mj+h\) is an affine traversal
+with invertible step.  A simultaneous hit of the zero class at two times
+is precisely the return condition \(c\mid j'-j\).  This is deterministic
+modular recurrence geometry.  It is not a claim of mixing, spectral
+decay, a logistic-orbit correspondence, or M\"obius disjointness.
+
+Even a future proof of \eqref{eq:tpc34-orbit-energy-gate} would close only
+the inherited matched residual packet.  Later reconstruction, main-term,
+and positivity stages would remain.  None of the results above implies a
+Hardy--Littlewood asymptotic or infinitely many twin primes.

@@ -1,0 +1,178 @@
+\section{The terminal M\"obius layer and a sign-blind obstruction}
+\label{sec:tpc34-terminal-barrier}
+
+The orbit-sliced gate is a same-time row energy, and the unsigned
+incidence estimates developed here do not by themselves control it.  On
+the high--\(\beta\) endpoint packet this becomes explicit before any
+affine reflection: the largest divisor of every target lies in the
+ultra-divisor range, with a coefficient that may vanish when the target
+is not squarefree.
+
+\subsection{Exact terminal/proper-divisor splitting}
+
+On the endpoint packet, \eqref{eq:tpc34-terminal-range-condition} gives
+\(T<N_m(j)<U_0\).  Therefore
+\begin{align}
+ C_m(j)
+ &=C_m^{\rm term}(j)+C_m^{\rm prop}(j),
+ \label{eq:tpc34-terminal-split}\\
+ C_m^{\rm term}(j)
+ &:=
+ a_R(N_m(j))
+ =-\mu(N_m(j))\log N_m(j),
+ \label{eq:tpc34-terminal-term}\\
+ C_m^{\rm prop}(j)
+ &:=
+ \sum_{\substack{T<u<N_m(j)\\u\mid N_m(j)}}a_R(u).
+ \label{eq:tpc34-proper-term}
+\end{align}
+This is an exact identity, including when \(\mu(N_m(j))=0\).
+
+Insert \eqref{eq:tpc34-terminal-split} into
+\eqref{eq:tpc34-left-orbit-slice} and write
+\begin{equation}
+ Y_{\gamma,j}^L
+ =Y_{\gamma,j}^{L,\rm term}
+ +Y_{\gamma,j}^{L,\rm prop},
+ \label{eq:tpc34-Y-terminal-split}
+\end{equation}
+with corresponding squared energies \(V_L^{\rm term}\) and
+\(V_L^{\rm prop}\); define the right versions similarly.  One always has
+\begin{equation}
+ V_L\le2(V_L^{\rm term}+V_L^{\rm prop}),
+ \label{eq:tpc34-terminal-triangle}
+\end{equation}
+and similarly on the right.  This inequality gives a sufficient
+layerwise route, but no converse lower bound: terminal and proper-divisor
+vectors may cancel before squaring.
+
+\subsection{The fused terminal sign}
+
+Let \(m=\ell d\).  The row coefficient
+\eqref{eq:tpc34-row-coefficients} contains the sign \(\mu(d)\), while
+\eqref{eq:tpc34-terminal-term} contains
+\(-\mu(\ell dj+h)\).  Target primitivity gives
+\begin{equation}
+ (d,\ell dj+h)=1.
+ \label{eq:tpc34-row-target-coprime}
+\end{equation}
+Hence, whenever the two M\"obius factors are nonzero,
+\begin{equation}
+ \mu(d)\mu(\ell dj+h)
+ =\mu\bigl(d(\ell dj+h)\bigr).
+ \label{eq:tpc34-fused-terminal-sign}
+\end{equation}
+
+On the principal projector layer \(v=1\), the terminal divisor has
+complementary factor \(s:=N_m(j)/u=1\).  Freezing \((\ell,j)\), the
+resulting row sum has the schematic but literal sign pattern
+\begin{equation}
+ \sum_{d\asymp D}
+ \mu(d)\mu(\ell jd+h)W_{\ell,j,\gamma}(d),
+ \label{eq:tpc34-terminal-affine-Chowla}
+\end{equation}
+where \(W_{\ell,j,\gamma}\) retains the actual smooth, residue, and
+opposite-row mask factors.  After restoring the \(\ell\)-sum and
+expanding its same-time square, one obtains
+\begin{equation}
+ \mu(d_1)\mu(\ell_1d_1j+h)
+ \mu(d_2)\mu(\ell_2d_2j+h).
+ \label{eq:tpc34-four-Mobius-row}
+\end{equation}
+The averaging over \(j,\ell_1,\ell_2,d_1,d_2\) and the common opposite
+row makes this weaker than a pointwise theorem for every affine
+direction.  It is nevertheless sign-sensitive: the congruence and gcd
+identities proved above do not remove
+\eqref{eq:tpc34-four-Mobius-row}.
+
+\begin{remark}[Relation to Chowla technology]
+TPC-33 observes that the unrestricted fixed-direction family contains
+\(\sum_n\mu(n)\mu(n+1)\), whereas logarithmically averaged fixed-form
+results and shift-averaged results have different hypotheses
+\citep{Tao2016LogChowla,MatomakiRadziwillTao2015,WangTPC33}.  We do not
+claim that the physically averaged operator gate
+\eqref{eq:tpc34-orbit-operator-gate} is equivalent to full two-point
+Chowla.  We claim only that its terminal layer is a genuine averaged
+affine M\"obius correlation and is not controlled by the unsigned
+incidence estimates in this paper.
+\end{remark}
+
+\subsection{A sharp abstract majorant model}
+
+The next finite example shows why closing the Gram-copy diagonal does not
+close the full Gram energy.  It also records the precise limitation of a
+sign-blind terminal majorant.
+
+\begin{proposition}[Coherent zero-pair-diagonal model]
+\label{prop:tpc34-coherent-majorant}
+Let the input and opposite row sets both have \(M\ge2\) elements, let the
+orbit have \(J_0\ge1\) times, and take
+\begin{equation}
+ \gamma_\alpha=1,\qquad
+ \mathsf H_\gamma(j)=1,\qquad
+ C_\alpha(j)=1,\qquad
+ \mathfrak A_{\alpha,\gamma}(j)=\one_{\alpha\ne\gamma}.
+ \label{eq:tpc34-coherent-model-data}
+\end{equation}
+Then
+\begin{align}
+ K_{\gamma,\alpha}
+ &=J_0\one_{\alpha\ne\gamma},
+ \label{eq:tpc34-coherent-model-K}\\
+ E
+ &=M(M-1)^2J_0^2,
+ \label{eq:tpc34-coherent-model-E}\\
+ E_\Delta
+ &=M(M-1)J_0^2,
+ \label{eq:tpc34-coherent-model-diagonal}\\
+ E_{\ne}
+ &=M(M-1)(M-2)J_0^2.
+ \label{eq:tpc34-coherent-model-offdiagonal}
+\end{align}
+The orbit-sliced energy is
+\begin{equation}
+ V=M(M-1)^2J_0,
+ \qquad E=J_0V.
+ \label{eq:tpc34-coherent-model-V}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For every opposite row \(\gamma\), exactly \(M-1\) input rows survive.
+Thus \(B_\gamma=(M-1)J_0\), which proves
+\eqref{eq:tpc34-coherent-model-E}.  There are \(M(M-1)\) nonzero matrix
+entries, each of squared modulus \(J_0^2\), proving
+\eqref{eq:tpc34-coherent-model-diagonal}; subtraction gives the
+off-diagonal formula.  At every \((\gamma,j)\), the orbit-sliced row sum
+is \(M-1\), proving \eqref{eq:tpc34-coherent-model-V}.
+\end{proof}
+
+For \(M\asymp Q\) and \(J_0\asymp J\), this model has
+\[
+ E\asymp Q^3J^2,\qquad V\asymp Q^3J.
+\]
+It respects the equal-pair deletion, the row cardinality, both row norm
+scales, the orbit length, and all pointwise envelopes.  It may also be
+viewed as retaining one abstract terminal atom per row-time pair and
+replacing its fused sign by \(+1\).  It is \emph{not} asserted to be the
+physical divisor kernel.
+
+\begin{corollary}[Envelope-only method boundary]
+\label{cor:tpc34-sign-blind-boundary}
+No estimate that uses only the listed cardinalities, pointwise envelopes,
+and equal-pair deletion can uniformly improve
+\eqref{eq:tpc34-absolute-baseline} to \(O(Q^3)\) over the corresponding
+abstract majorant class.
+\end{corollary}
+
+The corollary does not say that the physical energy is large and does not
+exclude a stronger theorem using additional arithmetic incidence.  The
+specific unsigned incidence bounds proved here save factors on selected
+collision layers but remain above the complete gate.  A physical proof
+may use the fused signs in
+\eqref{eq:tpc34-fused-terminal-sign}, cancellation between terminal and
+proper-divisor layers in \eqref{eq:tpc34-Y-terminal-split}, or another
+sign-sensitive spectral mechanism.  The listed sign-blind data alone do
+not supply the missing powers.  This is a local
+method obstruction consistent with the classical parity boundary
+\citep{HeathBrown1982Parity}; it is not a parity-breaking theorem.

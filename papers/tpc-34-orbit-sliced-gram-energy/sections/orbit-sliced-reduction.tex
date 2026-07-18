@@ -1,0 +1,229 @@
+\section{Orbit-sliced row energy}
+\label{sec:tpc34-orbit-sliced}
+
+The preceding \(TT^*\) expansion duplicates both row and time.  The
+matched polarization has an additional structure: on the left, the
+half-prefix depends on \((\gamma,j)\) but not on \(\alpha\).  We can
+therefore compress the two-time problem to a same-time row energy at the
+cost of one explicit factor \(J\).
+
+\subsection{Definition and exact transfer}
+
+Define
+\begin{align}
+ Y_{\gamma,j}^L
+ &:=
+ \sum_\alpha\gamma_\alpha^{(1)}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ C_{m_\alpha}(j),
+ \label{eq:tpc34-left-orbit-slice}\\
+ V_L
+ &:=
+ \sum_{\gamma,j}|Y_{\gamma,j}^L|^2.
+ \label{eq:tpc34-left-orbit-energy}
+\end{align}
+For the right polarization put
+\begin{align}
+ Y_{\alpha,j}^R
+ &:=
+ \sum_\gamma\gamma_\gamma^{(2)}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ C_{m_\gamma}(j),
+ \label{eq:tpc34-right-orbit-slice}\\
+ V_R
+ &:=
+ \sum_{\alpha,j}|Y_{\alpha,j}^R|^2.
+ \label{eq:tpc34-right-orbit-energy}
+\end{align}
+No separation of the joint multiplier is used in these definitions.
+
+\begin{theorem}[Orbit-sliced energy transfer]
+\label{thm:tpc34-orbit-sliced-transfer}
+On the physical packet,
+\begin{equation}
+ \boxed{
+ E_L+E_R
+ \ll_{\eps,\mathscr D}X^\eps J(V_L+V_R).}
+ \label{eq:tpc34-orbit-sliced-transfer}
+\end{equation}
+Consequently the additional estimate
+\begin{equation}
+ \boxed{
+ V_L+V_R\ll_{\eps,h,\mathscr D}X^\eps\frac{Q^3}{J}}
+ \label{eq:tpc34-orbit-energy-gate}
+\end{equation}
+implies the inherited \(Q^3\) energy gate
+\eqref{eq:tpc34-inherited-Q3-gate}, and hence the scalar shell bound
+\eqref{eq:tpc34-inherited-Q2-output}.
+\end{theorem}
+
+\begin{proof}
+The definitions give the exact factorization
+\[
+ B_\gamma^L
+ =\sum_j\mathsf H_{m_\gamma}(j)Y_{\gamma,j}^L.
+\]
+By Cauchy--Schwarz, the \(O(J)\) support, and
+\eqref{eq:tpc34-prefix-envelope},
+\[
+ |B_\gamma^L|^2
+ \ll X^\eps J\sum_j|Y_{\gamma,j}^L|^2.
+\]
+Summing over \(\gamma\) gives \(E_L\ll X^\eps JV_L\).  The right
+factorization
+\[
+ B_\alpha^R
+ =\sum_j\mathsf H_{m_\alpha}(j)Y_{\alpha,j}^R
+\]
+is identical.  This proves \eqref{eq:tpc34-orbit-sliced-transfer}; the
+conditional implications follow from
+\eqref{eq:tpc34-inherited-energy-transfer}.
+\end{proof}
+
+\begin{remark}[Where the factor \(J\) is spent]
+The Cauchy step in the proof is sharp for a time-constant coherent
+sequence.  Thus \eqref{eq:tpc34-orbit-sliced-transfer} does not itself
+create cancellation.  Its value is that it trades the original two-time
+Gram kernel for a single-time row correlation with a completely explicit
+loss.
+\end{remark}
+
+\subsection{The natural diagonal scale}
+
+Expanding \(V_L\) in the two copies of the input row, define
+\begin{align}
+ V_{L,\Delta}
+ &:=
+ \sum_{\gamma,j,\alpha}
+ |\gamma_\alpha^{(1)}|^2
+ |\mathfrak A_{\alpha,\gamma}^{\rm act}(j)|^2
+ |C_{m_\alpha}(j)|^2,
+ \label{eq:tpc34-left-V-diagonal}\\
+ V_{L,\ne}
+ &:=V_L-V_{L,\Delta},
+ \label{eq:tpc34-left-V-offdiagonal}
+\end{align}
+and similarly on the right.
+
+\begin{proposition}[Orbit-sliced diagonal]
+\label{prop:tpc34-V-diagonal}
+One has
+\begin{equation}
+ \boxed{
+ V_{L,\Delta}+V_{R,\Delta}
+ \ll_{\eps,\mathscr D}X^\eps Q^2J.}
+ \label{eq:tpc34-V-diagonal-bound}
+\end{equation}
+At the high-\(\beta\) endpoint,
+\begin{equation}
+ \frac{Q^3/J}{Q^2J}
+ =\frac{Q}{J^2}
+ =X^{1/400+o(1)}.
+ \label{eq:tpc34-V-diagonal-allowance}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For each \(\alpha\), there are \(O(QJ)\) pairs \((\gamma,j)\), while the
+multiplier and increment have an \(X^\eps\) pointwise envelope.  Hence
+\[
+ V_{L,\Delta}
+ \ll X^\eps QJ
+ \sum_\alpha|\gamma_\alpha^{(1)}|^2
+ \ll X^\eps Q^2J.
+\]
+The other polarization is symmetric.  The ratio in
+\eqref{eq:tpc34-V-diagonal-allowance} is immediate from
+\eqref{eq:tpc34-high-beta-scales}.
+\end{proof}
+
+The allowed energy \eqref{eq:tpc34-orbit-energy-gate} is therefore only
+\(X^{1/400+o(1)}\) above the natural diagonal size.  In particular, the
+stronger estimate
+\begin{equation}
+ \boxed{
+ V_L+V_R\ll X^\eps Q^2J}
+ \label{eq:tpc34-natural-V-target}
+\end{equation}
+would imply
+\begin{equation}
+ E_L+E_R
+ \ll X^\eps Q^2J^2
+ \ll_{\mathscr D} X^{2+\eps}
+ =X^{\eps+o(1)}Q^3X^{-1/400}.
+ \label{eq:tpc34-natural-V-output}
+\end{equation}
+Estimate \eqref{eq:tpc34-natural-V-target} is not proved here.
+
+\subsection{A uniform off-diagonal operator gate}
+
+For each \(j\), let \(M_j^L\) be the matrix
+\begin{equation}
+ (M_j^L)_{\gamma,\alpha}
+ =\mathfrak A_{\alpha,\gamma}^{\rm act}(j)C_{m_\alpha}(j).
+ \label{eq:tpc34-slice-matrix}
+\end{equation}
+Then
+\begin{equation}
+ V_L
+ =\left\langle
+ \left(\sum_j(M_j^L)^*M_j^L\right)\gamma^{(1)},
+ \gamma^{(1)}
+ \right\rangle.
+ \label{eq:tpc34-slice-Gram}
+\end{equation}
+Write this positive Gram matrix as
+\begin{equation}
+ G_L^{\rm orb}=D_L^{\rm orb}+O_L^{\rm orb},
+ \label{eq:tpc34-orbit-Gram-split}
+\end{equation}
+where \(D_L^{\rm orb}\) is its entrywise diagonal and
+\(O_L^{\rm orb}\) its Hermitian off-diagonal part.  Define the right
+objects symmetrically.
+
+\begin{proposition}[Operator-norm sufficient condition]
+\label{prop:tpc34-orbit-operator-gate}
+The uniform bounds
+\begin{equation}
+ \boxed{
+ \|O_L^{\rm orb}\|_{\op}
+ +\|O_R^{\rm orb}\|_{\op}
+ \ll_{\eps,h,\mathscr D}X^\eps\frac{Q^2}{J}}
+ \label{eq:tpc34-orbit-operator-gate}
+\end{equation}
+imply \eqref{eq:tpc34-orbit-energy-gate} whenever \(J^2\ll X^\eps Q\).
+\end{proposition}
+
+\begin{proof}
+The diagonal entries of \(G_L^{\rm orb}\) are
+\[
+ \sum_{\gamma,j}
+ |\mathfrak A_{\alpha,\gamma}^{\rm act}(j)|^2
+ |C_{m_\alpha}(j)|^2
+ \ll X^\eps QJ.
+\]
+Thus \(\|D_L^{\rm orb}\|_{\op}\ll X^\eps QJ\), and similarly on the
+right.  Combine \eqref{eq:tpc34-row-l2} with
+\eqref{eq:tpc34-orbit-operator-gate}:
+\[
+ V_L+V_R
+ \ll X^\eps\left(QJ+\frac{Q^2}{J}\right)Q.
+\]
+If \(J^2\ll X^\eps Q\), both terms are
+\(O(X^\eps Q^3/J)\).
+\end{proof}
+
+\begin{remark}
+The operator condition is stronger than the coefficient-specific
+estimate \eqref{eq:tpc34-orbit-energy-gate}; it is a convenient uniform
+sufficient condition, not an equivalent reformulation.  A
+Hilbert--Schmidt second moment or a Schur row-sum estimate for
+\(O_L^{\rm orb},O_R^{\rm orb}\) would each be sufficient if it reached
+the displayed scale.
+\end{remark}
+
+The dynamical meaning is modest but exact.  The two copies \(j,j'\) in
+the original Gram expansion are two times on the affine orbit.  Orbit
+slicing removes their coherent summation at a known cost and leaves the
+same-time row autocorrelation.  No mixing, spectral gap, or M\"obius
+decorrelation has been inferred.

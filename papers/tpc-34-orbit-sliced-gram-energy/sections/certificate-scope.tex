@@ -1,0 +1,128 @@
+\section{Exact certificate and claim boundary}
+\label{sec:tpc34-certificate-scope}
+
+The accompanying standard-library certificate is
+\begin{center}
+ \texttt{experiments/tpc34\_certificate.py}.
+\end{center}
+It uses integers, \texttt{Fraction}, and a hand-written
+Gaussian-rational arithmetic.  It contains no floating-point calculation,
+random input, or Python \texttt{assert} statement.  Running
+\begin{verbatim}
+python experiments/tpc34_certificate.py
+python -O experiments/tpc34_certificate.py
+\end{verbatim}
+performs the same checks and regenerates byte-identical JSON.
+
+\subsection{Finite checks}
+
+The archived run performs \(213{,}976\) exact checks.
+
+\begin{table}[H]
+\centering
+\caption{Exact finite checks in the TPC-34 certificate.}
+\label{tab:tpc34-certificate-counts}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Check family & Count \\
+\midrule
+Complex \(TT^*\), Gram split, and slice identities & \(106\) \\
+Opened gcd-projector and lcm incidence & \(3{,}368\) \\
+Weighted target-collision fibers & \(255\) \\
+Shared-ultra congruence and occupancy & \(2{,}379\) \\
+Two-time gcd, modular returns, and lag counts & \(172{,}434\) \\
+Orbit-sliced Cauchy and sharpness & \(80\) \\
+Coherent zero-pair-diagonal model & \(35{,}340\) \\
+High-\(\beta\) rational ledger & \(14\) \\
+\midrule
+Total & \(213{,}976\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Gaussian-rational tests verify the standard Gram convention
+\begin{equation}
+ \cG(\xi_1,\xi_2)
+ =\sum_\gamma
+ \overline{\Phi_\gamma(\xi_1)}\Phi_\gamma(\xi_2),
+ \qquad
+ E=\sum_{\xi_1,\xi_2}
+ \overline{z(\xi_1)}z(\xi_2)\cG(\xi_1,\xi_2).
+ \label{eq:tpc34-certificate-Gram-convention}
+\end{equation}
+This detects a conjugate or transpose error that real-valued examples
+would miss.  The opened-projector tests compare the direct masked column
+with the \((u,v)\)-expanded column and then compare their energies.  Since
+\(\log u\) is not rational, the test specializes the arbitrary real
+ultra coefficient to
+\[
+ a_{\rm test}(u)=-\mu(u)(u+1).
+\]
+This certifies the finite linear identity for one nontrivial exact
+coefficient system; the proof in the text establishes it for the actual
+logarithmic coefficients.
+
+The collision suite verifies
+\[
+ \#\{m_1j_1=m_2j_2\}=\sum_pr(p)^2,\qquad r(p)\le\tau(p),
+\]
+including the weighted Cauchy inequality used in
+\cref{prop:tpc34-target-collision}.  The shared-ultra suite checks both
+fixed-row and fixed-time residue occupancy.  The two-time suite verifies
+\eqref{eq:tpc34-two-time-gcd}, the modular-return equivalence
+\eqref{eq:tpc34-modular-return}, and an explicit harmonic upper bound for
+the divisor overcount in \cref{prop:tpc34-large-lag-content}.  The
+coherent model is checked entry by entry rather than only through its
+closed formula.
+
+\subsection{Reproducibility values}
+
+The archived outputs have:
+\begin{align}
+ \text{normalized source SHA-256}\quad
+ &\texttt{92db9e309593faa815b1806cc4a656bf}
+ \notag\\[-0.2em]
+ &\texttt{c02b4ffab5eb1eb4f61c7b973a24168f},
+ \label{eq:tpc34-source-hash}\\
+ \text{JSON SHA-256}\quad
+ &\texttt{50e7d0aefc9dd74f549831c8f70072fb}
+ \notag\\[-0.2em]
+ &\texttt{34be4788ae9d193e7acfac79753d8c34},
+ \label{eq:tpc34-json-hash}\\
+ \text{certificate digest}\quad
+ &\texttt{da2a05161550265582a881a0b7017a3b}
+ \notag\\[-0.2em]
+ &\texttt{0be540c62df3cab187c58dbeaab9d9be}.
+ \label{eq:tpc34-certificate-digest}
+\end{align}
+Line endings are normalized before the source hash is taken.  The
+certificate digest hashes the canonical JSON payload before its digest
+field is appended.
+
+\subsection{What is not certified}
+
+Finite enumeration verifies algebra, exact finite incidence, and rational
+bookkeeping.  It does not prove:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item the asymptotic divisor or prefix \(X^\eps\) envelopes;
+ \item the growing-parameter shared-ultra estimate;
+ \item the off-diagonal operator bound
+ \eqref{eq:tpc34-orbit-operator-gate};
+ \item the orbit-sliced energy gate
+ \eqref{eq:tpc34-orbit-energy-gate};
+ \item the inherited \(Q^3\) column-energy gate;
+ \item cancellation in an affine M\"obius or Chowla family;
+ \item the distinguished zero-frequency flatness inequality;
+ \item closure of every earlier residual packet;
+ \item positivity or a Hardy--Littlewood main term;
+ \item infinitely many twin primes; or
+ \item a breach of sieve parity.
+\end{enumerate}
+
+The unconditional analytic results of this paper are the exact physical
+Gram expansion, the lcm kernel bound, Gram-copy diagonal closure, target
+collision estimate, shared-ultra pruning, two-time target-content and lag
+count, orbit-sliced transfer and diagonal estimate, and the precisely
+scoped envelope-only obstruction.  The next unproved analytic input is
+\eqref{eq:tpc34-orbit-energy-gate}, or one of its sufficient operator
+forms.
