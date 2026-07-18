@@ -1,0 +1,36 @@
+{
+  "arb_precision_bits": 224,
+  "critical_u_bracket": {
+    "derivative_is_globally_positive": true,
+    "lower": "1.543689012692076361570855971801747986525203297650983935240803",
+    "lower_polynomial_ball": "[-3.08669e-60 +/- 3.14e-66]",
+    "strict_sign_change": true,
+    "upper": "1.543689012692076361570855971801747986525203297650983935240805",
+    "upper_polynomial_ball": "[2.861655e-60 +/- 6.08e-67]"
+  },
+  "critical_u_exact_definition": "unique real root in (1.5,1.6) of u^3-2u^2+2u-2",
+  "dimension": 4096,
+  "evidence_level": "224_bit_arb_exact_stored_binary64_to_exact_parameter_midpoint_bridge",
+  "limitations": [
+    "The comparison is at dimension 4096 and does not by itself prove a continuum eigenvalue count.",
+    "The continuum transfer additionally uses the analytic Galerkin hierarchy certificate."
+  ],
+  "maximum_row_index": 302,
+  "maximum_support_row_l1_difference_ball": "[7.314948552227722607278334607337330449086943268022526673e-6 +/- 6.43e-61]",
+  "maximum_support_row_l1_difference_upper": 7.314948552227723e-06,
+  "maximum_total_row_l1_difference_ball": "[7.314948554132700365840503710355746840344808507924399010e-6 +/- 5.83e-61]",
+  "maximum_total_row_l1_difference_upper": 7.314948554132701e-06,
+  "minimum_center_floor_clearance": 9.71832443497078e-06,
+  "sigma_exact": "1/100",
+  "snapshot": {
+    "path": "papers/RH-36-nested-grid-physical-count/results/nested_grid_snapshot_sigma_1e-02.npz",
+    "sha256": "a1e2a6a3a32a6f7e68ec17b294bdb41d404c0dbeca1f5cb89aefe48ab4390d81"
+  },
+  "status": "arb_exact_stored_to_exact_continuum_midpoint_bridge",
+  "stored_critical_u_binary64": 1.5436890126920764,
+  "stored_sigma_binary64": 0.01,
+  "support_geometry_verified_for_all_rows": true,
+  "support_half_width": 330,
+  "uniform_omitted_midpoint_mass_ball": "[1.9049777585621691030184163912578652399018723368633519850375175093e-15 +/- 6.40e-80]",
+  "uniform_omitted_midpoint_mass_upper": 1.9049777585621693e-15
+}

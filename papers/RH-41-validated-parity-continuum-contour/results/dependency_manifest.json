@@ -1,0 +1,57 @@
+{
+  "external_inputs": {
+    "rh27_componentwise_rounding": {
+      "path": "papers/RH-27-outward-rounded-primal-dual-residuals/src/outward_residuals/componentwise.py",
+      "sha256": "d18de48af4c56428e477e489a69cc21df76fd20d8c628aced89895bb0c8b5a8b"
+    },
+    "rh27_package_exports": {
+      "path": "papers/RH-27-outward-rounded-primal-dual-residuals/src/outward_residuals/__init__.py",
+      "sha256": "48414b8f5a05d47856b8753d05ef4a44ccfc6645d6e7f10b18dce3c57de2b23c"
+    },
+    "rh36_factor_snapshot": {
+      "path": "papers/RH-36-nested-grid-physical-count/results/nested_grid_snapshot_sigma_1e-02.npz",
+      "sha256": "a1e2a6a3a32a6f7e68ec17b294bdb41d404c0dbeca1f5cb89aefe48ab4390d81"
+    },
+    "rh38_haar_manuscript": {
+      "path": "papers/RH-38-dyadic-haar-block-decay/main.tex",
+      "sha256": "29006920dbbe8fa795d7642853406fa4875b7b1814ea6483e6d3cf6457f53dde"
+    },
+    "rh39_cutoff_certificate": {
+      "path": "papers/RH-39-uniform-gaussian-cutoff-bridge/results/uniform_gaussian_cutoff_bridge_certificate.json",
+      "sha256": "8d448588fda190a748df64a1d8fa35d050de9dcbfa3ee2a5203ae10b969ab136"
+    },
+    "rh40_leading_spectrum_pilot": {
+      "path": "papers/RH-40-weighted-riesz-projector-bridge/results/weighted_projector_pilot_sigma_1e-02.json",
+      "sha256": "1dc39c9f5292e597f8e2b98609ba7fb7f1f91b17e1a726f29693919c8c37f8b3"
+    },
+    "rh40_weighted_riesz_manuscript": {
+      "path": "papers/RH-40-weighted-riesz-projector-bridge/main.tex",
+      "sha256": "a282fd132db2b2a3e553e0202d9a5c24299a6fa806bb7cd2e508130e5e63fb16"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "076fd772f4c7735cf276640c28d666a71bc15fb12c30b6fd62b71efa20ed3a52",
+    "experiments/build_continuum_certificate.py": "a50cef4fdd3405dd699a1fc40b7536d49ad835cb27b846a220a447c7b0f1ccab",
+    "experiments/build_midpoint_bridge_certificate.py": "c994fe0e4545732b66d029bdfc536d35334fca01431a2012ddadb8b9cfa87bc1",
+    "experiments/make_figures.py": "9b4e01c9522d165577d0e4e021676dcf5c448806b0a19a3743c07b111b3e47fc",
+    "experiments/run_coarse_grushin_certificate.py": "2f964a0d8ff37df3533d0f0dd32ddb75e202edc1f5280db024bcc5dcbb59080c",
+    "experiments/verify_archive.py": "8828e32729a947844fe061d7402742d3eeaf51910942ef2f3e8d56755ce036cf",
+    "src/parity_contour/__init__.py": "d82e941869e583107151dffcaaafa7ccebeebc817231071ed7044fc9c6d6c32a",
+    "src/parity_contour/bounds.py": "4c49a65c066a7d9437c356211037c07ca530c8f04ed336f53b0a9b945bccf055",
+    "src/parity_contour/grushin.py": "af0fbb70dfce634e2f63306f9fb2c3c67f34d538de4666384a8887a20371a33f",
+    "tests/test_archived_results.py": "30d1765fe21f148ebef4e5b3e10760e0b7d7c5d12777507133ea7d831d1500ea",
+    "tests/test_bounds.py": "29c413a3876fad2ec38b5ec0ade0bfb7dcd7482e9c16f37d8ca25d67a9d94268"
+  },
+  "publication_artifacts": {
+    ".gitignore": "659fa0e1e709143253982263bb45dd529f74f96591e94873364916c59aa84484",
+    "README.md": "87a2825f86d6e3685a5ecc55103af258a67a38e07cbba98beebd1d2813445cec",
+    "figures/validated_parity_continuum_contour.pdf": "750b84a1513a0cfd15ea5867d1d7bc18729fdfbde2a84ed98a4cc36a0d6957da",
+    "figures/validated_parity_continuum_contour.png": "67f12a9146edb2185e625ef4a554d959b61767d517d599002c7c6096004a3ccf",
+    "main.tex": "2ba7ea20e262b447aee3b52f61e628586a8a25b1cc8f289cae2025989fb42c0f",
+    "pyproject.toml": "ec9b4cc14e00d70e16f216970db3016ea3d4f797cfeddae78c30e4ca202b47a0",
+    "references.bib": "536181d3fe4d49fa53d93bacef0239f35bccc83e703129302c1430a257a1fa4b",
+    "requirements.txt": "ec5853f9fb381ed75d2fcaadc5084ec947ca4b85c4b5d426fc1d327121a26e29",
+    "validated-parity-continuum-contour.pdf": "1e5e76f326350a52d11cc5a8d575555aaf5e55edcb2b892a98714255e5638677"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}

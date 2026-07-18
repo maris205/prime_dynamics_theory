@@ -1,0 +1,197 @@
+{
+  "analytic_derivative_envelope": {
+    "parameter_first": 100.00000000000001,
+    "parameter_second": 20000.000000000004,
+    "parameter_target": 20000.000000000004,
+    "sigma": 0.01,
+    "source_first": 308.80000000000024,
+    "source_second": 191023.68000000023,
+    "source_target": 61760.000000000044,
+    "target_first": 100.00000000000001,
+    "target_second": 20000.000000000004,
+    "u_upper": 1.544
+  },
+  "coarse_stored_theorem": {
+    "algebraic_multiplicity_counted": true,
+    "contour_resolvent_upper": 41.89853481734383,
+    "effective_scalar_boundary_lower": 0.04999999999967214,
+    "grushin_scalar_error_upper": 3.277264606378967e-13,
+    "inside_count": 1
+  },
+  "continuum_conclusion": {
+    "algebraic_multiplicity_counted": true,
+    "contour_resolvent_upper": 148.84153451786617,
+    "eigenvalue_is_negative": true,
+    "eigenvalue_is_real": true,
+    "eigenvalue_is_simple": true,
+    "inside_count": 1,
+    "reality_reason": "the operator and contour are conjugation invariant, so a unique enclosed eigenvalue must equal its complex conjugate"
+  },
+  "continuum_to_exact_midpoint_family": {
+    "applies_to_every_larger_dimension": true,
+    "first_dimension_with_uniform_bound": 32768,
+    "inside_count_for_every_larger_dimension": 1,
+    "neumann_transfer_at_threshold": {
+      "admissible": true,
+      "base_resolvent_upper": 148.84153451786617,
+      "neumann_product_upper": 0.9320991766021576,
+      "perturbation_upper": 0.006262359358370314,
+      "transferred_resolvent_upper": 2192.043145718256
+    },
+    "normalization": "exact continuum row normalizer sampled at cell midpoints",
+    "operator_norm_defect_upper_at_threshold": 0.006262359358370314
+  },
+  "contour": {
+    "center": -0.9865481927458079,
+    "left_endpoint": -1.0365481927458078,
+    "lies_strictly_in_negative_half_plane": true,
+    "minimum_modulus_lower": 0.9365481927458077,
+    "radius": 0.05,
+    "right_endpoint": -0.9365481927458078
+  },
+  "critical_parameter": {
+    "analytic_upper_used": 1.544,
+    "definition": "unique real root in (1.5,1.6) of u^3-2u^2+2u-2",
+    "validated_bracket": {
+      "derivative_is_globally_positive": true,
+      "lower": "1.543689012692076361570855971801747986525203297650983935240803",
+      "lower_polynomial_ball": "[-3.08669e-60 +/- 3.14e-66]",
+      "strict_sign_change": true,
+      "upper": "1.543689012692076361570855971801747986525203297650983935240805",
+      "upper_polynomial_ball": "[2.861655e-60 +/- 6.08e-67]"
+    }
+  },
+  "dependencies": {
+    "coarse_grushin_certificate": {
+      "path": "papers/RH-41-validated-parity-continuum-contour/results/coarse_grushin_contour_certificate.json",
+      "sha256": "b55dcc4c2fba2fa3b843f6c8526105c93f70dd26c4d72ef235fe633d8e8b3690"
+    },
+    "rh27_componentwise_rounding": {
+      "path": "papers/RH-27-outward-rounded-primal-dual-residuals/src/outward_residuals/componentwise.py",
+      "sha256": "d18de48af4c56428e477e489a69cc21df76fd20d8c628aced89895bb0c8b5a8b"
+    },
+    "rh36_factor_snapshot": {
+      "path": "papers/RH-36-nested-grid-physical-count/results/nested_grid_snapshot_sigma_1e-02.npz",
+      "sha256": "a1e2a6a3a32a6f7e68ec17b294bdb41d404c0dbeca1f5cb89aefe48ab4390d81"
+    },
+    "rh38_haar_manuscript": {
+      "path": "papers/RH-38-dyadic-haar-block-decay/main.tex",
+      "sha256": "29006920dbbe8fa795d7642853406fa4875b7b1814ea6483e6d3cf6457f53dde"
+    },
+    "rh39_cutoff_certificate": {
+      "path": "papers/RH-39-uniform-gaussian-cutoff-bridge/results/uniform_gaussian_cutoff_bridge_certificate.json",
+      "sha256": "8d448588fda190a748df64a1d8fa35d050de9dcbfa3ee2a5203ae10b969ab136"
+    },
+    "rh40_weighted_riesz_manuscript": {
+      "path": "papers/RH-40-weighted-riesz-projector-bridge/main.tex",
+      "sha256": "a282fd132db2b2a3e553e0202d9a5c24299a6fa806bb7cd2e508130e5e63fb16"
+    },
+    "stored_to_midpoint_certificate": {
+      "path": "papers/RH-41-validated-parity-continuum-contour/results/stored_to_midpoint_bridge_certificate.json",
+      "sha256": "adb7ba5b09fa6512b172a9ca2f33c6ca918b812cdbb1bc35ce18623269181ac5"
+    }
+  },
+  "dyadic_galerkin_steps": {
+    "4096_to_8192": {
+      "blocks": {
+        "coarse_consistency": 0.0,
+        "coarse_dimension": 4096,
+        "coarse_to_detail": 0.01884765625000002,
+        "detail_block": 0.0004601478576660161,
+        "detail_to_coarse": 0.012207031250000007
+      },
+      "inside_count_after_transfer": 1,
+      "resolvent_step": {
+        "bottom_left_upper": 0.913467017665537,
+        "bottom_right_upper": 1.0801876233248084,
+        "coarse_dimension": 4096,
+        "coarse_resolvent_upper": 44.86795976620544,
+        "count_transfers": true,
+        "detail_resolvent_upper": 1.068275580978599,
+        "fine_resolvent_upper": 47.95354819893978,
+        "minimum_boundary_modulus": 0.9365481927458077,
+        "schur_inverse_upper": 45.36826984184478,
+        "schur_neumann_product_upper": 0.011027753039369056,
+        "self_energy_upper": 0.0002457823599921109,
+        "top_right_upper": 0.591623716104622
+      }
+    },
+    "8192_to_16384": {
+      "blocks": {
+        "coarse_consistency": 0.0,
+        "coarse_dimension": 8192,
+        "coarse_to_detail": 0.00942382812500001,
+        "detail_block": 0.00011503696441650403,
+        "detail_to_coarse": 0.0061035156250000035
+      },
+      "inside_count_after_transfer": 1,
+      "resolvent_step": {
+        "bottom_left_upper": 0.48400784536642383,
+        "bottom_right_upper": 1.0710365638537425,
+        "coarse_dimension": 8192,
+        "coarse_resolvent_upper": 47.95354819893978,
+        "count_transfers": true,
+        "detail_resolvent_upper": 1.0678818811851734,
+        "fine_resolvent_upper": 49.963731139831324,
+        "minimum_boundary_modulus": 0.9365481927458077,
+        "schur_inverse_upper": 48.095210146824584,
+        "schur_neumann_product_upper": 0.002945448152785376,
+        "self_energy_upper": 6.142294498346417e-05,
+        "top_right_upper": 0.31347658378654375
+      }
+    }
+  },
+  "evidence_level": "analytic_operator_theorem_plus_outward_computer_assisted_constants",
+  "galerkin_to_continuum": {
+    "dimension": 16384,
+    "finite_rank_operator_resolvent_upper": 52.09923256462863,
+    "galerkin_matrix_resolvent_upper": 49.963731139831324,
+    "neumann_transfer": {
+      "admissible": true,
+      "base_resolvent_upper": 52.09923256462863,
+      "neumann_product_upper": 0.649968453137824,
+      "perturbation_upper": 0.012475585937500016,
+      "transferred_resolvent_upper": 148.84153451786617
+    },
+    "operator_norm_defect_upper": 0.012475585937500016,
+    "zero_complement_resolvent_addition_upper": 2.135501424797291
+  },
+  "gate_summary": {
+    "all_gates_closed": true,
+    "coarse_grushin_count_one": true,
+    "continuum_neumann_product_upper": 0.649968453137824,
+    "first_schur_product_upper": 0.011027753039369056,
+    "second_schur_product_upper": 0.002945448152785376,
+    "stored_to_galerkin_neumann_product_upper": 0.06618141240061828
+  },
+  "limitations": [
+    "The theorem is at the fixed positive noise width sigma=1/100.",
+    "The continuum resonance is isolated and simple but no closed-form eigenvalue is asserted.",
+    "The validated resolvent is in the continuum/Galerkin L-infinity norm; no dimension-uniform Euclidean resolvent theorem for sparse midpoint matrices is claimed.",
+    "The result does not take a zero-noise limit or identify any zeta zero.",
+    "No self-adjoint Hilbert-Polya operator or Riemann-hypothesis claim is made."
+  ],
+  "scope": "exact fixed-noise folded-Gaussian continuum Markov operator on L-infinity([0,1]) at sigma=1/100 and the first band-merging parameter",
+  "sigma_exact": "1/100",
+  "status": "rigorous_continuum_parity_count_one_with_uniform_resolvent",
+  "stored_to_galerkin_4096": {
+    "inside_count_after_transfer": 1,
+    "midpoint_to_cell_average_galerkin_upper": 0.0015722489356994657,
+    "neumann_transfer": {
+      "admissible": true,
+      "base_resolvent_upper": 41.89853481734383,
+      "neumann_product_upper": 0.06618141240061828,
+      "perturbation_upper": 0.0015795638842535985,
+      "transferred_resolvent_upper": 44.86795976620544
+    },
+    "stored_to_exact_midpoint_upper": 7.314948554132701e-06,
+    "total_upper": 0.0015795638842535985
+  },
+  "weighted_riesz_consequence": {
+    "adaptive_cutoff_transfer_in_Linfinity_available": true,
+    "exact_continuum_normalized_midpoint_family_uniform_from_dimension": 32768,
+    "rh40_full_kernel_parity_hypothesis_closed": true,
+    "uniform_continuum_Linfinity_contour_resolvent_available": true,
+    "uniform_euclidean_sparse_matrix_resolvent_claimed": false
+  }
+}
