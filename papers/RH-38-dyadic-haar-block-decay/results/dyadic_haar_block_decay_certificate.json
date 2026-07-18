@@ -1,0 +1,133 @@
+{
+  "all_four_components_follow_quarter_half_law": true,
+  "analytic_rate_law": {
+    "coarse_consistency": "O(h^2)",
+    "coarse_to_detail": "O(h)",
+    "detail_block": "O(h^2)",
+    "detail_to_coarse": "O(h)",
+    "preserved_by_discrete_row_normalization": true,
+    "preserved_by_operator_squaring": true,
+    "preserved_by_smooth_finite_rank_subtraction": true
+  },
+  "component_pilot": {
+    "path": "results/component_scaling_pilot_sigma_1e-02.json",
+    "sha256": "0235c81088af2a14babfeba4feb1a2c6270bbaa126bba22fd988e549f25c489e"
+  },
+  "evidence_levels": {
+    "analytic_theorem": "exact inequalities proved in the manuscript",
+    "component_mechanism": "floating singular-value diagnostic",
+    "physical_block_ledger": "rigorous inherited stored-binary64 uppers"
+  },
+  "floating_component_effective_exponents": {
+    "bulk_one_step": {
+      "coarse_consistency": 1.9996851518142336,
+      "coarse_to_detail": 0.9997512398080941,
+      "detail_block": 1.999610691218222,
+      "detail_to_coarse": 0.9999301346076533
+    },
+    "markov": {
+      "coarse_consistency": 1.9996849776912684,
+      "coarse_to_detail": 0.9997512433402593,
+      "detail_block": 1.9996106900951138,
+      "detail_to_coarse": 0.9999254931763537
+    },
+    "peripheral": {
+      "coarse_consistency": 2.001271438386272,
+      "coarse_to_detail": 0.9999185597231386,
+      "detail_block": 1.9998313117225495,
+      "detail_to_coarse": 0.9998510518475875
+    },
+    "physical_two_step": {
+      "coarse_consistency": 2.0004597836645166,
+      "coarse_to_detail": 0.9998664479709359,
+      "detail_block": 1.999860414336213,
+      "detail_to_coarse": 0.9999094126998097
+    }
+  },
+  "floating_component_ratios": {
+    "bulk_one_step": {
+      "coarse_consistency": 0.2500545649868764,
+      "coarse_to_detail": 0.500086221146059,
+      "detail_block": 0.25006747117419503,
+      "detail_to_coarse": 0.5000242140861649
+    },
+    "markov": {
+      "coarse_consistency": 0.2500545951666744,
+      "coarse_to_detail": 0.5000862199216928,
+      "detail_block": 0.25006747136886737,
+      "detail_to_coarse": 0.5000258227641636
+    },
+    "peripheral": {
+      "coarse_consistency": 0.24977977357318557,
+      "coarse_to_detail": 0.5000282258458136,
+      "detail_block": 0.25002923315999914,
+      "detail_to_coarse": 0.5000516241608177
+    },
+    "physical_two_step": {
+      "coarse_consistency": 0.24992033825700163,
+      "coarse_to_detail": 0.5000462877486254,
+      "detail_block": 0.25002418952251565,
+      "detail_to_coarse": 0.5000313961515378
+    }
+  },
+  "limitations": [
+    "The analytic theorem applies directly to full smooth midpoint kernels.",
+    "The stored matrices use an eight-sigma hard cutoff whose uniform tail defect is not enclosed here.",
+    "Uniform convergence of the computed peripheral projectors to a smooth continuum projector is not certified here.",
+    "Two rigorous physical refinement levels do not establish an all-level uniform constant.",
+    "Block decay alone does not control the hierarchical nonnormal resolvent recursion.",
+    "No zero-noise, zeta-zero, Hilbert-Polya, or Riemann-hypothesis claim is made."
+  ],
+  "maximum_floating_ratio_error_from_exact_quarter_half": 0.00022022642681443494,
+  "renormalized_upper_spreads": {
+    "coarse_consistency": 1.0003176792327568,
+    "coarse_to_detail": 1.0000925874047086,
+    "detail_block": 1.0000974354832304,
+    "detail_to_coarse": 1.0000627990201283
+  },
+  "rigorous_physical_levels": {
+    "2048_to_4096": {
+      "block_norm_uppers": {
+        "coarse_consistency": 0.0001988771765468915,
+        "coarse_to_detail": 0.011321437875219683,
+        "detail_block": 0.00013052207678363766,
+        "detail_to_coarse": 0.013722641666077897
+      },
+      "coarse_mesh": 0.00048828125,
+      "renormalized_uppers": {
+        "coarse_consistency": 834.1513370993332,
+        "coarse_to_detail": 23.18630476844991,
+        "detail_block": 547.4492687419186,
+        "detail_to_coarse": 28.103970132127532
+      },
+      "source": "papers/RH-36-nested-grid-physical-count/results/nested_block_certificate_sigma_1e-02.json",
+      "source_sha256": "ee58b0f3cbc03d01ea005e484382034bb1cc2c4b0d4458d62914cc1ad6ab4e57"
+    },
+    "4096_to_8192": {
+      "block_norm_uppers": {
+        "coarse_consistency": 4.9703504365590696e-05,
+        "coarse_to_detail": 0.005661243048885059,
+        "detail_block": 3.263369856631532e-05,
+        "detail_to_coarse": 0.006861751717264048
+      },
+      "coarse_mesh": 0.000244140625,
+      "renormalized_uppers": {
+        "coarse_consistency": 833.8864286984581,
+        "coarse_to_detail": 23.1884515282332,
+        "detail_block": 547.5026097259624,
+        "detail_to_coarse": 28.10573503391354
+      },
+      "source": "papers/RH-37-iterated-dyadic-physical-count/results/second_dyadic_block_certificate_sigma_1e-02.json",
+      "source_sha256": "8ede1dd07214d548f60634a92de0bb90c849ab551f5013921b383d24abacb5a5"
+    }
+  },
+  "rigorous_scaling_ledger_closed": true,
+  "rigorous_upper_ratios": {
+    "coarse_consistency": 0.24992060541382208,
+    "coarse_to_detail": 0.5000462937023543,
+    "detail_block": 0.2500243588708076,
+    "detail_to_coarse": 0.5000313995100641
+  },
+  "scope": "analytic C2 midpoint-kernel Haar estimates plus exact stored binary64 physical block uppers at sigma=1e-2",
+  "status": "analytic_quarter_half_law_with_closed_physical_scaling_ledger"
+}

@@ -1,0 +1,55 @@
+{
+  "analytic_rate_law": {
+    "coarse_consistency": "O(h^2)",
+    "coarse_to_detail": "O(h)",
+    "detail_block": "O(h^2)",
+    "detail_to_coarse": "O(h)",
+    "preserved_by_discrete_row_normalization": true,
+    "preserved_by_operator_squaring": true,
+    "preserved_by_smooth_finite_rank_subtraction": true
+  },
+  "evidence_levels": {
+    "analytic_theorem": "exact inequalities proved in the manuscript",
+    "component_mechanism": "floating singular-value diagnostic",
+    "physical_block_ledger": "rigorous inherited stored-binary64 uppers"
+  },
+  "limitations": [
+    "The analytic theorem applies directly to full smooth midpoint kernels.",
+    "The stored matrices use an eight-sigma hard cutoff whose uniform tail defect is not enclosed here.",
+    "Uniform convergence of the computed peripheral projectors to a smooth continuum projector is not certified here.",
+    "Two rigorous physical refinement levels do not establish an all-level uniform constant.",
+    "Block decay alone does not control the hierarchical nonnormal resolvent recursion.",
+    "No zero-noise, zeta-zero, Hilbert-Polya, or Riemann-hypothesis claim is made."
+  ],
+  "maximum_floating_ratio_error_from_exact_quarter_half": 0.00022022642681443494,
+  "publication_artifact_hashes": {
+    ".gitignore": "659fa0e1e709143253982263bb45dd529f74f96591e94873364916c59aa84484",
+    "README.md": "43c2aef5730de32b6aaf948a2d4f15a39e037338d0da70bb02e7ecbf500d1f77",
+    "dyadic-haar-block-decay.pdf": "45e4cdd4a8a6354d24ea2c48f990f94a5e13362278d69af3449de2a7ea41db81",
+    "figures/dyadic_haar_block_decay.pdf": "62cba9becee898d0a4c3613e8a1a3431038521143ffa45a7f477c8e737e6921c",
+    "figures/dyadic_haar_block_decay.png": "8dc0e4fb5618f2949c62605fd73b9570528f951a568410cbe09c6f0e8574543c",
+    "main.tex": "29006920dbbe8fa795d7642853406fa4875b7b1814ea6483e6d3cf6457f53dde",
+    "pyproject.toml": "ec9b4cc14e00d70e16f216970db3016ea3d4f797cfeddae78c30e4ca202b47a0",
+    "references.bib": "df892ea102228dc4e82f2e9a7f645ee1e760a14e996e6034bef4d3940b227a36",
+    "requirements.txt": "d1cdca098457ea311cf5fe5880cc5773a659672588204484aa5143ce5a6c44c8"
+  },
+  "renormalized_upper_spreads": {
+    "coarse_consistency": 1.0003176792327568,
+    "coarse_to_detail": 1.0000925874047086,
+    "detail_block": 1.0000974354832304,
+    "detail_to_coarse": 1.0000627990201283
+  },
+  "result_hashes": {
+    "results/component_scaling_pilot_sigma_1e-02.json": "0235c81088af2a14babfeba4feb1a2c6270bbaa126bba22fd988e549f25c489e",
+    "results/dependency_manifest.json": "710eaffca531f52c36972da964c2af7041445ace7b17ae86a645b85d93d7ec67",
+    "results/dyadic_haar_block_decay_certificate.json": "052dc3ed3cd46017dd30922ad363a81c5866aa9dbc2ee444f1f5afe64ceb3a18"
+  },
+  "rigorous_upper_ratios": {
+    "coarse_consistency": 0.24992060541382208,
+    "coarse_to_detail": 0.5000462937023543,
+    "detail_block": 0.2500243588708076,
+    "detail_to_coarse": 0.5000313995100641
+  },
+  "scope": "analytic C2 midpoint-kernel Haar estimates plus exact stored binary64 physical block uppers at sigma=1e-2",
+  "status": "analytic_quarter_half_law_with_closed_physical_scaling_ledger"
+}

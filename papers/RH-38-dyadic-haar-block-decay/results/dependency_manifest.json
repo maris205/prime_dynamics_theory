@@ -1,0 +1,43 @@
+{
+  "external_inputs": {
+    "rh36_component_snapshot": {
+      "path": "papers/RH-36-nested-grid-physical-count/results/nested_grid_snapshot_sigma_1e-02.npz",
+      "sha256": "a1e2a6a3a32a6f7e68ec17b294bdb41d404c0dbeca1f5cb89aefe48ab4390d81"
+    },
+    "rh36_first_block_certificate": {
+      "path": "papers/RH-36-nested-grid-physical-count/results/nested_block_certificate_sigma_1e-02.json",
+      "sha256": "ee58b0f3cbc03d01ea005e484382034bb1cc2c4b0d4458d62914cc1ad6ab4e57"
+    },
+    "rh37_component_fine_object": {
+      "path": "papers/RH-37-iterated-dyadic-physical-count/results/second_dyadic_fine_object_sigma_1e-02.npz",
+      "sha256": "886c6985e3937b374e9f7ab40bef31d34351ad2f794d546b50011c100848544a"
+    },
+    "rh37_second_block_certificate": {
+      "path": "papers/RH-37-iterated-dyadic-physical-count/results/second_dyadic_block_certificate_sigma_1e-02.json",
+      "sha256": "8ede1dd07214d548f60634a92de0bb90c849ab551f5013921b383d24abacb5a5"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "769219e60c9060fac13a68136cf80f56e3ade040522804e9ea4fb82114bc2b94",
+    "experiments/build_decay_certificate.py": "4ff203ee776a07b46aa8114db23e6b0a091ac2083653076ccaf907a147ddee1f",
+    "experiments/make_figures.py": "25aad441dfdf0d6b4f82425100ad0744b8545b8d0e348562c47c2d58f8d2a136",
+    "experiments/run_component_scaling_pilot.py": "89b91b49f960c09fe652affffac23ec4ba54d3ccaa4c5a0a9734e021c35c95d2",
+    "experiments/verify_archive.py": "f032cea24ad1d43be5dc07b3583f3806402baf8688097f965338c39834fd2f34",
+    "src/haar_decay/__init__.py": "a4f8aee41976c578f72db7203564dedbba12f72da344c90b4dc15a62875b3ce4",
+    "src/haar_decay/bounds.py": "cc55707e962e08fc32e7fb2f552d41423b426b141c6bee9c988203006dc57523",
+    "tests/test_archived_results.py": "a6f25abceef36ef5e0d8b7adb20840c166850ce103cc7928f772be6c7dfde7c9",
+    "tests/test_haar_decay.py": "1f53eed73bdc50ba51b8b6ea5a7759b363e0e3c87d355926ea542afd4dae9ea2"
+  },
+  "publication_artifacts": {
+    ".gitignore": "659fa0e1e709143253982263bb45dd529f74f96591e94873364916c59aa84484",
+    "README.md": "43c2aef5730de32b6aaf948a2d4f15a39e037338d0da70bb02e7ecbf500d1f77",
+    "dyadic-haar-block-decay.pdf": "45e4cdd4a8a6354d24ea2c48f990f94a5e13362278d69af3449de2a7ea41db81",
+    "figures/dyadic_haar_block_decay.pdf": "62cba9becee898d0a4c3613e8a1a3431038521143ffa45a7f477c8e737e6921c",
+    "figures/dyadic_haar_block_decay.png": "8dc0e4fb5618f2949c62605fd73b9570528f951a568410cbe09c6f0e8574543c",
+    "main.tex": "29006920dbbe8fa795d7642853406fa4875b7b1814ea6483e6d3cf6457f53dde",
+    "pyproject.toml": "ec9b4cc14e00d70e16f216970db3016ea3d4f797cfeddae78c30e4ca202b47a0",
+    "references.bib": "df892ea102228dc4e82f2e9a7f645ee1e760a14e996e6034bef4d3940b227a36",
+    "requirements.txt": "d1cdca098457ea311cf5fe5880cc5773a659672588204484aa5143ce5a6c44c8"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}
