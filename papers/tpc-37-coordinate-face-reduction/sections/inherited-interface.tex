@@ -1,0 +1,274 @@
+\section{The inherited physical and coherent interface}
+\label{sec:tpc37-inherited-interface}
+
+We restate only the inputs used below.  They come from the actual
+source-compatible packet and the reductions recorded in TPC-25,
+TPC-35, and TPC-36 \citep{WangTPC25,WangTPC35,WangTPC36}.  Finite-field
+identities proved later in this paper are unconditional algebraic
+statements, but their application to the prime--M\"obius packet is always
+made through the interface in this section.
+
+\subsection{Rows, orbit, and ultra increment}
+
+Fix $h\in\mathbb Z\setminus\{0\}$, put $H=\operatorname{rad}|h|$,
+and work on one dyadic packet with
+\begin{equation}
+ Q=LD,\qquad QJ\asymp X,\qquad R\le T<U_0\asymp X.
+ \label{eq:tpc37-interface-scales}
+\end{equation}
+A physical row is
+\begin{equation}
+ \alpha=(\ell_\alpha,d_\alpha),\qquad
+ m_\alpha=\ell_\alpha d_\alpha\asymp Q,
+ \label{eq:tpc37-interface-row}
+\end{equation}
+where $\ell_\alpha\asymp L$ is prime,
+$d_\alpha\asymp D$ is squarefree, and
+$(d_\alpha,H)=1$.  The source separation makes the integer $m_\alpha$
+determine its row uniquely.  There are $O(Q)$ rows.  For the two
+physical coefficient systems,
+\begin{align}
+ \sum_\alpha|\gamma_\alpha^{(i)}|
+ &\ll X^{o(1)}Q,
+ \label{eq:tpc37-interface-row-l1}\\
+ \sum_\alpha|\gamma_\alpha^{(i)}|^2
+ &\ll X^{o(1)}Q,
+ \qquad i=1,2.
+ \label{eq:tpc37-interface-row-l2}
+\end{align}
+These estimates retain the M\"obius/source provenance used in the
+preceding papers; they are not hypotheses on an arbitrary $Q$-entry
+vector.
+
+The orbit variable $j$ lies in a positive interval
+$\mathcal J$ containing $O(J)$ integers, and
+\begin{equation}
+ N_\alpha(j):=m_\alpha j+h\asymp X.
+ \label{eq:tpc37-interface-target}
+\end{equation}
+The terminal range is chosen so that
+\begin{equation}
+ T<\min_{\alpha,j}N_\alpha(j)
+ \le\max_{\alpha,j}N_\alpha(j)<U_0.
+ \label{eq:tpc37-interface-terminal-range}
+\end{equation}
+Thus the terminal divisor $u=N_\alpha(j)$ is present in the ultra
+increment
+\begin{equation}
+ C_m(j)=
+ \sum_{\substack{T<u\le U_0\\u\mid mj+h}}
+ -\mu(u)\log u,
+ \qquad |C_m(j)|\ll X^{o(1)}.
+ \label{eq:tpc37-interface-ultra-increment}
+\end{equation}
+On the physical support every divisor $u\mid N_\alpha(j)$ obeys
+\begin{equation}
+ (u,m_\alpha jH)=1.
+ \label{eq:tpc37-interface-primitivity}
+\end{equation}
+
+The actual multiplier has the form
+\begin{equation}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ =\mathfrak m_{\rm act}(\alpha,\gamma)
+  \Xi_{\alpha,\gamma}(j)
+  \mathcal W_{\alpha,\gamma}(j/J),
+ \label{eq:tpc37-interface-multiplier}
+\end{equation}
+where all displayed periodic and smooth factors are bounded and
+\begin{equation}
+ \mathfrak m_{\rm act}(\alpha,\gamma)
+ =\mathbf1_{\ell_\alpha\ne\ell_\gamma}
+  \mathbf1_{|m_\alpha-m_\gamma|>\Delta}
+  \mathbf1_{(d_\alpha,d_\gamma)\le G}
+ \label{eq:tpc37-interface-static-mask}
+\end{equation}
+for the inherited pruning scales
+$\Delta=QX^{-\kappa_0}$ and $G=X^{\kappa_0}$.
+TPC-36 proves that this static mask, together with the fixed orbit cells
+and smooth factors, has $X^{o(1)}$ signed product-ready reassembly cost.
+That theorem does not complete the integer ranges modulo $q$, nor does
+it estimate the resulting coherent divisor sum.
+
+\subsection{The two orbit energies and their gate}
+
+Define the left slice and its energy by
+\begin{align}
+ Y_{\gamma,j}^L
+ &:=\sum_\alpha \gamma_\alpha^{(1)}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)C_{m_\alpha}(j),
+ \label{eq:tpc37-interface-left-slice}\\
+ V_L&:=\sum_{\gamma,j}|Y_{\gamma,j}^L|^2.
+ \label{eq:tpc37-interface-left-energy}
+\end{align}
+The right slice exchanges the two row systems:
+\begin{align}
+ Y_{\alpha,j}^R
+ &:=\sum_\gamma \gamma_\gamma^{(2)}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)C_{m_\gamma}(j),
+ \label{eq:tpc37-interface-right-slice}\\
+ V_R&:=\sum_{\alpha,j}|Y_{\alpha,j}^R|^2.
+ \label{eq:tpc37-interface-right-energy}
+\end{align}
+The inherited scalar residual is controlled once
+\begin{equation}
+ V_L+V_R\ll X^{o(1)}\frac{Q^3}{J}
+ \label{eq:tpc37-interface-orbit-gate}
+\end{equation}
+is proved on every retained packet.  This is a sufficient interface, not
+a conclusion imported into this paper.  The complete input-copy diagonal
+has already been bounded by
+\begin{equation}
+ V_{L,\Delta}+V_{R,\Delta}
+ \ll X^{o(1)}Q^2J.
+ \label{eq:tpc37-interface-diagonal}
+\end{equation}
+Consequently the outstanding task is coefficient-specific and
+off-diagonal; replacing it by a maximum over all abstract row vectors is
+unnecessarily strong.
+
+For later sign-blind comparisons, put
+\begin{equation}
+ C_m^{\rm abs}(j)
+ :=\sum_{\substack{T<u\le U_0\\u\mid mj+h}}\log u.
+ \label{eq:tpc37-interface-absolute-increment}
+\end{equation}
+The divisor bound gives $C_m^{\rm abs}(j)\ll X^{o(1)}$.  Define
+$Y^{L,\rm abs}$ from \eqref{eq:tpc37-interface-left-slice} by replacing
+$\gamma_\alpha^{(1)}$,
+$\mathfrak A_{\alpha,\gamma}^{\rm act}(j)$, and the ultra summands by
+their absolute values, and define $Y^{R,\rm abs}$ symmetrically.  Then
+the row $\ell^1$-bound, the $O(Q)$ opposite rows, and the $O(J)$
+orbit times give
+\begin{equation}
+ \boxed{
+ V_{\rm eq}^{\rm abs}
+ :=\sum_{\gamma,j}|Y_{\gamma,j}^{L,\rm abs}|^2
+  +\sum_{\alpha,j}|Y_{\alpha,j}^{R,\rm abs}|^2
+ \ll X^{o(1)}Q^3J.}
+ \label{eq:tpc37-interface-absolute-baseline}
+\end{equation}
+This estimate is deliberately crude: it records the exact-equality
+envelope after all M\"obius signs have been erased.  It is used only when
+an algebraic face has a uniform scalar amplitude on $su=N_\alpha(j)$.
+It is not evidence of cancellation and cannot by itself imply
+\eqref{eq:tpc37-interface-orbit-gate}.
+
+\subsection{Reciprocal dyadic blocks and product slopes}
+
+Open one divisor in \eqref{eq:tpc37-interface-ultra-increment} and write
+\begin{equation}
+ su=N_\alpha(j)=\ell_\alpha d_\alpha j+h.
+ \label{eq:tpc37-interface-reflection}
+\end{equation}
+Partition $u$ into $O(\log X)$ reciprocal dyadic blocks
+$u\asymp U$, $U\ge T$, and attach the corresponding interval
+\begin{equation}
+ s\asymp X/U.
+ \label{eq:tpc37-interface-complementary-range}
+\end{equation}
+On the full Cartesian support of each block, $su=O(X)$.  After fixing
+the opposite row, one orbit residue cell, and one bounded projective
+layer from TPC-36, the integer core has the schematic product-ready form
+\begin{equation}
+ \sum_{\ell,d,u,s}
+ b(\ell)f(d)g(u)w(s)
+ \mathbf1_{su=\ell jd+h}.
+ \label{eq:tpc37-interface-integer-core}
+\end{equation}
+Here $b$ is independent of $j$ and $s$, and the physical ultra
+coefficient on a clean dyadic block is
+\begin{equation}
+ g_{\rm phys}(u)=-\mu(u)\log u\,\Phi_U(u)
+ \label{eq:tpc37-interface-physical-ultra}
+\end{equation}
+with a controlled dyadic cutoff $\Phi_U$.  The weight $w$ records the
+incomplete complementary interval and any alias multiplicity introduced
+later.  Formula \eqref{eq:tpc37-interface-integer-core} is a topology and
+provenance statement; it is not a complete finite-field identity.
+
+For a prime $q\nmid h$, the corresponding complete product--slope model
+is defined on $G_q=\mathbb F_q^\times$ by
+\begin{align}
+ R_s(a)
+ &:=\sum_{D\in\mathbb F_q}
+ f(D)g\!\left(s^{-1}(aD+h)\right),
+ \label{eq:tpc37-interface-Rsa}\\
+ (Tb)(j,s)
+ &:=\sum_{\ell\in G_q}b(\ell)R_s(\ell j),
+ \label{eq:tpc37-interface-Tb}\\
+ S_w(j)&:=\sum_{s\in G_q}w(s)(Tb)(j,s).
+ \label{eq:tpc37-interface-Sw}
+\end{align}
+With the unnormalized multiplicative transforms
+\begin{equation}
+ \widehat b(\chi)=\sum_{x\in G_q}b(x)\overline{\chi(x)},
+ \qquad
+ \widehat R_s(\chi)=\sum_{a\in G_q}R_s(a)\overline{\chi(a)},
+ \label{eq:tpc37-interface-transforms}
+\end{equation}
+TPC-36 gives the exact coherent identity
+\begin{equation}
+ \boxed{
+ \mathcal G_q(b,f,g;w)
+ :=\sum_{j\in G_q}|S_w(j)|^2
+ =\frac1{q-1}\sum_\chi
+ |\widehat b(\bar\chi)|^2
+ \left|\sum_{s\in G_q}w(s)\widehat R_s(\chi)\right|^2.}
+ \label{eq:tpc37-interface-coherent-gate}
+\end{equation}
+The right side is the actual finite-model coherent functional, not an
+upper bound.  The square-function spectrum
+$\sum_{j,s}|(Tb)(j,s)|^2$ controls an average over independent $s$'s;
+it does not control \eqref{eq:tpc37-interface-coherent-gate} without a
+possible factor $q-1$.  TPC-36 proves that this factor is sharp for
+arbitrary centered data.
+
+\subsection{Endpoint and alias ledger}
+
+At the endpoint used throughout this paper,
+\begin{equation}
+ Q=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ T=X^{193/500+o(1)},
+ \label{eq:tpc37-interface-endpoint}
+\end{equation}
+and the source scales satisfy $D=o(J)$, $J=o(L)$, and
+$QJ=X^{1+o(1)}$.  The identities relevant to the present ledger are
+\begin{align}
+ \frac Q{J^2}
+ &=X^{1/400+o(1)},
+ &\frac X{J^3}
+ &=X^{1/400+o(1)},
+ \label{eq:tpc37-interface-critical-identities}\\
+ \frac T J
+ &=X^{107/2000+o(1)},
+ &\frac QT
+ &=X^{563/2000+o(1)}.
+ \label{eq:tpc37-interface-secondary-identities}
+\end{align}
+One modulus $q\asymp J$ leaves $O(1+X/q)=O(Q)$ possible integer
+determinants in a block.  Three pairwise coprime orbit-scale moduli leave
+\begin{equation}
+ O\!\left(1+\frac X{J^3}\right)
+ =X^{1/400+o(1)}
+ \label{eq:tpc37-interface-three-modulus-aliases}
+\end{equation}
+joint aliases.  This count matches the allowance above the diagonal, but
+it does not show that principal, proper-coordinate, or full-coordinate
+faces reassemble with the required sign.
+
+The logical division used below is therefore strict:
+\begin{enumerate}[label=(\roman*)]
+ \item the physical equality is used first to remove residue-zero
+ coordinates;
+ \item punctured centering and two-character analysis concern the
+ regular complete finite model;
+ \item the three-modulus face calculus controls exact periodic masses and
+ determinant multiplicities; and
+ \item any transfer of those quadratic masses through the coherent
+ physical sums requires an additional coefficient-specific theorem.
+\end{enumerate}
+None of the inherited inputs asserts that theorem.  In particular, the
+setup supplies no affine M\"obius cancellation uniform in a moving shift,
+no suppression of the full CRT face, and no parity-breaking estimate.

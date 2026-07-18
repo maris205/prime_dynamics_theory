@@ -1,0 +1,217 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,float}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\hypersetup{
+ pdftitle={Coordinate-Face Reduction at the Coherent Mobius Gate: Physical Zero-Face Absorption, Jacobi Near-Isometry, and Three-Modulus Energy Localization},
+ pdfauthor={Liang Wang},
+ pdfsubject={Zero-coordinate removal and exact spectral localization for a coherent orbit-sliced Mobius gate},
+ pdfkeywords={Mobius correlation, multiplicative characters, Jacobi sums, Chinese remainder theorem, orbit energy, parity boundary}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Conditional input}
+\crefname{assumption}{conditional input}{conditional inputs}
+\Crefname{assumption}{Conditional input}{Conditional inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\F}{\mathbb F}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\op}{\operatorname{op}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rad}{\operatorname{rad}}
+
+\title{\textbf{Coordinate--Face Reduction at the Coherent M\"obius Gate:}\\
+\textbf{Physical Zero--Face Absorption, Jacobi Near--Isometry,}\\
+\textbf{and Three--Modulus Energy Localization}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The preceding product--slope analysis reduces an orbit--sliced prime--M\"obius
+energy estimate to a weighted coherent multiplicative spectrum.  Three
+possible obstructions remain entangled there: zero residue coordinates,
+nonconstant complementary weights, and the proper coordinate faces of a
+three--modulus completion.  We separate them exactly.
+
+At the endpoint
+\[
+ Q=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ T=X^{193/500+o(1)},
+\]
+choose a prime \(q\asymp J\) above the physical orbit support.  The part
+of either orbit slice on which \(q\mid m_\alpha j+h\) satisfies
+\[
+ \boxed{
+ V_{L,q\mid N}+V_{R,q\mid N}
+ \ll X^{o(1)}(1+Q/q)Q^2
+ \ll X^{o(1)}Q^3/J.}
+\]
+Thus every physical \(s=0\) or \(u=0\) residue face may be removed before
+finite--field completion at exactly the inherited gate scale.  The same
+holds for any fixed number of orbit--scale primes.
+
+On the regular part, the raw ultra residue vector \(G\) has \(G(0)=0\).
+Its punctured centering
+\[
+ \beta=\frac1{q-1}\sum_{U\ne0}G(U),\qquad
+ g(0)=0,\qquad g(U)=G(U)-\beta\quad(U\ne0)
+\]
+is both additively centered and still vanishes at zero.  If
+\(f=F-q^{-1}\sum_DF(D)\), then for \(a,s\ne0\)
+\[
+ \cC_{a,s}(F,G)
+ =\cC_{a,s}(f,g)-\beta f(-h/a)+(q-1)\bar F\beta.
+\]
+Hence the centered core has zero complete-\(s\) trace, while every
+centering correction is explicit and rank one in the complementary
+\(s\)-coordinate.  For the actual dyadic
+ultra weight, the standard zero--free--region estimate gives
+\[
+ |\beta|\ll_A (U/q)(\log X)^{-A}.
+\]
+Complete residue cycles of the complementary interval therefore cancel
+exactly in the core; only its incomplete boundary, the mean corrections,
+and alias weights remain.
+
+We next diagonalize that nonconstant boundary.  If
+\(c=w*_\times g\), then the two--character transform is a shifted Mellin
+transform
+\[
+ C_\chi=\sum_{x\in\F_q^\times}c(x)\overline{\chi(x-h)}.
+\]
+The nonprincipal Jacobi matrix
+\(
+ K_{\chi,\psi}=J(\psi,\bar\chi)
+\)
+satisfies
+\[
+ \boxed{K^*K=KK^*=(q-1)^2I-q\,\mathbf1\mathbf1^*.}
+\]
+Its singular values are \(q-1\), with multiplicity \(q-3\), and \(1\),
+with multiplicity one.  Equivalently,
+\[
+ \sum_{\chi\ne\mathbf1}|C_\chi|^2
+ =\sum_{\psi\ne\mathbf1}
+ |\widehat w(\psi)\widehat g(\psi)|^2
+ -\frac q{(q-1)^2}
+ \left|\sum_{\psi\ne\mathbf1}
+ \widehat w(\psi)\widehat g(\psi)\psi(h)\right|^2.
+\]
+Thus the Jacobi layer is near--isometric, not an automatic source of
+cancellation.  Nevertheless, for an interval weight \(w\),
+P\'olya--Vinogradov saves the full uniform Cauchy factor in the unweighted
+character average.  A sharp punctured character example shows that an
+arbitrary nonconstant coherent weight may still saturate that factor.
+
+Finally, we give an exact calculus for all eight character faces of three
+pairwise coprime orbit--scale primes.  The faces are orthogonal over one
+CRT period.  Their squared masses, by codimension, are
+\[
+ J^{-3},\qquad J^{-2},\qquad J^{-1},\qquad 1.
+\]
+The coherent union \(P\) of the seven proper faces obeys
+\[
+ \|P\|_\infty\ll J^{-1},\qquad
+ \|P\|_2^2\asymp J^{-1},\qquad
+ \|P\|_1\asymp1.
+\]
+Grouping a reciprocal dyadic block first by the integer determinant
+\(F=su-N\) removes the apparent incomplete--box boundary: every face has
+total absolute mass at most \(X^{o(1)}X/J^3\), while
+\[
+ \sum_{s,u}|P(su-N)|^2
+ \ll X^{o(1)}X/J^4=o(1).
+\]
+The full face, however, remains \(1-O(J^{-1})\) on every exact equality
+and retains the terminal M\"obius layer.  Closing the orbit gate still
+requires either absorption of the exposed punctured-centering mean
+corrections and principal outer boundary together with actual
+nonprincipal spectral overlap, or a target-coupled, coefficient-weighted
+shifted--fiber Bessel theorem for the unsplit raw physical output.  We
+prove neither route, and claim no
+parity breach, Hardy--Littlewood asymptotic, or twin--prime result.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+M\"obius correlation; multiplicative character; Jacobi sum;
+Chinese remainder theorem; orbit energy; parity boundary.
+
+\medskip
+\noindent\textbf{MSC 2020:}
+Primary 11N35, 11N37; Secondary 11L40, 15A18, 15B05.
+
+\input{sections/introduction}
+\input{sections/inherited-interface}
+\input{sections/physical-zero-faces}
+\input{sections/punctured-centering}
+\input{sections/two-character}
+\input{sections/three-modulus}
+\input{sections/next-gate}
+\input{sections/certificate-claims}
+
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

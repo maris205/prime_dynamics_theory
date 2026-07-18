@@ -1,0 +1,149 @@
+\section{Endpoint ledger and the relocated coherent-face gates}
+\label{sec:tpc37-next-gate}
+
+The three routes above answer different questions and must not be merged
+into a single cancellation claim.  This section records their exact
+logical output at the endpoint and isolates two sufficient, but presently
+unproved, continuations.
+
+\subsection{What has been removed from the regular problem}
+
+Let
+\begin{equation}
+ \mathfrak G_X:=X^{o(1)}\frac{Q^3}{J}
+ \label{eq:tpc37-target-gate}
+\end{equation}
+denote the inherited target scale.  The reductions proved above have the
+following consequences.
+\begin{enumerate}[label=(\roman*)]
+ \item By \cref{thm:tpc37-one-prime-face,cor:tpc37-finite-prime-faces},
+ every physical row--time pair on which one of the chosen CRT primes
+ divides the target contributes \(O(\mathfrak G_X)\).  Hence the modular
+ analysis may begin with both complementary coordinates in the unit
+ groups.
+ \item By \cref{prop:tpc37-punctured-identity}, ordinary additive
+ centering can be replaced by punctured centering without hiding a
+ zero-residue coefficient.  The difference is an explicit term that is
+ rank one in the complementary \(s\)-coordinate and contains the clean
+ scalar \(\beta_U\); complete constant residue cycles
+ vanish by \cref{prop:tpc37-complete-cycle-annihilation}.
+ \item By \cref{thm:tpc37-Jacobi-near-unitary,thm:tpc37-shifted-Parseval},
+ the nonconstant complementary weight is represented exactly by a
+ Hadamard product of two Mellin spectra.  The Jacobi transform has only a
+ rank-one defect and therefore supplies no generic cancellation.  For an
+ interval, P\'olya--Vinogradov removes one uniform Cauchy factor only in
+ the unweighted character average.
+ \item By \cref{thm:tpc37-orthogonal-face-calculus,%
+thm:tpc37-proper-union-norms}, the seven proper coordinate faces of three
+ moduli form one explicit kernel \(P\), with one-period squared mass
+ \(\asymp J^{-1}\).  Determinant-first grouping gives the fiberwise bound
+ \eqref{eq:tpc37-proper-l2-periodization}, and on the exact equality the
+ proper-face energy is \(O(\mathfrak G_X)\) by
+ \eqref{eq:tpc37-equality-proper-closure}.
+\end{enumerate}
+None of these statements estimates the full regular output after all row,
+orbit, dyadic, and alias sums are restored.  In particular, the
+fiberwise \(L^2\) estimate for \(P\) is not a license to apply Cauchy
+through a coherent sum; \cref{prop:tpc37-coherent-face-no-go} quantifies
+the resulting polynomial loss for arbitrary bounded coefficients.
+
+\subsection{The two surviving formulations}
+
+The unsuppressed equality face and the coherent off-equality alias
+reassembly can be attacked in two nonexclusive forms.
+
+\paragraph{Outer spectral overlap.}
+For one completed product--slope block, put
+\(B_0=\sum_\ell b(\ell)\), \(c=w*_\times g\), and
+\(r_0=B_0f(0)c(h)\).  The exact arithmetic object is
+\begin{equation}
+ \mathfrak S_q^{\rm full}(a,w,g)
+ :=\frac{q^2}{q-1}|r_0|^2
+ +\frac1{q-1}\sum_{\chi\ne\mathbf1}
+ |\widetilde a(\chi)|^2|C_\chi(w,g)|^2,
+ \label{eq:tpc37-outer-overlap-gate}
+\end{equation}
+where \(a=b*_{\times}f\) is the actual outer row convolution and
+\[
+ C_\chi(w,g)=
+ \sum_{x\in\F_q^\times}(w*_{\times}g)(x)
+ \overline{\chi(x-h)}.
+\]
+\Cref{thm:tpc37-Mellin-flatness-sufficient} bounds the nonprincipal sum
+if the actual \(a\) obeys
+\(\mathfrak K_{\rm Mell}(a)=X^{o(1)}\); it leaves \(r_0\) explicit.
+That pointwise flatness hypothesis is stronger than necessary: an
+aggregate estimate for the nonprincipal overlap, averaged over the
+physical layers, would suffice, provided the principal \(r_0\)-term is
+also controlled.  Neither input is proved here.
+
+\paragraph{Shifted determinant fibers.}
+Keeping the integer determinant \(F\) visible gives the alternative
+target-coupled Hilbert-space input
+\eqref{eq:tpc37-shift-fiber-bessel-gate}.  Its normalization is not
+arbitrary: the direct period masses
+\eqref{eq:tpc37-direct-face-period-ledger} imply
+\begin{align}
+ \text{full face:}\quad &Q^2J\,\mathcal K_X=Q^3/J,
+ \notag\\
+ \text{proper union:}\quad
+ &Q^2J\,\mathcal K_X/J=Q^3/J^2.
+ \label{eq:tpc37-two-fiber-ledgers}
+\end{align}
+Thus the target-coupled, coefficient-weighted Bessel input at the stated
+normalization would close the full face and overclose the proper union.
+The moving shift \(h_F=h+F\), and the dependence of the face on
+\(N\bmod M\), prevent one from importing a fixed-\(h\) incidence estimate
+without a new uniformity argument.
+
+These are alternative sufficient inputs for the same desired physical
+output; they are not asserted to be equivalent term by term.  The first
+asks for avoidance of large Mellin channels after completion; the second
+asks for almost-orthogonality between integer determinant fibers before
+completion.  Failure of a pointwise flatness bound therefore does not
+rule out a weighted-overlap or fiberwise theorem.
+
+\subsection{A route tree with valid fallback results}
+
+The next layer has three mathematically distinct outcomes.
+\begin{description}[style=nextline,leftmargin=2.4em]
+ \item[Positive overlap theorem.]
+ Prove the required aggregate nonprincipal overlap bound using the actual
+ row and truncated M\"obius coefficients, and separately absorb both the
+ exposed \(\beta_U\)-mean corrections and the principal \(r_0\)-term in
+ \eqref{eq:tpc37-outer-overlap-gate}.  This would close the completed
+ finite-field coherent core; integer aliases and all normalization
+ constants would still have to be checked in the physical reassembly.
+
+ \item[Positive shifted-fiber theorem.]
+ Prove the target-coupled input
+ \eqref{eq:tpc37-shift-fiber-bessel-gate} uniformly for the moving shifts
+ and actual coefficients.  This route directly absorbs the three-modulus
+ alias count at its critical \(X^{1/400+o(1)}\) scale.
+
+ \item[Scoped obstruction theorem.]
+ Exhibit, within a precisely specified coefficient class, unavoidable
+ concentration in the exceptional Mellin direction or unavoidable
+ alignment between shifted fibers.  Such a theorem would rule out that
+ proof mechanism at the claimed normalization, not establish a lower
+ bound for a prime-pair correlation.
+\end{description}
+
+The present paper advances the program regardless of which branch is
+viable: zero faces, artificial centering values, constant residue cycles,
+and proper equality faces are no longer mixed into the unsuppressed
+equality-face question.  The surviving gates are coefficient-specific and
+have two exact norm formulations.
+
+\subsection{Relation to the parity boundary}
+
+The sharp examples in
+\cref{prop:tpc37-punctured-character-witness,%
+prop:tpc37-coherent-face-no-go} show that centering, support restrictions,
+and periodic \(L^2\) sparsity alone do not force the needed coherent
+cancellation.  This is consistent with the classical parity obstruction
+for sieve methods \citep{HeathBrown1982Parity,IwaniecKowalski2004}.
+It is not a new formulation or resolution of that obstruction.  A future
+positive theorem would have to use arithmetic information in the actual
+M\"obius-derived coefficient beyond the formal finite-field identities
+proved here.

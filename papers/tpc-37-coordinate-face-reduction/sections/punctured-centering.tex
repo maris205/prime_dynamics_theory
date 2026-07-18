@@ -1,0 +1,341 @@
+\section{Punctured centering of the regular ultra coefficient}
+\label{sec:tpc37-punctured-centering}
+
+After \cref{sec:tpc37-physical-zero-faces}, the physical equality is
+restricted to \(q\nmid N_\alpha(j)\).  Hence both factors in
+\(su=N_\alpha(j)\) are nonzero modulo \(q\).  We now center the completed
+ultra coefficient without reintroducing an artificial value at the zero
+residue.
+
+\subsection{An exact asymmetric centering identity}
+
+Let \(q>2\) be prime, put \(G_q=\mathbb F_q^\times\), and fix
+\(h\in G_q\).  Let \(F,G:\mathbb F_q\to\mathbb C\), where
+\begin{equation}
+ G(0)=0.
+ \label{eq:tpc37-raw-g-zero}
+\end{equation}
+The function \(F\) is the raw residue aggregation of a \(d\)-weight, and
+\(G\) is the raw aggregation of the regular ultra weight.  Define the
+ordinary additive centering of \(F\) by
+\begin{equation}
+ \overline F=\frac1q\sum_{D\in\mathbb F_q}F(D),
+ \qquad f(D)=F(D)-\overline F.
+ \label{eq:tpc37-f-centering}
+\end{equation}
+For \(G\), instead put
+\begin{equation}
+ \beta=\frac1{q-1}\sum_{U\in G_q}G(U),
+ \label{eq:tpc37-punctured-mean}
+\end{equation}
+and define its punctured centering by
+\begin{equation}
+ g(0)=0,
+ \qquad
+ g(U)=G(U)-\beta\quad(U\in G_q).
+ \label{eq:tpc37-punctured-g}
+\end{equation}
+Then
+\begin{equation}
+ \sum_D f(D)=\sum_U g(U)=0,
+ \qquad g(0)=0.
+ \label{eq:tpc37-punctured-properties}
+\end{equation}
+
+For \(a,s\in G_q\), write
+\begin{equation}
+ \mathcal C_{a,s}(A,B)
+ :=\sum_{D\in\mathbb F_q}
+ A(D)B\!\left(s^{-1}(aD+h)\right).
+ \label{eq:tpc37-affine-correlation}
+\end{equation}
+
+\begin{proposition}[Punctured-centering identity]
+\label{prop:tpc37-punctured-identity}
+For every \(a,s\in G_q\),
+\begin{equation}
+ \boxed{
+ \mathcal C_{a,s}(F,G)
+ =\mathcal C_{a,s}(f,g)
+ -\beta f(-h/a)
+ +(q-1)\overline F\,\beta.}
+ \label{eq:tpc37-punctured-identity}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+On \(\mathbb F_q\),
+\begin{equation}
+ F=f+\overline F,
+ \qquad
+ G=g+\beta\mathbf 1_{G_q}.
+ \label{eq:tpc37-punctured-decompositions}
+\end{equation}
+The affine map \(D\mapsto s^{-1}(aD+h)\) is a permutation, so the
+constant part of \(F\) contributes
+\begin{equation}
+ \overline F\sum_U G(U)=(q-1)\overline F\,\beta.
+ \label{eq:tpc37-F-mean-contribution}
+\end{equation}
+For the other correction, the indicator
+\(\mathbf 1_{G_q}(s^{-1}(aD+h))\) deletes exactly
+\(D_0=-h/a\).  Since \(f\) is centered,
+\begin{equation}
+ \sum_D f(D)\mathbf 1_{aD+h\ne0}
+ =-f(D_0).
+ \label{eq:tpc37-deleted-residue}
+\end{equation}
+Combining the two identities proves
+\eqref{eq:tpc37-punctured-identity}.
+\end{proof}
+
+The identity extends directly to the product--slope topology.  Define
+\begin{align}
+ R_s^{\rm raw}(a)&:=\mathcal C_{a,s}(F,G),
+ &R_s(a)&:=\mathcal C_{a,s}(f,g),
+ \label{eq:tpc37-raw-centered-R}\\
+ (T^{\rm raw}b)(j,s)&:=\sum_{\ell\in G_q}b(\ell)R_s^{\rm raw}(\ell j),
+ &(Tb)(j,s)&:=\sum_{\ell\in G_q}b(\ell)R_s(\ell j).
+ \label{eq:tpc37-raw-centered-T}
+\end{align}
+Put
+\begin{equation}
+ B_0=\sum_{\ell\in G_q}b(\ell),
+ \qquad
+ H_f(j)=\sum_{\ell\in G_q}
+ b(\ell)f\!\left(-\frac h{\ell j}\right).
+ \label{eq:tpc37-rank-one-data}
+\end{equation}
+Then \cref{prop:tpc37-punctured-identity} gives the pointwise formula
+\begin{equation}
+ \boxed{
+ (T^{\rm raw}b)(j,s)
+ =(Tb)(j,s)-\beta H_f(j)
+ +(q-1)\overline F\,\beta B_0.}
+ \label{eq:tpc37-product-punctured-identity}
+\end{equation}
+For an arbitrary weight \(w:G_q\to\mathbb C\), with
+\(W_0=\sum_s w(s)\),
+\begin{align}
+ \sum_s w(s)(T^{\rm raw}b)(j,s)
+ ={}&\sum_s w(s)(Tb)(j,s) \notag\\
+ &+W_0\{-\beta H_f(j)
+ +(q-1)\overline F\,\beta B_0\}.
+ \label{eq:tpc37-weighted-punctured-identity}
+\end{align}
+Thus every centering correction is explicit and contains the single
+scalar \(\beta\).  No smallness assumption on \(\overline F\) is used in
+this algebraic statement.
+
+\subsection{The actual M\"obius mean}
+
+On a reciprocal dyadic block, choose the canonical allocation in which
+the ultra factor remains
+\begin{equation}
+ a_U(u)=-\mu(u)\log u\,\Phi_U(u),
+ \label{eq:tpc37-clean-ultra-weight}
+\end{equation}
+where \(\Phi_U\) is the indicator of
+\(\{u:U<u\le2U,\ T<u\le U_0\}\), or a bounded smooth/BV cutoff with
+controlled seminorms on that interval.  On the regular physical support one may
+insert \(\mathbf 1_{q\nmid u}\) exactly.  The raw residue aggregation is
+therefore
+\begin{equation}
+ G_U(r)=
+ \sum_{\substack{u\equiv r\pmod q\\q\nmid u}}
+ -\mu(u)\log u\,\Phi_U(u),
+ \qquad r\in\mathbb F_q,
+ \label{eq:tpc37-regular-ultra-periodization}
+\end{equation}
+and indeed \(G_U(0)=0\).  Its punctured mean is
+\begin{equation}
+ \beta_U
+ =-\frac1{q-1}
+ \sum_{\substack{u\ge1\\q\nmid u}}
+ \mu(u)\log u\,\Phi_U(u).
+ \label{eq:tpc37-physical-beta}
+\end{equation}
+
+\begin{proposition}[Uniform one-M\"obius bound for the punctured mean]
+\label{prop:tpc37-beta-bound}
+Assume \(q\asymp J\), \(U\ge T\), and
+\eqref{eq:tpc37-endpoint-scales}, and assume that the cutoff family in
+\eqref{eq:tpc37-clean-ultra-weight} has uniformly bounded smooth or BV
+seminorms.  For every fixed \(A>0\),
+\begin{equation}
+ \boxed{
+ |\beta_U|
+ \ll_{A,\Phi}\frac Uq(\log X)^{-A}.}
+ \label{eq:tpc37-beta-bound}
+\end{equation}
+The estimate is uniform over the dyadic ultra blocks.
+\end{proposition}
+
+\begin{proof}
+Let
+\begin{equation}
+ M(x)=\sum_{n\le x}\mu(n),
+ \qquad
+ M_q(x)=\sum_{\substack{n\le x\\(n,q)=1}}\mu(n).
+ \label{eq:tpc37-Mertens-functions}
+\end{equation}
+Separating the multiples of the prime \(q\) gives the exact recurrence
+\begin{equation}
+ M_q(x)=\sum_{r\ge0}M(x/q^r),
+ \label{eq:tpc37-coprime-Mertens-recurrence}
+\end{equation}
+where the sum terminates.  The standard zero-free-region form of the
+prime number theorem \citep[Chapters~5 and~18]{IwaniecKowalski2004}
+gives, for every fixed \(B>0\),
+\begin{equation}
+ M(y)\ll_B y(\log y)^{-B}
+ \label{eq:tpc37-standard-Mertens-bound}
+\end{equation}
+when \(y\) is large.  In
+\eqref{eq:tpc37-coprime-Mertens-recurrence}, the terms after the first
+have total trivial size \(O(x/q)\), which is smaller than
+\(x(\log X)^{-B}\) because \(q=X^{133/400+o(1)}\).  Hence, uniformly for
+\(x\asymp U\),
+\begin{equation}
+ M_q(x)\ll_B U(\log X)^{-B}.
+ \label{eq:tpc37-uniform-coprime-Mertens}
+\end{equation}
+Partial summation, with \(B\) chosen beyond \(A\) and the fixed seminorm
+loss of \(\Phi_U\), yields
+\begin{equation}
+ \sum_{q\nmid u}\mu(u)\log u\,\Phi_U(u)
+ \ll_{A,\Phi}U(\log X)^{-A}.
+ \label{eq:tpc37-weighted-one-Mobius}
+\end{equation}
+Division by \(q-1\asymp q\) proves
+\eqref{eq:tpc37-beta-bound}.
+\end{proof}
+
+The endpoint separation
+\begin{equation}
+ \frac Tq=X^{107/2000+o(1)}
+ \label{eq:tpc37-ultra-quotient-length}
+\end{equation}
+also permits the same argument after writing a zero-residue sum as
+\(u=qv\).  More importantly, if \(|\mathcal S_U|\ll X/U\), then
+\begin{equation}
+ |\beta_U|\,|\mathcal S_U|
+ \ll_A\frac Xq(\log X)^{-A}
+ \asymp Q(\log X)^{-A}.
+ \label{eq:tpc37-beta-times-s-length}
+\end{equation}
+This is an arbitrary logarithmic saving, not a fixed power of \(X\).
+Even a Vinogradov--Korobov error has size \(X^{-o(1)}\), so
+\cref{prop:tpc37-beta-bound} alone does not pay the
+\(X^{1/400}\) endpoint margin.  Nor may its logarithmic saving be placed
+after an uncontrolled worst-case \(X^{o(1)}\) absolute reassembly.  The
+mean must be extracted while the ultra weight still has the clean form
+\eqref{eq:tpc37-clean-ultra-weight}.
+
+\subsection{Exact cancellation of complete residue cycles}
+
+The punctured-centered core has no complete complementary-factor trace.
+
+\begin{proposition}[Complete-cycle annihilation]
+\label{prop:tpc37-complete-cycle-annihilation}
+For every \(a,j\in G_q\),
+\begin{equation}
+ \sum_{s\in G_q}R_s(a)=0,
+ \qquad
+ \sum_{s\in G_q}(Tb)(j,s)=0.
+ \label{eq:tpc37-complete-cycle-annihilation}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Fix \(a\) and put \(D_0=-h/a\).  The term \(D=D_0\) vanishes because
+\(g(0)=0\).  For \(D\ne D_0\), as \(s\) runs over \(G_q\), the value
+\(s^{-1}(aD+h)\) runs once over \(G_q\).  Its total contribution is zero
+because \(\sum_{U\in G_q}g(U)=0\).  This proves the first identity; the
+second follows by summing in \(\ell\).
+\end{proof}
+
+For an integer interval \(\mathcal S\), define its nonzero residue lift
+count by
+\begin{equation}
+ W_{\mathcal S}(r)
+ :=\#\{s\in\mathcal S:s\equiv r\pmod q\},
+ \qquad r\in G_q.
+ \label{eq:tpc37-s-lift-count}
+\end{equation}
+Writing \(|\mathcal S|=kq+r_0\), one has
+\begin{equation}
+ W_{\mathcal S}(r)=k+\rho_{\mathcal S}(r),
+ \qquad
+ \rho_{\mathcal S}(r)\in\{0,1\},
+ \qquad
+ |\operatorname{supp}\rho_{\mathcal S}|<q.
+ \label{eq:tpc37-cycle-boundary-decomposition}
+\end{equation}
+Consequently,
+\begin{equation}
+ \sum_{r\in G_q}W_{\mathcal S}(r)(Tb)(j,r)
+ =\sum_{r\in G_q}\rho_{\mathcal S}(r)(Tb)(j,r).
+ \label{eq:tpc37-complete-cycles-removed}
+\end{equation}
+For the complementary interval \(|\mathcal S_U|\asymp X/U\), the number
+of removed complete cycles satisfies
+\begin{equation}
+ k_U\ll1+\frac X{Uq}\asymp1+\frac Q U.
+ \label{eq:tpc37-complete-cycle-count}
+\end{equation}
+It is \(\asymp Q/U\) whenever the complementary interval contains at
+least a fixed positive number of complete residue cycles.  In particular,
+\begin{equation}
+ k_T=X^{563/2000+o(1)},
+ \label{eq:tpc37-low-ultra-cycle-count}
+\end{equation}
+whereas \(k_U=0\) once \(U\) exceeds a sufficiently large fixed multiple
+of \(Q\).
+
+Equation \eqref{eq:tpc37-complete-cycles-removed} concerns the core
+residue lift count.  An alias selector or another nonconstant reassembly
+weight belongs to \(\rho\)-type weighted data and is not annihilated by
+this proposition.
+
+\subsection{Comparison with ordinary additive centering}
+
+If one instead uses
+\begin{equation}
+ \overline G=\frac1q\sum_U G(U)=\frac{q-1}{q}\beta,
+ \qquad
+ g^{\rm add}=G-\overline G,
+ \label{eq:tpc37-ordinary-g-centering}
+\end{equation}
+then
+\begin{equation}
+ g^{\rm add}(0)=-\frac{q-1}{q}\beta
+ \label{eq:tpc37-ordinary-centered-zero}
+\end{equation}
+despite the raw identity \(G(0)=0\).  In fact,
+\begin{equation}
+ g^{\rm add}
+ =g+\frac\beta q-\beta\mathbf 1_{\{0\}}.
+ \label{eq:tpc37-two-centerings-comparison}
+\end{equation}
+The complete-trace formula for ordinary centering becomes
+\begin{equation}
+ \sum_{s\in G_q}
+ \mathcal C_{a,s}(f,g^{\rm add})
+ =-(q-1)\beta f(-h/a).
+ \label{eq:tpc37-ordinary-complete-trace}
+\end{equation}
+Thus the ordinary value \(g^{\rm add}(0)\) is a centering boundary, not a
+physical coefficient at an allowed zero residue.  The punctured identity
+\eqref{eq:tpc37-punctured-identity} records the same quantity as an
+explicit correction that is rank one in the complementary
+\(s\)-coordinate while keeping the core value \(g(0)=0\).
+It is an exact reorganization, not an additional cancellation theorem.
+
+The scope is therefore precise.  The physical zero coordinate faces are
+handled by \cref{thm:tpc37-one-prime-face}; punctured centering removes
+the artificial zero value and complete constant cycles; and
+\cref{prop:tpc37-beta-bound} controls the exposed clean M\"obius mean.
+The remaining nonconstant weighted core, the CRT aliases, and the
+terminal \(s=1\) layer are not estimated here.  In particular, this
+section does not prove the full coefficient gate.

@@ -1,0 +1,128 @@
+\section{Exact certificate and claim boundary}
+\label{sec:tpc37-certificate}
+
+The accompanying standard-library program is
+\begin{center}
+\texttt{experiments/tpc37\_certificate.py}.
+\end{center}
+It performs deterministic exact-arithmetic checks and writes the canonical
+JSON archive
+\begin{center}
+\texttt{experiments/tpc37\_certificate.json}.
+\end{center}
+The same suite is run by
+\begin{verbatim}
+python experiments/tpc37_certificate.py
+python -O experiments/tpc37_certificate.py
+\end{verbatim}
+so no check depends on Python \texttt{assert} semantics.
+
+\subsection{Finite identities checked}
+
+The certificate is divided according to the proof architecture:
+\begin{enumerate}[label=(\roman*)]
+ \item row-residue occupancy and the one-hit orbit bound behind
+ \cref{thm:tpc37-one-prime-face};
+ \item the punctured-centering identity
+ \eqref{eq:tpc37-punctured-identity} and complete-cycle annihilation
+ \eqref{eq:tpc37-complete-cycle-annihilation};
+ \item exact Jacobi Gram and energy identities for several small prime
+ fields;
+ \item the eight-face CRT decomposition, orthogonality, individual norms,
+ and proper-union norms for several triples of primes; and
+ \item determinant periodization and representative joint- and
+ two-coordinate ghost fibers.
+\end{enumerate}
+All roots of unity used in the Jacobi checks are represented symbolically;
+the CRT suites use integers and rational numbers.  No floating-point
+tolerance or random sample is used.  Finite enumeration verifies the
+displayed algebra on the archived test families; it is not evidence for an
+unproved asymptotic cancellation estimate.
+
+\subsection{Reproducibility record}
+
+The generated JSON records the per-family check counts, byte-for-byte
+source SHA-256 values, and a certificate digest of the canonical payload.
+The repository attributes require LF line endings, but the hashing
+algorithm itself reads the archived bytes without further normalization.
+For the archived run,
+\begin{align}
+ \text{certificate source SHA-256}\quad
+ &\texttt{3c4565e36931c5fd42d689425cf9ece9b}
+ \notag\\[-0.3em]
+ &\texttt{ce5d4a376d0657e79cc3f6dab5ccaed},
+ \label{eq:tpc37-certificate-source-hash}\\
+ \text{JSON SHA-256}\quad
+ &\texttt{2ce1c2938868bf07495fb521bb2227bc}
+ \notag\\[-0.3em]
+ &\texttt{2b2e4a11daeeb5d1d9389b4375fbe0fa},
+ \label{eq:tpc37-certificate-json-hash}\\
+ \text{certificate digest}\quad
+ &\texttt{3aac4337fdfcee4cdbc013c73ac5ca56}
+ \notag\\[-0.3em]
+ &\texttt{2fdcd76a79037e20e4eba6f30ed08efa}.
+ \label{eq:tpc37-certificate-digest}
+\end{align}
+These values make changes to the finite certificate auditable without
+promoting the enumeration to a proof of the analytic theorems.
+
+\subsection{Unconditional conclusions}
+
+Subject only to the explicit inherited packet hypotheses in
+\cref{sec:tpc37-inherited-interface}, this paper proves:
+\begin{enumerate}[label=(\roman*)]
+ \item physical absorption of one, or any fixed finite number of,
+ zero-coordinate faces at \(X^{o(1)}Q^3/J\);
+ \item the exact punctured-centering identities and corrections that are
+ rank one in the complementary \(s\)-coordinate,
+ together with complete-cycle annihilation;
+ \item the standard superlogarithmic estimate for the exposed clean
+ M\"obius mean;
+ \item the weighted two-character formula, the exact rank-one Jacobi Gram
+ defect, and the shifted multiplicative Parseval identities;
+ \item the interval-weight average bound and the exact outer decomposition
+ into an explicit principal boundary plus a nonprincipal spectrum, with a
+ sufficient flatness criterion for the latter;
+ \item a punctured sharp example showing that abstract centered data can
+ retain the full coherent character scale;
+ \item the orthogonal three-modulus face calculus and exact norms of the
+ seven-face proper union;
+ \item determinant-first \(\ell^1\) and \(\ell^2\) periodization;
+ \item proper-face closure on the exact equality, the full-face scalar
+ obstruction, and the sharp quadratic-to-coherent separation for
+ arbitrary bounded unary weights.
+\end{enumerate}
+The finite-field flatness theorem is an implication, not a verification
+of its hypothesis for the physical row coefficient.  Similarly,
+\eqref{eq:tpc37-shift-fiber-bessel-gate} is displayed as a sufficient
+next input and is not among the proved estimates.
+
+\subsection{What is not proved}
+
+Neither the manuscript nor the certificate proves:
+\begin{enumerate}[label=(\roman*)]
+ \item the regular or full physical coefficient gate
+ \(V_L+V_R\ll X^{o(1)}Q^3/J\);
+ \item \(\mathfrak K_{\rm Mell}(a)=X^{o(1)}\) for the actual outer
+ convolution, the required aggregate nonprincipal spectral-overlap bound,
+ or physical absorption of the exposed \(\beta_U\)-mean corrections and
+ principal \(r_0\)-term;
+ \item a diagonal-size estimate for the physical M\"obius Hadamard energy
+ \eqref{eq:tpc37-physical-Hadamard-energy};
+ \item the target-coupled, coefficient-weighted shifted-fiber Bessel input
+ \eqref{eq:tpc37-shift-fiber-bessel-gate};
+ \item uniform moving-shift incidence control sufficient to reassemble
+ all aliases;
+ \item a fixed-power saving from the clean M\"obius mean;
+ \item an affine Chowla theorem or a new M\"obius-disjointness theorem;
+ \item a breach of sieve parity or positivity;
+ \item a Hardy--Littlewood prime-pair asymptotic; or
+ \item infinitely many twin primes.
+\end{enumerate}
+
+The precise advance is a reduction theorem.  It closes the physical zero
+faces and the proper faces on the exact equality, and diagonalizes the
+nonconstant one-modulus boundary.  The full nonzero coordinate face is
+the unique unsuppressed face on the exact equality.  Off the equality,
+coherent reassembly of both the full face and the proper union remains a
+coefficient-specific problem.

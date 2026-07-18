@@ -1,0 +1,632 @@
+\section{Three-modulus face calculus and determinant-first reassembly}
+\label{sec:tpc37-three-modulus}
+
+After the physical zero-coordinate excision of
+\cref{sec:tpc37-physical-zero-faces}, the target \(N\) and both factors
+in \(su=N\) are units modulo each auxiliary prime.  This section keeps
+three orbit-scale primes separate and computes all eight multiplicative
+character faces exactly.  The calculation has two consequences.  First,
+the seven proper-coordinate faces have one extra power of \(J^{-1}\) in
+quadratic mass.  Second, grouping the completed Cartesian block by the
+integer determinant \(F=su-N\), rather than completing \(s\) or \(u\)
+separately, removes the apparent incomplete-box boundary loss.  Neither
+statement is a bound for the physical coherent row energy; the precise
+remaining Bessel-type input is isolated at the end.
+
+\subsection{The eight faces on the correct finite-field domain}
+
+Let \(q_1,q_2,q_3>2\) be distinct primes, put
+\begin{equation}
+ n_i=q_i-1,
+ \qquad p_i=\frac1{n_i},
+ \qquad M=q_1q_2q_3,
+ \label{eq:tpc37-three-modulus-data}
+\end{equation}
+and fix an integer \(N\) satisfying
+\begin{equation}
+ (N,M)=1.
+ \label{eq:tpc37-N-unit}
+\end{equation}
+For \(F\in\mathbb Z/q_i\mathbb Z\), define
+\begin{align}
+ d_i(F)&:=\mathbf 1_{F=0},
+ \label{eq:tpc37-coordinate-delta}\\
+ e_i(F)&:=\mathbf 1_{F\ne-N},
+ \label{eq:tpc37-coordinate-unit-mask}\\
+ m_i(F)&:=p_i e_i(F),
+ \qquad
+ c_i(F):=d_i(F)-m_i(F).
+ \label{eq:tpc37-principal-centered-coordinate}
+\end{align}
+The exclusion \(F=-N\) in \(e_i\) is essential.  Indeed, if
+\(F=su-N\), then \(F=-N\pmod {q_i}\) is exactly the residue on which
+\(su=0\pmod {q_i}\), so every multiplicative character extended by zero
+must vanish there.
+
+To make the character interpretation explicit, write
+\begin{equation}
+ x_i(F):=(N+F)N^{-1}\pmod {q_i}.
+ \label{eq:tpc37-ratio-coordinate}
+\end{equation}
+Every multiplicative character of
+\(G_i:=\mathbb F_{q_i}^{\times}\) is extended by zero at the origin.  The
+orthogonality relation on \(G_i\) gives
+\begin{align}
+ d_i(F)
+ &=\frac1{n_i}\sum_{\chi_i}\chi_i(x_i(F)),
+ \label{eq:tpc37-all-character-coordinate}\\
+ m_i(F)
+ &=\frac1{n_i}\mathbf 1_{G_i}(x_i(F)),
+ \label{eq:tpc37-principal-character-coordinate}\\
+ c_i(F)
+ &=\frac1{n_i}\sum_{\chi_i\ne\mathbf 1}
+ \chi_i(x_i(F)).
+ \label{eq:tpc37-nonprincipal-character-coordinate}
+\end{align}
+Thus \(m_i\) is the principal multiplicative face and \(c_i\) is the
+aggregate nonprincipal face.  In particular,
+\begin{equation}
+ d_i=m_i+c_i
+ \label{eq:tpc37-one-coordinate-face-split}
+\end{equation}
+holds also at \(x_i=0\), where all three terms vanish.
+
+For \(S\subseteq[3]:=\{1,2,3\}\), define the corresponding face on
+\(\mathbb Z/M\mathbb Z\) by
+\begin{equation}
+ K_S(F)
+ :=\prod_{i\in S}c_i(F)
+   \prod_{i\notin S}m_i(F).
+ \label{eq:tpc37-character-face}
+\end{equation}
+The CRT identifies \(F\pmod M\) with its three coordinates.  Therefore
+\eqref{eq:tpc37-one-coordinate-face-split} gives the exact eight-face
+identity
+\begin{equation}
+ \boxed{
+ \mathbf 1_{M\mid F}
+ =\prod_{i=1}^3d_i(F)
+ =\sum_{S\subseteq[3]}K_S(F).}
+ \label{eq:tpc37-eight-face-identity}
+\end{equation}
+All norms below are unnormalized counting norms on
+\(\mathbb Z/M\mathbb Z\).
+
+\begin{theorem}[Orthogonal face calculus]
+\label{thm:tpc37-orthogonal-face-calculus}
+The eight functions \(K_S\), \(S\subseteq[3]\), are pairwise orthogonal
+in \(\ell^2(\mathbb Z/M\mathbb Z)\).  For every \(S\subseteq[3]\),
+\begin{align}
+ \boxed{
+ \|K_S\|_2^2
+ =\prod_{i\in S}(1-p_i)
+  \prod_{i\notin S}p_i,}
+ \label{eq:tpc37-face-l2}\\
+ \boxed{
+ \|K_S\|_1
+ =2^{|S|}\prod_{i\in S}(1-p_i).}
+ \label{eq:tpc37-face-l1}
+\end{align}
+Moreover, at the joint residue \(F=0\pmod M\),
+\begin{equation}
+ \boxed{
+ K_S(0)=\|K_S\|_2^2.}
+ \label{eq:tpc37-face-joint-value}
+\end{equation}
+Consequently the squared norms of the empty, singleton, double, and full
+faces have respective scales
+\begin{equation}
+ J^{-3},\qquad J^{-2},\qquad J^{-1},\qquad 1
+ \label{eq:tpc37-face-codimension-scales}
+\end{equation}
+when \(q_i\asymp J\).
+\end{theorem}
+
+\begin{proof}
+In one coordinate,
+\begin{equation}
+ \sum_{F\bmod q_i}c_i(F)=0,
+ \qquad
+ \langle c_i,m_i\rangle=0.
+ \label{eq:tpc37-one-coordinate-orthogonality}
+\end{equation}
+There are \(n_i\) residues on which \(e_i=1\).  Hence
+\begin{align}
+ \|m_i\|_2^2&=n_i p_i^2=p_i,
+ &\|m_i\|_1&=n_i p_i=1,
+ \label{eq:tpc37-principal-coordinate-norms}\\
+ \|c_i\|_2^2
+ &=(1-p_i)^2+(n_i-1)p_i^2=1-p_i,
+ &\|c_i\|_1
+ &=(1-p_i)+(n_i-1)p_i=2(1-p_i).
+ \label{eq:tpc37-centered-coordinate-norms}
+\end{align}
+Tensoring through the CRT proves orthogonality and
+\eqref{eq:tpc37-face-l2}--\eqref{eq:tpc37-face-l1}.  At \(F=0\), every
+coordinate equals the distinguished unit residue, so
+\begin{equation}
+ c_i(0)=1-p_i,
+ \qquad m_i(0)=p_i,
+ \label{eq:tpc37-coordinate-joint-values}
+\end{equation}
+which proves \eqref{eq:tpc37-face-joint-value}.  The scale table follows
+from \(p_i\asymp J^{-1}\).
+\end{proof}
+
+\subsection{The coherent union of all proper faces}
+
+Put
+\begin{equation}
+ A:=\prod_{i=1}^3(1-p_i),
+ \qquad
+ C(F):=K_{[3]}(F)=\prod_{i=1}^3c_i(F),
+ \label{eq:tpc37-full-face-A}
+\end{equation}
+and combine the seven proper faces before taking absolute values:
+\begin{equation}
+ P(F):=\sum_{S\subsetneq[3]}K_S(F).
+ \label{eq:tpc37-proper-union-definition}
+\end{equation}
+By \eqref{eq:tpc37-eight-face-identity},
+\begin{equation}
+ \boxed{P(F)=\mathbf 1_{M\mid F}-C(F).}
+ \label{eq:tpc37-proper-union-identity}
+\end{equation}
+In particular, on every nonjoint residue the proper union and full face
+cancel exactly.
+
+\begin{theorem}[Exact norms of the proper union]
+\label{thm:tpc37-proper-union-norms}
+With the preceding definitions,
+\begin{align}
+ \boxed{\|P\|_\infty=1-A,}
+ \label{eq:tpc37-proper-linf}\\
+ \boxed{\|P\|_2^2=1-A,}
+ \label{eq:tpc37-proper-l2}\\
+ \boxed{\|P\|_1=1+6A.}
+ \label{eq:tpc37-proper-l1}
+\end{align}
+The full face satisfies
+\begin{equation}
+ \|C\|_2^2=A,
+ \qquad
+ \|C\|_1=8A.
+ \label{eq:tpc37-full-face-norms}
+\end{equation}
+Thus, for \(q_i\asymp J\),
+\begin{equation}
+ 1-A\asymp J^{-1}.
+ \label{eq:tpc37-proper-one-over-J}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The full-face formulas are the \(S=[3]\) case of
+\cref{thm:tpc37-orthogonal-face-calculus}.  Orthogonality of all eight
+faces and \eqref{eq:tpc37-eight-face-identity} give
+\begin{equation}
+ \|P\|_2^2
+ =\sum_{S\subsetneq[3]}\|K_S\|_2^2
+ =1-A.
+ \label{eq:tpc37-proper-l2-proof}
+\end{equation}
+At the joint residue, \(P(0)=1-A\).  Away from the joint residue, either
+one coordinate is the excluded zero residue, in which case \(P=C=0\),
+or \eqref{eq:tpc37-proper-union-identity} gives \(P=-C\).  If \(Z\) is
+the nonempty set of failed congruence coordinates at such a residue,
+then
+\begin{equation}
+ |C(F)|
+ =\prod_{i\in Z}p_i
+  \prod_{i\notin Z}(1-p_i)
+ \le \max_i p_i
+ \le1-A.
+ \label{eq:tpc37-proper-pointwise-failed}
+\end{equation}
+This proves \eqref{eq:tpc37-proper-linf}.
+
+Finally, the joint residue contributes \(1-A\) to \(\|P\|_1\), while
+the nonjoint residues contribute
+\begin{equation}
+ \|C\|_1-|C(0)|=8A-A=7A.
+ \label{eq:tpc37-proper-offjoint-l1}
+\end{equation}
+Their sum is \(1+6A\), proving \eqref{eq:tpc37-proper-l1}.  The final
+comparison follows from fixedly many \(p_i\asymp J^{-1}\).
+\end{proof}
+
+The same identities locate the quadratic mass exactly.
+
+\begin{corollary}[Joint-alias and ghost-face energy]
+\label{cor:tpc37-joint-ghost-energy}
+On one period modulo \(M\),
+\begin{align}
+ |C(0)|^2&=A^2,
+ &|P(0)|^2&=(1-A)^2,
+ \label{eq:tpc37-joint-face-energy}\\
+ \sum_{\substack{F\bmod M\\F\ne0}}|C(F)|^2
+ &=A(1-A),
+ &\sum_{\substack{F\bmod M\\F\ne0}}|P(F)|^2
+ &=A(1-A).
+ \label{eq:tpc37-ghost-face-energy}
+\end{align}
+Thus the full-face energy is concentrated on joint aliases, whereas the
+proper-face energy is concentrated on nonjoint residues that cancel the
+full face in \eqref{eq:tpc37-proper-union-identity}.
+\end{corollary}
+
+\begin{proof}
+The joint values follow from \eqref{eq:tpc37-full-face-A} and
+\eqref{eq:tpc37-proper-union-identity}.  Subtract them from the total
+squared norms in \eqref{eq:tpc37-proper-l2} and
+\eqref{eq:tpc37-full-face-norms}.
+\end{proof}
+
+\subsection{Determinant-first periodization}
+
+The finite calculation becomes useful on the physical reciprocal blocks
+only after choosing the correct integer variable.  Fix \(0<N\ll X\)
+satisfying \eqref{eq:tpc37-N-unit}, and let
+\(\mathcal R\subset\mathbb N^2\) be any set of pairs \((s,u)\) such that
+\begin{equation}
+ |su-N|\le B,
+ \qquad B\ll X.
+ \label{eq:tpc37-determinant-range}
+\end{equation}
+TPC-36 supplies this hypothesis on every reciprocal dyadic block.  Put
+\begin{equation}
+ F(s,u)=su-N.
+ \label{eq:tpc37-integer-determinant}
+\end{equation}
+
+\begin{theorem}[Determinant-first periodization]
+\label{thm:tpc37-determinant-periodization}
+Let \(H\) be any of the eight faces \(K_S\), the full face \(C\), or the
+proper union \(P\).  For \(r\in\{1,2\}\) and every fixed
+\(\varepsilon>0\),
+\begin{equation}
+ \boxed{
+ \sum_{(s,u)\in\mathcal R}|H(F(s,u))|^r
+ \ll_{\varepsilon}
+ X^{\varepsilon}
+ \left(1+\frac BM\right)
+ \sum_{F\bmod M}|H(F)|^r.}
+ \label{eq:tpc37-determinant-periodization-bound}
+\end{equation}
+The same estimate holds after inserting unary weights of pointwise size
+\(X^{o(1)}\).  It is uniform in the shape of the reciprocal rectangle.
+\end{theorem}
+
+\begin{proof}
+For a fixed integer \(F\), every pair counted on the left satisfies
+\begin{equation}
+ su=N+F.
+ \label{eq:tpc37-fixed-determinant-factorization}
+\end{equation}
+When \(N+F>0\), the number of positive representations is at most
+\(\tau(N+F)\ll_\varepsilon X^\varepsilon\); when \(N+F\le0\), there are
+none.  Therefore
+\begin{equation}
+ \sum_{(s,u)\in\mathcal R}|H(F(s,u))|^r
+ \ll_\varepsilon X^\varepsilon
+ \sum_{|F|\le B}|H(F)|^r.
+ \label{eq:tpc37-divisor-multiplicity-reduction}
+\end{equation}
+The function \(H\) is periodic modulo \(M\).  Partitioning
+\([-B,B]\cap\mathbb Z\) into complete residue blocks and at most two
+partial blocks gives
+\begin{equation}
+ \sum_{|F|\le B}|H(F)|^r
+ \ll\left(1+\frac BM\right)
+ \sum_{F\bmod M}|H(F)|^r.
+ \label{eq:tpc37-period-block-bound}
+\end{equation}
+Combining the last two displays proves the theorem.  Pointwise-soft unary
+weights are absorbed into \(X^\varepsilon\).
+\end{proof}
+
+The theorem is the reason to group by \(F\) before completing either
+\(s\) or \(u\).  A one-variable residue count produces an artificial
+boundary such as \(\min\{S,U\}/J\); the determinant fiber has only
+divisor-bounded multiplicity and sees the exact \(M\)-periodic norm.
+
+\begin{corollary}[Endpoint periodization ledger]
+\label{cor:tpc37-periodization-ledger}
+Assume \(q_i\asymp J\), \(B\ll X\), and put
+\begin{equation}
+ \mathcal K_X:=1+\frac X{J^3}.
+ \label{eq:tpc37-critical-period-count}
+\end{equation}
+Then every individual face and the proper union satisfy
+\begin{equation}
+ \sum_{(s,u)\in\mathcal R}|K_S(F(s,u))|
+ +\sum_{(s,u)\in\mathcal R}|P(F(s,u))|
+ \ll X^{o(1)}\mathcal K_X.
+ \label{eq:tpc37-all-face-l1-periodization}
+\end{equation}
+In quadratic mass,
+\begin{align}
+ \sum_{(s,u)\in\mathcal R}|P(F(s,u))|^2
+ &\ll X^{o(1)}\frac{\mathcal K_X}{J},
+ \label{eq:tpc37-proper-l2-periodization}\\
+ \sum_{(s,u)\in\mathcal R}|C(F(s,u))|^2
+ &\ll X^{o(1)}\mathcal K_X.
+ \label{eq:tpc37-full-l2-periodization}
+\end{align}
+At the endpoint \eqref{eq:tpc37-endpoint-scales},
+\begin{align}
+ \mathcal K_X
+ &=\frac X{J^3}X^{o(1)}
+ =\frac Q{J^2}X^{o(1)}
+ =X^{1/400+o(1)},
+ \label{eq:tpc37-critical-period-endpoint}\\
+ \frac{\mathcal K_X}{J}
+ &=\frac X{J^4}X^{o(1)}
+ =X^{-132/400+o(1)}.
+ \label{eq:tpc37-proper-period-decay}
+\end{align}
+\end{corollary}
+
+\begin{proof}
+Apply \cref{thm:tpc37-determinant-periodization} with the exact norms in
+\cref{thm:tpc37-orthogonal-face-calculus,thm:tpc37-proper-union-norms}.
+Since every face has \(O(1)\) one-period \(\ell^1\) norm, the first bound
+follows.  The proper and full \(\ell^2\) bounds use respectively
+\(1-A\asymp J^{-1}\) and \(A\asymp1\).  The endpoint identities follow
+from \(QJ=X^{1+o(1)}\) and \(J=X^{133/400+o(1)}\).
+\end{proof}
+
+\begin{remark}[Quadratic sparsity is not physical closure]
+\label{rem:tpc37-quadratic-not-physical}
+Equation \eqref{eq:tpc37-proper-period-decay} is an entrywise/fiberwise
+quadratic statement.  The physical orbit slice sums in \(s,u\), the input
+rows, and the determinant shifts before taking its square.  No inequality
+in this section transfers \eqref{eq:tpc37-proper-period-decay} through
+those coherent sums.  In particular, it is not a proof of the inherited
+coefficient gate.
+\end{remark}
+
+\subsection{Aliases, proper-coordinate ghosts, and the terminal fiber}
+
+For every integer \(k\), the joint alias \(F=kM\) has the same face values
+as \(F=0\):
+\begin{equation}
+ C(kM)=A,
+ \qquad
+ P(kM)=1-A.
+ \label{eq:tpc37-joint-alias-values}
+\end{equation}
+Thus the \(O(X/M)\) joint aliases have respective quadratic masses
+\begin{equation}
+ O\!\left(\frac XM\right)
+ \quad\text{and}\quad
+ O\!\left(\frac X{MJ^2}\right)
+ \label{eq:tpc37-joint-alias-mass-ledger}
+\end{equation}
+on the full and proper faces.  The larger proper total in
+\eqref{eq:tpc37-proper-l2-periodization} comes from nonjoint residues
+where \(P=-C\).
+
+This cancellation is not optional.  For example, work in a terminal-size
+interval of \(u\)'s of length \(\asymp X\), set \(s=1\), and suppose
+\((N,M)=1\).  On the family
+\begin{equation}
+ u=N+kq_1q_2,
+ \qquad
+ q_3\nmid k,
+ \qquad
+ q_3\nmid N+kq_1q_2,
+ \label{eq:tpc37-two-hit-ghost-family}
+\end{equation}
+the first two congruences hold, the third fails, and all three ratio
+coordinates are nonzero.  There are
+\begin{equation}
+ \asymp\frac X{q_1q_2}\asymp\frac X{J^2}
+ \label{eq:tpc37-two-hit-count}
+\end{equation}
+such points.  At each one,
+\begin{equation}
+ C(F)=-(1-p_1)(1-p_2)p_3,
+ \qquad P(F)=-C(F),
+ \label{eq:tpc37-two-hit-cancellation}
+\end{equation}
+so the full face alone has total absolute mass
+\begin{equation}
+ \asymp\frac X{J^2}\frac1J
+ =\frac X{J^3}.
+ \label{eq:tpc37-two-hit-critical-mass}
+\end{equation}
+The original joint CRT delta is zero on the whole family.  Dropping the
+proper faces before their cancellation with \(C\) would therefore create
+a false alias family at exactly the critical three-modulus scale.
+
+On the genuine integer equality \(F=0\), the situation is different.
+Every proper divisor layer and the terminal layer \(s=1,u=N\) acquire the
+same scalar face values
+\begin{equation}
+ P(0)=1-A\ll J^{-1},
+ \qquad C(0)=A=1-O(J^{-1}).
+ \label{eq:tpc37-exact-equality-face-values}
+\end{equation}
+Let \(V_{\rm eq}^{\rm abs}\) denote the sign-blind physical energy of the
+regular exact-equality kernel.  The inherited envelopes give
+\begin{equation}
+ V_{\rm eq}^{\rm abs}\ll X^{o(1)}Q^3J.
+ \label{eq:tpc37-equality-absolute-baseline}
+\end{equation}
+The exact scalar relation in
+\eqref{eq:tpc37-exact-equality-face-values} therefore yields
+\begin{equation}
+ \boxed{
+ V_{{\rm eq},{\rm proper}}
+ \ll X^{o(1)}J^{-2}Q^3J
+ =X^{o(1)}\frac{Q^3}{J}.}
+ \label{eq:tpc37-equality-proper-closure}
+\end{equation}
+This closes all proper faces on the actual equality without using a sign
+estimate.  By contrast, the full face is \(A\) times the same vector and
+retains it with asymptotic coefficient one.  In particular, the fused
+terminal M\"obius correlation is not weakened by coordinate centering.
+
+\begin{corollary}[Full-face centering obstruction]
+\label{cor:tpc37-full-face-obstruction}
+No uniform power saving for vectors supported on \(F=0\) can follow from
+three-coordinate multiplicative centering alone.  More precisely, on
+that subspace the full-face operator is scalar multiplication by
+\begin{equation}
+ A=1-O(J^{-1}).
+ \label{eq:tpc37-full-face-scalar}
+\end{equation}
+This is a method obstruction for the CRT-centering route, not a lower
+bound for the physical M\"obius correlation.
+\end{corollary}
+
+\subsection{A sharp coherent no-go and the next gate}
+
+The \(L^2\) saving for \(P\) cannot be upgraded uniformly over all
+bounded unary coefficients.  Retain \(q_i\asymp J\) and the endpoint
+scales.  In the same terminal geometry, take \(s=1\), let \(I\) be an
+interval of \(u\)'s of length \(B\asymp X\), and assume \(B/M\to\infty\).
+Define the bounded unary weight
+\begin{equation}
+ g_N(u)=
+ \begin{cases}
+  \overline{P(u-N)}/|P(u-N)|,&P(u-N)\ne0,\\
+  0,&P(u-N)=0.
+ \end{cases}
+ \label{eq:tpc37-coherent-saturating-weight}
+\end{equation}
+
+\begin{proposition}[Sharp quadratic-to-coherent separation]
+\label{prop:tpc37-coherent-face-no-go}
+For the preceding weight,
+\begin{align}
+ \left|\sum_{u\in I}g_N(u)P(u-N)\right|
+ &\asymp\frac BM,
+ \label{eq:tpc37-coherent-saturation-l1}\\
+ \sum_{u\in I}|P(u-N)|^2
+ &\asymp\frac B{MJ}.
+ \label{eq:tpc37-coherent-saturation-l2}
+\end{align}
+At the endpoint \(B\asymp X\), the ratio of the first quantity to the
+square root of the second is
+\begin{equation}
+ \boxed{
+ \asymp\sqrt{\mathcal K_X J}
+ =\sqrt{\frac X{J^2}}
+ =X^{67/400+o(1)}.}
+ \label{eq:tpc37-coherent-upgrade-loss}
+\end{equation}
+Thus no estimate uniform over all bounded unary coefficients can upgrade
+the displayed periodic \(L^2\) mass to the required coherent scale with
+only an \(X^{o(1)}\) loss.
+\end{proposition}
+
+\begin{proof}
+The definition of \(g_N\) makes the first left side equal to
+\(\sum_{u\in I}|P(u-N)|\).  Decompose \(I-N\) into complete \(M\)-periods
+and at most two partial periods.  The exact one-period norms
+\eqref{eq:tpc37-proper-l1}--\eqref{eq:tpc37-proper-l2}, together with
+\(B/M\to\infty\), give
+\eqref{eq:tpc37-coherent-saturation-l1}--
+\eqref{eq:tpc37-coherent-saturation-l2}.  Finally use
+\(\mathcal K_X=X/J^3\) and the endpoint value of \(J\).
+\end{proof}
+
+The saturating \(g_N\) is an artificial periodic coefficient.  The
+proposition does not assert that the physical weight
+\(-\mu(u)\log u\) has this alignment.  It proves that avoiding it requires
+coefficient-specific arithmetic information.
+
+To state the remaining target correctly, the dependence on the moving
+physical target must be retained.  Restore it in the notation by writing
+\(C_N(F)\) and \(P_N(F)\).  The one-period norms are independent of the
+unit \(N\bmod M\).  Therefore, directly from periodicity and the exact
+norms---without using divisor multiplicity---one has, uniformly for
+\((N,M)=1\),
+\begin{align}
+ \sum_{|F|\ll X}|C_N(F)|^2
+ &\ll\mathcal K_X,
+ \notag\\
+ \sum_{|F|\ll X}|P_N(F)|^2
+ &\ll\frac{\mathcal K_X}{J}.
+ \label{eq:tpc37-direct-face-period-ledger}
+\end{align}
+
+Let \(\mathcal N_{\rm reg}\) denote the targets occurring in one physical
+packet after the zero-face excision, so every
+\(N\in\mathcal N_{\rm reg}\) satisfies \((N,M)=1\).  Let
+\begin{equation}
+ \mathscr H_{\rm phys}
+ :=\ell^2\{(L,\gamma,j)\}
+   \oplus\ell^2\{(R,\alpha,j)\}
+ \label{eq:tpc37-physical-output-Hilbert-space}
+\end{equation}
+be the direct sum of the left and right packet output spaces, with the
+indices restricted to the retained packet.  For the unweighted physical
+output its squared norm is exactly \(V_L+V_R\).  All dyadic, projective,
+and reassembly layers belonging to that packet, including their proved
+\(X^{o(1)}\) cost, are included in the outputs below.
+For a scalar field
+\(\boldsymbol\kappa=(\kappa_N(F))_{N\in\mathcal N_{\rm reg}}\), let
+\(\mathscr Z_F[\boldsymbol\kappa]\) denote the Hilbert-space-valued
+physical output of the shifted determinant fiber
+\begin{equation}
+ su=\ell dj+h+F.
+ \label{eq:tpc37-shifted-determinant-fiber}
+\end{equation}
+Thus \(\mathscr Z_F[\boldsymbol\kappa]\in\mathscr H_{\rm phys}\), and
+every atomic summand with target \(N=\ell dj+h\) is multiplied by
+\(\kappa_N(F)\) before the coherent row sum.  This notation is necessary:
+the coordinate faces depend on \(N\bmod M\) and cannot be pulled out as a
+single scalar depending only on \(F\).
+
+\begin{assumption}[Target-coupled shifted-fiber Bessel input]
+\label{ass:tpc37-shifted-fiber-bessel}
+For the actual row mask and M\"obius-derived coefficients,
+\begin{equation}
+ \boxed{
+ \left\|\sum_{|F|\ll X}
+ \mathscr Z_F[\boldsymbol\kappa]\right\|_2^2
+ \ll X^{o(1)}Q^2J
+ \sup_{N\in\mathcal N_{\rm reg}}
+ \sum_{|F|\ll X}|\kappa_N(F)|^2}
+ \label{eq:tpc37-shift-fiber-bessel-gate}
+\end{equation}
+for the two fields \(\kappa_N=C_N\) and \(\kappa_N=P_N\).
+\end{assumption}
+
+This is a sufficient input, not a theorem of the present paper.  Under
+\cref{ass:tpc37-shifted-fiber-bessel},
+\eqref{eq:tpc37-direct-face-period-ledger} gives
+\begin{equation}
+ Q^2J\mathcal K_X
+ =Q^2J\frac Q{J^2}
+ =\frac{Q^3}{J},
+ \label{eq:tpc37-full-face-bessel-ledger}
+\end{equation}
+for the full face, and the stronger scale
+\begin{equation}
+ Q^2J\frac{\mathcal K_X}{J}
+ =\frac{Q^3}{J^2}.
+ \label{eq:tpc37-proper-face-bessel-ledger}
+\end{equation}
+
+The conditional input
+\eqref{eq:tpc37-shift-fiber-bessel-gate} is not a formal consequence of
+the periodic \(L^2\) calculation.
+\Cref{prop:tpc37-coherent-face-no-go} shows that arbitrary bounded unary
+data can align with the \(L^1\), rather than \(L^2\), size of the face.
+Any proof at the stated physical normalization must therefore exploit
+the actual row and M\"obius signs, or an equivalent dispersion
+mechanism.  There is also a genuine uniformity issue: on the \(F\)-fiber
+the affine shift is
+\begin{equation}
+ h_F=h+F,
+ \label{eq:tpc37-moving-shift}
+\end{equation}
+which may be of size \(X\).  Fixed-\(h\) primitivity and incidence bounds
+from the preceding papers cannot simply be invoked uniformly in \(F\).
+The three-modulus calculation therefore removes the fixed-target
+proper-coordinate and incomplete-period bookkeeping obstructions, but
+leaves a precise target-coupled, coefficient-weighted shifted-fiber gate.

@@ -1,0 +1,346 @@
+{
+  "arithmetic": "exact integers, rational numbers, and cyclotomic quotient rings",
+  "certificate_digest": "3aac4337fdfcee4cdbc013c73ac5ca562fdcd76a79037e20e4eba6f30ed08efa",
+  "crt_face_calculus": [
+    {
+      "A": "5/16",
+      "faces": [
+        {
+          "l1": "1",
+          "l2_squared": "1/48",
+          "mask": "000"
+        },
+        {
+          "l1": "1",
+          "l2_squared": "1/48",
+          "mask": "001"
+        },
+        {
+          "l1": "3/2",
+          "l2_squared": "1/16",
+          "mask": "010"
+        },
+        {
+          "l1": "3/2",
+          "l2_squared": "1/16",
+          "mask": "011"
+        },
+        {
+          "l1": "5/3",
+          "l2_squared": "5/48",
+          "mask": "100"
+        },
+        {
+          "l1": "5/3",
+          "l2_squared": "5/48",
+          "mask": "101"
+        },
+        {
+          "l1": "5/2",
+          "l2_squared": "5/16",
+          "mask": "110"
+        },
+        {
+          "l1": "5/2",
+          "l2_squared": "5/16",
+          "mask": "111"
+        }
+      ],
+      "full_face": {
+        "l1": "5/2",
+        "l2_squared": "5/16",
+        "off_joint_l2_squared": "55/256"
+      },
+      "modulus": 105,
+      "primes": [
+        3,
+        5,
+        7
+      ],
+      "proper_union": {
+        "l1": "23/8",
+        "l2_squared": "11/16",
+        "linfinity": "11/16",
+        "off_joint_l2_squared": "55/256"
+      },
+      "target": 2
+    },
+    {
+      "A": "9/16",
+      "faces": [
+        {
+          "l1": "1",
+          "l2_squared": "1/240",
+          "mask": "000"
+        },
+        {
+          "l1": "3/2",
+          "l2_squared": "1/80",
+          "mask": "001"
+        },
+        {
+          "l1": "5/3",
+          "l2_squared": "1/48",
+          "mask": "010"
+        },
+        {
+          "l1": "5/2",
+          "l2_squared": "1/16",
+          "mask": "011"
+        },
+        {
+          "l1": "9/5",
+          "l2_squared": "3/80",
+          "mask": "100"
+        },
+        {
+          "l1": "27/10",
+          "l2_squared": "9/80",
+          "mask": "101"
+        },
+        {
+          "l1": "3",
+          "l2_squared": "3/16",
+          "mask": "110"
+        },
+        {
+          "l1": "9/2",
+          "l2_squared": "9/16",
+          "mask": "111"
+        }
+      ],
+      "full_face": {
+        "l1": "9/2",
+        "l2_squared": "9/16",
+        "off_joint_l2_squared": "63/256"
+      },
+      "modulus": 385,
+      "primes": [
+        5,
+        7,
+        11
+      ],
+      "proper_union": {
+        "l1": "35/8",
+        "l2_squared": "7/16",
+        "linfinity": "7/16",
+        "off_joint_l2_squared": "63/256"
+      },
+      "target": 2
+    }
+  ],
+  "determinant_periodization_and_ghosts": {
+    "fiber_test": {
+      "determinant_bound": 227,
+      "determinant_fibers": 229,
+      "maximum_fiber_multiplicity": 18,
+      "modulus": 105,
+      "norm_checks": {
+        "full_r1": {
+          "interval_norm": "173/16",
+          "pair_norm": "485/24",
+          "period_block_count": 5,
+          "period_norm": "5/2"
+        },
+        "full_r2": {
+          "interval_norm": "3167/2304",
+          "pair_norm": "971/384",
+          "period_block_count": 5,
+          "period_norm": "5/16"
+        },
+        "proper_r1": {
+          "interval_norm": "203/16",
+          "pair_norm": "575/24",
+          "period_block_count": 5,
+          "period_norm": "23/8"
+        },
+        "proper_r2": {
+          "interval_norm": "7487/2304",
+          "pair_norm": "2411/384",
+          "period_block_count": 5,
+          "period_norm": "11/16"
+        }
+      },
+      "positive_factor_pairs": 1281,
+      "primes": [
+        3,
+        5,
+        7
+      ],
+      "target": 2
+    },
+    "ghost_test": {
+      "joint_aliases_checked": 7,
+      "joint_full_amplitude": "9/16",
+      "joint_proper_amplitude": "7/16",
+      "primes": [
+        5,
+        7,
+        11
+      ],
+      "target": 2,
+      "two_hit_examples": 36,
+      "two_hit_full_amplitude": "-1/16"
+    }
+  },
+  "jacobi_near_isometry": [
+    {
+      "cyclotomic_order": 4,
+      "energy_test_vector": [
+        2,
+        -3,
+        4
+      ],
+      "energy_value": "419/16",
+      "gram_diagonal": 11,
+      "gram_off_diagonal": -5,
+      "matrix_dimension": 3,
+      "primitive_root": 2,
+      "q": 5,
+      "singular_values_squared": {
+        "large": 16,
+        "large_multiplicity": 2,
+        "small": 1,
+        "small_multiplicity": 1
+      }
+    },
+    {
+      "cyclotomic_order": 6,
+      "energy_test_vector": [
+        2,
+        -3,
+        4,
+        -5,
+        6
+      ],
+      "energy_value": "782/9",
+      "gram_diagonal": 29,
+      "gram_off_diagonal": -7,
+      "matrix_dimension": 5,
+      "primitive_root": 3,
+      "q": 7,
+      "singular_values_squared": {
+        "large": 36,
+        "large_multiplicity": 4,
+        "small": 1,
+        "small_multiplicity": 1
+      }
+    },
+    {
+      "cyclotomic_order": 10,
+      "energy_test_vector": [
+        2,
+        -3,
+        4,
+        -5,
+        6,
+        -7,
+        8,
+        -9,
+        10
+      ],
+      "energy_value": "9501/25",
+      "gram_diagonal": 89,
+      "gram_off_diagonal": -11,
+      "matrix_dimension": 9,
+      "primitive_root": 2,
+      "q": 11,
+      "singular_values_squared": {
+        "large": 100,
+        "large_multiplicity": 8,
+        "small": 1,
+        "small_multiplicity": 1
+      }
+    }
+  ],
+  "physical_zero_faces": [
+    {
+      "interval_class_bound": 5,
+      "maximum_rows_on_one_target_residue": 5,
+      "maximum_times_for_one_row": 1,
+      "orbit_count": 4,
+      "q": 5,
+      "row_count": 18,
+      "row_label_span": 21
+    },
+    {
+      "interval_class_bound": 5,
+      "maximum_rows_on_one_target_residue": 5,
+      "maximum_times_for_one_row": 1,
+      "orbit_count": 6,
+      "q": 7,
+      "row_count": 26,
+      "row_label_span": 29
+    },
+    {
+      "interval_class_bound": 5,
+      "maximum_rows_on_one_target_residue": 5,
+      "maximum_times_for_one_row": 1,
+      "orbit_count": 10,
+      "q": 11,
+      "row_count": 42,
+      "row_label_span": 45
+    }
+  ],
+  "punctured_centering": [
+    {
+      "affine_correlations_checked": 16,
+      "cycle_decomposition": {
+        "boundary_support": 3,
+        "complete_cycles": 3,
+        "interval_length": 18,
+        "interval_start": -3,
+        "remainder_length": 3
+      },
+      "mean_F": "5",
+      "product_slope_identities_checked": 16,
+      "punctured_mean_beta": "1",
+      "q": 5
+    },
+    {
+      "affine_correlations_checked": 36,
+      "cycle_decomposition": {
+        "boundary_support": 5,
+        "complete_cycles": 3,
+        "interval_length": 26,
+        "interval_start": -5,
+        "remainder_length": 5
+      },
+      "mean_F": "11",
+      "product_slope_identities_checked": 36,
+      "punctured_mean_beta": "1",
+      "q": 7
+    },
+    {
+      "affine_correlations_checked": 100,
+      "cycle_decomposition": {
+        "boundary_support": 9,
+        "complete_cycles": 3,
+        "interval_length": 42,
+        "interval_start": -9,
+        "remainder_length": 9
+      },
+      "mean_F": "31",
+      "product_slope_identities_checked": 100,
+      "punctured_mean_beta": "1",
+      "q": 11
+    }
+  ],
+  "schema": "tpc37-exact-certificate-v1",
+  "source_constraints": {
+    "assert_statements": 0,
+    "float_literals": 0,
+    "optimization_safe_explicit_checks": true,
+    "random_imports": 0,
+    "stdlib_only": true
+  },
+  "source_sha256": {
+    "experiments/tpc37_certificate.py": "3c4565e36931c5fd42d689425cf9ece9bce5d4a376d0657e79cc3f6dab5ccaed",
+    "main.tex": "3595f5a5b037eaaace19be8c4cd6e2e49a3adacafa3a483bca024e60c2f65cc2",
+    "sections/physical-zero-faces.tex": "5ca9c882fe645d4c5c309214f23286196b406252a3f8815943c440265f043a4f",
+    "sections/punctured-centering.tex": "1022a0d0b6a52fa095d4ae5f7c14e09b62f1c427646d8673bf839be6e6cc71e2",
+    "sections/three-modulus.tex": "2a6443541ba088c96822896b56580407eaa087bff6b373b8314e3594e902a3c2",
+    "sections/two-character.tex": "e43e85a5a7bfb378934b014e3d916d535536307a2cc8590df64c4976dc7fcd90"
+  },
+  "status": "pass"
+}

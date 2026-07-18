@@ -1,0 +1,241 @@
+\section{Introduction}
+\label{sec:tpc37-introduction}
+
+The preceding papers reduce one calibrated prime--M\"obius residual to a
+specific orbit--sliced energy problem.  TPC-25 shows, in an earlier
+one-sided shell, that physical coefficient provenance must be retained
+before taking absolute values \citep{WangTPC25}.  TPC-35 identifies the
+complete product--slope spectrum and the critical three-modulus alias
+scale \citep{WangTPC35}.  TPC-36 then proves that the actual static row
+mask has only $X^{o(1)}$ signed projective cost, and relocates the
+remaining difficulty to the weighted coherent functional
+\begin{equation}
+ \frac1{q-1}\sum_\chi
+ |\widehat b(\bar\chi)|^2
+ \left|\sum_s w(s)\widehat R_s(\chi)\right|^2
+ \label{eq:tpc37-intro-inherited-functional}
+\end{equation}
+after incomplete ranges and integer aliases are restored
+\citep{WangTPC36}.  The present paper separates three coordinate effects
+that are entangled in \eqref{eq:tpc37-intro-inherited-functional}:
+physical zero residues, the nonconstant complementary-factor weight, and
+the proper faces of a three-modulus completion.
+
+The inherited sufficient estimate is
+\begin{equation}
+ \boxed{
+ V_L+V_R\ll X^{o(1)}\frac{Q^3}{J}.}
+ \label{eq:tpc37-intro-orbit-gate}
+\end{equation}
+The sign-blind exact-equality energy has the larger baseline
+\begin{equation}
+ V_{\rm eq}^{\rm abs}\ll X^{o(1)}Q^3J.
+ \label{eq:tpc37-intro-absolute-baseline}
+\end{equation}
+At the high--\(\beta\) endpoint,
+\begin{equation}
+ Q=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ T=X^{193/500+o(1)},
+ \label{eq:tpc37-intro-scales}
+\end{equation}
+so the available ratio between
+\eqref{eq:tpc37-intro-orbit-gate} and
+\eqref{eq:tpc37-intro-absolute-baseline} is exactly $J^{-2}$ in
+energy.  Equivalently, the allowance above the previously isolated
+Gram-copy diagonal $X^{o(1)}Q^2J$ is
+\begin{equation}
+ \frac{Q^3/J}{Q^2J}
+ =\frac Q{J^2}=X^{1/400+o(1)}.
+ \label{eq:tpc37-intro-margin}
+\end{equation}
+There is no room for an untracked fixed power of $X$.
+
+\subsection{Zero coordinates are removed on the physical equality}
+
+Choose a prime $q\asymp J$ larger than the positive orbit support and
+between the physical $d$- and $\ell$-scales.  On the part of the
+actual packet satisfying
+\begin{equation}
+ q\mid m_\alpha j+h,
+ \label{eq:tpc37-intro-singular-target}
+\end{equation}
+a fixed orbit time selects only $O(1+Q/q)$ row labels, whereas a fixed
+row label occurs at no more than one orbit time.  This elementary
+two-sided incidence, combined with the inherited row $\ell^2$-mass,
+gives
+\begin{equation}
+ \boxed{
+ V_{L,\rm sing(q)}+V_{R,\rm sing(q)}
+ \ll X^{o(1)}(1+Q/q)Q^2
+ \ll X^{o(1)}\frac{Q^3}{J}.}
+ \label{eq:tpc37-intro-zero-face-bound}
+\end{equation}
+If the ultra divisor is opened as
+\begin{equation}
+ su=m_\alpha j+h,
+ \label{eq:tpc37-intro-physical-equality}
+\end{equation}
+then, because $q$ is prime, the event in
+\eqref{eq:tpc37-intro-singular-target} is precisely the union of the
+physical faces $s=0\pmod q$ and $u=0\pmod q$.  Thus the zero
+coordinates are absorbed before replacing equality by congruence.  The
+argument extends to any fixed number of orbit-scale primes.
+
+This result does not discard the terminal factorization.  On the regular
+support $q\nmid m_\alpha j+h$, the point $s=1$,
+$u=m_\alpha j+h$ remains present and both coordinates are units.
+
+\subsection{Punctured centering isolates the complete trace}
+
+After physical zero-face excision, the raw ultra residue vector $G$
+satisfies $G(0)=0$.  Ordinary additive centering would generally
+create a nonzero value at the excluded residue.  We instead define
+\begin{equation}
+ \beta=\frac1{q-1}\sum_{U\ne0}G(U),\qquad
+ g(0)=0,\qquad g(U)=G(U)-\beta\quad(U\ne0).
+ \label{eq:tpc37-intro-punctured-centering}
+\end{equation}
+If $f=F-q^{-1}\sum_D F(D)$, then for $a,s\ne0$ the raw affine
+correlation satisfies the exact identity
+\begin{equation}
+ \mathcal C_{a,s}(F,G)
+ =\mathcal C_{a,s}(f,g)
+ -\beta f(-h/a)+(q-1)\overline F\,\beta.
+ \label{eq:tpc37-intro-punctured-identity}
+\end{equation}
+Every correction is explicit and rank one in the complementary
+\(s\)-coordinate.  The punctured-centered core
+has the exact complete-cycle cancellation
+\begin{equation}
+ \sum_{s\in\mathbb F_q^\times}R_s(a)=0.
+ \label{eq:tpc37-intro-complete-cycle}
+\end{equation}
+For the actual dyadic ultra coefficient, a standard one-M\"obius
+estimate gives, for every fixed $A>0$,
+\begin{equation}
+ |\beta|\ll_A\frac Uq(\log X)^{-A}.
+ \label{eq:tpc37-intro-beta-bound}
+\end{equation}
+Hence all complete residue cycles in the complementary interval vanish
+from the centered core; the incomplete boundary, the displayed mean
+corrections, and alias weights remain.  The logarithmic saving in
+\eqref{eq:tpc37-intro-beta-bound} is not promoted here to a fixed power
+saving.
+
+\subsection{The two-character layer is a Jacobi near-isometry}
+
+Let $w$ be the nonconstant complementary-factor weight and let
+$c=w*_\times g$ on $\mathbb F_q^\times$.  The coherent transform can
+be written as
+\begin{equation}
+ C_\chi=\sum_{x\in\mathbb F_q^\times}
+ c(x)\overline{\chi(x-h)}.
+ \label{eq:tpc37-intro-shifted-Mellin}
+\end{equation}
+Taking a second Mellin transform produces the nonprincipal Jacobi matrix
+\begin{equation}
+ K_{\chi,\psi}=J(\psi,\bar\chi),
+ \qquad \chi,\psi\ne\mathbf1.
+ \label{eq:tpc37-intro-Jacobi-matrix}
+\end{equation}
+We compute its Gram matrix exactly:
+\begin{equation}
+ \boxed{
+ K^*K=KK^*=(q-1)^2I-q\,\mathbf1\mathbf1^*.}
+ \label{eq:tpc37-intro-Jacobi-Gram}
+\end{equation}
+Thus its singular values are $q-1$, with multiplicity $q-3$, and
+$1$, with multiplicity one.  The Jacobi layer is therefore a scaled
+near-isometry rather than a source of free square-root cancellation.
+The same calculation gives the exact energy identity
+\begin{align}
+ \sum_{\chi\ne\mathbf1}|C_\chi|^2
+ ={}&\sum_{\psi\ne\mathbf1}
+ |\widehat w(\psi)\widehat g(\psi)|^2 \notag\\
+ &-\frac q{(q-1)^2}
+ \left|\sum_{\psi\ne\mathbf1}
+ \widehat w(\psi)\widehat g(\psi)\psi(h)\right|^2.
+ \label{eq:tpc37-intro-Jacobi-energy}
+\end{align}
+
+When $w$ is the residue-count weight of an interval,
+P\'olya--Vinogradov bounds its nonprincipal Mellin coefficients and saves
+one full factor $q$ relative to uniform Cauchy in the unweighted
+character average.  That conclusion is deliberately not transferred to
+the outer physical coefficient direction: a punctured single-character
+example still attains the coherent Cauchy factor.  For the nonprincipal
+outer spectrum, a sufficient hypothesis is a Mellin-flatness estimate for
+the physical convolution \(b*_\times f\), or an equivalent bound for the
+resulting M\"obius Hadamard energy.  The principal outer boundary remains
+an explicit separate term.  Neither that boundary estimate nor the
+nonprincipal hypothesis is proved.
+
+\subsection{Three-modulus proper faces localize, but the full face remains}
+
+For three pairwise coprime primes $q_i\asymp J$, we decompose the CRT
+delta into its eight principal/nonprincipal coordinate faces.  They are
+orthogonal over one CRT period, with squared masses
+\begin{equation}
+ J^{-3},\qquad J^{-2},\qquad J^{-1},\qquad 1
+ \label{eq:tpc37-intro-face-scales}
+\end{equation}
+according to the number of nonprincipal coordinates.  More strongly,
+the coherent sum $P$ of all seven proper faces satisfies
+\begin{equation}
+ \|P\|_\infty\ll J^{-1},\qquad
+ \|P\|_2^2\asymp J^{-1},\qquad
+ \|P\|_1\asymp1.
+ \label{eq:tpc37-intro-proper-norms}
+\end{equation}
+Grouping first by the integer determinant $F=su-N$ removes an apparent
+incomplete-box boundary and preserves these exact period norms up to the
+critical multiplicity
+\begin{equation}
+ 1+\frac X{q_1q_2q_3}
+ =X^{1/400+o(1)}.
+ \label{eq:tpc37-intro-critical-periods}
+\end{equation}
+This is a fiberwise statement.  It does not commute automatically with
+the coherent row and divisor sums in the physical energy.
+
+On the genuine equality $F=0$, the proper union has amplitude
+$O(J^{-1})$.  Therefore its contribution closes directly from the
+sign-blind baseline:
+\begin{equation}
+ V_{{\rm eq},{\rm proper}}
+ \ll X^{o(1)}J^{-2}Q^3J
+ =X^{o(1)}\frac{Q^3}{J}.
+ \label{eq:tpc37-intro-proper-equality-closure}
+\end{equation}
+The full three-coordinate face has amplitude $1-O(J^{-1})$ on the same
+equality and retains the terminal M\"obius layer.  An artificial bounded
+coefficient can also align with the $\ell^1$, rather than the
+$\ell^2$, size of the proper face.  Consequently the periodic quadratic
+calculation is not a coefficient-free proof of
+\eqref{eq:tpc37-intro-orbit-gate}.
+
+\subsection{Claim boundary and organization}
+
+The unconditional advances are the physical absorption
+\eqref{eq:tpc37-intro-zero-face-bound}, the exact punctured-centering and
+Jacobi identities, the orthogonal CRT face calculus, determinant-first
+periodization, and proper-face closure on the exact equality.  The
+remaining alternatives are either separate absorption of the exposed
+punctured-centering mean corrections and principal outer boundary
+together with an actual nonprincipal Mellin-overlap theorem, or a
+target-coupled, coefficient-weighted shifted-fiber Bessel estimate for
+the unsplit raw physical output.  We establish neither route.
+In particular, this paper proves no estimate for the full
+regular coherent face, no affine Chowla theorem, no parity breach, no
+positivity or prime-pair main term, no Hardy--Littlewood asymptotic, and
+no twin-prime theorem.
+
+\Cref{sec:tpc37-inherited-interface} fixes the physical object and the
+normalizations.  \Cref{sec:tpc37-physical-zero-faces} removes the physical
+zero coordinates.  \Cref{sec:tpc37-punctured-centering} proves the
+punctured identities and complete-cycle cancellation.
+\Cref{sec:tpc37-two-character} gives the exact weighted Jacobi spectrum.
+\Cref{sec:tpc37-three-modulus} develops the three-modulus face calculus
+and determinant-first reassembly.  The final sections state the remaining
+gate, certificate scope, and formal nonclaims.

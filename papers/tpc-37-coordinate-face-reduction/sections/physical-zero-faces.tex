@@ -1,0 +1,252 @@
+\section{Physical excision of the zero coordinate faces}
+\label{sec:tpc37-physical-zero-faces}
+
+The complete product--slope spectrum is naturally formulated on
+\(\mathbb F_q^\times\).  Before completing any integer variable modulo
+\(q\), we remove the physical row--time pairs on which a complementary
+factor can be zero modulo \(q\).  This order avoids confusing a coordinate
+face of a modular relaxation with cancellation in the M\"obius
+coefficient.
+
+\subsection{The inherited orbit slice}
+
+We use only the following properties of the physical packet.  The left
+and right row sets have \(O(Q)\) elements.  A left row \(\alpha\) has a
+distinct integer label
+\begin{equation}
+ m_\alpha=\ell_\alpha d_\alpha\asymp Q,
+ \label{eq:tpc37-row-label}
+\end{equation}
+where the source label \(\ell_\alpha\) is prime, and a coefficient
+satisfying
+\begin{equation}
+ \sum_\alpha |\gamma_\alpha^{(1)}|^2
+ \ll X^{o(1)}Q.
+ \label{eq:tpc37-left-row-energy}
+\end{equation}
+The symmetric estimate holds for the right coefficients.  The orbit set
+\(\mathcal J\) is contained in a positive interval of diameter
+\(O(J)\), and every \(j\in\mathcal J\) is \(O(J)\).  Put
+\begin{equation}
+ N_\alpha(j)=m_\alpha j+h.
+ \label{eq:tpc37-target}
+\end{equation}
+The actual multiplier
+\(\mathfrak A_{\alpha,\gamma}^{\rm act}(j)\) is bounded, and the ultra
+increment
+\begin{equation}
+ C_m(j)=
+ \sum_{\substack{T<u\le U_0\\u\mid mj+h}}
+ -\mu(u)\log u
+ \label{eq:tpc37-ultra-increment}
+\end{equation}
+satisfies
+\begin{equation}
+ |C_m(j)|\ll X^{o(1)}
+ \label{eq:tpc37-ultra-envelope}
+\end{equation}
+uniformly on the packet.  Thus the left slice and its energy are
+\begin{align}
+ Y_{\gamma,j}^L
+ &:=\sum_\alpha \gamma_\alpha^{(1)}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)C_{m_\alpha}(j),
+ \label{eq:tpc37-left-slice}\\
+ V_L&:=\sum_{\gamma,j}|Y_{\gamma,j}^L|^2.
+ \label{eq:tpc37-left-energy}
+\end{align}
+The right objects are obtained by exchanging the two row systems.
+
+At the high--\(\beta\) endpoint,
+\begin{equation}
+ Q=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ T=X^{193/500+o(1)},
+ \label{eq:tpc37-endpoint-scales}
+\end{equation}
+and the inherited source scales give
+\begin{equation}
+ D=o(J),\qquad J=o(L).
+ \label{eq:tpc37-source-order}
+\end{equation}
+
+Choose a fixed constant \(K\) larger than the constants implicit in the
+positive orbit support.  Bertrand's postulate supplies, for all
+sufficiently large \(X\), a prime
+\begin{equation}
+ KJ<q<2KJ.
+ \label{eq:tpc37-orbit-prime}
+\end{equation}
+After enlarging \(K\) once, we may and do arrange that
+\begin{equation}
+ \max\mathcal J<q,\qquad
+ \max_\alpha d_\alpha<q<\min_\alpha\ell_\alpha,
+ \qquad q\nmid h.
+ \label{eq:tpc37-unit-coordinate-range}
+\end{equation}
+In particular, \(q\nmid m_\alpha jh\) on the physical support.
+
+\subsection{One auxiliary prime}
+
+Split the ultra increment by the target residue:
+\begin{align}
+ C_m^{\rm sing(q)}(j)
+ &:=\mathbf 1_{q\mid mj+h}C_m(j),
+ \label{eq:tpc37-singular-increment}\\
+ C_m^{\rm reg(q)}(j)
+ &:=\mathbf 1_{q\nmid mj+h}C_m(j).
+ \label{eq:tpc37-regular-increment}
+\end{align}
+Let \(Y^{L,\rm sing(q)}\), \(Y^{L,\rm reg(q)}\), and their energies be
+defined from \eqref{eq:tpc37-left-slice} by using the corresponding
+increment.  Define the right versions symmetrically.
+
+\begin{theorem}[Physical absorption of one zero-coordinate face]
+\label{thm:tpc37-one-prime-face}
+Under \eqref{eq:tpc37-row-label}--\eqref{eq:tpc37-unit-coordinate-range},
+\begin{equation}
+ \boxed{
+ V_{L,\rm sing(q)}+V_{R,\rm sing(q)}
+ \ll X^{o(1)}\left(1+\frac Qq\right)Q^2.}
+ \label{eq:tpc37-one-prime-face-bound}
+\end{equation}
+Consequently, at \(q\asymp J\),
+\begin{equation}
+ \boxed{
+ V_{L,\rm sing(q)}+V_{R,\rm sing(q)}
+ \ll X^{o(1)}\frac{Q^3}{J}.}
+ \label{eq:tpc37-one-prime-gate}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For fixed \(j\), let
+\begin{equation}
+ \mathcal A_q(j)=\{\alpha:q\mid m_\alpha j+h\}.
+ \label{eq:tpc37-row-residue-set}
+\end{equation}
+If \(q\mid j\), this set is empty because \(q\nmid h\).  Otherwise
+\(m_\alpha\) lies in one residue class modulo \(q\).  The labels are
+distinct and lie in an interval of length \(O(Q)\), so
+\begin{equation}
+ |\mathcal A_q(j)|\ll 1+\frac Qq.
+ \label{eq:tpc37-fixed-time-row-count}
+\end{equation}
+Conversely, for fixed \(\alpha\), the congruence
+\(m_\alpha j\equiv-h\pmod q\) selects one class of \(j\pmod q\).
+The orbit interval has diameter smaller than \(q\), and hence
+\begin{equation}
+ \#\{j\in\mathcal J:\alpha\in\mathcal A_q(j)\}\le1.
+ \label{eq:tpc37-fixed-row-time-count}
+\end{equation}
+
+For one fixed opposite row \(\gamma\), Cauchy--Schwarz,
+\eqref{eq:tpc37-ultra-envelope}, and
+\eqref{eq:tpc37-fixed-time-row-count} give
+\begin{align}
+ \sum_j|Y_{\gamma,j}^{L,\rm sing(q)}|^2
+ &\ll X^{o(1)}\left(1+\frac Qq\right)
+ \sum_j\sum_{\alpha\in\mathcal A_q(j)}
+ |\gamma_\alpha^{(1)}|^2 \notag\\
+ &\le X^{o(1)}\left(1+\frac Qq\right)
+ \sum_\alpha|\gamma_\alpha^{(1)}|^2 \notag\\
+ &\ll X^{o(1)}\left(1+\frac Qq\right)Q.
+ \label{eq:tpc37-one-column-singular-energy}
+\end{align}
+There are \(O(Q)\) opposite rows.  Summing
+\eqref{eq:tpc37-one-column-singular-energy} over \(\gamma\) proves the
+left part of \eqref{eq:tpc37-one-prime-face-bound}; the right part is
+symmetric.  Finally, \(Q/q\to\infty\) and \(q\asymp J\), proving
+\eqref{eq:tpc37-one-prime-gate}.
+\end{proof}
+
+The terminology in the theorem is literal.  On opening an ultra divisor,
+write
+\begin{equation}
+ su=N_\alpha(j).
+ \label{eq:tpc37-complementary-factorization}
+\end{equation}
+For a prime \(q\),
+\begin{equation}
+ q\mid N_\alpha(j)
+ \quad\Longleftrightarrow\quad
+ q\mid s\ \text{or}\ q\mid u.
+ \label{eq:tpc37-zero-face-equivalence}
+\end{equation}
+Thus \cref{thm:tpc37-one-prime-face} absorbs simultaneously the
+\(s=0\) and \(u=0\) residue faces of the physical equality.  It does not
+estimate these faces by first replacing the equality with a congruence.
+
+\subsection{A fixed finite family of moduli}
+
+The preceding argument is stable under the fixed number of primes used
+in a CRT realization.
+For every fixed \(r\), the prime number theorem supplies \(r\) distinct
+primes in the same fixed dilate of \(J\) for all sufficiently large
+\(X\); the scale separation in \eqref{eq:tpc37-source-order} then gives
+\eqref{eq:tpc37-unit-coordinate-range} for each of them.
+
+\begin{corollary}[Fixed finite face excision]
+\label{cor:tpc37-finite-prime-faces}
+Let \(q_1,\ldots,q_r\asymp J\) be distinct primes satisfying
+\eqref{eq:tpc37-unit-coordinate-range}, where \(r\) is fixed independently
+of \(X\), and put \(P=\prod_{i=1}^{r}q_i\).  Define
+\begin{equation}
+ C_m^{\rm sing(P)}(j)
+ :=\mathbf 1_{(mj+h,P)>1}C_m(j).
+ \label{eq:tpc37-multimodulus-singular-increment}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ V_{L,\rm sing(P)}+V_{R,\rm sing(P)}
+ \ll_r X^{o(1)}\frac{Q^3}{J}.}
+ \label{eq:tpc37-multimodulus-face-bound}
+\end{equation}
+On the complementary row--time support, every factor \(s,u\) in
+\eqref{eq:tpc37-complementary-factorization} is a unit modulo every
+\(q_i\).
+\end{corollary}
+
+\begin{proof}
+Partition the event \((N_\alpha(j),P)>1\) according to the first prime
+\(q_i\) dividing the target.  Apply
+\cref{thm:tpc37-one-prime-face} to each disjoint piece.  The square of the
+sum of at most \(r\) pieces is at most \(r\) times the sum of their
+squares.  Since \(r\) is fixed, this proves
+\eqref{eq:tpc37-multimodulus-face-bound}.  The final assertion follows
+from \(su=N_\alpha(j)\).
+\end{proof}
+
+\subsection{Reduction of the full energy}
+
+For one prime, the exact pointwise decomposition is
+\begin{equation}
+ Y_{\gamma,j}^L
+ =Y_{\gamma,j}^{L,\rm reg(q)}
+ +Y_{\gamma,j}^{L,\rm sing(q)}.
+ \label{eq:tpc37-slice-regular-singular-split}
+\end{equation}
+Therefore
+\begin{equation}
+ \boxed{
+ V_L+V_R
+ \le2\bigl(V_{L,\rm reg(q)}+V_{R,\rm reg(q)}\bigr)
+ +2\bigl(V_{L,\rm sing(q)}+V_{R,\rm sing(q)}\bigr).}
+ \label{eq:tpc37-full-energy-reduction}
+\end{equation}
+The same statement holds for the fixed finite family in
+\cref{cor:tpc37-finite-prime-faces}.  Hence a bound of size
+\(X^{o(1)}Q^3/J\) for the regular energy implies the same bound for the
+full energy.  The theorem proved here supplies the singular term in this
+reduction; it does not supply the regular estimate.
+
+At the endpoint,
+\begin{equation}
+ \frac Qq=X^{67/200+o(1)},\qquad
+ \frac{Q^3}{J}=X^{167/100+o(1)}.
+ \label{eq:tpc37-face-endpoint-ledger}
+\end{equation}
+In particular, the zero-coordinate faces fit the required ledger without
+using a sign estimate.  The terminal factorization \(s=1\), \(u=N_\alpha(j)\)
+remains in the regular part whenever \(q\nmid N_\alpha(j)\); no terminal
+M\"obius cancellation is asserted.

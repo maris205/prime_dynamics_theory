@@ -1,0 +1,806 @@
+\section{Punctured two--character dispersion}
+\label{sec:tpc37-two-character}
+
+The complete complementary-factor trace from TPC-36 vanishes after the
+right coefficient is centered on the punctured line
+\(\mathbb F_q^\times\).  This does not by itself estimate an incomplete
+or weighted complementary-factor sum.  In this section we compute that
+weighted sum exactly.  The resulting Jacobi matrix is, apart from one
+rank-one direction, a scaled unitary matrix.  Thus the Jacobi expansion
+does not manufacture cancellation: it transfers a concrete Hadamard
+energy between two multiplicative-character coordinates.
+
+\subsection{Conventions and the weighted transform}
+
+Let \(q>2\) be prime, put
+\begin{equation}
+ G:=\mathbb F_q^\times,
+ \qquad n:=|G|=q-1,
+ \label{eq:tpc37-G-n}
+\end{equation}
+and write \(\widehat G\) for the group of multiplicative characters of
+\(G\).  Every character, including the principal character
+\(\mathbf 1\), is extended to \(\mathbb F_q\) by the value zero at zero.
+For \(v:G\to\mathbb C\), use the unnormalized Mellin transform
+\begin{equation}
+ \widehat v(\psi)
+ :=\sum_{x\in G}v(x)\overline{\psi(x)},
+ \qquad
+ v(x)=\frac1n\sum_{\psi\in\widehat G}
+ \widehat v(\psi)\psi(x).
+ \label{eq:tpc37-Mellin-conventions}
+\end{equation}
+Thus
+\begin{equation}
+ \sum_{x\in G}|v(x)|^2
+ =\frac1n\sum_{\psi\in\widehat G}
+ |\widehat v(\psi)|^2.
+ \label{eq:tpc37-Mellin-Parseval}
+\end{equation}
+
+Fix \(h\in G\).  Let \(f,g:\mathbb F_q\to\mathbb C\) satisfy
+\begin{equation}
+ \sum_{D\in\mathbb F_q}f(D)=0,
+ \qquad
+ g(0)=0,
+ \qquad
+ \sum_{U\in G}g(U)=0.
+ \label{eq:tpc37-punctured-centering}
+\end{equation}
+The last two conditions imply additive centering of \(g\) on
+\(\mathbb F_q\), but retain the value zero at the puncture.  For
+\(a,s\in G\), define
+\begin{equation}
+ R_s(a):=\sum_{D\in\mathbb F_q}
+ f(D)g\!\left(s^{-1}(aD+h)\right),
+ \qquad
+ \widehat R_s(\chi):=
+ \sum_{a\in G}R_s(a)\overline{\chi(a)}.
+ \label{eq:tpc37-R-and-Rhat}
+\end{equation}
+Given an arbitrary weight \(w:G\to\mathbb C\), put
+\begin{align}
+ W_\psi&:=\widehat w(\psi),
+ &G_\psi&:=\widehat g(\psi),
+ &F_\chi&:=\sum_{D\in G}f(D)\chi(D),
+ \label{eq:tpc37-W-G-F}\\
+ H_\chi&:=\sum_{s\in G}w(s)\widehat R_s(\chi).
+ \label{eq:tpc37-Hchi}
+\end{align}
+In particular,
+\begin{equation}
+ G_{\mathbf1}=0,
+ \qquad F_{\mathbf1}=-f(0).
+ \label{eq:tpc37-principal-FG}
+\end{equation}
+For characters \(\alpha,\beta\in\widehat G\), let
+\begin{equation}
+ J(\alpha,\beta)
+ :=\sum_{x\in\mathbb F_q}\alpha(x)\beta(1-x)
+ \label{eq:tpc37-Jacobi-definition}
+\end{equation}
+be the Jacobi sum with the same zero-extension convention; see, for
+example, \citep[Chapter~8]{IrelandRosen1990} for the classical identities
+used below.
+
+\begin{theorem}[Weighted two--character formula]
+\label{thm:tpc37-two-character-formula}
+For every \(\chi\in\widehat G\), define
+\begin{equation}
+ C_\chi
+ :=\frac{\overline{\chi(-h)}}n
+ \sum_{\psi\ne\mathbf1}
+ W_\psi G_\psi\psi(h)J(\psi,\overline\chi).
+ \label{eq:tpc37-Cchi-Jacobi}
+\end{equation}
+Equivalently,
+\begin{equation}
+ C_\chi
+ =\sum_{s,U\in G}w(s)g(U)
+ \overline{\chi(sU-h)}.
+ \label{eq:tpc37-Cchi-direct}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ H_\chi=F_\chi C_\chi
+ \quad(\chi\ne\mathbf1),
+ \qquad
+ H_{\mathbf1}=qF_{\mathbf1}C_{\mathbf1}.}
+ \label{eq:tpc37-Hchi-split}
+\end{equation}
+Moreover,
+\begin{equation}
+ \boxed{
+ C_{\mathbf1}
+ =-\frac1n\sum_{\psi\ne\mathbf1}
+ W_\psi G_\psi\psi(h).}
+ \label{eq:tpc37-principal-C}
+\end{equation}
+Thus punctured centering removes the principal \(\psi\)-coordinate, but
+an incomplete weight can still leave a principal \(\chi\)-coordinate.
+\end{theorem}
+
+\begin{proof}
+First take \(\chi\ne\mathbf1\).  The \(D=0\) part of
+\(\widehat R_s(\chi)\) vanishes by character orthogonality.  For
+\(D\ne0\), set
+\(U=s^{-1}(aD+h)\).  Since the characters vanish at zero, the omitted
+value corresponding to \(a=0\) may be restored, and
+\begin{equation}
+ \widehat R_s(\chi)
+ =F_\chi\sum_{U\in G}g(U)
+ \overline{\chi(sU-h)}.
+ \label{eq:tpc37-Rhat-nonprincipal-factor}
+\end{equation}
+Insert Mellin inversion for \(w\).  For fixed \(U\in G\), the change of
+variables \(x=sU/h\) gives
+\begin{align}
+ \sum_{s\in G}\psi(s)\overline{\chi(sU-h)}
+ &={\psi(h)}\overline{\psi(U)}
+   \overline{\chi(-h)}
+   \sum_{x\in\mathbb F_q}
+   \psi(x)\overline{\chi(1-x)}
+ \notag\\
+ &=\psi(h)\overline{\psi(U)}
+   \overline{\chi(-h)}J(\psi,\overline\chi).
+ \label{eq:tpc37-fixed-U-Jacobi}
+\end{align}
+This calculation does not use nonprincipality of \(\chi\); together
+with Mellin inversion, it also proves the equivalence of
+\eqref{eq:tpc37-Cchi-Jacobi} and \eqref{eq:tpc37-Cchi-direct} for every
+\(\chi\).
+Summing in \(U\) produces \(G_\psi\), and the term
+\(\psi=\mathbf1\) vanishes by \eqref{eq:tpc37-principal-FG}.  This proves
+\eqref{eq:tpc37-Cchi-Jacobi} and the nonprincipal part of
+\eqref{eq:tpc37-Hchi-split}.
+
+For the principal character, sum \(R_s(a)\) over \(a\in G\).  The
+\(D=0\) term is \(nf(0)g(h/s)\).  For \(D\ne0\), the affine argument
+of \(g\) runs through \(\mathbb F_q\setminus\{h/s\}\); hence its sum is
+\(-g(h/s)\).  Since \(\sum_{D\ne0}f(D)=-f(0)\),
+\begin{equation}
+ \widehat R_s(\mathbf1)=qf(0)g(h/s).
+ \label{eq:tpc37-principal-Rhat}
+\end{equation}
+On the other hand,
+\(J(\psi,\mathbf1)=-1\) for every
+\(\psi\ne\mathbf1\).  Therefore
+\eqref{eq:tpc37-Cchi-Jacobi} at \(\chi=\mathbf1\) gives
+\eqref{eq:tpc37-principal-C}.  Multiplicative Fourier inversion also
+shows that its right side is
+\(-\sum_s w(s)g(h/s)\).  Combining this fact with
+\(F_{\mathbf1}=-f(0)\) and \eqref{eq:tpc37-principal-Rhat} proves the
+principal identity in \eqref{eq:tpc37-Hchi-split}.
+\end{proof}
+
+\begin{corollary}[Exceptional Jacobi channels]
+\label{cor:tpc37-exceptional-Jacobi-channels}
+For \(\chi\ne\mathbf1\),
+\begin{equation}
+ \boxed{
+ C_\chi=-\frac{W_\chi G_\chi}{n}
+ +\frac{\overline{\chi(-h)}}n
+ \sum_{\substack{\psi\ne\mathbf1,\chi}}
+ W_\psi G_\psi\psi(h)J(\psi,\overline\chi).}
+ \label{eq:tpc37-Cchi-exception-split}
+\end{equation}
+The omitted principal \(\psi\)-channel is zero.  The diagonal channel
+uses
+\begin{equation}
+ J(\chi,\overline\chi)=-\chi(-1)
+ \label{eq:tpc37-diagonal-Jacobi}
+\end{equation}
+and has no \(q^{1/2}\) factor.  If
+\(\psi,\chi,\psi\overline\chi\) are all nonprincipal, then
+\begin{equation}
+ J(\psi,\overline\chi)
+ =\frac{\tau(\psi)\tau(\overline\chi)}
+ {\tau(\psi\overline\chi)},
+ \qquad
+ |J(\psi,\overline\chi)|=q^{1/2},
+ \label{eq:tpc37-generic-Jacobi}
+\end{equation}
+where \(\tau\) denotes the usual Gauss sum.
+\end{corollary}
+
+\begin{proof}
+The diagonal term in \eqref{eq:tpc37-Cchi-Jacobi} equals
+\[
+ \frac{\overline{\chi(-h)}}n
+ W_\chi G_\chi\chi(h)(-\chi(-1))
+ =-\frac{W_\chi G_\chi}{n}.
+\]
+The remaining assertions are the standard exceptional and generic
+Jacobi-sum evaluations with the zero-extension convention fixed above.
+\end{proof}
+
+For later use, the TPC-36 coherent functional now has the exact split
+\begin{align}
+ \mathcal G_q(b,f,g;w)
+ :={}&\frac1n\sum_{\chi\in\widehat G}
+ |\widehat b(\overline\chi)|^2|H_\chi|^2
+ \notag\\
+ ={}&\frac{q^2}{n}|\widehat b(\mathbf1)|^2
+ |F_{\mathbf1}|^2|C_{\mathbf1}|^2
+ \notag\\
+ &+\frac1n\sum_{\chi\ne\mathbf1}
+ |\widehat b(\overline\chi)|^2|F_\chi|^2|C_\chi|^2.
+ \label{eq:tpc37-coherent-functional-split}
+\end{align}
+The first line on the right is a genuine exceptional face.  It vanishes,
+for example, if \(f(0)=0\), but it is not removed by
+\(g(0)=0\) alone.
+
+\subsection{The Jacobi matrix is almost unitary}
+
+The generic size \(q^{1/2}\) of a Jacobi sum is misleading if the
+\(\psi\)-sum is kept coherently.  Exact orthogonality determines the
+whole matrix.
+
+\begin{lemma}[Full Jacobi orthogonality]
+\label{lem:tpc37-full-Jacobi-orthogonality}
+For \(\psi,\phi\in\widehat G\),
+\begin{equation}
+ \sum_{\chi\in\widehat G}
+ J(\psi,\overline\chi)
+ \overline{J(\phi,\overline\chi)}
+ =n\bigl(n\mathbf1_{\{\psi=\phi\}}-1\bigr).
+ \label{eq:tpc37-full-Jacobi-orthogonality}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Expand both Jacobi sums and use character orthogonality in \(\chi\).
+Only pairs with \(1-x=1-y\ne0\), hence \(x=y\ne1\), survive.  Therefore
+the left side is
+\[
+ n\sum_{\substack{x\in G\\x\ne1}}
+ \psi(x)\overline{\phi(x)}.
+\]
+The last sum is \(n-1\) when \(\psi=\phi\), and \(-1\) otherwise,
+which proves \eqref{eq:tpc37-full-Jacobi-orthogonality}.
+\end{proof}
+
+Let \(\mathscr X:=\widehat G\setminus\{\mathbf1\}\), so
+\(|\mathscr X|=q-2=n-1\), and define the square matrix
+\begin{equation}
+ K_{\chi,\psi}:=J(\psi,\overline\chi),
+ \qquad \chi,\psi\in\mathscr X.
+ \label{eq:tpc37-K-definition}
+\end{equation}
+
+\begin{theorem}[Rank-one defect and exact singular values]
+\label{thm:tpc37-Jacobi-near-unitary}
+With \(\mathbf 1\) now denoting the all-ones vector on \(\mathscr X\),
+\begin{equation}
+ \boxed{
+ K^*K=KK^*=n^2I-q\,\mathbf1\mathbf1^*.}
+ \label{eq:tpc37-K-Gram}
+\end{equation}
+Moreover,
+\begin{equation}
+ K\mathbf1=\mathbf1,
+ \qquad K^*\mathbf1=\mathbf1.
+ \label{eq:tpc37-K-flat-vector}
+\end{equation}
+Consequently the singular values of \(K\) are
+\begin{equation}
+ n\quad\text{with multiplicity }q-3,
+ \qquad
+ 1\quad\text{with multiplicity }1.
+ \label{eq:tpc37-K-singular-values}
+\end{equation}
+For \(q=3\), only the final singular value is present.
+\end{theorem}
+
+\begin{proof}
+Restrict \eqref{eq:tpc37-full-Jacobi-orthogonality} to
+\(\psi,\phi\in\mathscr X\), and remove the term
+\(\chi=\mathbf1\).  Since
+\(J(\psi,\mathbf1)=-1\) for \(\psi\in\mathscr X\), the removed outer
+product is \(\mathbf1\mathbf1^*\).  Thus the diagonal entries of
+\(K^*K\) are \(n(n-1)-1=n^2-q\), while the off-diagonal entries are
+\(-n-1=-q\).  This proves the first identity in
+\eqref{eq:tpc37-K-Gram}.  The second follows either by the symmetric
+calculation in the other character variable or from the row and column
+sums below.
+
+Summing \(J(\psi,\overline\chi)\) over all \(\psi\in\widehat G\) gives
+zero.  Since \(J(\mathbf1,\overline\chi)=-1\) for nonprincipal
+\(\chi\), each restricted row sum is one.  The same argument in
+\(\chi\) gives each restricted column sum one, proving
+\eqref{eq:tpc37-K-flat-vector}.  On the line spanned by \(\mathbf1\),
+the squared singular value is
+\[
+ n^2-q(q-2)=1.
+\]
+On its orthogonal complement, \eqref{eq:tpc37-K-Gram} is \(n^2I\).
+This proves \eqref{eq:tpc37-K-singular-values}.
+\end{proof}
+
+Put
+\begin{equation}
+ z_\psi:=W_\psi G_\psi\psi(h),
+ \qquad \psi\in\mathscr X.
+ \label{eq:tpc37-zpsi}
+\end{equation}
+The diagonal phases \(\psi(h)\) and \(\overline{\chi(-h)}\) are unitary,
+so \cref{thm:tpc37-Jacobi-near-unitary} gives immediately
+\begin{equation}
+ \boxed{
+ \sum_{\chi\ne\mathbf1}|C_\chi|^2
+ =\sum_{\psi\ne\mathbf1}|W_\psi G_\psi|^2
+ -\frac q{n^2}
+ \left|\sum_{\psi\ne\mathbf1}
+ W_\psi G_\psi\psi(h)\right|^2.}
+ \label{eq:tpc37-Jacobi-energy}
+\end{equation}
+This is the exact average identity behind the two--character route.
+
+\subsection{Multiplicative convolution and shifted Parseval}
+
+There is a simpler physical-space interpretation of
+\eqref{eq:tpc37-Jacobi-energy}.  Define the multiplicative convolution
+on \(G\) by
+\begin{equation}
+ c(x):=(w*_{\times}g)(x)
+ :=\sum_{s\in G}w(s)g(x/s),
+ \qquad x\in G,
+ \label{eq:tpc37-multiplicative-convolution}
+\end{equation}
+and extend \(c\) to zero by \(c(0)=0\).  Then
+\begin{equation}
+ \widehat c(\psi)=W_\psi G_\psi,
+ \qquad
+ \sum_{x\in G}c(x)=0.
+ \label{eq:tpc37-c-transform-centered}
+\end{equation}
+
+\begin{theorem}[Shifted multiplicative Parseval]
+\label{thm:tpc37-shifted-Parseval}
+For every \(\chi\in\widehat G\),
+\begin{equation}
+ \boxed{
+ C_\chi=\sum_{x\in G}c(x)\overline{\chi(x-h)}.}
+ \label{eq:tpc37-Cchi-shifted-c}
+\end{equation}
+In particular,
+\begin{align}
+ C_{\mathbf1}&=-c(h),
+ \label{eq:tpc37-Cprincipal-ch}\\
+ \sum_{\chi\in\widehat G}|C_\chi|^2
+ &=n\bigl(\|c\|_2^2-|c(h)|^2\bigr),
+ \label{eq:tpc37-all-character-Parseval}\\
+ \sum_{\chi\ne\mathbf1}|C_\chi|^2
+ &=\boxed{n\|c\|_2^2-q|c(h)|^2}.
+ \label{eq:tpc37-nonprincipal-Parseval}
+\end{align}
+Equivalently, if
+\begin{equation}
+ E_{w,g}:=\sum_{\psi\ne\mathbf1}|W_\psi G_\psi|^2,
+ \label{eq:tpc37-Hadamard-energy}
+\end{equation}
+then
+\begin{equation}
+ \boxed{
+ \frac{E_{w,g}}{n^2}
+ \le \sum_{\chi\ne\mathbf1}|C_\chi|^2
+ \le E_{w,g}.}
+ \label{eq:tpc37-Hadamard-two-sided}
+\end{equation}
+The lower constant is sharp for every \(q>2\); the upper constant is
+sharp for \(q>3\).
+\end{theorem}
+
+\begin{proof}
+Regroup the defining sum according to \(x=sU\):
+\[
+ \sum_{s,U\in G}w(s)g(U)\overline{\chi(sU-h)}
+ =\sum_{x\in G}c(x)\overline{\chi(x-h)}.
+\]
+This is \eqref{eq:tpc37-Cchi-shifted-c}.  The principal character deletes
+the single value \(x=h\); since \(\sum_xc(x)=0\), this gives
+\eqref{eq:tpc37-Cprincipal-ch}.  Apply Mellin Parseval to the function
+\(y\mapsto c(y+h)\) on \(G\).  Its squared norm is
+\(\|c\|_2^2-|c(h)|^2\), because \(c(0)=0\).  This proves
+\eqref{eq:tpc37-all-character-Parseval}; subtracting
+\(|C_{\mathbf1}|^2\) proves
+\eqref{eq:tpc37-nonprincipal-Parseval}.
+
+By \eqref{eq:tpc37-c-transform-centered} and Mellin Parseval,
+\begin{equation}
+ E_{w,g}=n\|c\|_2^2.
+ \label{eq:tpc37-E-c-norm}
+\end{equation}
+The upper bound in \eqref{eq:tpc37-Hadamard-two-sided} follows at once.
+For the lower bound, zero-sum Cauchy gives
+\[
+ |c(h)|^2
+ \le\frac{n-1}{n}\|c\|_2^2.
+\]
+Insert this estimate into \eqref{eq:tpc37-nonprincipal-Parseval} and use
+\eqref{eq:tpc37-E-c-norm}.  Equality in the lower bound occurs when
+\(c\) is constant off \(h\) and its value at \(h\) is the negative of
+the sum of the other \(n-1\) values.  For \(q>3\), a nonzero centered
+\(c\) with \(c(h)=0\) gives equality in the upper bound.  Both examples
+belong to the present class by taking \(w=\mathbf1_{\{1\}}\) and
+\(g=c\).
+\end{proof}
+
+The ratio between the two sides of
+\eqref{eq:tpc37-Hadamard-two-sided} is not a technical defect.  It is the
+condition number of deleting one translated coordinate from a zero-sum
+vector.  Away from that one direction, the two-character Jacobi map is
+an isometry after division by \(q-1\).
+
+\subsection{Interval weights and one full average saving}
+
+Let \(I\) be an interval of integers, and let its nonzero residue
+multiplicity be
+\begin{equation}
+ w_I(r):=\#\{s\in I:s\equiv r\pmod q\},
+ \qquad r\in G.
+ \label{eq:tpc37-interval-residue-weight}
+\end{equation}
+For \(\psi\ne\mathbf1\), complete periods cancel and
+\begin{equation}
+ W_{I,\psi}
+ =\sum_{\substack{s\in I\\q\nmid s}}
+ \overline{\psi(s)}.
+ \label{eq:tpc37-interval-character-sum}
+\end{equation}
+The classical P\'olya--Vinogradov inequality
+\citep[Chapter~9]{MontgomeryVaughan2007} therefore gives, uniformly in
+the position and length of \(I\),
+\begin{equation}
+ B_I:=\max_{\psi\ne\mathbf1}|W_{I,\psi}|
+ \ll q^{1/2}\log q.
+ \label{eq:tpc37-PV}
+\end{equation}
+
+\begin{corollary}[Interval-weight average]
+\label{cor:tpc37-interval-average}
+For every punctured-centered \(g\),
+\begin{equation}
+ \boxed{
+ \frac1n\sum_{\chi\ne\mathbf1}|C_\chi|^2
+ \le B_I^2\|g\|_2^2
+ \ll q(\log q)^2\|g\|_2^2.}
+ \label{eq:tpc37-interval-average-bound}
+\end{equation}
+More generally, \(B_I\) in the first bound may be replaced by any
+available bound for the nonprincipal Mellin transforms of the actual
+weight.
+\end{corollary}
+
+\begin{proof}
+By \eqref{eq:tpc37-Hadamard-energy},
+\[
+ E_{w_I,g}
+ \le B_I^2\sum_{\psi\ne\mathbf1}|G_\psi|^2
+ =nB_I^2\|g\|_2^2.
+\]
+Use the upper bound in \eqref{eq:tpc37-Hadamard-two-sided} and divide by
+\(n\).
+\end{proof}
+
+A pointwise Cauchy estimate in the incomplete \(s\)-variable can lose
+\(q\) in energy after the interval is reduced to a nonconstant remainder
+modulo \(q\).  The averaged estimate
+\eqref{eq:tpc37-interval-average-bound} removes that full factor, up to
+logarithms.  It is only an unweighted average in \(\chi\); transferring
+it to the physical coefficient direction requires spectral information
+about the outer row coefficient.
+
+\subsection{Outer Mellin flatness and the principal boundary}
+
+For \(b:G\to\mathbb C\), define the product--slope operator
+\begin{equation}
+ (Tb)(j,s):=\sum_{\ell\in G}b(\ell)R_s(\ell j),
+ \qquad j,s\in G,
+ \label{eq:tpc37-product-slope-operator}
+\end{equation}
+and put
+\begin{equation}
+ a(t):=(b*_{\times}f)(t)
+ :=\sum_{\ell\in G}b(\ell)f(t/\ell).
+ \label{eq:tpc37-outer-convolution}
+\end{equation}
+Its transform with the opposite conjugation is
+\begin{equation}
+ \widetilde a(\chi)
+ :=\sum_{t\in G}a(t)\chi(t)
+ =\widehat b(\overline\chi)F_\chi.
+ \label{eq:tpc37-a-transform}
+\end{equation}
+Put
+\begin{equation}
+ B_0:=\sum_{\ell\in G}b(\ell),
+ \qquad
+ r_0:=B_0f(0)c(h).
+ \label{eq:tpc37-principal-outer-boundary}
+\end{equation}
+Since \(f\) is centered on \(\mathbb F_q\),
+\begin{equation}
+ \sum_{t\in G}a(t)=-B_0f(0).
+ \label{eq:tpc37-a-principal-coordinate}
+\end{equation}
+The weighted physical output is therefore
+\begin{equation}
+ S_h(j):=\sum_{s\in G}w(s)(Tb)(j,s)
+ =r_0+\sum_{t\in G}a(t)c(tj+h).
+ \label{eq:tpc37-affine-core}
+\end{equation}
+The first term is the \(D=0\) contribution.  It is generally nonzero for
+the physical ordinary-centered \(f\), even though the ultra coefficient
+\(g\) is punctured.
+
+For \(a\ne0\), define its outer Mellin-flatness constant by
+\begin{equation}
+ \mathfrak K_{\rm Mell}(a)
+ :=\frac{\displaystyle
+  \max_{\chi\ne\mathbf1}|\widetilde a(\chi)|^2}
+ {\|a\|_2^2}.
+ \label{eq:tpc37-Mellin-flatness}
+\end{equation}
+
+\begin{theorem}[Outer spectrum with its principal boundary]
+\label{thm:tpc37-Mellin-flatness-sufficient}
+Under \eqref{eq:tpc37-punctured-centering},
+\begin{equation}
+ \boxed{
+ \sum_{j\in G}|S_h(j)|^2
+ =\frac{q^2}{n}|r_0|^2
+ +\frac1n\sum_{\chi\ne\mathbf1}
+  |\widetilde a(\chi)|^2|C_\chi|^2.}
+ \label{eq:tpc37-outer-principal-decomposition}
+\end{equation}
+If \(a\ne0\), then
+\begin{equation}
+ \boxed{
+ \sum_{j\in G}|S_h(j)|^2
+ \le\frac{q^2}{n}|r_0|^2
+ +\mathfrak K_{\rm Mell}(a)
+ \left(\max_{\psi\ne\mathbf1}|W_\psi|^2\right)
+ \|a\|_2^2\|g\|_2^2.}
+ \label{eq:tpc37-flatness-closure}
+\end{equation}
+In particular, for an interval weight,
+\begin{equation}
+ \sum_{j\in G}|S_h(j)|^2
+ \ll q|r_0|^2
+ +\mathfrak K_{\rm Mell}(a)
+ q(\log q)^2\|a\|_2^2\|g\|_2^2.
+ \label{eq:tpc37-flatness-interval}
+\end{equation}
+Thus a bound
+\(\mathfrak K_{\rm Mell}(a)=X^{o(1)}\) reaches the complete projective
+diagonal scale for the nonprincipal outer spectrum, up to soft factors,
+without a pointwise estimate for every twisted M\"obius sum.  The
+principal boundary \(r_0\) must be controlled separately.
+\end{theorem}
+
+\begin{proof}
+The term \(D=0\) in the definition of \(R_s\) gives \(r_0\).  On
+\(D\in G\), put \(t=\ell D\); this proves
+\eqref{eq:tpc37-affine-core}.  Taking its Mellin transform in \(j\), the
+nonprincipal coordinate is
+\(\widetilde a(\chi)C_\chi\).  For the principal coordinate, use
+\(C_{\mathbf1}=-c(h)\) and
+\(\widetilde a(\mathbf1)=-B_0f(0)\).  The affine-correlation part
+therefore contributes \(r_0\), while the constant term contributes
+\(nr_0\).  Hence
+\[
+ \widehat S_h(\mathbf1)=qr_0,
+ \qquad
+ \widehat S_h(\chi)=\widetilde a(\chi)C_\chi
+ \quad(\chi\ne\mathbf1).
+\]
+Mellin Parseval proves
+\eqref{eq:tpc37-outer-principal-decomposition}.
+
+Bound the first factor by
+\(\mathfrak K_{\rm Mell}(a)\|a\|_2^2\), apply the upper bound in
+\eqref{eq:tpc37-Hadamard-two-sided}, and then use
+\[
+ E_{w,g}
+ \le\left(\max_{\psi\ne\mathbf1}|W_\psi|^2\right)
+ n\|g\|_2^2.
+\]
+This proves \eqref{eq:tpc37-flatness-closure};
+\eqref{eq:tpc37-flatness-interval} follows from
+\eqref{eq:tpc37-PV}.
+\end{proof}
+
+The flatness hypothesis is sufficient for the nonprincipal part and is
+not asserted for the physical row coefficient.  A weaker weighted
+overlap estimate between \(|\widetilde a(\chi)|^2\) and
+\(|C_\chi|^2\) would also suffice and is the more flexible target.
+Neither form estimates \(r_0\); omitting that explicit principal term
+would reinstate the same residue-boundary error that punctured centering
+was designed to expose.
+
+\subsection{A punctured sharp example}
+
+The saturation example in TPC-36 used a nonzero value at the residue
+zero.  Puncturing removes that particular example, but not the abstract
+two-character obstruction.
+
+\begin{proposition}[Single-character punctured witness]
+\label{prop:tpc37-punctured-character-witness}
+Let \(q>3\), let \(\eta\ne\mathbf1\), and set
+\begin{equation}
+ g(0)=0,
+ \qquad g(U)=\eta(U)\quad(U\in G).
+ \label{eq:tpc37-character-g}
+\end{equation}
+Then \(g\) is punctured-centered and
+\begin{equation}
+ G_\psi=n\mathbf1_{\{\psi=\eta\}}.
+ \label{eq:tpc37-character-transform}
+\end{equation}
+For every weight \(w\),
+\begin{equation}
+ \boxed{
+ C_\chi
+ =\overline{\chi(-h)}W_\eta\eta(h)
+ J(\eta,\overline\chi).}
+ \label{eq:tpc37-character-C}
+\end{equation}
+Consequently
+\begin{equation}
+ |C_\chi|=
+ \begin{cases}
+ |W_\eta|,&\chi=\mathbf1\text{ or }\chi=\eta,\\
+ q^{1/2}|W_\eta|,
+   &\chi\ne\mathbf1,\eta.
+ \end{cases}
+ \label{eq:tpc37-character-C-sizes}
+\end{equation}
+If \(w=\mathbf1_I\) for a subset \(I\subset G\) of size \(r\), then
+\begin{equation}
+ \sum_{\eta\ne\mathbf1}|W_\eta|^2=r(n-r).
+ \label{eq:tpc37-subset-W-energy}
+\end{equation}
+Thus, if both \(r\) and \(n-r\) are \(\gg q\), there is a
+nonprincipal \(\eta\) with
+\(|W_\eta|\gg q^{1/2}\), and the generic outputs in
+\eqref{eq:tpc37-character-C-sizes} have size \(\gg q\).
+\end{proposition}
+
+\begin{proof}
+Character orthogonality gives
+\eqref{eq:tpc37-character-transform}; inserting it
+into \eqref{eq:tpc37-Cchi-Jacobi} proves
+\eqref{eq:tpc37-character-C}.  The exceptional and generic Jacobi
+evaluations give \eqref{eq:tpc37-character-C-sizes}.  Finally, Mellin
+Parseval gives
+\[
+ \sum_{\eta\in\widehat G}|W_\eta|^2=nr,
+ \qquad |W_{\mathbf1}|^2=r^2,
+\]
+which proves \eqref{eq:tpc37-subset-W-energy} and the final assertion.
+\end{proof}
+
+This witness is not a model for the actual M\"obius coefficient.  It
+proves only that punctured centering and interval support, without
+coefficient-specific information, cannot imply a uniformly small
+weighted coherent spectrum.
+
+\subsection{The actual M\"obius Hadamard energy}
+
+The physical zero coordinate is first removed by
+\cref{thm:tpc37-one-prime-face}; the raw-to-punctured rank-one correction
+and its clean M\"obius mean are then handled by
+\cref{prop:tpc37-punctured-identity,prop:tpc37-beta-bound}.  We analyze
+only the remaining punctured core.  For one physical dyadic block, let
+\begin{equation}
+ a_u=-\mu(u)\log u\,\vartheta(u/U),
+ \qquad
+ \widetilde g(r)=
+ \sum_{\substack{u\in\mathcal U\\u\equiv r\!\!\pmod q}}a_u.
+ \label{eq:tpc37-physical-g-residues}
+\end{equation}
+After punctured centering, every \(\psi\ne\mathbf1\) satisfies the exact
+identity
+\begin{equation}
+ \boxed{
+ G_\psi
+ =\sum_{\substack{u\in\mathcal U\\(u,q)=1}}
+ -\mu(u)\log u\,\vartheta(u/U)\overline{\psi(u)}.}
+ \label{eq:tpc37-physical-Mobius-twist}
+\end{equation}
+Punctured centering changes only the principal transform; it supplies no
+pointwise estimate for \eqref{eq:tpc37-physical-Mobius-twist}.
+It does, however, give a completely unconditional rms envelope.  Put
+\begin{equation}
+ \nu_{\mathcal U,q}^*
+ :=\max_{r\in G}
+ \#\{u\in\mathcal U:u\equiv r\pmod q\}.
+ \label{eq:tpc37-u-residue-multiplicity}
+\end{equation}
+Orthogonal projection onto the punctured zero-sum subspace and
+Cauchy--Schwarz in each residue class give
+\begin{equation}
+ \|g\|_2^2
+ \le \nu_{\mathcal U,q}^*
+ \sum_{u\in\mathcal U}|a_u|^2.
+ \label{eq:tpc37-physical-g-L2}
+\end{equation}
+For an interval \(\mathcal U\),
+\(\nu_{\mathcal U,q}^*\le1+|\mathcal U|/q\).  Hence
+\cref{cor:tpc37-interval-average} yields
+\begin{equation}
+ \boxed{
+ \frac1n\sum_{\chi\ne\mathbf1}|C_\chi|^2
+ \ll q(\log q)^2
+ \left(1+\frac{|\mathcal U|}{q}\right)
+ \sum_{u\in\mathcal U}|a_u|^2.}
+ \label{eq:tpc37-physical-rms-envelope}
+\end{equation}
+This bound uses no M\"obius cancellation and is correspondingly only an
+envelope; the weighted outer spectrum can still select an exceptional
+output character.
+
+For integer weights \(\omega_s\) on a complementary interval, the exact
+Hadamard energy is therefore
+\begin{align}
+ E_{\mathcal I,\mu}(q)
+ :={}&\sum_{\psi\ne\mathbf1}
+ \left|
+  \sum_{\substack{s\in\mathcal I\\(s,q)=1}}
+  \omega_s\overline{\psi(s)}
+ \right|^2
+ \notag\\
+ &\hspace{4em}\times
+ \left|
+  \sum_{\substack{u\in\mathcal U\\(u,q)=1}}
+  -\mu(u)\log u\,\vartheta(u/U)
+  \overline{\psi(u)}
+ \right|^2.
+ \label{eq:tpc37-physical-Hadamard-energy}
+\end{align}
+Equivalently, if
+\begin{equation}
+ c_q(x):=
+ \sum_{\substack{s\in\mathcal I,\,u\in\mathcal U\\
+ su\equiv x\!\!\pmod q}}
+ \omega_s a_u,
+ \qquad x\in G,
+ \label{eq:tpc37-residue-convolution}
+\end{equation}
+and \(\overline c_q=n^{-1}\sum_xc_q(x)\), character orthogonality gives
+\begin{equation}
+ \boxed{
+ E_{\mathcal I,\mu}(q)
+ =n\sum_{x\in G}|c_q(x)-\overline c_q|^2.}
+ \label{eq:tpc37-residue-variance}
+\end{equation}
+Thus Route B asks for a residue-variance or spectral-overlap theorem for
+the actual coefficient, rather than for a formal saving from the Jacobi
+kernel.
+
+On an unrestricted divisor convolution,
+\begin{equation}
+ \sum_{u\mid N}-\mu(u)\log u=\Lambda(N).
+ \label{eq:tpc37-Mobius-von-Mangoldt}
+\end{equation}
+On the physical target range, the restrictions
+\(T<u\le U_0\) give precisely the ultra increment used in the inherited
+orbit slice.  After reduction modulo \(q\),
+\eqref{eq:tpc37-residue-variance} also contains the integer aliases
+folded into each residue.  Controlling this variance at the required
+scale is consequently arithmetic information about the truncated
+von-Mangoldt coefficient; it is not a consequence of puncturing,
+P\'olya--Vinogradov, or Jacobi orthogonality alone.
+
+We make no claim here that the physical outer convolution satisfies
+\(\mathfrak K_{\rm Mell}(a)=X^{o(1)}\), that
+\eqref{eq:tpc37-physical-Hadamard-energy} has the diagonal-size bound, or
+that the principal and residue-zero corrections are negligible on every
+reassembly layer.  The results above neither breach the parity barrier
+nor prove a twin-prime correlation estimate.  They identify the exact
+two-character transform, remove one spurious uniform Cauchy loss under a
+clear flatness hypothesis, and isolate the coefficient-specific theorem
+still required.
