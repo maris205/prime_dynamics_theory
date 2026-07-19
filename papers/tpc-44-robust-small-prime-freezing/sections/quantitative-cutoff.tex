@@ -1,0 +1,157 @@
+\section{The quantitative cutoff at the TPC endpoint}
+\label{sec:tpc44-quantitative-cutoff}
+
+We now convert the abstract complexity \(\nu_z\) into an explicit
+power of \(X\).  Only the label size \eqref{eq:tpc44-label-size} is used;
+no distribution theorem for the physical labels is assumed.
+
+\begin{lemma}[Rankin bound for projected labels]
+\label{lem:tpc44-Rankin-projection}
+Let \(Y=X^{\lambda+o(1)}\), let \(z=(\log X)^A\) with fixed \(A>1\), and
+let \(\mathcal U\) be any set of squarefree integers \(u\le Y\).  The
+number \(\nu_z(\mathcal U)\) of distinct \(z\)-smooth parts \(u_{\le z}\)
+satisfies
+\begin{equation}
+ \nu_z(\mathcal U)
+ \le X^{\lambda(1-1/A)+o(1)}.
+ \label{eq:tpc44-general-Rankin-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Every projected part is a squarefree \(z\)-smooth integer \(a\le Y\).
+For \(0<s<1\), Rankin's device gives
+\begin{align}
+ \nu_z(\mathcal U)
+ &\le\sum_{\substack{a\le Y\\a\ \text{squarefree}\\\Pplus(a)\le z}}1
+ \notag\\
+ &\le Y^s\prod_{p\le z}(1+p^{-s}).
+ \label{eq:tpc44-Rankin-product}
+\end{align}
+Choose
+\begin{equation}
+ s=1-\frac1A+\epsilon_X,
+ \qquad
+ \epsilon_X=(\log\log X)^{-1/2}.
+ \label{eq:tpc44-Rankin-s}
+\end{equation}
+For sufficiently large \(X\), one has \(0<s<1\).  Moreover,
+\begin{align}
+ \log\prod_{p\le z}(1+p^{-s})
+ &\le\sum_{n\le z}n^{-s}
+ \ll_A z^{1-s}
+ \notag\\
+ &=\log X\,
+   \exp\!\left(-A\sqrt{\log\log X}\right)
+ =o(\log X).
+ \label{eq:tpc44-Euler-product-small}
+\end{align}
+The factor \(Y^s\) contributes
+\begin{equation}
+ X^{\lambda(1-1/A)+o(1)},
+ \label{eq:tpc44-Rankin-main-factor}
+\end{equation}
+which proves the claim.
+\end{proof}
+
+The full admissible range obtained from this argument is worth
+recording.  Put
+\begin{equation}
+ A_*:=
+ \left(1-\frac{1}{400\lambda_0}\right)^{-1}
+ =\frac{250196}{249671}
+ =1.00210277\ldots.
+ \label{eq:tpc44-A-star}
+\end{equation}
+For every fixed \(1<A<A_*\),
+\begin{equation}
+ \lambda_0(1-1/A)<\frac1{400},
+ \label{eq:tpc44-A-range-gap}
+\end{equation}
+so \(z=(\log X)^A\) can be absorbed by the endpoint budget.
+
+\begin{theorem}[Quantitative robust freezing]
+\label{thm:tpc44-quantitative-freezing}
+Let
+\begin{equation}
+ A=\frac{501}{500},
+ \qquad z_X=(\log X)^A,
+ \qquad
+ L_X=\exp\!\left(\frac{\log X}{\sqrt{\log\log X}}\right).
+ \label{eq:tpc44-explicit-parameters}
+\end{equation}
+Then
+\begin{equation}
+ \nu_{z_X}
+ \le X^{62549/26302500+o(1)},
+ \label{eq:tpc44-explicit-nu}
+\end{equation}
+and
+\begin{equation}
+ \frac1{400}-\frac{62549}{26302500}
+ =\frac{12829}{105210000}>0.
+ \label{eq:tpc44-explicit-gap}
+\end{equation}
+Consequently \(L_X\nu_{z_X}\le K_B\) for all sufficiently large \(X\),
+and
+\begin{equation}
+ \Pp_{>z_X}\!\left(
+  \sup_{\sigma_{p\le z_X}}
+  Z_0(\sigma,\varepsilon_{>z_X})
+  >K_B\cD_0
+ \right)
+ \le L_X^{-1}.
+ \label{eq:tpc44-explicit-freezing-tail}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Apply \cref{lem:tpc44-Rankin-projection} with
+\(
+ \lambda=\lambda_0=62549/52500
+\).
+Since \(1-1/A=1/501\), the exponent is
+\begin{equation}
+ \frac{\lambda_0}{501}
+ =\frac{62549}{26302500}.
+ \label{eq:tpc44-explicit-exponent-computation}
+\end{equation}
+The exact subtraction in \eqref{eq:tpc44-explicit-gap} leaves a fixed
+positive margin.  Since \(L_X=X^{o(1)}\), that margin implies
+\(L_X\nu_{z_X}\le K_B\).  Now apply
+\cref{thm:tpc44-robust-face} with \(L=L_X\).
+\end{proof}
+
+The failure probability is summable on dyadic scales.  This gives a
+global-field formulation analogous to the one in TPC--43, but robust
+under low-prime overwriting.
+
+\begin{corollary}[Almost--sure dyadic overwriting]
+\label{cor:tpc44-dyadic-overwriting}
+Let \(X_r=2^r\), and fix one deterministic inherited packet at each
+scale.  Couple the packets using one global independent prime--sign
+field.  For almost every field, all sufficiently large \(r\) have the
+following property: after keeping its signs at \(p>z_{X_r}\), the signs
+at every \(p\le z_{X_r}\) may be replaced arbitrarily and simultaneously,
+and every resulting equality energy is at most
+\(K_B(X_r)\cD_0(X_r)\).
+\end{corollary}
+
+\begin{proof}
+By \eqref{eq:tpc44-explicit-freezing-tail}, the \(r\)-th failure
+probability is at most
+\begin{equation}
+ \exp\!\left(
+ -\frac{r\log2}{\sqrt{\log(r\log2)}}
+ \right)
+ \label{eq:tpc44-dyadic-summand}
+\end{equation}
+for all sufficiently large \(r\), and these probabilities are summable.
+The first Borel--Cantelli lemma, which needs no independence between
+scales, proves the result.
+\end{proof}
+
+The packet sequence must be prescribed.  No uniformity over every
+possible packet sequence is asserted.  Also, overwriting the low signs
+does not overwrite the high signs: the latter remain random in this
+corollary.

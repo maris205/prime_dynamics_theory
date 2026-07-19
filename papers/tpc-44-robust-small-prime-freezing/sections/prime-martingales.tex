@@ -1,0 +1,117 @@
+\section{Forward and reverse prime martingales}
+\label{sec:tpc44-prime-martingales}
+
+List the primes that occur in some nonzero Walsh coefficient as
+\begin{equation}
+ p_1<p_2<\cdots<p_R.
+ \label{eq:tpc44-active-primes}
+\end{equation}
+For endpoint conventions, put \(p_0:=1\); thus the set of prime
+coordinates at most \(p_0\) is empty.
+For any cutoff \(z\), write
+\begin{equation}
+ r(z):=\max\bigl(\{r:p_r\le z\}\cup\{0\}\bigr).
+ \label{eq:tpc44-cutoff-index}
+\end{equation}
+The finite cube has two natural filtrations.  Although the identities in
+this section are elementary, they distinguish averaging a coordinate
+from physically restricting it to \(-1\).
+
+For \(1\le r\le R\), the forward filtration is
+\(
+ \mathscr F_r^+=\sigma(\varepsilon_{p_1},\ldots,\varepsilon_{p_r})
+\), put
+\begin{equation}
+ M_r:=\E(F\mid\mathscr F_r^+).
+ \label{eq:tpc44-forward-martingale}
+\end{equation}
+For \(0\le r<R\), the reverse filtration retains the signs strictly
+larger than \(p_r\):
+\begin{equation}
+ R_r:=\E\!\left(
+ F\mid\varepsilon_{p_{r+1}},\ldots,\varepsilon_{p_R}
+ \right).
+ \label{eq:tpc44-reverse-martingale}
+\end{equation}
+Set \(M_0=R_R=0\); then \(M_R=R_0=F\).
+
+\begin{proposition}[Exact largest-- and least--prime layers]
+\label{prop:tpc44-prime-layers}
+For \(0\le r\le R\), the formulas for \(M_r\) and \(R_r\) below hold;
+for \(1\le r\le R\), so do the difference formulas:
+\begin{align}
+ M_r
+ &=\sum_{\substack{\kappa>1\\\Pplus(\kappa)\le p_r}}
+ C(\kappa)\chi_\kappa,
+ \label{eq:tpc44-forward-spectrum}\\
+ d_r^+:=M_r-M_{r-1}
+ &=\sum_{\Pplus(\kappa)=p_r}C(\kappa)\chi_\kappa,
+ \label{eq:tpc44-forward-difference}\\
+ R_r
+ &=\sum_{\substack{\kappa>1\\\Pminus(\kappa)>p_r}}
+ C(\kappa)\chi_\kappa,
+ \label{eq:tpc44-reverse-spectrum}\\
+ d_r^-:=R_{r-1}-R_r
+ &=\sum_{\Pminus(\kappa)=p_r}C(\kappa)\chi_\kappa.
+ \label{eq:tpc44-reverse-difference}
+\end{align}
+Moreover,
+\begin{align}
+ \|d_r^+\|_2^2
+ &=\sum_{\Pplus(\kappa)=p_r}|C(\kappa)|^2,
+ \label{eq:tpc44-forward-layer-energy}\\
+ \|d_r^-\|_2^2
+ &=\sum_{\Pminus(\kappa)=p_r}|C(\kappa)|^2,
+ \label{eq:tpc44-reverse-layer-energy}\\
+ \sum_{r=1}^{R}\|d_r^+\|_2^2
+ &=\sum_{r=1}^{R}\|d_r^-\|_2^2=V.
+ \label{eq:tpc44-martingale-parseval}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+A Walsh character survives a conditional expectation exactly when it
+uses only retained coordinates.  This gives the four spectral formulas.
+The layers have disjoint Walsh support, so orthogonality gives the energy
+identities.
+\end{proof}
+
+Evaluating the reverse martingale on the retained all--minus face gives
+the filtration from TPC--43:
+\begin{equation}
+ \cD_0+R_r(-\one)
+ =\cD_0+
+  \sum_{\substack{\kappa>1\\\Pminus(\kappa)>p_r}}
+  \mu(\kappa)C(\kappa).
+ \label{eq:tpc44-rough-filtration}
+\end{equation}
+Its exact \(L^2\) dissipation is
+\begin{equation}
+ \|R_{r-1}\|_2^2-\|R_r\|_2^2=\|d_r^-\|_2^2.
+ \label{eq:tpc44-reverse-dissipation}
+\end{equation}
+
+There is a deterministic but generally costly layer estimate.  Write
+\begin{equation}
+ e_r^-:=\sum_{\Pminus(\kappa)=p_r}|C(\kappa)|^2,
+ \qquad
+ N_r^-:=\#\{\kappa:C(\kappa)\ne0,\ \Pminus(\kappa)=p_r\}.
+ \label{eq:tpc44-layer-count-energy}
+\end{equation}
+Then
+\begin{equation}
+ |F(-\one)|
+ \le\sum_{r=1}^{R}\sqrt{N_r^-e_r^-}.
+ \label{eq:tpc44-layer-Cauchy}
+\end{equation}
+More generally, for \(w_r>0\),
+\begin{equation}
+ |F(-\one)|^2
+ \le
+ \left(\sum_r\frac{N_r^-}{w_r}\right)
+ \left(\sum_rw_re_r^-\right).
+ \label{eq:tpc44-weighted-layer-Cauchy}
+\end{equation}
+These inequalities are exact diagnostics, not endpoint estimates: the
+support factors \(N_r^-\) can be too large.  The next section avoids the
+full kernel support by returning to the row labels before squaring.

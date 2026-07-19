@@ -1,0 +1,136 @@
+\section{Uniform control of a whole small--prime face}
+\label{sec:tpc44-robust-face}
+
+Fix \(z\ge2\).  Every squarefree equality label has the unique split
+\begin{equation}
+ u=a b,
+ \qquad
+ \Pplus(a)\le z<\Pminus(b),
+ \label{eq:tpc44-label-low-high}
+\end{equation}
+where \(a=1\) or \(b=1\) is allowed.  Let
+\begin{equation}
+ \mathcal A_z:=\{a:a\text{ occurs as the low part of an actual label}\},
+ \qquad \nu_z:=|\mathcal A_z|.
+ \label{eq:tpc44-low-projection-set}
+\end{equation}
+For a high--prime environment \(\eta=(\varepsilon_p)_{p>z}\), group
+the coordinate coefficients by their low parts:
+\begin{equation}
+ B_{i,a}(\eta)
+ :=\sum_{\substack{u\in\mathcal U_i\\u_{\le z}=a}}
+ b_{i,u}\chi_{u_{>z}}(\eta),
+ \qquad
+ W_z(\eta):=\sum_i\sum_{a\in\mathcal A_z}|B_{i,a}(\eta)|^2.
+ \label{eq:tpc44-B-W}
+\end{equation}
+
+\begin{lemma}[Projected diagonal identity]
+\label{lem:tpc44-projected-diagonal}
+One has
+\begin{equation}
+ \E_{\eta}W_z(\eta)=\cD_0.
+ \label{eq:tpc44-projected-mean}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Fix \(i\) and \(a\).  Two different full labels \(u,u'\in\mathcal U_i\)
+with the same low part \(a\) have different high parts.  Indeed
+\(u=ab=u'=ab'\) would imply \(u=u'\).  Their high Walsh characters are
+therefore orthogonal.  Hence
+\begin{equation}
+ \E_\eta|B_{i,a}(\eta)|^2
+ =\sum_{\substack{u\in\mathcal U_i\\u_{\le z}=a}}|b_{i,u}|^2.
+ \label{eq:tpc44-B-diagonal}
+\end{equation}
+Summing over \(i\) and \(a\) gives \eqref{eq:tpc44-projected-mean}.
+\end{proof}
+
+\begin{theorem}[Robust face compression]
+\label{thm:tpc44-robust-face}
+For every \(L\ge1\),
+\begin{equation}
+ \Pp_\eta\!\left(
+  \sup_{\sigma\in\{-1,1\}^{\{p\le z\}}}
+  Z_0(\sigma,\eta)>L\nu_z\cD_0
+ \right)
+ \le L^{-1}.
+ \label{eq:tpc44-robust-face-tail}
+\end{equation}
+Consequently there exists a high--prime environment \(\eta\) for which
+\begin{equation}
+ \sup_\sigma Z_0(\sigma,\eta)\le\nu_z\cD_0.
+ \label{eq:tpc44-robust-face-exists}
+\end{equation}
+For each fixed small--prime assignment \(\sigma\), one also has
+\begin{equation}
+ \E_\eta Z_0(\sigma,\eta)\le\nu_z\cD_0.
+ \label{eq:tpc44-fixed-face-mean}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The grouping \eqref{eq:tpc44-B-W} gives
+\begin{equation}
+ S_i(\sigma,\eta)
+ =\sum_{a\in\mathcal A_z}\chi_a(\sigma)B_{i,a}(\eta).
+ \label{eq:tpc44-grouped-coordinate}
+\end{equation}
+Cauchy--Schwarz, uniformly in \(\sigma\), gives
+\begin{equation}
+ |S_i(\sigma,\eta)|^2
+ \le \nu_z\sum_{a\in\mathcal A_z}|B_{i,a}(\eta)|^2.
+ \label{eq:tpc44-coordinate-Cauchy}
+\end{equation}
+After summing over \(i\),
+\begin{equation}
+ \sup_\sigma Z_0(\sigma,\eta)\le\nu_zW_z(\eta).
+ \label{eq:tpc44-uniform-W-bound}
+\end{equation}
+Markov's inequality and \cref{lem:tpc44-projected-diagonal} prove
+\eqref{eq:tpc44-robust-face-tail}.  The finite average of \(W_z\)
+equals \(\cD_0\), so some environment satisfies \(W_z\le\cD_0\); this gives
+\eqref{eq:tpc44-robust-face-exists}.  Taking expectations in
+\eqref{eq:tpc44-uniform-W-bound} proves
+\eqref{eq:tpc44-fixed-face-mean}.
+\end{proof}
+
+No limiting or compactness argument is involved in the existential
+statement.
+
+The theorem includes a deterministic statement about the purely smooth
+Walsh sector.  Averaging all high signs after fixing the small signs to
+\(-1\) leaves exactly the kernels supported on primes at most \(z\).
+
+\begin{corollary}[The smooth physical sector]
+\label{cor:tpc44-smooth-sector}
+One has
+\begin{equation}
+ 0\le
+ \cD_0+
+ \sum_{\substack{\kappa>1\\\Pplus(\kappa)\le z}}
+ \mu(\kappa)C(\kappa)
+ \le\nu_z\cD_0.
+ \label{eq:tpc44-smooth-sector}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The middle expression is
+\(
+ \E_\eta Z_0(-\one_{\le z},\eta_{>z})
+\).
+It is nonnegative, and its upper bound is
+\eqref{eq:tpc44-fixed-face-mean}.
+\end{proof}
+
+\begin{remark}[Why there is no union bound]
+\label{rem:tpc44-no-union-bound}
+The random variable \(W_z\) dominates all small--prime assignments at
+once.  We therefore pay the actual projection count \(\nu_z\), not a
+probability union over \(2^{\pi(z)}\) vertices.  Conditional moment
+bounds for each fixed vertex would in any case require controlling
+collisions after the low coordinates are removed; the grouping above
+handles those collisions exactly.
+\end{remark}

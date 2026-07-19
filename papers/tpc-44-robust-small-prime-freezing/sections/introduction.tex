@@ -1,0 +1,214 @@
+\section{Introduction and main results}
+\label{sec:tpc44-introduction}
+
+The terminal obstruction isolated in TPC--42 is a coherent Hilbert
+energy with one source and one target M\"obius value in each row
+\citep{WangTPC42}.  TPC--43 replaced \(\mu\) by one globally consistent
+Rademacher multiplicative field and proved exact annealed
+diagonalization at the equality alias \citep{WangTPC43}.  The same paper
+compressed every unequal row pair into a squarefree Walsh kernel:
+\begin{equation}
+ Z_0(\varepsilon)
+ =\cD_0+\sum_{\kappa>1}C_X(\kappa)\chi_\kappa(\varepsilon),
+ \qquad
+ Z_0(-\one)
+ =\cD_0+\sum_{\kappa>1}\mu(\kappa)C_X(\kappa).
+ \label{eq:tpc44-intro-walsh}
+\end{equation}
+Here \(Z_0\ge0\), \(\E Z_0=\cD_0\), and \(Z_0(-\one)\) is the literal
+physical equality energy.  The subscript \(X\) is suppressed below.
+
+The difficulty is now extremely specific.  Annealed estimates describe
+most vertices of the prime cube, whereas the arithmetic problem asks
+for one prescribed vertex.  A small exceptional set may contain that
+vertex at every scale.  The present paper does not try to hide this
+quantifier gap.  Instead it asks how many prime coordinates can be made
+adversarial before the annealed endpoint is lost.
+
+\subsection{Uniform control of an entire small--prime face}
+
+Every nonzero equality atom has a squarefree label \(u\).  Split it at
+\(z\ge2\) as
+\begin{equation}
+ u=u_{\le z}u_{>z},
+ \qquad
+ \Pplus(u_{\le z})\le z<\Pminus(u_{>z}),
+ \label{eq:tpc44-intro-label-split}
+\end{equation}
+with the usual conventions for the factor \(1\).  Let
+\begin{equation}
+ \nu_z:=\#\{u_{\le z}:u\text{ occurs as an equality label}\}.
+ \label{eq:tpc44-intro-nu}
+\end{equation}
+This is an actual packet complexity, not the cardinality
+\(2^{\pi(z)}\) of the entire small--prime cube.
+
+The first main theorem is the following robust face estimate; its
+abstract version is proved in \cref{sec:tpc44-robust-face}.
+
+\begin{theorem}[Robust small--prime face]
+\label{thm:tpc44-intro-robust-face}
+For every \(z\ge2\) and \(L\ge1\),
+\begin{equation}
+ \Pp_{\varepsilon_p:p>z}\!\left(
+  \sup_{\sigma\in\{-1,1\}^{\{p\le z\}}}
+  Z_0(\sigma,\varepsilon_{>z})
+  >L\nu_z\cD_0
+ \right)
+ \le L^{-1}.
+ \label{eq:tpc44-intro-face-probability}
+\end{equation}
+In particular, some high--prime environment satisfies
+\begin{equation}
+ \sup_{\sigma}Z_0(\sigma,\varepsilon_{>z})\le\nu_z\cD_0.
+ \label{eq:tpc44-intro-face-existence}
+\end{equation}
+\end{theorem}
+
+The supremum is inside the probability.  Thus the theorem first selects
+one high--prime environment and then allows every small--prime sign to be
+changed, jointly and adversarially.  It is stronger than proving a tail
+bound for each fixed small--prime assignment separately.
+
+At the TPC endpoint the labels obey
+\begin{equation}
+ u\le X^{\lambda_0+o(1)},
+ \qquad
+ \lambda_0=1+\frac{10049}{52500}
+ =\frac{62549}{52500}.
+ \label{eq:tpc44-intro-lambda}
+\end{equation}
+A Rankin count of possible projected labels yields the quantitative
+advance.
+
+\begin{theorem}[A mildly superlogarithmic frozen block]
+\label{thm:tpc44-intro-quantitative-face}
+Put
+\begin{equation}
+ z_X=(\log X)^{501/500},
+ \qquad
+ L_X=\exp\!\left(\frac{\log X}{\sqrt{\log\log X}}\right).
+ \label{eq:tpc44-intro-z-L}
+\end{equation}
+Then
+\begin{equation}
+ \nu_{z_X}
+ \le X^{62549/26302500+o(1)}
+ \label{eq:tpc44-intro-nu-bound}
+\end{equation}
+and, for all sufficiently large \(X\),
+\begin{equation}
+ L_X\nu_{z_X}\le K_B,
+ \qquad K_B=X^{1/400+o(1)}.
+ \label{eq:tpc44-intro-budget}
+\end{equation}
+Consequently
+\begin{equation}
+ \Pp_{>z_X}\!\left(
+  \sup_{\sigma_{p\le z_X}}
+  Z_0(\sigma,\varepsilon_{>z_X})
+  >K_B\cD_0
+ \right)
+ \le
+ \exp\!\left(-\frac{\log X}{\sqrt{\log\log X}}\right).
+ \label{eq:tpc44-intro-quantitative-probability}
+\end{equation}
+\end{theorem}
+
+In particular, the signs at all primes \(p\le z_X\) may be overwritten
+by \(-1\), exactly as required by \(\mu\).  The theorem does not set the
+remaining high--prime signs to \(-1\).
+
+\subsection{Exact descents and the remaining gate}
+
+Let \(F=Z_0-\cD_0\), extend \(C(\kappa)\) by zero, and list the active
+primes as \(p_1<\cdots<p_R\).  For squarefree \(m\), define
+\begin{equation}
+ C_r(m):=\sum_{a\mid p_1\cdots p_r}\mu(a)C(am),
+ \qquad (m,p_1\cdots p_r)=1.
+ \label{eq:tpc44-intro-Cr}
+\end{equation}
+Then setting the first \(r\) signs to \(-1\) is exactly
+\begin{equation}
+ F(-\one_{\le p_r},\varepsilon_{>p_r})
+ =\sum_{(m,p_1\cdots p_r)=1}C_r(m)\chi_m(\varepsilon).
+ \label{eq:tpc44-intro-restricted-F}
+\end{equation}
+If \(E_r\) is the sum of \(|C_r(m)|^2\) over squarefree \(m\) coprime to
+\(p_1\cdots p_r\), coefficient pairing gives
+\begin{equation}
+ E_r=(1-\theta_r)E_{r-1},
+ \qquad -1\le\theta_r\le1,
+ \label{eq:tpc44-intro-energy-step}
+\end{equation}
+and hence the exact identity
+\begin{equation}
+ \boxed{
+ |F(-\one)|^2
+ =\operatorname{Var}(Z_0)
+  \prod_{r=1}^{R}(1-\theta_r).}
+ \label{eq:tpc44-intro-coefficient-product}
+\end{equation}
+This is a restriction identity, not a probabilistic estimate.
+
+There is also a nonnegative face transport.  Average the first \(r\)
+prime signs while keeping every later one equal to \(-1\), and call the
+result \(A_r\).  When \(Z_0(-\one)>0\),
+\begin{equation}
+ \frac{Z_0(-\one)}{\cD_0}
+ =\prod_{r=1}^{R}(1+\delta_r),
+ \qquad -1\le\delta_r\le1.
+ \label{eq:tpc44-intro-face-product}
+\end{equation}
+Under the energy--biased probability
+\(d\QZ=(Z_0/\cD_0)dU\), each factor is a conditional likelihood:
+\begin{equation}
+ 1+\delta_r
+ =2\QZ\!\left(
+  \varepsilon_{p_r}=-1
+  \mid
+  \varepsilon_{p_{r+1}}=\cdots=\varepsilon_{p_R}=-1
+ \right).
+ \label{eq:tpc44-intro-likelihood}
+\end{equation}
+If \(Z_0(-\one)=0\), the desired upper endpoint is automatic.  Thus the
+nontrivial endpoint selection is exactly a cumulative boundary--path
+problem.
+
+The distinction between local and cumulative control is essential.  In
+\cref{sec:tpc44-sharp-obstruction} we construct a degree--two Gram
+energy with all nonconstant kernels \(z\)-rough for which
+\begin{equation}
+ \frac{\operatorname{Var}Z}{(\E Z)^2}\longrightarrow0,
+ \qquad
+ \max_r|\delta_r|\longrightarrow0,
+ \qquad
+ \sum_r\delta_r^2\longrightarrow0,
+ \label{eq:tpc44-intro-small-local}
+\end{equation}
+but \(Z(-\one)/\E Z\to\infty\).  Therefore neither a second moment nor
+small primewise defects can finish the physical corner.  The remaining
+positive target is a one--sided cumulative estimate for the actual
+\(C_X(\kappa)\), after the small primes have been folded exactly.
+
+\subsection{Claim boundary and organization}
+
+The paper proves a partial de--randomization: inside a density--one set
+of high--prime environments, a growing mildly superlogarithmic block can
+be overwritten by the physical signs.  It does not prove that the
+all--minus high--prime environment is typical, that the product in
+\eqref{eq:tpc44-intro-coefficient-product} is \(X^{o(1)}\), or that the
+rough tail cancels.  In particular, it proves no fixed--shift Chowla
+estimate, no breach of the sieve parity barrier, no Hardy--Littlewood
+prime--pair asymptotic, and no infinitude of twin primes.
+
+\Cref{sec:tpc44-interface} records the inherited interface.
+\Cref{sec:tpc44-prime-martingales} gives the exact Walsh martingales.
+\Cref{sec:tpc44-robust-face,sec:tpc44-quantitative-cutoff} prove the
+uniform face theorem and its endpoint exponent.  The two exact descents
+are developed in
+\cref{sec:tpc44-coefficient-descent,sec:tpc44-face-transport}.
+\Cref{sec:tpc44-sharp-obstruction} gives the sharp obstruction.
+\Cref{sec:tpc44-literature,sec:tpc44-next-gate} compare the result with
+the literature and state the next coefficient--specific gate.  The
+finite certificate is described in \cref{sec:tpc44-certificate}.

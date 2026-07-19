@@ -1,0 +1,134 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\E}{\mathbb E}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Hh}{\mathcal H}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Pminus}{P^{-}}
+\newcommand{\Pplus}{P^{+}}
+\newcommand{\QZ}{\mathbb Q_Z}
+
+\hypersetup{
+  pdftitle={Robust Small-Prime Freezing at the Four-Mobius Gate: Walsh-Face Compression, Exact Prime Descent, and the High-Prime Drift Barrier},
+  pdfauthor={Liang Wang},
+  pdfsubject={Partial de-randomization of the Mobius Walsh corner through low-prime projection complexity and exact coefficient descent},
+  pdfkeywords={Mobius function, Walsh spectrum, random multiplicative function, prime filtration, parity problem, Type II estimate}
+}
+
+\title{\bfseries Robust Small--Prime Freezing at the Four--M\"obius Gate:\\
+Walsh--Face Compression, Exact Prime Descent,\\
+and the High--Prime Drift Barrier}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC--43 represented the surviving equality energy at the four--M\"obius
+gate as a nonnegative Walsh polynomial whose all--minus prime corner is
+the physical M\"obius value.  Its annealed theorem controlled almost
+every prime--sign environment but did not select that corner.  We prove
+a partial de--randomization.  Split every squarefree row label at
+a cutoff \(z\), and let \(\nu_z\) be the number of distinct small--prime
+parts occurring in the actual packet.  A Hilbert--space grouping and one
+Cauchy--Schwarz inequality give
+\[
+ \Pp_{>z}\!\left(
+  \sup_{\sigma_{p\le z}}Z_0(\sigma,\varepsilon_{>z})
+  >L\nu_z\cD_0\right)\le L^{-1}.
+\]
+Thus one high--prime environment controls every small--prime face
+simultaneously.  At the inherited endpoint, a Rankin bound for the
+projected labels gives
+\(
+ \nu_z\le X^{62549/26302500+o(1)}
+\)
+for \(z=(\log X)^{501/500}\), strictly below the available
+\(K_B=X^{1/400+o(1)}\) budget.  Consequently a density \(1-o(1)\) set of
+high--prime environments remains admissible after all signs
+\(p\le z\) are overwritten arbitrarily, in particular by the physical
+all--minus values.  We also give two exact prime--by--prime transports.
+The coefficient restriction energy satisfies
+\[
+ |Z_0(-\one)-\cD_0|^2
+ =\operatorname{Var}(Z_0)
+   \prod_p(1-\theta_p),
+ \qquad -1\le\theta_p\le1,
+\]
+while conditional face energies give an exact likelihood product in an
+energy--biased measure.  A degree--two, entirely \(z\)-rough Gram
+example has vanishing relative variance, vanishing normalized
+influences, and vanishing prime--toggle quadratic variation, yet its
+all--minus amplification diverges.  Hence variance, fixed moments,
+rough support, or small local defects cannot finish the deterministic
+endpoint.  What remains is a coefficient--specific high--prime
+cumulative correlation estimate, naturally of bilinear/Type--II type;
+no parity breach or prime--pair theorem is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius correlation; Walsh face; random
+multiplicative function; small--prime freezing; reverse martingale;
+coefficient descent; sieve parity.
+
+\medskip
+\noindent\textbf{Convention.}
+All prime sets and Walsh polynomials at a fixed scale are finite.  Empty
+coefficient energies are handled by continuity, so normalized
+correlations are defined only when their denominators are positive.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 42C10; Secondary 60E15,
+11N36, 11K65.
+
+\input{sections/introduction}
+\input{sections/inherited-interface}
+\input{sections/prime-martingales}
+\input{sections/robust-face}
+\input{sections/quantitative-cutoff}
+\input{sections/coefficient-descent}
+\input{sections/face-transport}
+\input{sections/sharp-obstruction}
+\input{sections/literature-boundary}
+\input{sections/next-gate}
+\input{sections/certificate-claims}
+
+\begingroup
+\small
+\raggedright
+\setlength{\bibsep}{4pt plus 1pt minus 1pt}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

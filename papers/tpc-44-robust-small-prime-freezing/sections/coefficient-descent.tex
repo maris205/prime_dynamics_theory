@@ -1,0 +1,171 @@
+\section{Exact restriction descent toward the M\"obius corner}
+\label{sec:tpc44-coefficient-descent}
+
+Conditional expectation deletes Walsh coefficients.  Physical
+de--randomization does something different: setting a sign to \(-1\)
+subtracts paired coefficients.  This section records that operation
+exactly.
+
+Let \(p_1<\cdots<p_R\) be as in \eqref{eq:tpc44-active-primes} and put
+\begin{equation}
+ P_r:=\prod_{j=1}^{r}p_j,
+ \qquad P_0:=1.
+ \label{eq:tpc44-Pr}
+\end{equation}
+For squarefree \(m\) with \((m,P_r)=1\), define
+\begin{equation}
+ C_r(m):=\sum_{a\mid P_r}\mu(a)C(am).
+ \label{eq:tpc44-Cr-definition}
+\end{equation}
+Recall that \(C\) is extended by zero and \(C(1)=0\).
+Throughout this section, every sum over \(m\) is restricted to squarefree
+positive integers.  We also use the convention \(p_0=1\), so restriction
+to coordinates \(p\le p_0\) means no restriction.
+
+\begin{proposition}[Exact physical restriction]
+\label{prop:tpc44-physical-restriction}
+For every \(0\le r\le R\),
+\begin{equation}
+ F(-\one_{\le p_r},\varepsilon_{>p_r})
+ =\sum_{\substack{m\ge1\\(m,P_r)=1}}C_r(m)\chi_m(\varepsilon).
+ \label{eq:tpc44-restriction-expansion}
+\end{equation}
+The coefficients satisfy
+\begin{equation}
+ C_r(m)=C_{r-1}(m)-C_{r-1}(p_rm)
+ \qquad (m,P_r)=1.
+ \label{eq:tpc44-coefficient-recurrence}
+\end{equation}
+The physical signed sum is invariant under the descent:
+\begin{equation}
+ F(-\one)
+ =\sum_{(m,P_r)=1}\mu(m)C_r(m),
+ \label{eq:tpc44-physical-invariance}
+\end{equation}
+and at the terminal stage
+\begin{equation}
+ F(-\one)=C_R(1).
+ \label{eq:tpc44-terminal-coefficient}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Write every squarefree kernel uniquely as \(\kappa=am\), where
+\(a\mid P_r\) and \((m,P_r)=1\).  At the restricted face,
+\(
+ \chi_a(-\one)=\mu(a)
+\), so grouping by \(m\) proves \eqref{eq:tpc44-restriction-expansion}.
+Splitting the divisors of \(P_r=P_{r-1}p_r\) according as they contain
+\(p_r\) gives \eqref{eq:tpc44-coefficient-recurrence}.  Evaluating the
+remaining signs at \(-1\) gives \eqref{eq:tpc44-physical-invariance}.
+After every active prime has been processed, the only possible remaining
+index is \(m=1\), proving \eqref{eq:tpc44-terminal-coefficient}.
+\end{proof}
+
+Define the restriction energy
+\begin{equation}
+ E_r:=\sum_{(m,P_r)=1}|C_r(m)|^2.
+ \label{eq:tpc44-Er}
+\end{equation}
+Thus \(E_0=V\) and \(E_R=|F(-\one)|^2\).
+
+\begin{theorem}[Exact coefficient--correlation product]
+\label{thm:tpc44-correlation-product}
+Whenever \(E_{r-1}>0\), define
+\begin{equation}
+ \theta_r:=
+ \frac{
+  2\operatorname{Re}
+  \displaystyle\sum_{(m,P_r)=1}
+  C_{r-1}(m)\overline{C_{r-1}(p_rm)}
+ }{E_{r-1}}.
+ \label{eq:tpc44-theta}
+\end{equation}
+Then
+\begin{equation}
+ -1\le\theta_r\le1,
+ \qquad
+ E_r=(1-\theta_r)E_{r-1}.
+ \label{eq:tpc44-Er-recurrence}
+\end{equation}
+If an energy first becomes zero, set every later \(\theta_r=0\); every
+later energy is then zero.  With this convention,
+\begin{equation}
+ \boxed{
+ |F(-\one)|^2
+ =V\prod_{r=1}^{R}(1-\theta_r).}
+ \label{eq:tpc44-exact-correlation-product}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Partition the indices in \(E_{r-1}\) into pairs \(m,p_rm\), with
+\((m,P_r)=1\).  Then
+\begin{align}
+ E_{r-1}
+ &=\sum_{(m,P_r)=1}
+ \left(
+  |C_{r-1}(m)|^2+|C_{r-1}(p_rm)|^2
+ \right),
+ \label{eq:tpc44-paired-old-energy}\\
+ E_r
+ &=\sum_{(m,P_r)=1}
+ |C_{r-1}(m)-C_{r-1}(p_rm)|^2.
+ \label{eq:tpc44-paired-new-energy}
+\end{align}
+Expanding the second line gives \eqref{eq:tpc44-Er-recurrence}.  The
+inequality
+\(
+ 2|ab|\le|a|^2+|b|^2
+\)
+gives \(|\theta_r|\le1\).  Iteration from \(E_0=V\) to
+\(E_R=|F(-\one)|^2\) proves the product formula.
+\end{proof}
+
+The order of the prime restrictions can be changed.  The intermediate
+\(\theta_r\) then change, but their product is forced by the endpoints.
+Thus \eqref{eq:tpc44-exact-correlation-product} is an identity along a
+chosen coordinate path, not an assertion that the local correlations
+are independent.
+
+We next relate the small--prime projection count to the restriction
+energy.  Let \(\mathcal K_z\) be the set of low parts
+\(\kappa_{\le z}\) of nonzero pair kernels.  Since every pair kernel is
+the symmetric difference of two row labels,
+\begin{equation}
+ |\mathcal K_z|\le\nu_z^2.
+ \label{eq:tpc44-kernel-projection-count}
+\end{equation}
+
+\begin{proposition}[Energy cost of freezing the low primes]
+\label{prop:tpc44-low-restriction-energy}
+After every active prime \(p\le z\) has been restricted to \(-1\), the
+remaining coefficient energy \(E_z=E_{r(z)}\) satisfies
+\begin{equation}
+ E_z\le\nu_z^2V.
+ \label{eq:tpc44-low-energy-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For a fixed high kernel \(m\), the restricted coefficient is a signed
+sum
+\begin{equation}
+ C_{\le z}(m)
+ =\sum_{a\in\mathcal K_z}\mu(a)C(am),
+ \label{eq:tpc44-low-kernel-sum}
+\end{equation}
+with absent coefficients interpreted as zero.  Cauchy--Schwarz gives
+\begin{equation}
+ |C_{\le z}(m)|^2
+ \le|\mathcal K_z|\sum_{a\in\mathcal K_z}|C(am)|^2.
+ \label{eq:tpc44-low-kernel-Cauchy}
+\end{equation}
+Summing over \(m\), using unique low--high factorization, and applying
+\eqref{eq:tpc44-kernel-projection-count} proves the claim.
+\end{proof}
+
+Although the exponent \(\nu_z^2\) is natural for the squared coefficient
+spectrum, \cref{thm:tpc44-robust-face} is stronger for the nonnegative
+energy itself: it returns to the unsquared row labels and pays only one
+factor \(\nu_z\).

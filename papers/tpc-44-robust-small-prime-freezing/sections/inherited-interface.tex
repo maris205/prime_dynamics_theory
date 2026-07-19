@@ -1,0 +1,120 @@
+\section{The inherited equality--Walsh interface}
+\label{sec:tpc44-interface}
+
+We isolate exactly the part of TPC--43 used here.  The left and right
+output coordinates are combined into one finite index set \(i\).  For
+each \(i\),
+\begin{equation}
+ S_i(\varepsilon)=\sum_{u\in\mathcal U_i}b_{i,u}\chi_u(\varepsilon),
+ \qquad
+ Z_0(\varepsilon)=\sum_i|S_i(\varepsilon)|^2,
+ \label{eq:tpc44-coordinate-packet}
+\end{equation}
+where every \(u\) is squarefree and the nonzero labels in a fixed
+\(\mathcal U_i\) are pairwise distinct.  The characters are
+\begin{equation}
+ \chi_u(\varepsilon)=\prod_{p\mid u}\varepsilon_p.
+ \label{eq:tpc44-character}
+\end{equation}
+All coefficients and label sets are deterministic after the inherited
+TPC packet has been fixed.
+
+The atomic diagonal is
+\begin{equation}
+ \cD_0:=\sum_i\sum_{u\in\mathcal U_i}|b_{i,u}|^2.
+ \label{eq:tpc44-diagonal}
+\end{equation}
+Pairwise label distinctness within each coordinate and Walsh
+orthogonality give
+\begin{equation}
+ \E Z_0=\cD_0.
+ \label{eq:tpc44-mean-diagonal}
+\end{equation}
+If \(\cD_0=0\), every coefficient vanishes and all statements below are
+trivial.  We henceforth suppose \(\cD_0>0\).
+
+Expanding the squared norms and grouping equal squarefree
+symmetric--difference kernels gives real coefficients \(C(\kappa)\)
+such that
+\begin{align}
+ Z_0(\varepsilon)
+ &=\cD_0+F(\varepsilon),
+ \label{eq:tpc44-Z-F}\\
+ F(\varepsilon)
+ &=\sum_{\kappa>1}C(\kappa)\chi_\kappa(\varepsilon),
+ \label{eq:tpc44-F-spectrum}\\
+ Z_0(-\one)
+ &=\cD_0+\sum_{\kappa>1}\mu(\kappa)C(\kappa),
+ \label{eq:tpc44-physical-corner}\\
+ V:=\|F\|_2^2
+ &=\operatorname{Var}(Z_0)
+ =\sum_{\kappa>1}|C(\kappa)|^2.
+ \label{eq:tpc44-variance-parseval}
+\end{align}
+Every prime in these formulas belongs to the finite support of the
+labels.  We extend \(C\) by zero to all other squarefree integers and set
+\(C(1)=0\).
+
+At the physical equality alias the labels have the more specific form
+\begin{equation}
+ u_{\alpha,j}
+ =d_\alpha n_{\alpha,j,0}
+ =d_\alpha(\ell_\alpha d_\alpha j+h),
+ \label{eq:tpc44-physical-label}
+\end{equation}
+where \(h\ne0\) is fixed,
+\begin{align}
+ \ell_\alpha d_\alpha&\asymp Q,
+ &Q&=X^{267/400+o(1)},
+ \notag\\
+ j&\asymp J,
+ &J&=X^{133/400+o(1)},
+ \label{eq:tpc44-endpoint-scales}\\
+ d_\alpha&\asymp D_0,
+ &D_0&=X^{10049/52500+o(1)}.
+ \notag
+\end{align}
+The notation \(D_0\) for the divisor scale is distinct from the
+calligraphic energy \(\cD_0\).  Since \(QJ\asymp X\),
+\begin{equation}
+ u_{\alpha,j}
+ \le X^{\lambda_0+o(1)},
+ \qquad
+ \lambda_0=1+\frac{10049}{52500}
+ =\frac{62549}{52500}.
+ \label{eq:tpc44-label-size}
+\end{equation}
+The equality endpoint budget and inherited diagonal estimate are
+\begin{equation}
+ K_B=X^{1/400+o(1)},
+ \qquad
+ \cD_0\ll X^{o(1)}Q^2J,
+ \label{eq:tpc44-endpoint-budget}
+\end{equation}
+and the desired physical conclusion would be
+\begin{equation}
+ Z_0(-\one)\ll X^{o(1)}K_BQ^2J.
+ \label{eq:tpc44-physical-target}
+\end{equation}
+
+For later comparison, Boolean hypercontractivity
+\citep{Bonami1970,Beckner1975,Harper2019HighMoments} gives a soft variance
+bound.  Put
+\begin{equation}
+ d_X:=\max_{i,u\in\mathcal U_i}\omega(u).
+ \label{eq:tpc44-label-degree}
+\end{equation}
+The maximal order of \(\omega\) and \eqref{eq:tpc44-label-size} imply
+\begin{equation}
+ d_X\le(\lambda_0+o(1))\frac{\log X}{\log\log X}.
+ \label{eq:tpc44-degree-bound}
+\end{equation}
+Applying the \(L^4\) inequality to each \(S_i\), then Minkowski to
+\(Z_0=\sum_i|S_i|^2\), yields
+\begin{equation}
+ V^{1/2}\le\|Z_0\|_2
+ \le3^{d_X}\cD_0=X^{o(1)}\cD_0.
+ \label{eq:tpc44-soft-variance}
+\end{equation}
+This estimate is useful after a structural compression; by itself it
+does not evaluate \(F\) at one prescribed corner.

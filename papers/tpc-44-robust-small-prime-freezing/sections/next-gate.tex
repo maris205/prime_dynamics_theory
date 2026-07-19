@@ -1,0 +1,137 @@
+\section{The residual high--prime gate}
+\label{sec:tpc44-next-gate}
+
+The small--prime theorem and coefficient descent combine into a precise
+sufficient condition.  Process every active prime \(p\le z_X\) first,
+where \(z_X=(\log X)^{501/500}\), and call the resulting coefficient
+energy \(E_{z_X}\).  If it is nonzero, continue through the high primes
+and define
+\begin{equation}
+ \mathfrak A_{>z_X}
+ :=\frac{E_R}{E_{z_X}}
+ =\prod_{p_r>z_X}(1-\theta_r).
+ \label{eq:tpc44-high-amplification}
+\end{equation}
+This is the exact high--face point--evaluation amplification.  It may
+depend on the chosen order of the high primes through the individual
+factors, but the ratio itself does not.
+
+\begin{theorem}[A sufficient high--prime correlation gate]
+\label{thm:tpc44-high-gate}
+If the actual TPC equality coefficients satisfy
+\begin{equation}
+ \mathfrak A_{>z_X}\le X^{o(1)},
+ \label{eq:tpc44-high-product-hypothesis}
+\end{equation}
+then
+\begin{equation}
+ Z_0(-\one)\le K_B\cD_0
+ \label{eq:tpc44-conditional-endpoint}
+\end{equation}
+for all sufficiently large \(X\).  A sufficient local condition for
+\eqref{eq:tpc44-high-product-hypothesis} is
+\begin{equation}
+ \sum_{p_r>z_X}(-\theta_r)_+=o(\log X).
+ \label{eq:tpc44-negative-theta-sum}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+If \(E_{z_X}=0\), then \(F(-\one)=0\) and the result is immediate.
+Otherwise, \cref{prop:tpc44-low-restriction-energy} and
+\eqref{eq:tpc44-high-amplification} give
+\begin{equation}
+ |F(-\one)|
+ \le\nu_{z_X}V^{1/2}\mathfrak A_{>z_X}^{1/2}.
+ \label{eq:tpc44-final-F-bound}
+\end{equation}
+By \eqref{eq:tpc44-soft-variance},
+\(
+ V^{1/2}\le X^{o(1)}\cD_0
+\), while
+\cref{thm:tpc44-quantitative-freezing} gives
+\begin{equation}
+ \nu_{z_X}\le
+ X^{1/400-12829/105210000+o(1)}.
+ \label{eq:tpc44-nu-with-margin}
+\end{equation}
+The fixed power margin absorbs the factors \(X^{o(1)}\), as well as the
+diagonal term \(\cD_0\), and proves the endpoint.
+
+For \(-1\le\theta<1\),
+\begin{equation}
+ \log(1-\theta)\le(-\theta)_+.
+ \label{eq:tpc44-log-theta-bound}
+\end{equation}
+If a factor has \(\theta=1\), the terminal energy vanishes.  Otherwise
+summing \eqref{eq:tpc44-log-theta-bound} proves that
+\eqref{eq:tpc44-negative-theta-sum} implies
+\eqref{eq:tpc44-high-product-hypothesis}.
+\end{proof}
+
+The theorem is conditional, but the condition is now both exact and
+coefficient specific.  It asks that high--prime restrictions not create
+a polynomial cumulative anti--correlation.  A plausible route is to
+prove a bilinear estimate for the paired coefficient sum
+\begin{equation}
+ \sum_m C_{r-1}(m)\overline{C_{r-1}(p_rm)}
+ \label{eq:tpc44-paired-coefficient-target}
+\end{equation}
+uniformly after the preceding restrictions.  Merely proving that few
+labels contain \(p_r\) gives, by Cauchy--Schwarz, a square--root density
+loss; over many primes that is generally not summable.  The needed
+input must also exploit an angle, sign, oscillation, or genuine
+source--target bilinear structure.
+
+The conditional face product gives an equivalent one--sided route.  If
+\(A_z=0\), then repeated use of \eqref{eq:tpc44-face-doubling} gives
+\(A_0=Z_0(-\one)=0\), so the endpoint is automatic.  If \(A_z>0\) and one
+can prove for some cutoff \(z\)
+\begin{equation}
+ \log\frac{A_z}{\cD_0}
+ +\sum_{p_r\le z}(\delta_r)_+
+ \le\left(\frac1{400}+o(1)\right)\log X,
+ \label{eq:tpc44-face-sufficient-condition}
+\end{equation}
+then \eqref{eq:tpc44-log-drift-criterion} closes the endpoint.  By
+\eqref{eq:tpc44-Gram-face-increment}, each \(\delta_r\) is a normalized
+real cross inner product between the \(p_r\)-free and
+\(p_r\)-divisible blocks.  A bound of size
+\(O(1/p_r)\) for its positive part would be summable with only a
+polylogarithmic loss.  No such estimate is asserted here.
+
+\subsection{What has and has not moved}
+
+TPC--43 proved that almost every full prime--sign environment closes the
+equality packet.  The present theorem proves more: after drawing only
+the high signs, a density--one set of such environments permits arbitrary
+adversarial overwriting of every prime up to
+\((\log X)^{501/500}\).  This includes the physical values on a growing
+block and is therefore a strict partial de--randomization.
+
+The unresolved step is still substantial.  One must either prove
+\eqref{eq:tpc44-high-product-hypothesis}, establish the face drift bound
+\eqref{eq:tpc44-face-sufficient-condition}, derive a Type--II estimate
+for \eqref{eq:tpc44-paired-coefficient-target}, or identify a fixed
+structured class for \(C_X\) covered by a deterministic M\"obius
+orthogonality theorem.  Failure of one route would be informative, but
+none may be replaced by a suggestion that the all--minus high corner is
+random.
+
+\subsection{Claim ledger}
+
+The unconditional results of this paper are:
+\begin{enumerate}[label=(\roman*)]
+ \item exact forward and reverse prime martingale layers;
+ \item uniform compression of every small--prime face at cost \(\nu_z\);
+ \item the Rankin bound and robust freezing through
+ \((\log X)^{501/500}\);
+ \item exact coefficient restriction and correlation products;
+ \item exact conditional likelihood transport; and
+ \item the vanishing--variance degree--two rough obstruction.
+\end{enumerate}
+The high--prime amplification bound is a clearly labeled sufficient
+hypothesis, not a proved estimate for the physical coefficients.  No
+result here proves the twin--prime conjecture, a prime--pair asymptotic,
+fixed--shift four--M\"obius cancellation, or a general violation of sieve
+parity.

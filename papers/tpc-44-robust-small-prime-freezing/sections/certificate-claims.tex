@@ -1,0 +1,59 @@
+\section{Exact finite certificate}
+\label{sec:tpc44-certificate}
+
+The companion script
+\begin{center}
+\texttt{experiments/tpc44\_certificate.py}
+\end{center}
+uses only Python's standard library and exact integer, rational, and
+Gaussian--integer arithmetic.  It performs no random sampling.  The
+frozen finite regressions verify:
+\begin{enumerate}[label=(\roman*)]
+ \item the low--high label split and projected diagonal identity;
+ \item the pointwise robust face inequality for every finite sign
+ assignment in several exhaustive Gram packets;
+ \item the smooth physical sector after high--prime averaging;
+ \item the exact forward and reverse Walsh layers and their Parseval
+ ledgers;
+ \item the coefficient recurrence, physical invariance, and product
+ formula in \cref{thm:tpc44-correlation-product};
+ \item the kernel projection bound and low--restriction energy estimate;
+ \item the conditional face increments and likelihood ratios; and
+ \item every formula in the rough degree--two obstruction, for a finite
+ family of \(R\) and \(\lambda\).
+\end{enumerate}
+The script also checks the rational endpoint ledger
+\begin{equation}
+ \lambda_0=\frac{62549}{52500},
+ \qquad
+ \frac{\lambda_0}{501}=\frac{62549}{26302500},
+ \qquad
+ \frac1{400}-\frac{\lambda_0}{501}
+ =\frac{12829}{105210000}>0,
+ \label{eq:tpc44-certificate-ledger}
+\end{equation}
+and scans its own syntax tree to exclude floating--point literals,
+random imports, true division, and optimization--sensitive
+\texttt{assert} statements.
+
+The frozen run performs \(15{,}677\) exact checks.  Its canonical
+certificate digest is
+\begin{center}
+\texttt{24b7eb3f19af7a2c8a016672020ee593578463857f1d7fe3dabedd7e59b57433}.
+\end{center}
+The certified source SHA--256 is
+\begin{center}
+\texttt{1bc866f4e7981b3beea6fd4682fc702bef7cc28b949c192a628e1582d69a5da1},
+\end{center}
+and the canonical JSON SHA--256 is
+\begin{center}
+\texttt{bc0f83c2ba177f395a4c6b22a2d5c5bf1773249134149a4fbce4326bb2e7d7ea}.
+\end{center}
+Normal and optimized Python executions produce byte--identical JSON.
+
+Finite computation certifies only finite algebra and combinatorics.  It
+does not certify the asymptotic Rankin argument, maximal order of
+\(\omega\), Bonami--Beckner inequality, Borel--Cantelli lemma, inherited
+TPC diagonal bound, or any physical M\"obius cancellation.  In
+particular, the certificate is not numerical evidence for twin primes
+or for the unproved high--prime gate.

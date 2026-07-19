@@ -1,0 +1,146 @@
+\section{A vanishing--variance rough obstruction}
+\label{sec:tpc44-sharp-obstruction}
+
+We now show that the high--prime condition left by the preceding
+sections cannot be supplied by a black--box variance, fixed--moment, or
+low--influence theorem.  The example belongs to the same abstract class
+as \eqref{eq:tpc44-coordinate-packet}: it is the squared norm of a Walsh
+sum with distinct squarefree labels.
+
+Fix \(z\), choose distinct primes \(q_1,\ldots,q_R>z\), and choose a
+squarefree \(u_0\) coprime to all of them.  For \(\lambda>0\), put
+\begin{equation}
+ S(\varepsilon)
+ :=\chi_{u_0}(\varepsilon)
+ \left(
+  1-\frac{\lambda}{R}\sum_{i=1}^{R}\chi_{q_i}(\varepsilon)
+ \right),
+ \qquad Z(\varepsilon):=|S(\varepsilon)|^2.
+ \label{eq:tpc44-obstruction-SZ}
+\end{equation}
+The distinct row labels are \(u_0,u_0q_1,\ldots,u_0q_R\).
+
+\begin{theorem}[Rough degree--two late collapse]
+\label{thm:tpc44-rough-obstruction}
+The energy \eqref{eq:tpc44-obstruction-SZ} has the exact expansion
+\begin{equation}
+ Z
+ =1+\frac{\lambda^2}{R}
+ -\frac{2\lambda}{R}\sum_{i=1}^{R}\chi_{q_i}
+ +\frac{2\lambda^2}{R^2}
+  \sum_{1\le i<j\le R}\chi_{q_iq_j}.
+ \label{eq:tpc44-obstruction-expansion}
+\end{equation}
+Thus every nonconstant kernel is \(z\)-rough and the Walsh degree is at
+most \(2\).  Moreover,
+\begin{align}
+ D:=\E Z&=1+\frac{\lambda^2}{R},
+ \label{eq:tpc44-obstruction-D}\\
+ Z(-\one)&=(1+\lambda)^2,
+ \label{eq:tpc44-obstruction-corner}\\
+ \operatorname{Var}Z
+ &=\frac{4\lambda^2}{R}
+  +\frac{2\lambda^4(R-1)}{R^3}.
+ \label{eq:tpc44-obstruction-variance}
+\end{align}
+Take \(\lambda=R^{1/4}\).  Then
+\begin{equation}
+ D\longrightarrow1,
+ \qquad
+ \frac{\operatorname{Var}Z}{D^2}=O(R^{-1/2})\longrightarrow0,
+ \qquad
+ \frac{Z(-\one)}D\sim R^{1/2}\longrightarrow\infty.
+ \label{eq:tpc44-obstruction-asymptotics}
+\end{equation}
+For every fixed \(1\le q<\infty\),
+\begin{equation}
+ \left\|\frac ZD-1\right\|_{L^q(U)}\longrightarrow0.
+ \label{eq:tpc44-obstruction-fixed-moments}
+\end{equation}
+If \(d\QZ=(Z/D)dU\), then
+\begin{equation}
+ \chi^2(\QZ\|U)=\frac{\operatorname{Var}Z}{D^2}\longrightarrow0,
+ \qquad
+ \|\QZ-U\|_{\rm TV}\longrightarrow0,
+ \label{eq:tpc44-obstruction-TV}
+\end{equation}
+while the density at the distinguished point diverges as in
+\eqref{eq:tpc44-obstruction-asymptotics}.
+\end{theorem}
+
+\begin{proof}
+The factor \(\chi_{u_0}\) has modulus one and disappears on squaring.
+Expanding the remaining real square, using
+\(
+ (\sum_i\chi_{q_i})^2=R+2\sum_{i<j}\chi_{q_iq_j}
+\), gives \eqref{eq:tpc44-obstruction-expansion}.  Orthogonality gives
+the mean and variance, while evaluating every \(\chi_{q_i}\) at \(-1\)
+gives \eqref{eq:tpc44-obstruction-corner}.
+
+For \(\lambda=R^{1/4}\), write
+\begin{equation}
+ \frac{\lambda}{R}\sum_{i=1}^{R}\chi_{q_i}
+ =R^{-1/4}
+  \left(R^{-1/2}\sum_{i=1}^{R}\chi_{q_i}\right).
+ \label{eq:tpc44-obstruction-Khintchine-scaling}
+\end{equation}
+Khintchine's inequality bounds every fixed \(L^q\) norm of the
+parenthesized variable.  Hence the left side tends to zero in every
+fixed \(L^q\), and squaring proves
+\eqref{eq:tpc44-obstruction-fixed-moments}.  The chi--square identity is
+the definition of \(\QZ\), and total variation is at most one half of
+its square root.
+\end{proof}
+
+Even the primewise face increments are individually negligible.  Order
+the \(q_i\) arbitrarily and define \(A_t\) as in
+\eqref{eq:tpc44-Ar}.  Direct averaging gives
+\begin{equation}
+ A_t=
+ \left(1+\lambda\frac{R-t}{R}\right)^2
+ +\frac{\lambda^2t}{R^2},
+ \label{eq:tpc44-obstruction-At}
+\end{equation}
+and
+\begin{equation}
+ A_{t-1}-A_t
+ =\frac{2\lambda}{R}
+  \left(1+\lambda\frac{R-t}{R}\right).
+ \label{eq:tpc44-obstruction-Lt}
+\end{equation}
+Consequently
+\begin{equation}
+ 0\le\delta_t\le\frac{2\lambda}{R},
+ \qquad
+ \sum_{t=1}^{R}\delta_t^2\le\frac{4\lambda^2}{R}.
+ \label{eq:tpc44-obstruction-small-deltas}
+\end{equation}
+For \(\lambda=R^{1/4}\), the maximum is \(O(R^{-3/4})\) and the sum of
+squares is \(O(R^{-1/2})\), yet
+\begin{equation}
+ \prod_{t=1}^{R}(1+\delta_t)
+ =\frac{(1+\lambda)^2}{1+\lambda^2/R}
+ \sim R^{1/2}.
+ \label{eq:tpc44-obstruction-delta-product}
+\end{equation}
+
+For completeness, the normalized Walsh influence of a prime \(q_i\)
+is also \(O(R^{-1})\).  Indeed
+\begin{equation}
+ \operatorname{Inf}_{q_i}(F)
+ :=\sum_{q_i\mid\kappa}|C(\kappa)|^2
+ =\frac{4\lambda^2}{R^2}
+  +\frac{4\lambda^4(R-1)}{R^4},
+ \label{eq:tpc44-obstruction-influence}
+\end{equation}
+and division by \eqref{eq:tpc44-obstruction-variance} gives the claim at
+\(\lambda=R^{1/4}\).
+
+\begin{remark}[Scope of the counterexample]
+\label{rem:tpc44-obstruction-scope}
+The example proves that the abstract nonnegative Walsh--Gram interface
+does not force good behavior at the all--minus corner.  It does not show
+that the actual packet coefficient \(C_X(\kappa)\) realizes this example,
+nor that the physical endpoint fails.  Its role is to identify which
+additional arithmetic statement is indispensable.
+\end{remark}

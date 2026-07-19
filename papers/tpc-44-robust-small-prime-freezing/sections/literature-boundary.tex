@@ -1,0 +1,84 @@
+\section{Literature boundary}
+\label{sec:tpc44-literature}
+
+The prime--by--prime conditioning in
+\cref{sec:tpc44-prime-martingales,sec:tpc44-face-transport} is the Walsh
+analogue of a finite reverse martingale.  Its differences group the
+coefficient spectrum by the least prime factor.  Hypercontractive moment
+bounds for Rademacher multiplicative functions, such as Probability
+Result~2.3 of \citet{Harper2019HighMoments}, control such polynomials in
+the annealed model.  They do not, by themselves, control a prescribed
+vertex of the cube.  The robust face theorem uses the additional Gram
+representation and injective equality labels, rather than a stronger
+generic moment inequality.
+
+General low--influence principles also have a different quantifier.
+The invariance theorem of
+\citet[Theorem~3.18]{MosselODonnellOleszkiewicz2010} is distributional
+under bounded--degree and low--influence hypotheses.  Even when those
+hypotheses hold, the theorem describes typical product--space inputs,
+not the all--minus input.  The obstruction in
+\cref{thm:tpc44-rough-obstruction} makes this distinction explicit: its
+degree is two and its normalized influences vanish, yet its specified
+corner diverges.
+
+Small--bias spaces provide a finite derandomization of Walsh averages.
+\citet[Theorem~3.2]{NaorNaor1993} construct such spaces with a logarithmic
+randomness seed.  Applied to
+\(
+ F(\varepsilon)=\sum C(\kappa)\chi_\kappa(\varepsilon)
+\), the direct conclusion has the form
+\begin{equation}
+ |\E_{\varepsilon\in\mathcal S}F(\varepsilon)|
+ \le\epsilon\sum_\kappa|C(\kappa)|.
+ \label{eq:tpc44-small-bias-l1}
+\end{equation}
+It therefore needs an \(\ell^1\) coefficient estimate and locates some
+good sign vector; it does not identify the physical vector.  Classical
+Riesz--product results, for example \citet[Theorem~1.2]{Peyriere1975},
+concern singularity of limiting product measures and likewise do not
+bound a specified finite corner.
+
+Strong theorems for unweighted rough numbers do not supply the missing
+signed estimate.  \citet[Theorem~1.1]{GorodetskyRoughVariance} proves a
+variance asymptotic for the indicator of integers without small prime
+factors in averaged short intervals.  This controls spatially averaged
+roughness, not
+\begin{equation}
+ \sum_{\kappa}\mu(\kappa)C_X(\kappa)
+ \label{eq:tpc44-weighted-mobius-sum}
+\end{equation}
+for a signed, packet--dependent coefficient.  Large--small prime
+duality \citep{Alladi1977} and recent effective least--prime identities
+such as \citet[Theorem~1.1]{Tenenbaum2026} exploit special divisor or
+harmonic weights.  No corresponding convolution identity has been
+proved for \(C_X\).
+
+M\"obius orthogonality to fixed--complexity structured sequences is a
+second possible route.  For instance, \citet[Theorem~1.1]{GreenTao2012}
+give arbitrary logarithmic saving against polynomial nilsequences of
+fixed complexity.  The present \(C_X(\kappa)\) is scale dependent and is
+not known to be a fixed--complexity nilsequence, a bounded sum of such
+sequences, or a member of an analogous class.  We therefore cite that
+theorem as a route boundary, not as a black box that applies here.
+
+The closest classical diagnosis is the sieve parity problem.  The
+asymptotic sieve of \citet[Theorem~1]{FriedlanderIwaniec1998} obtains a
+prime conclusion only after an explicit bilinear axiom is added to
+local--density and remainder information.  In a broad modern sieve
+framework, \citet[Theorem~2.1]{FordMaynard2024} show that insufficient
+Type--II information allows sequences satisfying nontrivial Type--I and
+Type--II estimates while still failing to force primes.  Their
+theorems do not apply literally to the generally signed \(C_X\), but
+they support the route map: rough--kernel counting alone cannot control
+\eqref{eq:tpc44-weighted-mobius-sum}; a coefficient--specific bilinear
+estimate or an equally strong arithmetic substitute is needed.
+
+To avoid an accidental application of an unrelated theorem, we record
+the current negative information.  The coefficient \(C_X\) is real but
+generally signed, packet and mask dependent, and changes with \(X\).  It
+is not known to be multiplicative, nonnegative, low degree, uniformly
+low influence, \(\ell^1\)-small, smooth, divisor--convolutional, a fixed
+nilsequence, or controlled in a Type--II norm.  The results cited in this
+section diagnose possible inputs; none proves the remaining physical
+corner estimate.

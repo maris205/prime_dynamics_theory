@@ -1,0 +1,167 @@
+\section{Conditional face transport and likelihood drift}
+\label{sec:tpc44-face-transport}
+
+The coefficient descent tracks the centered spectrum.  There is a
+second exact descent that preserves the nonnegativity of \(Z_0\).  For
+\(0\le r\le R\), define
+\begin{equation}
+ A_r:=
+ \E_{\varepsilon_{p_1},\ldots,\varepsilon_{p_r}}
+ Z_0(\varepsilon_{\le p_r},-\one_{>p_r}).
+ \label{eq:tpc44-Ar}
+\end{equation}
+Then
+\begin{equation}
+ A_0=Z_0(-\one),
+ \qquad A_R=\cD_0,
+ \label{eq:tpc44-Ar-endpoints}
+\end{equation}
+and the reverse Walsh formula gives
+\begin{equation}
+ A_r=\cD_0+
+ \sum_{\substack{\kappa>1\\\Pminus(\kappa)>p_r}}
+ \mu(\kappa)C(\kappa).
+ \label{eq:tpc44-Ar-spectrum}
+\end{equation}
+For an arbitrary cutoff \(z\), use \eqref{eq:tpc44-cutoff-index} and write
+\begin{equation}
+ A_z:=A_{r(z)},
+ \qquad E_z:=E_{r(z)}.
+ \label{eq:tpc44-Az-definition}
+\end{equation}
+
+\begin{proposition}[Exact least--prime increment]
+\label{prop:tpc44-least-prime-increment}
+Put
+\begin{equation}
+ L_r:=A_{r-1}-A_r.
+ \label{eq:tpc44-Lr}
+\end{equation}
+Then
+\begin{equation}
+ L_r=\sum_{\Pminus(\kappa)=p_r}\mu(\kappa)C(\kappa).
+ \label{eq:tpc44-Lr-spectrum}
+\end{equation}
+Moreover,
+\begin{equation}
+ 0\le A_{r-1}\le2A_r.
+ \label{eq:tpc44-face-doubling}
+\end{equation}
+If \(Z_0(-\one)>0\), all \(A_r>0\), and
+\begin{equation}
+ \delta_r:=\frac{L_r}{A_r}\in[-1,1]
+ \label{eq:tpc44-delta}
+\end{equation}
+satisfies
+\begin{equation}
+ \boxed{
+ \frac{Z_0(-\one)}{\cD_0}
+ =\prod_{r=1}^{R}(1+\delta_r).}
+ \label{eq:tpc44-face-product}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Subtract \eqref{eq:tpc44-Ar-spectrum} at adjacent indices to obtain the
+increment formula.  Before averaging \(\varepsilon_{p_r}\), let \(B_-\)
+and \(B_+\) be the two nonnegative conditional averages obtained by
+setting that sign to \(-1\) and \(+1\), respectively.  Then
+\begin{equation}
+ A_{r-1}=B_-,
+ \qquad A_r=\frac{B_-+B_+}{2},
+ \label{eq:tpc44-two-face-average}
+\end{equation}
+which proves \eqref{eq:tpc44-face-doubling} and
+\(-1\le\delta_r\le1\).  If some \(A_r=0\), then \(A_{r-1}=0\), so
+positive \(A_0\) forces every \(A_r>0\).  Finally
+\(
+ A_{r-1}=A_r(1+\delta_r)
+\); telescope from \(r=R\) to \(r=1\).
+\end{proof}
+
+The increment also has an exact Gram interpretation.  After averaging
+the coordinates \(p_1,\ldots,p_{r-1}\), group row labels by their
+incidence pattern \(B\) on those coordinates.  With the later signs fixed
+at \(-1\), let \(V_{B,0}\) and \(V_{B,1}\) be the resulting coefficient
+vectors in the direct sum of the output spaces, according as \(p_r\)
+does not or does divide the label.  Orthogonality in the averaged
+coordinates gives
+\begin{align}
+ A_{r-1}
+ &=\sum_B\|V_{B,0}-V_{B,1}\|^2,
+ \label{eq:tpc44-Gram-face-minus}\\
+ A_r
+ &=\sum_B\bigl(\|V_{B,0}\|^2+\|V_{B,1}\|^2\bigr),
+ \label{eq:tpc44-Gram-face-average}\\
+ L_r
+ &=-2\operatorname{Re}\sum_B
+   \langle V_{B,0},V_{B,1}\rangle.
+ \label{eq:tpc44-Gram-face-increment}
+\end{align}
+Consequently, whenever \(A_r>0\), the drift \(\delta_r=L_r/A_r\) is a
+normalized real cross inner product between the \(p_r\)-free and
+\(p_r\)-divisible blocks.
+
+The product has a probability interpretation.  Let \(U\) be uniform
+measure on the active prime cube and define the energy--biased measure
+\begin{equation}
+ d\QZ:=\frac{Z_0}{\cD_0}\,dU.
+ \label{eq:tpc44-energy-biased-measure}
+\end{equation}
+For \(0\le r\le R\), let
+\begin{equation}
+ \mathcal E_r:=
+ \{\varepsilon_{p_{r+1}}=\cdots=\varepsilon_{p_R}=-1\}.
+ \label{eq:tpc44-tail-face-event}
+\end{equation}
+
+\begin{theorem}[Boundary likelihood chain]
+\label{thm:tpc44-likelihood-chain}
+If \(Z_0(-\one)>0\), then
+\begin{equation}
+ 1+\delta_r
+ =2\QZ\!\left(
+ \varepsilon_{p_r}=-1\mid\mathcal E_r
+ \right),
+ \label{eq:tpc44-conditional-likelihood}
+\end{equation}
+and therefore
+\begin{equation}
+ \frac{Z_0(-\one)}{\cD_0}
+ =\prod_{r=1}^{R}
+ 2\QZ\!\left(
+ \varepsilon_{p_r}=-1
+ \mid
+ \varepsilon_{p_{r+1}}=\cdots=\varepsilon_{p_R}=-1
+ \right).
+ \label{eq:tpc44-likelihood-product}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The uniform probability of \(\mathcal E_r\) is \(2^{-(R-r)}\), and
+conditioning the energy on that face gives \(A_r\).  Hence
+\begin{equation}
+ \QZ(\mathcal E_r)
+ =2^{-(R-r)}\frac{A_r}{\cD_0}.
+ \label{eq:tpc44-face-event-mass}
+\end{equation}
+The event \(\mathcal E_r\cap\{\varepsilon_{p_r}=-1\}\) is
+\(\mathcal E_{r-1}\).  Dividing the corresponding masses gives
+\begin{equation}
+ \QZ(\varepsilon_{p_r}=-1\mid\mathcal E_r)
+ =\frac{A_{r-1}}{2A_r}=\frac{1+\delta_r}{2}.
+ \label{eq:tpc44-face-conditional-ratio}
+\end{equation}
+The product formula follows.
+\end{proof}
+
+If \(Z_0(-\one)=0\), every upper endpoint is automatic.  Otherwise, for
+a target factor \(K\ge1\), exact endpoint selection is equivalent to
+\begin{equation}
+ \sum_{r=1}^{R}\log(1+\delta_r)\le\log K.
+ \label{eq:tpc44-log-drift-criterion}
+\end{equation}
+This is why pointwise \(o(1)\) bounds for \(\delta_r\), or even a small
+quadratic variation, need not suffice: a long sequence of tiny positive
+drifts may still accumulate.
