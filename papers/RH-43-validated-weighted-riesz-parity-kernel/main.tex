@@ -1,0 +1,1165 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Id}{\mathrm I}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\uc}{u_{\mathrm c}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\tr}{\operatorname{tr}}
+
+\title{A Validated Intrinsic Kernel for a Negative Parity Resonance\\
+\large Weighted-Riesz Factor Correction, Complement Schur Closure,\\
+and Adaptive Spectral Deflation}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The negative resonance of a folded-Gaussian Markov operator at the first
+quadratic band-merging parameter has been isolated in both $L^\infty$ and
+$L^2$, with a dimension-uniform Euclidean contour for full and sparse
+midpoint matrices.  The remaining task in the gauge-free peripheral program
+is to turn that isolated eigenvalue into a validated intrinsic kernel that
+can be subtracted before trace and determinant analysis.  We carry this out
+at fixed noise $\sigma=10^{-2}$.
+
+For the parity circle
+\[
+ c=-0.9865481927458079,\qquad r=0.05,
+\]
+we define
+\[
+ \cQ_-(T;\Gamma)
+ =\frac{1}{2\pi i}\int_\Gamma z(z-T)^{-1}\,dz.
+\]
+An orthogonal Schur decomposition against the full cell-average complement
+improves the continuum $L^2$ resolvent upper from $266.650$ to
+$112.95503061584434$.  The weighted term $\cQ_-(\cK;\Gamma)$ is rank one
+and has a real smooth Hilbert--Schmidt kernel $q_-(x,y)$.  We give explicit
+Hilbert--Schmidt bounds for $q_-$ and its derivatives through
+$\partial_x^2\partial_y^2q_-$, and enclose it in an $L^2([0,1]^2)$ ball of
+radius $2.427176139794529$ about the lifted archived $4096$ factor.
+
+A new two-sided residual theorem converts an approximate left--right factor
+into an exact weighted-Riesz certificate by a block-diagonalizing
+perturbation.  Applied with componentwise outward arithmetic, it proves that
+the stored parity factors at dimensions $2048$, $4096$, and $8192$ are
+genuine spectral terms, with Euclidean errors at most
+$3.66\times10^{-10}$, $7.21\times10^{-10}$, and
+$1.43\times10^{-9}$.  Consequently the two archived Haar transitions are
+now spectral, not merely algebraic: their actual ratios lie within
+$3.94\times10^{-4}$ of the quarter--half targets.  A smooth-kernel Haar
+theorem explains these limits intrinsically.
+
+The improved continuum bound yields an all-dimension theorem from
+$n=65536$: full and fixed/adaptive sparse exact-real Markov matrices have
+one parity eigenvalue in the circle and uniform Euclidean resolvent upper
+$267.81252084743886$.  Their full-to-sparse weighted-Riesz difference is at
+most $7.275887086007192\times10^{-10}$, while the corresponding intrinsically
+deflated operators differ by at most
+$7.277844418892396\times10^{-10}$.  The full weighted term converges to the
+midpoint sample of $q_-$ at order $n^{-2}$, and adaptive support preserves
+the rate $O(n^{-2}(\log n)^{-1/4})$.  No Perron rank-two completion,
+zero-noise limit, arithmetic trace formula, zeta-zero identification,
+self-adjoint Hilbert--P\'olya operator, or Riemann-hypothesis claim is made.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+
+Spectral subtraction is straightforward for a normal matrix with an
+orthonormal eigenbasis: one removes the relevant eigenvalue times its
+orthogonal projector.  The noisy quadratic transfer operators studied here
+are nonnormal.  Their left and right modes carry arbitrary scale, sign, and
+ordering conventions, and those conventions become increasingly fragile
+under grid refinement.  The invariant object is instead the weighted Riesz
+term
+\[
+ \cQ(T;\Gamma)=T\cP(T;\Gamma)
+ =\frac{1}{2\pi i}\int_\Gamma z(z-T)^{-1}\,dz,
+\]
+where $\cP$ is the Riesz projection.  For a simple real eigenvalue
+$\lambda$ this equals $\lambda r\ell^T/(\ell^Tr)$, but the contour formula
+does not choose a gauge.
+
+The analytic weighted-Riesz framework of \citet{WangRiesz2026} proved that
+a simple isolated smooth Nystr\"om branch has a second-order intrinsic
+continuum bridge.  It also showed that an adaptive Gaussian support cutoff
+passes through the same calculus under a dimension-uniform Euclidean
+contour bound.  At that stage three statements were still conditional:
+the negative continuum resonance had not been proved simple and isolated,
+the required Euclidean conditioning was absent, and the stored factors used
+in the Haar ledger were known to be spectral only through floating
+residuals.
+
+The first two conditions were subsequently closed.  A validated continuum
+Grushin--Rouch\'e argument isolated one real negative resonance
+\citep{WangContinuumContour2026}; a Hilbert--Galerkin lift then established
+the same circle in $L^2$ and controlled every sufficiently fine full and
+sparse midpoint family in the Euclidean norm
+\citep{WangEuclidean2026}.  The present paper uses those results rather than
+opening another contour.  Its purpose is to construct the intrinsic parity
+kernel itself and to close the exact-stored factor gate.
+
+Four additional ideas are needed.
+\begin{enumerate}[leftmargin=2em]
+ \item A two-sided residual correction makes a chosen rank-one factor exact
+       for a nearby matrix, after which contour stability compares it with
+       the true weighted Riesz term.
+ \item The dyadic Schur formulas can be integrated around the contour.  This
+       bounds the change of the weighted term block by block, much more
+       sharply than a direct perturbation by the whole fine operator.
+ \item The final finite-rank-to-continuum passage should also be Schur, with
+       the full orthogonal complement as the detail space.  Its self-energy
+       is quadratic in the mesh and is far smaller than the direct
+       Galerkin defect.
+ \item The quarter--half law has a continuum explanation.  Four midpoint
+       samples in a coarse cell give leading tensors
+       $q_{xx}+q_{yy}$, $q_x$, $q_y$, and $q_{xy}$ in the four Haar blocks.
+\end{enumerate}
+
+These steps produce an intrinsic deflation
+\[
+ \cK_\perp=\cK-\cQ_-(\cK;\Gamma)
+\]
+that removes the negative branch exactly while leaving the remaining
+spectrum unchanged away from zero.  This is the operator that later trace
+and determinant papers can use without carrying a left--right gauge.
+
+Three evidence levels remain separate throughout.
+\begin{description}[leftmargin=3.2cm,style=nextline]
+ \item[Analytic theorem]
+ Two-sided factor correction, weighted contour stability, infinite
+ complement Schur continuation, smooth-kernel Haar limits, Nystr\"om
+ convergence, and intrinsic deflation.
+ \item[Outward certificate]
+ Exact stored binary64 bordered residuals, Arb Frobenius identities, the
+ Hilbert derivative envelope, and every explicit Neumann or Schur gate.
+ \item[Displayed center]
+ The heat map in \cref{fig:summary} is the exact archived $4096$ factor
+ center.  It is not a pointwise interval enclosure of the continuum kernel.
+\end{description}
+
+\section{Operator, contour, and main results}
+\label{sec:model}
+
+Let $\uc$ be the unique root in $(1.5,1.6)$ of
+\[
+ u^3-2u^2+2u-2=0,
+\]
+fix $\sigma=1/100$, and put
+\[
+ m(x)=1-\uc x^2.
+\]
+For $0\le x,y\le1$, define
+\[
+ g(x,y)=
+ e^{-(y-m(x))^2/(2\sigma^2)}
+ +e^{-(y+m(x))^2/(2\sigma^2)},
+\]
+\[
+ Z(x)=\int_0^1g(x,y)\,dy,
+ \qquad
+ k(x,y)=\frac{g(x,y)}{Z(x)},
+\]
+and the compact Markov operator
+\begin{equation}
+ (\cK f)(x)=\int_0^1k(x,y)f(y)\,dy
+ \quad\text{on }L^2([0,1]).
+ \label{eq:continuum-operator}
+\end{equation}
+
+The parity contour is
+\begin{equation}
+ c=-0.9865481927458079,
+ \qquad r=0.05,
+ \qquad \Gamma=\{z\in\C:|z-c|=r\}.
+ \label{eq:contour}
+\end{equation}
+Write
+\[
+ \rho_\Gamma=0.9365481927458077,
+ \qquad R_\Gamma=1.036548192745808.
+\]
+For any bounded operator $T$ with $\Gamma\subset\rho(T)$, define
+\begin{align}
+ \cP_-(T;\Gamma)
+ &=\frac{1}{2\pi i}\int_\Gamma(z-T)^{-1}\,dz,
+ \label{eq:riesz-projection}\\
+ \cQ_-(T;\Gamma)
+ &=\frac{1}{2\pi i}\int_\Gamma z(z-T)^{-1}\,dz
+ =T\cP_-(T;\Gamma).
+ \label{eq:weighted-riesz}
+\end{align}
+
+For $n\ge2$, let $h=1/n$ and $x_i=y_i=(i+\tfrac12)h$.  The continuum-
+normalized midpoint matrix and exactly discretely normalized Markov matrix
+are
+\begin{equation}
+ (M_n)_{ij}=h k(x_i,y_j),
+ \qquad
+ (P_n)_{ij}=\frac{g(x_i,y_j)}{\sum_qg(x_i,y_q)}.
+ \label{eq:matrix-families}
+\end{equation}
+Let $P_n^{(8)}$ be the archived fixed eight-sigma truncation and let
+\begin{equation}
+ L_n=\max\{8,2\sqrt{\log n}\}
+ \label{eq:adaptive-schedule}
+\end{equation}
+define the adaptive sparse family $P_n^{(L_n)}$ as in
+\citet{WangCutoff2026,WangEuclidean2026}.
+
+\begin{theorem}[Validated intrinsic continuum parity kernel]
+\label{thm:continuum-kernel}
+The circle \eqref{eq:contour} lies in the $L^2$ resolvent set of $\cK$ and
+\begin{equation}
+ \sup_{z\in\Gamma}\norm{(z-\cK)^{-1}}_{2\to2}
+ \le112.95503061584434.
+ \label{eq:improved-continuum-resolvent}
+\end{equation}
+The operator
+\[
+ Q_-=\cQ_-(\cK;\Gamma)
+\]
+has rank one and a real $C^\infty$ kernel $q_-(x,y)$.  Its
+Hilbert--Schmidt norm lies in
+\[
+ 0.9365481927458077
+ \le\norm{q_-}_{L^2([0,1]^2)}
+ \le5.854166642320046.
+\]
+The derivative uppers are recorded in \cref{tab:kernel-envelope}.
+
+Let $\widehat Q_{4096}$ be the stored binary64 factor
+\[
+ \widehat Q_{4096}
+ =c\,\frac{r_0\ell_0^T}{\ell_0^Tr_0}
+\]
+lifted to the cell space $V_{4096}$.  Then
+\begin{align}
+ \norm{Q_- -\widehat Q_{4096}}_{2\to2}
+ &\le1.716272707582898,
+ \label{eq:construction-operator-ball}\\
+ \norm{q_- -\widehat q_{4096}}_{L^2([0,1]^2)}
+ &\le2.427176139794529.
+ \label{eq:construction-kernel-ball}
+\end{align}
+Thus the continuum weighted term is a validated intrinsic kernel, not only
+an eigenvalue count.
+\end{theorem}
+
+\begin{theorem}[Three exact stored parity factors]
+\label{thm:stored-factors}
+For each $n\in\{2048,4096,8192\}$, let $A_n^{\mathrm s}$ be the exact stored
+binary64 Markov matrix, let $c_n,r_n,\ell_n$ be its archived parity data, and
+put
+\[
+ \widehat Q_n=c_n\frac{r_n\ell_n^T}{\ell_n^Tr_n}.
+\]
+The circle $|z-c_n|=0.05$ contains exactly one eigenvalue of
+$A_n^{\mathrm s}$.  Its true weighted Riesz term $Q_n^{\mathrm s}$ obeys
+\[
+ \norm{Q_n^{\mathrm s}-\widehat Q_n}_2
+ \le
+ \begin{cases}
+  3.650836314181483\times10^{-10},&n=2048,\\
+  7.202868434316492\times10^{-10},&n=4096,\\
+  1.426439999332510\times10^{-9},&n=8192.
+ \end{cases}
+\]
+Consequently the actual spectral Haar ratios satisfy the intervals in
+\cref{tab:haar-ratios}.  Every interval is within $10^{-3}$ of its smooth-
+kernel quarter--half target.
+\end{theorem}
+
+\begin{theorem}[Uniform full, sparse, and deflated families]
+\label{thm:uniform-family}
+For every integer $n\ge65536$, each of
+\[
+ M_n,\qquad P_n,\qquad P_n^{(8)},\qquad P_n^{(L_n)}
+\]
+has exactly one eigenvalue inside $\Gamma$, counted algebraically.  It is
+real, negative, and simple.  Uniformly in $n$,
+\begin{align}
+ \sup_{z\in\Gamma}\norm{(z-M_n)^{-1}}_2
+ &\le267.3688881197896,
+ \label{eq:uniform-midpoint-resolvent}\\
+ \sup_{z\in\Gamma}\norm{(z-P_n)^{-1}}_2
+ &\le267.8125208334001,
+ \label{eq:uniform-full-resolvent}\\
+ \sup_{z\in\Gamma}\norm{(z-P_n^{(8)})^{-1}}_2,quad
+ \sup_{z\in\Gamma}\norm{(z-P_n^{(L_n)})^{-1}}_2
+ &\le267.81252084743886.
+ \label{eq:uniform-sparse-resolvent}
+\end{align}
+Moreover,
+\begin{equation}
+ \norm{\cQ_-(P_n^{(8)};\Gamma)-\cQ_-(P_n;\Gamma)}_2,
+ \quad
+ \norm{\cQ_-(P_n^{(L_n)};\Gamma)-\cQ_-(P_n;\Gamma)}_2
+ \le7.275887086007192\times10^{-10}.
+ \label{eq:uniform-weighted-cutoff}
+\end{equation}
+Define the intrinsic deflations
+\[
+ P_{n,\perp}=P_n-\cQ_-(P_n;\Gamma),
+ \qquad
+ P_{n,\perp}^{(L)}
+ =P_n^{(L)}-\cQ_-(P_n^{(L)};\Gamma).
+\]
+Then
+\begin{equation}
+ \norm{P_{n,\perp}^{(8)}-P_{n,\perp}}_2,
+ \quad
+ \norm{P_{n,\perp}^{(L_n)}-P_{n,\perp}}_2
+ \le7.277844418892396\times10^{-10}.
+ \label{eq:uniform-deflated-cutoff}
+\end{equation}
+\end{theorem}
+
+\begin{corollary}[Unconditional parity weighted-kernel bridge]
+\label{cor:weighted-bridge}
+Let
+\[
+ (Q_n^\circ)_{ij}=h q_-(x_i,y_j).
+\]
+Then
+\begin{align}
+ \norm{\cQ_-(P_n;\Gamma)-Q_n^\circ}_2
+ &=O(n^{-2}),
+ \label{eq:full-second-order}\\
+ \norm{\cQ_-(P_n^{(L_n)};\Gamma)-Q_n^\circ}_2
+ &=O\!\left(n^{-2}(\log n)^{-1/4}\right).
+ \label{eq:adaptive-second-order}
+\end{align}
+Thus every hypothesis of the conditional parity theorem in
+\citet{WangRiesz2026} is now proved.  No eigenvector gauge appears in either
+statement.
+\end{corollary}
+
+\section{Two-sided residual correction of a weighted factor}
+\label{sec:factor-correction}
+
+The first new ingredient closes the gap between a stored low-rank factor and
+the actual spectral term of the stored matrix.  It is purely algebraic and
+applies to any nonnormal matrix.
+
+\begin{proposition}[Rank-one block-diagonalizing correction]
+\label{prop:factor-correction}
+Let $A\in\C^{n\times n}$ and let $\lambda_0\in\C$.  Choose nonzero vectors
+$r_0,\ell_0$ with
+\[
+ g=\ell_0^Tr_0\ne0,
+ \qquad
+ P_0=\frac{r_0\ell_0^T}{g}.
+\]
+Put $R_0=A-\lambda_0\Id$ and
+\begin{equation}
+ \Delta=-R_0P_0-P_0R_0+P_0R_0P_0.
+ \label{eq:block-correction}
+\end{equation}
+Then
+\begin{equation}
+ \widetilde A=A+\Delta
+ =\lambda_0P_0+(\Id-P_0)A(\Id-P_0),
+ \label{eq:corrected-matrix}
+\end{equation}
+and
+\[
+ \widetilde AP_0=P_0\widetilde A=\lambda_0P_0.
+\]
+If
+\[
+ u=R_0r_0,
+ \qquad
+ v^T=\ell_0^TR_0,
+ \qquad
+ p=\frac{\norm{r_0}_2\norm{\ell_0}_2}{|g|},
+\]
+then
+\begin{equation}
+ \norm\Delta_2
+ \le
+ \frac{\norm u_2\norm{\ell_0}_2}{|g|}
+ +\frac{\norm{r_0}_2\norm v_2}{|g|}
+ +p\min\!\left\{
+ \frac{\norm u_2\norm{\ell_0}_2}{|g|},
+ \frac{\norm{r_0}_2\norm v_2}{|g|}
+ \right\}.
+ \label{eq:correction-upper}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Since $P_0^2=P_0$, expansion of
+$\lambda_0P_0+(\Id-P_0)A(\Id-P_0)-A$ gives
+\eqref{eq:block-correction}.  The invariance identities follow immediately.
+Moreover,
+\[
+ R_0P_0=\frac{u\ell_0^T}{g},
+ \qquad
+ P_0R_0=\frac{r_0v^T}{g}.
+\]
+Their spectral norms are the first two terms of
+\eqref{eq:correction-upper}.  Finally,
+\[
+ \norm{P_0R_0P_0}_2
+ \le\min\{\norm{P_0}_2\norm{R_0P_0}_2,
+           \norm{P_0R_0}_2\norm{P_0}_2\},
+\]
+which gives the third term.
+\end{proof}
+
+\begin{theorem}[Validated weighted factor]
+\label{thm:validated-factor}
+Let $\Gamma$ be a circle of radius $r$ and maximum modulus $R_\Gamma$.
+Suppose $A$ has algebraic count one inside $\Gamma$ and
+\[
+ \sup_{z\in\Gamma}\norm{(z-A)^{-1}}_2\le M.
+\]
+Assume $\lambda_0$ lies inside $\Gamma$ and let $\varepsilon$ be the right
+side of \eqref{eq:correction-upper}.  If $M\varepsilon<1$, then
+\begin{equation}
+ \norm{\cQ_-(A;\Gamma)-\lambda_0P_0}_2
+ \le
+ rR_\Gamma
+ \frac{M^2\varepsilon}{1-M\varepsilon}.
+ \label{eq:weighted-factor-bound}
+\end{equation}
+In particular, $\lambda_0P_0$ is a validated center for the actual weighted
+Riesz term.
+\end{theorem}
+
+\begin{proof}
+By \cref{prop:factor-correction},
+$\norm{\widetilde A-A}_2\le\varepsilon$.  The Neumann lemma keeps
+$\Gamma$ in the resolvent set of $\widetilde A$, with resolvent upper
+$M/(1-M\varepsilon)$, and preserves the algebraic count.  The projection
+$P_0$ commutes with $\widetilde A$, its range carries the eigenvalue
+$\lambda_0$, and the total count is one.  Hence
+\[
+ \cQ_-(\widetilde A;\Gamma)=\lambda_0P_0.
+\]
+The first resolvent identity in the contour formula
+\eqref{eq:weighted-riesz} now gives \eqref{eq:weighted-factor-bound}; this is
+the weighted Lipschitz theorem of \citet{WangRiesz2026} with all constants
+displayed.
+\end{proof}
+
+\begin{remark}[A simultaneous eigenvalue enclosure]
+The Grushin certificate gives, throughout its disk,
+\[
+ \left|E_{-+}(z)+\frac{z-c_n}{g_n}\right|\le\varepsilon_{*,n}.
+\]
+The maximum principle extends the boundary bound to the interior.  At the
+unique zero,
+\[
+ |\lambda_n-c_n|\le |g_n|\varepsilon_{*,n}.
+\]
+The resulting uppers at $2048$, $4096$, and $8192$ are respectively
+$1.782\times10^{-13}$, $3.475\times10^{-13}$, and
+$6.849\times10^{-13}$.
+\end{remark}
+
+\section{Exact stored factors and the spectral quarter--half law}
+\label{sec:stored}
+
+The stored matrices come from the RH-36 and RH-37 snapshots
+\citep{WangNested2026,WangIterated2026}.  For each parity center, a sparse
+LU approximation to the bordered inverse is recomputed.  Every residual row
+and column is then evaluated against the exact stored graph using
+componentwise outward arithmetic \citep{Rump2010,WangOutward2026}.  The
+inequality
+\[
+ \norm X_2\le\sqrt{\norm X_1\norm X_\infty}
+\]
+converts the exact $1$- and $\infty$-norm ledgers into Euclidean bounds.
+
+\begin{table}[H]
+\centering
+\caption{Exact stored Euclidean Grushin and factor-correction ledger.}
+\label{tab:stored-ledger}
+\small
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+$n$ & $\norm R_2$ & contour resolvent
+& $\norm\Delta_2$ & $M\norm\Delta_2$
+& $\norm{Q_n^{\mathrm s}-\widehat Q_n}_2$\\
+\midrule
+$2048$ & $4.262{\times}10^{-11}$ & $83.92380$
+& $1.001{\times}10^{-12}$ & $8.394{\times}10^{-11}$
+& $3.651{\times}10^{-10}$\\
+$4096$ & $1.181{\times}10^{-10}$ & $84.00733$
+& $1.970{\times}10^{-12}$ & $1.655{\times}10^{-10}$
+& $7.203{\times}10^{-10}$\\
+$8192$ & $3.296{\times}10^{-10}$ & $84.03470$
+& $3.898{\times}10^{-12}$ & $3.276{\times}10^{-10}$
+& $1.427{\times}10^{-9}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All three correction products are below $4\times10^{-10}$.  Thus the
+archived parity factors are not merely small-residual diagnostics: they are
+centers of exact spectral weighted terms with explicit Euclidean radii.
+
+Let $\mathscr H_{2n}$ be the orthogonal pairwise Haar transform.  Write
+\[
+ \mathscr H_{2n}Q_{2n}^{\mathrm s}\mathscr H_{2n}^T
+ =\begin{pmatrix}A_n&B_n\\C_n&D_n\end{pmatrix},
+ \qquad
+ E_n=A_n-Q_n^{\mathrm s}.
+\]
+The Arb factor algebra from RH-40 gives exact Frobenius intervals for the
+same blocks built from $\widehat Q_n$ \citep{Johansson2017,WangRiesz2026}.
+If $e_n=\norm{Q_n^{\mathrm s}-\widehat Q_n}_2$, then every compressed error
+has rank at most two, and therefore
+\[
+ \norm{B_n-\widehat B_n}_{\mathrm F},
+ \norm{C_n-\widehat C_n}_{\mathrm F},
+ \norm{D_n-\widehat D_n}_{\mathrm F}
+ \le\sqrt2\,e_{2n},
+\]
+while
+\[
+ \norm{E_n-\widehat E_n}_{\mathrm F}
+ \le\sqrt2(e_n+e_{2n}).
+\]
+This converts the exact-factor ledger into actual spectral intervals.
+
+\begin{table}[H]
+\centering
+\caption{Validated ratios of actual spectral parity Haar blocks.}
+\label{tab:haar-ratios}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+block & rigorous ratio interval & smooth target & maximum deviation\\
+\midrule
+$E$ & $[0.2497729080,\ 0.2498601648]$ & $1/4$ & $2.271\times10^{-4}$\\
+$C$ & $[0.5000272443,\ 0.5000292074]$ & $1/2$ & $2.921\times10^{-5}$\\
+$B$ & $[0.5000320106,\ 0.5000338986]$ & $1/2$ & $3.390\times10^{-5}$\\
+$D$ & $[0.2496654557,\ 0.2503931293]$ & $1/4$ & $3.932\times10^{-4}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This closes the exact-stored spectral-factor limitation stated explicitly in
+RH-40.  It does not validate every future binary64 rebuild; it validates the
+three archived matrices and factors whose hashes are recorded in the
+certificate.
+
+\section{The smooth intrinsic continuum kernel}
+\label{sec:kernel}
+
+Let
+\[
+ \Pi_-=\cP_-(\cK;\Gamma),
+ \qquad Q_-=\cQ_-(\cK;\Gamma).
+\]
+The continuum count is one, so $\Pi_-$ and $Q_-$ have rank one.  If
+$\lambda_-$ is the enclosed eigenvalue, then
+\begin{equation}
+ Q_-=\lambda_-\Pi_-,
+ \qquad
+ \cK\Pi_-=\Pi_-\cK=Q_-.
+ \label{eq:spectral-identities}
+\end{equation}
+
+\begin{proposition}[Smooth Hilbert--Schmidt kernel]
+\label{prop:smooth-kernel}
+The weighted term $Q_-$ has a real $C^\infty$ kernel $q_-(x,y)$.  If
+\[
+ M_\Gamma=sup_{z\in\Gamma}\norm{(z-\cK)^{-1}}_{2\to2},
+\]
+then
+\begin{equation}
+ \norm{\Pi_-}_{2\to2}\le rM_\Gamma,
+ \qquad
+ \norm{Q_-}_{2\to2}\le rR_\Gamma M_\Gamma.
+ \label{eq:projection-weighted-bounds}
+\end{equation}
+Because $Q_-$ has rank one,
+\[
+ \norm{q_-}_{L^2([0,1]^2)}=\norm{Q_-}_{2\to2}.
+\]
+For source derivatives,
+\[
+ \norm{\partial_x^a q_-}_{L^2}
+ \le\norm{\partial_x^ak}_{L^2}\norm{\Pi_-}_{2\to2},
+\]
+and analogously for pure target derivatives.  Mixed derivatives satisfy
+\begin{equation}
+ \norm{\partial_x^a\partial_y^bq_-}_{L^2}
+ \le
+ \rho_\Gamma^{-1}
+ \norm{\partial_x^ak}_{L^2}
+ \norm{\Pi_-}_{2\to2}
+ \norm{\partial_y^bk}_{L^2}.
+ \label{eq:mixed-kernel-envelope}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The kernel $k$ is smooth.  Since a Hilbert--Schmidt operator composed with a
+bounded operator remains Hilbert--Schmidt, $Q_-=\cK\Pi_-$ has a kernel and
+source derivatives are obtained by differentiating the left kernel factor.
+The identity $Q_-=\Pi_-\cK$ gives the target derivatives.  Repeated
+differentiation is permitted because every derivative kernel is
+Hilbert--Schmidt.
+
+The contour length is $2\pi r$, giving
+\eqref{eq:projection-weighted-bounds}.  Rank one makes the Hilbert--Schmidt
+and operator norms equal.  Finally,
+\[
+ \cK\Pi_-\cK=\lambda_-Q_-,
+\]
+so
+\[
+ Q_-=\lambda_-^{-1}\cK\Pi_-\cK.
+\]
+Differentiate the two outer kernels and use
+$|\lambda_-|\ge\rho_\Gamma$ to obtain
+\eqref{eq:mixed-kernel-envelope}.  Reality follows from the real operator,
+the conjugation-invariant circle, and algebraic count one.
+\end{proof}
+
+The RH-42 Arb envelope gives the explicit constants in
+\cref{tab:kernel-envelope}.
+
+\begin{table}[H]
+\centering
+\caption{Validated Hilbert--Schmidt envelope for the intrinsic parity kernel.}
+\label{tab:kernel-envelope}
+\begin{tabular}{@{}lr@{}}
+\toprule
+quantity & rigorous upper\\
+\midrule
+$\norm{q_-}_{L^2}$ & $5.854166642320046$\\
+$\norm{(q_-)_x}_{L^2}$ & $3780.968408944756$\\
+$\norm{(q_-)_y}_{L^2}$ & $2160.665606696173$\\
+$\norm{(q_- )_{xx}}_{L^2}$ & $1.107398829423628\times10^6$\\
+$\norm{(q_- )_{xy}}_{L^2}$ & $1.544489270236306\times10^6$\\
+$\norm{(q_- )_{yy}}_{L^2}$ & $2.679665935766761\times10^5$\\
+$\norm{(q_- )_{xxyy}}_{L^2}$ & $5.610208521245975\times10^{10}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Applying the midpoint-average Peano theorem of
+\citet{WangEuclidean2026} to $q_-$ itself gives, at $n=65536$,
+\begin{equation}
+ \norm{Q_n^\circ-Q_n^{\mathrm G}}_2
+ \le1.790125512353268\times10^{-5},
+ \label{eq:kernel-midpoint-defect}
+\end{equation}
+where $Q_n^{\mathrm G}$ is the cell-average matrix of $q_-$.  Thus the
+intrinsic kernel has a direct second-order midpoint discretization even
+before it is compared with the weighted term of $P_n$.
+
+\section{Infinite-complement Schur closure}
+\label{sec:complement-schur}
+
+RH-42 passed from the last Galerkin operator to the continuum through the
+direct defect
+$\norm{\cK-P_n^{\mathrm G}\cK P_n^{\mathrm G}}$.  That estimate is valid
+but adds the two one-sided errors.  The complement can instead be retained
+as a Schur block, where its influence on the parity branch is quadratic.
+
+Let $P=P_n^{\mathrm G}$ be the orthogonal cell-average projection and
+$Q=\Id-P$.  Relative to
+$L^2=V_n\oplus V_n^\perp$,
+\begin{equation}
+ \cK=
+ \begin{pmatrix}
+  A_n&B_n\\C_n&D_n
+ \end{pmatrix},
+ \qquad
+ A_n=P\cK P.
+ \label{eq:continuum-blocks}
+\end{equation}
+The cellwise Poincar\'e--Wirtinger inequality gives
+\begin{equation}
+ \norm{C_n}_2\le\frac{K_x}{\pi n},
+ \qquad
+ \norm{B_n}_2\le\frac{K_y}{\pi n},
+ \qquad
+ \norm{D_n}_2\le\frac{K_{xy}}{\pi^2n^2}.
+ \label{eq:complement-block-bounds}
+\end{equation}
+These are the same formulas as the dyadic Haar bounds, but the detail space
+is now the full infinite-dimensional complement.
+
+\begin{theorem}[Continuum complement Schur step]
+\label{thm:complement-schur}
+Suppose
+\[
+ \sup_{z\in\Gamma}\norm{(z-A_n)^{-1}}_2\le M,
+\]
+and write $b,c,d$ for the three uppers in
+\eqref{eq:complement-block-bounds}.  If
+\[
+ d<\rho_\Gamma,
+ \qquad
+ M b(\rho_\Gamma-d)^{-1}c<1,
+\]
+then $\cK$ and $A_n$ have the same algebraic count inside $\Gamma$.
+The full resolvent is bounded by the Frobenius norm of
+\[
+ \begin{pmatrix}
+ S&SbR_d\\R_dcS&R_d+R_dcSbR_d
+ \end{pmatrix},
+\]
+where
+\[
+ R_d=(\rho_\Gamma-d)^{-1},
+ \qquad
+ S=\frac{M}{1-MbR_dc}.
+\]
+At $n=65536$ the Schur product is
+\[
+ 0.0007281434256176882
+\]
+and the resulting continuum resolvent upper is
+\eqref{eq:improved-continuum-resolvent}.
+\end{theorem}
+
+\begin{proof}
+The detail spectrum lies in $|z|\le d$, disjoint from the disk bounded by
+$\Gamma$.  Take the Schur complement of $z-D_n$.  The self-energy
+$B_n(z-D_n)^{-1}C_n$ has norm at most $bR_dc$, so the displayed product
+gives the Schur inverse and the four block bounds.  Homotoping
+$B_n,C_n$ to zero keeps the detail block fixed and the majorants decrease.
+At the decoupled endpoint $A_n\oplus D_n$, the detail block contributes no
+eigenvalue inside $\Gamma$, proving count preservation.  The argument uses
+only operator norms and therefore does not require the detail space to be
+finite-dimensional.
+\end{proof}
+
+This improves the previous continuum upper by a factor $2.36$.  More
+importantly, it supplies the constants for a sharp weighted-term transport.
+
+\section{Weighted Schur transport and the construction ball}
+\label{sec:weighted-schur}
+
+The block resolvent formula contains more information than the norm of the
+full resolvent.  Let
+\[
+ T=\begin{pmatrix}A&B\\C&D\end{pmatrix}
+\]
+and suppose the detail block has no spectrum in $\Gamma$.  Put
+\[
+ R_A=(z-A)^{-1},
+ \quad R_D=(z-D)^{-1},
+ \quad S=(z-A-BR_DC)^{-1}.
+\]
+Then
+\[
+ (z-T)^{-1}=
+ \begin{pmatrix}
+ S&SBR_D\\R_DCS&R_D+R_DCSBR_D
+ \end{pmatrix}.
+\]
+Since $\cQ_-(D;\Gamma)=0$, subtracting the decoupled weighted term leaves
+only
+\begin{align*}
+ S-R_A&=SBR_DCR_A,\\
+ SBR_D,&\qquad R_DCS,\qquad R_DCSBR_D.
+\end{align*}
+
+\begin{proposition}[Weighted Schur block bound]
+\label{prop:weighted-schur}
+Assume uniform bounds
+\[
+ \norm{R_A}\le M,
+ \quad\norm{R_D}\le R_d,
+ \quad\norm S\le S_*,
+ \quad\norm B\le b,
+ \quad\norm C\le c
+\]
+on $\Gamma$.  Then
+\[
+ \norm{\cQ_-(T;\Gamma)-
+       \operatorname{diag}(\cQ_-(A;\Gamma),0)}_2
+\]
+is at most the Frobenius norm of
+\begin{equation}
+ rR_\Gamma
+ \begin{pmatrix}
+ S_*bR_dcM&S_*bR_d\\
+ R_dcS_*&R_dcS_*bR_d
+ \end{pmatrix}.
+ \label{eq:weighted-schur-majorant}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Insert the four resolvent differences above into
+\eqref{eq:weighted-riesz}.  The contour length contributes $r$ and the
+weight contributes $R_\Gamma$.  A block operator whose block norms are
+bounded entrywise by a nonnegative $2\times2$ matrix has norm at most the
+matrix spectral norm, hence at most its Frobenius norm.
+\end{proof}
+
+The construction of \cref{thm:continuum-kernel} starts with the validated
+stored factor at $4096$ and applies the weighted Lipschitz or weighted Schur
+bound at every subsequent gate.  The ledger is shown in
+\cref{tab:weighted-chain}.
+
+\begin{table}[H]
+\centering
+\caption{Validated operator-norm construction of the continuum weighted term.}
+\label{tab:weighted-chain}
+\begin{tabular}{@{}lr@{}}
+\toprule
+gate & weighted-term difference upper\\
+\midrule
+stored factor $\to$ exact stored $Q$ & $7.203\times10^{-10}$\\
+exact stored $\to M_{4096}$ & $0.003863696504533$\\
+$M_{4096}\to A_{4096}$ & $0.319148940875075$\\
+$A_{4096}\to A_{8192}$ & $0.891990587282860$\\
+$A_{8192}\to A_{16384}$ & $0.312894707103005$\\
+$A_{16384}\to A_{32768}$ & $0.114813078602118$\\
+$A_{32768}\to A_{65536}$ & $0.049768188532663$\\
+$A_{65536}\to\cK$ complement & $0.023793507962359$\\
+\midrule
+total & $1.716272707582898$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The first and final operators both have rank one, so their difference has
+rank at most two.  Therefore its Hilbert--Schmidt norm is at most $\sqrt2$
+times its operator norm, yielding \eqref{eq:construction-kernel-ball}.
+
+\section{The smooth quarter--half Haar theorem}
+\label{sec:haar-theorem}
+
+The exact stored ratios in \cref{tab:haar-ratios} have a simple continuum
+origin.  Let $q\in C^4([0,1]^2)$ and form its midpoint matrix
+\[
+ (Q_h^\circ)_{ij}=h q(x_i,y_j).
+\]
+Within each coarse cell, the two fine midpoints are
+$x_i\pm h/4$ and $y_j\pm h/4$.  Choose the detail orientation so that the
+signed coefficient is $+1$ at the positive offset.  The Haar blocks of the
+fine midpoint matrix have entries
+\begin{align}
+ (A_h)_{ij}
+ &=\frac h4\sum_{\varepsilon,\eta=\pm1}
+   q(x_i+\varepsilon h/4,y_j+\eta h/4),\\
+ (C_h)_{ij}
+ &=\frac h4\sum_{\varepsilon,\eta=\pm1}
+   \varepsilon q(x_i+\varepsilon h/4,y_j+\eta h/4),\\
+ (B_h)_{ij}
+ &=\frac h4\sum_{\varepsilon,\eta=\pm1}
+   \eta q(x_i+\varepsilon h/4,y_j+\eta h/4),\\
+ (D_h)_{ij}
+ &=\frac h4\sum_{\varepsilon,\eta=\pm1}
+   \varepsilon\eta q(x_i+\varepsilon h/4,y_j+\eta h/4).
+ \label{eq:four-point-haar}
+\end{align}
+Put $E_h=A_h-Q_h^\circ$.
+
+\begin{theorem}[Intrinsic quarter--half limits]
+\label{thm:haar-limits}
+Under the piecewise-constant Hilbert--Schmidt identification,
+\begin{align}
+ h^{-2}E_h&\longrightarrow\frac{q_{xx}+q_{yy}}{32},
+ \label{eq:E-limit}\\
+ h^{-1}C_h&\longrightarrow\frac{q_x}{4},
+ \label{eq:C-limit}\\
+ h^{-1}B_h&\longrightarrow\frac{q_y}{4},
+ \label{eq:B-limit}\\
+ h^{-2}D_h&\longrightarrow\frac{q_{xy}}{16}
+ \label{eq:D-limit}
+\end{align}
+in Hilbert--Schmidt norm.  Whenever the corresponding limiting tensor is
+nonzero, refinement $h\mapsto h/2$ gives norm ratios
+\[
+ \frac14,\qquad\frac12,\qquad\frac12,\qquad\frac14
+\]
+for $E,C,B,D$, respectively.
+\end{theorem}
+
+\begin{proof}
+Taylor-expand the four samples in \eqref{eq:four-point-haar}.  Symmetry
+cancels all odd terms in $A_h$, all terms except those odd in $x$ in $C_h$,
+all terms except those odd in $y$ in $B_h$, and all terms except those odd in
+both variables in $D_h$.  Entrywise,
+\begin{align*}
+ E_h&=\frac{h^3}{32}(q_{xx}+q_{yy})+O(h^5),\\
+ C_h&=\frac{h^2}{4}q_x+O(h^4),\\
+ B_h&=\frac{h^2}{4}q_y+O(h^4),\\
+ D_h&=\frac{h^3}{16}q_{xy}+O(h^5),
+\end{align*}
+uniformly on the coarse midpoint grid.  An $n\times n$ midpoint matrix
+with entries $h f(x_i,y_j)$ has Frobenius norm converging to
+$\norm f_{L^2}$.  Divide by the displayed powers of $h$ and use midpoint
+Riemann convergence.  The ratio statement follows if the limiting norm is
+positive.
+\end{proof}
+
+Applied to the intrinsic $q_-$ from \cref{thm:continuum-kernel}, this theorem
+explains why the validated stored ratios already sit so close to their
+quarter--half limits.  The theorem is gauge-free: it concerns the kernel
+$q_-$, not separately normalized left and right modes.
+
+\section{Uniform sparse transfer and intrinsic deflation}
+\label{sec:deflation}
+
+The improved continuum resolvent changes the all-grid threshold.  Combining
+the continuum Galerkin defect and the second-order midpoint defect gives,
+at $n=65536$,
+\[
+ \norm{\cK-\widetilde M_n}_{2\to2}
+ \le0.005112929739977326.
+\]
+Its product with \eqref{eq:improved-continuum-resolvent} is
+\[
+ 0.5775311353158<1,
+\]
+which yields \eqref{eq:uniform-midpoint-resolvent}.  The defect decreases
+for every larger integer $n$.
+
+The exact normalizer lower is
+\[
+ Z_{\min}\ge0.012533141373155001.
+\]
+At the threshold, the discrete row-normalization defect is
+\[
+ \norm{P_n-M_n}_2\le6.19557781914536\times10^{-6},
+\]
+with Neumann product $0.0016565047527645261$.  Finally, the relaxed
+eight-sigma cutoff theorem gives
+\[
+ \norm{P_n^{(8)}-P_n}_2
+ \le1.957332885203986\times10^{-13}.
+\]
+Every factor in this fixed-width upper is nonincreasing with $n$.  Since
+$L_n\ge8$, the same number controls the adaptive family.  This proves the
+resolvent and count statements in \cref{thm:uniform-family}.
+
+The weighted first-resolvent identity gives
+\[
+ \norm{\cQ_-(A;\Gamma)-\cQ_-(B;\Gamma)}_2
+ \le rR_\Gamma M_AM_B\norm{A-B}_2.
+\]
+Inserting the full and sparse resolvent uppers proves
+\eqref{eq:uniform-weighted-cutoff}.
+
+\begin{proposition}[Exact intrinsic deflation]
+\label{prop:deflation}
+Let $T$ have one algebraically simple eigenvalue $\lambda$ inside $\Gamma$,
+and put $Q=\cQ_-(T;\Gamma)$.  Then
+\[
+ T_\perp=T-Q
+\]
+commutes with the Riesz projection, is zero on its range, and agrees with
+$T$ on its complementary invariant subspace.  Hence
+\begin{equation}
+ \spec(T_\perp)\setminus\{0\}
+ =\spec(T)\setminus\{\lambda\}
+ \label{eq:deflated-spectrum}
+\end{equation}
+with algebraic multiplicity away from zero.
+\end{proposition}
+
+\begin{proof}
+For a simple branch, $Q=\lambda\cP_-$.  Both $T$ and $Q$ commute with
+$\cP_-$.  On $\Ran\cP_-$ their difference is zero, while on
+$\ker\cP_-$ the weighted term vanishes.  The invariant direct-sum
+decomposition gives \eqref{eq:deflated-spectrum}.
+\end{proof}
+
+For full and sparse matrices,
+\begin{align*}
+ \norm{P_{n,\perp}^{(L)}-P_{n,\perp}}_2
+ &\le\norm{P_n^{(L)}-P_n}_2\\
+ &\quad+\norm{\cQ_-(P_n^{(L)};\Gamma)
+                  -\cQ_-(P_n;\Gamma)}_2.
+\end{align*}
+This proves \eqref{eq:uniform-deflated-cutoff}.  Under the adaptive schedule,
+RH-39 gives
+\[
+ \norm{P_n^{(L_n)}-P_n}_2
+ =O\!\left(n^{-2}(\log n)^{-1/4}\right),
+\]
+so both the weighted term and the deflated sparse family inherit the same
+rate relative to their full counterparts.
+
+Finally, RH-40 already proves
+\[
+ \norm{\cQ_-(P_n;\Gamma)-Q_n^\circ}_2=O(n^{-2})
+\]
+for a simple isolated smooth continuum branch.  The continuum simplicity
+and the uniform Euclidean cutoff condition are now both unconditional, so
+\cref{cor:weighted-bridge} follows from
+\citet{Atkinson1967,Anselone1971,Chatelin1983,WangRiesz2026}.
+
+\begin{remark}[Fixed width versus adaptive width]
+The fixed eight-sigma weighted difference is uniformly below
+$7.28\times10^{-10}$, which is ample for spectral deflation.  Nevertheless
+the underlying row-norm cutoff has a mathematically nonzero continuum floor.
+Adaptive growth is required when convergence to the full continuum kernel,
+rather than uniform spectral stability, is the claim.
+\end{remark}
+
+\section{Certificate summary and figure}
+\label{sec:certificate}
+
+The complete certificate closes the following gates.
+\begin{enumerate}[leftmargin=2em]
+ \item exact stored Euclidean Grushin counts at $2048$, $4096$, and $8192$;
+ \item two-sided correction products below $3.28\times10^{-10}$;
+ \item actual spectral quarter--half intervals at both stored transitions;
+ \item an infinite-complement Schur product below $7.29\times10^{-4}$;
+ \item a continuum weighted-term construction ball;
+ \item an all-grid exact-real theorem from $n=65536$;
+ \item full-to-sparse weighted and deflated differences below
+       $7.28\times10^{-10}$.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/validated_weighted_parity_kernel.pdf}
+\caption{Validated intrinsic parity-kernel closure.  (a) The exact archived
+$4096$ factor center, displayed as a piecewise kernel; it is not a pointwise
+interval enclosure of $q_-$.  (b) The block-diagonalizing corrections and
+actual weighted-term errors for all three stored factors.  (c) Corrected
+Frobenius intervals for the actual spectral Haar ratios, together with the
+smooth-kernel quarter--half targets.  (d) The continuum complement Schur
+step improves the continuum and all-grid resolvent constants and halves the
+stable certified threshold.}
+\label{fig:summary}
+\end{figure}
+
+\section{What is closed and what remains}
+\label{sec:boundary}
+
+The present result changes the status of the weighted-Riesz route in four
+ways.
+\begin{enumerate}[leftmargin=2em]
+ \item \textbf{The negative continuum branch is now an intrinsic kernel.}
+       It is rank one, smooth, gauge-free, and enclosed in operator and
+       Hilbert--Schmidt norms around an archived center.
+ \item \textbf{The stored parity factors are actual spectral terms.}
+       Their previous floating residual status has been replaced by exact
+       stored-matrix Grushin and correction certificates at all three
+       levels.
+ \item \textbf{The quarter--half mechanism is both analytic and spectral.}
+       The continuum theorem identifies the derivative tensors, while the
+       stored ratio intervals now concern the true matrix weighted terms.
+ \item \textbf{Parity deflation is ready for later trace work.}
+       The operator $\cK_\perp$ and its matrix analogues remove the negative
+       eigenvalue without a mode normalization convention.
+\end{enumerate}
+
+Several boundaries are equally important.
+\begin{enumerate}[leftmargin=2em]
+ \item The noise width remains fixed at $\sigma=1/100$.
+ \item The continuum kernel is enclosed in $L^2$ and derivative
+       Hilbert--Schmidt norms; no pointwise interval heat map is claimed.
+ \item The all-dimension theorem concerns exact-real Gaussian formulas.  The
+       binary64 theorem concerns only the three archived matrices.
+ \item The Perron weighted term has not been merged with the parity term.
+       A validated rank-two intrinsic deflation is the natural next gate.
+ \item No self-adjoint generator, $T\log T$ law, arithmetic trace formula,
+       prime-power identity, zeta-zero identification, or Riemann-hypothesis
+       conclusion follows from this paper.
+\end{enumerate}
+
+\section{Archive and reproducibility}
+\label{sec:archive}
+
+The archive contains two principal ledgers:
+\begin{enumerate}[leftmargin=2em]
+ \item the multilevel exact-stored Euclidean Grushin certificate; and
+ \item the complete factor, Haar, complement, kernel, family, cutoff, and
+       deflation composition certificate.
+\end{enumerate}
+Every cross-paper input, local source, result, figure, and publication
+artifact is recorded by SHA-256.
+
+The complete replay is:
+\begin{verbatim}
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/run_multilevel_euclidean_grushin.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_weighted_kernel_certificate.py
+MPLBACKEND=Agg PYTHONDONTWRITEBYTECODE=1 \
+  /root/math/.venv/bin/python experiments/make_figures.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  -m pytest -q -p no:cacheprovider
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+cp main.pdf validated-weighted-riesz-parity-kernel.pdf
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_archive.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/verify_archive.py
+\end{verbatim}
+
+The $8192$ bordered inverse replay is the longest step, taking roughly six
+minutes on the current server.  The composition, Arb Haar ledger, tests, and
+figures take only seconds.
+
+\section{Conclusion}
+
+An isolated eigenvalue is not yet a usable spectral subtraction.  The
+appropriate object is its weighted Riesz term.  Here that term has been
+constructed as a validated smooth continuum kernel, connected by an
+explicit chain to the archived $4096$ factor, and transferred uniformly to
+full and adaptive sparse matrix families.
+
+The same argument resolves two older ambiguities.  Two-sided residuals now
+prove that all three archived parity factors are genuine spectral terms,
+and the quarter--half Haar law follows from both a smooth-kernel theorem and
+corrected actual-matrix intervals.  Treating the infinite orthogonal
+complement by Schur rather than by a direct norm defect improves the
+continuum conditioning enough to halve the stable all-grid threshold.
+
+The resulting deflated operator removes the negative branch exactly and
+preserves the rest of the spectrum away from zero.  This is the first
+strictly intrinsic continuum object in the route that can be handed to a
+subsequent trace or determinant construction.  The next step is not an
+arithmetic identification; it is the validated addition of the Perron term
+and the formation of a rank-two intrinsic complement.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,403 @@
+{
+  "analytic_haar_limits": {
+    "coarse_consistency": "h^-2 E_h -> (q_xx+q_yy)/32 in Hilbert-Schmidt sampling",
+    "coarse_to_detail": "h^-1 C_h -> q_x/4",
+    "detail_block": "h^-2 D_h -> q_xy/16",
+    "detail_to_coarse": "h^-1 B_h -> q_y/4",
+    "ratio_consequence": "nonzero leading tensors give ratios 1/4,1/2,1/2,1/4"
+  },
+  "continuum_complement_schur": {
+    "blocks": {
+      "coarse_consistency": 0.0,
+      "coarse_dimension": 65536,
+      "coarse_to_detail": 0.0032516041071894,
+      "detail_block": 1.934516585674418e-06,
+      "detail_to_coarse": 0.0018581560069043158
+    },
+    "coarse_dimension": 65536,
+    "continuum_inside_count": 1,
+    "improved_continuum_L2_resolvent_upper": 112.95503061584434,
+    "resolvent_step": {
+      "bottom_left_upper": 0.392148991847931,
+      "bottom_right_upper": 1.0685309617241285,
+      "coarse_dimension": 65536,
+      "coarse_resolvent_upper": 112.86683027872749,
+      "count_transfers": true,
+      "detail_resolvent_upper": 1.0677529179292797,
+      "fine_resolvent_upper": 112.95503061584434,
+      "minimum_boundary_modulus": 0.9365481927458077,
+      "schur_inverse_upper": 112.94907340395623,
+      "schur_neumann_product_upper": 0.0007281434256176882,
+      "self_energy_upper": 6.451350000877312e-06,
+      "top_right_upper": 0.22409677832322303
+    },
+    "weighted_riesz_transport": {
+      "bottom_left_upper": 0.020324066439353184,
+      "bottom_right_upper": 4.032399447135842e-05,
+      "coarse_dimension": 65536,
+      "top_left_difference_upper": 0.004262448141078832,
+      "top_right_upper": 0.011614355528554748,
+      "weighted_term_difference_upper": 0.023793507962358764
+    }
+  },
+  "contour": {
+    "center": -0.9865481927458079,
+    "maximum_modulus_upper": 1.036548192745808,
+    "minimum_modulus_lower": 0.9365481927458077,
+    "radius": 0.05
+  },
+  "dependencies": {
+    "multilevel_grushin_certificate": {
+      "path": "papers/RH-43-validated-weighted-riesz-parity-kernel/results/multilevel_euclidean_grushin.json",
+      "sha256": "7a3edbb61a6425ef5b5de7d34136f5f8bf6c53fac5454f6d251102934717cad8"
+    },
+    "rh36_factor_snapshot": {
+      "path": "papers/RH-36-nested-grid-physical-count/results/nested_grid_snapshot_sigma_1e-02.npz",
+      "sha256": "a1e2a6a3a32a6f7e68ec17b294bdb41d404c0dbeca1f5cb89aefe48ab4390d81"
+    },
+    "rh37_factor_snapshot": {
+      "path": "papers/RH-37-iterated-dyadic-physical-count/results/second_dyadic_fine_object_sigma_1e-02.npz",
+      "sha256": "886c6985e3937b374e9f7ab40bef31d34351ad2f794d546b50011c100848544a"
+    },
+    "rh39_cutoff_certificate": {
+      "path": "papers/RH-39-uniform-gaussian-cutoff-bridge/results/uniform_gaussian_cutoff_bridge_certificate.json",
+      "sha256": "8d448588fda190a748df64a1d8fa35d050de9dcbfa3ee2a5203ae10b969ab136"
+    },
+    "rh40_projector_builder": {
+      "path": "papers/RH-40-weighted-riesz-projector-bridge/experiments/build_projector_certificate.py",
+      "sha256": "c3d1feb1ae9f946622bf75652f2894db6426167b581f9266f484ef8975f2851d"
+    },
+    "rh40_weighted_riesz_certificate": {
+      "path": "papers/RH-40-weighted-riesz-projector-bridge/results/weighted_riesz_projector_bridge_certificate.json",
+      "sha256": "a7515ef093191439e772e402eda851fa41a75f2d5407c0abbe07592ad8d003e4"
+    },
+    "rh40_weighted_riesz_manuscript": {
+      "path": "papers/RH-40-weighted-riesz-projector-bridge/main.tex",
+      "sha256": "a282fd132db2b2a3e553e0202d9a5c24299a6fa806bb7cd2e508130e5e63fb16"
+    },
+    "rh42_hilbert_envelope": {
+      "path": "papers/RH-42-uniform-euclidean-parity-contour/results/hilbert_schmidt_envelope_certificate.json",
+      "sha256": "5870a1a9fae5617c1f11984488d16a4f11447e9433093ad6e0f1e3b6836223ac"
+    },
+    "rh42_hilbert_source": {
+      "path": "papers/RH-42-uniform-euclidean-parity-contour/src/euclidean_contour/hilbert.py",
+      "sha256": "50989ae9eb32faa90caa3bf8ce19405606175e65cf01b74900463c18c225b1e1"
+    },
+    "rh42_uniform_euclidean_certificate": {
+      "path": "papers/RH-42-uniform-euclidean-parity-contour/results/uniform_euclidean_parity_certificate.json",
+      "sha256": "1792a0d7ad3ac7a8f4f636c566edb3c258839f72c7b64d801c30eb84e0b9f0eb"
+    }
+  },
+  "evidence_level": "analytic_weighted_riesz_and_haar_theorems_plus_outward_arb_and_binary64_certificates",
+  "improved_uniform_matrix_family": {
+    "adaptive_deflated_operator_rate": "O(n^-2 (log n)^-1/4) relative to the full deflated family",
+    "adaptive_weighted_term_to_continuum_midpoint_kernel_rate": "O(n^-2 (log n)^-1/4)",
+    "applies_to_every_larger_dimension": true,
+    "certified_threshold_dimension": 65536,
+    "continuum_to_midpoint_defect_upper_at_threshold": 0.0051129297399773255,
+    "cutoff": {
+      "declared_multiple": 8.0,
+      "dimension": 65536,
+      "infinity_norm_upper": 1.0583428035557253e-14,
+      "omitted_frobenius_square_upper": 1.1199265849428128e-26,
+      "omitted_mass_upper": 5.291714017778625e-15,
+      "renormalization_frobenius_square_upper": 2.711225438558142e-26,
+      "spectral_norm_upper": 1.9573328852039852e-13
+    },
+    "fixed_eight_sigma_convergence_to_full_claimed": false,
+    "full_transfer": {
+      "admissible": true,
+      "base_resolvent_upper": 267.3688881197896,
+      "neumann_product_upper": 0.0016565047527645261,
+      "perturbation_upper": 6.19557781914536e-06,
+      "transferred_resolvent_upper": 267.8125208334001
+    },
+    "full_weighted_term_to_continuum_midpoint_kernel_rate": "O(n^-2)",
+    "midpoint_transfer": {
+      "admissible": true,
+      "base_resolvent_upper": 112.95503061584434,
+      "neumann_product_upper": 0.5775311353158,
+      "perturbation_upper": 0.0051129297399773255,
+      "transferred_resolvent_upper": 267.3688881197896
+    },
+    "normalization": {
+      "continuum_midpoint_norm_upper": 5.4985523936756255,
+      "dimension": 65536,
+      "normalizer_lower": 0.012533141373155001,
+      "normalizer_midpoint_error_upper": 1.4121892389669864e-08,
+      "relative_row_scaling_upper": 1.1267652603022285e-06,
+      "spectral_norm_defect_upper": 6.19557781914536e-06
+    },
+    "sparse_transfer": {
+      "admissible": true,
+      "base_resolvent_upper": 267.8125208334001,
+      "neumann_product_upper": 5.241982540965915e-11,
+      "perturbation_upper": 1.9573328852039852e-13,
+      "transferred_resolvent_upper": 267.81252084743886
+    },
+    "uniform_fixed_and_adaptive_sparse_resolvent_upper": 267.81252084743886,
+    "uniform_full_resolvent_upper": 267.8125208334001,
+    "uniform_intrinsically_deflated_cutoff_upper": 7.277844418892396e-10,
+    "uniform_weighted_riesz_cutoff_upper": 7.275887086007192e-10
+  },
+  "intrinsic_continuum_kernel": {
+    "continuum_kernel_L2_distance_from_center_upper": 2.4271761397945286,
+    "continuum_operator_distance_from_center_upper": 1.716272707582898,
+    "definition": "Q_-(K;Gamma)=(2 pi i)^-1 integral_Gamma z(z-K)^-1 dz",
+    "envelope": {
+      "kernel_hilbert_schmidt_upper": 5.854166642320046,
+      "midpoint_dimension": 65536,
+      "midpoint_to_cell_average_upper": 1.7901255123532672e-05,
+      "projection_operator_norm_upper": 5.647751530792219,
+      "source_first_hilbert_schmidt_upper": 3780.9684089447555,
+      "source_second_hilbert_schmidt_upper": 1107398.8294236271,
+      "source_second_target_second_hilbert_schmidt_upper": 56102085212.45975,
+      "source_target_hilbert_schmidt_upper": 1544489.270236306,
+      "target_first_hilbert_schmidt_upper": 2160.6656066961727,
+      "target_second_hilbert_schmidt_upper": 267966.59357667604,
+      "weighted_operator_norm_upper": 5.854166642320046
+    },
+    "kernel_lower_norm_from_eigenvalue_modulus": 0.9365481927458077,
+    "piecewise_constant_4096_center": "stored binary64 lambda_0 r_0 l_0^T/(l_0^T r_0) lifted to V_4096",
+    "rank": 1,
+    "real_smooth_kernel": true
+  },
+  "intrinsic_deflation": {
+    "continuum_operator": "K_perp=K-Q_-(K;Gamma)",
+    "matrix_operator": "P_n_perp=P_n-Q_-(P_n;Gamma)",
+    "parity_eigenvalue_is_replaced_by_zero": true,
+    "remaining_spectrum_is_unchanged_away_from_zero": true
+  },
+  "limitations": [
+    "The theorem is at the fixed positive noise width sigma=1/100.",
+    "The intrinsic kernel is enclosed in L2 and derivative Hilbert-Schmidt norms; no pointwise interval plot of the exact continuum kernel is claimed.",
+    "The explicit all-dimension theorem concerns exact-real Gaussian formulas, while the three stored factor certificates concern their archived binary64 matrices.",
+    "The Perron weighted term is not included in the validated rank-one construction; rank-two deflation is a later step.",
+    "The fixed eight-sigma family is uniformly stable but is not claimed to converge to the full kernel in row norm.",
+    "No zero-noise limit, arithmetic trace formula, zeta-zero identification, self-adjoint Hilbert-Polya operator, or Riemann-hypothesis claim is made."
+  ],
+  "rh40_condition_status": {
+    "previous_status": "analytic_conditional_weighted_riesz_bridge_with_exact_stored_peripheral_ledger",
+    "simple_isolated_continuum_parity_premise_closed": true,
+    "stored_factor_spectral_status_closed_at_2048_4096_8192": true,
+    "uniform_euclidean_cutoff_premise_closed": true
+  },
+  "scope": "intrinsic negative-parity weighted Riesz kernel, exact stored parity factors, and full/fixed/adaptive exact-real midpoint families at sigma=1/100",
+  "status": "rigorous_intrinsic_continuum_parity_kernel_and_adaptive_deflation",
+  "stored_factor_validation": {
+    "all_three_levels_are_actual_spectral_factors": true,
+    "levels": {
+      "2048": {
+        "admissible": true,
+        "approximate_weighted_term_norm_upper": 1.1034893843072342,
+        "corrected_contour_resolvent_upper": 83.92379111227581,
+        "correction_neumann_product_upper": 8.393548055689742e-11,
+        "correction_norm_upper": 1.000139286506387e-12,
+        "eigenvalue_center_error_upper": 1.7814610575076944e-13,
+        "left_block_residual_upper": 6.227314521751135e-13,
+        "overlap_block_upper": 1.992617285866089e-13,
+        "projection_norm_upper": 1.1185298031280537,
+        "right_block_residual_upper": 1.7814610574466434e-13,
+        "weighted_term_error_upper": 3.6508363141814826e-10
+      },
+      "4096": {
+        "admissible": true,
+        "approximate_weighted_term_norm_upper": 1.103494611422288,
+        "corrected_contour_resolvent_upper": 84.00732453889754,
+        "correction_neumann_product_upper": 1.6543554462193375e-10,
+        "correction_norm_upper": 1.9692990528784403e-12,
+        "eigenvalue_center_error_upper": 3.4743051333554765e-13,
+        "left_block_residual_upper": 1.233253262479695e-12,
+        "overlap_block_upper": 3.8861527708680777e-13,
+        "projection_norm_upper": 1.1185410094878274,
+        "right_block_residual_upper": 3.474305133119366e-13,
+        "weighted_term_error_upper": 7.202868434316492e-10
+      },
+      "8192": {
+        "admissible": true,
+        "approximate_weighted_term_norm_upper": 1.103495918011898,
+        "corrected_contour_resolvent_upper": 84.03469213995697,
+        "correction_neumann_product_upper": 3.2751857637219206e-10,
+        "correction_norm_upper": 3.897421030995024e-12,
+        "eigenvalue_center_error_upper": 6.848570355806968e-13,
+        "left_block_residual_upper": 2.446521397686089e-12,
+        "overlap_block_upper": 7.660425978206064e-13,
+        "projection_norm_upper": 1.1185438100586802,
+        "right_block_residual_upper": 6.848570354883271e-13,
+        "weighted_term_error_upper": 1.42643999933251e-09
+      }
+    }
+  },
+  "stored_parity_haar_law": {
+    "actual_spectral_frobenius_intervals": {
+      "2048_to_4096": {
+        "coarse_consistency": {
+          "factor_to_spectral_frobenius_error_upper": 1.5349456457319104e-09,
+          "lower": 7.837379371884273e-05,
+          "upper": 7.837686361013423e-05
+        },
+        "coarse_to_detail": {
+          "factor_to_spectral_frobenius_error_upper": 1.0186394227799448e-09,
+          "lower": 0.0025743563753411,
+          "upper": 0.0025743584126199474
+        },
+        "detail_block": {
+          "factor_to_spectral_frobenius_error_upper": 1.0186394227799448e-09,
+          "lower": 6.24348695970233e-06,
+          "upper": 6.245524238547893e-06
+        },
+        "detail_to_coarse": {
+          "factor_to_spectral_frobenius_error_upper": 1.0186394227799448e-09,
+          "lower": 0.0026766822081212573,
+          "upper": 0.0026766842454001047
+        }
+      },
+      "4096_to_8192": {
+        "coarse_consistency": {
+          "factor_to_spectral_frobenius_error_upper": 3.03593021574745e-09,
+          "lower": 1.9576417146420786e-05,
+          "upper": 1.9582489006852298e-05
+        },
+        "coarse_to_detail": {
+          "factor_to_spectral_frobenius_error_upper": 2.0172907929675053e-09,
+          "lower": 0.001287249343114342,
+          "upper": 0.0012872533776959287
+        },
+        "detail_block": {
+          "factor_to_spectral_frobenius_error_upper": 2.0172907929675053e-09,
+          "lower": 1.559291655619613e-06,
+          "upper": 1.5633262372055488e-06
+        },
+        "detail_to_coarse": {
+          "factor_to_spectral_frobenius_error_upper": 2.0172907929675053e-09,
+          "lower": 0.0013384278050252766,
+          "upper": 0.0013384318396068634
+        }
+      }
+    },
+    "actual_spectral_ratios": {
+      "coarse_consistency": {
+        "asymptotic_target": 0.25,
+        "lower": 0.2497729080331498,
+        "maximum_target_deviation": 0.00022709196685019584,
+        "upper": 0.2498601647012559
+      },
+      "coarse_to_detail": {
+        "asymptotic_target": 0.5,
+        "lower": 0.5000272443821435,
+        "maximum_target_deviation": 2.9207310261791797e-05,
+        "upper": 0.5000292073102618
+      },
+      "detail_block": {
+        "asymptotic_target": 0.25,
+        "lower": 0.24966545578280452,
+        "maximum_target_deviation": 0.0003931292394472319,
+        "upper": 0.25039312923944723
+      },
+      "detail_to_coarse": {
+        "asymptotic_target": 0.5,
+        "lower": 0.500032010621115,
+        "maximum_target_deviation": 3.389851285284795e-05,
+        "upper": 0.5000338985128528
+      }
+    },
+    "all_ratio_targets_within_one_thousandth": true,
+    "arb_precision_bits": 224,
+    "exact_factor_frobenius_blocks": {
+      "2048_to_4096": {
+        "coarse_consistency": {
+          "arb_frobenius_ball": "[7.83753286644884800725958280525337688175433949613169712161e-5 +/- 8.08e-62]",
+          "frobenius_lower": 7.837532866448847e-05,
+          "frobenius_upper": 7.83753286644885e-05,
+          "spectral_norm_upper": 7.83753286644885e-05
+        },
+        "coarse_to_detail": {
+          "arb_frobenius_ball": "[0.00257435739398052387646999244582343615679765174080121178419836728144 +/- 4.70e-69]",
+          "frobenius_lower": 0.0025743573939805233,
+          "frobenius_upper": 0.002574357393980524,
+          "spectral_norm_upper": 0.002574357393980524
+        },
+        "detail_block": {
+          "arb_frobenius_ball": "[6.24450559912511137805035207390920004020306292494237718169252738980e-6 +/- 3.63e-72]",
+          "frobenius_lower": 6.244505599125111e-06,
+          "frobenius_upper": 6.2445055991251125e-06,
+          "spectral_norm_upper": 6.2445055991251125e-06
+        },
+        "detail_to_coarse": {
+          "arb_frobenius_ball": "[0.0026766832267606807833314561747667352896657444982587189925249488341 +/- 3.23e-68]",
+          "frobenius_lower": 0.0026766832267606806,
+          "frobenius_upper": 0.0026766832267606814,
+          "spectral_norm_upper": 0.0026766832267606814
+        }
+      },
+      "4096_to_8192": {
+        "coarse_consistency": {
+          "arb_frobenius_ball": "[1.957945307663654054501983651189180377663387381648442885e-5 +/- 6.55e-60]",
+          "frobenius_lower": 1.957945307663654e-05,
+          "frobenius_upper": 1.9579453076636545e-05,
+          "spectral_norm_upper": 1.9579453076636545e-05
+        },
+        "coarse_to_detail": {
+          "arb_frobenius_ball": "[0.00128725136040513536411972578135065362862190256642831669585647759484 +/- 2.05e-69]",
+          "frobenius_lower": 0.001287251360405135,
+          "frobenius_upper": 0.0012872513604051355,
+          "spectral_norm_upper": 0.0012872513604051355
+        },
+        "detail_block": {
+          "arb_frobenius_ball": "[1.56130894641258078850923594038564768273354009056463899902383950090e-6 +/- 2.53e-73]",
+          "frobenius_lower": 1.5613089464125807e-06,
+          "frobenius_upper": 1.561308946412581e-06,
+          "spectral_norm_upper": 1.561308946412581e-06
+        },
+        "detail_to_coarse": {
+          "arb_frobenius_ball": "[0.0013384298223160700134291867164937660315151148688474806238403738319 +/- 4.38e-68]",
+          "frobenius_lower": 0.0013384298223160698,
+          "frobenius_upper": 0.0013384298223160702,
+          "spectral_norm_upper": 0.0013384298223160702
+        }
+      }
+    },
+    "status": "rigorous_actual_stored_parity_quarter_half_mechanism"
+  },
+  "weighted_transport_chain": {
+    "dyadic_schur_steps": {
+      "16384_to_32768": {
+        "bottom_left_upper": 0.08098334710444953,
+        "bottom_right_upper": 0.0006427204385651399,
+        "coarse_dimension": 16384,
+        "top_left_difference_upper": 0.0669448907815848,
+        "top_right_upper": 0.04627860216704571,
+        "weighted_term_difference_upper": 0.11481307860211712
+      },
+      "32768_to_65536": {
+        "bottom_left_upper": 0.04061565968053613,
+        "bottom_right_upper": 0.00016116811961016614,
+        "coarse_dimension": 32768,
+        "top_left_difference_upper": 0.01698539241821591,
+        "top_right_upper": 0.023210153979970245,
+        "weighted_term_difference_upper": 0.04976818853266236
+      },
+      "4096_to_8192": {
+        "bottom_left_upper": 0.3054944113930009,
+        "bottom_right_upper": 0.009702977108956833,
+        "coarse_dimension": 4096,
+        "top_left_difference_upper": 0.8196029464962653,
+        "top_right_upper": 0.1745773030457481,
+        "weighted_term_difference_upper": 0.8919905872828596
+      },
+      "8192_to_16384": {
+        "bottom_left_upper": 0.16003313631660726,
+        "bottom_right_upper": 0.0025404424637510132,
+        "coarse_dimension": 8192,
+        "top_left_difference_upper": 0.2528290408701708,
+        "top_right_upper": 0.09145225671629402,
+        "weighted_term_difference_upper": 0.31289470710300454
+      }
+    },
+    "finite_rank_to_continuum_complement": 0.023793507962358764,
+    "midpoint_to_galerkin": 0.3191489408750747,
+    "stored_factor_to_exact_stored_weighted_term": 7.202868434316492e-10,
+    "stored_to_exact_midpoint": 0.0038636965045327583,
+    "total_operator_distance_upper": 1.716272707582898
+  }
+}
