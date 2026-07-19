@@ -1,0 +1,2563 @@
+{
+  "asymptotic_checks": {
+    "adaptive_bulk_hs_scaled_last": 4064.188985994984,
+    "adaptive_square_trace_scaled_last": 125323.37774633987,
+    "first_dimension": 65536,
+    "full_bulk_hs_scaled_first": 8397.671123281909,
+    "full_bulk_hs_scaled_last": 4064.1889678897865,
+    "full_square_trace_scaled_first": 260026.71361655951,
+    "full_square_trace_scaled_last": 125323.37718804774,
+    "last_dimension": 1073741824
+  },
+  "continuum_bulk": {
+    "definition": "B=K-Q_+-Q_-",
+    "hilbert_schmidt_upper": 15.418003788081082,
+    "square_is_trace_class": true,
+    "square_trace_norm_upper": 237.71484080928263
+  },
+  "dependencies": {
+    "rh39_cutoff_certificate": {
+      "path": "papers/RH-39-uniform-gaussian-cutoff-bridge/results/uniform_gaussian_cutoff_bridge_certificate.json",
+      "sha256": "8d448588fda190a748df64a1d8fa35d050de9dcbfa3ee2a5203ae10b969ab136"
+    },
+    "rh42_uniform_euclidean_certificate": {
+      "path": "papers/RH-42-uniform-euclidean-parity-contour/results/uniform_euclidean_parity_certificate.json",
+      "sha256": "1792a0d7ad3ac7a8f4f636c566edb3c258839f72c7b64d801c30eb84e0b9f0eb"
+    },
+    "rh43_weighted_schur_source": {
+      "path": "papers/RH-43-validated-weighted-riesz-parity-kernel/src/weighted_kernel/bounds.py",
+      "sha256": "24d594f5c56caffda9103cbb520aece698698bb9209b335690ffb95ee9607ac3"
+    },
+    "rh44_rank_two_certificate": {
+      "path": "papers/RH-44-validated-rank-two-peripheral-complement/results/validated_rank_two_peripheral_complement.json",
+      "sha256": "6b5de19bdbbb09213453fdb94afb60ce126639fa3583e2e8082b8078248067fb"
+    }
+  },
+  "dimension_ledgers": {
+    "1048576": {
+      "adaptive_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.421935628592736,
+        "approximate_square_trace_norm_upper": 237.8360985324581,
+        "bulk_hilbert_schmidt_error_upper": 0.003931840511651797,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 0.0003193965901001853,
+        "parity_weighted_operator_error_upper": 0.001489246977943653,
+        "perron_weighted_operator_error_upper": 0.0010651366156416138,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.003612443921551611,
+        "square_trace_norm_error_upper": 0.12125772317536528
+      },
+      "adaptive_support_multiple": 8.0,
+      "all_contour_gates_closed": true,
+      "determinant_disk_bounds": {
+        "0.0001": {
+          "adaptive_fredholm_determinant_error_upper": 3.456661130658698e-05,
+          "bulk_square_disk_radius": 0.0001,
+          "full_fredholm_determinant_error_upper": 3.4566608719788436e-05,
+          "symmetric_det2_disk_radius": 0.01
+        },
+        "0.001": {
+          "adaptive_fredholm_determinant_error_upper": 0.0005303139360849802,
+          "bulk_square_disk_radius": 0.001,
+          "full_fredholm_determinant_error_upper": 0.0005303138963945111,
+          "symmetric_det2_disk_radius": 0.03162277660168379
+        },
+        "0.01": {
+          "adaptive_fredholm_determinant_error_upper": 0.3830852048884017,
+          "bulk_square_disk_radius": 0.01,
+          "full_fredholm_determinant_error_upper": 0.38308517618573773,
+          "symmetric_det2_disk_radius": 0.1
+        }
+      },
+      "dimension": 1048576,
+      "even_trace_error_uppers": {
+        "1": 0.12125771410113197,
+        "2": 57.67892327535427,
+        "3": 20577.195118259788,
+        "4": 6525333.073975104
+      },
+      "full_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.421935628298538,
+        "approximate_square_trace_norm_upper": 237.83609852338387,
+        "bulk_hilbert_schmidt_error_upper": 0.003931840217452885,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 0.00031939658990724323,
+        "parity_weighted_operator_error_upper": 0.0014892468406302241,
+        "perron_weighted_operator_error_upper": 0.0010651365450614282,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.0036124436275456417,
+        "square_trace_norm_error_upper": 0.12125771410113191
+      },
+      "markov_hilbert_schmidt_components": {
+        "adaptive_cutoff_upper": 1.929419358474877e-13,
+        "adaptive_total_upper": 0.0003193965901001853,
+        "continuum_to_galerkin_upper": 0.00031936000713085735,
+        "full_total_upper": 0.00031939658990724323,
+        "galerkin_to_midpoint_upper": 1.2381341588883816e-08,
+        "midpoint_to_full_normalized_upper": 2.4201434796840695e-08
+      },
+      "parity_contour_chain": {
+        "adaptive_resolvent_upper": 117.18268319887595,
+        "adaptive_weighted_operator_error_upper": 0.001489246977943653,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 1048576,
+          "coarse_to_detail": 0.0002032252566993375,
+          "detail_block": 7.556705412790695e-09,
+          "detail_to_coarse": 0.00011613475043151974
+        },
+        "complement_detail_resolvent_upper": 1.067750721013982,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.0012703185350852726,
+          "bottom_right_upper": 1.575232629497584e-07,
+          "coarse_dimension": 1048576,
+          "top_left_difference_upper": 1.728766754640885e-05,
+          "top_right_upper": 0.0007259340125175633,
+          "weighted_term_difference_upper": 0.0014632116249448741
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 117.18268319622648,
+          "neumann_product_upper": 2.2609453743682812e-11,
+          "perturbation_upper": 1.929419358474877e-13,
+          "transferred_resolvent_upper": 117.18268319887595
+        },
+        "cutoff_weighted_error_upper": 1.3731342847916834e-10,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 117.18235086836056,
+          "neumann_product_upper": 2.8359810238811374e-06,
+          "perturbation_upper": 2.4201434796840695e-08,
+          "transferred_resolvent_upper": 117.18268319622648
+        },
+        "full_weighted_operator_error_upper": 0.0014892468406302241,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95503061584434,
+          "neumann_product_upper": 0.03607331938294227,
+          "perturbation_upper": 0.00031936000713085735,
+          "transferred_resolvent_upper": 117.18218085169735
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 117.18218085169735,
+          "neumann_product_upper": 1.4508726092552256e-06,
+          "perturbation_upper": 1.2381341588883816e-08,
+          "transferred_resolvent_upper": 117.18235086836056
+        },
+        "midpoint_weighted_error_upper": 8.81152324691608e-06,
+        "normalization_weighted_error_upper": 1.7223692438433273e-05
+      },
+      "perron_contour_chain": {
+        "adaptive_resolvent_upper": 83.47346258687975,
+        "adaptive_weighted_operator_error_upper": 0.0010651366156416138,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 1048576,
+          "coarse_to_detail": 0.0002032252566993375,
+          "detail_block": 7.556705412790695e-09,
+          "detail_to_coarse": 0.00011613475043151974
+        },
+        "complement_detail_resolvent_upper": 1.05263158732045,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.0009131343657043227,
+          "bottom_right_upper": 1.1162803422637459e-07,
+          "coarse_dimension": 1048576,
+          "top_left_difference_upper": 8.85205250972108e-06,
+          "top_right_upper": 0.0005218181706046841,
+          "weighted_term_difference_upper": 0.0010517542223817831
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 83.47346258553533,
+          "neumann_product_upper": 1.610553146314603e-11,
+          "perturbation_upper": 1.929419358474877e-13,
+          "transferred_resolvent_upper": 83.47346258687975
+        },
+        "cutoff_weighted_error_upper": 7.058018509661362e-11,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 83.47329395465982,
+          "neumann_product_upper": 2.020173480921217e-06,
+          "perturbation_upper": 2.4201434796840695e-08,
+          "transferred_resolvent_upper": 83.47346258553533
+        },
+        "full_weighted_operator_error_upper": 0.0010651365450614282,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30575843422578,
+          "neumann_product_upper": 0.02596580759333412,
+          "perturbation_upper": 0.00031936000713085735,
+          "transferred_resolvent_upper": 83.47320768415089
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 83.47320768415089,
+          "neumann_product_upper": 1.033510297857314e-06,
+          "perturbation_upper": 1.2381341588883816e-08,
+          "transferred_resolvent_upper": 83.47329395465982
+        },
+        "midpoint_weighted_error_upper": 4.529201717156112e-06,
+        "normalization_weighted_error_upper": 8.85312096248832e-06
+      }
+    },
+    "1073741824": {
+      "adaptive_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.418007573152035,
+        "approximate_square_trace_norm_upper": 237.71495752577357,
+        "bulk_hilbert_schmidt_error_upper": 3.785070950160718e-06,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 3.118750418635979e-07,
+        "parity_weighted_operator_error_upper": 1.428840926441334e-06,
+        "perron_weighted_operator_error_upper": 1.0270794527049278e-06,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 3.4731959082971197e-06,
+        "square_trace_norm_error_upper": 0.00011671649082222938
+      },
+      "adaptive_support_multiple": 9.120178817720266,
+      "all_contour_gates_closed": true,
+      "determinant_disk_bounds": {
+        "0.0001": {
+          "adaptive_fredholm_determinant_error_upper": 3.327165141902674e-08,
+          "bulk_square_disk_radius": 0.0001,
+          "full_fredholm_determinant_error_upper": 3.3271651270807775e-08,
+          "symmetric_det2_disk_radius": 0.01
+        },
+        "0.001": {
+          "adaptive_fredholm_determinant_error_upper": 5.103912748602836e-07,
+          "bulk_square_disk_radius": 0.001,
+          "full_fredholm_determinant_error_upper": 5.10391272586586e-07,
+          "symmetric_det2_disk_radius": 0.03162277660168379
+        },
+        "0.01": {
+          "adaptive_fredholm_determinant_error_upper": 0.00036829182852698706,
+          "bulk_square_disk_radius": 0.01,
+          "full_fredholm_determinant_error_upper": 0.0003682918268863141,
+          "symmetric_det2_disk_radius": 0.1
+        }
+      },
+      "dimension": 1073741824,
+      "even_trace_error_uppers": {
+        "1": 0.00011671649030227937,
+        "2": 0.05549051106952729,
+        "3": 19.786386722964185,
+        "4": 6271.360105917269
+      },
+      "full_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.41800757315202,
+        "approximate_square_trace_norm_upper": 237.7149575257731,
+        "bulk_hilbert_schmidt_error_upper": 3.785070933298939e-06,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 3.118750418517821e-07,
+        "parity_weighted_operator_error_upper": 1.4288409186275548e-06,
+        "perron_weighted_operator_error_upper": 1.027079448603984e-06,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 3.4731958914471564e-06,
+        "square_trace_norm_error_upper": 0.00011671649030227931
+      },
+      "markov_hilbert_schmidt_components": {
+        "adaptive_cutoff_upper": 1.1815710687233752e-17,
+        "adaptive_total_upper": 3.118750418635979e-07,
+        "continuum_to_galerkin_upper": 3.118750069637279e-07,
+        "full_total_upper": 3.118750418517821e-07,
+        "galerkin_to_midpoint_upper": 1.1807767440371148e-14,
+        "midpoint_to_full_normalized_upper": 2.3080286632370582e-14
+      },
+      "parity_contour_chain": {
+        "adaptive_resolvent_upper": 112.95900991945581,
+        "adaptive_weighted_operator_error_upper": 1.428840926441334e-06,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 1073741824,
+          "coarse_to_detail": 1.9846216474544678e-07,
+          "detail_block": 7.206635868826576e-15,
+          "detail_to_coarse": 1.1341284221828099e-07
+        },
+        "complement_detail_resolvent_upper": 1.067750712398654,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 1.24054543440966e-06,
+          "bottom_right_upper": 1.502258876874466e-13,
+          "coarse_dimension": 1073741824,
+          "top_left_difference_upper": 1.5892630499171013e-11,
+          "top_right_upper": 7.089199283791421e-07,
+          "weighted_term_difference_upper": 1.4288178470121168e-06
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95900991945562,
+          "neumann_product_upper": 1.3346909807246555e-15,
+          "perturbation_upper": 1.1815710687233752e-17,
+          "transferred_resolvent_upper": 112.95900991945581
+        },
+        "cutoff_weighted_error_upper": 7.813778679825288e-15,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95900991916109,
+          "neumann_product_upper": 2.6071263266430306e-12,
+          "perturbation_upper": 2.3080286632370582e-14,
+          "transferred_resolvent_upper": 112.95900991945562
+        },
+        "full_weighted_operator_error_upper": 1.4288409186275548e-06,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95503061584434,
+          "neumann_product_upper": 3.522785095990456e-05,
+          "perturbation_upper": 3.118750069637279e-07,
+          "transferred_resolvent_upper": 112.95900991901038
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95900991901038,
+          "neumann_product_upper": 1.3337937194182527e-12,
+          "perturbation_upper": 1.1807767440371148e-14,
+          "transferred_resolvent_upper": 112.95900991916109
+        },
+        "midpoint_weighted_error_upper": 7.808525777547047e-12,
+        "normalization_weighted_error_upper": 1.526308965965591e-11
+      },
+      "perron_contour_chain": {
+        "adaptive_resolvent_upper": 81.30782017587705,
+        "adaptive_weighted_operator_error_upper": 1.0270794527049278e-06,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 1073741824,
+          "coarse_to_detail": 1.9846216474544678e-07,
+          "detail_block": 7.206635868826576e-15,
+          "detail_to_coarse": 1.1341284221828099e-07
+        },
+        "complement_detail_resolvent_upper": 1.052631578947377,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 8.917327719149113e-07,
+          "bottom_right_upper": 1.064567875390074e-13,
+          "coarse_dimension": 1073741824,
+          "top_left_difference_upper": 8.222980870813598e-12,
+          "top_right_upper": 5.095880531776598e-07,
+          "weighted_term_difference_upper": 1.0270673398156903e-06
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30782017587694,
+          "neumann_product_upper": 9.607096798077895e-16,
+          "perturbation_upper": 1.1815710687233752e-17,
+          "transferred_resolvent_upper": 81.30782017587705
+        },
+        "cutoff_weighted_error_upper": 4.100943519069402e-15,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30782017572433,
+          "neumann_product_upper": 1.876607795108962e-12,
+          "perturbation_upper": 2.3080286632370582e-14,
+          "transferred_resolvent_upper": 81.30782017587694
+        },
+        "full_weighted_operator_error_upper": 1.027079448603984e-06,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30575843422578,
+          "neumann_product_upper": 2.535723397786535e-05,
+          "perturbation_upper": 3.118750069637279e-07,
+          "transferred_resolvent_upper": 81.30782017564624
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30782017564624,
+          "neumann_product_upper": 9.600638317175483e-13,
+          "perturbation_upper": 1.1807767440371148e-14,
+          "transferred_resolvent_upper": 81.30782017572433
+        },
+        "midpoint_weighted_error_upper": 4.0981866127916365e-12,
+        "normalization_weighted_error_upper": 8.010601680131849e-12
+      }
+    },
+    "131072": {
+      "adaptive_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.455347856017259,
+        "approximate_square_trace_norm_upper": 238.86777735049733,
+        "bulk_hilbert_schmidt_error_upper": 0.03734406793617384,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 0.0025572213557295198,
+        "parity_weighted_operator_error_upper": 0.01486066240702747,
+        "perron_weighted_operator_error_upper": 0.00973735270610075,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.034786846580444314,
+        "square_trace_norm_error_upper": 1.1529365412145933
+      },
+      "adaptive_support_multiple": 8.0,
+      "all_contour_gates_closed": true,
+      "determinant_disk_bounds": {
+        "0.0001": {
+          "adaptive_fredholm_determinant_error_upper": 0.00032869841203144666,
+          "bulk_square_disk_radius": 0.0001,
+          "full_fredholm_determinant_error_upper": 0.00032869840752480686,
+          "symmetric_det2_disk_radius": 0.01
+        },
+        "0.001": {
+          "adaptive_fredholm_determinant_error_upper": 0.005047508826833449,
+          "bulk_square_disk_radius": 0.001,
+          "full_fredholm_determinant_error_upper": 0.005047508757557468,
+          "symmetric_det2_disk_radius": 0.03162277660168379
+        },
+        "0.01": {
+          "adaptive_fredholm_determinant_error_upper": 3.6802040440880748,
+          "bulk_square_disk_radius": 0.01,
+          "full_fredholm_determinant_error_upper": 3.680203993054547,
+          "symmetric_det2_disk_radius": 0.1
+        }
+      },
+      "dimension": 131072,
+      "even_trace_error_uppers": {
+        "1": 1.152936525409009,
+        "2": 550.7987704648647,
+        "3": 197352.1170894349,
+        "4": 62854748.74859888
+      },
+      "full_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.455347855505929,
+        "approximate_square_trace_norm_upper": 238.86777733469177,
+        "bulk_hilbert_schmidt_error_upper": 0.03734406742484322,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 0.0025572213555352754,
+        "parity_weighted_operator_error_upper": 0.014860662153049568,
+        "perron_weighted_operator_error_upper": 0.009737352598650656,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.03478684606930794,
+        "square_trace_norm_error_upper": 1.1529365254090083
+      },
+      "markov_hilbert_schmidt_components": {
+        "adaptive_cutoff_upper": 1.9424348115045161e-13,
+        "adaptive_total_upper": 0.0025572213557295198,
+        "continuum_to_galerkin_upper": 0.002554880057046859,
+        "full_total_upper": 0.0025572213555352754,
+        "galerkin_to_midpoint_upper": 7.924060122000396e-07,
+        "midpoint_to_full_normalized_upper": 1.5488924762154726e-06
+      },
+      "parity_contour_chain": {
+        "adaptive_resolvent_upper": 158.83455259172,
+        "adaptive_weighted_operator_error_upper": 0.01486066240702747,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 131072,
+          "coarse_to_detail": 0.0016258020535947,
+          "detail_block": 4.836291464186045e-07,
+          "detail_to_coarse": 0.0009290780034521579
+        },
+        "complement_detail_resolvent_upper": 1.06775126378045,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.010162553446579358,
+          "bottom_right_upper": 1.0081499078172089e-05,
+          "coarse_dimension": 131072,
+          "top_left_difference_upper": 0.0014991273573935534,
+          "top_right_upper": 0.00580747505223509,
+          "weighted_term_difference_upper": 0.011800497595746738
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 158.8345525868195,
+          "neumann_product_upper": 3.08525764214383e-11,
+          "perturbation_upper": 1.9424348115045161e-13,
+          "transferred_resolvent_upper": 158.83455259172
+        },
+        "cutoff_weighted_error_upper": 2.5397789761884e-10,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 158.79548609553737,
+          "neumann_product_upper": 0.0002459571336703566,
+          "perturbation_upper": 1.5488924762154726e-06,
+          "transferred_resolvent_upper": 158.8345525868195
+        },
+        "full_weighted_operator_error_upper": 0.014860662153049568,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95503061584434,
+          "neumann_product_upper": 0.28858655506353814,
+          "perturbation_upper": 0.002554880057046859,
+          "transferred_resolvent_upper": 158.77550729440134
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 158.77550729440134,
+          "neumann_product_upper": 0.0001258146665701949,
+          "perturbation_upper": 7.924060122000396e-07,
+          "transferred_resolvent_upper": 158.79548609553737
+        },
+        "midpoint_weighted_error_upper": 0.0010354495105354686,
+        "normalization_weighted_error_upper": 0.0020247150467673555
+      },
+      "perron_contour_chain": {
+        "adaptive_resolvent_upper": 102.64800550391976,
+        "adaptive_weighted_operator_error_upper": 0.00973735270610075,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 131072,
+          "coarse_to_detail": 0.0016258020535947,
+          "detail_block": 4.836291464186045e-07,
+          "detail_to_coarse": 0.0009290780034521579
+        },
+        "complement_detail_resolvent_upper": 1.0526321148248123,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.007305078586420499,
+          "bottom_right_upper": 7.144201350817554e-06,
+          "coarse_dimension": 131072,
+          "top_left_difference_upper": 0.000696503373532134,
+          "top_right_upper": 0.0041745474568238026,
+          "weighted_term_difference_upper": 0.008442522585815692
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 102.64800550187306,
+          "neumann_product_upper": 1.9938705921834538e-11,
+          "perturbation_upper": 1.9424348115045161e-13,
+          "transferred_resolvent_upper": 102.64800550391976
+        },
+        "cutoff_weighted_error_upper": 1.0745009074828932e-10,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 102.63168801554959,
+          "neumann_product_upper": 0.0001589654493885785,
+          "perturbation_upper": 1.5488924762154726e-06,
+          "transferred_resolvent_upper": 102.64800550187306
+        },
+        "full_weighted_operator_error_upper": 0.009737352598650656,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30575843422578,
+          "neumann_product_upper": 0.20772646074667295,
+          "perturbation_upper": 0.002554880057046859,
+          "transferred_resolvent_upper": 102.62334207305709
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 102.62334207305709,
+          "neumann_product_upper": 8.131935325075173e-05,
+          "perturbation_upper": 7.924060122000396e-07,
+          "transferred_resolvent_upper": 102.63168801554959
+        },
+        "midpoint_weighted_error_upper": 0.00043816198085401493,
+        "normalization_weighted_error_upper": 0.0008566680319809435
+      }
+    },
+    "134217728": {
+      "adaptive_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.418034071439285,
+        "approximate_square_trace_norm_upper": 237.71577462806272,
+        "bulk_hilbert_schmidt_error_upper": 3.0283358200580157e-05,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 2.4950022893358045e-06,
+        "parity_weighted_operator_error_upper": 1.1432020655626413e-05,
+        "perron_weighted_operator_error_upper": 8.217314247239737e-06,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 2.778835591124435e-05,
+        "square_trace_norm_error_upper": 0.0009338187799865066
+      },
+      "adaptive_support_multiple": 8.652161319605298,
+      "all_contour_gates_closed": true,
+      "determinant_disk_bounds": {
+        "0.0001": {
+          "adaptive_fredholm_determinant_error_upper": 2.661979918697682e-07,
+          "bulk_square_disk_radius": 0.0001,
+          "full_fredholm_determinant_error_upper": 2.6619798194888233e-07,
+          "symmetric_det2_disk_radius": 0.01
+        },
+        "0.001": {
+          "adaptive_fredholm_determinant_error_upper": 4.083513338088739e-06,
+          "bulk_square_disk_radius": 0.001,
+          "full_fredholm_determinant_error_upper": 4.083513185900876e-06,
+          "symmetric_det2_disk_radius": 0.03162277660168379
+        },
+        "0.01": {
+          "adaptive_fredholm_determinant_error_upper": 0.002946632765800039,
+          "bulk_square_disk_radius": 0.01,
+          "full_fredholm_determinant_error_upper": 0.0029466326559814877,
+          "symmetric_det2_disk_radius": 0.1
+        }
+      },
+      "dimension": 134217728,
+      "even_trace_error_uppers": {
+        "1": 0.0009338187451841832,
+        "2": 0.4439668927472623,
+        "3": 158.3069007279211,
+        "4": 50176.06338066677
+      },
+      "full_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.418034071438157,
+        "approximate_square_trace_norm_upper": 237.71577462802793,
+        "bulk_hilbert_schmidt_error_upper": 3.0283357071956243e-05,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 2.4950022885452847e-06,
+        "parity_weighted_operator_error_upper": 1.1432020132594973e-05,
+        "perron_weighted_operator_error_upper": 8.21731397277254e-06,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 2.7788354783410955e-05,
+        "square_trace_norm_error_upper": 0.0009338187451841828
+      },
+      "markov_hilbert_schmidt_components": {
+        "adaptive_cutoff_upper": 7.905189976391668e-16,
+        "adaptive_total_upper": 2.4950022893358045e-06,
+        "continuum_to_galerkin_upper": 2.495000055709823e-06,
+        "full_total_upper": 2.4950022885452847e-06,
+        "galerkin_to_midpoint_upper": 7.556971161838903e-13,
+        "midpoint_to_full_normalized_upper": 1.4771383444723078e-12
+      },
+      "parity_contour_chain": {
+        "adaptive_resolvent_upper": 112.9868729221088,
+        "adaptive_weighted_operator_error_upper": 1.1432020655626413e-05,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 134217728,
+          "coarse_to_detail": 1.5876973179635743e-06,
+          "detail_block": 4.612246956049008e-13,
+          "detail_to_coarse": 9.073027377462479e-07
+        },
+        "complement_detail_resolvent_upper": 1.0677507123991716,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 9.92436347528209e-06,
+          "bottom_right_upper": 9.614456812005905e-12,
+          "coarse_dimension": 134217728,
+          "top_left_difference_upper": 1.0173792413757273e-09,
+          "top_right_upper": 5.671359427035886e-06,
+          "weighted_term_difference_upper": 1.1430542820675454e-05
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.98687292209867,
+          "neumann_product_upper": 8.931826952876138e-14,
+          "perturbation_upper": 7.905189976391668e-16,
+          "transferred_resolvent_upper": 112.9868729221088
+        },
+        "cutoff_weighted_error_upper": 5.230314363448823e-13,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.98687290324143,
+          "neumann_product_upper": 1.6689724238739715e-10,
+          "perturbation_upper": 1.4771383444723078e-12,
+          "transferred_resolvent_upper": 112.98687292209867
+        },
+        "full_weighted_operator_error_upper": 1.1432020132594973e-05,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95503061584434,
+          "neumann_product_upper": 0.00028182280767923647,
+          "perturbation_upper": 2.495000055709823e-06,
+          "transferred_resolvent_upper": 112.98687289359414
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.98687289359414,
+          "neumann_product_upper": 8.538385401232488e-11,
+          "perturbation_upper": 7.556971161838903e-13,
+          "transferred_resolvent_upper": 112.98687290324143
+        },
+        "midpoint_weighted_error_upper": 4.999922192053908e-10,
+        "normalization_weighted_error_upper": 9.773197003079356e-10
+      },
+      "perron_contour_chain": {
+        "adaptive_resolvent_upper": 81.32225530863832,
+        "adaptive_weighted_operator_error_upper": 8.217314247239737e-06,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 134217728,
+          "coarse_to_detail": 1.5876973179635743e-06,
+          "detail_block": 4.612246956049008e-13,
+          "detail_to_coarse": 9.073027377462479e-07
+        },
+        "complement_detail_resolvent_upper": 1.0526315789478802,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 7.1338621753227e-06,
+          "bottom_right_upper": 6.813234402502988e-12,
+          "coarse_dimension": 134217728,
+          "top_left_difference_upper": 5.263642080841814e-10,
+          "top_right_upper": 4.0767044254232265e-06,
+          "weighted_term_difference_upper": 8.216538735128744e-06
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.32225530863306,
+          "neumann_product_upper": 6.428678775233704e-14,
+          "perturbation_upper": 7.905189976391668e-16,
+          "transferred_resolvent_upper": 81.32225530863832
+        },
+        "cutoff_weighted_error_upper": 2.7446719474480953e-13,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.32225529886425,
+          "neumann_product_upper": 1.2012422156091874e-10,
+          "perturbation_upper": 1.4771383444723078e-12,
+          "transferred_resolvent_upper": 81.32225530863306
+        },
+        "full_weighted_operator_error_upper": 8.21731397277254e-06,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30575843422578,
+          "neumann_product_upper": 0.0002028578718229228,
+          "perturbation_upper": 2.495000055709823e-06,
+          "transferred_resolvent_upper": 81.32225529386656
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.32225529386656,
+          "neumann_product_upper": 6.14549938071451e-11,
+          "perturbation_upper": 7.556971161838903e-13,
+          "transferred_resolvent_upper": 81.32225529886425
+        },
+        "midpoint_weighted_error_upper": 2.623770815281759e-10,
+        "normalization_weighted_error_upper": 5.12860562262712e-10
+      }
+    },
+    "16777216": {
+      "adaptive_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.418246234305212,
+        "approximate_square_trace_norm_upper": 237.7223169416669,
+        "bulk_hilbert_schmidt_error_upper": 0.00024244622412658936,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 1.9960143400335543e-05,
+        "parity_weighted_operator_error_upper": 9.153932302867296e-05,
+        "perron_weighted_operator_error_upper": 6.578209337247864e-05,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.0002224860807262538,
+        "square_trace_norm_error_upper": 0.0074761323841510165
+      },
+      "adaptive_support_multiple": 8.157335921350471,
+      "all_contour_gates_closed": true,
+      "determinant_disk_bounds": {
+        "0.0001": {
+          "adaptive_fredholm_determinant_error_upper": 2.1311765968650974e-06,
+          "bulk_square_disk_radius": 0.0001,
+          "full_fredholm_determinant_error_upper": 2.1311759269758833e-06,
+          "symmetric_det2_disk_radius": 0.01
+        },
+        "0.001": {
+          "adaptive_fredholm_determinant_error_upper": 3.269273085152618e-05,
+          "bulk_square_disk_radius": 0.001,
+          "full_fredholm_determinant_error_upper": 3.269272057520503e-05,
+          "symmetric_det2_disk_radius": 0.03162277660168379
+        },
+        "0.01": {
+          "adaptive_fredholm_determinant_error_upper": 0.023592219815481295,
+          "bulk_square_disk_radius": 0.01,
+          "full_fredholm_determinant_error_upper": 0.023592212399229005,
+          "symmetric_det2_disk_radius": 0.1
+        }
+      },
+      "dimension": 16777216,
+      "even_trace_error_uppers": {
+        "1": 0.007476130034192451,
+        "2": 3.5544859069356884,
+        "3": 1267.4709379873516,
+        "4": 401741.50404213666
+      },
+      "full_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.418246234229004,
+        "approximate_square_trace_norm_upper": 237.72231693931693,
+        "bulk_hilbert_schmidt_error_upper": 0.0002424461479195249,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 1.996014334714808e-05,
+        "parity_weighted_operator_error_upper": 9.153928769893586e-05,
+        "perron_weighted_operator_error_upper": 6.57820748532929e-05,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.0002224860045723768,
+        "square_trace_norm_error_upper": 0.007476130034192448
+      },
+      "markov_hilbert_schmidt_components": {
+        "adaptive_cutoff_upper": 5.3187455822831404e-14,
+        "adaptive_total_upper": 1.9960143400335543e-05,
+        "continuum_to_galerkin_upper": 1.9960000445678584e-05,
+        "full_total_upper": 1.996014334714808e-05,
+        "galerkin_to_midpoint_upper": 4.836461543632968e-11,
+        "midpoint_to_full_normalized_upper": 9.45368540486462e-11
+      },
+      "parity_contour_chain": {
+        "adaptive_resolvent_upper": 113.21027434288906,
+        "adaptive_weighted_operator_error_upper": 9.153932302867296e-05,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 16777216,
+          "coarse_to_detail": 1.2701578543708594e-05,
+          "detail_block": 2.9518380518713654e-11,
+          "detail_to_coarse": 7.2584219019699836e-06
+        },
+        "complement_detail_resolvent_upper": 1.0677507124322996,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 7.939490780472003e-05,
+          "bottom_right_upper": 6.1532523600656e-10,
+          "coarse_dimension": 16777216,
+          "top_left_difference_upper": 6.524101256961793e-08,
+          "top_right_upper": 4.5370875417694756e-05,
+          "weighted_term_difference_upper": 9.144436548118385e-05
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 113.21027434220734,
+          "neumann_product_upper": 6.021366465266778e-12,
+          "perturbation_upper": 5.3187455822831404e-14,
+          "transferred_resolvent_upper": 113.21027434288906
+        },
+        "cutoff_weighted_error_upper": 3.532973707821809e-11,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 113.21027313056946,
+          "neumann_product_upper": 1.0702543067752021e-08,
+          "perturbation_upper": 9.45368540486462e-11,
+          "transferred_resolvent_upper": 113.21027434220734
+        },
+        "full_weighted_operator_error_upper": 9.153928769893586e-05,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95503061584434,
+          "neumann_product_upper": 0.0022545824614338917,
+          "perturbation_upper": 1.9960000445678584e-05,
+          "transferred_resolvent_upper": 113.21027251070115
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 113.21027251070115,
+          "neumann_product_upper": 5.4753712934221476e-09,
+          "perturbation_upper": 4.836461543632968e-11,
+          "transferred_resolvent_upper": 113.21027313056946
+        },
+        "midpoint_weighted_error_upper": 3.212616724900753e-08,
+        "normalization_weighted_error_upper": 6.279605050295756e-08
+      },
+      "perron_contour_chain": {
+        "adaptive_resolvent_upper": 81.43792196907248,
+        "adaptive_weighted_operator_error_upper": 6.578209337247864e-05,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 16777216,
+          "coarse_to_detail": 1.2701578543708594e-05,
+          "detail_block": 2.9518380518713654e-11,
+          "detail_to_coarse": 7.2584219019699836e-06
+        },
+        "complement_detail_resolvent_upper": 1.0526315789800764,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 5.70708974043272e-05,
+          "bottom_right_upper": 4.3604700178686546e-10,
+          "coarse_dimension": 16777216,
+          "top_left_difference_upper": 3.373522322725704e-08,
+          "top_right_upper": 3.261363540438335e-05,
+          "weighted_term_difference_upper": 6.573231840640278e-05
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.4379219687197,
+          "neumann_product_upper": 4.331475877014472e-12,
+          "perturbation_upper": 5.3187455822831404e-14,
+          "transferred_resolvent_upper": 81.43792196907248
+        },
+        "cutoff_weighted_error_upper": 1.8519185710369293e-11,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.43792134173849,
+          "neumann_product_upper": 7.698884883909064e-09,
+          "perturbation_upper": 9.45368540486462e-11,
+          "transferred_resolvent_upper": 81.4379219687197
+        },
+        "full_weighted_operator_error_upper": 6.57820748532929e-05,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30575843422578,
+          "neumann_product_upper": 0.0016228629745833824,
+          "perturbation_upper": 1.9960000445678584e-05,
+          "transferred_resolvent_upper": 81.4379210209778
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.4379210209778,
+          "neumann_product_upper": 3.938713732113781e-09,
+          "perturbation_upper": 4.836461543632968e-11,
+          "transferred_resolvent_upper": 81.43792134173849
+        },
+        "midpoint_weighted_error_upper": 1.683993460293415e-08,
+        "normalization_weighted_error_upper": 3.2916512287151984e-08
+      }
+    },
+    "2097152": {
+      "adaptive_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.419955229625849,
+        "approximate_square_trace_norm_upper": 237.7750192836656,
+        "bulk_hilbert_schmidt_error_upper": 0.0019514415447640613,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 0.00015968914945233708,
+        "parity_weighted_operator_error_upper": 0.0007378390469513854,
+        "perron_weighted_operator_error_upper": 0.0005291212219807732,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.0017917523953117239,
+        "square_trace_norm_error_upper": 0.06017847438288485
+      },
+      "adaptive_support_multiple": 8.0,
+      "all_contour_gates_closed": true,
+      "determinant_disk_bounds": {
+        "0.0001": {
+          "adaptive_fredholm_determinant_error_upper": 1.71548102099012e-05,
+          "bulk_square_disk_radius": 0.0001,
+          "full_fredholm_determinant_error_upper": 1.7154807709758966e-05,
+          "symmetric_det2_disk_radius": 0.01
+        },
+        "0.001": {
+          "adaptive_fredholm_determinant_error_upper": 0.00026317114976130815,
+          "bulk_square_disk_radius": 0.001,
+          "full_fredholm_determinant_error_upper": 0.00026317111140466455,
+          "symmetric_det2_disk_radius": 0.03162277660168379
+        },
+        "0.01": {
+          "adaptive_fredholm_determinant_error_upper": 0.19000362195934908,
+          "bulk_square_disk_radius": 0.01,
+          "full_fredholm_determinant_error_upper": 0.1900035942517218,
+          "symmetric_det2_disk_radius": 0.1
+        }
+      },
+      "dimension": 2097152,
+      "even_trace_error_uppers": {
+        "1": 0.06017846561252612,
+        "2": 28.617871641904046,
+        "3": 10206.92247189032,
+        "4": 3235934.9166547772
+      },
+      "full_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.419955229341467,
+        "approximate_square_trace_norm_upper": 237.7750192748953,
+        "bulk_hilbert_schmidt_error_upper": 0.001951441260380656,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 0.00015968914925948798,
+        "parity_weighted_operator_error_upper": 0.0007378389147005253,
+        "perron_weighted_operator_error_upper": 0.0005291211532785642,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.0017917521111211678,
+        "square_trace_norm_error_upper": 0.06017846561252609
+      },
+      "markov_hilbert_schmidt_components": {
+        "adaptive_cutoff_upper": 1.9284904001497831e-13,
+        "adaptive_total_upper": 0.00015968914945233708,
+        "continuum_to_galerkin_upper": 0.00015968000356542868,
+        "full_total_upper": 0.00015968914925948798,
+        "galerkin_to_midpoint_upper": 3.095335390221722e-09,
+        "midpoint_to_full_normalized_upper": 6.05035866901963e-09
+      },
+      "parity_contour_chain": {
+        "adaptive_resolvent_upper": 115.02990469557734,
+        "adaptive_weighted_operator_error_upper": 0.0007378390469513854,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 2097152,
+          "coarse_to_detail": 0.00010161262834966875,
+          "detail_block": 1.889176353197674e-09,
+          "detail_to_coarse": 5.806737521575987e-05
+        },
+        "complement_detail_resolvent_upper": 1.0677507145524798,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.0006351592636989648,
+          "bottom_right_upper": 3.938081526081294e-08,
+          "coarse_dimension": 2097152,
+          "top_left_difference_upper": 4.242532080561874e-06,
+          "top_right_upper": 0.0003629670040622839,
+          "weighted_term_difference_upper": 0.0007315670419926427
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 115.02990469302556,
+          "neumann_product_upper": 2.2183406693064433e-11,
+          "perturbation_upper": 1.9284904001497831e-13,
+          "transferred_resolvent_upper": 115.02990469557734
+        },
+        "cutoff_weighted_error_upper": 1.3225085985355655e-10,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 115.02982463546758,
+          "neumann_product_upper": 6.959716966790093e-07,
+          "perturbation_upper": 6.05035866901963e-09,
+          "transferred_resolvent_upper": 115.02990469302556
+        },
+        "full_weighted_operator_error_upper": 0.0007378389147005253,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95503061584434,
+          "neumann_product_upper": 0.018036659691471134,
+          "perturbation_upper": 0.00015968000356542868,
+          "transferred_resolvent_upper": 115.02978367843586
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 115.02978367843586,
+          "neumann_product_upper": 3.560557603494117e-07,
+          "perturbation_upper": 3.095335390221722e-09,
+          "transferred_resolvent_upper": 115.02982463546758
+        },
+        "midpoint_weighted_error_upper": 2.1226968580668998e-06,
+        "normalization_weighted_error_upper": 4.1491758498153785e-06
+      },
+      "perron_contour_chain": {
+        "adaptive_resolvent_upper": 82.37529015691469,
+        "adaptive_weighted_operator_error_upper": 0.0005291212219807732,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 2097152,
+          "coarse_to_detail": 0.00010161262834966875,
+          "detail_block": 1.889176353197674e-09,
+          "detail_to_coarse": 5.806737521575987e-05
+        },
+        "complement_detail_resolvent_upper": 1.0526315810406393,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.0004565671801283637,
+          "bottom_right_upper": 2.7907008223617263e-08,
+          "coarse_dimension": 2097152,
+          "top_left_difference_upper": 2.183903855154913e-06,
+          "top_right_upper": 0.00026090908374580535,
+          "weighted_term_difference_upper": 0.0005258630146400214
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 82.37529015560604,
+          "neumann_product_upper": 1.5885995627463923e-11,
+          "perturbation_upper": 1.9284904001497831e-13,
+          "transferred_resolvent_upper": 82.37529015691469
+        },
+        "cutoff_weighted_error_upper": 6.870220871030054e-11,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 82.37524909977766,
+          "neumann_product_upper": 4.983998025034914e-07,
+          "perturbation_upper": 6.05035866901963e-09,
+          "transferred_resolvent_upper": 82.37529015560604
+        },
+        "full_weighted_operator_error_upper": 0.0005291211532785642,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30575843422578,
+          "neumann_product_upper": 0.01298290379666706,
+          "perturbation_upper": 0.00015968000356542868,
+          "transferred_resolvent_upper": 82.37522809582238
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 82.37522809582238,
+          "neumann_product_upper": 2.5497895880258585e-07,
+          "perturbation_upper": 3.095335390221722e-09,
+          "transferred_resolvent_upper": 82.37524909977766
+        },
+        "midpoint_weighted_error_upper": 1.102707650444661e-06,
+        "normalization_weighted_error_upper": 2.1554309880978987e-06
+      }
+    },
+    "262144": {
+      "adaptive_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.434628878585547,
+        "approximate_square_trace_norm_upper": 238.22776861966702,
+        "bulk_hilbert_schmidt_error_upper": 0.016625090504462803,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 0.0012780253531867044,
+        "parity_weighted_operator_error_upper": 0.0063893569160723,
+        "perron_weighted_operator_error_upper": 0.004462656923706768,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.015347065151276096,
+        "square_trace_norm_error_upper": 0.5129278103842786
+      },
+      "adaptive_support_multiple": 8.0,
+      "all_contour_gates_closed": true,
+      "determinant_disk_bounds": {
+        "0.0001": {
+          "adaptive_fredholm_determinant_error_upper": 0.00014622467119737099,
+          "bulk_square_disk_radius": 0.0001,
+          "full_fredholm_determinant_error_upper": 0.0001462246679795903,
+          "symmetric_det2_disk_radius": 0.01
+        },
+        "0.001": {
+          "adaptive_fredholm_determinant_error_upper": 0.002244140159133948,
+          "bulk_square_disk_radius": 0.001,
+          "full_fredholm_determinant_error_upper": 0.0022441401097272086,
+          "symmetric_det2_disk_radius": 0.03162277660168379
+        },
+        "0.01": {
+          "adaptive_fredholm_determinant_error_upper": 1.6268339175695157,
+          "bulk_square_disk_radius": 0.01,
+          "full_fredholm_determinant_error_upper": 1.6268338815880659,
+          "symmetric_det2_disk_radius": 0.1
+        }
+      },
+      "dimension": 262144,
+      "even_trace_error_uppers": {
+        "1": 0.5129277990975067,
+        "2": 244.38729007241315,
+        "3": 87329.75818529991,
+        "4": 27739164.567457903
+      },
+      "full_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.434628878219916,
+        "approximate_square_trace_norm_upper": 238.22776860838025,
+        "bulk_hilbert_schmidt_error_upper": 0.01662509013883133,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 0.0012780253529932045,
+        "parity_weighted_operator_error_upper": 0.006389356741301948,
+        "perron_weighted_operator_error_upper": 0.00446265684007345,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.01534706478583812,
+        "square_trace_norm_error_upper": 0.5129277990975064
+      },
+      "markov_hilbert_schmidt_components": {
+        "adaptive_cutoff_upper": 1.934995108228331e-13,
+        "adaptive_total_upper": 0.0012780253531867044,
+        "continuum_to_galerkin_upper": 0.0012774400285234294,
+        "full_total_upper": 0.0012780253529932045,
+        "galerkin_to_midpoint_upper": 1.9810147438115745e-07,
+        "midpoint_to_full_normalized_upper": 3.872229953933498e-07
+      },
+      "parity_contour_chain": {
+        "adaptive_resolvent_upper": 132.01223700484238,
+        "adaptive_weighted_operator_error_upper": 0.0063893569160723,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 262144,
+          "coarse_to_detail": 0.00081290102679735,
+          "detail_block": 1.2090728660465112e-07,
+          "detail_to_coarse": 0.00046453900172607895
+        },
+        "complement_detail_resolvent_upper": 1.0677508502440436,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.005081274755328612,
+          "bottom_right_upper": 2.520372817278373e-06,
+          "coarse_dimension": 262144,
+          "top_left_difference_upper": 0.0003115842486296144,
+          "top_right_upper": 0.002903736401509949,
+          "weighted_term_difference_upper": 0.00586072771290964
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 132.01223700147014,
+          "neumann_product_upper": 2.5544303282412388e-11,
+          "perturbation_upper": 1.934995108228331e-13,
+          "transferred_resolvent_upper": 132.01223700484238
+        },
+        "cutoff_weighted_error_upper": 1.7477034976579734e-10,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 132.00548912192926,
+          "neumann_product_upper": 5.1115560906157724e-05,
+          "perturbation_upper": 3.872229953933498e-07,
+          "transferred_resolvent_upper": 132.01223700147014
+        },
+        "full_weighted_operator_error_upper": 0.006389356741301948,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95503061584434,
+          "neumann_product_upper": 0.14429327753176907,
+          "perturbation_upper": 0.0012774400285234294,
+          "transferred_resolvent_upper": 132.00203720502847
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 132.00203720502847,
+          "neumann_product_upper": 2.614979819163255e-05,
+          "perturbation_upper": 1.9810147438115745e-07,
+          "transferred_resolvent_upper": 132.00548912192926
+        },
+        "midpoint_weighted_error_upper": 0.0001789039112478225,
+        "normalization_weighted_error_upper": 0.00034972511714448395
+      },
+      "perron_contour_chain": {
+        "adaptive_resolvent_upper": 90.73400316272786,
+        "adaptive_weighted_operator_error_upper": 0.004462656923706768,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 262144,
+          "coarse_to_detail": 0.00081290102679735,
+          "detail_block": 1.2090728660465112e-07,
+          "detail_to_coarse": 0.00046453900172607895
+        },
+        "complement_detail_resolvent_upper": 1.0526317129166787,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.0036525378986249717,
+          "bottom_right_upper": 1.7860489738318433e-06,
+          "coarse_dimension": 262144,
+          "top_left_difference_upper": 0.0001539444091742355,
+          "top_right_upper": 0.0020872729314646327,
+          "weighted_term_difference_upper": 0.00420968448489951
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 90.73400316113481,
+          "neumann_product_upper": 1.7556985226676985e-11,
+          "perturbation_upper": 1.934995108228331e-13,
+          "transferred_resolvent_upper": 90.73400316272786
+        },
+        "cutoff_weighted_error_upper": 8.363331653697704e-11,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 90.7308153981289,
+          "neumann_product_upper": 3.5133058112944555e-05,
+          "perturbation_upper": 3.872229953933498e-07,
+          "transferred_resolvent_upper": 90.73400316113481
+        },
+        "full_weighted_operator_error_upper": 0.00446265684007345,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30575843422578,
+          "neumann_product_upper": 0.10386323037333647,
+          "perturbation_upper": 0.0012774400285234294,
+          "transferred_resolvent_upper": 90.72918464008382
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 90.72918464008382,
+          "neumann_product_upper": 1.7973585246600875e-05,
+          "perturbation_upper": 1.9810147438115745e-07,
+          "transferred_resolvent_upper": 90.7308153981289
+        },
+        "midpoint_weighted_error_upper": 8.561479736522361e-05,
+        "normalization_weighted_error_upper": 0.00016735755780871293
+      }
+    },
+    "268435456": {
+      "adaptive_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.41801892896271,
+        "approximate_square_trace_norm_upper": 237.71530769385248,
+        "bulk_hilbert_schmidt_error_upper": 1.5140881623243226e-05,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 1.2475005862583964e-06,
+        "parity_weighted_operator_error_upper": 5.715640745970778e-06,
+        "perron_weighted_operator_error_upper": 4.108463198889775e-06,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 1.3893381036984827e-05,
+        "square_trace_norm_error_upper": 0.00046688456969039917
+      },
+      "adaptive_support_multiple": 8.810929816013397,
+      "all_contour_gates_closed": true,
+      "determinant_disk_bounds": {
+        "0.0001": {
+          "adaptive_fredholm_determinant_error_upper": 1.3309191434887224e-07,
+          "bulk_square_disk_radius": 0.0001,
+          "full_fredholm_determinant_error_upper": 1.3309191190706287e-07,
+          "symmetric_det2_disk_radius": 0.01
+        },
+        "0.001": {
+          "adaptive_fredholm_determinant_error_upper": 2.041647178569849e-06,
+          "bulk_square_disk_radius": 0.001,
+          "full_fredholm_determinant_error_upper": 2.0416471411121623e-06,
+          "symmetric_det2_disk_radius": 0.03162277660168379
+        },
+        "0.01": {
+          "adaptive_fredholm_determinant_error_upper": 0.0014732311842589312,
+          "bulk_square_disk_radius": 0.01,
+          "full_fredholm_determinant_error_upper": 0.001473231157229742,
+          "symmetric_det2_disk_radius": 0.1
+        }
+      },
+      "dimension": 268435456,
+      "even_trace_error_uppers": {
+        "1": 0.0004668845611245668,
+        "2": 0.2219712142104633,
+        "3": 79.14893322782463,
+        "4": 25086.55068785578
+      },
+      "full_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.41801892896243,
+        "approximate_square_trace_norm_upper": 237.71530769384387,
+        "bulk_hilbert_schmidt_error_upper": 1.5140881345456808e-05,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 1.2475005860637773e-06,
+        "parity_weighted_operator_error_upper": 5.7156406172413995e-06,
+        "perron_weighted_operator_error_upper": 4.10846313133211e-06,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 1.3893380759393028e-05,
+        "square_trace_norm_error_upper": 0.0004668845611245666
+      },
+      "markov_hilbert_schmidt_components": {
+        "adaptive_cutoff_upper": 1.946187181961599e-16,
+        "adaptive_total_upper": 1.2475005862583964e-06,
+        "continuum_to_galerkin_upper": 1.2475000278549115e-06,
+        "full_total_upper": 1.2475005860637773e-06,
+        "galerkin_to_midpoint_upper": 1.889242790459465e-13,
+        "midpoint_to_full_normalized_upper": 3.6928458611796445e-13
+      },
+      "parity_contour_chain": {
+        "adaptive_resolvent_upper": 112.97094951805975,
+        "adaptive_weighted_operator_error_upper": 5.715640745970778e-06,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 268435456,
+          "coarse_to_detail": 7.938486589817871e-07,
+          "detail_block": 1.153061739012252e-13,
+          "detail_to_coarse": 4.5365136887312397e-07
+        },
+        "complement_detail_resolvent_upper": 1.0677507123987773,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 4.962181737639212e-06,
+          "bottom_right_upper": 2.4036142029997003e-12,
+          "coarse_dimension": 268435456,
+          "top_left_difference_upper": 2.5430896520856466e-10,
+          "top_right_upper": 2.8356797135168957e-06,
+          "weighted_term_difference_upper": 5.715271393353971e-06
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.97094951805722,
+          "neumann_product_upper": 2.198626138860739e-14,
+          "perturbation_upper": 1.946187181961599e-16,
+          "transferred_resolvent_upper": 112.97094951805975
+        },
+        "cutoff_weighted_error_upper": 1.2872937745592702e-13,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.97094951334422,
+          "neumann_product_upper": 4.1718430334388794e-11,
+          "perturbation_upper": 3.6928458611796445e-13,
+          "transferred_resolvent_upper": 112.97094951805722
+        },
+        "full_weighted_operator_error_upper": 5.7156406172413995e-06,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95503061584434,
+          "neumann_product_upper": 0.00014091140383961823,
+          "perturbation_upper": 1.2475000278549115e-06,
+          "transferred_resolvent_upper": 112.97094951093305
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.97094951093305,
+          "neumann_product_upper": 2.1342955189489055e-11,
+          "perturbation_upper": 1.889242790459465e-13,
+          "transferred_resolvent_upper": 112.97094951334422
+        },
+        "midpoint_weighted_error_upper": 1.2496282500860487e-10,
+        "normalization_weighted_error_upper": 2.442610624181418e-10
+      },
+      "perron_contour_chain": {
+        "adaptive_resolvent_upper": 81.31400603102409,
+        "adaptive_weighted_operator_error_upper": 4.108463198889775e-06,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 268435456,
+          "coarse_to_detail": 7.938486589817871e-07,
+          "detail_block": 1.153061739012252e-13,
+          "detail_to_coarse": 4.5365136887312397e-07
+        },
+        "complement_detail_resolvent_upper": 1.052631578947497,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 3.566931087660052e-06,
+          "bottom_right_upper": 1.703308600624507e-12,
+          "coarse_dimension": 268435456,
+          "top_left_difference_upper": 1.3157770352669192e-10,
+          "top_right_upper": 2.0383522127108713e-06,
+          "weighted_term_difference_upper": 4.108269361238944e-06
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.31400603102277,
+          "neumann_product_upper": 1.5825227625152472e-14,
+          "perturbation_upper": 1.946187181961599e-16,
+          "transferred_resolvent_upper": 81.31400603102409
+        },
+        "cutoff_weighted_error_upper": 6.755766436408387e-14,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.31400602858105,
+          "neumann_product_upper": 3.002800906185823e-11,
+          "perturbation_upper": 3.6928458611796445e-13,
+          "transferred_resolvent_upper": 81.31400603102277
+        },
+        "full_weighted_operator_error_upper": 4.10846313133211e-06,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30575843422578,
+          "neumann_product_upper": 0.0001014289359114614,
+          "perturbation_upper": 1.2475000278549115e-06,
+          "transferred_resolvent_upper": 81.31400602733186
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.31400602733186,
+          "neumann_product_upper": 1.5362189965051425e-11,
+          "perturbation_upper": 1.889242790459465e-13,
+          "transferred_resolvent_upper": 81.31400602858105
+        },
+        "midpoint_weighted_error_upper": 6.5580963390096e-11,
+        "normalization_weighted_error_upper": 1.281891297726663e-10
+      }
+    },
+    "33554432": {
+      "adaptive_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.418124959865155,
+        "approximate_square_trace_norm_upper": 237.71857727801694,
+        "bulk_hilbert_schmidt_error_upper": 0.00012117178407017604,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 9.980035961274376e-06,
+        "parity_weighted_operator_error_upper": 4.574585968689155e-05,
+        "perron_weighted_operator_error_upper": 3.287857941289923e-05,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.00011119174810890165,
+        "square_trace_norm_error_upper": 0.003736468734206291
+      },
+      "adaptive_support_multiple": 8.325546111576978,
+      "all_contour_gates_closed": true,
+      "determinant_disk_bounds": {
+        "0.0001": {
+          "adaptive_fredholm_determinant_error_upper": 1.065132522294324e-06,
+          "bulk_square_disk_radius": 0.0001,
+          "full_fredholm_determinant_error_upper": 1.0651323580449089e-06,
+          "symmetric_det2_disk_radius": 0.01
+        },
+        "0.001": {
+          "adaptive_fredholm_determinant_error_upper": 1.633931872345926e-05,
+          "bulk_square_disk_radius": 0.001,
+          "full_fredholm_determinant_error_upper": 1.6339316203836102e-05,
+          "symmetric_det2_disk_radius": 0.03162277660168379
+        },
+        "0.01": {
+          "adaptive_fredholm_determinant_error_upper": 0.011790627916988877,
+          "bulk_square_disk_radius": 0.01,
+          "full_fredholm_determinant_error_upper": 0.011790626098740587,
+          "symmetric_det2_disk_radius": 0.1
+        }
+      },
+      "dimension": 33554432,
+      "even_trace_error_uppers": {
+        "1": 0.00373646815802205,
+        "2": 1.7764557891349229,
+        "3": 633.4448141841407,
+        "4": 200775.46668216898
+      },
+      "full_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.41812495984647,
+        "approximate_square_trace_norm_upper": 237.71857727744074,
+        "bulk_hilbert_schmidt_error_upper": 0.000121171765384887,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 9.980035948206667e-06,
+        "parity_weighted_operator_error_upper": 4.5745851026256745e-05,
+        "perron_weighted_operator_error_upper": 3.287857487027971e-05,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.00011119172943668031,
+        "square_trace_norm_error_upper": 0.0037364681580220483
+      },
+      "markov_hilbert_schmidt_components": {
+        "adaptive_cutoff_upper": 1.3067706095742825e-14,
+        "adaptive_total_upper": 9.980035961274376e-06,
+        "continuum_to_galerkin_upper": 9.980000222839292e-06,
+        "full_total_upper": 9.980035948206667e-06,
+        "galerkin_to_midpoint_upper": 1.209115385897562e-11,
+        "midpoint_to_full_normalized_upper": 2.363421351170088e-11
+      },
+      "parity_contour_chain": {
+        "adaptive_resolvent_upper": 113.08250799194685,
+        "adaptive_weighted_operator_error_upper": 4.574585968689155e-05,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 33554432,
+          "coarse_to_detail": 6.350789271854297e-06,
+          "detail_block": 7.379595129678413e-12,
+          "detail_to_coarse": 3.6292109509849918e-06
+        },
+        "complement_detail_resolvent_upper": 1.067750712407059,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 3.969745390142161e-05,
+          "bottom_right_upper": 1.538313089943672e-10,
+          "coarse_dimension": 33554432,
+          "top_left_difference_upper": 1.629184598645611e-08,
+          "top_right_upper": 2.268543770831112e-05,
+          "weighted_term_difference_upper": 4.5722174004754745e-05
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 113.0825079917797,
+          "neumann_product_upper": 1.4777289790060668e-12,
+          "perturbation_upper": 1.3067706095742825e-14,
+          "transferred_resolvent_upper": 113.08250799194685
+        },
+        "cutoff_weighted_error_upper": 8.660634787897392e-12,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 113.08250768955354,
+          "neumann_product_upper": 2.6726161311734655e-09,
+          "perturbation_upper": 2.363421351170088e-11,
+          "transferred_resolvent_upper": 113.0825079917797
+        },
+        "full_weighted_operator_error_upper": 4.5745851026256745e-05,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95503061584434,
+          "neumann_product_upper": 0.0011272912307169459,
+          "perturbation_upper": 9.980000222839292e-06,
+          "transferred_resolvent_upper": 113.082507534936
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 113.082507534936,
+          "neumann_product_upper": 1.3672979973636813e-09,
+          "perturbation_upper": 1.209115385897562e-11,
+          "transferred_resolvent_upper": 113.08250768955354
+        },
+        "midpoint_weighted_error_upper": 8.013423799599168e-09,
+        "normalization_weighted_error_upper": 1.5663597702381807e-08
+      },
+      "perron_contour_chain": {
+        "adaptive_resolvent_upper": 81.37178630025241,
+        "adaptive_weighted_operator_error_upper": 3.287857941289923e-05,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 33554432,
+          "coarse_to_detail": 6.350789271854297e-06,
+          "detail_block": 7.379595129678413e-12,
+          "detail_to_coarse": 3.6292109509849918e-06
+        },
+        "complement_detail_resolvent_upper": 1.0526315789555458,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 2.853544870149861e-05,
+          "bottom_right_upper": 1.0901175044163552e-10,
+          "coarse_dimension": 33554432,
+          "top_left_difference_upper": 8.426956793523643e-09,
+          "top_right_upper": 1.630681770181166e-05,
+          "weighted_term_difference_upper": 3.2866155953829806e-05
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.37178630016585,
+          "neumann_product_upper": 1.06334258785616e-12,
+          "perturbation_upper": 1.3067706095742825e-14,
+          "transferred_resolvent_upper": 81.37178630025241
+        },
+        "cutoff_weighted_error_upper": 4.542619505706918e-12,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.371786143675,
+          "neumann_product_upper": 1.923158167548079e-09,
+          "perturbation_upper": 2.363421351170088e-11,
+          "transferred_resolvent_upper": 81.37178630016585
+        },
+        "full_weighted_operator_error_upper": 3.287857487027971e-05,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30575843422578,
+          "neumann_product_upper": 0.0008114314872916912,
+          "perturbation_upper": 9.980000222839292e-06,
+          "transferred_resolvent_upper": 81.37178606361499
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.37178606361499,
+          "neumann_product_upper": 9.838787850748172e-10,
+          "perturbation_upper": 1.209115385897562e-11,
+          "transferred_resolvent_upper": 81.371786143675
+        },
+        "midpoint_weighted_error_upper": 4.203148639746361e-09,
+        "normalization_weighted_error_upper": 8.215767810134899e-09
+      }
+    },
+    "4194304": {
+      "adaptive_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.418976073173726,
+        "approximate_square_trace_norm_upper": 237.7448231451039,
+        "bulk_hilbert_schmidt_error_upper": 0.0009722850926408613,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 7.984228839902948e-05,
+        "parity_weighted_operator_error_upper": 0.0003673185673665672,
+        "perron_weighted_operator_error_upper": 0.0002637337913339701,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.0008924428042418317,
+        "square_trace_norm_error_upper": 0.029982335821164517
+      },
+      "adaptive_support_multiple": 8.0,
+      "all_contour_gates_closed": true,
+      "determinant_disk_bounds": {
+        "0.0001": {
+          "adaptive_fredholm_determinant_error_upper": 8.546905398089786e-06,
+          "bulk_square_disk_radius": 0.0001,
+          "full_fredholm_determinant_error_upper": 8.546902939630863e-06,
+          "symmetric_det2_disk_radius": 0.01
+        },
+        "0.001": {
+          "adaptive_fredholm_determinant_error_upper": 0.0001311141170143152,
+          "bulk_square_disk_radius": 0.001,
+          "full_fredholm_determinant_error_upper": 0.00013111407929921785,
+          "symmetric_det2_disk_radius": 0.03162277660168379
+        },
+        "0.01": {
+          "adaptive_fredholm_determinant_error_upper": 0.09463570686472511,
+          "bulk_square_disk_radius": 0.01,
+          "full_fredholm_determinant_error_upper": 0.09463567963533084,
+          "symmetric_det2_disk_radius": 0.1
+        }
+      },
+      "dimension": 4194304,
+      "even_trace_error_uppers": {
+        "1": 0.0299823271969764,
+        "2": 14.256286153330441,
+        "3": 5084.037345159886,
+        "4": 1611604.7459257268
+      },
+      "full_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.418976072894065,
+        "approximate_square_trace_norm_upper": 237.74482313647974,
+        "bulk_hilbert_schmidt_error_upper": 0.0009722848129793555,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 7.984228820622685e-05,
+        "parity_weighted_operator_error_upper": 0.00036731843754330486,
+        "perron_weighted_operator_error_upper": 0.0002637337235430173,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.0008924425247731285,
+        "square_trace_norm_error_upper": 0.029982327196976386
+      },
+      "markov_hilbert_schmidt_components": {
+        "adaptive_cutoff_upper": 1.9280259565720425e-13,
+        "adaptive_total_upper": 7.984228839902948e-05,
+        "continuum_to_galerkin_upper": 7.984000178271434e-05,
+        "full_total_upper": 7.984228820622685e-05,
+        "galerkin_to_midpoint_upper": 7.738338471179787e-10,
+        "midpoint_to_full_normalized_upper": 1.5125896653679985e-09
+      },
+      "parity_contour_chain": {
+        "adaptive_resolvent_upper": 113.98299631348193,
+        "adaptive_weighted_operator_error_upper": 0.0003673185673665672,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 4194304,
+          "coarse_to_detail": 5.080631417483438e-05,
+          "detail_block": 4.722940882994185e-10,
+          "detail_to_coarse": 2.9033687607879934e-05
+        },
+        "complement_detail_resolvent_upper": 1.0677507129371044,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.0003175796313690235,
+          "bottom_right_upper": 9.845203785414073e-09,
+          "coarse_dimension": 4194304,
+          "top_left_difference_upper": 1.0509808335414146e-06,
+          "top_right_upper": 0.00018148350175657972,
+          "weighted_term_difference_upper": 0.00036577887900746266
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 113.98299631097699,
+          "neumann_product_upper": 2.1976217549541907e-11,
+          "perturbation_upper": 1.9280259565720425e-13,
+          "transferred_resolvent_upper": 113.98299631348193
+        },
+        "cutoff_weighted_error_upper": 1.2982326223475663e-10,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 113.98297665922868,
+          "neumann_product_upper": 1.7240947252263114e-07,
+          "perturbation_upper": 1.5125896653679985e-09,
+          "transferred_resolvent_upper": 113.98299631097699
+        },
+        "full_weighted_operator_error_upper": 0.00036731843754330486,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95503061584434,
+          "neumann_product_upper": 0.009018329845735567,
+          "perturbation_upper": 7.984000178271434e-05,
+          "transferred_resolvent_upper": 113.98296660548813
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 113.98296660548813,
+          "neumann_product_upper": 8.820387755424499e-08,
+          "perturbation_upper": 7.738338471179787e-10,
+          "transferred_resolvent_upper": 113.98297665922868
+        },
+        "midpoint_weighted_error_upper": 5.210593281366526e-07,
+        "normalization_weighted_error_upper": 1.0184992077053898e-06
+      },
+      "perron_contour_chain": {
+        "adaptive_resolvent_upper": 81.83701469334561,
+        "adaptive_weighted_operator_error_upper": 0.0002637337913339701,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 4194304,
+          "coarse_to_detail": 5.080631417483438e-05,
+          "detail_block": 4.722940882994185e-10,
+          "detail_to_coarse": 2.9033687607879934e-05
+        },
+        "complement_detail_resolvent_upper": 1.0526315794706866,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.00022828358972370715,
+          "bottom_right_upper": 6.976752035093292e-09,
+          "coarse_dimension": 4194304,
+          "top_left_difference_upper": 5.424086290968634e-07,
+          "top_right_upper": 0.0001304545416783356,
+          "weighted_term_difference_upper": 0.0002629297986867265
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.83701469205432,
+          "neumann_product_upper": 1.5778388853464838e-11,
+          "perturbation_upper": 1.9280259565720425e-13,
+          "transferred_resolvent_upper": 81.83701469334561
+        },
+        "cutoff_weighted_error_upper": 6.7790952623012e-11,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.83700456179335,
+          "neumann_product_upper": 1.2378580734484242e-07,
+          "perturbation_upper": 1.5125896653679985e-09,
+          "transferred_resolvent_upper": 81.83701469205432
+        },
+        "full_weighted_operator_error_upper": 0.0002637337235430173,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30575843422578,
+          "neumann_product_upper": 0.00649145189833353,
+          "perturbation_upper": 7.984000178271434e-05,
+          "transferred_resolvent_upper": 81.83699937919984
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.83699937919984,
+          "neumann_product_upper": 6.332824006619787e-08,
+          "perturbation_upper": 7.738338471179787e-10,
+          "transferred_resolvent_upper": 81.83700456179335
+        },
+        "midpoint_weighted_error_upper": 2.720861572373586e-07,
+        "normalization_weighted_error_upper": 5.318386990532534e-07
+      }
+    },
+    "524288": {
+      "adaptive_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.42599621019089,
+        "approximate_square_trace_norm_upper": 237.96135907682375,
+        "bulk_hilbert_schmidt_error_upper": 0.007992422109805315,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 0.000638866345562766,
+        "parity_weighted_operator_error_upper": 0.003039498384981553,
+        "perron_weighted_operator_error_upper": 0.002160250761747774,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.007353555764242547,
+        "square_trace_norm_error_upper": 0.24651826754102413
+      },
+      "adaptive_support_multiple": 8.0,
+      "all_contour_gates_closed": true,
+      "determinant_disk_bounds": {
+        "0.0001": {
+          "adaptive_fredholm_determinant_error_upper": 7.027517629281523e-05,
+          "bulk_square_disk_radius": 0.0001,
+          "full_fredholm_determinant_error_upper": 7.027517351840163e-05,
+          "symmetric_det2_disk_radius": 0.01
+        },
+        "0.001": {
+          "adaptive_fredholm_determinant_error_upper": 0.0010782690450462371,
+          "bulk_square_disk_radius": 0.001,
+          "full_fredholm_determinant_error_upper": 0.0010782690024675034,
+          "symmetric_det2_disk_radius": 0.03162277660168379
+        },
+        "0.01": {
+          "adaptive_fredholm_determinant_error_upper": 0.7797925410403761,
+          "bulk_square_disk_radius": 0.01,
+          "full_fredholm_determinant_error_upper": 0.7797925101795941,
+          "symmetric_det2_disk_radius": 0.1
+        }
+      },
+      "dimension": 524288,
+      "even_trace_error_uppers": {
+        "1": 0.24651825780889963,
+        "2": 117.32363932611487,
+        "3": 41877.73899710936,
+        "4": 13287044.915212117
+      },
+      "full_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.425996209875445,
+        "approximate_square_trace_norm_upper": 237.96135906709165,
+        "bulk_hilbert_schmidt_error_upper": 0.007992421794359736,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 0.000638866345369638,
+        "parity_weighted_operator_error_upper": 0.0030394982366368176,
+        "perron_weighted_operator_error_upper": 0.002160250687175363,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.0073535554489900954,
+        "square_trace_norm_error_upper": 0.24651825780889952
+      },
+      "markov_hilbert_schmidt_components": {
+        "adaptive_cutoff_upper": 1.931277560274272e-13,
+        "adaptive_total_upper": 0.000638866345562766,
+        "continuum_to_galerkin_upper": 0.0006387200142617147,
+        "full_total_upper": 0.000638866345369638,
+        "galerkin_to_midpoint_upper": 4.952536680348608e-08,
+        "midpoint_to_full_normalized_upper": 9.680574111955759e-08
+      },
+      "parity_contour_chain": {
+        "adaptive_resolvent_upper": 121.74018822512589,
+        "adaptive_weighted_operator_error_upper": 0.003039498384981553,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 524288,
+          "coarse_to_detail": 0.000406450513398675,
+          "detail_block": 3.022682165116278e-08,
+          "detail_to_coarse": 0.00023226950086303947
+        },
+        "complement_detail_resolvent_upper": 1.0677507468599918,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.0025406371316692915,
+          "bottom_right_upper": 6.300930823031411e-07,
+          "coarse_dimension": 524288,
+          "top_left_difference_upper": 7.183912929873781e-05,
+          "top_right_upper": 0.0014518680601790929,
+          "weighted_term_difference_upper": 0.002927100810785421
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 121.74018822226357,
+          "neumann_product_upper": 2.3511409369722392e-11,
+          "perturbation_upper": 1.931277560274272e-13,
+          "transferred_resolvent_upper": 121.74018822512589
+        },
+        "cutoff_weighted_error_upper": 1.4834473437906822e-10,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 121.73875351289666,
+          "neumann_product_upper": 1.178501025678711e-05,
+          "perturbation_upper": 9.680574111955759e-08,
+          "transferred_resolvent_upper": 121.74018822226357
+        },
+        "full_weighted_operator_error_upper": 0.0030394982366368176,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95503061584434,
+          "neumann_product_upper": 0.07214663876588454,
+          "perturbation_upper": 0.0006387200142617147,
+          "transferred_resolvent_upper": 121.73801953533435
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 121.73801953533435,
+          "neumann_product_upper": 6.029120071417389e-06,
+          "perturbation_upper": 4.952536680348608e-08,
+          "transferred_resolvent_upper": 121.73875351289666
+        },
+        "midpoint_weighted_error_upper": 3.8040155784551303e-05,
+        "normalization_weighted_error_upper": 7.435727006684398e-05
+      },
+      "perron_contour_chain": {
+        "adaptive_resolvent_upper": 85.76045787237311,
+        "adaptive_weighted_operator_error_upper": 0.002160250761747774,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 524288,
+          "coarse_to_detail": 0.000406450513398675,
+          "detail_block": 3.022682165116278e-08,
+          "detail_to_coarse": 0.00023226950086303947
+        },
+        "complement_detail_resolvent_upper": 1.0526316124396933,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.0018262687749894095,
+          "bottom_right_upper": 4.4651215821598783e-07,
+          "coarse_dimension": 524288,
+          "top_left_difference_upper": 3.63779750968038e-05,
+          "top_right_upper": 0.0010436363661139555,
+          "weighted_term_difference_upper": 0.002103748573290572
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 85.76045787095265,
+          "neumann_product_upper": 1.6562724784501797e-11,
+          "perturbation_upper": 1.931277560274272e-13,
+          "transferred_resolvent_upper": 85.76045787237311
+        },
+        "cutoff_weighted_error_upper": 7.457241020948131e-11,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 85.7597458845647,
+          "neumann_product_upper": 8.302035758580217e-06,
+          "perturbation_upper": 9.680574111955759e-08,
+          "transferred_resolvent_upper": 85.76045787095265
+        },
+        "full_weighted_operator_error_upper": 0.002160250687175363,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30575843422578,
+          "neumann_product_upper": 0.05193161518666824,
+          "perturbation_upper": 0.0006387200142617147,
+          "transferred_resolvent_upper": 85.75938164021191
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 85.75938164021191,
+          "neumann_product_upper": 4.247264832571647e-06,
+          "perturbation_upper": 4.952536680348608e-08,
+          "transferred_resolvent_upper": 85.7597458845647
+        },
+        "midpoint_weighted_error_upper": 1.9122828519154126e-05,
+        "normalization_weighted_error_upper": 3.737928536563524e-05
+      }
+    },
+    "536870912": {
+      "adaptive_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.418011358322609,
+        "approximate_square_trace_norm_upper": 237.71507424536503,
+        "bulk_hilbert_schmidt_error_upper": 7.570241523701159e-06,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 6.237501535276135e-07,
+        "parity_weighted_operator_error_upper": 2.8577280192249087e-06,
+        "perron_weighted_operator_error_upper": 2.054183134078634e-06,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 6.946491370173545e-06,
+        "square_trace_norm_error_upper": 0.0002334360822867832
+      },
+      "adaptive_support_multiple": 8.96688758404797,
+      "all_contour_gates_closed": true,
+      "determinant_disk_bounds": {
+        "0.0001": {
+          "adaptive_fredholm_determinant_error_upper": 6.654418749577138e-08,
+          "bulk_square_disk_radius": 0.0001,
+          "full_fredholm_determinant_error_upper": 6.65441868943512e-08,
+          "symmetric_det2_disk_radius": 0.01
+        },
+        "0.001": {
+          "adaptive_fredholm_determinant_error_upper": 1.020796227712315e-06,
+          "bulk_square_disk_radius": 0.001,
+          "full_fredholm_determinant_error_upper": 1.0207962184864515e-06,
+          "symmetric_det2_disk_radius": 0.03162277660168379
+        },
+        "0.01": {
+          "adaptive_fredholm_determinant_error_upper": 0.0007365943006926784,
+          "bulk_square_disk_radius": 0.01,
+          "full_fredholm_determinant_error_upper": 0.0007365942940353926,
+          "symmetric_det2_disk_radius": 0.1
+        }
+      },
+      "dimension": 536870912,
+      "even_trace_error_uppers": {
+        "1": 0.0002334360801770097,
+        "2": 0.11098255026164873,
+        "3": 39.57333776308133,
+        "4": 12542.905232650272
+      },
+      "full_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.418011358322541,
+        "approximate_square_trace_norm_upper": 237.71507424536296,
+        "bulk_hilbert_schmidt_error_upper": 7.5702414552820375e-06,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 6.237501534796724e-07,
+        "parity_weighted_operator_error_upper": 2.8577279875191454e-06,
+        "perron_weighted_operator_error_upper": 2.054183117438672e-06,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 6.946491301802364e-06,
+        "square_trace_norm_error_upper": 0.0002334360801770096
+      },
+      "markov_hilbert_schmidt_components": {
+        "adaptive_cutoff_upper": 4.79409178928557e-17,
+        "adaptive_total_upper": 6.237501535276135e-07,
+        "continuum_to_galerkin_upper": 6.237500139274558e-07,
+        "full_total_upper": 6.237501534796724e-07,
+        "galerkin_to_midpoint_upper": 4.7231069761485e-14,
+        "midpoint_to_full_normalized_upper": 9.232114652948408e-14
+      },
+      "parity_contour_chain": {
+        "adaptive_resolvent_upper": 112.96298950434225,
+        "adaptive_weighted_operator_error_upper": 2.8577280192249087e-06,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 536870912,
+          "coarse_to_detail": 3.9692432949089357e-07,
+          "detail_block": 2.88265434753063e-14,
+          "detail_to_coarse": 2.2682568443656199e-07
+        },
+        "complement_detail_resolvent_upper": 1.0677507123986787,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 2.481090868819377e-06,
+          "bottom_right_upper": 6.009035507498142e-13,
+          "coarse_dimension": 536870912,
+          "top_left_difference_upper": 6.357276160735318e-11,
+          "top_right_upper": 1.4178398567583168e-06,
+          "weighted_term_difference_upper": 2.857635694554714e-06
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.96298950434159,
+          "neumann_product_upper": 5.415549404759162e-15,
+          "perturbation_upper": 4.79409178928557e-17,
+          "transferred_resolvent_upper": 112.96298950434225
+        },
+        "cutoff_weighted_error_upper": 3.170576252743104e-14,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.96298950316347,
+          "neumann_product_upper": 1.042887270633013e-11,
+          "perturbation_upper": 9.232114652948408e-14,
+          "transferred_resolvent_upper": 112.96298950434159
+        },
+        "full_weighted_operator_error_upper": 2.8577279875191454e-06,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95503061584434,
+          "neumann_product_upper": 7.045570191980912e-05,
+          "perturbation_upper": 6.237500139274558e-07,
+          "transferred_resolvent_upper": 112.96298950256073
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.96298950256073,
+          "neumann_product_upper": 5.335362837661345e-12,
+          "perturbation_upper": 4.7231069761485e-14,
+          "transferred_resolvent_upper": 112.96298950316347
+        },
+        "midpoint_weighted_error_upper": 3.123630392479614e-11,
+        "normalization_weighted_error_upper": 6.105666050523511e-11
+      },
+      "perron_contour_chain": {
+        "adaptive_resolvent_upper": 81.30988202255513,
+        "adaptive_weighted_operator_error_upper": 2.054183134078634e-06,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 536870912,
+          "coarse_to_detail": 3.9692432949089357e-07,
+          "detail_block": 2.88265434753063e-14,
+          "detail_to_coarse": 2.2682568443656199e-07
+        },
+        "complement_detail_resolvent_upper": 1.052631578947401,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 1.7834655438298632e-06,
+          "bottom_right_upper": 4.2582715015604904e-13,
+          "coarse_dimension": 536870912,
+          "top_left_difference_upper": 3.2892757573755334e-11,
+          "top_right_upper": 1.0191761063553427e-06,
+          "weighted_term_difference_upper": 2.0541346798289798e-06
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30988202255477,
+          "neumann_product_upper": 3.898070377921084e-15,
+          "perturbation_upper": 4.79409178928557e-17,
+          "transferred_resolvent_upper": 81.30988202255513
+        },
+        "cutoff_weighted_error_upper": 1.6639961233579972e-14,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30988202194438,
+          "neumann_product_upper": 7.506621532442993e-12,
+          "perturbation_upper": 9.232114652948408e-14,
+          "transferred_resolvent_upper": 81.30988202255477
+        },
+        "full_weighted_operator_error_upper": 2.054183117438672e-06,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30575843422578,
+          "neumann_product_upper": 5.07144679557307e-05,
+          "perturbation_upper": 6.237500139274558e-07,
+          "transferred_resolvent_upper": 81.30988202163208
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30988202163208,
+          "neumann_product_upper": 3.840352710061821e-12,
+          "perturbation_upper": 4.7231069761485e-14,
+          "transferred_resolvent_upper": 81.30988202194438
+        },
+        "midpoint_weighted_error_upper": 1.6393577853333515e-11,
+        "normalization_weighted_error_upper": 3.2044031837522755e-11
+      }
+    },
+    "65536": {
+      "adaptive_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.54614208167854,
+        "approximate_square_trace_norm_upper": 241.6825336237364,
+        "bulk_hilbert_schmidt_error_upper": 0.12813829359745443,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 0.005119125317992208,
+        "parity_weighted_operator_error_upper": 0.060217101336472394,
+        "perron_weighted_operator_error_upper": 0.026770586769864296,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.12301916827946219,
+        "square_trace_norm_error_upper": 3.9676928144536663
+      },
+      "adaptive_support_multiple": 8.0,
+      "all_contour_gates_closed": true,
+      "determinant_disk_bounds": {
+        "0.0001": {
+          "adaptive_fredholm_determinant_error_upper": 0.0011314946017071622,
+          "bulk_square_disk_radius": 0.0001,
+          "full_fredholm_determinant_error_upper": 0.0011314945900777417,
+          "symmetric_det2_disk_radius": 0.01
+        },
+        "0.001": {
+          "adaptive_fredholm_determinant_error_upper": 0.01741935849805386,
+          "bulk_square_disk_radius": 0.001,
+          "full_fredholm_determinant_error_upper": 0.017419358318379877,
+          "symmetric_det2_disk_radius": 0.03162277660168379
+        },
+        "0.01": {
+          "adaptive_fredholm_determinant_error_upper": 13.02653367223346,
+          "bulk_square_disk_radius": 0.01,
+          "full_fredholm_determinant_error_upper": 13.026533533090722,
+          "symmetric_det2_disk_radius": 0.1
+        }
+      },
+      "dimension": 65536,
+      "even_trace_error_uppers": {
+        "1": 3.9676927736901786,
+        "2": 1917.8440840485914,
+        "3": 695264.1258749696,
+        "4": 224044260.60108486
+      },
+      "full_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.546142080367492,
+        "approximate_square_trace_norm_upper": 241.68253358297295,
+        "bulk_hilbert_schmidt_error_upper": 0.12813829228640602,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 0.005119125317796473,
+        "parity_weighted_operator_error_upper": 0.06021710060888367,
+        "perron_weighted_operator_error_upper": 0.026770586570540194,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.12301916696860951,
+        "square_trace_norm_error_upper": 3.967692773690177
+      },
+      "markov_hilbert_schmidt_components": {
+        "adaptive_cutoff_upper": 1.9573328852039852e-13,
+        "adaptive_total_upper": 0.005119125317992208,
+        "continuum_to_galerkin_upper": 0.005109760114093718,
+        "full_total_upper": 0.005119125317796473,
+        "galerkin_to_midpoint_upper": 3.169625883606715e-06,
+        "midpoint_to_full_normalized_upper": 6.19557781914536e-06
+      },
+      "parity_contour_chain": {
+        "adaptive_resolvent_upper": 267.81252084743886,
+        "adaptive_weighted_operator_error_upper": 0.060217101336472394,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 65536,
+          "coarse_to_detail": 0.0032516041071894,
+          "detail_block": 1.934516585674418e-06,
+          "detail_to_coarse": 0.0018581560069043158
+        },
+        "complement_detail_resolvent_upper": 1.0677529179292797,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.020325138380596776,
+          "bottom_right_upper": 4.032612125798889e-05,
+          "coarse_dimension": 65536,
+          "top_left_difference_upper": 0.010089244894067722,
+          "top_right_upper": 0.011614968098226567,
+          "weighted_term_difference_upper": 0.025491434303345058
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 267.8125208334001,
+          "neumann_product_upper": 5.241982540965915e-11,
+          "perturbation_upper": 1.9573328852039852e-13,
+          "transferred_resolvent_upper": 267.81252084743886
+        },
+        "cutoff_weighted_error_upper": 7.275887086007192e-10,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 267.3688881197896,
+          "neumann_product_upper": 0.0016565047527645261,
+          "perturbation_upper": 6.19557781914536e-06,
+          "transferred_resolvent_upper": 267.8125208334001
+        },
+        "full_weighted_operator_error_upper": 0.06021710060888367,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95503061584434,
+          "neumann_product_upper": 0.5771731101270763,
+          "perturbation_upper": 0.005109760114093718,
+          "transferred_resolvent_upper": 267.1424957144799
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 267.1424957144799,
+          "neumann_product_upper": 0.0008467417690279116,
+          "perturbation_upper": 3.169625883606715e-06,
+          "transferred_resolvent_upper": 267.3688881197896
+        },
+        "midpoint_weighted_error_upper": 0.0117333319287509,
+        "normalization_weighted_error_upper": 0.022992334376787698
+      },
+      "perron_contour_chain": {
+        "adaptive_resolvent_upper": 139.27331158640956,
+        "adaptive_weighted_operator_error_upper": 0.026770586769864296,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 65536,
+          "coarse_to_detail": 0.0032516041071894,
+          "detail_block": 1.934516585674418e-06,
+          "detail_to_coarse": 0.0018581560069043158
+        },
+        "complement_detail_resolvent_upper": 1.052633722460416,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.014610179486248044,
+          "bottom_right_upper": 2.857689269136307e-05,
+          "coarse_dimension": 65536,
+          "top_left_difference_upper": 0.003776065647478911,
+          "top_right_upper": 0.008349107664828244,
+          "weighted_term_difference_upper": 0.017245997559785967
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 139.27331158261285,
+          "neumann_product_upper": 2.726042327919093e-11,
+          "perturbation_upper": 1.9573328852039852e-13,
+          "transferred_resolvent_upper": 139.27331158640956
+        },
+        "cutoff_weighted_error_upper": 1.9932409483035912e-10,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 139.1532392247933,
+          "neumann_product_upper": 0.0008621347224033578,
+          "perturbation_upper": 6.19557781914536e-06,
+          "transferred_resolvent_upper": 139.27331158261285
+        },
+        "full_weighted_operator_error_upper": 0.026770586570540194,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30575843422578,
+          "neumann_product_upper": 0.4154529214933459,
+          "perturbation_upper": 0.005109760114093718,
+          "transferred_resolvent_upper": 139.09189083955073
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 139.09189083955073,
+          "neumann_product_upper": 0.0004408692574048399,
+          "perturbation_upper": 3.169625883606715e-06,
+          "transferred_resolvent_upper": 139.1532392247933
+        },
+        "midpoint_weighted_error_upper": 0.0032207902252319167,
+        "normalization_weighted_error_upper": 0.006303798785522299
+      }
+    },
+    "67108864": {
+      "adaptive_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.418064361182479,
+        "approximate_square_trace_norm_upper": 237.71670864556535,
+        "bulk_hilbert_schmidt_error_upper": 6.057310139295085e-05,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 4.9900090459744845e-06,
+        "parity_weighted_operator_error_upper": 2.286700062103388e-05,
+        "perron_weighted_operator_error_upper": 1.6436180896831175e-05,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 5.558309234697636e-05,
+        "square_trace_norm_error_upper": 0.0018678362825652846
+      },
+      "adaptive_support_multiple": 8.490424416849509,
+      "all_contour_gates_closed": true,
+      "determinant_disk_bounds": {
+        "0.0001": {
+          "adaptive_fredholm_determinant_error_upper": 5.324526821020256e-07,
+          "bulk_square_disk_radius": 0.0001,
+          "full_fredholm_determinant_error_upper": 5.324526417588849e-07,
+          "symmetric_det2_disk_radius": 0.01
+        },
+        "0.001": {
+          "adaptive_fredholm_determinant_error_upper": 8.16790330282153e-06,
+          "bulk_square_disk_radius": 0.001,
+          "full_fredholm_determinant_error_upper": 8.167902683950713e-06,
+          "symmetric_det2_disk_radius": 0.03162277660168379
+        },
+        "0.01": {
+          "adaptive_fredholm_determinant_error_upper": 0.005893947644091747,
+          "bulk_square_disk_radius": 0.01,
+          "full_fredholm_determinant_error_upper": 0.005893947197507918,
+          "symmetric_det2_disk_radius": 0.1
+        }
+      },
+      "dimension": 67108864,
+      "even_trace_error_uppers": {
+        "1": 0.0018678361410421598,
+        "2": 0.8880317194750236,
+        "3": 316.6499662895083,
+        "4": 100363.98370536842
+      },
+      "full_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.418064361177889,
+        "approximate_square_trace_norm_upper": 237.71670864542378,
+        "bulk_hilbert_schmidt_error_upper": 6.057309680342773e-05,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 4.990009042761492e-06,
+        "parity_weighted_operator_error_upper": 2.2866998494022135e-05,
+        "perron_weighted_operator_error_upper": 1.6436179780831925e-05,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 5.558308776066623e-05,
+        "square_trace_norm_error_upper": 0.001867836141042159
+      },
+      "markov_hilbert_schmidt_components": {
+        "adaptive_cutoff_upper": 3.2129910316499716e-15,
+        "adaptive_total_upper": 4.9900090459744845e-06,
+        "continuum_to_galerkin_upper": 4.990000111419646e-06,
+        "full_total_upper": 4.990009042761492e-06,
+        "galerkin_to_midpoint_upper": 3.02278846473723e-12,
+        "midpoint_to_full_normalized_upper": 5.908553377896429e-12
+      },
+      "parity_contour_chain": {
+        "adaptive_resolvent_upper": 113.0187332433493,
+        "adaptive_weighted_operator_error_upper": 2.286700062103388e-05,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 67108864,
+          "coarse_to_detail": 3.1753946359271485e-06,
+          "detail_block": 1.8448987824196033e-12,
+          "detail_to_coarse": 1.8146054754924959e-06
+        },
+        "complement_detail_resolvent_upper": 1.0677507124007493,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 1.984872695059351e-05,
+          "bottom_right_upper": 3.8457827248137267e-11,
+          "coarse_dimension": 67108864,
+          "top_left_difference_upper": 4.07066449500601e-09,
+          "top_right_upper": 1.134271885408853e-05,
+          "weighted_term_difference_upper": 2.286108591326977e-05
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 113.01873324330822,
+          "neumann_product_upper": 3.631281763191899e-13,
+          "perturbation_upper": 3.2129910316499716e-15,
+          "transferred_resolvent_upper": 113.0187332433493
+        },
+        "cutoff_weighted_error_upper": 2.127011739681791e-12,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 113.01873316783686,
+          "neumann_product_upper": 6.677772176243978e-10,
+          "perturbation_upper": 5.908553377896429e-12,
+          "transferred_resolvent_upper": 113.01873324330822
+        },
+        "full_weighted_operator_error_upper": 2.2866998494022135e-05,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95503061584434,
+          "neumann_product_upper": 0.0005636456153584729,
+          "perturbation_upper": 4.990000111419646e-06,
+          "transferred_resolvent_upper": 113.01873312922604
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 113.01873312922604,
+          "neumann_product_upper": 3.4163172280223997e-10,
+          "perturbation_upper": 3.02278846473723e-12,
+          "transferred_resolvent_upper": 113.01873316783686
+        },
+        "midpoint_weighted_error_upper": 2.0010969457898582e-09,
+        "normalization_weighted_error_upper": 3.911483806561224e-09
+      },
+      "perron_contour_chain": {
+        "adaptive_resolvent_upper": 81.33875890837064,
+        "adaptive_weighted_operator_error_upper": 1.6436180896831175e-05,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 67108864,
+          "coarse_to_detail": 3.1753946359271485e-06,
+          "detail_block": 1.8448987824196033e-12,
+          "detail_to_coarse": 1.8146054754924959e-06
+        },
+        "complement_detail_resolvent_upper": 1.0526315789494132,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 1.426772435066618e-05,
+          "bottom_right_upper": 2.725293761009133e-11,
+          "coarse_dimension": 67108864,
+          "top_left_difference_upper": 2.1058841141869886e-09,
+          "top_right_upper": 8.153408850858328e-06,
+          "weighted_term_difference_upper": 1.643307757151224e-05
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.33875890834935,
+          "neumann_product_upper": 2.6134070289806577e-13,
+          "perturbation_upper": 3.2129910316499716e-15,
+          "transferred_resolvent_upper": 81.33875890837064
+        },
+        "cutoff_weighted_error_upper": 1.1159992423634202e-12,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.33875886925836,
+          "neumann_product_upper": 4.805943984708598e-10,
+          "perturbation_upper": 5.908553377896429e-12,
+          "transferred_resolvent_upper": 81.33875890834935
+        },
+        "full_weighted_operator_error_upper": 1.6436179780831925e-05,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30575843422578,
+          "neumann_product_upper": 0.0004057157436458456,
+          "perturbation_upper": 4.990000111419646e-06,
+          "transferred_resolvent_upper": 81.33875884925958
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.33875884925958,
+          "neumann_product_upper": 2.458698619855852e-10,
+          "perturbation_upper": 3.02278846473723e-12,
+          "transferred_resolvent_upper": 81.33875886925836
+        },
+        "midpoint_weighted_error_upper": 1.0499343444063268e-09,
+        "normalization_weighted_error_upper": 2.052274975271035e-09
+      }
+    },
+    "8388608": {
+      "adaptive_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.418489093777934,
+        "approximate_square_trace_norm_upper": 237.72980593494916,
+        "bulk_hilbert_schmidt_error_upper": 0.0004853056968489114,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 3.9920572690014556e-05,
+        "parity_weighted_operator_error_upper": 0.0001832704107811716,
+        "perron_weighted_operator_error_upper": 0.00013166443075119657,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.00044538512415889683,
+        "square_trace_norm_error_upper": 0.014965125666407092
+      },
+      "adaptive_support_multiple": 8.0,
+      "all_contour_gates_closed": true,
+      "determinant_disk_bounds": {
+        "0.0001": {
+          "adaptive_fredholm_determinant_error_upper": 4.266022568287203e-06,
+          "bulk_square_disk_radius": 0.0001,
+          "full_fredholm_determinant_error_upper": 4.2660201302751335e-06,
+          "symmetric_det2_disk_radius": 0.01
+        },
+        "0.001": {
+          "adaptive_fredholm_determinant_error_upper": 6.544219182343154e-05,
+          "bulk_square_disk_radius": 0.001,
+          "full_fredholm_determinant_error_upper": 6.544215442301938e-05,
+          "symmetric_det2_disk_radius": 0.03162277660168379
+        },
+        "0.01": {
+          "adaptive_fredholm_determinant_error_upper": 0.04722856121522036,
+          "bulk_square_disk_radius": 0.01,
+          "full_fredholm_determinant_error_upper": 0.0472285342203183,
+          "symmetric_det2_disk_radius": 0.1
+        }
+      },
+      "dimension": 8388608,
+      "even_trace_error_uppers": {
+        "1": 0.01496511711392014,
+        "2": 7.115308774316066,
+        "3": 2537.2814610368187,
+        "4": 804249.9057505695
+      },
+      "full_bulk": {
+        "approximate_bulk_hilbert_schmidt_upper": 15.41848909350059,
+        "approximate_square_trace_norm_upper": 237.7298059263967,
+        "bulk_hilbert_schmidt_error_upper": 0.00048530541950374137,
+        "continuum_bulk_hilbert_schmidt_upper": 15.418003788081082,
+        "continuum_square_trace_norm_upper": 237.71484080928263,
+        "markov_hilbert_schmidt_error_upper": 3.992057249723517e-05,
+        "parity_weighted_operator_error_upper": 0.00018327028214688295,
+        "perron_weighted_operator_error_upper": 0.00013166436340915038,
+        "rank_two_weighted_hilbert_schmidt_error_upper": 0.00044538484700650617,
+        "square_trace_norm_error_upper": 0.014965117113920134
+      },
+      "markov_hilbert_schmidt_components": {
+        "adaptive_cutoff_upper": 1.9277937436720106e-13,
+        "adaptive_total_upper": 3.9920572690014556e-05,
+        "continuum_to_galerkin_upper": 3.992000089135717e-05,
+        "full_total_upper": 3.992057249723517e-05,
+        "galerkin_to_midpoint_upper": 1.9345846175215392e-10,
+        "midpoint_to_full_normalized_upper": 3.781474162240678e-10
+      },
+      "parity_contour_chain": {
+        "adaptive_resolvent_upper": 113.46667790831602,
+        "adaptive_weighted_operator_error_upper": 0.0001832704107811716,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 8388608,
+          "coarse_to_detail": 2.540315708741719e-05,
+          "detail_block": 1.1807352207485461e-10,
+          "detail_to_coarse": 1.4516843803939967e-05
+        },
+        "complement_detail_resolvent_upper": 1.0677507125332606,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.0001587898156244544,
+          "bottom_right_upper": 2.461300944491696e-09,
+          "coarse_dimension": 8388608,
+          "top_left_difference_upper": 2.615550803258722e-07,
+          "top_right_upper": 9.074175084396959e-05,
+          "weighted_term_difference_upper": 0.00018288887147498986
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 113.466677905834,
+          "neumann_product_upper": 2.18740351782114e-11,
+          "perturbation_upper": 1.9277937436720106e-13,
+          "transferred_resolvent_upper": 113.46667790831602
+        },
+        "cutoff_weighted_error_upper": 1.2863428860344086e-10,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 113.46667303730456,
+          "neumann_product_upper": 4.2907129236597835e-08,
+          "perturbation_upper": 3.781474162240678e-10,
+          "transferred_resolvent_upper": 113.466677905834
+        },
+        "full_weighted_operator_error_upper": 0.00018327028214688295,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 112.95503061584434,
+          "neumann_product_upper": 0.0045091649228677835,
+          "perturbation_upper": 3.992000089135717e-05,
+          "transferred_resolvent_upper": 113.46667054658765
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 113.46667054658765,
+          "neumann_product_upper": 2.195108754408128e-08,
+          "perturbation_upper": 1.9345846175215392e-10,
+          "transferred_resolvent_upper": 113.46667303730456
+        },
+        "midpoint_weighted_error_upper": 1.2908740367668247e-07,
+        "normalization_weighted_error_upper": 2.523232682163143e-07
+      },
+      "perron_contour_chain": {
+        "adaptive_resolvent_upper": 81.57051777270382,
+        "adaptive_weighted_operator_error_upper": 0.00013166443075119657,
+        "complement_blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 8388608,
+          "coarse_to_detail": 2.540315708741719e-05,
+          "detail_block": 1.1807352207485461e-10,
+          "detail_to_coarse": 1.4516843803939967e-05
+        },
+        "complement_detail_resolvent_upper": 1.0526315790781984,
+        "complement_weighted_transport": {
+          "bottom_left_upper": 0.00011414179481929422,
+          "bottom_right_upper": 1.7441880074726338e-09,
+          "coarse_dimension": 8388608,
+          "top_left_difference_upper": 1.351605965984114e-07,
+          "top_right_upper": 6.522727081484691e-05,
+          "weighted_term_difference_upper": 0.0001314646890003256
+        },
+        "cutoff_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.57051777142108,
+          "neumann_product_upper": 1.5725113382783218e-11,
+          "perturbation_upper": 1.9277937436720106e-13,
+          "transferred_resolvent_upper": 81.57051777270382
+        },
+        "cutoff_weighted_error_upper": 6.734204613507536e-11,
+        "full_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.57051525532299,
+          "neumann_product_upper": 3.0845679583866306e-08,
+          "perturbation_upper": 3.781474162240678e-10,
+          "transferred_resolvent_upper": 81.57051777142108
+        },
+        "full_weighted_operator_error_upper": 0.00013166436340915038,
+        "galerkin_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.30575843422578,
+          "neumann_product_upper": 0.003245725949166765,
+          "perturbation_upper": 3.992000089135717e-05,
+          "transferred_resolvent_upper": 81.57051396809894
+        },
+        "midpoint_transfer": {
+          "admissible": true,
+          "base_resolvent_upper": 81.57051396809894,
+          "neumann_product_upper": 1.5780506156601012e-08,
+          "perturbation_upper": 1.9345846175215392e-10,
+          "transferred_resolvent_upper": 81.57051525532299
+        },
+        "midpoint_weighted_error_upper": 6.757926095464645e-08,
+        "normalization_weighted_error_upper": 1.3209514787003476e-07
+      }
+    }
+  },
+  "evidence_level": "analytic_hilbert_schmidt_to_trace_ideal_theorem_plus_outward_contour_and_kernel_ledgers",
+  "limitations": [
+    "The theorem is at the fixed positive noise width sigma=1/100.",
+    "The explicit trace-norm rate is first order because piecewise-constant Galerkin lifting approximates a smooth kernel in Hilbert-Schmidt norm at order n^-1.",
+    "The determinant estimate is rigorous but deliberately coarse; it certifies local uniform convergence rather than a sharp large-disk enclosure at the threshold dimension.",
+    "The fixed eight-sigma family is uniformly spectrally stable but is not claimed to converge to the full continuum bulk in Hilbert-Schmidt or trace norm.",
+    "No zero-noise limit, arithmetic trace formula, prime-power identity, zeta-zero identification, self-adjoint Hilbert-Polya operator, T log T counting law, or Riemann-hypothesis claim is made."
+  ],
+  "main_theorems": {
+    "adaptive_bulk_hilbert_schmidt_rate": "O(n^-1)",
+    "adaptive_bulk_square_trace_norm_rate": "O(n^-1)",
+    "even_trace_coefficient_convergence": "tr(B_n^(2m))->tr(B^(2m)) for every fixed m>=1",
+    "fixed_eight_sigma_continuum_convergence_claimed": false,
+    "fredholm_determinant_convergence": "det(I-w B_n^2)->det(I-w B^2) locally uniformly in w",
+    "full_bulk_hilbert_schmidt_rate": "O(n^-1)",
+    "full_bulk_square_trace_norm_rate": "O(n^-1)",
+    "symmetric_det2_identity": "det_2(I-zB) det_2(I+zB)=det(I-z^2 B^2)"
+  },
+  "scope": "intrinsic Perron/parity-deflated full and adaptive exact-real bulk two-step families at sigma=1/100",
+  "status": "rigorous_full_and_adaptive_bulk_square_trace_norm_and_determinant_convergence"
+}

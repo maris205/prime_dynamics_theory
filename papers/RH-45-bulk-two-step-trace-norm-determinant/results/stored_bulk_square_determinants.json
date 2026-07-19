@@ -1,0 +1,289 @@
+{
+  "consecutive_absolute_differences": {
+    "2048_to_4096": {
+      "0.0001": 1.0270024830560942e-09,
+      "0.0003": 3.084696720279112e-09,
+      "0.001": 1.0298204289327373e-08,
+      "0.003": 3.1008613454730494e-08,
+      "0.01": 1.046728883569159e-07
+    },
+    "4096_to_8192": {
+      "0.0001": 2.554292333201147e-10,
+      "0.0003": 7.662219747572863e-10,
+      "0.001": 2.570694546122354e-09,
+      "0.003": 7.745457386576504e-09,
+      "0.01": 2.615149163887054e-08
+    }
+  },
+  "evidence_level": "binary64_sparse_lu_diagnostic_not_validated",
+  "levels": {
+    "2048": {
+      "biorthogonality_error": 1.3266877859627811e-15,
+      "determinants": {
+        "0.0001": {
+          "bulk_trace": 0.3598968178381147,
+          "negative_shift_determinant": 0.9964469094909258,
+          "negative_shift_log_absolute_value": -0.003559417727055131,
+          "one_step_parameter": 0.01,
+          "positive_shift_determinant": 1.0036452362571335,
+          "positive_shift_log_absolute_value": 0.003638608485095161,
+          "seconds": 1.1659350239206105,
+          "square_determinant": 1.0000791938937108,
+          "square_parameter": 0.0001,
+          "symmetric_det2_identity_error": 0.0,
+          "symmetric_det2_product": 1.0000791938937108
+        },
+        "0.0003": {
+          "bulk_trace": 0.3598968178381147,
+          "negative_shift_determinant": 0.9939036233539869,
+          "negative_shift_log_absolute_value": -0.0061150354227236725,
+          "one_step_parameter": 0.017320508075688773,
+          "positive_shift_determinant": 1.0063728436657204,
+          "positive_shift_log_absolute_value": 0.006352622960984171,
+          "seconds": 1.1561768490355462,
+          "square_determinant": 1.000237615764415,
+          "square_parameter": 0.0003,
+          "symmetric_det2_identity_error": 2.220446049250313e-16,
+          "symmetric_det2_product": 1.0002376157644148
+        },
+        "0.001": {
+          "bulk_trace": 0.3598968178381147,
+          "negative_shift_determinant": 0.9890738397025202,
+          "negative_shift_log_absolute_value": -0.010986289173191065,
+          "one_step_parameter": 0.03162277660168379,
+          "positive_shift_determinant": 1.0118480644928896,
+          "positive_shift_log_absolute_value": 0.01177842569374498,
+          "seconds": 1.1565821770345792,
+          "square_determinant": 1.0007924503435457,
+          "square_parameter": 0.001,
+          "symmetric_det2_identity_error": 0.0,
+          "symmetric_det2_product": 1.0007924503435457
+        },
+        "0.003": {
+          "bulk_trace": 0.3598968178381147,
+          "negative_shift_determinant": 0.9816398634015358,
+          "negative_shift_log_absolute_value": -0.018530775772763648,
+          "one_step_parameter": 0.05477225575051661,
+          "positive_shift_determinant": 1.0211288294398122,
+          "positive_shift_log_absolute_value": 0.02090871088935324,
+          "seconds": 1.1560699050314724,
+          "square_determinant": 1.0023807646466674,
+          "square_parameter": 0.003,
+          "symmetric_det2_identity_error": 2.220446049250313e-16,
+          "symmetric_det2_product": 1.0023807646466671
+        },
+        "0.01": {
+          "bulk_trace": 0.3598968178381147,
+          "negative_shift_determinant": 0.9684460462467094,
+          "negative_shift_log_absolute_value": -0.03206250626021785,
+          "one_step_parameter": 0.1,
+          "positive_shift_determinant": 1.0408177771977725,
+          "positive_shift_log_absolute_value": 0.04000672839097982,
+          "seconds": 1.1568828269373626,
+          "square_determinant": 1.0079758611904712,
+          "square_parameter": 0.01,
+          "symmetric_det2_identity_error": 0.0,
+          "symmetric_det2_product": 1.0079758611904712
+        }
+      },
+      "dimension": 2048,
+      "matrix_density": 0.1475372314453125,
+      "matrix_nonzeros": 618816,
+      "maximum_relative_left_residual": 2.9898679979006823e-15,
+      "maximum_relative_right_residual": 2.934584077729819e-15,
+      "peripheral_values": [
+        1.0000000000000024,
+        -0.9865534036028739
+      ],
+      "snapshot": {
+        "path": "papers/RH-36-nested-grid-physical-count/results/nested_grid_snapshot_sigma_1e-02.npz",
+        "sha256": "a1e2a6a3a32a6f7e68ec17b294bdb41d404c0dbeca1f5cb89aefe48ab4390d81"
+      },
+      "total_seconds": 5.792293734033592
+    },
+    "4096": {
+      "biorthogonality_error": 4.299657432981329e-15,
+      "determinants": {
+        "0.0001": {
+          "bulk_trace": 0.35989160698105327,
+          "negative_shift_determinant": 0.9964469609077587,
+          "negative_shift_log_absolute_value": -0.0035593661268835224,
+          "one_step_parameter": 0.01,
+          "positive_shift_determinant": 1.003645183438204,
+          "positive_shift_log_absolute_value": 0.003638555858002404,
+          "seconds": 8.857582377037033,
+          "square_determinant": 1.0000791928667083,
+          "square_parameter": 0.0001,
+          "symmetric_det2_identity_error": 0.0,
+          "symmetric_det2_product": 1.0000791928667083
+        },
+        "0.0003": {
+          "bulk_trace": 0.35989160698105327,
+          "negative_shift_determinant": 0.9939037115520684,
+          "negative_shift_log_absolute_value": -0.006114946683659335,
+          "one_step_parameter": 0.017320508075688773,
+          "positive_shift_determinant": 1.0063727512575227,
+          "positive_shift_log_absolute_value": 0.006352531137955909,
+          "seconds": 8.820953017915599,
+          "square_determinant": 1.0002376126797183,
+          "square_parameter": 0.0003,
+          "symmetric_det2_identity_error": 0.0,
+          "symmetric_det2_product": 1.0002376126797183
+        },
+        "0.001": {
+          "bulk_trace": 0.35989160698105327,
+          "negative_shift_determinant": 0.9890739977538414,
+          "negative_shift_log_absolute_value": -0.010986129375911735,
+          "one_step_parameter": 0.03162277660168379,
+          "positive_shift_determinant": 1.0118478923903695,
+          "positive_shift_log_absolute_value": 0.011778255606415777,
+          "seconds": 8.836931179044768,
+          "square_determinant": 1.0007924400453414,
+          "square_parameter": 0.001,
+          "symmetric_det2_identity_error": 0.0,
+          "symmetric_det2_product": 1.0007924400453414
+        },
+        "0.003": {
+          "bulk_trace": 0.35989160698105327,
+          "negative_shift_determinant": 0.9816401292087333,
+          "negative_shift_log_absolute_value": -0.018530504994068175,
+          "one_step_parameter": 0.05477225575051661,
+          "positive_shift_determinant": 1.0211285213513417,
+          "positive_shift_log_absolute_value": 0.020908409175692654,
+          "seconds": 8.835298105026595,
+          "square_determinant": 1.002380733638054,
+          "square_parameter": 0.003,
+          "symmetric_det2_identity_error": 2.220446049250313e-16,
+          "symmetric_det2_product": 1.0023807336380541
+        },
+        "0.01": {
+          "bulk_trace": 0.35989160698105327,
+          "negative_shift_determinant": 0.9684465055659602,
+          "negative_shift_log_absolute_value": -0.032062031975518455,
+          "one_step_parameter": 0.1,
+          "positive_shift_determinant": 1.040817175470649,
+          "positive_shift_log_absolute_value": 0.04000615026163709,
+          "seconds": 8.843651331961155,
+          "square_determinant": 1.0079757565175829,
+          "square_parameter": 0.01,
+          "symmetric_det2_identity_error": 2.220446049250313e-16,
+          "symmetric_det2_product": 1.007975756517583
+        }
+      },
+      "dimension": 4096,
+      "matrix_density": 0.14647716283798218,
+      "matrix_nonzeros": 2457479,
+      "maximum_relative_left_residual": 2.358572045319465e-15,
+      "maximum_relative_right_residual": 3.516430825983479e-15,
+      "peripheral_values": [
+        1.0000000000000004,
+        -0.9865481927458079
+      ],
+      "snapshot": {
+        "path": "papers/RH-36-nested-grid-physical-count/results/nested_grid_snapshot_sigma_1e-02.npz",
+        "sha256": "a1e2a6a3a32a6f7e68ec17b294bdb41d404c0dbeca1f5cb89aefe48ab4390d81"
+      },
+      "total_seconds": 44.195009718998335
+    },
+    "8192": {
+      "biorthogonality_error": 2.058938741197513e-15,
+      "determinants": {
+        "0.0001": {
+          "bulk_trace": 0.35989030501282177,
+          "negative_shift_determinant": 0.9964469737552025,
+          "negative_shift_log_absolute_value": -0.003559353233629558,
+          "one_step_parameter": 0.01,
+          "positive_shift_determinant": 1.0036451702416118,
+          "positive_shift_log_absolute_value": 0.003638542709339418,
+          "seconds": 43.192180476966314,
+          "square_determinant": 1.000079192611279,
+          "square_parameter": 0.0001,
+          "symmetric_det2_identity_error": 2.220446049250313e-16,
+          "symmetric_det2_product": 1.0000791926112789
+        },
+        "0.0003": {
+          "bulk_trace": 0.35989030501282177,
+          "negative_shift_determinant": 0.9939037335912122,
+          "negative_shift_log_absolute_value": -0.006114924509334658,
+          "one_step_parameter": 0.017320508075688773,
+          "positive_shift_determinant": 1.0063727281709651,
+          "positive_shift_log_absolute_value": 0.006352508197591285,
+          "seconds": 43.171587720979005,
+          "square_determinant": 1.0002376119134964,
+          "square_parameter": 0.0003,
+          "symmetric_det2_identity_error": 2.220446049250313e-16,
+          "symmetric_det2_product": 1.0002376119134966
+        },
+        "0.001": {
+          "bulk_trace": 0.35989030501282177,
+          "negative_shift_determinant": 0.9890740372452391,
+          "negative_shift_log_absolute_value": -0.010986089448265223,
+          "one_step_parameter": 0.03162277660168379,
+          "positive_shift_determinant": 1.0118478493905732,
+          "positive_shift_log_absolute_value": 0.01177821311011018,
+          "seconds": 43.191326193045825,
+          "square_determinant": 1.0007924374746469,
+          "square_parameter": 0.001,
+          "symmetric_det2_identity_error": 2.220446049250313e-16,
+          "symmetric_det2_product": 1.000792437474647
+        },
+        "0.003": {
+          "bulk_trace": 0.35989030501282177,
+          "negative_shift_determinant": 0.9816401956235994,
+          "negative_shift_log_absolute_value": -0.018530437337029863,
+          "one_step_parameter": 0.05477225575051661,
+          "positive_shift_determinant": 1.0211284443744904,
+          "positive_shift_log_absolute_value": 0.02090833379159292,
+          "seconds": 43.19398877490312,
+          "square_determinant": 1.0023807258925965,
+          "square_parameter": 0.003,
+          "symmetric_det2_identity_error": 2.220446049250313e-16,
+          "symmetric_det2_product": 1.0023807258925963
+        },
+        "0.01": {
+          "bulk_trace": 0.35989030501282177,
+          "negative_shift_determinant": 0.9684466203308854,
+          "negative_shift_log_absolute_value": -0.03206191347138053,
+          "one_step_parameter": 0.1,
+          "positive_shift_determinant": 1.0408170251259694,
+          "positive_shift_log_absolute_value": 0.04000600581293462,
+          "seconds": 43.19391415209975,
+          "square_determinant": 1.0079757303660912,
+          "square_parameter": 0.01,
+          "symmetric_det2_identity_error": 2.220446049250313e-16,
+          "symmetric_det2_product": 1.0079757303660914
+        }
+      },
+      "dimension": 8192,
+      "matrix_density": 0.1459464430809021,
+      "matrix_nonzeros": 9794300,
+      "maximum_relative_left_residual": 3.0355935662707885e-15,
+      "maximum_relative_right_residual": 3.1336542811046013e-15,
+      "peripheral_values": [
+        1.0000000000000013,
+        -0.9865468907775788
+      ],
+      "snapshot": {
+        "path": "papers/RH-37-iterated-dyadic-physical-count/results/second_dyadic_fine_object_sigma_1e-02.npz",
+        "sha256": "886c6985e3937b374e9f7ab40bef31d34351ad2f794d546b50011c100848544a"
+      },
+      "total_seconds": 215.9436364240246
+    }
+  },
+  "limitations": [
+    "All determinant values are floating diagnostics, not outward interval enclosures.",
+    "The three stored matrices use an eight-sigma cutoff; at these dimensions this equals the declared adaptive schedule.",
+    "Observed dyadic stabilization is not used to prove continuum determinant convergence."
+  ],
+  "maximum_symmetric_det2_identity_error": 2.220446049250313e-16,
+  "scope": "stored fixed-eight-sigma matrices, which coincide with the adaptive schedule at dimensions 2048, 4096, and 8192",
+  "sigma": 0.01,
+  "square_parameters": [
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01
+  ],
+  "status": "floating_stored_adaptive_bulk_square_determinant_pilot"
+}

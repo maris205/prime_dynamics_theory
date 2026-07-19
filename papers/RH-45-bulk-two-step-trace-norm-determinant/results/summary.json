@@ -1,0 +1,85 @@
+{
+  "continuum_bulk": {
+    "definition": "B=K-Q_+-Q_-",
+    "hilbert_schmidt_upper": 15.418003788081082,
+    "square_is_trace_class": true,
+    "square_trace_norm_upper": 237.71484080928263
+  },
+  "evidence_level": "analytic_hilbert_schmidt_to_trace_ideal_theorem_plus_outward_contour_and_kernel_ledgers",
+  "gate_summary": {
+    "all_displayed_contour_gates_closed": true,
+    "last_dimension": 1073741824,
+    "last_full_bulk_hilbert_schmidt_error_upper": 3.785070933298939e-06,
+    "last_full_determinant_disk_1e_minus_2_error_upper": 0.0003682918268863141,
+    "last_full_square_trace_norm_error_upper": 0.00011671649030227931,
+    "threshold_dimension": 65536,
+    "threshold_full_bulk_hilbert_schmidt_error_upper": 0.12813829228640602,
+    "threshold_full_square_trace_norm_error_upper": 3.967692773690177
+  },
+  "limitations": [
+    "The theorem is at the fixed positive noise width sigma=1/100.",
+    "The explicit trace-norm rate is first order because piecewise-constant Galerkin lifting approximates a smooth kernel in Hilbert-Schmidt norm at order n^-1.",
+    "The determinant estimate is rigorous but deliberately coarse; it certifies local uniform convergence rather than a sharp large-disk enclosure at the threshold dimension.",
+    "The fixed eight-sigma family is uniformly spectrally stable but is not claimed to converge to the full continuum bulk in Hilbert-Schmidt or trace norm.",
+    "No zero-noise limit, arithmetic trace formula, prime-power identity, zeta-zero identification, self-adjoint Hilbert-Polya operator, T log T counting law, or Riemann-hypothesis claim is made."
+  ],
+  "main_theorems": {
+    "adaptive_bulk_hilbert_schmidt_rate": "O(n^-1)",
+    "adaptive_bulk_square_trace_norm_rate": "O(n^-1)",
+    "even_trace_coefficient_convergence": "tr(B_n^(2m))->tr(B^(2m)) for every fixed m>=1",
+    "fixed_eight_sigma_continuum_convergence_claimed": false,
+    "fredholm_determinant_convergence": "det(I-w B_n^2)->det(I-w B^2) locally uniformly in w",
+    "full_bulk_hilbert_schmidt_rate": "O(n^-1)",
+    "full_bulk_square_trace_norm_rate": "O(n^-1)",
+    "symmetric_det2_identity": "det_2(I-zB) det_2(I+zB)=det(I-z^2 B^2)"
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "659fa0e1e709143253982263bb45dd529f74f96591e94873364916c59aa84484",
+    "README.md": "10de7d8446425989357b152f5cd91f122b0c02d3194ae65b2b5b2e4c1fe499b0",
+    "bulk-two-step-trace-norm-determinant.pdf": "c860175fa1b98b4c8b1379fdf8de4ae84d58d4a353da2c11e0679b7f919c2cc5",
+    "figures/bulk_two_step_trace_norm_determinant.pdf": "92458010e50f5b72f9d7a0b6e5b3b750a609597a55f6269b9cf61a06a3e21e86",
+    "figures/bulk_two_step_trace_norm_determinant.png": "e1dfa5f5bce3ad08592d9b47a6276fd6a8e43cccb3ee377f361237bf59cc6ecb",
+    "main.tex": "3049da36ac45191cf4c8d4d8797307b2ef071100c5c25950d4cbea75e3058fc0",
+    "pyproject.toml": "ec9b4cc14e00d70e16f216970db3016ea3d4f797cfeddae78c30e4ca202b47a0",
+    "references.bib": "c219fd5f0711e5d6d9a3030197555fdbb8e3c0fe8d4436204bbec5f3fdabeb07",
+    "requirements.txt": "b5d7d32dbb9df1b801abc1070caf6870a54af542248e03991107040e13a81dd6"
+  },
+  "result_hashes": {
+    "results/bulk_trace_norm_determinant_certificate.json": "7a9b20b8fe5322aa66ea0b3d1a8f269100562ee5715c560ed34b9edd4bbd01ca",
+    "results/dependency_manifest.json": "78099ee63ad74ed2dc5cdd2caba29aa047bbd620e2a6c3ae17d519382b826f56",
+    "results/stored_bulk_square_determinants.json": "a018244b0488504993d68769e04e267f4ebc69d2c217b195528cc7336f14593e"
+  },
+  "scope": "intrinsic Perron/parity-deflated full and adaptive exact-real bulk two-step families at sigma=1/100",
+  "status": "rigorous_full_and_adaptive_bulk_square_trace_norm_and_determinant_convergence",
+  "stored_determinant_pilot": {
+    "consecutive_absolute_differences": {
+      "2048_to_4096": {
+        "0.0001": 1.0270024830560942e-09,
+        "0.0003": 3.084696720279112e-09,
+        "0.001": 1.0298204289327373e-08,
+        "0.003": 3.1008613454730494e-08,
+        "0.01": 1.046728883569159e-07
+      },
+      "4096_to_8192": {
+        "0.0001": 2.554292333201147e-10,
+        "0.0003": 7.662219747572863e-10,
+        "0.001": 2.570694546122354e-09,
+        "0.003": 7.745457386576504e-09,
+        "0.01": 2.615149163887054e-08
+      }
+    },
+    "determinant_at_w_1e_minus_2": {
+      "2048": 1.0079758611904712,
+      "4096": 1.0079757565175829,
+      "8192": 1.0079757303660912
+    },
+    "dimensions": [
+      2048,
+      4096,
+      8192
+    ],
+    "evidence_level": "binary64_sparse_lu_diagnostic_not_validated",
+    "maximum_symmetric_det2_identity_error": 2.220446049250313e-16,
+    "status": "floating_stored_adaptive_bulk_square_determinant_pilot"
+  }
+}

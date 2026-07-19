@@ -1,0 +1,64 @@
+{
+  "external_inputs": {
+    "rh10_regularized_determinant_manuscript": {
+      "path": "papers/RH-10-parity-renormalized-long-cycle-determinant/main.tex",
+      "sha256": "dba591e47d7082d78f2f31d44f4499a5fcf5361046b39947d793816ff733d63b"
+    },
+    "rh36_stored_2048_4096_snapshot": {
+      "path": "papers/RH-36-nested-grid-physical-count/results/nested_grid_snapshot_sigma_1e-02.npz",
+      "sha256": "a1e2a6a3a32a6f7e68ec17b294bdb41d404c0dbeca1f5cb89aefe48ab4390d81"
+    },
+    "rh37_stored_8192_snapshot": {
+      "path": "papers/RH-37-iterated-dyadic-physical-count/results/second_dyadic_fine_object_sigma_1e-02.npz",
+      "sha256": "886c6985e3937b374e9f7ab40bef31d34351ad2f794d546b50011c100848544a"
+    },
+    "rh39_cutoff_certificate": {
+      "path": "papers/RH-39-uniform-gaussian-cutoff-bridge/results/uniform_gaussian_cutoff_bridge_certificate.json",
+      "sha256": "8d448588fda190a748df64a1d8fa35d050de9dcbfa3ee2a5203ae10b969ab136"
+    },
+    "rh42_hilbert_source": {
+      "path": "papers/RH-42-uniform-euclidean-parity-contour/src/euclidean_contour/hilbert.py",
+      "sha256": "50989ae9eb32faa90caa3bf8ce19405606175e65cf01b74900463c18c225b1e1"
+    },
+    "rh42_uniform_euclidean_certificate": {
+      "path": "papers/RH-42-uniform-euclidean-parity-contour/results/uniform_euclidean_parity_certificate.json",
+      "sha256": "1792a0d7ad3ac7a8f4f636c566edb3c258839f72c7b64d801c30eb84e0b9f0eb"
+    },
+    "rh43_parity_kernel_certificate": {
+      "path": "papers/RH-43-validated-weighted-riesz-parity-kernel/results/validated_weighted_parity_kernel.json",
+      "sha256": "5653094bea977aa6586291f48a0d068dacbfecfda80e7a0122a19af53bf64a2a"
+    },
+    "rh43_weighted_schur_source": {
+      "path": "papers/RH-43-validated-weighted-riesz-parity-kernel/src/weighted_kernel/bounds.py",
+      "sha256": "24d594f5c56caffda9103cbb520aece698698bb9209b335690ffb95ee9607ac3"
+    },
+    "rh44_rank_two_certificate": {
+      "path": "papers/RH-44-validated-rank-two-peripheral-complement/results/validated_rank_two_peripheral_complement.json",
+      "sha256": "6b5de19bdbbb09213453fdb94afb60ce126639fa3583e2e8082b8078248067fb"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "9b758f63527da04190e02fe7acf113e21e069493b5e80ac5324e39e29e3023f5",
+    "experiments/build_trace_norm_certificate.py": "6fb15f84dc7f60b15ae665121c54918b6f50da698596690f74309662687bb941",
+    "experiments/make_figures.py": "d2aa410606207944163fba647c5d4aa66d7d1cccb1c5cfff80b0b3cbe551cf07",
+    "experiments/run_stored_determinant_pilot.py": "219b8ccf69581c603b3ecc84a529e4e9bdef56726d08442bc64fc12f9b192790",
+    "experiments/verify_archive.py": "3de0519d2d40df4005dc456e080a33479fafe7cff985e1447c0c786393a63489",
+    "src/bulk_trace/__init__.py": "6ff20dd9e7665e12d102fbcd8616db843c10ef2db9f8e8a337fe510b9497f08a",
+    "src/bulk_trace/bounds.py": "fc33d9c236b627213960c2a0754480bd976caa6df7eedf724887729f8871f410",
+    "src/bulk_trace/determinants.py": "2951a1e714081f1a445e88823f4eb90c5f8abb5bf9cffa3f251e5ec6d40fb7e4",
+    "tests/test_archived_results.py": "3c036d913dfa05914c97917ed369e9a69e34a777149513f24cf2c419113b9648",
+    "tests/test_bulk_trace.py": "2fbe7ffa5fb9def4e58b85fdb42a32c81de0ca9a1ad2648bfc40dac9af3fd17f"
+  },
+  "publication_artifacts": {
+    ".gitignore": "659fa0e1e709143253982263bb45dd529f74f96591e94873364916c59aa84484",
+    "README.md": "10de7d8446425989357b152f5cd91f122b0c02d3194ae65b2b5b2e4c1fe499b0",
+    "bulk-two-step-trace-norm-determinant.pdf": "c860175fa1b98b4c8b1379fdf8de4ae84d58d4a353da2c11e0679b7f919c2cc5",
+    "figures/bulk_two_step_trace_norm_determinant.pdf": "92458010e50f5b72f9d7a0b6e5b3b750a609597a55f6269b9cf61a06a3e21e86",
+    "figures/bulk_two_step_trace_norm_determinant.png": "e1dfa5f5bce3ad08592d9b47a6276fd6a8e43cccb3ee377f361237bf59cc6ecb",
+    "main.tex": "3049da36ac45191cf4c8d4d8797307b2ef071100c5c25950d4cbea75e3058fc0",
+    "pyproject.toml": "ec9b4cc14e00d70e16f216970db3016ea3d4f797cfeddae78c30e4ca202b47a0",
+    "references.bib": "c219fd5f0711e5d6d9a3030197555fdbb8e3c0fe8d4436204bbec5f3fdabeb07",
+    "requirements.txt": "b5d7d32dbb9df1b801abc1070caf6870a54af542248e03991107040e13a81dd6"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}
