@@ -1,0 +1,325 @@
+{
+  "contour_node_count": 4,
+  "evidence_level": "binary64 sparse exact-Haar Hutchinson-GMRES diagnostic not validated",
+  "fine_resolution_target": 20.48,
+  "full_product_fit": {
+    "growth_exponent_gamma": 0.1612552199241705,
+    "levels": 2,
+    "log_intercept": 0.029954105595111163,
+    "maximum_log_residual": 0.0,
+    "sigma_power": -0.1612552199241705
+  },
+  "gmres_tolerance": 2e-10,
+  "limitations": [
+    "The gains are Hutchinson estimates of Frobenius ratios, not certified operator-norm uppers for the RH-48 directional condition.",
+    "Branch reduction uses floating eigenfactors and GMRES solves with archived residual diagnostics.",
+    "The sparse matrices use an eight-sigma cutoff and exact row renormalization."
+  ],
+  "probe_count": 3,
+  "reduced_product_fit": {
+    "growth_exponent_gamma": 0.4080741756005698,
+    "levels": 2,
+    "log_intercept": -1.4803643255971166,
+    "maximum_log_residual": 4.440892098500626e-16,
+    "sigma_power": -0.4080741756005698
+  },
+  "rows": [
+    {
+      "branches": {
+        "parity": {
+          "branch": "parity",
+          "coarse_eigenvalue": -0.9865401332308312,
+          "contour_center": -0.9865534036028739,
+          "contour_radius": 0.05,
+          "elapsed_seconds": 0.9174695189576596,
+          "fine_eigenvalue": -0.9865534036028739,
+          "maximum_branch_leakage": 8.066464163292153e-17,
+          "maximum_full_gain_product": 2.1653063156279497,
+          "maximum_gmres_iterations": 22,
+          "maximum_left_full_frobenius_gain": 1.3744782740868093,
+          "maximum_left_reduced_frobenius_gain": 1.1952032481268704,
+          "maximum_reduced_gain_product": 1.4901647756838752,
+          "maximum_relative_residual": 5.219020421298349e-11,
+          "maximum_right_full_frobenius_gain": 1.5753659817333667,
+          "maximum_right_reduced_frobenius_gain": 1.2467877559898455,
+          "median_gmres_iterations": 21.5,
+          "node_count": 4,
+          "nodes": [
+            {
+              "full_gain_product": 2.1653063156279497,
+              "left_full_frobenius_gain": 1.3744782740868093,
+              "left_reduced_frobenius_gain": 1.1952032481268704,
+              "node": 0,
+              "reduced_gain_product": 1.4901647756838752,
+              "right_full_frobenius_gain": 1.5753659817333667,
+              "right_reduced_frobenius_gain": 1.2467877559898455,
+              "z_imag": 0.0,
+              "z_real": -0.9365534036028739
+            },
+            {
+              "full_gain_product": 1.8148390736675912,
+              "left_full_frobenius_gain": 1.3014197805801604,
+              "left_reduced_frobenius_gain": 1.1138130080938158,
+              "node": 1,
+              "reduced_gain_product": 1.269352153711401,
+              "right_full_frobenius_gain": 1.3945070612485646,
+              "right_reduced_frobenius_gain": 1.1396456537024788,
+              "z_imag": 0.05,
+              "z_real": -0.9865534036028739
+            },
+            {
+              "full_gain_product": 1.5670427087499978,
+              "left_full_frobenius_gain": 1.2445468986884634,
+              "left_reduced_frobenius_gain": 1.0471527419472038,
+              "node": 2,
+              "reduced_gain_product": 1.1102466362325425,
+              "right_full_frobenius_gain": 1.2591270850470875,
+              "right_reduced_frobenius_gain": 1.0602528091250703,
+              "z_imag": 6.123233995736766e-18,
+              "z_real": -1.0365534036028738
+            },
+            {
+              "full_gain_product": 1.8148390736675912,
+              "left_full_frobenius_gain": 1.3014197805801604,
+              "left_reduced_frobenius_gain": 1.1138130080938158,
+              "node": 3,
+              "reduced_gain_product": 1.269352153711401,
+              "right_full_frobenius_gain": 1.3945070612485646,
+              "right_reduced_frobenius_gain": 1.1396456537024788,
+              "z_imag": -0.05,
+              "z_real": -0.9865534036028739
+            }
+          ],
+          "probe_count": 3
+        },
+        "perron": {
+          "branch": "perron",
+          "coarse_eigenvalue": 1.0,
+          "contour_center": 1.0,
+          "contour_radius": 0.05,
+          "elapsed_seconds": 0.9195714719826356,
+          "fine_eigenvalue": 1.0,
+          "maximum_branch_leakage": 1.597647594850104e-16,
+          "maximum_full_gain_product": 1.7808446746618598,
+          "maximum_gmres_iterations": 22,
+          "maximum_left_full_frobenius_gain": 1.559364166143864,
+          "maximum_left_reduced_frobenius_gain": 1.2469515908144224,
+          "maximum_reduced_gain_product": 1.4240593366682066,
+          "maximum_relative_residual": 1.0321959688014782e-10,
+          "maximum_right_full_frobenius_gain": 1.1420325754090481,
+          "maximum_right_reduced_frobenius_gain": 1.14203257540905,
+          "median_gmres_iterations": 21.5,
+          "node_count": 4,
+          "nodes": [
+            {
+              "full_gain_product": 1.4998795629059398,
+              "left_full_frobenius_gain": 1.4991563020875625,
+              "left_reduced_frobenius_gain": 1.0943577370977182,
+              "node": 0,
+              "reduced_gain_product": 1.0948857047762224,
+              "right_full_frobenius_gain": 1.0004824452376115,
+              "right_reduced_frobenius_gain": 1.0004824452376098,
+              "z_imag": 0.0,
+              "z_real": 1.05
+            },
+            {
+              "full_gain_product": 1.6220860390166991,
+              "left_full_frobenius_gain": 1.5261078127390253,
+              "left_reduced_frobenius_gain": 1.1637097690156584,
+              "node": 1,
+              "reduced_gain_product": 1.2368964722091007,
+              "right_full_frobenius_gain": 1.0628908557288717,
+              "right_reduced_frobenius_gain": 1.0628908557288717,
+              "z_imag": 0.05,
+              "z_real": 1.0
+            },
+            {
+              "full_gain_product": 1.7808446746618598,
+              "left_full_frobenius_gain": 1.559364166143864,
+              "left_reduced_frobenius_gain": 1.2469515908144224,
+              "node": 2,
+              "reduced_gain_product": 1.4240593366682066,
+              "right_full_frobenius_gain": 1.1420325754090481,
+              "right_reduced_frobenius_gain": 1.14203257540905,
+              "z_imag": 6.123233995736766e-18,
+              "z_real": 0.95
+            },
+            {
+              "full_gain_product": 1.6220860390166991,
+              "left_full_frobenius_gain": 1.5261078127390253,
+              "left_reduced_frobenius_gain": 1.1637097690156584,
+              "node": 3,
+              "reduced_gain_product": 1.2368964722091007,
+              "right_full_frobenius_gain": 1.0628908557288717,
+              "right_reduced_frobenius_gain": 1.0628908557288717,
+              "z_imag": -0.05,
+              "z_real": 1.0
+            }
+          ],
+          "probe_count": 3
+        }
+      },
+      "build_and_eigenfactor_seconds": 0.18086683901492506,
+      "coarse_dimension": 1024,
+      "coarse_dimension_times_sigma": 10.24,
+      "coarse_nonzeros": 155874,
+      "fine_dimension": 2048,
+      "fine_dimension_times_sigma": 20.48,
+      "fine_nonzeros": 618816,
+      "maximum_full_gain_product": 2.1653063156279497,
+      "maximum_reduced_gain_product": 1.4901647756838752,
+      "sigma": 0.01
+    },
+    {
+      "branches": {
+        "parity": {
+          "branch": "parity",
+          "coarse_eigenvalue": -0.9922004194467087,
+          "contour_center": -0.9922077933553424,
+          "contour_radius": 0.05,
+          "elapsed_seconds": 3.4946578439557925,
+          "fine_eigenvalue": -0.9922077933553424,
+          "maximum_branch_leakage": 5.724587470723463e-17,
+          "maximum_full_gain_product": 2.2837595742742125,
+          "maximum_gmres_iterations": 28,
+          "maximum_left_full_frobenius_gain": 1.6356923905776426,
+          "maximum_left_reduced_frobenius_gain": 1.4558902635265307,
+          "maximum_reduced_gain_product": 2.00316739245275,
+          "maximum_relative_residual": 1.9929379805402893e-10,
+          "maximum_right_full_frobenius_gain": 1.396203581694053,
+          "maximum_right_reduced_frobenius_gain": 1.375905480403844,
+          "median_gmres_iterations": 26.0,
+          "node_count": 4,
+          "nodes": [
+            {
+              "full_gain_product": 2.2837595742742125,
+              "left_full_frobenius_gain": 1.6356923905776426,
+              "left_reduced_frobenius_gain": 1.4558902635265307,
+              "node": 0,
+              "reduced_gain_product": 2.00316739245275,
+              "right_full_frobenius_gain": 1.396203581694053,
+              "right_reduced_frobenius_gain": 1.375905480403844,
+              "z_imag": 0.0,
+              "z_real": -0.9422077933553423
+            },
+            {
+              "full_gain_product": 1.8558646638457523,
+              "left_full_frobenius_gain": 1.510937650122036,
+              "left_reduced_frobenius_gain": 1.32266356823371,
+              "node": 1,
+              "reduced_gain_product": 1.6108635248599605,
+              "right_full_frobenius_gain": 1.2282867289036428,
+              "right_reduced_frobenius_gain": 1.2178936227986636,
+              "z_imag": 0.05,
+              "z_real": -0.9922077933553424
+            },
+            {
+              "full_gain_product": 1.5888371496763105,
+              "left_full_frobenius_gain": 1.4211294836489725,
+              "left_reduced_frobenius_gain": 1.2196257375233073,
+              "node": 2,
+              "reduced_gain_product": 1.3573985029132758,
+              "right_full_frobenius_gain": 1.1180101236072608,
+              "right_reduced_frobenius_gain": 1.1129631502117556,
+              "z_imag": 6.123233995736766e-18,
+              "z_real": -1.0422077933553424
+            },
+            {
+              "full_gain_product": 1.8558646638457523,
+              "left_full_frobenius_gain": 1.510937650122036,
+              "left_reduced_frobenius_gain": 1.32266356823371,
+              "node": 3,
+              "reduced_gain_product": 1.6108635248599605,
+              "right_full_frobenius_gain": 1.2282867289036428,
+              "right_reduced_frobenius_gain": 1.2178936227986636,
+              "z_imag": -0.05,
+              "z_real": -0.9922077933553424
+            }
+          ],
+          "probe_count": 3
+        },
+        "perron": {
+          "branch": "perron",
+          "coarse_eigenvalue": 1.0,
+          "contour_center": 1.0,
+          "contour_radius": 0.05,
+          "elapsed_seconds": 3.5500227720476687,
+          "fine_eigenvalue": 1.0,
+          "maximum_branch_leakage": 1.0928757898653885e-16,
+          "maximum_full_gain_product": 2.5100897267343827,
+          "maximum_gmres_iterations": 28,
+          "maximum_left_full_frobenius_gain": 1.6771338256023571,
+          "maximum_left_reduced_frobenius_gain": 1.4471108718942607,
+          "maximum_reduced_gain_product": 2.165824859970742,
+          "maximum_relative_residual": 1.8827259784518242e-10,
+          "maximum_right_full_frobenius_gain": 1.4966544043274914,
+          "maximum_right_reduced_frobenius_gain": 1.4966544043274916,
+          "median_gmres_iterations": 26.0,
+          "node_count": 4,
+          "nodes": [
+            {
+              "full_gain_product": 1.8378699076694178,
+              "left_full_frobenius_gain": 1.5220370619740367,
+              "left_reduced_frobenius_gain": 1.1986753845232765,
+              "node": 0,
+              "reduced_gain_product": 1.4474085246138226,
+              "right_full_frobenius_gain": 1.207506672200055,
+              "right_reduced_frobenius_gain": 1.2075066722000547,
+              "z_imag": 0.0,
+              "z_real": 1.05
+            },
+            {
+              "full_gain_product": 2.1046105332404283,
+              "left_full_frobenius_gain": 1.5868090200398688,
+              "left_reduced_frobenius_gain": 1.306381739807332,
+              "node": 1,
+              "reduced_gain_product": 1.732675284365593,
+              "right_full_frobenius_gain": 1.3263162149075443,
+              "right_reduced_frobenius_gain": 1.3263162149075443,
+              "z_imag": 0.05,
+              "z_real": 1.0
+            },
+            {
+              "full_gain_product": 2.5100897267343827,
+              "left_full_frobenius_gain": 1.6771338256023571,
+              "left_reduced_frobenius_gain": 1.4471108718942607,
+              "node": 2,
+              "reduced_gain_product": 2.165824859970742,
+              "right_full_frobenius_gain": 1.4966544043274914,
+              "right_reduced_frobenius_gain": 1.4966544043274916,
+              "z_imag": 6.123233995736766e-18,
+              "z_real": 0.95
+            },
+            {
+              "full_gain_product": 2.1046105332404283,
+              "left_full_frobenius_gain": 1.5868090200398688,
+              "left_reduced_frobenius_gain": 1.306381739807332,
+              "node": 3,
+              "reduced_gain_product": 1.732675284365593,
+              "right_full_frobenius_gain": 1.3263162149075443,
+              "right_reduced_frobenius_gain": 1.3263162149075443,
+              "z_imag": -0.05,
+              "z_real": 1.0
+            }
+          ],
+          "probe_count": 3
+        }
+      },
+      "build_and_eigenfactor_seconds": 0.4326644459506497,
+      "coarse_dimension": 2560,
+      "coarse_dimension_times_sigma": 10.24,
+      "coarse_nonzeros": 405972,
+      "fine_dimension": 5120,
+      "fine_dimension_times_sigma": 20.48,
+      "fine_nonzeros": 1611611,
+      "maximum_full_gain_product": 2.5100897267343827,
+      "maximum_reduced_gain_product": 2.165824859970742,
+      "sigma": 0.004
+    }
+  ],
+  "source": {
+    "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+    "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+  },
+  "status": "floating_residue_deflated_directional_resolvent_audit"
+}

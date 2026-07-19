@@ -1,0 +1,209 @@
+{
+  "critical_endpoint_coupling_theorem": {
+    "coupling": "B=E_n K_sigma (E_2n-E_n)",
+    "hilbert_schmidt_upper": "||B||_S2=O(h sigma^(-3/2))",
+    "mechanism": "a target Haar packet at width sigma is amplified on the source critical layer x=sqrt(sigma) xi",
+    "mesh": "h=1/n with h/sigma -> 0",
+    "operator_lower": "||B|| >= c h sigma^(-5/4)",
+    "sqrt_stable_rank_upper": "||B||_S2/||B||=O(sigma^(-1/4))",
+    "stored_sparse_cutoff_family_proved_by_this_theorem": false
+  },
+  "evidence_level": {
+    "analytic": "exact rank-one residue deflation, exact stable-rank norm-placement inequality, endpoint packet lower theorem for the canonical cell-average coupling, and residual a-posteriori gain certificate",
+    "numerical": "binary64 sparse exact-Haar Frobenius sums, Hutchinson-GMRES directional estimates, and power-iteration operator candidates; not interval validated"
+  },
+  "exact_residue_deflation": {
+    "adjoint_identity": "R_circ(z)^*=Q^*(conj(z)-T^*+conj(lambda)P^*)^-1",
+    "branch_pole_removed_exactly": true,
+    "identity": "R_circ(z)=(z-T)^-1-P/(z-lambda)=(z-T+lambda P)^-1 Q",
+    "projector": "P=r tensor l*, l*r=1, Q=I-P"
+  },
+  "floating_five_scale_audit": {
+    "finest_row": {
+      "B_hilbert_schmidt_norm": 0.4111328975418879,
+      "B_operator_candidate": 0.06753445376163313,
+      "B_sqrt_stable_rank_candidate": 6.087750394680113,
+      "C_hilbert_schmidt_norm": 0.7299667860075176,
+      "C_operator_candidate": 0.03292984060369248,
+      "C_sqrt_stable_rank_candidate": 22.16733432732332,
+      "critical_half_power_normalized_full_candidate": 0.5394736735101802,
+      "direct_mixed_gain_maximum_branch_candidate": 4.145722882435056,
+      "direct_mixed_gain_sum_candidate": 8.128695697682145,
+      "fine_dimension": 40960,
+      "full_hilbert_schmidt_gain_sum": 3.9630396380720097,
+      "maximum_branch_leakage": 2.984279490192421e-13,
+      "maximum_gmres_iterations": 41,
+      "maximum_gmres_relative_residual": 1.877377960154433e-10,
+      "reduced_hilbert_schmidt_gain_sum": 3.9176075208428607,
+      "selected_sqrt_stable_rank_candidate": 6.087750394680113,
+      "sigma": 0.0005,
+      "stable_rank_transferred_full_candidate": 24.12599612080581,
+      "stable_rank_transferred_reduced_candidate": 23.849416731212905
+    },
+    "fits": {
+      "B_hilbert_schmidt_norm": {
+        "growth_exponent": 0.4952635098895741,
+        "levels": 5,
+        "log_intercept": -4.654502807099621,
+        "maximum_log_residual": 0.0013486415190926415,
+        "sigma_power": -0.4952635098895741
+      },
+      "B_operator_candidate": {
+        "growth_exponent": 0.2500047171393897,
+        "levels": 5,
+        "log_intercept": -4.595376734223511,
+        "maximum_log_residual": 2.6489423881059793e-06,
+        "sigma_power": -0.2500047171393897
+      },
+      "B_sqrt_stable_rank_candidate": {
+        "growth_exponent": 0.24525879275018445,
+        "levels": 5,
+        "log_intercept": -0.0591260728761113,
+        "maximum_log_residual": 0.001351290461482746,
+        "sigma_power": -0.24525879275018445
+      },
+      "C_hilbert_schmidt_norm": {
+        "growth_exponent": 0.49998887631490807,
+        "levels": 5,
+        "log_intercept": -4.115129250434992,
+        "maximum_log_residual": 8.64466378747153e-06,
+        "sigma_power": -0.49998887631490807
+      },
+      "C_operator_candidate": {
+        "growth_exponent": 0.0003595084082375237,
+        "levels": 5,
+        "log_intercept": -3.415882766001902,
+        "maximum_log_residual": 0.0003242895376653898,
+        "sigma_power": -0.0003595084082375237
+      },
+      "C_sqrt_stable_rank_candidate": {
+        "growth_exponent": 0.4996293679066703,
+        "levels": 5,
+        "log_intercept": -0.699246484433088,
+        "maximum_log_residual": 0.0003329342014521952,
+        "sigma_power": -0.4996293679066703
+      },
+      "direct_mixed_gain_sum_candidate": {
+        "growth_exponent": 0.19161771244183176,
+        "levels": 5,
+        "log_intercept": 0.6931314006664172,
+        "maximum_log_residual": 0.06189237325609831,
+        "sigma_power": -0.19161771244183176
+      },
+      "full_hilbert_schmidt_gain_sum": {
+        "growth_exponent": 0.0,
+        "levels": 5,
+        "log_intercept": 1.7096539905154806,
+        "maximum_log_residual": 0.056049581255173786,
+        "sigma_power": 0.041548827665300526
+      },
+      "reduced_hilbert_schmidt_gain_sum": {
+        "growth_exponent": 0.06786131224132402,
+        "levels": 5,
+        "log_intercept": 0.9152194422831088,
+        "maximum_log_residual": 0.11129787628952004,
+        "sigma_power": -0.06786131224132402
+      },
+      "stable_rank_transferred_full_candidate": {
+        "growth_exponent": 0.20370996508488395,
+        "levels": 5,
+        "log_intercept": 1.65052791763937,
+        "maximum_log_residual": 0.0550065119493266,
+        "sigma_power": -0.20370996508488395
+      },
+      "stable_rank_transferred_reduced_candidate": {
+        "growth_exponent": 0.31312010499150833,
+        "levels": 5,
+        "log_intercept": 0.8560933694069989,
+        "maximum_log_residual": 0.11025480698367351,
+        "sigma_power": -0.31312010499150833
+      }
+    },
+    "hutchinson_gains_are_validated_uppers": false,
+    "largest_dimension": 40960,
+    "last_three_level_fits": {
+      "direct_mixed_gain_sum_candidate": {
+        "growth_exponent": 0.11372627290655941,
+        "levels": 3,
+        "log_intercept": 1.235546936027173,
+        "maximum_log_residual": 0.009137527154550629,
+        "sigma_power": -0.11372627290655941
+      },
+      "full_hilbert_schmidt_gain_sum": {
+        "growth_exponent": 0.0,
+        "levels": 3,
+        "log_intercept": 1.7232840752801613,
+        "maximum_log_residual": 0.01548624911945451,
+        "sigma_power": 0.044538084303440376
+      },
+      "reduced_hilbert_schmidt_gain_sum": {
+        "growth_exponent": 0.0,
+        "levels": 3,
+        "log_intercept": 1.4870142929919579,
+        "maximum_log_residual": 0.009331114994308276,
+        "sigma_power": 0.015375489286306731
+      },
+      "stable_rank_transferred_full_candidate": {
+        "growth_exponent": 0.2024539270214207,
+        "levels": 3,
+        "log_intercept": 1.6520826122599843,
+        "maximum_log_residual": 0.01525045549364945,
+        "sigma_power": -0.2024539270214207
+      }
+    },
+    "noise_levels": 5,
+    "operator_candidates_are_validated_uppers": false,
+    "quarter_power_target": 0.25,
+    "rh48_critical_exponent": 0.5
+  },
+  "limitations": [
+    "The endpoint packet theorem is analytic for the canonical conditioned cell-average kernel; a uniform hard-cutoff and stored-matrix transfer is not proved here.",
+    "The five-scale Hilbert-Schmidt directional plateau is a Hutchinson-GMRES diagnostic, not a validated asymptotic upper.",
+    "Power iteration gives operator-norm lower candidates, not validated uppers; the resulting floating stable-rank ratios are diagnostics.",
+    "Only an empirically worst real contour node is used in the direct mixed operator audit; the all-node audit is the Hilbert-Schmidt one.",
+    "No arithmetic trace formula, prime-power identity, zeta-zero identification, self-adjoint Hilbert-Polya operator, T log T counting law, or Riemann-hypothesis conclusion is claimed."
+  ],
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "7f57155ca33152aa4568bac3cb53fd916b5c006a9f26ea7217ad2992bed0b2c4",
+    "figures/directional_reduced_resolvent.pdf": "c0db141a5f0d3955c55277f957c5f5fcbb0b8966c3c32ae359fcadcd222d2d37",
+    "figures/directional_reduced_resolvent.png": "a8eab9779014f76244fcefcd17bc3565d17c8b9befd7a45752579a15bcc7bb04",
+    "main.tex": "7e5e8e8952136b6971a77ca2e99421cc7ad5e71f0e8cadc11925032e8eebaed8",
+    "pyproject.toml": "7e818af725e3e7613812365ba0652eb0167aa83a1be713dd5aa88b7fe5b6e9f8",
+    "references.bib": "0276be9c3ff00c35dce8f87d272af774c7f488dd6e3b2cdb1bc88ba08c4c5ad9",
+    "requirements.txt": "b5d7d32dbb9df1b801abc1070caf6870a54af542248e03991107040e13a81dd6",
+    "residue-deflated-directional-resolvents.pdf": "19cad8fffca3e2c654229ab4b4c4f1f916a26da0e423f34c49ed5660312e1135"
+  },
+  "quarter_power_closure": {
+    "conclusion": "sup_j L_(2^j n,sigma)=O(sigma^(-1/4-delta))",
+    "hilbert_schmidt_gain_bound_proved_for_full_family_here": false,
+    "premise": "sup_j F_(2^j n,sigma)=O(sigma^(-delta))",
+    "preserves_every_strict_p_greater_than_2_when": "delta<=1/4",
+    "rh48_gamma": "gamma=1/4+delta",
+    "uniform_or_polylog_hilbert_schmidt_gain_is_sufficient": true
+  },
+  "residual_certificate": {
+    "dual_version": "apply the same estimate to the adjoint solve for C R_circ",
+    "finite_matrix_validation_route": "validated reduced-inverse budget plus outward primal/adjoint residual and norm bounds",
+    "identity": "R_circ E-X=(z-T+lambda P)^-1(QE-(z-T+lambda P)X)",
+    "upper": "||R_circ E||_S2 <= ||X||_S2 + M ||QE-(z-T+lambda P)X||_S2"
+  },
+  "result_hashes": {
+    "results/coupling_stable_rank_pilot.json": "2fd8dc48f7f235010b28b2b652a4a634d78540be35d8261e4f2afb07be97909c",
+    "results/coupling_stable_rank_pilot_smoke.json": "2cfffa66c4d2511ca8229a74149c9d394548668874d83f50a33add1a3937895f",
+    "results/dependency_manifest.json": "4f42ee329faa062b5da234409aa53094f92a21568120c40c9596893504453bed",
+    "results/directional_reduced_resolvent_certificate.json": "c14958ce8425b75685d8800fa02300019f90ea44eb079b18608114e8122d5863",
+    "results/mixed_operator_gain_pilot.json": "b8c29af00924a1c404a6e8c4a73ed927782d1a9b3034b13d94ad265e8bc71ed8",
+    "results/mixed_operator_gain_pilot_smoke.json": "3507b6cc0d67b99d906d387d0a14eed3fd8ab66fdb168beeb2fe6ad95dd124bc",
+    "results/reduced_directional_pilot.json": "febfe98ebc10418fdd9b0f6650954bd1f4d39caa34dcb4402f0bb9d5590c1772",
+    "results/reduced_directional_pilot_smoke.json": "423e4161763b76551f80d39e28f03ff6654abdfe5e204bb32032c8c79c300d9a"
+  },
+  "scope": "adjacent Haar couplings and Perron/parity directional resolvents for the small-noise folded-Gaussian quadratic map",
+  "stable_rank_transfer": {
+    "global_resolvent_norm_needed_for_the_inequality": false,
+    "hilbert_schmidt_gain": "F=sum_s ell_B,s^(2) ell_C,s^(2)",
+    "inequality": "L <= F min(||B||_S2/||B||, ||C||_S2/||C||)",
+    "mixed_gain": "L=sum_s min(ell_B,s^(2)ell_C,s^(infinity), ell_B,s^(infinity)ell_C,s^(2))"
+  },
+  "status": "rigorous_quarter_power_stable_rank_reduction_with_hilbert_schmidt_directional_gate"
+}
