@@ -1,0 +1,195 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,float}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\hypersetup{
+ pdftitle={Additive Quotient Tomography of the Identity Bucket: Minimal Fourier Recovery, Folded Parseval, and the Twist-Stable Mobius Gate},
+ pdfauthor={Liang Wang},
+ pdfsubject={Exact additive recovery of the zero alias in an orbit-sliced Mobius energy gate},
+ pdfkeywords={Mobius correlation, additive character, quotient tomography, CRT completion, folded Parseval, alias recovery, parity boundary}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Conditional input}
+\crefname{assumption}{conditional input}{conditional inputs}
+\Crefname{assumption}{Conditional input}{Conditional inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\op}{\operatorname{op}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\ee}[1]{\exp(2\pi i #1)}
+
+\title{\textbf{Additive Quotient Tomography of the Identity Bucket:}\\
+\textbf{Minimal Fourier Recovery, Folded Parseval,}\\
+\textbf{and the Twist--Stable M\"obius Gate}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+TPC--38 showed that a three--modulus multiplicative completion identifies
+the recombined output with the joint--alias sum, not its original equality
+column.  Multiplicative
+characters cannot distinguish those aliases because every one lies in the
+same ratio bucket.  We construct the missing coefficient--free recovery
+map on the additive quotient of that bucket.
+
+Let \(M\) be the three--modulus CRT product, let \(|F|\le B\), and put
+\[
+ L=\left\lfloor\frac BM\right\rfloor,
+ \qquad q=L+1,
+ \qquad \omega=\ee{1/q}.
+\]
+Then \(qM>B\), and on the full determinant window
+\[
+ \one_{M\mid F}\frac1q\sum_{\nu=0}^{q-1}
+ \ee{\nu F/(qM)}
+ =\one_{qM\mid F}
+ =\one_{F=0}.
+\]
+Full/proper face recombination is essential in this identity: the additive
+average alone does not remove determinants with \(M\nmid F\).  For arbitrary
+Hilbert columns \(\mathscr Z_k\), \(-L\le k\le L\), define
+\[
+ \mathscr Y_\nu=\sum_{k=-L}^{L}\omega^{\nu k}\mathscr Z_k.
+\]
+The quotient projector gives the exact recovery formula with unit normalized
+amplification
+\[
+ \mathscr Z_0=\frac1q\sum_{\nu=0}^{q-1}\mathscr Y_\nu,
+ \qquad
+ \|\mathscr Z_0\|^2\le
+ \frac1q\sum_{\nu=0}^{q-1}\|\mathscr Y_\nu\|^2.
+\]
+
+We prove the Hilbert--valued folded Parseval identity
+\[
+ \frac1q\sum_{\nu=0}^{q-1}\|\mathscr Y_\nu\|^2
+ =\|\mathscr Z_0\|^2+
+ \sum_{r=1}^{L}\|\mathscr Z_r+\mathscr Z_{r-q}\|^2.
+\]
+The normalized scalar alias--index tomography Gram has eigenvalues \(2,1,0\), with
+multiplicities \(L,1,L\), respectively.  Its kernel consists precisely of
+antisymmetric folded alias pairs and does not intersect the equality
+column.  Thus the minimal bank is weaker than a raw alias trace or a full
+Gram estimate while still recovering the one column required by the
+physical problem.
+
+The number \(q=L+1\) is optimal.  Even allowing arbitrary nonzero phase
+nodes and complex recovery weights, no bank of at most \(L\) phase
+measurements recovers the central coefficient of every Laurent polynomial
+supported on \([-L,L]\).  The regular \(q\)-gon attains this lower bound and
+also minimizes the normalized noise amplification.  Under positive
+weights, every minimally sampled optimal rule is a rotation of this
+regular polygon with equal weights.  Deleting any one twist from the
+minimal bank destroys coefficient--free exact recovery.
+
+For the orbit--sliced prime--M\"obius interface, the twist is
+\(\ee{\nu(su-N)/(qM)}\).  At the endpoint,
+\[
+ q\asymp 1+X/M=X^{1/400+o(1)},
+ \qquad
+ Q^2Jq=X^{o(1)}Q^3/J.
+\]
+Consequently, a square--average bound of this target size for the
+recombined twisted outputs would close the inherited equality gate with no
+additional alias loss.  The corresponding full/proper fields have exactly
+the same coefficient masses as their untwisted versions.  However, folded
+Parseval retains the original equality energy as a positive summand, and
+the terminal expansion retains affine four--M\"obius correlations.
+
+We therefore prove an exact, minimally sampled equality projector and a
+new twist--stable conditional route, not the required M\"obius energy
+estimate.  No affine Chowla theorem, parity breach, Hardy--Littlewood
+asymptotic, or twin--prime theorem is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+M\"obius correlation; additive character; quotient tomography; CRT
+completion; folded Parseval; alias recovery; parity boundary.
+
+\medskip
+\noindent\textbf{MSC 2020:}
+Primary 11L07, 11N35; Secondary 15A18, 42A16, 42C15.
+
+\input{sections/introduction}
+\input{sections/inherited-interface}
+\input{sections/quotient-projector}
+\input{sections/folded-parseval}
+\input{sections/minimality-conditioning}
+\input{sections/completion-comparison}
+\input{sections/twisted-physical-gate}
+\input{sections/terminal-boundary}
+\input{sections/partial-random-banks}
+\input{sections/next-gate}
+\input{sections/certificate-claims}
+
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

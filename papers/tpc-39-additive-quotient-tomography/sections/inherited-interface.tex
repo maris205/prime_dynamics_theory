@@ -1,0 +1,159 @@
+\section{Inherited physical interface and alias notation}
+\label{sec:tpc39-interface}
+
+We use the physical packet and exact CRT face calculus of TPC--37 and
+TPC--38.  This section restates only the data needed to distinguish the
+unconditional tomography from its conditional arithmetic application.
+
+\subsection{Rows, targets, and the equality output}
+
+Fix \(h\in\Z\setminus\{0\}\).  On a retained dyadic packet,
+\begin{equation}
+ Q=L_0D_0,
+ \qquad QJ\asymp X,
+ \label{eq:tpc39-interface-scales}
+\end{equation}
+where \(L_0\) and \(D_0\) denote the two source scales, so that \(L\) remains
+reserved for the alias radius.  A physical row is
+\begin{equation}
+ \alpha=(\ell_\alpha,d_\alpha),
+ \qquad
+ \ell_\alpha\asymp L_0,
+ \qquad
+ d_\alpha\asymp D_0,
+ \qquad
+ m_\alpha=\ell_\alpha d_\alpha\asymp Q,
+ \label{eq:tpc39-interface-row}
+\end{equation}
+and the source separation makes \(m_\alpha\) determine \(\alpha\).  The
+two row coefficient systems obey
+\begin{equation}
+ \sum_\alpha|\gamma_\alpha^{(i)}|^2
+ \ll X^{o(1)}Q,
+ \qquad i=1,2.
+ \label{eq:tpc39-interface-row-l2}
+\end{equation}
+For \(j\) in a positive interval \(\cJ\) of \(O(J)\) integers, put
+\begin{equation}
+ N_\alpha(j)=m_\alpha j+h\asymp X.
+ \label{eq:tpc39-interface-target}
+\end{equation}
+
+The retained output space is
+\begin{equation}
+ \cH_{\rm phys}
+ =\ell^2\{(L,\gamma,j)\}
+ \oplus\ell^2\{(R,\alpha,j)\}.
+ \label{eq:tpc39-interface-Hphys}
+\end{equation}
+For a determinant shift \(F\), let
+\(\mathscr Z_F[\kappa]\in\cH_{\rm phys}\) denote the shifted output on
+\begin{equation}
+ su=N_\alpha(j)+F,
+ \label{eq:tpc39-interface-shifted-fiber}
+\end{equation}
+with target atom multiplier \(\kappa_N(F)\).  Write
+\begin{equation}
+ \mathscr R_F:=\mathscr Z_F[\one]
+ \label{eq:tpc39-interface-raw-column}
+\end{equation}
+for the raw column.  The original regular--subpacket output is
+\begin{equation}
+ \mathscr Y_{\rm phys}=\mathscr R_0,
+ \qquad
+ \|\mathscr R_0\|^2=V_L+V_R.
+ \label{eq:tpc39-interface-physical-gate}
+\end{equation}
+The inherited target is
+\begin{equation}
+ \boxed{
+ \|\mathscr R_0\|^2
+ \ll X^{o(1)}\frac{Q^3}{J}.}
+ \label{eq:tpc39-interface-target-gate}
+\end{equation}
+
+\subsection{The three--modulus completion}
+
+Choose distinct primes \(q_1,q_2,q_3\asymp J\) satisfying the inherited
+range conditions
+\begin{equation}
+ \max\cJ<q_i,
+ \qquad
+ \max_\alpha d_\alpha<q_i<\min_\alpha\ell_\alpha,
+ \qquad q_i\nmid h,
+ \label{eq:tpc39-interface-prime-range}
+\end{equation}
+and put
+\begin{equation}
+ M=q_1q_2q_3.
+ \label{eq:tpc39-interface-M}
+\end{equation}
+TPC--37 absorbs the row--time pairs for which
+\((N_\alpha(j),M)>1\) at the inherited acceptable scale.  All physical
+outputs below refer to the complementary regular subpacket.  No claim is
+made that the additive twists introduced later supply this zero--face
+estimate; it is inherited before completion.
+
+TPC--38 constructs the full and proper target fields \(C_N(F)\) and
+\(P_N(F)\).  Their exact recombination is
+\begin{equation}
+ \boxed{C_N(F)+P_N(F)=\one_{M\mid F}.}
+ \label{eq:tpc39-interface-recombination}
+\end{equation}
+Let \(B\) be an integer such that every determinant used by the completed
+packet satisfies \(|F|\le B\).  We assume \(B\ge M\), equivalently
+\(L\ge1\), as is automatic in the endpoint regime considered below, and put
+\begin{equation}
+ L=\left\lfloor\frac BM\right\rfloor,
+ \qquad
+ \cI_B=\{-L,\ldots,L\},
+ \qquad
+ K_B=2L+1.
+ \label{eq:tpc39-interface-alias-ledger}
+\end{equation}
+For \(k\in\cI_B\), define
+\begin{equation}
+ \mathscr Z_k:=\mathscr R_{kM}.
+ \label{eq:tpc39-interface-Zk}
+\end{equation}
+Summing \eqref{eq:tpc39-interface-recombination} before estimating gives
+\begin{equation}
+ \sum_{|F|\le B}
+ \bigl(\mathscr Z_F[C]+\mathscr Z_F[P]\bigr)
+ =\sum_{k=-L}^{L}\mathscr Z_k.
+ \label{eq:tpc39-interface-completed-alias}
+\end{equation}
+The right side is a congruence completion, not \(\mathscr Z_0\).
+
+\subsection{Endpoint normalization}
+
+At the endpoint,
+\begin{equation}
+ Q=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)},
+ \qquad
+ M=X^{399/400+o(1)}.
+ \label{eq:tpc39-interface-endpoint}
+\end{equation}
+For \(B\asymp X\),
+\begin{equation}
+ K_B\asymp 1+\frac XM
+ =X^{1/400+o(1)}.
+ \label{eq:tpc39-interface-K}
+\end{equation}
+Put
+\begin{equation}
+ B_0=Q^2J.
+ \label{eq:tpc39-interface-B0}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ B_0K_B
+ =X^{o(1)}\frac{Q^3}{J}.}
+ \label{eq:tpc39-interface-key-ledger}
+\end{equation}
+The proved input--copy diagonal has size \(X^{o(1)}B_0\), but it is not a
+bound for the raw output column \(\mathscr Z_0\).  The latter remains the
+physical gate in \eqref{eq:tpc39-interface-target-gate}.

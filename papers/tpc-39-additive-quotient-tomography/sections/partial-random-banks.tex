@@ -1,0 +1,117 @@
+\section{Partial, redundant, and random twist banks}
+\label{sec:tpc39-partial-random}
+
+The minimal regular polygon is exact but has no redundant measurement.
+This section records what is lost under partial sampling and what random
+sampling can provide.
+
+\subsection{The nonzero bank restores the alias loss}
+
+Remove the zero column and define
+\begin{equation}
+ \mathscr Y_\nu^*
+ :=\sum_{\substack{-L\le k\le L\\k\ne0}}
+ \omega^{\nu k}\mathscr Z_k.
+ \label{eq:tpc39-nonzero-twisted-bank}
+\end{equation}
+The untwisted nonzero aggregate required by the two--sum route of TPC--38
+is
+\begin{equation}
+ \mathscr Y_0^*
+ =\sum_{k\ne0}\mathscr Z_k.
+ \label{eq:tpc39-nonzero-untwisted-sum}
+\end{equation}
+Since \(\nu=0\) is one member of the bank,
+\begin{equation}
+ \boxed{
+ \|\mathscr Y_0^*\|^2
+ \le (q-1)\left(
+ \frac1q\sum_{\nu=0}^{q-1}\|\mathscr Y_\nu^*\|^2
+ \right).}
+ \label{eq:tpc39-nonzero-bank-qminusone-loss}
+\end{equation}
+Indeed, additive orthogonality gives
+\(\sum_{\nu=0}^{q-1}\mathscr Y_\nu^*=0\).  Cauchy applied to the other
+\(q-1\) values then yields
+\(q\|\mathscr Y_0^*\|^2\le(q-1)\sum_\nu\|\mathscr Y_\nu^*\|^2\),
+which is the displayed bound.  The factor \(q-1\asymp K_B\) is sharp:
+the nonzero residue coefficients parametrize every zero--mean bank list.
+Thus applying Parseval only to the nonzero aliases and then returning to
+the one untwisted aggregate recreates the same endpoint order as the finite
+alias loss.  The gain in \cref{thm:tpc39-exact-Hilbert-recovery} comes
+from averaging the \emph{completed outputs themselves}, with the zero
+column included and isolated by the quotient projector.
+
+\subsection{Redundant cyclic banks}
+
+Every integer \(r>L\) gives the exact recovery formula
+\begin{equation}
+ Z_0=\frac1r\sum_{\nu=0}^{r-1}Y_\nu^{(r)},
+ \label{eq:tpc39-redundant-recovery}
+\end{equation}
+because the zero residue class remains a singleton.  The spectrum in
+\cref{thm:tpc39-tomography-spectrum} quantifies the redundancy for
+\(L<r\le2L+1\).  At \(r=2L+1\), all aliases are separated and the bank
+energy is the raw trace in \eqref{eq:tpc39-full-DFT-Parseval}; this is
+strictly stronger than necessary for equality recovery.
+
+Using \(r>L+1\) may be helpful if an analytic argument has a small number
+of exceptional twists.  Exact recovery from an arbitrary retained subset
+is still governed by the moment system
+\eqref{eq:tpc39-moment-system}; sample count alone does not control its
+conditioning.  Clustered nodes may make the recovery weights large, while
+the complete regular polygon has the optimal amplification proved in
+\cref{prop:tpc39-optimal-conditioning}.
+
+\subsection{Random phase averaging}
+
+Let \(\theta_1,\ldots,\theta_m\) be independent and uniform on
+\([0,1)\), and define
+\begin{equation}
+ \widehat Z_0
+ :=\frac1m\sum_{j=1}^{m}
+ \sum_{k=-L}^{L}\ee{k\theta_j}Z_k.
+ \label{eq:tpc39-random-estimator}
+\end{equation}
+
+\begin{proposition}[Exact random mean--square error]
+\label{prop:tpc39-random-MSE}
+For every finite Hilbert column family,
+\begin{align}
+ \mathbb E\widehat Z_0&=Z_0,
+ \label{eq:tpc39-random-unbiased}\\
+ \mathbb E\|\widehat Z_0-Z_0\|^2
+ &=\frac1m\sum_{\substack{-L\le k\le L\\k\ne0}}
+ \|Z_k\|^2.
+ \label{eq:tpc39-random-MSE}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+The expectation of \(\ee{k\theta}\) is \(\one_{k=0}\), proving
+\eqref{eq:tpc39-random-unbiased}.  Independence reduces the variance of
+the sample mean by \(m\), and orthogonality in one sample removes all
+terms with distinct nonzero frequencies, proving
+\eqref{eq:tpc39-random-MSE}.
+\end{proof}
+
+Random sampling is always unbiased.  It becomes quantitatively useful only
+when a nonzero--alias trace is available.  Without that input, it gives no
+coefficient--free deterministic recovery.  The structured regular polygon
+is exceptional: it obtains zero error with only \(L+1\) samples by exact
+algebra rather than probabilistic concentration.
+
+\subsection{Partial control is not enough}
+
+The deletion no--go in \cref{cor:tpc39-deletion-no-go} has an analytic
+consequence.  Bounds for all but one member of the minimal bank, no matter
+how strong, do not control \(Z_0\) in the abstract column class.  A proof
+of the physical route must therefore do one of the following:
+\begin{enumerate}[label=(\roman*)]
+ \item control the complete minimal bank in square average;
+ \item add redundancy and solve the resulting stable moment system after
+ deleting the exceptional twists; or
+ \item estimate each exceptional output separately.
+\end{enumerate}
+This finite issue should be settled before any exceptional--frequency
+argument is used in the M\"obius analysis.

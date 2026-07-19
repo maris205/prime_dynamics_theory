@@ -1,0 +1,156 @@
+\section{The exact additive quotient projector}
+\label{sec:tpc39-projector}
+
+The multiplicative CRT coordinates have already done their job once
+\eqref{eq:tpc39-interface-recombination} is reached.  The surviving
+problem is finite additive recovery on the alias index.
+
+\subsection{The minimal no--wrap quotient}
+
+Retain the notation in \eqref{eq:tpc39-interface-alias-ledger} and put
+\begin{equation}
+ q=L+1,
+ \qquad
+ \omega=\ee{1/q}.
+ \label{eq:tpc39-projector-q}
+\end{equation}
+The integer \(q\) need not be prime.
+
+\begin{lemma}[Minimal quotient size]
+\label{lem:tpc39-qM-window}
+One has
+\begin{equation}
+ B<qM\le B+M.
+ \label{eq:tpc39-qM-window}
+\end{equation}
+Moreover, the residue class \(0\pmod q\) meets
+\(\{-L,\ldots,L\}\) only at \(0\).
+\end{lemma}
+
+\begin{proof}
+Write \(B=LM+r\), where \(0\le r<M\).  Then
+\((L+1)M=B+(M-r)\), proving \eqref{eq:tpc39-qM-window}.  Since
+\(q=L+1\), every nonzero \(k\) in the alias interval satisfies
+\(0<|k|<q\).
+\end{proof}
+
+\begin{theorem}[Additive quotient identity]
+\label{thm:tpc39-additive-quotient-identity}
+For every integer \(F\) with \(|F|\le B\),
+\begin{equation}
+ \boxed{
+ \one_{M\mid F}\frac1q\sum_{\nu=0}^{q-1}
+ \ee{\nu F/(qM)}
+ =\one_{qM\mid F}
+ =\one_{F=0}.}
+ \label{eq:tpc39-additive-quotient-identity}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+If \(M\nmid F\), the first member is zero.  If \(F=kM\), additive
+orthogonality gives
+\[
+ \frac1q\sum_{\nu=0}^{q-1}\omega^{\nu k}
+ =\one_{q\mid k}.
+\]
+Thus the first member is \(\one_{qM\mid F}\).  By
+\cref{lem:tpc39-qM-window}, the only such determinant in the window is
+\(F=0\).
+\end{proof}
+
+The first factor in \eqref{eq:tpc39-additive-quotient-identity} is
+essential in the physical construction.  The additive average by itself
+is generally nonzero when \(M\nmid F\), so it is not a divisibility
+indicator on the full determinant window.  The product with
+\(\one_{M\mid F}\) is the indicator \(\one_{qM\mid F}\).  The available
+completed objects are the separate full and proper face outputs; their
+nonjoint terms disappear only after using
+\eqref{eq:tpc39-interface-recombination} with the same twist on both
+fields.
+
+\subsection{Twisted face outputs}
+
+For \(0\le\nu<q\), define
+\begin{align}
+ \mathscr Y_\nu^C
+ &:=%
+ \sum_{|F|\le B}
+ \mathscr Z_F\!\left[
+  \ee{\nu F/(qM)}C
+ \right],
+ \label{eq:tpc39-Ynu-C}\\
+ \mathscr Y_\nu^P
+ &:=%
+ \sum_{|F|\le B}
+ \mathscr Z_F\!\left[
+  \ee{\nu F/(qM)}P
+ \right],
+ \label{eq:tpc39-Ynu-P}\\
+ \mathscr Y_\nu
+ &:=\mathscr Y_\nu^C+\mathscr Y_\nu^P.
+ \label{eq:tpc39-Ynu}
+\end{align}
+
+\begin{proposition}[Recombined twist formula]
+\label{prop:tpc39-recombined-twist}
+For every \(\nu\),
+\begin{equation}
+ \boxed{
+ \mathscr Y_\nu
+ =\sum_{k=-L}^{L}\omega^{\nu k}\mathscr Z_k.}
+ \label{eq:tpc39-recombined-twist}
+\end{equation}
+In particular, all nonjoint face atoms cancel before the alias bank is
+formed.
+\end{proposition}
+
+\begin{proof}
+Linearity and \eqref{eq:tpc39-interface-recombination} give
+\[
+ \mathscr Y_\nu
+ =\sum_{|F|\le B}
+ \ee{\nu F/(qM)}\one_{M\mid F}\mathscr R_F.
+\]
+Write \(F=kM\) and use \eqref{eq:tpc39-interface-Zk}.
+\end{proof}
+
+\begin{theorem}[Exact Hilbert equality recovery]
+\label{thm:tpc39-exact-Hilbert-recovery}
+For arbitrary columns \(\mathscr Z_k\in\cH_{\rm phys}\),
+\begin{equation}
+ \boxed{
+ \mathscr Z_0
+ =\frac1q\sum_{\nu=0}^{q-1}\mathscr Y_\nu.}
+ \label{eq:tpc39-exact-Hilbert-recovery}
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{
+ \|\mathscr Z_0\|^2
+ \le\frac1q\sum_{\nu=0}^{q-1}\|\mathscr Y_\nu\|^2.}
+ \label{eq:tpc39-condition-one-recovery}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Average \eqref{eq:tpc39-recombined-twist} over \(\nu\).  By
+\cref{lem:tpc39-qM-window}, only \(k=0\) survives.  Jensen's inequality
+gives \eqref{eq:tpc39-condition-one-recovery}.
+\end{proof}
+
+There is no factor \(q\) in
+\eqref{eq:tpc39-condition-one-recovery}.  The recovery functional is the
+orthogonal average of a regular polygon bank.  The later minimality theorem
+shows that this sample count and normalized recovery amplification are
+simultaneously optimal.  This is not a condition-number assertion for the
+full tomography map, which has a nontrivial kernel.
+
+\begin{remark}[What has and has not been recovered]
+\label{rem:tpc39-algebra-versus-analysis}
+The equality column is recovered exactly from the \emph{values} of all
+twisted completed outputs.  No bound for those outputs has yet been
+proved.  Equation \eqref{eq:tpc39-condition-one-recovery} converts a
+twist--stable energy theorem into the desired physical estimate; it is
+not itself such an energy theorem.
+\end{remark}

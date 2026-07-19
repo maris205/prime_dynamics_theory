@@ -1,0 +1,131 @@
+\section{Divisibility completions and the alias--synthesis trade}
+\label{sec:tpc39-completion-comparison}
+
+The quotient projector can be compared with the multi--completion route
+proposed in TPC--38.  The comparison explains both why a superwindow
+modulus is unavoidable and why additive phases are a distinct
+implementation of it.
+
+\subsection{Exact rigidity of linear divisibility recovery}
+
+For a positive integer \(m\), put
+\begin{equation}
+ d_m(F)=\one_{m\mid F},
+ \qquad |F|\le B.
+ \label{eq:tpc39-divisibility-column}
+\end{equation}
+Repeated moduli in a linear combination are combined into one aggregate
+coefficient \(a_m\).
+
+\begin{theorem}[Identity--bucket divisibility rigidity]
+\label{thm:tpc39-divisibility-rigidity}
+Suppose a finite family satisfies
+\begin{equation}
+ \sum_m a_m d_m(F)=\one_{F=0}
+ \qquad(|F|\le B).
+ \label{eq:tpc39-divisibility-recovery}
+\end{equation}
+Then
+\begin{equation}
+ a_m=0\quad(1\le m\le B),
+ \qquad
+ \sum_{m>B}a_m=1.
+ \label{eq:tpc39-divisibility-rigidity}
+\end{equation}
+Conversely, \eqref{eq:tpc39-divisibility-rigidity} is sufficient.
+\end{theorem}
+
+\begin{proof}
+Evaluate \eqref{eq:tpc39-divisibility-recovery} at each
+\(1\le n\le B\):
+\begin{equation}
+ 0=\sum_{m\mid n}a_m.
+ \label{eq:tpc39-divisibility-triangular}
+\end{equation}
+At \(n=1\) this gives \(a_1=0\).  Increasing induction on \(n\) then
+gives \(a_n=0\), since every proper divisor coefficient has already
+vanished.  At \(F=0\), all divisibility columns equal one, so the remaining
+coefficients sum to one.  If \(m>B\), then \(d_m=\one_{F=0}\) on the
+window, proving the converse.
+\end{proof}
+
+Thus no linear combination of window--internal completion indicators can
+recover exact equality.  Every effective coefficient in an exact rule is
+already attached to a no--wrap modulus.  This is a no--go for that
+particular coefficient class, not for phase measurements or for relations
+among the actual physical columns.
+
+\subsection{How quotient tomography implements no--wrap recovery}
+
+The projector in \cref{thm:tpc39-additive-quotient-identity} may be written
+as
+\begin{equation}
+ \one_{M\mid F}\frac1q\sum_{\nu\bmod q}
+ \ee{\nu F/(qM)}
+ =\one_{qM\mid F}.
+ \label{eq:tpc39-phase-implements-superwindow}
+\end{equation}
+Therefore it does not contradict
+\cref{thm:tpc39-divisibility-rigidity}: the effective modulus \(qM\) is
+larger than \(B\).  What is new is its implementation.  Instead of
+introducing \(qM\) as an additional multiplicative CRT face modulus, we
+retain the three--prime recombination at \(M\) and resolve its quotient by
+\(q\) additive phase measurements.  Each phase has unit modulus, so it
+does not change the scalar face masses.
+
+\subsection{A finite alias--synthesis conservation law}
+
+For comparison, let
+\begin{equation}
+ R=\prod_{i=1}^{s}p_i
+ \label{eq:tpc39-general-CRT-R}
+\end{equation}
+be a squarefree CRT modulus with a fixed number \(s\) of odd prime
+factors.  The full target--synthesis calculation of TPC--38 gives the
+exact largest squared singular value
+\begin{equation}
+ \Lambda_C(R)
+ =\prod_{i=1}^{s}
+ \frac{p_i(p_i-2)^2}{(p_i-1)^2}
+ =R\prod_{i=1}^{s}
+ \left(1-\frac1{p_i-1}\right)^2.
+ \label{eq:tpc39-full-synthesis-R}
+\end{equation}
+The joint alias count in the window is
+\begin{equation}
+ K_R=1+2\left\lfloor\frac BR\right\rfloor.
+ \label{eq:tpc39-alias-count-R}
+\end{equation}
+
+\begin{proposition}[Alias--synthesis conservation]
+\label{prop:tpc39-alias-synthesis-conservation}
+If \(s\) is fixed and \(\min_i p_i\to\infty\), then
+\begin{equation}
+ \boxed{
+ \Lambda_C(R)K_R\asymp R+B.}
+ \label{eq:tpc39-alias-synthesis-conservation}
+\end{equation}
+In particular, coefficient--blind full synthesis cannot make both the
+modulus cost and the joint alias count smaller than the determinant scale.
+\end{proposition}
+
+\begin{proof}
+The product in \eqref{eq:tpc39-full-synthesis-R} is bounded above and
+below by positive constants and tends to one.  Also
+\(RK_R\asymp R+B\).
+\end{proof}
+
+This is a finite spectral trade, not a lower bound for the M\"obius
+physical output.  Directly increasing \(R\) reduces aliases in inverse
+proportion to the dominant full synthesis scale.  Additive quotient
+tomography keeps \(R=M\) in the multiplicative face calculus and pays
+instead for a bank of
+\begin{equation}
+ q=L+1\asymp1+B/M
+ \label{eq:tpc39-phase-bank-size}
+\end{equation}
+structured outputs.  The recovery functional has unit normalized
+amplification, but
+an arithmetic theorem uniform or square--averaged over this bank is still
+required.  Neither implementation is coefficient--free evidence of a
+power saving.

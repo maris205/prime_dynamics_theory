@@ -1,0 +1,203 @@
+\section{Introduction}
+\label{sec:tpc39-introduction}
+
+The orbit--sliced program in TPC--34--TPC--38 reduces a prime--pair
+remainder to a coefficient--specific Hilbert energy for reflected
+M\"obius divisor sums
+\citep{WangTPC34,WangTPC35,WangTPC36,WangTPC37,WangTPC38}.
+After exact full/proper recombination, three orbit--scale CRT coordinates
+cancel all nonjoint determinant ghosts.  The remaining
+congruence completion is
+\begin{equation}
+ \mathscr Y_{\rm alias}
+ =\sum_{k=-L}^{L}\mathscr Z_k,
+ \qquad
+ L=\left\lfloor\frac BM\right\rfloor,
+ \label{eq:tpc39-intro-alias-sum}
+\end{equation}
+where \(M\) is the three--modulus product, \(|F|\le B\) is the
+determinant window, and \(\mathscr Z_k\) is the raw column on
+\(F=kM\).  The physical equality output is only
+\begin{equation}
+ \mathscr Y_{\rm phys}=\mathscr Z_0.
+ \label{eq:tpc39-intro-physical-zero}
+\end{equation}
+
+TPC--38 proved that \eqref{eq:tpc39-intro-alias-sum} does not control
+\eqref{eq:tpc39-intro-physical-zero} in the unrestricted Hilbert column
+class.  The obstruction is elementary and sharp: the columns
+\(\mathscr Z_0=v\) and \(\mathscr Z_1=-v\) make the completed sum vanish
+while leaving the equality column arbitrary.  Multiplicative character
+refinement cannot separate them, since every joint alias satisfies
+\begin{equation}
+ (N+kM)N^{-1}\equiv1\pmod M.
+ \label{eq:tpc39-intro-ratio-one}
+\end{equation}
+
+The present paper uses the additive quotient that remains after
+\eqref{eq:tpc39-intro-ratio-one}.  Put
+\begin{equation}
+ q=L+1,
+ \qquad \omega=\ee{1/q}.
+ \label{eq:tpc39-intro-minimal-q}
+\end{equation}
+Then the vectors
+\begin{equation}
+ \mathscr Y_\nu
+ =\sum_{k=-L}^{L}\omega^{\nu k}\mathscr Z_k,
+ \qquad 0\le\nu<q,
+ \label{eq:tpc39-intro-twisted-bank}
+\end{equation}
+obey
+\begin{equation}
+ \boxed{
+ \mathscr Z_0=\frac1q\sum_{\nu=0}^{q-1}\mathscr Y_\nu.}
+ \label{eq:tpc39-intro-exact-recovery}
+\end{equation}
+This is not a full discrete Fourier inversion: there are only \(q=L+1\)
+measurements for \(2L+1\) alias columns.  Positive and negative aliases
+are folded together modulo \(q\), but the zero residue class contains
+only \(k=0\).  This is exactly the amount of information needed for
+equality recovery.
+
+\subsection{The finite quotient projector}
+
+The physical form of \eqref{eq:tpc39-intro-exact-recovery} is the identity
+\begin{equation}
+ \boxed{
+ \one_{M\mid F}\frac1q\sum_{\nu=0}^{q-1}
+ \ee{\nu F/(qM)}
+ =\one_{F=0}
+ \qquad(|F|\le B).}
+ \label{eq:tpc39-intro-quotient-projector}
+\end{equation}
+Indeed, the left side is \(\one_{qM\mid F}\), and
+\(qM>B\).  The factor \(\one_{M\mid F}\) is supplied by the exact
+full/proper recombination
+\begin{equation}
+ C_N(F)+P_N(F)=\one_{M\mid F}
+ \label{eq:tpc39-intro-face-recombination}
+\end{equation}
+proved in TPC--38.  It cannot be omitted: the additive average alone
+is generally nonzero when \(M\nmid F\).  Only after full/proper
+recombination restricts the determinant to \(F=kM\) does the quotient
+average select the multiples of \(qM\).
+
+Thus \eqref{eq:tpc39-intro-quotient-projector} is an additive projector on
+the quotient
+\begin{equation}
+ M\Z/qM\Z\cong\Z/q\Z.
+ \label{eq:tpc39-intro-quotient-group}
+\end{equation}
+It converts the congruence completion into exact equality without adding
+a fourth multiplicative character coordinate.
+
+\subsection{Folded Parseval and the exact spectrum}
+
+For Hilbert--valued columns, character orthogonality on
+\eqref{eq:tpc39-intro-quotient-group} gives
+\begin{equation}
+ \boxed{
+ \frac1q\sum_{\nu=0}^{q-1}\|\mathscr Y_\nu\|^2
+ =\|\mathscr Z_0\|^2+
+ \sum_{r=1}^{L}\|\mathscr Z_r+\mathscr Z_{r-q}\|^2.}
+ \label{eq:tpc39-intro-folded-Parseval}
+\end{equation}
+The associated normalized tomography Gram has spectrum
+\begin{equation}
+ 2\quad(L\text{ times}),
+ \qquad
+ 1\quad(1\text{ time}),
+ \qquad
+ 0\quad(L\text{ times}).
+ \label{eq:tpc39-intro-spectrum}
+\end{equation}
+The eigenvalue--one direction is the zero alias.  The kernel consists of
+antisymmetric pairs
+\begin{equation}
+ \mathscr Z_r=-\mathscr Z_{r-q},
+ \qquad 1\le r\le L,
+ \label{eq:tpc39-intro-kernel}
+\end{equation}
+which do not affect \(\mathscr Z_0\).  Hence this bank is strictly weaker
+than a full alias trace and much weaker than an alias--Gram operator bound,
+but it is sufficient for the required column.
+
+\subsection{Minimal sampling and optimal recovery amplification}
+
+The sample count in \eqref{eq:tpc39-intro-minimal-q} is best possible.
+Suppose phase nodes \(z_1,\ldots,z_m\in\C^\times\) and complex recovery
+weights are required to recover the central coefficient of every Laurent
+polynomial supported on \([-L,L]\).  If \(m\le L\), the polynomial
+\begin{equation}
+ Q(z)=\prod_{j=1}^{m}(z-z_j)
+ \label{eq:tpc39-intro-annihilator}
+\end{equation}
+has degree at most \(L\), vanishes at every measurement node, and has
+nonzero constant coefficient.  Exact recovery is therefore impossible.
+The regular \((L+1)\)-gon attains the lower bound.
+
+If \(a\) is the recovery vector for \(m\) measurements, its normalized
+noise amplification is
+\begin{equation}
+ \cA=m\|a\|_2^2.
+ \label{eq:tpc39-intro-amplification}
+\end{equation}
+The constant moment forces \(\cA\ge1\).  Equal weights on the regular
+polygon give \(\cA=1\).  Under positive weights, the minimally sampled
+rule is rigid: the weights are equal and the nodes are a rotation of the
+regular polygon.
+
+\subsection{The new physical gate}
+
+For the physical determinant \(F=su-N\), define the twisted face fields
+\begin{equation}
+ C_{\nu,N}(F)=\ee{\nu F/(qM)}C_N(F),
+ \qquad
+ P_{\nu,N}(F)=\ee{\nu F/(qM)}P_N(F).
+ \label{eq:tpc39-intro-twisted-fields}
+\end{equation}
+Their coefficient masses are exactly those of the untwisted fields.
+After recombination, their outputs are the vectors in
+\eqref{eq:tpc39-intro-twisted-bank}.  Therefore the explicit conditional
+input
+\begin{equation}
+ \frac1q\sum_{\nu=0}^{q-1}\|\mathscr Y_\nu\|^2
+ \ll X^{o(1)}Q^2J(2L+1)
+ \label{eq:tpc39-intro-twisted-gate}
+\end{equation}
+implies the physical equality gate.  At the endpoint,
+\begin{equation}
+ 2L+1\asymp q\asymp X^{1/400+o(1)},
+ \qquad
+ Q^2J(2L+1)=X^{o(1)}Q^3/J.
+ \label{eq:tpc39-intro-endpoint}
+\end{equation}
+
+Equation \eqref{eq:tpc39-intro-twisted-gate} is not proved here.  Folded
+Parseval shows that it retains \(\|\mathscr Z_0\|^2\) as a positive
+summand.  In the terminal factorization \(s=1\), the twists create a
+short Fourier transform along the progression \(N+kM\), but the square
+still contains the original affine four--M\"obius term and long--gap
+correlations.  Additive tomography repairs the logical recovery gap; it
+does not manufacture arithmetic cancellation.
+
+\subsection{Organization and claim boundary}
+
+\Cref{sec:tpc39-interface} states the inherited physical interface.
+\Cref{sec:tpc39-projector} proves the quotient projector and exact Hilbert
+recovery.  \Cref{sec:tpc39-folded} proves folded Parseval and the complete
+spectrum.  \Cref{sec:tpc39-minimality} proves sample minimality,
+recovery--amplification optimality, and positive--rule rigidity.
+\Cref{sec:tpc39-completion-comparison} compares phase recovery with pure
+divisibility completions.  \Cref{sec:tpc39-physical-gate} formulates the
+twist--stable physical gate.  \Cref{sec:tpc39-terminal} records its
+terminal M\"obius content.  \Cref{sec:tpc39-partial-random} treats partial
+and random banks, and \Cref{sec:tpc39-next-gate} gives the corrected route
+tree.
+
+All quotient, Fourier, spectrum, minimality, and finite divisibility
+results are unconditional.  The paper proves no twist--stable physical
+energy estimate, no new M\"obius autocorrelation estimate, no affine
+Chowla theorem, no failure of sieve parity, no Hardy--Littlewood
+prime--pair asymptotic, and no twin--prime theorem.

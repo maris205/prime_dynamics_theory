@@ -1,0 +1,184 @@
+\section{Minimal sampling, optimal recovery amplification, and rigidity}
+\label{sec:tpc39-minimality}
+
+The root--of--unity construction uses only half as many measurements as a
+full Fourier inversion.  We now show that no phase bank can use fewer.
+
+\subsection{Universal phase measurements}
+
+Let \(z\in\C^\times\).  For a Hilbert column family
+\(Z=(Z_{-L},\ldots,Z_L)\), define the phase measurement
+\begin{equation}
+ \cY_Z(z)=\sum_{k=-L}^{L}z^kZ_k.
+ \label{eq:tpc39-general-phase-measurement}
+\end{equation}
+Given nodes \(z_1,\ldots,z_m\) and coefficients
+\(a_1,\ldots,a_m\), the rule
+\begin{equation}
+ Z_0=\sum_{j=1}^{m}a_j\cY_Z(z_j)
+ \label{eq:tpc39-general-recovery-rule}
+\end{equation}
+holds for every Hilbert space and every column family if and only if
+\begin{equation}
+ \sum_{j=1}^{m}a_jz_j^k=\one_{k=0}
+ \qquad(-L\le k\le L).
+ \label{eq:tpc39-moment-system}
+\end{equation}
+
+\begin{theorem}[Minimal phase count]
+\label{thm:tpc39-minimal-phase-count}
+If \eqref{eq:tpc39-general-recovery-rule} holds universally, then
+\begin{equation}
+ \boxed{m\ge L+1.}
+ \label{eq:tpc39-minimal-phase-count}
+\end{equation}
+This remains true with arbitrary nonzero complex nodes and arbitrary
+complex recovery weights.
+\end{theorem}
+
+\begin{proof}
+Suppose \(m\le L\) and form
+\begin{equation}
+ Q(z)=\prod_{j=1}^{m}(z-z_j)
+ =\sum_{k=0}^{m}c_kz^k.
+ \label{eq:tpc39-annihilating-polynomial}
+\end{equation}
+Its constant coefficient is
+\(c_0=(-1)^m\prod_jz_j\ne0\).  Take scalar columns
+\(Z_k=c_k\) for \(0\le k\le m\) and zero otherwise.  Then every
+measurement in \eqref{eq:tpc39-general-recovery-rule} is \(Q(z_j)=0\),
+whereas \(Z_0=c_0\ne0\), a contradiction.
+\end{proof}
+
+\begin{corollary}[Optimality of the quotient bank]
+\label{cor:tpc39-regular-polygon-minimal}
+The nodes
+\begin{equation}
+ z_\nu=\omega^\nu,
+ \qquad0\le\nu<q=L+1,
+ \label{eq:tpc39-regular-polygon-nodes}
+\end{equation}
+with weights \(a_\nu=1/q\) attain the lower bound in
+\cref{thm:tpc39-minimal-phase-count}.
+\end{corollary}
+
+\begin{proof}
+The moment system \eqref{eq:tpc39-moment-system} is additive
+orthogonality modulo \(q\), and \(q>|k|\) for every nonzero alias index.
+\end{proof}
+
+The lower bound concerns recovery of only \(Z_0\).  Recovering every one
+of the \(2L+1\) arbitrary columns requires a measurement matrix of rank
+\(2L+1\), and therefore at least \(2L+1\) samples.  The full DFT in
+\eqref{eq:tpc39-full-DFT-Parseval} attains that different lower bound.
+
+\subsection{Noise amplification}
+
+Assume now that \(z_j\in\T\).  For a recovery rule satisfying
+\eqref{eq:tpc39-moment-system}, define
+\begin{equation}
+ \cA(a):=m\|a\|_2^2.
+ \label{eq:tpc39-noise-amplification}
+\end{equation}
+The Cauchy bound associated with the rule is
+\begin{equation}
+ \|Z_0\|^2
+ \le\|a\|_2^2\sum_{j=1}^{m}\|\cY_Z(z_j)\|^2.
+ \label{eq:tpc39-general-recovery-Cauchy}
+\end{equation}
+
+\begin{proposition}[Optimal normalized amplification]
+\label{prop:tpc39-optimal-conditioning}
+Every universal recovery rule satisfies
+\begin{equation}
+ \boxed{\cA(a)\ge1.}
+ \label{eq:tpc39-amplification-lower-bound}
+\end{equation}
+The regular polygon rule in
+\cref{cor:tpc39-regular-polygon-minimal} has \(\cA=1\).
+\end{proposition}
+
+\begin{proof}
+The moment at \(k=0\) says \(\sum_ja_j=1\).  Hence
+\(1\le m\sum_j|a_j|^2\).  Equal weights \(1/q\) give equality.
+\end{proof}
+
+Thus the quotient bank is simultaneously sample--minimal and optimal for
+the normalized recovery amplification.  Its estimate
+\eqref{eq:tpc39-condition-one-recovery} is the equality case of
+\eqref{eq:tpc39-general-recovery-Cauchy} after the natural average
+normalization.  The full tomography operator is singular, so this statement
+must not be read as a condition number for that operator.
+
+\subsection{Rigidity of positive minimal rules}
+
+The regular polygon is not merely one positive optimal construction.
+
+\begin{theorem}[Positive--rule rigidity]
+\label{thm:tpc39-positive-rule-rigidity}
+Let \(m=q=L+1\), let \(z_1,\ldots,z_q\in\T\), and let
+\(w_1,\ldots,w_q>0\).  Suppose
+\begin{equation}
+ \sum_{j=1}^{q}w_jz_j^k=\one_{k=0}
+ \qquad(-L\le k\le L).
+ \label{eq:tpc39-positive-moments}
+\end{equation}
+Then
+\begin{equation}
+ w_j=\frac1q\quad(1\le j\le q),
+ \label{eq:tpc39-rigid-weights}
+\end{equation}
+and, after reordering, there is \(\rho\in\T\) such that
+\begin{equation}
+ \{z_1,\ldots,z_q\}
+ =\{\rho\omega^\nu:0\le\nu<q\}.
+ \label{eq:tpc39-rigid-nodes}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Form the square matrix
+\begin{equation}
+ U_{j,r}=\sqrt{w_j}\,z_j^r,
+ \qquad1\le j\le q,
+ \quad0\le r\le q-1.
+ \label{eq:tpc39-positive-rule-matrix}
+\end{equation}
+By \eqref{eq:tpc39-positive-moments},
+\((U^*U)_{r,s}=\delta_{r,s}\), since \(|s-r|\le q-1=L\).
+Thus \(U\) is unitary.  The squared norm of row \(j\) is \(qw_j\),
+which proves \eqref{eq:tpc39-rigid-weights}.  Orthogonality of two
+distinct rows gives
+\[
+ \sum_{r=0}^{q-1}(z_j\overline{z_i})^r=0.
+\]
+Therefore every quotient \(z_j\overline{z_i}\) is a nontrivial
+\(q\)-th root of unity.  The \(q\) distinct nodes are one rotation of all
+\(q\)-th roots.
+\end{proof}
+
+\subsection{Every minimal twist is necessary}
+
+\begin{corollary}[Deletion no--go]
+\label{cor:tpc39-deletion-no-go}
+Delete any one measurement from the minimal regular polygon bank.  There
+are scalar alias columns with
+\begin{equation}
+ \cY_Z(z_\nu)=0
+ \quad\text{at every retained node},
+ \qquad Z_0\ne0.
+ \label{eq:tpc39-deletion-witness}
+\end{equation}
+Hence estimates for all but one minimal twist do not give
+coefficient--free exact equality recovery.
+\end{corollary}
+
+\begin{proof}
+There remain \(L\) nodes.  Use the annihilating polynomial in
+\eqref{eq:tpc39-annihilating-polynomial}.
+\end{proof}
+
+If an analytic argument has exceptional frequencies, the recovery bank
+must therefore be made redundant or the exceptional outputs must be
+controlled separately.  Treating an unproved minimal twist as negligible
+is not a valid recovery step.

@@ -1,0 +1,172 @@
+\section{Hilbert--valued folded Parseval and tomography spectrum}
+\label{sec:tpc39-folded}
+
+The minimal quotient deliberately identifies some positive and negative
+aliases.  This section computes that folding exactly.
+
+\subsection{General quotient sizes}
+
+Let
+\begin{equation}
+ L<r\le2L+1
+ \label{eq:tpc39-general-r-range}
+\end{equation}
+and put \(\zeta_r=\ee{1/r}\).  For Hilbert columns
+\(Z_{-L},\ldots,Z_L\in\cH\), define
+\begin{align}
+ Y_\nu^{(r)}
+ &:=\sum_{k=-L}^{L}\zeta_r^{\nu k}Z_k,
+ \qquad 0\le\nu<r,
+ \label{eq:tpc39-general-twists}\\
+ W_a^{(r)}
+ &:=\sum_{\substack{-L\le k\le L\\k\equiv a\pmod r}}Z_k,
+ \qquad a\in\Z/r\Z.
+ \label{eq:tpc39-residue-buckets}
+\end{align}
+
+\begin{theorem}[Hilbert--valued folded Parseval]
+\label{thm:tpc39-folded-Parseval}
+For every \(r\) in \eqref{eq:tpc39-general-r-range},
+\begin{equation}
+ \boxed{
+ \frac1r\sum_{\nu=0}^{r-1}\|Y_\nu^{(r)}\|^2
+ =\sum_{a\bmod r}\|W_a^{(r)}\|^2.}
+ \label{eq:tpc39-folded-Parseval}
+\end{equation}
+At the minimal value \(r=q=L+1\),
+\begin{equation}
+ \boxed{
+ \frac1q\sum_{\nu=0}^{q-1}\|Y_\nu^{(q)}\|^2
+ =\|Z_0\|^2+
+ \sum_{a=1}^{L}\|Z_a+Z_{a-q}\|^2.}
+ \label{eq:tpc39-minimal-folded-Parseval}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Expand the squared norms and average the phase
+\(\zeta_r^{\nu(k-k')}\).  Additive orthogonality retains precisely the
+pairs \(k\equiv k'\pmod r\), proving
+\eqref{eq:tpc39-folded-Parseval}.  If \(r=L+1\), the zero residue class is
+\(\{0\}\), while residue \(a\), \(1\le a\le L\), contains the pair
+\(\{a,a-q\}\).
+\end{proof}
+
+\subsection{Complete singular spectrum}
+
+Define the normalized tomography operator
+\begin{equation}
+ \cT_r:\cH^{2L+1}\longrightarrow\cH^r,
+ \qquad
+ (\cT_rZ)_\nu
+ =r^{-1/2}\sum_{k=-L}^{L}\zeta_r^{\nu k}Z_k.
+ \label{eq:tpc39-tomography-operator}
+\end{equation}
+Its scalar Gram matrix is
+\begin{equation}
+ (\cT_r^*\cT_r)_{k,k'}
+ =\one_{k\equiv k'\pmod r}.
+ \label{eq:tpc39-tomography-Gram}
+\end{equation}
+
+\begin{theorem}[Alias--index tomography spectrum]
+\label{thm:tpc39-tomography-spectrum}
+For \(L<r\le2L+1\), the spectrum of the scalar alias--index Gram matrix
+in \eqref{eq:tpc39-tomography-Gram} is
+\begin{equation}
+ \boxed{
+ \begin{array}{c|c}
+ \text{eigenvalue}&\text{multiplicity}\\ \hline
+ 2&2L+1-r\\
+ 1&2r-(2L+1)\\
+ 0&2L+1-r.
+ \end{array}}
+ \label{eq:tpc39-general-spectrum}
+\end{equation}
+At \(r=q=L+1\), this becomes
+\begin{equation}
+ 2\ (L\text{ times}),
+ \qquad1\ (1\text{ time}),
+ \qquad0\ (L\text{ times}).
+ \label{eq:tpc39-minimal-spectrum}
+\end{equation}
+At the minimal value \(r=q\), the eigenvalue--one subspace is the isolated
+zero column.  The kernel is
+\begin{equation}
+ Z_0=0,
+ \qquad
+ Z_a=-Z_{a-q},
+ \quad1\le a\le L.
+ \label{eq:tpc39-minimal-kernel}
+\end{equation}
+As an operator on \(\cH^{2L+1}\), one has
+\(\cT_r^*\cT_r=G_r\otimes I_{\cH}\), where \(G_r\) is this scalar
+matrix.  Thus for finite \(\dim\cH=d\), every displayed multiplicity is
+multiplied by \(d\); the table records the intrinsic alias--index
+multiplicities.
+\end{theorem}
+
+\begin{proof}
+Because \(r>L\), every residue bucket in
+\eqref{eq:tpc39-residue-buckets} has size one or two.  There are
+\(2L+1-r\) doubletons and \(2r-(2L+1)\) singletons.  On a bucket of size
+\(s\), the Gram block in \eqref{eq:tpc39-tomography-Gram} is the
+all--ones matrix \(J_s\), whose eigenvalues are \(s\) once and zero
+\(s-1\) times.  This proves \eqref{eq:tpc39-general-spectrum}.  The
+minimal specialization follows from the explicit buckets in the proof of
+\cref{thm:tpc39-folded-Parseval}.
+\end{proof}
+
+At the other endpoint \(r=2L+1\), every bucket is a singleton and
+\begin{equation}
+ \frac1{2L+1}\sum_{\nu=0}^{2L}\|Y_\nu^{(2L+1)}\|^2
+ =\sum_{k=-L}^{L}\|Z_k\|^2.
+ \label{eq:tpc39-full-DFT-Parseval}
+\end{equation}
+Thus \(L+1\) twists are sufficient to recover the zero column, whereas
+\(2L+1\) twists are required to separate every alias column by this
+cyclic construction.
+
+\subsection{Exact position between trace and Gram gates}
+
+Put
+\begin{align}
+ E_{\rm tr}(Z)
+ &:=\sum_{k=-L}^{L}\|Z_k\|^2,
+ \label{eq:tpc39-trace-energy}\\
+ E_{\rm fold}(Z)
+ &:=\|Z_0\|^2+
+ \sum_{a=1}^{L}\|Z_a+Z_{a-q}\|^2.
+ \label{eq:tpc39-fold-energy}
+\end{align}
+Then
+\begin{equation}
+ \|Z_0\|^2\le E_{\rm fold}(Z)\le2E_{\rm tr}(Z).
+ \label{eq:tpc39-fold-trace-comparison}
+\end{equation}
+If \(\mathsf G=(\langle Z_k,Z_{k'}\rangle)\), then
+\begin{equation}
+ E_{\rm tr}(Z)=\tr\mathsf G
+ \le(2L+1)\|\mathsf G\|_{\op}.
+ \label{eq:tpc39-Gram-trace-comparison}
+\end{equation}
+Consequently,
+\begin{equation}
+ \text{alias Gram}
+ \Longrightarrow
+ \text{raw trace}
+ \Longrightarrow
+ \text{minimal folded energy}
+ \Longrightarrow
+ \text{zero--column energy}.
+ \label{eq:tpc39-gate-hierarchy}
+\end{equation}
+
+The reverse implications fail in the unrestricted Hilbert class.  Taking
+\(Z_a=Tv\), \(Z_{a-q}=-Tv\), and all other columns zero makes
+\(E_{\rm fold}=0\) while the trace and Gram norm grow like \(T^2\).
+Taking the same pair with equal signs and \(Z_0=0\) makes the zero--column
+energy vanish while \(E_{\rm fold}\) is arbitrarily large.  Hence the
+minimal tomography bank discards exactly a large collection of directions
+that are irrelevant to equality recovery; it is not a disguised full
+trace theorem.

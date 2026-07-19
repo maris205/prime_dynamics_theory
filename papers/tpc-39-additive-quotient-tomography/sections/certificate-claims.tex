@@ -1,0 +1,50 @@
+\section{Exact finite certificate and claim ledger}
+\label{sec:tpc39-certificate}
+
+The script \nolinkurl{experiments/tpc39_certificate.py} is a deterministic
+finite certificate for the algebraic identities in this paper.  It uses only
+integers and exact rational Hilbert vectors.  Roots of unity are never
+approximated: every phase average is evaluated by exact cyclic
+orthogonality.  The script has no random input, floating--point literal,
+true--division node, external package, or Python \texttt{assert}; every check
+therefore remains active under \texttt{python -O}.
+
+The certificate exhaustively checks declared finite ranges for:
+\begin{enumerate}[label=(\roman*)]
+ \item isolation of the zero alias at the sharp cyclic modulus \(q=L+1\),
+ and separation of all aliases only at \(q=2L+1\);
+ \item exact zero recovery and a null witness after deleting any one twist;
+ \item Hilbert--valued folded Parseval, collision--Gram entries, ranks,
+ traces, eigenvectors, and all multiplicities in
+ \eqref{eq:tpc39-general-spectrum};
+ \item the finite divisibility--indicator obstruction from
+ \cref{thm:tpc39-divisibility-rigidity}; and
+ \item the exact variance formulas for continuous Haar phases, the
+ collision--free \((2L+1)\)-grid, and the folded minimal \((L+1)\)-grid,
+ using exact character moments and complete finite product--space
+ enumeration.
+\end{enumerate}
+
+Running
+\begin{verbatim}
+python experiments/tpc39_certificate.py
+python -O experiments/tpc39_certificate.py
+\end{verbatim}
+produces byte--identical canonical JSON records.  The frozen run passes
+\(2{,}305{,}056\) exact checks.  Its certificate digest is
+\begin{center}
+\nolinkurl{31ed18b3158a0aa3228441d96b04d5a7d3cb8096d669dfae0d28a5339baef633}.
+\end{center}
+The SHA--256 hashes of the source and canonical JSON record are, respectively,
+\begin{center}
+\nolinkurl{3527cf3d4c011df887965924b3500b4b9a645eded46e59afabb51a979282f764},\\
+\nolinkurl{2bcce40bea2e82e8a5da849aea44af79ef0c8662b8a21f8883449979206aa7d3}.
+\end{center}
+The JSON also records representative rational energies and explicit Boolean
+claim boundaries.
+
+The certificate is evidence for finite algebra and implementation fidelity;
+it is not evidence for an asymptotic M\"obius estimate.  In particular, its
+claim ledger marks the twist--stable physical bound, uniform alias--column
+bound, parity breach, Hardy--Littlewood asymptotic, and twin--prime theorem as
+false.

@@ -1,0 +1,151 @@
+\section{Twisted face fields and the physical recovery gate}
+\label{sec:tpc39-physical-gate}
+
+We now return the quotient algebra to the inherited physical interface.
+Every statement that estimates a physical output is isolated as a
+conditional input.
+
+\subsection{Unimodular twists preserve the face ledgers}
+
+For \(0\le\nu<q\), set
+\begin{align}
+ C_{\nu,N}(F)
+ &:=\ee{\nu F/(qM)}C_N(F),
+ \label{eq:tpc39-twisted-C-field}\\
+ P_{\nu,N}(F)
+ &:=\ee{\nu F/(qM)}P_N(F).
+ \label{eq:tpc39-twisted-P-field}
+\end{align}
+The twist depends only on the determinant.  In particular,
+\begin{align}
+ |C_{\nu,N}(F)|&=|C_N(F)|,
+ &|P_{\nu,N}(F)|&=|P_N(F)|,
+ \label{eq:tpc39-twist-preserves-pointwise-mass}\\
+ \sum_{|F|\le B}|C_{\nu,N}(F)|^2
+ &=\sum_{|F|\le B}|C_N(F)|^2,
+ &
+ \sum_{|F|\le B}|P_{\nu,N}(F)|^2
+ &=\sum_{|F|\le B}|P_N(F)|^2.
+ \label{eq:tpc39-twist-preserves-field-mass}
+\end{align}
+The one--period identities from TPC--38 therefore imply, uniformly in
+unit targets and twists,
+\begin{align}
+ \sum_{|F|\le B}|C_{\nu,N}(F)|^2
+ &\ll K_B+1,
+ \label{eq:tpc39-full-window-mass}\\
+ \sum_{|F|\le B}|P_{\nu,N}(F)|^2
+ &\ll \frac{K_B+1}{J},
+ \label{eq:tpc39-proper-window-mass}
+\end{align}
+at the orbit--scale three--prime endpoint.  Partial periods at the two
+ends only change the absolute constants.
+
+These scalar identities do not transfer automatically through the
+coherent physical synthesis.  They show that adding the phase bank does
+not worsen the coefficient norm in the proposed face--field estimate.
+
+\subsection{A canonical minimal--bank square--energy condition}
+
+Recall \(\mathscr Y_\nu\) from
+\eqref{eq:tpc39-Ynu}.  The exact analytic input tailored to the minimal
+tomography bank is the following.
+
+\begin{assumption}[Minimal twist--bank energy]
+\label{ass:tpc39-minimal-twist-energy}
+The actual regular--subpacket outputs satisfy
+\begin{equation}
+ \boxed{
+ \frac1q\sum_{\nu=0}^{q-1}\|\mathscr Y_\nu\|^2
+ \ll X^{o(1)}B_0K_B.}
+ \label{eq:tpc39-minimal-twist-energy}
+\end{equation}
+\end{assumption}
+
+\begin{theorem}[Conditional equality closure]
+\label{thm:tpc39-conditional-equality-closure}
+Under \cref{ass:tpc39-minimal-twist-energy},
+\begin{equation}
+ \|\mathscr R_0\|^2
+ \ll X^{o(1)}B_0K_B.
+ \label{eq:tpc39-conditional-equality-bound}
+\end{equation}
+At the endpoint this is
+\begin{equation}
+ \|\mathscr R_0\|^2
+ \ll X^{o(1)}Q^3/J.
+ \label{eq:tpc39-conditional-endpoint-gate}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Use \eqref{eq:tpc39-condition-one-recovery},
+\(\mathscr Z_0=\mathscr R_0\), and
+\eqref{eq:tpc39-interface-key-ledger}.
+\end{proof}
+
+This is an exact sufficient implication, but it is not an analytic weakening
+of the original target.  Indeed,
+\eqref{eq:tpc39-minimal-folded-Parseval} shows that the hypothesis is
+stronger than the desired conclusion because its left side contains
+\(\|\mathscr R_0\|^2\) as a positive summand.  Its value is to specify a
+finite structured family of completed outputs to which additive-dispersion
+methods could be applied, not to lower the required cancellation by algebra
+alone.
+
+\subsection{A face--separated sufficient input}
+
+A formulation closer to the TPC--37 prescribed--field proposal is
+\begin{assumption}[Twist--stable full/proper fields]
+\label{ass:tpc39-twist-stable-faces}
+The outputs in \eqref{eq:tpc39-Ynu-C} and
+\eqref{eq:tpc39-Ynu-P} satisfy
+\begin{align}
+ \frac1q\sum_{\nu=0}^{q-1}\|\mathscr Y_\nu^C\|^2
+ &\ll X^{o(1)}B_0K_B,
+ \label{eq:tpc39-twist-stable-C}\\
+ \frac1q\sum_{\nu=0}^{q-1}\|\mathscr Y_\nu^P\|^2
+ &\ll X^{o(1)}B_0\frac{K_B}{J}.
+ \label{eq:tpc39-twist-stable-P}
+\end{align}
+\end{assumption}
+
+\begin{proposition}[Face stability implies the minimal gate]
+\label{prop:tpc39-face-stability-implies-minimal}
+\Cref{ass:tpc39-twist-stable-faces} implies
+\cref{ass:tpc39-minimal-twist-energy}.
+\end{proposition}
+
+\begin{proof}
+For each \(\nu\),
+\[
+ \|\mathscr Y_\nu^C+\mathscr Y_\nu^P\|^2
+ \le2\|\mathscr Y_\nu^C\|^2+2\|\mathscr Y_\nu^P\|^2.
+\]
+Average and use \(J\to\infty\).
+\end{proof}
+
+Uniform estimates for every \(\nu\) with the corresponding right sides
+are stronger sufficient conditions.  They would incur no extra factor
+\(q\), because the final recovery uses an average.  On the other hand,
+the two untwisted estimates proposed in TPC--37 are only the case
+\(\nu=0\).  They do not imply either twist--stable assumption.  The
+two--column obstruction from TPC--38, or the deletion witness in
+\cref{cor:tpc39-deletion-no-go}, supplies abstract counterexamples.
+
+\subsection{Why this is smaller than an all--field theorem}
+
+An all--field Bessel estimate stable under arbitrary determinant
+restrictions would control every field
+\(\kappa_N(F)\), hence in particular all
+\(C_{\nu,N},P_{\nu,N}\).  The minimal twist bank asks only for the
+\(2q\) explicit fields in
+\eqref{eq:tpc39-twisted-C-field}--\eqref{eq:tpc39-twisted-P-field}, or
+more weakly for their \(q\) recombinations.  It discards the
+\(L\)-dimensional antisymmetric kernel in
+\eqref{eq:tpc39-minimal-kernel}.  It is therefore a genuinely smaller
+operator test than the hereditary all--field theorem isolated in TPC--38.
+
+It is not known whether the actual product--slope and projective
+reassembly methods are stable under this bank.  Establishing precisely
+that stability is the new physical gate.

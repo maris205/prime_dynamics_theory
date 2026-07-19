@@ -1,0 +1,221 @@
+\section{Terminal injectivity and the M\"obius boundary}
+\label{sec:tpc39-terminal}
+
+The terminal factorization \(s=1\) displays the arithmetic content that
+the twist bank must estimate.  We first remove a possible combinatorial
+ambiguity: distinct row--alias atoms do not represent the same integer.
+
+\subsection{Exact terminal injectivity}
+
+For fixed \(j\in\cJ\), define
+\begin{equation}
+ n_{\alpha,j,k}
+ :=m_\alpha j+h+kM,
+ \qquad -L\le k\le L.
+ \label{eq:tpc39-terminal-target}
+\end{equation}
+
+\begin{theorem}[Terminal row--alias injectivity]
+\label{thm:tpc39-terminal-injectivity}
+Assume \eqref{eq:tpc39-interface-prime-range} and, as at the endpoint,
+\begin{equation}
+ \max_{\alpha,\beta}|m_\alpha-m_\beta|<M.
+ \label{eq:tpc39-row-difference-less-M}
+\end{equation}
+For every fixed \(j\), the map
+\begin{equation}
+ (\alpha,k)\longmapsto n_{\alpha,j,k}
+ \label{eq:tpc39-terminal-injective-map}
+\end{equation}
+is injective.
+\end{theorem}
+
+\begin{proof}
+If \(n_{\alpha,j,k}=n_{\beta,j,k'}\), then
+\begin{equation}
+ (m_\alpha-m_\beta)j=(k'-k)M.
+ \label{eq:tpc39-terminal-collision-equation}
+\end{equation}
+Every prime factor \(q_i\) of \(M\) is larger than the positive integer
+\(j\), so \((j,M)=1\).  Thus
+\(M\mid m_\alpha-m_\beta\).  By
+\eqref{eq:tpc39-row-difference-less-M}, the two row integers are equal.
+Source separation gives \(\alpha=\beta\), and then
+\eqref{eq:tpc39-terminal-collision-equation} gives \(k=k'\).
+\end{proof}
+
+At the endpoint, \(m_\alpha\asymp Q\) and \(M/Q\to\infty\), so
+\eqref{eq:tpc39-row-difference-less-M} is automatic after the dyadic
+constants are fixed.  The theorem says that no hidden target multiplicity
+is responsible for the terminal difficulty.
+
+\subsection{The atomic diagonal is already at the target scale}
+
+With a terminal cutoff \(\Phi_0\), put
+\begin{equation}
+ b_{\alpha,j,k}
+ :=-\mu(n_{\alpha,j,k})\log(n_{\alpha,j,k})
+ \Phi_0(n_{\alpha,j,k}),
+ \label{eq:tpc39-terminal-b}
+\end{equation}
+interpreting the term as zero outside the positive terminal support.  A
+left terminal slice, including the equality alias \(k=0\), has the form
+\begin{equation}
+ \cT_{\gamma,j}^{L}
+ =\sum_\alpha\sum_{k\in\cI_B}
+ c_{\alpha,\gamma,j}^{L}b_{\alpha,j,k},
+ \label{eq:tpc39-terminal-left-slice}
+\end{equation}
+where
+\begin{equation}
+ c_{\alpha,\gamma,j}^{L}
+ =\gamma_\alpha^{(1)}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j).
+ \label{eq:tpc39-terminal-left-coefficient}
+\end{equation}
+The right slice is symmetric.  The shift changes the terminal atom \(b\),
+not the inherited row--time multiplier, and the deterministic multiplier
+ledger gives
+\begin{equation}
+ \sup_{\alpha,\gamma,j}
+ \left|\mathfrak A_{\alpha,\gamma}^{\rm act}(j)\right|
+ \ll X^{o(1)}.
+ \label{eq:tpc39-terminal-multiplier-ledger}
+\end{equation}
+This is only a pointwise mask, residue, and smooth--weight bound; it is not
+the unproved moving--shift Hilbert output estimate.  All cutoffs and
+logarithms are absorbed into \(X^{o(1)}\).
+
+For the \(\nu\)-th twist--bank member, each summand additionally carries
+\(\omega^{\nu k}\).  This factor has modulus one and disappears on the
+atomic diagonal, so the same diagonal bound holds after averaging over
+\(\nu\).
+
+Expanding the two squared energies gives
+\begin{equation}
+ \|\cT^{L}\|_2^2+\|\cT^{R}\|_2^2
+ =\cD_{\rm term}+\cO_{\rm term},
+ \label{eq:tpc39-terminal-diagonal-offdiagonal}
+\end{equation}
+where \(\cD_{\rm term}\) contains only
+\((\alpha,k)=(\beta,k')\), and \(\cO_{\rm term}\) contains every other
+pair.
+
+\begin{proposition}[Terminal diagonal closure]
+\label{prop:tpc39-terminal-diagonal-closure}
+The atomic diagonal satisfies
+\begin{equation}
+ \boxed{
+ \cD_{\rm term}
+ \ll X^{o(1)}Q^2JK_B.}
+ \label{eq:tpc39-terminal-diagonal-bound}
+\end{equation}
+For \(B\asymp X\),
+\begin{equation}
+ \cD_{\rm term}
+ \ll X^{o(1)}\frac{Q^3}{J}.
+ \label{eq:tpc39-terminal-diagonal-endpoint}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+There are \(O(X^{o(1)}Q)\) opposite rows and \(O(J)\) orbit times.
+For each of the \(K_B\) aliases, use
+\(\sum_\alpha|\gamma_\alpha^{(i)}|^2\ll X^{o(1)}Q\) and the bounded
+multiplier.  This proves
+\eqref{eq:tpc39-terminal-diagonal-bound} for both sides.  Finally,
+\eqref{eq:tpc39-interface-key-ledger} gives
+\eqref{eq:tpc39-terminal-diagonal-endpoint}.
+\end{proof}
+
+Together with \cref{thm:tpc39-terminal-injectivity}, this closes the
+terminal collision and atomic diagonal ledger.  The remaining term
+\(\cO_{\rm term}\) is genuine coefficient correlation:
+\begin{enumerate}[label=(\roman*)]
+ \item if \(\alpha=\beta\) and \(k\ne k'\), it contains
+ \begin{equation}
+  \mu(n_{\alpha,j,k})\mu(n_{\alpha,j,k'}),
+  \qquad
+  n_{\alpha,j,k}-n_{\alpha,j,k'}=(k-k')M;
+  \label{eq:tpc39-terminal-two-Mobius}
+ \end{equation}
+ \item if \(\alpha\ne\beta\), the physical row provenance contributes
+ the additional factors \(\mu(d_\alpha)\mu(d_\beta)\), producing the
+ affine four--M\"obius quadratic form isolated in TPC--34 and TPC--38.
+\end{enumerate}
+
+\subsection{What minimal folding retains}
+
+Let
+\begin{equation}
+ C_{k,k'}=\langle\mathscr Z_k,\mathscr Z_{k'}\rangle.
+ \label{eq:tpc39-alias-covariance}
+\end{equation}
+The minimal twisted energy is exactly
+\begin{align}
+ E_{\rm fold}
+ &=C_{0,0}
+ \notag\\
+ &\quad+
+ \sum_{r=1}^{L}
+ \bigl(
+ C_{r,r}+C_{r-q,r-q}
+ +2\operatorname{Re}C_{r,r-q}
+ \bigr).
+ \label{eq:tpc39-terminal-folded-covariance}
+\end{align}
+The diagonal entries in this formula still contain cross--row terms at a
+fixed alias.  In addition, each folded pair has
+\begin{equation}
+ r-(r-q)=q,
+ \qquad qM\in(B,B+M],
+ \label{eq:tpc39-terminal-long-gap}
+\end{equation}
+so its cross term contains a long--gap M\"obius correlation.
+
+The twist
+\begin{equation}
+ \ee{\nu(su-N_\alpha(j))/(qM)}
+ =\omega^{\nu k}
+ \label{eq:tpc39-terminal-physical-twist}
+\end{equation}
+is constant across all rows at fixed \(k\).  It therefore does not
+oscillate the fixed--alias cross--row form.  The two members of a folded
+pair have the same phase modulo \(q\), so that correlation also survives.
+Most importantly, \(C_{0,0}=\|\mathscr R_0\|^2\) remains in
+\eqref{eq:tpc39-terminal-folded-covariance} without alteration.
+
+\subsection{Comparison with short progression variance}
+
+The closest general theorem for scalar multiplicative functions in this
+range is the variance estimate of
+\citet[Theorem~1.5]{KlurmanMangerelTeravainen2023}.  After subtraction of
+one most--pretentious character, it gives for almost every suitable
+modulus \(m=o(x)\) a bound of schematic size
+\begin{equation}
+ \eps\,\varphi(m)\left(\frac xm\right)^2
+ \label{eq:tpc39-KMT-scale}
+\end{equation}
+over the reduced residue classes; under GRH the exceptional--modulus
+restriction is removed for typical moduli.  Specializing only the scale to
+\(m=M\), \(x\asymp X\), and \(K=X/M\asymp K_B\), and using
+\(\varphi(M)\asymp M\), the right side has order
+\begin{equation}
+ \eps MK^2,
+ \label{eq:tpc39-KMT-endpoint-scale}
+\end{equation}
+whereas the scalar atomic diagonal has order \(MK\).  Thus this black box
+would need \(\eps\ll K^{-1}X^{o(1)}\) to reach the diagonal scale.  At the
+TPC endpoint, \(K=X^{1/400+o(1)}\), while the available savings are
+logarithmic rather than this fixed power.  The M\"obius--specific
+adaptation discussed by those authors likewise gives a logarithmic
+saving, not \(K^{-1}\).
+
+This comparison is deliberately limited.  The cited theorem averages
+reduced residue classes, removes a rank--one pretentious component, and is
+unconditional for almost all moduli.  It does not contain the physical
+row mask, the row synthesis, or the four--M\"obius form in
+\(\cO_{\rm term}\).  GRH changes the exceptional--modulus statement, not
+the missing factor \(K\).  Hence no existing scalar progression theorem
+is imported here as a proof of
+\cref{ass:tpc39-minimal-twist-energy}.
