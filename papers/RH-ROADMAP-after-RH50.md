@@ -39,9 +39,9 @@ earlier on the Hilbert--Polya route than the paper number alone suggests.
   forms.
 - No canonical self-adjoint generator, \(T\log T\) counting law,
   von-Mangoldt/prime-power trace formula, or complete zeta-zero spectral
-  identity has yet been constructed.  The parallel TPC series is developing
-  an arithmetic cancellation branch, but it has not yet been identified with
-  the RH transfer determinant.
+  identity has yet been constructed.  The parallel TPC series is pursuing
+  twin-prime and prime-correlation questions; its arithmetic techniques may
+  be referenced, but it is not a component of the RH spectral proof route.
 
 The correct current location is therefore:
 
@@ -79,7 +79,7 @@ The RH-50 audit is:
 | Small-noise limit | Major pieces closed; central intrinsic identification remains conditional | RH-14--RH-16, RH-38--RH-50 | Replace global resolvent/contraction hopes by directional Hardy--Stein control |
 | Self-adjoint/scattering generator | Not reached | RH-7 and later no-go results exclude direct Markov symmetrization | A new canonical scattering or dilation object is required |
 | \(T\log T\) counting | Not reached | RH-4 rules out the quartic affine route; RH-16 gives only a half-logarithmic rank clock | Counting must be derived from a new unbounded phase/generator without fitted rescaling |
-| Prime-power trace formula | Not reached in the RH series; a parallel arithmetic branch is active | RH-1--RH-2 encode primes inversely; TPC-1 and TPC-42--TPC-43 isolate sieve/Möbius correlation gates | The TPC arithmetic object still needs a theorem-level interface with the RH determinant and von Mangoldt weights |
+| Prime-power trace formula | Not reached | RH-1--RH-2 encode primes inversely; the independent TPC series studies twin-prime/sieve-correlation gates | TPC methods may be referenced, but the RH route still needs its own target-independent von Mangoldt/prime-power trace theorem |
 | Complete zero identity | Not reached | None of RH-1--RH-50 claims it | Requires no missing/spurious levels, multiplicity control, and a self-adjoint identity |
 
 ## Audit of RH-1 through RH-50
@@ -169,15 +169,16 @@ The RH-50 audit is:
 | RH-49 | Reduces the mixed gain to purely Hilbert--Schmidt actions with a quarter-power stable-rank cost | Leaves the uniform Hilbert--Schmidt range-action gate |
 | RH-50 | Replaces contour actions by two-pole Hardy energies and positive Stein certificates; proves a fixed-step global-contraction no-go | Uniform dyadic Stein supersolutions, finite-factor transfer, and tail/cutoff validation remain |
 
-## Scope of this audit and the parallel TPC branch
+## Scope of this audit and the independent TPC branch
 
 The fifty-paper audit above concerns the RH-numbered spectral/dynamical
 series.  The repository also contains a parallel TPC series devoted to
 finite-sieve correlations, singular-series normalization, divisor/Möbius
 packet decompositions, and arithmetic cancellation gates.
 
-That branch changes the long-range plan in one useful way: Stage D need not
-invent an arithmetic interface from nothing.  In particular:
+That branch does not close any RH roadmap stage.  It is useful as an
+independent source of sieve, Möbius, fiber, and certificate techniques.  In
+particular:
 
 - TPC-1 gives exact finite-sieve correlation products and their
   Hardy--Littlewood singular-series limits under rare-event normalization;
@@ -186,24 +187,26 @@ invent an arithmetic interface from nothing.  In particular:
 - TPC-43 closes the annealed multiplicative model and compresses the
   deterministic physical all-minus problem to a one-sided Möbius kernel sum.
 
-The boundary is still sharp.  TPC-43 does not prove the deterministic
+The boundary is sharp.  TPC-43 does not prove the deterministic
 all-minus kernel bound, four-Möbius cancellation, a parity breach, or a
 Hardy--Littlewood asymptotic.  More importantly for this roadmap, no theorem
 currently identifies a TPC trace/kernel with the RH small-noise transfer
 determinant or produces the completed-zeta prime-power explicit formula.
 
-The future program should therefore maintain two parallel milestones:
+The two programs should therefore remain logically independent:
 
 \[
 \begin{array}{c}
 \text{RH branch: canonical renormalized spectral/scattering determinant},\\
-\text{TPC branch: deterministic arithmetic cancellation and trace kernel},
+\text{TPC branch: twin-prime and prime-correlation arithmetic gates},
 \end{array}
 \]
 
-and join them only through an explicit transform preserving test functions,
-weights, multiplicities, and normalization.  Numerical resemblance or a
-shared use of the word trace is not an interface theorem.
+TPC results may be cited or their methods reused.  They should be joined to
+the RH route only if a future theorem naturally supplies an explicit
+transform preserving test functions, weights, multiplicities, and
+normalization.  No such merger is an assumed roadmap step, and a shared use
+of the word trace is not an interface theorem.
 
 ## What changed relative to the original plan
 
@@ -290,9 +293,8 @@ without an affine fit or a target-informed identification \(T=T(\sigma)\).
 Likewise, periodic-orbit traces of the quadratic map are geometric.  A
 prime-power formula requires a new theorem producing von Mangoldt weights,
 not a numerical resemblance and not an inverse parameter containing the
-prime word.  The TPC branch may supply the arithmetic side of this theorem,
-but its current Möbius/correlation kernels have not yet been transported to
-the RH spectral side.
+prime word.  The TPC branch may provide useful arithmetic ideas, but the RH
+prime-power theorem remains an independent obligation.
 
 ## Revised total roadmap
 
@@ -437,15 +439,16 @@ This stage is conditional on Stage C.
 
 #### D1. Prime-power trace formula
 
-Build an explicit bridge from the TPC arithmetic/sieve branch to the
-self-adjoint/scattering trace side.  The geometric side must naturally
-produce von Mangoldt weights and prime powers, with a controlled test
-function class.
+Build an explicit arithmetic bridge to the self-adjoint/scattering trace
+side.  The geometric side must naturally produce von Mangoldt weights and
+prime powers, with a controlled test-function class.  TPC results may be
+used as references or tools, but the theorem must stand independently unless
+a genuine RH--TPC interface has first been proved.
 
 The inverse prime kneading parameter of RH-2 cannot by itself satisfy this
 criterion because it already contains the prime word.
 
-A valid RH--TPC interface must specify:
+If an RH--TPC interface ever emerges, it must specify:
 
 - the transform between the RH spectral variable and the TPC arithmetic
   scale;
@@ -488,6 +491,30 @@ After RH-55, pause again.  If Milestone A is complete, combine RH-38 through
 RH-55 into one synthesis manuscript on the small-noise intrinsic
 determinant.  If it fails, publish the sharp obstruction and do not proceed
 to self-adjoint language through an ad hoc replacement.
+
+## Fifty-paper review protocol
+
+The RH series will pause for a full program audit after every additional
+fifty papers: RH-100, RH-150, and so on.  An earlier audit is also required
+whenever one of Stages A--D closes or fails decisively.
+
+Each review must:
+
+1. compare the accumulated papers with the current staged roadmap;
+2. classify every new result as analytic, computer-assisted, conditional,
+   floating evidence, or no-go;
+3. record which assumptions were removed, weakened, strengthened, or found
+   false;
+4. update the RH--TPC interface ledger;
+5. state the current closest theorem-level milestone;
+6. give explicit continuation, fallback, and stopping conditions;
+7. decide whether a synthesis paper should replace further micro-papers.
+
+The paper count is therefore a review clock, not evidence that the final
+Hilbert--Polya stages are close.  A negative result may shorten the route by
+closing a false branch; an unexpectedly strong theorem may legitimately
+reorganize or accelerate it.  Neither outcome should be hidden to preserve
+an earlier narrative.
 
 ## Decision ledger
 

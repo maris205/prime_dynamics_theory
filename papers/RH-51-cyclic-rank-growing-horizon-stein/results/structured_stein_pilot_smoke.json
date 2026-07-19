@@ -1,0 +1,754 @@
+{
+  "block_floor_target": 0.25,
+  "cyclic_maximum_power": 9,
+  "cyclic_relative_singular_tolerance": 1e-08,
+  "evidence_level": "binary64 dense Lyapunov, eigenspectrum, Krylov-rank, and block-completion diagnostic; not interval validated",
+  "fine_resolution": 5.12,
+  "fits": {
+    "left_exact_hardy_energy": {
+      "growth_exponent": 0.36297953102447766,
+      "levels": 2,
+      "log_intercept": -0.7661624428223089,
+      "maximum_log_residual": 3.7470027081099033e-16,
+      "sigma_power": -0.36297953102447766
+    },
+    "left_participation_rank": {
+      "growth_exponent": 1.0838603583818938,
+      "levels": 2,
+      "log_intercept": -1.109766480464523,
+      "maximum_log_residual": 8.881784197001252e-16,
+      "sigma_power": -1.0838603583818938
+    },
+    "right_exact_hardy_energy": {
+      "growth_exponent": 0.3356452814612183,
+      "levels": 2,
+      "log_intercept": -0.6124547112471579,
+      "maximum_log_residual": 1.5785983631388945e-16,
+      "sigma_power": -0.3356452814612183
+    },
+    "right_participation_rank": {
+      "growth_exponent": 0.9719172464584003,
+      "levels": 2,
+      "log_intercept": -0.7436558020712438,
+      "maximum_log_residual": 6.661338147750939e-16,
+      "sigma_power": -0.9719172464584003
+    }
+  },
+  "hardy_radius": 0.85,
+  "limitations": [
+    "The dense audit uses N*sigma=5.12, below the production resolution N*sigma=20.48 used in RH-50.",
+    "All eigendata, Lyapunov solves, singular values, and minimum eigenvalues are binary64 and are not interval enclosures.",
+    "The cyclic ranks are numerical ranks at the explicitly stored relative singular-value threshold.",
+    "The isotropic block completions are finite-matrix certificates in floating arithmetic; no dyadically uniform small-noise trace budget is inferred.",
+    "Failure of the scalar identity cone or of the diagonal extracted from the exact Gramian does not rule out all diagonal, banded, multilevel, or anisotropic metrics."
+  ],
+  "power_checkpoints": [
+    1,
+    2,
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    64
+  ],
+  "rows": [
+    {
+      "B_hilbert_schmidt_norm": 0.09608190389522066,
+      "C_hilbert_schmidt_norm": 0.16038297917716057,
+      "coarse_biorthogonality_defect": 2.220446049250313e-16,
+      "coarse_bulk_radius_candidate": 0.22528348977031018,
+      "coarse_dimension": 16,
+      "diagonal_of_exact_gramian": {
+        "is_a_supersolution": false,
+        "minimum_stein_defect_eigenvalue": -0.3544960931901303
+      },
+      "elapsed_seconds": 0.013550117029808462,
+      "fine_biorthogonality_defect": 2.7755575615628914e-16,
+      "fine_bulk_radius_candidate": 0.22555252096240946,
+      "fine_dimension": 32,
+      "fine_dimension_times_sigma": 5.12,
+      "fine_scaled_bulk_radius_candidate": 0.2653559070145994,
+      "hardy_radius": 0.85,
+      "identity_metric": {
+        "minimum_unforced_defect_eigenvalue": 0.5063882912448795,
+        "scalar_cone_witness_source_quadratic_form": 0.35744571431210587,
+        "scalar_identity_cone_obstructed": false
+      },
+      "left_block_completion": {
+        "block_defect_minimum_eigenvalue": 1.0386404391509996e-10,
+        "completion_available_through_maximum_checkpoint": true,
+        "energy_upper": 0.9042062232790822,
+        "isotropic_floor": 2.9865280148028405e-05,
+        "observation_hilbert_schmidt_squared": 15.999999999999996,
+        "power_norm_ledger": [
+          {
+            "horizon": 1,
+            "power_norm": 0.7025750556026875,
+            "power_norm_squared": 0.49361170875511945
+          },
+          {
+            "horizon": 2,
+            "power_norm": 0.33541525730715904,
+            "power_norm_squared": 0.11250339483442771
+          },
+          {
+            "horizon": 4,
+            "power_norm": 0.02100198841006131,
+            "power_norm_squared": 0.0004410835171763496
+          },
+          {
+            "horizon": 8,
+            "power_norm": 0.00010364722435695881,
+            "power_norm_squared": 1.0742747116901756e-08
+          },
+          {
+            "horizon": 12,
+            "power_norm": 5.137178541852474e-07,
+            "power_norm_squared": 2.6390603370869513e-13
+          },
+          {
+            "horizon": 16,
+            "power_norm": 2.54694797418504e-09,
+            "power_norm_squared": 6.48694398320528e-18
+          },
+          {
+            "horizon": 24,
+            "power_norm": 6.261064590640087e-14,
+            "power_norm_squared": 3.920092980816711e-27
+          },
+          {
+            "horizon": 32,
+            "power_norm": 1.5391404463515892e-18,
+            "power_norm_squared": 2.3689533135953693e-36
+          },
+          {
+            "horizon": 48,
+            "power_norm": 9.301187674273986e-28,
+            "power_norm_squared": 8.651209215206632e-55
+          },
+          {
+            "horizon": 64,
+            "power_norm": 5.620805584546885e-37,
+            "power_norm_squared": 3.159345541927345e-73
+          }
+        ],
+        "selected_horizon": 4,
+        "selected_power_floor_clock": 0.007057336274821592,
+        "selected_power_norm": 0.02100198841006131
+      },
+      "left_cyclic_rank_profile": [
+        {
+          "block_count": 1,
+          "largest_singular_value": 0.6130945080704329,
+          "maximum_power": 0,
+          "numerical_rank": 13,
+          "rank_fraction": 0.40625,
+          "smallest_retained_singular_value": 1.0762533943764374e-07
+        },
+        {
+          "block_count": 2,
+          "largest_singular_value": 0.6730732853644709,
+          "maximum_power": 1,
+          "numerical_rank": 21,
+          "rank_fraction": 0.65625,
+          "smallest_retained_singular_value": 1.076253388746234e-07
+        },
+        {
+          "block_count": 3,
+          "largest_singular_value": 0.6768723501757973,
+          "maximum_power": 2,
+          "numerical_rank": 22,
+          "rank_fraction": 0.6875,
+          "smallest_retained_singular_value": 2.5011555392545455e-08
+        },
+        {
+          "block_count": 4,
+          "largest_singular_value": 0.6770634076868539,
+          "maximum_power": 3,
+          "numerical_rank": 22,
+          "rank_fraction": 0.6875,
+          "smallest_retained_singular_value": 2.5620583342423274e-08
+        },
+        {
+          "block_count": 5,
+          "largest_singular_value": 0.6770774762779009,
+          "maximum_power": 4,
+          "numerical_rank": 22,
+          "rank_fraction": 0.6875,
+          "smallest_retained_singular_value": 2.573360799720756e-08
+        },
+        {
+          "block_count": 6,
+          "largest_singular_value": 0.6770785574970237,
+          "maximum_power": 5,
+          "numerical_rank": 22,
+          "rank_fraction": 0.6875,
+          "smallest_retained_singular_value": 2.5740594615487655e-08
+        },
+        {
+          "block_count": 7,
+          "largest_singular_value": 0.6770786331009735,
+          "maximum_power": 6,
+          "numerical_rank": 22,
+          "rank_fraction": 0.6875,
+          "smallest_retained_singular_value": 2.574097293723435e-08
+        },
+        {
+          "block_count": 8,
+          "largest_singular_value": 0.6770786383109324,
+          "maximum_power": 7,
+          "numerical_rank": 22,
+          "rank_fraction": 0.6875,
+          "smallest_retained_singular_value": 2.5741000136646858e-08
+        },
+        {
+          "block_count": 9,
+          "largest_singular_value": 0.6770786386781004,
+          "maximum_power": 8,
+          "numerical_rank": 22,
+          "rank_fraction": 0.6875,
+          "smallest_retained_singular_value": 2.5741002182506648e-08
+        },
+        {
+          "block_count": 10,
+          "largest_singular_value": 0.6770786387040924,
+          "maximum_power": 9,
+          "numerical_rank": 22,
+          "rank_fraction": 0.6875,
+          "smallest_retained_singular_value": 2.5741002331789134e-08
+        }
+      ],
+      "left_exact_hardy_energy": 0.9039575455799422,
+      "left_exact_stein_defect_norm": 8.057398044205619e-16,
+      "left_gramian": {
+        "normalized_eigenvalues": [
+          0.5553227814626533,
+          0.31118411067102325,
+          0.1027551191252163,
+          0.020722335924790388,
+          0.004574922770025419,
+          0.0024563498116929577,
+          0.0021323719646818284,
+          0.0006058141418854827,
+          0.00020585742610243967,
+          2.8682981582035713e-05,
+          1.0883971290383425e-05,
+          3.492450107299657e-07,
+          2.98946682845511e-07,
+          1.0967407337171564e-07,
+          1.1233503906471835e-08,
+          4.4422399961494745e-10,
+          1.6561072399132953e-10,
+          3.816687260980365e-11,
+          9.62034603831711e-13,
+          8.067909490002223e-13,
+          1.4027965405790933e-14,
+          8.023445005046821e-16,
+          3.4200755733317356e-17,
+          1.7548945499896692e-17,
+          9.996516526126099e-18,
+          8.493984241573619e-18,
+          1.8012077113081846e-19,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "numerical_rank": 20,
+        "participation_rank": 2.402466508747797,
+        "rank_for_99_percent_trace": 5,
+        "trace": 0.8255297608799506
+      },
+      "left_low_rank_plus_identity_floors": [
+        {
+          "factor_rank": 0,
+          "necessary_isotropic_floor": 0.4584354829920533
+        },
+        {
+          "factor_rank": 4,
+          "necessary_isotropic_floor": 0.0037767349003833247
+        },
+        {
+          "factor_rank": 8,
+          "necessary_isotropic_floor": 0.00016994143174570912
+        },
+        {
+          "factor_rank": 16,
+          "necessary_isotropic_floor": 1.3671658137571777e-10
+        }
+      ],
+      "right_block_completion": {
+        "block_defect_minimum_eigenvalue": 1.891858922937941e-12,
+        "completion_available_through_maximum_checkpoint": true,
+        "energy_upper": 1.00294911806328,
+        "isotropic_floor": 4.6066379162837726e-05,
+        "observation_hilbert_schmidt_squared": 14.193459603099457,
+        "power_norm_ledger": [
+          {
+            "horizon": 1,
+            "power_norm": 0.688200222148527,
+            "power_norm_squared": 0.473619545765282
+          },
+          {
+            "horizon": 2,
+            "power_norm": 0.32168373752805945,
+            "power_norm_squared": 0.10348042699002144
+          },
+          {
+            "horizon": 4,
+            "power_norm": 0.01983569113454479,
+            "power_norm_squared": 0.0003934546427850588
+          },
+          {
+            "horizon": 8,
+            "power_norm": 9.816021092802904e-05,
+            "power_norm_squared": 9.635427009435152e-09
+          },
+          {
+            "horizon": 12,
+            "power_norm": 4.844122904685032e-07,
+            "power_norm_squared": 2.3465526715694155e-13
+          },
+          {
+            "horizon": 16,
+            "power_norm": 2.3902947718628657e-09,
+            "power_norm_squared": 5.713509096394949e-18
+          },
+          {
+            "horizon": 24,
+            "power_norm": 5.820150324224307e-14,
+            "power_norm_squared": 3.387414979656831e-27
+          },
+          {
+            "horizon": 32,
+            "power_norm": 1.4171561678687293e-18,
+            "power_norm_squared": 2.0083316041283822e-36
+          },
+          {
+            "horizon": 48,
+            "power_norm": 8.402039899881518e-28,
+            "power_norm_squared": 7.059427447920102e-55
+          },
+          {
+            "horizon": 64,
+            "power_norm": 4.981404031754557e-37,
+            "power_norm_squared": 2.4814386127580556e-73
+          }
+        ],
+        "selected_horizon": 4,
+        "selected_power_floor_clock": 0.005584482578021659,
+        "selected_power_norm": 0.01983569113454479
+      },
+      "right_exact_hardy_energy": 1.002646104724699,
+      "right_exact_stein_defect_norm": 7.54773201720452e-16,
+      "right_gramian": {
+        "normalized_eigenvalues": [
+          0.4982517063117057,
+          0.28564636413875194,
+          0.1455895498740313,
+          0.055981838055687565,
+          0.013129526351438324,
+          0.001304441512409358,
+          9.03243110722109e-05,
+          6.078990721174795e-06,
+          1.667193433823119e-07,
+          3.645882289395021e-09,
+          8.861545156938161e-11,
+          3.354075490280433e-13,
+          5.8594301829104146e-15,
+          1.0841950629212352e-17,
+          0.0,
+          0.0
+        ],
+        "numerical_rank": 11,
+        "participation_rank": 2.8220447986322608,
+        "rank_for_99_percent_trace": 5,
+        "trace": 1.1564542272402487
+      },
+      "sigma": 0.16
+    },
+    {
+      "B_hilbert_schmidt_norm": 0.13327406139675346,
+      "C_hilbert_schmidt_norm": 0.22659404247268594,
+      "coarse_biorthogonality_defect": 2.220446049250313e-16,
+      "coarse_bulk_radius_candidate": 0.45742922365381317,
+      "coarse_dimension": 32,
+      "diagonal_of_exact_gramian": {
+        "is_a_supersolution": false,
+        "minimum_stein_defect_eigenvalue": -0.28739717918421626
+      },
+      "elapsed_seconds": 0.054542026948183775,
+      "fine_biorthogonality_defect": 1.6653345369377348e-15,
+      "fine_bulk_radius_candidate": 0.462166347102164,
+      "fine_dimension": 64,
+      "fine_dimension_times_sigma": 5.12,
+      "fine_scaled_bulk_radius_candidate": 0.54372511423784,
+      "hardy_radius": 0.85,
+      "identity_metric": {
+        "minimum_unforced_defect_eigenvalue": -0.20016653582725963,
+        "scalar_cone_witness_source_quadratic_form": 0.20884675922981152,
+        "scalar_identity_cone_obstructed": true
+      },
+      "left_block_completion": {
+        "block_defect_minimum_eigenvalue": 3.638596075907247e-08,
+        "completion_available_through_maximum_checkpoint": true,
+        "energy_upper": 1.1631936233917397,
+        "isotropic_floor": 4.8462209747759415e-05,
+        "observation_hilbert_schmidt_squared": 31.999999999999993,
+        "power_norm_ledger": [
+          {
+            "horizon": 1,
+            "power_norm": 1.0955211252309371,
+            "power_norm_squared": 1.2001665358272586
+          },
+          {
+            "horizon": 2,
+            "power_norm": 0.9659973644656139,
+            "power_norm_squared": 0.9331509081545121
+          },
+          {
+            "horizon": 4,
+            "power_norm": 0.38740952613697366,
+            "power_norm_squared": 0.15008614094167447
+          },
+          {
+            "horizon": 8,
+            "power_norm": 0.030509426786165642,
+            "power_norm_squared": 0.0009308251228204016
+          },
+          {
+            "horizon": 12,
+            "power_norm": 0.002648877687158768,
+            "power_norm_squared": 7.016553001527583e-06
+          },
+          {
+            "horizon": 16,
+            "power_norm": 0.00023136284890909635,
+            "power_norm_squared": 5.3528767855333345e-08
+          },
+          {
+            "horizon": 24,
+            "power_norm": 1.7647718421910863e-06,
+            "power_norm_squared": 3.1144196549905206e-12
+          },
+          {
+            "horizon": 32,
+            "power_norm": 1.3441385502558728e-08,
+            "power_norm_squared": 1.8067084422839593e-16
+          },
+          {
+            "horizon": 48,
+            "power_norm": 7.76284337346273e-13,
+            "power_norm_squared": 6.0261737240914225e-25
+          },
+          {
+            "horizon": 64,
+            "power_norm": 4.457882520139551e-17,
+            "power_norm_squared": 1.987271656336575e-33
+          }
+        ],
+        "selected_horizon": 8,
+        "selected_power_floor_clock": 0.029786403930252843,
+        "selected_power_norm": 0.030509426786165642
+      },
+      "left_cyclic_rank_profile": [
+        {
+          "block_count": 1,
+          "largest_singular_value": 0.5371298985811809,
+          "maximum_power": 0,
+          "numerical_rank": 25,
+          "rank_fraction": 0.390625,
+          "smallest_retained_singular_value": 2.319248952735365e-08
+        },
+        {
+          "block_count": 2,
+          "largest_singular_value": 0.5642982709271264,
+          "maximum_power": 1,
+          "numerical_rank": 42,
+          "rank_fraction": 0.65625,
+          "smallest_retained_singular_value": 8.792959986998064e-09
+        },
+        {
+          "block_count": 3,
+          "largest_singular_value": 0.6122899034115846,
+          "maximum_power": 2,
+          "numerical_rank": 43,
+          "rank_fraction": 0.671875,
+          "smallest_retained_singular_value": 8.662074607945856e-09
+        },
+        {
+          "block_count": 4,
+          "largest_singular_value": 0.6148841301217103,
+          "maximum_power": 3,
+          "numerical_rank": 43,
+          "rank_fraction": 0.671875,
+          "smallest_retained_singular_value": 8.864413555734378e-09
+        },
+        {
+          "block_count": 5,
+          "largest_singular_value": 0.6183890010865155,
+          "maximum_power": 4,
+          "numerical_rank": 43,
+          "rank_fraction": 0.671875,
+          "smallest_retained_singular_value": 8.892842241484575e-09
+        },
+        {
+          "block_count": 6,
+          "largest_singular_value": 0.6185985600557947,
+          "maximum_power": 5,
+          "numerical_rank": 43,
+          "rank_fraction": 0.671875,
+          "smallest_retained_singular_value": 8.910177108055729e-09
+        },
+        {
+          "block_count": 7,
+          "largest_singular_value": 0.6189299839830994,
+          "maximum_power": 6,
+          "numerical_rank": 43,
+          "rank_fraction": 0.671875,
+          "smallest_retained_singular_value": 8.916156053031003e-09
+        },
+        {
+          "block_count": 8,
+          "largest_singular_value": 0.6189486602043659,
+          "maximum_power": 7,
+          "numerical_rank": 43,
+          "rank_fraction": 0.671875,
+          "smallest_retained_singular_value": 8.916849877601534e-09
+        },
+        {
+          "block_count": 9,
+          "largest_singular_value": 0.6189771864260547,
+          "maximum_power": 8,
+          "numerical_rank": 43,
+          "rank_fraction": 0.671875,
+          "smallest_retained_singular_value": 8.917208781841061e-09
+        },
+        {
+          "block_count": 10,
+          "largest_singular_value": 0.6189787703500488,
+          "maximum_power": 9,
+          "numerical_rank": 43,
+          "rank_fraction": 0.671875,
+          "smallest_retained_singular_value": 8.917283488986547e-09
+        }
+      ],
+      "left_exact_hardy_energy": 1.162561029950831,
+      "left_exact_stein_defect_norm": 8.890259833599346e-16,
+      "left_gramian": {
+        "normalized_eigenvalues": [
+          0.2810134644348781,
+          0.2666224416841116,
+          0.1489383096956849,
+          0.11475272809211355,
+          0.08589292031205745,
+          0.05115706626882295,
+          0.028101724545914062,
+          0.011991189263316365,
+          0.00477160170563268,
+          0.0019951344590368307,
+          0.001582473732157207,
+          0.001346850867900779,
+          0.0005835637116257667,
+          0.00043372335873108087,
+          0.00041931807015625365,
+          0.00014140116847442507,
+          0.0001399241800737552,
+          5.358163708771659e-05,
+          3.2714979486705725e-05,
+          1.9110617520239325e-05,
+          6.321935985194119e-06,
+          2.875508133572169e-06,
+          9.218235815809205e-07,
+          4.2842440079094554e-07,
+          1.3902860650052044e-07,
+          3.232635662197574e-08,
+          1.9231255012311955e-08,
+          1.2808721463696381e-08,
+          3.158181601545968e-09,
+          2.4302234462352373e-09,
+          2.074144199879544e-10,
+          1.831115937234183e-10,
+          1.061897943211911e-10,
+          2.8419059376213666e-11,
+          1.1778765567917277e-11,
+          2.4247762806218183e-12,
+          1.7342129732502758e-13,
+          1.642445931352321e-13,
+          8.627635420431741e-14,
+          6.074049994963973e-15,
+          2.8953969014418763e-15,
+          3.9340410667360356e-16,
+          6.54213214069205e-17,
+          3.923816061340153e-17,
+          3.513667136113366e-17,
+          3.200870358171432e-17,
+          2.5232694314697476e-17,
+          2.238317868796308e-17,
+          1.636253534477193e-17,
+          1.2947245863342235e-17,
+          9.574743356205403e-18,
+          7.384763064504018e-18,
+          5.269561631408834e-18,
+          1.0970619580997273e-18,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "numerical_rank": 36,
+        "participation_rank": 5.092509186939462,
+        "rank_for_99_percent_trace": 9,
+        "trace": 1.363416223356281
+      },
+      "left_low_rank_plus_identity_floors": [
+        {
+          "factor_rank": 0,
+          "necessary_isotropic_floor": 0.3831383163920661
+        },
+        {
+          "factor_rank": 4,
+          "necessary_isotropic_floor": 0.11710780102490737
+        },
+        {
+          "factor_rank": 8,
+          "necessary_isotropic_floor": 0.006505679176854098
+        },
+        {
+          "factor_rank": 16,
+          "necessary_isotropic_floor": 0.0001907748971523835
+        },
+        {
+          "factor_rank": 32,
+          "necessary_isotropic_floor": 1.4478088833237863e-10
+        }
+      ],
+      "right_block_completion": {
+        "block_defect_minimum_eigenvalue": 4.465060117352315e-10,
+        "completion_available_through_maximum_checkpoint": true,
+        "energy_upper": 1.2660748910493975,
+        "isotropic_floor": 6.96757926168763e-05,
+        "observation_hilbert_schmidt_squared": 30.351875978640184,
+        "power_norm_ledger": [
+          {
+            "horizon": 1,
+            "power_norm": 1.090228208094949,
+            "power_norm_squared": 1.1885975457259235
+          },
+          {
+            "horizon": 2,
+            "power_norm": 0.9530675744275783,
+            "power_norm_squared": 0.9083378014252674
+          },
+          {
+            "horizon": 4,
+            "power_norm": 0.3696313127714661,
+            "power_norm_squared": 0.1366273073811574
+          },
+          {
+            "horizon": 8,
+            "power_norm": 0.027949461222966158,
+            "power_norm_squared": 0.0007811723826540889
+          },
+          {
+            "horizon": 12,
+            "power_norm": 0.0023295586953431396,
+            "power_norm_squared": 5.426843715048831e-06
+          },
+          {
+            "horizon": 16,
+            "power_norm": 0.0001952830663417201,
+            "power_norm_squared": 3.8135475999824654e-08
+          },
+          {
+            "horizon": 24,
+            "power_norm": 1.3722192637618831e-06,
+            "power_norm_squared": 1.8829857078392046e-12
+          },
+          {
+            "horizon": 32,
+            "power_norm": 9.63060551571017e-09,
+            "power_norm_squared": 9.274856259922716e-17
+          },
+          {
+            "horizon": 48,
+            "power_norm": 4.726141483391336e-13,
+            "power_norm_squared": 2.233641332103246e-25
+          },
+          {
+            "horizon": 64,
+            "power_norm": 2.3082993265175108e-17,
+            "power_norm_squared": 5.328245780801194e-34
+          }
+        ],
+        "selected_horizon": 8,
+        "selected_power_floor_clock": 0.02371004727625576,
+        "selected_power_norm": 0.027949461222966158
+      },
+      "right_exact_hardy_energy": 1.2652809475765023,
+      "right_exact_stein_defect_norm": 1.1754531267524182e-15,
+      "right_gramian": {
+        "normalized_eigenvalues": [
+          0.2651316094574248,
+          0.20755193900075034,
+          0.18879729438413081,
+          0.14292585906533561,
+          0.08883112320623268,
+          0.04639314906327725,
+          0.025015303985699695,
+          0.02128697046876621,
+          0.00879614698905176,
+          0.003599192994583589,
+          0.0013066006854621389,
+          0.00027337477878379646,
+          6.883086556693657e-05,
+          1.7362787776195802e-05,
+          4.4135441216870865e-06,
+          7.272145945021216e-07,
+          8.34897231632555e-08,
+          1.5673889145871557e-08,
+          2.0857013807949982e-09,
+          2.3398626191894314e-10,
+          2.239290512144442e-11,
+          2.588209121832888e-12,
+          1.447493112115093e-13,
+          1.5521241356654205e-14,
+          6.958737408288593e-16,
+          4.5653869408408055e-17,
+          1.282443044116501e-17,
+          5.271905796553337e-18,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "numerical_rank": 22,
+        "participation_rank": 5.535287058329483,
+        "rank_for_99_percent_trace": 9,
+        "trace": 1.599696509956219
+      },
+      "sigma": 0.08
+    }
+  ],
+  "sources": {
+    "folded_gaussian": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh50_manuscript": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/main.tex",
+      "sha256": "106c3a96f2b38f07543c70e0859665ae9ba427386d79f57168e85c49558b9f74"
+    }
+  },
+  "status": "floating_dense_exact_gramian_and_structured_stein_audit"
+}

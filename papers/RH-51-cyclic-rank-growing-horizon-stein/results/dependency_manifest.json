@@ -1,0 +1,48 @@
+{
+  "external_inputs": {
+    "post_rh50_roadmap": {
+      "path": "papers/RH-ROADMAP-after-RH50.md",
+      "sha256": "4def72e8da1310ec01126aba3d7d3adfdc430c9019340fc8225747b547a0a874"
+    },
+    "rh14_folded_gaussian_source": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh49_quarter_power_manuscript": {
+      "path": "papers/RH-49-directional-reduced-resolvent/main.tex",
+      "sha256": "7e5e8e8952136b6971a77ca2e99421cc7ad5e71f0e8cadc11925032e8eebaed8"
+    },
+    "rh50_hardy_certificate": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/results/two_pole_hardy_certificate.json",
+      "sha256": "6228c5c5b1b3fdaf6d2e2a4280f805f4b0dd255d95a08420cfae808bcb503855"
+    },
+    "rh50_hardy_stein_manuscript": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/main.tex",
+      "sha256": "106c3a96f2b38f07543c70e0859665ae9ba427386d79f57168e85c49558b9f74"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "024475b81652cbb434646859f36344613f660e2bce651cd98c0d88fffa48331b",
+    "experiments/build_stein_certificate.py": "5c8d267f24bac8a2d197b607edb9cd6aa4109824f1fc2201848b7a28852e9af9",
+    "experiments/make_figures.py": "abf7c17e69424b88f728d8e4d9aa3ee58958019b395be720fc0de8549885956d",
+    "experiments/run_structured_stein_pilot.py": "a0f6293db350ce89b7e8c0705bcb485f5e341d884425e55b43d51cc59e6ff5dd",
+    "experiments/verify_archive.py": "4509dcb4cd4802a74025124f391f790c24b93bf63c6ceea4cf934752f6e891ff",
+    "src/structured_stein/__init__.py": "aa3c073fe46e5a90c6d8d2b5b6646160cb8ffded9f46b6df679743f7f5c0f92e",
+    "src/structured_stein/algebra.py": "f1140c08fd96cffda908cf0e58711264940dbc997d81df758e88ac3adb0c4b7b",
+    "tests/test_archived_results.py": "ebe7a6991c83df2aa370a06f94282888764807c7b194213ea344f23ea21fdec0",
+    "tests/test_theory.py": "4a863fb2af68e43e3745bfeba52472d024584281e976235883d7c1253db08b90"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "8d1e0e3b3c0d938bf15368dac479522bc6cf8667bf68207d6a658efc96e947eb",
+    "cyclic-rank-growing-horizon-stein-certificates.pdf": "a93903d85cd8123f5a3217820f4422bc54d031353f791b266e4ea99de49013e2",
+    "figures/structured_stein_geometry.pdf": "bf65f34f9b2b6e9942b2c8098aa05ac8535d74a7dbe5eb6178a69db7d3dce40f",
+    "figures/structured_stein_geometry.png": "b91ff585237e535838da7ff56029642774abd8395d808ed49d7780ba275587a2",
+    "main.pdf": "a93903d85cd8123f5a3217820f4422bc54d031353f791b266e4ea99de49013e2",
+    "main.tex": "baa3c8168c7481e83762cdc4b102272f1abc45eb9cee9316c5a3d1b95adee31f",
+    "pyproject.toml": "1e5f1600b94ce8d1c39575447a689385685a430dd09425dd7e5ad29fce702450",
+    "references.bib": "f0b3c791daa84e2a3f1f832f2c83dbc9c6c851311a4b40eb51b9d69a514429f6",
+    "requirements.txt": "b5d7d32dbb9df1b801abc1070caf6870a54af542248e03991107040e13a81dd6"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}

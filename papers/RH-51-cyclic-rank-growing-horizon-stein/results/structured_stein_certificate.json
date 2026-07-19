@@ -1,0 +1,256 @@
+{
+  "anisotropic_residual_completion": {
+    "purpose": "replace the dimension-costly identity floor by localized, banded, or multilevel positive backgrounds",
+    "statement": "if D_M(W)>=mu I and R_M=S_M-D_M(Hhat), then Hhat+alpha W is a block supersolution for alpha>=max(0,lambda_max(R_M))/mu"
+  },
+  "block_stein": {
+    "block_certificate_need_not_be_one_step": true,
+    "certificate": "H-A^M H(A^*)^M>=S_M implies H>=G",
+    "finite_sum": "S_M=sum_(j=0)^(M-1) A^j X X^* (A^*)^j",
+    "fixed_rank_obstruction_removed": false,
+    "fixed_step_global_contraction_required": false,
+    "horizon_may_grow_with_noise_or_dimension": true,
+    "one_step_implies_every_block": true
+  },
+  "conic_dual_no_go": {
+    "rank_one_specialization": "Z=v v^*",
+    "statement": "Z>=0, tr[Z(W_j-AW_jA^*)]<=0 for every generator, and tr(ZXX^*)>0 rule out every nonnegative conic combination of the W_j"
+  },
+  "cyclic_rank_obstruction": {
+    "consequence": "a fixed-rank exact supersolution family is impossible whenever the directional cyclic dimension diverges",
+    "invariance": "every positive supersolution has A-invariant range containing Ran(X)",
+    "physical_divergence_proved_analytically_here": false,
+    "rank_lower": "rank(H)>=dim span{A^m Ran(X):m>=0}=rank(G)"
+  },
+  "dependencies": {
+    "local_pilot": {
+      "path": "results/structured_stein_pilot.json",
+      "sha256": "508a63949bbddb02b10b209bf9ed1c0c5714bf6e83936e82a8ede92e600b4061"
+    },
+    "post_rh50_roadmap": {
+      "path": "papers/RH-ROADMAP-after-RH50.md",
+      "sha256": "4def72e8da1310ec01126aba3d7d3adfdc430c9019340fc8225747b547a0a874"
+    },
+    "rh49_quarter_power_manuscript": {
+      "path": "papers/RH-49-directional-reduced-resolvent/main.tex",
+      "sha256": "7e5e8e8952136b6971a77ca2e99421cc7ad5e71f0e8cadc11925032e8eebaed8"
+    },
+    "rh50_hardy_stein_manuscript": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/main.tex",
+      "sha256": "106c3a96f2b38f07543c70e0859665ae9ba427386d79f57168e85c49558b9f74"
+    }
+  },
+  "evidence_level": {
+    "analytic": "exact finite-dimensional minimal-Gramian theorem, cyclic-support rank obstruction, low-rank-plus-floor lower bound, block-Stein domination theorem, isotropic and anisotropic residual completions, and conic dual no-go witnesses",
+    "numerical": "binary64 five-scale dense exact-Gramian and block-completion audit through dimension 512; not interval validated"
+  },
+  "floating_five_scale_audit": {
+    "cyclic_relative_singular_tolerance": 1e-08,
+    "diagonal_extraction_failed_levels": 5,
+    "hardy_radius": 0.85,
+    "identity_cone_obstructed_levels": 4,
+    "interval_validated": false,
+    "largest_dimension": 512,
+    "left_cyclic_rank_power_fit": {
+      "levels": 5,
+      "log_intercept": -0.2655232023373996,
+      "maximum_log_residual": 0.0020578421746213493,
+      "power": 0.968302797849835
+    },
+    "left_rank99_power_fit": {
+      "levels": 5,
+      "log_intercept": -1.7393563879530092,
+      "maximum_log_residual": 0.052652735926428385,
+      "power": 0.9532550739284258
+    },
+    "maximum_left_block_relative_excess": 0.0005441378341533021,
+    "maximum_right_block_relative_excess": 0.0006274839389748266,
+    "noise_levels": 5,
+    "resolution": 5.12,
+    "right_rank99_power_fit": {
+      "levels": 5,
+      "log_intercept": -1.6196680324564376,
+      "maximum_log_residual": 0.03001928189983971,
+      "power": 0.9230612928141405
+    },
+    "rows": [
+      {
+        "diagonal_extraction_defect_minimum": -0.3544960931901303,
+        "diagonal_extraction_is_supersolution": false,
+        "fine_dimension": 32,
+        "identity_cone_obstructed": false,
+        "identity_unforced_defect_minimum": 0.5063882912448795,
+        "left_block_defect_minimum": 1.0386404391509996e-10,
+        "left_block_energy_upper": 0.9042062232790822,
+        "left_block_relative_excess": 0.00027509886980414677,
+        "left_cyclic_numerical_rank": 22,
+        "left_cyclic_rank_fraction": 0.6875,
+        "left_exact_hardy_energy": 0.9039575455799422,
+        "left_participation_rank": 2.402466508747797,
+        "left_rank_for_99_percent_trace": 5,
+        "left_selected_block_horizon": 4,
+        "left_selected_power_norm": 0.02100198841006131,
+        "left_source_numerical_rank": 13,
+        "right_block_defect_minimum": 1.891858922937941e-12,
+        "right_block_energy_upper": 1.00294911806328,
+        "right_block_relative_excess": 0.000302213649614691,
+        "right_exact_hardy_energy": 1.002646104724699,
+        "right_participation_rank": 2.8220447986322608,
+        "right_rank_for_99_percent_trace": 5,
+        "right_selected_block_horizon": 4,
+        "right_selected_power_norm": 0.01983569113454479,
+        "sigma": 0.16
+      },
+      {
+        "diagonal_extraction_defect_minimum": -0.28739717918421626,
+        "diagonal_extraction_is_supersolution": false,
+        "fine_dimension": 64,
+        "identity_cone_obstructed": true,
+        "identity_unforced_defect_minimum": -0.20016653582725963,
+        "left_block_defect_minimum": 3.638596075907247e-08,
+        "left_block_energy_upper": 1.1631936233917397,
+        "left_block_relative_excess": 0.0005441378341533021,
+        "left_cyclic_numerical_rank": 43,
+        "left_cyclic_rank_fraction": 0.671875,
+        "left_exact_hardy_energy": 1.162561029950831,
+        "left_participation_rank": 5.092509186939462,
+        "left_rank_for_99_percent_trace": 9,
+        "left_selected_block_horizon": 8,
+        "left_selected_power_norm": 0.030509426786165642,
+        "left_source_numerical_rank": 25,
+        "right_block_defect_minimum": 4.465060117352315e-10,
+        "right_block_energy_upper": 1.2660748910493975,
+        "right_block_relative_excess": 0.0006274839389748266,
+        "right_exact_hardy_energy": 1.2652809475765023,
+        "right_participation_rank": 5.535287058329483,
+        "right_rank_for_99_percent_trace": 9,
+        "right_selected_block_horizon": 8,
+        "right_selected_power_norm": 0.027949461222966158,
+        "sigma": 0.08
+      },
+      {
+        "diagonal_extraction_defect_minimum": -0.2213377686049584,
+        "diagonal_extraction_is_supersolution": false,
+        "fine_dimension": 128,
+        "identity_cone_obstructed": true,
+        "identity_unforced_defect_minimum": -1.1961071443905724,
+        "left_block_defect_minimum": 8.678764767766266e-10,
+        "left_block_energy_upper": 1.333960190621385,
+        "left_block_relative_excess": 9.89279619403316e-05,
+        "left_cyclic_numerical_rank": 84,
+        "left_cyclic_rank_fraction": 0.65625,
+        "left_exact_hardy_energy": 1.3338282377122495,
+        "left_participation_rank": 8.622732469718004,
+        "left_rank_for_99_percent_trace": 17,
+        "left_selected_block_horizon": 16,
+        "left_selected_power_norm": 0.015553751574443208,
+        "left_source_numerical_rank": 49,
+        "right_block_defect_minimum": 2.1278881532321166e-10,
+        "right_block_energy_upper": 1.4850493602114898,
+        "right_block_relative_excess": 0.00034301040968731655,
+        "right_exact_hardy_energy": 1.4845401474873028,
+        "right_participation_rank": 8.415122482215011,
+        "right_rank_for_99_percent_trace": 17,
+        "right_selected_block_horizon": 16,
+        "right_selected_power_norm": 0.01559512677655661,
+        "sigma": 0.04
+      },
+      {
+        "diagonal_extraction_defect_minimum": -0.1675249972234264,
+        "diagonal_extraction_is_supersolution": false,
+        "fine_dimension": 256,
+        "identity_cone_obstructed": true,
+        "identity_unforced_defect_minimum": -2.574420900221145,
+        "left_block_defect_minimum": 2.0031880621137617e-10,
+        "left_block_energy_upper": 1.4096791412152339,
+        "left_block_relative_excess": 6.920350144734577e-05,
+        "left_cyclic_numerical_rank": 165,
+        "left_cyclic_rank_fraction": 0.64453125,
+        "left_exact_hardy_energy": 1.4095815932334064,
+        "left_participation_rank": 15.510754847342996,
+        "left_rank_for_99_percent_trace": 35,
+        "left_selected_block_horizon": 24,
+        "left_selected_power_norm": 0.013342662788800388,
+        "left_source_numerical_rank": 97,
+        "right_block_defect_minimum": 7.749353610181754e-12,
+        "right_block_energy_upper": 1.6343996008734496,
+        "right_block_relative_excess": 0.0002503204115045232,
+        "right_exact_hardy_energy": 1.6339905796791498,
+        "right_participation_rank": 12.328816128815225,
+        "right_rank_for_99_percent_trace": 33,
+        "right_selected_block_horizon": 24,
+        "right_selected_power_norm": 0.012437123556312537,
+        "sigma": 0.02
+      },
+      {
+        "diagonal_extraction_defect_minimum": -0.12318804133748373,
+        "diagonal_extraction_is_supersolution": false,
+        "fine_dimension": 512,
+        "identity_cone_obstructed": true,
+        "identity_unforced_defect_minimum": -4.509334226563864,
+        "left_block_defect_minimum": 2.6849563918168725e-12,
+        "left_block_energy_upper": 1.468092670207125,
+        "left_block_relative_excess": 1.3029389904106736e-05,
+        "left_cyclic_numerical_rank": 322,
+        "left_cyclic_rank_fraction": 0.62890625,
+        "left_exact_hardy_energy": 1.4680735421045372,
+        "left_participation_rank": 25.660908825969013,
+        "left_rank_for_99_percent_trace": 69,
+        "left_selected_block_horizon": 32,
+        "left_selected_power_norm": 0.006913354176523688,
+        "left_source_numerical_rank": 189,
+        "right_block_defect_minimum": 1.3432834379787222e-13,
+        "right_block_energy_upper": 1.760426454689977,
+        "right_block_relative_excess": 6.636000095960881e-05,
+        "right_exact_hardy_energy": 1.7603096405405414,
+        "right_participation_rank": 16.302236468429054,
+        "right_rank_for_99_percent_trace": 64,
+        "right_selected_block_horizon": 32,
+        "right_selected_power_norm": 0.0067310402775189885,
+        "sigma": 0.01
+      }
+    ],
+    "selected_horizon_log2_fit": {
+      "intercept": -33.59999999999995,
+      "levels": 5,
+      "maximum_absolute_residual": 1.6000000000000085,
+      "slope": 7.199999999999994
+    }
+  },
+  "isotropic_block_completion": {
+    "candidate": "H_M=S_M+alpha_M I",
+    "condition": "q_M=||A^M||_2<1",
+    "energy_upper": "tr(Y G Y^*)<=tr(Y S_M Y^*)+alpha_M||Y||_S2^2",
+    "floor": "alpha_M=||A^M S_M(A^*)^M||_2/(1-q_M^2)",
+    "meaning": "RH-50's fixed-step no-go is compatible with M=M(sigma,n) increasing"
+  },
+  "limitations": [
+    "The physical folded-Gaussian family is not proved here to have a cyclic dimension diverging as sigma tends to zero; the stored ranks are threshold-dependent binary64 evidence.",
+    "The five-scale dense audit uses N sigma=5.12 and is not an interval or production-resolution validation.",
+    "The logarithmic-looking selected horizons are finite evidence, not a uniform asymptotic mixing theorem.",
+    "The isotropic completion pays alpha times the observation Hilbert-Schmidt dimension; an analytic anisotropic trace budget remains open.",
+    "Failure of the identity cone and of one extracted diagonal does not rule out all diagonal, banded, localized, hierarchical, or multilevel positive metrics.",
+    "No small-noise intrinsic Riesz identification theorem, renormalized determinant limit, arithmetic trace formula, prime-power identity, zeta-zero identification, self-adjoint Hilbert-Polya operator, T log T counting law, Riemann-hypothesis proof, or twin-prime conclusion is claimed.",
+    "The independent TPC program may be referenced for techniques but is not an assumption or completed arithmetic interface in this RH result."
+  ],
+  "low_rank_plus_floor": {
+    "interpretation": "low-rank factors can be retained only by paying a full-dimensional positive background floor",
+    "statement": "if H=Z Z^*+alpha I>=G and rank(Z)<=k, then alpha>=lambda_(k+1)(G)"
+  },
+  "minimal_gramian": {
+    "cyclic_support": "Ran(G)=span{A^m Ran(X):m>=0} in finite dimensions",
+    "definition": "G=sum_(m>=0) A^m X X^* (A^*)^m",
+    "equation": "G-A G A^*=X X^*",
+    "minimality": "H>=0 and H-A H A^*>=X X^* imply H>=G"
+  },
+  "program_conclusion": {
+    "diagonal_extraction_shortcut": "fails at all five stored scales",
+    "fixed_rank_shortcut": "structurally closed unless cyclic dimension stays uniformly bounded",
+    "growing_horizon_route": "survives and gives near-exact finite-matrix uppers at horizons 4,8,16,24,32",
+    "remaining_A1_gate": "prove a dyadically uniform analytic trace budget for anisotropic or multilevel growing-horizon completions",
+    "scalar_identity_shortcut": "fails by explicit floating dual witnesses at the four finest stored scales",
+    "stage_A1_closed": false
+  },
+  "scope": "structured positive Stein certificates for the two-pole Hilbert-Schmidt Hardy energies of RH-50",
+  "status": "rigorous_minimal_gramian_cyclic_rank_obstruction_and_growing_horizon_block_stein_route"
+}
