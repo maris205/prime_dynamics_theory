@@ -1,0 +1,206 @@
+{
+  "conditional_hilbert_schmidt_closure": {
+    "conclusion": "F_(n,sigma)=O((log(1/sigma))^m) for some fixed m",
+    "premises": [
+      "dyadically uniform polylogarithmic left and right Hardy energies",
+      "dyadically polylogarithmic intrinsic coarse parity projector norm",
+      "dyadically polylogarithmic fine residue range actions, supplied in particular by a uniform intrinsic factor-detail transfer",
+      "bulk spectral radius uniformly below one Hardy radius r<min_Gamma|z|"
+    ],
+    "premises_proved_for_full_small_noise_family_here": false,
+    "rh49_consequence": "the quarter-power bridge then preserves the strict p>2 intrinsic-identification mesh range"
+  },
+  "evidence_level": {
+    "analytic": "exact two-pole Laurent decomposition, Hardy-energy contour upper, positive Stein supersolution certificate, sharp square-root-spike derivative scale, exact residue block identity, two-sided outgoing coupling scale, and deterministic global-contraction no-go",
+    "numerical": "binary64 exact-Haar two-pole power audit with Hutchinson Hilbert-Schmidt traces through time 64; not interval validated"
+  },
+  "fine_side_residue_suppression": {
+    "block_identity": "P_cc B=r_c tensor ((conj(lambda)-D^*) l_d)^*",
+    "compressed_continuum_detail_estimate_proved": true,
+    "conditional_normalized_residue_action": "O(sigma^(1/2))",
+    "coupling_lower": "||B||_S2>=c h sigma^(-3/2)",
+    "detail_left_factor": "||l_d||=O(h sigma^(-1))",
+    "dyadically_uniform_intrinsic_finite_factor_transfer_proved_here": false
+  },
+  "floating_five_scale_audit": {
+    "finest_row": {
+      "fine_bulk_radius_candidate": 0.7480149959741842,
+      "fine_dimension": 40960,
+      "left_hardy_energy_r085": 1.4747883597816036,
+      "left_parity_residue_gain": 0.011039278901194473,
+      "left_perron_residue_gain": 0.009514431334467012,
+      "left_power_at_maximum_horizon": 3.5731616228406766e-09,
+      "left_tail_decay_base": 0.7424188663281548,
+      "maximum_left_hardy_upper_candidate_r085": 3.5228447930776725,
+      "maximum_right_hardy_upper_candidate_r085": 5.633254928218029,
+      "maximum_two_pole_bulk_product_candidate": 1.8542506508072054,
+      "right_hardy_energy_r085": 2.35828124251829,
+      "right_parity_residue_gain": 0.0019103167324655017,
+      "right_perron_residue_gain": 7.127379590473031e-16,
+      "right_power_at_maximum_horizon": 1.4143611347821769e-08,
+      "right_tail_decay_base": 0.7415818682962116,
+      "sigma": 0.0005
+    },
+    "fits": {
+      "left_energy_r085": {
+        "growth_exponent": 0.0,
+        "levels": 5,
+        "log_intercept": 0.5381415341422051,
+        "maximum_log_residual": 0.09795805905344657,
+        "sigma_power": 0.02131683268354562
+      },
+      "maximum_bulk_product": {
+        "growth_exponent": 0.0,
+        "levels": 5,
+        "log_intercept": 0.7858170245792176,
+        "maximum_log_residual": 0.15204639064672487,
+        "sigma_power": 0.018725888400078022
+      },
+      "right_energy_r085": {
+        "growth_exponent": 0.08442328954198583,
+        "levels": 5,
+        "log_intercept": 0.19775386286829444,
+        "maximum_log_residual": 0.10249825236891863,
+        "sigma_power": -0.08442328954198583
+      }
+    },
+    "hardy_radius": 0.85,
+    "hardy_tail_validated": false,
+    "hutchinson_values_are_validated_uppers": false,
+    "largest_dimension": 40960,
+    "maximum_power": 64,
+    "noise_levels": 5,
+    "probe_count": 8,
+    "residue_fits": {
+      "left_parity": {
+        "fit": {
+          "growth_exponent": 0.0,
+          "levels": 5,
+          "log_intercept": -0.3385973185985444,
+          "maximum_log_residual": 0.013580274647175816,
+          "sigma_power": 0.5500313384064037,
+          "vanishing_exponent": 0.5500313384064037
+        },
+        "numerically_zero": false,
+        "values": [
+          0.05738312749544228,
+          0.0338824752334213,
+          0.023044320971756342,
+          0.015892580667871744,
+          0.011039278901194473
+        ]
+      },
+      "left_perron": {
+        "fit": {
+          "growth_exponent": 0.0,
+          "levels": 5,
+          "log_intercept": -0.6530652316942163,
+          "maximum_log_residual": 0.00842148809219223,
+          "sigma_power": 0.5275171773492795,
+          "vanishing_exponent": 0.5275171773492795
+        },
+        "numerically_zero": false,
+        "values": [
+          0.046207061175252334,
+          0.028141003842066276,
+          0.01945211951817308,
+          0.013578308554942608,
+          0.009514431334467012
+        ]
+      },
+      "right_parity": {
+        "fit": {
+          "growth_exponent": 0.0,
+          "levels": 5,
+          "log_intercept": 0.8377558945240018,
+          "maximum_log_residual": 0.01803595076136766,
+          "sigma_power": 0.9362412036359362,
+          "vanishing_exponent": 0.9362412036359362
+        },
+        "numerically_zero": false,
+        "values": [
+          0.031528453752667766,
+          0.01300856932841423,
+          0.006752441866987826,
+          0.0035641985503089726,
+          0.0019103167324655017
+        ]
+      },
+      "right_perron": {
+        "fit": null,
+        "numerically_zero": true,
+        "values": [
+          2.5682907456278497e-15,
+          1.7726065347656468e-15,
+          1.2984855102128825e-15,
+          9.564060686642646e-16,
+          7.127379590473031e-16
+        ]
+      }
+    }
+  },
+  "global_contraction_no_go": {
+    "deterministic_fact": "the deterministic Koopman operator is an isometry on L2(mu_0), including the complement of the Perron/parity modes",
+    "directional_gramian_route_ruled_out": false,
+    "ruled_out_route": "a sigma-uniform fixed-step global contraction q<1 on the two-pole complement",
+    "small_noise_consequence": "for every fixed m, ||Q_sigma^o K_sigma^m Q_sigma^o|| -> 1 in the stationary Hilbert geometry"
+  },
+  "hardy_energy_theorem": {
+    "condition": "rho(N)<r<inf_(z in Gamma)|z|",
+    "left_energy": "E_B(r)^2=sum_(m>=0) r^(-2m)||U^* N^m Q U B||_S2^2/||B||_S2^2",
+    "proof_mechanism": "Laurent series followed by weighted Cauchy-Schwarz",
+    "right_energy": "E_C(r)^2=sum_(m>=0) r^(-2m)||C N_A^m Q_A||_S2^2/||C||_S2^2",
+    "upper": "sup_Gamma ||U^*(z-N)^-1QUB||_S2/||B||_S2 <= E_B(r)/sqrt(d_Gamma^2-r^2), and symmetrically on the right"
+  },
+  "limitations": [
+    "The uniform small-noise Hardy-energy premise is not proved; the five-scale plateau is floating evidence.",
+    "The archived Hardy sums stop at time 64 and do not carry an interval tail enclosure.",
+    "Hutchinson trace estimates and binary64 eigendata are not validated norm uppers.",
+    "A dyadically uniform transfer of the compressed-continuum O(sqrt(sigma)) residue estimate to the finite matrix's own left factors remains an explicit premise.",
+    "A dyadically uniform intrinsic coarse parity projector bound remains an explicit premise of the full closure corollary.",
+    "No arithmetic trace formula, prime-power identity, zeta-zero identification, self-adjoint Hilbert-Polya operator, T log T counting law, or Riemann-hypothesis conclusion is claimed."
+  ],
+  "outgoing_hilbert_schmidt_scale": {
+    "law": "c h sigma^(-3/2)<=||B||_S2<=C h sigma^(-3/2)",
+    "lower_mechanism": "interior Gaussian row derivative lower followed by the leading Haar Taylor coefficient",
+    "regime": "h/sigma sufficiently small",
+    "upper_mechanism": "target-cell Poincare inequality"
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "a4605fea0473cb01bbc3023f7c8c311dc15d06c5fb79cba082b5180edfdad090",
+    "figures/two_pole_hardy_energy.pdf": "1616c4b7c99cd005ef160966f5d3b05ca0f3457d1858315f20157a375e5e1e78",
+    "figures/two_pole_hardy_energy.png": "fa5e294c93b863483f05d67a0d2021cb620b5471d7c8e8d4ae23804071685037",
+    "main.pdf": "a98fca1b42e04a59611aed253f635500aa17965543f004d1b1a70d2f8b5f121d",
+    "main.tex": "106c3a96f2b38f07543c70e0859665ae9ba427386d79f57168e85c49558b9f74",
+    "pyproject.toml": "ea4a028d0fc2cf0dabc4e73406e91b6e8103f7767d812048a8feb03331c37767",
+    "references.bib": "a1e54427794426e402a16d1a1a5397d01c0ecb80e44dfa4e26817bb745da17e8",
+    "requirements.txt": "b5d7d32dbb9df1b801abc1070caf6870a54af542248e03991107040e13a81dd6",
+    "two-pole-hilbert-schmidt-hardy-energies.pdf": "a98fca1b42e04a59611aed253f635500aa17965543f004d1b1a70d2f8b5f121d"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "c23144911bbd7b8a0725a480c1fd793d6b6c29f58338d9d1bb4c351fa4dc4e74",
+    "results/two_pole_hardy_certificate.json": "6228c5c5b1b3fdaf6d2e2a4280f805f4b0dd255d95a08420cfae808bcb503855",
+    "results/two_pole_hardy_pilot.json": "f3acd1440fd22304b6079ba4b3a9595e7300d08f757b919ecbf629160ec14cdb",
+    "results/two_pole_hardy_pilot_smoke.json": "48369bcda8e4443fdbc35e977169a2fa8db58e11ce876740f1f3ae4d1eb04e4a"
+  },
+  "scope": "Perron/parity two-pole bulk Hilbert-Schmidt range resolvents for adjacent Haar compressions of the folded-Gaussian quadratic operator",
+  "sharp_spike_derivative": {
+    "improvement_over_previous_coarse_envelope": "sigma^(-3/2) -> sigma^(-1)",
+    "law": "||pi_sigma'||_2+||g_sigma'||_2=Theta(sigma^(-1))",
+    "mechanism": "each finite postcritical square-root spike has derivative majorant C(t+sigma)^(-3/2), while the endpoint profile gives the matching lower"
+  },
+  "status": "rigorous_two_pole_hardy_stein_reduction_with_global_contraction_no_go_and_directional_energy_gate",
+  "stein_certificate": {
+    "controllability_equation": "G=X X^*+r^(-2)N G N^*",
+    "global_inverse_or_global_power_contraction_required": false,
+    "observability_equation": "O=C^* C+r^(-2)N^* O N",
+    "validated_supersolution": "H-r^(-2)N H N^* >= X X^* implies G<=H and gives a trace upper"
+  },
+  "two_pole_decomposition": {
+    "bulk": "N=T-lambda_+ P_+-lambda_- P_-",
+    "bulk_spectral_radius_below_contour_required": true,
+    "projection": "P_per=P_++P_-, Q=I-P_per",
+    "resolvent": "(z-T)^-1=P_+/(z-lambda_+)+P_-/(z-lambda_-)+(z-N)^-1 Q"
+  }
+}

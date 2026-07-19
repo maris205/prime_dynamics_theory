@@ -1,0 +1,56 @@
+{
+  "external_inputs": {
+    "rh14_boundary_layer_manuscript": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/main.tex",
+      "sha256": "199d5abee0aaf7d16090cdedbb50688f177739a2d142b8e927d45e0fd5f5bb34"
+    },
+    "rh14_folded_gaussian_source": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh47_logarithmic_conditioning_manuscript": {
+      "path": "papers/RH-47-logarithmic-peripheral-conditioning/main.tex",
+      "sha256": "6f5beb2001b1a6860651c05a791c733c3d7e4a1634dad3b6259799066bae0976"
+    },
+    "rh48_intrinsic_identification_manuscript": {
+      "path": "papers/RH-48-intrinsic-riesz-identification/main.tex",
+      "sha256": "f13ee582bdcb509a6e98e82b5d6c74bfffabaa160f693cac6c2ce92831449ab0"
+    },
+    "rh49_directional_certificate": {
+      "path": "papers/RH-49-directional-reduced-resolvent/results/directional_reduced_resolvent_certificate.json",
+      "sha256": "c14958ce8425b75685d8800fa02300019f90ea44eb079b18608114e8122d5863"
+    },
+    "rh49_quarter_power_manuscript": {
+      "path": "papers/RH-49-directional-reduced-resolvent/main.tex",
+      "sha256": "7e5e8e8952136b6971a77ca2e99421cc7ad5e71f0e8cadc11925032e8eebaed8"
+    },
+    "rh49_stable_rank_pilot": {
+      "path": "papers/RH-49-directional-reduced-resolvent/results/coupling_stable_rank_pilot.json",
+      "sha256": "2fd8dc48f7f235010b28b2b652a4a634d78540be35d8261e4f2afb07be97909c"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "90fc420c08d202887bbc9d5159333dbf8b3ebb2dd4b3ead29e5bc2f4adc22f36",
+    "experiments/build_hardy_certificate.py": "b8c161aae54b25f4ed31d997ffc98b3f182d9cd0a4e0d5bba8d487ddb554eb75",
+    "experiments/make_figures.py": "2283b4720047917f17e19513c67815f4c7716db3a59a33efed0c2e9a5fee36e9",
+    "experiments/run_two_pole_hardy_pilot.py": "6a7194a736d7f37e290934a81bf371b311045d432e32848987d12129b5b0a2d8",
+    "experiments/verify_archive.py": "3bf9df644d5909cbe0fbfcc98145656f70e120c377d8fee5a5fecae7b00e53c7",
+    "src/two_pole_hardy/__init__.py": "6e3cf6b916d8229f3c6d5c651c56517dd88ba6ace4db2681a649411376b05459",
+    "src/two_pole_hardy/algebra.py": "9ae46925a13f64a483ef5b70d0ce7f3351a09b0ea7c2776718383f286062c4fb",
+    "tests/test_archived_results.py": "6fd7e05aff7bc2c6cf4d7cdef8d7b3daaf6e1d6d7b492136bfe78f3181a24d13",
+    "tests/test_theory.py": "0356c8088364747122fcdbee95ab61b7ccf5cca481a88a725832a19923fa1053"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "a4605fea0473cb01bbc3023f7c8c311dc15d06c5fb79cba082b5180edfdad090",
+    "figures/two_pole_hardy_energy.pdf": "1616c4b7c99cd005ef160966f5d3b05ca0f3457d1858315f20157a375e5e1e78",
+    "figures/two_pole_hardy_energy.png": "fa5e294c93b863483f05d67a0d2021cb620b5471d7c8e8d4ae23804071685037",
+    "main.pdf": "a98fca1b42e04a59611aed253f635500aa17965543f004d1b1a70d2f8b5f121d",
+    "main.tex": "106c3a96f2b38f07543c70e0859665ae9ba427386d79f57168e85c49558b9f74",
+    "pyproject.toml": "ea4a028d0fc2cf0dabc4e73406e91b6e8103f7767d812048a8feb03331c37767",
+    "references.bib": "a1e54427794426e402a16d1a1a5397d01c0ecb80e44dfa4e26817bb745da17e8",
+    "requirements.txt": "b5d7d32dbb9df1b801abc1070caf6870a54af542248e03991107040e13a81dd6",
+    "two-pole-hilbert-schmidt-hardy-energies.pdf": "a98fca1b42e04a59611aed253f635500aa17965543f004d1b1a70d2f8b5f121d"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}
