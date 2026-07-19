@@ -1,0 +1,48 @@
+{
+  "external_inputs": {
+    "rh14_folded_gaussian_operator_source": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh43_weighted_schur_source": {
+      "path": "papers/RH-43-validated-weighted-riesz-parity-kernel/src/weighted_kernel/bounds.py",
+      "sha256": "24d594f5c56caffda9103cbb520aece698698bb9209b335690ffb95ee9607ac3"
+    },
+    "rh46_small_noise_mesh_certificate": {
+      "path": "papers/RH-46-small-noise-mesh-double-pole/results/small_noise_mesh_double_pole_certificate.json",
+      "sha256": "a5fed4f35993d45f974b0886181b58531a31adf0d3e93087324f4c0e24b624f3"
+    },
+    "rh47_logarithmic_conditioning_certificate": {
+      "path": "papers/RH-47-logarithmic-peripheral-conditioning/results/logarithmic_peripheral_conditioning_certificate.json",
+      "sha256": "948fb29c88e1fefecb01c8406eedc2692d0879dd6103add942b7fc5149a905c6"
+    },
+    "rh47_logarithmic_conditioning_manuscript": {
+      "path": "papers/RH-47-logarithmic-peripheral-conditioning/main.tex",
+      "sha256": "6f5beb2001b1a6860651c05a791c733c3d7e4a1634dad3b6259799066bae0976"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "f348129a6e20fde4736cc555488e2ed7acf476dc0c5c2239abc7e88810f23375",
+    "experiments/build_identification_certificate.py": "6647014fb8ca86ca69cdb63a2aa23236a8868f7ffe41e1bff88c3565aa8bd653",
+    "experiments/make_figures.py": "9bc3766ee76344fe9228b970059f74c2f6d31010036239fdaf5dbd967f0793b3",
+    "experiments/run_dyadic_identification_pilot.py": "41bb091dbe9e5ceff777cc8c6dbd356e7aa1e66684d69be8d5cc860e9af07c99",
+    "experiments/verify_archive.py": "abe83b5fa4250b6258618856584b71865cdf69fc47acdc1b92d4db3d69429e8b",
+    "src/intrinsic_identification/__init__.py": "d343919b354b9f1f8308ae3cae84ccc3211fbaf4ee8506e036205169258b7410",
+    "src/intrinsic_identification/algebra.py": "3b22ac01c776c7854b5a895c2c3168fbebeb8dacc5dab0d6c7e16793c4d98e12",
+    "src/intrinsic_identification/low_rank.py": "16b05b0c2f034d30a8ef51169a10298c467df39ca25962d1f680e8687de87fe9",
+    "tests/test_archived_results.py": "8589201cb4cc8cf63adfe637b44c63554b1934aa0e70bb8bc5f938064af82065",
+    "tests/test_theory.py": "db4c3a294441215eecfaafa22f20e2ab56d4cf9c6c67fc322a5ee5a20ce0a0e7"
+  },
+  "publication_artifacts": {
+    ".gitignore": "94050bbe8d6eef932fe3355b8d200f0c6134edc9a36ca12891039530631bd45e",
+    "README.md": "cdfb590dc2d2cac414afdd73765c2d7dfb6ace89bedb8c8cc109e7ccb2712f52",
+    "figures/intrinsic_riesz_identification.pdf": "efe7a474231dc110958f22b3adc40dcf369c37a8a6fd56cac00cc8b2b9e52509",
+    "figures/intrinsic_riesz_identification.png": "1fa31708cc7f14bd4b263264c5614304a084f4fd1ae2f59ee931beddb36b8d4b",
+    "main.tex": "f13ee582bdcb509a6e98e82b5d6c74bfffabaa160f693cac6c2ce92831449ab0",
+    "pyproject.toml": "ec9b4cc14e00d70e16f216970db3016ea3d4f797cfeddae78c30e4ca202b47a0",
+    "quadratic-schur-intrinsic-riesz-identification.pdf": "aadefb5829017d75d0419831189b5ea1467b245d16a4c985df4ec7c0332a89c6",
+    "references.bib": "5275f3394c151ed996334d254b2b28b33c84d5c3e5d6b10d788b932b9ef96397",
+    "requirements.txt": "c7e62e65e5aed20557d2700d4631ecf4cc976aa4d201205d429a01b84861776e"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}

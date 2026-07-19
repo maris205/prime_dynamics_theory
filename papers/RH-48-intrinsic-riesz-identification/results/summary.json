@@ -1,0 +1,141 @@
+{
+  "conditional_small_noise_closure": {
+    "directional_gain_condition": "L_sigma=O(sigma^-gamma) uniformly over the two contours and all dyadic refinements",
+    "general_pure_power_threshold": "p>max(2,3/2+gamma)",
+    "identification_bound": "||I_n,sigma||_S2=O(n^-2 sigma^-3 L_sigma)",
+    "polylogarithmic_gain_case": "||I_n,sigma||_S2=O(n^-2 sigma^-3 polylog(1/sigma)) and the defect is lower order than n^-1 sigma^-3/2",
+    "preserves_every_n_sigma_squared_schedule_when": "gamma<=1/2",
+    "unconditional_for_the_folded_gaussian_family_here": false
+  },
+  "directional_bound": {
+    "bound": "length(Gamma)/(2 pi) max_Gamma|z| sup_Gamma||R_D(z)|| times the product of the two directional quantities",
+    "left_quantity": "sup_Gamma ||S_n(z) B_n||_S2",
+    "right_quantity": "sup_Gamma ||C_n (z-A_n)^-1||",
+    "symmetric_alternative": "interchange the Hilbert-Schmidt and operator norms",
+    "why_weaker_than_global": "only resolvent action on the two coupling ranges is charged"
+  },
+  "dyadic_telescoping": {
+    "adjacent_defect": "Delta_n=Q_per(A_n)-E_n Q_per(A_2n) E_n",
+    "fixed_sigma_limit_input": "standard compact Galerkin spectral convergence",
+    "quadratic_geometric_factor": 1.3333333333333333,
+    "recursion": "I_n=Delta_n+E_n I_2n E_n",
+    "series": "I_n=sum_{j>=0} E_n Delta_(2^j n) E_n"
+  },
+  "evidence_level": {
+    "analytic": "exact Hilbert-space Schur identity, Hilbert-Schmidt directional bound, dyadic telescoping theorem, and conditional small-noise power theorem",
+    "numerical": "binary64 sparse eigendata on exact Haar-compressed finite matrices; not interval validated"
+  },
+  "exact_schur_identification": {
+    "block_split": "K=[[A,B],[C,D]], A=E_n K E_n",
+    "detail_resolvent": "R_D(z)=(z-D)^-1",
+    "global_full_resolvent_required": false,
+    "identity": "E_n Q_Gamma(K) E_n-Q_Gamma(A)=(2 pi i)^-1 int_Gamma z S_n(z) B R_D(z) C (z-A)^-1 dz",
+    "schur_inverse": "S_n(z)=(z-A-Sigma_n(z))^-1",
+    "self_energy": "Sigma_n(z)=B R_D(z) C",
+    "structural_order": "quadratic in the coarse-detail couplings B and C"
+  },
+  "floating_exact_haar_audit": {
+    "adjacent_defects": 18,
+    "candidate_law_is_a_theorem": false,
+    "double_resolution_replay": {
+      "comparisons": [
+        {
+          "base_defect": 4.06571594840227e-05,
+          "base_fine_resolution": 40.96,
+          "coarse_dimension_times_sigma": 20.48,
+          "relative_difference": 0.00014268955039417852,
+          "replay_defect": 4.065135813221562e-05,
+          "replay_fine_resolution": 81.92,
+          "sigma": 0.004
+        },
+        {
+          "base_defect": 0.00016242276525106996,
+          "base_fine_resolution": 40.96,
+          "coarse_dimension_times_sigma": 10.24,
+          "relative_difference": 0.00014268410208306164,
+          "replay_defect": 0.00016239959010465226,
+          "replay_fine_resolution": 81.92,
+          "sigma": 0.004
+        },
+        {
+          "base_defect": 3.887725995975999e-05,
+          "base_fine_resolution": 40.96,
+          "coarse_dimension_times_sigma": 20.48,
+          "relative_difference": 0.000156754363296302,
+          "replay_defect": 3.8871165779628294e-05,
+          "replay_fine_resolution": 81.92,
+          "sigma": 0.001
+        },
+        {
+          "base_defect": 0.00015529873203612275,
+          "base_fine_resolution": 40.96,
+          "coarse_dimension_times_sigma": 10.24,
+          "relative_difference": 0.00015623270420948117,
+          "replay_defect": 0.00015527446929525644,
+          "replay_fine_resolution": 81.92,
+          "sigma": 0.001
+        }
+      ],
+      "maximum_relative_difference": 0.000156754363296302
+    },
+    "joint_power_fit": {
+      "dimension_power": -1.995236986665868,
+      "log_prefactor": -3.954257842438898,
+      "maximum_log_residual": 0.015790562245501683,
+      "observations": 18,
+      "prefactor": 0.019172892577950452,
+      "root_mean_square_log_residual": 0.008162558646172054,
+      "sigma_power": -1.9719711832110995
+    },
+    "largest_dimension": 204800,
+    "largest_nonzeros": 133873007,
+    "mesh_power_maximum": -1.995019858405848,
+    "mesh_power_minimum": -1.9955275653744555,
+    "noise_levels": 6,
+    "observed_candidate_law": "approximately C (n sigma)^-2",
+    "replay_status": "floating_exact_dyadic_intrinsic_identification_audit",
+    "status": "floating_exact_dyadic_intrinsic_identification_audit"
+  },
+  "gaussian_block_scaling": {
+    "coarse_to_detail_hilbert_schmidt": "O(n^-1 sigma^-3/2)",
+    "detail_resolvent_under_n_sigma_squared": "O(1)",
+    "detail_to_coarse_hilbert_schmidt": "O(n^-1 sigma^-3/2)",
+    "double_detail_operator": "O(n^-2 sigma^-5/2)",
+    "generic_self_energy": "O(n^-2 sigma^-3)"
+  },
+  "limitations": [
+    "The exact Schur identity and dyadic telescoping theorem are unconditional operator statements, but their uniform small-noise application requires the displayed directional gain condition.",
+    "No global or directional reduced L2 resolvent upper is proved for sigma tending to zero.",
+    "The observed n^-2 sigma^-2 law is a binary64 finite-matrix fit and is not promoted to an analytic theorem.",
+    "The sparse audit uses an eight-sigma cutoff, exact row renormalization, and floating eigensolvers; it is not an interval enclosure.",
+    "The theorem concerns intrinsic peripheral identification and bulk-square approximation, not an arithmetic trace formula or prime-power identity.",
+    "No zeta-zero identification, self-adjoint Hilbert-Polya operator, T log T counting law, or Riemann-hypothesis conclusion is claimed."
+  ],
+  "publication_artifact_hashes": {
+    ".gitignore": "94050bbe8d6eef932fe3355b8d200f0c6134edc9a36ca12891039530631bd45e",
+    "README.md": "cdfb590dc2d2cac414afdd73765c2d7dfb6ace89bedb8c8cc109e7ccb2712f52",
+    "figures/intrinsic_riesz_identification.pdf": "efe7a474231dc110958f22b3adc40dcf369c37a8a6fd56cac00cc8b2b9e52509",
+    "figures/intrinsic_riesz_identification.png": "1fa31708cc7f14bd4b263264c5614304a084f4fd1ae2f59ee931beddb36b8d4b",
+    "main.tex": "f13ee582bdcb509a6e98e82b5d6c74bfffabaa160f693cac6c2ce92831449ab0",
+    "pyproject.toml": "ec9b4cc14e00d70e16f216970db3016ea3d4f797cfeddae78c30e4ca202b47a0",
+    "quadratic-schur-intrinsic-riesz-identification.pdf": "aadefb5829017d75d0419831189b5ea1467b245d16a4c985df4ec7c0332a89c6",
+    "references.bib": "5275f3394c151ed996334d254b2b28b33c84d5c3e5d6b10d788b932b9ef96397",
+    "requirements.txt": "c7e62e65e5aed20557d2700d4631ecf4cc976aa4d201205d429a01b84861776e"
+  },
+  "residue_reduced_split": {
+    "coarse_residue_growth_required_for_corollary": "O(sqrt(log(1/sigma))) uniformly over dyadic levels; not proved here",
+    "continuum_residue_growth": "O(sqrt(log(1/sigma))) in L2",
+    "directional_reduced_resolvent_upper_proved_here": false,
+    "formula": "R(z)=Pi/(z-lambda)+R_circ(z), applied separately to the fine top-left and coarse resolvents",
+    "full_reduced_resolvent_upper_proved_here": false,
+    "uniform_reduced_directional_consequence": "directional gain O(log(1/sigma)) after multiplying the two sides"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "5f89cf137ca5db09508231ed846368a9490cfa13bfe94ac7159a1b39a245515a",
+    "results/dyadic_identification_pilot.json": "7f066eee925608c7836380222126256c9edd583f26a4046b14aaecf9cede2511",
+    "results/dyadic_identification_pilot_smoke.json": "6d9cd2d0c47952beb94611a82ba4a69ab8be25f07c82e416b62e0f3711574620",
+    "results/intrinsic_riesz_identification_certificate.json": "beba4c32afee8b80fe024d7a29ee344d8526501d4732d847c680f3f658da8380"
+  },
+  "scope": "intrinsic Perron-plus-parity weighted-Riesz identification for nested cell-average Galerkin compressions of the folded-Gaussian operator",
+  "status": "rigorous_quadratic_schur_and_dyadic_reduction_with_directional_small_noise_gate"
+}

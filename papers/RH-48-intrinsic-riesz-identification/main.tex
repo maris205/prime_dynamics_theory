@@ -1,0 +1,1175 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.12em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{condition}[theorem]{Condition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Id}{\mathrm I}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\HS}{\mathfrak S_2}
+\newcommand{\TC}{\mathfrak S_1}
+\newcommand{\Qper}{\cQ_{\mathrm{per},\sigma}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\spec}{\operatorname{spec}}
+
+\title{Quadratic Schur Transport for Intrinsic Peripheral Riesz Identification\\
+\large A Dyadic Closure Theorem and the Remaining Directional Resolvent Gate}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For the small-noise folded-Gaussian transfer family, the continuum Perron
+and negative-parity weighted Riesz terms are known intrinsically, and their
+cell compression preserves the strict $n\sigma^2\to\infty$ bulk-square mesh
+law.  The remaining defect compares that compressed continuum term with the
+finite Galerkin matrix's own spectral identification:
+\[
+ \cI_{n,\sigma}
+ =\cQ_{\rm per}(E_n\cK_\sigma E_n)
+  -E_n\cQ_{\rm per}(\cK_\sigma)E_n.
+\]
+We isolate its exact mechanism.
+
+Relative to $L^2=V_n\oplus V_n^\perp$, write
+\[
+ \cK_\sigma=\begin{pmatrix}A_n&B_n\\C_n&D_n\end{pmatrix},
+ \qquad
+ \Sigma_n(z)=B_n(z-D_n)^{-1}C_n.
+\]
+For either peripheral contour, the compressed fine weighted term minus the
+coarse weighted term is exactly
+\[
+ \frac1{2\pi i}\int_\Gamma
+ z\,(z-A_n-\Sigma_n(z))^{-1}
+ B_n(z-D_n)^{-1}C_n(z-A_n)^{-1}\,dz.
+\]
+Thus intrinsic identification starts quadratically in the two
+coarse--detail couplings.  A Hilbert--Schmidt estimate requires only the
+directional actions
+\[
+ (z-A_n-\Sigma_n(z))^{-1}B_n,
+ \qquad C_n(z-A_n)^{-1},
+\]
+not two global $L^2$ resolvent norms.
+
+For nested dyadic Galerkin spaces, the continuum defect is the convergent
+telescoping sum of adjacent defects.  Gaussian derivative estimates give
+\[
+ \norm{B_n}_{\HS},\norm{C_n}_{\HS}
+ =O(n^{-1}\sigma^{-3/2}),
+ \qquad
+ \norm{D_n}=O(n^{-2}\sigma^{-5/2}).
+\]
+If the product of the normalized directional gains is
+$O(\sigma^{-\gamma})$ uniformly over dyadic refinements, then
+\[
+ \norm{\cI_{n,\sigma}}_{\HS}
+ =O(n^{-2}\sigma^{-3-\gamma}).
+\]
+Consequently every schedule $n\sigma^2\to\infty$ remains sufficient when
+$\gamma\le1/2$.  Uniform reduced directional resolvents would give only a
+polylogarithmic loss, because the already known residues grow like
+$\sqrt{\log(1/\sigma)}$; however that reduced-resolvent statement is not
+proved here.
+
+A binary64 audit uses exact Haar compression of sparse row-stochastic
+matrices at six noise levels, reaching dimension $204800$ and
+$133873007$ nonzero entries.  Eighteen adjacent defects have joint fit
+\[
+ 0.01917\,n^{-1.99524}\sigma^{-1.97197},
+\]
+and collapse to within nine percent on the candidate clock
+$C(n\sigma)^{-2}$.  This sharper law is numerical evidence, not an analytic
+claim.  The paper therefore closes the algebraic and mesh-power reduction
+while leaving one explicit directional small-noise gate.  No arithmetic
+trace formula, self-adjoint spectral realization, zeta-zero identification,
+or Riemann-hypothesis conclusion is asserted.
+\end{abstract}
+
+\noindent\textbf{Keywords:} weighted Riesz projection; Schur complement;
+Feshbach map; Galerkin approximation; Hilbert--Schmidt operator; small
+noise; transfer operator.
+
+\medskip
+\noindent\textbf{MSC 2020:} 47A10; 47B10; 65R20; 37M25; 47A55.
+
+\section{Introduction}
+\label{sec:introduction}
+
+The fixed-noise spectral construction for the quadratic band-merging map
+now has two intrinsic peripheral kernels.  The Perron term has kernel
+$\pi_\sigma(y)$ and the negative branch has kernel
+$\lambda_-(\sigma)h_\sigma(x)g_\sigma(y)$.  Their sum
+\begin{equation}
+ \Qper
+ =\cQ_{+,\sigma}+\cQ_{-,\sigma}
+ \label{eq:qper-intro}
+\end{equation}
+is independent of eigenvector gauge and can be subtracted before forming
+the trace-class bulk square
+\citep{WangWeightedKernel2026,WangRankTwo2026}.
+
+The first small-noise analysis separated spatial resolution from the
+deterministic singular limit.  For the raw folded-Gaussian kernel,
+\begin{align}
+ \norm{\cK_\sigma}_{\HS}&=O(\sigma^{-1/2}),
+ \label{eq:raw-size-intro}\\
+ \norm{E_n\cK_\sigma E_n-\cK_\sigma}_{\HS}
+ &=O(n^{-1}\sigma^{-3/2}),
+ \label{eq:raw-mesh-intro}
+\end{align}
+and therefore $n\sigma^2\to\infty$ suffices for two-step trace-norm
+convergence \citep{WangSmallNoiseMesh2026}.  The subsequent endpoint theorem
+showed that the peripheral residues are not uniformly bounded in $L^2$:
+\begin{equation}
+ \norm{P_{+,\sigma}},\norm{P_{-,\sigma}}
+ =\Theta\!\left(\sqrt{\log(1/\sigma)}\right).
+ \label{eq:residue-log-intro}
+\end{equation}
+Hence a fixed-circle global resolvent cannot be $O(1)$ in $L^2$.
+Nevertheless direct differentiation of the rank-two kernel gives
+\begin{equation}
+ \norm{E_n\Qper E_n-\Qper}_{\HS}
+ =O(n^{-1}\sigma^{-3/2}),
+ \label{eq:qper-compression-intro}
+\end{equation}
+so the continuum-anchored bulk retains the raw $p>2$ threshold
+\citep{WangLogConditioning2026}.
+
+The actual finite matrix does not use the continuum factors.  Put
+\begin{equation}
+ G_{n,\sigma}=E_n\cK_\sigma E_n
+ \label{eq:galerkin-intro}
+\end{equation}
+on the $n$-cell space.  Its intrinsic bulk is
+\begin{equation}
+ B_{n,\sigma}^{\rm int}
+ =G_{n,\sigma}-\cQ_{\rm per}(G_{n,\sigma}),
+ \label{eq:intrinsic-bulk-intro}
+\end{equation}
+whereas the continuum-anchored compression is
+\begin{equation}
+ \widetilde B_{n,\sigma}
+ =G_{n,\sigma}-E_n\Qper E_n.
+ \label{eq:anchored-bulk-intro}
+\end{equation}
+Their difference is exactly
+\begin{equation}
+ B_{n,\sigma}^{\rm int}-\widetilde B_{n,\sigma}
+ =-\cI_{n,\sigma},
+ \qquad
+ \cI_{n,\sigma}
+ :=\cQ_{\rm per}(G_{n,\sigma})-E_n\Qper E_n.
+ \label{eq:identification-intro}
+\end{equation}
+This was the single unresolved arrow in the preceding paper.
+
+The naive resolvent identity writes the weighted-term error as a product of
+two complete contour resolvents and the one-step Galerkin defect.  It is
+valid, but it discards the geometry of an orthogonal compression.  The
+correct block calculation starts and ends in $V_n$.  An excursion into
+$V_n^\perp$ must therefore leave the coarse space and return.  The first
+nonzero term is quadratic in the two couplings.
+
+That observation has two consequences.  First, the global logarithmic
+resolvent obstruction is no longer the relevant quantity.  Only resolvent
+action on the coupling ranges appears.  Second, an adjacent dyadic defect
+has order $n^{-2}$ rather than the $n^{-1}$ order of direct kernel
+compression.  Summing adjacent defects over all refinements then recovers
+the continuum identification defect.
+
+\subsection*{Main results}
+
+The paper proves four statements.
+
+\begin{enumerate}[leftmargin=2.2em]
+ \item \textbf{Exact top-left Schur identity.}
+ For a block operator
+ $T=\left(\begin{smallmatrix}A&B\\C&D\end{smallmatrix}\right)$, the
+ difference between the compressed weighted Riesz term of $T$ and that of
+ $A$ is the contour integral of
+ \[
+  zSBR_DCR_A,
+  \quad
+  R_A=(z-A)^{-1},\quad R_D=(z-D)^{-1},\quad
+  S=(z-A-BR_DC)^{-1}.
+ \]
+
+ \item \textbf{Directional Hilbert--Schmidt bound.}
+ The integral is bounded by the product of
+ $\norm{SB}_{\HS}$ and $\norm{CR_A}$, or by the symmetric placement of the
+ Hilbert--Schmidt norm.  No global bound for $S$ or $R_A$ is required.
+
+ \item \textbf{Dyadic telescoping.}
+ If $\Delta_{n,\sigma}$ denotes the exact adjacent defect between $n$ and
+ $2n$, then
+ \[
+  \cI_{n,\sigma}
+  =\sum_{j\ge0}E_n\Delta_{2^jn,\sigma}E_n.
+ \]
+ A quadratic $4^{-j}$ ledger therefore costs only the geometric factor
+ $4/3$.
+
+ \item \textbf{Conditional small-noise closure.}
+ If the product of the normalized directional gains is
+ $O(\sigma^{-\gamma})$, then
+ \[
+  \norm{\cI_{n,\sigma}}_{\HS}
+  =O(n^{-2}\sigma^{-3-\gamma}).
+ \]
+ For $\gamma\le1/2$, every strict $p>2$ schedule remains sufficient for the
+ intrinsic bulk square.
+\end{enumerate}
+
+The fourth statement is deliberately conditional.  The paper does not
+derive a uniform small-noise upper for the reduced directional resolvents.
+It replaces the vague request for ``uniform contour control'' by a precise
+two-range condition with an exact allowable exponent.  Positive and
+negative future results can now be compared against the threshold
+$\gamma=1/2$.
+
+\subsection*{Logical layers}
+
+The evidence is separated as follows.
+
+\begin{description}[leftmargin=3.8cm,style=nextline]
+ \item[Unconditional operator theory]
+ The Schur identity, directional Schatten bound, residue--reduced
+ decomposition, and dyadic telescoping theorem.
+
+ \item[Previously proved analytic input]
+ Gaussian derivative scales, continuum peripheral factor growth, direct
+ rank-two compression, and the anchored bulk-square theorem
+ \citep{WangSmallNoiseMesh2026,WangLogConditioning2026}.
+
+ \item[Explicit remaining condition]
+ A dyadically uniform bound on two normalized directional resolvent actions.
+
+ \item[Floating diagnostic]
+ Exact Haar compression of binary64 sparse matrices.  ``Exact'' here refers
+ to the algebraic nesting of the displayed finite matrices, not to interval
+ validation of the continuum operator.
+\end{description}
+
+\section{Folded-Gaussian family and weighted peripheral terms}
+\label{sec:setup}
+
+Let $I=[0,1]$ and let $u_{\rm c}$ be the first band-merging parameter.  In
+folded coordinates the deterministic map is
+\begin{equation}
+ f(x)=1-u_{\rm c}x^2.
+ \label{eq:map}
+\end{equation}
+For $\sigma>0$, define the conditioned folded-Gaussian kernel
+\begin{equation}
+ k_\sigma(x,y)
+ =\frac{\phi_\sigma(y-f(x))+\phi_\sigma(-y-f(x))}
+ {Z_\sigma(x)},
+ \qquad
+ \phi_\sigma(t)=\frac{e^{-t^2/(2\sigma^2)}}
+ {\sqrt{2\pi}\sigma},
+ \label{eq:kernel}
+\end{equation}
+where the row normalizer makes
+$\int_0^1k_\sigma(x,y)\,dy=1$.  The Markov operator on observables is
+\begin{equation}
+ (\cK_\sigma v)(x)=\int_0^1k_\sigma(x,y)v(y)\,dy.
+ \label{eq:operator}
+\end{equation}
+It is compact and strongly positive on $L^2(I)$ for every fixed
+$\sigma>0$.
+
+The Perron branch has eigenvalue $1$, right observable $\mathbf1$, and
+stationary density $\pi_\sigma$.  The negative branch has a simple real
+eigenvalue $\lambda_-(\sigma)\to-1$, right observable $h_\sigma$, and left
+density $g_\sigma$, normalized by
+\begin{equation}
+ \cK_\sigma h_\sigma=\lambda_-h_\sigma,
+ \quad
+ \cK_\sigma^*g_\sigma=\lambda_-g_\sigma,
+ \quad
+ \int_Ih_\sigma g_\sigma=1.
+ \label{eq:parity-factors}
+\end{equation}
+The weighted Riesz terms are
+\begin{align}
+ (\cQ_{+,\sigma}v)(x)
+ &=\int_I\pi_\sigma(y)v(y)\,dy,
+ \label{eq:perron-term}\\
+ (\cQ_{-,\sigma}v)(x)
+ &=\lambda_-(\sigma)h_\sigma(x)
+   \int_Ig_\sigma(y)v(y)\,dy.
+ \label{eq:parity-term}
+\end{align}
+
+For a positively oriented contour $\Gamma$ in the resolvent set of a
+bounded operator $T$, define
+\begin{equation}
+ \cQ_\Gamma(T)
+ :=\frac1{2\pi i}\int_\Gamma z(z-T)^{-1}\,dz.
+ \label{eq:weighted-riesz}
+\end{equation}
+If $\Gamma$ encloses one simple eigenvalue $\lambda$, then
+$\cQ_\Gamma(T)=\lambda P_\lambda$.  We use two disjoint fixed-geometry
+contours $\Gamma_+$ and $\Gamma_-$ around the Perron and parity branches and
+put
+\begin{equation}
+ \cQ_{\rm per}(T)
+ =\cQ_{\Gamma_+}(T)+\cQ_{\Gamma_-}(T).
+ \label{eq:peripheral-functional}
+\end{equation}
+
+Let $E_n$ be orthogonal averaging on the $n$ equal cells of $I$, and write
+$V_n=\operatorname{Ran}E_n$.  All finite Galerkin operators are understood
+as operators on $V_n$ or as zero-extended operators on $L^2(I)$, according
+to context.
+
+\section{The exact top-left Schur identity}
+\label{sec:schur}
+
+We first work on an arbitrary Hilbert space.  Let $P$ be an orthogonal
+projection, $Q=\Id-P$, and decompose
+\begin{equation}
+ T=\begin{pmatrix}A&B\\C&D\end{pmatrix}
+ \quad\text{on}\quad
+ H=PH\oplus QH,
+ \label{eq:block-T}
+\end{equation}
+where
+\begin{equation}
+ A=PTP,
+ \quad B=PTQ,
+ \quad C=QTP,
+ \quad D=QTQ.
+ \label{eq:block-definitions}
+\end{equation}
+
+For $z$ in the resolvent set of $D$, put
+\begin{equation}
+ R_D(z)=(z-D)^{-1},
+ \quad
+ \Sigma(z)=BR_D(z)C,
+ \quad
+ S(z)=(z-A-\Sigma(z))^{-1}.
+ \label{eq:schur-objects}
+\end{equation}
+The familiar block inverse is
+\begin{equation}
+ (z-T)^{-1}
+ =\begin{pmatrix}
+ S&SBR_D\\
+ R_DCS&R_D+R_DCSBR_D
+ \end{pmatrix}.
+ \label{eq:block-resolvent}
+\end{equation}
+
+\begin{theorem}[Exact intrinsic Schur identity]
+\label{thm:exact-schur}
+Let $\Gamma$ lie in the resolvent sets of $T$, $A$, and $D$.  Then
+\begin{equation}
+ P\cQ_\Gamma(T)P-\cQ_\Gamma(A)
+ =\frac1{2\pi i}\int_\Gamma
+ zS(z)B R_D(z)C(z-A)^{-1}\,dz.
+ \label{eq:exact-schur-identity}
+\end{equation}
+In particular, the top-left weighted-Riesz defect starts quadratically in
+$B$ and $C$.
+\end{theorem}
+
+\begin{proof}
+The top-left block of \eqref{eq:block-resolvent} is $S$.  With
+$R_A=(z-A)^{-1}$, the resolvent identity gives
+\begin{equation}
+ S-R_A=S\Sigma R_A=SBR_DCR_A.
+ \label{eq:schur-resolvent-difference}
+\end{equation}
+Insert this identity into the contour definition
+\eqref{eq:weighted-riesz}.
+\end{proof}
+
+The theorem is stronger than applying the ordinary resolvent identity to
+$T$ and $A\oplus0$.  The latter sees the off-diagonal perturbation
+$\left(\begin{smallmatrix}0&B\\C&D\end{smallmatrix}\right)$ linearly and
+pays for two complete resolvents.  The top-left Schur identity records that
+an excursion contributing to $PH\to PH$ must contain both $C$ and $B$.
+
+\subsection{Directional Schatten bound}
+
+The exact formula naturally places the Schatten norm on one composed
+directional factor.
+
+\begin{theorem}[One-sided directional Schur bound]
+\label{thm:directional-bound}
+Under the hypotheses of \cref{thm:exact-schur}, suppose $B,C\in\HS$.  Put
+\begin{align}
+ L_B^{(2)}
+ &:=\sup_{z\in\Gamma}\norm{S(z)B}_{\HS},
+ &
+ L_C^{(\infty)}
+ &:=\sup_{z\in\Gamma}\norm{C(z-A)^{-1}},
+ \label{eq:left-right-directional}\\
+ L_B^{(\infty)}
+ &:=\sup_{z\in\Gamma}\norm{S(z)B},
+ &
+ L_C^{(2)}
+ &:=\sup_{z\in\Gamma}\norm{C(z-A)^{-1}}_{\HS}.
+ \label{eq:left-right-directional-symmetric}
+\end{align}
+Then
+\begin{align}
+ \norm{P\cQ_\Gamma(T)P-\cQ_\Gamma(A)}_{\HS}
+ \le{}&
+ \frac{\operatorname{length}(\Gamma)}{2\pi}
+ \max_{z\in\Gamma}|z|
+ \sup_{z\in\Gamma}\norm{R_D(z)}
+ \notag\\
+ &\times
+ \min\!\left\{
+ L_B^{(2)}L_C^{(\infty)},
+ L_B^{(\infty)}L_C^{(2)}
+ \right\}.
+ \label{eq:directional-schur-bound}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Use \eqref{eq:exact-schur-identity}, the ideal inequalities
+$\norm{XY}_{\HS}\le\norm{X}_{\HS}\norm{Y}$ and
+$\norm{XY}_{\HS}\le\norm{X}\norm{Y}_{\HS}$, and then integrate the uniform
+majorant around $\Gamma$.
+\end{proof}
+
+The quantities in \eqref{eq:left-right-directional} ask only how the
+coarse resolvents act after entrance through $B$ and before exit through
+$C$.  They may stay small even when the global resolvent is large on an
+unrelated direction.  This is the same goal-oriented principle that appears
+in directional Feshbach and primal--dual residual estimates, now applied to
+the weighted Riesz term itself.
+
+\subsection{Residues versus reduced directional resolvents}
+
+The logarithmic lower bound in \eqref{eq:residue-log-intro} comes from the
+residue.  It should not be confused with an upper for the reduced
+complement.  The Schur formula permits an exact separation.
+
+Assume $\Gamma$ encloses one simple eigenvalue $\lambda$ of $T$ and one
+simple eigenvalue $\mu$ of $A$.  Let $\Pi_T$ and $\Pi_A$ be their Riesz
+projections.  The top-left resolvent residue is
+\begin{equation}
+ \widehat\Pi_T=P\Pi_TP.
+ \label{eq:compressed-residue}
+\end{equation}
+On $\Gamma$ write
+\begin{align}
+ S(z)&=\frac{\widehat\Pi_T}{z-\lambda}+S^\circ(z),
+ \label{eq:S-reduced}\\
+ (z-A)^{-1}&=\frac{\Pi_A}{z-\mu}+R_A^\circ(z).
+ \label{eq:RA-reduced}
+\end{align}
+
+\begin{proposition}[Residue--reduced directional split]
+\label{prop:residue-reduced}
+Let
+\begin{equation}
+ d_T=\min_{z\in\Gamma}|z-\lambda|,
+ \qquad
+ d_A=\min_{z\in\Gamma}|z-\mu|.
+ \label{eq:pole-distances}
+\end{equation}
+Then
+\begin{align}
+ L_B^{(2)}
+ &\le
+ \sup_\Gamma\norm{S^\circ(z)B}_{\HS}
+ +d_T^{-1}\norm{\widehat\Pi_TB}_{\HS},
+ \label{eq:left-reduced-bound}\\
+ L_C^{(\infty)}
+ &\le
+ \sup_\Gamma\norm{CR_A^\circ(z)}
+ +d_A^{-1}\norm{C\Pi_A}.
+ \label{eq:right-reduced-bound}
+\end{align}
+The symmetric bounds hold with the Schatten norm interchanged.
+\end{proposition}
+
+\begin{proof}
+Multiply \eqref{eq:S-reduced} by $B$ and
+\eqref{eq:RA-reduced} by $C$, then apply the triangle inequality.
+\end{proof}
+
+Suppose the contours have fixed geometry, the fine and coarse projection
+norms are both $O(\sqrt{\log(1/\sigma)})$, and the normalized reduced
+directional actions are $O(1)$.  Then the product in
+\eqref{eq:directional-schur-bound} is at
+most $O(\log(1/\sigma))$ after the two coupling norms are factored out.  The
+global reduced resolvent may be much larger; \cref{prop:residue-reduced}
+does not ask for it.  Conversely, this paper does not prove even the weaker
+directional $O(1)$ statement.  It identifies it as the exact next analytic
+gate.
+
+\section{Dyadic telescoping of the continuum defect}
+\label{sec:dyadic}
+
+The Schur identity compares one fine operator with one coarse block.  We now
+show that adjacent comparisons sum exactly to the continuum identification
+defect.
+
+Let the cell spaces be nested dyadically:
+\begin{equation}
+ V_n\subset V_{2n}\subset V_{4n}\subset\cdots,
+ \qquad
+ E_nE_{2n}=E_n.
+ \label{eq:nested-spaces}
+\end{equation}
+For fixed $\sigma$, put
+\begin{equation}
+ A_{n,\sigma}=E_n\cK_\sigma E_n.
+ \label{eq:An}
+\end{equation}
+All weighted terms below use the same pair of peripheral contours.
+
+\begin{definition}[Adjacent intrinsic defect]
+\label{def:adjacent-defect}
+Define
+\begin{equation}
+ \Delta_{n,\sigma}
+ :=\cQ_{\rm per}(A_{n,\sigma})
+ -E_n\cQ_{\rm per}(A_{2n,\sigma})E_n.
+ \label{eq:adjacent-defect}
+\end{equation}
+The continuum defect is
+\begin{equation}
+ \cI_{n,\sigma}
+ =\cQ_{\rm per}(A_{n,\sigma})
+ -E_n\cQ_{\rm per}(\cK_\sigma)E_n.
+ \label{eq:continuum-defect}
+\end{equation}
+\end{definition}
+
+\begin{lemma}[Exact dyadic recursion]
+\label{lem:dyadic-recursion}
+Whenever the displayed weighted terms are defined,
+\begin{equation}
+ \cI_{n,\sigma}
+ =\Delta_{n,\sigma}+E_n\cI_{2n,\sigma}E_n.
+ \label{eq:dyadic-recursion}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Add and subtract
+$E_n\cQ_{\rm per}(A_{2n,\sigma})E_n$ in
+\eqref{eq:continuum-defect}, and use $E_nE_{2n}=E_n$.
+\end{proof}
+
+For each fixed $\sigma>0$, the kernel is smooth and compact.  Standard
+collectively compact Galerkin theory gives convergence of isolated Riesz
+terms once the contours are fixed in the resolvent set
+\citep{Chatelin1983,Kato1995}.  Thus
+\begin{equation}
+ \norm{\cI_{2^mn,\sigma}}_{\HS}\longrightarrow0
+ \qquad(m\to\infty).
+ \label{eq:fixed-sigma-tail}
+\end{equation}
+
+\begin{theorem}[Dyadic identification series]
+\label{thm:dyadic-series}
+For fixed $\sigma$, suppose the two peripheral contours remain admissible
+along the dyadic chain and \eqref{eq:fixed-sigma-tail} holds.  Then
+\begin{equation}
+ \cI_{n,\sigma}
+ =\sum_{j=0}^\infty
+ E_n\Delta_{2^jn,\sigma}E_n,
+ \label{eq:dyadic-series}
+\end{equation}
+where each adjacent defect is naturally extended to $L^2(I)$.  In
+particular, if
+\begin{equation}
+ \norm{\Delta_{2^jn,\sigma}}_{\HS}
+ \le M_{n,\sigma}4^{-j},
+ \label{eq:quadratic-dyadic-ledger}
+\end{equation}
+then
+\begin{equation}
+ \norm{\cI_{n,\sigma}}_{\HS}
+ \le\frac43M_{n,\sigma}.
+ \label{eq:four-thirds}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Iterate \eqref{eq:dyadic-recursion} $m$ times.  Orthogonal compression is a
+contraction in $\HS$, so the finite sum is dominated by the sum of the
+adjacent norms.  Let $m\to\infty$ and use
+\eqref{eq:fixed-sigma-tail}.  Under
+\eqref{eq:quadratic-dyadic-ledger}, sum the geometric series
+$\sum_{j\ge0}4^{-j}=4/3$.
+\end{proof}
+
+This theorem is useful both analytically and computationally.  A future
+validated proof need not compare one finite matrix directly with an
+infinite-dimensional contour integral.  It may certify a sequence of
+adjacent Schur steps and sum their explicit tails.
+
+\section{Gaussian block scales}
+\label{sec:block-scales}
+
+Take the adjacent split
+\begin{equation}
+ V_{2n}=V_n\oplus W_n,
+ \label{eq:haar-split}
+\end{equation}
+where $W_n$ is the Haar detail space, and write
+\begin{equation}
+ A_{2n,\sigma}
+ =\begin{pmatrix}
+ A_{n,\sigma}&B_{n,\sigma}\\
+ C_{n,\sigma}&D_{n,\sigma}
+ \end{pmatrix}.
+ \label{eq:adjacent-blocks}
+\end{equation}
+
+Let
+\begin{equation}
+ K_x(\sigma)=\norm{\partial_xk_\sigma}_{L^2(I^2)},
+ \quad
+ K_y(\sigma)=\norm{\partial_yk_\sigma}_{L^2(I^2)},
+ \quad
+ K_{xy}(\sigma)=\norm{\partial_x\partial_yk_\sigma}_{L^2(I^2)}.
+ \label{eq:derivative-envelopes}
+\end{equation}
+The one-dimensional Poincar\'e--Wirtinger inequality applied in the
+appropriate cell variable gives
+\begin{align}
+ \norm{B_{n,\sigma}}_{\HS}
+ &\le\frac{K_y(\sigma)}{\pi n},
+ \label{eq:B-bound}\\
+ \norm{C_{n,\sigma}}_{\HS}
+ &\le\frac{K_x(\sigma)}{\pi n},
+ \label{eq:C-bound}\\
+ \norm{D_{n,\sigma}}_{\HS}
+ &\le\frac{K_{xy}(\sigma)}{\pi^2n^2}.
+ \label{eq:D-bound}
+\end{align}
+These are the infinite-complement and adjacent-Haar estimates used in the
+validated fixed-noise Schur constructions
+\citep{WangWeightedKernel2026,WangRankTwo2026}.
+
+For the normalized folded Gaussian, differentiation of the kernel and its
+row normalizer gives, for fixed derivative order,
+\begin{equation}
+ \norm{\partial_x^a\partial_y^b k_\sigma}_{L^2(I^2)}
+ =O(\sigma^{-a-b-1/2}).
+ \label{eq:gaussian-all-derivatives}
+\end{equation}
+In particular,
+\begin{align}
+ K_x(\sigma)+K_y(\sigma)&=O(\sigma^{-3/2}),
+ \label{eq:first-derivatives}\\
+ K_{xy}(\sigma)&=O(\sigma^{-5/2}).
+ \label{eq:mixed-derivative}
+\end{align}
+Thus
+\begin{align}
+ \norm{B_{n,\sigma}}_{\HS}
+ +\norm{C_{n,\sigma}}_{\HS}
+ &=O(n^{-1}\sigma^{-3/2}),
+ \label{eq:coupling-clock}\\
+ \norm{D_{n,\sigma}}
+ &=O(n^{-2}\sigma^{-5/2}).
+ \label{eq:detail-clock}
+\end{align}
+
+Let $\rho_\Gamma=\min_{z\in\Gamma}|z|$.  If
+$\norm{D_{n,\sigma}}<\rho_\Gamma$, then
+\begin{equation}
+ \sup_{z\in\Gamma}\norm{(z-D_{n,\sigma})^{-1}}
+ \le\frac1{\rho_\Gamma-\norm{D_{n,\sigma}}}.
+ \label{eq:detail-resolvent}
+\end{equation}
+Under $n\sigma^2\to\infty$,
+\begin{equation}
+ n^{-2}\sigma^{-5/2}
+ =(n\sigma^2)^{-2}\sigma^{3/2}\longrightarrow0,
+ \label{eq:detail-vanishes}
+\end{equation}
+so the detail resolvent is uniformly $O(1)$ on either fixed peripheral
+contour.  The unresolved growth lies entirely in the two coarse
+directional actions.
+
+\section{The directional small-noise condition}
+\label{sec:directional-condition}
+
+For each branch $s\in\{+,-\}$, let $\Gamma_s$ be its contour.  Relative to
+the adjacent split \eqref{eq:adjacent-blocks}, define
+\begin{align}
+ R_{A,s}(z)&=(z-A_{n,\sigma})^{-1},
+ \notag\\
+ R_{D,s}(z)&=(z-D_{n,\sigma})^{-1},
+ \notag\\
+ S_s(z)&=
+ \left(z-A_{n,\sigma}
+ -B_{n,\sigma}R_{D,s}(z)C_{n,\sigma}\right)^{-1}.
+ \label{eq:branch-schur-objects}
+\end{align}
+
+When the denominator coupling norm is nonzero, put
+\begin{align}
+ \ell_{B,s}^{(2)}(n,\sigma)
+ &:=\sup_{z\in\Gamma_s}
+ \frac{\norm{S_s(z)B_{n,\sigma}}_{\HS}}
+ {\norm{B_{n,\sigma}}_{\HS}},
+ \label{eq:normalized-left-hs}\\
+ \ell_{C,s}^{(\infty)}(n,\sigma)
+ &:=\sup_{z\in\Gamma_s}
+ \frac{\norm{C_{n,\sigma}R_{A,s}(z)}}
+ {\norm{C_{n,\sigma}}},
+ \label{eq:normalized-right-op}
+\end{align}
+and define the symmetric pair by interchanging the Schatten norm.  Zero
+couplings are assigned zero gain.  The combined directional gain is
+\begin{equation}
+ \cL_{n,\sigma}
+ :=\sum_{s\in\{+,-\}}
+ \min\!\left\{
+ \ell_{B,s}^{(2)}\ell_{C,s}^{(\infty)},
+ \ell_{B,s}^{(\infty)}\ell_{C,s}^{(2)}
+ \right\}.
+ \label{eq:combined-gain}
+\end{equation}
+Fixed contour length, maximum modulus, and the bounded detail resolvent are
+absorbed into constants below.
+
+\begin{condition}[Dyadic directional gain of order $\gamma$]
+\label{cond:directional-gain}
+There are $C<\infty$, $\sigma_0>0$, and $n_0(\sigma)$ such that the two
+contours lie in the required resolvent sets and
+\begin{equation}
+ \sup_{j\ge0}\cL_{2^jn,\sigma}
+ \le C\sigma^{-\gamma}
+ \label{eq:gain-condition}
+\end{equation}
+for $0<\sigma<\sigma_0$ and $n\ge n_0(\sigma)$.
+\end{condition}
+
+This condition is weaker than a global reduced-resolvent bound.  It does not
+control the resolvent on vectors orthogonal to the two coupling ranges.  It
+also retains the full fine Schur inverse on the left, so no perturbative
+replacement by the coarse resolvent is hidden in the definition.
+
+\begin{theorem}[Quadratic adjacent identification bound]
+\label{thm:adjacent-bound}
+Under \cref{cond:directional-gain} and the Gaussian derivative estimates,
+\begin{equation}
+ \norm{\Delta_{n,\sigma}}_{\HS}
+ =O(n^{-2}\sigma^{-3-\gamma}).
+ \label{eq:adjacent-small-noise}
+\end{equation}
+The same bound holds uniformly at level $2^jn$ with an additional factor
+$4^{-j}$.
+\end{theorem}
+
+\begin{proof}
+Apply \cref{thm:directional-bound} to each contour and use
+\eqref{eq:coupling-clock}, \eqref{eq:detail-resolvent}, and
+\eqref{eq:gain-condition}.  The two coupling norms contribute
+$n^{-2}\sigma^{-3}$; replacing $n$ by $2^jn$ contributes $4^{-j}$.
+\end{proof}
+
+\begin{theorem}[Intrinsic small-noise identification theorem]
+\label{thm:intrinsic-identification}
+Under the hypotheses of \cref{thm:adjacent-bound} and the fixed-$\sigma$
+Galerkin convergence in \cref{thm:dyadic-series},
+\begin{equation}
+ \boxed{
+ \norm{\cI_{n,\sigma}}_{\HS}
+ =O(n^{-2}\sigma^{-3-\gamma}).}
+ \label{eq:intrinsic-identification-bound}
+\end{equation}
+If $\gamma\le1/2$ and
+\begin{equation}
+ n(\sigma)\sigma^2\longrightarrow\infty,
+ \label{eq:p-two-again}
+\end{equation}
+then
+\begin{equation}
+ \norm{\cI_{n,\sigma}}_{\HS}
+ =o(n^{-1}\sigma^{-3/2}).
+ \label{eq:identification-lower-order}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The first statement follows from \cref{thm:dyadic-series} and the factor
+$4/3$.  Divide \eqref{eq:intrinsic-identification-bound} by the anchored
+one-step clock:
+\begin{equation}
+ \frac{n^{-2}\sigma^{-3-\gamma}}
+ {n^{-1}\sigma^{-3/2}}
+ =\frac{\sigma^{1/2-\gamma}}{n\sigma^2}.
+ \label{eq:relative-clock}
+\end{equation}
+For $\gamma\le1/2$, the numerator is bounded and the denominator tends to
+infinity.
+\end{proof}
+
+For a pure power $n(\sigma)\asymp\sigma^{-p}$, the intrinsic defect has
+exponent
+\begin{equation}
+ 2p-3-\gamma,
+ \label{eq:identification-power}
+\end{equation}
+while its ratio to the anchored one-step error has exponent
+\begin{equation}
+ p-\frac32-\gamma.
+ \label{eq:relative-power}
+\end{equation}
+Combining this with the anchored trace threshold $p>2$ gives the sufficient
+condition
+\begin{equation}
+ p>\max\!\left\{2,\frac32+\gamma\right\}.
+ \label{eq:general-p-threshold}
+\end{equation}
+Thus $\gamma=1/2$ is the precise boundary at which all strict $p>2$
+schedules survive.
+
+\begin{corollary}[Slowly varying directional closure]
+\label{cor:polylog-closure}
+If, for some fixed $m$, the dyadic directional gain satisfies
+\begin{equation}
+ \sup_{j\ge0}\cL_{2^jn,\sigma}
+ =O((\log(1/\sigma))^m),
+ \label{eq:polylog-gain}
+\end{equation}
+then
+\begin{equation}
+ \norm{\cI_{n,\sigma}}_{\HS}
+ =O\!\left(
+ n^{-2}\sigma^{-3}(\log(1/\sigma))^m
+ \right),
+ \label{eq:polylog-identification}
+\end{equation}
+and every schedule \eqref{eq:p-two-again} satisfies
+\eqref{eq:identification-lower-order}.
+\end{corollary}
+
+\begin{proof}
+Every fixed power of $\log(1/\sigma)$ is
+$o(\sigma^{-1/2})$.  Repeat \eqref{eq:relative-clock}.
+\end{proof}
+
+By \cref{prop:residue-reduced}, uniformly bounded reduced directional
+resolvents together with $O(\sqrt{\log})$ bounds for both the fine and
+coarse residues would give \cref{cor:polylog-closure} with $m=1$.  The
+continuum residue law is known; its dyadically uniform coarse counterpart
+and the reduced directional bounds remain part of the premise.  The
+implication is rigorous, but that premise is not proved here.
+
+\section{Transfer to the actual intrinsic bulk square}
+\label{sec:bulk-transfer}
+
+The continuum-anchored theorem gives
+\begin{align}
+ \norm{\widetilde B_{n,\sigma}-\cB_\sigma}_{\HS}
+ &=O(n^{-1}\sigma^{-3/2}),
+ \label{eq:anchored-hs-recall}\\
+ \norm{\widetilde B_{n,\sigma}^2-\cB_\sigma^2}_{\TC}
+ &=O(n^{-1}\sigma^{-2})+O(n^{-2}\sigma^{-3}),
+ \label{eq:anchored-trace-recall}\\
+ \norm{\widetilde B_{n,\sigma}}_{\HS}
+ &=O(\sigma^{-1/2}).
+ \label{eq:anchored-size-recall}
+\end{align}
+The exact relation \eqref{eq:identification-intro} now transfers those
+bounds.
+
+\begin{corollary}[Conditional intrinsic bulk-square closure]
+\label{cor:intrinsic-bulk-square}
+Under \cref{cond:directional-gain} with $\gamma\le1/2$ and
+$n\sigma^2\to\infty$,
+\begin{align}
+ \norm{B_{n,\sigma}^{\rm int}-\cB_\sigma}_{\HS}
+ &=O(n^{-1}\sigma^{-3/2}),
+ \label{eq:intrinsic-hs-final}\\
+ \norm{(B_{n,\sigma}^{\rm int})^2-\cB_\sigma^2}_{\TC}
+ &\longrightarrow0.
+ \label{eq:intrinsic-trace-final}
+\end{align}
+For $n\asymp\sigma^{-p}$, every $p>2$ is sufficient.
+\end{corollary}
+
+\begin{proof}
+Equation \eqref{eq:identification-lower-order} and
+\eqref{eq:identification-intro} preserve
+\eqref{eq:anchored-hs-recall}.  For the square difference between intrinsic
+and anchored bulks,
+\begin{align}
+ \norm{(B_{n,\sigma}^{\rm int})^2
+       -\widetilde B_{n,\sigma}^2}_{\TC}
+ &\le
+ \norm{\cI_{n,\sigma}}_{\HS}
+ \left(2\norm{\widetilde B_{n,\sigma}}_{\HS}
+       +\norm{\cI_{n,\sigma}}_{\HS}\right).
+ \label{eq:intrinsic-square-difference}
+\end{align}
+The leading additional clock is
+$n^{-2}\sigma^{-7/2-\gamma}$.  Relative to the leading anchored trace clock
+$n^{-1}\sigma^{-2}$, its ratio is again
+$n^{-1}\sigma^{-3/2-\gamma}$, equal to the right-hand side of
+\eqref{eq:relative-clock}.  It tends to zero for $\gamma\le1/2$ under
+$n\sigma^2\to\infty$.  Combine with
+\eqref{eq:anchored-trace-recall}.
+\end{proof}
+
+The conclusion is important but conditional: the finite matrix's actual
+weighted-Riesz subtraction inherits the anchored theorem if and only if the
+new directional gate is met.  The paper has not silently replaced that gate
+by the observed finite-matrix scaling.
+
+\section{Exact-Haar floating audit}
+\label{sec:numerics}
+
+The analytic theorem identifies a quadratic clock.  We test that clock on
+the same row-normalized eight-sigma sparse folded-Gaussian family used in
+the preceding small-noise studies.
+
+\subsection{Nested construction}
+
+For each $\sigma$, build one finest row-stochastic matrix $K_N$ with
+\begin{equation}
+ N\sigma\simeq40.96.
+ \label{eq:finest-resolution}
+\end{equation}
+Every coarser matrix is then obtained by exact orthogonal Haar compression,
+not by rebuilding a separate midpoint quadrature.  If $R$ averages each
+pair of fine values and $L$ repeats a coarse value on both children, then
+\begin{equation}
+ K_{N/2}=RK_NL,
+ \qquad RL=\Id.
+ \label{eq:exact-haar-compression}
+\end{equation}
+Thus each displayed adjacent comparison is an exact finite-dimensional
+instance of \cref{thm:exact-schur}, up to floating eigensolver error.
+
+Let a weighted rank-two term be represented as
+\begin{equation}
+ Q_N=U_NV_N^{\mathsf T},
+ \label{eq:factorization}
+\end{equation}
+where the columns of $U_N$ are the right value vectors and the columns of
+$V_N$ are the left cell-mass vectors, with the parity column multiplied by
+$\lambda_-$.  Under a compression ratio $r$, the exact coarse factors of
+$RQ_NL$ are
+\begin{equation}
+ (U_N)_{\rm comp}=\operatorname{blockmean}_r(U_N),
+ \qquad
+ (V_N)_{\rm comp}=\operatorname{blocksum}_r(V_N).
+ \label{eq:factor-compression}
+\end{equation}
+All Frobenius norms and singular values are evaluated from matrices of size
+at most $4\times4$ using factor Gram matrices.  The dense rank-two operator
+is never formed.
+
+\subsection{Observed dyadic law}
+
+The full audit uses six noise levels and four nested dimensions at each
+level.  The largest matrix has dimension $204800$ and $133873007$ nonzero
+entries.  \Cref{tab:dyadic-audit} reports the finest adjacent defect, whose
+coarse level satisfies $n\sigma=20.48$.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Floating exact-Haar intrinsic identification audit.}
+\label{tab:dyadic-audit}
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+$\sigma$ & $n$ & $\norm{\Delta_{n,\sigma}}_{\HS}$
+& $(n\sigma)^2\norm{\Delta}_{\HS}$
+& mesh fit & finest nonzeros\\
+\midrule
+$10^{-2}$       & $2048$   & $4.1943879\,10^{-5}$ & $0.01759254$ & $-1.99553$ & $2457479$\\
+$4\,10^{-3}$    & $5120$   & $4.0657159\,10^{-5}$ & $0.01705285$ & $-1.99543$ & $6399048$\\
+$2\,10^{-3}$    & $10240$  & $4.0158494\,10^{-5}$ & $0.01684369$ & $-1.99523$ & $13032853$\\
+$10^{-3}$       & $20480$  & $3.8877260\,10^{-5}$ & $0.01630630$ & $-1.99511$ & $26379457$\\
+$5\,10^{-4}$    & $40960$  & $3.8771105\,10^{-5}$ & $0.01626178$ & $-1.99511$ & $53184355$\\
+$2\,10^{-4}$    & $102400$ & $3.8402422\,10^{-5}$ & $0.01610714$ & $-1.99502$ & $133873007$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At every fixed $\sigma$, a three-level regression of the weighted rank-two
+defect against $n$ lies between
+\begin{equation}
+ -1.99553\quad\text{and}\quad-1.99502.
+ \label{eq:mesh-fit-range}
+\end{equation}
+The joint eighteen-point regression is
+\begin{equation}
+ \norm{\Delta_{n,\sigma}}_{\HS}
+ \approx
+ 0.0191729\,n^{-1.995237}\sigma^{-1.971971},
+ \label{eq:joint-fit}
+\end{equation}
+with maximum log residual $0.01579$.  Equivalently, at fixed $n\sigma$ the
+fitted $\sigma$ power is approximately $0.0232$, close to zero.  Across the
+six noise levels, the normalized quantity at $n\sigma=20.48$ varies by less
+than nine percent.
+
+The branch-resolved defect is parity dominated.  At the smallest noise,
+\begin{equation}
+ \norm{\Delta_+}_{\HS}=1.3958552\,10^{-5},
+ \qquad
+ \norm{\Delta_-}_{\HS}=3.5944471\,10^{-5},
+ \label{eq:smallest-branch-defects}
+\end{equation}
+while the combined weighted rank-two value is
+$3.8402422\times10^{-5}$.
+
+\subsection{Double-resolution replay}
+
+To test whether the apparent collapse is an artifact of the chosen finest
+matrix, the experiment is repeated at
+\begin{equation}
+ N\sigma\simeq81.92
+ \label{eq:double-resolution}
+\end{equation}
+for $\sigma=0.004$ and $0.001$.  Four overlapping defects at
+$n\sigma=20.48$ and $10.24$ change by at most
+\begin{equation}
+ 1.5676\times10^{-4}
+ \label{eq:replay-relative}
+\end{equation}
+in relative terms.  The three-level mesh slopes sharpen to
+$-1.99885$ and $-1.99878$, respectively.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/intrinsic_riesz_identification.pdf}
+\caption{Quadratic Schur identification and its exact remaining gate.
+(a) Adjacent exact-Haar defects at six noise levels; every fitted slope is
+near $-2$.  (b) Collapse after multiplication by $(n\sigma)^2$.  (c) Perron,
+negative-parity, and combined weighted defects at $n\sigma=20.48$.
+(d) The analytic threshold
+$p>\max\{2,3/2+\gamma\}$: every strict $p>2$ schedule survives when
+$\gamma\le1/2$.  Panels (a)--(c) are binary64 diagnostics; panel (d) is the
+proved exponent ledger under \cref{cond:directional-gain}.}
+\label{fig:summary}
+\end{figure}
+
+The numerical law
+\begin{equation}
+ \norm{\Delta_{n,\sigma}}_{\HS}
+ \asymp(n\sigma)^{-2}
+ \label{eq:candidate-law}
+\end{equation}
+is one full power of $\sigma$ better than the generic product of two
+Hilbert--Schmidt derivative bounds.  It may reflect cancellation, sharper
+mixed-norm coupling estimates, or the special entrance and exit directions
+of the two peripheral modes.  Distinguishing those mechanisms is a
+mathematical problem, not a regression exercise.  We therefore archive
+\eqref{eq:candidate-law} as a candidate law only.
+
+\section{What is closed and what remains}
+\label{sec:conclusion}
+
+The intrinsic identification problem has now separated into an algebraic
+part, a mesh part, and a genuinely spectral part.
+
+\begin{enumerate}[leftmargin=2.2em]
+ \item \textbf{Algebraic part: closed.}
+ The exact top-left difference is a Schur self-energy integral and begins
+ quadratically in the coarse--detail couplings.
+
+ \item \textbf{Trace-ideal part: closed.}
+ The Hilbert--Schmidt estimate needs only two directional resolvent actions.
+ Adjacent quadratic defects telescope with geometric factor $4/3$.
+
+ \item \textbf{Small-noise exponent reduction: closed.}
+ If the directional product grows like $\sigma^{-\gamma}$, the exact mesh
+ threshold is \eqref{eq:general-p-threshold}.  The previous $p>2$ theorem
+ survives for every $\gamma\le1/2$ and, in particular, for every
+ polylogarithmic loss.
+
+ \item \textbf{Directional reduced-resolvent estimate: open.}
+ The present paper does not prove a uniform or $\sigma^{-1/2}$ upper for the
+ normalized directional gain.  The global $L^2$ residue obstruction neither
+ proves nor disproves that estimate.
+
+ \item \textbf{Sharper $(n\sigma)^{-2}$ law: open.}
+ Exact-Haar data strongly support it, but the available Gaussian
+ Hilbert--Schmidt derivative envelope proves only the more conservative
+ $n^{-2}\sigma^{-3}$ self-energy clock before directional gain.
+\end{enumerate}
+
+The next useful theorem should therefore target one of two statements:
+\begin{equation}
+ \sup_{j\ge0}\cL_{2^jn,\sigma}
+ =O((\log(1/\sigma))^m)
+ \label{eq:next-polylog-target}
+\end{equation}
+for some fixed $m$, or at least
+\begin{equation}
+ \sup_{j\ge0}\cL_{2^jn,\sigma}
+ =O(\sigma^{-1/2}).
+ \label{eq:next-half-power-target}
+\end{equation}
+Possible tools include a reduced Grushin system built from the known left
+and right peripheral factors, a primal--dual enclosure of the two coupling
+ranges, or a mixed Banach/Hilbert norm that separates deterministic bulk
+transport from endpoint residues.  A negative result with growth exponent
+$\gamma>1/2$ would also be decisive: it would show that the strict $p>2$
+route needs a stronger mesh schedule or a different intrinsic subtraction.
+
+The scope remains operator-theoretic.  None of the results identifies a
+dynamical trace with primes or prime powers, constructs a self-adjoint
+Hilbert--P\'olya operator, derives a $T\log T$ counting law, locates a Riemann
+zero, or proves the Riemann hypothesis.
+
+\section*{Data and code availability}
+
+All source code, exact-Haar floating data, theorem certificates, tests,
+figures, hashes, and the manuscript are available at
+\url{https://github.com/maris205/prime_dynamics_theory/tree/main/papers/RH-48-intrinsic-riesz-identification}.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

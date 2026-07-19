@@ -1,0 +1,484 @@
+{
+  "conditional_small_noise_closure": {
+    "directional_gain_condition": "L_sigma=O(sigma^-gamma) uniformly over the two contours and all dyadic refinements",
+    "general_pure_power_threshold": "p>max(2,3/2+gamma)",
+    "identification_bound": "||I_n,sigma||_S2=O(n^-2 sigma^-3 L_sigma)",
+    "polylogarithmic_gain_case": "||I_n,sigma||_S2=O(n^-2 sigma^-3 polylog(1/sigma)) and the defect is lower order than n^-1 sigma^-3/2",
+    "preserves_every_n_sigma_squared_schedule_when": "gamma<=1/2",
+    "unconditional_for_the_folded_gaussian_family_here": false
+  },
+  "dependencies": {
+    "local_double_resolution_replay": {
+      "path": "results/dyadic_identification_pilot_smoke.json",
+      "sha256": "6d9cd2d0c47952beb94611a82ba4a69ab8be25f07c82e416b62e0f3711574620"
+    },
+    "local_dyadic_identification_pilot": {
+      "path": "results/dyadic_identification_pilot.json",
+      "sha256": "7f066eee925608c7836380222126256c9edd583f26a4046b14aaecf9cede2511"
+    },
+    "rh43_weighted_schur_source": {
+      "path": "papers/RH-43-validated-weighted-riesz-parity-kernel/src/weighted_kernel/bounds.py",
+      "sha256": "24d594f5c56caffda9103cbb520aece698698bb9209b335690ffb95ee9607ac3"
+    },
+    "rh46_small_noise_mesh_certificate": {
+      "path": "papers/RH-46-small-noise-mesh-double-pole/results/small_noise_mesh_double_pole_certificate.json",
+      "sha256": "a5fed4f35993d45f974b0886181b58531a31adf0d3e93087324f4c0e24b624f3"
+    },
+    "rh47_logarithmic_conditioning_certificate": {
+      "path": "papers/RH-47-logarithmic-peripheral-conditioning/results/logarithmic_peripheral_conditioning_certificate.json",
+      "sha256": "948fb29c88e1fefecb01c8406eedc2692d0879dd6103add942b7fc5149a905c6"
+    },
+    "rh47_logarithmic_conditioning_manuscript": {
+      "path": "papers/RH-47-logarithmic-peripheral-conditioning/main.tex",
+      "sha256": "6f5beb2001b1a6860651c05a791c733c3d7e4a1634dad3b6259799066bae0976"
+    }
+  },
+  "directional_bound": {
+    "bound": "length(Gamma)/(2 pi) max_Gamma|z| sup_Gamma||R_D(z)|| times the product of the two directional quantities",
+    "left_quantity": "sup_Gamma ||S_n(z) B_n||_S2",
+    "right_quantity": "sup_Gamma ||C_n (z-A_n)^-1||",
+    "symmetric_alternative": "interchange the Hilbert-Schmidt and operator norms",
+    "why_weaker_than_global": "only resolvent action on the two coupling ranges is charged"
+  },
+  "dyadic_telescoping": {
+    "adjacent_defect": "Delta_n=Q_per(A_n)-E_n Q_per(A_2n) E_n",
+    "fixed_sigma_limit_input": "standard compact Galerkin spectral convergence",
+    "quadratic_geometric_factor": 1.3333333333333333,
+    "recursion": "I_n=Delta_n+E_n I_2n E_n",
+    "series": "I_n=sum_{j>=0} E_n Delta_(2^j n) E_n"
+  },
+  "evidence_level": {
+    "analytic": "exact Hilbert-space Schur identity, Hilbert-Schmidt directional bound, dyadic telescoping theorem, and conditional small-noise power theorem",
+    "numerical": "binary64 sparse eigendata on exact Haar-compressed finite matrices; not interval validated"
+  },
+  "exact_schur_identification": {
+    "block_split": "K=[[A,B],[C,D]], A=E_n K E_n",
+    "detail_resolvent": "R_D(z)=(z-D)^-1",
+    "global_full_resolvent_required": false,
+    "identity": "E_n Q_Gamma(K) E_n-Q_Gamma(A)=(2 pi i)^-1 int_Gamma z S_n(z) B R_D(z) C (z-A)^-1 dz",
+    "schur_inverse": "S_n(z)=(z-A-Sigma_n(z))^-1",
+    "self_energy": "Sigma_n(z)=B R_D(z) C",
+    "structural_order": "quadratic in the coarse-detail couplings B and C"
+  },
+  "floating_exact_haar_audit": {
+    "adjacent_defects": 18,
+    "candidate_law_is_a_theorem": false,
+    "double_resolution_replay": {
+      "comparisons": [
+        {
+          "base_defect": 4.06571594840227e-05,
+          "base_fine_resolution": 40.96,
+          "coarse_dimension_times_sigma": 20.48,
+          "relative_difference": 0.00014268955039417852,
+          "replay_defect": 4.065135813221562e-05,
+          "replay_fine_resolution": 81.92,
+          "sigma": 0.004
+        },
+        {
+          "base_defect": 0.00016242276525106996,
+          "base_fine_resolution": 40.96,
+          "coarse_dimension_times_sigma": 10.24,
+          "relative_difference": 0.00014268410208306164,
+          "replay_defect": 0.00016239959010465226,
+          "replay_fine_resolution": 81.92,
+          "sigma": 0.004
+        },
+        {
+          "base_defect": 3.887725995975999e-05,
+          "base_fine_resolution": 40.96,
+          "coarse_dimension_times_sigma": 20.48,
+          "relative_difference": 0.000156754363296302,
+          "replay_defect": 3.8871165779628294e-05,
+          "replay_fine_resolution": 81.92,
+          "sigma": 0.001
+        },
+        {
+          "base_defect": 0.00015529873203612275,
+          "base_fine_resolution": 40.96,
+          "coarse_dimension_times_sigma": 10.24,
+          "relative_difference": 0.00015623270420948117,
+          "replay_defect": 0.00015527446929525644,
+          "replay_fine_resolution": 81.92,
+          "sigma": 0.001
+        }
+      ],
+      "maximum_relative_difference": 0.000156754363296302
+    },
+    "finest_resolution_rows": [
+      {
+        "coarse_dimension": 2048,
+        "coarse_dimension_times_sigma": 20.48,
+        "normalized_n_sigma_square": 0.01759253801366282,
+        "parity_defect_frobenius": 3.957353262473593e-05,
+        "perron_defect_frobenius": 1.4168763459871673e-05,
+        "sigma": 0.01,
+        "weighted_defect_frobenius": 4.194387916007714e-05
+      },
+      {
+        "coarse_dimension": 5120,
+        "coarse_dimension_times_sigma": 20.48,
+        "normalized_n_sigma_square": 0.017052848665247436,
+        "parity_defect_frobenius": 3.819947318528266e-05,
+        "perron_defect_frobenius": 1.4294715077629626e-05,
+        "sigma": 0.004,
+        "weighted_defect_frobenius": 4.06571594840227e-05
+      },
+      {
+        "coarse_dimension": 10240,
+        "coarse_dimension_times_sigma": 20.48,
+        "normalized_n_sigma_square": 0.016843693135175277,
+        "parity_defect_frobenius": 3.771248186267127e-05,
+        "perron_defect_frobenius": 1.4211099230497408e-05,
+        "sigma": 0.002,
+        "weighted_defect_frobenius": 4.015849384111232e-05
+      },
+      {
+        "coarse_dimension": 20480,
+        "coarse_dimension_times_sigma": 20.48,
+        "normalized_n_sigma_square": 0.016306304695826116,
+        "parity_defect_frobenius": 3.654710275707867e-05,
+        "perron_defect_frobenius": 1.3650315644787961e-05,
+        "sigma": 0.001,
+        "weighted_defect_frobenius": 3.887725995975999e-05
+      },
+      {
+        "coarse_dimension": 40960,
+        "coarse_dimension_times_sigma": 20.48,
+        "normalized_n_sigma_square": 0.01626177994026806,
+        "parity_defect_frobenius": 3.6341008066590415e-05,
+        "perron_defect_frobenius": 1.3938393568039892e-05,
+        "sigma": 0.0005,
+        "weighted_defect_frobenius": 3.877110467021002e-05
+      },
+      {
+        "coarse_dimension": 102400,
+        "coarse_dimension_times_sigma": 20.48,
+        "normalized_n_sigma_square": 0.01610714316764265,
+        "parity_defect_frobenius": 3.59444709156521e-05,
+        "perron_defect_frobenius": 1.3958552391022212e-05,
+        "sigma": 0.0002,
+        "weighted_defect_frobenius": 3.840242187414801e-05
+      }
+    ],
+    "fixed_resolution_fits": {
+      "10.24": {
+        "fitted_sigma_power": 0.023227481039293264,
+        "fixed_n_sigma": 10.24,
+        "log_intercept": -8.594709965006068,
+        "maximum_log_residual": 0.015000272679902338,
+        "normalized_n_sigma_square_maximum": 0.01757074585709568,
+        "normalized_n_sigma_square_minimum": 0.01608499981042249,
+        "normalized_relative_spread": 0.0891157692646209
+      },
+      "20.48": {
+        "fitted_sigma_power": 0.023190997193686325,
+        "fixed_n_sigma": 20.48,
+        "log_intercept": -9.979925761031387,
+        "maximum_log_residual": 0.014977560820540248,
+        "normalized_n_sigma_square_maximum": 0.01759253801366282,
+        "normalized_n_sigma_square_minimum": 0.01610714316764265,
+        "normalized_relative_spread": 0.08897749396048557
+      },
+      "5.12": {
+        "fitted_sigma_power": 0.023378932131319422,
+        "fixed_n_sigma": 5.12,
+        "log_intercept": -7.212706902047179,
+        "maximum_log_residual": 0.015090179157505546,
+        "normalized_n_sigma_square_maximum": 0.017483799769855212,
+        "normalized_n_sigma_square_minimum": 0.015996323368975156,
+        "normalized_relative_spread": 0.08969176766867247
+      }
+    },
+    "joint_power_fit": {
+      "dimension_power": -1.995236986665868,
+      "log_prefactor": -3.954257842438898,
+      "maximum_log_residual": 0.015790562245501683,
+      "observations": 18,
+      "prefactor": 0.019172892577950452,
+      "root_mean_square_log_residual": 0.008162558646172054,
+      "sigma_power": -1.9719711832110995
+    },
+    "largest_dimension": 204800,
+    "largest_nonzeros": 133873007,
+    "mesh_power_maximum": -1.995019858405848,
+    "mesh_power_minimum": -1.9955275653744555,
+    "noise_levels": 6,
+    "observed_candidate_law": "approximately C (n sigma)^-2",
+    "status": "floating_exact_dyadic_intrinsic_identification_audit"
+  },
+  "gaussian_block_scaling": {
+    "coarse_to_detail_hilbert_schmidt": "O(n^-1 sigma^-3/2)",
+    "detail_resolvent_under_n_sigma_squared": "O(1)",
+    "detail_to_coarse_hilbert_schmidt": "O(n^-1 sigma^-3/2)",
+    "double_detail_operator": "O(n^-2 sigma^-5/2)",
+    "generic_self_energy": "O(n^-2 sigma^-3)"
+  },
+  "limitations": [
+    "The exact Schur identity and dyadic telescoping theorem are unconditional operator statements, but their uniform small-noise application requires the displayed directional gain condition.",
+    "No global or directional reduced L2 resolvent upper is proved for sigma tending to zero.",
+    "The observed n^-2 sigma^-2 law is a binary64 finite-matrix fit and is not promoted to an analytic theorem.",
+    "The sparse audit uses an eight-sigma cutoff, exact row renormalization, and floating eigensolvers; it is not an interval enclosure.",
+    "The theorem concerns intrinsic peripheral identification and bulk-square approximation, not an arithmetic trace formula or prime-power identity.",
+    "No zeta-zero identification, self-adjoint Hilbert-Polya operator, T log T counting law, or Riemann-hypothesis conclusion is claimed."
+  ],
+  "power_schedule_audit": {
+    "gamma=0.00": {
+      "p=2.00": {
+        "anchored_hilbert_schmidt_exponent": 0.5,
+        "anchored_trace_norm_exponent": 0.0,
+        "directional_gain_power": 0.0,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 0.5,
+        "intrinsic_identification_exponent": 1.0,
+        "intrinsic_trace_contribution_exponent": 0.5,
+        "intrinsic_trace_over_anchored_trace_exponent": 0.5,
+        "mesh_power": 2.0,
+        "trace_contribution_is_lower_order": true
+      },
+      "p=2.05": {
+        "anchored_hilbert_schmidt_exponent": 0.5499999999999998,
+        "anchored_trace_norm_exponent": 0.04999999999999982,
+        "directional_gain_power": 0.0,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 0.5499999999999998,
+        "intrinsic_identification_exponent": 1.0999999999999996,
+        "intrinsic_trace_contribution_exponent": 0.5999999999999996,
+        "intrinsic_trace_over_anchored_trace_exponent": 0.5499999999999998,
+        "mesh_power": 2.05,
+        "trace_contribution_is_lower_order": true
+      },
+      "p=2.25": {
+        "anchored_hilbert_schmidt_exponent": 0.75,
+        "anchored_trace_norm_exponent": 0.25,
+        "directional_gain_power": 0.0,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 0.75,
+        "intrinsic_identification_exponent": 1.5,
+        "intrinsic_trace_contribution_exponent": 1.0,
+        "intrinsic_trace_over_anchored_trace_exponent": 0.75,
+        "mesh_power": 2.25,
+        "trace_contribution_is_lower_order": true
+      },
+      "p=2.50": {
+        "anchored_hilbert_schmidt_exponent": 1.0,
+        "anchored_trace_norm_exponent": 0.5,
+        "directional_gain_power": 0.0,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 1.0,
+        "intrinsic_identification_exponent": 2.0,
+        "intrinsic_trace_contribution_exponent": 1.5,
+        "intrinsic_trace_over_anchored_trace_exponent": 1.0,
+        "mesh_power": 2.5,
+        "trace_contribution_is_lower_order": true
+      },
+      "p=3.00": {
+        "anchored_hilbert_schmidt_exponent": 1.5,
+        "anchored_trace_norm_exponent": 1.0,
+        "directional_gain_power": 0.0,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 1.5,
+        "intrinsic_identification_exponent": 3.0,
+        "intrinsic_trace_contribution_exponent": 2.5,
+        "intrinsic_trace_over_anchored_trace_exponent": 1.5,
+        "mesh_power": 3.0,
+        "trace_contribution_is_lower_order": true
+      }
+    },
+    "gamma=0.25": {
+      "p=2.00": {
+        "anchored_hilbert_schmidt_exponent": 0.5,
+        "anchored_trace_norm_exponent": 0.0,
+        "directional_gain_power": 0.25,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 0.25,
+        "intrinsic_identification_exponent": 0.75,
+        "intrinsic_trace_contribution_exponent": 0.25,
+        "intrinsic_trace_over_anchored_trace_exponent": 0.25,
+        "mesh_power": 2.0,
+        "trace_contribution_is_lower_order": true
+      },
+      "p=2.05": {
+        "anchored_hilbert_schmidt_exponent": 0.5499999999999998,
+        "anchored_trace_norm_exponent": 0.04999999999999982,
+        "directional_gain_power": 0.25,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 0.2999999999999998,
+        "intrinsic_identification_exponent": 0.8499999999999996,
+        "intrinsic_trace_contribution_exponent": 0.34999999999999964,
+        "intrinsic_trace_over_anchored_trace_exponent": 0.2999999999999998,
+        "mesh_power": 2.05,
+        "trace_contribution_is_lower_order": true
+      },
+      "p=2.25": {
+        "anchored_hilbert_schmidt_exponent": 0.75,
+        "anchored_trace_norm_exponent": 0.25,
+        "directional_gain_power": 0.25,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 0.5,
+        "intrinsic_identification_exponent": 1.25,
+        "intrinsic_trace_contribution_exponent": 0.75,
+        "intrinsic_trace_over_anchored_trace_exponent": 0.5,
+        "mesh_power": 2.25,
+        "trace_contribution_is_lower_order": true
+      },
+      "p=2.50": {
+        "anchored_hilbert_schmidt_exponent": 1.0,
+        "anchored_trace_norm_exponent": 0.5,
+        "directional_gain_power": 0.25,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 0.75,
+        "intrinsic_identification_exponent": 1.75,
+        "intrinsic_trace_contribution_exponent": 1.25,
+        "intrinsic_trace_over_anchored_trace_exponent": 0.75,
+        "mesh_power": 2.5,
+        "trace_contribution_is_lower_order": true
+      },
+      "p=3.00": {
+        "anchored_hilbert_schmidt_exponent": 1.5,
+        "anchored_trace_norm_exponent": 1.0,
+        "directional_gain_power": 0.25,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 1.25,
+        "intrinsic_identification_exponent": 2.75,
+        "intrinsic_trace_contribution_exponent": 2.25,
+        "intrinsic_trace_over_anchored_trace_exponent": 1.25,
+        "mesh_power": 3.0,
+        "trace_contribution_is_lower_order": true
+      }
+    },
+    "gamma=0.50": {
+      "p=2.00": {
+        "anchored_hilbert_schmidt_exponent": 0.5,
+        "anchored_trace_norm_exponent": 0.0,
+        "directional_gain_power": 0.5,
+        "identification_is_lower_order": false,
+        "identification_over_anchored_hilbert_schmidt_exponent": 0.0,
+        "intrinsic_identification_exponent": 0.5,
+        "intrinsic_trace_contribution_exponent": 0.0,
+        "intrinsic_trace_over_anchored_trace_exponent": 0.0,
+        "mesh_power": 2.0,
+        "trace_contribution_is_lower_order": false
+      },
+      "p=2.05": {
+        "anchored_hilbert_schmidt_exponent": 0.5499999999999998,
+        "anchored_trace_norm_exponent": 0.04999999999999982,
+        "directional_gain_power": 0.5,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 0.04999999999999982,
+        "intrinsic_identification_exponent": 0.5999999999999996,
+        "intrinsic_trace_contribution_exponent": 0.09999999999999964,
+        "intrinsic_trace_over_anchored_trace_exponent": 0.04999999999999982,
+        "mesh_power": 2.05,
+        "trace_contribution_is_lower_order": true
+      },
+      "p=2.25": {
+        "anchored_hilbert_schmidt_exponent": 0.75,
+        "anchored_trace_norm_exponent": 0.25,
+        "directional_gain_power": 0.5,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 0.25,
+        "intrinsic_identification_exponent": 1.0,
+        "intrinsic_trace_contribution_exponent": 0.5,
+        "intrinsic_trace_over_anchored_trace_exponent": 0.25,
+        "mesh_power": 2.25,
+        "trace_contribution_is_lower_order": true
+      },
+      "p=2.50": {
+        "anchored_hilbert_schmidt_exponent": 1.0,
+        "anchored_trace_norm_exponent": 0.5,
+        "directional_gain_power": 0.5,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 0.5,
+        "intrinsic_identification_exponent": 1.5,
+        "intrinsic_trace_contribution_exponent": 1.0,
+        "intrinsic_trace_over_anchored_trace_exponent": 0.5,
+        "mesh_power": 2.5,
+        "trace_contribution_is_lower_order": true
+      },
+      "p=3.00": {
+        "anchored_hilbert_schmidt_exponent": 1.5,
+        "anchored_trace_norm_exponent": 1.0,
+        "directional_gain_power": 0.5,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 1.0,
+        "intrinsic_identification_exponent": 2.5,
+        "intrinsic_trace_contribution_exponent": 2.0,
+        "intrinsic_trace_over_anchored_trace_exponent": 1.0,
+        "mesh_power": 3.0,
+        "trace_contribution_is_lower_order": true
+      }
+    },
+    "gamma=0.75": {
+      "p=2.00": {
+        "anchored_hilbert_schmidt_exponent": 0.5,
+        "anchored_trace_norm_exponent": 0.0,
+        "directional_gain_power": 0.75,
+        "identification_is_lower_order": false,
+        "identification_over_anchored_hilbert_schmidt_exponent": -0.25,
+        "intrinsic_identification_exponent": 0.25,
+        "intrinsic_trace_contribution_exponent": -0.25,
+        "intrinsic_trace_over_anchored_trace_exponent": -0.25,
+        "mesh_power": 2.0,
+        "trace_contribution_is_lower_order": false
+      },
+      "p=2.05": {
+        "anchored_hilbert_schmidt_exponent": 0.5499999999999998,
+        "anchored_trace_norm_exponent": 0.04999999999999982,
+        "directional_gain_power": 0.75,
+        "identification_is_lower_order": false,
+        "identification_over_anchored_hilbert_schmidt_exponent": -0.20000000000000018,
+        "intrinsic_identification_exponent": 0.34999999999999964,
+        "intrinsic_trace_contribution_exponent": -0.15000000000000036,
+        "intrinsic_trace_over_anchored_trace_exponent": -0.20000000000000018,
+        "mesh_power": 2.05,
+        "trace_contribution_is_lower_order": false
+      },
+      "p=2.25": {
+        "anchored_hilbert_schmidt_exponent": 0.75,
+        "anchored_trace_norm_exponent": 0.25,
+        "directional_gain_power": 0.75,
+        "identification_is_lower_order": false,
+        "identification_over_anchored_hilbert_schmidt_exponent": 0.0,
+        "intrinsic_identification_exponent": 0.75,
+        "intrinsic_trace_contribution_exponent": 0.25,
+        "intrinsic_trace_over_anchored_trace_exponent": 0.0,
+        "mesh_power": 2.25,
+        "trace_contribution_is_lower_order": false
+      },
+      "p=2.50": {
+        "anchored_hilbert_schmidt_exponent": 1.0,
+        "anchored_trace_norm_exponent": 0.5,
+        "directional_gain_power": 0.75,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 0.25,
+        "intrinsic_identification_exponent": 1.25,
+        "intrinsic_trace_contribution_exponent": 0.75,
+        "intrinsic_trace_over_anchored_trace_exponent": 0.25,
+        "mesh_power": 2.5,
+        "trace_contribution_is_lower_order": true
+      },
+      "p=3.00": {
+        "anchored_hilbert_schmidt_exponent": 1.5,
+        "anchored_trace_norm_exponent": 1.0,
+        "directional_gain_power": 0.75,
+        "identification_is_lower_order": true,
+        "identification_over_anchored_hilbert_schmidt_exponent": 0.75,
+        "intrinsic_identification_exponent": 2.25,
+        "intrinsic_trace_contribution_exponent": 1.75,
+        "intrinsic_trace_over_anchored_trace_exponent": 0.75,
+        "mesh_power": 3.0,
+        "trace_contribution_is_lower_order": true
+      }
+    }
+  },
+  "residue_reduced_split": {
+    "coarse_residue_growth_required_for_corollary": "O(sqrt(log(1/sigma))) uniformly over dyadic levels; not proved here",
+    "continuum_residue_growth": "O(sqrt(log(1/sigma))) in L2",
+    "directional_reduced_resolvent_upper_proved_here": false,
+    "formula": "R(z)=Pi/(z-lambda)+R_circ(z), applied separately to the fine top-left and coarse resolvents",
+    "full_reduced_resolvent_upper_proved_here": false,
+    "uniform_reduced_directional_consequence": "directional gain O(log(1/sigma)) after multiplying the two sides"
+  },
+  "scope": "intrinsic Perron-plus-parity weighted-Riesz identification for nested cell-average Galerkin compressions of the folded-Gaussian operator",
+  "status": "rigorous_quadratic_schur_and_dyadic_reduction_with_directional_small_noise_gate"
+}

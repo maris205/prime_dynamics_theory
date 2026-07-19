@@ -1,0 +1,347 @@
+{
+  "evidence_level": "binary64_sparse_exact_Haar_compression_not_validated",
+  "fine_resolution_target": 81.92,
+  "limitations": [
+    "Every adjacent defect is exact for the displayed finite fine matrix and its orthogonal Haar top-left block, up to binary64 eigensolver error.",
+    "The finest sparse matrix uses an eight-sigma cutoff and exact row renormalization.",
+    "The audit is not an interval enclosure and does not upper-bound an infinite-dimensional reduced resolvent."
+  ],
+  "nested_levels": 4,
+  "rows": [
+    {
+      "adjacent_identification_defects": [
+        {
+          "branches": {
+            "parity": {
+              "coarse_term_frobenius": 1.1391569931123087,
+              "compressed_fine_term_frobenius": 1.139157323604687,
+              "defect_frobenius": 9.551812240026749e-06,
+              "relative_to_coarse_term": 8.384983191763669e-06
+            },
+            "perron": {
+              "coarse_term_frobenius": 1.1550733704362708,
+              "compressed_fine_term_frobenius": 1.1550739198344269,
+              "defect_frobenius": 3.5736855652352183e-06,
+              "relative_to_coarse_term": 3.0939035187742563e-06
+            },
+            "weighted_rank_two": {
+              "coarse_term_frobenius": 1.6322571584531345,
+              "compressed_fine_term_frobenius": 1.6322576855487976,
+              "defect_frobenius": 1.0166105109189785e-05,
+              "relative_to_coarse_term": 6.228249670428188e-06
+            }
+          },
+          "coarse_dimension": 10240,
+          "coarse_dimension_times_sigma": 40.96,
+          "fine_dimension": 20480,
+          "quadratic_clock": 0.1490116119384766,
+          "quadratic_log_clock": 0.8227617916259538,
+          "raw_one_step_clock": 0.3860202221885229,
+          "weighted_defect_frobenius": 1.0166105109189785e-05,
+          "weighted_defect_over_quadratic_clock": 6.822357651823223e-05,
+          "weighted_defect_over_quadratic_log_clock": 1.2356073425698806e-05,
+          "weighted_defect_over_raw_clock": 2.63356801660637e-05
+        },
+        {
+          "branches": {
+            "parity": {
+              "coarse_term_frobenius": 1.1391517299222897,
+              "compressed_fine_term_frobenius": 1.1391530511603816,
+              "defect_frobenius": 3.819383894114865e-05,
+              "relative_to_coarse_term": 3.3528315796662266e-05
+            },
+            "perron": {
+              "coarse_term_frobenius": 1.1550693336382476,
+              "compressed_fine_term_frobenius": 1.1550715306022854,
+              "defect_frobenius": 1.4293103403218275e-05,
+              "relative_to_coarse_term": 1.237423848679086e-05
+            },
+            "weighted_rank_two": {
+              "coarse_term_frobenius": 1.6322508282239814,
+              "compressed_fine_term_frobenius": 1.6322529357978062,
+              "defect_frobenius": 4.065135813221562e-05,
+              "relative_to_coarse_term": 2.490509266669972e-05
+            }
+          },
+          "coarse_dimension": 5120,
+          "coarse_dimension_times_sigma": 20.48,
+          "fine_dimension": 10240,
+          "quadratic_clock": 0.5960464477539064,
+          "quadratic_log_clock": 3.291047166503815,
+          "raw_one_step_clock": 0.7720404443770458,
+          "weighted_defect_frobenius": 4.065135813221562e-05,
+          "weighted_defect_over_quadratic_clock": 6.820166160775379e-05,
+          "weighted_defect_over_quadratic_log_clock": 1.2352104383663654e-05,
+          "weighted_defect_over_raw_clock": 5.2654441134903144e-05
+        },
+        {
+          "branches": {
+            "parity": {
+              "coarse_term_frobenius": 1.1391307008203062,
+              "compressed_fine_term_frobenius": 1.1391359741139122,
+              "defect_frobenius": 0.0001525615383618086,
+              "relative_to_coarse_term": 0.00013392803674937967
+            },
+            "perron": {
+              "coarse_term_frobenius": 1.1550532034005971,
+              "compressed_fine_term_frobenius": 1.1550619811603713,
+              "defect_frobenius": 5.7153921927002926e-05,
+              "relative_to_coarse_term": 4.9481635788495123e-05
+            },
+            "weighted_rank_two": {
+              "coarse_term_frobenius": 1.6322255342700518,
+              "compressed_fine_term_frobenius": 1.6322339516302928,
+              "defect_frobenius": 0.00016239959010465226,
+              "relative_to_coarse_term": 9.949580293588474e-05
+            }
+          },
+          "coarse_dimension": 2560,
+          "coarse_dimension_times_sigma": 10.24,
+          "fine_dimension": 5120,
+          "quadratic_clock": 2.3841857910156254,
+          "quadratic_log_clock": 13.16418866601526,
+          "raw_one_step_clock": 1.5440808887540916,
+          "weighted_defect_frobenius": 0.00016239959010465226,
+          "weighted_defect_over_quadratic_clock": 6.811532503743033e-05,
+          "weighted_defect_over_quadratic_log_clock": 1.2336467838986835e-05,
+          "weighted_defect_over_raw_clock": 0.00010517557162156926
+        }
+      ],
+      "fine_resolution": 81.92,
+      "levels": [
+        {
+          "bulk_radius_observed": 0.7179412917881006,
+          "dimension": 20480,
+          "dimension_times_sigma": 81.92,
+          "elapsed_seconds": 3.79025795601774,
+          "maximum_row_sum_error": 5.551115123125783e-16,
+          "nonzeros": 25501288,
+          "parity_eigenvalue": -0.9922040862818508,
+          "sigma": 0.004
+        },
+        {
+          "bulk_radius_observed": 0.7179411354569839,
+          "dimension": 10240,
+          "dimension_times_sigma": 40.96,
+          "elapsed_seconds": 0.8948195050470531,
+          "maximum_row_sum_error": 4.440892098500626e-16,
+          "nonzeros": 6387599,
+          "parity_eigenvalue": -0.9922036248377493,
+          "sigma": 0.004
+        },
+        {
+          "bulk_radius_observed": 0.7179405114433332,
+          "dimension": 5120,
+          "dimension_times_sigma": 20.48,
+          "elapsed_seconds": 0.19798123301006854,
+          "maximum_row_sum_error": 4.440892098500626e-16,
+          "nonzeros": 1603049,
+          "parity_eigenvalue": -0.9922017798146999,
+          "sigma": 0.004
+        },
+        {
+          "bulk_radius_observed": 0.7179380359903761,
+          "dimension": 2560,
+          "dimension_times_sigma": 10.24,
+          "elapsed_seconds": 0.055936580058187246,
+          "maximum_row_sum_error": 4.440892098500626e-16,
+          "nonzeros": 403843,
+          "parity_eigenvalue": -0.992194411786489,
+          "sigma": 0.004
+        }
+      ],
+      "matrix_build_and_compression_seconds": 2.841037838952616,
+      "mesh_power_fits": {
+        "parity": {
+          "levels": 3,
+          "log_intercept": 6.897841861696442,
+          "maximum_log_residual": 0.0003498306491955816,
+          "power": -1.998736504136543
+        },
+        "perron": {
+          "levels": 3,
+          "log_intercept": 5.923317020251663,
+          "maximum_log_residual": 6.961178837272541e-05,
+          "power": -1.9996839461382465
+        },
+        "weighted_rank_two": {
+          "levels": 3,
+          "log_intercept": 6.961242512985015,
+          "maximum_log_residual": 0.00031514321610082163,
+          "power": -1.998854516901944
+        }
+      },
+      "sigma": 0.004
+    },
+    {
+      "adjacent_identification_defects": [
+        {
+          "branches": {
+            "parity": {
+              "coarse_term_frobenius": 1.2109175666219867,
+              "compressed_fine_term_frobenius": 1.2109188441918708,
+              "defect_frobenius": 9.138645562582313e-06,
+              "relative_to_coarse_term": 7.546876694567875e-06
+            },
+            "perron": {
+              "coarse_term_frobenius": 1.2427293157949288,
+              "compressed_fine_term_frobenius": 1.2427299229607205,
+              "defect_frobenius": 3.412674984615493e-06,
+              "relative_to_coarse_term": 2.7461128833454197e-06
+            },
+            "weighted_rank_two": {
+              "coarse_term_frobenius": 1.7444984266875807,
+              "compressed_fine_term_frobenius": 1.7444996649795772,
+              "defect_frobenius": 9.72110492535749e-06,
+              "relative_to_coarse_term": 5.5724354786697815e-06
+            }
+          },
+          "coarse_dimension": 40960,
+          "coarse_dimension_times_sigma": 40.96,
+          "fine_dimension": 81920,
+          "quadratic_clock": 0.5960464477539064,
+          "quadratic_log_clock": 4.117342995990597,
+          "raw_one_step_clock": 0.7720404443770458,
+          "weighted_defect_frobenius": 9.72110492535749e-06,
+          "weighted_defect_over_quadratic_clock": 1.6309307709138646e-05,
+          "weighted_defect_over_quadratic_log_clock": 2.361014113913693e-06,
+          "weighted_defect_over_raw_clock": 1.2591445171245379e-05
+        },
+        {
+          "branches": {
+            "parity": {
+              "coarse_term_frobenius": 1.2109098967147154,
+              "compressed_fine_term_frobenius": 1.2109150044546773,
+              "defect_frobenius": 3.6541146679021476e-05,
+              "relative_to_coarse_term": 3.0176602551651617e-05
+            },
+            "perron": {
+              "coarse_term_frobenius": 1.2427253140627492,
+              "compressed_fine_term_frobenius": 1.2427277418552571,
+              "defect_frobenius": 1.3648755992739727e-05,
+              "relative_to_coarse_term": 1.0982922644521391e-05
+            },
+            "weighted_rank_two": {
+              "coarse_term_frobenius": 1.7444904314810226,
+              "compressed_fine_term_frobenius": 1.744495382394001,
+              "defect_frobenius": 3.8871165779628294e-05,
+              "relative_to_coarse_term": 2.2282246481929845e-05
+            }
+          },
+          "coarse_dimension": 20480,
+          "coarse_dimension_times_sigma": 20.48,
+          "fine_dimension": 40960,
+          "quadratic_clock": 2.3841857910156254,
+          "quadratic_log_clock": 16.46937198396239,
+          "raw_one_step_clock": 1.5440808887540916,
+          "weighted_defect_frobenius": 3.8871165779628294e-05,
+          "weighted_defect_over_quadratic_clock": 1.6303748611415804e-05,
+          "weighted_defect_over_quadratic_log_clock": 2.3602093520918958e-06,
+          "weighted_defect_over_raw_clock": 2.51743066459382e-05
+        },
+        {
+          "branches": {
+            "parity": {
+              "coarse_term_frobenius": 1.2108792656675371,
+              "compressed_fine_term_frobenius": 1.210899656003552,
+              "defect_frobenius": 0.00014594719633720336,
+              "relative_to_coarse_term": 0.00012052993264918543
+            },
+            "perron": {
+              "coarse_term_frobenius": 1.2427093269230367,
+              "compressed_fine_term_frobenius": 1.2427190241322914,
+              "defect_frobenius": 5.457358857368117e-05,
+              "relative_to_coarse_term": 4.3915006825293595e-05
+            },
+            "weighted_rank_two": {
+              "coarse_term_frobenius": 1.7444584970961658,
+              "compressed_fine_term_frobenius": 1.7444782646557815,
+              "defect_frobenius": 0.00015527446929525644,
+              "relative_to_coarse_term": 8.901012523584085e-05
+            }
+          },
+          "coarse_dimension": 10240,
+          "coarse_dimension_times_sigma": 10.24,
+          "fine_dimension": 20480,
+          "quadratic_clock": 9.536743164062502,
+          "quadratic_log_clock": 65.87748793584956,
+          "raw_one_step_clock": 3.088161777508183,
+          "weighted_defect_frobenius": 0.00015527446929525644,
+          "weighted_defect_over_quadratic_clock": 1.6281708191574277e-05,
+          "weighted_defect_over_quadratic_log_clock": 2.3570186745198942e-06,
+          "weighted_defect_over_raw_clock": 5.028054890976158e-05
+        }
+      ],
+      "fine_resolution": 81.92,
+      "levels": [
+        {
+          "bulk_radius_observed": 0.7391375712753885,
+          "dimension": 81920,
+          "dimension_times_sigma": 81.92,
+          "elapsed_seconds": 24.144667558022775,
+          "maximum_row_sum_error": 4.440892098500626e-16,
+          "nonzeros": 105121679,
+          "parity_eigenvalue": -0.9963875933613567,
+          "sigma": 0.001
+        },
+        {
+          "bulk_radius_observed": 0.7391361182380524,
+          "dimension": 40960,
+          "dimension_times_sigma": 40.96,
+          "elapsed_seconds": 5.956109988037497,
+          "maximum_row_sum_error": 4.440892098500626e-16,
+          "nonzeros": 26331359,
+          "parity_eigenvalue": -0.9963873853007269,
+          "sigma": 0.001
+        },
+        {
+          "bulk_radius_observed": 0.739130308454532,
+          "dimension": 20480,
+          "dimension_times_sigma": 20.48,
+          "elapsed_seconds": 1.5270993110025302,
+          "maximum_row_sum_error": 4.440892098500626e-16,
+          "nonzeros": 6608234,
+          "parity_eigenvalue": -0.9963865534029415,
+          "sigma": 0.001
+        },
+        {
+          "bulk_radius_observed": 0.7391071071525106,
+          "dimension": 10240,
+          "dimension_times_sigma": 10.24,
+          "elapsed_seconds": 0.3565736429300159,
+          "maximum_row_sum_error": 4.440892098500626e-16,
+          "nonzeros": 1664802,
+          "parity_eigenvalue": -0.9963832313317564,
+          "sigma": 0.001
+        }
+      ],
+      "matrix_build_and_compression_seconds": 10.972620091051795,
+      "mesh_power_fits": {
+        "parity": {
+          "levels": 3,
+          "log_intercept": 9.623672032714746,
+          "maximum_log_residual": 0.00037359663662073217,
+          "power": -1.998661163524423
+        },
+        "perron": {
+          "levels": 3,
+          "log_intercept": 8.648630584997603,
+          "maximum_log_residual": 8.342870969890726e-05,
+          "power": -1.9996139932231107
+        },
+        "weighted_rank_two": {
+          "levels": 3,
+          "log_intercept": 9.686684601682304,
+          "maximum_log_residual": 0.00033728809418320793,
+          "power": -1.998778261568748
+        }
+      },
+      "sigma": 0.001
+    }
+  ],
+  "source": {
+    "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+    "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+  },
+  "status": "floating_exact_dyadic_intrinsic_identification_audit"
+}
