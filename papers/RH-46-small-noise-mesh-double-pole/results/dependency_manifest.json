@@ -1,0 +1,56 @@
+{
+  "external_inputs": {
+    "rh14_square_root_summary": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/results/square_root_boundary_layer_summary.json",
+      "sha256": "c73159bf27faaf9119c2d068cbd487eb8f7b39eedd321110ebec6047bf14bbbf"
+    },
+    "rh15_bulk_scattering_manuscript": {
+      "path": "papers/RH-15-parity-extracted-bulk-scattering/main.tex",
+      "sha256": "b4e25d14c5ffa3d742a73eb18186b30fbd34526274890e834c6050859a046b13"
+    },
+    "rh15_bulk_scattering_summary": {
+      "path": "papers/RH-15-parity-extracted-bulk-scattering/results/bulk_scattering_summary.json",
+      "sha256": "bb5dab02151d6f9fa78582f8b8d859b5ec60da713d9e7de6b153ff3d07720543"
+    },
+    "rh15_outer_resonance_cloud": {
+      "path": "papers/RH-15-parity-extracted-bulk-scattering/results/outer_resonance_cloud.csv",
+      "sha256": "854ebc047112f06b615b747b3ce48349d3d071f6b0f15d8859aa39d52bccabbd"
+    },
+    "rh16_endpoint_rank_summary": {
+      "path": "papers/RH-16-endpoint-gaussian-resolution-rank/results/endpoint_rank_audit.json",
+      "sha256": "8c971c8f9a086d4f2c3d96d532995418f7a29af88e77c31e8eca924d31d025fc"
+    },
+    "rh42_fixed_noise_hilbert_envelope": {
+      "path": "papers/RH-42-uniform-euclidean-parity-contour/results/hilbert_schmidt_envelope_certificate.json",
+      "sha256": "5870a1a9fae5617c1f11984488d16a4f11447e9433093ad6e0f1e3b6836223ac"
+    },
+    "rh45_fixed_noise_trace_determinant": {
+      "path": "papers/RH-45-bulk-two-step-trace-norm-determinant/results/bulk_trace_norm_determinant_certificate.json",
+      "sha256": "7a9b20b8fe5322aa66ea0b3d1a8f269100562ee5715c560ed34b9edd4bbd01ca"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "458bbf1898a14052a57bbcad2afaff8b9c9d5e702b7b3be17d5b33e2844a623d",
+    "experiments/build_small_noise_certificate.py": "8c4716965814294108cd6e906ebbeb8a94dc96b17df4c10cbca88ffca3688795",
+    "experiments/build_square_cloud_pilot.py": "333276533877f2906c7ab9b71ac903a0a1058ccda991ac680879dd164a0cdb40",
+    "experiments/make_figures.py": "9e9854ecac97b01dd7d34224d9071d851eeebbdb0703c4b3bb1ca5ef0a78eb1a",
+    "experiments/run_gaussian_row_resolution_pilot.py": "78a649fa9d6fe1d0a0eb1651c836f6fe7a9b78d2c21c49c3209d31913c19a7fb",
+    "experiments/verify_archive.py": "e7900106cec2ebc004beae1a7d0374b6b608217ae17f17c0f5922f1cba0a3ab1",
+    "src/small_noise_two_step/__init__.py": "f49681b642f5ba2b44c4a271e22b6359cf7a6597688f1480594c15618392b5ba",
+    "src/small_noise_two_step/bounds.py": "f6e8a1c20602820546a884ce02484d2d88236ad139f548f98bda8dee32ef5b86",
+    "tests/test_archived_results.py": "0fa4e4197a7633a6ce3c52a05397b4316442f94f96d103e028936d929eabb3fc",
+    "tests/test_bounds.py": "b111a777c208a2954d2bc1e22de55f585d3c5eaf1c7389f97b8c442b2e004b65"
+  },
+  "publication_artifacts": {
+    ".gitignore": "659fa0e1e709143253982263bb45dd529f74f96591e94873364916c59aa84484",
+    "README.md": "8530ae85896b919b36a35467f1b046560ce3865d3fd7c85c15b38cc957dfb5aa",
+    "figures/small_noise_mesh_double_pole.pdf": "35211caa94c852af47ef4a06aab89eb538a59cc101f3861cabeb0a73278c8ce1",
+    "figures/small_noise_mesh_double_pole.png": "310fc73e046491e6d4f4aa1625ef14760556a1905dd1d58c6e4c74c316973952",
+    "main.tex": "576cc6d9a9503e832df7590995a0d435774bb246c50a46212a69aaec4eaa0128",
+    "pyproject.toml": "ec9b4cc14e00d70e16f216970db3016ea3d4f797cfeddae78c30e4ca202b47a0",
+    "references.bib": "4428edbc9768541502256c6faf4f4c2962aba14e318e820c35ab72e651c59df3",
+    "requirements.txt": "b5d7d32dbb9df1b801abc1070caf6870a54af542248e03991107040e13a81dd6",
+    "small-noise-mesh-double-pole.pdf": "bdeb926bf0aeaff10d297bc223b8bc9c4925b35ba1db62057ec0418d0efa028a"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}

@@ -1,0 +1,119 @@
+{
+  "archived_square_cloud_pilot": {
+    "evidence_level": "archived_binary64_one_step_clouds_reprocessed_exactly",
+    "maximum_ideal_cloud_polynomial_identity_error": 3.552713678800501e-15,
+    "noise_levels": [
+      0.01,
+      0.004,
+      0.002,
+      0.001,
+      0.0005,
+      0.0002,
+      0.0001
+    ],
+    "selected_all_coordinate_mean_error": 0.12741416470835046,
+    "selected_central_maximum_error": 0.11589964727270274,
+    "selected_central_mean_error": 0.0363294353592265,
+    "selected_dimension": 204800,
+    "selected_effective_degree": 7,
+    "selected_one_step_cloud_size": 14,
+    "selected_radial_mean": 0.7302687845096624,
+    "selected_sigma": 0.0001,
+    "selected_two_step_edge_center": 1.8751435740152982,
+    "status": "floating_two_step_squared_resonance_cloud_scattering_pilot"
+  },
+  "canonical_square_cloud_model": {
+    "edge_scaling": "S_N(lambda exp(s/(N+1)))/(N+1)^2 -> ((exp(s)-1)/s)^2",
+    "endpoint_rank_clock": "#{j:s_j(R_sigma)>eta}=log(1/sigma)/(2log(lambda))+O_eta(1), 0<eta<1",
+    "finite_section": "S_N(w)=Pi_N(w/lambda)^2",
+    "ideal_cloud_size": "2N one-step resonances",
+    "identification_with_actual_noisy_cloud": "floating_only",
+    "squared_zero_multiplicity": 2
+  },
+  "conditional_bulk_route": {
+    "assumption": "||Q_per,sigma||_HS=O(sigma^-q) and ||Q_per,n,sigma-Q_per,sigma||_HS=O(n^-1 sigma^-r)",
+    "bulk_size_power": "max(1/2,q)",
+    "condition_name": "uniform_peripheral_transport_condition",
+    "fixed_sigma_1e_minus_2_closed_by_rh45": true,
+    "matched_markov_case_q_1_2_r_3_2": 2.0,
+    "moving_contour_resolvent_corollary": {
+      "peripheral_size_power_q": "beta",
+      "premise": "contour geometry is O(1) and the continuum/discrete resolvents are O(sigma^-beta)",
+      "resolvent_identity_error_power_r": "3/2+2 beta",
+      "sufficient_two_step_mesh_powers": {
+        "0.0": 2.0,
+        "0.25": 2.5,
+        "0.5": 3.0,
+        "1.0": 4.5
+      }
+    },
+    "one_step_bulk_error_power": "max(3/2,r)",
+    "proved_uniformly_in_sigma": false,
+    "two_step_bulk_mesh_power": "max(1/2,q)+max(3/2,r)"
+  },
+  "double_pole_obstruction": {
+    "coefficientwise_small_noise_bridge": true,
+    "family_locally_bounded_on_disks_R_gt_lambda": false,
+    "locally_uniform_entire_small_noise_limit": false,
+    "numerator_holomorphic_nonzero_disk_radius": 2.817609029911661,
+    "one_step_deterministic_bulk_factor": "D_0,bulk,2(z)=G(z)/(1-z^2/lambda)",
+    "one_step_simple_poles": [
+      -1.2955977425220848,
+      1.2955977425220848
+    ],
+    "two_step_double_pole": 1.6785735104283224,
+    "two_step_factor": "D_0,square(w)=H(w)/(1-w/lambda)^2",
+    "two_step_variable": "w=z^2"
+  },
+  "evidence_level": "analytic_uniform_gaussian_moment_bounds_plus_exact_prior_deterministic_factorization",
+  "gaussian_row_pilot": {
+    "asymptotic_constant": 0.1084156338230097,
+    "evidence_level": "closed_normal_cdf_cell_masses_binary64",
+    "finest_cell_to_sigma_ratio": 0.001953125,
+    "finest_relative_error": 9.48819920299574e-08,
+    "status": "floating_exact_gaussian_row_cell_projection_pilot"
+  },
+  "limitations": [
+    "The explicit unconditional mesh theorem concerns the folded Gaussian Markov kernel and its cell-average Galerkin lift.",
+    "Uniform small-noise weighted-Riesz contours and peripheral transport are stated as a separate condition and are not proved here.",
+    "Midpoint, normalization, and adaptive cutoff have lower-order small-noise derivative scaling under the stated mesh laws, but the displayed explicit constants use the canonical cell-average lift.",
+    "The fixed-disk determinant estimate is a deliberately coarse sufficient trace-ideal continuity bound and is not a necessary computational complexity law.",
+    "The actual noisy resonance-cloud identification and residual normality remain conjectural; archived cloud comparisons are floating diagnostics.",
+    "No arithmetic trace formula, prime-power identity, zeta-zero identification, self-adjoint Hilbert-Polya operator, T log T counting law, or Riemann-hypothesis claim is made."
+  ],
+  "mesh_constants": {
+    "combined_first_derivative_scaled_constant": 11.373709849581182,
+    "galerkin_hilbert_schmidt_error_constant": 3.620364287707645,
+    "kernel_hilbert_schmidt_scaled_constant": 2.124503864054395,
+    "normalizer_linear_lower": 1.2533141373155,
+    "sigma_maximum": 0.03,
+    "square_trace_norm_linear_constant": 15.382955837038859,
+    "square_trace_norm_quadratic_constant": 13.107037575708885
+  },
+  "mesh_laws": {
+    "fixed_disk_standard_bound": "requires n sigma^2 to dominate exp(C_R/sigma); this is a sufficient continuity bound, not a necessity theorem",
+    "one_step_hilbert_schmidt_sufficient_condition": "n(sigma)*sigma^(3/2)->infinity",
+    "shrinking_disk_determinant_sufficient_condition": "n(sigma)*sigma->infinity",
+    "shrinking_disk_radius": "R_sigma=rho*sigma",
+    "two_step_trace_norm_sufficient_condition": "n(sigma)*sigma^2->infinity"
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "659fa0e1e709143253982263bb45dd529f74f96591e94873364916c59aa84484",
+    "README.md": "8530ae85896b919b36a35467f1b046560ce3865d3fd7c85c15b38cc957dfb5aa",
+    "figures/small_noise_mesh_double_pole.pdf": "35211caa94c852af47ef4a06aab89eb538a59cc101f3861cabeb0a73278c8ce1",
+    "figures/small_noise_mesh_double_pole.png": "310fc73e046491e6d4f4aa1625ef14760556a1905dd1d58c6e4c74c316973952",
+    "main.tex": "576cc6d9a9503e832df7590995a0d435774bb246c50a46212a69aaec4eaa0128",
+    "pyproject.toml": "ec9b4cc14e00d70e16f216970db3016ea3d4f797cfeddae78c30e4ca202b47a0",
+    "references.bib": "4428edbc9768541502256c6faf4f4c2962aba14e318e820c35ab72e651c59df3",
+    "requirements.txt": "b5d7d32dbb9df1b801abc1070caf6870a54af542248e03991107040e13a81dd6",
+    "small-noise-mesh-double-pole.pdf": "bdeb926bf0aeaff10d297bc223b8bc9c4925b35ba1db62057ec0418d0efa028a"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "6a17dc10f6e237315cb6419761183a2d844659bc05d225c4c551a682f278f28c",
+    "results/gaussian_row_projection_pilot.json": "0eb864a791a401408449f6f45e7af4d594b85b8314199ca11118f9567a34fb6b",
+    "results/small_noise_mesh_double_pole_certificate.json": "a5fed4f35993d45f974b0886181b58531a31adf0d3e93087324f4c0e24b624f3",
+    "results/two_step_square_cloud_pilot.json": "8f9e99fb7159fc1f0f360e1c642cd4362996ec516529d3139403c70fc15e0437"
+  },
+  "scope": "folded Gaussian Markov Galerkin families for 0<sigma<=0.03, plus the intrinsic bulk two-step small-noise determinant germ",
+  "status": "rigorous_markov_mesh_laws_two_step_double_pole_obstruction_and_conditional_bulk_route"
+}
