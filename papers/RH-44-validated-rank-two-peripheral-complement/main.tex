@@ -1,0 +1,1051 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Id}{\mathrm I}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\uc}{u_{\mathrm c}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\detF}{\operatorname{det}}
+
+\title{A Validated Intrinsic Rank-Two Peripheral Complement\\
+\large Perron Kernel, Spectral Haar Closure, and Exact Bulk Trace Factorization}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The negative resonance of a folded-Gaussian Markov operator has recently
+been converted into a validated intrinsic weighted-Riesz kernel.  The other
+peripheral mode is the Perron eigenvalue $1$.  Although strong positivity
+already makes that branch simple and isolated, a rank-two subtraction
+requires more: an explicit Euclidean contour, validated stored factors, a
+smooth continuum kernel, and simultaneous control of full and sparse matrix
+families.  We close all four requirements at fixed noise
+$\sigma=10^{-2}$.
+
+For the Perron circle $|z-1|=0.05$, componentwise outward Grushin
+certificates prove that the stored $2048$, $4096$, and $8192$ factors are
+genuine spectral weighted terms, with Euclidean errors at most
+$2.17\times10^{-10}$, $4.22\times10^{-10}$, and
+$8.34\times10^{-10}$.  A Hilbert--Galerkin and infinite-complement Schur
+continuation gives
+\[
+ \sup_{|z-1|=0.05}\norm{(z-\cK)^{-1}}_{L^2\to L^2}
+ \le81.30575843422578.
+\]
+The corresponding weighted term is the Perron projection itself.  It has
+the intrinsic kernel $q_+(x,y)=\pi(y)$, where
+$\cK^*\pi=\pi$ and $\int_0^1\pi=1$.  We enclose $q_+$ and its derivatives
+in Hilbert--Schmidt norms and place it in an $L^2([0,1]^2)$ ball of radius
+$1.463768820944639$ about the lifted archived $4096$ center.
+
+Adding the validated negative kernel $q_-$ produces a real smooth,
+gauge-free rank-two kernel
+\[
+ q_{\mathrm{per}}(x,y)=\pi(y)+q_-(x,y).
+\]
+The two contours are disjoint and each contains one algebraically simple
+eigenvalue.  The actual stored rank-two Haar ratios now lie within
+$6.06\times10^{-4}$ of the quarter--half targets.  For every
+$n\ge65536$, full and fixed/adaptive sparse exact-real midpoint matrices
+have one eigenvalue in each contour.  Their union-contour Euclidean
+resolvent upper is $267.81252084743886$, the full-to-sparse rank-two
+weighted-term difference is at most
+$9.269128034310783\times10^{-10}$, and the intrinsically deflated
+difference is at most $9.271085367195988\times10^{-10}$.
+
+Finally, if
+$\cB=\cK-\cQ_+-\cQ_-$, then the Perron and parity eigenvalues are replaced
+by zero while the remaining spectrum is unchanged.  For every $m\ge1$,
+\[
+ \cB^m=\cK^m-\cQ_+-\lambda_-^{m-1}\cQ_-,
+ \qquad
+ \tr(\cB^m)=\tr(\cK^m)-1-\lambda_-^m,
+\]
+and
+\[
+ \detF(\Id-z\cK)
+ =(1-z)(1-z\lambda_-)\detF(\Id-z\cB).
+\]
+These are structural operator factorizations, not an arithmetic trace
+formula.  No zero-noise, zeta-zero, self-adjoint Hilbert--P\'olya, or
+Riemann-hypothesis claim is made.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+
+The first operation in a peripheral spectral analysis should be intrinsic:
+remove the isolated spectral terms without choosing signs, scales, or a
+persistent ordering of left and right eigenvectors.  For a nonnormal
+operator $T$ and a contour $\Gamma$ in its resolvent set, the appropriate
+object is the weighted Riesz term
+\begin{equation}
+ \cQ(T;\Gamma)
+ =\frac{1}{2\pi i}\int_\Gamma z(z-T)^{-1}\,dz
+ =T\cP(T;\Gamma).
+ \label{eq:weighted-riesz-intro}
+\end{equation}
+For a simple eigenvalue $\lambda$, this is
+$\lambda r\ell^T/(\ell^Tr)$, but the contour formula carries no gauge.
+
+The analytic weighted-Riesz framework of
+\citet{WangRiesz2026} showed that simple isolated smooth Nystr\"om branches
+have a second-order intrinsic continuum limit.  Strong positivity made the
+Perron instance unconditional, while the negative branch still required a
+validated continuum contour.  That negative contour was established in
+\citet{WangContinuumContour2026,WangEuclidean2026}; the resulting weighted
+term was then constructed as a real smooth continuum kernel in
+\citet{WangParityKernel2026}.  The parity paper also validated all three
+stored negative factors and supplied an all-grid full/sparse Euclidean
+contour from $n=65536$.
+
+At first sight the Perron half of the rank-two subtraction appears easier.
+The Markov identity gives $\cK\mathbf1=\mathbf1$, and strong positivity
+gives a unique positive stationary density.  Those qualitative facts are
+not yet a quantitative rank-two archive.  Five gaps remain.
+\begin{enumerate}[leftmargin=2em]
+ \item The exact stored Perron factors must be shown to be spectral terms,
+       rather than accurate floating eigensolver outputs.
+ \item A fixed explicit circle about $1$ must be transported from the
+       stored $4096$ matrix to the continuum $L^2$ operator.
+ \item The stationary density must be packaged as an intrinsic smooth
+       Hilbert--Schmidt kernel with explicit derivative bounds.
+ \item The Perron and parity terms must be joined on a disjoint union
+       contour and transferred uniformly to full and sparse families.
+ \item The resulting complement should be related exactly to powers,
+       traces, determinants, and the previously studied physical two-step
+       matrices.
+\end{enumerate}
+
+This paper closes those gaps.  The main conceptual simplification is that
+the Perron weighted term is not merely rank one: its right factor is known
+exactly.  If $\pi$ is normalized by $\langle\pi,\mathbf1\rangle=1$, then
+\begin{equation}
+ \cQ_+f
+ =\mathbf1\langle\pi,f\rangle,
+ \qquad q_+(x,y)=\pi(y).
+ \label{eq:perron-kernel-intro}
+\end{equation}
+All source derivatives vanish.  This both sharpens the kernel envelope and
+explains why the Perron contribution changes the $E$ and $B$ Haar blocks
+but not the leading $C$ and $D$ tensors.
+
+The second simplification is algebraic.  Weighted terms for disjoint simple
+spectral components commute and annihilate one another.  Consequently the
+bulk complement
+\begin{equation}
+ \cB=\cK-\cQ_+-\cQ_-
+ \label{eq:bulk-intro}
+\end{equation}
+has exact power identities.  The peripheral determinant factors are removed
+without an approximation and without asserting any arithmetic meaning for
+the residual determinant.
+
+Three evidence levels remain separate throughout.
+\begin{description}[leftmargin=3.2cm,style=nextline]
+ \item[Analytic theorem]
+ Strong-positive Perron structure, weighted Riesz calculus, smooth kernel
+ identities, rank-two orthogonality, power and trace formulas, Fredholm
+ determinant factorization, and Nystr\"om convergence.
+ \item[Outward certificate]
+ Three exact stored Perron Grushin ledgers, two-sided factor corrections,
+ Arb rank-two Haar intervals, Hilbert--Galerkin and Schur transfers, and
+ all-grid normalization and cutoff gates.
+ \item[Displayed center]
+ The heat map is the exact archived $4096$ rank-two factor center.  It is not
+ a pointwise interval enclosure of the continuum kernel.
+\end{description}
+
+\section{Operator, contours, and main results}
+\label{sec:model}
+
+Let $\uc$ be the unique root in $(1.5,1.6)$ of
+\[
+ u^3-2u^2+2u-2=0,
+\]
+fix $\sigma=1/100$, and put $m(x)=1-\uc x^2$.  Define
+\[
+ g(x,y)=
+ e^{-(y-m(x))^2/(2\sigma^2)}
+ +e^{-(y+m(x))^2/(2\sigma^2)},
+ \qquad
+ Z(x)=\int_0^1g(x,y)\,dy,
+\]
+\begin{equation}
+ k(x,y)=\frac{g(x,y)}{Z(x)},
+ \qquad
+ (\cK f)(x)=\int_0^1k(x,y)f(y)\,dy
+ \quad\text{on }L^2([0,1]).
+ \label{eq:operator}
+\end{equation}
+The kernel is real, strictly positive, and $C^\infty$ on the compact
+square.  Moreover
+\begin{equation}
+ \cK\mathbf1=\mathbf1.
+ \label{eq:markov}
+\end{equation}
+
+The two contours are
+\begin{align}
+ \Gamma_+&=\{z\in\C:|z-1|=0.05\},
+ \label{eq:perron-contour}\\
+ \Gamma_-&=\{z\in\C:|z-c_-|=0.05\},
+ \qquad c_-=-0.9865481927458079.
+ \label{eq:parity-contour}
+\end{align}
+They are disjoint.  Write $\Gamma_{\mathrm{per}}=\Gamma_+\cup\Gamma_-$
+with the positive orientation on each component, and define
+\begin{equation}
+ \cQ_\pm
+ =\frac{1}{2\pi i}\int_{\Gamma_\pm}z(z-\cK)^{-1}\,dz,
+ \qquad
+ \cQ_{\mathrm{per}}=\cQ_++\cQ_-.
+ \label{eq:qpm}
+\end{equation}
+
+For $n\ge2$, let $h=1/n$, $x_i=y_i=(i+\tfrac12)h$, and let
+$P_n^\circ$ be the continuum-normalized midpoint matrix
+\[
+ (P_n^\circ)_{ij}=h k(x_i,y_j).
+\]
+Let $P_n$ be the exact-real discretely row-normalized full matrix and
+$P_n^{(L)}$ its support-truncated and renormalized analogue.  The fixed
+family uses $L=8$; the adaptive family uses the RH-39 schedule once growth
+is needed.
+
+\begin{theorem}[Validated intrinsic Perron kernel]
+\label{thm:perron}
+The circle $\Gamma_+$ lies in the resolvent set of $\cK$, contains exactly
+one eigenvalue counted algebraically, and
+\begin{equation}
+ \sup_{z\in\Gamma_+}\norm{(z-\cK)^{-1}}_2
+ \le81.30575843422578.
+ \label{eq:perron-resolvent}
+\end{equation}
+The enclosed eigenvalue is exactly $1$ and algebraically simple.  There is a
+unique real smooth strictly positive $\pi$ satisfying
+\[
+ \cK^*\pi=\pi,
+ \qquad \int_0^1\pi(y)\,dy=1,
+\]
+and
+\begin{equation}
+ \cQ_+f=\mathbf1\langle\pi,f\rangle,
+ \qquad q_+(x,y)=\pi(y).
+ \label{eq:qplus-form}
+\end{equation}
+In particular, $\cQ_+$ has rank one and is both the Perron Riesz projection
+and its weighted term.
+
+The kernel satisfies
+\begin{align}
+ 1&\le\norm{q_+}_{L^2([0,1]^2)}\le4.065287921711291,
+ \label{eq:qplus-norm}\\
+ \norm{(q_+)_y}_{L^2}&\le1555.261017746445,
+ \qquad
+ \norm{(q_+)_{yy}}_{L^2}\le192884.0796819851,
+ \label{eq:qplus-derivatives}
+\end{align}
+while every derivative containing $x$ vanishes.  At $n=65536$, its midpoint
+sample differs from its cell-average matrix by at most
+\begin{equation}
+ 2.510507555832183\times10^{-6}.
+ \label{eq:qplus-midpoint}
+\end{equation}
+It lies in an operator-norm ball of radius $1.035040859379391$ and an
+$L^2$-kernel ball of radius $1.463768820944639$ about the lifted archived
+$4096$ Perron factor.
+\end{theorem}
+
+\begin{theorem}[Validated intrinsic rank-two peripheral kernel]
+\label{thm:rank-two}
+The union contour $\Gamma_{\mathrm{per}}$ contains exactly two eigenvalues,
+$1$ and the real simple negative resonance $\lambda_-$ of RH-43.  The
+intrinsic peripheral weighted term has rank two and smooth real kernel
+\begin{equation}
+ q_{\mathrm{per}}(x,y)=\pi(y)+q_-(x,y).
+ \label{eq:rank-two-kernel}
+\end{equation}
+It is gauge-free and obeys
+\begin{equation}
+ \cQ_+\cQ_-=\cQ_-\cQ_+=0.
+ \label{eq:weighted-orthogonality}
+\end{equation}
+The kernel is enclosed in an $L^2$ ball of radius
+$3.890944960739168$ about the lifted archived $4096$ rank-two center, and
+\begin{equation}
+ \norm{q_{\mathrm{per}}}_{L^2}\le9.919454564031339.
+ \label{eq:rank-two-hs}
+\end{equation}
+
+The stored Perron and parity factors at $2048$, $4096$, and $8192$ are all
+genuine spectral weighted terms.  The resulting actual rank-two Haar ratios
+satisfy
+\begin{align}
+ E:&\ [0.2497518320109983,0.2498816430591350],
+ \nonumber\\
+ C:&\ [0.5000266705203903,0.5000297811731884],
+ \nonumber\\
+ B:&\ [0.5000390841288479,0.5000413558665742],
+ \nonumber\\
+ D:&\ [0.2494528393779779,0.2506059251560737].
+ \label{eq:rank-two-ratios}
+\end{align}
+\end{theorem}
+
+\begin{theorem}[Uniform rank-two full, sparse, and bulk families]
+\label{thm:families}
+For every integer $n\ge65536$, the exact-real full matrix $P_n$, the fixed
+eight-sigma sparse matrix, and the adaptive sparse matrix have exactly one
+eigenvalue in each of $\Gamma_+$ and $\Gamma_-$.  On the union contour,
+their Euclidean resolvents are uniformly bounded by
+\begin{equation}
+ 267.81252084743886.
+ \label{eq:union-resolvent}
+\end{equation}
+For the full and either sparse family,
+\begin{equation}
+ \norm{\cQ_{\mathrm{per}}(P_n)
+       -\cQ_{\mathrm{per}}(P_n^{(L_n)})}_2
+ \le9.269128034310783\times10^{-10},
+ \label{eq:rank-two-cutoff}
+\end{equation}
+and for the intrinsically deflated matrices
+\begin{equation}
+ B_n=P_n-\cQ_+(P_n)-\cQ_-(P_n),
+ \label{eq:matrix-bulk}
+\end{equation}
+the full-to-sparse difference is at most
+\begin{equation}
+ 9.271085367195988\times10^{-10}.
+ \label{eq:bulk-cutoff}
+\end{equation}
+
+The full rank-two weighted term converges to the midpoint sample of
+$q_{\mathrm{per}}$ at order $n^{-2}$.  Adaptive support preserves the rate
+$O(n^{-2}(\log n)^{-1/4})$, and the same rate holds for the adaptive bulk
+operator relative to the full bulk family.
+\end{theorem}
+
+\begin{theorem}[Exact bulk powers, traces, and determinant]
+\label{thm:bulk-algebra}
+Let
+\begin{equation}
+ \cB=\cK-\cQ_+-\cQ_-.
+ \label{eq:continuum-bulk}
+\end{equation}
+Then
+\begin{equation}
+ \cB\mathbf1=0,
+ \qquad
+ \langle\pi,\cB f\rangle=0,
+ \label{eq:bulk-constraints}
+\end{equation}
+the eigenvalues $1$ and $\lambda_-$ are replaced by zero, and every other
+spectral value is unchanged away from zero.  For every integer $m\ge1$,
+\begin{equation}
+ \cB^m
+ =\cK^m-\cQ_+-\lambda_-^{m-1}\cQ_-.
+ \label{eq:power-identity}
+\end{equation}
+The smooth Gaussian kernel is trace class.  Consequently
+\begin{equation}
+ \tr(\cB^m)=\tr(\cK^m)-1-\lambda_-^m
+ \label{eq:trace-identity}
+\end{equation}
+and the Fredholm determinants satisfy
+\begin{equation}
+ \detF(\Id-z\cK)
+ =(1-z)(1-z\lambda_-)\detF(\Id-z\cB).
+ \label{eq:det-factorization}
+\end{equation}
+The same identities hold exactly for every finite matrix family for which
+the two contours are valid.
+\end{theorem}
+
+\section{The Perron weighted term is the stationary kernel}
+\label{sec:perron-structure}
+
+The qualitative Perron statement is analytic and independent of the
+computer-assisted contour.
+
+\begin{proposition}[Strong-positive Markov structure]
+\label{prop:positive-perron}
+The eigenvalue $1$ of $\cK$ is algebraically simple.  There exists a unique
+strictly positive $\pi\in C^\infty([0,1])$ with
+$\cK^*\pi=\pi$ and $\langle\pi,\mathbf1\rangle=1$.  The Riesz projection
+at $1$ is
+\begin{equation}
+ \cP_+f=\mathbf1\langle\pi,f\rangle.
+ \label{eq:perron-projector}
+\end{equation}
+Since the eigenvalue is $1$, $\cQ_+=\cK\cP_+=\cP_+$.
+\end{proposition}
+
+\begin{proof}
+The normalized kernel $k$ is strictly positive and smooth on the compact
+square, so $\cK$ is compact and strongly positive.  The Markov identity
+\eqref{eq:markov} fixes its spectral radius at $1$.  Krein--Rutman theory and
+strong positivity make the eigenvalue algebraically simple and give a
+strictly positive dual eigenfunction
+\citep{Schaefer1974,Kato1995}.  Normalize it by
+$\langle\pi,\mathbf1\rangle=1$.  The rank-one formula for a simple Riesz
+projection gives \eqref{eq:perron-projector}.  Multiplication by $\cK$
+does not change that projection.
+\end{proof}
+
+\begin{proposition}[Perron derivative and midpoint envelope]
+\label{prop:perron-envelope}
+Let $K_y$ and $K_{yy}$ denote the Hilbert--Schmidt operators obtained by
+differentiating $k(x,y)$ in the target variable.  Then
+\begin{equation}
+ \norm{\pi'}_2\le\norm{K_y}_{\mathrm{HS}}\norm{\pi}_2,
+ \qquad
+ \norm{\pi''}_2\le\norm{K_{yy}}_{\mathrm{HS}}\norm{\pi}_2.
+ \label{eq:pi-derivative}
+\end{equation}
+If $Q_{+,n}^\circ$ is the midpoint sample and $Q_{+,n}^{\mathrm G}$ the
+cell-average matrix of $q_+$, then
+\begin{equation}
+ \norm{Q_{+,n}^\circ-Q_{+,n}^{\mathrm G}}_2
+ \le\frac{\norm{\pi''}_2}{\sqrt{320}\,n^2}.
+ \label{eq:perron-midpoint-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The dual fixed-point equation is
+\[
+ \pi(y)=\int_0^1k(x,y)\pi(x)\,dx.
+\]
+Differentiate under the integral.  The Hilbert--Schmidt operator inequality
+gives \eqref{eq:pi-derivative}.  Since
+$q_+(x,y)=\pi(y)$, source derivatives and all mixed derivatives vanish.
+The one-dimensional midpoint-average Peano kernel has
+$L^2$ norm $h^{3/2}/\sqrt{320}$ on each cell; summing the cell errors yields
+\eqref{eq:perron-midpoint-bound}.
+\end{proof}
+
+On $\Gamma_+$, the Riesz projection norm is bounded by
+\[
+ \norm{\cP_+}_2
+ \le0.05\sup_{z\in\Gamma_+}\norm{(z-\cK)^{-1}}_2.
+\]
+Because $\norm{\mathbf1}_2=1$ and
+$\langle\pi,\mathbf1\rangle=1$,
+\[
+ 1\le\norm{\pi}_2=\norm{\cP_+}_2.
+\]
+Combining \eqref{eq:perron-resolvent} with the RH-42 derivative envelope
+gives \eqref{eq:qplus-norm}--\eqref{eq:qplus-midpoint}.
+
+\section{Exact stored Perron factors}
+\label{sec:stored-perron}
+
+The archived matrices at $n=2048,4096,8192$ contain a floating Perron
+eigenvalue approximation, a nearly constant right mode, and a positive left
+mode.  Small residuals alone do not prove that the stored rank-one factor is
+the weighted Riesz term of the exact stored matrix.  We use the two-sided
+correction theorem of \citet{WangParityKernel2026}.
+
+For a stored matrix $A$, approximate eigenvalue $\lambda_0$, and left--right
+factor
+\[
+ P_0=\frac{r_0\ell_0^T}{\ell_0^Tr_0},
+\]
+define
+\begin{equation}
+ \widetilde A
+ =\lambda_0P_0+(\Id-P_0)A(\Id-P_0).
+ \label{eq:corrected-matrix}
+\end{equation}
+Then $P_0$ reduces $\widetilde A$ exactly, and
+\begin{equation}
+ \widetilde A-A
+ =-(A-\lambda_0\Id)P_0-P_0(A-\lambda_0\Id)
+  +P_0(A-\lambda_0\Id)P_0.
+ \label{eq:correction}
+\end{equation}
+The correction norm is controlled by the two residuals and the enclosed
+Gram factor.  If $M\norm{\widetilde A-A}<1$ on the contour, the resolvent
+identity transfers $\lambda_0P_0$ to the actual weighted Riesz term of $A$.
+
+The inverse certificate treats every stored binary64 number as an exact real
+input.  Sparse LU provides an approximate bordered inverse; componentwise
+outward residual arithmetic bounds its exact inverse in both the one- and
+infinity-norms, whose geometric mean gives a Euclidean upper
+\citep{WangOutward2026,Rump2010}.  The radius $0.1$ is too wide for this
+particular Grushin center: at $n=2048$ its transport product is $1.366$.
+The fixed radius $0.05$ closes all three levels with products near $0.683$.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Exact-stored Perron Grushin and weighted-factor certificates.}
+\label{tab:perron-factors}
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+$n$ & residual upper & contour resolvent & correction product
+    & weighted-term error\\
+\midrule
+2048 & $4.3058\,10^{-11}$ & $65.1669349545$ & $6.314\,10^{-11}$
+     & $2.1601\,10^{-10}$\\
+4096 & $1.1923\,10^{-10}$ & $65.2291154903$ & $1.232\,10^{-10}$
+     & $4.2167\,10^{-10}$\\
+8192 & $3.3310\,10^{-10}$ & $65.2559386375$ & $2.434\,10^{-10}$
+     & $8.3379\,10^{-10}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The centers differ from $1$ by at most $2.5\times10^{-15}$.  At the base
+level the exact target circle $|z-1|=0.05$ is obtained by a center-shift
+Neumann product
+\begin{equation}
+ 2.896754635731181\times10^{-14}.
+ \label{eq:center-shift}
+\end{equation}
+The two circles enclose the same weighted term; only the resolvent upper is
+transported.
+
+\section{From the stored Perron circle to the continuum}
+\label{sec:perron-continuum}
+
+The RH-42 exact-stored-to-midpoint bridge is independent of which isolated
+mode is being followed.  Its defect is
+\begin{equation}
+ \norm{P_{4096}^{\mathrm{stored}}-P_{4096}^\circ}_2
+ \le1.055416712190961\times10^{-5}.
+ \label{eq:stored-midpoint-defect}
+\end{equation}
+The first Neumann transfer gives the exact-midpoint Perron-circle resolvent
+$65.27405269296997$.  The midpoint-to-cell-average Galerkin defect is
+$8.115839277660032\times10^{-4}$ and yields the $4096$ Hilbert-Galerkin
+resolvent $68.92540148121991$.
+
+Let $V_n$ be the cell-average space and split
+$V_{2n}=V_n\oplus W_n$ by the orthogonal Haar transform.  Relative to this
+decomposition, write
+\[
+ A_{2n}=
+ \begin{pmatrix}A_n&B_n\\C_n&D_n\end{pmatrix}.
+\]
+The derivative envelope gives
+\[
+ \norm{C_n}\le\frac{K_x}{\pi n},
+ \quad
+ \norm{B_n}\le\frac{K_y}{\pi n},
+ \quad
+ \norm{D_n}\le\frac{K_{xy}}{\pi^2n^2}.
+\]
+Since $\min_{z\in\Gamma_+}|z|=0.95$, the detail resolvent is controlled by
+$1/(0.95-\norm{D_n})$.  The Schur self-energy
+\[
+ \Sigma_n(z)=B_n(z-D_n)^{-1}C_n
+\]
+then transfers the count whenever
+$M_n\sup_{\Gamma_+}\norm{\Sigma_n(z)}<1$.
+
+\begin{table}[H]
+\centering
+\caption{Validated Perron Hilbert--Galerkin and complement Schur chain.}
+\label{tab:perron-chain}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+step & Schur/Neumann product & resulting resolvent upper\\
+\midrule
+stored $\to$ exact midpoint & $6.8844\,10^{-4}$ & $65.2740526930$\\
+midpoint $\to V_{4096}$ & $5.2976\,10^{-2}$ & $68.9254014812$\\
+$4096\to8192$ & $1.1228\,10^{-1}$ & $77.8066710318$\\
+$8192\to16384$ & $3.1675\,10^{-2}$ & $80.3990839395$\\
+$16384\to32768$ & $8.1817\,10^{-3}$ & $81.0793334963$\\
+$32768\to65536$ & $2.0627\,10^{-3}$ & $81.2562912048$\\
+full infinite complement & $5.1679\,10^{-4}$ & $81.3057584342$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For the final step, decompose
+$L^2=V_{65536}\oplus V_{65536}^\perp$.  The same derivative bounds apply to
+the full infinite complement.  Its self-energy product is only
+$5.167900126933194\times10^{-4}$, proving
+\eqref{eq:perron-resolvent} and the count-one statement.  Since
+$\cK\mathbf1=\mathbf1$, the enclosed eigenvalue must be $1$; strong
+positivity identifies it as algebraically simple.
+
+\section{Weighted transport and the Perron construction ball}
+\label{sec:perron-transport}
+
+The Schur resolvent formula can be integrated around $\Gamma_+$.  If the
+detail block has no spectrum inside the circle, the weighted fine term
+differs from $\operatorname{diag}(\cQ(A_n),0)$ only through the Schur
+self-energy and the three coupling blocks.  The Frobenius sum of those four
+block bounds gives an operator upper
+\citep{WangParityKernel2026}.
+
+Starting from the exact stored $4096$ Perron factor gives the ledger in
+\cref{tab:perron-transport}.  All numbers are Euclidean operator uppers.
+
+\begin{table}[H]
+\centering
+\caption{Weighted Perron transport from the stored center to the continuum.}
+\label{tab:perron-transport}
+\begin{tabular}{@{}lr@{}}
+\toprule
+gate & weighted-term difference upper\\
+\midrule
+stored factor $\to$ actual stored term & $4.2166963\,10^{-10}$\\
+stored $\to$ exact midpoint & $0.0023592032$\\
+midpoint $\to V_{4096}$ & $0.1916958114$\\
+$4096\to8192$ & $0.5250689957$\\
+$8192\to16384$ & $0.1885770690$\\
+$16384\to32768$ & $0.0756069632$\\
+$32768\to65536$ & $0.0347628684$\\
+finite rank $\to$ continuum complement & $0.0169699485$\\
+\midrule
+total & $1.0350408594$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The difference of two rank-one operators has rank at most two, hence its
+Hilbert--Schmidt norm is at most $\sqrt2$ times its operator norm.  This gives
+the Perron $L^2$ construction radius in \cref{thm:perron}.  Adding the RH-43
+parity construction balls gives
+\begin{align}
+ \norm{\cQ_{\mathrm{per}}-Q_{\mathrm{per},4096}^{\mathrm{center}}}_2
+ &\le2.751313566962289,
+ \label{eq:rank-two-construction-op}\\
+ \norm{q_{\mathrm{per}}-q_{\mathrm{per},4096}^{\mathrm{center}}}_{L^2}
+ &\le3.890944960739168.
+ \label{eq:rank-two-construction-hs}
+\end{align}
+
+\section{The actual spectral rank-two Haar law}
+\label{sec:rank-two-haar}
+
+For a smooth kernel $q$, midpoint sampling and the orthogonal Haar transform
+give four blocks.  With the orientation used in the archive,
+\begin{align}
+ h^{-2}E_h&\longrightarrow\frac{q_{xx}+q_{yy}}{32},
+ \label{eq:haar-E}\\
+ h^{-1}C_h&\longrightarrow\frac{q_x}{4},
+ \label{eq:haar-C}\\
+ h^{-1}B_h&\longrightarrow\frac{q_y}{4},
+ \label{eq:haar-B}\\
+ h^{-2}D_h&\longrightarrow\frac{q_{xy}}{16}
+ \label{eq:haar-D}
+\end{align}
+in Hilbert--Schmidt sampling; see
+\citet{WangHaar2026,WangParityKernel2026}.  For the Perron kernel,
+\begin{equation}
+ (q_+)_x=(q_+)_{xx}=(q_+)_{xy}=0.
+ \label{eq:perron-haar-zero}
+\end{equation}
+Thus its leading $C$ and $D$ tensors vanish exactly.  In the combined
+kernel, the leading $C$ and $D$ tensors are precisely those of the parity
+kernel, whereas $E$ and $B$ include the stationary density.
+
+The RH-40 Arb ledger enclosed the exact algebraic rank-two factors but did
+not prove that both factors were spectral.  RH-43 closed the parity factor
+errors.  The present Perron errors complete the spectral correction.  If
+$e_n$ is the sum of the Perron and parity factor errors at level $n$, then
+\begin{align}
+ e_{2048}&\le5.810907673369557\times10^{-10},\nonumber\\
+ e_{4096}&\le1.141956473291731\times10^{-9},\nonumber\\
+ e_{8192}&\le2.260221050983747\times10^{-9}.
+ \label{eq:combined-factor-errors}
+\end{align}
+Orthogonality of the Haar transform bounds the correction of $E$ by
+$\sqrt2(e_n+e_{2n})$ and the other three blocks by $\sqrt2e_{2n}$.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Validated intervals for the actual spectral rank-two Haar ratios.}
+\label{tab:rank-two-ratios}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+block & actual ratio interval & maximum target deviation\\
+\midrule
+$E$ & $[0.2497518320,0.2498816431]$ & $2.482\,10^{-4}$\\
+$C$ & $[0.5000266705,0.5000297812]$ & $2.979\,10^{-5}$\\
+$B$ & $[0.5000390841,0.5000413559]$ & $4.136\,10^{-5}$\\
+$D$ & $[0.2494528394,0.2506059252]$ & $6.060\,10^{-4}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The smallest block is $D$, so its interval widens most under the spectral
+correction.  It nevertheless remains wholly within $10^{-3}$ of the target
+$1/4$.  The quarter--half mechanism is therefore both analytic and spectral
+for the complete rank-two peripheral term.
+
+\section{The intrinsic rank-two kernel}
+\label{sec:rank-two-kernel}
+
+Let $\cP_\pm$ be the Riesz projections.  Since the contours are disjoint,
+functional calculus gives
+\begin{equation}
+ \cP_+\cP_-=\cP_-\cP_+=0,
+ \qquad
+ \cK\cP_\pm=\cP_\pm\cK.
+ \label{eq:projection-orthogonality}
+\end{equation}
+Moreover
+\[
+ \cQ_+=\cP_+,
+ \qquad
+ \cQ_-=\lambda_-\cP_-.
+\]
+This proves \eqref{eq:weighted-orthogonality}.  Both summands have nonzero
+one-dimensional ranges, so their sum has rank two.  The kernel is exactly
+\eqref{eq:rank-two-kernel}, independent of all eigenvector gauges.
+
+Adding the specialized Perron envelope to the RH-43 parity envelope gives
+the explicit bounds in \cref{tab:rank-two-envelope}.
+
+\begin{table}[H]
+\centering
+\caption{Hilbert--Schmidt envelope for the intrinsic rank-two kernel.}
+\label{tab:rank-two-envelope}
+\begin{tabular}{@{}lr@{}}
+\toprule
+quantity & rigorous upper\\
+\midrule
+$\norm{q_{\mathrm{per}}}_{L^2}$ & $9.919454564031339$\\
+$\norm{(q_{\mathrm{per}})_x}_{L^2}$ & $3780.968408944756$\\
+$\norm{(q_{\mathrm{per}})_y}_{L^2}$ & $3715.926624442619$\\
+$\norm{(q_{\mathrm{per}})_{xx}}_{L^2}$ & $1.107398829423627\,10^6$\\
+$\norm{(q_{\mathrm{per}})_{xy}}_{L^2}$ & $1.544489270236306\,10^6$\\
+$\norm{(q_{\mathrm{per}})_{yy}}_{L^2}$ & $4.608506732586612\,10^5$\\
+$\norm{(q_{\mathrm{per}})_{xxyy}}_{L^2}$ & $5.610208521245976\,10^{10}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At $n=65536$, the midpoint-to-cell-average defect is bounded by
+\begin{equation}
+ 2.041176267936486\times10^{-5}.
+ \label{eq:rank-two-midpoint-defect}
+\end{equation}
+The displayed center in \cref{fig:summary} is not a pointwise interval
+enclosure.  The validated object is the Hilbert--Schmidt ball and derivative
+envelope.
+
+\section{Uniform full, sparse, and rank-two-deflated families}
+\label{sec:uniform}
+
+At $n=65536$, the continuum-to-midpoint defect for the Markov kernel is
+$0.005112929739977326$.  Applying it to the Perron contour gives product
+$0.4157106303297654$ and exact-midpoint resolvent
+$139.15323922479328$.  Discrete row normalization then gives the full
+matrix resolvent
+\begin{equation}
+ 139.27331158261282.
+ \label{eq:perron-full-resolvent}
+\end{equation}
+The eight-sigma cutoff defect is
+\[
+ \varepsilon_{65536}
+ \le1.957332885203985\times10^{-13},
+\]
+and the sparse Perron resolvent is
+$139.27331158640953$.
+
+For two operators on one circle, the resolvent identity gives
+\begin{equation}
+ \norm{\cQ(A;\Gamma)-\cQ(B;\Gamma)}
+ \le rR_\Gamma M_AM_B\norm{A-B}.
+ \label{eq:weighted-lipschitz}
+\end{equation}
+Hence the Perron full-to-sparse weighted difference is
+\begin{equation}
+ 1.993240948303590\times10^{-10}.
+ \label{eq:perron-cutoff}
+\end{equation}
+Adding the RH-43 parity bound yields \eqref{eq:rank-two-cutoff}; adding the
+matrix cutoff once yields \eqref{eq:bulk-cutoff}.
+
+The parity contour remains the limiting condition.  Its uniform sparse
+resolvent upper is $267.81252084743886$, larger than the Perron upper.
+Therefore the disjoint union contour inherits exactly the RH-43 threshold
+$n\ge65536$ and the same maximum resolvent constant.
+
+The analytic Nystr\"om theorem of \citet{WangRiesz2026}, now with both
+continuum premises closed, gives unconditionally
+\begin{equation}
+ \norm{\cQ_{\mathrm{per}}(P_n)-Q_{\mathrm{per},n}^\circ}_2
+ =O(n^{-2}).
+ \label{eq:rank-two-full-rate}
+\end{equation}
+Combining this with the adaptive RH-39 cutoff gives
+\begin{equation}
+ \norm{\cQ_{\mathrm{per}}(P_n^{(L_n)})
+       -Q_{\mathrm{per},n}^\circ}_2
+ =O\!\left(n^{-2}(\log n)^{-1/4}\right).
+ \label{eq:rank-two-adaptive-rate}
+\end{equation}
+
+\begin{remark}[Fixed versus adaptive support]
+The fixed eight-sigma rank-two difference is uniformly below
+$9.28\times10^{-10}$, sufficient for the present contour and deflation
+theorems.  The underlying fixed-width row defect has a nonzero continuum
+floor.  Adaptive growth is required when convergence to the full continuum
+kernel is claimed.
+\end{remark}
+
+\section{Exact bulk algebra, traces, and determinants}
+\label{sec:bulk}
+
+The validated rank-two term now permits an exact intrinsic bulk operator.
+Its algebra is stronger than a perturbative subtraction.
+
+\begin{proposition}[Peripheral annihilation and powers]
+\label{prop:bulk-powers}
+Let $\cB$ be defined by \eqref{eq:continuum-bulk}.  Then
+\eqref{eq:bulk-constraints} holds and, for every $m\ge1$,
+\eqref{eq:power-identity} holds.
+\end{proposition}
+
+\begin{proof}
+The Markov and stationary identities give
+\[
+ \cK\mathbf1=\mathbf1,
+ \qquad
+ \cQ_+\mathbf1=\mathbf1,
+ \qquad
+ \cQ_-\mathbf1=0,
+\]
+and their dual analogues give the left constraint.  Functional calculus
+gives
+\begin{align*}
+ \cK\cQ_+&=\cQ_+\cK=\cQ_+, & \cQ_+^2&=\cQ_+,\\
+ \cK\cQ_-&=\cQ_-\cK=\lambda_-\cQ_-,
+ & \cQ_-^2&=\lambda_-\cQ_-,
+\end{align*}
+together with \eqref{eq:weighted-orthogonality}.  Thus $\cB$ vanishes on
+the two peripheral ranges and equals $\cK$ on the invariant complementary
+spectral subspace.  Raising this block decomposition to the $m$th power
+proves \eqref{eq:power-identity}.
+\end{proof}
+
+The case $m=2$ is particularly relevant to the archived physical matrices:
+\begin{equation}
+ \cB^2=\cK^2-\cQ_+-\lambda_-\cQ_-.
+ \label{eq:physical-two-step}
+\end{equation}
+Thus the earlier Perron/parity-extracted physical two-step construction has
+an exact intrinsic continuum target.  From
+\eqref{eq:rank-two-full-rate}--\eqref{eq:rank-two-adaptive-rate} and
+\[
+ \norm{B_n^2-\cB^2}
+ \le(\norm{B_n}+\norm{\cB})\norm{B_n-\cB},
+\]
+the full and adaptive physical two-step families inherit the same rates,
+provided the matrix and continuum operators are compared in the standard
+cell basis.
+
+\begin{proposition}[Trace and determinant factorization]
+\label{prop:trace-determinant}
+The identities \eqref{eq:trace-identity} and
+\eqref{eq:det-factorization} hold.
+\end{proposition}
+
+\begin{proof}
+The Gaussian kernel is $C^\infty$ on a compact one-dimensional square, so
+the associated integral operator is trace class; finite-rank subtraction
+preserves trace class \citep{Simon2005,GohbergKrein1969}.  Taking traces in
+\eqref{eq:power-identity} uses
+\[
+ \tr(\cQ_+)=1,
+ \qquad
+ \tr(\lambda_-^{m-1}\cQ_-)=\lambda_-^m,
+\]
+and gives \eqref{eq:trace-identity}.  Relative to the invariant direct sum
+\[
+ L^2=\Ran\cP_+\dotplus\Ran\cP_-\dotplus\mathcal H_{\mathrm{bulk}},
+\]
+$\cK$ has diagonal blocks $1$, $\lambda_-$, and the bulk restriction,
+whereas $\cB$ has blocks $0$, $0$, and the same bulk restriction.  The
+Fredholm determinant is multiplicative over this direct sum, proving
+\eqref{eq:det-factorization}.
+\end{proof}
+
+\begin{remark}[What the factorization does not say]
+Equation \eqref{eq:det-factorization} removes two validated noisy peripheral
+factors.  It does not identify the remaining determinant with an arithmetic
+zeta function, a prime-power trace, or the spectrum of a self-adjoint
+operator.  It is the correct structural input for such later questions, not
+their conclusion.
+\end{remark}
+
+\section{Certificate summary and figure}
+\label{sec:certificate}
+
+The complete certificate closes the following gates.
+\begin{enumerate}[leftmargin=2em]
+ \item exact stored Perron Euclidean Grushin counts at $2048$, $4096$, and
+       $8192$;
+ \item two-sided Perron factor errors below $8.34\times10^{-10}$;
+ \item a continuum Perron contour with resolvent upper $81.306$;
+ \item an intrinsic stationary kernel and a rank-two continuum kernel;
+ \item actual spectral rank-two quarter--half intervals;
+ \item an all-grid two-contour theorem from $n=65536$;
+ \item rank-two weighted and deflated cutoff bounds below $9.28\times10^{-10}$;
+ \item exact bulk power, trace, and Fredholm determinant factorizations.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/validated_rank_two_peripheral_complement.pdf}
+\caption{Validated intrinsic rank-two peripheral closure.  (a) The exact
+archived $4096$ Perron-plus-parity factor center, displayed as a piecewise
+kernel; it is not a pointwise interval enclosure.  (b) Actual weighted-term
+errors for the stored Perron and parity factors and their rank-two sum.
+(c) Corrected Frobenius intervals for the actual spectral rank-two Haar
+ratios.  (d) Perron and parity contour resolvent constants; the disjoint
+union inherits the parity threshold and maximum.}
+\label{fig:summary}
+\end{figure}
+
+\section{What is closed and what remains}
+\label{sec:boundary}
+
+The present result changes the status of the peripheral route in five ways.
+\begin{enumerate}[leftmargin=2em]
+ \item \textbf{Both continuum peripheral modes are intrinsic kernels.}
+       The Perron kernel is the stationary density in the target variable;
+       the negative kernel is the RH-43 weighted parity term.
+ \item \textbf{The union contour is quantitative.}
+       Each component has count one and a dimension-uniform Euclidean
+       resolvent for full and sparse families.
+ \item \textbf{All six stored factors are spectral.}
+       Perron and parity factors at three levels now have exact-stored
+       Grushin and two-sided correction certificates.
+ \item \textbf{The rank-two quarter--half law is actual.}
+       Its intervals concern true matrix weighted terms, not only archived
+       low-rank algebra.
+ \item \textbf{The bulk operator has exact trace algebra.}
+       Peripheral subtraction commutes with every power and removes the two
+       elementary Fredholm determinant factors exactly.
+\end{enumerate}
+
+Several boundaries remain essential.
+\begin{enumerate}[leftmargin=2em]
+ \item The noise width is fixed at $\sigma=1/100$.
+ \item The exact continuum kernels are enclosed in Hilbert--Schmidt norms;
+       no pointwise interval heat map is claimed.
+ \item The all-dimension theorem concerns exact-real Gaussian formulas.  The
+       binary64 theorem concerns the six archived factors.
+ \item Fixed eight-sigma support is spectrally stable but is not claimed to
+       converge to the full kernel in row norm.
+ \item The determinant factorization is structural.  No arithmetic trace
+       formula, prime-power identity, zeta-zero identification, $T\log T$
+       counting law, self-adjoint Hilbert--P\'olya operator, or
+       Riemann-hypothesis conclusion follows.
+\end{enumerate}
+
+The natural next gate is now sharply defined: prove trace-norm convergence
+of the intrinsic bulk two-step family and construct its validated Fredholm
+determinant, without yet imposing an arithmetic interpretation.  Unlike the
+earlier route, that step no longer carries dimension-dependent peripheral
+eigenvector gauges.
+
+\section{Archive and reproducibility}
+\label{sec:archive}
+
+The archive contains two principal ledgers:
+\begin{enumerate}[leftmargin=2em]
+ \item the multilevel exact-stored Perron Euclidean Grushin certificate; and
+ \item the complete Perron contour, factor, rank-two Haar, continuum kernel,
+       full/sparse family, cutoff, and bulk composition certificate.
+\end{enumerate}
+Every cross-paper input, local source, result, figure, and publication
+artifact is recorded by SHA-256.
+
+The complete replay is:
+\begin{verbatim}
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/run_multilevel_perron_grushin.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_rank_two_certificate.py
+MPLBACKEND=Agg PYTHONDONTWRITEBYTECODE=1 \
+  /root/math/.venv/bin/python experiments/make_figures.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  -m pytest -q -p no:cacheprovider
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+cp main.pdf validated-rank-two-peripheral-complement.pdf
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_archive.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/verify_archive.py
+\end{verbatim}
+
+The $8192$ bordered inverse is the longest step, taking roughly six minutes
+on the current server.  The composition, Arb Haar ledger, tests, figures,
+and archive verification take seconds.
+
+\section{Conclusion}
+
+The peripheral subtraction is now complete at fixed positive noise.  The
+Perron term is the stationary kernel $\pi(y)$; the negative term is the
+validated parity kernel.  Their disjoint Riesz contours produce a smooth
+gauge-free rank-two object, and both the continuum and all sufficiently fine
+full/sparse matrix families carry exactly one eigenvalue on each branch.
+
+This completion also resolves the last ambiguity in the archived rank-two
+Haar ledger.  Every stored Perron and parity factor is now a genuine
+spectral weighted term, so the corrected quarter--half intervals concern the
+actual matrices.  The union contour does not worsen the RH-43 threshold:
+the parity branch remains the limiting condition.
+
+Most importantly, the residual bulk is no longer defined by an eigensolver
+convention.  It is the intrinsic operator
+$\cB=\cK-\cQ_+-\cQ_-$, with exact power, trace, and Fredholm determinant
+factorizations.  This does not supply an arithmetic spectrum, but it gives
+the next paper a clean operator: a validated rank-two-free bulk whose
+two-step trace and determinant can be studied without peripheral gauge or
+normalization artifacts.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,594 @@
+{
+  "analytic_haar_limits": {
+    "perron_source_independence": "q_+(x,y)=pi(y), so its C and D Haar blocks vanish exactly",
+    "rank_two_coarse_consistency": "h^-2 E_h -> ((q_per)_xx+(q_per)_yy)/32",
+    "rank_two_coarse_to_detail": "h^-1 C_h -> (q_per)_x/4=(q_-)_x/4",
+    "rank_two_detail_block": "h^-2 D_h -> (q_per)_xy/16=(q_-)_xy/16",
+    "rank_two_detail_to_coarse": "h^-1 B_h -> (q_per)_y/4",
+    "ratio_consequence": "nonzero leading tensors give ratios 1/4,1/2,1/2,1/4"
+  },
+  "contours": {
+    "disjoint": true,
+    "parity": {
+      "center": -0.9865481927458079,
+      "maximum_modulus_upper": 1.036548192745808,
+      "minimum_modulus_lower": 0.9365481927458077,
+      "radius": 0.05
+    },
+    "perron": {
+      "center": 1.0,
+      "enclosed_eigenvalue": 1.0,
+      "inside_count": 1,
+      "maximum_modulus_upper": 1.0500000000000003,
+      "minimum_modulus_lower": 0.9499999999999998,
+      "radius": 0.05
+    },
+    "union_inside_count": 2
+  },
+  "dependencies": {
+    "multilevel_perron_grushin_certificate": {
+      "path": "papers/RH-44-validated-rank-two-peripheral-complement/results/multilevel_perron_grushin.json",
+      "sha256": "99d2531cc6dc4a45dfb9a0eab4838caeca4542fc57b0bb9eafb65191657a2e6f"
+    },
+    "rh36_factor_snapshot": {
+      "path": "papers/RH-36-nested-grid-physical-count/results/nested_grid_snapshot_sigma_1e-02.npz",
+      "sha256": "a1e2a6a3a32a6f7e68ec17b294bdb41d404c0dbeca1f5cb89aefe48ab4390d81"
+    },
+    "rh37_factor_snapshot": {
+      "path": "papers/RH-37-iterated-dyadic-physical-count/results/second_dyadic_fine_object_sigma_1e-02.npz",
+      "sha256": "886c6985e3937b374e9f7ab40bef31d34351ad2f794d546b50011c100848544a"
+    },
+    "rh39_cutoff_certificate": {
+      "path": "papers/RH-39-uniform-gaussian-cutoff-bridge/results/uniform_gaussian_cutoff_bridge_certificate.json",
+      "sha256": "8d448588fda190a748df64a1d8fa35d050de9dcbfa3ee2a5203ae10b969ab136"
+    },
+    "rh40_projector_builder": {
+      "path": "papers/RH-40-weighted-riesz-projector-bridge/experiments/build_projector_certificate.py",
+      "sha256": "c3d1feb1ae9f946622bf75652f2894db6426167b581f9266f484ef8975f2851d"
+    },
+    "rh40_weighted_riesz_certificate": {
+      "path": "papers/RH-40-weighted-riesz-projector-bridge/results/weighted_riesz_projector_bridge_certificate.json",
+      "sha256": "a7515ef093191439e772e402eda851fa41a75f2d5407c0abbe07592ad8d003e4"
+    },
+    "rh42_midpoint_bridge": {
+      "path": "papers/RH-42-uniform-euclidean-parity-contour/results/euclidean_stored_to_midpoint_bridge.json",
+      "sha256": "ab854c05497e26d88218458146a31361bedeb21e6fd6dcd35ba80398507612c2"
+    },
+    "rh42_uniform_euclidean_certificate": {
+      "path": "papers/RH-42-uniform-euclidean-parity-contour/results/uniform_euclidean_parity_certificate.json",
+      "sha256": "1792a0d7ad3ac7a8f4f636c566edb3c258839f72c7b64d801c30eb84e0b9f0eb"
+    },
+    "rh43_intrinsic_parity_certificate": {
+      "path": "papers/RH-43-validated-weighted-riesz-parity-kernel/results/validated_weighted_parity_kernel.json",
+      "sha256": "5653094bea977aa6586291f48a0d068dacbfecfda80e7a0122a19af53bf64a2a"
+    },
+    "rh43_weighted_kernel_source": {
+      "path": "papers/RH-43-validated-weighted-riesz-parity-kernel/src/weighted_kernel/bounds.py",
+      "sha256": "24d594f5c56caffda9103cbb520aece698698bb9209b335690ffb95ee9607ac3"
+    }
+  },
+  "evidence_level": "analytic_markov_riesz_trace_factorization_plus_outward_arb_and_binary64_certificates",
+  "intrinsic_bulk_operator": {
+    "definition": "B=K-Q_+-Q_-",
+    "factorization_is_structural_not_arithmetic": true,
+    "fredholm_determinant_factorization": "det(I-zK)=(1-z)(1-z lambda_-) det(I-zB)",
+    "left_stationary_constraint": "pi B=0",
+    "matrix_definition": "B_n=P_n-Q_+(P_n)-Q_-(P_n)",
+    "perron_and_parity_eigenvalues_are_replaced_by_zero": true,
+    "power_identity": "B^m=K^m-Q_+-lambda_-^(m-1) Q_- for every m>=1",
+    "remaining_spectrum_is_unchanged_away_from_zero": true,
+    "right_markov_constraint": "B 1=0",
+    "trace_identity": "tr(B^m)=tr(K^m)-1-lambda_-^m for every m>=1",
+    "two_step_identity": "B^2=K^2-Q_+-lambda_- Q_-"
+  },
+  "intrinsic_perron_kernel": {
+    "continuum_kernel_L2_distance_from_center_upper": 1.4637688209446382,
+    "continuum_operator_distance_from_center_upper": 1.0350408593793905,
+    "definition": "Q_+(K;Gamma_+)=(2 pi i)^-1 integral_Gamma+ z(z-K)^-1 dz",
+    "envelope": {
+      "kernel_hilbert_schmidt_lower": 1.0,
+      "kernel_hilbert_schmidt_upper": 4.065287921711291,
+      "midpoint_dimension": 65536,
+      "midpoint_to_cell_average_upper": 2.510507555832183e-06,
+      "projection_operator_norm_upper": 4.065287921711291,
+      "source_first_hilbert_schmidt_upper": 0.0,
+      "source_second_hilbert_schmidt_upper": 0.0,
+      "source_second_target_second_hilbert_schmidt_upper": 0.0,
+      "source_target_hilbert_schmidt_upper": 0.0,
+      "target_first_hilbert_schmidt_upper": 1555.261017746445,
+      "target_second_hilbert_schmidt_upper": 192884.07968198508
+    },
+    "exact_form": "q_+(x,y)=pi(y), K^* pi=pi, integral pi=1",
+    "piecewise_constant_4096_center": "stored binary64 lambda_+ r_+ l_+^T/(l_+^T r_+) lifted to V_4096",
+    "rank": 1,
+    "real_smooth_strictly_positive_kernel": true,
+    "source_independent": true
+  },
+  "intrinsic_rank_two_kernel": {
+    "continuum_kernel_L2_distance_from_combined_4096_center_upper": 3.8909449607391675,
+    "continuum_operator_distance_from_combined_4096_center_upper": 2.7513135669622892,
+    "definition": "Q_per=Q_++Q_-",
+    "envelope": {
+      "kernel_hilbert_schmidt_upper": 9.919454564031339,
+      "midpoint_dimension": 65536,
+      "midpoint_to_cell_average_upper": 2.041176267936486e-05,
+      "source_first_hilbert_schmidt_upper": 3780.968408944756,
+      "source_second_hilbert_schmidt_upper": 1107398.8294236274,
+      "source_second_target_second_hilbert_schmidt_upper": 56102085212.459755,
+      "source_target_hilbert_schmidt_upper": 1544489.2702363061,
+      "target_first_hilbert_schmidt_upper": 3715.9266244426185,
+      "target_second_hilbert_schmidt_upper": 460850.67325866123
+    },
+    "kernel": "q_per(x,y)=pi(y)+q_-(x,y)",
+    "rank": 2,
+    "real_smooth_gauge_free": true,
+    "spectral_orthogonality": "Q_+ Q_-=Q_- Q_+=0"
+  },
+  "limitations": [
+    "The theorem is at the fixed positive noise width sigma=1/100.",
+    "The intrinsic Perron and rank-two kernels are enclosed in Hilbert-Schmidt norms; no pointwise interval heat map of the exact continuum kernels is claimed.",
+    "The explicit all-dimension theorem concerns exact-real Gaussian formulas, while the three stored Perron and parity factor certificates concern their archived binary64 matrices.",
+    "The fixed eight-sigma family is uniformly stable but is not claimed to converge to the full kernel in row norm.",
+    "The trace and Fredholm-determinant identities remove only the two validated peripheral factors; they are structural operator factorizations, not an arithmetic trace formula or prime-power identity.",
+    "No zero-noise limit, zeta-zero identification, self-adjoint Hilbert-Polya operator, T log T counting law, or Riemann-hypothesis claim is made."
+  ],
+  "perron_continuum_contour": {
+    "center_shift_transfer": {
+      "admissible": true,
+      "base_resolvent_upper": 65.22911549031349,
+      "neumann_product_upper": 2.896754635731181e-14,
+      "perturbation_upper": 4.440892098500626e-16,
+      "transferred_resolvent_upper": 65.22911549031541
+    },
+    "center_shift_upper": 4.440892098500626e-16,
+    "continuum_L2_resolvent_upper": 81.30575843422578,
+    "continuum_eigenvalue_is_exactly_one_and_simple": true,
+    "continuum_inside_count": 1,
+    "dyadic_hilbert_galerkin_steps": {
+      "16384_to_32768": {
+        "blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 16384,
+          "coarse_to_detail": 0.0130064164287576,
+          "detail_block": 3.095226537079069e-05,
+          "detail_to_coarse": 0.007432624027617263
+        },
+        "inside_count_after_transfer": 1,
+        "resolvent_step": {
+          "bottom_left_upper": 1.10985735816832,
+          "bottom_right_upper": 1.0613494775139263,
+          "coarse_dimension": 16384,
+          "coarse_resolvent_upper": 80.39908393946074,
+          "count_transfers": true,
+          "detail_resolvent_upper": 1.0526658762037344,
+          "fine_resolvent_upper": 81.0793334963304,
+          "minimum_boundary_modulus": 0.9499999999999998,
+          "schur_inverse_upper": 81.0623082411287,
+          "schur_neumann_product_upper": 0.008181660700989453,
+          "self_energy_upper": 0.00010176310848454583,
+          "top_right_upper": 0.6342371484670086
+        }
+      },
+      "32768_to_65536": {
+        "blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 32768,
+          "coarse_to_detail": 0.0065032082143788,
+          "detail_block": 7.738066342697672e-06,
+          "detail_to_coarse": 0.0037163120138086316
+        },
+        "inside_count_after_transfer": 1,
+        "resolvent_step": {
+          "bottom_left_upper": 0.5561788797312915,
+          "bottom_right_upper": 1.0548158910399128,
+          "coarse_dimension": 32768,
+          "coarse_resolvent_upper": 81.0793334963304,
+          "count_transfers": true,
+          "detail_resolvent_upper": 1.0526401530519367,
+          "fine_resolvent_upper": 81.25629120480806,
+          "minimum_boundary_modulus": 0.9499999999999998,
+          "schur_inverse_upper": 81.24691914790971,
+          "schur_neumann_product_upper": 0.0020626708475454513,
+          "self_energy_upper": 2.544015544526899e-05,
+          "top_right_upper": 0.31783301171289075
+        }
+      },
+      "4096_to_8192": {
+        "blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 4096,
+          "coarse_to_detail": 0.0520256657150304,
+          "detail_block": 0.000495236245932651,
+          "detail_to_coarse": 0.029730496110469053
+        },
+        "inside_count_after_transfer": 1,
+        "resolvent_step": {
+          "bottom_left_upper": 4.254257193268391,
+          "bottom_right_upper": 1.1863881256199507,
+          "coarse_dimension": 4096,
+          "coarse_resolvent_upper": 68.92540148121991,
+          "count_transfers": true,
+          "detail_resolvent_upper": 1.0531806033771645,
+          "fine_resolvent_upper": 77.80667103175529,
+          "minimum_boundary_modulus": 0.9499999999999998,
+          "schur_inverse_upper": 77.6431673814475,
+          "schur_neumann_product_upper": 0.11227988494336776,
+          "self_energy_upper": 0.0016290058894174247,
+          "top_right_upper": 2.431130389185198
+        }
+      },
+      "8192_to_16384": {
+        "blocks": {
+          "coarse_consistency": 0.0,
+          "coarse_dimension": 8192,
+          "coarse_to_detail": 0.0260128328575152,
+          "detail_block": 0.00012380906148316275,
+          "detail_to_coarse": 0.014865248055234526
+        },
+        "inside_count_after_transfer": 1,
+        "resolvent_step": {
+          "bottom_left_upper": 2.2004733335917646,
+          "bottom_right_upper": 1.0872054608742334,
+          "coarse_dimension": 8192,
+          "coarse_resolvent_upper": 77.80667103175529,
+          "count_transfers": true,
+          "detail_resolvent_upper": 1.0527687813839817,
+          "fine_resolvent_upper": 80.39908393946074,
+          "minimum_boundary_modulus": 0.9499999999999998,
+          "schur_inverse_upper": 80.35177252023374,
+          "schur_neumann_product_upper": 0.03167449091228846,
+          "self_energy_upper": 0.00040709222605554116,
+          "top_right_upper": 1.2574786499395127
+        }
+      }
+    },
+    "exact_center": 1.0,
+    "infinite_complement": {
+      "blocks": {
+        "coarse_consistency": 0.0,
+        "coarse_dimension": 65536,
+        "coarse_to_detail": 0.0032516041071894,
+        "detail_block": 1.934516585674418e-06,
+        "detail_to_coarse": 0.0018581560069043158
+      },
+      "resolvent_step": {
+        "bottom_left_upper": 0.27826362306543845,
+        "bottom_right_upper": 1.0531779943294743,
+        "coarse_dimension": 65536,
+        "coarse_resolvent_upper": 81.25629120480806,
+        "count_transfers": true,
+        "detail_resolvent_upper": 1.052633722460416,
+        "fine_resolvent_upper": 81.30575843422578,
+        "minimum_boundary_modulus": 0.9499999999999998,
+        "schur_inverse_upper": 81.29830535706552,
+        "schur_neumann_product_upper": 0.0005167900126933194,
+        "self_energy_upper": 6.360000007762352e-06,
+        "top_right_upper": 0.15901604428373456
+      },
+      "weighted_riesz_transport": {
+        "bottom_left_upper": 0.01460884021093553,
+        "bottom_right_upper": 2.8574273125537338e-05,
+        "coarse_dimension": 65536,
+        "top_left_difference_upper": 0.0022057429935147224,
+        "top_right_upper": 0.008348342324896072,
+        "weighted_term_difference_upper": 0.016969948453805696
+      }
+    },
+    "midpoint_to_galerkin": {
+      "neumann_transfer": {
+        "admissible": true,
+        "base_resolvent_upper": 65.27405269296997,
+        "neumann_product_upper": 0.05297537206576565,
+        "perturbation_upper": 0.0008115839277660032,
+        "transferred_resolvent_upper": 68.92540148121991
+      },
+      "spectral_norm_defect_upper": 0.0008115839277660032
+    },
+    "stored_center": 1.0000000000000004,
+    "stored_dimension": 4096,
+    "stored_to_exact_midpoint": {
+      "neumann_transfer": {
+        "admissible": true,
+        "base_resolvent_upper": 65.22911549031541,
+        "neumann_product_upper": 0.0006884389860991319,
+        "perturbation_upper": 1.055416712190961e-05,
+        "transferred_resolvent_upper": 65.27405269296997
+      },
+      "spectral_norm_defect_upper": 1.055416712190961e-05
+    }
+  },
+  "perron_weighted_transport_chain": {
+    "dyadic_schur_steps": {
+      "16384_to_32768": {
+        "bottom_left_upper": 0.05826751130383684,
+        "bottom_right_upper": 0.0004558890687850476,
+        "coarse_dimension": 16384,
+        "top_left_difference_upper": 0.03481927583756667,
+        "top_right_upper": 0.03329745029451798,
+        "weighted_term_difference_upper": 0.07560696313405432
+      },
+      "32768_to_65536": {
+        "bottom_left_upper": 0.029199391185892824,
+        "bottom_right_upper": 0.00011422624436872469,
+        "coarse_dimension": 32768,
+        "top_left_difference_upper": 0.008798246707911978,
+        "top_right_upper": 0.016686233114926778,
+        "weighted_term_difference_upper": 0.034762868321826706
+      },
+      "4096_to_8192": {
+        "bottom_left_upper": 0.22334850264659065,
+        "bottom_right_upper": 0.006993394917746258,
+        "coarse_dimension": 4096,
+        "top_left_difference_upper": 0.45768270976194775,
+        "top_right_upper": 0.127634345432223,
+        "weighted_term_difference_upper": 0.525068995614768
+      },
+      "8192_to_16384": {
+        "bottom_left_upper": 0.11552485001356771,
+        "bottom_right_upper": 0.0018079256732381939,
+        "coarse_dimension": 8192,
+        "top_left_difference_upper": 0.13361782814511683,
+        "top_right_upper": 0.06601762912182449,
+        "weighted_term_difference_upper": 0.18857706891078266
+      }
+    },
+    "finite_rank_to_continuum_complement": 0.016969948453805696,
+    "midpoint_to_galerkin": 0.19169581138311984,
+    "stored_contour_center_shift_changes_weighted_term": false,
+    "stored_factor_to_exact_stored_weighted_term": 4.2166962986008174e-10,
+    "stored_to_exact_midpoint": 0.0023592031393628037,
+    "total_operator_distance_upper": 1.0350408593793905
+  },
+  "rh40_completion_status": {
+    "parity_analytic_premise_closed_by_rh43": true,
+    "perron_analytic_premise_closed": true,
+    "previous_status": "analytic_conditional_weighted_riesz_bridge_with_exact_stored_peripheral_ledger",
+    "stored_rank_two_spectral_status_closed_at_2048_4096_8192": true,
+    "uniform_union_contour_closed": true
+  },
+  "scope": "intrinsic Perron-plus-parity weighted Riesz kernel, exact stored rank-two factors, and full/fixed/adaptive exact-real midpoint families at sigma=1/100",
+  "status": "rigorous_intrinsic_rank_two_peripheral_kernel_and_bulk_deflation",
+  "stored_perron_factor_validation": {
+    "all_three_levels_are_actual_spectral_factors": true,
+    "levels": {
+      "2048": {
+        "admissible": true,
+        "approximate_weighted_term_norm_upper": 1.105926439240451,
+        "corrected_contour_resolvent_upper": 65.16693495859707,
+        "correction_neumann_product_upper": 6.313664497436838e-11,
+        "correction_norm_upper": 9.688447833010352e-13,
+        "eigenvalue_center_error_upper": 1.7379322797783145e-13,
+        "left_block_residual_upper": 6.028490295501658e-13,
+        "overlap_block_upper": 1.9220252577711616e-13,
+        "projection_norm_upper": 1.105926439240448,
+        "right_block_residual_upper": 1.7379322797375303e-13,
+        "weighted_term_error_upper": 2.1600713591880732e-10
+      },
+      "4096": {
+        "admissible": true,
+        "approximate_weighted_term_norm_upper": 1.1059242456669163,
+        "corrected_contour_resolvent_upper": 65.22911549834532,
+        "correction_neumann_product_upper": 1.2313216900402555e-10,
+        "correction_norm_upper": 1.887687240252562e-12,
+        "eigenvalue_center_error_upper": 3.3518879219910443e-13,
+        "left_block_residual_upper": 1.1818050359171775e-12,
+        "overlap_block_upper": 3.7069341215172133e-13,
+        "projection_norm_upper": 1.1059242456669154,
+        "right_block_residual_upper": 3.351887921836623e-13,
+        "weighted_term_error_upper": 4.2166962986008174e-10
+      },
+      "8192": {
+        "admissible": true,
+        "approximate_weighted_term_norm_upper": 1.105923697746736,
+        "corrected_contour_resolvent_upper": 65.25593865333757,
+        "correction_neumann_product_upper": 2.433731575810169e-10,
+        "correction_norm_upper": 3.729517384358396e-12,
+        "eigenvalue_center_error_upper": 6.568502240126873e-13,
+        "left_block_residual_upper": 2.34624093186642e-12,
+        "overlap_block_upper": 7.264262285394008e-13,
+        "projection_norm_upper": 1.105923697746734,
+        "right_block_residual_upper": 6.568502239525737e-13,
+        "weighted_term_error_upper": 8.337810516512359e-10
+      }
+    }
+  },
+  "stored_rank_two_haar_law": {
+    "actual_spectral_frobenius_intervals": {
+      "2048_to_4096": {
+        "coarse_consistency": {
+          "factor_to_spectral_frobenius_error_upper": 2.436756776306628e-09,
+          "lower": 8.35058362642419e-05,
+          "upper": 8.351070977779458e-05
+        },
+        "coarse_to_detail": {
+          "factor_to_spectral_frobenius_error_upper": 1.6149703321689158e-09,
+          "lower": 0.0025743557790101905,
+          "upper": 0.002574359008950857
+        },
+        "detail_block": {
+          "factor_to_spectral_frobenius_error_upper": 1.6149703321689158e-09,
+          "lower": 6.242890628792939e-06,
+          "upper": 6.246120569457281e-06
+        },
+        "detail_to_coarse": {
+          "factor_to_spectral_frobenius_error_upper": 1.6149703321689158e-09,
+          "lower": 0.0035250403292554377,
+          "upper": 0.003525043559196104
+        }
+      },
+      "4096_to_8192": {
+        "coarse_consistency": {
+          "factor_to_spectral_frobenius_error_upper": 4.811405596431303e-09,
+          "lower": 2.0856952759542984e-05,
+          "upper": 2.086657557073586e-05
+        },
+        "coarse_to_detail": {
+          "factor_to_spectral_frobenius_error_upper": 3.1964352642623866e-09,
+          "lower": 0.0012872481639698689,
+          "upper": 0.0012872545568403983
+        },
+        "detail_block": {
+          "factor_to_spectral_frobenius_error_upper": 3.1964352642623866e-09,
+          "lower": 1.5581125111483112e-06,
+          "upper": 1.5645053816768367e-06
+        },
+        "detail_to_coarse": {
+          "factor_to_spectral_frobenius_error_upper": 3.1964352642623866e-09,
+          "lower": 0.0017626595528547145,
+          "upper": 0.0017626659457252438
+        }
+      }
+    },
+    "actual_spectral_ratios": {
+      "coarse_consistency": {
+        "asymptotic_target": 0.25,
+        "lower": 0.24975183201099826,
+        "maximum_target_deviation": 0.0002481679890017352,
+        "upper": 0.24988164305913496
+      },
+      "coarse_to_detail": {
+        "asymptotic_target": 0.5,
+        "lower": 0.5000266705203903,
+        "maximum_target_deviation": 2.9781173188414556e-05,
+        "upper": 0.5000297811731884
+      },
+      "detail_block": {
+        "asymptotic_target": 0.25,
+        "lower": 0.2494528393779779,
+        "maximum_target_deviation": 0.0006059251560736612,
+        "upper": 0.25060592515607366
+      },
+      "detail_to_coarse": {
+        "asymptotic_target": 0.5,
+        "lower": 0.5000390841288479,
+        "maximum_target_deviation": 4.1355866574166456e-05,
+        "upper": 0.5000413558665742
+      }
+    },
+    "all_ratio_targets_within_one_thousandth": true,
+    "arb_precision_bits": 224,
+    "combined_factor_errors": {
+      "2048": 5.810907673369557e-10,
+      "4096": 1.1419564732917312e-09,
+      "8192": 2.2602210509837467e-09
+    },
+    "exact_factor_frobenius_blocks": {
+      "2048_to_4096": {
+        "coarse_consistency": {
+          "arb_frobenius_ball": "[8.3508273021018242646675059963704330824534158601630841269e-5 +/- 5.21e-61]",
+          "frobenius_lower": 8.350827302101823e-05,
+          "frobenius_upper": 8.350827302101826e-05,
+          "spectral_norm_upper": 8.350827302101826e-05
+        },
+        "coarse_to_detail": {
+          "arb_frobenius_ball": "[0.00257435739398052365815823488372613352527205166765634075498513425399 +/- 1.01e-69]",
+          "frobenius_lower": 0.0025743573939805233,
+          "frobenius_upper": 0.002574357393980524,
+          "spectral_norm_upper": 0.002574357393980524
+        },
+        "detail_block": {
+          "arb_frobenius_ball": "[6.24450559912510972823821950812890916508785299140448402520078947827e-6 +/- 4.15e-72]",
+          "frobenius_lower": 6.244505599125109e-06,
+          "frobenius_upper": 6.244505599125111e-06,
+          "spectral_norm_upper": 6.244505599125111e-06
+        },
+        "detail_to_coarse": {
+          "arb_frobenius_ball": "[0.00352504194422577103185655729412689698147239018811922300019230596432 +/- 8.41e-69]",
+          "frobenius_lower": 0.0035250419442257705,
+          "frobenius_upper": 0.0035250419442257714,
+          "spectral_norm_upper": 0.0035250419442257714
+        }
+      },
+      "4096_to_8192": {
+        "coarse_consistency": {
+          "arb_frobenius_ball": "[2.086176416513942387162227592380602392236199627885592088e-5 +/- 4.10e-60]",
+          "frobenius_lower": 2.086176416513942e-05,
+          "frobenius_upper": 2.0861764165139426e-05,
+          "spectral_norm_upper": 2.0861764165139426e-05
+        },
+        "coarse_to_detail": {
+          "arb_frobenius_ball": "[0.00128725136040513352100308284887817080684593647108739209388165844705 +/- 8.21e-70]",
+          "frobenius_lower": 0.0012872513604051334,
+          "frobenius_upper": 0.0012872513604051338,
+          "spectral_norm_upper": 0.0012872513604051338
+        },
+        "detail_block": {
+          "arb_frobenius_ball": "[1.56130894641257382264123732686470759123975703094316441961380310759e-6 +/- 4.20e-72]",
+          "frobenius_lower": 1.5613089464125737e-06,
+          "frobenius_upper": 1.5613089464125741e-06,
+          "spectral_norm_upper": 1.5613089464125741e-06
+        },
+        "detail_to_coarse": {
+          "arb_frobenius_ball": "[0.0017626627492899792435289128012789721044044213780488957909049441531 +/- 4.75e-68]",
+          "frobenius_lower": 0.001762662749289979,
+          "frobenius_upper": 0.0017626627492899794,
+          "spectral_norm_upper": 0.0017626627492899794
+        }
+      }
+    },
+    "parity_factor_errors": {
+      "2048": 3.6508363141814826e-10,
+      "4096": 7.202868434316492e-10,
+      "8192": 1.42643999933251e-09
+    },
+    "perron_factor_errors": {
+      "2048": 2.1600713591880732e-10,
+      "4096": 4.2166962986008174e-10,
+      "8192": 8.337810516512359e-10
+    },
+    "status": "rigorous_actual_stored_rank_two_quarter_half_mechanism"
+  },
+  "uniform_perron_and_rank_two_families": {
+    "adaptive_bulk_operator_rate": "O(n^-2 (log n)^-1/4) relative to the full bulk family",
+    "adaptive_rank_two_weighted_term_rate": "O(n^-2 (log n)^-1/4)",
+    "applies_to_every_larger_dimension": true,
+    "certified_threshold_dimension": 65536,
+    "cutoff": {
+      "declared_multiple": 8.0,
+      "dimension": 65536,
+      "infinity_norm_upper": 1.0583428035557253e-14,
+      "omitted_frobenius_square_upper": 1.1199265849428128e-26,
+      "omitted_mass_upper": 5.291714017778625e-15,
+      "renormalization_frobenius_square_upper": 2.711225438558142e-26,
+      "spectral_norm_upper": 1.9573328852039852e-13
+    },
+    "fixed_eight_sigma_convergence_to_full_claimed": false,
+    "full_rank_two_weighted_term_to_continuum_midpoint_kernel_rate": "O(n^-2)",
+    "normalization": {
+      "continuum_midpoint_norm_upper": 5.4985523936756255,
+      "dimension": 65536,
+      "normalizer_lower": 0.012533141373155001,
+      "normalizer_midpoint_error_upper": 1.4121892389669864e-08,
+      "relative_row_scaling_upper": 1.1267652603022285e-06,
+      "spectral_norm_defect_upper": 6.19557781914536e-06
+    },
+    "perron_continuum_to_midpoint_defect_upper_at_threshold": 0.0051129297399773255,
+    "perron_full_transfer": {
+      "admissible": true,
+      "base_resolvent_upper": 139.15323922479328,
+      "neumann_product_upper": 0.0008621347224033576,
+      "perturbation_upper": 6.19557781914536e-06,
+      "transferred_resolvent_upper": 139.27331158261282
+    },
+    "perron_midpoint_transfer": {
+      "admissible": true,
+      "base_resolvent_upper": 81.30575843422578,
+      "neumann_product_upper": 0.4157106303297654,
+      "perturbation_upper": 0.0051129297399773255,
+      "transferred_resolvent_upper": 139.15323922479328
+    },
+    "perron_sparse_transfer": {
+      "admissible": true,
+      "base_resolvent_upper": 139.27331158261282,
+      "neumann_product_upper": 2.7260423279190924e-11,
+      "perturbation_upper": 1.9573328852039852e-13,
+      "transferred_resolvent_upper": 139.27331158640953
+    },
+    "uniform_perron_fixed_and_adaptive_sparse_resolvent_upper": 139.27331158640953,
+    "uniform_perron_full_resolvent_upper": 139.27331158261282,
+    "uniform_perron_weighted_riesz_cutoff_upper": 1.9932409483035902e-10,
+    "uniform_rank_two_intrinsically_deflated_cutoff_upper": 9.271085367195988e-10,
+    "uniform_rank_two_weighted_riesz_cutoff_upper": 9.269128034310783e-10,
+    "uniform_union_contour_resolvent_upper": 267.81252084743886
+  }
+}
