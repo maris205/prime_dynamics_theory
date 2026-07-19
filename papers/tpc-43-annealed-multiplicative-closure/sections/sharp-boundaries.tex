@@ -1,0 +1,70 @@
+\section{Sharp annealed--to--corner boundaries}
+\label{sec:tpc43-sharp-boundaries}
+
+The exceptional set in an annealed theorem can contain the specified
+all--minus point.  This is not a technical possibility: Walsh systems
+admit exact extremizers.
+
+\begin{theorem}[A one--corner extremizer]
+\label{thm:tpc43-one-corner-extremizer}
+Let \(P=p_1\cdots p_s\) be squarefree and let
+\(\cU=\{u:u\mid P\}\), so \(R:=|\cU|=2^s\).  Define
+\begin{equation}
+ Y(\varepsilon)
+ :=\sum_{u\mid P}\mu(u)\chi_u(\varepsilon).
+ \label{eq:tpc43-extremizer-sum}
+\end{equation}
+Then the labels are distinct and orthogonal,
+\begin{align}
+ Y(\varepsilon)
+ &=\prod_{p\mid P}(1-\varepsilon_p),
+ \label{eq:tpc43-extremizer-product}\\
+ \E|Y|^2&=R,
+ \label{eq:tpc43-extremizer-mean}\\
+ |Y(-\one)|^2&=R^2,
+ \label{eq:tpc43-extremizer-corner}
+\end{align}
+and \(Y\) vanishes at every other point of the \(s\)-dimensional sign
+cube.  Thus the corner--to--annealed energy ratio is exactly \(R\), and
+Markov's inequality is sharp on this multiplicative Walsh class.
+\end{theorem}
+
+\begin{proof}
+Expanding \(\prod_{p\mid P}(1-\varepsilon_p)\) gives
+\eqref{eq:tpc43-extremizer-sum}.  The orthogonality of its \(R\) Walsh
+characters gives \(\E|Y|^2=R\).  At the all--minus point every factor is
+two, so \(Y(-\one)=2^s=R\).  At any other point one factor vanishes.
+\end{proof}
+
+The same ratio is obtained from any \(R\) pairwise distinct squarefree
+labels of the same M\"obius parity, with equal unit coefficients in one
+coherent output coordinate.  In particular, the fused--label injectivity of
+\cref{lem:tpc43-fused-label-injectivity} does not by itself control the
+physical corner; it is exactly the property that makes the annealed
+constant term diagonal.
+
+\begin{remark}[No universal row theorem]
+\label{rem:tpc43-no-universal-row-theorem}
+The physical orbit matrix has only \(O(J)\) output times and polynomially
+many source rows.  A Bessel inequality required for every row coefficient
+direction must therefore pay the usual rank--trace lower bound.  This is
+the dimension obstruction already isolated in TPC--40, and is why
+TPC--42 restricted its proposed orbit--slope theorem to the actual
+projective directions.  The present random theorem goes further in a
+different direction: it retains the complete physical coefficient field
+and proves that almost every consistent multiplicative prime environment
+avoids the coherent mode.
+\end{remark}
+
+\begin{remark}[What the model does not preserve]
+\label{rem:tpc43-random-convolution-boundary}
+For generic \(\varepsilon\), one has
+\(F_\varepsilon*\one\ne\delta_1\); only the distinguished all--minus
+point recovers \(F_{-\one}=\mu\) and hence the M\"obius inversion
+identity \(\mu*\one=\delta_1\).  Therefore
+\cref{thm:tpc43-annealed-trace} is a theorem for the randomized terminal
+interface, not a randomized proof about primes.  It preserves the exact
+squarefree support, multiplicative coupling, masks, aliases, and Hilbert
+geometry that occur at the final gate; it deliberately does not preserve
+every special algebraic identity of the distinguished M\"obius point.
+\end{remark}

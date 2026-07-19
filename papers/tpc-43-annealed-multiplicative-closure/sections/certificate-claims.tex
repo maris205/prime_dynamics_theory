@@ -1,0 +1,47 @@
+\section{Exact finite certificate and claim ledger}
+\label{sec:tpc43-certificate}
+
+The companion script
+\begin{center}
+\texttt{experiments/tpc43\_certificate.py}
+\end{center}
+uses only Python's standard library and exact integer, rational, and
+Gaussian--integer arithmetic.  It performs no random sampling.  Its
+finite regressions verify:
+\begin{enumerate}[label=(\roman*)]
+ \item the squarefree--kernel character identity
+ \eqref{eq:tpc43-fused-Walsh-character};
+ \item the divisor reconstruction and multiplicity bound in
+ \cref{lem:tpc43-kernel-fiber-bound};
+ \item zero--alias fused--label injectivity on exhaustive admissible toy
+ packets;
+ \item exact Walsh second moments and the diagonal identity
+ \eqref{eq:tpc43-exact-zero-expectation};
+ \item the four--to--one identity
+ \eqref{eq:tpc43-literal-four-to-one};
+ \item the rough--kernel filtration
+ \eqref{eq:tpc43-rough-filtration};
+ \item exact Walsh Parseval for the grouped spectrum; and
+ \item the sharp one--corner extremizer in
+ \cref{thm:tpc43-one-corner-extremizer}.
+\end{enumerate}
+The script also checks the endpoint exponent ledger and scans its own
+syntax tree to exclude floating--point literals, random imports, true
+division, and optimization--sensitive \texttt{assert} statements.
+The frozen run performs (43{,}877) exact checks.  Its canonical
+certificate digest is
+\begin{center}
+\texttt{d7d2b07107a6da1bd242ef9dbd8c02de7daea24dfdfbf9b5f31178cacf834d01}.
+\end{center}
+Normal and optimized Python executions produce the same JSON file, whose
+SHA--256 digest is
+\begin{center}
+\texttt{f46e5b5ef49cc5f12f92ba0f702938a3fa2367b30c694e01f93fd14d30bd628a}.
+\end{center}
+
+Finite computation certifies the algebraic identities and finite
+combinatorics only.  The asymptotic divisor bound, Bonami--Beckner
+inequality, inherited TPC diagonal estimates, and Borel--Cantelli lemma
+are mathematical inputs proved or cited in the text.  The certificate
+does not test a physical M\"obius asymptotic, affine Chowla cancellation,
+prime pairs, or twin primes.

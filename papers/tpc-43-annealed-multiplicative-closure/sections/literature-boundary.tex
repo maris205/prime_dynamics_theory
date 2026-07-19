@@ -1,0 +1,110 @@
+\section{Literature comparison and method boundary}
+\label{sec:tpc43-literature}
+
+Random multiplicative functions have a substantial literature.  In the
+standard Rademacher model the prime values are independent signs and the
+function is supported on squarefree integers; in the Steinhaus model the
+prime values are independent Haar phases.  Their partial sums and moments
+exhibit behavior very different from sums of independent integer--indexed
+variables; see, for example,
+\citet{HeapLindqvist2016,Harper2019HighMoments,Harper2020LowMoments}.
+The present theorem is not a new general moment theorem for those models.
+Its new input is the TPC--specific product--fiber calculation in
+\cref{lem:tpc43-kernel-fiber-bound}, which permits one globally coupled
+prime field to pass through the physical source and target simultaneously.
+For integral \(q\), Probability Result~2.3 of
+\citet{Harper2019HighMoments} gives the exact weighted inequality
+\begin{equation}
+ \E\left|\sum_{n\le N}a_nF_\varepsilon(n)\right|^{2q}
+ \le\left(
+  \sum_{n\le N}|a_n|^2d_{2q-1}(n)
+ \right)^q.
+ \label{eq:tpc43-Harper-weighted-moment}
+\end{equation}
+Here \(d_r\) denotes the \(r\)-fold divisor function.
+On a squarefree kernel \(s\),
+\(d_{2q-1}(s)=(2q-1)^{\omega(s)}\), so this is exactly the
+coordinate estimate used in
+\cref{lem:tpc43-one-coordinate-moment}.  Its underlying cube inequality
+goes back to \citet{Bonami1970,Beckner1975}.  The subsequent
+Hilbert--energy estimate is packet specific and follows by fiberwise
+Cauchy--Schwarz and Minkowski; no asymptotic theorem for unweighted random
+partial sums is imported.
+
+\subsection{Why this is not another external phase bank}
+
+TPC--39 used additive alias phases to recover the equality bucket, and
+TPC--40 proved a sharp recovery--decorrelation uncertainty principle for
+external row and alias frames \citep{WangTPC40}.  An independent sign on
+each row, or a complete Dirichlet--character average separating distinct
+row residues, would give an immediate diagonal second moment.  Such a
+calculation is generic linear algebra and cannot recover the prescribed
+untwisted column at low amplification.
+
+Here the deformation instead replaces the two actual M\"obius occurrences
+by the same squarefree--supported multiplicative field.  Prime factors
+shared by different source and target integers therefore create genuine
+dependencies.  The divisor fibers in
+\eqref{eq:tpc43-kernel-fiber-divisor-bound}, and their exact collapse at
+\(k=0\), are what make the annealed theorem work.  No recovery map is
+applied, and \(F_{-\one}=\mu\) is one member of the coefficient family.
+This places the result on the coefficient--specific side of the boundary
+left open by TPC--40.
+
+\subsection{Adjacent deterministic multiplicative correlations}
+
+There are powerful deterministic results for averaged or fixed--complexity
+systems of multiplicative functions.  The theorem of
+\citet{MatomakiRadziwillTao2015} averages fixed--order correlations over
+their additive shifts, including the two--point case.  Tao proved the
+logarithmically averaged two--point Chowla and Elliott statements for
+fixed affine forms \citep{Tao2016}.  Higher uniformity in short intervals
+on average and applications to averaged polynomial patterns were
+established by \citet{MRTTZ2023}.  More recently,
+\citet{MatthiesenTeravainenWang2026} obtained arbitrary logarithmic
+savings for a specified class of fixed polynomial systems satisfying
+explicit degree--separation hypotheses, and
+\citet{BanksShparlinski2026} obtained logarithmic savings for sums with
+the factor \(\mu(n_1n_2n_3)\) constrained by one equation
+\(f(n_1)+g(n_2)+\wp(n_3)=M\), under their injectivity, bounded--weight,
+and scale hypotheses.
+
+None of these theorems directly supplies the physical TPC estimate.
+The averaged Chowla theorem does not select the fixed shift \(h\).
+Tao's two--point theorem does allow fixed affine forms, but its orbit
+average is logarithmically weighted and its coefficients are fixed as
+the asymptotic parameter tends to infinity; it supplies no uniformity
+for the \(X\)-dependent slopes \(m_\alpha,m_\beta\), nor for their
+coherent weighted summation.  In the equality column those slopes satisfy
+\begin{equation}
+ m_\alpha\asymp Q
+ =J^{267/133+o(1)},
+ \label{eq:tpc43-moving-slope-size}
+\end{equation}
+and the target is a specific weighted quadratic form over many rows.
+The results on polynomial patterns use fixed systems and average a
+common translation.  The Banks--Shparlinski theorem has one separable
+additive constraint and does not contain the two shared-\(j\) product
+slopes in \eqref{eq:tpc43-intro-four-mobius}.  A theorem for each fixed
+row pair would also not automatically survive the coherent row summation
+at the required endpoint.
+
+The exact kernel compression
+\eqref{eq:tpc43-physical-kernel-spectrum} suggests a different comparison:
+one now seeks M\"obius cancellation against the packet--generated
+coefficient \(C(\kappa)\).  That coefficient is not presently known to
+belong to any coefficient class controlled by the cited theorems---for
+example, a fixed polynomial/nilsequence family or a family admitting a
+bounded--complexity separable additive representation.  We therefore use
+the cited results only to mark the current boundary, not as black boxes proving
+\eqref{eq:tpc43-remaining-kernel-bound}.
+
+\subsection{Scope of the probabilistic language}
+
+``Annealed'' refers to expectation over the prime signs while keeping the
+entire TPC packet fixed.  ``Almost surely along a prescribed dyadic
+sequence'' refers to one global prime field and one fixed deterministic
+packet at each scale.  No statement is made uniformly over all possible
+packets or about the distinguished all--minus point.  The one--corner
+extremizer in \cref{thm:tpc43-one-corner-extremizer} shows that these
+qualifications cannot be dropped by measure theory alone.

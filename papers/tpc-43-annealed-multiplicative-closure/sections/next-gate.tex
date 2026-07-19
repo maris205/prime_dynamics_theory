@@ -1,0 +1,65 @@
+\section{The annealed--to--quenched gate}
+\label{sec:tpc43-next-gate}
+
+The preceding theorems separate two statements that were previously
+mixed together.  The packet geometry is generically compatible with the
+endpoint: a single multiplicative prime field diagonalizes the equality
+alias exactly and controls the remaining aliases through subpolynomial
+product fibers, so almost every such field closes the full trace.  The
+physical M\"obius function is nevertheless
+one specified point of that field, not a random draw that may be selected
+after the energy is measured.
+
+By \cref{thm:tpc43-four-to-one-compression}, the exact remaining
+equality theorem is the one--sided bound
+\begin{equation}
+ \sum_{\kappa>1}\mu(\kappa)C(\kappa)
+ \le X^{o(1)}K_BQ^2J,
+ \label{eq:tpc43-remaining-kernel-bound}
+\end{equation}
+with \(C(\kappa)\) defined by the actual masks and row pairs in
+\eqref{eq:tpc43-Walsh-spectrum-coefficient}.  The already controlled
+diagonal \(\cD_0\) is harmless at this scale.  Formula
+\eqref{eq:tpc43-remaining-kernel-bound} is a compression of the physical
+four--M\"obius gate; it is not a known M\"obius orthogonality theorem,
+because the coefficients aggregate growing affine slopes and may be
+highly correlated with \(\kappa\).
+
+Three precise continuations remain.
+\begin{enumerate}[label=(\alph*)]
+ \item \textbf{Rough--kernel descent.}
+ Use \cref{cor:tpc43-rough-kernel-filtration} to estimate the spectrum
+ with \(P^-(\kappa)>z\), then control the successive small--prime
+ increments without paying their number absolutely.
+
+ \item \textbf{Walsh spectral flatness.}
+ Prove a coefficient estimate for
+ \(C(\kappa)\), such as a sufficiently strong weighted \(\ell^2\) or
+ divisor--fiber bound, and combine it with a M\"obius estimate adapted to
+ the resulting kernel support.  Parseval
+ \eqref{eq:tpc43-Walsh-Parseval} measures the exact annealed variance,
+ but by \cref{thm:tpc43-one-corner-extremizer} variance alone is
+ insufficient.
+
+ \item \textbf{Prime--phase de--randomization.}
+ Prove directly that the all--minus phase cannot lie in the coherent
+ exceptional set for the actual TPC coefficient system.  Such a result
+ must exploit arithmetic information beyond multiplicativity and
+ squarefree support; an abstract selection from a measure--one set cannot
+ identify a prescribed phase point.
+\end{enumerate}
+
+The first route is now the most concrete next layer: it turns a
+four--sign row interaction into a single squarefree--kernel spectral sum
+and exhibits an exact prime filtration.
+
+\subsection{Claim boundary}
+
+This paper does not prove \eqref{eq:tpc43-remaining-kernel-bound} at the
+physical point.  It proves no fixed--shift Chowla estimate, no
+deterministic orbit--slope Bessel theorem for the M\"obius coefficients,
+no parity breach, no Hardy--Littlewood prime--pair asymptotic, and no
+infinitude of twin primes.  ``Almost every prime--sign field'' never
+means ``the M\"obius field'': the latter is the distinguished all--minus
+point, and \cref{thm:tpc43-one-corner-extremizer} proves that this
+logical distinction is sharp.

@@ -1,0 +1,180 @@
+\section{Introduction}
+\label{sec:tpc43-introduction}
+
+The terminal TPC packet has reached a coefficient--specific arithmetic
+gate.  TPC--41 closed the complete same--row alias sector and isolated a
+cross--row form whose literal summands contain
+\begin{equation}
+ \mu(d_\alpha)\mu(d_\beta)
+ \mu(m_\alpha j+h+kM)\mu(m_\beta j+h+k'M).
+ \label{eq:tpc43-intro-four-mobius}
+\end{equation}
+TPC--42 then proved that integers within one residue fiber are already
+orthogonal in the physical Hilbert coordinates.  The remaining operation
+is coherent synthesis across distinct residue fibers, and projective mask
+separation reduces each layer to a weighted orbit--slope energy.  Neither
+a scalar progression theorem nor a small localization boundary controls
+that synthesis \citep{WangTPC41,WangTPC42}.
+
+The present paper asks a narrower question before attempting the
+deterministic M\"obius estimate:
+\begin{quote}
+Does the endpoint fail for generic coefficient fields that preserve the
+same squarefree support and the same prime--level multiplicative coupling
+as the two physical M\"obius occurrences?
+\end{quote}
+The answer is no, in a strong exact sense.  Choose one independent sign
+\(\varepsilon_p\in\{-1,1\}\) at every relevant prime and put
+\begin{equation}
+ F_\varepsilon(n)=\mu^2(n)\prod_{p\mid n}\varepsilon_p.
+ \label{eq:tpc43-intro-rmf}
+\end{equation}
+We replace both \(\mu(d_\alpha)\) and
+\(\mu(m_\alpha j+h+kM)\) by this same function.  This is not independent
+row noise.  All occurrences sharing a prime share its sign, and the
+actual M\"obius function is exactly the point
+\(\varepsilon_p=-1\) for every prime.
+
+\subsection{Main results}
+
+The first result is a product--fiber theorem.  For a nonzero atom, let
+\begin{equation}
+ n_{\alpha,j,k}=\ell_\alpha d_\alpha j+h+kM,
+ \qquad
+ g_{\alpha,j,k}=(d_\alpha,n_{\alpha,j,k}),
+ \label{eq:tpc43-intro-ng}
+\end{equation}
+and attach the squarefree Walsh label
+\begin{equation}
+ s_{\alpha,j,k}
+ =\frac{d_\alpha n_{\alpha,j,k}}{g_{\alpha,j,k}^2}.
+ \label{eq:tpc43-intro-label}
+\end{equation}
+At fixed \((j,k,s)\), choosing
+\(g\mid h+kM\) and \(d\mid sg^2\) determines both
+\(n=sg^2/d\) and
+\begin{equation}
+ \ell=\frac{n-h-kM}{dj}.
+ \label{eq:tpc43-intro-row-recovery}
+\end{equation}
+Thus the fiber has divisor--type multiplicity \(X^{o(1)}\).  Walsh
+orthogonality, followed by Cauchy--Schwarz only inside these fibers,
+proves
+\begin{equation}
+ \E_\varepsilon
+ \sum_k\left(
+ \|\mathscr T_{k,\varepsilon}^L\|^2
+ +\|\mathscr T_{k,\varepsilon}^R\|^2
+ \right)
+ \ll X^{o(1)}\cD_{\rm tr}
+ \ll X^{o(1)}Q^2JK_B.
+ \label{eq:tpc43-intro-trace-theorem}
+\end{equation}
+This is the full physical trace endpoint in the annealed multiplicative
+model.  It retains all deterministic masks and bypasses projective
+separation altogether.
+
+The equality alias is exactly diagonal.  There
+\((d_\alpha,n_{\alpha,j,0})=1\), so the label is the product
+\begin{equation}
+ u_{\alpha,j}
+ =d_\alpha(\ell_\alpha d_\alpha j+h).
+ \label{eq:tpc43-intro-fused-label}
+\end{equation}
+If two rows share that product, then
+\begin{equation}
+ j(\ell_\alpha d_\alpha^2-\ell_\beta d_\beta^2)
+ =h(d_\beta-d_\alpha).
+ \label{eq:tpc43-intro-rigidity-equation}
+\end{equation}
+The left side is either zero or has magnitude \(\gg J\), whereas the
+right side is \(O_h(D_0)=o(J)\).  Hence the rows coincide.  It follows
+that
+\begin{equation}
+ \boxed{
+ \E_\varepsilon\left(
+ \|\mathscr T_{0,\varepsilon}^L\|^2
+ +\|\mathscr T_{0,\varepsilon}^R\|^2
+ \right)=\cD_0.}
+ \label{eq:tpc43-intro-exact-zero}
+\end{equation}
+Since \(K_B=X^{1/400+o(1)}\), all but a proportion
+\(X^{-1/400+o(1)}\) of prime--sign environments meet the sufficient
+equality endpoint.  Fixed Bonami--Beckner moments strengthen this to
+\begin{equation}
+ \Pp_\varepsilon(Z_0>K_B\cD_0)
+ \le X^{-q/400+o_q(1)}
+ \label{eq:tpc43-intro-high-tail}
+\end{equation}
+for every fixed \(q\).  Coupling the signs across scales and applying
+Borel--Cantelli gives almost--sure eventual closure along any one fixed
+prescribed dyadic packet sequence.
+
+The third result identifies exactly what annealing removes.  For two
+zero--alias labels, put
+\begin{equation}
+ \kappa_{\alpha,\beta,j}
+ =\frac{u_{\alpha,j}u_{\beta,j}}
+ {(u_{\alpha,j},u_{\beta,j})^2}.
+ \label{eq:tpc43-intro-kernel}
+\end{equation}
+After grouping all deterministic masks and row representations into a
+coefficient \(C(\kappa)\), the physical energy is
+\begin{equation}
+ \boxed{
+ \|\mathscr T_0^L\|^2+\|\mathscr T_0^R\|^2
+ =\cD_0+\sum_{\kappa>1}\mu(\kappa)C(\kappa).}
+ \label{eq:tpc43-intro-corner-spectrum}
+\end{equation}
+This uses the literal identity
+\begin{equation}
+ \mu(d_\alpha)\mu(n_\alpha)
+ \mu(d_\beta)\mu(n_\beta)
+ =\mu(\kappa_{\alpha,\beta,j}).
+ \label{eq:tpc43-intro-four-to-one}
+\end{equation}
+Thus the four signs have been compressed to one M\"obius value on a
+squarefree symmetric--difference spectrum.  Randomizing only primes up
+to \(z\) deletes exactly those terms whose kernel has a prime factor at
+most \(z\), leaving an exact rough--kernel filtration.
+
+Finally, the annealed--to--corner distinction is sharp.  On the divisor
+Walsh system of a squarefree product with \(R\) divisors, one may have
+mean energy \(R\) and all--minus energy \(R^2\), with the polynomial
+vanishing at every other corner.  Hence a small exceptional set can be
+concentrated entirely at the physical phase.  No measure selection can
+replace a deterministic theorem for
+\eqref{eq:tpc43-intro-corner-spectrum}.
+
+\subsection{What has and has not moved}
+
+The results close the generic multiplicative geometry, not the physical
+M\"obius point.  In particular, they prove that the following features
+do not by themselves force the \(J^2\) coherent loss:
+\begin{enumerate}[label=(\roman*)]
+ \item squarefree support;
+ \item one globally coupled multiplicative sign field at source and
+ target;
+ \item the actual row masks and opposite--row Hilbert coordinates;
+ \item the complete alias trace; and
+ \item the endpoint aspect ratios of the triple--prime packet.
+\end{enumerate}
+What remains is a quenched theorem excluding the all--minus prime point
+from a small, potentially structured exceptional set.  We do not call
+\eqref{eq:tpc43-intro-trace-theorem} a M\"obius correlation estimate:
+for generic prime signs, \(F_\varepsilon*\one=\delta_1\) is false, and
+the actual point cannot be selected probabilistically.
+
+\subsection{Organization}
+
+\Cref{sec:tpc43-interface} records the exact inherited terminal object.
+\Cref{sec:tpc43-prime-sign} defines the consistent multiplicative
+deformation.  \Cref{sec:tpc43-product-fibers} proves the divisor fiber
+bound, and \cref{sec:tpc43-annealed-trace} applies it to the full trace.
+\Cref{sec:tpc43-zero-rigidity} proves singleton fibers at equality.
+\Cref{sec:tpc43-moments} gives hypercontractive and almost--sure
+extensions.  \Cref{sec:tpc43-Walsh-corner} derives the exact physical
+kernel spectrum, while \cref{sec:tpc43-sharp-boundaries} proves its
+sharp selection obstruction.  The final sections compare adjacent
+literature, state the next deterministic gate, and delimit the exact
+certificate.

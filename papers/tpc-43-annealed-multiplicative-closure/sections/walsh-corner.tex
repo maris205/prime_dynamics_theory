@@ -1,0 +1,134 @@
+\section{The deterministic M\"obius corner as one Walsh spectrum}
+\label{sec:tpc43-Walsh-corner}
+
+The equality alias admits a sharper deterministic description than the
+annealed theorem.  For nonzero atoms, let
+\(u_{\alpha,j}\) be the squarefree fused label in
+\eqref{eq:tpc43-fused-zero-label}.  For two rows at the same orbit time,
+define their squarefree symmetric--difference kernel
+\begin{equation}
+ \kappa_{\alpha,\beta,j}
+ :=\frac{u_{\alpha,j}u_{\beta,j}}
+ {(u_{\alpha,j},u_{\beta,j})^2}.
+ \label{eq:tpc43-pair-kernel}
+\end{equation}
+It is squarefree and
+\begin{equation}
+ \chi_{u_{\alpha,j}}(\varepsilon)
+ \chi_{u_{\beta,j}}(\varepsilon)
+ =\chi_{\kappa_{\alpha,\beta,j}}(\varepsilon).
+ \label{eq:tpc43-pair-character}
+\end{equation}
+
+For \(\kappa>1\), let \(C(\kappa)\) be the sum of all ordered unequal
+row coefficients, on both physical sides, whose pair kernel is
+\(\kappa\):
+\begin{align}
+ C(\kappa)
+ :={}&\sum_{\gamma,j}
+ \sum_{\substack{\alpha\ne\beta\\
+ \kappa_{\alpha,\beta,j}=\kappa}}
+ a^L_{\alpha,\gamma,j,0}
+ \overline{a^L_{\beta,\gamma,j,0}}
+ \mu^2(n_{\alpha,j,0})\mu^2(n_{\beta,j,0})
+ \notag\\
+ &+\text{the symmetric right contribution}.
+ \label{eq:tpc43-Walsh-spectrum-coefficient}
+\end{align}
+Pairing \((\alpha,\beta)\) with \((\beta,\alpha)\) shows that
+\(C(\kappa)\in\R\).
+
+\begin{theorem}[Exact four--to--one M\"obius compression]
+\label{thm:tpc43-four-to-one-compression}
+The complete equality energy has the Walsh expansion
+\begin{equation}
+ \boxed{
+ Z_0(\varepsilon)
+ =\cD_0+
+  \sum_{\kappa>1}C(\kappa)\chi_\kappa(\varepsilon).}
+ \label{eq:tpc43-exact-Walsh-expansion}
+\end{equation}
+At the physical all--minus point,
+\begin{equation}
+ \boxed{
+ \|\mathscr T_0^L\|^2+\|\mathscr T_0^R\|^2
+ =\cD_0+
+  \sum_{\kappa>1}\mu(\kappa)C(\kappa).}
+ \label{eq:tpc43-physical-kernel-spectrum}
+\end{equation}
+Moreover,
+\begin{equation}
+ \E_\varepsilon
+ |Z_0(\varepsilon)-\cD_0|^2
+ =\sum_{\kappa>1}|C(\kappa)|^2.
+ \label{eq:tpc43-Walsh-Parseval}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Expand the two squared Hilbert norms defining \(Z_0\).  By
+\eqref{eq:tpc43-pair-character}, every ordered row pair contributes the
+Walsh character indexed by its symmetric--difference kernel.  The
+constant character occurs exactly when
+\(u_{\alpha,j}=u_{\beta,j}\), which by
+\cref{lem:tpc43-fused-label-injectivity} means \(\alpha=\beta\).  Its
+coefficient is therefore \(\cD_0\), proving
+\eqref{eq:tpc43-exact-Walsh-expansion}.
+
+At \(\varepsilon_p=-1\),
+\begin{equation}
+ \chi_\kappa(-\one)=(-1)^{\omega(\kappa)}=\mu(\kappa).
+ \label{eq:tpc43-character-at-minus}
+\end{equation}
+For a contributing pair, this also gives the literal identity
+\begin{align}
+ &\mu(d_\alpha)\mu(n_{\alpha,j,0})
+  \mu(d_\beta)\mu(n_{\beta,j,0})
+ \notag\\
+ &\qquad
+ =\mu(u_{\alpha,j})\mu(u_{\beta,j})
+ =\mu(\kappa_{\alpha,\beta,j}).
+ \label{eq:tpc43-literal-four-to-one}
+\end{align}
+Thus \eqref{eq:tpc43-physical-kernel-spectrum} is precisely the physical
+four--M\"obius expansion, not a surrogate.  Finally, Walsh orthogonality
+and the absence of a nonzero constant term give
+\eqref{eq:tpc43-Walsh-Parseval}.
+\end{proof}
+
+The theorem replaces a row--pair family of four M\"obius signs by one
+signed spectral sum over squarefree kernels.  The coefficient
+\(C(\kappa)\) still contains all masks and all representations of the
+same kernel; no cancellation estimate for that sum is asserted.
+
+There is an exact small--prime filtration.  Fix \(z\ge2\), average the
+signs \(\varepsilon_p\) for \(p\le z\), and set
+\(\varepsilon_p=-1\) for \(p>z\).  Let \(P^-(n)\) denote the least prime
+factor of \(n>1\).
+
+\begin{corollary}[Rough--kernel filtration]
+\label{cor:tpc43-rough-kernel-filtration}
+One has
+\begin{equation}
+ \boxed{
+ \E_{\varepsilon_p:\,p\le z}
+ Z_0(\varepsilon_{\le z},-\one_{>z})
+ =\cD_0+
+  \sum_{\substack{\kappa>1\\P^-(\kappa)>z}}
+  \mu(\kappa)C(\kappa).}
+ \label{eq:tpc43-rough-filtration}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The average of \(\chi_\kappa\) is zero if any prime
+\(p\le z\) divides \(\kappa\).  Otherwise every prime in \(\kappa\)
+keeps the value \(-1\), and the character equals \(\mu(\kappa)\).
+Insert this into \eqref{eq:tpc43-exact-Walsh-expansion}.
+\end{proof}
+
+Before any relevant prime is averaged one has the physical corner;
+after every relevant prime has been averaged, only \(\cD_0\) remains.
+A future
+de--randomization may therefore attack the successive prime increments
+or the final rough spectrum.  The identity itself does not bound either.

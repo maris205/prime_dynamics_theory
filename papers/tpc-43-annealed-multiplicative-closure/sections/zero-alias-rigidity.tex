@@ -1,0 +1,110 @@
+\section{Exact fused--label rigidity at the equality alias}
+\label{sec:tpc43-zero-rigidity}
+
+At \(k=0\), the intercept is the fixed integer \(h\).  Hence
+\begin{equation}
+ (d_\alpha,n_{\alpha,j,0})
+ =(d_\alpha,h)=1,
+ \label{eq:tpc43-zero-coprimality}
+\end{equation}
+and every nonzero random atom is indexed by the squarefree product
+\begin{equation}
+ u_{\alpha,j}
+ :=d_\alpha n_{\alpha,j,0}
+ =d_\alpha(\ell_\alpha d_\alpha j+h).
+ \label{eq:tpc43-fused-zero-label}
+\end{equation}
+
+\begin{lemma}[Fused--label injectivity]
+\label{lem:tpc43-fused-label-injectivity}
+For all sufficiently large \(X\), fixed \(j\in\cJ\), and two physical
+rows \(\alpha,\beta\),
+\begin{equation}
+ u_{\alpha,j}=u_{\beta,j}
+ \quad\Longrightarrow\quad
+ \alpha=\beta.
+ \label{eq:tpc43-fused-label-injective}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Equality of the two labels gives
+\begin{equation}
+ j(\ell_\alpha d_\alpha^2-\ell_\beta d_\beta^2)
+ =h(d_\beta-d_\alpha).
+ \label{eq:tpc43-fused-collision-equation}
+\end{equation}
+If the integer in parentheses on the left is nonzero, the left side has
+absolute value at least \(j\), whereas
+\begin{equation}
+ |h(d_\beta-d_\alpha)|
+ \le |h|\max_\rho d_\rho<j
+ \label{eq:tpc43-fused-size-contradiction}
+\end{equation}
+by \eqref{eq:tpc43-rigidity-size}.  This is impossible.  Thus the
+parenthesized integer vanishes, and
+\eqref{eq:tpc43-fused-collision-equation}, together with \(h\ne0\),
+forces \(d_\alpha=d_\beta\).  It then forces
+\(\ell_\alpha=\ell_\beta\), so the rows coincide.
+\end{proof}
+
+The use of \(j\asymp J\) is essential.  Merely knowing
+\(|\cJ|=O(J)\) would not prove the strict inequality in
+\eqref{eq:tpc43-fused-size-contradiction}.
+
+\begin{theorem}[Exact equality--column diagonalization]
+\label{thm:tpc43-exact-zero-diagonalization}
+Put
+\begin{equation}
+ Z_0(\varepsilon)
+ :=\|\mathscr T_{0,\varepsilon}^L\|^2
+   +\|\mathscr T_{0,\varepsilon}^R\|^2.
+ \label{eq:tpc43-zero-random-energy}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{\E_\varepsilon Z_0(\varepsilon)=\cD_0.}
+ \label{eq:tpc43-exact-zero-expectation}
+\end{equation}
+Consequently, for every \(\lambda>0\),
+\begin{equation}
+ \Pp_\varepsilon\bigl(Z_0(\varepsilon)>\lambda\cD_0\bigr)
+ \le\lambda^{-1}.
+ \label{eq:tpc43-zero-Markov}
+\end{equation}
+At the inherited endpoint,
+\begin{equation}
+ \Pp_\varepsilon\bigl(
+ Z_0(\varepsilon)>K_B\cD_0
+ \bigr)
+ \le K_B^{-1}=X^{-1/400+o(1)}.
+ \label{eq:tpc43-zero-endpoint-probability}
+\end{equation}
+Thus all but at most a proportion \(X^{-1/400+o(1)}\) of the
+multiplicative prime--sign environments satisfy the random--model
+equality benchmark at the same numerical scale as
+\eqref{eq:tpc43-physical-zero-target}.  This statement does not select
+the physical all--minus environment.
+\end{theorem}
+
+\begin{proof}
+For fixed \((\gamma,j)\), the nonzero row atoms have distinct Walsh
+labels \(u_{\alpha,j}\) by
+\cref{lem:tpc43-fused-label-injectivity}.  Equation
+\eqref{eq:tpc43-Walsh-orthogonality} therefore deletes every unequal row
+pair and leaves
+\begin{equation}
+ \E_\varepsilon
+ |[\mathscr T_{0,\varepsilon}^L]_{\gamma,j}|^2
+ =\sum_\alpha
+ |a^L_{\alpha,\gamma,j,0}|^2
+ \mu^2(n_{\alpha,j,0}).
+ \label{eq:tpc43-zero-coordinate-diagonal}
+\end{equation}
+Sum over the left coordinates and repeat on the right to obtain
+\eqref{eq:tpc43-exact-zero-expectation}.  The probability statements
+are immediate if \(\cD_0=0\), since then the nonnegative variable
+\(Z_0\) vanishes almost surely.  Otherwise they are Markov's inequality,
+followed by
+\eqref{eq:tpc43-alias-ledger} and the inherited diagonal bound.
+\end{proof}

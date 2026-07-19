@@ -1,0 +1,146 @@
+\section{Hypercontractive moments and almost--sure dyadic closure}
+\label{sec:tpc43-moments}
+
+The first moment is enough for the endpoint statements above.  Fixed
+higher moments give stronger tail bounds for a random prime--sign
+environment, while still leaving open exceptional behavior at the
+specified all--minus corner.  We use the standard Bonami--Beckner inequality on the
+discrete cube \citep{Bonami1970,Beckner1975}; the weighted random
+multiplicative form needed below is also recorded explicitly by
+\citet[Probability Result~2.3]{Harper2019HighMoments}.
+
+\begin{lemma}[One coordinate]
+\label{lem:tpc43-one-coordinate-moment}
+Let
+\begin{equation}
+ S(\varepsilon)=\sum_s A_s\chi_s(\varepsilon)
+ \label{eq:tpc43-one-coordinate-polynomial}
+\end{equation}
+be any coordinate polynomial produced by the physical packet.  For each
+fixed integer \(q\ge1\),
+\begin{equation}
+ \|S\|_{L^{2q}}^2
+ \le
+ \sum_s(2q-1)^{\omega(s)}|A_s|^2
+ \le X^{o_q(1)}\sum_s|A_s|^2.
+ \label{eq:tpc43-hypercontractive-coordinate}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The first inequality is Bonami--Beckner hypercontractivity, decomposed by
+Walsh degree.  Every label in the packet is at most \(X^{O(1)}\), so the
+standard maximal-order bound gives
+\begin{equation}
+ \max_s\omega(s)\ll\frac{\log X}{\log\log X}.
+ \label{eq:tpc43-max-omega}
+\end{equation}
+For fixed \(q\), the factor
+\((2q-1)^{\omega(s)}\) is therefore \(X^{o_q(1)}\).
+\end{proof}
+
+\begin{theorem}[Fixed moments of the physical energies]
+\label{thm:tpc43-fixed-moments}
+For every fixed integer \(q\ge1\),
+\begin{align}
+ \E_\varepsilon Z_0(\varepsilon)^q
+ &\le X^{o_q(1)}\cD_0^q,
+ \label{eq:tpc43-zero-q-moment}\\
+ \E_\varepsilon Z_{\rm tr}(\varepsilon)^q
+ &\le X^{o_q(1)}\cD_{\rm tr}^q,
+ \label{eq:tpc43-trace-q-moment}
+\end{align}
+where
+\begin{equation}
+ Z_{\rm tr}(\varepsilon)
+ :=\sum_k
+ \bigl(
+  \|\mathscr T_{k,\varepsilon}^L\|^2
+  +\|\mathscr T_{k,\varepsilon}^R\|^2
+ \bigr).
+ \label{eq:tpc43-trace-random-energy}
+\end{equation}
+In particular,
+\begin{equation}
+ \Pp_\varepsilon\bigl(
+ Z_0(\varepsilon)>K_B\cD_0
+ \bigr)
+ \le X^{-q/400+o_q(1)}.
+ \label{eq:tpc43-zero-high-moment-tail}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For each output coordinate \(i\), write
+\(S_i=\sum_sA_{i,s}\chi_s\) and let \(D_i\) be its atomic diagonal.
+The fiber Cauchy estimate \eqref{eq:tpc43-fiber-Cauchy} gives
+\begin{equation}
+ \sum_s|A_{i,s}|^2\le\rho_XD_i.
+ \label{eq:tpc43-coordinate-coefficient-l2}
+\end{equation}
+For \(k=0\), one may replace \(\rho_X\) by \(1\).  By
+\cref{lem:tpc43-one-coordinate-moment},
+\begin{equation}
+ \bigl(\E|S_i|^{2q}\bigr)^{1/q}
+ =\|S_i\|_{2q}^2
+ \le X^{o_q(1)}D_i.
+ \label{eq:tpc43-coordinate-Lq-square}
+\end{equation}
+Minkowski's inequality in \(L^q\) now gives
+\begin{align}
+ \bigl(\E Z^q\bigr)^{1/q}
+ &=\left\|\sum_i|S_i|^2\right\|_{L^q}
+ \le\sum_i\||S_i|^2\|_{L^q}
+ \le X^{o_q(1)}\sum_iD_i.
+ \label{eq:tpc43-Minkowski-moment}
+\end{align}
+This proves both moment estimates.  Apply Markov with threshold
+\(K_B^q\cD_0^q\) when \(\cD_0>0\); if \(\cD_0=0\), the first moment
+already gives \(Z_0=0\) almost surely.  Finally use
+\(K_B=X^{1/400+o(1)}\) to obtain
+\eqref{eq:tpc43-zero-high-moment-tail}.
+\end{proof}
+
+The field can be coupled across scales by choosing one sign for every
+prime once and for all.
+
+\begin{corollary}[Almost--sure closure on prescribed dyadic packets]
+\label{cor:tpc43-almost-sure-dyadic}
+Let \(X_r=2^r\), and for each \(r\) fix one deterministic inherited
+TPC packet.  For almost every global prime--sign field, all sufficiently
+large \(r\) satisfy
+\begin{align}
+ Z_0(X_r,\varepsilon)&\le K_B(X_r)\cD_0(X_r),
+ \label{eq:tpc43-as-zero}\\
+ Z_{\rm tr}(X_r,\varepsilon)&\le X_r^{o(1)}\cD_{\rm tr}(X_r).
+ \label{eq:tpc43-as-trace}
+\end{align}
+Consequently both random--model endpoint estimates hold eventually on
+that dyadic packet sequence.
+\end{corollary}
+
+\begin{proof}
+The failure probabilities in
+\eqref{eq:tpc43-zero-endpoint-probability} are summable at
+\(X_r=2^r\).  For the trace, use
+\eqref{eq:tpc43-rho-bound} and set
+\begin{equation}
+ L_X=\exp\!\left(\frac{\log X}{\sqrt{\log\log X}}\right)=X^{o(1)}.
+ \label{eq:tpc43-summable-envelope}
+\end{equation}
+For sufficiently large \(X\), Markov and
+\cref{thm:tpc43-annealed-trace} give a failure probability at most
+\begin{equation}
+ \Pp_\varepsilon\bigl(Z_{\rm tr}>L_X\cD_{\rm tr}\bigr)
+ \le
+ \frac{\rho_X}{L_X}
+ \le\exp\!\left(-c\frac{\log X}{\sqrt{\log\log X}}\right),
+ \label{eq:tpc43-summable-trace-tail}
+\end{equation}
+which is summable on the dyadic sequence.  The first Borel--Cantelli
+lemma proves both assertions; no independence between scales is needed.
+\end{proof}
+
+The packet sequence in \cref{cor:tpc43-almost-sure-dyadic} is prescribed.
+Uniformity over an additional family of packets requires an explicit
+entropy or cardinality ledger and is not asserted.

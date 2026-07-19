@@ -1,0 +1,84 @@
+\section{Squarefree--kernel fibers for all aliases}
+\label{sec:tpc43-product-fibers}
+
+Fix \((j,k)\) and abbreviate \(c=c_k\).  For a row whose random atom is
+nonzero, both \(d_\alpha\) and
+\(n_{\alpha,j,k}=\ell_\alpha d_\alpha j+c\) are squarefree.  Define
+\begin{equation}
+ g_{\alpha,j,k}:=(d_\alpha,n_{\alpha,j,k}),
+ \qquad
+ s_{\alpha,j,k}
+ :=\frac{d_\alpha n_{\alpha,j,k}}{g_{\alpha,j,k}^2}.
+ \label{eq:tpc43-row-kernel-label}
+\end{equation}
+Since \(d_\alpha\mid \ell_\alpha d_\alpha j\),
+\begin{equation}
+ g_{\alpha,j,k}=(d_\alpha,c_k).
+ \label{eq:tpc43-gcd-is-intercept}
+\end{equation}
+
+\begin{lemma}[Divisor control of one kernel fiber]
+\label{lem:tpc43-kernel-fiber-bound}
+For fixed \((j,k,s)\), the number
+\(r_{j,k}(s)\) of physical rows satisfying
+\(s_{\alpha,j,k}=s\) obeys
+\begin{equation}
+ r_{j,k}(s)
+ \le
+ \sum_{g\mid |c_k|}\tau(sg^2).
+ \label{eq:tpc43-kernel-fiber-divisor-bound}
+\end{equation}
+Consequently there is a constant \(C_1\), depending only on the fixed
+support exponents, such that
+\begin{equation}
+ \rho_X:=\max_{j,k,s}r_{j,k}(s)
+ \le
+ \exp\!\left(C_1\frac{\log X}{\log\log X}\right)
+ =X^{o(1)}.
+ \label{eq:tpc43-rho-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If a row belongs to the \(s\)-fiber and
+\(g=g_{\alpha,j,k}\), then
+\begin{equation}
+ g\mid c_k,
+ \qquad
+ d_\alpha n_{\alpha,j,k}=sg^2.
+ \label{eq:tpc43-fiber-product}
+\end{equation}
+Fix such a divisor \(g\) and put \(R=sg^2\).  A choice
+\(d_\alpha\mid R\) determines
+\begin{equation}
+ n_{\alpha,j,k}=R/d_\alpha,
+ \qquad
+ \ell_\alpha
+ =\frac{R/d_\alpha-c_k}{d_\alpha j}.
+ \label{eq:tpc43-row-recovery}
+\end{equation}
+There is at most one row for that divisor; integrality, primality,
+dyadic support, and the physical masks can only delete choices.  Hence
+there are at most \(\tau(sg^2)\) rows for fixed \(g\), proving
+\eqref{eq:tpc43-kernel-fiber-divisor-bound}.
+
+By \eqref{eq:tpc43-polynomial-support}, every integer in the divisor
+functions is at most a fixed power of \(X\).  The standard uniform
+divisor bound gives \citep[Chapter~I]{IwaniecKowalski2004}
+\begin{equation}
+ \max_{n\le X^{O(1)}}\tau(n)
+ \le\exp\!\left(O\!\left(\frac{\log X}{\log\log X}\right)\right).
+ \label{eq:tpc43-uniform-divisor-bound}
+\end{equation}
+The same estimate applies to the number of divisors of \(|c_k|\).
+Absorbing the two constants proves \eqref{eq:tpc43-rho-bound}.
+\end{proof}
+
+\begin{remark}[Why the alias case is not injective]
+\label{rem:tpc43-alias-collisions}
+For \(k\ne0\), neither \((d_\alpha,c_k)=1\) nor singleton kernel fibers
+are assumed.  The proof retains the common prime factors through
+\(g^2\) and pays their exact divisor multiplicity.  The sharper singleton
+statement at \(k=0\) uses the fixed intercept \(h\) and the scale
+separation \(D_0=o(J)\); see \cref{sec:tpc43-zero-rigidity}.
+\end{remark}

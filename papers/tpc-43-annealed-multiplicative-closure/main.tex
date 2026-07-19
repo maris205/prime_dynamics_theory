@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\E}{\mathbb E}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Hh}{\mathcal H}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\sfk}{\operatorname{sf}}
+
+\hypersetup{
+  pdftitle={Annealed Multiplicative Closure at the Four-Mobius Gate: Prime-Sign Orthogonality, Product-Fiber Rigidity, and the Deterministic Walsh Corner},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact random-multiplicative diagonalization and Walsh compression of the triple-prime Mobius endpoint},
+  pdfkeywords={Mobius correlation, random multiplicative function, Rademacher signs, Walsh spectrum, Hilbert energy, parity boundary}
+}
+
+\title{\bfseries Annealed Multiplicative Closure at the Four--M\"obius Gate:\\
+Prime--Sign Orthogonality, Product--Fiber Rigidity,\\
+and the Deterministic Walsh Corner}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC--42 reduced the surviving triple--prime endpoint to a coherent
+orbit--slope energy containing one source and one target M\"obius value
+per row.  We deform all of those values by one common prime--sign field,
+rather than attaching independent row phases.  For the zero alias, the
+source divisor and target affine value fuse into a squarefree integer
+label.  The inherited scale separation $D=o(J)$ makes these labels
+injective across physical rows, and prime--sign orthogonality then makes
+the complete left--plus--right Hilbert energy equal its atomic diagonal
+in expectation, with no projective separation.  For the full alias trace,
+the corresponding squarefree--kernel fibers have only $X^{o(1)}$
+multiplicity; hence the annealed trace is still at the endpoint diagonal
+scale.  Boolean hypercontractivity gives fixed high moments, and, for
+each fixed prescribed dyadic packet sequence, almost every global random
+multiplicative field closes every sufficiently large packet.  At the
+distinguished all--minus prime corner the random
+model is exactly the M\"obius function.  We give an exact Walsh expansion
+there: every four--M\"obius cross row collapses to one M\"obius value of a
+squarefree symmetric--difference kernel.  A sharp Walsh example shows
+that annealed diagonalization alone cannot control this specified corner.
+Thus the declared randomized multiplicative terminal model is closed,
+while the remaining
+deterministic problem is an explicit corner de--randomization theorem,
+not a claim of four--M\"obius cancellation or a breach of sieve parity.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius correlation; random multiplicative
+function; Rademacher prime signs; product fiber; Walsh spectrum; Hilbert
+energy; triple--prime endpoint; parity boundary.
+
+\medskip
+\noindent\textbf{Convention.}
+All complex inner products are linear in the first argument.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11K65; Secondary 42C10,
+60E15, 11N36.
+
+\input{sections/introduction}
+\input{sections/inherited-interface}
+\input{sections/prime-sign-model}
+\input{sections/product-fiber-geometry}
+\input{sections/annealed-trace}
+\input{sections/zero-alias-rigidity}
+\input{sections/hypercontractive-moments}
+\input{sections/walsh-corner}
+\input{sections/sharp-boundaries}
+\input{sections/literature-boundary}
+\input{sections/next-gate}
+\input{sections/certificate-claims}
+
+\begingroup
+\small
+\setlength{\bibsep}{4pt plus 1pt minus 1pt}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

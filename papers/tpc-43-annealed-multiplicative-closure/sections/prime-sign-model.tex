@@ -1,0 +1,89 @@
+\section{One multiplicative prime--sign field}
+\label{sec:tpc43-prime-sign}
+
+Let \((\varepsilon_p)_{p\in\cP}\) be independent signs, uniformly
+distributed on \(\{-1,1\}\), for every prime occurring in the finite
+packet.  Extend the prime signs to the completely multiplicative phase
+\(\varepsilon(n)=\prod_p\varepsilon_p^{v_p(n)}\), and define the
+squarefree--supported random multiplicative function
+\begin{equation}
+ F_\varepsilon(n)
+ :=\mu^2(n)\prod_{p\mid n}\varepsilon_p.
+ \label{eq:tpc43-rademacher-multiplicative}
+\end{equation}
+Thus \(F_\varepsilon\) is multiplicative on coprime inputs and has the
+same zero set and absolute values as \(\mu\).  It is not called
+completely multiplicative because its value is zero on nonsquarefree
+integers.  At the distinguished prime point
+\begin{equation}
+ \varepsilon_p=-1\quad(p\in\cP),
+ \label{eq:tpc43-all-minus-point}
+\end{equation}
+one has
+\begin{equation}
+ F_\varepsilon(n)=\mu(n)
+ \label{eq:tpc43-all-minus-is-mobius}
+\end{equation}
+for every relevant integer.
+
+The deformation is applied consistently to the two M\"obius occurrences
+in each physical row.  Define
+\begin{equation}
+ [\mathscr T_{k,\varepsilon}^L]_{\gamma,j}
+ :=\sum_\alpha
+ a^L_{\alpha,\gamma,j,k}
+ F_\varepsilon(d_\alpha)
+ F_\varepsilon(n_{\alpha,j,k}),
+ \label{eq:tpc43-random-left-column}
+\end{equation}
+and define \(\mathscr T_{k,\varepsilon}^R\) symmetrically.  In
+particular,
+\begin{equation}
+ \mathscr T_{k,-\one}^{L/R}=\mathscr T_k^{L/R}.
+ \label{eq:tpc43-physical-corner}
+\end{equation}
+This is not an independent row randomization: the same prime sign appears
+at every source and target integer divisible by that prime.
+
+For a squarefree positive integer \(s\), write
+\begin{equation}
+ \chi_s(\varepsilon):=\prod_{p\mid s}\varepsilon_p,
+ \qquad \chi_1=1.
+ \label{eq:tpc43-Walsh-character}
+\end{equation}
+These are the Walsh characters of the finite prime cube and satisfy
+\begin{equation}
+ \E_\varepsilon
+ \chi_s(\varepsilon)\chi_t(\varepsilon)
+ =\one_{s=t}.
+ \label{eq:tpc43-Walsh-orthogonality}
+\end{equation}
+
+If both \(d\) and \(n\) are squarefree, put
+\begin{equation}
+ g=(d,n),
+ \qquad
+ s(d,n):=\frac{dn}{g^2}.
+ \label{eq:tpc43-squarefree-kernel}
+\end{equation}
+Then \(s(d,n)\) is squarefree and
+\begin{equation}
+ F_\varepsilon(d)F_\varepsilon(n)
+ =\chi_{s(d,n)}(\varepsilon).
+ \label{eq:tpc43-fused-Walsh-character}
+\end{equation}
+If \(n\) is not squarefree, both sides of every physical atom in which
+it occurs are interpreted as zero.  Therefore no conditioning on
+squarefreeness is hidden in the model.
+
+\begin{remark}[Relation to external row phases]
+\label{rem:tpc43-not-row-randomization}
+Independent signs attached directly to row labels would diagonalize any
+finite row family and would be a generic phase--frame statement of the
+kind already delimited in TPC--40.  In
+\eqref{eq:tpc43-random-left-column}, the signs live at primes, respect
+multiplication, occur simultaneously at the source and target, and have
+the actual M\"obius function as the point
+\eqref{eq:tpc43-all-minus-point}.  The product--fiber geometry needed to
+control their collisions is the arithmetic content of the next section.
+\end{remark}

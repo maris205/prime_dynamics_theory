@@ -1,0 +1,149 @@
+\section{Annealed closure of the full physical trace}
+\label{sec:tpc43-annealed-trace}
+
+For fixed \((\gamma,j,k)\), group the left coefficients by their
+squarefree--kernel label:
+\begin{equation}
+ A^L_{\gamma,j,k}(s)
+ :=\sum_{\alpha:s_{\alpha,j,k}=s}
+ a^L_{\alpha,\gamma,j,k}\mu^2(n_{\alpha,j,k}).
+ \label{eq:tpc43-grouped-left-coefficient}
+\end{equation}
+Equation \eqref{eq:tpc43-fused-Walsh-character} gives the exact Walsh
+polynomial
+\begin{equation}
+ [\mathscr T_{k,\varepsilon}^L]_{\gamma,j}
+ =\sum_s A^L_{\gamma,j,k}(s)\chi_s(\varepsilon).
+ \label{eq:tpc43-coordinate-Walsh-polynomial}
+\end{equation}
+
+\begin{theorem}[Full trace at the annealed diagonal scale]
+\label{thm:tpc43-annealed-trace}
+For the complete physical alias family,
+\begin{align}
+ &\E_\varepsilon
+ \sum_{k\in\cI_B}
+ \bigl(
+  \|\mathscr T_{k,\varepsilon}^L\|^2
+  +\|\mathscr T_{k,\varepsilon}^R\|^2
+ \bigr)
+ \notag\\
+ &\qquad\le \rho_X\cD_{\rm tr}
+ \ll X^{o(1)}Q^2JK_B.
+ \label{eq:tpc43-annealed-trace-bound}
+\end{align}
+The estimate retains the actual masks, orbit coordinates, source weights,
+terminal cutoffs, and all aliases.  It does not use the projective layer
+decomposition.
+\end{theorem}
+
+\begin{proof}
+Walsh orthogonality gives
+\begin{equation}
+ \E_\varepsilon
+ |[\mathscr T_{k,\varepsilon}^L]_{\gamma,j}|^2
+ =\sum_s|A^L_{\gamma,j,k}(s)|^2.
+ \label{eq:tpc43-one-coordinate-expectation}
+\end{equation}
+For one fiber, Cauchy--Schwarz and
+\cref{lem:tpc43-kernel-fiber-bound} give
+\begin{align}
+ |A^L_{\gamma,j,k}(s)|^2
+ &\le r_{j,k}(s)
+ \sum_{\alpha:s_{\alpha,j,k}=s}
+ |a^L_{\alpha,\gamma,j,k}|^2
+ \mu^2(n_{\alpha,j,k})
+ \notag\\
+ &\le\rho_X
+ \sum_{\alpha:s_{\alpha,j,k}=s}
+ |a^L_{\alpha,\gamma,j,k}|^2
+ \mu^2(n_{\alpha,j,k}).
+ \label{eq:tpc43-fiber-Cauchy}
+\end{align}
+Sum over \(s,\gamma,j,k\) to obtain the left contribution
+\(\rho_X\sum_k\cD_{k,L}\).  The same argument gives the right
+contribution.  Now use \eqref{eq:tpc43-rho-bound} and the inherited
+diagonal bound \eqref{eq:tpc43-inherited-trace-diagonal}.
+\end{proof}
+
+Within the annealed multiplicative model, the theorem removes the full
+factor
+\begin{equation}
+ \frac{Q}{K_B}=X^{o(1)}J^2
+ \label{eq:tpc43-annealed-closes-J2}
+\end{equation}
+that separates the deterministic overlap estimate from the sufficient
+equality endpoint in TPC--42.  The statement is annealed: it concerns a
+single globally multiplicative prime--sign field averaged over its prime
+coordinates, not the distinguished all--minus point.
+
+The same geometry acts directly on the minimal folded bank.  Let
+\(\cK_0=\{0\}\), and for \(1\le a\le L_B\) let
+\(\cK_a=\{a,a-(L_B+1)\}\).  Define
+\begin{equation}
+ [\mathscr U_{a,\varepsilon}^L]_{\gamma,j}
+ :=\sum_\alpha\sum_{k\in\cK_a}
+ a^L_{\alpha,\gamma,j,k}
+ F_\varepsilon(d_\alpha)F_\varepsilon(n_{\alpha,j,k}),
+ \label{eq:tpc43-random-folded-column}
+\end{equation}
+and define the right side symmetrically.
+
+\begin{corollary}[Annealed closure of the actual minimal bank]
+\label{cor:tpc43-annealed-folded}
+One has
+\begin{equation}
+ \E_\varepsilon\sum_{a=0}^{L_B}
+ \bigl(
+  \|\mathscr U_{a,\varepsilon}^L\|^2
+  +\|\mathscr U_{a,\varepsilon}^R\|^2
+ \bigr)
+ \le2\rho_X\cD_{\rm tr}
+ \ll X^{o(1)}Q^2JK_B.
+ \label{eq:tpc43-annealed-folded-bound}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+At fixed \((\gamma,j,a)\), expand the inner sum into atoms
+\((\alpha,k)\) with \(k\in\cK_a\).  For each Walsh label there are at
+most two alias choices, and for each alias there are at most \(\rho_X\)
+rows.  Walsh orthogonality and fiberwise Cauchy--Schwarz therefore cost
+at most \(2\rho_X\).  Summing the raw atomic coefficients over the
+disjoint buckets gives exactly \(\cD_{\rm tr}\).
+\end{proof}
+
+\begin{corollary}[One--scale typical trace closure]
+\label{cor:tpc43-one-scale-trace}
+Let \(L_X\to\infty\) be any function.  Then
+\begin{align}
+ &\Pp_\varepsilon\left(
+ \sum_k
+ \bigl(
+ \|\mathscr T_{k,\varepsilon}^L\|^2
+ +\|\mathscr T_{k,\varepsilon}^R\|^2
+ \bigr)
+ >L_X\rho_X\cD_{\rm tr}
+ \right)
+ \le L_X^{-1}.
+ \label{eq:tpc43-trace-Markov}
+\end{align}
+In particular, choosing any slowly growing \(L_X\to\infty\) with
+\(L_X=X^{o(1)}\) yields the trace endpoint for all but an \(o(1)\)
+proportion of prime--sign environments.
+\end{corollary}
+
+\begin{proof}
+If \(\cD_{\rm tr}=0\), the annealed bound forces the trace energy to
+vanish almost surely.  Otherwise apply Markov's inequality to that
+nonnegative energy and use
+\cref{thm:tpc43-annealed-trace}.
+\end{proof}
+
+\begin{remark}[A finite exact ensemble]
+\label{rem:tpc43-finite-ensemble}
+Only primes dividing the finitely many source and terminal integers enter
+the packet.  Thus every expectation above is a normalized sum over a
+finite cube.  No limiting probability space or independence between
+different values of \(F_\varepsilon(n)\) is being assumed.
+\end{remark}

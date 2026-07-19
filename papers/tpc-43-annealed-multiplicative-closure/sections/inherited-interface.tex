@@ -1,0 +1,133 @@
+\section{The inherited physical interface}
+\label{sec:tpc43-interface}
+
+We use only the terminal statements proved in TPC--18, TPC--36,
+TPC--41, and TPC--42
+\citep{WangTPC18,WangTPC36,WangTPC41,WangTPC42}.  Fix
+\(h\in\Z\setminus\{0\}\).  A source row is
+\begin{equation}
+ \alpha=(\ell_\alpha,d_\alpha),
+ \qquad
+ m_\alpha=\ell_\alpha d_\alpha\asymp Q,
+ \qquad
+ \ell_\alpha\asymp L_0,
+ \qquad
+ d_\alpha\asymp D_0,
+ \label{eq:tpc43-row}
+\end{equation}
+where \(\ell_\alpha\) is prime, \(d_\alpha\) is squarefree,
+\((d_\alpha,h)=1\), and \(L_0D_0=Q\).  Source separation makes
+\(m_\alpha\) determine \(\alpha\).  The orbit variable belongs to one
+of the inherited dyadic blocks
+\begin{equation}
+ a_JJ\le j\le b_JJ,
+ \qquad QJ\asymp X,
+ \label{eq:tpc43-orbit-block}
+\end{equation}
+for fixed positive \(a_J<b_J\).  At the endpoint,
+\begin{align}
+ Q&=X^{267/400+o(1)},
+ &J&=X^{133/400+o(1)},
+ \label{eq:tpc43-QJ-endpoint}\\
+ D_0&=X^{10049/52500+o(1)}=o(J).
+ \label{eq:tpc43-D-endpoint}
+\end{align}
+In particular, for all sufficiently large \(X\),
+\begin{equation}
+ \min\cJ>|h|\max_\alpha d_\alpha.
+ \label{eq:tpc43-rigidity-size}
+\end{equation}
+
+Let \(M\) be the inherited triple--prime modulus and let
+\(\cI_B=\{-L_B,\ldots,L_B\}\), where
+\begin{equation}
+ K_B:=|\cI_B|=X^{1/400+o(1)},
+ \qquad
+ K_B=X^{o(1)}\frac{Q}{J^2}.
+ \label{eq:tpc43-alias-ledger}
+\end{equation}
+For \(k\in\cI_B\), put
+\begin{equation}
+ c_k=h+kM,
+ \qquad
+ n_{\alpha,j,k}=m_\alpha j+c_k.
+ \label{eq:tpc43-terminal-n}
+\end{equation}
+Because \(h\) is fixed and nonzero while \(M>|h|\) for all sufficiently
+large \(X\), every \(c_k\) occurring here is nonzero: this is immediate
+for \(k=0\), and \(|kM|>|h|\) for \(k\ne0\).
+All terminal coefficients are interpreted as zero outside the declared
+positive support.  Uniformly on that support,
+\begin{equation}
+ |c_k|+d_\alpha n_{\alpha,j,k}\le X^{C_0}
+ \label{eq:tpc43-polynomial-support}
+\end{equation}
+for one fixed \(C_0\).
+
+The source coefficient factors as
+\begin{equation}
+ \gamma_\alpha^{(i)}
+ =\mu(d_\alpha)\gamma_\alpha^{\circ,(i)},
+ \qquad i=1,2,
+ \label{eq:tpc43-strip-source-mobius}
+\end{equation}
+where \(\gamma^{\circ,(i)}\) contains the source logarithm, smooth
+weight, and fixed residue data, but no M\"obius sign.  After also stripping
+the target M\"obius sign, define deterministic coefficients
+\begin{equation}
+ a^L_{\alpha,\gamma,j,k}
+ :=-\gamma_\alpha^{\circ,(1)}
+   \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+   \log(n_{\alpha,j,k})\Phi_0(n_{\alpha,j,k}),
+ \label{eq:tpc43-deterministic-left-atom}
+\end{equation}
+again set to zero outside the terminal support.  Then the physical left
+column is exactly
+\begin{equation}
+ [\mathscr T_k^L]_{\gamma,j}
+ =\sum_\alpha
+ a^L_{\alpha,\gamma,j,k}
+ \mu(d_\alpha)\mu(n_{\alpha,j,k}).
+ \label{eq:tpc43-physical-left}
+\end{equation}
+The right column has coefficients
+\(a^R_{\alpha,\gamma,j,k}\) obtained by exchanging the two row systems.
+Conditional on the inherited row geometry and terminal support, no
+additional structural assumption is made on the deterministic complex
+values \(a^{L/R}\); in particular, they are independent of the
+prime--sign environment.
+
+Define the atomic diagonals
+\begin{align}
+ \cD_{k,L}
+ &:=\sum_{\gamma,j,\alpha}
+ |a^L_{\alpha,\gamma,j,k}|^2
+ \mu^2(n_{\alpha,j,k}),
+ \label{eq:tpc43-left-diagonal}\\
+ \cD_0&:=\cD_{0,L}+\cD_{0,R},
+ &
+ \cD_{\rm tr}
+ &:=\sum_{k\in\cI_B}(\cD_{k,L}+\cD_{k,R}).
+ \label{eq:tpc43-total-diagonals}
+\end{align}
+TPC--41 and TPC--42 give
+\begin{align}
+ \cD_0&\ll X^{o(1)}Q^2J,
+ \label{eq:tpc43-inherited-zero-diagonal}\\
+ \cD_{\rm tr}&\ll X^{o(1)}Q^2JK_B.
+ \label{eq:tpc43-inherited-trace-diagonal}
+\end{align}
+The physical equality target is
+\begin{equation}
+ \|\mathscr T_0^L\|^2+\|\mathscr T_0^R\|^2
+ \ll X^{o(1)}K_BQ^2J,
+ \label{eq:tpc43-physical-zero-target}
+\end{equation}
+while the stronger trace target is
+\begin{equation}
+ \sum_{k\in\cI_B}
+ \bigl(\|\mathscr T_k^L\|^2+\|\mathscr T_k^R\|^2\bigr)
+ \ll X^{o(1)}Q^2JK_B.
+ \label{eq:tpc43-physical-trace-target}
+\end{equation}
+These two estimates are not assumed.
