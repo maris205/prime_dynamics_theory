@@ -1,0 +1,135 @@
+\section{The relocated gate}
+\label{sec:tpc42-next-gate}
+
+The two candidate shortcuts considered in TPC--41 now have exact
+endpoints.  The scalar progression direction postcomposes through every
+bounded residue-synchronous Bessel map on the reduced-residue sector, but
+the actual terminal vectors
+are orthogonal rather than synchronous within each residue fiber.  The
+localized convolution completes exactly, but its boundary is the
+negative local cell rather than a smaller error.  Neither conclusion is
+heuristic.
+
+\subsection{Changing only the alias modulus does not move the equality column}
+
+Fix a common inherited physical row set, coefficient field, and terminal
+support, and vary only the auxiliary modulus used in the alias shifts.
+Attach that modulus to the notation and write
+\(\mathscr T_k^L(M)\) for the output in
+\eqref{eq:tpc42-left-column}.  The coefficients \(c^L\) are inherited
+before the additive alias bank is introduced, and \(kM\) is the only
+occurrence of \(M\) in the terminal target.
+
+\begin{proposition}[Equality-column invariance]
+\label{prop:tpc42-equality-column-invariance}
+For every two admissible auxiliary triples \(M,M'\) applied to this same
+physical coefficient field and support,
+\begin{equation}
+ \boxed{
+ \mathscr T_0^L(M)=\mathscr T_0^L(M'),
+ \qquad
+ \mathscr T_0^R(M)=\mathscr T_0^R(M').}
+ \label{eq:tpc42-equality-column-invariance}
+\end{equation}
+Consequently, for every nonempty finite admissible family
+\(\mathfrak M\),
+\begin{equation}
+ \frac1{|\mathfrak M|}\sum_{M\in\mathfrak M}
+ \left(
+  \|\mathscr T_0^L(M)\|^2+
+  \|\mathscr T_0^R(M)\|^2
+ \right)
+ =\|\mathscr T_0^L\|^2+
+  \|\mathscr T_0^R\|^2.
+ \label{eq:tpc42-equality-average-invariant}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+At \(k=0\),
+\(n_{\alpha,j,0}=m_\alpha j+h\), independently of \(M\).  The
+coefficient in \eqref{eq:tpc42-left-c} is also independent of the
+auxiliary triple.  This proves the two vector identities and hence their
+averaged norm identity.
+\end{proof}
+
+Thus an average of a nonnegative complete physical energy over auxiliary
+triples can be useful only if it directly bounds the common equality
+column or supplies information on an \(M\)-dependent defect that can be
+transferred back to it.  Merely selecting the smallest member of the
+average cannot make the equality column smaller.  Nonzero aliases do
+depend on \(M\), so a future averaged theorem may still use them; the
+proposition closes only the naive equality-selection argument.
+
+The common-field qualification is substantive.  If a construction
+reselects residue masks, active rows, or a regular subpacket separately
+for each modulus, then those data are part of the \(M\)-dependence and
+\cref{prop:tpc42-equality-column-invariance} does not apply.  The
+all-residue identities of \cref{sec:tpc42-residue-orthogonality} avoid
+such an implicit pruning.
+
+\subsection{The exact positive continuation}
+
+After projective separation, the direct route is the restricted
+orbit--slope Bessel estimate
+\eqref{eq:tpc42-orbit-slope-equality-target}.  In expanded form, its
+off--diagonal is a weighted average of the affine products
+\begin{equation}
+ \mu(d_\alpha)\mu(d_\beta)
+ \mu(m_\alpha j+h)\mu(m_\beta j+h),
+ \qquad \alpha\ne\beta,
+ \label{eq:tpc42-next-four-mobius}
+\end{equation}
+with the actual TPC--36 masks and source weights.  The two target affine
+forms are nonproportional, but their slopes and coefficients grow with
+\(X\).  Existing fixed-form or dense-shift theorems do not supply the
+uniform weighted estimate.
+
+There are three now sharply separated subroutes.
+\begin{enumerate}[label=(\alph*)]
+ \item \textbf{Direct cross-residue dispersion.}
+ Prove \eqref{eq:tpc42-orbit-slope-equality-target} for the declared
+ projective layers by a bilinear or Bessel inequality that uses the
+ source signs, the affine determinants, and the orbit average jointly.
+ This is the shortest route to the physical equality column.
+
+ \item \textbf{Average the canonical defect itself.}
+ For each admissible triple, estimate
+ \begin{equation}
+  \|T_G(I-\Pi_w)\mu\|^2
+  \label{eq:tpc42-next-averaged-defect}
+ \end{equation}
+ rather than a scalar residue variance.  Positivity can then select a
+ good triple for an \(M\)-dependent alias family.  By
+ \cref{lem:tpc42-density-loss}, restriction from a dense modulus or
+ shift average needs more than three powers of logarithmic saving unless
+ the theorem is proved directly on the triple-prime family.
+
+ \item \textbf{Recombine localization before taking the Hilbert norm.}
+ The three-face completion of
+ \cref{thm:tpc42-three-face-completion} cannot treat one local cell.
+ A different argument could seek cancellation among a complete signed
+ partition of all dyadic cells \emph{before} squaring.  Such a theorem
+ must retain the physical \((\gamma,j)\) coordinates; scalar convolution
+ after those coordinates have been summed is insufficient.
+\end{enumerate}
+
+The first route is the next minimal theorem.  The second is a genuine
+selection problem with an explicit density threshold.  The third changes
+the order of localization and Hilbert synthesis and is therefore a
+different architecture, not a repair of the small-boundary argument.
+
+\subsection{Claim boundary}
+
+This paper proves no bound of the form
+\eqref{eq:tpc42-orbit-slope-equality-target} or
+\eqref{eq:tpc42-orbit-slope-trace-target}.  It does not prove
+cancellation for an individual pair of growing affine forms, a
+fixed-shift Chowla theorem, a diagonal-scale raw scalar progression
+variance, or the physical four--M\"obius estimate
+\eqref{eq:tpc42-inherited-gate}.  The countermodels rule out universal
+black-box implications; they do not assert that the actual M\"obius
+coefficients saturate those models.  The convolution lower bound concerns
+an unmasked coefficient cell; it is not a lower bound for the signed
+terminal output.  In particular, no sieve-parity breach,
+Hardy--Littlewood asymptotic, or infinitude of twin primes is claimed.

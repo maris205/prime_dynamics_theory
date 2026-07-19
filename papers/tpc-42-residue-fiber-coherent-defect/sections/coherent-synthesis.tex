@@ -1,0 +1,199 @@
+\section{The coherent residue-synthesis defect}
+\label{sec:tpc42-coherent-synthesis}
+
+The identities of the preceding section interchange the usual roles of
+progression and output coordinates.  A scalar progression estimate sums
+down a fixed residue fiber.  The physical norm keeps that direction
+orthogonal and instead sums across distinct residues at each orbit-time
+coordinate.
+
+\subsection{The sharp deterministic overlap bound}
+
+For a fixed left alias define the active row overlap
+\begin{equation}
+ R_{k,L}
+ :=\max_{\gamma,j}
+ \#\{\alpha:
+ c^L_{\alpha,\gamma,j}b_{\alpha,j,k}\ne0\}.
+ \label{eq:tpc42-fixed-k-overlap}
+\end{equation}
+For the folded bank, let
+\begin{equation}
+ R_{\rm fold,L}
+ :=\max_{\gamma,j,s}
+ \#\{\alpha:
+ c^L_{\alpha,\gamma,j}u_{\alpha,j,s}\ne0\}.
+ \label{eq:tpc42-folded-overlap}
+\end{equation}
+Both are at most the inherited active row count and hence
+\begin{equation}
+ R_{k,L}+R_{\rm fold,L}\ll X^{o(1)}Q.
+ \label{eq:tpc42-overlap-Q}
+\end{equation}
+Define the right overlaps symmetrically.
+
+\begin{proposition}[Deterministic coherent synthesis]
+\label{prop:tpc42-deterministic-synthesis}
+One has
+\begin{align}
+ \|\mathscr T_k^L\|^2
+ &\le R_{k,L}\cD_{k,L},
+ \label{eq:tpc42-fixed-k-overlap-bound}\\
+ \cE_{\rm fold,L}
+ &\le R_{\rm fold,L}\cE_{\rm same,L}.
+ \label{eq:tpc42-folded-overlap-bound}
+\end{align}
+The constants are sharp for abstract packets with the declared overlap
+numbers.
+\end{proposition}
+
+\begin{proof}
+Fix \((\gamma,j)\).  By
+\eqref{eq:tpc42-distinct-rows-distinct-residues}, the nonzero row terms at
+this coordinate occupy distinct target residues.  Cauchy--Schwarz gives
+\begin{equation}
+ \left|\sum_a[\mathbf V_{k,a}^L]_{\gamma,j}\right|^2
+ \le R_{k,L}\sum_a
+ |[\mathbf V_{k,a}^L]_{\gamma,j}|^2.
+ \label{eq:tpc42-coordinate-Cauchy}
+\end{equation}
+Sum over \((\gamma,j)\) and use
+\eqref{eq:tpc42-fixed-k-packed-diagonal}.  The same argument at every
+\((\gamma,j,s)\), followed by
+\eqref{eq:tpc42-folded-packed-energy}--
+\eqref{eq:tpc42-folded-coherent-synthesis}, proves the folded bound.
+Equality in coordinatewise Cauchy is possible when all active residue
+contributions have the same phase and modulus, proving abstract
+sharpness.
+\end{proof}
+
+For nonzero packet families \((V_a)\), write their coherent quotient as
+\begin{equation}
+ \mathfrak C(V)
+ :=\frac{\|\sum_aV_a\|^2}{\sum_a\|V_a\|^2}.
+ \label{eq:tpc42-coherent-quotient}
+\end{equation}
+The proposition gives \(\mathfrak C\le X^{o(1)}Q\) without arithmetic
+cancellation.  The uniform diagonal-normalized equality-column route has
+the sufficient benchmark
+\begin{equation}
+ \mathfrak C(\mathbf V_{0,\bullet}^L\oplus
+             \mathbf V_{0,\bullet}^R)
+ \ll X^{o(1)}K_B.
+ \label{eq:tpc42-equality-required-coherence}
+\end{equation}
+Indeed, the inherited fixed-alias diagonal estimate is
+\begin{equation}
+ \cD_{0,L}+\cD_{0,R}\ll X^{o(1)}Q^2J.
+ \label{eq:tpc42-equality-diagonal}
+\end{equation}
+The deterministic bound therefore gives only
+\begin{equation}
+ \|\mathscr T_0^L\|^2+\|\mathscr T_0^R\|^2
+ \ll X^{o(1)}Q^3J,
+ \label{eq:tpc42-equality-coherent-scale}
+\end{equation}
+whereas the target is
+\begin{equation}
+ K_BQ^2J
+ =X^{o(1)}\frac{Q^3}{J}.
+ \label{eq:tpc42-equality-target-scale}
+\end{equation}
+Thus the gap between the deterministic overlap bound and this sufficient
+endpoint benchmark is
+\begin{equation}
+ \boxed{\frac Q{K_B}=X^{o(1)}J^2.}
+ \label{eq:tpc42-exact-J2-defect}
+\end{equation}
+
+For the complete minimal-folded route, the packed energy is already
+\(O(X^{o(1)}Q^2JK_B)\) by
+\eqref{eq:tpc42-packed-vector-target}.  The corresponding uniform
+diagonal-normalized positive route has the sufficient benchmark of an
+\(X^{o(1)}\)-scale coherent quotient after summing over buckets.  The
+universal overlap estimate loses \(Q\).  The
+logically weakest continuation remains the signed one-sided estimate
+\eqref{eq:tpc42-inherited-gate}; it need not bound the absolute value of
+every cross-residue inner product.
+
+\subsection{A sharp scalar-blind countermodel}
+
+The following model incorporates the exact orthogonality direction of the
+physical packet.  It shows that even perfect scalar cancellation in every
+residue does not control the coherent synthesis between residues.
+
+\begin{theorem}[Zero scalar variance with maximal coherent defect]
+\label{thm:tpc42-scalar-blind-countermodel}
+For every integer \(R\ge1\), there is a two-point atom fiber over each of
+\(R\) residues such that:
+\begin{enumerate}[label=(\roman*)]
+ \item the two Hilbert atoms in every residue fiber are orthogonal;
+ \item the scalar sum in every residue is zero;
+ \item every Hilbert coordinate has overlap \(R\); and
+ \item the coherent synthesis quotient is exactly \(R\).
+\end{enumerate}
+More explicitly, let \(e_+,e_-\) be an orthonormal basis of \(\C^2\),
+put
+\begin{equation}
+ G_{a,+}=e_+,
+ \qquad
+ G_{a,-}=e_-,
+ \qquad
+ x_{a,+}=1,
+ \qquad
+ x_{a,-}=-1
+ \label{eq:tpc42-countermodel-atoms}
+\end{equation}
+for \(1\le a\le R\).  Then
+\begin{align}
+ (Px)_a&=x_{a,+}+x_{a,-}=0,
+ \label{eq:tpc42-countermodel-scalar-zero}\\
+ V_a&=x_{a,+}G_{a,+}+x_{a,-}G_{a,-}=e_+-e_-,
+ \label{eq:tpc42-countermodel-packets}\\
+ \sum_a\|V_a\|^2&=2R,
+ &
+ \left\|\sum_aV_a\right\|^2&=2R^2.
+ \label{eq:tpc42-countermodel-sharpness}
+\end{align}
+\end{theorem}
+
+The coefficient kernel in this model may be taken constant, so its
+bounded projective norm is one.  Thus low projective complexity does not
+remove the obstruction.  In particular, any universal estimate of the
+form
+\begin{equation}
+ \left\|\sum_aV_a\right\|^2
+ \le C\left(
+ K_B\sum_a\|V_a\|^2+\|Px\|_2^2
+ \right)
+ \label{eq:tpc42-impossible-scalar-lift}
+\end{equation}
+must have
+\begin{equation}
+ C\ge\frac R{K_B}.
+ \label{eq:tpc42-countermodel-lower-bound}
+\end{equation}
+On an abstract dense endpoint packet with \(R=X^{o(1)}Q\), this saturates
+the same \(J^2\) ratio relative to the sufficient benchmark in
+\eqref{eq:tpc42-exact-J2-defect}.
+
+There are in fact two independent reasons why the scalar theorem of
+TPC--41 cannot be inserted as a black box.  First, that theorem concerns
+the complete scalar sum in a residue class; a fixed physical alias keeps
+only the integers represented by \(r=m_\alpha j\), and scalar cancellation
+is not hereditary under such a deletion.  Second, even a hypothetical
+zero scalar sum on the exact represented subset is compatible with the
+maximal vector defect in
+\cref{thm:tpc42-scalar-blind-countermodel}.  The first issue is support;
+the second is Hilbert geometry.
+
+\begin{remark}[Arithmetic claim boundary]
+\label{rem:tpc42-countermodel-boundary}
+The countermodel is not asserted to be realized by the actual M\"obius
+values on the TPC packet.  It proves that scalar residue variance,
+residue-fiber orthogonality, bounded projective norm, and the deterministic
+row ledgers do not logically imply the required physical estimate.  A
+theorem exploiting the actual source signs \(\mu(d_\alpha)\), the target
+signs \(\mu(m_\alpha j+h+kM)\), or an averaged auxiliary modulus remains
+possible and is precisely the coefficient-specific continuation.
+\end{remark}

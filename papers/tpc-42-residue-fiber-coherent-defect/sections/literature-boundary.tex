@@ -1,0 +1,196 @@
+\section{Sparse families, dense shifts, and the exact selection loss}
+\label{sec:tpc42-literature-boundary}
+
+We place the preceding operator statement against three neighboring
+parts of the literature.  The purpose is not to claim a new general
+large sieve, but to identify which existing average can actually select
+an admissible TPC modulus or shift.
+
+\subsection{Sparse moduli: what is already available}
+
+Large--sieve and Bombieri--Vinogradov theory for sparse sets of moduli is
+well established.  Baier's general sparse large sieve requires
+quantitative distribution of the modulus set in arithmetic progressions
+\citep{Baier2006SparseLargeSieve}.  Baier and Zhao prove, among other
+results, a Barban--Davenport--Halberstam theorem for a well--distributed
+set \(\mathcal S\) satisfying a divisor--slice stability condition and
+\begin{equation}
+ |\mathcal S(Q)|\gg Q^{1/2},
+ \qquad Q\le x^{1-\varepsilon};
+ \label{eq:tpc42-baier-zhao-cardinality-range}
+\end{equation}
+see \citet[Theorem~1]{BaierZhao2006}.  These hypotheses are substantive,
+not consequences of cardinality alone.
+
+For the three disjoint prime intervals used here,
+\begin{equation}
+ |\mathfrak M_X|
+ \asymp\frac{M_0}{(\log X)^3},
+ \qquad M_0=X^{399/400},
+ \label{eq:tpc42-literature-family-density}
+\end{equation}
+so the numerical size condition in
+\eqref{eq:tpc42-baier-zhao-cardinality-range} is more than satisfied,
+and \(M_0\le X^{1-\varepsilon}\) for every fixed
+\(0<\varepsilon<1/400\).  A direct invocation would still require a
+proof that this exact three--interval product family is well distributed
+and satisfies the divisor--slice hypothesis.  There is also a
+quantifier issue: the cited formulation starts from one fixed set of
+natural numbers, whereas the three prime intervals here move with \(X\).
+One must either embed the moving slices in a fixed set or verify that the
+proof is uniform for this scale--dependent family; a finite dyadic
+decomposition is also needed if the product window crosses dyadic
+boundaries.  Moreover, the cited
+Barban--Davenport--Halberstam theorem concerns the scalar prime error.
+The standard sparse large sieve likewise acts on one common scalar
+coefficient sequence.  Neither statement permits the modulus--dependent
+within--fiber physical coefficient field encoded by \(T_G\) and its
+canonical projector to be inserted into that scalar sequence for free.
+
+Two further comparisons prevent an inflated novelty claim.  Iwaniec
+obtains true--order large--sieve estimates for prime moduli when the
+common scalar coefficients are supported on integers without small prime
+factors \citep{Iwaniec2022PrimeModuli}; this is not a theorem for products
+of three primes with moving Hilbert coefficients.  As a recent comparison
+for factorable moduli, \citet{Li2026LargeModuli} proves prime
+mean--value theorems for bilinear modulus forms up to \(x^{9/17}\) and
+trilinear modulus forms up to \(x^{17/32}\).  Those results concern scalar
+prime distribution and their trilinear exponent is far below
+\(399/400\).  Accordingly, we claim neither a first sparse
+triple--prime BDH theorem nor a new general almost--prime--modulus large
+sieve.
+
+\subsection{An exact density--loss lemma}
+
+The elementary loss incurred by restricting a dense average is already
+decisive at the present logarithmic density.
+
+\begin{lemma}[Sharp restriction threshold]
+\label{lem:tpc42-density-loss}
+Let \(\Omega_X\) be a finite ambient family, let
+\(\mathcal S_X\subseteq\Omega_X\) have relative density
+\(\delta_X=|\mathcal S_X|/|\Omega_X|\), and let
+\(E_X:\Omega_X\to[0,\infty)\).  Then
+\begin{equation}
+ \frac1{|\mathcal S_X|}\sum_{s\in\mathcal S_X}E_X(s)
+ \le
+ \delta_X^{-1}
+ \frac1{|\Omega_X|}\sum_{s\in\Omega_X}E_X(s).
+ \label{eq:tpc42-exact-density-loss}
+\end{equation}
+The factor \(\delta_X^{-1}\) is best possible without additional
+information on the placement of \(\mathcal S_X\).
+\end{lemma}
+
+\begin{proof}
+Positivity gives
+\(\sum_{s\in\mathcal S_X}E_X(s)
+\le\sum_{s\in\Omega_X}E_X(s)\), which is
+\eqref{eq:tpc42-exact-density-loss} after division.  Equality in the loss
+is attained by a function supported on \(\mathcal S_X\).
+\end{proof}
+
+For the family in \eqref{eq:tpc42-literature-family-density},
+\(\delta_X\asymp(\log X)^{-3}\) inside a fixed--proportion dyadic modulus
+window.  Therefore a dense nonnegative estimate
+\begin{equation}
+ \frac1{|\Omega_X|}\sum_{s\in\Omega_X}E_X(s)
+ \ll \frac{\mathsf T_X}{(\log X)^A}
+ \label{eq:tpc42-dense-average-saving}
+\end{equation}
+implies only
+\begin{equation}
+ \frac1{|\mathfrak M_X|}\sum_{M\in\mathfrak M_X}E_X(M)
+ \ll \frac{\mathsf T_X}{(\log X)^{A-3}}.
+ \label{eq:tpc42-triple-family-threshold}
+\end{equation}
+Thus \(A>3\) is the exact black--box threshold for a residual logarithmic
+saving, \(A\ge3+\sigma\) is needed for a prescribed
+\((\log X)^{-\sigma}\) saving, and a qualitative
+\(o(\mathsf T_X)\) conclusion on the sparse family requires a dense bound
+\(o(\mathsf T_X/(\log X)^3)\).
+The same calculation applies to any nonnegative average of the canonical
+Hilbert defect.  It is a selection threshold, not an estimate for that
+defect.
+
+\subsection{What dense shift estimates do and do not select}
+
+The averaged Chowla theorem of
+\citet{MatomakiRadziwillTao2015} averages over full boxes of integer
+shifts.  Polynomial variants also exist: \citet{Frantzikinakis2018}
+treats independent polynomial shifts in a qualitative uniform--density
+framework.  These results are important prior art for product--shaped
+shift parameters.  A prime--restricted parameter box is a zero--density
+subset of the full integer box, so a qualitative dense convergence
+statement alone cannot select it.  Stronger exceptional--set theorems
+must, however, be considered separately.
+
+For shifted primes, the comparison can be made numerical.  If
+\(H=X^{\vartheta}\), \(0<\vartheta<1\), then
+\citet[Theorem~1.1]{Lichtman2022} proves, for every \(\eta>0\),
+\begin{equation}
+ \sum_{h\le H}
+ \left|\sum_{p\le X}\mu(p+h)\right|
+ \ll_{\vartheta,\eta}
+ \frac{H\pi(X)}{(\log X)^{1/3-\eta}}.
+ \label{eq:tpc42-lichtman-dense-saving}
+\end{equation}
+Restricting this nonnegative sum to a prescribed shift set of relative
+density \((\log X)^{-3}\) loses \((\log X)^3\) by
+\cref{lem:tpc42-density-loss}.  The resulting average is bounded only by
+\(\pi(X)(\log X)^{8/3+\eta}\), not by \(o(\pi(X))\).  In exponent language,
+the available dense saving is \(1/3-\eta\), while black--box selection of
+the triple--prime subset requires a saving strictly greater than \(3\):
+the deficit of this particular first--moment bound is \(8/3+\eta\).
+This calculation is not a limitation of Lichtman's full result.
+
+Indeed, \citet[Theorem~6.3]{Lichtman2022} proves a much sharper
+exceptional--set statement.  Write \(\log_2 X=\log\log X\) and suppose
+\(\log H/\log_2 X\to\infty\).  For fixed \(h_2,\ldots,h_k\le H\),
+\(g_1=\mu\), and fixed \(1\)-bounded \(g_2,\ldots,g_k\), the
+shifted-prime correlation is \(o(\pi(X))\) for
+all but
+\begin{equation}
+ O_K\bigl(H(\log X)^{-K}\bigr)
+ \label{eq:tpc42-lichtman-exceptional-set}
+\end{equation}
+values of \(h_1\le H\), for every \(K>0\).  Consequently, taking \(K>3\)
+does select a good shift from any prescribed scalar shift set of size
+\(\gg H/(\log X)^3\).  Corollary~1.5 of the same paper gives the
+corresponding arbitrary logarithmic exceptional saving for fixed-order
+scalar M\"obius tuples.  Thus selection of a triple--prime subset in a
+pure scalar shifted-prime problem is already available and is not the
+TPC--42 gap.
+
+The hybrid theorem of \citet{LichtmanTeravainen2022}, in its stated
+parameter ranges, further inserts fixed M\"obius shifts and fixed prime
+offsets and obtains cancellation for almost all choices of one shift
+once \(H\ge(\log X)^{\ell+\varepsilon}\).  What neither theorem supplies
+is one estimate uniform over the TPC family of coefficient fields:
+the modulus changes the residue fibers and their canonical projector,
+and every nonzero alias changes the terminal argument.  The row slopes,
+projective masks, and retained Hilbert coordinates are additional
+structure absent from the scalar theorem even when they are held fixed;
+they may also vary if a regular subpacket is reselected with the modulus.
+In particular, a scalar good shift chosen for one fixed
+collection of \(g_j\) does not bound the nonnegative moving quantity
+\(\|T_{G_M}(I-\Pi_{w,M})\mu\|_{\Hh}^{2}\) averaged over \(M\).
+
+\subsection{The claim boundary}
+
+The positive result of \cref{sec:tpc42-hilbert-large-sieve} is exactly a
+dimension--free postcomposition of the scalar residue vector already
+proved in TPC--41.  Its useful new role in the present paper is to
+transfer, simultaneously, the inherited estimate through every
+residue--synchronous Bessel synthesis and to locate the within--fiber
+directional defect, whose physical synthesis appears as cross--residue
+coherence.  It is
+not a vector extension of the arithmetic theorem of
+Klurman--Mangerel--Ter\"av\"ainen, and it does not prove a new sparse
+modulus or sparse shift mean--value theorem.  Conversely,
+\cref{lem:tpc42-density-loss} shows exactly what a future route must add:
+either direct information on the declared triple--prime family, or more
+than three powers of logarithmic saving in a nonnegative ambient average
+of that same canonical defect, before it can be selected by restriction
+alone.  Scalar shift estimates, even with a smaller exceptional set, are
+not such a defect estimate.

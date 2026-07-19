@@ -1,0 +1,266 @@
+\section{Localized convolution completion is an exact counterterm}
+\label{sec:tpc42-convolution-counterterm}
+
+The full identity
+\(
+ \Lambda*\mu*\one=\Lambda
+\)
+does not make one dyadic factorization cell an approximation to
+\(\Lambda\).  In the present scales the precise opposite statement holds:
+the complementary divisor faces sum to the negative of the local cell on
+the physical product window.  We formulate this before inserting any
+arithmetic estimate.
+
+\subsection{The three-face identity}
+
+Let \(\delta_1\) denote the identity for Dirichlet convolution.  Let
+\(\lambda_L\) be any finitely supported arithmetic function, let
+\(\mu_D\) be any finitely supported truncation of \(\mu\), and let
+\(u_J\) be any finitely supported orbit cutoff.  In the physical
+specialization,
+\begin{equation}
+ \lambda_L(p)=(\log p)w_L(p/L_0)
+ \quad(p\ \text{prime}),
+ \qquad
+ \mu_D(d)=\mu(d)w_D(d/D_0),
+ \qquad
+ u_J(j)=w_J(j/J),
+ \label{eq:tpc42-counterterm-physical-functions}
+\end{equation}
+and \(\lambda_L\) vanishes away from the prime source interval.  Define
+\begin{align}
+ A&:=\lambda_L*\mu_D*u_J,
+ \label{eq:tpc42-counterterm-A}\\
+ B_D&:=\lambda_L*(\mu-\mu_D)*\one,
+ \label{eq:tpc42-counterterm-BD}\\
+ B_J&:=\lambda_L*\mu_D*(\one-u_J).
+ \label{eq:tpc42-counterterm-BJ}
+\end{align}
+The complements in \eqref{eq:tpc42-counterterm-BD} and
+\eqref{eq:tpc42-counterterm-BJ} need not be finitely supported.  Every
+convolution value at a fixed integer is nevertheless a finite divisor
+sum.
+
+\begin{theorem}[Exact three-face completion]
+\label{thm:tpc42-three-face-completion}
+For every positive integer \(n\),
+\begin{equation}
+ \boxed{A(n)+B_D(n)+B_J(n)=\lambda_L(n).}
+ \label{eq:tpc42-three-face-identity}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Using \(\mu*\one=\delta_1\) and associativity gives
+\begin{align*}
+ A+B_D+B_J
+ &=\lambda_L*
+ \bigl[
+   \mu_D*u_J+(\mu-\mu_D)*\one
+   +\mu_D*(\one-u_J)
+ \bigr]\\
+ &=\lambda_L*(\mu*\one)
+ =\lambda_L*\delta_1
+ =\lambda_L.
+\end{align*}
+\end{proof}
+
+The ordering of the two boundary terms is deliberate.  For hard
+cutoffs, \(B_D\) first takes the complementary \(d\)-range with all
+\(j\), while \(B_J\) retains the physical \(d\)-range and takes the
+complementary \(j\)-range.  Thus there is no overlap ambiguity.  Smooth
+cutoffs give the same identity with a weighted partition.
+
+\subsection{The physical-window counterterm}
+
+Assume that, for fixed positive dyadic constants,
+\begin{equation}
+ \operatorname{supp}\lambda_L\subset[c_LL_0,C_LL_0],
+ \quad
+ \operatorname{supp}\mu_D\subset[c_DD_0,C_DD_0],
+ \quad
+ \operatorname{supp}u_J\subset[c_JJ,C_JJ],
+ \label{eq:tpc42-counterterm-supports}
+\end{equation}
+where
+\begin{equation}
+ L_0D_0J\asymp X,
+ \qquad
+ D_0J\longrightarrow\infty.
+ \label{eq:tpc42-counterterm-product-scale}
+\end{equation}
+There are fixed \(0<c_X<C_X\) such that the local convolution \(A\) is
+supported in
+\begin{equation}
+ W_X=[c_XX,C_XX]\cap\N.
+ \label{eq:tpc42-counterterm-window}
+\end{equation}
+For all sufficiently large \(X\), this window is disjoint from
+\(\operatorname{supp}\lambda_L\).
+
+\begin{corollary}[The boundary is the negative local cell]
+\label{cor:tpc42-physical-window-counterterm}
+On the physical product window,
+\begin{equation}
+ \boxed{
+  \one_{W_X}(B_D+B_J)=-\one_{W_X}A.}
+ \label{eq:tpc42-physical-window-counterterm}
+\end{equation}
+Consequently,
+\begin{align}
+ \|B_D+B_J\|_{\ell^2(W_X)}
+ &=\|A\|_{\ell^2(W_X)},
+ \label{eq:tpc42-counterterm-norm-equality}\\
+ \|B_D\|_{\ell^2(W_X)}^2
+ +\|B_J\|_{\ell^2(W_X)}^2
+ &\ge \frac12\|A\|_{\ell^2(W_X)}^2.
+ \label{eq:tpc42-counterterm-face-energy}
+\end{align}
+In particular, at least one of the two boundary faces has squared norm at
+least \(\|A\|_{\ell^2(W_X)}^2/4\).
+\end{corollary}
+
+\begin{proof}
+Restrict \eqref{eq:tpc42-three-face-identity} to \(W_X\), where
+\(\lambda_L\) vanishes.  This proves
+\eqref{eq:tpc42-physical-window-counterterm} and
+\eqref{eq:tpc42-counterterm-norm-equality}.  The inequality
+\(\|x+y\|^2\le 2\|x\|^2+2\|y\|^2\) proves
+\eqref{eq:tpc42-counterterm-face-energy}.
+\end{proof}
+
+The counterterm statement is unchanged by terminal multiplication and
+Hilbert postcomposition.
+
+\begin{proposition}[Arbitrary Hilbert multiplier]
+\label{prop:tpc42-counterterm-Hilbert-multiplier}
+This proposition concerns the grouped-product scalarization; it does not
+identify a representation-dependent physical mask with a function of
+the grouped product \(n\).
+Let \(\Hh\) be a Hilbert space and let
+\(v:W_X\to\Hh\) be arbitrary.  All sums below are finite.  Then
+\begin{equation}
+ \boxed{
+ \sum_{n\in W_X}(B_D+B_J)(n)v(n)
+ =-\sum_{n\in W_X}A(n)v(n).}
+ \label{eq:tpc42-counterterm-Hilbert-multiplier}
+\end{equation}
+This remains true for each admissible alias after taking, on the positive
+terminal support,
+\begin{equation}
+ v(n)=
+ \mu(n+h+kM)\log(n+h+kM)
+ \Phi_0(n+h+kM)z(n),
+ \qquad z(n)\in\Hh.
+ \label{eq:tpc42-counterterm-terminal-multiplier}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Multiply the pointwise identity
+\eqref{eq:tpc42-physical-window-counterterm} by \(v(n)\) and sum.
+No boundedness or regularity of \(v\) is required because \(W_X\) is
+finite.
+\end{proof}
+
+Thus an estimate for the combined boundary output in
+\eqref{eq:tpc42-counterterm-Hilbert-multiplier} is exactly an estimate for
+the original localized output.  Completion has not replaced the local
+gate by a smaller error.
+
+\subsection{Why the completed \texorpdfstring{\(\Lambda\)}{Lambda} term cancels}
+
+The same calculation locates the apparent shifted-prime term.  Since
+\(f*\mu*\one=f\) for every arithmetic function \(f\),
+\begin{equation}
+ \boxed{
+ \Lambda=(\Lambda-\lambda_L)+A+B_D+B_J.}
+ \label{eq:tpc42-full-Lambda-decomposition}
+\end{equation}
+Indeed, the first term is
+\((\Lambda-\lambda_L)*\mu*\one\), while the other three terms are the
+three-face expansion of \(\lambda_L*\mu*\one\).
+
+\begin{corollary}[Source-complement cancellation]
+\label{cor:tpc42-source-complement-cancellation}
+On the physical window one has the two separate identities
+\begin{align}
+ \one_{W_X}(\Lambda-\lambda_L)&=\one_{W_X}\Lambda,
+ \label{eq:tpc42-source-complement-Lambda}\\
+ \one_{W_X}(A+B_D+B_J)&=0.
+ \label{eq:tpc42-source-complement-cancellation}
+\end{align}
+Thus, after multiplication by any grouped-product Hilbert multiplier and
+summation, the completed \(\Lambda\) contribution is carried entirely by
+the source-complement term, while the three local faces cancel among
+themselves.  Equivalently, moving the local cell to the other side leaves
+\(A=-(B_D+B_J)\).
+\end{corollary}
+
+This is an algebraic obstruction, not a statement that shifted-prime
+estimates are weak.  Even a perfect bound for the completed \(\Lambda\)
+term or its source-complement copy gives no estimate for one local face:
+the second identity in
+\eqref{eq:tpc42-source-complement-cancellation} only cancels the three
+faces collectively.
+
+\subsection{Compatibility with projective mask layers}
+
+The actual row mask is representation-dependent, so it cannot simply be
+inserted as a function of the grouped product \(n\) in
+\eqref{eq:tpc42-three-face-identity}.  After the product-ready
+fixed-column projective separation inherited from TPC--36, however, each
+scalarized layer has the form
+\begin{equation}
+ A_\rho=B_\rho*F_\rho*E_\rho,
+ \label{eq:tpc42-counterterm-projective-layer}
+\end{equation}
+where the three functions carry the source, divisor, and orbit weights of
+that layer.  There is then a layerwise version of the same obstruction.
+
+\begin{proposition}[Unique layerwise completion]
+\label{prop:tpc42-layerwise-counterterm}
+Put
+\begin{equation}
+ C_\rho=F_\rho*E_\rho,
+ \qquad
+ R_\rho=\delta_1-C_\rho.
+ \label{eq:tpc42-layerwise-remainder}
+\end{equation}
+Then \(R_\rho\) is the unique arithmetic function for which
+\(C_\rho+R_\rho=\delta_1\), and
+\begin{equation}
+ A_\rho+B_\rho*R_\rho=B_\rho.
+ \label{eq:tpc42-layerwise-completion}
+\end{equation}
+Consequently, on any window \(W\) disjoint from
+\(\operatorname{supp}B_\rho\),
+\begin{equation}
+ \boxed{
+  \one_W(B_\rho*R_\rho)=-\one_WA_\rho.}
+ \label{eq:tpc42-layerwise-counterterm}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The uniqueness of \(R_\rho\) is immediate from
+\eqref{eq:tpc42-layerwise-remainder}.  Associativity gives
+\[
+ A_\rho+B_\rho*R_\rho
+ =B_\rho*(C_\rho+R_\rho)
+ =B_\rho*\delta_1
+ =B_\rho.
+\]
+Restriction to \(W\) proves
+\eqref{eq:tpc42-layerwise-counterterm}.
+\end{proof}
+
+A low projective reassembly mass controls the cost of summing the layers;
+it does not make the exact counterterms in
+\eqref{eq:tpc42-layerwise-counterterm} small.  Moreover, the scalar
+convolution in \eqref{eq:tpc42-counterterm-projective-layer} has already
+summed the orbit variable.  The physical output retains its
+\((\gamma,j)\) coordinates, so the scalar completion identity does not by
+itself define an inverse on that Hilbert coordinate space.  The results of
+this section therefore rule out a small-boundary shortcut; they do not
+supply, or disprove, the remaining physical cancellation theorem.

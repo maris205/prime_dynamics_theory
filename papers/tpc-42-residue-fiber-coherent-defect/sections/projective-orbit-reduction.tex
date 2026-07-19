@@ -1,0 +1,245 @@
+\section{Projective reduction to an orbit--slope Bessel theorem}
+\label{sec:tpc42-projective-orbit}
+
+The residue obstruction does not make the low projective complexity of
+the physical masks useless.  It tells us exactly what that complexity can
+and cannot reduce.  We now pass from the full Hilbert coefficient to one
+declared arithmetic form on each TPC--36 layer.
+
+\subsection{Exact one-layer norm identity}
+
+Fix one of the fixed number of orbit residue cells produced in TPC--36 and
+replace \(\cJ\) by its intersection with that cell; we keep the notation
+\(\cJ\).  On this fixed cell TPC--36 gives the exact representation
+\begin{equation}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ =\int_\Omega
+ p_\omega(\alpha)q_\omega(\gamma)
+ \eta_\omega(j/J)\,d\nu(\omega),
+ \label{eq:tpc42-projective-representation}
+\end{equation}
+and, for every fixed smoothness order needed below,
+\begin{equation}
+ \int_\Omega
+ \|p_\omega\|_\infty
+ \|q_\omega\|_\infty
+ \|\eta_\omega\|_{C^B}\,d|\nu|(\omega)
+ \ll_B X^{o(1)}.
+ \label{eq:tpc42-projective-mass}
+\end{equation}
+The factors may be normalized to have sup norm at most one, with their
+sizes absorbed into \(d|\nu|\).  Put
+\begin{equation}
+ \Gamma_{\omega,\alpha}
+ :=\gamma_\alpha^{(1)}p_\omega(\alpha).
+ \label{eq:tpc42-layer-source}
+\end{equation}
+The left output of one layer at alias \(k\) is
+\begin{equation}
+ [\mathscr T_{\omega,k}^L]_{\gamma,j}
+ =q_\omega(\gamma)\eta_\omega(j/J)
+  \sum_\alpha\Gamma_{\omega,\alpha}b_{\alpha,j,k}.
+ \label{eq:tpc42-one-layer-output}
+\end{equation}
+
+\begin{proposition}[Exact projective layer reduction]
+\label{prop:tpc42-projective-layer-reduction}
+For every projective layer,
+\begin{align}
+ \|\mathscr T_{\omega,k}^L\|_2^2
+ &=\|q_\omega\|_2^2
+   \sum_{j\in\cJ}
+   |\eta_\omega(j/J)|^2
+   \left|
+    \sum_\alpha\Gamma_{\omega,\alpha}b_{\alpha,j,k}
+   \right|^2,
+ \label{eq:tpc42-layer-fixed-k-identity}\\
+ \sum_{k\in\cI_B}\|\mathscr T_{\omega,k}^L\|_2^2
+ &=\|q_\omega\|_2^2
+   \sum_{j\in\cJ}|\eta_\omega(j/J)|^2
+   \sum_{k\in\cI_B}
+   \left|
+    \sum_\alpha\Gamma_{\omega,\alpha}b_{\alpha,j,k}
+   \right|^2.
+ \label{eq:tpc42-layer-trace-identity}
+\end{align}
+The corresponding layer diagonals are
+\begin{align}
+ \cD_{\omega,k}^L
+ &=\|q_\omega\|_2^2
+   \sum_j|\eta_\omega(j/J)|^2
+   \sum_\alpha
+   |\Gamma_{\omega,\alpha}|^2|b_{\alpha,j,k}|^2,
+ \label{eq:tpc42-layer-fixed-diagonal}\\
+ \cD_{\omega,\rm tr}^L
+ &=\sum_{k\in\cI_B}\cD_{\omega,k}^L.
+ \label{eq:tpc42-layer-trace-diagonal}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+In \eqref{eq:tpc42-one-layer-output}, the dependence on \(\gamma\) is the
+single factor \(q_\omega(\gamma)\).  Square, sum first over \(\gamma\),
+and then over \(j\).  This proves
+\eqref{eq:tpc42-layer-fixed-k-identity}; summing over \(k\) proves the
+trace identity.  Deleting the unequal-row products inside the same
+squares gives \eqref{eq:tpc42-layer-fixed-diagonal} and
+\eqref{eq:tpc42-layer-trace-diagonal}.
+\end{proof}
+
+The proposition shows that Hilbert dualization introduces no mysterious
+new coordinate after projective separation.  It leaves the explicit
+orbit--slope form
+\begin{equation}
+ \sum_{j\in\cJ}w_\omega(j)
+ \left|
+  \sum_\alpha\Gamma_{\omega,\alpha}
+  \mu(m_\alpha j+h+kM)
+  A_k(m_\alpha j)
+ \right|^2,
+ \qquad
+ w_\omega(j)=|\eta_\omega(j/J)|^2.
+ \label{eq:tpc42-orbit-slope-form}
+\end{equation}
+For fixed \(j\), all rows in this sum occupy distinct target residues
+modulo \(M\).  It is therefore a transversal row estimate, not a variance
+inside one arithmetic progression.
+
+The same conclusion follows directly by duality.  If
+\(z=(z_{\gamma,j})\) is a unit vector, then a layer contributes
+\begin{equation}
+ \sum_j\eta_\omega(j/J)
+ \left(\sum_\gamma q_\omega(\gamma)
+       \overline{z_{\gamma,j}}\right)
+ \sum_\alpha\Gamma_{\omega,\alpha}b_{\alpha,j,k},
+ \label{eq:tpc42-layer-duality}
+\end{equation}
+and
+\begin{equation}
+ \sum_j\left|
+  \sum_\gamma q_\omega(\gamma)
+  \overline{z_{\gamma,j}}
+ \right|^2
+ \le\|q_\omega\|_2^2\|z\|_2^2.
+ \label{eq:tpc42-dual-orbit-bound}
+\end{equation}
+Conversely, every orbit vector in the direction of \(q_\omega\) is
+attained.  Thus \eqref{eq:tpc42-layer-fixed-k-identity} is the exact
+duality norm, not a Cauchy majorant.
+
+\subsection{The coefficient-specific continuation}
+
+The direct equality route would follow from the following layer-stable
+estimate:
+\begin{align}
+ &\sum_j|\eta_\omega(j/J)|^2
+ \left|
+  \sum_\alpha\Gamma_{\omega,\alpha}b_{\alpha,j,0}
+ \right|^2
+ \notag\\
+ &\qquad\ll X^{o(1)}K_B
+ \sum_j|\eta_\omega(j/J)|^2
+ \sum_\alpha
+ |\Gamma_{\omega,\alpha}|^2|b_{\alpha,j,0}|^2.
+ \label{eq:tpc42-orbit-slope-equality-target}
+\end{align}
+The cleaner full-trace route asks for
+\begin{align}
+ &\sum_{j,k}|\eta_\omega(j/J)|^2
+ \left|
+  \sum_\alpha\Gamma_{\omega,\alpha}b_{\alpha,j,k}
+ \right|^2
+ \notag\\
+ &\qquad\ll X^{o(1)}
+ \sum_{j,k}|\eta_\omega(j/J)|^2
+ \sum_\alpha
+ |\Gamma_{\omega,\alpha}|^2|b_{\alpha,j,k}|^2.
+ \label{eq:tpc42-orbit-slope-trace-target}
+\end{align}
+Here and below the quantifier ranges only over the projective layers
+actually generated by TPC--36, their fixed residue cells, and the two
+physical row systems.  It does not range over arbitrary bounded source
+coefficients.
+
+\begin{proposition}[Uniform layer theorem implies the endpoint bounds]
+\label{prop:tpc42-layer-to-physical}
+If \eqref{eq:tpc42-orbit-slope-equality-target} holds uniformly on all
+actual normalized layers and residue cells, then
+\begin{equation}
+ \|\mathscr T_0^L\|^2+\|\mathscr T_0^R\|^2
+ \ll X^{o(1)}K_BQ^2J.
+ \label{eq:tpc42-layer-to-equality-endpoint}
+\end{equation}
+If \eqref{eq:tpc42-orbit-slope-trace-target} holds uniformly instead,
+then
+\begin{equation}
+ \sum_{k\in\cI_B}
+ \left(\|\mathscr T_k^L\|^2+\|\mathscr T_k^R\|^2\right)
+ \ll X^{o(1)}Q^2JK_B.
+ \label{eq:tpc42-layer-to-trace-endpoint}
+\end{equation}
+These are absolute endpoint bounds; no comparison with the atomic
+diagonal of the signed reassembled kernel is asserted.
+\end{proposition}
+
+\begin{proof}
+Normalize \(p_\omega,q_\omega,\eta_\omega\) to have sup norm at most one
+and absorb their former sizes into the signed layer measure.  Then its
+total variation is \(P=X^{o(1)}\) by
+\eqref{eq:tpc42-projective-mass}.  Moreover,
+\begin{equation}
+ \|q_\omega\|_2^2\ll X^{o(1)}Q,
+ \qquad
+ \sum_\alpha|\Gamma_{\omega,\alpha}|^2
+ \ll X^{o(1)}Q,
+ \qquad
+ |\cJ|\ll J,
+ \label{eq:tpc42-layer-endpoint-ledgers}
+\end{equation}
+by \eqref{eq:tpc42-source-l2}, \eqref{eq:tpc42-row-counts}, and the
+normalization.  The terminal logarithms cost only \(X^{o(1)}\).
+
+The equality-layer hypothesis and
+\cref{prop:tpc42-projective-layer-reduction} therefore give
+\begin{equation}
+ \|\mathscr T_{\omega,0}^L\|^2
+ \ll X^{o(1)}K_BQ^2J
+ \label{eq:tpc42-one-layer-equality-absolute}
+\end{equation}
+uniformly.  Minkowski's integral inequality costs \(P^2=X^{o(1)}\)
+after squaring and proves the left part of
+\eqref{eq:tpc42-layer-to-equality-endpoint}.  Interchanging the row
+systems gives the right part.
+
+For the trace hypothesis, work in
+\(\ell^2(\cI_B)\otimes\Hh\).  The same three ledgers, now with
+\(|\cI_B|=K_B\), give
+\begin{equation}
+ \sum_k\|\mathscr T_{\omega,k}^L\|^2
+ \ll X^{o(1)}Q^2JK_B.
+ \label{eq:tpc42-one-layer-trace-absolute}
+\end{equation}
+Minkowski in this product Hilbert space again costs only \(P^2\), with no
+additional alias factor.  The fixed residue-cell reassembly is absorbed
+in \(X^{o(1)}\), completing the proof.
+\end{proof}
+
+Normalization before applying the uniform layer theorem is necessary.  A
+bound proved separately after renormalizing each formal layer, followed
+by an absolute count of the
+\(O(D_0)\) Ferrers layers, would reintroduce a polynomial loss.  TPC--36
+supplies small signed projective mass, not a small raw layer count.
+
+\begin{remark}[What projective reduction does not prove]
+\label{rem:tpc42-projective-boundary}
+The constant kernel used in
+\cref{thm:tpc42-scalar-blind-countermodel} is itself a projective layer of
+norm one.  Hence \eqref{eq:tpc42-projective-mass} alone implies neither
+\eqref{eq:tpc42-orbit-slope-equality-target} nor
+\eqref{eq:tpc42-orbit-slope-trace-target}.  The new input must exploit the
+actual arithmetic direction \(\Gamma_{\omega,\alpha}\), including its
+source M\"obius sign, jointly with the target M\"obius values along
+\(m_\alpha j+h+kM\).  Establishing that restricted Bessel theorem would
+be genuine progress beyond scalar progression variance; its statement
+does not claim a parity breach or a prime-pair asymptotic.
+\end{remark}

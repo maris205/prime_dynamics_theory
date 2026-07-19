@@ -1,0 +1,67 @@
+\section{Exact certificate and claim ledger}
+\label{sec:tpc42-certificate}
+
+The arguments above are analytic or exact finite-dimensional identities.
+The companion standard-library certificate checks the finite identities
+with integers, Gaussian integers, rational arithmetic, and exact finite
+Dirichlet convolutions.  It uses no floating point, random draws, or
+optimization-sensitive assertion.
+
+\subsection{Certified identities}
+
+Run from the paper directory
+\begin{verbatim}
+python experiments/tpc42_certificate.py
+python -O experiments/tpc42_certificate.py
+\end{verbatim}
+The two commands produce byte-identical canonical JSON.  The frozen run
+passes
+\begin{equation}
+ \boxed{178{,}226\ \text{exact checks}.}
+ \label{eq:tpc42-certificate-count}
+\end{equation}
+It verifies:
+\begin{enumerate}[label=(\roman*)]
+ \item injectivity of the row-to-residue map on every declared finite
+ orbit slice;
+ \item fixed-alias orthogonality for distinct products in one residue
+ fiber, including nonunit fibers, the exact packed diagonal, and the
+ cross-residue coherent
+ decomposition;
+ \item the corresponding minimal-folded orthogonality, packed energy,
+ coherent energy, and ordered cross-residue identity;
+ \item the \(1/\rho\) synchronous energy and
+ \(1-1/\rho\) canonical defect of orthogonal fibers, together with the
+ sharp zero-scalar countermodels;
+ \item the three-face convolution identity, the physical-window
+ counterterm, outer-prime uniqueness, prime-power support separation, and
+ exact coefficient-energy factorization through the frozen range; and
+ \item every endpoint rational-exponent identity, including
+ \(Q/K_B=X^{o(1)}J^2\).
+\end{enumerate}
+
+The certificate digest is
+\begin{verbatim}
+c2860f5d7c679224a5ff4edd417cb956a3cb49e3c7addc434e23dd7b4b8c50bf
+\end{verbatim}
+The SHA--256 hashes of the canonical JSON record and source are,
+respectively,
+\begin{verbatim}
+1f6d7defff20b4ee8dfd4cd75b86c39eb08492a7a021e6e569dabc5aeebaf51a
+57e1438392c88e8523bd5e038f580f179cdcddb7f0590776507e2956202c9c52
+\end{verbatim}
+
+\subsection{What the certificate does not certify}
+
+The finite checks do not verify the prime number theorem, the
+multiplicative large sieve, the TPC--41 scalar progression theorem, or any
+asymptotic inherited from the previous papers.  They do not test M\"obius
+randomness and are not numerical evidence for cancellation in
+\eqref{eq:tpc42-next-four-mobius}.  The hard-cell convolution model checks
+an exact coefficient identity; it does not model every physical mask.
+
+In particular, the JSON record marks as false any interpretation that it
+proves the orbit--slope Bessel target, a fixed affine Chowla estimate, a
+parity breach, a prime-pair asymptotic, or the twin-prime conjecture.  Its
+purpose is reproducibility of the exact structural reductions and their
+claim boundary.

@@ -1,0 +1,171 @@
+\section{Canonical scalar factorization and the directional defect}
+\label{sec:tpc42-canonical}
+
+We first isolate the finite-dimensional statement behind any attempted
+scalar-to-Hilbert upgrade.  The result is independent of M\"obius
+cancellation and makes the relevant quantifiers explicit.
+
+Let \(\cA\) be a finite set of residue labels.  For every \(a\in\cA\),
+let \(\cI_a\) be a nonempty finite fiber, and put
+\begin{equation}
+ \mathscr X=\bigoplus_{a\in\cA}\C^{\cI_a}.
+ \label{eq:tpc42-fiber-domain}
+\end{equation}
+Choose a nonzero weight vector
+\(w_a=(w_{a,i})_{i\in\cI_a}\) on each fiber.  Define the weighted scalar
+collapse
+\begin{equation}
+ (P_wx)_a
+ =\sum_{i\in\cI_a}x_{a,i}\overline{w_{a,i}},
+ \qquad
+ P_w:\mathscr X\longrightarrow\ell^2(\cA).
+ \label{eq:tpc42-weighted-collapse}
+\end{equation}
+Let \(\Hh\) be a Hilbert space and let
+\(G_{a,i}\in\Hh\).  The corresponding vector synthesis is
+\begin{equation}
+ T_Gx=\sum_{a\in\cA}\sum_{i\in\cI_a}x_{a,i}G_{a,i}.
+ \label{eq:tpc42-vector-synthesis}
+\end{equation}
+
+The Moore--Penrose inverse and the orthogonal projection onto
+\((\ker P_w)^\perp\) are explicit:
+\begin{align}
+ (P_w^\dagger z)_{a,i}
+ &=\frac{z_aw_{a,i}}{\|w_a\|_2^2},
+ \label{eq:tpc42-P-dagger}\\
+ \Pi_w:=P_w^\dagger P_w,
+ \qquad
+ (\Pi_wx)_{a,i}
+ &=\frac{w_{a,i}}{\|w_a\|_2^2}
+   \sum_{j\in\cI_a}x_{a,j}\overline{w_{a,j}}.
+ \label{eq:tpc42-P-projection}
+\end{align}
+Thus every synthesis has the canonical decomposition
+\begin{equation}
+ \boxed{
+ T_G=(T_GP_w^\dagger)P_w+T_G(I-\Pi_w).}
+ \label{eq:tpc42-canonical-splitting}
+\end{equation}
+The first term is visible to a scalar progression theorem.  The second
+term is the directional defect: it acts on data whose weighted sum is
+zero in every residue fiber.
+
+\begin{theorem}[Exact scalar-factorization criterion]
+\label{thm:tpc42-factorization-criterion}
+The following statements are equivalent.
+\begin{enumerate}[label=(\roman*)]
+ \item There is a finite constant \(C\) such that
+ \begin{equation}
+  \|T_Gx\|_{\Hh}\le C\|P_wx\|_2
+  \qquad(x\in\mathscr X).
+  \label{eq:tpc42-black-box-lift}
+ \end{equation}
+ \item \(\ker P_w\subseteq\ker T_G\).
+ \item The directional defect vanishes:
+ \begin{equation}
+  T_G(I-\Pi_w)=0.
+  \label{eq:tpc42-defect-vanishes}
+ \end{equation}
+ \item There are vectors \(V_a\in\Hh\) such that
+ \begin{equation}
+  G_{a,i}=\overline{w_{a,i}}V_a
+  \qquad(a\in\cA,\ i\in\cI_a).
+  \label{eq:tpc42-fiber-synchronous-atoms}
+ \end{equation}
+\end{enumerate}
+When these conditions hold,
+\begin{equation}
+ T_G=BP_w,
+ \qquad
+ Be_a=V_a,
+ \qquad
+ \inf C=\|B\|_{\op}=\|T_GP_w^\dagger\|_{\op}.
+ \label{eq:tpc42-optimal-factor-constant}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Inequality \eqref{eq:tpc42-black-box-lift} forces \(T_Gx=0\) whenever
+\(P_wx=0\), proving (i)\(\Rightarrow\)(ii).  Since \(I-\Pi_w\) is the
+orthogonal projection onto \(\ker P_w\), conditions (ii) and (iii) are
+equivalent.  On a fixed fiber, (ii) says that the linear map
+\begin{equation}
+ (x_i)_{i\in\cI_a}\longmapsto\sum_i x_iG_{a,i}
+ \label{eq:tpc42-one-fiber-map}
+\end{equation}
+vanishes on the kernel of
+\(x\mapsto\sum_i x_i\overline{w_{a,i}}\).  A linear map with this kernel
+property is a vector multiple of that scalar functional, which is exactly
+\eqref{eq:tpc42-fiber-synchronous-atoms}.  Conversely,
+\eqref{eq:tpc42-fiber-synchronous-atoms} gives
+\begin{equation}
+ T_Gx=\sum_a(P_wx)_aV_a=BP_wx.
+ \label{eq:tpc42-factor-through-P}
+\end{equation}
+This proves all equivalences.  Because \(P_wP_w^\dagger=I\), every
+factorization \(T_G=BP_w\) has \(B=T_GP_w^\dagger\); its operator norm is
+the optimal constant.
+\end{proof}
+
+For the unweighted progression collapse, \(w_{a,i}=1\), the criterion
+says that a universal scalar lift exists precisely when all Hilbert atoms
+inside the same residue fiber are equal.  Pairwise orthogonality, proved
+for the physical atoms in \cref{sec:tpc42-residue-orthogonality}, lies at
+the opposite extreme.
+
+\begin{corollary}[Sharp orthogonal-fiber defect]
+\label{cor:tpc42-orthogonal-fiber-defect}
+Fix one unweighted fiber \(\cI_a\) of cardinality \(\rho_a\), and suppose
+that \((G_{a,i})_{i\in\cI_a}\) are pairwise orthogonal.  Their canonical
+scalar-synchronous representative is
+\begin{equation}
+ \overline G_a=\frac1{\rho_a}\sum_{i\in\cI_a}G_{a,i}.
+ \label{eq:tpc42-fiber-mean}
+\end{equation}
+Then
+\begin{align}
+ \sum_{i\in\cI_a}\|\overline G_a\|^2
+ &=\frac1{\rho_a}
+   \sum_{i\in\cI_a}\|G_{a,i}\|^2,
+ \label{eq:tpc42-synchronous-energy}\\
+ \sum_{i\in\cI_a}\|G_{a,i}-\overline G_a\|^2
+ &=\left(1-\frac1{\rho_a}\right)
+   \sum_{i\in\cI_a}\|G_{a,i}\|^2.
+ \label{eq:tpc42-sharp-defect-energy}
+\end{align}
+Both identities are exact.
+\end{corollary}
+
+\begin{proof}
+Orthogonality gives
+\begin{equation}
+ \left\|\sum_iG_{a,i}\right\|^2=\sum_i\|G_{a,i}\|^2.
+ \label{eq:tpc42-orthogonal-sum-norm}
+\end{equation}
+This proves \eqref{eq:tpc42-synchronous-energy}.  The usual least-squares
+identity
+\begin{equation}
+ \sum_i\|G_{a,i}-\overline G_a\|^2
+ =\sum_i\|G_{a,i}\|^2-\rho_a\|\overline G_a\|^2
+ \label{eq:tpc42-mean-square-identity}
+\end{equation}
+then gives \eqref{eq:tpc42-sharp-defect-energy}.
+\end{proof}
+
+Thus, on a fiber of multiplicity \(\rho_a\), only the fraction
+\(1/\rho_a\) of the Hilbert--Schmidt coefficient energy lies in the
+canonical sector through which a scalar residue sum factors.  The
+remaining fraction is not small when \(\rho_a\) grows.
+
+\begin{remark}[Quantifier boundary]
+\label{rem:tpc42-factorization-boundary}
+\Cref{thm:tpc42-factorization-criterion} characterizes an implication
+that is uniform for every scalar array \(x\).  Its failure does not say
+that the one arithmetic array formed by the actual M\"obius values has a
+large directional defect after synthesis.  Proving that this particular
+array avoids the coherent defect would be a coefficient-specific
+arithmetic theorem.  What the criterion rules out is deriving such a
+theorem solely from a scalar residue norm by a coefficient-blind tensor or
+Moore--Penrose argument.
+\end{remark}

@@ -1,0 +1,289 @@
+\section{A quantitative lower bound for the localization boundary}
+\label{sec:tpc42-quantitative-boundary}
+
+The preceding counterterm identity is independent of coefficient size.
+For the natural unmasked hard cell one can also prove that the local
+coefficient, and hence at least one boundary face, has genuinely
+macroscopic \(\ell^2\)-energy.  We state every support hypothesis because
+the lower bound is not asserted for arbitrary physical masks, which may
+vanish on a chosen subfamily.
+
+\subsection{Separated hard intervals}
+
+Let
+\begin{equation}
+ I_L=[a_LL_0,b_LL_0]\cap\N,
+ \qquad
+ I_D=[a_DD_0,b_DD_0]\cap\N,
+ \qquad
+ I_J=[a_JJ,b_JJ]\cap\N,
+ \label{eq:tpc42-boundary-intervals}
+\end{equation}
+where all endpoints are fixed positive constants with
+\(a_S<b_S\).  Assume that, for all sufficiently large \(X\),
+\begin{equation}
+ 2\le\min I_D,
+ \qquad
+ \max I_D<\min I_J,
+ \qquad
+ \max I_J<\min I_L,
+ \label{eq:tpc42-boundary-scale-separation}
+\end{equation}
+and
+\begin{equation}
+ L_0D_0J\asymp X,
+ \qquad
+ \log L_0\asymp\log D_0\asymp\log J\asymp\log X.
+ \label{eq:tpc42-boundary-polynomial-scales}
+\end{equation}
+These conditions hold at the inherited endpoint: TPC--36 gives
+\(D_0=X^{10049/52500+o(1)}\) and
+\(L_0=X^{99979/210000+o(1)}\), hence
+\(D_0=o(J)\) and \(J=o(L_0)\) \citep{WangTPC36}.  Define the hard
+arithmetic functions
+\begin{equation}
+ \lambda_L(n)=(\log n)\one_{n\in I_L\cap\mathbb P},
+ \qquad
+ \mu_D(n)=\mu(n)\one_{n\in I_D},
+ \qquad
+ u_J(n)=\one_{n\in I_J},
+ \label{eq:tpc42-boundary-hard-functions}
+\end{equation}
+and put
+\begin{equation}
+ C=\mu_D*u_J,
+ \qquad
+ A=\lambda_L*C.
+ \label{eq:tpc42-boundary-C-A}
+\end{equation}
+
+\begin{lemma}[Outer-prime uniqueness and support separation]
+\label{lem:tpc42-boundary-outer-uniqueness}
+If
+\begin{equation}
+ \ell_1e_1=\ell_2e_2,
+ \qquad
+ \ell_i\in I_L\cap\mathbb P,
+ \qquad
+ e_i=d_ij_i,
+ \quad d_i\in I_D,
+ \quad j_i\in I_J,
+ \label{eq:tpc42-boundary-two-representations}
+\end{equation}
+then \(\ell_1=\ell_2\) and \(e_1=e_2\).  Moreover,
+\begin{equation}
+ \boxed{A(n)\Lambda(n)=0\quad(n\ge1).}
+ \label{eq:tpc42-boundary-Lambda-orthogonality}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If \(\ell_1\ne\ell_2\), then the primality of the two source variables
+and \eqref{eq:tpc42-boundary-two-representations} imply
+\(\ell_1\mid d_2j_2\).  Hence \(\ell_1\mid d_2\) or
+\(\ell_1\mid j_2\), which is impossible because
+\(d_2,j_2<\ell_1\) by
+\eqref{eq:tpc42-boundary-scale-separation}.  This proves uniqueness.
+
+If a summand contributing to \(A(n)\) is nonzero, then
+\(n=\ell d j\), where \(\ell\) is prime and \(d\ge2\) with
+\(\mu(d)\ne0\).  Any prime \(p\mid d\) satisfies
+\(p\le d<\ell\), so \(p\ne\ell\).  Thus \(n\) has at least two
+distinct prime divisors and is not a prime power.  Therefore
+\(\Lambda(n)=0\), proving
+\eqref{eq:tpc42-boundary-Lambda-orthogonality}.
+\end{proof}
+
+Outer-prime uniqueness gives an exact tensor factorization rather than
+only an upper bound.
+
+\begin{proposition}[Exact coefficient-energy factorization]
+\label{prop:tpc42-boundary-energy-factorization}
+Under \eqref{eq:tpc42-boundary-scale-separation},
+\begin{equation}
+ \boxed{
+ \|A\|_2^2
+ =\left(
+   \sum_{\ell\in I_L\cap\mathbb P}(\log\ell)^2
+  \right)
+  \left(
+   \sum_e|C(e)|^2
+  \right).}
+ \label{eq:tpc42-boundary-energy-factorization}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For every \(e\) in the support of \(C\) and every source prime
+\(\ell\), one has
+\(A(\ell e)=(\log\ell)C(e)\).  By
+\cref{lem:tpc42-boundary-outer-uniqueness}, distinct pairs
+\((\ell,e)\) give distinct products.  Squaring and summing proves the
+identity.
+\end{proof}
+
+\subsection{Endpoint-size lower and upper bounds}
+
+\begin{theorem}[Energy of the natural localized cell]
+\label{thm:tpc42-boundary-quantitative-energy}
+Under \eqref{eq:tpc42-boundary-intervals}--
+\eqref{eq:tpc42-boundary-polynomial-scales},
+\begin{equation}
+ \|A\|_2^2
+ \gg
+ L_0D_0J\,
+ \frac{\log L_0}{\log D_0\log J}
+ \gg \frac{X}{\log X},
+ \label{eq:tpc42-boundary-energy-lower}
+\end{equation}
+while
+\begin{equation}
+ \|A\|_2^2
+ \ll X^{1+o(1)}.
+ \label{eq:tpc42-boundary-energy-upper}
+\end{equation}
+The implied constants in the lower bound depend only on the fixed
+interval endpoints.
+\end{theorem}
+
+\begin{proof}
+Choose fixed positive-width interior intervals
+\(I_D^\circ\subset I_D\) and \(I_J^\circ\subset I_J\).  If
+\(p_D\in I_D^\circ\) and \(p_J\in I_J^\circ\) are prime, then the only
+divisor of \(p_Dp_J\) lying in \(I_D\) whose complementary divisor lies
+in \(I_J\) is \(p_D\).  Indeed, the four divisors are
+\(1,p_D,p_J,p_Dp_J\), and the scale separation excludes the other three.
+Consequently,
+\begin{equation}
+ C(p_Dp_J)=\mu(p_D)=-1.
+ \label{eq:tpc42-boundary-prime-pair-C}
+\end{equation}
+Because the two prime intervals are strictly separated, the smaller
+prime factor of \(p_Dp_J\) is uniquely \(p_D\); distinct prime pairs
+therefore give distinct integers \(e\).
+The prime number theorem therefore gives
+\begin{equation}
+ \sum_e|C(e)|^2
+ \gg
+ \frac{D_0J}{\log D_0\log J}.
+ \label{eq:tpc42-boundary-C-lower}
+\end{equation}
+It also gives
+\begin{equation}
+ \sum_{\ell\in I_L\cap\mathbb P}(\log\ell)^2
+ \asymp L_0\log L_0.
+ \label{eq:tpc42-boundary-source-energy}
+\end{equation}
+Inserting \eqref{eq:tpc42-boundary-C-lower} and
+\eqref{eq:tpc42-boundary-source-energy} into
+\eqref{eq:tpc42-boundary-energy-factorization} proves
+\eqref{eq:tpc42-boundary-energy-lower}.
+
+For the upper bound, let
+\begin{equation}
+ r(e)=\#\{d\in I_D:d\mid e,\ e/d\in I_J\}.
+ \label{eq:tpc42-boundary-representation-count}
+\end{equation}
+Cauchy--Schwarz gives
+\begin{equation}
+ |C(e)|^2
+ \le r(e)
+ \sum_{\substack{d\in I_D\\d\mid e\\e/d\in I_J}}\mu(d)^2.
+ \label{eq:tpc42-boundary-C-upper-pointwise}
+\end{equation}
+Now \(r(e)\le\tau(e)=X^{o(1)}\) uniformly for
+\(e\ll D_0J\ll X^{O(1)}\).  Summing
+\eqref{eq:tpc42-boundary-C-upper-pointwise} over \(e\) yields
+\begin{equation}
+ \sum_e|C(e)|^2\ll X^{o(1)}D_0J.
+ \label{eq:tpc42-boundary-C-upper}
+\end{equation}
+Together with \eqref{eq:tpc42-boundary-source-energy} and
+\(L_0D_0J\asymp X\), this proves
+\eqref{eq:tpc42-boundary-energy-upper}.
+\end{proof}
+
+Let \(B_D,B_J\) be the boundary faces from
+\eqref{eq:tpc42-counterterm-BD}--
+\eqref{eq:tpc42-counterterm-BJ}, formed from the hard functions in
+\eqref{eq:tpc42-boundary-hard-functions}, and let \(W_X\) contain the
+product support of \(A\) while remaining disjoint from \(I_L\).
+
+\begin{corollary}[A boundary face has macroscopic energy]
+\label{cor:tpc42-boundary-face-lower}
+One has
+\begin{align}
+ \|B_D\|_{\ell^2(W_X)}^2
+ +\|B_J\|_{\ell^2(W_X)}^2
+ &\ge\frac12\|A\|_2^2
+ \gg\frac{X}{\log X},
+ \label{eq:tpc42-boundary-sum-lower}\\
+ \max\bigl\{
+ \|B_D\|_{\ell^2(W_X)}^2,
+ \|B_J\|_{\ell^2(W_X)}^2
+ \bigr\}
+ &\ge\frac14\|A\|_2^2
+ \gg\frac{X}{\log X}.
+ \label{eq:tpc42-boundary-max-lower}
+\end{align}
+\end{corollary}
+
+\begin{proof}
+Combine \cref{cor:tpc42-physical-window-counterterm} with
+\cref{thm:tpc42-boundary-quantitative-energy}.
+\end{proof}
+
+There is also an exact orthogonality obstruction to approximating the
+cell by a localized von Mangoldt function.  Let
+\(W_X^\sharp=[aX,bX]\cap\N\), with fixed \(0<a<b\), contain the support
+of \(A\).
+
+\begin{corollary}[Orthogonal mismatch with von Mangoldt]
+\label{cor:tpc42-boundary-Lambda-mismatch}
+One has
+\begin{equation}
+ \boxed{
+ \|\one_{W_X^\sharp}(A-\Lambda)\|_2^2
+ =\|A\|_2^2
+  +\|\one_{W_X^\sharp}\Lambda\|_2^2.}
+ \label{eq:tpc42-boundary-Pythagoras}
+\end{equation}
+In particular,
+\begin{equation}
+ \|\one_{W_X^\sharp}(A-\Lambda)\|_2^2
+ \gg X\log X.
+ \label{eq:tpc42-boundary-Lambda-mismatch-lower}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Equation \eqref{eq:tpc42-boundary-Lambda-orthogonality} makes the two
+coefficient sequences pointwise orthogonal, proving
+\eqref{eq:tpc42-boundary-Pythagoras}.  The prime number theorem in the
+form
+\[
+ \sum_{aX\le n\le bX}\Lambda(n)^2\asymp X\log X
+\]
+proves \eqref{eq:tpc42-boundary-Lambda-mismatch-lower}.
+\end{proof}
+
+\subsection{Claim boundary}
+
+The lower bounds in this section concern the natural unmasked hard cell.
+They are not asserted for every projective layer or for the fully masked
+physical packet: a unary weight or residue factor may vanish on the prime
+subfamily used in \eqref{eq:tpc42-boundary-prime-pair-C}.  Likewise,
+coefficient \(\ell^2\)-energy is not a lower bound for the signed terminal
+correlation after multiplication by \(\mu(n+h+kM)\), and its scalar
+normalization is not the normalization of the full
+\((\gamma,j)\)-Hilbert output.
+
+Accordingly, \cref{thm:tpc42-boundary-quantitative-energy} does not show
+that the physical gate is false or that its M\"obius factors fail to
+cancel.  It proves the narrower and methodologically decisive fact that
+the localization boundary is not a deterministically small approximation
+error.  Any successful continuation must estimate the localized
+coefficient system itself, or its canonical residue-fiber defect, rather
+than importing a completed shifted-prime theorem through
+\eqref{eq:tpc42-full-Lambda-decomposition}.  No fixed-shift Chowla,
+prime-pair asymptotic, parity breach, or twin-prime conclusion is claimed.

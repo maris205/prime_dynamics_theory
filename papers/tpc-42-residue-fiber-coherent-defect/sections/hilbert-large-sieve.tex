@@ -1,0 +1,204 @@
+\section{The tensorizable Hilbert benchmark}
+\label{sec:tpc42-hilbert-large-sieve}
+
+There are two logically different ways in which a Hilbert space can enter
+a large--sieve argument.  One may first prove a scalar arithmetic estimate
+and then apply a bounded synthesis map to its output, or one may insert a
+vector coefficient before the arithmetic estimate is proved.  The first
+operation is automatic and dimension free.  The second is not.  This
+section records the exact distinction at the TPC--41 progression scale.
+
+\subsection{Dimension--free postcomposition}
+
+\begin{lemma}[Hilbert tensorization of a scalar operator]
+\label{lem:tpc42-hilbert-tensorization}
+Let \(I,J\) be finite sets and let \(T=(t_{ji})_{j\in J,i\in I}\) satisfy
+\begin{equation}
+ \sum_{j\in J}\left|\sum_{i\in I}t_{ji}z_i\right|^2
+ \le C^2\sum_{i\in I}|z_i|^2
+ \qquad(z\in\C^I).
+ \label{eq:tpc42-scalar-operator-bound}
+\end{equation}
+Then, for every complex Hilbert space \(\Hh\) and every family
+\((v_i)_{i\in I}\subset\Hh\),
+\begin{equation}
+ \sum_{j\in J}\left\|\sum_{i\in I}t_{ji}v_i\right\|_{\Hh}^2
+ \le C^2\sum_{i\in I}\|v_i\|_{\Hh}^2.
+ \label{eq:tpc42-hilbert-operator-bound}
+\end{equation}
+The constant is independent of \(\dim\Hh\), including when \(\Hh\) is
+infinite dimensional.
+\end{lemma}
+
+\begin{proof}
+All the vectors involved lie in a separable closed subspace.  Expand them
+against an orthonormal basis \((e_\nu)\), apply
+\eqref{eq:tpc42-scalar-operator-bound} to the scalar coefficients
+\(\langle v_i,e_\nu\rangle\), and sum in \(\nu\).  Parseval and Tonelli give
+\eqref{eq:tpc42-hilbert-operator-bound} with the same constant.
+\end{proof}
+
+For example, tensorizing the classical multiplicative large sieve
+\citep{MontgomeryVaughan1973} gives, for finitely supported
+\(v_n\in\Hh\),
+\begin{equation}
+ \sum_{r\le R}\frac r{\varphi(r)}
+ \sum_{\chi\bmod r}^{*}
+ \left\|\sum_{n\le Z}v_n\chi(n)\right\|_{\Hh}^{2}
+ \ll (Z+R^2)\sum_{n\le Z}\|v_n\|_{\Hh}^{2}.
+ \label{eq:tpc42-hilbert-multiplicative-large-sieve}
+\end{equation}
+The usual dyadic decomposition of initial intervals, now using
+Cauchy--Schwarz in \(\Hh\), also gives the maximal benchmark
+\begin{equation}
+ \sum_{r\le R}\frac r{\varphi(r)}
+ \sum_{\chi\bmod r}^{*}
+ \max_{z\le Z}
+ \left\|\sum_{n\le z}v_n\chi(n)\right\|_{\Hh}^{2}
+ \ll (Z+R^2)(\log(2Z))^2
+ \sum_{n\le Z}\|v_n\|_{\Hh}^{2}.
+ \label{eq:tpc42-hilbert-maximal-large-sieve}
+\end{equation}
+These are standard tensor consequences of scalar large--sieve estimates;
+they are recorded as a benchmark, not claimed as a new vector--valued
+large sieve.
+
+\subsection{Simultaneous Bessel transfer of the TPC--41 vector}
+
+Let \(\mathfrak M_X\) be the TPC--41 family obtained by taking one prime
+from each of three fixed, pairwise disjoint, fixed--proportion intervals
+at scale \(X^{133/400}\).  For \(M\in\mathfrak M_X\), write
+\begin{equation}
+ \mathcal U_M=(\Z/M\Z)^{\times},
+ \qquad K_M=X/M,
+ \label{eq:tpc42-reduced-residue-space}
+\end{equation}
+and, for a family of bounded--variation weights \(W=W_X\), supported in
+a fixed compact subinterval of \((0,\infty)\) and with uniformly bounded
+BV norm, define
+\begin{equation}
+ S_{M,W}(a)
+ =\sum_{\substack{n\equiv a\pmod M}}
+   \mu(n)W(n/X),
+ \qquad a\in\mathcal U_M.
+ \label{eq:tpc42-scalar-residue-vector}
+\end{equation}
+TPC--41 proves that, for every fixed \(0<\theta<1/200\) and every fixed
+finite collection of such uniformly bounded weights, all but
+\(o(|\mathfrak M_X|)\) moduli satisfy simultaneously
+\begin{equation}
+ \|S_{M,W}\|_{\ell^2(\mathcal U_M)}^2
+ \ll_{\theta,W}\frac{XK_M}{(\log X)^\theta}.
+ \label{eq:tpc42-inherited-scalar-residue-bound}
+\end{equation}
+See \citet{WangTPC41}; the underlying centered progression input is due
+to \citet{KlurmanMangerelTeravainen2023}.
+
+\begin{proposition}[Simultaneous Bessel postcomposition]
+\label{prop:tpc42-simultaneous-bessel-transfer}
+Fix a modulus \(M\) for which
+\eqref{eq:tpc42-inherited-scalar-residue-bound} holds.  Let \(\Hh_M\) be
+any complex Hilbert space and let
+\begin{equation}
+ B_M:\ell^2(\mathcal U_M)\longrightarrow\Hh_M
+ \label{eq:tpc42-bessel-operator}
+\end{equation}
+be any bounded linear map.  Then
+\begin{equation}
+ \boxed{
+ \|B_MS_{M,W}\|_{\Hh_M}^2
+ \ll_{\theta,W}
+ \|B_M\|_{\op}^{\,2}
+ \frac{XK_M}{(\log X)^\theta}.}
+ \label{eq:tpc42-bessel-postcomposition-bound}
+\end{equation}
+The same good modulus works simultaneously for every choice of
+\(\Hh_M\) and \(B_M\); in particular, \(B_M\) may be selected after the
+scalar good set has been fixed.
+
+Equivalently, suppose that \(v_{M,a}\in\Hh_M\) has Bessel synthesis bound
+\begin{equation}
+ \left\|\sum_{a\in\mathcal U_M}z_av_{M,a}\right\|_{\Hh_M}^2
+ \le \beta_M\sum_{a\in\mathcal U_M}|z_a|^2.
+ \label{eq:tpc42-residue-bessel-family}
+\end{equation}
+Then
+\begin{equation}
+ \left\|
+  \sum_{\substack{n\ge1\\(n,M)=1}}
+  \mu(n)W(n/X)v_{M,n\bmod M}
+ \right\|_{\Hh_M}^2
+ \ll_{\theta,W}
+ \beta_M\frac{XK_M}{(\log X)^\theta}.
+ \label{eq:tpc42-residue-synchronous-output}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The first assertion is simply
+\(\|B_MS_{M,W}\|\le\|B_M\|_{\op}\|S_{M,W}\|_2\), followed by
+\eqref{eq:tpc42-inherited-scalar-residue-bound}.  No exceptional set is
+introduced by this deterministic inequality.  For the second assertion,
+take \(B_Me_a=v_{M,a}\).  Then
+\eqref{eq:tpc42-residue-bessel-family} says
+\(\|B_M\|_{\op}^2\le\beta_M\), and expanding \(B_MS_{M,W}\) gives
+\eqref{eq:tpc42-residue-synchronous-output}.
+\end{proof}
+
+For the terminal logarithmic atom, take a fixed smooth compactly
+supported \(\Phi\) and
+\[
+ W_X(t)=\frac{\log(Xt)}{\log X}\Phi(t).
+\]
+This family has uniformly bounded variation.  Multiplying
+\eqref{eq:tpc42-bessel-postcomposition-bound} by \((\log X)^2\) yields
+\begin{equation}
+ \left\|
+ B_M\left(
+  \sum_{\substack{n\equiv a\pmod M}}
+  \mu(n)\log n\,\Phi(n/X)
+ \right)_{a\in\mathcal U_M}
+ \right\|_{\Hh_M}^{2}
+ \ll_{\theta,\Phi}
+ \|B_M\|_{\op}^{\,2}
+ \frac{XK_M(\log X)^2}{(\log X)^\theta}.
+ \label{eq:tpc42-terminal-bessel-postcomposition}
+\end{equation}
+
+The qualifier \emph{simultaneous} is useful here.  Even if the physical
+projective decomposition contains many residue masks or Hilbert output
+layers, no union bound over those layers is needed when they are all
+bounded postcompositions of the same vector \(S_{M,W}\).  Their entire
+cost is the appropriate operator or Bessel norm.
+
+\subsection{The precise stopping point}
+
+\Cref{prop:tpc42-simultaneous-bessel-transfer} applies when the
+coefficient attached to \(n\) is residue synchronous:
+\begin{equation}
+ G_M(n)=W(n/X)v_{M,n\bmod M}.
+ \label{eq:tpc42-residue-synchronous-field}
+\end{equation}
+It does not estimate
+\begin{equation}
+ \sum_n\mu(n)G_M(n)
+ \label{eq:tpc42-preweighted-vector-sum}
+\end{equation}
+for an arbitrary field \(G_M(n)\in\Hh_M\) that changes direction among
+integers in the same residue fiber.  Inserting \(G_M(n)\) before applying
+the scalar theorem changes its coefficient sequence, whereas
+postcomposition changes only its already formed residue output.
+
+This also explains why the terminology \emph{vector--valued KMT theorem}
+would be inaccurate.  The logarithmic saving in
+\eqref{eq:tpc42-inherited-scalar-residue-bound} first uses the scalar
+multiplicativity and pretentious structure in KMT to identify and
+subtract one most--correlated character; TPC--41 then removes that
+rank--one term on average over the declared modulus family.  A general
+map \(n\mapsto G_M(n)\) has no such multiplicative structure.  Only the
+postcomposition step is a dimension--free tensorization.  The
+within--fiber directional component left after the canonical residue
+projection therefore requires a genuinely different arithmetic input at
+the desired saving; it is not an omitted application of
+\eqref{eq:tpc42-hilbert-multiplicative-large-sieve}; compare the exact
+factorization criterion in \cref{thm:tpc42-factorization-criterion}.

@@ -1,0 +1,175 @@
+\section{Introduction}
+\label{sec:tpc42-introduction}
+
+The terminal gate left by TPC--41 has two descriptions that initially
+appear close.  The physical description is a Hilbert norm of row sums
+whose cross terms contain four M\"obius factors.  The scalar description
+is a short-progression variance over reduced residue classes modulo an
+admissible triple-prime number \(M\), for which TPC--41 proves a
+logarithmic saving on almost all such
+moduli \citep{WangTPC41,KlurmanMangerelTeravainen2023}.  This paper proves
+that the two descriptions point in transverse directions.
+
+Fix an alias and write the terminal column as
+\begin{equation}
+ \mathscr T_k
+ =-\sum_r\mu(r+h+kM)\mathbf G_k(r),
+ \qquad
+ \mathbf G_k(r)\in\ell^2\{(\gamma,j)\}.
+ \label{eq:tpc42-intro-column}
+\end{equation}
+If \(r\ne r'\) but \(r\equiv r'\pmod M\), then
+\begin{equation}
+ \boxed{\mathbf G_k(r)\perp\mathbf G_k(r').}
+ \label{eq:tpc42-intro-fiber-orthogonality}
+\end{equation}
+Indeed, a shared orbit coordinate would force
+\((m_\alpha-m_\beta)j\) to be divisible by \(M\); the admissibility of
+the auxiliary primes and the no--wrap row window then force the two rows
+to be identical.  Hence the vector energy obtained by packing terms in
+the same residue class is exactly the atomic diagonal, without using any
+M\"obius cancellation.
+
+This is an orthogonality swap.  Arrange the physical atoms in a grid with
+orbit time \(j\) as the horizontal coordinate and target residue modulo
+\(M\) as the vertical coordinate.  Along a fixed \(j\), distinct rows
+occupy distinct residues and the physical output adds them coherently.
+Along a fixed residue, distinct products occupy disjoint \(j\)-coordinates
+and are orthogonal.  Scalar progression variance measures the vertical
+direction, whereas the surviving physical gate is the horizontal
+coherent synthesis.
+
+The minimal folded bank admits the exact version
+\begin{equation}
+ \cE_{\rm fold,L}
+ =\sum_s\left\|\sum_a\mathbf W^L_{s,a}\right\|^2,
+ \qquad
+ \cE_{\rm same,L}
+ =\sum_{s,a}\|\mathbf W^L_{s,a}\|^2,
+ \label{eq:tpc42-intro-packed-energies}
+\end{equation}
+where \(s\) is a folded alias bucket and \(a\) a residue class.  Their
+difference is precisely the cross--residue form
+\begin{equation}
+ \operatorname{Re}\cF_L
+ =\operatorname{Re}
+  \sum_s\sum_{a\ne b}
+  \langle\mathbf W^L_{s,a},\mathbf W^L_{s,b}\rangle,
+ \label{eq:tpc42-intro-cross-residue}
+\end{equation}
+and similarly on the right.  Thus the progression-direction vector
+variance is already closed by the theorem of TPC--41; what remains is
+not an unproved Hilbert extension of that scalar statement.
+The exact packet sums here run over all residues modulo \(M\).  The
+scalar TPC--41 theorem acts only on the unit-residue sector, so nonunit
+packets remain outside that scalar input unless an independently justified
+regular pruning makes them vanish.
+
+\subsection{The canonical scalar-visible sector}
+
+There is nevertheless a precise sense in which any scalar progression
+theorem can be postcomposed into a Hilbert space.  On the sector addressed
+by that scalar theorem, let \(R_M\) be the weighted residue aggregation
+operator, let \(A_M\) synthesize the corresponding physical coefficient
+vectors, and set
+\begin{equation}
+ P_M=R_M^\dagger R_M,
+ \label{eq:tpc42-intro-P}
+\end{equation}
+where \(R_M^\dagger\) is the Moore--Penrose inverse.  Then
+\begin{equation}
+ \boxed{
+ A_M\mu
+ =A_MR_M^\dagger(R_M\mu)
+  +A_M(I-P_M)\mu.}
+ \label{eq:tpc42-intro-canonical-split}
+\end{equation}
+The first term is the maximal canonical sector visible to the scalar
+progression vector and obeys every bounded Bessel postcomposition of the
+TPC--41 estimate.  The second term is a uniquely defined directional
+defect.  An operator factors through \(R_M\) if and only if it vanishes
+on this defect space.
+For TPC--41 this canonical split is applied to the unit-residue sector;
+any nonunit physical packets sit outside that scalar domain and must be
+carried separately.
+
+This distinction is sharp.  On one residue fiber, universal control of
+a Hilbert synthesis by the scalar fiber sum is possible if and only if
+all coefficient columns on that fiber are equal.  The actual physical
+columns lie at the opposite geometric extreme: they are pairwise
+orthogonal.  For an unweighted fiber of multiplicity \(\rho\), only the
+fraction \(1/\rho\) of their Hilbert--Schmidt energy lies in the common
+fiber mode, while \(1-1/\rho\) lies in the scalar-invisible complement.
+This rules out a black-box deduction from scalar variance plus
+coefficient energy.  It does not rule out a coefficient-specific theorem
+for the actual M\"obius vector.
+
+TPC--36 adds a useful positive reduction.  Each projective mask layer
+factors its opposite-row coordinate, so its Hilbert norm is exactly an
+orbit-time Bessel form.  The next arithmetic input can therefore be
+stated for a restricted family of row slopes and orbit weights, rather
+than for arbitrary Hilbert coefficients.
+
+\subsection{The localized convolution counterterm}
+
+A second proposed route was to compare the local coefficient
+\(\lambda_L*\mu_D*u_J\) with the completed identity
+\(\Lambda*\mu*\one=\Lambda\).  We prove that its natural boundary is not
+a small error.  With
+\begin{equation}
+ A=\lambda_L*\mu_D*u_J,
+ \quad
+ B_D=\lambda_L*(\mu-\mu_D)*\one,
+ \quad
+ B_J=\lambda_L*\mu_D*(\one-u_J),
+ \label{eq:tpc42-intro-three-faces}
+\end{equation}
+one has the pointwise identity
+\begin{equation}
+ A+B_D+B_J=\lambda_L.
+ \label{eq:tpc42-intro-counterterm-identity}
+\end{equation}
+The physical product window is of size \(L_0D_0J\asymp X\), disjoint
+from the source support \(L_0=o(X)\).  Consequently
+\begin{equation}
+ \boxed{B_D+B_J=-A}
+ \label{eq:tpc42-intro-counterterm}
+\end{equation}
+pointwise on that window, after any Hilbert-valued postcomposition
+depending only on the grouped product \(n\).  The full shifted-prime
+contribution is
+cancelled exactly by the source-complement term.  For the natural
+unmasked hard cell we further prove
+\begin{equation}
+ \frac{X}{\log X}\ll\|A\|_2^2\ll X^{1+o(1)},
+ \qquad
+ A(n)\Lambda(n)=0,
+ \label{eq:tpc42-intro-boundary-size}
+\end{equation}
+so the local cell and the von Mangoldt comparator have disjoint support.
+The conclusion is about the completion strategy, not a lower bound for
+the signed physical four--M\"obius output.
+
+\subsection{What advances}
+
+The present results move the endpoint in three ways.  First, they prove
+that vectorizing the scalar progression direction introduces no hidden
+arithmetic gain: for the actual packet that direction is exactly
+diagonal.  Second, they replace the vague scalar-to-Hilbert gap by the
+canonical operator \(A_M(I-P_M)\) and then identify its actual
+cross--residue geometry.  Third, they close the local-completion route as
+a standalone shortcut by an exact counterterm theorem.  The remaining
+positive problem is a coefficient-specific orbit--slope dispersion
+estimate.  No individual affine Chowla estimate, parity breach,
+Hardy--Littlewood prime-pair asymptotic, or twin-prime conclusion is
+claimed.
+
+The paper is organized as follows.  \Cref{sec:tpc42-interface} records
+the inherited endpoint.  The next three sections develop the canonical
+factorization, the residue-fiber identities, and coherent synthesis.  The
+Hilbert large-sieve section records the exact positive scope of
+dimension-free postcomposition, followed by the projective orbit
+reduction.  The two
+convolution sections prove the counterterm and its quantitative hard-cell
+form.  The final sections compare the literature, state the next target,
+and freeze an exact certificate and claim ledger.

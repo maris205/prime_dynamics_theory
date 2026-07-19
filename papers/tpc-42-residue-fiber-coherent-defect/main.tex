@@ -1,0 +1,117 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Hh}{\mathcal H}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\HS}{\mathrm{HS}}
+\newcommand{\ee}[1]{e^{2\pi i #1}}
+
+\hypersetup{
+  pdftitle={Residue-Fiber Orthogonality at the Triple-Prime Mobius Gate: Canonical Hilbert Defects, Coherent Synthesis, and Exact Convolution Counterterms},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact separation of residue-fiber progression energy from the coherent physical Mobius gate},
+  pdfkeywords={Mobius correlation, residue fiber, Hilbert space, Moore-Penrose projection, coherent synthesis, Dirichlet convolution, parity boundary}
+}
+
+\title{\bfseries Residue--Fiber Orthogonality at the Triple--Prime M\"obius Gate:\\
+Canonical Hilbert Defects, Coherent Synthesis,\\
+and Exact Convolution Counterterms}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC--41 separated the terminal physical packet into a closed same--row
+alias sector and a surviving cross--row four--M\"obius sector, while also
+proving scalar logarithmic decorrelation in reduced residue classes for
+almost all admissible triple--prime moduli.  We determine exactly how far
+that input can propagate into the physical Hilbert output.  For every
+fixed alias, terminal coefficient vectors belonging to distinct integers in the
+same residue class are orthogonal.  Consequently the natural
+Hilbert--valued residue energy is identically the already controlled atomic
+diagonal; the remaining physical term is entirely the coherent synthesis
+between distinct residue packets.  We give a canonical Moore--Penrose
+factorization into the scalar-visible residue-synchronous sector and a
+directional defect supported on its domain-orthogonal complement, prove
+a sharp black-box obstruction for the latter, and reduce each projective
+mask layer to an orbit--slope Bessel
+form.  A second exact theorem rules out a different shortcut: completing
+the localized Dirichlet convolution produces boundary faces whose sum is
+the negative of the original local cell on the physical product window.
+Thus the shifted-prime completion cancels against the source complement
+rather than estimating the local packet.  These results do not prove the
+remaining four--M\"obius cancellation or breach sieve parity; they replace
+two broad proposed routes by one explicit cross--residue, orbit--slope
+coefficient target.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius correlation; residue fiber;
+Hilbert output; Moore--Penrose projection; coherent synthesis; Dirichlet
+convolution; triple--prime CRT modulus; parity boundary.
+
+\medskip
+\noindent\textbf{Convention.}
+All complex inner products are linear in the first argument.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11L40; Secondary 15A09,
+42A16, 11N36.
+
+\input{sections/introduction}
+\input{sections/inherited-interface}
+\input{sections/canonical-factorization}
+\input{sections/residue-orthogonality}
+\input{sections/coherent-synthesis}
+\input{sections/hilbert-large-sieve}
+\input{sections/projective-orbit-reduction}
+\input{sections/convolution-counterterm}
+\input{sections/quantitative-boundary}
+\input{sections/literature-boundary}
+\input{sections/next-gate}
+\input{sections/certificate-claims}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

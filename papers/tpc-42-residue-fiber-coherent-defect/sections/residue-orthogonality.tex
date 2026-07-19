@@ -1,0 +1,227 @@
+\section{Exact residue-fiber orthogonality in the physical packet}
+\label{sec:tpc42-residue-orthogonality}
+
+We now apply the abstract decomposition to the actual terminal vectors.
+The decisive fact is elementary but rigid: the CRT residue direction and
+the physical orbit-coordinate direction are transverse.
+
+\subsection{Fixed-alias Hilbert atoms}
+
+For a retained alias \(k\in\cI_B\), put
+\begin{equation}
+ A_k(r)=\log(r+h+kM)\Phi_0(r+h+kM),
+ \label{eq:tpc42-Akr}
+\end{equation}
+interpreted as zero outside the positive terminal support, and define
+\(\mathbf G_k^L(r)\in\ell^2\{(\gamma,j)\}\) by
+\begin{equation}
+ [\mathbf G_k^L(r)]_{\gamma,j}
+ =\sum_{\alpha:m_\alpha j=r}
+   c^L_{\alpha,\gamma,j}A_k(r).
+ \label{eq:tpc42-fixed-k-G}
+\end{equation}
+For fixed \((j,r)\), at most one row occurs: \(r/j\), when integral,
+determines \(m_\alpha\), and source separation determines \(\alpha\).
+Every sum containing \(\mu(r+h+kM)\) below is restricted to the positive
+terminal support, so no value of \(\mu\) at a nonpositive integer is used.
+The fixed-alias column is exactly
+\begin{equation}
+ \mathscr T_k^L
+ =-\sum_r\mu(r+h+kM)\mathbf G_k^L(r).
+ \label{eq:tpc42-fixed-k-compression}
+\end{equation}
+
+\begin{theorem}[Physical residue-fiber orthogonality]
+\label{thm:tpc42-fixed-alias-orthogonality}
+Fix \(k\in\cI_B\).  If \(r\ne r'\) and
+\begin{equation}
+ r\equiv r'\pmod M,
+ \label{eq:tpc42-same-base-residue}
+\end{equation}
+then
+\begin{equation}
+ \boxed{
+ \langle\mathbf G_k^L(r),\mathbf G_k^L(r')\rangle=0.}
+ \label{eq:tpc42-G-orthogonal}
+\end{equation}
+The conclusion is uniform in the terminal cutoff, the M\"obius values,
+and the actual masks.  It holds identically for the right vectors.
+\end{theorem}
+
+\begin{proof}
+A nonzero term in the inner product would require a shared coordinate
+\((\gamma,j)\).  There would then be rows \(\alpha,\beta\) such that
+\begin{equation}
+ r=m_\alpha j,
+ \qquad
+ r'=m_\beta j.
+ \label{eq:tpc42-shared-coordinate-products}
+\end{equation}
+By \eqref{eq:tpc42-same-base-residue},
+\begin{equation}
+ M\mid(m_\alpha-m_\beta)j.
+ \label{eq:tpc42-M-divides-row-time}
+\end{equation}
+Every \(j\in\cJ\) is positive and smaller than each prime factor of
+\(M\), so \((j,M)=1\).  Hence \(M\mid m_\alpha-m_\beta\).  The strict row
+gap in \eqref{eq:tpc42-no-wrap-data} forces
+\(m_\alpha=m_\beta\), and source separation gives
+\(\alpha=\beta\).  Equation \eqref{eq:tpc42-shared-coordinate-products}
+then gives \(r=r'\), a contradiction.  Vanishing cutoffs or coefficients
+only delete coordinates and cannot invalidate the argument.
+\end{proof}
+
+It is convenient to index by the target residue.  For every
+\(a\in\Z/M\Z\), define
+\begin{equation}
+ \mathbf V_{k,a}^L
+ :=-\sum_{\substack{r\equiv a-h\!\!\!\pmod M}}
+ \mu(r+h+kM)\mathbf G_k^L(r).
+ \label{eq:tpc42-fixed-k-residue-packet}
+\end{equation}
+Define the actual fixed-alias atomic diagonal
+\begin{equation}
+ \cD_{k,L}
+ :=\sum_{\gamma,j,\alpha}
+ |c^L_{\alpha,\gamma,j}|^2
+ |\mu(n_{\alpha,j,k})|^2
+ |A_k(m_\alpha j)|^2.
+ \label{eq:tpc42-fixed-k-actual-diagonal}
+\end{equation}
+
+\begin{corollary}[Exact packed vector variance]
+\label{cor:tpc42-fixed-alias-packets}
+For every fixed alias,
+\begin{align}
+ \mathscr T_k^L
+ &=\sum_{a\bmod M}\mathbf V_{k,a}^L,
+ \label{eq:tpc42-fixed-k-synthesis}\\
+ \sum_{a\bmod M}\|\mathbf V_{k,a}^L\|^2
+ &=\cD_{k,L},
+ \label{eq:tpc42-fixed-k-packed-diagonal}\\
+ \|\mathscr T_k^L\|^2
+ &=\cD_{k,L}
+   +\sum_{\substack{a,b\bmod M\\a\ne b}}
+    \langle\mathbf V_{k,a}^L,\mathbf V_{k,b}^L\rangle.
+ \label{eq:tpc42-fixed-k-cross-residue}
+\end{align}
+The second sum in \eqref{eq:tpc42-fixed-k-cross-residue} is an ordered
+sum and is real after pairing \((a,b)\) with \((b,a)\).
+\end{corollary}
+
+\begin{proof}
+The first identity partitions \eqref{eq:tpc42-fixed-k-compression} by
+target residue.  The vectors inside each packet are pairwise orthogonal by
+\cref{thm:tpc42-fixed-alias-orthogonality}; hence
+\begin{equation}
+ \|\mathbf V_{k,a}^L\|^2
+ =\sum_{r\equiv a-h\, (M)}
+  |\mu(r+h+kM)|^2\|\mathbf G_k^L(r)\|^2.
+ \label{eq:tpc42-one-packet-norm}
+\end{equation}
+When this is summed over \(a\), uniqueness of \(\alpha\) for fixed
+\((j,r)\) turns the right side into
+\eqref{eq:tpc42-fixed-k-actual-diagonal}.  Expanding
+\eqref{eq:tpc42-fixed-k-synthesis} gives the last identity.
+\end{proof}
+
+Thus the genuine Hilbert-valued residue variance is already exactly the
+atomic diagonal.  No scalar cancellation is used, and changing any
+M\"obius sign inside one residue fiber leaves
+\eqref{eq:tpc42-fixed-k-packed-diagonal} unchanged.
+
+The all-residue indexing is essential for the unconditional physical
+identity.  TPC--41's scalar progression theorem is stated on
+\((\Z/M\Z)^\times\), so it controls bounded postcompositions of the unit
+sector only.  If an independently justified regular-packet pruning makes
+the nonunit packets vanish, the starred version follows as a special
+case; otherwise the nonunit packets are an additional scalar-invisible
+sector, not terms that may be silently discarded.
+
+\subsection{The complete minimal-folded identity}
+
+For a folded bucket \(0\le s\le L_B\), define
+\begin{equation}
+ [\mathbf H_s^L(r)]_{\gamma,j}
+ :=\sum_{\alpha:m_\alpha j=r}
+ c^L_{\alpha,\gamma,j}u_{\alpha,j,s},
+ \label{eq:tpc42-folded-H}
+\end{equation}
+and its target-residue packet
+\begin{equation}
+ \mathbf W_{s,a}^L
+ :=\sum_{\substack{r\equiv a-h\!\!\!\pmod M}}
+ \mathbf H_s^L(r).
+ \label{eq:tpc42-folded-residue-packet}
+\end{equation}
+Although \(u_{\alpha,j,s}\) contains one or two aliases, both target
+integers have residue \(m_\alpha j+h\pmod M\).  The proof of
+\cref{thm:tpc42-fixed-alias-orthogonality} therefore applies without
+change to \(\mathbf H_s^L(r)\).
+
+\begin{theorem}[Exact folded residue decomposition]
+\label{thm:tpc42-folded-residue-identity}
+The actual minimal bank satisfies
+\begin{align}
+ \boxed{
+ \cE_{\rm same,L}
+ =\sum_{s=0}^{L_B}\sum_{a\bmod M}
+   \|\mathbf W_{s,a}^L\|^2,}
+ \label{eq:tpc42-folded-packed-energy}\\
+ \boxed{
+ \cE_{\rm fold,L}
+ =\sum_{s=0}^{L_B}
+   \left\|\sum_{a\bmod M}\mathbf W_{s,a}^L\right\|^2,}
+ \label{eq:tpc42-folded-coherent-synthesis}\\
+ \boxed{
+ \cF_L
+ =\sum_{s=0}^{L_B}
+   \sum_{\substack{a,b\bmod M\\a\ne b}}
+   \langle\mathbf W_{s,a}^L,\mathbf W_{s,b}^L\rangle.}
+ \label{eq:tpc42-F-as-cross-residue}
+\end{align}
+The same three identities hold on the right.
+\end{theorem}
+
+\begin{proof}
+For fixed \(s\), different \(r\)'s in one target residue give orthogonal
+vectors.  Therefore
+\begin{align}
+ \sum_a\|\mathbf W_{s,a}^L\|^2
+ &=\sum_r\|\mathbf H_s^L(r)\|^2
+ \notag\\
+ &=\sum_{\gamma,j,\alpha}
+   |c^L_{\alpha,\gamma,j}|^2|u_{\alpha,j,s}|^2.
+ \label{eq:tpc42-one-folded-packet-energy}
+\end{align}
+Summing over \(s\) proves \eqref{eq:tpc42-folded-packed-energy}.  At a
+fixed coordinate \((\gamma,j)\), summing all target residues is the same
+as summing all rows, which gives
+\eqref{eq:tpc42-folded-coherent-synthesis}.  Finally, if
+\(\alpha\ne\beta\) occur at the same \((\gamma,j)\), then
+\begin{equation}
+ m_\alpha j+h\not\equiv m_\beta j+h\pmod M;
+ \label{eq:tpc42-distinct-rows-distinct-residues}
+\end{equation}
+otherwise the proof of
+\cref{thm:tpc42-fixed-alias-orthogonality} would force
+\(\alpha=\beta\).  Consequently the ordered cross-residue terms are
+exactly the ordered cross-row terms defining \(\cF_L\), proving
+\eqref{eq:tpc42-F-as-cross-residue}.
+\end{proof}
+
+Combining \eqref{eq:tpc42-folded-packed-energy} with the inherited
+row-diagonal theorem gives the unconditional vector estimate
+\begin{equation}
+ \sum_{s,a}
+ \left(
+  \|\mathbf W_{s,a}^L\|^2+
+  \|\mathbf W_{s,a}^R\|^2
+ \right)
+ \ll X^{o(1)}Q^2JK_B.
+ \label{eq:tpc42-packed-vector-target}
+\end{equation}
+This is a diagonal-scale Hilbert-valued residue theorem for the actual
+packet.  The unresolved operation is no longer packing integers inside
+one residue; it is the coherent summation over different residues in
+\eqref{eq:tpc42-folded-coherent-synthesis}.

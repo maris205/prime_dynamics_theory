@@ -1,0 +1,153 @@
+\section{Inherited terminal interface}
+\label{sec:tpc42-interface}
+
+We retain only the terminal data proved in TPC--36, TPC--39, and
+TPC--41 \citep{WangTPC36,WangTPC39,WangTPC41}.  Fix
+\(h\in\Z\setminus\{0\}\).  A physical source row is
+\begin{equation}
+ \alpha=(\ell_\alpha,d_\alpha),
+ \qquad m_\alpha=\ell_\alpha d_\alpha\asymp Q,
+ \qquad \ell_\alpha\asymp L_0,
+ \qquad d_\alpha\asymp D_0,
+ \qquad L_0D_0=Q,
+ \qquad QJ\asymp X.
+ \label{eq:tpc42-row-scales}
+\end{equation}
+The source separation makes \(m_\alpha\) determine \(\alpha\), and the
+two inherited source systems obey
+\begin{equation}
+ \sum_\alpha |\gamma_\alpha^{(i)}|^2
+ \ll X^{o(1)}Q,
+ \qquad i=1,2.
+ \label{eq:tpc42-source-l2}
+\end{equation}
+The orbit variable ranges through a set \(\cJ\) of \(O(J)\) positive
+integers.
+
+Choose three pairwise distinct auxiliary primes from the three disjoint
+TPC--41 intervals, satisfying
+\begin{equation}
+ \max\cJ<q_i,
+ \qquad
+ \max_\alpha d_\alpha<q_i<\min_\alpha\ell_\alpha,
+ \qquad q_i\nmid h,
+ \qquad i=1,2,3,
+ \label{eq:tpc42-admissible-primes}
+\end{equation}
+and put \(M=q_1q_2q_3\).  For sufficiently large \(X\), the size and
+endpoint conditions give
+\begin{equation}
+ (j,M)=1\quad(j\in\cJ),
+ \qquad
+ \max_{\alpha,\beta}|m_\alpha-m_\beta|<M.
+ \label{eq:tpc42-no-wrap-data}
+\end{equation}
+At the optimized endpoint,
+\begin{equation}
+ Q=X^{267/400+o(1)},
+ \qquad J=X^{133/400+o(1)},
+ \qquad M=X^{399/400+o(1)}.
+ \label{eq:tpc42-endpoint}
+\end{equation}
+
+Let \(B\asymp X\) be the completed determinant window.  To avoid
+confusing the source scale \(L_0\) with the alias half--width, write
+\begin{equation}
+ L_B=\left\lfloor\frac BM\right\rfloor,
+ \qquad q=L_B+1,
+ \qquad \cI_B=\{-L_B,\ldots,L_B\},
+ \qquad K_B=2L_B+1.
+ \label{eq:tpc42-alias-data}
+\end{equation}
+Then
+\begin{equation}
+ K_B=X^{1/400+o(1)}
+ =X^{o(1)}\frac{Q}{J^2},
+ \qquad
+ \frac{Q}{K_B}=X^{o(1)}J^2.
+ \label{eq:tpc42-missing-ledger}
+\end{equation}
+
+For \(k\in\cI_B\), define
+\begin{align}
+ n_{\alpha,j,k}
+ &=m_\alpha j+h+kM,
+ \label{eq:tpc42-terminal-n}\\
+ b_{\alpha,j,k}
+ &=-\mu(n_{\alpha,j,k})\log(n_{\alpha,j,k})
+   \Phi_0(n_{\alpha,j,k}),
+ \label{eq:tpc42-terminal-b}
+\end{align}
+with the second quantity interpreted as zero outside the positive
+terminal support.  The left coefficient and fixed--alias output are
+\begin{align}
+ c^L_{\alpha,\gamma,j}
+ &=\gamma_\alpha^{(1)}
+   \mathfrak A_{\alpha,\gamma}^{\rm act}(j),
+ \label{eq:tpc42-left-c}\\
+ [\mathscr T_k^L]_{\gamma,j}
+ &=\sum_\alpha c^L_{\alpha,\gamma,j}b_{\alpha,j,k}.
+ \label{eq:tpc42-left-column}
+\end{align}
+The right output interchanges the row systems.  The multiplier contains
+the actual row separation, gcd, residue, and smooth masks, and
+\begin{equation}
+ \sup_{\alpha,\gamma,j}
+ |\mathfrak A_{\alpha,\gamma}^{\rm act}(j)|
+ \ll X^{o(1)}.
+ \label{eq:tpc42-multiplier-bound}
+\end{equation}
+In particular, \(c^L\) is independent of \(k\), while its source factor
+contains \(\mu(d_\alpha)\).
+
+Source separation and the dyadic row window also give the crude counts
+\begin{equation}
+ \#\{\alpha\}+\#\{\gamma\}\ll X^{o(1)}Q.
+ \label{eq:tpc42-row-counts}
+\end{equation}
+No coprimality of \(m_\alpha j+h\) with \(M\) is assumed in the physical
+identities below.  The scalar theorem of TPC--41 sees only the unit
+residue sector; keeping all residue classes avoids an unrecorded
+modulus-dependent pruning of the physical packet.
+
+For the minimal \(q=L_B+1\) Fourier bank, put
+\begin{align}
+ u_{\alpha,j,0}&=b_{\alpha,j,0},
+ \label{eq:tpc42-folded-u0}\\
+ u_{\alpha,j,a}
+ &=b_{\alpha,j,a}+b_{\alpha,j,a-q},
+ \qquad 1\le a\le L_B.
+ \label{eq:tpc42-folded-ua}
+\end{align}
+The left folded energy and its equal--row part are
+\begin{align}
+ \cE_{\rm fold,L}
+ &=\sum_{\gamma,j}\sum_{a=0}^{L_B}
+   \left|\sum_\alpha
+   c^L_{\alpha,\gamma,j}u_{\alpha,j,a}\right|^2,
+ \label{eq:tpc42-folded-energy}\\
+ \cE_{\rm same,L}
+ &=\sum_{\gamma,j}\sum_{a=0}^{L_B}\sum_\alpha
+   |c^L_{\alpha,\gamma,j}|^2|u_{\alpha,j,a}|^2.
+ \label{eq:tpc42-same-energy}
+\end{align}
+Writing \(\cF_L\) for the ordered \(\alpha\ne\beta\) cross--row sum,
+\begin{equation}
+ \cE_{\rm fold,L}
+ =\cE_{\rm same,L}+\operatorname{Re}\cF_L.
+ \label{eq:tpc42-folded-split}
+\end{equation}
+TPC--41 proves, together with the symmetric right estimate,
+\begin{equation}
+ \boxed{
+ \cE_{\rm same,L}+\cE_{\rm same,R}
+ \ll X^{o(1)}Q^2JK_B
+ =X^{o(1)}\frac{Q^3}{J}.}
+ \label{eq:tpc42-inherited-same-bound}
+\end{equation}
+Thus the remaining minimal--bank theorem is exactly the one--sided bound
+\begin{equation}
+ \operatorname{Re}(\cF_L+\cF_R)
+ \ll X^{o(1)}Q^2JK_B.
+ \label{eq:tpc42-inherited-gate}
+\end{equation}
