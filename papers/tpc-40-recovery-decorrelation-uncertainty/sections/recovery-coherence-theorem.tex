@@ -1,0 +1,209 @@
+\section{The recovery--coherence uncertainty theorem}
+\label{sec:tpc40-recovery-coherence}
+
+The weighted formulation gives a matrix inequality, not only a scalar
+uncertainty product.
+
+\begin{theorem}[Exact weighted Loewner decomposition]
+\label{thm:tpc40-weighted-Loewner}
+Assume \eqref{eq:tpc40-exact-recovery}, and let \(A\), \(G\), \(D\), and
+\(b\) be as in \cref{sec:tpc40-weighted-banks}.  Put
+\begin{equation}
+ u:=\frac{\overline b}{\sqrt A}.
+ \label{eq:tpc40-Loewner-unit-vector}
+\end{equation}
+Then \(u^*u=1\) and
+\begin{equation}
+ \boxed{
+ G-\frac1A\one_R\one_R^*
+ =D^*(I_m-uu^*)D\succeq0.}
+ \label{eq:tpc40-exact-Loewner-decomposition}
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{A\lambda_{\max}(G)\ge R.}
+ \label{eq:tpc40-recovery-coherence-product}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:tpc40-normalized-recovery-system},
+\[
+ u^*D=\frac{b^TD}{\sqrt A}
+     =\frac1{\sqrt A}\one_R^T.
+\]
+Taking adjoints gives \(D^*u=A^{-1/2}\one_R\), and therefore
+\[
+ D^*uu^*D=\frac1A\one_R\one_R^*.
+\]
+Subtracting this identity from \(D^*D=G\) proves
+\eqref{eq:tpc40-exact-Loewner-decomposition}.  Monotonicity of the largest
+eigenvalue in the Loewner order gives
+\[
+ \lambda_{\max}(G)
+ \ge\lambda_{\max}\!\left(\frac1A\one_R\one_R^*\right)
+ =\frac RA,
+\]
+which is \eqref{eq:tpc40-recovery-coherence-product}.
+\end{proof}
+
+Equivalently, for every \(x\in\C^R\), weighted Cauchy--Schwarz gives
+\begin{equation}
+ |\one_R^Tx|^2
+ =|a^T\Phi x|^2
+ \le A\,x^*Gx.
+ \label{eq:tpc40-weighted-Cauchy-form}
+\end{equation}
+The factorization in \eqref{eq:tpc40-exact-Loewner-decomposition} records
+all such inequalities at once.
+
+\subsection{Minimum amplification and the pseudoinverse}
+
+The exact recovery system is feasible if and only if
+\(\one_R\in\operatorname{Ran}D^*=\operatorname{Ran}G\).  Write
+\(G^\dagger\) for the Moore--Penrose pseudoinverse.
+
+\begin{proposition}[Minimum-amplification recovery]
+\label{prop:tpc40-pseudoinverse-recovery}
+If exact recovery is feasible, then its minimum weighted amplification is
+\begin{equation}
+ \boxed{A_{\min}=\one_R^*G^\dagger\one_R.}
+ \label{eq:tpc40-pseudoinverse-amplification}
+\end{equation}
+The unique minimum-norm normalized variable and corresponding recovery
+coefficient are
+\begin{align}
+ z_{\min}
+ &=DG^\dagger\one_R,
+ \label{eq:tpc40-pseudoinverse-z}\\
+ a_{\min}
+ &=W\overline\Phi\,\overline{G^\dagger\one_R}.
+ \label{eq:tpc40-pseudoinverse-a}
+\end{align}
+Every solution has the form
+\begin{equation}
+ W^{-1/2}\overline a=z_{\min}+h,
+ \qquad h\in\ker D^*,
+ \label{eq:tpc40-all-recovery-solutions}
+\end{equation}
+and satisfies
+\begin{equation}
+ A=A_{\min}+\|h\|_2^2.
+ \label{eq:tpc40-amplification-Pythagoras}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The minimum-norm solution of \(D^*z=\one_R\) is
+\(z_{\min}=(D^*)^\dagger\one_R=DG^\dagger\one_R\).  Since \(G\) is
+Hermitian and \(\one_R\in\operatorname{Ran}G\),
+\[
+ \|z_{\min}\|_2^2
+ =\one_R^*G^\dagger G G^\dagger\one_R
+ =\one_R^*G^\dagger\one_R.
+\]
+The relation between \(z\) and \(a\) in
+\eqref{eq:tpc40-weighted-normalization} yields
+\eqref{eq:tpc40-pseudoinverse-a}.  Finally,
+\(z_{\min}\in\operatorname{Ran}D\) is orthogonal to \(\ker D^*\), which
+proves \eqref{eq:tpc40-amplification-Pythagoras}.
+\end{proof}
+
+\subsection{Equality and endpoint rigidity}
+
+\begin{proposition}[Equality in the uncertainty product]
+\label{prop:tpc40-product-equality}
+Let \(\lambda=\lambda_{\max}(G)\).  Under exact recovery, equality in
+\eqref{eq:tpc40-recovery-coherence-product} holds if and only if
+\begin{equation}
+ G\one_R=\lambda\one_R,
+ \qquad
+ W^{-1/2}\overline a=\frac1\lambda D\one_R.
+ \label{eq:tpc40-product-equality-characterization}
+\end{equation}
+Equivalently,
+\begin{equation}
+ a=\frac1\lambda W\overline\Phi\one_R.
+ \label{eq:tpc40-product-equality-coefficient}
+\end{equation}
+Thus an equality recovery is the minimum-amplification recovery for its
+bank, and \(A=R/\lambda\).
+\end{proposition}
+
+\begin{proof}
+The scalar proof of \eqref{eq:tpc40-recovery-coherence-product} is
+\[
+ R=\|D^*z\|_2^2
+   =z^*DD^*z
+ \le\lambda\|z\|_2^2=\lambda A.
+\]
+Equality holds precisely when \(z\) lies in the top eigenspace of
+\(DD^*\).  Since \(D^*z=\one_R\), the eigenvector equation is
+\[
+ D\one_R=DD^*z=\lambda z.
+\]
+Applying \(D^*\) also gives \(G\one_R=\lambda\one_R\).  These implications
+are reversible, and translation from \(z\) to \(a\) proves the result.
+\end{proof}
+
+\begin{proposition}[Unit-amplification rigidity]
+\label{prop:tpc40-unit-amplification-rigidity}
+Every exact recovery has \(A\ge1\).  Moreover, \(A=1\) if and only if
+there is a phase column \(v\in\C^m\), \(|v_j|=1\), such that
+\begin{equation}
+ \Phi=v\one_R^T,
+ \qquad
+ a_j=w_j\overline{v_j}\quad(1\le j\le m).
+ \label{eq:tpc40-unit-amplification-rigid-form}
+\end{equation}
+In this case \(G=\one_R\one_R^*\) and
+\(\lambda_{\max}(G)=R\).
+\end{proposition}
+
+\begin{proof}
+For every column \(\phi_\alpha\) of \(\Phi\),
+\[
+ 1=|a^T\phi_\alpha|^2
+ \le\left(\sum_j\frac{|a_j|^2}{w_j}\right)
+     \left(\sum_jw_j|\phi_{j\alpha}|^2\right)=A.
+\]
+If \(A=1\), equality holds for every column.  In the normalized variables,
+each \(D\)-column has norm one and has inner product one with the unit
+vector \(z=\overline b\).  Hence every \(D\)-column equals \(z\), so all
+columns of \(\Phi\) are the same phase column \(v\).  The equality vector
+is \(z=W^{1/2}v\), which is equivalent to
+\(a_j=w_j\overline{v_j}\).  The converse is immediate.
+\end{proof}
+
+At the opposite endpoint, complete Gram decorrelation has a precisely
+quantified recovery cost.
+
+\begin{proposition}[Cost of an orthogonal Gram]
+\label{prop:tpc40-orthogonal-Gram-cost}
+If \(G=I_R\), then exact recovery is feasible and every exact recovery can
+be written as
+\begin{equation}
+ W^{-1/2}\overline a=D\one_R+h,
+ \qquad h\in\ker D^*.
+ \label{eq:tpc40-orthogonal-all-solutions}
+\end{equation}
+Its amplification is
+\begin{equation}
+ \boxed{A=R+\|h\|_2^2\ge R.}
+ \label{eq:tpc40-orthogonal-cost}
+\end{equation}
+Equality holds exactly for
+\begin{equation}
+ a=W\overline\Phi\one_R.
+ \label{eq:tpc40-orthogonal-minimizer}
+\end{equation}
+In particular, the simultaneous conditions \(A=1\) and \(G=I_R\) are
+possible only when \(R=1\).
+\end{proposition}
+
+\begin{proof}
+When \(D^*D=I_R\), the vector \(D\one_R\) solves
+\(D^*z=\one_R\), has squared norm \(R\), and is orthogonal to
+\(\ker D^*\).  The asserted formulas follow from the orthogonal
+decomposition of all solutions.
+\end{proof}

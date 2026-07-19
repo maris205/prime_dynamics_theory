@@ -1,0 +1,169 @@
+\section{Literature interface and the arithmetic boundary}
+\label{sec:tpc40-literature-boundary}
+
+The phase banks considered here sit at an interface between two theories
+with very different logical content.  Finite--frame and large--sieve
+inequalities describe the geometry of the measurement map.  Results on
+correlations of multiplicative functions describe cancellation in the
+measured coefficients.  The former can optimize sampling, conditioning,
+and erasure tolerance, but it cannot supply the latter.  This section
+records the exact scope of the relevant literature so that no deterministic
+frame statement is mistaken for the twist--stable M\"obius estimate left
+open by TPC--39.
+
+\subsection{What finite--frame geometry does prove}
+
+Let \(v_1,\ldots,v_m\) be unit vectors in a \(d\)-dimensional complex
+Hilbert space.  The first Welch bound gives, for \(m>d\),
+\begin{equation}
+ \max_{r\ne s}|\langle v_r,v_s\rangle|^2
+ \ge \frac{m-d}{d(m-1)}.
+ \label{eq:tpc40-Welch-bound}
+\end{equation}
+Equality requires the vectors to form an equiangular tight frame
+\citep{Welch1974}.  Thus the Welch bound is a lower bound for worst--pair
+coherence.  It is not, by itself, a theorem about a prescribed recovery
+functional, and it does not say that deleting a measurement preserves
+exact recovery.
+
+The averaged analogue is the frame potential
+\begin{equation}
+ \operatorname{FP}(v_1,\ldots,v_m)
+ :=\sum_{r,s=1}^{m}|\langle v_r,v_s\rangle|^2.
+ \label{eq:tpc40-frame-potential}
+\end{equation}
+For \(m\ge d\),
+\begin{equation}
+ \operatorname{FP}(v_1,\ldots,v_m)\ge \frac{m^2}{d},
+ \label{eq:tpc40-frame-potential-bound}
+\end{equation}
+with equality precisely at unit--norm tight frames
+\citep{BenedettoFickus2003}.  This is the appropriate background when a
+phase bank is optimized by total squared correlation rather than maximum
+coherence.  Tightness minimizes a declared geometric energy; it does not
+make structured arithmetic coefficients independent.
+
+There is a necessary qualification in the present setting.  A minimally
+sampled phase map on all \(2L+1\) alias coordinates has a nontrivial
+kernel.  Consequently it has no finite condition number as an operator on
+the full alias space.  A statement such as ``unit condition number'' is
+valid only after the quotient, range, or recoverable subspace has been
+specified.  The regular polygon bank is an exact Fourier system on its
+folded quotient; that fact neither removes the folded kernel nor controls
+the norm of a physical M\"obius synthesis.
+
+The analytic large sieve supplies a complementary Bessel bound.  If
+\(x_1,\ldots,x_R\) are separated modulo one by at least \(\delta\), then
+for a trigonometric polynomial supported on an interval of \(N\) integers
+one has, up to harmless endpoint conventions,
+\begin{equation}
+ \sum_{r=1}^{R}
+ \left|\sum_n a_n\,\mathrm e(nx_r)\right|^2
+ \ll (N+\delta^{-1})\sum_n|a_n|^2.
+ \label{eq:tpc40-large-sieve-form}
+\end{equation}
+This is the separated--frequency form established sharply by
+\citet{MontgomeryVaughan1973}.  It bounds the norm of an analysis operator
+by the input \(\ell^2\)-mass.  It does not decrease that mass, and it does
+not force cancellation between two M\"obius atoms.  In the TPC--39 folded
+Parseval identity the equality column \(\|\mathscr Z_0\|^2\) is already a
+positive summand.  No application of
+\eqref{eq:tpc40-large-sieve-form} can erase this summand without an
+additional arithmetic estimate.
+
+The division of labor is therefore exact:
+\begin{equation}
+ \boxed{\text{frame geometry does not imply arithmetic decorrelation.}}
+ \label{eq:tpc40-frame-arithmetic-boundary}
+\end{equation}
+
+\subsection{Nearby M\"obius theorems and their quantifiers}
+
+Several deep results come close to one face of the physical gate, but each
+changes at least one essential quantifier.
+
+First, \citet{KlurmanMangerelTeravainen2023} prove small variance for sums
+of a bounded multiplicative function in residue classes modulo \(q\), for
+almost all \(q=o(x)\), with stronger exceptional--set conclusions in
+special modulus families and an every--modulus conclusion under their
+stated GRH hypothesis.  This is the closest existing theorem to the
+large--modulus, short--progression geometry of the terminal packet.  It is
+nevertheless a scalar residue--class variance theorem.  It does not
+include the prescribed CRT modulus, the physical row mask, coherent row
+synthesis, or the affine four--M\"obius form.  At the endpoint \(K=x/M\),
+its schematic error
+\begin{equation}
+ \varepsilon\varphi(M)K^2
+ \label{eq:tpc40-KMT-schematic-error}
+\end{equation}
+reaches the scalar diagonal scale \(MK\) only if
+\(\varepsilon\ll K^{-1}x^{o(1)}\).  The available M\"obius savings are
+logarithmic rather than this fixed power.  GRH changes the exceptional
+modulus quantifier, not this missing factor.
+
+Second, \citet{TeravainenWalker2025} prove a logarithmically averaged
+two--point Elliott theorem on convex Bohr sets.  Their additive--character
+lemma gives cancellation for two fixed affine forms twisted by a fixed
+linear phase.  This is especially relevant conceptually because the
+terminal two--M\"obius term can also be displayed as an affine correlation
+with a phase.  In the present problem, however, the affine coefficients,
+shifts, modulus, and rational phase denominator all move with \(X\); the
+desired quantity is a natural square energy with row weights.  Moreover,
+their higher--point statement generally gives a nontrivial bound away from
+the trivial maximum, not a vanishing four--point correlation.  It therefore
+cannot be substituted for the physical gate.
+
+Third, the averaged Chowla theorem of
+\citet{MatomakiRadziwillTao2015} obtains cancellation after averaging the
+shift parameters.  It applies to correlations of arbitrary fixed order
+and is the natural comparison for the two-- and four--point terms produced
+after squaring.  The TPC shifts, by contrast, occupy a sparse,
+algebraically prescribed family tied to one CRT modulus.  Shift--average
+cancellation does not imply a uniform estimate on that family.  The
+quantitative savings in that method are also logarithmic, not the
+\(K^{-1}\)-scale saving demanded by the endpoint ledger.
+
+Local Fourier results change a different quantifier.  The short--interval
+Fourier--uniformity theorem of \citet{MatomakiRadziwillTao2020} averages
+the origin of the interval while taking a supremum over linear phases.  Its
+higher--order extension proves averaged local nilsequence and Gowers
+uniformity \citep{MatomakiRadziwillTaoTeravainenZiegler2023}.  These are
+among the strongest available tools for phase--uniform cancellation on
+short intervals, but a contiguous interval with averaged origin is not a
+length--\(K\) progression of step \(M\) at one specified large modulus.
+Neither paper contains the row--synthesis norm required here.
+
+For fixed shifts there are two further landmarks.  \citet{Tao2016} proves
+the two--point Chowla--Elliott correlation with logarithmic averaging.
+\citet{TaoTeravainen2019} obtain unweighted two--point Chowla cancellation
+at almost all scales.  In both comparisons the affine data are fixed
+before the asymptotic limit; the TPC data grow with \(X\), and the desired
+bound must hold along the prescribed endpoint sequence with quantitative
+uniformity.  A fixed--parameter or almost--all--scales theorem cannot be
+promoted to that moving--parameter assertion.
+
+Finally, classical uniform exponential--sum cancellation for one
+M\"obius factor \citep{Davenport1937} and strong M\"obius orthogonality to
+fixed nilsequences \citep{GreenTao2012} justify viewing a phase twist itself
+as benign.  They do not survive the logical operation needed here: after
+the physical norm is squared, the coefficient is a product of two or four
+M\"obius values rather than a single M\"obius function against a
+deterministic phase.
+
+\subsection{The precise remaining upgrade}
+
+The missing input is therefore not another conditioning theorem for the
+finite Fourier bank.  It is a moving--parameter decorrelation estimate,
+uniform over the prescribed CRT modulus \(M=M(X)\), the minimal phases
+\(0\le\nu<q=q(X)\), the physical row family, and the terminal support.  It
+must control a natural \(L^2\) synthesis containing both two-- and
+four--M\"obius off--diagonal terms at the diagonal scale.  Existing results
+instead average shifts, interval origins, moduli, or scales; use
+logarithmic averages; keep the affine data fixed; or treat only one
+multiplicative factor.
+
+Accordingly, none of the cited theorems proves the twist--stable physical
+estimate, a parity breach, a Hardy--Littlewood asymptotic, or the
+twin--prime conjecture.  Their correct role is to identify the nearest
+available inputs and, just as importantly, to expose the exact quantifier
+upgrade that a positive continuation would have to supply.

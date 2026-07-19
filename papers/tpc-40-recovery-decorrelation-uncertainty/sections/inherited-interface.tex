@@ -1,0 +1,132 @@
+\section{Inherited equality slice and endpoint ledger}
+\label{sec:tpc40-interface}
+
+We restate only the part of TPC--39 needed to connect the finite phase
+theorem to the physical packet.  All estimates below that refer to
+M\"obius cancellation remain explicitly conditional.
+
+\subsection{Rows and aliases}
+
+On one retained packet,
+\begin{equation}
+ QJ\asymp X,
+ \qquad
+ Q=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)}.
+ \label{eq:tpc40-interface-QJ}
+\end{equation}
+Let \(\mathscr A\) be its active row set, of cardinality
+\begin{equation}
+ R_{\rm row}:=|\mathscr A|\ll X^{o(1)}Q.
+ \label{eq:tpc40-interface-row-count}
+\end{equation}
+The main finite theorems use an arbitrary integer \(R\); physical
+specializations are stated for any selected \(R\)-row subpacket.  When a
+dense packet with \(R=X^{o(1)}Q\) is invoked, that density is written as
+an additional hypothesis rather than inferred from
+\eqref{eq:tpc40-interface-row-count}.
+
+Choose the three orbit--scale primes of TPC--39 and put
+\begin{equation}
+ M=q_1q_2q_3=X^{399/400+o(1)}.
+ \label{eq:tpc40-interface-M}
+\end{equation}
+Every completed determinant lies in \(|F|\le B\), where \(B\asymp X\).
+Define
+\begin{equation}
+ L=\left\lfloor\frac BM\right\rfloor,
+ \qquad
+ q=L+1,
+ \qquad
+ K_B=2L+1.
+ \label{eq:tpc40-interface-alias}
+\end{equation}
+Then
+\begin{equation}
+ q\asymp K_B\asymp X^{1/400+o(1)},
+ \qquad
+ qM>B.
+ \label{eq:tpc40-interface-alias-scale}
+\end{equation}
+
+For each row \(\alpha\), alias \(-L\le k\le L\), and any remaining
+physical output index, gather the actual row coefficient, mask,
+M\"obius atom, and cutoff into a Hilbert vector
+\begin{equation}
+ x_{\alpha,k}\in\cH.
+ \label{eq:tpc40-interface-atoms}
+\end{equation}
+The raw alias column and equality output are
+\begin{equation}
+ \cZ_k=\sum_{\alpha\in\mathscr A}x_{\alpha,k},
+ \qquad
+ \cR_0=\cZ_0.
+ \label{eq:tpc40-interface-columns}
+\end{equation}
+The finite theorems treat the \(x_{\alpha,k}\) as arbitrary.  This is
+exactly what makes their later physical conclusion coefficient blind.
+
+\subsection{Minimal alias tomography}
+
+Let \(\omega=\ee{1/q}\).  The TPC--39 measurements are
+\begin{equation}
+ \cY_\nu
+ =\sum_{k=-L}^{L}\omega^{\nu k}\cZ_k,
+ \qquad 0\le\nu<q.
+ \label{eq:tpc40-interface-Ynu}
+\end{equation}
+They recover equality with unit normalized amplification:
+\begin{equation}
+ \cZ_0=\frac1q\sum_{\nu=0}^{q-1}\cY_\nu.
+ \label{eq:tpc40-interface-recovery}
+\end{equation}
+Their normalized Gram in the alias coordinate is
+\begin{equation}
+ (H_q)_{k\ell}
+ =\one_{k\equiv\ell\pmod q}.
+ \label{eq:tpc40-interface-Hq}
+\end{equation}
+Because \(q=L+1\), its scalar spectrum is
+\begin{equation}
+ 2\quad(L\text{ times}),
+ \qquad
+ 1\quad(1\text{ time}),
+ \qquad
+ 0\quad(L\text{ times}).
+ \label{eq:tpc40-interface-Hq-spectrum}
+\end{equation}
+The eigenvalue one belongs to the isolated zero alias.  The eigenvalues
+two and zero belong to folded nuisance pairs; they must not be confused
+with the equality--slice recovery constant.
+
+\subsection{Energy budget and the surviving term}
+
+Put
+\begin{equation}
+ B_0=Q^2J.
+ \label{eq:tpc40-interface-B0}
+\end{equation}
+The inherited target is
+\begin{equation}
+ \|\cR_0\|^2
+ \ll X^{o(1)}\frac{Q^3}{J},
+ \label{eq:tpc40-interface-target}
+\end{equation}
+and the exact exponent identity is
+\begin{equation}
+ B_0K_B=X^{o(1)}\frac{Q^3}{J}.
+ \label{eq:tpc40-interface-budget}
+\end{equation}
+TPC--39 closes the complete terminal atomic diagonal at this scale.  The
+unproved part is off diagonal.  At fixed alias it contains cross--row
+terms, and between the folded aliases it contains a gap of size
+\(qM\in(B,B+M]\).  The determinant phase \(\omega^{\nu k}\) is constant
+in \(\alpha\), so no row cancellation follows from
+\eqref{eq:tpc40-interface-Ynu}.
+
+The purpose of the present paper is to decide whether an additional
+coefficient--blind row phase can repair this last defect while preserving
+\eqref{eq:tpc40-interface-recovery} at low amplification.  It cannot;
+the exact obstruction is finite dimensional and independent of any
+unproved statement about M\"obius correlations.

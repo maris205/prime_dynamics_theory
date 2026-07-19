@@ -1,0 +1,68 @@
+\section{Comparison with the multiplicative superwindow door}
+\label{sec:tpc40-superwindow}
+
+TPC--39 isolates a second architecture: enlarge the multiplicative CRT
+modulus until it exceeds the determinant window.  This removes aliases
+without additive tomography, but it does not create M\"obius cancellation.
+The endpoint scales quantify the granularity cost.
+
+\subsection{The orbit--prime granularity gap}
+
+The inherited multiplicative coordinates use primes
+\(q_i\asymp J\), and their product is
+\begin{equation}
+ M=q_1q_2q_3=X^{399/400+o(1)}.
+ \label{eq:tpc40-superwindow-M}
+\end{equation}
+The smallest no--wrap factor required after this product is only
+\begin{equation}
+ q=L+1\asymp\frac BM=X^{1/400+o(1)}.
+ \label{eq:tpc40-superwindow-additive-factor}
+\end{equation}
+By contrast, an additional coordinate satisfying the same orbit--prime
+range has size \(p_4\asymp J=X^{133/400+o(1)}\).  Its multiplicative
+superwindow \(M_4=Mp_4\) obeys
+\begin{equation}
+ \frac{M_4}{B}
+ \asymp\frac{p_4}{q}
+ =X^{132/400+o(1)}.
+ \label{eq:tpc40-superwindow-overshoot}
+\end{equation}
+Thus the fourth multiplicative coordinate overshoots the exact no--wrap
+factor by \(X^{33/100+o(1)}\).  Additive quotient tomography is far more
+granular: it implements the effective modulus \(qM>B\) using \(q\)
+unimodular measurements.
+
+Equation \eqref{eq:tpc40-superwindow-overshoot} is specific to the
+inherited architecture in which every new multiplicative coordinate must
+lie at the orbit scale.  It is not a theorem that every possible composite
+superwindow has this cost; smaller factors would require a new zero--face,
+unit--coordinate, and physical synthesis analysis.
+
+\subsection{No--wrap is not arithmetic closure}
+
+For a squarefree product \(R=\prod_{i=1}^{s}p_i\), the full target face
+has equality coefficient
+\begin{equation}
+ A_R=\prod_{i=1}^{s}\left(1-\frac1{p_i-1}\right).
+ \label{eq:tpc40-superwindow-equality-coefficient}
+\end{equation}
+With a fixed number of orbit--scale primes,
+\begin{equation}
+ A_R=1-O_s(J^{-1}).
+ \label{eq:tpc40-superwindow-equality-unsuppressed}
+\end{equation}
+Hence a no--wrap modulus removes the alias copies but leaves the original
+equality vector with asymptotic coefficient one.  Its dominant target
+squared singular value is of order \(R\), as computed in TPC--38 and
+compared with the alias count in TPC--39.  The superwindow therefore
+trades alias multiplicity for multiplicative synthesis scale; it does not
+weaken the equality M\"obius form.
+
+The additive and multiplicative doors have complementary strengths.
+Additive tomography reaches the exact no--wrap scale with optimal recovery
+amplification, but the present theorem shows that a further universal row
+phase cannot decorrelate for free.  A fourth multiplicative coordinate
+removes aliases directly, but overresolves the window and retains the full
+equality coefficient.  Both routes return to the same coefficient--specific
+arithmetic boundary.

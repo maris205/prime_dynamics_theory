@@ -1,0 +1,111 @@
+\section{Introduction}
+\label{sec:tpc40-introduction}
+
+The last three layers of the TPC program separate three different
+obstructions at an orbit--sliced prime--M\"obius energy gate.  TPC--37
+closes the zero coordinate faces and the proper multiplicative faces, but
+the full equality face retains the original physical vector with
+coefficient \(1-o(1)\).  TPC--38 computes the target--synthesis spectrum
+and shows that multiplicative completion produces a coherent joint--alias
+bucket rather than the single equality column.  TPC--39 constructs the
+missing additive quotient projector: exactly \(L+1\) twists recover the
+zero alias, and no smaller arbitrary phase bank does so universally
+\citep{WangTPC37,WangTPC38,WangTPC39}.
+
+That algebraic recovery does not estimate the output.  Its minimal
+positive square energy has the folded Parseval form
+\begin{equation}
+ \|\cZ_0\|^2+
+ \sum_{s=1}^{L}\|\cZ_s+\cZ_{s-q}\|^2,
+ \qquad q=L+1.
+ \label{eq:tpc40-intro-folded-energy}
+\end{equation}
+In particular, \(\|\cZ_0\|^2\) is present as a positive summand.  At the
+terminal layer, the alias phase is also independent of the physical row.
+It therefore does not oscillate the fixed--alias cross--row quadratic
+form, whose coefficients contain genuine two-- and four--M\"obius
+correlations.
+
+This suggests a second phase coordinate.  One could assign phases to the
+physical rows, average the resulting energies, and hope to replace a
+coherent row Gram by an almost diagonal one.  The difficulty is that the
+same bank must still recover the original coherent row sum.  The present
+paper determines the exact tradeoff between those two requirements.
+
+\subsection{Main finite theorem}
+
+Let \(R\) be the number of active rows, let \(\Phi\) be a unimodular
+\(m\times R\) phase matrix, and let \(w\) be a positive probability
+vector on its measurements.  If \(a\) recovers the coherent sum, define
+\begin{equation}
+ \cA(a,w)=\sum_{t=1}^{m}\frac{|a_t|^2}{w_t},
+ \qquad
+ G(\Phi,w)=\Phi^*\diag(w)\Phi.
+ \label{eq:tpc40-intro-A-G}
+\end{equation}
+Our core result is the matrix inequality
+\begin{equation}
+ \boxed{
+ G(\Phi,w)\succeq
+ \frac1{\cA(a,w)}\one\one^*.}
+ \label{eq:tpc40-intro-Loewner}
+\end{equation}
+It is stronger than an operator--norm estimate: every positive bank
+energy that supports universal recovery already contains a fixed fraction
+of the coherent target energy.  Since \(G\) has unit diagonal, one gets
+the sharp alternatives
+\begin{equation}
+ \cA=1\Longrightarrow G=\one\one^*,
+ \qquad
+ G=I_R\Longrightarrow\cA\ge R.
+ \label{eq:tpc40-intro-rigidity}
+\end{equation}
+Partial Fourier banks attain every integer point
+\begin{equation}
+ (\cA,\lambda_{\max}(G))=(r,R/r),
+ \qquad 1\le r\le R,
+ \label{eq:tpc40-intro-frontier}
+\end{equation}
+so the product law is not an artifact of the proof.
+
+\subsection{Why this is the correct next layer}
+
+The theorem does not claim that the physical M\"obius vector is a worst
+case vector for \(G\).  It rules out a narrower and precisely declared
+method class: coefficient--blind, equality--preserving phase banks that
+are estimated through a positive weighted square energy.  Within that
+class, row decorrelation is paid for by exactly the recovery
+amplification, while the atomic diagonal is invariant.  A large sieve or
+tight--frame statement about the phase geometry cannot alter this
+conservation law.
+
+This is useful even though it is an obstruction.  Before this paper,
+adding row signs or a second Fourier coordinate remained a plausible
+formal escape from the fixed--alias cross--row term in TPC--39.  The sharp
+Loewner theorem closes that escape without making any conjecture about
+M\"obius signs.  What remains is necessarily coefficient specific: one
+must show that the actual arithmetic vector avoids the coherent mode, or
+estimate a signed bilinear functional before replacing it by positive
+energy.
+
+\subsection{Guide to the paper}
+
+\Cref{sec:tpc40-interface} records the inherited alias and endpoint
+ledgers.  The weighted phase formalism, Loewner theorem, equality cases,
+and sharp Fourier families occupy the next four sections.  We then tensor
+the result with quotient tomography, treat coupled row--alias phases, and
+specialize the conservation law to the physical endpoint.  A comparison
+with multiplicative superwindows and with the nearest frame, large--sieve,
+and M\"obius results keeps the scope explicit.  The final sections state
+the coefficient--specific next gate and the exact computational
+certificate.
+
+\subsection{Claim boundary}
+
+All phase--frame and matrix results in this paper are unconditional.  The
+physical consequence is a no--go for the stated universal positive--energy
+method class.  We do not prove that the actual cross--row energy is large,
+that every phase method fails, or that signed coefficient--specific
+dispersion is impossible.  In particular, no affine Chowla estimate,
+parity--breaking estimate, Hardy--Littlewood formula, or twin--prime
+theorem is asserted.

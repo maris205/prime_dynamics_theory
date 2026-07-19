@@ -1,0 +1,90 @@
+\section{Stability under approximate recovery}
+\label{sec:tpc40-approximate-recovery}
+
+The exact Loewner argument has a direct biased version.  Let \(a\ne0\) be
+arbitrary and define its gain vector \(g\in\C^R\) by
+\begin{equation}
+ g^T:=a^T\Phi.
+ \label{eq:tpc40-approximate-gain}
+\end{equation}
+Thus exact unit-gain recovery is the special case \(g=\one_R\).  Retain
+\(A=a^*W^{-1}a\), \(D=W^{1/2}\Phi\), \(b=W^{-1/2}a\), and
+\(u=\overline b/\sqrt A\).
+
+\begin{theorem}[Approximate weighted Loewner inequality]
+\label{thm:tpc40-approximate-Loewner}
+For every nonzero recovery coefficient \(a\),
+\begin{equation}
+ \boxed{
+ G-\frac1A\overline g\,g^T
+ =D^*(I_m-uu^*)D\succeq0.}
+ \label{eq:tpc40-approximate-Loewner-decomposition}
+\end{equation}
+Consequently,
+\begin{equation}
+ A\lambda_{\max}(G)\ge\|g\|_2^2.
+ \label{eq:tpc40-gain-norm-uncertainty}
+\end{equation}
+If, for some \(0\le\varepsilon\le1\),
+\begin{equation}
+ \|g-\one_R\|_2\le\varepsilon\sqrt R,
+ \label{eq:tpc40-relative-L2-recovery-error}
+\end{equation}
+then
+\begin{equation}
+ \boxed{
+ A\lambda_{\max}(G)
+ \ge R(1-\varepsilon)^2.}
+ \label{eq:tpc40-approximate-uncertainty-product}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The definition of \(g\) gives
+\[
+ u^*D=\frac{b^TD}{\sqrt A}=\frac1{\sqrt A}g^T,
+ \qquad
+ D^*u=\frac1{\sqrt A}\overline g.
+\]
+This proves the factorization in
+\eqref{eq:tpc40-approximate-Loewner-decomposition}.  The rank-one matrix
+\(A^{-1}\overline g\,g^T\) has largest eigenvalue
+\(A^{-1}\|g\|_2^2\), proving
+\eqref{eq:tpc40-gain-norm-uncertainty}.  Finally, the reverse triangle
+inequality and \eqref{eq:tpc40-relative-L2-recovery-error} give
+\[
+ \|g\|_2
+ \ge\|\one_R\|_2-\|g-\one_R\|_2
+ \ge(1-\varepsilon)\sqrt R.
+\]
+Squaring completes the proof.
+\end{proof}
+
+\begin{corollary}[Coordinatewise error]
+\label{cor:tpc40-coordinatewise-recovery-error}
+If
+\begin{equation}
+ \max_{1\le\alpha\le R}|g_\alpha-1|\le\varepsilon
+ \qquad(0\le\varepsilon\le1),
+ \label{eq:tpc40-coordinatewise-error-assumption}
+\end{equation}
+then \eqref{eq:tpc40-approximate-uncertainty-product} holds.
+\end{corollary}
+
+\begin{proof}
+The coordinatewise assumption implies
+\(\|g-\one_R\|_2\le\varepsilon\sqrt R\).
+\end{proof}
+
+The norm and normalization in
+\eqref{eq:tpc40-relative-L2-recovery-error} are essential.  Without a
+quantitative condition that forces \(\|g\|_2\) to remain close to
+\(\sqrt R\), no lower bound with the factor
+\((1-\varepsilon)^2\) follows.  Under the same error hypothesis, but for
+unrestricted \(\varepsilon\ge0\), the proof yields the always-valid form
+\begin{equation}
+ A\lambda_{\max}(G)
+ \ge R(1-\varepsilon)_+^2,
+ \qquad (x)_+:=\max\{x,0\}.
+ \label{eq:tpc40-approximate-positive-part}
+\end{equation}

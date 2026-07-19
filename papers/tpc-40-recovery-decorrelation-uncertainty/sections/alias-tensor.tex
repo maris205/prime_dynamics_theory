@@ -1,0 +1,194 @@
+\section{Tensoring row phases with minimal alias tomography}
+\label{sec:tpc40-alias-tensor}
+
+We now combine the row theorem with the \(q=L+1\) quotient bank from
+\cref{sec:tpc40-interface}.  The tensor calculation separates the
+equality slice from the folded nuisance spectrum and shows that alias
+tomography supplies no hidden row decorrelation.
+
+\subsection{The separable product bank}
+
+Let \(\Phi=(\phi_{t\alpha})\) be a weighted row phase bank with weights
+\(w_t\), recovery coefficients \(a_t\), amplification \(\cA\), and Gram
+\(G\).  Define
+\begin{equation}
+ \cY_{t,\nu}
+ :=\sum_{\alpha=1}^{R}\sum_{k=-L}^{L}
+ \phi_{t\alpha}\omega^{\nu k}x_{\alpha,k},
+ \qquad
+ 0\le\nu<q.
+ \label{eq:tpc40-product-measurements}
+\end{equation}
+Give the pair \((t,\nu)\) weight \(w_t/q\) and recovery coefficient
+\begin{equation}
+ \widetilde a_{t,\nu}=\frac{a_t}{q}.
+ \label{eq:tpc40-product-recovery-coefficient}
+\end{equation}
+
+\begin{theorem}[Tensor recovery and amplification conservation]
+\label{thm:tpc40-tensor-recovery}
+The product bank recovers the coherent equality slice:
+\begin{equation}
+ \sum_{t,\nu}\widetilde a_{t,\nu}\cY_{t,\nu}
+ =\sum_{\alpha=1}^{R}x_{\alpha,0}.
+ \label{eq:tpc40-product-recovery}
+\end{equation}
+Its normalized recovery amplification is exactly
+\begin{equation}
+ \widetilde{\cA}=\cA,
+ \label{eq:tpc40-product-amplification}
+\end{equation}
+and its complete row--alias Gram is
+\begin{equation}
+ \widetilde G=G\otimes H_q,
+ \label{eq:tpc40-product-Gram}
+\end{equation}
+where \(H_q\) is given by
+\eqref{eq:tpc40-interface-Hq}.  On the zero--alias coordinate block,
+\begin{equation}
+ \widetilde G\big|_{k=\ell=0}=G.
+ \label{eq:tpc40-zero-alias-Gram}
+\end{equation}
+Consequently
+\begin{equation}
+ \boxed{
+ \cA\,\lambda_{\max}
+ \left(\widetilde G\big|_{k=\ell=0}\right)\ge R.}
+ \label{eq:tpc40-tensor-tradeoff}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The coefficient of \(x_{\alpha,k}\) in the left side of
+\eqref{eq:tpc40-product-recovery} is
+\[
+ \left(\sum_ta_t\phi_{t\alpha}\right)
+ \left(\frac1q\sum_{\nu=0}^{q-1}\omega^{\nu k}\right)
+ =\one_{k=0}.
+\]
+Moreover,
+\[
+ \sum_{t,\nu}
+ \frac{|\widetilde a_{t,\nu}|^2}{w_t/q}
+ =\sum_t\frac{|a_t|^2}{w_t}=\cA.
+\]
+The Gram factorization follows by separating the two phase sums.  Since
+zero is a singleton residue in \([-L,L]\), \((H_q)_{00}=1\), proving
+\eqref{eq:tpc40-zero-alias-Gram}.  Apply the recovery--coherence theorem
+on that block.
+\end{proof}
+
+The full tensor operator has a nuisance factor two.  If
+\(\lambda_1,\ldots,\lambda_R\) are the eigenvalues of \(G\), then for
+each nonzero \(\lambda_j\) the corresponding nonzero tensor eigenvalues are
+\begin{equation}
+ 2\lambda_j\quad(L\text{ copies for each }j),
+ \qquad
+ \lambda_j\quad(1\text{ copy for each }j).
+ \label{eq:tpc40-product-spectrum}
+\end{equation}
+Zeros arise from the folded alias kernel and, when \(G\) is singular, also
+from the outer row bank.  Thus the full operator norm is
+\(2\|G\|_{\op}\) when \(L\ge1\), but the relevant
+equality--slice coherence is \(\|G\|_{\op}\).  We do not insert the
+irrelevant factor two into the sharp recovery tradeoff.
+
+\begin{corollary}[Partial Fourier tensor spectrum]
+\label{cor:tpc40-partial-Fourier-tensor}
+For an \(r\)-row partial Fourier extremizer, the product bank has
+\begin{equation}
+ \widetilde\cA=r,
+ \label{eq:tpc40-partial-tensor-A}
+\end{equation}
+and nonzero scalar spectrum
+\begin{equation}
+ \frac{2R}{r}\quad(rL\text{ times}),
+ \qquad
+ \frac{R}{r}\quad(r\text{ times}).
+ \label{eq:tpc40-partial-tensor-spectrum}
+\end{equation}
+The equality--slice eigenvalue is \(R/r\), and its product with the
+recovery amplification is exactly \(R\).
+\end{corollary}
+
+\subsection{Coupled phases do not evade the zero slice}
+
+Separable phases are not essential.  Let \(s\) index an arbitrary bank
+with positive weights \(w_s\), and let
+\begin{equation}
+ \theta_{s,\alpha,k}\in\T
+ \label{eq:tpc40-coupled-phase}
+\end{equation}
+depend jointly on row and alias.  Suppose coefficients \(a_s\) recover
+the coherent equality slice universally:
+\begin{equation}
+ \sum_sa_s\theta_{s,\alpha,k}=\one_{k=0}
+ \qquad
+ (1\le\alpha\le R,\ -L\le k\le L).
+ \label{eq:tpc40-coupled-recovery}
+\end{equation}
+Put \(\cA=\sum_s|a_s|^2/w_s\).
+
+\begin{theorem}[Equality--slice rigidity for coupled banks]
+\label{thm:tpc40-coupled-zero-slice}
+Let
+\begin{equation}
+ G^{(0)}_{\alpha\beta}
+ :=\sum_sw_s
+ \overline{\theta_{s,\alpha,0}}\theta_{s,\beta,0}.
+ \label{eq:tpc40-coupled-zero-Gram}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ G^{(0)}\succeq\cA^{-1}\one\one^*,
+ \qquad
+ \cA\lambda_{\max}(G^{(0)})\ge R.}
+ \label{eq:tpc40-coupled-zero-tradeoff}
+\end{equation}
+For arbitrary Hilbert atoms,
+\begin{equation}
+ \left\|\sum_{\alpha}x_{\alpha,0}\right\|^2
+ \le
+ \cA\sum_sw_s
+ \left\|\sum_{\alpha,k}
+ \theta_{s,\alpha,k}x_{\alpha,k}\right\|^2.
+ \label{eq:tpc40-coupled-positive-dominance}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Restrict \eqref{eq:tpc40-coupled-recovery} to \(k=0\).  The phase columns
+\((\theta_{s,\alpha,0})_s\) form an exact weighted row bank with the same
+recovery coefficients and amplification.  The Loewner theorem gives
+\eqref{eq:tpc40-coupled-zero-tradeoff}.  The Hilbert--valued weighted
+Cauchy inequality applied to the exact recovery gives
+\eqref{eq:tpc40-coupled-positive-dominance}.
+\end{proof}
+
+Thus nonseparable coding, random row signs, and joint row--alias phase
+design do not bypass the obstruction as long as recovery is universal and
+the analytic step is a positive average of squared norms.  The no--go is
+obtained by setting every nuisance alias to zero; no behavior away from
+the target slice can repair it.
+
+\subsection{The determinant bank is the unit--amplification endpoint}
+
+For the TPC--39 determinant twists,
+\begin{equation}
+ \theta_{\nu,\alpha,k}=\omega^{\nu k}
+ \label{eq:tpc40-determinant-phase}
+\end{equation}
+is independent of \(\alpha\).  On \(k=0\), every phase column is the same
+constant vector.  Hence
+\begin{equation}
+ \cA=1,
+ \qquad
+ G^{(0)}=\one\one^*,
+ \qquad
+ \lambda_{\max}(G^{(0)})=R.
+ \label{eq:tpc40-determinant-max-coherence}
+\end{equation}
+The survival of fixed--alias cross--row coherence in TPC--39 is therefore
+the rigid equality case of the general theorem, not a defect of the
+chosen proof of folded Parseval.

@@ -1,0 +1,163 @@
+\section{Physical endpoint: what phase geometry can and cannot buy}
+\label{sec:tpc40-physical-endpoint}
+
+We now insert the finite tradeoff into the ledger of
+\cref{sec:tpc40-interface}.  Every conclusion in this section is a method
+statement.  It does not assert that the actual M\"obius vector saturates a
+coherent eigenmode.
+
+\subsection{The atomic diagonal is invariant}
+
+For Hilbert row atoms \(x_1,\ldots,x_R\), a weighted phase bank has energy
+\begin{align}
+ \cE_{\Phi}(x)
+ &:=\sum_tw_t\left\|\sum_\alpha
+ \phi_{t\alpha}x_\alpha\right\|^2
+ \notag\\
+ &=\sum_{\alpha,\beta}
+ G_{\alpha\beta}\langle x_\alpha,x_\beta\rangle.
+ \label{eq:tpc40-physical-bank-energy}
+\end{align}
+Since \(|\phi_{t\alpha}|=1\) and \(\sum_tw_t=1\),
+\begin{equation}
+ G_{\alpha\alpha}=1.
+ \label{eq:tpc40-physical-unit-diagonal}
+\end{equation}
+Therefore the atomic diagonal in \eqref{eq:tpc40-physical-bank-energy} is
+always
+\begin{equation}
+ \boxed{\sum_{\alpha=1}^{R}\|x_\alpha\|^2,}
+ \label{eq:tpc40-physical-diagonal-invariance}
+\end{equation}
+independently of the number or choice of row phases.  Phasing can only
+redistribute the off--diagonal terms.
+
+If the bank universally recovers the coherent row sum, the Loewner
+theorem simultaneously gives
+\begin{equation}
+ \cE_{\Phi}(x)
+ \ge\frac1\cA
+ \left\|\sum_\alpha x_\alpha\right\|^2.
+ \label{eq:tpc40-physical-energy-dominates-target}
+\end{equation}
+Thus an upper bound \(\cE_{\Phi}(x)\le\mathcal B\) yields only
+\begin{equation}
+ \left\|\sum_\alpha x_\alpha\right\|^2
+ \le\cA\mathcal B.
+ \label{eq:tpc40-physical-recovery-cost}
+\end{equation}
+
+\subsection{The diagonal--coherence dilemma}
+
+In the TPC--39 terminal packet, the complete atomic diagonal already has
+the endpoint size
+\begin{equation}
+ \cD_{\rm term}
+ \ll X^{o(1)}B_0K_B
+ =X^{o(1)}\frac{Q^3}{J}.
+ \label{eq:tpc40-physical-diagonal-target}
+\end{equation}
+Normalized row phasing does not reduce this quantity.  Consequently, a
+coefficient--blind argument that bounds the whole bank energy only at the
+diagonal scale and then invokes
+\eqref{eq:tpc40-physical-recovery-cost} must keep
+\begin{equation}
+ \cA=X^{o(1)}
+ \label{eq:tpc40-physical-subpolynomial-A}
+\end{equation}
+to retain the endpoint target.  But then every \(R\)-row subpacket obeys
+\begin{equation}
+ \lambda_{\max}(G)
+ \ge\frac{R}{\cA}=R\,X^{-o(1)}.
+ \label{eq:tpc40-physical-residual-coherence}
+\end{equation}
+Nearly the full coherent row mode remains.  Complete row orthogonality
+would instead require \(\cA\ge R\), multiplying the already sharp
+diagonal ledger by \(R\).
+
+The partial Fourier extremizers make the conservation literal.  Using
+\(r\) Fourier measurements reduces the coherent eigenvalue from \(R\) to
+\(R/r\), but the recovery cost becomes \(r\).  Their product is \(R\),
+and the diagonal in \eqref{eq:tpc40-physical-diagonal-invariance} does not
+move.  No choice of \(r\) turns the known diagonal estimate into the
+desired coherent estimate without additional arithmetic information.
+
+\subsection{A measurement--dimension lower bound}
+
+Every \(m\)-measurement row Gram has
+\begin{equation}
+ \rank G\le m,
+ \qquad
+ \tr G=R.
+ \label{eq:tpc40-physical-rank-trace}
+\end{equation}
+Hence
+\begin{equation}
+ \lambda_{\max}(G)\ge\frac Rm.
+ \label{eq:tpc40-physical-dimension-bound}
+\end{equation}
+Suppose, only for scale comparison, that a dense active packet has
+\begin{equation}
+ R=X^{o(1)}Q
+ \label{eq:tpc40-physical-dense-packet}
+\end{equation}
+and that one attempts to reuse only
+\(m\asymp K_B=X^{1/400+o(1)}\) joint phase slots.  Then
+\begin{equation}
+ \lambda_{\max}(G)
+ \ge X^{266/400-o(1)}.
+ \label{eq:tpc40-physical-266-bound}
+\end{equation}
+This exponent is a conditional dense--packet specialization of the exact
+finite rank bound; it is not inferred from the row upper bound alone.
+
+\subsection{The scoped no--go}
+
+Combining the preceding results gives the following precise conclusion.
+
+\begin{corollary}[Universal diagonal majorants pay the row dimension]
+\label{cor:tpc40-physical-no-go}
+Suppose an exact weighted phase bank satisfies the coefficient--blind
+Bessel majorant
+\begin{equation}
+ \cE_{\Phi}(x)
+ \le C\sum_{\alpha=1}^{R}\|x_\alpha\|^2
+ \label{eq:tpc40-universal-Bessel-majorant}
+\end{equation}
+for every Hilbert space and every row family.  Then
+\begin{equation}
+ \boxed{
+ C\ge\lambda_{\max}(G),
+ \qquad
+ \cA C\ge R.}
+ \label{eq:tpc40-universal-Bessel-cost}
+\end{equation}
+Consequently its universal recovered bound is
+\begin{equation}
+ \left\|\sum_{\alpha=1}^{R}x_\alpha\right\|^2
+ \le\cA C\sum_{\alpha=1}^{R}\|x_\alpha\|^2,
+ \label{eq:tpc40-universal-recovered-Bessel}
+\end{equation}
+and the coefficient--blind constant in this route cannot be smaller than
+\(R\).
+\end{corollary}
+
+\begin{proof}
+It suffices to take the Hilbert space to be \(\C\).  Then
+\eqref{eq:tpc40-universal-Bessel-majorant} is the matrix inequality
+\(G\preceq CI_R\), so \(C\ge\lambda_{\max}(G)\).  Combine this with
+\(\cA\lambda_{\max}(G)\ge R\).  The recovered estimate follows from
+\eqref{eq:tpc40-physical-recovery-cost}.
+\end{proof}
+
+Thus a universal diagonal--only majorant cannot close the TPC--39 gate at
+the same diagonal scale on a polynomially large row packet.  Unit or
+subpolynomial recovery amplification leaves a polynomial coherent mode;
+full decorrelation pays a polynomial recovery loss while preserving the
+diagonal.
+
+The corollary says nothing about a proof that uses the actual signs and
+weights of \(x_{\alpha,k}\).  A coefficient--specific vector may have a
+small projection onto the coherent eigenspace even when the operator norm
+is large.  Proving precisely that statement would be genuine arithmetic
+progress and is not ruled out here.

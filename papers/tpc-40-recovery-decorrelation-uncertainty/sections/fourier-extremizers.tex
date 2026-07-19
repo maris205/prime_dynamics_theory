@@ -1,0 +1,149 @@
+\section{Fourier extremizers and the sharp Pareto family}
+\label{sec:tpc40-Fourier-extremizers}
+
+The product lower bound is attained at every integer point between its two
+endpoints.  The relevant cyclic bank uses rows of the \(R\)-point Fourier
+matrix; replacing the \(R\)-point phases by a shorter modulus \(r\) gives a
+different construction and introduces an integrality defect.
+
+Let
+\begin{equation}
+ \zeta_R:=\exp(2\pi i/R).
+ \label{eq:tpc40-Rth-root}
+\end{equation}
+
+\begin{theorem}[Partial-DFT extremizers]
+\label{thm:tpc40-partial-DFT-extremizers}
+Fix \(1\le r\le R\), choose any \(T\subset\mathbb Z/R\mathbb Z\) with
+\(|T|=r\) and \(0\in T\), and let \(s\ge1\).  Put \(m=rs\), index the rows
+by \((t,\ell)\in T\times\{1,\ldots,s\}\), and the columns by
+\(\alpha\in\mathbb Z/R\mathbb Z\).  Define
+\begin{equation}
+ \Phi_{(t,\ell),\alpha}=\zeta_R^{t\alpha},
+ \qquad w_{(t,\ell)}=\frac1{rs},
+ \qquad
+ a_{(t,\ell)}=\frac1s\one_{t=0}.
+ \label{eq:tpc40-partial-DFT-bank}
+\end{equation}
+Then
+\begin{equation}
+ a^T\Phi=\one_R^T,
+ \qquad
+ A=r,
+ \label{eq:tpc40-partial-DFT-recovery}
+\end{equation}
+and the Gram spectrum is
+\begin{equation}
+ \operatorname{spec}(G)
+ =\left\{\frac Rr\ \text{with multiplicity }r,
+          \quad0\ \text{with multiplicity }R-r\right\}.
+ \label{eq:tpc40-partial-DFT-spectrum}
+\end{equation}
+In particular,
+\begin{equation}
+ A\lambda_{\max}(G)=r\frac Rr=R.
+ \label{eq:tpc40-partial-DFT-Pareto-equality}
+\end{equation}
+Hence every pair
+\begin{equation}
+ (A,\lambda_{\max}(G))=\left(r,\frac Rr\right),
+ \qquad1\le r\le R,
+ \label{eq:tpc40-integer-Pareto-family}
+\end{equation}
+lies on the sharp Pareto boundary.
+\end{theorem}
+
+\begin{proof}
+The only rows used by the recovery coefficient are the \(s\) copies of
+the constant Fourier row.  Their coefficients sum to one, proving exact
+recovery.  Moreover,
+\[
+ A=rs\cdot s\left|\frac1s\right|^2=r.
+\]
+The distinct rows selected from the unnormalized \(R\)-point Fourier
+matrix are mutually orthogonal and each has squared norm \(R\).  Equal
+replication therefore gives
+\[
+ G=\frac1r\sum_{t\in T}v_t^*v_t,
+ \qquad (v_t)_\alpha=\zeta_R^{t\alpha},
+\]
+whose \(r\) nonzero eigenvalues are all \(R/r\).  Finally, the constant
+column vector is an \(R/r\)-eigenvector because the zero Fourier row is
+present.  The Pareto assertion follows from
+\cref{thm:tpc40-weighted-Loewner}: a strict improvement in one coordinate
+without worsening the other would make the product smaller than \(R\).
+\end{proof}
+
+The endpoint \(r=1\) is the completely coherent, unit-amplification bank;
+\(r=R\) is the full DFT with \(G=I_R\) and \(A=R\).
+
+\subsection{A continuous weighted boundary}
+
+Assume \(R\ge2\).  The weighted model also realizes every real point of
+the hyperbola between the endpoints.  For \(1<A_0\le R\), take the full \(R\)-point Fourier
+matrix, put
+\begin{equation}
+ w_0=\frac1{A_0},
+ \qquad
+ w_t=\frac{A_0-1}{A_0(R-1)}\quad(1\le t<R),
+ \qquad
+ a=e_0,
+ \label{eq:tpc40-continuous-Fourier-weights}
+\end{equation}
+where \(e_0\) selects the constant Fourier row.
+
+\begin{corollary}[Continuous weighted Pareto boundary]
+\label{cor:tpc40-continuous-weighted-boundary}
+The bank in \eqref{eq:tpc40-continuous-Fourier-weights} satisfies
+\begin{equation}
+ A=A_0,
+ \qquad
+ \lambda_{\max}(G)=\frac R{A_0},
+ \qquad
+ A\lambda_{\max}(G)=R.
+ \label{eq:tpc40-continuous-Pareto-pair}
+\end{equation}
+The missing endpoint \(A_0=1\), excluded from this \(R\)-row formula by
+the strict positivity of all \(w_t\), is realized by the one-row constant
+bank.
+\end{corollary}
+
+\begin{proof}
+Writing \(F_R\) for the unnormalized Fourier matrix, one has
+\(G=F_R^*WF_R\).  Since \(R^{-1/2}F_R\) is unitary, the eigenvalues of
+\(G\) are \(Rw_t\).  For \(A_0\le R\), \(w_0\ge w_t\) for \(t\ne0\), so
+the largest eigenvalue is \(R/A_0\).  Also
+\(A=|a_0|^2/w_0=A_0\).
+\end{proof}
+
+For uniform rows, rational points in this continuous family can equally be
+implemented by repeating Fourier rows in the corresponding proportions.
+
+\subsection{The short-cycle bucket defect}
+
+There is a tempting but inequivalent construction.  Take \(m=r\), use
+phases modulo \(r\), and index the \(R\) columns consecutively:
+\begin{equation}
+ \Phi^{\rm short}_{t,\alpha}
+ =\exp(2\pi i t\alpha/r),
+ \qquad0\le t<r,\quad0\le\alpha<R,
+ \label{eq:tpc40-short-cycle-bank}
+\end{equation}
+with uniform row weights and recovery \(a=e_0\).  Then \(A=r\), but
+\begin{equation}
+ G^{\rm short}_{\alpha\beta}
+ =\one_{\alpha\equiv\beta\pmod r}.
+ \label{eq:tpc40-short-cycle-Gram}
+\end{equation}
+Its nonzero eigenvalues are the sizes of the \(r\) residue buckets, hence
+\begin{equation}
+ \lambda_{\max}(G^{\rm short})
+ =\left\lceil\frac Rr\right\rceil.
+ \label{eq:tpc40-short-cycle-lambda}
+\end{equation}
+Therefore this balanced short-cycle bank lies on the sharp Pareto boundary
+if and only if \(r\mid R\).  If \(r\nmid R\), the partial \(R\)-point DFT
+bank of \cref{thm:tpc40-partial-DFT-extremizers} has the same amplification
+\(r\) and the strictly smaller coherence radius \(R/r\).  Thus balance
+within the short-cycle subclass does not by itself prove global Pareto
+optimality.

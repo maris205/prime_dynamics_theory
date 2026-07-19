@@ -1,0 +1,74 @@
+\section{Exact certificate and claim ledger}
+\label{sec:tpc40-certificate}
+
+The structural proofs above are exact.  A companion standard--library
+certificate checks their finite cyclic realizations using only integers,
+\texttt{Fraction} arithmetic, modular character orthogonality, and exact
+prime--order cyclotomic coordinates.  It does not use floating--point
+eigenvalues or numerical tolerances.
+
+\subsection{Certified identities}
+
+The frozen certificate verifies:
+\begin{enumerate}[label=(\roman*)]
+ \item selected \(R\)-point DFT banks containing the constant frequency,
+ including the exact recovery amplification \(A=r\), rank \(r\), spectrum
+ \(R/r\), and product equality \(A\lambda=R\);
+ \item balanced and unbalanced short--cycle residue banks, their bucket
+ spectra, and equality in the product bound exactly for equal bucket
+ sizes;
+ \item all folded collisions and the spectrum \(2,1,0\), with
+ multiplicities \(L,1,L\), for the minimal alias bank through the frozen
+ range;
+ \item the row--alias tensor spectrum
+ \begin{equation}
+  2R/r\quad(rL\text{ times}),
+  \qquad
+  R/r\quad(r\text{ times}),
+  \label{eq:tpc40-certificate-tensor-spectrum}
+ \end{equation}
+ together with amplification conservation;
+ \item exact Loewner Gram factorizations for deterministic root--of--unity
+ phase banks; and
+ \item the endpoint exponent identity
+ \begin{equation}
+  \frac{267}{400}-\frac1{400}
+  =\frac{266}{400}=\frac{133}{200}.
+  \label{eq:tpc40-certificate-endpoint-exponent}
+ \end{equation}
+\end{enumerate}
+
+Running
+\begin{quote}
+\ttfamily
+python experiments/tpc40\_certificate.py\\
+python -O experiments/tpc40\_certificate.py
+\end{quote}
+produces byte--identical canonical JSON records.  The frozen run passes
+\begin{equation}
+ \boxed{2{,}230{,}446\text{ exact checks}.}
+ \label{eq:tpc40-certificate-checks}
+\end{equation}
+It includes \(2{,}748\) selected DFT banks, \(4{,}081\) unbalanced bucket
+compositions, \(19{,}656\) row--alias tensor cases, and \(300\) exact
+cyclotomic Loewner cases.  Its certificate digest is
+\begin{center}
+\ttfamily\small
+d925148e93bc0ecd57a3958bc6ffc0447f5116cfb0f188844e8b1c93b96020a0.
+\end{center}
+The SHA--256 hashes of the canonical JSON record and source are,
+respectively,
+\begin{center}
+\ttfamily\small
+94e68bc4884d80fcfc685edbee34f851c097bd49d425d31c47cd2b76ed751bd7,\\
+2e15f17ced216acc300163e543d73d7b14878127b31478410983ff88aed6e2f3.
+\end{center}
+
+\subsection{What the certificate does not certify}
+
+The computation verifies finite identities and implementation fidelity.
+It is not statistical evidence for random M\"obius signs and not a test of
+an asymptotic physical estimate.  The JSON claim ledger explicitly marks
+as false any assertion that the certificate proves a twist--stable
+physical bound, two-- or four--M\"obius cancellation, a parity breach, a
+prime--pair asymptotic, or infinitely many twin primes.

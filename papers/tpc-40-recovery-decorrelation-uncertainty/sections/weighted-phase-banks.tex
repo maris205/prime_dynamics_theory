@@ -1,0 +1,96 @@
+\section{Weighted phase banks and conjugation conventions}
+\label{sec:tpc40-weighted-banks}
+
+Fix positive integers \(m\) and \(R\).  A phase bank is a matrix
+\begin{equation}
+ \Phi=(\phi_{j\alpha})_{1\le j\le m,\,1\le\alpha\le R}
+ \in\C^{m\times R},
+ \qquad |\phi_{j\alpha}|=1.
+ \label{eq:tpc40-phase-bank}
+\end{equation}
+Its rows are measurements and its columns are the \(R\) signatures to be
+recovered with the same unit gain.  Let
+\begin{equation}
+ w_j>0,
+ \qquad \sum_{j=1}^{m}w_j=1,
+ \qquad W:=\operatorname{diag}(w_1,\ldots,w_m).
+ \label{eq:tpc40-row-weights}
+\end{equation}
+
+We use the following complex conventions throughout.  For a column \(x\),
+\(x^T\) denotes ordinary transpose, \(x^*=\overline{x}^{\,T}\) denotes
+conjugate transpose, and
+\begin{equation}
+ \langle x,y\rangle=x^*y
+ \label{eq:tpc40-inner-product-convention}
+\end{equation}
+is conjugate linear in the first variable and linear in the second.  The
+recovery coefficients form a column \(a\in\C^m\), but the recovery rule uses
+ordinary transpose:
+\begin{equation}
+ a^T\Phi=\one_R^T.
+ \label{eq:tpc40-exact-recovery}
+\end{equation}
+Thus no conjugate is silently inserted into the measurement rule.  Taking
+the conjugate transpose of \eqref{eq:tpc40-exact-recovery} gives the
+equivalent equation
+\begin{equation}
+ \Phi^*\overline a=\one_R.
+ \label{eq:tpc40-exact-recovery-adjoint}
+\end{equation}
+
+Define the weighted normalized amplification and weighted Gram matrix by
+\begin{align}
+ A_W(a)
+ &:=a^*W^{-1}a
+   =\sum_{j=1}^{m}\frac{|a_j|^2}{w_j},
+ \label{eq:tpc40-weighted-amplification}\\
+ G_W(\Phi)
+ &:=\Phi^*W\Phi.
+ \label{eq:tpc40-weighted-Gram}
+\end{align}
+When \(w_j=1/m\), these reduce to
+\begin{equation}
+ A_W(a)=m\|a\|_2^2,
+ \qquad
+ G_W(\Phi)=\frac1m\Phi^*\Phi.
+ \label{eq:tpc40-uniform-specialization}
+\end{equation}
+We normally abbreviate them to \(A\) and \(G\).  The physical-interface
+sections use the typographic form \(\cA\) for the same amplification.
+
+It is useful to absorb the weights into
+\begin{equation}
+ D:=W^{1/2}\Phi,
+ \qquad
+ b:=W^{-1/2}a,
+ \qquad
+ z:=\overline b=W^{-1/2}\overline a.
+ \label{eq:tpc40-weighted-normalization}
+\end{equation}
+Then
+\begin{equation}
+ G=D^*D,
+ \qquad
+ A=\|b\|_2^2=\|z\|_2^2,
+ \qquad
+ D^*z=\one_R.
+ \label{eq:tpc40-normalized-recovery-system}
+\end{equation}
+The last identity is the adjoint form of \(b^TD=\one_R^T\).
+
+Because every phase has modulus one and the weights sum to one,
+\begin{equation}
+ G\succeq0,
+ \qquad G_{\alpha\alpha}=1,
+ \qquad \operatorname{tr}G=R.
+ \label{eq:tpc40-Gram-basic-facts}
+\end{equation}
+In particular,
+\begin{equation}
+ \lambda_{\max}(G)\ge1,
+ \label{eq:tpc40-Gram-trace-lower-bound}
+\end{equation}
+with equality if and only if \(G=I_R\).  The latter assertion follows
+because all \(R\) nonnegative eigenvalues must then equal their common
+upper bound \(1\).

@@ -1,0 +1,180 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,float}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\hypersetup{
+ pdftitle={Recovery-Decorrelation Uncertainty at the Coherent Mobius Gate: Weighted Phase Frames, Sharp Fourier Frontiers, and Equality-Slice Rigidity},
+ pdfauthor={Liang Wang},
+ pdfsubject={Sharp recovery-coherence tradeoffs for equality-preserving phase banks at an orbit-sliced Mobius gate},
+ pdfkeywords={Mobius correlation, phase frame, exact recovery, coherence, Fourier bank, CRT alias, parity boundary}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Conditional input}
+\crefname{assumption}{conditional input}{conditional inputs}
+\Crefname{assumption}{Conditional input}{Conditional inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\op}{\operatorname{op}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\ee}[1]{\exp(2\pi i #1)}
+
+\title{\textbf{Recovery--Decorrelation Uncertainty}\\
+\textbf{at the Coherent M\"obius Gate:}\\
+\textbf{Weighted Phase Frames, Sharp Fourier Frontiers,}\\
+\textbf{and Equality--Slice Rigidity}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+TPC--39 constructs a minimally sampled additive phase bank that recovers
+the equality alias exactly.  Its positive square energy nevertheless
+contains the original equality energy, and its determinant phases are
+constant across physical rows at a fixed alias.  A natural continuation
+is to add row phases and try to decorrelate the surviving cross--row
+M\"obius form.  We prove a sharp obstruction to every such
+coefficient--blind positive--energy scheme.
+
+Let \(\Phi=(\phi_{t\alpha})\in\C^{m\times R}\) have unimodular entries,
+let \(w_t>0\) with \(\sum_tw_t=1\), and suppose coefficients \(a_t\)
+recover the coherent row sum universally:
+\[
+ \sum_{t=1}^m a_t\phi_{t\alpha}=1
+ \qquad(1\le\alpha\le R).
+\]
+Define the recovery amplification and normalized row Gram by
+\[
+ \cA=\sum_t\frac{|a_t|^2}{w_t},
+ \qquad
+ G=\Phi^*\diag(w)\Phi.
+\]
+Then the exact Loewner domination
+\[
+ \boxed{G\succeq\cA^{-1}\one\one^*}
+\]
+holds.  Consequently
+\[
+ \cA\,\lambda_{\max}(G)\ge R,
+ \qquad
+ \sum_{\alpha\ne\beta}\operatorname{Re}G_{\alpha\beta}
+ \ge R^2/\cA-R.
+\]
+The first inequality is a recovery--decorrelation uncertainty law.  It is
+sharp at every integer point of its Pareto frontier: taking any \(r\)
+rows of the \(R\)-point Fourier matrix, including the constant row, gives
+\(\cA=r\) and \(\lambda_{\max}(G)=R/r\).
+
+The equality cases are rigid.  Unit amplification \(\cA=1\) is possible
+only when all phase columns are identical, in which case
+\(G=\one\one^*\) and no row decorrelation occurs.  Conversely, complete
+row orthogonality \(G=I_R\) forces \(\cA\ge R\), with equality for the
+full Fourier bank.  We also prove a pseudoinverse formula for the optimal
+amplification, an \(L^2\)-stable approximate--recovery version, and exact
+diagonal invariance for Hilbert--valued row atoms.
+
+Tensoring an arbitrary row bank with the \(q=L+1\) alias bank of TPC--39
+does not alter this tradeoff.  The alias factor has unit amplification;
+on the equality slice the tensor Gram is exactly \(G\).  More general
+coupled row--alias phases obey the same lower bound after restriction to
+the zero--alias slice.  Thus determinant twisting leaves maximal row
+coherence, while Fourier row decorrelation pays back exactly its gain in
+recovery amplification and leaves the atomic diagonal unchanged.
+
+At the prime--M\"obius endpoint this closes a method class, not the
+arithmetic gate.  It proves that universal phase geometry and a positive
+square--energy estimate cannot by themselves remove the fixed--alias
+cross--row form.  It does not prove a two-- or four--M\"obius correlation
+estimate, a parity breach, a Hardy--Littlewood asymptotic, or the twin--prime
+conjecture.  Any continuation inside this framework must break at least
+one of its hypotheses; concrete options include using the actual
+arithmetic coefficients, retaining a signed nonpositive functional, or
+proving an equivalent coefficient--specific dispersion theorem.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+M\"obius correlation; exact recovery; phase frame; coherent mode; Fourier
+bank; CRT alias; parity boundary.
+
+\medskip
+\noindent\textbf{MSC 2020:}
+Primary 42C15, 15A18; Secondary 11L07, 11N35, 42A16.
+
+\input{sections/introduction}
+\input{sections/inherited-interface}
+\input{sections/weighted-phase-banks}
+\input{sections/recovery-coherence-theorem}
+\input{sections/fourier-extremizers}
+\input{sections/approximate-recovery}
+\input{sections/alias-tensor}
+\input{sections/physical-endpoint}
+\input{sections/superwindow-comparison}
+\input{sections/literature-boundary}
+\input{sections/next-gate}
+\input{sections/certificate-claims}
+
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references,references-extra}
+\endgroup
+
+\end{document}
