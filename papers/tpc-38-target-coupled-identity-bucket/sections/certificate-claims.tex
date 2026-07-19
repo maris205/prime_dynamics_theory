@@ -1,0 +1,125 @@
+\section{Exact certificate and formal claim boundary}
+\label{sec:tpc38-certificate-claims}
+
+The accompanying standard--library program is
+\begin{center}
+ \texttt{experiments/tpc38\_certificate.py}.
+\end{center}
+It writes the canonical archive
+\begin{center}
+ \texttt{experiments/tpc38\_certificate.json}.
+\end{center}
+The same suite is run with ordinary Python and with optimization enabled:
+\begin{center}
+\begin{minipage}{0.58\textwidth}
+\ttfamily
+python experiments/tpc38\_certificate.py\\
+python -O experiments/tpc38\_certificate.py
+\end{minipage}
+\end{center}
+No check depends on \texttt{assert} semantics.
+
+\subsection{Finite identities checked}
+
+The certificate uses integers and rational numbers only.  It checks:
+\begin{enumerate}[label=(\roman*)]
+ \item the local and CRT full/proper face definitions and exact
+ recombination \(C_N+P_N=\one_{M\mid F}\);
+ \item fixed--target one--period squared norms;
+ \item the local and CRT target--row Gram formulas;
+ \item the local target--synthesis eigenvalues and the global tensor
+ product ledger;
+ \item the exact ratio--fiber multiplicity \(d_M(F)\) on every determinant
+ stratum for several small prime packets;
+ \item the fixed--determinant full/proper target masses;
+ \item the four--modulus no--wrap threshold on a finite interval;
+ \item offjoint full/proper cancellation; and
+ \item the sharp \(K_B\)-loss rank--one alias witness and the two--column
+ equality--nonrecoverability witness.
+\end{enumerate}
+Finite enumeration verifies the displayed algebra on the archived test
+families.  It is not evidence for an asymptotic M\"obius or Gram estimate.
+
+\subsection{Reproducibility record}
+
+The final JSON records per--family check counts, byte--for--byte SHA--256
+hashes of the tracked sources, and a digest of the canonical certificate
+payload.  For the archived run:
+\begin{center}
+\begin{minipage}{0.96\linewidth}
+\small
+\textbf{Certificate source SHA--256.}\par
+{\scriptsize\ttfamily
+1f2f479b8ff1891eebd379f1357d9fc03009dfe2583b68a982ea20d28409dc42\par}
+\smallskip
+\textbf{JSON SHA--256.}\par
+{\scriptsize\ttfamily
+9750d268eec35885d034ce12b0be52c83e9008f9a8a515d49ad0a72bc967c3d6\par}
+\smallskip
+\textbf{Certificate digest.}\par
+{\scriptsize\ttfamily
+f7a09acd95d4e5ff4420da353c04daded1c679b1c43da6e1b3bc6492da0c8f2a\par}
+\end{minipage}
+\end{center}
+These values were inserted after the hashed manuscript sources and
+certificate were frozen.  The certificate hashes do not promote finite enumeration to a
+proof of the analytic reductions.
+
+\subsection{Unconditional conclusions}
+
+Under the hypotheses stated in the corresponding results (and using the
+inherited notation only when physical scales are mentioned), this paper
+proves:
+\begin{enumerate}[label=(\roman*)]
+ \item the exact target--coupled character expansion of every CRT face for
+ unit targets;
+ \item full/proper recombination and the elimination of all nonjoint
+ ghosts in the regular CRT completion before estimation;
+ \item fixed--target Parseval and the shifted Jacobi cross--target Gram;
+ \item Hilbert--valued ratio Parseval and the exact determinant multiplicity
+ \(d_M(F)\), hence the scale ladder \(1,J,J^2,J^3\) when
+ \(q_i\asymp J\);
+ \item exact fixed--determinant target masses;
+ \item the complete scalar target--synthesis spectra of the full and
+ proper fields;
+ \item character blindness on the joint--alias identity bucket;
+ \item the sharp coefficient--free \(K_B\) Cauchy loss for coherent alias
+ columns;
+ \item nonrecoverability of the exact equality column from the completed
+ alias sum or the two completed fixed face fields;
+ \item strict non--equivalence between separate face estimates and their
+ recombined output;
+ \item the equality--face embedding and the strength of a hereditary
+ all--field operator estimate; and
+ \item the exact terminal alias autocorrelation identity and the displayed
+ four--M\"obius factor contained in the physical row kernel.
+\end{enumerate}
+
+\subsection{What is not proved}
+
+Neither the manuscript nor the certificate proves:
+\begin{enumerate}[label=(\roman*)]
+ \item the uniform full alias--column bound
+ \eqref{eq:tpc38-moving-shift-diagonal};
+ \item the joint--alias Gram estimate
+ \eqref{eq:tpc38-joint-alias-Gram-gate} or its one--vector weakening;
+ \item the two fixed physical face--field estimates
+ \eqref{eq:tpc38-interface-two-field-input};
+ \item the nonzero--alias recovery estimate
+ \eqref{eq:tpc38-nonzero-alias-recovery-gate}, or any other recovery of
+ \(\mathscr Z_0\) from the completed face outputs;
+ \item a hereditary target--coupled all--field operator theorem;
+ \item the full physical orbit gate
+ \(V_L+V_R\ll X^{o(1)}Q^3/J\);
+ \item cancellation in the M\"obius progression
+ \(N+kM\), pointwise or on average;
+ \item an affine Chowla theorem or a new M\"obius--disjointness theorem;
+ \item failure of sieve parity or positivity;
+ \item a Hardy--Littlewood prime--pair asymptotic; or
+ \item infinitely many twin primes.
+\end{enumerate}
+
+The advance is an exact reduction and a corrected logical gate.  The finite
+unit--target CRT dependence and regular nonjoint face geometry have been resolved; the
+remaining physical identity bucket has a target--scale recovery route, a
+nested stronger alias--Gram route, and a sharp coefficient--free loss.

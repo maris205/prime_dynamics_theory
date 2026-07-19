@@ -1,0 +1,203 @@
+\section{Hilbert--valued ratio Parseval and determinant strata}
+\label{sec:tpc38-ratio-parseval}
+
+The correct large--sieve variable is the ratio, not \(F\) or \(N\)
+separately.  This section gives the exact Hilbert--valued identity and its
+sharp collision multiplicities.  The general large sieve may be compared
+with \citep{Bombieri1965,IwaniecKowalski2004}; no asymptotic large--sieve
+input is needed here.
+
+\subsection{The ratio bucket identity}
+
+Let \(\cI\) be a finite multiset of pairs \((N,F)\) such that both
+\(N\) and \(N+F\) are units modulo \(M\).  Attach vectors
+\(z_{N,F}\in\cH\), where \(\cH\) is a complex Hilbert space, and put
+\begin{equation}
+ r(N,F)=(N+F)N^{-1}\in(\Z/M\Z)^\times.
+ \label{eq:tpc38-ratio-map}
+\end{equation}
+For every ratio \(r\), define its coherent bucket
+\begin{equation}
+ V_r=\sum_{\substack{(N,F)\in\cI\\r(N,F)=r}}z_{N,F}.
+ \label{eq:tpc38-ratio-bucket}
+\end{equation}
+For a character \(\chi\bmod M\), put
+\begin{equation}
+ Y_\chi=\sum_{(N,F)\in\cI}
+ \chi(N+F)\overline{\chi(N)}z_{N,F}.
+ \label{eq:tpc38-Ychi}
+\end{equation}
+
+\begin{theorem}[Hilbert--valued ratio Parseval]
+\label{thm:tpc38-ratio-Parseval}
+One has the exact identity
+\begin{equation}
+ \boxed{
+ \sum_{\chi\bmod M}\|Y_\chi\|_{\cH}^2
+ =\Phi\sum_{r\in(\Z/M\Z)^\times}\|V_r\|_{\cH}^2.}
+ \label{eq:tpc38-ratio-Parseval}
+\end{equation}
+For any character family \(\mathfrak A\), define
+\begin{equation}
+ K_{\mathfrak A,N}(F)
+ =\frac1\Phi\sum_{\chi\in\mathfrak A}
+ \chi(N+F)\overline{\chi(N)}.
+ \label{eq:tpc38-family-kernel}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \left\|\sum_{(N,F)\in\cI}
+ K_{\mathfrak A,N}(F)z_{N,F}\right\|_{\cH}^2
+ \le\frac{|\mathfrak A|}{\Phi}
+ \sum_r\|V_r\|_{\cH}^2.}
+ \label{eq:tpc38-family-ratio-bound}
+\end{equation}
+If
+\begin{equation}
+ \nu_{\rm rat}
+ =\max_r\#\{(N,F)\in\cI:r(N,F)=r\},
+ \label{eq:tpc38-ratio-multiplicity}
+\end{equation}
+then
+\begin{equation}
+ \left\|\sum_{(N,F)\in\cI}
+ K_{\mathfrak A,N}(F)z_{N,F}\right\|_{\cH}^2
+ \le\frac{|\mathfrak A|}{\Phi}\nu_{\rm rat}
+ \sum_{(N,F)\in\cI}\|z_{N,F}\|_{\cH}^2.
+ \label{eq:tpc38-family-multiplicity-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Expand the left side of \eqref{eq:tpc38-ratio-Parseval}.  Character
+orthogonality gives \(\Phi\) when two pairs have the same ratio and zero
+otherwise.  Regrouping the surviving inner products yields the bucket
+norms in \eqref{eq:tpc38-ratio-bucket}.  Next,
+\[
+ \sum_{N,F}K_{\mathfrak A,N}(F)z_{N,F}
+ =\frac1\Phi\sum_{\chi\in\mathfrak A}Y_\chi.
+\]
+Cauchy in the character variable and
+\eqref{eq:tpc38-ratio-Parseval} prove
+\eqref{eq:tpc38-family-ratio-bound}.  Cauchy inside each ratio bucket gives
+\(\|V_r\|^2\le\nu_{\rm rat}\sum_{r(N,F)=r}\|z_{N,F}\|^2\), proving the
+last estimate.
+\end{proof}
+
+For the full and proper families, the prefactors in
+\eqref{eq:tpc38-family-ratio-bound} are respectively
+\begin{equation}
+ \frac{|\mathfrak X_{\rm full}|}{\Phi}=A=1-O(J^{-1}),
+ \qquad
+ \frac{|\mathfrak X_{\rm prop}|}{\Phi}=1-A\asymp J^{-1}.
+ \label{eq:tpc38-family-density-factors}
+\end{equation}
+The theorem gains the family density but leaves every coherent collision
+inside \(V_r\) untouched.
+
+\subsection{Exact fixed--determinant multiplicity}
+
+For fixed \(F\bmod M\), let
+\begin{equation}
+ \cD_F=\{N\in(\Z/M\Z)^\times:N+F\in(\Z/M\Z)^\times\}
+ \label{eq:tpc38-DF}
+\end{equation}
+and define \(r_F(N)=1+FN^{-1}\) on \(\cD_F\).
+
+\begin{theorem}[Exact target collision multiplicity]
+\label{thm:tpc38-fixed-F-collision}
+The largest fiber of \(r_F\) has cardinality
+\begin{equation}
+ \boxed{d_M(F)=\prod_{q_i\mid F}(q_i-1).}
+ \label{eq:tpc38-dMF}
+\end{equation}
+Consequently, for arbitrary vectors \(z_N\in\cH\),
+\begin{equation}
+ \sum_{\chi\bmod M}
+ \left\|\sum_{N\in\cD_F}z_N
+ \chi(N+F)\overline{\chi(N)}\right\|_{\cH}^2
+ \le\Phi d_M(F)\sum_{N\in\cD_F}\|z_N\|_{\cH}^2.
+ \label{eq:tpc38-fixed-F-large-sieve}
+\end{equation}
+The multiplicity and the inequality are sharp in the unrestricted Hilbert
+coefficient class.
+\end{theorem}
+
+\begin{proof}
+Work first modulo \(q_i\).  If \(F=0\pmod{q_i}\), then \(r_F(N)=1\) for
+all \(n_i\) unit values of \(N\).  If \(F\ne0\pmod{q_i}\), the domain is
+\(G_i\setminus\{-F\}\), and
+\[
+ N\longmapsto 1+F/N
+\]
+is a bijection onto \(G_i\setminus\{1\}\), with inverse
+\(N=F/(r-1)\).  Tensoring through the CRT gives
+\eqref{eq:tpc38-dMF}.  Apply
+\cref{thm:tpc38-ratio-Parseval} with fixed \(F\) to obtain
+\eqref{eq:tpc38-fixed-F-large-sieve}.  Equality in the bucket Cauchy step
+is obtained by taking equal vectors on a largest fiber.
+\end{proof}
+
+If the primes satisfy \(q_i\asymp J\), then
+\begin{equation}
+ d_M(F)\asymp J^{|Z(F)|},
+ \qquad
+ Z(F)=\{i:q_i\mid F\}.
+ \label{eq:tpc38-collision-strata}
+\end{equation}
+Thus the four determinant strata have collision scales
+\begin{equation}
+ 1,\qquad J,\qquad J^2,\qquad J^3.
+ \label{eq:tpc38-collision-scales}
+\end{equation}
+Generic \(F\) is the best possible case: the target ratio map is injective.
+The joint aliases \(M\mid F\) are the worst possible case: every target is
+sent to \(r=1\).
+
+\subsection{Fixed--determinant face mass}
+
+The collision multiplicity may also be seen directly in the target mass
+of a face.
+
+\begin{proposition}[Exact target mass on a determinant stratum]
+\label{prop:tpc38-fixed-F-face-mass}
+For \(Z(F)=\{i:q_i\mid F\}\),
+\begin{equation}
+ \boxed{
+ \sum_{N\bmod M}^{*}|C_N(F)|^2
+ =\prod_{i\in Z(F)}n_i(1-p_i)^2
+  \prod_{i\notin Z(F)}(n_i-1)p_i^2.}
+ \label{eq:tpc38-fixed-F-full-mass}
+\end{equation}
+If \(M\nmid F\), then \(P_N(F)=-C_N(F)\), so the same formula holds for
+the proper union.  If \(M\mid F\), then
+\begin{equation}
+ \sum_{N\bmod M}^{*}|P_N(F)|^2
+ =\Phi(1-A)^2.
+ \label{eq:tpc38-fixed-F-proper-joint-mass}
+\end{equation}
+For \(q_i\asymp J\), the full--face scales in
+\eqref{eq:tpc38-fixed-F-full-mass} are
+\begin{equation}
+ J^{-3},\qquad J^{-1},\qquad J,\qquad J^3
+ \label{eq:tpc38-fixed-F-mass-ladder}
+\end{equation}
+as \(|Z(F)|=0,1,2,3\), while the joint proper mass is \(\asymp J\).
+\end{proposition}
+
+\begin{proof}
+If \(q_i\mid F\), the local full factor is \(1-p_i\) for all \(n_i\)
+unit targets.  If \(q_i\nmid F\), the target \(N=-F\) is killed and the
+remaining \(n_i-1\) targets have local value \(-p_i\).  Tensor the local
+squared masses.  The proper identities follow from
+\eqref{eq:tpc38-offjoint-cancellation} and
+\eqref{eq:tpc38-face-values-zero}.
+\end{proof}
+
+Summing \eqref{eq:tpc38-fixed-F-full-mass} over one \(F\)-period gives
+\(\Phi A\), and summing the proper mass gives \(\Phi(1-A)\), as required by
+fixed--target Parseval and Fubini.  Over an integer determinant interval of
+length \(O(X)\), these traces are at most \(X^{1+o(1)}\) and
+\(X^{1+o(1)}/J\), respectively.  This trace bookkeeping does not control coherent row
+synthesis; the next section computes that synthesis exactly.

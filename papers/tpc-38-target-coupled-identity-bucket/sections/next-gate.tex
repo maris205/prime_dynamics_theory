@@ -1,0 +1,163 @@
+\section{The corrected route tree: completion and equality recovery}
+\label{sec:tpc38-next-gate}
+
+The target--coupled continuation separates into exact CRT algebra, a
+congruence--completed analytic output, and an equality--recovery step.  The
+last step cannot be omitted.  This section records the corrected route
+tree.
+
+\subsection{What the exact algebra removes}
+
+The unconditional reductions prove the following.
+
+\begin{enumerate}[label=(\roman*)]
+ \item The dependence on a moving target \(N\) is exactly the ratio phase
+ \(\chi(N+F)\overline{\chi(N)}\); no unidentified affine shift remains in
+ the finite CRT algebra.
+
+ \item Fixed--target character orthogonality, moving--target shifted Jacobi
+ Grams, and every zero--extended character convention are explicit.
+
+ \item For fixed \(F\), all coefficient--free target collisions are
+ localized by the exact multiplicity \(d_M(F)\).  Generic determinant
+ strata have no target collision.
+
+ \item Full/proper face splitting may be reversed before estimating.
+ Every nonjoint ghost then cancels identically, and the completed output is
+ the joint--alias sum \(\mathscr Y_{\rm alias}\).
+
+ \item The completion has \(O(\cK_X)\) columns \(F=kM\), with
+ \(\cK_X=X^{1/400+o(1)}\) at the endpoint.  On them, every
+ multiplicative character phase is one.
+
+ \item Diagonal trace plus coefficient--blind Cauchy loses exactly the
+ finite alias count \(K_B\) on the completed alias sum; at the endpoint
+ this has order \(\cK_X\), and the loss is sharp in the abstract Hilbert
+ column class.
+
+ \item The original physical output is the single column
+ \(\mathscr Z_0\), not \(\mathscr Y_{\rm alias}\).  The completed fixed
+ fields do not recover this column in the abstract class.
+\end{enumerate}
+
+The corrected implication ledger is therefore
+\begin{equation}
+ \left.
+ \begin{array}{c}
+  \text{two fixed face--field estimates}\\
+  \text{plus the exact period ledgers}
+ \end{array}
+ \right\}
+ \Longrightarrow
+ \|\mathscr Y_{\rm alias}\|_2^2
+ \ll X^{o(1)}Q^2J\cK_X,
+ \qquad
+ \mathscr Y_{\rm alias}\not\Rightarrow\mathscr Z_0.
+ \label{eq:tpc38-corrected-implication-ledger}
+\end{equation}
+The final nonimplication is witnessed by
+\cref{thm:tpc38-equality-recovery-obstruction}.
+
+\subsection{Route A: target--scale two--sum recovery}
+
+The weakest explicit completion--based recovery route isolated here is to prove the completed
+bound in \eqref{eq:tpc38-alias-total-target-bound} and, independently, the
+nonzero--alias aggregate bound
+\begin{equation}
+ \left\|\sum_{\substack{k\in\cI_B\\k\ne0}}\mathscr Z_k\right\|_2^2
+ \ll X^{o(1)}Q^2J K_B.
+ \label{eq:tpc38-next-nonzero-alias}
+\end{equation}
+Their difference is \(\mathscr Z_0\), so
+\cref{prop:tpc38-two-sum-recovery} gives the inherited target
+\(X^{o(1)}Q^3/J\).
+
+This route does not ask for uniform control of every alias column or for an
+operator estimate under arbitrary alias weights.  It asks only for one
+additional physical vector.  Its expansion contains the averaged
+\(M\)-spaced M\"obius correlations in
+\cref{prop:tpc38-terminal-alias-content}; hence it still requires actual
+coefficient information, but it is weaker than pointwise Chowla and weaker
+than a hereditary all--field theorem.
+
+\subsection{Route B: strong localized or Gram theorems}
+
+One may instead prove the uniform raw--column estimate
+\begin{equation}
+ \|\mathscr Z_k\|_2^2\ll X^{o(1)}Q^2J
+ \qquad(k\in\cI_B).
+ \label{eq:tpc38-next-strong-column}
+\end{equation}
+This is a meaningful moving--shift theorem, because the shifts
+\begin{equation}
+ h_k=h+kM
+ \label{eq:tpc38-next-moving-h}
+\end{equation}
+have new primitivity and incidence behavior.  It is not merely a uniform
+version of the old input--copy diagonal: at \(k=0\),
+\eqref{eq:tpc38-next-strong-column} already proves the original physical
+output at the stronger \(Q^2J\) scale.
+
+The still stronger operator route is
+\begin{equation}
+ \|\mathsf G_B\|_{\op}\ll X^{o(1)}Q^2J.
+ \label{eq:tpc38-next-strong-Gram}
+\end{equation}
+Since a Gram operator controls its diagonal entries,
+\eqref{eq:tpc38-next-strong-Gram} implies
+\eqref{eq:tpc38-next-strong-column}.  These are therefore nested
+alternatives, not two independent sequential gates.  The Gram theorem is
+reusable under arbitrary alias weights; the localized theorem is already
+sufficient for the original output.
+
+\subsection{Route C: exact recovery by several completions}
+
+A different possibility is to construct several CRT completions with
+moduli \(M_d\) and weights \(w_d\) such that, throughout the determinant
+window,
+\begin{equation}
+ \sum_d w_d\one_{M_d\mid F}=\one_{F=0}.
+ \label{eq:tpc38-multi-completion-recovery}
+\end{equation}
+If each weighted completion can be controlled without an excessive
+synthesis norm, this identity recovers equality algebraically rather than
+by subtracting a nonzero--alias sum.  No such well--conditioned family is
+constructed here.
+
+The four--modulus case is the simplest exact recovery:
+\(M_4>X\) makes \(\one_{M_4\mid F}=\one_{F=0}\).  However, its full face
+has coefficient \(1-O(J^{-1})\) at equality, so the method loops back to
+the unsuppressed original coefficient.  More moduli solve recovery but do
+not by themselves solve the arithmetic energy estimate.
+
+\subsection{Three viable outcomes for the next layer}
+
+\begin{description}[style=nextline,leftmargin=1.8em]
+ \item[Positive aggregate recovery theorem.]
+ Prove \eqref{eq:tpc38-next-nonzero-alias} for the actual rows and combine
+ it with a completed fixed--field estimate.  This is the most economical
+ route identified by the present audit.
+
+ \item[Positive strong theorem.]
+ Prove the localized column estimate or the alias--Gram estimate.  Either
+ would be independently publishable; the latter is strictly stronger and
+ includes the former.
+
+ \item[Scoped obstruction or recovery no--go.]
+ Within a precisely stated physical coefficient, shift, or completion
+ class, prove that no target--scale recovery functional exists, or that a
+ principal alias direction is unavoidable.  Such a result would rule out
+ that architecture at the stated normalization, not prove a lower bound
+ for the prime--pair remainder.
+\end{description}
+
+\subsection{Relation to the parity boundary}
+
+The exact rank--one directions and terminal M\"obius correlations are
+consistent with the classical parity obstruction for sieve methods
+\citep{HeathBrown1982Parity,IwaniecKowalski2004}.  This paper neither
+reformulates nor resolves that obstruction.  A future positive recovery
+theorem would have to exploit coefficient information beyond the finite
+character identities proved here.  Even then, it would first establish the
+inherited energy gate; further work would still be required before any
+prime--pair asymptotic.

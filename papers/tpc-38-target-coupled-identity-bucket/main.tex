@@ -1,0 +1,203 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,float}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\hypersetup{
+ pdftitle={Target-Coupled CRT Projectors and the Identity Bucket: Shifted Jacobi Grams, Alias Coherence, and the Equality-Recovery Obstruction},
+ pdfauthor={Liang Wang},
+ pdfsubject={Exact character projectors and the joint-alias boundary in an orbit-sliced Mobius gate},
+ pdfkeywords={Mobius correlation, Dirichlet character, CRT projector, Jacobi sum, Bessel sequence, alias Gram, equality recovery, parity boundary}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Conditional input}
+\crefname{assumption}{conditional input}{conditional inputs}
+\Crefname{assumption}{Conditional input}{Conditional inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\F}{\mathbb F}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\op}{\operatorname{op}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+
+\title{\textbf{Target--Coupled CRT Projectors and the Identity Bucket:}\\
+\textbf{Shifted Jacobi Grams, Alias Coherence,}\\
+\textbf{and the Equality--Recovery Obstruction}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+TPC--37 proposed a target--coupled shifted--fiber estimate as one possible
+continuation of an orbit--sliced prime--M\"obius energy program.  We resolve
+the coefficient--free part of that proposal exactly and identify an
+additional equality--recovery step required by its physical application.
+
+Let \(q_1,q_2,q_3\) be distinct orbit--scale primes,
+\(M=q_1q_2q_3\), \(\Phi=\varphi(M)\), and let \(N\) be a unit modulo
+\(M\).  If \(F=su-N\), every coordinate face has the exact expansion
+\[
+ K_{S,N}(F)=\frac1\Phi
+ \sum_{\chi\in\mathfrak X_S}
+ \chi(s)\chi(u)\overline{\chi(N)},
+\]
+where the local component of \(\chi\) is nonprincipal exactly on \(S\).
+Zero extension makes this expansion valid even when \(N+F\) is a nonunit;
+then every face vanishes in a killed local coordinate.  On the regular
+support \(N+F\in(\Z/M\Z)^\times\), the finite CRT target dependence is
+diagonalized by the unit--group ratio
+\[
+ r=(N+F)N^{-1}\pmod M.
+\]
+The full and proper face families are complementary character
+projectors.  Their recombination is the target--independent identity
+\[
+ C_N(F)+P_N(F)=\one_{M\mid F}.
+\]
+
+On this regular support we prove a Hilbert--valued ratio Parseval identity.  For arbitrary vectors
+\(z_{N,F}\), character orthogonality controls the sums of the coherent
+ratio buckets, not the individual pairs \((N,F)\).  For fixed \(F\), the
+ratio map has exact maximum multiplicity
+\[
+ d_M(F)=\prod_{q_i\mid F}(q_i-1).
+\]
+When \(q_i\asymp J\), the target collision scales are therefore
+\(1,J,J^2,J^3\), according as \(F\) is divisible by zero, one, two, or
+three auxiliary primes.  Generic
+determinants are injective; the obstruction is concentrated on the
+coordinate divisibility strata.
+
+We also compute the complete one--period target--synthesis spectrum.  The
+full--face operator has squared norm
+\[
+ \prod_{i=1}^3\frac{q_i(q_i-2)^2}{(q_i-1)^2}\asymp\Phi,
+\]
+whereas, for \(q_i\asymp J\), the proper operator has squared norm
+\(\asymp\Phi/J\).  Both scalar spectra have a dominant global principal
+target mode; fixed--target Parseval does not imply target--synthesis
+orthogonality.
+
+After full/proper recombination, every nonjoint ghost cancels exactly and
+the completed output is the joint--alias sum over \(F=kM\).  At the endpoint
+\[
+ Q=X^{267/400+o(1)},\qquad J=X^{133/400+o(1)},\qquad
+ M=X^{399/400+o(1)},
+\]
+their endpoint order is
+\[
+ \cK_X:=1+X/M=X^{1/400+o(1)}.
+\]
+All multiplicative character phases equal \(1\) on this identity bucket.
+For the alias--completed sum, diagonal energy plus Cauchy loses the exact
+finite alias count; at the endpoint this has order \(\cK_X\).  A
+joint--alias Gram estimate removes that loss.
+
+Crucially, the alias--completed sum is not the original equality output,
+which is its \(k=0\) column.  There is no coefficient--free recovery:
+two opposite alias columns make both fixed full/proper field outputs vanish
+while leaving the equality column arbitrary.  Thus the shifted--fiber
+estimate proposed in TPC--37 controls a congruence completion but, by
+itself, does not imply the physical equality gate.  A full alias--Gram
+bound implies the equality bound directly through its \(k=0\) diagonal
+entry, at the stronger diagonal scale.  The terminal identity bucket expands into
+M\"obius autocorrelations at shifts \(rM\), and the physical row expansion
+contains the affine four--M\"obius boundary found earlier.
+
+Finally, we distinguish two prescribed face--field estimates from an
+all--field operator estimate of the same normalization that is stable under
+restrictions.  The latter would be strictly stronger: its
+\(F=0,s=1\) restriction implies a diagonal--scale estimate for the
+terminal affine--M\"obius/four--M\"obius operator.  We prove no positive
+physical equality--recovery estimate and no M\"obius estimate.  The results
+are exact reductions, a correction of the
+logical gate, and method obstructions---not a M\"obius lower bound, a
+parity breach, a Hardy--Littlewood asymptotic, or a twin--prime theorem.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+M\"obius correlation; Dirichlet character; CRT projector; Jacobi sum;
+Bessel sequence; alias Gram; equality recovery; parity boundary.
+
+\medskip
+\noindent\textbf{MSC 2020:}
+Primary 11N35, 11L40; Secondary 11N37, 15A18, 42C15.
+
+\input{sections/introduction}
+\input{sections/inherited-interface}
+\input{sections/target-character-projectors}
+\input{sections/ratio-parseval}
+\input{sections/target-synthesis-spectrum}
+\input{sections/recombined-alias-gate}
+\input{sections/terminal-boundary}
+\input{sections/next-gate}
+\input{sections/certificate-claims}
+
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

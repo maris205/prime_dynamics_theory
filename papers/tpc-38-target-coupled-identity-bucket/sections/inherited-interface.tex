@@ -1,0 +1,220 @@
+\section{Inherited physical interface and normalizations}
+\label{sec:tpc38-interface}
+
+The finite CRT statements later in the paper are unconditional.  Their
+application to the orbit--sliced prime--M\"obius packet uses only the
+interface below, inherited from TPC--34--TPC--37
+\citep{WangTPC34,WangTPC35,WangTPC36,WangTPC37}.
+
+\subsection{Rows, targets, and the orbit gate}
+
+Fix \(h\in\Z\setminus\{0\}\), put \(H=\rad|h|\), and work on one retained
+dyadic packet with
+\begin{equation}
+ Q=LD,\qquad QJ\asymp X,\qquad R\le T<U_0\asymp X.
+ \label{eq:tpc38-interface-scales}
+\end{equation}
+A physical row is
+\begin{equation}
+ \alpha=(\ell_\alpha,d_\alpha),\qquad
+ m_\alpha=\ell_\alpha d_\alpha\asymp Q,
+ \label{eq:tpc38-interface-row}
+\end{equation}
+where \(\ell_\alpha\asymp L\) is prime and \(d_\alpha\asymp D\) is
+squarefree.  Source separation makes \(m_\alpha\) determine the row.
+There are \(O(QX^{o(1)})\) rows.  The two physical coefficient systems
+satisfy
+\begin{align}
+ \sum_\alpha|\gamma_\alpha^{(i)}|
+ &\ll X^{o(1)}Q,
+ \label{eq:tpc38-row-l1}\\
+ \sum_\alpha|\gamma_\alpha^{(i)}|^2
+ &\ll X^{o(1)}Q,
+ \qquad i=1,2.
+ \label{eq:tpc38-row-l2}
+\end{align}
+They contain the actual squarefree M\"obius and prime von--Mangoldt
+provenance; they are not arbitrary bounded row vectors.
+
+For \(j\) in a positive interval \(\cJ\) of \(O(J)\) integers, put
+\begin{equation}
+ N_\alpha(j)=m_\alpha j+h\asymp X.
+ \label{eq:tpc38-interface-target}
+\end{equation}
+Choose the distinct auxiliary primes \(q_i\asymp J\) under the inherited
+zero--face hypotheses
+\begin{equation}
+ \max\cJ<q_i,
+ \qquad
+ \max_\alpha d_\alpha<q_i<\min_\alpha\ell_\alpha,
+ \qquad
+ q_i\nmid h,
+ \label{eq:tpc38-interface-auxiliary-prime-hypotheses}
+\end{equation}
+and put \(M=\prod_iq_i\).  Let \(\cN_{\rm reg}\) be the subpacket on which
+\begin{equation}
+ (N_\alpha(j),M)=1.
+ \label{eq:tpc38-interface-regular-target}
+\end{equation}
+The zero--face estimates of TPC--37 place the complementary target rows at
+the inherited acceptable scale.  From this point onward, all shifted
+outputs and the symbols \(V_L,V_R\) refer to this regular subpacket.  Thus
+the character and ratio calculations below are applied only where their
+unit hypotheses hold; adjoining the already controlled complement recovers
+the full packet ledger.
+
+The ultra increment is
+\begin{equation}
+ C_m(j)=\sum_{\substack{T<u\le U_0\\u\mid mj+h}}
+ -\mu(u)\log u.
+ \label{eq:tpc38-interface-ultra}
+\end{equation}
+On the physical support,
+\begin{equation}
+ (u,mjH)=1
+ \label{eq:tpc38-interface-primitivity}
+\end{equation}
+for every divisor in this sum.
+
+The actual retained multiplier has the form
+\begin{equation}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ =\mathfrak m_{\rm act}(\alpha,\gamma)
+  \Xi_{\alpha,\gamma}(j)
+  \cW_{\alpha,\gamma}(j/J),
+ \label{eq:tpc38-interface-multiplier}
+\end{equation}
+where the static mask is
+\begin{equation}
+ \mathfrak m_{\rm act}(\alpha,\gamma)
+ =\one_{\ell_\alpha\ne\ell_\gamma}
+  \one_{|m_\alpha-m_\gamma|>\Delta}
+  \one_{(d_\alpha,d_\gamma)\le G}.
+ \label{eq:tpc38-interface-static-mask}
+\end{equation}
+TPC--36 proves an \(X^{o(1)}\) signed projective reassembly for this mask
+and the fixed residue and smooth orbit factors.  It does not prove an
+arithmetic Gram estimate for the resulting divisor sums.
+
+Define
+\begin{align}
+ Y_{\gamma,j}^L
+ &=\sum_\alpha\gamma_\alpha^{(1)}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)C_{m_\alpha}(j),
+ \qquad
+ V_L=\sum_{\gamma,j}|Y_{\gamma,j}^L|^2,
+ \label{eq:tpc38-interface-left}\\
+ Y_{\alpha,j}^R
+ &=\sum_\gamma\gamma_\gamma^{(2)}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)C_{m_\gamma}(j),
+ \qquad
+ V_R=\sum_{\alpha,j}|Y_{\alpha,j}^R|^2.
+ \label{eq:tpc38-interface-right}
+\end{align}
+The inherited scalar remainder closes once
+\begin{equation}
+ \boxed{V_L+V_R\ll X^{o(1)}\frac{Q^3}{J}.}
+ \label{eq:tpc38-interface-gate}
+\end{equation}
+The proved input--copy diagonal is
+\begin{equation}
+ V_{L,\Delta}+V_{R,\Delta}
+ \ll X^{o(1)}Q^2J.
+ \label{eq:tpc38-interface-diagonal}
+\end{equation}
+This diagonal is attached to the original fixed shift \(h\).
+
+\subsection{Shifted determinant fibers}
+
+Opening one ultra divisor and its complementary factor gives
+\begin{equation}
+ su=N_\alpha(j)=\ell_\alpha d_\alpha j+h.
+ \label{eq:tpc38-interface-reflection}
+\end{equation}
+After dyadic and projective separation, a layer has the schematic integer
+form
+\begin{equation}
+ \sum_{\ell,d,u,s}b(\ell)f(d)g(u)w(s)
+ \one_{su=\ell jd+h},
+ \label{eq:tpc38-interface-integer-core}
+\end{equation}
+with the physical ultra coefficient
+\begin{equation}
+ g(u)=-\mu(u)\log u\,\Phi_U(u).
+ \label{eq:tpc38-interface-physical-ultra}
+\end{equation}
+
+For a shifted determinant \(F\), replace
+\eqref{eq:tpc38-interface-reflection} by
+\begin{equation}
+ su=N_\alpha(j)+F
+ =\ell_\alpha d_\alpha j+h+F.
+ \label{eq:tpc38-interface-shifted-fiber}
+\end{equation}
+Let
+\begin{equation}
+ \cH_{\rm phys}
+ =\ell^2\{(L,\gamma,j)\}
+ \oplus\ell^2\{(R,\alpha,j)\}
+ \label{eq:tpc38-interface-Hphys}
+\end{equation}
+be the retained left/right output space.  We write \(\mathscr Z_F[\kappa]\)
+for the Hilbert--valued shifted output in which an atom with target \(N\)
+is multiplied by \(\kappa_N(F)\) before the row sum.  This notation
+contains the already proved \(X^{o(1)}\) projective reassembly cost.
+Write
+\begin{equation}
+ \mathscr R_F:=\mathscr Z_F[\mathbf1]
+ \label{eq:tpc38-interface-raw-shifted-output}
+\end{equation}
+for the raw shifted column.  The original regular--subpacket output is
+\(\mathscr R_0\), and
+\begin{equation}
+ \|\mathscr R_0\|_2^2=V_L+V_R
+ \label{eq:tpc38-interface-original-output}
+\end{equation}
+at the packet level, with the declared reassembly convention.
+
+The TPC--37 continuation was the pair of fixed--field estimates
+\begin{equation}
+ \left\|\sum_{|F|\ll X}\mathscr Z_F[\kappa]\right\|_2^2
+ \ll X^{o(1)}Q^2J
+ \sup_N\sum_{|F|\ll X}|\kappa_N(F)|^2,
+ \qquad \kappa=C,P.
+ \label{eq:tpc38-interface-two-field-input}
+\end{equation}
+It was proposed there as a sufficient conditional input.  The present
+paper does not assume it and refines its logical scope: the displayed
+estimate controls a face--weighted congruence completion.  Recovering
+\(\mathscr R_0\) from that completion requires an additional statement.
+We determine the exact coefficient--free information available for its two
+fields, prove the recovery obstruction, and distinguish
+\eqref{eq:tpc38-interface-two-field-input} from an operator inequality valid
+for arbitrary \(\kappa\).
+
+\subsection{Endpoint ledger}
+
+At the endpoint,
+\begin{equation}
+ Q=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ T=X^{193/500+o(1)},
+ \label{eq:tpc38-interface-endpoint}
+\end{equation}
+so \(QJ=X^{1+o(1)}\).  Three pairwise coprime orbit--scale primes give
+\begin{equation}
+ M=q_1q_2q_3=X^{399/400+o(1)},
+ \qquad
+ \cK_X:=1+\frac XM=X^{1/400+o(1)}.
+ \label{eq:tpc38-interface-M-K}
+\end{equation}
+The key identity is
+\begin{equation}
+ Q^2J\cK_X
+ =Q^2J\frac Q{J^2}X^{o(1)}
+ =X^{o(1)}\frac{Q^3}{J}.
+ \label{eq:tpc38-interface-key-ledger}
+\end{equation}
+Four orbit--scale primes have product \(J^4>X^{1+o(1)}\) and eliminate
+nonzero joint aliases.  As shown later, they do not weaken the full face
+on the equality \(F=0\).

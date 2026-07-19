@@ -1,0 +1,185 @@
+\section{Terminal embeddings and sparse M\"obius progressions}
+\label{sec:tpc38-terminal-boundary}
+
+The identity bucket has an explicit arithmetic submodel.  We record it to
+calibrate the strength of possible operator formulations, not to assert a
+new M\"obius estimate.
+
+\subsection{Terminal aliases}
+
+On the terminal factorization \(s=1\), the \(k\)-th joint alias has
+\begin{equation}
+ u=N+kM.
+ \label{eq:tpc38-terminal-alias}
+\end{equation}
+For a smooth terminal cutoff \(\Phi_0\), define
+\begin{equation}
+ a_N(k)
+ =-\mu(N+kM)\log(N+kM)\Phi_0(N+kM).
+ \label{eq:tpc38-terminal-alias-sequence}
+\end{equation}
+For every finite interval \(I\) of admissible \(k\)'s,
+\begin{align}
+ \left|\sum_{k\in I}a_N(k)\right|^2
+ &=\sum_{k\in I}|a_N(k)|^2
+ \notag\\
+ &\quad+2\operatorname{Re}
+ \sum_{r\ge1}
+ \sum_{\substack{k,k+r\in I}}
+ a_N(k+r)\overline{a_N(k)}.
+ \label{eq:tpc38-terminal-autocorrelation}
+\end{align}
+The off--diagonal terms contain
+\begin{equation}
+ \mu(N+kM)\mu(N+(k+r)M)
+ \label{eq:tpc38-M-spaced-Mobius}
+\end{equation}
+at shifts \(rM\).  The progression has modulus
+\(M=X^{399/400+o(1)}\) and length only
+\(\cK_X=X^{1/400+o(1)}\).
+
+\begin{proposition}[Exact arithmetic content of the terminal alias Gram]
+\label{prop:tpc38-terminal-alias-content}
+The same--target part of the joint--alias Gram contains the autocorrelation
+\eqref{eq:tpc38-terminal-autocorrelation}.  Restoring the physical row
+\(\alpha=(\ell,d)\) and target \(N_\alpha(j)=\ell dj+h\), the cross--row
+terms contain weights of the form
+\begin{align}
+ &\mu(d_\alpha)\mu(d_\beta)
+ (\log\ell_\alpha)(\log\ell_\beta)
+ \notag\\[-0.2em]
+ &\qquad\times
+ \mu(N_\alpha(j)+kM)
+ \mu(N_\beta(j)+k'M),
+ \label{eq:tpc38-four-Mobius-row-kernel}
+\end{align}
+multiplied by the actual masks and smooth factors.
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:tpc38-terminal-alias-sequence} into the Gram expansion.
+The physical row coefficient contains \(\mu(d)\log\ell\); pairing two rows
+gives \eqref{eq:tpc38-four-Mobius-row-kernel}.
+\end{proof}
+
+Equation \eqref{eq:tpc38-four-Mobius-row-kernel} is the shifted version of
+the affine four--M\"obius terminal boundary in TPC--34.  The required
+physical theorem would average it over rows, orbit times, opposite rows,
+aliases, and projective layers.  It is therefore not logically equivalent
+to proving
+\(\sum_{k<K}\mu(N+kM)=o(K)\) for every \(N\).  Conversely, it cannot be
+deduced from character orthogonality because all joint aliases have ratio
+one.
+
+\subsection{Prescribed fields versus a hereditary all--field estimate}
+
+Let \(\cK\) be a coefficient Hilbert space containing the two prescribed
+fields \(C,P\), and let \(\mathfrak T:\cK\to\cH_{\rm phys}\) be the linear
+synthesis map
+\begin{equation}
+ \boldsymbol\kappa\longmapsto
+ \sum_F\mathscr Z_F[\boldsymbol\kappa].
+ \label{eq:tpc38-formal-synthesis-map}
+\end{equation}
+The TPC--37 continuation asks only for bounds at the two fields \(C\) and
+\(P\).  An all--field estimate of the same normalization would assert
+\begin{equation}
+ \left\|\sum_F\mathscr Z_F[\boldsymbol\kappa]\right\|_2^2
+ \ll X^{o(1)}B_0
+ \sup_N\sum_F|\kappa_N(F)|^2
+ \label{eq:tpc38-all-field-estimate}
+\end{equation}
+for every admissible field \(\boldsymbol\kappa\).  We call it hereditary if
+the same bound remains valid after multiplying the field by indicators of
+determinant fibers or factorization layers.  This norm is the one appearing
+in the earlier prescribed--field input; no Hilbert structure for the
+right--hand side is being asserted.
+
+\begin{proposition}[Two tests do not determine an operator norm]
+\label{prop:tpc38-two-test-dichotomy}
+Bounds for \(\mathfrak T C\) and \(\mathfrak T P\) alone give no bound for
+\(\|\mathfrak T\|_{\op}\) on the orthogonal complement of their span in
+\(\cK\).
+Moreover, a small recombined value
+\(\mathfrak T(C+P)\) gives no bound for either separate value.
+\end{proposition}
+
+\begin{proof}
+The first statement is elementary finite--dimensional linear algebra: an
+operator may vanish on two prescribed vectors and have arbitrary norm on
+their orthogonal complement.  For the second, take
+\(\mathfrak T C=v\) and \(\mathfrak T P=-v\), or use the explicit
+offjoint construction in
+\cref{prop:tpc38-face-splitting-obstruction}.
+\end{proof}
+
+In addition, \cref{thm:tpc38-equality-recovery-obstruction} shows that the
+two completed test values do not recover their \(F=0\) column.  This is
+logically distinct from their failure to determine the operator norm.
+The distinction becomes arithmetic on the equality face.  Heredity under
+\(F=0\) would in particular give the explicit restricted input
+\begin{equation}
+ \|\mathscr Z_0[\boldsymbol\kappa]\|_2^2
+ \ll X^{o(1)}B_0\sup_N|\kappa_N(0)|^2
+ \label{eq:tpc38-hereditary-F0-input}
+\end{equation}
+for every field supported on \(F=0\).
+
+\begin{theorem}[Equality--face embedding]
+\label{thm:tpc38-equality-face-embedding}
+Assume \eqref{eq:tpc38-hereditary-F0-input}, and let
+\(\mathscr R_0:=\mathscr Z_0[\mathbf1]\) be the raw regular--subpacket
+output on \(F=0\).  Then
+\begin{equation}
+ \boxed{
+ \mathscr Z_0[C]=A\mathscr R_0,
+ \qquad
+ \mathscr Z_0[P]=(1-A)\mathscr R_0.}
+ \label{eq:tpc38-equality-face-embedding}
+\end{equation}
+Consequently, the hereditary all--field estimate at normalization
+\(B_0=Q^2J\) implies
+\begin{equation}
+ \|\mathscr R_0\|_2^2\ll X^{o(1)}Q^2J.
+ \label{eq:tpc38-hereditary-equality-bound}
+\end{equation}
+This is stronger than the inherited target \(Q^3/J\) by a factor of order
+\(\cK_X=(Q/J^2)X^{o(1)}\).
+\end{theorem}
+
+\begin{proof}
+The identities follow from \(C_N(0)=A\) and \(P_N(0)=1-A\), which are
+independent of \(N\).  Apply the hereditary estimate to
+\(C_N(F)\one_{F=0}\) and divide by \(A^2=1-O(J^{-1})\).  Finally,
+\(Q^2J\cK_X=X^{o(1)}Q^3/J\) by
+\eqref{eq:tpc38-interface-key-ledger}.
+\end{proof}
+
+If the hereditary all--field estimate is also stable under the terminal restriction
+\(s=1\), then \eqref{eq:tpc38-hereditary-equality-bound} applies to the
+affine terminal operator whose square expands into
+\eqref{eq:tpc38-four-Mobius-row-kernel} with \(k=k'=0\).
+
+\begin{corollary}[Terminal hereditary all--field implication]
+\label{cor:tpc38-terminal-hereditary-implication}
+An all--field estimate hereditary under \(F=0,s=1\) implies a diagonal--scale
+bound for the terminal affine--M\"obius operator isolated in TPC--34.
+\end{corollary}
+
+This corollary does not say that the two prescribed--field inputs
+\eqref{eq:tpc38-interface-two-field-input} implies affine Chowla.  By
+itself that input does not even recover the equality column from its alias
+completion, and it may also use cancellation between equality, proper
+divisors, terminal atoms, and nonzero aliases.  The implication applies
+only to the stronger, localizable operator theorem.
+
+\subsection{What the sharp examples do not prove}
+
+The rank--one witness \eqref{eq:tpc38-rank-one-alias-witness}, the
+offjoint witness \eqref{eq:tpc38-offjoint-witness}, and the principal target
+mode in \cref{sec:tpc38-target-spectrum} are artificial coefficient
+choices.  They establish optimal losses in broad abstract classes.  They
+do not prove that the actual M\"obius vectors align, that
+\cref{ass:tpc38-joint-alias-Gram} is false, or that a M\"obius
+autocorrelation is large.  Their role is to identify precisely which new
+arithmetic information a positive theorem must use.

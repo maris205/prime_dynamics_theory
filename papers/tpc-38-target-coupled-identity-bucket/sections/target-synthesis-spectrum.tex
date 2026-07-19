@@ -1,0 +1,234 @@
+\section{Exact target--synthesis spectrum}
+\label{sec:tpc38-target-spectrum}
+
+Fixed--target Parseval concerns the norm of one row.  A target--coupled
+Bessel estimate concerns coherent combinations of many such rows.  The
+distinction can be quantified without an inequality.
+
+\subsection{The local full--face Gram}
+
+Fix one odd prime \(q\), put \(n=q-1\), \(p=n^{-1}\), and let
+\begin{equation}
+ c_N(F)=\one_{F=0}-p\one_{F\ne-N},
+ \qquad N\in\F_q^\times,\quad F\in\F_q.
+ \label{eq:tpc38-local-full-row}
+\end{equation}
+
+\begin{lemma}[Exact local target Gram]
+\label{lem:tpc38-local-target-Gram}
+For \(N,N'\in\F_q^\times\),
+\begin{equation}
+ \langle c_N,c_{N'}\rangle
+ =\begin{cases}
+  1-p,&N=N',\\
+  1-p-p^2,&N\ne N'.
+ \end{cases}
+ \label{eq:tpc38-local-target-Gram}
+\end{equation}
+Equivalently, the \(n\times n\) Gram matrix is
+\begin{equation}
+ G_q=p^2I_n+(1-p-p^2)\mathbf1\mathbf1^*.
+ \label{eq:tpc38-local-Gram-matrix}
+\end{equation}
+Its squared singular values are
+\begin{equation}
+ \lambda_q(\eta)=
+ \begin{cases}
+  \displaystyle\frac{q(q-2)^2}{(q-1)^2},
+  &\eta=\mathbf1,\\[0.9em]
+  \displaystyle\frac1{(q-1)^2},
+  &\eta\ne\mathbf1,
+ \end{cases}
+ \label{eq:tpc38-local-singular-values}
+\end{equation}
+where \(\eta\) ranges over target Mellin modes.
+\end{lemma}
+
+\begin{proof}
+For \(N=N'\), the distinguished value \(F=0\) contributes
+\((1-p)^2\), the killed value \(F=-N\) contributes zero, and the remaining
+\(q-2=n-1\) values contribute \(p^2\).  Their sum is \(1-p\).
+
+For \(N\ne N'\), the values \(0,-N,-N'\) are distinct.  The first
+contributes \((1-p)^2\), the next two contribute zero, and the remaining
+\(q-3=n-2\) values contribute \(p^2\).  The total is \(1-p-p^2\).
+This proves \eqref{eq:tpc38-local-Gram-matrix}.  On the orthogonal
+complement of \(\mathbf1\), its eigenvalue is \(p^2\).  On \(\mathbf1\),
+the eigenvalue is
+\[
+ p^2+n(1-p-p^2)
+ =\frac{q(q-2)^2}{(q-1)^2}.
+\]
+\end{proof}
+
+The off--diagonal entry in \eqref{eq:tpc38-local-target-Gram} differs from
+the row norm by only \(p^2\).  The local full rows are nearly parallel.
+
+\subsection{The CRT tensor spectrum}
+
+Return to three primes.  Define the full target--synthesis operator
+\begin{equation}
+ T_C:\ell^2((\Z/M\Z)^\times)\longrightarrow\ell^2(\Z/M\Z),
+ \qquad
+ (T_Ca)(F)=\sum_{N\bmod M}^{*}a_NC_N(F).
+ \label{eq:tpc38-TC-definition}
+\end{equation}
+For a target Mellin mode
+\(\eta=\eta_1\otimes\eta_2\otimes\eta_3\), put
+\begin{equation}
+ \lambda_C(\eta)=\prod_{i=1}^3\lambda_{q_i}(\eta_i),
+ \label{eq:tpc38-lambda-C}
+\end{equation}
+with the local factors in \eqref{eq:tpc38-local-singular-values}.
+
+\begin{theorem}[Complete full--face target spectrum]
+\label{thm:tpc38-full-target-spectrum}
+The target Mellin modes diagonalize \(T_C^*T_C\), and their squared
+singular values are exactly \(\lambda_C(\eta)\).  In particular,
+\begin{equation}
+ \boxed{
+ \|T_C\|_{\op}^2
+ =\Lambda_C
+ :=\prod_{i=1}^3
+ \frac{q_i(q_i-2)^2}{(q_i-1)^2}.}
+ \label{eq:tpc38-TC-norm}
+\end{equation}
+If \(q_i\asymp J\), then
+\begin{equation}
+ \Lambda_C\asymp\Phi\asymp J^3.
+ \label{eq:tpc38-TC-endpoint}
+\end{equation}
+Under the same hypothesis \(q_i\asymp J\), every nonprincipal global
+target mode has squared singular value \(O(1)\).
+\end{theorem}
+
+\begin{proof}
+The CRT identifies \(T_C\) with the tensor product of the three local
+matrices in \eqref{eq:tpc38-local-full-row}.  Tensor
+\cref{lem:tpc38-local-target-Gram}.  The largest local eigenvalue is the
+principal one.  If a global mode has a nonprincipal component at \(i\),
+then that local factor is \(O(J^{-2})\), while the two remaining principal
+factors are \(O(J)\).  Their product is \(O(1)\).
+\end{proof}
+
+The direct Gram formula is also useful.  For \(p_i=(q_i-1)^{-1}\),
+\begin{equation}
+ \boxed{
+ \langle C_N,C_{N'}\rangle
+ =\prod_{i=1}^3
+ \left[
+ (1-p_i)\one_{N=N'\ (\bmod q_i)}
+ +(1-p_i-p_i^2)\one_{N\ne N'\ (\bmod q_i)}
+ \right].}
+ \label{eq:tpc38-global-full-row-Gram}
+\end{equation}
+If \(N\) and \(N'\) differ in every coordinate, the right side is
+\(1-O(J^{-1})\).
+
+\subsection{The proper target spectrum}
+
+Define
+\begin{equation}
+ (T_Pa)(F)=\sum_{N\bmod M}^{*}a_NP_N(F).
+ \label{eq:tpc38-TP-definition}
+\end{equation}
+Since \(P_N=\delta_0-C_N\) and \(C_N(0)=A\), the target Gram is
+\begin{equation}
+ T_P^*T_P=T_C^*T_C+(1-2A)\mathbf1\mathbf1^*.
+ \label{eq:tpc38-proper-Gram-rank-one}
+\end{equation}
+
+\begin{theorem}[Complete proper--face target spectrum]
+\label{thm:tpc38-proper-target-spectrum}
+Every nonprincipal global target Mellin mode has squared singular value
+\(\lambda_C(\eta)\).  The global principal mode has squared singular value
+\begin{equation}
+ \boxed{
+ \lambda_P(\mathbf1)
+ =\Lambda_C+\Phi(1-2A).}
+ \label{eq:tpc38-proper-principal-eigenvalue}
+\end{equation}
+For \(q_i\asymp J\),
+\begin{equation}
+ \lambda_P(\mathbf1)\asymp\frac\Phi J\asymp J^2,
+ \qquad
+ \|T_P\|_{\op}^2\asymp J^2.
+ \label{eq:tpc38-TP-endpoint}
+\end{equation}
+Moreover,
+\begin{equation}
+ \langle P_N,P_{N'}\rangle
+ =1-2A+\langle C_N,C_{N'}\rangle,
+ \label{eq:tpc38-proper-row-Gram}
+\end{equation}
+and
+\begin{equation}
+ \langle C_N,P_{N'}\rangle
+ =A-\langle C_N,C_{N'}\rangle.
+ \label{eq:tpc38-cross-row-Gram}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:tpc38-proper-Gram-rank-one} follows by expanding
+\(\langle\delta_0-C_N,\delta_0-C_{N'}\rangle\).  The rank--one correction
+vanishes on every nonprincipal target mode and adds \(\Phi(1-2A)\) on the
+principal mode.  This proves the exact spectrum.
+
+For the asymptotic, divide \eqref{eq:tpc38-proper-principal-eigenvalue} by
+\(\Phi\).  One has
+\begin{equation}
+ \frac{\Lambda_C}{\Phi}
+ =\prod_{i=1}^3
+ \left(1-p_i-p_i^2+p_i^3\right),
+ \label{eq:tpc38-Lambda-density}
+\end{equation}
+while \(A=\prod_i(1-p_i)\).  Expanding the fixed products shows
+\begin{equation}
+ \frac{\lambda_P(\mathbf1)}\Phi
+ =\sum_{i=1}^3p_i+O(J^{-2})\asymp J^{-1}.
+ \label{eq:tpc38-proper-principal-density}
+\end{equation}
+The row Gram identities follow from the same expansion.
+\end{proof}
+
+\subsection{Trace is not synthesis}
+
+The fixed--target row norms are
+\begin{equation}
+ \|C_N\|_2^2=A=1-O(J^{-1}),
+ \qquad
+ \|P_N\|_2^2=1-A\asymp J^{-1}.
+ \label{eq:tpc38-row-norms-versus-synthesis}
+\end{equation}
+By contrast, the synthesis norms are of orders \(J^3\) and \(J^2\).
+Thus a diagonal or trace estimate over \(N\) cannot be upgraded to a
+target--coupled operator estimate without controlling the principal target
+direction.  This is a precise finite--dimensional obstruction; it does not
+assert that the actual M\"obius row vector occupies that direction.
+
+\begin{corollary}[Coefficient--blind target Bessel obstruction]
+\label{cor:tpc38-target-Bessel-obstruction}
+Any coefficient--blind inequalities
+\begin{equation}
+ \|T_Ca\|_2^2\le B_C\|a\|_2^2,
+ \qquad
+ \|T_Pa\|_2^2\le B_P\|a\|_2^2
+ \label{eq:tpc38-coefficient-blind-Bessel-bounds}
+\end{equation}
+valid for every scalar target vector \(a\) must satisfy
+\begin{equation}
+ B_C\ge\Lambda_C\asymp J^3,
+ \qquad
+ B_P\ge\lambda_P(\mathbf1)\asymp J^2.
+ \label{eq:tpc38-coefficient-blind-lower-bounds}
+\end{equation}
+Thus the fixed--row norms alone cannot furnish smaller synthesis constants.
+\end{corollary}
+
+\begin{remark}[Scope]
+The theorem concerns unrestricted scalar target coefficients on one CRT
+period.  Physical coefficients are far more structured.  The result rules
+out a coefficient--blind frame argument; it is neither a lower bound for
+\(V_L+V_R\) nor evidence that the actual M\"obius vector is extremal.
+\end{remark}

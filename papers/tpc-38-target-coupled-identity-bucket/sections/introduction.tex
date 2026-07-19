@@ -1,0 +1,243 @@
+\section{Introduction}
+\label{sec:tpc38-introduction}
+
+The orbit--sliced program in TPC--34--TPC--37 reduces a scalar prime--pair
+remainder to a coefficient--specific energy estimate for a reflected
+M\"obius divisor sum \citep{WangTPC34,WangTPC35,WangTPC36,WangTPC37}.
+The physical row mask is now known to have subpolynomial signed projective
+complexity, the zero residue faces have been removed at the target scale,
+and all seven proper faces of a three--modulus completion close on the
+exact equality.  The full face remains unsuppressed there.
+
+TPC--37 recorded two possible continuations.  The first works after
+finite--field completion and asks for an actual weighted Mellin--overlap
+estimate, including its principal boundary.  The second keeps the integer
+determinant
+\begin{equation}
+ F=su-N
+ \label{eq:tpc38-intro-determinant}
+\end{equation}
+visible and asks for a target--coupled shifted--fiber estimate.  This paper
+audits the second continuation.  The question is not whether one may write
+another formal Hilbert--space norm.  It is whether the moving target and
+the CRT faces create genuine orthogonality at the physical normalization.
+
+\subsection{What the target coupling really is}
+
+Let \(q_1,q_2,q_3\) be distinct odd primes, put
+\begin{equation}
+ M=q_1q_2q_3,\qquad
+ \Phi=\varphi(M)=\prod_{i=1}^3(q_i-1),
+ \label{eq:tpc38-intro-M-Phi}
+\end{equation}
+and let \(N\) be a unit modulo \(M\).  TPC--37 defines, in each local
+coordinate, a principal face \(m_{i,N}(F)\) and a nonprincipal aggregate
+\(c_{i,N}(F)\).  Their tensor products give eight faces.  The full face
+\(C_N\) uses three nonprincipal coordinates; the proper union \(P_N\)
+contains the other seven.
+
+The first result of this paper is the exact identity
+\begin{equation}
+ K_{S,N}(F)
+ =\frac1\Phi\sum_{\chi\in\mathfrak X_S}
+ \chi(N+F)\overline{\chi(N)},
+ \label{eq:tpc38-intro-character-face}
+\end{equation}
+where the local component of \(\chi\) is nonprincipal exactly for
+\(i\in S\).  Since \(N+F=su\), the phase factors further as
+\begin{equation}
+ \chi(N+F)\overline{\chi(N)}
+ =\chi(s)\chi(u)\overline{\chi(N)}.
+ \label{eq:tpc38-intro-product-factorization}
+\end{equation}
+Zero--extended characters make this valid without a hidden correction
+when \(s\) or \(u\) is nonunit; then every face vanishes in a killed local
+coordinate.  On the regular support
+\(N+F\in(\Z/M\Z)^\times\), the finite CRT target dependence is
+diagonalized exactly by the unit--group ratio
+\begin{equation}
+ r=\frac{N+F}{N}\pmod M.
+ \label{eq:tpc38-intro-ratio}
+\end{equation}
+
+For fixed \(F\), on its regular domain this ratio map is injective in every local coordinate in
+which \(q_i\nmid F\), and is constant in every coordinate in which
+\(q_i\mid F\).  Its exact largest fiber is
+\begin{equation}
+ d_M(F)=\prod_{q_i\mid F}(q_i-1).
+ \label{eq:tpc38-intro-collision-multiplicity}
+\end{equation}
+When \(q_i\asymp J\), this gives the target collision scale ladder
+\begin{equation}
+ 1,\qquad J,\qquad J^2,\qquad J^3,
+ \label{eq:tpc38-intro-collision-ladder}
+\end{equation}
+according as \(F\) is divisible by zero, one, two, or three orbit--scale
+primes.  The underlying multiplicity formula is exact; the displayed
+\(J\)-powers are asymptotic scales, not a large--sieve heuristic.
+
+\subsection{Fixed target orthogonality does not survive target synthesis}
+
+For one fixed \(N\), the functions
+\begin{equation}
+ e_{\chi,N}(F)=\chi(N+F)\overline{\chi(N)}
+ \label{eq:tpc38-intro-echi}
+\end{equation}
+are orthogonal over \(F\bmod M\).  This recovers the one--period masses
+\begin{equation}
+ \sum_{F\bmod M}|C_N(F)|^2=A,\qquad
+ \sum_{F\bmod M}|P_N(F)|^2=1-A,
+ \label{eq:tpc38-intro-fixed-target-masses}
+\end{equation}
+where
+\begin{equation}
+ A=\prod_{i=1}^3\left(1-\frac1{q_i-1}\right).
+ \label{eq:tpc38-intro-A}
+\end{equation}
+When \(N\) moves, the cross Gram becomes a product of shifted Jacobi
+sums.  More directly, the full face rows satisfy
+\begin{equation}
+ \langle C_N,C_{N'}\rangle
+ =\prod_{i=1}^3
+ \begin{cases}
+  1-p_i,&N\equiv N'\pmod{q_i},\\
+  1-p_i-p_i^2,&N\not\equiv N'\pmod{q_i},
+ \end{cases}
+ \label{eq:tpc38-intro-full-row-Gram}
+\end{equation}
+with \(p_i=(q_i-1)^{-1}\).  Distinct target rows therefore have inner
+product \(1-O(J^{-1})\) when they are distinct in all coordinates.  They
+are almost parallel, not almost orthogonal.
+
+We compute the entire scalar target--synthesis spectrum.  For
+\begin{equation}
+ (T_Ca)(F)=\sum_{N\bmod M}^{*}a_NC_N(F),
+ \label{eq:tpc38-intro-TC}
+\end{equation}
+the squared singular values are indexed by target Mellin modes.  The
+largest is
+\begin{equation}
+ \|T_C\|_{\op}^2
+ =\prod_{i=1}^3\frac{q_i(q_i-2)^2}{(q_i-1)^2}
+ \asymp\Phi\asymp J^3.
+ \label{eq:tpc38-intro-TC-norm}
+\end{equation}
+For the proper union, the principal squared singular value is
+\(\asymp\Phi/J\asymp J^2\); all its nonprincipal target modes are
+\(O(1)\).  The small fixed--row norm \(1-A\asymp J^{-1}\) therefore does
+not imply a small synthesis norm.
+
+\subsection{Recombination and the identity bucket}
+
+The full and proper character families are complementary.  Summing them
+before estimating gives
+\begin{equation}
+ \boxed{C_N(F)+P_N(F)=\one_{M\mid F}.}
+ \label{eq:tpc38-intro-recombination}
+\end{equation}
+Every nonjoint ghost cancels.  Separate estimates for \(C_N\) and \(P_N\)
+are consequently sufficient but strictly stronger than an estimate for
+their recombined congruence completion.
+
+In the physical determinant interval, \eqref{eq:tpc38-intro-recombination}
+leaves only
+\begin{equation}
+ F=kM,\qquad |k|\ll X/M.
+ \label{eq:tpc38-intro-joint-aliases}
+\end{equation}
+At the endpoint
+\begin{equation}
+ Q=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},\qquad
+ M=X^{399/400+o(1)},
+ \label{eq:tpc38-intro-endpoint}
+\end{equation}
+the endpoint alias order is
+\begin{equation}
+ \cK_X:=1+\frac XM
+ =\frac Q{J^2}X^{o(1)}
+ =X^{1/400+o(1)}.
+ \label{eq:tpc38-intro-KX}
+\end{equation}
+On \(F=kM\), the ratio in \eqref{eq:tpc38-intro-ratio} is \(1\) and every
+character phase in \eqref{eq:tpc38-intro-character-face} equals one.
+Multiplicative character orthogonality is therefore exactly blind on the
+remaining bucket.
+
+Write \(\mathscr Z_k\) for the raw shifted output on
+\(su=N+kM\).  The recombined completed output is
+\begin{equation}
+ \left\|\sum_k\mathscr Z_k\right\|_2^2
+ =\sum_{k,k'}\langle\mathscr Z_k,\mathscr Z_{k'}\rangle.
+ \label{eq:tpc38-intro-alias-Gram}
+\end{equation}
+If its alias columns satisfy the diagonal trace bound
+\begin{equation}
+ \sum_k\|\mathscr Z_k\|_2^2
+ \ll X^{o(1)}Q^2J\cK_X,
+ \label{eq:tpc38-intro-diagonal-input}
+\end{equation}
+Cauchy gives only \(X^{o(1)}Q^2J\cK_X^2\).  The desired scale is
+\begin{equation}
+ Q^2J\cK_X=\frac{Q^3}{J}X^{o(1)}.
+ \label{eq:tpc38-intro-target-scale}
+\end{equation}
+The exact finite loss is the alias count \(K_B\); at the endpoint it is of
+order \(\cK_X\), and a rank--one family of alias columns attains it.
+
+There is a more basic logical distinction.  The original physical output
+is \(\mathscr Z_0\), not the alias sum in
+\eqref{eq:tpc38-intro-alias-Gram}.  No norm bound for the latter recovers
+the former: for two aliases, the abstract choice
+\(\mathscr Z_0=v\), \(\mathscr Z_1=-v\) makes the alias sum and both
+fixed full/proper field outputs vanish while \(\mathscr Z_0\) is arbitrary.
+Thus the shifted--fiber estimate proposed in TPC--37 controls the
+congruence--completed output but needs an additional equality--recovery
+input before it can imply the original orbit gate.  A uniform column bound
+at scale \(Q^2J\) would recover \(\mathscr Z_0\), but at \(k=0\) it is
+already stronger than the desired \(Q^2J\cK_X\) bound.  A full alias--Gram
+bound is stronger still and automatically contains this column bound.
+
+\subsection{Arithmetic meaning and claim boundary}
+
+On the terminal submodel \(s=1\), a joint alias contains
+\begin{equation}
+ a_N(k)=-\mu(N+kM)\log(N+kM)\Phi_0(N+kM).
+ \label{eq:tpc38-intro-terminal-sequence}
+\end{equation}
+Its squared alias sum has cross terms
+\begin{equation}
+ \mu(N+kM)\mu(N+(k+r)M),
+ \label{eq:tpc38-intro-Mobius-correlation}
+\end{equation}
+and restoring the physical rows gives the affine four--M\"obius Gram
+identified in TPC--34.  This is an averaged, highly structured
+correlation.  It is not logically equivalent to pointwise Chowla in each
+short progression.
+
+There is also a necessary distinction in terminology.  Bounds for the two
+prescribed fields \(C\) and \(P\) do not constitute an all--field operator
+estimate.  An estimate of the same normalization for every coefficient
+field, stable under fiber restriction, is strictly stronger.  Since
+\(C_N(0)=A=1-O(J^{-1})\), that hereditary all--field estimate
+restricted to \(F=0,s=1\) would imply a diagonal--scale estimate for the
+original terminal operator, stronger than the inherited target by the
+factor \(\cK_X\).  We prove no hereditary all--field theorem, positive
+physical equality--recovery estimate, or M\"obius correlation estimate.
+
+The unconditional conclusions of the paper are the exact character
+projectors, shifted Jacobi Grams, ratio Parseval theorem, exact collision
+multiplicity and its scale ladder,
+target--synthesis spectrum, face recombination, equality--nonrecoverability,
+and sharp abstract coherence examples.  They locate the remaining gates
+but do not prove the physical orbit estimate, affine Chowla, sieve--parity failure, a
+Hardy--Littlewood asymptotic, or infinitely many twin primes.
+
+\Cref{sec:tpc38-interface} fixes the inherited physical normalization.
+\Cref{sec:tpc38-character-projectors} proves the target--coupled character
+calculus.  \Cref{sec:tpc38-ratio-parseval} gives the ratio and determinant
+stratifications.  \Cref{sec:tpc38-target-spectrum} computes the synthesis
+spectrum.  \Cref{sec:tpc38-recombined-gate} reduces to the identity bucket.
+\Cref{sec:tpc38-terminal-boundary} records its arithmetic content, and
+\cref{sec:tpc38-next-gate,sec:tpc38-certificate-claims} state the next
+inputs and formal claim boundary.

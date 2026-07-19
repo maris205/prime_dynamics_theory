@@ -1,0 +1,358 @@
+\section{Full/proper recombination and the joint--alias Gram}
+\label{sec:tpc38-recombined-gate}
+
+The preceding sections show why estimating the two face families
+separately is expensive.  The CRT congruence--completed kernel contains
+their exact sum, so one should recombine before applying an inequality.
+
+\subsection{Strict face--splitting obstruction}
+
+Let \(E\subset\Z/M\Z\) be a nonempty set of nonjoint residues on which
+\(C_N(F)\ne0\).  Fix a unit vector \(v\) in a Hilbert space and set
+\begin{equation}
+ z_F=\frac{\overline{C_N(F)}}{|C_N(F)|}v,
+ \qquad F\in E.
+ \label{eq:tpc38-offjoint-witness}
+\end{equation}
+
+\begin{proposition}[Separate faces are strictly stronger]
+\label{prop:tpc38-face-splitting-obstruction}
+For the family \eqref{eq:tpc38-offjoint-witness},
+\begin{equation}
+ \sum_{F\in E}C_N(F)z_F
+ =\left(\sum_{F\in E}|C_N(F)|\right)v,
+ \label{eq:tpc38-large-full-output}
+\end{equation}
+and
+\begin{equation}
+ \sum_{F\in E}P_N(F)z_F
+ =-\left(\sum_{F\in E}|C_N(F)|\right)v.
+ \label{eq:tpc38-large-proper-output}
+\end{equation}
+Their recombined output is zero.  Hence no abstract estimate can recover
+separate full and proper outputs from their sum.
+\end{proposition}
+
+\begin{proof}
+Use \(P_N(F)=-C_N(F)\) for \(M\nmid F\).  The definition of \(z_F\)
+aligns every full--face summand.
+\end{proof}
+
+This proposition is not a counterexample to either fixed physical field
+estimate in \eqref{eq:tpc38-interface-two-field-input}: its vectors were
+chosen adversarially.  It proves a logical point.  Separate--face
+control is sufficient, but it is not necessary for the recombined
+physical kernel and may destroy an exact cancellation before arithmetic
+coefficients are used.
+
+\subsection{The identity bucket}
+
+Let \(B\ll X\) bound the determinant range and put
+\begin{equation}
+ \cI_B=\{k\in\Z:|kM|\le B\},
+ \qquad K_B=|\cI_B|=2\left\lfloor\frac BM\right\rfloor+1.
+ \label{eq:tpc38-alias-index-set}
+\end{equation}
+Let
+\begin{equation}
+ \mathscr Z_k:=\mathscr R_{kM}\in\cH_{\rm phys},
+ \qquad k\in\cI_B,
+ \label{eq:tpc38-Zk}
+\end{equation}
+be the raw shifted columns associated with
+\begin{equation}
+ su=N+kM.
+ \label{eq:tpc38-joint-shifted-equality}
+\end{equation}
+Define the two completed face outputs by
+\begin{equation}
+ \mathscr Y_C:=\sum_{|F|\le B}\mathscr Z_F[C],
+ \qquad
+ \mathscr Y_P:=\sum_{|F|\le B}\mathscr Z_F[P].
+ \label{eq:tpc38-completed-face-outputs}
+\end{equation}
+Linearity and \eqref{eq:tpc38-face-recombination} give the exact identity
+\begin{equation}
+ \boxed{
+ \mathscr Y_C+\mathscr Y_P
+ =\sum_{k\in\cI_B}\mathscr Z_k
+ =:\mathscr Y_{\rm alias}.}
+ \label{eq:tpc38-joint-output}
+\end{equation}
+By contrast, the original equality output of the retained regular subpacket is
+\begin{equation}
+ \boxed{\mathscr Y_{\rm phys}=\mathscr Z_0=\mathscr R_0.}
+ \label{eq:tpc38-original-versus-alias-output}
+\end{equation}
+Thus face recombination produces an exact congruence completion of the
+original equality; it does not identify the completion with its zero
+column.
+
+\begin{proposition}[Character blindness on the identity bucket]
+\label{prop:tpc38-character-blindness}
+For every unit target \(N\), every \(k\in\cI_B\), and every character
+\(\chi\bmod M\),
+\begin{equation}
+ \chi(N+kM)\overline{\chi(N)}=1.
+ \label{eq:tpc38-character-phase-one}
+\end{equation}
+Thus every joint alias belongs to the single ratio bucket \(r=1\), and the
+multiplicative character Gram on that bucket is rank one.
+\end{proposition}
+
+\begin{proof}
+Modulo \(M\), one has \(N+kM=N\), and \(N\) is a unit.
+\end{proof}
+
+No additional multiplicative character decomposition can separate the
+vectors in \eqref{eq:tpc38-joint-output}.  The completion is governed by
+their ordinary Hilbert Gram matrix
+\begin{equation}
+ \mathsf G_B=(\langle\mathscr Z_k,\mathscr Z_{k'}\rangle)_{k,k'\in\cI_B}.
+ \label{eq:tpc38-alias-Gram-matrix}
+\end{equation}
+
+\subsection{Alias completion does not recover exact equality}
+
+\begin{theorem}[Sharp equality--recovery obstruction]
+\label{thm:tpc38-equality-recovery-obstruction}
+Assume \(K_B>1\).  In the unrestricted Hilbert column class, neither
+\(\mathscr Y_{\rm alias}\) nor the pair
+\((\mathscr Y_C,\mathscr Y_P)\) controls \(\mathscr Z_0\).  More precisely,
+for every \(T>0\) there are columns for which
+\begin{equation}
+ \mathscr Y_C=\mathscr Y_P=\mathscr Y_{\rm alias}=0,
+ \qquad
+ \|\mathscr Z_0\|_2=T.
+ \label{eq:tpc38-equality-recovery-witness-output}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Choose \(k_1\in\cI_B\setminus\{0\}\) and a unit vector \(v\).  Set
+\begin{equation}
+ \mathscr Z_0=Tv,
+ \qquad
+ \mathscr Z_{k_1}=-Tv,
+ \qquad
+ \mathscr Z_k=0\quad(k\ne0,k_1),
+ \label{eq:tpc38-equality-recovery-witness}
+\end{equation}
+and set every nonjoint target atom in every shifted output to zero.  On a joint alias,
+\(C_N(kM)=A\) and \(P_N(kM)=1-A\), independently of \(N\).  Hence
+\(\mathscr Y_C=A(\mathscr Z_0+\mathscr Z_{k_1})=0\) and
+\(\mathscr Y_P=(1-A)(\mathscr Z_0+\mathscr Z_{k_1})=0\), while
+\(\|\mathscr Z_0\|_2=T\).
+\end{proof}
+
+The witness is coefficient--blind and artificial.  It does not assert
+that the physical M\"obius columns cancel in this way.  It proves that an
+estimate for the two completed fixed fields needs a new physical recovery
+argument before it can bound \eqref{eq:tpc38-interface-gate}.
+
+\subsection{Localized columns, the alias Gram, and the sharp Cauchy loss}
+
+Put
+\begin{equation}
+ B_0=Q^2J.
+ \label{eq:tpc38-B0}
+\end{equation}
+The following strong localized input is useful for calibrating possible
+positive theorems.
+
+\begin{assumption}[Uniform full alias--column bound]
+\label{ass:tpc38-moving-shift-diagonal}
+Uniformly for \(k\in\cI_B\),
+\begin{equation}
+ \|\mathscr Z_k\|_2^2\ll X^{o(1)}B_0.
+ \label{eq:tpc38-moving-shift-diagonal}
+\end{equation}
+\end{assumption}
+
+At \(k=0\), \cref{ass:tpc38-moving-shift-diagonal} already gives
+\begin{equation}
+ \|\mathscr Y_{\rm phys}\|_2^2
+ \ll X^{o(1)}Q^2J,
+ \label{eq:tpc38-moving-diagonal-already-strong}
+\end{equation}
+which is stronger than the inherited target \(X^{o(1)}Q^3/J\), since
+\(Q^2J\cK_X=X^{o(1)}Q^3/J\).
+It is therefore not a preliminary consequence of the proved input--copy
+diagonal; it is itself a stronger coefficient theorem for the raw output.
+
+\begin{assumption}[Joint--alias Gram almost--orthogonality]
+\label{ass:tpc38-joint-alias-Gram}
+The Gram matrix in \eqref{eq:tpc38-alias-Gram-matrix} satisfies
+\begin{equation}
+ \boxed{\|\mathsf G_B\|_{\op}\ll X^{o(1)}B_0.}
+ \label{eq:tpc38-joint-alias-Gram-gate}
+\end{equation}
+\end{assumption}
+
+\begin{proposition}[What the strong Gram gate implies]
+\label{prop:tpc38-reduced-gate-suffices}
+Under \cref{ass:tpc38-joint-alias-Gram},
+\begin{equation}
+ \left\|\sum_{k\in\cI_B}\mathscr Z_k\right\|_2^2
+ \ll X^{o(1)}B_0K_B.
+ \label{eq:tpc38-reduced-gate-output}
+\end{equation}
+At the physical endpoint \(B\asymp X\), the right side has scale
+\begin{equation}
+ X^{o(1)}B_0K_B
+ \asymp X^{o(1)}Q^2J\cK_X
+ =X^{o(1)}\frac{Q^3}{J}.
+ \label{eq:tpc38-reduced-gate-endpoint}
+\end{equation}
+Moreover,
+\begin{equation}
+ \|\mathscr Z_k\|_2^2
+ \le \|\mathsf G_B\|_{\op}
+ \ll X^{o(1)}B_0
+ \qquad(k\in\cI_B).
+ \label{eq:tpc38-Gram-implies-columns}
+\end{equation}
+In particular, the Gram gate implies
+\cref{ass:tpc38-moving-shift-diagonal} and the stronger equality bound
+\eqref{eq:tpc38-moving-diagonal-already-strong}.
+\end{proposition}
+
+\begin{proof}
+The left side of \eqref{eq:tpc38-reduced-gate-output} is
+\(\langle\mathsf G_B\mathbf1,\mathbf1\rangle\).  Bound it by
+\(\|\mathsf G_B\|_{\op}\|\mathbf1\|_2^2\).
+The diagonal entries of a positive semidefinite Gram matrix are bounded by
+its operator norm, proving \eqref{eq:tpc38-Gram-implies-columns}.
+\end{proof}
+
+For the alias--completed vector alone, the operator--norm gate is stronger
+than necessary.  Given the diagonal trace bound, a weaker sufficient
+one--vector condition is
+\begin{equation}
+ \operatorname{Re}\sum_{k\ne k'}
+ \langle\mathscr Z_k,\mathscr Z_{k'}\rangle
+ \ll X^{o(1)}B_0K_B,
+ \label{eq:tpc38-one-vector-offdiagonal-gate}
+\end{equation}
+together with the diagonal trace of the same size.  We retain
+\eqref{eq:tpc38-joint-alias-Gram-gate} because it is the genuine Bessel
+form.
+
+\begin{proposition}[Sharp coefficient--free alias loss]
+\label{prop:tpc38-sharp-alias-loss}
+Suppose only the diagonal trace estimate
+\begin{equation}
+ \sum_{k\in\cI_B}\|\mathscr Z_k\|_2^2
+ \ll X^{o(1)}B_0K_B.
+ \label{eq:tpc38-alias-diagonal-trace}
+\end{equation}
+Then Cauchy gives
+\begin{equation}
+ \left\|\sum_{k\in\cI_B}\mathscr Z_k\right\|_2^2
+ \ll X^{o(1)}B_0K_B^2.
+ \label{eq:tpc38-Cauchy-alias-loss}
+\end{equation}
+The factor \(K_B\) relative to
+\eqref{eq:tpc38-reduced-gate-output} is optimal for the abstract Hilbert
+column class.
+\end{proposition}
+
+\begin{proof}
+Cauchy proves \eqref{eq:tpc38-Cauchy-alias-loss}.  For sharpness, let \(v\)
+be a unit vector and take
+\begin{equation}
+ \mathscr Z_k=\sqrt{B_0}\,v
+ \qquad(k\in\cI_B).
+ \label{eq:tpc38-rank-one-alias-witness}
+\end{equation}
+Then the diagonal trace is \(B_0K_B\), while the squared sum is
+\(B_0K_B^2\).
+\end{proof}
+
+At \(B\asymp X\), the exact finite loss in
+\cref{prop:tpc38-sharp-alias-loss} is \(K_B\), and
+\begin{equation}
+ \boxed{
+ K_B\asymp\cK_X:=1+\frac XM
+ =\frac X{J^3}X^{o(1)}
+ =\frac Q{J^2}X^{o(1)}
+ =X^{1/400+o(1)}.}
+ \label{eq:tpc38-missing-KX}
+\end{equation}
+This is much smaller than the earlier \(J\)-scale face losses, but it is a
+fixed power and cannot be hidden in \(X^{o(1)}\).
+
+\begin{remark}[The old diagonal is a different object]
+\label{rem:tpc38-moving-diagonal-not-inherited}
+Equation \eqref{eq:tpc38-interface-diagonal} proves the input--copy
+diagonal, not \(\|\mathscr R_0\|_2^2\).  For \(k\ne0\), the affine shift is
+\(h+kM\), which may be of size \(X\), and the fixed--\(h\) primitivity and
+incidence hypotheses are not automatically uniform.  Thus
+\cref{ass:tpc38-moving-shift-diagonal} is both arithmetically new and, at
+\(k=0\), already stronger than the inherited physical target.
+\end{remark}
+
+\subsection{A target--scale recovery formulation}
+
+The original gate can be recovered without a full Gram theorem if one can
+control two particular vectors rather than every alias coefficient.
+
+\begin{proposition}[Two--sum equality recovery]
+\label{prop:tpc38-two-sum-recovery}
+Suppose
+\begin{align}
+ \|\mathscr Y_{\rm alias}\|_2^2
+ &\ll X^{o(1)}B_0K_B,
+ \label{eq:tpc38-alias-total-target-bound}\\
+ \left\|\sum_{\substack{k\in\cI_B\\k\ne0}}\mathscr Z_k\right\|_2^2
+ &\ll X^{o(1)}B_0K_B.
+ \label{eq:tpc38-nonzero-alias-recovery-gate}
+\end{align}
+Then
+\begin{equation}
+ \|\mathscr Z_0\|_2^2\ll X^{o(1)}B_0K_B.
+ \label{eq:tpc38-two-sum-recovered-output}
+\end{equation}
+At the endpoint, this is the inherited scale \(X^{o(1)}Q^3/J\).
+\end{proposition}
+
+\begin{proof}
+Subtract the nonzero--alias sum from \(\mathscr Y_{\rm alias}\) and use
+\(\|x-y\|^2\le2\|x\|^2+2\|y\|^2\).
+\end{proof}
+
+If the two fixed--field estimates
+\eqref{eq:tpc38-interface-two-field-input} were proved, their period
+ledgers and \eqref{eq:tpc38-joint-output} would imply
+\eqref{eq:tpc38-alias-total-target-bound}.  They do not imply
+\eqref{eq:tpc38-nonzero-alias-recovery-gate}, because the fixed fields are
+not assumed to be stable under deleting \(F=0\).  This is the precise
+additional recovery gate missing from the earlier sufficient--input claim.
+
+\subsection{A fourth modulus removes aliases but not the equality gate}
+
+Choose four pairwise coprime primes \(q_i\asymp J\) and put
+\(M_4=\prod_{i=1}^4q_i\).  Then \(M_4>X\) at the endpoint, so
+\begin{equation}
+ \one_{M_4\mid F}=\one_{F=0}
+ \qquad(|F|\ll X).
+ \label{eq:tpc38-four-modulus-no-wrap}
+\end{equation}
+This removes every nonzero joint alias.  However, on \(F=0\) the
+four--coordinate full face has scalar value
+\begin{equation}
+ A_4=\prod_{i=1}^4\left(1-\frac1{q_i-1}\right)
+ =1-O(J^{-1}).
+ \label{eq:tpc38-four-modulus-full-value}
+\end{equation}
+
+\begin{corollary}[Four--modulus loopback]
+\label{cor:tpc38-four-modulus-loopback}
+Adding a fourth orbit--scale modulus eliminates the alias Gram but returns
+the full face, up to the scalar \(A_4\), to the original equality operator.
+It supplies no coefficient--free power saving for the full physical gate.
+\end{corollary}
+
+This is not a negative result about the physical coefficient.  It shows
+that the alias problem and the equality coefficient problem are distinct:
+more CRT coordinates solve the former and leave the latter unchanged.

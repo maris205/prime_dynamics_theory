@@ -1,0 +1,238 @@
+\section{Target--coupled CRT faces as character projectors}
+\label{sec:tpc38-character-projectors}
+
+We first work with any fixed number \(r\ge1\) of distinct odd primes.
+Put
+\begin{equation}
+ M=\prod_{i=1}^rq_i,\qquad
+ n_i=q_i-1,\qquad p_i=n_i^{-1},\qquad
+ \Phi=\varphi(M)=\prod_{i=1}^rn_i.
+ \label{eq:tpc38-general-M}
+\end{equation}
+Every Dirichlet character modulo \(M\) is viewed as a tensor product of
+local multiplicative characters and is extended by zero away from the
+unit group.  Throughout this section, \(N\in(\Z/M\Z)^\times\).
+
+\subsection{Coordinate faces}
+
+For \(F\in\Z/M\Z\), define locally
+\begin{align}
+ d_{i,N}(F)&=\one_{F=0\ (\bmod q_i)},
+ \label{eq:tpc38-local-d}\\
+ e_{i,N}(F)&=\one_{N+F\ne0\ (\bmod q_i)},
+ \label{eq:tpc38-local-e}\\
+ m_{i,N}(F)&=p_i e_{i,N}(F),
+ \qquad
+ c_{i,N}(F)=d_{i,N}(F)-m_{i,N}(F).
+ \label{eq:tpc38-local-m-c}
+\end{align}
+The exclusion in \eqref{eq:tpc38-local-e} is forced by zero extension of
+multiplicative characters.  For \(S\subseteq[r]\), put
+\begin{equation}
+ K_{S,N}(F)
+ =\prod_{i\in S}c_{i,N}(F)
+  \prod_{i\notin S}m_{i,N}(F).
+ \label{eq:tpc38-coordinate-face}
+\end{equation}
+
+Let \(\widehat G_i\) be the characters of
+\(G_i=\F_{q_i}^\times\), including the principal character
+\(\mathbf1_i\).  Define
+\begin{equation}
+ \mathfrak X_S
+ =\left\{\chi=\bigotimes_{i=1}^r\chi_i:
+ \chi_i\ne\mathbf1_i\ \Longleftrightarrow\ i\in S\right\}.
+ \label{eq:tpc38-character-family-S}
+\end{equation}
+
+\begin{theorem}[Exact target--coupled character projector]
+\label{thm:tpc38-character-projector}
+For every \(S\subseteq[r]\), every unit \(N\bmod M\), and every
+\(F\bmod M\),
+\begin{equation}
+ \boxed{
+ K_{S,N}(F)
+ =\frac1\Phi\sum_{\chi\in\mathfrak X_S}
+ \chi(N+F)\overline{\chi(N)}.}
+ \label{eq:tpc38-character-projector}
+\end{equation}
+If \(N+F=su\), then each summand factors as
+\begin{equation}
+ \chi(N+F)\overline{\chi(N)}
+ =\chi(s)\chi(u)\overline{\chi(N)}.
+ \label{eq:tpc38-character-product-factor}
+\end{equation}
+Both identities remain valid when \(N+F\), \(s\), or \(u\) is a nonunit.
+\end{theorem}
+
+\begin{proof}
+In one local coordinate, multiplicative orthogonality gives
+\begin{equation}
+ d_{i,N}(F)
+ =\frac1{n_i}\sum_{\chi_i\in\widehat G_i}
+ \chi_i(N+F)\overline{\chi_i(N)}.
+ \label{eq:tpc38-local-all-character}
+\end{equation}
+If \(N+F=0\), both sides vanish.  The principal term on the right is
+\(m_{i,N}(F)\), because \(N\) is a unit.  Subtracting it gives
+\begin{equation}
+ c_{i,N}(F)
+ =\frac1{n_i}\sum_{\substack{\chi_i\in\widehat G_i\\
+ \chi_i\ne\mathbf1_i}}
+ \chi_i(N+F)\overline{\chi_i(N)}.
+ \label{eq:tpc38-local-nonprincipal}
+\end{equation}
+Tensor \eqref{eq:tpc38-local-all-character} and
+\eqref{eq:tpc38-local-nonprincipal} through the CRT to prove
+\eqref{eq:tpc38-character-projector}.  Complete multiplicativity gives
+\eqref{eq:tpc38-character-product-factor}.  If one factor is a nonunit,
+the relevant character values vanish on both sides.
+\end{proof}
+
+For \(r=3\), define
+\begin{equation}
+ \mathfrak X_{\rm full}=\mathfrak X_{[3]},
+ \qquad
+ \mathfrak X_{\rm prop}
+ =\bigcup_{S\subsetneq[3]}\mathfrak X_S,
+ \label{eq:tpc38-full-proper-families}
+\end{equation}
+and
+\begin{equation}
+ C_N=K_{[3],N},\qquad
+ P_N=\sum_{S\subsetneq[3]}K_{S,N}.
+ \label{eq:tpc38-full-proper-faces}
+\end{equation}
+With
+\begin{equation}
+ A=\prod_{i=1}^3(1-p_i),
+ \label{eq:tpc38-A-definition}
+\end{equation}
+their family sizes are
+\begin{equation}
+ |\mathfrak X_{\rm full}|=A\Phi,
+ \qquad
+ |\mathfrak X_{\rm prop}|=(1-A)\Phi.
+ \label{eq:tpc38-family-sizes}
+\end{equation}
+
+\begin{corollary}[Full/proper recombination]
+\label{cor:tpc38-face-recombination}
+For every unit target \(N\) modulo \(M\),
+\begin{equation}
+ \boxed{C_N(F)+P_N(F)=\one_{M\mid F}.}
+ \label{eq:tpc38-face-recombination}
+\end{equation}
+In particular,
+\begin{equation}
+ C_N(0)=A,\qquad P_N(0)=1-A.
+ \label{eq:tpc38-face-values-zero}
+\end{equation}
+If \(M\nmid F\), then
+\begin{equation}
+ P_N(F)=-C_N(F).
+ \label{eq:tpc38-offjoint-cancellation}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The two families in \eqref{eq:tpc38-full-proper-families} partition all
+characters modulo \(M\).  Apply character orthogonality to their sum.  At
+\(F=0\), all character phases equal one, so the two values are their
+family densities.  The final identity follows from the first.
+\end{proof}
+
+\subsection{Fixed target Parseval and shifted target Gram}
+
+For a fixed unit \(N\), put
+\begin{equation}
+ e_{\chi,N}(F)
+ =\chi(N+F)\overline{\chi(N)}.
+ \label{eq:tpc38-echiN}
+\end{equation}
+
+\begin{proposition}[Fixed target Parseval]
+\label{prop:tpc38-fixed-target-Parseval}
+For characters \(\chi,\psi\bmod M\),
+\begin{equation}
+ \sum_{F\bmod M}e_{\chi,N}(F)
+ \overline{e_{\psi,N}(F)}
+ =\Phi\one_{\chi=\psi}.
+ \label{eq:tpc38-fixed-target-orthogonality}
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{
+ \sum_{F\bmod M}|C_N(F)|^2=A,\qquad
+ \sum_{F\bmod M}|P_N(F)|^2=1-A.}
+ \label{eq:tpc38-fixed-target-face-norms}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The translation \(F\mapsto N+F\) runs through every residue modulo \(M\).
+Character orthogonality on the unit group proves
+\eqref{eq:tpc38-fixed-target-orthogonality}.  Insert the disjoint character
+families and their sizes from \eqref{eq:tpc38-family-sizes}.
+\end{proof}
+
+When the target moves, the Gram is no longer diagonal.  For units \(N,N'\)
+let \(\Delta=N'-N\) and define
+\begin{equation}
+ \Gamma_{\chi,\psi}(N,N')
+ =\sum_{F\bmod M}e_{\chi,N}(F)
+ \overline{e_{\psi,N'}(F)}.
+ \label{eq:tpc38-shifted-Gram-definition}
+\end{equation}
+
+\begin{theorem}[Shifted Jacobi Gram]
+\label{thm:tpc38-shifted-Jacobi-Gram}
+With local components denoted by subscripts,
+\begin{equation}
+ \boxed{
+ \Gamma_{\chi,\psi}(N,N')
+ =\overline{\chi(N)}\psi(N')
+ \prod_{i=1}^r
+ S_i(\chi_i,\psi_i;\Delta_i),}
+ \label{eq:tpc38-shifted-Jacobi-Gram}
+\end{equation}
+where
+\begin{equation}
+ S_i(\chi_i,\psi_i;\Delta_i)
+ =\sum_{x\bmod q_i}\chi_i(x)
+ \overline{\psi_i(x+\Delta_i)}.
+ \label{eq:tpc38-local-shifted-sum}
+\end{equation}
+If \(\Delta_i=0\), then
+\begin{equation}
+ S_i=n_i\one_{\chi_i=\psi_i}.
+ \label{eq:tpc38-local-shifted-zero}
+\end{equation}
+If \(\Delta_i\ne0\), then
+\begin{equation}
+ \boxed{
+ S_i
+ =\chi_i(-\Delta_i)\overline{\psi_i(\Delta_i)}
+ J(\chi_i,\overline{\psi_i}),}
+ \label{eq:tpc38-local-shifted-Jacobi}
+\end{equation}
+where \(J(\alpha,\beta)=\sum_x\alpha(x)\beta(1-x)\).
+\end{theorem}
+
+\begin{proof}
+Set \(x=N+F\).  Then \(N'+F=x+\Delta\), and the CRT factors the sum in
+\eqref{eq:tpc38-shifted-Gram-definition} into
+\eqref{eq:tpc38-local-shifted-sum}.  The zero--shift case is ordinary
+character orthogonality.  If \(\Delta_i\ne0\), substitute
+\(x=-\Delta_i y\).  Then \(x+\Delta_i=\Delta_i(1-y)\), which gives
+\eqref{eq:tpc38-local-shifted-Jacobi}.
+\end{proof}
+
+\begin{remark}[What has and has not been diagonalized]
+\label{rem:tpc38-fixed-versus-moving-target}
+The moving affine determinant has been converted into an exact ratio
+phase.  The price is the shifted Jacobi Gram
+\eqref{eq:tpc38-shifted-Jacobi-Gram}; fixed--target Parseval does not
+persist when target rows are synthesized coherently.  This distinction is
+the finite spectral content of the target--coupling problem.
+\end{remark}
