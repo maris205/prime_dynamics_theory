@@ -1,0 +1,168 @@
+\section{Inherited physical interface}
+\label{sec:tpc41-interface}
+
+We restate only the terminal data from TPC--36 and TPC--39 needed in the
+new arguments.  All estimates in this section are inherited; the
+row--diagonal theorem in the next section is abstract and independent of
+their derivation.
+
+\subsection{Rows and endpoint scales}
+
+Fix \(h\in\Z\setminus\{0\}\).  A retained physical row is
+\begin{equation}
+ \alpha=(\ell_\alpha,d_\alpha),
+ \qquad
+ \ell_\alpha\asymp L_0,
+ \qquad
+ d_\alpha\asymp D_0,
+ \qquad
+ m_\alpha=\ell_\alpha d_\alpha\asymp Q,
+ \qquad
+ L_0D_0=Q,
+ \qquad
+ QJ\asymp X,
+ \label{eq:tpc41-interface-row}
+\end{equation}
+where the source separation makes \(m_\alpha\) determine \(\alpha\).
+The two source coefficient systems obey
+\begin{equation}
+ \sum_\alpha|\gamma_\alpha^{(i)}|^2
+ \ll X^{o(1)}Q,
+ \qquad i=1,2.
+ \label{eq:tpc41-interface-source-l2}
+\end{equation}
+The orbit variable \(j\) ranges through \(O(J)\) positive integers.
+
+Choose three distinct auxiliary primes \(q_1,q_2,q_3\asymp J\) with
+\begin{equation}
+ \max\cJ<q_i,
+ \qquad
+ \max_\alpha d_\alpha<q_i<\min_\alpha\ell_\alpha,
+ \qquad
+ q_i\nmid h,
+ \label{eq:tpc41-interface-primes}
+\end{equation}
+and put
+\begin{equation}
+ M=q_1q_2q_3.
+ \label{eq:tpc41-interface-M}
+\end{equation}
+The physical regular packet has \((m_\alpha j+h,M)=1\); this property is
+unchanged after adding any multiple of \(M\).
+
+At the optimized endpoint,
+\begin{equation}
+ Q=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)},
+ \qquad
+ M=X^{399/400+o(1)}.
+ \label{eq:tpc41-interface-endpoint}
+\end{equation}
+If every completed determinant satisfies \(|F|\le B\asymp X\), define
+\begin{equation}
+ L=\left\lfloor\frac BM\right\rfloor,
+ \qquad
+ q=L+1,
+ \qquad
+ \cI_B=\{-L,\ldots,L\},
+ \qquad
+ K_B=2L+1.
+ \label{eq:tpc41-interface-aliases}
+\end{equation}
+Then
+\begin{equation}
+ K_B=X^{1/400+o(1)}
+ =X^{o(1)}\frac{Q}{J^2}.
+ \label{eq:tpc41-interface-alias-scale}
+\end{equation}
+With \(B_0=Q^2J\), the endpoint ledger is
+\begin{equation}
+ \boxed{
+ B_0K_B
+ =X^{o(1)}\frac{Q^3}{J}
+ =X^{167/100+o(1)}.}
+ \label{eq:tpc41-interface-key-ledger}
+\end{equation}
+
+\subsection{Terminal atoms and physical coefficients}
+
+For \(k\in\cI_B\), set
+\begin{equation}
+ n_{\alpha,j,k}=m_\alpha j+h+kM
+ \label{eq:tpc41-interface-target}
+\end{equation}
+and, on the positive terminal support,
+\begin{equation}
+ b_{\alpha,j,k}
+ =-\mu(n_{\alpha,j,k})
+   \log(n_{\alpha,j,k})\Phi_0(n_{\alpha,j,k}).
+ \label{eq:tpc41-interface-b}
+\end{equation}
+It is zero outside that support.  The left terminal output at fixed alias
+has coordinates
+\begin{equation}
+ [\mathscr T_k^L]_{\gamma,j}
+ =\sum_\alpha c^L_{\alpha,\gamma,j}b_{\alpha,j,k},
+ \qquad
+ c^L_{\alpha,\gamma,j}
+ =\gamma_\alpha^{(1)}
+  \mathfrak A_{\alpha,\gamma}^{\rm act}(j).
+ \label{eq:tpc41-interface-left-output}
+\end{equation}
+The right output is obtained by interchanging the two row systems.  The
+actual multiplier contains the row separation, gcd, residue, and smooth
+masks and satisfies
+\begin{equation}
+ \sup_{\alpha,\gamma,j}
+ |\mathfrak A_{\alpha,\gamma}^{\rm act}(j)|
+ \ll X^{o(1)}.
+ \label{eq:tpc41-interface-multiplier}
+\end{equation}
+In particular, the shift \(kM\) changes the terminal atom, not the
+inherited row--time multiplier.
+
+The source coefficient \(\gamma_\alpha^{(1)}\) includes the factor
+\(\mu(d_\alpha)\).  Consequently a cross--row expansion with
+\(\alpha\ne\beta\) contains \(\mu(d_\alpha)\mu(d_\beta)\) in addition to
+the two target M\"obius factors.  We will retain the compact notation
+\(c^L\) until that expansion is needed.
+
+\subsection{The inherited diagonal theorem}
+
+Define the left and right atomic diagonals by
+\begin{align}
+ \cD_L
+ &=\sum_{\gamma,j}\sum_{\alpha,k}
+   |c^L_{\alpha,\gamma,j}|^2|b_{\alpha,j,k}|^2,
+ \label{eq:tpc41-interface-DL}\\
+ \cD_R
+ &=\sum_{\alpha,j}\sum_{\gamma,k}
+   |c^R_{\gamma,\alpha,j}|^2|b_{\gamma,j,k}|^2.
+ \label{eq:tpc41-interface-DR}
+\end{align}
+TPC--39 proves
+\begin{equation}
+ \boxed{
+ \cD_L+\cD_R
+ \ll X^{o(1)}Q^2JK_B
+ =X^{o(1)}\frac{Q^3}{J}.}
+ \label{eq:tpc41-interface-diagonal-bound}
+\end{equation}
+This estimate uses the row \(\ell^2\) ledger and bounded physical masks;
+it does not use M\"obius cancellation.  The new point is that it controls
+more than the literal atomic diagonal after the alias Gram is taken into
+account.
+
+Finally, TPC--39 proves terminal row--alias injectivity: for every fixed
+\(j\), the map
+\begin{equation}
+ (\alpha,k)\longmapsto m_\alpha j+h+kM
+ \label{eq:tpc41-interface-injectivity}
+\end{equation}
+is injective.  This follows from \((j,M)=1\), source separation, and
+\begin{equation}
+ \max_{\alpha,\beta}|m_\alpha-m_\beta|<M,
+ \label{eq:tpc41-interface-row-gap}
+\end{equation}
+which is automatic at \eqref{eq:tpc41-interface-endpoint}.

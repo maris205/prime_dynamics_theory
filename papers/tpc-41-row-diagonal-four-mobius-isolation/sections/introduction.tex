@@ -1,0 +1,184 @@
+\section{Introduction}
+\label{sec:tpc41-introduction}
+
+The TPC programme has progressively separated geometric losses from the
+arithmetic cancellation that would be needed at a prime--pair endpoint.
+TPC--34 isolates an orbit--sliced Gram operator; TPC--36 gives an exact
+soft projective reassembly of the physical row mask; TPC--37 and TPC--38
+localize the relevant CRT face and identify its identity bucket; and
+TPC--39 recovers the equality alias by a minimal additive Fourier bank
+\citep{WangTPC34,WangTPC36,WangTPC37,WangTPC38,WangTPC39}.  TPC--40 then
+proves that universal row phasing cannot decorrelate the equality mode at
+unit recovery cost \citep{WangTPC40}.
+
+The endpoint left by these papers has two superficially similar types of
+terms.  If a physical row \(\alpha\) and an alias \(k\) contribute a
+terminal atom
+\begin{equation}
+ b_{\alpha,j,k}
+ =-\mu(m_\alpha j+h+kM)
+   \log(m_\alpha j+h+kM)
+   \Phi_0(m_\alpha j+h+kM),
+ \label{eq:tpc41-intro-terminal-atom}
+\end{equation}
+then expansion of the folded square produces
+\begin{enumerate}[label=(\roman*)]
+ \item same--row products with \(\alpha=\beta\) and \(k\ne k'\), which
+ look like a long--gap two--M\"obius correlation; and
+ \item cross--row products with \(\alpha\ne\beta\), which also retain
+ the two source factors \(\mu(d_\alpha)\mu(d_\beta)\) and are therefore
+ four--M\"obius expressions.
+\end{enumerate}
+The first purpose of this paper is to show that these are not two versions
+of the same analytic difficulty.
+
+\subsection{The row--diagonal closure}
+
+Let \(k\) range over an alias interval, let \(y\) denote an output
+coordinate, and consider measurements
+\begin{equation}
+ Y_{t,y}=\sum_{\alpha,k}\theta_{t,k}c_{\alpha,y}b_{\alpha,y,k},
+ \qquad
+ \sum_tw_t=1,
+ \qquad |\theta_{t,k}|=1.
+ \label{eq:tpc41-intro-measurement}
+\end{equation}
+The normalized alias Gram is
+\begin{equation}
+ H_{kk'}=\sum_tw_t\overline{\theta_{t,k}}\theta_{t,k'}.
+ \label{eq:tpc41-intro-H}
+\end{equation}
+If \(\cD\) is the atomic diagonal, the exact contribution from
+\(\alpha=\beta\) obeys
+\begin{equation}
+ \boxed{
+ \cE_{\rm same}\le\lambda_{\max}(H)\cD,
+ \qquad
+ |\cE_{\rm same}-\cD|
+ \le\|H-I\|_{\op}\cD.}
+ \label{eq:tpc41-intro-general-closure}
+\end{equation}
+This elementary Gram fact has a decisive endpoint consequence.  For the
+minimal bank of TPC--39, \(H\) is a direct sum of one scalar block and
+two--by--two all--ones blocks.  Therefore
+\begin{equation}
+ \cE_{\rm same}\le2\cD,
+ \qquad
+ |\cE_{\rm same}-\cD|\le\cD.
+ \label{eq:tpc41-intro-minimal-closure}
+\end{equation}
+The apparently difficult two--M\"obius sum is just an inner product inside
+each folded pair and is absorbed by \(2|uv|\le|u|^2+|v|^2\).  A full
+alias DFT has \(H=I\) and deletes it exactly.
+
+Since the atomic diagonal was already proved to have size
+\begin{equation}
+ \cD_L+\cD_R
+ \ll X^{o(1)}Q^2JK_B
+ =X^{o(1)}\frac{Q^3}{J},
+ \label{eq:tpc41-intro-diagonal-scale}
+\end{equation}
+the entire same--row sector is closed.  This removes a false arithmetic
+gate rather than proving a special case of Chowla's conjecture.
+
+\subsection{The remaining four--M\"obius form}
+
+For the minimal bank put
+\begin{equation}
+ u_{\alpha,j,0}=b_{\alpha,j,0},
+ \qquad
+ u_{\alpha,j,r}=b_{\alpha,j,r}+b_{\alpha,j,r-q}
+ \quad(1\le r\le L),
+ \label{eq:tpc41-intro-folded-atoms}
+\end{equation}
+where \(q=L+1\).  After the row diagonal is removed, the left terminal
+remainder is exactly
+\begin{equation}
+ \cF_L
+ =\sum_{\gamma,j}\sum_{a=0}^{L}
+   \sum_{\alpha\ne\beta}
+   c^L_{\alpha,\gamma,j}
+   \overline{c^L_{\beta,\gamma,j}}
+   u_{\alpha,j,a}\overline{u_{\beta,j,a}},
+ \label{eq:tpc41-intro-four-form}
+\end{equation}
+with a symmetric right form \(\cF_R\).  The necessary and sufficient
+one--sided endpoint input, after the already proved diagonal estimate, is
+\begin{equation}
+ \boxed{
+ \operatorname{Re}(\cF_L+\cF_R)
+ \ll X^{o(1)}Q^2JK_B.}
+ \label{eq:tpc41-intro-true-gate}
+\end{equation}
+An absolute--value estimate would be stronger than required.
+
+Every expanded row pair contains two nonproportional affine forms in the
+orbit variable \(j\).  Nevertheless, their slopes and intercepts grow with
+\(X\), the coefficients depend on the shared opposite row, and the target
+is an aggregate Hilbert norm.  Existing fixed--form Chowla theorems do not
+provide the required uniformity.  We therefore also give an exact vector
+compression that writes a terminal column as
+\begin{equation}
+ \mathscr T_k^L
+ =-\sum_r\mu(r+h+kM)\mathbf G_k(r),
+ \label{eq:tpc41-intro-Hilbert-compression}
+\end{equation}
+where \(\mathbf G_k(r)\) takes values in the physical output Hilbert space.
+This formulation exposes the missing theorem without expanding into four
+M\"obius factors.
+
+\subsection{A positive scalar arithmetic step}
+
+The physical vector gate remains open, but the scalar CRT shadow admits a
+strict coefficient--specific saving with a sharpened exceptional--set
+specialization.  Write
+\begin{equation}
+ Y=X^{133/400},
+ \qquad M\asymp Y^3,
+ \qquad K_M=X/M\asymp X^{1/400}.
+ \label{eq:tpc41-intro-scalar-scales}
+\end{equation}
+We specialize the almost--all--moduli theorem of
+\citet{KlurmanMangerelTeravainen2023} to products of three primes in
+disjoint admissible intervals.  Its rank--one character subtraction is
+then removed on average over this sparse family by a maximal
+multiplicative large sieve.  For any fixed \(0<\theta<1/200\), almost all
+of the resulting moduli satisfy
+\begin{equation}
+ \boxed{
+ \sum_{a\bmod M}^{*}
+ \left|\sum_{\substack{n\le X\\n\equiv a\pmod M}}\mu(n)\right|^2
+ \ll \frac{XK_M}{(\log X)^\theta}.}
+ \label{eq:tpc41-intro-raw-variance}
+\end{equation}
+The coefficient--blind scale is \(XK_M\), so
+\eqref{eq:tpc41-intro-raw-variance} is genuine arithmetic cancellation.
+The diagonal scale is only \(X\), however; a factor
+\(K_M/(\log X)^\theta\) remains.  Moreover, this scalar residue--class
+energy contains neither the physical row synthesis nor the shared masks
+in \eqref{eq:tpc41-intro-four-form}.
+
+The distinction is central to the claim boundary.  Classical
+Barban--Davenport--Halberstam theory already implies logarithmic savings
+for almost all moduli in this scalar range.  Our arithmetic contribution
+is the explicit admissible triple--prime specialization, its stronger
+exceptional--density ledger, and transfer to the terminal weight.  The
+paper also removes the same--row alias sector from the selected folded
+physical gate.  It does not control the
+cross--row four--M\"obius form, cross the sieve parity barrier
+\citep{HeathBrown1982Parity}, prove a prime--pair asymptotic, or imply
+infinitely many twin primes.
+
+\subsection{Organization}
+
+\Cref{sec:tpc41-interface} fixes the inherited scales and terminal packet.
+\Cref{sec:tpc41-row-diagonal,sec:tpc41-banks} prove the general Gram
+identity and its minimal/full Fourier consequences.
+\Cref{sec:tpc41-physical-four,sec:tpc41-hilbert} isolate the exact
+four--M\"obius remainder and its Hilbert compression.
+\Cref{sec:tpc41-triple-prime,sec:tpc41-weighted} prove the raw
+triple--prime progression theorem and its smooth--weight transfer.
+\Cref{sec:tpc41-convolution,sec:tpc41-literature,sec:tpc41-next-gate}
+compare ideal convolution completion, known arithmetic inputs, and the
+next physical gate.  The exact finite certificate is recorded in
+\cref{sec:tpc41-certificate}.

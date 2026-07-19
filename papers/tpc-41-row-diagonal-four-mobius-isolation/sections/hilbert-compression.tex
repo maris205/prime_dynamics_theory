@@ -1,0 +1,159 @@
+\section{Hilbert--valued one--M\"obius compression}
+\label{sec:tpc41-hilbert}
+
+The four--factor expansion is exact but can obscure the operator that
+must be estimated.  We now compress each fixed--alias column whose norm
+square generates the corresponding fixed--alias row form: one target
+M\"obius factor becomes the outer scalar, while all row information is
+retained in a Hilbert coefficient.
+
+\subsection{An exact vector identity}
+
+Fix an alias \(k\).  Let
+\begin{equation}
+ a_k(r)=\log(r+h+kM)\Phi_0(r+h+kM),
+ \label{eq:tpc41-hilbert-ak}
+\end{equation}
+interpreted as zero outside the positive terminal support.  Define a
+vector \(\mathbf G_k^L(r)\in\ell^2\{(\gamma,j)\}\) by
+\begin{equation}
+ [\mathbf G_k^L(r)]_{\gamma,j}
+ =\sum_{\alpha:m_\alpha j=r}
+   c^L_{\alpha,\gamma,j}a_k(r).
+ \label{eq:tpc41-hilbert-G}
+\end{equation}
+For fixed \((\gamma,j,r)\), source separation leaves at most one
+\(\alpha\) in this sum.
+
+For comparison with the inherited atomic diagonal, set
+\begin{equation}
+ \cD_{k,L}
+ =\sum_{\gamma,j,\alpha}
+ |c^L_{\alpha,\gamma,j}|^2
+ |\mu(m_\alpha j+h+kM)|^2|a_k(m_\alpha j)|^2.
+ \label{eq:tpc41-Hilbert-actual-diagonal}
+\end{equation}
+
+\begin{proposition}[Exact Hilbert compression]
+\label{prop:tpc41-Hilbert-compression}
+The fixed--alias terminal column satisfies
+\begin{equation}
+ \boxed{
+ \mathscr T_k^L
+ =-\sum_r\mu(r+h+kM)\mathbf G_k^L(r).}
+ \label{eq:tpc41-Hilbert-compression}
+\end{equation}
+Moreover, its deterministic coefficient energy is
+\begin{equation}
+ \sum_r\|\mathbf G_k^L(r)\|_2^2
+ =\sum_{\gamma,j,\alpha}
+ |c^L_{\alpha,\gamma,j}|^2
+ |a_k(m_\alpha j)|^2
+ =:\widetilde{\cD}_{k,L}.
+ \label{eq:tpc41-Hilbert-coefficient-energy}
+\end{equation}
+The actual atomic diagonal \(\cD_{k,L}\), which includes
+\(|\mu(r+h+kM)|^2\), is at most \(\widetilde{\cD}_{k,L}\); both obey the
+same deterministic endpoint upper bound.  The right column has the
+identical formulation.
+\end{proposition}
+
+\begin{proof}
+Insert \(r=m_\alpha j\) into
+\eqref{eq:tpc41-interface-left-output} and group terms with the same
+\(r\).  This gives \eqref{eq:tpc41-Hilbert-compression}.  When the norm in
+\eqref{eq:tpc41-hilbert-G} is squared, different \(j\) are different
+coordinates, and source separation prevents two rows from contributing to
+the same fixed \((j,r)\).  Hence no cross term appears and
+\eqref{eq:tpc41-Hilbert-coefficient-energy} follows.
+\end{proof}
+
+The equality--alias target can now be stated as a vector M\"obius
+disjointness inequality.  Since
+\(\widetilde{\cD}_{0,L}+\widetilde{\cD}_{0,R}\ll X^{o(1)}Q^2J\), a
+sufficient estimate is
+\begin{equation}
+ \left\|\sum_r\mu(r+h)\mathbf G_0^L(r)\right\|_2^2
+ +\left\|\sum_r\mu(r+h)\mathbf G_0^R(r)\right\|_2^2
+ \ll X^{o(1)}K_B
+ \sum_r\bigl(
+ \|\mathbf G_0^L(r)\|_2^2+
+ \|\mathbf G_0^R(r)\|_2^2\bigr).
+ \label{eq:tpc41-Hilbert-equality-target}
+\end{equation}
+The coefficient--blind constant is of order \(Q\); the target constant is
+only \(K_B\), so the required aggregate row gain is
+\(Q/K_B=X^{o(1)}J^2\).
+
+For the full alias trace, a cleaner but stronger sufficient theorem is
+\begin{align}
+ &\sum_{k=-L}^{L}
+ \left\|\sum_r\mu(r+h+kM)\mathbf G_k^L(r)\right\|_2^2
+ \notag\\
+ &\quad+
+ \sum_{k=-L}^{L}
+ \left\|\sum_r\mu(r+h+kM)\mathbf G_k^R(r)\right\|_2^2
+ \notag\\
+ &\qquad\ll X^{o(1)}
+ \sum_{k,r}\bigl(
+ \|\mathbf G_k^L(r)\|_2^2+
+ \|\mathbf G_k^R(r)\|_2^2\bigr).
+ \label{eq:tpc41-Hilbert-trace-target}
+\end{align}
+This asks for constant--scale fixed--alias row decorrelation after the
+full alias trace has deleted every cross--alias product.
+
+\subsection{Why scalar compression is insufficient}
+
+If the physical output coordinates are suppressed, one may formally
+write a row sum as
+\begin{equation}
+ R_h
+ =\sum_{\ell,d,j}
+   \mu(d)(\log\ell)W(\ell,d,j)
+   \mu(\ell dj+h)
+ =\sum_nG(n)\mu(n+h),
+ \label{eq:tpc41-scalar-compression}
+\end{equation}
+where
+\begin{equation}
+ G(n)=\sum_{\ell dj=n}\mu(d)(\log\ell)W(\ell,d,j).
+ \label{eq:tpc41-scalar-G}
+\end{equation}
+This is an identity, not a cancellation estimate.  In particular:
+\begin{enumerate}[label=(\roman*)]
+ \item the divisor M\"obius factor is stored inside \(G\), not removed;
+ \item the physical quantity is a sum of squared coordinate outputs,
+ not the square of a scalar sum over coordinates; and
+ \item dualizing the Hilbert norm introduces arbitrary \(\ell^2\) dual
+ coefficients, so a scalar estimate that cancels between \((\gamma,j)\)
+ coordinates does not imply \eqref{eq:tpc41-Hilbert-equality-target}.
+\end{enumerate}
+
+TPC--36 nevertheless supplies meaningful structure.  For each fixed
+opposite row \(\gamma\), its projective reassembly decomposes the actual
+coefficient into signed layers of total mass \(X^{o(1)}\), each of the
+form
+\begin{equation}
+ b_\gamma(\ell)f_\gamma(d)\eta_\gamma(j/J),
+ \label{eq:tpc41-projective-layer}
+\end{equation}
+with the \(\ell\)-factor independent of \((d,j)\).  Thus a uniform
+Hilbert--valued M\"obius theorem for this restricted layer class could be
+reassembled by Minkowski with only an \(X^{o(1)}\) loss.  The existing
+projective decomposition does not itself prove that theorem: the common
+opposite row, gcd mask, row separation, residue cell, and orbit weight
+remain part of the vector coefficient.
+
+\begin{assumption}[Restricted vector M\"obius input]
+\label{ass:tpc41-restricted-vector-input}
+For every projective layer generated by TPC--36, uniformly in its
+opposite row and admissible alias, the corresponding vectors satisfy
+either \eqref{eq:tpc41-Hilbert-equality-target} or the stronger trace
+estimate \eqref{eq:tpc41-Hilbert-trace-target}.
+\end{assumption}
+
+\Cref{ass:tpc41-restricted-vector-input} is a precise continuation
+interface, not a result of the present paper.  It is coefficient--specific
+and therefore lies outside the universal positive phase methods ruled out
+by TPC--40.

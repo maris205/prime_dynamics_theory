@@ -1,0 +1,179 @@
+\section{Exact isolation of the cross--row four--M\"obius form}
+\label{sec:tpc41-physical-four}
+
+The row--diagonal theorem leaves one terminal sector.  We now write it
+without hiding its signs, masks, or alias pairs.
+
+\subsection{Folded physical atoms}
+
+For the minimal bank define
+\begin{equation}
+ u_{\alpha,j,0}=b_{\alpha,j,0},
+ \qquad
+ u_{\alpha,j,r}
+ =b_{\alpha,j,r}+b_{\alpha,j,r-q}
+ \quad(1\le r\le L).
+ \label{eq:tpc41-physical-u}
+\end{equation}
+Hilbert--valued folded Parseval gives the exact left identity
+\begin{align}
+ \cE_L^{\rm fold}
+ &:=\frac1q\sum_{\nu=0}^{q-1}
+   \sum_{\gamma,j}
+   \left|
+    \sum_{\alpha,k}\omega^{\nu k}
+    c^L_{\alpha,\gamma,j}b_{\alpha,j,k}
+   \right|^2
+ \notag\\
+ &=\sum_{\gamma,j}\sum_{a=0}^{L}
+   \left|
+    \sum_\alpha c^L_{\alpha,\gamma,j}u_{\alpha,j,a}
+   \right|^2.
+ \label{eq:tpc41-physical-folded-energy}
+\end{align}
+Splitting the last square according to \(\alpha=\beta\) and
+\(\alpha\ne\beta\), put
+\begin{align}
+ \cE_{{\rm same},L}
+ &=\sum_{\gamma,j}\sum_{a=0}^{L}\sum_\alpha
+   |c^L_{\alpha,\gamma,j}|^2|u_{\alpha,j,a}|^2,
+ \label{eq:tpc41-physical-same-L}\\
+ \cF_L
+ &=\sum_{\gamma,j}\sum_{a=0}^{L}
+   \sum_{\alpha\ne\beta}
+   c^L_{\alpha,\gamma,j}
+   \overline{c^L_{\beta,\gamma,j}}
+   u_{\alpha,j,a}\overline{u_{\beta,j,a}}.
+ \label{eq:tpc41-physical-FL}
+\end{align}
+The ordered row--pair sum is real, but we retain \(\operatorname{Re}\)
+below to make clear that only an upper bound is used.  Define
+\(\cE_{{\rm same},R}\) and \(\cF_R\) symmetrically.
+
+\begin{theorem}[Exact terminal reduction]
+\label{thm:tpc41-exact-terminal-reduction}
+The minimal terminal bank satisfies
+\begin{equation}
+ \cE_L^{\rm fold}+\cE_R^{\rm fold}
+ =\cE_{{\rm same},L}+\cE_{{\rm same},R}
+  +\operatorname{Re}(\cF_L+\cF_R).
+ \label{eq:tpc41-terminal-decomposition}
+\end{equation}
+The first two terms obey the endpoint target by
+\eqref{eq:tpc41-physical-same-row-closed}.  Consequently the terminal
+folded estimate
+\begin{equation}
+ \cE_L^{\rm fold}+\cE_R^{\rm fold}
+ \ll X^{o(1)}Q^2JK_B
+ \label{eq:tpc41-terminal-folded-target}
+\end{equation}
+is equivalent, up to the already proved diagonal term, to the one--sided
+cross--row bound
+\begin{equation}
+ \boxed{
+ \operatorname{Re}(\cF_L+\cF_R)
+ \ll X^{o(1)}Q^2JK_B.}
+ \label{eq:tpc41-terminal-cross-row-gate}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:tpc41-terminal-decomposition} is the partition of the
+ordered double row sum in \eqref{eq:tpc41-physical-folded-energy}.  The
+same--row part is nonnegative and has the bound
+\eqref{eq:tpc41-physical-same-row-closed}.  Hence
+\eqref{eq:tpc41-terminal-cross-row-gate} implies
+\eqref{eq:tpc41-terminal-folded-target}.  Conversely,
+\(\operatorname{Re}(\cF_L+\cF_R)\) is the total energy minus a
+nonnegative same--row energy, so \eqref{eq:tpc41-terminal-folded-target}
+implies the same one--sided upper bound.
+\end{proof}
+
+This equivalence explains why estimating \(|\cF_L|+|\cF_R|\) is more than
+is logically necessary.  A signed dispersion argument may exploit
+cancellation between cross--row terms as long as it produces the upper
+bound in \eqref{eq:tpc41-terminal-cross-row-gate}.
+
+\subsection{The literal arithmetic expansion}
+
+For \(a=0\), the only alias pair is \((k,k')=(0,0)\).  For
+\(1\le a=r\le L\), expansion of
+\(u_{\alpha,j,r}\overline{u_{\beta,j,r}}\) produces
+\begin{equation}
+ (k,k')\in
+ \{(r,r),(r,r-q),(r-q,r),(r-q,r-q)\}.
+ \label{eq:tpc41-physical-alias-pairs}
+\end{equation}
+The source factors inside \(c^L\) and the target atoms inside \(u\) show
+that every summand with \(\alpha\ne\beta\) contains
+\begin{equation}
+ \boxed{
+ \mu(d_\alpha)\mu(d_\beta)
+ \mu(m_\alpha j+h+kM)
+ \mu(m_\beta j+h+k'M).}
+ \label{eq:tpc41-physical-four-mobius}
+\end{equation}
+It is multiplied by the two source logarithms, the two target logarithms,
+the terminal cutoffs, the shared opposite--row masks, and the inherited
+residue and smooth factors.  Formula
+\eqref{eq:tpc41-physical-four-mobius} is therefore a description of the
+actual coefficient kernel, not a replacement by an unweighted Chowla
+model.
+
+\subsection{Nonproportionality of every cross--row pair}
+
+For fixed retained \(\alpha,\beta,k,k'\), define affine forms in \(j\) by
+\begin{equation}
+ L_{\alpha,k}(j)=m_\alpha j+h+kM,
+ \qquad
+ L_{\beta,k'}(j)=m_\beta j+h+k'M.
+ \label{eq:tpc41-affine-forms}
+\end{equation}
+
+\begin{lemma}[Uniform algebraic nondegeneracy]
+\label{lem:tpc41-affine-nonproportional}
+If \(\alpha\ne\beta\), the two forms in
+\eqref{eq:tpc41-affine-forms} are nonproportional for every retained
+\(k,k'\).
+\end{lemma}
+
+\begin{proof}
+Proportionality would force their coefficient determinant to vanish:
+\begin{equation}
+ m_\alpha(h+k'M)=m_\beta(h+kM).
+ \label{eq:tpc41-affine-determinant-zero}
+\end{equation}
+Reducing modulo \(M\) and using \((h,M)=1\) gives
+\(m_\alpha\equiv m_\beta\pmod M\).  The inherited row gap
+\eqref{eq:tpc41-interface-row-gap} then gives
+\(m_\alpha=m_\beta\).  Source separation forces
+\(\alpha=\beta\), a contradiction.
+\end{proof}
+
+The lemma removes a local algebraic obstruction, but it does not import a
+known affine Chowla theorem.  The slopes \(m_\alpha,m_\beta\) and
+intercepts \(h+kM,h+k'M\) grow with \(X\), and the desired estimate sums
+over row pairs with shared masks.  Even a logarithmic saving for every
+fixed pair would not survive coefficient--blind absolute summation at the
+required endpoint scale.
+
+\subsection{Three distinct saving ledgers}
+
+It is useful to distinguish three normalization problems:
+\begin{center}
+\begin{tabular}{@{}p{0.34\textwidth}ccc@{}}
+\toprule
+object & coherent scale & target scale & required gain\\
+\midrule
+raw equality terminal \(k=0\)
+ & \(Q^3J\) & \(Q^3/J\) & \(J^2=Q/K_B\)\\
+minimal folded or full trace terminal
+ & \(Q^3JK_B\) & \(Q^2JK_B\) & \(Q\)\\
+scalar length--\(K_B\) progression
+ & \(MK_B^2\) & \(MK_B\) & \(K_B\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+The same--row theorem removes the scalar long--gap expression from the
+minimal folded physical gate.  It does not turn the cross--row row-energy
+problem into the third line of the table.

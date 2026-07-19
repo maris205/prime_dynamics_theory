@@ -1,0 +1,171 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,float}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\hypersetup{
+ pdftitle={Row-Diagonal Closure at the Moving Mobius Gate: Folded Alias Energies, Exact Four-Correlation Isolation, and Triple-Prime Progression Decorrelation},
+ pdfauthor={Liang Wang},
+ pdfsubject={Exact removal of the same-row alias gate and logarithmic Mobius decorrelation for almost all admissible triple-prime CRT moduli},
+ pdfkeywords={Mobius correlation, arithmetic progression, alias Gram, folded Parseval, multiplicative large sieve, CRT modulus, parity boundary}
+}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.15em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Conditional input}
+\crefname{assumption}{conditional input}{conditional inputs}
+\Crefname{assumption}{Conditional input}{Conditional inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\op}{\operatorname{op}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\cond}{\operatorname{cond}}
+\newcommand{\ee}[1]{\exp(2\pi i #1)}
+
+\title{\textbf{Row--Diagonal Closure at the Moving M\"obius Gate:}\\
+\textbf{Folded Alias Energies, Exact Four--Correlation Isolation,}\\
+\textbf{and Triple--Prime Progression Decorrelation}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-0.2em]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+TPC--39 isolates a finite additive--alias energy whose terminal expansion
+appears to contain both long--gap two--M\"obius correlations and cross--row
+four--M\"obius correlations.  We prove that the first class is not an
+arithmetic gate.  For an arbitrary unimodular alias bank with normalized
+Gram \(H\), the complete same--row sector is bounded by
+\[
+ \cE_{\rm same}\le\lambda_{\max}(H)\cD,
+ \qquad
+ |\cE_{\rm same}-\cD|\le\|H-I\|_{\op}\cD,
+\]
+where \(\cD\) is the atomic diagonal.  The minimal \(q=L+1\) Fourier bank
+has spectrum \(2,1,0\), hence its same--row sector is at most \(2\cD\) and
+the absolute value of its complete signed off--alias two--M\"obius sector
+is at most \(\cD\).  The full \(2L+1\)-point bank deletes that sector
+exactly.  Since
+TPC--39 already bounds \(\cD\) at the physical endpoint, every same--row
+alias correlation is thereby closed at the required scale without any
+M\"obius cancellation.
+
+After this deletion the only unbounded sector inside the chosen minimal
+folded terminal energy is an explicit cross--row form.  Its summands contain
+\[
+ \mu(d_\alpha)\mu(d_\beta)
+ \mu(m_\alpha j+h+kM)\mu(m_\beta j+h+k'M),
+ \qquad \alpha\ne\beta,
+\]
+with the actual masks and source weights.  We prove that the two affine
+target forms are nonproportional for every retained row pair, give the
+exact one--sided bound equivalent to closure of that folded terminal
+energy, and compress each fixed--alias column into a Hilbert--valued
+one--M\"obius correlation.  This
+identifies precisely why a scalar completion cannot control the physical
+row energy.
+
+We also obtain a quantitative arithmetic specialization at the inherited
+CRT scale.
+Let \(Y=X^{133/400}\), choose three disjoint admissible prime intervals of
+length comparable with \(Y\), and let \(M=q_1q_2q_3\asymp
+X^{399/400}\).  For every fixed \(0<\theta<1/200\), all but a zero-density
+subfamily of these triple--prime moduli satisfy the raw, uncentered bound
+\[
+ \sum_{a\bmod M}^{*}
+ \left|\sum_{\substack{n\le X\\n\equiv a\pmod M}}\mu(n)\right|^2
+ \ll \frac{X(X/M)}{(\log X)^\theta}.
+\]
+The proof combines the almost--all--moduli theorem of
+Klurman--Mangerel--Ter\"av\"ainen with a maximal multiplicative large sieve
+that removes the single pretentious character on average over the sparse
+triple--prime family.  A bounded--variation transfer includes the smooth
+terminal weight \(-\mu(n)\log n\,\Phi_0(n/X)\).  This is genuine
+coefficient--specific logarithmic decorrelation from the scalar coherent
+scale, but it remains a factor
+\((X/M)/(\log X)^\theta\) above the atomic diagonal and does
+not estimate the physical cross--row four--M\"obius form.  No parity
+breach, Hardy--Littlewood asymptotic, or twin--prime conclusion is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+M\"obius correlation; arithmetic progression; folded Parseval; alias
+Gram; multiplicative large sieve; triple--prime CRT modulus; parity
+boundary.
+
+\medskip
+\noindent\textbf{MSC 2020:}
+Primary 11N35, 11L40; Secondary 15A18, 42A16, 11N36.
+
+\input{sections/introduction}
+\input{sections/inherited-interface}
+\input{sections/row-diagonal-identity}
+\input{sections/minimal-and-full-banks}
+\input{sections/physical-four-mobius}
+\input{sections/hilbert-compression}
+\input{sections/triple-prime-variance}
+\input{sections/weighted-transfer}
+\input{sections/convolution-shadow}
+\input{sections/literature-boundary}
+\input{sections/next-gate}
+\input{sections/certificate-claims}
+
+\begingroup
+\footnotesize
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

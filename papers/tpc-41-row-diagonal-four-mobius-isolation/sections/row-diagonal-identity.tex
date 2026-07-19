@@ -1,0 +1,106 @@
+\section{A general row--diagonal identity}
+\label{sec:tpc41-row-diagonal}
+
+We first separate alias geometry from arithmetic.  The theorem below is
+valid for arbitrary complex atoms and arbitrary output coordinates.
+
+Let \(\cY,\cR,\cK,\cT\) be finite index sets.  Think of \(y\in\cY\) as
+an output coordinate, \(\alpha\in\cR\) as a physical row,
+\(k\in\cK\) as an alias, and \(t\in\cT\) as a phase measurement.  Let
+\begin{equation}
+ Y_{t,y}
+ =\sum_{\alpha\in\cR}\sum_{k\in\cK}
+   \theta_{t,k}c_{\alpha,y}b_{\alpha,y,k},
+ \label{eq:tpc41-general-Y}
+\end{equation}
+where \(|\theta_{t,k}|=1\).  Give the measurements weights \(w_t>0\)
+with \(\sum_tw_t=1\), and define
+\begin{align}
+ H_{k,k'}
+ &=\sum_{t\in\cT}w_t
+   \overline{\theta_{t,k}}\theta_{t,k'},
+ \label{eq:tpc41-general-H}\\
+ \cE
+ &=\sum_{t\in\cT}w_t\sum_{y\in\cY}|Y_{t,y}|^2,
+ \label{eq:tpc41-general-energy}\\
+ \cD
+ &=\sum_{y,\alpha,k}|c_{\alpha,y}|^2|b_{\alpha,y,k}|^2.
+ \label{eq:tpc41-general-D}
+\end{align}
+The matrix \(H\) is positive semidefinite and has unit diagonal.
+
+\begin{theorem}[Row--diagonal Gram closure]
+\label{thm:tpc41-row-diagonal-closure}
+The sector of \(\cE\) with equal physical rows is exactly
+\begin{equation}
+ \boxed{
+ \cE_{\rm same}
+ =\sum_{y,\alpha}|c_{\alpha,y}|^2
+   b_{\alpha,y}^{*}Hb_{\alpha,y},}
+ \label{eq:tpc41-same-exact}
+\end{equation}
+where \(b_{\alpha,y}=(b_{\alpha,y,k})_{k\in\cK}\).  Hence
+\begin{equation}
+ 0\le\cE_{\rm same}
+ \le\lambda_{\max}(H)\cD.
+ \label{eq:tpc41-same-lambda}
+\end{equation}
+If \(\cS_{\rm same}\) denotes the part with equal rows but unequal
+aliases, then
+\begin{equation}
+ \cS_{\rm same}=\cE_{\rm same}-\cD
+ \label{eq:tpc41-same-off-exact}
+\end{equation}
+and
+\begin{equation}
+ \boxed{
+ |\cS_{\rm same}|
+ \le\|H-I\|_{\op}\cD.}
+ \label{eq:tpc41-same-off-bound}
+\end{equation}
+No sign, independence, or cancellation property of the atoms is used.
+\end{theorem}
+
+\begin{proof}
+Expanding \eqref{eq:tpc41-general-energy} and averaging the phases gives
+\begin{equation}
+ \cE
+ =\sum_y\sum_{\alpha,\beta}\sum_{k,k'}
+ \overline{c_{\alpha,y}}c_{\beta,y}
+ \overline{b_{\alpha,y,k}}H_{k,k'}b_{\beta,y,k'}.
+ \label{eq:tpc41-general-expanded}
+\end{equation}
+Restricting to \(\alpha=\beta\) proves
+\eqref{eq:tpc41-same-exact}.  Positivity of \(H\) and the Rayleigh
+quotient give \eqref{eq:tpc41-same-lambda}.  Since \(H_{k,k}=1\), the
+alias diagonal in \eqref{eq:tpc41-same-exact} is precisely \(\cD\), so
+the remainder is \eqref{eq:tpc41-same-off-exact}.  Finally,
+\[
+ |b^*(H-I)b|\le\|H-I\|_{\op}\|b\|_2^2
+\]
+for each \((\alpha,y)\); summing with the nonnegative weights
+\(|c_{\alpha,y}|^2\) proves \eqref{eq:tpc41-same-off-bound}.
+\end{proof}
+
+\begin{remark}[Why this is stronger than termwise arithmetic]
+\label{rem:tpc41-no-mobius-needed}
+If the entries of \(b\) contain M\"obius values, the off--alias sector is
+visually a two--M\"obius correlation.
+\Cref{thm:tpc41-row-diagonal-closure} bounds its \emph{whole signed
+quadratic form} by the diagonal.  It does not assert cancellation in any
+individual shift correlation, and none is required for the phase energy.
+\end{remark}
+
+\begin{corollary}[Uniform bounded--Gram criterion]
+\label{cor:tpc41-bounded-Gram}
+For any family of banks with
+\(\sup\lambda_{\max}(H)<\infty\), the same--row sector is controlled by
+the atomic diagonal with a uniform constant.  If \(H=I\), every unequal
+alias term with \(\alpha=\beta\) vanishes identically.
+\end{corollary}
+
+The hypothesis that the phase depends only on \((t,k)\) is important.
+For a coupled phase \(\theta_{t,\alpha,k}\), one obtains a separate alias
+Gram \(H^{(\alpha)}\) for every fixed row.  Exact recovery alone does not
+force \(\lambda_{\max}(H^{(\alpha)})=O(1)\); the recovery--coherence
+uncertainty of TPC--40 explains why this cannot be assumed for free.

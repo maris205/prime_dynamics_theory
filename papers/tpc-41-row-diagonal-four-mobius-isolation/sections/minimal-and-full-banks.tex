@@ -1,0 +1,153 @@
+\section{Minimal folding and full Fourier deletion}
+\label{sec:tpc41-banks}
+
+We now specialize \cref{thm:tpc41-row-diagonal-closure} to the two phase
+banks naturally attached to the alias interval
+\(\cI_B=\{-L,\ldots,L\}\).
+
+\subsection{The minimal equality--recovery bank}
+
+Put \(q=L+1\), \(\omega=\ee{1/q}\), and
+\begin{equation}
+ \theta_{\nu,k}=\omega^{\nu k},
+ \qquad 0\le\nu<q,
+ \qquad w_\nu=q^{-1}.
+ \label{eq:tpc41-minimal-bank}
+\end{equation}
+Its alias Gram is
+\begin{equation}
+ H_{k,k'}
+ =\frac1q\sum_{\nu=0}^{q-1}\omega^{\nu(k'-k)}
+ =\one_{k\equiv k'\pmod q}.
+ \label{eq:tpc41-minimal-H}
+\end{equation}
+The residue bucket \(0\) consists only of \(\{0\}\), while bucket
+\(r\), \(1\le r\le L\), is
+\begin{equation}
+ \{r,r-q\}.
+ \label{eq:tpc41-folded-pairs}
+\end{equation}
+Thus \(H\) is the direct sum of \([1]\) and \(L\) copies of the
+two--by--two all--ones matrix.
+
+\begin{corollary}[Sharp minimal--bank row closure]
+\label{cor:tpc41-minimal-row-closure}
+For the bank \eqref{eq:tpc41-minimal-bank},
+\begin{equation}
+ \operatorname{spec}(H)
+ =\{2\ (L\text{ times}),\ 1\ (1\text{ time}),\ 0\ (L\text{ times})\}.
+ \label{eq:tpc41-minimal-spectrum}
+\end{equation}
+Consequently
+\begin{equation}
+ \boxed{
+ 0\le\cE_{\rm same}\le2\cD,
+ \qquad
+ |\cS_{\rm same}|\le\cD.}
+ \label{eq:tpc41-minimal-row-bounds}
+\end{equation}
+Both constants are sharp in the unrestricted atom class.
+\end{corollary}
+
+\begin{proof}
+The spectrum follows from the block decomposition.  Hence
+\(\lambda_{\max}(H)=2\) and \(\|H-I\|_{\op}=1\), and
+\cref{thm:tpc41-row-diagonal-closure} applies.  Equal atoms on one folded
+pair attain the first constant; opposite atoms attain the absolute value
+in the second.
+\end{proof}
+
+There is also a direct form of the second inequality:
+\begin{equation}
+ \cS_{\rm same}
+ =2\operatorname{Re}
+ \sum_{y,\alpha}\sum_{r=1}^{L}
+ |c_{\alpha,y}|^2
+ b_{\alpha,y,r}\overline{b_{\alpha,y,r-q}}.
+ \label{eq:tpc41-minimal-direct-S}
+\end{equation}
+Every nonzero alias belongs to exactly one pair in
+\eqref{eq:tpc41-folded-pairs}.  Applying
+\(2|uv|\le|u|^2+|v|^2\) within each pair proves
+\begin{equation}
+ |\cS_{\rm same}|
+ \le\sum_{y,\alpha}\sum_{k\ne0}
+ |c_{\alpha,y}|^2|b_{\alpha,y,k}|^2
+ \le\cD.
+ \label{eq:tpc41-minimal-direct-bound}
+\end{equation}
+This makes explicit why the gap
+\begin{equation}
+ r-(r-q)=q,
+ \qquad qM\in(B,B+M],
+ \label{eq:tpc41-long-gap}
+\end{equation}
+does not create a two--point Chowla requirement.
+
+\subsection{The full alias DFT}
+
+Let \(K_B=2L+1\), \(\zeta=\ee{1/K_B}\), and instead take
+\begin{equation}
+ \theta_{\nu,k}=\zeta^{\nu k},
+ \qquad0\le\nu<K_B,
+ \qquad w_\nu=K_B^{-1}.
+ \label{eq:tpc41-full-bank}
+\end{equation}
+Since distinct \(k,k'\in[-L,L]\) remain distinct modulo \(K_B\),
+\begin{equation}
+ H=I_{K_B}.
+ \label{eq:tpc41-full-H}
+\end{equation}
+
+\begin{corollary}[Exact full--DFT deletion]
+\label{cor:tpc41-full-deletion}
+For the full bank,
+\begin{equation}
+ \boxed{
+ \cE_{\rm same}=\cD,
+ \qquad \cS_{\rm same}=0.}
+ \label{eq:tpc41-full-deletion}
+\end{equation}
+Thus every same--row unequal--alias product is deleted before any
+arithmetic estimate.
+\end{corollary}
+
+More strongly, inserting \(H=I\) into the full expansion gives
+\begin{equation}
+ \cE^{\rm full}
+ =\sum_{k=-L}^{L}\sum_y
+  \left|\sum_\alpha c_{\alpha,y}b_{\alpha,y,k}\right|^2.
+ \label{eq:tpc41-full-fixed-alias-energy}
+\end{equation}
+Hence the full DFT deletes every product with \(k\ne k'\), including
+cross--row products.  Its only off--diagonal terms are the fixed--alias
+row correlations parameterized by the Hilbert columns in
+\cref{sec:tpc41-hilbert}.
+
+The full bank uses \(2L+1\) measurements instead of \(L+1\).  Since both
+are \(\asymp K_B\), this changes no endpoint exponent.  The minimal bank
+is optimal for recovering the equality column, while the full bank is the
+cleaner sufficient object if one wants to remove all alias cross terms.
+
+\subsection{Physical endpoint consequence}
+
+Apply \cref{cor:tpc41-minimal-row-closure} first to the left coordinates
+\(y=(\gamma,j)\) and then to the symmetric right coordinates.  Using
+\eqref{eq:tpc41-interface-diagonal-bound} gives
+\begin{equation}
+ \boxed{
+ \cE_{{\rm same},L}+\cE_{{\rm same},R}
+ \ll X^{o(1)}Q^2JK_B
+ =X^{o(1)}\frac{Q^3}{J}.}
+ \label{eq:tpc41-physical-same-row-closed}
+\end{equation}
+In particular, the complete weighted signed sector built from the terminal
+products
+\begin{equation}
+ \mu(n_{\alpha,j,r})\mu(n_{\alpha,j,r-q})
+ \label{eq:tpc41-physical-two-mobius}
+\end{equation}
+that survive minimal folding is already absorbed at the physical target
+scale.  This does not bound any individual long--shift correlation.  It is
+an unconditional theorem about the actual terminal packet, not a
+heuristic randomness assertion.

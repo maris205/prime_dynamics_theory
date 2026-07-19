@@ -1,0 +1,84 @@
+\section{The completed convolution shadow and its boundary defect}
+\label{sec:tpc41-convolution}
+
+There is a second reason not to attack the expanded four--M\"obius form
+term by term.  In an idealized scalar completion, the divisor--row
+coefficient collapses exactly under Dirichlet convolution.
+
+Let \(*\) denote Dirichlet convolution, let \(\Lambda\) be the von
+Mangoldt function, and let \(\mathbf 1(n)=1\).
+
+\begin{proposition}[Full divisor completion]
+\label{prop:tpc41-full-convolution}
+For every \(n\ge1\),
+\begin{equation}
+ \boxed{
+ (\Lambda*\mu*\mathbf1)(n)=\Lambda(n).}
+ \label{eq:tpc41-full-convolution}
+\end{equation}
+Consequently, for every finitely supported scalar weight depending only on
+the product \(n=\ell dj\), the fully completed model satisfies
+\begin{equation}
+ \sum_{\ell,d,j}
+ \Lambda(\ell)\mu(d)
+ \mu(\ell dj+h)W(\ell dj)
+ =\sum_n\Lambda(n)\mu(n+h)W(n).
+ \label{eq:tpc41-completed-shifted-prime}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+M\"obius inversion gives \(\mu*\mathbf1=\delta_1\), the identity for
+Dirichlet convolution.  Associativity gives
+\(\Lambda*(\mu*\mathbf1)=\Lambda\).  Grouping the finite triple sum by
+\(n=\ell dj\) proves \eqref{eq:tpc41-completed-shifted-prime}.
+\end{proof}
+
+The right side of \eqref{eq:tpc41-completed-shifted-prime} is the shifted
+prime--M\"obius correlation studied on average over \(h\) by
+\citet{Lichtman2022} and in the broader Hardy--Littlewood--Chowla setting
+by \citet{LichtmanTeravainen2022}.  In particular, known results give
+qualitative cancellation for almost all shifts once the shift range is
+sufficiently larger than a power of \(\log X\).
+
+This identity does not apply unchanged to the physical packet.  A single
+projective layer contains a truncated coefficient of the shape
+\begin{equation}
+ \sum_{\ell dj=n}
+ b_\gamma(\ell)f_\gamma(d)\eta_\gamma(j/J),
+ \label{eq:tpc41-truncated-convolution}
+\end{equation}
+where the factors are restricted to prescribed dyadic ranges and inherit
+the opposite--row mask.  Even before that mask, the natural model is a
+localized convolution
+\begin{equation}
+ \Lambda_{L_0}*\mu_{D_0}*\mathbf1_{\cJ},
+ \label{eq:tpc41-localized-convolution}
+\end{equation}
+where the subscripts denote restriction to the inherited source dyadic
+scales \(L_0,D_0\) and orbit interval \(\cJ\).  It is not
+\(\Lambda*\mu*\mathbf1\).  The difference between
+\eqref{eq:tpc41-localized-convolution} and an appropriate localized
+\(\Lambda\) term is a boundary defect whose Hilbert norm has not been
+estimated here.
+
+Two upgrades would be required to turn the identity into a physical
+theorem:
+\begin{enumerate}[label=(\roman*)]
+ \item a localization theorem controlling the dyadic and mask boundary
+ defect with power strong enough for
+ \eqref{eq:tpc41-Hilbert-equality-target}; and
+ \item a vector--valued shifted--prime estimate uniform in the opposite
+ row and projective layer, rather than an average over the external shift
+ \(h\).
+\end{enumerate}
+The exact convolution collapse is therefore a route marker.  It shows
+that part of the apparent fourfold structure is created by truncation,
+but writing the completion is not itself a bound for the truncation
+error.
+
+There is one further asymmetry.  At alias \(k=0\),
+\((d_\alpha,m_\alpha j+h)=1\), so the two M\"obius values can sometimes be
+fused multiplicatively.  At \(k\ne0\), the condition
+\((d_\alpha,h+kM)=1\) is not automatic.  Any fusion argument must either
+remain on the equality alias or explicitly control these new gcd faces.

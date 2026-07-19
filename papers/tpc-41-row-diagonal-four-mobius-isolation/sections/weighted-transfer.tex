@@ -1,0 +1,115 @@
+\section{Bounded--variation transfer to terminal weights}
+\label{sec:tpc41-weighted}
+
+The terminal atom contains a smooth cutoff and a logarithm.  We extend the
+raw prefix theorem to such weights without invoking a separate smooth
+version of the short--progression theorem.
+
+Let \(0<c<C<\infty\) be fixed.  For a function \(W\) supported on
+\([c,C]\), write
+\begin{equation}
+ \|W\|_{\mathrm{BV}}
+ :=\|W\|_\infty+\Var_{[c,C]}(W).
+ \label{eq:tpc41-BV-norm}
+\end{equation}
+The proof of \cref{thm:tpc41-raw-triple-prime} is uniform for
+\(x\asymp X\).  Below, \(e_{n\bmod M}\) denotes the standard basis vector
+when \((n,M)=1\) and the zero vector otherwise.
+
+\begin{theorem}[Weighted raw progression theorem]
+\label{thm:tpc41-weighted-raw}
+Under the hypotheses of \cref{thm:tpc41-raw-triple-prime}, let
+\(W_X\) be any family supported in \([c,C]\) with
+\(\|W_X\|_{\mathrm{BV}}\ll1\).  Then, for all but
+\(o(|\mathfrak M_X|)\) moduli,
+\begin{equation}
+ \boxed{
+ \sum_{a\bmod M}^{*}
+ \left|
+  \sum_{n\equiv a\pmod M}\mu(n)W_X(n/X)
+ \right|^2
+ \ll\frac{XK_M}{(\log X)^\theta}.}
+ \label{eq:tpc41-weighted-raw}
+\end{equation}
+The exceptional set may be chosen uniformly for any fixed finite
+collection of such weights.
+\end{theorem}
+
+\begin{proof}
+Retain \(\eps=(\log X)^{-\theta}\) and choose
+\begin{equation}
+ R=\lceil\eps^{-1/2}\rceil.
+ \label{eq:tpc41-grid-R}
+\end{equation}
+Take an \(R\)-point grid on \([cX,CX]\).  Apply the proof of
+\cref{thm:tpc41-raw-triple-prime} at every grid endpoint.  The union of
+the KMT exceptional sets is still zero density, since the extra factor
+\(R\) is logarithmic and
+\eqref{eq:tpc41-KMT-exception-ratio} decays faster than every logarithm.
+Summing the character energies over the grid and applying Markov costs the
+same factor \(R\), but
+\begin{equation}
+ \frac{R(\log X)^C}{\eps K}=o(1).
+ \label{eq:tpc41-grid-character-Markov}
+\end{equation}
+Thus, outside a zero--density set, every grid prefix vector has squared
+norm \(\ll\eps XK_M\).
+
+Between adjacent endpoints, an interval has length \(O(X/R)\), so each
+residue class contains at most \(O(K_M/R+1)\) integers.  Its
+coefficient--blind residue energy is therefore
+\begin{equation}
+ \ll M(K_M/R+1)^2
+ \ll\frac{XK_M}{R^2}
+ \ll\eps XK_M,
+ \label{eq:tpc41-short-block-energy}
+\end{equation}
+because \(K_M/R\to\infty\).  The raw prefix vector consequently has
+norm \(O((\eps XK_M)^{1/2})\) uniformly throughout \([cX,CX]\).
+
+Abel summation in the Hilbert space
+\(\ell^2((\Z/M\Z)^\times)\) now gives
+\begin{equation}
+ \left\|
+  \sum_n\mu(n)W_X(n/X)e_{n\bmod M}
+ \right\|_2
+ \le \|W_X\|_{\mathrm{BV}}
+ \sup_{cX\le t\le CX}
+ \left\|\sum_{n\le t}\mu(n)e_{n\bmod M}\right\|_2.
+ \label{eq:tpc41-Hilbert-Abel}
+\end{equation}
+Squaring proves \eqref{eq:tpc41-weighted-raw}.
+\end{proof}
+
+Let \(\Phi\) be a fixed smooth function supported on a compact subinterval
+of \((0,\infty)\), and put
+\begin{equation}
+ W_X(t)=\frac{\log(Xt)}{\log X}\Phi(t).
+ \label{eq:tpc41-terminal-W}
+\end{equation}
+Its bounded--variation norm is uniform.  Therefore
+\cref{thm:tpc41-weighted-raw} gives
+\begin{equation}
+ \sum_{a\bmod M}^{*}
+ \left|
+  \sum_{n\equiv a\pmod M}
+  \mu(n)\log n\,\Phi(n/X)
+ \right|^2
+ \ll
+ \frac{XK_M(\log X)^2}{(\log X)^\theta}.
+ \label{eq:tpc41-terminal-log-weight}
+\end{equation}
+This matches the scalar shape of the terminal atom
+\eqref{eq:tpc41-interface-b} after a harmless normalization of its fixed
+cutoff.
+
+\begin{remark}[What transfers, and what does not]
+\label{rem:tpc41-weighted-boundary}
+The theorem controls the full reduced residue vector with a common scalar
+weight.  Any unweighted subset of residue coordinates inherits the bound
+by positivity.  The actual TPC output, however, assigns row--dependent
+coefficients to a Hilbert coordinate indexed by the opposite row and
+orbit time.  Neither coordinatewise restriction nor
+\eqref{eq:tpc41-terminal-log-weight} supplies the vector inequality
+\eqref{eq:tpc41-Hilbert-equality-target}.
+\end{remark}

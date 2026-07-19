@@ -1,0 +1,73 @@
+\section{Exact certificate and claim ledger}
+\label{sec:tpc41-certificate}
+
+The proofs above are analytic and exact.  A companion standard--library
+certificate checks the finite cyclic and convolution identities using
+integers, rational arithmetic, modular character orthogonality, and formal
+prime--logarithm vectors.  It uses no floating point, random draws, or
+optimization--sensitive \texttt{assert} statements.
+
+\subsection{Certified identities}
+
+The frozen certificate verifies:
+\begin{enumerate}[label=(\roman*)]
+ \item the minimal alias Gram, its \(2,1,0\) spectrum and folded bucket
+ decomposition for a declared range of \(L\);
+ \item the full \((2L+1)\)-point DFT identity \(H=I\);
+ \item exact same--row energy decompositions and the sharp inequality
+ \(|\cS_{\rm same}|\le\cD\) on exhaustive small integer atom families;
+ \item the allowed alias pairs in
+ \eqref{eq:tpc41-physical-alias-pairs};
+ \item the nonproportional determinant implication on exhaustive finite
+ admissible row--modulus models;
+ \item the formal convolution identity
+ \(\Lambda*\mu*\mathbf1=\Lambda\) through the frozen integer range; and
+ \item all endpoint exponent identities, including
+ \begin{equation}
+  3\frac{133}{400}=\frac{399}{400},
+  \qquad
+  1-\frac{399}{400}=\frac1{400},
+  \qquad
+  2\frac{267}{400}+\frac{133}{400}+\frac1{400}
+  =\frac{167}{100}.
+  \label{eq:tpc41-certificate-exponents}
+ \end{equation}
+\end{enumerate}
+
+Running
+\begin{quote}
+\ttfamily
+python experiments/tpc41\_certificate.py\\
+python -O experiments/tpc41\_certificate.py
+\end{quote}
+produces byte--identical canonical JSON records.  The frozen run passes
+\begin{equation}
+ \boxed{4{,}358{,}451\text{ exact checks}.}
+ \label{eq:tpc41-certificate-checks}
+\end{equation}
+It includes \(80\) minimal and \(80\) full alias Grams,
+\(81{,}375\) real and \(3{,}250\) Gaussian--integer atom vectors,
+\(80{,}400\) allowed ordered alias pairs, \(693{,}840\) affine
+determinants, and the formal convolution through \(n=10{,}000\).
+The certificate digest is
+\begin{center}
+\ttfamily\small
+e10174e2448d5323afb586d5855112e596ea7e134cd5899f216ef3a916748fc4.
+\end{center}
+The SHA--256 hashes of the canonical JSON record and source are,
+respectively,
+\begin{center}
+\ttfamily\small
+a12acada9747cb53acf1a5bdc7c763ede4ace5254cc7ce084145c596ada4c107,\\
+b08c52e25f8c59105017cb9e602039e7030d4671456be9eb77a22d36b84f54f0.
+\end{center}
+
+\subsection{What the certificate does not certify}
+
+The computation does not verify the asymptotic theorem of
+\citet{KlurmanMangerelTeravainen2023}, the prime number theorem, the
+Mertens zero--free--region estimate, or the multiplicative large sieve;
+these are cited analytic inputs.  It is not numerical evidence for random
+M\"obius signs.  Its JSON claim ledger explicitly marks as false any claim
+that it proves the physical four--M\"obius estimate, a parity breach, a
+prime--pair asymptotic, or the twin--prime conjecture.

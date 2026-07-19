@@ -1,0 +1,405 @@
+\section{Raw M\"obius decorrelation for triple--prime CRT moduli}
+\label{sec:tpc41-triple-prime}
+
+We now prove a scalar arithmetic theorem at the exact CRT exponent.  The
+result is independent of the row--diagonal identity, but together they
+separate what current arithmetic can and cannot estimate.
+
+\subsection{The admissible modulus family}
+
+Let
+\begin{equation}
+ Y=X^{133/400},
+ \qquad M_0=Y^3=X^{399/400},
+ \qquad K=X/M_0=X^{1/400}.
+ \label{eq:tpc41-variance-scales}
+\end{equation}
+Let \(C_{\cJ}\) be a fixed constant with
+\(\max\cJ\le C_{\cJ}Y\).  Choose constants
+\begin{equation}
+ C_{\cJ}<a_1<b_1<a_2<b_2<a_3<b_3
+ \label{eq:tpc41-interval-constants}
+\end{equation}
+and the three pairwise disjoint fixed--proportion intervals
+\begin{equation}
+ I_i(X)=[a_iY,b_iY],
+ \qquad i=1,2,3,
+ \label{eq:tpc41-prime-intervals}
+\end{equation}
+The inherited source exponents give
+\(\max d_\alpha=o(Y)\) and \(Y=o(\min\ell_\alpha)\), while
+\(|h|=O(1)\).  Thus every prime in these intervals satisfies
+\eqref{eq:tpc41-interface-primes} for sufficiently large \(X\).  The
+constants are fixed and the intervals have positive relative length.  Put
+\begin{equation}
+ \cP_i=I_i(X)\cap\{\text{primes}\},
+ \qquad
+ \mathfrak M_X
+ =\{q_1q_2q_3:q_i\in\cP_i\}.
+ \label{eq:tpc41-modulus-family}
+\end{equation}
+Disjointness makes this parametrization injective.  The prime number
+theorem gives
+\begin{equation}
+ |\mathfrak M_X|\asymp\frac{Y^3}{(\log Y)^3}
+ \asymp\frac{M_0}{(\log X)^3}.
+ \label{eq:tpc41-family-size}
+\end{equation}
+Every \(M\in\mathfrak M_X\) is squarefree,
+\(M\asymp M_0\), \(\varphi(M)\asymp M\), and
+\begin{equation}
+ K_M:=X/M\asymp K.
+ \label{eq:tpc41-KM}
+\end{equation}
+Fix a constant \(C_0\) larger than the maximum product of the interval
+endpoints and put
+\begin{equation}
+ Q_*=C_0M_0.
+ \label{eq:tpc41-Q-star}
+\end{equation}
+Then every member of \(\mathfrak M_X\) is at most \(Q_*\), and
+\(Q_*\le x/10\) uniformly for \(x\asymp X\) and large \(X\).
+
+For \(x>0\), define the reduced residue vector and its raw energy by
+\begin{align}
+ S_M(a;x)
+ &=\sum_{\substack{n\le x\\n\equiv a\pmod M}}\mu(n),
+ \label{eq:tpc41-SMa}\\
+ V_M(x)
+ &=\sum_{a\bmod M}^{*}|S_M(a;x)|^2.
+ \label{eq:tpc41-VM}
+\end{align}
+
+\begin{theorem}[Raw triple--prime progression decorrelation]
+\label{thm:tpc41-raw-triple-prime}
+Fix
+\begin{equation}
+ 0<\theta<\frac1{200}.
+ \label{eq:tpc41-theta-range}
+\end{equation}
+Then, for all but \(o(|\mathfrak M_X|)\) moduli
+\(M\in\mathfrak M_X\),
+\begin{equation}
+ \boxed{
+ V_M(X)
+ \ll_\theta
+ \frac{XK_M}{(\log X)^\theta}.}
+ \label{eq:tpc41-raw-main-theorem}
+\end{equation}
+The sum is raw and uncentered: no Dirichlet character main term remains.
+More quantitatively, the exceptional proportion is
+\begin{equation}
+ \ll
+ (\log X)^3
+ \exp\bigl(-c(\log X)^{1-200\theta}\bigr)
+ +\frac{(\log X)^{C_1+\theta}}{K},
+ \label{eq:tpc41-raw-exception-proportion}
+\end{equation}
+where \(c>0\) and \(C_1\) are absolute.
+\end{theorem}
+
+The trivial residue--class bound is
+\begin{equation}
+ V_M(X)
+ \le\varphi(M)(K_M+1)^2
+ \ll XK_M.
+ \label{eq:tpc41-raw-trivial}
+\end{equation}
+Thus \eqref{eq:tpc41-raw-main-theorem} is a coefficient--specific
+logarithmic saving.
+
+\subsection{The centered almost--all theorem}
+
+Set
+\begin{equation}
+ \eps=(\log X)^{-\theta}.
+ \label{eq:tpc41-epsilon}
+\end{equation}
+We use \citet[Theorem~1.4]{KlurmanMangerelTeravainen2023}.  In the present
+notation, their result supplies a good set of moduli such that for every
+good, typical \(M\) there is a Dirichlet character \(\chi_M\pmod M\) for
+which
+\begin{equation}
+ V_M^\circ(x)
+ :=\sum_{a\bmod M}^{*}
+ \left|
+ S_M(a;x)-\frac{\chi_M(a)}{\varphi(M)}T_M(x)
+ \right|^2
+ \ll\eps\varphi(M)(x/M)^2,
+ \label{eq:tpc41-KMT-centered}
+\end{equation}
+where, after replacing \(\chi_M\) by its conjugate if necessary,
+\begin{equation}
+ T_M(x)=\sum_{n\le x}\mu(n)\overline{\chi_M(n)}.
+ \label{eq:tpc41-TM}
+\end{equation}
+
+Take the maximum modulus parameter in that theorem to be \(Q_*\) from
+\eqref{eq:tpc41-Q-star}.  Since \(x/Q_*\asymp K\) for \(x\asymp X\),
+the condition
+\begin{equation}
+ (\log(x/Q_*))^{-1/200}\le\eps
+ \label{eq:tpc41-KMT-epsilon-condition}
+\end{equation}
+holds for large \(X\) precisely because \(\theta<1/200\).  The number of
+exceptional integer moduli is at most
+\begin{equation}
+ \ll Q_*x^{-\eps^{200}}
+ \ll M_0\exp\bigl(-c (\log X)^{1-200\theta}\bigr).
+ \label{eq:tpc41-KMT-exception-count}
+\end{equation}
+By \eqref{eq:tpc41-family-size}, its proportion inside
+\(\mathfrak M_X\) is
+\begin{equation}
+ \ll(\log X)^3
+ \exp\bigl(-c (\log X)^{1-200\theta}\bigr)=o(1).
+ \label{eq:tpc41-KMT-exception-ratio}
+\end{equation}
+
+For completeness, the typicality condition is automatic here.  Its
+small--prime threshold is
+\begin{equation}
+ y=(x/Q_*)^{\eps^2}=X^{o(1)},
+ \label{eq:tpc41-typical-threshold}
+\end{equation}
+whereas every prime factor of \(M\) is comparable with
+\(Y=X^{133/400}\).  There are no prime divisors below the first such
+factor, and above it there are at most three, while \(\pi(z)/100>3\) for
+large \(X\).  Hence every member of \(\mathfrak M_X\) is typical in the
+sense required by the cited theorem.
+
+It remains to dispose of the rank--one term in
+\eqref{eq:tpc41-KMT-centered}.  This is not automatic from the centered
+theorem and is the main additional argument.
+
+\subsection{A maximal multiplicative large sieve}
+
+We record the standard maximal form needed below.
+
+\begin{lemma}[Maximal multiplicative large sieve]
+\label{lem:tpc41-maximal-large-sieve}
+For complex coefficients \(a_n\), \(R,Z\ge2\),
+\begin{equation}
+ \sum_{r\le R}\frac r{\varphi(r)}
+ \sum_{\psi\bmod r}^{*}
+ \max_{z\le Z}
+ \left|\sum_{n\le z}a_n\psi(n)\right|^2
+ \ll
+ (Z+R^2)(\log(2Z))^2\sum_{n\le Z}|a_n|^2.
+ \label{eq:tpc41-maximal-large-sieve}
+\end{equation}
+The star denotes primitive characters.
+\end{lemma}
+
+\begin{proof}
+The ordinary multiplicative large sieve gives the same inequality without
+the maximum and logarithmic factor; see, for example,
+\citet[Chapter~7]{IwaniecKowalski2004}.  Decompose every initial interval
+\([1,z]\) into at most \(O(\log Z)\) dyadic blocks.  Cauchy--Schwarz costs
+one logarithm.  Apply the ordinary large sieve to each block and sum over
+all dyadic scales; every coefficient belongs to one block at each scale,
+costing the second logarithm.  This proves
+\eqref{eq:tpc41-maximal-large-sieve}.
+\end{proof}
+
+\subsection{Deleting the induced character on average}
+
+The following lemma applies to an arbitrary assignment of one character
+to each modulus, so in particular to the characters selected in
+\eqref{eq:tpc41-KMT-centered}.  The principal conductor is separated
+because its classical bound is individually sufficient at the target
+scale, even though it need not be as small as the nonprincipal family
+average.
+
+\begin{lemma}[One--character disposal]
+\label{lem:tpc41-character-disposal}
+For each \(M\in\mathfrak M_X\), choose any character
+\(\chi_M\pmod M\), and let \(r_M\) be the conductor of its primitive
+inducing character.  Uniformly for \(x\asymp X\),
+\begin{equation}
+ \boxed{
+ \frac1{|\mathfrak M_X|}
+ \sum_{\substack{M\in\mathfrak M_X\\r_M>1}}
+ \frac1{\varphi(M)}
+ \left|\sum_{n\le x}\mu(n)\overline{\chi_M(n)}\right|^2
+ \ll X(\log X)^C}
+ \label{eq:tpc41-character-average}
+\end{equation}
+for an absolute constant \(C\).  If \(r_M=1\), then individually
+\begin{equation}
+ \frac{|T_M(x)|^2}{\varphi(M)}
+ \ll XK\exp\left(
+  -c(\log K)^{3/5}(\log\log K)^{-1/5}
+ \right).
+ \label{eq:tpc41-principal-individual}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let \(\psi_M\) be the primitive character inducing \(\chi_M\), write
+\begin{equation}
+ r_M=\cond(\psi_M)\mid M,
+ \qquad s_M=M/r_M,
+ \qquad t=\omega(r_M)\in\{0,1,2,3\}.
+ \label{eq:tpc41-conductor-layer}
+\end{equation}
+Because \(M\) is squarefree, \(r_M\) is the product of a subset of its
+three prime factors.
+
+Put
+\begin{equation}
+ U_\psi(z)=\sum_{n\le z}\mu(n)\overline{\psi(n)}.
+ \label{eq:tpc41-Upsi}
+\end{equation}
+Deleting from the Euler product the primes dividing \(s_M\) gives the
+exact finite identity
+\begin{equation}
+ T_M(x)
+ =\sum_{\substack{d\le x\\p\mid d\Rightarrow p\mid s_M}}
+   \overline{\psi_M(d)}\,U_{\psi_M}(x/d).
+ \label{eq:tpc41-Euler-deletion}
+\end{equation}
+Indeed, the Dirichlet series for the left side is the series for
+\(\mu\overline\psi_M\) multiplied by
+\(\prod_{p\mid s_M}(1-\overline{\psi_M(p)}p^{-z})^{-1}\).
+Thus \(d\) in \eqref{eq:tpc41-Euler-deletion} may contain prime powers,
+but only primes from \(s_M\).  Since every such prime is \(\asymp Y\) and
+\(X=Y^{400/133}<Y^{3.01}\), every retained \(d\) has
+\(\Omega(d)\le3\); the sum consequently has \(O(1)\) terms.
+
+Fix \(t\ge1\).  A conductor made from \(t\) of the three prime intervals
+can be extended to a member of \(\mathfrak M_X\) in at most
+\begin{equation}
+ W_t\ll\left(\frac{Y}{\log Y}\right)^{3-t}
+ \label{eq:tpc41-extension-count}
+\end{equation}
+ways.  Since \(\varphi(M)\asymp Y^3\), the finite expansion, the maximal
+large sieve with \(a_n=\mu(n)\), and
+\(\sum_{n\le x}|\mu(n)|^2\le x\) give
+\begin{align}
+ \Sigma_t(x)
+ &:={\sum_{\substack{M\in\mathfrak M_X\\
+       \omega(r_M)=t}}}
+   \frac{|T_M(x)|^2}{\varphi(M)}
+ \notag\\
+ &\ll
+ \frac{W_t}{Y^3}
+ (X+Y^{2t})X(\log X)^C.
+ \label{eq:tpc41-Sigma-t}
+\end{align}
+Here the large--sieve parameters are \(R\asymp Y^t\) and \(Z\asymp X\),
+and \(r/\varphi(r)\asymp1\) on these conductor families.  The standard
+\(Y^{2t}\) large--sieve term is retained here.
+Dividing by \eqref{eq:tpc41-family-size} yields
+\begin{equation}
+ \frac{\Sigma_t(x)}{|\mathfrak M_X|}
+ \ll
+ \frac{X(X+Y^{2t})}{Y^{t+3}}(\log X)^{t+C}.
+ \label{eq:tpc41-Sigma-average}
+\end{equation}
+Thus the layers \(t=3,2,1\) are respectively
+\begin{equation}
+ \ll X(\log X)^{3+C},
+ \qquad
+ \ll\frac XY(\log X)^{2+C},
+ \qquad
+ \ll\frac{X^2}{Y^4}(\log X)^{1+C}.
+ \label{eq:tpc41-layer-table}
+\end{equation}
+The last two are \(o(X)\).  Notice especially that for \(t=3\) the
+large sieve first gives \(Y^6X=M_0^2X\); division by
+\(\varphi(M)\asymp M_0\) and then by
+\(|\mathfrak M_X|\asymp M_0/(\log X)^3\) gives exactly
+\(X(\log X)^{3+C}\).  No \(M_0^2\) term has been discarded.
+
+If \(t=0\), \(\chi_M\) is principal.  The same Euler deletion gives
+\begin{equation}
+ T_M(x)=
+ \sum_{\substack{d\le x\\p\mid d\Rightarrow p\mid M}}
+ \mathsf M(x/d),
+ \qquad
+ \mathsf M(z)=\sum_{n\le z}\mu(n).
+ \label{eq:tpc41-principal-Mertens}
+\end{equation}
+There are \(O(1)\) terms and, for every one, \(x/d\gg K\).  The classical
+zero--free--region bound \citep[Chapter~5]{IwaniecKowalski2004}
+\begin{equation}
+ \mathsf M(z)
+ \ll z\exp\left(
+  -c(\log z)^{3/5}(\log\log z)^{-1/5}
+ \right)
+ \label{eq:tpc41-Mertens-bound}
+\end{equation}
+therefore gives \eqref{eq:tpc41-principal-individual}; after squaring we
+weaken the exponential by adjusting \(c\).  The layers \(t=1,2,3\) prove
+\eqref{eq:tpc41-character-average}.
+\end{proof}
+
+\subsection{Proof of the raw theorem}
+
+\begin{proof}[Proof of \cref{thm:tpc41-raw-triple-prime}]
+For the character selected by
+\eqref{eq:tpc41-KMT-centered}, the rank--one vector is the orthogonal
+projection of \((S_M(a;X))_{a\in(\Z/M\Z)^\times}\) onto \(\chi_M\).
+Hence the Pythagorean identity is exact:
+\begin{equation}
+ V_M(X)
+ =V_M^\circ(X)+\frac{|T_M(X)|^2}{\varphi(M)}.
+ \label{eq:tpc41-projection-Pythagoras}
+\end{equation}
+Outside the exceptional set in
+\eqref{eq:tpc41-KMT-exception-ratio}, the first term is
+\(\ll\eps XK_M\).
+
+If the selected character is principal, then
+\eqref{eq:tpc41-principal-individual} is \(o(\eps XK_M)\), uniformly in
+\(M\).  On the remaining moduli,
+\cref{lem:tpc41-character-disposal} and Markov's inequality show that the
+proportion for which the second term exceeds \(\eps XK_M\) is
+\begin{equation}
+ \ll\frac{(\log X)^C}{\eps K}=o(1),
+ \label{eq:tpc41-character-Markov}
+\end{equation}
+because \(K=X^{1/400}\).  Together with
+\eqref{eq:tpc41-KMT-exception-ratio}, this gives
+\eqref{eq:tpc41-raw-exception-proportion}.  Delete this set and use
+\eqref{eq:tpc41-projection-Pythagoras}.  Since
+\(\eps=(\log X)^{-\theta}\), the result is
+\eqref{eq:tpc41-raw-main-theorem}.
+\end{proof}
+
+\begin{corollary}[RMS cancellation and moving--shift aggregation]
+\label{cor:tpc41-RMS-moving-shift}
+For every modulus supplied by
+\cref{thm:tpc41-raw-triple-prime},
+\begin{equation}
+ \left(
+  \frac1{\varphi(M)}\sum_{a\bmod M}^{*}|S_M(a;X)|^2
+ \right)^{1/2}
+ \ll\frac{K_M}{(\log X)^{\theta/2}}.
+ \label{eq:tpc41-RMS}
+\end{equation}
+Moreover,
+\begin{align}
+ V_M(X)
+ &=\sum_{\substack{n\le X\\(n,M)=1}}\mu(n)^2
+ \notag\\
+ &\quad+2\sum_{r\ge1}
+ \sum_{\substack{n\le X-rM\\(n,M)=1}}
+ \mu(n)\mu(n+rM).
+ \label{eq:tpc41-moving-correlation-identity}
+\end{align}
+Thus \eqref{eq:tpc41-raw-main-theorem} gives a logarithmic saving for the
+signed aggregate of all \(M\)-spaced scalar correlations.
+\end{corollary}
+
+\begin{proof}
+The RMS estimate follows from \(\varphi(M)\asymp M=X/K_M\).  Expanding
+the raw square, writing two congruent integers as \(n\) and \(n+rM\),
+and separating the diagonal proves
+\eqref{eq:tpc41-moving-correlation-identity}.
+\end{proof}
+
+The word ``aggregate'' is essential.  The theorem does not bound the
+absolute value of each fixed--\(r\) correlation, nor does it insert the
+physical row weights of \eqref{eq:tpc41-physical-FL}.
