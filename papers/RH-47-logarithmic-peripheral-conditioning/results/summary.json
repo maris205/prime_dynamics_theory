@@ -1,0 +1,115 @@
+{
+  "continuum_anchored_bulk": {
+    "critical_power": 2.0,
+    "definition": "B_tilde_n,sigma=E_n K_sigma E_n-E_n Q_per,sigma E_n=E_n B_sigma E_n",
+    "hilbert_schmidt_error": "O(n^-1 sigma^-3/2)",
+    "hilbert_schmidt_size": "O(sigma^-1/2)",
+    "square_trace_norm_error": "O(n^-1 sigma^-2)+O(n^-2 sigma^-3)",
+    "strict_power_condition": "p>2 for n(sigma)~sigma^-p",
+    "sufficient_power_law": "n(sigma) sigma^2 -> infinity"
+  },
+  "evidence_level": "analytic_mesoscopic_endpoint_localization_rank_one_calculus_and_gaussian_derivative_bounds_plus_floating_sparse_factor_audit",
+  "floating_pilot": {
+    "evidence_level": "binary64_sparse_eigenfactor_diagnostic_not_validated",
+    "noise_levels": 9,
+    "parity_log_fit": {
+      "intercept": 0.5095690769853799,
+      "levels": 6,
+      "maximum_absolute_residual": 0.022097698049469816,
+      "slope": 0.14244075987675112
+    },
+    "perron_log_fit": {
+      "intercept": 0.3711291939821192,
+      "levels": 6,
+      "maximum_absolute_residual": 0.015920750303632047,
+      "slope": 0.1715405627460675
+    },
+    "rank_two_log_fit": {
+      "intercept": 0.866290749435391,
+      "levels": 6,
+      "maximum_absolute_residual": 0.036317176512219884,
+      "slope": 0.31905864671346673
+    },
+    "resolution": 20.48,
+    "smallest_dimension": 204800,
+    "smallest_endpoint_parity_coefficient": 0.2454905228634945,
+    "smallest_endpoint_perron_coefficient": 0.24178227476953104,
+    "smallest_parity_projector_norm": 1.3558346334547398,
+    "smallest_parity_resolvent_lower": 27.116692669094792,
+    "smallest_perron_projector_norm": 1.4009681515362922,
+    "smallest_perron_resolvent_lower": 28.01936303072584,
+    "smallest_rank_two_frobenius": 1.9575799632322384,
+    "smallest_sigma": 0.0001,
+    "status": "floating_small_noise_peripheral_factor_conditioning_pilot"
+  },
+  "intrinsic_discrete_identification_boundary": {
+    "controlled_here": false,
+    "defect": "I_n,sigma=Q_per(E_n K_sigma E_n)-E_n Q_per(K_sigma) E_n",
+    "interpretation": "spatial resolution is closed; identifying the actual discrete Riesz term remains a spectral problem",
+    "sufficient_next_bound": "||I_n,sigma||_S2=O(n^-1 sigma^-3/2)"
+  },
+  "limitations": [
+    "The logarithmic theorem controls the L2 size of the peripheral factors and the fixed-contour resolvent from below; it does not prove a matching upper for the reduced resolvent.",
+    "The continuum-anchored Galerkin bulk uses the compressed continuum weighted Riesz kernel, not the actual weighted Riesz term of the finite matrix.",
+    "The actual discrete intrinsic identification defect is isolated explicitly and is not proved to satisfy the sufficient small-noise rate here.",
+    "The displayed power ledgers normalize unknown theorem constants to one and certify exponents rather than numerical outward constants.",
+    "Sparse eigenfactor slopes and endpoint coefficients are floating diagnostics, not validated enclosures.",
+    "No arithmetic trace formula, prime-power identity, zeta-zero identification, self-adjoint Hilbert-Polya operator, T log T counting law, or Riemann-hypothesis claim is made."
+  ],
+  "mesoscopic_endpoint_theorem": {
+    "endpoint_squared_log_coefficient": 0.051267641773610484,
+    "endpoint_tail_constant": 0.22642358926050635,
+    "proof_inputs": [
+      "uniform central density lower and upper bounds",
+      "Gaussian localization at x=sqrt(t/u_c)",
+      "conditioned normalizer bounded between positive constants",
+      "postcritical spike majorants from RH-14"
+    ],
+    "regime": "sigma/t -> 0 and t -> 0",
+    "signed_parity_density": "-sqrt(t) g_sigma(1-t) -> rho_c/(2 sqrt(u_c))",
+    "stationary_density": "sqrt(t) pi_sigma(1-t) -> rho_c/(2 sqrt(u_c))"
+  },
+  "peripheral_conditioning_theorem": {
+    "bounded_in_L2": false,
+    "parity_projector_hilbert_schmidt": "Theta(sqrt(log(1/sigma)))",
+    "perron_projector_hilbert_schmidt": "Theta(sqrt(log(1/sigma)))",
+    "pure_power_interpretation": "O(sigma^-epsilon) for every epsilon>0, but not O(1)",
+    "rank_two_weighted_term_upper": "O(sqrt(log(1/sigma)))",
+    "regular_variation_index": 0.0,
+    "signed_parity_density_l2": "Theta(sqrt(log(1/sigma)))",
+    "stationary_density_l2": "Theta(sqrt(log(1/sigma)))"
+  },
+  "peripheral_kernel_derivatives": {
+    "cell_average_projection": "||E_n Q_per,sigma E_n-Q_per,sigma||_S2=O(n^-1 sigma^-3/2)",
+    "left_densities": "||pi_sigma'||_2+||g_sigma'||_2=O(sigma^-3/2)",
+    "rank_two_source_derivative": "O(sigma^-1 sqrt(log(1/sigma)))",
+    "rank_two_target_derivative": "O(sigma^-3/2)",
+    "right_parity_observable": "||h_sigma||_infinity=O(1), ||h_sigma'||_2=O(sigma^-1)"
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "659fa0e1e709143253982263bb45dd529f74f96591e94873364916c59aa84484",
+    "README.md": "f89f51f5995211823e2ac4b9552b8ceb50e22f1c84c1b03aa07d303dd9223ba2",
+    "figures/logarithmic_peripheral_conditioning.pdf": "a85928ac791c33c42dadbd72ede6d25c0b9f2fbbb347645d16a991b522307f14",
+    "figures/logarithmic_peripheral_conditioning.png": "444ffb6f6f94d5a29b430022e0801e026964d0a03b425b4a6f5aff93af6200be",
+    "logarithmic-peripheral-conditioning.pdf": "0093bb5720d6de7ce37fc50a2a0c34b0c324d4384b714afde3b6eab9325d68ed",
+    "main.tex": "6f5beb2001b1a6860651c05a791c733c3d7e4a1634dad3b6259799066bae0976",
+    "pyproject.toml": "ec9b4cc14e00d70e16f216970db3016ea3d4f797cfeddae78c30e4ca202b47a0",
+    "references.bib": "effcc2530b9381a958cd493606b7779cf66f36d2f6af5a3eb2e28106c01fe3d9",
+    "requirements.txt": "b5d7d32dbb9df1b801abc1070caf6870a54af542248e03991107040e13a81dd6"
+  },
+  "resolvent_obstruction": {
+    "circle_inequality": "sup_Gamma ||(z-K_sigma)^-1|| >= ||P_sigma||/radius(Gamma)",
+    "fixed_geometry_uniform_L2_resolvent": false,
+    "forced_lower_growth": "Omega(sqrt(log(1/sigma)))",
+    "polynomial_beta_identified": false,
+    "reduced_resolvent_upper_determined": false,
+    "rh46_beta_zero_as_uniform_O1": false
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "949e319e9abdec0299538473f74320bb37722b3c2d859e8bbfcaef2053fcccd5",
+    "results/logarithmic_peripheral_conditioning_certificate.json": "948fb29c88e1fefecb01c8406eedc2692d0879dd6103add942b7fc5149a905c6",
+    "results/small_noise_peripheral_factor_pilot.json": "7f36490f21f82375681d826f0ba34c03299031cdf053276832427bf2d395020b"
+  },
+  "scope": "small-noise Perron and negative-parity weighted Riesz terms for the folded Gaussian band-merging family, plus continuum-anchored Galerkin deflation",
+  "status": "rigorous_logarithmic_peripheral_conditioning_anchored_bulk_mesh_and_intrinsic_identification_boundary"
+}

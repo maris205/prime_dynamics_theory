@@ -1,0 +1,676 @@
+{
+  "continuum_anchored_bulk": {
+    "critical_power": 2.0,
+    "definition": "B_tilde_n,sigma=E_n K_sigma E_n-E_n Q_per,sigma E_n=E_n B_sigma E_n",
+    "hilbert_schmidt_error": "O(n^-1 sigma^-3/2)",
+    "hilbert_schmidt_size": "O(sigma^-1/2)",
+    "square_trace_norm_error": "O(n^-1 sigma^-2)+O(n^-2 sigma^-3)",
+    "strict_power_condition": "p>2 for n(sigma)~sigma^-p",
+    "sufficient_power_law": "n(sigma) sigma^2 -> infinity"
+  },
+  "dependencies": {
+    "local_floating_factor_pilot": {
+      "path": "results/small_noise_peripheral_factor_pilot.json",
+      "sha256": "7f36490f21f82375681d826f0ba34c03299031cdf053276832427bf2d395020b"
+    },
+    "rh14_boundary_layer_manuscript": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/main.tex",
+      "sha256": "199d5abee0aaf7d16090cdedbb50688f177739a2d142b8e927d45e0fd5f5bb34"
+    },
+    "rh14_boundary_layer_source": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/boundary_layer.py",
+      "sha256": "1feccdd4ed925c6f31e81e3f32c8538828056703d12d812c17d7ea895ca8c9bd"
+    },
+    "rh14_boundary_layer_summary": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/results/square_root_boundary_layer_summary.json",
+      "sha256": "c73159bf27faaf9119c2d068cbd487eb8f7b39eedd321110ebec6047bf14bbbf"
+    },
+    "rh14_operator_source": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh42_fixed_noise_euclidean_contour": {
+      "path": "papers/RH-42-uniform-euclidean-parity-contour/results/uniform_euclidean_parity_certificate.json",
+      "sha256": "1792a0d7ad3ac7a8f4f636c566edb3c258839f72c7b64d801c30eb84e0b9f0eb"
+    },
+    "rh44_fixed_noise_rank_two_complement": {
+      "path": "papers/RH-44-validated-rank-two-peripheral-complement/results/validated_rank_two_peripheral_complement.json",
+      "sha256": "6b5de19bdbbb09213453fdb94afb60ce126639fa3583e2e8082b8078248067fb"
+    },
+    "rh46_small_noise_mesh_certificate": {
+      "path": "papers/RH-46-small-noise-mesh-double-pole/results/small_noise_mesh_double_pole_certificate.json",
+      "sha256": "a5fed4f35993d45f974b0886181b58531a31adf0d3e93087324f4c0e24b624f3"
+    }
+  },
+  "evidence_level": "analytic_mesoscopic_endpoint_localization_rank_one_calculus_and_gaussian_derivative_bounds_plus_floating_sparse_factor_audit",
+  "floating_pilot_summary": {
+    "evidence_level": "binary64_sparse_eigenfactor_diagnostic_not_validated",
+    "noise_levels": 9,
+    "parity_log_fit": {
+      "intercept": 0.5095690769853799,
+      "levels": 6,
+      "maximum_absolute_residual": 0.022097698049469816,
+      "slope": 0.14244075987675112
+    },
+    "perron_log_fit": {
+      "intercept": 0.3711291939821192,
+      "levels": 6,
+      "maximum_absolute_residual": 0.015920750303632047,
+      "slope": 0.1715405627460675
+    },
+    "rank_two_log_fit": {
+      "intercept": 0.866290749435391,
+      "levels": 6,
+      "maximum_absolute_residual": 0.036317176512219884,
+      "slope": 0.31905864671346673
+    },
+    "smallest_dimension": 204800,
+    "smallest_endpoint_parity_tail_coefficient": 0.2454905228634945,
+    "smallest_endpoint_perron_tail_coefficient": 0.24178227476953104,
+    "smallest_parity_contour_resolvent_lower": 27.116692669094792,
+    "smallest_parity_projector_norm": 1.3558346334547398,
+    "smallest_perron_contour_resolvent_lower": 28.01936303072584,
+    "smallest_perron_projector_norm": 1.4009681515362922,
+    "smallest_sigma": 0.0001
+  },
+  "intrinsic_discrete_identification_boundary": {
+    "controlled_here": false,
+    "defect": "I_n,sigma=Q_per(E_n K_sigma E_n)-E_n Q_per(K_sigma) E_n",
+    "interpretation": "spatial resolution is closed; identifying the actual discrete Riesz term remains a spectral problem",
+    "sufficient_next_bound": "||I_n,sigma||_S2=O(n^-1 sigma^-3/2)"
+  },
+  "limitations": [
+    "The logarithmic theorem controls the L2 size of the peripheral factors and the fixed-contour resolvent from below; it does not prove a matching upper for the reduced resolvent.",
+    "The continuum-anchored Galerkin bulk uses the compressed continuum weighted Riesz kernel, not the actual weighted Riesz term of the finite matrix.",
+    "The actual discrete intrinsic identification defect is isolated explicitly and is not proved to satisfy the sufficient small-noise rate here.",
+    "The displayed power ledgers normalize unknown theorem constants to one and certify exponents rather than numerical outward constants.",
+    "Sparse eigenfactor slopes and endpoint coefficients are floating diagnostics, not validated enclosures.",
+    "No arithmetic trace formula, prime-power identity, zeta-zero identification, self-adjoint Hilbert-Polya operator, T log T counting law, or Riemann-hypothesis claim is made."
+  ],
+  "mesoscopic_endpoint_theorem": {
+    "endpoint_squared_log_coefficient": 0.051267641773610484,
+    "endpoint_tail_constant": 0.22642358926050635,
+    "proof_inputs": [
+      "uniform central density lower and upper bounds",
+      "Gaussian localization at x=sqrt(t/u_c)",
+      "conditioned normalizer bounded between positive constants",
+      "postcritical spike majorants from RH-14"
+    ],
+    "regime": "sigma/t -> 0 and t -> 0",
+    "signed_parity_density": "-sqrt(t) g_sigma(1-t) -> rho_c/(2 sqrt(u_c))",
+    "stationary_density": "sqrt(t) pi_sigma(1-t) -> rho_c/(2 sqrt(u_c))"
+  },
+  "normalized_power_schedule_audit": {
+    "1.5": {
+      "dimension_law": "ceil(65536*(0.01/sigma)^1.5)",
+      "hilbert_schmidt_converges": false,
+      "hilbert_schmidt_error_exponent": 0.0,
+      "power": 1.5,
+      "rows": {
+        "0.0001": {
+          "anchored_bulk_error_upper": 0.07050116405803895,
+          "anchored_bulk_hilbert_schmidt_upper": 215.48524066420978,
+          "anchored_square_trace_norm_error_upper": 30.38889102244046,
+          "dimension": 65536000,
+          "logarithmic_clock": 3.034854258770293,
+          "markov_hilbert_schmidt_upper": 212.4503864054395,
+          "markov_projection_error_upper": 0.05524237499553896,
+          "one_step_scaled_resolution": 65.53600000000002,
+          "peripheral_hilbert_schmidt_upper": 3.034854258770293,
+          "peripheral_projection_error_upper": 0.015258789062499997,
+          "sigma": 0.0001,
+          "two_step_scaled_resolution": 0.65536
+        },
+        "0.0002": {
+          "anchored_bulk_error_upper": 0.07050116103333885,
+          "anchored_bulk_hilbert_schmidt_upper": 153.143531958861,
+          "anchored_square_trace_norm_error_upper": 21.598564029398915,
+          "dimension": 23170476,
+          "logarithmic_clock": 2.918423065872431,
+          "markov_hilbert_schmidt_upper": 150.22510889298857,
+          "markov_projection_error_upper": 0.05524237262548423,
+          "one_step_scaled_resolution": 65.5360028116806,
+          "peripheral_hilbert_schmidt_upper": 2.918423065872431,
+          "peripheral_projection_error_upper": 0.015258788407854624,
+          "sigma": 0.0002,
+          "two_step_scaled_resolution": 0.92681904
+        },
+        "0.0005": {
+          "anchored_bulk_error_upper": 0.07050115249896273,
+          "anchored_bulk_hilbert_schmidt_upper": 97.76767459353246,
+          "anchored_square_trace_norm_error_upper": 13.790437884478875,
+          "dimension": 5861719,
+          "logarithmic_clock": 2.7569734238004693,
+          "markov_hilbert_schmidt_upper": 95.01070116973199,
+          "markov_projection_error_upper": 0.055242365938230016,
+          "one_step_scaled_resolution": 65.53601074501046,
+          "peripheral_hilbert_schmidt_upper": 2.7569734238004693,
+          "peripheral_projection_error_upper": 0.015258786560732708,
+          "sigma": 0.0005,
+          "two_step_scaled_resolution": 1.46542975
+        },
+        "0.001": {
+          "anchored_bulk_error_upper": 0.07050113981530706,
+          "anchored_bulk_hilbert_schmidt_upper": 69.8109719672846,
+          "anchored_square_trace_norm_error_upper": 9.848476601331285,
+          "dimension": 2072431,
+          "logarithmic_clock": 2.628260884878466,
+          "markov_hilbert_schmidt_upper": 67.18271108240613,
+          "markov_projection_error_upper": 0.05524235599973791,
+          "one_step_scaled_resolution": 65.53602253540414,
+          "peripheral_hilbert_schmidt_upper": 2.628260884878466,
+          "peripheral_projection_error_upper": 0.015258783815569152,
+          "sigma": 0.001,
+          "two_step_scaled_resolution": 2.072431
+        },
+        "0.002": {
+          "anchored_bulk_error_upper": 0.07050114047157956,
+          "anchored_bulk_hilbert_schmidt_upper": 49.99826215538393,
+          "anchored_square_trace_norm_error_upper": 7.054839417910958,
+          "dimension": 732715,
+          "logarithmic_clock": 2.4929115705179337,
+          "markov_hilbert_schmidt_upper": 47.505350584865994,
+          "markov_projection_error_upper": 0.05524235651397128,
+          "one_step_scaled_resolution": 65.53602192535034,
+          "peripheral_hilbert_schmidt_upper": 2.4929115705179337,
+          "peripheral_projection_error_upper": 0.015258783957608275,
+          "sigma": 0.002,
+          "two_step_scaled_resolution": 2.93086
+        },
+        "0.004": {
+          "anchored_bulk_error_upper": 0.0705011057967531,
+          "anchored_bulk_hilbert_schmidt_upper": 35.94113444949683,
+          "anchored_square_trace_norm_error_upper": 5.072749850477172,
+          "dimension": 259054,
+          "logarithmic_clock": 2.3497789082937666,
+          "markov_hilbert_schmidt_upper": 33.591355541203065,
+          "markov_projection_error_upper": 0.05524232934392677,
+          "one_step_scaled_resolution": 65.53605415818075,
+          "peripheral_hilbert_schmidt_upper": 2.3497789082937666,
+          "peripheral_projection_error_upper": 0.015258776452826339,
+          "sigma": 0.004,
+          "two_step_scaled_resolution": 4.144864
+        },
+        "0.01": {
+          "anchored_bulk_error_upper": 0.07050116405803897,
+          "anchored_bulk_hilbert_schmidt_upper": 23.391004666833297,
+          "anchored_square_trace_norm_error_upper": 3.303156529131077,
+          "dimension": 65536,
+          "logarithmic_clock": 2.145966026289347,
+          "markov_hilbert_schmidt_upper": 21.24503864054395,
+          "markov_projection_error_upper": 0.05524237499553897,
+          "one_step_scaled_resolution": 65.536,
+          "peripheral_hilbert_schmidt_upper": 2.145966026289347,
+          "peripheral_projection_error_upper": 0.0152587890625,
+          "sigma": 0.01,
+          "two_step_scaled_resolution": 6.5536
+        },
+        "0.02": {
+          "anchored_bulk_error_upper": 0.07049956668659588,
+          "anchored_bulk_hilbert_schmidt_upper": 17.000394355387836,
+          "anchored_square_trace_norm_error_upper": 2.4020110600151834,
+          "dimension": 23171,
+          "logarithmic_clock": 1.977883466088977,
+          "markov_hilbert_schmidt_upper": 15.022510889298859,
+          "markov_projection_error_upper": 0.05524112334823008,
+          "one_step_scaled_resolution": 65.53748490749398,
+          "peripheral_hilbert_schmidt_upper": 1.977883466088977,
+          "peripheral_projection_error_upper": 0.01525844333836579,
+          "sigma": 0.02,
+          "two_step_scaled_resolution": 9.2684
+        },
+        "0.03": {
+          "anchored_bulk_error_upper": 0.07049786107619495,
+          "anchored_bulk_hilbert_schmidt_upper": 14.138409323010645,
+          "anchored_square_trace_norm_error_upper": 1.9984251810002864,
+          "dimension": 12613,
+          "logarithmic_clock": 1.8725805449485964,
+          "markov_hilbert_schmidt_upper": 12.26582877806205,
+          "markov_projection_error_upper": 0.05523978688846203,
+          "one_step_scaled_resolution": 65.53907050759875,
+          "peripheral_hilbert_schmidt_upper": 1.8725805449485964,
+          "peripheral_projection_error_upper": 0.015258074187732914,
+          "sigma": 0.03,
+          "two_step_scaled_resolution": 11.3517
+        }
+      },
+      "square_trace_norm_converges": false,
+      "square_trace_norm_error_exponent": -0.5
+    },
+    "2.0": {
+      "dimension_law": "ceil(65536*(0.01/sigma)^2.0)",
+      "hilbert_schmidt_converges": true,
+      "hilbert_schmidt_error_exponent": 0.5,
+      "power": 2.0,
+      "rows": {
+        "0.0001": {
+          "anchored_bulk_error_upper": 0.007050116405803896,
+          "anchored_bulk_hilbert_schmidt_upper": 215.48524066420978,
+          "anchored_square_trace_norm_error_upper": 3.038441764972028,
+          "dimension": 655360000,
+          "logarithmic_clock": 3.034854258770293,
+          "markov_hilbert_schmidt_upper": 212.4503864054395,
+          "markov_projection_error_upper": 0.005524237499553896,
+          "one_step_scaled_resolution": 655.3600000000001,
+          "peripheral_hilbert_schmidt_upper": 3.034854258770293,
+          "peripheral_projection_error_upper": 0.0015258789062499998,
+          "sigma": 0.0001,
+          "two_step_scaled_resolution": 6.5536
+        },
+        "0.0002": {
+          "anchored_bulk_error_upper": 0.00997037023739693,
+          "anchored_bulk_hilbert_schmidt_upper": 153.143531958861,
+          "anchored_square_trace_norm_error_upper": 3.053894834467617,
+          "dimension": 163840000,
+          "logarithmic_clock": 2.918423065872431,
+          "markov_hilbert_schmidt_upper": 150.22510889298857,
+          "markov_projection_error_upper": 0.007812451593639155,
+          "one_step_scaled_resolution": 463.40950011841585,
+          "peripheral_hilbert_schmidt_upper": 2.918423065872431,
+          "peripheral_projection_error_upper": 0.002157918643757774,
+          "sigma": 0.0002,
+          "two_step_scaled_resolution": 6.5536
+        },
+        "0.0005": {
+          "anchored_bulk_error_upper": 0.015764539532664004,
+          "anchored_bulk_hilbert_schmidt_upper": 97.76767459353246,
+          "anchored_square_trace_norm_error_upper": 3.0827732629994222,
+          "dimension": 26214400,
+          "logarithmic_clock": 2.7569734238004693,
+          "markov_hilbert_schmidt_upper": 95.01070116973199,
+          "markov_projection_error_upper": 0.012352570572855976,
+          "one_step_scaled_resolution": 293.08590194685246,
+          "peripheral_hilbert_schmidt_upper": 2.7569734238004693,
+          "peripheral_projection_error_upper": 0.0034119689598080282,
+          "sigma": 0.0005,
+          "two_step_scaled_resolution": 6.553599999999999
+        },
+        "0.001": {
+          "anchored_bulk_error_upper": 0.02229442561166025,
+          "anchored_bulk_hilbert_schmidt_upper": 69.8109719672846,
+          "anchored_square_trace_norm_error_upper": 3.113288084218005,
+          "dimension": 6553600,
+          "logarithmic_clock": 2.628260884878466,
+          "markov_hilbert_schmidt_upper": 67.18271108240613,
+          "markov_projection_error_upper": 0.017469172834303714,
+          "one_step_scaled_resolution": 207.2430287367949,
+          "peripheral_hilbert_schmidt_upper": 2.628260884878466,
+          "peripheral_projection_error_upper": 0.004825252777356535,
+          "sigma": 0.001,
+          "two_step_scaled_resolution": 6.553599999999999
+        },
+        "0.002": {
+          "anchored_bulk_error_upper": 0.03152907906532801,
+          "anchored_bulk_hilbert_schmidt_upper": 49.99826215538393,
+          "anchored_square_trace_norm_error_upper": 3.1537924040789016,
+          "dimension": 1638400,
+          "logarithmic_clock": 2.4929115705179337,
+          "markov_hilbert_schmidt_upper": 47.505350584865994,
+          "markov_projection_error_upper": 0.024705141145711953,
+          "one_step_scaled_resolution": 146.54295097342623,
+          "peripheral_hilbert_schmidt_upper": 2.4929115705179337,
+          "peripheral_projection_error_upper": 0.0068239379196160565,
+          "sigma": 0.002,
+          "two_step_scaled_resolution": 6.553599999999999
+        },
+        "0.004": {
+          "anchored_bulk_error_upper": 0.0445888512233205,
+          "anchored_bulk_hilbert_schmidt_upper": 35.94113444949683,
+          "anchored_square_trace_norm_error_upper": 3.207135959185362,
+          "dimension": 409600,
+          "logarithmic_clock": 2.3497789082937666,
+          "markov_hilbert_schmidt_upper": 33.591355541203065,
+          "markov_projection_error_upper": 0.03493834566860743,
+          "one_step_scaled_resolution": 103.62151436839746,
+          "peripheral_hilbert_schmidt_upper": 2.3497789082937666,
+          "peripheral_projection_error_upper": 0.00965050555471307,
+          "sigma": 0.004,
+          "two_step_scaled_resolution": 6.553599999999999
+        },
+        "0.01": {
+          "anchored_bulk_error_upper": 0.07050116405803897,
+          "anchored_bulk_hilbert_schmidt_upper": 23.391004666833297,
+          "anchored_square_trace_norm_error_upper": 3.303156529131077,
+          "dimension": 65536,
+          "logarithmic_clock": 2.145966026289347,
+          "markov_hilbert_schmidt_upper": 21.24503864054395,
+          "markov_projection_error_upper": 0.05524237499553897,
+          "one_step_scaled_resolution": 65.536,
+          "peripheral_hilbert_schmidt_upper": 2.145966026289347,
+          "peripheral_projection_error_upper": 0.0152587890625,
+          "sigma": 0.01,
+          "two_step_scaled_resolution": 6.5536
+        },
+        "0.02": {
+          "anchored_bulk_error_upper": 0.0997037023739693,
+          "anchored_bulk_hilbert_schmidt_upper": 17.000394355387836,
+          "anchored_square_trace_norm_error_upper": 3.3999453463664704,
+          "dimension": 16384,
+          "logarithmic_clock": 1.977883466088977,
+          "markov_hilbert_schmidt_upper": 15.022510889298859,
+          "markov_projection_error_upper": 0.07812451593639157,
+          "one_step_scaled_resolution": 46.34095001184158,
+          "peripheral_hilbert_schmidt_upper": 1.977883466088977,
+          "peripheral_projection_error_upper": 0.021579186437577745,
+          "sigma": 0.02,
+          "two_step_scaled_resolution": 6.5536
+        },
+        "0.03": {
+          "anchored_bulk_error_upper": 0.12210787170475787,
+          "anchored_bulk_hilbert_schmidt_upper": 14.138409323010645,
+          "anchored_square_trace_norm_error_upper": 3.4677324757793384,
+          "dimension": 7282,
+          "logarithmic_clock": 1.8725805449485964,
+          "markov_hilbert_schmidt_upper": 12.26582877806205,
+          "markov_projection_error_upper": 0.09567968031092716,
+          "one_step_scaled_resolution": 37.838381942149695,
+          "peripheral_hilbert_schmidt_upper": 1.8725805449485964,
+          "peripheral_projection_error_upper": 0.02642819139383071,
+          "sigma": 0.03,
+          "two_step_scaled_resolution": 6.5538
+        }
+      },
+      "square_trace_norm_converges": false,
+      "square_trace_norm_error_exponent": 0.0
+    },
+    "2.25": {
+      "dimension_law": "ceil(65536*(0.01/sigma)^2.25)",
+      "hilbert_schmidt_converges": true,
+      "hilbert_schmidt_error_exponent": 0.75,
+      "power": 2.25,
+      "rows": {
+        "0.0001": {
+          "anchored_bulk_error_upper": 0.002229442560486088,
+          "anchored_bulk_hilbert_schmidt_upper": 215.48524066420978,
+          "anchored_square_trace_norm_error_upper": 0.9608289038008839,
+          "dimension": 2072430288,
+          "logarithmic_clock": 3.034854258770293,
+          "markov_hilbert_schmidt_upper": 212.4503864054395,
+          "markov_projection_error_upper": 0.0017469172828975955,
+          "one_step_scaled_resolution": 2072.4302880000005,
+          "peripheral_hilbert_schmidt_upper": 3.034854258770293,
+          "peripheral_projection_error_upper": 0.00048252527758849264,
+          "sigma": 0.0001,
+          "two_step_scaled_resolution": 20.72430288
+        },
+        "0.0002": {
+          "anchored_bulk_error_upper": 0.0037494605143449035,
+          "anchored_bulk_hilbert_schmidt_upper": 153.143531958861,
+          "anchored_square_trace_norm_error_upper": 1.148425310668281,
+          "dimension": 435674800,
+          "logarithmic_clock": 2.918423065872431,
+          "markov_hilbert_schmidt_upper": 150.22510889298857,
+          "markov_projection_error_upper": 0.0029379529619382146,
+          "one_step_scaled_resolution": 1232.2744218883715,
+          "peripheral_hilbert_schmidt_upper": 2.918423065872431,
+          "peripheral_projection_error_upper": 0.0008115075524066889,
+          "sigma": 0.0002,
+          "two_step_scaled_resolution": 17.426992000000002
+        },
+        "0.0005": {
+          "anchored_bulk_error_upper": 0.007454590423725337,
+          "anchored_bulk_hilbert_schmidt_upper": 97.76767459353246,
+          "anchored_square_trace_norm_error_upper": 1.4576915124680694,
+          "dimension": 55436707,
+          "logarithmic_clock": 2.7569734238004693,
+          "markov_hilbert_schmidt_upper": 95.01070116973199,
+          "markov_projection_error_upper": 0.005841169931415222,
+          "one_step_scaled_resolution": 619.8012265036922,
+          "peripheral_hilbert_schmidt_upper": 2.7569734238004693,
+          "peripheral_projection_error_upper": 0.0016134204923101147,
+          "sigma": 0.0005,
+          "two_step_scaled_resolution": 13.85917675
+        },
+        "0.001": {
+          "anchored_bulk_error_upper": 0.0125370767800276,
+          "anchored_bulk_hilbert_schmidt_upper": 69.8109719672846,
+          "anchored_square_trace_norm_error_upper": 1.7506082095785913,
+          "dimension": 11654132,
+          "logarithmic_clock": 2.628260884878466,
+          "markov_hilbert_schmidt_upper": 67.18271108240613,
+          "markov_projection_error_upper": 0.009823637752420586,
+          "one_step_scaled_resolution": 368.5360127225344,
+          "peripheral_hilbert_schmidt_upper": 2.628260884878466,
+          "peripheral_projection_error_upper": 0.0027134390276070145,
+          "sigma": 0.001,
+          "two_step_scaled_resolution": 11.654131999999999
+        },
+        "0.002": {
+          "anchored_bulk_error_upper": 0.021084761157492478,
+          "anchored_bulk_hilbert_schmidt_upper": 49.99826215538393,
+          "anchored_square_trace_norm_error_upper": 2.1088473988249987,
+          "dimension": 2449980,
+          "logarithmic_clock": 2.4929115705179337,
+          "markov_hilbert_schmidt_upper": 47.505350584865994,
+          "markov_projection_error_upper": 0.016521319869196676,
+          "one_step_scaled_resolution": 219.1328729405974,
+          "peripheral_hilbert_schmidt_upper": 2.4929115705179337,
+          "peripheral_projection_error_upper": 0.004563441288295802,
+          "sigma": 0.002,
+          "two_step_scaled_resolution": 9.79992
+        },
+        "0.004": {
+          "anchored_bulk_error_upper": 0.03546018981073902,
+          "anchored_bulk_hilbert_schmidt_upper": 35.94113444949683,
+          "anchored_square_trace_norm_error_upper": 2.550216324246311,
+          "dimension": 515045,
+          "logarithmic_clock": 2.3497789082937666,
+          "markov_hilbert_schmidt_upper": 33.591355541203065,
+          "markov_projection_error_upper": 0.027785429206887948,
+          "one_step_scaled_resolution": 130.29722379851384,
+          "peripheral_hilbert_schmidt_upper": 2.3497789082937666,
+          "peripheral_projection_error_upper": 0.007674760603851069,
+          "sigma": 0.004,
+          "two_step_scaled_resolution": 8.24072
+        },
+        "0.01": {
+          "anchored_bulk_error_upper": 0.07050116405803897,
+          "anchored_bulk_hilbert_schmidt_upper": 23.391004666833297,
+          "anchored_square_trace_norm_error_upper": 3.303156529131077,
+          "dimension": 65536,
+          "logarithmic_clock": 2.145966026289347,
+          "markov_hilbert_schmidt_upper": 21.24503864054395,
+          "markov_projection_error_upper": 0.05524237499553897,
+          "one_step_scaled_resolution": 65.536,
+          "peripheral_hilbert_schmidt_upper": 2.145966026289347,
+          "peripheral_projection_error_upper": 0.0152587890625,
+          "sigma": 0.01,
+          "two_step_scaled_resolution": 6.5536
+        },
+        "0.02": {
+          "anchored_bulk_error_upper": 0.11856187107672472,
+          "anchored_bulk_hilbert_schmidt_upper": 17.000394355387836,
+          "anchored_square_trace_norm_error_upper": 4.045254044907156,
+          "dimension": 13778,
+          "logarithmic_clock": 1.977883466088977,
+          "markov_hilbert_schmidt_upper": 15.022510889298859,
+          "markov_projection_error_upper": 0.09290115177107268,
+          "one_step_scaled_resolution": 38.97006892475301,
+          "peripheral_hilbert_schmidt_upper": 1.977883466088977,
+          "peripheral_projection_error_upper": 0.025660719305652037,
+          "sigma": 0.02,
+          "two_step_scaled_resolution": 5.5112000000000005
+        },
+        "0.03": {
+          "anchored_bulk_error_upper": 0.16070658264125193,
+          "anchored_bulk_hilbert_schmidt_upper": 14.138409323010645,
+          "anchored_square_trace_norm_error_upper": 4.570097498272744,
+          "dimension": 5533,
+          "logarithmic_clock": 1.8725805449485964,
+          "markov_hilbert_schmidt_upper": 12.26582877806205,
+          "markov_projection_error_upper": 0.12592435062790017,
+          "one_step_scaled_resolution": 28.750311354835794,
+          "peripheral_hilbert_schmidt_upper": 1.8725805449485964,
+          "peripheral_projection_error_upper": 0.03478223201335175,
+          "sigma": 0.03,
+          "two_step_scaled_resolution": 4.9797
+        }
+      },
+      "square_trace_norm_converges": true,
+      "square_trace_norm_error_exponent": 0.25
+    },
+    "2.5": {
+      "dimension_law": "ceil(65536*(0.01/sigma)^2.5)",
+      "hilbert_schmidt_converges": true,
+      "hilbert_schmidt_error_exponent": 1.0,
+      "power": 2.5,
+      "rows": {
+        "0.0001": {
+          "anchored_bulk_error_upper": 0.0007050116405803896,
+          "anchored_bulk_hilbert_schmidt_upper": 215.48524066420978,
+          "anchored_square_trace_norm_error_upper": 0.3038397031244826,
+          "dimension": 6553600000,
+          "logarithmic_clock": 3.034854258770293,
+          "markov_hilbert_schmidt_upper": 212.4503864054395,
+          "markov_projection_error_upper": 0.0005524237499553896,
+          "one_step_scaled_resolution": 6553.600000000001,
+          "peripheral_hilbert_schmidt_upper": 3.034854258770293,
+          "peripheral_projection_error_upper": 0.00015258789062499997,
+          "sigma": 0.0001,
+          "two_step_scaled_resolution": 65.536
+        },
+        "0.0002": {
+          "anchored_bulk_error_upper": 0.0014100232803039986,
+          "anchored_bulk_hilbert_schmidt_upper": 153.143531958861,
+          "anchored_square_trace_norm_error_upper": 0.43187387874559785,
+          "dimension": 1158523751,
+          "logarithmic_clock": 2.918423065872431,
+          "markov_hilbert_schmidt_upper": 150.22510889298857,
+          "markov_projection_error_upper": 0.0011048474992394345,
+          "one_step_scaled_resolution": 3276.8000019911015,
+          "peripheral_hilbert_schmidt_upper": 2.918423065872431,
+          "peripheral_projection_error_upper": 0.00030517578106456424,
+          "sigma": 0.0002,
+          "two_step_scaled_resolution": 46.34095004
+        },
+        "0.0005": {
+          "anchored_bulk_error_upper": 0.003525058196249027,
+          "anchored_bulk_hilbert_schmidt_upper": 97.76767459353246,
+          "anchored_square_trace_norm_error_upper": 0.6892859113435658,
+          "dimension": 117234361,
+          "logarithmic_clock": 2.7569734238004693,
+          "markov_hilbert_schmidt_upper": 95.01070116973199,
+          "markov_projection_error_upper": 0.00276211874456394,
+          "one_step_scaled_resolution": 1310.7200024737513,
+          "peripheral_hilbert_schmidt_upper": 2.7569734238004693,
+          "peripheral_projection_error_upper": 0.0007629394516850872,
+          "sigma": 0.0005,
+          "two_step_scaled_resolution": 29.308590249999998
+        },
+        "0.001": {
+          "anchored_bulk_error_upper": 0.007050116362831435,
+          "anchored_bulk_hilbert_schmidt_upper": 69.8109719672846,
+          "anchored_square_trace_norm_error_upper": 0.984400655684169,
+          "dimension": 20724303,
+          "logarithmic_clock": 2.628260884878466,
+          "markov_hilbert_schmidt_upper": 67.18271108240613,
+          "markov_projection_error_upper": 0.005524237465882101,
+          "one_step_scaled_resolution": 655.3600039946053,
+          "peripheral_hilbert_schmidt_upper": 2.628260884878466,
+          "peripheral_projection_error_upper": 0.0015258788969493347,
+          "sigma": 0.001,
+          "two_step_scaled_resolution": 20.724303
+        },
+        "0.002": {
+          "anchored_bulk_error_upper": 0.014100231943078922,
+          "anchored_bulk_hilbert_schmidt_upper": 49.99826215538393,
+          "anchored_square_trace_norm_error_upper": 1.4101730028244055,
+          "dimension": 3663574,
+          "logarithmic_clock": 2.4929115705179337,
+          "markov_hilbert_schmidt_upper": 47.505350584865994,
+          "markov_projection_error_upper": 0.011048474318557362,
+          "one_step_scaled_resolution": 327.68002018403257,
+          "peripheral_hilbert_schmidt_upper": 2.4929115705179337,
+          "peripheral_projection_error_upper": 0.00305175762452156,
+          "sigma": 0.002,
+          "two_step_scaled_resolution": 14.654295999999999
+        },
+        "0.004": {
+          "anchored_bulk_error_upper": 0.02820044231870124,
+          "anchored_bulk_hilbert_schmidt_upper": 35.94113444949683,
+          "anchored_square_trace_norm_error_upper": 2.0279070427704133,
+          "dimension": 647635,
+          "logarithmic_clock": 2.3497789082937666,
+          "markov_hilbert_schmidt_upper": 33.591355541203065,
+          "markov_projection_error_upper": 0.022096931737570706,
+          "one_step_scaled_resolution": 163.84013539545188,
+          "peripheral_hilbert_schmidt_upper": 2.3497789082937666,
+          "peripheral_projection_error_upper": 0.006103510581130535,
+          "sigma": 0.004,
+          "two_step_scaled_resolution": 10.36216
+        },
+        "0.01": {
+          "anchored_bulk_error_upper": 0.07050116405803897,
+          "anchored_bulk_hilbert_schmidt_upper": 23.391004666833297,
+          "anchored_square_trace_norm_error_upper": 3.303156529131077,
+          "dimension": 65536,
+          "logarithmic_clock": 2.145966026289347,
+          "markov_hilbert_schmidt_upper": 21.24503864054395,
+          "markov_projection_error_upper": 0.05524237499553897,
+          "one_step_scaled_resolution": 65.536,
+          "peripheral_hilbert_schmidt_upper": 2.145966026289347,
+          "peripheral_projection_error_upper": 0.0152587890625,
+          "sigma": 0.01,
+          "two_step_scaled_resolution": 6.5536
+        },
+        "0.02": {
+          "anchored_bulk_error_upper": 0.14099304848050348,
+          "anchored_bulk_hilbert_schmidt_upper": 17.000394355387836,
+          "anchored_square_trace_norm_error_upper": 4.813753890793575,
+          "dimension": 11586,
+          "logarithmic_clock": 1.977883466088977,
+          "markov_hilbert_schmidt_upper": 15.022510889298859,
+          "markov_projection_error_upper": 0.11047747877626786,
+          "one_step_scaled_resolution": 32.77015666730936,
+          "peripheral_hilbert_schmidt_upper": 1.977883466088977,
+          "peripheral_projection_error_upper": 0.03051556970423561,
+          "sigma": 0.02,
+          "two_step_scaled_resolution": 4.6344
+        },
+        "0.03": {
+          "anchored_bulk_error_upper": 0.21146005273580187,
+          "anchored_bulk_hilbert_schmidt_upper": 14.138409323010645,
+          "anchored_square_trace_norm_error_upper": 6.024132915991396,
+          "dimension": 4205,
+          "logarithmic_clock": 1.8725805449485964,
+          "markov_hilbert_schmidt_upper": 12.26582877806205,
+          "markov_projection_error_upper": 0.16569308728279944,
+          "one_step_scaled_resolution": 21.849820937481386,
+          "peripheral_hilbert_schmidt_upper": 1.8725805449485964,
+          "peripheral_projection_error_upper": 0.04576696545300244,
+          "sigma": 0.03,
+          "two_step_scaled_resolution": 3.7845
+        }
+      },
+      "square_trace_norm_converges": true,
+      "square_trace_norm_error_exponent": 0.5
+    }
+  },
+  "peripheral_conditioning_theorem": {
+    "bounded_in_L2": false,
+    "parity_projector_hilbert_schmidt": "Theta(sqrt(log(1/sigma)))",
+    "perron_projector_hilbert_schmidt": "Theta(sqrt(log(1/sigma)))",
+    "pure_power_interpretation": "O(sigma^-epsilon) for every epsilon>0, but not O(1)",
+    "rank_two_weighted_term_upper": "O(sqrt(log(1/sigma)))",
+    "regular_variation_index": 0.0,
+    "signed_parity_density_l2": "Theta(sqrt(log(1/sigma)))",
+    "stationary_density_l2": "Theta(sqrt(log(1/sigma)))"
+  },
+  "peripheral_kernel_derivatives": {
+    "cell_average_projection": "||E_n Q_per,sigma E_n-Q_per,sigma||_S2=O(n^-1 sigma^-3/2)",
+    "left_densities": "||pi_sigma'||_2+||g_sigma'||_2=O(sigma^-3/2)",
+    "rank_two_source_derivative": "O(sigma^-1 sqrt(log(1/sigma)))",
+    "rank_two_target_derivative": "O(sigma^-3/2)",
+    "right_parity_observable": "||h_sigma||_infinity=O(1), ||h_sigma'||_2=O(sigma^-1)"
+  },
+  "resolvent_obstruction": {
+    "circle_inequality": "sup_Gamma ||(z-K_sigma)^-1|| >= ||P_sigma||/radius(Gamma)",
+    "fixed_geometry_uniform_L2_resolvent": false,
+    "forced_lower_growth": "Omega(sqrt(log(1/sigma)))",
+    "polynomial_beta_identified": false,
+    "reduced_resolvent_upper_determined": false,
+    "rh46_beta_zero_as_uniform_O1": false
+  },
+  "scope": "small-noise Perron and negative-parity weighted Riesz terms for the folded Gaussian band-merging family, plus continuum-anchored Galerkin deflation",
+  "status": "rigorous_logarithmic_peripheral_conditioning_anchored_bulk_mesh_and_intrinsic_identification_boundary"
+}

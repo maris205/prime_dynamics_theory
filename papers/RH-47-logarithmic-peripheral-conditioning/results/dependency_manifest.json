@@ -1,0 +1,56 @@
+{
+  "external_inputs": {
+    "rh14_boundary_layer_manuscript": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/main.tex",
+      "sha256": "199d5abee0aaf7d16090cdedbb50688f177739a2d142b8e927d45e0fd5f5bb34"
+    },
+    "rh14_boundary_layer_source": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/boundary_layer.py",
+      "sha256": "1feccdd4ed925c6f31e81e3f32c8538828056703d12d812c17d7ea895ca8c9bd"
+    },
+    "rh14_boundary_layer_summary": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/results/square_root_boundary_layer_summary.json",
+      "sha256": "c73159bf27faaf9119c2d068cbd487eb8f7b39eedd321110ebec6047bf14bbbf"
+    },
+    "rh14_operator_source": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh42_fixed_noise_euclidean_contour": {
+      "path": "papers/RH-42-uniform-euclidean-parity-contour/results/uniform_euclidean_parity_certificate.json",
+      "sha256": "1792a0d7ad3ac7a8f4f636c566edb3c258839f72c7b64d801c30eb84e0b9f0eb"
+    },
+    "rh44_fixed_noise_rank_two_complement": {
+      "path": "papers/RH-44-validated-rank-two-peripheral-complement/results/validated_rank_two_peripheral_complement.json",
+      "sha256": "6b5de19bdbbb09213453fdb94afb60ce126639fa3583e2e8082b8078248067fb"
+    },
+    "rh46_small_noise_mesh_certificate": {
+      "path": "papers/RH-46-small-noise-mesh-double-pole/results/small_noise_mesh_double_pole_certificate.json",
+      "sha256": "a5fed4f35993d45f974b0886181b58531a31adf0d3e93087324f4c0e24b624f3"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "0a049356872ce666fd1c20aee2cfa627b967a8e37276d868bf777006764d2ef1",
+    "experiments/build_conditioning_certificate.py": "dd21a83080e41aae376d21d180fafa9ae34aed3c583cb6a57119f65738c5f09f",
+    "experiments/make_figures.py": "0590fb3f25baef4b64bb8cb857cf063a875c12cdcd085f902f4db0b5d035b441",
+    "experiments/run_peripheral_factor_pilot.py": "4167297e7a6e27c6e8d10705dac4c4ced5c0527901efaeee39173da7d96616b7",
+    "experiments/verify_archive.py": "63ba99499279fb3d789d51d85a25acfbb3cddf5c9965486511e4d0d607957b57",
+    "src/peripheral_conditioning/__init__.py": "15e9f88d34cda383852d391dccddfe5b99d4a5b2a1e1b1696828b3aaab5d7d77",
+    "src/peripheral_conditioning/low_rank.py": "2e20e0bc76857e6967033ea4ecb7216be65351d10f3afd3de2e2b52c9afa7496",
+    "src/peripheral_conditioning/theory.py": "b67b6330607be94c53e104196f823f7ab847c364ee95601ed3bd2e99e89a4c2b",
+    "tests/test_archived_results.py": "2d37d2d79bfb69177383ab4f3ed78a58dc58755aab62748fdb0205a5b597716e",
+    "tests/test_theory.py": "1f95d25a7e65ab9863b8d04cda60e795657ed5c64f850b78a97e4119444b11f9"
+  },
+  "publication_artifacts": {
+    ".gitignore": "659fa0e1e709143253982263bb45dd529f74f96591e94873364916c59aa84484",
+    "README.md": "f89f51f5995211823e2ac4b9552b8ceb50e22f1c84c1b03aa07d303dd9223ba2",
+    "figures/logarithmic_peripheral_conditioning.pdf": "a85928ac791c33c42dadbd72ede6d25c0b9f2fbbb347645d16a991b522307f14",
+    "figures/logarithmic_peripheral_conditioning.png": "444ffb6f6f94d5a29b430022e0801e026964d0a03b425b4a6f5aff93af6200be",
+    "logarithmic-peripheral-conditioning.pdf": "0093bb5720d6de7ce37fc50a2a0c34b0c324d4384b714afde3b6eab9325d68ed",
+    "main.tex": "6f5beb2001b1a6860651c05a791c733c3d7e4a1634dad3b6259799066bae0976",
+    "pyproject.toml": "ec9b4cc14e00d70e16f216970db3016ea3d4f797cfeddae78c30e4ca202b47a0",
+    "references.bib": "effcc2530b9381a958cd493606b7779cf66f36d2f6af5a3eb2e28106c01fe3d9",
+    "requirements.txt": "b5d7d32dbb9df1b801abc1070caf6870a54af542248e03991107040e13a81dd6"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}
