@@ -1,0 +1,102 @@
+\section{The unbalanced fixed-determinant ladders}
+\label{sec:tpc45-determinant-ladders}
+
+The upper endpoint \(N_-/\ell_+\) in
+\eqref{eq:tpc45-balanced-band} is the natural boundary of the fiber
+argument.  We now retain only the uniqueness condition
+\(q>\sqrt{N_+}\) and allow the cofactor \(r=n/q\) to be smaller than the
+source-prime scale.
+
+Fix an orbit time \(j\), a residual label \(s\), and a divisor
+\(d\mid s\).  Put \(r=s/d\).  Every row that deletes to \(s\) solves
+\begin{equation}
+ rq-dj\ell=h.
+ \label{eq:tpc45-unbalanced-determinant}
+\end{equation}
+Let \(g=(r,dj)\).  If \(g\nmid h\), there are no such rows.  Otherwise,
+for any one integral solution \((q_0,\ell_0)\), the complete ladder is
+\begin{equation}
+ \boxed{
+ q=q_0+\frac{dj}{g}t,
+ \qquad
+ \ell=\ell_0+\frac r g t,
+ \qquad t\in\Z.}
+ \label{eq:tpc45-full-determinant-ladder}
+\end{equation}
+The two affine forms have fixed nonzero cross determinant
+\begin{equation}
+ \frac{dj}{g}\ell_0-\frac r g q_0=-\frac hg.
+ \label{eq:tpc45-ladder-cross-determinant}
+\end{equation}
+In the physical packet both \(q\) and \(\ell\) must be prime, in their
+respective support windows.  This primality condition deletes points
+from \eqref{eq:tpc45-full-determinant-ladder}; it does not shorten the
+ambient ladder available to a coefficient-blind argument.
+
+\begin{proposition}[Dyadic residual-fiber capacity]
+\label{prop:tpc45-unbalanced-fiber-capacity}
+Let \(\cR\subset[R,2R]\) be a dyadic cofactor block.  For fixed
+\((j,s)\), the number of rows with \(r=s/d\in\cR\),
+\(q>\sqrt{N_+}\), and descended label \(s\) is at most
+\begin{equation}
+ C_h
+ \sum_{\substack{d\mid s\\s/d\in\cR}}
+ \left(1+\frac{L_0d}{s}\right)
+ \le C_h\tau(s)\left(1+\frac{L_0}{R}\right).
+ \label{eq:tpc45-unbalanced-fiber-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For fixed \(d\), the step of the \(\ell\)-form in
+\eqref{eq:tpc45-full-determinant-ladder} is \(r/g\).  Since
+\(g\mid h\) and the source-prime window has length \(O(L_0)\), the
+number of integral parameters is
+\[
+ O\!\left(1+\frac{gL_0}{r}\right)
+ =O_h\!\left(1+\frac{L_0d}{s}\right).
+\]
+Sum over the eligible divisors \(d\mid s\), and use \(r\ge R\).
+\end{proof}
+
+At the original equality endpoint,
+\begin{equation}
+ L_0=X^{99979/210000+o(1)},
+ \qquad
+ J=X^{133/400+o(1)}.
+ \label{eq:tpc45-L-J-scales}
+\end{equation}
+At the old threshold \(q\asymp Q\), where the cofactor scale is
+\(R\asymp J\), the unsieved ladder capacity is already
+\begin{equation}
+ \frac{L_0}{J}
+ =X^{15077/105000+o(1)}.
+ \label{eq:tpc45-best-unbalanced-capacity}
+\end{equation}
+It exceeds the endpoint allowance \(K_B=X^{1/400+o(1)}\) by the fixed
+power
+\begin{equation}
+ \frac{15077}{105000}-\frac1{400}
+ =\frac{29629}{210000}>0.
+ \label{eq:tpc45-best-capacity-deficit}
+\end{equation}
+For \(r=O(1)\), the ambient ladder has length
+\(X^{99979/210000+o(1)}\).
+
+The parametrization also explains why a standard upper-bound sieve is
+not the missing theorem.  It may remove logarithmic powers from the
+number of parameters for which both affine forms are prime, but the
+power-sized factor \(L_0/R\) remains.  More importantly, the physical
+coefficients on the surviving parameters are neither identical to an
+unweighted prime-pair count nor controlled by their cardinality.  The
+needed input is a weighted Bessel or dispersion estimate for the actual
+source and mask coefficients along
+\eqref{eq:tpc45-full-determinant-ladder}.
+
+Equation \eqref{eq:tpc45-unbalanced-determinant} is a literal
+fixed-determinant equation, not a heuristic analogy.  Nevertheless, a
+theorem for two arbitrary coefficient sequences and otherwise smooth
+weights cannot be invoked after silently inserting, in addition, the
+prime restrictions on \(q,\ell\), the M\"obius cofactor weight, and the
+moving source/mask coefficient.  Those quantifiers form the next
+arithmetic interface.

@@ -1,0 +1,118 @@
+\section{The next gate}
+\label{sec:tpc45-next-gate}
+
+The preceding descent separates three tasks that should not be merged
+under the phrase ``M\"obius randomness.''  We formulate them at the
+level of the actual coefficient packet.
+
+\subsection{A block synthesis estimate}
+
+Let \(\cF_{i,s}(R)\) denote one residual fiber of atom indices \(e\)
+with cofactor \(r\asymp R\), and let \(b_{i,e}\) be the inherited
+complex atom.  The
+support argument gives
+\begin{equation}
+ \sum_{i,s}
+ \left|\sum_{e\in\cF_{i,s}(R)}b_{i,e}\right|^2
+ \ll_h X^{o(1)}\left(1+\frac{L_0}{R}\right)
+ \sum_{i,e}|b_{i,e}|^2.
+ \label{eq:tpc45-support-block-synthesis}
+\end{equation}
+The squared norm of the exact grouping operator is the actual maximal
+fiber size.  Thus \eqref{eq:tpc45-support-block-synthesis} is sharp when
+its ambient upper bound is replaced by that maximal size; the displayed
+upper bound need not itself be attained.  A power improvement below the
+actual support frontier must therefore use the source phases,
+opposite-row masks, or cancellation between different residual labels.
+
+The natural positive target is a coefficient-specific replacement
+\begin{equation}
+ \sum_{i,s}
+ \left|\sum_{e\in\cF_{i,s}(R)}b_{i,e}\right|^2
+ \ll X^{o(1)}\cB(R)
+ \sum_{i,e}|b_{i,e}|^2,
+ \label{eq:tpc45-target-block-Bessel}
+\end{equation}
+where \(\cB(R)\) is strictly smaller than \(1+L_0/R\) on at least one
+new cofactor range.  Even a small power improvement would enlarge the
+physical band in \cref{sec:tpc45-residual-freezing}.  Estimate
+\eqref{eq:tpc45-target-block-Bessel} is a target, not an assumption used
+in any unconditional theorem above.
+
+\subsection{The very-large-prime Bessel gate}
+
+For the low-averaged rough projection, the exact missing estimate is
+\begin{equation}
+ \boxed{
+ \left\|\sum_{p>y}x_p\right\|^2
+ \ll X^{o(1)}K_B
+       \sum_{p>y}\|x_p\|^2.}
+ \label{eq:tpc45-target-high-Bessel}
+\end{equation}
+Together with the identity in \cref{sec:tpc45-affine-gram}, this would
+place that projected sector within the endpoint budget.  It would not
+by itself fix the signs below \(y\).  For the complete physical affine
+face, a sufficient pair of estimates is
+\begin{align}
+ \|v_0\|^2
+ &\ll X^{o(1)}K_B\cD_0,
+ \label{eq:tpc45-target-base-vector}\\
+ \left\|\sum_{p>y}v_p\right\|^2
+ &\ll X^{o(1)}K_B\cD_0.
+ \label{eq:tpc45-target-physical-synthesis}
+\end{align}
+Indeed the triangle inequality then bounds
+\(\|v_0-\sum_pv_p\|^2\).  The first line is a base-sector problem and
+the second is the physical high-prime synthesis problem.  Neither
+follows from the pure rough projection, because lower-sign averaging
+deletes their cross terms.
+
+\subsection{The required determinant input}
+
+After dyadic decomposition in the cofactor and source variables, a
+candidate analytic theorem would have to estimate the fixed equation
+\begin{equation}
+ rp-dj\ell=h
+ \label{eq:tpc45-next-fixed-determinant}
+\end{equation}
+with all of the following features retained:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item \(p\) and \(\ell\) are prime;
+ \item the cofactor and source-divisor signs contribute M\"obius
+       weights rather than smooth cutoffs;
+ \item the actual projective mask remains in the coefficient;
+ \item \(h\) is fixed;
+ \item the estimate is vector-valued and stable under the preceding
+       physical prime restrictions; and
+ \item the final normalization is the atomic energy, not the ambient
+       number of integer solutions.
+\end{enumerate}
+The Bettin--Chandee fixed-determinant corollary reviewed here lacks one
+of these arithmetic coefficient slots; see
+\cref{sec:tpc45-literature}.  Proving a theorem with all six features is
+the direct route to \eqref{eq:tpc45-target-block-Bessel}.  Proving it
+after averaging \(h\), smoothing one arithmetic slot, or restricting to
+a favorable cofactor block would still be a meaningful weaker theorem,
+but it would have to be labelled accordingly.
+
+\subsection{A reversible research program}
+
+The exact descent leaves several logically independent doors.
+\begin{enumerate}[label=\textbf{Door \Alph*.},leftmargin=3.7em]
+ \item Prove a power saving over
+ \eqref{eq:tpc45-support-block-synthesis} on one additional cofactor
+ block and enlarge the unconditional physical band.
+ \item Establish a three-arithmetic-weight, fixed-\(h\) determinant
+ estimate strong enough for \eqref{eq:tpc45-target-high-Bessel}.
+ \item First prove an averaged-shift or smoothed-slot analogue, thereby
+ identifying which of fixed \(h\), the third coefficient, or the
+ vector-energy normalization is the dominant obstruction.
+ \item Construct an actual-mask coefficient packet saturating the
+ support norm.  Such a result would be a sharp negative boundary for
+ support-only methods, without asserting that the physical TPC
+ coefficients themselves saturate it.
+\end{enumerate}
+The current paper completes the geometric reduction needed before any
+of these analytic attacks.  Failure at one door does not invalidate the
+physical-band theorem, and success in an averaged or smoothed model
+must not be reported as success at the fixed physical endpoint.

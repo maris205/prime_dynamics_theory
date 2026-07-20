@@ -1,0 +1,144 @@
+\section{Sharp operator boundaries and the actual Walsh spectrum}
+\label{sec:tpc45-boundaries}
+
+The fiber loss in the preceding sections is an exact operator norm, not
+an artifact of Cauchy--Schwarz.  We first record the finite-dimensional
+statement.
+
+Let \(E\) be a finite atom set, let \(\pi:E\to W\) be a label map, and
+define
+\begin{equation}
+ (G_\pi x)(w):=\sum_{e:\pi(e)=w}x(e).
+ \label{eq:tpc45-grouping-operator}
+\end{equation}
+
+\begin{proposition}[Sharp grouping norm]
+\label{prop:tpc45-sharp-grouping-norm}
+If
+\begin{equation}
+ \rho(\pi):=\max_w|\pi^{-1}(w)|,
+ \label{eq:tpc45-grouping-multiplicity}
+\end{equation}
+then
+\begin{equation}
+ \boxed{
+ \|G_\pi\|_{\ell^2(E)\to\ell^2(W)}^2=\rho(\pi).}
+ \label{eq:tpc45-exact-grouping-norm}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Cauchy--Schwarz on each fiber gives the upper bound.  On a fiber of
+maximal cardinality, take \(x\) constant and nonzero and set it to zero
+off that fiber.  The quotient of the squared norms is exactly the fiber
+cardinality.
+\end{proof}
+
+For large-prime cofactor descent, all atoms in one descended fiber have
+the same physical M\"obius phase.  Indeed, if \(s=dr\), then
+\begin{equation}
+ \mu(d)\mu(qr)=-\mu(dr)=-\mu(s).
+ \label{eq:tpc45-fiber-physical-coherence}
+\end{equation}
+Thus M\"obius does not cancel different points of a fixed-determinant
+ladder after their common large prime has been removed.  Any power
+improvement over the support exponent in
+\eqref{eq:tpc45-unbalanced-fiber-bound}, beyond possible logarithmic
+thinning from primality, must use the actual complex source/mask
+coefficients or cancellation between different residual labels \(s\);
+it cannot arise from independent M\"obius signs inside one fiber.
+
+\subsection{What is proved directly about
+\texorpdfstring{\(C_X(\kappa)\)}{C-X(kappa)}}
+
+Let \(C_X(\kappa)\) be the actual Walsh coefficient defined by
+\begin{equation}
+ Z_0(\varepsilon)
+ =\cD_0+\sum_{\kappa>1}C_X(\kappa)\chi_\kappa(\varepsilon).
+ \label{eq:tpc45-CX-definition}
+\end{equation}
+Every equality label contains at most one prime from
+\(\cP_{\rm bal}\).  Therefore
+\begin{equation}
+ C_X(\kappa)=0
+ \quad\text{if \(\kappa\) contains at least three primes from
+ \(\cP_{\rm bal}\)}.
+ \label{eq:tpc45-no-three-band-primes}
+\end{equation}
+There is also no pure singleton coefficient:
+\begin{equation}
+ C_X(q)=0
+ \qquad(q\in\cP_{\rm bal}).
+ \label{eq:tpc45-no-pure-singleton}
+\end{equation}
+Indeed, a pair kernel equal to \(q\) would require an untouched label
+\(u\ge d_-N_-\) to equal a touched label with \(q\) deleted, which is
+at most \(d_+\sqrt{N_+}\).  This contradicts
+\eqref{eq:tpc45-touched-untouched-separation}.
+
+For distinct \(p,q\in\cP_{\rm bal}\), a pure coefficient \(C_X(pq)\)
+can occur only when the two labels delete to the same residual label
+\(s\).  Introduce the Hilbert space with coordinates \((i,s)\), and
+let \(x_q(i,s)\) be the coefficient of the unique row carrying \(q\)
+and deleting to \(s\), with value zero when that row is absent.
+Uniqueness follows because two such rows would have the same original
+label \(qs\) in one coordinate, contrary to
+\cref{lem:tpc45-label-injectivity}.  Then
+\begin{align}
+ C_X(pq)&=2\operatorname{Re}\langle x_p,x_q\rangle,
+ \label{eq:tpc45-Cpq-Gram}\\
+ \cD_{\rm bal}
+ :=\sum_{q\in\cP_{\rm bal}}\|x_q\|^2
+ &\le\cD_0.
+ \label{eq:tpc45-band-atom-energy}
+\end{align}
+The second line is the atomic diagonal of the band-touched atoms:
+equality-label injectivity makes each fixed \((i,s,q)\) entry a
+singleton, and the same atom cannot carry two band primes.
+
+Averaging every prime sign outside the band leaves the exact quadratic
+projection
+\begin{equation}
+ \boxed{
+ \E_{\varepsilon_a:a\notin\cP_{\rm bal}}Z_0(\varepsilon)
+ =\cD_0+
+  \sum_{\substack{p<q\\p,q\in\cP_{\rm bal}}}
+  C_X(pq)\varepsilon_p\varepsilon_q.}
+ \label{eq:tpc45-exact-band-quadratic}
+\end{equation}
+At the physical band point this is equivalently
+\begin{equation}
+ \E_{a\notin\cP_{\rm bal}}
+ Z_0(-\one_{\cP_{\rm bal}},\varepsilon)
+ =\cD_0-\cD_{\rm bal}
+  +\left\|\sum_{q\in\cP_{\rm bal}}x_q\right\|^2.
+ \label{eq:tpc45-exact-band-Gram-collapse}
+\end{equation}
+Combining this identity with
+\eqref{eq:tpc45-band-frozen-mean} proves the actual-coefficient estimate
+\begin{equation}
+ \cD_0+
+ \sum_{\substack{p<q\\p,q\in\cP_{\rm bal}}}C_X(pq)
+ \le X^{o(1)}\cD_0.
+ \label{eq:tpc45-pure-band-spectrum-bound}
+\end{equation}
+This controls a genuine polynomial band of the physical rough spectrum;
+it is not an estimate for every kernel containing a band prime.
+
+\subsection{The sharp continuation boundary}
+
+If the upper endpoint of \(\cP_{\rm bal}\) is crossed, cofactors
+\(r<L_0\) appear and the exact norm in
+\cref{prop:tpc45-sharp-grouping-norm} may cost \(L_0/r\).  If a physical
+fiber contains \(H\) atoms, coefficients of equal phase supported on
+that fiber give grouped energy \(H\) times their atomic energy.  This is
+a sharp statement conditional on the declared support; it neither
+asserts that the actual masks choose equal phases nor proves that a
+fiber of polynomial cardinality occurs.
+
+Accordingly, the results above do not show that the residual TPC--44
+correlation product is small for all high primes, and they do not show
+that it is large.  They prove a physical freezing theorem on the
+balanced band and identify the first adjacent range where support and
+diagonal information cease to suffice.  No fixed-shift Chowla estimate,
+prime-pair asymptotic, parity breach, or twin-prime conclusion follows.

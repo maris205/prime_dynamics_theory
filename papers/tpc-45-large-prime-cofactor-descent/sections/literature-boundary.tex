@@ -1,0 +1,217 @@
+\section{The present analytic boundary}
+\label{sec:tpc45-literature}
+
+The congruence and determinant reformulations above place the remaining
+TPC term near several established dispersion and
+Kloosterman--fraction estimates.  The resemblance is exact at the level
+of the equation, but not at the level of the coefficient class or of the
+available exponent range.  We record the distinction explicitly.  In
+this section \(Q_{\mathrm{mod}}\) denotes a modulus scale; it is not the
+row-length parameter used elsewhere in the paper.
+
+\subsection{Unbalanced-convolution dispersion}
+
+Fouvry and Radziwi{\l}{\l} prove distribution estimates for a convolution
+\(
+  \sum_{mn\equiv a\, (\bmod q)}\alpha_m\beta_n
+\)
+averaged over \(q\asymp Q_{\mathrm{mod}}\), with divisor-bounded
+coefficients and a Siegel--Walfisz hypothesis on the short sequence
+\cite[Corollary~1.1]{FR2022}.  With \(MN\asymp X\), their first range is
+\begin{equation}
+ \exp\!\bigl((\log X)^\epsilon\bigr)
+ \le N
+ \le Q_{\mathrm{mod}}^{-11/12}X^{17/36-\epsilon}.
+ \label{eq:tpc45-fr-first-range}
+\end{equation}
+Their two other stated ranges have, respectively,
+\begin{equation}
+ \begin{aligned}
+  N&\le X^{7/90-\epsilon},
+  &Q_{\mathrm{mod}}&\le X^{53/105-\epsilon},\\
+  N&\le X^{101/630-\epsilon},
+  &Q_{\mathrm{mod}}&\le X^{53/105-\epsilon},
+ \end{aligned}
+ \label{eq:tpc45-fr-other-ranges}
+\end{equation}
+with the further hypotheses specified there.  Their prime-modulus
+variant removes the Siegel--Walfisz input but retains the power range in
+\eqref{eq:tpc45-fr-first-range} \cite[Theorem~1.2]{FR2022}.
+
+The algebraic match with our incidence relation is literal:
+\[
+ p\mid(mj+h)
+ \quad\Longleftrightarrow\quad
+ mj\equiv-h\pmod p.
+\]
+The parameter match fails, however.  At the first large-prime block
+\(p\asymp Q_{\mathrm{mod}}=X^{1/2}\),
+\eqref{eq:tpc45-fr-first-range} permits only
+\[
+ N\le X^{17/36-11/24-\epsilon}
+   =X^{1/72-\epsilon},
+\]
+whereas the TPC orbit variable has length
+\[
+ J=X^{133/400+o(1)}.
+\]
+The exponent deficit is
+\begin{equation}
+ \frac{133}{400}-\frac1{72}
+ =\frac{1147}{3600}.
+ \label{eq:tpc45-fr-exponent-deficit}
+\end{equation}
+The alternatives in \eqref{eq:tpc45-fr-other-ranges} are also shorter than
+\(J\).  Moreover, successive physical prime restrictions produce
+coefficient fields depending on the preceding restrictions, rather than
+a single fixed product \(\alpha_m\beta_j\).  Thus the theorem has the
+right congruence but neither the required length nor the required
+restriction-stable coefficient interface.
+
+Wright's partially fixed-modulus Kloosterman estimate improves the first
+unbalanced range to
+\begin{equation}
+ N\le Q_{\mathrm{mod}}^{-33/28}X^{17/28-\epsilon}
+ \label{eq:tpc45-wright-first-range}
+\end{equation}
+and improves the accompanying modulus cap from \(53/105\) to \(45/89\)
+in the other two cases \cite[Corollary~2.2]{Wright2026}.  At
+\(Q_{\mathrm{mod}}=X^{1/2}\), \eqref{eq:tpc45-wright-first-range} becomes
+\[
+ N\le X^{17/28-33/56-\epsilon}
+   =X^{1/56-\epsilon}.
+\]
+Consequently the gap to the TPC length is still
+\begin{equation}
+ \frac{133}{400}-\frac1{56}
+ =\frac{881}{2800}.
+ \label{eq:tpc45-wright-exponent-deficit}
+\end{equation}
+The advance is genuine, but it does not enter the balanced TPC regime.
+
+\subsection{The fixed-determinant coefficient-slot barrier}
+
+Bettin and Chandee estimate trilinear forms with Kloosterman fractions
+for three arbitrary coefficient sequences \cite[Theorem~1]{BC2018}.
+Their fixed-determinant consequence concerns
+\begin{equation}
+ m_1n_2-m_2n_1=\Delta
+ \label{eq:tpc45-bc-fixed-determinant}
+\end{equation}
+and places arbitrary arithmetic sequences on \(n_1,n_2\), while the
+weights on \(m_1,m_2\) are smooth dyadic functions with controlled
+derivatives \cite[Corollary~1]{BC2018}.  Hence this corollary has two,
+not three, arbitrary arithmetic coefficient slots.
+
+Our cofactor equation
+\begin{equation}
+ pt-mj=h
+ \label{eq:tpc45-literature-determinant}
+\end{equation}
+has the same determinant shape.  Its actual coefficient system contains
+the prime restriction in \(p\), the M\"obius weight \(\mu(t)\), and the
+source weight \(\mu(d_\rho)\) attached to
+\(m_\rho=\ell_\rho d_\rho\), together with the inherited masks in \(m_\rho\).
+Only the orbit variable \(j\) is naturally smooth.  Assigning two of
+\(p,t,m\) to the arbitrary slots in \eqref{eq:tpc45-bc-fixed-determinant}
+therefore leaves the third nonsmooth arithmetic sequence in a slot for
+which the corollary requires a smooth weight.  The three-sequence
+trilinear theorem does not by itself restore this lost slot in the
+fixed-\(h\) determinant corollary.  This is the precise
+\emph{third-coefficient barrier}; it is not merely a difference of
+notation.
+
+\begin{remark}[A diagnostic exponent ledger, not a theorem]
+\label{rem:tpc45-bc-ledger-not-theorem}
+It is informative to make a deliberately counterfactual calculation.
+Suppose that two TPC variables could be replaced by admissible smooth
+weights and that the remaining arbitrary variables had lengths
+\[
+ P=X^{267/400},\qquad T=X^{133/400},\qquad PT=X.
+\]
+Substituting these lengths into the error term of
+\cite[Corollary~1]{BC2018} produces the formal exponent
+\[
+ \frac12+\frac7{20}
+ +\frac14\frac{267}{400}
+ =1+\frac{27}{1600}.
+\]
+A formal comparison with an \(X^{1+1/400+o(1)}\) endpoint budget then
+leaves \(23/1600\) in the exponent.  This computation is
+\emph{not an application} of the Bettin--Chandee corollary: the
+counterfactual smoothing discards an actual arithmetic weight, and a
+scalar determinant-count error is not automatically the vector
+Gram/Bessel energy required here.  It is neither a lower bound nor an
+impossibility theorem.  It records only that the most naive
+two-arbitrary-slot substitution would not close the desired exponent
+ledger.
+\end{remark}
+
+\subsection{A withdrawn bilinear claim}
+
+The first version of the 2026 preprint of Dong, Robles and Zeindler
+announced an improved bilinear Kloosterman--fraction bound and a saving
+of \(1/12\) over the trivial estimate in the balanced case
+\cite[Theorems~1.4--1.6]{DRZ2026}.  The authors subsequently withdrew
+the paper.  The withdrawal notice states that a missing factor in one
+equation changes \(L^5\) to \(L^7\), so the argument no longer yields
+the claimed improved bound \cite{DRZ2026}.  We therefore do not use the
+announced \(1/12\) saving as a theorem or as an input anywhere in this
+paper.
+
+There is a second, logically independent boundary.  Even if the
+announced bilinear estimate were available, it concerns a form with two
+arbitrary sequences and a Kloosterman phase.  No fixed-\(h\)
+determinant corollary with the three arithmetic weights in
+\eqref{eq:tpc45-literature-determinant} is supplied.  Thus that announced
+estimate would improve a possible analytic subroutine, but would not by
+itself cross the third-coefficient interface.
+
+\subsection{Why the Bourgain--Sarnak--Ziegler criterion is not a black box}
+
+The Bourgain--Sarnak--Ziegler criterion gives a powerful route from
+prime-dilate decorrelation to multiplicative orthogonality.  In one
+form, if \(|F|\le1\), \(|\nu|\le1\) is multiplicative, and
+\[
+ \left|\sum_{m\le M}F(p_1m)\overline{F(p_2m)}\right|
+ \le \tau M
+\]
+uniformly for the relevant distinct primes \(p_1,p_2\), then
+\[
+ \left|\sum_{n\le N}\nu(n)F(n)\right|
+ \le 2\sqrt{\tau\log(1/\tau)}\,N
+\]
+for sufficiently large parameters \cite[Theorem~2]{BSZ2013}.
+
+This criterion identifies the right qualitative phenomenon, but it is
+not directly applicable to the TPC coefficient.  Here the coefficient
+is sparse and depends on the scale \(X\); its normalization is governed
+by a projective energy rather than by the ambient interval length.
+More importantly, after a physical restriction at one prime, the
+coefficient used at the next prime is a new restricted field, so the
+needed correlations involve restriction-dependent pairs rather than
+the dilates of one fixed bounded function \(F\).  Dividing by an
+\(\ell^\infty\) norm and applying the criterion would return an
+ambient-length estimate, not the endpoint Gram-energy bound.  A usable
+BSZ-type reduction would therefore first require a new
+restriction-stable, energy-normalized prime-dilate theorem; the cited
+criterion does not supply it.
+
+\subsection{Exact frontier statement}
+
+The preceding comparisons do not show that
+\eqref{eq:tpc45-literature-determinant} is intractable.  They show only
+that the following interface is absent from the cited black boxes:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item the shift \(h\) is fixed rather than averaged;
+ \item the prime, cofactor-M\"obius, and source-M\"obius/mask weights
+       remain simultaneously present;
+ \item the estimate is stable under the projective and physical
+       restrictions inherited from the TPC packet; and
+ \item the output controls a vector-valued Bessel/Gram synthesis norm,
+       not only a scalar congruence discrepancy.
+\end{enumerate}
+Any future positive input must address these four points explicitly.
+An estimate averaged over \(h\), or one obtained after replacing a
+nonsmooth coefficient by a smooth weight, may be valuable in its own
+right but does not close the fixed physical TPC gate.

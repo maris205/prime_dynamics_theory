@@ -1,0 +1,196 @@
+\section{Exact cofactor descent on a global prime band}
+\label{sec:tpc45-cofactor-descent}
+
+We begin with a prime band defined from the whole equality packet, not
+from one selected row.  This distinction is necessary because the sign
+attached to a prime is global: the same prime cannot be frozen in one
+occurrence and left random in another.
+In this section and in the determinant-ladder discussion we denote a
+band prime by \(q\); the generic incidence and Gram sections denote the
+same prime role by \(p\).
+
+Let \(\mathfrak A_X\) be the set of nonzero equality atoms.  An atom
+has a coordinate \(i\), whose data include an orbit time \(j=j(i)\),
+and a source row
+\(\alpha=(\ell_\alpha,d_\alpha)\).  Put
+\begin{equation}
+ n_{\alpha,j}=\ell_\alpha d_\alpha j+h,
+ \qquad
+ u_{\alpha,j}=d_\alpha n_{\alpha,j}.
+ \label{eq:tpc45-n-u}
+\end{equation}
+On the nonzero support, \(d_\alpha\) and \(n_{\alpha,j}\) are
+squarefree and
+\begin{equation}
+ (d_\alpha,n_{\alpha,j})=(d_\alpha,h)=1.
+ \label{eq:tpc45-source-target-coprime}
+\end{equation}
+Use the global target endpoints \(N_\pm\) from the actual incidence
+interface, chosen as the extrema of the nonzero support, and define
+\begin{equation}
+ \ell_+:=\max_\alpha\ell_\alpha.
+ \label{eq:tpc45-support-extrema}
+\end{equation}
+Empty packets are harmless, so we suppose \(\mathfrak A_X\ne\varnothing\).
+The fixed dyadic supports give
+\begin{equation}
+ N_-=X^{1+o(1)},
+ \qquad N_+=X^{1+o(1)},
+ \qquad
+ \ell_+=X^{\lambda_L+o(1)},
+ \qquad
+ \lambda_L=\frac{99979}{210000}.
+ \label{eq:tpc45-extremal-scales}
+\end{equation}
+
+\begin{definition}[Global cofactor band]
+\label{def:tpc45-global-cofactor-band}
+Let \(R=R_X\) satisfy
+\begin{equation}
+ 1\le R<\frac{N_-}{\sqrt{N_+}},
+ \label{eq:tpc45-R-range}
+\end{equation}
+and set
+\begin{equation}
+ \cP_R:=
+ \left\{q\in\mathbb P:
+  \sqrt{N_+}<q\le \frac{N_-}{R}
+ \right\}.
+ \label{eq:tpc45-global-cofactor-band}
+\end{equation}
+Every sign \(\varepsilon_q\), \(q\in\cP_R\), will be set to
+the physical value \(-1\) in every occurrence of \(q\).
+\end{definition}
+
+If \(R=X^{\theta+o(1)}\), \(0\le\theta<1/2\), the band is
+asymptotically nonempty and has endpoint exponents \(1/2\) and
+\(1-\theta\).  The clean balanced choice \(R=\ell_+\) will be denoted by
+\begin{equation}
+ \cP_{\rm bal}:=\cP_{\ell_+}.
+ \label{eq:tpc45-balanced-band}
+\end{equation}
+For this choice the endpoint exponents are
+\begin{equation}
+ \frac12=\frac{105000}{210000},
+ \qquad
+ 1-\lambda_L=\frac{110021}{210000};
+ \label{eq:tpc45-band-endpoint-exponents}
+\end{equation}
+their gap is
+\begin{equation}
+ \frac{5021}{210000}>0.
+ \label{eq:tpc45-band-width-exponent}
+\end{equation}
+Constants in the dyadic endpoints cannot close this fixed power gap.
+
+\begin{lemma}[Unique large prime and controlled cofactor]
+\label{lem:tpc45-unique-balanced-cofactor}
+Suppose that \(q\in\cP_R\) divides a nonzero target
+\(n_{\alpha,j}\), and write
+\begin{equation}
+ n_{\alpha,j}=qr.
+ \label{eq:tpc45-target-q-r}
+\end{equation}
+Then \(q\) is the only prime from \(\cP_R\) dividing that
+target, and
+\begin{equation}
+ R\le r<\sqrt{N_+}.
+ \label{eq:tpc45-balanced-r-range}
+\end{equation}
+Moreover
+\begin{equation}
+ s:=d_\alpha r
+ \label{eq:tpc45-residual-label}
+\end{equation}
+is squarefree, \((q,s)=1\), and
+\begin{equation}
+ u_{\alpha,j}=qs.
+ \label{eq:tpc45-u-q-s}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Two primes larger than \(\sqrt{N_+}\) have product larger than every
+target in the packet, which proves uniqueness.  The definition of the
+upper endpoint of \(\cP_R\) gives
+\[
+ r=\frac{n_{\alpha,j}}q
+ \ge \frac{N_-}{q}\ge R,
+\]
+whereas \(q>\sqrt{N_+}\) and \(n_{\alpha,j}\le N_+\) give the strict
+upper bound in \eqref{eq:tpc45-balanced-r-range}.  Squarefreeness and
+\eqref{eq:tpc45-source-target-coprime} show that \(q,r,d_\alpha\)
+are pairwise coprime and squarefree.  The last two assertions follow.
+\end{proof}
+
+Since \(d_+=X^{10049/52500+o(1)}\) whereas
+\(\sqrt{N_+}=X^{1/2+o(1)}\), one has
+\begin{equation}
+ d_+<\sqrt{N_+}
+ \label{eq:tpc45-source-below-band}
+\end{equation}
+for all sufficiently large \(X\).  Hence no prime in \(\cP_R\) divides
+a source factor \(d_\alpha\); band incidence in the fused label is
+exactly the target incidence in \(n_{\alpha,j}\).
+
+For the chosen \(R\), define each nonzero atom's descended label and
+deterministic descent sign by
+\begin{equation}
+ (w_{\alpha,j},\eta_{\alpha,j})
+ :=
+ \begin{cases}
+  (u_{\alpha,j}/q,-1),
+   &q\in\cP_R,\ q\mid n_{\alpha,j},\\
+  (u_{\alpha,j},1),&
+   \text{if no prime of \(\cP_R\) divides \(n_{\alpha,j}\)}.
+ \end{cases}
+ \label{eq:tpc45-descended-label-sign}
+\end{equation}
+The first case is unambiguous by
+\cref{lem:tpc45-unique-balanced-cofactor}, and there
+\(w_{\alpha,j}=s=d_\alpha r\).
+
+\begin{proposition}[Exact global-band character descent]
+\label{prop:tpc45-character-descent}
+Let \(\varepsilon\) denote the signs outside \(\cP_R\).  For
+every nonzero equality atom,
+\begin{equation}
+ \boxed{
+ \chi_{u_{\alpha,j}}
+  (-\one_{\cP_R},\varepsilon)
+ =\eta_{\alpha,j}\chi_{w_{\alpha,j}}(\varepsilon).}
+ \label{eq:tpc45-exact-character-descent}
+\end{equation}
+At the all--minus point of the remaining signs,
+\begin{equation}
+ \eta_{\alpha,j}\mu(w_{\alpha,j})
+ =\mu(u_{\alpha,j}).
+ \label{eq:tpc45-exact-physical-sign}
+\end{equation}
+Thus the descended packet has exactly the original physical M\"obius
+corner.
+\end{proposition}
+
+\begin{proof}
+Untouched atoms give both identities trivially.  On a touched atom,
+\(u=qs\), so
+\[
+ \chi_u(-\one_{\cP_R},\varepsilon)
+ =-\chi_s(\varepsilon).
+\]
+This is \eqref{eq:tpc45-exact-character-descent}.  Since \(q\) and
+\(s\) are coprime and squarefree,
+\[
+ -\mu(s)=\mu(q)\mu(s)=\mu(qs)=\mu(u),
+\]
+which proves \eqref{eq:tpc45-exact-physical-sign}.
+\end{proof}
+
+The use of the full-support quantities \(N_-\) and \(R\) in
+\eqref{eq:tpc45-global-cofactor-band} is essential.  If a prime were selected
+because one of its occurrences happened to have \(r\ge L_0\), another
+occurrence of the same global prime could have a smaller cofactor.  The
+uniform inequality \(r\ge R\) for every occurrence is what makes the
+compression in the next section valid for the whole packet.  The clean
+choice \(R=\ell_+\) is the first scale at which the fiber cost below is
+subpolynomial without additional cancellation.

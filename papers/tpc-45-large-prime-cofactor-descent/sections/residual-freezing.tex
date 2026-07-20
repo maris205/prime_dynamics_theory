@@ -1,0 +1,285 @@
+\section{Robust freezing after cofactor descent}
+\label{sec:tpc45-residual-freezing}
+
+We now combine the exact band descent with the face argument of
+TPC--44.  The proof is included because the diagonal loss
+\(\rho_R\) creates a useful quantitative tradeoff between the width of
+the physical band and the logarithmic low-prime cutoff.
+Write the inherited endpoint budget as
+\begin{equation}
+ K_B=X^{1/400+\kappa_X},
+ \qquad \kappa_X=o(1).
+ \label{eq:tpc45-KB-definition}
+\end{equation}
+
+Let \(\widetilde S_i=\sum_w\widetilde b_{i,w}\chi_w\) be the grouped
+packet in \eqref{eq:tpc45-grouped-coefficients}; none of its labels is
+divisible by a prime in \(\cP_R\).  Fix \(z<\sqrt{N_+}\), so the low
+cutoff and the band are disjoint.  Split every descended label uniquely
+as
+\begin{equation}
+ w=a b,
+ \qquad \Pplus(a)\le z<\Pminus(b),
+ \label{eq:tpc45-descended-low-high-split}
+\end{equation}
+and let \(\widetilde\cA_z\) be the set of low parts \(a\) that occur.
+Put
+\begin{equation}
+ \widetilde\nu_z:=|\widetilde\cA_z|.
+ \label{eq:tpc45-descended-projection-count}
+\end{equation}
+For a remaining high-prime environment \(\xi=(\varepsilon_p)_{p>z,
+p\notin\cP_R}\), define
+\begin{equation}
+ H_{i,a}(\xi)
+ :=\sum_{w_{\le z}=a}
+   \widetilde b_{i,w}\chi_{w_{>z}}(\xi),
+ \qquad
+ W_z(\xi):=\sum_i\sum_{a\in\widetilde\cA_z}|H_{i,a}(\xi)|^2.
+ \label{eq:tpc45-descended-Wz}
+\end{equation}
+
+\begin{lemma}[Robust descended face]
+\label{lem:tpc45-robust-descended-face}
+For every \(L\ge1\),
+\begin{equation}
+ \Pp_\xi\!\left(
+  \sup_{\sigma_{p\le z}}
+  Z_0(-\one_{\cP_R},\sigma,\xi)
+  >L\widetilde\nu_z\widetilde\cD
+ \right)
+ \le L^{-1}.
+ \label{eq:tpc45-robust-descended-tail}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Distinct descended labels with the same low part have distinct high
+parts.  Walsh orthogonality therefore gives
+\begin{equation}
+ \E_\xi W_z(\xi)=\widetilde\cD.
+ \label{eq:tpc45-descended-W-mean}
+\end{equation}
+For every assignment \(\sigma\) below \(z\),
+\begin{equation}
+ \widetilde S_i(\sigma,\xi)
+ =\sum_{a\in\widetilde\cA_z}\chi_a(\sigma)H_{i,a}(\xi).
+ \label{eq:tpc45-descended-coordinate-grouping}
+\end{equation}
+Cauchy--Schwarz and then summation in \(i\) give
+\begin{equation}
+ \sup_\sigma Z_0(-\one_{\cP_R},\sigma,\xi)
+ \le\widetilde\nu_zW_z(\xi).
+ \label{eq:tpc45-descended-face-Cauchy}
+\end{equation}
+Markov's inequality and \eqref{eq:tpc45-descended-W-mean} prove the
+claim.
+\end{proof}
+
+Every untouched descended label is an original label of size at most
+\begin{equation}
+ X^{\lambda_0+o(1)},
+ \qquad
+ \lambda_0=1+\frac{10049}{52500}
+ =\frac{62549}{52500},
+ \label{eq:tpc45-full-descended-label-size}
+\end{equation}
+while touched labels are shorter by
+\eqref{eq:tpc45-touched-label-exponent}.  The standard Rankin argument
+for squarefree \(z\)-smooth integers gives, when
+\(z=(\log X)^A\) and \(A>1\),
+\begin{equation}
+ \widetilde\nu_z
+ \le X^{\lambda_0(1-1/A)+o(1)}.
+ \label{eq:tpc45-full-Rankin-projection}
+\end{equation}
+For completeness, choose
+\(s=1-1/A+(\log\log X)^{-1/2}\) and bound the number of possible low
+parts by
+\begin{equation}
+ X^{(\lambda_0+o(1))s}
+ \prod_{p\le z}(1+p^{-s}).
+ \label{eq:tpc45-Rankin-product}
+\end{equation}
+The logarithm of the product is
+\(O_A(z^{1-s})=o(\log X)\), which proves
+\eqref{eq:tpc45-full-Rankin-projection}.
+
+\begin{theorem}[Band/cutoff tradeoff]
+\label{thm:tpc45-band-cutoff-tradeoff}
+Suppose
+\begin{equation}
+ R=X^{\theta+o(1)},
+ \qquad 0\le\theta<\frac12,
+ \qquad z=(\log X)^A,\qquad A>1,
+ \label{eq:tpc45-tradeoff-parameters}
+\end{equation}
+and
+\begin{equation}
+ \boxed{
+ (\lambda_L-\theta)_+
+ +\lambda_0\left(1-\frac1A\right)
+ <\frac1{400}.}
+ \label{eq:tpc45-tradeoff-condition}
+\end{equation}
+Let
+\begin{equation}
+ L_X:=\exp\!\left(
+  \frac{\log X}{\sqrt{\log\log X}}
+ \right).
+ \label{eq:tpc45-LX}
+\end{equation}
+Then, for all sufficiently large \(X\),
+\begin{equation}
+ \Pp_\xi\!\left(
+  \sup_{\sigma_{p\le z}}
+  Z_0(-\one_{\cP_R},\sigma,\xi)>K_B\cD_0
+ \right)
+ \le L_X^{-1}=o(1).
+ \label{eq:tpc45-tradeoff-tail}
+\end{equation}
+Thus a density-one set of the remaining environments tolerates, at
+once, the physical assignment on the whole band \(\cP_R\) and every
+assignment below \(z\).
+\end{theorem}
+
+\begin{proof}
+By \cref{cor:tpc45-grouped-diagonal},
+\begin{equation}
+ \widetilde\cD
+ \le X^{(\lambda_L-\theta)_++o(1)}\cD_0.
+ \label{eq:tpc45-tradeoff-diagonal}
+\end{equation}
+Combine this with \eqref{eq:tpc45-full-Rankin-projection}.  Choose
+\(\delta>0\) so that the left side of
+\eqref{eq:tpc45-tradeoff-condition} is at most
+\(1/400-2\delta\).  The strict gap absorbs both the \(X^{o(1)}\)
+factors and \(L_X=X^{o(1)}\), giving
+\begin{equation}
+ L_X\widetilde\nu_z\widetilde\cD
+ \le X^{1/400-\delta}\cD_0
+ \le K_B\cD_0
+ \label{eq:tpc45-tradeoff-budget}
+\end{equation}
+for sufficiently large \(X\), with the inherited harmless
+subpower convention in \(K_B\).  Apply
+\cref{lem:tpc45-robust-descended-face} with \(L=L_X\).
+\end{proof}
+
+\begin{corollary}[Clean balanced freezing with the legacy cutoff]
+\label{cor:tpc45-clean-balanced-freezing}
+Take \(R=\ell_+\), \(A=501/500\), and
+\(z=(\log X)^{501/500}\).  Then
+\begin{equation}
+ \lambda_0\left(1-\frac{500}{501}\right)
+ =\frac{62549}{26302500},
+ \qquad
+ \frac1{400}-\frac{62549}{26302500}
+ =\frac{12829}{105210000}>0.
+ \label{eq:tpc45-clean-balanced-margin}
+\end{equation}
+Consequently \eqref{eq:tpc45-tradeoff-tail} holds while the entire
+band
+\begin{equation}
+ \sqrt{N_+}<p\le N_-/\ell_+
+ \label{eq:tpc45-clean-balanced-band-explicit}
+\end{equation}
+is fixed to the physical sign \(-1\).
+\end{corollary}
+
+The inequality is open, so a small part of the endpoint budget can be
+spent to move beyond the clean cofactor scale while keeping the same
+low cutoff.
+
+\begin{corollary}[A budgeted extension beyond balance]
+\label{cor:tpc45-budgeted-band-extension}
+Let
+\begin{equation}
+ R=\ell_+X^{-1/10000},
+ \qquad A=\frac{501}{500}.
+ \label{eq:tpc45-budgeted-extension-parameters}
+\end{equation}
+Then the total power cost and its remaining margin are
+\begin{align}
+ \frac1{10000}+\frac{62549}{26302500}
+ &=\frac{260717}{105210000},
+ \label{eq:tpc45-budgeted-extension-cost}\\
+ \frac1{400}-\frac{260717}{105210000}
+ &=\frac{577}{26302500}>0.
+ \label{eq:tpc45-budgeted-extension-margin}
+\end{align}
+Hence the old low-prime cutoff remains valid and the physically frozen
+band extends to exponent
+\begin{equation}
+ 1-\lambda_L+\frac1{10000}
+ =\frac{55021}{105000}
+ =0.5240095238\ldots.
+ \label{eq:tpc45-budgeted-extension-endpoint}
+\end{equation}
+\end{corollary}
+
+One may trade more of the low cutoff for a wider band.  For example,
+\begin{equation}
+ R=\ell_+X^{-1/1000},
+ \qquad A=\frac{1001}{1000}
+ \label{eq:tpc45-wider-tradeoff-parameters}
+\end{equation}
+has exact margin
+\begin{equation}
+ \frac1{400}-\frac1{1000}
+ -\frac{62549}{52552500}
+ =\frac{65119}{210210000}>0,
+ \label{eq:tpc45-wider-tradeoff-margin}
+\end{equation}
+and reaches band exponent
+\(110231/210000=0.5249095238\ldots\).
+These points illustrate one continuous frontier; neither is asserted
+to be optimal for the actual coefficients.
+
+\subsection{The shortened touched component}
+
+Let \(Z_{\rm touch}\) be the equality energy formed only from atoms
+touched by \(\cP_{\rm bal}\), after the band signs have been set to
+\(-1\) and equal residual labels have been grouped.  This is a
+standalone nonnegative Walsh packet.  Its labels have exponent
+\(\lambda_1=36299/52500\) and its grouped diagonal is at most
+\(X^{o(1)}\cD_{\rm touch}\), where \(\cD_{\rm touch}\) is its original
+atomic diagonal.
+
+\begin{corollary}[Improved cutoff for the touched packet]
+\label{cor:tpc45-touched-improved-cutoff}
+For
+\begin{equation}
+ z_1=(\log X)^{1003/1000},
+ \qquad
+ A_1^*
+ :=\left(1-\frac1{400\lambda_1}\right)^{-1}
+ =\frac{145196}{144671},
+ \label{eq:tpc45-touched-A-star}
+\end{equation}
+one has \(1<1003/1000<A_1^*\) and
+\begin{equation}
+ \frac1{400}
+ -\lambda_1\left(1-\frac{1000}{1003}\right)
+ =\frac{30329}{70210000}>0.
+ \label{eq:tpc45-touched-cutoff-gap}
+\end{equation}
+Consequently a density-one set of the residual high-prime environments
+controls every assignment below \(z_1\) for \(Z_{\rm touch}\) within
+the \(K_B\cD_{\rm touch}\) scale.
+\end{corollary}
+
+This last corollary is intentionally componentwise.  The untouched
+column still has labels of exponent \(\lambda_0\), and the norm of the
+sum of touched and untouched columns contains cross terms.  Therefore
+\((\log X)^{1003/1000}\) is not a full-packet cutoff.
+
+Finally, the failure probability \(L_X^{-1}\) is summable on dyadic
+scales.  Prescribe one inherited packet and one admissible pair
+\((R_X,z_X)\) at each \(X=2^k\), and couple the remaining signs by a
+single global independent prime-sign field.  The first
+Borel--Cantelli lemma makes the corresponding tradeoff assertion hold
+at all sufficiently large dyadic scales almost surely.  The same is
+true for any fixed finite family of such prescribed choices after a
+union bound.  No independence between scales is required; no
+uniformity over all packet or parameter sequences is claimed.

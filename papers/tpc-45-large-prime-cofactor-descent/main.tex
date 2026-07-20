@@ -1,0 +1,126 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\E}{\mathbb E}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Hh}{\mathcal H}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Pminus}{P^{-}}
+\newcommand{\Pplus}{P^{+}}
+
+\hypersetup{
+  pdftitle={Large-Prime Cofactor Descent for a Four-Mobius Walsh Energy},
+  pdfauthor={Liang Wang},
+  pdfsubject={Actual-coefficient large-prime descent for the TPC equality packet},
+  pdfkeywords={Mobius function, parity problem, large prime factor, Walsh spectrum, Gram matrix, determinant equation, Type II estimate}
+}
+
+\title{\bfseries Large--Prime Cofactor Descent\\
+for a Four--M\"obius Walsh Energy}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The ``four--M\"obius gate'' is the nonnegative equality energy left
+after expanding two source and two target M\"obius factors in a
+fixed-shift prime-pair decomposition.  Earlier papers in the
+twin-prime-correlation (TPC) sequence represented this energy as a
+Walsh polynomial but left its deterministic all--minus corner
+unresolved.  We study that corner for the actual labels
+\(u=d(\ell d j+h)\).  If a prime in the global band
+\(\sqrt{N_+}<p\le N_-/R\) divides a target, then
+\(\ell d j+h=pr\) with \(r\ge R\), and setting its sign to \(-1\)
+replaces \(u=p(dr)\) by \(dr\) exactly.  Equal descended labels have
+maximal multiplicity
+\(\rho_R\le X^{o(1)}(1+L_0/R)\); the actual multiplicity, rather than
+this ambient upper bound, is the exact squared norm of the grouping
+map.  Combining the descent with robust Walsh-face compression yields
+an unconditional band/cutoff tradeoff.  In particular, the cutoff
+\((\log X)^{501/500}\) survives while the physical band reaches
+exponent \(55021/105000=0.5240095\ldots\), and the touched component
+alone admits \((\log X)^{1003/1000}\).  At
+\(y=X^{267/400+\eta}\), the complementary very-high-prime sector has
+an exact affine Gram form; low-sign averaging gives a second, pure Gram
+synthesis over equal residual labels.  The remaining collisions lie on
+the fixed-determinant ladders \(rp-dj\ell=h\) and have coherent physical
+M\"obius sign.  The closest dispersion and Kloosterman-fraction results
+reviewed here do not supply the resulting fixed-\(h\), three-weight,
+vector-valued interface.  No M\"obius cancellation estimate, parity
+breach, prime-pair asymptotic, or twin-prime theorem is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius correlation; parity problem;
+large prime factor; cofactor descent; Walsh spectrum; Gram synthesis;
+determinant equation.
+
+\medskip
+\noindent\textbf{Convention.}
+The shift \(h\ne0\) is fixed.  All packets and prime sets at one scale
+are finite.  Constants may depend on the fixed dyadic supports and on
+\(h\), but not on \(X\).  We use \(P^+(1)=1\) and
+\(P^-(1)=+\infty\).
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 11N36; Secondary 42C10,
+11L07, 60E15.
+
+\input{sections/introduction}
+\input{sections/actual-interface}
+\input{sections/prime-incidence}
+\input{sections/cofactor-descent}
+\input{sections/balanced-compression}
+\input{sections/residual-freezing}
+\input{sections/affine-gram}
+\input{sections/determinant-ladders}
+\input{sections/sharp-boundaries}
+\input{sections/literature-boundary}
+\input{sections/next-gate}
+\input{sections/certificate-claims}
+
+\begingroup
+\small
+\raggedright
+\setlength{\bibsep}{4pt plus 1pt minus 1pt}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

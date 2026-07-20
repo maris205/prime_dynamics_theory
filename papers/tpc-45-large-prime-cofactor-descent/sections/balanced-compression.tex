@@ -1,0 +1,214 @@
+\section{Cofactor-band compression and the balanced clean range}
+\label{sec:tpc45-balanced-compression}
+
+We now prove a quantitative fiber theorem for the full family
+\(\cP_R\).  The balanced choice \(R=\ell_+\) is its subpolynomial clean
+case.
+
+Let
+\begin{equation}
+ d_-:=\min_\alpha d_\alpha,
+ \qquad d_+:=\max_\alpha d_\alpha.
+ \label{eq:tpc45-d-extrema}
+\end{equation}
+The endpoint scales imply, for all sufficiently large \(X\),
+\begin{equation}
+ d_+\sqrt{N_+}<d_-N_-.
+ \label{eq:tpc45-touched-untouched-separation}
+\end{equation}
+
+\begin{theorem}[Cofactor-band fiber compression]
+\label{thm:tpc45-balanced-fibers}
+Fix one output coordinate \(i\), hence one orbit time \(j=j(i)\), and
+one squarefree descended label \(w\).  Then
+\begin{equation}
+ \#\{\alpha:(i,\alpha)\in\mathfrak A_X,\
+             w_{\alpha,j}=w\}
+ \le C_h\tau(w)\left(1+\frac{L_0}{R}\right).
+ \label{eq:tpc45-balanced-fiber-bound}
+\end{equation}
+Consequently, if \(R=X^{\theta+o(1)}\),
+\begin{align}
+ \rho_R
+ &:=\max_{i,w}\#\{\alpha:w_{\alpha,j(i)}=w\}
+ \notag\\
+ &\le
+ \left(1+\frac{L_0}{R}\right)
+ \exp\!\left(
+  O\!\left(\frac{\log X}{\log\log X}\right)
+ \right)
+ =X^{(\lambda_L-\theta)_++o(1)}.
+ \label{eq:tpc45-rho-balanced}
+\end{align}
+In particular \(R=\ell_+\) gives \(\rho_R=X^{o(1)}\).
+\end{theorem}
+
+\begin{proof}
+Two untouched rows with the same descended label have the same original
+fused label.  Equality-alias injectivity then makes the rows equal.  A
+touched label is at most \(d_+\sqrt{N_+}\), whereas an untouched label
+is at least \(d_-N_-\).  Thus
+\eqref{eq:tpc45-touched-untouched-separation} rules out a mixed
+collision.
+
+It remains to count touched rows with a common label \(w=s\).  Such a
+row has
+\begin{equation}
+ d\mid s,\qquad r=s/d,\qquad rq-dj\ell=h,
+ \label{eq:tpc45-common-s-equation}
+\end{equation}
+where \(q\in\cP_R\).  Fix \(d\mid s\), hence \(r=s/d\), and put
+\(g=(r,dj)\).  There is no solution unless \(g\mid h\).  Given one
+integral solution \((q_0,\ell_0)\), all integral solutions are
+\begin{equation}
+ q=q_0+\frac{dj}{g}t,
+ \qquad
+ \ell=\ell_0+\frac r g t,
+ \qquad t\in\Z.
+ \label{eq:tpc45-ladder-parametrization-balanced}
+\end{equation}
+The source-prime interval has length \(O(L_0)\).  Because \(g\mid h\)
+and \(r\ge R\), it contains at most
+\begin{equation}
+ O\!\left(1+\frac{gL_0}{r}\right)
+ =O_h\!\left(1+\frac{L_0}{R}\right)
+ \label{eq:tpc45-balanced-t-count}
+\end{equation}
+parameters \(t\).  Primality, support, and mask conditions only delete
+solutions.  Summing over \(d\mid s\) proves
+\eqref{eq:tpc45-balanced-fiber-bound}.  Since
+\(s\le d_+\sqrt{N_+}=X^{O(1)}\), the uniform divisor bound and
+\(L_0=X^{\lambda_L+o(1)}\) prove
+\eqref{eq:tpc45-rho-balanced}.
+\end{proof}
+
+Write the equality coordinate before descent as
+\begin{equation}
+ S_i(\varepsilon)=
+ \sum_{\alpha:(i,\alpha)\in\mathfrak A_X}
+ b_{i,\alpha}\chi_{u_{\alpha,j(i)}}(\varepsilon),
+ \qquad
+ Z_0(\varepsilon)=\sum_i|S_i(\varepsilon)|^2,
+ \label{eq:tpc45-coordinate-before-grouping}
+\end{equation}
+and put
+\begin{equation}
+ \cD_0=\sum_i\sum_\alpha|b_{i,\alpha}|^2.
+ \label{eq:tpc45-original-diagonal}
+\end{equation}
+After freezing \(\cP_R\), group equal descended labels:
+\begin{equation}
+ \widetilde b_{i,w}
+ :=\sum_{\alpha:w_{\alpha,j(i)}=w}
+   \eta_{\alpha,j(i)}b_{i,\alpha},
+ \qquad
+ \widetilde S_i(\varepsilon)
+ :=\sum_w\widetilde b_{i,w}\chi_w(\varepsilon).
+ \label{eq:tpc45-grouped-coefficients}
+\end{equation}
+
+\begin{corollary}[Exact grouped packet and diagonal cost]
+\label{cor:tpc45-grouped-diagonal}
+One has
+\begin{equation}
+ Z_0(-\one_{\cP_R},\varepsilon)
+ =\sum_i|\widetilde S_i(\varepsilon)|^2.
+ \label{eq:tpc45-grouped-packet-identity}
+\end{equation}
+The grouped labels are distinct in each coordinate, and
+\begin{align}
+ \widetilde\cD
+ &:=\sum_i\sum_w|\widetilde b_{i,w}|^2
+ \le\rho_R\cD_0
+ \le X^{(\lambda_L-\theta)_++o(1)}\cD_0,
+ \label{eq:tpc45-grouped-diagonal-bound}\\
+ \E_{\varepsilon_p:p\notin\cP_R}
+ Z_0(-\one_{\cP_R},\varepsilon)
+ &=\widetilde\cD.
+ \label{eq:tpc45-band-frozen-mean}
+\end{align}
+\end{corollary}
+
+\begin{proof}
+The pointwise identity is
+\cref{prop:tpc45-character-descent} followed by grouping.  On each
+fiber, Cauchy--Schwarz gives
+\[
+ |\widetilde b_{i,w}|^2
+ \le\rho_R
+ \sum_{\alpha:w_{\alpha,j(i)}=w}|b_{i,\alpha}|^2.
+\]
+Sum this inequality and use \cref{thm:tpc45-balanced-fibers}.
+Orthogonality of the now distinct Walsh labels proves the expectation.
+\end{proof}
+
+At \(K_B=X^{1/400+o(1)}\), Markov's inequality gives
+\begin{equation}
+ \Pp_{\varepsilon_p:p\notin\cP_R}
+ \left(
+ Z_0(-\one_{\cP_R},\varepsilon)>K_B\cD_0
+ \right)
+ \le X^{(\lambda_L-\theta)_+-1/400+o(1)}.
+ \label{eq:tpc45-band-frozen-Markov}
+\end{equation}
+For the clean choice \(R=\ell_+\), a density-one set of the remaining
+prime environments is therefore good after the entire polynomial-width
+band \(\cP_{\rm bal}\) has been set to its physical value.  More
+generally, \eqref{eq:tpc45-band-frozen-Markov} is nontrivial whenever
+\((\lambda_L-\theta)_+<1/400\).  It does not set the remaining primes to
+their physical values.
+
+\subsection{Residual label exponents passed to robust freezing}
+
+The descended labels of touched atoms satisfy
+\begin{equation}
+ w=s=dr\le d_+\sqrt{N_+}
+ =X^{\lambda_1+o(1)},
+ \qquad
+ \lambda_1=\frac{10049}{52500}+\frac12
+ =\frac{36299}{52500}.
+ \label{eq:tpc45-touched-label-exponent}
+\end{equation}
+For
+\begin{equation}
+ z_1=(\log X)^{1003/1000},
+ \label{eq:tpc45-touched-z1}
+\end{equation}
+the Rankin projection count for touched labels alone is
+\begin{equation}
+ \nu_{{\rm touch},z_1}
+ \le X^{\lambda_1(1-1000/1003)+o(1)}
+ =X^{36299/17552500+o(1)}.
+ \label{eq:tpc45-touched-projection-count}
+\end{equation}
+The exact endpoint margin is
+\begin{equation}
+ \frac1{400}-\frac{36299}{17552500}
+ =\frac{30329}{70210000}>0.
+ \label{eq:tpc45-touched-rankin-margin}
+\end{equation}
+
+We record only the budget interface here.  If
+\(R=X^{\theta+o(1)}\), the full transformed packet can fit a Rankin
+cutoff \(z=(\log X)^A\) only when
+\begin{equation}
+ (\lambda_L-\theta)_+
+ +\frac{62549}{52500}\left(1-\frac1A\right)
+ <\frac1{400}.
+ \label{eq:tpc45-full-tradeoff-interface}
+\end{equation}
+For the touched residual sector, the corresponding sufficient budget
+is
+\begin{equation}
+ (\lambda_L-\theta)_+
+ +\frac{36299}{52500}\left(1-\frac1A\right)
+ <\frac1{400}.
+ \label{eq:tpc45-touched-tradeoff-interface}
+\end{equation}
+At the clean choice \(\theta=\lambda_L\), \(A=1003/1000\) satisfies the
+touched condition by \eqref{eq:tpc45-touched-rankin-margin}.  It does
+not satisfy the full condition: untouched labels still have size up to
+\(X^{62549/52500+o(1)}\), whose \(A=1003/1000\) projection exponent is
+\(62549/17552500>1/400\).  Thus \(1003/1000\) belongs only to the
+touched residual sector.  The full probability statement is deferred
+to the residual-freezing section.

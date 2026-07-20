@@ -1,0 +1,65 @@
+\section{Exact certificate and claim ledger}
+\label{sec:tpc45-certificate}
+
+The reproducibility directory contains
+\begin{center}
+ \path{experiments/tpc45_certificate.py}.
+\end{center}
+It uses the Python standard library, exact Gaussian-integer arithmetic,
+exhaustive finite sign cubes, and \texttt{fractions.Fraction}.  A
+successful run writes
+\path{experiments/tpc45_certificate.json}.  The checked families are:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item the actual toy labels \(u=d(\ell d j+1)\), the packet-defined
+ band, uniqueness of a band prime, exact physical sign deletion, and
+ equality of the original and grouped energies on every remaining sign
+ environment;
+ \item the grouped diagonal inequality and equality in the abstract
+ fiber-sum operator norm;
+ \item the physical-low affine form on every high-prime environment;
+ \item the low-averaged pure Gram projection and its all-minus synthesis
+ identity on exhaustive low and high cubes;
+ \item the fixed-determinant ladder, its affine parameter step, and the
+ common physical sign on an equal-residual fiber; and
+ \item every rational exponent and endpoint margin used in the paper.
+\end{enumerate}
+The current certificate performs \(32894\) exact checks.  Its canonical
+payload hash is
+\begin{center}
+\texttt{e9c3bdf309863cf560fd31e5253e1429236281069101df26c7fe689d6faa438e}.
+\end{center}
+The hash covers the report before the hash field itself is appended.
+
+The certificate is deliberately finite.  It checks identities and
+arithmetic ledgers, not the assertions that \(\tau(n)=X^{o(1)}\), that
+primes exist in each fixed power subinterval, or that a density-one
+probability tends to one.  Those are proved analytically in the text.
+Most importantly, it does not sample or certify M\"obius cancellation,
+a fixed-determinant Bessel estimate, or a prime-pair asymptotic.
+
+For clarity, the logical status of the main statements is as follows.
+\begin{enumerate}[label=\textup{\arabic*.},leftmargin=2.2em]
+ \item The actual coefficient expansion, prime-incidence alternatives,
+ cofactor deletion, fiber bounds, grouped diagonal bounds, affine Gram
+ forms, and determinant-ladder parameterization are unconditional finite
+ or asymptotic theorems under the inherited TPC packet hypotheses.
+ \item The mesoscopic physical-band freezing and its two-parameter
+ band/cutoff tradeoff are unconditional consequences of those theorems
+ and the robust-face argument.
+ \item The larger cutoff \((\log X)^{1003/1000}\) applies to the
+ shortened touched component.  It is not claimed for the untouched part
+ or the full packet.
+ \item The fixed-determinant synthesis estimate in
+ \cref{sec:tpc45-next-gate} is a proposed next input, not a theorem of
+ this paper.
+ \item The comparisons in \cref{sec:tpc45-literature} are applicability
+ audits.  A mismatch with a cited theorem is not an impossibility result
+ for every future method.
+ \item No statement here implies the twin-prime conjecture, a
+ Hardy--Littlewood asymptotic, a breach of the sieve parity barrier, or
+ the complete deterministic TPC endpoint.
+\end{enumerate}
+
+Thus the positive result is a real partial de-randomization of actual
+TPC coefficients, while the remaining gap is displayed rather than
+silently promoted to an assumption.

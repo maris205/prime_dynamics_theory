@@ -1,0 +1,246 @@
+\section{Introduction}
+\label{sec:tpc45-introduction}
+
+The terminal obstruction in the present TPC chain is no longer a
+formal sieve remainder.  TPC--43 represented the surviving equality
+energy as
+\begin{equation}
+ Z_0(\varepsilon)
+ =\cD_0+\sum_{\kappa>1}C_X(\kappa)\chi_\kappa(\varepsilon),
+ \qquad
+ Z_0(-\one)
+ =\cD_0+\sum_{\kappa>1}\mu(\kappa)C_X(\kappa),
+ \label{eq:tpc45-intro-Walsh-corner}
+\end{equation}
+where the second value is the literal four--M\"obius equality term,
+not a random-model surrogate \citep{WangTPC43}.  TPC--44 proved that a
+density-one set of high-prime environments remains admissible after
+every sign
+\begin{equation}
+ p\le (\log X)^{501/500}
+ \label{eq:tpc45-intro-old-cutoff}
+\end{equation}
+is overwritten arbitrarily, hence in particular by its physical value
+\(-1\) \citep{WangTPC44}.  It also proved that degree two, vanishing
+relative variance, and vanishing normalized influences do not select
+the prescribed all--minus corner.  Thus a further abstract Boolean-cube
+argument cannot by itself cross the next gate.
+
+This paper returns to the coefficients that generated
+\eqref{eq:tpc45-intro-Walsh-corner}.  The equality labels are
+\begin{equation}
+ u_{\alpha,j}
+ =d_\alpha n_{\alpha,j}
+ =d_\alpha(\ell_\alpha d_\alpha j+h),
+ \label{eq:tpc45-intro-actual-label}
+\end{equation}
+with
+\begin{align}
+ Q&=X^{267/400+o(1)},
+ &J&=X^{133/400+o(1)},
+ \notag\\
+ D_0&=X^{10049/52500+o(1)},
+ &L_0:=Q/D_0
+   &=X^{\lambda_L+o(1)},
+   \qquad \lambda_L:=\frac{99979}{210000}.
+ \label{eq:tpc45-intro-scales}
+\end{align}
+We also write
+\begin{equation}
+ \lambda_0:=1+\frac{10049}{52500}
+ =\frac{62549}{52500}
+ \label{eq:tpc45-intro-lambda0}
+\end{equation}
+for the exponent of the original fused labels.
+Here \(m_\alpha=\ell_\alpha d_\alpha\asymp Q\),
+\(\ell_\alpha\asymp L_0\), \(d_\alpha\asymp D_0\),
+and \(j\asymp J\).  We retain every inherited mask, complex source
+weight, and output coordinate.  No sign or equidistribution hypothesis
+is imposed on those deterministic coefficients.
+
+\subsection{The first positive result: a physical prime band}
+
+Let \(N_-\) and \(N_+\) be the minimum and maximum positive equality
+targets \(n_{\alpha,j}\), and let \(\ell_+\) be the largest active
+source prime.  Define the packet-dependent band
+\begin{equation}
+ \cP_{\mathrm{bal}}
+ :=\left\{p\text{ prime}:
+   \sqrt{N_+}<p\le \frac{N_-}{\ell_+}\right\}.
+ \label{eq:tpc45-intro-balanced-band}
+\end{equation}
+At the endpoint it occupies, up to fixed support margins, the exponent
+window
+\begin{equation}
+ \frac12<\frac{\log p}{\log X}
+ <1-\frac{99979}{210000}
+ =\frac{110021}{210000};
+ \label{eq:tpc45-intro-balanced-window}
+\end{equation}
+its width is
+\begin{equation}
+ \frac{5021}{210000}=0.0239095\ldots.
+ \label{eq:tpc45-intro-band-width}
+\end{equation}
+This is a genuinely growing prime interval, not a finite set of
+coordinates.
+
+If \(p\in\cP_{\mathrm{bal}}\) divides an active target, write
+\begin{equation}
+ n_{\alpha,j}=pr,
+ \qquad s=d_\alpha r.
+ \label{eq:tpc45-intro-cofactor}
+\end{equation}
+The prime \(p\) is unique, \(r\ge\ell_+\), and
+\begin{equation}
+ \mu(u_{\alpha,j})=\mu(ps)=-\mu(s).
+ \label{eq:tpc45-intro-sign-collapse}
+\end{equation}
+Thus setting every sign in \(\cP_{\mathrm{bal}}\) to its physical
+value deletes that prime exactly from the character.  Equal residual
+labels have at most
+\begin{equation}
+ O_h(\tau(s))=X^{o(1)}
+ \label{eq:tpc45-intro-fiber-bound}
+\end{equation}
+preimages in a fixed Hilbert coordinate.  The proof is elementary but
+uses the actual equation
+\begin{equation}
+ rp-d_\alpha j\ell_\alpha=h.
+ \label{eq:tpc45-intro-determinant}
+\end{equation}
+After grouping collisions, the new diagonal is at most
+\(X^{o(1)}\cD_0\).
+
+Combining this descent with the robust-face theorem of TPC--44 yields
+our principal de-randomization statement.  For a density
+\(1-o(1)\) set of the remaining prime-sign environments, all signs in
+the entire band \(\cP_{\mathrm{bal}}\) may be fixed simultaneously to
+\(-1\), while all signs in \eqref{eq:tpc45-intro-old-cutoff} may still
+be overwritten arbitrarily, and the resulting equality energy remains
+within the inherited \(K_B=X^{1/400+o(1)}\) budget.  This is the first
+step in this chain that physically freezes a growing large-prime band.
+More generally, if \(R=X^{\theta+o(1)}\) and
+\(z=(\log X)^A\), the sufficient frontier is
+\begin{equation}
+ (\lambda_L-\theta)_+
+ +\lambda_0(1-1/A)<\frac1{400}.
+ \label{eq:tpc45-intro-tradeoff}
+\end{equation}
+For example, retaining \(A=501/500\) and taking
+\(R=\ell_+X^{-1/10000}\) extends the upper band exponent to
+\begin{equation}
+ 1-\lambda_L+\frac1{10000}
+ =\frac{55021}{105000}=0.5240095\ldots,
+ \label{eq:tpc45-intro-budgeted-endpoint}
+\end{equation}
+with exact unused margin \(577/26302500\).  These statements do not
+freeze the intervening or still larger primes.
+
+\subsection{Two complementary large-prime normal forms}
+
+The band theorem is most effective when the cofactor is at least the
+source-prime length.  Two further exact statements locate what happens
+on either side of that balance.
+
+First, the touched residual labels satisfy
+\begin{equation}
+ s\le D_0\sqrt{N_+}
+ =X^{\lambda_1+o(1)},
+ \qquad
+ \lambda_1
+ =\frac12+\frac{10049}{52500}
+ =\frac{36299}{52500}.
+ \label{eq:tpc45-intro-short-label}
+\end{equation}
+For the touched component alone, TPC--44's Rankin projection argument
+therefore admits every
+\begin{equation}
+ 1<A<
+ A_1^*:=\left(1-\frac1{400\lambda_1}\right)^{-1}
+ =\frac{145196}{144671}.
+ \label{eq:tpc45-intro-A-star}
+\end{equation}
+We choose \(A=1003/1000\).  The exact endpoint margin is
+\begin{equation}
+ \frac1{400}-\lambda_1\left(1-\frac{1000}{1003}\right)
+ =\frac{30329}{70210000}>0.
+ \label{eq:tpc45-intro-new-gap}
+\end{equation}
+This improves the robust low-prime cutoff of the shortened component
+to \((\log X)^{1003/1000}\).  Untouched labels retain their original
+size, so this larger cutoff is not asserted for the full packet.
+
+Second, fix \(\eta>0\) and move to
+\begin{equation}
+ y=X^{267/400+\eta}.
+ \label{eq:tpc45-intro-affine-threshold}
+\end{equation}
+Every equality label then contains either no prime above \(y\) or one
+such prime, and fixed \((j,p)\) meets at most one source row in each
+source system.  With all
+lower signs placed at their physical values, the complete equality
+packet becomes
+\begin{equation}
+ Z_0(-\one_{\le y},\varepsilon_{>y})
+ =\left\|v_0+\sum_{p>y}\varepsilon_pv_p\right\|^2.
+ \label{eq:tpc45-intro-affine-form}
+\end{equation}
+Thus the large-prime Walsh hypergraph is exactly a Gram graph: its
+degree is at most two, and the general coefficient descent of TPC--44
+reduces to correlations among the vectors \(v_p\).
+
+Averaging, rather than fixing, the signs below \(y\) gives an even
+sharper rough projection.  For explicitly lifted residual vectors
+\(x_p\),
+\begin{equation}
+ \E_{\le y}Z_0(\varepsilon_{\le y},-\one_{>y})
+ =\cD_0-\cD_H+
+  \left\|\sum_{p>y}x_p\right\|^2,
+ \qquad
+ \cD_H=\sum_{p>y}\|x_p\|^2\le\cD_0.
+ \label{eq:tpc45-intro-pure-Gram}
+\end{equation}
+The remaining off-diagonal collisions are exactly equal deleted-label
+fibers.  Writing \(n=pr\), each atom on one such fiber lies on
+\eqref{eq:tpc45-intro-determinant}.  When \(r\ll L_0\), the ambient
+two-prime ladder has length \(O_h(1+L_0/r)\), and all atoms with the
+same residual label have the same M\"obius sign.  On every realized
+fiber, Cauchy--Schwarz is sharp for arbitrary deterministic
+coefficients; the ambient ladder bound need not be attained.
+
+\subsection{What is and is not proved}
+
+The unconditional advances are structural and de-randomizing:
+\begin{enumerate}[label=(\roman*),leftmargin=2.1em]
+ \item the actual coefficients are expanded without an auxiliary sign
+ assumption;
+ \item a full mesoscopic band of prime signs is fixed physically at
+ subpolynomial diagonal cost;
+ \item the shortened component receives a stronger low-prime cutoff;
+ \item the very-large-prime part becomes an exact affine Gram graph;
+ \item the remaining small-cofactor obstruction is identified as a
+ fixed-determinant, coefficient-specific synthesis estimate.
+\end{enumerate}
+We do \emph{not} prove the synthesis estimate in
+\eqref{eq:tpc45-intro-pure-Gram}; we do not deduce the complete
+physical equality bound; and we do not obtain a prime-pair asymptotic,
+a parity breakthrough, or a bounded-gap statement.  The literature
+audit in \cref{sec:tpc45-literature} explains a particularly precise
+reason: the closest cited fixed-determinant theorem permits two arbitrary
+arithmetic coefficient sequences, whereas the TPC packet has three
+nonsmooth arithmetic slots after the descent.
+
+\Cref{sec:tpc45-interface,sec:tpc45-incidence} reconstruct the actual
+coefficient and incidence geometry.  The physical-band descent and its
+sharp fiber estimate are proved in
+\cref{sec:tpc45-cofactor-descent,sec:tpc45-balanced-compression}.
+\Cref{sec:tpc45-residual-freezing} gives the two robust freezing
+consequences.  The affine and rough Gram forms are derived in
+\cref{sec:tpc45-affine-gram}; the fixed-determinant ladders and exact
+support boundary appear in
+\cref{sec:tpc45-determinant-ladders,sec:tpc45-boundaries}.
+We compare the result with current analytic inputs in
+\cref{sec:tpc45-literature}, state the next gate in
+\cref{sec:tpc45-next-gate}, and close with a machine-checkable algebraic
+certificate and claim ledger.

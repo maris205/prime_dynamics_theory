@@ -1,0 +1,257 @@
+\section{Prime incidence in the actual fused labels}
+\label{sec:tpc45-incidence}
+
+We next separate source-divisor incidence from target-affine incidence.
+This distinction is invisible in a generic squarefree label model and
+is the first arithmetic gain obtained by returning to
+\eqref{eq:tpc45-actual-label}.
+
+Write the fixed dyadic supports as
+\begin{equation}
+ D_-\le d_\rho\le D_+,
+ \quad
+ M_-\le m_\rho\le M_+,
+ \quad
+ J_-\le j\le J_+,
+ \quad
+ N_-\le n_{\rho,j}\le N_+,
+ \label{eq:tpc45-support-endpoints}
+\end{equation}
+where
+\begin{equation}
+ D_\pm\asymp D_0,
+ \quad M_\pm\asymp Q,
+ \quad J_\pm\asymp J,
+ \quad N_\pm\asymp X.
+ \label{eq:tpc45-support-scales}
+\end{equation}
+Put \(\Delta_M=M_+-M_-\ll Q\).
+
+\begin{lemma}[Exact source/target alternative]
+\label{lem:tpc45-source-target-incidence}
+Let \(p>|h|\) be prime.  For a nonzero equality atom,
+\(p\mid u_{\rho,j}\) holds precisely in one of the following disjoint
+ways:
+\begin{enumerate}[label=(\roman*)]
+ \item \(p\mid d_\rho\), in which case
+ \(n_{\rho,j}\equiv h\pmod p\) and \(p\nmid n_{\rho,j}\);
+ \item \(p\nmid d_\rho m_\rho\) and
+ \begin{equation}
+  j\equiv-hm_\rho^{-1}\pmod p,
+  \label{eq:tpc45-j-incidence-congruence}
+ \end{equation}
+ equivalently \(p\mid n_{\rho,j}\).
+\end{enumerate}
+In particular, the source prime \(\ell_\rho\) does not divide its own
+label once \(\ell_\rho>|h|\).
+\end{lemma}
+
+\begin{proof}
+The label is \(d_\rho n_{\rho,j}\), and the two factors are coprime by
+\eqref{eq:tpc45-equality-coprimality}.  If \(p\mid d_\rho\), then
+\(n_{\rho,j}=\ell_\rho d_\rho j+h\equiv h\not\equiv0\pmod p\).
+Otherwise incidence means \(p\mid n_{\rho,j}\).  A prime divisor of
+\(m_\rho\) would again give \(n_{\rho,j}\equiv h\pmod p\), so
+\(m_\rho\) is invertible and
+\eqref{eq:tpc45-j-incidence-congruence} follows.  Taking
+\(p=\ell_\rho\) proves the last assertion.
+\end{proof}
+
+\begin{proposition}[One-dimensional incidence fibers]
+\label{prop:tpc45-incidence-fibers}
+Let \(p>\max\{|h|,D_+\}\).  Then
+\begin{align}
+ \#\{\rho:p\mid u_{\rho,j}\}
+ &\le 1+\frac{\Delta_M}{p}
+ \ll 1+\frac Qp
+ \qquad\text{for fixed \(j\)},
+ \label{eq:tpc45-fixed-j-fiber}\\
+ \#\{j\in\cJ:p\mid u_{\rho,j}\}
+ &\ll 1+\frac Jp
+ \qquad\text{for fixed \(\rho\)}.
+ \label{eq:tpc45-fixed-row-fiber}
+\end{align}
+Moreover,
+\begin{equation}
+ \#\{(\rho,j):p\mid u_{\rho,j}\}
+ \ll X^{o(1)}\left(1+\frac Xp\right).
+ \label{eq:tpc45-global-p-fiber}
+\end{equation}
+All statements hold separately in each source-row system.
+\end{proposition}
+
+\begin{proof}
+Only the target alternative of
+\cref{lem:tpc45-source-target-incidence} remains.  If two rows occur at
+fixed \(j\), then \(p\nmid j\), since otherwise
+\(n_{\rho,j}\equiv h\pmod p\).  Hence all their distinct integers
+\(m_\rho\) occupy the one class \(-hj^{-1}\pmod p\) inside an interval
+of length \(\Delta_M\), proving \eqref{eq:tpc45-fixed-j-fiber}.  For a
+fixed row, \eqref{eq:tpc45-j-incidence-congruence} places \(j\) in one
+class in an interval of length \(O(J)\), proving
+\eqref{eq:tpc45-fixed-row-fiber}.
+
+For the last bound, write
+\begin{equation}
+ n_{\rho,j}=pr,
+ \qquad
+ m_\rho j=pr-h.
+ \label{eq:tpc45-p-r-factorization}
+\end{equation}
+There are \(O(1+X/p)\) possible positive cofactors \(r\).  For fixed
+\((p,r)\), every possible \(m_\rho\) divides \(pr-h\); the orbit time is
+then \((pr-h)/m_\rho\), and source separation recovers at most one row
+from \(m_\rho\).  The uniform divisor bound
+\(\tau(pr-h)=X^{o(1)}\) proves \eqref{eq:tpc45-global-p-fiber}.
+\end{proof}
+
+The proposition gives the following genuine three-stage geometry beyond
+the logarithmic cutoff of TPC--44:
+\begin{enumerate}[label=(\alph*)]
+ \item for \(p\lesssim D_0\), a source divisor \(p\mid d_\rho\) can
+ persist through every orbit time of a row;
+ \item for \(D_0\ll p\lesssim Q\), incidence is purely affine, with
+ fixed-time multiplicity \(O(1+Q/p)\); and
+ \item for \(p\gg Q\), fixed \((j,p)\) meets at most one row.
+\end{enumerate}
+Also, once \(p\gg J\), a fixed row meets at most one orbit time.
+
+\subsection{The very-high cutoff}
+
+For a completely constant-free formulation, let \(y=y_X\) satisfy
+\begin{equation}
+ y>\max\{|h|,D_+,J_+,\Delta_M,\sqrt{N_+}\}
+ \label{eq:tpc45-y-geometric-conditions}
+\end{equation}
+and
+\begin{equation}
+ \frac{D_+N_+}{y}<D_-N_-.
+ \label{eq:tpc45-y-label-separation}
+\end{equation}
+At the optimized endpoint, every fixed
+\begin{equation}
+ 0<\eta<\frac{133}{400},
+ \qquad
+ \boxed{y=X^{267/400+\eta}}
+ \label{eq:tpc45-very-high-y}
+\end{equation}
+satisfies \eqref{eq:tpc45-y-geometric-conditions} and
+\eqref{eq:tpc45-y-label-separation} for all sufficiently large \(X\).
+
+\begin{theorem}[Unique very-high prime and singleton incidence]
+\label{thm:tpc45-unique-very-high-prime}
+Assume \eqref{eq:tpc45-y-geometric-conditions}.  Every nonzero equality
+label has the unique factorization
+\begin{equation}
+ u_{\rho,j}=s_{\rho,j}q_{\rho,j},
+ \qquad
+ q_{\rho,j}=1\ \text{or a prime greater than \(y\)},
+ \qquad
+ \Pplus(s_{\rho,j})\le y.
+ \label{eq:tpc45-low-high-one-prime}
+\end{equation}
+If \(q_{\rho,j}=p>y\), then
+\begin{equation}
+ n_{\rho,j}=pr_{\rho,j},
+ \qquad
+ \boxed{s_{\rho,j}=d_\rho r_{\rho,j}},
+ \qquad
+ r_{\rho,j}\le\frac{N_+}{p}\le\frac{N_+}{y}.
+ \label{eq:tpc45-residual-label-dr}
+\end{equation}
+For fixed \((j,p)\), at most one row in either given source system has
+\(q_{\rho,j}=p\).
+\end{theorem}
+
+\begin{proof}
+Every prime divisor of \(d_\rho\) is at most \(D_+<y\).  Since
+\(n_{\rho,j}\le N_+<y^2\), it has at most one prime factor above \(y\).
+This proves \eqref{eq:tpc45-low-high-one-prime}.  If that prime is
+\(p\), squarefreeness and
+\eqref{eq:tpc45-equality-coprimality} give
+\begin{equation}
+ u_{\rho,j}=d_\rho(pr_{\rho,j})
+ =p(d_\rho r_{\rho,j}),
+ \qquad (p,d_\rho r_{\rho,j})=1,
+ \label{eq:tpc45-u-pdr}
+\end{equation}
+which proves the exact residual label in
+\eqref{eq:tpc45-residual-label-dr}.  In particular, it is \(d_\rho r\),
+not \(\ell_\rho d_\rho r\); the source prime occurs in the slope, not as
+a factor of the fused label.
+
+Finally, if two rows at fixed \(j\) have targets divisible by \(p\),
+then \(p\nmid j\) and
+\begin{equation}
+ p\mid(m_\rho-m_\sigma)j.
+ \label{eq:tpc45-p-divides-row-gap}
+\end{equation}
+Thus \(p\mid m_\rho-m_\sigma\).  But
+\(|m_\rho-m_\sigma|\le\Delta_M<y<p\), so the two slopes, and hence the
+two source rows, coincide.
+\end{proof}
+
+\begin{corollary}[Very-high atomic mass]
+\label{cor:tpc45-very-high-atomic-mass}
+Let
+\begin{equation}
+ \cD_p:=\sum_i\sum_{\substack{u\in\cU_i\\u_{>y}=p}}|b_{i,u}|^2.
+ \label{eq:tpc45-Dp}
+\end{equation}
+Then
+\begin{equation}
+ \sum_{p>y}\cD_p\le\cD_0.
+ \label{eq:tpc45-high-diagonal-partition}
+\end{equation}
+Using the inherited pointwise bound \(|b_{i,u}|\le X^{o(1)}\) and
+\(\#\cA_s\ll X^{o(1)}Q\), one also has
+\begin{equation}
+ \cD_p\ll X^{o(1)}Q\left(1+\frac Xp\right)
+ \ll X^{o(1)}\frac{QX}{p}
+ \qquad(p>y)
+ \label{eq:tpc45-Dp-bound}
+\end{equation}
+whenever \(p\) occurs in a terminal target.
+\end{corollary}
+
+\begin{proof}
+The high-prime atom sets are disjoint by
+\cref{thm:tpc45-unique-very-high-prime}, proving
+\eqref{eq:tpc45-high-diagonal-partition}.  For fixed \(p\), the number
+of source-row/orbit pairs is bounded by
+\eqref{eq:tpc45-global-p-fiber}; multiplying by the
+\(X^{o(1)}Q\) opposite output rows and the pointwise coefficient bound
+proves \eqref{eq:tpc45-Dp-bound}.  An occurring prime has
+\(p\ll X\), so \(1+X/p\ll X/p\).
+\end{proof}
+
+\subsection{Balanced and very-high cofactors are complementary}
+
+The letter \(r\) in \eqref{eq:tpc45-p-r-factorization} is the target
+cofactor.  At the endpoint
+\begin{equation}
+ L_0=\frac Q{D_0}
+ =X^{99979/210000+o(1)}.
+ \label{eq:tpc45-L0-exponent}
+\end{equation}
+If \(p>\sqrt{N_+}\) and a balanced cofactor descent additionally asks
+\(r\gg_h L_0\), then
+\begin{equation}
+ p=\frac{n_{\rho,j}}r
+ \ll\frac X{L_0}
+ =X^{110021/210000+o(1)}.
+ \label{eq:tpc45-balanced-p-upper}
+\end{equation}
+This interval is nonempty because
+\(110021/210000>1/2\), but it lies far below the very-high cutoff
+\eqref{eq:tpc45-very-high-y}.  Conversely, for \(p>y\),
+\begin{equation}
+ r\le\frac{N_+}{y}
+ =X^{133/400-\eta+o(1)}
+ =o(L_0).
+ \label{eq:tpc45-very-high-r-small}
+\end{equation}
+Thus the balanced condition \(p>\sqrt{N_+}\), \(r\gg_h L_0\) and the
+very-high condition \(p>y\) cannot hold simultaneously for large
+\(X\).  They are complementary coefficient sectors, not two hypotheses
+that may be combined on one atom.

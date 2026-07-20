@@ -1,0 +1,361 @@
+\section{The actual equality coefficient interface}
+\label{sec:tpc45-interface}
+
+This section removes an ambiguity that is harmless in an abstract Walsh
+argument but not at the present coefficient-specific gate.  The Walsh
+amplitudes are exactly the TPC terminal atoms after the two M\"obius
+values in each row have been stripped; they are not new free
+coefficients.
+
+\subsection{Rows, outputs, and stripped atoms}
+
+Let \(\cA_1\) and \(\cA_2\) be the two inherited source-row systems.  A
+row \(\rho\in\cA_s\) is
+\begin{equation}
+ \rho=(\ell_\rho,d_\rho),
+ \qquad
+ m_\rho=\ell_\rho d_\rho\asymp Q,
+ \qquad
+ \ell_\rho\asymp L_0,
+ \qquad
+ d_\rho\asymp D_0,
+ \label{eq:tpc45-row}
+\end{equation}
+where \(\ell_\rho\) is prime, \(d_\rho\) is squarefree,
+\((d_\rho,h)=1\), and \(m_\rho\) determines \(\rho\).  Let
+\(\cJ\subset\N\) be the finite orbit-time set, supported on
+\(j\asymp J\).  Here \(\Phi_0\) is the inherited terminal cutoff,
+\(\gamma_\rho^{\circ,(s)}\in\C\) is the stripped source weight, and
+\(\mathfrak A_{\alpha,\gamma}^{\rm act}(j)\in\C\) is the joint mask;
+only their support and the size bounds below are used
+\citep{WangTPC43,WangTPC44}.  Put
+\begin{equation}
+ n_{\rho,j}:=m_\rho j+h=\ell_\rho d_\rho j+h,
+ \qquad
+ \Lambda(n):=(\log n)\Phi_0(n).
+ \label{eq:tpc45-target-and-Lambda}
+\end{equation}
+All atoms below are zero outside the inherited positive terminal
+support.  On that support
+\begin{equation}
+ Q=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)},
+ \qquad
+ D_0=X^{10049/52500+o(1)},
+ \qquad QJ\asymp X.
+ \label{eq:tpc45-endpoint-scales}
+\end{equation}
+
+The source signs factor as
+\begin{equation}
+ \gamma_\rho^{(s)}
+ =\mu(d_\rho)\gamma_\rho^{\circ,(s)},
+ \qquad s=1,2.
+ \label{eq:tpc45-source-sign-strip}
+\end{equation}
+The left output coordinates and right output coordinates are, respectively,
+\begin{equation}
+ \cI_L:=\{(L,\gamma,j):\gamma\in\cA_2,\ j\in\cJ\},
+ \qquad
+ \cI_R:=\{(R,\alpha,j):\alpha\in\cA_1,\ j\in\cJ\},
+ \label{eq:tpc45-output-indices}
+\end{equation}
+and we write
+\begin{equation}
+ \Hh_{\rm out}:=\ell^2(\cI_L\sqcup\cI_R).
+ \label{eq:tpc45-output-Hilbert-space}
+\end{equation}
+Thus \(\alpha\in\cA_1\) is the summation row in a left coordinate,
+whereas \(\gamma\in\cA_2\) is the summation row in a right coordinate.
+Define the actual stripped atoms
+\begin{align}
+ B^L_{\alpha;\gamma,j}
+ &:=-\gamma_\alpha^{\circ,(1)}
+   \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+   \Lambda(n_{\alpha,j})\mu^2(n_{\alpha,j}),
+ \label{eq:tpc45-left-B}\\
+ B^R_{\gamma;\alpha,j}
+ &:=-\gamma_\gamma^{\circ,(2)}
+   \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+   \Lambda(n_{\gamma,j})\mu^2(n_{\gamma,j}).
+ \label{eq:tpc45-right-B}
+\end{align}
+The inherited coefficient and support bounds used below are
+\begin{equation}
+ \max_{\alpha,\gamma,j}
+ \bigl\{|B^L_{\alpha;\gamma,j}|,
+        |B^R_{\gamma;\alpha,j}|\bigr\}
+ \le X^{o(1)},
+ \qquad
+ \#\cA_s\le X^{o(1)}Q\quad(s=1,2).
+ \label{eq:tpc45-inherited-atom-bounds}
+\end{equation}
+The semicolon records the summation row on its left and the opposite
+output row on its right.  In particular, it prevents the right-hand
+indexing from being mistaken for a second copy of the left one.
+
+For every nonzero atom, \(n_{\rho,j}\) is squarefree and
+\begin{equation}
+ (d_\rho,n_{\rho,j})=(d_\rho,h)=1.
+ \label{eq:tpc45-equality-coprimality}
+\end{equation}
+Its fused equality label is therefore the squarefree integer
+\begin{equation}
+ \boxed{
+ u_{\rho,j}:=d_\rho n_{\rho,j}
+ =d_\rho(\ell_\rho d_\rho j+h).}
+ \label{eq:tpc45-actual-label}
+\end{equation}
+
+\begin{lemma}[Fixed-coordinate label injectivity]
+\label{lem:tpc45-label-injectivity}
+For all sufficiently large \(X\), fixed \(j\), and physical rows
+\(\rho,\sigma\) in the same source system,
+\begin{equation}
+ u_{\rho,j}=u_{\sigma,j}\quad\Longrightarrow\quad\rho=\sigma.
+ \label{eq:tpc45-label-injectivity}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Equality gives
+\begin{equation}
+ j(\ell_\rho d_\rho^2-\ell_\sigma d_\sigma^2)
+ =h(d_\sigma-d_\rho).
+ \label{eq:tpc45-label-collision}
+\end{equation}
+If the integer in parentheses is nonzero, the left side has absolute
+value at least \(j\), while the right side is at most
+\(|h|\max d_\tau<j\), because \(D_0=o(J)\).  Hence both sides vanish.
+Since \(h\ne0\), first \(d_\rho=d_\sigma\), then
+\(\ell_\rho=\ell_\sigma\).
+\end{proof}
+
+Let \(\chi_u(\varepsilon)=\prod_{p\mid u}\varepsilon_p\).  The exact
+left and right coordinate polynomials are
+\begin{align}
+ S_{L,\gamma,j}(\varepsilon)
+ &=\sum_{\alpha\in\cA_1}
+   B^L_{\alpha;\gamma,j}\chi_{u_{\alpha,j}}(\varepsilon),
+ \label{eq:tpc45-left-coordinate-Walsh}\\
+ S_{R,\alpha,j}(\varepsilon)
+ &=\sum_{\gamma\in\cA_2}
+   B^R_{\gamma;\alpha,j}\chi_{u_{\gamma,j}}(\varepsilon).
+ \label{eq:tpc45-right-coordinate-Walsh}
+\end{align}
+Equivalently, the abstract coefficient \(b_{i,u}\) is
+\begin{equation}
+ b_{(L,\gamma,j),u_{\alpha,j}}=B^L_{\alpha;\gamma,j},
+ \qquad
+ b_{(R,\alpha,j),u_{\gamma,j}}=B^R_{\gamma;\alpha,j},
+ \label{eq:tpc45-b-identification}
+\end{equation}
+and is zero for absent labels.  The injectivity lemma makes
+\eqref{eq:tpc45-b-identification} single-valued.  Define the active-label
+set and the high part by
+\begin{equation}
+ \cU_i:=\{u:b_{i,u}\ne0\},
+ \qquad
+ u_{>y}:=\prod_{\substack{p\mid u\\p>y}}p
+ \quad\text{for every cutoff \(y\)}.
+ \label{eq:tpc45-active-labels-high-part}
+\end{equation}
+With this notation, the equality energy and atomic diagonal are
+\begin{equation}
+ \begin{aligned}
+  S(\varepsilon)
+  &:=(S_i(\varepsilon))_{i\in\cI_L\sqcup\cI_R}
+    \in\Hh_{\rm out},\\
+  Z_0(\varepsilon)
+  &:=\|S(\varepsilon)\|^2
+    =\sum_{i\in\cI_L\sqcup\cI_R}|S_i(\varepsilon)|^2,\\
+  \cD_0&:=\sum_i\sum_u|b_{i,u}|^2.
+ \end{aligned}
+ \label{eq:tpc45-Z-and-diagonal}
+\end{equation}
+
+At the all-minus point,
+\(\chi_{u_{\rho,j}}(-\one)=\mu(d_\rho)\mu(n_{\rho,j})\), so
+\eqref{eq:tpc45-left-coordinate-Walsh} and
+\eqref{eq:tpc45-right-coordinate-Walsh} recover the literal physical
+columns.  No M\"obius sign remains hidden in \(B^{L/R}\).
+
+\subsection{The actual Walsh coefficient}
+
+For every positive integer define its parity kernel by
+\begin{equation}
+ \operatorname{sf}(N)
+ :=\prod_{\substack{p\\v_p(N)\ {\rm odd}}}p.
+ \label{eq:tpc45-sf-definition}
+\end{equation}
+In particular, if \(a,b\) are squarefree, then
+\begin{equation}
+ \operatorname{sf}(ab)=\frac{ab}{(a,b)^2}.
+ \label{eq:tpc45-sf-two-squarefree}
+\end{equation}
+For two rows at the same orbit time put
+\begin{equation}
+ \kappa_{\rho,\sigma,j}
+ :=\operatorname{sf}(u_{\rho,j}u_{\sigma,j}).
+ \label{eq:tpc45-pair-kernel}
+\end{equation}
+
+\begin{proposition}[Complete original-variable formula for \(C_X\)]
+\label{prop:tpc45-C-original-variables}
+For \(\kappa>1\), the scale-dependent Walsh coefficient is
+\begin{equation}
+ C_X(\kappa)=C_X^L(\kappa)+C_X^R(\kappa),
+ \label{eq:tpc45-C-sides}
+\end{equation}
+where
+\begin{align}
+ C_X^L(\kappa)
+ &:={}
+ \sum_{\gamma\in\cA_2}\sum_{j\in\cJ}
+ \sum_{\substack{\alpha,\beta\in\cA_1,\ \alpha\ne\beta\\
+                   \kappa_{\alpha,\beta,j}=\kappa}}
+ B^L_{\alpha;\gamma,j}
+ \overline{B^L_{\beta;\gamma,j}},
+ \label{eq:tpc45-C-left}\\
+ C_X^R(\kappa)
+ &:={}
+ \sum_{\alpha\in\cA_1}\sum_{j\in\cJ}
+ \sum_{\substack{\gamma,\delta\in\cA_2,\ \gamma\ne\delta\\
+                   \kappa_{\gamma,\delta,j}=\kappa}}
+ B^R_{\gamma;\alpha,j}
+ \overline{B^R_{\delta;\alpha,j}}.
+ \label{eq:tpc45-C-right}
+\end{align}
+Both inner sums are ordered.  In particular,
+\begin{equation}
+ C_X(\kappa)\in\R,
+ \qquad
+ Z_0(\varepsilon)
+ =\cD_0+\sum_{\kappa>1}C_X(\kappa)\chi_\kappa(\varepsilon).
+ \label{eq:tpc45-C-real-expansion}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Expand every squared coordinate in
+\eqref{eq:tpc45-Z-and-diagonal}.  The diagonal row pairs give
+\(\cD_0\).  By \cref{lem:tpc45-label-injectivity}, no unequal pair has
+constant character.  An unequal ordered pair contributes
+\(B_\rho\overline{B_\sigma}\chi_{\kappa_{\rho,\sigma,j}}\), which gives
+\cref{eq:tpc45-C-left,eq:tpc45-C-right}.  Reversing the ordered pair
+conjugates its weight without changing its kernel, proving reality.
+\end{proof}
+
+For example, a left summand in \eqref{eq:tpc45-C-left} equals
+\begin{align}
+ &\gamma_\alpha^{\circ,(1)}
+  \overline{\gamma_\beta^{\circ,(1)}}
+  \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+  \overline{\mathfrak A_{\beta,\gamma}^{\rm act}(j)}
+  \Lambda(n_{\alpha,j})\overline{\Lambda(n_{\beta,j})}
+ \notag\\
+ &\hspace{45mm}\times
+  \mu^2(n_{\alpha,j})\mu^2(n_{\beta,j}).
+ \label{eq:tpc45-expanded-left-weight}
+\end{align}
+The two leading minus signs in \eqref{eq:tpc45-left-B} have cancelled.
+There is no algebraic sign for
+\eqref{eq:tpc45-expanded-left-weight}; the reality of \(C_X\) is a
+conjugation symmetry, not positivity.
+
+\subsection{Restriction matching in original variables}
+
+Let \(p_1<\cdots<p_R\) be the active primes of the centered Walsh
+spectrum, \(P_r=\prod_{t\le r}p_t\), and extend \(C_X\) by
+\(C_X(1)=0\).  As in TPC--44, put
+\begin{equation}
+ C_r(m):=\sum_{a\mid P_r}\mu(a)C_X(am),
+ \qquad (m,P_r)=1.
+ \label{eq:tpc45-Cr}
+\end{equation}
+To expand its correlation, let \(\mathscr E_X\) be the disjoint union
+of all ordered unequal row pairs in
+\cref{eq:tpc45-C-left,eq:tpc45-C-right}.  For \(e\in\mathscr E_X\),
+write
+\begin{equation}
+ w(e):=b_{i,u_{e,1}}\overline{b_{i,u_{e,2}}},
+ \qquad
+ \kappa(e):=\operatorname{sf}(u_{e,1}u_{e,2}).
+ \label{eq:tpc45-cross-atom}
+\end{equation}
+The two labels inside one \(e\) share its side, output coordinate, and
+orbit time.  Two different atoms \(e,f\), however, need not share any
+of those data.
+
+\begin{proposition}[Four-label matching formula]
+\label{prop:tpc45-four-label-matching}
+For \(p=p_r\), the TPC--44 paired coefficient sum has the exact form
+\begin{align}
+ \mathcal T_r
+ &:={}
+ \sum_{(m,P_r)=1}C_{r-1}(m)\overline{C_{r-1}(pm)}
+ \notag\\
+ &=
+ \sum_{c\mid P_{r-1}}\mu(c)
+ \sum_{\substack{e,f\in\mathscr E_X\\
+                  p\nmid\kappa(e),\ p\mid\kappa(f)\\
+                  \operatorname{sf}(u_{e,1}u_{e,2}u_{f,1}u_{f,2})=pc}}
+ w(e)\overline{w(f)}.
+ \label{eq:tpc45-four-label-matching}
+\end{align}
+Equivalently, every summand lies on an exact almost-square equation
+\begin{equation}
+ u_{e,1}u_{e,2}u_{f,1}u_{f,2}=z^2pc,
+ \qquad c\mid P_{r-1},
+ \label{eq:tpc45-four-label-almost-square}
+\end{equation}
+for an integer \(z\).  In row variables, the left side is a product of
+four factors of the form
+\begin{equation}
+ d_\rho(\ell_\rho d_\rho j+h),
+ \label{eq:tpc45-four-label-row-factor}
+\end{equation}
+with one common orbit time inside each of the two ordered pairs, but not
+necessarily between the pairs.
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:tpc45-Cr} twice:
+\begin{align}
+ \mathcal T_r
+ =\sum_m\sum_{a,b\mid P_{r-1}}\mu(a)\mu(b)
+ \sum_{\kappa(e)=am}\sum_{\kappa(f)=bpm}
+ w(e)\overline{w(f)}.
+ \label{eq:tpc45-paired-expanded-ab}
+\end{align}
+Here \(a,b,p,m\) have the coprimalities forced by their displayed
+factorizations.  Put
+\(c=\operatorname{sf}(ab)=ab/(a,b)^2\).  Then
+\(c\mid P_{r-1}\),
+\begin{equation}
+ \mu(a)\mu(b)=\mu(c),
+ \qquad
+ \operatorname{sf}\bigl((am)(bpm)\bigr)=pc.
+ \label{eq:tpc45-ab-to-c}
+\end{equation}
+Conversely, the oriented conditions in
+\eqref{eq:tpc45-four-label-matching} say that the two kernels have the
+same part outside \(P_r\), while precisely the second contains \(p\).
+They therefore recover unique \(a,b,m\) in
+\eqref{eq:tpc45-paired-expanded-ab}.  Finally, squarefree reduction is
+addition of prime valuations modulo two, so
+\begin{equation}
+ \operatorname{sf}(\kappa(e)\kappa(f))
+ =\operatorname{sf}(u_{e,1}u_{e,2}u_{f,1}u_{f,2}).
+ \label{eq:tpc45-sf-associative}
+\end{equation}
+This proves both formulas.
+\end{proof}
+
+The sign \(\mu(c)\) in
+\eqref{eq:tpc45-four-label-matching} is supplied only by the previously
+frozen primes.  Neither \(w(e)\) nor \(w(f)\) has a prescribed sign.
+Consequently, an estimate for \(\mathcal T_r\) requires cancellation or
+an angle in this actual weighted four-label matching problem; label
+incidence alone does not determine its sign.

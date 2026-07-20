@@ -1,0 +1,352 @@
+\section{Two exact very-high-prime Gram forms}
+\label{sec:tpc45-affine-gram}
+
+There are two natural operations on the signs below the cutoff \(y\):
+one may set them to their physical value \(-1\), or one may average
+them.  The first operation retains every cross-label inner product and
+gives an affine polynomial in the high signs.  The second keeps only
+equal residual-label fibers and gives a pure quadratic Gram synthesis.
+These are different identities in different Hilbert spaces.
+
+Let \(\cP_y\) be the finite set of primes \(p>y\) occurring as the high
+part of an actual equality label.  Use the factorization
+\begin{equation}
+ u=sq,
+ \qquad \Pplus(s)\le y,
+ \qquad q=1\ \text{or}\ q\in\cP_y
+ \label{eq:tpc45-u-sq}
+\end{equation}
+from \cref{thm:tpc45-unique-very-high-prime}.
+
+\subsection{Physical low signs: an affine output-space form}
+
+Define vectors in the original output space \(\Hh_{\rm out}\) by
+\begin{align}
+ (v_0)_i
+ &:=\sum_{\substack{u\in\cU_i\\u_{>y}=1}}
+     \mu(u)b_{i,u},
+ \label{eq:tpc45-v0}\\
+ (v_p)_i
+ &:=\sum_{\substack{u\in\cU_i\\u_{>y}=p}}
+     \mu(u/p)b_{i,u},
+ \qquad p\in\cP_y.
+ \label{eq:tpc45-vp}
+\end{align}
+By the singleton assertion in
+\cref{thm:tpc45-unique-very-high-prime}, the sum in
+\eqref{eq:tpc45-vp} has at most one term for each fixed \(i\).
+
+\begin{theorem}[Physical-low affine normal form]
+\label{thm:tpc45-physical-low-affine}
+After setting every sign at \(q\le y\) to \(-1\), the complete equality
+column is
+\begin{equation}
+ \boxed{
+ S(-\one_{\le y},\varepsilon_{>y})
+ =v_0+\sum_{p\in\cP_y}\varepsilon_pv_p}
+ \quad\text{in }\Hh_{\rm out}.
+ \label{eq:tpc45-affine-column}
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{
+ Z_0(-\one_{\le y},\varepsilon_{>y})
+ =\left\|v_0+\sum_{p\in\cP_y}\varepsilon_pv_p\right\|^2.}
+ \label{eq:tpc45-affine-energy}
+\end{equation}
+Its high-prime Walsh spectrum has degree at most two.  Explicitly, for
+the centered polynomial \(F=Z_0-\cD_0\), the coefficients after the low
+restriction are
+\begin{align}
+ c_\varnothing
+ &=\|v_0\|^2+\sum_p\|v_p\|^2-\cD_0,
+ \label{eq:tpc45-affine-c0}\\
+ c_p&=2\operatorname{Re}\langle v_0,v_p\rangle,
+ \label{eq:tpc45-affine-cp}\\
+ c_{pq}&=2\operatorname{Re}\langle v_p,v_q\rangle
+ \qquad(p<q),
+ \label{eq:tpc45-affine-cpq}
+\end{align}
+and every coefficient of degree at least three is zero.  At the physical
+high corner,
+\begin{equation}
+ \boxed{Z_0(-\one)=\left\|v_0-\sum_{p\in\cP_y}v_p\right\|^2.}
+ \label{eq:tpc45-affine-physical-corner}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+If \(u_{>y}=1\), its character at the restricted low face is
+\(\mu(u)\).  If \(u=sp\), the same character is
+\(\mu(s)\varepsilon_p\).  Grouping the coordinate formulas
+\cref{eq:tpc45-left-coordinate-Walsh,eq:tpc45-right-coordinate-Walsh}
+gives \eqref{eq:tpc45-affine-column}; taking the output norm gives
+\eqref{eq:tpc45-affine-energy}.  Expansion of that norm proves
+\cref{eq:tpc45-affine-c0,eq:tpc45-affine-cp,eq:tpc45-affine-cpq}.
+Finally put every remaining sign equal to \(-1\).
+\end{proof}
+
+The formula is literal in the row variables.  If the unique left source
+row at \((j,p)\) is \(\alpha_p(j)\) and
+\begin{equation}
+ n_{\alpha_p(j),j}=p r_p(j),
+ \label{eq:tpc45-left-pr}
+\end{equation}
+then
+\begin{equation}
+ (v_p)_{L,\gamma,j}
+ =\mu(d_{\alpha_p(j)}r_p(j))
+  B^L_{\alpha_p(j);\gamma,j},
+ \label{eq:tpc45-vp-left-actual}
+\end{equation}
+with value zero when no such row exists.  Similarly, if the unique right
+summation row is \(\gamma_p(j)\), then
+\begin{equation}
+ (v_p)_{R,\alpha,j}
+ =\mu(d_{\gamma_p(j)}r_p(j))
+  B^R_{\gamma_p(j);\alpha,j}.
+ \label{eq:tpc45-vp-right-actual}
+\end{equation}
+Thus the residual physical sign is precisely \(\mu(dr)\).  The high
+prime itself supplies the final minus sign in
+\eqref{eq:tpc45-affine-physical-corner}.
+
+For example, the left part of the quadratic coefficient is
+\begin{align}
+ c_{pq}^L
+ =2\operatorname{Re}\sum_{\gamma,j}
+ &\mu(d_{\alpha_p(j)}r_p(j))
+  \mu(d_{\alpha_q(j)}r_q(j))
+ \notag\\
+ &\times B^L_{\alpha_p(j);\gamma,j}
+  \overline{B^L_{\alpha_q(j);\gamma,j}},
+ \label{eq:tpc45-cpq-actual-left}
+\end{align}
+where a summand is present only when
+\begin{equation}
+ p r_p(j)-m_{\alpha_p(j)}j=h,
+ \qquad
+ q r_q(j)-m_{\alpha_q(j)}j=h.
+ \label{eq:tpc45-two-determinant-ladders}
+\end{equation}
+In particular,
+\begin{equation}
+ p r_p(j)-q r_q(j)
+ =(m_{\alpha_p(j)}-m_{\alpha_q(j)})j.
+ \label{eq:tpc45-determinant-difference}
+\end{equation}
+The right contribution is obtained from
+\eqref{eq:tpc45-vp-right-actual}.  This is an actual affine determinant
+sum with the source weights and joint masks retained.
+
+The degree-two reduction also simplifies the TPC--44 coefficient
+correlation.  Process the primes in \(\cP_y\) increasingly, after all
+low signs have already been restricted.  Just before processing \(p\),
+put
+\begin{equation}
+ w_p:=v_0-\sum_{\substack{q\in\cP_y\\q<p}}v_q.
+ \label{eq:tpc45-wp}
+\end{equation}
+The surviving coefficients are
+\begin{align}
+ c_\varnothing^{(p)}
+ &=\|w_p\|^2+\sum_{q\ge p}\|v_q\|^2-\cD_0,
+ \label{eq:tpc45-current-c0}\\
+ c_q^{(p)}&=2\operatorname{Re}\langle w_p,v_q\rangle
+ \qquad(q\ge p),
+ \label{eq:tpc45-current-cq}\\
+ c_{qr}^{(p)}&=2\operatorname{Re}\langle v_q,v_r\rangle
+ \qquad(p\le q<r).
+ \label{eq:tpc45-current-cqr}
+\end{align}
+Let \(C_{p^-}(m)\) denote the Walsh coefficient of \(\chi_m\) in this
+current centered polynomial after all lower signs and all
+\(q\in\cP_y\) with \(q<p\) have been fixed to \(-1\); the index
+\(m=1\) denotes the constant coefficient
+\(C_{p^-}(1)=c_\varnothing^{(p)}\).
+Hence the general sum over residual kernels is exactly
+\begin{equation}
+ \boxed{
+ \sum_m C_{p^-}(m)\overline{C_{p^-}(pm)}
+ =c_\varnothing^{(p)}c_p^{(p)}
+  +\sum_{q>p}c_q^{(p)}c_{pq}.}
+ \label{eq:tpc45-top-paired-collapse}
+\end{equation}
+Indeed, a residual \(m\) with at least two prime factors would make
+\(pm\) have degree at least three, whose coefficient vanishes.
+
+\subsection{Averaged low signs: the residual-label Gram form}
+
+Now use a different Hilbert space,
+\begin{equation}
+ \Hh_{\rm res}
+ :=\ell^2\bigl\{(i,s):
+ i\in\cI_L\sqcup\cI_R,
+ \ s\text{ squarefree},\ \Pplus(s)\le y\bigr\}.
+ \label{eq:tpc45-residual-Hilbert-space}
+\end{equation}
+For \(p\in\cP_y\), define
+\begin{equation}
+ (x_p)_{i,s}:=
+ \begin{cases}
+  b_{i,sp},&sp\in\cU_i,\\
+  0,&sp\notin\cU_i.
+ \end{cases}
+ \label{eq:tpc45-xp}
+\end{equation}
+Let
+\begin{equation}
+ \cD_H:=\sum_{p\in\cP_y}\sum_i
+        \sum_{\substack{u\in\cU_i\\u_{>y}=p}}|b_{i,u}|^2.
+ \label{eq:tpc45-DH}
+\end{equation}
+
+\begin{theorem}[Low-averaged pure Gram identity]
+\label{thm:tpc45-low-averaged-Gram}
+Assume both cutoff conditions
+\eqref{eq:tpc45-y-geometric-conditions} and
+\eqref{eq:tpc45-y-label-separation}.  Then
+\begin{equation}
+ \boxed{
+ \E_{\varepsilon_q:q\le y}
+ Z_0(\varepsilon_{\le y},-\one_{>y})
+ =\cD_0-\cD_H+
+  \left\|\sum_{p\in\cP_y}x_p\right\|_{\Hh_{\rm res}}^2.}
+ \label{eq:tpc45-low-averaged-Gram}
+\end{equation}
+Moreover,
+\begin{equation}
+ \sum_p\|x_p\|^2=\cD_H,
+ \qquad
+ \|x_p\|^2=\|v_p\|^2,
+ \label{eq:tpc45-xp-diagonal}
+\end{equation}
+and therefore
+\begin{equation}
+ \E_{\le y}Z_0(\varepsilon_{\le y},-\one_{>y})
+ =\cD_0+2\operatorname{Re}
+  \sum_{p<q}\langle x_p,x_q\rangle.
+ \label{eq:tpc45-pure-quadratic-Gram}
+\end{equation}
+There is no linear term in \eqref{eq:tpc45-pure-quadratic-Gram}.
+\end{theorem}
+
+\begin{proof}
+Fix an output coordinate \(i\).  A label with no prime above \(y\) is
+its own low Walsh label \(u\), and distinct such full labels are
+orthogonal under the low-sign average.  A label \(sp\) with \(p>y\)
+has low Walsh label \(s\), while its fixed high character contributes
+the sign \(-1\).
+
+No no-high full label can have the same low label as a high-prime
+residual.  Indeed, by \eqref{eq:tpc45-support-endpoints}, a no-high label
+has size at least \(D_-N_-\), whereas
+\begin{equation}
+ s=\frac{d_\rho n_{\rho,j}}p
+ \le\frac{D_+N_+}{y}<D_-N_-
+ \label{eq:tpc45-residual-size-separation}
+\end{equation}
+for a high-prime label.  Thus low Walsh orthogonality leaves the atomic
+energy \(\cD_0-\cD_H\) from the no-high labels and, for every low label
+\(s\), the coefficient
+\begin{equation}
+ -\sum_{p\in\cP_y}b_{i,sp}
+ \label{eq:tpc45-matched-high-coefficient}
+\end{equation}
+from the high-prime labels.  Squaring
+\eqref{eq:tpc45-matched-high-coefficient} and summing \((i,s)\) gives
+\eqref{eq:tpc45-low-averaged-Gram}.  Unique high-prime factorization
+partitions the high atoms, proving the first identity in
+\eqref{eq:tpc45-xp-diagonal}.  Fixed-\((j,p)\) singleton incidence shows
+that \eqref{eq:tpc45-vp} contains at most one term per output coordinate;
+multiplication by \(\mu(s)\) preserves its modulus, proving the second.
+Expanding the last norm now gives
+\eqref{eq:tpc45-pure-quadratic-Gram}.
+\end{proof}
+
+The M\"obius factors suppressed in the stripped definition of \(x_p\)
+may be restored without changing the synthesis norm.  Indeed, the
+diagonal map
+\begin{equation}
+ (Uy)_{i,s}:=\mu(s)y_{i,s}
+ \label{eq:tpc45-residual-unitary-reweighting}
+\end{equation}
+is unitary on \(\Hh_{\rm res}\), and on every occurring factorization
+\(s=dr\) one has \(\mu(s)=\mu(d)\mu(r)\).  Consequently
+\begin{equation}
+ \left\|\sum_p x_p\right\|
+ =\left\|\sum_p Ux_p\right\|.
+ \label{eq:tpc45-residual-physical-reweighting}
+\end{equation}
+This is the precise bridge from the pure Gram form to the source- and
+cofactor-M\"obius coefficient slots discussed below; it does not impose
+independence or cancellation on either factor.
+
+The matching condition in this Gram space is completely explicit:
+\begin{equation}
+ \langle x_p,x_q\rangle
+ =\sum_i\sum_{\substack{s\\sp,sq\in\cU_i}}
+ b_{i,sp}\overline{b_{i,sq}}.
+ \label{eq:tpc45-xp-xq-matching}
+\end{equation}
+For a left coordinate, a term in
+\eqref{eq:tpc45-xp-xq-matching} consists of rows \(\alpha,\beta\) and
+cofactors \(r_\alpha,r_\beta\) satisfying
+\begin{align}
+ p r_\alpha&=\ell_\alpha d_\alpha j+h,
+ &q r_\beta&=\ell_\beta d_\beta j+h,
+ \label{eq:tpc45-matching-ladders}\\
+ d_\alpha r_\alpha&=d_\beta r_\beta=s,
+ \label{eq:tpc45-residual-match}
+\end{align}
+and its weight is
+\begin{equation}
+ B^L_{\alpha;\gamma,j}
+ \overline{B^L_{\beta;\gamma,j}}.
+ \label{eq:tpc45-matching-weight-left}
+\end{equation}
+The right formula exchanges the two row systems exactly as in
+\eqref{eq:tpc45-C-right}.
+
+Because every active \(d\) and \(r\) in
+\eqref{eq:tpc45-residual-match} is squarefree and coprime, one has
+\begin{equation}
+ d_\alpha\mid s,
+ \qquad r_\alpha=s/d_\alpha,
+ \qquad
+ \ell_\alpha=\frac{ps-hd_\alpha}{d_\alpha^2j},
+ \label{eq:tpc45-matching-row-recovery}
+\end{equation}
+and the same formula with \((q,d_\beta)\).  Thus a fixed
+\((i,s,p)\)-fiber has at most \(\tau(s)\) candidate source divisors;
+integrality, primality, dyadic support, and the actual mask only delete
+candidates.  This is the exact matching mechanism behind the residual
+Gram space.
+
+\begin{remark}[The two Gram matrices must not be identified]
+\label{rem:tpc45-two-Grams-distinct}
+The physical-low coefficient
+\(\langle v_p,v_q\rangle_{\Hh_{\rm out}}\) sums every pair of
+\(p\)- and \(q\)-rows sharing an output coordinate and weights it by
+\(\mu(s_p)\mu(s_q)\).  The low-averaged coefficient
+\(\langle x_p,x_q\rangle_{\Hh_{\rm res}}\) retains only the exact matches
+\(s_p=s_q\); on such a match the two low M\"obius signs multiply to one.
+Although \(\|v_p\|=\|x_p\|\), their cross inner products are different.
+The affine form \eqref{eq:tpc45-affine-energy} and the pure Gram form
+\eqref{eq:tpc45-low-averaged-Gram} therefore serve different descent
+routes.
+\end{remark}
+
+The remaining estimate in either route is coefficient-specific.  In
+the physical-low form it is an angle bound for the actual vectors
+\(v_p\), hence for the signed determinant sums
+\eqref{eq:tpc45-cpq-actual-left}.  In the low-averaged form it is a
+Bessel bound for the matching synthesis
+\begin{equation}
+ \left\|\sum_{p\in\cP_y}x_p\right\|^2
+ \label{eq:tpc45-residual-synthesis-gate}
+\end{equation}
+on the ladders \eqref{eq:tpc45-matching-ladders}--
+\eqref{eq:tpc45-residual-match}.  Singleton prime incidence and the
+diagonal identity \eqref{eq:tpc45-xp-diagonal} do not by themselves
+control either coherent sum.
