@@ -1,0 +1,115 @@
+\section{Boundaries and the next gate}
+\label{sec:tpc47-boundaries}
+
+The positive result is a transfer theorem for one canonical family of
+orbit bands.  This section records every identification that would be
+needed before it could enter a fixed-shift prime-pair argument.
+
+\subsection{Five distinctions that remain active}
+
+\paragraph{Residual synthesis versus the native affine face.}
+At \(h_0\), the vector analyzed here is the actual-coefficient
+negative large-prime residual synthesis \(-\sum_pUx_p\).  TPC--45 obtains this
+object after averaging the lower prime signs.  Its primewise norms agree
+with the corresponding native vectors, but its cross inner products do
+not generally agree with those of the physical affine face
+\citep{WangTPC45}.  The grouping statement in
+\cref{prop:tpc47-grouped-component} recovers only the large-prime
+component and pays the exact residual-fiber norm.
+
+\paragraph{Frozen shifts versus reconstructed physical shifts.}
+Only \(h=h_0\) has inherited physical provenance.  The shift transform
+uses every integer \(h\) after freezing the \(h_0\) coefficient field.
+For a newly reconstructed physical shift, the row set, residue factor,
+mask, and source residues may change.  No growing-window uniformity
+theorem is asserted.
+
+\paragraph{Amplitude spectrum versus atomic normalization.}
+Theorems \ref{thm:tpc47-exact-transfer} and
+\ref{thm:tpc47-actual-transfer} concern the Fourier transform of a
+Hilbert amplitude.  Fourier inversion at one \(h_0\) integrates all
+frequencies, including the uncontrolled complement.  Moreover, the
+TPC denominator is the atomic diagonal at \(h_0\), not the Cartesian
+energy over all determinant shifts.  TPC--46 proves that these
+normalizations may differ by a polynomial factor \citep{WangTPC46}.
+
+\paragraph{Consecutive completion versus sparse aliases.}
+The actual TPC completion samples determinant intercepts separated by
+the triple-prime modulus.  Sparse sampling folds the completed shift
+spectrum.  The present orbit projection neither unfolds those aliases
+nor proves that the equality-alias residual \(d(m)r\) remains literal
+at nonzero aliases; there the squarefree kernel can replace the product.
+
+\paragraph{One band family versus the full orbit space.}
+The complement \(I-\Pi_{\Omega}^{(H_0)}\) is uncontrolled.  By
+\cref{thm:tpc47-no-mass-lower-bound}, qualitative injectivity of the
+low sector supplies no quantitative reconstruction.  Summing separate
+pointwise bounds over the \(X^{33/100+o(1)}\) comparable bands in
+\eqref{eq:tpc47-cover-count} would introduce a prohibitive support
+factor unless orthogonality is retained through the later operations.
+
+\subsection{What has genuinely changed}
+
+Before this paper, the orbit-output coupling was an arbitrary
+\(j\)-dependent Hilbert vector, so the TPC--46 spectral theorem could
+not be applied to any declared portion of the actual residual field.
+Now there is a representation-independent norm-one operator, applied
+to every output row and residual label, for which
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item the full actual coefficient reassembles with its source mask and
+       M\"obius roles intact;
+ \item a growing \(X^{1/400+o(1)}\) time--bandwidth sector has
+       super-polynomial leakage on the interval
+       \eqref{eq:tpc47-final-endpoint-gap}; and
+ \item the exact operator-theoretic obstruction to uniform recovery is
+       proved,
+       rather than hidden in a phrase such as ``smooth output.''
+\end{enumerate}
+This crosses Door A of TPC--46 on one bounded projected residual sector.
+It does not cross the other three doors.
+
+\subsection{A reversible continuation}
+
+The next paper may pursue any of the following logically separate
+tasks.
+\begin{enumerate}[label=\textbf{Door \Alph*.},leftmargin=3.7em]
+ \item Partition the entire orbit circle into translated comb bands and
+       prove a two-parameter resonance-tube square-function estimate
+       that preserves orthogonality while the bands are reassembled.
+       This avoids asking one low band to contain a fixed fraction of
+       the vector.
+ \item Use the literal TPC source/mask phases to prove a
+       coefficient-specific spectral concentration or entropy bound.
+       It must beat the arbitrary-vector counterexample in
+       \cref{thm:tpc47-no-mass-lower-bound} by using arithmetic data.
+ \item Combine orbit-band projection with the exact residual grouping
+       map and prove that one additional cofactor range has acceptable
+       grouping multiplicity at atomic normalization.
+ \item Construct a family of actual masks or residual packets that
+       saturates the high-frequency or grouping frontier.  This would
+       give a sharp negative boundary without asserting failure of
+       every possible TPC continuation.
+\end{enumerate}
+
+Door A is the most direct continuation: the projectors are orthogonal
+before reassembly, and the bandwise resonance condition is explicit.
+The missing theorem is a square-function or large-sieve estimate that
+survives determinant dilation, residual grouping, and fixed-shift
+localization.  No such estimate is assumed here.
+
+\subsection{Prohibited conclusions}
+
+Nothing in this paper proves or implies
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item deterministic cancellation of M\"obius coefficients at the
+       prescribed physical shift;
+ \item an atomic-normalized Bessel bound for the complete equality
+       column;
+ \item a uniform family of actual TPC packets over growing shifts;
+ \item a parity-barrier breach, the Hardy--Littlewood prime-pair
+       asymptotic, or the twin-prime conjecture.
+\end{enumerate}
+The advance is sectorial: the canonical low core has an exact gap, while
+the projected frozen family built from the literal \(h_0\)-coefficient
+field has arbitrary-power leakage there.  Its possible quantitative
+thinness is also proved.

@@ -1,0 +1,220 @@
+\section{The inherited physical-coefficient sector}
+\label{sec:tpc47-interface}
+
+We record the exact object to which the orbit projection is applied.
+The purpose is to prevent a low-frequency statement about a model
+coefficient from being substituted for the actual source--mask field.
+
+\subsection{The physical equality column}
+
+Fix \(h_0\in\Z\setminus\{0\}\), and put \(H_0=|h_0|\).  A source row
+is \(\rho=(\ell_\rho,d_\rho)\), with
+\begin{equation}
+ m_\rho=\ell_\rho d_\rho\asymp Q,
+ \qquad
+ Q=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)}.
+ \label{eq:tpc47-row-scales}
+\end{equation}
+Let \(M_-\) and \(M_+\) be the minimum and maximum source integers on
+the inherited dyadic row cell.  Thus
+\begin{equation}
+ 0<M_-\le m_\rho\le M_+,
+ \qquad
+ M_-=X^{267/400+o(1)},
+ \qquad
+ M_+=X^{267/400+o(1)}.
+ \label{eq:tpc47-physical-M-bounds}
+\end{equation}
+The prime \(\ell_\rho\) and squarefree \(d_\rho\) are uniquely
+determined by \(m_\rho\) on the inherited row support.  Let
+\(\cO_L\) and \(\cO_R\) be the opposite-row sets for the left and
+right columns.  We treat the left column; every assertion has the
+symmetric right-column form.
+
+On one terminal block \(n\asymp X\), take the large-prime band
+\begin{equation}
+ \cP_{R_0}^{\sharp}
+ =\left\{p\in\Pp:\sqrt{N_+}<p\le N_-/R_0\right\}.
+ \label{eq:tpc47-large-prime-band}
+\end{equation}
+Writing \(n=pr\), TPC--45 proves that \(p\) is unique, that
+\(R_0\le r<\sqrt{N_+}\), and that the physical residual label is
+\begin{equation}
+ s=d_\rho r.
+ \label{eq:tpc47-residual-label}
+\end{equation}
+After zero atoms are removed, \(d_\rho,r,s\) are squarefree on the
+equality column and \(\mu(s)=\mu(d_\rho)\mu(r)\)
+\citep{WangTPC43,WangTPC45,WangTPC46}.
+
+Let \(\gamma_\rho^{(1)}\) be the physical source coefficient,
+\(\mathfrak A_{\rho,\gamma}^{\rm act}(j)\) the actual joint
+source--mask multiplier, and
+\begin{equation}
+ \Lambda(n)=(\log n)\Phi_0(n/X).
+ \label{eq:tpc47-terminal-weight}
+\end{equation}
+The left large-prime equality residual synthesis is
+\begin{equation}
+ \cF_{h_0}^{\rm act,L}
+ =\sum_{\substack{\gamma\in\cO_L,\ j\in\Z,
+                   \rho,\ p\in\cP_{R_0}^{\sharp},\ r\\
+                   pr-m_\rho j=h_0}}
+ \gamma_\rho^{(1)}
+ \mathfrak A_{\rho,\gamma}^{\rm act}(j)
+ \mu(r)\Lambda(pr)\,
+ e_{\gamma,d_\rho r}\otimes e_j.
+ \label{eq:tpc47-physical-vector}
+\end{equation}
+Every coefficient is set to zero off the inherited terminal and orbit
+support.  Thus \eqref{eq:tpc47-physical-vector} is finitely supported
+in \(j\), even though we have embedded it in \(\ell^2(\Z)\).
+At \(h_0\) this vector is the negative of the TPC--45/46 synthesis,
+\(-\sum_pUx_p\).  It contains literal actual atoms and coefficients,
+but it belongs to the low-sign-averaged residual Gram route rather than
+the native affine physical Gram face; the two cross-inner-product
+structures need not agree.
+
+Define
+\begin{equation}
+ \Vv_L:=\ell^2(\cO_L\times\cS),
+ \qquad
+ \Hh_L:=\Vv_L\widehat\otimes\ell^2(\Z),
+ \label{eq:tpc47-output-Hilbert-space}
+\end{equation}
+where \(\cS\) contains the supported residual labels.  The right
+space is defined symmetrically, and the full output is their orthogonal
+sum.
+
+\subsection{The frozen-coefficient shift family}
+
+For \(h\in\Z\), define \(\cF_h^{\rm fr,L}\) by the right side of
+\eqref{eq:tpc47-physical-vector} with the determinant equation replaced
+by
+\begin{equation}
+ pr-m_\rho j=h,
+ \label{eq:tpc47-frozen-determinant}
+\end{equation}
+while every row, support, residue factor, source coefficient, mask
+coefficient, and residual label remains the one constructed for
+\(h_0\).  Then
+\begin{equation}
+ \cF_{h_0}^{\rm fr,L}=\cF_{h_0}^{\rm act,L}.
+ \label{eq:tpc47-frozen-physical-agreement}
+\end{equation}
+The family belongs to \(\ell^1(\Z;\Hh_L)\cap
+\ell^2(\Z;\Hh_L)\), and its shift transform is
+\begin{equation}
+ \widehat{\cF}^{\rm fr,L}(\alpha)
+ :=\sum_{h\in\Z}\cF_h^{\rm fr,L}\e(-h\alpha).
+ \label{eq:tpc47-frozen-shift-transform}
+\end{equation}
+
+\begin{remark}[No local-shift provenance]
+\label{rem:tpc47-no-local-provenance}
+For \(h\ne h_0\), \(\cF_h^{\rm fr,L}\) is an algebraic extension of
+one physical coefficient field.  Reconstructing TPC at physical shift
+\(h\) would change eligible rows, residue data, the joint multiplier,
+and possibly the residual label.  No uniform identification of those
+objects is used or claimed.
+\end{remark}
+
+\subsection{Exact projective layers of the full coefficient}
+
+TPC--36 proves the pointwise actual-multiplier representation, and
+TPC--46 inserts the large-prime and Mellin separations.  Their combined
+interface gives the following statement
+\citep{WangTPC36,WangTPC46}.
+
+\begin{proposition}[Inherited actual-coefficient reassembly]
+\label{prop:tpc47-inherited-reassembly}
+For each fixed integer \(B\ge0\), the full frozen left family is a
+Bochner signed superposition of layers
+\begin{equation}
+ \cF_h^\omega
+ =\sum_{p,r,m}\sum_{\substack{j\in\Z\\
+                      j\equiv a_\omega\!\!\pmod{H_0}}}
+ A_\omega(p,r,m)\phi_\omega(j/J)
+ v_{\omega,p,r,m}\otimes e_j\,
+ \one_{pr-mj=h},
+ \label{eq:tpc47-projective-layer}
+\end{equation}
+where
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item the prime restriction and terminal Mellin factor are retained in
+       \(A_\omega\);
+ \item \(\mu(r)\) is retained in \(A_\omega\), while the literal
+       source and mask coefficient is retained in its \(m\)-factor;
+ \item \(v_{\omega,p,r,m}\in\Vv_L\) is independent of \(j\) and is
+       supported on coordinates \((\gamma,d(m)r)\); and
+ \item after multiplication by one common fixed compactly supported
+       cutoff that equals one on the physical normalized orbit range,
+       \(\phi_\omega\in C_c^\infty(\R)\), with
+       \begin{equation}
+       \int \mathfrak a_\omega
+       \|\phi_\omega\|_{C^B}\,d|\nu|(\omega)
+       \ll_{B,h_0}X^{o(1)}.
+       \label{eq:tpc47-projective-seminorm-mass}
+       \end{equation}
+\end{enumerate}
+Here \(\mathfrak a_\omega\) is the product of the declared sup-norm
+weights in the arithmetic and opposite-row factors.  More strongly,
+the construction is coefficientwise before the terminal sum: for every
+supported \(m,r\),
+\begin{align}
+ &\sum_{\gamma\in\cO_L}
+ \gamma_m^{(1)}\mathfrak A_{m,\gamma}^{\rm act}(j)
+ e_{\gamma,d(m)r}
+ \notag\\
+ &\quad={}
+ \sum_{a\bmod H_0}\one_{j\equiv a\!\!\pmod{H_0}}
+ \int c_{\omega,a}(m)\phi_{\omega,a}(j/J)
+ q_{\omega,a}^{m,r}\,d\nu_a(\omega),
+ \label{eq:tpc47-coefficientwise-reassembly}
+\end{align}
+where
+\begin{equation}
+ q_{\omega,a}^{m,r}
+ =\sum_{\gamma\in\cO_L}q_{\omega,a}(\gamma)
+ e_{\gamma,d(m)r},
+ \label{eq:tpc47-coefficientwise-output-vector}
+\end{equation}
+and the integral of
+\(\|c_{\omega,a}\|_\infty
+  \|q_{\omega,a}\|_\infty
+  \|\phi_{\omega,a}\|_{C^B}\)
+is \(X^{o(1)}\).  In particular,
+\begin{equation}
+ \cF_h^{\rm fr,L}=\int\cF_h^\omega\,d\nu(\omega)
+ \label{eq:tpc47-full-layer-integral}
+\end{equation}
+exactly, with total signed projective mass \(X^{o(1)}\) at every fixed
+orbit differentiability order.
+\end{proposition}
+
+\begin{proof}
+The global row-mask theorem of TPC--36 separates the source row, the
+opposite row, and a smooth orbit profile after splitting the fixed
+residue cells.  Its fixed-column refinement may additionally split
+\(m=\ell d\), but no such split is needed here.  Multiplication by the
+source coefficient preserves \(X^{o(1)}\) projective mass.  Mellin
+inversion separates \(\Lambda(pr)\), while the large-prime descent
+inserts \(\mu(r)\) and the literal residual coordinate \(d(m)r\).
+Grouping the opposite-row factor into \(v_{\omega,p,r,m}\) gives
+\eqref{eq:tpc47-projective-layer}.  The inherited orbit factors are
+smooth on a fixed normalized interval.  A common cutoff equal to one
+there makes them compactly supported without changing a physical
+coefficient and preserves every fixed seminorm estimate.  These are
+exactly the claims in \eqref{eq:tpc47-projective-seminorm-mass} and
+\eqref{eq:tpc47-coefficientwise-reassembly}.  Multiplication by the
+terminal factors and summation over \((p,r,m)\) then gives
+\eqref{eq:tpc47-full-layer-integral}.
+\end{proof}
+
+The signed integral in \eqref{eq:tpc47-full-layer-integral} must remain
+intact.  Selecting a favorable \(\omega\) would not define a bounded
+projection of the physical multiplier.  The orbit projection below is
+instead a single orthogonal operator applied after the complete sum has
+been reassembled.

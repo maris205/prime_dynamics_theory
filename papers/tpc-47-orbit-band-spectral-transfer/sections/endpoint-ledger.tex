@@ -1,0 +1,183 @@
+\section{The endpoint exponent ledger}
+\label{sec:tpc47-endpoint}
+
+Write the source and orbit exponents as
+\begin{equation}
+ M_-\asymp M_+\asymp X^\mu,
+ \qquad
+ J\asymp X^\nu,
+ \qquad
+ \mu+\nu=1.
+ \label{eq:tpc47-general-endpoint}
+\end{equation}
+At the TPC endpoint,
+\begin{equation}
+ \mu=\frac{267}{400},
+ \qquad
+ \nu=\frac{133}{400}.
+ \label{eq:tpc47-mu-nu}
+\end{equation}
+
+\subsection{A one-parameter family of projected sectors}
+
+Fix
+\begin{equation}
+ 0<\kappa<\nu,
+ \qquad
+ \Omega=\frac{X^{\kappa+o(1)}}{J},
+ \qquad
+ \Sigma=X^{\kappa+o(1)}.
+ \label{eq:tpc47-kappa-choice}
+\end{equation}
+Then
+\begin{equation}
+ W=\Omega+\Sigma/J=X^{\kappa-\nu+o(1)}.
+ \label{eq:tpc47-W-scale}
+\end{equation}
+The lower endpoint in \eqref{eq:tpc47-actual-gap} is
+\begin{equation}
+ \frac{W}{M_-}=X^{-1+\kappa+o(1)},
+ \label{eq:tpc47-lower-gap-scale}
+\end{equation}
+while its upper endpoint is
+\begin{equation}
+ \frac{H_0^{-1}-W}{M_+}=X^{-\mu+o(1)}.
+ \label{eq:tpc47-upper-gap-scale}
+\end{equation}
+
+\begin{theorem}[Robust projected endpoint range]
+\label{thm:tpc47-robust-endpoint}
+Under \eqref{eq:tpc47-general-endpoint} and
+\eqref{eq:tpc47-kappa-choice}, fix
+\begin{equation}
+ 0<\epsilon<\frac{\nu-\kappa}{2}.
+ \label{eq:tpc47-epsilon-range}
+\end{equation}
+For all sufficiently large \(X\), the interval
+\begin{equation}
+ \boxed{
+ X^{-1+\kappa+\epsilon}
+ \le\|\alpha\|_{\T}\le
+ X^{-\mu-\epsilon}}
+ \label{eq:tpc47-robust-general-gap}
+\end{equation}
+is contained in \eqref{eq:tpc47-actual-gap}.  The ideal coefficient
+core vanishes there exactly, and the projected frozen family built from
+the literal physical \(h_0\)-coefficient field obeys
+\eqref{eq:tpc47-superpolynomial-leakage}.
+\end{theorem}
+
+\begin{proof}
+The lower endpoint in \eqref{eq:tpc47-robust-general-gap} exceeds
+\eqref{eq:tpc47-lower-gap-scale} by \(X^{\epsilon+o(1)}\).  At the
+upper endpoint,
+\(M_+\|\alpha\|_{\T}\le X^{-\epsilon+o(1)}\), so it is smaller than
+\(H_0^{-1}-W\).  The interval is nonempty precisely when
+\[
+ -1+\kappa+\epsilon<-\mu-\epsilon,
+\]
+which is \eqref{eq:tpc47-epsilon-range}.  Apply
+\cref{thm:tpc47-actual-transfer,cor:tpc47-arbitrary-power-leakage}.
+\end{proof}
+
+\subsection{The TPC allowance
+\texorpdfstring{\(\kappa=1/400\)}{kappa = 1/400}}
+
+Take
+\begin{equation}
+ \kappa=\frac1{400}.
+ \label{eq:tpc47-tpc-kappa}
+\end{equation}
+Then
+\begin{equation}
+ \nu-\kappa
+ =\frac{132}{400}=\frac{33}{100}.
+ \label{eq:tpc47-remaining-width}
+\end{equation}
+
+\begin{corollary}[The TPC--47 mesoscopic sector]
+\label{cor:tpc47-tpc-endpoint}
+For every
+\begin{equation}
+ 0<\epsilon<\frac{33}{200},
+ \label{eq:tpc47-tpc-epsilon}
+\end{equation}
+ the projected frozen shift family built from the literal physical
+ \(h_0\)-coefficient field has
+arbitrary-power shift-spectral decay on
+\begin{equation}
+ \boxed{
+ X^{-399/400+\epsilon}
+ \le\|\alpha\|_{\T}\le
+ X^{-267/400-\epsilon}.}
+ \label{eq:tpc47-final-endpoint-gap}
+\end{equation}
+Its canonical low coefficient core vanishes exactly on the larger open
+interval \eqref{eq:tpc47-actual-gap}.
+\end{corollary}
+
+The fine-frequency endpoint in TPC--46 was \(X^{-1+o(1)}\).  The
+actual-residual-output projection costs \(1/400\) in that endpoint but
+leaves the
+strict exponent width \(33/100\).  This is a transfer loss, not an
+estimate for the fixed physical atom.
+
+\subsection{Time--bandwidth and cover count}
+
+Let \(N\asymp J\) be the length of the physical orbit interval.  From
+\cref{thm:tpc47-time-bandwidth-trace},
+\begin{equation}
+ \operatorname{tr}
+ (E_I^*\Pi_{\Omega}^{(H_0)}E_I)
+ =2H_0N\Omega
+ =X^{\kappa+o(1)}.
+ \label{eq:tpc47-shannon-exponent}
+\end{equation}
+The comb occupies the frequency fraction
+\begin{equation}
+ |\cB_{\Omega}^{(H_0)}|
+ =2H_0\Omega=X^{\kappa-\nu+o(1)}.
+ \label{eq:tpc47-band-fraction}
+\end{equation}
+Thus covering the circle by comparable translates requires
+\begin{equation}
+ X^{\nu-\kappa+o(1)}
+ \label{eq:tpc47-cover-count}
+\end{equation}
+bands.  At \(\kappa=1/400\), the three exact scales are
+\begin{equation}
+ \begin{array}{c|c}
+ \text{quantity}&\text{scale}\\ \hline
+ \text{time--bandwidth trace per residual fiber}
+   &X^{1/400+o(1)}\\
+ \text{projected shift-gap exponent width}
+   &33/100\\
+ \text{number of comparable orbit bands covering }\T
+   &X^{33/100+o(1)}.
+ \end{array}
+ \label{eq:tpc47-three-scale-table}
+\end{equation}
+The cover count does not prove that summing all bands incurs that loss;
+coefficients from different bands may interact.  It records only the
+geometry that a single projected theorem leaves unresolved.
+
+\subsection{Rational identities used later}
+
+For reproducibility, the endpoint ledger is
+\begin{align}
+ \frac{267}{400}+\frac{133}{400}&=1,
+ \label{eq:tpc47-rational-sum}\\
+ 1-\frac1{400}&=\frac{399}{400},
+ \label{eq:tpc47-rational-lower}\\
+ \frac{133}{400}-\frac1{400}
+ &=\frac{33}{100},
+ \label{eq:tpc47-rational-width}\\
+ \frac12\left(\frac{33}{100}\right)&=\frac{33}{200},
+ \label{eq:tpc47-rational-epsilon}\\
+ 1+\frac32\frac{267}{400}
+ +\frac12\frac{133}{400}&=\frac{867}{400},
+ \label{eq:tpc47-rational-full-prefactor}\\
+ 1+\frac{267}{400}
+ +\frac12\frac{133}{400}&=\frac{1467}{800}.
+ \label{eq:tpc47-rational-row-prefactor}
+\end{align}

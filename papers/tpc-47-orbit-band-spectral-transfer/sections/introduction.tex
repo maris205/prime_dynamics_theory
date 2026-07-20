@@ -1,0 +1,178 @@
+\section{Introduction}
+\label{sec:tpc47-introduction}
+
+The preceding large-prime descent turns one part of the TPC equality
+column into the determinant equation
+\begin{equation}
+ pr-mj=h_0,
+ \label{eq:tpc47-opening-determinant}
+\end{equation}
+with the prime variable \(p\), a M\"obius-weighted cofactor \(r\), and
+an actual source row \(m\).  Projective reassembly separates the
+physical source--mask coefficient into those arithmetic variables and
+a smooth orbit profile, up to a fixed progression in \(j\)
+\citep{WangTPC36,WangTPC45}.  TPC--46 then proves an exact
+mesoscopic shift gap when the Hilbert vector attached to
+\((p,r,m)\) is independent of \(j\) \citep{WangTPC46}.  In the actual
+residual output, the literal label \(s=d(m)r\) remains fixed for
+fixed \((m,r)\), but the non-orbit coefficient vector over opposite
+rows varies with \(j\); its coordinates are
+\begin{equation}
+ (\text{opposite row},j,s),\qquad s=d(m)r.
+ \label{eq:tpc47-actual-output-coordinate}
+\end{equation}
+TPC--47 records that dependence by adjoining the literal \(e_j\)
+factor and projecting it.  Before projection, an arbitrary dual orbit
+field can restore the entire spectrum.
+
+This paper does not assume that this coupling is smooth.  It applies a
+bounded projection to the coupling itself.  The physical orbit
+coordinate is embedded by zero extension into \(\ell^2(\Z)\).  In every
+fixed opposite-row and residual-label fiber, we retain the full
+residue-comb Fourier band
+\begin{equation}
+ \cB_\Omega^{(H_0)}
+ :=\{\beta\in\T:
+ \operatorname{dist}(\beta,H_0^{-1}\Z)\le\Omega\}.
+ \label{eq:tpc47-low-orbit-band}
+\end{equation}
+This defines one canonical sector of the actual output Hilbert space;
+it is not the choice of one term in a signed projective expansion.  The
+source mask, the M\"obius cofactor, and the residual label remain
+literal.
+
+\subsection{The positive theorem}
+
+The abstract kernel underlying the result is transparent.  Let
+\(M_-\le m\le M_+\), let \(H_0\) be fixed, and consider one layer
+\begin{equation}
+ F_h=\sum_{p,r,m}\sum_{\substack{j\in\Z\\j\equiv a\!\!\pmod{H_0}}}
+ A_{p,r,m}\phi(j/J)v_{p,r,m}\otimes e_j
+ \one_{pr-mj=h},
+ \label{eq:tpc47-intro-layer}
+\end{equation}
+where \(v_{p,r,m}\) is independent of \(j\).  If
+\(\operatorname{supp}\widehat\phi\subset[-\Sigma,\Sigma]\), then
+the orbit Fourier variable \(\beta\) changes the Poisson kernel from
+\(m\alpha\) to \(m\alpha-\beta\).  The exact nonresonance interval is
+therefore
+\begin{equation}
+ \boxed{
+ \frac{\Omega+\Sigma/J}{M_-}
+ <\|\alpha\|_{\T}<
+ \frac{H_0^{-1}-\Omega-\Sigma/J}{M_+}.}
+ \label{eq:tpc47-intro-gap}
+\end{equation}
+On this interval the shift Fourier transform of
+\(\Pi_\Omega F\) vanishes identically.  The statement is vector valued,
+uses no cancellation in \(p,r,m\), and is uniform over their
+coefficients.
+
+The actual orbit profiles are smooth rather than band limited.  We use
+a fixed smooth cutoff in continuous Fourier space,
+\begin{equation}
+ \phi=\phi_{\le\Sigma}+\phi_{>\Sigma},
+ \qquad
+ \operatorname{supp}\widehat{\phi_{\le\Sigma}}
+ \subset[-\Sigma,\Sigma].
+ \label{eq:tpc47-intro-lowpass}
+\end{equation}
+Every Schwartz seminorm of the remainder is smaller than an arbitrary
+negative power of \(\Sigma\), provided a sufficiently high but fixed
+orbit seminorm of \(\phi\) is used.  TPC--36 controls the total signed
+projective mass with every fixed orbit seminorm.  Hence the tails in
+\eqref{eq:tpc47-intro-lowpass} can be summed over the \emph{entire}
+actual projective representation.  No layer is selected and no
+arithmetic coefficient is smoothed.
+
+At the endpoint
+\begin{equation}
+ M_\pm=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)},
+ \label{eq:tpc47-intro-endpoint-scales}
+\end{equation}
+take
+\begin{equation}
+ \Omega=X^{1/400+o(1)}/J,
+ \qquad \Sigma=X^{1/400+o(1)}.
+ \label{eq:tpc47-intro-endpoint-bands}
+\end{equation}
+After a harmless \(X^\epsilon\) shrink at both ends,
+\eqref{eq:tpc47-intro-gap} becomes
+\begin{equation}
+ \boxed{
+ X^{-399/400+\epsilon}
+ \le\|\alpha\|_{\T}\le
+ X^{-267/400-\epsilon}.}
+ \label{eq:tpc47-intro-endpoint-gap}
+\end{equation}
+The projected frozen shift family built from the literal physical
+\(h_0\)-coefficient field has leakage \(O_{A,\epsilon}(X^{-A})\) on this
+interval relative to any of the declared polynomial coefficient
+envelopes.  Thus the orbit-frequency
+gate is crossed on a growing sector whose time--bandwidth size is the
+same \(X^{1/400+o(1)}\) scale as the endpoint TPC allowance.
+
+\subsection{What the projection does and does not retain}
+
+On one fixed opposite-row and residual-label fiber, let \(E_I\)
+restrict the orbit coordinate to a physical interval of
+\(N\asymp J\) integers.  The band projection satisfies
+\begin{equation}
+ \|\Pi_\Omega\|=1,
+ \qquad
+ \|\Pi_\Omega E_I\|_{\mathrm{HS}}^2
+ =\operatorname{tr}(E_I^*\Pi_\Omega E_I)=2H_0N\Omega.
+ \label{eq:tpc47-intro-shannon-number}
+\end{equation}
+Thus \(2H_0N\Omega\asymp X^{1/400+o(1)}\) is an exact trace identity,
+not an informal count of Fourier modes.  Moreover, a nonzero
+finite-orbit vector cannot have zero projection onto an open frequency
+band: its Fourier transform is a nonzero trigonometric polynomial.
+The projected sector is therefore genuinely nonempty whenever the
+physical residual packet is nonzero.
+
+There is nevertheless no useful uniform lower bound for the retained
+mass.  Explicit finite-difference vectors \(y_n\), supported inside a
+physical orbit window, satisfy
+\begin{equation}
+ \frac{\|\Pi_\Omega y_n\|_2}{\|y_n\|_2}
+ \ll n^{1/4}\Omega^{1/2}(C_{H_0}\Omega)^n.
+ \label{eq:tpc47-intro-small-mass}
+\end{equation}
+Consequently, the theorem controls a canonical actual-residual-output
+sector but
+does not control the orthogonal complement or the norm of the full
+equality column.  This is a sharp distinction between a spectral
+transfer theorem and a fixed-shift TPC estimate.
+
+\subsection{Claim ledger}
+
+The results are organized as follows.
+\begin{enumerate}[leftmargin=2.2em]
+ \item \Cref{sec:tpc47-interface} identifies the physical large-prime
+       packet and its frozen-coefficient shift extension.
+ \item \Cref{sec:tpc47-projector} constructs the literal fiberwise
+       orbit projector, proves its exact trace, and records the
+       commuting residual structure.
+ \item \Cref{sec:tpc47-exact-transfer} proves
+       \eqref{eq:tpc47-intro-gap}, including the fixed progression.
+ \item \Cref{sec:tpc47-smooth-transfer} gives the low-pass/tail
+       decomposition and quantitative leakage bounds.
+ \item \Cref{sec:tpc47-actual-reassembly} transfers those bounds to the
+       full actual source--mask coefficient packet.
+ \item \Cref{sec:tpc47-endpoint} proves the rational endpoint ledger.
+ \item \Cref{sec:tpc47-mass-frontier} proves nonvanishing but disproves
+       a uniform retained-mass fraction.
+ \item \Cref{sec:tpc47-boundaries} separates the remaining gates, and
+       \cref{sec:tpc47-certificate} records the exact finite
+       certificate and claim boundary.
+\end{enumerate}
+
+Only the column \(h=h_0\) in the frozen family is the inherited
+physical equality column.  The other shifts keep its coefficient field
+fixed in order to expose the spectrum.  We do not identify them with
+TPC packets reconstructed at new physical shifts.  We also do not
+deduce atomic normalization, alias unfolding, a deterministic
+fixed-shift M\"obius estimate, a parity breach, or a prime-pair
+asymptotic.

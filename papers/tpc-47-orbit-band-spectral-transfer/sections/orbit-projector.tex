@@ -1,0 +1,191 @@
+\section{The literal fiberwise orbit projection}
+\label{sec:tpc47-projector}
+
+Let \(\Vv\) be any Hilbert space carrying all non-orbit output labels,
+and put
+\begin{equation}
+ \widetilde\Hh=\Vv\widehat\otimes\ell^2(\Z).
+ \label{eq:tpc47-abstract-output-space}
+\end{equation}
+The second tensor factor is the integer orbit coordinate after zero
+extension.  The unitary map
+\begin{equation}
+ \mathscr F_j:\ell^2(\Z)\longrightarrow L^2(\T),
+ \qquad
+ (\mathscr F_jy)(\beta)=\sum_{j\in\Z}y_j\e(-j\beta),
+ \label{eq:tpc47-orbit-Fourier-transform}
+\end{equation}
+is first defined on finitely supported sequences and then extended by
+Plancherel.
+
+\subsection{The residue-comb band}
+
+Fix \(H_0\in\N\) and \(0<\Omega<1/(2H_0)\).  The fixed progression
+selector has Fourier branches at \(H_0^{-1}\Z/\Z\), so the natural
+low band is the complete residue comb
+\begin{equation}
+ \cB_{\Omega}^{(H_0)}
+ :=\left\{\beta\in\T:
+ \operatorname{dist}(\beta,H_0^{-1}\Z)\le\Omega\right\}.
+ \label{eq:tpc47-frequency-comb}
+\end{equation}
+It is the disjoint union of \(H_0\) arcs and has measure
+\begin{equation}
+ |\cB_{\Omega}^{(H_0)}|=2H_0\Omega.
+ \label{eq:tpc47-comb-measure}
+\end{equation}
+
+\begin{definition}[Fiberwise orbit-comb projector]
+\label{def:tpc47-orbit-projector}
+On \(\widetilde\Hh\), define
+\begin{equation}
+ \Pi_{\Omega}^{(H_0)}
+ :=I_{\Vv}\otimes
+ \mathscr F_j^{-1}M_{\one_{\cB_{\Omega}^{(H_0)}}}\mathscr F_j.
+ \label{eq:tpc47-projector-definition}
+\end{equation}
+The same projection is applied in every opposite-row and residual-label
+fiber.
+\end{definition}
+
+\begin{proposition}[Orthogonality and commutation]
+\label{prop:tpc47-projector-structure}
+The operator \(\Pi_{\Omega}^{(H_0)}\) is an orthogonal projection of
+norm one.  If \(S\) is any bounded operator on \(\Vv\), then
+\begin{equation}
+ (S\otimes I)\Pi_{\Omega}^{(H_0)}
+ =\Pi_{\Omega}^{(H_0)}(S\otimes I).
+ \label{eq:tpc47-projector-commutation}
+\end{equation}
+In particular, it commutes with opposite-row coordinate projections,
+residual-label projections, and the residual M\"obius unitary
+\begin{equation}
+ (Uy)_{\gamma,s,j}=\mu(s)y_{\gamma,s,j}
+ \label{eq:tpc47-residual-unitary}
+\end{equation}
+on the supported squarefree residual space.
+\end{proposition}
+
+\begin{proof}
+Multiplication by the indicator of
+\(\cB_{\Omega}^{(H_0)}\) is self-adjoint and idempotent.  Unitarity of
+\(\mathscr F_j\) proves the first assertion.  The two sides of
+\eqref{eq:tpc47-projector-commutation} act on separate tensor factors.
+\end{proof}
+
+This construction retains the literal product label \(s=d(m)r\).
+Projecting after first merging distinct residual labels would be a
+different operation and would lose the TPC--45 residual geometry.
+
+\subsection{Zero extension and physical compression}
+
+Let \(I\subset\Z\) be a physical orbit interval of \(N\) integers, and
+let
+\begin{equation}
+ E_I:\Vv\widehat\otimes\ell^2(I)\longrightarrow\widetilde\Hh
+ \label{eq:tpc47-zero-extension}
+\end{equation}
+be zero extension.  It is an isometry.  The range of
+\(\Pi_{\Omega}^{(H_0)}E_I\) is the projected sector used below.
+The compression
+\begin{equation}
+ E_I^*\Pi_{\Omega}^{(H_0)}E_I
+ \label{eq:tpc47-compressed-projector}
+\end{equation}
+is a positive contraction on the finite-orbit-window space, but
+it is generally not idempotent: the orthogonal projection creates orbit
+tails outside \(I\).  Thus \(\Pi_{\Omega}^{(H_0)}\) is a literal
+projection in the canonical enlarged space, not a coordinatewise
+deletion inside the finite window.
+
+For one scalar fiber, the convolution kernel of the projector is
+\begin{align}
+ \kappa_{\Omega,H_0}(n)
+ &:=\int_{\cB_{\Omega}^{(H_0)}}\e(n\beta)\,d\beta
+ \notag\\
+ &=\left(\sum_{\tau=0}^{H_0-1}\e(n\tau/H_0)\right)
+ \begin{cases}
+ 2\Omega,&n=0,\\[3pt]
+ \displaystyle\frac{\sin(2\pi\Omega n)}{\pi n},&n\ne0.
+ \end{cases}
+ \label{eq:tpc47-comb-sinc-kernel}
+\end{align}
+In particular, it vanishes unless \(H_0\mid n\), apart from the
+diagonal convention already contained in the formula.
+
+\begin{theorem}[Exact physical-window trace]
+\label{thm:tpc47-time-bandwidth-trace}
+On one scalar orbit fiber,
+\begin{equation}
+ \boxed{
+ \operatorname{tr}
+ \bigl(E_I^*\Pi_{\Omega}^{(H_0)}E_I\bigr)
+ =\|\Pi_{\Omega}^{(H_0)}E_I\|_{\mathrm{HS}}^2
+ =2H_0N\Omega.}
+ \label{eq:tpc47-time-bandwidth-trace}
+\end{equation}
+For a finite-dimensional non-orbit space of dimension \(d\), the trace
+is \(2dH_0N\Omega\).
+\end{theorem}
+
+\begin{proof}
+The diagonal matrix coefficient is the measure of the band,
+\[
+ \langle\Pi_{\Omega}^{(H_0)}e_j,e_j\rangle
+ =2H_0\Omega.
+\]
+Summing over \(j\in I\) gives the trace.  Orthogonality gives
+\[
+ \|\Pi_{\Omega}^{(H_0)}E_I\|_{\mathrm{HS}}^2
+ =\operatorname{tr}
+ (E_I^*(\Pi_{\Omega}^{(H_0)})^2E_I),
+\]
+which is the same quantity.  Tensoring with a finite-dimensional
+identity repeats the trace in every non-orbit coordinate.
+\end{proof}
+
+The number \(2H_0N\Omega\) is an exact time--bandwidth trace.  The
+range of \(\Pi_{\Omega}^{(H_0)}\) is infinite dimensional, so this
+number is not its rank.
+
+\subsection{Interaction with the shift transform}
+
+For a finitely supported family \((F_h)_h\subset\widetilde\Hh\),
+boundedness gives
+\begin{equation}
+ \sum_h\Pi_{\Omega}^{(H_0)}F_h\e(-h\alpha)
+ =\Pi_{\Omega}^{(H_0)}\sum_hF_h\e(-h\alpha).
+ \label{eq:tpc47-projector-shift-commutation}
+\end{equation}
+If
+\begin{equation}
+ F_h=\sum_{p,r,m,j}A_{p,r,m}\phi(j/J)
+ v_{p,r,m}\otimes e_j\,\one_{pr-mj=h},
+ \label{eq:tpc47-projector-model-packet}
+\end{equation}
+then, in the orbit Fourier representation,
+\begin{align}
+ &(I_{\Vv}\otimes\mathscr F_j)
+ \widehat{\Pi_{\Omega}^{(H_0)}F}(\alpha)(\beta)
+ \notag\\
+ &\quad={}
+ \one_{\cB_{\Omega}^{(H_0)}}(\beta)
+ \sum_{p,r,m}A_{p,r,m}v_{p,r,m}\e(-pr\alpha)
+ \sum_j\phi(j/J)\e\bigl(j(m\alpha-\beta)\bigr).
+ \label{eq:tpc47-projected-orbit-kernel-preview}
+\end{align}
+The replacement of \(m\alpha\) by \(m\alpha-\beta\) is the transfer
+mechanism.
+
+\begin{remark}[A forbidden commutation]
+\label{rem:tpc47-no-multiplier-commutation}
+In general
+\begin{equation}
+ \Pi_{\Omega}^{(H_0)}M_{\phi(j/J)}
+ \ne M_{\phi(j/J)}\Pi_{\Omega}^{(H_0)}.
+ \label{eq:tpc47-forbidden-commutation}
+\end{equation}
+We apply the projector after the complete coefficient has been
+multiplied and analyze the resulting convolution.  No orbit profile is
+commuted through the projector.
+\end{remark}

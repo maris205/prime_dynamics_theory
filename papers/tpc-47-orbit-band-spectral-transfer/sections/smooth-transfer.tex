@@ -1,0 +1,222 @@
+\section{Smooth profiles: rapid leakage and a fixed core}
+\label{sec:tpc47-smooth-transfer}
+
+The actual orbit profiles are smooth, not exactly band limited.  We
+give two complementary formulations: a direct projected Poisson bound
+and an exact low-band core with a quantified remainder.
+
+\subsection{Compact-support provenance}
+
+The required endpoint regularity is stronger than smooth values on a
+finite set.  A hard cutoff in \(j\) would create Dirichlet tails.
+
+\begin{lemma}[Inherited common orbit support]
+\label{lem:tpc47-common-orbit-support}
+The orbit profiles in
+\cref{prop:tpc47-inherited-reassembly} may be chosen in one fixed
+compact subset \(K\subset\R\), independently of \(X\) and of the
+projective parameter.  For every fixed \(B\), the signed projective
+mass of their \(C^B(K)\) norms is \(X^{o(1)}\).
+\end{lemma}
+
+\begin{proof}
+The provenance theorem of TPC--25 places every row-dependent smooth
+orbit product, in the normalized variable \(t=j/J\), in a fixed
+bounded subset of \(C_c^\infty(\R)\), and its Mellin reassembly has
+integrable polynomial seminorms \citep{WangTPC25}.  TPC--36 imports
+that residue/Mellin representation and proves that multiplication by
+the actual static mask does not change the orbit seminorm mass
+\citep{WangTPC36}.  The large-prime and residual rewrites in TPC--45
+and TPC--46 change arithmetic and Hilbert labels but do not modify the
+orbit profile.  This proves the statement.
+\end{proof}
+
+This lemma is the point at which the physical smooth localization is
+used.  Without it, arbitrary-power leakage below would be false.
+
+\subsection{Direct smooth decay}
+
+For \(\theta\in\T\), write
+\begin{equation}
+ d_{H_0}(\theta)
+ :=\operatorname{dist}(\theta,H_0^{-1}\Z).
+ \label{eq:tpc47-subgroup-distance}
+\end{equation}
+
+\begin{lemma}[Projected progression profile]
+\label{lem:tpc47-projected-smooth-profile}
+Let \(\phi\in C_c^\infty(K)\).  For every integer \(B\ge1\),
+\begin{align}
+ &\left\|
+ \Pi_{\Omega}^{(H_0)}
+ \left(
+ \one_{j\equiv a\!\!\pmod{H_0}}
+ \phi(j/J)\e(mj\alpha)
+ \right)
+ \right\|_{\ell^2(\Z)}
+ \notag\\
+ &\qquad\ll_{B,H_0,K}
+ (\Omega J^2)^{1/2}
+ \left(1+J\bigl(d_{H_0}(m\alpha)-\Omega\bigr)_+\right)^{-B}
+ \|\phi\|_{C^{B+2}}.
+ \label{eq:tpc47-projected-smooth-bound}
+\end{align}
+Equivalently, if \(\Omega=\Lambda/J\), the leading factor is
+\(O_{H_0}((\Lambda J)^{1/2})\).
+\end{lemma}
+
+\begin{proof}
+In the orbit Fourier representation the squared norm is the integral,
+over \(\beta\in\cB_{\Omega}^{(H_0)}\), of the squared modulus of
+\(K_{m,a}(\alpha,\beta)\) from
+\eqref{eq:tpc47-two-frequency-kernel}.  Repeated integration by parts
+gives
+\[
+ |\widehat\phi(\xi)|
+ \ll_{B,K}(1+|\xi|)^{-B-2}\|\phi\|_{C^{B+2}}.
+\]
+Insert this in \eqref{eq:tpc47-progression-Poisson} and sum the
+integer translates.  Uniformly in \(\alpha,\beta\),
+\begin{equation}
+ |K_{m,a}(\alpha,\beta)|
+ \ll_{B,H_0,K}
+ J\left(1+Jd_{H_0}(m\alpha-\beta)\right)^{-B}
+ \|\phi\|_{C^{B+2}}.
+ \label{eq:tpc47-smooth-kernel-pointwise}
+\end{equation}
+For \(\beta\) in the comb band,
+\[
+ d_{H_0}(m\alpha-\beta)
+ \ge\bigl(d_{H_0}(m\alpha)-\Omega\bigr)_+.
+\]
+Integrating \eqref{eq:tpc47-smooth-kernel-pointwise} over a set of
+measure \(2H_0\Omega\) proves
+\eqref{eq:tpc47-projected-smooth-bound}.
+\end{proof}
+
+For the packet \eqref{eq:tpc47-bandlimited-packet}, define the
+coefficient envelope
+\begin{equation}
+ \cM_1(F):=\sum_{p,r,m}|A_{p,r,m}|\|v_{p,r,m}\|_{\Vv}.
+ \label{eq:tpc47-l1-envelope}
+\end{equation}
+
+\begin{corollary}[Direct smooth packet bound]
+\label{cor:tpc47-direct-smooth-packet}
+Under the hypotheses of
+\cref{lem:tpc47-projected-smooth-profile},
+\begin{align}
+ \|\widehat{\Pi_{\Omega}^{(H_0)}F}(\alpha)\|
+ &\ll_{B,H_0,K}
+ (\Omega J^2)^{1/2}\cM_1(F)\|\phi\|_{C^{B+2}}
+ \notag\\
+ &\quad\times
+ \max_{M_-\le m\le M_+}
+ \left(1+J(d_{H_0}(m\alpha)-\Omega)_+\right)^{-B}.
+ \label{eq:tpc47-direct-smooth-packet-bound}
+\end{align}
+\end{corollary}
+
+\begin{proof}
+Use the modal factorization
+\eqref{eq:tpc47-exact-modal-factorization}, the triangle inequality in
+\(L^2(\cB_{\Omega}^{(H_0)};\Vv)\), and
+\cref{lem:tpc47-projected-smooth-profile}.
+\end{proof}
+
+\subsection{A fixed band-limited core}
+
+Choose once and for all \(\chi\in C_c^\infty(\R)\) satisfying
+\begin{equation}
+ 0\le\chi\le1,
+ \qquad
+ \chi(\xi)=1\ \ (|\xi|\le1/2),
+ \qquad
+ \chi(\xi)=0\ \ (|\xi|\ge1).
+ \label{eq:tpc47-frequency-cutoff}
+\end{equation}
+For \(J\ge1\) and \(\Sigma\ge2\), define
+\begin{align}
+ \widehat{\phi_{\le\Sigma}}(\xi)
+ &:=\chi(\xi/\Sigma)\widehat\phi(\xi),
+ &\phi_{>\Sigma}&:=\phi-\phi_{\le\Sigma}.
+ \label{eq:tpc47-profile-low-high-split}
+\end{align}
+The low component has outer Fourier half-width exactly at most
+\(\Sigma\), so \cref{thm:tpc47-exact-transfer} applies with
+\(W=\Omega+\Sigma/J\).
+
+\begin{lemma}[Sampled high-frequency tail]
+\label{lem:tpc47-sampled-tail}
+Assume \(J\ge1\).  For every integer \(B\ge2\), uniformly over
+\(\phi\in C_c^\infty(K)\),
+\begin{equation}
+ \left(
+ \sum_{j\in\Z}|\phi_{>\Sigma}(j/J)|^2
+ \right)^{1/2}
+ \ll_{B,K}
+ J^{1/2}\Sigma^{1/2-B}\|\phi\|_{C^{B+2}}.
+ \label{eq:tpc47-sampled-tail-bound}
+\end{equation}
+The same estimate holds after restriction to any progression modulo
+\(H_0\).
+\end{lemma}
+
+\begin{proof}
+Repeated integration by parts gives
+\(|\widehat\phi(\xi)|\ll_{B,K}
+ (1+|\xi|)^{-B}\|\phi\|_{C^B}\).  Plancherel and the support of
+\(1-\chi(\xi/\Sigma)\) therefore give
+\begin{equation}
+ \|\phi_{>\Sigma}\|_{L^2}+
+ \|\phi_{>\Sigma}'\|_{L^2}
+ \ll_{B,K}\Sigma^{1/2-B}\|\phi\|_{C^{B+2}}.
+ \label{eq:tpc47-continuous-tail-Sobolev}
+\end{equation}
+For every \(g\in H^1(\R)\), the elementary sampling inequality on
+the intervals \([j/J,(j+1)/J]\) is
+\begin{equation}
+ \sum_{j\in\Z}|g(j/J)|^2
+ \ll J\bigl(\|g\|_{L^2}^2+\|g'\|_{L^2}^2\bigr).
+ \label{eq:tpc47-sampling-Sobolev}
+\end{equation}
+Apply this to \(g=\phi_{>\Sigma}\) and use
+\eqref{eq:tpc47-continuous-tail-Sobolev}.  A progression is a
+subsequence, so its sum is no larger.
+\end{proof}
+
+\begin{theorem}[Exact core plus controlled leakage]
+\label{thm:tpc47-core-tail-transfer}
+Let \(F=F_{\le\Sigma}+F_{>\Sigma}\) be obtained from
+\eqref{eq:tpc47-bandlimited-packet} by applying
+\eqref{eq:tpc47-profile-low-high-split}.  On the exact gap
+\begin{equation}
+ \frac{\Omega+\Sigma/J}{M_-}
+ <\|\alpha\|_{\T}<
+ \frac{H_0^{-1}-\Omega-\Sigma/J}{M_+},
+ \label{eq:tpc47-core-exact-gap}
+\end{equation}
+one has
+\begin{align}
+ \widehat{\Pi_{\Omega}^{(H_0)}F_{\le\Sigma}}(\alpha)&=0,
+ \label{eq:tpc47-core-zero}\\
+ \|\widehat{\Pi_{\Omega}^{(H_0)}F}(\alpha)\|
+ &\le
+ C_{B,H_0,K}J^{1/2}\Sigma^{1/2-B}
+ \cM_1(F)\|\phi\|_{C^{B+2}}.
+ \label{eq:tpc47-tail-leakage-envelope}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+The first identity is \cref{thm:tpc47-exact-transfer}.  Hence the full
+projected transform equals the projected transform of the high
+component.  Modulation by \(\e(mj\alpha)\) is unitary on
+\(\ell^2(\Z)\), and the projector is contractive.  Apply the triangle
+inequality over \((p,r,m)\), followed by
+\cref{lem:tpc47-sampled-tail}.
+\end{proof}
+
+The tail estimate is deliberately expressed relative to the declared
+envelope \(\cM_1(F)\).  It contains no unproved cancellation among the
+arithmetic coefficients.

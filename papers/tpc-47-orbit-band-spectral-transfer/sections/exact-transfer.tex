@@ -1,0 +1,219 @@
+\section{Exact orbit-band to shift-spectrum transfer}
+\label{sec:tpc47-exact-transfer}
+
+We first isolate the support theorem.  No primality, M\"obius
+cancellation, or source-mask estimate is used in this section.
+
+Let \(0<M_-\le M_+\), let \(m\) range over finitely many integers in
+\([M_-,M_+]\), and let \(\Vv\) be a Hilbert space.  For one residue
+class \(a\pmod{H_0}\), define
+\begin{equation}
+ F_h=\sum_{p,r,m}\sum_{\substack{j\in\Z\\
+                    j\equiv a\!\!\pmod{H_0}}}
+ A_{p,r,m}\phi(j/J)v_{p,r,m}\otimes e_j
+ \one_{pr-mj=h}.
+ \label{eq:tpc47-bandlimited-packet}
+\end{equation}
+The arithmetic supports are finite, \(v_{p,r,m}\in\Vv\) is
+independent of \(j\), and \(\phi\in\mathscr S(\R)\).
+
+\subsection{The two-frequency kernel}
+
+For \(\alpha,\beta\in\T\), set
+\begin{equation}
+ K_{m,a}(\alpha,\beta)
+ :=\sum_{\substack{j\in\Z\\j\equiv a\!\!\pmod{H_0}}}
+ \phi(j/J)\e\bigl(j(m\alpha-\beta)\bigr).
+ \label{eq:tpc47-two-frequency-kernel}
+\end{equation}
+
+\begin{lemma}[Progression Poisson formula]
+\label{lem:tpc47-progression-Poisson}
+For every \(\alpha,\beta\in\T\),
+\begin{equation}
+ K_{m,a}(\alpha,\beta)
+ =\frac{J}{H_0}\sum_{q\in\Z}
+ \e(aq/H_0)
+ \widehat\phi\!\left(
+ \frac{J}{H_0}\bigl(q-H_0(m\alpha-\beta)\bigr)
+ \right).
+ \label{eq:tpc47-progression-Poisson}
+\end{equation}
+If
+\begin{equation}
+ \operatorname{supp}\widehat\phi\subset[-\Sigma,\Sigma],
+ \label{eq:tpc47-profile-bandlimit}
+\end{equation}
+then
+\begin{equation}
+ K_{m,a}(\alpha,\beta)\ne0
+ \quad\Longrightarrow\quad
+ \operatorname{dist}
+ \bigl(m\alpha-\beta,H_0^{-1}\Z\bigr)
+ \le\frac{\Sigma}{J}.
+ \label{eq:tpc47-kernel-support-condition}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write \(j=a+H_0t\) and apply Poisson summation in \(t\).  This gives
+\eqref{eq:tpc47-progression-Poisson}.  Under
+\eqref{eq:tpc47-profile-bandlimit}, a nonzero summand requires
+\[
+ \left|q-H_0(m\alpha-\beta)\right|
+ \le H_0\Sigma/J,
+\]
+which is equivalent to \eqref{eq:tpc47-kernel-support-condition}.
+\end{proof}
+
+The shift and orbit Fourier transforms of the projected packet are
+therefore
+\begin{align}
+ &(I_{\Vv}\otimes\mathscr F_j)
+ \widehat{\Pi_{\Omega}^{(H_0)}F}(\alpha)(\beta)
+ \notag\\
+ &\quad={}
+ \one_{\cB_{\Omega}^{(H_0)}}(\beta)
+ \sum_{p,r,m}A_{p,r,m}v_{p,r,m}
+ \e(-pr\alpha)K_{m,a}(\alpha,\beta).
+ \label{eq:tpc47-exact-modal-factorization}
+\end{align}
+
+\subsection{The exact projected gap}
+
+Put
+\begin{equation}
+ W:=\Omega+\frac{\Sigma}{J}.
+ \label{eq:tpc47-total-bandwidth}
+\end{equation}
+
+\begin{theorem}[Exact orbit-band transfer]
+\label{thm:tpc47-exact-transfer}
+Assume \eqref{eq:tpc47-profile-bandlimit} and
+\begin{equation}
+ 0<W<\frac1{2H_0}.
+ \label{eq:tpc47-band-separation}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \widehat{\Pi_{\Omega}^{(H_0)}F}(\alpha)=0}
+ \label{eq:tpc47-exact-projected-vanishing}
+\end{equation}
+whenever
+\begin{equation}
+ \boxed{
+ \frac{W}{M_-}
+ <\|\alpha\|_{\T}<
+ \frac{H_0^{-1}-W}{M_+}.}
+ \label{eq:tpc47-exact-projected-gap}
+\end{equation}
+ The assertion is uniform in the coefficients and Hilbert vectors in
+ \eqref{eq:tpc47-bandlimited-packet}.
+ The assertion is vacuous unless
+ \begin{equation}
+  \frac{W}{M_-}<\frac{H_0^{-1}-W}{M_+}.
+  \label{eq:tpc47-nonempty-exact-gap}
+ \end{equation}
+\end{theorem}
+
+\begin{proof}
+Let \(t=\|\alpha\|_{\T}\) and choose a representative with
+\(|\alpha|=t\).  For every supported \(m\),
+\begin{equation}
+ W<mt<H_0^{-1}-W.
+ \label{eq:tpc47-malpha-interior}
+\end{equation}
+If \(\beta\in\cB_{\Omega}^{(H_0)}\), choose
+\(q/H_0\) with
+\(|\beta-q/H_0|\le\Omega\).  The finite set
+\(H_0^{-1}\Z/\Z\) is a subgroup of \(\T\), so
+\begin{align}
+ \operatorname{dist}
+ (m\alpha-\beta,H_0^{-1}\Z)
+ &\ge
+ \operatorname{dist}(m\alpha,H_0^{-1}\Z)-\Omega
+ \notag\\
+ &>W-\Omega=\Sigma/J.
+ \label{eq:tpc47-band-distance-lower}
+\end{align}
+Here \eqref{eq:tpc47-malpha-interior} places \(m\alpha\) strictly
+between the two nearest subgroup points \(0\) and
+\(\operatorname{sgn}(\alpha)/H_0\).  Thus
+\eqref{eq:tpc47-kernel-support-condition} fails for every
+\(m\) and almost every \(\beta\) retained by the projector.
+Formula \eqref{eq:tpc47-exact-modal-factorization} is zero in
+\(L^2(\cB_{\Omega}^{(H_0)};\Vv)\), proving the theorem.
+\end{proof}
+
+\begin{corollary}[Signed projective superpositions]
+\label{cor:tpc47-projective-exact-gap}
+Let \(F=\int F^\omega\,d\nu(\omega)\), where every layer has the
+form \eqref{eq:tpc47-bandlimited-packet}, the same
+\(M_\pm,H_0,J\), and Fourier bandwidth at most \(\Sigma\).  If the
+integral is absolutely convergent in
+\(\ell^1(\Z;\widetilde\Hh)\), then
+\eqref{eq:tpc47-exact-projected-vanishing} holds for the full signed
+superposition on \eqref{eq:tpc47-exact-projected-gap}.
+\end{corollary}
+
+\begin{proof}
+The projected transform of each layer is zero on the same interval.
+Boundedness of the projector and absolute convergence permit the
+Bochner integral to pass through both Fourier transforms.
+\end{proof}
+
+\begin{corollary}[Vector-valued coefficient band]
+\label{cor:tpc47-vector-coefficient-band}
+For each \((p,r,m)\), let
+\(g_{p,r,m}\in\ell^2(\Z;\Vv)\) satisfy
+\begin{equation}
+ \operatorname{supp}\mathscr F_jg_{p,r,m}
+ \subset\cB_{\Sigma/J}^{(H_0)}.
+ \label{eq:tpc47-vector-profile-support}
+\end{equation}
+Define
+\begin{equation}
+ F_h=\sum_{p,r,m,j}A_{p,r,m}g_{p,r,m}(j)\otimes e_j
+ \one_{pr-mj=h}.
+ \label{eq:tpc47-vector-profile-packet}
+\end{equation}
+Then \eqref{eq:tpc47-exact-projected-vanishing} holds on
+\eqref{eq:tpc47-exact-projected-gap}, with
+\(W=\Omega+\Sigma/J\).  The shift transform is understood in
+\(L^2(\T;\widetilde\Hh)\); because the arithmetic support is finite,
+the modal expression also converges in \(\widetilde\Hh\) for each
+\(\alpha\).
+\end{corollary}
+
+\begin{proof}
+In the orbit Fourier representation, the \((p,r,m)\)-term at output
+frequency \(\beta\) is
+\(\widehat g_{p,r,m}(\beta-m\alpha)\).  It can meet
+\(\cB_{\Omega}^{(H_0)}\) only if
+\[
+ d_{H_0}(m\alpha)
+ \le\Omega+\Sigma/J.
+\]
+The interval \eqref{eq:tpc47-exact-projected-gap} excludes this for
+every supported \(m\), exactly as in the proof of
+\cref{thm:tpc47-exact-transfer}.
+\end{proof}
+
+\begin{remark}[Amplitude, not atomic energy]
+\label{rem:tpc47-amplitude-not-energy}
+The vanishing concerns the Hilbert-valued amplitude
+\(h\mapsto\Pi_{\Omega}^{(H_0)}F_h\).  It does not imply a gap for
+\(h\mapsto\|F_h\|^2\), because squaring convolves shift frequencies.
+Nor does it compare the synthesis at one shift with the atomic diagonal
+at that shift.
+\end{remark}
+
+\begin{remark}[Why the whole residue comb is kept]
+\label{rem:tpc47-residue-comb}
+The selector \(\one_{j\equiv a\pmod{H_0}}\) has all \(H_0\) Fourier
+branches.  Projecting only near zero would define a smaller valid
+sector, but it would suppress the other inherited residue modes.  The
+comb \eqref{eq:tpc47-frequency-comb} retains them all and changes the
+time--bandwidth trace only by the fixed factor \(H_0\).
+\end{remark}

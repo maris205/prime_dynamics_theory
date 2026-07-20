@@ -1,0 +1,151 @@
+\section{The retained-mass frontier}
+\label{sec:tpc47-mass-frontier}
+
+The projected sector is not the zero subspace on a physical orbit
+window.  Nevertheless, the projector can retain an arbitrarily small
+fraction of an ambient finite-orbit vector.  No such smallness is
+asserted for the actual arithmetic packet.  Both operator-theoretic
+statements are exact.
+
+\subsection{Qualitative injectivity on every finite window}
+
+\begin{theorem}[Finite-support injectivity]
+\label{thm:tpc47-finite-support-injectivity}
+Let \(0<\Omega<1/(2H_0)\).  If
+\(y\in\Vv\widehat\otimes\ell^2(\Z)\) is finitely supported in the
+orbit coordinate, then
+\begin{equation}
+ \Pi_{\Omega}^{(H_0)}y=0
+ \quad\Longrightarrow\quad y=0.
+ \label{eq:tpc47-finite-injectivity}
+\end{equation}
+Equivalently, for every finite interval \(I\), the compression
+\begin{equation}
+ E_I^*\Pi_{\Omega}^{(H_0)}E_I
+ \label{eq:tpc47-positive-compression}
+\end{equation}
+is strictly positive definite.
+\end{theorem}
+
+\begin{proof}
+Pair \(y\) with an arbitrary vector in \(\Vv\).  Its orbit Fourier
+transform is a Laurent polynomial in \(z=\e(-\beta)\).  If the
+projection is zero, this polynomial vanishes almost everywhere on every
+open arc in \(\cB_{\Omega}^{(H_0)}\), hence identically.  Every scalar
+pairing is zero, so all coefficients of \(y\) vanish.  Applying this to
+\(E_Iy\) proves strict positivity of the compression.
+\end{proof}
+
+Thus a nonzero finitely supported residual packet always has a nonzero
+projected component.  This is only a qualitative statement; the
+smallest eigenvalue of \eqref{eq:tpc47-positive-compression} is not
+bounded below uniformly in the window length.
+
+\subsection{An exponentially thin finite-support family}
+
+Let \(S\) be the unit shift on \(\ell^2(\Z)\),
+\((Sy)_j=y_{j-H_0}\), and for \(n\ge1\) put
+\begin{equation}
+ f_n:=(I-S)^n e_0
+ =\sum_{k=0}^n(-1)^k\binom nk e_{kH_0}.
+ \label{eq:tpc47-difference-witness}
+\end{equation}
+Then
+\begin{align}
+ (\mathscr F_jf_n)(\beta)
+ &=\bigl(1-\e(-H_0\beta)\bigr)^n,
+ \label{eq:tpc47-difference-transform}\\
+ \|f_n\|_2^2&=\binom{2n}{n}.
+ \label{eq:tpc47-difference-norm}
+\end{align}
+
+\begin{theorem}[No uniform retained-mass bound]
+\label{thm:tpc47-no-mass-lower-bound}
+There is an absolute constant \(C\) such that, whenever
+\(\pi H_0\Omega<1\),
+\begin{equation}
+ 0<
+ \frac{\|\Pi_{\Omega}^{(H_0)}f_n\|_2}{\|f_n\|_2}
+ \le
+ C n^{1/4}(H_0\Omega)^{1/2}
+ (\pi H_0\Omega)^n.
+ \label{eq:tpc47-thin-sector-bound}
+\end{equation}
+The support of \(f_n\) lies in an interval of length \(nH_0+1\), so
+it may be translated into any physical orbit window of at least that
+length.
+\end{theorem}
+
+\begin{proof}
+Write \(\beta=\tau/H_0+u\) on one component of the comb, with
+\(|u|\le\Omega\).  Then
+\begin{equation}
+ |1-\e(-H_0\beta)|
+ =2|\sin(\pi H_0u)|
+ \le2\pi H_0\Omega.
+ \label{eq:tpc47-comb-witness-bound}
+\end{equation}
+There are \(H_0\) components, with total measure \(2H_0\Omega\).
+Hence
+\begin{equation}
+ \|\Pi_{\Omega}^{(H_0)}f_n\|_2^2
+ \le2H_0\Omega(2\pi H_0\Omega)^{2n}.
+ \label{eq:tpc47-projected-witness-energy}
+\end{equation}
+The elementary central-binomial estimate
+\begin{equation}
+ \binom{2n}{n}\ge\frac{4^n}{2\sqrt n}
+ \label{eq:tpc47-central-binomial-bound}
+\end{equation}
+and \eqref{eq:tpc47-difference-norm} now give
+\eqref{eq:tpc47-thin-sector-bound}, after changing an absolute
+constant.  Strict positivity follows from
+\cref{thm:tpc47-finite-support-injectivity}.
+\end{proof}
+
+At the endpoint \(\Omega=X^{\kappa-\nu+o(1)}\), for any proposed
+fixed power \(C_0\), choosing one fixed \(n\) large enough makes the
+ratio in \eqref{eq:tpc47-thin-sector-bound} smaller than \(X^{-C_0}\)
+for all large \(X\).  Thus there is no uniform polynomial inverse
+\begin{equation}
+ \|y\|_2\le X^{C_0}
+ \|\Pi_{\Omega}^{(H_0)}y\|_2
+ \label{eq:tpc47-forbidden-polynomial-inverse}
+\end{equation}
+on orbit windows of length \(J\).
+
+\subsection{Consequences for the TPC gate}
+
+The two theorems above establish the exact logical status of the
+sector:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item it is nonzero on every nonzero finite-orbit vector, hence is not
+       vacuous if the finite physical residual packet is nonzero;
+ \item on ambient finite-orbit vectors it need not retain a fixed,
+       logarithmic, or even polynomially bounded fraction of the norm;
+       no corresponding smallness is asserted for the actual arithmetic
+       packet; and
+ \item the trace identity \eqref{eq:tpc47-time-bandwidth-trace} is an
+       average spectral-size statement, not a lower bound for one
+       arithmetic vector.
+\end{enumerate}
+
+There is also no coordinatewise domination.  For example,
+\(\Pi_{\Omega}^{(H_0)}e_0\) is the sinc-comb sequence
+\eqref{eq:tpc47-comb-sinc-kernel}; it has nonzero coordinates away from
+zero although \(e_0\) does not.  Only the global Hilbert contraction
+\begin{equation}
+ \|\Pi_{\Omega}^{(H_0)}y\|_2\le\|y\|_2
+ \label{eq:tpc47-global-contraction}
+\end{equation}
+is automatic.
+
+\begin{remark}[Why arbitrary dual fields restore the obstruction]
+\label{rem:tpc47-arbitrary-dual-field}
+Before projection, modulation by \(\e(mj\alpha)\) is unitary in the
+orbit coordinate.  An arbitrary dual vector may be oppositely
+modulated to place its mass at any prescribed shift frequency.  The
+full output unit ball therefore has no uniform gap derived solely from
+smoothness of the source mask.  The theorem succeeds precisely because
+it states and retains the orbit-band restriction.
+\end{remark}

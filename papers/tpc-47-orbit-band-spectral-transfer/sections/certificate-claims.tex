@@ -1,0 +1,104 @@
+\section{Exact certificate and claim ledger}
+\label{sec:tpc47-certificate}
+
+The reproducibility directory contains
+\begin{center}
+ \texttt{experiments/tpc47\_certificate.py}.
+\end{center}
+It uses only the Python standard library and writes a canonical JSON
+report.  A successful run performs \(28{,}428\) checks.  Its canonical
+payload digest is
+\begin{center}
+ \texttt{9e01380fae0d684d96b6ed23e5f99b4b}\\
+ \texttt{a8359667d6182459e36eeaeb1f66fdba}.
+\end{center}
+The normalized source SHA--256 is
+\begin{center}
+ \texttt{719fd93d61b75ade58d4817b0b870134}\\
+ \texttt{3060cadb87c9c9f4aad38c521ad8e356},
+\end{center}
+and the JSON SHA--256 is
+\begin{center}
+ \texttt{6b0d0c41b335e437affd5d06f28495f}\\
+ \texttt{09655e265144253f196d4af9396b17e19}.
+\end{center}
+These values are also recorded in the repository README.
+
+\subsection{What the finite certificate checks}
+
+The main exact model is on \(\Z/60\Z\) over \(\mathbb F_{601}\),
+which contains a primitive sixtieth root of unity.  It retains
+\begin{equation}
+ H_0=3,
+ \qquad
+ \text{the literal static mask},
+ \qquad
+ s=d(m)r,
+ \label{eq:tpc47-certificate-data}
+\end{equation}
+as well as separate opposite-row and residual fibers.  The certificate
+verifies:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item exact finite Fourier inversion and fiberwise projector
+       idempotence;
+ \item the three residue-comb branches created by
+       \(j\equiv a\pmod3\);
+ \item the support convolution for a projected output field and a
+       low orbit profile;
+ \item the determinant dilation identity
+       \(K_m(k)=\widehat g(-mk)\) and the resulting exact finite gap;
+ \item direct synthesis versus modal factorization for a packet that
+       retains the actual-mask matrix and the label \(s=d(m)r\);
+ \item whole signed projective reassembly and the exact low-plus-tail
+       identity, without selecting one layer;
+ \item finite-difference Fourier identities and Hilbert contraction;
+ \item exact finite Fourier rank boundaries, rational endpoint
+       identities, and explicit failure witnesses.
+\end{enumerate}
+
+The cyclic calculation is a finite analogue of
+\cref{thm:tpc47-exact-transfer}; it is not a numerical proof of the
+continuous Poisson theorem.  The latter is proved directly in
+\cref{sec:tpc47-exact-transfer,sec:tpc47-smooth-transfer}.
+
+\subsection{Failure witnesses retained by the certificate}
+
+The script also checks examples showing that
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item selecting one signed projective layer changes the actual sum;
+ \item orbit projection and multiplication by the smooth profile do not
+       commute;
+ \item hard windowing destroys exact frequency support;
+ \item residual labels cannot be aggregated before Hilbert projection;
+ \item orbit projection is not the same as post-synthesis shift
+       smoothing;
+ \item deleting the progression selector loses two Fourier branches;
+ \item deleting the high profile tail changes the actual coefficient;
+       and
+ \item Hilbert contraction does not imply coordinatewise atomic
+       domination.
+\end{enumerate}
+
+\subsection{Analytic claim boundary}
+
+The following are unconditional theorems of the text:
+\begin{enumerate}[label=\arabic*.,leftmargin=2em]
+ \item the orthogonal comb projector, its commutation rules, and the
+       exact trace \eqref{eq:tpc47-time-bandwidth-trace};
+ \item exact projected vanishing for a band-limited progression profile;
+ \item canonical low/high splitting of the complete actual coefficient
+       and the leakage estimate \eqref{eq:tpc47-actual-leakage} for the
+       projected frozen family built from the literal physical
+       \(h_0\)-coefficient field;
+ \item the endpoint sector \eqref{eq:tpc47-final-endpoint-gap};
+ \item qualitative injectivity on finite orbit windows and the sharp
+       absence of a uniform retained-mass bound; and
+ \item the exact grouping norm in
+       \eqref{eq:tpc47-grouping-norm}.
+\end{enumerate}
+
+The certificate does not test an asymptotic M\"obius cancellation
+statement.  Neither the certificate nor the paper proves control of the
+high-frequency complement, atomic normalization at \(h_0\), sparse
+alias unfolding, uniform local-shift provenance, a parity breach, the
+Hardy--Littlewood prime-pair asymptotic, or the twin-prime conjecture.

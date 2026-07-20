@@ -1,0 +1,267 @@
+\section{Transfer to the full actual-coefficient residual packet}
+\label{sec:tpc47-actual-reassembly}
+
+We apply the output projector \(\Pi_\Omega^{(H_0)}\) to the fully
+reassembled coefficient field.  The auxiliary coefficient projector
+\(Q_\Sigma^{(H_0)}\) below supplies only a proof decomposition, while
+the projective representation is used only to prove regularity; neither
+defines the projected output sector.
+
+\subsection{A representation-independent coefficient cutoff}
+
+For a supported source row \(m=\ell d(m)\) and cofactor \(r\), define
+the left vector profile
+\begin{equation}
+ G_{m,r}^{L}(j)
+ :=\sum_{\gamma\in\cO_L}
+ \gamma_m^{(1)}
+ \mathfrak A_{m,\gamma}^{\rm act}(j)
+ e_{\gamma,d(m)r}
+ \in\Vv_L.
+ \label{eq:tpc47-full-vector-profile}
+\end{equation}
+It is zero outside the physical orbit support.  Then the frozen family
+from \cref{sec:tpc47-interface} is
+\begin{equation}
+ \cF_h^{\rm fr,L}
+ =\sum_{p,r,m,j}
+ \mu(r)\Lambda(pr)G_{m,r}^{L}(j)\otimes e_j
+ \one_{pr-mj=h}.
+ \label{eq:tpc47-full-packet-vector-profile}
+\end{equation}
+
+Let
+\begin{equation}
+ Q_\Sigma^{(H_0)}
+ :=\mathscr F_j^{-1}
+ M_{\one_{\cB_{\Sigma/J}^{(H_0)}}}\mathscr F_j
+ \label{eq:tpc47-coefficient-lowpass}
+\end{equation}
+act on the \(j\)-variable of every \(\Vv_L\)-valued profile.  Put
+\begin{equation}
+ G_{m,r}^{\rm lo}:=Q_\Sigma^{(H_0)}G_{m,r}^{L},
+ \qquad
+ G_{m,r}^{\rm hi}:=(I-Q_\Sigma^{(H_0)})G_{m,r}^{L}.
+ \label{eq:tpc47-full-profile-split}
+\end{equation}
+This is a canonical orthogonal split of the full actual coefficient.
+It is independent of any choice of projective representation.
+Because \(Q_\Sigma^{(H_0)}\) is a sharp Fourier projection,
+\(G_{m,r}^{\rm lo}\) can have sinc tails and need not belong to
+\(\ell^1(\Z;\Vv_L)\).  All low/high frozen families below are therefore
+defined in \(\ell^2\), and their shift transforms use the unitary
+partial Fourier transform.  The arithmetic support in \((p,r,m)\) is
+finite, so the modal sums converge in the output Hilbert space for each
+\(\alpha\); no absolute \(j\)-summability of the sharp core is asserted.
+Throughout this subsection we assume
+\begin{equation}
+ 0<\Sigma/J<1/(2H_0),
+ \label{eq:tpc47-coefficient-band-disjoint}
+\end{equation}
+so the arcs defining the coefficient comb are disjoint.
+
+\begin{proposition}[Full-profile Fourier tail]
+\label{prop:tpc47-full-profile-tail}
+For every fixed integer \(B\ge2\),
+\begin{equation}
+ \sup_{m,r}
+ \|G_{m,r}^{\rm hi}\|_{\ell^2(\Z;\Vv_L)}
+ \ll_{B,h_0}
+ Q^{1/2}J^{1/2}X^{o(1)}
+ \Sigma^{1/2-B}.
+ \label{eq:tpc47-full-profile-tail}
+\end{equation}
+The symmetric estimate holds for the right profile.
+\end{proposition}
+
+\begin{proof}
+Apply the coefficientwise identity
+\eqref{eq:tpc47-coefficientwise-reassembly}, including its full signed
+integral, to \eqref{eq:tpc47-full-vector-profile}.  For each layer,
+\cref{lem:tpc47-sampled-tail} constructs a progression-band
+approximant with error
+\[
+ \ll_{B,h_0}J^{1/2}\Sigma^{1/2-B}
+ \|\phi_\omega\|_{C^{B+2}}.
+\]
+The orthogonal projection \(Q_\Sigma^{(H_0)}\) is the best
+\(\ell^2\) approximation from its range, so its error is no larger.
+Minkowski's inequality reassembles all signed layers.  The
+opposite-row vector has at most \(QX^{o(1)}\) supported coordinates;
+its \(\ell^2\) norm is therefore bounded by \(Q^{1/2}X^{o(1)}\) times
+the inherited sup norm.  Finally use the projective seminorm mass
+\eqref{eq:tpc47-projective-seminorm-mass}.  The residual coordinate
+\(d(m)r\) is a single basis label and contributes no additional norm.
+\end{proof}
+
+This proof neither chooses a favorable projective layer nor replaces
+the source mask by its absolute value.  The absolute projective mass is
+used only after the exact signed identity has been inserted.
+
+\subsection{The actual-coefficient projected theorem}
+
+Let \(\cF_{h,\rm lo}^{\rm fr,L}\) and
+\(\cF_{h,\rm hi}^{\rm fr,L}\) be obtained from
+\eqref{eq:tpc47-full-packet-vector-profile} by using the profiles in
+\eqref{eq:tpc47-full-profile-split}.
+
+\begin{theorem}[Projected actual-coefficient spectral transfer]
+\label{thm:tpc47-actual-transfer}
+For every fixed integer \(B\ge2\), assume
+\(0<\Omega+\Sigma/J<1/(2H_0)\).  On
+\begin{equation}
+ \frac{\Omega+\Sigma/J}{M_-}
+ <\|\alpha\|_{\T}<
+ \frac{H_0^{-1}-\Omega-\Sigma/J}{M_+},
+ \label{eq:tpc47-actual-gap}
+\end{equation}
+one has
+\begin{align}
+ \widehat{\Pi_{\Omega}^{(H_0)}
+ \cF_{\rm lo}^{\rm fr,L}}(\alpha)&=0,
+ \label{eq:tpc47-actual-low-zero}\\
+ \left\|
+ \widehat{\Pi_{\Omega}^{(H_0)}
+ \cF^{\rm fr,L}}(\alpha)
+ \right\|
+ &\ll_{B,h_0}
+ X^{867/400+o(1)}\Sigma^{1/2-B}.
+ \label{eq:tpc47-actual-leakage}
+\end{align}
+For one fixed opposite output row, the exponent \(867/400\) in
+\eqref{eq:tpc47-actual-leakage} may be replaced by \(1467/800\).
+The same conclusions hold on the right and hence on the orthogonal
+sum of both sides.
+\end{theorem}
+
+\begin{proof}
+The low profile satisfies
+\[
+ \operatorname{supp}\mathscr F_jG_{m,r}^{\rm lo}
+ \subset\cB_{\Sigma/J}^{(H_0)}.
+\]
+Thus \eqref{eq:tpc47-actual-low-zero} is
+\cref{cor:tpc47-vector-coefficient-band}.  On the same gap, the full
+projected transform equals the high-profile contribution.  For each
+\((p,r,m)\), modulation in \(j\) and
+\(\Pi_{\Omega}^{(H_0)}\) have norm one.  The triangle inequality and
+\cref{prop:tpc47-full-profile-tail} give
+\begin{equation}
+ \left\|
+ \widehat{\Pi_{\Omega}^{(H_0)}
+ \cF^{\rm fr,L}}(\alpha)
+ \right\|
+ \ll X^{o(1)}\#\{(p,r,m)\}
+ Q^{1/2}J^{1/2}\Sigma^{1/2-B}.
+ \label{eq:tpc47-crude-support-bound}
+\end{equation}
+The terminal logarithm is included in \(X^{o(1)}\), and the supported
+product pairs and source rows satisfy
+\begin{equation}
+ \#\{(p,r)\}\le X^{1+o(1)},
+ \qquad
+ \#\{m\}\le QX^{o(1)}.
+ \label{eq:tpc47-tuple-counts}
+\end{equation}
+Since \(Q=X^{267/400+o(1)}\),
+\(J=X^{133/400+o(1)}\), the total exponent is
+\begin{equation}
+ 1+\frac32\frac{267}{400}
+ +\frac12\frac{133}{400}
+ =\frac{867}{400}.
+ \label{eq:tpc47-full-prefactor-ledger}
+\end{equation}
+Fixing one opposite row removes the factor \(Q^{1/2}\), leaving
+\begin{equation}
+ 1+\frac{267}{400}
+ +\frac12\frac{133}{400}
+ =\frac{1467}{800}.
+ \label{eq:tpc47-fixed-row-prefactor-ledger}
+\end{equation}
+This proves all assertions.
+\end{proof}
+
+\begin{corollary}[Arbitrary-power actual leakage]
+\label{cor:tpc47-arbitrary-power-leakage}
+In the endpoint regime \(J=X^{\nu+o(1)}\), fix
+\(0<\kappa<\nu\) and take \(\Sigma=X^{\kappa+o(1)}\).  For every
+\(A>0\), one may choose one fixed differentiability order \(B\),
+depending only on \(A,\kappa,h_0\), such that
+\begin{equation}
+ \left\|
+ \widehat{\Pi_{\Omega}^{(H_0)}
+ \cF^{\rm fr,L/R}}(\alpha)
+ \right\|\ll_{A,\kappa,h_0}X^{-A}
+ \label{eq:tpc47-superpolynomial-leakage}
+\end{equation}
+uniformly on \eqref{eq:tpc47-actual-gap}.
+\end{corollary}
+
+\begin{proof}
+In \eqref{eq:tpc47-actual-leakage}, choose
+\(B>1/2+(A+867/400+1)/\kappa\).  The fixed-order projective
+seminorm estimate remains \(X^{o(1)}\), which is absorbed for large
+\(X\).
+\end{proof}
+
+\subsection{Residual synthesis versus the grouped physical column}
+
+At \(h=h_0\), the residual vector in
+\eqref{eq:tpc47-full-packet-vector-profile} is precisely the negative
+large-prime synthesis \(-\sum_pUx_p\) of TPC--45/46.  It uses the
+literal actual coefficients and signs.  It belongs, however, to the
+low-sign-averaged residual Gram route; it is not the native affine
+physical face, whose cross inner products are different
+\citep{WangTPC45,WangTPC46}.
+
+For each opposite row \(\gamma\), let
+\begin{equation}
+ \cS_\gamma:=\{s:(\gamma,s)\text{ occurs at some physical orbit time}\}
+ \label{eq:tpc47-active-residual-set}
+\end{equation}
+and restrict to the orbit-invariant space
+\begin{equation}
+ \Hh_{\rm act,res}
+ :=\bigoplus_{\gamma\in\cO_L}
+ \ell^2(\cS_\gamma)\widehat\otimes\ell^2(\Z).
+ \label{eq:tpc47-active-residual-space}
+\end{equation}
+For comparison, define the residual grouping map on this space by
+\begin{equation}
+ (Cy)_{\gamma,j}:=\sum_s y_{\gamma,s,j}.
+ \label{eq:tpc47-residual-grouping}
+\end{equation}
+
+\begin{proposition}[Grouped large-prime component]
+\label{prop:tpc47-grouped-component}
+The map \(C\) commutes with the orbit projector.  If
+\begin{equation}
+ \rho_{\rm res}:=\max_{\gamma}|\cS_\gamma|,
+ \label{eq:tpc47-residual-fiber-multiplicity}
+\end{equation}
+then
+\begin{equation}
+ \|C\|^2=\rho_{\rm res}.
+ \label{eq:tpc47-grouping-norm}
+\end{equation}
+At \(h_0\), grouping \(-\sum_pUx_p\) recovers exactly the corresponding
+large-prime component of the actual equality column under the sign
+convention of \cref{sec:tpc47-interface}.  Exact core vanishing survives
+grouping, while the leakage
+bound acquires at most \(\rho_{\rm res}^{1/2}\).
+\end{proposition}
+
+\begin{proof}
+The domain \eqref{eq:tpc47-active-residual-space} is invariant under the
+orbit projector.  The two operators act in the residual and orbit
+tensor factors, respectively.  Fiberwise Cauchy--Schwarz gives
+\(\|C\|^2\le\rho_{\rm res}\), and a constant vector on a largest
+fiber attains equality.  The physical identification at \(h_0\) is
+the definition of the residual large-prime lift.  Apply \(C\) to
+\eqref{eq:tpc47-actual-low-zero} and
+\eqref{eq:tpc47-actual-leakage}.
+\end{proof}
+
+This proposition does not restore the base component or the full
+native affine Gram form.  The grouping norm may itself be polynomial,
+so it is not a fixed-shift closure theorem.
