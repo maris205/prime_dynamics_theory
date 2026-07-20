@@ -1,0 +1,123 @@
+{
+  "all_column_dense_audit": [
+    {
+      "bulk_radius_candidate": 0.22555252096240946,
+      "fine_dimension": 32,
+      "left_energy_over_radial_clock": 0.8715511457838878,
+      "left_exact_hardy_energy": 0.9039575455799422,
+      "radial_hardy_clock": 1.0371824418484443,
+      "right_energy_over_radial_clock": 0.9667017722916758,
+      "right_exact_hardy_energy": 1.002646104724699,
+      "sigma": 0.16
+    },
+    {
+      "bulk_radius_candidate": 0.462166347102164,
+      "fine_dimension": 64,
+      "left_energy_over_radial_clock": 0.9756948850036441,
+      "left_exact_hardy_energy": 1.162561029950831,
+      "radial_hardy_clock": 1.1915210869907236,
+      "right_energy_over_radial_clock": 1.0619039489868072,
+      "right_exact_hardy_energy": 1.2652809475765023,
+      "sigma": 0.08
+    }
+  ],
+  "deterministic_edge_radius": 0.7718445063460383,
+  "deterministic_tail_audit": [
+    {
+      "fine_dimension": 32,
+      "horizon": 4,
+      "left_block_power_norm": 0.02100198841006131,
+      "maximum_relative_energy_excess": 0.0002451402315990503,
+      "right_block_power_norm": 0.01983569113454479,
+      "sigma": 0.16
+    },
+    {
+      "fine_dimension": 64,
+      "horizon": 8,
+      "left_block_power_norm": 0.030509426786165642,
+      "maximum_relative_energy_excess": 0.000493399343137968,
+      "right_block_power_norm": 0.027949461222966158,
+      "sigma": 0.08
+    }
+  ],
+  "evidence_level": "exact scalar exponent formulas and inherited deterministic all-column binary64 Hardy traces; production traces remain Hutchinson/truncated diagnostics; no interval eigensolver",
+  "extrema": {
+    "common_strong_rate_threshold": 0.27249052503906246,
+    "edge_two_side_total_power": 1.2551073119101264,
+    "maximum_all_column_energy_over_radial_clock": 1.0619039489868072,
+    "maximum_all_column_hardy_energy": 1.2652809475765023,
+    "maximum_deterministic_tail_relative_excess": 0.000493399343137968,
+    "maximum_production_truncated_hardy_energy": 2.1519878771749523
+  },
+  "hardy_radius": 0.85,
+  "lambda": 1.678573510428322,
+  "limitations": [
+    "The strong-space result is a no-go for a stated black-box ledger, not a lower bound on the true Hardy energies.",
+    "The five-scale all-column matrices are binary64 diagnostics and do not prove a uniform small-noise theorem.",
+    "The production RH-50 values use Hutchinson probes and a truncated time horizon.",
+    "The deterministic edge radius comes from the deterministic physical trace law; noisy cloud quantization remains conjectural.",
+    "Stage A1 and unconditional Stage A4 remain open."
+  ],
+  "production_directional_audit": [
+    {
+      "fine_bulk_radius_candidate": 0.6746693518397273,
+      "fine_dimension": 2048,
+      "left_tail_decay_candidate": 0.6741006554574959,
+      "left_truncated_energy_r085": 1.5018718523988686,
+      "right_tail_decay_candidate": 0.6742469633486796,
+      "right_truncated_energy_r085": 1.6896671087396216,
+      "sigma": 0.01
+    },
+    {
+      "fine_bulk_radius_candidate": 0.7179413580953723,
+      "fine_dimension": 5120,
+      "left_tail_decay_candidate": 0.717080199610291,
+      "left_truncated_energy_r085": 1.6793377758115662,
+      "right_tail_decay_candidate": 0.7161675844912546,
+      "right_truncated_energy_r085": 2.1519878771749523,
+      "sigma": 0.004
+    }
+  ],
+  "sources": {
+    "rh50_pilot": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/results/two_pole_hardy_pilot.json",
+      "sha256": "f3acd1440fd22304b6079ba4b3a9595e7300d08f757b919ecbf629160ec14cdb"
+    },
+    "rh51_all_column_pilot": {
+      "path": "papers/RH-51-cyclic-rank-growing-horizon-stein/results/structured_stein_pilot.json",
+      "sha256": "508a63949bbddb02b10b209bf9ed1c0c5714bf6e83936e82a8ede92e600b4061"
+    },
+    "rh53_tail_pilot": {
+      "path": "papers/RH-53-deterministic-hardy-tail-cutoff/results/deterministic_tail_pilot.json",
+      "sha256": "3182a1715412a890dd212972e2da4bfe8bd4f45353fb8eef1b54897d6b51438e"
+    }
+  },
+  "status": "deterministic_hardy_barrier_and_overlap_target_audit",
+  "strong_space_barrier": {
+    "allowed_total_hardy_power": 0.25,
+    "common_rate_threshold": 0.27249052503906246,
+    "entrance_power_per_side": 1.0,
+    "rate_ledgers": [
+      {
+        "single_side_energy_power": 0.14644671973238027,
+        "strong_rate": 0.329642076293171,
+        "two_side_total_power": 0.29289343946476054,
+        "within_quarter_power_budget": false
+      },
+      {
+        "single_side_energy_power": 0.6275536559550632,
+        "strong_rate": 0.7718445063460383,
+        "two_side_total_power": 1.2551073119101264,
+        "within_quarter_power_budget": false
+      },
+      {
+        "single_side_energy_power": 0.8189375698743062,
+        "strong_rate": 0.82,
+        "two_side_total_power": 1.6378751397486124,
+        "within_quarter_power_budget": false
+      }
+    ],
+    "threshold_formula": "theta <= r^(p_total/budget)=r^8",
+    "total_entrance_power": 2.0
+  }
+}

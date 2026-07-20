@@ -1,0 +1,84 @@
+{
+  "arb_audit": {
+    "edge_total_exceeds_quarter_certified": true,
+    "precision_bits": 256,
+    "production_operator_interval_eigensolver_executed": false,
+    "sector_full_contour_perturbation_product": "[0.07727095303722614636261948757109233057861920510635995488046776888128723530248310277966352953078009296119021259467555867480727002181337455680642458196 +/- 6.46e-150]",
+    "sector_rate_lower_exceeds_r_to_eight_certified": true,
+    "sector_resonance_precision_bits": 512,
+    "sector_resonance_status": "arb_validated_nonperron_analytic_sector_resonance",
+    "status": "arb_outward_rounded_hardy_barrier_exponent_ledger",
+    "threshold_below_point_two_eight_certified": true
+  },
+  "binary64_audit": {
+    "all_column_rows": 5,
+    "extrema": {
+      "common_strong_rate_threshold": 0.27249052503906246,
+      "edge_two_side_total_power": 1.2551073119101264,
+      "maximum_all_column_energy_over_radial_clock": 1.0946283917151542,
+      "maximum_all_column_hardy_energy": 1.7603096405405414,
+      "maximum_deterministic_tail_relative_excess": 0.000493399343137968,
+      "maximum_production_truncated_hardy_energy": 2.35828124251829
+    },
+    "interval_validated": false,
+    "production_rows": 5,
+    "tail_rows": 5
+  },
+  "black_box_barrier": {
+    "allowed_total_power": 0.25,
+    "common_rate_criterion": "theta <= r^8",
+    "conclusion": "a proof that pays a full sigma^-1 strong-space prefactor cost in each direction cannot meet RH-54's quarter-power budget even at the validated analytic-sector rate lower",
+    "critical_rate": 0.27249052503906246,
+    "deterministic_edge_radius": 0.7718445063460383,
+    "does_not_claim_hardy_divergence": true,
+    "edge_two_side_total_power": 1.2551073119101264,
+    "r_at_audit": 0.85,
+    "standard_entrance_power_per_direction": 1.0,
+    "validated_one_step_rate_lower": "[0.397341540742973412052500864851765514642024921324327458457451150309688891134870915102148423874630296849543776788710006456382822495432569048361290297001312 +/- 4.28e-154]",
+    "validated_sector_resonance_modulus_lower": "[0.157880300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 3.46e-155]"
+  },
+  "directional_overlap_theorem": {
+    "eigenbasis_condition_number_alone_targeted": false,
+    "nondiagonalizable_extension": "replace simple modal terms by Riesz/Jordan blocks with their polynomial Hardy factors",
+    "setting": "for N=sum_j mu_j P_j and normalized response blocks Z_j=Y P_j X",
+    "spectral_radius_alone_sufficient": false,
+    "success_criterion": "prove the displayed mixed overlap sum uniformly, polylogarithmically, or with the two-direction total power <=1/4",
+    "upper": "E(r) <= sum_j ||Z_j||_S2 / sqrt(1-|mu_j/r|^2)"
+  },
+  "evidence_levels": {
+    "analytic": [
+      "two-stage Hardy splitting inequality",
+      "optimized strong-space entrance exponent",
+      "quarter-power critical decay-rate criterion",
+      "modal overlap sufficient condition",
+      "separation between global edge and directional overlap budgets"
+    ],
+    "arb_formula_audit": "256-bit Arb evaluation of exact scalar formulas; no transfer operator or intrinsic eigensolver is enclosed",
+    "binary64_diagnostic": "exact scalar exponent formulas and inherited deterministic all-column binary64 Hardy traces; production traces remain Hutchinson/truncated diagnostics; no interval eigensolver"
+  },
+  "limitations": [
+    "The barrier is conditional on a global one-step estimate whose two-step restriction contains the certified analytic sector and on paying the full standard sigma^-1 strong-space prefactor in each direction; it is a route no-go, not a lower bound on the actual Hardy energies.",
+    "The validated analytic-sector resonance is a deterministic component-square input; it is not a production noisy-bulk eigensolver or a noisy-cloud theorem.",
+    "The all-column and production matrix audits are binary64 diagnostics; production RH-50 values also use probes and a finite horizon.",
+    "Arb validates scalar exponent arithmetic only, not a production transfer-operator eigensolver.",
+    "The mixed overlap criterion is sufficient and remains unproved uniformly over the dyadic small-noise family.",
+    "Stage A1 and unconditional Stage A4 remain open.",
+    "No arithmetic trace formula, prime-power identity, zeta-zero spectral identity, self-adjoint Hilbert--Polya operator, T log T law, Riemann-hypothesis conclusion, or TPC twin-prime conclusion is claimed."
+  ],
+  "program_conclusion": {
+    "directional_overlap_route_viable": true,
+    "next_target": "endpoint-interior or cloud-sector decomposition proving mixed Haar-channel Riesz overlap sums",
+    "stage_A1_uniform_hardy_budget_closed": false,
+    "stage_A4_unconditional_identification_closed": false,
+    "standard_global_strong_space_route_closed": false,
+    "standard_global_strong_space_route_obstructed": true
+  },
+  "scope": "growing-horizon Hardy estimates for the two normalized adjacent-Haar channels after exact Perron/parity removal",
+  "status": "rigorous_two_stage_strong_space_budget_barrier_with_directional_overlap_escape_route",
+  "two_stage_theorem": {
+    "energy_power": "alpha=p log(1/r)/log(1/theta)",
+    "energy_square_bound": "sum_(m<M) r^(-2m) a_m^2 + S^2 sigma^(-2p) (theta/r)^(2M)/(1-(theta/r)^2)",
+    "optimized_horizon": "M=(p/log(1/theta)) log(1/sigma)+O(1)",
+    "premises": "initial directional output bounded by a_m, strong tail bounded by S sigma^-p theta^m after the switch, theta<r"
+  }
+}

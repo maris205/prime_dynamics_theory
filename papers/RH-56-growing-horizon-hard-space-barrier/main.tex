@@ -1,0 +1,685 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{condition}[theorem]{Condition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\HS}{\mathfrak S_2}
+\newcommand{\Id}{I}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\spr}{\operatorname{spr}}
+
+\title{Growing-Horizon Strong-Space Barriers for Directional Hardy Energies\\
+\large An Optimized Exponent No-Go and a Mixed Haar-Channel Overlap Route}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The remaining analytic premise in the intrinsic small-noise identification
+program is a dyadically uniform budget for two directional Hardy energies.
+The natural next attempt combines an initial Hilbert-space segment with a
+postcritical tower/spike spectral gap after a growing mixing horizon.  We
+derive the sharp exponent ledger for that attempt.
+
+If entering the strong space costs $\sigma^{-p}$, the strong tail decays as
+$\theta^m$, and the Hardy radius is $r>\theta$, optimization over the
+switching horizon gives
+\[
+ \cE(r)=O(\sigma^{-\alpha}),
+ \qquad
+ \alpha=p\frac{\log(1/r)}{\log(1/\theta)}.
+\]
+The standard folded-Gaussian strong-space black box costs $p=1$ in each
+direction.  RH-54 allows a combined exponent at most $1/4$.  At $r=0.85$,
+the common decay rate would therefore have to satisfy
+\[
+ \theta\le r^8=0.2724905250\ldots.
+\]
+This requirement is incompatible with the deterministic rates that the
+global route must accommodate: the physical trace law has edge
+$\lambda^{-1/2}=0.7718445063\ldots$.  More directly, a new Arb contour
+certificate proves that the deterministic central analytic sector has a
+genuine two-step resonance of modulus greater than $0.1578803$.  Any
+uniform one-step global tail estimate whose square contains this sector must
+therefore have rate greater than $0.3973415>r^8$.  This is a no-go for the
+stated black-box norm route, not a lower bound on the actual directional
+energies.
+
+We then give the route that survives.  For a diagonalizable bulk
+$N=\sum_j\mu_jP_j$, normalized source $X$, and observation $Y$,
+\[
+ \cE(r)
+ \le
+ \sum_j\frac{\norm{YP_jX}_{\HS}}
+ {\sqrt{1-|\mu_j/r|^2}}.
+\]
+Thus the unresolved theorem is a mixed source--resonance--observation
+overlap budget, not a smaller global spectral radius or a complete
+eigenbasis condition number.  A deterministic all-column five-scale audit
+has left/right energies at most $1.76031$ and energy divided by the radial
+Hardy clock at most $1.09463$; production-resolution truncated evidence
+remains below $2.35829$.  These binary64 computations support the overlap
+route but prove no uniform asymptotic bound.  Stage A1 and unconditional
+intrinsic identification remain open.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Hardy energy; growing horizon; transfer operator;
+strong--weak norm; Riesz overlap; Haar coupling; small noise; route no-go.
+
+\medskip
+\noindent\textbf{MSC 2020:} 47A10; 47B65; 37D25; 37M25; 65R20.
+
+\section{Introduction}
+
+The fixed-noise intrinsic determinant and its dyadic continuum limit are
+rigorous.  The active problem is to identify the finite matrix's own
+Perron/parity-deflated bulk uniformly as the Gaussian width tends to zero.
+RH-48 reduced that problem to directional reduced resolvents, RH-49 moved
+both actions into the Hilbert--Schmidt class, and RH-50 converted the
+contour problem into two time-domain Hardy energies
+\citep{WangIntrinsic2026,WangDirectional2026,WangHardy2026}.  Subsequent
+work proved exact growing-horizon Stein tails, uniform peripheral residues,
+factor-aware cutoff transfer, and strong--weak adaptive Riesz stability
+\citep{WangStructuredStein2026,WangFactorTransfer2026,
+WangHardyTail2026,WangFactorAware2026,WangRieszCutoff2026}.
+
+Only the analytic Stage A1 Hardy budget remains.  With the notation defined
+below, RH-54 needs
+\begin{equation}
+ \cE_B(r)=O(\sigma^{-\alpha_B}),
+ \qquad
+ \cE_C(r)=O(\sigma^{-\alpha_C}),
+ \qquad
+ \alpha_B+\alpha_C\le\frac14.
+ \label{eq:rh54-budget}
+\end{equation}
+Uniform or polylogarithmic bounds would be ideal.
+
+The obvious dynamical proof has two clocks.  One propagates the special Haar
+source in a weak or Hilbert norm until smoothing and mixing place it in the
+postcritical strong space.  The other applies a strong-space spectral gap to
+the remaining tail.  Because the Hardy sum weights time $m$ by $r^{-m}$, a
+growing switching time is not free.  This paper computes that cost before
+attempting a long tower proof.
+
+The answer is useful but negative: the available isotropic Gaussian entrance
+power is too expensive by a large margin.  Crucially, this does not conflict
+with the observed bounded-looking energies.  The black-box proof discards
+the fact that the source and observation are adjacent Haar channels.  The
+correct next object is their mixed overlap with the growing resonance cloud.
+
+\subsection*{Main contributions}
+
+\begin{enumerate}[leftmargin=2.2em]
+ \item We prove an exact two-stage Hardy splitting inequality and optimize
+       the switching horizon, including the factor $r^{-M}$.
+ \item We derive a critical common-rate criterion.  Two standard
+       $\sigma^{-1}$ strong prefactors fit the quarter-power budget only if
+       $\theta\le r^8$.
+ \item We separate three radii that cannot be interchanged: the validated
+       central analytic-sector radius, the deterministic physical edge, and
+       a finite-noise bulk-radius diagnostic.
+ \item We prove a modal mixed-overlap Hardy upper.  It retains precisely the
+       source and observation information destroyed by global norm bounds.
+ \item We audit inherited deterministic all-column Hardy traces, production
+       directional traces, and certified finite-matrix tail mechanisms.  No
+       fitted five-scale law is promoted to an asymptotic theorem.
+\end{enumerate}
+
+\section{Directional Hardy problem}
+
+Let $T=G_{2n,\sigma}$ be the exact fine cell-average matrix and let
+$V_{2n}=V_n\oplus W_n$ be the adjacent orthogonal Haar split.  Write $U$ for
+the coarse embedding and
+\[
+ T=\begin{pmatrix}A&B\\C&D\end{pmatrix},
+ \qquad
+ B=U^*TW,
+ \qquad
+ C=W^*TU.
+\]
+Remove the simple Perron and parity branches intrinsically.  Thus
+\begin{align*}
+ N_f&=T-\lambda_{f,+}P_{f,+}-\lambda_{f,-}P_{f,-},
+ &Q_f&=\Id-P_{f,+}-P_{f,-},\\
+ N_c&=A-\lambda_{c,+}P_{c,+}-\lambda_{c,-}P_{c,-},
+ &Q_c&=\Id-P_{c,+}-P_{c,-}.
+\end{align*}
+For a fixed radius above both bulk spectra, define
+\begin{align}
+ \cE_B(r)^2
+ &=\sum_{m\ge0}r^{-2m}
+ \frac{\norm{U^*N_f^mQ_fUB}_{\HS}^2}{\norm B_{\HS}^2},
+ \label{eq:left-energy}\\
+ \cE_C(r)^2
+ &=\sum_{m\ge0}r^{-2m}
+ \frac{\norm{CN_c^mQ_c}_{\HS}^2}{\norm C_{\HS}^2}.
+ \label{eq:right-energy}
+\end{align}
+RH-50 proves that these energies control the normalized range resolvents.
+RH-52 proves the two-sided adjacent coupling scale
+\begin{equation}
+ \norm B_{\HS},\norm C_{\HS}
+ =\Theta(h\sigma^{-3/2})
+ \label{eq:coupling-scale}
+\end{equation}
+uniformly once $h/\sigma$ is small.  It also closes every peripheral residue
+appearing outside \eqref{eq:left-energy}--\eqref{eq:right-energy}.  Hence no
+residue power is hidden in the question studied here.
+
+The radius used in the computational branch is
+\begin{equation}
+ r=0.85,
+ \label{eq:r-value}
+\end{equation}
+while the peripheral contours have minimum modulus close to $0.95$.
+
+\section{Two-stage growing-horizon estimate}
+
+We first state the abstract inequality without imposing a particular strong
+space.
+
+\begin{theorem}[Two-stage Hardy splitting]
+\label{thm:two-stage}
+Let $0<\theta<r<1$ and let $(d_m)_{m\ge0}$ be nonnegative.  Suppose that for
+some integer $M\ge0$,
+\begin{equation}
+ d_m\le a_m\quad(0\le m<M),
+ \qquad
+ d_{M+k}\le S\sigma^{-p}\theta^{M+k}\quad(k\ge0).
+ \label{eq:two-stage-premise}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \sum_{m\ge0}r^{-2m}d_m^2
+ \le
+ \sum_{m=0}^{M-1}r^{-2m}a_m^2
+ +
+ \frac{S^2\sigma^{-2p}(\theta/r)^{2M}}
+ {1-(\theta/r)^2}.}
+ \label{eq:two-stage-upper}
+\end{equation}
+If $a_m\le A$ uniformly and
+\begin{equation}
+ M(\sigma)
+ =\frac{p}{\log(1/\theta)}\log\frac1\sigma+O(1),
+ \label{eq:optimized-M}
+\end{equation}
+then the corresponding Hardy energy is
+\begin{equation}
+ O(\sigma^{-\alpha}),
+ \qquad
+ \boxed{
+ \alpha=p\frac{\log(1/r)}{\log(1/\theta)}.}
+ \label{eq:alpha}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Split the series immediately before $M$.  Substitution of
+\eqref{eq:two-stage-premise} in the second part gives
+\[
+ \sum_{k\ge0}r^{-2(M+k)}S^2\sigma^{-2p}\theta^{2(M+k)}
+ =\frac{S^2\sigma^{-2p}(\theta/r)^{2M}}
+ {1-(\theta/r)^2},
+\]
+which proves \eqref{eq:two-stage-upper}.  Under the uniform initial bound,
+the first part is at most $A^2r^{-2M}/(r^{-2}-1)$, up to an immaterial
+endpoint factor.  Equation \eqref{eq:optimized-M} balances the strong
+entrance scale with the decay clock.  Finally
+\[
+ r^{-M(\sigma)}
+ =\sigma^{-p\log(1/r)/\log(1/\theta)}O(1),
+\]
+giving \eqref{eq:alpha} after taking a square root.
+\end{proof}
+
+The factor $\theta^M$ in the tail premise is favorable: it grants the
+global decay clock before the switching time is selected.  A weaker estimate
+of the form $S\sigma^{-p}\theta^k$ after the switch can only increase the
+Hardy cost, so the obstruction below applies a fortiori to that version.
+
+The theorem is deliberately phrased in terms of the actual directional
+sequence.  A dynamical strong-space proof would obtain its tail premise by
+first estimating a normalized source in $\cB$, then using a deflated
+strong-space power bound.  The next statement records the resulting
+necessary rate for this \emph{proof ledger}.
+
+\begin{corollary}[Critical common strong rate]
+\label{cor:critical-rate}
+Suppose the left and right applications of \cref{thm:two-stage} have entrance
+powers $p_B,p_C$ and use one common decay rate $\theta$.  To meet
+\eqref{eq:rh54-budget}, it is necessary and sufficient at the scalar-ledger
+level that
+\begin{equation}
+ \theta
+ \le r^{4(p_B+p_C)}.
+ \label{eq:critical-general}
+\end{equation}
+For the standard Gaussian strong-space powers
+$p_B=p_C=1$ and $r=0.85$,
+\begin{equation}
+ \boxed{
+ \theta\le r^8
+ =0.272490525039062\ldots.}
+ \label{eq:r8}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Sum \eqref{eq:alpha} in the two directions and require the result to be at
+most $1/4$.  Rearranging gives
+$\log(1/\theta)\ge4(p_B+p_C)\log(1/r)$, equivalent to
+\eqref{eq:critical-general}.
+\end{proof}
+
+\subsection{Where the unit strong prefactor enters}
+
+The folded-Gaussian transfer maps a weak $L^1$ density into the standard
+BV/spike strong space with norm $O(\sigma^{-1})$
+\citep{WangRieszCutoff2026}.  A proof that treats each normalized Haar
+channel through this isotropic black-box map therefore carries the strong
+prefactor
+\begin{equation}
+ O(\sigma^{-1})
+ \label{eq:standard-entrance}
+\end{equation}
+per direction.  The separate $L^1\to L^2$ smoothing norm is
+$O(\sigma^{-1/2})$, but multiplying it into \eqref{eq:standard-entrance}
+would double-count the output in the two-stage Hardy sequence.  This does
+not prove that the \emph{normalized} physical channel has strong norm
+$\Theta(\sigma^{-1})$; it identifies the available isotropic upper after the
+special Haar cancellation is discarded.
+
+That qualifier matters.  A better anisotropic norm or a direct estimate of
+the normalized coupling range could reduce $p_B$ or $p_C$.  The no-go below
+applies to the standard factorized black-box route, not to every possible
+strong-space argument.
+
+\section{Why global strong rates cannot close this ledger}
+
+There are three distinct spectral quantities in the preceding papers.
+
+First, the central component square has a validated analytic transfer sector
+with the global upper
+\begin{equation}
+ \spr(\mathcal T_{1,0})
+\le0.329642076293171
+ \label{eq:central-radius}
+\end{equation}
+\citep{WangValidatedGap2026}.  This is a computer-assisted theorem in an
+analytic Wiener realization.  It is not the one-step physical noisy bulk
+radius in \eqref{eq:left-energy}.
+
+For the present exponent question an upper is not an obstruction; a lower is
+needed.  We therefore augment the RH-13 certificate.  Its $50$-coordinate
+Taylor block and analytic truncation satisfy
+\begin{equation}
+ \norm{\mathcal T_{1,0}-M}_{\ell^1\to\ell^1}
+ \le\varepsilon
+ =0.000523774672228\ldots.
+ \label{eq:sector-tail}
+\end{equation}
+
+\begin{theorem}[Validated non-Perron sector resonance]
+\label{thm:sector-resonance}
+Let
+\[
+ \Gamma_{\rm sec}:=\{z\in\mathbb C:|z-0.2078803|=0.05\}.
+\]
+The deterministic reduced even analytic sector has exactly one eigenvalue,
+counted with algebraic multiplicity, in
+\begin{equation}
+ |w-0.2078803|<0.05.
+ \label{eq:sector-circle}
+\end{equation}
+Consequently
+\begin{equation}
+ \spr(\mathcal T_{1,0})>0.1578803,
+ \qquad
+ \sqrt{\spr(\mathcal T_{1,0})}>0.3973415407>r^8.
+ \label{eq:sector-lower}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+At $512$-bit precision, Arb isolates exactly one eigenvalue of the active
+$25\times25$ finite Taylor block in \eqref{eq:sector-circle}; its enclosure
+is centered at
+$0.2078802977224652710775\ldots$.  The full $50\times50$ Taylor truncation
+has the same nonzero spectrum and only additional zero modes.  On $128$
+equally spaced circle nodes, directed complex-ball inversion for this full
+matrix gives maximum $\ell^1$ resolvent norm
+$108.312568$.  Every point of the circle is within
+$\delta=0.002454123$ of a node.  The resolvent identity therefore gives the
+full-circle bound
+\[
+ \sup_{z\in\Gamma_{\rm sec}}
+ \norm{(z-M)^{-1}}_1
+ \le\frac{108.312568}{1-\delta(108.312568)}
+ <147.527090.
+\]
+Multiplication by \eqref{eq:sector-tail} is below $0.077271<1$.
+The operator-valued Rouch\'e theorem, equivalently the Riesz-projector
+homotopy for $M+t(\mathcal T_{1,0}-M)$, preserves the enclosed algebraic
+multiplicity \citep{Kato1995}.  The modulus and square-root lower bounds
+follow from the left edge of the circle.  All finite eigenvalues, inverse
+nodes, the covering step, and scalar comparisons are outward rounded.
+\end{proof}
+
+Second, exact physical flat traces have root rate
+\begin{equation}
+ \rho_{\rm edge}
+ =\lambda^{-1/2}
+ =0.771844506346038\ldots,
+ \label{eq:edge}
+\end{equation}
+and the deterministic bulk germ has genuine poles at
+$z=\pm\sqrt\lambda$ \citep{WangBulkScattering2026}.  A growing cloud is
+mathematically necessary for any finite-resonance resolution of that edge,
+although its detailed noisy quantization remains conjectural.
+
+Third, finite-noise matrices have ordinary computed spectral radii.  They
+are diagnostics at selected $(n,\sigma)$, not replacements for either
+\eqref{eq:central-radius} or \eqref{eq:edge}.
+
+\begin{proposition}[Standard strong-space compatibility barrier]
+\label{prop:black-box-no-go}
+Assume that a putative global one-step strong-space estimate has a
+deterministic two-step restriction containing the analytic sector of
+\cref{thm:sector-resonance}.  At $r=0.85$, a two-direction application of
+the standard $p_B=p_C=1$ ledger then cannot satisfy the RH-54 quarter-power
+budget.  Indeed, compatibility forces $\theta^2>0.1578803$, so the smallest
+certified one-step rate is already larger than the critical value $r^8$.  For
+orientation, insertion of the resonance center and the physical edge gives
+\begin{align}
+ \theta=\sqrt{0.2078802977\ldots}:
+ &\qquad \alpha_B+\alpha_C=0.41385\ldots>\frac14,
+ \label{eq:sector-cost}\\
+ \theta=\rho_{\rm edge}:
+ &\qquad \alpha_B+\alpha_C=1.25511\ldots>\frac14.
+ \label{eq:edge-cost}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+The exact threshold is \eqref{eq:r8}.  If a uniform one-step estimate
+$\norm{N^{m}}\le C\theta^m$ (in a space containing the analytic sector) were
+available, its restriction to two steps would force
+$\theta^2\ge\spr(\mathcal T_{1,0})>0.1578803$.  The lower bound in
+\eqref{eq:sector-lower} then contradicts the threshold; substitution in
+\eqref{eq:alpha} gives the two orientation values.
+\end{proof}
+
+\begin{remark}[What is and is not negative]
+The proposition does not show that $\cE_B$ or $\cE_C$ diverges, and it does
+not turn the RH-15 scattering conjecture into a theorem.  It says that a
+proof which replaces the channel by the full Gaussian entrance norms and
+then replaces the tail by one global strong rate has already spent too much
+of the exponent budget.  A proof must retain directional cancellation at
+the entrance, in the tail, or both.
+\end{remark}
+
+\section{Mixed resonance-overlap route}
+
+The Hardy energy is an input--output quantity.  A global power norm estimates
+it only after maximizing the input and output independently.  The following
+elementary theorem avoids that loss.
+
+\begin{theorem}[Directional modal-overlap Hardy upper]
+\label{thm:overlap}
+Let $N$ be a diagonalizable matrix with
+\begin{equation}
+ N=\sum_{j=1}^J\mu_jP_j,
+ \qquad
+ \max_j|\mu_j|<r,
+ \label{eq:modal-decomposition}
+\end{equation}
+where the spectral projections need not be orthogonal.  For a
+Hilbert--Schmidt source $X$ and bounded observation $Y$, put
+$Z_j=YP_jX$.  Then
+\begin{equation}
+ \boxed{
+ \left(\sum_{m\ge0}r^{-2m}\norm{YN^mX}_{\HS}^2\right)^{1/2}
+ \le
+ \sum_{j=1}^J
+ \frac{\norm{Z_j}_{\HS}}
+ {\sqrt{1-|\mu_j/r|^2}}.}
+ \label{eq:overlap-upper}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:modal-decomposition} gives
+$YN^mX=\sum_j\mu_j^mZ_j$.  Apply Minkowski's inequality in the Hilbert space
+$\ell^2(\mathbb N_0;\HS)$ and sum each geometric sequence:
+\[
+ \left\|(r^{-m}YN^mX)_{m\ge0}\right\|_{\ell^2(\HS)}
+ \le\sum_j\norm{Z_j}_{\HS}
+ \left(\sum_{m\ge0}|\mu_j/r|^{2m}\right)^{1/2}.
+\]
+This is \eqref{eq:overlap-upper}.
+\end{proof}
+
+For a simple mode $P_j=v_j\otimes w_j$ with
+$\langle w_j,v_j\rangle=1$,
+\begin{equation}
+ \norm{YP_jX}_{\HS}
+ =\norm{Yv_j}_2\,\norm{X^*w_j}_2.
+ \label{eq:mixed-mode}
+\end{equation}
+The product in \eqref{eq:mixed-mode} is the desired mixed Haar-channel
+quantity.  Bounding it by
+$\norm Y\norm{P_j}\norm X_{\HS}$ would return to the global conditioning
+problem and lose the mechanism.
+
+\begin{condition}[Dyadic mixed-overlap budget]
+\label{cond:overlap}
+For both the fine left triple and coarse adjoint right triple, there are
+spectral or Riesz-block decompositions such that the corresponding right
+sides of \eqref{eq:overlap-upper} are
+\begin{equation}
+ O(\sigma^{-\alpha_B})
+ \quad\text{and}\quad
+ O(\sigma^{-\alpha_C}),
+ \qquad
+ \alpha_B+\alpha_C\le\frac14,
+ \label{eq:overlap-budget}
+\end{equation}
+uniformly over every required dyadic level.
+\end{condition}
+
+\begin{corollary}[Stage A1 closure from overlaps]
+If \cref{cond:overlap} holds at one fixed
+$r<\min_s d_{\Gamma_s}$, then the RH-54 Stage A1 premise holds with the same
+exponents.  In particular, a uniform or polylogarithmic overlap sum closes
+the Hardy part of intrinsic identification.
+\end{corollary}
+
+\begin{proof}
+Apply \cref{thm:overlap} to the normalized source and observation in each of
+\eqref{eq:left-energy}--\eqref{eq:right-energy}, then invoke the RH-50 Hardy
+resolvent upper and the RH-54 composition theorem.
+\end{proof}
+
+\subsection{Blocks, clouds, and nonnormality}
+
+Diagonalizability is used only to display the target transparently.  A Riesz
+block $N_j$ contributes the corresponding block Hardy norm
+\(\left(\sum_{m\ge0}r^{-2m}\norm{YN_j^mP_jX}_{\HS}^2\right)^{1/2}\).
+Jordan blocks add polynomial factors in $m$, which remain summable while the
+block radius is strictly below $r$.  The theorem needed next may therefore
+group resonances into endpoint/interior annuli or cloud sectors.  It need not
+validate every individual eigenvector of a large nonnormal matrix.
+
+This is also why a sum of individual binary64 eigenvector condition numbers
+is a poor numerical proxy.  It is gauge-sensitive near clustered modes and
+can be enormous even when the invariant block response is small.  Riesz
+blocks or time-domain all-column traces are the stable diagnostics.
+
+\section{Deterministic and production audits}
+
+The calculations have three evidence levels.
+
+\subsection{Deterministic all-column audit}
+
+RH-51 and RH-53 use dense exact-Haar matrices with $N\sigma=5.12$.  Every
+source column is propagated; no Hutchinson estimator is used.  The exact
+dense Hardy energy is obtained from a Lyapunov solve, while the complete
+infinite tail has a deterministic block certificate.  The inherited values
+are listed in \cref{tab:all-column}.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{rrrrrr}
+\toprule
+$\sigma$&$N$&bulk radius&radial clock&left $\cE$&right $\cE$\\
+\midrule
+0.16&32 &0.22555&1.03718&0.90396&1.00265\\
+0.08&64 &0.46217&1.19152&1.16256&1.26528\\
+0.04&128&0.57418&1.35620&1.33383&1.48454\\
+0.02&256&0.65648&1.57424&1.40958&1.63399\\
+0.01&512&0.67466&1.64398&1.46807&1.76031\\
+\bottomrule
+\end{tabular}
+\caption{Deterministic binary64 all-column audit at $r=0.85$.  The radial
+clock is $[1-(\rho/r)^2]^{-1/2}$.  The maximum energy divided by that clock
+is $1.09463$.}
+\label{tab:all-column}
+\end{table}
+
+The largest relative excess of the deterministic finite-horizon plus tail
+upper over the dense Lyapunov energy is $4.94\times10^{-4}$.  Thus the
+finite-matrix tail mechanism is not the observed wall.
+
+\subsection{Production-resolution directional evidence}
+
+RH-50 holds $N\sigma=20.48$ and reaches $N=40960$.  At $r=0.85$, the left
+truncated energies lie between $1.39465$ and $1.67934$ and the right values
+between $1.68967$ and $2.35828$.  Fitted tail bases range upward toward
+approximately $0.742$, remaining below $r$.  These values use eight
+deterministic Rademacher probes and stop at time $64$.  They are evidence,
+not all-column uppers or asymptotic bounds.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/growing_horizon_hard_space_barrier.pdf}
+\caption{Hardy route audit.  (a) The standard two-direction strong-space
+ledger crosses the quarter-power budget at $\theta=r^8$, below the
+deterministic physical edge.  (b) Dense all-column energies track a modest
+radial Hardy clock.  (c) Production-resolution truncated directional
+energies remain small over five scales.  (d) Growing-horizon block tails are
+sharp.  Panels (b)--(d) are binary64 diagnostics.}
+\label{fig:audit}
+\end{figure}
+
+\subsection{Outward-rounded audits}
+
+A 256-bit Arb execution evaluates \eqref{eq:r8}, the deterministic-edge
+ledger, and the radial Hardy clock.  It encloses
+\[
+ r^8=0.2724905250390625\ldots
+\]
+and certifies both $r^8<0.28$ and the edge two-direction power
+$1.25510731191013\ldots>1/4$.  Separately, the 512-bit certificate in
+\cref{thm:sector-resonance} encloses the finite Taylor eigenvalue and every
+node of the analytic contour homotopy.  Neither audit encloses a production
+folded-Gaussian noisy eigenproblem.
+
+\section{Program consequence}
+
+The Stage A map is now sharper.
+
+\begin{description}[leftmargin=5.0cm,style=nextline]
+ \item[Global fixed-step $L^2$ contraction]
+ Already impossible by the deterministic Koopman isometry in RH-50.
+
+ \item[Growing-horizon standard strong black box]
+ Quantitatively obstructed by \cref{prop:black-box-no-go}: its standard
+ entrance powers require an unrealistically small global rate.
+
+ \item[Deterministic finite-matrix tail]
+ Closed by RH-53.  It converts any verified contracting block into a full
+ all-column Hardy upper.
+
+ \item[Directional overlap route]
+ Viable.  The missing analytic theorem is \cref{cond:overlap}, preferably
+ for invariant endpoint/interior or cloud-sector Riesz blocks.
+
+ \item[Stage A1]
+ Open.  The present paper marks a failed norm route and a narrower positive
+ target; it does not prove a uniform Hardy budget.
+
+ \item[Stage A4 intrinsic identification]
+ Still conditional on Stage A1.  RH-52 through RH-55 have closed the residue,
+ tail, factor, and adaptive Riesz interfaces, so they need not be revisited.
+\end{description}
+
+The next paper should retain the adjacent Haar vanishing moment before
+strong-space inflation.  Two concrete decompositions are natural:
+\begin{enumerate}[leftmargin=2.2em]
+ \item split the source and observation into critical-endpoint and regular
+       interior packets and prove square-summed transport estimates;
+ \item group the physical edge into angular cloud sectors and bound the
+       invariant mixed Riesz-block responses without diagonalizing each mode.
+\end{enumerate}
+The first route is closer to existing Gaussian/Haar derivative estimates;
+the second interfaces more directly with the deterministic pole geometry.
+
+\subsection{No arithmetic or Hilbert--P\'olya conclusion}
+
+Nothing in this paper supplies an arithmetic trace formula, von Mangoldt or
+prime-power weights, a zeta-zero spectral identity, a canonical self-adjoint
+operator, or a $T\log T$ counting law.  No Riemann-hypothesis conclusion is
+drawn.  The independent TPC twin-prime branch is not an assumption here.
+
+\section{Reproducibility and theorem boundary}
+
+The archive contains the scalar algebra in \path{src/hardy_barrier}, inherited
+all-column and production ledgers, an Arb scalar audit, tests, hashes, and the
+figure.  Principal commands are
+\begin{verbatim}
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/pytest -q -p no:cacheprovider
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/run_hardy_barrier_pilot.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/run_arb_exponent_audit.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/run_arb_sector_resonance.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_hardy_barrier_certificate.py
+MPLBACKEND=Agg PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/make_figures.py
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+\end{verbatim}
+
+The two-stage inequality, exponent optimization, critical-rate criterion,
+and modal-overlap upper are analytic.  The inherited finite matrices and
+their eigendata are binary64.  Arb validates only the scalar formulas.  The
+barrier is a no-go for one explicitly stated proof ledger, and the overlap
+condition remains a target rather than a theorem for the physical family.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

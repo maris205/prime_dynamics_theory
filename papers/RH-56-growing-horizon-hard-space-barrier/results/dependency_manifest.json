@@ -1,0 +1,71 @@
+{
+  "external_inputs": {
+    "rh13_certificate": {
+      "path": "papers/RH-13-validated-reduced-sector-spectral-gap/results/validated_spectral_gap_certificate.json",
+      "sha256": "a87fb38c681b3697f18957d40b610458aea344bb2c983b61ab07680df3489bf0"
+    },
+    "rh13_certificate_source": {
+      "path": "papers/RH-13-validated-reduced-sector-spectral-gap/src/validated_gap/certificate.py",
+      "sha256": "7751b05a5a1677dd6cd7d141df775d0e6ee4a1ce5d6421570a1ddddc21a2db39"
+    },
+    "rh13_manuscript": {
+      "path": "papers/RH-13-validated-reduced-sector-spectral-gap/main.tex",
+      "sha256": "6837b90131b836a118e44577b2220b28f67cf52fecdb42150967c52c350c8291"
+    },
+    "rh15_manuscript": {
+      "path": "papers/RH-15-parity-extracted-bulk-scattering/main.tex",
+      "sha256": "b4e25d14c5ffa3d742a73eb18186b30fbd34526274890e834c6050859a046b13"
+    },
+    "rh50_pilot": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/results/two_pole_hardy_pilot.json",
+      "sha256": "f3acd1440fd22304b6079ba4b3a9595e7300d08f757b919ecbf629160ec14cdb"
+    },
+    "rh51_pilot": {
+      "path": "papers/RH-51-cyclic-rank-growing-horizon-stein/results/structured_stein_pilot.json",
+      "sha256": "508a63949bbddb02b10b209bf9ed1c0c5714bf6e83936e82a8ede92e600b4061"
+    },
+    "rh53_pilot": {
+      "path": "papers/RH-53-deterministic-hardy-tail-cutoff/results/deterministic_tail_pilot.json",
+      "sha256": "3182a1715412a890dd212972e2da4bfe8bd4f45353fb8eef1b54897d6b51438e"
+    },
+    "rh54_manuscript": {
+      "path": "papers/RH-54-factor-aware-intrinsic-identification/main.tex",
+      "sha256": "9d87b64a7d257f06f294c8f0372841c43f9b218fcf87a17429ed9b86403ae8df"
+    },
+    "rh55_manuscript": {
+      "path": "papers/RH-55-strong-weak-riesz-cutoff-transfer/main.tex",
+      "sha256": "c353086ffd925592a4b70baed356414514fbd819fe1de44d499afc58495fd2ac"
+    },
+    "roadmap": {
+      "path": "papers/RH-ROADMAP-after-RH50.md",
+      "sha256": "4def72e8da1310ec01126aba3d7d3adfdc430c9019340fc8225747b547a0a874"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "21895814ec3f223459d4c49cc62a0ebf81e74a4b1c845952c768295e80ca66d3",
+    "experiments/build_hardy_barrier_certificate.py": "81dc5d72b466255d59ae973a6a0a7df8a39525bb1c2f8c7ee321faac15ba253b",
+    "experiments/make_figures.py": "e939cca817b4ea8c285d264d75dfe481ca9d38aa1c575549b0fd38cd3f10f763",
+    "experiments/run_arb_exponent_audit.py": "4f9da71550a06db650f6a76a5f4eb14841b9640546b6e9b5c92a0749d6da2376",
+    "experiments/run_arb_sector_resonance.py": "fbbabc8e85f13c9b9a70517e42e820415496b5357b75bc714557ab14a86408a7",
+    "experiments/run_hardy_barrier_pilot.py": "278e24915d71093e1d1b1a3e068fe801e580db8e5ef3148b9b53b231ac1bbe45",
+    "experiments/verify_archive.py": "c494ca75cf169edf60411fbed76fb60c8c5040ed794649a2869d7da8d41b4866",
+    "src/hardy_barrier/__init__.py": "5d816006c27b99a6d146885706fe7c44204633cb6e9c71eda893b5d597eb90e3",
+    "src/hardy_barrier/ledger.py": "9395bb39131bd0b0590cc1022b788dcfc036c0cdebe1a477fb08a39ce548c1fd",
+    "tests/test_archived_results.py": "ee664c3922ee0a21ac5f781167130c7d8fee3e314e71d5e88c6cd0e6671f16e4",
+    "tests/test_smoke_pilot.py": "d48f343d93db3944f228174d65a3f844043d3e61becd7ad9ac4666867a93aae5",
+    "tests/test_theory.py": "dc3bab0bb4a90901ae718330d9778b004cd513218725149dbc5dea1cc96ae427"
+  },
+  "publication_artifacts": {
+    ".gitignore": "e8c5d568962ae7f11638a973e785da93ef034ef01f2aaeed525ff4849785dbb1",
+    "README.md": "b5125cbe69302c77ec5427436d0901c1b927fc7948f523f4918dfb7813e90345",
+    "figures/growing_horizon_hard_space_barrier.pdf": "59decc3844825dc85acb8915a6ab7e7edcb568bd41cf221154b207c66fdf41cf",
+    "figures/growing_horizon_hard_space_barrier.png": "820fe4e9f232c946c9d2edc170c2b9952e330ee43f476f57610a9ac0ff3e1775",
+    "growing-horizon-hard-space-barrier.pdf": "10f894c890d138012b7e455d0381b6745f99b8455161d7a2f18ef63a82a092ff",
+    "main.pdf": "10f894c890d138012b7e455d0381b6745f99b8455161d7a2f18ef63a82a092ff",
+    "main.tex": "b662ac98ef01ee24b20929fb42e9efec6c13e15a9c903b77ff8cc2c839a488cd",
+    "pyproject.toml": "5ff82fdeade9085df0f5720255e0afd32e63563709d3b9ede83c5c7762668c87",
+    "references.bib": "68bbfeede724f2c9683fe54c197d0f40c5ac9925607fdb2007c50890770692bb",
+    "requirements.txt": "bb69cdf83eae9db9ab74a0e76a59501b713693b156bc732b1118fb3df773a9a3"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}
