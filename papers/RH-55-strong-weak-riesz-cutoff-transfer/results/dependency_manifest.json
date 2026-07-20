@@ -1,0 +1,66 @@
+{
+  "external_inputs": {
+    "rh14_boundary_layer_manuscript": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/main.tex",
+      "sha256": "199d5abee0aaf7d16090cdedbb50688f177739a2d142b8e927d45e0fd5f5bb34"
+    },
+    "rh39_cutoff_bounds": {
+      "path": "papers/RH-39-uniform-gaussian-cutoff-bridge/src/cutoff_bridge/bounds.py",
+      "sha256": "bd2dfe9f0010fbfc3993af8255f6f49b2f5d2e0afaefbc748ab2abf9bb2f4872"
+    },
+    "rh39_cutoff_manuscript": {
+      "path": "papers/RH-39-uniform-gaussian-cutoff-bridge/main.tex",
+      "sha256": "6f36c4ddd2201ca538e82da1ea394211d67358712d2f9d88d5170f7e2207df7d"
+    },
+    "rh47_conditioning_manuscript": {
+      "path": "papers/RH-47-logarithmic-peripheral-conditioning/main.tex",
+      "sha256": "6f5beb2001b1a6860651c05a791c733c3d7e4a1634dad3b6259799066bae0976"
+    },
+    "rh52_factor_manuscript": {
+      "path": "papers/RH-52-intrinsic-peripheral-residue-transfer/main.tex",
+      "sha256": "4e218afbe13241db1f90afefba3ba75b00c794ec1c876bab18f4ee1504371255"
+    },
+    "rh53_hardy_tail_manuscript": {
+      "path": "papers/RH-53-deterministic-hardy-tail-cutoff/main.tex",
+      "sha256": "0e1d8969e97c3c03b0d3bfd8b2bb22582e636e1b70918aa153366ce5c42f1aba"
+    },
+    "rh54_factor_aware_manuscript": {
+      "path": "papers/RH-54-factor-aware-intrinsic-identification/main.tex",
+      "sha256": "9d87b64a7d257f06f294c8f0372841c43f9b218fcf87a17429ed9b86403ae8df"
+    },
+    "rh54_factor_pilot": {
+      "path": "papers/RH-54-factor-aware-intrinsic-identification/results/factor_aware_transfer_pilot.json",
+      "sha256": "53e7a632480e2f1c0731f0b2028a5f5b1a64b7e524b11081da78f43e66f77c18"
+    },
+    "roadmap": {
+      "path": "papers/RH-ROADMAP-after-RH50.md",
+      "sha256": "4def72e8da1310ec01126aba3d7d3adfdc430c9019340fc8225747b547a0a874"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "c24f79dceedd2046f8cd9d4a82f3f02ad3a757b47531a2824e6f7b17fb9bc61e",
+    "experiments/build_riesz_cutoff_certificate.py": "b1e404f4a530d7aabd7148bb7d4b5d48d73503eaaa4359a8fa8a8308bb6754c1",
+    "experiments/make_figures.py": "89b482dcff0b38c17c624734ddb0ea800b6c1aa0ee2a53467710b1054890c395",
+    "experiments/run_arb_riesz_ledger.py": "829e98bf277f77bf5c087ae4b214747c49c89c9341cad0229873e2d62498be76",
+    "experiments/run_riesz_cutoff_pilot.py": "df4c5ac5242da7f8576c7bc569721b5001178e393a5a4790318063de351b443b",
+    "experiments/verify_archive.py": "b51392707916e324bf0dc075fcff216b65b06f7d3928511c4e92d400213146fb",
+    "src/riesz_cutoff/__init__.py": "7073159b1c8f8b443edaa9e73611fa00e1d7c154fa5ba66b2ad69a68cd70f3c7",
+    "src/riesz_cutoff/algebra.py": "148e00e9a79f0521f68c5f5a0df66f0c21390ace382dd004866a61ab52b4d86d",
+    "tests/test_archived_results.py": "6e351b9d7a860fe9f4c7345f5a17541c0880f496d6b54d6884725a585e5fb277",
+    "tests/test_smoke_pilot.py": "52f935409f2970154a4ceaf77c414d049441fe8f015924f213f2bf97e4737f5d",
+    "tests/test_theory.py": "1909149280fa9e5a96fd176080d8709598bd374f5ca66e229a82859288cdec47"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "d25bf4082145b1486c3477a338d1c55b1d014380d7ee2bf42101da1d39e64dfb",
+    "figures/strong_weak_riesz_cutoff_transfer.pdf": "cd2bb4143352684316fda843b2cdf68c183099c0a42f74fea4f2c8d419cb2262",
+    "figures/strong_weak_riesz_cutoff_transfer.png": "e94d7c1f88f75dc674ff35d4b699fe24f82d42a5309027b03897ace5f42e9b3c",
+    "main.pdf": "c4f45c77519c645d7d2f1b8dac2299cca181118c8c1cf93aaee180d52892a4f7",
+    "main.tex": "c353086ffd925592a4b70baed356414514fbd819fe1de44d499afc58495fd2ac",
+    "pyproject.toml": "14dff7c58c9fbb3c6576594a8d7248f82d9fdad20d464a18d11182304c922832",
+    "references.bib": "dd2e35cf56abbbff4edd81b9815a665bab3f531247314a94c6e95403a27c9ad8",
+    "requirements.txt": "363c1f1efab6dc5217856ec4ba6570fd0a169510eb8bbc61bef4c76adeb603c4",
+    "strong-weak-riesz-cutoff-transfer.pdf": "c4f45c77519c645d7d2f1b8dac2299cca181118c8c1cf93aaee180d52892a4f7"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}
