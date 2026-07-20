@@ -1,0 +1,274 @@
+{
+  "evidence_level": "binary64 sparse Perron/parity factors, exact Haar blocks, and direct rank-one residue actions; not interval validated",
+  "fine_resolution_target": 20.48,
+  "fits": {
+    "fine_parity_residue": {
+      "growth_exponent": 0.0,
+      "levels": 2,
+      "log_intercept": -0.21010640431119534,
+      "maximum_log_residual": 8.881784197001252e-16,
+      "sigma_power": 0.5749838667602537,
+      "vanishing_exponent": 0.5749838667602537
+    },
+    "fine_perron_residue": {
+      "growth_exponent": 0.0,
+      "levels": 2,
+      "log_intercept": -0.5822625451925463,
+      "maximum_log_residual": 4.440892098500626e-16,
+      "sigma_power": 0.5412091209295217,
+      "vanishing_exponent": 0.5412091209295217
+    },
+    "parity_projector": {
+      "growth_exponent": 0.028482948456212184,
+      "levels": 2,
+      "log_intercept": -0.019153677824663533,
+      "maximum_log_residual": 0.0,
+      "sigma_power": -0.028482948456212184,
+      "vanishing_exponent": 0.0
+    },
+    "parity_sharp_detail_ratio": {
+      "growth_exponent": 0.0,
+      "levels": 2,
+      "log_intercept": -2.4922093656260826,
+      "maximum_log_residual": 4.440892098500626e-16,
+      "sigma_power": 0.08734168363241689,
+      "vanishing_exponent": 0.08734168363241689
+    },
+    "perron_sharp_detail_ratio": {
+      "growth_exponent": 0.0,
+      "levels": 2,
+      "log_intercept": -2.8970628732035544,
+      "maximum_log_residual": 0.0,
+      "sigma_power": 0.048554228888737824,
+      "vanishing_exponent": 0.048554228888737824
+    },
+    "right_parity_residue": {
+      "growth_exponent": 0.0,
+      "levels": 2,
+      "log_intercept": 0.9924596396840007,
+      "maximum_log_residual": 8.881784197001252e-16,
+      "sigma_power": 0.9661585364121976,
+      "vanishing_exponent": 0.9661585364121976
+    }
+  },
+  "limitations": [
+    "The sparse matrices use an eight-sigma hard cutoff followed by exact row renormalization.",
+    "All eigenfactors and singular quantities are binary64 and are not interval enclosures.",
+    "The fixed N*sigma resolution tests a production discretization, not the asymptotic n*sigma^2 to infinity schedule.",
+    "Adjacent weak factor differences compare two finite levels, not either factor with a validated continuum eigenfactor.",
+    "Observed sharp h*sigma^(-1) detail transfer is not promoted to an analytic theorem."
+  ],
+  "rows": [
+    {
+      "B_hilbert_schmidt_norm": 0.09325837467633892,
+      "B_hilbert_schmidt_over_h_sigma_minus_three_halves": 0.09549657566857106,
+      "C_hilbert_schmidt_norm": 0.16323135327634497,
+      "C_hilbert_schmidt_over_h_sigma_minus_three_halves": 0.16714890575497726,
+      "adjacent_factor_transfer": [
+        {
+          "eigenvalue_adjacent_error": 0.0,
+          "left_l1_normalized_adjacent_error": 3.194698382785993e-05,
+          "mode": "perron",
+          "projector_frobenius_adjacent_defect": 5.669194902691914e-05,
+          "projector_relative_adjacent_defect": 5.126248540966648e-05,
+          "right_linf_normalized_adjacent_error": 0.0
+        },
+        {
+          "eigenvalue_adjacent_error": 1.3270372042684109e-05,
+          "left_l1_normalized_adjacent_error": 8.20823652071956e-05,
+          "mode": "parity",
+          "projector_frobenius_adjacent_defect": 0.00016235671897761537,
+          "projector_relative_adjacent_defect": 0.00014515137118549615,
+          "right_linf_normalized_adjacent_error": 0.0002837457205208116
+        }
+      ],
+      "coarse_biorthogonality_defect": 7.072071162830875e-16,
+      "coarse_cell_width_over_sigma": 0.09765625,
+      "coarse_dimension": 1024,
+      "coarse_right_image_scales": [
+        {
+          "C_right_image_over_h_sigma_inverse_linf": 3.881736000611776e-15,
+          "C_right_image_physical_l2": 3.790757813097437e-16,
+          "mode": "perron"
+        },
+        {
+          "C_right_image_over_h_sigma_inverse_linf": 0.04313909720610257,
+          "C_right_image_physical_l2": 0.004619477476715506,
+          "mode": "parity"
+        }
+      ],
+      "coarse_right_residue_actions": [
+        {
+          "mode": "perron",
+          "right_residue_action_over_C_hilbert_schmidt": 2.5682907456278497e-15
+        },
+        {
+          "mode": "parity",
+          "right_residue_action_over_C_hilbert_schmidt": 0.031528453752667766
+        }
+      ],
+      "elapsed_seconds": 0.1848181929672137,
+      "fine_biorthogonality_defect": 1.1102230246251565e-15,
+      "fine_dimension": 2048,
+      "fine_dimension_times_sigma": 20.48,
+      "fine_factor_branches": [
+        {
+          "eigenvalue_imag": 0.0,
+          "eigenvalue_real": 1.0,
+          "left_detail_l2": 0.004309363868405908,
+          "left_detail_over_sharp_h_sigma_inverse": 0.0441278860124765,
+          "left_detail_over_weak_h_sigma_minus_three_halves": 0.00441278860124765,
+          "left_l1": 0.9999999999999989,
+          "left_l2": 1.105926439240446,
+          "left_l2_over_weak_smoothing_scale": 0.11059264392404472,
+          "mode": "perron",
+          "projector_frobenius": 1.105926439240446,
+          "projector_square_over_log": 0.26558699019038046,
+          "right_l2": 1.0,
+          "right_linf": 1.0,
+          "weak_condition_product": 0.9999999999999989
+        },
+        {
+          "eigenvalue_imag": 0.0,
+          "eigenvalue_real": -0.9865534036028739,
+          "left_detail_l2": 0.005403359967548588,
+          "left_detail_over_sharp_h_sigma_inverse": 0.05533040606769754,
+          "left_detail_over_weak_h_sigma_minus_three_halves": 0.005533040606769755,
+          "left_l1": 1.0002910727402228,
+          "left_l2": 1.114076444620904,
+          "left_l2_over_weak_smoothing_scale": 0.10987760845487206,
+          "mode": "parity",
+          "projector_frobenius": 1.118529803128052,
+          "projector_square_over_log": 0.27167485021343224,
+          "right_l2": 1.0039973545160659,
+          "right_linf": 1.096463769960986,
+          "weak_condition_product": 1.0967829206750637
+        }
+      ],
+      "fine_left_residue_actions": [
+        {
+          "left_residue_action_over_B_hilbert_schmidt": 0.046207061175252334,
+          "mode": "perron"
+        },
+        {
+          "left_residue_action_over_B_hilbert_schmidt": 0.05738312749544228,
+          "mode": "parity"
+        }
+      ],
+      "sigma": 0.01
+    },
+    {
+      "B_hilbert_schmidt_norm": 0.146465485081589,
+      "B_hilbert_schmidt_over_h_sigma_minus_three_halves": 0.0948560960428511,
+      "C_hilbert_schmidt_norm": 0.2580844880837139,
+      "C_hilbert_schmidt_over_h_sigma_minus_three_halves": 0.16714440931391913,
+      "adjacent_factor_transfer": [
+        {
+          "eigenvalue_adjacent_error": 0.0,
+          "left_l1_normalized_adjacent_error": 2.3387370740218783e-05,
+          "mode": "perron",
+          "projector_frobenius_adjacent_defect": 5.7185679038219746e-05,
+          "projector_relative_adjacent_defect": 4.950877190747163e-05,
+          "right_linf_normalized_adjacent_error": 0.0
+        },
+        {
+          "eigenvalue_adjacent_error": 7.373908633701021e-06,
+          "left_l1_normalized_adjacent_error": 6.402940595779503e-05,
+          "mode": "parity",
+          "projector_frobenius_adjacent_defect": 0.00015381500736829748,
+          "projector_relative_adjacent_defect": 0.00013397428303814997,
+          "right_linf_normalized_adjacent_error": 0.0002889055951423858
+        }
+      ],
+      "coarse_biorthogonality_defect": 1.3322676295501878e-15,
+      "coarse_cell_width_over_sigma": 0.09765625,
+      "coarse_dimension": 2560,
+      "coarse_right_image_scales": [
+        {
+          "C_right_image_over_h_sigma_inverse_linf": 4.055730383350702e-15,
+          "C_right_image_physical_l2": 3.9606742024909197e-16,
+          "mode": "perron"
+        },
+        {
+          "C_right_image_over_h_sigma_inverse_linf": 0.02791184128659179,
+          "C_right_image_physical_l2": 0.0029326655605985,
+          "mode": "parity"
+        }
+      ],
+      "coarse_right_residue_actions": [
+        {
+          "mode": "perron",
+          "right_residue_action_over_C_hilbert_schmidt": 1.7726065347656468e-15
+        },
+        {
+          "mode": "parity",
+          "right_residue_action_over_C_hilbert_schmidt": 0.01300856932841423
+        }
+      ],
+      "elapsed_seconds": 0.4451250350102782,
+      "fine_biorthogonality_defect": 1.5543122344752192e-15,
+      "fine_dimension": 5120,
+      "fine_dimension_times_sigma": 20.48,
+      "fine_factor_branches": [
+        {
+          "eigenvalue_imag": 0.0,
+          "eigenvalue_real": 1.0,
+          "left_detail_l2": 0.004121843476175425,
+          "left_detail_over_sharp_h_sigma_inverse": 0.042207677196036346,
+          "left_detail_over_weak_h_sigma_minus_three_halves": 0.0026694478936924817,
+          "left_l1": 0.9999999999999993,
+          "left_l2": 1.1550776845373902,
+          "left_l2_over_weak_smoothing_scale": 0.07305352715143221,
+          "mode": "perron",
+          "projector_frobenius": 1.1550776845373902,
+          "projector_square_over_log": 0.24163975389195097,
+          "right_l2": 1.0,
+          "right_linf": 1.0,
+          "weak_condition_product": 0.9999999999999993
+        },
+        {
+          "eigenvalue_imag": 0.0,
+          "eigenvalue_real": -0.9922077933553424,
+          "left_detail_l2": 0.004987778404294543,
+          "left_detail_over_sharp_h_sigma_inverse": 0.05107485085997612,
+          "left_detail_over_weak_h_sigma_minus_three_halves": 0.0032302571974186845,
+          "left_l1": 1.0005921805699112,
+          "left_l2": 1.144827250478274,
+          "left_l2_over_weak_smoothing_scale": 0.07179851855518506,
+          "mode": "parity",
+          "projector_frobenius": 1.1481062075456843,
+          "projector_square_over_log": 0.2387317203569528,
+          "right_l2": 1.0028641500855613,
+          "right_linf": 1.0758506053031678,
+          "weak_condition_product": 1.0764877031277555
+        }
+      ],
+      "fine_left_residue_actions": [
+        {
+          "left_residue_action_over_B_hilbert_schmidt": 0.028141003842066276,
+          "mode": "perron"
+        },
+        {
+          "left_residue_action_over_B_hilbert_schmidt": 0.0338824752334213,
+          "mode": "parity"
+        }
+      ],
+      "sigma": 0.004
+    }
+  ],
+  "sources": {
+    "folded_gaussian": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh50_manuscript": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/main.tex",
+      "sha256": "106c3a96f2b38f07543c70e0859665ae9ba427386d79f57168e85c49558b9f74"
+    },
+    "stable_coupling_audit": {
+      "path": "papers/RH-49-directional-reduced-resolvent/results/coupling_stable_rank_pilot.json",
+      "sha256": "2fd8dc48f7f235010b28b2b652a4a634d78540be35d8261e4f2afb07be97909c"
+    }
+  },
+  "status": "floating_intrinsic_finite_factor_detail_and_direct_residue_transfer_audit"
+}

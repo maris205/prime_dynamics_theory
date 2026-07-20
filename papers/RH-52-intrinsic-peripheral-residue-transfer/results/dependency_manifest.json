@@ -1,0 +1,56 @@
+{
+  "external_inputs": {
+    "rh14_boundary_layer_manuscript": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/main.tex",
+      "sha256": "199d5abee0aaf7d16090cdedbb50688f177739a2d142b8e927d45e0fd5f5bb34"
+    },
+    "rh14_folded_gaussian_source": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh47_log_conditioning_manuscript": {
+      "path": "papers/RH-47-logarithmic-peripheral-conditioning/main.tex",
+      "sha256": "6f5beb2001b1a6860651c05a791c733c3d7e4a1634dad3b6259799066bae0976"
+    },
+    "rh49_directional_manuscript": {
+      "path": "papers/RH-49-directional-reduced-resolvent/main.tex",
+      "sha256": "7e5e8e8952136b6971a77ca2e99421cc7ad5e71f0e8cadc11925032e8eebaed8"
+    },
+    "rh49_stable_coupling_audit": {
+      "path": "papers/RH-49-directional-reduced-resolvent/results/coupling_stable_rank_pilot.json",
+      "sha256": "2fd8dc48f7f235010b28b2b652a4a634d78540be35d8261e4f2afb07be97909c"
+    },
+    "rh50_hardy_manuscript": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/main.tex",
+      "sha256": "106c3a96f2b38f07543c70e0859665ae9ba427386d79f57168e85c49558b9f74"
+    },
+    "rh51_structured_stein_manuscript": {
+      "path": "papers/RH-51-cyclic-rank-growing-horizon-stein/main.tex",
+      "sha256": "baa3c8168c7481e83762cdc4b102272f1abc45eb9cee9316c5a3d1b95adee31f"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "73fe10ea5655561f04b246b26927c8ab988937984c83b8691e08643e11f2d3eb",
+    "experiments/build_factor_transfer_certificate.py": "40386f1498b7865586c067d2b6eea7eb55402a7d2063f43e0204860a0dd23fbb",
+    "experiments/make_figures.py": "30eec291341fa455450af99e68f71bc75e031c1f3482486e7ffeeea71a30b7e7",
+    "experiments/run_factor_transfer_pilot.py": "97149eaf2ceb3bc3ad5160723c24a4246205e8d8ff6582b284e499842856881a",
+    "experiments/verify_archive.py": "e884e23e0a64d241a8d7d87e186a4173064d2ccf1529aace8afd93c6adeab90b",
+    "src/factor_transfer/__init__.py": "73944b147a0afe8463a6665b1a83108a1ca24eb7bf3872878942f03fc2fc86a8",
+    "src/factor_transfer/algebra.py": "80d99ef68505397b31b695815b770d60f3bce06c4a63027033a58e9bdc8d7e9a",
+    "tests/test_archived_results.py": "7b636a55746a46527e3aa01db7fbe9bcc24e01f7522849adb85e6dfa78ce0b42",
+    "tests/test_theory.py": "1c99760fd3a1ed7591852eca4b5a834dda2b1920710182fa24562f8663b9e079"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "8bdac1ff9e3a336bb6c579f2dce5f594c32d46fe40be2704408d9bb57b3bd499",
+    "figures/factor_residue_transfer.pdf": "f501770d2e90c496599ce143cd9572fa3f3cfcd993f5641bd056c3822ece30cf",
+    "figures/factor_residue_transfer.png": "ba45d0dd2c375a092d2b84e01dbad82ade58b55c9f5008dfecdf1d6abc634462",
+    "intrinsic-peripheral-residue-transfer.pdf": "f7f5336639c680c5e23b90b77a53afe596ed3be8b9356bb61d4b5a6349e557a2",
+    "main.pdf": "f7f5336639c680c5e23b90b77a53afe596ed3be8b9356bb61d4b5a6349e557a2",
+    "main.tex": "4e218afbe13241db1f90afefba3ba75b00c794ec1c876bab18f4ee1504371255",
+    "pyproject.toml": "7b40cd3854a3965dae1be1bee9e1e1eb060179a17e215a535dee5398840fc62b",
+    "references.bib": "b91abfc1750f309eefa0148f911fa0977f6a5fa054a808fbab3a04f10bba23f9",
+    "requirements.txt": "b5d7d32dbb9df1b801abc1070caf6870a54af542248e03991107040e13a81dd6"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}

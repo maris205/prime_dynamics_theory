@@ -1,0 +1,598 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,graphicx,float}
+\usepackage[section]{placeins}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor,xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.12em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Id}{\mathrm I}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\HS}{\mathfrak S_2}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+
+\title{Intrinsic Peripheral Residue Transfer from Weak Finite Factors\\
+\large Direct Haar-Range Bounds and a Sharp Half-Power Barrier}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The two-pole Hardy reduction for the noisy quadratic transfer operator
+left a finite-factor premise: the intrinsic Perron and parity residues must
+not regain a power-law loss on the adjacent Haar coupling ranges.  The
+previous proposed route asked the finite left eigenfactors to inherit the
+sharp rounded-spike detail estimate
+\(\norm{\ell_d}_2=O(h\sigma^{-1})\), which would make the fine residues
+\(O(\sqrt{\sigma})\).  We prove that this sharp transfer is unnecessary.
+
+The strong/weak Ulam stability inherited from the postcritical tower/spike
+space gives finite peripheral normalizations satisfying
+\[
+ |\lambda_{n,-}|\ge\frac12,\qquad
+ \norm{r_{n,\pm}}_\infty+\norm{\ell_{n,\pm}}_1\le C
+\]
+on every \(h=o(\sigma^2)\) schedule.  Direct Gaussian smoothing gives
+\[
+ \norm{(E_{2n}-E_n)\cP_\sigma}_{L^1\to L^2}
+ \le Ch\sigma^{-3/2},
+\]
+\[
+ \norm{(E_{2n}-E_n)\cK_\sigma}_{L^\infty\to L^2}
+ \le Ch\sigma^{-1},\qquad
+ \norm{\cP_\sigma}_{L^1\to L^2}\le C\sigma^{-1/2}.
+\]
+We also prove
+\(\norm B_{\HS},\norm C_{\HS}=\Theta(h\sigma^{-3/2})\).
+The exact block eigenvector identities then yield
+\[
+ \frac{\norm{U^*P_{f,\pm}UB}_{\HS}}{\norm B_{\HS}}=O(1),
+ \qquad
+ \frac{\norm{CP_{c,-}}_{\HS}}{\norm C_{\HS}}=O(1),
+\]
+while \(CP_{c,+}=0\) exactly.  Hence the sufficient residue premise in
+RH-50 closes without a sharp finite-detail theorem and without a
+polylogarithmic bound for the complete finite parity projector.
+
+There is a precise reason not to demand more from weak factor information:
+when \(h/\sigma\) is small,
+\[
+ \norm{(E_{2n}-E_n)\cP_\sigma}_{L^1\to L^2}
+ =\Theta(h\sigma^{-3/2}).
+\]
+Thus uniform left \(L^1\) control alone cannot produce
+\(O(h\sigma^{-1})\); the missing half power requires the actual
+postcritical spike geometry.
+
+A five-scale binary64 audit with \(N\sigma=20.48\) reaches \(N=40960\).
+The parity weak condition product decreases from \(1.0968\) to \(1.0385\),
+and the observed parity detail divided by \(h\sigma^{-1}\) stays between
+\(0.0465\) and \(0.0553\).  Fine Perron, fine parity, and right parity
+residues have fitted vanishing powers \(0.5275\), \(0.5500\), and
+\(0.9362\).  These stronger laws are floating evidence, not analytic
+claims.  The remaining Stage A gates are the growing-horizon Hardy-energy
+budget and infinite-tail/cutoff validation.  No arithmetic trace formula,
+zeta-zero identity, self-adjoint realization, or Riemann-hypothesis
+conclusion is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Ulam approximation; peripheral eigenfactor;
+Riesz residue; Haar detail; Gaussian smoothing; strong--weak stability;
+small-noise transfer operator.
+
+\medskip
+\noindent\textbf{MSC 2020:} 37M25; 47A55; 47B65; 65R20; 37A30.
+
+\section{Introduction}
+
+RH-49 and RH-50 reduced the remaining intrinsic-identification problem to
+two-pole Hilbert--Schmidt Hardy energies and explicit peripheral residues
+\citep{WangDirectional2026,WangHardy2026}.  Once the Perron and
+negative-parity poles are removed, the bulk range actions can be studied by
+Stein/Gramian certificates.  RH-51 then showed that exact fixed-rank Stein
+factors are obstructed, but growing-horizon block certificates remain
+viable \citep{WangStructuredStein2026}.
+
+The present paper addresses the other premise in RH-50.  Let
+\(V_{2n}=V_n\oplus W_n\) be the adjacent Haar split and
+\[
+ T=\begin{pmatrix}A&B\\C&D\end{pmatrix}
+\]
+the fine finite Markov matrix.  If
+\(P_{f,s}=r_{f,s}\otimes\ell_{f,s}\), the normalized fine residue is
+\[
+ \frac{\norm{U^*P_{f,s}UB}_{\HS}}{\norm B_{\HS}}.
+\]
+The original route sought
+\(\norm{\ell_{f,s,d}}_2=O(h\sigma^{-1})\), because
+\(\norm B_{\HS}=\Theta(h\sigma^{-3/2})\) then gives
+\(O(\sqrt{\sigma})\).
+
+That target is true in the stored data, but it is stronger than the
+program needs.  We instead use the weak norms naturally controlled by
+Keller--Liverani stability: right \(L^\infty\) and left \(L^1\).
+The resulting factor-detail bound is only \(O(h\sigma^{-3/2})\), yet its
+power exactly cancels the Hilbert--Schmidt coupling denominator.  The
+coarse right parity residue has a symmetric direct estimate.  Both are
+uniform \(O(1)\), already better than the polylogarithmic RH-50 premise.
+
+The distinction is structural.  We prove that the \(L^1\to L^2\)
+target-detail norm really has scale \(h\sigma^{-3/2}\).  No proof based
+only on a uniform \(L^1\) bound can recover the rounded-spike half power.
+The stronger result must use where the physical eigenfactor places its
+mass, not merely its total variation.
+
+\section{Finite factors and adjacent Haar channels}
+
+Let \(I=[0,1]\), \(f(x)=1-u_{\rm c}x^2\), and
+\[
+ k_\sigma(x,y)=
+ \frac{\phi_\sigma(y-f(x))+\phi_\sigma(-y-f(x))}
+ {Z_\sigma(x)}.
+\]
+The observable and density operators are
+\[
+ (\cK_\sigma v)(x)=\int_I k_\sigma(x,y)v(y)\,dy,\qquad
+ (\cP_\sigma q)(y)=\int_I k_\sigma(x,y)q(x)\,dx.
+\]
+For equal-cell averaging \(E_n\), let
+\[
+ G_{n,\sigma}=E_n\cK_\sigma E_n\big|_{V_n}.
+\]
+Its density matrix adjoint is the restriction to \(V_n\) of
+\begin{equation}
+ \cP_{n,\sigma}=E_n\cP_\sigma.
+ \label{eq:density-extension}
+\end{equation}
+The source projection is unnecessary because each finite eigendensity
+already belongs to \(V_n\).
+
+For \(V_{2n}=V_n\oplus W_n\), write
+\[
+ G_{2n,\sigma}=\begin{pmatrix}A&B\\C&D\end{pmatrix}.
+\]
+The coarse cell width is \(h=1/n\).  For \(s\in\{+,-\}\),
+\[
+ G_{m,\sigma}r_{m,s}=\lambda_{m,s}r_{m,s},\qquad
+ G_{m,\sigma}^*\ell_{m,s}
+ =\overline{\lambda_{m,s}}\ell_{m,s},\qquad
+ \langle\ell_{m,s},r_{m,s}\rangle=1.
+\]
+Right vectors are cell values and left vectors are cell masses.  Thus
+\[
+ \norm{\ell}_1=\sum_j|\ell_j|,\quad
+ \norm{\ell}_2=\sqrt m\,\norm{\ell}_{\ell^2},\quad
+ \norm r_\infty=\max_j|r_j|,\quad
+ \norm r_2=m^{-1/2}\norm r_{\ell^2}.
+\]
+
+\section{Uniform weak finite factors}
+
+The continuum spectral stability was established on the postcritical
+tower/spike space \(\cB\), with \(L^1\) as weak norm
+\citep{WangBoundaryLayer2026,WangLogConditioning2026}.  The deterministic
+peripheral eigenvalues \(1\) and \(-1\) are simple and uniformly isolated
+from the remaining strong-space spectrum.
+
+\begin{lemma}[Equal-cell approximation on the spike space]
+\label{lem:cell-spike}
+There is \(C<\infty\) such that
+\begin{equation}
+ \norm{E_nq-q}_{L^1}\le C\sqrt h\,\norm q_{\cB}.
+ \label{eq:spike-cell-error}
+\end{equation}
+On the regular bounded-variation component this improves to
+\(Ch\norm q_{\rm BV}\).  Conditional expectation is \(L^1\)-contractive
+and variation diminishing after a density transfer step.
+\end{lemma}
+
+\begin{proof}
+The regular estimate is the standard cellwise bounded-variation bound
+\citep{Li1976,BoyarskyGora1997}.  For a normalized one-sided
+square-root atom \(a(t-s)_+^{-1/2}\chi(t-s)\), the cell containing \(s\)
+has \(L^1\) mass \(O(\sqrt h)\).  Away from it, summing the derivative
+bound gives
+\[
+ h\int_h^\delta t^{-3/2}\,dt=O(\sqrt h).
+\]
+There are finitely many postcritical atoms, with coefficients controlled
+by the \(\cB\)-norm.  Conditional expectation is an \(L^1\) contraction
+and does not increase variation of the regular representative.
+\end{proof}
+
+\begin{theorem}[Uniform weak Ulam peripheral factors]
+\label{thm:weak-factors}
+Let \(\sigma\downarrow0\) and \(h=h(\sigma)\) satisfy
+\begin{equation}
+ h=o(\sigma^2).
+ \label{eq:proof-schedule}
+\end{equation}
+For sufficiently small \(\sigma\), the finite operators have exactly two
+simple peripheral branches near \(1\) and \(-1\).  They can be normalized
+so that
+\begin{align}
+ r_{n,+}&=\mathbf1,&\norm{\ell_{n,+}}_1&=1,\\
+ |\lambda_{n,-}|&\ge\frac12,&
+ \norm{r_{n,-}}_\infty+\norm{\ell_{n,-}}_1&\le C.
+ \label{eq:weak-factors}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+RH-14 gives uniform Lasota--Yorke estimates on \(\cB\), compact
+strong-to-weak embedding, and
+\[
+ \norm{\cP_\sigma-\cP_0}_{\cB\to L^1}=o(1).
+\]
+By \cref{lem:cell-spike} and \eqref{eq:density-extension},
+\[
+ \norm{\cP_{n,\sigma}-\cP_\sigma}_{\cB\to L^1}
+ \le C\sqrt h.
+\]
+The variation-diminishing property preserves the same Lasota--Yorke ledger
+for \(E_n\cP_\sigma\).  Therefore
+\(\cP_{n,\sigma}\to\cP_0\) strongly-to-weakly along
+\eqref{eq:proof-schedule}.  Keller--Liverani stability preserves the ranks
+of the two isolated projectors and gives weak convergence of their ranges
+\citep{KellerLiverani1999}.  The dual statement applied to the bounded
+component-sign observable controls the right eigenfunctional.  The
+deterministic left component densities have finite \(L^1\) norm and pair
+nontrivially with that sign.  Biorthogonal normalization gives
+\eqref{eq:weak-factors}.  Perron normalization follows exactly from
+stochasticity and positivity.
+\end{proof}
+
+\begin{remark}
+The schedule is precisely \(n\sigma^2\to\infty\), already adopted for the
+intrinsic small-noise limit.  No \(L^2\) contour-resolvent upper enters the
+proof.  Weak factors stay bounded while their \(L^2\) projector norms may
+grow logarithmically.
+\end{remark}
+
+\section{Direct smoothing and coupling scales}
+
+Put \(Q_n=E_{2n}-E_n\).
+
+\begin{lemma}[Three direct smoothing bounds]
+\label{lem:smoothing}
+For \(h/\sigma\) sufficiently small,
+\begin{align}
+ \norm{Q_n\cP_\sigma}_{L^1\to L^2}
+ &\le C h\sigma^{-3/2},\label{eq:target-detail}\\
+ \norm{Q_n\cK_\sigma}_{L^\infty\to L^2}
+ &\le C h\sigma^{-1},\label{eq:source-detail}\\
+ \norm{\cP_\sigma}_{L^1\to L^2}
+ &\le C\sigma^{-1/2}.\label{eq:l1-l2}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+For each \(x\), target-cell Poincar\'e gives
+\[
+ \norm{Q_n k_\sigma(x,\cdot)}_2
+ \le\frac h\pi\norm{\partial_yk_\sigma(x,\cdot)}_2
+ \le Ch\sigma^{-3/2}.
+\]
+Minkowski proves \eqref{eq:target-detail}.  For
+\(\norm v_\infty\le1\),
+\[
+ |\partial_x\cK_\sigma v(x)|
+ \le\int_I|\partial_xk_\sigma(x,y)|\,dy
+ \le C\sigma^{-1}.
+\]
+Source-cell Poincar\'e proves \eqref{eq:source-detail}.  Finally,
+\[
+ \norm{\cP_\sigma q}_2
+ \le\int_I|q(x)|\norm{k_\sigma(x,\cdot)}_2\,dx
+ \le C\sigma^{-1/2}\norm q_1.
+\]
+\end{proof}
+
+\begin{proposition}[Two-sided adjacent coupling scales]
+\label{prop:couplings}
+There are \(c,C,a_0,\sigma_0>0\) such that
+\begin{equation}
+ c h\sigma^{-3/2}
+ \le\norm B_{\HS},\norm C_{\HS}
+ \le C h\sigma^{-3/2}
+ \label{eq:coupling-scales}
+\end{equation}
+when \(0<\sigma<\sigma_0\) and \(h/\sigma<a_0\).
+\end{proposition}
+
+\begin{proof}
+The upper bounds are the target/source Poincar\'e estimates.  RH-50 proved
+the \(B\) lower bound.  For \(C\), choose an interior source rectangle on
+which \(|f'|\) is bounded below and the row normalizer is exponentially
+close to one.  There
+\[
+ \iint|\partial_xk_\sigma(x,y)|^2\,dx\,dy\ge c\sigma^{-3}.
+\]
+The leading source-Haar coefficient is a fixed nonzero first moment times
+\(h\partial_xk_\sigma\).  Summing its square gives
+\(c h^2\sigma^{-3}\); the remainder is relative \(O(h/\sigma)\).
+\end{proof}
+
+\section{Direct closure of the peripheral residues}
+
+For a fine branch write
+\[
+ r_f=\begin{pmatrix}r_c\\r_d\end{pmatrix},\qquad
+ \ell_f=\begin{pmatrix}\ell_c\\\ell_d\end{pmatrix}.
+\]
+The left block eigenvector equation gives
+\begin{equation}
+ B^*\ell_c=(\overline\lambda-D^*)\ell_d,
+ \qquad
+ U^*P_fUB
+ =r_c\otimes((\overline\lambda-D^*)\ell_d).
+ \label{eq:fine-residue}
+\end{equation}
+
+\begin{theorem}[Uniform direct residue closure]
+\label{thm:residue-closure}
+Along every schedule \eqref{eq:proof-schedule},
+\begin{equation}
+ \boxed{
+ \frac{\norm{U^*P_{f,s}UB}_{\HS}}{\norm B_{\HS}}
+ =O(1),\qquad s\in\{+,-\}.}
+ \label{eq:fine-O1}
+\end{equation}
+On the coarse right,
+\begin{equation}
+ \boxed{
+ CP_{c,+}=0,\qquad
+ \frac{\norm{CP_{c,-}}_{\HS}}{\norm C_{\HS}}=O(1).}
+ \label{eq:right-O1}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The finite density eigenrelation and \cref{lem:smoothing} give
+\[
+ \norm{\ell_d}_2
+ =
+ |\lambda|^{-1}\norm{Q_n\cP_\sigma\ell_f}_2
+ \le C h\sigma^{-3/2}\norm{\ell_f}_1.
+\]
+The last factor, \(\norm{r_c}_2\), \(|\lambda|\), and \(\norm D\) are
+uniformly bounded by \cref{thm:weak-factors}.  Insert this estimate into
+\eqref{eq:fine-residue} and divide by the \(B\) lower bound.
+
+The Perron right vector is constant and \(C\mathbf1=0\).  For parity,
+\[
+ \norm{Cr_{c,-}}_2
+ \le C h\sigma^{-1}\norm{r_{c,-}}_\infty
+\]
+by \eqref{eq:source-detail}, while
+\[
+ \norm{\ell_{c,-}}_2
+ \le C\sigma^{-1/2}\norm{\ell_{c,-}}_1
+\]
+by the finite eigenrelation and \eqref{eq:l1-l2}.  Hence
+\[
+ \norm{CP_{c,-}}_{\HS}
+ =\norm{Cr_{c,-}}_2\norm{\ell_{c,-}}_2
+ \le C h\sigma^{-3/2}.
+\]
+Divide by the \(C\) lower bound.
+\end{proof}
+
+\begin{corollary}[RH-50 residue premise]
+The explicit Perron/parity residue part of the RH-50 dyadic Hardy-control
+condition is uniformly bounded.  Neither
+\(\norm{\ell_d}=O(h\sigma^{-1})\) nor a polylogarithmic upper for the
+complete finite projector is required for this range-restricted result.
+\end{corollary}
+
+\begin{remark}
+Multiplying the separate weak-factor smoothing bounds gives only
+\(\norm{P_{n,-}}_{L^2\to L^2}=O(\sigma^{-1/2})\).  The theorem avoids this
+coarse global estimate: each range action gains a complementary power
+before the factors are multiplied.
+\end{remark}
+
+\section{A sharp half-power barrier}
+
+\begin{theorem}[Sharp weak-information detail scale]
+\label{thm:barrier}
+There are \(c,C,a_0,\sigma_0>0\) such that
+\begin{equation}
+ c h\sigma^{-3/2}
+ \le\norm{Q_n\cP_\sigma}_{L^1\to L^2}
+ \le C h\sigma^{-3/2}
+ \label{eq:barrier}
+\end{equation}
+when \(0<\sigma<\sigma_0\) and \(h/\sigma<a_0\).  Therefore uniform left
+\(L^1\) information alone cannot yield
+\(\norm{\ell_d}=O(h\sigma^{-1})\).
+\end{theorem}
+
+\begin{proof}
+The upper bound is \eqref{eq:target-detail}.  Choose an interior source
+point \(x_0\) and approximate a unit point mass there by \(L^1\) densities.
+Their images converge in \(L^2\) to the Gaussian row
+\(k_\sigma(x_0,\cdot)\).  On an interior target window,
+\[
+ \norm{\partial_yk_\sigma(x_0,\cdot)}_2\ge c\sigma^{-3/2}.
+\]
+The adjacent Haar Taylor expansion, summed over cells in that window,
+gives
+\[
+ \norm{Q_nk_\sigma(x_0,\cdot)}_2
+ \ge c h\sigma^{-3/2}
+\]
+when \(h/\sigma\) is small.  Taking the operator supremum proves the lower
+bound.
+\end{proof}
+
+The physical factors are not arbitrary \(L^1\) inputs.  Their
+postcritical weights produce structure that this operator norm cannot see.
+RH-50 proved the continuum rounded-spike derivative scale
+\(\Theta(\sigma^{-1})\).  Transferring it to intrinsic finite factors may
+recover the optional \(O(\sqrt\sigma)\) residue law, but
+\cref{thm:barrier} identifies the extra information required.
+
+\section{Five-scale intrinsic-factor audit}
+
+The experiment uses the sparse eight-sigma-cutoff family and exact Haar
+nesting of RH-49 and RH-50.  The fine resolution is
+\[
+ N\sigma=20.48,
+\]
+and the largest dimension is \(40960\).  This fixed resolution is a
+production diagnostic, not a realization of \(n\sigma^2\to\infty\).
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{@{}rrrrrrrr@{}}
+\toprule
+\(\sigma\)&\(N\)&weak cond.&Perron detail&parity detail&fine \(+\)&fine \(-\)&right \(-\)\\
+\midrule
+0.0100&2048 &1.0968&0.0441&0.0553&0.0462&0.0574&0.0315\\
+0.0040&5120 &1.0765&0.0422&0.0511&0.0281&0.0339&0.0130\\
+0.0020&10240&1.0604&0.0411&0.0489&0.0195&0.0230&0.00675\\
+0.0010&20480&1.0485&0.0405&0.0475&0.0136&0.0159&0.00356\\
+0.0005&40960&1.0385&0.0401&0.0465&0.00951&0.0110&0.00191\\
+\bottomrule
+\end{tabular}
+\caption{Five-scale audit.  The weak condition is
+\(\norm r_\infty\norm\ell_1\) for parity.  Detail columns are normalized
+by \(h\sigma^{-1}\); the final columns are residue actions.}
+\label{tab:audit}
+\end{table}
+
+The parity weak products are
+\[
+ 1.0968,\ 1.0765,\ 1.0604,\ 1.0485,\ 1.0385,
+\]
+while the Perron products equal one to rounding.  The parity values of
+\(\norm P_-^2/\log(1/\sigma)\) decrease from \(0.272\) to \(0.208\).
+
+The finite detail is much sharper than the weak theorem:
+\[
+ 0.0401\le
+ \frac{\norm{\ell_{f,+,d}}_2}{h\sigma^{-1}}\le0.0441,
+\qquad
+ 0.0465\le
+ \frac{\norm{\ell_{f,-,d}}_2}{h\sigma^{-1}}\le0.0553.
+\]
+The fitted powers of these ratios are slightly positive, so no growth is
+observed.
+
+The direct residue fits are
+\begin{align}
+ \text{fine Perron}&:\ \sigma^{0.52752},&
+ \text{fine parity}&:\ \sigma^{0.55003},\\
+ \text{right parity}&:\ \sigma^{0.93624}.
+\end{align}
+The right Perron action is below \(2.6\times10^{-15}\) at every scale.
+The normalized coupling constants are nearly fixed:
+\[
+ 0.0941\le\frac{\norm B_{\HS}}{h\sigma^{-3/2}}\le0.0955,
+\qquad
+ 0.16714\le\frac{\norm C_{\HS}}{h\sigma^{-3/2}}\le0.16715.
+\]
+One-level parity comparisons have maximum left \(L^1\) error
+\(8.21\times10^{-5}\), right \(L^\infty\) error
+\(2.90\times10^{-4}\), and relative projector defect
+\(1.46\times10^{-4}\).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/factor_residue_transfer.pdf}
+\caption{Intrinsic peripheral transfer audit.  (a) Weak factors remain
+conditioned.  (b) Actual details follow \(h\sigma^{-1}\), while both
+couplings follow \(h\sigma^{-3/2}\).  (c) All residues vanish, stronger
+than the analytic \(O(1)\) theorem.  (d) Adjacent intrinsic factors remain
+stable across one Haar level.}
+\label{fig:audit}
+\end{figure}
+
+\section{Roadmap consequence}
+
+The original A2 milestone requested sharp finite-detail transfer and a
+polylogarithmic coarse parity projector.  \Cref{thm:residue-closure}
+replaces both with weaker factor information and a stronger targeted
+conclusion: every residue action entering RH-50 is \(O(1)\).
+
+\begin{description}[leftmargin=4.8cm,style=nextline]
+ \item[Sufficient A2 residue gate]
+ Closed analytically on the adopted \(n\sigma^2\to\infty\) schedule.
+
+ \item[Original \(O(\sqrt\sigma)\) target]
+ Not closed analytically.  It is supported by the audit but blocked from
+ weak-norm-only proofs by \cref{thm:barrier}.
+
+ \item[Complete finite projector]
+ No longer required for the range-restricted RH-50 residue ledger.
+
+ \item[Remaining Stage A work]
+ A1 still needs a growing-horizon Hardy/Stein trace budget.  A3 still needs
+ deterministic or interval infinite-tail and sparse-cutoff validation.
+\end{description}
+
+The next scheduled paper is RH-53, focused on the infinite Hardy tail and
+the sparse/full Gaussian cutoff bridge.
+
+\subsection{No arithmetic or Hilbert--P\'olya conclusion}
+
+The TPC series remains an independent twin-prime and prime-correlation
+program and is not an assumption here.  Nothing in this paper constructs a
+prime-power trace formula, identifies a zeta zero, builds a self-adjoint
+Hilbert--P\'olya operator, derives a \(T\log T\) law, proves the Riemann
+hypothesis, or proves a twin-prime statement.
+
+\section{Reproducibility and theorem boundary}
+
+The archive contains the algebra in \path{src/factor_transfer}, the pilot
+and certificate builders in \path{experiments}, the figure, tests, result
+ledgers, dependency hashes, and archive verification.  Principal commands:
+\begin{verbatim}
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/pytest -q
+OPENBLAS_NUM_THREADS=16 OMP_NUM_THREADS=16 \
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/run_factor_transfer_pilot.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_factor_transfer_certificate.py
+MPLBACKEND=Agg PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/make_figures.py
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_archive.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/verify_archive.py
+\end{verbatim}
+
+The weak-factor theorem, direct kernel bounds, two-sided coupling scales,
+uniform residue closure, and half-power barrier are analytic.  The sharper
+intrinsic \(h\sigma^{-1}\) detail law, vanishing residue powers, and
+adjacent defects are floating binary64 evidence.  No interval constant is
+claimed for the stored matrices.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

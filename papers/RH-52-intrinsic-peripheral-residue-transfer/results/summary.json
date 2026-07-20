@@ -1,0 +1,157 @@
+{
+  "direct_kernel_bounds": {
+    "coupling_scales": "c h sigma^(-3/2) <= ||B||_S2,||C||_S2 <= C h sigma^(-3/2)",
+    "density_smoothing": "||P_sigma||_(L1->L2) <= C sigma^(-1/2)",
+    "source_detail": "||(E_2n-E_n) K_sigma||_(Linfinity->L2) <= C h sigma^(-1)",
+    "target_detail": "||(E_2n-E_n) P_sigma||_(L1->L2) <= C h sigma^(-3/2)"
+  },
+  "direct_residue_closure": {
+    "coarse_parity": "||C P_(c,-)||_S2/||C||_S2=O(1)",
+    "coarse_perron": "C P_(c,+)=0 exactly",
+    "fine_perron_and_parity": "||U^* P_(f,s) U B||_S2/||B||_S2=O(1), s=+,-",
+    "finite_projector_polylog_upper_required": false,
+    "sharp_finite_detail_transfer_required": false
+  },
+  "evidence_level": {
+    "analytic": "uniform weak Ulam peripheral factors under the established strong-weak stability framework, direct L1-to-L2 and Linfinity-to-L2 kernel-detail bounds, two-sided B/C Hilbert-Schmidt coupling scales, O(1) normalized residue actions, and a sharp weak-information half-power barrier",
+    "numerical": "binary64 five-scale sparse intrinsic factor, Haar-detail, adjacent-transfer, and direct residue audit through dimension 40960; not interval validated"
+  },
+  "floating_five_scale_audit": {
+    "fine_resolution_target": 20.48,
+    "finest_row": {
+      "B_scale_constant": 0.09413848132506804,
+      "C_scale_constant": 0.16714294833457682,
+      "coarse_cell_width_over_sigma": 0.09765625,
+      "coarse_dimension": 20480,
+      "fine_dimension": 40960,
+      "fine_parity_residue": 0.011039278901194473,
+      "fine_perron_residue": 0.009514431334467012,
+      "parity_adjacent_eigenvalue_error": 2.2710649051349563e-06,
+      "parity_adjacent_left_l1_error": 3.094341536103762e-05,
+      "parity_adjacent_projector_relative_defect": 0.00011552435452526029,
+      "parity_adjacent_right_linf_error": 0.00028993370413155084,
+      "parity_projector": 1.2559241813958248,
+      "parity_projector_square_over_log": 0.20752082503500516,
+      "parity_sharp_detail_ratio": 0.04650121735761341,
+      "parity_weak_condition_product": 1.0385211176236215,
+      "parity_weak_detail_ratio": 0.0010397988304811673,
+      "perron_projector": 1.2902487305244794,
+      "perron_projector_square_over_log": 0.21901896458757128,
+      "perron_sharp_detail_ratio": 0.04005727744392898,
+      "perron_weak_condition_product": 1.000000000000004,
+      "perron_weak_detail_ratio": 0.0008957079535819421,
+      "right_parity_image_scale_ratio": 0.010966178831176706,
+      "right_parity_residue": 0.0019103167324655017,
+      "right_perron_residue": 7.127379590473031e-16,
+      "sigma": 0.0005
+    },
+    "fits": {
+      "fine_parity_residue": {
+        "growth_exponent": 0.0,
+        "levels": 5,
+        "log_intercept": -0.3385973185985444,
+        "maximum_log_residual": 0.013580274647175816,
+        "sigma_power": 0.5500313384064037,
+        "vanishing_exponent": 0.5500313384064037
+      },
+      "fine_perron_residue": {
+        "growth_exponent": 0.0,
+        "levels": 5,
+        "log_intercept": -0.6530652316942163,
+        "maximum_log_residual": 0.00842148809219223,
+        "sigma_power": 0.5275171773492795,
+        "vanishing_exponent": 0.5275171773492795
+      },
+      "parity_projector": {
+        "growth_exponent": 0.038881277012173164,
+        "levels": 5,
+        "log_intercept": -0.07246853763914561,
+        "maximum_log_residual": 0.005428787164461976,
+        "sigma_power": -0.038881277012173164,
+        "vanishing_exponent": 0.0
+      },
+      "parity_sharp_detail_ratio": {
+        "growth_exponent": 0.0,
+        "levels": 5,
+        "log_intercept": -2.644311547919426,
+        "maximum_log_residual": 0.01589520471611383,
+        "sigma_power": 0.057764714253161424,
+        "vanishing_exponent": 0.057764714253161424
+      },
+      "perron_sharp_detail_ratio": {
+        "growth_exponent": 0.0,
+        "levels": 5,
+        "log_intercept": -2.981225626569824,
+        "maximum_log_residual": 0.009605780252578633,
+        "sigma_power": 0.03225408836455187,
+        "vanishing_exponent": 0.03225408836455187
+      },
+      "right_parity_residue": {
+        "growth_exponent": 0.0,
+        "levels": 5,
+        "log_intercept": 0.8377558945240018,
+        "maximum_log_residual": 0.01803595076136766,
+        "sigma_power": 0.9362412036359362,
+        "vanishing_exponent": 0.9362412036359362
+      }
+    },
+    "interval_validated": false,
+    "largest_dimension": 40960,
+    "maximum_parity_adjacent_left_l1_error": 8.20823652071956e-05,
+    "maximum_parity_adjacent_projector_relative_defect": 0.00014515137118549615,
+    "maximum_parity_adjacent_right_linf_error": 0.00028993370413155084,
+    "maximum_parity_sharp_detail_ratio": 0.05533040606769754,
+    "maximum_parity_weak_condition_product": 1.0967829206750637,
+    "noise_levels": 5
+  },
+  "limitations": [
+    "The sharper O(h sigma^(-1)) intrinsic finite left-detail theorem and O(sqrt(sigma)) fine residue law are not proved; only the sufficient direct O(1) residue bound is analytic.",
+    "The uniform weak finite-factor theorem uses the tower/spike strong-weak Ulam stability framework and does not provide an explicit interval constant at the stored matrices.",
+    "The five-scale audit uses fixed N sigma=20.48 and therefore is not a numerical realization of the stronger n sigma^2 to infinity proof schedule.",
+    "All finite eigendata, detail norms, and adjacent defects are binary64 and are not interval enclosures.",
+    "Stage A1 Hardy-energy control and Stage A3 infinite-tail/cutoff validation remain open.",
+    "No arithmetic trace formula, prime-power identity, zeta-zero identification, self-adjoint Hilbert-Polya operator, T log T counting law, Riemann-hypothesis proof, or twin-prime conclusion is claimed.",
+    "The independent TPC twin-prime/correlation program is not an assumption in this RH result."
+  ],
+  "program_conclusion": {
+    "next_scheduled_paper": "RH-53 infinite Hardy-tail and sparse-cutoff validation",
+    "remaining_small_noise_gates": [
+      "A1: analytic growing-horizon Hardy/Stein trace budget",
+      "A3: deterministic or interval infinite Hardy tail and sparse-cutoff transfer"
+    ],
+    "stage_A2_original_sharp_sqrt_sigma_target_closed": false,
+    "stage_A2_sufficient_residue_gate_closed": true
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "8bdac1ff9e3a336bb6c579f2dce5f594c32d46fe40be2704408d9bb57b3bd499",
+    "figures/factor_residue_transfer.pdf": "f501770d2e90c496599ce143cd9572fa3f3cfcd993f5641bd056c3822ece30cf",
+    "figures/factor_residue_transfer.png": "ba45d0dd2c375a092d2b84e01dbad82ade58b55c9f5008dfecdf1d6abc634462",
+    "intrinsic-peripheral-residue-transfer.pdf": "f7f5336639c680c5e23b90b77a53afe596ed3be8b9356bb61d4b5a6349e557a2",
+    "main.pdf": "f7f5336639c680c5e23b90b77a53afe596ed3be8b9356bb61d4b5a6349e557a2",
+    "main.tex": "4e218afbe13241db1f90afefba3ba75b00c794ec1c876bab18f4ee1504371255",
+    "pyproject.toml": "7b40cd3854a3965dae1be1bee9e1e1eb060179a17e215a535dee5398840fc62b",
+    "references.bib": "b91abfc1750f309eefa0148f911fa0977f6a5fa054a808fbab3a04f10bba23f9",
+    "requirements.txt": "b5d7d32dbb9df1b801abc1070caf6870a54af542248e03991107040e13a81dd6"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "bccfd55830785ae5eb186f2180a105c993b208886650d69f825e572324c557d4",
+    "results/factor_transfer_certificate.json": "b038362d3b72b4f123a211dbc147082c7a55d68b3bb0a8c6749db0b354d03be1",
+    "results/factor_transfer_pilot.json": "f438c215cab171e515733834e664ebd4d832dbb41e2ffc45d67e331c043de0bf",
+    "results/factor_transfer_pilot_smoke.json": "47c77529b7317d1b8e38c0da04410a0a17275888c6941228decb9b2756396517"
+  },
+  "scope": "finite Perron/parity residue actions on the adjacent Haar coupling ranges of the small-noise folded-Gaussian operator",
+  "sharp_detail_barrier": {
+    "consequence": "uniform left L1 information alone cannot prove the sharper O(h sigma^(-1)) intrinsic detail estimate",
+    "operator_law": "||(E_2n-E_n) P_sigma||_(L1->L2)=Theta(h sigma^(-3/2)) when h/sigma is small",
+    "physical_sharp_transfer_proved_here": false,
+    "program_impact": "the sharp O(sqrt(sigma)) fine residue law remains optional because the weaker direct O(1) range-action theorem already closes the RH-50 residue premise"
+  },
+  "status": "rigorous_weak_factor_direct_residue_closure_with_sharp_detail_barrier",
+  "weak_finite_factor_theorem": {
+    "conclusion": "the two finite peripheral branches are simple and can be normalized with |lambda_-|>=1/2 and uniformly bounded right Linfinity and left L1 factors",
+    "density_extension": "the finite density matrix is the restriction of E_n P_sigma to Ran(E_n)",
+    "mechanism": "uniform tower/spike Lasota-Yorke estimates, variation-diminishing cell averaging, weak Ulam convergence, and Keller-Liverani stability",
+    "schedule": "h=o(sigma^2), equivalently n sigma^2 -> infinity"
+  }
+}
