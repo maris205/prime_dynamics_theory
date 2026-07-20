@@ -1,0 +1,238 @@
+{
+  "arb_audit": {
+    "actual_normalized_defect_ball": "[5.725064939613485526929892e-9 +/- 2.72e-34]",
+    "arithmetic_scope": "abstract interval coupling and semigroup ledger; this validates the outward arithmetic of the RH-54 formulas but is not a production-scale folded-Gaussian Riesz enclosure",
+    "coupling_defect_ball": "[4.472135954999579392818347337463e-9 +/- 6.72e-40]",
+    "coupling_shape": [
+      3,
+      2
+    ],
+    "evidence_level": "256-bit Arb interval execution on an abstract factor ledger",
+    "factor_aware_operator_defect_ball": "[1.2352941176470588235294e-7 +/- 3.53e-30]",
+    "factor_aware_source_defect_ball": "[6.628081589791276511108e-8 +/- 1.85e-30]",
+    "horizon": 6,
+    "normalization_bound_certified": true,
+    "normalization_premise_certified": true,
+    "normalized_defect_upper_ball": "[1.2514674237101316719562306226502e-8 +/- 6.44e-40]",
+    "precision_bits": 256,
+    "production_intrinsic_riesz_interval_executed": false,
+    "reference_norm_ball": "[0.7147027354082255084929484243653228 +/- 2.64e-35]",
+    "semigroup_power_defect_ball": "[4.449776470588235294118e-7 +/- 4.38e-29]",
+    "status": "arb_outward_rounded_factor_composition_audit",
+    "transferred_block_contraction_certified": true,
+    "transferred_block_norm_ball": "[0.0250004449776470588235294118 +/- 4.48e-29]"
+  },
+  "conditional_identification_composition": {
+    "all_strict_mesh_schedules_condition": "delta<=1/4",
+    "beyond_threshold_case": {
+      "left_exponent": 0.1,
+      "preserves_all_strict_schedules": false,
+      "right_exponent": 0.151
+    },
+    "hardy_product": "E_B=O(sigma^(-alpha_B)), E_C=O(sigma^(-alpha_C)) implies F=O(sigma^(-delta)), delta=alpha_B+alpha_C, provided range-restricted residues are O(1)",
+    "identification": "||I_(n,sigma)||_S2=O(n^(-2) sigma^(-13/4-delta))",
+    "polylogarithmic_case": {
+      "hardy_product_exponent": 0.0,
+      "identification_sigma_exponent": 3.25,
+      "mixed_gain_exponent": 0.25,
+      "preserves_all_strict_schedules": true
+    },
+    "threshold_case": {
+      "left_exponent": 0.1,
+      "preserves_all_strict_schedules": true,
+      "right_exponent": 0.15
+    }
+  },
+  "evidence_levels": {
+    "analytic": [
+      "normalized Hilbert--Schmidt coupling stability",
+      "contour-conditioned projector and weighted-Riesz perturbation ledgers",
+      "factor-aware left and right triple transfer",
+      "finite-time semigroup and growing-block contraction transfer",
+      "Hardy-exponent composition into the RH-49 quarter-power and RH-48 dyadic bounds",
+      "two-by-two nonnormal no-free-lunch family"
+    ],
+    "binary64": "dense binary64 recomputation of full and sparse intrinsic Riesz factors, deterministic all-column Hardy sums, and exact finite-time ledgers; diagnostic rather than interval validated",
+    "interval": "256-bit Arb interval execution on an abstract factor ledger"
+  },
+  "factor_aware_triple_transfer": {
+    "left": {
+      "observation": "delta_Y=0",
+      "operator": "delta_A <= (delta_T+epsilon_W,f)/r",
+      "source": "delta_X <= epsilon_P,f+||Qtilde_f|| 2 delta_B/||B||_S2"
+    },
+    "right": {
+      "observation": "delta_Y <= epsilon_P,c",
+      "operator": "delta_A <= (delta_T,c+epsilon_W,c)/r",
+      "source": "delta_X <= 2 delta_C/||C||_S2"
+    }
+  },
+  "floating_five_scale_audit": {
+    "cutoff_multiples": [
+      5.0,
+      6.0,
+      8.0
+    ],
+    "dimensions": [
+      32,
+      64,
+      128,
+      256,
+      512
+    ],
+    "extrema": {
+      "all_factor_bounds_dominate_actual": true,
+      "all_transferred_blocks_contract": true,
+      "maximum_stress_block_margin_ratio": 3.330819278459871e-07,
+      "maximum_stress_fine_weighted_riesz_defect": 3.7163216309743103e-08,
+      "maximum_stress_full_energy_squared_transfer_upper": 0.003378335574556887,
+      "maximum_stress_markov_spectral_defect": 6.607308962170845e-08,
+      "maximum_stress_normalized_b_defect": 4.1158872750783197e-07
+    },
+    "horizons": [
+      4,
+      8,
+      16,
+      24,
+      32
+    ],
+    "interval_validated": false,
+    "noise_levels": 5,
+    "stress_rows": [
+      {
+        "dimension": 32,
+        "fine_weighted_riesz_defect": 2.365845930612067e-08,
+        "horizon": 4,
+        "left_actual_energy_squared_difference": 4.472527237453505e-09,
+        "left_block_margin_ratio": 4.106703997649957e-08,
+        "left_finite_perturbation_upper": 1.2822452035636525e-06,
+        "left_transferred_full_energy_upper": 0.9042192707004868,
+        "markov_spectral_defect": 2.9290019355680168e-08,
+        "normalized_b_defect": 1.8709148173365342e-07,
+        "right_actual_energy_squared_difference": 2.1092017021828724e-12,
+        "right_block_margin_ratio": 3.519722458321633e-08,
+        "right_finite_perturbation_upper": 1.0047107703887993e-06,
+        "right_transferred_full_energy_upper": 1.0029916167822661,
+        "sigma": 0.16
+      },
+      {
+        "dimension": 64,
+        "fine_weighted_riesz_defect": 3.7163216309743103e-08,
+        "horizon": 8,
+        "left_actual_energy_squared_difference": 9.64542290482484e-09,
+        "left_block_margin_ratio": 1.1302098622966231e-07,
+        "left_finite_perturbation_upper": 7.472843953889181e-06,
+        "left_transferred_full_energy_upper": 1.1638711847887402,
+        "markov_spectral_defect": 4.991311739060873e-08,
+        "normalized_b_defect": 3.4759089006530264e-07,
+        "right_actual_energy_squared_difference": 3.5019075639297625e-08,
+        "right_block_margin_ratio": 9.865799304361628e-08,
+        "right_finite_perturbation_upper": 7.877583059875152e-06,
+        "right_transferred_full_energy_upper": 1.2667440371130736,
+        "sigma": 0.08
+      },
+      {
+        "dimension": 128,
+        "fine_weighted_riesz_defect": 2.302029956625209e-08,
+        "horizon": 16,
+        "left_actual_energy_squared_difference": 1.358994969891114e-07,
+        "left_block_margin_ratio": 1.669307968114456e-07,
+        "left_finite_perturbation_upper": 3.359861842805397e-05,
+        "left_transferred_full_energy_upper": 1.3349077908106843,
+        "markov_spectral_defect": 4.887560898295969e-08,
+        "normalized_b_defect": 3.6352945438168544e-07,
+        "right_actual_energy_squared_difference": 1.8649081301447268e-07,
+        "right_block_margin_ratio": 1.5328437186810573e-07,
+        "right_finite_perturbation_upper": 3.336780145967081e-05,
+        "right_transferred_full_energy_upper": 1.485833658624203,
+        "sigma": 0.04
+      },
+      {
+        "dimension": 256,
+        "fine_weighted_riesz_defect": 2.9979180215331714e-08,
+        "horizon": 24,
+        "left_actual_energy_squared_difference": 1.477416251560726e-07,
+        "left_block_margin_ratio": 2.721913614657442e-07,
+        "left_finite_perturbation_upper": 0.00013548518715995444,
+        "left_transferred_full_energy_upper": 1.4115581455849986,
+        "markov_spectral_defect": 5.5816625521676845e-08,
+        "normalized_b_defect": 3.693514461776789e-07,
+        "right_actual_energy_squared_difference": 3.4163570905576535e-07,
+        "right_block_margin_ratio": 2.401714596060317e-07,
+        "right_finite_perturbation_upper": 0.00014630523698520897,
+        "right_transferred_full_energy_upper": 1.6358985643020223,
+        "sigma": 0.02
+      },
+      {
+        "dimension": 512,
+        "fine_weighted_riesz_defect": 2.625080976755221e-08,
+        "horizon": 32,
+        "left_actual_energy_squared_difference": 1.7042326083682724e-07,
+        "left_block_margin_ratio": 3.330819278459871e-07,
+        "left_finite_perturbation_upper": 0.0005143984558126263,
+        "left_transferred_full_energy_upper": 1.469316969534342,
+        "markov_spectral_defect": 6.607308962170845e-08,
+        "normalized_b_defect": 4.1158872750783197e-07,
+        "right_actual_energy_squared_difference": 4.92973048604739e-07,
+        "right_block_margin_ratio": 2.9933151789980825e-07,
+        "right_finite_perturbation_upper": 0.0005806467997005613,
+        "right_transferred_full_energy_upper": 1.7615935974045058,
+        "sigma": 0.01
+      }
+    ]
+  },
+  "growing_horizon_transfer": {
+    "contraction_condition": "q_M+d_M<1",
+    "ledger_requirement": "actual finite-time semigroup norm uppers are used; no substitution by ||A||^j is made",
+    "power_defect": "d_M=delta_A sum_(j=0)^(M-1) ||A^(M-1-j)|| ||Atilde^j||"
+  },
+  "limitations": [
+    "The factor-aware algebra is rigorous, but the five-scale folded-Gaussian audit is binary64 and not an interval enclosure.",
+    "The Arb execution validates a small abstract factor ledger; it is not the N=40960 production matrix or its intrinsic Riesz factors.",
+    "Five noise levels cannot prove a dyadically uniform Riesz-conditioning modulus or a uniform/polylogarithmic Stage A1 Hardy budget.",
+    "Therefore Stage A3 and unconditional Stage A4 remain open; the result is a complete closure criterion rather than an unconditional small-noise identification theorem.",
+    "No arithmetic trace formula, prime-power identity, zeta-zero spectral identity, self-adjoint Hilbert--Polya operator, T log T counting law, or Riemann-hypothesis conclusion is claimed.",
+    "The TPC twin-prime branch is independent and is not a premise of this theorem."
+  ],
+  "nonnormal_no_go": {
+    "K": 1000000.0,
+    "conclusion": "the input defect tends to zero while the Riesz projector defect stays bounded below; contour conditioning cannot be omitted",
+    "defect_ratio": 1171572875254.103,
+    "family": "T_K=[[0,K],[0,1]], E_K=[[0,0],[c/K,0]], c=1/4",
+    "operator_defect": 2.5e-07,
+    "perturbed_eigenvalues": [
+      -0.20710678118654757,
+      1.2071067811865475
+    ],
+    "projector_defect": 292893.21881352575
+  },
+  "normalized_coupling_theorem": {
+    "adaptive_asymptotic_consequence": "using ||B||_S2,||C||_S2 asymp h sigma^(-3/2) and epsilon_h=O(h^2/log(1/h)^(1/4)), the normalized coupling defect is O(h sigma^(3/2)/log(1/h)^(1/4))",
+    "conclusion": "||B/||B||_S2-Btilde/||Btilde||_S2||_S2 <= 2 epsilon_B/||B||_S2",
+    "premise": "epsilon_B < ||B||_S2"
+  },
+  "program_conclusion": {
+    "conditional_RH48_to_RH53_composition_closed": true,
+    "dyadically_uniform_riesz_conditioning_modulus_proved": false,
+    "factor_aware_finite_matrix_transfer_theorem_closed": true,
+    "growing_horizon_block_robustness_closed": true,
+    "next_gate": "prove a dyadically uniform analytic Hardy/Stein trace budget and a strong/weak or contour-conditioned Riesz modulus, or validate both with production-scale outward arithmetic",
+    "normalized_coupling_gate_closed": true,
+    "production_intrinsic_riesz_interval_enclosure_executed": false,
+    "stage_A1_uniform_hardy_budget_closed": false,
+    "stage_A3_fully_closed": false,
+    "stage_A4_unconditional_identification_closed": false
+  },
+  "riesz_conditioning_ledger": {
+    "necessity": "operator cutoff convergence alone cannot supply a dimension-free Riesz or semigroup-transient modulus for nonnormal families",
+    "projector": "epsilon_P <= sum_Gamma length(Gamma) M_Gamma Mtilde_Gamma epsilon_T/(2 pi)",
+    "weighted": "epsilon_W <= sum_Gamma length(Gamma) max_Gamma|z| M_Gamma Mtilde_Gamma epsilon_T/(2 pi)"
+  },
+  "scope": "finite-dimensional sparse-to-full transfer for intrinsic two-pole Hardy triples and conditional composition into the RH-48/49 dyadic identification theorem",
+  "smoke_audit": {
+    "all_factor_bounds_dominate_actual": true,
+    "all_transferred_blocks_contract": true,
+    "noise_levels": 2
+  },
+  "status": "rigorous_factor_aware_closure_criterion_with_nonnormal_conditioning_gate_and_five_scale_transfer_audit"
+}

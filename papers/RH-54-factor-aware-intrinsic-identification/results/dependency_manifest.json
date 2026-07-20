@@ -1,0 +1,70 @@
+{
+  "external_inputs": {
+    "rh39_cutoff_manuscript": {
+      "path": "papers/RH-39-uniform-gaussian-cutoff-bridge/main.tex",
+      "sha256": "6f36c4ddd2201ca538e82da1ea394211d67358712d2f9d88d5170f7e2207df7d"
+    },
+    "rh47_conditioning_manuscript": {
+      "path": "papers/RH-47-logarithmic-peripheral-conditioning/main.tex",
+      "sha256": "6f5beb2001b1a6860651c05a791c733c3d7e4a1634dad3b6259799066bae0976"
+    },
+    "rh48_identification_manuscript": {
+      "path": "papers/RH-48-intrinsic-riesz-identification/main.tex",
+      "sha256": "f13ee582bdcb509a6e98e82b5d6c74bfffabaa160f693cac6c2ce92831449ab0"
+    },
+    "rh49_directional_manuscript": {
+      "path": "papers/RH-49-directional-reduced-resolvent/main.tex",
+      "sha256": "7e5e8e8952136b6971a77ca2e99421cc7ad5e71f0e8cadc11925032e8eebaed8"
+    },
+    "rh50_hardy_manuscript": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/main.tex",
+      "sha256": "106c3a96f2b38f07543c70e0859665ae9ba427386d79f57168e85c49558b9f74"
+    },
+    "rh51_stein_manuscript": {
+      "path": "papers/RH-51-cyclic-rank-growing-horizon-stein/main.tex",
+      "sha256": "baa3c8168c7481e83762cdc4b102272f1abc45eb9cee9316c5a3d1b95adee31f"
+    },
+    "rh52_factor_manuscript": {
+      "path": "papers/RH-52-intrinsic-peripheral-residue-transfer/main.tex",
+      "sha256": "4e218afbe13241db1f90afefba3ba75b00c794ec1c876bab18f4ee1504371255"
+    },
+    "rh53_tail_algebra": {
+      "path": "papers/RH-53-deterministic-hardy-tail-cutoff/src/hardy_tail/algebra.py",
+      "sha256": "7a8bb98308de245ab4c75a0fe2403da7c6946a5b26418734c2b53d0de6ac1249"
+    },
+    "rh53_tail_manuscript": {
+      "path": "papers/RH-53-deterministic-hardy-tail-cutoff/main.tex",
+      "sha256": "0e1d8969e97c3c03b0d3bfd8b2bb22582e636e1b70918aa153366ce5c42f1aba"
+    },
+    "roadmap": {
+      "path": "papers/RH-ROADMAP-after-RH50.md",
+      "sha256": "4def72e8da1310ec01126aba3d7d3adfdc430c9019340fc8225747b547a0a874"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "dbb02ac1e0901770695777eca0b9b64879505fe5cd7f82b83a034328105b0b1f",
+    "experiments/build_closure_certificate.py": "d2f31a32da81af18bc4ce8eab7037afb83bd7eaaf35bb04a7e9916605a11a577",
+    "experiments/make_figures.py": "bf03204d3c7c9f956d67931463dd50085a977d42ea004f9d58072100d07f4403",
+    "experiments/run_arb_transfer_audit.py": "279ed0e6b0af706be6dae5e4b31acb10a7c77f53b5a0d41f06ac730772893300",
+    "experiments/run_factor_aware_pilot.py": "a3fc65881abbd531e4dc1dea3e207614a56e252f159d97312b873e9e5c4390c0",
+    "experiments/verify_archive.py": "dcfba784ca0477480148567c88b01cb5c9f4005d5abf2a2406b172f75d7bfaed",
+    "src/intrinsic_transfer/__init__.py": "43c441ad9b99ab4965ff69178ba6074492f167573dd2b4f7e67eb9e0f1764e4c",
+    "src/intrinsic_transfer/algebra.py": "66c52b42c33d20e47efdc04ddf075ccad7b5622d3886661619b67fc6880ee806",
+    "tests/test_archived_results.py": "b7aefedd10ee5f6380c81dcc247642dc65785328136a662e48c34de0fc430713",
+    "tests/test_smoke_pilot.py": "e15979584b6ff5a363bd5f27fd34eed4681be40fb086eef950331b2da340f4f7",
+    "tests/test_theory.py": "5cc75a15b4379ac55391f4e8177c1a0db80d2fd3f970a8f6ad33713164c3c9fe"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "321956f2c2f43db4c4f0438eb92acf54dd6c077023d206b0ee238b1beb5ffa12",
+    "factor-aware-intrinsic-riesz-identification.pdf": "e3f17352d2b34033e98cd4186484e46d1ad9d25dde6eeadff5f363554695729f",
+    "figures/factor_aware_intrinsic_identification.pdf": "bd89f1f40ba15035fbc74379afbdebee0d9d718ea9c4a885acf97d9f04f575fa",
+    "figures/factor_aware_intrinsic_identification.png": "f35ab6b7f7150ea838e6afcdeac129ec79a28ec44d70998a9b2fa0b1d63d053f",
+    "main.pdf": "e3f17352d2b34033e98cd4186484e46d1ad9d25dde6eeadff5f363554695729f",
+    "main.tex": "9d87b64a7d257f06f294c8f0372841c43f9b218fcf87a17429ed9b86403ae8df",
+    "pyproject.toml": "38eb0910ce53c84996c1ad5b73fc000a97c59d25cdee303767833ad7f1712e5e",
+    "references.bib": "bb8fa5398f7e3fe6329b72d5f7fa20eb3f0672a4918554b5f6efcc3a25e107bb",
+    "requirements.txt": "ec5853f9fb381ed75d2fcaadc5084ec947ca4b85c4b5d426fc1d327121a26e29"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}

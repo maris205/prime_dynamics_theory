@@ -1,0 +1,170 @@
+{
+  "arb_audit": {
+    "normalization_bound_certified": true,
+    "precision_bits": 256,
+    "production_intrinsic_riesz_interval_executed": false,
+    "status": "arb_outward_rounded_factor_composition_audit",
+    "transferred_block_contraction_certified": true
+  },
+  "conditional_identification_composition": {
+    "all_strict_mesh_schedules_condition": "delta<=1/4",
+    "beyond_threshold_case": {
+      "left_exponent": 0.1,
+      "preserves_all_strict_schedules": false,
+      "right_exponent": 0.151
+    },
+    "hardy_product": "E_B=O(sigma^(-alpha_B)), E_C=O(sigma^(-alpha_C)) implies F=O(sigma^(-delta)), delta=alpha_B+alpha_C, provided range-restricted residues are O(1)",
+    "identification": "||I_(n,sigma)||_S2=O(n^(-2) sigma^(-13/4-delta))",
+    "polylogarithmic_case": {
+      "hardy_product_exponent": 0.0,
+      "identification_sigma_exponent": 3.25,
+      "mixed_gain_exponent": 0.25,
+      "preserves_all_strict_schedules": true
+    },
+    "threshold_case": {
+      "left_exponent": 0.1,
+      "preserves_all_strict_schedules": true,
+      "right_exponent": 0.15
+    }
+  },
+  "evidence_levels": {
+    "analytic": [
+      "normalized Hilbert--Schmidt coupling stability",
+      "contour-conditioned projector and weighted-Riesz perturbation ledgers",
+      "factor-aware left and right triple transfer",
+      "finite-time semigroup and growing-block contraction transfer",
+      "Hardy-exponent composition into the RH-49 quarter-power and RH-48 dyadic bounds",
+      "two-by-two nonnormal no-free-lunch family"
+    ],
+    "binary64": "dense binary64 recomputation of full and sparse intrinsic Riesz factors, deterministic all-column Hardy sums, and exact finite-time ledgers; diagnostic rather than interval validated",
+    "interval": "256-bit Arb interval execution on an abstract factor ledger"
+  },
+  "factor_aware_triple_transfer": {
+    "left": {
+      "observation": "delta_Y=0",
+      "operator": "delta_A <= (delta_T+epsilon_W,f)/r",
+      "source": "delta_X <= epsilon_P,f+||Qtilde_f|| 2 delta_B/||B||_S2"
+    },
+    "right": {
+      "observation": "delta_Y <= epsilon_P,c",
+      "operator": "delta_A <= (delta_T,c+epsilon_W,c)/r",
+      "source": "delta_X <= 2 delta_C/||C||_S2"
+    }
+  },
+  "floating_five_scale_audit": {
+    "cutoff_multiples": [
+      5.0,
+      6.0,
+      8.0
+    ],
+    "dimensions": [
+      32,
+      64,
+      128,
+      256,
+      512
+    ],
+    "extrema": {
+      "all_factor_bounds_dominate_actual": true,
+      "all_transferred_blocks_contract": true,
+      "maximum_stress_block_margin_ratio": 3.330819278459871e-07,
+      "maximum_stress_fine_weighted_riesz_defect": 3.7163216309743103e-08,
+      "maximum_stress_full_energy_squared_transfer_upper": 0.003378335574556887,
+      "maximum_stress_markov_spectral_defect": 6.607308962170845e-08,
+      "maximum_stress_normalized_b_defect": 4.1158872750783197e-07
+    },
+    "finest_stress_row": {
+      "dimension": 512,
+      "fine_weighted_riesz_defect": 2.625080976755221e-08,
+      "horizon": 32,
+      "left_actual_energy_squared_difference": 1.7042326083682724e-07,
+      "left_block_margin_ratio": 3.330819278459871e-07,
+      "left_finite_perturbation_upper": 0.0005143984558126263,
+      "left_transferred_full_energy_upper": 1.469316969534342,
+      "markov_spectral_defect": 6.607308962170845e-08,
+      "normalized_b_defect": 4.1158872750783197e-07,
+      "right_actual_energy_squared_difference": 4.92973048604739e-07,
+      "right_block_margin_ratio": 2.9933151789980825e-07,
+      "right_finite_perturbation_upper": 0.0005806467997005613,
+      "right_transferred_full_energy_upper": 1.7615935974045058,
+      "sigma": 0.01
+    },
+    "horizons": [
+      4,
+      8,
+      16,
+      24,
+      32
+    ],
+    "interval_validated": false,
+    "noise_levels": 5
+  },
+  "growing_horizon_transfer": {
+    "contraction_condition": "q_M+d_M<1",
+    "ledger_requirement": "actual finite-time semigroup norm uppers are used; no substitution by ||A||^j is made",
+    "power_defect": "d_M=delta_A sum_(j=0)^(M-1) ||A^(M-1-j)|| ||Atilde^j||"
+  },
+  "limitations": [
+    "The factor-aware algebra is rigorous, but the five-scale folded-Gaussian audit is binary64 and not an interval enclosure.",
+    "The Arb execution validates a small abstract factor ledger; it is not the N=40960 production matrix or its intrinsic Riesz factors.",
+    "Five noise levels cannot prove a dyadically uniform Riesz-conditioning modulus or a uniform/polylogarithmic Stage A1 Hardy budget.",
+    "Therefore Stage A3 and unconditional Stage A4 remain open; the result is a complete closure criterion rather than an unconditional small-noise identification theorem.",
+    "No arithmetic trace formula, prime-power identity, zeta-zero spectral identity, self-adjoint Hilbert--Polya operator, T log T counting law, or Riemann-hypothesis conclusion is claimed.",
+    "The TPC twin-prime branch is independent and is not a premise of this theorem."
+  ],
+  "nonnormal_no_go": {
+    "K": 1000000.0,
+    "conclusion": "the input defect tends to zero while the Riesz projector defect stays bounded below; contour conditioning cannot be omitted",
+    "defect_ratio": 1171572875254.103,
+    "family": "T_K=[[0,K],[0,1]], E_K=[[0,0],[c/K,0]], c=1/4",
+    "operator_defect": 2.5e-07,
+    "perturbed_eigenvalues": [
+      -0.20710678118654757,
+      1.2071067811865475
+    ],
+    "projector_defect": 292893.21881352575
+  },
+  "normalized_coupling_theorem": {
+    "adaptive_asymptotic_consequence": "using ||B||_S2,||C||_S2 asymp h sigma^(-3/2) and epsilon_h=O(h^2/log(1/h)^(1/4)), the normalized coupling defect is O(h sigma^(3/2)/log(1/h)^(1/4))",
+    "conclusion": "||B/||B||_S2-Btilde/||Btilde||_S2||_S2 <= 2 epsilon_B/||B||_S2",
+    "premise": "epsilon_B < ||B||_S2"
+  },
+  "program_conclusion": {
+    "conditional_RH48_to_RH53_composition_closed": true,
+    "dyadically_uniform_riesz_conditioning_modulus_proved": false,
+    "factor_aware_finite_matrix_transfer_theorem_closed": true,
+    "growing_horizon_block_robustness_closed": true,
+    "next_gate": "prove a dyadically uniform analytic Hardy/Stein trace budget and a strong/weak or contour-conditioned Riesz modulus, or validate both with production-scale outward arithmetic",
+    "normalized_coupling_gate_closed": true,
+    "production_intrinsic_riesz_interval_enclosure_executed": false,
+    "stage_A1_uniform_hardy_budget_closed": false,
+    "stage_A3_fully_closed": false,
+    "stage_A4_unconditional_identification_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "321956f2c2f43db4c4f0438eb92acf54dd6c077023d206b0ee238b1beb5ffa12",
+    "factor-aware-intrinsic-riesz-identification.pdf": "e3f17352d2b34033e98cd4186484e46d1ad9d25dde6eeadff5f363554695729f",
+    "figures/factor_aware_intrinsic_identification.pdf": "bd89f1f40ba15035fbc74379afbdebee0d9d718ea9c4a885acf97d9f04f575fa",
+    "figures/factor_aware_intrinsic_identification.png": "f35ab6b7f7150ea838e6afcdeac129ec79a28ec44d70998a9b2fa0b1d63d053f",
+    "main.pdf": "e3f17352d2b34033e98cd4186484e46d1ad9d25dde6eeadff5f363554695729f",
+    "main.tex": "9d87b64a7d257f06f294c8f0372841c43f9b218fcf87a17429ed9b86403ae8df",
+    "pyproject.toml": "38eb0910ce53c84996c1ad5b73fc000a97c59d25cdee303767833ad7f1712e5e",
+    "references.bib": "bb8fa5398f7e3fe6329b72d5f7fa20eb3f0672a4918554b5f6efcc3a25e107bb",
+    "requirements.txt": "ec5853f9fb381ed75d2fcaadc5084ec947ca4b85c4b5d426fc1d327121a26e29"
+  },
+  "result_hashes": {
+    "results/arb_factor_transfer_audit.json": "7ac9fad55f1bf80410c8bebcd9e49b9fde3bc3a840d1452c531555cce5fecbe4",
+    "results/dependency_manifest.json": "153eaad3b21f5db25d8d496008e7d115ed17e23794f91e9bfb403110eedb995d",
+    "results/factor_aware_transfer_pilot.json": "53e7a632480e2f1c0731f0b2028a5f5b1a64b7e524b11081da78f43e66f77c18",
+    "results/factor_aware_transfer_pilot_smoke.json": "8574fb3275b8e766f557165686e2fc40bf44677216bc1ff3524804a87b72d3d8",
+    "results/intrinsic_identification_closure_certificate.json": "3d356df21f5c15a74269e29822e37f44742718af610570aed800477ab2044c04"
+  },
+  "riesz_conditioning_ledger": {
+    "necessity": "operator cutoff convergence alone cannot supply a dimension-free Riesz or semigroup-transient modulus for nonnormal families",
+    "projector": "epsilon_P <= sum_Gamma length(Gamma) M_Gamma Mtilde_Gamma epsilon_T/(2 pi)",
+    "weighted": "epsilon_W <= sum_Gamma length(Gamma) max_Gamma|z| M_Gamma Mtilde_Gamma epsilon_T/(2 pi)"
+  },
+  "scope": "finite-dimensional sparse-to-full transfer for intrinsic two-pole Hardy triples and conditional composition into the RH-48/49 dyadic identification theorem",
+  "status": "rigorous_factor_aware_closure_criterion_with_nonnormal_conditioning_gate_and_five_scale_transfer_audit"
+}
