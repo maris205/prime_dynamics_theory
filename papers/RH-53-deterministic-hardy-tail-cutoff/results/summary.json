@@ -1,0 +1,154 @@
+{
+  "arb_audit": {
+    "certified_block_contraction": true,
+    "dimension": 4,
+    "production_matrix_interval_executed": false,
+    "status": "arb_outward_rounded_small_matrix_full_hardy_certificate"
+  },
+  "cutoff_result": {
+    "adaptive_schedule": "L(h)=max(5,2 sqrt(log(1/h)))",
+    "adaptive_two_norm_rate": "O(h^2/(log(1/h))^(1/4))",
+    "fixed_eight_crossover_dimension": 8886110.520507872,
+    "fixed_window_no_go": "for fixed L and sigma, rows approaching a zero of the map retain a strictly positive continuum omitted mass; fixed L does not define the canonical full-Gaussian all-grid limit",
+    "hardy_transfer_condition": "combine the adaptive matrix defect with finite-time semigroup ledgers, factor perturbation bounds, and a transferred block contraction",
+    "stored_eight_sigma": "L=8 is smaller than binary64 relevance on the stored scales but this finite-scale fact is not an asymptotic theorem"
+  },
+  "deterministic_main_sum": {
+    "algorithm": "propagate every source column and accumulate Frobenius squares; no Hutchinson probes and no full Gramian storage are required",
+    "identity": "sum_(m=0)^(M-1) ||Y A^m X||_S2^2=tr(Y S_M Y^*)",
+    "rounding_boundary": "the identity is exact algebraically; a validated numerical upper requires outward-rounded matrix actions or certified local error budgets"
+  },
+  "evidence_level": {
+    "analytic": "exact deterministic finite-horizon trace identity, block-contraction infinite-tail theorem, finite-horizon perturbation theorem, fixed-window no-go, and adaptive cutoff route",
+    "numerical": "binary64 five-scale dense all-column audit through dimension 512 and analytic cutoff ledgers on the RH-50 production dimensions through 40960",
+    "validated": "256-bit Arb outward-rounded execution on a small abstract matrix and the inherited RH-39 closed cutoff bounds"
+  },
+  "floating_five_scale_audit": {
+    "all_column_deterministic": true,
+    "finest_row": {
+      "adaptive_cutoff": {
+        "declared_multiple": 5.0,
+        "two_norm_upper": 2.2298530845876702e-05
+      },
+      "cutoff_bounds": [
+        {
+          "declared_multiple": 5.0,
+          "effective_multiple": 5.46875,
+          "omitted_mass_upper": 4.965522022961893e-07,
+          "two_norm_upper": 2.2298530845876702e-05
+        },
+        {
+          "declared_multiple": 6.0,
+          "effective_multiple": 6.4453125,
+          "omitted_mass_upper": 1.3691504484954498e-09,
+          "two_norm_upper": 6.181357407129692e-08
+        },
+        {
+          "declared_multiple": 8.0,
+          "effective_multiple": 8.3984375,
+          "omitted_mass_upper": 6.220113176519656e-16,
+          "two_norm_upper": 2.8326855018709205e-14
+        }
+      ],
+      "dense_full_kernel_comparison": null,
+      "deterministic_main_identity_check": {
+        "left_absolute_difference": 0.0,
+        "right_absolute_difference": 0.0
+      },
+      "elapsed_seconds": 1.539309490006417,
+      "fine_dimension": 512,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "block_power_norm": 0.006913354176523688,
+        "contraction_margin": 0.99995220553403,
+        "deterministic_main_energy_squared": 2.1552395318528093,
+        "exact_dense_energy": 1.468073542104538,
+        "full_energy_upper": 1.4680926702071249,
+        "horizon": 32,
+        "relative_energy_excess": 1.3029389903218558e-05,
+        "selected_infinite_tail_upper": 5.655646307685241e-05,
+        "simple_infinite_tail_upper": 0.00010372792535648738,
+        "stein_infinite_tail_upper": 5.655646307685241e-05
+      },
+      "right": {
+        "block_power_norm": 0.0067310402775189885,
+        "contraction_margin": 0.9999546930967824,
+        "deterministic_main_energy_squared": 3.0986877631161653,
+        "exact_dense_energy": 1.7603096405405383,
+        "full_energy_upper": 1.7603615621744662,
+        "horizon": 32,
+        "relative_energy_excess": 2.949573912003345e-05,
+        "selected_infinite_tail_upper": 0.0001850664651616435,
+        "simple_infinite_tail_upper": 0.0001850664651616435,
+        "stein_infinite_tail_upper": 0.0004135392561569174
+      },
+      "sigma": 0.01
+    },
+    "hutchinson_probes_used": false,
+    "interval_validated": false,
+    "largest_dimension": 512,
+    "maximum_relative_energy_excess": 0.000493399343137968,
+    "maximum_selected_tail_energy_squared_upper": 0.0016852287266069781,
+    "noise_levels": 5
+  },
+  "infinite_tail_theorem": {
+    "condition": "q_M=||A^M||_2<1",
+    "consequence": "the fitted time-64 decay base in RH-50 is unnecessary once one contracting block power is certified",
+    "finite_gramian": "S_M=sum_(j=0)^(M-1) A^j X X^* (A^*)^j",
+    "simple_tail": "tail<=||Y||_2^2 q_M^2 tr(S_M)/(1-q_M^2)",
+    "stein_tail": "tail<=||A^M S_M (A^*)^M||_2 ||Y||_S2^2/(1-q_M^2)"
+  },
+  "limitations": [
+    "The five-scale deterministic trace audit is binary64, not an interval enclosure.",
+    "The 256-bit Arb run validates the algorithm on a small abstract matrix, not the N=40960 folded-Gaussian production matrix.",
+    "RH-39 controls the exact-real Markov matrix cutoff before intrinsic Perron/parity factors and normalized coupling ranges are recomputed; that complete factor-aware transfer is not executed here.",
+    "The theorem gives a certificate architecture for each finite matrix but does not prove a uniform or polylogarithmic small-noise Hardy trace budget; Stage A1 remains open.",
+    "Consequently Stage A3 is analytically routed but not fully closed, and Stage A4 intrinsic Riesz identification is not proved.",
+    "No arithmetic trace formula, prime-power identity, zeta-zero identification, self-adjoint Hilbert-Polya operator, T log T counting law, or Riemann-hypothesis conclusion is claimed.",
+    "The independent TPC twin-prime program is neither assumed nor closed by this result."
+  ],
+  "perturbation_transfer": {
+    "block_contraction": "finite-time semigroup norm ledgers transfer q_M<1 whenever the telescoping defect leaves positive margin",
+    "finite_horizon": "operator, source, and observation defects give an explicit l2-in-time difference upper for the first M directional outputs",
+    "infinite_energy": "add the two available certified tails to the finite-horizon comparison",
+    "power_identity": "A^m-B^m=sum_(j=0)^(m-1) A^(m-1-j)(A-B)B^j"
+  },
+  "production_cutoff_audit": {
+    "all_stored_multiples_above_adaptive_requirement": true,
+    "largest_dimension": 40960,
+    "maximum_fixed_eight_two_norm_upper": 5.594052732053418e-13
+  },
+  "program_conclusion": {
+    "adaptive_exact_real_cutoff_route_closed": true,
+    "deterministic_finite_matrix_tail_mechanism_closed": true,
+    "fixed_eight_is_canonical_joint_limit": false,
+    "intrinsic_factor_cutoff_transfer_executed": false,
+    "production_scale_interval_trace_executed": false,
+    "small_arb_algorithm_executed": true,
+    "stage_A1_uniform_trace_budget_closed": false,
+    "stage_A3_fully_closed": false,
+    "stage_A4_intrinsic_identification_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "94e0d644db53c9d4bb664ee2ae6f9ea318d5887835ee5ec75eda7017acfdd2f7",
+    "deterministic-block-tail-hardy-cutoff.pdf": "2240f07b9496be48973073ec5041aa488dee8c61a3a57b92c37f0c8504253830",
+    "figures/deterministic_hardy_tail_cutoff.pdf": "260cb5b53111cffa7ad90d0cae6876648330a5eabc498e1f87c6434c4430d139",
+    "figures/deterministic_hardy_tail_cutoff.png": "866fe126c0fc584aa1f46189d330453aeb808db30a187782b99156977f20475c",
+    "main.pdf": "2240f07b9496be48973073ec5041aa488dee8c61a3a57b92c37f0c8504253830",
+    "main.tex": "0e1d8969e97c3c03b0d3bfd8b2bb22582e636e1b70918aa153366ce5c42f1aba",
+    "pyproject.toml": "b7cd37c468d115fe16d6913c54d03fe165098b0c910064a77b80f4c6a13ec44c",
+    "references.bib": "f43fe13435ef0c49ff58221c435b16a6d8c3fc09739a0ee6335b7e723edf7fd2",
+    "requirements.txt": "ec5853f9fb381ed75d2fcaadc5084ec947ca4b85c4b5d426fc1d327121a26e29"
+  },
+  "result_hashes": {
+    "results/arb_production_cutoff_ledger.json": "5fd8ae0cef29f67325228b54e6cd5cf9e9b496e8dae23c34d44808bdabcf0fbf",
+    "results/arb_tail_audit.json": "a9c1edf46006fea13d2dca8bda6b75558bc6aacc80d2b84c2dbfec50ef2a7567",
+    "results/dependency_manifest.json": "31cd6e995a1cfe5cbfeb7c52a02190b584dea185361049ce4cc06b89e3b47bd4",
+    "results/deterministic_tail_pilot.json": "3182a1715412a890dd212972e2da4bfe8bd4f45353fb8eef1b54897d6b51438e",
+    "results/deterministic_tail_pilot_smoke.json": "f0e9669756d6bc12ceeb75e89089e03c84ec393310b2bcffae3cc54df070472e",
+    "results/hardy_tail_cutoff_certificate.json": "31c1c4c6d798e026694e3b2af9926d4577ab96e41c68496f485e6f77c1245c8c"
+  },
+  "scope": "finite-dimensional two-pole directional Hardy energies and transfer between exact-real sparse and canonical full folded-Gaussian matrices",
+  "status": "rigorous_deterministic_block_tail_and_adaptive_exact_real_cutoff_route_with_production_interval_gap"
+}

@@ -1,0 +1,617 @@
+{
+  "arb_audit": {
+    "arithmetic_scope": "small abstract real matrix with interval input balls; this demonstrates the outward-rounded algorithm but is not the folded-Gaussian production matrix",
+    "block_power_frobenius_norm_upper_ball": "[0.0520260423997908201809253162 +/- 2.97e-29]",
+    "block_power_square_eigenvalue_balls": [
+      "[0.0021672595239806170408901931 +/- 3.80e-29] + [+/- 1.10e-29]j",
+      "[0.0003954275560867170154136302 +/- 5.74e-29] + [+/- 1.10e-29]j",
+      "[0.0001440220076874400101245631 +/- 2.54e-29] + [+/- 1.10e-29]j",
+      "[3.00580972988497e-14 +/- 1.77e-29] + [+/- 1.10e-29]j"
+    ],
+    "certified_block_contraction": true,
+    "contraction_margin_ball": "[0.99729329091221516783627276390 +/- 3.19e-30]",
+    "dimension": 4,
+    "evidence_level": "256-bit Arb interval execution",
+    "full_energy_squared_upper_ball": "[0.09311449642294048028519126458 +/- 8.26e-30]",
+    "full_energy_upper_ball": "[0.3051466801768298450009721071 +/- 3.23e-29]",
+    "horizon": 6,
+    "input_entry_radius": 1e-30,
+    "main_energy_squared_ball": "[0.09302909106861332014712090445 +/- 6.98e-30]",
+    "norm_note": "Frobenius interval uppers are used in the certificate and therefore also bound the required spectral norms; eigenvalue balls are diagnostic",
+    "production_matrix_interval_executed": false,
+    "source_rank": 2,
+    "status": "arb_outward_rounded_small_matrix_full_hardy_certificate",
+    "tail_energy_squared_upper_ball": "[8.5405354327160138070360129e-5 +/- 3.48e-31]",
+    "tail_residual_square_eigenvalue_balls": [
+      "[1.712876568045086348350804e-8 +/- 6.05e-33] + [+/- 9.11e-34]j",
+      "[9.4419499726457336577616e-10 +/- 1.45e-33] + [+/- 9.11e-34]j",
+      "[3.2240132749356875779482e-10 +/- 4.76e-33] + [+/- 9.11e-34]j",
+      "[4.2e-31 +/- 3.42e-33] + [+/- 9.11e-34]j"
+    ]
+  },
+  "arb_production_cutoff_ledger": {
+    "all_fixed_eight_above_adaptive_requirement": true,
+    "evidence_level": "256-bit Arb interval evaluation of RH-39 formulas",
+    "largest_dimension": 40960,
+    "maximum_fixed_eight_two_norm_upper": 5.594052732053419e-13,
+    "precision_bits": 256,
+    "rows": [
+      {
+        "adaptive": {
+          "arb_two_norm_ball": "[3.15124127124717259413176927412817081956312982260403139476071690955003770759e-6 +/- 6.45e-81]",
+          "declared_multiple": 5.522542525380642,
+          "dimension": 2048,
+          "effective_multiple_upper": 5.664062500000001,
+          "omitted_mass_upper": 8.441148205751948e-08,
+          "sigma": 0.01,
+          "support_half_width": 116,
+          "two_norm_upper": 3.151241271247173e-06
+        },
+        "dimension": 2048,
+        "fixed_eight": {
+          "arb_two_norm_ball": "[1.25086821785898594164319595049086000334863803566828974934755141057905051492e-13 +/- 1.93e-88]",
+          "declared_multiple": 8.0,
+          "dimension": 2048,
+          "effective_multiple_upper": 8.105468750000002,
+          "omitted_mass_upper": 3.2335576266423087e-15,
+          "sigma": 0.01,
+          "support_half_width": 166,
+          "two_norm_upper": 1.250868217858986e-13
+        },
+        "sigma": 0.01
+      },
+      {
+        "adaptive": {
+          "arb_two_norm_ball": "[8.7715068157213019148393441552219180544742083801524966439190473349965606278e-7 +/- 5.41e-81]",
+          "declared_multiple": 5.844966969293686,
+          "dimension": 5120,
+          "effective_multiple_upper": 5.957031250000001,
+          "omitted_mass_upper": 1.4792311375761328e-08,
+          "sigma": 0.004,
+          "support_half_width": 122,
+          "two_norm_upper": 8.771506815721303e-07
+        },
+        "dimension": 5120,
+        "fixed_eight": {
+          "arb_two_norm_ball": "[1.97779631057505231422704236909369970911248300969267831536178894698091279200e-13 +/- 9.17e-88]",
+          "declared_multiple": 8.0,
+          "dimension": 5120,
+          "effective_multiple_upper": 8.105468750000002,
+          "omitted_mass_upper": 3.2335576266423087e-15,
+          "sigma": 0.004,
+          "support_half_width": 166,
+          "two_norm_upper": 1.9777963105750525e-13
+        },
+        "sigma": 0.004
+      },
+      {
+        "adaptive": {
+          "arb_two_norm_ball": "[2.73655653297106828289358244359011769233288541851075584217763743049552412688e-7 +/- 7.13e-82]",
+          "declared_multiple": 6.07751821012278,
+          "dimension": 10240,
+          "effective_multiple_upper": 6.201171875000001,
+          "omitted_mass_upper": 3.251050792301167e-09,
+          "sigma": 0.002,
+          "support_half_width": 127,
+          "two_norm_upper": 2.736556532971069e-07
+        },
+        "dimension": 10240,
+        "fixed_eight": {
+          "arb_two_norm_ball": "[2.7970263660267090126531679172715307151330751868452978967255226819223829657e-13 +/- 5.82e-87]",
+          "declared_multiple": 8.0,
+          "dimension": 10240,
+          "effective_multiple_upper": 8.105468750000002,
+          "omitted_mass_upper": 3.2335576266423087e-15,
+          "sigma": 0.002,
+          "support_half_width": 166,
+          "two_norm_upper": 2.7970263660267097e-13
+        },
+        "sigma": 0.002
+      },
+      {
+        "adaptive": {
+          "arb_two_norm_ball": "[8.0548958456668356112160236887645549722781017980980268677586397788144116047e-8 +/- 4.47e-82]",
+          "declared_multiple": 6.301493181509742,
+          "dimension": 20480,
+          "effective_multiple_upper": 6.445312500000001,
+          "omitted_mass_upper": 6.741597454074019e-10,
+          "sigma": 0.001,
+          "support_half_width": 132,
+          "two_norm_upper": 8.054895845666837e-08
+        },
+        "dimension": 20480,
+        "fixed_eight": {
+          "arb_two_norm_ball": "[3.9555926211501046284540847381873994182249660193853566307235778939618255840e-13 +/- 1.84e-87]",
+          "declared_multiple": 8.0,
+          "dimension": 20480,
+          "effective_multiple_upper": 8.105468750000002,
+          "omitted_mass_upper": 3.2335576266423087e-15,
+          "sigma": 0.001,
+          "support_half_width": 166,
+          "two_norm_upper": 3.955592621150105e-13
+        },
+        "sigma": 0.001
+      },
+      {
+        "adaptive": {
+          "arb_two_norm_ball": "[3.11183402011907813730910920520485298738364856243534722228368822870037245579e-8 +/- 8.72e-83]",
+          "declared_multiple": 6.517776080754352,
+          "dimension": 40960,
+          "effective_multiple_upper": 6.640625000000001,
+          "omitted_mass_upper": 1.836291483985927e-10,
+          "sigma": 0.0005,
+          "support_half_width": 136,
+          "two_norm_upper": 3.111834020119079e-08
+        },
+        "dimension": 40960,
+        "fixed_eight": {
+          "arb_two_norm_ball": "[5.5940527320534180253063358345430614302661503736905957934510453638447659313e-13 +/- 2.79e-87]",
+          "declared_multiple": 8.0,
+          "dimension": 40960,
+          "effective_multiple_upper": 8.105468750000002,
+          "omitted_mass_upper": 3.2335576266423087e-15,
+          "sigma": 0.0005,
+          "support_half_width": 166,
+          "two_norm_upper": 5.594052732053419e-13
+        },
+        "sigma": 0.0005
+      }
+    ],
+    "scope": "exact-real Markov matrix cutoff only; intrinsic factors, normalized sources, and directional Hardy traces are not enclosed by this ledger",
+    "status": "arb_256_production_scale_exact_real_cutoff_uppers"
+  },
+  "cutoff_result": {
+    "adaptive_schedule": "L(h)=max(5,2 sqrt(log(1/h)))",
+    "adaptive_two_norm_rate": "O(h^2/(log(1/h))^(1/4))",
+    "fixed_eight_crossover_dimension": 8886110.520507872,
+    "fixed_window_no_go": "for fixed L and sigma, rows approaching a zero of the map retain a strictly positive continuum omitted mass; fixed L does not define the canonical full-Gaussian all-grid limit",
+    "hardy_transfer_condition": "combine the adaptive matrix defect with finite-time semigroup ledgers, factor perturbation bounds, and a transferred block contraction",
+    "stored_eight_sigma": "L=8 is smaller than binary64 relevance on the stored scales but this finite-scale fact is not an asymptotic theorem"
+  },
+  "dependencies": {
+    "rh39_cutoff_bounds": {
+      "path": "papers/RH-39-uniform-gaussian-cutoff-bridge/src/cutoff_bridge/bounds.py",
+      "sha256": "bd2dfe9f0010fbfc3993af8255f6f49b2f5d2e0afaefbc748ab2abf9bb2f4872"
+    },
+    "rh39_cutoff_manuscript": {
+      "path": "papers/RH-39-uniform-gaussian-cutoff-bridge/main.tex",
+      "sha256": "6f36c4ddd2201ca538e82da1ea394211d67358712d2f9d88d5170f7e2207df7d"
+    },
+    "rh50_hardy_manuscript": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/main.tex",
+      "sha256": "106c3a96f2b38f07543c70e0859665ae9ba427386d79f57168e85c49558b9f74"
+    },
+    "rh50_hardy_pilot": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/results/two_pole_hardy_pilot.json",
+      "sha256": "f3acd1440fd22304b6079ba4b3a9595e7300d08f757b919ecbf629160ec14cdb"
+    },
+    "rh51_stein_manuscript": {
+      "path": "papers/RH-51-cyclic-rank-growing-horizon-stein/main.tex",
+      "sha256": "baa3c8168c7481e83762cdc4b102272f1abc45eb9cee9316c5a3d1b95adee31f"
+    },
+    "rh51_stein_pilot": {
+      "path": "papers/RH-51-cyclic-rank-growing-horizon-stein/results/structured_stein_pilot.json",
+      "sha256": "508a63949bbddb02b10b209bf9ed1c0c5714bf6e83936e82a8ede92e600b4061"
+    },
+    "rh52_factor_manuscript": {
+      "path": "papers/RH-52-intrinsic-peripheral-residue-transfer/main.tex",
+      "sha256": "4e218afbe13241db1f90afefba3ba75b00c794ec1c876bab18f4ee1504371255"
+    },
+    "roadmap": {
+      "path": "papers/RH-ROADMAP-after-RH50.md",
+      "sha256": "4def72e8da1310ec01126aba3d7d3adfdc430c9019340fc8225747b547a0a874"
+    }
+  },
+  "deterministic_main_sum": {
+    "algorithm": "propagate every source column and accumulate Frobenius squares; no Hutchinson probes and no full Gramian storage are required",
+    "identity": "sum_(m=0)^(M-1) ||Y A^m X||_S2^2=tr(Y S_M Y^*)",
+    "rounding_boundary": "the identity is exact algebraically; a validated numerical upper requires outward-rounded matrix actions or certified local error budgets"
+  },
+  "evidence_level": {
+    "analytic": "exact deterministic finite-horizon trace identity, block-contraction infinite-tail theorem, finite-horizon perturbation theorem, fixed-window no-go, and adaptive cutoff route",
+    "numerical": "binary64 five-scale dense all-column audit through dimension 512 and analytic cutoff ledgers on the RH-50 production dimensions through 40960",
+    "validated": "256-bit Arb outward-rounded execution on a small abstract matrix and the inherited RH-39 closed cutoff bounds"
+  },
+  "floating_five_scale_audit": {
+    "all_column_deterministic": true,
+    "hutchinson_probes_used": false,
+    "interval_validated": false,
+    "largest_dimension": 512,
+    "maximum_relative_energy_excess": 0.000493399343137968,
+    "maximum_selected_tail_energy_squared_upper": 0.0016852287266069781,
+    "noise_levels": 5,
+    "rows": [
+      {
+        "adaptive_cutoff": {
+          "declared_multiple": 5.0,
+          "two_norm_upper": 5.5746327114691755e-06
+        },
+        "cutoff_bounds": [
+          {
+            "declared_multiple": 5.0,
+            "effective_multiple": 5.46875,
+            "omitted_mass_upper": 4.965522022961893e-07,
+            "two_norm_upper": 5.5746327114691755e-06
+          },
+          {
+            "declared_multiple": 6.0,
+            "effective_multiple": 6.4453125,
+            "omitted_mass_upper": 1.3691504484954498e-09,
+            "two_norm_upper": 1.545339351782423e-08
+          },
+          {
+            "declared_multiple": 8.0,
+            "effective_multiple": 8.3984375,
+            "omitted_mass_upper": 6.220113176519656e-16,
+            "two_norm_upper": 7.081713754677301e-15
+          }
+        ],
+        "dense_full_kernel_comparison": {
+          "actual_frobenius_defect": 8.336889622284031e-17,
+          "actual_spectral_defect": 5.916427139097172e-17
+        },
+        "deterministic_main_identity_check": {
+          "left_absolute_difference": 0.0,
+          "right_absolute_difference": 0.0
+        },
+        "elapsed_seconds": 0.00578426499851048,
+        "fine_dimension": 32,
+        "fine_dimension_times_sigma": 5.12,
+        "left": {
+          "block_power_norm": 0.02100198841006131,
+          "contraction_margin": 0.9995589164828237,
+          "deterministic_main_energy_squared": 0.8171110497342532,
+          "exact_dense_energy": 0.9039575455799415,
+          "full_energy_upper": 0.9041434204776749,
+          "horizon": 4,
+          "relative_energy_excess": 0.00020562348159192112,
+          "selected_infinite_tail_upper": 0.0003642750588163788,
+          "simple_infinite_tail_upper": 0.0003642750588163788,
+          "stein_infinite_tail_upper": 0.00047784448236845437
+        },
+        "right": {
+          "block_power_norm": 0.01983569113454479,
+          "contraction_margin": 0.9996065453572149,
+          "deterministic_main_energy_squared": 1.0052530921322016,
+          "exact_dense_energy": 1.0026461047246997,
+          "full_energy_upper": 1.0028918936230238,
+          "horizon": 4,
+          "relative_energy_excess": 0.0002451402315990503,
+          "selected_infinite_tail_upper": 0.0005390581625730153,
+          "simple_infinite_tail_upper": 0.0005390581625730153,
+          "stein_infinite_tail_upper": 0.0006538412917087999
+        },
+        "sigma": 0.16
+      },
+      {
+        "adaptive_cutoff": {
+          "declared_multiple": 5.0,
+          "two_norm_upper": 7.883721185808408e-06
+        },
+        "cutoff_bounds": [
+          {
+            "declared_multiple": 5.0,
+            "effective_multiple": 5.46875,
+            "omitted_mass_upper": 4.965522022961893e-07,
+            "two_norm_upper": 7.883721185808408e-06
+          },
+          {
+            "declared_multiple": 6.0,
+            "effective_multiple": 6.4453125,
+            "omitted_mass_upper": 1.3691504484954498e-09,
+            "two_norm_upper": 2.18543986975955e-08
+          },
+          {
+            "declared_multiple": 8.0,
+            "effective_multiple": 8.3984375,
+            "omitted_mass_upper": 6.220113176519656e-16,
+            "two_norm_upper": 1.0015055636708732e-14
+          }
+        ],
+        "dense_full_kernel_comparison": {
+          "actual_frobenius_defect": 2.2922962005829273e-16,
+          "actual_spectral_defect": 1.3608941341242822e-16
+        },
+        "deterministic_main_identity_check": {
+          "left_absolute_difference": 0.0,
+          "right_absolute_difference": 0.0
+        },
+        "elapsed_seconds": 0.012513442081399262,
+        "fine_dimension": 64,
+        "fine_dimension_times_sigma": 5.12,
+        "left": {
+          "block_power_norm": 0.030509426786165642,
+          "contraction_margin": 0.9990691748771796,
+          "deterministic_main_energy_squared": 1.3514686147872763,
+          "exact_dense_energy": 1.1625610299508315,
+          "full_energy_upper": 1.1630730086330106,
+          "horizon": 8,
+          "relative_energy_excess": 0.00044038864970441516,
+          "selected_infinite_tail_upper": 0.0012702086233667197,
+          "simple_infinite_tail_upper": 0.0012702086233667197,
+          "stein_infinite_tail_upper": 0.0015507907119283008
+        },
+        "right": {
+          "block_power_norm": 0.027949461222966158,
+          "contraction_margin": 0.9992188276173459,
+          "deterministic_main_energy_squared": 1.6008308387295227,
+          "exact_dense_energy": 1.265280947576503,
+          "full_energy_upper": 1.2659052363649221,
+          "horizon": 8,
+          "relative_energy_excess": 0.000493399343137968,
+          "selected_infinite_tail_upper": 0.0016852287266069781,
+          "simple_infinite_tail_upper": 0.0016852287266069781,
+          "stein_infinite_tail_upper": 0.0021147910162208823
+        },
+        "sigma": 0.08
+      },
+      {
+        "adaptive_cutoff": {
+          "declared_multiple": 5.0,
+          "two_norm_upper": 1.1149265422938351e-05
+        },
+        "cutoff_bounds": [
+          {
+            "declared_multiple": 5.0,
+            "effective_multiple": 5.46875,
+            "omitted_mass_upper": 4.965522022961893e-07,
+            "two_norm_upper": 1.1149265422938351e-05
+          },
+          {
+            "declared_multiple": 6.0,
+            "effective_multiple": 6.4453125,
+            "omitted_mass_upper": 1.3691504484954498e-09,
+            "two_norm_upper": 3.090678703564846e-08
+          },
+          {
+            "declared_multiple": 8.0,
+            "effective_multiple": 8.3984375,
+            "omitted_mass_upper": 6.220113176519656e-16,
+            "two_norm_upper": 1.4163427509354602e-14
+          }
+        ],
+        "dense_full_kernel_comparison": {
+          "actual_frobenius_defect": 3.7249100435340058e-16,
+          "actual_spectral_defect": 1.4283711469441927e-16
+        },
+        "deterministic_main_identity_check": {
+          "left_absolute_difference": 0.0,
+          "right_absolute_difference": 0.0
+        },
+        "elapsed_seconds": 0.08764482394326478,
+        "fine_dimension": 128,
+        "fine_dimension_times_sigma": 5.12,
+        "left": {
+          "block_power_norm": 0.015553751574443208,
+          "contraction_margin": 0.9997580808119605,
+          "deterministic_main_energy_squared": 1.7790888078431935,
+          "exact_dense_energy": 1.3338282377122503,
+          "full_energy_upper": 1.3339601906213852,
+          "horizon": 16,
+          "relative_energy_excess": 9.892796193988751e-05,
+          "selected_infinite_tail_upper": 0.0003609823194490603,
+          "simple_infinite_tail_upper": 0.00043382935723800344,
+          "stein_infinite_tail_upper": 0.0003609823194490603
+        },
+        "right": {
+          "block_power_norm": 0.01559512677655661,
+          "contraction_margin": 0.9997567920208231,
+          "deterministic_main_energy_squared": 2.203828900708551,
+          "exact_dense_energy": 1.4845401474873015,
+          "full_energy_upper": 1.484766694648994,
+          "horizon": 16,
+          "relative_energy_excess": 0.0001526042674400152,
+          "selected_infinite_tail_upper": 0.000703236830348096,
+          "simple_infinite_tail_upper": 0.000703236830348096,
+          "stein_infinite_tail_upper": 0.001542701556003445
+        },
+        "sigma": 0.04
+      },
+      {
+        "adaptive_cutoff": {
+          "declared_multiple": 5.0,
+          "two_norm_upper": 1.5767442371616816e-05
+        },
+        "cutoff_bounds": [
+          {
+            "declared_multiple": 5.0,
+            "effective_multiple": 5.46875,
+            "omitted_mass_upper": 4.965522022961893e-07,
+            "two_norm_upper": 1.5767442371616816e-05
+          },
+          {
+            "declared_multiple": 6.0,
+            "effective_multiple": 6.4453125,
+            "omitted_mass_upper": 1.3691504484954498e-09,
+            "two_norm_upper": 4.3708797395191e-08
+          },
+          {
+            "declared_multiple": 8.0,
+            "effective_multiple": 8.3984375,
+            "omitted_mass_upper": 6.220113176519656e-16,
+            "two_norm_upper": 2.0030111273417464e-14
+          }
+        ],
+        "dense_full_kernel_comparison": null,
+        "deterministic_main_identity_check": {
+          "left_absolute_difference": 0.0,
+          "right_absolute_difference": 0.0
+        },
+        "elapsed_seconds": 0.33325144194532186,
+        "fine_dimension": 256,
+        "fine_dimension_times_sigma": 5.12,
+        "left": {
+          "block_power_norm": 0.013342662788800388,
+          "contraction_margin": 0.9998219733497044,
+          "deterministic_main_energy_squared": 1.9869163379640555,
+          "exact_dense_energy": 1.4095815932334077,
+          "full_energy_upper": 1.4096791412152339,
+          "horizon": 24,
+          "relative_energy_excess": 6.92035014464576e-05,
+          "selected_infinite_tail_upper": 0.00027894321326354065,
+          "simple_infinite_tail_upper": 0.0003563546516892193,
+          "stein_infinite_tail_upper": 0.00027894321326354065
+        },
+        "right": {
+          "block_power_norm": 0.012437123556312537,
+          "contraction_margin": 0.999845317957645,
+          "deterministic_main_energy_squared": 2.669910491486306,
+          "exact_dense_energy": 1.6339905796791494,
+          "full_energy_upper": 1.63414949505013,
+          "horizon": 24,
+          "relative_energy_excess": 9.725598969612115e-05,
+          "selected_infinite_tail_upper": 0.0005340806862888902,
+          "simple_infinite_tail_upper": 0.0005340806862888902,
+          "stein_infinite_tail_upper": 0.0013515638489856106
+        },
+        "sigma": 0.02
+      },
+      {
+        "adaptive_cutoff": {
+          "declared_multiple": 5.0,
+          "two_norm_upper": 2.2298530845876702e-05
+        },
+        "cutoff_bounds": [
+          {
+            "declared_multiple": 5.0,
+            "effective_multiple": 5.46875,
+            "omitted_mass_upper": 4.965522022961893e-07,
+            "two_norm_upper": 2.2298530845876702e-05
+          },
+          {
+            "declared_multiple": 6.0,
+            "effective_multiple": 6.4453125,
+            "omitted_mass_upper": 1.3691504484954498e-09,
+            "two_norm_upper": 6.181357407129692e-08
+          },
+          {
+            "declared_multiple": 8.0,
+            "effective_multiple": 8.3984375,
+            "omitted_mass_upper": 6.220113176519656e-16,
+            "two_norm_upper": 2.8326855018709205e-14
+          }
+        ],
+        "dense_full_kernel_comparison": null,
+        "deterministic_main_identity_check": {
+          "left_absolute_difference": 0.0,
+          "right_absolute_difference": 0.0
+        },
+        "elapsed_seconds": 1.539309490006417,
+        "fine_dimension": 512,
+        "fine_dimension_times_sigma": 5.12,
+        "left": {
+          "block_power_norm": 0.006913354176523688,
+          "contraction_margin": 0.99995220553403,
+          "deterministic_main_energy_squared": 2.1552395318528093,
+          "exact_dense_energy": 1.468073542104538,
+          "full_energy_upper": 1.4680926702071249,
+          "horizon": 32,
+          "relative_energy_excess": 1.3029389903218558e-05,
+          "selected_infinite_tail_upper": 5.655646307685241e-05,
+          "simple_infinite_tail_upper": 0.00010372792535648738,
+          "stein_infinite_tail_upper": 5.655646307685241e-05
+        },
+        "right": {
+          "block_power_norm": 0.0067310402775189885,
+          "contraction_margin": 0.9999546930967824,
+          "deterministic_main_energy_squared": 3.0986877631161653,
+          "exact_dense_energy": 1.7603096405405383,
+          "full_energy_upper": 1.7603615621744662,
+          "horizon": 32,
+          "relative_energy_excess": 2.949573912003345e-05,
+          "selected_infinite_tail_upper": 0.0001850664651616435,
+          "simple_infinite_tail_upper": 0.0001850664651616435,
+          "stein_infinite_tail_upper": 0.0004135392561569174
+        },
+        "sigma": 0.01
+      }
+    ]
+  },
+  "infinite_tail_theorem": {
+    "condition": "q_M=||A^M||_2<1",
+    "consequence": "the fitted time-64 decay base in RH-50 is unnecessary once one contracting block power is certified",
+    "finite_gramian": "S_M=sum_(j=0)^(M-1) A^j X X^* (A^*)^j",
+    "simple_tail": "tail<=||Y||_2^2 q_M^2 tr(S_M)/(1-q_M^2)",
+    "stein_tail": "tail<=||A^M S_M (A^*)^M||_2 ||Y||_S2^2/(1-q_M^2)"
+  },
+  "limitations": [
+    "The five-scale deterministic trace audit is binary64, not an interval enclosure.",
+    "The 256-bit Arb run validates the algorithm on a small abstract matrix, not the N=40960 folded-Gaussian production matrix.",
+    "RH-39 controls the exact-real Markov matrix cutoff before intrinsic Perron/parity factors and normalized coupling ranges are recomputed; that complete factor-aware transfer is not executed here.",
+    "The theorem gives a certificate architecture for each finite matrix but does not prove a uniform or polylogarithmic small-noise Hardy trace budget; Stage A1 remains open.",
+    "Consequently Stage A3 is analytically routed but not fully closed, and Stage A4 intrinsic Riesz identification is not proved.",
+    "No arithmetic trace formula, prime-power identity, zeta-zero identification, self-adjoint Hilbert-Polya operator, T log T counting law, or Riemann-hypothesis conclusion is claimed.",
+    "The independent TPC twin-prime program is neither assumed nor closed by this result."
+  ],
+  "perturbation_transfer": {
+    "block_contraction": "finite-time semigroup norm ledgers transfer q_M<1 whenever the telescoping defect leaves positive margin",
+    "finite_horizon": "operator, source, and observation defects give an explicit l2-in-time difference upper for the first M directional outputs",
+    "infinite_energy": "add the two available certified tails to the finite-horizon comparison",
+    "power_identity": "A^m-B^m=sum_(j=0)^(m-1) A^(m-1-j)(A-B)B^j"
+  },
+  "program_conclusion": {
+    "adaptive_exact_real_cutoff_route_closed": true,
+    "deterministic_finite_matrix_tail_mechanism_closed": true,
+    "fixed_eight_is_canonical_joint_limit": false,
+    "intrinsic_factor_cutoff_transfer_executed": false,
+    "production_scale_interval_trace_executed": false,
+    "small_arb_algorithm_executed": true,
+    "stage_A1_uniform_trace_budget_closed": false,
+    "stage_A3_fully_closed": false,
+    "stage_A4_intrinsic_identification_closed": false
+  },
+  "rh50_production_cutoff_ledger": {
+    "all_stored_multiples_above_adaptive_requirement": true,
+    "largest_dimension": 40960,
+    "maximum_fixed_eight_two_norm_upper": 5.594052732053418e-13,
+    "rows": [
+      {
+        "adaptive_analytic_two_norm_upper": 3.1512412712471717e-06,
+        "adaptive_multiple": 5.522542525380642,
+        "fine_dimension": 2048,
+        "fixed_eight_analytic_two_norm_upper": 1.2508682178589859e-13,
+        "fixed_eight_effective_multiple": 8.10546875,
+        "maximum_power_in_RH50": 64,
+        "sigma": 0.01
+      },
+      {
+        "adaptive_analytic_two_norm_upper": 8.771506815721303e-07,
+        "adaptive_multiple": 5.844966969293686,
+        "fine_dimension": 5120,
+        "fixed_eight_analytic_two_norm_upper": 1.9777963105750522e-13,
+        "fixed_eight_effective_multiple": 8.10546875,
+        "maximum_power_in_RH50": 64,
+        "sigma": 0.004
+      },
+      {
+        "adaptive_analytic_two_norm_upper": 2.736556532971069e-07,
+        "adaptive_multiple": 6.07751821012278,
+        "fine_dimension": 10240,
+        "fixed_eight_analytic_two_norm_upper": 2.797026366026709e-13,
+        "fixed_eight_effective_multiple": 8.10546875,
+        "maximum_power_in_RH50": 64,
+        "sigma": 0.002
+      },
+      {
+        "adaptive_analytic_two_norm_upper": 8.054895845666835e-08,
+        "adaptive_multiple": 6.301493181509742,
+        "fine_dimension": 20480,
+        "fixed_eight_analytic_two_norm_upper": 3.9555926211501044e-13,
+        "fixed_eight_effective_multiple": 8.10546875,
+        "maximum_power_in_RH50": 64,
+        "sigma": 0.001
+      },
+      {
+        "adaptive_analytic_two_norm_upper": 3.111834020119056e-08,
+        "adaptive_multiple": 6.517776080754352,
+        "fine_dimension": 40960,
+        "fixed_eight_analytic_two_norm_upper": 5.594052732053418e-13,
+        "fixed_eight_effective_multiple": 8.10546875,
+        "maximum_power_in_RH50": 64,
+        "sigma": 0.0005
+      }
+    ]
+  },
+  "scope": "finite-dimensional two-pole directional Hardy energies and transfer between exact-real sparse and canonical full folded-Gaussian matrices",
+  "status": "rigorous_deterministic_block_tail_and_adaptive_exact_real_cutoff_route_with_production_interval_gap"
+}

@@ -1,0 +1,63 @@
+{
+  "external_inputs": {
+    "rh39_cutoff_bounds": {
+      "path": "papers/RH-39-uniform-gaussian-cutoff-bridge/src/cutoff_bridge/bounds.py",
+      "sha256": "bd2dfe9f0010fbfc3993af8255f6f49b2f5d2e0afaefbc748ab2abf9bb2f4872"
+    },
+    "rh39_cutoff_manuscript": {
+      "path": "papers/RH-39-uniform-gaussian-cutoff-bridge/main.tex",
+      "sha256": "6f36c4ddd2201ca538e82da1ea394211d67358712d2f9d88d5170f7e2207df7d"
+    },
+    "rh50_hardy_manuscript": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/main.tex",
+      "sha256": "106c3a96f2b38f07543c70e0859665ae9ba427386d79f57168e85c49558b9f74"
+    },
+    "rh50_hardy_pilot": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/results/two_pole_hardy_pilot.json",
+      "sha256": "f3acd1440fd22304b6079ba4b3a9595e7300d08f757b919ecbf629160ec14cdb"
+    },
+    "rh51_stein_manuscript": {
+      "path": "papers/RH-51-cyclic-rank-growing-horizon-stein/main.tex",
+      "sha256": "baa3c8168c7481e83762cdc4b102272f1abc45eb9cee9316c5a3d1b95adee31f"
+    },
+    "rh51_stein_pilot": {
+      "path": "papers/RH-51-cyclic-rank-growing-horizon-stein/results/structured_stein_pilot.json",
+      "sha256": "508a63949bbddb02b10b209bf9ed1c0c5714bf6e83936e82a8ede92e600b4061"
+    },
+    "rh52_factor_manuscript": {
+      "path": "papers/RH-52-intrinsic-peripheral-residue-transfer/main.tex",
+      "sha256": "4e218afbe13241db1f90afefba3ba75b00c794ec1c876bab18f4ee1504371255"
+    },
+    "roadmap": {
+      "path": "papers/RH-ROADMAP-after-RH50.md",
+      "sha256": "4def72e8da1310ec01126aba3d7d3adfdc430c9019340fc8225747b547a0a874"
+    }
+  },
+  "local_sources": {
+    "experiments/build_arb_cutoff_ledger.py": "404258afc55375d4bae7320ff07c2d0e562941af681868ad90cd7741336b96af",
+    "experiments/build_archive.py": "c2d2f5b6cda3cf307f7f6dbb4cbe44330280d97a7d66c29c8ee8d0fbc78e1b3b",
+    "experiments/build_tail_certificate.py": "50f72bc599ddfc11d837763b8910271e23bf27f39f504bce484e6f9f1c4b5e0a",
+    "experiments/make_figures.py": "17d4e2ed8bf47672a45eb7d81f046108d2b0987c22c45a402756d0f5350263c1",
+    "experiments/run_arb_tail_audit.py": "966b6f1f0b4f6daf6e9660fd8e4fca7da642441e877e77dafb23e07bdd038c4a",
+    "experiments/run_deterministic_tail_pilot.py": "8bc8c383557dd06679d0bdaa38eccae1932746c097a55d79a2c6968ea0b49aad",
+    "experiments/verify_archive.py": "03c5ecf6606bf0a106728d1bea26b8b8d39be088a574fd436e463886488a5502",
+    "src/hardy_tail/__init__.py": "3857261a6f2ec162d9e07f6ff5510bbad6831b41259609f8fef0b035852637aa",
+    "src/hardy_tail/algebra.py": "7a8bb98308de245ab4c75a0fe2403da7c6946a5b26418734c2b53d0de6ac1249",
+    "src/hardy_tail/cutoff.py": "67675bb675b3a1b11cea22906d7c41ff18236451349337891f62b93e1ebe72d4",
+    "tests/test_archived_results.py": "77b15653e4e6f5de25245a89395504cc94639baa91e248fa8ddaaa41e989bf64",
+    "tests/test_theory.py": "d8ac0c645ac4f7f72c6874b452a223ebadc2f7a11befb14574bd41ec4a55e687"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "94e0d644db53c9d4bb664ee2ae6f9ea318d5887835ee5ec75eda7017acfdd2f7",
+    "deterministic-block-tail-hardy-cutoff.pdf": "2240f07b9496be48973073ec5041aa488dee8c61a3a57b92c37f0c8504253830",
+    "figures/deterministic_hardy_tail_cutoff.pdf": "260cb5b53111cffa7ad90d0cae6876648330a5eabc498e1f87c6434c4430d139",
+    "figures/deterministic_hardy_tail_cutoff.png": "866fe126c0fc584aa1f46189d330453aeb808db30a187782b99156977f20475c",
+    "main.pdf": "2240f07b9496be48973073ec5041aa488dee8c61a3a57b92c37f0c8504253830",
+    "main.tex": "0e1d8969e97c3c03b0d3bfd8b2bb22582e636e1b70918aa153366ce5c42f1aba",
+    "pyproject.toml": "b7cd37c468d115fe16d6913c54d03fe165098b0c910064a77b80f4c6a13ec44c",
+    "references.bib": "f43fe13435ef0c49ff58221c435b16a6d8c3fc09739a0ee6335b7e723edf7fd2",
+    "requirements.txt": "ec5853f9fb381ed75d2fcaadc5084ec947ca4b85c4b5d426fc1d327121a26e29"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}

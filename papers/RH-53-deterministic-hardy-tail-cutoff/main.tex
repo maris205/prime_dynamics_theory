@@ -1,0 +1,625 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,graphicx,float}
+\usepackage[section]{placeins}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor,xurl}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0.12em}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\Id}{\mathrm I}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\HS}{\mathfrak S_2}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+
+\title{Deterministic Block-Tail Certificates for Directional Hardy Energies\\
+\large All-Column Trace Sums, Adaptive Gaussian Cutoff Transfer, and the Remaining Production-Interval Gap}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The two-pole Hardy reduction for the noisy quadratic transfer operator was
+previously audited with eight Hutchinson probes, a time-64 truncation, and a
+fitted decay base.  We replace all three ingredients at the finite-matrix
+level.  For a stable scaled bulk matrix \(A\), directional source \(X\), and
+observation \(Y\), put
+\[
+ S_M=\sum_{m=0}^{M-1}A^mXX^*(A^*)^m,
+ \qquad q_M=\norm{A^M}_2.
+\]
+The finite contribution is the deterministic all-column identity
+\[
+ \tr(YS_MY^*)=\sum_{m=0}^{M-1}\norm{YA^mX}_{\HS}^2.
+\]
+If \(q_M<1\), block Stein domination gives the complete infinite-energy
+certificate
+\[
+ \sum_{m\ge0}\norm{YA^mX}_{\HS}^2
+ \le \tr(YS_MY^*)+
+ \frac{\norm{A^MS_M(A^*)^M}_2}{1-q_M^2}\norm Y_{\HS}^2.
+\]
+A complementary block-geometric tail is also proved.  Thus neither a
+probabilistic trace estimate nor a fitted asymptotic decay rate is needed.
+
+We then give a finite-time perturbation theorem for simultaneous changes of
+\((A,X,Y)\), using the exact telescoping identity for
+\(A^m-\widetilde A^m\).
+This transports both the main sum and one contracting block whenever
+finite-time semigroup norm ledgers leave positive margin.  Combined with the
+folded-Gaussian cutoff estimates of RH-39, it yields an honest route from a
+sparse family to the canonical full Gaussian family.  A fixed eight-standard-
+deviation window is below \(5.60\times10^{-13}\) in the analytic Euclidean
+bound on all stored RH-50 scales through \(N=40960\), but has a strictly
+positive continuum row defect and therefore cannot define the full-kernel
+all-grid limit.  The adaptive law
+\[
+ L(h)=\max\{5,2\sqrt{\log(1/h)}\}
+\]
+instead gives an \(O(h^2/(\log(1/h))^{1/4})\) cutoff defect.
+
+A binary64 dense all-column audit at \(N=32,\ldots,512\) certifies both
+directional energies with worst relative excess \(4.94\times10^{-4}\).  A
+separate 256-bit Arb run executes the complete outward-rounded algorithm on a
+small abstract matrix.  The production-scale interval trace and the complete
+factor-aware cutoff transfer have not been executed.  Hence the deterministic
+tail mechanism and adaptive exact-real route close, while Stage A3 as a
+production certificate does not.  No arithmetic trace formula, zeta-zero
+identity, self-adjoint realization, counting law, or Riemann-hypothesis
+conclusion is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Hilbert--Schmidt Hardy energy; Stein inequality;
+deterministic trace; Gaussian cutoff; interval arithmetic; small-noise
+transfer operator.
+
+\medskip
+\noindent\textbf{MSC 2020:} 47A10; 47B10; 65F35; 65G20; 93B36.
+
+\section{Introduction}
+
+RH-49 reduced the last mixed resolvent gate in the dyadic intrinsic
+identification program to two Hilbert--Schmidt range actions.  RH-50 removed
+the Perron and parity poles, represented the remainder by directional Hardy
+energies, and observed moderate values over five small-noise scales
+\citep{WangHardy2026}.  Those values were not upper bounds: each
+Hilbert--Schmidt norm was estimated with random-sign probes, the series was
+stopped after power 64, and the omitted tail was interpreted through a fitted
+decay base.
+
+RH-51 supplied the correct positive mechanism.  Exact low-rank Stein
+supersolutions are obstructed by the growing directional cyclic subspace, but
+a finite Krylov sum plus a full-dimensional positive tail becomes sharp once
+one power \(A^M\) is a Euclidean contraction
+\citep{WangStructuredStein2026}.  RH-52 separately closed the sufficient
+peripheral residue action from weak finite factors
+\citep{WangFactorTransfer2026}.  The scheduled RH-53 question is whether the
+infinite tail and sparse Gaussian cutoff can be certified without silently
+promoting floating evidence.
+
+This paper gives a positive answer at the level of analytic architecture and
+a deliberately incomplete answer at production interval level.  The main
+contributions are:
+\begin{enumerate}[leftmargin=2em]
+ \item a deterministic finite-horizon Hilbert--Schmidt trace algorithm that
+       propagates all source columns and never forms a full Gramian;
+ \item two explicit infinite-tail bounds from one contracting block;
+ \item an outward-rounding ledger that turns local matrix-action, norm, and
+       trace errors into a complete finite-matrix certificate;
+ \item a perturbation theorem for the finite trace and the block contraction;
+ \item a proof that fixed eight sigma is a finite-computation convenience,
+       not the canonical full-kernel joint limit; and
+ \item an adaptive sparse-to-full route compatible with growing horizons.
+\end{enumerate}
+
+Three evidence levels remain separate.  Algebraic theorems are exact.
+Closed cutoff formulas and the small Arb audit are validated.  The five-scale
+all-column experiment and intrinsic eigendata are binary64 diagnostics.  This
+separation is the central conclusion rather than a technical footnote.
+
+\section{Directional Hardy pairs}
+
+Let \(T\) be a fine folded-Gaussian matrix, \(A_c\) its exact coarse Haar
+block, and
+\[
+ T=\begin{pmatrix}A_c&B\\ C&D\end{pmatrix}.
+\]
+After removing the intrinsic Perron and parity Riesz terms, let \(N_f,N_c\)
+be the fine and coarse bulk matrices, \(Q_f,Q_c\) the corresponding
+complements, \(U\) the coarse-to-fine isometry, and \(r\) a Hardy radius above
+both bulk spectral radii.  The two pairs are
+\begin{align*}
+ A_B&=r^{-1}N_f,
+ &X_B&=Q_fUB/\norm B_{\HS},
+ &Y_B&=U^*,\\
+ A_C&=r^{-1}N_c^*,
+ &X_C&=C^*/\norm C_{\HS},
+ &Y_C&=Q_c^*.
+\end{align*}
+Both energies have the abstract form
+\begin{equation}
+ \cE(A,X,Y)^2=\sum_{m=0}^{\infty}\norm{YA^mX}_{\HS}^2.
+ \label{eq:energy}
+\end{equation}
+We therefore work with \(A\in\C^{d\times d}\),
+\(X\in\C^{d\times p}\), and \(Y\in\C^{q\times d}\), assuming
+the spectral radius of \(A\) is less than one.
+
+\section{Deterministic main sum and exact infinite tail}
+
+For \(M\ge1\), define
+\begin{equation}
+ S_M=\sum_{m=0}^{M-1}A^mXX^*(A^*)^m.
+ \label{eq:SM}
+\end{equation}
+
+\begin{proposition}[All-column finite trace]
+\label{prop:main-sum}
+One has the exact identity
+\begin{equation}
+ \boxed{\tr(YS_MY^*)=\sum_{m=0}^{M-1}\norm{YA^mX}_{\HS}^2.}
+ \label{eq:main-sum}
+\end{equation}
+It can be evaluated using the recurrence \(Z_0=X\), \(Z_{m+1}=AZ_m\),
+accumulating \(\norm{YZ_m}_{\HS}^2\).  The algorithm stores only the current
+\(d\times p\) source block and uses no random trace estimator.
+\end{proposition}
+
+\begin{proof}
+Expand \eqref{eq:SM}, use linearity and cyclicity of the finite trace, and
+apply \(\tr(WW^*)=\norm W_{\HS}^2\).
+\end{proof}
+
+The word deterministic distinguishes \eqref{eq:main-sum} from Hutchinson
+sampling.  It does not by itself validate floating arithmetic.  Outward
+rounding is discussed in \cref{sec:rounding}.
+
+\begin{theorem}[Block-Stein infinite tail]
+\label{thm:block-tail}
+Let \(P_M=A^M\), \(q_M=\norm{P_M}_2<1\), and let \(S_M\) be
+\eqref{eq:SM}.  Then
+\begin{equation}
+ \boxed{
+ \cE(A,X,Y)^2
+ \le \tr(YS_MY^*)+
+ \frac{\norm{P_MS_MP_M^*}_2}{1-q_M^2}\norm Y_{\HS}^2.}
+ \label{eq:stein-tail}
+\end{equation}
+Also,
+\begin{equation}
+ \boxed{
+ \cE(A,X,Y)^2
+ \le \tr(YS_MY^*)+
+ \norm Y_2^2\frac{q_M^2}{1-q_M^2}\tr S_M.}
+ \label{eq:simple-tail}
+\end{equation}
+The smaller of the two displayed tails is a valid upper.
+\end{theorem}
+
+\begin{proof}
+Let
+\[
+ G=\sum_{m\ge0}A^mXX^*(A^*)^m.
+\]
+The block decomposition gives \(G=S_M+P_MGP_M^*\).  Put
+\[
+ \alpha_M=\frac{\norm{P_MS_MP_M^*}_2}{1-q_M^2},
+ \qquad H_M=S_M+\alpha_M\Id.
+\]
+Since
+\[
+ \alpha_M(\Id-P_MP_M^*)-P_MS_MP_M^*\ge0,
+\]
+\(H_M-P_MH_MP_M^*\ge S_M\).  Iterating this block inequality gives
+\(H_M\ge G\).  Pair with \(Y^*Y\ge0\) to obtain
+\eqref{eq:stein-tail}.
+
+For the second bound, group the tail into residues \(m=kM+j\),
+\(0\le j<M\).  Submultiplicativity gives
+\[
+ \sum_{k\ge1}\sum_{j=0}^{M-1}
+ \norm{YA^{kM+j}X}_{\HS}^2
+ \le \norm Y_2^2\sum_{k\ge1}q_M^{2k}
+ \sum_{j=0}^{M-1}\norm{A^jX}_{\HS}^2,
+\]
+which is \eqref{eq:simple-tail}.
+\end{proof}
+
+\begin{remark}
+The theorem validates the entire infinite series for each finite matrix once
+one \(q_M<1\) is certified.  It does not prove that the resulting upper is
+uniform or polylogarithmic as noise vanishes.  That is the independent Stage
+A1 trace-budget problem.
+\end{remark}
+
+\section{Outward-rounded certificate ledger}
+\label{sec:rounding}
+
+The exact formulas admit a direct validated implementation.  Suppose an
+interval or directed-rounding computation returns upper endpoints
+\[
+ \widehat e_m\ge\norm{YA^mX}_{\HS},\quad 0\le m<M,
+ \qquad
+ \widehat q_M\ge\norm{A^M}_2,
+\]
+and
+\[
+ \widehat r_M\ge\norm{A^MS_M(A^*)^M}_2,
+ \qquad
+ \widehat y_2\ge\norm Y_{\HS}^2.
+\]
+
+\begin{corollary}[A posteriori outward certificate]
+\label{cor:outward}
+If \(\widehat q_M<1\), then
+\begin{equation}
+ \cE(A,X,Y)^2
+ \le
+ \sum_{m=0}^{M-1}\widehat e_m^2
+ +\frac{\widehat r_M\widehat y_2}{1-\widehat q_M^2}.
+ \label{eq:outward}
+\end{equation}
+The same conclusion holds when each displayed upper includes an explicit
+local roundoff or matrix-data perturbation budget.
+\end{corollary}
+
+\begin{proof}
+Monotonicity of the positive terms and \cref{thm:block-tail} suffice.
+\end{proof}
+
+Our 256-bit Arb audit encloses all input entries by radius \(10^{-30}\),
+propagates the complete source block, and uses Frobenius interval uppers for
+the two spectral norms.  Since \(\norm M_2\le\norm M_{\HS}\), this is
+rigorous though intentionally coarse.  For a \(4\times4\) matrix and
+\(M=6\), it certifies
+\[
+ \widehat q_M\le0.052027,\qquad
+ \cE^2\le0.093115,\qquad
+ \cE\le0.305147.
+\]
+This proves that the outward algorithm is executable.  It is not a
+validation of the folded-Gaussian production matrix.
+
+\section{Finite-horizon perturbation and block transfer}
+\label{sec:perturbation}
+
+Let \((A,X,Y)\) and
+\((\widetilde A,\widetilde X,\widetilde Y)\) have compatible dimensions.
+Set
+\[
+ a_j=\norm{A^j}_2,
+ \qquad \widetilde a_j=\norm{\widetilde A^j}_2,
+ \qquad \delta_A=\norm{A-\widetilde A}_2,
+\]
+and define \(\delta_X=\norm{X-\widetilde X}_{\HS}\),
+\(\delta_Y=\norm{Y-\widetilde Y}_2\).
+
+\begin{theorem}[Finite directional perturbation]
+\label{thm:perturbation}
+For \(m\ge1\), put
+\begin{equation}
+ d_m=\delta_A\sum_{j=0}^{m-1}a_{m-1-j}\widetilde a_j,
+ \qquad d_0=0.
+ \label{eq:dm}
+\end{equation}
+Then
+\begin{align}
+ \norm{YA^mX-\widetilde Y\widetilde A^m\widetilde X}_{\HS}
+ \le b_m:={}&
+ \delta_Ya_m\norm X_{\HS}
+ +\norm{\widetilde Y}_2d_m\norm X_{\HS}
+ \notag\\
+ &+\norm{\widetilde Y}_2\widetilde a_m\delta_X.
+ \label{eq:bm}
+\end{align}
+Consequently, if
+\[
+ E_M=\left(\sum_{m=0}^{M-1}\norm{YA^mX}_{\HS}^2\right)^{1/2},
+ \quad
+ \widetilde E_M=\left(\sum_{m=0}^{M-1}
+ \norm{\widetilde Y\widetilde A^m\widetilde X}_{\HS}^2\right)^{1/2},
+\]
+then
+\begin{equation}
+ |E_M-\widetilde E_M|
+ \le\left(\sum_{m=0}^{M-1}b_m^2\right)^{1/2},
+ \label{eq:energy-difference}
+\end{equation}
+and
+\begin{equation}
+ |E_M^2-\widetilde E_M^2|
+ \le(E_M+\widetilde E_M)
+ \left(\sum_{m=0}^{M-1}b_m^2\right)^{1/2}.
+ \label{eq:squared-difference}
+\end{equation}
+Moreover
+\begin{equation}
+ \norm{A^M-\widetilde A^M}_2\le d_M,
+ \qquad
+ \norm{\widetilde A^M}_2\le\norm{A^M}_2+d_M.
+ \label{eq:block-transfer}
+\end{equation}
+Thus a certified block contraction transfers whenever the final right-hand
+side is less than one.
+\end{theorem}
+
+\begin{proof}
+Use the exact identity
+\[
+ A^m-\widetilde A^m
+ =\sum_{j=0}^{m-1}A^{m-1-j}(A-\widetilde A)\widetilde A^j
+\]
+to prove \eqref{eq:dm}.  Insert and subtract
+\(\widetilde YA^mX\) and
+\(\widetilde Y\widetilde A^mX\), then apply ideal and operator norm
+inequalities to obtain \eqref{eq:bm}.  Minkowski in the finite time
+\(\ell^2\) space proves \eqref{eq:energy-difference}; the identity
+\(|u^2-v^2|=|u-v|(u+v)\) proves \eqref{eq:squared-difference}.
+The final statements are the same telescoping estimate at time \(M\).
+\end{proof}
+
+If \(T_M,\widetilde T_M\) are certified tails for the two triples, then
+\begin{equation}
+ |\cE^2-\widetilde{\cE}^{\,2}|
+ \le |E_M^2-\widetilde E_M^2|+T_M+\widetilde T_M.
+ \label{eq:full-transfer}
+\end{equation}
+This conservative formula is enough for a sparse-to-full transfer.  The use
+of actual finite-time ledgers \(a_j\), rather than
+\(a_j\le\norm A^j\), is essential for nonnormal bulk matrices.
+
+\section{Gaussian cutoff: a finite-scale yes and asymptotic no}
+
+Let \(P_h\) be the exact-real full folded-Gaussian midpoint matrix and
+\(P_h^{(L)}\) the row-renormalized hard-cutoff matrix.  The archived support
+half-width is
+\[
+ H_h=\left\lceil\frac{L\sigma}{h}\right\rceil+2,
+ \qquad \Lambda_h=H_hh/\sigma.
+\]
+RH-39 proves the explicit bound
+\begin{equation}
+ \norm{P_h^{(L)}-P_h}_2\le\varepsilon_h,
+ \label{eq:cutoff-bound}
+\end{equation}
+where
+\begin{align*}
+ Q_h&=
+ \frac{2e^{1/2}e^{-\Lambda_h^2/2}}{\sigma-h}
+ \left(h+\frac{\sigma}{\Lambda_h}\right),
+ &A_h&=\frac{Q_h}{1-Q_h},\\
+ \varepsilon_h^2&=
+ \frac{4e e^{-\Lambda_h^2}}{(\sigma-h)^2}
+ \left(h+\frac{\sigma}{2\Lambda_h}\right)
+ +\frac{eA_h^2}{(\sigma-h)^2}
+ (4h+2\sqrt\pi\sigma).
+\end{align*}
+These inequalities follow from Gaussian lattice tails and Mills' ratio
+\citep{Gordon1941,WangCutoff2026}.
+
+\begin{proposition}[Fixed-window obstruction]
+\label{prop:fixed-no-go}
+Fix \(L,\sigma>0\) with \(L\sigma<1\).  Along source cells approaching a
+zero of the quadratic map,
+\begin{equation}
+ \liminf_{h\to0}\norm{P_h^{(L)}-P_h}_\infty
+ \ge2\frac{\int_{L\sigma}^{1}e^{-y^2/(2\sigma^2)}\,dy}
+ {\int_0^1e^{-y^2/(2\sigma^2)}\,dy}>0.
+ \label{eq:fixed-no-go}
+\end{equation}
+In particular, fixed \(L=8\) does not converge to the canonical full
+Gaussian family in row-operator norm.
+\end{proposition}
+
+\begin{proof}
+At a zero-mean row the folded density is proportional to
+\(e^{-y^2/(2\sigma^2)}\).  Midpoint sums for the full and retained row masses
+converge to the two displayed integrals; the two extra support cells have
+vanishing physical width.  Row renormalization has exact \(\ell^1\) error
+twice the omitted mass.
+\end{proof}
+
+\begin{theorem}[Adaptive sparse-to-full route]
+\label{thm:adaptive}
+Let
+\begin{equation}
+ L(h)=\max\{5,2\sqrt{\log(1/h)}\}.
+ \label{eq:adaptive}
+\end{equation}
+Then
+\begin{equation}
+ \norm{P_h^{(L(h))}-P_h}_2
+ =O\!\left(\frac{h^2}{(\log(1/h))^{1/4}}\right).
+ \label{eq:adaptive-rate}
+\end{equation}
+Suppose the intrinsic triples built from the sparse and full matrices have
+factor defects \(\delta_X,\delta_Y\), semigroup ledgers through \(M\), and
+one of the triples has a block contraction whose transfer bound
+\eqref{eq:block-transfer} is less than one.  Then
+\eqref{eq:energy-difference}--\eqref{eq:full-transfer} give an explicit
+full-energy difference upper.  In particular, if \(M=O(\log(1/h))\) and the
+finite-time ledgers and factor defects grow slowly enough that the resulting
+right-hand side vanishes, the sparse Hardy certificate transfers to the
+canonical full family.
+\end{theorem}
+
+\begin{proof}
+Since \(e^{-L(h)^2/2}\le h^2\) and \(e^{-L(h)^2}\le h^4\), substitution in
+\eqref{eq:cutoff-bound} gives \eqref{eq:adaptive-rate}; see RH-39 for the
+complete lattice proof.  The remaining assertions are direct applications
+of \cref{thm:perturbation,thm:block-tail}.
+\end{proof}
+
+This theorem is a route, not a claim that the intrinsic factor defects have
+already been enclosed.  RH-39 controls the Markov matrix before its
+Perron/parity factors and normalized Haar coupling ranges are recomputed.
+That factor-aware perturbation is the remaining interface.
+
+\section{Numerical audit}
+
+The dense audit uses the same exact Haar construction as RH-51, with
+\(N\sigma=5.12\), \(r=0.85\), and the growing horizons selected there.  For
+each direction we propagate every source column, accumulate
+\eqref{eq:main-sum}, apply both tails in
+\cref{thm:block-tail}, and compare with a dense Lyapunov solve.  All values
+in \cref{tab:energy} are binary64 diagnostics.
+
+\begin{table}[H]
+\centering
+\caption{Deterministic complete-energy audit.  No Hutchinson probes are used.}
+\label{tab:energy}
+\begin{tabular}{rrrrrrr}
+\toprule
+\(\sigma\)&\(N\)&\(M\)&left exact&left upper&right exact&right upper\\
+\midrule
+0.16&32&4&0.903958&0.904143&1.002646&1.002892\\
+0.08&64&8&1.162561&1.163073&1.265281&1.265905\\
+0.04&128&16&1.333828&1.333960&1.484540&1.484767\\
+0.02&256&24&1.409582&1.409679&1.633991&1.634149\\
+0.01&512&32&1.468074&1.468093&1.760310&1.760362\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The worst relative energy excess is \(4.94\times10^{-4}\).  Every selected
+block norm is below \(0.031\), and the exact Gramian value lies below the
+certificate at all ten directional instances.  This replaces the mechanism
+of the RH-50 time-64 fit; it does not reproduce the \(N=40960\) production
+trace in interval arithmetic.
+
+\begin{table}[H]
+\centering
+\caption{Analytic fixed-eight-sigma cutoff uppers on the RH-50 production
+scales.}
+\label{tab:cutoff}
+\begin{tabular}{rrrrr}
+\toprule
+\(\sigma\)&\(N\)&effective \(L\)&required adaptive \(L(h)\)&\(\varepsilon_h\)\\
+\midrule
+0.0100&2048&8.1055&5.5225&\(1.251\times10^{-13}\)\\
+0.0040&5120&8.1055&5.8450&\(1.978\times10^{-13}\)\\
+0.0020&10240&8.1055&6.0775&\(2.797\times10^{-13}\)\\
+0.0010&20480&8.1055&6.3015&\(3.956\times10^{-13}\)\\
+0.0005&40960&8.1055&6.5178&\(5.594\times10^{-13}\)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Eight exceeds the sufficient adaptive prescription through
+\(N\le e^{16}\approx8.886\times10^6\), so every stored scale lies safely on
+the finite side of the crossover.  The increase in the last column is a
+useful warning: tiny is not the same statement as converging to zero at fixed
+window.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/deterministic_hardy_tail_cutoff.pdf}
+\caption{Deterministic tail and cutoff ledger.  Exact dense energies and
+all-column uppers are visually indistinguishable in panel (a).  Panel (b)
+shows the explicit tail and certificate excess.  Panels (c)--(d) separate
+the finite-scale usefulness of eight sigma from the adaptive canonical
+route.}
+\label{fig:audit}
+\end{figure}
+
+\section{Program verdict}
+
+RH-53 produces four exact advances:
+\begin{description}[leftmargin=5.2cm,style=nextline]
+ \item[Hutchinson replacement]
+ The finite Hilbert--Schmidt trace is an all-column deterministic sum.
+ \item[Infinite-tail replacement]
+ A certified contracting block replaces both the time-64 truncation and its
+ fitted decay base.
+ \item[Fixed-window no-go]
+ Eight sigma is excellent finite-scale engineering but is not a canonical
+ full-Gaussian all-grid definition.
+ \item[Adaptive positive route]
+ The RH-39 \(O(h^2)\) cutoff and the finite-time perturbation theorem give a
+ precise sparse-to-full Hardy interface.
+\end{description}
+
+The A3 status is nevertheless not ``closed.''  The following distinction is
+essential:
+\begin{description}[leftmargin=5.2cm,style=nextline]
+ \item[Analytic finite-matrix mechanism]
+ Closed, including a complete small Arb execution.
+ \item[Exact-real adaptive cutoff route]
+ Closed at the Markov matrix level.
+ \item[Production interval execution]
+ Open: the \(N=40960\) all-column trace, intrinsic eigendata, and normalized
+ factor perturbations have not been enclosed together.
+ \item[Uniform Stage A1 budget]
+ Open: no theorem yet bounds the certified Hardy energies uniformly or
+ polylogarithmically over the small-noise dyadic family.
+\end{description}
+
+Thus the next paper should not declare Stage A4 immediately from the stored
+numbers.  The sharp next target is a factor-aware semigroup perturbation
+certificate: combine the adaptive matrix cutoff, intrinsic Riesz-factor
+stability, source/observation normalization, and one growing-horizon block
+margin.  If that certificate can be made uniform, RH-54 may compose the
+RH-48--RH-53 ledger into the intrinsic identification theorem.  If it cannot,
+the obstruction will identify which factor or transient prevents the route.
+
+Nothing here constructs an arithmetic trace formula, von Mangoldt or
+prime-power weights, a zeta-zero spectral identity, a canonical self-adjoint
+operator, or a \(T\log T\) counting law.  The independent TPC branch studies
+twin-prime correlations and is not a premise of this theorem.
+
+\section{Reproducibility}
+
+The archive contains source code, unit tests, the five-scale binary64 pilot,
+the 256-bit Arb audit, the analytic certificate ledger, figures, hashes, and
+this manuscript.  The main commands are
+\begin{verbatim}
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/pytest -q
+OPENBLAS_NUM_THREADS=16 OMP_NUM_THREADS=16 \
+  PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/run_deterministic_tail_pilot.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/run_arb_tail_audit.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_arb_cutoff_ledger.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_tail_certificate.py
+MPLBACKEND=Agg PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/make_figures.py
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+\end{verbatim}
+
+\section{Conclusion}
+
+The RH-50 numerical Hardy mechanism can be made deterministic without a
+full Gramian, random probes, a finite-time truncation assumption, or a fitted
+tail.  A growing block horizon is sufficient.  The sparse/full question also
+has a clean answer: fixed eight sigma is safe for the archived computations
+but mathematically noncanonical, whereas an adaptive window gives the needed
+vanishing full-kernel perturbation.  The remaining gap is no longer an
+unspecified tail.  It is the concrete production-scale interval and
+factor-aware transfer of these exact formulas.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

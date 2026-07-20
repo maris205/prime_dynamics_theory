@@ -1,0 +1,30 @@
+{
+  "arithmetic_scope": "small abstract real matrix with interval input balls; this demonstrates the outward-rounded algorithm but is not the folded-Gaussian production matrix",
+  "block_power_frobenius_norm_upper_ball": "[0.0520260423997908201809253162 +/- 2.97e-29]",
+  "block_power_square_eigenvalue_balls": [
+    "[0.0021672595239806170408901931 +/- 3.80e-29] + [+/- 1.10e-29]j",
+    "[0.0003954275560867170154136302 +/- 5.74e-29] + [+/- 1.10e-29]j",
+    "[0.0001440220076874400101245631 +/- 2.54e-29] + [+/- 1.10e-29]j",
+    "[3.00580972988497e-14 +/- 1.77e-29] + [+/- 1.10e-29]j"
+  ],
+  "certified_block_contraction": true,
+  "contraction_margin_ball": "[0.99729329091221516783627276390 +/- 3.19e-30]",
+  "dimension": 4,
+  "evidence_level": "256-bit Arb interval execution",
+  "full_energy_squared_upper_ball": "[0.09311449642294048028519126458 +/- 8.26e-30]",
+  "full_energy_upper_ball": "[0.3051466801768298450009721071 +/- 3.23e-29]",
+  "horizon": 6,
+  "input_entry_radius": 1e-30,
+  "main_energy_squared_ball": "[0.09302909106861332014712090445 +/- 6.98e-30]",
+  "norm_note": "Frobenius interval uppers are used in the certificate and therefore also bound the required spectral norms; eigenvalue balls are diagnostic",
+  "production_matrix_interval_executed": false,
+  "source_rank": 2,
+  "status": "arb_outward_rounded_small_matrix_full_hardy_certificate",
+  "tail_energy_squared_upper_ball": "[8.5405354327160138070360129e-5 +/- 3.48e-31]",
+  "tail_residual_square_eigenvalue_balls": [
+    "[1.712876568045086348350804e-8 +/- 6.05e-33] + [+/- 9.11e-34]j",
+    "[9.4419499726457336577616e-10 +/- 1.45e-33] + [+/- 9.11e-34]j",
+    "[3.2240132749356875779482e-10 +/- 4.76e-33] + [+/- 9.11e-34]j",
+    "[4.2e-31 +/- 3.42e-33] + [+/- 9.11e-34]j"
+  ]
+}

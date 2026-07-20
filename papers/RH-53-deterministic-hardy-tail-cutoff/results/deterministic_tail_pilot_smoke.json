@@ -1,0 +1,157 @@
+{
+  "cutoff_multiples": [
+    5.0,
+    6.0,
+    8.0
+  ],
+  "evidence_level": "deterministic all-column Frobenius sums and analytic infinite-tail formulas evaluated in binary64; no Hutchinson probes; not interval validated",
+  "fine_resolution": 5.12,
+  "hardy_radius": 0.85,
+  "limitations": [
+    "All dense matrix and eigensolver quantities in this pilot are binary64 diagnostics.",
+    "The full-kernel comparison is formed only through dimension 128.",
+    "The analytic cutoff upper controls the Markov matrix before intrinsic factors are recomputed.",
+    "No uniform small-noise Hardy bound is inferred from five stored levels."
+  ],
+  "rows": [
+    {
+      "adaptive_cutoff": {
+        "declared_multiple": 5.0,
+        "two_norm_upper": 5.5746327114691755e-06
+      },
+      "cutoff_bounds": [
+        {
+          "declared_multiple": 5.0,
+          "effective_multiple": 5.46875,
+          "omitted_mass_upper": 4.965522022961893e-07,
+          "two_norm_upper": 5.5746327114691755e-06
+        },
+        {
+          "declared_multiple": 6.0,
+          "effective_multiple": 6.4453125,
+          "omitted_mass_upper": 1.3691504484954498e-09,
+          "two_norm_upper": 1.545339351782423e-08
+        },
+        {
+          "declared_multiple": 8.0,
+          "effective_multiple": 8.3984375,
+          "omitted_mass_upper": 6.220113176519656e-16,
+          "two_norm_upper": 7.081713754677301e-15
+        }
+      ],
+      "dense_full_kernel_comparison": {
+        "actual_frobenius_defect": 8.336889622284031e-17,
+        "actual_spectral_defect": 5.916427139097172e-17
+      },
+      "deterministic_main_identity_check": {
+        "left_absolute_difference": 0.0,
+        "right_absolute_difference": 0.0
+      },
+      "elapsed_seconds": 0.005847281077876687,
+      "fine_dimension": 32,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "block_power_norm": 0.02100198841006131,
+        "contraction_margin": 0.9995589164828237,
+        "deterministic_main_energy_squared": 0.8171110497342532,
+        "exact_dense_energy": 0.9039575455799415,
+        "full_energy_upper": 0.9041434204776749,
+        "horizon": 4,
+        "relative_energy_excess": 0.00020562348159192112,
+        "selected_infinite_tail_upper": 0.0003642750588163788,
+        "simple_infinite_tail_upper": 0.0003642750588163788,
+        "stein_infinite_tail_upper": 0.00047784448236845437
+      },
+      "right": {
+        "block_power_norm": 0.01983569113454479,
+        "contraction_margin": 0.9996065453572149,
+        "deterministic_main_energy_squared": 1.0052530921322016,
+        "exact_dense_energy": 1.0026461047246997,
+        "full_energy_upper": 1.0028918936230238,
+        "horizon": 4,
+        "relative_energy_excess": 0.0002451402315990503,
+        "selected_infinite_tail_upper": 0.0005390581625730153,
+        "simple_infinite_tail_upper": 0.0005390581625730153,
+        "stein_infinite_tail_upper": 0.0006538412917087999
+      },
+      "sigma": 0.16
+    },
+    {
+      "adaptive_cutoff": {
+        "declared_multiple": 5.0,
+        "two_norm_upper": 7.883721185808408e-06
+      },
+      "cutoff_bounds": [
+        {
+          "declared_multiple": 5.0,
+          "effective_multiple": 5.46875,
+          "omitted_mass_upper": 4.965522022961893e-07,
+          "two_norm_upper": 7.883721185808408e-06
+        },
+        {
+          "declared_multiple": 6.0,
+          "effective_multiple": 6.4453125,
+          "omitted_mass_upper": 1.3691504484954498e-09,
+          "two_norm_upper": 2.18543986975955e-08
+        },
+        {
+          "declared_multiple": 8.0,
+          "effective_multiple": 8.3984375,
+          "omitted_mass_upper": 6.220113176519656e-16,
+          "two_norm_upper": 1.0015055636708732e-14
+        }
+      ],
+      "dense_full_kernel_comparison": {
+        "actual_frobenius_defect": 2.2922962005829273e-16,
+        "actual_spectral_defect": 1.3608941341242822e-16
+      },
+      "deterministic_main_identity_check": {
+        "left_absolute_difference": 0.0,
+        "right_absolute_difference": 0.0
+      },
+      "elapsed_seconds": 0.012658781022764742,
+      "fine_dimension": 64,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "block_power_norm": 0.030509426786165642,
+        "contraction_margin": 0.9990691748771796,
+        "deterministic_main_energy_squared": 1.3514686147872763,
+        "exact_dense_energy": 1.1625610299508315,
+        "full_energy_upper": 1.1630730086330106,
+        "horizon": 8,
+        "relative_energy_excess": 0.00044038864970441516,
+        "selected_infinite_tail_upper": 0.0012702086233667197,
+        "simple_infinite_tail_upper": 0.0012702086233667197,
+        "stein_infinite_tail_upper": 0.0015507907119283008
+      },
+      "right": {
+        "block_power_norm": 0.027949461222966158,
+        "contraction_margin": 0.9992188276173459,
+        "deterministic_main_energy_squared": 1.6008308387295227,
+        "exact_dense_energy": 1.265280947576503,
+        "full_energy_upper": 1.2659052363649221,
+        "horizon": 8,
+        "relative_energy_excess": 0.000493399343137968,
+        "selected_infinite_tail_upper": 0.0016852287266069781,
+        "simple_infinite_tail_upper": 0.0016852287266069781,
+        "stein_infinite_tail_upper": 0.0021147910162208823
+      },
+      "sigma": 0.08
+    }
+  ],
+  "sources": {
+    "folded_gaussian_builder": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh50_pilot": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/results/two_pole_hardy_pilot.json",
+      "sha256": "f3acd1440fd22304b6079ba4b3a9595e7300d08f757b919ecbf629160ec14cdb"
+    },
+    "rh51_pilot": {
+      "path": "papers/RH-51-cyclic-rank-growing-horizon-stein/results/structured_stein_pilot.json",
+      "sha256": "508a63949bbddb02b10b209bf9ed1c0c5714bf6e83936e82a8ede92e600b4061"
+    }
+  },
+  "status": "binary64_deterministic_full_hardy_and_cutoff_mechanism_audit"
+}
