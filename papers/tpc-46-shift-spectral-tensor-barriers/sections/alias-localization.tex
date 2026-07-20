@@ -1,0 +1,407 @@
+\section{Alias folding, local geometry, and fixed-shift localization}
+\label{sec:tpc46-alias-localization}
+
+The frozen shift variable has a useful Fourier theory because the
+source--mask coefficient does not move with the intercept.  The two
+shift families available from the inherited TPC construction have
+opposite defects: the completed aliases range over a macroscopic
+determinant window but are sampled on a very sparse progression, whereas
+genuinely reconstructed local-shift packets can presently be placed in
+one ambient geometry only on a much shorter interval.  This section
+quantifies both statements and then records the sharp price of
+localizing a weighted average back to one prescribed shift.
+
+\subsection{The exact completed-alias fold}
+
+Let \(M_{\rm al}\) and \(\cI_B\) be the inherited completion parameters,
+so that
+\begin{equation}
+ M_{\rm al}=X^{399/400+o(1)},\qquad
+ c_k=h_0+kM_{\rm al},\qquad
+ K_B:=|\cI_B|=X^{1/400+o(1)}.
+ \label{eq:tpc46-alias-scales}
+\end{equation}
+For a determinant atom
+\[
+ x=(p,r,m,j)
+\]
+write
+\begin{equation}
+ \Delta(x):=pr-mj.
+ \label{eq:tpc46-determinant-value}
+\end{equation}
+The following identity is the exact form of alias folding; it uses no
+estimate.
+
+\begin{lemma}[Weighted alias selector]
+\label{lem:tpc46-weighted-alias-selector}
+For arbitrary weights \((\omega_k)_{k\in\cI_B}\) and any two integer
+determinant values \(\Delta,\Delta'\),
+\begin{align}
+ &\sum_{k\in\cI_B}\omega_k
+   \one_{\Delta=c_k}\one_{\Delta'=c_k}
+ \notag\\
+ &\qquad=
+ \one_{\Delta=\Delta'}
+ \one_{\Delta\equiv h_0\!\!\pmod {M_{\rm al}}}
+ \one_{(\Delta-h_0)/M_{\rm al}\in\cI_B}
+ \omega_{(\Delta-h_0)/M_{\rm al}}.
+ \label{eq:tpc46-weighted-alias-selector}
+\end{align}
+Consequently, for every finitely supported coefficient field \(A(x)\),
+\begin{align}
+ &\sum_{k\in\cI_B}\omega_k
+ \left|\sum_{\Delta(x)=c_k}A(x)\right|^2
+ \notag\\
+ &\quad=
+ \sum_{\substack{x,x'\\
+                  \Delta(x)=\Delta(x')\\
+                  \Delta(x)\equiv h_0\!\!\pmod {M_{\rm al}}\\
+                  (\Delta(x)-h_0)/M_{\rm al}\in\cI_B}}
+ \omega_{(\Delta(x)-h_0)/M_{\rm al}}
+ A(x)\overline{A(x')}.
+ \label{eq:tpc46-alias-equal-determinant}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+At most one \(k\) can satisfy \(\Delta=h_0+kM_{\rm al}\).  It contributes to the
+left side of \eqref{eq:tpc46-weighted-alias-selector} precisely when the
+two determinant values coincide, lie in the required residue class, and
+their common quotient belongs to \(\cI_B\).  Expanding the square proves
+\eqref{eq:tpc46-alias-equal-determinant}.
+\end{proof}
+
+Thus shift averaging does not turn the determinant form into its atomic
+diagonal.  It replaces the fixed equation by an equal-determinant
+quartic correlation, restricted to one sparse residue class.
+
+There is an equivalent frequency statement.  For a finitely supported
+sequence \(F:\Z\to\C\), define
+\begin{equation}
+ \widehat F(\alpha)=\sum_{c\in\Z}F(c)\e(-c\alpha),
+ \qquad \alpha\in\T,
+ \label{eq:tpc46-full-shift-transform}
+\end{equation}
+and sample \(G(k)=F(h_0+kM_{\rm al})\).  Then, for every
+\(\beta\in\T\),
+\begin{equation}
+ \boxed{
+ \widehat G(\beta)
+ =\frac1{M_{\rm al}}\sum_{a=0}^{M_{\rm al}-1}
+ \e\!\left(\frac{h_0(\beta+a)}{M_{\rm al}}\right)
+ \widehat F\!\left(\frac{\beta+a}{M_{\rm al}}\right).}
+ \label{eq:tpc46-exact-alias-fold}
+\end{equation}
+Indeed, insertion of \eqref{eq:tpc46-full-shift-transform} into the
+right side gives
+\[
+ \sum_cF(c)\e\!\left(\frac{(h_0-c)\beta}{M_{\rm al}}\right)
+ \frac1{M_{\rm al}}\sum_{a=0}^{M_{\rm al}-1}
+ \e\!\left(\frac{(h_0-c)a}{M_{\rm al}}\right),
+\]
+and the inner average selects \(c=h_0+kM_{\rm al}\), leaving
+\(\sum_kG(k)\e(-k\beta)\).  Multiplication by a finite alias window
+\(\omega_k\) convolves the right side of
+\eqref{eq:tpc46-exact-alias-fold} with \(\widehat\omega\).  It does not
+unfold the \(M_{\rm al}\) frequency branches.
+
+\begin{remark}[What the inherited alias family represents]
+\label{rem:tpc46-alias-not-physical-shifts}
+The common coefficient field in the alias family is exactly the one
+proved in TPC--42 and TPC--43
+\citep{WangTPC42,WangTPC43}.  Formula
+\eqref{eq:tpc46-exact-alias-fold} is therefore an unconditional identity
+for the completed determinant packet.  It is not the Fourier transform
+of a family of prime-pair problems reconstructed at shifts
+\(h_0+kM_{\rm al}\).  In particular, the row coprimality and fixed
+residue masks
+have not been recomputed at those integers.
+\end{remark}
+
+\subsection{Common embedding and a collision-free local range}
+
+We now vary the physical shift itself.  Let
+\begin{equation}
+ \mathfrak H_X\subset\Z\setminus\{0\},\qquad
+ H_*:=\max_{\nu\in\mathfrak H_X}|\nu-h_0|,
+ \qquad
+ \widetilde H_*:=|h_0|+H_*.
+ \label{eq:tpc46-local-shift-set}
+\end{equation}
+Choose ambient geometric row systems
+\(\cA_1^*,\cA_2^*\) containing every row in the relevant dyadic source
+windows, without imposing shift-dependent coprimality.  The actual
+packet at \(\nu\) is embedded by setting a row to zero unless
+\((d_\rho,\nu)=1\), and by setting each terminal atom to zero off its
+own support.  The same zero extension is made on the opposite-row output
+coordinate.  This places all finite packets in a common coordinate
+space; it does not make their coefficient values equal.
+
+For \(\rho=(\ell_\rho,d_\rho)\), define the local equality label
+\begin{equation}
+ u_{\rho,j}^{(\nu)}
+ :=d_\rho(\ell_\rho d_\rho j+\nu).
+ \label{eq:tpc46-local-label}
+\end{equation}
+Let \(D_+\) be the largest ambient source divisor and \(J_-\) the
+smallest orbit time.
+
+\begin{lemma}[Uniform local-shift label rigidity]
+\label{lem:tpc46-local-label-rigidity}
+Suppose
+\begin{equation}
+ \widetilde H_*D_+<J_-.
+ \label{eq:tpc46-local-rigidity-condition}
+\end{equation}
+For every fixed \((\nu,j)\in\mathfrak H_X\times\cJ\), two active rows
+in the same source system satisfy
+\begin{equation}
+ u_{\rho,j}^{(\nu)}=u_{\sigma,j}^{(\nu)}
+ \quad\Longrightarrow\quad \rho=\sigma.
+ \label{eq:tpc46-local-label-injective}
+\end{equation}
+At the TPC endpoint, every fixed \(\epsilon>0\) permits
+\begin{equation}
+ H_*\le
+ X^{29629/210000-\epsilon}.
+ \label{eq:tpc46-local-shift-exponent}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Writing \(\rho=(\ell,d)\) and \(\sigma=(\ell',e)\), equality of the
+labels gives
+\begin{equation}
+ j(\ell d^2-\ell'e^2)=\nu(e-d).
+ \label{eq:tpc46-local-collision-equation}
+\end{equation}
+If the integer in parentheses is nonzero, the left side has magnitude
+at least \(j\ge J_-\), whereas the right side has magnitude at most
+ \(\widetilde H_*D_+<J_-\).  Hence both sides vanish.  Since
+ \(\nu\ne0\), first
+\(d=e\), and then \(\ell=\ell'\).
+
+For the exponent, use
+\[
+ \frac{133}{400}=\frac{69825}{210000},
+ \qquad
+ \frac{10049}{52500}=\frac{40196}{210000}.
+\]
+Their difference is \(29629/210000\).  Since \(h_0\) is fixed,
+\(\widetilde H_*=H_*+O_{h_0}(1)\); the fixed \(\epsilon\) absorbs this
+constant and the endpoint \(o(1)\)-terms.
+\end{proof}
+
+Since \eqref{eq:tpc46-local-shift-exponent} is \(o(X)\), common target
+endpoints remain \(N_\pm^{\mathfrak H}=X^{1+o(1)}\) after harmless
+dyadic enlargement.  A common large-prime band can therefore be defined
+from the minimum and maximum over the entire local family.  The label
+rigidity lemma also shows that zero extension itself creates no
+same-coordinate collision.  It does not control the dependence of the
+coefficient field on \(\nu\).
+
+The support-only cofactor bound acquires an explicit dependence on the
+window.  Suppose a touched target has \(n=pr\), residual label \(s=dr\),
+and cofactor \(r\asymp R_0\).  For fixed \((\nu,j,s)\) and \(d\mid s\),
+the source rows solve
+\begin{equation}
+ rp-dj\ell=\nu.
+ \label{eq:tpc46-local-determinant-ladder}
+\end{equation}
+Putting \(g=(r,dj)\), one has \(g\mid\nu\).  The source-prime step in
+the integral ladder is \(r/g\), so a source window of length \(O(L_0)\)
+contains
+\[
+ O\!\left(1+\frac{gL_0}{r}\right)
+ \le O\!\left(1+\frac{\widetilde H_*L_0}{R_0}\right)
+\]
+parameters.  Summation over \(d\mid s\) proves the uniform bound
+\[
+ \rho_{R_0,\mathfrak H}
+ :=
+ \max_{\substack{\nu\in\mathfrak H_X,\ j\in\cJ,\ s}}
+ \#\left\{(d,\ell,p,r):
+ \begin{array}{c}
+ r\asymp R_0,\ dr=s,\\
+ rp-dj\ell=\nu,\ \text{all packet supports hold}
+ \end{array}\right\}
+\]
+\vspace{-4pt}
+\begin{equation}
+ \boxed{
+ \rho_{R_0,\mathfrak H}
+ \ll \tau(s)\left(1+\frac{\widetilde H_*L_0}{R_0}\right).}
+ \label{eq:tpc46-local-fiber-bound}
+\end{equation}
+At the balanced scale \(R_0\asymp L_0\), the presently available
+support-only bound therefore carries a polynomial factor for a
+polynomial local window.  TPC--36 contains a
+stronger primitivity statement at an earlier ultra-divisor interface,
+but the terminal equality interface imported through TPC--43--TPC--45
+does not state its preservation.  We consequently retain
+\eqref{eq:tpc46-local-fiber-bound}; setting \(g=1\) would require a new
+provenance lemma.
+
+There is a second uniformity issue.  For each fixed \(\nu\), let
+\(\mathfrak M_B(\nu;X)\) denote the least weighted projective mass in
+the analogue of
+\eqref{eq:tpc46-global-row-output-separation}.  The inherited statement
+is only
+\begin{equation}
+ \mathfrak M_B(\nu;X)\ll_{B,\nu}X^{o(1)}
+ \qquad\text{for every fixed \(\nu\)}.
+ \label{eq:tpc46-fixed-shift-projective-only}
+\end{equation}
+It does not imply
+\begin{equation}
+ \sup_{\nu\in\mathfrak H_X}\mathfrak M_B(\nu;X)=X^{o(1)}
+ \label{eq:tpc46-missing-uniform-projective}
+\end{equation}
+when \(\mathfrak H_X\) grows with \(X\).  The period
+\(|\nu|\) of the fixed residue factor, the eligible rows, and the
+source residue data all move with \(\nu\).  For a coherent weighted
+average, the corresponding sufficient condition is
+\[
+ \sum_{\nu\in\mathfrak H_X}
+ |\omega_\nu|\mathfrak M_B(\nu;X)=X^{o(1)}.
+\]
+Neither growing-family statement follows from TPC--36.  A fixed finite
+set of physical shifts is harmless, but it supplies no mesoscopic shift
+average.
+
+\subsection{Why the proved collision-free range misses the Poisson scale}
+
+The frozen determinant family has a clean shift transform.  For one
+scalar product-ready layer, put
+\begin{equation}
+ F(c)=
+ \sum_{p,r,m,j}
+ a(p)b(r)c_0(m)w(j/J)
+ \one_{pr-mj=c}.
+ \label{eq:tpc46-frozen-shift-sequence}
+\end{equation}
+Its full shift Fourier transform contains the exact orbit kernel
+\begin{align}
+ \sum_{j\in\Z}w(j/J)\e(mj\alpha)
+ &=J\sum_{k\in\Z}\widehat w\bigl(J(k-m\alpha)\bigr)
+ \notag\\
+ &=:K_m(\alpha).
+ \label{eq:tpc46-Poisson-kernel}
+\end{align}
+Suppose, for clarity, that \(\widehat w\) is supported in a fixed
+interval.  Since \(m\asymp Q\) and \(mJ\asymp X\), the zero Poisson
+packet has width \(X^{-1+o(1)}\), while the first nonzero sampling
+centers lie at distance \(Q^{-1+o(1)}\).  Thus the geometric gap is
+\begin{equation}
+ X^{-1+o(1)}
+ <\|\alpha\|_{\T}<
+ X^{-267/400+o(1)}.
+ \label{eq:tpc46-Poisson-gap-scales}
+\end{equation}
+
+To see the required shift length concretely, take a standard modulated
+weight
+\begin{equation}
+ W_{\mathsf H,\alpha_0}(c)
+ =V\!\left(\frac{c-c_0}{\mathsf H}\right)\e(\alpha_0c).
+ \label{eq:tpc46-modulated-shift-weight}
+\end{equation}
+Its Fourier multiplier has width \(\asymp\mathsf H^{-1}\) around
+\(\alpha_0\).  Placing a fixed-shape multiplier inside the gap near its
+coarse \(Q^{-1}\)-end requires
+\begin{equation}
+ \mathsf H\gg Q=X^{267/400+o(1)}.
+ \label{eq:tpc46-Poisson-required-window}
+\end{equation}
+In contrast, the presently proved collision-free local-label range
+reaches only
+\[
+ H_*\le X^{29629/210000-\epsilon}.
+\]
+The exponent deficit to the first Poisson scale is
+\begin{equation}
+ \frac{267}{400}-\frac{29629}{210000}
+ =\frac{110546}{210000}
+ =\frac{55273}{105000}>0.
+ \label{eq:tpc46-Poisson-local-deficit}
+\end{equation}
+Hence the dense actual local family, under this rigidity argument, does
+not reach the scale on which the first sampling aliases can be
+spectrally resolved by this route.
+The completed-alias family spans a determinant interval of order \(X\),
+but its spacing is \(M_{\rm al}=X^{399/400+o(1)}\); the exact fold
+\eqref{eq:tpc46-exact-alias-fold} shows why macroscopic span does not
+replace dense sampling.  The frozen completed family is the only one of
+the three current objects that simultaneously permits dense shifts on
+the Poisson scale and retains one coefficient field, and it is not a
+family of actual reconstructed TPC packets.
+
+\subsection{Weighted grouping and the sharp localization price}
+
+Shift averaging also does not improve the support norm merely by
+renormalizing numerator and diagonal with the same weights.
+\Cref{thm:tpc46-weighted-grouping-norm} proves that the exact grouping
+norm remains the largest realized fiber: the common weight cancels on
+each block.  An analytic averaged estimate may of course beat this
+support norm by using coefficient cancellation.  A separate loss
+appears when that average is localized back to one prescribed shift.
+
+\begin{lemma}[Sharp weighted localization cost]
+\label{lem:tpc46-weighted-localization}
+Let \(E_\nu\ge0\), let \(\omega_\nu\ge0\), and suppose
+\(\omega_{\nu_0}>0\).  Define
+\begin{equation}
+ \operatorname{Av}_\omega E
+ :=\frac{\sum_\nu\omega_\nu E_\nu}
+         {\sum_\nu\omega_\nu}.
+ \label{eq:tpc46-weighted-average}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ E_{\nu_0}
+ \le
+ \mathcal L_\omega(\nu_0)\operatorname{Av}_\omega E,
+ \qquad
+ \mathcal L_\omega(\nu_0)
+ :=\frac{\sum_\nu\omega_\nu}{\omega_{\nu_0}}.}
+ \label{eq:tpc46-localization-cost}
+\end{equation}
+The constant is sharp for arbitrary nonnegative data.
+\end{lemma}
+
+\begin{proof}
+The term \(\omega_{\nu_0}E_{\nu_0}\) is bounded by the full weighted
+sum, which proves the inequality.  Equality holds when every
+\(E_\nu\) except \(E_{\nu_0}\) is zero.
+\end{proof}
+
+For \(K\) essentially equal weights,
+\(\mathcal L_\omega(\nu_0)\asymp K\), independently of whether the
+weights are normalized to have total mass one.  In particular, a
+fixed-shape nonnegative smooth weight spread across \(K_B\) inherited
+aliases, with central value bounded below, has
+\begin{equation}
+ \mathcal L_\omega(0)=X^{1/400+o(1)}
+ \label{eq:tpc46-alias-localization-loss}
+\end{equation}
+when its central value is bounded below.  This is precisely the size of
+the TPC endpoint allowance \(K_B\).  Therefore an alias-averaged
+mean-square theorem at its averaged atomic scale does not, by positivity
+alone, yield the physical \(k=0\) bound at the same scale.
+
+\begin{remark}[Claim boundary]
+\label{rem:tpc46-alias-localization-boundary}
+The identities above prove four different facts: exact folding of the
+completed aliases, a collision-free label range inside the common
+zero-extended geometry, a strict mismatch between that rigidity range
+and the Poisson resolution scale, and the sharp positivity cost of returning
+from an average to one shift.  They do not show that localization is
+impossible.  A maximal theorem, shift regularity, an amplifier, or a
+coefficient-specific comparison between neighboring shifts could
+reduce the loss.  None is supplied by TPC--36, TPC--42, TPC--43, or
+TPC--45.  Accordingly, no averaged or frozen-family result in this
+paper is asserted to close the physical fixed-shift TPC estimate, break
+the parity barrier, or imply the twin-prime conjecture.
+\end{remark}

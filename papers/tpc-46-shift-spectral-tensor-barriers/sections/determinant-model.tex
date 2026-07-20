@@ -1,0 +1,114 @@
+\section{A completed determinant model}
+\label{sec:tpc46-model}
+
+The analytic statements are most transparent for a completed family in
+which the determinant value ranges over every integer.  This section
+defines that family before any TPC specialization.
+
+Let
+\(
+ \cP,\cR,\cM,\cJ\subset\N
+\)
+be finite sets.  The letter \(p\) is only an index in the abstract
+model; primality will be imposed in the TPC application.  For
+coefficient sequences \(a,b,c,\eta\), define
+\begin{equation}
+ \cT_h(a,b,c,\eta)
+ :=\sum_{\substack{p\in\cP,r\in\cR,m\in\cM,j\in\cJ\\
+                    pr-mj=h}}
+ a_p b_r c_m\eta_j,
+ \qquad h\in\Z.
+ \label{eq:tpc46-scalar-packet}
+\end{equation}
+The corresponding Cartesian tensor energy and fixed-shift atomic
+diagonal are
+\begin{align}
+ \cD_\otimes
+ &:=
+ \left(\sum_{p,r}|a_pb_r|^2\right)
+ \left(\sum_{m,j}|c_m\eta_j|^2\right),
+ \label{eq:tpc46-tensor-energy}\\
+ \Delta_h
+ &:=
+ \sum_{pr-mj=h}|a_pb_rc_m\eta_j|^2.
+ \label{eq:tpc46-atomic-diagonal}
+\end{align}
+Every Cartesian tuple has one and only one determinant value, and hence
+\begin{equation}
+ \boxed{\sum_{h\in\Z}\Delta_h=\cD_\otimes.}
+ \label{eq:tpc46-diagonal-disintegration}
+\end{equation}
+This elementary identity is the normalization divide on which several
+later conclusions turn.
+
+For Hilbert-valued spectral statements it is useful to allow an
+arbitrary coefficient on the three arithmetic variables.  Let
+\(\Hh\) be a complex Hilbert space, let
+\(z_{p,r,m}\in\C\), and let
+\(v_{p,r,m}\in\Hh\).  For a profile \(w\) on \(\R\), put
+\begin{equation}
+ F_h
+ :=\sum_{p,r,m}\sum_{j\in\Z}
+ z_{p,r,m}w(j/J)v_{p,r,m}
+ \one_{pr-mj=h}.
+ \label{eq:tpc46-Hilbert-packet}
+\end{equation}
+The arithmetic supports in \(p,r,m\) remain finite, while the Schwartz
+or compactly supported profile makes the \(j\)-sum absolutely
+convergent.  The essential hypothesis in
+\eqref{eq:tpc46-Hilbert-packet} is that the Hilbert vector is independent
+of \(j\).  An arbitrary vector \(v_{p,r,m,j}\) can encode a different
+orthogonal output at every orbit time and need not have any orbit
+spectral gap.
+
+When a multiplicative residual label is retained, fix a map
+\begin{equation}
+ d:\cM\longrightarrow\N
+ \label{eq:tpc46-d-map}
+\end{equation}
+and define
+\begin{equation}
+ F(h,s)
+ :=\sum_{\substack{pr-mj=h\\d(m)r=s}}
+ a_pb_rc_m\eta_j.
+ \label{eq:tpc46-residual-packet}
+\end{equation}
+At the physical TPC equality alias, \(d(m)\) is the source divisor in
+the unique row \(m=\ell d(m)\), and coprimality gives the residual label
+\(s=d(m)r\).  For nonzero completed aliases, the squarefree kernel may
+replace this literal product; that distinction is treated in
+\cref{sec:tpc46-alias-localization}.
+
+Finally define the product-fiber multiplicities
+\begin{align}
+ \rho_{\cP,\cR}
+ &:=
+ \max_n\#\{(p,r)\in\cP\times\cR:pr=n\},
+ \label{eq:tpc46-rho-pr}\\
+ \rho_{\cM,\cJ}
+ &:=
+ \max_n\#\{(m,j)\in\cM\times\cJ:mj=n\}.
+ \label{eq:tpc46-rho-mj}
+\end{align}
+For polynomially bounded integer supports,
+\begin{equation}
+ \rho_{\cM,\cJ}
+ \le\max_{n\le X^{O(1)}}\tau(n)=X^{o(1)}.
+ \label{eq:tpc46-divisor-multiplicity}
+\end{equation}
+
+At the optimized TPC endpoint the four principal lengths are
+\begin{equation}
+ P R=X^{1+o(1)},
+ \qquad
+ M=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)},
+ \qquad
+ MJ=X^{1+o(1)}.
+ \label{eq:tpc46-endpoint-boxes}
+\end{equation}
+The notation \(M\) in
+\eqref{eq:tpc46-endpoint-boxes} is the source-variable length.  The
+triple-prime alias modulus will always be written
+\(M_{\rm al}\) to prevent a collision of notation.

@@ -1,0 +1,526 @@
+\section{The exact TPC determinant interface}
+\label{sec:tpc46-interface}
+
+This section records the coefficient packet to which the later scalar
+and tensor arguments are applied.  There are three distinct objects in
+play: the physical equality column at one fixed shift, the completed
+alias family inherited from the determinant completion, and a family of
+TPC packets reconstructed at genuinely different physical shifts.  The
+first two share one source--mask coefficient field.  The third generally
+does not.  Keeping this distinction explicit prevents a statement about
+an auxiliary completion from being read as an averaged prime-pair
+statement.
+
+\subsection{Rows, outputs, and the physical terminal column}
+
+Fix a nonzero physical shift \(h_0\in\Z\).  Let \(\cA_1\) and
+\(\cA_2\) be the two inherited source-row systems.  A row
+\(\rho\in\cA_s\) has the form
+\begin{equation}
+ \rho=(\ell_\rho,d_\rho),\qquad
+ m_\rho=\ell_\rho d_\rho\asymp Q,\qquad
+ \ell_\rho\asymp L_0,\qquad d_\rho\asymp D_0,
+ \label{eq:tpc46-row}
+\end{equation}
+where \(\ell_\rho\) is prime, \(d_\rho\) is squarefree, and the integer
+\(m_\rho\) determines \(\rho\).  The orbit set \(\cJ\) consists of
+\(O(J)\) positive integers with \(j\asymp J\).  At the endpoint,
+\begin{align}
+ Q&=X^{267/400+o(1)},
+ &J&=X^{133/400+o(1)},
+ &QJ&\asymp X,
+ \label{eq:tpc46-QJ-scales}\\
+ D_0&=X^{10049/52500+o(1)},
+ &L_0&=X^{99979/210000+o(1)}.
+ \label{eq:tpc46-DL-scales}
+\end{align}
+The two output sets and their common Hilbert space are
+\begin{equation}
+ \cI_L=\{(L,\gamma,j):\gamma\in\cA_2, j\in\cJ\},
+ \qquad
+ \cI_R=\{(R,\alpha,j):\alpha\in\cA_1, j\in\cJ\},
+ \qquad
+ \Hh_{\rm out}=\ell^2(\cI_L\sqcup\cI_R).
+ \label{eq:tpc46-output-space}
+\end{equation}
+
+Write the physical source coefficients as
+\begin{equation}
+ \gamma_\rho^{(s)}=\mu(d_\rho)\gamma_\rho^{\circ,(s)},
+ \qquad s=1,2.
+ \label{eq:tpc46-source-strip}
+\end{equation}
+Thus \(\gamma^{\circ,(s)}\) contains the source logarithm, smooth
+cutoffs, and fixed residue data, but not the source M\"obius sign.  Let
+\(\mathfrak A_{\alpha,\gamma}^{\rm act}(j)\) be the actual joint
+source--mask multiplier and put
+\begin{equation}
+ \Lambda(n):=(\log n)\Phi_0(n/X).
+ \label{eq:tpc46-Lambda}
+\end{equation}
+As usual, every terminal expression is set equal to zero outside the
+declared positive support.  The physical left and right equality
+columns are
+\begin{align}
+ [\mathscr T_{h_0}^{L}]_{\gamma,j}
+ &:=-\sum_{\alpha\in\cA_1}
+ \gamma_\alpha^{(1)}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ \mu(n_{\alpha,j})\Lambda(n_{\alpha,j}),
+ \label{eq:tpc46-physical-left}\\
+ [\mathscr T_{h_0}^{R}]_{\alpha,j}
+ &:=-\sum_{\gamma\in\cA_2}
+ \gamma_\gamma^{(2)}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ \mu(n_{\gamma,j})\Lambda(n_{\gamma,j}),
+ \label{eq:tpc46-physical-right}
+\end{align}
+where
+\begin{equation}
+ n_{\rho,j}=m_\rho j+h_0.
+ \label{eq:tpc46-physical-target}
+\end{equation}
+These formulas are the all-minus specialization of the TPC--43 prime
+sign model and agree with the stripped coefficients used in TPC--45
+\citep{WangTPC43,WangTPC45}.
+
+Work on one nonempty dyadic terminal block
+\begin{equation}
+ N_-\le n_{\rho,j}\le N_+,
+ \qquad N_-\asymp N_+\asymp X.
+ \label{eq:tpc46-terminal-block}
+\end{equation}
+For \(R_0<N_-/\sqrt{N_+}\), define a common large-prime band
+\begin{equation}
+ \cP_{R_0}^{\sharp}
+ :=\left\{p\in\mathbb P:\sqrt{N_+}<p\le \frac{N_-}{R_0}\right\}.
+ \label{eq:tpc46-large-prime-band}
+\end{equation}
+The subscript \(R_0\) denotes a cofactor threshold and is unrelated to
+the right output symbol in \(\cI_R\).
+
+\begin{proposition}[Exact physical large-prime determinant sector]
+\label{prop:tpc46-physical-determinant-sector}
+Let \(\mathscr T_{h_0,\sharp}^{L/R}\) denote the part of
+\(\mathscr T_{h_0}^{L/R}\) for which the terminal target is divisible
+by a prime in \(\cP_{R_0}^{\sharp}\).  Then
+\begin{align}
+ [\mathscr T_{h_0,\sharp}^{L}]_{\gamma,j}
+ &={}
+ \sum_{\substack{p\in\cP_{R_0}^{\sharp},\ r,\\
+                   \rho=(\ell,d)\in\cA_1\\
+                   pr-\ell dj=h_0}}
+ \gamma_\rho^{(1)}
+ \mathfrak A_{\rho,\gamma}^{\rm act}(j)
+ \mu(r)\Lambda(pr),
+ \label{eq:tpc46-left-determinant-sector}\\
+ [\mathscr T_{h_0,\sharp}^{R}]_{\alpha,j}
+ &={}
+ \sum_{\substack{p\in\cP_{R_0}^{\sharp},\ r,\\
+                   \rho=(\ell,d)\in\cA_2\\
+                   pr-\ell dj=h_0}}
+ \gamma_\rho^{(2)}
+ \mathfrak A_{\alpha,\rho}^{\rm act}(j)
+ \mu(r)\Lambda(pr).
+ \label{eq:tpc46-right-determinant-sector}
+\end{align}
+Every terminal target occurs at most once in either sum, and every
+occurring cofactor satisfies
+\begin{equation}
+ R_0\le r<\sqrt{N_+}.
+ \label{eq:tpc46-r-range}
+\end{equation}
+In particular, the three nonsmooth arithmetic roles in the collapsed
+equation
+\begin{equation}
+ pr-mj=h_0
+ \label{eq:tpc46-three-slot-equation}
+\end{equation}
+are the prime variable \(p\), the cofactor weight \(\mu(r)\), and the
+actual source--mask coefficient on the row variable \(m\).  The orbit
+variable \(j\) is smooth apart from the fixed residue selector recorded
+in \cref{prop:tpc46-row-output-projective}.
+\end{proposition}
+
+\begin{proof}
+If \(p>\sqrt{N_+}\) divides a target \(n\le N_+\), it is the unique
+prime from \(\cP_{R_0}^{\sharp}\) dividing that target.  Write
+\(n=pr\).  The upper endpoint in
+\eqref{eq:tpc46-large-prime-band} gives \(r\ge R_0\), and
+\(p>\sqrt{N_+}\) gives \(r<\sqrt{N_+}\).  Also \(p>r\), so
+\(p\nmid r\).  Consequently
+\begin{equation}
+ -\mu(pr)=\mu(r),
+ \label{eq:tpc46-target-sign-descent}
+\end{equation}
+including the case in which either side vanishes.  Substitution into
+\cref{eq:tpc46-physical-left,eq:tpc46-physical-right} proves the two
+formulas.  Finally \(m=\ell d\) determines its source row, so the pair
+\((\ell,d)\) may be collapsed to one sequence on \(m\) without losing
+any coefficient data.
+\end{proof}
+
+The sign in \eqref{eq:tpc46-target-sign-descent} is worth fixing: the
+source coefficient \(\gamma^{(s)}\) already contains \(\mu(d)\).
+Thus the determinant sector contains the two physical M\"obius roles
+\(\mu(d)\) and \(\mu(r)\), while the large prime contributes the
+minus sign that cancels the minus in the terminal atom.
+
+\subsection{The inherited projective separation}
+
+The actual multiplier has the fixed-shift structure
+\begin{equation}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ =\mathfrak m_{\rm act}(\alpha,\gamma)
+   \Xi_{\alpha,\gamma}(j)
+   \cW_{\alpha,\gamma}(j/J),
+ \label{eq:tpc46-actual-multiplier}
+\end{equation}
+where, for \(\alpha=(\ell_\alpha,d_\alpha)\) and
+\(\gamma=(\ell_\gamma,d_\gamma)\),
+\begin{equation}
+ \mathfrak m_{\rm act}(\alpha,\gamma)
+ =\one_{\ell_\alpha\ne\ell_\gamma}
+  \one_{|m_\alpha-m_\gamma|>\Delta_X}
+ \one_{(d_\alpha,d_\gamma)\le G_X}.
+ \label{eq:tpc46-static-mask}
+\end{equation}
+Here \(\Delta_X\) and \(G_X\) are the inherited row-separation and
+gcd thresholds from TPC--36.  We write \(\mathfrak p_\infty\) for its
+projective tensor norm and
+\[
+ \omega_*:=\max\{\omega(d):d\text{ occurs in a physical row}\}.
+\]
+Only the following displayed \(X^{o(1)}\) estimate for these inherited
+objects is used below.
+TPC--36 proves that the static mask has bounded projective norm
+\begin{equation}
+ \mathfrak p_\infty(\mathfrak m_{\rm act})
+ \ll \log(2Q)(3+2\sqrt2)^{\omega_*}=X^{o(1)},
+ \label{eq:tpc46-global-projective-cost}
+\end{equation}
+and that the fixed residue and smooth factors may be included without a
+power loss \citep{WangTPC36}.  We use the following direct consequence.
+
+\begin{proposition}[Actual row--output projective separation]
+\label{prop:tpc46-row-output-projective}
+Let \(H_0=|h_0|\).  For every fixed \(B\ge0\), the left coefficient has
+an exact representation
+\begin{align}
+ &\gamma_\alpha^{(1)}
+  \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ \notag\\
+ &\quad={}
+ \sum_{a\bmod H_0}\one_{j\equiv a\!\!\pmod{H_0}}
+ \int_{\Omega_a}
+ c_{\omega,a}(m_\alpha)
+ q_{\omega,a}(\gamma)
+ \phi_{\omega,a}(j/J)\,d\nu_a(\omega),
+ \label{eq:tpc46-global-row-output-separation}
+\end{align}
+where \(c_{\omega,a}\) is supported on the physical row integers and
+\begin{equation}
+ \sum_{a\bmod H_0}\int_{\Omega_a}
+ \|c_{\omega,a}\|_\infty
+ \|q_{\omega,a}\|_\infty
+ \|\phi_{\omega,a}\|_{C^B}
+ \,d|\nu_a|(\omega)
+ \ll_{B,h_0}X^{o(1)}.
+ \label{eq:tpc46-global-row-output-mass}
+\end{equation}
+The right coefficient has the symmetric representation.  If the source
+integer must instead be opened as \(m=\ell d\), then for every fixed
+opposite row one has an exact expansion
+\begin{equation}
+ \gamma_{(\ell,d)}^{(1)}
+ \mathfrak A_{(\ell,d),\gamma}^{\rm act}(j)
+ =\sum_{a\bmod H_0}\one_{j\equiv a\!\!\pmod{H_0}}
+  \int\sum_{\varrho}
+  b_{\varrho}(\ell)f_{\varrho}(d)
+  \eta_{\varrho}(j/J)\,d\nu,
+ \label{eq:tpc46-fixed-column-separation}
+\end{equation}
+whose corresponding weighted signed mass is \(X^{o(1)}\).  The static
+Ferrers part of this latter cost is \(O(1+\log(2D_0))\), although the
+formal number of layers can be \(O(D_0)\).
+\end{proposition}
+
+\begin{proof}
+TPC--36 gives a global separation of
+\(\mathfrak A^{\rm act}\) into a source-row factor, an opposite-row
+factor, and a smooth orbit factor with the cost in
+\eqref{eq:tpc46-global-projective-cost}.  Multiply the source-row
+factor by \(\gamma_\alpha^{(1)}\).  Its pointwise size is
+\(X^{o(1)}\), because the only growing elementary factor is a source
+logarithm.  Source separation permits the resulting function of
+\(\alpha\) to be written as a function of \(m_\alpha\).  This proves
+\cref{eq:tpc46-global-row-output-separation,eq:tpc46-global-row-output-mass}.
+The last statement is the fixed-column Ferrers separation of TPC--36,
+including its physical row and orbit weights.
+\end{proof}
+
+Because \(\Phi_0\) is a fixed smooth terminal cutoff, Mellin inversion
+also separates the target product.  We use the convention
+\begin{equation}
+ \widetilde\Phi_0(t)
+ :=\int_0^\infty\Phi_0(x)x^{-it}\,\frac{dx}{x},
+ \qquad
+ \Phi_0(x)=\frac1{2\pi}\int_{\R}
+ \widetilde\Phi_0(t)x^{it}\,dt.
+ \label{eq:tpc46-Mellin-convention}
+\end{equation}
+If
+\begin{equation}
+ d\sigma(t)=\frac1{2\pi}\widetilde\Phi_0(t)X^{-it}\,dt,
+ \label{eq:tpc46-Mellin-measure}
+\end{equation}
+then
+\begin{equation}
+ \Lambda(pr)
+ =\int_{\R}
+ \left((\log p)p^{it}r^{it}
+       +p^{it}(\log r)r^{it}\right)d\sigma(t).
+ \label{eq:tpc46-target-Mellin-separation}
+\end{equation}
+Every polynomially weighted variation of \(\sigma\) is finite.  The
+two logarithms cost \(O(\log X)=X^{o(1)}\) on the terminal support.
+
+\begin{corollary}[Exact product-ready determinant layers]
+\label{cor:tpc46-product-ready-layers}
+Each coordinate in
+\cref{eq:tpc46-left-determinant-sector,eq:tpc46-right-determinant-sector}
+ is an \(X^{o(1)}\)-projective superposition of layers of the form
+\begin{equation}
+ q_\omega(\gamma)
+ \one_{j\equiv a\!\!\pmod{H_0}}
+ \sum_{\substack{p,r,m\\pr-mj=h_0}}
+ a_\omega(p)b_\omega(r)c_\omega(m)
+ \phi_\omega(j/J),
+ \label{eq:tpc46-three-coefficient-layer}
+\end{equation}
+where the prime restriction is in \(a_\omega\), the factor \(\mu(r)\)
+is in \(b_\omega\), and the literal source and mask coefficient is in
+\(c_\omega\).  Equivalently, after opening \(m=\ell d\), the layers
+have the form
+\begin{equation}
+ \one_{j\equiv a\!\!\pmod{H_0}}
+ \sum_{\substack{p,r,\ell,d\\pr-dj\ell=h_0}}
+ a_\omega(p)b_\omega(r)
+ c_\omega(\ell)f_\omega(d)\phi_\omega(j/J).
+ \label{eq:tpc46-opened-determinant-layer}
+\end{equation}
+No arithmetic coefficient has been replaced by a smooth cutoff in
+either identity.
+\end{corollary}
+
+The residue selector is fixed because \(h_0\) is fixed, but it is not a
+smooth function of \(j/J\).  It has the exact finite Fourier expansion
+\begin{equation}
+ \one_{j\equiv a\!\!\pmod{H_0}}
+ =\frac1{H_0}\sum_{\tau=0}^{H_0-1}
+ \e\!\left(\frac{\tau(j-a)}{H_0}\right).
+ \label{eq:tpc46-residue-selector-Fourier}
+\end{equation}
+Thus every product-ready layer is a finite, \(O_{h_0}(1)\)-mass
+superposition of fixed modulations of a smooth orbit profile.  It is
+\emph{progression-smooth}, not literally an unmodulated smooth
+sequence.  The progression form of the shift-spectral theorem is
+proved in \cref{cor:tpc46-progression-shift-gap}: for a band-limited
+profile its exponent range is unchanged because \(H_0\) is fixed.
+The selector alone does not make the actual profile band-limited, and
+it does not regularize the pulled-back dual field below.
+
+This corollary is an interface theorem, not a scalar fixed-shift
+estimate.  In particular, the coherent-complementary-factor theorem in
+TPC--36 leaves a character-level quantity of the form
+\begin{equation}
+ \left|\sum_r w(r)\widehat R_r(\chi)\right|^2
+ \label{eq:tpc46-inherited-coherent-gate}
+\end{equation}
+and proves that Cauchy--Schwarz in the coherent variable can be sharp.
+Thus product-ready separation does not itself close even the scalar
+fixed-\(h_0\) determinant sum.
+
+\subsection{Residual duality and the tensor coefficient}
+
+At the physical equality alias, the terminal support has
+\((d_\rho,n_{\rho,j})=1\).  If \(n_{\rho,j}=pr\) with
+\(p>\sqrt{N_+}\), then \(d_\rho,p,r\) are pairwise coprime and the
+large-prime deletion leaves the residual label
+\begin{equation}
+ s=d_\rho r.
+ \label{eq:tpc46-physical-residual-label}
+\end{equation}
+After deleting zero atoms, every occurring \(r\) is squarefree; since
+\((d_\rho,r)=1\) and \(d_\rho\) is squarefree, every occurring
+residual label \(s=d_\rho r\) is squarefree.  Let
+\(\Hh_{\rm res}\) be the residual Hilbert space with coordinates
+\((i,s)\), where \(i\in\cI_L\sqcup\cI_R\) and \(s\) ranges over these
+supported squarefree labels.  In the notation of
+TPC--45, define \(x_p\in\Hh_{\rm res}\) on the present large-prime
+sector by the same coordinate rule: its \((i,s)\)-entry is the stripped
+atom with full label \(sp\), and is zero when that atom is absent.  This
+definition does not require the more restrictive very-high cutoff used
+for the singleton-incidence theorem there.  Let
+\begin{equation}
+ (Uy)_{i,s}=\mu(s)y_{i,s}.
+ \label{eq:tpc46-residual-unitary}
+\end{equation}
+Thus \(|\mu(s)|=1\) on the coordinate set, so \(U\) is unitary, and
+\(\|\sum_p x_p\|=\|\sum_pUx_p\|\).
+
+\begin{proposition}[Exact pulled-back dual tensor]
+\label{prop:tpc46-dual-tensor}
+For \(z=(z^L,z^R)\in\Hh_{\rm res}\), the left part of the dual pairing
+is
+\begin{align}
+ \left\langle\sum_{p\in\cP_{R_0}^{\sharp}}Ux_p,z\right\rangle_L
+ ={}-&\sum_{\substack{\gamma,j,\rho=(\ell,d)\in\cA_1,\\
+                       p\in\cP_{R_0}^{\sharp},r\\
+                       pr-dj\ell=h_0}}
+ \gamma_\rho^{(1)}
+ \mathfrak A_{\rho,\gamma}^{\rm act}(j)
+ \Lambda(pr)\mu(r)
+ \overline{z^L_{\gamma,j,dr}}.
+ \label{eq:tpc46-left-dual-tensor}
+\end{align}
+The right part is
+\begin{align}
+ \left\langle\sum_{p\in\cP_{R_0}^{\sharp}}Ux_p,z\right\rangle_R
+ ={}-&\sum_{\substack{\alpha,j,\rho=(\ell,d)\in\cA_2,\\
+                       p\in\cP_{R_0}^{\sharp},r\\
+                       pr-dj\ell=h_0}}
+ \gamma_\rho^{(2)}
+ \mathfrak A_{\alpha,\rho}^{\rm act}(j)
+ \Lambda(pr)\mu(r)
+ \overline{z^R_{\alpha,j,dr}}.
+ \label{eq:tpc46-right-dual-tensor}
+\end{align}
+Consequently, after the projective separation in
+\cref{cor:tpc46-product-ready-layers}, the new multiplier is precisely
+\begin{equation}
+ q_\omega(\gamma)\phi_\omega(j/J)
+ \one_{j\equiv a\!\!\pmod{H_0}}
+ \overline{z^L_{\gamma,j,d(m)r}}
+ \label{eq:tpc46-pulled-back-z}
+\end{equation}
+on the left, with the symmetric right-hand expression.  It is a joint
+coefficient in the output row, \(j\), the source divisor \(d(m)\), and
+the cofactor \(r\).
+\end{proposition}
+
+\begin{proof}
+For a left atom with \(n=pr\), TPC--45 gives the stripped coefficient
+\begin{equation}
+ B^L_{\rho;\gamma,j}
+ =-\gamma_\rho^{\circ,(1)}
+  \mathfrak A_{\rho,\gamma}^{\rm act}(j)\Lambda(pr).
+ \label{eq:tpc46-stripped-B}
+\end{equation}
+The residual coordinate is \(s=dr\).  Multiplication by \(U\) inserts
+\(\mu(s)=\mu(d)\mu(r)\).  Combining \(\mu(d)\) with
+\(\gamma^{\circ,(1)}\) gives \(\gamma^{(1)}\), and pairing with \(z\)
+gives \eqref{eq:tpc46-left-dual-tensor}.  The right calculation is
+identical after exchanging the two row systems.  Substitution of
+\eqref{eq:tpc46-global-row-output-separation} yields
+\eqref{eq:tpc46-pulled-back-z}.
+\end{proof}
+
+The distinction from the scalar layer
+\eqref{eq:tpc46-three-coefficient-layer} is exact.  An arbitrary unit
+vector \(z\) need not factor in \((\gamma,j,dr)\).  Therefore
+\eqref{eq:tpc46-pulled-back-z} cannot be absorbed into the \(r\)-slot,
+the \(m\)-slot, or the smooth \(j\)-slot using the projective theorem
+of TPC--36.  Expanding \(z\) into coordinate delta functions gives only
+a crude illustration of the possible cost.  For one fixed opposite row
+there are at most
+\begin{equation}
+ X^{o(1)}QJ=X^{1+o(1)}
+ \label{eq:tpc46-fixed-output-active-count}
+\end{equation}
+active \((j,s)\)-coordinates, so this expansion may cost
+\(X^{1/2+o(1)}\|z\|_2\).  Globally the number of atomic coordinates is
+at most
+\begin{equation}
+ X^{o(1)}Q^2J=X^{667/400+o(1)},
+ \label{eq:tpc46-global-active-count}
+\end{equation}
+whose square-root scale is \(X^{667/800+o(1)}\).  These are crude upper
+bounds for one decomposition, not lower bounds or impossibility
+theorems.  They show only that no \(X^{o(1)}\) tensor lift follows from
+the inherited projective norm and \(\|z\|_2=1\).  The desired allowance
+is merely \(K_B=X^{1/400+o(1)}\).
+
+\subsection{Three shift families}
+
+We finish by fixing terminology used later.
+
+\begin{definition}[Inherited completed-alias family]
+\label{def:tpc46-completed-alias-family}
+Let \(M_{\rm al}\) be the triple-prime completion modulus of TPC--42 and put
+\begin{equation}
+ c_k=h_0+kM_{\rm al},\qquad k\in\cI_B.
+ \label{eq:tpc46-completed-intercepts}
+\end{equation}
+The completed-alias column replaces \(n_{\rho,j}\) by
+\(n_{\rho,j,k}=m_\rho j+c_k\), with zero extension off the terminal
+support, while retaining the same row systems and the same coefficient
+\(\gamma_\rho^{(s)}\mathfrak A^{\rm act}(j)\) for every \(k\).
+\end{definition}
+
+The coefficient independence in this definition is an inherited fact,
+not an assumption \citep{WangTPC42,WangTPC43}.  However, for \(k\ne0\)
+one may have
+\begin{equation}
+ g_{\rho,j,k}=(d_\rho,n_{\rho,j,k})=(d_\rho,c_k)>1.
+ \label{eq:tpc46-alias-gcd}
+\end{equation}
+If \(n_{\rho,j,k}=pr\) is squarefree and \(p>d_\rho\), its fused Walsh
+label is
+\begin{equation}
+ p\,\sfk(d_\rho r),
+ \qquad
+ \sfk(d_\rho r)=\frac{d_\rho r}{(d_\rho,r)^2},
+ \label{eq:tpc46-alias-residual-label}
+\end{equation}
+not necessarily \(p d_\rho r\).  Accordingly, the alias-averaged dual
+coefficient is
+\begin{equation}
+ z^L_{k,\gamma,j,\sfk(d r)}
+ \label{eq:tpc46-alias-dual-coordinate}
+\end{equation}
+rather than the equality-alias coefficient
+\(z^L_{\gamma,j,dr}\).
+
+\begin{definition}[Frozen completed family]
+\label{def:tpc46-frozen-family}
+For an auxiliary integer \(c\), the frozen completed column keeps the
+physical \(h_0\) row systems and source--mask coefficient field, but
+replaces the determinant equation by
+\begin{equation}
+ pr-mj=c.
+ \label{eq:tpc46-frozen-equation}
+\end{equation}
+All terminal factors are evaluated at \(n=pr=mj+c\) and are zero off
+support.
+\end{definition}
+
+The inherited aliases \(c=c_k\) are instances of this frozen family.
+For a general \(c\), it is an algebraic coefficient model.  It is not
+the TPC packet that would be obtained by restarting the construction
+with physical shift \(c\).
+
+\begin{definition}[Actual local-shift family]
+\label{def:tpc46-actual-local-family}
+For each nonzero shift \(\nu\), the actual local-shift packet is the
+packet reconstructed with physical shift \(\nu\).  Its eligible rows,
+fixed residue factor \(\Xi^{(\nu)}\), source residue data, terminal
+support, and joint multiplier are allowed to depend on \(\nu\).
+\end{definition}
+
+TPC--36 proves \(X^{o(1)}\) projective separation for each fixed
+\(\nu\), with a constant depending on \(\nu\).  It does not prove a
+uniform bound over a growing local-shift window.  Thus later spectral
+identities for the frozen family become statements about actual shifted
+TPC packets only after a separate uniform-provenance theorem.  No such
+theorem is assumed in this paper.

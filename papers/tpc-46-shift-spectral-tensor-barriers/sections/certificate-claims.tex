@@ -1,0 +1,96 @@
+\section{Exact certificate and claim ledger}
+\label{sec:tpc46-certificate}
+
+The reproducibility directory contains
+\begin{center}
+ \path{experiments/tpc46_certificate.py}.
+\end{center}
+It uses only the Python standard library.  Integer and Gaussian-integer
+arithmetic is exact; rational exponent comparisons use
+\texttt{fractions.Fraction}; and all pseudo-random trials use the fixed
+seed \(4601\).  A successful run writes
+\path{experiments/tpc46_certificate.json}.
+
+The current certificate performs \(122232\) exact checks.  Its canonical
+payload hash is
+\begin{center}
+\texttt{38287f0cbee8060ebfb73407f6a4cd0255490e64effefea4481ee67ec1adb4ea}.
+\end{center}
+The hash covers the canonical JSON report before the hash field is
+appended.  The certificate checks:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item exact equality between the four-variable determinant synthesis
+ and the additive correlation of the two product sequences, on \(640\)
+ deterministic Gaussian-integer trials;
+ \item exact disintegration of Cartesian tensor energy into the atomic
+ diagonals over all shifts, together with the multiplicity-based scalar
+ tensor bound;
+ \item injectivity of the large-prime product map on a finite supported
+ model;
+ \item the residual collision identity and a finite Walsh
+ scalarization of the squarefree physical labels \(s=d(m)r\);
+ \item the exact weighted grouping norm and its maximizing fiber;
+ \item the prescribed-shift coherent prime construction;
+ \item exact finite-field DFT analogues of the orbit
+ spectral-support theorem and alias-frequency folding, together with
+ the sharp localization spike; and
+ \item the principal rational endpoint, budget, coordinate, and scale
+ differences listed in the generated report.
+\end{enumerate}
+
+The finite Walsh check uses squarefree residual labels, as at the
+nonzero physical equality atoms; the analytic Bohr-torus theorem for
+general integer labels is proved separately in the text.  The finite
+cyclic spectral checks are algebraic finite-field DFT analogues; they
+do not certify the continuous Poisson theorem.  Likewise, finite
+large-prime injectivity does not certify an asymptotic prime-counting
+statement.  Those facts are proved in the text from their explicit
+hypotheses.  The certificate does not test M\"obius cancellation,
+Fourier decay of the actual dual output, a growing-shift projective
+decomposition, an anti-alias estimate, or a prime-pair asymptotic.
+
+For clarity, the logical status of the main conclusions is as follows.
+\begin{enumerate}[label=\textup{\arabic*.},leftmargin=2.2em]
+ \item The physical large-prime determinant expansion and the exact
+ pulled-back dual field in \cref{sec:tpc46-interface} are conditional
+ only on the cited TPC coefficient packet and its declared dyadic
+ support.  No new cancellation hypothesis is inserted.
+ \item The scalar tensor closure, residual Fourier--Bohr closure,
+ shift-kernel factorization, spectral gap, Poisson identities, grouping
+ norm, alias fold, and localization inequality are unconditional
+ theorems for the finite or smooth models stated in their hypotheses.
+ \item The band-limited exact gap applies to a frozen packet whose
+ Hilbert coefficient is independent of \(j\), or to a separately
+ declared band-limited extension.  A fixed residue-class restriction
+ preserves the endpoint exponents under the hypotheses of
+ \cref{cor:tpc46-progression-shift-gap}.  For ordinary compactly supported
+ smooth profiles, the conclusion is rapid decay on a shrunken band,
+ not exact vanishing.
+ \item The tensor bound is normalized by
+ \(\cD_\otimes=\sum_h\Delta_h\).  It is not a bound at the physical
+ atomic scale \(\Delta_{h_0}\).  The counterexamples concern arbitrary
+ separated slots and do not assert that the actual TPC source/mask
+ realizes their coherent phases.
+ \item The completed alias bank is a common-coefficient auxiliary
+ family, not a collection of reconstructed prime-pair problems at the
+ sampled integers.  The local physical family always has a
+ zero-extended common ambient coordinate space; only its
+ collision-free label range is restricted by the displayed rigidity
+ argument.  The inherited projective theorem is not asserted uniformly
+ for a growing set of shifts.
+ \item The external literature audit shows that the cited formulations
+ do not directly supply the current coefficient and normalization
+ interface.  This is not an impossibility theorem for every future
+ analytic method.
+ \item The doors in \cref{sec:tpc46-next-gate} are proposed next
+ inputs.  None is assumed or proved here.
+ \item No statement implies fixed-shift TPC closure, Chowla at a fixed
+ shift, the Hardy--Littlewood prime-pair conjecture, a breach of the
+ parity barrier, or the twin-prime conjecture.
+\end{enumerate}
+
+The positive advance is therefore exact but model-specific: the smooth
+orbit slot creates a real mesoscopic gap in the completed shift
+spectrum, while the tensor and Bohr calculations identify precisely
+which energy they control.  The remaining physical transfer gaps are
+displayed rather than promoted to hidden hypotheses.

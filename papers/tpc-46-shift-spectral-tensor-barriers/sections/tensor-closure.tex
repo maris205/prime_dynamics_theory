@@ -1,0 +1,113 @@
+\section{Fixed-shift closure at tensor normalization}
+\label{sec:tpc46-tensor-closure}
+
+The third arithmetic coefficient is not, by itself, an obstruction to
+a fixed-shift estimate.  The issue is the norm in which that estimate
+is obtained.
+
+Define multiplicative synthesis sequences
+\begin{equation}
+ A(n):=\sum_{pr=n}a_pb_r,
+ \qquad
+ C(n):=\sum_{mj=n}c_m\eta_j.
+ \label{eq:tpc46-product-synthesis}
+\end{equation}
+Then
+\begin{equation}
+ \cT_h(a,b,c,\eta)=\sum_nA(n)C(n-h).
+ \label{eq:tpc46-additive-correlation}
+\end{equation}
+
+\begin{theorem}[Scalar tensor closure]
+\label{thm:tpc46-scalar-tensor-closure}
+For every integer \(h\),
+\begin{equation}
+ \boxed{
+ |\cT_h(a,b,c,\eta)|^2
+ \le
+ \rho_{\cP,\cR}\rho_{\cM,\cJ}\cD_\otimes.}
+ \label{eq:tpc46-scalar-tensor-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Cauchy--Schwarz in \eqref{eq:tpc46-additive-correlation} gives
+\(
+ |\cT_h|^2\le\|A\|_2^2\|C\|_2^2
+\).
+On each product fiber, Cauchy--Schwarz gives
+\begin{align*}
+ \|A\|_2^2
+ &\le\rho_{\cP,\cR}\sum_{p,r}|a_pb_r|^2,\\
+ \|C\|_2^2
+ &\le\rho_{\cM,\cJ}\sum_{m,j}|c_m\eta_j|^2.
+\end{align*}
+Multiplication proves the claim.
+\end{proof}
+
+The same proof is valid with one synthesized sequence Hilbert-valued.
+
+\begin{corollary}[One-vector-slot closure]
+\label{cor:tpc46-one-vector-slot}
+Let \(x_{p,r}\in\C\) and \(y_{m,j}\in\Hh\), and put
+\[
+ G_h:=\sum_{pr-mj=h}x_{p,r}y_{m,j}.
+\]
+Then
+\begin{equation}
+ \|G_h\|_{\Hh}^2
+ \le
+ \rho_{\cP,\cR}\rho_{\cM,\cJ}
+ \left(\sum_{p,r}|x_{p,r}|^2\right)
+ \left(\sum_{m,j}\|y_{m,j}\|_{\Hh}^2\right).
+ \label{eq:tpc46-one-vector-bound}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Use Hilbert-space Cauchy--Schwarz after product synthesis; the
+fiberwise inequality
+\(
+ \|\sum_{\nu=1}^k y_\nu\|^2\le k\sum_\nu\|y_\nu\|^2
+\)
+replaces its scalar counterpart.
+\end{proof}
+
+In the global large-prime range of TPC--45, product synthesis on the
+left is actually injective.
+
+\begin{lemma}[Large-prime product injectivity]
+\label{lem:tpc46-large-prime-injectivity}
+Suppose every \(p\in\cP\) is prime, \(p>\sqrt{N_+}\), and every
+occurring product satisfies \(pr\le N_+\).  Then
+\begin{equation}
+ \rho_{\cP,\cR}=1.
+ \label{eq:tpc46-rho-pr-one}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If \(pr=p'r'\le N_+\) with distinct primes \(p,p'>\sqrt{N_+}\),
+then \(pp'\) divides the common product, while \(pp'>N_+\), a
+contradiction.
+\end{proof}
+
+Combining
+\cref{thm:tpc46-scalar-tensor-closure,lem:tpc46-large-prime-injectivity}
+with \eqref{eq:tpc46-divisor-multiplicity} gives
+\begin{equation}
+ |\cT_h|^2\le X^{o(1)}\cD_\otimes
+ \label{eq:tpc46-fixed-h-tensor-endpoint}
+\end{equation}
+uniformly in \(h\).  This estimate retains an arbitrary prime
+coefficient, an arbitrary cofactor coefficient, and an arbitrary source
+coefficient.  It uses neither determinant-shift averaging nor a
+Kloosterman-fraction estimate.
+
+The conclusion is nevertheless not the TPC--45 Bessel target.  By
+\eqref{eq:tpc46-diagonal-disintegration}, the right side of
+\eqref{eq:tpc46-fixed-h-tensor-endpoint} is the total atomic energy over
+\emph{all} determinant shifts.  TPC--45 requires the atomic diagonal
+at the one physical shift and inside the actual output geometry.  The
+size and sharpness of that mismatch are quantified in
+\cref{sec:tpc46-atomic-boundaries}.

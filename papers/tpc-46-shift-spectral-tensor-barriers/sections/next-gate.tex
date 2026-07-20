@@ -1,0 +1,103 @@
+\section{The next gate}
+\label{sec:tpc46-next-gate}
+
+The preceding theorems split the route beyond TPC--45 into four
+logically different tasks.
+
+\subsection{Orbit-frequency regularity of the actual coefficient}
+
+The spectral gap in \cref{sec:tpc46-shift-spectrum} is stable under a
+Hilbert vector \(v_{p,r,m}\) that is independent of \(j\), or more
+generally under a uniformly band-limited \(j\)-dependence.  The actual
+dual coefficient has the form
+\begin{equation}
+ z_{\mathrm{output\ row},\,j,\,d(m)r}.
+ \label{eq:tpc46-next-dual-field}
+\end{equation}
+No theorem above bounds its orbit bandwidth uniformly over the unit
+ball of the dual output space.  A positive continuation would therefore
+need either
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item a restriction-stable frequency decomposition of the actual mask
+       and output field, with projective mass \(X^{o(1)}\); or
+ \item a vector-valued sampling theorem that controls
+       \eqref{eq:tpc46-next-dual-field} without first replacing it by a
+       scalar smooth profile.
+\end{enumerate}
+The fixed-column decomposition of TPC--36 supplies the scalar smooth
+profile before dualization, not either of these stronger conclusions.
+
+\subsection{Atomic, rather than Cartesian, normalization}
+
+The fixed-shift tensor theorem naturally gives
+\begin{equation}
+ X^{o(1)}\cD_\otimes
+ =X^{o(1)}\sum_h\Delta_h.
+ \label{eq:tpc46-next-tensor-scale}
+\end{equation}
+The physical target instead asks for a bound on the synthesis at one
+shift by
+\begin{equation}
+ X^{1/400+o(1)}\Delta_{h_0}
+ \label{eq:tpc46-next-atomic-scale}
+\end{equation}
+after the actual output identifications.  The examples in
+\cref{sec:tpc46-atomic-boundaries} show that no theorem for arbitrary
+three coefficient slots can bridge
+\eqref{eq:tpc46-next-tensor-scale} and
+\eqref{eq:tpc46-next-atomic-scale}.  The next arithmetic input must use
+the actual source phases, the projective masks, or cancellation between
+residual fibers.  Merely retaining M\"obius symbols is insufficient:
+TPC--45 proves that their product is constant on each equal-residual
+fiber.
+
+\subsection{Alias unfolding and localization}
+
+The TPC alias family samples the determinant at spacing
+\(M_{\rm al}=X^{399/400+o(1)}\).  Its spectrum is the folded sum in
+\cref{eq:tpc46-exact-alias-fold}; a gap in the completed consecutive-shift
+family does not survive that folding without an additional anti-alias
+estimate.  Even an averaged estimate on a consecutive window does not
+select \(h_0\) without a maximal or regularity theorem, and the
+localization factor in \cref{lem:tpc46-weighted-localization} is sharp.
+
+A useful positive target is therefore a coefficient-specific
+inequality of the following schematic form, for \(H_*\ge1\):
+\begin{equation}
+ \sup_{|h-h_0|\le H_*}
+ \frac{\|F_h\|^2}{\Delta_h+\delta_X}
+ \ll X^{o(1)}
+ \left[
+  \frac1{H_*}\sum_{|h-h_0|\le H_*}
+  \frac{\|F_h\|^2}{\Delta_h+\delta_X}
+ \right],
+ \label{eq:tpc46-next-maximal-target}
+\end{equation}
+where fixed normalization constants in the window average are
+inessential.  Here \(\delta_X>0\) is a declared regularizer; one also
+needs uniform packet provenance
+and a range \(H_*\) that overlaps the analytic averaging scale.  Formula
+\eqref{eq:tpc46-next-maximal-target} is a target, not an assumption or a
+consequence of the present paper.
+
+\subsection{A reversible continuation}
+
+The next paper may pursue any of the following doors.
+\begin{enumerate}[label=\textbf{Door \Alph*.},leftmargin=3.7em]
+ \item Prove orbit-frequency decay for one actual projected
+       source/mask sector and transfer a nonempty part of the
+       shift-spectral gap to that sector.
+ \item Establish an atomic-normalized estimate on one additional
+       cofactor block, even after averaging a fixed finite set of
+       output rows.
+ \item Prove an anti-alias or maximal-in-shift theorem connecting the
+       completed family to the sparse TPC alias family.
+ \item Construct actual-mask coefficients that saturate the
+       tensor-to-atomic or fiber frontier.  This would give a sharp
+       negative boundary for the present route without asserting that
+       the full physical coefficient is large.
+\end{enumerate}
+Success at any door is a genuine advance.  Failure at one does not
+invalidate the spectral gap, tensor closure, or sharp boundary results
+proved here.  None of these doors may be relabelled as a fixed-shift
+prime-pair asymptotic or a breach of the parity barrier.

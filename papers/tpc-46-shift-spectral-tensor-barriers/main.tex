@@ -1,0 +1,142 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\E}{\mathbb E}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Hh}{\mathcal H}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\e}{\mathrm e}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\sfk}{\operatorname{sf}}
+
+\hypersetup{
+  pdftitle={Mesoscopic Shift-Spectral Gaps and Tensor-Normalization Barriers for Three-Coefficient Determinant Packets},
+  pdfauthor={Liang Wang},
+  pdfsubject={Shift spectral structure and atomic-energy barriers at the TPC determinant interface},
+  pdfkeywords={Mobius function, determinant equation, shift spectrum, Poisson summation, Bohr transform, tensor norm, parity problem}
+}
+
+\title{\bfseries Mesoscopic Shift--Spectral Gaps and\\
+Tensor--Normalization Barriers for\\
+Three--Coefficient Determinant Packets}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The large-prime reduction in the twin-prime-correlation (TPC) sequence
+admits scalar projective layers of the form \(pr-mj=h\), with separated
+arithmetic weights on the prime \(p\), a M\"obius cofactor \(r\), and
+an actual source variable \(m\), while the orbit variable \(j\) is
+smooth up to a fixed residue-class selector.  The physical Hilbert
+dual later recouples these variables.  We separate three
+questions that are lost if this is described
+only as a ``third-coefficient problem.''  First, multiplicative
+synthesis and Cauchy--Schwarz close the scalar fixed-shift form, and a
+Fourier--Bohr lift also closes the residual label \(s=d(m)r\), at the
+Cartesian tensor-energy scale.  That scale is the sum of the atomic
+diagonals over all shifts, not the physical diagonal at one shift;
+flat boxes and an explicit fixed-shift construction show that the two
+normalizations may differ by a polynomial factor.  Second, Poisson
+summation in the smooth orbit slot gives the exact kernel
+\(K_m(\alpha)=J\sum_k\widehat w(J(k-m\alpha))\).  Band-limited orbit
+weights therefore produce a genuine shift-spectral gap between the
+geometric envelope and the first sampling aliases.  At the TPC endpoint
+this gap is \(X^{-1+o(1)}<\|\alpha\|<X^{-267/400+o(1)}\); corresponding
+band-pass averages vanish, and low-pass averages have an exact main
+term.  Restriction to any fixed orbit progression preserves this
+exponent gap.  Third, weighted shift averaging leaves the exact
+fiber-grouping norm unchanged when numerator and diagonal use the same
+weights.
+Moreover, sparse TPC alias sampling folds the full shift spectrum, and
+the currently proved collision-free local-label range does not reach
+the Poisson scale.  Thus the paper proves a deterministic spectral
+advance and identifies atomic normalization, orbit-output coupling, alias
+folding, and fixed-shift localization as separate remaining gates.  No
+fixed-shift TPC closure, parity breach, or twin-prime conclusion is
+claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} determinant equation; shift spectrum;
+M\"obius correlation; Poisson summation; Fourier--Bohr transform;
+tensor normalization; parity problem.
+
+\medskip
+\noindent\textbf{Convention.}
+We write \(\e(x)=\exp(2\pi i x)\), identify
+\(\T=\R/\Z\), and put
+\(\|\alpha\|_{\T}=\min_{k\in\Z}|\alpha-k|\).
+All arithmetic supports at one scale are finite.  Fourier transforms on
+\(\R\) use
+\(\widehat f(\xi)=\int_{\R}f(x)\e(-x\xi)\,dx\).
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11L07, 11N35; Secondary 42A38,
+46B28, 11N36.
+
+\input{sections/introduction}
+\input{sections/tpc-interface}
+\input{sections/determinant-model}
+\input{sections/tensor-closure}
+\input{sections/bohr-parseval}
+\input{sections/shift-spectrum}
+\input{sections/poisson-averages}
+\input{sections/atomic-boundaries}
+\input{sections/alias-localization}
+\input{sections/literature-boundary}
+\input{sections/next-gate}
+\input{sections/certificate-claims}
+
+\begingroup
+\small
+\raggedright
+\setlength{\bibsep}{4pt plus 1pt minus 1pt}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

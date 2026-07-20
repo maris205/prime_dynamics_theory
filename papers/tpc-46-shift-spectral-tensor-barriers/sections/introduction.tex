@@ -1,0 +1,173 @@
+\section{Introduction}
+\label{sec:tpc46-introduction}
+
+The TPC sequence isolates a deterministic equality-column problem whose
+large-prime part is governed by
+\begin{equation}
+ pr-mj=h_0.
+ \label{eq:tpc46-intro-determinant}
+\end{equation}
+Here \(p\) is prime, \(r\) is the complementary factor carrying a
+M\"obius weight, \(m\) is an actual source row carrying a second
+arithmetic coefficient, and \(j\) is an orbit variable with a smooth
+profile restricted to a fixed residue class.  TPC--45 identifies the
+absence of a third arbitrary
+determinant-coefficient slot in the available fixed-determinant
+estimates as the next analytic obstruction \citep{WangTPC45}.  The
+natural response is to average the determinant shift and use the
+progression-smooth \(j\)-slot.  The purpose of this paper is to
+determine exactly
+what that operation proves, which normalization it controls, and why
+it does not yet return the physical column at \(h_0\).
+
+There are three families that must not be merged.  A \emph{frozen
+completed family} keeps one coefficient tensor and lets the
+determinant value range through consecutive integers.  The inherited
+TPC alias bank keeps one coefficient tensor but samples that family on
+the progression
+
+\[
+ h_0+kM_{\rm al},
+ \qquad
+ M_{\rm al}=X^{399/400+o(1)}.
+\]
+
+A family reconstructed at different physical shifts changes the
+eligible rows, residue classes, coprimality conditions, and generally
+the coefficient tensor itself.  Fourier analysis applies directly to
+the first family.  It applies to the second only after alias folding,
+and it does not become a theorem about the third without a uniform
+provenance statement.
+
+\subsection{Main results}
+
+Our first result is an exact positive closure theorem at a deliberately
+named norm.  For scalar separated coefficients, put
+\[
+ \cT_h=\sum_{pr-mj=h}a_pb_rc_m\eta_j,
+ \qquad
+ \cD_\otimes=
+ \left(\sum_{p,r}|a_pb_r|^2\right)
+ \left(\sum_{m,j}|c_m\eta_j|^2\right).
+\]
+Multiplicative synthesis turns \(\cT_h\) into an additive correlation.
+The resulting Cauchy--Schwarz estimate is
+\begin{equation}
+ |\cT_h|^2\le \rho_{pr}\rho_{mj}\cD_\otimes.
+ \label{eq:tpc46-intro-tensor-bound}
+\end{equation}
+At the large-prime TPC interface, \(\rho_{pr}=1\) and
+\(\rho_{mj}=X^{o(1)}\).  A finite Fourier--Bohr transform gives the
+same tensor-scale closure after retaining the residual label
+\(s=d(m)r\).  These are genuine fixed-shift theorems, but
+\begin{equation}
+ \cD_\otimes=\sum_h\Delta_h,
+ \label{eq:tpc46-intro-diagonal-sum}
+\end{equation}
+where \(\Delta_h\) is the atomic diagonal at shift \(h\).  The
+physical problem is normalized by \(\Delta_{h_0}\), not its sum over
+all shifts.  Flat boxes and the prescribed-shift construction in
+\cref{sec:tpc46-atomic-boundaries} show that the two scales can differ
+by a power of \(X\).  Hence
+\eqref{eq:tpc46-intro-tensor-bound} is not renamed as an
+atomic-normalized TPC estimate.
+
+Our second result is a deterministic shift-spectrum theorem.  For a
+Hilbert-valued frozen packet with a \(j\)-independent vector coefficient,
+the shift Fourier transform factors through
+\begin{equation}
+ K_m(\alpha)
+ =\sum_{j\in\Z}w(j/J)\e(mj\alpha)
+ =J\sum_{k\in\Z}\widehat w\bigl(J(k-m\alpha)\bigr).
+ \label{eq:tpc46-intro-Poisson-kernel}
+\end{equation}
+If \(\operatorname{supp}\widehat w\subset[-\sigma,\sigma]\), this
+kernel vanishes in the exact annulus
+\begin{equation}
+ \frac{\sigma}{M_-J}
+ <\|\alpha\|_{\T}
+ <\frac{1-\sigma/J}{M_+}.
+ \label{eq:tpc46-intro-gap}
+\end{equation}
+At the endpoint this is
+\[
+ X^{-1+o(1)}<\|\alpha\|_{\T}<X^{-267/400+o(1)}.
+\]
+Restriction to a fixed progression in \(j\) changes only the constant
+at the first alias and preserves these endpoint exponents.  Compactly
+supported smooth orbit profiles satisfy rapid decay on every fixed
+power-shrinking of the same annulus.  As consequences, suitably
+supported band-pass shift averages vanish exactly, while sufficiently
+coarse low-pass averages admit an exact zero-mode formula.  The smooth
+version has a power-saving Poisson remainder.  We also compute the
+corresponding averaged atomic diagonal and keep it distinct from the
+full squared synthesis.
+
+Our third result is a set of sharp transfer boundaries.  Weighted
+averaging in \(h\) leaves the exact fiber-grouping norm equal to the
+largest realized fiber when numerator and atomic diagonal use the same
+weights.  Sampling only the TPC alias progression folds the entire
+shift spectrum into \(M_{\rm al}\) branches.  For actual reconstructed
+shifts, zero extension always gives a common ambient coordinate space,
+while the present rigidity argument proves collision-free equality
+labels throughout
+\begin{equation}
+ |h-h_0|\le
+ X^{29629/210000-\epsilon},
+ \label{eq:tpc46-intro-local-range}
+\end{equation}
+and makes no assertion that this sufficient range is optimal.  Resolving
+the first Poisson alias by the present route needs a dense window of
+length at least \(X^{267/400+o(1)}\).  Finally, positivity alone costs
+the full effective number of shifts when an averaged nonnegative
+quantity is localized back to one chosen shift.  These statements
+separate four missing inputs: orbit-frequency regularity for the
+pulled-back dual field, atomic rather than Cartesian normalization,
+anti-alias control, and fixed-shift localization.
+
+\subsection{Why existing trilinear estimates do not fill the gap}
+
+Bettin--Chandee's trilinear Kloosterman estimate permits three arbitrary
+sequences, but one is a Kloosterman-numerator sequence
+\citep{BC2018}.  Their fixed-determinant corollary retains two smooth
+determinant slots and only two arbitrary arithmetic slots.  Averaging
+the determinant in the Bettin--Chandee--Radziwi\l\l application
+compresses a frequency and a determinant into a structured numerator
+sequence after smooth Poisson analysis; it does not remove those two
+smooth-slot hypotheses \citep{BCR2017}.  The modulus-dispersion results
+of Fouvry--Radziwi\l\l and Wright concern different averaged objects
+\citep{FR2022,Wright2026}.  Moreover, the physical TPC dualization
+introduces the joint field
+\[
+ z_{\text{output row},\,j,\,d(m)r},
+\]
+which need not split into their scalar coefficient slots.  The precise
+comparison is given in \cref{sec:tpc46-literature-boundary}.
+
+\subsection{Scope and organization}
+
+All structural identities, finite operator norms, Fourier support
+statements, Poisson formulas, and rational exponent comparisons stated
+as theorems are proved without a probabilistic M\"obius hypothesis.
+Statements about the actual TPC packet use only the inherited
+coefficient interfaces explicitly cited from TPC--36, TPC--42,
+TPC--43, and TPC--45 \citep{WangTPC36,WangTPC42,WangTPC43,WangTPC45}.
+No theorem asserts that the arbitrary dual field is orbit-band-limited,
+that the sparse alias bank can be unfolded at no cost, or that a shift
+average controls the physical column.
+
+\Cref{sec:tpc46-interface} reconstructs the exact TPC packet and its
+dual coupling.  \Cref{sec:tpc46-model,sec:tpc46-tensor-closure,sec:tpc46-bohr}
+prove the scalar and residual tensor closures.
+\Cref{sec:tpc46-shift-spectrum,sec:tpc46-poisson-averages} establish the
+spectral-gap and averaging formulas.
+\Cref{sec:tpc46-atomic-boundaries,sec:tpc46-alias-localization} prove
+the sharp normalization, folding, geometry, and localization
+boundaries.  \Cref{sec:tpc46-literature-boundary} audits the available
+external estimates, and \cref{sec:tpc46-next-gate} states four
+reversible next doors.  The exact finite certificate and final claim
+ledger appear in \cref{sec:tpc46-certificate}.
+
+No result in this paper proves a fixed-shift TPC closure, a
+Hardy--Littlewood prime-pair asymptotic, a breach of the sieve parity
+barrier, or the twin-prime conjecture.

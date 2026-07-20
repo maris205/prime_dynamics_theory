@@ -1,0 +1,298 @@
+\section{The shift spectrum of a smooth determinant packet}
+\label{sec:tpc46-shift-spectrum}
+
+We study the completed Hilbert packet
+\eqref{eq:tpc46-Hilbert-packet}.  This is a Fourier model for the
+equation \(pr-mj=h\); it is not yet an assertion that the actual TPC
+packet has been constructed uniformly for every \(h\).  Let \(J\ge2\)
+and suppose that its source support satisfies
+
+\[
+ 0<M_-\le m\le M_+,
+\]
+
+The coefficients and vectors have finite arithmetic support and
+\(w\in\mathcal S(\R)\).  The vectors in
+\eqref{eq:tpc46-Hilbert-packet} may depend jointly and arbitrarily on
+\((p,r,m)\), but they do not depend on \(j\).  In particular, the
+residual-label choice
+\begin{equation}
+ v_{p,r,m}=e_{d(m)r}
+ \quad\text{in }\ell^2(\N)
+ \label{eq:tpc46-residual-basis-example}
+\end{equation}
+is permitted.  The sequence \((F_h)_h\) belongs to both
+\(\ell^1(\Z;\Hh)\) and \(\ell^2(\Z;\Hh)\).  We use the shift Fourier
+transform
+\begin{equation}
+ \widehat F(\alpha):=
+ \sum_{h\in\Z}F_h\e(-h\alpha),
+ \qquad \alpha\in\T.
+ \label{eq:tpc46-shift-Fourier-transform}
+\end{equation}
+
+\begin{theorem}[Hilbert-valued orbit kernel]
+\label{thm:tpc46-Hilbert-orbit-kernel}
+For every \(\alpha\in\T\),
+\begin{align}
+ \widehat F(\alpha)
+ &=\sum_{p,r,m}
+   z_{p,r,m}v_{p,r,m}\e(-pr\alpha)K_m(\alpha),
+ \label{eq:tpc46-shift-kernel-factorization}\\
+ K_m(\alpha)
+ &:=\sum_{j\in\Z}w(j/J)\e(mj\alpha)
+   =J\sum_{k\in\Z}\widehat w\bigl(J(k-m\alpha)\bigr).
+ \label{eq:tpc46-Poisson-orbit-kernel}
+\end{align}
+Moreover,
+\begin{equation}
+ \sum_{h\in\Z}\|F_h\|_{\Hh}^2
+ =\int_{\T}\|\widehat F(\alpha)\|_{\Hh}^2\,d\alpha.
+ \label{eq:tpc46-Hilbert-shift-Parseval}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Absolute convergence allows the order of summation to be changed.
+Substituting \(h=pr-mj\) into
+\eqref{eq:tpc46-shift-Fourier-transform} gives the first identity.
+Poisson summation applied to \(x\mapsto w(x/J)\) gives
+\[
+ \sum_{j\in\Z}w(j/J)\e(mj\alpha)
+ =\sum_{k\in\Z}J\widehat w\bigl(J(k-m\alpha)\bigr),
+\]
+which proves the second.  The last assertion is the standard
+Hilbert-valued Parseval identity; it also follows by applying scalar
+Parseval after pairing with an orthonormal basis of the finite
+dimensional span of the vectors \(v_{p,r,m}\).
+\end{proof}
+
+The factor \(K_m\) contains all shift frequencies contributed by the
+smooth orbit variable.  Neither the primality of \(p\) nor any
+arithmetic cancellation in the three coefficient slots is used in
+the following theorem.
+
+\begin{theorem}[Exact mesoscopic shift-spectral gap]
+\label{thm:tpc46-exact-shift-spectral-gap}
+Assume that, for some \(\sigma>0\),
+\begin{equation}
+ \operatorname{supp}\widehat w\subset[-\sigma,\sigma]
+ \qquad\text{and}\qquad J>\sigma.
+ \label{eq:tpc46-bandlimited-orbit-profile}
+\end{equation}
+Then
+\begin{equation}
+ \widehat F(\alpha)=0
+ \label{eq:tpc46-exact-gap-vanishing}
+\end{equation}
+whenever
+\begin{equation}
+ \boxed{
+ \frac{\sigma}{M_-J}
+ <\|\alpha\|_{\T}<
+ \frac{1-\sigma/J}{M_+}.}
+ \label{eq:tpc46-exact-gap-annulus}
+\end{equation}
+The assertion is vacuous if the displayed interval is empty.
+\end{theorem}
+
+\begin{proof}
+Formula \eqref{eq:tpc46-Poisson-orbit-kernel} and
+\eqref{eq:tpc46-bandlimited-orbit-profile} show that
+\begin{equation}
+ K_m(\alpha)\ne0
+ \quad\Longrightarrow\quad
+ \|m\alpha\|_{\T}\le\frac{\sigma}{J}.
+ \label{eq:tpc46-kernel-support-condition}
+\end{equation}
+Put \(t=\|\alpha\|_{\T}\) and choose a representative with
+\(|\alpha|=t\).  Under \eqref{eq:tpc46-exact-gap-annulus}, every
+\(m\in[M_-,M_+]\) satisfies
+\[
+ \frac{\sigma}{J}<mt<1-\frac{\sigma}{J}.
+\]
+Thus the distance of \(m\alpha\) from both \(0\) and the nearest
+nonzero integer is greater than \(\sigma/J\).  This contradicts
+\eqref{eq:tpc46-kernel-support-condition}, so every \(K_m(\alpha)\)
+in \eqref{eq:tpc46-shift-kernel-factorization} vanishes.
+\end{proof}
+
+\begin{corollary}[Fixed-progression shift gap]
+\label{cor:tpc46-progression-shift-gap}
+Let \(H_0\in\N\), let \(a\) be a residue class modulo \(H_0\), and
+replace \eqref{eq:tpc46-Hilbert-packet} by
+\begin{equation}
+ F_h^{a,H_0}
+ :=\sum_{p,r,m}\sum_{\substack{j\in\Z\\j\equiv a\!\!\pmod{H_0}}}
+ z_{p,r,m}w(j/J)v_{p,r,m}\one_{pr-mj=h}.
+ \label{eq:tpc46-progression-Hilbert-packet}
+\end{equation}
+Assume
+\(\operatorname{supp}\widehat w\subset[-\sigma,\sigma]\) and
+\(J>H_0\sigma\).  Then
+\begin{equation}
+ \widehat F^{a,H_0}(\alpha)=0
+ \label{eq:tpc46-progression-gap-vanishing}
+\end{equation}
+whenever
+\begin{equation}
+ \boxed{
+ \frac{\sigma}{M_-J}
+ <\|\alpha\|_{\T}<
+ \frac{H_0^{-1}-\sigma/J}{M_+}.}
+ \label{eq:tpc46-progression-gap-annulus}
+\end{equation}
+For fixed \(H_0\), the endpoint exponent range remains
+\(X^{-1+o(1)}<\|\alpha\|_{\T}<X^{-267/400+o(1)}\).
+\end{corollary}
+
+\begin{proof}
+The progression-restricted orbit kernel is
+\begin{align}
+ K_{m,a}^{(H_0)}(\alpha)
+ &:=
+ \sum_{\substack{j\in\Z\\j\equiv a\!\!\pmod{H_0}}}
+ w(j/J)\e(mj\alpha)\notag\\
+ &=\frac{J}{H_0}\sum_{k\in\Z}
+ \e(ak/H_0)
+ \widehat w\!\left(
+ \frac{J}{H_0}(k-mH_0\alpha)
+ \right).
+ \label{eq:tpc46-progression-orbit-kernel}
+\end{align}
+Indeed, write \(j=a+H_0t\) and apply Poisson summation in \(t\).
+Thus a nonzero kernel requires
+\[
+ \|mH_0\alpha\|_{\T}\le\frac{H_0\sigma}{J}.
+\]
+If \(t=\|\alpha\|_{\T}\) lies in
+\eqref{eq:tpc46-progression-gap-annulus}, then every supported \(m\)
+satisfies
+\[
+ \frac{H_0\sigma}{J}<mH_0t<1-\frac{H_0\sigma}{J}.
+\]
+The same support argument as in
+\cref{thm:tpc46-exact-shift-spectral-gap} makes every
+\(K_{m,a}^{(H_0)}(\alpha)\) vanish.  The endpoint statement follows
+because \(H_0\) is fixed.
+\end{proof}
+
+\begin{corollary}[The endpoint spectral no-man's-land]
+\label{cor:tpc46-endpoint-shift-gap}
+Suppose
+\begin{equation}
+ M_-=X^{267/400+o(1)},\qquad
+ M_+=X^{267/400+o(1)},\qquad
+ J=X^{133/400+o(1)}.
+ \label{eq:tpc46-endpoint-MJ-scales}
+\end{equation}
+For a fixed band limit \(\sigma\), the exact gap in
+\cref{thm:tpc46-exact-shift-spectral-gap} has the exponent form
+\begin{equation}
+ X^{-1+o(1)}
+ <\|\alpha\|_{\T}<
+ X^{-267/400+o(1)}.
+ \label{eq:tpc46-endpoint-frequency-gap}
+\end{equation}
+Thus the zero-frequency orbit envelope, whose width is of order
+\((MJ)^{-1}\), is separated from the first lattice aliases, whose
+distance from zero is of order \(M^{-1}\).
+\end{corollary}
+
+Strict Fourier compactness is convenient for an exact statement, but
+is not needed for a power-robust gap.
+
+\begin{theorem}[Rapid decay for a smooth compact orbit profile]
+\label{thm:tpc46-rapid-smooth-shift-gap}
+Let \(w\in C_c^\infty(\R)\), and suppose that for fixed
+\(\mu,\nu>0\) with \(\mu+\nu=1\),
+\begin{equation}
+ M_-\asymp M_+\asymp X^\mu,
+ \qquad J\asymp X^\nu.
+ \label{eq:tpc46-general-MJ-scales}
+\end{equation}
+Fix \(0<\epsilon<\nu\).  For every \(A>0\), uniformly on
+\begin{equation}
+ X^{-1+\epsilon}
+ \le\|\alpha\|_{\T}
+ \le X^{-\mu-\epsilon},
+ \label{eq:tpc46-shrunken-smooth-gap}
+\end{equation}
+one has
+\begin{align}
+ |K_m(\alpha)|
+ &\ll_{A,w,\epsilon}JX^{-A\epsilon}
+ \qquad(M_-\le m\le M_+),
+ \label{eq:tpc46-smooth-kernel-rapid-decay}\\
+ \|\widehat F(\alpha)\|_{\Hh}
+ &\ll_{A,w,\epsilon}
+ JX^{-A\epsilon}
+ \sum_{p,r,m}|z_{p,r,m}|\|v_{p,r,m}\|_{\Hh}.
+ \label{eq:tpc46-smooth-packet-rapid-decay}
+\end{align}
+Replacing \(A\) by a larger constant absorbs any fixed polynomial
+size of the coefficient support.
+\end{theorem}
+
+\begin{proof}
+Let \(t=\|\alpha\|_{\T}\).  Uniformly in the range
+\eqref{eq:tpc46-shrunken-smooth-gap},
+\[
+ Jmt\gg X^\epsilon,
+ \qquad mt\ll X^{-\epsilon}.
+\]
+For all sufficiently large \(X\), the nearest integer to \(m\alpha\)
+is therefore zero.  Since \(\widehat w\) is Schwartz,
+\[
+ J\bigl|\widehat w(Jm\alpha)\bigr|
+ \ll_{A,w}J(Jmt)^{-A}
+ \ll_{A,w,\epsilon}JX^{-A\epsilon}.
+\]
+For \(k\ne0\), one has
+\(|k-m\alpha|\ge |k|/2\).  Given the requested output exponent \(A\),
+choose a Schwartz decay order \(B\) with
+\[
+ B\ge A,
+ \qquad B\nu\ge A\epsilon.
+\]
+Then
+\[
+ J\sum_{k\ne0}
+ \bigl|\widehat w(J(k-m\alpha))\bigr|
+ \ll_{B,w}J^{1-B}
+ \ll_{A,w,\epsilon}JX^{-A\epsilon}.
+\]
+The zero mode is bounded with the same order \(B\), and hence also by
+the right-hand side of
+\eqref{eq:tpc46-smooth-kernel-rapid-decay}.  The triangle inequality in
+\eqref{eq:tpc46-shift-kernel-factorization} proves
+\eqref{eq:tpc46-smooth-packet-rapid-decay}.
+\end{proof}
+
+\begin{remark}[Why the vectors must be orbit independent]
+\label{rem:tpc46-j-independent-vectors}
+If \(v_{p,r,m}\) in \eqref{eq:tpc46-Hilbert-packet} is replaced
+by an arbitrary \(v_{p,r,m,j}\), then \(K_m(\alpha)\) is replaced by
+the vector-valued discrete transform
+\[
+ \sum_jw(j/J)v_{p,r,m,j}\e(mj\alpha),
+\]
+which may have full shift spectrum.  The preceding theorems continue
+to hold under a separately proved uniform band-limit or rapid Fourier
+decay for these vector-valued profiles; they do not hold for arbitrary
+orbit-output coupling.  In particular, no smoothness of an actual TPC
+projective mask is being assumed implicitly here.
+\end{remark}
+
+\begin{remark}[Amplitude gap versus energy]
+\label{rem:tpc46-amplitude-energy-distinction}
+The vanishing in \eqref{eq:tpc46-exact-gap-vanishing} concerns the
+Fourier transform of the Hilbert-valued amplitude \(F_h\).  It gives an
+orthogonal low-frequency/high-alias decomposition of the total
+Parseval energy \eqref{eq:tpc46-Hilbert-shift-Parseval}.  It does not
+give the same spectral gap for the scalar sequence
+\(h\mapsto\|F_h\|_{\Hh}^2\): multiplication in \(h\) convolves shift
+frequencies, and differences of low and alias frequencies may occupy
+the intermediate band.  Consequently, the amplitude gap alone is not
+an atomic-normalized Bessel estimate at a prescribed shift.
+\end{remark}

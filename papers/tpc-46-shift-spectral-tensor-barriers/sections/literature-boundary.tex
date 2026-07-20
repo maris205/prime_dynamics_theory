@@ -1,0 +1,244 @@
+\section{The external analytic boundary}
+\label{sec:tpc46-literature-boundary}
+
+The deterministic reductions in this paper should not be conflated with an
+available Kloosterman--fraction theorem.  The distinction is already visible
+at the scalar level and becomes sharper after the physical Hilbert output is
+restored.  We record the coefficient slots, the role of shift averaging, and
+the normalization supplied by the relevant primary sources.
+
+\subsection{Three Kloosterman sequences are not three determinant slots}
+\label{subsec:tpc46-bc-slots}
+
+Let \(\cA=[A/2,A]\), \(\cM=[M/2,M]\), and
+\(\mathcal N=[N/2,N]\).  Bettin and Chandee's trilinear form is
+\begin{equation}
+ \cB(M,N,A)
+ :=
+ \sum_{\substack{a\in\cA,\ m\in\cM,\ n\in\mathcal N\\(m,n)=1}}
+ \nu_a\alpha_m\beta_n
+ \e\!\left(\vartheta\frac{a\overline m}{n}\right),
+ \qquad \vartheta\ne0,
+ \label{eq:tpc46-bc-form}
+\end{equation}
+where \(\overline m\) is the inverse of \(m\) modulo \(n\).  Their
+Theorem~1 gives, for arbitrary complex sequences
+\(\alpha,\beta,\nu\),
+\begin{align}
+ |\cB(M,N,A)|
+ \ll {}&
+ \|\alpha\|_2\|\beta\|_2\|\nu\|_2
+ \left(1+\frac{|\vartheta|A}{MN}\right)^{1/2}
+ \notag\\[-2pt]
+ &\quad\times
+ \left\{
+ (AMN)^{7/20+\varepsilon}(M+N)^{1/4}
+ +(AMN)^{3/8+\varepsilon}(AN+AM)^{1/8}
+ \right\}.
+ \label{eq:tpc46-bc-theorem}
+\end{align}
+Thus \eqref{eq:tpc46-bc-form} has three arbitrary sequences, but one
+of them is a sequence in the \emph{Kloosterman numerator} \(a\).  This
+is not the same assertion as allowing three arbitrary weights on
+variables in a determinant equation \citep[Theorem~1]{BC2018}.
+
+The distinction is explicit in the fixed-determinant consequence of the
+same paper.  For
+\begin{equation}
+ \mathcal T_\Delta
+ :=
+ \sum_{\substack{m_i\in[M_i/2,M_i],\ n_i\in[N_i/2,N_i]\\
+                   m_1n_2-m_2n_1=\Delta}}
+ f(m_1)g(m_2)\alpha_{n_1}\beta_{n_2},
+ \qquad \Delta\ne0,
+ \label{eq:tpc46-bc-determinant}
+\end{equation}
+Corollary~1 assumes
+\begin{equation}
+ f^{(j)}\ll \eta^jM_1^{-j},
+ \qquad
+ g^{(j)}\ll \eta^jM_2^{-j}
+ \qquad (j\ge0),
+ \label{eq:tpc46-bc-smooth-slots}
+\end{equation}
+and places arbitrary sequences only on \(n_1,n_2\).  With
+\begin{equation}
+ R_*=\frac{M_1N_2}{M_2N_1}+\frac{M_2N_1}{M_1N_2},
+ \label{eq:tpc46-bc-rstar}
+\end{equation}
+the conclusion is
+\begin{align}
+ \mathcal T_\Delta
+ ={}&
+ \sum_{\substack{n_i\in[N_i/2,N_i]\\(n_1,n_2)\mid\Delta}}
+ \frac{(n_1,n_2)}{n_1n_2}\alpha_{n_1}\beta_{n_2}
+ \int_{\R}
+ f\!\left(\frac{x+\Delta}{n_2}\right)
+ g\!\left(\frac{x}{n_1}\right)\,dx
+ \notag\\
+ &+O\!\left(
+ (\eta R_*)^{3/2}\|\alpha\|_2\|\beta\|_2
+ (N_1N_2)^{7/20}(N_1+N_2)^{1/4+\varepsilon}
+ (M_1M_2)^\varepsilon
+ \right).
+ \label{eq:tpc46-bc-corollary}
+\end{align}
+Both smooth slots in \eqref{eq:tpc46-bc-smooth-slots} are part of the
+hypothesis; they are not cosmetic remnants of the proof
+\citep[Corollary~1]{BC2018}.
+
+For the TPC equation
+\begin{equation}
+ pr-mj=h,
+ \label{eq:tpc46-tpc-determinant-literature}
+\end{equation}
+one favorable identification is
+\begin{equation}
+ (m_1,n_2,m_2,n_1)=(p,r,j,m).
+ \label{eq:tpc46-bc-slot-identification}
+\end{equation}
+It places the cofactor and source weights in the two arbitrary slots and
+the orbit weight in one smooth slot, but it places the prime weight in
+the other smooth slot.  Interchanging \(p\) and \(r\) merely replaces
+the missing prime slot by a missing M\"obius slot.  Other identifications
+put the nonsmooth source coefficient in a smooth slot.  Since one factor
+from \(pr\) and one factor from \(mj\) must occupy the two smooth
+positions, and only the envelope in \(j\) is intrinsically smooth,
+every identification loses at least one of the three arithmetic
+weights \(p,r,m\).  The actual fixed residue selector in \(j\), retained
+in \cref{eq:tpc46-three-coefficient-layer}, only makes direct
+applicability more restrictive.  This is
+the exact coefficient-slot obstruction isolated geometrically in
+TPC--45 \citep{WangTPC45}.
+
+\subsection{What determinant-shift averaging actually buys}
+\label{subsec:tpc46-bcr-averaging}
+
+There is a genuine use of determinant-shift averaging in the work of
+Bettin, Chandee, and Radziwi\l\l.  After their smooth decomposition and
+Poisson summation, a relevant off-diagonal block contains, schematically,
+\begin{equation}
+ \sum_{n_1,n_2}
+ \sum_{0<|\Delta|\le D/d}
+ \sum_{0<k<H_d}
+ a_{dn_1}\overline{a_{dn_2}}
+ \e\!\left(-k\Delta\frac{\overline{n_1}}{n_2}\right)
+ \cW_{k,\Delta,n_1,n_2},
+ \label{eq:tpc46-bcr-offdiagonal}
+\end{equation}
+where \(\cW\) is supplied by the already smooth variables.  They set
+\begin{equation}
+ b=k\Delta,
+ \qquad
+ \nu_{x,y}(b)
+ :=\sum_{k\Delta=b}
+ \e\!\left(-kx+\frac{\Delta y}{2\pi}\right).
+ \label{eq:tpc46-bcr-product-compression}
+\end{equation}
+Consequently
+\begin{equation}
+ |\nu_{x,y}(b)|\le \tau(|b|),
+ \qquad
+ \|\nu_{x,y}\|_2\ll B^{1/2+\varepsilon}
+ \quad (|b|\ll B),
+ \label{eq:tpc46-bcr-nu-norm}
+\end{equation}
+and the pair \((k,\Delta)\) becomes the single numerator sequence in
+\eqref{eq:tpc46-bc-form}.  Bettin--Chandee cancellation is then
+available in that numerator range \citep[Section~5, especially the
+reduction preceding their small-frequency estimate]{BCR2017}.
+
+This mechanism says exactly what the average provides: it lengthens and
+structures the Kloosterman-numerator sequence.  It is available only
+after Poisson summation has used smooth determinant variables.  It does
+not replace either smooth hypothesis in
+\eqref{eq:tpc46-bc-smooth-slots}, and it does not turn
+\eqref{eq:tpc46-bc-corollary} into a determinant theorem with arbitrary
+weights on \(p,r,m\).  An arbitrary external weight on \(\Delta\) can
+also increase the multiplicative energy of the compressed sequence in
+\eqref{eq:tpc46-bcr-product-compression}; its \(\ell^2\) norm must be
+proved rather than silently identified with the product of two norms.
+
+\subsection{Nearby dispersion estimates}
+\label{subsec:tpc46-nearby-dispersion}
+
+Fouvry and Radziwi\l\l{} study a different average.  For divisor-bounded
+sequences \(\alpha_m,\beta_n\), they average the congruence discrepancy
+\begin{equation}
+ \sum_{q\asymp Q}
+ \left|
+ \sum_{mn\equiv a\, (\bmod q)}\alpha_m\beta_n
+ -\frac1{\varphi(q)}
+ \sum_{(mn,q)=1}\alpha_m\beta_n
+ \right|
+ \label{eq:tpc46-fr-discrepancy}
+\end{equation}
+over the modulus \(q\), while the residue \(a\ne0\) is fixed.  Their
+first range, under the stated Siegel--Walfisz hypothesis on the short
+sequence, is
+\begin{equation}
+ \exp((\log X)^\varepsilon)
+ \le N
+ \le Q^{-11/12}X^{17/36-\varepsilon}.
+ \label{eq:tpc46-fr-range}
+\end{equation}
+Their prime-modulus variant removes that Siegel--Walfisz input in the
+same power range \citep[Corollary~1.1 and Theorem~1.2]{FR2022}.
+Wright's partially fixed-modulus theorem estimates
+\begin{equation}
+ \sum_{\substack{a\asymp A,\ m\asymp M,\ n\asymp N\\(m,nR)=1}}
+ \nu_a\alpha_m\beta_n
+ \e\!\left(\vartheta\frac{a\overline m}{nR}\right)
+ \label{eq:tpc46-wright-form}
+\end{equation}
+and improves the resulting unbalanced-convolution ranges, including
+\(N\le Q^{-33/28}X^{17/28-\varepsilon}\) in the first regime
+\citep[Theorem~2.1 and Corollary~2.2]{Wright2026}.  These are genuine
+advances for modulus dispersion and fixed denominator factors.  Neither
+theorem averages the physical determinant shift in
+\eqref{eq:tpc46-tpc-determinant-literature}, supplies the missing
+determinant coefficient slot, or controls the inherited TPC masks after
+successive physical restrictions.
+
+\subsection{Why a scalar black box would still not prove the atomic estimate}
+\label{subsec:tpc46-vector-boundary}
+
+The external results above are scalar.  The TPC target inherited from
+the projective and residual-fiber reductions is an atomic-energy
+estimate for a Hilbert-valued synthesis, not merely a scalar count
+\citep{WangTPC36,WangTPC42,WangTPC43,WangTPC45}.  Formally one may
+write
+\begin{equation}
+ \left\|\sum_e x_e\right\|_{\Hh}
+ =\sup_{\|v\|_{\Hh}=1}
+ \left|\sum_e\langle x_e,v\rangle_{\Hh}\right|.
+ \label{eq:tpc46-dual-scalarization}
+\end{equation}
+But the scalar coefficient \(\langle x_{p,r,m,j},v\rangle\) produced
+by \eqref{eq:tpc46-dual-scalarization} generally couples all four
+indices.  It need not factor into the separate sequences required by
+\eqref{eq:tpc46-bc-form} or \eqref{eq:tpc46-bc-determinant}.  Uniformity
+of \eqref{eq:tpc46-bc-theorem} over each of its three sequences does not
+imply uniformity over such an entangled four-index tensor.
+
+There is a second normalization mismatch.  Squaring a scalar estimate
+and summing over ambient coordinates naturally returns a Cartesian
+tensor energy, or after shift averaging the sum of diagonals over all
+shifts.  The physical TPC denominator retains only the atomic diagonal
+at the prescribed shift and after the actual projective identifications.
+TPC--36 and TPC--42 show why these identifications and coherent defects
+cannot be discarded; TPC--43 and TPC--45 show why physical sign
+restriction and large-prime descent must be applied to one globally
+consistent coefficient packet.  None of
+\eqref{eq:tpc46-bc-theorem}, \eqref{eq:tpc46-bc-corollary},
+\eqref{eq:tpc46-fr-discrepancy}, or \eqref{eq:tpc46-wright-form}
+contains this atomic normalization or proves stability under those
+restrictions.
+
+We therefore use the cited literature only for comparison.  It does
+not prove the vector atomic estimate studied here.  Conversely, the
+slot and normalization mismatches are not impossibility theorems: a
+future positive result could exploit the special prime/M\"obius packet,
+prove a restriction-stable tensor estimate, or establish a separate
+localization principle.  Such an input would be new and would have to
+state these features explicitly.

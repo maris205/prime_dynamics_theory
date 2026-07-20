@@ -1,0 +1,374 @@
+\section{Poisson formulas for coarse shift averages}
+\label{sec:tpc46-poisson-averages}
+
+We now test the completed packet
+\eqref{eq:tpc46-Hilbert-packet} by a window of physical shift
+length \(H>0\).  For \(h_0\in\R\) and
+\(W\in\mathcal S(\R)\), put
+\begin{equation}
+ \cA_{H,h_0}(W;F)
+ :=\frac1H\sum_{h\in\Z}
+ W\!\left(\frac{h-h_0}{H}\right)F_h.
+ \label{eq:tpc46-normalized-shift-average}
+\end{equation}
+All identities below are Bochner identities in \(\Hh\).  Their proofs
+are coefficient blind; the vectors \(v_{p,r,m}\) remain arbitrary in
+\((p,r,m)\), but, as in \cref{sec:tpc46-shift-spectrum}, they must be
+independent of \(j\).
+
+\subsection{An exact band-pass null interval}
+
+\begin{theorem}[Exact band-pass vanishing]
+\label{thm:tpc46-exact-bandpass-vanishing}
+Assume
+\begin{equation}
+ \operatorname{supp}\widehat w\subset[-\sigma,\sigma],
+ \qquad J>\sigma,
+ \label{eq:tpc46-bandpass-orbit-support}
+\end{equation}
+and let \(\psi\in\mathcal S(\R)\) satisfy
+\begin{equation}
+ \operatorname{supp}\widehat\psi
+ \subset\{\xi\in\R:a\le|\xi|\le b\}
+ \qquad(0<a\le b).
+ \label{eq:tpc46-bandpass-window-support}
+\end{equation}
+If
+\begin{equation}
+ \boxed{
+ \frac{bM_+}{1-\sigma/J}<H<\frac{aM_-J}{\sigma},}
+ \label{eq:tpc46-exact-bandpass-H-range}
+\end{equation}
+then, for every \(h_0\),
+\begin{equation}
+ \boxed{\cA_{H,h_0}(\psi;F)=0.}
+ \label{eq:tpc46-exact-bandpass-average-zero}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:tpc46-Hilbert-packet} into
+\eqref{eq:tpc46-normalized-shift-average}.  For a fixed triple
+\((p,r,m)\), the remaining scalar sum is
+\begin{equation}
+ \frac1H\sum_{j\in\Z}f_{p,r,m}(j),
+ \qquad
+ f_{p,r,m}(x)
+ :=w(x/J)\psi\!\left(\frac{pr-h_0-mx}{H}\right).
+ \label{eq:tpc46-bandpass-Poisson-function}
+\end{equation}
+The Fourier support of \(x\mapsto w(x/J)\) is contained in
+\([ -\sigma/J,\sigma/J]\).  The Fourier support of the second factor
+in \eqref{eq:tpc46-bandpass-Poisson-function} is contained in
+\[
+ [-bm/H,-am/H]\cup[am/H,bm/H].
+\]
+Consequently, every point of
+\(\operatorname{supp}\widehat f_{p,r,m}\) has absolute value between
+\[
+ \frac{am}{H}-\frac{\sigma}{J}
+ \quad\text{and}\quad
+ \frac{bm}{H}+\frac{\sigma}{J}.
+\]
+The upper inequality in \eqref{eq:tpc46-exact-bandpass-H-range} makes
+the lower endpoint positive for all \(m\ge M_-\), while the lower
+inequality makes the upper endpoint smaller than one for all
+\(m\le M_+\).  Hence the Fourier support contains no integer.  Poisson
+summation gives
+\(\sum_jf_{p,r,m}(j)=\sum_k\widehat f_{p,r,m}(k)=0\).
+Summing over the finite arithmetic support proves the theorem.
+\end{proof}
+
+At the endpoint \eqref{eq:tpc46-endpoint-MJ-scales}, fixed band limits
+give a nonempty physical window range
+\begin{equation}
+ X^{267/400+o(1)}<H<X^{1-o(1)}.
+ \label{eq:tpc46-endpoint-bandpass-window-range}
+\end{equation}
+This is a statement about signed band-pass averages of the completed
+amplitude.  It is not a positive average of its squared norm.
+
+\subsection{The exact low-pass main term}
+
+\begin{theorem}[Exact low-pass Poisson formula]
+\label{thm:tpc46-exact-lowpass-formula}
+Assume \eqref{eq:tpc46-bandpass-orbit-support}, and let
+\(W\in\mathcal S(\R)\) satisfy
+\begin{equation}
+ \operatorname{supp}\widehat W\subset[-b,b].
+ \label{eq:tpc46-lowpass-window-support}
+\end{equation}
+If
+\begin{equation}
+ \frac{bM_+}{H}+\frac{\sigma}{J}<1,
+ \label{eq:tpc46-lowpass-no-alias-condition}
+\end{equation}
+then
+\begin{align}
+ \cA_{H,h_0}(W;F)
+ ={}&\sum_{p,r,m}
+ \frac{z_{p,r,m}}{m}v_{p,r,m}
+ \int_{\R}W(u)
+ w\!\left(\frac{pr-h_0-Hu}{mJ}\right)\,du.
+ \label{eq:tpc46-exact-lowpass-main}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+For fixed \((p,r,m)\), set
+\[
+ f(x):=w(x/J)W\!\left(\frac{pr-h_0-mx}{H}\right).
+\]
+The Fourier support of \(f\) is contained in
+\[
+ \left[-\frac{\sigma}{J}-\frac{bm}{H},
+       \frac{\sigma}{J}+\frac{bm}{H}\right],
+\]
+which lies strictly inside \((-1,1)\) by
+\eqref{eq:tpc46-lowpass-no-alias-condition}.  Poisson summation thus
+has only its zero mode:
+\[
+ \sum_{j\in\Z}f(j)=\widehat f(0)=\int_{\R}f(x)\,dx.
+\]
+With \(u=(pr-h_0-mx)/H\),
+\[
+ \frac1H\int_{\R}f(x)\,dx
+ =\frac1m\int_{\R}W(u)
+ w\!\left(\frac{pr-h_0-Hu}{mJ}\right)\,du.
+\]
+Multiplying by \(z_{p,r,m}v_{p,r,m}\) and summing proves
+\eqref{eq:tpc46-exact-lowpass-main}.
+\end{proof}
+
+For later comparison, define the frozen-envelope main term
+\begin{equation}
+ \cM_{H,h_0}(W;F)
+ :=\left(\int_{\R}W(u)\,du\right)
+ \sum_{p,r,m}
+ \frac{z_{p,r,m}}{m}v_{p,r,m}
+ w\!\left(\frac{pr-h_0}{mJ}\right).
+ \label{eq:tpc46-frozen-envelope-main}
+\end{equation}
+
+\begin{corollary}[Variation of the exact low-pass main]
+\label{cor:tpc46-lowpass-main-variation}
+Under the hypotheses of
+\cref{thm:tpc46-exact-lowpass-formula},
+\begin{align}
+ \bigl\|\cA_{H,h_0}(W;F)-\cM_{H,h_0}(W;F)\bigr\|_{\Hh}
+ \ll_{W,w}
+ \frac{H}{M_-J}
+ \sum_{p,r,m}
+ \frac{|z_{p,r,m}|}{m}\|v_{p,r,m}\|_{\Hh}.
+ \label{eq:tpc46-exact-main-variation-bound}
+\end{align}
+\end{corollary}
+
+\begin{proof}
+The mean-value theorem gives, uniformly in \(m\ge M_-\),
+\[
+ \left|
+ w\!\left(\frac{pr-h_0-Hu}{mJ}\right)
+ -w\!\left(\frac{pr-h_0}{mJ}\right)
+ \right|
+ \le \|w'\|_\infty\frac{H|u|}{M_-J}.
+\]
+Apply this in \eqref{eq:tpc46-exact-lowpass-main}, integrate
+\(|uW(u)|\), and use the triangle inequality in \(\Hh\).
+\end{proof}
+
+The same main term survives for ordinary compactly supported smooth
+profiles, with a rapidly decreasing sampling error.
+
+\begin{theorem}[Smooth Poisson approximation]
+\label{thm:tpc46-smooth-Poisson-approximation}
+Let \(W,w\in C_c^\infty(\R)\).  Suppose
+\begin{equation}
+ H\ge2M_+,
+ \qquad H\le C_0M_-J
+ \label{eq:tpc46-smooth-Poisson-range}
+\end{equation}
+for a fixed \(C_0\).  For every \(A>0\),
+\begin{align}
+ \cA_{H,h_0}(W;F)
+ ={}&\sum_{p,r,m}
+ \frac{z_{p,r,m}}m v_{p,r,m}\notag\\
+ &\quad\times
+ \int_{\R}W(u)
+ w\!\left(\frac{pr-h_0-Hu}{mJ}\right)\,du
+ +\cE_{H,h_0},
+ \label{eq:tpc46-smooth-Poisson-main}\\
+ \|\cE_{H,h_0}\|_{\Hh}
+ &\ll_{A,W,w,C_0}
+ \left(\frac{M_+}{H}\right)^A\notag\\
+ &\quad\times
+ \sum_{p,r,m}
+ \frac{|z_{p,r,m}|}{m}\|v_{p,r,m}\|_{\Hh}.
+ \label{eq:tpc46-smooth-Poisson-error}
+\end{align}
+Consequently,
+\begin{align}
+ \bigl\|\cA_{H,h_0}(W;F)-\cM_{H,h_0}(W;F)\bigr\|_{\Hh}
+ &\ll
+ \left[
+ \left(\frac{M_+}{H}\right)^A
+ +\frac{H}{M_-J}
+ \right]\notag\\
+ &\quad\times
+ \sum_{p,r,m}
+ \frac{|z_{p,r,m}|}{m}\|v_{p,r,m}\|_{\Hh},
+ \label{eq:tpc46-combined-smooth-lowpass-error}
+\end{align}
+where the implicit constant has the same fixed dependencies.
+\end{theorem}
+
+\begin{proof}
+For one triple put \(B=pr-h_0\) and
+\[
+ f(x)=w(x/J)W((B-mx)/H).
+\]
+Poisson summation writes \(\sum_jf(j)=\sum_k\widehat f(k)\).  After
+the substitution \(u=(B-mx)/H\),
+\begin{equation}
+ \widehat f(k)
+ =\frac Hm\e(-kB/m)
+ \int_{\R}W(u)
+ w\!\left(\frac{B-Hu}{mJ}\right)
+ \e(kHu/m)\,du.
+ \label{eq:tpc46-smooth-Poisson-Fourier-mode}
+\end{equation}
+The \(k=0\) term gives the integral in
+\eqref{eq:tpc46-smooth-Poisson-main}.  Set \(\delta=H/m\).  The range
+\eqref{eq:tpc46-smooth-Poisson-range} gives \(\delta\ge2\) and
+\(H/(mJ)\le C_0\).  Repeated integration by parts in
+\eqref{eq:tpc46-smooth-Poisson-Fourier-mode} therefore yields, for
+\(k\ne0\),
+\[
+ |\widehat f(k)|
+ \ll_{A,W,w,C_0}\delta(|k|\delta)^{-A-1}.
+\]
+After summing \(k\ne0\) and dividing by \(H=m\delta\), the error for
+this triple is
+\[
+ \ll_{A,W,w,C_0}
+ \frac1m\left(\frac mH\right)^A
+ \le
+ \frac1m\left(\frac{M_+}{H}\right)^A.
+\]
+The Hilbert-space triangle inequality proves
+\eqref{eq:tpc46-smooth-Poisson-error}.  The mean-value argument from
+\cref{cor:tpc46-lowpass-main-variation} then gives
+\eqref{eq:tpc46-combined-smooth-lowpass-error}.
+\end{proof}
+
+At the TPC scales \eqref{eq:tpc46-endpoint-MJ-scales}, taking
+\(H=X^{267/400+\epsilon}\) with
+\(0<\epsilon<133/400\) makes the two errors in
+\eqref{eq:tpc46-combined-smooth-lowpass-error}
+\begin{equation}
+ X^{-A\epsilon+o(1)}
+ \quad\text{and}\quad
+ X^{-133/400+\epsilon+o(1)},
+ \label{eq:tpc46-endpoint-smooth-average-errors}
+\end{equation}
+respectively.  This strong approximation concerns a coarse completed
+shift average, not the value at a prescribed physical shift.
+
+\subsection{The averaged atomic diagonal}
+
+The diagonal associated with
+\eqref{eq:tpc46-Hilbert-packet} is
+\begin{equation}
+ \Delta_h^F:=
+ \sum_{p,r,m}|z_{p,r,m}|^2\|v_{p,r,m}\|_{\Hh}^2
+ \sum_{j\in\Z}|w(j/J)|^2\one_{\{h=pr-mj\}}.
+ \label{eq:tpc46-atomic-diagonal-by-shift}
+\end{equation}
+It contains exactly the equal-atom terms in \(\|F_h\|_{\Hh}^2\), not
+the cross terms between distinct determinant atoms.
+
+\begin{theorem}[Exact averaged atomic diagonal]
+\label{thm:tpc46-exact-averaged-atomic-diagonal}
+Assume \eqref{eq:tpc46-bandpass-orbit-support} and
+\eqref{eq:tpc46-lowpass-window-support}.  If
+\begin{equation}
+ \frac{bM_+}{H}+\frac{2\sigma}{J}<1,
+ \label{eq:tpc46-diagonal-no-alias-condition}
+\end{equation}
+then
+\begin{align}
+ \frac1H\sum_{h\in\Z}
+ W\!\left(\frac{h-h_0}{H}\right)\Delta_h^F
+ ={}&\sum_{p,r,m}
+ \frac{|z_{p,r,m}|^2}{m}\|v_{p,r,m}\|_{\Hh}^2
+ \notag\\[-2pt]
+ &\quad\times
+ \int_{\R}W(u)
+ \left|w\!\left(
+ \frac{pr-h_0-Hu}{mJ}
+ \right)\right|^2du.
+ \label{eq:tpc46-exact-averaged-diagonal-formula}
+\end{align}
+If \(W,w\in C_c^\infty(\R)\) instead, under
+\eqref{eq:tpc46-smooth-Poisson-range} one has, for every \(A>0\),
+\begin{align}
+ &\frac1H\sum_h
+ W\!\left(\frac{h-h_0}{H}\right)\Delta_h^F
+ \notag\\
+ &\quad=\left(\int_{\R}W\right)
+ \sum_{p,r,m}
+ \frac{|z_{p,r,m}|^2}{m}\|v_{p,r,m}\|_{\Hh}^2
+ \left|w\!\left(\frac{pr-h_0}{mJ}\right)\right|^2
+ +\cE_{\Delta},
+ \label{eq:tpc46-smooth-averaged-diagonal-main}\\
+ |\cE_{\Delta}|
+ &\ll_{A,W,w,C_0}
+ \left[
+ \left(\frac{M_+}{H}\right)^A
+ +\frac{H}{M_-J}
+ \right]
+ \sum_{p,r,m}
+ \frac{|z_{p,r,m}|^2}{m}\|v_{p,r,m}\|_{\Hh}^2.
+ \label{eq:tpc46-smooth-averaged-diagonal-error}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:tpc46-atomic-diagonal-by-shift} and eliminate \(h\).
+The resulting \(j\)-sum is the one in
+\cref{thm:tpc46-exact-lowpass-formula} with \(w\) replaced by
+\(|w|^2\).  Since
+\[
+ \operatorname{supp}\widehat{|w|^2}
+ \subset[-2\sigma,2\sigma],
+\]
+condition \eqref{eq:tpc46-diagonal-no-alias-condition} leaves only the
+zero Poisson mode and proves
+\eqref{eq:tpc46-exact-averaged-diagonal-formula}.  For smooth compactly
+supported profiles, repeat the proof of
+\cref{thm:tpc46-smooth-Poisson-approximation} with \(|w|^2\) in place
+of \(w\), and then use the mean-value theorem.  This gives
+\eqref{eq:tpc46-smooth-averaged-diagonal-main} and
+\eqref{eq:tpc46-smooth-averaged-diagonal-error}.
+\end{proof}
+
+\begin{remark}[What the diagonal formula does not estimate]
+\label{rem:tpc46-diagonal-not-full-energy}
+In general,
+\[
+ \|F_h\|_{\Hh}^2
+ =\Delta_h^F+
+ \sum_{\substack{e\ne e'\\h(e)=h(e')}}
+ \langle b_e,b_{e'}\rangle_{\Hh},
+\]
+where \(e,e'\) denote determinant atoms.
+\Cref{thm:tpc46-exact-lowpass-formula,thm:tpc46-exact-averaged-atomic-diagonal}
+compute the averaged
+amplitude and its atomic diagonal, respectively; neither deletes the
+equal-determinant cross terms in the averaged squared norm.  Moreover,
+the signed band-pass identity
+\eqref{eq:tpc46-exact-bandpass-average-zero} cannot be squared and
+reinterpreted as a positive energy estimate.  These distinctions are
+essential when comparing the completed shift model with the
+atomic-normalized TPC Gram/Bessel gate.
+\end{remark}

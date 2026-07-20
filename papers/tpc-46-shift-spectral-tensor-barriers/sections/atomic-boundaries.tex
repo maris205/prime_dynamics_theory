@@ -1,0 +1,181 @@
+\section{Sharp atomic-normalization boundaries}
+\label{sec:tpc46-atomic-boundaries}
+
+This section shows why the valid tensor estimates in
+\cref{sec:tpc46-tensor-closure,sec:tpc46-bohr} cannot be substituted for
+the physical Bessel estimate.
+
+\subsection{Averaging all shifts can retain a polynomial loss}
+
+Take nonnegative unit coefficients on dyadic boxes and let
+\begin{equation}
+ N_h:=\#\{(p,r,m,j):pr-mj=h\}.
+ \label{eq:tpc46-flat-count}
+\end{equation}
+Then \(\cT_h=N_h=\Delta_h\).  Suppose all differences occupy an
+interval of \(O(X)\) integers.  If
+\begin{equation}
+ K_1:=\#(\cP\times\cR),
+ \qquad
+ K_2:=\#(\cM\times\cJ),
+ \label{eq:tpc46-flat-cardinalities}
+\end{equation}
+then \(\sum_hN_h=K_1K_2\), and Cauchy--Schwarz gives
+\begin{equation}
+ \sum_h|\cT_h|^2
+ =\sum_hN_h^2
+ \gg\frac{(K_1K_2)^2}{X}.
+ \label{eq:tpc46-global-flat-energy}
+\end{equation}
+Since \(\sum_h\Delta_h=K_1K_2\),
+\begin{equation}
+ \frac{\sum_h|\cT_h|^2}{\sum_h\Delta_h}
+ \gg\frac{K_1K_2}{X}.
+ \label{eq:tpc46-global-flat-ratio}
+\end{equation}
+At the endpoint, a prime \(p\)-box and three integer boxes have
+\begin{equation}
+ K_1=X^{1+o(1)}/\log X,
+ \qquad
+ K_2=X^{1+o(1)},
+ \label{eq:tpc46-flat-endpoint-counts}
+\end{equation}
+so the ratio in \eqref{eq:tpc46-global-flat-ratio} is
+\begin{equation}
+ \gg X^{1-o(1)}.
+ \label{eq:tpc46-flat-X-loss}
+\end{equation}
+Partitioning the difference range into intervals of any prescribed
+length \(1\le H\ll X\) shows that at least one nonempty \(H\)-window
+has ratio at least the global ratio.  Therefore no theorem for all
+coefficient boxes and all shift windows can replace tensor energy by
+the averaged atomic diagonal at subpolynomial cost.
+
+\subsection{A prescribed-shift obstruction for arbitrary slots}
+
+The following construction keeps the prime condition but is not
+asserted to satisfy the actual TPC source factorization or M\"obius
+weights.
+
+\begin{proposition}[Fixed-shift coherent box]
+\label{prop:tpc46-fixed-shift-box}
+Fix \(h\ne0\).  Let \(p\asymp P\) range over primes, choose
+\(j_0\in\N\) with \(j_0\asymp J\) and \(2J<P\), and let
+\(R\ge J\) be an integer.  Work at a scale for which \(pR>|h|\) for
+every selected prime, and choose the boxes so that
+\(j_0<\min p\) over those primes.  For every
+such \(p\), choose the unique
+\begin{equation}
+ r_p\in[R,R+j_0)
+ \quad\text{with}\quad
+ pr_p\equiv h\pmod{j_0},
+ \label{eq:tpc46-rp-choice}
+\end{equation}
+and put
+\begin{equation}
+ m_p:=\frac{pr_p-h}{j_0}.
+ \label{eq:tpc46-mp-choice}
+\end{equation}
+Let \(a,b,c\) be the indicators of the resulting \(p,r_p,m_p\) sets,
+and let \(0\le\eta_j\le1\) with \(\eta_{j_0}=1\).  Then
+\begin{equation}
+ \frac{|\cT_h|^2}{\Delta_h}
+ \ge \#\{p\asymp P:p\text{ prime}\}
+ =P^{1-o(1)}.
+ \label{eq:tpc46-fixed-shift-obstruction}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Since \(p>j_0\), the prime \(p\) is invertible modulo \(j_0\), so
+\eqref{eq:tpc46-rp-choice} has exactly one representative in the
+declared half-open interval.  Every selected prime supplies the
+solution
+\(
+ pr_p-m_pj_0=h
+\).
+The scale hypothesis gives \(m_p>0\).
+All terms are nonnegative.  Since every coefficient has modulus at most
+one, \(\Delta_h\le\cT_h\), while \(\cT_h\) is at least the number of
+selected primes.  Hence
+\(
+ |\cT_h|^2/\Delta_h\ge\cT_h
+\), proving the claim.
+\end{proof}
+
+At the TPC lengths
+\(
+ P=M=X^{267/400+o(1)}
+\)
+and
+\(
+ R=J=X^{133/400+o(1)}
+\), this abstract obstruction has exponent \(267/400\), whereas the
+endpoint budget is \(1/400\).  The gap is
+\begin{equation}
+ \frac{267}{400}-\frac1{400}
+ =\frac{133}{200}.
+ \label{eq:tpc46-fixed-box-gap}
+\end{equation}
+The construction rules out an arbitrary-three-slot black box at atomic
+normalization.  It does not say that the actual TPC mask realizes the
+coherent coefficients.
+
+\subsection{Weighted shift averaging and exact grouping norms}
+
+Let \(E\) be a finite atom set with maps
+\(
+ h:E\to\Z
+\)
+and
+\(
+ s:E\to S
+\).
+For nonnegative weights \(\omega_h\), define
+\begin{equation}
+ \|Gx\|_\omega^2
+ :=\sum_{h_0,s_0}\omega_{h_0}
+ \left|\sum_{\substack{e:h(e)=h_0\\s(e)=s_0}}x_e\right|^2,
+ \qquad
+ \|x\|_{\omega,E}^2
+ :=\sum_e\omega_{h(e)}|x_e|^2.
+ \label{eq:tpc46-weighted-grouping}
+\end{equation}
+
+\begin{theorem}[Averaging-invariant grouping norm]
+\label{thm:tpc46-weighted-grouping-norm}
+After discarding zero-weight fibers,
+\begin{equation}
+ \boxed{
+ \sup_{x\ne0}\frac{\|Gx\|_\omega^2}{\|x\|_{\omega,E}^2}
+ =\max_{\substack{h_0,s_0\\\omega_{h_0}>0}}
+ \#\{e:h(e)=h_0,\ s(e)=s_0\}.}
+ \label{eq:tpc46-weighted-grouping-norm}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Fiberwise Cauchy--Schwarz gives the upper bound.  On a largest
+positive-weight fiber, take \(x\) constant and nonzero and set it to
+zero elsewhere.  The weight cancels from the quotient and equality is
+attained.
+\end{proof}
+
+Thus dividing both numerator and atomic diagonal by the number of
+shifts does not lower the exact support-only loss.  At the first
+unbalanced TPC block \(R=J\), the available ambient fiber bound from
+TPC--45 is
+\begin{equation}
+ 1+\frac{L_0}{J}
+ =X^{15077/105000+o(1)}.
+ \label{eq:tpc46-unbalanced-ambient-frontier}
+\end{equation}
+It exceeds \(X^{1/400}\) by exponent
+\begin{equation}
+ \frac{15077}{105000}-\frac1{400}
+ =\frac{29629}{210000}.
+ \label{eq:tpc46-unbalanced-budget-deficit}
+\end{equation}
+The actual squared norm is the realized maximum fiber size, which can
+be smaller than this ambient upper bound.  The theorem says only that
+shift weights alone do not reduce that realized norm.

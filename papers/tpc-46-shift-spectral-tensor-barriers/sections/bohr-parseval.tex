@@ -1,0 +1,111 @@
+\section{Fourier--Bohr scalarization of the residual label}
+\label{sec:tpc46-bohr}
+
+The multiplicative label \(s=d(m)r\) can be retained without paying a
+dimension factor.  This shows that the bare residual product is not the
+source of the tensor-normalization loss.
+
+Let \(\cQ\) be a finite prime set containing all prime factors of every
+\(r\) and \(d(m)\) in the packet, and put
+\begin{equation}
+ \T^{\cQ}:=\prod_{q\in\cQ}\{z_q\in\C:|z_q|=1\}
+ \label{eq:tpc46-Bohr-torus}
+\end{equation}
+with normalized Haar measure \(dz\).  For
+\(z=(z_q)_{q\in\cQ}\), define the completely multiplicative character
+\begin{equation}
+ \chi_z(n):=\prod_{q\in\cQ}z_q^{v_q(n)}.
+ \label{eq:tpc46-Bohr-character}
+\end{equation}
+Orthogonality gives
+\begin{equation}
+ \int_{\T^{\cQ}}\chi_z(s)\overline{\chi_z(t)}\,dz
+ =\one_{s=t}
+ \label{eq:tpc46-Bohr-orthogonality}
+\end{equation}
+for the supported integers \(s,t\).
+
+\begin{theorem}[Residual-label fixed-shift closure]
+\label{thm:tpc46-residual-fixed-shift}
+For the residual packet in \eqref{eq:tpc46-residual-packet},
+\begin{equation}
+ \boxed{
+ \sum_s|F(h,s)|^2
+ \le
+ \rho_{\cP,\cR}\rho_{\cM,\cJ}\cD_\otimes.}
+ \label{eq:tpc46-residual-fixed-shift-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The Bohr transform of \(F(h,\cdot)\) is
+\begin{align}
+ \widetilde F_h(z)
+ &:=
+ \sum_sF(h,s)\chi_z(s)\notag\\
+ &=\sum_{pr-mj=h}
+ a_pb_rc_m\eta_j\chi_z(r)\chi_z(d(m)).
+ \label{eq:tpc46-residual-Bohr-transform}
+\end{align}
+For each fixed \(z\), this is the scalar determinant form with
+unit-modulus twists absorbed into \(b_r\) and \(c_m\).  Theorem
+\ref{thm:tpc46-scalar-tensor-closure} therefore bounds
+\(|\widetilde F_h(z)|^2\) by the right side of
+\eqref{eq:tpc46-residual-fixed-shift-bound}, uniformly in \(z\).
+Parseval in \eqref{eq:tpc46-Bohr-orthogonality} and integration over
+\(z\) finish the proof.
+\end{proof}
+
+There is also a two-spectrum identity which records every remaining
+collision exactly.  Put
+\begin{align}
+ A_z(\alpha)
+ &:=
+ \sum_{p,r}a_pb_r\chi_z(r)\e(-pr\alpha),
+ \label{eq:tpc46-Az}\\
+ C_z(\alpha)
+ &:=
+ \sum_{m,j}c_m\eta_j\chi_z(d(m))\e(mj\alpha).
+ \label{eq:tpc46-Cz}
+\end{align}
+
+\begin{theorem}[Additive--multiplicative Parseval normal form]
+\label{thm:tpc46-double-Parseval}
+One has the exact identity
+\begin{equation}
+ \boxed{
+ \sum_{h,s}|F(h,s)|^2
+ =\int_{\T}\int_{\T^{\cQ}}
+ |A_z(\alpha)|^2|C_z(\alpha)|^2\,dz\,d\alpha.}
+ \label{eq:tpc46-double-Parseval}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The joint Fourier--Bohr transform of \(F(h,s)\) equals
+\begin{align*}
+ \sum_{h,s}F(h,s)\chi_z(s)\e(-h\alpha)
+ &=\sum_{p,r,m,j}a_pb_rc_m\eta_j
+   \chi_z(r)\chi_z(d(m))
+   \e(-(pr-mj)\alpha)\\
+ &=A_z(\alpha)C_z(\alpha).
+\end{align*}
+Parseval on \(\T\times\T^{\cQ}\) gives
+\eqref{eq:tpc46-double-Parseval}.
+\end{proof}
+
+Expansion of \eqref{eq:tpc46-double-Parseval} shows that its
+off-diagonal terms are exactly the pairs satisfying both
+\begin{equation}
+ pr-mj=p'r'-m'j',
+ \qquad
+ d(m)r=d(m')r'.
+ \label{eq:tpc46-mixed-collisions}
+\end{equation}
+Thus the remaining Gram problem is a mixed additive--multiplicative
+energy, not an unspecified appeal to M\"obius randomness.
+
+For squarefree-kernel labels, the same argument uses the finite Walsh
+group \(\{\pm1\}^{\cQ}\) and prime valuations modulo two.  At the
+physical equality alias, TPC coprimality makes the simpler product
+version above literal.
