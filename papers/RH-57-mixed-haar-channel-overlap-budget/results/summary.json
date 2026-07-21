@@ -1,0 +1,109 @@
+{
+  "arb": {
+    "coherence_bound_certified": true,
+    "gram_positive_certified": true,
+    "precision_bits": 256,
+    "status": "arb_two_block_hardy_cross_stein_identity_audit"
+  },
+  "limitations": [
+    "The grouped Riesz projectors use binary64 left/right eigenspaces and are not contour enclosures.",
+    "The dense audit holds N*sigma=5.12, below the RH-50 production resolution N*sigma=20.48.",
+    "Fixed radial cuts audit one invariant-block organization; they do not prove a dyadically uniform physical cloud decomposition.",
+    "Five levels and fitted exponents are diagnostics, not small-noise asymptotic theorems.",
+    "Stage A1 and unconditional Stage A4 remain open."
+  ],
+  "pilot": {
+    "fits": {
+      "left_coherence_upper": {
+        "growth_exponent": 1.4599968133203276,
+        "levels": 5,
+        "log_intercept": -2.365305626332467,
+        "maximum_log_residual": 0.5239513658077362,
+        "sigma_power": -1.4599968133203276
+      },
+      "left_exact_energy": {
+        "growth_exponent": 0.16771551715962102,
+        "levels": 5,
+        "log_intercept": -0.3268655038387696,
+        "maximum_log_residual": 0.08145972663771049,
+        "sigma_power": -0.16771551715962102
+      },
+      "left_signed_fusion_ratio": {
+        "growth_exponent": 0.0,
+        "levels": 5,
+        "log_intercept": 4.4461758243421174,
+        "maximum_log_residual": 1.2414611062489929,
+        "sigma_power": 2.506634697506269
+      },
+      "left_square_sum": {
+        "growth_exponent": 1.4210328659127822,
+        "levels": 5,
+        "log_intercept": -2.549953416009899,
+        "maximum_log_residual": 0.5456672910597633,
+        "sigma_power": -1.4210328659127822
+      },
+      "right_coherence_upper": {
+        "growth_exponent": 2.1196508080980583,
+        "levels": 5,
+        "log_intercept": -3.4432156538461776,
+        "maximum_log_residual": 0.8356790469088979,
+        "sigma_power": -2.1196508080980583
+      },
+      "right_exact_energy": {
+        "growth_exponent": 0.19929753896486815,
+        "levels": 5,
+        "log_intercept": -0.3036026667980371,
+        "maximum_log_residual": 0.058983698926380904,
+        "sigma_power": -0.19929753896486815
+      },
+      "right_signed_fusion_ratio": {
+        "growth_exponent": 0.0,
+        "levels": 5,
+        "log_intercept": 6.751838203836292,
+        "maximum_log_residual": 1.8340103547388766,
+        "sigma_power": 3.784873368202164
+      },
+      "right_square_sum": {
+        "growth_exponent": 2.091734223065422,
+        "levels": 5,
+        "log_intercept": -3.6795217687148485,
+        "maximum_log_residual": 0.8598114813939333,
+        "sigma_power": -2.091734223065422
+      }
+    },
+    "rows": 5,
+    "status": "binary64_grouped_riesz_cross_stein_overlap_audit"
+  },
+  "program_boundary": {
+    "arithmetic_trace_formula": false,
+    "hilbert_polya_operator": false,
+    "production_interval_riesz_projector": false,
+    "stage_A1_closed": false,
+    "stage_A4_unconditional_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "154da832fa23eb104e172b756371402d29618794becc5c6a66d2f7b043ded877",
+    "figures/mixed_haar_channel_overlap.pdf": "0acbc007125cc09df871373bc94f310b2dfa35c642ac5d56940ec97e609463ca",
+    "figures/mixed_haar_channel_overlap.png": "6f97dd1412bfe92a26f9495b59ef1e9a06a43e1baaa50c90328654175fde41e7",
+    "main.pdf": "1e0381ac077805f4442e985814c7ead064408593e6bc11eaa0e8cdee1338c35f",
+    "main.tex": "d919a3de481ec63f6a1be74f2f9923877cb8c2a0b57a6c6b120a313dd06adc30",
+    "mixed-haar-channel-overlap-budget.pdf": "1e0381ac077805f4442e985814c7ead064408593e6bc11eaa0e8cdee1338c35f",
+    "pyproject.toml": "981056fcc5ea0a73f70c2212bfd61758865817091db5b8ffc33af735195ea27c",
+    "references.bib": "b258f0bede889a4b3290138debe3a89f02e4cf9d943f4e6203ad9120ff50f17b",
+    "requirements.txt": "2036d2c43433a02ca90a5c6fb64014ed2e362a41a3021029cc29897bc9cdca2f"
+  },
+  "result_hashes": {
+    "results/arb_block_audit.json": "ee3c663fb9f9586b27f7700d1f778f0ae0c8e0fcc4be78ef554895288607a3de",
+    "results/dependency_manifest.json": "a791b1956c309c9f03c1ea830f38c98bd771d7fb177f602a59b614d15b703958",
+    "results/mixed_overlap_pilot.json": "72f002046a5eebf7e92896a9f4bd9ac18210924c260e0e3f4f6cbcbf2720caee",
+    "results/mixed_overlap_pilot_smoke.json": "4e578f544bf822d4f78711ac098d9f74e9f539ef56a9633f5b43ce715c576e39"
+  },
+  "status": "rh57_cross_stein_identity_and_radial_block_route_audit",
+  "theorem": {
+    "coherence_bound": true,
+    "cross_stein_identity": true,
+    "requires_diagonalizability": false,
+    "simple_mode_cauchy_kernel": true
+  }
+}

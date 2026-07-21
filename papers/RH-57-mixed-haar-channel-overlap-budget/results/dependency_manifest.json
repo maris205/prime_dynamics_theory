@@ -1,0 +1,53 @@
+{
+  "external_inputs": {
+    "rh14_operator": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh50_manuscript": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/main.tex",
+      "sha256": "106c3a96f2b38f07543c70e0859665ae9ba427386d79f57168e85c49558b9f74"
+    },
+    "rh51_pilot": {
+      "path": "papers/RH-51-cyclic-rank-growing-horizon-stein/results/structured_stein_pilot.json",
+      "sha256": "508a63949bbddb02b10b209bf9ed1c0c5714bf6e83936e82a8ede92e600b4061"
+    },
+    "rh54_manuscript": {
+      "path": "papers/RH-54-factor-aware-intrinsic-identification/main.tex",
+      "sha256": "9d87b64a7d257f06f294c8f0372841c43f9b218fcf87a17429ed9b86403ae8df"
+    },
+    "rh55_manuscript": {
+      "path": "papers/RH-55-strong-weak-riesz-cutoff-transfer/main.tex",
+      "sha256": "c353086ffd925592a4b70baed356414514fbd819fe1de44d499afc58495fd2ac"
+    },
+    "rh56_manuscript": {
+      "path": "papers/RH-56-growing-horizon-hard-space-barrier/main.tex",
+      "sha256": "b662ac98ef01ee24b20929fb42e9efec6c13e15a9c903b77ff8cc2c839a488cd"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "87eae8e29ee14c9efb263ec6505e82201e065181cee88ac4acee4d98e654c016",
+    "experiments/make_figures.py": "fdcc6117448f6e42d032de884d7a985d7b92669e45030d4317d4670bf09d5f43",
+    "experiments/run_arb_block_audit.py": "eaaf061784fed62b00244798683bd670312522d8594a66ce0e3b6829d55be9a0",
+    "experiments/run_overlap_pilot.py": "6d8fa1b6a789896e3ff56b6e4d80bfeb7f5670f1c7e430a6e6214b15d1eb6bf5",
+    "experiments/verify_archive.py": "dedaaa21c0ef7c9c67ec26d73f1ee3dad841a56cbbb24d8c33b1589c6d3fbc2f",
+    "src/haar_overlap/__init__.py": "216a98aa393d84acb3174ae59ce551ea78cac77440425ad0a4da3218af81425c",
+    "src/haar_overlap/algebra.py": "e369b943212d7cf1bfcba071b5e199a86ab51a705165452b11253f132d453756",
+    "tests/test_archived_results.py": "420bd74a81fe8ba90aaecf95dff9096d49721ea7036f4e9457f26afb31d71dc6",
+    "tests/test_smoke_pilot.py": "f98e0d903355b6c1e920ce3fa44a97ba19cee9803fcfaafb6ef33fb658849f3b",
+    "tests/test_theory.py": "5a375c8712d85a63a7b54eb62518afe9165649cfcbfc1baf41a9ca842e869242"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "154da832fa23eb104e172b756371402d29618794becc5c6a66d2f7b043ded877",
+    "figures/mixed_haar_channel_overlap.pdf": "0acbc007125cc09df871373bc94f310b2dfa35c642ac5d56940ec97e609463ca",
+    "figures/mixed_haar_channel_overlap.png": "6f97dd1412bfe92a26f9495b59ef1e9a06a43e1baaa50c90328654175fde41e7",
+    "main.pdf": "1e0381ac077805f4442e985814c7ead064408593e6bc11eaa0e8cdee1338c35f",
+    "main.tex": "d919a3de481ec63f6a1be74f2f9923877cb8c2a0b57a6c6b120a313dd06adc30",
+    "mixed-haar-channel-overlap-budget.pdf": "1e0381ac077805f4442e985814c7ead064408593e6bc11eaa0e8cdee1338c35f",
+    "pyproject.toml": "981056fcc5ea0a73f70c2212bfd61758865817091db5b8ffc33af735195ea27c",
+    "references.bib": "b258f0bede889a4b3290138debe3a89f02e4cf9d943f4e6203ad9120ff50f17b",
+    "requirements.txt": "2036d2c43433a02ca90a5c6fb64014ed2e362a41a3021029cc29897bc9cdca2f"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}

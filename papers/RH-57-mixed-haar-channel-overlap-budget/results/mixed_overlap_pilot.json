@@ -1,0 +1,1037 @@
+{
+  "evidence_level": "deterministic all-column dense binary64 Lyapunov and grouped left/right eigenspace audit; not interval validated",
+  "fine_resolution": 5.12,
+  "fits": {
+    "left_coherence_upper": {
+      "growth_exponent": 1.4599968133203276,
+      "levels": 5,
+      "log_intercept": -2.365305626332467,
+      "maximum_log_residual": 0.5239513658077362,
+      "sigma_power": -1.4599968133203276
+    },
+    "left_exact_energy": {
+      "growth_exponent": 0.16771551715962102,
+      "levels": 5,
+      "log_intercept": -0.3268655038387696,
+      "maximum_log_residual": 0.08145972663771049,
+      "sigma_power": -0.16771551715962102
+    },
+    "left_signed_fusion_ratio": {
+      "growth_exponent": 0.0,
+      "levels": 5,
+      "log_intercept": 4.4461758243421174,
+      "maximum_log_residual": 1.2414611062489929,
+      "sigma_power": 2.506634697506269
+    },
+    "left_square_sum": {
+      "growth_exponent": 1.4210328659127822,
+      "levels": 5,
+      "log_intercept": -2.549953416009899,
+      "maximum_log_residual": 0.5456672910597633,
+      "sigma_power": -1.4210328659127822
+    },
+    "right_coherence_upper": {
+      "growth_exponent": 2.1196508080980583,
+      "levels": 5,
+      "log_intercept": -3.4432156538461776,
+      "maximum_log_residual": 0.8356790469088979,
+      "sigma_power": -2.1196508080980583
+    },
+    "right_exact_energy": {
+      "growth_exponent": 0.19929753896486815,
+      "levels": 5,
+      "log_intercept": -0.3036026667980371,
+      "maximum_log_residual": 0.058983698926380904,
+      "sigma_power": -0.19929753896486815
+    },
+    "right_signed_fusion_ratio": {
+      "growth_exponent": 0.0,
+      "levels": 5,
+      "log_intercept": 6.751838203836292,
+      "maximum_log_residual": 1.8340103547388766,
+      "sigma_power": 3.784873368202164
+    },
+    "right_square_sum": {
+      "growth_exponent": 2.091734223065422,
+      "levels": 5,
+      "log_intercept": -3.6795217687148485,
+      "maximum_log_residual": 0.8598114813939333,
+      "sigma_power": -2.091734223065422
+    }
+  },
+  "hardy_radius": 0.85,
+  "limitations": [
+    "The grouped Riesz projectors use binary64 left/right eigenspaces and are not contour enclosures.",
+    "The dense audit holds N*sigma=5.12, below the RH-50 production resolution N*sigma=20.48.",
+    "Fixed radial cuts audit one invariant-block organization; they do not prove a dyadically uniform physical cloud decomposition.",
+    "Five levels and fitted exponents are diagnostics, not small-noise asymptotic theorems.",
+    "Stage A1 and unconditional Stage A4 remain open."
+  ],
+  "radial_cuts": [
+    0.15,
+    0.35,
+    0.55
+  ],
+  "radial_names": [
+    "central",
+    "inner_cloud",
+    "middle_cloud",
+    "edge_cloud"
+  ],
+  "rows": [
+    {
+      "coarse_biorthogonality_defect": 2.4046420171289115e-16,
+      "coarse_bulk_radius_candidate": 0.22528348977031018,
+      "coarse_dimension": 16,
+      "elapsed_seconds": 0.010191896930336952,
+      "fine_biorthogonality_defect": 2.7755575615628914e-16,
+      "fine_bulk_radius_candidate": 0.22555252096240946,
+      "fine_dimension": 32,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "absolute_block_upper": 2.1186438754526487,
+        "absolute_upper_over_exact": 2.3437426744343566,
+        "block_reconstructed_energy": 0.9039575455799415,
+        "block_reconstruction_relative_defect": 0.0,
+        "blocks": [
+          {
+            "commutator_defect": 2.189187552699407e-15,
+            "eigenvalue_count": 31,
+            "hardy_energy": 1.019448428991972,
+            "idempotence_defect": 9.210073520691694e-16,
+            "left_right_overlap_condition": null,
+            "maximum_physical_modulus": 0.1116670667925056,
+            "minimum_physical_modulus": 3.587398025930432e-18,
+            "name": "central",
+            "projector_norm": 4.214615284923047
+          },
+          {
+            "commutator_defect": 2.17246893700416e-15,
+            "eigenvalue_count": 1,
+            "hardy_energy": 1.0991954464606768,
+            "idempotence_defect": 7.825677789808156e-16,
+            "left_right_overlap_condition": 1.0,
+            "maximum_physical_modulus": 0.22555252096240938,
+            "minimum_physical_modulus": 0.22555252096240938,
+            "name": "inner_cloud",
+            "projector_norm": 4.214615284923048
+          }
+        ],
+        "coherence_constant": 1.6382299029118967,
+        "coherence_upper": 1.918835868968498,
+        "coherence_upper_over_exact": 2.1227057380636754,
+        "exact_hardy_energy": 0.9039575455799415,
+        "gershgorin_constant": 1.638229902911897,
+        "gershgorin_upper": 1.9188358689684981,
+        "maximum_pairwise_projector_product": 6.503536653008208e-16,
+        "minimum_block_gram_eigenvalue": 0.4035976291554237,
+        "minimum_radial_cut_gap": 0.038332933207494396,
+        "normalized_block_gram_imag": [
+          [
+            0.0,
+            1.0981054005187906e-16
+          ],
+          [
+            -1.0981054005187906e-16,
+            0.0
+          ]
+        ],
+        "normalized_block_gram_real": [
+          [
+            1.0,
+            -0.638229902911897
+          ],
+          [
+            -0.638229902911897,
+            0.9999999999999998
+          ]
+        ],
+        "partition_defect": 1.1102230246251565e-16,
+        "signed_fusion_ratio": 0.36357604508220576,
+        "square_sum_energy": 1.4991683457484306,
+        "stein_defect_norm": 8.614735726909801e-16
+      },
+      "right": {
+        "absolute_block_upper": 2.5873628991728226,
+        "absolute_upper_over_exact": 2.5805345345487023,
+        "block_reconstructed_energy": 1.0026461047247002,
+        "block_reconstruction_relative_defect": 4.42917204542472e-16,
+        "blocks": [
+          {
+            "commutator_defect": 1.6974094376563503e-15,
+            "eigenvalue_count": 15,
+            "hardy_energy": 1.1999445505964146,
+            "idempotence_defect": 8.182172798714226e-16,
+            "left_right_overlap_condition": null,
+            "maximum_physical_modulus": 0.10874189414447469,
+            "minimum_physical_modulus": 4.876537141587691e-16,
+            "name": "central",
+            "projector_norm": 4.031657723685846
+          },
+          {
+            "commutator_defect": 1.7135066731635526e-15,
+            "eigenvalue_count": 1,
+            "hardy_energy": 1.387418348576408,
+            "idempotence_defect": 9.155849857378613e-16,
+            "left_right_overlap_condition": 1.0,
+            "maximum_physical_modulus": 0.22528348977031024,
+            "minimum_physical_modulus": 0.22528348977031024,
+            "name": "inner_cloud",
+            "projector_norm": 4.031657723685847
+          }
+        ],
+        "coherence_constant": 1.7086322178530495,
+        "coherence_upper": 2.397748918188161,
+        "coherence_upper_over_exact": 2.391420967866344,
+        "exact_hardy_energy": 1.0026461047246997,
+        "gershgorin_constant": 1.7086322178530495,
+        "gershgorin_upper": 2.397748918188161,
+        "maximum_pairwise_projector_product": 8.09582020286091e-16,
+        "minimum_block_gram_eigenvalue": 0.47797792091153185,
+        "minimum_radial_cut_gap": 0.04125810585552531,
+        "normalized_block_gram_imag": [
+          [
+            0.0,
+            9.627128726072786e-17
+          ],
+          [
+            -9.627128726072786e-17,
+            0.0
+          ]
+        ],
+        "normalized_block_gram_real": [
+          [
+            0.9999999999999999,
+            -0.7086322178530494
+          ],
+          [
+            -0.7086322178530494,
+            1.0
+          ]
+        ],
+        "partition_defect": 1.1102230246251565e-16,
+        "signed_fusion_ratio": 0.2987696824753032,
+        "square_sum_energy": 1.834338190866809,
+        "stein_defect_norm": 1.5447444980936623e-15
+      },
+      "sigma": 0.16
+    },
+    {
+      "coarse_biorthogonality_defect": 2.851276512145167e-16,
+      "coarse_bulk_radius_candidate": 0.45742922365381317,
+      "coarse_dimension": 32,
+      "elapsed_seconds": 0.0368793309899047,
+      "fine_biorthogonality_defect": 1.6800724925411246e-15,
+      "fine_bulk_radius_candidate": 0.462166347102164,
+      "fine_dimension": 64,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "absolute_block_upper": 3.8993629378538825,
+        "absolute_upper_over_exact": 3.354114611960456,
+        "block_reconstructed_energy": 1.1625610299508318,
+        "block_reconstruction_relative_defect": 0.0,
+        "blocks": [
+          {
+            "commutator_defect": 8.14202310667524e-15,
+            "eigenvalue_count": 61,
+            "hardy_energy": 1.473061337221979,
+            "idempotence_defect": 1.2606527655366127e-14,
+            "left_right_overlap_condition": null,
+            "maximum_physical_modulus": 0.09889418696820765,
+            "minimum_physical_modulus": 2.1927312705403276e-18,
+            "name": "central",
+            "projector_norm": 13.298726413135533
+          },
+          {
+            "commutator_defect": 7.249074666625228e-15,
+            "eigenvalue_count": 1,
+            "hardy_energy": 1.2565747037136126,
+            "idempotence_defect": 3.792208096944788e-15,
+            "left_right_overlap_condition": 1.0,
+            "maximum_physical_modulus": 0.24234384872422382,
+            "minimum_physical_modulus": 0.24234384872422382,
+            "name": "inner_cloud",
+            "projector_norm": 11.041136271262094
+          },
+          {
+            "commutator_defect": 5.440737826119336e-15,
+            "eigenvalue_count": 2,
+            "hardy_energy": 1.169726896918291,
+            "idempotence_defect": 8.911590272839878e-16,
+            "left_right_overlap_condition": 1.0000000000000029,
+            "maximum_physical_modulus": 0.46216634710216437,
+            "minimum_physical_modulus": 0.46216634710216425,
+            "name": "middle_cloud",
+            "projector_norm": 3.957914789245393
+          }
+        ],
+        "coherence_constant": 1.7437413764143788,
+        "coherence_upper": 2.987136992084676,
+        "coherence_upper_over_exact": 2.5694453152373526,
+        "exact_hardy_energy": 1.1625610299508318,
+        "gershgorin_constant": 1.9713575239507937,
+        "gershgorin_upper": 3.1761192576430366,
+        "maximum_pairwise_projector_product": 1.1377774660007459e-14,
+        "minimum_block_gram_eigenvalue": 0.37099833927834597,
+        "minimum_radial_cut_gap": 0.051105813031792346,
+        "normalized_block_gram_imag": [
+          [
+            0.0,
+            -1.7552627833975042e-16,
+            2.41330672173109e-16
+          ],
+          [
+            1.7552627833975042e-16,
+            0.0,
+            -3.363956918339162e-16
+          ],
+          [
+            -2.41330672173109e-16,
+            3.363956918339162e-16,
+            0.0
+          ]
+        ],
+        "normalized_block_gram_real": [
+          [
+            1.0000000000000002,
+            -0.723692418166733,
+            -0.2476651057840604
+          ],
+          [
+            -0.723692418166733,
+            0.9999999999999998,
+            -0.07925407983074428
+          ],
+          [
+            -0.2476651057840604,
+            -0.07925407983074428,
+            0.9999999999999999
+          ]
+        ],
+        "partition_defect": 3.423517277654265e-16,
+        "signed_fusion_ratio": 0.2641212320896151,
+        "square_sum_energy": 2.2621120004556032,
+        "stein_defect_norm": 1.1516744669123511e-15
+      },
+      "right": {
+        "absolute_block_upper": 7.176667406474433,
+        "absolute_upper_over_exact": 5.671995156665004,
+        "block_reconstructed_energy": 1.2652809475765041,
+        "block_reconstruction_relative_defect": 8.774517839311959e-16,
+        "blocks": [
+          {
+            "commutator_defect": 7.188503519735044e-15,
+            "eigenvalue_count": 29,
+            "hardy_energy": 2.921689058645851,
+            "idempotence_defect": 1.4191884386235228e-14,
+            "left_right_overlap_condition": null,
+            "maximum_physical_modulus": 0.09914272075032461,
+            "minimum_physical_modulus": 1.488796841897166e-17,
+            "name": "central",
+            "projector_norm": 13.551736204167074
+          },
+          {
+            "commutator_defect": 8.741461416196658e-15,
+            "eigenvalue_count": 1,
+            "hardy_energy": 2.7920320821677547,
+            "idempotence_defect": 2.7335752878765724e-15,
+            "left_right_overlap_condition": 1.0,
+            "maximum_physical_modulus": 0.23713944915164167,
+            "minimum_physical_modulus": 0.23713944915164167,
+            "name": "inner_cloud",
+            "projector_norm": 11.311033041043991
+          },
+          {
+            "commutator_defect": 5.28293122415938e-15,
+            "eigenvalue_count": 2,
+            "hardy_energy": 1.4629462656608268,
+            "idempotence_defect": 6.449754648104566e-16,
+            "left_right_overlap_condition": 1.0000000000000047,
+            "maximum_physical_modulus": 0.4574292236538133,
+            "minimum_physical_modulus": 0.45742922365381317,
+            "name": "middle_cloud",
+            "projector_norm": 3.939676921658341
+          }
+        ],
+        "coherence_constant": 1.8834530654663655,
+        "coherence_upper": 5.898389431781697,
+        "coherence_upper_over_exact": 4.661723108278339,
+        "exact_hardy_energy": 1.265280947576503,
+        "gershgorin_constant": 2.1333153929302577,
+        "gershgorin_upper": 6.277454522534675,
+        "maximum_pairwise_projector_product": 1.6099373712930056e-14,
+        "minimum_block_gram_eigenvalue": 0.5276992410110369,
+        "minimum_radial_cut_gap": 0.05085727924967538,
+        "normalized_block_gram_imag": [
+          [
+            0.0,
+            1.4697618052296565e-17,
+            4.382010069682312e-18
+          ],
+          [
+            -1.4697618052296565e-17,
+            0.0,
+            -9.367173431713868e-18
+          ],
+          [
+            -4.382010069682312e-18,
+            9.367173431713868e-18,
+            0.0
+          ]
+        ],
+        "normalized_block_gram_real": [
+          [
+            1.0,
+            -0.8570690089490861,
+            -0.27624638398117196
+          ],
+          [
+            -0.8570690089490861,
+            1.0,
+            -0.06444779485920746
+          ],
+          [
+            -0.27624638398117196,
+            -0.06444779485920746,
+            1.0
+          ]
+        ],
+        "partition_defect": 3.581619087412296e-16,
+        "signed_fusion_ratio": 0.08666861449207926,
+        "square_sum_energy": 4.297897378890735,
+        "stein_defect_norm": 8.710535601595269e-16
+      },
+      "sigma": 0.08
+    },
+    {
+      "coarse_biorthogonality_defect": 6.497789673989842e-16,
+      "coarse_bulk_radius_candidate": 0.5741825697446765,
+      "coarse_dimension": 64,
+      "elapsed_seconds": 0.5253707258962095,
+      "fine_biorthogonality_defect": 6.944884465138496e-16,
+      "fine_bulk_radius_candidate": 0.5724462784691212,
+      "fine_dimension": 128,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "absolute_block_upper": 7.404615008933396,
+        "absolute_upper_over_exact": 5.551400697314381,
+        "block_reconstructed_energy": 1.3338282377122495,
+        "block_reconstruction_relative_defect": 3.3294332605505017e-16,
+        "blocks": [
+          {
+            "commutator_defect": 5.95643592207224e-14,
+            "eigenvalue_count": 122,
+            "hardy_energy": 2.706756904562942,
+            "idempotence_defect": 1.6987546191035183e-13,
+            "left_right_overlap_condition": null,
+            "maximum_physical_modulus": 0.11513820212526765,
+            "minimum_physical_modulus": 7.878277633806539e-18,
+            "name": "central",
+            "projector_norm": 48.84396031921496
+          },
+          {
+            "commutator_defect": 5.813330568369578e-14,
+            "eigenvalue_count": 4,
+            "hardy_energy": 3.0118732161338433,
+            "idempotence_defect": 4.734220803056904e-14,
+            "left_right_overlap_condition": 1.2084474365436397,
+            "maximum_physical_modulus": 0.3055402967819806,
+            "minimum_physical_modulus": 0.25344618749310693,
+            "name": "inner_cloud",
+            "projector_norm": 51.44627674175137
+          },
+          {
+            "commutator_defect": 1.455151024699398e-14,
+            "eigenvalue_count": 2,
+            "hardy_energy": 1.6859848882366113,
+            "idempotence_defect": 7.165444039505619e-15,
+            "left_right_overlap_condition": 1.0000000000000089,
+            "maximum_physical_modulus": 0.5724462784691213,
+            "minimum_physical_modulus": 0.5724462784691207,
+            "name": "edge_cloud",
+            "projector_norm": 8.354640779685479
+          }
+        ],
+        "coherence_constant": 1.9417073173953128,
+        "coherence_upper": 6.112228610048269,
+        "coherence_upper_over_exact": 4.582470543982347,
+        "exact_hardy_energy": 1.33382823771225,
+        "gershgorin_constant": 2.252732194543853,
+        "gershgorin_upper": 6.583585629895793,
+        "maximum_pairwise_projector_product": 1.6036329549659423e-13,
+        "minimum_block_gram_eigenvalue": 0.5841652966104852,
+        "minimum_radial_cut_gap": 0.022446278469120617,
+        "normalized_block_gram_imag": [
+          [
+            0.0,
+            1.3799662995788194e-16,
+            -2.2698401287958385e-16
+          ],
+          [
+            -1.3799662995788194e-16,
+            0.0,
+            9.495957702578646e-18
+          ],
+          [
+            2.2698401287958385e-16,
+            -9.495957702578646e-18,
+            0.0
+          ]
+        ],
+        "normalized_block_gram_real": [
+          [
+            0.9999999999999999,
+            -0.8207684011569856,
+            0.03375868978838415
+          ],
+          [
+            -0.8207684011569856,
+            1.0,
+            -0.43196379338686725
+          ],
+          [
+            0.03375868978838415,
+            -0.43196379338686725,
+            1.0000000000000002
+          ]
+        ],
+        "partition_defect": 9.752396959528717e-16,
+        "signed_fusion_ratio": 0.09246649660045426,
+        "square_sum_energy": 4.386394676021048,
+        "stein_defect_norm": 7.034849090828261e-16
+      },
+      "right": {
+        "absolute_block_upper": 14.880911480717186,
+        "absolute_upper_over_exact": 10.02391986899396,
+        "block_reconstructed_energy": 1.4845401474873035,
+        "block_reconstruction_relative_defect": 1.3461417313015954e-15,
+        "blocks": [
+          {
+            "commutator_defect": 9.873604644801431e-14,
+            "eigenvalue_count": 58,
+            "hardy_energy": 5.6328110434792045,
+            "idempotence_defect": 1.7097035959591244e-13,
+            "left_right_overlap_condition": null,
+            "maximum_physical_modulus": 0.11829324478043056,
+            "minimum_physical_modulus": 1.5140671685648743e-17,
+            "name": "central",
+            "projector_norm": 45.981670682847856
+          },
+          {
+            "commutator_defect": 1.0076768554696725e-13,
+            "eigenvalue_count": 4,
+            "hardy_energy": 6.347230458094441,
+            "idempotence_defect": 7.68290049439406e-14,
+            "left_right_overlap_condition": 1.231778065737114,
+            "maximum_physical_modulus": 0.300451167354528,
+            "minimum_physical_modulus": 0.24988350104529958,
+            "name": "inner_cloud",
+            "projector_norm": 48.42431366009047
+          },
+          {
+            "commutator_defect": 1.173733661782073e-14,
+            "eigenvalue_count": 2,
+            "hardy_energy": 2.9008699791435415,
+            "idempotence_defect": 2.6980110682180548e-15,
+            "left_right_overlap_condition": 1.0000000000000033,
+            "maximum_physical_modulus": 0.5741825697446773,
+            "minimum_physical_modulus": 0.5741825697446769,
+            "name": "edge_cloud",
+            "projector_norm": 7.987490399891533
+          }
+        ],
+        "coherence_constant": 2.0149555589752017,
+        "coherence_upper": 12.730466308756032,
+        "coherence_upper_over_exact": 8.575360073827122,
+        "exact_hardy_energy": 1.4845401474873015,
+        "gershgorin_constant": 2.3362762812880353,
+        "gershgorin_upper": 13.70798674559766,
+        "maximum_pairwise_projector_product": 2.1383062881920945e-13,
+        "minimum_block_gram_eigenvalue": 0.7322806855965118,
+        "minimum_radial_cut_gap": 0.024182569744676807,
+        "normalized_block_gram_imag": [
+          [
+            0.0,
+            9.760884368050504e-16,
+            -2.072215859123274e-15
+          ],
+          [
+            -9.760884368050504e-16,
+            0.0,
+            1.831971169300047e-15
+          ],
+          [
+            2.072215859123274e-15,
+            -1.831971169300047e-15,
+            0.0
+          ]
+        ],
+        "normalized_block_gram_real": [
+          [
+            1.0000000000000002,
+            -0.8851900194370332,
+            0.05141095856469193
+          ],
+          [
+            -0.8851900194370332,
+            1.0000000000000002,
+            -0.4510862618510017
+          ],
+          [
+            0.05141095856469193,
+            -0.4510862618510017,
+            0.9999999999999998
+          ]
+        ],
+        "partition_defect": 1.3479984398326894e-15,
+        "signed_fusion_ratio": 0.027400642238040736,
+        "square_sum_energy": 8.96832991005568,
+        "stein_defect_norm": 9.80492237630948e-16
+      },
+      "sigma": 0.04
+    },
+    {
+      "coarse_biorthogonality_defect": 1.0218781757968167e-15,
+      "coarse_bulk_radius_candidate": 0.6545817661812359,
+      "coarse_dimension": 128,
+      "elapsed_seconds": 1.9528291639871895,
+      "fine_biorthogonality_defect": 4.447968413798251e-16,
+      "fine_bulk_radius_candidate": 0.6564776607150794,
+      "fine_dimension": 256,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "absolute_block_upper": 42.50301466688616,
+        "absolute_upper_over_exact": 30.15292968560229,
+        "block_reconstructed_energy": 1.4095815932333717,
+        "block_reconstruction_relative_defect": 2.4731454454696068e-14,
+        "blocks": [
+          {
+            "commutator_defect": 8.073007230757543e-12,
+            "eigenvalue_count": 246,
+            "hardy_energy": 20.463727876752642,
+            "idempotence_defect": 1.4049094927488661e-11,
+            "left_right_overlap_condition": null,
+            "maximum_physical_modulus": 0.11198219044511863,
+            "minimum_physical_modulus": 3.972205391199577e-18,
+            "name": "central",
+            "projector_norm": 845.7657737042365
+          },
+          {
+            "commutator_defect": 8.07213760090639e-12,
+            "eigenvalue_count": 6,
+            "hardy_energy": 20.44764999606149,
+            "idempotence_defect": 1.229353654604457e-11,
+            "left_right_overlap_condition": 12.49051241176135,
+            "maximum_physical_modulus": 0.3338539211905235,
+            "minimum_physical_modulus": 0.17728356712069673,
+            "name": "inner_cloud",
+            "projector_norm": 845.8163643204708
+          },
+          {
+            "commutator_defect": 4.2261136905035686e-14,
+            "eigenvalue_count": 4,
+            "hardy_energy": 1.591636794072028,
+            "idempotence_defect": 5.696324655811709e-15,
+            "left_right_overlap_condition": 1.6595454962462093,
+            "maximum_physical_modulus": 0.6564776607150784,
+            "minimum_physical_modulus": 0.6104180263259437,
+            "name": "edge_cloud",
+            "projector_norm": 12.677765962720462
+          }
+        ],
+        "coherence_constant": 1.9967148846860188,
+        "coherence_upper": 40.93959177684597,
+        "coherence_upper_over_exact": 29.043789996530524,
+        "exact_hardy_energy": 1.4095815932334066,
+        "gershgorin_constant": 2.02448588311968,
+        "gershgorin_upper": 41.22330964446321,
+        "maximum_pairwise_projector_product": 1.4134221966248152e-11,
+        "minimum_block_gram_eigenvalue": 0.6530813086406623,
+        "minimum_radial_cut_gap": 0.016146078809476494,
+        "normalized_block_gram_imag": [
+          [
+            0.0,
+            -4.768030836604602e-17,
+            5.743702406582926e-16
+          ],
+          [
+            4.768030836604602e-17,
+            0.0,
+            -5.762469572184386e-16
+          ],
+          [
+            -5.743702406582926e-16,
+            5.762469572184386e-16,
+            0.0
+          ]
+        ],
+        "normalized_block_gram_real": [
+          [
+            1.0,
+            -0.9967033046118845,
+            -0.02778257850779532
+          ],
+          [
+            -0.9967033046118845,
+            0.9999999999999999,
+            -0.022979548680808447
+          ],
+          [
+            -0.02778257850779532,
+            -0.022979548680808447,
+            1.0
+          ]
+        ],
+        "partition_defect": 1.3181705436838766e-14,
+        "signed_fusion_ratio": 0.002367061161583879,
+        "square_sum_energy": 28.972467217333435,
+        "stein_defect_norm": 6.466548054021879e-16
+      },
+      "right": {
+        "absolute_block_upper": 183.84037514519093,
+        "absolute_upper_over_exact": 112.51005815546971,
+        "block_reconstructed_energy": 1.633990579679142,
+        "block_reconstruction_relative_defect": 5.435639781194621e-15,
+        "blocks": [
+          {
+            "commutator_defect": 3.315548174165722e-11,
+            "eigenvalue_count": 118,
+            "hardy_energy": 90.0621198529556,
+            "idempotence_defect": 1.6715023622102387e-11,
+            "left_right_overlap_condition": null,
+            "maximum_physical_modulus": 0.11185582721153603,
+            "minimum_physical_modulus": 1.318099000769767e-17,
+            "name": "central",
+            "projector_norm": 835.4444282309476
+          },
+          {
+            "commutator_defect": 3.315675774638097e-11,
+            "eigenvalue_count": 6,
+            "hardy_energy": 90.11894482404283,
+            "idempotence_defect": 1.702686396178477e-11,
+            "left_right_overlap_condition": 13.672717171588134,
+            "maximum_physical_modulus": 0.32985783671645325,
+            "minimum_physical_modulus": 0.16682853079628052,
+            "name": "inner_cloud",
+            "projector_norm": 835.6675978124473
+          },
+          {
+            "commutator_defect": 2.1759659368515007e-14,
+            "eigenvalue_count": 4,
+            "hardy_energy": 3.659310468192509,
+            "idempotence_defect": 3.971265733413719e-15,
+            "left_right_overlap_condition": 1.6650633582411845,
+            "maximum_physical_modulus": 0.6545817661812352,
+            "minimum_physical_modulus": 0.6081893031199778,
+            "name": "edge_cloud",
+            "projector_norm": 12.725104820455766
+          }
+        ],
+        "coherence_constant": 1.9997640289692953,
+        "coherence_upper": 180.24474144342423,
+        "coherence_upper_over_exact": 110.30953524763707,
+        "exact_hardy_energy": 1.633990579679151,
+        "gershgorin_constant": 2.035059751313737,
+        "gershgorin_upper": 181.82843872819822,
+        "maximum_pairwise_projector_product": 1.732241853133411e-11,
+        "minimum_block_gram_eigenvalue": 0.8874899899530991,
+        "minimum_radial_cut_gap": 0.016828530796280522,
+        "normalized_block_gram_imag": [
+          [
+            0.0,
+            2.02122524619111e-17,
+            -4.997380503463104e-16
+          ],
+          [
+            -2.02122524619111e-17,
+            0.0,
+            4.996056614609985e-16
+          ],
+          [
+            4.997380503463104e-16,
+            -4.996056614609985e-16,
+            0.0
+          ]
+        ],
+        "normalized_block_gram_real": [
+          [
+            1.0,
+            -0.9991576940076553,
+            -0.0010887162538392562
+          ],
+          [
+            -0.9991576940076553,
+            0.9999999999999999,
+            -0.035902057306081786
+          ],
+          [
+            -0.0010887162538392562,
+            -0.035902057306081786,
+            1.0
+          ]
+        ],
+        "partition_defect": 1.7274001731670273e-14,
+        "signed_fusion_ratio": 0.00016434354187680057,
+        "square_sum_energy": 127.45979837466258,
+        "stein_defect_norm": 1.7618409406041427e-15
+      },
+      "sigma": 0.02
+    },
+    {
+      "coarse_biorthogonality_defect": 1.7763568394002505e-15,
+      "coarse_bulk_radius_candidate": 0.6741454003199433,
+      "coarse_dimension": 256,
+      "elapsed_seconds": 7.097412884933874,
+      "fine_biorthogonality_defect": 1.843958553418085e-15,
+      "fine_bulk_radius_candidate": 0.6746647383481765,
+      "fine_dimension": 512,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "absolute_block_upper": 85.23536079085953,
+        "absolute_upper_over_exact": 58.05932628461614,
+        "block_reconstructed_energy": 1.4680735421046927,
+        "block_reconstruction_relative_defect": 1.0526928017943745e-13,
+        "blocks": [
+          {
+            "commutator_defect": 4.523053621657011e-11,
+            "eigenvalue_count": 500,
+            "hardy_energy": 40.80978912305596,
+            "idempotence_defect": 8.553461184180981e-11,
+            "left_right_overlap_condition": null,
+            "maximum_physical_modulus": 0.13920012744890048,
+            "minimum_physical_modulus": 6.449037252989773e-18,
+            "name": "central",
+            "projector_norm": 2705.74584607693
+          },
+          {
+            "commutator_defect": 4.5226016970003384e-11,
+            "eigenvalue_count": 6,
+            "hardy_energy": 40.66649521414702,
+            "idempotence_defect": 8.014520588036939e-11,
+            "left_right_overlap_condition": 6.569633802156324,
+            "maximum_physical_modulus": 0.3343524227543459,
+            "minimum_physical_modulus": 0.24607135533519117,
+            "name": "inner_cloud",
+            "projector_norm": 2703.0444693674485
+          },
+          {
+            "commutator_defect": 3.9755836403725996e-14,
+            "eigenvalue_count": 2,
+            "hardy_energy": 2.0474399312389657,
+            "idempotence_defect": 2.8737746705300525e-14,
+            "left_right_overlap_condition": 1.0000000000000038,
+            "maximum_physical_modulus": 0.526444463357124,
+            "minimum_physical_modulus": 0.5264444633571237,
+            "name": "middle_cloud",
+            "projector_norm": 30.544751105469885
+          },
+          {
+            "commutator_defect": 3.6289726811257665e-14,
+            "eigenvalue_count": 4,
+            "hardy_energy": 1.7116365224175942,
+            "idempotence_defect": 1.893294083990382e-14,
+            "left_right_overlap_condition": 1.9042308115692173,
+            "maximum_physical_modulus": 0.67466473834818,
+            "minimum_physical_modulus": 0.6228411391204691,
+            "name": "edge_cloud",
+            "projector_norm": 24.062412151970303
+          }
+        ],
+        "coherence_constant": 2.005630968388151,
+        "coherence_upper": 81.67851180068907,
+        "coherence_upper_over_exact": 55.63652600373131,
+        "exact_hardy_energy": 1.468073542104538,
+        "gershgorin_constant": 2.1059620787951463,
+        "gershgorin_upper": 83.69655377447889,
+        "maximum_pairwise_projector_product": 8.475403856567453e-11,
+        "minimum_block_gram_eigenvalue": 0.5300748833528313,
+        "minimum_radial_cut_gap": 0.010799872551099515,
+        "normalized_block_gram_imag": [
+          [
+            0.0,
+            1.25773596777806e-19,
+            3.442384119549179e-16,
+            -3.743115508510174e-16
+          ],
+          [
+            -1.25773596777806e-19,
+            0.0,
+            -4.089126263849359e-16,
+            4.524443397253523e-16
+          ],
+          [
+            -3.442384119549179e-16,
+            4.089126263849359e-16,
+            0.0,
+            -1.4634503797162983e-15
+          ],
+          [
+            3.743115508510174e-16,
+            -4.524443397253523e-16,
+            1.4634503797162983e-15,
+            0.0
+          ]
+        ],
+        "normalized_block_gram_real": [
+          [
+            0.9999999999999998,
+            -0.997692774256355,
+            -0.08688920942237009,
+            -0.021380095116421426
+          ],
+          [
+            -0.997692774256355,
+            1.0000000000000002,
+            0.039054494765669724,
+            -0.011863018083215904
+          ],
+          [
+            -0.08688920942237009,
+            0.039054494765669724,
+            1.0,
+            0.0014083860921968094
+          ],
+          [
+            -0.021380095116421426,
+            -0.011863018083215904,
+            0.0014083860921968094,
+            1.0000000000000002
+          ]
+        ],
+        "partition_defect": 4.223783408922967e-14,
+        "signed_fusion_ratio": 0.0006479343700991032,
+        "square_sum_energy": 57.67429610430842,
+        "stein_defect_norm": 9.030266098762757e-16
+      },
+      "right": {
+        "absolute_block_upper": 679.7857026084661,
+        "absolute_upper_over_exact": 386.1739360807708,
+        "block_reconstructed_energy": 1.7603096405373202,
+        "block_reconstruction_relative_defect": 1.8276354379169752e-12,
+        "blocks": [
+          {
+            "commutator_defect": 5.096610117505194e-11,
+            "eigenvalue_count": 244,
+            "hardy_energy": 334.95105139984474,
+            "idempotence_defect": 7.296667536613278e-11,
+            "left_right_overlap_condition": null,
+            "maximum_physical_modulus": 0.13377345896781476,
+            "minimum_physical_modulus": 1.8265786991137276e-18,
+            "name": "central",
+            "projector_norm": 2531.7317279122944
+          },
+          {
+            "commutator_defect": 5.0983125504373516e-11,
+            "eigenvalue_count": 6,
+            "hardy_energy": 335.3437794437078,
+            "idempotence_defect": 6.49156177931528e-11,
+            "left_right_overlap_condition": 7.686033054456295,
+            "maximum_physical_modulus": 0.33617832221984245,
+            "minimum_physical_modulus": 0.24245204721037966,
+            "name": "inner_cloud",
+            "projector_norm": 2528.3046887149108
+          },
+          {
+            "commutator_defect": 7.342631019079726e-14,
+            "eigenvalue_count": 2,
+            "hardy_energy": 4.57116915394156,
+            "idempotence_defect": 1.1802402897276949e-14,
+            "left_right_overlap_condition": 1.000000000000012,
+            "maximum_physical_modulus": 0.5208931151109705,
+            "minimum_physical_modulus": 0.5208931151109695,
+            "name": "middle_cloud",
+            "projector_norm": 31.549404622810318
+          },
+          {
+            "commutator_defect": 5.719779040827965e-14,
+            "eigenvalue_count": 4,
+            "hardy_energy": 4.919702610971995,
+            "idempotence_defect": 1.711161143210465e-14,
+            "left_right_overlap_condition": 1.936725310906594,
+            "maximum_physical_modulus": 0.6741454003199451,
+            "minimum_physical_modulus": 0.6209011906986082,
+            "name": "edge_cloud",
+            "projector_norm": 24.131984028493445
+          }
+        ],
+        "coherence_constant": 2.0122128167820605,
+        "coherence_upper": 672.4058626145085,
+        "coherence_upper_over_exact": 381.9815827447455,
+        "exact_hardy_energy": 1.7603096405405374,
+        "gershgorin_constant": 2.102029274375056,
+        "gershgorin_upper": 687.2486824262613,
+        "maximum_pairwise_projector_product": 7.095011400001718e-11,
+        "minimum_block_gram_eigenvalue": 0.7669514873678653,
+        "minimum_radial_cut_gap": 0.013821677780157526,
+        "normalized_block_gram_imag": [
+          [
+            0.0,
+            2.589421634996684e-17,
+            -1.616395450676297e-15,
+            -2.594921051048075e-16
+          ],
+          [
+            -2.589421634996684e-17,
+            0.0,
+            1.6065870934687686e-15,
+            2.6620972002530985e-16
+          ],
+          [
+            1.616395450676297e-15,
+            -1.6065870934687686e-15,
+            0.0,
+            -5.209059528990682e-16
+          ],
+          [
+            2.594921051048075e-16,
+            -2.6620972002530985e-16,
+            5.209059528990682e-16,
+            0.0
+          ]
+        ],
+        "normalized_block_gram_real": [
+          [
+            1.0000000000000002,
+            -0.9997535218021327,
+            0.06592881533194701,
+            0.002666655147853799
+          ],
+          [
+            -0.9997535218021327,
+            0.9999999999999998,
+            -0.08262167589683785,
+            -0.019654076676085628
+          ],
+          [
+            0.06592881533194701,
+            -0.08262167589683785,
+            0.9999999999999998,
+            0.22123295559162945
+          ],
+          [
+            0.002666655147853799,
+            -0.019654076676085628,
+            0.22123295559162945,
+            1.0
+          ]
+        ],
+        "partition_defect": 6.120622068145802e-14,
+        "signed_fusion_ratio": 1.379078739120306e-05,
+        "square_sum_energy": 474.017675099427,
+        "stein_defect_norm": 2.8031537815929436e-15
+      },
+      "sigma": 0.01
+    }
+  ],
+  "sources": {
+    "folded_gaussian": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh56_manuscript": {
+      "path": "papers/RH-56-growing-horizon-hard-space-barrier/main.tex",
+      "sha256": "b662ac98ef01ee24b20929fb42e9efec6c13e15a9c903b77ff8cc2c839a488cd"
+    }
+  },
+  "status": "binary64_grouped_riesz_cross_stein_overlap_audit"
+}
