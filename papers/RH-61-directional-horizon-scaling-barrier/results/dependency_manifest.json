@@ -1,0 +1,41 @@
+{
+  "external_inputs": {
+    "rh59_metric_pilot": {
+      "path": "papers/RH-59-flag-adapted-schur-stein-metrics/results/flag_metric_pilot.json",
+      "sha256": "daabfac37fafcf04c4f41d4e0efa6018f502aae840fbc534ad740f61a47ea4f9"
+    },
+    "rh60_manuscript": {
+      "path": "papers/RH-60-finite-horizon-phase-aware-tails/main.tex",
+      "sha256": "87a20cb0c32e029f1fed9ae0241807c00e9cd6d94a04c382a1446a1dc39c5b41"
+    },
+    "rh60_phase_pilot": {
+      "path": "papers/RH-60-finite-horizon-phase-aware-tails/results/phase_tail_pilot.json",
+      "sha256": "813b421f4ca6ff429d5181bc295cc8fa1e4a8fa50268f30a3c13d940ccfd82f5"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "1a66bf29c831fabe89d12ba416c414eb6b69c1b179c85a922b9dab8d133b324f",
+    "experiments/make_figures.py": "a3d01dc9e8807aa09b668c9a741db329197f8c7941ece1c05b46615fc5521fa1",
+    "experiments/run_arb_horizon_audit.py": "fb586d3c4b83be06db8ecc31abbbb944767cf119fa724774832653a81a8e27b6",
+    "experiments/run_horizon_scaling_audit.py": "f6f4013c25d53117e4f34d7d9e5a3e240195825cd750707e79172eabe5da1f07",
+    "experiments/verify_archive.py": "975ba096f30e4e6ed61723ad90dcf23b42071217cd24b79e830d0b15a90d1cea",
+    "src/horizon_scaling/__init__.py": "53a3dbdd007528db1ce81313cde3a39c1d09c7633b28dfbe18c5937877216509",
+    "src/horizon_scaling/algebra.py": "c329f43e29f2140235d7978d60b6e9a28341a2aacab1209aa539ff148bcdc24f",
+    "tests/test_archived_results.py": "2f1d4c5589f9f21b366fea81ad5358ea4fc71d474763a03386e72d8f818f1c0b",
+    "tests/test_smoke.py": "b2b7871b075df81dc38ea3ff43c2ed8186213ff6a7ef949bb4756196f163cf80",
+    "tests/test_theory.py": "85e1c050429ec10d6f03435b7759ea3d0b98fb867b9d13f8142bdbf8c0d68e1b"
+  },
+  "publication_artifacts": {
+    ".gitignore": "7447fc33ca6f0d307891edb10a7f7b04dddc3c9ba6cd1e3562caafa1a5fce42f",
+    "README.md": "835d8527e370547e44ffab961ac740137aff08f62353f129d54d109f3df0c10f",
+    "directional-horizon-scaling-barrier.pdf": "536672140456225dd8f396ac3b4a5cefa1f9f308767ca95f5ac40b78446f701f",
+    "figures/directional_horizon_scaling.pdf": "76fc17094fe410f7224e0754a6daaf5a56baa73e1abdca33555dfce34881018f",
+    "figures/directional_horizon_scaling.png": "871f261afaf41a02967f6154f985f90b8f037b0ad54a90a974a7857fd401cbdb",
+    "main.pdf": "536672140456225dd8f396ac3b4a5cefa1f9f308767ca95f5ac40b78446f701f",
+    "main.tex": "dc369cb1d5283d87acea361bdc428b2c5bc3374336385dd7381838929a8c9243",
+    "pyproject.toml": "c239e17a4c1bcb2e327e6e330257da610074fed46314e8b8ac82f228c7132aa7",
+    "references.bib": "45c32c8861b8e7854aea9202e015f5783d13834bae51a7318bf42e5e3cf04380",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}

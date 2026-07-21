@@ -1,0 +1,123 @@
+{
+  "arb": {
+    "equality_case": true,
+    "geometric_lower": true,
+    "geometric_upper": true,
+    "precision_bits": 256,
+    "production_interval_audit_executed": false,
+    "slow_mode_lower": true,
+    "slow_mode_upper": true,
+    "status": "arb_scalar_horizon_envelope_and_slow_mode_audit"
+  },
+  "limitations": [
+    "The five rows are inherited binary64 finite-matrix diagnostics.",
+    "Contraction-gap and horizon exponents are fits, not asymptotic theorems.",
+    "The geometric envelope is rigorous for the stored packet metrics but can be much looser than the directional tail.",
+    "The observed phase-aware horizon grid is censored at the stored horizons.",
+    "No production interval audit or physical-family uniform estimate is claimed."
+  ],
+  "pilot": {
+    "endpoint": {
+      "left_geometric_horizon_05": 850,
+      "left_phase_tail": 0.006892082930369811,
+      "left_phase_upper_ratio": 1.004694552980059,
+      "right_geometric_horizon_05": 228,
+      "right_phase_tail": 0.003818984686263161,
+      "right_phase_upper_ratio": 1.0021691301039692,
+      "sigma": 0.01
+    },
+    "fits": {
+      "left_gap": {
+        "growth_exponent": 0.0,
+        "levels": 5,
+        "log_intercept": 1.9174952461543961,
+        "maximum_log_residual": 0.1841429861040571,
+        "power": 1.4861029642393833
+      },
+      "left_geometric_horizon_05": {
+        "growth_exponent": 1.8230595470679964,
+        "levels": 5,
+        "log_intercept": -1.9211328001998353,
+        "maximum_log_residual": 0.27086967624570857,
+        "power": -1.8230595470679964
+      },
+      "left_observed_horizon_05": {
+        "growth_exponent": 0.7000000000000002,
+        "levels": 5,
+        "log_intercept": 0.2421167726080622,
+        "maximum_log_residual": 0.27725887222397816,
+        "power": -0.7000000000000002
+      },
+      "left_relaxation": {
+        "growth_exponent": 1.5623190795506217,
+        "levels": 5,
+        "log_intercept": -2.2367611110077714,
+        "maximum_log_residual": 0.14045578346881737,
+        "power": -1.5623190795506217
+      },
+      "right_gap": {
+        "growth_exponent": 0.0,
+        "levels": 5,
+        "log_intercept": 0.903472930253626,
+        "maximum_log_residual": 0.14287196225879928,
+        "power": 1.0746324321962317
+      },
+      "right_geometric_horizon_05": {
+        "growth_exponent": 1.3378498076249017,
+        "levels": 5,
+        "log_intercept": -0.5877684347929613,
+        "maximum_log_residual": 0.14391198365669755,
+        "power": -1.3378498076249017
+      },
+      "right_observed_horizon_05": {
+        "growth_exponent": 0.7000000000000002,
+        "levels": 5,
+        "log_intercept": 0.2421167726080622,
+        "maximum_log_residual": 0.27725887222397816,
+        "power": -0.7000000000000002
+      },
+      "right_relaxation": {
+        "growth_exponent": 1.1438969808263033,
+        "levels": 5,
+        "log_intercept": -1.2001946401206172,
+        "maximum_log_residual": 0.18200297633135154,
+        "power": -1.1438969808263033
+      }
+    },
+    "rows": 5
+  },
+  "program_boundary": {
+    "continuum_phase_gram_theorem": false,
+    "directional_tail_certificate": false,
+    "polylogarithmic_horizon_proved": false,
+    "prime_power_trace_formula": false,
+    "self_adjoint_hilbert_polya_operator": false,
+    "stage_A1_closed": false,
+    "stage_A4_unconditional_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "7447fc33ca6f0d307891edb10a7f7b04dddc3c9ba6cd1e3562caafa1a5fce42f",
+    "README.md": "835d8527e370547e44ffab961ac740137aff08f62353f129d54d109f3df0c10f",
+    "directional-horizon-scaling-barrier.pdf": "536672140456225dd8f396ac3b4a5cefa1f9f308767ca95f5ac40b78446f701f",
+    "figures/directional_horizon_scaling.pdf": "76fc17094fe410f7224e0754a6daaf5a56baa73e1abdca33555dfce34881018f",
+    "figures/directional_horizon_scaling.png": "871f261afaf41a02967f6154f985f90b8f037b0ad54a90a974a7857fd401cbdb",
+    "main.pdf": "536672140456225dd8f396ac3b4a5cefa1f9f308767ca95f5ac40b78446f701f",
+    "main.tex": "dc369cb1d5283d87acea361bdc428b2c5bc3374336385dd7381838929a8c9243",
+    "pyproject.toml": "c239e17a4c1bcb2e327e6e330257da610074fed46314e8b8ac82f228c7132aa7",
+    "references.bib": "45c32c8861b8e7854aea9202e015f5783d13834bae51a7318bf42e5e3cf04380",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "result_hashes": {
+    "results/arb_horizon_audit.json": "f7cd2e810221d733021255f195872b39acaf87e20e455836e73506ca96b314a1",
+    "results/dependency_manifest.json": "14dfe157b9ba0a3ff151355170428bb7fc0ff5669fc3f2abf24c945ee0f9131b",
+    "results/horizon_scaling_audit.json": "6ff5dca6c691ca6151d1b1e1c8bf34a122375df5067b97b5b57ce15e6885f4b7",
+    "results/horizon_scaling_smoke.json": "2eda986961bc909926f51841176b9f2f70fb8db73184911c31fb71e76406c316"
+  },
+  "status": "rh61_directional_horizon_scaling_and_stein_barrier_audit",
+  "theorem": {
+    "exact_integer_horizon_search": true,
+    "packetwise_geometric_envelope": true,
+    "power_gap_horizon_obstruction": true,
+    "reducing_slow_mode_lower_bound": true
+  }
+}

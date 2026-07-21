@@ -1,0 +1,1082 @@
+{
+  "evidence_level": "archived RH-59/RH-60 binary64 results; exact finite-matrix algebraic reanalysis, not a continuum or interval theorem",
+  "fits": {
+    "left_gap": {
+      "growth_exponent": 0.0,
+      "levels": 5,
+      "log_intercept": 1.9174952461543961,
+      "maximum_log_residual": 0.1841429861040571,
+      "power": 1.4861029642393833
+    },
+    "left_geometric_horizon_05": {
+      "growth_exponent": 1.8230595470679964,
+      "levels": 5,
+      "log_intercept": -1.9211328001998353,
+      "maximum_log_residual": 0.27086967624570857,
+      "power": -1.8230595470679964
+    },
+    "left_observed_horizon_05": {
+      "growth_exponent": 0.7000000000000002,
+      "levels": 5,
+      "log_intercept": 0.2421167726080622,
+      "maximum_log_residual": 0.27725887222397816,
+      "power": -0.7000000000000002
+    },
+    "left_relaxation": {
+      "growth_exponent": 1.5623190795506217,
+      "levels": 5,
+      "log_intercept": -2.2367611110077714,
+      "maximum_log_residual": 0.14045578346881737,
+      "power": -1.5623190795506217
+    },
+    "right_gap": {
+      "growth_exponent": 0.0,
+      "levels": 5,
+      "log_intercept": 0.903472930253626,
+      "maximum_log_residual": 0.14287196225879928,
+      "power": 1.0746324321962317
+    },
+    "right_geometric_horizon_05": {
+      "growth_exponent": 1.3378498076249017,
+      "levels": 5,
+      "log_intercept": -0.5877684347929613,
+      "maximum_log_residual": 0.14391198365669755,
+      "power": -1.3378498076249017
+    },
+    "right_observed_horizon_05": {
+      "growth_exponent": 0.7000000000000002,
+      "levels": 5,
+      "log_intercept": 0.2421167726080622,
+      "maximum_log_residual": 0.27725887222397816,
+      "power": -0.7000000000000002
+    },
+    "right_relaxation": {
+      "growth_exponent": 1.1438969808263033,
+      "levels": 5,
+      "log_intercept": -1.2001946401206172,
+      "maximum_log_residual": 0.18200297633135154,
+      "power": -1.1438969808263033
+    }
+  },
+  "limitations": [
+    "The five rows are inherited binary64 finite-matrix diagnostics.",
+    "Contraction-gap and horizon exponents are fits, not asymptotic theorems.",
+    "The geometric envelope is rigorous for the stored packet metrics but can be much looser than the directional tail.",
+    "The observed phase-aware horizon grid is censored at the stored horizons.",
+    "No production interval audit or physical-family uniform estimate is claimed."
+  ],
+  "program_boundary": {
+    "continuum_phase_gram_theorem": false,
+    "directional_tail_certificate": false,
+    "polylogarithmic_horizon_proved": false,
+    "prime_power_trace_formula": false,
+    "self_adjoint_hilbert_polya_operator": false,
+    "stage_A1_closed": false,
+    "stage_A4_unconditional_closed": false
+  },
+  "rows": [
+    {
+      "fine_dimension": 32,
+      "left": {
+        "contraction_gap": 0.37155718916913194,
+        "exact_hardy_energy": 0.9039575455799419,
+        "geometric_horizons": {
+          "0.01": 8,
+          "0.05": 5,
+          "0.1": 4,
+          "0.2": 3
+        },
+        "horizons": {
+          "0": {
+            "geometric_tail_envelope": 1.171917009884675,
+            "geometric_tail_ratio_to_initial": 1.0,
+            "phase_aware_upper": 1.171917009884675,
+            "phase_tail_ratio_to_initial": 1.0,
+            "phase_tail_sum": 1.171917009884675,
+            "phase_upper_over_exact": 1.2964292577842484
+          },
+          "1": {
+            "geometric_tail_envelope": 0.5595603664924642,
+            "geometric_tail_ratio_to_initial": 0.4774743960304228,
+            "phase_aware_upper": 1.2790163799182328,
+            "phase_tail_ratio_to_initial": 0.3772489042185014,
+            "phase_tail_sum": 0.4421044078140163,
+            "phase_upper_over_exact": 1.41490757632613
+          },
+          "16": {
+            "geometric_tail_envelope": 0.00020184651145124268,
+            "geometric_tail_ratio_to_initial": 0.00017223618204083053,
+            "phase_aware_upper": 0.9039575463138307,
+            "phase_tail_ratio_to_initial": 6.262310991336794e-10,
+            "phase_tail_sum": 7.33890877193535e-10,
+            "phase_upper_over_exact": 1.0000000008118621
+          },
+          "2": {
+            "geometric_tail_envelope": 0.27808685280862877,
+            "geometric_tail_ratio_to_initial": 0.23729227450670293,
+            "phase_aware_upper": 1.0289364931232132,
+            "phase_tail_ratio_to_initial": 0.11027313624376225,
+            "phase_tail_sum": 0.12923096409739523,
+            "phase_upper_over_exact": 1.1382575411360607
+          },
+          "32": {
+            "geometric_tail_envelope": 1.1908136582458343e-07,
+            "geometric_tail_ratio_to_initial": 1.0161245618945482e-07,
+            "phase_aware_upper": 0.9039575455799399,
+            "phase_tail_ratio_to_initial": 3.78430485348281e-19,
+            "phase_tail_sum": 4.434891228385638e-19,
+            "phase_upper_over_exact": 0.9999999999999978
+          },
+          "4": {
+            "geometric_tail_envelope": 0.07788586207213202,
+            "geometric_tail_ratio_to_initial": 0.06646021980668798,
+            "phase_aware_upper": 0.9105132818802192,
+            "phase_tail_ratio_to_initial": 0.005607335162773092,
+            "phase_tail_sum": 0.006571331457378239,
+            "phase_upper_over_exact": 1.007252261273035
+          },
+          "64": {
+            "geometric_tail_envelope": 4.172018932228801e-14,
+            "geometric_tail_ratio_to_initial": 3.559995201912256e-14,
+            "phase_aware_upper": 0.9039575455799399,
+            "phase_tail_ratio_to_initial": 1.3819948594765901e-37,
+            "phase_tail_sum": 1.619583283393797e-37,
+            "phase_upper_over_exact": 0.9999999999999978
+          },
+          "8": {
+            "geometric_tail_envelope": 0.0090126251668854,
+            "geometric_tail_ratio_to_initial": 0.007690497783432895,
+            "phase_aware_upper": 0.9039875524962754,
+            "phase_tail_ratio_to_initial": 2.5605327552543282e-05,
+            "phase_tail_sum": 3.0007318902494204e-05,
+            "phase_upper_over_exact": 1.0000331950504537
+          }
+        },
+        "initial_tail_sum": 1.171917009884675,
+        "maximum_contraction": 0.6284428108308681,
+        "observed_phase_horizons": {
+          "0.01": 4,
+          "0.05": 4,
+          "0.1": 4,
+          "0.2": 2
+        },
+        "packet_contractions": [
+          0.4158027168623484,
+          0.6284428108308681
+        ],
+        "packet_initial_tails": [
+          0.8320277232672757,
+          0.33988928661739914
+        ],
+        "relaxation_time": 2.152805032553221,
+        "smallest_scale_phase_upper_ratio": 0.9999999999999978
+      },
+      "right": {
+        "contraction_gap": 0.3527591561951433,
+        "exact_hardy_energy": 1.0026461047247,
+        "geometric_horizons": {
+          "0.01": 9,
+          "0.05": 6,
+          "0.1": 5,
+          "0.2": 3
+        },
+        "horizons": {
+          "0": {
+            "geometric_tail_envelope": 1.5182750480086813,
+            "geometric_tail_ratio_to_initial": 1.0,
+            "phase_aware_upper": 1.5182750480086813,
+            "phase_tail_ratio_to_initial": 1.0,
+            "phase_tail_sum": 1.5182750480086813,
+            "phase_upper_over_exact": 1.5142681359397085
+          },
+          "1": {
+            "geometric_tail_envelope": 0.7136618019824369,
+            "geometric_tail_ratio_to_initial": 0.47004777093481964,
+            "phase_aware_upper": 1.4804336184460725,
+            "phase_tail_ratio_to_initial": 0.36825065505688676,
+            "phase_tail_sum": 0.559105780985723,
+            "phase_upper_over_exact": 1.47652657450114
+          },
+          "16": {
+            "geometric_tail_envelope": 0.00042372497997864917,
+            "geometric_tail_ratio_to_initial": 0.00027908314803328464,
+            "phase_aware_upper": 1.002646105683493,
+            "phase_tail_ratio_to_initial": 6.315017501650446e-10,
+            "phase_tail_sum": 9.587933500493994e-10,
+            "phase_upper_over_exact": 1.0000000009562626
+          },
+          "2": {
+            "geometric_tail_envelope": 0.35530148297349334,
+            "geometric_tail_ratio_to_initial": 0.23401654623745208,
+            "phase_aware_upper": 1.1395439707387387,
+            "phase_tail_ratio_to_initial": 0.09374943884271565,
+            "phase_tail_sum": 0.14233743375971103,
+            "phase_upper_over_exact": 1.1365365759353618
+          },
+          "32": {
+            "geometric_tail_envelope": 4.015432776049278e-07,
+            "geometric_tail_ratio_to_initial": 2.644733430425393e-07,
+            "phase_aware_upper": 1.0026461047246997,
+            "phase_tail_ratio_to_initial": 3.744001839230111e-19,
+            "phase_tail_sum": 5.684424572201688e-19,
+            "phase_upper_over_exact": 0.9999999999999998
+          },
+          "4": {
+            "geometric_tail_envelope": 0.10475770198955979,
+            "geometric_tail_ratio_to_initial": 0.068997842075424,
+            "phase_aware_upper": 1.0109419712643954,
+            "phase_tail_ratio_to_initial": 0.005479155803176036,
+            "phase_tail_sum": 0.00831886554011414,
+            "phase_upper_over_exact": 1.0082739727413326
+          },
+          "64": {
+            "geometric_tail_envelope": 3.612779815819086e-13,
+            "geometric_tail_ratio_to_initial": 2.3795292035902763e-13,
+            "phase_aware_upper": 1.0026461047246997,
+            "phase_tail_ratio_to_initial": 1.3160430923298445e-37,
+            "phase_tail_sum": 1.998115389188588e-37,
+            "phase_upper_over_exact": 0.9999999999999998
+          },
+          "8": {
+            "geometric_tail_envelope": 0.014397070340029005,
+            "geometric_tail_ratio_to_initial": 0.009482517913280416,
+            "phase_aware_upper": 1.002685598675006,
+            "phase_tail_ratio_to_initial": 2.601275644911302e-05,
+            "phase_tail_sum": 3.94945190466152e-05,
+            "phase_upper_over_exact": 1.0000393897209794
+          }
+        },
+        "initial_tail_sum": 1.5182750480086813,
+        "maximum_contraction": 0.6472408438048567,
+        "observed_phase_horizons": {
+          "0.01": 4,
+          "0.05": 4,
+          "0.1": 4,
+          "0.2": 2
+        },
+        "packet_contractions": [
+          0.3962771710748193,
+          0.6472408438048567
+        ],
+        "packet_initial_tails": [
+          1.0719791366296887,
+          0.44629591137899255
+        ],
+        "relaxation_time": 2.2986560780008527,
+        "smallest_scale_phase_upper_ratio": 0.9999999999999998
+      },
+      "sigma": 0.16
+    },
+    {
+      "fine_dimension": 64,
+      "left": {
+        "contraction_gap": 0.18280637230297703,
+        "exact_hardy_energy": 1.1625610299508302,
+        "geometric_horizons": {
+          "0.01": 22,
+          "0.05": 14,
+          "0.1": 11,
+          "0.2": 8
+        },
+        "horizons": {
+          "0": {
+            "geometric_tail_envelope": 2.1206229248500956,
+            "geometric_tail_ratio_to_initial": 1.0,
+            "phase_aware_upper": 2.1206229248500956,
+            "phase_tail_ratio_to_initial": 1.0,
+            "phase_tail_sum": 2.1206229248500956,
+            "phase_upper_over_exact": 1.8240960003104405
+          },
+          "1": {
+            "geometric_tail_envelope": 1.4309961156045552,
+            "geometric_tail_ratio_to_initial": 0.674799889615317,
+            "phase_aware_upper": 2.1535247468034697,
+            "phase_tail_ratio_to_initial": 0.5658773612010116,
+            "phase_tail_sum": 1.2000125048165433,
+            "phase_upper_over_exact": 1.8523971570718758
+          },
+          "16": {
+            "geometric_tail_envelope": 0.03819513917168572,
+            "geometric_tail_ratio_to_initial": 0.018011282781160015,
+            "phase_aware_upper": 1.1626397193733975,
+            "phase_tail_ratio_to_initial": 3.7107690470684265e-05,
+            "phase_tail_sum": 7.869141910037449e-05,
+            "phase_upper_over_exact": 1.0000676862724107
+          },
+          "2": {
+            "geometric_tail_envelope": 1.0040368264345756,
+            "geometric_tail_ratio_to_initial": 0.4734631577679232,
+            "phase_aware_upper": 1.673005727368362,
+            "phase_tail_ratio_to_initial": 0.26942268919655193,
+            "phase_tail_sum": 0.5713439311849702,
+            "phase_upper_over_exact": 1.439069162191959
+          },
+          "32": {
+            "geometric_tail_envelope": 0.0015010001469501085,
+            "geometric_tail_ratio_to_initial": 0.0007078109593935529,
+            "phase_aware_upper": 1.1625610345321482,
+            "phase_tail_ratio_to_initial": 2.160363497711749e-09,
+            "phase_tail_sum": 4.581316359256872e-09,
+            "phase_upper_over_exact": 1.0000000039407118
+          },
+          "4": {
+            "geometric_tail_envelope": 0.5453591654273838,
+            "geometric_tail_ratio_to_initial": 0.2571693246530071,
+            "phase_aware_upper": 1.2872816010318724,
+            "phase_tail_ratio_to_initial": 0.06091857250683339,
+            "phase_tail_sum": 0.12918532140713365,
+            "phase_upper_over_exact": 1.107280880631546
+          },
+          "64": {
+            "geometric_tail_envelope": 2.3482265977512022e-06,
+            "geometric_tail_ratio_to_initial": 1.1073286864128359e-06,
+            "phase_aware_upper": 1.1625610299508318,
+            "phase_tail_ratio_to_initial": 7.429789550955119e-18,
+            "phase_tail_sum": 1.5755782048567125e-17,
+            "phase_upper_over_exact": 1.0000000000000013
+          },
+          "8": {
+            "geometric_tail_envelope": 0.20439721713199346,
+            "geometric_tail_ratio_to_initial": 0.09638546048748486,
+            "phase_aware_upper": 1.1729190163613716,
+            "phase_tail_ratio_to_initial": 0.004900537943180955,
+            "phase_tail_sum": 0.01039219310640727,
+            "phase_upper_over_exact": 1.008909628091507
+          }
+        },
+        "initial_tail_sum": 2.1206229248500956,
+        "maximum_contraction": 0.817193627697023,
+        "observed_phase_horizons": {
+          "0.01": 8,
+          "0.05": 8,
+          "0.1": 8,
+          "0.2": 4
+        },
+        "packet_contractions": [
+          0.5226846168345941,
+          0.6291873613318547,
+          0.817193627697023
+        ],
+        "packet_initial_tails": [
+          0.7851647077553258,
+          0.3761860987584608,
+          0.959272118336309
+        ],
+        "relaxation_time": 4.953456976542822,
+        "smallest_scale_phase_upper_ratio": 1.0000000000000013
+      },
+      "right": {
+        "contraction_gap": 0.1801487761244528,
+        "exact_hardy_energy": 1.2652809475765023,
+        "geometric_horizons": {
+          "0.01": 24,
+          "0.05": 16,
+          "0.1": 13,
+          "0.2": 10
+        },
+        "horizons": {
+          "0": {
+            "geometric_tail_envelope": 2.43068833796362,
+            "geometric_tail_ratio_to_initial": 1.0,
+            "phase_aware_upper": 2.43068833796362,
+            "phase_tail_ratio_to_initial": 1.0,
+            "phase_tail_sum": 2.43068833796362,
+            "phase_upper_over_exact": 1.9210661020537134
+          },
+          "1": {
+            "geometric_tail_envelope": 1.8540844210328642,
+            "geometric_tail_ratio_to_initial": 0.762781633529446,
+            "phase_aware_upper": 2.3904202030640453,
+            "phase_tail_ratio_to_initial": 0.5717724852134607,
+            "phase_tail_sum": 1.3898007117768354,
+            "phase_upper_over_exact": 1.889240652554372
+          },
+          "16": {
+            "geometric_tail_envelope": 0.0564456168727553,
+            "geometric_tail_ratio_to_initial": 0.02322207088056557,
+            "phase_aware_upper": 1.2653643441635032,
+            "phase_tail_ratio_to_initial": 3.431070856531712e-05,
+            "phase_tail_sum": 8.339863917698482e-05,
+            "phase_upper_over_exact": 1.0000659115172488
+          },
+          "2": {
+            "geometric_tail_envelope": 1.4232710414931664,
+            "geometric_tail_ratio_to_initial": 0.5855423828978227,
+            "phase_aware_upper": 1.9162119178065429,
+            "phase_tail_ratio_to_initial": 0.3092863679350159,
+            "phase_tail_sum": 0.7517787676307686,
+            "phase_upper_over_exact": 1.5144556799632705
+          },
+          "32": {
+            "geometric_tail_envelope": 0.002106778596505177,
+            "geometric_tail_ratio_to_initial": 0.0008667415577721462,
+            "phase_aware_upper": 1.2652809517159613,
+            "phase_tail_ratio_to_initial": 1.7029984170888923e-09,
+            "phase_tail_sum": 4.139458391988476e-09,
+            "phase_upper_over_exact": 1.000000003271573
+          },
+          "4": {
+            "geometric_tail_envelope": 0.8539376500481872,
+            "geometric_tail_ratio_to_initial": 0.35131515493409504,
+            "phase_aware_upper": 1.4261551537117867,
+            "phase_tail_ratio_to_initial": 0.06862249623518757,
+            "phase_tail_sum": 0.16679990132082287,
+            "phase_upper_over_exact": 1.1271450474642963
+          },
+          "64": {
+            "geometric_tail_envelope": 3.322322520794099e-06,
+            "geometric_tail_ratio_to_initial": 1.3668237383232239e-06,
+            "phase_aware_upper": 1.265280947576503,
+            "phase_tail_ratio_to_initial": 4.296881346702891e-18,
+            "phase_tail_sum": 1.0444379379044133e-17,
+            "phase_upper_over_exact": 1.0000000000000004
+          },
+          "8": {
+            "geometric_tail_envelope": 0.32710286916638076,
+            "geometric_tail_ratio_to_initial": 0.13457211443258113,
+            "phase_aware_upper": 1.2772498792188978,
+            "phase_tail_ratio_to_initial": 0.004941168204671253,
+            "phase_tail_sum": 0.012010439931011054,
+            "phase_upper_over_exact": 1.0094595051520538
+          }
+        },
+        "initial_tail_sum": 2.43068833796362,
+        "maximum_contraction": 0.8198512238755472,
+        "observed_phase_horizons": {
+          "0.01": 8,
+          "0.05": 8,
+          "0.1": 8,
+          "0.2": 4
+        },
+        "packet_contractions": [
+          0.6935227485714832,
+          0.8086139760394875,
+          0.8198512238755472
+        ],
+        "packet_initial_tails": [
+          1.0569482387553337,
+          0.46236661370763915,
+          0.9113734855006473
+        ],
+        "relaxation_time": 5.034425667445622,
+        "smallest_scale_phase_upper_ratio": 1.0000000000000004
+      },
+      "sigma": 0.08
+    },
+    {
+      "fine_dimension": 128,
+      "left": {
+        "contraction_gap": 0.06368029635529837,
+        "exact_hardy_energy": 1.333828237712251,
+        "geometric_horizons": {
+          "0.01": 67,
+          "0.05": 42,
+          "0.1": 32,
+          "0.2": 22
+        },
+        "horizons": {
+          "0": {
+            "geometric_tail_envelope": 2.895325678007443,
+            "geometric_tail_ratio_to_initial": 1.0,
+            "phase_aware_upper": 2.895325678007443,
+            "phase_tail_ratio_to_initial": 1.0,
+            "phase_tail_sum": 2.895325678007443,
+            "phase_upper_over_exact": 2.1706885460555503
+          },
+          "1": {
+            "geometric_tail_envelope": 2.3312810174330787,
+            "geometric_tail_ratio_to_initial": 0.8051878360839398,
+            "phase_aware_upper": 2.9016742934283286,
+            "phase_tail_ratio_to_initial": 0.6630179141018638,
+            "phase_tail_sum": 1.9196527916780592,
+            "phase_upper_over_exact": 2.175448240925839
+          },
+          "16": {
+            "geometric_tail_envelope": 0.3867931486167513,
+            "geometric_tail_ratio_to_initial": 0.13359227652860853,
+            "phase_aware_upper": 1.3378190333204005,
+            "phase_tail_ratio_to_initial": 0.001379518148616633,
+            "phase_tail_sum": 0.003994154318967025,
+            "phase_upper_over_exact": 1.0029919861458283
+          },
+          "2": {
+            "geometric_tail_envelope": 1.9134906939295053,
+            "geometric_tail_ratio_to_initial": 0.6608896223537677,
+            "phase_aware_upper": 2.409195031659632,
+            "phase_tail_ratio_to_initial": 0.43233248733094215,
+            "phase_tail_sum": 1.2517433520061043,
+            "phase_upper_over_exact": 1.8062258419358577
+          },
+          "32": {
+            "geometric_tail_envelope": 0.1258088491116592,
+            "geometric_tail_ratio_to_initial": 0.043452399868964174,
+            "phase_aware_upper": 1.3338354304815156,
+            "phase_tail_ratio_to_initial": 2.4842733609971657e-06,
+            "phase_tail_sum": 7.192780453284947e-06,
+            "phase_upper_over_exact": 1.0000053925753416
+          },
+          "4": {
+            "geometric_tail_envelope": 1.3579390919046048,
+            "geometric_tail_ratio_to_initial": 0.46901082742413136,
+            "phase_aware_upper": 1.8087828479276555,
+            "phase_tail_ratio_to_initial": 0.17938385393346726,
+            "phase_tail_sum": 0.5193746785135042,
+            "phase_upper_over_exact": 1.3560837870924332
+          },
+          "64": {
+            "geometric_tail_envelope": 0.015227837121511899,
+            "geometric_tail_ratio_to_initial": 0.005259455693423638,
+            "phase_aware_upper": 1.3338282377355497,
+            "phase_tail_ratio_to_initial": 8.047914916931079e-12,
+            "phase_tail_sum": 2.330133471340969e-11,
+            "phase_upper_over_exact": 1.0000000000174676
+          },
+          "8": {
+            "geometric_tail_envelope": 0.8019855370625577,
+            "geometric_tail_ratio_to_initial": 0.2769932043066335,
+            "phase_aware_upper": 1.425822447026529,
+            "phase_tail_ratio_to_initial": 0.03241461346941317,
+            "phase_tail_sum": 0.09385086272067787,
+            "phase_upper_over_exact": 1.0689700567983658
+          }
+        },
+        "initial_tail_sum": 2.895325678007443,
+        "maximum_contraction": 0.9363197036447016,
+        "observed_phase_horizons": {
+          "0.01": 16,
+          "0.05": 16,
+          "0.1": 8,
+          "0.2": 8
+        },
+        "packet_contractions": [
+          0.6609570489562808,
+          0.7999676968185897,
+          0.9363197036447016
+        ],
+        "packet_initial_tails": [
+          0.8984101140313896,
+          0.9701424455294697,
+          1.0267731184465838
+        ],
+        "relaxation_time": 15.19796171110992,
+        "smallest_scale_phase_upper_ratio": 1.0000000000174676
+      },
+      "right": {
+        "contraction_gap": 0.06730589935326403,
+        "exact_hardy_energy": 1.4845401474873023,
+        "geometric_horizons": {
+          "0.01": 69,
+          "0.05": 46,
+          "0.1": 37,
+          "0.2": 28
+        },
+        "horizons": {
+          "0": {
+            "geometric_tail_envelope": 4.079837038450556,
+            "geometric_tail_ratio_to_initial": 1.0,
+            "phase_aware_upper": 4.079837038450556,
+            "phase_tail_ratio_to_initial": 1.0,
+            "phase_tail_sum": 4.079837038450556,
+            "phase_upper_over_exact": 2.7482160353534337
+          },
+          "1": {
+            "geometric_tail_envelope": 3.5877703919133843,
+            "geometric_tail_ratio_to_initial": 0.8793906124436653,
+            "phase_aware_upper": 3.661089424211971,
+            "phase_tail_ratio_to_initial": 0.6523589214784459,
+            "phase_tail_sum": 2.6615180902114215,
+            "phase_upper_over_exact": 2.466143762032064
+          },
+          "16": {
+            "geometric_tail_envelope": 0.7405240354453042,
+            "geometric_tail_ratio_to_initial": 0.18150823880125885,
+            "phase_aware_upper": 1.4920554346425354,
+            "phase_tail_ratio_to_initial": 0.0018445776375415974,
+            "phase_tail_sum": 0.007525576165939834,
+            "phase_upper_over_exact": 1.0050623670689898
+          },
+          "2": {
+            "geometric_tail_envelope": 3.166053233920124,
+            "geometric_tail_ratio_to_initial": 0.7760244353099286,
+            "phase_aware_upper": 3.0452553020508675,
+            "phase_tail_ratio_to_initial": 0.4587097570591947,
+            "phase_tail_sum": 1.8714610567487588,
+            "phase_upper_over_exact": 2.051312190650549
+          },
+          "32": {
+            "geometric_tail_envelope": 0.20452167983733927,
+            "geometric_tail_ratio_to_initial": 0.05012986497005103,
+            "phase_aware_upper": 1.4845546995742385,
+            "phase_tail_ratio_to_initial": 3.5668399687100487e-06,
+            "phase_tail_sum": 1.4552125814569079e-05,
+            "phase_upper_over_exact": 1.0000098024206088
+          },
+          "4": {
+            "geometric_tail_envelope": 2.4904507931669464,
+            "geometric_tail_ratio_to_initial": 0.6104289876521077,
+            "phase_aware_upper": 2.294652132137929,
+            "phase_tail_ratio_to_initial": 0.22681859622208306,
+            "phase_tail_sum": 0.9253829098762159,
+            "phase_upper_over_exact": 1.5456989398513763
+          },
+          "64": {
+            "geometric_tail_envelope": 0.020641621328646578,
+            "geometric_tail_ratio_to_initial": 0.0050594229951120475,
+            "phase_aware_upper": 1.4845401475404794,
+            "phase_tail_ratio_to_initial": 1.303500647121755e-11,
+            "phase_tail_sum": 5.318070219771604e-11,
+            "phase_upper_over_exact": 1.0000000000358205
+          },
+          "8": {
+            "geometric_tail_envelope": 1.5989741338771444,
+            "geometric_tail_ratio_to_initial": 0.3919210789077017,
+            "phase_aware_upper": 1.6438156292120087,
+            "phase_tail_ratio_to_initial": 0.040243711141707536,
+            "phase_tail_sum": 0.1641877832806437,
+            "phase_upper_over_exact": 1.107289440433317
+          }
+        },
+        "initial_tail_sum": 4.079837038450556,
+        "maximum_contraction": 0.932694100646736,
+        "observed_phase_horizons": {
+          "0.01": 16,
+          "0.05": 16,
+          "0.1": 16,
+          "0.2": 8
+        },
+        "packet_contractions": [
+          0.8075740979951679,
+          0.8679081270491137,
+          0.932694100646736
+        ],
+        "packet_initial_tails": [
+          1.126579373273712,
+          1.1809953147188552,
+          1.772262350457989
+        ],
+        "relaxation_time": 14.351732604865019,
+        "smallest_scale_phase_upper_ratio": 1.0000000000358205
+      },
+      "sigma": 0.04
+    },
+    {
+      "fine_dimension": 256,
+      "left": {
+        "contraction_gap": 0.022504895903873612,
+        "exact_hardy_energy": 1.4095815932334066,
+        "geometric_horizons": {
+          "0.01": 220,
+          "0.05": 149,
+          "0.1": 118,
+          "0.2": 88
+        },
+        "horizons": {
+          "0": {
+            "geometric_tail_envelope": 3.9854735973005857,
+            "geometric_tail_ratio_to_initial": 1.0,
+            "phase_aware_upper": 3.9854735973005857,
+            "phase_tail_ratio_to_initial": 1.0,
+            "phase_tail_sum": 3.9854735973005857,
+            "phase_upper_over_exact": 2.827416033546806
+          },
+          "1": {
+            "geometric_tail_envelope": 3.571445286614924,
+            "geometric_tail_ratio_to_initial": 0.8961156558743512,
+            "phase_aware_upper": 3.944990656404359,
+            "phase_tail_ratio_to_initial": 0.7408821832529793,
+            "phase_tail_sum": 2.952766380065163,
+            "phase_upper_over_exact": 2.7986962055563143
+          },
+          "16": {
+            "geometric_tail_envelope": 1.519297579286437,
+            "geometric_tail_ratio_to_initial": 0.3812087929312786,
+            "phase_aware_upper": 1.440873808165749,
+            "phase_tail_ratio_to_initial": 0.00787599460736029,
+            "phase_tail_sum": 0.031389568560116224,
+            "phase_upper_over_exact": 1.0221996478122009
+          },
+          "2": {
+            "geometric_tail_envelope": 3.232054616631155,
+            "geometric_tail_ratio_to_initial": 0.8109587324377882,
+            "phase_aware_upper": 3.297539194731929,
+            "phase_tail_ratio_to_initial": 0.5333147866434931,
+            "phase_tail_sum": 2.1255120012176367,
+            "phase_upper_over_exact": 2.3393744715180196
+          },
+          "32": {
+            "geometric_tail_envelope": 1.0015533211665786,
+            "geometric_tail_ratio_to_initial": 0.2513009550094483,
+            "phase_aware_upper": 1.4100727231382146,
+            "phase_tail_ratio_to_initial": 0.0001232351612385117,
+            "phase_tail_sum": 0.0004911504813751689,
+            "phase_upper_over_exact": 1.0003484224731407
+          },
+          "4": {
+            "geometric_tail_envelope": 2.7190871637139824,
+            "geometric_tail_ratio_to_initial": 0.682249448486036,
+            "phase_aware_upper": 2.300250241192403,
+            "phase_tail_ratio_to_initial": 0.24435836920644424,
+            "phase_tail_sum": 0.973883828751712,
+            "phase_upper_over_exact": 1.6318673940086805
+          },
+          "64": {
+            "geometric_tail_envelope": 0.4807356986426284,
+            "geometric_tail_ratio_to_initial": 0.12062197550831527,
+            "phase_aware_upper": 1.4095817163845858,
+            "phase_tail_ratio_to_initial": 3.0900010499094856e-08,
+            "phase_tail_sum": 1.2315117600045345e-07,
+            "phase_upper_over_exact": 1.0000000873671875
+          },
+          "8": {
+            "geometric_tail_envelope": 2.097817643477367,
+            "geometric_tail_ratio_to_initial": 0.5263659618516221,
+            "phase_aware_upper": 1.692902227323099,
+            "phase_tail_ratio_to_initial": 0.0728575168309646,
+            "phase_tail_sum": 0.29037170969469245,
+            "phase_upper_over_exact": 1.2009962640330665
+          }
+        },
+        "initial_tail_sum": 3.9854735973005857,
+        "maximum_contraction": 0.9774951040961264,
+        "observed_phase_horizons": {
+          "0.01": 32,
+          "0.05": 16,
+          "0.1": 16,
+          "0.2": 16
+        },
+        "packet_contractions": [
+          0.7688009156990607,
+          0.8516822557196366,
+          0.9774951040961264
+        ],
+        "packet_initial_tails": [
+          0.9952819068363418,
+          0.9269807812337473,
+          2.063210909230497
+        ],
+        "relaxation_time": 43.932878810507475,
+        "smallest_scale_phase_upper_ratio": 1.0000000873671875
+      },
+      "right": {
+        "contraction_gap": 0.03334793435364525,
+        "exact_hardy_energy": 1.6339905796791518,
+        "geometric_horizons": {
+          "0.01": 165,
+          "0.05": 118,
+          "0.1": 98,
+          "0.2": 78
+        },
+        "horizons": {
+          "0": {
+            "geometric_tail_envelope": 7.526349132590882,
+            "geometric_tail_ratio_to_initial": 1.0,
+            "phase_aware_upper": 7.526349132590882,
+            "phase_tail_ratio_to_initial": 1.0,
+            "phase_tail_sum": 7.526349132590882,
+            "phase_upper_over_exact": 4.606115375566453
+          },
+          "1": {
+            "geometric_tail_envelope": 7.125497035781861,
+            "geometric_tail_ratio_to_initial": 0.946740167145152,
+            "phase_aware_upper": 6.160126100215878,
+            "phase_tail_ratio_to_initial": 0.6856808243202152,
+            "phase_tail_sum": 5.160673277356652,
+            "phase_upper_over_exact": 3.7699887482983363
+          },
+          "16": {
+            "geometric_tail_envelope": 3.43138437180386,
+            "geometric_tail_ratio_to_initial": 0.45591618344479257,
+            "phase_aware_upper": 1.6990438482946406,
+            "phase_tail_ratio_to_initial": 0.008680168998470312,
+            "phase_tail_sum": 0.06532998241237929,
+            "phase_upper_over_exact": 1.039812511421126
+          },
+          "2": {
+            "geometric_tail_envelope": 6.752213127123941,
+            "geometric_tail_ratio_to_initial": 0.8971432241809315,
+            "phase_aware_upper": 5.1139791173444324,
+            "phase_tail_ratio_to_initial": 0.5237733543818075,
+            "phase_tail_sum": 3.942101131425734,
+            "phase_upper_over_exact": 3.129748225567253
+          },
+          "32": {
+            "geometric_tail_envelope": 1.7620816139119588,
+            "geometric_tail_ratio_to_initial": 0.2341216947114141,
+            "phase_aware_upper": 1.6349337091648821,
+            "phase_tail_ratio_to_initial": 0.00012531794818615712,
+            "phase_tail_sum": 0.0009431866306289526,
+            "phase_upper_over_exact": 1.000577193955375
+          },
+          "4": {
+            "geometric_tail_envelope": 6.079120382333798,
+            "geometric_tail_ratio_to_initial": 0.8077117172268505,
+            "phase_aware_upper": 3.6589073264178014,
+            "phase_tail_ratio_to_initial": 0.303850581100219,
+            "phase_tail_sum": 2.286885557500869,
+            "phase_upper_over_exact": 2.2392462795815256
+          },
+          "64": {
+            "geometric_tail_envelope": 0.5309631161907903,
+            "geometric_tail_ratio_to_initial": 0.07054723436780173,
+            "phase_aware_upper": 1.6339908008520347,
+            "phase_tail_ratio_to_initial": 2.9386477166902925e-08,
+            "phase_tail_sum": 2.211728869350216e-07,
+            "phase_upper_over_exact": 1.0000001353575019
+          },
+          "8": {
+            "geometric_tail_envelope": 4.973983575066003,
+            "geometric_tail_ratio_to_initial": 0.6608760087314408,
+            "phase_aware_upper": 2.201894529335701,
+            "phase_tail_ratio_to_initial": 0.07861721028401754,
+            "phase_tail_sum": 0.5917005724278304,
+            "phase_upper_over_exact": 1.3475564404833116
+          }
+        },
+        "initial_tail_sum": 7.526349132590882,
+        "maximum_contraction": 0.9666520656463548,
+        "observed_phase_horizons": {
+          "0.01": 32,
+          "0.05": 16,
+          "0.1": 16,
+          "0.2": 16
+        },
+        "packet_contractions": [
+          0.8864342051504732,
+          0.9409900435867317,
+          0.9666520656463548
+        ],
+        "packet_initial_tails": [
+          1.2241098873816898,
+          2.0134198199621802,
+          4.288819425247012
+        ],
+        "relaxation_time": 29.484038501485955,
+        "smallest_scale_phase_upper_ratio": 1.0000001353575019
+      },
+      "sigma": 0.02
+    },
+    {
+      "fine_dimension": 512,
+      "left": {
+        "contraction_gap": 0.006138679865417052,
+        "exact_hardy_energy": 1.4680735421045377,
+        "geometric_horizons": {
+          "0.01": 1111,
+          "0.05": 850,
+          "0.1": 738,
+          "0.2": 625
+        },
+        "horizons": {
+          "0": {
+            "geometric_tail_envelope": 19.219572999185033,
+            "geometric_tail_ratio_to_initial": 1.0,
+            "phase_aware_upper": 19.219572999185033,
+            "phase_tail_ratio_to_initial": 1.0,
+            "phase_tail_sum": 19.219572999185033,
+            "phase_upper_over_exact": 13.09169632716973
+          },
+          "1": {
+            "geometric_tail_envelope": 18.88421942803666,
+            "geometric_tail_ratio_to_initial": 0.982551455687252,
+            "phase_aware_upper": 16.166727512522495,
+            "phase_tail_ratio_to_initial": 0.7893122153975853,
+            "phase_tail_sum": 15.170243742982352,
+            "phase_upper_over_exact": 11.012205484847097
+          },
+          "16": {
+            "geometric_tail_envelope": 15.364820288142614,
+            "geometric_tail_ratio_to_initial": 0.7994360899065827,
+            "phase_aware_upper": 1.76122178044469,
+            "phase_tail_ratio_to_initial": 0.015265966648917995,
+            "phase_tail_sum": 0.2934053604120035,
+            "phase_upper_over_exact": 1.1996822570073113
+          },
+          "2": {
+            "geometric_tail_envelope": 18.566366621137313,
+            "geometric_tail_ratio_to_initial": 0.9660134812529176,
+            "phase_aware_upper": 12.889150698312832,
+            "phase_tail_ratio_to_initial": 0.6094707042189562,
+            "phase_tail_sum": 11.713766690600938,
+            "phase_upper_over_exact": 8.779635575909746
+          },
+          "32": {
+            "geometric_tail_envelope": 13.14919191752239,
+            "geometric_tail_ratio_to_initial": 0.6841562982736378,
+            "phase_aware_upper": 1.4749654911265704,
+            "phase_tail_ratio_to_initial": 0.0003585970890540625,
+            "phase_tail_sum": 0.006892082930369811,
+            "phase_upper_over_exact": 1.004694552980059
+          },
+          "4": {
+            "geometric_tail_envelope": 17.97782541369704,
+            "geometric_tail_ratio_to_initial": 0.9353915102307088,
+            "phase_aware_upper": 7.378610064164505,
+            "phase_tail_ratio_to_initial": 0.31419011107953737,
+            "phase_tail_sum": 6.038599775515223,
+            "phase_upper_over_exact": 5.02604934463092
+          },
+          "64": {
+            "geometric_tail_envelope": 10.244619559774879,
+            "geometric_tail_ratio_to_initial": 0.5330305496490105,
+            "phase_aware_upper": 1.4680777764915667,
+            "phase_tail_ratio_to_initial": 2.2031639724667332e-07,
+            "phase_tail_sum": 4.234387079799886e-06,
+            "phase_upper_over_exact": 1.0000028843153341
+          },
+          "8": {
+            "geometric_tail_envelope": 16.958050997679592,
+            "geometric_tail_ratio_to_initial": 0.8823323493398456,
+            "phase_aware_upper": 3.4135840228300047,
+            "phase_tail_ratio_to_initial": 0.10204999710530455,
+            "phase_tail_sum": 1.961357368932022,
+            "phase_upper_over_exact": 2.3252132300787234
+          }
+        },
+        "initial_tail_sum": 19.219572999185033,
+        "maximum_contraction": 0.993861320134583,
+        "observed_phase_horizons": {
+          "0.01": 32,
+          "0.05": 32,
+          "0.1": 32,
+          "0.2": 16
+        },
+        "packet_contractions": [
+          0.9040517805994249,
+          0.9439944891848169,
+          0.9844809615965497,
+          0.993861320134583
+        ],
+        "packet_initial_tails": [
+          1.1814022875907304,
+          1.7509843784952304,
+          2.5535834058826055,
+          13.733602927216465
+        ],
+        "relaxation_time": 162.4009611129622,
+        "smallest_scale_phase_upper_ratio": 1.0000028843153341
+      },
+      "right": {
+        "contraction_gap": 0.01978228717473962,
+        "exact_hardy_energy": 1.76030964054054,
+        "geometric_horizons": {
+          "0.01": 307,
+          "0.05": 228,
+          "0.1": 195,
+          "0.2": 161
+        },
+        "horizons": {
+          "0": {
+            "geometric_tail_envelope": 12.13822202748595,
+            "geometric_tail_ratio_to_initial": 1.0,
+            "phase_aware_upper": 12.13822202748595,
+            "phase_tail_ratio_to_initial": 1.0,
+            "phase_tail_sum": 12.13822202748595,
+            "phase_upper_over_exact": 6.895503920411783
+          },
+          "1": {
+            "geometric_tail_envelope": 11.833483730120076,
+            "geometric_tail_ratio_to_initial": 0.9748943216991894,
+            "phase_aware_upper": 9.933595234559318,
+            "phase_tail_ratio_to_initial": 0.7360121189635584,
+            "phase_tail_sum": 8.933878514900075,
+            "phase_upper_over_exact": 5.643095399687182
+          },
+          "16": {
+            "geometric_tail_envelope": 8.17638345727307,
+            "geometric_tail_ratio_to_initial": 0.6736063517999885,
+            "phase_aware_upper": 1.9256424023111993,
+            "phase_tail_ratio_to_initial": 0.013725434291381454,
+            "phase_tail_sum": 0.16660236885245738,
+            "phase_upper_over_exact": 1.0939225451948842
+          },
+          "2": {
+            "geometric_tail_envelope": 11.537644566310162,
+            "geometric_tail_ratio_to_initial": 0.9505217930751445,
+            "phase_aware_upper": 8.292246157433297,
+            "phase_tail_ratio_to_initial": 0.5866180250578138,
+            "phase_tail_sum": 7.12049983347706,
+            "phase_upper_over_exact": 4.710674739523093
+          },
+          "32": {
+            "geometric_tail_envelope": 5.617301867619872,
+            "geometric_tail_ratio_to_initial": 0.4627779797485974,
+            "phase_aware_upper": 1.7641279811741437,
+            "phase_tail_ratio_to_initial": 0.00031462471831668603,
+            "phase_tail_sum": 0.003818984686263161,
+            "phase_upper_over_exact": 1.0021691301039692
+          },
+          "4": {
+            "geometric_tail_envelope": 10.971425755530582,
+            "geometric_tail_ratio_to_initial": 0.9038742025550975,
+            "phase_aware_upper": 6.034090687504597,
+            "phase_tail_ratio_to_initial": 0.38479565774066427,
+            "phase_tail_sum": 4.670735128868675,
+            "phase_upper_over_exact": 3.4278575476367346
+          },
+          "64": {
+            "geometric_tail_envelope": 2.747241265630651,
+            "geometric_tail_ratio_to_initial": 0.22632979190937202,
+            "phase_aware_upper": 1.7603119281157933,
+            "phase_tail_ratio_to_initial": 1.8846050793787233e-07,
+            "phase_tail_sum": 2.2875754887626726e-06,
+            "phase_upper_over_exact": 1.0000012995300376
+          },
+          "8": {
+            "geometric_tail_envelope": 9.932854373619652,
+            "geometric_tail_ratio_to_initial": 0.8183121342753136,
+            "phase_aware_upper": 3.0186192642449865,
+            "phase_tail_ratio_to_initial": 0.11179572097209256,
+            "phase_tail_sum": 1.357001282882127,
+            "phase_upper_over_exact": 1.7148228895219002
+          }
+        },
+        "initial_tail_sum": 12.13822202748595,
+        "maximum_contraction": 0.9802177128252604,
+        "observed_phase_horizons": {
+          "0.01": 32,
+          "0.05": 32,
+          "0.1": 16,
+          "0.2": 16
+        },
+        "packet_contractions": [
+          0.9479248576652329,
+          0.972733839812542,
+          0.9781428428812603,
+          0.9802177128252604
+        ],
+        "packet_initial_tails": [
+          1.4109336928454974,
+          2.0146983498699296,
+          1.9161101861207672,
+          6.796479798649756
+        ],
+        "relaxation_time": 50.04860709120966,
+        "smallest_scale_phase_upper_ratio": 1.0000012995300376
+      },
+      "sigma": 0.01
+    }
+  ],
+  "source_inputs": {
+    "rh59_metric_pilot": {
+      "path": "papers/RH-59-flag-adapted-schur-stein-metrics/results/flag_metric_pilot.json",
+      "sha256": "daabfac37fafcf04c4f41d4e0efa6018f502aae840fbc534ad740f61a47ea4f9"
+    },
+    "rh60_phase_tail_pilot": {
+      "path": "papers/RH-60-finite-horizon-phase-aware-tails/results/phase_tail_pilot.json",
+      "sha256": "813b421f4ca6ff429d5181bc295cc8fa1e4a8fa50268f30a3c13d940ccfd82f5"
+    }
+  },
+  "status": "rh61_archived_horizon_scaling_audit",
+  "theorem_translation": {
+    "directional_tail_profile": false,
+    "packetwise_geometric_envelope": true,
+    "physical_family_uniformity": false,
+    "slow_mode_horizon_lower_bound": true
+  },
+  "tolerances": [
+    0.2,
+    0.1,
+    0.05,
+    0.01
+  ]
+}
