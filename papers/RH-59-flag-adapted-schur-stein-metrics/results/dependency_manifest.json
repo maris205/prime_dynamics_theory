@@ -1,0 +1,49 @@
+{
+  "external_inputs": {
+    "rh14_operator": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh50_manuscript": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/main.tex",
+      "sha256": "106c3a96f2b38f07543c70e0859665ae9ba427386d79f57168e85c49558b9f74"
+    },
+    "rh58_algebra": {
+      "path": "papers/RH-58-time-ordered-schur-cross-gramian/src/schur_fusion/algebra.py",
+      "sha256": "cc67a0e6b7be5c939e72bbb25020ccd012327c8f4ae66f00b3b8ed6a1cb1ea12"
+    },
+    "rh58_manuscript": {
+      "path": "papers/RH-58-time-ordered-schur-cross-gramian/main.tex",
+      "sha256": "7325769e64ccfa9c1ccd90e37f1e2e6d59a1e67eca97347bbe4d361a3dca7ca6"
+    },
+    "rh58_pilot": {
+      "path": "papers/RH-58-time-ordered-schur-cross-gramian/results/schur_fusion_pilot.json",
+      "sha256": "46826dd7f27a7797b6b1d0dc89dd2f6f479dc71790a87db1e9f8b9669789f096"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "f327f406bb0b64769837944f98d6d4502f6b503a0b1c284c4db1c929cf3bb85e",
+    "experiments/make_figures.py": "77e21d5219c0ac56b1a0004592224833ef24ad3a25e5b62cd9a4b67a9bf37a07",
+    "experiments/run_arb_flag_metric_audit.py": "61f2fd35160873f4687a57b422726440c658fbd5a143e21b3ff891940e731fc8",
+    "experiments/run_flag_metric_pilot.py": "f535c1035703802c867521ba17bf1f9817deec910411f0c2b7bf49d96a69ac68",
+    "experiments/verify_archive.py": "c3ebf7f185c670813037ff9a7beebb2ff828fedea90f2f70434a66daf91fff4d",
+    "src/flag_stein/__init__.py": "97dadb5129f570f35e1c62ab0f1552fd434c6c956c672f359f739121d559ca0d",
+    "src/flag_stein/algebra.py": "326b691a76673b5a9a1697fd9bd5bc0a2a38f0c423664021232d3ca6946638f2",
+    "tests/test_archived_results.py": "ac02d95e4c9473aca6525d50767b61a076784a9b21e7a5fe4ca7cc79af14b02e",
+    "tests/test_smoke_pilot.py": "2a0b8e50dd5dec7b7f1be23ead67d01896cd88452070714afac5bdec9505e465",
+    "tests/test_theory.py": "4c365b0c591797cf31eb431946db88e0206f87dbd6aba997e953ba83eeeab608"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "7766c232db336fc70b73c1cc6520a9672bc1fe75c9e14a7bfd7255485820ebf4",
+    "figures/flag_adapted_schur_stein.pdf": "2d75e40eadb37558041bad56af112244bd20defb57b3ae12ea63215eef56a149",
+    "figures/flag_adapted_schur_stein.png": "636b62310207f0d09bbd085ac39d3bf15b0621bb20e52e72d3dc8704b051f33c",
+    "flag-adapted-schur-stein-metrics.pdf": "5769546abddd1c1fa5babf34c7ab1aef7a8991358a2912fdc9e4c2c87d3b1af7",
+    "main.pdf": "5769546abddd1c1fa5babf34c7ab1aef7a8991358a2912fdc9e4c2c87d3b1af7",
+    "main.tex": "02036a8ce358c8b243442b4546afb4ecfaf083a54ec9d637b0380e44979a02b6",
+    "pyproject.toml": "ea3de1ebd471762f49bbc37703381e70cb0ade74e829ea50c9cc429928d7e405",
+    "references.bib": "d4fe5ba35063d992f366f1d181e7ed35fcf2bb6dfce6cf467c966c0038f12385",
+    "requirements.txt": "2036d2c43433a02ca90a5c6fb64014ed2e362a41a3021029cc29897bc9cdca2f"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}

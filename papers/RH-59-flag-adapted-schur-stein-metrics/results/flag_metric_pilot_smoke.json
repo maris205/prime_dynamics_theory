@@ -1,0 +1,617 @@
+{
+  "evidence_level": "deterministic all-column dense binary64 Schur, local Lyapunov, and exact-dissipation packet audit; not interval validated",
+  "fine_resolution": 5.12,
+  "fits": {
+    "left_exact": {
+      "growth_exponent": 0.36297953102447716,
+      "levels": 2,
+      "log_intercept": -0.7661624428223082,
+      "maximum_log_residual": 1.1102230246251565e-16,
+      "sigma_power": -0.36297953102447716
+    },
+    "left_metric_absolute_upper": {
+      "growth_exponent": 0.8556177052497763,
+      "levels": 2,
+      "log_intercept": -1.4093482687265841,
+      "maximum_log_residual": 2.7755575615628914e-16,
+      "sigma_power": -0.8556177052497763
+    },
+    "left_outer_packet_upper": {
+      "growth_exponent": 1.4968752364895956,
+      "levels": 2,
+      "log_intercept": -3.8222811539306947,
+      "maximum_log_residual": 1.3322676295501878e-15,
+      "sigma_power": -1.4968752364895956
+    },
+    "right_exact": {
+      "growth_exponent": 0.3356452814612171,
+      "levels": 2,
+      "log_intercept": -0.6124547112471547,
+      "maximum_log_residual": 1.5569143196891844e-16,
+      "sigma_power": -0.3356452814612171
+    },
+    "right_metric_absolute_upper": {
+      "growth_exponent": 0.6789317528561248,
+      "levels": 2,
+      "log_intercept": -0.8266228918273985,
+      "maximum_log_residual": 4.440892098500626e-16,
+      "sigma_power": -0.6789317528561248
+    },
+    "right_outer_packet_upper": {
+      "growth_exponent": 1.030041809202158,
+      "levels": 2,
+      "log_intercept": -2.6944085949679932,
+      "maximum_log_residual": 7.771561172376096e-16,
+      "sigma_power": -1.030041809202158
+    }
+  },
+  "hardy_radius": 0.85,
+  "inherited_block_horizon": 8,
+  "limitations": [
+    "The production Schur forms, Lyapunov solves, and optimized weights are binary64 diagnostics, not interval enclosures.",
+    "Flag-metric existence is finite-dimensional; no noise-uniform control of the hierarchical weights is proved.",
+    "The empirical coherence-assisted upper uses the measured packet Gram coherence and is not a standalone analytic certificate.",
+    "The dense audit uses N*sigma=5.12, below the RH-50 production resolution N*sigma=20.48.",
+    "Five levels do not prove a polylogarithmic packet budget; Stage A1 and Stage A4 remain open."
+  ],
+  "maximum_direct_iterations": 260,
+  "minimum_dissipation_margin": 1e-08,
+  "radial_cuts": [
+    0.15,
+    0.35,
+    0.55
+  ],
+  "radial_names": [
+    "central",
+    "inner_cloud",
+    "middle_cloud",
+    "edge_cloud"
+  ],
+  "rows": [
+    {
+      "coarse_dimension": 16,
+      "elapsed_seconds": 0.05381474702153355,
+      "fine_dimension": 32,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "empirical_coherence_assisted_metric_upper": 0.9230484432170785,
+        "exact_hardy_energy": 0.9039575455799419,
+        "exact_packet_absolute_sum": 1.1485168259950984,
+        "exact_packet_coherence": 1.0547460392523125,
+        "exact_packet_square_sum": 0.8877318483944457,
+        "inherited_rh58": {
+          "scalar_path_upper": 1.5905911407520734,
+          "source_packet_coherence_upper": 0.9117079725785346,
+          "state_block_coherence_upper": 0.9048375663894846
+        },
+        "local_metrics": [
+          {
+            "condition_number": 1.2090318051706461,
+            "contraction": 0.4158027168623484,
+            "dimension": 31,
+            "maximum_eigenvalue": 1.2090318051706443,
+            "minimum_eigenvalue": 0.9999999999999984,
+            "name": "central",
+            "residual_relative": 5.511961748198695e-16
+          },
+          {
+            "condition_number": 1.0,
+            "contraction": 0.26535590701459894,
+            "dimension": 1,
+            "maximum_eigenvalue": 1.0757474176787012,
+            "minimum_eigenvalue": 1.0757474176787012,
+            "name": "inner_cloud",
+            "residual_relative": 0.0
+          }
+        ],
+        "maximum_local_metric_condition_number": 1.2090318051706461,
+        "maximum_local_metric_residual": 5.511961748198695e-16,
+        "maximum_packet_upper_over_exact": 1.0596357336210975,
+        "metric_absolute_upper": 1.171917009884675,
+        "metric_absolute_upper_over_exact": 1.2964292577842484,
+        "metric_packet_square_sum": 0.8987740869888332,
+        "minimum_packet_gram_eigenvalue": 0.1025246707448818,
+        "observability_stein_residual_relative": 1.5913852377624042e-15,
+        "packets": [
+          {
+            "comparison_contraction": 0.4158027168623484,
+            "comparison_contraction_upper": 0.9148642564351543,
+            "dimension": 31,
+            "exact_contraction_upper": 0.9148642564351545,
+            "exact_packet_energy": 0.827756327049018,
+            "kappa": 1.0000000000000027,
+            "log_scales": [
+              0.0
+            ],
+            "maximum_physical_modulus": 0.11166706679250564,
+            "metric_energy_upper": 0.8320277232672757,
+            "metric_upper_over_exact": 1.0051602096881402,
+            "minimum_dissipation_eigenvalue": 0.8271081006498908,
+            "minimum_physical_modulus": 4.543888759767146e-18,
+            "minimum_supersolution_eigenvalue": 6.757517603144647e-17,
+            "name": "central",
+            "normalized_contraction": 0.4158027168623484,
+            "optimizer": {
+              "direct_evaluations": 1,
+              "direct_message": "single diagonal block",
+              "direct_success": true,
+              "improved_from_seed": false,
+              "seed": {
+                "evaluations": 1,
+                "message": "single diagonal block",
+                "success": true
+              }
+            },
+            "source_metric_squared": 0.6922701322853244
+          },
+          {
+            "comparison_contraction": 0.7147018219371127,
+            "comparison_contraction_upper": 0.5799920430059893,
+            "dimension": 1,
+            "exact_contraction_upper": 0.4034810326723411,
+            "exact_packet_energy": 0.3207604989460804,
+            "kappa": 1.6057664806860512,
+            "log_scales": [
+              -0.15709601392710007,
+              0.0
+            ],
+            "maximum_physical_modulus": 0.22555252096240908,
+            "metric_energy_upper": 0.33988928661739914,
+            "metric_upper_over_exact": 1.0596357336210975,
+            "minimum_dissipation_eigenvalue": 0.6050596335149978,
+            "minimum_physical_modulus": 0.22555252096240908,
+            "minimum_supersolution_eigenvalue": 6.316752422243993e-16,
+            "name": "inner_cloud",
+            "normalized_contraction": 0.6284428108308681,
+            "optimizer": {
+              "direct_evaluations": 14,
+              "direct_message": "Optimization terminated successfully.",
+              "direct_success": true,
+              "improved_from_seed": true,
+              "seed": {
+                "evaluations": 34,
+                "message": "Optimization terminated successfully.",
+                "success": true
+              }
+            },
+            "source_metric_squared": 0.07194366587346342
+          }
+        ],
+        "rh58_exact_relative_defect": 4.912721974848426e-16,
+        "schur_reconstruction_defect": 2.9553042150965536e-15,
+        "schur_unitary_defect": 3.541947264963056e-15
+      },
+      "right": {
+        "empirical_coherence_assisted_metric_upper": 1.1799608503760621,
+        "exact_hardy_energy": 1.0026461047247,
+        "exact_packet_absolute_sum": 1.3061677868385086,
+        "exact_packet_coherence": 1.0326245409487464,
+        "exact_packet_square_sum": 0.9907904491662822,
+        "inherited_rh58": {
+          "scalar_path_upper": 1.7760118745197204,
+          "source_packet_coherence_upper": 1.006822778570632,
+          "state_block_coherence_upper": 1.0060784512226304
+        },
+        "local_metrics": [
+          {
+            "condition_number": 1.186289712387138,
+            "contraction": 0.3962771710748193,
+            "dimension": 15,
+            "maximum_eigenvalue": 1.1862897123871379,
+            "minimum_eigenvalue": 0.9999999999999998,
+            "name": "central",
+            "residual_relative": 2.8883514166935837e-16
+          },
+          {
+            "condition_number": 1.0,
+            "contraction": 0.2650393997297769,
+            "dimension": 1,
+            "maximum_eigenvalue": 1.0755531835305987,
+            "minimum_eigenvalue": 1.0755531835305987,
+            "name": "inner_cloud",
+            "residual_relative": 1.0322344274792168e-16
+          }
+        ],
+        "maximum_local_metric_condition_number": 1.186289712387138,
+        "maximum_local_metric_residual": 2.8883514166935837e-16,
+        "maximum_packet_upper_over_exact": 1.1823040590514928,
+        "metric_absolute_upper": 1.5182750480086813,
+        "metric_absolute_upper_over_exact": 1.5142681359397085,
+        "metric_packet_square_sum": 1.161171524746856,
+        "minimum_packet_gram_eigenvalue": 0.15937458836557922,
+        "observability_stein_residual_relative": 2.833922238225253e-15,
+        "packets": [
+          {
+            "comparison_contraction": 0.3962771710748193,
+            "comparison_contraction_upper": 1.1660826544394443,
+            "dimension": 15,
+            "exact_contraction_upper": 1.1660826544394443,
+            "exact_packet_energy": 0.9066865062526194,
+            "kappa": 1.182637945747305,
+            "log_scales": [
+              0.0
+            ],
+            "maximum_physical_modulus": 0.10874189414447503,
+            "metric_energy_upper": 1.0719791366296887,
+            "metric_upper_over_exact": 1.1823040590514928,
+            "minimum_dissipation_eigenvalue": 0.8429644036849379,
+            "minimum_physical_modulus": 4.717474545550685e-16,
+            "minimum_supersolution_eigenvalue": -5.334550284566495e-17,
+            "name": "central",
+            "normalized_contraction": 0.3962771710748193,
+            "optimizer": {
+              "direct_evaluations": 1,
+              "direct_message": "single diagonal block",
+              "direct_success": true,
+              "improved_from_seed": false,
+              "seed": {
+                "evaluations": 1,
+                "message": "single diagonal block",
+                "success": true
+              }
+            },
+            "source_metric_squared": 0.9716746139438267
+          },
+          {
+            "comparison_contraction": 0.6641438821603016,
+            "comparison_contraction_upper": 0.7056371580197681,
+            "dimension": 1,
+            "exact_contraction_upper": 0.5370557260727473,
+            "exact_packet_energy": 0.39948128058588933,
+            "kappa": 1.681892593799542,
+            "log_scales": [
+              -0.090815703118341,
+              0.0
+            ],
+            "maximum_physical_modulus": 0.22528348977031037,
+            "metric_energy_upper": 0.44629591137899255,
+            "metric_upper_over_exact": 1.1171885469187535,
+            "minimum_dissipation_eigenvalue": 0.5810792901107772,
+            "minimum_physical_modulus": 0.22528348977031037,
+            "minimum_supersolution_eigenvalue": 3.380390383443526e-16,
+            "name": "inner_cloud",
+            "normalized_contraction": 0.6472408438048567,
+            "optimizer": {
+              "direct_evaluations": 22,
+              "direct_message": "Optimization terminated successfully.",
+              "direct_success": true,
+              "improved_from_seed": true,
+              "seed": {
+                "evaluations": 32,
+                "message": "Optimization terminated successfully.",
+                "success": true
+              }
+            },
+            "source_metric_squared": 0.11842613568066229
+          }
+        ],
+        "rh58_exact_relative_defect": 2.21458602271236e-16,
+        "schur_reconstruction_defect": 1.8904513801723858e-15,
+        "schur_unitary_defect": 2.606827581221666e-15
+      },
+      "sigma": 0.16
+    },
+    {
+      "coarse_dimension": 32,
+      "elapsed_seconds": 0.4807321559637785,
+      "fine_dimension": 64,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "empirical_coherence_assisted_metric_upper": 1.318067742241383,
+        "exact_hardy_energy": 1.1625610299508302,
+        "exact_packet_absolute_sum": 1.9254734245370622,
+        "exact_packet_coherence": 1.0352162349464424,
+        "exact_packet_square_sum": 1.1653926327240351,
+        "inherited_rh58": {
+          "scalar_path_upper": 4.411831227688564,
+          "source_packet_coherence_upper": 1.1857354533492594,
+          "state_block_coherence_upper": 1.162656277614761
+        },
+        "local_metrics": [
+          {
+            "condition_number": 1.3758928332723313,
+            "contraction": 0.5226846168345941,
+            "dimension": 61,
+            "maximum_eigenvalue": 1.3758928332723286,
+            "minimum_eigenvalue": 0.9999999999999981,
+            "name": "central",
+            "residual_relative": 3.2384159147700963e-16
+          },
+          {
+            "condition_number": 1.0,
+            "contraction": 0.28511041026379275,
+            "dimension": 1,
+            "maximum_eigenvalue": 1.0884803303608306,
+            "minimum_eigenvalue": 1.0884803303608306,
+            "name": "inner_cloud",
+            "residual_relative": 0.0
+          },
+          {
+            "condition_number": 1.9214639807523655,
+            "contraction": 0.7487923331939598,
+            "dimension": 2,
+            "maximum_eigenvalue": 2.276296703841786,
+            "minimum_eigenvalue": 1.1846679025179971,
+            "name": "middle_cloud",
+            "residual_relative": 7.948064108543718e-17
+          }
+        ],
+        "maximum_local_metric_condition_number": 1.9214639807523655,
+        "maximum_local_metric_residual": 3.2384159147700963e-16,
+        "maximum_packet_upper_over_exact": 1.2173897711697463,
+        "metric_absolute_upper": 2.120622924850096,
+        "metric_absolute_upper_over_exact": 1.824096000310441,
+        "metric_packet_square_sum": 1.295454590566974,
+        "minimum_packet_gram_eigenvalue": 0.12673640719924262,
+        "observability_stein_residual_relative": 1.9882303716321046e-15,
+        "packets": [
+          {
+            "comparison_contraction": 0.5226846168345941,
+            "comparison_contraction_upper": 0.9209860977533592,
+            "dimension": 61,
+            "exact_contraction_upper": 0.9209860977533592,
+            "exact_packet_energy": 0.7812162342902561,
+            "kappa": 1.000000000000006,
+            "log_scales": [
+              0.0
+            ],
+            "maximum_physical_modulus": 0.09889418696820765,
+            "metric_energy_upper": 0.7851647077553259,
+            "metric_upper_over_exact": 1.0050542644811484,
+            "minimum_dissipation_eigenvalue": 0.7268007913244744,
+            "minimum_physical_modulus": 2.1927312705403276e-18,
+            "minimum_supersolution_eigenvalue": -1.9560193366876728e-17,
+            "name": "central",
+            "normalized_contraction": 0.5226846168345941,
+            "optimizer": {
+              "direct_evaluations": 1,
+              "direct_message": "single diagonal block",
+              "direct_success": true,
+              "improved_from_seed": false,
+              "seed": {
+                "evaluations": 1,
+                "message": "single diagonal block",
+                "success": true
+              }
+            },
+            "source_metric_squared": 0.6164836183045026
+          },
+          {
+            "comparison_contraction": 0.7674791460582766,
+            "comparison_contraction_upper": 0.7028894639860227,
+            "dimension": 1,
+            "exact_contraction_upper": 0.4465667365668277,
+            "exact_packet_energy": 0.35628267209837533,
+            "kappa": 1.5552647316684824,
+            "log_scales": [
+              -0.14033926806634503,
+              0.0
+            ],
+            "maximum_physical_modulus": 0.24234384872422382,
+            "metric_energy_upper": 0.3761860987584608,
+            "metric_upper_over_exact": 1.055864144452666,
+            "minimum_dissipation_eigenvalue": 0.6041232643402583,
+            "minimum_physical_modulus": 0.24234384872422382,
+            "minimum_supersolution_eigenvalue": -5.551115694029716e-17,
+            "name": "inner_cloud",
+            "normalized_contraction": 0.6291873613318547,
+            "optimizer": {
+              "direct_evaluations": 24,
+              "direct_message": "Optimization terminated successfully.",
+              "direct_success": true,
+              "improved_from_seed": true,
+              "seed": {
+                "evaluations": 34,
+                "message": "Optimization terminated successfully.",
+                "success": true
+              }
+            },
+            "source_metric_squared": 0.0909915707709083
+          },
+          {
+            "comparison_contraction": 1.056036640723935,
+            "comparison_contraction_upper": null,
+            "dimension": 2,
+            "exact_contraction_upper": 1.5708320133186535,
+            "exact_packet_energy": 0.7879745181484307,
+            "kappa": 2.7555517992950582,
+            "log_scales": [
+              -0.44897756583488635,
+              -0.20950319141118257,
+              0.0
+            ],
+            "maximum_physical_modulus": 0.46216634710216437,
+            "metric_energy_upper": 0.9592721183363091,
+            "metric_upper_over_exact": 1.2173897711697463,
+            "minimum_dissipation_eigenvalue": 0.3321945748513801,
+            "minimum_physical_modulus": 0.46216634710216425,
+            "minimum_supersolution_eigenvalue": -2.355245519463012e-16,
+            "name": "middle_cloud",
+            "normalized_contraction": 0.817193627697023,
+            "optimizer": {
+              "direct_evaluations": 84,
+              "direct_message": "Optimization terminated successfully.",
+              "direct_success": true,
+              "improved_from_seed": true,
+              "seed": {
+                "evaluations": 148,
+                "message": "Optimization terminated successfully.",
+                "success": true
+              }
+            },
+            "source_metric_squared": 0.33394509123466365
+          }
+        ],
+        "rh58_exact_relative_defect": 1.3369725927773063e-15,
+        "schur_reconstruction_defect": 4.02457564991874e-15,
+        "schur_unitary_defect": 5.9948616938314606e-15
+      },
+      "right": {
+        "empirical_coherence_assisted_metric_upper": 1.538483521661712,
+        "exact_hardy_energy": 1.2652809475765023,
+        "exact_packet_absolute_sum": 2.01489094743284,
+        "exact_packet_coherence": 1.0950289899387002,
+        "exact_packet_square_sum": 1.2332151086998855,
+        "inherited_rh58": {
+          "scalar_path_upper": 4.146669664714579,
+          "source_packet_coherence_upper": 1.2904810907955273,
+          "state_block_coherence_upper": 1.2656049950249202
+        },
+        "local_metrics": [
+          {
+            "condition_number": 1.9266850216193852,
+            "contraction": 0.6935227485714832,
+            "dimension": 29,
+            "maximum_eigenvalue": 1.9266850216193812,
+            "minimum_eigenvalue": 0.9999999999999979,
+            "name": "central",
+            "residual_relative": 2.590200563252291e-16
+          },
+          {
+            "condition_number": 1.0,
+            "contraction": 0.2789875872372255,
+            "dimension": 1,
+            "maximum_eigenvalue": 1.084403545635134,
+            "minimum_eigenvalue": 1.084403545635134,
+            "name": "inner_cloud",
+            "residual_relative": 0.0
+          },
+          {
+            "condition_number": 1.2184512337961488,
+            "contraction": 0.605722423553423,
+            "dimension": 2,
+            "maximum_eigenvalue": 1.5795284380157275,
+            "minimum_eigenvalue": 1.2963411207641227,
+            "name": "middle_cloud",
+            "residual_relative": 3.5145461785579503e-17
+          }
+        ],
+        "maximum_local_metric_condition_number": 1.9266850216193852,
+        "maximum_local_metric_residual": 2.590200563252291e-16,
+        "maximum_packet_upper_over_exact": 1.320496256655223,
+        "metric_absolute_upper": 2.43068833796362,
+        "metric_absolute_upper_over_exact": 1.9210661020537134,
+        "metric_packet_square_sum": 1.4702122618700573,
+        "minimum_packet_gram_eigenvalue": 0.12133005395458635,
+        "observability_stein_residual_relative": 2.032835819634764e-15,
+        "packets": [
+          {
+            "comparison_contraction": 0.6935227485714832,
+            "comparison_contraction_upper": 1.4646754787326488,
+            "dimension": 29,
+            "exact_contraction_upper": 1.4646754787326488,
+            "exact_packet_energy": 0.911522626091203,
+            "kappa": 1.3424373245980963,
+            "log_scales": [
+              0.0
+            ],
+            "maximum_physical_modulus": 0.09914272075032461,
+            "metric_energy_upper": 1.0569482387553337,
+            "metric_upper_over_exact": 1.15954141839325,
+            "minimum_dissipation_eigenvalue": 0.519026197213856,
+            "minimum_physical_modulus": 1.488796841897166e-17,
+            "minimum_supersolution_eigenvalue": 6.098766746200458e-16,
+            "name": "central",
+            "normalized_contraction": 0.6935227485714832,
+            "optimizer": {
+              "direct_evaluations": 1,
+              "direct_message": "single diagonal block",
+              "direct_success": true,
+              "improved_from_seed": false,
+              "seed": {
+                "evaluations": 1,
+                "message": "single diagonal block",
+                "success": true
+              }
+            },
+            "source_metric_squared": 0.8321726153900373
+          },
+          {
+            "comparison_contraction": 0.9095646876945525,
+            "comparison_contraction_upper": 1.1933845812953947,
+            "dimension": 1,
+            "exact_contraction_upper": 0.7250649772187124,
+            "exact_packet_energy": 0.35014609952685505,
+            "kappa": 3.085466183141422,
+            "log_scales": [
+              -0.33711063225098903,
+              0.0
+            ],
+            "maximum_physical_modulus": 0.23713944915164167,
+            "metric_energy_upper": 0.4623666137076392,
+            "metric_upper_over_exact": 1.320496256655223,
+            "minimum_dissipation_eigenvalue": 0.346143437753611,
+            "minimum_physical_modulus": 0.23713944915164167,
+            "minimum_supersolution_eigenvalue": 3.654938320447161e-16,
+            "name": "inner_cloud",
+            "normalized_contraction": 0.8086139760394875,
+            "optimizer": {
+              "direct_evaluations": 26,
+              "direct_message": "Optimization terminated successfully.",
+              "direct_success": true,
+              "improved_from_seed": true,
+              "seed": {
+                "evaluations": 36,
+                "message": "Optimization terminated successfully.",
+                "success": true
+              }
+            },
+            "source_metric_squared": 0.06928706159203772
+          },
+          {
+            "comparison_contraction": 1.0524489171290234,
+            "comparison_contraction_upper": null,
+            "dimension": 2,
+            "exact_contraction_upper": 1.5110744932419546,
+            "exact_packet_energy": 0.753222221814782,
+            "kappa": 2.3434522275170258,
+            "log_scales": [
+              -0.2279083329839918,
+              0.3029857157689213,
+              0.0
+            ],
+            "maximum_physical_modulus": 0.4574292236538133,
+            "metric_energy_upper": 0.9113734855006473,
+            "metric_upper_over_exact": 1.209966274368303,
+            "minimum_dissipation_eigenvalue": 0.3278439707097677,
+            "minimum_physical_modulus": 0.45742922365381317,
+            "minimum_supersolution_eigenvalue": 2.296524430990326e-16,
+            "name": "middle_cloud",
+            "normalized_contraction": 0.8198512238755472,
+            "optimizer": {
+              "direct_evaluations": 116,
+              "direct_message": "Optimization terminated successfully.",
+              "direct_success": true,
+              "improved_from_seed": true,
+              "seed": {
+                "evaluations": 222,
+                "message": "Optimization terminated successfully.",
+                "success": true
+              }
+            },
+            "source_metric_squared": 0.3544350596613833
+          }
+        ],
+        "rh58_exact_relative_defect": 5.264710703587176e-16,
+        "schur_reconstruction_defect": 3.0086141641232472e-15,
+        "schur_unitary_defect": 4.2605367084912446e-15
+      },
+      "sigma": 0.08
+    }
+  ],
+  "sources": {
+    "folded_gaussian": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh58_algebra": {
+      "path": "papers/RH-58-time-ordered-schur-cross-gramian/src/schur_fusion/algebra.py",
+      "sha256": "cc67a0e6b7be5c939e72bbb25020ccd012327c8f4ae66f00b3b8ed6a1cb1ea12"
+    },
+    "rh58_pilot": {
+      "path": "papers/RH-58-time-ordered-schur-cross-gramian/results/schur_fusion_pilot.json",
+      "sha256": "46826dd7f27a7797b6b1d0dc89dd2f6f479dc71790a87db1e9f8b9669789f096"
+    }
+  },
+  "status": "binary64_packetwise_flag_metric_stein_audit"
+}

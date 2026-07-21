@@ -1,0 +1,108 @@
+{
+  "arb": {
+    "dissipation_certified": true,
+    "local_identities_certified": true,
+    "packet_upper_certified": true,
+    "precision_bits": 256,
+    "production_interval_schur_metric_executed": false,
+    "status": "arb_two_block_flag_metric_stein_audit",
+    "supersolution_certified": true
+  },
+  "limitations": [
+    "The production Schur forms, Lyapunov solves, and optimized weights are binary64 diagnostics, not interval enclosures.",
+    "Flag-metric existence is finite-dimensional; no noise-uniform control of the hierarchical weights is proved.",
+    "The empirical coherence-assisted upper uses the measured packet Gram coherence and is not a standalone analytic certificate.",
+    "The dense audit uses N*sigma=5.12, below the RH-50 production resolution N*sigma=20.48.",
+    "Five levels do not prove a polylogarithmic packet budget; Stage A1 and Stage A4 remain open."
+  ],
+  "pilot": {
+    "fits": {
+      "left_exact": {
+        "growth_exponent": 0.16771551715962094,
+        "levels": 5,
+        "log_intercept": -0.3268655038387695,
+        "maximum_log_residual": 0.08145972663770995,
+        "sigma_power": -0.16771551715962094
+      },
+      "left_metric_absolute_upper": {
+        "growth_exponent": 0.8981531000141636,
+        "levels": 5,
+        "log_intercept": -1.6286365617911986,
+        "maximum_log_residual": 0.5023028776862706,
+        "sigma_power": -0.8981531000141636
+      },
+      "left_outer_packet_upper": {
+        "growth_exponent": 1.1777882193656304,
+        "levels": 5,
+        "log_intercept": -3.34119118277274,
+        "maximum_log_residual": 0.542079963807517,
+        "sigma_power": -1.1777882193656304
+      },
+      "right_exact": {
+        "growth_exponent": 0.19929753896486868,
+        "levels": 5,
+        "log_intercept": -0.30360266679803827,
+        "maximum_log_residual": 0.05898369892638046,
+        "sigma_power": -0.19929753896486868
+      },
+      "right_metric_absolute_upper": {
+        "growth_exponent": 0.7628689370517455,
+        "levels": 5,
+        "log_intercept": -1.010265222213078,
+        "maximum_log_residual": 0.04431447162817004,
+        "sigma_power": -0.7628689370517455
+      },
+      "right_outer_packet_upper": {
+        "growth_exponent": 1.0091896687538153,
+        "levels": 5,
+        "log_intercept": -2.639436699928373,
+        "maximum_log_residual": 0.14747500174051353,
+        "sigma_power": -1.0091896687538153
+      }
+    },
+    "rows": 5,
+    "smallest_scale": {
+      "left_metric_upper": 19.219572999185033,
+      "left_outer_packet_upper": 13.733602927216465,
+      "right_metric_upper": 12.138222027485952,
+      "right_outer_packet_upper": 6.796479798649757,
+      "sigma": 0.01
+    },
+    "status": "binary64_packetwise_flag_metric_stein_audit"
+  },
+  "program_boundary": {
+    "arithmetic_trace_formula": false,
+    "hilbert_polya_operator": false,
+    "noise_uniform_hierarchical_weights": false,
+    "polylogarithmic_packet_budget": false,
+    "production_interval_schur_metric": false,
+    "stage_A1_closed": false,
+    "stage_A4_unconditional_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "7766c232db336fc70b73c1cc6520a9672bc1fe75c9e14a7bfd7255485820ebf4",
+    "figures/flag_adapted_schur_stein.pdf": "2d75e40eadb37558041bad56af112244bd20defb57b3ae12ea63215eef56a149",
+    "figures/flag_adapted_schur_stein.png": "636b62310207f0d09bbd085ac39d3bf15b0621bb20e52e72d3dc8704b051f33c",
+    "flag-adapted-schur-stein-metrics.pdf": "5769546abddd1c1fa5babf34c7ab1aef7a8991358a2912fdc9e4c2c87d3b1af7",
+    "main.pdf": "5769546abddd1c1fa5babf34c7ab1aef7a8991358a2912fdc9e4c2c87d3b1af7",
+    "main.tex": "02036a8ce358c8b243442b4546afb4ecfaf083a54ec9d637b0380e44979a02b6",
+    "pyproject.toml": "ea3de1ebd471762f49bbc37703381e70cb0ade74e829ea50c9cc429928d7e405",
+    "references.bib": "d4fe5ba35063d992f366f1d181e7ed35fcf2bb6dfce6cf467c966c0038f12385",
+    "requirements.txt": "2036d2c43433a02ca90a5c6fb64014ed2e362a41a3021029cc29897bc9cdca2f"
+  },
+  "result_hashes": {
+    "results/arb_flag_metric_audit.json": "b857ccbe92aee1a7235e9de9f61641b966885ebf90cc2469f63c9f215e685ef4",
+    "results/dependency_manifest.json": "3e9355e9ee7a5c46834fc0665ae6732e9a89061989354d78248a8db034ecc99e",
+    "results/flag_metric_pilot.json": "daabfac37fafcf04c4f41d4e0efa6018f502aae840fbc534ad740f61a47ea4f9",
+    "results/flag_metric_pilot_smoke.json": "bfb8351090297d026e8e0a2401eb36ceca683ef894cf66562df8ae33ce1272c8"
+  },
+  "status": "rh59_flag_metric_exact_dissipation_and_outer_packet_audit",
+  "theorem": {
+    "canonical_local_lyapunov_metrics": true,
+    "exact_dissipation_dominates_contraction": true,
+    "flag_block_diagonal_metric_existence": true,
+    "packetwise_exact_dissipation_supersolution": true,
+    "two_block_endpoint_tradeoff": true
+  }
+}
