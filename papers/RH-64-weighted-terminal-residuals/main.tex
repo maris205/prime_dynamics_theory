@@ -1,0 +1,251 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\HS}{\mathfrak S_2}
+
+\title{Observability-Weighted Terminal Residuals for Nested Krylov Stein Tails\\
+\large Turning Nonnormal Growth into a Metric Contraction}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-63 repaired the one-step residual failure by recursively expanding
+Arnoldi defects, but its terminal remainder was still propagated with the
+Euclidean operator norm.  This paper replaces that final factor by a
+positive Lyapunov metric.  For a stable matrix $A$, let $M$ solve
+\[
+ M-A^*MA=I.
+\]
+The induced norm has a strict contraction
+$\|M^{1/2}AM^{-1/2}\|<1$.  We prove that the coherent nested residual
+certificate remains valid when its terminal remainder is propagated in this
+metric, and that it can be multiplied directly into a Stein tail.
+
+On the RH-61 slow/fast surrogate, the weighted certificate is essentially
+unchanged.  On the RH-60 two-block model, the one-level gain drops from
+$66.41$ to $23.84$.  On the nonnormal four-step chain, whose Euclidean
+operator norm is $1.110729$, the Lyapunov contraction is $0.987369$ and the
+one-level gain drops from $84.05$ to $2.485$.  Full finite-dimensional
+breakdown remains exact.  The new obstruction is metric conditioning: the
+four-step condition number is about $37.7$.  No uniform physical-family
+conditioning theorem, Stage A1 closure, self-adjoint operator, arithmetic
+trace formula, or Hilbert--Polya conclusion is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Lyapunov metric; weighted residual; nested
+Krylov; Stein tail; nonnormal operator.
+
+\medskip
+\noindent\textbf{MSC 2020:} 47A10; 47B65; 65F35; 93B07; 93D05.
+
+\section{Introduction}
+
+The directional tail route now has three finite-dimensional layers.  RH-61
+identified the gap between actual and norm tails.  RH-62 projected the
+source onto an Arnoldi space, and RH-63 recursively projected the residual
+chain.  Both still used an ordinary norm for the terminal residual.
+
+That last choice is structurally poor for nonnormal matrices.  A stable
+matrix can have $\|A\|>1$ even though its orbit decays.  A Lyapunov metric
+records the decay in a positive norm and is standard in discrete-time
+stability theory \citep{ZhouDoyleGlover1996}.  The question is whether it can
+be inserted without destroying the coherent nested identity.
+
+\subsection*{Contributions and boundary}
+
+\begin{enumerate}[leftmargin=2.2em]
+ \item We construct the positive metric $M$ from the discrete Lyapunov
+       equation and prove strict weighted contraction.
+ \item We derive the weighted nested terminal-residual certificate.
+ \item We audit three finite models and quantify the conditioning cost.
+\end{enumerate}
+
+All values are deterministic binary64 finite-matrix calculations, with a
+256-bit Arb check only for the displayed two-block metric.
+
+\section{Weighted residual theorem}
+\label{sec:theorem}
+
+Let $A$ be stable and let $M$ be the positive solution of
+\begin{equation}
+ M-A^*MA=I.
+\label{eq:lyapunov}
+\end{equation}
+Define $\norm{x}_M=\norm{M^{1/2}x}_2$ and
+\begin{equation}
+ q_M=\norm{M^{1/2}AM^{-1/2}}_2.
+\label{eq:qmetric}
+\end{equation}
+
+\begin{proposition}[Strict Lyapunov contraction]
+\label{prop:contraction}
+The metric in \eqref{eq:lyapunov} is positive definite and
+$q_M<1$.
+\end{proposition}
+
+\begin{proof}
+Stability gives the convergent series
+$M=\sum_{j\ge0}(A^*)^jA^j$, hence positivity.  From
+\eqref{eq:lyapunov},
+\[
+ M^{-\frac12}A^*MA M^{-\frac12}
+ =I-M^{-1}.
+\]
+The largest eigenvalue of the right side is strictly below one.
+\end{proof}
+
+\begin{theorem}[Weighted nested terminal certificate]
+\label{thm:weighted}
+Suppose a coherent nested Arnoldi expansion has the form
+\[
+ A^Lz=\mathcal A_L+\sum_i c_i A^{u_i}g_i.
+\]
+Then
+\begin{equation}
+ \norm{A^Lz}_M
+ \le \norm{\mathcal A_L}_M+
+ \sum_i |c_i|q_M^{u_i}\norm{g_i}_M.
+\label{eq:weighted-upper}
+\end{equation}
+For a Stein tail $t_L=\sqrt{\kappa}\norm{A^Lz}_M$, multiplication by
+$\sqrt{\kappa}$ preserves the upper.
+\end{theorem}
+
+\begin{proof}
+The Lyapunov similarity gives
+$\norm{A^ug}_M\le q_M^u\norm g_M$.  Insert this estimate into the coherent
+decomposition and apply the triangle inequality only after all projected
+terms have been combined.
+\end{proof}
+
+\begin{corollary}[Conditioning-aware budget]
+\label{cor:conditioning}
+If $\lambda_{\max}(M)\le K$ and
+$\lambda_{\min}(M)\ge k>0$, then
+\[
+ \norm{x}_M\le\sqrt K\norm x,
+ \qquad
+ \norm{x}\le k^{-1/2}\norm{x}_M.
+\]
+Thus a weighted residual certificate transfers to Euclidean or
+Hilbert--Schmidt quantities with a factor controlled by
+$\sqrt{K/k}$.
+\end{corollary}
+
+\begin{proof}
+These are the extremal eigenvalue inequalities for a positive matrix.
+\end{proof}
+
+\begin{remark}
+The theorem does not assert that the Lyapunov metric is canonical across a
+noise-dependent physical family.  Its finite-dimensional existence is easy;
+uniform condition numbers and compatibility with Schur packets are the
+actual analytic questions.
+\end{remark}
+
+\section{Finite-model audit}
+\label{sec:audit}
+
+The pilot repeats the RH-63 models and compares the Euclidean one-level
+certificate with the Lyapunov-weighted one at $L=32$.
+
+\begin{table}[H]
+\centering
+\caption{Weighted terminal residual results.}
+\label{tab:results}
+\begin{tabular}{lrrrrr}
+\toprule
+model & $\norm A$ & $q_M$ & cond$(M)$ & Euclidean gain & weighted gain\\
+\midrule
+slow/fast surrogate & 0.993861 & 0.993861 & 78.43 & 1.0000 & 1.0000\\
+two-block model     & 0.765889 & 0.739799 & 2.13  & 66.4095& 23.8441\\
+four-step chain     & 1.110729 & 0.987369 & 37.66 & 84.0539& 2.4848\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The weighted contraction removes the qualitative obstruction $\norm A>1$ in
+the chain.  It does not by itself close the tail: the gain remains above
+one, and the metric condition number is nontrivial.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/weighted_terminal_residuals.pdf}
+\caption{Lyapunov weighting.  The left panel compares Euclidean and weighted
+propagation contractions.  The right panel compares one-level residual
+gains with the unweighted RH-63 certificate.}
+\label{fig:audit}
+\end{figure}
+
+A 256-bit Arb computation certifies the two-block Lyapunov entries, the
+identity $M-A^*MA=I$, positivity, and strict weighted contraction.  It does
+not validate the production folded-Gaussian family.
+
+\section{Route consequence}
+\label{sec:consequence}
+
+The route now has a positive terminal mechanism:
+\begin{equation}
+\text{nested Krylov projection}
+\longrightarrow
+\text{Lyapunov-weighted residual}
+\longrightarrow
+\text{Stein tail}.
+\label{eq:route}
+\end{equation}
+The next gate is not existence of a metric but a family-level ledger:
+
+\begin{enumerate}[leftmargin=2.2em]
+ \item bound the metric condition number on the physical packet prefixes;
+ \item preserve block cross-column Gram structure;
+ \item compare the weighted metric with the inherited phase-aware
+       observation metric without double counting conditioning.
+\end{enumerate}
+
+If the condition number grows faster than the directional savings, this
+route becomes a finite-dimensional repair only.  If it remains
+polylogarithmic, RH-64 supplies the missing terminal estimate needed for a
+physical-family transfer.
+
+\section{No arithmetic or Hilbert--Polya conclusion}
+
+This paper constructs no self-adjoint operator, no $T\log T$ counting law,
+no prime-power trace formula, and no completed-zeta identity.  It makes no
+Hilbert--Polya or Riemann-hypothesis claim.
+
+\section{Reproducibility}
+
+The directory contains the weighted algebra, tests, model pilot, Arb audit,
+figures, hashes, and publication artifacts.  The main commands are:
+\begin{verbatim}
+pytest -q -p no:cacheprovider
+python experiments/run_weighted_residual_pilot.py
+python experiments/run_arb_weighted_audit.py
+MPLBACKEND=Agg python experiments/make_figures.py
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+\end{verbatim}
+
+The Lyapunov identities and weighted finite-dimensional certificate are
+analytic.  The model rows are binary64 evidence.  Stage A1, Stage A4,
+uniform metric conditioning, a self-adjoint Hilbert--Polya operator, a
+prime-power trace formula, and a zeta-zero identity remain open.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

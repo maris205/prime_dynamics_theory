@@ -1,0 +1,36 @@
+{
+  "external_inputs": {
+    "rh63_manuscript": {
+      "path": "papers/RH-63-nested-krylov-residual-closure/main.tex",
+      "sha256": "e2b3dcf98f4bfce3ed700c5d87bdddfb72649f63e8daa82d14ceaf1ab1d18ebf"
+    },
+    "rh63_pilot": {
+      "path": "papers/RH-63-nested-krylov-residual-closure/results/nested_krylov_pilot.json",
+      "sha256": "5159a8bf8f8e69f35e42a17fdef2099ef650f0eb736ef989873dd713e0da3b35"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "bbda792b4a240d65c86107eaf9594ec84c979d42874319b4669b9ab319b4947f",
+    "experiments/make_figures.py": "37df03996b9ef8d0cd4e69c719d49cf8f55c9768a2a5ce2164e6aa50b311796c",
+    "experiments/run_arb_weighted_audit.py": "dbcb5598dd5e6c6d99db5dfdf0dd969b7abdca68a010fc0f056c581724af1ec1",
+    "experiments/run_weighted_residual_pilot.py": "f92a40db6c8b6e8646402a6f525bbb1dd272adb9010949a469502026d06efb81",
+    "experiments/verify_archive.py": "92d3a03756dbac818601524c09300ddabf493e0c2d2979546f39865035036e6b",
+    "src/weighted_residual/__init__.py": "18f7bc960b59b247adb429a69fd3bcb17ee4d1eb999d2c74283000c39c2f8722",
+    "src/weighted_residual/algebra.py": "f4e5f3ef298db7a769c9383d3e9b575326c58f74e969ca5b047224ba777b6124",
+    "tests/test_smoke.py": "f545a6d2c1b3a72d619bb71bb6173d55134a9191b691882c08d59fd12dc396d9",
+    "tests/test_theory.py": "b97311461a6333cca53226c0429e07355b32a16cfa8a14797b93dd3e6aabf4b0"
+  },
+  "publication_artifacts": {
+    ".gitignore": "7447fc33ca6f0d307891edb10a7f7b04dddc3c9ba6cd1e3562caafa1a5fce42f",
+    "README.md": "5155b4f2c19b99d8281462a804bafe3c9001dc24e2feeef81ab63756ad56a9aa",
+    "figures/weighted_terminal_residuals.pdf": "900a58bca9a9be391a4ade5d004e697ccf6e8bb9e143215ab8929745f53e10af",
+    "figures/weighted_terminal_residuals.png": "1ff65fe7142dd01f07ce83d3361aa4a5a1a2de84285e0789285490c833dbe3f1",
+    "main.pdf": "ca60f37f41597acc729d02dc3864041335a768775e0d9d440d6d633ea8de913c",
+    "main.tex": "e83306eeb0a11e7031b254a37b85bd783b745a0b9b65351a40a9882e12f4ac05",
+    "pyproject.toml": "6066e932e4cba0ec09fee752e9b1e5725f562ed8ca6f70aef55e03f93761eaa1",
+    "references.bib": "ded38c2d82e6de8a5178938f61d7a6594d029593c4cea7f53fdcee54281bfdc2",
+    "requirements.txt": "25be8263391d4091728342c19f59a0c799ec2444980149521892d447c2ce223b",
+    "weighted-terminal-residuals.pdf": "ca60f37f41597acc729d02dc3864041335a768775e0d9d440d6d633ea8de913c"
+  },
+  "status": "all_rh64_inputs_sources_and_publication_artifacts_hashed"
+}

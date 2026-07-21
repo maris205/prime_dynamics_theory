@@ -1,0 +1,934 @@
+{
+  "evidence_level": "deterministic finite-dimensional Lyapunov-weighted audit; no production physical-family theorem",
+  "horizons": [
+    1,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "limitations": [
+    "The Lyapunov metric is recomputed separately for each finite model.",
+    "Metric condition numbers can grow and are not uniformly controlled.",
+    "The pilot is vector-valued; block cross-column fusion remains open."
+  ],
+  "models": [
+    {
+      "dimension": 2,
+      "euclidean_operator_norm": 0.993861320134583,
+      "fully_nested_endpoint_gain": 1.0013804860262119,
+      "horizons": {
+        "1": {
+          "1": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.2041735586293479,
+            "metric_upper": 0.20771416017230399,
+            "metric_upper_over_exact": 1.017341136466077,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.0035878111203889182
+          },
+          "1x1": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.2041735586293479,
+            "metric_upper": 0.20417355862934797,
+            "metric_upper_over_exact": 1.0000000000000002,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.0
+          },
+          "2": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.2041735586293479,
+            "metric_upper": 0.20417355862934797,
+            "metric_upper_over_exact": 1.0000000000000002,
+            "schedule": [
+              2
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        },
+        "16": {
+          "1": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.004095412552026256,
+            "metric_upper": 0.0040954125652124355,
+            "metric_upper_over_exact": 1.0000000032197438,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.004095412558523524
+          },
+          "1x1": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.004095412552026256,
+            "metric_upper": 0.004098124292885421,
+            "metric_upper_over_exact": 1.000662141072411,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 2.7237955432912367e-06
+          },
+          "2": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.004095412552026256,
+            "metric_upper": 0.004095412552026248,
+            "metric_upper_over_exact": 0.9999999999999981,
+            "schedule": [
+              2
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        },
+        "32": {
+          "1": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.0037111651099178,
+            "metric_upper": 0.003711165115832303,
+            "metric_upper_over_exact": 1.0000000015937052,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.003711165115832303
+          },
+          "1x1": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.0037111651099178,
+            "metric_upper": 0.003716288321493006,
+            "metric_upper_over_exact": 1.0013804860262119,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 5.145992576757237e-06
+          },
+          "2": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.0037111651099178,
+            "metric_upper": 0.0037111651099177847,
+            "metric_upper_over_exact": 0.9999999999999959,
+            "schedule": [
+              2
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        },
+        "4": {
+          "1": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.004702154137733421,
+            "metric_upper": 0.006035272798684424,
+            "metric_upper_over_exact": 1.2835123268829307,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.004402257144825105
+          },
+          "1x1": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.004702154137733421,
+            "metric_upper": 0.00470261467663205,
+            "metric_upper_over_exact": 1.0000979421101774,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 5.46867412927855e-07
+          },
+          "2": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.004702154137733421,
+            "metric_upper": 0.0047021541377334,
+            "metric_upper_over_exact": 0.9999999999999956,
+            "schedule": [
+              2
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        },
+        "64": {
+          "1": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.0030474424695520383,
+            "metric_upper": 0.003047442474408756,
+            "metric_upper_over_exact": 1.0000000015937027,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.003047442474408756
+          },
+          "1x1": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.0030474424695520383,
+            "metric_upper": 0.0030560276301533863,
+            "metric_upper_over_exact": 1.0028171690481855,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 8.623340669506023e-06
+          },
+          "2": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.0030474424695520383,
+            "metric_upper": 0.0030474424695520128,
+            "metric_upper_over_exact": 0.9999999999999916,
+            "schedule": [
+              2
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        },
+        "8": {
+          "1": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.004302208236100303,
+            "metric_upper": 0.004304808715113719,
+            "metric_upper_over_exact": 1.000604452148921,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.004302195879696428
+          },
+          "1x1": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.004302208236100303,
+            "metric_upper": 0.004303511519297002,
+            "metric_upper_over_exact": 1.000302933546025,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 1.3092211868053838e-06
+          },
+          "2": {
+            "euclidean_operator_norm": 0.993861320134583,
+            "metric_contraction": 0.9938613201345828,
+            "metric_exact_norm": 0.004302208236100303,
+            "metric_upper": 0.004302208236100299,
+            "metric_upper_over_exact": 0.9999999999999992,
+            "schedule": [
+              2
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        }
+      },
+      "metric_condition_number": 78.43344654757544,
+      "metric_contraction": 0.9938613201345828,
+      "name": "rh61_left_calibrated_slow_fast",
+      "one_level_endpoint_gain": 1.0000000015937052
+    },
+    {
+      "dimension": 2,
+      "euclidean_operator_norm": 0.765889243767522,
+      "fully_nested_endpoint_gain": 1.0000000000000002,
+      "horizons": {
+        "1": {
+          "1": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 0.43899109136128683,
+            "metric_upper": 0.5382021111483666,
+            "metric_upper_over_exact": 1.225997797539426,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.12247448713915898
+          },
+          "1x1": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 0.43899109136128683,
+            "metric_upper": 0.43899109136128683,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          },
+          "2": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 0.43899109136128683,
+            "metric_upper": 0.43899109136128683,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              2
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        },
+        "16": {
+          "1": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 0.002170765934071031,
+            "metric_upper": 0.016520699757234088,
+            "metric_upper_over_exact": 7.610539440450563,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.014547007290867919
+          },
+          "1x1": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 0.002170765934071031,
+            "metric_upper": 0.002170765934071031,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          },
+          "2": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 0.002170765934071031,
+            "metric_upper": 0.002170765934071031,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              2
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        },
+        "32": {
+          "1": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 7.214091359216959e-06,
+            "metric_upper": 0.00017201334830423262,
+            "metric_upper_over_exact": 23.84407678514672,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.0001654541898341835
+          },
+          "1x1": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 7.214091359216959e-06,
+            "metric_upper": 7.21409135921696e-06,
+            "metric_upper_over_exact": 1.0000000000000002,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          },
+          "2": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 7.214091359216959e-06,
+            "metric_upper": 7.214091359216959e-06,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              2
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        },
+        "4": {
+          "1": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 0.15666900872404105,
+            "metric_upper": 0.32551115604785985,
+            "metric_upper_over_exact": 2.077699723122776,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.18291658101270164
+          },
+          "1x1": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 0.15666900872404105,
+            "metric_upper": 0.15666900872404105,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          },
+          "2": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 0.15666900872404105,
+            "metric_upper": 0.15666900872404105,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              2
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        },
+        "64": {
+          "1": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 7.967442141643133e-11,
+            "metric_upper": 1.2622855740841548e-08,
+            "metric_upper_over_exact": 158.43046634585696,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 1.2550414579500811e-08
+          },
+          "1x1": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 7.967442141643133e-11,
+            "metric_upper": 7.967442141643133e-11,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          },
+          "2": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 7.967442141643133e-11,
+            "metric_upper": 7.967442141643133e-11,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              2
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        },
+        "8": {
+          "1": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 0.03765525995997959,
+            "metric_upper": 0.13294611940663553,
+            "metric_upper_over_exact": 3.530612178695143,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.09870916194069407
+          },
+          "1x1": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 0.03765525995997959,
+            "metric_upper": 0.03765525995997959,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          },
+          "2": {
+            "euclidean_operator_norm": 0.765889243767522,
+            "metric_contraction": 0.7397991391438595,
+            "metric_exact_norm": 0.03765525995997959,
+            "metric_upper": 0.0376552599599796,
+            "metric_upper_over_exact": 1.0000000000000002,
+            "schedule": [
+              2
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        }
+      },
+      "metric_condition_number": 2.1298738767459047,
+      "metric_contraction": 0.7397991391438595,
+      "name": "rh60_two_block",
+      "one_level_endpoint_gain": 23.84407678514672
+    },
+    {
+      "dimension": 4,
+      "euclidean_operator_norm": 1.1107294893081798,
+      "fully_nested_endpoint_gain": 1.0000000000000004,
+      "horizons": {
+        "1": {
+          "1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 1.5387641289297351,
+            "metric_upper": 1.627216201309156,
+            "metric_upper_over_exact": 1.0574825411617454,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 1.0766696056396525
+          },
+          "1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 1.5387641289297351,
+            "metric_upper": 1.5387641289297351,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.0
+          },
+          "1x1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 1.5387641289297351,
+            "metric_upper": 1.5387641289297351,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              1,
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.0
+          },
+          "1x1x1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 1.5387641289297351,
+            "metric_upper": 1.5387641289297351,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          },
+          "4": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 1.5387641289297351,
+            "metric_upper": 1.5387641289297351,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              4
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        },
+        "16": {
+          "1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 0.9461082761943849,
+            "metric_upper": 1.2781045023319417,
+            "metric_upper_over_exact": 1.350907221182944,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 1.2781044944321998
+          },
+          "1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 0.9461082761943849,
+            "metric_upper": 1.2700344761174023,
+            "metric_upper_over_exact": 1.3423775143643966,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 1.2699523498850849
+          },
+          "1x1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 0.9461082761943849,
+            "metric_upper": 1.3417588927005601,
+            "metric_upper_over_exact": 1.4181874595766522,
+            "schedule": [
+              1,
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 1.320223896730202
+          },
+          "1x1x1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 0.9461082761943849,
+            "metric_upper": 0.9461082761943849,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          },
+          "4": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 0.9461082761943849,
+            "metric_upper": 0.9461082761943851,
+            "metric_upper_over_exact": 1.0000000000000002,
+            "schedule": [
+              4
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        },
+        "32": {
+          "1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 0.41971589393636566,
+            "metric_upper": 1.0428946017234124,
+            "metric_upper_over_exact": 2.484763185740897,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 1.0428946017234124
+          },
+          "1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 0.41971589393636566,
+            "metric_upper": 1.036309282883501,
+            "metric_upper_over_exact": 2.469073241816806,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 1.0363092816300927
+          },
+          "1x1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 0.41971589393636566,
+            "metric_upper": 1.095847228017498,
+            "metric_upper_over_exact": 2.610926209488847,
+            "schedule": [
+              1,
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 1.095775245779501
+          },
+          "1x1x1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 0.41971589393636566,
+            "metric_upper": 0.4197158939363659,
+            "metric_upper_over_exact": 1.0000000000000004,
+            "schedule": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          },
+          "4": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 0.41971589393636566,
+            "metric_upper": 0.41971589393636566,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              4
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        },
+        "4": {
+          "1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 1.4285450045080441,
+            "metric_upper": 1.4908896799148093,
+            "metric_upper_over_exact": 1.0436420800254977,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 1.4760249218317327
+          },
+          "1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 1.4285450045080441,
+            "metric_upper": 1.4800585689983579,
+            "metric_upper_over_exact": 1.0360601621424268,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 1.175699701525939
+          },
+          "1x1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 1.4285450045080441,
+            "metric_upper": 1.477766710002744,
+            "metric_upper_over_exact": 1.0344558311704368,
+            "schedule": [
+              1,
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.39412369548410386
+          },
+          "1x1x1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 1.4285450045080441,
+            "metric_upper": 1.4285450045080441,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          },
+          "4": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 1.4285450045080441,
+            "metric_upper": 1.4285450045080441,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              4
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        },
+        "64": {
+          "1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 0.08130872124361965,
+            "metric_upper": 0.6943661318413389,
+            "metric_upper_over_exact": 8.539872737155195,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.6943661318413389
+          },
+          "1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 0.08130872124361965,
+            "metric_upper": 0.6899815829446911,
+            "metric_upper_over_exact": 8.485948031052505,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.6899815829446911
+          },
+          "1x1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 0.08130872124361965,
+            "metric_upper": 0.7296250947673129,
+            "metric_upper_over_exact": 8.973515800121712,
+            "schedule": [
+              1,
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 0.7296250939722999
+          },
+          "1x1x1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 0.08130872124361965,
+            "metric_upper": 0.08130872124361961,
+            "metric_upper_over_exact": 0.9999999999999994,
+            "schedule": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          },
+          "4": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 0.08130872124361965,
+            "metric_upper": 0.08130872124361965,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              4
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        },
+        "8": {
+          "1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 1.3226108422072251,
+            "metric_upper": 1.4149293320951355,
+            "metric_upper_over_exact": 1.0698001913653192,
+            "schedule": [
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 1.4148089275546625
+          },
+          "1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 1.3226108422072251,
+            "metric_upper": 1.4060978327828184,
+            "metric_upper_over_exact": 1.0631228687315666,
+            "schedule": [
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 1.3853302225548367
+          },
+          "1x1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 1.3226108422072251,
+            "metric_upper": 1.464916687573809,
+            "metric_upper_over_exact": 1.1075946460026733,
+            "schedule": [
+              1,
+              1,
+              1
+            ],
+            "terminal_breakdown": false,
+            "terminal_remainder_bound": 1.1209939369678275
+          },
+          "1x1x1x1": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 1.3226108422072251,
+            "metric_upper": 1.3226108422072251,
+            "metric_upper_over_exact": 1.0,
+            "schedule": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          },
+          "4": {
+            "euclidean_operator_norm": 1.1107294893081798,
+            "metric_contraction": 0.9873693198920781,
+            "metric_exact_norm": 1.3226108422072251,
+            "metric_upper": 1.3226108422072254,
+            "metric_upper_over_exact": 1.0000000000000002,
+            "schedule": [
+              4
+            ],
+            "terminal_breakdown": true,
+            "terminal_remainder_bound": 0.0
+          }
+        }
+      },
+      "metric_condition_number": 37.66162355330492,
+      "metric_contraction": 0.9873693198920781,
+      "name": "nonnormal_four_step_chain",
+      "one_level_endpoint_gain": 2.484763185740897
+    }
+  ],
+  "status": "rh64_weighted_terminal_residual_pilot",
+  "theorem_boundary": {
+    "physical_family_uniformity": false,
+    "positive_lyapunov_metric": true,
+    "stage_A1_closed": false,
+    "weighted_terminal_certificate": true
+  }
+}
