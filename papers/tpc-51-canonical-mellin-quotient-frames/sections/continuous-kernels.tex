@@ -1,0 +1,235 @@
+\section{Finite-sampling kernels for continuous Mellin synthesis}
+\label{sec:tpc51-continuous-kernels}
+
+We first separate a universal continuous-frame question from the
+provenance-fixed Mellin direction used later.  The former has a sharp
+negative answer for a reason that is independent of arithmetic: at each
+finite value of \(X\), the physical output space is finite dimensional,
+whereas a freely weighted continuous dictionary has infinitely many
+coefficient directions.
+
+\subsection{A smooth kernel in every finite-dimensional output}
+
+Let \(\Theta\subset\R^d\) be open, let \(\cH\) be a complex Hilbert
+space of finite dimension \(N\), and let
+
+\[
+ Z:\Theta\longrightarrow\cH
+\]
+
+be continuous.  For \(g\in C_c^\infty(\Theta)\), define
+\begin{align}
+ \cS_Zg&:=\int_\Theta g(\tau)Z(\tau)\,d\tau,
+ \label{eq:tpc51-continuous-synthesis}\\
+ \cE_Z(g)&:=\int_\Theta |g(\tau)|\,\|Z(\tau)\|_\cH\,d\tau.
+ \label{eq:tpc51-continuous-envelope}
+\end{align}
+The first integral is a Bochner integral.  Both quantities are finite
+because \(g\) has compact support.
+
+\begin{theorem}[Universal smooth-kernel obstruction]
+\label{thm:tpc51-smooth-kernel}
+Suppose \(Z\) is not identically zero.  Then there exists a nonzero
+\(g\in C_c^\infty(\Theta)\) such that
+\begin{equation}
+ \cS_Zg=0,
+ \qquad
+ \cE_Z(g)>0.
+ \label{eq:tpc51-smooth-kernel}
+\end{equation}
+Consequently, there is no finite constant \(C\) for which
+\begin{equation}
+ \cE_Z(g)\le C\|\cS_Zg\|_\cH
+ \label{eq:tpc51-false-universal-frame}
+\end{equation}
+holds for every \(g\in C_c^\infty(\Theta)\).
+\end{theorem}
+
+\begin{proof}
+Choose \(\tau_0\in\Theta\) with \(Z(\tau_0)\ne0\).  By continuity,
+there is an open ball \(U\Subset\Theta\) and a number \(m>0\) such that
+\(\|Z(\tau)\|_\cH\ge m\) on \(U\).  Choose \(N+1\) pairwise disjoint
+balls \(U_k\Subset U\) and nonzero functions
+\(\rho_k\in C_c^\infty(U_k)\).  Put
+\[
+ w_k:=\int_\Theta \rho_k(\tau)Z(\tau)\,d\tau\in\cH.
+\]
+The \(N+1\) vectors \(w_k\) are linearly dependent, so there are
+coefficients \(c_k\), not all zero, such that
+\(\sum_kc_kw_k=0\).  The function
+\(g=\sum_kc_k\rho_k\) is nonzero because the supports of the
+\(\rho_k\) are disjoint, and \(\cS_Zg=0\).  Moreover,
+\[
+ \cE_Z(g)
+ \ge m\sum_k |c_k|\int_{U_k}|\rho_k(\tau)|\,d\tau>0.
+\]
+This proves \eqref{eq:tpc51-smooth-kernel};
+\eqref{eq:tpc51-false-universal-frame} is then impossible.
+\end{proof}
+
+The theorem remains true when \(N=N(X)\) grows: it is applied
+separately at each finite \(X\).  It does not use an artificial
+refactorization of a fixed physical tensor.  It states that the
+coefficient space in \eqref{eq:tpc51-continuous-synthesis} cannot be
+the whole of \(C_c^\infty(\Theta)\) if a lower frame is desired.
+
+\subsection{An explicit kernel for logarithmic phase samples}
+
+The preceding dimension argument can be made completely explicit for
+the scalar Mellin phase dictionary.  For \(h\in C_c^\infty(\R)\), use
+the positive-sign Fourier convention
+\begin{equation}
+ \cF_+h(y):=\int_\R h(t)\e^{ity}\,dt.
+ \label{eq:tpc51-positive-Fourier}
+\end{equation}
+Integration by parts gives the sign-sensitive identity
+\begin{equation}
+ \cF_+\bigl((\partial_t+iy_0)h\bigr)(y)
+ =i(y_0-y)\cF_+h(y).
+ \label{eq:tpc51-ibp-sign}
+\end{equation}
+
+\begin{proposition}[Explicit phase-sampling kernel]
+\label{prop:tpc51-explicit-phase-kernel}
+Let \(y_1,\ldots,y_N\in\R\), let
+\(a_1,\ldots,a_N\in\C\setminus\{0\}\),
+and put
+\begin{equation}
+ Z_{\bm y}(t)
+ :=\bigl(a_ne^{ity_n}\bigr)_{n=1}^N\in\C^N.
+ \label{eq:tpc51-phase-dictionary}
+\end{equation}
+For every nonzero \(\rho\in C_c^\infty(\R)\), the function
+\begin{equation}
+ g_{\bm y,\rho}(t)
+ :=\prod_{n=1}^N(\partial_t+iy_n)\rho(t)
+ \label{eq:tpc51-explicit-phase-kernel-function}
+\end{equation}
+is nonzero and satisfies
+\begin{equation}
+ \int_\R g_{\bm y,\rho}(t)Z_{\bm y}(t)\,dt=0.
+ \label{eq:tpc51-explicit-phase-kernel-output}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Iterating \eqref{eq:tpc51-ibp-sign} gives
+\begin{equation}
+ \cF_+g_{\bm y,\rho}(y)
+ =i^N\prod_{n=1}^N(y_n-y)\cF_+\rho(y).
+ \label{eq:tpc51-explicit-kernel-multiplier}
+\end{equation}
+The \(k\)-th coordinate of
+\eqref{eq:tpc51-explicit-phase-kernel-output} is
+\(a_k\cF_+g_{\bm y,\rho}(y_k)=0\).
+
+It remains to check that \(g_{\bm y,\rho}\ne0\).  If it vanished,
+\eqref{eq:tpc51-explicit-kernel-multiplier} would imply that
+\(\cF_+\rho(y)=0\) for every real
+\(y\notin\{y_1,\ldots,y_N\}\).
+The Fourier transform of a compactly supported smooth function extends
+to an entire function.  It would therefore vanish identically, forcing
+\(\rho=0\), a contradiction.
+\end{proof}
+
+There is an equivalent physical-shape formulation.  If the logarithmic
+sample points are \(y_n\), choose a nonzero
+\(F_X\in C_c^\infty(\R)\) of the form
+\begin{equation}
+ F_X(s)=\chi(s)\prod_{n=1}^N(s-y_n).
+ \label{eq:tpc51-sample-zero-shape}
+\end{equation}
+Its Fourier transform is Schwartz, while Fourier inversion gives
+\(F_X(y_n)=0\) at every sample.  This example depends on the full sample
+set, and its derivative seminorms need not be uniform in \(X\).  It
+therefore rules out a theorem uniform over arbitrary smooth shapes; it
+does not contradict a theorem for the fixed provenance shapes.
+
+\subsection{Near kernels and phase aliases}
+
+For a finite complex Borel measure \(\nu\) on \(\Theta\), extend the
+notation by
+\begin{equation}
+ \cS_Z\nu:=\int_\Theta Z(\tau)\,d\nu(\tau),
+ \qquad
+ \cE_Z(\nu):=\int_\Theta\|Z(\tau)\|_\cH\,d|\nu|(\tau).
+ \label{eq:tpc51-measure-synthesis}
+\end{equation}
+
+\begin{proposition}[Neighboring-atom condition number]
+\label{prop:tpc51-neighboring-atoms}
+\label{prop:tpc51-neighbouring-atoms}
+Let \(I\subset\R\) be an interval on which \(Z:I\to\cH\) is
+continuously differentiable, and suppose
+\begin{equation}
+ \inf_{t\in I}\|Z(t)\|_\cH\ge m>0,
+ \qquad
+ \sup_{t\in I}\|Z'(t)\|_\cH\le L
+ \quad\text{for some }L>0.
+ \label{eq:tpc51-atom-regularity}
+\end{equation}
+If \(t,t+h\in I\) and \(h\ne0\), then for
+\(\nu_{t,h}=\delta_t-\delta_{t+h}\),
+\begin{equation}
+ \frac{\cE_Z(\nu_{t,h})}
+      {\|\cS_Z\nu_{t,h}\|_\cH}
+ \ge\frac{2m}{L|h|},
+ \label{eq:tpc51-neighbor-condition}
+\end{equation}
+with the ratio interpreted as \(+\infty\) when the denominator is zero.
+\end{proposition}
+
+\begin{proof}
+The two atoms are distinct, so
+\(\cE_Z(\nu_{t,h})=\|Z(t)\|+\|Z(t+h)\|\ge2m\).
+The fundamental theorem of calculus gives
+\[
+ \|\cS_Z\nu_{t,h}\|
+ =\|Z(t)-Z(t+h)\|
+ \le L|h|.
+\]
+\end{proof}
+
+Thus continuity of a dictionary is an obstruction, rather than a
+source of a uniform signed lower frame, when its coefficient measure is
+free.  Narrow smooth bumps centered at \(t\) and \(t+h\) give the same
+conclusion up to an arbitrarily small relative error.
+
+For completeness, finite phase sampling also has long-range aliases.
+
+\begin{proposition}[Simultaneous phase alias]
+\label{prop:tpc51-simultaneous-alias}
+For the dictionary \eqref{eq:tpc51-phase-dictionary} and every integer
+\(Q\ge2\), there is an integer \(q\) with
+\(1\le q\le Q^N\) such that, for every \(t\in\R\),
+\begin{equation}
+ \|Z_{\bm y}(t+q)-Z_{\bm y}(t)\|_2
+ \le\frac{2\pi}{Q}\|\bm a\|_2.
+ \label{eq:tpc51-phase-alias-bound}
+\end{equation}
+Consequently the signed pair
+\(\delta_t-\delta_{t+q}\) has condition number at least \(Q/\pi\).
+\end{proposition}
+
+\begin{proof}
+Apply simultaneous Dirichlet approximation to
+\(y_n/(2\pi)\): there is \(1\le q\le Q^N\) such that
+\(\|qy_n/(2\pi)\|_{\R/\Z}\le Q^{-1}\) for every \(n\).
+Hence
+
+\[
+ |\e^{iqy_n}-1|\le2\pi/Q.
+\]
+
+After factoring out the unit phases \(\e^{ity_n}\), summing the
+squared coordinate bounds proves
+\eqref{eq:tpc51-phase-alias-bound}.  The envelope of the signed pair is
+\(2\|\bm a\|_2\).
+\end{proof}
+
+The alias \(q\) may be extremely large, where a fixed Schwartz Mellin
+density is tiny.  Accordingly,
+\cref{prop:tpc51-neighboring-atoms,prop:tpc51-simultaneous-alias}
+disprove coefficient-uniform frame statements, but neither proposition
+estimates the one canonical coefficient measure.  That fixed direction
+is treated next.

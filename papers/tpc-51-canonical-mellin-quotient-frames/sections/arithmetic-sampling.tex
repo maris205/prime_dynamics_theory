@@ -1,0 +1,239 @@
+\section{Prime--squarefree logarithmic sampling}
+\label{sec:tpc51-arithmetic-sampling}
+
+We now verify the finite-Gram hypothesis on the row universe actually
+used before terminal prime summation.  Only standard fixed-modulus
+prime number theory and M\"obius inversion are needed.
+
+Put \(T=\log 2\).  Fix positive integers \(q,H\), a nonempty set
+\(\cA\subset(\Z/q\Z)^2\), and \(e\in\{0,1\}\).  We assume that every
+prime residue occurring in \(\cA\) is reduced modulo \(q\), and retain
+only those squarefree residue classes having positive local density
+subject to \((d,H)=1\).  At least one retained pair is required.  Define
+\begin{align}
+ \cR_X(\cA)
+ &:=\bigl\{(\ell,d):L<\ell\leq2L,\ \ell\ {\rm prime},
+       \ D<d\leq2D,\ \mu^2(d)=1,\ (d,H)=1,\notag\\[-2pt]
+ &\hspace{47mm}(\ell,d)\bmod q\in\cA\bigr\},
+ \label{eq:tpc51-row-universe}\\
+ w_{\ell,d}&:=(\log\ell)^{2e},
+ \qquad
+ E_X:=\sum_{(\ell,d)\in\cR_X(\cA)}w_{\ell,d}.
+ \label{eq:tpc51-row-base-energy}
+\end{align}
+We suppose \(X^c\leq L,D\leq X^C\) for fixed \(c,C>0\).  The normalized
+logarithmic empirical measure is
+\begin{equation}
+ \nu_X:=\frac1{E_X}
+ \sum_{(\ell,d)\in\cR_X(\cA)}
+ w_{\ell,d}\,
+ \delta_{(\log(\ell/L),\log(d/D))}.
+ \label{eq:tpc51-empirical-measure}
+\end{equation}
+
+For the quantitative comparison it is convenient not to discard the
+harmless finite-\(L\) logarithmic density.  For all sufficiently large
+\(L\), let
+\begin{equation}
+ Z_{L,e}:=\int_0^T e^u(\log L+u)^{2e-1}\,du
+ \label{eq:tpc51-prime-reference-normalizer}
+\end{equation}
+and define the probability measure
+\begin{equation}
+ d\nu_{L,e}^{\rm ref}(x,y)
+ :=\frac{e^x(\log L+x)^{2e-1}}{Z_{L,e}}\,dx\,
+   e^y\,dy,
+ \qquad (x,y)\in[0,T]^2.
+ \label{eq:tpc51-finite-reference-measure}
+\end{equation}
+The second factor already has mass one because
+\(\int_0^T e^y\,dy=1\).  Notice that the exponent \(2e-1\) equals
+\(-1\) when the prime row is unweighted; this is the usual density
+\(dt/\log t\) of primes and is the reason for retaining the finite-\(L\)
+reference measure.
+
+\begin{theorem}[Arithmetic logarithmic sampling]
+\label{thm:tpc51-row-equidistribution}
+For every continuous \(F:[0,T]^2\to\C\),
+\begin{equation}
+ \int F\,d\nu_X
+ \longrightarrow
+ \int_{[0,T]^2}F(x,y)e^{x+y}\,dx\,dy.
+ \label{eq:tpc51-weak-row-limit}
+\end{equation}
+More quantitatively, for every fixed \(A>0\) and every
+\(0<\delta<1/2\), uniformly when
+\(|\xi|+|\eta|\leq(\log X)^A\),
+\begin{align}
+ &\left|
+ \int e^{i(\xi x+\eta y)}\,d\nu_X
+ -\int e^{i(\xi x+\eta y)}\,d\nu_{L,e}^{\rm ref}
+ \right|
+ \notag\\
+ &\hspace{18mm}\leq
+ C_{A,\delta,q,H,\cA}
+ (1+|\xi|+|\eta|)^{C_1}
+ \left(e^{-c_1\sqrt{\log L}}+D^{-1/2+\delta}\right),
+ \label{eq:tpc51-fourier-moment-error}
+\end{align}
+where \(c_1>0\) and \(C_1<\infty\) are independent of
+\(X,\xi,\eta\).
+\end{theorem}
+
+\begin{proof}
+Split \(\cA\) into its finitely many residue pairs.  For a reduced
+prime class \(a\bmod q\), the fixed-modulus prime number theorem and
+partial summation give, uniformly for
+\(|\xi|\leq(\log X)^A\),
+\begin{align}
+ &\sum_{\substack{L<\ell\leq2L\\
+                   \ell\ {\rm prime}\\
+                   \ell\equiv a\pmod q}}
+ (\log\ell)^{2e}e^{i\xi\log(\ell/L)}
+ \notag\\
+ &\quad=
+ \frac{L}{\varphi(q)}
+ \int_0^T e^x(\log L+x)^{2e-1}e^{i\xi x}\,dx
+ +O_{A,q}\!\left(
+ L(\log L)^{2e-1}(1+|\xi|)^{C_1}
+ e^{-c_1\sqrt{\log L}}\right).
+ \label{eq:tpc51-prime-fourier-asymptotic}
+\end{align}
+The same formula at \(\xi=0\) supplies its normalizing mass.  The use
+of the finite-\(L\) reference density in
+\eqref{eq:tpc51-finite-reference-measure} removes any artificial
+\(1/\log L\) error from this comparison.  Any fixed extra power of
+\(\log L\) arising in partial summation is absorbed by decreasing
+\(c_1\), without changing the stated form of the error.
+
+For a locally admissible squarefree class \(b\bmod q\), use
+\(\mu^2(d)=\sum_{r^2\mid d}\mu(r)\) and inclusion--exclusion for
+\((d,H)=1\).  For each \(r\leq\sqrt{2D}\) and each fixed divisor
+\(s\mid H\), the remaining integer is counted in either no class or one
+class modulo \(\operatorname{lcm}(q,s,r^2)\).  Summing the resulting
+\(O(1)\) endpoint errors over \(r\), extending the absolutely
+convergent main-term sum to infinity, and applying partial summation to
+\(e^{i\eta\log(d/D)}\) give
+\begin{align}
+ &\sum_{\substack{D<d\leq2D\\d\equiv b\pmod q\\
+       \mu^2(d)=1,\ (d,H)=1}}
+ e^{i\eta\log(d/D)}
+ \notag\\
+ &\quad=
+ \mathfrak c_{b,q,H}D
+ \int_0^T e^y e^{i\eta y}\,dy
+ +O_{A,\delta,q,H}\!\left(
+ D^{1/2+\delta}(1+|\eta|)^{C_1}\right),
+ \label{eq:tpc51-squarefree-fourier-asymptotic}
+\end{align}
+uniformly for \(|\eta|\leq(\log X)^A\), with
+\(\mathfrak c_{b,q,H}>0\) precisely for the retained classes.  This is
+the usual squarefree count in a fixed progression with a smooth
+unit-modulus test factor; no distribution theorem for growing moduli is
+being used.
+
+Multiply \eqref{eq:tpc51-prime-fourier-asymptotic} and
+\eqref{eq:tpc51-squarefree-fourier-asymptotic}, sum over the fixed set
+\(\cA\), and divide by the same expression at
+\((\xi,\eta)=(0,0)\).  The residue-dependent main-term constants form
+one positive finite sum, while the \(x\)- and \(y\)-profiles are common
+to every retained residue pair.  The normalized main term is therefore
+exactly \(\nu_{L,e}^{\rm ref}\), and the denominator is bounded away
+from zero after its natural normalization.  This proves
+\eqref{eq:tpc51-fourier-moment-error}.
+
+For fixed frequencies the normalized prime reference density converges
+uniformly to \(e^x\).  Hence
+\(\nu_{L,e}^{\rm ref}\) converges weakly to the probability measure
+\(e^{x+y}\,dx\,dy\).  The quantitative estimate first proves
+\eqref{eq:tpc51-weak-row-limit} for finite exponential sums with
+arbitrary real frequencies.  This self-adjoint algebra contains the
+constants and separates points of the closed square, so the
+Stone--Weierstrass theorem gives the result for every continuous \(F\).
+\end{proof}
+
+\subsection{A polylogarithmic log-Fourier bank}
+
+For an integer \(K\geq0\), let
+\(\Lambda_K=\{-K,\ldots,K\}^2\) and
+\(R_K=|\Lambda_K|=(2K+1)^2\).  For coefficients
+\(a=(a_k)_{k\in\Lambda_K}\), put
+\begin{equation}
+ P_a(x,y):=\sum_{k=(k_1,k_2)\in\Lambda_K}
+ a_k\exp\!\left(\frac{2\pi i}{T}(k_1x+k_2y)\right).
+ \label{eq:tpc51-log-fourier-polynomial}
+\end{equation}
+
+\begin{theorem}[Polylogarithmic sampled Riesz bounds]
+\label{thm:tpc51-polylog-fourier-frame}
+Fix \(A>0\).  If \(K\leq(\log X)^A\), then for all sufficiently large
+\(X\), uniformly in \(a\),
+\begin{equation}
+ c_A\sum_{k\in\Lambda_K}|a_k|^2
+ \leq \int|P_a|^2\,d\nu_X
+ \leq C_A\sum_{k\in\Lambda_K}|a_k|^2,
+ \label{eq:tpc51-unmasked-fourier-frame}
+\end{equation}
+where \(c_A>0\) and \(C_A<\infty\) are independent of \(K,X\).
+The same statement holds for coefficients in an arbitrary Hilbert
+space, with \(|P_a|^2\) replaced by its squared Hilbert norm.
+\end{theorem}
+
+\begin{proof}
+For all sufficiently large \(L\), the density in
+\eqref{eq:tpc51-finite-reference-measure} is bounded above and below by
+positive absolute constants on \([0,T]^2\).  Parseval on the square
+therefore gives
+\begin{equation}
+ c_0\sum_k|a_k|^2
+ \leq\int|P_a|^2\,d\nu_{L,e}^{\rm ref}
+ \leq C_0\sum_k|a_k|^2.
+ \label{eq:tpc51-reference-frame}
+\end{equation}
+Expanding the quadratic form produces frequencies whose coordinates
+have absolute value at most \(4\pi K/T\).  By
+\eqref{eq:tpc51-fourier-moment-error}, applied with any fixed exponent
+larger than \(A\) so that the harmless constant \(8\pi/T\) is absorbed
+for large \(X\), every entry of the empirical
+Gram differs from the reference Gram by at most
+\begin{equation}
+ \rho_X(K)\ll_{A,\delta}
+ (1+K)^{C_1}
+ \left(e^{-c_1\sqrt{\log L}}+D^{-1/2+\delta}\right).
+ \label{eq:tpc51-bank-entry-error}
+\end{equation}
+The Schur bound, or simply
+\((\sum|a_k|)^2\leq R_K\sum|a_k|^2\), shows that the quadratic-form
+error is at most
+\begin{equation}
+ R_K\rho_X(K)\sum_k|a_k|^2.
+ \label{eq:tpc51-bank-operator-error}
+\end{equation}
+Because \(R_K\ll(1+K)^2\), \(K\leq(\log X)^A\), and
+\(D\geq X^c\), this is \(o(1)\sum_k|a_k|^2\).  Absorb the error into
+\eqref{eq:tpc51-reference-frame}.  For Hilbert-valued coefficients the
+scalar Gram is tensored with the identity, so the same spectral bounds
+apply.
+\end{proof}
+
+\begin{corollary}[Fixed physical families]
+\label{cor:tpc51-fixed-physical-family}
+Let \(W_1,\ldots,W_R\in C([0,T]^2)\) be fixed.  Quotient their span by
+the exact relations in \(L^2(e^{x+y}\,dx\,dy)\), and choose fixed
+representatives whose nonzero quotient classes are linearly independent.
+Then the normalized sampled Gram of this reduced family on
+\(\cR_X(\cA)\) has its least eigenvalue bounded away from zero.  In
+particular, its quotient-frame condition number is \(O(1)\).
+\end{corollary}
+
+\begin{proof}
+Apply \cref{thm:tpc51-row-equidistribution} to each of the finitely many
+continuous products \(W_r\overline{W_s}\).  The resulting sampled Gram
+converges in operator norm to the positive-definite limiting Gram, so
+\cref{thm:tpc51-limit-gram} applies.
+\end{proof}
+
+The corollary is the direct tool for the finite collection of fixed
+physical cutoff shapes.  The growing Fourier bank is a stronger stress
+test and a convenient finite recellization device; it is not being
+identified with an arbitrary continuous Mellin coefficient space.

@@ -1,0 +1,294 @@
+\section{Sparse-deletion stability of the sampled quotient frame}
+\label{sec:tpc51-mask-robustness}
+
+We now leave the static mask intact and measure its effect directly on
+the sampled Gram.  This is the order fixed in TPC--50; no
+Fourier--Ferrers--gcd layer of a projective mask representation is
+declared to be a physical Mellin cell.
+
+Let \(\cR_X\) be the complete prime--squarefree row universe and let
+\(M_X(\alpha,\gamma)\in\{0,1\}\) be the literal mask.  We use only the
+inherited degree defect
+\begin{equation}
+ \sup_\alpha\#\{\gamma\in\cR_X:M_X(\alpha,\gamma)=0\}
+ \leq\epsilon_X|\cR_X|,
+ \label{eq:tpc51-mask-degree-hypothesis}
+\end{equation}
+and the same bound after interchanging the two row systems.  In the TPC
+application,
+\begin{equation}
+ \epsilon_X\ll_H
+ L^{-1+o(1)}+D^{-1+o(1)}+X^{-\kappa_0+o(1)}
+ \label{eq:tpc51-inherited-mask-defect}
+\end{equation}
+by the complete-universe degree theorem inherited through TPC--49/50
+\citep{WangTPC49,WangTPC50}.
+For this TPC application we retain the hypotheses under which that
+degree theorem was proved: \(L>4D\), and the row product
+\(m=\ell d\) determines the prime--squarefree row.  The abstract masked
+frame below applies whenever \eqref{eq:tpc51-mask-degree-hypothesis}
+holds; the citation does not furnish that hypothesis outside this
+complete-universe regime.
+
+The elementary Nikolskii bound needed below is
+\begin{equation}
+ \sup_{(x,y)\in[0,T]^2}\|P_a(x,y)\|_{\cH}^2
+ \leq R_K\sum_{k\in\Lambda_K}\|a_k\|_{\cH}^2,
+ \label{eq:tpc51-nikolskii}
+\end{equation}
+which follows from Cauchy--Schwarz and remains valid for coefficients in
+any Hilbert space \(\cH\).
+
+\begin{theorem}[One-sided masked log-frame]
+\label{thm:tpc51-masked-frame}
+Fix the admissible row cell, base weights, and degree
+\(K\leq(\log X)^A\) of \cref{thm:tpc51-polylog-fourier-frame}.  For
+each source row \(\alpha\), let
+\begin{equation}
+ P_\alpha(x,y)=\sum_{k\in\Lambda_K}
+ c_{\alpha,k}
+ \exp\!\left(\frac{2\pi i}{T}(k_1x+k_2y)\right),
+ \qquad c_{\alpha,k}\in\cH,
+ \label{eq:tpc51-row-dependent-polynomial}
+\end{equation}
+with only finitely many nonzero source rows.  Then
+\begin{align}
+ &\sum_\alpha\sum_{\gamma\in\cR_X(\cA)}
+ M_X(\alpha,\gamma)w_\gamma
+ \|P_\alpha(x_\gamma,y_\gamma)\|_{\cH}^2
+ \notag\\
+ &\qquad\geq E_X
+ \left(c_A-C_{A,\cA}\epsilon_XR_K\right)
+ \sum_\alpha\sum_{k\in\Lambda_K}\|c_{\alpha,k}\|_{\cH}^2,
+ \label{eq:tpc51-masked-lower-frame}
+\end{align}
+where \((x_\gamma,y_\gamma)\) are the logarithmic coordinates from
+\eqref{eq:tpc51-empirical-measure}.  The corresponding upper bound is
+\begin{equation}
+ \sum_\alpha\sum_{\gamma\in\cR_X(\cA)}
+ M_X(\alpha,\gamma)w_\gamma
+ \|P_\alpha(x_\gamma,y_\gamma)\|_{\cH}^2
+ \leq C_AE_X\sum_{\alpha,k}\|c_{\alpha,k}\|_{\cH}^2.
+ \label{eq:tpc51-masked-upper-frame}
+\end{equation}
+In particular the lower bound remains positive whenever
+\(\epsilon_XR_K=o(1)\).  The assertion is uniform in arbitrary
+source-row concentration because the estimate is applied before the
+sum over \(\alpha\).
+\end{theorem}
+
+\begin{proof}
+The fixed admissible cell has positive density in the complete row
+universe and its base weights satisfy
+\begin{equation}
+ E_X\asymp_{q,H,\cA}|\cR_X|(\log L)^{2e},
+ \qquad
+ \max_{\gamma\in\cR_X(\cA)}w_\gamma
+ \ll(\log L)^{2e}.
+ \label{eq:tpc51-base-flatness}
+\end{equation}
+For a fixed \(\alpha\), the contribution removed from the unmasked
+quadratic form is therefore at most
+\begin{align}
+ &\#\{\gamma:M_X(\alpha,\gamma)=0\}
+ \max_\gamma w_\gamma\,
+ \|P_\alpha\|_\infty^2
+ \notag\\
+ &\qquad\ll_{q,H,\cA}
+ \epsilon_XE_XR_K
+ \sum_{k\in\Lambda_K}\|c_{\alpha,k}\|_{\cH}^2,
+ \label{eq:tpc51-deleted-bank-energy}
+\end{align}
+where \eqref{eq:tpc51-mask-degree-hypothesis},
+\eqref{eq:tpc51-base-flatness}, and \eqref{eq:tpc51-nikolskii} were
+used in order.  Subtract this from the unmasked lower bound in
+\eqref{eq:tpc51-unmasked-fourier-frame}, then sum in \(\alpha\).
+Deleting nonnegative terms can only improve the unmasked upper bound,
+which proves \eqref{eq:tpc51-masked-upper-frame}.
+\end{proof}
+
+\begin{corollary}[Fixed-shape quotient under the literal mask]
+\label{cor:tpc51-masked-fixed-shapes}
+Let \(W_1,\ldots,W_R\in C([0,T]^2)\) be a fixed family whose nonzero
+quotient
+classes are linearly independent in
+\(L^2(e^{x+y}dxdy)\).  For every source row let
+\(F_\alpha=\sum_{r=1}^R c_{\alpha,r}W_r\), with coefficients in an
+arbitrary Hilbert space \(\cH\), and assume either finite source support
+or \(\sum_{\alpha,r}\|c_{\alpha,r}\|_{\cH}^2<\infty\).  After
+discarding exact zero classes
+and choosing an independent quotient basis, there are constants
+\(c,C>0\) such that
+\begin{align}
+ cE_X\sum_{\alpha,r}\|c_{\alpha,r}\|_{\cH}^2
+ &\leq
+ \sum_{\alpha}\sum_{\gamma\in\cR_X(\cA)}
+ M_X(\alpha,\gamma)w_\gamma
+ \|F_\alpha(x_\gamma,y_\gamma)\|_{\cH}^2
+ \notag\\
+ &\leq CE_X\sum_{\alpha,r}\|c_{\alpha,r}\|_{\cH}^2
+ \label{eq:tpc51-fixed-shape-masked-frame}
+\end{align}
+for all sufficiently large \(X\).
+\end{corollary}
+
+\begin{proof}
+By \cref{cor:tpc51-fixed-physical-family}, the unmasked Gram has a
+uniform positive least eigenvalue.  Because the family is fixed,
+\[
+ \sup_{[0,T]^2}\left\|\sum_r c_rW_r\right\|_{\cH}^2
+ \leq C_W\sum_r\|c_r\|_{\cH}^2.
+\]
+Repeating \eqref{eq:tpc51-deleted-bank-energy} gives an
+\(O_W(\epsilon_X)\) perturbation, which is absorbed for large \(X\).
+\end{proof}
+
+\subsection{Canonical Mellin interpretation and the missing bridge}
+
+The real-axis row powers in the provenance formula become, after
+removing global unit phases,
+\begin{equation}
+ \ell^{it_1}d^{it_2}
+ =L^{it_1}D^{it_2}
+ e^{i(t_1x_\ell+t_2y_d)}.
+ \label{eq:tpc51-log-phase-identification}
+\end{equation}
+For one declared fixed scalar function of \((x_\ell,y_d)\), integrating
+these phases against its Mellin transform reconstructs that function
+exactly; see \cref{thm:tpc51-canonical-mellin-direction}.  Such a fixed
+finite scalar family is governed by
+\cref{cor:tpc51-masked-fixed-shapes}.  This statement is not yet an
+identification of the actual orbit-dependent TPC family with that
+scalar model.
+
+Indeed, the provenance factors include expressions such as
+\(W(m_\gamma j/X)\) and \(\Psi(d_\gamma j/K)\).  With
+\(z_j=j/J\), their row-log components have the schematic form
+\begin{equation}
+ W(c_Xe^{x+y}z_j),
+ \qquad
+ \Psi(c'_Xe^yz_j),
+ \label{eq:tpc51-orbit-translate-shapes}
+\end{equation}
+for bounded scale factors on a fixed packet.  Retaining the orbit label
+therefore produces an \(X\)-dependent Hilbert-valued row function, not
+automatically a fixed list of scalar functions on \([0,T]^2\).
+
+\begin{proposition}[Distinct log translates are independent]
+\label{prop:tpc51-translate-independence}
+Let \(0\ne w\in C_c^\infty(\R)\), and let
+\(a_1,\ldots,a_M\in\R\) be distinct.  Then the functions
+\(w(\,\cdot+a_1),\ldots,w(\,\cdot+a_M)\) are linearly independent on
+\(\R\).
+\end{proposition}
+
+\begin{proof}
+If \(\sum_jc_jw(s+a_j)=0\), Fourier transformation gives
+\[
+ \widehat w(\xi)\sum_jc_je^{ia_j\xi}=0.
+\]
+The transform \(\widehat w\) is not identically zero and hence is
+nonzero on some open interval.  The exponential polynomial on the
+right vanishes on that interval, so it vanishes identically.  Taking
+its first \(M\) derivatives at one point gives a Vandermonde system in
+the distinct \(a_j\), and therefore every \(c_j=0\).
+\end{proof}
+
+Applied to \(w(s)=W(e^s)\), this proposition shows that smoothness alone
+cannot collapse the unrestricted orbit translates in
+\eqref{eq:tpc51-orbit-translate-shapes} to a fixed-rank scalar family.
+Restriction to the physical log box, support losses, and aggregation in
+the orbit Hilbert space require a separate uniform argument.
+
+We record exactly what such an argument must supply.  For a family
+\(H=(H_\alpha)_\alpha\) of \(\cK_X\)-valued functions on the log box,
+write
+\begin{align}
+ \mathcal Q_X^0(H)
+ &:=\sum_\alpha\sum_{\gamma\in\cR_X(\cA)}
+ w_\gamma\|H_\alpha(x_\gamma,y_\gamma)\|_{\cK_X}^2,
+ \notag\\
+ \mathcal Q_X^M(H)
+ &:=\sum_\alpha\sum_{\gamma\in\cR_X(\cA)}
+ M_X(\alpha,\gamma)w_\gamma
+ \|H_\alpha(x_\gamma,y_\gamma)\|_{\cK_X}^2.
+ \label{eq:tpc51-bridge-quadratic-forms}
+\end{align}
+
+\begin{proposition}[Actual-provenance bridge criterion]
+\label{prop:tpc51-actual-bridge-criterion}
+Suppose the coefficientwise actual row field, with source and residual
+labels retained, has an exact representation
+\[
+ H_{\alpha,X}^{\rm act}(x,y)
+ =\sum_{r=1}^{R_X}c_{\alpha,r,X}F_{r,X}(x,y),
+ \qquad F_{r,X}\in C([0,T]^2;\cK_X),
+\]
+after quotienting its exact relations.  Let \(\mathcal C_X(c)\) be the
+declared normalized coefficient energy, including the factor \(E_X\)
+and the fixed shape normalizations.  Assume one of the following two
+uniform alternatives.
+\begin{enumerate}[label=\textup{(G\arabic*)},leftmargin=3.2em]
+ \item The actual vector-valued family has a uniform normalized Gram and
+ sparse-deletion estimate:
+ \[
+  c_0\mathcal C_X(c)\leq\mathcal Q_X^0(H(c))
+  \leq C_0\mathcal C_X(c),
+  \qquad
+  \mathcal Q_X^0(H(c))-\mathcal Q_X^M(H(c))
+  =o(\mathcal C_X(c))
+ \]
+ uniformly on the declared quotient subspace, for fixed
+ \(0<c_0\leq C_0<\infty\).
+ \item There is a retained log-Fourier bank \(P_X(c)\) of degree
+ \(K_X\leq(\log X)^A\), with bank coefficient energy comparable to
+ \(\mathcal C_X(c)\), such that the tail is uniformly relative:
+ \[
+  \mathcal Q_X^0(H(c)-P_X(c))=o(\mathcal C_X(c)).
+ \]
+\end{enumerate}
+Finally suppose the actual weighted continuous Mellin envelope satisfies
+the norm comparison
+\begin{equation}
+ \bigl(\cE_{1,B}^L(\one)\bigr)^2
+ \leq X^{o(1)}\mathcal C_X(c^{\rm act}).
+ \label{eq:tpc51-actual-envelope-bridge}
+\end{equation}
+for a nonzero actual quotient direction with
+$\mathcal C_X(c^{\rm act})>0$.  Then, for all sufficiently large $X$, the
+masked denominator below is positive and the coefficientwise,
+pre-terminal actual direction has zero positive polynomial
+representation loss:
+\begin{equation}
+ \frac{\bigl(\cE_{1,B}^L(\one)\bigr)^2}
+ {\mathcal Q_X^M(H_X^{\rm act})}
+ \leq X^{o(1)}.
+ \label{eq:tpc51-conditional-actual-bridge}
+\end{equation}
+This conclusion retains the source and residual labels and makes no
+statement about the later coherent prime or grouping maps.
+\end{proposition}
+
+\begin{proof}
+Under \textup{(G1)}, subtraction gives
+\(\mathcal Q_X^M(H(c))\geq(c_0-o(1))\mathcal C_X(c)\).
+Under \textup{(G2)}, \cref{thm:tpc51-masked-frame} gives the same lower
+bound for \(P_X(c)\), while
+\(\mathcal Q_X^M(H-P_X)\leq\mathcal Q_X^0(H-P_X)=o(\mathcal C_X(c))\).
+The triangle inequality in the masked \(L^2\) space transfers the lower
+bound from \(P_X\) to \(H\).  Combining either lower bound with
+\eqref{eq:tpc51-actual-envelope-bridge} proves
+\eqref{eq:tpc51-conditional-actual-bridge}.
+\end{proof}
+
+Neither alternative nor \eqref{eq:tpc51-actual-envelope-bridge} is
+verified here for the actual orbit-translate family
+\eqref{eq:tpc51-orbit-translate-shapes}.  The fixed scalar corollary and
+the retained finite-bank theorem prove model cases of the criterion;
+they do not prove the actual bridge by relabelling.
+
+Most importantly, the source label \(\alpha\) remains outside the
+opposite-row norm in \eqref{eq:tpc51-masked-lower-frame}.  If a later
+operation coherently sums different source rows before taking a norm,
+new cross-row Gram terms appear.  The theorem neither discards nor
+estimates those terms.

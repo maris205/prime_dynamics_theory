@@ -1,0 +1,218 @@
+\section{The fixed canonical Mellin direction}
+\label{sec:tpc51-canonical-direction}
+
+The kernel theorems in \cref{sec:tpc51-continuous-kernels} allow the
+coefficient density to vary.  The provenance-canonical representation
+does not: a fixed physical shape has one fixed real-axis Mellin
+transform.  On orthogonal atomic coordinates its envelope-to-output
+ratio has an exact elementary formula.
+
+\subsection{Wiener--Mellin mass and exact synthesis}
+
+Let \(W\in C_c^\infty((0,\infty))\).  We use the normalization
+\begin{align}
+ \widetilde W(t)
+ &:=\int_0^\infty W(x)x^{-it}\frac{dx}{x},
+ \label{eq:tpc51-direction-Mellin-transform}\\
+ W(x)
+ &=\frac1{2\pi}\int_\R\widetilde W(t)x^{it}\,dt.
+ \label{eq:tpc51-direction-Mellin-inversion}
+\end{align}
+For an integer \(B\ge0\), define the polynomially weighted
+Wiener--Mellin mass
+\begin{equation}
+ A_B(W)
+ :=\frac1{2\pi}\int_\R(1+|t|)^B
+       |\widetilde W(t)|\,dt.
+ \label{eq:tpc51-Wiener-Mellin-mass}
+\end{equation}
+Schwartz decay makes \(A_B(W)<\infty\).  If \(W\ne0\), then
+\begin{equation}
+ A_B(W)\ge A_0(W)\ge\|W\|_\infty>0
+ \label{eq:tpc51-Wiener-lower}
+\end{equation}
+by \eqref{eq:tpc51-direction-Mellin-inversion}.
+
+Fix samples \(x_1,\ldots,x_N>0\) and a coefficient vector
+\(c=(c_1,\ldots,c_N)\in\C^N\).  Put
+\begin{equation}
+ v_t(c):=(c_nx_n^{it})_{n=1}^N.
+ \label{eq:tpc51-canonical-phase-vector}
+\end{equation}
+The canonical synthesis and its order-\(B\) envelope are
+\begin{align}
+ \cS_Wc
+ &:=\frac1{2\pi}\int_\R\widetilde W(t)v_t(c)\,dt,
+ \label{eq:tpc51-direction-canonical-synthesis}\\
+ \cE_B(W;c)
+ &:=\frac1{2\pi}\int_\R(1+|t|)^B
+     |\widetilde W(t)|\,\|v_t(c)\|_2\,dt.
+ \label{eq:tpc51-canonical-envelope}
+\end{align}
+
+\begin{theorem}[Exact fixed-shape Mellin ledger]
+\label{thm:tpc51-fixed-shape-identity}
+\label{thm:tpc51-canonical-mellin-direction}
+For every \(W\), every positive sample set, and every \(c\in\C^N\),
+\begin{align}
+ \cS_Wc&=(c_nW(x_n))_{n=1}^N,
+ \label{eq:tpc51-fixed-shape-output}\\
+ \cE_B(W;c)&=A_B(W)\|c\|_2.
+ \label{eq:tpc51-fixed-shape-envelope}
+\end{align}
+Consequently, whenever \(\cS_Wc\ne0\), the canonical condition number
+is exactly
+\begin{equation}
+ \boxed{
+ \operatorname{cond}_{B,W}(c)
+ :=\frac{\cE_B(W;c)}{\|\cS_Wc\|_2}
+ =\frac{A_B(W)\|c\|_2}
+ {\left(\sum_{n=1}^N|c_n|^2|W(x_n)|^2\right)^{1/2}}.}
+ \label{eq:tpc51-fixed-shape-condition}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Mellin inversion gives \eqref{eq:tpc51-fixed-shape-output}
+coordinate by coordinate.  Since \(|x_n^{it}|=1\),
+\(\|v_t(c)\|_2=\|c\|_2\) for every \(t\).  This proves
+\eqref{eq:tpc51-fixed-shape-envelope} and then
+\eqref{eq:tpc51-fixed-shape-condition}.
+\end{proof}
+
+The same proof works with orthogonal Hilbert atoms in place of the
+standard coordinate vectors and with positive atomic weights absorbed
+into \(c_n\).  It fails after nonorthogonal grouping unless the grouping
+map is included in the object being estimated.
+
+\subsection{Interior stability and the exact worst direction}
+
+For a nonempty set \(I\subset\{1,\ldots,N\}\), let \(\C^I\) denote the
+coefficient vectors supported on \(I\).
+
+\begin{corollary}[Exact interior minimax]
+\label{cor:tpc51-interior-minimax}
+If \(W(x_n)\ne0\) for every \(n\in I\), then
+\begin{equation}
+ \sup_{0\ne c\in\C^I}
+ \operatorname{cond}_{B,W}(c)
+ =\frac{A_B(W)}{\min_{n\in I}|W(x_n)|}.
+ \label{eq:tpc51-interior-minimax}
+\end{equation}
+In particular, if
+\begin{equation}
+ |W(x_n)|\ge\eta>0
+ \qquad(n\in I),
+ \label{eq:tpc51-interior-lower}
+\end{equation}
+then every canonical direction supported on \(I\) has condition number
+at most \(A_B(W)/\eta\).
+
+If \(W(x_{n_0})=0\) for some \(n_0\), then the coordinate vector
+\(e_{n_0}\) is an exact kernel direction.  Moreover, after adjoining
+any direction with nonzero output, the unrestricted condition number is
+unbounded.
+\end{corollary}
+
+\begin{proof}
+Formula \eqref{eq:tpc51-fixed-shape-condition} is bounded above by the
+right side of \eqref{eq:tpc51-interior-minimax}; equality is attained by
+a coordinate vector at which \(|W(x_n)|\) is minimal.  If
+\(W(x_{n_0})=0\), then \eqref{eq:tpc51-fixed-shape-output} gives
+\(\cS_We_{n_0}=0\).  Adding an arbitrarily large multiple of this kernel
+vector to one fixed nonzero-output coefficient leaves a nonzero output
+of fixed size while the envelope tends to infinity.
+\end{proof}
+
+Thus a fixed shape has no continuous-frame pathology on a declared
+interior set where it is bounded away from zero.  The relevant condition
+is lower physical mass, not a lower bound for every Mellin layer.
+
+\subsection{Zeros and flat cutoff boundaries}
+
+The opposite conclusion holds near a zero of the fixed physical shape.
+This produces a canonical near kernel without changing the Mellin
+coefficient measure.
+
+\begin{proposition}[Finite-order zero obstruction]
+\label{prop:tpc51-finite-zero-obstruction}
+Let \(x_0>0\), let \(k\ge1\), and suppose
+\begin{equation}
+ W^{(j)}(x_0)=0\quad(0\le j<k),
+ \qquad
+ \sup_{x\in U}|W^{(k)}(x)|\le M_k
+ \label{eq:tpc51-order-k-zero}
+\end{equation}
+on an interval \(U\) containing \(x_0\), where \(M_k>0\).  If
+\(x_n\in U\), the interval between \(x_0\) and \(x_n\) lies in \(U\),
+\(0<|x_n-x_0|\le\Delta\), and \(c=e_n\), then either
+\(W(x_n)=0\), giving an exact kernel direction, or
+\begin{equation}
+ \operatorname{cond}_{B,W}(e_n)
+ \ge \frac{k!\,A_B(W)}{M_k\Delta^k}.
+ \label{eq:tpc51-order-k-condition}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Taylor's theorem with integral remainder gives
+\[
+ |W(x_n)|\le\frac{M_k}{k!}|x_n-x_0|^k
+ \le\frac{M_k}{k!}\Delta^k.
+\]
+If the left side is nonzero, insert this bound in
+\eqref{eq:tpc51-fixed-shape-condition} with \(c=e_n\).  If it vanishes,
+\eqref{eq:tpc51-fixed-shape-output} gives the stated exact kernel.
+\end{proof}
+
+\begin{corollary}[Flat-boundary super-polynomial obstruction]
+\label{cor:tpc51-flat-boundary-obstruction}
+\label{cor:tpc51-boundary-zero}
+Suppose \(W\) extends smoothly by zero across a boundary point \(x_0>0\)
+of its support.  If a sequence of samples satisfies
+\begin{equation}
+ 0<|x_X-x_0|\le X^{-\sigma}
+ \label{eq:tpc51-flat-boundary-distance}
+\end{equation}
+for some fixed \(\sigma>0\), then either \(W(x_X)=0\) along a
+subsequence, producing exact kernel directions there, or, along every
+subsequence on which \(W(x_X)\ne0\), for every \(A>0\),
+\begin{equation}
+ \operatorname{cond}_{B,W}(e_{x_X})
+ \gg_{A,B,W,\sigma}X^A.
+ \label{eq:tpc51-flat-boundary-superpower}
+\end{equation}
+Here \(e_{x_X}\) denotes the one-coordinate vector at that sample.
+\end{corollary}
+
+\begin{proof}
+Every derivative of \(W\) vanishes at \(x_0\).  For a prescribed
+\(A>0\), choose an integer \(k>A/\sigma\).  If
+\(\sup_U|W^{(k)}|=0\) on a suitable interval \(U\), then \(W\) vanishes
+there and the sample is an exact kernel for all sufficiently large
+\(X\).  Otherwise apply \cref{prop:tpc51-finite-zero-obstruction} with
+\(\Delta=X^{-\sigma}\).  Then \(\Delta^{-k}=X^{\sigma k}\ge X^A\),
+and the fixed constant \(k!A_B(W)/M_k\) is absorbed into the implied
+constant.
+\end{proof}
+
+The corollary is a worst-direction statement.  It does not say that a
+boundary region carries a positive fraction of the physical atomic
+energy.  A bounded-overlap partition and an aggregate lower-energy
+estimate may discard such directions.  Conversely, an upper seminorm
+bound alone cannot do so.
+
+\subsection{Scope of the canonical identity}
+
+The exact ledger above concerns a Mellin phase acting diagonally on
+orthogonal atomic coordinates.  It does not commute a signed integral
+through a layerwise nonlinear norm.  In particular, it does not by
+itself compare a Banach profile of the form
+\[
+ \int C(\phi_\tau)^{1/2}\|B_\tau\|\,d|\nu|(\tau)
+\]
+with the norm of the signed reassembled physical coefficient.  Such a
+comparison additionally requires either a coefficient-specific vector
+frame or a reordering that performs canonical Mellin inversion before
+the nonlinear large-sieve step.  No full TPC--48 profile closure is
+asserted here.

@@ -1,0 +1,172 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\e}{\mathrm e}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\diag}{\operatorname{diag}}
+
+\hypersetup{
+  pdftitle={Canonical Mellin Quotient Frames: Finite-Sampling Kernels, Interior Stability, and the Boundary of Signed TPC Reassembly},
+  pdfauthor={Liang Wang},
+  pdfsubject={Sharp continuous-frame obstructions and positive quotient frames for canonical Mellin reassembly},
+  pdfkeywords={Mellin inversion, quotient frame, finite sampling, condition number, prime squarefree rows, static mask, parity problem}
+}
+
+\title{\bfseries Canonical Mellin Quotient Frames:\\
+Finite-Sampling Kernels, Interior Stability,\\
+and the Boundary of Signed TPC Reassembly}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The preceding twin-prime-correlation reduction left a signed Mellin
+reassembly between fixed-complexity cell survival and the full
+projective profile.  We determine exactly which frame statement is
+available.  If a continuous Mellin dictionary is allowed arbitrary
+signed coefficient densities, no lower frame can hold: every synthesis
+into a finite-dimensional physical Hilbert space has a nonzero smooth
+kernel.  For the phase dictionary at logarithmic samples
+\(y_1,\ldots,y_N\), the kernel is explicit,
+\[
+ g(t)=\prod_{n=1}^{N}\left(\frac d{dt}+iy_n\right)\rho(t),
+ \qquad \rho\in C_c^\infty(\R),
+\]
+and neighboring continuous atoms have arbitrarily large
+total-variation-to-output condition number.  Thus a raw continuous
+Riesz bound is not merely unproved; it is false.
+
+One provenance-fixed scalar Mellin direction is different at the exact
+algebraic level.  For a fixed smooth shape \(W\), positive samples
+\(x_n\), and coefficients
+\(c_n\), Mellin inversion gives the exact identities
+\[
+ \cE_B(W;c)=A_B(W)\|c\|_2,
+ \qquad
+ \|\cS_Wc\|_2^2=\sum_n|c_nW(x_n)|^2,
+\]
+where \(A_B(W)\) is a polynomially weighted Wiener--Mellin mass.
+Consequently, on a declared sample set on which
+\(\inf_n|W(x_n)|\geq\eta>0\), the canonical condition number is
+\(O_{B,W,\eta}(1)\).  Coordinate samples approaching a zero of the
+physical cutoff give quantified polynomial, or even super-polynomial,
+obstructions.  For a fixed finite scalar family we bound the quotient
+condition number in terms of its normalized sampled Gram matrix.  Weak
+convergence of the sample measures and linear independence of the
+limiting shapes then give an \(O(1)\) quotient frame for that abstract
+fixed-family problem.
+
+We apply this criterion to the prime--squarefree dyadic row universe.
+Its normalized logarithmic sample measure converges to the measure with
+density \(e^{x+y}\) on \([0,\log2]^2\).  Uniformly for a log-Fourier
+bank of degree at most a fixed power of \(\log X\), the sampled Gram is
+bounded above and below.  The literal TPC static mask changes its lower
+frame bound by at most
+\[
+ O\!\left(\epsilon_X(2K+1)^2\right),
+ \qquad
+ \epsilon_X\ll
+ L^{-1+o(1)}+D^{-1+o(1)}+X^{-\kappa_0+o(1)}.
+\]
+Hence every declared fixed finite scalar family, and every retained
+finite log-Fourier bank in the stated range, has zero polynomial
+sampling-and-mask cost at the inherited numerical endpoint.  Passing
+from this theorem to the actual TPC provenance requires an additional
+bridge: the genuine orbit-translate family is \(X\)-dependent and
+Hilbert-valued, and its weighted continuous Mellin envelope must be
+compared with the sampled Hilbert energy.  Those uniform Gram or
+relative-tail and norm-comparison hypotheses are formulated here but
+are not verified.  This bridge therefore remains open before coherent
+prime summation, residual grouping, physical-shift localization, and
+native-Gram identification.  No fixed-shift prime-pair estimate, parity
+breach, or twin-prime conclusion is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Mellin inversion; quotient frame; finite
+sampling; condition number; prime--squarefree rows; static mask;
+projective reassembly; sieve parity.
+
+\medskip
+\noindent\textbf{Convention.}
+All Hilbert spaces are complex.  Continuous synthesis is understood as
+a Bochner integral.  A ``canonical'' measure always means the fixed
+real-axis Mellin measure supplied by the physical smooth shapes, before
+any projective decomposition of the static mask.  Constants may depend
+on the fixed shapes, residue moduli, and derivative order, but not on
+\(X\).  We write \(\e^z:=\exp z\),
+\(\e(z):=\exp(2\pi i z)\), and
+\(\e_q(z):=\e(z/q)\).
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 42A38, 46C05; Secondary 11N35,
+42B35, 15A18.
+
+\input{sections/introduction}
+\input{sections/inherited-interface}
+\input{sections/continuous-kernels}
+\input{sections/canonical-direction}
+\input{sections/quotient-frames}
+\input{sections/arithmetic-sampling}
+\input{sections/mask-robustness}
+\input{sections/endpoint-boundaries}
+\input{sections/certificate-claims}
+
+\begingroup
+\small
+\raggedright
+\setlength{\bibsep}{4pt plus 1pt minus 1pt}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

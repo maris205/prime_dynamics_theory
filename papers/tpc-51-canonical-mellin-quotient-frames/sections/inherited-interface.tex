@@ -1,0 +1,426 @@
+\section{The provenance-canonical synthesis interface}
+\label{sec:tpc51-inherited-interface}
+
+This section reconstructs the exact coefficient interface inherited from
+TPC--25, TPC--36, and TPC--47--50
+\citep{WangTPC25,WangTPC36,WangTPC47,WangTPC48,WangTPC49,WangTPC50}.
+There are three different parameter spaces in that interface: a fixed finite
+residue decomposition, a continuous real-axis Mellin decomposition, and a
+later projective decomposition of the static mask.  Only the first two belong
+to the provenance-canonical pre-mask cellization.  Keeping them separate is
+essential: a terminal projective parameter from TPC--47/48 is not a physical
+Mellin atom, and a lower-frame assertion for all of its possible signed
+representations is false.
+
+\subsection{Physical rows and the literal pre-mask coefficient}
+
+Fix the physical shift $h_0\ne0$ and one source-compatible dyadic packet.
+Let $\cA_1$ and $\cA_2$ be its two finite row systems.  A row is
+\begin{equation}
+ \rho=(\ell_\rho,d_\rho),
+ \qquad
+ m_\rho=\ell_\rho d_\rho\asymp Q,
+ \label{eq:tpc51-row}
+\end{equation}
+where $\ell_\rho$ is prime, $d_\rho$ is squarefree, and the inherited
+separation makes $m_\rho$ determine $\rho$.  The literal static mask is
+\begin{equation}
+ K_{\alpha\gamma}
+ :=\one_{\ell_\alpha\ne\ell_\gamma}
+   \one_{|m_\alpha-m_\gamma|>\Delta}
+   \one_{(d_\alpha,d_\gamma)\le G},
+ \qquad
+ \Delta=QX^{-\kappa_0},\quad G=X^{\kappa_0}.
+ \label{eq:tpc51-literal-mask}
+\end{equation}
+Before $K$ is decomposed, the joint multiplier has the form
+\begin{equation}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ =K_{\alpha\gamma}\,
+  \Xi_{\alpha,\gamma}(j)
+  \mathcal W_{\alpha,\gamma}(j/J),
+ \label{eq:tpc51-joint-multiplier}
+\end{equation}
+where $\Xi$ has a fixed orbit period and $\mathcal W$ is assembled from
+fixed smooth row--orbit cutoffs.  On the left, the physical source
+coefficient is
+\begin{equation}
+ \gamma_\alpha^{(1)}
+ =\mu(d_\alpha)(\log\ell_\alpha)
+  \omega_D^{(1)}(d_\alpha)
+  \psi_L^{(1)}(\ell_\alpha/L)\zeta_\alpha^{(1)},
+ \label{eq:tpc51-source-coefficient}
+\end{equation}
+with the symmetric formula on the right.  These are literal coefficients,
+not arbitrary bounded row weights.
+
+The large-prime residual vector at $h_0$ is
+\begin{equation}
+ \mathcal F_{h_0}^{\rm act,L}
+ =\sum_{\substack{\gamma,j,m,p,r\\pr-mj=h_0}}
+ \gamma_m^{(1)}\mathfrak A_{m,\gamma}^{\rm act}(j)
+ \mu(r)\Lambda(pr)e_{\gamma,d(m)r}\otimes e_j.
+ \label{eq:tpc51-physical-residual}
+\end{equation}
+It has actual coefficients at the physical intercept, but it belongs to the
+low-sign-averaged residual Gram route rather than automatically to the native
+affine physical Gram face.  Prime summation, residual grouping, and this Gram
+identification will therefore remain downstream of the synthesis operator
+defined below.
+
+\subsection{Finite residue variables and continuous Mellin variables}
+
+Let $H_0=O_{h_0}(1)$ be a common orbit-residue period.  A fixed residue
+factor has the finite Fourier expansion
+\begin{equation}
+ \xi(d,j)
+ =\sum_{a,b\bmod H_0}
+   \widehat\xi_{H_0}(a,b)\e_{H_0}(ad+bj),
+ \qquad
+ \sum_{a,b\bmod H_0}|\widehat\xi_{H_0}(a,b)|\ll_{h_0}1.
+ \label{eq:tpc51-finite-residue-Fourier}
+\end{equation}
+Equivalently one may first split the $O_{h_0}(1)$ physical residue cells.
+Thus residue parameters are finite and of fixed complexity.  Direct cell
+splitting uses a finite counting measure; Fourier implementation uses a
+finite complex atomic measure.  Neither is a growing continuous frame.
+
+The smooth separation is genuinely continuous.  For a fixed smooth shape
+$W$ put
+\begin{equation}
+ \widetilde W(t)
+ :=\int_0^\infty W(z)z^{-it}\,\frac{dz}{z}.
+ \label{eq:tpc51-Mellin-transform}
+\end{equation}
+The function $\widetilde W$ is Schwartz.  For the four smooth factors in a
+two-row packet, a representative provenance measure is
+\begin{equation}
+ \begin{split}
+ \bm\tau&=(t_1,s_1,t_2,s_2)\in\R^4,\\
+ d\nu_{\rm Mel}(\bm\tau)
+ &:=(2\pi)^{-4}
+   \widetilde W_1(t_1)\widetilde\Psi_1(s_1)
+   \widetilde W_2(t_2)\widetilde\Psi_2(s_2)\,d\bm\tau.
+ \end{split}
+ \label{eq:tpc51-provenance-Mellin-measure}
+\end{equation}
+The evident product with further fixed smooth shapes gives the versions used
+in later packets.  In particular, this is a specific complex Borel measure,
+absolutely continuous with respect to Lebesgue measure, rather than a freely
+chosen coefficient density.  Its polynomially weighted total variation is
+finite at every fixed order.  The associated row phases are unitary: for
+example,
+\begin{equation}
+ (\ell d)^{it}d^{is}=\ell^{it}d^{i(t+s)}.
+ \label{eq:tpc51-unit-Mellin-row-phase}
+\end{equation}
+
+Combining the fixed residue variables with the required real Mellin
+variables gives finite disjoint unions
+\begin{equation}
+ \Theta^{\rm can}_X
+ :=\bigsqcup_{a\bmod H_0}\Theta_a,
+ \qquad
+ \Theta_a=F_a\times\R^{k_a},
+ \label{eq:tpc51-canonical-parameter-space}
+\end{equation}
+where $F_a$ is fixed and finite and $k_a=O(1)$.  The corresponding
+provenance measures are denoted by $\lambda_a$.  They are finite complex
+atomic--continuous product measures obtained using the original Fourier and
+Mellin normalizations.  With no null pairs or algebraic refactorizations
+inserted, the canonical pre-mask identity is
+\begin{align}
+ &\gamma_\alpha^{(1)}
+  \Xi_{\alpha,\gamma}(j)
+  \mathcal W_{\alpha,\gamma}(j/J)
+ \notag\\
+ &\quad={}
+ \sum_{a\bmod H_0}\one_{j\equiv a\!\!\!\pmod{H_0}}
+ \int_{\Theta_a}
+ u_{a,\tau}^{L}(\alpha)v_{a,\tau}(\gamma)
+ \phi_{a,\tau}(j/J)\,d\lambda_a(\tau).
+ \label{eq:tpc51-canonical-cellization}
+\end{align}
+There is one compact interval $I_0\subset\R$, independent of $X,a,\tau$,
+such that $\phi_{a,\tau}\in C_c^\infty(I_0)$.  For every fixed $B$,
+\begin{equation}
+ \sum_{a\bmod H_0}\int_{\Theta_a}
+ \|u_{a,\tau}^{L}\|_\infty
+ \|v_{a,\tau}\|_\infty
+ \|\phi_{a,\tau}\|_{C^B}\,d|\lambda_a|(\tau)
+ \ll_{B,h_0}X^{o(1)}.
+ \label{eq:tpc51-canonical-L1-seminorm-mass}
+\end{equation}
+This is an upper $L^1(d|\lambda|)$ projective-seminorm estimate.  It is not
+a lower frame bound.
+
+\subsection{Why mask parameters are not canonical Mellin cells}
+
+Only after \eqref{eq:tpc51-canonical-cellization} is fixed does TPC--36
+apply the specified mask representation
+\begin{equation}
+ K_{\alpha\gamma}
+ =\int_{\Omega_{36}}p_\eta(\alpha)q_\eta(\gamma)
+ \,d\nu_{36}(\eta),
+ \qquad
+ \int_{\Omega_{36}}
+ \|p_\eta\|_\infty\|q_\eta\|_\infty\,d|\nu_{36}|(\eta)
+ =X^{o(1)}.
+ \label{eq:tpc51-specified-mask-representation}
+\end{equation}
+The parameter $\eta$ is a finite or finitely representable projective-mask
+parameter.  It records same-source orthogonality, signed Ferrers separation,
+and gcd compression.  It is not part of
+$\Theta_X^{\rm can}$ and has no representation-independent physical
+meaning by itself.
+
+There may also be a further continuous Mellin variable when the smooth
+terminal factor $\Lambda(pr)=(\log pr)\Phi_0(pr/X)$ is separated.  Its
+measure is again fixed by the real-axis Mellin transform of the declared
+terminal shape and has Schwartz weighted variation.  TPC--47 retains this
+variable, the prime restriction, and $\mu(r)$ in $A_\omega(p,r,m)$ rather
+than in the opposite-row pre-mask cell.  Accordingly it is a canonical
+\emph{downstream} Mellin parameter, but it is not an element of
+$\Theta_X^{\rm can}$ in \eqref{eq:tpc51-canonical-parameter-space}.  If it
+is retained as an auxiliary coordinate, its measure is tensorized with
+$\lambda_X$ only after the coefficientwise operator below has been formed.
+
+The terminal symbol $\omega$ in TPC--47/48 combines a canonical pre-mask
+cell $(a,\tau)$, a mask parameter $\eta$, and any terminal Mellin variables.
+An individual $\omega$-layer therefore contains
+$u_{a,\tau}^{L}p_\eta$ and $v_{a,\tau}q_\eta$, while the literal masked tensor
+is recovered only after the complete signed $\eta$-integration.  Appending a
+cancelling mask-layer pair changes layerwise quantities without changing the
+physical multiplier.  Consequently no canonical cell statistic is assigned
+to a terminal $\omega$.
+
+\subsection{The coefficientwise physical Hilbert output}
+
+Let $\cM_X$ be the finite set of supported source integers and let
+$\mathcal I_X$ contain the supported pairs $(m,r)$ before coherent prime summation.
+Let $\mathcal O_L$ be the opposite-row set, let $\cS_X$ contain the residual labels,
+and put
+\begin{equation}
+ \mathcal J_X:=\{j\in\Z:j/J\in I_0\},
+ \qquad
+ \mathcal V_L:=\ell^2(\mathcal O_L\times\cS_X),
+ \qquad
+ \cH_X^{\rm coeff}
+ :=\bigoplus_{(m,r)\in\mathcal I_X}
+   \ell^2(\mathcal J_X;\mathcal V_L).
+ \label{eq:tpc51-coefficient-Hilbert-space}
+\end{equation}
+The common compact support $I_0$ makes $\mathcal J_X$ finite for every
+fixed $X$.  The direct sum deliberately retains $(m,r)$.  It therefore isolates the
+residue/Mellin synthesis from the later coherent prime square and from the
+grouping map $s=d(m)r$.
+
+For $\theta=(a,\tau)\in\Theta_X^{\rm can}$ define the literal-mask layer
+$k_{X,\theta}^{L}\in\cH_X^{\rm coeff}$ by
+\begin{align}
+ k_{X,\theta}^{L}(m,r,j)
+ :={}&\one_{j\equiv a\!\!\!\pmod{H_0}}
+ u_{a,\tau}^{L}(m)\phi_{a,\tau}(j/J)
+ \notag\\
+ &\times
+ \sum_{\gamma\in\mathcal O_L}
+ K_{m\gamma}v_{a,\tau}(\gamma)
+ e_{\gamma,d(m)r}.
+ \label{eq:tpc51-canonical-layer-vector}
+\end{align}
+Here $u_{a,\tau}^{L}(m)$ means the value at the unique row determined by
+$m$.  No $p_\eta q_\eta$ mask layer occurs in
+\eqref{eq:tpc51-canonical-layer-vector}.  Multiplying
+\eqref{eq:tpc51-canonical-cellization} by the literal $K$ gives the exact
+coefficientwise profile
+\begin{align}
+ G_{m,r}^{L}(j)
+ &:={}
+ \sum_{\gamma\in\mathcal O_L}
+ \gamma_m^{(1)}\mathfrak A_{m,\gamma}^{\rm act}(j)
+ e_{\gamma,d(m)r},
+ \label{eq:tpc51-physical-vector-profile}\\
+ G_X^{L}
+ &=\sum_{a\bmod H_0}\int_{\Theta_a}
+ k_{X,(a,\tau)}^{L}\,d\lambda_a(\tau)
+ \quad\text{in }\cH_X^{\rm coeff}.
+ \label{eq:tpc51-canonical-Bochner-reassembly}
+\end{align}
+
+For each $X$ the arithmetic and orbit supports are finite.  Strong
+measurability and \eqref{eq:tpc51-canonical-L1-seminorm-mass} make
+\eqref{eq:tpc51-canonical-Bochner-reassembly} a genuine Bochner integral.
+The often-used phrase ``signed Bochner integral'' includes the complex case:
+write the polar decomposition
+\begin{equation}
+ d\lambda_X(\theta)
+ =\varepsilon_X(\theta)\,d\mu_X(\theta),
+ \qquad
+ \mu_X:=|\lambda_X|,
+ \qquad
+ |\varepsilon_X|=1\quad\mu_X\text{-a.e.},
+ \label{eq:tpc51-polar-measure}
+\end{equation}
+where $\lambda_X=\bigoplus_a\lambda_a$.  Absorb the polar phase into
+\begin{equation}
+ A_{X,\theta}^{L}:=\varepsilon_X(\theta)k_{X,\theta}^{L}.
+ \label{eq:tpc51-polar-layer}
+\end{equation}
+
+\subsection{Canonical synthesis, the actual direction, and the reduced Gram}
+
+On its natural Bochner domain define
+\begin{equation}
+ \cS_X^{L}f
+ :=\int_{\Theta_X^{\rm can}}
+ f(\theta)A_{X,\theta}^{L}\,d\mu_X(\theta)
+ \in\cH_X^{\rm coeff}.
+ \label{eq:tpc51-canonical-synthesis}
+\end{equation}
+For example it is defined whenever
+$\int |f(\theta)|\|A_{X,\theta}^{L}\|\,d\mu_X(\theta)<\infty$.
+After the fixed projective weights are placed in the measure, the literal
+physical coefficient is the distinguished direction
+\begin{equation}
+ \boxed{G_X^{L}=\cS_X^{L}\one.}
+ \label{eq:tpc51-actual-direction}
+\end{equation}
+The coefficient function $\one$ is not a freely selected Mellin density; it
+records the fixed provenance measure itself.
+
+For the provenance measure at each fixed \(X\), this synthesis is a
+bounded map from \(L^2(\mu_X)\).  Indeed, the finite residue part is
+atomic, the physical output support is finite, the real Mellin phases
+have unit modulus, and all remaining profile dependence grows at most
+polynomially in the Mellin variables.  Since the density placed in
+\(d\mu_X=d|\lambda_X|\) is Schwartz, one has
+\begin{equation}
+ \int_{\Theta_X^{\rm can}}
+ \|A_{X,\theta}^L\|_{\cH_X^{\rm coeff}}^2\,d\mu_X(\theta)<\infty.
+ \label{eq:tpc51-L2-synthesis-integrability}
+\end{equation}
+Cauchy--Schwarz therefore gives boundedness.  Its Gram operator is
+\begin{equation}
+ \Gamma_X^L:=(\cS_X^L)^*\cS_X^L,
+ \label{eq:tpc51-Gram-operator}
+\end{equation}
+with integral kernel
+\begin{equation}
+ \cG_X^L(\theta,\theta')
+ :=\langle A_{X,\theta'}^L,A_{X,\theta}^L\rangle_{\cH_X^{\rm coeff}}.
+ \label{eq:tpc51-Gram-kernel}
+\end{equation}
+In particular,
+\begin{equation}
+ \|G_X^L\|_{\cH_X^{\rm coeff}}^2
+ =\iint
+ \cG_X^L(\theta,\theta')
+ \,d\mu_X(\theta)d\mu_X(\theta').
+ \label{eq:tpc51-actual-Gram-quadratic-form}
+\end{equation}
+
+For every fixed $X$, all index sets in
+\eqref{eq:tpc51-coefficient-Hilbert-space} are finite, so the output space
+is finite-dimensional, whereas
+$L^2(\mu_X)$ has a non-atomic continuous Mellin component.  Hence
+$\cS_X^L$ has an infinite-dimensional kernel.  A lower frame inequality on
+all of $L^2(\mu_X)$ is therefore impossible for dimensional reasons.  The
+correct coefficient space is the quotient
+\begin{equation}
+ \mathfrak Q_X^L
+ :=L^2(\mu_X)/\ker\cS_X^L,
+ \qquad
+ \|[f]\|_{\mathfrak Q_X^L}
+ :=\inf_{g\in\ker\cS_X^L}\|f+g\|_{L^2(\mu_X)},
+ \label{eq:tpc51-quotient-space}
+\end{equation}
+or, equivalently, the reduced subspace
+\begin{equation}
+ \cK_X^L
+ :=(\ker\cS_X^L)^\perp
+ =\overline{\operatorname{ran}(\cS_X^L)^*}.
+ \label{eq:tpc51-reduced-space}
+\end{equation}
+The reduced Gram is
+\begin{equation}
+ \Gamma_{X,\rm red}^L
+ :=\Gamma_X^L|_{\cK_X^L}.
+ \label{eq:tpc51-reduced-Gram}
+\end{equation}
+Its smallest positive spectral value is the exact finite-$X$ lower quotient
+frame constant.  A useful asymptotic theorem must control this value on the
+specified provenance subspace or must control the single actual direction
+\eqref{eq:tpc51-actual-direction}; it must not replace the quotient by the
+false full-space lower bound.
+
+For later comparison with the inherited Minkowski argument, let
+$w_B(\theta)\ge1$ be the fixed polynomial/seminorm weight produced by the
+$C^B$ orbit profile.  Define the canonical displayed-representation envelope
+\begin{equation}
+ \cE_{1,B}^L(f)
+ :=\int_{\Theta_X^{\rm can}}
+ w_B(\theta)|f(\theta)|
+ \|A_{X,\theta}^L\|_{\cH_X^{\rm coeff}}\,d\mu_X(\theta).
+ \label{eq:tpc51-canonical-L1-envelope}
+\end{equation}
+The actual-direction condition number is
+\begin{equation}
+ \kappa_{\rm can,B}^L(X)
+ :=\frac{\cE_{1,B}^L(\one)^2}
+ {\|\cS_X^L\one\|_{\cH_X^{\rm coeff}}^2},
+ \label{eq:tpc51-actual-condition-number}
+\end{equation}
+when the denominator is nonzero.  Proving
+$\kappa_{\rm can,B}^L(X)=X^{o(1)}$, or the corresponding uniform reduced-Gram
+bound on a declared finite provenance subspace, is a meaningful
+representation-efficiency statement.  The existence of
+$\ker\cS_X^L\ne\{0\}$ by itself is not a physical obstruction; a genuine
+negative result must place the actual direction, or a required canonical
+physical family, in a polynomial near-kernel.
+
+\subsection{The full TPC--48 envelope is a different nonlinear object}
+
+The terminal projective layer in TPC--48 has, after Fourier transformation
+in the frozen intercept,
+\begin{equation}
+ B_{\omega,m}(\alpha)
+ :=\sum_{p,r}A_\omega(p,r,m)\e(-pr\alpha)
+ v_{\omega,p,r,m}.
+ \label{eq:tpc51-inherited-row-vector}
+\end{equation}
+For fixed $m$, distinct residual labels separate the $r$-square, but at fixed
+$(m,r)$ the $p$-sum remains coherent.  A fixed admissible global
+representation $\mathscr R$ has the envelope
+\begin{equation}
+ \mathfrak S_{\mathscr R}(\alpha)
+ :=\int
+ C_{\rm LS}(\phi_\omega,H_0)^{1/2}
+ \left(\sum_m\|B_{\omega,m}(\alpha)\|^2\right)^{1/2}
+ \,d|\nu|(\omega).
+ \label{eq:tpc51-full-profile-envelope}
+\end{equation}
+Its norm order is exactly:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.5em]
+ \item the outer projective reassembly is $L^1(d|\nu|)$;
+ \item the source-row aggregation inside each layer is $\ell^2$ in $m$;
+ \item each summand uses the residual Hilbert norm; and
+ \item the prime sum at fixed $(m,r)$ is formed before that norm is taken.
+\end{enumerate}
+Moreover $C_{\rm LS}^{1/2}$ is a profile seminorm weight, not a declared
+Hilbert norm.  The pointwise infimum over admissible representations is not
+integrated; annular arguments retain one fixed jointly measurable global
+representation.  The resulting field is the completed frozen family, and
+only its $h=h_0$ slice has literal physical provenance.
+
+Thus \eqref{eq:tpc51-full-profile-envelope} is not the norm of
+$\cS_X^L\one$, is not a finite-matrix nuclear norm, and is not the native
+physical atomic diagonal
+\begin{equation}
+ \cD_0=\sum_i\sum_u|b_{i,u}|^2.
+ \label{eq:tpc51-native-atomic-diagonal}
+\end{equation}
+The operator \eqref{eq:tpc51-canonical-synthesis} isolates only the
+provenance-canonical residue/Mellin no-cancellation question before coherent
+prime summation.  Even a subpower quotient condition number leaves the
+coherent prime square, the map $s=d(m)r$, frozen-to-$h_0$ localization, and
+the comparison with the native affine Gram face open.

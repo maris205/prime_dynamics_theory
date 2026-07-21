@@ -1,0 +1,147 @@
+\section{Introduction}
+\label{sec:tpc51-introduction}
+
+The TPC reduction has reached a narrow but consequential question.  A
+fixed-complexity residue/Mellin cell survives the literal static row
+mask with zero polynomial loss \citep{WangTPC50}, whereas the completed
+TPC--48 estimate is still expressed as a signed outer integral of
+layerwise Hilbert norms \citep{WangTPC48}.  Can the latter integral be
+replaced by the energy of the physically reassembled coefficient?
+Calling this a ``frame problem'' is useful only after the domain of the
+putative frame has been specified.  The continuous Mellin coefficient
+space, the finite family of physical cutoff shapes, and the one
+provenance-fixed coefficient density are three different domains.
+
+This paper separates them.  The strongest naive statement is false for
+an elementary dimensional reason: at every finite scale the physical
+coefficient space is finite dimensional, while arbitrary smooth signed
+Mellin densities form an infinite-dimensional space.  We give both an
+abstract smooth kernel and an explicit differential kernel for the
+phase dictionary.  Thus no amount of numerical conditioning evidence
+can establish a lower Riesz bound on the full continuous parameter
+space.
+
+The negative theorem does not apply to one fixed Mellin density.
+Mellin inversion recombines the unique transform density of a fixed
+cutoff into the values of that cutoff at declared samples.  This gives
+an exact formula, not a heuristic orthogonality assertion.  Separately,
+for a fixed finite scalar family the remaining question is finite
+dimensional: after exact redundancies are removed, its condition number
+is controlled by the least eigenvalue of a normalized sampled Gram
+matrix.  We prove that this eigenvalue is bounded away from zero for
+every fixed limiting-independent scalar family on the
+prime--squarefree dyadic row universe.  We also prove a uniform version
+for a retained log-Fourier bank of polylogarithmic degree and show that
+the literal static mask perturbs its lower bound by only
+\(O(\varepsilon_X(2K+1)^2)\).  These statements do not by themselves
+identify the genuine \(X\)-dependent, Hilbert-valued orbit-translate
+family with a fixed scalar family.
+
+\subsection{Main results}
+
+The results are organized by the logical strength of their domains.
+
+\begin{enumerate}[label=\textup{(R\arabic*)},leftmargin=3.2em]
+ \item \textbf{Continuous-domain no-go.}
+ Every integral synthesis from smooth densities on an interval into a
+ finite-dimensional Hilbert space has a nonzero smooth kernel
+ (\cref{thm:tpc51-smooth-kernel}).  For logarithmic phase samples the
+ kernel is explicit (\cref{prop:tpc51-explicit-phase-kernel}), and
+ neighboring atoms give arbitrarily large signed-measure condition
+ number (\cref{prop:tpc51-neighbouring-atoms}).
+
+ \item \textbf{Exact canonical direction.}
+ For a fixed smooth shape, its weighted Mellin--Wiener envelope and its
+ physical synthesis norm are given exactly by
+ \cref{thm:tpc51-canonical-mellin-direction}.  A declared sample set
+ satisfying \(\inf_n|W(x_n)|\geq\eta>0\) has
+ \(O_{B,W,\eta}(1)\) condition number.  Coordinate samples approaching a finite-order zero
+ incur the corresponding power loss, and a flat cutoff boundary can
+ incur losses beyond every fixed power
+ (\cref{cor:tpc51-boundary-zero}).
+
+ \item \textbf{Finite quotient criterion.}
+ For a fixed finite scalar shape family, the squared quotient condition number lies
+ between the inverse least positive eigenvalue and the number of
+ retained shapes times that inverse eigenvalue for its normalized Gram
+ matrix
+ (\cref{thm:tpc51-finite-gram-criterion}).  Weak convergence of sample
+ measures and limiting linear independence therefore give an
+ \(O(1)\) quotient frame
+ (\cref{thm:tpc51-limit-gram}).
+
+ \item \textbf{Arithmetic sampling.}
+ The logarithmic empirical measures of admissible prime--squarefree
+ rows converge unconditionally to
+ \[
+   d\nu(x,y)=e^{x+y}\,dx\,dy,
+   \qquad 0\leq x,y\leq\log2,
+ \]
+ and their Fourier moments admit a quantitative fixed-modulus estimate
+ (\cref{thm:tpc51-row-equidistribution}).  Consequently every fixed
+ limiting-independent scalar family has a stable sampled Gram, and
+ every log-Fourier bank of degree \(K\leq(\log X)^A\) obeys uniform
+ Riesz bounds (\cref{thm:tpc51-polylog-fourier-frame}).
+
+ \item \textbf{Literal-mask robustness for declared finite families.}
+ If a zero--one mask deletes at most \(\varepsilon_X\) of the complete row
+ universe in every source row, the lower bound of a two-dimensional
+ degree-\(K\) bank changes by at most
+ \(C\varepsilon_X(2K+1)^2\), uniformly in an arbitrary nonnegative weight
+ on the other side (\cref{thm:tpc51-masked-frame}).  At the inherited
+ endpoint this is \(o(1)\) for every fixed polylogarithmic degree.  The
+ fixed finite scalar-family version has constants depending on that
+ family.
+
+ \item \textbf{Exact boundary and conditional bridge.}
+ The positive result proves the abstract fixed finite scalar-family and
+ retained finite-bank sampled frames.  Transfer to the actual
+ coefficientwise pre-terminal provenance requires a uniform normalized
+ Gram or uniform relative Fourier-tail theorem for the
+ \(X\)-dependent Hilbert-valued orbit-translate family, together with a
+ norm comparison from the actual weighted continuous envelope to that
+ Hilbert energy.  \Cref{prop:tpc51-actual-bridge-criterion} records this
+ criterion and the fact that it is not verified here.  The result also
+ does not commute an outer \(L^1\) integral through the nonlinear
+ TPC--48 layer norm and does not control the coherent prime square,
+ residual grouping, physical-shift localization, or native affine
+ Gram.
+\end{enumerate}
+
+\subsection{Three levels of assertion}
+
+To prevent a local Hilbert-space lemma from being promoted into a
+number-theoretic conclusion, we use the following ledger throughout.
+
+\begin{description}[style=nextline,leftmargin=2.2em]
+ \item[Level L0: exact algebra/analysis.]
+ Kernels, Mellin inversion identities, Gram formulas, and finite-matrix
+ perturbation bounds.  These statements do not use primes.
+ \item[Level L1: arithmetic interface.]
+ Fixed-modulus prime number theory, squarefree progression counts, and
+ the inherited static-mask degree defect.  These prove the sampled
+ quotient bounds on the stated row universe.
+ \item[Level L2: target correlation.]
+ A fixed-shift prime-pair or twin-prime estimate.  No result at this
+ level is proved or inferred here.
+\end{description}
+
+In particular, no actual TPC provenance gate is called closed merely
+from the abstract fixed-family theorem.  Any future use of that word
+must first verify the bridge criterion in
+\cref{prop:tpc51-actual-bridge-criterion}; it can never refer to the
+parity problem or the full TPC determinant route here.
+
+\subsection{Organization}
+
+\Cref{sec:tpc51-inherited-interface} reconstructs the canonical
+operator before the projective mask decomposition.
+\Cref{sec:tpc51-continuous-kernels} proves the continuous-domain
+obstructions.  \Cref{sec:tpc51-canonical-direction} treats the single
+physical direction, and \cref{sec:tpc51-quotient-frames} gives the
+finite quotient criterion.  \Cref{sec:tpc51-arithmetic-sampling}
+proves the prime--squarefree sampling theorem.
+\Cref{sec:tpc51-mask-robustness} transfers it through the literal mask.
+The endpoint and open doors are given in \cref{sec:tpc51-endpoint}; the
+reproducible finite certificate is described in
+\cref{sec:tpc51-certificate}.

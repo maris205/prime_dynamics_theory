@@ -1,0 +1,70 @@
+\section{Exact finite certificate and claim boundary}
+\label{sec:tpc51-certificate}
+
+The proofs in this paper are analytic.  The accompanying certificate is
+a deterministic regression test for the finite algebra used in those
+proofs; it is not numerical evidence for the prime number theorem and
+does not test a twin-prime statistic.
+
+The standard-library Python program
+\begin{center}
+\texttt{experiments/tpc51\_certificate.py}
+\end{center}
+uses exact rational arithmetic and performs \(18{,}498\) assertions in
+six groups:
+\begin{enumerate}[label=\textup{(C\arabic*)},leftmargin=3.2em]
+ \item \(3{,}825\) explicit phase-kernel root identities;
+ \item \(1{,}260\) cofactor null-vector checks for rectangular
+       Vandermonde synthesis matrices;
+ \item \(1{,}930\) boundary-zero and near-duplicate conditioning checks;
+ \item \(1{,}008\) exact positive-definiteness and moment checks for
+       finite sampled monomial Grams;
+ \item \(10{,}471\) principal-minor checks for the sharp
+       dimension-times-deletion perturbation bound on finite Walsh
+       banks; and
+ \item four exact endpoint fraction identities.
+\end{enumerate}
+The normalized source hash is
+\begin{center}
+{\small\texttt{6c8fac5abc221e00bd885ac59159b08d3a644a39426ff23910a883172d86c78c}},
+\end{center}
+the semantic payload hash is
+\begin{center}
+{\small\texttt{c64511069ce4e590eec2ac973663446bb3a8f6e16f93543daaf5e2334979a332}},
+\end{center}
+and the certificate-core hash is
+\begin{center}
+{\small\texttt{c0be9331cddaec485b3ec560e0368cee89c30f0df3bf42b384c3dd427c09cfe8}}.
+\end{center}
+The committed output is
+\texttt{experiments/tpc51\_certificate\_output.txt}.  Re-running
+\begin{center}
+\texttt{python experiments/tpc51\_certificate.py
+        --output experiments/tpc51\_certificate\_output.txt}
+\end{center}
+must reproduce it byte for byte when the normalized source hash is
+unchanged.
+
+\subsection{What is certified}
+
+The finite checks catch sign errors in the differential phase kernel,
+failure of the cofactor null-vector identity, accidental singularity of
+the test Grams, an incorrect sparse-deletion constant, and arithmetic
+mistakes in the endpoint exponents.  Exact rationals avoid tolerance
+choices and platform-dependent linear algebra.
+
+\subsection{What is not certified}
+
+The certificate does not prove the analytic uniformity in
+\cref{thm:tpc51-row-equidistribution}; that theorem is proved from the
+fixed-modulus prime number theorem and the squarefree progression
+count.  It does not enumerate the full physical coefficient system,
+compute the nonlinear profile in \eqref{eq:tpc51-profile-envelope-reminder},
+or test cancellation in a coherent prime sum.  Most importantly, its
+finite Gram examples are consistency tests, not a data-driven
+substitute for the limiting-independence hypothesis of
+\cref{thm:tpc51-limit-gram}.
+
+Thus the computational and theorem claims have the same boundary as
+the rest of the paper: exact L0 algebra and the stated L1 row-sampling
+interface, with no L2 fixed-shift prime-pair conclusion.

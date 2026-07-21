@@ -1,0 +1,298 @@
+\section{Finite canonical families and quotient frames}
+\label{sec:tpc51-quotient-frames}
+
+A physical decomposition may contain several fixed shapes.  Exact
+duplicates should be removed algebraically, whereas nearly duplicate
+shapes must be charged through a condition number.  This section gives
+the finite-dimensional criterion that distinguishes the two cases.
+
+\subsection{The normalized sampled Gram}
+
+Let \(K\) be a compact metric space, let
+\(W_1,\ldots,W_R\in C(K)\) be nonzero fixed shapes, and choose positive
+normalization weights
+\begin{equation}
+ A_1,\ldots,A_R>0,
+ \qquad
+ D_A:=\diag(A_1,\ldots,A_R).
+ \label{eq:tpc51-family-normalizations}
+\end{equation}
+For the Mellin application, \(K\) may be a compact logarithmic box and
+\(A_r\) is the weighted Wiener--Mellin mass of the corresponding fixed
+physical shape.  The abstract argument below uses only positivity of
+the \(A_r\).
+
+Fix samples \(x_1,\ldots,x_N\in K\) and positive weights
+\(w_1,\ldots,w_N\).  Write
+\begin{equation}
+ M:=\sum_{n=1}^Nw_n
+ \label{eq:tpc51-total-sample-mass}
+\end{equation}
+and define the physical sampled synthesis \(F:\C^R\to\C^N\) by
+\begin{equation}
+ (Fc)_n
+ :=w_n^{1/2}\sum_{r=1}^Rc_rW_r(x_n).
+ \label{eq:tpc51-family-synthesis}
+\end{equation}
+The declared canonical family envelope is
+\begin{equation}
+ \cE_{\mathrm{fam}}(c)
+ :=M^{1/2}\sum_{r=1}^RA_r|c_r|
+ =M^{1/2}\|D_Ac\|_1.
+ \label{eq:tpc51-family-envelope}
+\end{equation}
+In the Mellin specialization this is exactly the envelope obtained by
+separating the fixed shapes, applying Mellin inversion to each one, and
+then using Minkowski's inequality.
+
+Introduce the normalized matrix and Gram matrix
+\begin{equation}
+ \mathsf B:=M^{-1/2}FD_A^{-1},
+ \qquad
+ G:=\mathsf B^*\mathsf B.
+ \label{eq:tpc51-normalized-Gram}
+\end{equation}
+Thus, with \(d=D_Ac\),
+\begin{equation}
+ \frac{\cE_{\mathrm{fam}}(c)}{\|Fc\|_2}
+ =\frac{\|d\|_1}{\|\mathsf Bd\|_2}.
+ \label{eq:tpc51-family-condition-reduction}
+\end{equation}
+
+If \(\ker\mathsf B\ne\{0\}\), the right side depends on the chosen
+representative of one physical output.  The canonical quotient norm is
+\begin{equation}
+ \|[d]\|_{1,\mathrm q}
+ :=\inf_{k\in\ker\mathsf B}\|d+k\|_1,
+ \label{eq:tpc51-quotient-l1}
+\end{equation}
+and the quotient frame condition number is
+\begin{equation}
+ K_{\mathrm q}(\mathsf B)
+ :=\sup_{\mathsf Bd\ne0}
+ \frac{\|[d]\|_{1,\mathrm q}}{\|\mathsf Bd\|_2}.
+ \label{eq:tpc51-quotient-condition}
+\end{equation}
+This removes exact algebraic redundancy; it does not remove a small
+positive singular value.
+
+\begin{theorem}[Exact normalized-Gram criterion]
+\label{thm:tpc51-quotient-Gram}
+\label{thm:tpc51-finite-gram-criterion}
+Assume \(\mathsf B\ne0\), and let \(\sigma_+(\mathsf B)\) be its
+smallest positive singular value.  If
+\(\lambda_+(G)=\sigma_+(\mathsf B)^2\) denotes the smallest positive
+eigenvalue of \(G\), then
+\begin{equation}
+ \boxed{
+ \frac1{\lambda_+(G)}
+ \le K_{\mathrm q}(\mathsf B)^2
+ \le\frac{R}{\lambda_+(G)}.}
+ \label{eq:tpc51-quotient-Gram-bounds}
+\end{equation}
+If \(G\) is positive definite, the quotient is trivial and
+\eqref{eq:tpc51-quotient-Gram-bounds} bounds the condition number of the
+displayed canonical family itself.
+\end{theorem}
+
+\begin{proof}
+Let \(V=(\ker\mathsf B)^\perp\).  Every output has a unique
+representative \(d_V\in V\), and
+\[
+ \|[d]\|_{1,\mathrm q}
+ \le\|d_V\|_1
+ \le\sqrt R\|d_V\|_2
+ \le\frac{\sqrt R}{\sigma_+(\mathsf B)}
+       \|\mathsf Bd\|_2.
+\]
+This proves the upper bound.  For the lower bound, take a unit right
+singular vector \(v\in V\) belonging to \(\sigma_+(\mathsf B)\).
+For every \(k\in\ker\mathsf B\), orthogonality gives
+\(\|v+k\|_2\ge1\), and hence \(\|v+k\|_1\ge1\).  Therefore
+\[
+ \|[v]\|_{1,\mathrm q}\ge1,
+ \qquad
+ \|\mathsf Bv\|_2=\sigma_+(\mathsf B),
+\]
+which proves the lower bound.
+\end{proof}
+
+\begin{corollary}[Subpower quotient criterion]
+\label{cor:tpc51-subpower-quotient}
+For a family depending on \(X\), the two hypotheses
+\begin{equation}
+ R_X=X^{o(1)},
+ \qquad
+ \lambda_+(G_X)^{-1}=X^{o(1)}
+ \label{eq:tpc51-subpower-Gram-hypotheses}
+\end{equation}
+imply
+\begin{equation}
+ K_{\mathrm q}(\mathsf B_X)^2=X^{o(1)}.
+ \label{eq:tpc51-subpower-quotient-conclusion}
+\end{equation}
+Conversely, if \(\lambda_+(G_X)\le X^{-\sigma+o(1)}\) for a fixed
+\(\sigma>0\), then
+\(K_{\mathrm q}(\mathsf B_X)^2\ge X^{\sigma+o(1)}\).
+\end{corollary}
+
+The quotient criterion is stronger than necessary for one specified
+physical coefficient.  For a fixed direction \(d_X\) with
+\(\mathsf B_Xd_X\ne0\), it suffices to bound the single ratio
+\begin{equation}
+ \frac{\|[d_X]\|_{1,\mathrm q}^2}
+      {d_X^*G_Xd_X};
+ \label{eq:tpc51-one-direction-Rayleigh}
+\end{equation}
+no estimate of the least eigenvalue on unrelated coefficient directions
+is then required.
+
+\subsection{Duplicate and nearly duplicate shapes}
+
+\begin{proposition}[Exact duplicate obstruction]
+\label{prop:tpc51-duplicate-shapes}
+If two shapes satisfy \(W_1(x_n)=W_2(x_n)\) at every sampled point,
+then the unquotiented physical synthesis \(F\) has the nonzero kernel
+direction \(c=e_1-e_2\).  Thus no lower bound for the displayed
+envelope \eqref{eq:tpc51-family-envelope} can hold on all
+representatives.  After quotienting by this direction, the duplicate
+contributes no physical dimension.
+\end{proposition}
+
+This is an intrinsic redundancy of the chosen finite family.  It is
+different from appending a null pair to a representation after the
+canonical family has been fixed.
+
+\begin{proposition}[Near-duplicate condition lower bound]
+\label{prop:tpc51-near-duplicate-shapes}
+For two shapes and the signed coefficient \(c=(1,-1)\),
+\begin{equation}
+ \frac{\cE_{\mathrm{fam}}(c)}{\|Fc\|_2}
+ =\frac{M^{1/2}(A_1+A_2)}
+ {\left(\sum_{n=1}^Nw_n
+       |W_1(x_n)-W_2(x_n)|^2\right)^{1/2}}.
+ \label{eq:tpc51-near-duplicate-exact}
+\end{equation}
+where the ratio is interpreted as \(+\infty\) if the denominator
+vanishes.  In that case \(c\) is an exact sampled-kernel direction, as
+in \cref{prop:tpc51-duplicate-shapes}.
+In particular, if
+\begin{equation}
+ \left(\frac1M\sum_{n=1}^Nw_n
+ |W_1(x_n)-W_2(x_n)|^2\right)^{1/2}
+ \le\varepsilon,
+ \label{eq:tpc51-near-duplicate-distance}
+\end{equation}
+then the unquotiented condition number in this direction is at least
+\((A_1+A_2)/\varepsilon\).
+\end{proposition}
+
+\begin{proof}
+Both assertions follow by evaluating
+\eqref{eq:tpc51-family-synthesis} and
+\eqref{eq:tpc51-family-envelope} at \(c=(1,-1)\).
+\end{proof}
+
+The lower bound can be polynomial even though both individual shapes
+are perfectly nondegenerate.  Here is a Mellin-specific example.
+Suppose \(K\) is contained in a fixed compact interval of
+\((0,\infty)\), \(W_1(x)=W(x)\), and
+\(W_2(x)=W(e^\delta x)\), where \(W\) is \(C^1\) on a fixed compact
+interval containing every \(x_n\) and \(e^\delta x_n\).  For
+\(|\delta|\le1\), the mean-value theorem in logarithmic coordinates
+gives
+\begin{equation}
+ |W(e^\delta x_n)-W(x_n)|
+ \le C_W|\delta|.
+ \label{eq:tpc51-dilation-near-duplicate}
+\end{equation}
+If \(A_1=A_2=A_B(W)\), as happens for the weighted Mellin masses of
+these two dilates, then
+\begin{equation}
+ \frac{\cE_{\mathrm{fam}}(1,-1)}
+      {\|F(1,-1)\|_2}
+ \gg_W |\delta|^{-1}.
+ \label{eq:tpc51-dilation-condition}
+\end{equation}
+A separation \(|\delta|=X^{-\sigma+o(1)}\) therefore creates a genuine
+polynomial loss.  A fixed dyadic separation gives only a fixed constant
+and is not, by itself, an asymptotic obstruction.
+
+\subsection{A positive limiting quotient theorem}
+
+The preceding condition is directly verifiable for a fixed physical
+family.  For each \(X\), let \(x_{n,X}\in K\) and \(w_{n,X}>0\), put
+\(M_X=\sum_{n=1}^{N_X}w_{n,X}\), and define the probability measure
+\begin{equation}
+ \mu_X:=\frac1{M_X}\sum_{n=1}^{N_X}w_{n,X}\delta_{x_{n,X}}.
+ \label{eq:tpc51-family-empirical-measure}
+\end{equation}
+Let \(F_X\), \(\mathsf B_X\), and \(G_X\) be the matrices defined
+above for this sampled set.
+
+\begin{theorem}[Positive limiting sampled frame]
+\label{thm:tpc51-limiting-frame}
+\label{thm:tpc51-limit-gram}
+Let \(K\) be a compact metric space and let \(R\) be fixed.  Suppose
+\(\mu_X\) converges weakly to a probability measure \(\mu\) on \(K\),
+and suppose \(W_1,\ldots,W_R\in C(K)\) are linearly independent in
+\(L^2(\mu)\).  Define
+\begin{equation}
+ (G_\infty)_{rs}
+ :=\frac1{A_rA_s}
+   \int_K\overline{W_r(x)}W_s(x)\,d\mu(x).
+ \label{eq:tpc51-limiting-Gram}
+\end{equation}
+Then \(G_\infty\) is positive definite and
+\begin{equation}
+ G_X\longrightarrow G_\infty
+ \quad\text{entrywise and in operator norm}.
+ \label{eq:tpc51-Gram-convergence}
+\end{equation}
+Consequently, for all sufficiently large \(X\),
+\begin{equation}
+ \lambda_{\min}(G_X)
+ \ge\frac12\lambda_{\min}(G_\infty)>0,
+ \qquad
+ K_{\mathrm q}(\mathsf B_X)^2
+ \le\frac{2R}{\lambda_{\min}(G_\infty)}.
+ \label{eq:tpc51-limiting-frame-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For \(u\in\C^R\),
+\[
+ u^*G_\infty u
+ =\int_K\left|
+   \sum_{r=1}^R\frac{u_r}{A_r}W_r(x)
+  \right|^2d\mu(x).
+\]
+Linear independence makes this positive for \(u\ne0\), so
+\(G_\infty\) is positive definite.  Each product
+\(\overline{W_r}W_s\) is continuous on \(K\); weak convergence gives
+entrywise convergence.  Since \(R\) is fixed, entrywise convergence
+implies operator-norm convergence.  Weyl's eigenvalue inequality then
+gives the first bound in \eqref{eq:tpc51-limiting-frame-bound}, and
+\cref{thm:tpc51-quotient-Gram} gives the second.
+\end{proof}
+
+If the original family is linearly dependent in \(L^2(\mu)\), one must
+first quotient by its fixed limiting relations, choose a basis of the
+resulting image, and apply the theorem to that reduced family.  Merely
+replacing \(\lambda_{\min}\) by the smallest positive eigenvalue of the
+unreduced finite-\(X\) Gram can be misleading: an exact limiting
+relation may appear at finite \(X\) as a small positive eigenvalue.
+
+Weak convergence alone is also insufficient when the number of shapes
+grows with \(X\).  A polylogarithmic Fourier bank requires a quantitative
+sampling theorem uniform over that bank.  The present theorem provides
+the fixed-family endpoint and the exact Gram criterion; any growing-bank
+application must verify the additional uniformity explicitly.
+
+Finally, the quotient frame concerns the canonical smooth-shape
+reassembly on its declared atomic coordinates.  It neither estimates a
+coherent prime sum inside one residual coordinate nor controls residual
+grouping, frozen-to-physical localization, or identification with the
+native affine Gram face.  In particular, it is not a closure theorem for
+the full TPC--48 Banach envelope.

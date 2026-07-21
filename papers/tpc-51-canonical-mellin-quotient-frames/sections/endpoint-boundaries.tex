@@ -1,0 +1,229 @@
+\section{Endpoint ledger, provenance labels, and open doors}
+\label{sec:tpc51-endpoint}
+
+We now place the abstract and arithmetic results at the inherited TPC
+endpoint.  This section is a scope ledger: every gain is attached to
+the operator on which it was actually proved.
+
+\subsection{Zero polynomial cost on the abstract sampled quotient face}
+
+The endpoint factorization inherited from TPC--50 is
+\begin{equation}
+ Q=X^{267/400+o(1)},
+ \qquad J=X^{133/400+o(1)},
+ \qquad QJ=X^{1+o(1)},
+ \label{eq:tpc51-endpoint-QJ}
+\end{equation}
+and
+\begin{equation}
+ L=X^{99979/210000+o(1)},
+ \qquad
+ D=X^{10049/52500+o(1)}.
+ \label{eq:tpc51-endpoint-LD}
+\end{equation}
+In particular the static-mask degree defect satisfies the upper bound
+\begin{equation}
+ \epsilon_X\ll X^{-\eta+o(1)},
+ \qquad
+ \eta:=\min\left\{\kappa_0,\frac{10049}{52500}\right\}>0.
+ \label{eq:tpc51-endpoint-epsilon}
+\end{equation}
+For every fixed \(A>0\) and \(K\leq(\log X)^A\),
+\begin{align}
+ \epsilon_XR_K
+ &\ll X^{-\eta+o(1)}=o(1),
+ \label{eq:tpc51-endpoint-mask-loss}\\
+ R_K(1+K)^{C_1}D^{-1/2+\delta}
+ &\leq X^{-10049/105000+\varepsilon+o(1)}
+ \label{eq:tpc51-endpoint-squarefree-loss}
+\end{align}
+for every fixed \(\varepsilon>0\), after choosing the corresponding
+sufficiently small \(\delta>0\).  Thus the limiting exponent before the
+arbitrarily small loss is \(10049/105000\); choosing
+\(0<\varepsilon<10049/105000\) gives a fixed power saving for this
+squarefree contribution alone.
+Here \(\epsilon_X\) is the mask degree defect, \(\delta\in(0,1/2)\)
+is the auxiliary exponent in the squarefree counting error, and
+\(\varepsilon\) is the final arbitrarily small exponent slack.  These
+three quantities are distinct; choosing \(\delta\) does not alter the
+definition of \(\eta\).  The prime progression error is
+smaller than every negative power of \(\log X\), even after multiplying
+by a fixed polylogarithm.  Hence the lower bound in
+\eqref{eq:tpc51-masked-lower-frame} remains a fixed positive constant.
+
+\begin{corollary}[Abstract endpoint sampled-frame stability]
+\label{cor:tpc51-endpoint-quotient-stability}
+Fix an admissible fixed-modulus prime--squarefree row cell.  Let
+\(\mathbf W=(W_1,\ldots,W_R)\) be a fixed finite scalar family on the
+log box, let \(\mathbf A=(A_1,\ldots,A_R)\) be fixed positive
+normalizations, and remove the exact limiting relations.  If the
+resulting limiting normalized Gram has
+\(\lambda_{\min}(G_\infty)=:\lambda_*>0\), then its sampled Gram and its
+literal-mask sampled Gram have condition number
+\begin{equation}
+ O_{q,H,\cA,\mathbf W,\mathbf A,\lambda_*}(1).
+ \label{eq:tpc51-abstract-fixed-endpoint-condition}
+\end{equation}
+Thus this fixed scalar-family problem has zero positive polynomial
+sampling-and-mask loss.  Separately, for every fixed \(A>0\), the
+retained log-Fourier bank with \(K\leq(\log X)^A\) has sampled
+Hilbert-Gram condition number
+\(O_{A,q,H,\cA}(1)\), while its displayed \(\ell^1\) quotient cost is at
+worst \(R_K=X^{o(1)}\).  In both statements the source-row label is
+retained.
+\end{corollary}
+
+\begin{proof}
+The fixed-family assertion is
+\cref{thm:tpc51-limit-gram,cor:tpc51-fixed-physical-family,cor:tpc51-masked-fixed-shapes};
+its constants necessarily retain the
+displayed family, normalization, and limiting-eigenvalue dependence.
+The growing-bank and literal-mask assertions follow from
+\cref{thm:tpc51-polylog-fourier-frame,thm:tpc51-masked-frame} together
+with \eqref{eq:tpc51-endpoint-mask-loss}--
+\eqref{eq:tpc51-endpoint-squarefree-loss}.
+\end{proof}
+
+The phrase ``zero polynomial loss'' does not mean zero constant loss,
+does not suppress the dependencies in
+\eqref{eq:tpc51-abstract-fixed-endpoint-condition}, and does not mean
+that an actual TPC provenance operator has been identified with this
+abstract family.  It says only that the declared sampled scalar family
+or retained finite bank consumes no positive exponent.
+
+\subsection{What the continuous no-go changes}
+
+The universal kernel in \cref{thm:tpc51-smooth-kernel} makes one
+possible future strategy inadmissible.  One may not introduce an
+arbitrary \(L^2\) or signed \(L^1\) Mellin coefficient density and then
+claim a lower frame merely because individual phases have unit modulus.
+The correct alternatives are:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.6em]
+ \item use the one provenance-fixed density and invert it exactly;
+ \item pass to the quotient by the exact synthesis kernel and specify a
+       quotient norm; or
+ \item retain a separated finite bank and prove its sampled Gram bound.
+\end{enumerate}
+The present paper proves each alternative only on its declared model
+domain.  It does not identify the actual orbit-translate provenance
+with the finite scalar family or retained bank; that step is exactly
+\cref{prop:tpc51-actual-bridge-criterion} and remains unverified.
+
+The boundary obstruction also has two distinct meanings.  A uniform
+coordinatewise diagonal bound fails when an allowed coordinate
+approaches a zero, and then subdivision or energy selection is needed.
+An aggregate fixed-family sampled Gram can nevertheless remain stable
+when a shape has isolated zeros, provided its limiting
+\(L^2(e^{x+y}dxdy)\) quotient classes remain independent.  Thus a
+coordinatewise near kernel is not by itself an aggregate Gram
+degeneracy, and weighted Mellin mass alone proves neither conclusion.
+
+\subsection{Provenance and claim ledger}
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.24\textwidth}
+                >{\raggedright\arraybackslash}p{0.20\textwidth}
+                >{\raggedright\arraybackslash}p{0.45\textwidth}}
+\toprule
+Object & Status & Exact meaning \\
+\midrule
+Continuous Mellin lower frame
+& Disproved
+& False for arbitrary signed smooth densities at every finite \(X\);
+  the synthesis has a nonzero smooth kernel. \\
+Canonical fixed density
+& Exact
+& Mellin inversion reconstructs the physical shape at the sampled
+  rows; no inter-layer orthogonality is assumed. \\
+Fixed finite scalar-shape quotient
+& Proved on its abstract domain
+& After exact redundancies are removed, limiting \(L^2\)-independence
+  gives an \(O(1)\) sampled Gram condition number, with constants
+  depending on the family and its limiting Gram. \\
+Prime--squarefree log bank
+& Proved
+& Fixed modulus, nondegenerate interior block, degree
+  \(K\leq(\log X)^A\), with standard PNT and squarefree counts. \\
+Literal static-mask transfer
+& Proved for the declared families
+& One-sided row deletion costs \(O(\epsilon_XR_K)\); the source row is
+  not coherently collapsed. \\
+Actual orbit-translate provenance bridge
+& Open
+& Requires the uniform vector-valued Gram or relative-tail and
+  weighted-envelope comparison in
+  \cref{prop:tpc51-actual-bridge-criterion}; these are not verified. \\
+Full TPC--48 profile comparison
+& Open
+& Its outer \(L^1(d|\nu|)\) occurs after a nonlinear layer norm and
+  includes a coherent prime sum. \\
+Fixed-shift prime pair / twins
+& Not reached
+& No parity-breaking estimate or \(L^2\) target correlation is asserted. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Why the full TPC--48 envelope does not follow}
+
+For a fixed representation, the inherited profile has the schematic
+form
+\begin{equation}
+ \mathfrak S_{\mathscr R}(\alpha)
+ =\int C_{\rm LS}(\phi_\omega,H_0)^{1/2}
+ \left(\sum_m\|B_{\omega,m}(\alpha)\|^2\right)^{1/2}
+ d|\nu|(\omega),
+ \label{eq:tpc51-profile-envelope-reminder}
+\end{equation}
+where, inside the Hilbert norm, the prime variable has already been
+summed coherently.  The abstract frames proved here act on declared
+opposite-row log families while retaining the other row and arithmetic
+labels.  Before they can even be placed into the actual provenance
+operator, \cref{prop:tpc51-actual-bridge-criterion} must be verified.
+After that bridge, three further noncommutations would still prevent
+\eqref{eq:tpc51-profile-envelope-reminder} from being replaced by the
+physical atomic energy:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em]
+ \item the outer total-variation integral is applied after the square
+       root of a layer energy;
+ \item \(C_{\rm LS}\) is a profile seminorm weight, not the norm of a
+       canonical Mellin coefficient; and
+ \item the coherent prime and residual maps need not intertwine with
+       the opposite-row quotient projection.
+\end{enumerate}
+Minkowski proves an upper envelope in this order; the quotient theorem
+does not reverse Minkowski.
+
+\subsection{The next mathematical doors}
+
+The remaining interfaces, in dependency order, are:
+\begin{enumerate}[label=\textup{D\arabic*:},leftmargin=3.4em]
+ \item \textbf{Actual-provenance bridge.}  For the genuine
+ \(X\)-dependent Hilbert-valued orbit-translate family, verify a uniform
+ normalized Gram or a uniform relative Fourier-tail estimate, and prove
+ the weighted continuous-envelope comparison
+ \eqref{eq:tpc51-actual-envelope-bridge}.  This is not a consequence of
+ the fixed scalar-family theorem.
+ \item \textbf{Coherent-prime square.}  At fixed source and cofactor,
+ prove a square estimate for
+ \(\sum_p A(p,r,m)\e(-pr\alpha)v_{p,r,m}\) that is stable under the
+ canonical quotient projection, or give a sharp obstruction.
+ \item \textbf{Residual grouping.}  Control the map grouping
+ \(s=d(m)r\), including its maximal fiber multiplicity and any usable
+ cancellation within a fiber.
+ \item \textbf{Physical-shift localization.}  Compare the frozen
+ completed family with the single physical intercept \(h_0\).
+ \item \textbf{Native-Gram identification.}  Relate the residual
+ low-sign Gram to the native affine physical Gram without discarding
+ cross terms.
+ \item \textbf{Parity-sensitive input.}  Only after the preceding
+ Hilbert interfaces close would a genuinely new number-theoretic input
+ be able to address a fixed-shift prime-pair lower bound.
+\end{enumerate}
+
+Failure at any one door would be informative: it would identify an
+explicit operator or near-kernel rather than an unspecified appeal to
+the parity barrier.  The abstract positive and translate-obstruction
+results localize the first remaining door more sharply; they do not
+assert that this actual-provenance door is already open.
