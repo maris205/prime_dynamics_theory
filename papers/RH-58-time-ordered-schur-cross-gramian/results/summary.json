@@ -1,0 +1,113 @@
+{
+  "arb": {
+    "path_majorant_certified": true,
+    "precision_bits": 256,
+    "primal_dual_identity_certified": true,
+    "production_interval_schur_executed": false,
+    "recursion_certified": true,
+    "status": "arb_two_block_time_ordered_schur_cross_stein_audit"
+  },
+  "limitations": [
+    "The ordered Schur forms and all Lyapunov solves are binary64 diagnostics, not interval enclosures.",
+    "The unitary Schur basis is noise-dependent and no continuum regularity of its packet subspaces is proved.",
+    "The scalar path majorant is a sufficient norm ledger; its growth does not imply growth of the exact Hardy energy.",
+    "The dense audit uses N*sigma=5.12, below the RH-50 production resolution N*sigma=20.48.",
+    "Five levels do not prove a dyadically uniform packet Gram budget; Stage A1 and Stage A4 remain open."
+  ],
+  "pilot": {
+    "fits": {
+      "left_exact": {
+        "growth_exponent": 0.16771551715962102,
+        "levels": 5,
+        "log_intercept": -0.3268655038387696,
+        "maximum_log_residual": 0.08145972663771049,
+        "sigma_power": -0.16771551715962102
+      },
+      "left_scalar_path_upper": {
+        "growth_exponent": 2.5437637321907496,
+        "levels": 5,
+        "log_intercept": -4.679983743643509,
+        "maximum_log_residual": 0.5268484094115422,
+        "sigma_power": -2.5437637321907496
+      },
+      "left_source_packet_upper": {
+        "growth_exponent": 0.17951707447270177,
+        "levels": 5,
+        "log_intercept": -0.34455215002427564,
+        "maximum_log_residual": 0.07686305877125034,
+        "sigma_power": -0.17951707447270177
+      },
+      "left_state_block_upper": {
+        "growth_exponent": 0.16745952751264204,
+        "levels": 5,
+        "log_intercept": -0.3257860644781768,
+        "maximum_log_residual": 0.08109699761355306,
+        "sigma_power": -0.16745952751264204
+      },
+      "right_exact": {
+        "growth_exponent": 0.19929753896486815,
+        "levels": 5,
+        "log_intercept": -0.3036026667980371,
+        "maximum_log_residual": 0.058983698926380904,
+        "sigma_power": -0.19929753896486815
+      },
+      "right_scalar_path_upper": {
+        "growth_exponent": 1.9586918585081166,
+        "levels": 5,
+        "log_intercept": -3.3326573600422402,
+        "maximum_log_residual": 0.31756529759661034,
+        "sigma_power": -1.9586918585081166
+      },
+      "right_source_packet_upper": {
+        "growth_exponent": 0.22306430551928583,
+        "levels": 5,
+        "log_intercept": -0.3481664733268064,
+        "maximum_log_residual": 0.05381742944611918,
+        "sigma_power": -0.22306430551928583
+      },
+      "right_state_block_upper": {
+        "growth_exponent": 0.1985240650285969,
+        "levels": 5,
+        "log_intercept": -0.3000287344721804,
+        "maximum_log_residual": 0.05772273524748992,
+        "sigma_power": -0.1985240650285969
+      }
+    },
+    "rows": 5,
+    "status": "binary64_unitary_schur_packet_and_absolute_path_audit"
+  },
+  "program_boundary": {
+    "arithmetic_trace_formula": false,
+    "dyadically_uniform_packet_budget": false,
+    "hilbert_polya_operator": false,
+    "production_interval_schur": false,
+    "stage_A1_closed": false,
+    "stage_A4_unconditional_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "44afaea00dae1223e41468d540f2c339a36702ca25a34759d1f8ac082bf05d20",
+    "figures/time_ordered_schur_fusion.pdf": "d9bb8ebfcfe5f8167a5120550c130e07436d128ff92d0063322e6a74c37cf47d",
+    "figures/time_ordered_schur_fusion.png": "e1deb5e16211bd97682c8894bbd1fc707e73b1138ed13a10ce5e21c7ae923691",
+    "main.pdf": "621696ac27fa84492975ddfd4c3bc7214457ce73307d531a74ed771bed061474",
+    "main.tex": "7325769e64ccfa9c1ccd90e37f1e2e6d59a1e67eca97347bbe4d361a3dca7ca6",
+    "pyproject.toml": "e4463e7111f3b81514d1fc5f80e7e25b50f6d3c17a4810537773e42a37745969",
+    "references.bib": "d0f53f9ab46e487abf6b435118db6ea47ce73456fc1d96b9c7e0ff1e6430a623",
+    "requirements.txt": "2036d2c43433a02ca90a5c6fb64014ed2e362a41a3021029cc29897bc9cdca2f",
+    "time-ordered-schur-cross-gramian.pdf": "621696ac27fa84492975ddfd4c3bc7214457ce73307d531a74ed771bed061474"
+  },
+  "result_hashes": {
+    "results/arb_schur_audit.json": "d01c57bc936ba1216cbbccc9256dd1d74726f594a772bcb07771122967369f33",
+    "results/dependency_manifest.json": "d6553468f8baba2e380bf4d11e3807cf66925f2fc4547b795cbb5262e169865e",
+    "results/schur_fusion_pilot.json": "46826dd7f27a7797b6b1d0dc89dd2f6f479dc71790a87db1e9f8b9669789f096",
+    "results/schur_fusion_pilot_smoke.json": "b65feed1be4714bcf98eb436e4cdc796cad422994dc19efd07acc528f89b4899"
+  },
+  "status": "rh58_time_ordered_schur_packet_and_absolute_path_route_audit",
+  "theorem": {
+    "block_power_stein_gain": true,
+    "dual_positive_packet_identities": true,
+    "requires_diagonalizability": false,
+    "reverse_cross_stein_recursion": true,
+    "scalar_absolute_path_majorant": true
+  }
+}

@@ -1,0 +1,949 @@
+{
+  "block_horizon": 8,
+  "evidence_level": "deterministic all-column dense binary64 controllability, observability, ordered Schur, and block-power audit; not interval validated",
+  "fine_resolution": 5.12,
+  "fits": {
+    "left_exact": {
+      "growth_exponent": 0.36297953102447966,
+      "levels": 2,
+      "log_intercept": -0.7661624428223134,
+      "maximum_log_residual": 2.914335439641036e-16,
+      "sigma_power": -0.36297953102447966
+    },
+    "left_scalar_path_upper": {
+      "growth_exponent": 1.4718145618730207,
+      "levels": 2,
+      "log_intercept": -2.2331143503902005,
+      "maximum_log_residual": 6.661338147750939e-16,
+      "sigma_power": -1.4718145618730207
+    },
+    "left_source_packet_upper": {
+      "growth_exponent": 0.37913847285418967,
+      "levels": 2,
+      "log_intercept": -0.7872376832369579,
+      "maximum_log_residual": 2.636779683484747e-16,
+      "sigma_power": -0.37913847285418967
+    },
+    "left_state_block_upper": {
+      "growth_exponent": 0.36169391563047526,
+      "levels": 2,
+      "log_intercept": -0.7628334013789664,
+      "maximum_log_residual": 2.636779683484747e-16,
+      "sigma_power": -0.36169391563047526
+    },
+    "right_exact": {
+      "growth_exponent": 0.33564528146121814,
+      "levels": 2,
+      "log_intercept": -0.612454711247157,
+      "maximum_log_residual": 2.671474153004283e-16,
+      "sigma_power": -0.33564528146121814
+    },
+    "right_scalar_path_upper": {
+      "growth_exponent": 1.2233118950415558,
+      "levels": 2,
+      "log_intercept": -1.6674483725849008,
+      "maximum_log_residual": 6.661338147750939e-16,
+      "sigma_power": -1.2233118950415558
+    },
+    "right_source_packet_upper": {
+      "growth_exponent": 0.358099240199356,
+      "levels": 2,
+      "log_intercept": -0.6494464210260863,
+      "maximum_log_residual": 2.645453300864631e-16,
+      "sigma_power": -0.358099240199356
+    },
+    "right_state_block_upper": {
+      "growth_exponent": 0.33108439197962536,
+      "levels": 2,
+      "log_intercept": -0.6006790677185408,
+      "maximum_log_residual": 1.8735013540549517e-16,
+      "sigma_power": -0.33108439197962536
+    }
+  },
+  "hardy_radius": 0.85,
+  "limitations": [
+    "The ordered Schur forms and all Lyapunov solves are binary64 diagnostics, not interval enclosures.",
+    "The unitary Schur basis is noise-dependent and no continuum regularity of its packet subspaces is proved.",
+    "The scalar path majorant is a sufficient norm ledger; its growth does not imply growth of the exact Hardy energy.",
+    "The dense audit uses N*sigma=5.12, below the RH-50 production resolution N*sigma=20.48.",
+    "Five levels do not prove a dyadically uniform packet Gram budget; Stage A1 and Stage A4 remain open."
+  ],
+  "radial_cuts": [
+    0.15,
+    0.35,
+    0.55
+  ],
+  "radial_names": [
+    "central",
+    "inner_cloud",
+    "middle_cloud",
+    "edge_cloud"
+  ],
+  "rows": [
+    {
+      "coarse_biorthogonality_defect": 2.4046420171289115e-16,
+      "coarse_bulk_radius_candidate": 0.22528348977031018,
+      "coarse_dimension": 16,
+      "elapsed_seconds": 0.01356286194641143,
+      "fine_biorthogonality_defect": 2.7755575615628914e-16,
+      "fine_bulk_radius_candidate": 0.22555252096240946,
+      "fine_dimension": 32,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "blocks": [
+          {
+            "diagonal_block_norm": 0.45388011338743967,
+            "diagonal_block_spectral_radius": 0.131373019755889,
+            "diagonal_stein_gain_upper": 1.2094827382520268,
+            "dimension": 31,
+            "horizon_power_norm": 2.458669305635861e-07,
+            "maximum_physical_modulus": 0.11166706679250564,
+            "minimum_physical_modulus": 4.543888759767146e-18,
+            "name": "central",
+            "observation_packet_norm": 3.874559944944307,
+            "source_packet_hardy_energy": 0.827756327049018,
+            "source_packet_norm": 0.7973575229824366,
+            "state_block_hardy_energy": 0.8625621258742517
+          },
+          {
+            "diagonal_block_norm": 0.26535590701459894,
+            "diagonal_block_spectral_radius": 0.26535590701459894,
+            "diagonal_stein_gain_upper": 1.0757474176787012,
+            "dimension": 1,
+            "horizon_power_norm": 2.4582728136495437e-05,
+            "maximum_physical_modulus": 0.22555252096240908,
+            "minimum_physical_modulus": 0.22555252096240908,
+            "name": "inner_cloud",
+            "observation_packet_norm": 0.9938738516699005,
+            "source_packet_hardy_energy": 0.3207604989460804,
+            "source_packet_norm": 0.2586075057670969,
+            "state_block_hardy_energy": 0.26657998942171013
+          }
+        ],
+        "cross_stein_recursion": {
+          "maximum_empirical_gain": 1.0779866605291948,
+          "maximum_residual_norm": 6.299715617973466e-16,
+          "rows": [
+            {
+              "empirical_gain": 1.0779866605291948,
+              "feed_forward_norm": 0.07543982634344343,
+              "gramian_norm": 0.47976350279763175,
+              "left_block": 0,
+              "residual_norm": 6.299715617973466e-16,
+              "right_block": 0,
+              "right_hand_side_norm": 0.4450551387733415,
+              "source_norm": 0.3941313701589922
+            },
+            {
+              "empirical_gain": 1.0234624416760074,
+              "feed_forward_norm": 0.011728766311483533,
+              "gramian_norm": 0.15543107854252133,
+              "left_block": 0,
+              "residual_norm": 2.2699816821890277e-16,
+              "right_block": 1,
+              "right_hand_side_norm": 0.1518678870990025,
+              "source_norm": 0.14067703181872543
+            },
+            {
+              "empirical_gain": 1.0234624416760074,
+              "feed_forward_norm": 0.011728766311483535,
+              "gramian_norm": 0.15543107854252133,
+              "left_block": 1,
+              "residual_norm": 2.1491681789171835e-16,
+              "right_block": 0,
+              "right_hand_side_norm": 0.1518678870990025,
+              "source_norm": 0.14067703181872543
+            },
+            {
+              "empirical_gain": 1.0757474176787012,
+              "feed_forward_norm": 0.0,
+              "gramian_norm": 0.07194366587346339,
+              "left_block": 1,
+              "residual_norm": 6.450300312019621e-18,
+              "right_block": 1,
+              "right_hand_side_norm": 0.06687784203907907,
+              "source_norm": 0.06687784203907907
+            }
+          ]
+        },
+        "exact_hardy_energy": 0.9039575455799415,
+        "inherited_rh57_radial_riesz": {
+          "coherence_upper": 1.918835868968498,
+          "maximum_projector_norm": 4.214615284923048,
+          "signed_fusion_ratio": 0.36357604508220576
+        },
+        "primal_dual_energy_squared_relative_defect": 8.152023287271685e-16,
+        "scalar_path_majorant": {
+          "energy_upper": 1.5905911407520734,
+          "energy_upper_over_exact": 1.7595861094689094,
+          "horizon": 8,
+          "maximum_block_stein_gain": 1.2094827382520268,
+          "maximum_gramian_norm_upper": 0.625162992839778,
+          "maximum_terminal_power_norm": 2.4582728136495437e-05
+        },
+        "schur_partition": {
+          "maximum_off_diagonal_block_norm": 0.6143714279247607,
+          "minimum_radial_cut_gap": 0.038332933207494355,
+          "off_diagonal_block_frobenius_norm": 0.6143714279247607,
+          "reconstruction_defect": 2.9553042150965536e-15,
+          "strict_lower_defect": 0.0,
+          "unitary_defect": 3.541947264963056e-15
+        },
+        "source_packet_gram": {
+          "absolute_packet_upper": 1.1485168259950984,
+          "coherence_constant": 1.0547460392523125,
+          "coherence_upper": 0.9117079725785346,
+          "exact_reconstructed_energy": 0.9039575455799402,
+          "minimum_gram_eigenvalue": 0.1025246707448818,
+          "normalized_gram_imag": [
+            [
+              0.0,
+              -8.023793179572354e-17
+            ],
+            [
+              8.023793179572354e-17,
+              0.0
+            ]
+          ],
+          "normalized_gram_real": [
+            [
+              1.0,
+              0.05474603925231244
+            ],
+            [
+              0.05474603925231244,
+              0.9999999999999999
+            ]
+          ],
+          "signed_fusion_ratio": 1.0368894761069154,
+          "square_sum_energy": 0.8877318483944457
+        },
+        "source_reconstruction_relative_defect": 1.3509985430833172e-15,
+        "state_block_gram": {
+          "absolute_packet_upper": 1.129142115295962,
+          "coherence_constant": 1.0044814219004337,
+          "coherence_upper": 0.9048375663894846,
+          "exact_reconstructed_energy": 0.9039575455799399,
+          "minimum_gram_eigenvalue": 0.0710633128412462,
+          "normalized_gram_imag": [
+            [
+              0.0,
+              -1.0773302339024941e-16
+            ],
+            [
+              1.0773302339024941e-16,
+              0.0
+            ]
+          ],
+          "normalized_gram_real": [
+            [
+              1.0,
+              0.004481421900433877
+            ],
+            [
+              0.004481421900433877,
+              0.9999999999999998
+            ]
+          ],
+          "signed_fusion_ratio": 1.0025285085229292,
+          "square_sum_energy": 0.9028168760899342
+        },
+        "state_reconstruction_relative_defect": 1.7194526911969492e-15
+      },
+      "right": {
+        "blocks": [
+          {
+            "diagonal_block_norm": 0.43105597000981444,
+            "diagonal_block_spectral_radius": 0.12793164016997063,
+            "diagonal_stein_gain_upper": 1.2041006517806854,
+            "dimension": 15,
+            "horizon_power_norm": 5.30072869336955e-07,
+            "maximum_physical_modulus": 0.10874189414447503,
+            "minimum_physical_modulus": 4.717474545550685e-16,
+            "name": "central",
+            "observation_packet_norm": 3.631448501771198,
+            "source_packet_hardy_energy": 0.9066865062526194,
+            "source_packet_norm": 0.9433413024133706,
+            "state_block_hardy_energy": 0.9427951613923186
+          },
+          {
+            "diagonal_block_norm": 0.2650393997297769,
+            "diagonal_block_spectral_radius": 0.2650393997297769,
+            "diagonal_stein_gain_upper": 1.0755531835305987,
+            "dimension": 1,
+            "horizon_power_norm": 2.4349133687722598e-05,
+            "maximum_physical_modulus": 0.22528348977031037,
+            "minimum_physical_modulus": 0.22528348977031037,
+            "name": "inner_cloud",
+            "observation_packet_norm": 1.0030161424838497,
+            "source_packet_hardy_energy": 0.39948128058588933,
+            "source_packet_norm": 0.3318240304152877,
+            "state_block_hardy_energy": 0.34516893431324913
+          }
+        ],
+        "cross_stein_recursion": {
+          "maximum_empirical_gain": 1.0755531835305987,
+          "maximum_residual_norm": 1.303355801179988e-15,
+          "rows": [
+            {
+              "empirical_gain": 1.0530015073161163,
+              "feed_forward_norm": 0.0671812283563806,
+              "gramian_norm": 0.6323994511703306,
+              "left_block": 0,
+              "residual_norm": 1.303355801179988e-15,
+              "right_block": 0,
+              "right_hand_side_norm": 0.6005684196807908,
+              "source_norm": 0.5671609678794133
+            },
+            {
+              "empirical_gain": 1.0381202934682183,
+              "feed_forward_norm": 0.016555505144863945,
+              "gramian_norm": 0.17313728822292831,
+              "left_block": 0,
+              "residual_norm": 4.655134013816269e-16,
+              "right_block": 1,
+              "right_hand_side_norm": 0.16677960089239777,
+              "source_norm": 0.15313198623173052
+            },
+            {
+              "empirical_gain": 1.0381202934682183,
+              "feed_forward_norm": 0.016555505144863942,
+              "gramian_norm": 0.17313728822292834,
+              "left_block": 1,
+              "residual_norm": 4.890308953300633e-16,
+              "right_block": 0,
+              "right_hand_side_norm": 0.1667796008923978,
+              "source_norm": 0.15313198623173052
+            },
+            {
+              "empirical_gain": 1.0755531835305987,
+              "feed_forward_norm": 0.0,
+              "gramian_norm": 0.11842613568066243,
+              "left_block": 1,
+              "residual_norm": 1.5265566588595902e-16,
+              "right_block": 1,
+              "right_hand_side_norm": 0.11010718716104594,
+              "source_norm": 0.11010718716104578
+            }
+          ]
+        },
+        "exact_hardy_energy": 1.0026461047246997,
+        "inherited_rh57_radial_riesz": {
+          "coherence_upper": 2.397748918188161,
+          "maximum_projector_norm": 4.031657723685847,
+          "signed_fusion_ratio": 0.2987696824753032
+        },
+        "primal_dual_energy_squared_relative_defect": 4.417482922990912e-16,
+        "scalar_path_majorant": {
+          "energy_upper": 1.7760118745197204,
+          "energy_upper_over_exact": 1.7713247636935334,
+          "horizon": 8,
+          "maximum_block_stein_gain": 1.2041006517806854,
+          "maximum_gramian_norm_upper": 0.827014343693373,
+          "maximum_terminal_power_norm": 2.4349133687722598e-05
+        },
+        "schur_partition": {
+          "maximum_off_diagonal_block_norm": 0.5274538164854823,
+          "minimum_radial_cut_gap": 0.04125810585552496,
+          "off_diagonal_block_frobenius_norm": 0.5274538164854823,
+          "reconstruction_defect": 1.8904513801723858e-15,
+          "strict_lower_defect": 0.0,
+          "unitary_defect": 2.606827581221666e-15
+        },
+        "source_packet_gram": {
+          "absolute_packet_upper": 1.3061677868385086,
+          "coherence_constant": 1.0326245409487464,
+          "coherence_upper": 1.006822778570632,
+          "exact_reconstructed_energy": 1.0026461047247004,
+          "minimum_gram_eigenvalue": 0.15937458836557922,
+          "normalized_gram_imag": [
+            [
+              0.0,
+              2.273436990629198e-17
+            ],
+            [
+              -2.273436990629198e-17,
+              0.0
+            ]
+          ],
+          "normalized_gram_real": [
+            [
+              1.0000000000000002,
+              0.03262454094874647
+            ],
+            [
+              0.03262454094874647,
+              1.0
+            ]
+          ],
+          "signed_fusion_ratio": 1.0240748931327766,
+          "square_sum_energy": 0.9907904491662822
+        },
+        "source_reconstruction_relative_defect": 6.64375806813708e-16,
+        "state_block_gram": {
+          "absolute_packet_upper": 1.2879640957055676,
+          "coherence_constant": 1.0041562723641975,
+          "coherence_upper": 1.0060784512226304,
+          "exact_reconstructed_energy": 1.0026461047247002,
+          "minimum_gram_eigenvalue": 0.11913921653146933,
+          "normalized_gram_imag": [
+            [
+              0.0,
+              3.344981886245541e-17
+            ],
+            [
+              -3.344981886245541e-17,
+              0.0
+            ]
+          ],
+          "normalized_gram_real": [
+            [
+              1.0,
+              -0.004156272364197485
+            ],
+            [
+              -0.004156272364197485,
+              1.0
+            ]
+          ],
+          "signed_fusion_ratio": 0.9973163822669777,
+          "square_sum_energy": 1.0039941780507056
+        },
+        "state_reconstruction_relative_defect": 4.42917204542472e-16
+      },
+      "sigma": 0.16
+    },
+    {
+      "coarse_biorthogonality_defect": 2.851276512145167e-16,
+      "coarse_bulk_radius_candidate": 0.45742922365381317,
+      "coarse_dimension": 32,
+      "elapsed_seconds": 0.03150237805675715,
+      "fine_biorthogonality_defect": 1.6800724925411246e-15,
+      "fine_bulk_radius_candidate": 0.462166347102164,
+      "fine_dimension": 64,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "blocks": [
+          {
+            "diagonal_block_norm": 0.6080107087698913,
+            "diagonal_block_spectral_radius": 0.11634610231553841,
+            "diagonal_stein_gain_upper": 1.3860694558587152,
+            "dimension": 61,
+            "horizon_power_norm": 3.136731909277112e-07,
+            "maximum_physical_modulus": 0.09889418696820765,
+            "minimum_physical_modulus": 2.1927312705403276e-18,
+            "name": "central",
+            "observation_packet_norm": 5.387209676043146,
+            "source_packet_hardy_energy": 0.7812162342902561,
+            "source_packet_norm": 0.7450841369673217,
+            "state_block_hardy_energy": 0.8603661954989843
+          },
+          {
+            "diagonal_block_norm": 0.28511041026379275,
+            "diagonal_block_spectral_radius": 0.28511041026379275,
+            "diagonal_stein_gain_upper": 1.0884803303608306,
+            "dimension": 1,
+            "horizon_power_norm": 4.366209801974917e-05,
+            "maximum_physical_modulus": 0.24234384872422382,
+            "minimum_physical_modulus": 0.24234384872422382,
+            "name": "inner_cloud",
+            "observation_packet_norm": 0.9938420481508446,
+            "source_packet_hardy_energy": 0.35628267209837533,
+            "source_packet_norm": 0.2891280907762443,
+            "state_block_hardy_energy": 0.5238999090798646
+          },
+          {
+            "diagonal_block_norm": 1.0379368560871216,
+            "diagonal_block_spectral_radius": 0.5437251142378404,
+            "diagonal_stein_gain_upper": 2.2787887059057583,
+            "dimension": 2,
+            "horizon_power_norm": 0.008015381709444998,
+            "maximum_physical_modulus": 0.46216634710216437,
+            "minimum_physical_modulus": 0.46216634710216425,
+            "name": "middle_cloud",
+            "observation_packet_norm": 1.4107621662330065,
+            "source_packet_hardy_energy": 0.7879745181484307,
+            "source_packet_norm": 0.5202580918223603,
+            "state_block_hardy_energy": 0.5767119975908975
+          }
+        ],
+        "cross_stein_recursion": {
+          "maximum_empirical_gain": 1.158470462446639,
+          "maximum_residual_norm": 8.325069751613348e-16,
+          "rows": [
+            {
+              "empirical_gain": 1.119838868208705,
+              "feed_forward_norm": 0.10745252702558206,
+              "gramian_norm": 0.36978639955288417,
+              "left_block": 0,
+              "residual_norm": 8.325069751613348e-16,
+              "right_block": 0,
+              "right_hand_side_norm": 0.3302139352819524,
+              "source_norm": 0.25585018472762994
+            },
+            {
+              "empirical_gain": 1.010398495807356,
+              "feed_forward_norm": 0.07079275354411838,
+              "gramian_norm": 0.07304873980176323,
+              "left_block": 0,
+              "residual_norm": 5.004115808001553e-16,
+              "right_block": 1,
+              "right_hand_side_norm": 0.07229696016460697,
+              "source_norm": 0.018626180921065338
+            },
+            {
+              "empirical_gain": 1.0133250342193987,
+              "feed_forward_norm": 0.05631271849763987,
+              "gramian_norm": 0.12398880413896744,
+              "left_block": 0,
+              "residual_norm": 4.899960259876822e-16,
+              "right_block": 2,
+              "right_hand_side_norm": 0.12235837461025578,
+              "source_norm": 0.07300401452027566
+            },
+            {
+              "empirical_gain": 1.0103984958073562,
+              "feed_forward_norm": 0.07079275354411838,
+              "gramian_norm": 0.07304873980176321,
+              "left_block": 1,
+              "residual_norm": 4.9354319644681305e-16,
+              "right_block": 0,
+              "right_hand_side_norm": 0.07229696016460695,
+              "source_norm": 0.018626180921065338
+            },
+            {
+              "empirical_gain": 1.0884803303608306,
+              "feed_forward_norm": 0.17169936935342384,
+              "gramian_norm": 0.27788295704746946,
+              "left_block": 1,
+              "residual_norm": 5.679158859411559e-17,
+              "right_block": 1,
+              "right_hand_side_norm": 0.25529442222934007,
+              "source_norm": 0.08359505287591616
+            },
+            {
+              "empirical_gain": 1.0381327267247837,
+              "feed_forward_norm": 0.06936422195906937,
+              "gramian_norm": 0.0993372598391417,
+              "left_block": 1,
+              "residual_norm": 1.3321275794084256e-16,
+              "right_block": 2,
+              "right_hand_side_norm": 0.0956884002227171,
+              "source_norm": 0.03195147595261464
+            },
+            {
+              "empirical_gain": 1.0133250342193987,
+              "feed_forward_norm": 0.05631271849763986,
+              "gramian_norm": 0.12398880413896744,
+              "left_block": 2,
+              "residual_norm": 5.004782330005686e-16,
+              "right_block": 0,
+              "right_hand_side_norm": 0.12235837461025578,
+              "source_norm": 0.07300401452027566
+            },
+            {
+              "empirical_gain": 1.0381327267247837,
+              "feed_forward_norm": 0.06936422195906938,
+              "gramian_norm": 0.09933725983914164,
+              "left_block": 2,
+              "residual_norm": 1.420064811451453e-16,
+              "right_block": 1,
+              "right_hand_side_norm": 0.09568840022271705,
+              "source_norm": 0.03195147595261464
+            },
+            {
+              "empirical_gain": 1.158470462446639,
+              "feed_forward_norm": 0.0,
+              "gramian_norm": 0.29985280126795405,
+              "left_block": 2,
+              "residual_norm": 5.903928906452037e-16,
+              "right_block": 2,
+              "right_hand_side_norm": 0.258835085561593,
+              "source_norm": 0.2588350855615924
+            }
+          ]
+        },
+        "exact_hardy_energy": 1.1625610299508318,
+        "inherited_rh57_radial_riesz": {
+          "coherence_upper": 2.987136992084676,
+          "maximum_projector_norm": 13.298726413135533,
+          "signed_fusion_ratio": 0.2641212320896151
+        },
+        "primal_dual_energy_squared_relative_defect": 2.4643362339078682e-15,
+        "scalar_path_majorant": {
+          "energy_upper": 4.411831227688564,
+          "energy_upper_over_exact": 3.7949244074310267,
+          "horizon": 8,
+          "maximum_block_stein_gain": 2.2787887059057583,
+          "maximum_gramian_norm_upper": 3.191537162893379,
+          "maximum_terminal_power_norm": 0.008015381709444998
+        },
+        "schur_partition": {
+          "maximum_off_diagonal_block_norm": 0.8263060869881637,
+          "minimum_radial_cut_gap": 0.051105813031792346,
+          "off_diagonal_block_frobenius_norm": 1.0542932926549364,
+          "reconstruction_defect": 4.02457564991874e-15,
+          "strict_lower_defect": 0.0,
+          "unitary_defect": 5.9948616938314606e-15
+        },
+        "source_packet_gram": {
+          "absolute_packet_upper": 1.9254734245370622,
+          "coherence_constant": 1.0352162349464424,
+          "coherence_upper": 1.1857354533492594,
+          "exact_reconstructed_energy": 1.162561029950831,
+          "minimum_gram_eigenvalue": 0.12673640719924262,
+          "normalized_gram_imag": [
+            [
+              0.0,
+              1.2855803223505482e-17,
+              7.514905572522637e-18
+            ],
+            [
+              -1.2855803223505482e-17,
+              0.0,
+              3.3629186713198026e-16
+            ],
+            [
+              -7.514905572522637e-18,
+              -3.3629186713198026e-16,
+              0.0
+            ]
+          ],
+          "normalized_gram_real": [
+            [
+              1.0,
+              0.0051220441524636486,
+              0.008321844794368614
+            ],
+            [
+              0.0051220441524636486,
+              1.0,
+              -0.03506535670870753
+            ],
+            [
+              0.008321844794368614,
+              -0.03506535670870753,
+              0.9999999999999998
+            ]
+          ],
+          "signed_fusion_ratio": 0.9951464207641434,
+          "square_sum_energy": 1.1653926327240351
+        },
+        "source_reconstruction_relative_defect": 5.72988254047417e-16,
+        "state_block_gram": {
+          "absolute_packet_upper": 1.9609781021697463,
+          "coherence_constant": 1.0033190780167984,
+          "coherence_upper": 1.162656277614761,
+          "exact_reconstructed_energy": 1.1625610299508327,
+          "minimum_gram_eigenvalue": 0.27446369974123175,
+          "normalized_gram_imag": [
+            [
+              0.0,
+              2.4824687386266283e-17,
+              -1.7702586914723827e-17
+            ],
+            [
+              -2.4824687386266283e-17,
+              0.0,
+              4.1153261268294337e-17
+            ],
+            [
+              1.7702586914723827e-17,
+              -4.1153261268294337e-17,
+              0.0
+            ]
+          ],
+          "normalized_gram_real": [
+            [
+              1.0,
+              0.003150748219663682,
+              0.0022672915195253696
+            ],
+            [
+              0.003150748219663682,
+              0.9999999999999998,
+              -0.0013901583009058905
+            ],
+            [
+              0.0022672915195253696,
+              -0.0013901583009058905,
+              0.9999999999999999
+            ]
+          ],
+          "signed_fusion_ratio": 1.0031546960136475,
+          "square_sum_energy": 1.1607315939770788
+        },
+        "state_reconstruction_relative_defect": 7.639843387298893e-16
+      },
+      "right": {
+        "blocks": [
+          {
+            "diagonal_block_norm": 0.9549711975291052,
+            "diagonal_block_spectral_radius": 0.1166384950003819,
+            "diagonal_stein_gain_upper": 2.0132181427864464,
+            "dimension": 29,
+            "horizon_power_norm": 7.728464710914557e-07,
+            "maximum_physical_modulus": 0.09914272075032461,
+            "minimum_physical_modulus": 1.488796841897166e-17,
+            "name": "central",
+            "observation_packet_norm": 5.229242838814194,
+            "source_packet_hardy_energy": 0.911522626091203,
+            "source_packet_norm": 0.8194013337917528,
+            "state_block_hardy_energy": 1.0676093939967315
+          },
+          {
+            "diagonal_block_norm": 0.2789875872372255,
+            "diagonal_block_spectral_radius": 0.2789875872372255,
+            "diagonal_stein_gain_upper": 1.084403545635134,
+            "dimension": 1,
+            "horizon_power_norm": 3.670109720644884e-05,
+            "maximum_physical_modulus": 0.23713944915164167,
+            "minimum_physical_modulus": 0.23713944915164167,
+            "name": "inner_cloud",
+            "observation_packet_norm": 1.0008682175196704,
+            "source_packet_hardy_energy": 0.35014609952685505,
+            "source_packet_norm": 0.25277295607807737,
+            "state_block_hardy_energy": 0.3217017791833582
+          },
+          {
+            "diagonal_block_norm": 0.6686143342520089,
+            "diagonal_block_spectral_radius": 0.5381520278280156,
+            "diagonal_stein_gain_upper": 1.5802175586124307,
+            "dimension": 2,
+            "horizon_power_norm": 0.007133132482049767,
+            "maximum_physical_modulus": 0.4574292236538133,
+            "minimum_physical_modulus": 0.45742922365381317,
+            "name": "middle_cloud",
+            "observation_packet_norm": 1.4160360597490664,
+            "source_packet_hardy_energy": 0.753222221814782,
+            "source_packet_norm": 0.5144776835352994,
+            "state_block_hardy_energy": 0.5962917600856398
+          }
+        ],
+        "cross_stein_recursion": {
+          "maximum_empirical_gain": 1.3218490162616447,
+          "maximum_residual_norm": 2.356138351315619e-15,
+          "rows": [
+            {
+              "empirical_gain": 1.3218490162616447,
+              "feed_forward_norm": 0.16179391178935137,
+              "gramian_norm": 0.5680430035545107,
+              "left_block": 0,
+              "residual_norm": 2.356138351315619e-15,
+              "right_block": 0,
+              "right_hand_side_norm": 0.42973365079243897,
+              "source_norm": 0.34470570083804003
+            },
+            {
+              "empirical_gain": 0.976953816649122,
+              "feed_forward_norm": 0.05940961676829476,
+              "gramian_norm": 0.07467782641316018,
+              "left_block": 0,
+              "residual_norm": 6.065659932086266e-16,
+              "right_block": 1,
+              "right_hand_side_norm": 0.07643946432319544,
+              "source_norm": 0.05470644508179234
+            },
+            {
+              "empirical_gain": 1.1192916270682014,
+              "feed_forward_norm": 0.06827297507555664,
+              "gramian_norm": 0.12119043159854927,
+              "left_block": 0,
+              "residual_norm": 7.290260122926481e-16,
+              "right_block": 2,
+              "right_hand_side_norm": 0.10827422332818436,
+              "source_norm": 0.0817980515494501
+            },
+            {
+              "empirical_gain": 0.976953816649122,
+              "feed_forward_norm": 0.05940961676829475,
+              "gramian_norm": 0.07467782641316019,
+              "left_block": 1,
+              "residual_norm": 6.260970519579324e-16,
+              "right_block": 0,
+              "right_hand_side_norm": 0.07643946432319546,
+              "source_norm": 0.05470644508179234
+            },
+            {
+              "empirical_gain": 1.084403545635134,
+              "feed_forward_norm": 0.0313771564525307,
+              "gramian_norm": 0.10331256130111048,
+              "left_block": 1,
+              "residual_norm": 1.666276574077383e-16,
+              "right_block": 1,
+              "right_hand_side_norm": 0.09527132377698048,
+              "source_norm": 0.06389416732444962
+            },
+            {
+              "empirical_gain": 0.958352406838478,
+              "feed_forward_norm": 0.0363933694778849,
+              "gramian_norm": 0.07160252430924914,
+              "left_block": 1,
+              "residual_norm": 5.53482819768685e-17,
+              "right_block": 2,
+              "right_hand_side_norm": 0.07471419051939328,
+              "source_norm": 0.049104008052714206
+            },
+            {
+              "empirical_gain": 1.119291627068201,
+              "feed_forward_norm": 0.06827297507555664,
+              "gramian_norm": 0.12119043159854927,
+              "left_block": 2,
+              "residual_norm": 7.594342884648311e-16,
+              "right_block": 0,
+              "right_hand_side_norm": 0.1082742233281844,
+              "source_norm": 0.08179805154945011
+            },
+            {
+              "empirical_gain": 0.958352406838478,
+              "feed_forward_norm": 0.03639336947788491,
+              "gramian_norm": 0.07160252430924913,
+              "left_block": 2,
+              "residual_norm": 5.597004042492165e-17,
+              "right_block": 1,
+              "right_hand_side_norm": 0.07471419051939326,
+              "source_norm": 0.049104008052714206
+            },
+            {
+              "empirical_gain": 1.2243754243439,
+              "feed_forward_norm": 0.0,
+              "gramian_norm": 0.27961382876017954,
+              "left_block": 2,
+              "residual_norm": 6.207173266997572e-16,
+              "right_block": 2,
+              "right_hand_side_norm": 0.2283726242790399,
+              "source_norm": 0.2283726242790393
+            }
+          ]
+        },
+        "exact_hardy_energy": 1.265280947576503,
+        "inherited_rh57_radial_riesz": {
+          "coherence_upper": 5.898389431781697,
+          "maximum_projector_norm": 13.551736204167074,
+          "signed_fusion_ratio": 0.08666861449207926
+        },
+        "primal_dual_energy_squared_relative_defect": 1.1095740096134083e-15,
+        "scalar_path_majorant": {
+          "energy_upper": 4.146669664714579,
+          "energy_upper_over_exact": 3.2772718759869397,
+          "horizon": 8,
+          "maximum_block_stein_gain": 2.0132181427864464,
+          "maximum_gramian_norm_upper": 3.127370025143704,
+          "maximum_terminal_power_norm": 0.007133132482049767
+        },
+        "schur_partition": {
+          "maximum_off_diagonal_block_norm": 0.6261016221279028,
+          "minimum_radial_cut_gap": 0.05085727924967538,
+          "off_diagonal_block_frobenius_norm": 0.9407474199997284,
+          "reconstruction_defect": 3.0086141641232472e-15,
+          "strict_lower_defect": 0.0,
+          "unitary_defect": 4.2605367084912446e-15
+        },
+        "source_packet_gram": {
+          "absolute_packet_upper": 2.01489094743284,
+          "coherence_constant": 1.0950289899387002,
+          "coherence_upper": 1.2904810907955273,
+          "exact_reconstructed_energy": 1.2652809475765037,
+          "minimum_gram_eigenvalue": 0.12133005395458635,
+          "normalized_gram_imag": [
+            [
+              0.0,
+              -1.0576928297475674e-17,
+              3.032445364118056e-18
+            ],
+            [
+              1.0576928297475674e-17,
+              0.0,
+              2.2062463392107527e-17
+            ],
+            [
+              -3.032445364118056e-18,
+              -2.2062463392107527e-17,
+              0.0
+            ]
+          ],
+          "normalized_gram_real": [
+            [
+              1.0,
+              0.01929194063203245,
+              0.015291032934990663
+            ],
+            [
+              0.01929194063203245,
+              0.9999999999999998,
+              0.08873338234375576
+            ],
+            [
+              0.015291032934990663,
+              0.08873338234375576,
+              1.0000000000000002
+            ]
+          ],
+          "signed_fusion_ratio": 1.0526797373038348,
+          "square_sum_energy": 1.2332151086998855
+        },
+        "source_reconstruction_relative_defect": 5.264710703587176e-16,
+        "state_block_gram": {
+          "absolute_packet_upper": 1.9856029332657292,
+          "coherence_constant": 1.0018202428020546,
+          "coherence_upper": 1.2656049950249202,
+          "exact_reconstructed_energy": 1.265280947576504,
+          "minimum_gram_eigenvalue": 0.10349197780250369,
+          "normalized_gram_imag": [
+            [
+              0.0,
+              -2.4668207158992685e-17,
+              -1.0764097689717245e-17
+            ],
+            [
+              2.4668207158992685e-17,
+              0.0,
+              3.146033749451556e-17
+            ],
+            [
+              1.0764097689717245e-17,
+              -3.146033749451556e-17,
+              0.0
+            ]
+          ],
+          "normalized_gram_real": [
+            [
+              0.9999999999999998,
+              0.00013356708566869319,
+              0.0017542873366614214
+            ],
+            [
+              0.00013356708566869319,
+              1.0,
+              -0.0006129694103773929
+            ],
+            [
+              0.0017542873366614214,
+              -0.0006129694103773929,
+              1.0
+            ]
+          ],
+          "signed_fusion_ratio": 1.00130729328872,
+          "square_sum_energy": 1.2644547109429567
+        },
+        "state_reconstruction_relative_defect": 7.019614271449567e-16
+      },
+      "sigma": 0.08
+    }
+  ],
+  "sources": {
+    "folded_gaussian": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh57_manuscript": {
+      "path": "papers/RH-57-mixed-haar-channel-overlap-budget/main.tex",
+      "sha256": "d919a3de481ec63f6a1be74f2f9923877cb8c2a0b57a6c6b120a313dd06adc30"
+    },
+    "rh57_pilot": {
+      "path": "papers/RH-57-mixed-haar-channel-overlap-budget/results/mixed_overlap_pilot.json",
+      "sha256": "72f002046a5eebf7e92896a9f4bd9ac18210924c260e0e3f4f6cbcbf2720caee"
+    }
+  },
+  "status": "binary64_unitary_schur_packet_and_absolute_path_audit"
+}

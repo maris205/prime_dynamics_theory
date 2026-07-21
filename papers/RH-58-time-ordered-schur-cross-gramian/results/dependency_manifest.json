@@ -1,0 +1,45 @@
+{
+  "external_inputs": {
+    "rh14_operator": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh50_manuscript": {
+      "path": "papers/RH-50-two-pole-hilbert-schmidt-hardy/main.tex",
+      "sha256": "106c3a96f2b38f07543c70e0859665ae9ba427386d79f57168e85c49558b9f74"
+    },
+    "rh57_manuscript": {
+      "path": "papers/RH-57-mixed-haar-channel-overlap-budget/main.tex",
+      "sha256": "d919a3de481ec63f6a1be74f2f9923877cb8c2a0b57a6c6b120a313dd06adc30"
+    },
+    "rh57_pilot": {
+      "path": "papers/RH-57-mixed-haar-channel-overlap-budget/results/mixed_overlap_pilot.json",
+      "sha256": "72f002046a5eebf7e92896a9f4bd9ac18210924c260e0e3f4f6cbcbf2720caee"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "664e30228f1bae3c1f2dcc941e297ef9b8ea6ef9f6e9301b641e10cc3427611d",
+    "experiments/make_figures.py": "4eee4cf065823f0ad0a3a668663a3d542e5e879a3d06424d16ed8216b39da19a",
+    "experiments/run_arb_schur_audit.py": "f43ce5dfbb627e2f6e0da9274de61452add26c3f2ae72495daf0a6e2719680e3",
+    "experiments/run_schur_fusion_pilot.py": "20cf7a546983679b27553bfae85591bec900452729c9ec3ee3f611a753e68e72",
+    "experiments/verify_archive.py": "60ec186cb2aee519099086dfb8a513e17844c038665fc578eb1608301f36ad58",
+    "src/schur_fusion/__init__.py": "3abcb299bff2eeebd08ff9ddf4153584bd371297785ca257f8f73d95e2524d3f",
+    "src/schur_fusion/algebra.py": "cc67a0e6b7be5c939e72bbb25020ccd012327c8f4ae66f00b3b8ed6a1cb1ea12",
+    "tests/test_archived_results.py": "ccea20c2041e297c6c868027e1ecb62d732d7b8a72d3a7b955f6f5e7e3618c1e",
+    "tests/test_smoke_pilot.py": "bbed698cfdfeffa0dbb3c24521c54770115f5d441708bf6c161fbc904c275f8d",
+    "tests/test_theory.py": "5c5ef2cd39b19c082b1acc38fd0f91dccc0525915be1fbe09cd993f8a0c6dde9"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "44afaea00dae1223e41468d540f2c339a36702ca25a34759d1f8ac082bf05d20",
+    "figures/time_ordered_schur_fusion.pdf": "d9bb8ebfcfe5f8167a5120550c130e07436d128ff92d0063322e6a74c37cf47d",
+    "figures/time_ordered_schur_fusion.png": "e1deb5e16211bd97682c8894bbd1fc707e73b1138ed13a10ce5e21c7ae923691",
+    "main.pdf": "621696ac27fa84492975ddfd4c3bc7214457ce73307d531a74ed771bed061474",
+    "main.tex": "7325769e64ccfa9c1ccd90e37f1e2e6d59a1e67eca97347bbe4d361a3dca7ca6",
+    "pyproject.toml": "e4463e7111f3b81514d1fc5f80e7e25b50f6d3c17a4810537773e42a37745969",
+    "references.bib": "d0f53f9ab46e487abf6b435118db6ea47ce73456fc1d96b9c7e0ff1e6430a623",
+    "requirements.txt": "2036d2c43433a02ca90a5c6fb64014ed2e362a41a3021029cc29897bc9cdca2f",
+    "time-ordered-schur-cross-gramian.pdf": "621696ac27fa84492975ddfd4c3bc7214457ce73307d531a74ed771bed061474"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}
