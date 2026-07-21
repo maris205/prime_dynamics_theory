@@ -1,0 +1,387 @@
+\section{The canonical pre-mask cell interface}
+\label{sec:tpc50-canonical-interface}
+
+The weighted-survival parameter of TPC--49 is attached to a weighted
+two-row mask.  It is therefore essential to define it before the static
+mask is expanded into signed rank-one layers.  This section fixes that
+order of operations, records the nondegeneracy inherited from the
+physical packet, and states the exact transfer theorem available for one
+specified cell.  In particular, a terminal projective parameter
+\(\omega\) from TPC--47/48 is not declared to be a physical cell.
+
+\subsection{The physical coefficient before projective expansion}
+
+Fix the physical shift \(h_0\ne0\) and one source-compatible dyadic
+packet.  Write \(\mathcal A_1\) and \(\mathcal A_2\) for the two row
+systems.  A row is
+\begin{equation}
+ \rho=(\ell_\rho,d_\rho),
+ \qquad m_\rho=\ell_\rho d_\rho\asymp Q,
+ \label{eq:tpc50-physical-row}
+\end{equation}
+where \(\ell_\rho\) is prime, \(d_\rho\) is squarefree, and the inherited
+separation makes \(m_\rho\) determine \(\rho\).  The literal static mask
+on \(\mathcal A_1\times\mathcal A_2\) is
+\begin{equation}
+ K_{\alpha\gamma}
+ :=\mathfrak m_{\rm act}(\alpha,\gamma)
+ =\mathbf 1_{\ell_\alpha\ne\ell_\gamma}
+  \mathbf 1_{|m_\alpha-m_\gamma|>\Delta}
+  \mathbf 1_{(d_\alpha,d_\gamma)\le G},
+ \label{eq:tpc50-literal-static-mask}
+\end{equation}
+with \(\Delta=QX^{-\kappa_0}\) and \(G=X^{\kappa_0}\).  The joint
+multiplier is
+\begin{equation}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ =K_{\alpha\gamma}\,
+  \Xi_{\alpha,\gamma}(j)
+  \mathcal W_{\alpha,\gamma}(j/J).
+ \label{eq:tpc50-joint-multiplier}
+\end{equation}
+Here \(\Xi\) is fixed-period in the orbit variable and \(\mathcal W\)
+contains the inherited smooth factors.  The physical source coefficient
+on the left has the form
+\begin{equation}
+ \gamma_\alpha^{(1)}
+ =\mu(d_\alpha)(\log\ell_\alpha)
+  \omega_D^{(1)}(d_\alpha)
+  \psi_L^{(1)}(\ell_\alpha/L)\zeta_\alpha^{(1)},
+ \label{eq:tpc50-left-source-weight}
+\end{equation}
+and the right coefficient \(\gamma_\gamma^{(2)}\) has the symmetric
+form.  The inherited estimates are upper bounds only:
+\begin{equation}
+ \sum_{\rho\in\mathcal A_s}|\gamma_\rho^{(s)}|
+ \ll QX^{o(1)},
+ \qquad
+ \sum_{\rho\in\mathcal A_s}|\gamma_\rho^{(s)}|^2
+ \ll QX^{o(1)},
+ \qquad s=1,2.
+ \label{eq:tpc50-inherited-row-upper-bounds}
+\end{equation}
+No lower row count, lower \(\ell^2\)-mass, or pointwise lower bound is
+part of this interface \citep{WangTPC36,WangTPC45,WangTPC47,WangTPC48}.
+
+After large-prime descent, the literal left residual vector at \(h_0\)
+is
+\begin{equation}
+ \mathcal F_{h_0}^{\rm act,L}
+ =\sum_{\substack{\gamma,j,m,p,r\\pr-mj=h_0}}
+ \gamma_m^{(1)}\mathfrak A_{m,\gamma}^{\rm act}(j)
+ \mu(r)\Lambda(pr)e_{\gamma,d(m)r}\otimes e_j.
+ \label{eq:tpc50-physical-residual-vector}
+\end{equation}
+Thus the two axes relevant to static-mask survival are the source row
+\(m\) and the opposite row \(\gamma\).  The terminal factor, the
+M\"obius phase, and the residual basis label are downstream data; they
+are not additional entries of the row mask.
+
+\subsection{Provenance-canonical residue/Mellin cells}
+
+We now fix one representation rather than taking an infimum over all
+algebraically equivalent ones.  First split the physical orbit into the
+actual residue classes \(a\pmod {H_0}\).  On each class, apply the
+specific finite Fourier and Mellin inversions supplied by the inherited
+provenance construction, with their original normalizations and
+cutoffs.  No zero pair, algebraic refactorization, or static-mask
+Fourier expansion is inserted at this stage.  We call the resulting
+specified decomposition the \emph{provenance-canonical pre-mask
+cellization} and denote it by \(\mathscr C\).
+
+Concretely, \(\mathscr C\) is the exact identity
+\begin{align}
+ &\gamma_\alpha^{(1)}
+  \Xi_{\alpha,\gamma}(j)
+  \mathcal W_{\alpha,\gamma}(j/J)
+ \notag\\
+ &\quad={}
+ \sum_{a\bmod H_0}
+ \mathbf 1_{j\equiv a\!\!\pmod {H_0}}
+ \int_{\Theta_a}
+ u_{a,\tau}^{L}(\alpha)v_{a,\tau}(\gamma)
+ \phi_{a,\tau}(j/J)\,d\lambda_a(\tau).
+ \label{eq:tpc50-canonical-pre-mask-cellization}
+\end{align}
+The source coefficient in \eqref{eq:tpc50-left-source-weight} is
+absorbed into \(u_{a,\tau}^{L}\).  Equivalently, one may first separate
+\(\Xi\mathcal W\) and then put
+\(u_{a,\tau}^{L}(\alpha)=
+\gamma_\alpha^{(1)}u_{a,\tau}(\alpha)\).  The right-side cellization is
+obtained by absorbing \(\gamma_\gamma^{(2)}\) into the summation-row
+factor on the right.
+
+There is one fixed compact set \(I_0\subset\mathbb R\), independent of
+\(X,a,\tau\), such that
+\begin{equation}
+ \phi_{a,\tau}\in C_c^\infty(I_0).
+ \label{eq:tpc50-common-profile-support}
+\end{equation}
+The common cutoff used to obtain this support equals one throughout the
+physical normalized orbit range.  Hence it does not alter a physical
+coefficient.  For every fixed integer \(B\ge0\),
+\begin{equation}
+ \sum_{a\bmod H_0}\int_{\Theta_a}
+ \|u_{a,\tau}^{L}\|_\infty
+ \|v_{a,\tau}\|_\infty
+ \|\phi_{a,\tau}\|_{C^B}
+ \,d|\lambda_a|(\tau)
+ \ll_{B,h_0}X^{o(1)}.
+ \label{eq:tpc50-canonical-seminorm-mass}
+\end{equation}
+This is an upper projective-seminorm estimate.  It contains no lower
+bound for either unary factor.  Identity
+\eqref{eq:tpc50-canonical-pre-mask-cellization} is precisely the point
+at which ``cell'' is defined in this paper: a cell is
+\(c=(a,\tau)\) before \(K\) is decomposed.
+
+\begin{definition}[Literal pre-mask cell tensor]
+\label{def:tpc50-literal-cell}
+For \(c=(a,\tau)\), put
+\begin{equation}
+ T_c^L(\alpha,\gamma)
+ :=u_c^L(\alpha)K_{\alpha\gamma}v_c(\gamma).
+ \label{eq:tpc50-literal-cell-tensor}
+\end{equation}
+The cell is called active when \(T_c^L\ne0\).  Define its nonnegative
+unary weights by
+\begin{equation}
+ a_c^L(\alpha):=|u_c^L(\alpha)|,
+ \qquad b_c(\gamma):=|v_c(\gamma)|.
+ \label{eq:tpc50-cell-unary-weights}
+\end{equation}
+The right tensor and weights are defined symmetrically.
+\end{definition}
+
+Unary complex phases are harmless: diagonal unitary multiplication
+does not change Frobenius, nuclear, or projective-envelope norms.  A
+genuine common nonzero scalar multiplies both numerator and denominator
+below and therefore cancels.  A source-dependent terminal or Mellin
+modulus is instead absorbed into the weight \(a_c^L\), while its unit
+phase still leaves survival unchanged.
+
+\subsection{The exact weighted-survival parameter}
+
+\begin{definition}[Physical row-mask survival of a cell]
+\label{def:tpc50-cell-survival}
+For an active left cell define
+\begin{equation}
+ \boxed{
+ \delta_c^L
+ :=\frac{\displaystyle
+  \sum_{\alpha\in\mathcal A_1}
+  \sum_{\gamma\in\mathcal A_2}
+  a_c^L(\alpha)^2K_{\alpha\gamma}b_c(\gamma)^2}
+ {\displaystyle
+  \left(\sum_{\alpha\in\mathcal A_1}a_c^L(\alpha)^2\right)
+  \left(\sum_{\gamma\in\mathcal A_2}b_c(\gamma)^2\right)}.}
+ \label{eq:tpc50-exact-cell-survival}
+\end{equation}
+Define \(\delta_c^R\) by exchanging the two row systems.
+\end{definition}
+
+Equivalently,
+\begin{equation}
+ \delta_c^L
+ =\frac{\|T_c^L\|_{S_2}^2}
+ {\|a_c^L\|_2^2\|b_c\|_2^2}.
+ \label{eq:tpc50-cell-survival-Frobenius}
+\end{equation}
+Because \(K\) is a zero--one mask, an active cell satisfies only the
+qualitative inherited nondegeneracy
+\begin{equation}
+ 0<\delta_c^L\le1.
+ \label{eq:tpc50-qualitative-cell-nondegeneracy}
+\end{equation}
+There is no inherited lower bound by a power of \(X\).  In particular,
+neither \eqref{eq:tpc50-inherited-row-upper-bounds} nor
+\eqref{eq:tpc50-canonical-seminorm-mass} implies
+\(\delta_c^L\ge X^{-1/400+o(1)}\).
+
+The failure is already visible on a complete finite mask.  If one row
+has a forbidden neighbor \(\gamma_0\) and an admitted neighbor
+\(\gamma_1\), take \(a=e_\alpha\) and
+\begin{equation}
+ b=(1-\eta)^{1/2}e_{\gamma_0}
+   +\eta^{1/2}e_{\gamma_1},
+ \qquad 0<\eta<1.
+ \label{eq:tpc50-concentrated-weight-model}
+\end{equation}
+Then \(\delta_w(K;a,b)=\eta\).  This is not asserted to be a physical
+TPC cell.  It proves that upper norms, mask support, and bounded
+projective complexity alone logically imply no quantitative survival.
+
+\subsection{Why a terminal \texorpdfstring{\(\omega\)}{omega}-layer has no physical
+survival parameter}
+
+The order in \eqref{eq:tpc50-canonical-pre-mask-cellization} is forced
+by the meaning of \(\delta_c\).  After the pre-mask cell is fixed,
+TPC--36 expands
+\begin{equation}
+ K_{\alpha\gamma}
+ =\int_{\Omega_{36}}p_\eta(\alpha)q_\eta(\gamma)
+ \,d\nu_{36}(\eta).
+ \label{eq:tpc50-specified-mask-representation}
+\end{equation}
+The final parameter used in TPC--47/48 combines \(c\), \(\eta\), and
+the terminal Mellin variables into one symbol \(\omega\).  An
+individual such layer contains the rank-one factor
+\begin{equation}
+ u_c^L(\alpha)p_\eta(\alpha),
+ v_c(\gamma)q_\eta(\gamma),
+ \label{eq:tpc50-terminal-rank-one-layer}
+\end{equation}
+not the weighted masked tensor \(D_{a_c}KD_{b_c}\).  The literal mask is
+recovered only after the complete signed \(\eta\)-integral is taken.
+
+Consequently, assigning
+\(\delta_w(K;|u_cp_\eta|,|v_cq_\eta|)\) to a final \(\omega\)-layer
+would multiply by \(K\) a second time and measure a tensor different
+from the layer being reassembled.  There are three further obstructions:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item the signed projective representation is not unique;
+ \item a cancelling null pair may be appended without changing the
+       physical coefficient while changing every layerwise statistic;
+ \item the TPC--48 layer also contains a profile seminorm, a coherent
+       prime sum, and a residual Hilbert vector, so it is not a
+       canonical two-axis matrix of the form \(D_aKD_b\).
+\end{enumerate}
+Thus no representation-independent ``physical \(\delta_\omega\)'' is
+defined.  The pointwise infimum in TPC--48 may remove inefficient
+representations at the level of the full envelope, but it does not turn
+their individual layers into physical atoms.  Every survival assertion
+below is therefore made for the fixed pre-mask cellization
+\(\mathscr C\) and the specified mask representation
+\(\mathscr R_{36}\), never for all exact signed representations.
+
+\subsection{Specified \texorpdfstring{\(\mathscr R_{36}\)}{R36} transfer}
+
+Let \(\mathscr R_{36}\) be the explicit representation
+\eqref{eq:tpc50-specified-mask-representation} furnished by
+same-source orthogonality, signed Ferrers separation, and global gcd
+compression.  Its declared bounded-projective cost is
+\begin{equation}
+ P_{36}(K)
+ :=\int_{\Omega_{36}}
+ \|p_\eta\|_\infty\|q_\eta\|_\infty
+ \,d|\nu_{36}|(\eta)
+ \ll \log(2Q)(3+2\sqrt2)^{\omega_*}
+ =X^{o(1)}.
+ \label{eq:tpc50-R36-cost}
+\end{equation}
+For an active left cell define
+\begin{equation}
+ \mathcal E_{36,c}^L
+ :=\int_{\Omega_{36}}
+ \|D_{a_c^L}p_\eta\|_2
+ \|D_{b_c}\overline{q_\eta}\|_2
+ \,d|\nu_{36}|(\eta).
+ \label{eq:tpc50-R36-cell-envelope}
+\end{equation}
+
+\begin{theorem}[Canonical-cell projective-to-atomic transfer]
+\label{thm:tpc50-canonical-cell-transfer}
+Every active pre-mask cell satisfies
+\begin{align}
+ \|T_c^L\|_{S_1}
+ &\le \mathcal E_{36,c}^L
+ \le P_{36}(K)\|a_c^L\|_2\|b_c\|_2,
+ \label{eq:tpc50-cell-nuclear-transfer}\\
+ \boxed{
+ \frac{(\mathcal E_{36,c}^L)^2}
+      {\|T_c^L\|_{S_2}^2}
+ \le\frac{P_{36}(K)^2}{\delta_c^L}.}
+ \label{eq:tpc50-cell-energy-transfer}
+\end{align}
+The same formulas hold on the right.
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:tpc50-specified-mask-representation} into
+\eqref{eq:tpc50-literal-cell-tensor}.  After removing unary phases this
+is an exact Hilbert rank-one representation of
+\(D_{a_c^L}KD_{b_c}\).  The triangle inequality for the nuclear norm
+gives the first inequality in
+\eqref{eq:tpc50-cell-nuclear-transfer}, while
+\begin{equation}
+ \|D_{a_c^L}p_\eta\|_2
+ \|D_{b_c}\overline{q_\eta}\|_2
+ \le
+ \|a_c^L\|_2\|b_c\|_2
+ \|p_\eta\|_\infty\|q_\eta\|_\infty
+ \label{eq:tpc50-layer-supremum-transfer}
+\end{equation}
+gives the second.  Divide its square by
+\eqref{eq:tpc50-cell-survival-Frobenius}.
+\end{proof}
+
+In particular, if a new arithmetic theorem proves
+\begin{equation}
+ \delta_c^L\ge X^{-\theta+o(1)},
+ \label{eq:tpc50-cell-survival-target}
+\end{equation}
+then the specified cell representation loses at most
+\begin{equation}
+ \frac{(\mathcal E_{36,c}^L)^2}
+      {\|T_c^L\|_{S_2}^2}
+ \le X^{\theta+o(1)}.
+ \label{eq:tpc50-cell-distortion-consequence}
+\end{equation}
+If the entire isolated coefficient-face allowance is assigned here,
+\(\theta\le1/400\) is sufficient.  This allocation is not a ledger for
+the complete TPC argument.
+
+For comparison, on the complete-universe extension with \(N\) rows,
+TPC--49 proves minimum degree \((1-\epsilon_X)N\), where
+\begin{equation}
+ \epsilon_X\ll
+ L^{-1+o(1)}+D^{-1+o(1)}+X^{-\kappa_0+o(1)}.
+ \label{eq:tpc50-complete-mask-defect}
+\end{equation}
+Writing
+\begin{equation}
+ \operatorname{Flat}(b):=
+ \frac{N\|b\|_\infty^2}{\|b\|_2^2},
+ \label{eq:tpc50-opposite-flatness}
+\end{equation}
+one then has the conditional bound
+\begin{equation}
+ \delta_w(K;a,b)
+ \ge1-\epsilon_X\operatorname{Flat}(b).
+ \label{eq:tpc50-degree-flatness-bound}
+\end{equation}
+Hence \(\epsilon_X\operatorname{Flat}(b_c)=o(1)\) would imply
+\(\delta_c=1-o(1)\).  The compressed TPC--45/48 upper-only interface
+does not identify its active row support with that complete universe
+and does not itself contain such a flatness estimate.  In
+\cref{prop:tpc50-direct-provenance-identification}, we therefore return
+to the uncompressed TPC--25/36 pre-terminal provenance and identify the
+direct fixed-complexity opposite-row factors for which the flatness
+condition is a theorem.  Any independent downstream pruning of that
+opposite row must still be checked through the concentration criterion
+of \cref{thm:tpc50-exact-concentration}.
+
+\subsection{Boundary of the cell theorem}
+
+Theorem \ref{thm:tpc50-canonical-cell-transfer} is exactly a separated
+row-mask statement.  It does not make any of the following
+identifications:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item It does not compare the full TPC--48 Banach profile envelope
+       \(\mathfrak S_{\mathscr R}(\alpha)\) with the fixed-shift physical
+       atomic diagonal \(\mathcal D_0\).  Signed
+       \(L^1(d|\lambda|)\) reassembly still needs a frame or
+       no-cancellation theorem.
+ \item It does not estimate the coherent prime square inside a fixed
+       residual coordinate.  The \(p\)-sum remains inside the norm.
+ \item It does not control collisions or grouping under
+       \(s=d(m)r\).  The mask face is formed before that map.
+ \item It does not unfold sparse determinant aliases, localize the
+       completed frozen family back to \(h_0\), or identify the residual
+       Gram route with the native affine physical face.
+\end{enumerate}
+Accordingly, even a subpower lower bound for every identified direct
+canonical cell would close only the corresponding active-cell survival
+subgate.  It would not prove a
+fixed-shift Chowla estimate, cross the parity barrier, or imply any
+prime-pair or twin-prime conclusion.

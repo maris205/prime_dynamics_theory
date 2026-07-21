@@ -1,0 +1,183 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\e}{\mathrm e}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\supp}{\operatorname{supp}}
+
+\hypersetup{
+  pdftitle={Fixed-Complexity Cell Survival and Sharp Concentration Obstructions for the TPC Static Mask},
+  pdfauthor={Liang Wang},
+  pdfsubject={Canonical pre-mask cellization, weighted survival, and sharp anti-concentration criteria},
+  pdfkeywords={weighted mask survival, residue cells, Mellin separation, anti-concentration, projective tensor norm, parity problem}
+}
+
+\title{\bfseries Fixed-Complexity Cell Survival and\\
+Sharp Concentration Obstructions\\
+for the TPC Static Mask}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The preceding twin-prime-correlation (TPC) reduction left a precise
+finite-dimensional question: does the literal static row mask retain
+enough of the squared mass of the residue/Mellin cells to compare a
+bounded-projective envelope with an atomic diagonal?  We first remove a
+representation ambiguity.  Weighted survival is canonically attached
+to a \emph{pre-mask} cell---the fixed-period residue and real-axis
+Mellin factors are separated before the Fourier--Ferrers--gcd
+representation of the static mask is introduced.  It is not an
+invariant of an arbitrary final projective layer.
+
+For a binary mask \(M\) and a nonzero right weight \(b\), let
+
+\[
+ \eta_M(b)=\max_\alpha
+ \frac{\sum_{\gamma:M(\alpha,\gamma)=0}|b_\gamma|^2}
+      {\|b\|_2^2}.
+\]
+
+We prove the exact minimax identity
+
+\[
+ \inf_{a\ne0}\delta_w(M;a,b)=1-\eta_M(b).
+\]
+
+For the TPC mask, the necessary-and-sufficient quantity \(\eta_M\) is
+bounded by three explicit
+anti-concentration numbers measuring mass on a single prime-source
+fibre, in a determinant window of width
+\(\Delta=QX^{-\kappa_0}\), and on a large-gcd fibre.  These are the
+geometric sufficient quantities used below; they are individually
+sharp, whereas their sum need not be necessary because the deleted
+sets may overlap.
+
+We then unpack the actual fixed-complexity provenance.  An identified
+nondegenerate direct opposite-row cell has a fixed smooth dyadic shape,
+a fixed admissible residue set, and unit-modulus residue and real-axis
+Mellin phases.
+Fixed-modulus prime and squarefree counts give uniformly
+
+\[
+ \operatorname{Flat}(b)=O(1).
+\]
+
+Together with the complete-row degree theorem, this yields
+
+\[
+ \delta_w(M;a,b)
+ =1-O\!\left(L^{-1+o(1)}+D^{-1+o(1)}
+                 +X^{-\kappa_0+o(1)}\right)
+ =1-o(1)
+\]
+
+for every nonzero weight \(a\) on the other row, however sparse.
+Hence, on this identified separated row-output face, the TPC--36 representation
+has only \(X^{o(1)}\) projective-to-atomic energy distortion: the
+active-cell survival gate consumes no polynomial part of the
+\(1/400\) endpoint allowance.  An abstract finite-family selection
+lemma gives the same survival conclusion for energetic cells under an
+explicit aggregate lower-frame hypothesis, while controlling their
+aggregate discarded cell energy.  It is not a frame theorem for the
+signed continuous Mellin reassembly.
+
+The distinction from the upper-only inherited interface is sharp.
+Concentration on a same-source fibre, a near-product block, or a
+large-gcd block produces polynomially large packets with zero survival;
+adding one admitted neighbor gives positive survival as small as the
+inverse packet size.  Such selectors require growing or shrinking
+complexity and are not generated by the literal fixed-period,
+fixed-shape, real-axis Mellin provenance.  The paper does not compare
+the full signed TPC--48 profile envelope with the physical atomic
+diagonal, prove a Mellin frame lower bound, control the coherent prime
+square, group residual labels, or localize the frozen family back to
+the physical shift.  No parity-barrier breach or twin-prime conclusion
+is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} weighted mask survival; residue cells;
+Mellin separation; anti-concentration; projective tensor norm;
+determinant equations; sieve parity.
+
+\medskip
+\noindent\textbf{Convention.}
+All finite weights may be complex; survival depends only on their
+moduli.  Zero cells are deleted.  Constants may depend on the fixed
+shift, fixed residue moduli, and fixed smooth shapes, but never on the
+real Mellin parameters or on \(X\).
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 46B28; Secondary 11N37,
+15A18, 42A10.
+
+\input{sections/introduction}
+\input{sections/canonical-interface}
+\input{sections/exact-concentration}
+\input{sections/frame-selection}
+\input{sections/physical-cell-survival}
+\input{sections/sharp-obstructions}
+\input{sections/endpoint-boundaries}
+\input{sections/certificate-claims}
+
+\begingroup
+\small
+\raggedright
+\setlength{\bibsep}{4pt plus 1pt minus 1pt}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

@@ -1,0 +1,181 @@
+\section{Exact forbidden-mass concentration}
+\label{sec:tpc50-exact-concentration}
+
+The weighted-density condition of TPC--49 has an exact one-sided
+formulation.  This formulation is useful here because the determinant
+and terminal restrictions may concentrate the source weight, whereas
+the opposite-row cell is the object whose provenance can still be
+tested directly.
+
+Let \(I,J\) be finite nonempty sets.  For an arbitrary kernel
+\(K:I\times J\to\mathbb C\) and nonzero weights
+\(a\in\mathbb C^I\), \(b\in\mathbb C^J\), put
+\begin{equation}
+ \delta_w(K;a,b)
+ :=
+ \frac{\displaystyle
+       \sum_{i\in I}\sum_{j\in J}
+       |a_i|^2|K(i,j)|^2|b_j|^2}
+      {\|a\|_2^2\|b\|_2^2}.
+ \label{eq:tpc50-general-weighted-survival}
+\end{equation}
+For the exact concentration theorem below, specialize to a binary mask
+\(M:I\times J\to\{0,1\}\).
+We allow the numerator in \eqref{eq:tpc50-general-weighted-survival} to be
+zero.  Thus \(\delta_w=0\) when the product weight is supported
+entirely on forbidden entries.  This is the continuous extension of
+the TPC--49 definition to a zero weighted matrix.
+
+For a nonzero right weight \(b\), define its forbidden-row
+concentration by
+\begin{equation}
+ \eta_M(b)
+ :=
+ \max_{i\in I}
+ \frac{\displaystyle
+       \sum_{j\in J:\,M(i,j)=0}|b_j|^2}
+      {\|b\|_2^2}.
+ \label{eq:tpc50-exact-forbidden-concentration}
+\end{equation}
+
+\begin{theorem}[Exact one-sided survival criterion]
+\label{thm:tpc50-exact-concentration}
+For every nonzero \(b\in\mathbb C^J\),
+\begin{equation}
+ \boxed{
+ \inf_{a\in\mathbb C^I\setminus\{0\}}
+ \delta_w(M;a,b)
+ =1-\eta_M(b).}
+ \label{eq:tpc50-exact-infimum}
+\end{equation}
+Consequently,
+\begin{equation}
+ \bigl[\delta_w(M;a,b)\ge\delta_0
+       \text{ for every }a\ne0\bigr]
+ \quad\Longleftrightarrow\quad
+ \eta_M(b)\le1-\delta_0
+ \label{eq:tpc50-exact-uniform-equivalence}
+\end{equation}
+for every \(0\le\delta_0\le1\).
+\end{theorem}
+
+\begin{proof}
+For \(i\in I\), set
+\begin{equation}
+ s_b(i)
+ :=
+ \frac{\sum_{j\in J}M(i,j)|b_j|^2}{\|b\|_2^2}
+ =1-
+ \frac{\sum_{j:\,M(i,j)=0}|b_j|^2}{\|b\|_2^2}.
+ \label{eq:tpc50-row-survival-profile}
+\end{equation}
+Then
+\begin{equation}
+ \delta_w(M;a,b)
+ =\sum_{i\in I}\frac{|a_i|^2}{\|a\|_2^2}s_b(i).
+ \label{eq:tpc50-survival-convex-combination}
+\end{equation}
+The right side is a convex combination of the finitely many values
+\(s_b(i)\).  Its infimum is their minimum, attained by a point mass at
+any minimizing row.  By \eqref{eq:tpc50-row-survival-profile}, that
+minimum is \(1-\eta_M(b)\).  This proves both assertions.
+\end{proof}
+
+We now specialize the criterion to the three deletions in the TPC
+static mask.  Let rows be \(\alpha=(\ell_\alpha,d_\alpha)\), put
+\(m_\alpha=\ell_\alpha d_\alpha\), and define
+\begin{equation}
+ M_X(\alpha,\gamma)
+ :=
+ \one_{\ell_\alpha\ne\ell_\gamma}
+ \one_{|m_\alpha-m_\gamma|>\Delta}
+ \one_{(d_\alpha,d_\gamma)\le G}.
+ \label{eq:tpc50-three-channel-mask}
+\end{equation}
+For a nonzero opposite-row weight \(b\), introduce
+\begin{align}
+ \eta_{\rm src}(b)
+ &:={}
+ \max_{\ell}
+ \frac{\displaystyle
+       \sum_{\gamma:\,\ell_\gamma=\ell}|b_\gamma|^2}
+      {\|b\|_2^2},
+ \label{eq:tpc50-source-concentration}\\
+ \eta_{\rm near}(b)
+ &:={}
+ \sup_{x\in\mathbb R}
+ \frac{\displaystyle
+       \sum_{\gamma:\,|m_\gamma-x|\le\Delta}|b_\gamma|^2}
+      {\|b\|_2^2},
+ \label{eq:tpc50-near-concentration}\\
+ \eta_{\rm gcd}(b)
+ &:={}
+ \max_{d}
+ \frac{\displaystyle
+       \sum_{\gamma:\,(d,d_\gamma)>G}|b_\gamma|^2}
+      {\|b\|_2^2}.
+ \label{eq:tpc50-gcd-concentration}
+\end{align}
+The maxima range only over source and divisor labels that occur on the
+left row set.  Enlarging those ranges can make the numerical upper
+bound larger, but it does not invalidate any displayed inequality.
+
+\begin{proposition}[Three-channel anti-concentration]
+\label{prop:tpc50-three-channel-concentration}
+For the mask \eqref{eq:tpc50-three-channel-mask},
+\begin{equation}
+ \eta_{M_X}(b)
+ \le
+ \eta_{\rm src}(b)
+ +\eta_{\rm near}(b)
+ +\eta_{\rm gcd}(b).
+ \label{eq:tpc50-channel-union-bound}
+\end{equation}
+Hence every nonzero source weight \(a\) satisfies
+\begin{equation}
+ \boxed{
+ \delta_w(M_X;a,b)
+ \ge
+ 1-\eta_{\rm src}(b)
+   -\eta_{\rm near}(b)
+   -\eta_{\rm gcd}(b).}
+ \label{eq:tpc50-channel-survival-bound}
+\end{equation}
+In particular, the endpoint target
+\(\delta_w\ge X^{-1/400+o(1)}\), uniformly in \(a\), follows from
+\begin{equation}
+ \eta_{\rm src}(b)+\eta_{\rm near}(b)+\eta_{\rm gcd}(b)
+ \le1-X^{-1/400+o(1)}.
+ \label{eq:tpc50-minimal-checkable-endpoint}
+\end{equation}
+If the sum of the three concentrations is \(o(1)\), then the stronger
+conclusion \(\delta_w=1-o(1)\) holds uniformly in \(a\).
+\end{proposition}
+
+\begin{proof}
+For a fixed left row \(\alpha\), the forbidden opposite rows lie in
+the union
+\begin{equation}
+ \{\gamma:\ell_\gamma=\ell_\alpha\}
+ \cup
+ \{\gamma:|m_\gamma-m_\alpha|\le\Delta\}
+ \cup
+ \{\gamma:(d_\alpha,d_\gamma)>G\}.
+ \label{eq:tpc50-forbidden-union}
+\end{equation}
+The \(b^2\)-mass of the three sets, divided by \(\|b\|_2^2\), is at
+most the respective quantities in
+\eqref{eq:tpc50-source-concentration}--
+\eqref{eq:tpc50-gcd-concentration}.  Take the maximum over \(\alpha\)
+and apply \cref{thm:tpc50-exact-concentration}.
+\end{proof}
+
+\begin{remark}[Minimal versus decomposable conditions]
+\label{rem:tpc50-minimal-versus-channel}
+The single quantity \(\eta_{M_X}(b)\) is necessary and sufficient for
+uniform one-sided survival.  The three channel quantities give a
+slightly stronger but geometrically interpretable sufficient
+condition.  The examples in \cref{sec:tpc50-obstructions} show
+that each channel condition is individually sharp: none can be
+discarded under the inherited upper-only interface.
+\end{remark}

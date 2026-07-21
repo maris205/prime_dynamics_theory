@@ -1,0 +1,173 @@
+\section{Introduction}
+\label{sec:tpc50-introduction}
+
+TPC--48 reduces the completed actual-coefficient determinant family to
+a signed projective row-square envelope, while TPC--49 identifies the
+exact finite-dimensional distortion between a Hilbertized projective
+envelope and its atomic energy \citep{WangTPC48,WangTPC49}.  For a
+weighted mask matrix
+\begin{equation}
+ T=D_aKD_b,
+ \qquad
+ \delta_w(K;a,b)
+ =\frac{\sum_{\alpha,\gamma}|a_\alpha|^2
+       |K_{\alpha\gamma}|^2|b_\gamma|^2}
+       {\|a\|_2^2\|b\|_2^2},
+ \label{eq:tpc50-intro-survival}
+\end{equation}
+that comparison gives
+\begin{equation}
+ \frac{\cE_{\mathscr R}(T)^2}{\|T\|_{S_2}^2}
+ \le \frac{P_{\mathscr R}(K)^2}
+          {\delta_w(K;a,b)}.
+ \label{eq:tpc50-intro-transfer}
+\end{equation}
+Here \(P_{\mathscr R}\) is the bounded-projective cost of one specified
+mask representation.  TPC--36 supplies a representation
+\(\mathscr R_{36}\) with \(P_{\mathscr R_{36}}=X^{o(1)}\)
+\citep{WangTPC36}.  The unresolved quantity was therefore the weighted
+survival of the actual active cells.
+
+The phrase ``actual active cell'' hides an order-of-operations issue.
+The final parameter \(\omega\) in the TPC--47/48 representation already
+combines fixed-residue and Mellin separation with the
+Fourier--Ferrers--gcd decomposition of the static mask
+\citep{WangTPC47,WangTPC48}.  It is not a canonical physical cell.
+Null pairs can be appended to an exact signed representation, so no
+nontrivial lower-mass statement can hold uniformly for every final
+projective layer.  The static mask must instead be left intact while
+the fixed-period and smooth factors are separated.  This produces a
+specified \emph{pre-mask cell}; only then is
+\eqref{eq:tpc50-intro-survival} the right quantity.
+
+\subsection{The exact concentration criterion}
+
+For a binary mask \(M\), define the largest forbidden proportion of a
+right weight \(b\ne0\) by
+\begin{equation}
+ \eta_M(b)
+ :=\max_\alpha
+ \frac{\sum_{\gamma:M(\alpha,\gamma)=0}|b_\gamma|^2}
+      {\|b\|_2^2}.
+ \label{eq:tpc50-intro-eta}
+\end{equation}
+Our first main theorem is the exact identity
+\begin{equation}
+ \boxed{
+ \inf_{a\ne0}\delta_w(M;a,b)=1-\eta_M(b).}
+ \label{eq:tpc50-intro-exact}
+\end{equation}
+Thus a uniform statement over arbitrary pruning of the left row is
+equivalent to one-sided anti-concentration of the right weight.  For
+the literal TPC static mask
+\begin{equation}
+ M_X(\alpha,\gamma)
+ =\one_{\ell_\alpha\ne\ell_\gamma}
+  \one_{|m_\alpha-m_\gamma|>QX^{-\kappa_0}}
+  \one_{(d_\alpha,d_\gamma)\le X^{\kappa_0}},
+ \label{eq:tpc50-intro-mask}
+\end{equation}
+the single quantity \(\eta_{M_X}\) is bounded by the sum of three
+transparent concentration coefficients: same-source, near-product,
+and large-gcd mass.  This both refines the degree--flatness criterion
+of TPC--49 and identifies the minimal one-sided repair of the inherited
+upper-only interface.
+
+\subsection{Restoring fixed-complexity provenance}
+
+The physical opened row before static-mask decomposition has the form
+\begin{equation}
+ \mu(d)(\log\ell)\omega_D(d)\psi_L(\ell/L)\zeta_{\ell,d},
+ \label{eq:tpc50-intro-row}
+\end{equation}
+where the smooth shapes and residue periods are fixed
+\citep{WangTPC18,WangTPC25}.  Finite residue Fourier characters and
+real-axis Mellin row factors have modulus one.  The identified direct
+opposite-row factor uses \(e=0\); the restricted source-factor variant
+with its physical prime logarithm uses \(e=1\).  Weighted prime and
+squarefree counts give, for either displayed weight class,
+\begin{equation}
+ \|b\|_2^2\asymp LD(\log L)^{2e-1},
+ \qquad
+ \|b\|_\infty^2\ll(\log L)^{2e},
+ \qquad e\in\{0,1\}.
+ \label{eq:tpc50-intro-row-energy}
+\end{equation}
+Since the complete row universe has
+\(N\asymp LD/\log L\), this proves
+\begin{equation}
+ \operatorname{Flat}(b)
+ :=\frac{N\|b\|_\infty^2}{\|b\|_2^2}=O(1)
+ \label{eq:tpc50-intro-flatness}
+\end{equation}
+uniformly in every real Mellin parameter.  Combining
+\eqref{eq:tpc50-intro-flatness} with the complete-row degree theorem
+of TPC--49 proves
+\begin{equation}
+ \boxed{
+ \delta_w(M_X;a,b)
+ =1-O\!\left(L^{-1+o(1)}+D^{-1+o(1)}
+                  +X^{-\kappa_0+o(1)}\right)}
+ \label{eq:tpc50-intro-positive}
+\end{equation}
+for every \(a\ne0\).  In particular, arbitrary terminal sparsity on
+one side is harmless when the opposite side retains a canonical
+fixed-complexity cell.
+
+At the inherited endpoint,
+\begin{equation}
+ L=X^{99979/210000+o(1)},
+ \qquad
+ D=X^{10049/52500+o(1)},
+ \label{eq:tpc50-intro-endpoint-LD}
+\end{equation}
+so \eqref{eq:tpc50-intro-positive} is \(1-o(1)\).  In the isolated
+Hilbertized row-output face, its density exponent is therefore zero,
+rather than the maximal allowed value \(1/400\).  This closes the
+static survival subgate for the identified provenance-restored cells;
+it does not close the full TPC--48 envelope comparison.
+
+\subsection{Sharpness of the provenance requirement}
+
+The preceding conclusion cannot be recovered from row-count and norm
+upper bounds alone.  The three deletion channels in
+\eqref{eq:tpc50-intro-mask} support correspondingly large concentrated
+packets with
+\begin{equation}
+ \delta_w=0.
+ \label{eq:tpc50-intro-zero}
+\end{equation}
+A near-product block and a large-gcd block can have
+\(X^{267/400-\kappa_0+o(1)}\) rows.  Adding one admitted neighbor makes
+the masked matrix nonzero but leaves survival equal to the inverse of
+the packet size.  At \(\kappa_0=1/400\), this may be
+\(X^{-133/200+o(1)}\), far below the isolated-face target.
+
+These are exact logical counterexamples to the upper-only interface,
+not models of the literal coefficient.  A same-source selector tracks
+one prime as \(X\) varies, a near-product selector shrinks at relative
+scale \(X^{-\kappa_0}\), and a gcd selector uses a growing modulus.
+None is produced by a fixed-period residue expansion or by a
+unit-modulus real Mellin phase.  The positive and negative theorems
+therefore meet at a clean boundary: fixed complexity gives survival,
+while growing concentration complexity must be estimated explicitly.
+
+\subsection{Scope and organization}
+
+The result proved here concerns one separated row-mask face.  It does
+not identify the final TPC--48 parameter \(\omega\) with a physical
+cell, replace a signed Mellin integral by an orthogonal frame, control
+the coherent prime sum at fixed residual coordinate, compare the full
+projective profile envelope with the literal atomic diagonal, group
+the map \(s=d(m)r\), or recover the physical shift from the frozen
+family.  These boundaries are structural, not disclaimers that can be
+removed by relabeling a layer.
+
+\Cref{sec:tpc50-canonical-interface} fixes the canonical order of
+separation.  \Cref{sec:tpc50-exact-concentration} proves the exact
+minimax criterion.  \Cref{sec:tpc50-frame-selection} treats general
+subpower cell families.  \Cref{sec:tpc50-physical-cell-survival} proves the
+fixed-provenance theorem.  \Cref{sec:tpc50-obstructions} gives sharp
+concentration packets.  \Cref{sec:tpc50-endpoint-boundaries} records
+the endpoint ledger and remaining gates, and
+\cref{sec:tpc50-certificate} states the exact finite certificate.

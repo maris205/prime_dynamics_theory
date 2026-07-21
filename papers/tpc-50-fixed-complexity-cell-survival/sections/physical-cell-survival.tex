@@ -1,0 +1,389 @@
+\section{Identified fixed-complexity physical cells survive the static mask}
+\label{sec:tpc50-physical-cell-survival}
+
+This section works \emph{before} the projective decomposition of the
+static mask.  This order is essential.  The fixed residue selectors and
+the smooth row--orbit factors are first put into canonical cells, while
+the complete static mask remains one kernel.  The factors occurring in
+a particular projective representation of that kernel are not absorbed
+into the row weights.
+
+\subsection{Canonical pre-mask row cells}
+
+Set \(H=\rad|h_0|\), and fix an integer \(q=O_{h_0}(1)\).  We take \(q\) to be a
+common multiple of all fixed row and orbit residue moduli in the packet,
+including the period \(H_0\) used in
+\eqref{eq:tpc50-canonical-pre-mask-cellization}, and let
+\begin{equation}
+ \mathcal R_X
+ :=\left\{(\ell,d):
+ L<\ell\leq2L,\ \ell\ {\rm prime},\
+ D<d\leq2D,\ \mu^2(d)=1,\ (d,H)=1
+ \right\}.
+ \label{eq:tpc50-complete-row-universe}
+\end{equation}
+We assume \(L>4D\), \(L,D\to\infty\), and \(L,D\leq X^C\) for one
+fixed \(C\).  Put \(N_X=|\mathcal R_X|\).  Then
+\begin{equation}
+ N_X\asymp_H\frac{LD}{\log L}.
+ \label{eq:tpc50-complete-row-count}
+\end{equation}
+This follows from the prime number theorem and the elementary
+squarefree count with fixed coprimality conditions
+\citep{IwaniecKowalski2004}.
+
+Let \(\mathcal A\subset(\mathbb Z/q\mathbb Z)^2\) be a fixed row-residue
+cell.  We call it \emph{admissible} when it contains a residue pair for
+which the prime progression and the squarefree progression in
+\eqref{eq:tpc50-complete-row-universe} both have positive local density.
+This is a finite, explicitly checkable condition.  Let
+\(\psi,\omega\in C^\infty([1,2])\) be fixed nonzero shapes with
+positive squared integrals.  This includes the constant shape one;
+compactly supported interior shapes are also allowed.  Assume that
+\(\mathcal A\) contains at least one locally admissible residue pair on
+which the two shapes contribute positive density.  For
+\(e\in\{0,1\}\), real \(t_1,t_2\), a fixed unit-modulus
+periodic phase \(\chi\), and a scalar \(c\neq0\), define
+\begin{equation}
+ b_{\ell,d}
+ :=c(\log\ell)^e\psi(\ell/L)\omega(d/D)
+ \mathbf 1_{(\ell,d)\bmod q\in\mathcal A}
+ \chi(\ell,d)\ell^{it_1}d^{it_2}.
+ \label{eq:tpc50-canonical-cell-weight}
+\end{equation}
+The case \(e=1\) includes a physical prime-source logarithm; the case
+\(e=0\) includes an unweighted opposite-row cell.  Additional
+real-axis Mellin phases or fixed Fourier characters may be included in
+\(\chi(\ell,d)\ell^{it_1}d^{it_2}\).
+
+In the inherited opened-row notation, let
+\(V=R_{\rm src}^{1/2+o(1)}\) be the hard upper cutoff on \(d\)
+\citep{WangTPC25}.  We call a pre-terminal dyadic block
+\emph{nondegenerate interior} when, after one of finitely many fixed
+subdivisions and a rescaling of \(L,D\), its full divisor interval obeys
+\begin{equation}
+ 2D\leq V
+ \label{eq:tpc50-interior-cutoff-condition}
+\end{equation}
+for all sufficiently large \(X\), and its fixed unary shapes and
+admissible residue support have positive squared density as specified
+above.  Thus the phrase is a quantitative support condition, not merely
+a name for a nonzero summand.
+
+\begin{proposition}[Identification of the direct opposite-row factors]
+\label{prop:tpc50-direct-provenance-identification}
+Let \(\mathscr C_{\rm prov}:=\mathscr C\) be the pre-mask cellization obtained by
+applying exactly the fixed-period Fourier expansion and the real-axis
+Mellin inversion in the TPC--25 provenance formula, before applying any
+TPC--36 Fourier--Ferrers--gcd representation of the static mask.
+Every nonzero coefficient-free opposite-row factor on a nondegenerate
+interior pre-terminal block of TPC--25/36, extended by zero to
+\(\mathcal R_X\), is of the form
+\eqref{eq:tpc50-canonical-cell-weight} with \(e=0\), up to replacing
+\(\mathcal A\) by a fixed finite union of admissible residue pairs and
+making one of finitely many fixed dyadic subdivisions of the inherited
+row interval.
+If a source factor contains the physical logarithm and its remaining
+fixed residue coefficient is split into nonzero fixed values on
+admissible cells, the same statement holds with \(e=1\).  A general
+bounded coefficient satisfying only \(|\zeta_{\ell,d}|\ll1\) is not
+covered by the \(e=1\) assertion and is instead retained in the
+arbitrary weight on the other side.
+\end{proposition}
+
+\begin{proof}
+Before separation, the inherited unary row coefficient is a product of
+\(\mu(d)\), one possible factor \(\log\ell\), fixed smooth dyadic
+cutoffs in \(\ell/L\) and \(d/D\), and a fixed-period residue factor
+\citep{WangTPC25,WangTPC36}.  In the direct-cell implementation, residue
+splitting gives a fixed set \(\mathcal A\) and one may take \(\chi=1\).
+Equivalently, in the finite Fourier implementation, each summand carries
+one fixed character \(\chi\), whose modulus is one on its admissible
+support.
+For the smooth row--orbit factors, real-axis Mellin inversion replaces
+each occurrence of \(W(\ell dj/X)\) by a scalar transform coefficient,
+an orbit phase, and row powers
+\[
+ (\ell d)^{it}d^{is}
+ =\ell^{it}d^{i(t+s)}.
+\]
+These row powers have modulus one.  Products of the finitely many fixed
+smooth shapes remain fixed smooth shapes, and all transform
+coefficients may be placed in the nonzero scalar \(c\).  This is exactly
+\eqref{eq:tpc50-canonical-cell-weight}; the M\"obius sign is another
+unit phase on the squarefree support.
+
+On a nondegenerate interior block, the zero extension is
+coefficient-preserving because \(\mathcal R_X\) is the complete
+prime--squarefree dyadic row universe for this pre-terminal packet:
+condition \eqref{eq:tpc50-interior-cutoff-condition} removes the
+inherited hard cutoff \(d\leq V\), while the fixed subdivision and
+rescaling align the two dyadic intervals.  The omitted rows are
+therefore precisely zeros of its fixed unary supports.  No static-mask
+representation factor
+\(p_\eta\) or \(q_\eta\) has yet been introduced.  An independently
+pruned row subset created downstream is not covered by this
+identification.  Any block failing
+\eqref{eq:tpc50-interior-cutoff-condition} is outside the proposition,
+whether its truncated support has positive or vanishing relative
+density.  Only after a separate recellization and verification of the
+fixed-shape or aggregate lower-energy hypotheses may
+\cref{thm:tpc50-energy-selection} select its energetic cells; that
+theorem does not by itself control their signed Mellin reassembly.
+\end{proof}
+
+\begin{corollary}[Location of downstream pruning]
+\label{cor:tpc50-downstream-factor-location}
+In the left physical residual route, fix a direct pre-mask residue and
+Mellin layer and fixed downstream data \((j,p,r)\).  The modulus of the
+unary factor indexed by the opposite row \(\gamma\), namely
+\(|v_{a,\tau}(\gamma)|\), is the \(e=0\) weight identified in
+\cref{prop:tpc50-direct-provenance-identification}.  The target
+squarefreeness, terminal weight, prime/cofactor restrictions, and
+source coefficient depend on the summation row \(m\) and downstream
+variables, and may therefore be absorbed into the arbitrary weight
+\(a\).  The right route is symmetric.
+\end{corollary}
+
+\begin{proof}
+Inspect \eqref{eq:tpc50-physical-residual-vector}: after the fixed
+factorization of \(\Xi\mathcal W\), the terminal and target data multiply
+the source integer \(m\), whereas \(\gamma\) remains the opposite output
+coordinate and carries only its separated pre-mask unary factor.  This
+is a per-layer statement; it does not identify the signed reassembled
+Mellin envelope with the physical atomic diagonal, nor may the
+absorption be moved through the coherent downstream prime sum without a
+new argument.
+\end{proof}
+
+\begin{theorem}[Fixed-complexity row energy]
+\label{thm:tpc50-fixed-cell-energy}
+For every fixed admissible cell as above, there are constants
+\(\mathfrak c_{\rm cell},F_{\rm cell}\in(0,\infty)\) such that
+\begin{equation}
+ \sum_{(\ell,d)\in\mathcal R_X}|b_{\ell,d}|^2
+ =\bigl(\mathfrak c_{\rm cell}+o(1)\bigr)
+ |c|^2LD(\log L)^{2e-1}.
+ \label{eq:tpc50-fixed-cell-l2-asymptotic}
+\end{equation}
+Moreover,
+\begin{equation}
+ \|b\|_\infty^2\ll_{\rm cell}|c|^2(\log L)^{2e}.
+ \label{eq:tpc50-fixed-cell-linfty}
+\end{equation}
+Both statements are uniform in all real Mellin parameters and all
+unit-modulus phases in \eqref{eq:tpc50-canonical-cell-weight}.
+Consequently
+\begin{equation}
+ \boxed{
+ \operatorname{Flat}_{\mathcal R_X}(b)
+ :=\frac{N_X\|b\|_\infty^2}{\|b\|_2^2}
+ \leq F_{\rm cell}.}
+ \label{eq:tpc50-fixed-cell-flatness}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Split the fixed set \(\mathcal A\) into its finitely many residue pairs.
+For every prime-admissible class, the fixed-modulus weighted prime
+number theorem gives \citep{IwaniecKowalski2004}
+\begin{equation}
+ \sum_{\substack{L<\ell\leq2L\\
+                  \ell\ {\rm prime}\\
+                  \ell\equiv a\pmod q}}
+ (\log\ell)^{2e}|\psi(\ell/L)|^2
+ =\bigl(c_{a,\psi}+o(1)\bigr)
+ L(\log L)^{2e-1},
+ \label{eq:tpc50-weighted-prime-energy}
+\end{equation}
+where \(c_{a,\psi}\geq0\).  Likewise, M\"obius inversion followed by
+counting in a fixed progression gives
+\begin{equation}
+ \sum_{\substack{D<d\leq2D\\
+                  d\equiv b\pmod q\\
+                  \mu^2(d)=1,\ (d,H)=1}}
+ |\omega(d/D)|^2
+ =\bigl(c_{b,\omega,H}+o(1)\bigr)D,
+ \label{eq:tpc50-weighted-squarefree-energy}
+\end{equation}
+with a nonnegative, explicitly determined local-density constant.
+Admissibility and nontriviality of the fixed shapes make the sum of the
+products \(c_{a,\psi}c_{b,\omega,H}\) over
+\((a,b)\in\mathcal A\) strictly positive.  This proves
+\eqref{eq:tpc50-fixed-cell-l2-asymptotic}.  Boundedness of the fixed
+shapes gives \eqref{eq:tpc50-fixed-cell-linfty}.  The Mellin and Fourier
+factors have modulus one, so none of these estimates depends on their
+real parameters.  Finally combine
+\eqref{eq:tpc50-complete-row-count},
+\eqref{eq:tpc50-fixed-cell-l2-asymptotic}, and
+\eqref{eq:tpc50-fixed-cell-linfty}.
+\end{proof}
+
+The hypothesis is not an unproved distribution conjecture.  For every
+named fixed smooth and residue cell it is decided by a finite local check,
+and the two asymptotics in the proof are standard fixed-modulus
+theorems.  A zero or locally forbidden Fourier term is simply omitted.
+
+\subsection{Weighted survival with arbitrary pruning on the other side}
+
+On \(\mathcal R_X\times\mathcal R_X\), put
+\begin{align}
+ M_X(\alpha,\gamma)
+ &:=
+ \mathbf 1_{\ell_\alpha\ne\ell_\gamma}
+ \mathbf 1_{|m_\alpha-m_\gamma|>\Delta}
+ \mathbf 1_{(d_\alpha,d_\gamma)\leq G},
+ \label{eq:tpc50-static-mask}\\
+ m_\alpha&:=\ell_\alpha d_\alpha,
+ \qquad
+ \Delta:=LDX^{-\kappa_0},
+ \qquad
+ G:=X^{\kappa_0},
+ \label{eq:tpc50-static-mask-scales}
+\end{align}
+where \(\kappa_0>0\) is fixed.  The complete-universe degree theorem
+of TPC--49 \citep{WangTPC49}
+gives, uniformly in every row on either side,
+\begin{equation}
+ \#\{\gamma:M_X(\alpha,\gamma)=0\}
+ \leq\epsilon_XN_X,
+ \qquad
+ \epsilon_X\ll_H
+ L^{-1+o(1)}+D^{-1+o(1)}+X^{-\kappa_0+o(1)}.
+ \label{eq:tpc50-mask-degree-defect}
+\end{equation}
+
+For nonnegative weights \(a,b\), with neither identically zero, define
+\begin{equation}
+ \delta_w(M_X;a,b)
+ :=\frac{\sum_{\alpha,\gamma}
+ a_\alpha^2M_X(\alpha,\gamma)b_\gamma^2}
+ {\left(\sum_\alpha a_\alpha^2\right)
+  \left(\sum_\gamma b_\gamma^2\right)}.
+ \label{eq:tpc50-complete-cell-weighted-survival}
+\end{equation}
+
+\begin{theorem}[Canonical-cell survival]
+\label{thm:tpc50-canonical-cell-survival}
+Let \(b\) be the modulus of a nonzero direct provenance factor from
+\cref{prop:tpc50-direct-provenance-identification}; or, more generally,
+let it be the modulus of a canonical cell weight
+\eqref{eq:tpc50-canonical-cell-weight}.
+For every nonzero weight \(a\)
+on the other row system, with completely arbitrary support and
+concentration,
+\begin{equation}
+ \boxed{
+ \delta_w(M_X;a,b)
+ \geq1-F_{\rm cell}\epsilon_X
+ =1-o(1).}
+ \label{eq:tpc50-canonical-survival}
+\end{equation}
+The conclusion is uniform in the real Mellin parameters and fixed
+unit-modulus residue phases.  It also holds after exchanging the two
+row systems.
+\end{theorem}
+
+\begin{proof}
+For every fixed \(\alpha\), \eqref{eq:tpc50-mask-degree-defect} and the
+definition of the supremum norm give
+\begin{align}
+ \sum_\gamma M_X(\alpha,\gamma)b_\gamma^2
+ &\geq\|b\|_2^2-\epsilon_XN_X\|b\|_\infty^2
+ \notag\\
+ &\geq
+ \bigl(1-F_{\rm cell}\epsilon_X\bigr)\|b\|_2^2,
+ \label{eq:tpc50-rowwise-weighted-survival}
+\end{align}
+where the second line is
+\eqref{eq:tpc50-fixed-cell-flatness}.  Multiply by \(a_\alpha^2\), sum
+over \(\alpha\), and divide by the denominator in
+\eqref{eq:tpc50-complete-cell-weighted-survival}.  No lower-density
+information about \(a\) is used.
+\end{proof}
+
+This asymmetric formulation is useful for the physical residual
+packet.  The arbitrary side may carry the squarefree target selector,
+large-prime/cofactor restrictions, terminal weights, or any other
+coefficient-specific pruning.  Only the opposite row cell needs the
+fixed-complexity flatness proved above.  If a later reduction also
+independently prunes that opposite row, the theorem is not automatic:
+one must recheck the concentration quantities in
+\eqref{eq:tpc50-source-concentration}--\eqref{eq:tpc50-gcd-concentration}.
+
+\subsection{Transfer through the specified TPC--36 representation}
+
+Let \(\mathscr R_{36}\) be the specified representation obtained from
+same-source Fourier orthogonality, signed Ferrers separation, and the
+global gcd compression.  As proved in TPC--36 and transferred through
+the weighted interface in TPC--49, its bounded-projective mass satisfies
+\citep{WangTPC36,WangTPC49}
+\begin{equation}
+ P_{\mathscr R_{36}}(M_X)=X^{o(1)}.
+ \label{eq:tpc50-R36-projective-mass}
+\end{equation}
+Write \(\mathcal E_{\mathscr R_{36}}(M_X;a,b)\) for its weighted Hilbert
+envelope.  The fixed-representation weighted transfer inequality is
+\begin{equation}
+ \frac{\mathcal E_{\mathscr R_{36}}(M_X;a,b)^2}
+ {\|D_aM_XD_b\|_{S_2}^2}
+ \leq
+ \frac{P_{\mathscr R_{36}}(M_X)^2}
+ {\delta_w(M_X;a,b)}.
+ \label{eq:tpc50-fixed-representation-transfer}
+\end{equation}
+
+\begin{corollary}[Subpower atomic cost on an identified canonical cell]
+\label{cor:tpc50-canonical-cell-transfer}
+Under the hypotheses of
+\cref{thm:tpc50-canonical-cell-survival},
+\begin{equation}
+ \boxed{
+ \mathcal E_{\mathscr R_{36}}(M_X;a,b)^2
+ \leq X^{o(1)}\|D_aM_XD_b\|_{S_2}^2.}
+ \label{eq:tpc50-canonical-cell-atomic-transfer}
+\end{equation}
+The estimate is uniform in the canonical real Mellin and fixed residue
+parameters.
+\end{corollary}
+
+\begin{proof}
+Insert \eqref{eq:tpc50-canonical-survival} and
+\eqref{eq:tpc50-R36-projective-mass} into
+\eqref{eq:tpc50-fixed-representation-transfer}.
+\end{proof}
+
+The disjoint orbit classes \(j\bmod H_0\) are orthogonal output
+subspaces and therefore reassemble by an exact square sum.  Disjoint
+source-row residue cells reassemble exactly only at the atomic
+Frobenius-diagonal level; after source summation they may contribute
+coherently to the same physical output coordinate.  A finite character
+expansion has an \(O_H(1)\) upper triangle/Bessel cost; Parseval is exact
+only if its auxiliary residue label is retained in an enlarged space.
+Real Mellin phases preserve \eqref{eq:tpc50-fixed-cell-flatness}, and
+every polynomially weighted variation of a fixed smooth Mellin
+transform is finite.  These facts give a constant or \(X^{o(1)}\)
+\emph{upper} reassembly cost.  They do not assert that distinct
+continuous Mellin layers are mutually orthogonal or supply a lower
+frame bound for the signed physical coefficient.
+
+\begin{proposition}[Why the older upper-bound interface is insufficient]
+\label{prop:tpc50-abstract-interface-counterexample}
+If the periodic/phase provenance in
+\eqref{eq:tpc50-canonical-cell-weight} is replaced only by an arbitrary
+coefficient \(\zeta_{\ell,d}\) satisfying
+\(|\zeta_{\ell,d}|\leq1\), then no positive uniform lower bound for
+\(\delta_w\) follows from the inherited upper norm bounds alone.
+\end{proposition}
+
+\begin{proof}
+Fix a row \(\alpha_0=(\ell_0,d_0)\), put \(a\) on that row alone, and
+put \(b\) on any nonempty subset of the opposite rows with source prime
+\(\ell_0\).  The same-source factor in \eqref{eq:tpc50-static-mask}
+vanishes on every pair in the resulting rectangle, so
+\(D_aM_XD_b=0\) and \(\delta_w=0\).  The weights remain bounded and obey
+all purely upper \(\ell^1\), \(\ell^2\), and support estimates.  What
+excludes this example in
+\cref{thm:tpc50-fixed-cell-energy} is the unpacked fixed-complexity
+smooth/residue provenance, not an upper norm bound.
+\end{proof}

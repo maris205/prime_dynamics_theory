@@ -1,0 +1,204 @@
+\section{Endpoint ledger and the boundary of the result}
+\label{sec:tpc50-endpoint-boundaries}
+
+\subsection{The isolated active-cell exponent}
+
+At the inherited endpoint, write
+\begin{equation}
+ Q=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)},
+ \qquad QJ=X^{1+o(1)},
+ \label{eq:tpc50-endpoint-QJ}
+\end{equation}
+and use the finer row factorization
+\begin{equation}
+ L=X^{99979/210000+o(1)},
+ \qquad
+ D=X^{10049/52500+o(1)}.
+ \label{eq:tpc50-endpoint-LD}
+\end{equation}
+The opened-divisor cutoff is genuinely inactive here.  Indeed, the
+high-\(\beta\) source packet of TPC--28 has \citep{WangTPC28}
+\begin{equation}
+ R_{\rm src}=X^{23/60+o(1)},
+ \qquad
+ V=R_{\rm src}^{1/2+o(1)}=X^{23/120+o(1)},
+ \label{eq:tpc50-endpoint-RV}
+\end{equation}
+and
+\begin{equation}
+ \frac{23}{120}-\frac{10049}{52500}
+ =\frac9{35000}>0.
+ \label{eq:tpc50-endpoint-interior-margin}
+\end{equation}
+Consequently \(2D\leq V\) for all sufficiently large \(X\), with a
+fixed power margin.  Thus the actual high-\(\beta\) packet contains the
+nondegenerate interior dyadic row blocks required in
+\cref{prop:tpc50-direct-provenance-identification}; this is not an empty
+support hypothesis.
+Thus \eqref{eq:tpc50-mask-degree-defect} becomes
+\begin{equation}
+ \epsilon_X
+ =O\!\left(X^{-\eta+o(1)}\right),
+ \qquad
+ \eta:=\min\left\{\kappa_0,\frac{10049}{52500}\right\}>0.
+ \label{eq:tpc50-endpoint-degree-defect}
+\end{equation}
+The \(D^{-1}\) term dominates the \(L^{-1}\) term unless the fixed
+pruning exponent \(\kappa_0\) is smaller.  In particular,
+\begin{equation}
+ \delta_w(M_X;a,b)
+ =1-O\!\left(X^{-\eta+o(1)}\right)
+ \label{eq:tpc50-endpoint-survival}
+\end{equation}
+for every fixed identified nondegenerate direct opposite-row cell and
+every arbitrary nonzero weight on the other side.  The implied constant
+may depend on that fixed cell.
+
+Recall the isolated-face budget notation
+\begin{equation}
+ P_{\mathscr R}=X^{\varpi+o(1)},
+ \qquad
+ \delta_w=X^{-\theta+o(1)}.
+ \label{eq:tpc50-budget-parameters}
+\end{equation}
+The fixed-representation sufficient condition at this endpoint is
+\begin{equation}
+ 2\varpi+\theta\leq\frac1{400}.
+ \label{eq:tpc50-isolated-budget-condition}
+\end{equation}
+
+\begin{corollary}[Zero polynomial cost for the canonical static face]
+\label{cor:tpc50-endpoint-zero-cost}
+For the representation \(\mathscr R_{36}\) and every identified
+nondegenerate direct opposite-row pre-mask cell,
+\begin{equation}
+ \varpi=0,
+ \qquad
+ \theta=0.
+ \label{eq:tpc50-zero-loss-exponents}
+\end{equation}
+Consequently this isolated static-mask face consumes no positive
+polynomial portion of the \(X^{1/400+o(1)}\) allowance.
+\end{corollary}
+
+\begin{proof}
+Equation \eqref{eq:tpc50-R36-projective-mass} gives \(\varpi=0\), and
+\eqref{eq:tpc50-endpoint-survival} gives \(\theta=0\).  Substitute in
+\eqref{eq:tpc50-isolated-budget-condition}.
+\end{proof}
+
+The phrase \emph{consumes no polynomial allowance} concerns exactly
+the Hilbertized static row-output face in
+\eqref{eq:tpc50-canonical-cell-atomic-transfer}.  It is not a statement
+that the remaining \(1/400\) allowance closes the full determinant
+packet.  If all remaining operations have total loss exponent
+\(\lambda_{\rm other}\), the full multiplicative ledger would still
+require
+\begin{equation}
+ \lambda_{\rm other}\leq\frac1{400}.
+ \label{eq:tpc50-remaining-budget}
+\end{equation}
+No estimate for \(\lambda_{\rm other}\) is inferred here.
+
+\subsection{What has and has not been proved}
+
+The positive theorem removes one precise obstruction.  Even when the
+source side is arithmetically sparse, the complete static mask deletes
+only \(o(1)\) of the product \(\ell^2\)-mass of every identified
+fixed-complexity opposite-row residue/Mellin cell covered by
+\cref{prop:tpc50-direct-provenance-identification}.  Therefore
+active-row sparsity by itself does not create a polynomial
+projective-to-atomic loss in this canonical order of decomposition.
+
+The following interfaces remain open and are not consequences of
+\cref{thm:tpc50-canonical-cell-survival,cor:tpc50-canonical-cell-transfer}.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em]
+ \item \textbf{Continuous Mellin frame efficiency.}
+ The real Mellin phases preserve row flatness, and Schwartz variation
+ gives finite weighted \(L^1\) mass, but two distinct Mellin layers are
+ not automatically orthogonal in the physical coefficient Hilbert
+ space.  Minkowski reassembly supplies an upper envelope; it does not
+ supply a lower frame bound comparing that envelope with the squared
+ norm of the signed, reassembled physical coefficient.  Selecting one
+ favorable Mellin parameter by pigeonhole is invalid.
+
+ \item \textbf{The full TPC--48 Banach profile envelope.}
+ The quantity controlled in
+ \eqref{eq:tpc50-canonical-cell-atomic-transfer} is one genuinely
+ Hilbertized row-output face.  The TPC--48 envelope also carries the
+ large-sieve profile constant and an outer signed Bochner integral.
+ This paper does not identify that Banach profile envelope with a
+ nuclear norm or with the physical diagonal.
+
+ \item \textbf{The coherent prime square.}
+ At fixed source \(m\) and cofactor \(r\), the prime sum is formed before
+ taking the norm.  The exact orthogonality between distinct residual
+ labels separates \(r\), but it does not separate the primes inside
+ \begin{equation}
+  \sum_p A_\omega(p,r,m)\mathrm e(-pr\alpha)
+       v_{\omega,p,r,m}.
+  \label{eq:tpc50-open-coherent-prime-sum}
+ \end{equation}
+ No prime exponential-sum cancellation, dispersion estimate, or
+ pointwise large-sieve replacement is proved here.
+
+ \item \textbf{Residual grouping.}
+ The residual lift distinguishes the labels \(s=d(m)r\).  Returning to
+ the grouped physical output applies a map whose squared norm is the
+ maximal residual-fiber multiplicity.  The present row-mask theorem
+ neither bounds that multiplicity by \(X^{o(1)}\) nor finds cancellation
+ between labels in one fiber.
+
+ \item \textbf{Frozen completion versus the physical shift.}
+ The frozen family extends the coefficient field constructed at
+ \(h_0\) to determinant equations with arbitrary intercept \(h\).  Only
+ \(h=h_0\) has physical provenance.  A square estimate for the completed
+ family need not have the same normalization as the one-slice atomic
+ diagonal.  No completed-to-\(h_0\) localization theorem is supplied.
+
+ \item \textbf{Residual and native affine Gram faces.}
+ The large-prime residual synthesis is obtained after low-sign
+ averaging.  Its cross-inner-product structure is not automatically
+ the native affine physical Gram structure whose atomic diagonal is
+ \(\mathcal D_0\).  The static survival theorem does not identify those
+ two faces.
+
+ \item \textbf{Slope collision and the remaining endpoint ledger.}
+ The common-profile large sieve may still incur determinant-slope
+ collision, and none of that cost is cancelled by
+ \eqref{eq:tpc50-endpoint-survival}.  Such losses belong to
+ \(\lambda_{\rm other}\) in \eqref{eq:tpc50-remaining-budget}.
+\end{enumerate}
+
+\subsection{Exact scope of the canonical hypothesis}
+
+The proof applies unconditionally to the canonical terms produced by
+direct finite Fourier decomposition of the stated fixed residue masks
+and by real-axis Mellin inversion of fixed smooth shapes.  It does not
+cover any of the following broadenings without a new argument:
+\begin{itemize}
+ \item a residue modulus growing with \(X\);
+ \item an \(X\)-dependent smooth family whose nonzero support degenerates
+       to a vanishing fraction of a dyadic row cell;
+ \item a hard-cutoff boundary block failing
+       \eqref{eq:tpc50-interior-cutoff-condition}, unless it is
+       recellized and its fixed-shape or aggregate energy hypotheses are
+       verified separately;
+ \item a Mellin contour shift that introduces non-unit power weights;
+       or
+ \item an arbitrary bounded row coefficient substituted for the fixed
+       character/phase provenance.
+\end{itemize}
+These exclusions are quantitative, not cosmetic: the construction in
+\cref{prop:tpc50-abstract-interface-counterexample} gives zero survival
+under the last broadening.
+
+Accordingly, the theorem neither breaches the parity barrier nor proves
+any fixed-shift prime-pair or twin-prime assertion.  Its contribution is
+the sharper localization of the remaining gap: after the actual
+fixed-complexity provenance is unpacked before the static mask, the
+identified direct active-cell weighted-survival subdoor is open, while
+the Mellin-frame, coherent-prime, residual-grouping, and
+physical-localization doors remain.

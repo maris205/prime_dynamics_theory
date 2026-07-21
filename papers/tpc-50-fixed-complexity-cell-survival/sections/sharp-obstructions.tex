@@ -1,0 +1,285 @@
+\section{Sharp concentration obstructions}
+\label{sec:tpc50-obstructions}
+
+The exact criterion of \cref{thm:tpc50-exact-concentration} cannot be
+deduced from row-count and coefficient upper bounds.  We give one
+large zero-survival block for each deletion in the literal static
+mask, and then remove the apparent degeneracy caused by a zero weighted
+matrix.
+
+Fix \(H\ge1\), let \(L,D\to\infty\), and assume \(L>4D\).  Work on
+the complete dyadic row universe
+\begin{equation}
+ \mathcal R_X
+ :=
+ \left\{(\ell,d):
+ L<\ell\le2L,\ \ell\in\mathbb P,
+ \ D<d\le2D,\ \mu^2(d)=1,\ (d,H)=1
+ \right\}.
+ \label{eq:tpc50-obstruction-universe}
+\end{equation}
+Put
+\begin{equation}
+ N:=|\mathcal R_X|
+ \asymp_H\frac{LD}{\log L},
+ \qquad
+ Q:=LD,
+ \qquad
+ \Delta:=QX^{-\kappa_0},
+ \qquad
+ G:=X^{\kappa_0},
+ \label{eq:tpc50-obstruction-scales}
+\end{equation}
+where \(\kappa_0>0\) is fixed.  We assume \(\Delta\to\infty\) and,
+only for the gcd construction, \(G=o(D)\).  Let \(M_X\) be the mask
+in \eqref{eq:tpc50-three-channel-mask} on
+\(\mathcal R_X\times\mathcal R_X\).
+
+\subsection{One sharp block for each deleted channel}
+
+\begin{proposition}[Same-source zero-survival block]
+\label{prop:tpc50-same-source-block}
+For all sufficiently large \(X\), there is a prime
+\(\ell_0\in(L,2L]\) such that
+\begin{equation}
+ S_{\rm src}
+ :=\{(\ell_0,d)\in\mathcal R_X\}
+ \label{eq:tpc50-source-block}
+\end{equation}
+satisfies
+\begin{equation}
+ |S_{\rm src}|\asymp_H D,
+ \qquad
+ M_X(\alpha,\gamma)=0
+ \quad(\alpha,\gamma\in S_{\rm src}).
+ \label{eq:tpc50-source-block-data}
+\end{equation}
+Consequently
+\begin{equation}
+ \delta_w(M_X;\one_{S_{\rm src}},\one_{S_{\rm src}})=0.
+ \label{eq:tpc50-source-zero-survival}
+\end{equation}
+At the inherited endpoint,
+\begin{equation}
+ |S_{\rm src}|
+ =X^{10049/52500+o(1)}.
+ \label{eq:tpc50-source-block-endpoint}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The prime number theorem supplies \(\ell_0\), and the elementary
+squarefree count with the fixed coprimality condition gives
+\(|S_{\rm src}|\asymp_H D\).  Every pair in the block has equal source
+prime, so the first factor in \eqref{eq:tpc50-three-channel-mask}
+vanishes.  The endpoint size is the inherited value of \(D\).
+\end{proof}
+
+\begin{proposition}[Near-row zero-survival block]
+\label{prop:tpc50-near-block}
+There is a set \(S_{\rm near}\subset\mathcal R_X\) such that
+\begin{equation}
+ |S_{\rm near}|
+ \gg N X^{-\kappa_0},
+ \qquad
+ |m_\alpha-m_\gamma|\le\Delta
+ \quad(\alpha,\gamma\in S_{\rm near}).
+ \label{eq:tpc50-near-block-data}
+\end{equation}
+Therefore
+\begin{equation}
+ \delta_w(M_X;\one_{S_{\rm near}},\one_{S_{\rm near}})=0.
+ \label{eq:tpc50-near-zero-survival}
+\end{equation}
+At the inherited endpoint,
+\begin{equation}
+ |S_{\rm near}|
+ \ge X^{267/400-\kappa_0+o(1)}.
+ \label{eq:tpc50-near-block-endpoint}
+\end{equation}
+In particular, if \(\kappa_0=1/400\), this is
+\(X^{133/200+o(1)}\).
+\end{proposition}
+
+\begin{proof}
+Every row product lies in \((Q,4Q]\).  Partition that interval into
+half-open intervals of length at most \(\Delta\).  The number of
+intervals is
+\begin{equation}
+ \left\lceil\frac{3Q}{\Delta}\right\rceil
+ \ll X^{\kappa_0}.
+ \label{eq:tpc50-near-bin-count}
+\end{equation}
+By pigeonhole, one interval contains at least
+\(\gg NX^{-\kappa_0}\) row products.  Take the corresponding rows for
+\(S_{\rm near}\).  Two products in the same half-open interval differ
+by less than \(\Delta\), so the middle factor in
+\eqref{eq:tpc50-three-channel-mask} vanishes.  Finally
+\(N=X^{267/400+o(1)}\) at the endpoint.
+\end{proof}
+
+\begin{proposition}[Large-gcd zero-survival block]
+\label{prop:tpc50-gcd-block}
+Assume \(G=o(D)\).  For all sufficiently large \(X\), there is a prime
+\(g\) satisfying
+\begin{equation}
+ G<g\le2G,
+ \qquad (g,H)=1,
+ \label{eq:tpc50-gcd-prime}
+\end{equation}
+and a set
+\begin{equation}
+ S_{\rm gcd}
+ :=\{(\ell,ge)\in\mathcal R_X:
+ D/g<e\le2D/g,\ \mu^2(e)=1,\ (e,gH)=1\}
+ \label{eq:tpc50-gcd-block}
+\end{equation}
+such that
+\begin{equation}
+ |S_{\rm gcd}|\asymp_H\frac Ng
+ =NX^{-\kappa_0+o(1)},
+ \qquad
+ M_X(\alpha,\gamma)=0
+ \quad(\alpha,\gamma\in S_{\rm gcd}).
+ \label{eq:tpc50-gcd-block-data}
+\end{equation}
+Thus
+\begin{equation}
+ \delta_w(M_X;\one_{S_{\rm gcd}},\one_{S_{\rm gcd}})=0.
+ \label{eq:tpc50-gcd-zero-survival}
+\end{equation}
+At the inherited endpoint the block has size
+\begin{equation}
+ |S_{\rm gcd}|
+ =X^{267/400-\kappa_0+o(1)}.
+ \label{eq:tpc50-gcd-block-endpoint}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The prime number theorem in the interval \((G,2G]\), with the finitely
+many prime divisors of \(H\) deleted, gives \(g\).  Since \(D/g\to
+\infty\), the squarefree count with the fixed coprimality restrictions
+gives \(\asymp_H D/g\) choices of \(e\).  Multiplication by the
+\(\asymp L/\log L\) source primes proves the cardinality statement.
+For any two rows in the block, both divisor coordinates are divisible
+by \(g>G\).  The last factor in
+\eqref{eq:tpc50-three-channel-mask} therefore vanishes.
+\end{proof}
+
+The three constructions saturate the degree--flatness mechanism
+channel by channel.  The source block has relative size
+\(D/N=L^{-1+o(1)}\), while the near and gcd blocks have relative size
+at least \(X^{-\kappa_0+o(1)}\); they may be thinned to that order while
+retaining zero survival.  Their full-universe flatness factors are the
+reciprocals of exactly those quantities.
+
+\subsection{Nonzero packets with polynomially small survival}
+
+The preceding examples have zero weighted matrices.  The next lemma
+shows that their obstruction is not confined to that endpoint.
+
+\begin{lemma}[One admitted neighbor]
+\label{lem:tpc50-admitted-neighbor}
+Let \(S\subset\mathcal R_X\) be any of
+\(S_{\rm src},S_{\rm near},S_{\rm gcd}\), and fix
+\(\alpha_0\in S\).  For all sufficiently large \(X\), there exists
+\(x\in\mathcal R_X\setminus S\) with
+\begin{equation}
+ M_X(\alpha_0,x)=1.
+ \label{eq:tpc50-admitted-neighbor}
+\end{equation}
+For
+\begin{equation}
+ a=e_{\alpha_0},
+ \qquad
+ b=\one_S+e_x,
+ \label{eq:tpc50-one-neighbor-weights}
+\end{equation}
+one has the exact value
+\begin{equation}
+ \boxed{
+ \delta_w(M_X;a,b)=\frac1{|S|+1}.}
+ \label{eq:tpc50-one-neighbor-survival}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+TPC--49 proves that every row of the complete static-mask graph has
+degree \((1-o(1))N\) \citep{WangTPC49}.  Hence \(\alpha_0\) has an
+admitted neighbor for sufficiently large \(X\).  Every pair in
+\(\{\alpha_0\}\times S\) is forbidden by the defining property of the
+chosen block, so such a neighbor necessarily lies outside \(S\).
+For \eqref{eq:tpc50-one-neighbor-weights}, the numerator of
+\eqref{eq:tpc50-general-weighted-survival} is exactly one, while
+\(\|a\|_2^2=1\) and \(\|b\|_2^2=|S|+1\).
+\end{proof}
+
+\begin{corollary}[Endpoint separation from the required density]
+\label{cor:tpc50-tiny-positive-survival}
+The same-source construction gives a nonzero weighted matrix with
+\begin{equation}
+ \delta_w
+ =X^{-10049/52500+o(1)}.
+ \label{eq:tpc50-source-tiny-endpoint}
+\end{equation}
+The near and gcd constructions give nonzero weighted matrices with
+\begin{equation}
+ \delta_w
+ \le X^{-(267/400-\kappa_0)+o(1)}.
+ \label{eq:tpc50-near-gcd-tiny-endpoint}
+\end{equation}
+When \(\kappa_0=1/400\), the latter exponent is \(133/200\), and all of
+these displayed survival parameters are polynomially smaller than the
+isolated TPC target \(X^{-1/400+o(1)}\).
+\end{corollary}
+
+\subsection{Why fixed provenance excludes these selectors}
+
+\begin{proposition}[Unit-phase immunity]
+\label{prop:tpc50-unit-phase-immunity}
+Let \(u:I\to\mathbb C\), \(v:J\to\mathbb C\) have unit modulus and
+let \(U:I\times J\to\mathbb C\) have unit modulus on the support of
+\(M\).  Then
+\begin{equation}
+ \delta_w(M\odot U;u\odot a,v\odot b)
+ =\delta_w(M;a,b).
+ \label{eq:tpc50-unit-phase-invariance}
+\end{equation}
+In particular, row and orbit Mellin phases, M\"obius signs, and fixed
+residue characters cannot reduce weighted survival.  A scalar Mellin
+coefficient cancels from the normalized ratio when it is nonzero; a
+zero scalar cell may be deleted.
+\end{proposition}
+
+\begin{proof}
+Every term in \eqref{eq:tpc50-general-weighted-survival} depends only on the
+absolute values of the two unary weights and of the kernel entry.
+\end{proof}
+
+\begin{remark}[Upper-only compatibility and physical incompatibility]
+\label{rem:tpc50-obstruction-provenance-boundary}
+The weights in
+\cref{prop:tpc50-same-source-block,prop:tpc50-near-block,prop:tpc50-gcd-block,lem:tpc50-admitted-neighbor}
+are bounded by one, have support at most \(N\), and obey all row-count,
+pointwise, and \(\ell^2\) upper bounds inherited by TPC--45/48.  They
+are therefore genuine countermodels to any deduction based only on
+that upper interface.  They are not asserted to be the literal
+physical coefficient.
+
+More precisely, the same-source block selects one prime that moves
+with \(X\); the near block requires a normalized cutoff of width
+\(X^{-\kappa_0}\); and the gcd block requires divisibility by a modulus
+\(g\asymp X^{\kappa_0}\).  None is generated by a nonzero fixed smooth
+dyadic family, a fixed-period residue cell, or a unit-modulus Mellin
+phase.  A power-narrow smooth selector would also violate the inherited
+uniform normalized \(C^B\)-bounds.  Thus the examples prove the need
+for an explicit no-concentration or fixed-provenance theorem; they do
+not disprove survival for the literal fixed-complexity cells.
+
+Finally, cancellation between different signed residue/Mellin layers
+does not alter this conclusion.  Such cancellation changes the
+representation condition number and belongs to the frame-efficiency
+gate, not to the nonnegative survival ratio
+\eqref{eq:tpc50-general-weighted-survival}.
+\end{remark}

@@ -1,0 +1,121 @@
+\section{Energy-selected survival for a family of cells}
+\label{sec:tpc50-frame-selection}
+
+The fixed-shape theorem below controls every nonzero standard cell.
+It is useful to have a second statement that remains valid when a
+partition contains boundary atoms with arbitrarily small energy.  The
+result is elementary, but it separates low cell energy from poor mask
+survival without selecting a favorable signed summand.
+
+Let \(M:I\times J\to\{0,1\}\), where \(|J|=N\), and suppose every row
+has at most \(\epsilon N\) forbidden entries.  Let
+\(b_\lambda\in\C^J\), \(\lambda\in\Lambda\), be a finite cell family.
+Fix \(B>0\) and \(A>0\), and assume
+\begin{equation}
+ |\Lambda|\le S,
+ \qquad
+ \|b_\lambda\|_\infty^2\le B^2,
+ \qquad
+ \sum_{\lambda\in\Lambda}\|b_\lambda\|_2^2
+ \ge ANB^2.
+ \label{eq:tpc50-frame-hypotheses}
+\end{equation}
+The last inequality is only an aggregate lower frame bound.  It does
+not assert orthogonality of the cells or a lower bound for their signed
+sum.
+
+For \(0<\tau<1\), call a cell energetic if
+\begin{equation}
+ \|b_\lambda\|_2^2\ge\tau NB^2.
+ \label{eq:tpc50-energetic-cell}
+\end{equation}
+
+\begin{theorem}[Energy selection without a cellwise lower bound]
+\label{thm:tpc50-energy-selection}
+Every energetic cell and every nonzero \(a\in\C^I\) satisfy
+\begin{equation}
+ \delta_w(M;a,b_\lambda)\ge1-\frac\epsilon\tau.
+ \label{eq:tpc50-energetic-survival}
+\end{equation}
+Moreover, the total energy of the nonenergetic cells is bounded by
+\begin{equation}
+ \frac{\sum_{\lambda\text{ nonenergetic}}
+             \|b_\lambda\|_2^2}
+      {\sum_{\lambda}\|b_\lambda\|_2^2}
+ \le\frac{S\tau}{A}.
+ \label{eq:tpc50-low-cell-energy}
+\end{equation}
+Consequently, if
+\(\epsilon=X^{-c+o(1)}\), \(S/A=X^{o(1)}\), and
+\(\tau=\epsilon^{1/2}\), then every energetic cell has survival at least
+\(1-X^{-c/2+o(1)}\), while the nonenergetic cells carry only
+\(X^{-c/2+o(1)}\) of the aggregate cell energy.
+\end{theorem}
+
+\begin{proof}
+For an energetic cell,
+\begin{equation}
+ \operatorname{Flat}(b_\lambda)
+ =\frac{N\|b_\lambda\|_\infty^2}
+       {\|b_\lambda\|_2^2}
+ \le\frac1\tau.
+ \label{eq:tpc50-energy-flatness}
+\end{equation}
+The degree--flatness inequality gives
+\eqref{eq:tpc50-energetic-survival}.  Each nonenergetic cell has energy
+less than \(\tau NB^2\); there are at most \(S\) of them.  Divide their
+sum by the aggregate lower bound in
+\eqref{eq:tpc50-frame-hypotheses} to obtain
+\eqref{eq:tpc50-low-cell-energy}.  The last assertion is immediate.
+\end{proof}
+
+\begin{corollary}[Bounded-overlap partitions]
+\label{cor:tpc50-partition-frame}
+Suppose functions \(w_\lambda:J\to\C\) have overlap at most \(R\),
+satisfy
+\begin{equation}
+ \sum_\lambda w_\lambda(j)=1
+ \quad(j\in J),
+ \qquad
+ |w_\lambda(j)|\le C,
+ \label{eq:tpc50-partition-unity}
+\end{equation}
+and let \(0\ne g\in\C^J\) obey
+\begin{equation}
+ \|g\|_2^2\ge cN\|g\|_\infty^2.
+ \label{eq:tpc50-base-flatness}
+\end{equation}
+Then \(b_\lambda=gw_\lambda\) satisfies
+\eqref{eq:tpc50-frame-hypotheses} with
+\(S=|\Lambda|\), \(B=C\|g\|_\infty\), and
+\(A=c/(RC^2)\) (or any smaller positive value).
+\end{corollary}
+
+\begin{proof}
+At every \(j\), Cauchy--Schwarz and the overlap bound give
+\begin{equation}
+ 1=\left|\sum_\lambda w_\lambda(j)\right|^2
+ \le R\sum_\lambda|w_\lambda(j)|^2.
+ \label{eq:tpc50-square-frame-pointwise}
+\end{equation}
+Multiply by \(|g_j|^2\) and sum over \(j\).  Thus
+
+\[
+ \sum_\lambda\|gw_\lambda\|_2^2
+ \ge R^{-1}\|g\|_2^2
+ \ge (c/R)N\|g\|_\infty^2
+ =\frac{c}{RC^2}NB^2.
+\]
+
+The pointwise upper bound is immediate.
+\end{proof}
+
+TPC--18 uses a fixed bounded-overlap dyadic partition in the opened
+\(d\)-variable \citep{WangTPC18}; fixed residue cells have overlap one.
+Provided the base-flatness and aggregate lower-energy hypotheses in
+\cref{cor:tpc50-partition-frame} are verified for the family at hand,
+\cref{thm:tpc50-energy-selection} then protects its energy-significant
+boundary atoms even if a uniform lower bound is not imposed on every
+individual cutoff.  It is deliberately an aggregate cell-energy
+statement.  Turning that aggregate into the squared norm of a signed
+Mellin reassembly is a separate frame/no-cancellation problem.

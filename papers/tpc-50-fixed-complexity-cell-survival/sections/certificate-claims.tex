@@ -1,0 +1,79 @@
+\section{Deterministic certificate and reproducibility boundary}
+\label{sec:tpc50-certificate}
+
+The repository contains the exact-arithmetic script
+\begin{center}
+\texttt{experiments/tpc50\_certificate.py}.
+\end{center}
+It produces \texttt{experiments/tpc50\_certificate.json}.  The script
+uses integers and rational numbers only: there is no floating-point
+arithmetic, pseudorandom input, numerical optimizer, or tolerance-based
+comparison.
+
+The certificate performs the following deterministic checks.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item It enumerates every binary mask of size at most
+       \(3\times3\) in the declared suite and all nonzero integer row
+       weights with entries in \(\{0,1,2\}\).  It verifies the exact
+       convex-combination identity
+       \begin{equation}
+        \delta_w(M;a,b)
+        =\sum_i\frac{|a_i|^2}{\|a\|_2^2}s_b(i),
+        \label{eq:tpc50-certificate-convex-identity}
+       \end{equation}
+       and checks
+       \(\inf_{a\ne0}\delta_w(M;a,b)=1-\eta_M(b)\).  A basis vector at
+       a minimizing row attains the value in every one of the
+       \(15{,}884\) mask--right-weight cases.
+ \item It exhausts all triples of \(2\times2\) binary forbidden-channel
+       matrices and verifies both the three-channel union bound for
+       \(\eta_M\) and the resulting survival inequality for every
+       enumerated left and right weight.
+ \item It checks the degree--flatness inequality exactly and verifies
+       the energetic-cell lower bound and the aggregate nonenergetic
+       energy estimate for \(132{,}864\) finite selection cases at
+       \(\tau\in\{1/4,1/2,3/4\}\).
+ \item It verifies invariance under independent nonzero integer scaling
+       and under row, column, and supported-kernel phases in the exact
+       Gaussian unit group \(\{1,-1,i,-i\}\).
+ \item It constructs one explicit finite row universe containing a
+       same-source block, a near-product block, and a large-gcd block.
+       Each block has zero survival.  Adding one admitted neighbor gives
+       the exact positive value \(1/(|S|+1)=1/3\) in each channel.
+ \item It checks the rational endpoint ledger, including
+       \begin{equation}
+        \frac{99979}{210000}+\frac{10049}{52500}
+        =\frac{267}{400},
+        \qquad
+        \frac{267}{400}-\frac1{400}=\frac{133}{200},
+        \label{eq:tpc50-certificate-endpoint-identities}
+       \end{equation}
+       the interior-cutoff margin
+       \(23/120-10049/52500=9/35000\), the canonical degree-defect exponent when
+       \(\kappa_0=1/400\), and the zero-cost isolated-face budget
+       identity.
+\end{enumerate}
+
+The committed record contains \(1{,}469{,}068\) exact checks.  Its
+release digests are
+\begin{center}
+\small
+\begin{tabular}{@{}ll@{}}
+semantic & \nolinkurl{b01a3c4ede8b20090e904d7f93cd29174f2d8bb46b294f9fc02d988e398786cf}\\
+source & \nolinkurl{8ad51dbe7dd900c993a616968111077ef9d55485e2d457239d314d31ee908915}\\
+JSON & \nolinkurl{f4f7cd5abb63a8919f7594ecee2c23d189ea07109906f069aab2112411d9393b}
+\end{tabular}
+\end{center}
+The semantic digest is taken from the canonical JSON serialization of
+the result payload before hash metadata are added.  The source digest
+normalizes line endings and trailing whitespace.  The JSON digest is
+the SHA--256 hash of the committed generated record.
+
+This computation is a finite regression certificate, not an
+asymptotic proof.  In particular, it does not prove the fixed-modulus
+prime number theorem, the squarefree progression asymptotic, the
+complete-universe degree estimate, or the physical provenance of a
+residue/Mellin cell.  It does not identify the abstract obstruction
+weights with literal TPC coefficients, estimate the coherent prime
+square, or test any prime-pair or twin-prime assertion.  Those logical
+boundaries are part of the theorem statements, not empirical caveats.
