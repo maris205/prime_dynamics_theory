@@ -1,0 +1,66 @@
+{
+  "arb": {
+    "coherent_identity_certified": true,
+    "precision_bits": 256,
+    "production_interval_audit_executed": false,
+    "terminal_residual_zero_certified": true
+  },
+  "limitations": [
+    "Nested depth is finite-model dependent and is not uniformly bounded in the physical family.",
+    "The final unexpanded remainder still uses an ordinary operator norm.",
+    "The pilot sources are vectors; block cross-column fusion remains open."
+  ],
+  "pilot": {
+    "model_count": 3,
+    "models": [
+      {
+        "fully_nested_gain": 1.0122741816492429,
+        "name": "rh61_left_calibrated_slow_fast",
+        "one_level_gain": 1.0000001249999932
+      },
+      {
+        "fully_nested_gain": 1.0,
+        "name": "rh60_two_block",
+        "one_level_gain": 66.40945034360468
+      },
+      {
+        "fully_nested_gain": 1.0000000000000004,
+        "name": "nonnormal_four_step_chain",
+        "one_level_gain": 84.05389880446866
+      }
+    ]
+  },
+  "program_boundary": {
+    "block_cross_column_fusion": false,
+    "hilbert_polya_operator": false,
+    "production_physical_family": false,
+    "stage_A1_closed": false,
+    "stage_A4_unconditional_closed": false,
+    "terminal_directional_propagator": false,
+    "uniform_residual_depth": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "7447fc33ca6f0d307891edb10a7f7b04dddc3c9ba6cd1e3562caafa1a5fce42f",
+    "README.md": "fd8881f25c5a14e9f28e6657f00f9f3878b0b3dc48beb7166e61d3914c230986",
+    "figures/nested_krylov_closure.pdf": "405eeda0c7fee158d2559783844c7553701b2fe58e974167314309701493b909",
+    "figures/nested_krylov_closure.png": "90824e7c92bdbde04c160168448287a06119077d00a699d13020cfebf627f472",
+    "main.pdf": "b16ca8cc8b1534f1bc0a27c36d4f481153374d9dfebfbc486ce6d1bbc0b2f196",
+    "main.tex": "e2b3dcf98f4bfce3ed700c5d87bdddfb72649f63e8daa82d14ceaf1ab1d18ebf",
+    "nested-krylov-residual-closure.pdf": "b16ca8cc8b1534f1bc0a27c36d4f481153374d9dfebfbc486ce6d1bbc0b2f196",
+    "pyproject.toml": "744d49c614b353bf8e7ed71f1646a0c50498572bc960919469d6a316c86d9cae",
+    "references.bib": "4e7b5e991bccd2693e32ac7659a1b0728072d790279cb6dfc77f296ad6f53c31",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "result_hashes": {
+    "results/arb_nested_audit.json": "d3cd4d56b1ff291a988bdbf2cc9f2fb7ca62db5c131944e24b96a7890f832906",
+    "results/dependency_manifest.json": "34a59ef05cb9dbe0e529f882043e9d44a80bc4f097ce66a33a9062de7738493d",
+    "results/nested_krylov_pilot.json": "5159a8bf8f8e69f35e42a17fdef2099ef650f0eb736ef989873dd713e0da3b35",
+    "results/nested_krylov_smoke.json": "53a1d5171c233ac72d3929b565dffaf0c7239eaceae84866d651679ea8898c99"
+  },
+  "status": "rh63_nested_krylov_residual_closure_audit",
+  "theorem": {
+    "breakdown_exactness": true,
+    "coherent_nested_identity": true,
+    "positive_terminal_remainder": true
+  }
+}

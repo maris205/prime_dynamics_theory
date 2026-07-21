@@ -1,0 +1,36 @@
+{
+  "external_inputs": {
+    "rh61_audit": {
+      "path": "papers/RH-61-directional-horizon-scaling-barrier/results/horizon_scaling_audit.json",
+      "sha256": "6ff5dca6c691ca6151d1b1e1c8bf34a122375df5067b97b5b57ce15e6885f4b7"
+    },
+    "rh62_pilot": {
+      "path": "papers/RH-62-krylov-residual-stein-tails/results/krylov_tail_pilot.json",
+      "sha256": "822e21020974c52f709e00a8953d05994137b99e8ae9d773d397a251db354065"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "79695f6e091368efd3214a0b0f4ae7dd1c2b818e9ebd4fc8cf499683b934fb87",
+    "experiments/make_figures.py": "1daabc8e0e7ff2b2eb7728a5d1b2384f99bbe9d34d6559f9ddc44ea85dc37aae",
+    "experiments/run_arb_nested_audit.py": "cb3fdc6489babd06de6bd68f99e5f4d768ca89bb133d7c9c4b2b7258d4d59234",
+    "experiments/run_nested_krylov_pilot.py": "147a601ec73694c44770a23315eb2ee79539869afa64902daa2ba0ed33b091dc",
+    "experiments/verify_archive.py": "8137072ff7bc1b08e2b9893ee38642d430a692898ee193c5003c8f1dbc7f7e96",
+    "src/nested_krylov/__init__.py": "5e96e4539d8034c7648acfe625957cb206c8960eccbee160b2ea9d9df73e293c",
+    "src/nested_krylov/algebra.py": "d62f3df0de2cc1e442fed09d045e5e13c40ff8350f8dc2c90bcfdc575e475026",
+    "tests/test_smoke.py": "5a9f1b84a90219c0e52276b2715d7adff47f6357b1c314157124a4ea0c073f8f",
+    "tests/test_theory.py": "7cfb9312922c3ba1333b1cd0d1f8d19930ce7400f5aaf5ff3cadb29ba1363133"
+  },
+  "publication_artifacts": {
+    ".gitignore": "7447fc33ca6f0d307891edb10a7f7b04dddc3c9ba6cd1e3562caafa1a5fce42f",
+    "README.md": "fd8881f25c5a14e9f28e6657f00f9f3878b0b3dc48beb7166e61d3914c230986",
+    "figures/nested_krylov_closure.pdf": "405eeda0c7fee158d2559783844c7553701b2fe58e974167314309701493b909",
+    "figures/nested_krylov_closure.png": "90824e7c92bdbde04c160168448287a06119077d00a699d13020cfebf627f472",
+    "main.pdf": "b16ca8cc8b1534f1bc0a27c36d4f481153374d9dfebfbc486ce6d1bbc0b2f196",
+    "main.tex": "e2b3dcf98f4bfce3ed700c5d87bdddfb72649f63e8daa82d14ceaf1ab1d18ebf",
+    "nested-krylov-residual-closure.pdf": "b16ca8cc8b1534f1bc0a27c36d4f481153374d9dfebfbc486ce6d1bbc0b2f196",
+    "pyproject.toml": "744d49c614b353bf8e7ed71f1646a0c50498572bc960919469d6a316c86d9cae",
+    "references.bib": "4e7b5e991bccd2693e32ac7659a1b0728072d790279cb6dfc77f296ad6f53c31",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "status": "all_rh63_inputs_sources_and_publication_artifacts_hashed"
+}
