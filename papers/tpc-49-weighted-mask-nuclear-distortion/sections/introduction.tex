@@ -1,0 +1,145 @@
+\section{Introduction}
+\label{sec:tpc49-introduction}
+
+The all-band theorem of TPC--48 leaves a precise normalization problem.
+The frozen residual determinant family built from the literal
+\(h_0\)-coefficient field satisfies, schematically,
+\begin{equation}
+ \|\widehat{\cF}^{\rm fr}(\alpha)\|
+ \le \mathsf L(\alpha)^{1/2}
+      \mathfrak S_{\rm pr}(\alpha),
+ \label{eq:tpc49-inherited-reduction-schematic}
+\end{equation}
+where \(\mathsf L\) is an explicit common-profile large-sieve factor
+and \(\mathfrak S_{\rm pr}\) is the pointwise infimum of signed
+projective row-square envelopes \citep{WangTPC48}.  The inherited TPC
+denominator, however, is the physical atomic diagonal at one fixed
+determinant shift.  A small bounded-projective norm for the row mask is
+not by itself a comparison between these two quantities.  TPC--36
+already warned that its
+\(\ell^\infty\widehat\otimes_\pi\ell^\infty\) norm is a Schur-multiplier
+complexity, not a Gram estimate \citep{WangTPC36}.
+
+This paper isolates the finite-dimensional core of that mismatch.  It
+has two logically independent parts.
+
+First, once a coefficient face has genuinely been Hilbertized, the
+optimal rank-one envelope is not mysterious: it is exactly the nuclear
+norm.  The atomic diagonal is the squared Frobenius norm.  Their squared
+ratio
+\begin{equation}
+ r_{\rm nuc}(T)
+ :=\frac{\|T\|_{S_1}^2}{\|T\|_{S_2}^2}
+ \label{eq:tpc49-intro-nuclear-rank}
+\end{equation}
+is the correct effective-rank invariant.  Algebraic rank gives a valid
+upper bound, but can be very crude.  Stable rank gives no upper bound at
+all.  Moreover, a fixed signed representation may be arbitrarily worse
+than the optimal nuclear decomposition, because large cancelling layer
+pairs do not change the coefficient tensor.  Thus every fixed-envelope
+theorem needs two inputs: intrinsic nuclear effective rank and a
+representation-efficiency estimate.
+
+Second, the bounded projective norm of TPC--36 does become useful after
+one measures how much weighted mass survives the mask.  For
+\(A=D_aKD_b\), set
+\begin{equation}
+ \delta_w(A\mid K)
+ :=\frac{\|A\|_{S_2}^2}
+ {\|a\|_2^2\|b\|_2^2}.
+ \label{eq:tpc49-intro-weighted-density}
+\end{equation}
+We prove the sharp transfer
+\begin{equation}
+ r_{\rm nuc}(A)
+ \le \frac{\|K\|_{\pi,\infty}^2}{\delta_w(A\mid K)}.
+ \label{eq:tpc49-intro-density-transfer}
+\end{equation}
+The factor \(\delta_w^{-1}\) is unavoidable in the class controlled
+only by bounded projective cost and admitted density: a permutation
+matrix has projective cost one and attains equality.
+
+The complete-universe extension of the static TPC mask formula has
+considerably more structure.  On the complete dyadic row universe, the
+three deleted
+sets---same source prime, near source product, and large row gcd---have
+uniformly vanishing relative degree.  The mask is therefore
+\(1-o(1)\) dense.  A specified explicit TPC--36 representation has soft
+projective mass, so this complete-universe formula model has only
+\(X^{o(1)}\)
+projective-to-atomic distortion.  This is a positive conclusion: the
+complete static mask does not account for a remaining polynomial loss.
+
+There is an equally important negative conclusion.  The same dense
+admitted graph has a perfect matching.  A permutation packet supported
+only on that matching has projective cost one and nuclear effective
+rank equal to the full row count.  It obeys the actual mask support but
+does not equal the literal joint multiplier.  Consequently neither
+support nor bounded projective complexity can replace a
+coefficient-specific weighted-density or frame theorem.
+
+\subsection{Main results}
+
+The paper proves the following statements.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item The Hilbert projective infimum equals the nuclear norm, and the
+       exact energy distortion is \(r_{\rm nuc}\); see
+       \cref{thm:tpc49-Hilbert-projective}.
+ \item For every fixed representation \(\mathscr R\), the distortion
+       factors exactly as
+       \begin{equation}
+       \frac{\cE_{\mathscr R}(T)^2}{\|T\|_{S_2}^2}
+       =c_{\mathscr R}(T)^2r_{\rm nuc}(T).
+       \label{eq:tpc49-intro-exact-ledger}
+       \end{equation}
+       No bound uniform over all exact signed representations is
+       possible.
+ \item Bounded projective cost transfers to weighted atomic energy by
+       \eqref{eq:tpc49-intro-density-transfer}, for both optimal and
+       specified representations; see
+       \cref{thm:tpc49-weighted-transfer}.
+ \item On a complete dyadic TPC row cell, the complete-universe extension
+       of the literal static-mask formula has minimum degree
+       \((1-o(1))N\) and specified-representation
+       distortion \(X^{o(1)}\); see
+       \cref{thm:tpc49-static-degree,thm:tpc49-static-soft}.
+ \item The actual-mask support contains a sharp permutation packet,
+       while the completed product kernel of TPC--36 gives the same
+       obstruction at orbit-scale modulus.  Ferrers separation costs
+       only \(\asymp(\log n)^2\) in energy.
+ \item If the entire isolated-face endpoint allowance is assigned here
+       and
+       \(c_{\mathscr R}=X^{\chi+o(1)}\) and
+       \(r_{\rm nuc}=X^{\rho+o(1)}\), the exact face-budget condition is
+       \(2\chi+\rho\le1/400\).
+\end{enumerate}
+
+\subsection{What is not identified}
+
+The nuclear identity applies to a finite Hilbert tensor.  The full
+TPC--48 quantity \(\mathfrak S_{\mathscr R}\) also contains a
+\(C_{\rm LS}^{1/2}\)-weighted profile norm and an \(L^1(d|\nu|)\)
+reassembly.  We do not declare that Banach profile envelope to be a
+nuclear norm.  Nor do we replace its completed coherent prime square by
+the fixed-\(h_0\) physical diagonal.  Those operations would conflate
+the present mask theorem with prime cancellation, shift localization,
+and residual grouping.
+
+The result is therefore a genuine but scoped advance.  It supplies the
+correct invariant and closes the complete static-mask model at soft
+cost; it also proves why the remaining coefficient-specific input
+cannot be inferred from support alone.  It does not prove a
+fixed-shift Chowla estimate, a parity-barrier breach, or a prime-pair
+asymptotic.
+
+\subsection{Organization}
+
+\Cref{sec:tpc49-interface} records the inherited coefficient interface.
+\Cref{sec:tpc49-Hilbert-geometry} proves the nuclear identity and the
+fixed-representation ledger.  \Cref{sec:tpc49-weighted-transfer}
+establishes the weighted mask theorem.  \Cref{sec:tpc49-static-mask}
+proves the complete-row degree theorem and the matching boundary.
+\Cref{sec:tpc49-models} computes sharp model families.
+\Cref{sec:tpc49-endpoint} inserts the TPC exponents, and
+\cref{sec:tpc49-boundaries,sec:tpc49-certificate} state the next gate
+and the deterministic certificate.

@@ -1,0 +1,248 @@
+\section{The complete-universe extension of the static-mask formula}
+\label{sec:tpc49-static-mask}
+
+The inherited active TPC packet may be pruned by smooth and residue
+weights, and no lower row count is part of the TPC--45/47 interface.
+We therefore separate two statements.  This section first analyzes the
+complete-universe extension on which the literal static-mask formula
+\eqref{eq:tpc49-actual-static-mask} is defined.  It then states the
+weighted condition needed to transfer the conclusion to a pruned active
+cell.
+
+\subsection{The ambient row universe}
+
+Fix \(H\ge1\) and \(\kappa_0>0\).  Let \(L,D\to\infty\) with \(X\),
+assume \(L,D\le X^C\) for some fixed \(C\), and let
+\begin{equation}
+ \cR(L,D;H)
+ :=\left\{(\ell,d):
+ L<\ell\le2L, \ell\in\Pp,
+ D<d\le2D, \mu^2(d)=1, (d,H)=1
+ \right\}.
+ \label{eq:tpc49-complete-row-universe}
+\end{equation}
+Assume \(L>4D\), as is more than satisfied by the inherited endpoint
+separation.  Put \(N=|\cR(L,D;H)|\).  The prime number theorem and the
+elementary squarefree count in fixed coprime residue conditions give
+\begin{equation}
+ N\asymp_H\frac{LD}{\log L}=X^{o(1)}LD.
+ \label{eq:tpc49-complete-row-count}
+\end{equation}
+Only this two-sided order estimate is used; see, for example,
+\citep[Chapter~1]{IwaniecKowalski2004}.  The row product
+\(m=\ell d\) is injective: if \(\ell d=\ell'd'\) and
+\(\ell\ne\ell'\), then the prime \(\ell\) divides
+\(d'<2D<\ell\), a contradiction.
+
+Use the same row universe on the two sides and define
+\(M_X(\alpha,\gamma)\) by the literal static formula
+\eqref{eq:tpc49-actual-static-mask}, with
+\begin{equation}
+ Q=LD,
+ \qquad \Delta=QX^{-\kappa_0},
+ \qquad G=X^{\kappa_0}.
+ \label{eq:tpc49-complete-mask-scales}
+\end{equation}
+
+\begin{theorem}[Uniform degree of the complete static mask]
+\label{thm:tpc49-static-degree}
+Uniformly in every row on either side,
+\begin{equation}
+ \deg_{M_X}(\alpha)
+ \ge(1-\epsilon_X)N,
+ \qquad
+ \epsilon_X
+ \ll_H
+ L^{-1+o(1)}+D^{-1+o(1)}+X^{-\kappa_0+o(1)}.
+ \label{eq:tpc49-static-min-degree}
+\end{equation}
+In particular \(\epsilon_X=o(1)\) whenever \(L,D\to\infty\).
+\end{theorem}
+
+\begin{proof}
+Fix \(\alpha=(\ell,d)\).  The forbidden rows lie in the union of three
+sets.
+
+For the same-source deletion \(\ell_\gamma=\ell\), there are \(O_H(D)\)
+choices.  Dividing by \eqref{eq:tpc49-complete-row-count} gives
+\begin{equation}
+ \frac{O_H(D)}N\ll_H\frac{\log L}{L}=L^{-1+o(1)}.
+ \label{eq:tpc49-same-source-degree}
+\end{equation}
+
+For the near-row deletion, injectivity of the integer label \(m_\gamma\)
+gives at most \(2\Delta+1\) rows.  Hence
+\begin{equation}
+ \frac{2\Delta+1}{N}
+ \ll_H X^{-\kappa_0}\log L+\frac{\log L}{LD}
+ =X^{-\kappa_0+o(1)}+(LD)^{-1+o(1)}.
+ \label{eq:tpc49-near-row-degree}
+\end{equation}
+
+Finally, if \((d,d_\gamma)>G\), the gcd is a divisor
+\(g\mid d\) with \(g>G\).  For each opposite source prime, the number
+of possible \(d_\gamma\) is at most
+\begin{align}
+ \sum_{\substack{g\mid d\\g>G}}
+ \left(\frac{2D}{g}+1\right)
+ &\le \tau(d)\left(\frac{2D}{G}+1\right).
+ \label{eq:tpc49-gcd-bad-divisor-count}
+\end{align}
+Here we used \(g^{-1}\le G^{-1}\) and at most \(\tau(d)\) divisors.
+Since \(\tau(d)=D^{o(1)}=X^{o(1)}\) under the declared polynomial
+scale bound, multiplication by the
+\(O(L/\log L)\) source primes and division by \(N\) yield
+\begin{equation}
+ \frac{\#\{\gamma:(d,d_\gamma)>G\}}N
+ \ll_H X^{-\kappa_0+o(1)}+D^{-1+o(1)}.
+ \label{eq:tpc49-gcd-bad-degree}
+\end{equation}
+The union bound proves \eqref{eq:tpc49-static-min-degree}.  The formula
+is symmetric, so the column estimate is identical.
+\end{proof}
+
+\begin{corollary}[Density and a perfect matching]
+\label{cor:tpc49-static-density-matching}
+The number of admitted entries is
+\begin{equation}
+ \|M_X\|_{S_2}^2
+ =\#\{(\alpha,\gamma):M_X(\alpha,\gamma)=1\}
+ =(1+O(\epsilon_X))N^2.
+ \label{eq:tpc49-static-Frobenius}
+\end{equation}
+For all sufficiently large \(X\), the admitted bipartite graph has a
+perfect matching.
+\end{corollary}
+
+\begin{proof}
+Sum the row degrees for the first statement.  For large \(X\), both the
+minimum row degree and minimum column degree exceed \(N/2\).  The empty
+set is trivial.  If \(0<|S|\le N/2\), any vertex in \(S\) has more than
+\(N/2\) neighbors, so \(|\Gamma(S)|>|S|\).  If \(|S|>N/2\), a right
+vertex without a neighbor in \(S\) would have all its more than \(N/2\)
+neighbors in the complement of \(S\), whose size is less than \(N/2\),
+a contradiction.  Hall's condition follows.
+\end{proof}
+
+\subsection{A specified explicit complete-mask comparison}
+
+Fix one explicit representation \(\mathscr R_{36}\) furnished by the
+proof of the TPC--36 static-mask theorem, using same-source
+orthogonality, signed Ferrers separation, and global gcd compression.
+That construction, rather than the infimum alone in
+\eqref{eq:tpc49-inherited-mask-cost}, gives a fixed-representation bound.
+Define
+\begin{equation}
+ \omega_*^{\rm comp}
+ :=\max_{\substack{D<d\le2D\\ \mu^2(d)=1,\ (d,H)=1}}\omega(d),
+ \label{eq:tpc49-complete-omega}
+\end{equation}
+where \(\omega(d)\) counts the distinct prime divisors of \(d\).  Then
+\begin{equation}
+ P_{\mathscr R_{36}}(M_X)
+ \ll \log(2Q)(3+2\sqrt2)^{\omega_*^{\rm comp}}=X^{o(1)}.
+ \label{eq:tpc49-explicit-mask-cost}
+\end{equation}
+Indeed, every fixed-base exponential in \(\omega_*^{\rm comp}\) is
+\(D^{o(1)}=X^{o(1)}\).
+
+\begin{theorem}[Soft atomic cost for the complete-universe extension]
+\label{thm:tpc49-static-soft}
+For all sufficiently large \(X\), on
+\(\cR(L,D;H)\times\cR(L,D;H)\),
+\begin{equation}
+ \frac{\cE_{\mathscr R_{36}}(M_X;\one,\one)^2}
+ {\|M_X\|_{S_2}^2}
+ \le
+ \frac{P_{\mathscr R_{36}}(M_X)^2}
+ {1-\epsilon_X}
+ =X^{o(1)}.
+ \label{eq:tpc49-static-canonical-soft}
+\end{equation}
+Consequently
+\begin{equation}
+ r_{\rm nuc}(M_X)=X^{o(1)}.
+ \label{eq:tpc49-static-intrinsic-soft}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For uniform weights, the minimum-degree bound gives
+\(\delta_w\ge1-\epsilon_X\).  Apply
+\cref{thm:tpc49-weighted-transfer} to the specified explicit
+representation and then use \eqref{eq:tpc49-explicit-mask-cost}.
+The intrinsic infimum is no larger.
+\end{proof}
+
+This theorem concerns the complete static \(0\)-\(1\) mask.  It does
+not say that every coefficient supported by the mask has soft nuclear
+rank, nor that the full multiplier
+\eqref{eq:tpc49-joint-multiplier} has a weighted lower density on every
+active residue/Mellin cell.
+
+\begin{corollary}[A criterion for a pruned weighted cell]
+\label{cor:tpc49-pruned-cell}
+Suppose a retained opposite-row weight \(b\) on the complete universe
+satisfies
+\begin{equation}
+ \epsilon_X\operatorname{Flat}(b)=o(1).
+ \label{eq:tpc49-flat-cell-hypothesis}
+\end{equation}
+Then for every nonzero source weight \(a\),
+\begin{equation}
+ \frac{\cE_{\mathscr R_{36}}(M_X;a,b)^2}
+ {\|D_aM_XD_b\|_{S_2}^2}
+ \le X^{o(1)}.
+ \label{eq:tpc49-flat-cell-conclusion}
+\end{equation}
+\end{corollary}
+
+This is a checkable sufficient condition for a separated TPC cell.
+The current inherited interface does not supply
+\eqref{eq:tpc49-flat-cell-hypothesis}; it is a new active-cell task.
+
+\subsection{A support-class obstruction inside the same mask}
+
+Let \(\sigma\) be the perfect matching from
+\cref{cor:tpc49-static-density-matching} and define
+\begin{equation}
+ P_\sigma(\alpha,\gamma)=\one_{\gamma=\sigma(\alpha)}.
+ \label{eq:tpc49-matching-packet}
+\end{equation}
+Then \(P_\sigma\) is supported entirely where \(M_X=1\).
+
+\begin{theorem}[Sharp actual-mask-support witness]
+\label{thm:tpc49-mask-support-witness}
+The packet \eqref{eq:tpc49-matching-packet} satisfies
+\begin{equation}
+ \|P_\sigma\|_{\pi,\infty}=1,
+ \qquad
+ \|P_\sigma\|_{S_1}=N,
+ \qquad
+ \|P_\sigma\|_{S_2}^2=N,
+ \qquad
+ r_{\rm nuc}(P_\sigma)=N.
+ \label{eq:tpc49-matching-witness-data}
+\end{equation}
+At the inherited endpoint,
+\begin{equation}
+ N=X^{267/400+o(1)}.
+ \label{eq:tpc49-matching-witness-endpoint}
+\end{equation}
+Thus actual-mask support plus bounded projective cost
+\(X^{o(1)}\) cannot control arbitrary supported coefficients at atomic
+scale.
+\end{theorem}
+
+\begin{proof}
+The matrix is a permutation, so
+\cref{prop:tpc49-permutation-sharp} applies.  The endpoint row count is
+\(N=X^{o(1)}LD=X^{267/400+o(1)}\).
+\end{proof}
+
+The witness deliberately zeros all other admitted entries.  It is not
+the literal multiplier \(\gamma_m\mathfrak A_{m,\gamma}^{\rm act}(j)\),
+and no claim is made that the physical prime/cofactor packet realizes
+it.  Constructing a polynomial family of literal matching atoms would
+require arithmetic information about \(mj+h_0\) and its eligible large
+prime factor; that information is precisely outside the present gate.

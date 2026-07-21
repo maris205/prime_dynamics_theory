@@ -1,0 +1,165 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Hh}{\mathcal H}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\pinf}{\|\cdot\|_{\pi,\infty}}
+\newcommand{\e}{\mathrm e}
+
+\hypersetup{
+  pdftitle={Weighted Mask Survival and Sharp Projective-to-Atomic Distortion for Residual Determinant Packets},
+  pdfauthor={Liang Wang},
+  pdfsubject={Nuclear effective rank, specified representation efficiency, and the static row-mask interface},
+  pdfkeywords={projective tensor norm, nuclear norm, Frobenius norm, effective rank, row mask, determinant equation, parity problem}
+}
+
+\title{\bfseries Weighted Mask Survival and Sharp\\
+Projective-to-Atomic Distortion for\\
+Residual Determinant Packets}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The preceding twin-prime-correlation (TPC) reduction controls the
+complete frozen actual-coefficient residual family by a signed
+projective row-square envelope, whereas the inherited normalization is
+the physical atomic diagonal.  We identify the exact finite-dimensional
+distortion between these two geometries.  For a Hilbertized coefficient
+tensor \(T\), the optimal rank-one projective envelope is its nuclear
+norm and the atomic energy is its squared Frobenius norm.  The intrinsic
+energy loss is therefore the nuclear participation rank
+\[
+ r_{\rm nuc}(T)
+ =\frac{\|T\|_{S_1}^2}{\|T\|_{S_2}^2}.
+\]
+For a specified signed representation there is a second, independent
+factor: its cancellation condition number.  We prove the exact product
+formula for the two losses and show that cancelling layer pairs make
+every comparison uniform over all exact representations impossible.
+
+For a weighted row mask \(A=D_aKD_b\), the bounded projective norm used
+in TPC--36 transfers sharply to the Hilbert geometry:
+\[
+ \|A\|_{S_1}
+ \le \|K\|_{\pi,\infty}\|a\|_2\|b\|_2,
+ \qquad
+ r_{\rm nuc}(A)
+ \le \min\!\left\{\operatorname{rank}A,
+ \frac{\|K\|_{\pi,\infty}^2}{\delta_w}\right\},
+\]
+where \(\delta_w=\|A\|_{S_2}^2/
+(\|a\|_2^2\|b\|_2^2)\) is the weighted survival parameter (the weighted
+admitted fraction for a \(0\)-\(1\) mask).  Permutation
+masks attain the density bound exactly, so bounded projective cost one
+does not by itself imply any dimension-free atomic estimate.  Ferrers
+masks, by contrast, have distortion
+\((2/\pi^2)(\log n)^2+O(\log n)\).
+
+We then study the complete-universe extension of the literal static TPC
+mask formula.  Standard row counts show that every row and
+column has admitted degree \((1-o(1))N\).  Combined with a specified
+explicit TPC--36 projective representation, this gives only
+\(X^{o(1)}\) energy loss for that complete formula model.  Nevertheless
+the same admitted
+support contains a perfect-matching permutation packet with distortion
+\(N=X^{267/400+o(1)}\); it is a support-class witness, not the literal
+physical coefficient.  Thus static mask geometry is soft on the full
+row cell, while support information alone is provably insufficient.
+
+If the entire TPC endpoint allowance is assigned to the isolated
+Hilbertized face, its exact fixed-representation target is
+\(c_{\mathscr R}^2r_{\rm nuc}\le X^{1/400+o(1)}\).
+This is not an if-and-only-if criterion for full TPC--48 closure, whose
+other gates may consume part or all of the same budget.
+The paper does not identify the full Banach profile envelope with a
+nuclear norm and does not compare the completed coherent prime square
+with the fixed-\(h_0\) physical diagonal.  Weighted active-cell density,
+representation-frame efficiency, coherent prime cancellation,
+residual grouping, and shift localization remain separate gates.  No
+parity-barrier breach or twin-prime conclusion is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} projective tensor norm; nuclear norm;
+Frobenius norm; effective rank; determinant equation; row masks;
+M\"obius correlation; parity problem.
+
+\medskip
+\noindent\textbf{Convention.}
+All sets and matrices in the abstract theory are finite.  The Schatten
+norms are denoted by \(\|\cdot\|_{S_1}\) and
+\(\|\cdot\|_{S_2}\); the latter is the Frobenius norm.  Rank-one
+tensors \(x\otimes\overline y\) are identified with operators
+\(z\mapsto\langle z,y\rangle x\).  Constants may depend on the fixed
+shift and dyadic support constants.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 46B28, 47B10; Secondary 11N35,
+15A18, 42A05.
+
+\input{sections/introduction}
+\input{sections/inherited-interface}
+\input{sections/hilbert-projective-geometry}
+\input{sections/weighted-mask-transfer}
+\input{sections/actual-static-mask}
+\input{sections/sharp-models}
+\input{sections/endpoint-ledger}
+\input{sections/boundaries-next-gate}
+\input{sections/certificate-claims}
+
+\begingroup
+\small
+\raggedright
+\setlength{\bibsep}{4pt plus 1pt minus 1pt}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

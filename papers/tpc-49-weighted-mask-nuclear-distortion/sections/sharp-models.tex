@@ -1,0 +1,192 @@
+\section{Sharp model families and false shortcuts}
+\label{sec:tpc49-models}
+
+The weighted theorem contains two independent inputs: bounded
+projective cost and admitted density.  The following exact families
+show why both matter and why several qualitative substitutes fail.
+
+\subsection{Ferrers masks spend only logarithmic energy}
+
+Let
+\begin{equation}
+ T_n=(\one_{k\le r})_{1\le r,k\le n}
+ \label{eq:tpc49-Ferrers-matrix}
+\end{equation}
+be the lower-triangular summation matrix.
+
+\begin{proposition}[Exact Ferrers distortion]
+\label{prop:tpc49-Ferrers-distortion}
+The singular values of \(T_n\) are
+\begin{equation}
+ \sigma_k(T_n)
+ =\left[2\sin\frac{(2k-1)\pi}{4n+2}\right]^{-1},
+ \qquad1\le k\le n.
+ \label{eq:tpc49-Ferrers-singular-values}
+\end{equation}
+Moreover
+\begin{align}
+ \|T_n\|_{S_2}^2&=\frac{n(n+1)}2,
+ \label{eq:tpc49-Ferrers-Frobenius}\\
+ \|T_n\|_{S_1}&=\frac n\pi\log n+O(n),
+ \label{eq:tpc49-Ferrers-nuclear}\\
+ r_{\rm nuc}(T_n)
+ &=\frac{2}{\pi^2}(\log n)^2+O(\log n).
+ \label{eq:tpc49-Ferrers-effective-rank}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+The inverse of \(T_n\) is the lower bidiagonal first-difference matrix.
+Diagonalizing \((T_n^{-1})^*T_n^{-1}\) by the discrete sine basis gives
+\eqref{eq:tpc49-Ferrers-singular-values}; this is also the exact
+calculation used in TPC--36.  Counting ones gives
+\eqref{eq:tpc49-Ferrers-Frobenius}.  For
+\(k\le n/2\), where the corresponding angle satisfies
+\(0<\theta_k\le\pi/4\), use uniformly
+\begin{equation}
+ \frac1{2\sin\theta}
+ =\frac1{2\theta}+O(\theta)
+ \label{eq:tpc49-sine-expansion}
+\end{equation}
+and
+\(\sum_{k\le n/2}(2k-1)^{-1}=\tfrac12\log n+O(1)\).
+The remaining singular values sum to \(O(n)\).  This proves
+\eqref{eq:tpc49-Ferrers-nuclear}; division by
+\eqref{eq:tpc49-Ferrers-Frobenius} gives the last formula.
+\end{proof}
+
+TPC--36 proves \(\|T_n\|_{\pi,\infty}\asymp\log n\), while its
+unweighted admitted density tends to \(1/2\).  Thus
+\cref{thm:tpc49-weighted-transfer} has the correct order for this
+family.  At every polynomial \(n=X^{O(1)}\), the energy cost is
+\(X^{o(1)}\).  Signed Ferrers separation is not a polynomial Door-B
+obstruction.
+
+\subsection{Product kernels and product phases}
+
+Let \(q>2\) be prime and write \(G_q=\mathbb F_q^\times\).  For
+\(a\in G_q\), define
+\begin{equation}
+ K_a(x,y)=\one_{xy=a},
+ \qquad x,y\in G_q.
+ \label{eq:tpc49-product-kernel}
+\end{equation}
+
+\begin{proposition}[Cost-one product permutation]
+\label{prop:tpc49-product-permutation}
+The matrix \(K_a\) is a permutation of size \(q-1\), and
+\begin{equation}
+ \|K_a\|_{\pi,\infty}=1,
+ \qquad
+ r_{\rm nuc}(K_a)=q-1.
+ \label{eq:tpc49-product-permutation-data}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For each \(x\), the equation \(xy=a\) has the unique solution
+\(y=ax^{-1}\).  Apply \cref{prop:tpc49-permutation-sharp}.  Equivalently,
+multiplicative-character orthogonality gives a cost-one projective
+representation.
+\end{proof}
+
+This is the same product-delta kernel that appears in the completion
+analysis of TPC--36.  It is a method-specific finite-field obstruction,
+not the literal residual coefficient.
+At the endpoint one may choose a prime \(q\asymp J\) by Bertrand's
+postulate, so the model dimension has precisely the orbit-scale exponent.
+
+For \(r\ne0\), also define the flat product phase
+\begin{equation}
+ A_r(x,y)=\e_q(rxy),
+ \qquad \e_q(z)=\exp(2\pi iz/q).
+ \label{eq:tpc49-product-phase}
+\end{equation}
+
+\begin{proposition}[Flat entries do not imply low nuclear rank]
+\label{prop:tpc49-product-phase}
+The singular values of \(A_r\) are \(\sqrt q\), with multiplicity
+\(q-2\), and \(1\), with multiplicity one.  Therefore
+\begin{align}
+ \|A_r\|_{S_2}^2&=(q-1)^2,
+ \label{eq:tpc49-product-phase-Frobenius}\\
+ r_{\rm nuc}(A_r)
+ &=\left(
+ \frac{(q-2)\sqrt q+1}{q-1}
+ \right)^2\asymp q.
+ \label{eq:tpc49-product-phase-rank}
+\end{align}
+The last displayed square is exactly the square of the bounded
+projective norm computed in TPC--36.
+\end{proposition}
+
+\begin{proof}
+Additive orthogonality gives
+\(A_rA_r^*=qI_{q-1}-J_{q-1}\).  Its eigenvalues are \(q\) on the
+orthogonal complement of constants and \(1\) on constants.  The stated
+Schatten norms follow.  Multiplicative characters give flat singular
+vectors and attain the bounded projective lower bound
+\(\|A_r\|_{S_1}/(q-1)\); see \citep{WangTPC36}.
+\end{proof}
+
+Thus flat entries, flat singular vectors, and the usual upper-bound
+notion of incoherence do not force a small projective-to-atomic loss.
+They do not control the number of comparable singular values.
+
+\subsection{Positive density alone also fails}
+
+The permutation example has small density.  A dense nonnegative example
+shows that density without bounded projective cost is equally
+insufficient.  Let \(n=4^k\), put
+\begin{equation}
+ H_4=J_4-2I_4,
+ \qquad H_n=H_4^{\otimes k},
+ \qquad K_n=\frac{J_n+H_n}{2}.
+ \label{eq:tpc49-dense-Hadamard-mask}
+\end{equation}
+Then \(H_n\) has entries \(\pm1\), satisfies
+\(H_nH_n^*=nI_n\), and has constant row sum \(\sqrt n\).  Hence
+\(K_n\) is a \(0\)-\(1\) matrix.
+
+\begin{proposition}[Dense positive high-rank mask]
+\label{prop:tpc49-dense-positive-mask}
+The singular values of \(K_n\) are
+\begin{equation}
+ \frac{n+\sqrt n}{2}\quad\text{once},
+ \qquad
+ \frac{\sqrt n}{2}\quad\text{with multiplicity }n-1.
+ \label{eq:tpc49-dense-positive-singular-values}
+\end{equation}
+Consequently
+\begin{equation}
+ \delta_w(K_n;\one,\one)
+ =\frac{1+n^{-1/2}}2,
+ \qquad
+ r_{\rm nuc}(K_n)=\frac{n+\sqrt n}{2}.
+ \label{eq:tpc49-dense-positive-data}
+\end{equation}
+In particular,
+\(\|K_n\|_{\pi,\infty}\ge(1+\sqrt n)/2\).
+\end{proposition}
+
+\begin{proof}
+Using \(J_nH_n=H_nJ_n=\sqrt nJ_n\),
+\begin{equation}
+ K_nK_n^*
+ =\frac14\left((n+2\sqrt n)J_n+nI_n\right).
+ \label{eq:tpc49-dense-positive-Gram}
+\end{equation}
+This gives \eqref{eq:tpc49-dense-positive-singular-values}.  The number
+of ones is
+\(\|K_n\|_{S_2}^2=n(n+\sqrt n)/2\), while
+\(\|K_n\|_{S_1}=n(1+\sqrt n)/2\); division proves
+\eqref{eq:tpc49-dense-positive-data}.  Finally
+\(\|K_n\|_{\pi,\infty}\ge\|K_n\|_{S_1}/n\) by the elementary nuclear
+lower bound for the bounded projective norm.
+\end{proof}
+
+The two hypotheses in \cref{thm:tpc49-weighted-transfer} are therefore
+genuinely complementary: projective cost one with small density can be
+bad, and positive density with polynomial projective cost can be bad.
+The complete TPC static mask is favorable because it has both soft cost
+and density \(1-o(1)\).

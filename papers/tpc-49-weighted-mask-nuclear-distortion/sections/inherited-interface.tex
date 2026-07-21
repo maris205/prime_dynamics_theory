@@ -1,0 +1,148 @@
+\section{The inherited coefficient interface}
+\label{sec:tpc49-interface}
+
+We first state exactly which TPC objects motivate the finite-dimensional
+theory.  This section imports definitions, not an atomic comparison.
+
+\subsection{Rows and the literal static mask}
+
+On one source-compatible dyadic packet, a row is
+\begin{equation}
+ \alpha=(\ell_\alpha,d_\alpha),
+ \qquad m_\alpha=\ell_\alpha d_\alpha\asymp Q,
+ \qquad Q=LD,
+ \label{eq:tpc49-row-definition}
+\end{equation}
+where \(\ell_\alpha\asymp L\) is prime and
+\(d_\alpha\asymp D\) is squarefree.  The inherited separation makes
+\(m_\alpha\) determine the row on the active packet.  TPC--36 defines
+\begin{equation}
+ \mathfrak m_{\rm act}(\alpha,\gamma)
+ =\one_{\ell_\alpha\ne\ell_\gamma}
+  \one_{|m_\alpha-m_\gamma|>\Delta}
+  \one_{(d_\alpha,d_\gamma)\le G},
+ \label{eq:tpc49-actual-static-mask}
+\end{equation}
+with
+\begin{equation}
+ \Delta=QX^{-\kappa_0},
+ \qquad G=X^{\kappa_0},
+ \qquad \kappa_0>0.
+ \label{eq:tpc49-pruning-scales}
+\end{equation}
+The literal joint multiplier is
+\begin{equation}
+ \mathfrak A_{\alpha,\gamma}^{\rm act}(j)
+ =\mathfrak m_{\rm act}(\alpha,\gamma)
+  \Xi_{\alpha,\gamma}(j)
+  \cW_{\alpha,\gamma}(j/J).
+ \label{eq:tpc49-joint-multiplier}
+\end{equation}
+Here \(\Xi\) is fixed-period in \(j\) and \(\cW\) contains smooth
+cutoffs.  After splitting the fixed residue classes and applying the
+inherited Mellin separation, the full multiplier has an exact signed
+projective representation with every fixed orbit seminorm having
+\(X^{o(1)}\) total variation \citep{WangTPC36}.
+
+For a finite kernel \(K:\cI\times\cJ\to\C\), the relevant TPC--36
+norm is
+\begin{equation}
+ \|K\|_{\pi,\infty}
+ :=\inf_{K=\int p_\omega q_\omega\,d\nu(\omega)}
+ \int \|p_\omega\|_\infty
+       \|q_\omega\|_\infty\,d|\nu|(\omega).
+ \label{eq:tpc49-bounded-projective-norm}
+\end{equation}
+The exact static-mask theorem gives
+\begin{equation}
+ \|\mathfrak m_{\rm act}\|_{\pi,\infty}
+ \ll \log(2Q)(3+2\sqrt2)^{\omega_*}
+ =X^{o(1)},
+ \label{eq:tpc49-inherited-mask-cost}
+\end{equation}
+where \(\omega_*\) is the maximum number of prime factors of an active
+row divisor.  This is an unconditional identity and upper bound on the
+declared packet.  It is not a nuclear-norm or Gram estimate.
+
+\subsection{The physical atomic diagonal}
+
+TPC--45 writes the literal stripped equality atoms as
+\(b_{i,u}\), where \(i\) records an output row and an orbit time and
+\(u\) is the squarefree equality label.  Its atomic diagonal is
+\begin{equation}
+ \cD_0:=\sum_i\sum_u|b_{i,u}|^2.
+ \label{eq:tpc49-physical-atomic-diagonal}
+\end{equation}
+At the all-minus prime-sign point the associated Walsh polynomial
+recovers the literal physical equality columns \citep{WangTPC45}.  The
+quantity \(\cD_0\) is therefore tied to one fixed physical shift and to
+the native atomic indexing.  It is not the Cartesian energy of an
+arbitrary completed determinant family.
+
+After large-prime descent, the left residual synthesis at the physical
+shift \(h_0\) has the form
+\begin{equation}
+ \cF_{h_0}^{\rm act,L}
+ =\sum_{\substack{\gamma,j,m,p,r\\pr-mj=h_0}}
+ \gamma_m^{(1)}
+ \mathfrak A_{m,\gamma}^{\rm act}(j)
+ \mu(r)\Lambda(pr)
+ e_{\gamma,d(m)r}\otimes e_j.
+ \label{eq:tpc49-physical-residual}
+\end{equation}
+It uses literal coefficients, but belongs to the low-sign-averaged
+residual Gram route rather than the native affine physical face
+\citep{WangTPC45,WangTPC47}.
+
+\subsection{The frozen projective row-square}
+
+TPC--47/48 freezes every coefficient constructed at \(h_0\) and
+replaces the determinant equation by \(pr-mj=h\) for arbitrary
+\(h\in\Z\).  Only \(h=h_0\) has physical provenance.  One exact
+projective layer is
+\begin{equation}
+ \cF_h^\omega
+ =\sum_{p,r,m}
+  \sum_{j\equiv a_\omega\!\!\pmod{H_0}}
+ A_\omega(p,r,m)\phi_\omega(j/J)
+ v_{\omega,p,r,m}\otimes e_j\,
+ \one_{pr-mj=h}.
+ \label{eq:tpc49-projective-layer}
+\end{equation}
+The complete frozen family is the signed Bochner integral of all such
+layers.  Fourier transformation in \(h\) defines
+\begin{equation}
+ B_{\omega,m}(\alpha)
+ :=\sum_{p,r}A_\omega(p,r,m)
+   \e(-pr\alpha)v_{\omega,p,r,m}.
+ \label{eq:tpc49-row-vector}
+\end{equation}
+At fixed \(m\), distinct \(r\) have orthogonal residual labels, but the
+inner \(p\)-sum remains coherent.  For a fixed admissible global
+representation \(\mathscr R\), TPC--48 introduces
+\begin{equation}
+ \mathfrak S_{\mathscr R}(\alpha)
+ :=\int C_{\rm LS}(\phi_\omega,H_0)^{1/2}
+ \left(\sum_m\|B_{\omega,m}(\alpha)\|^2\right)^{1/2}
+ d|\nu|(\omega).
+ \label{eq:tpc49-inherited-envelope}
+\end{equation}
+Its pointwise infimum over admissible representations is
+\(\mathfrak S_{\rm pr}\).  The infimum is not integrated; the annular
+theorem retains one fixed measurable global representation
+\citep{WangTPC48}.
+
+Three differences from a finite matrix nuclear norm must remain visible:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.4em]
+ \item \(C_{\rm LS}^{1/2}\) is a profile seminorm weight, not a declared
+       Hilbert norm;
+ \item the \(p\)-sum in \eqref{eq:tpc49-row-vector} is taken before the
+       square; and
+ \item \(\mathfrak S_{\mathscr R}(\alpha)\) belongs to a completed
+       frozen field, whereas \(\cD_0\) belongs to one physical slice.
+\end{enumerate}
+The finite theory below applies exactly to Hilbertized coefficient
+faces and supplies a criterion for each separated mask cell.  A full
+comparison of \eqref{eq:tpc49-inherited-envelope} with
+\eqref{eq:tpc49-physical-atomic-diagonal} needs additional theorems and
+is not silently imported.

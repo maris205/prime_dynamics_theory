@@ -1,0 +1,190 @@
+\section{Hilbert projective geometry and the exact distortion}
+\label{sec:tpc49-Hilbert-geometry}
+
+Let \(\Hh_1,\Hh_2\) be finite-dimensional Hilbert spaces and identify
+\(T\in\Hh_1\otimes\overline{\Hh_2}\) with an operator
+\(\Hh_2\to\Hh_1\).  Standard facts about projective tensor products,
+nuclear operators, and Hilbert--Schmidt operators may be found in
+\citep{Ryan2002,HornJohnson2013,Simon2005}; the short
+proofs needed here are included.
+
+\begin{definition}[Hilbert projective envelope]
+\label{def:tpc49-Hilbert-envelope}
+For a rank-one representation written as
+\begin{equation}
+ \mathscr R:\qquad
+ T=\sum_{\omega\in\Omega}
+ x_\omega\otimes\overline{y_\omega},
+ \label{eq:tpc49-rank-one-representation}
+\end{equation}
+define its envelope and optimum by
+\begin{equation}
+ \cE_{\mathscr R}(T)
+ :=\sum_{\omega\in\Omega}
+ \|x_\omega\|_2\|y_\omega\|_2,
+ \qquad
+ \cE_{\rm pr}(T):=\inf_{\mathscr R}\cE_{\mathscr R}(T).
+ \label{eq:tpc49-Hilbert-envelope}
+\end{equation}
+Finite sums suffice.  A Bochner integral gives the same infimum after
+finite-dimensional approximation.
+\end{definition}
+
+\begin{theorem}[Hilbert projective equals nuclear]
+\label{thm:tpc49-Hilbert-projective}
+If \(T\ne0\) has singular values \(\sigma_1,\ldots,\sigma_r>0\), then
+\begin{align}
+ \cE_{\rm pr}(T)&=\|T\|_{S_1}=\sum_{k=1}^r\sigma_k,
+ \label{eq:tpc49-projective-equals-nuclear}\\
+ \cD_{\rm at}(T)&:=\|T\|_{S_2}^2=\sum_{k=1}^r\sigma_k^2,
+ \label{eq:tpc49-atomic-is-Frobenius}\\
+ \cE_{\rm pr}(T)^2
+ &=r_{\rm nuc}(T)\cD_{\rm at}(T),
+ \qquad
+ r_{\rm nuc}(T)
+ :=\frac{(\sum_k\sigma_k)^2}{\sum_k\sigma_k^2}.
+ \label{eq:tpc49-nuclear-participation-rank}
+\end{align}
+Moreover
+\begin{equation}
+ 1\le \operatorname{sr}(T)
+ :=\frac{\|T\|_{S_2}^2}{\|T\|_{\rm op}^2}
+ \le r_{\rm nuc}(T)
+ \le\operatorname{rank}T.
+ \label{eq:tpc49-effective-rank-chain}
+\end{equation}
+The upper equality holds exactly when all nonzero singular values are
+equal; the lower endpoint \(r_{\rm nuc}=1\) holds exactly at rank one.
+\end{theorem}
+
+\begin{proof}
+The singular-value decomposition
+\(T=\sum_k\sigma_ku_k\otimes\overline{v_k}\) gives
+\(\cE_{\rm pr}(T)\le\sum_k\sigma_k\).  Conversely, the nuclear norm is
+a norm and every rank-one operator satisfies
+\(\|x\otimes\overline y\|_{S_1}=\|x\|_2\|y\|_2\).  Thus every
+representation \eqref{eq:tpc49-rank-one-representation} has
+\(\|T\|_{S_1}\le\cE_{\mathscr R}(T)\), proving
+\eqref{eq:tpc49-projective-equals-nuclear}.  Formula
+\eqref{eq:tpc49-atomic-is-Frobenius} is the Hilbert--Schmidt identity.
+
+Cauchy--Schwarz gives
+\((\sum_k\sigma_k)^2\le r\sum_k\sigma_k^2\), with equality exactly
+for equal positive singular values.  Also
+\(\sigma_1\sum_k\sigma_k\ge\sum_k\sigma_k^2\), whence
+\begin{equation}
+ r_{\rm nuc}(T)
+ \ge\frac{\sum_k\sigma_k^2}{\sigma_1^2}
+ =\operatorname{sr}(T).
+ \label{eq:tpc49-stable-lower-proof}
+\end{equation}
+The remaining equality statements are immediate.
+\end{proof}
+
+\begin{remark}[Stable rank points in the wrong direction]
+\label{rem:tpc49-stable-rank-insufficient}
+Stable rank is a lower, not an upper, bound for the present distortion.
+Let \(T_N\) have singular values \(1\) and \(N^{-3/4}\), the latter
+repeated \(N\) times.  Then
+\begin{equation}
+ \operatorname{sr}(T_N)=1+N^{-1/2}\longrightarrow1,
+ \qquad
+ r_{\rm nuc}(T_N)
+ =\frac{(1+N^{1/4})^2}{1+N^{-1/2}}
+ \asymp N^{1/2}.
+ \label{eq:tpc49-stable-rank-counterexample}
+\end{equation}
+Thus the nuclear participation rank, not ordinary stable rank, is the
+correct parameter.
+\end{remark}
+
+\subsection{A fixed representation has a second condition number}
+
+\begin{definition}[Representation cancellation number]
+\label{def:tpc49-representation-condition}
+For a fixed exact representation \(\mathscr R\) of \(T\ne0\), define
+\begin{equation}
+ c_{\mathscr R}(T)
+ :=\frac{\cE_{\mathscr R}(T)}{\|T\|_{S_1}}\ge1.
+ \label{eq:tpc49-representation-condition}
+\end{equation}
+\end{definition}
+
+\begin{proposition}[Exact fixed-representation ledger]
+\label{prop:tpc49-fixed-representation-ledger}
+For every fixed exact rank-one representation,
+\begin{equation}
+ \boxed{
+ \frac{\cE_{\mathscr R}(T)^2}{\cD_{\rm at}(T)}
+ =c_{\mathscr R}(T)^2r_{\rm nuc}(T).}
+ \label{eq:tpc49-fixed-representation-ledger}
+\end{equation}
+There is no finite upper bound for the left side that is uniform over
+all exact signed representations of one fixed nonzero tensor.
+\end{proposition}
+
+\begin{proof}
+The identity is the product of the definitions.  For nonuniformity,
+fix a nonzero rank-one tensor \(z=x\otimes\overline y\), normalized so
+that \(\|x\|\|y\|=1\).  For every \(R>0\), the identity
+\begin{equation}
+ z=(R+1)z-Rz
+ \label{eq:tpc49-cancelling-pair}
+\end{equation}
+has envelope \(2R+1\), although the represented tensor, its rank, and
+its atomic energy remain unchanged.  More generally, the null pair
+\(Rz-Rz\) can be appended to any representation.
+\end{proof}
+
+This elementary obstruction is consequential for
+\eqref{eq:tpc49-inherited-envelope}.  A theorem for a specified
+TPC representation may estimate its cancellation number.  A pointwise
+infimum may suppress artificial null pairs.  A claim for every exact
+signed representation cannot be true.
+
+\subsection{Two usable positive criteria}
+
+\begin{corollary}[Approximate nuclear rank]
+\label{cor:tpc49-approximate-rank}
+Suppose the singular values are decreasing and, for some \(R\ge1\),
+\begin{equation}
+ \sum_{k>R}\sigma_k\le\eta\|T\|_{S_2}.
+ \label{eq:tpc49-nuclear-tail}
+\end{equation}
+Then
+\begin{equation}
+ \|T\|_{S_1}
+ \le(\sqrt R+\eta)\|T\|_{S_2},
+ \qquad
+ r_{\rm nuc}(T)\le(\sqrt R+\eta)^2.
+ \label{eq:tpc49-approximate-rank-bound}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Cauchy--Schwarz bounds the first \(R\) singular values by
+\(\sqrt R\|T\|_{S_2}\); add \eqref{eq:tpc49-nuclear-tail}.
+\end{proof}
+
+\begin{proposition}[Orthogonal layers do not improve an \(L^1\) envelope]
+\label{prop:tpc49-orthogonal-layers}
+Suppose the rank-one tensors \(z_1,\ldots,z_s\) are pairwise orthogonal
+in Hilbert--Schmidt inner product, put \(a_k=\|z_k\|_{S_2}\), and use
+the displayed decomposition \(T=\sum_kz_k\).  Then
+\begin{equation}
+ \cD_{\rm at}(T)=\sum_ka_k^2,
+ \qquad
+ \cE_{\mathscr R}(T)^2
+ =N_{\rm eff}(a)\cD_{\rm at}(T),
+ \qquad
+ N_{\rm eff}(a):=\frac{(\sum_ka_k)^2}{\sum_ka_k^2}.
+ \label{eq:tpc49-orthogonal-layer-loss}
+\end{equation}
+Equal layers lose the full layer count \(s\).
+\end{proposition}
+
+Thus orthogonality helps only if it is retained through an
+\(L^2\)/Bessel reassembly.  Applying Minkowski first converts it into
+an \(L^1\) layer count.  Entrywise positivity or one-sign coefficients
+do not repair this: permutation matrices below are nonnegative and
+still attain maximal nuclear distortion.

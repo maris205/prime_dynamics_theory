@@ -1,0 +1,197 @@
+\section{A sharp weighted transfer from bounded projective masks}
+\label{sec:tpc49-weighted-transfer}
+
+Let \(I,J\) be finite sets, let \(K:I\times J\to\C\), and let
+\(a=(a_i)_{i\in I}\), \(b=(b_j)_{j\in J}\) be nonnegative weights.
+Zero weights may be deleted.  Write
+\begin{equation}
+ A:=D_aKD_b,
+ \qquad A_{ij}=a_iK_{ij}b_j.
+ \label{eq:tpc49-weighted-matrix}
+\end{equation}
+Complex unary row and column factors cause no loss of generality here:
+their moduli are placed in \(a,b\), while their unit phases are absorbed
+into \(K\).  Such unit-modulus row and column Schur factors preserve every
+bounded-projective cost used below.
+When \(A\ne0\), define its weighted survival parameter by
+\begin{equation}
+ \delta_w(K;a,b)
+ :=\frac{\|A\|_{S_2}^2}{\|a\|_2^2\|b\|_2^2}
+ =\frac{\sum_{i,j}a_i^2|K_{ij}|^2b_j^2}
+ {\left(\sum_i a_i^2\right)\left(\sum_jb_j^2\right)}.
+ \label{eq:tpc49-weighted-admission}
+\end{equation}
+For a \(0\)-\(1\) mask it lies in \([0,1]\) and is literally the
+proportion of product \(\ell^2\)-mass lying on admitted pairs.
+
+Fix an exact bounded-projective representation
+\begin{equation}
+ \mathscr R:\qquad
+ K_{ij}=\int_\Omega p_\omega(i)q_\omega(j)\,d\nu(\omega),
+ \label{eq:tpc49-bounded-representation}
+\end{equation}
+and put
+\begin{align}
+ P_{\mathscr R}(K)
+ &:=\int_\Omega\|p_\omega\|_\infty
+       \|q_\omega\|_\infty\,d|\nu|(\omega),
+ \label{eq:tpc49-fixed-bounded-cost}\\
+ \cE_{\mathscr R}(K;a,b)
+ &:=\int_\Omega
+ \|D_ap_\omega\|_2\|D_b\overline{q_\omega}\|_2
+ \,d|\nu|(\omega).
+ \label{eq:tpc49-weighted-Hilbert-envelope}
+\end{align}
+The conjugation merely matches the operator convention and has no
+effect on any norm.
+
+\begin{theorem}[Weighted projective-to-atomic transfer]
+\label{thm:tpc49-weighted-transfer}
+For every representation \eqref{eq:tpc49-bounded-representation},
+\begin{align}
+ \|A\|_{S_1}
+ &\le \cE_{\mathscr R}(K;a,b)
+ \le P_{\mathscr R}(K)\|a\|_2\|b\|_2,
+ \label{eq:tpc49-fixed-weighted-transfer}\\
+ \frac{\cE_{\mathscr R}(K;a,b)^2}{\|A\|_{S_2}^2}
+ &\le\frac{P_{\mathscr R}(K)^2}{\delta_w(K;a,b)}.
+ \label{eq:tpc49-fixed-weighted-energy}
+\end{align}
+Taking the infimum in the bounded projective cost gives
+\begin{equation}
+ \boxed{
+ r_{\rm nuc}(A)
+ \le\min\!\left\{\operatorname{rank}A,
+ \frac{\|K\|_{\pi,\infty}^2}{\delta_w(K;a,b)}
+ \right\}.}
+ \label{eq:tpc49-optimal-weighted-transfer}
+\end{equation}
+If \(a_i,b_j>0\) on the active sets and one takes the infimum of
+\eqref{eq:tpc49-weighted-Hilbert-envelope} over all exact
+representations there, the result is exactly \(\|A\|_{S_1}\).
+This unrestricted infimum is not asserted to coincide with the infimum
+over the narrower inherited admissible TPC--48 representation class.
+\end{theorem}
+
+\begin{proof}
+After multiplying \eqref{eq:tpc49-bounded-representation} by the two
+diagonal weights,
+\begin{equation}
+ A=\int_\Omega
+ (D_ap_\omega)\otimes
+ \overline{(D_b\overline{q_\omega})}\,d\nu(\omega).
+ \label{eq:tpc49-weighted-rank-one-integral}
+\end{equation}
+The nuclear norm is at most the integral of the rank-one nuclear norms,
+which is the first inequality in
+\eqref{eq:tpc49-fixed-weighted-transfer}.  Pointwise,
+\begin{equation}
+ \|D_ap_\omega\|_2
+ \|D_b\overline{q_\omega}\|_2
+ \le\|a\|_2\|b\|_2
+ \|p_\omega\|_\infty\|q_\omega\|_\infty.
+ \label{eq:tpc49-layer-sup-to-Hilbert}
+\end{equation}
+Integration proves the second inequality.  Divide its square by
+ \(\|A\|_{S_2}^2=\delta_w\|a\|_2^2\|b\|_2^2\) to obtain
+\eqref{eq:tpc49-fixed-weighted-energy}.  Infimize and combine with
+\cref{thm:tpc49-Hilbert-projective} for
+\eqref{eq:tpc49-optimal-weighted-transfer}.  Finally, when the weights
+are positive, every rank-one decomposition of \(A\) can be divided by
+\(a_i,b_j\) to give a representation of \(K\) on the active rectangle;
+the exact infimum is therefore the nuclear norm.
+\end{proof}
+
+\begin{remark}[Sufficient and exact criteria]
+\label{rem:tpc49-density-not-necessary}
+The exact intrinsic criterion is \(r_{\rm nuc}(A)\), and for a fixed
+representation it is
+\(c_{\mathscr R}(A)^2r_{\rm nuc}(A)\).
+The quantity \(\|K\|_{\pi,\infty}^2/\delta_w\) is a computable
+sufficient upper bound.  A lower bound on \(\delta_w\) is not necessary
+for a particular matrix: a sparse rank-one rectangle can have tiny
+density and \(r_{\rm nuc}=1\).  The density dependence is instead sharp
+in the minimax class controlled only by bounded projective cost and
+\(\delta_w\), as \cref{prop:tpc49-permutation-sharp} shows.
+\end{remark}
+
+\subsection{A uniform degree criterion}
+
+For a \(0\)-\(1\) mask \(K\) with \(|J|=N\), suppose every row has at
+most \(\epsilon N\) forbidden entries.  Define the flatness of the
+right weight by
+\begin{equation}
+ \operatorname{Flat}(b)
+ :=\frac{N\|b\|_\infty^2}{\|b\|_2^2}\ge1.
+ \label{eq:tpc49-weight-flatness}
+\end{equation}
+
+\begin{corollary}[Degree plus flatness]
+\label{cor:tpc49-degree-flatness}
+For arbitrary nonzero left weights \(a\),
+\begin{equation}
+ \delta_w(K;a,b)
+ \ge1-\epsilon\operatorname{Flat}(b).
+ \label{eq:tpc49-degree-density}
+\end{equation}
+Consequently, if the right side is positive,
+\begin{equation}
+ r_{\rm nuc}(D_aKD_b)
+ \le\frac{\|K\|_{\pi,\infty}^2}
+ {1-\epsilon\operatorname{Flat}(b)}.
+ \label{eq:tpc49-degree-effective-rank}
+\end{equation}
+The same statement holds with the two sides exchanged.
+\end{corollary}
+
+\begin{proof}
+For each row \(i\), its forbidden \(b^2\)-mass is at most
+\(\epsilon N\|b\|_\infty^2
+=\epsilon\operatorname{Flat}(b)\|b\|_2^2\).
+Average the complementary inequality with weights \(a_i^2\), then use
+\cref{thm:tpc49-weighted-transfer}.
+\end{proof}
+
+This criterion tolerates arbitrary concentration in the source weight
+provided the opposite-row weight is flat.  For the TPC joint multiplier,
+flatness and admitted density of the active smooth/residue cell are new
+conditions: the inherited interface gives upper seminorms and exact
+identities, but no lower-density theorem.
+
+\subsection{The sharp permutation boundary}
+
+\begin{proposition}[Permutation equality]
+\label{prop:tpc49-permutation-sharp}
+Let \(P_n\) be any \(n\times n\) permutation matrix and take
+\(a=b=\one\).  Then
+\begin{equation}
+ \|P_n\|_{\pi,\infty}=1,
+ \qquad
+ \delta_w(P_n;\one,\one)=\frac1n,
+ \qquad
+ \|P_n\|_{S_1}=n,
+ \qquad
+ \|P_n\|_{S_2}^2=n.
+ \label{eq:tpc49-permutation-data}
+\end{equation}
+Thus \(r_{\rm nuc}(P_n)=n\), and
+\eqref{eq:tpc49-optimal-weighted-transfer} is an equality.
+\end{proposition}
+
+\begin{proof}
+Permutations preserve singular values, so all \(n\) singular values are
+one.  For the identity matrix,
+\begin{equation}
+ I_n=2^{-n}\sum_{\varepsilon\in\{\pm1\}^n}
+ \varepsilon\varepsilon^{\mathsf T}.
+ \label{eq:tpc49-Rademacher-identity}
+\end{equation}
+Every factor has supremum norm one, giving bounded projective cost at
+most one; the maximum entry gives the reverse inequality.  Permuting a
+factor preserves the cost.  The remaining formulas follow by counting
+the \(n\) nonzero entries.
+\end{proof}
+
+The example is nonnegative, one-sign, and has an orthogonal singular
+basis.  None of those qualitative properties replaces a quantitative
+effective-rank or density estimate.

@@ -1,0 +1,56 @@
+\section{Deterministic certificate and reproducibility boundary}
+\label{sec:tpc49-certificate}
+
+The repository contains the exact-arithmetic script
+\begin{center}
+\texttt{experiments/tpc49\_certificate.py}.
+\end{center}
+It produces \texttt{tpc49\_certificate.json} and checks finite models
+of the identities used in the paper.  No floating-point arithmetic or
+random sampling is used.
+
+The certificate performs the following tasks.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item It verifies the normalized Rademacher rank-one representation of
+       \(I_n\) for \(1\le n\le8\), its exact bounded projective mass,
+       and the permutation nuclear/Frobenius ledger.
+ \item It constructs complete dyadic row universes for several finite
+       parameter sets, evaluates the literal three-factor static mask,
+       exhausts every forbidden row type, checks the degree union bound,
+       and finds a perfect matching by a deterministic augmenting-path
+       algorithm.
+ \item It verifies that the matching packet lies entirely in admitted
+       actual-mask positions and has exact distortion equal to the row
+       count.
+ \item It checks the product-delta permutation on several prime fields
+       and the exact Gram identity
+       \(A_rA_r^*=qI-J\) in a finite cyclotomic surrogate over prime
+       fields with compatible roots of unity.
+ \item It verifies the dense Hadamard recursion, row sums, Gram matrix,
+       number of admitted entries, and the resulting exact singular-value
+       ledger through its two invariant subspaces.
+ \item It checks all rational endpoint exponent differences, including
+       \(133/400-1/400=33/100\) and
+       \(267/400-1/400=133/200\).
+\end{enumerate}
+
+The computation is a regression certificate, not a proof of the
+asymptotic row count, the nuclear theorem, or any arithmetic estimate.
+Those proofs are given in the text.  In particular, the certificate
+does not search for literal prime/cofactor matching atoms and does not
+test a twin-prime assertion.
+
+The committed record contains \(298{,}427\) exact checks.  Its two
+release digests are
+\begin{center}
+\small
+\begin{tabular}{@{}ll@{}}
+semantic & \nolinkurl{20c576cf7e27e0cec91cce677395a02110b857f1db53dd161f2cc12068bac3a4}\\
+source & \nolinkurl{4176a42c73c01d0b68532e1dfde30974f61f162309dcd5e001a087c0fcd9e580}
+\end{tabular}
+\end{center}
+
+The generated JSON records the check count, all exact finite parameters,
+a canonical semantic digest of the result payload, and the SHA--256
+hash of the normalized source.  Re-running the script must reproduce
+both hashes before a release PDF is accepted.

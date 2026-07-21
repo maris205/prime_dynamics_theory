@@ -1,0 +1,144 @@
+\section{Endpoint ledger and the isolated-face Door-B threshold}
+\label{sec:tpc49-endpoint}
+
+Write the inherited exponents as
+\begin{equation}
+ \mu:=\frac{267}{400},
+ \qquad
+ \nu:=\frac{133}{400},
+ \qquad
+ \kappa:=\frac1{400},
+ \qquad
+ \mu+\nu=1.
+ \label{eq:tpc49-endpoint-exponents}
+\end{equation}
+Thus the source-row scale is \(Q=X^{\mu+o(1)}\), the orbit scale is
+\(J=X^{\nu+o(1)}\), and the inherited determinant-packet energy
+allowance is \(X^{\kappa+o(1)}\)
+\citep{WangTPC45,WangTPC47,WangTPC48}.
+
+\subsection{The exact isolated-face budget criterion}
+
+Suppose one finite Hilbertized coefficient face has
+\begin{equation}
+ c_{\mathscr R}(T)=X^{\chi+o(1)},
+ \qquad
+ r_{\rm nuc}(T)=X^{\rho+o(1)}.
+ \label{eq:tpc49-endpoint-condition-exponents}
+\end{equation}
+By \cref{prop:tpc49-fixed-representation-ledger}, the fixed
+representation loses the exact energy exponent
+\begin{equation}
+ 2\chi+\rho.
+ \label{eq:tpc49-exact-loss-exponent}
+\end{equation}
+If the entire \(X^{\kappa+o(1)}\) allowance is assigned to this isolated
+Hilbertized face, then the face fits that budget exactly when
+\begin{equation}
+ \boxed{2\chi+\rho\le\frac1{400}}
+ \label{eq:tpc49-endpoint-exact-condition}
+\end{equation}
+up to the declared \(o(1)\) convention.  This is not a
+necessary-and-sufficient criterion for full TPC--48 closure.  If the remaining
+coefficient-specific collision, prime-square, grouping, and localization
+operations consume a combined exponent \(\lambda_{\rm other}\ge0\), the
+corresponding multiplicative ledger instead requires
+\begin{equation}
+ 2\chi+\rho+\lambda_{\rm other}\le\frac1{400}.
+ \label{eq:tpc49-full-budget-ledger}
+\end{equation}
+Those other losses are not estimated in this paper.
+
+For an optimal Hilbert projective representation, \(\chi=0\), so the
+isolated-face criterion is \(r_{\rm nuc}\le X^{1/400+o(1)}\).  For a
+named bounded-projective representation with
+\begin{equation}
+ P_{\mathscr R}=X^{\varpi+o(1)},
+ \qquad
+ \delta_w=X^{-\theta+o(1)},
+ \label{eq:tpc49-density-ledger-exponents}
+\end{equation}
+\cref{thm:tpc49-weighted-transfer} gives the sufficient condition
+\begin{equation}
+ 2\varpi+\theta\le\frac1{400}.
+ \label{eq:tpc49-density-sufficient-condition}
+\end{equation}
+When \(P_{\mathscr R}=X^{o(1)}\), the clean target is
+\begin{equation}
+ \delta_w\ge X^{-1/400+o(1)}.
+ \label{eq:tpc49-density-threshold}
+\end{equation}
+This density condition is minimax-sharp by permutations, but is only
+sufficient for a specified coefficient matrix.  The exact criterion for
+the isolated face remains \eqref{eq:tpc49-endpoint-exact-condition}.
+
+\subsection{Model costs at the endpoint}
+
+The following table uses the energy convention throughout.
+\begin{center}
+\begin{tabular}{@{}p{0.38\textwidth}p{0.25\textwidth}p{0.24\textwidth}@{}}
+\toprule
+face or model & effective energy loss & excess over \(X^{1/400}\) \\
+\midrule
+complete-universe static-mask formula model
+ & \(X^{o(1)}\)
+ & none in this model \\
+signed Ferrers mask, \(n=X^{O(1)}\)
+ & \(\asymp(\log n)^2=X^{o(1)}\)
+ & none \\
+product permutation, prime \(q\asymp J\)
+ & \(X^{133/400+o(1)}\)
+ & \(X^{33/100+o(1)}\) \\
+actual-mask-support matching, \(N=QX^{o(1)}\)
+ & \(X^{267/400+o(1)}\)
+ & \(X^{133/200+o(1)}\) \\
+dense-slope common-profile collision at the TPC--48 coarse edge
+ & \(X^{67/200+o(1)}\)
+ & \(X^{133/400+o(1)}\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The first line is the positive theorem
+\eqref{eq:tpc49-static-canonical-soft} for the complete-universe
+extension of the literal formula.  It
+is not a theorem for an arbitrarily pruned active joint multiplier.  The
+matching line is supported inside the literal static-mask graph but
+uses artificial coefficient values.  The product-permutation line is a
+completed finite-field model.  Neither is a lower bound for the literal
+prime/cofactor coefficient.
+
+The last line is a different obstruction.  TPC--48 proves that common
+orbit profiles improve unrestricted slope synthesis, yet a dense
+consecutive-slope model at the coarse edge still has collision factor
+\begin{equation}
+ X^{\mu-\nu+o(1)}=X^{67/200+o(1)}.
+ \label{eq:tpc49-inherited-collision}
+\end{equation}
+The present static-mask theorem does not cancel that factor.  Nuclear
+distortion and determinant-slope collision are separate multiplicative
+ledgers.
+
+\subsection{What a full active-cell theorem would have to say}
+
+For a separated residue/Mellin cell of the actual joint multiplier, a
+usable theorem may take either of two forms:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.4em]
+ \item a weighted admission and specified-representation efficiency estimate satisfying
+       \eqref{eq:tpc49-density-sufficient-condition}; or
+ \item a direct singular-value estimate satisfying
+       \eqref{eq:tpc49-endpoint-exact-condition}, possibly by
+       \cref{cor:tpc49-approximate-rank}.
+\end{enumerate}
+The former can use \cref{cor:tpc49-degree-flatness} after proving
+opposite-row flatness of the literal active weight.  The latter could
+exploit coefficient-specific low effective rank even when admitted
+density is small.
+
+After the individual cells are controlled, one still needs a frame or
+no-cancellation theorem for their signed \(L^1(d|\nu|)\) reassembly.
+Orthogonality of formal layers is not enough under Minkowski by
+\cref{prop:tpc49-orthogonal-layers}.  Finally, the coherent prime square
+inside \eqref{eq:tpc49-row-vector} and the completed-to-\(h_0\)
+normalization must be treated separately.  These are arithmetic and
+localization inputs, not missing steps in the nuclear calculation.
