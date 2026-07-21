@@ -1,0 +1,2680 @@
+{
+  "evidence_level": "deterministic all-column dense binary64 finite-horizon packet Gram and inherited flag-metric tail audit; not interval validated",
+  "fine_resolution": 5.12,
+  "fits": {
+    "left_exact": {
+      "growth_exponent": 0.16771551715962094,
+      "levels": 5,
+      "log_intercept": -0.3268655038387695,
+      "maximum_log_residual": 0.08145972663770995,
+      "sigma_power": -0.16771551715962094
+    },
+    "left_horizon_16": {
+      "growth_exponent": 0.22340392213951538,
+      "levels": 5,
+      "log_intercept": -0.4647058118390758,
+      "maximum_log_residual": 0.05114116640607966,
+      "sigma_power": -0.22340392213951538
+    },
+    "left_phase_aware": {
+      "growth_exponent": 0.16911716661955564,
+      "levels": 5,
+      "log_intercept": -0.3303697741558201,
+      "maximum_log_residual": 0.08052409313961077,
+      "sigma_power": -0.16911716661955564
+    },
+    "right_exact": {
+      "growth_exponent": 0.19929753896486868,
+      "levels": 5,
+      "log_intercept": -0.30360266679803827,
+      "maximum_log_residual": 0.05898369892638046,
+      "sigma_power": -0.19929753896486868
+    },
+    "right_horizon_16": {
+      "growth_exponent": 0.23082249037505706,
+      "levels": 5,
+      "log_intercept": -0.37829240518282004,
+      "maximum_log_residual": 0.042066001185213385,
+      "sigma_power": -0.23082249037505706
+    },
+    "right_phase_aware": {
+      "growth_exponent": 0.2000059867786468,
+      "levels": 5,
+      "log_intercept": -0.30533234953400895,
+      "maximum_log_residual": 0.05855230452197281,
+      "sigma_power": -0.2000059867786468
+    }
+  },
+  "hardy_radius": 0.85,
+  "horizons": [
+    0,
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "limitations": [
+    "Production Schur forms, inherited metrics, and finite Grams are binary64 diagnostics, not interval enclosures.",
+    "The finite-horizon Gram is exact only for the stored finite matrix; no continuum phase-coherence theorem is proved.",
+    "The tail certificate inherits RH-59 packet metrics and their nonuniform hierarchical weights.",
+    "The selected horizon L=32 is fixed for this five-scale audit, not a proved physical-family horizon.",
+    "Five levels do not prove a dyadically uniform Hardy budget; Stage A1 and Stage A4 remain open."
+  ],
+  "radial_cuts": [
+    0.15,
+    0.35,
+    0.55
+  ],
+  "radial_names": [
+    "central",
+    "inner_cloud",
+    "middle_cloud",
+    "edge_cloud"
+  ],
+  "rows": [
+    {
+      "coarse_dimension": 16,
+      "elapsed_seconds": 0.03944069496355951,
+      "fine_dimension": 32,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "exact_hardy_energy": 0.9039575455799419,
+        "horizons": {
+          "0": {
+            "finite_fused_energy": 0.0,
+            "finite_fused_energy_squared": 0.0,
+            "finite_gram_minimum_eigenvalue": 0.0,
+            "finite_packet_energies": [
+              0.0,
+              0.0
+            ],
+            "geometric_tail_energies": [
+              0.8320277232672757,
+              0.33988928661739914
+            ],
+            "geometric_tail_sum": 1.171917009884675,
+            "maximum_tail_over_exact_packet": 1.0596357336210975,
+            "packet_hybrid_absolute_upper": 1.171917009884675,
+            "packet_hybrid_uppers": [
+              0.8320277232672757,
+              0.33988928661739914
+            ],
+            "phase_aware_upper": 1.171917009884675,
+            "tail_energies": [
+              0.8320277232672757,
+              0.33988928661739914
+            ],
+            "tail_sum": 1.171917009884675
+          },
+          "1": {
+            "finite_fused_energy": 0.8369119721042166,
+            "finite_fused_energy_squared": 0.7004216490513692,
+            "finite_gram_minimum_eigenvalue": 0.06605928376428447,
+            "finite_packet_energies": [
+              0.7952489370768681,
+              0.25702323782749065
+            ],
+            "geometric_tail_energies": [
+              0.3459593878393274,
+              0.21360097865313687
+            ],
+            "geometric_tail_sum": 0.5595603664924642,
+            "maximum_tail_over_exact_packet": 0.6373160568282378,
+            "packet_hybrid_absolute_upper": 1.158413765283845,
+            "packet_hybrid_uppers": [
+              0.8300072196978323,
+              0.3284065455860128
+            ],
+            "phase_aware_upper": 1.2790163799182328,
+            "tail_energies": [
+              0.23767859143944217,
+              0.20442581637457408
+            ],
+            "tail_sum": 0.4421044078140163
+          },
+          "16": {
+            "finite_fused_energy": 0.9039575455799399,
+            "finite_fused_energy_squared": 0.8171392442109092,
+            "finite_gram_minimum_eigenvalue": 0.10252467074488159,
+            "finite_packet_energies": [
+              0.8277563270490178,
+              0.32076049894608005
+            ],
+            "geometric_tail_energies": [
+              6.642551961290305e-07,
+              0.00020118225625511364
+            ],
+            "geometric_tail_sum": 0.00020184651145124268,
+            "maximum_tail_over_exact_packet": 2.2879352508600784e-09,
+            "packet_hybrid_absolute_upper": 1.148516825995098,
+            "packet_hybrid_uppers": [
+              0.8277563270490178,
+              0.32076049894608005
+            ],
+            "phase_aware_upper": 0.9039575463138307,
+            "tail_energies": [
+              1.1624571330739009e-14,
+              7.338792526222043e-10
+            ],
+            "tail_sum": 7.33890877193535e-10
+          },
+          "2": {
+            "finite_fused_energy": 0.8997055290258179,
+            "finite_fused_energy_squared": 0.8094700389596269,
+            "finite_gram_minimum_eigenvalue": 0.09482607797253176,
+            "finite_packet_energies": [
+              0.8271818077152308,
+              0.3085589508500472
+            ],
+            "geometric_tail_energies": [
+              0.1438508533876272,
+              0.1342359994210016
+            ],
+            "geometric_tail_sum": 0.27808685280862877,
+            "maximum_tail_over_exact_packet": 0.3004777552028783,
+            "packet_hybrid_absolute_upper": 1.1510953253347582,
+            "packet_hybrid_uppers": [
+              0.8278338222287579,
+              0.3232615031060004
+            ],
+            "phase_aware_upper": 1.0289364931232132,
+            "tail_energies": [
+              0.03284956941632179,
+              0.09638139468107344
+            ],
+            "tail_sum": 0.12923096409739523
+          },
+          "32": {
+            "finite_fused_energy": 0.9039575455799399,
+            "finite_fused_energy_squared": 0.8171392442109092,
+            "finite_gram_minimum_eigenvalue": 0.10252467074488159,
+            "finite_packet_energies": [
+              0.8277563270490178,
+              0.32076049894608005
+            ],
+            "geometric_tail_energies": [
+              5.303128168034336e-13,
+              1.1908083551176664e-07
+            ],
+            "geometric_tail_sum": 1.1908136582458344e-07,
+            "maximum_tail_over_exact_packet": 1.3826176358392063e-18,
+            "packet_hybrid_absolute_upper": 1.148516825995098,
+            "packet_hybrid_uppers": [
+              0.8277563270490178,
+              0.32076049894608005
+            ],
+            "phase_aware_upper": 0.9039575455799399,
+            "tail_energies": [
+              1.1512983173202547e-28,
+              4.434891227234339e-19
+            ],
+            "tail_sum": 4.434891228385638e-19
+          },
+          "4": {
+            "finite_fused_energy": 0.903941950422841,
+            "finite_fused_energy_squared": 0.81711104973425,
+            "finite_gram_minimum_eigenvalue": 0.1024950016926586,
+            "finite_packet_energies": [
+              0.8277561765885735,
+              0.3207142851849791
+            ],
+            "geometric_tail_energies": [
+              0.024870647265321108,
+              0.053015214806810915
+            ],
+            "geometric_tail_sum": 0.07788586207213202,
+            "maximum_tail_over_exact_packet": 0.01883618181133474,
+            "packet_hybrid_absolute_upper": 1.1485275374266344,
+            "packet_hybrid_uppers": [
+              0.8277563458983233,
+              0.320771191528311
+            ],
+            "phase_aware_upper": 0.9105132818802192,
+            "tail_energies": [
+              0.0005294283813354241,
+              0.006041903076042815
+            ],
+            "tail_sum": 0.006571331457378239
+          },
+          "64": {
+            "finite_fused_energy": 0.9039575455799399,
+            "finite_fused_energy_squared": 0.8171392442109092,
+            "finite_gram_minimum_eigenvalue": 0.10252467074488159,
+            "finite_packet_energies": [
+              0.8277563270490178,
+              0.32076049894608005
+            ],
+            "geometric_tail_energies": [
+              3.3800758772992345e-25,
+              4.172018932195e-14
+            ],
+            "geometric_tail_sum": 4.172018932228801e-14,
+            "maximum_tail_over_exact_packet": 5.049198042512235e-37,
+            "packet_hybrid_absolute_upper": 1.148516825995098,
+            "packet_hybrid_uppers": [
+              0.8277563270490178,
+              0.32076049894608005
+            ],
+            "phase_aware_upper": 0.9039575455799399,
+            "tail_energies": [
+              9.158958962357412e-57,
+              1.619583283393797e-37
+            ],
+            "tail_sum": 1.619583283393797e-37
+          },
+          "8": {
+            "finite_fused_energy": 0.9039575451773729,
+            "finite_fused_energy_squared": 0.8171392434831023,
+            "finite_gram_minimum_eigenvalue": 0.10252467001501948,
+            "finite_packet_energies": [
+              0.8277563270490064,
+              0.3207604978077622
+            ],
+            "geometric_tail_energies": [
+              0.0007434236601721086,
+              0.008269201506713291
+            ],
+            "geometric_tail_sum": 0.0090126251668854,
+            "maximum_tail_over_exact_packet": 9.309865280311725e-05,
+            "packet_hybrid_absolute_upper": 1.1485168262468544,
+            "packet_hybrid_uppers": [
+              0.827756327049019,
+              0.32076049919783545
+            ],
+            "phase_aware_upper": 0.9039875524962754,
+            "tail_energies": [
+              1.4494857815840785e-07,
+              2.9862370324335795e-05
+            ],
+            "tail_sum": 3.0007318902494204e-05
+          }
+        },
+        "maximum_local_metric_residual": 5.511961748198695e-16,
+        "maximum_normalized_contraction": 0.6284428108308681,
+        "maximum_schur_reconstruction_defect": 2.9553042150965536e-15,
+        "maximum_schur_unitary_defect": 3.541947264963056e-15,
+        "rh59_exact_relative_defect": 0.0,
+        "rh59_metric_absolute_upper": 1.171917009884675,
+        "selected_horizon": 32,
+        "selected_packet_hybrid_absolute_upper": 1.148516825995098,
+        "selected_phase_aware_upper": 0.9039575455799399,
+        "selected_phase_aware_upper_over_exact": 0.9999999999999978
+      },
+      "right": {
+        "exact_hardy_energy": 1.0026461047247,
+        "horizons": {
+          "0": {
+            "finite_fused_energy": 0.0,
+            "finite_fused_energy_squared": 0.0,
+            "finite_gram_minimum_eigenvalue": 0.0,
+            "finite_packet_energies": [
+              0.0,
+              0.0
+            ],
+            "geometric_tail_energies": [
+              1.0719791366296887,
+              0.44629591137899255
+            ],
+            "geometric_tail_sum": 1.5182750480086813,
+            "maximum_tail_over_exact_packet": 1.1823040590514928,
+            "packet_hybrid_absolute_upper": 1.5182750480086813,
+            "packet_hybrid_uppers": [
+              1.0719791366296887,
+              0.44629591137899255
+            ],
+            "phase_aware_upper": 1.5182750480086813,
+            "tail_energies": [
+              1.0719791366296887,
+              0.44629591137899255
+            ],
+            "tail_sum": 1.5182750480086813
+          },
+          "1": {
+            "finite_fused_energy": 0.9213278374603494,
+            "finite_fused_energy_squared": 0.8488449840793639,
+            "finite_gram_minimum_eigenvalue": 0.1107704189359248,
+            "finite_packet_energies": [
+              0.8604060782652028,
+              0.3328248589705855
+            ],
+            "geometric_tail_energies": [
+              0.4248008597148403,
+              0.2888609422675967
+            ],
+            "geometric_tail_sum": 0.713661801982437,
+            "maximum_tail_over_exact_packet": 0.6210808771187034,
+            "packet_hybrid_absolute_upper": 1.3300140182672382,
+            "packet_hybrid_uppers": [
+              0.9148862665784683,
+              0.4151277516887698
+            ],
+            "phase_aware_upper": 1.4804336184460725,
+            "tail_energies": [
+              0.310995596846936,
+              0.24811018413878702
+            ],
+            "tail_sum": 0.559105780985723
+          },
+          "16": {
+            "finite_fused_energy": 1.0026461047246997,
+            "finite_fused_energy_squared": 1.0052992113196138,
+            "finite_gram_minimum_eigenvalue": 0.15937458836557916,
+            "finite_packet_energies": [
+              0.9066865062526187,
+              0.3994812805858892
+            ],
+            "geometric_tail_energies": [
+              3.9643427627117464e-07,
+              0.00042332854570237803
+            ],
+            "geometric_tail_sum": 0.0004237249799786492,
+            "maximum_tail_over_exact_packet": 2.4000690185020923e-09,
+            "packet_hybrid_absolute_upper": 1.306167786838508,
+            "packet_hybrid_uppers": [
+              0.9066865062526187,
+              0.3994812805858892
+            ],
+            "phase_aware_upper": 1.002646105683493,
+            "tail_energies": [
+              1.0705043665069995e-14,
+              9.587826450057344e-10
+            ],
+            "tail_sum": 9.587933500493994e-10
+          },
+          "2": {
+            "finite_fused_energy": 0.9972065369790276,
+            "finite_fused_energy_squared": 0.9944208773937048,
+            "finite_gram_minimum_eigenvalue": 0.1489315937179915,
+            "finite_packet_energies": [
+              0.9064340581885795,
+              0.38618598083505884
+            ],
+            "geometric_tail_energies": [
+              0.16833888295794808,
+              0.1869626000155453
+            ],
+            "geometric_tail_sum": 0.3553014829734934,
+            "maximum_tail_over_exact_packet": 0.2980646393862789,
+            "packet_hybrid_absolute_upper": 1.310858294744389,
+            "packet_hybrid_uppers": [
+              0.9067326052578152,
+              0.4041256894865739
+            ],
+            "phase_aware_upper": 1.1395439707387387,
+            "tail_energies": [
+              0.023266189920309037,
+              0.119071243839402
+            ],
+            "tail_sum": 0.14233743375971103
+          },
+          "32": {
+            "finite_fused_energy": 1.0026461047246997,
+            "finite_fused_energy_squared": 1.0052992113196138,
+            "finite_gram_minimum_eigenvalue": 0.15937458836557916,
+            "finite_packet_energies": [
+              0.9066865062526187,
+              0.3994812805858892
+            ],
+            "geometric_tail_energies": [
+              1.4660745720925392e-13,
+              4.0154313099747066e-07
+            ],
+            "geometric_tail_sum": 4.0154327760492786e-07,
+            "maximum_tail_over_exact_packet": 1.422951424211249e-18,
+            "packet_hybrid_absolute_upper": 1.306167786838508,
+            "packet_hybrid_uppers": [
+              0.9066865062526187,
+              0.3994812805858892
+            ],
+            "phase_aware_upper": 1.0026461047246997,
+            "tail_energies": [
+              6.474401482787269e-29,
+              5.684424571554248e-19
+            ],
+            "tail_sum": 5.684424572201688e-19
+          },
+          "4": {
+            "finite_fused_energy": 1.0026231057242814,
+            "finite_fused_energy_squared": 1.0052530921322034,
+            "finite_gram_minimum_eigenvalue": 0.15932855175946528,
+            "finite_packet_energies": [
+              0.9066864288978104,
+              0.3994236392692275
+            ],
+            "geometric_tail_energies": [
+              0.026435196868312735,
+              0.07832250512124707
+            ],
+            "geometric_tail_sum": 0.1047577019895598,
+            "maximum_tail_over_exact_packet": 0.019804599434333502,
+            "packet_hybrid_absolute_upper": 1.3061885059768725,
+            "packet_hybrid_uppers": [
+              0.9066865203805413,
+              0.3995019855963311
+            ],
+            "phase_aware_upper": 1.0109419712643954,
+            "tail_energies": [
+              0.0004072987965960142,
+              0.007911566743518127
+            ],
+            "tail_sum": 0.00831886554011414
+          },
+          "64": {
+            "finite_fused_energy": 1.0026461047246997,
+            "finite_fused_energy_squared": 1.0052992113196138,
+            "finite_gram_minimum_eigenvalue": 0.15937458836557916,
+            "finite_packet_energies": [
+              0.9066865062526187,
+              0.3994812805858892
+            ],
+            "geometric_tail_energies": [
+              2.0050526894524956e-26,
+              3.612779815818886e-13
+            ],
+            "geometric_tail_sum": 3.6127798158190864e-13,
+            "maximum_tail_over_exact_packet": 5.001774767163311e-37,
+            "packet_hybrid_absolute_upper": 1.306167786838508,
+            "packet_hybrid_uppers": [
+              0.9066865062526187,
+              0.3994812805858892
+            ],
+            "phase_aware_upper": 1.0026461047246997,
+            "tail_energies": [
+              1.0527601170051728e-57,
+              1.998115389188588e-37
+            ],
+            "tail_sum": 1.998115389188588e-37
+          },
+          "8": {
+            "finite_fused_energy": 1.0026461041559593,
+            "finite_fused_energy_squared": 1.0052992101791227,
+            "finite_gram_minimum_eigenvalue": 0.15937458722504652,
+            "finite_packet_energies": [
+              0.9066865062526116,
+              0.39948127915792747
+            ],
+            "geometric_tail_energies": [
+              0.0006518966737202985,
+              0.013745173666308706
+            ],
+            "geometric_tail_sum": 0.014397070340029005,
+            "maximum_tail_over_exact_packet": 9.855546428404355e-05,
+            "packet_hybrid_absolute_upper": 1.306167787350664,
+            "packet_hybrid_uppers": [
+              0.90668650625262,
+              0.39948128109804415
+            ],
+            "phase_aware_upper": 1.002685598675006,
+            "tail_energies": [
+              1.2345596568860327e-07,
+              3.93710630809266e-05
+            ],
+            "tail_sum": 3.94945190466152e-05
+          }
+        },
+        "maximum_local_metric_residual": 2.8883514166935837e-16,
+        "maximum_normalized_contraction": 0.6472408438048567,
+        "maximum_schur_reconstruction_defect": 1.8904513801723858e-15,
+        "maximum_schur_unitary_defect": 2.606827581221666e-15,
+        "rh59_exact_relative_defect": 0.0,
+        "rh59_metric_absolute_upper": 1.5182750480086813,
+        "selected_horizon": 32,
+        "selected_packet_hybrid_absolute_upper": 1.306167786838508,
+        "selected_phase_aware_upper": 1.0026461047246997,
+        "selected_phase_aware_upper_over_exact": 0.9999999999999998
+      },
+      "sigma": 0.16
+    },
+    {
+      "coarse_dimension": 32,
+      "elapsed_seconds": 0.13551779394038022,
+      "fine_dimension": 64,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "exact_hardy_energy": 1.1625610299508302,
+        "horizons": {
+          "0": {
+            "finite_fused_energy": 0.0,
+            "finite_fused_energy_squared": 0.0,
+            "finite_gram_minimum_eigenvalue": 0.0,
+            "finite_packet_energies": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "geometric_tail_energies": [
+              0.7851647077553258,
+              0.3761860987584608,
+              0.959272118336309
+            ],
+            "geometric_tail_sum": 2.1206229248500956,
+            "maximum_tail_over_exact_packet": 1.2173897711697461,
+            "packet_hybrid_absolute_upper": 2.1206229248500956,
+            "packet_hybrid_uppers": [
+              0.7851647077553258,
+              0.3761860987584608,
+              0.959272118336309
+            ],
+            "phase_aware_upper": 2.1206229248500956,
+            "tail_energies": [
+              0.7851647077553258,
+              0.3761860987584608,
+              0.959272118336309
+            ],
+            "tail_sum": 2.1206229248500956
+          },
+          "1": {
+            "finite_fused_energy": 0.9535122419869263,
+            "finite_fused_energy_squared": 0.9091855956189347,
+            "finite_gram_minimum_eigenvalue": 0.08256563875832425,
+            "finite_packet_energies": [
+              0.7434814959527393,
+              0.287347653915006,
+              0.5192431821697308
+            ],
+            "geometric_tail_energies": [
+              0.41039351442513855,
+              0.23669153884756047,
+              0.7839110623318563
+            ],
+            "geometric_tail_sum": 1.4309961156045552,
+            "maximum_tail_over_exact_packet": 0.9247551951720133,
+            "packet_hybrid_absolute_upper": 2.042543526926404,
+            "packet_hybrid_uppers": [
+              0.7836440403450327,
+              0.364140765957008,
+              0.8947587206243636
+            ],
+            "phase_aware_upper": 2.1535247468034697,
+            "tail_energies": [
+              0.2476555009366118,
+              0.2236734745590063,
+              0.7286835293209252
+            ],
+            "tail_sum": 1.2000125048165433
+          },
+          "16": {
+            "finite_fused_energy": 1.162561027954297,
+            "finite_fused_energy_squared": 1.3515481437181518,
+            "finite_gram_minimum_eigenvalue": 0.12673640719739615,
+            "finite_packet_energies": [
+              0.7812162342902559,
+              0.3562826720983757,
+              0.7879745152027631
+            ],
+            "geometric_tail_energies": [
+              2.4366674783870677e-05,
+              0.0002269251268200186,
+              0.03794384737008183
+            ],
+            "geometric_tail_sum": 0.03819513917168572,
+            "maximum_tail_over_exact_packet": 9.98620895116676e-05,
+            "packet_hybrid_absolute_upper": 1.9254734255204078,
+            "packet_hybrid_uppers": [
+              0.7812162342902559,
+              0.3562826720983757,
+              0.7879745191317762
+            ],
+            "phase_aware_upper": 1.1626397193733975,
+            "tail_energies": [
+              2.686706953564998e-15,
+              2.6372334360467107e-09,
+              7.868878186425173e-05
+            ],
+            "tail_sum": 7.869141910037449e-05
+          },
+          "2": {
+            "finite_fused_energy": 1.1016617961833919,
+            "finite_fused_energy_squared": 1.2136587131700172,
+            "finite_gram_minimum_eigenvalue": 0.11546164161310288,
+            "finite_packet_energies": [
+              0.7806541455607985,
+              0.33992031569577497,
+              0.6974989227766178
+            ],
+            "geometric_tail_energies": [
+              0.214506376838706,
+              0.14892332477707276,
+              0.6406071248187968
+            ],
+            "geometric_tail_sum": 1.0040368264345756,
+            "maximum_tail_over_exact_packet": 0.5369436010473885,
+            "packet_hybrid_absolute_upper": 1.9566619792724538,
+            "packet_hybrid_uppers": [
+              0.7812655447808896,
+              0.3596044515909876,
+              0.8157919829005766
+            ],
+            "phase_aware_upper": 1.673005727368362,
+            "tail_energies": [
+              0.030902370144049833,
+              0.11734368573272115,
+              0.42309787530819915
+            ],
+            "tail_sum": 0.5713439311849702
+          },
+          "32": {
+            "finite_fused_energy": 1.1625610299508318,
+            "finite_fused_energy_squared": 1.3515481483603389,
+            "finite_gram_minimum_eigenvalue": 0.12673640719924298,
+            "finite_packet_energies": [
+              0.7812162342902559,
+              0.3562826720983757,
+              0.7879745181484316
+            ],
+            "geometric_tail_energies": [
+              7.561914514985302e-10,
+              1.3688707092641694e-07,
+              0.0015008625036877306
+            ],
+            "geometric_tail_sum": 0.0015010001469501085,
+            "maximum_tail_over_exact_packet": 5.8140412522405054e-09,
+            "packet_hybrid_absolute_upper": 1.925473424537063,
+            "packet_hybrid_uppers": [
+              0.7812162342902559,
+              0.3562826720983757,
+              0.7879745181484316
+            ],
+            "phase_aware_upper": 1.1625610345321482,
+            "tail_energies": [
+              3.0464823508343503e-30,
+              5.0275618476520275e-18,
+              4.5813163542293105e-09
+            ],
+            "tail_sum": 4.581316359256872e-09
+          },
+          "4": {
+            "finite_fused_energy": 1.1580962796247387,
+            "finite_fused_energy_squared": 1.341186992880661,
+            "finite_gram_minimum_eigenvalue": 0.1266654932121997,
+            "finite_packet_energies": [
+              0.781216146350419,
+              0.35617940966069833,
+              0.7811957275258306
+            ],
+            "geometric_tail_energies": [
+              0.05860297240818876,
+              0.05895527967634312,
+              0.427800913342852
+            ],
+            "geometric_tail_sum": 0.5453591654273838,
+            "maximum_tail_over_exact_packet": 0.15142078408441853,
+            "packet_hybrid_absolute_upper": 1.927776891986289,
+            "packet_hybrid_uppers": [
+              0.781216242042704,
+              0.3563056242746801,
+              0.790255025668905
+            ],
+            "phase_aware_upper": 1.2872816010318724,
+            "tail_energies": [
+              0.0003866687540877915,
+              0.009482933276468616,
+              0.11931571937657726
+            ],
+            "tail_sum": 0.12918532140713365
+          },
+          "64": {
+            "finite_fused_energy": 1.1625610299508318,
+            "finite_fused_energy_squared": 1.3515481483603389,
+            "finite_gram_minimum_eigenvalue": 0.12673640719924298,
+            "finite_packet_energies": [
+              0.7812162342902559,
+              0.3562826720983757,
+              0.7879745181484316
+            ],
+            "geometric_tail_energies": [
+              7.282873334363458e-19,
+              4.9810639597411397e-14,
+              2.3482265479398344e-06
+            ],
+            "geometric_tail_sum": 2.3482265977512022e-06,
+            "maximum_tail_over_exact_packet": 1.9995293865072944e-17,
+            "packet_hybrid_absolute_upper": 1.925473424537063,
+            "packet_hybrid_uppers": [
+              0.7812162342902559,
+              0.3562826720983757,
+              0.7879745181484316
+            ],
+            "phase_aware_upper": 1.1625610299508318,
+            "tail_energies": [
+              3.8771318347965147e-60,
+              1.827156818752461e-35,
+              1.5755782048567125e-17
+            ],
+            "tail_sum": 1.5755782048567125e-17
+          },
+          "8": {
+            "finite_fused_energy": 1.1625268232549644,
+            "finite_fused_energy_squared": 1.3514686147872794,
+            "finite_gram_minimum_eigenvalue": 0.1267363749286239,
+            "finite_packet_energies": [
+              0.7812162342902534,
+              0.3562826678988946,
+              0.7879239741782328
+            ],
+            "geometric_tail_energies": [
+              0.004373997380617287,
+              0.009239376503243699,
+              0.19078384324813247
+            ],
+            "geometric_tail_sum": 0.20439721713199346,
+            "maximum_tail_over_exact_packet": 0.013111779401190484,
+            "packet_hybrid_absolute_upper": 1.9254906167180086,
+            "packet_hybrid_uppers": [
+              0.7812162342902561,
+              0.35628267301533284,
+              0.7879917094124197
+            ],
+            "phase_aware_upper": 1.1729190163613716,
+            "tail_energies": [
+              6.461875613560191e-08,
+              6.03804319295439e-05,
+              0.01033174805572159
+            ],
+            "tail_sum": 0.01039219310640727
+          }
+        },
+        "maximum_local_metric_residual": 3.2384159147700963e-16,
+        "maximum_normalized_contraction": 0.817193627697023,
+        "maximum_schur_reconstruction_defect": 4.02457564991874e-15,
+        "maximum_schur_unitary_defect": 5.9948616938314606e-15,
+        "rh59_exact_relative_defect": 0.0,
+        "rh59_metric_absolute_upper": 2.1206229248500956,
+        "selected_horizon": 32,
+        "selected_packet_hybrid_absolute_upper": 1.925473424537063,
+        "selected_phase_aware_upper": 1.1625610345321482,
+        "selected_phase_aware_upper_over_exact": 1.0000000039407118
+      },
+      "right": {
+        "exact_hardy_energy": 1.2652809475765023,
+        "horizons": {
+          "0": {
+            "finite_fused_energy": 0.0,
+            "finite_fused_energy_squared": 0.0,
+            "finite_gram_minimum_eigenvalue": 0.0,
+            "finite_packet_energies": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "geometric_tail_energies": [
+              1.0569482387553337,
+              0.46236661370763915,
+              0.9113734855006473
+            ],
+            "geometric_tail_sum": 2.43068833796362,
+            "maximum_tail_over_exact_packet": 1.3204962566552227,
+            "packet_hybrid_absolute_upper": 2.43068833796362,
+            "packet_hybrid_uppers": [
+              1.0569482387553337,
+              0.46236661370763915,
+              0.9113734855006473
+            ],
+            "phase_aware_upper": 2.43068833796362,
+            "tail_energies": [
+              1.0569482387553337,
+              0.46236661370763915,
+              0.9113734855006473
+            ],
+            "tail_sum": 2.43068833796362
+          },
+          "1": {
+            "finite_fused_energy": 1.00061949128721,
+            "finite_fused_energy_squared": 1.0012393663438748,
+            "finite_gram_minimum_eigenvalue": 0.06400440517834698,
+            "finite_packet_energies": [
+              0.8186082263854112,
+              0.25299241798704325,
+              0.5153609074443853
+            ],
+            "geometric_tail_energies": [
+              0.7330176476393874,
+              0.3738761058980479,
+              0.747190667495429
+            ],
+            "geometric_tail_sum": 1.8540844210328642,
+            "maximum_tail_over_exact_packet": 0.844268232574905,
+            "packet_hybrid_absolute_upper": 2.144107860622722,
+            "packet_hybrid_uppers": [
+              0.9412341320724209,
+              0.38434264265869283,
+              0.8185310858916082
+            ],
+            "phase_aware_upper": 2.3904202030640453,
+            "tail_energies": [
+              0.464545221773139,
+              0.28933389605598725,
+              0.6359215939477091
+            ],
+            "tail_sum": 1.3898007117768354
+          },
+          "16": {
+            "finite_fused_energy": 1.2652809455243261,
+            "finite_fused_energy_squared": 1.6009358711069328,
+            "finite_gram_minimum_eigenvalue": 0.12133005394042189,
+            "finite_packet_energies": [
+              0.9115226260912027,
+              0.35014609952685477,
+              0.7532222183673931
+            ],
+            "geometric_tail_energies": [
+              0.0030270883573041197,
+              0.015447078778856928,
+              0.03797144973659426
+            ],
+            "geometric_tail_sum": 0.05644561687275531,
+            "maximum_tail_over_exact_packet": 0.00011071687981847052,
+            "packet_hybrid_absolute_upper": 2.0148909486020354,
+            "packet_hybrid_uppers": [
+              0.9115226260912027,
+              0.35014609952685477,
+              0.7532222229839778
+            ],
+            "phase_aware_upper": 1.2653643441635032,
+            "tail_energies": [
+              2.8902019428629343e-15,
+              4.224964826054147e-09,
+              8.339441420926856e-05
+            ],
+            "tail_sum": 8.339863917698482e-05
+          },
+          "2": {
+            "finite_fused_energy": 1.1644331501757743,
+            "finite_fused_energy_squared": 1.3559045612282772,
+            "finite_gram_minimum_eigenvalue": 0.09392167294007894,
+            "finite_packet_energies": [
+              0.9093893469061783,
+              0.30663500710596825,
+              0.6317850013975193
+            ],
+            "geometric_tail_energies": [
+              0.5083644137422709,
+              0.302321444536381,
+              0.6125851832145145
+            ],
+            "geometric_tail_sum": 1.4232710414931664,
+            "maximum_tail_over_exact_packet": 0.6234219905987304,
+            "packet_hybrid_absolute_upper": 2.0710789389263553,
+            "packet_hybrid_uppers": [
+              0.9122519938723579,
+              0.3716463765455075,
+              0.7871805685084898
+            ],
+            "phase_aware_upper": 1.9162119178065429,
+            "tail_energies": [
+              0.07221299092024112,
+              0.20999047982355754,
+              0.46957529688696986
+            ],
+            "tail_sum": 0.7517787676307686
+          },
+          "32": {
+            "finite_fused_energy": 1.265280947576503,
+            "finite_fused_energy_squared": 1.6009358763000936,
+            "finite_gram_minimum_eigenvalue": 0.121330053954586,
+            "finite_packet_energies": [
+              0.9115226260912027,
+              0.3501460995268548,
+              0.7532222218147819
+            ],
+            "geometric_tail_energies": [
+              8.66954841016325e-06,
+              0.0005160671980332254,
+              0.001582041850061788
+            ],
+            "geometric_tail_sum": 0.002106778596505177,
+            "maximum_tail_over_exact_packet": 5.4956668382992495e-09,
+            "packet_hybrid_absolute_upper": 2.014890947432839,
+            "packet_hybrid_uppers": [
+              0.9115226260912027,
+              0.3501460995268548,
+              0.7532222218147819
+            ],
+            "phase_aware_upper": 1.2652809517159613,
+            "tail_energies": [
+              3.394891944446575e-30,
+              5.690896411266667e-18,
+              4.139458386297579e-09
+            ],
+            "tail_sum": 4.139458391988476e-09
+          },
+          "4": {
+            "finite_fused_energy": 1.259355252390964,
+            "finite_fused_energy_squared": 1.5859756517247083,
+            "finite_gram_minimum_eigenvalue": 0.12096939145641898,
+            "finite_packet_energies": [
+              0.9115223879517945,
+              0.3497757654262417,
+              0.7426889992007351
+            ],
+            "geometric_tail_energies": [
+              0.24450996527876914,
+              0.19767486041792037,
+              0.4117528243514977
+            ],
+            "geometric_tail_sum": 0.8539376500481872,
+            "maximum_tail_over_exact_packet": 0.19377838619276044,
+            "packet_hybrid_absolute_upper": 2.018769742759008,
+            "packet_hybrid_uppers": [
+              0.9115227076390101,
+              0.35035157221525387,
+              0.756895462904744
+            ],
+            "phase_aware_upper": 1.4261551537117867,
+            "tail_energies": [
+              0.0007634161450765934,
+              0.02007829858795235,
+              0.14595818658779391
+            ],
+            "tail_sum": 0.16679990132082287
+          },
+          "64": {
+            "finite_fused_energy": 1.265280947576503,
+            "finite_fused_energy_squared": 1.6009358763000936,
+            "finite_gram_minimum_eigenvalue": 0.121330053954586,
+            "finite_packet_energies": [
+              0.9115226260912027,
+              0.3501460995268548,
+              0.7532222218147819
+            ],
+            "geometric_tail_energies": [
+              7.111140061567642e-11,
+              5.760047222057116e-07,
+              2.7462466871877717e-06
+            ],
+            "geometric_tail_sum": 3.322322520794099e-06,
+            "maximum_tail_over_exact_packet": 1.386626559407645e-17,
+            "packet_hybrid_absolute_upper": 2.014890947432839,
+            "packet_hybrid_uppers": [
+              0.9115226260912027,
+              0.3501460995268548,
+              0.7532222218147819
+            ],
+            "phase_aware_upper": 1.265280947576503,
+            "tail_energies": [
+              4.684154514223793e-60,
+              1.0325161953346555e-35,
+              1.0444379379044133e-17
+            ],
+            "tail_sum": 1.0444379379044133e-17
+          },
+          "8": {
+            "finite_fused_energy": 1.2652394392878867,
+            "finite_fused_energy_squared": 1.600830838729526,
+            "finite_gram_minimum_eigenvalue": 0.12132973132602365,
+            "finite_packet_energies": [
+              0.9115226260911924,
+              0.35014608737277225,
+              0.75315216264439
+            ],
+            "geometric_tail_energies": [
+              0.056563908173051174,
+              0.08451161758394647,
+              0.1860273434093831
+            ],
+            "geometric_tail_sum": 0.32710286916638076,
+            "maximum_tail_over_exact_packet": 0.015792541246232174,
+            "packet_hybrid_absolute_upper": 2.0149148263221033,
+            "packet_hybrid_uppers": [
+              0.9115226260912062,
+              0.3501461062538953,
+              0.7532460939770019
+            ],
+            "phase_aware_upper": 1.2772498792188978,
+            "tail_energies": [
+              1.5865173037428817e-07,
+              0.00011498827369209605,
+              0.011895293005588585
+            ],
+            "tail_sum": 0.012010439931011054
+          }
+        },
+        "maximum_local_metric_residual": 2.590200563252291e-16,
+        "maximum_normalized_contraction": 0.8198512238755472,
+        "maximum_schur_reconstruction_defect": 3.0086141641232472e-15,
+        "maximum_schur_unitary_defect": 4.2605367084912446e-15,
+        "rh59_exact_relative_defect": 0.0,
+        "rh59_metric_absolute_upper": 2.43068833796362,
+        "selected_horizon": 32,
+        "selected_packet_hybrid_absolute_upper": 2.014890947432839,
+        "selected_phase_aware_upper": 1.2652809517159613,
+        "selected_phase_aware_upper_over_exact": 1.000000003271573
+      },
+      "sigma": 0.08
+    },
+    {
+      "coarse_dimension": 64,
+      "elapsed_seconds": 0.9647332190070301,
+      "fine_dimension": 128,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "exact_hardy_energy": 1.333828237712251,
+        "horizons": {
+          "0": {
+            "finite_fused_energy": 0.0,
+            "finite_fused_energy_squared": 0.0,
+            "finite_gram_minimum_eigenvalue": 0.0,
+            "finite_packet_energies": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "geometric_tail_energies": [
+              0.8984101140313896,
+              0.9701424455294697,
+              1.0267731184465838
+            ],
+            "geometric_tail_sum": 2.895325678007443,
+            "maximum_tail_over_exact_packet": 1.5401009195106936,
+            "packet_hybrid_absolute_upper": 2.895325678007443,
+            "packet_hybrid_uppers": [
+              0.8984101140313896,
+              0.9701424455294697,
+              1.0267731184465838
+            ],
+            "phase_aware_upper": 2.895325678007443,
+            "tail_energies": [
+              0.8984101140313896,
+              0.9701424455294697,
+              1.0267731184465838
+            ],
+            "tail_sum": 2.895325678007443
+          },
+          "1": {
+            "finite_fused_energy": 0.9820215017502694,
+            "finite_fused_energy_squared": 0.9643662298998542,
+            "finite_gram_minimum_eigenvalue": 0.07974384959221067,
+            "finite_packet_energies": [
+              0.822124129904889,
+              0.4538772730831625,
+              0.28238959210596204
+            ],
+            "geometric_tail_energies": [
+              0.593810497722663,
+              0.776082617736164,
+              0.9613879019742516
+            ],
+            "geometric_tail_sum": 2.3312810174330787,
+            "maximum_tail_over_exact_packet": 1.338893155725912,
+            "packet_hybrid_absolute_upper": 2.640339093121261,
+            "packet_hybrid_uppers": [
+              0.8976618878971397,
+              0.8064447068691566,
+              0.9362324983549646
+            ],
+            "phase_aware_upper": 2.9016742934283286,
+            "tail_energies": [
+              0.36042860598346826,
+              0.6665946941102008,
+              0.8926294915843903
+            ],
+            "tail_sum": 1.9196527916780592
+          },
+          "16": {
+            "finite_fused_energy": 1.3338248790014335,
+            "finite_fused_energy_squared": 1.7790888078431888,
+            "finite_gram_minimum_eigenvalue": 0.41290226094538246,
+            "finite_packet_energies": [
+              0.8946457431969874,
+              0.6677938602574375,
+              0.666685381709383
+            ],
+            "geometric_tail_energies": [
+              0.0011919181964428428,
+              0.02728944545529568,
+              0.35831178496501276
+            ],
+            "geometric_tail_sum": 0.3867931486167513,
+            "maximum_tail_over_exact_packet": 0.005990641542517355,
+            "packet_hybrid_absolute_upper": 2.2291369482288594,
+            "packet_hybrid_uppers": [
+              0.8946457431969874,
+              0.6677938602574809,
+              0.6666973447743914
+            ],
+            "phase_aware_upper": 1.3378190333204005,
+            "tail_energies": [
+              2.8530608666204603e-13,
+              2.4091977247993536e-07,
+              0.003993913398909239
+            ],
+            "tail_sum": 0.003994154318967025
+          },
+          "2": {
+            "finite_fused_energy": 1.1574516796535277,
+            "finite_fused_energy_squared": 1.3396943907327725,
+            "finite_gram_minimum_eigenvalue": 0.16409857287465757,
+            "finite_packet_energies": [
+              0.8861686289915373,
+              0.5959891584558941,
+              0.40542158550087193
+            ],
+            "geometric_tail_energies": [
+              0.39248323421403164,
+              0.6208410242513411,
+              0.9001664354641326
+            ],
+            "geometric_tail_sum": 1.9134906939295053,
+            "maximum_tail_over_exact_packet": 1.1190071205944283,
+            "packet_hybrid_absolute_upper": 2.4510374354822795,
+            "packet_hybrid_uppers": [
+              0.8950077370255415,
+              0.7069524283904061,
+              0.8490772700663317
+            ],
+            "phase_aware_upper": 2.409195031659632,
+            "tail_energies": [
+              0.1254751382818129,
+              0.38023500497735263,
+              0.7460332087469388
+            ],
+            "tail_sum": 1.2517433520061043
+          },
+          "32": {
+            "finite_fused_energy": 1.3338282377010624,
+            "finite_fused_energy_squared": 1.7790977676887216,
+            "finite_gram_minimum_eigenvalue": 0.4129068140726222,
+            "finite_packet_energies": [
+              0.8946457431969874,
+              0.6677938602574669,
+              0.666692101410037
+            ],
+            "geometric_tail_energies": [
+              1.5813145520331068e-06,
+              0.000767633492060147,
+              0.12503963430504703
+            ],
+            "geometric_tail_sum": 0.1258088491116592,
+            "maximum_tail_over_exact_packet": 1.0788759035724352e-05,
+            "packet_hybrid_absolute_upper": 2.229131704903292,
+            "packet_hybrid_uppers": [
+              0.8946457431969874,
+              0.6677938602574669,
+              0.6666921014488376
+            ],
+            "phase_aware_upper": 1.3338354304815156,
+            "tail_energies": [
+              3.414985107441149e-27,
+              1.990988974964519e-14,
+              7.192780433375057e-06
+            ],
+            "tail_sum": 7.192780453284947e-06
+          },
+          "4": {
+            "finite_fused_energy": 1.2894081694141515,
+            "finite_fused_energy_squared": 1.6625734273519535,
+            "finite_gram_minimum_eigenvalue": 0.3297123791290056,
+            "finite_packet_energies": [
+              0.8946062502297338,
+              0.6651348708948035,
+              0.5808045429746633
+            ],
+            "geometric_tail_energies": [
+              0.17146188219974148,
+              0.3973061679443298,
+              0.7891710417605337
+            ],
+            "geometric_tail_sum": 1.3579390919046048,
+            "maximum_tail_over_exact_packet": 0.6577724725920674,
+            "packet_hybrid_absolute_upper": 2.2914427569321805,
+            "packet_hybrid_uppers": [
+              0.8946493607776224,
+              0.6690269641281862,
+              0.7277664320263719
+            ],
+            "phase_aware_upper": 1.8087828479276555,
+            "tail_energies": [
+              0.008782698315612751,
+              0.07206026818108824,
+              0.43853171201680313
+            ],
+            "tail_sum": 0.5193746785135042
+          },
+          "64": {
+            "finite_fused_energy": 1.3338282377122483,
+            "finite_fused_energy_squared": 1.779097767718562,
+            "finite_gram_minimum_eigenvalue": 0.41290681408778496,
+            "finite_packet_energies": [
+              0.8946457431969874,
+              0.6677938602574669,
+              0.6666921014324163
+            ],
+            "geometric_tail_energies": [
+              2.783312068083305e-12,
+              6.073965538234519e-07,
+              0.015227229722174765
+            ],
+            "geometric_tail_sum": 0.0152278371215119,
+            "maximum_tail_over_exact_packet": 3.4950668627010456e-11,
+            "packet_hybrid_absolute_upper": 2.2291317048868704,
+            "packet_hybrid_uppers": [
+              0.8946457431969874,
+              0.6677938602574669,
+              0.6666921014324163
+            ],
+            "phase_aware_upper": 1.3338282377355497,
+            "tail_energies": [
+              4.7590809190986006e-55,
+              1.1208362628832446e-28,
+              2.330133471340969e-11
+            ],
+            "tail_sum": 2.330133471340969e-11
+          },
+          "8": {
+            "finite_fused_energy": 1.3319715843058513,
+            "finite_fused_energy_squared": 1.7741483013982398,
+            "finite_gram_minimum_eigenvalue": 0.41028837471654983,
+            "finite_packet_energies": [
+              0.894645743196025,
+              0.6677935082532426,
+              0.6629640554549561
+            ],
+            "geometric_tail_energies": [
+              0.032723559751076936,
+              0.16271032343137795,
+              0.6065516538801028
+            ],
+            "geometric_tail_sum": 0.8019855370625577,
+            "maximum_tail_over_exact_packet": 0.13951310112798412,
+            "packet_hybrid_absolute_upper": 2.23189673794792,
+            "packet_hybrid_uppers": [
+              0.8946457431970494,
+              0.6677940330768133,
+              0.6694569616740573
+            ],
+            "phase_aware_upper": 1.425822447026529,
+            "tail_energies": [
+              1.3538850996042978e-06,
+              0.0008372262672090498,
+              0.09301228256836921
+            ],
+            "tail_sum": 0.09385086272067787
+          }
+        },
+        "maximum_local_metric_residual": 2.8758802441525307e-16,
+        "maximum_normalized_contraction": 0.9363197036447016,
+        "maximum_schur_reconstruction_defect": 4.462952281552379e-15,
+        "maximum_schur_unitary_defect": 7.211547920456027e-15,
+        "rh59_exact_relative_defect": 0.0,
+        "rh59_metric_absolute_upper": 2.895325678007443,
+        "selected_horizon": 32,
+        "selected_packet_hybrid_absolute_upper": 2.229131704903292,
+        "selected_phase_aware_upper": 1.3338354304815156,
+        "selected_phase_aware_upper_over_exact": 1.0000053925753416
+      },
+      "right": {
+        "exact_hardy_energy": 1.4845401474873023,
+        "horizons": {
+          "0": {
+            "finite_fused_energy": 0.0,
+            "finite_fused_energy_squared": 0.0,
+            "finite_gram_minimum_eigenvalue": 0.0,
+            "finite_packet_energies": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "geometric_tail_energies": [
+              1.126579373273712,
+              1.1809953147188552,
+              1.772262350457989
+            ],
+            "geometric_tail_sum": 4.079837038450556,
+            "maximum_tail_over_exact_packet": 1.916184757875299,
+            "packet_hybrid_absolute_upper": 4.079837038450556,
+            "packet_hybrid_uppers": [
+              1.126579373273712,
+              1.1809953147188552,
+              1.772262350457989
+            ],
+            "phase_aware_upper": 4.079837038450556,
+            "tail_energies": [
+              1.126579373273712,
+              1.1809953147188552,
+              1.772262350457989
+            ],
+            "tail_sum": 4.079837038450556
+          },
+          "1": {
+            "finite_fused_energy": 0.9995713340005495,
+            "finite_fused_energy_squared": 0.9991428517556381,
+            "finite_gram_minimum_eigenvalue": 0.13108576655314969,
+            "finite_packet_energies": [
+              0.8469157122793703,
+              0.39011123073426923,
+              0.3620577256676283
+            ],
+            "geometric_tail_energies": [
+              0.9097963211914794,
+              1.02499543165142,
+              1.6529786390704844
+            ],
+            "geometric_tail_sum": 3.5877703919133834,
+            "maximum_tail_over_exact_packet": 1.5083045666148092,
+            "packet_hybrid_absolute_upper": 3.2583541914871406,
+            "packet_hybrid_uppers": [
+              1.0245749070582404,
+              0.7925437709083202,
+              1.4412355135205803
+            ],
+            "phase_aware_upper": 3.661089424211971,
+            "tail_energies": [
+              0.5766173050366497,
+              0.689883219436865,
+              1.395017565737907
+            ],
+            "tail_sum": 2.6615180902114215
+          },
+          "16": {
+            "finite_fused_energy": 1.4845298584765956,
+            "finite_fused_energy_squared": 2.203828900708541,
+            "finite_gram_minimum_eigenvalue": 0.3862283119967561,
+            "finite_packet_energies": [
+              0.9858674715150433,
+              0.6220423347375557,
+              0.9248746484931655
+            ],
+            "geometric_tail_energies": [
+              0.03687057337958866,
+              0.12241320149084849,
+              0.5812402605748672
+            ],
+            "geometric_tail_sum": 0.7405240354453044,
+            "maximum_tail_over_exact_packet": 0.008136273353970802,
+            "packet_hybrid_absolute_upper": 2.532815068195113,
+            "packet_hybrid_uppers": [
+              0.9858674715150433,
+              0.62204233473769,
+              0.9249052619423794
+            ],
+            "phase_aware_upper": 1.4920554346425354,
+            "tail_energies": [
+              1.4319407601054839e-12,
+              4.088344714457077e-07,
+              0.007525167330036447
+            ],
+            "tail_sum": 0.007525576165939834
+          },
+          "2": {
+            "finite_fused_energy": 1.1737942453021086,
+            "finite_fused_energy_squared": 1.3777929303043468,
+            "finite_gram_minimum_eigenvalue": 0.2341127373713434,
+            "finite_packet_energies": [
+              0.9649603250861488,
+              0.4838570490953664,
+              0.5000517625281238
+            ],
+            "geometric_tail_energies": [
+              0.734727943445531,
+              0.889601865318482,
+              1.541723425156111
+            ],
+            "geometric_tail_sum": 3.166053233920124,
+            "maximum_tail_over_exact_packet": 1.2239302399359768,
+            "packet_hybrid_absolute_upper": 2.9317624823687316,
+            "packet_hybrid_uppers": [
+              0.9921681956616026,
+              0.7020641292900118,
+              1.2375301574171171
+            ],
+            "phase_aware_upper": 3.0452553020508675,
+            "tail_energies": [
+              0.2307580973487911,
+              0.5087006955730125,
+              1.1320022638269553
+            ],
+            "tail_sum": 1.8714610567487588
+          },
+          "32": {
+            "finite_fused_energy": 1.4845401474484239,
+            "finite_fused_energy_squared": 2.2038594493861883,
+            "finite_gram_minimum_eigenvalue": 0.3862283460569889,
+            "finite_packet_energies": [
+              0.9858674715150433,
+              0.6220423347376416,
+              0.9248911635762771
+            ],
+            "geometric_tail_energies": [
+              0.0012066963177119567,
+              0.01268844313984968,
+              0.19062654037977764
+            ],
+            "geometric_tail_sum": 0.20452167983733927,
+            "maximum_tail_over_exact_packet": 1.5733879136173958e-05,
+            "packet_hybrid_absolute_upper": 2.532800969943443,
+            "packet_hybrid_uppers": [
+              0.9858674715150433,
+              0.6220423347376416,
+              0.9248911636907577
+            ],
+            "phase_aware_upper": 1.4845546995742385,
+            "tail_energies": [
+              2.3595821954134565e-26,
+              3.176278567133111e-14,
+              1.4552125782806294e-05
+            ],
+            "tail_sum": 1.4552125814569079e-05
+          },
+          "4": {
+            "finite_fused_energy": 1.3692692222617135,
+            "finite_fused_energy_squared": 1.874898203033198,
+            "finite_gram_minimum_eigenvalue": 0.3664688495282059,
+            "finite_packet_energies": [
+              0.985605382544858,
+              0.6055853647456658,
+              0.7565107810310328
+            ],
+            "geometric_tail_energies": [
+              0.47917187522351734,
+              0.6701055193995575,
+              1.3411733985438714
+            ],
+            "geometric_tail_sum": 2.4904507931669464,
+            "maximum_tail_over_exact_packet": 0.7789994680198794,
+            "packet_hybrid_absolute_upper": 2.6621186317040593,
+            "packet_hybrid_uppers": [
+              0.9859475441766764,
+              0.6314634706051164,
+              1.0447076169222664
+            ],
+            "phase_aware_upper": 2.294652132137929,
+            "tail_energies": [
+              0.025972865968612542,
+              0.17892031945678388,
+              0.7204897244508195
+            ],
+            "tail_sum": 0.9253829098762159
+          },
+          "64": {
+            "finite_fused_energy": 1.4845401474872986,
+            "finite_fused_energy_squared": 2.20385944950161,
+            "finite_gram_minimum_eigenvalue": 0.38622834605711764,
+            "finite_packet_energies": [
+              0.9858674715150433,
+              0.6220423347376416,
+              0.9248911636386747
+            ],
+            "geometric_tail_energies": [
+              1.2925107965968595e-06,
+              0.00013632280103628082,
+              0.0205040060168137
+            ],
+            "geometric_tail_sum": 0.020641621328646578,
+            "maximum_tail_over_exact_packet": 5.749941645943942e-11,
+            "packet_hybrid_absolute_upper": 2.5328009698913596,
+            "packet_hybrid_uppers": [
+              0.9858674715150433,
+              0.6220423347376416,
+              0.9248911636386747
+            ],
+            "phase_aware_upper": 1.4845401475404794,
+            "tail_energies": [
+              2.8372141353689206e-54,
+              1.0844109305674872e-28,
+              5.318070219771604e-11
+            ],
+            "tail_sum": 5.318070219771604e-11
+          },
+          "8": {
+            "finite_fused_energy": 1.479627845931365,
+            "finite_fused_energy_squared": 2.189298562455491,
+            "finite_gram_minimum_eigenvalue": 0.38621016367203875,
+            "finite_packet_energies": [
+              0.9858674715125061,
+              0.6220408128647925,
+              0.9169937263063781
+            ],
+            "geometric_tail_energies": [
+              0.20380781989467284,
+              0.3802228523122029,
+              1.0149434616702686
+            ],
+            "geometric_tail_sum": 1.5989741338771444,
+            "maximum_tail_over_exact_packet": 0.17565956917133507,
+            "packet_hybrid_absolute_upper": 2.539185426286262,
+            "packet_hybrid_uppers": [
+              0.9858674715158187,
+              0.6220431887500643,
+              0.9312747660203794
+            ],
+            "phase_aware_upper": 1.6438156292120087,
+            "tail_energies": [
+              2.5556765551924994e-06,
+              0.0017192442689431039,
+              0.16246598333514542
+            ],
+            "tail_sum": 0.1641877832806437
+          }
+        },
+        "maximum_local_metric_residual": 2.872999182182232e-16,
+        "maximum_normalized_contraction": 0.932694100646736,
+        "maximum_schur_reconstruction_defect": 6.66580911687106e-15,
+        "maximum_schur_unitary_defect": 5.868623220207253e-15,
+        "rh59_exact_relative_defect": 0.0,
+        "rh59_metric_absolute_upper": 4.079837038450556,
+        "selected_horizon": 32,
+        "selected_packet_hybrid_absolute_upper": 2.532800969943443,
+        "selected_phase_aware_upper": 1.4845546995742385,
+        "selected_phase_aware_upper_over_exact": 1.0000098024206088
+      },
+      "sigma": 0.04
+    },
+    {
+      "coarse_dimension": 128,
+      "elapsed_seconds": 4.101252374937758,
+      "fine_dimension": 256,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "exact_hardy_energy": 1.4095815932334066,
+        "horizons": {
+          "0": {
+            "finite_fused_energy": 0.0,
+            "finite_fused_energy_squared": 0.0,
+            "finite_gram_minimum_eigenvalue": 0.0,
+            "finite_packet_energies": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "geometric_tail_energies": [
+              0.9952819068363418,
+              0.9269807812337473,
+              2.063210909230497
+            ],
+            "geometric_tail_sum": 3.9854735973005857,
+            "maximum_tail_over_exact_packet": 2.8251596720008605,
+            "packet_hybrid_absolute_upper": 3.9854735973005857,
+            "packet_hybrid_uppers": [
+              0.9952819068363418,
+              0.9269807812337473,
+              2.063210909230497
+            ],
+            "phase_aware_upper": 3.9854735973005857,
+            "tail_energies": [
+              0.9952819068363418,
+              0.9269807812337473,
+              2.063210909230497
+            ],
+            "tail_sum": 3.9854735973005857
+          },
+          "1": {
+            "finite_fused_energy": 0.992224276339196,
+            "finite_fused_energy_squared": 0.9845090145568411,
+            "finite_gram_minimum_eigenvalue": 0.0651145824750749,
+            "finite_packet_energies": [
+              0.8744476165716331,
+              0.3913892728719671,
+              0.2551756012471767
+            ],
+            "geometric_tail_energies": [
+              0.7651736413544867,
+              0.7894930827699089,
+              2.016778562490528
+            ],
+            "geometric_tail_sum": 3.5714452866149236,
+            "maximum_tail_over_exact_packet": 2.449346303827579,
+            "packet_hybrid_absolute_upper": 3.5946039757910455,
+            "packet_hybrid_uppers": [
+              0.9948938955247831,
+              0.792845825106735,
+              1.8068642551595275
+            ],
+            "phase_aware_upper": 3.944990656404359,
+            "tail_energies": [
+              0.47450524678307654,
+              0.6895063012546965,
+              1.78875483202739
+            ],
+            "tail_sum": 2.952766380065163
+          },
+          "16": {
+            "finite_fused_energy": 1.4094842396056328,
+            "finite_fused_energy_squared": 1.986645821696669,
+            "finite_gram_minimum_eigenvalue": 0.41986288039980607,
+            "finite_packet_energies": [
+              0.9912045963909245,
+              0.6501410370726303,
+              0.7301109441486541
+            ],
+            "geometric_tail_energies": [
+              0.01482410150746395,
+              0.07104153151942061,
+              1.4334319462595522
+            ],
+            "geometric_tail_sum": 1.5192975792864367,
+            "maximum_tail_over_exact_packet": 0.042980985277398645,
+            "packet_hybrid_absolute_upper": 2.372131004062913,
+            "packet_hybrid_uppers": [
+              0.9912045963909245,
+              0.6501410370729105,
+              0.7307853705990781
+            ],
+            "phase_aware_upper": 1.440873808165749,
+            "tail_energies": [
+              4.130956202189213e-13,
+              6.036836048823674e-07,
+              0.03138896487609825
+            ],
+            "tail_sum": 0.031389568560116224
+          },
+          "2": {
+            "finite_fused_energy": 1.1720271935142923,
+            "finite_fused_energy_squared": 1.3736477423369884,
+            "finite_gram_minimum_eigenvalue": 0.1421910070559805,
+            "finite_packet_energies": [
+              0.9705906374031159,
+              0.5300952460292564,
+              0.37710571254119724
+            ],
+            "geometric_tail_energies": [
+              0.5882661961421142,
+              0.6723972496085259,
+              1.9713911708805147
+            ],
+            "geometric_tail_sum": 3.232054616631155,
+            "maximum_tail_over_exact_packet": 1.9791165360930059,
+            "packet_hybrid_absolute_upper": 3.197909956774713,
+            "packet_hybrid_uppers": [
+              0.9918751441809273,
+              0.7123027710948981,
+              1.4937320414988873
+            ],
+            "phase_aware_upper": 3.297539194731929,
+            "tail_energies": [
+              0.20437738678569198,
+              0.4757880492894425,
+              1.4453465651425021
+            ],
+            "tail_sum": 2.1255120012176367
+          },
+          "32": {
+            "finite_fused_energy": 1.4095815726568395,
+            "finite_fused_energy_squared": 1.9869202099737286,
+            "finite_gram_minimum_eigenvalue": 0.41986934862557845,
+            "finite_packet_energies": [
+              0.9912045963909245,
+              0.6501410370727988,
+              0.730298827876862
+            ],
+            "geometric_tail_energies": [
+              0.00022079572028202256,
+              0.005444448582750289,
+              0.9958880768635462
+            ],
+            "geometric_tail_sum": 1.0015533211665786,
+            "maximum_tail_over_exact_packet": 0.0006725335379385864,
+            "packet_hybrid_absolute_upper": 2.3716446264981608,
+            "packet_hybrid_uppers": [
+              0.9912045963909245,
+              0.6501410370727988,
+              0.7302989930344377
+            ],
+            "phase_aware_upper": 1.4100727231382146,
+            "tail_energies": [
+              3.41062962004547e-27,
+              2.0057741403585794e-13,
+              0.0004911504811745915
+            ],
+            "tail_sum": 0.0004911504813751689
+          },
+          "4": {
+            "finite_fused_energy": 1.3263664124406909,
+            "finite_fused_energy_squared": 1.7592478600507886,
+            "finite_gram_minimum_eigenvalue": 0.3216708662809307,
+            "finite_packet_energies": [
+              0.991017821682683,
+              0.6429174195811643,
+              0.5689034818749465
+            ],
+            "geometric_tail_energies": [
+              0.347697587132382,
+              0.48773186071816105,
+              1.8836577158634396
+            ],
+            "geometric_tail_sum": 2.719087163713983,
+            "maximum_tail_over_exact_packet": 1.1512156033511631,
+            "packet_hybrid_absolute_upper": 2.6591460083502745,
+            "packet_hybrid_uppers": [
+              0.9912193871690596,
+              0.652800744651146,
+              1.0151258765300688
+            ],
+            "phase_aware_upper": 2.300250241192403,
+            "tail_energies": [
+              0.019988762020589523,
+              0.11316361524884155,
+              0.8407314514822809
+            ],
+            "tail_sum": 0.973883828751712
+          },
+          "64": {
+            "finite_fused_energy": 1.40958159323341,
+            "finite_fused_energy_squared": 1.9869202679824383,
+            "finite_gram_minimum_eigenvalue": 0.4198693499899178,
+            "finite_packet_energies": [
+              0.9912045963909245,
+              0.6501410370727988,
+              0.730298867592596
+            ],
+            "geometric_tail_energies": [
+              4.8981851031351505e-08,
+              3.197695245715899e-05,
+              0.4807036727083201
+            ],
+            "geometric_tail_sum": 0.4807356986426283,
+            "maximum_tail_over_exact_packet": 1.6863120219043605e-07,
+            "packet_hybrid_absolute_upper": 2.3716445010563296,
+            "packet_hybrid_uppers": [
+              0.9912045963909245,
+              0.6501410370727988,
+              0.7302988675926064
+            ],
+            "phase_aware_upper": 1.4095817163845858,
+            "tail_energies": [
+              2.2713763388591407e-55,
+              2.058127734657987e-26,
+              1.2315117600045345e-07
+            ],
+            "tail_sum": 1.2315117600045345e-07
+          },
+          "8": {
+            "finite_fused_energy": 1.4025305176284064,
+            "finite_fused_energy_squared": 1.9670918528790056,
+            "finite_gram_minimum_eigenvalue": 0.4193145110025794,
+            "finite_packet_energies": [
+              0.9912045963819,
+              0.6501406149392271,
+              0.7166105525994564
+            ],
+            "geometric_tail_energies": [
+              0.12146670332022767,
+              0.25662060398166475,
+              1.7197303361754748
+            ],
+            "geometric_tail_sum": 2.0978176434773674,
+            "maximum_tail_over_exact_packet": 0.3962915350364083,
+            "packet_hybrid_absolute_upper": 2.4141910222746152,
+            "packet_hybrid_uppers": [
+              0.991204596391943,
+              0.6501413177974613,
+              0.7728451080852107
+            ],
+            "phase_aware_upper": 1.692902227323099,
+            "tail_energies": [
+              4.4619989647611005e-06,
+              0.0009559884221073538,
+              0.2894112592736203
+            ],
+            "tail_sum": 0.29037170969469245
+          }
+        },
+        "maximum_local_metric_residual": 3.2759479286541352e-16,
+        "maximum_normalized_contraction": 0.9774951040961264,
+        "maximum_schur_reconstruction_defect": 7.060354380375529e-15,
+        "maximum_schur_unitary_defect": 1.1978559349406597e-14,
+        "rh59_exact_relative_defect": 0.0,
+        "rh59_metric_absolute_upper": 3.9854735973005857,
+        "selected_horizon": 32,
+        "selected_packet_hybrid_absolute_upper": 2.3716446264981608,
+        "selected_phase_aware_upper": 1.4100727231382146,
+        "selected_phase_aware_upper_over_exact": 1.0003484224731407
+      },
+      "right": {
+        "exact_hardy_energy": 1.6339905796791518,
+        "horizons": {
+          "0": {
+            "finite_fused_energy": 0.0,
+            "finite_fused_energy_squared": 0.0,
+            "finite_gram_minimum_eigenvalue": 0.0,
+            "finite_packet_energies": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "geometric_tail_energies": [
+              1.2241098873816898,
+              2.0134198199621802,
+              4.288819425247012
+            ],
+            "geometric_tail_sum": 7.526349132590882,
+            "maximum_tail_over_exact_packet": 3.806095045762586,
+            "packet_hybrid_absolute_upper": 7.526349132590882,
+            "packet_hybrid_uppers": [
+              1.2241098873816898,
+              2.0134198199621802,
+              4.288819425247012
+            ],
+            "phase_aware_upper": 7.526349132590882,
+            "tail_energies": [
+              1.2241098873816898,
+              2.0134198199621802,
+              4.288819425247012
+            ],
+            "tail_sum": 7.526349132590882
+          },
+          "1": {
+            "finite_fused_energy": 0.999452822859226,
+            "finite_fused_energy_squared": 0.9989059451212754,
+            "finite_gram_minimum_eigenvalue": 0.10099169934313987,
+            "finite_packet_energies": [
+              0.8825478786858947,
+              0.31779203328453764,
+              0.345819348649729
+            ],
+            "geometric_tail_energies": [
+              1.0850928750380233,
+              1.8946080041446016,
+              4.1457961565992365
+            ],
+            "geometric_tail_sum": 7.125497035781861,
+            "maximum_tail_over_exact_packet": 3.1106652352315103,
+            "packet_hybrid_absolute_upper": 5.653857830818382,
+            "packet_hybrid_uppers": [
+              1.129789800388277,
+              1.0018614629802196,
+              3.522206567449885
+            ],
+            "phase_aware_upper": 6.160126100215878,
+            "tail_energies": [
+              0.7053610670347563,
+              0.9501234733368844,
+              3.505188736985011
+            ],
+            "tail_sum": 5.160673277356652
+          },
+          "16": {
+            "finite_fused_energy": 1.6337138658822614,
+            "finite_fused_energy_squared": 2.6690209955759636,
+            "finite_gram_minimum_eigenvalue": 0.32719239136309036,
+            "finite_packet_energies": [
+              1.0800278129056626,
+              0.5726726070160942,
+              1.12642800948041
+            ],
+            "geometric_tail_energies": [
+              0.17789531122152702,
+              0.7608425489529651,
+              2.4926465116293683
+            ],
+            "geometric_tail_sum": 3.4313843718038606,
+            "maximum_tail_over_exact_packet": 0.057975493107300796,
+            "packet_hybrid_absolute_upper": 2.7810212392933806,
+            "packet_hybrid_uppers": [
+              1.0800278129056626,
+              0.5726726070180533,
+              1.1283208193696648
+            ],
+            "phase_aware_upper": 1.6990438482946406,
+            "tail_energies": [
+              1.0235564742509501e-12,
+              1.4979575348245777e-06,
+              0.06532848445382092
+            ],
+            "tail_sum": 0.06532998241237929
+          },
+          "2": {
+            "finite_fused_energy": 1.1718779859186985,
+            "finite_fused_energy_squared": 1.3732980138808655,
+            "finite_gram_minimum_eigenvalue": 0.1596937103339076,
+            "finite_packet_energies": [
+              1.0125882070877246,
+              0.4011744406759624,
+              0.4846315158335419
+            ],
+            "geometric_tail_energies": [
+              0.961863440198772,
+              1.7828072683997993,
+              4.00754241852537
+            ],
+            "geometric_tail_sum": 6.752213127123941,
+            "maximum_tail_over_exact_packet": 2.5426598689316275,
+            "packet_hybrid_absolute_upper": 4.769207596747003,
+            "packet_hybrid_uppers": [
+              1.098408614092199,
+              0.7649573110892353,
+              2.9058416715655686
+            ],
+            "phase_aware_upper": 5.1139791173444324,
+            "tail_energies": [
+              0.4256367070387759,
+              0.6513207780634683,
+              2.8651436463234896
+            ],
+            "tail_sum": 3.942101131425734
+          },
+          "32": {
+            "finite_fused_energy": 1.6339905225342533,
+            "finite_fused_energy_squared": 2.669925027731762,
+            "finite_gram_minimum_eigenvalue": 0.32719312158680686,
+            "finite_packet_energies": [
+              1.0800278129056626,
+              0.5726726070170582,
+              1.1268292195255132
+            ],
+            "geometric_tail_energies": [
+              0.025852860172786263,
+              0.2875115157593504,
+              1.4487172379798223
+            ],
+            "geometric_tail_sum": 1.762081613911959,
+            "maximum_tail_over_exact_packet": 0.0008370270707222451,
+            "packet_hybrid_absolute_upper": 2.779530034184565,
+            "packet_hybrid_uppers": [
+              1.0800278129056626,
+              0.5726726070170582,
+              1.1268296142618441
+            ],
+            "phase_aware_upper": 1.6349337091648821,
+            "tail_energies": [
+              1.4052669422995772e-26,
+              4.453891250381921e-13,
+              0.0009431866301835635
+            ],
+            "tail_sum": 0.0009431866306289526
+          },
+          "4": {
+            "finite_fused_energy": 1.3720217689169327,
+            "finite_fused_energy_squared": 1.8824437343819493,
+            "finite_gram_minimum_eigenvalue": 0.282838997291581,
+            "finite_packet_energies": [
+              1.0771595449862992,
+              0.5353519583828616,
+              0.7357553816525472
+            ],
+            "geometric_tail_energies": [
+              0.7557992032642866,
+              1.57860855681795,
+              3.744712622251561
+            ],
+            "geometric_tail_sum": 6.079120382333798,
+            "maximum_tail_over_exact_packet": 1.702888789785689,
+            "packet_hybrid_absolute_upper": 3.739569832954993,
+            "packet_hybrid_uppers": [
+              1.080840239427265,
+              0.6036435077087473,
+              2.0550860858189806
+            ],
+            "phase_aware_upper": 3.6589073264178014,
+            "tail_energies": [
+              0.08912316090723267,
+              0.2788974095515326,
+              1.9188649870421035
+            ],
+            "tail_sum": 2.286885557500869
+          },
+          "64": {
+            "finite_fused_energy": 1.6339905796791478,
+            "finite_fused_energy_squared": 2.6699252144801973,
+            "finite_gram_minimum_eigenvalue": 0.32719312173749127,
+            "finite_packet_energies": [
+              1.0800278129056626,
+              0.5726726070170582,
+              1.126829302390079
+            ],
+            "geometric_tail_energies": [
+              0.0005460052124431812,
+              0.04105595409098135,
+              0.48936115688736576
+            ],
+            "geometric_tail_sum": 0.5309631161907903,
+            "maximum_tail_over_exact_packet": 1.9627896298569648e-07,
+            "packet_hybrid_absolute_upper": 2.7795297223128217,
+            "packet_hybrid_uppers": [
+              1.0800278129056626,
+              0.5726726070170582,
+              1.1268293023901008
+            ],
+            "phase_aware_upper": 1.6339908008520347,
+            "tail_energies": [
+              7.100315328757822e-55,
+              3.121994567409637e-26,
+              2.211728869350216e-07
+            ],
+            "tail_sum": 2.211728869350216e-07
+          },
+          "8": {
+            "finite_fused_energy": 1.6101939569078703,
+            "finite_fused_energy_squared": 2.592724578862624,
+            "finite_gram_minimum_eigenvalue": 0.327124205337717,
+            "finite_packet_energies": [
+              1.0800278128300116,
+              0.5726696775437604,
+              1.0920032991306434
+            ],
+            "geometric_tail_energies": [
+              0.46665127170630755,
+              1.2376976480273545,
+              3.269634655332341
+            ],
+            "geometric_tail_sum": 4.973983575066003,
+            "maximum_tail_over_exact_packet": 0.5227779411638572,
+            "packet_hybrid_absolute_upper": 2.893464559770048,
+            "packet_hybrid_uppers": [
+              1.080027812927127,
+              0.5726756005337715,
+              1.2407611463091495
+            ],
+            "phase_aware_upper": 2.201894529335701,
+            "tail_energies": [
+              1.4483602547084503e-05,
+              0.0026045860786893926,
+              0.5890815027465939
+            ],
+            "tail_sum": 0.5917005724278304
+          }
+        },
+        "maximum_local_metric_residual": 4.869368697457416e-16,
+        "maximum_normalized_contraction": 0.9666520656463548,
+        "maximum_schur_reconstruction_defect": 3.824588063970188e-15,
+        "maximum_schur_unitary_defect": 8.16309982952207e-15,
+        "rh59_exact_relative_defect": 0.0,
+        "rh59_metric_absolute_upper": 7.526349132590882,
+        "selected_horizon": 32,
+        "selected_packet_hybrid_absolute_upper": 2.779530034184565,
+        "selected_phase_aware_upper": 1.6349337091648821,
+        "selected_phase_aware_upper_over_exact": 1.000577193955375
+      },
+      "sigma": 0.02
+    },
+    {
+      "coarse_dimension": 256,
+      "elapsed_seconds": 14.506919656996615,
+      "fine_dimension": 512,
+      "fine_dimension_times_sigma": 5.12,
+      "left": {
+        "exact_hardy_energy": 1.4680735421045377,
+        "horizons": {
+          "0": {
+            "finite_fused_energy": 0.0,
+            "finite_fused_energy_squared": 0.0,
+            "finite_gram_minimum_eigenvalue": 0.0,
+            "finite_packet_energies": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "geometric_tail_energies": [
+              1.1814022875907304,
+              1.7509843784952304,
+              2.5535834058826055,
+              13.733602927216465
+            ],
+            "geometric_tail_sum": 19.219572999185033,
+            "maximum_tail_over_exact_packet": 26.101737376415077,
+            "packet_hybrid_absolute_upper": 19.219572999185033,
+            "packet_hybrid_uppers": [
+              1.1814022875907304,
+              1.7509843784952304,
+              2.5535834058826055,
+              13.733602927216465
+            ],
+            "phase_aware_upper": 19.219572999185033,
+            "tail_energies": [
+              1.1814022875907304,
+              1.7509843784952304,
+              2.5535834058826055,
+              13.733602927216465
+            ],
+            "tail_sum": 19.219572999185033
+          },
+          "1": {
+            "finite_fused_energy": 0.9964837695401437,
+            "finite_fused_energy_squared": 0.9929799029569343,
+            "finite_gram_minimum_eigenvalue": 0.014893254609332883,
+            "finite_packet_energies": [
+              0.9485782430980867,
+              0.23052594334845025,
+              0.15710129463642206,
+              0.12203794196651116
+            ],
+            "geometric_tail_energies": [
+              1.0680488417006337,
+              1.6529196039481993,
+              2.5139542469403002,
+              13.649296735447528
+            ],
+            "geometric_tail_sum": 18.884219428036662,
+            "maximum_tail_over_exact_packet": 21.52503609762952,
+            "packet_hybrid_absolute_upper": 15.67768627619591,
+            "packet_hybrid_uppers": [
+              1.1813038138505965,
+              1.146324810184177,
+              2.023859089637958,
+              11.32619856252318
+            ],
+            "phase_aware_upper": 16.166727512522495,
+            "tail_energies": [
+              0.7040440450276615,
+              1.122906211527524,
+              2.017752412446518,
+              11.325541073980649
+            ],
+            "tail_sum": 15.170243742982352
+          },
+          "16": {
+            "finite_fused_energy": 1.4678164200326864,
+            "finite_fused_energy_squared": 2.1544850429175715,
+            "finite_gram_minimum_eigenvalue": 0.15911476683175585,
+            "finite_packet_energies": [
+              1.1768348169500482,
+              0.47309407862528763,
+              0.4168031505365996,
+              0.5254550076540119
+            ],
+            "geometric_tail_energies": [
+              0.2352289130986876,
+              0.6962955433568351,
+              1.9882326373249404,
+              12.445063194362149
+            ],
+            "geometric_tail_sum": 15.364820288142612,
+            "maximum_tail_over_exact_packet": 0.5535672293237185,
+            "packet_hybrid_absolute_upper": 2.6675179912371743,
+            "packet_hybrid_uppers": [
+              1.1768348169500482,
+              0.47309407862947184,
+              0.4168086456934908,
+              0.6007804499641634
+            ],
+            "phase_aware_upper": 1.76122178044469,
+            "tail_energies": [
+              5.8134905108709076e-11,
+              1.9897391917711716e-06,
+              0.0021402868047559935,
+              0.29126308380992083
+            ],
+            "tail_sum": 0.2934053604120035
+          },
+          "2": {
+            "finite_fused_energy": 1.1753840077118944,
+            "finite_fused_energy_squared": 1.3815275655848747,
+            "finite_gram_minimum_eigenvalue": 0.034668918588785784,
+            "finite_packet_energies": [
+              1.090528922479934,
+              0.32158160587469625,
+              0.22761617523882144,
+              0.1864503765630264
+            ],
+            "geometric_tail_energies": [
+              0.9655714571066111,
+              1.56034699719265,
+              2.474940094437517,
+              13.565508072400533
+            ],
+            "geometric_tail_sum": 18.566366621137313,
+            "maximum_tail_over_exact_packet": 17.250563334073416,
+            "packet_hybrid_absolute_upper": 12.53420544844298,
+            "packet_hybrid_uppers": [
+              1.1784134782166293,
+              0.7813961459206954,
+              1.495982218311914,
+              9.078413605993742
+            ],
+            "phase_aware_upper": 12.889150698312832,
+            "tail_energies": [
+              0.44654786403852476,
+              0.7121553254892982,
+              1.478564734556822,
+              9.076498766516293
+            ],
+            "tail_sum": 11.713766690600938
+          },
+          "32": {
+            "finite_fused_energy": 1.4680734081962006,
+            "finite_fused_energy_squared": 2.155239531852808,
+            "finite_gram_minimum_eigenvalue": 0.15917203309577413,
+            "finite_packet_energies": [
+              1.1768348169500482,
+              0.47309407862730174,
+              0.41680406985995033,
+              0.5261562852235488
+            ],
+            "geometric_tail_energies": [
+              0.04683640969616833,
+              0.27688852605026865,
+              1.5480477399005388,
+              11.277419241875414
+            ],
+            "geometric_tail_sum": 13.14919191752239,
+            "maximum_tail_over_exact_packet": 0.013096985255425414,
+            "packet_hybrid_absolute_upper": 2.592934374854076,
+            "packet_hybrid_uppers": [
+              1.1768348169500482,
+              0.47309407862730174,
+              0.4168040698611909,
+              0.5262014094155353
+            ],
+            "phase_aware_upper": 1.4749654911265704,
+            "tail_energies": [
+              1.3396619140762364e-23,
+              6.863133780456692e-13,
+              1.0169271519345229e-06,
+              0.006891066002531563
+            ],
+            "tail_sum": 0.006892082930369811
+          },
+          "4": {
+            "finite_fused_energy": 1.340010288649282,
+            "finite_fused_energy_squared": 1.795627573685932,
+            "finite_gram_minimum_eigenvalue": 0.08922272716399221,
+            "finite_packet_energies": [
+              1.1712389030945396,
+              0.4383579805465409,
+              0.33763586448254307,
+              0.3030224681051432
+            ],
+            "geometric_tail_energies": [
+              0.7891708426266124,
+              1.390465147233609,
+              2.3987187796347937,
+              13.399470644202026
+            ],
+            "geometric_tail_sum": 17.97782541369704,
+            "maximum_tail_over_exact_packet": 9.505314921239295,
+            "packet_hybrid_absolute_upper": 7.443231894005901,
+            "packet_hybrid_uppers": [
+              1.1770195586477221,
+              0.5044680774481153,
+              0.7512880245836396,
+              5.010456233326424
+            ],
+            "phase_aware_upper": 7.378610064164505,
+            "tail_energies": [
+              0.11650954174306125,
+              0.24966041347269305,
+              0.6711450803648294,
+              5.001284739934639
+            ],
+            "tail_sum": 6.038599775515223
+          },
+          "64": {
+            "finite_fused_energy": 1.4680735421044868,
+            "finite_fused_energy_squared": 2.1552399250272143,
+            "finite_gram_minimum_eigenvalue": 0.1591720654074623,
+            "finite_packet_energies": [
+              1.1768348169500482,
+              0.47309407862730174,
+              0.4168040698601552,
+              0.5261566588139138
+            ],
+            "geometric_tail_energies": [
+              0.0018568182034765703,
+              0.043785231210444614,
+              0.9384662351308126,
+              9.260511275230146
+            ],
+            "geometric_tail_sum": 10.244619559774879,
+            "maximum_tail_over_exact_packet": 8.04776824510249e-06,
+            "packet_hybrid_absolute_upper": 2.592889624268458,
+            "packet_hybrid_uppers": [
+              1.1768348169500482,
+              0.47309407862730174,
+              0.4168040698601552,
+              0.5261566588309525
+            ],
+            "phase_aware_upper": 1.4680777764915667,
+            "tail_energies": [
+              1.1491699499032048e-48,
+              7.740551952181342e-26,
+              2.290469185846477e-13,
+              4.234386850752967e-06
+            ],
+            "tail_sum": 4.234387079799886e-06
+          },
+          "8": {
+            "finite_fused_energy": 1.4522266538979824,
+            "finite_fused_energy_squared": 2.108962254291731,
+            "finite_gram_minimum_eigenvalue": 0.15441738482455908,
+            "finite_packet_energies": [
+              1.1768347928682046,
+              0.47308511955523447,
+              0.4148576275072102,
+              0.485620679811462
+            ],
+            "geometric_tail_energies": [
+              0.5271621914005884,
+              1.1041750854070502,
+              2.2532460739358178,
+              13.073467646936136
+            ],
+            "geometric_tail_sum": 16.958050997679592,
+            "maximum_tail_over_exact_packet": 3.532558512074229,
+            "packet_hybrid_absolute_upper": 3.997349372410108,
+            "packet_hybrid_uppers": [
+              1.1768348199509073,
+              0.47310329417187663,
+              0.4263397466379917,
+              1.9210715116493324
+            ],
+            "phase_aware_upper": 3.4135840228300047,
+            "tail_energies": [
+              0.00025247521580078143,
+              0.004146879753589497,
+              0.09827883018450988,
+              1.8586791837781218
+            ],
+            "tail_sum": 1.961357368932022
+          }
+        },
+        "maximum_local_metric_residual": 3.581273671543537e-16,
+        "maximum_normalized_contraction": 0.993861320134583,
+        "maximum_schur_reconstruction_defect": 6.387701313300355e-15,
+        "maximum_schur_unitary_defect": 1.6727785558557902e-14,
+        "rh59_exact_relative_defect": 0.0,
+        "rh59_metric_absolute_upper": 19.219572999185033,
+        "selected_horizon": 32,
+        "selected_packet_hybrid_absolute_upper": 2.592934374854076,
+        "selected_phase_aware_upper": 1.4749654911265704,
+        "selected_phase_aware_upper_over_exact": 1.004694552980059
+      },
+      "right": {
+        "exact_hardy_energy": 1.76030964054054,
+        "horizons": {
+          "0": {
+            "finite_fused_energy": 0.0,
+            "finite_fused_energy_squared": 0.0,
+            "finite_gram_minimum_eigenvalue": 0.0,
+            "finite_packet_energies": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "geometric_tail_energies": [
+              1.4109336928454974,
+              2.0146983498699296,
+              1.9161101861207672,
+              6.796479798649756
+            ],
+            "geometric_tail_sum": 12.13822202748595,
+            "maximum_tail_over_exact_packet": 6.009444926812082,
+            "packet_hybrid_absolute_upper": 12.13822202748595,
+            "packet_hybrid_uppers": [
+              1.4109336928454974,
+              2.0146983498699296,
+              1.9161101861207672,
+              6.796479798649756
+            ],
+            "phase_aware_upper": 12.13822202748595,
+            "tail_energies": [
+              1.4109336928454974,
+              2.0146983498699296,
+              1.9161101861207672,
+              6.796479798649756
+            ],
+            "tail_sum": 12.13822202748595
+          },
+          "1": {
+            "finite_fused_energy": 0.9997167196592437,
+            "finite_fused_energy_squared": 0.9994335195662389,
+            "finite_gram_minimum_eigenvalue": 0.02405647564754666,
+            "finite_packet_energies": [
+              0.9327847560799395,
+              0.21599484628222895,
+              0.1551015018509951,
+              0.242343070988082
+            ],
+            "geometric_tail_energies": [
+              1.3374591199656496,
+              1.959765261932969,
+              1.8742294647259081,
+              6.662029883495549
+            ],
+            "geometric_tail_sum": 11.833483730120076,
+            "maximum_tail_over_exact_packet": 4.850966329899314,
+            "packet_hybrid_absolute_upper": 9.359053453265094,
+            "packet_hybrid_uppers": [
+              1.3105876225598534,
+              1.0882700202611828,
+              1.4685664345328944,
+              5.491629375911163
+            ],
+            "phase_aware_upper": 9.933595234559318,
+            "tail_energies": [
+              0.9206261538930863,
+              1.066619830763891,
+              1.460353004160372,
+              5.4862795260827255
+            ],
+            "tail_sum": 8.933878514900075
+          },
+          "16": {
+            "finite_fused_energy": 1.759040033458742,
+            "finite_fused_energy_squared": 3.0942218393105323,
+            "finite_gram_minimum_eigenvalue": 0.22181548162718553,
+            "finite_packet_energies": [
+              1.2310908071900772,
+              0.5129361832801653,
+              0.4811127382104398,
+              1.1289959495047277
+            ],
+            "geometric_tail_energies": [
+              0.5996380689368265,
+              1.2945368670805424,
+              1.3454172262793431,
+              4.936791294976358
+            ],
+            "geometric_tail_sum": 8.17638345727307,
+            "maximum_tail_over_exact_packet": 0.1456235234914872,
+            "packet_hybrid_absolute_upper": 3.3660888554886115,
+            "packet_hybrid_uppers": [
+              1.2310908071900772,
+              0.5129361834280696,
+              0.48111646921340373,
+              1.1409453956570608
+            ],
+            "phase_aware_upper": 1.9256424023111993,
+            "tail_energies": [
+              2.003832603199642e-10,
+              1.231790854634674e-05,
+              0.0018947506497925184,
+              0.16469530009373526
+            ],
+            "tail_sum": 0.16660236885245738
+          },
+          "2": {
+            "finite_fused_energy": 1.1717463239562373,
+            "finite_fused_energy_squared": 1.3729894477049553,
+            "finite_gram_minimum_eigenvalue": 0.04313603269014063,
+            "finite_packet_energies": [
+              1.0788614366292115,
+              0.2710868195892717,
+              0.20781881380568318,
+              0.339786438038872
+            ],
+            "geometric_tail_energies": [
+              1.2678107459265062,
+              1.9063299883712892,
+              1.8332641368388225,
+              6.530239695173544
+            ],
+            "geometric_tail_sum": 11.537644566310163,
+            "maximum_tail_over_exact_packet": 4.051213003480856,
+            "packet_hybrid_absolute_upper": 7.7949120419986855,
+            "packet_hybrid_uppers": [
+              1.2750124405850907,
+              0.8082767741683059,
+              1.1172553246976988,
+              4.59436750254759
+            ],
+            "phase_aware_upper": 8.292246157433297,
+            "tail_energies": [
+              0.6794959339106474,
+              0.7614612793208176,
+              1.097757168591378,
+              4.581785451654217
+            ],
+            "tail_sum": 7.12049983347706
+          },
+          "32": {
+            "finite_fused_energy": 1.7603089964878806,
+            "finite_fused_energy_squared": 3.0986877631161693,
+            "finite_gram_minimum_eigenvalue": 0.22182056363365546,
+            "finite_packet_energies": [
+              1.2310908071900772,
+              0.5129361833565242,
+              0.4811142160880161,
+              1.1309653149744132
+            ],
+            "geometric_tail_energies": [
+              0.25484246038035474,
+              0.8317998078168366,
+              0.9446990710037969,
+              3.585960528418885
+            ],
+            "geometric_tail_sum": 5.617301867619874,
+            "maximum_tail_over_exact_packet": 0.003376054946223618,
+            "packet_hybrid_absolute_upper": 3.3561129668309864,
+            "packet_hybrid_uppers": [
+              1.2310908071900772,
+              0.5129361833565242,
+              0.4811142160886488,
+              1.1309717601957365
+            ],
+            "phase_aware_upper": 1.7641279811741437,
+            "tail_energies": [
+              3.141002611377117e-23,
+              4.716593939013357e-12,
+              7.802515889189946e-07,
+              0.003818204429957648
+            ],
+            "tail_sum": 0.003818984686263161
+          },
+          "4": {
+            "finite_fused_energy": 1.3633555586359216,
+            "finite_fused_energy_squared": 1.8587383792634657,
+            "finite_gram_minimum_eigenvalue": 0.10991306252523424,
+            "finite_packet_energies": [
+              1.1925345816990507,
+              0.40595373494113984,
+              0.33722215858333526,
+              0.5269364983676064
+            ],
+            "geometric_tail_energies": [
+              1.1392059709376676,
+              1.8037906393273708,
+              1.7540000673048806,
+              6.274429077960663
+            ],
+            "geometric_tail_sum": 10.971425755530582,
+            "maximum_tail_over_exact_packet": 2.90298022846334,
+            "packet_hybrid_absolute_upper": 5.851240601082556,
+            "packet_hybrid_uppers": [
+              1.2429140184961753,
+              0.6068196316710863,
+              0.6763173183681722,
+              3.325189632547122
+            ],
+            "phase_aware_upper": 6.034090687504597,
+            "tail_energies": [
+              0.3502806429510214,
+              0.45103395711273403,
+              0.5862476702598582,
+              3.2831728585450617
+            ],
+            "tail_sum": 4.670735128868675
+          },
+          "64": {
+            "finite_fused_energy": 1.7603096405403045,
+            "finite_fused_energy_squared": 3.098690030579136,
+            "finite_gram_minimum_eigenvalue": 0.22182056544936105,
+            "finite_packet_energies": [
+              1.2310908071900772,
+              0.5129361833565242,
+              0.4811142160882695,
+              1.130966317425423
+            ],
+            "geometric_tail_energies": [
+              0.04602957597655467,
+              0.3434215947656855,
+              0.4657646210640143,
+              1.892025473824397
+            ],
+            "geometric_tail_sum": 2.7472412656306515,
+            "maximum_tail_over_exact_packet": 2.0226732885570205e-06,
+            "packet_hybrid_absolute_upper": 3.3561075240626073,
+            "packet_hybrid_uppers": [
+              1.2310908071900772,
+              0.5129361833565242,
+              0.4811142160882695,
+              1.1309663174277365
+            ],
+            "phase_aware_upper": 1.7603119281157933,
+            "tail_energies": [
+              5.5856502642793246e-49,
+              6.301296766465258e-25,
+              1.2824782741700175e-13,
+              2.287575360514845e-06
+            ],
+            "tail_sum": 2.2875754887626726e-06
+          },
+          "8": {
+            "finite_fused_energy": 1.6616179813628595,
+            "finite_fused_energy_squared": 2.7609743159883844,
+            "finite_gram_minimum_eigenvalue": 0.21848434184594315,
+            "finite_packet_energies": [
+              1.23109075741997,
+              0.5128202162833717,
+              0.4776573276725695,
+              0.9755454815961891
+            ],
+            "geometric_tail_energies": [
+              0.9198095210290985,
+              1.614961699221674,
+              1.6056050734399783,
+              5.7924780799289
+            ],
+            "geometric_tail_sum": 9.932854373619652,
+            "maximum_tail_over_exact_packet": 1.10439658765462,
+            "packet_hybrid_absolute_upper": 3.8155009941672833,
+            "packet_hybrid_uppers": [
+              1.2310908227692559,
+              0.5130454336922815,
+              0.48650566778131615,
+              1.5848590699244296
+            ],
+            "phase_aware_upper": 3.0186192642449865,
+            "tail_energies": [
+              0.00040112567591118835,
+              0.015200092222649859,
+              0.09236472326621194,
+              1.249035341717354
+            ],
+            "tail_sum": 1.357001282882127
+          }
+        },
+        "maximum_local_metric_residual": 4.464166542263786e-16,
+        "maximum_normalized_contraction": 0.9802177128252604,
+        "maximum_schur_reconstruction_defect": 4.3265308059950735e-15,
+        "maximum_schur_unitary_defect": 9.79729981539512e-15,
+        "rh59_exact_relative_defect": 0.0,
+        "rh59_metric_absolute_upper": 12.13822202748595,
+        "selected_horizon": 32,
+        "selected_packet_hybrid_absolute_upper": 3.3561129668309864,
+        "selected_phase_aware_upper": 1.7641279811741437,
+        "selected_phase_aware_upper_over_exact": 1.0021691301039692
+      },
+      "sigma": 0.01
+    }
+  ],
+  "selected_horizon": 32,
+  "sources": {
+    "folded_gaussian": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh59_algebra": {
+      "path": "papers/RH-59-flag-adapted-schur-stein-metrics/src/flag_stein/algebra.py",
+      "sha256": "326b691a76673b5a9a1697fd9bd5bc0a2a38f0c423664021232d3ca6946638f2"
+    },
+    "rh59_pilot": {
+      "path": "papers/RH-59-flag-adapted-schur-stein-metrics/results/flag_metric_pilot.json",
+      "sha256": "daabfac37fafcf04c4f41d4e0efa6018f502aae840fbc534ad740f61a47ea4f9"
+    }
+  },
+  "status": "binary64_phase_aware_finite_horizon_stein_tail_audit"
+}

@@ -1,0 +1,111 @@
+{
+  "arb": {
+    "completion_certified": true,
+    "dissipation_certified": true,
+    "local_identities_certified": true,
+    "precision_bits": 256,
+    "production_interval_audit_executed": false,
+    "status": "arb_two_block_phase_aware_stein_tail_audit",
+    "supersolution_certified": true,
+    "tail_certified": true
+  },
+  "limitations": [
+    "Production Schur forms, inherited metrics, and finite Grams are binary64 diagnostics, not interval enclosures.",
+    "The finite-horizon Gram is exact only for the stored finite matrix; no continuum phase-coherence theorem is proved.",
+    "The tail certificate inherits RH-59 packet metrics and their nonuniform hierarchical weights.",
+    "The selected horizon L=32 is fixed for this five-scale audit, not a proved physical-family horizon.",
+    "Five levels do not prove a dyadically uniform Hardy budget; Stage A1 and Stage A4 remain open."
+  ],
+  "pilot": {
+    "fits": {
+      "left_exact": {
+        "growth_exponent": 0.16771551715962094,
+        "levels": 5,
+        "log_intercept": -0.3268655038387695,
+        "maximum_log_residual": 0.08145972663770995,
+        "sigma_power": -0.16771551715962094
+      },
+      "left_horizon_16": {
+        "growth_exponent": 0.22340392213951538,
+        "levels": 5,
+        "log_intercept": -0.4647058118390758,
+        "maximum_log_residual": 0.05114116640607966,
+        "sigma_power": -0.22340392213951538
+      },
+      "left_phase_aware": {
+        "growth_exponent": 0.16911716661955564,
+        "levels": 5,
+        "log_intercept": -0.3303697741558201,
+        "maximum_log_residual": 0.08052409313961077,
+        "sigma_power": -0.16911716661955564
+      },
+      "right_exact": {
+        "growth_exponent": 0.19929753896486868,
+        "levels": 5,
+        "log_intercept": -0.30360266679803827,
+        "maximum_log_residual": 0.05898369892638046,
+        "sigma_power": -0.19929753896486868
+      },
+      "right_horizon_16": {
+        "growth_exponent": 0.23082249037505706,
+        "levels": 5,
+        "log_intercept": -0.37829240518282004,
+        "maximum_log_residual": 0.042066001185213385,
+        "sigma_power": -0.23082249037505706
+      },
+      "right_phase_aware": {
+        "growth_exponent": 0.2000059867786468,
+        "levels": 5,
+        "log_intercept": -0.30533234953400895,
+        "maximum_log_residual": 0.05855230452197281,
+        "sigma_power": -0.2000059867786468
+      }
+    },
+    "rows": 5,
+    "selected_horizon": 32,
+    "smallest_scale": {
+      "left_exact": 1.4680735421045377,
+      "left_upper": 1.4749654911265704,
+      "right_exact": 1.76030964054054,
+      "right_upper": 1.7641279811741437,
+      "sigma": 0.01
+    },
+    "status": "binary64_phase_aware_finite_horizon_stein_tail_audit"
+  },
+  "program_boundary": {
+    "arithmetic_trace_formula": false,
+    "continuum_phase_gram_theorem": false,
+    "hilbert_polya_operator": false,
+    "polylogarithmic_tail_theorem": false,
+    "production_interval_audit": false,
+    "stage_A1_closed": false,
+    "stage_A4_unconditional_closed": false,
+    "uniform_physical_horizon": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "34454a87a6b36402c0f545c60a60a6ffa3f855b7b781fe8d7102c34bce20e50a",
+    "figures/finite_horizon_phase_tail.pdf": "1fd0aa5ff99600ad673bc3a8326c2d21deea2bfa6c72182a34febaa048649c3c",
+    "figures/finite_horizon_phase_tail.png": "c56fd237cc88470c2b362cec3291fbe0e3ad967287cae24ac0dbbc2ef3613fb7",
+    "finite-horizon-phase-aware-tails.pdf": "5ea3feaf9658b01517db0d86ce69d21c671a3fd30a2f8b662b75f6b23ad0cd41",
+    "main.pdf": "5ea3feaf9658b01517db0d86ce69d21c671a3fd30a2f8b662b75f6b23ad0cd41",
+    "main.tex": "87a20cb0c32e029f1fed9ae0241807c00e9cd6d94a04c382a1446a1dc39c5b41",
+    "pyproject.toml": "d28aa4b12cfbe0a65b96000c3622497e1ebdeaf3d51e7cc9268bdfbb0fa10571",
+    "references.bib": "1acbdafb06805630de45f743f3fe01e8bc52f819fd48e8048a03ad5e5aa8a91b",
+    "requirements.txt": "2036d2c43433a02ca90a5c6fb64014ed2e362a41a3021029cc29897bc9cdca2f"
+  },
+  "result_hashes": {
+    "results/arb_phase_tail_audit.json": "4a5ca2d1b40554c01113cbc7ac113a1d1aa1b071ace601926b345a458c5b6e0d",
+    "results/dependency_manifest.json": "ac0fea64e8a862bda320fe612a3034f8a872ec9f401ef4ce457a1fc103fab123",
+    "results/phase_tail_pilot.json": "813b421f4ca6ff429d5181bc295cc8fa1e4a8fa50268f30a3c13d940ccfd82f5",
+    "results/phase_tail_pilot_smoke.json": "c6388e7307b161300ab98940b5723e5e3870738d5f1de9d630ad174166422fa7"
+  },
+  "status": "rh60_phase_aware_finite_horizon_and_stein_tail_audit",
+  "theorem": {
+    "finite_horizon_gram_positivity": true,
+    "geometric_tail_decay": true,
+    "loewner_finite_horizon_stein_completion": true,
+    "packetwise_hybrid_completion": true,
+    "phase_aware_global_completion": true
+  }
+}

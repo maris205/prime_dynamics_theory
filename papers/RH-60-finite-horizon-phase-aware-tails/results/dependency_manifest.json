@@ -1,0 +1,45 @@
+{
+  "external_inputs": {
+    "rh14_operator": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh59_algebra": {
+      "path": "papers/RH-59-flag-adapted-schur-stein-metrics/src/flag_stein/algebra.py",
+      "sha256": "326b691a76673b5a9a1697fd9bd5bc0a2a38f0c423664021232d3ca6946638f2"
+    },
+    "rh59_manuscript": {
+      "path": "papers/RH-59-flag-adapted-schur-stein-metrics/main.tex",
+      "sha256": "02036a8ce358c8b243442b4546afb4ecfaf083a54ec9d637b0380e44979a02b6"
+    },
+    "rh59_pilot": {
+      "path": "papers/RH-59-flag-adapted-schur-stein-metrics/results/flag_metric_pilot.json",
+      "sha256": "daabfac37fafcf04c4f41d4e0efa6018f502aae840fbc534ad740f61a47ea4f9"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "9d65f32648d7bd84c83b8a192d041243bd7cbbff211706e0b0ce00ea978a54ef",
+    "experiments/make_figures.py": "0f02c3fa1c0bc5d0d3edb30cc292da47ac3353d215763d78891efa8dfdb1cdb0",
+    "experiments/run_arb_phase_tail_audit.py": "7670225f1d1cf9bfadcb5a5253de770f1eb0012639416bf65d133ca826a2ddb6",
+    "experiments/run_phase_tail_pilot.py": "61bbfbca4b7ac0581dd64400e3f00acec77ba003713360da25d3b1c65e49fbb6",
+    "experiments/verify_archive.py": "3576fb7601db22d290aa2c3974bb4712b3be53e53dc2f7db8887f096af74325b",
+    "src/phase_tail/__init__.py": "be38abfae5c90c30feeea9eb239f86d4d2cb30f469246ba6acfbd7d0d12c98aa",
+    "src/phase_tail/algebra.py": "21f9a0bc324b90ce8f6db5ee3866298ca77bf53376b94d505ac8d21efef87b23",
+    "tests/test_archived_results.py": "13ae7604ad776a8d892ed6966b65e5f0b5eff14044144ac723927e836c3af107",
+    "tests/test_smoke_pilot.py": "254f04bf8821db3bd718db5fa96b647a61673038540b8ee492edc34efebeeea3",
+    "tests/test_theory.py": "fbbd2a10ff066893ffaed314077e8983d87d3845c64dc98e819a6fd82f31fd34"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "34454a87a6b36402c0f545c60a60a6ffa3f855b7b781fe8d7102c34bce20e50a",
+    "figures/finite_horizon_phase_tail.pdf": "1fd0aa5ff99600ad673bc3a8326c2d21deea2bfa6c72182a34febaa048649c3c",
+    "figures/finite_horizon_phase_tail.png": "c56fd237cc88470c2b362cec3291fbe0e3ad967287cae24ac0dbbc2ef3613fb7",
+    "finite-horizon-phase-aware-tails.pdf": "5ea3feaf9658b01517db0d86ce69d21c671a3fd30a2f8b662b75f6b23ad0cd41",
+    "main.pdf": "5ea3feaf9658b01517db0d86ce69d21c671a3fd30a2f8b662b75f6b23ad0cd41",
+    "main.tex": "87a20cb0c32e029f1fed9ae0241807c00e9cd6d94a04c382a1446a1dc39c5b41",
+    "pyproject.toml": "d28aa4b12cfbe0a65b96000c3622497e1ebdeaf3d51e7cc9268bdfbb0fa10571",
+    "references.bib": "1acbdafb06805630de45f743f3fe01e8bc52f819fd48e8048a03ad5e5aa8a91b",
+    "requirements.txt": "2036d2c43433a02ca90a5c6fb64014ed2e362a41a3021029cc29897bc9cdca2f"
+  },
+  "status": "all_consumed_inputs_sources_and_publication_artifacts_hashed"
+}
