@@ -1,0 +1,163 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Hh}{\mathcal H}
+\newcommand{\Vv}{\mathcal V}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\e}{\mathrm e}
+
+\hypersetup{
+  pdftitle={Critical Orbit Tiling and an All-Band Large-Sieve Reduction for the Actual-Coefficient Residual Determinant Family},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact all-band orbit tiling, determinant resonance tubes, and the remaining arithmetic square-function gate},
+  pdfkeywords={Mobius function, determinant equation, orbit-frequency tiling, large sieve, resonance tubes, parity problem}
+}
+
+\title{\bfseries Critical Orbit Tiling and an All-Band\\
+Large-Sieve Reduction for the\\
+Actual-Coefficient Residual Determinant Family}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The preceding twin-prime-correlation (TPC) analysis transferred a
+mesoscopic shift-spectral gap to one canonical orbit-frequency band of
+the actual residual coefficient field, but left the orthogonal
+complement uncontrolled.  We resolve the resulting all-band geometry.
+On the quotient circle associated with a fixed progression modulo
+\(H_0\), we construct an exact partition into \(L\) translated
+residue-comb cells and the corresponding orthogonal orbit projectors.
+Every determinant modulation \(m\alpha\) then factors through an exact
+input-output band matrix whose nonzero entries are resonance tubes.
+At the critical resolution \(L\asymp J\), every band has bounded
+physical-window trace and each tube has \(\alpha\)-half-width
+\((JM)^{-1}=X^{-1+o(1)}\).  Thus the original fine-frequency scale is
+restored as a complete square-function decomposition, with no band
+cover-count loss.
+
+All-band Parseval alone is not a large-sieve estimate.  We prove the
+sharp boundary: for arbitrary independent orbit inputs on \(K\) source
+slopes, the unlabelled determinant synthesis has operator norm squared
+exactly \(K\).  The actual projective layers possess additional
+structure, namely one common smooth orbit profile.  Exploiting it, we
+prove the Hilbert-valued bound
+\[
+ \|\widehat{\cF}^{\omega}(\alpha)\|^2
+ \ll_{\phi_\omega,H_0}
+ \frac{J}{H_0}
+ \min\!\left\{K,1+\frac1{J\|\alpha\|_{\mathbb T}}\right\}
+ \sum_m\|B_{\omega,m}(\alpha)\|^2
+\]
+for \(\alpha\ne0\), under an explicit no-wrap condition; at
+\(\alpha=0\) the collision factor is \(K\).  The factor is sharp,
+up to constants, for common-profile slope boxes containing the
+corresponding consecutive cluster.  Minkowski reassembles the frozen
+family built from the complete signed actual \(h_0\)-coefficient field
+and produces a canonical projective \(m\)-square envelope; at each fixed \(m\),
+distinct cofactors retain their literal residual labels \(d(m)r\) and
+are orthogonal before residual grouping.
+
+For \(M=X^{267/400+o(1)}\) and
+\(J=X^{133/400+o(1)}\), a dense slope box has critical coarse-edge
+collision exponent \(67/200\).  In that sharp model class the common
+profile saves the full orbit length over arbitrary-slope synthesis,
+but its loss still exceeds the TPC allowance \(X^{1/400+o(1)}\) by
+\(X^{133/400+o(1)}\).  No matching lower bound is assumed for the
+literal slope support.  We also prove exact first and second moments
+for the two-dimensional tube load and a logarithmic annular resonance
+budget relative to any fixed representation with bounded displayed
+projective square envelope.
+Consequently the orbit-band reassembly problem is reduced, not the
+fixed-shift prime-pair problem: atomic normalization, internal prime
+cancellation, residual grouping, alias unfolding, and localization of
+the full physical atom remain open.  No parity-barrier breach or
+twin-prime conclusion is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} determinant equation; orbit-frequency
+tiling; resonance tubes; vector-valued large sieve; {M}{\"o}bius
+correlation; square functions; parity problem.
+
+\medskip
+\noindent\textbf{Convention.}
+We write \(\e(x)=\exp(2\pi i x)\), identify \(\T=\R/\Z\), and put
+\(\|\alpha\|_{\T}=\min_{k\in\Z}|\alpha-k|\).  Fourier transforms on
+\(\R\) use
+\(\widehat f(\xi)=\int_{\R}f(x)\e(-x\xi)\,dx\); the unitary Fourier
+transform on \(\ell^2(\Z)\) is
+\((\mathscr Fy)(\beta)=\sum_{j\in\Z}y_j\e(-j\beta)\).
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11L07, 11N35; Secondary 42A38,
+47B38, 11N36.
+
+\input{sections/introduction}
+\input{sections/physical-interface}
+\input{sections/critical-tiling}
+\input{sections/resonance-channels}
+\input{sections/conservation-barrier}
+\input{sections/common-profile-large-sieve}
+\input{sections/actual-reduction}
+\input{sections/endpoint-ledger}
+\input{sections/tube-statistics-sharpness}
+\input{sections/boundaries-next-gate}
+\input{sections/certificate-claims}
+
+\begingroup
+\small
+\raggedright
+\setlength{\bibsep}{4pt plus 1pt minus 1pt}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

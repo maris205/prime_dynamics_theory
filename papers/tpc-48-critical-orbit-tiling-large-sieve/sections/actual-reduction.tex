@@ -1,0 +1,165 @@
+\section{Reduction of the complete frozen actual-coefficient family}
+\label{sec:tpc48-actual-reduction}
+
+We now apply \cref{thm:tpc48-common-profile-large-sieve} to the full
+signed representation \eqref{eq:tpc48-signed-reassembly}.  No orbit
+band and no projective layer is selected.
+
+\subsection{The row-square normal form}
+
+For one projective layer, define
+\begin{equation}
+ B_{\omega,m}(\alpha)
+ :=\sum_{p,r}A_\omega(p,r,m)\e(-pr\alpha)
+ v_{\omega,p,r,m}\in\Vv_{\mathrm L}.
+ \label{eq:tpc48-row-vector}
+\end{equation}
+The arithmetic sum is finite.  Fourier transformation in the frozen
+determinant intercept gives the exact identity
+\begin{equation}
+ \widehat{\cF^\omega}(\alpha)
+ =\sum_{\substack{j\in\Z\\j\equiv a_\omega\!\!\pmod{H_0}}}
+ \phi_\omega(j/J)
+ \left(\sum_mB_{\omega,m}(\alpha)\e(mj\alpha)\right)
+ \otimes e_j.
+ \label{eq:tpc48-layer-shift-transform}
+\end{equation}
+
+\begin{proposition}[Exact residual square at fixed source]
+\label{prop:tpc48-residual-square}
+For fixed \(\omega,m,\alpha\), put
+\begin{equation}
+ B_{\omega,m,r}(\alpha)
+ :=\sum_pA_\omega(p,r,m)\e(-pr\alpha)
+ v_{\omega,p,r,m}.
+ \label{eq:tpc48-inner-prime-sum}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \|B_{\omega,m}(\alpha)\|^2
+ =\sum_r\|B_{\omega,m,r}(\alpha)\|^2.}
+ \label{eq:tpc48-residual-square}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For fixed \(m\), the vector
+\(B_{\omega,m,r}(\alpha)\) is supported on the residual coordinate
+\(s=d(m)r\).  Distinct supported cofactors \(r\) give distinct labels
+and hence orthogonal coordinate subspaces.  The prime sum at one fixed
+\(r\) remains coherent, which is why no \(p\)-square decomposition is
+claimed.
+\end{proof}
+
+This identity localizes the remaining arithmetic task: one must control
+the prime exponential sum inside each residual coordinate and then the
+outer square sum over \(m,r\).
+
+\subsection{A representation-independent projective envelope}
+
+Let \(C_{\rm LS}(\phi,H_0)\) denote the least admissible constant
+\(C_{\phi,H_0}\) in
+\eqref{eq:tpc48-common-profile-large-sieve}.  For an admissible signed
+representation \(\mathscr R\) of the actual coefficient, set
+\begin{equation}
+ \mathfrak S_{\mathscr R}(\alpha)
+ :=\int C_{\rm LS}(\phi_\omega,H_0)^{1/2}
+ \left(\sum_m\|B_{\omega,m}(\alpha)\|^2\right)^{1/2}
+ d|\nu|(\omega),
+ \label{eq:tpc48-representation-envelope}
+\end{equation}
+and define
+\begin{equation}
+ \mathfrak S_{\rm pr}(\alpha)
+ :=\inf_{\mathscr R}\mathfrak S_{\mathscr R}(\alpha),
+ \label{eq:tpc48-projective-envelope}
+\end{equation}
+where the infimum ranges over all inherited admissible
+coefficientwise representations described in
+\cref{sec:tpc48-interface}.  The set is nonempty by TPC--36/47.  This
+definition does not estimate the envelope; it makes the reduction
+independent of one chosen representation.  It is used only pointwise.
+For integration we keep one fixed global representation, thereby
+avoiding any measurability assertion for an infimum over an uncountable
+representation class.
+
+The proof of \cref{thm:tpc48-common-profile-large-sieve} shows that
+\(C_{\rm LS}(\phi,H_0)^{1/2}\) is controlled by one fixed finite-order
+\(C^B\)-seminorm once the common compact support is fixed.  For every
+fixed admissible representation, the layer data are jointly
+measurable and Bochner integrable; consequently
+\(\mathfrak S_{\mathscr R}\) is a measurable extended-valued function.
+Finiteness almost everywhere is part of admissibility.  If one works
+with a broader representation class, all pointwise bounds remain valid
+with value \(+\infty\), while the annular application below explicitly
+requires a finite envelope.
+
+\begin{theorem}[All-band reduction of the actual frozen family]
+\label{thm:tpc48-actual-reduction}
+Let \(t=\|\alpha\|_\T\ge0\), and assume
+\eqref{eq:tpc48-large-sieve-no-wrap}.  Then the complete left frozen
+family built from the literal \(h_0\)-coefficient field satisfies
+\begin{equation}
+ \boxed{
+ \|\widehat{\cF}^{\rm fr,\mathrm L}(\alpha)\|
+ \le
+ \left(\frac{J}{H_0}D_J(t;K)\right)^{1/2}
+ \mathfrak S_{\rm pr}(\alpha).}
+ \label{eq:tpc48-actual-reduction}
+\end{equation}
+The same argument gives the right-side estimate with its corresponding
+support cardinality and envelope.  Denote the preceding left envelope
+by \(\mathfrak S_{\rm pr,\mathrm L}\) and its right analogue by
+\(\mathfrak S_{\rm pr,\mathrm R}\).  On the orthogonal left--right sum,
+the valid combined envelope is
+\((\mathfrak S_{\rm pr,\mathrm L}^2+
+\mathfrak S_{\rm pr,\mathrm R}^2)^{1/2}\), with the larger of the two
+large-sieve prefactors if their supports differ.
+Equivalently, for every band count \(L\),
+\begin{equation}
+ \left(
+ \sum_{k\bmod L}
+ \|\Pi_k\widehat{\cF}^{\rm fr,\mathrm L}(\alpha)\|^2
+ \right)^{1/2}
+ \le
+ \left(\frac{J}{H_0}D_J(t;K)\right)^{1/2}
+ \mathfrak S_{\rm pr}(\alpha).
+ \label{eq:tpc48-actual-all-band-square-function}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Apply \cref{thm:tpc48-common-profile-large-sieve} to
+\eqref{eq:tpc48-layer-shift-transform}.  Minkowski's integral
+inequality and the exact signed identity
+\eqref{eq:tpc48-signed-reassembly} give
+\eqref{eq:tpc48-actual-reduction} with
+\(\mathfrak S_{\mathscr R}\) for every admissible representation.
+Take the infimum.  Equation
+\eqref{eq:tpc48-actual-all-band-square-function} is the exact
+orthogonal resolution \eqref{eq:tpc48-projector-resolution}.
+\end{proof}
+
+The theorem controls the complete orbit output, not a selected band,
+and it incurs no cover-count factor.  Its right side is a projective
+row-square envelope rather than the physical atomic diagonal.  No
+bound relating those two quantities is assumed.
+
+\subsection{Residual grouping}
+
+On the active residual space, let \(C\) be the grouping map from
+TPC--47.  It acts on the non-orbit factor, commutes with every \(\Pi_k\)
+and \(U_{m\alpha}\), and satisfies \(\|C\|^2=\rho_{\rm res}\).
+Consequently
+\begin{equation}
+ \|C\widehat{\cF}^{\rm fr,\mathrm L}(\alpha)\|
+ \le\rho_{\rm res}^{1/2}
+ \left(\frac{J}{H_0}D_J(t;K)\right)^{1/2}
+ \mathfrak S_{\rm pr}(\alpha).
+ \label{eq:tpc48-grouped-actual-bound}
+\end{equation}
+At \(h_0\), this grouping recovers the corresponding large-prime
+component of the actual equality column under the inherited global
+sign convention.  It neither restores the base component nor converts
+the residual Gram route into the native affine physical face.

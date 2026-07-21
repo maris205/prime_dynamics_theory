@@ -1,0 +1,54 @@
+\section{Deterministic finite-model certificate}
+\label{sec:tpc48-certificate}
+
+The accompanying script
+\begin{center}
+\texttt{experiments/tpc48\_certificate.py}
+\end{center}
+uses only the Python standard library, exact finite-field arithmetic,
+integers, and the \texttt{Fraction} class.  It uses no floating-point
+arithmetic, randomness, \texttt{assert} statements, or true division.
+The committed JSON record contains
+\begin{equation}
+ 68{,}662
+ \label{eq:tpc48-certificate-check-count}
+\end{equation}
+successful deterministic checks.
+
+The principal finite model has
+\begin{equation}
+ N=60,
+ \qquad H_0=3,
+ \qquad L=J=4,
+ \qquad K=9.
+ \label{eq:tpc48-certificate-parameters}
+\end{equation}
+It verifies an exact four-band Fourier partition, rank \(15\) in each
+band, compressed critical-window trace \(1\), the complete resonance
+tile/channel map, and tube first and second moment totals \(540\) and
+\(1500\).  It also verifies that the unlabelled synthesis norm squared
+is \(K=9\), whereas the resolved channel collision norm squared in the
+chosen instance is \(R=4\).  A separate rational Gram model checks a
+common-profile large-sieve inequality by an exact positive
+semidefinite \(LDL^\ast\) certificate.  Finally, exact rational
+arithmetic checks all endpoint exponent identities in
+\cref{sec:tpc48-endpoint}.
+
+The normalized script hash is
+\begin{center}
+\texttt{ead2a9584cd3680ce0c1f770dcec3058b3436ce5dfdecc1a0fcb3858cf067f64},
+\end{center}
+the committed JSON SHA--256 hash is
+\begin{center}
+\texttt{7e4ed4d83c5e00e441f3d8ee7aa1a6d9b00a37f975af2e673a743c0c83c72882},
+\end{center}
+and the semantic certificate digest is
+\begin{center}
+\texttt{da179eb730da85c38af54f73ebf2151aece5562db62bc5fb24e2bad81d77456e}.
+\end{center}
+
+The certificate is a regression witness for the exact algebra and for
+a finite cyclic analogue.  It is not a proof of the continuous
+asymptotic large-sieve theorem, a bound for the actual projective
+envelope, a fixed-shift prime-pair estimate, or evidence that the
+parity barrier has been crossed.

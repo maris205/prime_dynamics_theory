@@ -1,0 +1,125 @@
+\section{What has changed, what remains, and the next gate}
+\label{sec:tpc48-boundaries}
+
+The present step closes the geometric all-band question raised in
+TPC--47.  It does not close the arithmetic fixed-shift question.  We
+record the distinction as a theorem ledger before describing a
+possible continuation.
+
+\subsection{Advances under the inherited exact interface}
+
+The following statements are proved here without a new arithmetic
+hypothesis beyond the exact TPC--36/45/47 representation and support
+interface.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item The orbit-frequency quotient admits an exact orthogonal tiling
+       by \(L\) full residue combs, with exact compressed trace \(N/L\)
+       on every scalar physical window.
+ \item Each determinant modulation has an exact input-output channel
+       resolution.  The support consists of explicit resonance tubes,
+       and the critical branch half-width is \(X^{-1+o(1)}\).
+ \item The optimal norm of the channel lift is exactly the maximal
+       pointwise tube multiplicity.  Erasing the channel label restores
+       the unrestricted synthesis norm squared \(K\).
+ \item The common orbit profile in every inherited projective layer
+       yields the Hilbert-valued factor
+       \(D_J(t;K)=\min\{K,1+(Jt)^{-1}\}\), sharp up to constants in its
+       declared class.
+ \item Complete signed reassembly, coefficient by coefficient, reduces
+       the literal frozen family to a representation independent
+       pointwise
+       projective \(m\)-square envelope.  At fixed \(m\), residual
+       labels give an exact outer \(r\)-square sum, while the prime sum
+       inside each residual coordinate remains coherent.
+ \item Relative to any fixed global projective representation with a
+       bounded envelope, the intermediate annulus has only logarithmic
+       integrated resonance cost.
+\end{enumerate}
+
+These are forward results rather than a reformulation of the
+single-band theorem: all orbit bands are now controlled at once, the
+fine determinant scale is restored, and the exact obstruction left by
+their reassembly is identified.
+
+\subsection{The remaining arithmetic square-function gate}
+
+By \eqref{eq:tpc48-residual-square}, the unresolved layerwise object is
+\begin{equation}
+ \sum_m\sum_r
+ \left\|
+ \sum_p A_\omega(p,r,m)\e(-pr\alpha)
+ v_{\omega,p,r,m}
+ \right\|^2.
+ \label{eq:tpc48-next-arithmetic-object}
+\end{equation}
+Three features prevent the present large sieve from estimating this
+quantity at the atomic scale:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.4em]
+ \item the \(p\)-sum is coherent inside a fixed residual coordinate;
+ \item the projective integral must be reassembled with its literal
+       signs and total variation, not by selecting a favorable layer;
+ \item subsequent residual grouping can cost
+       \(\rho_{\rm res}^{1/2}\), for which no \(X^{o(1)}\) bound has
+       been inherited at this interface.
+\end{enumerate}
+For the dense consecutive-slope sharpness model at the coarse edge,
+the common-profile collision factor exceeds the TPC allowance by the
+exponent \(\nu=133/400\).  Any continuation
+that aims at atomic closure must therefore use arithmetic information
+inside \eqref{eq:tpc48-next-arithmetic-object}; orbit geometry alone is
+now known to be insufficient.
+
+\subsection{Four precise doors}
+
+The next paper may attack any one of the following independently.
+\begin{description}[leftmargin=2.8em,style=nextline]
+ \item[Door A: coefficient-specific prime square.] Prove cancellation
+   in the coherent prime sum of
+   \eqref{eq:tpc48-next-arithmetic-object}, averaged over \(m,r\),
+   beyond the universal common-profile large sieve.
+ \item[Door B: projective-to-atomic comparison.] Bound one fixed exact
+   representation envelope \(\mathfrak S_{\mathscr R}\) by the
+   inherited physical atomic diagonal with a quantified loss, or
+   construct an actual-mask witness showing that such a bound is
+   impossible at the desired exponent.
+ \item[Door C: residual grouping with cofactor structure.] Replace the
+   abstract \(\rho_{\rm res}\) loss by a coefficient-specific
+   square-function estimate using the literal map \(s=d(m)r\).  The
+   balanced cofactor fibers from earlier descent cannot be imported
+   here without proving that the two interfaces coincide.
+ \item[Door D: localization and alias completion.] Combine the
+   annular theorem with an ultra-low analysis, an anti-alias or
+   maximal-in-shift theorem, and the literal \(h_0\) Fourier inversion.
+   This door is downstream of, rather than a substitute for, the
+   atomic comparison.
+\end{description}
+
+Each door has a meaningful negative outcome: an explicit actual-mask
+counterexample or a sharp lower bound for the necessary loss would
+locate the next obstruction just as the unrestricted synthesis theorem
+does here.
+
+\subsection{Prohibited conclusions}
+
+For clarity, none of the following is asserted.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item No estimate of the complete physical atom by its atomic
+       diagonal is proved.
+ \item No bound \(\rho_{\rm res}=X^{o(1)}\), no new cofactor-range
+       closure, and no cancellation of the internal prime sum is
+       proved.
+ \item No sparse-alias unfolding, new-shift physical provenance, or
+       uniform local-shift theorem is proved.  Only \(h=h_0\) is the
+       inherited physical residual synthesis; all other shifts are
+       frozen algebraic extensions.
+ \item The residual synthesis remains the low-sign-averaged Gram
+       route and is not identified with the native affine physical
+       face.
+ \item No parity-barrier breach, Hardy--Littlewood asymptotic, bounded
+       prime-gap theorem, or twin-prime conclusion follows.
+\end{enumerate}
+
+The exact conclusion is narrower and reusable: after full
+orbit-frequency resolution, the next non-geometric obstruction is the
+actual projective \(m,r\)-square of coherent prime sums.  That is the
+next gate, not a disguised solution of it.

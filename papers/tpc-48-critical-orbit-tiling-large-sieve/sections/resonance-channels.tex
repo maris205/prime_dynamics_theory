@@ -1,0 +1,189 @@
+\section{Determinant resonance channels}
+\label{sec:tpc48-channels}
+
+Throughout this section \(L\ge2\), as in the critical application, and
+all determinant slopes \(m\) are positive integers.
+
+For \(t\in\T\), let
+\begin{equation}
+ (U_ty)_j:=\e(jt)y_j.
+ \label{eq:tpc48-modulation}
+\end{equation}
+Then \(U_t\) is unitary and
+\begin{equation}
+ \mathscr F_j(U_ty)(\beta)=\widehat y(\beta-t).
+ \label{eq:tpc48-Fourier-translation}
+\end{equation}
+The determinant equation contributes \(t=m\alpha\).
+
+\subsection{The input-output band matrix}
+
+For \(m\ge1\), \(\alpha\in\T\), and \(q\in\Z/L\Z\), define
+\begin{equation}
+ R_{m,q}(\alpha)
+ :=\sum_{\ell\bmod L}
+ \Pi_{\ell+q}U_{m\alpha}\Pi_\ell.
+ \label{eq:tpc48-channel-operator}
+\end{equation}
+All indices in this section are modulo \(L\).
+
+\begin{theorem}[Exact resonance-channel resolution]
+\label{thm:tpc48-channel-resolution}
+For every \(m,\alpha\),
+\begin{equation}
+ U_{m\alpha}=\sum_qR_{m,q}(\alpha),
+ \qquad
+ \sum_q\|R_{m,q}(\alpha)y\|^2=\|y\|^2.
+ \label{eq:tpc48-channel-resolution}
+\end{equation}
+Moreover,
+\begin{equation}
+ R_{m,q}(\alpha)\ne0
+ \quad\Longleftrightarrow\quad
+ d_G(m\alpha,c_q)<\Delta,
+ \label{eq:tpc48-channel-support}
+\end{equation}
+where
+\(d_G(x,y)=\operatorname{dist}(x-y,G)\).  For almost every \(\alpha\),
+exactly two values of \(q\) satisfy
+\eqref{eq:tpc48-channel-support}.
+\end{theorem}
+
+\begin{proof}
+Insert the two resolutions of the identity around \(U_{m\alpha}\):
+\[
+ U_{m\alpha}=\sum_{k,\ell}\Pi_kU_{m\alpha}\Pi_\ell,
+\]
+and group the pair by \(q=k-\ell\).  In orbit Fourier variables, the
+\((k,\ell)\)-block is multiplication by
+\begin{equation}
+ \one_{\cC_k}(\beta)
+ \one_{\cC_\ell}(\beta-m\alpha),
+ \label{eq:tpc48-tile-multiplier}
+\end{equation}
+followed by translation.  For fixed \(m,\alpha,\beta\), there is one
+output cell \(k\) containing \(\beta\) and one input cell \(\ell\)
+containing \(\beta-m\alpha\).  Hence exactly one \(q=k-\ell\)
+contributes pointwise.  This proves both identities in
+\eqref{eq:tpc48-channel-resolution}.
+
+The shifted input interval and the output interval have equal length
+\(1/L\) in the quotient coordinate.  Their intersection has positive
+measure precisely when their centers are separated by less than
+\(1/L\), which is \eqref{eq:tpc48-channel-support} after division by
+\(H_0\).  A point on a circle partitioned by centers spaced \(1/L\)
+lies within distance \(1/L\) of exactly two centers, except at the
+finitely many center points.  This proves the last statement.
+\end{proof}
+
+Define the resonance tube
+\begin{equation}
+ \mathfrak T_{m,q}^{(L,H_0)}
+ :=\{\alpha\in\T:d_G(m\alpha,c_q)<\Delta\}.
+ \label{eq:tpc48-resonance-tube}
+\end{equation}
+
+\begin{corollary}[Tube measure and branch width]
+\label{cor:tpc48-tube-geometry}
+For every \(m,q\),
+\begin{equation}
+ |\mathfrak T_{m,q}^{(L,H_0)}|=\frac2L.
+ \label{eq:tpc48-tube-measure}
+\end{equation}
+It is the union of \(mH_0\) intervals, each with half-width
+\begin{equation}
+ \frac{\Delta}{m}=\frac1{LH_0m}.
+ \label{eq:tpc48-tube-halfwidth}
+\end{equation}
+For almost every \(\alpha\),
+\begin{equation}
+ \sum_{q\bmod L}\one_{\mathfrak T_{m,q}^{(L,H_0)}}(\alpha)=2.
+ \label{eq:tpc48-two-active-tubes}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Multiplication by \(m\) preserves normalized Haar measure on \(\T\).
+The target neighborhood is a union of \(H_0\) arcs of total measure
+\(2H_0\Delta=2/L\).  Pulling those arcs back gives the branch count and
+half-width.  The final identity is the last assertion of
+\cref{thm:tpc48-channel-resolution}.
+\end{proof}
+
+At \(L\asymp J\) and \(m\asymp M\),
+\begin{equation}
+ \frac1{LH_0m}=X^{-1+o(1)}.
+ \label{eq:tpc48-critical-tube-scale}
+\end{equation}
+No band summation is involved in this scale: the two active channels
+already give the exact resolution of one determinant modulation.
+
+\subsection{The optimal channel-lift constant}
+
+Let \(\cM\subset\N\) be a finite set of distinct positive slopes and put
+\(K=|\cM|\).  For
+\(\bm y=(y_m)_{m\in\cM}\in\bigoplus_m\widetilde\Hh\), define
+\begin{equation}
+ (\cA_{\alpha,L}\bm y)_q
+ :=\sum_{m\in\cM}R_{m,q}(\alpha)y_m
+ \quad\in\widetilde\Hh.
+ \label{eq:tpc48-channel-lift}
+\end{equation}
+For almost every \(\beta\), let \(k(\beta)\) be the unique cell index
+with \(\beta\in\cC_{k(\beta)}\), and define
+\begin{align}
+ n_{\alpha,L}(\beta,q)
+ &:=\#\{m\in\cM:
+       \beta-m\alpha\in\cC_{k(\beta)-q}\},
+ \label{eq:tpc48-pointwise-load}\\
+ R_L(\alpha;\cM)
+ &:=\max_{q\bmod L}\operatorname*{ess\,sup}_{\beta\in\T}
+ n_{\alpha,L}(\beta,q).
+ \label{eq:tpc48-max-load}
+\end{align}
+
+\begin{theorem}[Exact channel-lift norm]
+\label{thm:tpc48-channel-norm}
+The optimal Hilbert-space constant is
+\begin{equation}
+ \boxed{\|\cA_{\alpha,L}\|^2=R_L(\alpha;\cM).}
+ \label{eq:tpc48-channel-norm}
+\end{equation}
+In particular,
+\begin{equation}
+ \sum_q\left\|
+ \sum_mR_{m,q}(\alpha)y_m
+ \right\|^2
+ \le R_L(\alpha;\cM)\sum_m\|y_m\|^2.
+ \label{eq:tpc48-channel-square-function}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+After orbit Fourier transform, the \(q\)-output at \(\beta\) is the
+sum of exactly the input fibers counted by
+\(n_{\alpha,L}(\beta,q)\).  Pointwise Cauchy--Schwarz, followed by
+integration and the one-channel-per-input identity in
+\cref{thm:tpc48-channel-resolution}, gives the upper bound.
+
+For the reverse inequality, choose \(q\) and a positive-measure set
+\(E\) on which the same set \(\cM_0\) of
+\(R_L(\alpha;\cM)\) slopes is counted.  Such a set exists because only
+finitely many subsets occur.  Fix a unit vector \(v\in\Vv\), and for
+\(m\in\cM_0\) set
+\[
+ \widehat y_m(\gamma)=\one_{E-m\alpha}(\gamma)v;
+\]
+set all other inputs to zero.  Every selected modulation produces
+\(\one_Ev\) in the same \(q\)-channel.  The squared output/input norm
+ratio is therefore \(|\cM_0|=R_L(\alpha;\cM)\).
+\end{proof}
+
+For every fixed \(\beta\), the \(K\) slopes are distributed among
+\(L\) values of \(q\).  Hence
+\begin{equation}
+ R_L(\alpha;\cM)\ge\left\lceil\frac KL\right\rceil.
+ \label{eq:tpc48-load-pigeonhole}
+\end{equation}
+This lower bound is geometric and makes no assertion about which input
+vectors occur in the actual TPC coefficient.

@@ -1,0 +1,231 @@
+\section{Endpoint ledger and the annular resonance budget}
+\label{sec:tpc48-endpoint}
+
+We now insert the inherited TPC endpoint.  Write
+\begin{equation}
+ \mu:=\frac{267}{400},
+ \qquad
+ \nu:=\frac{133}{400},
+ \qquad
+ \kappa:=\frac1{400}.
+ \label{eq:tpc48-endpoint-exponents}
+\end{equation}
+Thus
+\begin{equation}
+ M=X^{\mu+o(1)},
+ \qquad
+ J=X^{\nu+o(1)},
+ \qquad
+ \mu+\nu=1.
+ \label{eq:tpc48-endpoint-scales}
+\end{equation}
+The actual slope support only obeys \(K\le X^{\mu+o(1)}\).  Statements
+that identify \(K\) with \(M\) below are therefore model sharpness
+statements for a dense slope box, not lower bounds for the literal
+coefficient.
+
+\subsection{Critical bands and exact fine tubes}
+
+Take
+\begin{equation}
+ L=X^{\nu+o(1)}\asymp J.
+ \label{eq:tpc48-critical-band-count}
+\end{equation}
+For a full scalar orbit window of length \(N\asymp J\),
+\cref{thm:tpc48-band-trace} gives
+\begin{equation}
+ \operatorname{tr}(E_{I,v}^*\Pi_kE_{I,v})=O(1).
+ \label{eq:tpc48-critical-trace}
+\end{equation}
+For \(m\asymp M\), \cref{cor:tpc48-tube-geometry} gives the exact
+branch half-width
+\begin{equation}
+ \frac1{LH_0m}=X^{-1+o(1)}.
+ \label{eq:tpc48-endpoint-tube-width}
+\end{equation}
+The fine scale is therefore recovered simultaneously across an exact
+orthogonal resolution of the whole orbit-frequency circle.  This is a
+geometric resolution statement; it is not a mass lower bound or a
+spectral gap for the complete actual vector.
+
+It is useful to compare this choice with the canonical band in
+TPC--47.  There the band count needed to cover the quotient was
+\begin{equation}
+ L_{47}=X^{\nu-\kappa+o(1)}=X^{33/100+o(1)},
+ \label{eq:tpc48-tpc47-cover-count}
+\end{equation}
+the per-band trace was \(X^{\kappa+o(1)}\), and the resonance
+half-width was \(X^{-1+\kappa+o(1)}=X^{-399/400+o(1)}\).
+Passing to the critical tiling adds the missing factor \(X^\kappa\)
+to the band count, makes the trace bounded, and sharpens the tube
+scale by the same factor.  Unlike the single projected sector in
+TPC--47, the present \(L\) bands sum exactly to the identity.
+
+\subsection{Pointwise collision ledger}
+
+On the annular shift range below, the no-wrap hypothesis holds and
+the large-sieve factor is
+\begin{equation}
+ D_J(t;K)=\min\left\{K,1+\frac1{Jt}\right\}.
+ \label{eq:tpc48-endpoint-D}
+\end{equation}
+At the fine edge \(t=X^{-1+\epsilon}\), the universal upper bound
+\(K\le X^{\mu+o(1)}\) gives
+\begin{equation}
+ D_J(t;K)\le X^{\mu-\epsilon+o(1)},
+ \qquad
+ \frac J{H_0}D_J(t;K)\le X^{1-\epsilon+o(1)}.
+ \label{eq:tpc48-fine-edge-ledger}
+\end{equation}
+At the coarse edge \(t=X^{-\mu-\epsilon}\),
+\begin{equation}
+ D_J(t;K)\le X^{\mu-\nu+\epsilon+o(1)}
+ =X^{67/200+\epsilon+o(1)},
+ \label{eq:tpc48-coarse-edge-D}
+\end{equation}
+and hence
+\begin{equation}
+ \frac J{H_0}D_J(t;K)\le X^{\mu+\epsilon+o(1)}.
+ \label{eq:tpc48-coarse-edge-prefactor}
+\end{equation}
+The corresponding amplitude prefactors are
+
+\begin{center}
+\begin{tabular}{c|c|c}
+shift scale & squared prefactor & amplitude prefactor\\ \hline
+\(t=X^{-1+\epsilon}\)
+ & \(X^{1-\epsilon+o(1)}\)
+ & \(X^{1/2-\epsilon/2+o(1)}\)\\
+\(t=X^{-\mu-\epsilon}\)
+ & \(X^{\mu+\epsilon+o(1)}\)
+ & \(X^{\mu/2+\epsilon/2+o(1)}\)
+\end{tabular}
+\end{center}
+
+For a dense slope box at the coarse scale \(t\asymp M^{-1}\), inside
+the no-wrap slab \eqref{eq:tpc48-coarse-edge-slab}, the normalized
+collision load is
+\begin{equation}
+ \frac MJ=X^{\mu-\nu+o(1)}=X^{67/200+o(1)}.
+ \label{eq:tpc48-critical-collision-load}
+\end{equation}
+The inherited TPC allowance is the normalized determinant-packet loss
+\begin{equation}
+ K_B=X^{\kappa+o(1)}
+ \label{eq:tpc48-inherited-allowance}
+\end{equation}
+from the TPC--45/47 closure ledger
+\citep{WangTPC45,WangTPC47}.  The unresolved dense-model exponent gap
+is therefore
+\begin{equation}
+ (\mu-\nu)-\kappa
+ =\frac{67}{200}-\frac1{400}
+ =\frac{133}{400}
+ =\nu.
+ \label{eq:tpc48-endpoint-allowance-gap}
+\end{equation}
+Thus the common-profile theorem saves the full orbit length relative
+to the unrestricted \(K\)-loss, but the coarse-edge bound still does
+not fit the atomic TPC budget.  Attainment of this common-profile
+operator scale requires the consecutive slope cluster in
+\cref{prop:tpc48-large-sieve-sharpness}; it is not asserted for the
+literal coefficient.
+
+\subsection{A logarithmic relative annulus theorem}
+
+For
+\begin{equation}
+ 0<\epsilon<\frac\nu2=\frac{133}{800},
+ \qquad
+ \cA_\epsilon
+ :=\left\{\alpha\in\T:
+ X^{-1+\epsilon}\le\|\alpha\|_\T
+ \le X^{-\mu-\epsilon}\right\},
+ \label{eq:tpc48-annulus}
+\end{equation}
+the annulus is nonempty for large \(X\).  Moreover,
+\begin{equation}
+ H_0(M_+-M_-)\|\alpha\|_\T=o(1)
+ \label{eq:tpc48-annulus-no-wrap}
+\end{equation}
+uniformly on \(\cA_\epsilon\), after the inherited fixed dyadic
+localization.  Hence \cref{thm:tpc48-actual-reduction} applies there.
+
+Fix one global admissible signed representation \(\mathscr R\).  It
+is important here not to integrate the pointwise infimum
+\(\mathfrak S_{\rm pr}\), for which no measurability assertion was
+made.
+
+\begin{theorem}[Relative annular resonance budget]
+\label{thm:tpc48-annular-budget}
+For every fixed global admissible representation \(\mathscr R\), with
+the measurable envelope specified in
+\eqref{eq:tpc48-representation-envelope},
+\begin{equation}
+ \int_{\cA_\epsilon}
+ \|\widehat{\cF}^{\rm fr,\mathrm L}(\alpha)\|^2\,d\alpha
+ \le
+ \frac J{H_0}
+ \int_{\cA_\epsilon}
+ D_J(\|\alpha\|_\T;K)
+ \mathfrak S_{\mathscr R}(\alpha)^2\,d\alpha.
+ \label{eq:tpc48-weighted-annular-budget}
+\end{equation}
+In particular, if
+\begin{equation}
+ \sup_{\alpha\in\cA_\epsilon}
+ \mathfrak S_{\mathscr R}(\alpha)\le S_*,
+ \label{eq:tpc48-annular-envelope-bound}
+\end{equation}
+then
+\begin{equation}
+ \int_{\cA_\epsilon}
+ \|\widehat{\cF}^{\rm fr,\mathrm L}(\alpha)\|^2\,d\alpha
+ \ll_{\epsilon,H_0} (\log X)S_*^2.
+ \label{eq:tpc48-log-annular-budget}
+\end{equation}
+The contribution of this annulus to Fourier inversion at \(h_0\)
+satisfies
+\begin{equation}
+ \left\|
+ \int_{\cA_\epsilon}
+ \widehat{\cF}^{\rm fr,\mathrm L}(\alpha)
+ \e(h_0\alpha)\,d\alpha
+ \right\|
+ \ll
+ X^{-(\mu+\epsilon)/2+o(1)}
+ (\log X)^{1/2}S_*.
+ \label{eq:tpc48-annular-fixed-shift-contribution}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The first estimate is the squared version of
+\eqref{eq:tpc48-actual-reduction}, retained for the fixed
+representation \(\mathscr R\).  The elementary inequality
+\begin{equation}
+ D_J(t;K)\le 1+\frac1{Jt}
+ \label{eq:tpc48-annulus-D-bound}
+\end{equation}
+holds throughout the annulus.  By symmetry around zero,
+\begin{align}
+ \int_{\cA_\epsilon}D_J(\|\alpha\|_\T;K)\,d\alpha
+ &\ll X^{-\mu-\epsilon}
+   +\frac1J\log\frac{X^{-\mu-\epsilon}}
+                         {X^{-1+\epsilon}} \\
+ &\ll X^{-\nu+o(1)}.
+ \label{eq:tpc48-integrated-D}
+\end{align}
+Multiplication by \(J/H_0\) proves
+\eqref{eq:tpc48-log-annular-budget}.  Finally
+\(|\cA_\epsilon|\ll X^{-\mu-\epsilon}\), so Cauchy--Schwarz in
+\(\alpha\) gives
+\eqref{eq:tpc48-annular-fixed-shift-contribution}.
+\end{proof}
+
+The theorem is deliberately relative to \(S_*\).  Neither
+\eqref{eq:tpc48-log-annular-budget} nor
+\eqref{eq:tpc48-annular-fixed-shift-contribution} estimates the
+projective envelope by the physical atomic diagonal.  It also leaves
+the ultra-low interval, the complementary shift frequencies, and any
+sparse alias reconstruction untreated.

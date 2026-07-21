@@ -1,0 +1,185 @@
+\section{A sharp large sieve for a common orbit profile}
+\label{sec:tpc48-large-sieve}
+
+The barrier in \cref{thm:tpc48-unrestricted-barrier} permits each slope
+to choose an independent compensating orbit vector.  The projective
+layers in \eqref{eq:tpc48-projective-layer} do not have that freedom:
+all slopes share the same sampled scalar profile.  This section
+quantifies the resulting gain.
+
+\subsection{The progression Gram kernel}
+
+Fix \(a\pmod{H_0}\), \(J\ge1\),
+\(\phi\in C_c^\infty(\R)\), and a finite slope set
+\(\cM\subset[M_-,M_+]\cap\Z\).  For Hilbert vectors
+\(b_m\in\Vv\), define
+\begin{equation}
+ \cL_{\phi,a,\alpha}(\bm b)
+ :=\sum_{\substack{j\in\Z\\j\equiv a\!\!\pmod{H_0}}}
+ \phi(j/J)
+ \left(\sum_{m\in\cM}b_m\e(mj\alpha)\right)\otimes e_j.
+ \label{eq:tpc48-common-profile-operator}
+\end{equation}
+Put \(K=|\cM|\), \(t=\|\alpha\|_\T\), and
+\begin{equation}
+ D_J(t;K):=
+ \begin{cases}
+  \min\left\{K,1+\dfrac1{Jt}\right\},&t>0,\\[4pt]
+  K,&t=0.
+ \end{cases}
+ \label{eq:tpc48-collision-factor}
+\end{equation}
+
+Let \(\psi=|\phi|^2\).  The Gram kernel is
+\begin{equation}
+ G_d(\alpha)
+ :=\sum_{j\equiv a\!\!\pmod{H_0}}
+ \psi(j/J)\e(dj\alpha),
+ \qquad d\in\Z.
+ \label{eq:tpc48-Gram-kernel}
+\end{equation}
+
+\begin{lemma}[No-wrap progression decay]
+\label{lem:tpc48-Gram-decay}
+Assume \(t\ge0\) and
+\begin{equation}
+ H_0(M_+-M_-)t\le\frac14.
+ \label{eq:tpc48-large-sieve-no-wrap}
+\end{equation}
+For every integer \(B\ge2\),
+\begin{equation}
+ |G_d(\alpha)|
+ \le C_{B,H_0,\phi}\frac{J}{H_0}
+ (1+J|d|t)^{-B}
+ \label{eq:tpc48-Gram-decay}
+\end{equation}
+uniformly for \(|d|\le M_+-M_-\).
+\end{lemma}
+
+\begin{proof}
+Progression Poisson summation gives
+\begin{equation}
+ G_d(\alpha)
+ =\frac{J}{H_0}\sum_{q\in\Z}
+ \e(aq/H_0)
+ \widehat\psi\!\left(
+ \frac{J}{H_0}(q-H_0d\alpha)
+ \right).
+ \label{eq:tpc48-Gram-Poisson}
+\end{equation}
+Choose the representative of \(\alpha\) with absolute value \(t\).
+Under \eqref{eq:tpc48-large-sieve-no-wrap}, the \(q=0\) term is
+bounded by the right side of \eqref{eq:tpc48-Gram-decay}.  Every
+\(q\ne0\) satisfies \(|q-H_0d\alpha|\ge3/4\).  Apply Schwartz decay at
+order \(B+2\) to those terms.  If \(J\ge H_0\), their sum after the
+prefactor \(J/H_0\) is \(O_{B,H_0,\phi}(J^{-B-1})\), which is bounded
+by the right side of \eqref{eq:tpc48-Gram-decay} because
+\(1+J|d|t\le1+J/(4H_0)\).  If \(J<H_0\), the conclusion is absorbed
+into the constant.  Thus only a fixed finite Schwartz seminorm of
+\(\psi\) is used.
+\end{proof}
+
+\subsection{The Hilbert-valued inequality}
+
+\begin{theorem}[Common-profile determinant large sieve]
+\label{thm:tpc48-common-profile-large-sieve}
+Under \eqref{eq:tpc48-large-sieve-no-wrap},
+\begin{equation}
+ \boxed{
+ \|\cL_{\phi,a,\alpha}(\bm b)\|^2
+ \le C_{\phi,H_0}\frac{J}{H_0}
+ D_J(t;K)\sum_{m\in\cM}\|b_m\|^2.}
+ \label{eq:tpc48-common-profile-large-sieve}
+\end{equation}
+The constant is uniform in the Hilbert space, the vectors \(b_m\),
+the slope locations inside \([M_-,M_+]\), and \(J\).
+\end{theorem}
+
+\begin{proof}
+If \(t=0\), Cauchy--Schwarz in the \(m\)-sum and
+\(\sum_{j\equiv a\ (H_0)}|\phi(j/J)|^2\ll_{\phi,H_0}J/H_0\)
+give \eqref{eq:tpc48-common-profile-large-sieve} with
+\(D_J(0;K)=K\).  Assume henceforth that \(t>0\).
+Expanding the square in \eqref{eq:tpc48-common-profile-operator} gives
+the Hilbert-valued Gram form
+\begin{equation}
+ \sum_{m,n\in\cM}
+ G_{m-n}(\alpha)\langle b_m,b_n\rangle.
+ \label{eq:tpc48-Gram-form}
+\end{equation}
+By \cref{lem:tpc48-Gram-decay} with \(B=2\),
+\begin{equation}
+ \sup_m\sum_{n\in\cM}|G_{m-n}(\alpha)|
+ \ll_{\phi,H_0}\frac{J}{H_0}
+ \left(1+\frac1{Jt}\right).
+ \label{eq:tpc48-Gram-row-sum}
+\end{equation}
+The Schur test, valid after scalar pairing in \(\Vv\), gives this
+constant.  The trivial estimate
+\(|G_d|\ll_{\phi,H_0}J/H_0\) gives instead
+\((J/H_0)K\).  Taking the smaller bound proves
+\eqref{eq:tpc48-common-profile-large-sieve}.
+\end{proof}
+
+By orbit Plancherel, the left side is also the complete all-band square
+function
+\begin{equation}
+ \|\cL_{\phi,a,\alpha}(\bm b)\|^2
+ =\sum_{k\bmod L}\|\Pi_k
+ \cL_{\phi,a,\alpha}(\bm b)\|^2
+ \label{eq:tpc48-large-sieve-all-band}
+\end{equation}
+for every choice of \(L\).  In particular, the estimate already
+controls the reassembled orbit field and carries no factor equal to the
+number of bands.
+
+\subsection{Sharpness in the common-profile class}
+
+\begin{proposition}[Clustered-slope lower bound]
+\label{prop:tpc48-large-sieve-sharpness}
+Assume \(t>0\), \(\phi\not\equiv0\), and
+\(J\ge J_0(\phi,H_0)\).  There are constants
+\(c_{\phi,H_0},C_{\phi,H_0}>0\) with the following property.  Suppose
+\(\cM\) contains \(D\) consecutive integers and either \(D=1\), or
+\begin{equation}
+ 2\le D\le c_{\phi,H_0}\min\{K,(Jt)^{-1}\}.
+ \label{eq:tpc48-coherent-cluster-size}
+\end{equation}
+Then one can choose collinear Hilbert vectors, supported on those
+slopes, such that
+\begin{equation}
+ \|\cL_{\phi,a,\alpha}(\bm b)\|^2
+ \ge C_{\phi,H_0}^{-1}\frac{J}{H_0}D
+ \sum_m\|b_m\|^2.
+ \label{eq:tpc48-cluster-lower-bound}
+\end{equation}
+Consequently \(D_J(t;K)\) is optimal up to constants for dense
+common-profile slope boxes.
+\end{proposition}
+
+\begin{proof}
+Choose an interval on which \(|\phi|\) is bounded below.  The lower
+bound on \(J\) ensures that its \(J\)-dilate contains
+\(\gg_{\phi,H_0}J/H_0\) points in the progression, uniformly in the
+finitely many residue classes \(a\).  For \(D=1\), any one supported
+slope gives the claim directly.  For \(D\ge2\), let \(j_0\) be the
+center of the sampled interval and choose the signed lift
+\(\widetilde\alpha\in[-1/2,1/2]\) with
+\(|\widetilde\alpha|=t\).  Fix a unit vector \(v\), and on a
+consecutive block put
+\(b_m=\e(-mj_0\widetilde\alpha)v\).  For \(j\) in a sufficiently
+short fixed subinterval around \(j_0\), condition
+\eqref{eq:tpc48-coherent-cluster-size} makes all phases
+\(\e(m(j-j_0)\widetilde\alpha)\) lie in one fixed acute arc.  Their sum has
+modulus \(\gg D\).  Summing over those \(j\) gives
+\(\gg_{\phi,H_0}(J/H_0)D^2\), whereas
+\(\sum_m\|b_m\|^2=D\).
+\end{proof}
+
+Taking \(D=1\) when \(Jt\gg1\), and
+\(D\asymp_{\phi,H_0}\min\{K,(Jt)^{-1}\}\) when \(Jt\ll1\), proves the
+stated optimality for slope boxes containing the required consecutive
+cluster.  At \(t=0\), choosing all \(K\) vectors equal gives the exact
+factor \(K\).  The sharpness witness uses arbitrary collinear coefficients
+inside one admissible common-profile class.  It does not assert that
+the literal actual coefficients realize this coherence.

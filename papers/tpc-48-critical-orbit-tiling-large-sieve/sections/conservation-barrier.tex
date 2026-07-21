@@ -1,0 +1,164 @@
+\section{All-band conservation and the reassembly barrier}
+\label{sec:tpc48-conservation}
+
+The output-side square function is exact and useful bookkeeping.  It
+must not be confused with a new atomic estimate.
+
+\subsection{Amplitude and diagonal conservation}
+
+Let \(Sx=\sum_{e\in\cE}x_eu_e\) be any finite synthesis in
+\(\widetilde\Hh\), and define
+\begin{equation}
+ \cD(x):=\sum_{e\in\cE}|x_e|^2\|u_e\|^2.
+ \label{eq:tpc48-abstract-diagonal}
+\end{equation}
+For each orbit band, put
+\begin{equation}
+ S_kx:=\Pi_kSx,
+ \qquad
+ \cD_k(x):=\sum_e|x_e|^2\|\Pi_ku_e\|^2.
+ \label{eq:tpc48-band-diagonal}
+\end{equation}
+
+\begin{proposition}[Exact all-band conservation]
+\label{prop:tpc48-all-band-conservation}
+For every \(x\),
+\begin{equation}
+ \sum_k\|S_kx\|^2=\|Sx\|^2,
+ \qquad
+ \sum_k\cD_k(x)=\cD(x).
+ \label{eq:tpc48-all-band-conservation}
+\end{equation}
+Consequently, if
+\(\|S_kx\|^2\le C\cD_k(x)\) for every \(k\) with one common constant
+       \(C\), then \(\|Sx\|^2\le C\cD(x)\).  Conversely, whenever
+\(\cD(x)>0\), at least one band with \(\cD_k(x)>0\) satisfies
+\begin{equation}
+ \frac{\|S_kx\|^2}{\cD_k(x)}
+ \ge\frac{\|Sx\|^2}{\cD(x)}.
+ \label{eq:tpc48-one-band-inherits-ratio}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The first identity is Parseval for the orthogonal resolution
+\eqref{eq:tpc48-projector-resolution}.  Apply the same identity to each
+atom \(u_e\), multiply by \(|x_e|^2\), and sum to obtain the diagonal
+identity.  Summing the bandwise inequalities gives the first
+consequence.  The full ratio is the \(\cD_k\)-weighted average of the
+nonzero band ratios, which proves the second.
+\end{proof}
+
+Thus an output tiling cannot hide a pre-existing coherent-box or
+tensor-to-atomic obstruction: some band inherits at least the full
+ratio.  The conclusion is abstract and does not say that every actual
+band is bad.
+
+\subsection{Collapse of the difference channels}
+
+Let
+\begin{equation}
+ \cQ_L:\bigoplus_{q\bmod L}\widetilde\Hh
+ \longrightarrow\widetilde\Hh,
+ \qquad
+ \cQ_L((z_q)_q):=\sum_qz_q.
+ \label{eq:tpc48-channel-collapse}
+\end{equation}
+Then \(\|\cQ_L\|^2=L\).  The channel lift factors the unlabelled
+determinant synthesis:
+\begin{equation}
+ \cQ_L\cA_{\alpha,L}\bm y
+ =\sum_{m\in\cM}U_{m\alpha}y_m
+ =:T_\alpha\bm y.
+ \label{eq:tpc48-channel-factorization}
+\end{equation}
+
+\begin{theorem}[Sharp unrestricted reassembly barrier]
+\label{thm:tpc48-unrestricted-barrier}
+For every \(\alpha\in\T\),
+\begin{equation}
+ \boxed{\|T_\alpha\|^2=K.}
+ \label{eq:tpc48-unrestricted-barrier}
+\end{equation}
+Hence
+\begin{equation}
+ K\le L R_L(\alpha;\cM),
+ \label{eq:tpc48-factor-product}
+\end{equation}
+and no universal inequality for arbitrary independent orbit inputs can
+replace the factor \(K\) by a smaller all-band constant.
+\end{theorem}
+
+\begin{proof}
+Cauchy--Schwarz gives
+\(\|\sum_mU_{m\alpha}y_m\|^2\le K\sum_m\|y_m\|^2\).
+For a nonzero finitely supported \(g\), take
+\(y_m=U_{m\alpha}^{-1}g\).  Then the output is \(Kg\), while the input
+norm squared is \(K\|g\|^2\), proving equality.  The product bound is
+also immediate from
+\(T_\alpha=\cQ_L\cA_{\alpha,L}\) and
+\cref{thm:tpc48-channel-norm}.
+\end{proof}
+
+The witness is allowed in the ambient arbitrary-input class and can be
+finitely supported in the orbit coordinate.  It is not asserted to be
+an actual source-mask coefficient.  Its role is to identify exactly
+which extra structure a positive continuation must use.
+
+\subsection{A no-wrap collision bound}
+
+On the shift range relevant below, the slope points do not wrap around
+the quotient circle.
+
+\begin{proposition}[Elementary tube-load bounds]
+\label{prop:tpc48-load-bounds}
+Assume \(\cM\subset[M_-,M_+]\cap\Z\), \(0<t<1\),
+\(L\le M_+\), and
+\begin{equation}
+ H_0M_+t<1.
+ \label{eq:tpc48-load-no-wrap}
+\end{equation}
+Then
+\begin{equation}
+ \left\lceil\frac KL\right\rceil
+ \le R_L(t\pmod1;\cM)
+ \le\min\left\{K,1+\frac2{LH_0t}\right\}.
+ \label{eq:tpc48-load-bounds}
+\end{equation}
+If, more explicitly,
+\begin{equation}
+ \cM\subset[M,2M]\cap\Z,
+ \qquad K\asymp M,
+ \qquad L\le M,
+ \label{eq:tpc48-dense-slope-box}
+\end{equation}
+and
+\begin{equation}
+ \frac aM\le t\le\frac bM,
+ \qquad 0<a<b<\frac1{2H_0},
+ \label{eq:tpc48-coarse-edge-slab}
+\end{equation}
+then
+\begin{equation}
+ R_L(t\pmod1;\cM)\asymp_{a,b,H_0}\frac ML.
+ \label{eq:tpc48-dense-load}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The lower bound is \eqref{eq:tpc48-load-pigeonhole}.  Under
+\eqref{eq:tpc48-load-no-wrap}, the points \(H_0mt\) are separated by
+at least \(H_0t\) on an interval of length less than one.  A quotient
+cell has length \(1/L\), so it contains at most
+\(1+2(LH_0t)^{-1}\) such points; the factor two harmlessly covers a
+cell meeting the chosen cut of the quotient circle.  This is the upper
+bound.  On
+\eqref{eq:tpc48-coarse-edge-slab}, the upper bound is \(O(M/L)\), while
+the dense-slope hypothesis and the pigeonhole lower bound give the
+matching estimate.
+\end{proof}
+
+For the critical choice \(L\asymp J\), a dense slope box therefore has
+channel load \(M/J\) on the coarse-edge slab.  However, multiplying by
+the \(L\)-channel collapse returns \(M\), exactly as
+\eqref{eq:tpc48-factor-product} predicts.

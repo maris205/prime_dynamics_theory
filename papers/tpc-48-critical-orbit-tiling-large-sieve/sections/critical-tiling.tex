@@ -1,0 +1,142 @@
+\section{Critical tiling of the orbit-frequency quotient}
+\label{sec:tpc48-tiling}
+
+Let \(\Vv\) be a Hilbert space carrying every non-orbit label and put
+\begin{equation}
+ \widetilde\Hh=\Vv\widehat\otimes\ell^2(\Z).
+ \label{eq:tpc48-abstract-orbit-space}
+\end{equation}
+The orbit Fourier transform
+\begin{equation}
+ \mathscr F_j:\ell^2(\Z)\longrightarrow L^2(\T),
+ \qquad
+ (\mathscr F_jy)(\beta)=\sum_jy_j\e(-j\beta),
+ \label{eq:tpc48-orbit-Fourier}
+\end{equation}
+is unitary.
+
+\subsection{Half-open residue-comb cells}
+
+Fix integers \(H_0,L\ge1\), let
+\begin{equation}
+ G:=H_0^{-1}\Z/\Z\subset\T,
+ \qquad
+ \Delta:=\frac1{LH_0},
+ \qquad
+ c_k:=\frac{k}{LH_0}\quad(k\in\Z/L\Z),
+ \label{eq:tpc48-quotient-scales}
+\end{equation}
+and use the quotient coordinate \(\pi(\beta)=H_0\beta\pmod1\).
+Let
+\begin{equation}
+ I_k:=\left[\frac{k-1/2}{L},\frac{k+1/2}{L}\right)
+ \pmod1,
+ \qquad
+ \cC_k:=\pi^{-1}(I_k).
+ \label{eq:tpc48-comb-cells}
+\end{equation}
+Thus \(\cC_k\) is the union of \(H_0\) half-open arcs, each centered
+at \(c_k+\tau/H_0\) and having length \(\Delta\).
+
+\begin{proposition}[Exact residue-comb partition]
+\label{prop:tpc48-comb-partition}
+The cells satisfy
+\begin{equation}
+ \T=\bigsqcup_{k\bmod L}\cC_k\quad\text{a.e.},
+ \qquad
+ |\cC_k|=\frac1L.
+ \label{eq:tpc48-comb-partition}
+\end{equation}
+The operators
+\begin{equation}
+ \Pi_k:=I_\Vv\otimes\mathscr F_j^{-1}
+ M_{\one_{\cC_k}}\mathscr F_j
+ \label{eq:tpc48-band-projectors}
+\end{equation}
+are orthogonal projections and give the strong resolution
+\begin{equation}
+ \Pi_k\Pi_\ell=\one_{k=\ell}\Pi_k,
+ \qquad
+ \sum_{k\bmod L}\Pi_k=I_{\widetilde\Hh}.
+ \label{eq:tpc48-projector-resolution}
+\end{equation}
+They commute with every bounded operator acting only on \(\Vv\).
+\end{proposition}
+
+\begin{proof}
+The intervals \(I_k\) partition the quotient circle and all have
+measure \(1/L\).  Pullback under \(\pi\) preserves normalized Haar
+measure.  Multiplication by their indicators gives mutually orthogonal
+projections summing to the identity on \(L^2(\T)\).  Conjugate by
+\(\mathscr F_j\) and tensor with \(I_\Vv\).  The commutation statement
+follows because the operators act on different tensor factors.
+\end{proof}
+
+The half-open convention affects only null boundaries.  Centered closed
+arcs are convenient for support statements, but would overlap at their
+endpoints and should not be used to state an exact partition.
+
+\subsection{Physical-window trace}
+
+Let \(I\subset\Z\) contain \(N\) orbit times, fix a unit vector
+\(v\in\Vv\), and let
+\begin{equation}
+ E_{I,v}:\ell^2(I)\longrightarrow\widetilde\Hh,
+ \qquad
+ E_{I,v}a:=v\otimes\widetilde a,
+ \label{eq:tpc48-scalar-fiber-inclusion}
+\end{equation}
+where \(\widetilde a\) is zero extension to \(\ell^2(\Z)\).  This
+isolates one scalar non-orbit fiber and avoids taking a trace over
+\(\Vv\).
+
+\begin{theorem}[Exact per-band trace]
+\label{thm:tpc48-band-trace}
+On this scalar non-orbit fiber,
+\begin{equation}
+ \boxed{
+ \operatorname{tr}(E_{I,v}^*\Pi_kE_{I,v})
+ =\|\Pi_kE_{I,v}\|_{\mathrm{HS}}^2
+ =\frac NL.}
+ \label{eq:tpc48-band-trace}
+\end{equation}
+If only the progression \(j\equiv a\pmod{H_0}\) is retained, the
+trace is \(|I\cap(a+H_0\Z)|/L\).  Summing over \(k\) recovers the
+dimension of the corresponding finite orbit window.
+\end{theorem}
+
+\begin{proof}
+The diagonal Fourier matrix coefficient of \(\Pi_k\) is
+\(|\cC_k|=1/L\).  Summation over the selected orbit coordinates proves
+the trace formula.  Orthogonality gives the Hilbert--Schmidt identity.
+\end{proof}
+
+At the inherited scale \(N\asymp J\), the critical choice
+\begin{equation}
+ L\asymp J
+ \label{eq:tpc48-critical-L}
+\end{equation}
+has bounded trace per full scalar orbit fiber.  The individual
+compressed operators remain positive contractions rather than finite
+window projections, but the enlarged-space resolution
+\eqref{eq:tpc48-projector-resolution} is exact.
+
+\subsection{Conservation under residual grouping}
+
+Let \(C\) be any bounded operator on the non-orbit factor; in the
+physical application it is the residual grouping map of TPC--47.  Since
+\(C\Pi_k=\Pi_kC\), Parseval gives
+\begin{equation}
+ \sum_{k\bmod L}\|C\Pi_ky\|^2=\|Cy\|^2
+ \le\|C\|^2\|y\|^2.
+ \label{eq:tpc48-grouped-band-conservation}
+\end{equation}
+On the active residual space of TPC--47,
+\begin{equation}
+ \|C\|^2=\rho_{\rm res},
+ \qquad
+ \rho_{\rm res}=\max_\gamma|\cS_\gamma|.
+ \label{eq:tpc48-grouping-norm}
+\end{equation}
+Thus all-band tiling introduces no additional grouping loss, but it
+does not bound \(\rho_{\rm res}\) by \(X^{o(1)}\).

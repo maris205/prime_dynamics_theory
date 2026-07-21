@@ -1,0 +1,146 @@
+\section{The inherited actual residual interface}
+\label{sec:tpc48-interface}
+
+We state the exact coefficient field before introducing any band
+decomposition.  This prevents an abstract all-band identity from being
+substituted for the physical source-mask coefficient.
+
+\subsection{Physical and frozen families}
+
+Fix \(h_0\in\Z\setminus\{0\}\), put \(H_0=|h_0|\), and let a source
+row be \(\rho=(\ell_\rho,d_\rho)\), with
+\begin{equation}
+ m_\rho=\ell_\rho d_\rho\asymp M,
+ \qquad
+ M=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)}.
+ \label{eq:tpc48-row-scales}
+\end{equation}
+On the inherited dyadic row cell, write
+\begin{equation}
+ 0<M_-\le m_\rho\le M_+,
+ \qquad M_\pm=X^{267/400+o(1)}.
+ \label{eq:tpc48-source-interval}
+\end{equation}
+As an inherited support hypothesis from the row parametrization in
+TPC--45/47, the integer \(m_\rho\) determines the row \(\rho\) on this
+cell \citep{WangTPC45,WangTPC47}.
+Let
+\begin{equation}
+ \cM:=\{m_\rho:\rho\text{ occurs on the inherited support}\},
+ \qquad K:=|\cM|\le MX^{o(1)}.
+ \label{eq:tpc48-supported-slopes}
+\end{equation}
+No matching lower bound for the actual value of \(K\) is assumed.
+
+Let \(\cO_{\mathrm L}\) be the left-side opposite-row set, and let
+\(\cS\) contain all
+supported residual labels.  Put
+\begin{equation}
+ \Vv_{\mathrm L}=\ell^2(\cO_{\mathrm L}\times\cS),
+ \qquad
+ \Hh_{\mathrm L}=\Vv_{\mathrm L}\widehat\otimes\ell^2(\Z).
+ \label{eq:tpc48-output-space}
+\end{equation}
+For a supported cofactor \(r\), the literal physical residual is
+\begin{equation}
+ s=d_\rho r.
+ \label{eq:tpc48-residual-label}
+\end{equation}
+After removal of zero atoms, \(d_\rho,r,s\) are squarefree and
+\(\mu(s)=\mu(d_\rho)\mu(r)\)
+\citep{WangTPC43,WangTPC45,WangTPC46}.
+
+Let \(\gamma_\rho^{(1)}\) be the source coefficient,
+\(\mathfrak A_{\rho,\gamma}^{\rm act}(j)\) the literal joint
+source-mask multiplier, and \(\Lambda(n)=(\log n)\Phi_0(n/X)\).
+The left physical large-prime residual synthesis is
+\begin{equation}
+ \cF_{h_0}^{\rm act,\mathrm L}
+ =\sum_{\substack{\gamma\in\cO_{\mathrm L},\ j\in\Z,\ \rho,\ p,\ r\\
+                   pr-m_\rho j=h_0}}
+ \gamma_\rho^{(1)}
+ \mathfrak A_{\rho,\gamma}^{\rm act}(j)
+ \mu(r)\Lambda(pr)
+ e_{\gamma,d_\rho r}\otimes e_j,
+ \label{eq:tpc48-physical-vector}
+\end{equation}
+with the inherited prime, terminal, row, and orbit restrictions
+understood.  Every coefficient is zero off those finite supports.
+TPC--45/46 identify \eqref{eq:tpc48-physical-vector} with the negative
+large-prime residual synthesis \(-\sum_pUx_p\).  It has the literal
+actual coefficients, but is not the native affine physical Gram face;
+their cross inner products need not agree
+\citep{WangTPC45,WangTPC46,WangTPC47}.
+
+For every \(h\in\Z\), define \(\cF_h^{\rm fr,\mathrm L}\) by replacing the
+determinant equation in \eqref{eq:tpc48-physical-vector} with
+\begin{equation}
+ pr-m_\rho j=h
+ \label{eq:tpc48-frozen-determinant}
+\end{equation}
+and freezing every row, support, coefficient, mask, and residual label
+constructed at \(h_0\).  Then
+\begin{equation}
+ \cF_{h_0}^{\rm fr,\mathrm L}=\cF_{h_0}^{\rm act,\mathrm L},
+ \qquad
+ \widehat{\cF}^{\rm fr,\mathrm L}(\alpha)
+ =\sum_h\cF_h^{\rm fr,\mathrm L}\e(-h\alpha).
+ \label{eq:tpc48-frozen-transform}
+\end{equation}
+For \(h\ne h_0\), this is an algebraic frozen-coefficient extension,
+not a newly reconstructed physical TPC packet.
+
+\subsection{Coefficientwise signed reassembly}
+
+For a supported source integer \(m=\ell d(m)\) and cofactor \(r\),
+define the complete vector profile
+\begin{equation}
+ G_{m,r}^{\mathrm L}(j)
+ :=\sum_{\gamma\in\cO_{\mathrm L}}
+ \gamma_m^{(1)}\mathfrak A_{m,\gamma}^{\rm act}(j)
+ e_{\gamma,d(m)r}\in\Vv_{\mathrm L}.
+ \label{eq:tpc48-vector-profile}
+\end{equation}
+Then
+\begin{equation}
+ \cF_h^{\rm fr,\mathrm L}
+ =\sum_{p,r,m,j}
+ \mu(r)\Lambda(pr)G_{m,r}^{\mathrm L}(j)\otimes e_j
+ \one_{pr-mj=h}.
+ \label{eq:tpc48-vector-frozen-family}
+\end{equation}
+
+The TPC--36 projective row-mask theorem, together with the inherited
+large-prime and Mellin separations, gives an exact signed Bochner
+representation \citep{WangTPC25,WangTPC36,WangTPC47}:
+\begin{equation}
+ \cF_h^{\rm fr,\mathrm L}=\int\cF_h^\omega\,d\nu(\omega),
+ \label{eq:tpc48-signed-reassembly}
+\end{equation}
+where
+\begin{equation}
+ \cF_h^\omega
+ =\sum_{p,r,m}
+ \sum_{\substack{j\in\Z\\j\equiv a_\omega\!\!\pmod{H_0}}}
+ A_\omega(p,r,m)\phi_\omega(j/J)
+ v_{\omega,p,r,m}\otimes e_j\,
+ \one_{pr-mj=h}.
+ \label{eq:tpc48-projective-layer}
+\end{equation}
+Here \(v_{\omega,p,r,m}\in\Vv_{\mathrm L}\) is independent of \(j\) and is
+supported on coordinates \((\gamma,d(m)r)\).  Every
+\(\phi_\omega\in C_c^\infty(\R)\).  After one fixed common cutoff,
+these profiles have common compact support and uniform
+fixed-order \(C^B\)-seminorm control; for every fixed \(B\), the
+absolute projective mass weighted by
+\(\|\phi_\omega\|_{C^B}\) is \(X^{o(1)}\).
+
+The representation is coefficientwise before terminal summation.  In
+particular, every orthogonal orbit projector below is applied to the
+already reassembled profile \eqref{eq:tpc48-vector-profile}; the
+projective layers are used to prove a common-profile inequality, never
+to select a favorable summand.  Sharp orbit projectors may create sinc
+tails, so all band decompositions are understood in \(\ell^2\), not in
+\(\ell^1\).

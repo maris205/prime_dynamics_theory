@@ -1,0 +1,205 @@
+\section{Introduction}
+\label{sec:tpc48-introduction}
+
+The large-prime descent in the TPC sequence produces the determinant
+equation
+\begin{equation}
+ pr-mj=h_0,
+ \label{eq:tpc48-intro-determinant}
+\end{equation}
+with \(m\asymp M\), an orbit length \(J\), and a literal residual
+coordinate \(s=d(m)r\).  TPC--46 completed the consecutive-shift
+family and found a mesoscopic shift-spectral gap when the output vector
+is independent of the orbit coordinate \(j\) \citep{WangTPC46}.
+TPC--47 then projected the actual \(j\)-dependent residual coefficient
+onto one complete residue-comb band.  Its canonical low core vanishes
+there on a nonempty shift interval, while the full frozen family has
+arbitrary-power leakage \citep{WangTPC47}.  That theorem is genuinely
+sectorial: it neither controls the orthogonal orbit-frequency
+complement nor gives a lower bound for the mass retained by the chosen
+band.
+
+The natural continuation is to tile the entire orbit-frequency circle
+and retain orthogonality through determinant dilation.  Two different
+questions are hidden in that sentence.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item Can the full orbit field be decomposed into exact input-output
+       resonance channels without paying the number of bands?
+ \item Does that decomposition by itself reduce coherent summation over
+       the source slopes \(m\)?
+\end{enumerate}
+The answer to the first question is yes.  The answer to the second is
+no for arbitrary orbit inputs, but becomes quantitatively positive for
+the common smooth profiles supplied by the actual projective
+reassembly.  This positive/negative distinction is the main result of
+the paper.
+
+\subsection{Critical orbit tiling}
+
+Let \(G=H_0^{-1}\Z/\Z\subset\T\), and partition the quotient
+\(\T/G\) into \(L\) half-open cells.  Their inverse images
+\(\cC_k\), \(k\in\Z/L\Z\), form translated full residue combs of
+measure \(1/L\).  If \(\Pi_k\) is the corresponding orbit Fourier
+projector, then
+\begin{equation}
+ \Pi_k\Pi_\ell=0\quad(k\ne\ell),
+ \qquad
+ \sum_{k\bmod L}\Pi_k=I
+ \label{eq:tpc48-intro-resolution}
+\end{equation}
+in the strong operator topology.  On a scalar orbit window of \(N\)
+integers,
+\begin{equation}
+ \operatorname{tr}(E_{I,v}^*\Pi_kE_{I,v})=\frac NL.
+ \label{eq:tpc48-intro-band-trace}
+\end{equation}
+Here \(E_{I,v}\) denotes zero extension on one fixed unit
+non-orbit fiber; it is defined precisely in
+\cref{sec:tpc48-tiling}.
+The critical choice \(L\asymp J\) therefore has bounded trace per
+band.  It sacrifices the growing single-band trace of TPC--47, but no
+mass hypothesis is then needed because the orthogonal sum of all bands
+is the entire orbit space.
+
+For the modulation
+\begin{equation}
+ (U_{m,\alpha}y)_j=\e(mj\alpha)y_j,
+ \label{eq:tpc48-intro-modulation}
+\end{equation}
+the block \(\Pi_kU_{m,\alpha}\Pi_\ell\) is supported precisely where
+the shifted input cell meets the output cell.  After setting
+\(q=k-\ell\pmod L\), the support condition is
+\begin{equation}
+ d_G(m\alpha,c_q)<\Delta,
+ \qquad
+ c_q=\frac{q}{LH_0},
+ \qquad
+ \Delta=\frac1{LH_0}.
+ \label{eq:tpc48-intro-tube}
+\end{equation}
+Here \(d_G(x,y):=\operatorname{dist}(x-y,G)\).
+Thus every channel is a union of exact determinant resonance tubes.
+At \(m\asymp M\), their half-width in \(\alpha\) is
+\begin{equation}
+ \frac{\Delta}{m}\asymp\frac1{LM}.
+ \label{eq:tpc48-intro-tube-width}
+\end{equation}
+The critical choice \(L\asymp J\) restores the fine scale
+\((JM)^{-1}=X^{-1+o(1)}\).  This is a square-function resolution, not a
+spectral gap.
+
+\subsection{The arbitrary-input barrier}
+
+Write \(K=|\cM|\) for the number of supported slopes and define the
+unlabelled synthesis
+\begin{equation}
+ T_\alpha((y_m)_{m\in\cM})
+ :=\sum_{m\in\cM}U_{m,\alpha}y_m.
+ \label{eq:tpc48-intro-unrestricted-synthesis}
+\end{equation}
+As an operator from \(\bigoplus_m\widetilde\Hh\) to
+\(\widetilde\Hh\), it satisfies the exact identity
+\begin{equation}
+ \boxed{\|T_\alpha\|^2=K.}
+ \label{eq:tpc48-intro-unrestricted-norm}
+\end{equation}
+Indeed, the upper bound is Cauchy--Schwarz, while
+\(y_m=U_{m,\alpha}^{-1}g\) makes every output equal to the same vector
+\(g\).  Decomposing each \(y_m\) into all input bands does not change
+this example: the input band can compensate the determinant
+translation.  Consequently all-band Parseval is not, by itself, a
+large-sieve gain.
+
+We make the obstruction more precise by retaining the difference
+channel \(q\).  The squared norm of the resulting channel-lift operator
+is exactly the essential maximum \(R_L(\alpha)\) of the pointwise
+resonance-tube multiplicity.  The physical channel collapse has norm
+squared \(L\), and
+\begin{equation}
+ K\le L R_L(\alpha).
+ \label{eq:tpc48-intro-factor-barrier}
+\end{equation}
+Both constants are optimal in their declared arbitrary-input classes.
+No statement here says that the actual TPC coefficient saturates these
+classes.
+
+\subsection{The common-profile large sieve}
+
+The inherited projective representation has additional layerwise
+structure.  Every projective layer has one common sampled profile
+\(\phi_\omega(j/J)\) for all source slopes.  After grouping the prime
+and cofactor variables at fixed \(m\), its full shift transform is
+\begin{equation}
+ \widehat{\cF}^{\omega}(\alpha)
+ =\sum_{\substack{j\in\Z\\j\equiv a_\omega\ (H_0)}}
+ \phi_\omega(j/J)
+ \left(\sum_m B_{\omega,m}(\alpha)\e(mj\alpha)\right)
+ \otimes e_j.
+ \label{eq:tpc48-intro-layer-normal-form}
+\end{equation}
+Let \(t=\|\alpha\|_\T\), with \(D_J(0;K):=K\).  Under the no-wrap
+condition
+\begin{equation}
+ H_0(M_+-M_-)t\le\frac14,
+ \label{eq:tpc48-intro-no-wrap}
+\end{equation}
+we prove
+\begin{equation}
+ \boxed{
+ \|\widehat{\cF}^{\omega}(\alpha)\|^2
+ \ll_{\phi_\omega,H_0}
+ \frac{J}{H_0}D_J(t;K)
+ \sum_m\|B_{\omega,m}(\alpha)\|^2,}
+ \qquad
+ D_J(t;K):=\min\left\{K,1+\frac1{Jt}\right\}\quad(t>0).
+ \label{eq:tpc48-intro-large-sieve}
+\end{equation}
+The proof is a progression Poisson estimate followed by the Schur test
+for the vector-valued Gram matrix, in the classical large-sieve
+tradition \citep{IwaniecKowalski2004}.  A cluster of consecutive slopes
+shows that \(D_J(t;K)\) is sharp up to constants for common-profile
+slope boxes containing a sufficiently long consecutive cluster.
+
+The full signed actual coefficient is not one projective layer.
+Minkowski reassembles all layers and leaves a declared projective
+\(m\)-square envelope.  This is an exact reduction, not an estimate of
+that envelope by the physical atomic diagonal.  At fixed \(m\),
+different cofactors \(r\) occupy the distinct residual coordinates
+\(d(m)r\), so the remaining inner object is an exact \(r\)-square sum
+of prime exponential sums.
+
+\subsection{Endpoint ledger and claim boundary}
+
+At the inherited endpoint,
+\begin{equation}
+ M=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)}.
+ \label{eq:tpc48-intro-endpoint}
+\end{equation}
+The critical band count is \(L=X^{133/400+o(1)}\).  On a coarse-edge
+shift scale \(t\asymp M^{-1}\), a dense slope box has normalized
+collision factor
+\begin{equation}
+ D_J(t;K)=X^{67/200+o(1)}.
+ \label{eq:tpc48-intro-critical-load}
+\end{equation}
+The TPC allowance is only \(X^{1/400+o(1)}\), leaving the exact exponent
+gap
+\begin{equation}
+ \frac{67}{200}-\frac1{400}=\frac{133}{400}.
+ \label{eq:tpc48-intro-allowance-gap}
+\end{equation}
+Thus, in the dense sharpness class, the large sieve gains the full
+orbit length relative to arbitrary slopewise Cauchy, but it does not
+close atomic normalization.  This ledger is not a lower bound for the
+literal slope support, whose cardinality may be smaller.
+
+The analysis concerns the frozen shift family built from the literal
+physical \(h_0\)-coefficient field.  Only \(h=h_0\) is the inherited
+physical residual synthesis, and that object belongs to the
+low-sign-averaged residual Gram route rather than the native affine
+physical face.  Nothing below proves an atomic Bessel bound, controls
+the ultra-low or alias complements, reconstructs physical packets at
+new shifts, breaks the parity barrier, or establishes a prime-pair
+asymptotic.

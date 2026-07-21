@@ -1,0 +1,226 @@
+{
+  "arithmetic": "finite-field, integer exhaustive enumeration, and fractions.Fraction; no floats or randomness",
+  "certificate_digest": "da179eb730da85c38af54f73ebf2151aece5562db62bc5fb24e2bad81d77456e",
+  "certificate_version": 1,
+  "check_total": 68662,
+  "claims": {
+    "actual_projective_square_envelope_certified": false,
+    "channel_labels_may_be_erased_without_loss": false,
+    "common_profile_rational_gram_identity": true,
+    "common_profile_rational_large_sieve_bound": true,
+    "continuous_asymptotic_large_sieve_proved_by_certificate": false,
+    "critical_compressed_trace_per_band_is_one": true,
+    "exact_all_band_fourier_partition": true,
+    "exact_equal_band_rank_and_trace": true,
+    "exact_resonance_tile_channel_map": true,
+    "exact_tube_first_and_second_moments": true,
+    "finite_cyclic_model_is_only_an_analogue": true,
+    "fixed_shift_prime_pair_bound": false,
+    "output_parseval_implies_atomic_gain": false,
+    "parity_barrier_broken": false,
+    "residual_grouping_controlled": false,
+    "resolved_channel_collision_norm_squared_is_R": true,
+    "twin_prime_conjecture": false,
+    "unlabelled_synthesis_norm_squared_is_K": true
+  },
+  "normalized_source_sha256": "ead2a9584cd3680ce0c1f770dcec3058b3436ce5dfdecc1a0fcb3858cf067f64",
+  "paper": "TPC-48",
+  "results": {
+    "common_profile_gram_large_sieve": {
+      "arithmetic": "fractions.Fraction only",
+      "boundary": "This is a finite rational common-profile Gram analogue, not the continuous determinant large-sieve theorem.",
+      "checks": 1545,
+      "common_profile_support_length": 5,
+      "cyclic_profile_length": 20,
+      "enumerated_nonzero_coefficient_vectors": 728,
+      "gram_matrix": [
+        [
+          "6469/3600",
+          "7/20",
+          "0",
+          "0",
+          "0",
+          "-1/5"
+        ],
+        [
+          "7/20",
+          "6469/3600",
+          "7/20",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "7/20",
+          "6469/3600",
+          "-1/5",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1/5",
+          "6469/3600",
+          "7/20",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "7/20",
+          "6469/3600",
+          "7/20"
+        ],
+        [
+          "-1/5",
+          "0",
+          "0",
+          "0",
+          "7/20",
+          "6469/3600"
+        ]
+      ],
+      "large_sieve_defect_LDL_pivots": [
+        "7/10",
+        "21/40",
+        "7/15",
+        "43/70",
+        "861/1720",
+        "99/287"
+      ],
+      "large_sieve_row_sum_constant": "8989/3600",
+      "off_diagonal_collision_budget": "7/10",
+      "profile_energy": "6469/3600",
+      "translation_centers": [
+        0,
+        3,
+        6,
+        10,
+        13,
+        16
+      ]
+    },
+    "critical_orbit_partition": {
+      "H0": 3,
+      "J": 4,
+      "L": 4,
+      "N": 60,
+      "N_divisible_by_H0_times_L": true,
+      "arithmetic": "F_601 on Z/60Z plus rational trace",
+      "band_sizes": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "cell_width": 5,
+      "checks": 61539,
+      "compressed_trace_per_band": "1",
+      "compressed_trace_sum": "4",
+      "full_projector_traces": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "projector_ranks": [
+        15,
+        15,
+        15,
+        15
+      ]
+    },
+    "endpoint_exponent_ledger": {
+      "L_band_count_exponent": "133/400",
+      "allowance_gap": "133/400",
+      "checks": 8,
+      "critical_collision_load": "67/200",
+      "identity": "critical_collision_load=mu-nu=67/200; allowance_gap=(mu-nu)-kappa=nu=133/400",
+      "kappa_TPC_allowance_exponent": "1/400",
+      "mu_slope_exponent": "267/400",
+      "nu_orbit_length_exponent": "133/400",
+      "per_band_trace_exponent": "0",
+      "tube_half_width_exponent": "-1"
+    },
+    "failure_witnesses": {
+      "checks": 12,
+      "witnesses": {
+        "channel_collapse_restores_K": {
+          "collapsed_norm_squared_K": 9,
+          "resolved_norm_squared_R": 4
+        },
+        "output_parseval_no_atomic_gain": {
+          "concentrated_max_atom": "1",
+          "flat_max_atom": "1/4",
+          "total_energy": "1"
+        }
+      }
+    },
+    "resonance_channels_and_tube_moments": {
+      "K_source_slopes": 9,
+      "arithmetic": "integer exhaustive enumeration on Z/60Z",
+      "checks": 5553,
+      "erasing_tile_channel_restores_norm_squared_K": 9,
+      "exhaustive_ordered_collision_count": 1500,
+      "first_moment": 540,
+      "intercepts": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16
+      ],
+      "load_distribution": {
+        "0": 30,
+        "1": 6,
+        "2": 102,
+        "3": 78,
+        "4": 24
+      },
+      "per_tile_first_moments": [
+        135,
+        135,
+        135,
+        135
+      ],
+      "per_tile_second_moments": [
+        405,
+        345,
+        405,
+        345
+      ],
+      "populated_tube_count": 210,
+      "resolved_channel_collision_norm_squared_R": 4,
+      "resonance_equation": "q + m*k = a (mod N)",
+      "second_moment": 1500,
+      "slopes": [
+        1,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31
+      ],
+      "tube_count": 240,
+      "unlabelled_synthesis_norm_squared_K": 9
+    },
+    "source_constraints": {
+      "checks": 5,
+      "no_assert_statements": true,
+      "no_float_literals": true,
+      "no_randomness": true,
+      "no_true_division": true,
+      "stdlib_only": true
+    }
+  }
+}

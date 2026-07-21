@@ -1,0 +1,111 @@
+\section{Tube statistics and sharpness ledgers}
+\label{sec:tpc48-tube-statistics}
+
+The pointwise channel load of \cref{thm:tpc48-channel-norm} is a
+worst-case quantity.  A separate two-dimensional calculation records
+the exact average incidence geometry.  It is useful precisely because
+it also shows what averaging does \emph{not} prove.
+
+Let \(E\subset\T\) be measurable and let \(\cM\subset\Z\) contain
+\(K\) distinct integers.  Define
+\begin{equation}
+ \cL_E(\alpha,\beta)
+ :=\sum_{m\in\cM}\one_E(\beta-m\alpha).
+ \label{eq:tpc48-two-dimensional-load}
+\end{equation}
+
+\begin{theorem}[Exact first and second tube moments]
+\label{thm:tpc48-tube-moments}
+With normalized Haar measure on \(\T^2\),
+\begin{align}
+ \int_{\T^2}\cL_E(\alpha,\beta)\,d\alpha\,d\beta
+ &=K|E|,
+ \label{eq:tpc48-tube-first-moment}\\
+ \int_{\T^2}\cL_E(\alpha,\beta)^2\,d\alpha\,d\beta
+ &=K|E|+K(K-1)|E|^2.
+ \label{eq:tpc48-tube-second-moment}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Translation invariance gives
+\(\int_\T\one_E(\beta-m\alpha)\,d\beta=|E|\), proving the first
+identity after summing over \(m\).  For the second, expand the square.
+The \(K\) diagonal terms contribute \(K|E|\).  If \(m\ne n\), the map
+\begin{equation}
+ (\alpha,\beta)\longmapsto
+ (\beta-m\alpha,\beta-n\alpha)
+ \label{eq:tpc48-pair-torus-map}
+\end{equation}
+is a surjective continuous homomorphism of compact tori and therefore
+pushes normalized Haar measure to normalized Haar measure.  Each
+ordered off-diagonal pair consequently contributes \(|E|^2\).
+\end{proof}
+
+For one critical quotient cell \(E=\cC_k\), \(|E|=1/L\), so
+\begin{equation}
+ \mathbb E_{\alpha,\beta}\cL_E=\frac KL,
+ \qquad
+ \mathbb E_{\alpha,\beta}\cL_E^2
+ =\frac KL+\frac{K(K-1)}{L^2}.
+ \label{eq:tpc48-critical-cell-moments}
+\end{equation}
+For dense \(K\asymp M\) and critical \(L\asymp J\), the mean load is
+\begin{equation}
+ \frac KL\asymp\frac MJ=X^{67/200+o(1)}.
+ \label{eq:tpc48-average-critical-load}
+\end{equation}
+This records the same \(K/L\) geometric density scale as the
+coarse-edge model in \eqref{eq:tpc48-dense-load}.  It is not a
+fixed-\(\alpha\) estimate.
+
+\begin{remark}[What the moment identity does not average]
+The variable \(\beta\) in \eqref{eq:tpc48-two-dimensional-load} is
+free.  The theorem does not give a second moment for the one-variable
+channel count at a fixed orbit frequency, for
+\(R_L(\alpha;\cM)\), or for the literal source-mask coefficient.
+Nor may one insert an additional independent restriction
+\(\beta\in\cC_q\) and retain the same formula without a new
+calculation.  The exact two-dimensional moments are an incidence
+ledger, not an arithmetic cancellation theorem.
+\end{remark}
+
+\subsection{The conserved phase-space product}
+
+TPC--47 used \(L_{47}=X^{\nu-\kappa+o(1)}\) bands at its mesoscopic
+resolution.  The corresponding dense coarse-edge load was
+\begin{equation}
+ \frac M{L_{47}}
+ =X^{\mu-\nu+\kappa+o(1)}
+ =X^{27/80+o(1)},
+ \label{eq:tpc48-tpc47-load}
+\end{equation}
+and the product satisfied
+\begin{equation}
+ L_{47}\frac M{L_{47}}=M.
+ \label{eq:tpc48-tpc47-phase-product}
+\end{equation}
+At the present critical resolution,
+\begin{equation}
+ L\frac ML=M
+ \label{eq:tpc48-critical-phase-product}
+\end{equation}
+as well.  The additional factor \(X^\kappa\) in \(L\) removes the
+mesoscopic \(\kappa\)-loss from the resolved channel load and restores
+the exact \(X^{-1}\) tube scale, but it cannot remove the intrinsic
+\(M/J=X^{\mu-\nu}\) density of source slopes per critical cell.
+
+There are therefore two complementary sharpness statements:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item arbitrary independent orbit inputs recover the full factor
+       \(K\) after channel collapse, by
+       \cref{thm:tpc48-unrestricted-barrier};
+ \item common-profile inputs have the smaller factor \(D_J(t;K)\),
+       and consecutive slope clusters attain it up to constants, by
+       \cref{prop:tpc48-large-sieve-sharpness}.
+\end{enumerate}
+Each inherited projective layer lies inside the second class.  The
+fully reassembled coefficient is instead a signed projective integral
+controlled through \(\mathfrak S_{\mathscr R}\); no theorem in this
+paper says that it either saturates or improves the common-profile
+frontier.
