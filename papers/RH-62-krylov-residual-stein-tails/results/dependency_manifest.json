@@ -1,0 +1,36 @@
+{
+  "external_inputs": {
+    "rh60_manuscript": {
+      "path": "papers/RH-60-finite-horizon-phase-aware-tails/main.tex",
+      "sha256": "87a20cb0c32e029f1fed9ae0241807c00e9cd6d94a04c382a1446a1dc39c5b41"
+    },
+    "rh61_audit": {
+      "path": "papers/RH-61-directional-horizon-scaling-barrier/results/horizon_scaling_audit.json",
+      "sha256": "6ff5dca6c691ca6151d1b1e1c8bf34a122375df5067b97b5b57ce15e6885f4b7"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "d4db1e0440af279dff8799738112f9f4d2f7793a602cc8cca6b51188cf2b36f5",
+    "experiments/make_figures.py": "44a4ba02623f1725f22880175b62e173d423f72c25533ec566073edfd411a97d",
+    "experiments/run_arb_krylov_audit.py": "09a40ab5d8edef13ed7f2de0dd0d97d15342810fd000087c0c32d7d0065223b2",
+    "experiments/run_krylov_tail_pilot.py": "9c53320d7b0885bc176acb99fa9fd2737bfad7f9db3cbe27165d86d4884f8f74",
+    "experiments/verify_archive.py": "de197492695ab440766dc6b8054c6be955c1577ea83f7a6a2ee45d7d4320b223",
+    "src/krylov_tail/__init__.py": "f848ac49754907d6a57a323bcfad10d22c965f897956c9f7f01182d75a9d10a6",
+    "src/krylov_tail/algebra.py": "534bb19f1dbd1d86c1de867f416a1a679afbd26829c8b9b879b407db751c553e",
+    "tests/test_smoke.py": "5c268c1d3e3c00fe1a5bf28c012f2f5d65c3c54382af5382cbc2e4e8fadd07c9",
+    "tests/test_theory.py": "171f7f381d055a27c0dc1521958c90930520735c6079285ea2f7b0c58f3c6239"
+  },
+  "publication_artifacts": {
+    ".gitignore": "7447fc33ca6f0d307891edb10a7f7b04dddc3c9ba6cd1e3562caafa1a5fce42f",
+    "README.md": "a53471f22f11f93caa0b468c231ed79091f496de1abcbeede3d2e8642a4bc679",
+    "figures/krylov_residual_tail.pdf": "eb4fae406c1e037deef9eb5cf4d116e5c8aad3316db1d19b54b5e24642b941f7",
+    "figures/krylov_residual_tail.png": "8c65e2bbe2c20f5a233755b210d253474f09807526ae81dd9a3c3cd36b04e983",
+    "krylov-residual-stein-tails.pdf": "ec958b0272f902e6dc29def6cda1f109a2b968a1520802c83ff49f429dddda55",
+    "main.pdf": "ec958b0272f902e6dc29def6cda1f109a2b968a1520802c83ff49f429dddda55",
+    "main.tex": "2d7c0ca0bf74f0cfaa494f5ebbaa88c0afec1426f8ec0bd5152721dc8d921667",
+    "pyproject.toml": "64dcc2f43bbff3fbbe9e795e91ee5f22a95ff19f7d3e9796f4f9193610508736",
+    "references.bib": "d58ef47ceccb80e25889fb00567130f1f46742d09d721e53804dce8a0e237ad5",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "status": "all_rh62_inputs_sources_and_publication_artifacts_hashed"
+}
