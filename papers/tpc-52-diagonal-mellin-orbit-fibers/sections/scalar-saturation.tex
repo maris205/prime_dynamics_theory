@@ -1,0 +1,340 @@
+\section{Scalar saturation and the orthogonal orbit lift}
+\label{sec:tpc52-scalar-saturation}
+
+This section separates two operators that have very different lower-frame
+behaviour.  The first forgets the orbit label and adds a growing collection
+of nearby scalar profiles in one Hilbert space.  The second retains that
+label as an orthogonal output coordinate.  The saturation theorem below
+concerns the first, unreduced Gram matrix.  It is not, by itself, a statement
+about the smallest positive eigenvalue after quotienting exact relations.
+
+\subsection{A clustered smooth curve has a small Gram eigenvalue}
+
+Let \(\mathsf H\) be a complex Hilbert space.  For vectors
+\(v_0,\ldots,v_r\in\mathsf H\), we use the Gram convention
+\begin{equation}
+ \operatorname{Gram}(v_0,\ldots,v_r)_{k\ell}
+ :=\langle v_\ell,v_k\rangle_{\mathsf H}.
+ \label{eq:tpc52-Gram-convention}
+\end{equation}
+Thus, for every \(c\in\C^{r+1}\),
+\begin{equation}
+ c^*\operatorname{Gram}(v_0,\ldots,v_r)c
+ =\left\|\sum_{\ell=0}^r c_\ell v_\ell\right\|_{\mathsf H}^2.
+ \label{eq:tpc52-Gram-quadratic-form}
+\end{equation}
+
+\begin{theorem}[Clustered-curve saturation]
+\label{thm:tpc52-scalar-saturation}
+Let \(I\subset\R\) be an interval, let \(r\geq1\), and let
+\(g\in C^r(I;\mathsf H)\) satisfy \(\|g(a)\|_{\mathsf H}=1\) on
+\(I\).  Fix a compact interval \(I_1\Subset I\).  Suppose that, for
+some \(J\geq1\), there are \(r+1\) distinct points
+\(a_0,\ldots,a_r\in I_1\) and a point \(a_*\in I_1\) such that
+\begin{equation}
+ \max_{0\leq\ell\leq r}|a_\ell-a_*|\leq \frac{D}{J}
+ \label{eq:tpc52-cluster-width}
+\end{equation}
+for a fixed \(D>0\).  Then
+\begin{equation}
+ \lambda_{\min}\!\left(
+   \operatorname{Gram}(g(a_0),\ldots,g(a_r))
+ \right)
+ \leq
+ \frac{(r+1)D^{2r}}{(r!)^2J^{2r}}
+ \sup_{a\in I_1}\|g^{(r)}(a)\|_{\mathsf H}^2.
+ \label{eq:tpc52-clustered-Gram-bound}
+\end{equation}
+Consequently, the least eigenvalue of any larger normalized Gram matrix
+containing these vectors is bounded by the right-hand side of
+\eqref{eq:tpc52-clustered-Gram-bound}.
+\end{theorem}
+
+\begin{proof}
+The homogeneous system
+\begin{equation}
+ \sum_{\ell=0}^r c_\ell(a_\ell-a_*)^q=0,
+ \qquad 0\leq q<r,
+ \label{eq:tpc52-vanishing-moments}
+\end{equation}
+has \(r\) equations and \(r+1\) unknowns.  Choose a nonzero solution
+and normalize it by \(\sum_\ell|c_\ell|^2=1\).  Taylor's formula with
+integral remainder gives
+\begin{equation}
+ g(a_\ell)
+ =\sum_{q=0}^{r-1}
+   \frac{g^{(q)}(a_*)}{q!}(a_\ell-a_*)^q+R_\ell,
+ \qquad
+ \|R_\ell\|_{\mathsf H}
+ \leq \frac{|a_\ell-a_*|^r}{r!}
+       \sup_{a\in I_1}\|g^{(r)}(a)\|_{\mathsf H}.
+ \label{eq:tpc52-Hilbert-Taylor}
+\end{equation}
+The line segment between \(a_*\) and every \(a_\ell\) lies in
+\(I_1\), because \(I_1\) is an interval.  The polynomial terms in
+\eqref{eq:tpc52-Hilbert-Taylor} cancel by
+\eqref{eq:tpc52-vanishing-moments}.  Hence Cauchy--Schwarz and
+\eqref{eq:tpc52-cluster-width} give
+\begin{align}
+ \left\|\sum_{\ell=0}^r c_\ell g(a_\ell)\right\|_{\mathsf H}
+ &\leq \sum_{\ell=0}^r|c_\ell|\,\|R_\ell\|_{\mathsf H}\notag\\
+ &\leq \frac{\sqrt{r+1}D^r}{r!J^r}
+       \sup_{a\in I_1}\|g^{(r)}(a)\|_{\mathsf H}.
+ \label{eq:tpc52-cluster-combination}
+\end{align}
+The Rayleigh principle and \eqref{eq:tpc52-Gram-quadratic-form} prove
+\eqref{eq:tpc52-clustered-Gram-bound}.  The assertion for a larger
+Gram matrix follows either by extending \(c\) by zero or by Cauchy
+interlacing.
+\end{proof}
+
+The normalization in the theorem costs no regularity on an interior
+nonzero family.
+
+\begin{corollary}[Normalization and the logarithmic orbit grid]
+\label{cor:tpc52-log-grid-saturation}
+Let \(f\in C^r(I;\mathsf H)\), and suppose that
+\begin{equation}
+ \inf_{a\in I_1}\|f(a)\|_{\mathsf H}>0
+ \label{eq:tpc52-curve-nondegeneracy}
+\end{equation}
+on a compact interval \(I_1\Subset I\).  Then
+\(g(a):=f(a)/\|f(a)\|_{\mathsf H}\) is a \(C^r\) normalized curve on
+\(I_1\), and the conclusion of
+\cref{thm:tpc52-scalar-saturation} holds with a constant depending only
+on \(r,D\), the lower bound in
+\eqref{eq:tpc52-curve-nondegeneracy}, and the \(C^r\)-bounds for \(f\).
+
+In particular, fix \(0<z_-<z_+<\infty\), a residue modulus
+\(H_0\geq1\), and put
+\begin{equation}
+ a_j:=\log(j/J),
+ \qquad z_-J\leq j\leq z_+J,
+ \qquad j\equiv a\pmod {H_0}.
+ \label{eq:tpc52-log-orbit-nodes}
+\end{equation}
+For every fixed \(r\), any \(r+1\) consecutive nodes in this
+progression form a cluster of width \(O_{r,H_0,z_-}(J^{-1})\).
+Therefore their normalized scalar Gram has least eigenvalue
+\begin{equation}
+ \lambda_{\min}\ll_{r,H_0,z_-,f}J^{-2r}.
+ \label{eq:tpc52-log-grid-Gram-decay}
+\end{equation}
+At the inherited scale \(J=X^{133/400+o(1)}\), the case \(r=1\)
+already gives a condition-number lower bound
+\(X^{133/200+o(1)}\) whenever the selected two-vector Gram is
+nonsingular.  For every fixed \(r\), the corresponding lower bound is
+\(X^{133r/200+o(1)}\).
+\end{corollary}
+
+\begin{proof}
+The norm map is \(C^r\) away from zero, so the first assertion follows
+from the chain and quotient rules.  For the second, if
+\(j\asymp J\), then
+\begin{equation}
+ \log\frac{j+H_0}{j}
+ =\log\left(1+\frac{H_0}{j}\right)
+ =O_{H_0,z_-}(J^{-1}).
+ \label{eq:tpc52-adjacent-log-spacing}
+\end{equation}
+Summing at most \(r\) such spacings verifies
+\eqref{eq:tpc52-cluster-width}.  Apply
+\cref{thm:tpc52-scalar-saturation}.  A normalized Gram has diagonal
+entries one and hence largest eigenvalue at least one.  Dividing by
+\eqref{eq:tpc52-log-grid-Gram-decay} gives the stated condition-number
+bounds when the least eigenvalue is positive.
+\end{proof}
+
+\begin{remark}[Unreduced Gram versus exact quotient]
+\label{rem:tpc52-unreduced-versus-quotient}
+The bounds above concern the least eigenvalue of the unreduced
+coefficient Gram.  If the selected vectors have an exact relation, that
+least eigenvalue is zero, which is an even stronger failure of a
+full-space lower frame.  Quotienting by the exact synthesis kernel
+removes zero eigenvalues.  A bound for the smallest \emph{positive}
+quotient eigenvalue therefore requires an additional verification that
+the selected profiles have no exact relation.  The translate theorem
+below supplies that verification on one important interior model; no
+such verification is inferred merely from smooth dependence on the
+parameter.
+\end{remark}
+
+\subsection{Exact scalar rank and metric entropy}
+
+\begin{proposition}[Interior translates: rank and scalar-bank lower bound]
+\label{prop:tpc52-translate-rank}
+Let \(0\ne w\in C_c^\infty(\R)\), let
+\(a_1,\ldots,a_M\in\R\) be distinct, and put
+\(w_j(s):=w(s+a_j)\).  Then the \(w_j\) are linearly independent in
+\(L^2(\R)\).  If an open interval \(U\) contains
+\(\bigcup_{j=1}^M\supp w_j\), their restrictions are also linearly
+independent in \(L^2(U)\).
+
+Let \(V_M:=\Span\{w_1|_U,\ldots,w_M|_U\}\), so that
+\(\dim_\C V_M=M\).  If \(B\subset L^2(U)\) is a linear space and a
+linear map \(P:V_M\to B\) satisfies
+\begin{equation}
+ \|v-Pv\|_{L^2(U)}\leq\eta\|v\|_{L^2(U)}
+ \qquad(v\in V_M)
+ \label{eq:tpc52-uniform-relative-scalar-approximation}
+\end{equation}
+for some \(0\leq\eta<1\), then
+\begin{equation}
+ \dim_\C B\geq M.
+ \label{eq:tpc52-scalar-rank-lower-bound}
+\end{equation}
+Moreover, if \(\mathbb B_{V_M}\) is the unit ball of \(V_M\), then
+for \(0<\eta<1\) its covering number in the \(L^2(U)\) metric obeys
+\begin{equation}
+ \mathcal N(\mathbb B_{V_M},\eta)\geq\eta^{-2M}.
+ \label{eq:tpc52-translate-entropy}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+If \(\sum_jc_jw(s+a_j)=0\) on \(\R\), Fourier transformation gives
+\begin{equation}
+ \widehat w(\xi)\sum_{j=1}^M c_j\e^{ia_j\xi}=0.
+ \label{eq:tpc52-translate-Fourier-relation}
+\end{equation}
+The entire function \(\widehat w\) is not identically zero, and hence
+is nonzero on some real open interval.  The exponential polynomial in
+\eqref{eq:tpc52-translate-Fourier-relation} vanishes on that interval,
+so it vanishes identically.  Its first \(M\) derivatives at one point
+form a Vandermonde system in the distinct \(a_j\), forcing every
+\(c_j=0\).  If the restrictions have a relation on \(U\), the linear
+combination is supported in \(U\) and vanishes there, hence vanishes on
+all of \(\R\).  This proves the rank assertion.
+
+If \(Pv=0\), \eqref{eq:tpc52-uniform-relative-scalar-approximation}
+gives \(\|v\|\leq\eta\|v\|\), so \(v=0\).  Thus \(P\) is injective
+on the \(M\)-dimensional space \(V_M\), proving
+\eqref{eq:tpc52-scalar-rank-lower-bound}.  Finally regard \(V_M\) as a
+real Euclidean space of dimension \(2M\).  Orthogonally projecting the
+centres of any radius-\(\eta\) cover onto \(V_M\) does not increase
+distances.  Comparing \(2M\)-dimensional volumes of the unit ball and
+radius-\(\eta\) balls yields
+\eqref{eq:tpc52-translate-entropy}.
+\end{proof}
+
+Thus, whenever an interior scalar translate family has
+\(M\asymp J\), every scalar bank satisfying a uniform relative-output
+estimate with error below one has rank \(\gg J\).  At
+\(J=X^{133/400+o(1)}\), a scalar bank of polylogarithmic rank cannot do
+this.  This rank statement is conditional on the displayed interior
+translate model; it is not being promoted to a quotient-rank theorem
+for every restricted product profile.
+
+\subsection{Retaining the orbit coordinate}
+
+The physical coefficient space uses a different synthesis.
+
+\begin{theorem}[Exact orthogonal-lift identity]
+\label{thm:tpc52-orthogonal-lift}
+Let \((\Omega,\sigma)\) be a measure space, let \(\mathsf K\) be a
+complex Hilbert space, and let \(S\) be a finite set.  For
+\(f_j\in L^2(\sigma;\mathsf K)\), define
+\begin{equation}
+ \mathsf T^\perp c(x)
+ :=\bigoplus_{j\in S}c_jf_j(x)
+ \in\ell^2(S;\mathsf K),
+ \qquad c=(c_j)_{j\in S}\in\C^S.
+ \label{eq:tpc52-orthogonal-lift-operator}
+\end{equation}
+Then
+\begin{equation}
+ \|\mathsf T^\perp c\|_{L^2(\sigma;\ell^2(S;\mathsf K))}^2
+ =\sum_{j\in S}|c_j|^2
+   \|f_j\|_{L^2(\sigma;\mathsf K)}^2.
+ \label{eq:tpc52-orthogonal-lift-identity}
+\end{equation}
+Consequently its coefficient Gram is the diagonal matrix
+\begin{equation}
+ \diag\left(\|f_j\|_{L^2(\sigma;\mathsf K)}^2:j\in S\right).
+ \label{eq:tpc52-orthogonal-lift-Gram}
+\end{equation}
+After discarding the zero vectors and normalizing each nonzero
+\(f_j\), the Gram is exactly the identity.  All statements remain true
+when \(\sigma\) is a finite weighted sampling measure.
+\end{theorem}
+
+\begin{proof}
+For almost every \(x\), orthogonality of the coordinate copies of
+\(\mathsf K\) gives
+\begin{equation}
+ \left\|\bigoplus_{j\in S}c_jf_j(x)\right\|^2
+ =\sum_{j\in S}|c_j|^2\|f_j(x)\|_{\mathsf K}^2.
+ \label{eq:tpc52-pointwise-orthogonal-lift}
+\end{equation}
+Integrate the finite nonnegative sum.  The Gram and normalization
+statements follow immediately.
+\end{proof}
+
+The theorem does not reduce the number of orbit coordinates.  It says
+that a row-log frequency bank may have Hilbert-valued coefficients
+carrying all those coordinates without creating the scalar cross terms
+from \cref{thm:tpc52-scalar-saturation}.
+
+\begin{proposition}[Sparse deletion through leverage]
+\label{prop:tpc52-mask-leverage}
+Let \(\cR\) be a finite row set of size \(N\), let \(w_\gamma>0\), and
+let \(M(\alpha,\gamma)\in\{0,1\}\) satisfy
+\begin{equation}
+ \#\{\gamma\in\cR:M(\alpha,\gamma)=0\}\leq\eps N
+ \label{eq:tpc52-leverage-mask-degree}
+\end{equation}
+for every source label \(\alpha\).  For a finite orbit set \(S\), let
+\(f_{\alpha,j}:\cR\to\mathsf K\), and suppose
+\begin{equation}
+ E_{\alpha,j}
+ :=\sum_{\gamma\in\cR}w_\gamma
+        \|f_{\alpha,j}(\gamma)\|_{\mathsf K}^2>0.
+ \label{eq:tpc52-component-row-energy}
+\end{equation}
+Define the leverage
+\begin{equation}
+ \mathfrak L_{\alpha,j}
+ :=\frac{N\max_{\gamma\in\cR}
+       w_\gamma\|f_{\alpha,j}(\gamma)\|_{\mathsf K}^2}
+       {E_{\alpha,j}},
+ \qquad
+ \mathfrak L_*:=\sup_{\alpha,j}\mathfrak L_{\alpha,j}.
+ \label{eq:tpc52-mask-leverage}
+\end{equation}
+Then, for every \(c\in\C^S\),
+\begin{align}
+ &\sum_{j\in S}|c_j|^2
+   \sum_{\gamma\in\cR}M(\alpha,\gamma)w_\gamma
+       \|f_{\alpha,j}(\gamma)\|_{\mathsf K}^2
+ \notag\\
+ &\hspace{20mm}\geq
+ (1-\eps\mathfrak L_*)
+ \sum_{j\in S}|c_j|^2E_{\alpha,j}.
+ \label{eq:tpc52-masked-orthogonal-lower-bound}
+\end{align}
+The reverse inequality with constant one is automatic.  If
+\(\eps\mathfrak L_*\geq1\), the displayed lower bound is interpreted
+as the trivial nonnegative bound.
+\end{proposition}
+
+\begin{proof}
+For each \((\alpha,j)\), the deleted energy is at most
+\begin{align}
+ \#\{\gamma:M(\alpha,\gamma)=0\}
+ \max_\gamma w_\gamma\|f_{\alpha,j}(\gamma)\|^2
+ \leq\eps\mathfrak L_{\alpha,j}E_{\alpha,j}.
+ \label{eq:tpc52-leverage-deletion-proof}
+\end{align}
+Subtract this estimate, multiply by \(|c_j|^2\), and sum in \(j\).
+Deleting nonnegative terms proves the upper bound.
+\end{proof}
+
+\begin{remark}[Scope of the leverage condition]
+\label{rem:tpc52-leverage-scope}
+The exact lift \eqref{eq:tpc52-orthogonal-lift-identity} is purely
+Hilbert-space algebra.  A bound \(\mathfrak L_*=O(1)\) is a separate
+sampling assertion.  Later sections verify an aggregate version on
+uniformly active prime--squarefree row blocks.  Neither the identity nor
+the leverage estimate is a statement about coherent prime summation,
+sieve parity, or a fixed-shift prime-pair lower bound.
+\end{remark}

@@ -1,0 +1,312 @@
+\section{The exact diagonal Mellin ledger}
+\label{sec:tpc52-diagonal-mellin}
+
+We now evaluate the canonical envelope on the distinguished physical
+direction.  The result is an exact coordinatewise identity.  It uses
+neither orthogonality between different Mellin parameters nor a lower
+frame for arbitrary signed coefficient densities.
+
+\subsection{One direct cell and \texorpdfstring{$q$}{q} smooth factors}
+
+Fix an integer \(q\geq1\), and let
+\(0\ne W_\nu\in C_c^\infty((0,\infty))\) for
+\(1\leq\nu\leq q\).  We use the real-axis Mellin convention
+\begin{align}
+ \widetilde W_\nu(t)
+ &:=\int_0^\infty W_\nu(x)x^{-it}\,\frac{dx}{x},
+ \label{eq:tpc52-Mellin-transform}\\
+ W_\nu(x)
+ &=\frac1{2\pi}\int_\R
+     \widetilde W_\nu(t)x^{it}\,dt.
+ \label{eq:tpc52-Mellin-inversion}
+\end{align}
+Indeed, \(s\mapsto W_\nu(\e^s)\) is a compactly supported smooth
+function on \(\R\), so \(\widetilde W_\nu\) is Schwartz and
+\eqref{eq:tpc52-Mellin-inversion} is ordinary Fourier inversion in
+the logarithmic coordinate.
+
+Let \(w_B:\R^q\to[1,\infty)\) be measurable and of at most polynomial
+growth; more precisely, for a fixed \(B\geq0\), assume
+\begin{equation}
+ w_B(\bm t)\leq C_B(1+|\bm t|)^B.
+ \label{eq:tpc52-Mellin-profile-weight}
+\end{equation}
+Define the positive product measure
+\begin{equation}
+ d\mu_{\mathbf W}(\bm t)
+ :=(2\pi)^{-q}\prod_{\nu=1}^q
+       |\widetilde W_\nu(t_\nu)|\,d\bm t
+ \label{eq:tpc52-Mellin-variation-measure}
+\end{equation}
+and the polar phase
+\begin{equation}
+ \varsigma_{\mathbf W}(\bm t)
+ :=\prod_{\nu=1}^q
+   \begin{cases}
+    \widetilde W_\nu(t_\nu)/
+       |\widetilde W_\nu(t_\nu)|,
+       &\widetilde W_\nu(t_\nu)\ne0,\\
+    0,&\widetilde W_\nu(t_\nu)=0.
+   \end{cases}
+ \label{eq:tpc52-Mellin-polar-phase}
+\end{equation}
+Its value on the \(\mu_{\mathbf W}\)-null zero set is immaterial.  The
+fixed weighted Wiener--Mellin mass is
+\begin{equation}
+ A_B(\mathbf W)
+ :=\int_{\R^q}w_B(\bm t)\,d\mu_{\mathbf W}(\bm t)
+ =\frac1{(2\pi)^q}\int_{\R^q}
+   w_B(\bm t)\prod_{\nu=1}^q
+   |\widetilde W_\nu(t_\nu)|\,d\bm t.
+ \label{eq:tpc52-weighted-Mellin-mass}
+\end{equation}
+Schwartz decay and \eqref{eq:tpc52-Mellin-profile-weight} give
+\begin{equation}
+ 0<A_B(\mathbf W)<\infty.
+ \label{eq:tpc52-Mellin-mass-finite}
+\end{equation}
+
+Let \(\cI\) be a finite nonempty coordinate set.  For
+\(i\in\cI\), fix \(c_i\in\C\) and positive samples
+\(x_{i,1},\ldots,x_{i,q}>0\).  Put
+\begin{equation}
+ A_{\bm t}(c)_i
+ :=\varsigma_{\mathbf W}(\bm t)c_i
+   \prod_{\nu=1}^q x_{i,\nu}^{it_\nu}
+ \in\ell^2(\cI).
+ \label{eq:tpc52-diagonal-Mellin-layer}
+\end{equation}
+Every sample phase in \eqref{eq:tpc52-diagonal-Mellin-layer} has unit
+modulus.
+
+\begin{theorem}[Exact \(q\)-factor diagonal Mellin identity]
+\label{thm:tpc52-diagonal-Mellin}
+\label{thm:tpc52-diagonal-ledger}
+For \(c=(c_i)_{i\in\cI}\in\ell^2(\cI)\), define
+\begin{align}
+ \cS_{\mathbf W}c
+ &:=\int_{\R^q}A_{\bm t}(c)\,
+       d\mu_{\mathbf W}(\bm t),
+ \label{eq:tpc52-diagonal-Mellin-synthesis}\\
+ \cE_B(\mathbf W;c)
+ &:=\int_{\R^q}w_B(\bm t)
+       \|A_{\bm t}(c)\|_{\ell^2(\cI)}
+       \,d\mu_{\mathbf W}(\bm t).
+ \label{eq:tpc52-diagonal-Mellin-envelope}
+\end{align}
+Then the Bochner integral is absolutely convergent and
+\begin{align}
+ (\cS_{\mathbf W}c)_i
+ &=c_i\prod_{\nu=1}^qW_\nu(x_{i,\nu}),
+ \label{eq:tpc52-diagonal-output}\\
+ \|\cS_{\mathbf W}c\|_2^2
+ &=\sum_{i\in\cI}|c_i|^2
+   \prod_{\nu=1}^q|W_\nu(x_{i,\nu})|^2,
+ \label{eq:tpc52-diagonal-output-energy}\\
+ \cE_B(\mathbf W;c)
+ &=A_B(\mathbf W)\|c\|_2.
+ \label{eq:tpc52-exact-envelope-equality}
+\end{align}
+
+For \(c\ne0\), define the physical profile-overlap ratio
+\begin{equation}
+ \Theta(\mathbf W;c)
+ :=\frac{
+   \displaystyle\sum_{i\in\cI}|c_i|^2
+    \prod_{\nu=1}^q|W_\nu(x_{i,\nu})|^2}
+   {\displaystyle\sum_{i\in\cI}|c_i|^2}.
+ \label{eq:tpc52-profile-overlap-ratio}
+\end{equation}
+If \(\Theta(\mathbf W;c)>0\), then
+\begin{equation}
+ \boxed{
+ \frac{\cE_B(\mathbf W;c)^2}
+      {\|\cS_{\mathbf W}c\|_2^2}
+ =\frac{A_B(\mathbf W)^2}{\Theta(\mathbf W;c)}.}
+ \label{eq:tpc52-exact-Theta-ledger}
+\end{equation}
+If \(c\ne0\) and \(\Theta(\mathbf W;c)=0\), then
+\(\cS_{\mathbf W}c=0\) while
+\(\cE_B(\mathbf W;c)>0\); the ratio in
+\eqref{eq:tpc52-exact-Theta-ledger} is therefore \(+\infty\), in
+agreement with the extended-real convention \(A_B^2/0=+\infty\).
+For \(c=0\), both sides of the synthesis and envelope identities are
+zero, but no condition number and no ratio \(0/0\) is defined.
+\end{theorem}
+
+\begin{proof}
+Since \(\cI\) is finite, \eqref{eq:tpc52-Mellin-mass-finite} and
+\begin{equation}
+ \|A_{\bm t}(c)\|_2=\|c\|_2
+ \quad\text{for }\mu_{\mathbf W}\text{-almost every }\bm t
+ \label{eq:tpc52-unit-layer-norm}
+\end{equation}
+give Bochner integrability.  In coordinate \(i\), Fubini's theorem and
+the product form of \(\mu_{\mathbf W}\) give
+\begin{align}
+ \int_{\R^q}A_{\bm t}(c)_i\,
+      d\mu_{\mathbf W}(\bm t)
+ &=\frac{c_i}{(2\pi)^q}
+   \int_{\R^q}\prod_{\nu=1}^q
+     \widetilde W_\nu(t_\nu)x_{i,\nu}^{it_\nu}
+     \,d\bm t\notag\\
+ &=c_i\prod_{\nu=1}^qW_\nu(x_{i,\nu}),
+ \label{eq:tpc52-coordinatewise-Mellin-inversion}
+\end{align}
+where the last line is \eqref{eq:tpc52-Mellin-inversion} in each
+variable.  This proves \eqref{eq:tpc52-diagonal-output}; orthogonality
+of the coordinate basis proves
+\eqref{eq:tpc52-diagonal-output-energy}.  Equation
+\eqref{eq:tpc52-unit-layer-norm} and the definition
+\eqref{eq:tpc52-weighted-Mellin-mass} give
+\eqref{eq:tpc52-exact-envelope-equality}.  Finally,
+\eqref{eq:tpc52-profile-overlap-ratio} says exactly that
+\begin{equation}
+ \|\cS_{\mathbf W}c\|_2^2
+ =\Theta(\mathbf W;c)\|c\|_2^2.
+ \label{eq:tpc52-output-as-overlap}
+\end{equation}
+Combining this with \eqref{eq:tpc52-exact-envelope-equality} proves
+the ledger and all zero-denominator assertions.
+\end{proof}
+
+\begin{remark}[What the identity does not say]
+\label{rem:tpc52-diagonal-identity-scope}
+The coefficient vector \(c\) in
+\cref{thm:tpc52-diagonal-Mellin} is the fixed base vector carried by
+the physical coordinates.  The theorem does not permit an arbitrary
+signed density in \(\bm t\), and it does not assert a lower frame on
+the full Mellin coefficient space.  All row, orbit, and residue phases
+that have unit modulus may be included in the samples or in \(c_i\);
+literal mask zeros may also be included in \(c_i\).  The identity
+fails to describe a later map that first sums several physical
+coordinates coherently and only then takes a Hilbert norm.
+\end{remark}
+
+\subsection{A fixed number of direct residue cells}
+
+The actual provenance uses a fixed finite disjoint union of direct
+residue cells.  Their output supports are orthogonal because the orbit
+classes are disjoint.  The outer canonical envelope, however, is an
+\(\ell^1\)-sum over the cells.  The following comparison records the
+resulting fixed constant exactly.
+
+\begin{corollary}[Finite direct-cell \(L^1\) comparison]
+\label{cor:tpc52-finite-direct-cell-comparison}
+Let \(\mathfrak A\) be a fixed nonempty finite set.  For every
+\(a\in\mathfrak A\), let
+\(\mathbf W_a=(W_{a,1},\ldots,W_{a,q_a})\) satisfy the hypotheses of
+\cref{thm:tpc52-diagonal-Mellin}, let \(c^{(a)}\) be a finite base
+vector, and suppose that the corresponding physical outputs lie in
+pairwise orthogonal Hilbert subspaces.  Put
+\begin{align}
+ b_a&:=\|c^{(a)}\|_2,
+ &A_a&:=A_B(\mathbf W_a),
+ \label{eq:tpc52-direct-cell-base-data}\\
+ \cE_B^{\rm dir}
+ &:=\sum_{a\in\mathfrak A}A_ab_a,
+ &\mathcal B_{\rm dir}^2
+ &:=\sum_{a\in\mathfrak A}b_a^2,
+ \label{eq:tpc52-direct-cell-envelope}\\
+ \Theta_{\rm dir}
+ &:=\frac{
+   \displaystyle\sum_{a\in\mathfrak A}
+       \|\cS_{\mathbf W_a}c^{(a)}\|_2^2}
+   {\mathcal B_{\rm dir}^2},
+ \label{eq:tpc52-direct-cell-overlap}
+\end{align}
+whenever \(\mathcal B_{\rm dir}>0\).  Then
+\begin{equation}
+ A_-^2\mathcal B_{\rm dir}^2
+ \leq (\cE_B^{\rm dir})^2
+ \leq A_2^2\mathcal B_{\rm dir}^2,
+ \qquad
+ A_-:=\min_{a\in\mathfrak A}A_a,
+ \quad
+ A_2^2:=\sum_{a\in\mathfrak A}A_a^2.
+ \label{eq:tpc52-direct-cell-envelope-comparison}
+\end{equation}
+If \(\Theta_{\rm dir}>0\), orthogonality of the cell outputs gives
+\begin{equation}
+ \boxed{
+ \frac{A_-^2}{\Theta_{\rm dir}}
+ \leq
+ \frac{(\cE_B^{\rm dir})^2}
+      {\displaystyle\sum_{a\in\mathfrak A}
+       \|\cS_{\mathbf W_a}c^{(a)}\|_2^2}
+ \leq
+ \frac{A_2^2}{\Theta_{\rm dir}}.}
+ \label{eq:tpc52-finite-cell-Theta-ledger}
+\end{equation}
+If \(\Theta_{\rm dir}=0\), the nonzero base vector has zero physical
+output and positive envelope, so the middle ratio is \(+\infty\).
+The constants \(A_-\) and \(A_2\) depend only on the fixed direct
+cells, shapes, and profile weight, and not on \(X\) or on the physical
+coordinate multiplicities.
+\end{corollary}
+
+\begin{proof}
+Every \(A_a\) is positive by
+\eqref{eq:tpc52-Mellin-mass-finite}.  Therefore
+\begin{equation}
+ \cE_B^{\rm dir}
+ =\sum_aA_ab_a
+ \geq A_-\sum_ab_a
+ \geq A_-\left(\sum_ab_a^2\right)^{1/2}.
+ \label{eq:tpc52-direct-cell-lower-L1}
+\end{equation}
+Cauchy--Schwarz gives
+\begin{equation}
+ \cE_B^{\rm dir}
+ \leq\left(\sum_aA_a^2\right)^{1/2}
+      \left(\sum_ab_a^2\right)^{1/2}.
+ \label{eq:tpc52-direct-cell-upper-L1}
+\end{equation}
+These are \eqref{eq:tpc52-direct-cell-envelope-comparison}.  Pairwise
+orthogonality and \eqref{eq:tpc52-direct-cell-overlap} give
+\begin{equation}
+ \sum_a\|\cS_{\mathbf W_a}c^{(a)}\|_2^2
+ =\Theta_{\rm dir}\mathcal B_{\rm dir}^2.
+ \label{eq:tpc52-direct-cell-output-energy}
+\end{equation}
+Divide \eqref{eq:tpc52-direct-cell-envelope-comparison} by this
+identity.  If \(\Theta_{\rm dir}=0\), every physical cell output is
+zero while \(\cE_B^{\rm dir}>0\), proving the last assertion.
+\end{proof}
+
+\begin{remark}[Direct cells are essential]
+\label{rem:tpc52-direct-cells-essential}
+The orthogonality in
+\cref{cor:tpc52-finite-direct-cell-comparison} holds for direct residue
+classes, such as disjoint classes of \(j\pmod {H_0}\).  It is not
+asserted for overlapping signed Fourier cells or for projective-mask
+parameters.  Appending cancelling signed layers can change their outer
+\(L^1\) envelope without changing the physical multiplier.  Thus the
+finite-cell comparison does not license a reverse Minkowski inequality
+for an arbitrary signed representation.
+\end{remark}
+
+\subsection{Identification with the retained physical coordinates}
+
+For the interface of \cref{sec:tpc52-interface}, take
+\begin{equation}
+ i=(m,r,\gamma,j),
+ \label{eq:tpc52-physical-coordinate-identification}
+\end{equation}
+include the literal mask, source coefficient, fixed residue amplitude,
+and common carrier in \(c_i\), and take the positive samples
+\(x_{i,\nu}\) to be the declared arguments of the physical smooth
+factors.  Typical examples are \(m_\gamma j/X\) and
+\(d_\gamma j/K\).  Before coherent prime summation and before grouping
+the residual label, these coordinates are orthogonal by
+\eqref{eq:tpc52-exact-physical-energy}.  Hence
+\cref{thm:tpc52-diagonal-Mellin,cor:tpc52-finite-direct-cell-comparison}
+apply literally to the provenance-fixed direction
+\(\cS_X^L\one=G_X^L\).
+
+The only remaining analytic input at this interface is a lower bound
+for the explicit nonnegative overlap
+\(\Theta_{\rm dir}\).  The diagonal theorem neither assumes nor proves
+such a bound.  In particular, it contains no distribution estimate for
+primes, no parity-sensitive cancellation, and no fixed-shift
+prime-pair conclusion.

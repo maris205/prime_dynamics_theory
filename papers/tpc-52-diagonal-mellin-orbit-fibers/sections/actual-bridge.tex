@@ -1,0 +1,387 @@
+\section{The coefficientwise actual-direction bridge}
+\label{sec:tpc52-actual-bridge}
+
+We now combine the sampled overlap theorem with the provenance-fixed Mellin
+representation.  The conclusion concerns one distinguished coefficient
+density and the coefficientwise pre-terminal Hilbert space.  It is not a
+lower-frame theorem for arbitrary signed Mellin densities.
+
+\subsection{The exact actual-to-profile dictionary}
+
+The sampled theorem of \cref{sec:tpc52-profile-overlap} is abstract until its
+weights and profiles are identified coordinate by coordinate with
+\eqref{eq:tpc52-exact-physical-energy}.  We therefore isolate, rather than
+hide, the required application hypothesis.  For notational economy it is
+stated on one fixed row-residue group; its finitely many orbit-residue cells
+form \(\cA_0\).  A fixed finite collection of row-residue groups is treated
+by orthogonal summation.
+
+\begin{assumption}[Exact actual-profile identification]
+\label{ass:tpc52-exact-profile-dictionary}
+The following data agree on every retained coordinate
+\(i=(a,m,r,j,\gamma)\).
+\begin{enumerate}[label=\textup{(I\arabic*)},leftmargin=3.2em]
+ \item The opposite-row universe is one complete positive-density
+ admissible prime--squarefree residue cell in the nondegenerate interior
+ regime of TPC--50, \(m=\ell d\) is injective there, and no independent
+ opposite-row pruning has occurred.  The only deletion is
+ \(M_X(m,\gamma)=K_{m\gamma}\).
+ \item The base weight is
+ \(\omega_{\gamma,X}=(\log\ell_\gamma)^{2e}\),
+ \(e\in\{0,1\}\).  Every fixed dyadic, unary, and residue amplitude not
+ contained in the outer coefficient is placed in the named functions
+ \(B_{\beta_m,a}\) and \(F_{\beta_m,a}\).
+ \item There are outer source coefficients \(a_m\), independent of the
+ retained cofactor label \(r\), and diagonal carrier
+ coordinates \(c_{X,a}(i)\) such that
+ \begin{align}
+  |c_{X,a}(i)|^2
+  &={}
+  M_X(m,\gamma)|a_m|^2\omega_{\gamma,X}
+  |B_{\beta_m,a}(q_\gamma,j/J)|^2,
+  \label{eq:tpc52-carrier-coordinate-dictionary}\\
+  |\gamma_m^{(1)}|^2K_{m\gamma}
+  |\Xi_{m,\gamma}(j)|^2
+  |\mathcal W_{m,\gamma}(j/J)|^2
+  &={}
+  M_X(m,\gamma)|a_m|^2\omega_{\gamma,X}
+  |F_{\beta_m,a}(q_\gamma,j/J)|^2.
+  \label{eq:tpc52-profile-coordinate-dictionary}
+ \end{align}
+ The direct cells are disjoint and these identities use the same physical
+ atomic normalization as \eqref{eq:tpc52-coefficient-space}.
+\end{enumerate}
+\end{assumption}
+
+This assumption is a checkable dictionary, not a conclusion of the cited
+papers.  TPC--25 supplies the constituent Mellin factorizations and
+TPC--50/51 supply the complete-row sampling and mask estimates on their
+declared cells; neither reference proves that an arbitrary inherited packet
+satisfies all three items above.  If the dictionary is not verified, the
+results below remain conditional analytic criteria for that packet.
+
+\subsection{Carrier energy and the diagonal layer norm}
+
+Let \(\cU_X\) be the finite set of retained source/cofactor labels
+\(u=(m,r)\) in the fixed row-residue group.  For each \(u=(m,r)\), put
+\(a_u:=a_m\), where \(a_m\) contains the literal source coefficient and
+every factor independent of the opposite row and orbit coordinates.  Thus
+the same source amplitude is repeated on every retained cofactor fiber, as
+in \eqref{eq:tpc52-actual-vector-profile}.  The opposite-row base weight is
+\(\omega_{\gamma,X}\), and the literal mask is
+\(M_X(m,\gamma)\).  With the notation of
+\cref{sec:tpc52-profile-overlap}, define the unnormalized carrier energy
+\begin{equation}
+ \mathscr C_X^L
+ :=E_XJ\sum_{u=(m,r)\in\cU_X}
+       |a_u|^2\mathscr B_X^M(m).
+ \label{eq:tpc52-actual-carrier-energy}
+\end{equation}
+The physical profile energy is
+\begin{equation}
+ \mathscr P_X^L
+ :=E_XJ\sum_{u=(m,r)\in\cU_X}
+       |a_u|^2\mathscr P_X^M(m).
+ \label{eq:tpc52-actual-profile-energy}
+\end{equation}
+Here the same source row may occur with any number of cofactors.  No
+uniformity of that multiplicity is assumed.
+
+Whenever \(\mathscr C_X^L>0\), define the aggregate actual overlap
+\begin{equation}
+ \Theta_X^{\rm act}
+ :=\frac{\mathscr P_X^L}{\mathscr C_X^L}.
+ \label{eq:tpc52-aggregate-actual-overlap}
+\end{equation}
+On a single direct cell this is the sampled instantiation of
+\(\Theta(\mathbf W;c)\) from
+\eqref{eq:tpc52-profile-overlap-ratio}; for a fixed finite cell family it is
+the corresponding carrier-energy-weighted aggregate.
+
+Summing \eqref{eq:tpc52-profile-coordinate-dictionary} over the disjoint
+physical coordinates, and using \(K_{m\gamma}^2=K_{m\gamma}\), gives
+\begin{equation}
+ \boxed{
+ \mathscr P_X^L
+ =\|G_X^L\|_{\cH_X^{\rm coeff}}^2
+ =\|\cS_X^L\one\|_{\cH_X^{\rm coeff}}^2.}
+ \label{eq:tpc52-Q-equals-physical-energy}
+\end{equation}
+No source sum, prime sum, or residual grouping occurs in
+\eqref{eq:tpc52-Q-equals-physical-energy}.  In particular, this equality is
+licensed by the displayed coordinate dictionary, not by a change of
+normalization after the fact.
+
+The point of real-axis Mellin inversion is that its scale factors have unit
+modulus.  More precisely, after the absolute values of the fixed Mellin
+transform densities have been placed in \(d\mu_X\), every continuous layer
+on a direct cell has the form
+\begin{equation}
+ A_{X,\theta}^L(i)
+ =c_{X,a}(i)\exp(i\Phi_{X,a,\theta}(i)),
+ \qquad |\exp(i\Phi_{X,a,\theta}(i))|=1,
+ \label{eq:tpc52-unimodular-layer-form}
+\end{equation}
+on its finite coordinate set.  The vector \(c_{X,a}\) includes the literal
+mask and the common compact orbit carrier, but not the physical factors that
+are reconstructed by Mellin inversion.  Therefore
+\begin{equation}
+ \|A_{X,\theta}^L\|=R_{X,a}
+ \label{eq:tpc52-layer-carrier-norm}
+\end{equation}
+is independent of the continuous Mellin parameter on that cell, and
+\begin{equation}
+ \mathscr C_X^L=\sum_{a\in\cA_0}R_{X,a}^2.
+ \label{eq:tpc52-carrier-cell-square}
+\end{equation}
+
+For each nonzero cell put
+\begin{equation}
+ M_{a,B}:=\int_{\Theta_a}w_B(\theta)\,d\mu_{X,a}(\theta).
+ \label{eq:tpc52-cell-weighted-Mellin-mass}
+\end{equation}
+The scale parameters occur only in the phases in
+\eqref{eq:tpc52-unimodular-layer-form}.  The transform densities come from a
+fixed finite library of nonzero smooth shapes; more generally their weighted
+total-variation masses depend continuously on normalized parameters in a
+fixed compact set.  Schwartz decay gives the upper bound below, while
+nonzero mass and compactness give the lower bound.  Thus there are constants
+\begin{equation}
+ 0<m_B\le M_{a,B}\le M_B<\infty
+ \label{eq:tpc52-fixed-Mellin-mass-bounds}
+\end{equation}
+for all active cells and every \(X\).  A zero-measure template is discarded
+before the active-cell family is declared.
+
+\begin{proposition}[Finite-cell carrier identity]
+\label{prop:tpc52-finite-cell-carrier-identity}
+For the provenance-fixed direction,
+\begin{equation}
+ \cE_{1,B}^L(\one)=
+ \sum_{a\in\cA_0}M_{a,B}R_{X,a}.
+ \label{eq:tpc52-envelope-cell-sum}
+\end{equation}
+Consequently there are fixed constants \(0<c_B\le C_B<\infty\) such
+that
+\begin{equation}
+ c_B\mathscr C_X^L
+ \le \bigl(\cE_{1,B}^L(\one)\bigr)^2
+ \le C_B\mathscr C_X^L.
+ \label{eq:tpc52-envelope-carrier-equivalence}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Equation \eqref{eq:tpc52-layer-carrier-norm} makes the norm in the definition
+of \(\cE_{1,B}^L\) independent of the continuous Mellin parameter.  Integrate
+on each direct cell and then sum over the finite disjoint union to obtain
+\eqref{eq:tpc52-envelope-cell-sum}.  The lower bound follows from
+\[
+ \left(\sum_aM_{a,B}R_{X,a}\right)^2
+ \ge m_B^2\sum_aR_{X,a}^2.
+\]
+For the upper bound, Cauchy--Schwarz in the fixed cell index gives
+\[
+ \left(\sum_aM_{a,B}R_{X,a}\right)^2
+ \le\left(\sum_aM_{a,B}^2\right)
+       \left(\sum_aR_{X,a}^2\right).
+\]
+Use \eqref{eq:tpc52-fixed-Mellin-mass-bounds} and
+\eqref{eq:tpc52-carrier-cell-square}.
+\end{proof}
+
+This proposition identifies exactly what Schwartz decay, finite physical
+support, and Bochner integrability accomplish.  They make the weighted
+Mellin mass finite and compare the outer \(L^1(d\mu_X)\) envelope with the
+\emph{layer carrier energy}.  They do not compare that carrier with the
+signed reassembled physical output.  The latter comparison is precisely the
+profile overlap proved in the preceding section.
+
+\subsection{The uniformly active actual direction}
+
+\begin{theorem}[Conditional coefficientwise actual Mellin bridge]
+\label{thm:tpc52-coefficientwise-actual-bridge}
+Assume the inherited coefficient interface of
+\cref{sec:tpc52-interface},
+Assumption~\ref{ass:tpc52-exact-profile-dictionary}, the row-sampling and
+literal-mask hypotheses
+\textup{(S1)}--\textup{(S3)}, the finite direct-cell diagonal form
+\eqref{eq:tpc52-unimodular-layer-form}, and
+Assumption~\ref{ass:tpc52-profile-nondegeneracy}, and suppose
+\(\mathscr C_X^L>0\).  Then for all sufficiently large \(X\),
+\(\Theta_X^{\rm act}\ge\rho_*/2\),
+\begin{equation}
+ \|\cS_X^L\one\|_{\cH_X^{\rm coeff}}^2
+ \ge \frac{\rho_*}{2}\mathscr C_X^L,
+ \label{eq:tpc52-actual-output-lower}
+\end{equation}
+and
+\begin{equation}
+ \boxed{
+ \kappa_{\rm can,B}^L(X)
+ =\frac{\bigl(\cE_{1,B}^L(\one)\bigr)^2}
+   {\|\cS_X^L\one\|_{\cH_X^{\rm coeff}}^2}
+ \le \frac{2C_B}{\rho_*}=O_{B,H_0,\cA_0,\mathbf W}(1).}
+ \label{eq:tpc52-actual-condition-bound}
+\end{equation}
+The conclusion is uniform in arbitrary concentration of the actual source
+coefficients and arbitrary finite multiplicity of the retained cofactors
+\(r\).  The symmetric right coefficient has the same conclusion; a fixed
+orthogonal left--right sum changes only the displayed constant.
+\end{theorem}
+
+\begin{proof}
+Use \eqref{eq:tpc52-Q-equals-physical-energy} and apply
+\cref{cor:tpc52-arbitrary-source-r-concentration} with the actual outer
+family \(a_{(m,r)}:=a_m\).  This proves
+\eqref{eq:tpc52-actual-output-lower}.  The upper inequality in
+\eqref{eq:tpc52-envelope-carrier-equivalence} then gives
+\eqref{eq:tpc52-actual-condition-bound}.  The proof is fiberwise before the
+outer direct sum, so neither source concentration nor cofactor multiplicity
+introduces a counting loss.
+\end{proof}
+
+The theorem controls the one density fixed by provenance.  It does not
+contradict the finite-rank kernel theorem for arbitrary continuous Mellin
+densities, and it does not produce a uniform lower frame on the entire
+growing translate family.  The orbit, source, opposite-row, and cofactor
+labels prevent the artificial scalar cross terms responsible for that false
+frame problem.
+
+\subsection{A good/bad actual bridge}
+
+The threshold theorem has an immediate actual-direction form.  Let
+\(\mathscr C_{X,\rm good}^L\) be the part of
+\eqref{eq:tpc52-actual-carrier-energy} on source fibers in
+\(\mathfrak B_{\rm good}(\eta_X)\), and set
+\begin{equation}
+ \sigma_X^L:=\frac{\mathscr C_{X,\rm good}^L}{\mathscr C_X^L}
+ \quad(\mathscr C_X^L>0).
+ \label{eq:tpc52-actual-good-fraction}
+\end{equation}
+
+\begin{corollary}[Energy-selected actual bridge]
+\label{cor:tpc52-energy-selected-actual-bridge}
+Retain the dictionary, finite-cell, sampling, mask, and profile hypotheses of
+\cref{thm:tpc52-coefficientwise-actual-bridge}.  Assume also
+\(\mathscr C_X^L>0\), \(\sigma_X^L>0\), and
+\(\Delta_X^{\rm samp}=o(\eta_X)\).  Then
+\begin{equation}
+ \|\cS_X^L\one\|^2
+ \ge \frac{\eta_X\sigma_X^L}{2}\mathscr C_X^L
+ \label{eq:tpc52-selected-output-lower}
+\end{equation}
+and
+\begin{equation}
+ \kappa_{\rm can,B}^L(X)
+ \le \frac{2C_B}{\eta_X\sigma_X^L}.
+ \label{eq:tpc52-selected-condition-bound}
+\end{equation}
+In particular, if
+\(\eta_X=X^{-\lambda+o(1)}\) and
+\(\sigma_X^L=X^{-\varsigma+o(1)}\), then
+\begin{equation}
+ \kappa_{\rm can,B}^L(X)
+ \le X^{\lambda+\varsigma+o(1)}.
+ \label{eq:tpc52-selected-condition-exponent}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Equation \eqref{eq:tpc52-selected-output-lower} is
+\cref{prop:tpc52-threshold-overlap} applied to the actual coefficients.
+Combine it with \eqref{eq:tpc52-envelope-carrier-equivalence}; the exponent
+form is immediate.
+\end{proof}
+
+The factor \(\sigma_X^L\) cannot be omitted.  If the actual source and
+cofactor mass is allowed to concentrate entirely on grazing fibers, a good
+set of large row density says nothing about the distinguished actual
+direction.  Conversely, no equidistribution of the source is needed once a
+positive good-carrier fraction is established by a separate energy
+selection.
+
+\subsection{Endpoint cost}
+
+At the inherited endpoint,
+\begin{equation}
+ Q=X^{267/400+o(1)},
+ \qquad J=X^{133/400+o(1)},
+ \qquad \kappa_0=\frac1{400}.
+ \label{eq:tpc52-endpoint-scales}
+\end{equation}
+For a fixed collection of direct residue cells, fixed smooth shapes, and a
+fixed derivative order \(B\), the weighted Mellin masses in
+\eqref{eq:tpc52-fixed-Mellin-mass-bounds} have zero polynomial cost.  Orbit
+sampling contributes \(O(J^{-1})=X^{-133/400+o(1)}\), and the inherited
+literal-mask defect tends to zero.  Hence a fixed
+\(\rho_*>0\) gives \eqref{eq:tpc52-actual-condition-bound} with zero positive
+polynomial loss and spends none of the \(1/400\) allowance.
+
+For a shrinking good threshold and a shrinking good-carrier fraction, the
+exact cost is instead
+\begin{equation}
+ \lambda+\varsigma
+ \label{eq:tpc52-actual-endpoint-cost}
+\end{equation}
+in the fixed-cell situation.  More generally one adds the transform and
+cell-count cost \(2\tau+\varrho\) from
+\eqref{eq:tpc52-cell-mass-exponent}.  Therefore the sufficient ledger is
+exactly \eqref{eq:tpc52-one-over-four-hundred-ledger}.  This exponent ledger
+does not verify its own relative sampling premise: a polynomially shrinking
+threshold still requires \(\Delta_X^{\rm samp}=o(\eta_X)\).  A strict margin
+\(\lambda<1/400\) makes only the inherited mask-deletion term negligible.
+The available fixed-modulus row-sampling error
+\(e^{-c\sqrt{\log L}}\) is not \(o(X^{-\lambda})\) for any fixed
+\(\lambda>0\).  Thus the polynomial threshold branch remains conditional on
+a sharper relative sampling theorem (or it must be replaced by fixed uniform
+overlap).
+
+\subsection{Why the TPC--48 profile does not follow}
+
+The present result is deliberately placed before the terminal prime map.  In
+TPC--48, a fixed projective layer contains
+\begin{equation}
+ B_{\omega,m}(\alpha)
+ =\sum_{p,r}A_\omega(p,r,m)\e(-pr\alpha)
+  v_{\omega,p,r,m},
+ \label{eq:tpc52-downstream-row-vector}
+\end{equation}
+and its displayed envelope has the order
+\begin{equation}
+ \mathfrak S_{\mathscr R}(\alpha)
+ =\int C_{\rm LS}(\phi_\omega,H_0)^{1/2}
+ \left(\sum_m\|B_{\omega,m}(\alpha)\|^2\right)^{1/2}
+ d|\nu|(\omega).
+ \label{eq:tpc52-full-profile-reminder}
+\end{equation}
+This is not \(\cE_{1,B}^L(\one)\).  Four operations intervene:
+\begin{enumerate}[label=\textup{(D\arabic*)},leftmargin=3.2em]
+ \item the prime variable is summed coherently at fixed \((m,r)\) before
+       the Hilbert norm is taken;
+ \item the outer total-variation integral is taken after a nonlinear square
+       root of the layer energy;
+ \item \(\omega\) contains projective-mask and terminal parameters that are
+       not direct physical Mellin cells; and
+ \item \(C_{\rm LS}^{1/2}\) is a profile seminorm weight, not the norm of a
+       canonical Mellin coefficient.
+\end{enumerate}
+The diagonal identity survives unitary coordinate phases, but it does not
+survive an arbitrary coherent map with a kernel.  Thus
+\cref{thm:tpc52-coefficientwise-actual-bridge} cannot be moved through
+\eqref{eq:tpc52-downstream-row-vector} by Minkowski in reverse.
+
+After the present bridge, the remaining interfaces are, in dependency order:
+\begin{enumerate}[label=\textup{(O\arabic*)},leftmargin=3.2em]
+ \item a lower or two-sided coherent-prime square at fixed \((m,r)\), stable
+       under the actual Mellin carrier projection;
+ \item control of the many-to-one map grouping \(s=d(m)r\), including its
+       fiber multiplicity and possible cancellation;
+ \item localization of the completed frozen shift family back to the one
+       physical intercept \(h_0\); and
+ \item identification of the residual low-sign Gram with the native affine
+       physical Gram without discarding its cross terms.
+\end{enumerate}
+None is proved by profile nondegeneracy.  In particular, the present theorem
+contains no fixed-shift prime-pair lower bound, no parity-breaking estimate,
+and no twin-prime conclusion.

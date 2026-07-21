@@ -1,0 +1,186 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\e}{\mathrm e}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Span}{\operatorname{span}}
+
+\hypersetup{
+  pdftitle={Diagonal Mellin Reassembly on Actual Orbit Fibers: Scalar Saturation, Profile Overlap, and an Interior TPC Bridge},
+  pdfauthor={Liang Wang},
+  pdfsubject={Actual-direction Mellin stability for label-preserving orbit fibers and sharp support-grazing obstructions},
+  pdfkeywords={Mellin inversion, orbit fibers, profile overlap, scalar Gram saturation, prime squarefree sampling, static mask, parity problem}
+}
+
+\title{\bfseries Diagonal Mellin Reassembly on Actual Orbit Fibers:\\
+Scalar Saturation, Profile Overlap,\\
+and an Interior TPC Bridge}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The preceding twin-prime-correlation reduction proved stable sampled
+frames for fixed scalar Mellin families but left open their transfer to
+the actual, growing family of row-dependent orbit translates.  We show
+that two different questions were hidden in that gap.  If the orbit
+label is discarded, a cluster of \(r+1\) normalized scalar translates
+has Gram eigenvalue at most \(O_r(J^{-2r})\).  Thus the unreduced scalar
+family has no uniform lower frame, and on an interior
+translate-independent window its exact dimension is of order \(J\), so
+no polylogarithmic scalar bank can preserve the energy of every vector in
+that exact span with uniform relative error.
+
+The physical coefficientwise space does not discard the orbit label.
+It retains \((m,r,j,\gamma)\) as orthogonal coordinates before coherent
+prime summation and residual grouping.  On those coordinates we prove
+an exact \(q\)-factor diagonal Mellin identity.  For fixed
+\(W_1,\ldots,W_q\in C_c^\infty((0,\infty))\), base coefficients \(c_i\),
+and positive samples \(x_{i,\nu}\), its weighted canonical envelope and
+physical output satisfy
+\[
+ \cE_B(\mathbf W;c)=A_B(\mathbf W)\|c\|_2,
+ \qquad
+ \|\cS_{\mathbf W}c\|_2^2
+ =\sum_i|c_i|^2\prod_{\nu=1}^q|W_\nu(x_{i,\nu})|^2.
+\]
+Consequently the actual-direction condition number is exactly
+\[
+ \frac{\cE_B(\mathbf W;c)^2}{\|\cS_{\mathbf W}c\|_2^2}
+ =\frac{A_B(\mathbf W)^2}{\Theta(\mathbf W;c)},
+\]
+where \(\Theta\) is the nonnegative physical profile-to-carrier ratio.
+This bypasses a lower-frame assertion for arbitrary Mellin densities or
+for the entire growing scalar family.
+
+ We then give a conditional criterion for evaluating its sampled actual
+instantiation \(\Theta_X^{\rm act}\) on a
+literal prime--squarefree row universe.  The declared factors include
+\(W(c_\beta e^{x+y}t)\) and
+\(\Psi(c'_\beta e^yt)\), with the normalized source parameter
+\(\beta\) in a fixed compact set.  If the continuous profile-to-carrier
+ratio has a uniform lower bound \(\rho_*>0\), and if the displayed
+profiles and weights satisfy an exact coordinatewise dictionary with one
+complete nondegenerate row cell, fixed-modulus row sampling, orbit Riemann
+sampling, and the literal-mask degree estimate give
+\[
+ \Theta_X^{\rm act}\ge \rho_*/2
+\]
+uniformly for arbitrary source concentration and arbitrary finite retained
+cofactor support.  Hence the
+canonical coefficientwise pre-terminal direction has \(O(1)\) condition
+number on every such uniformly active direct cell.  Under the same exact
+dictionary and nondegeneracy hypotheses, we verify the required
+regularity-to-carrier normalization and projected-reference lower bound and
+deduce polylogarithmic row-log Fourier compressibility of the retained
+Hilbert-valued orbit field; this does not compress the orbit labels.
+
+The overlap hypothesis is essential.  Two fixed smooth bumps whose
+scaled supports graze can make \(\Theta_X^{\rm act}\) smaller than every power of
+\(X\), while the canonical layer envelope remains of carrier size.  The
+resulting super-polynomial near-kernel concerns the distinguished actual
+direction, not an arbitrary signed density.  Thus the paper proves an exact
+diagonal identity and a conditional coefficientwise Mellin bridge on
+uniformly active interior packets.  Support grazing is a sharp obstruction
+to the overlap route, but the paper does not verify the exact-profile
+dictionary or uniform overlap for every inherited packet.  Coherent prime
+summation, residual grouping, localization
+to the physical shift, native-Gram identification, and every
+parity-sensitive conclusion remain open.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Mellin inversion; orbit fibers; profile
+overlap; scalar Gram saturation; Hilbert-valued sampling;
+prime--squarefree rows; static mask; sieve parity.
+
+\medskip
+\noindent\textbf{Convention.}
+All Hilbert spaces are complex.  Every Mellin contour is the real axis.
+Direct residue cells are formed before the literal static mask, and the
+mask is formed before any signed projective representation.  Constants
+may depend on the fixed smooth shapes, residue moduli, and derivative
+order, but not on \(X\).  We write \(\e^z:=\exp z\),
+\(\e(z):=\exp(2\pi iz)\), and \(\e_q(z):=\e(z/q)\).
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 42A38, 46C05; Secondary 11N35,
+42B35, 15A18.
+
+\input{sections/introduction}
+\input{sections/inherited-interface}
+\input{sections/scalar-saturation}
+\input{sections/diagonal-mellin}
+\input{sections/profile-overlap}
+\input{sections/actual-bridge}
+\input{sections/fourier-compressibility}
+\input{sections/grazing-boundary}
+\input{sections/endpoint-claims}
+\input{sections/certificate-claims}
+
+\begingroup
+\small
+\raggedright
+\setlength{\bibsep}{4pt plus 1pt minus 1pt}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

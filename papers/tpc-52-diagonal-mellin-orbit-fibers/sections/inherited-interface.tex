@@ -1,0 +1,243 @@
+\section{The retained-label actual coefficient interface}
+\label{sec:tpc52-interface}
+
+We reconstruct the operator before proving an estimate.  The order of
+labels and norms is part of the theorem: a diagonal Mellin identity is
+available only before coherent prime summation and residual grouping.
+The interface is inherited from TPC--25, TPC--36, and TPC--47--51
+\citep{WangTPC25,WangTPC36,WangTPC47,WangTPC48,WangTPC50,WangTPC51}.
+
+\subsection{Rows, the literal mask, and the actual profile}
+
+Fix the physical shift \(h_0\ne0\) and one source-compatible dyadic
+packet.  A row is
+\begin{equation}
+ \rho=(\ell_\rho,d_\rho),
+ \qquad m_\rho=\ell_\rho d_\rho\asymp Q,
+ \label{eq:tpc52-row}
+\end{equation}
+where \(\ell_\rho\) is prime, \(d_\rho\) is squarefree, and the inherited
+size separation makes \(m_\rho\) determine \(\rho\).  Let
+\(\cA_1,\cA_2\) be the source and opposite-row systems.  The literal
+static mask is
+\begin{equation}
+ K_{\alpha\gamma}
+ :=\one_{\ell_\alpha\ne\ell_\gamma}
+   \one_{|m_\alpha-m_\gamma|>\Delta}
+   \one_{(d_\alpha,d_\gamma)\le G},
+ \qquad \Delta=QX^{-\kappa_0},\quad G=X^{\kappa_0}.
+ \label{eq:tpc52-literal-mask}
+\end{equation}
+It is not replaced by a signed rank-one representation in this section.
+
+Before the mask is decomposed, the joint multiplier is
+\begin{equation}
+ \mathfrak A_{m,\gamma}^{\rm act}(j)
+ =K_{m\gamma}\Xi_{m,\gamma}(j)
+  \mathcal W_{m,\gamma}(j/J),
+ \label{eq:tpc52-joint-multiplier}
+\end{equation}
+where \(\Xi\) has fixed period \(H_0=O_{h_0}(1)\), and
+\(\mathcal W\) is the complete unseparated product of the declared
+smooth row--orbit factors.  On the left, the literal source coefficient
+has the form
+\begin{equation}
+ \gamma_m^{(1)}
+ =\mu(d(m))(\log\ell(m))
+  \omega_D(d(m))\psi_L(\ell(m)/L)\zeta_m^{(1)}.
+ \label{eq:tpc52-source-coefficient}
+\end{equation}
+The factor \(\zeta_m^{(1)}\) is kept exactly; no lower bound or source
+equidistribution is assumed below.
+
+Fix one complete source/opposite-row residue group of positive density and
+suppress its outer label.  A fixed finite collection of such row groups is
+handled later by orthogonal summation.  Let \(\cA_0\) be the direct orbit
+residue cells inside the chosen row group, let \(\cO_L\) be its common
+opposite-row set, and let \(\cI_X\) contain the supported pairs \((m,r)\)
+before prime summation.  We identify \(a\in\cA_0\) with its orbit
+residue modulo \(H_0\) and put
+\begin{equation}
+ \begin{aligned}
+ \cV_L&:=\ell^2(\cO_L\times\cS_X),\\
+ \cJ_{X,a}&:=\{j\in\Z:j/J\in I_0,
+                    \ j\equiv a\!\!\pmod {H_0}\},\\
+ \cH_X^{\rm coeff}
+ &:=\bigoplus_{a\in\cA_0}\ \bigoplus_{(m,r)\in\cI_X}
+      \ell^2(\cJ_{X,a};\cV_L).
+ \end{aligned}
+ \label{eq:tpc52-coefficient-space}
+\end{equation}
+where \(I_0\Subset(0,\infty)\) is a fixed common normalized orbit
+interval.  All index sets are finite for each \(X\).
+
+For a direct residue cell \(a\in\cA_0\), the actual profile is
+\begin{equation}
+ G_{m,r,a}^{L}(j)
+ :=\sum_{\gamma\in\cO_L}
+   \gamma_m^{(1)}K_{m\gamma}
+   \Xi_{m,\gamma}(j)\mathcal W_{m,\gamma}(j/J)
+   e_{\gamma,d(m)r}\in\cV_L,
+ \qquad j\in\cJ_{X,a}.
+ \label{eq:tpc52-actual-vector-profile}
+\end{equation}
+Thus the coefficientwise physical vector is
+\begin{equation}
+ G_X^L:=\bigoplus_{a\in\cA_0}\ \bigoplus_{(m,r)\in\cI_X}
+             (G_{m,r,a}^{L}(j))_{j\in\cJ_{X,a}}
+ \in\cH_X^{\rm coeff}.
+ \label{eq:tpc52-actual-coefficient-vector}
+\end{equation}
+Because all displayed labels are orthogonal,
+\begin{align}
+ \|G_X^L\|_{\cH_X^{\rm coeff}}^2
+ &={}
+ \sum_{a\in\cA_0}\sum_{(m,r)\in\cI_X}
+ \sum_{j\in\cJ_{X,a}}
+ \sum_{\gamma\in\cO_L}
+ |\gamma_m^{(1)}|^2K_{m\gamma}
+ \notag\\[-2pt]
+ &\hspace{5em}\times
+ |\Xi_{m,\gamma}(j)|^2
+ |\mathcal W_{m,\gamma}(j/J)|^2.
+ \label{eq:tpc52-exact-physical-energy}
+\end{align}
+There is no cross term between different \((m,r,j,\gamma)\).  In
+particular, two pairs \((m,r)\) that later produce the same residual
+label have not yet been grouped.
+
+\subsection{The canonical Mellin synthesis}
+
+Direct residue splitting and real-axis Mellin inversion give a fixed
+complex provenance measure \(\lambda_X\) on a finite disjoint union of
+spaces \(F_a\times\R^{q_a}\).  Write its polar decomposition as
+\begin{equation}
+ d\lambda_X(\theta)=\varsigma_X(\theta)d\mu_X(\theta),
+ \qquad \mu_X=|\lambda_X|,
+ \qquad |\varsigma_X|=1\quad\mu_X\text{-a.e.}
+ \label{eq:tpc52-polar-measure}
+\end{equation}
+For a direct cell, its literal-mask layer
+\(k_{X,\theta}^L\in\cH_X^{\rm coeff}\) has coordinates
+\begin{align}
+ k_{X,\theta}^L(a;m,r,j)
+ :={}&u_{a,\tau}^L(m)\phi_{a,\tau}(j/J)
+ \notag\\
+ &\times\sum_{\gamma\in\cO_L}
+ K_{m\gamma}v_{a,\tau}(\gamma)e_{\gamma,d(m)r}.
+ \label{eq:tpc52-canonical-layer}
+\end{align}
+No projective-mask factor \(p_\eta q_\eta\) occurs in
+\eqref{eq:tpc52-canonical-layer}.  Define
+\begin{equation}
+ A_{X,\theta}^L:=\varsigma_X(\theta)k_{X,\theta}^L,
+ \qquad
+ \cS_X^Lf:=\int f(\theta)A_{X,\theta}^L\,d\mu_X(\theta).
+ \label{eq:tpc52-canonical-synthesis}
+\end{equation}
+The transform densities are Schwartz, while the finite-dimensional layer
+norm has at most polynomial growth in the Mellin variables.  Hence its norm
+is integrable against the transform variation, and
+\eqref{eq:tpc52-canonical-synthesis} is a genuine Bochner integral on its
+natural domain.
+
+The provenance-fixed direction is \(f=\one\).  Coordinatewise Mellin
+inversion gives the exact identity
+\begin{equation}
+ \boxed{\cS_X^L\one=G_X^L.}
+ \label{eq:tpc52-actual-direction}
+\end{equation}
+For a fixed polynomial profile weight \(w_B(\theta)\ge1\), the displayed
+canonical envelope is
+\begin{equation}
+ \cE_{1,B}^L(f)
+ :=\int w_B(\theta)|f(\theta)|
+ \|A_{X,\theta}^L\|_{\cH_X^{\rm coeff}}\,d\mu_X(\theta),
+ \label{eq:tpc52-canonical-envelope}
+\end{equation}
+and the actual-direction condition number is
+\begin{equation}
+ \kappa_{\rm can,B}^L(X)
+ :=\frac{\cE_{1,B}^L(\one)^2}
+         {\|G_X^L\|_{\cH_X^{\rm coeff}}^2},
+ \label{eq:tpc52-canonical-condition}
+\end{equation}
+when \(G_X^L\ne0\).
+
+\subsection{Normalized profile geometry}
+
+The original provenance contains fixed smooth factors such as
+\(W(m_\gamma j/X)\) and \(\Psi(d_\gamma j/K)\)
+\citep{WangTPC25}.  Put
+\begin{equation}
+ x_\gamma=\log(\ell_\gamma/L),
+ \qquad y_\gamma=\log(d_\gamma/D),
+ \qquad t_j=j/J.
+ \label{eq:tpc52-log-coordinates}
+\end{equation}
+Then
+\begin{equation}
+ \frac{m_\gamma j}{X}
+ =\frac{LDJ}{X}\e^{x_\gamma+y_\gamma}t_j,
+ \qquad
+ \frac{d_\gamma j}{K}
+ =\frac{DJ}{K}\e^{y_\gamma}t_j.
+ \label{eq:tpc52-scaled-arguments}
+\end{equation}
+The packet relations \(LDJ\asymp X\) and \(DJ\asymp K\) keep the two
+leading scale factors in fixed compact subsets of \((0,\infty)\).
+
+After one of finitely many direct residue and smooth subdivisions, we
+write the modulus of the unseparated profile as
+\begin{equation}
+ F_\beta(x,y,t)
+ =R_\beta(x,y,t)
+  \prod_{\nu=1}^q
+  W_\nu(z_{\nu,\beta}(x,y,t)),
+ \qquad \beta\in\mathfrak B,
+ \label{eq:tpc52-profile-factorization}
+\end{equation}
+where:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.5em]
+ \item \(\mathfrak B\) is a fixed compact set of normalized source-scale
+ parameters;
+ \item \(R_\beta\) is the carrier formed from the remaining fixed
+ cutoffs and the direct residue amplitude;
+ \item each \(W_\nu\in C_c^\infty((0,\infty))\) is a declared physical
+ shape; and
+ \item the maps \(z_{\nu,\beta}\) and all displayed profiles form a
+ uniformly bounded \(C^\infty\) family on
+ \begin{equation}
+  \Omega:=[0,\log2]^2\times I_0.
+  \label{eq:tpc52-profile-domain}
+ \end{equation}
+\end{enumerate}
+Typical arguments are
+\begin{equation}
+ z_{1,\beta}(x,y,t)=c_\beta\e^{x+y}t,
+ \qquad
+ z_{2,\beta}(x,y,t)=c'_\beta\e^yt,
+ \label{eq:tpc52-typical-profile-arguments}
+\end{equation}
+with \(c_\beta,c'_\beta\) in compact positive intervals.  Formula
+\eqref{eq:tpc52-profile-factorization} is an assumption on the declared
+direct packet, not an assertion that the two examples in
+\eqref{eq:tpc52-typical-profile-arguments} exhaust every inherited
+smooth factor.
+
+\subsection{The downstream boundary}
+
+Only after \eqref{eq:tpc52-actual-coefficient-vector} is formed does the
+terminal map introduce primes and the determinant slice:
+\begin{equation}
+ \cF_{h_0}^{\rm act,L}
+ =\sum_{\substack{a,p,r,m,j:\,pr-mj=h_0\\
+                    (m,r)\in\cI_X,\ j\in\cJ_{X,a}}}
+ \mu(r)\Lambda(pr)G_{m,r,a}^L(j)\otimes e_j.
+ \label{eq:tpc52-downstream-prime-map}
+\end{equation}
+At fixed \((m,r)\), the \(p\)-sum is coherent.  The present paper neither
+moves \eqref{eq:tpc52-canonical-envelope} through this map nor reverses
+the resulting Minkowski inequality.  Likewise, the maps grouping
+\(s=d(m)r\), completing frozen shifts, and identifying the native affine
+Gram all occur downstream.

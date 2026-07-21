@@ -1,0 +1,232 @@
+\section{Support grazing: a sharp actual-direction obstruction}
+\label{sec:tpc52-grazing}
+
+The positive profile-overlap hypothesis cannot be replaced by bounded
+smoothness, common compact support, or dyadic comparability of the
+scale parameters.  We now give a fixed-shape example in which the
+carrier remains macroscopically nonzero while the physical profile
+collapses faster than every power.  The construction concerns the
+provenance-fixed actual direction itself; it is not obtained by
+choosing an arbitrary Mellin coefficient density.
+
+\subsection{Two fixed flat bumps}
+
+Let
+\begin{equation}
+ \vartheta(u):=
+ \begin{cases}
+  \exp(-1/u),&u>0,\\
+  0,&u\leq0,
+ \end{cases}
+ \label{eq:tpc52-flat-half-bump}
+\end{equation}
+and fix the two nonzero shapes
+\begin{equation}
+ U(t):=\vartheta(t-1)\vartheta(2-t),
+ \qquad
+ V(t):=\vartheta(t-1)\vartheta(2-t).
+ \label{eq:tpc52-fixed-flat-bumps}
+\end{equation}
+Both functions belong to \(C_c^\infty(\R)\), are supported on
+\([1,2]\), are positive on \((1,2)\), and are flat at both endpoints.
+In particular, they belong to \(C_c^\infty((0,\infty))\), as required
+by real-axis Mellin inversion.  For \(1<c<2\), define the carrier and
+the physical profile by
+\begin{equation}
+ R_c(t):=U(t),
+ \qquad
+ F_c(t):=U(t)V(ct).
+ \label{eq:tpc52-grazing-carrier-profile}
+\end{equation}
+The carrier does not depend on \(c\).  The two supports overlap only on
+\begin{equation}
+ 1<t<\frac2c,
+ \qquad
+ \frac2c-1=\frac{2-c}{c}.
+ \label{eq:tpc52-grazing-overlap-interval}
+\end{equation}
+
+\begin{proposition}[Every-power overlap collapse]
+\label{prop:tpc52-every-power-grazing}
+Put
+\begin{equation}
+ \rho(c):=
+ \frac{\displaystyle\int_\R|F_c(t)|^2\,dt}
+      {\displaystyle\int_\R|R_c(t)|^2\,dt}.
+ \label{eq:tpc52-grazing-overlap-ratio}
+\end{equation}
+For every \(N>0\), there is \(C_N<\infty\) such that
+\begin{equation}
+ 0\leq\rho(c)\leq C_N(2-c)^N
+ \qquad(1<c<2).
+ \label{eq:tpc52-every-power-overlap-bound}
+\end{equation}
+More precisely, there are absolute constants \(C,c_0>0\) such that
+\begin{equation}
+ \rho(c)\leq C(2-c)\exp\!\left(-\frac{c_0}{2-c}\right).
+ \label{eq:tpc52-exponential-grazing-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Write \(\delta=2-c\) and \(t=1+s\).  On the overlap interval,
+\(0<s<\delta/c\), and
+\begin{equation}
+ 2-ct=\delta-cs.
+ \label{eq:tpc52-two-flat-distances}
+\end{equation}
+All factors in \eqref{eq:tpc52-fixed-flat-bumps} are at most one.
+Using only the two flat factors facing the grazing endpoints gives
+\[
+ |U(1+s)V(c(1+s))|^2
+ \leq
+ \exp\!\left(-\frac2s-\frac2{\delta-cs}\right).
+\]
+Since \(s<\delta/c\) and \(0<\delta-cs<\delta\), the right side is at
+most \(\exp(-c_0/\delta)\) for an absolute \(c_0>0\).  The interval has
+length \(\delta/c\).  The denominator in
+\eqref{eq:tpc52-grazing-overlap-ratio} is one fixed positive number, so
+\eqref{eq:tpc52-exponential-grazing-bound} follows.  Finally,
+\(e^{-c_0/\delta}\ll_N\delta^N\) for every \(N\), which proves
+\eqref{eq:tpc52-every-power-overlap-bound}.
+\end{proof}
+
+Taking \(c_X=2-X^{-\sigma}\), with fixed \(\sigma>0\), gives
+\begin{equation}
+ \rho(c_X)\ll_M X^{-M}
+ \qquad\text{for every fixed }M>0.
+ \label{eq:tpc52-superpolynomial-overlap-collapse}
+\end{equation}
+The shapes \(U,V\) have not changed with \(X\); only the legitimate
+scale parameter \(c_X\) approaches the grazing boundary.
+
+\subsection{The distinguished Mellin direction becomes a near-kernel}
+
+Let \(\widetilde V\) be the real-axis Mellin transform of \(V\), and
+write
+\begin{equation}
+ A_B(V):=\frac1{2\pi}\int_\R
+ (1+|\tau|)^B|\widetilde V(\tau)|\,d\tau.
+ \label{eq:tpc52-grazing-Wiener-mass}
+\end{equation}
+This is a fixed positive finite number.  On positive samples
+\(t_1,\ldots,t_N\), take the carrier coefficients
+\(b_n=U(t_n)\) and the physical samples \(x_n=ct_n\).  The canonical
+Mellin direction fixed by \(V\) is
+\begin{equation}
+ \frac1{2\pi}\int_\R\widetilde V(\tau)
+ (b_nx_n^{i\tau})_{n=1}^N\,d\tau
+ =(U(t_n)V(ct_n))_{n=1}^N.
+ \label{eq:tpc52-grazing-actual-direction}
+\end{equation}
+Its envelope and output obey the exact ledger
+\begin{align}
+ \cE_B^{\rm gr}(c)&=A_B(V)
+  \left(\sum_n|U(t_n)|^2\right)^{1/2},
+ \label{eq:tpc52-grazing-envelope}\\
+ \|\cS_V^{\rm gr}(c)\|_2^2
+ &=\sum_n|U(t_n)V(ct_n)|^2.
+ \label{eq:tpc52-grazing-output}
+\end{align}
+Thus support grazing shrinks the physical profile but not the carrier
+size seen by the canonical layer envelope.
+
+The identical calculation on the Hilbert space
+\(L^2((0,\infty),dt)\), with carrier \(U(t)\), gives the continuum
+condition number
+\begin{equation}
+ \frac{\cE_B^{\rm gr}(c)^2}{\|\cS_V^{\rm gr}(c)\|_2^2}
+ =\frac{A_B(V)^2}{\rho(c)}.
+ \label{eq:tpc52-grazing-condition-number}
+\end{equation}
+Consequently \eqref{eq:tpc52-superpolynomial-overlap-collapse}
+produces a condition number larger than every fixed power of \(X\).
+This is a near-kernel for the one density \(\widetilde V\) prescribed by
+the physical shape.  It is therefore different from the universal
+kernel obtained by allowing an arbitrary signed Mellin density.
+
+\subsection{Exact zero on a physical grid}
+
+The discrete obstruction can be stronger.  Let \(t_j=j/J\), and
+suppose the carrier window contains the grid points in \([1,2]\).  If
+\begin{equation}
+ 0<\delta=2-c<\frac cJ,
+ \label{eq:tpc52-grid-grazing-condition}
+\end{equation}
+then
+\[
+ 0<\frac2c-1=\frac\delta c<\frac1J.
+\]
+The open overlap interval \((1,2/c)\) contains no grid point: \(t=1\)
+is an endpoint where \(U(1)=0\), and the next grid point is
+\(1+J^{-1}\geq2/c\).  Hence
+\begin{equation}
+ U(t_j)V(ct_j)=0
+ \quad\text{for every }j,
+ \qquad
+ \sum_j|U(t_j)|^2>0
+ \label{eq:tpc52-exact-grid-zero}
+\end{equation}
+for all sufficiently large \(J\).  The sampled physical output is then
+exactly zero although the canonical carrier envelope is positive.
+This example does not depend on an arithmetic sampling accident; it
+already occurs on the regular orbit grid.
+For example, \(c_J=2-J^{-2}\) satisfies
+\eqref{eq:tpc52-grid-grazing-condition} for large \(J\) and gives both
+the exact grid zero and an every-power continuum overlap collapse.
+
+\subsection{A representation-free good--bad tradeoff}
+
+The correct energy selection is made on the unseparated physical
+profile, not on signed Mellin layers.  Let \(R\) be a nonzero carrier,
+\(P\) a bounded physical multiplier, and
+\begin{equation}
+ d\sigma:=|R|^2\,d\varpi,
+ \qquad
+ \operatorname{Bad}_\eta(P;R)
+ :=\frac{\sigma(\{|P|<\eta\})}{\sigma(\Omega)},
+ \qquad \eta>0.
+ \label{eq:tpc52-bad-carrier-fraction}
+\end{equation}
+Then the profile-to-carrier ratio satisfies
+\begin{equation}
+ \frac{\int_\Omega|R|^2|P|^2\,d\varpi}
+      {\int_\Omega|R|^2\,d\varpi}
+ \geq
+ \eta^2\bigl(1-\operatorname{Bad}_\eta(P;R)\bigr).
+ \label{eq:tpc52-good-bad-lower-tradeoff}
+\end{equation}
+Conversely,
+\begin{equation}
+ \frac{\int_\Omega|R|^2|P|^2\,d\varpi}
+      {\int_\Omega|R|^2\,d\varpi}
+ \leq
+ \eta^2+\|P\|_\infty^2
+ \frac{\sigma(\{|P|\geq\eta\})}{\sigma(\Omega)}.
+ \label{eq:tpc52-good-bad-upper-tradeoff}
+\end{equation}
+These inequalities are immediate by splitting the integral into the
+good and bad sets.  They show exactly what an energy-selected boundary
+argument would need: a level \(\eta=\eta_X\) for which the good set
+retains enough carrier mass and \(\eta_X\) itself does not introduce a
+forbidden polynomial loss.  In the grazing example, the good carrier
+mass tends to zero for every fixed \(\eta>0\), and the best useful
+\(\eta_X\) is super-polynomially small.
+
+The split in \eqref{eq:tpc52-bad-carrier-fraction} is intrinsic to the
+physical multiplier \(P\).  It neither chooses a favorable term from a
+signed Mellin representation nor changes the distinguished coefficient
+density.
+
+\subsection{Scope of the obstruction}
+
+The construction proves sharpness of the positive-overlap assumption:
+uniform \(C^B\) bounds and compact scale control alone do not yield a
+uniform actual-direction condition number.  It does \emph{not} assert
+that the inherited TPC packet approaches this grazing configuration.
+That is decided only by inspecting its declared fixed cutoffs and
+normalized scale cell.  Nor does the example involve coherent prime
+summation, residual grouping, localization to \(h_0\), a
+parity-sensitive correlation, or a prime-pair conclusion.  It is a
+sharp analytic obstruction at the coefficientwise pre-terminal Mellin
+interface and nothing beyond that interface.

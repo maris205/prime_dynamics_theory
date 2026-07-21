@@ -1,0 +1,451 @@
+\section{Hilbert-valued row--log compression without orbit collapse}
+\label{sec:tpc52-fourier-compressibility}
+
+The preceding diagonal argument needs only the distinguished physical
+direction.  It is nevertheless useful to locate that direction inside
+the finite row--log banks of TPC--51.  The point of this section is
+that smoothness gives a uniform finite approximation in the two
+\emph{row--log} variables while the complete orbit and residual fiber
+is left untouched.  In particular, none of the statements below
+replaces the growing orbit space by a scalar space of polylogarithmic
+rank.
+
+\subsection{Tensor cosine projection}
+
+Put \(T=\log 2\).  On \([0,T]\), let
+\begin{equation}
+ \chi_0(x):=T^{-1/2},
+ \qquad
+ \chi_k(x):=(2/T)^{1/2}\cos(\pi kx/T)\quad(k\geq1),
+ \label{eq:tpc52-cosine-basis-one-dimensional}
+\end{equation}
+and set
+\begin{equation}
+ \chi_{k_1,k_2}(x,y):=\chi_{k_1}(x)\chi_{k_2}(y).
+ \label{eq:tpc52-tensor-cosine-basis}
+\end{equation}
+This is an orthonormal basis of \(L^2([0,T]^2)\).  If \(\cK\) is a
+Hilbert space and \(H:[0,T]^2\to\cK\) is Bochner measurable, define
+\begin{equation}
+ \Pi_{K_{\rm F}}^{\rm row}H
+ :=\sum_{0\leq k_1,k_2\leq K_{\rm F}}
+   \left(\int_{[0,T]^2}H(x,y)\chi_{k_1,k_2}(x,y)\,dx\,dy\right)
+   \chi_{k_1,k_2}.
+ \label{eq:tpc52-row-cosine-projection}
+\end{equation}
+The coefficient in parentheses is a vector in \(\cK\).
+
+For later pointwise sampling, use the mixed regularity norm
+\begin{equation}
+ \|H\|_{\mathscr C^{2,2}}
+ :=\sum_{0\leq a,b\leq2}
+   \|\partial_x^a\partial_y^bH\|_{L^\infty([0,T]^2;\cK)}.
+ \label{eq:tpc52-mixed-regularity-norm}
+\end{equation}
+The mixed derivatives in this definition are deliberately stronger
+than the \(H^1\) regularity needed for the continuum \(L^2\) tail.  They
+give a uniform bound at the arithmetic sampling nodes, including the
+boundary of the dyadic log box.
+
+\begin{theorem}[Hilbert-valued tensor cosine compression]
+\label{thm:tpc52-Hilbert-cosine-compression}
+There is a constant \(C_T<\infty\), independent of \(\cK\), such that
+for every \(H\in C^{2,2}([0,T]^2;\cK)\) and \(K_{\rm F}\geq1\),
+\begin{align}
+ \|H-\Pi_{K_{\rm F}}^{\rm row}H\|_{L^2(e^{x+y}dxdy;\cK)}^2
+ &\leq \frac{C_T}{(K_{\rm F}+1)^2}
+       \|H\|_{\mathscr C^{2,2}}^2,
+ \label{eq:tpc52-continuum-cosine-tail}\\
+ \|H-\Pi_{K_{\rm F}}^{\rm row}H\|_{L^\infty([0,T]^2;\cK)}^2
+ &\leq \frac{C_T}{(K_{\rm F}+1)^2}
+       \|H\|_{\mathscr C^{2,2}}^2.
+ \label{eq:tpc52-uniform-cosine-tail}
+\end{align}
+The same estimates hold for a finite or countable family
+\((H_\alpha)_\alpha\) after summing both sides in \(\alpha\), whenever
+the right side is finite.
+\end{theorem}
+
+\begin{proof}
+For the \(L^2\) assertion, first use Lebesgue measure.  The tensor
+cosines diagonalize the Neumann Laplacian.  Every omitted index has
+  \(k_1>K_{\rm F}\) or \(k_2>K_{\rm F}\), and hence eigenvalue at least
+  \((\pi(K_{\rm F}+1)/T)^2\).  Parseval, applied after scalar pairing with an
+orthonormal basis of \(\cK\), gives
+\[
+ \|H-\Pi_{K_{\rm F}}^{\rm row}H\|_{L^2}^2
+ \leq \frac{T^2}{\pi^2(K_{\rm F}+1)^2}
+ \bigl(\|\partial_xH\|_{L^2}^2+
+       \|\partial_yH\|_{L^2}^2\bigr).
+\]
+The density \(e^{x+y}\) is bounded above and below on the fixed box,
+so this proves \eqref{eq:tpc52-continuum-cosine-tail}.
+
+For the pointwise assertion, integrate the cosine coefficients twice
+by parts in every nonzero coordinate.  The sine boundary terms vanish
+at the first integration; the second integration produces only first
+derivatives at the endpoints and integrals of second derivatives.
+Consequently the Hilbert-valued coefficient \(\widehat H(k_1,k_2)\)
+satisfies
+\[
+ \|\widehat H(k_1,k_2)\|_{\cK}
+ \leq
+ \frac{C_T\|H\|_{\mathscr C^{2,2}}}
+      {(1+k_1)^2(1+k_2)^2}.
+\]
+The sum of this majorant over the complement of
+\(\{0,\ldots,K_{\rm F}\}^2\) is
+\(O_T((K_{\rm F}+1)^{-1})\).  Absolute convergence of
+the cosine series, followed by squaring, proves
+\eqref{eq:tpc52-uniform-cosine-tail}.  Every step is stable under
+orthogonal summation in \(\cK\), which also proves the family version.
+\end{proof}
+
+\subsection{Arithmetic sampling and literal-mask deletion}
+
+Let \(\cR_X\) be the complete prime--squarefree row universe and let
+\(\cR_X(\cA)\subset\cR_X\) be one fixed positive-density admissible
+row cell,
+with logarithmic nodes
+\[
+ z_\gamma=(x_\gamma,y_\gamma)
+ =\bigl(\log(\ell_\gamma/L),\log(d_\gamma/D)\bigr),
+\]
+ base weights \(w_\gamma=(\log\ell_\gamma)^{2e}\), where
+ \(e\in\{0,1\}\), and total base energy
+\(E_X=\sum_{\gamma\in\cR_X(\cA)}w_\gamma\).  We retain the inherited
+base flatness
+\begin{equation}
+ E_X\asymp_{\cA}|\cR_X(\cA)|(\log L)^{2e},
+ \qquad
+ \max_{\gamma\in\cR_X(\cA)}w_\gamma\ll(\log L)^{2e}.
+ \label{eq:tpc52-cosine-base-flatness}
+\end{equation}
+Here \(e=0\) is the unweighted cell and \(e=1\) is the
+logarithmically weighted cell.  Let
+\begin{equation}
+ d\nu_{L,e}^{\rm ref}(x,y)
+ =\frac{e^x(\log L+x)^{2e-1}}{Z_{L,e}}\,dx\,e^y\,dy
+ \label{eq:tpc52-finite-row-reference-measure}
+\end{equation}
+be the finite-\(L\) reference probability measure of TPC--51.  For a
+family \(H=(H_\alpha)_\alpha\), with values in an arbitrary Hilbert
+space \(\cK_X\), define the normalized forms
+\begin{align}
+ \mathfrak q_X^0(H)
+ &:=\frac1{E_X}\sum_\alpha
+   \sum_{\gamma\in\cR_X(\cA)}
+   w_\gamma\|H_\alpha(z_\gamma)\|_{\cK_X}^2,
+ \label{eq:tpc52-unmasked-row-form}\\
+ \mathfrak q_X^M(H)
+ &:=\frac1{E_X}\sum_\alpha
+   \sum_{\gamma\in\cR_X(\cA)}
+   M_X(\alpha,\gamma)w_\gamma
+   \|H_\alpha(z_\gamma)\|_{\cK_X}^2,
+ \label{eq:tpc52-masked-row-form}\\
+ \mathfrak q_{L,e}^{\rm ref}(H)
+ &:=\sum_\alpha\int_{[0,T]^2}
+   \|H_\alpha(x,y)\|_{\cK_X}^2
+   \,d\nu_{L,e}^{\rm ref}(x,y).
+ \label{eq:tpc52-reference-row-form}
+\end{align}
+Assume the literal mask has complete-universe row defect at most
+\(\epsilon_X\).  Since the fixed cell has positive density, this implies
+\begin{equation}
+ \sup_\alpha
+ \#\{\gamma\in\cR_X(\cA):M_X(\alpha,\gamma)=0\}
+ \ll_{\cA}\epsilon_X|\cR_X(\cA)|.
+ \label{eq:tpc52-cosine-cell-mask-defect}
+\end{equation}
+Put
+\begin{equation}
+ \Delta_X^{\rm mom}
+ :=e^{-c\sqrt{\log L}}+D^{-1/2+\delta},
+ \qquad 0<\delta<\frac12,
+ \label{eq:tpc52-arithmetic-moment-error}
+\end{equation}
+where \(c>0\) is the fixed-modulus prime-progression constant.
+The quantitative input proved in TPC--51 is that, for every fixed
+\(A_0>0\), there is a fixed \(C_1\) such that
+\begin{align}
+ &\left|\int \e^{i(\xi x+\eta y)}\,d\nu_X
+       -\int \e^{i(\xi x+\eta y)}\,d\nu_{L,e}^{\rm ref}\right|
+ \notag\\[-2pt]
+  &\hspace{25mm}\le C_{A_0}(1+|\xi|+|\eta|)^{C_1}\Delta_X^{\rm mom}
+ \label{eq:tpc52-inherited-Fourier-moment}
+\end{align}
+uniformly for \(|\xi|+|\eta|\le C_T(\log X)^{A_0}\)
+\citep{WangTPC51}.  Here \(\nu_X\) is the normalized empirical measure
+associated with \eqref{eq:tpc52-unmasked-row-form}.  This displayed
+estimate, rather than weak convergence alone, is the arithmetic hypothesis
+used for a growing bank.
+
+The error below has three logically different terms.  The first is a
+smooth approximation tail.  The second is the arithmetic moment error
+of the retained bank.  The third is the energy removed by the literal
+mask.
+
+\begin{theorem}[Sampled row--log compression ledger]
+\label{thm:tpc52-sampled-cosine-compression}
+Fix \(A_0>0\).  There are constants \(C,C_0<\infty\), depending on
+the fixed row cell and \(A_0\) but not on \(X,K_{\rm F},\cK_X\), such that
+the following holds whenever
+\(1\leq K_{\rm F}\leq(\log X)^{A_0}\).  Let
+\((H_\alpha)_\alpha\) have finite source support and put
+\begin{equation}
+ \mathfrak N(H)^2
+ :=\sum_\alpha\|H_\alpha\|_{\mathscr C^{2,2}}^2,
+ \qquad
+ P_{K_{\rm F}}H:=(\Pi_{K_{\rm F}}^{\rm row}H_\alpha)_\alpha.
+ \label{eq:tpc52-family-regularity-energy}
+\end{equation}
+Then
+\begin{align}
+ \mathfrak q_X^M(H-P_{K_{\rm F}}H)
+ &\leq\mathfrak q_X^0(H-P_{K_{\rm F}}H)
+ \leq \frac{C}{(K_{\rm F}+1)^2}\mathfrak N(H)^2,
+ \label{eq:tpc52-discrete-relative-tail}\\
+ \left|
+  \mathfrak q_X^M(P_{K_{\rm F}}H)-
+  \mathfrak q_{L,e}^{\rm ref}(P_{K_{\rm F}}H)
+ \right|
+ &\leq C\left(
+   \Delta_X^{\rm mom}(K_{\rm F}+1)^{C_0}
+   +\epsilon_X(K_{\rm F}+1)^2\right)\mathfrak N(H)^2.
+ \label{eq:tpc52-bank-calibration-error}
+\end{align}
+In particular, the total approximation-and-calibration ledger obeys
+\begin{align}
+ &\mathfrak q_X^M(H-P_{K_{\rm F}}H)
+ +\left|
+  \mathfrak q_X^M(P_{K_{\rm F}}H)-
+  \mathfrak q_{L,e}^{\rm ref}(P_{K_{\rm F}}H)
+ \right|
+ \notag\\[-2pt]
+ &\qquad\leq C\left(
+  (K_{\rm F}+1)^{-2}
+  +\Delta_X^{\rm mom}(K_{\rm F}+1)^{C_0}
+  +\epsilon_X(K_{\rm F}+1)^2\right)\mathfrak N(H)^2.
+ \label{eq:tpc52-total-discrete-compression-error}
+\end{align}
+The exponent \(C_0\) is fixed.  One may take \(C_0=C_1+2\), where
+\(C_1\) is the exponent in the prime--squarefree Fourier-moment error.
+\end{theorem}
+
+\begin{proof}
+The mask only deletes nonnegative terms, so
+\(\mathfrak q_X^M(H-P_{K_{\rm F}}H)
+\leq\mathfrak q_X^0(H-P_{K_{\rm F}}H)\).  The normalized
+row weights have bounded total mass.  Apply
+\eqref{eq:tpc52-uniform-cosine-tail} for each \(\alpha\), then sum.
+This proves \eqref{eq:tpc52-discrete-relative-tail}.
+
+Write
+\[
+ P_{K_{\rm F}}H_\alpha(x,y)
+ =\sum_{0\leq k_1,k_2\leq K_{\rm F}}
+  a_{\alpha,k_1,k_2}\chi_{k_1,k_2}(x,y),
+ \qquad a_{\alpha,k_1,k_2}\in\cK_X.
+\]
+Products of two tensor cosines are sums of \(O(1)\) exponentials with
+frequencies \(O_T(K_{\rm F})\).  The fixed-modulus prime--squarefree moment
+estimate therefore makes every sampled Gram entry differ from its
+finite-\(L\) reference entry by at most
+\[
+ C(1+K_{\rm F})^{C_1}\Delta_X^{\rm mom}.
+\]
+There are \((K_{\rm F}+1)^2\) row--log modes.  The Schur bound gives the
+operator error
+\(C\Delta_X^{\rm mom}(K_{\rm F}+1)^{C_1+2}\).  This argument is unchanged
+for Hilbert-valued coefficients because the scalar Gram is tensored
+with \(I_{\cK_X}\).
+
+For the mask term, the tensor-cosine Nikolskii estimate gives
+\[
+ \|P_{K_{\rm F}}H_\alpha\|_\infty^2
+ \leq C_T(K_{\rm F}+1)^2
+       \sum_{k_1,k_2}\|a_{\alpha,k_1,k_2}\|_{\cK_X}^2.
+\]
+At most an \(\epsilon_X\)-fraction of the complete opposite-row universe
+is removed for each \(\alpha\).  The base-weight flatness on the fixed
+row cell therefore bounds the deleted bank energy by
+\(C\epsilon_X(K_{\rm F}+1)^2\sum_k\|a_{\alpha,k}\|^2\).  Sum in \(\alpha\).
+Finally, Parseval and the definition of
+\(\mathfrak N(H)\) bound the bank coefficient energy by
+\(C\mathfrak N(H)^2\).  Combining the arithmetic and deletion errors
+proves \eqref{eq:tpc52-bank-calibration-error} and hence
+\eqref{eq:tpc52-total-discrete-compression-error}.
+\end{proof}
+
+\begin{proposition}[The uniformly active actual field meets the normalization]
+\label{prop:tpc52-actual-field-normalization}
+Assume the compact \(C^\infty\) profile family of
+\eqref{eq:tpc52-profile-factorization}, the carrier bounds
+\eqref{eq:tpc52-carrier-normalization}, and
+Assumptions~\ref{ass:tpc52-profile-nondegeneracy} and
+\ref{ass:tpc52-exact-profile-dictionary}.  Let \(\cU_X\) be a
+finite set of source/cofactor pairs \((\alpha,r)\), along the inherited
+regime \(J,L\to\infty\).  Let \(a_\alpha\) be the actual source coefficient,
+independent of the retained cofactor label \(r\), and let the source
+parameter be \(\beta_\alpha\in\mathfrak B\).  Define the retained field,
+indexed by the
+source label used in the literal mask, by
+\begin{equation}
+ H_{\alpha,X}(x,y)
+ :=\bigoplus_{r:(\alpha,r)\in\cU_X}a_\alpha
+   \bigoplus_{a\in\cA_0}
+   \bigoplus_{j\in\cJ_{X,a}}
+   F_{\beta_\alpha,a}(x,y,j/J)e_{r,a,j}.
+ \label{eq:tpc52-actual-retained-field}
+\end{equation}
+The coordinate \(e_{r,a,j}\) may be tensored with any retained residual
+basis vector; no coherent sum over those labels is taken.  Put
+\begin{equation}
+ \mathcal C_X^{\rm act}
+ :=J\sum_{(\alpha,r)\in\cU_X}|a_\alpha|^2
+       \mathscr B(\beta_\alpha).
+ \label{eq:tpc52-actual-field-carrier-normalization}
+\end{equation}
+Then, uniformly in the coefficients and parameters,
+\begin{align}
+ \mathfrak N(H_X)^2
+ &\le C_{\rm reg}\mathcal C_X^{\rm act},
+ \label{eq:tpc52-actual-field-regularity}\\
+ \mathfrak q_{L,e}^{\rm ref}(H_X)
+ &\ge \left(\rho_*+o(1)\right)\mathcal C_X^{\rm act}.
+ \label{eq:tpc52-actual-field-reference-overlap}
+\end{align}
+Consequently, if \(K_{{\rm F},X}\to\infty\), then for all sufficiently large
+\(X\),
+\begin{equation}
+ \mathfrak q_{L,e}^{\rm ref}(P_{K_{{\rm F},X}}H_X)
+ \ge c_{\rm ov}\mathcal C_X^{\rm act}
+ \label{eq:tpc52-actual-projected-reference-overlap}
+\end{equation}
+with a fixed \(c_{\rm ov}>0\).  Thus the two normalization hypotheses in
+\eqref{eq:tpc52-relative-tail-normalization} hold for the actual retained
+field, not merely for a model family.
+\end{proposition}
+
+\begin{proof}
+For every derivative occurring in
+\eqref{eq:tpc52-mixed-regularity-norm}, orthogonality of the orbit
+coordinates gives
+\[
+ \sup_{x,y}\|\partial_x^v\partial_y^wH_{\alpha,X}(x,y)\|^2
+ \le C J\sum_{r:(\alpha,r)\in\cU_X}|a_\alpha|^2.
+\]
+There are only finitely many derivative orders and direct cells.  Sum in
+\(\alpha\), use Cauchy--Schwarz over those derivative orders, and then use
+\(\mathscr B\ge b_-\) to obtain
+\eqref{eq:tpc52-actual-field-regularity}.
+
+The progression Riemann sum in \(j/J\), uniformly for the compact profile
+family, and uniform convergence of the finite-\(L\) reference density to
+\(e^{x+y}\) give
+\[
+ \mathfrak q_{L,e}^{\rm ref}(H_X)
+ =J\sum_{(\alpha,r)\in\cU_X}|a_\alpha|^2
+   \bigl(\mathscr P(\beta_\alpha)+o(1)\bigr).
+\]
+The error is uniform in \(\alpha\) and \(\beta_\alpha\); after weighting and summing,
+it is \(o(\mathcal C_X^{\rm act})\) because
+\(b_-\le\mathscr B\le b_+\).  Apply
+\(\mathscr P(\beta_\alpha)\ge\rho_*\mathscr B(\beta_\alpha)\) to prove
+\eqref{eq:tpc52-actual-field-reference-overlap}.
+
+Finally, the weighted continuum estimate
+\eqref{eq:tpc52-continuum-cosine-tail} and
+\eqref{eq:tpc52-actual-field-regularity} imply
+\[
+ \|H_X-P_{K_{{\rm F},X}}H_X\|_{L^2(d\nu_{L,e}^{\rm ref};\cK_X)}
+ \le C(K_{{\rm F},X}+1)^{-1}(\mathcal C_X^{\rm act})^{1/2}.
+\]
+The triangle inequality, followed by \(K_{{\rm F},X}\to\infty\), gives
+\eqref{eq:tpc52-actual-projected-reference-overlap}.
+\end{proof}
+
+\begin{corollary}[Polylogarithmic relative tail]
+\label{cor:tpc52-polylog-relative-tail}
+Suppose a retained actual family satisfies, for one declared
+normalization \(\mathcal C_X>0\),
+\begin{equation}
+ \mathfrak N(H_X)^2\leq C_{\rm reg}\mathcal C_X,
+ \qquad
+ \mathfrak q_{L,e}^{\rm ref}(P_{K_{\rm F}}H_X)\geq c_{\rm ov}\mathcal C_X
+ \label{eq:tpc52-relative-tail-normalization}
+\end{equation}
+with fixed \(C_{\rm reg}<\infty\) and \(c_{\rm ov}>0\).  Let
+\(K_{\rm F}=\lfloor(\log X)^A\rfloor\), where \(A>0\) is fixed, and apply
+\cref{thm:tpc52-sampled-cosine-compression} with a fixed
+\(A_0\ge A\).  If
+\begin{equation}
+ \Delta_X^{\rm mom}K_{\rm F}^{C_0}=o(1),
+ \qquad
+ \epsilon_X(K_{\rm F}+1)^2=o(1),
+ \label{eq:tpc52-polylog-conditions}
+\end{equation}
+then \(P_{K_{\rm F}}H_X\) has masked energy comparable to
+\(\mathcal C_X\), while
+\begin{equation}
+ \mathfrak q_X^M(H_X-P_{K_{\rm F}}H_X)
+ \leq\mathfrak q_X^0(H_X-P_{K_{\rm F}}H_X)
+ \ll (\log X)^{-2A}\mathcal C_X=o(\mathcal C_X).
+ \label{eq:tpc52-polylog-tail-conclusion}
+\end{equation}
+Thus the retained bank verifies the relative-tail alternative for this
+actual family.
+
+If \(L,D\geq X^{c_*}\) for some fixed \(c_*>0\),
+\(0<\delta<1/2\), and \(\epsilon_X\leq X^{-\eta+o(1)}\) for some fixed
+\(\eta>0\), conditions \eqref{eq:tpc52-polylog-conditions} hold for
+every fixed \(A>0\).
+\end{corollary}
+
+\begin{proof}
+Insert \(K_{\rm F}=(\log X)^A\) in
+\eqref{eq:tpc52-total-discrete-compression-error}.  The exponential
+prime error absorbs every fixed log power, the squarefree term has a
+fixed power saving because \(\delta<1/2\), and the mask term has a
+fixed power saving by hypothesis.  The lower bound in
+\eqref{eq:tpc52-relative-tail-normalization} absorbs the resulting
+\(o(\mathcal C_X)\) calibration error.  Equation
+\eqref{eq:tpc52-polylog-tail-conclusion} is
+\eqref{eq:tpc52-discrete-relative-tail}.
+\end{proof}
+
+By \cref{prop:tpc52-actual-field-normalization}, this corollary applies to
+the uniformly active provenance-fixed field with
+\(\mathcal C_X=\mathcal C_X^{\rm act}\).  Hence the relative-tail conclusion
+used in the introduction is an actual retained-label statement under the
+same exact-dictionary and profile-nondegeneracy hypotheses as the diagonal
+bridge.
+
+\subsection{What is and is not compressed}
+
+For the actual coefficient field, take
+\begin{equation}
+ \cK_X
+ =\bigoplus_{r,j}\cK_{X,r,j},
+ \label{eq:tpc52-retained-orbit-fiber}
+\end{equation}
+where the summands retain the cofactor, orbit, and residual data required
+by \eqref{eq:tpc52-coefficient-space}; the source remains the family index,
+while the opposite-row coordinates \((x,y)\) are the arguments of the field.  The
+operator used above is exactly
+\begin{equation}
+ \Pi_{K_{\rm F}}^{\rm row}\otimes I_{\cK_X}.
+ \label{eq:tpc52-row-only-projection}
+\end{equation}
+It has \((K_{\rm F}+1)^2\) row--log modes, but every coefficient of those modes
+is a full vector in \(\cK_X\).  In particular,
+\begin{equation}
+ \dim\operatorname{ran}(\Pi_{K_{\rm F}}^{\rm row}\otimes I_{\cK_X})
+ =(K_{\rm F}+1)^2\dim\cK_X
+ \label{eq:tpc52-no-orbit-rank-compression}
+\end{equation}
+when \(\cK_X\) is finite-dimensional.  If the physical orbit rank is of
+order \(J\), that factor is still present.  Hence
+\cref{thm:tpc52-sampled-cosine-compression} is compatible with scalar
+translate saturation: it compresses smooth dependence on the two row
+logs and makes no fixed-rank assertion about the orbit direction.

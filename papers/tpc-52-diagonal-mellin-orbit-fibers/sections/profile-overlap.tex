@@ -1,0 +1,431 @@
+\section{Uniform profile overlap on sampled orbit fibers}
+\label{sec:tpc52-profile-overlap}
+
+The diagonal Mellin identity reduces the actual-direction problem to a
+nonnegative comparison: the sampled energy of the unseparated physical
+profile must not be much smaller than the energy of the unimodular Mellin
+carrier.  This section proves that comparison under one explicit geometric
+hypothesis.  It is important that the hypothesis is stated separately from
+the row-flatness theorem inherited from TPC--50.
+
+\subsection{A row--orbit sampling interface}
+
+Put \(T=\log 2\) and \(Y=[0,T]^2\).  Let \(\cR_X\) be a finite
+opposite-row set, with logarithmic coordinates
+\[
+ q_\gamma=(x_\gamma,y_\gamma)\in Y
+ \qquad(\gamma\in\cR_X),
+\]
+positive weights \(\omega_{\gamma,X}\), and total weight
+\begin{equation}
+ E_X:=\sum_{\gamma\in\cR_X}\omega_{\gamma,X}>0.
+ \label{eq:tpc52-opposite-row-energy}
+\end{equation}
+We use the following three hypotheses.
+
+\begin{enumerate}[label=\textup{(S\arabic*)},leftmargin=3.2em]
+ \item The probability measures
+ \begin{equation}
+  \nu_X:=E_X^{-1}\sum_{\gamma\in\cR_X}
+           \omega_{\gamma,X}\delta_{q_\gamma}
+  \label{eq:tpc52-row-empirical-measure}
+ \end{equation}
+  converge weakly to a probability measure \(\nu\) on \(Y\).  In the
+  prime--squarefree application one takes the exact base weight
+  \(\omega_{\gamma,X}=(\log\ell_\gamma)^{2e}\), \(e\in\{0,1\}\), and
+  places every fixed dyadic or unary shape in \(B\) and \(F\).  Then
+  \(d\nu=e^{x+y}\,dx\,dy\) in the limit (this density already has mass
+  one on \(Y\)) \citep{WangTPC51}.  With any other base weight, both
+  weak convergence and the identity of its limiting measure are separate
+  hypotheses.
+ \item The base weights are uniformly flat:
+ \begin{equation}
+  |\cR_X|\max_{\gamma\in\cR_X}\omega_{\gamma,X}
+  \le C_{\rm flat}E_X.
+  \label{eq:tpc52-row-flatness}
+ \end{equation}
+ \item The literal mask \(M_X(\alpha,\gamma)\in\{0,1\}\) obeys the
+ one-sided degree estimate
+ \begin{equation}
+  \sup_\alpha\#\{\gamma\in\cR_X:M_X(\alpha,\gamma)=0\}
+  \le\epsilon_X|\cR_X|,
+  \qquad \epsilon_X=o(1).
+  \label{eq:tpc52-mask-degree}
+ \end{equation}
+\end{enumerate}
+
+For the TPC--50/51 application, \(\cR_X\) is required to be one complete
+positive-density admissible prime--squarefree row cell after fixed residue
+subdivision, in the nondegenerate interior regime used there (in particular
+the inherited size separation and injectivity of \(m=\ell d\) hold).  No
+independent pruning of the opposite row is allowed before \textup{(S3)} is
+applied.  If a declared packet does not have this form, \textup{(S1)}--
+\textup{(S3)} are new assumptions rather than consequences of TPC--50/51.
+
+The source label \(\alpha\) is not assigned a probability measure.  It may
+be supported on one row, and later it may carry an arbitrary cofactor
+multiplicity.  This asymmetry is what permits the final theorem to be
+uniform under source and \(r\)-concentration.
+
+Let \(\mathfrak B\) be a compact parameter space containing all normalized
+source-scale parameters.  Let \(\cA_0\) be a fixed finite collection of
+direct orbit-residue cells.  To each \(a\in\cA_0\) and
+\(\beta\in\mathfrak B\) associate a carrier and a physical profile
+\begin{equation}
+ B_{\beta,a},F_{\beta,a}\in C^1(Y\times I_0).
+ \label{eq:tpc52-carrier-profile-family}
+\end{equation}
+We assume that both families are compact in \(C^1(Y\times I_0)\).  In
+particular, their sup norms and first derivatives are uniformly bounded.
+The direct cell \(a\) corresponds to the progression
+\(j\equiv a\pmod {H_0}\); cells with zero physical residue amplitude are
+removed before this definition.
+
+Define the continuous carrier and profile energies by
+\begin{align}
+ \mathscr B(\beta)
+ &:=\frac1{H_0}\sum_{a\in\cA_0}
+   \int_Y\int_{I_0}|B_{\beta,a}(q,t)|^2\,dt\,d\nu(q),
+ \label{eq:tpc52-continuous-carrier}\\
+ \mathscr P(\beta)
+ &:=\frac1{H_0}\sum_{a\in\cA_0}
+   \int_Y\int_{I_0}|F_{\beta,a}(q,t)|^2\,dt\,d\nu(q).
+ \label{eq:tpc52-continuous-profile}
+\end{align}
+We impose the carrier nondegeneracy and normalization
+\begin{equation}
+ 0<b_-\le \mathscr B(\beta)\le b_+<\infty
+ \qquad(\beta\in\mathfrak B).
+ \label{eq:tpc52-carrier-normalization}
+\end{equation}
+Deleting an identically zero direct cell is harmless, but the uniform lower
+bound \(b_->0\) is a genuine compact-packet hypothesis; it is not supplied
+by row flatness alone.  Once that lower bound is known, rescaling fixes the
+upper and lower constants.
+
+\begin{assumption}[Uniform physical profile nondegeneracy]
+\label{ass:tpc52-profile-nondegeneracy}
+The declared direct packet satisfies
+\begin{equation}
+ \boxed{
+ \rho_*:=\inf_{\beta\in\mathfrak B}
+          \frac{\mathscr P(\beta)}{\mathscr B(\beta)}>0.}
+ \label{eq:tpc52-uniform-overlap}
+\end{equation}
+\end{assumption}
+
+Assumption~\ref{ass:tpc52-profile-nondegeneracy} is new.  It is not a
+consequence of TPC--50.  That paper proves flatness and literal-mask survival
+for an identified fixed-complexity unary row factor, uniformly in one
+real-axis Mellin phase.  It does not prove that the complete product of
+source, opposite-row, and orbit cutoffs retains a positive amount of carrier
+energy after the Mellin variables are reassembled.  In particular, it does
+not exclude two scaled compact supports approaching a common flat endpoint.
+For named fixed cutoffs, \eqref{eq:tpc52-uniform-overlap} is a deterministic
+support-geometry condition on a compact finite-dimensional parameter set; it
+is not a prime-pair hypothesis.
+
+\begin{lemma}[A nonempty active subcell from one strict overlap]
+\label{lem:tpc52-local-active-subcell}
+Assume \(\mathfrak B\subset\R^d\), the maps
+\(\beta\mapsto B_{\beta,a},F_{\beta,a}\) are continuous in
+\(C(Y\times I_0)\), and \eqref{eq:tpc52-carrier-normalization} holds.
+If, for some interior parameter \(\beta_0\), some direct cell \(a_0\),
+and some \((q_0,t_0)\in\supp\nu\times\operatorname{int}I_0\),
+\begin{equation}
+ |F_{\beta_0,a_0}(q_0,t_0)|>0,
+ \label{eq:tpc52-one-strict-overlap}
+\end{equation}
+then there is a nonempty compact parameter cell
+\(\mathfrak B_0\Subset\mathfrak B\), containing \(\beta_0\) in its
+relative interior, on which
+\begin{equation}
+ \inf_{\beta\in\mathfrak B_0}
+ \frac{\mathscr P(\beta)}{\mathscr B(\beta)}>0.
+ \label{eq:tpc52-local-active-ratio}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Continuity and \eqref{eq:tpc52-one-strict-overlap} give an open
+row--orbit box of positive \(\nu\otimes dt\) measure on which the same
+profile remains nonzero.  Hence \(\mathscr P(\beta_0)>0\).  The two
+energy functions are continuous in \(\beta\), while
+\(\mathscr B\ge b_->0\).  Their ratio is therefore continuous and
+positive on a sufficiently small neighborhood of \(\beta_0\).  Choose
+a compact cell inside that neighborhood.
+\end{proof}
+
+The lemma proves existence only after a strict overlap point has been
+verified for the named physical cutoffs.  It does not claim that every
+dyadic boundary packet, or the closure of the full inherited parameter
+range, is uniformly active.
+
+For \(\beta\in\mathfrak B\), define the unmasked sampled energies
+\begin{align}
+ \mathscr B_X^0(\beta)
+ &:=\frac1{E_XJ}\sum_{a\in\cA_0}
+   \sum_{\gamma\in\cR_X}\omega_{\gamma,X}
+   \sum_{j\in\cJ_{X,a}}
+   |B_{\beta,a}(q_\gamma,j/J)|^2,
+ \label{eq:tpc52-unmasked-carrier-sample}\\
+ \mathscr P_X^0(\beta)
+ &:=\frac1{E_XJ}\sum_{a\in\cA_0}
+   \sum_{\gamma\in\cR_X}\omega_{\gamma,X}
+   \sum_{j\in\cJ_{X,a}}
+   |F_{\beta,a}(q_\gamma,j/J)|^2.
+ \label{eq:tpc52-unmasked-profile-sample}
+\end{align}
+For a source row \(\alpha\), carrying a parameter
+\(\beta_\alpha\in\mathfrak B\), insert
+\(M_X(\alpha,\gamma)\) in these sums and denote the resulting quantities by
+\(\mathscr B_X^M(\alpha)\) and \(\mathscr P_X^M(\alpha)\).
+
+\begin{lemma}[Uniform row--orbit sampling]
+\label{lem:tpc52-uniform-row-orbit-sampling}
+Under \textup{(S1)} and the compact \(C^1\) profile hypotheses,
+\begin{align}
+ \sup_{\beta\in\mathfrak B}
+ |\mathscr B_X^0(\beta)-\mathscr B(\beta)|&=o(1),
+ \label{eq:tpc52-uniform-carrier-sampling}\\
+ \sup_{\beta\in\mathfrak B}
+ |\mathscr P_X^0(\beta)-\mathscr P(\beta)|&=o(1).
+ \label{eq:tpc52-uniform-profile-sampling}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+For a uniformly bounded subset of \(C^1(I_0)\), progression Riemann sums
+obey
+\[
+ \frac1J\sum_{j\in\cJ_{X,a}}
+ h(j/J)
+ =\frac1{H_0}\int_{I_0}h(t)\,dt+O(J^{-1})
+\]
+uniformly in \(h\).  Apply this with
+\(h(t)=|B_{\beta,a}(q,t)|^2\) and with \(F\) in place of \(B\).  The
+resulting functions of \(q\), as \(\beta\) and \(a\) vary, form compact
+subsets of \(C(Y)\).
+
+Weak convergence of probability measures is uniform on a compact subset of
+\(C(Y)\): given \(\delta>0\), choose a finite \(\delta\)-net in the sup norm,
+use weak convergence on its finitely many elements, and then use that both
+measures have mass one.  Applying this observation to the preceding compact
+families, and then summing over the fixed set \(\cA_0\), proves both claims.
+\end{proof}
+
+\begin{lemma}[Literal-mask deletion]
+\label{lem:tpc52-literal-mask-deletion}
+Under \textup{(S2)}--\textup{(S3)}, uniformly in the source row \(\alpha\),
+\begin{align}
+ 0\le
+ \mathscr B_X^0(\beta_\alpha)-\mathscr B_X^M(\alpha)
+ &\le C\epsilon_X,
+ \label{eq:tpc52-carrier-mask-deletion}\\
+ 0\le
+ \mathscr P_X^0(\beta_\alpha)-\mathscr P_X^M(\alpha)
+ &\le C\epsilon_X,
+ \label{eq:tpc52-profile-mask-deletion}
+\end{align}
+where \(C\) depends only on the fixed profile families, residue cells, and
+the flatness constant.
+\end{lemma}
+
+\begin{proof}
+For each deleted opposite row, the orbit sum of either squared profile is
+\(O(J)\), uniformly in \(\alpha,\gamma\), by compactness in \(C^1\).
+There are at most \(\epsilon_X|\cR_X|\) deleted rows.  Hence the unnormalized
+loss is at most
+\[
+ C J\epsilon_X|\cR_X|
+       \max_\gamma\omega_{\gamma,X}
+ \le C C_{\rm flat}\epsilon_XJE_X
+\]
+by \eqref{eq:tpc52-row-flatness}.  Division by \(JE_X\) proves the two
+estimates.
+\end{proof}
+
+\begin{theorem}[Uniform sampled overlap under the literal mask]
+\label{thm:tpc52-uniform-sampled-overlap}
+Assume \textup{(S1)}--\textup{(S3)},
+\eqref{eq:tpc52-carrier-normalization}, and
+Assumption~\ref{ass:tpc52-profile-nondegeneracy}.  Then, for all sufficiently
+large \(X\), uniformly in every source row \(\alpha\),
+\begin{equation}
+ \mathscr B_X^M(\alpha)\ge \frac{b_-}{2}>0,
+ \qquad
+ \frac{\mathscr P_X^M(\alpha)}{\mathscr B_X^M(\alpha)}
+ \ge \frac{\rho_*}{2}.
+ \label{eq:tpc52-uniform-masked-overlap}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \cref{lem:tpc52-uniform-row-orbit-sampling,lem:tpc52-literal-mask-deletion},
+both masked sampled energies differ
+uniformly from their continuous counterparts by \(o(1)\).  In particular,
+the carrier is at least \(b_-/2\) for large \(X\).  Also
+\(\mathscr P(\beta)\ge\rho_*\mathscr B(\beta)\ge\rho_*b_-\).  Choose \(X\)
+so large that the two absolute errors are smaller than a fixed sufficiently
+small multiple of \(\rho_*b_-\).  Dividing the resulting profile lower bound
+by the corresponding carrier upper bound gives the stated constant
+\(\rho_*/2\), after harmlessly enlarging the threshold for \(X\).
+\end{proof}
+
+The number \(1/2\) is inessential.  The proof gives
+\(\rho_*+o(1)\) after the carrier normalization is kept in the ratio.  The
+weaker displayed constant is convenient for later direct sums.
+
+\subsection{Arbitrary outer concentration}
+
+Let \(\cU_X\) be any finite source/cofactor label set.  Each
+\(u\in\cU_X\) carries a source row \(\alpha(u)\), a parameter
+\(\beta_{\alpha(u)}\), and an arbitrary scalar or Hilbert coefficient
+\(a_u\).  Define
+\begin{align}
+ \cC_X(a)&:=E_XJ\sum_{u\in\cU_X}
+             \|a_u\|^2\mathscr B_X^M(\alpha(u)),
+ \label{eq:tpc52-outer-carrier-energy}\\
+ \cP_X(a)&:=E_XJ\sum_{u\in\cU_X}
+             \|a_u\|^2\mathscr P_X^M(\alpha(u)).
+ \label{eq:tpc52-outer-profile-energy}
+\end{align}
+
+\begin{corollary}[Source- and cofactor-uniform overlap]
+\label{cor:tpc52-arbitrary-source-r-concentration}
+Under the hypotheses of \cref{thm:tpc52-uniform-sampled-overlap},
+\begin{equation}
+ \boxed{\cP_X(a)\ge \frac{\rho_*}{2}\cC_X(a)}
+ \label{eq:tpc52-outer-overlap}
+\end{equation}
+for every finitely supported family \((a_u)\).  No lower source count,
+source equidistribution, or uniform cofactor multiplicity is required.
+\end{corollary}
+
+\begin{proof}
+Apply \eqref{eq:tpc52-uniform-masked-overlap} separately to every retained
+source/cofactor fiber, multiply by \(\|a_u\|^2\), and sum.  All terms are
+nonnegative because the source and cofactor labels have not been coherently
+grouped.
+\end{proof}
+
+\subsection{Good and bad overlap cells}
+
+Uniform positivity may fail on the closure of a packet even though most
+carrier energy lies away from the grazing boundary.  The following threshold
+form records exactly what an energy selection must prove.
+
+For \(\eta>0\), put
+\begin{equation}
+ \mathfrak B_{\rm good}(\eta)
+ :=\left\{\beta\in\mathfrak B:
+          \frac{\mathscr P(\beta)}{\mathscr B(\beta)}\ge\eta\right\},
+ \qquad
+ \mathfrak B_{\rm bad}(\eta):=\mathfrak B\setminus
+          \mathfrak B_{\rm good}(\eta).
+ \label{eq:tpc52-good-bad-parameters}
+\end{equation}
+Let \(\Delta_X^{\rm samp}\) denote the maximum of the two uniform sampling errors in
+\cref{lem:tpc52-uniform-row-orbit-sampling} plus \(C\epsilon_X\), with the
+constant from \cref{lem:tpc52-literal-mask-deletion}.
+
+\begin{proposition}[Threshold overlap tradeoff]
+\label{prop:tpc52-threshold-overlap}
+Let \(\eta_X>0\) satisfy
+\begin{equation}
+ \Delta_X^{\rm samp}=o(\eta_X).
+ \label{eq:tpc52-relative-sampling-threshold}
+\end{equation}
+For all sufficiently large \(X\), every source fiber whose parameter lies in
+\(\mathfrak B_{\rm good}(\eta_X)\) has sampled masked profile-to-carrier
+ratio at least \(\eta_X/2\).
+
+For an arbitrary outer family \(a\), let \(\cC_X^{\rm good}(a)\) and
+\(\cC_X^{\rm bad}(a)\) be the carrier energies from
+\eqref{eq:tpc52-outer-carrier-energy} restricted according to
+\eqref{eq:tpc52-good-bad-parameters}, and put
+\begin{equation}
+ \sigma_X:=\frac{\cC_X^{\rm good}(a)}{\cC_X(a)}
+ \quad\text{when }\cC_X(a)>0.
+ \label{eq:tpc52-good-carrier-fraction}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \cP_X(a)\ge \frac{\eta_X\sigma_X}{2}\cC_X(a).}
+ \label{eq:tpc52-threshold-global-overlap}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The proof of \cref{thm:tpc52-uniform-sampled-overlap} is uniform on the good
+set.  Condition \eqref{eq:tpc52-relative-sampling-threshold} makes its
+absolute sampling-and-deletion error negligible relative to
+\(\eta_X\mathscr B(\beta)\), since the carrier is at least \(b_-\).
+This gives the fiberwise factor \(\eta_X/2\).  Sum only the good fibers as in
+\cref{cor:tpc52-arbitrary-source-r-concentration}; the bad contribution to
+the physical energy is nonnegative and may be discarded.  The definition of
+\(\sigma_X\) then gives \eqref{eq:tpc52-threshold-global-overlap}.
+\end{proof}
+
+Mere weak convergence in \textup{(S1)} proves the proposition for a fixed
+\(\eta>0\), but it does not by itself verify
+\eqref{eq:tpc52-relative-sampling-threshold} for a polynomially shrinking
+\(\eta_X\).  Such a use requires a quantitative row-sampling theorem at the
+resolution of the shrinking overlap, together with a mask error smaller than
+\(\eta_X\).  This distinction prevents a qualitative compactness argument
+from being misreported as a polynomial endpoint estimate.
+
+For clarity, the quantitative fixed-modulus sampling error available in the
+inherited row theorem contains \(e^{-c\sqrt{\log L}}\).  This tends to zero
+but is larger than \(X^{-\lambda}\) for every fixed \(\lambda>0\).  Hence it
+does not verify \(\Delta_X^{\rm samp}=o(X^{-\lambda})\) for a polynomially shrinking
+threshold.  A strict inequality \(\lambda<1/400\) controls the inherited
+mask-deletion term only; the shrinking-threshold branch still requires a
+sharper relative sampling theorem (or a fixed positive overlap).
+
+\subsection{The exponent ledger}
+
+Suppose a displayed Mellin representation satisfies
+\begin{equation}
+ \cE_X^2\le X^{\omega+o(1)}\cC_X(a),
+ \label{eq:tpc52-envelope-carrier-exponent}
+\end{equation}
+and write
+\begin{equation}
+ \eta_X=X^{-\lambda+o(1)},
+ \qquad
+ \sigma_X=X^{-\varsigma+o(1)}.
+ \label{eq:tpc52-threshold-exponents}
+\end{equation}
+Then \cref{prop:tpc52-threshold-overlap} gives
+\begin{equation}
+ \frac{\cE_X^2}{\cP_X(a)}
+ \le X^{\omega+\lambda+\varsigma+o(1)}.
+ \label{eq:tpc52-threshold-condition-exponent}
+\end{equation}
+For a family of \(R_X=X^{\varrho+o(1)}\) direct cells whose individual
+weighted Mellin masses are at most \(X^{\tau+o(1)}\), Cauchy--Schwarz in the
+finite cell index gives the admissible ledger
+\begin{equation}
+ \omega\le 2\tau+\varrho.
+ \label{eq:tpc52-cell-mass-exponent}
+\end{equation}
+Thus a sufficient endpoint condition is
+\begin{equation}
+ \boxed{2\tau+\varrho+\lambda+\varsigma\le \frac1{400},}
+ \label{eq:tpc52-one-over-four-hundred-ledger}
+\end{equation}
+in addition to the relative sampling requirement
+\eqref{eq:tpc52-relative-sampling-threshold}.  For a declared fixed collection
+of direct residue cells, fixed smooth shapes, and fixed derivative order,
+\(\tau=\varrho=0\).  Under the additional exact-profile identification and
+uniform nondegeneracy hypotheses used below,
+\(\lambda=\varsigma=0\) as well, so this gate consumes no positive part of
+the \(1/400\) allowance.
+
+At the inherited endpoint the degree defect contains a term
+\(X^{-1/400+o(1)}\).  Consequently a threshold exactly of size
+\(X^{-1/400+o(1)}\) is not automatically larger than the mask error.  A
+strict exponent margin, or a sharper packet-specific deletion theorem, is
+needed before equality at that boundary may be claimed.

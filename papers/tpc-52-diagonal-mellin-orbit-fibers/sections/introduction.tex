@@ -1,0 +1,167 @@
+\section{Introduction}
+\label{sec:tpc52-introduction}
+
+The smooth row--orbit factors in the opened fixed-shift packet are not a
+fixed scalar family.  They contain expressions such as
+\begin{equation}
+ W(mj/X),\qquad \Psi(dj/K),
+ \label{eq:tpc52-physical-shapes-preview}
+\end{equation}
+and therefore generate more and more log translates as the orbit length
+\(J\) grows.  TPC--51 proved that distinct compactly supported log
+translates are linearly independent and consequently cannot be replaced
+by a fixed-rank scalar family merely by relabelling
+\citep{WangTPC51}.  It also proved stable sampled quotient frames for
+every declared fixed finite family and for polylogarithmic row-log
+Fourier banks.  The missing step was to connect those model results to
+the actual coefficientwise operator.
+
+There are two traps at this point.  First, linear independence is not a
+uniform lower-frame theorem.  Nearby translates are almost parallel,
+and their scalar Gram matrix is extremely ill-conditioned.  Second, the
+physical operator never forms that scalar Gram: before coherent prime
+summation it retains the orbit coordinate \(j\), together with source,
+cofactor, opposite-row, and residual labels.  Those labels are
+orthogonal.  Forgetting them manufactures cross terms that are absent
+from the physical coefficient space.
+
+This paper separates the two issues.  We give a quantitative saturation
+theorem for the false scalar collapse, then prove a diagonal theorem for
+the label-preserving actual direction.  The latter does not assert a
+lower frame on every signed Mellin density.  It uses the one coefficient
+density fixed by provenance and reduces its condition number to a
+nonnegative physical overlap ratio.
+
+\subsection{Main results}
+
+The conclusions are organized by the operator on which they hold.
+
+\begin{enumerate}[label=\textup{(R\arabic*)},leftmargin=3.2em]
+ \item \textbf{Scalar saturation.}
+ Let \(a\mapsto g(a)\) be a normalized \(C^\infty\) Hilbert-valued
+ curve.  If \(r+1\) sampling parameters lie in an interval of length
+ \(O_r(J^{-1})\), then their scalar Gram matrix has
+ \begin{equation}
+  \lambda_{\min}\le C_rJ^{-2r}.
+  \label{eq:tpc52-intro-saturation}
+ \end{equation}
+ For interior log translates with no exact relation, this persists on
+ the exact span.  Their dimension is of order \(J\), so an exact or
+ uniform-relative scalar reduction needs rank of order \(J\), not a
+ fixed or polylogarithmic rank.
+
+ \item \textbf{Orthogonal orbit lift.}
+ For arbitrary vectors \(f_j\), the label-preserving synthesis
+ \(c\mapsto\bigoplus_jc_jf_j e_j\) has diagonal Gram
+ \begin{equation}
+  \left\|\bigoplus_jc_jf_je_j\right\|^2
+  =\sum_j|c_j|^2\|f_j\|^2.
+  \label{eq:tpc52-intro-orthogonal-lift}
+ \end{equation}
+ Thus scalar saturation is not a physical obstruction while \(j\)
+ remains an output coordinate.
+
+ \item \textbf{Exact multi-factor Mellin ledger.}
+ For one direct residue cell and one provenance-fixed coefficient
+ vector, multidimensional Mellin inversion gives
+ \begin{equation}
+  \frac{\cE_B(\mathbf W;c)^2}
+       {\|\cS_{\mathbf W}c\|_2^2}
+  =\frac{A_B(\mathbf W)^2}{\Theta(\mathbf W;c)}.
+  \label{eq:tpc52-intro-exact-ledger}
+ \end{equation}
+ The numerator contains only the fixed weighted Wiener--Mellin mass;
+ all scale dependence is in the explicit profile-overlap
+ \(\Theta\).  This is an identity, not a numerical conditioning
+ heuristic.
+
+ \item \textbf{Uniformly active actual cells.}
+ Normalize an opposite row by
+ \(x=\log(\ell/L)\), \(y=\log(d/D)\), and the orbit by \(t=j/J\).
+ For a source-scale parameter \(\beta\), let \(B_\beta\) be the carrier
+ and \(F_\beta\) the unseparated physical profile.  Define
+ \begin{equation}
+ \rho_*
+  :=\inf_{\beta\in\mathfrak B}
+  \frac{\displaystyle\int|F_\beta(x,y,t)|^2
+                       e^{x+y}\,dx\,dy\,dt}
+       {\displaystyle\int|B_\beta(x,y,t)|^2
+                       e^{x+y}\,dx\,dy\,dt}.
+  \label{eq:tpc52-intro-overlap}
+ \end{equation}
+ A single strict overlap point yields a nonempty compact uniformly active
+ subcell; on such a cell, \(\rho_*>0\).  Conditional on the named packet
+ also satisfying the exact actual-to-profile coordinate dictionary and
+ complete-row hypotheses, the prime--squarefree row sampler, the orbit
+ Riemann sum, and the literal mask imply
+ \(\Theta_X^{\rm act}\ge\rho_*/2\), uniformly for arbitrary source
+ concentration and arbitrary finite retained cofactor support.  Hence that
+ declared coefficientwise pre-terminal
+ direction has condition number \(O(1)\).  The paper does not infer this
+ dictionary or uniform overlap for every inherited packet.
+
+ \item \textbf{Conditional row-log compression.}
+ A tensor cosine bank of degree \(K_{\rm F}\) has squared approximation tail
+ \(O(K_{\rm F}^{-2})\) for a retained Hilbert-valued orbit field with controlled
+ row-log regularity.  If that regularity is bounded by the carrier energy
+ and the projected reference energy has a fixed lower bound, then
+ \(K_{\rm F}=(\log X)^A\), arithmetic sampling, and sparse mask deletion
+ give an \(o(1)\) relative tail.  Under the exact-profile dictionary and
+ \(\rho_*>0\), the required normalizations are verified for the declared
+ retained actual field.  The projection compresses row-log frequency, not
+ the orbit label.
+
+ \item \textbf{Grazing is a sharp boundary.}
+ Two fixed \(C_c^\infty\) bumps can have scaled supports whose overlap
+ approaches a common flat endpoint.  At distance
+ \(\delta_X=X^{-\sigma}\), the physical overlap is smaller than every
+ power of \(X\) while the Mellin carrier stays nonzero.  The
+ distinguished actual direction then has a super-polynomial condition
+ number.  Thus bounded smoothness and dyadic scale comparability do not
+ replace the positive-overlap hypothesis.
+\end{enumerate}
+
+\subsection{What advances and what does not}
+
+We use the same three-level ledger as the preceding reduction.
+
+\begin{description}[leftmargin=3.2em,style=nextline]
+ \item[Level L0: exact algebra and boundary analysis.]
+ Scalar saturation, the orthogonal-lift identity, the multi-factor
+ Mellin ledger, and the grazing construction are exact analytic
+ statements.
+ \item[Level L1: physical coefficient interface.]
+ Under the exact-profile and complete-row hypotheses, the overlap theorem
+ keeps the literal source coefficient, direct
+ residue cell, orbit label, opposite row, residual label, real-axis
+ Mellin normalization, and static mask in their inherited order.  It
+ gives a conditional actual-direction Mellin bridge on uniformly active
+ direct cells.  Verifying those hypotheses for every inherited packet is
+ not part of the theorem.
+ \item[Level L2: arithmetic target.]
+ A coherent prime square, fixed-shift target correlation, or parity
+ estimate.  No statement at this level is proved here.
+\end{description}
+
+The L1 conclusion is a strict subgate.  It is not the full TPC--48
+profile envelope: that object takes a Hilbert norm after coherent prime
+summation and before the outer signed projective integral.  Nor does the
+present theorem group \(s=d(m)r\), localize a frozen family to the
+physical \(h_0\), or identify the residual Gram with the native affine
+physical Gram.  In particular, no fixed-shift prime-pair lower bound,
+Hardy--Littlewood asymptotic, parity-barrier breach, or twin-prime
+conclusion is asserted.
+
+\subsection{Organization}
+
+\Cref{sec:tpc52-interface} reconstructs the exact coefficientwise
+operator.  \Cref{sec:tpc52-scalar-saturation} proves scalar saturation
+and the orthogonal-lift identity.  The diagonal Mellin ledger is
+\cref{sec:tpc52-diagonal-mellin}.  The continuous and sampled overlap
+theorems are established in \cref{sec:tpc52-profile-overlap}, and their
+actual TPC consequence in \cref{sec:tpc52-actual-bridge}.
+ \Cref{sec:tpc52-fourier-compressibility} proves the corresponding
+ conditional polylogarithmic relative-tail theorem.  The sharp grazing obstruction and the endpoint
+claim ledger are given in \cref{sec:tpc52-grazing,sec:tpc52-endpoint}.
+The exact finite certificate is described in
+\cref{sec:tpc52-certificate}.

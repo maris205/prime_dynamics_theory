@@ -1,0 +1,49 @@
+\section{Exact finite certificate}
+\label{sec:tpc52-certificate}
+
+The analytic arguments do not depend on floating-point experiments.
+The accompanying standard-library Python program
+\begin{center}
+ \texttt{experiments/tpc52\_certificate.py}
+\end{center}
+is a deterministic regression test for their finite algebra.  It uses
+exact rational arithmetic and performs \(4{,}372\) assertions in six
+groups:
+\begin{enumerate}[label=\textup{(C\arabic*)},leftmargin=3.2em]
+ \item \(3{,}612\) clustered finite-difference moment identities;
+ \item \(128\) orthogonal orbit-lift energy identities;
+ \item \(370\) finite diagonal-multiplier overlap ledgers;
+ \item \(160\) arbitrary nonnegative weight-transfer checks;
+ \item \(99\) good/bad overlap threshold inequalities; and
+ \item three exact endpoint fraction identities.
+\end{enumerate}
+The normalized source SHA-256 is
+\begin{center}
+{\small\texttt{3d6244dd53736436539c4842b732731919539164d001d1f41e8f886d80702ee4}},
+\end{center}
+the semantic payload SHA-256 is
+\begin{center}
+{\small\texttt{0fc0c178543beddd5ba86120d235fd28cd135ffdd84893cdda12cd296ca54bf9}},
+\end{center}
+and the certificate-core SHA-256 is
+\begin{center}
+{\small\texttt{2e136caf81b9ce92f8dccd55d834c78cf4eeedc5c559d283f483e5d333177065}}.
+\end{center}
+The committed output is
+\texttt{experiments/tpc52\_certificate\_output.txt}.  Running
+\begin{center}
+\texttt{python experiments/tpc52\_certificate.py
+        --output experiments/tpc52\_certificate\_output.txt}
+\end{center}
+reproduces it byte for byte when the normalized source is unchanged.
+
+The certificate catches sign errors in the moment-annihilating
+coefficients, accidental reintroduction of scalar cross terms, inversion
+of the overlap ratio, failure of fiberwise lower bounds under arbitrary
+nonnegative concentration, and arithmetic mistakes in the endpoint
+ledger.  It does not prove uniform prime--squarefree sampling, Sobolev
+tail estimates, flat-boundary asymptotics, or the physical profile
+nondegeneracy assumption.  It does not enumerate a coherent prime sum
+and cannot certify a fixed-shift prime-pair statement.  Its scope is
+finite L0 algebra supporting the stated L1 interface, with no L2 or
+parity-sensitive conclusion.

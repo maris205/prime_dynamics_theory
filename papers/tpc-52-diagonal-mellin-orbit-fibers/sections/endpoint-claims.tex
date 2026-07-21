@@ -1,0 +1,130 @@
+\section{Endpoint ledger and claim boundary}
+\label{sec:tpc52-endpoint}
+
+This section records exactly what the preceding theorems purchase in the
+fixed-shift reduction.  It is deliberately stated as an operator ledger,
+not as a prediction about primes.
+
+\subsection{Condition-number expenditure}
+
+For one direct cell and a sequence of nonzero coefficient vectors \(c_X\),
+put \(\Theta_X:=\Theta(\mathbf W;c_X)\).  The diagonal identity of
+\cref{thm:tpc52-diagonal-ledger} then assigns the scale-dependent cost
+\begin{equation}
+ \kappa_{\rm can,B}(X)
+ =\frac{A_B(\mathbf W)^2}{\Theta_X}.
+ \label{eq:tpc52-endpoint-exact-cost}
+\end{equation}
+The Mellin factor \(A_B(\mathbf W)\) is fixed once the shapes, the
+number of factors, and \(B\) are fixed.  Consequently:
+\begin{align}
+ \Theta_X&\gg 1
+   &&\Longrightarrow& \kappa_{\rm can,B}(X)&=O(1),
+ \label{eq:tpc52-endpoint-constant-cost}\\
+ \Theta_X&\ge X^{-o(1)}
+   &&\Longrightarrow& \kappa_{\rm can,B}(X)&=X^{o(1)},
+ \label{eq:tpc52-endpoint-subpower-cost}\\
+ \Theta_X&\ge X^{-\lambda+o(1)}
+   &&\Longrightarrow& \kappa_{\rm can,B}(X)&\ll X^{\lambda+o(1)}.
+ \label{eq:tpc52-endpoint-power-cost}
+\end{align}
+Here \(\kappa_{\rm can,B}\) is a squared norm ratio.  No square root is
+silently inserted into the exponent ledger.
+
+The inherited endpoint reserves at most \(1/400\) of polynomial
+exponent for this interface.  The formal exponent ledger therefore requires
+\begin{equation}
+ \lambda\le \frac1{400}.
+ \label{eq:tpc52-endpoint-budget}
+\end{equation}
+In an application carrying unspecified \(X^{o(1)}\) factors, operational
+viability uses the strict inequality \(\lambda<1/400\); equality is a
+boundary case requiring a separate sharp endpoint estimate.
+Uniform activity has \(\lambda=0\).  By contrast, the grazing example
+in \cref{sec:tpc52-grazing} violates every fixed polynomial budget.
+These statements concern only this coefficientwise interface; unused
+budget here cannot be counted as progress at a downstream gate.
+
+\subsection{The precise forward step}
+
+The logical dependency is
+\begin{equation}
+ \begin{gathered}
+ \text{TPC--50: a fixed-complexity direct cell survives the literal mask}
+ \\
+ \Downarrow
+ \\
+ \text{TPC--51: fixed scalar quotient frames and sampled row-log banks}
+ \\
+ \Downarrow
+ \\
+ \boxed{\text{TPC--52: a conditional pre-terminal Mellin criterion}}
+ \\
+ \boxed{\text{on exact-dictionary, complete-row, uniformly active cells.}}
+ \end{gathered}
+ \label{eq:tpc52-dependency}
+\end{equation}
+The new point is that the physical orbit label is retained.  The false
+scalar Gram is allowed to saturate, while the actual coefficient vector
+is treated by a diagonal multiplier and a nonnegative overlap ratio.
+Under the exact-profile dictionary, complete-row hypotheses
+\textup{(S1)}--\textup{(S3)}, and \(\rho_*>0\), this verifies the
+actual-direction part of the narrow TPC--51 bridge and its row-log
+relative-tail branch on the declared retained field.  Those hypotheses are
+not proved here for every inherited packet.  The result is therefore a
+conditional L1 interface theorem and a finite, checkable reduction of the
+remaining provenance work.
+
+\subsection{Operations not licensed by the theorem}
+
+The following arrows remain absent:
+\begin{enumerate}[label=\textup{(O\arabic*)},leftmargin=3.2em]
+ \item a lower square after the terminal coherent sum over primes \(p\);
+ \item stability after identifying equal residual labels
+       \(s=d(m)r\);
+ \item passage from the frozen shift family to the single physical
+       shift \(h_0\);
+ \item identification of the coefficientwise quadratic form with the
+       native affine physical Gram;
+ \item reverse Minkowski control for the full signed projective profile
+       used in TPC--48; and
+ \item an estimate for any fixed-shift prime-pair correlation.
+\end{enumerate}
+The diagonal proof would be invalid if applied after any operation that
+creates cross terms among \((m,r,j,\gamma)\).  In particular, it cannot
+be moved through the coherent prime map merely by citing positivity of
+the pre-terminal energy.
+
+\subsection{Claim table}
+
+\begin{center}
+\small
+\begin{tabular}{@{}
+ >{\raggedright\arraybackslash}p{0.16\textwidth}
+ >{\raggedright\arraybackslash}p{0.48\textwidth}
+ >{\raggedright\arraybackslash}p{0.25\textwidth}@{}}
+\toprule
+Level & Established here & Explicitly not established\\
+\midrule
+L0 & Scalar cluster saturation; orthogonal lift; exact multi-factor
+Mellin ledger; support-grazing obstruction. & A lower frame for every
+signed Mellin density.\\
+L1 & Conditional actual-direction stability and polylogarithmic row-log
+tail on exact-dictionary, complete-row, profile-nondegenerate direct cells.
+& Verification of those hypotheses for every inherited packet; coherent
+prime lower square, residual grouping, physical-shift localization, and
+native-Gram comparison.\\
+L2 & Nothing. & Hardy--Littlewood asymptotics, a parity-barrier breach,
+or any twin-prime conclusion.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Thus TPC--52 closes the analytic part of a declared interior subgate
+conditional on a finite actual-profile dictionary and sharpens the next
+decision.  One must first verify that dictionary and uniform overlap for the
+packet in use; one may then test whether the later coherent-prime operator
+preserves enough of this retained-label energy, or prove that it does
+not.  Boundary packets with vanishing overlap must be budgeted,
+discarded with a quantified physical error, or treated by additional
+structure; they are not covered by the interior theorem.
