@@ -1,0 +1,97 @@
+{
+  "all_rows_certified": true,
+  "critical_parameter_certificate": {
+    "ball": "[1.5436890126920763615708559718017479865252032976510 +/- 2.61e-50]",
+    "derivative_ball": "[2.974171252950407036084701722158111814747332940642 +/- 3.40e-49]",
+    "polynomial_at_lower": "[-2.974171e-50 +/- 4.96e-57]",
+    "polynomial_at_upper": "[2.974171e-50 +/- 5.91e-57]",
+    "unique_root_certified": true
+  },
+  "route_consequence": "The folded-Gaussian and Haar assembly can be moved entirely upstream of the spectral gate. The remaining finite-scale deflation problem is the stationary left vector and parity Riesz pair, not kernel evaluation or row normalization.",
+  "rows": [
+    {
+      "all_support_centers_interval_stable": true,
+      "coarse_and_cross_block_two_norm_defect_upper": {
+        "against_frozen_pipeline": 8.282529272931036e-16,
+        "against_frozen_pipeline_ball": "[8.28252927293103662976778007810163e-16 +/- 1.96e-49]",
+        "against_repaired_pipeline": 8.559315026283776e-16,
+        "against_repaired_pipeline_ball": "[8.55931502628377607229972457880401e-16 +/- 2.19e-49]"
+      },
+      "dimension": 32,
+      "elapsed_seconds": 0.028342242003418505,
+      "exact_perron_right_vector_for_repaired_matrix": true,
+      "exact_stochastic_repair_certified": true,
+      "frozen_matrix_norm_bound": {
+        "infinity_norm_upper": 1.0000000000000002,
+        "infinity_norm_upper_ball": "[1.00000000000000011133374588930921959828435063855067710392 +/- 1.78e-57]",
+        "one_norm_upper": 1.5159288039965109,
+        "one_norm_upper_ball": "[1.51592880399651088639332309265786631093109182444322868832 +/- 3.88e-57]",
+        "two_norm_upper": 1.2312306055311129,
+        "two_norm_upper_ball": "[1.23123060553111294690618674992995237049149331444096384772 +/- 8.19e-58]"
+      },
+      "frozen_sha256": "3adfdd7b75edfeb9e70ea2f97a3d4793cbf8e6879566d8bc49476fdc19629367",
+      "full_to_frozen_matrix_defect": {
+        "infinity_norm_upper": 1.011370208889902e-15,
+        "infinity_norm_upper_ball": "[1.01137020888990191842754907041968443118789722063207976291e-15 +/- 3.19e-72]",
+        "one_norm_upper": 3.6785987973507546e-16,
+        "one_norm_upper_ball": "[3.67859879735075474560669130443710955757639390873749700577e-16 +/- 4.88e-74]",
+        "two_norm_upper": 6.099528862214503e-16,
+        "two_norm_upper_ball": "[6.09952886221450287753744281358763e-16 +/- 1.06e-49]"
+      },
+      "full_to_repaired_matrix_defect": {
+        "infinity_norm_upper": 1.052353051009854e-15,
+        "infinity_norm_upper_ball": "[1.05235305100985398603303078629256822787979175188207976291e-15 +/- 3.19e-72]",
+        "one_norm_upper": 3.863474148498071e-16,
+        "one_norm_upper_ball": "[3.86347414849807138828911608591423995518350224694219527385e-16 +/- 3.72e-73]",
+        "two_norm_upper": 6.376314615567242e-16,
+        "two_norm_upper_ball": "[6.376314615567242470396793686532942e-16 +/- 6.05e-50]"
+      },
+      "haar": {
+        "embedding_two_norm_defect_ball": "[8.8651159291758276258539946134748326281085e-17 +/- 5.05e-58]",
+        "embedding_two_norm_defect_upper": 8.865115929175827e-17,
+        "exact_inverse_sqrt_two_ball": "[0.707106781186547524400844362104849039284835937688474036588 +/- 6.71e-58]",
+        "frozen_embedding_two_norm_ball": "[0.999999999999999911348840708241723741460053865251673718915 +/- 6.55e-58]",
+        "frozen_inverse_sqrt_two": 0.7071067811865475
+      },
+      "maximum_exact_repair_correction_ball": "[1.37342523053174430054722363753194613877894880715757608414e-16 +/- 3.04e-73]",
+      "maximum_exact_repair_correction_upper": 1.3734252305317443e-16,
+      "maximum_frozen_row_sum_defect_ball": "[1.37342523053174430054722363753194613877894880715757608414e-16 +/- 3.04e-73]",
+      "maximum_frozen_row_sum_defect_upper": 1.3734252305317443e-16,
+      "maximum_full_to_sparse_row_l1_ball": "0",
+      "maximum_full_to_sparse_row_l1_upper": 0.0,
+      "minimum_repaired_pivot_lower": 0.07763178777349873,
+      "minimum_support_center_floor_margin": 0.010236393558223256,
+      "precision_bits": 192,
+      "repaired_matrix_norm_bound": {
+        "infinity_norm_upper": 1.0,
+        "infinity_norm_upper_ball": "1.00000000000000000000000000000000000000000000000000000000",
+        "one_norm_upper": 1.5159288039965109,
+        "one_norm_upper_ball": "[1.51592880399651084638531001587709160817463160952911493951 +/- 4.77e-57]",
+        "two_norm_upper": 1.2312306055311129,
+        "two_norm_upper_ball": "[1.23123060553111286212026427964220104512667334420996631334 +/- 4.18e-57]"
+      },
+      "sigma": 0.16,
+      "sparse_exact_to_frozen_matrix_defect": {
+        "infinity_norm_upper": 1.011370208889902e-15,
+        "infinity_norm_upper_ball": "[1.01137020888990191842754907041968443118789722063207976291e-15 +/- 3.19e-72]",
+        "one_norm_upper": 3.6785987973507546e-16,
+        "one_norm_upper_ball": "[3.67859879735075474560669130443710955757639390873749700577e-16 +/- 4.88e-74]",
+        "two_norm_upper": 6.099528862214503e-16,
+        "two_norm_upper_ball": "[6.09952886221450287753744281358763e-16 +/- 1.06e-49]"
+      },
+      "support_half_width": 43
+    }
+  ],
+  "status": "rh72_validated_folded_gaussian_assembly",
+  "theorem_boundary": {
+    "algebraic_parameter_interval_certified": true,
+    "exact_stochastic_repair_constructed": true,
+    "full_midpoint_to_sparse_truncation_enclosed": true,
+    "parity_riesz_pair_validated": false,
+    "perron_right_vector_exact_after_repair": true,
+    "rank_two_deflation_validated": false,
+    "sparse_exact_to_binary64_enclosed": true,
+    "stage_A1_closed": false,
+    "stationary_left_vector_validated": false
+  }
+}

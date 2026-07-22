@@ -1,0 +1,385 @@
+{
+  "all_rows_certified": true,
+  "critical_parameter_certificate": {
+    "ball": "[1.5436890126920763615708559718017479865252032976510 +/- 2.61e-50]",
+    "derivative_ball": "[2.974171252950407036084701722158111814747332940642 +/- 3.40e-49]",
+    "polynomial_at_lower": "[-2.974171e-50 +/- 4.96e-57]",
+    "polynomial_at_upper": "[2.974171e-50 +/- 5.91e-57]",
+    "unique_root_certified": true
+  },
+  "route_consequence": "The folded-Gaussian and Haar assembly can be moved entirely upstream of the spectral gate. The remaining finite-scale deflation problem is the stationary left vector and parity Riesz pair, not kernel evaluation or row normalization.",
+  "rows": [
+    {
+      "all_support_centers_interval_stable": true,
+      "coarse_and_cross_block_two_norm_defect_upper": {
+        "against_frozen_pipeline": 8.282529272931036e-16,
+        "against_frozen_pipeline_ball": "[8.28252927293103662976778007810163e-16 +/- 1.96e-49]",
+        "against_repaired_pipeline": 8.559315026283776e-16,
+        "against_repaired_pipeline_ball": "[8.55931502628377607229972457880401e-16 +/- 2.19e-49]"
+      },
+      "dimension": 32,
+      "elapsed_seconds": 0.028811683994717896,
+      "exact_perron_right_vector_for_repaired_matrix": true,
+      "exact_stochastic_repair_certified": true,
+      "frozen_matrix_norm_bound": {
+        "infinity_norm_upper": 1.0000000000000002,
+        "infinity_norm_upper_ball": "[1.00000000000000011133374588930921959828435063855067710392 +/- 1.78e-57]",
+        "one_norm_upper": 1.5159288039965109,
+        "one_norm_upper_ball": "[1.51592880399651088639332309265786631093109182444322868832 +/- 3.88e-57]",
+        "two_norm_upper": 1.2312306055311129,
+        "two_norm_upper_ball": "[1.23123060553111294690618674992995237049149331444096384772 +/- 8.19e-58]"
+      },
+      "frozen_sha256": "3adfdd7b75edfeb9e70ea2f97a3d4793cbf8e6879566d8bc49476fdc19629367",
+      "full_to_frozen_matrix_defect": {
+        "infinity_norm_upper": 1.011370208889902e-15,
+        "infinity_norm_upper_ball": "[1.01137020888990191842754907041968443118789722063207976291e-15 +/- 3.19e-72]",
+        "one_norm_upper": 3.6785987973507546e-16,
+        "one_norm_upper_ball": "[3.67859879735075474560669130443710955757639390873749700577e-16 +/- 4.88e-74]",
+        "two_norm_upper": 6.099528862214503e-16,
+        "two_norm_upper_ball": "[6.09952886221450287753744281358763e-16 +/- 1.06e-49]"
+      },
+      "full_to_repaired_matrix_defect": {
+        "infinity_norm_upper": 1.052353051009854e-15,
+        "infinity_norm_upper_ball": "[1.05235305100985398603303078629256822787979175188207976291e-15 +/- 3.19e-72]",
+        "one_norm_upper": 3.863474148498071e-16,
+        "one_norm_upper_ball": "[3.86347414849807138828911608591423995518350224694219527385e-16 +/- 3.72e-73]",
+        "two_norm_upper": 6.376314615567242e-16,
+        "two_norm_upper_ball": "[6.376314615567242470396793686532942e-16 +/- 6.05e-50]"
+      },
+      "haar": {
+        "embedding_two_norm_defect_ball": "[8.8651159291758276258539946134748326281085e-17 +/- 5.05e-58]",
+        "embedding_two_norm_defect_upper": 8.865115929175827e-17,
+        "exact_inverse_sqrt_two_ball": "[0.707106781186547524400844362104849039284835937688474036588 +/- 6.71e-58]",
+        "frozen_embedding_two_norm_ball": "[0.999999999999999911348840708241723741460053865251673718915 +/- 6.55e-58]",
+        "frozen_inverse_sqrt_two": 0.7071067811865475
+      },
+      "maximum_exact_repair_correction_ball": "[1.37342523053174430054722363753194613877894880715757608414e-16 +/- 3.04e-73]",
+      "maximum_exact_repair_correction_upper": 1.3734252305317443e-16,
+      "maximum_frozen_row_sum_defect_ball": "[1.37342523053174430054722363753194613877894880715757608414e-16 +/- 3.04e-73]",
+      "maximum_frozen_row_sum_defect_upper": 1.3734252305317443e-16,
+      "maximum_full_to_sparse_row_l1_ball": "0",
+      "maximum_full_to_sparse_row_l1_upper": 0.0,
+      "minimum_repaired_pivot_lower": 0.07763178777349873,
+      "minimum_support_center_floor_margin": 0.010236393558223256,
+      "precision_bits": 192,
+      "repaired_matrix_norm_bound": {
+        "infinity_norm_upper": 1.0,
+        "infinity_norm_upper_ball": "1.00000000000000000000000000000000000000000000000000000000",
+        "one_norm_upper": 1.5159288039965109,
+        "one_norm_upper_ball": "[1.51592880399651084638531001587709160817463160952911493951 +/- 4.77e-57]",
+        "two_norm_upper": 1.2312306055311129,
+        "two_norm_upper_ball": "[1.23123060553111286212026427964220104512667334420996631334 +/- 4.18e-57]"
+      },
+      "sigma": 0.16,
+      "sparse_exact_to_frozen_matrix_defect": {
+        "infinity_norm_upper": 1.011370208889902e-15,
+        "infinity_norm_upper_ball": "[1.01137020888990191842754907041968443118789722063207976291e-15 +/- 3.19e-72]",
+        "one_norm_upper": 3.6785987973507546e-16,
+        "one_norm_upper_ball": "[3.67859879735075474560669130443710955757639390873749700577e-16 +/- 4.88e-74]",
+        "two_norm_upper": 6.099528862214503e-16,
+        "two_norm_upper_ball": "[6.09952886221450287753744281358763e-16 +/- 1.06e-49]"
+      },
+      "support_half_width": 43
+    },
+    {
+      "all_support_centers_interval_stable": true,
+      "coarse_and_cross_block_two_norm_defect_upper": {
+        "against_frozen_pipeline": 1.4699570940923369e-15,
+        "against_frozen_pipeline_ball": "[1.4699570940923368247616071678433652e-15 +/- 7.02e-50]",
+        "against_repaired_pipeline": 1.5540076430161801e-15,
+        "against_repaired_pipeline_ball": "[1.554007643016180074247969918140158e-15 +/- 4.48e-49]"
+      },
+      "dimension": 64,
+      "elapsed_seconds": 0.101823820034042,
+      "exact_perron_right_vector_for_repaired_matrix": true,
+      "exact_stochastic_repair_certified": true,
+      "frozen_matrix_norm_bound": {
+        "infinity_norm_upper": 1.0000000000000002,
+        "infinity_norm_upper_ball": "[1.00000000000000023721964517458019572470936657696960505948 +/- 2.65e-57]",
+        "one_norm_upper": 2.140012260777128,
+        "one_norm_upper_ball": "[2.14001226077712801567727761980249811808346554080505679113 +/- 2.87e-57]",
+        "two_norm_upper": 1.4628780744741268,
+        "two_norm_upper_ball": "[1.46287807447412667937267568975506753030888321851195311603 +/- 1.12e-57]"
+      },
+      "frozen_sha256": "120a375afb287a4086d3351a62129fa6268d084af4aeb016b3f8c5e93a475c66",
+      "full_to_frozen_matrix_defect": {
+        "infinity_norm_upper": 1.983410717411738e-15,
+        "infinity_norm_upper_ball": "[1.98341071741173829821540884843777954676222561803201381471e-15 +/- 3.43e-72]",
+        "one_norm_upper": 7.388873345716828e-16,
+        "one_norm_upper_ball": "[7.38887334571682838204402916548654470527160151737231496929e-16 +/- 4.04e-73]",
+        "two_norm_upper": 1.210585419683084e-15,
+        "two_norm_upper_ball": "[1.2105854196830839742100223437886691e-15 +/- 6.92e-50]"
+      },
+      "full_to_repaired_matrix_defect": {
+        "infinity_norm_upper": 2.167864941895376e-15,
+        "infinity_norm_upper_ball": "[2.16786494189537592848521771650086322587790956372431929135e-15 +/- 4.57e-72]",
+        "one_norm_upper": 7.731488520430562e-16,
+        "one_norm_upper_ball": "[7.73148852043056242845152984163842753064491217127752685315e-16 +/- 4.22e-73]",
+        "two_norm_upper": 1.2946359686069273e-15,
+        "two_norm_upper_ball": "[1.2946359686069272510132208292026710e-15 +/- 7.31e-50]"
+      },
+      "haar": {
+        "embedding_two_norm_defect_ball": "[8.8651159291758276258539946134748326281085e-17 +/- 5.05e-58]",
+        "embedding_two_norm_defect_upper": 8.865115929175827e-17,
+        "exact_inverse_sqrt_two_ball": "[0.707106781186547524400844362104849039284835937688474036588 +/- 6.71e-58]",
+        "frozen_embedding_two_norm_ball": "[0.999999999999999911348840708241723741460053865251673718915 +/- 6.55e-58]",
+        "frozen_inverse_sqrt_two": 0.7071067811865475
+      },
+      "maximum_exact_repair_correction_ball": "[2.52707858931038336078297771242375967087215877095000837738e-16 +/- 3.85e-73]",
+      "maximum_exact_repair_correction_upper": 2.5270785893103836e-16,
+      "maximum_frozen_row_sum_defect_ball": "[2.52707858931038336078297771242375967087215877095000837738e-16 +/- 3.85e-73]",
+      "maximum_frozen_row_sum_defect_upper": 2.5270785893103836e-16,
+      "maximum_full_to_sparse_row_l1_ball": "[9.0874264988615366295462055690080322490786217788e-17 +/- 5.08e-64]",
+      "maximum_full_to_sparse_row_l1_upper": 9.087426498861536e-17,
+      "minimum_repaired_pivot_lower": 0.07755173533203999,
+      "minimum_support_center_floor_margin": 0.011567148327898735,
+      "precision_bits": 192,
+      "repaired_matrix_norm_bound": {
+        "infinity_norm_upper": 1.0,
+        "infinity_norm_upper_ball": "1.00000000000000000000000000000000000000000000000000000000",
+        "one_norm_upper": 2.140012260777128,
+        "one_norm_upper_ball": "[2.14001226077712807256116319157452995094617894818406492482 +/- 4.24e-57]",
+        "two_norm_upper": 1.4628780744741265,
+        "two_norm_upper_ball": "[1.46287807447412652530342293912125194597469303193963520634 +/- 3.37e-57]"
+      },
+      "sigma": 0.08,
+      "sparse_exact_to_frozen_matrix_defect": {
+        "infinity_norm_upper": 1.983410717411738e-15,
+        "infinity_norm_upper_ball": "[1.98341071741173829821540884843777954676222561803201381471e-15 +/- 3.43e-72]",
+        "one_norm_upper": 6.966153981747844e-16,
+        "one_norm_upper_ball": "[6.96615398174784400965141304564798609888333496839424508362e-16 +/- 3.75e-73]",
+        "two_norm_upper": 1.1754464882136969e-15,
+        "two_norm_upper_ball": "[1.175446488213696973735887824952393e-15 +/- 1.01e-49]"
+      },
+      "support_half_width": 43
+    },
+    {
+      "all_support_centers_interval_stable": true,
+      "coarse_and_cross_block_two_norm_defect_upper": {
+        "against_frozen_pipeline": 2.7788730703263068e-15,
+        "against_frozen_pipeline_ball": "[2.77887307032630674428626214806764e-15 +/- 1.21e-48]",
+        "against_repaired_pipeline": 2.7667459889842814e-15,
+        "against_repaired_pipeline_ball": "[2.766745988984281279267390553128758e-15 +/- 6.60e-49]"
+      },
+      "dimension": 128,
+      "elapsed_seconds": 0.35088687005918473,
+      "exact_perron_right_vector_for_repaired_matrix": true,
+      "exact_stochastic_repair_certified": true,
+      "frozen_matrix_norm_bound": {
+        "infinity_norm_upper": 1.0000000000000004,
+        "infinity_norm_upper_ball": "[1.00000000000000033701745831184853722354305305860853429484 +/- 2.08e-57]",
+        "one_norm_upper": 3.0264343347014004,
+        "one_norm_upper_ball": "[3.02643433470140038612996040811411111884906255184148260765 +/- 3.77e-57]",
+        "two_norm_upper": 1.7396650064599797,
+        "two_norm_upper_ball": "[1.73966500645997975597595778189225613001794491672178282962 +/- 4.08e-57]"
+      },
+      "frozen_sha256": "b7f5f53ddb00cba9e36d876031ca5ee354a43916a4e93f3acf4bc1c36933c58d",
+      "full_to_frozen_matrix_defect": {
+        "infinity_norm_upper": 2.880597703605282e-15,
+        "infinity_norm_upper_ball": "[2.88059770360528187829458046840482826083622784536006610100e-15 +/- 2.45e-72]",
+        "one_norm_upper": 2.118659868384091e-15,
+        "one_norm_upper_ball": "[2.11865986838409114210126208786795705887169550231135265602e-15 +/- 6.04e-73]",
+        "two_norm_upper": 2.470426431122344e-15,
+        "two_norm_upper_ball": "[2.470426431122344045886595646284768e-15 +/- 6.56e-49]"
+      },
+      "full_to_repaired_matrix_defect": {
+        "infinity_norm_upper": 2.879003301914923e-15,
+        "infinity_norm_upper_ball": "[2.87900330191492295418230584486679846679168521541971381014e-15 +/- 3.68e-72]",
+        "one_norm_upper": 2.099072164700463e-15,
+        "one_norm_upper_ball": "[2.09907216470046279534726241815762766796444831707988728025e-15 +/- 3.51e-73]",
+        "two_norm_upper": 2.4582993497803187e-15,
+        "two_norm_upper_ball": "[2.458299349780318631649516384141139e-15 +/- 5.04e-49]"
+      },
+      "haar": {
+        "embedding_two_norm_defect_ball": "[8.8651159291758276258539946134748326281085e-17 +/- 5.05e-58]",
+        "embedding_two_norm_defect_upper": 8.865115929175827e-17,
+        "exact_inverse_sqrt_two_ball": "[0.707106781186547524400844362104849039284835937688474036588 +/- 6.71e-58]",
+        "frozen_embedding_two_norm_ball": "[0.999999999999999911348840708241723741460053865251673718915 +/- 6.55e-58]",
+        "frozen_inverse_sqrt_two": 0.7071067811865475
+      },
+      "maximum_exact_repair_correction_ball": "[3.40525270827983890467374424079625269955894298588578838344e-16 +/- 2.24e-73]",
+      "maximum_exact_repair_correction_upper": 3.4052527082798387e-16,
+      "maximum_frozen_row_sum_defect_ball": "[3.40525270827983890467374424079625269955894298588578838344e-16 +/- 2.24e-73]",
+      "maximum_frozen_row_sum_defect_upper": 3.4052527082798387e-16,
+      "maximum_full_to_sparse_row_l1_ball": "[8.5096128231290827847747588696071084054924166097e-17 +/- 2.12e-64]",
+      "maximum_full_to_sparse_row_l1_upper": 8.509612823129082e-17,
+      "minimum_repaired_pivot_lower": 0.07756115534295385,
+      "minimum_support_center_floor_margin": 0.0012402283884256349,
+      "precision_bits": 192,
+      "repaired_matrix_norm_bound": {
+        "infinity_norm_upper": 1.0,
+        "infinity_norm_upper_ball": "1.00000000000000000000000000000000000000000000000000000000",
+        "one_norm_upper": 3.0264343347014004,
+        "one_norm_upper_ball": "[3.02643433470140040956379233278983759372070493987122106747 +/- 3.89e-57]",
+        "two_norm_upper": 1.7396650064599795,
+        "two_norm_upper_ball": "[1.73966500645997946956237482090588016616284278614266380526 +/- 3.30e-57]"
+      },
+      "sigma": 0.04,
+      "sparse_exact_to_frozen_matrix_defect": {
+        "infinity_norm_upper": 2.8555254598901737e-15,
+        "infinity_norm_upper_ball": "[2.85552545989017367015361563030248035472087036696859707335e-15 +/- 4.38e-72]",
+        "one_norm_upper": 2.106559593938159e-15,
+        "one_norm_upper_ball": "[2.10655959393815889529059013782895461626170812726357698472e-15 +/- 3.30e-72]",
+        "two_norm_upper": 2.4526178979340257e-15,
+        "two_norm_upper_ball": "[2.452617897934025654374166167827717e-15 +/- 6.05e-49]"
+      },
+      "support_half_width": 43
+    },
+    {
+      "all_support_centers_interval_stable": true,
+      "coarse_and_cross_block_two_norm_defect_upper": {
+        "against_frozen_pipeline": 6.459014429423135e-15,
+        "against_frozen_pipeline_ball": "[6.45901442942313536012428501336563e-15 +/- 5.16e-48]",
+        "against_repaired_pipeline": 6.540922638902344e-15,
+        "against_repaired_pipeline_ball": "[6.540922638902344009181945766859570e-15 +/- 3.79e-49]"
+      },
+      "dimension": 256,
+      "elapsed_seconds": 1.2440877410117537,
+      "exact_perron_right_vector_for_repaired_matrix": true,
+      "exact_stochastic_repair_certified": true,
+      "frozen_matrix_norm_bound": {
+        "infinity_norm_upper": 1.0000000000000004,
+        "infinity_norm_upper_ball": "[1.00000000000000038616979285395061005539459994223132667412 +/- 4.21e-58]",
+        "one_norm_upper": 4.280024481766316,
+        "one_norm_upper_ball": "[4.28002448176631538611950845957901915274235723670515941523 +/- 1.25e-57]",
+        "two_norm_upper": 2.068822003403463,
+        "two_norm_upper_ball": "[2.06882200340346270180617704919237596008135610798312418342 +/- 4.95e-57]"
+      },
+      "frozen_sha256": "92601e381a0f8451b51c15d60546ccf1c02811669e953f6a11f6d1cb54b5d872",
+      "full_to_frozen_matrix_defect": {
+        "infinity_norm_upper": 7.70089535669794e-15,
+        "infinity_norm_upper_ball": "[7.70089535669794019981725307756370189462884143299609571706e-15 +/- 4.19e-73]",
+        "one_norm_upper": 4.8195684268065915e-15,
+        "one_norm_upper_ball": "[4.81956842680659124858435745873379279118948299152126824306e-15 +/- 6.0e-75]",
+        "two_norm_upper": 6.092207491483106e-15,
+        "two_norm_upper_ball": "[6.092207491483105666928970098884088e-15 +/- 6.21e-49]"
+      },
+      "full_to_repaired_matrix_defect": {
+        "infinity_norm_upper": 7.734666298414643e-15,
+        "infinity_norm_upper_ball": "[7.73466629841464402824137680388784968059664247408603141869e-15 +/- 7.92e-73]",
+        "one_norm_upper": 4.928422664683372e-15,
+        "one_norm_upper_ball": "[4.92842266468337168055240537416802253783139181152363744101e-15 +/- 3.45e-72]",
+        "two_norm_upper": 6.174115700962314e-15,
+        "two_norm_upper_ball": "[6.174115700962314392991588768631903e-15 +/- 3.63e-49]"
+      },
+      "haar": {
+        "embedding_two_norm_defect_ball": "[8.8651159291758276258539946134748326281085e-17 +/- 5.05e-58]",
+        "embedding_two_norm_defect_upper": 8.865115929175827e-17,
+        "exact_inverse_sqrt_two_ball": "[0.707106781186547524400844362104849039284835937688474036588 +/- 6.71e-58]",
+        "frozen_embedding_two_norm_ball": "[0.999999999999999911348840708241723741460053865251673718915 +/- 6.55e-58]",
+        "frozen_inverse_sqrt_two": 0.7071067811865475
+      },
+      "maximum_exact_repair_correction_ball": "[3.86169792853950610055394599942231326674120420088865725250e-16 +/- 5.09e-74]",
+      "maximum_exact_repair_correction_upper": 3.861697928539506e-16,
+      "maximum_frozen_row_sum_defect_ball": "[3.86169792853950610055394599942231326674120420088865725250e-16 +/- 5.09e-74]",
+      "maximum_frozen_row_sum_defect_upper": 3.861697928539506e-16,
+      "maximum_full_to_sparse_row_l1_ball": "[9.51909881697077007481315558021279376330079272402e-17 +/- 6.62e-65]",
+      "maximum_full_to_sparse_row_l1_upper": 9.51909881697077e-17,
+      "minimum_repaired_pivot_lower": 0.07755066289364476,
+      "minimum_support_center_floor_margin": 0.0036299057476014696,
+      "precision_bits": 192,
+      "repaired_matrix_norm_bound": {
+        "infinity_norm_upper": 1.0,
+        "infinity_norm_upper_ball": "1.00000000000000000000000000000000000000000000000000000000",
+        "one_norm_upper": 4.280024481766315,
+        "one_norm_upper_ball": "[4.28002448176631524189711968949281199137756520953745423507 +/- 6.59e-58]",
+        "two_norm_upper": 2.0688220034034623,
+        "two_norm_upper_ball": "[2.06882200340346226749173304500165866709060696625375697080 +/- 1.32e-57]"
+      },
+      "sigma": 0.02,
+      "sparse_exact_to_frozen_matrix_defect": {
+        "infinity_norm_upper": 7.672261374404974e-15,
+        "infinity_norm_upper_ball": "[7.67226137440497490784853978863560423643015242031244813770e-15 +/- 4.07e-73]",
+        "one_norm_upper": 4.804300662773894e-15,
+        "one_norm_upper_ball": "[4.80430066277389399815226953805178027910294606841581184501e-15 +/- 3.59e-72]",
+        "two_norm_upper": 6.071231374773026e-15,
+        "two_norm_upper_ball": "[6.071231374773026045373382275684912e-15 +/- 2.74e-49]"
+      },
+      "support_half_width": 43
+    },
+    {
+      "all_support_centers_interval_stable": true,
+      "coarse_and_cross_block_two_norm_defect_upper": {
+        "against_frozen_pipeline": 1.517074995946836e-14,
+        "against_frozen_pipeline_ball": "[1.517074995946835742212614152982681e-14 +/- 8.15e-48]",
+        "against_repaired_pipeline": 1.537650458764573e-14,
+        "against_repaired_pipeline_ball": "[1.537650458764572836229157924353805e-14 +/- 5.01e-48]"
+      },
+      "dimension": 512,
+      "elapsed_seconds": 4.583707106066868,
+      "exact_perron_right_vector_for_repaired_matrix": true,
+      "exact_stochastic_repair_certified": true,
+      "frozen_matrix_norm_bound": {
+        "infinity_norm_upper": 1.0000000000000004,
+        "infinity_norm_upper_ball": "[1.00000000000000037758420510637378488123137780928658141423 +/- 3.08e-58]",
+        "one_norm_upper": 6.052868669402801,
+        "one_norm_upper_ball": "[6.05286866940280107316209938135457261139502310300174612622 +/- 3.28e-57]",
+        "two_norm_upper": 2.4602578461215816,
+        "two_norm_upper_ball": "[2.46025784612158149268532451043791910143060437794155863988 +/- 2.67e-57]"
+      },
+      "frozen_sha256": "475865ba5f17e3cf9d5813396c166a23e597ab46f138a37dc338863e605e4499",
+      "full_to_frozen_matrix_defect": {
+        "infinity_norm_upper": 1.5930885358066164e-14,
+        "infinity_norm_upper_ball": "[1.59308853580661653741607627349184201222956692390956636298e-14 +/- 4.29e-71]",
+        "one_norm_upper": 1.3628036359361519e-14,
+        "one_norm_upper_ball": "[1.36280363593615197224983896274790778763779279757787343458e-14 +/- 4.85e-71]",
+        "two_norm_upper": 1.4734540539037713e-14,
+        "two_norm_upper_ball": "[1.473454053903771255631040718969880e-14 +/- 3.27e-48]"
+      },
+      "full_to_repaired_matrix_defect": {
+        "infinity_norm_upper": 1.591197683913293e-14,
+        "infinity_norm_upper_ball": "[1.59119768391329294452107401632563180261158909478725710544e-14 +/- 8.71e-72]",
+        "one_norm_upper": 1.4027950262883464e-14,
+        "one_norm_upper_ball": "[1.40279502628834648602330867868851032270066281867746812025e-14 +/- 7.70e-72]",
+        "two_norm_upper": 1.4940295167215084e-14,
+        "two_norm_upper_ball": "[1.494029516721508356753009335526572e-14 +/- 2.54e-48]"
+      },
+      "haar": {
+        "embedding_two_norm_defect_ball": "[8.8651159291758276258539946134748326281085e-17 +/- 5.05e-58]",
+        "embedding_two_norm_defect_upper": 8.865115929175827e-17,
+        "exact_inverse_sqrt_two_ball": "[0.707106781186547524400844362104849039284835937688474036588 +/- 6.71e-58]",
+        "frozen_embedding_two_norm_ball": "[0.999999999999999911348840708241723741460053865251673718915 +/- 6.55e-58]",
+        "frozen_inverse_sqrt_two": 0.7071067811865475
+      },
+      "maximum_exact_repair_correction_ball": "[3.77584205106373784881231377809286581414229692682440336915e-16 +/- 4.93e-74]",
+      "maximum_exact_repair_correction_upper": 3.775842051063738e-16,
+      "maximum_frozen_row_sum_defect_ball": "[3.77584205106373784881231377809286581414229692682440336915e-16 +/- 4.93e-74]",
+      "maximum_frozen_row_sum_defect_upper": 3.775842051063738e-16,
+      "maximum_full_to_sparse_row_l1_ball": "[9.5766604095576471730680491727428185896157849074e-17 +/- 2.11e-64]",
+      "maximum_full_to_sparse_row_l1_upper": 9.576660409557647e-17,
+      "minimum_repaired_pivot_lower": 0.07755003729233532,
+      "minimum_support_center_floor_margin": 0.0009850433669384984,
+      "precision_bits": 192,
+      "repaired_matrix_norm_bound": {
+        "infinity_norm_upper": 1.0,
+        "infinity_norm_upper_ball": "1.00000000000000000000000000000000000000000000000000000000",
+        "one_norm_upper": 6.052868669402802,
+        "one_norm_upper_ball": "[6.05286866940280138672348637740965428988688303856030247193 +/- 4.79e-57]",
+        "two_norm_upper": 2.460257846121581,
+        "two_norm_upper_ball": "[2.46025784612158109193338274501613775629767994810258476108 +/- 2.13e-57]"
+      },
+      "sigma": 0.01,
+      "sparse_exact_to_frozen_matrix_defect": {
+        "infinity_norm_upper": 1.5888319647508027e-14,
+        "infinity_norm_upper_ball": "[1.58883196475080255688826706150494201141430414465617304054e-14 +/- 2.82e-71]",
+        "one_norm_upper": 1.3591445899454435e-14,
+        "one_norm_upper_ball": "[1.35914458994544348372257510271108566239143368632939507342e-14 +/- 7.76e-72]",
+        "two_norm_upper": 1.4695075260860158e-14,
+        "two_norm_upper_ball": "[1.469507526086015952938520890100452e-14 +/- 1.07e-48]"
+      },
+      "support_half_width": 43
+    }
+  ],
+  "status": "rh72_validated_folded_gaussian_assembly",
+  "theorem_boundary": {
+    "algebraic_parameter_interval_certified": true,
+    "exact_stochastic_repair_constructed": true,
+    "full_midpoint_to_sparse_truncation_enclosed": true,
+    "parity_riesz_pair_validated": false,
+    "perron_right_vector_exact_after_repair": true,
+    "rank_two_deflation_validated": false,
+    "sparse_exact_to_binary64_enclosed": true,
+    "stage_A1_closed": false,
+    "stationary_left_vector_validated": false
+  }
+}
