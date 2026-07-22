@@ -1,0 +1,69 @@
+{
+  "external_inputs": {
+    "rh100_roadmap": {
+      "path": "papers/RH-100-hundred-layer-route-review/UPDATED_ROADMAP.md",
+      "sha256": "88b2a8ad241d1a15f782108b213f7490eff14744635d53ebd1161c696b6af9b7"
+    },
+    "rh101_audit": {
+      "path": "papers/RH-101-finite-memory-packet-gram-action/results/finite_memory_gram_audit.json",
+      "sha256": "5187ebbab3d77fe41bac4192a70f0c670c0e2a689493af9190c1c9d1e724353d"
+    },
+    "rh102_audit": {
+      "path": "papers/RH-102-stopped-hybrid-quotient-clock/results/stopped_hybrid_clock_audit.json",
+      "sha256": "a23f65ffcbf93d9f8ae71dbb1394bd528ce87229d01f6e759db4168dded6c731"
+    },
+    "rh52_summary": {
+      "path": "papers/RH-52-intrinsic-peripheral-residue-transfer/results/summary.json",
+      "sha256": "91ec08fbfcb4eaaa04732d37608f67f271d38701a4955d4add54fd074d600c92"
+    },
+    "rh54_summary": {
+      "path": "papers/RH-54-factor-aware-intrinsic-identification/results/summary.json",
+      "sha256": "764716f0c0f6ae31c864e1cf0ee129394038174d84b3b3807eae02ab5c47ce9c"
+    },
+    "rh74_audit": {
+      "path": "papers/RH-74-validated-upstream-hardy-bridge/results/validated_upstream_bridge_audit.json",
+      "sha256": "dd2d747e6c81d2b8bd0bb81da8c22eb2b67c4d336dc8ab3f0175d678d4dc34d4"
+    },
+    "rh75_audit": {
+      "path": "papers/RH-75-log-square-block-contraction-law/results/log_square_block_audit.json",
+      "sha256": "59c938cfd1ad480b46d2b94f7542308e01c91bd2dcd393646eeb4a25ba14e910"
+    },
+    "rh77_audit": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/results/effective_rank_audit.json",
+      "sha256": "08a123fb310bfd70572e5bd2b13ccf2fe397fd944f409c626d2e079b49be6c1a"
+    },
+    "rh78_audit": {
+      "path": "papers/RH-78-two-corridor-stage-A1-composition/results/stage_composition_audit.json",
+      "sha256": "713050fd5741650c4ad88596aed5e5e0261a767ba25c34686379474ceaf0acf5"
+    },
+    "rh82_audit": {
+      "path": "papers/RH-82-half-log-postblock-rank-clock/results/half_log_rank_audit.json",
+      "sha256": "b11949b5a77d7a6f3ec300bd87b1ed49bab3d569b1437be106306979556c2a27"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "4d0a2f6f6f890bda67edadb338fdb7d14b63f84e0420ad0c64d8316dfe89dda8",
+    "experiments/build_power_ledger.py": "9ba766b6e3b176642673a4d61d9d771a07b3a06fa94c805e9e8ad3b91fbca20e",
+    "experiments/make_figures.py": "96968b38a8b4bfbbe10816393188e9467b793f4825711a4f289ebaa702146a11",
+    "experiments/verify_archive.py": "070e7268e7f491fd73d0d13cac55cf45b93248bbaad19cc4966bcdf014d6a9df",
+    "src/power_ledger/__init__.py": "742e7f77297a91020bcfae5db77b679be912adbd6097935748cdbdbea499dcbd",
+    "src/power_ledger/ledger.py": "e1ad4c63a5e8aa12bc9c2b92c305c0434957e93fbbd979a75375e1454771f45a",
+    "tests/test_archived_results.py": "908ff6661b8ede4be54fe7f40823a0b32414f4730fab3902b2c737b69ec7134f",
+    "tests/test_theory.py": "c63d2981bb1f39a1a8204e2ade343e353d7415e5c80d68dd37884daf92ee4a05"
+  },
+  "publication_artifacts": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "59a52c8d363f156afbfee5f7e3080dcea23dee3d9ab0391fdf6fc24d78ab59f7",
+    "THEOREM_LEDGER.md": "eb38c89c157fa72c3ce1ea84ef431befcf222d167a1e88fab1855fb0fd136ccb",
+    "UPDATED_ROADMAP.md": "245fed46c38a1e6ec53ed6286b0c2491f3be7ccb10467d8dbe4bc53fea08f804",
+    "figures/prefix_observability_power_ledger.pdf": "b6bc5ca1300c692d912164656cd979d7024cda81f103245bcffa9fc26edefaa9",
+    "figures/prefix_observability_power_ledger.png": "0894955f15789bdf0dad52f89819ed276dc7db9b9e6a38febe14339bc4466d8c",
+    "main.pdf": "264f46124b0a43c202d11c7783335b4d4da37aea0227f1724982ace5e74ef54c",
+    "main.tex": "fa0090ccda5326d82915f64fa9da1545a40a4808130b43c87c4fbb5c5be57c81",
+    "prefix-observability-power-ledger.pdf": "264f46124b0a43c202d11c7783335b4d4da37aea0227f1724982ace5e74ef54c",
+    "pyproject.toml": "f32a4f4a2909ac2ebdf90787d9b385f1f41ea55b1a7ff0f11640c64d2d861346",
+    "references.bib": "fb203fd85458af63735b97e5423099383d11757c5cbc9981f249cb8e50db1290",
+    "requirements.txt": "eb80f53242f5f116b6809b9d7c37aab9505e60e18a7bdc4359c0418bef86713b"
+  },
+  "status": "all_rh103_inputs_sources_and_publication_artifacts_hashed"
+}

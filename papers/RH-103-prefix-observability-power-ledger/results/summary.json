@@ -1,0 +1,58 @@
+{
+  "audit": {
+    "all_finite_anchor_gates_green": true,
+    "anchor_count": 5,
+    "finite_memory_depth": 5,
+    "maximum_clock_future_residual_upper": 5.0430243664253605e-09,
+    "maximum_clock_rank": 7,
+    "maximum_conditional_zero_power_hardy_upper": 1.8359703565040966,
+    "maximum_stopped_primary_endpoint_ratio": 1.0011724272719218,
+    "maximum_upstream_bridge_upper": 2.0218333875617674e-06,
+    "observation_counterexample_fitted_power": 0.7500000000000001,
+    "prefix_counterexample_fitted_power": 1.2500000000000002,
+    "scenario_count": 6,
+    "scenario_green_count": 4,
+    "stress_identification_envelope_first": 0.07354111655709987,
+    "stress_identification_envelope_last": 0.0029609346948629932
+  },
+  "program_boundary": {
+    "five_anchor_ledger_composed": true,
+    "hilbert_polya_operator": false,
+    "max_plus_sigma_power_ledger_theorem": true,
+    "moving_cloud_A5_closed": false,
+    "normalization_rank_memory_stop_mesh_overheads_power_zero": true,
+    "observation_independence_counterexample": true,
+    "only_uniform_quotient_gate_remains": false,
+    "prefix_independence_counterexample": true,
+    "prefix_observability_gate_closed": false,
+    "riemann_hypothesis": false,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "59a52c8d363f156afbfee5f7e3080dcea23dee3d9ab0391fdf6fc24d78ab59f7",
+    "THEOREM_LEDGER.md": "eb38c89c157fa72c3ce1ea84ef431befcf222d167a1e88fab1855fb0fd136ccb",
+    "UPDATED_ROADMAP.md": "245fed46c38a1e6ec53ed6286b0c2491f3be7ccb10467d8dbe4bc53fea08f804",
+    "figures/prefix_observability_power_ledger.pdf": "b6bc5ca1300c692d912164656cd979d7024cda81f103245bcffa9fc26edefaa9",
+    "figures/prefix_observability_power_ledger.png": "0894955f15789bdf0dad52f89819ed276dc7db9b9e6a38febe14339bc4466d8c",
+    "main.pdf": "264f46124b0a43c202d11c7783335b4d4da37aea0227f1724982ace5e74ef54c",
+    "main.tex": "fa0090ccda5326d82915f64fa9da1545a40a4808130b43c87c4fbb5c5be57c81",
+    "prefix-observability-power-ledger.pdf": "264f46124b0a43c202d11c7783335b4d4da37aea0227f1724982ace5e74ef54c",
+    "pyproject.toml": "f32a4f4a2909ac2ebdf90787d9b385f1f41ea55b1a7ff0f11640c64d2d861346",
+    "references.bib": "fb203fd85458af63735b97e5423099383d11757c5cbc9981f249cb8e50db1290",
+    "requirements.txt": "eb80f53242f5f116b6809b9d7c37aab9505e60e18a7bdc4359c0418bef86713b"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "50da2d988b7c4062fecce126e2425f695049de71e81e93ab259aabe5d1fffbd7",
+    "results/prefix_observability_power_ledger.json": "d6d3a296542e28a8f1bab320a1ae40d16cfc2968dfc642b4ed7eefc250140c12",
+    "results/prefix_observability_power_smoke.json": "12a5fac783a1c37bc70ffb143dd1465914c65d7c2a7680e994e256ce92234e7c"
+  },
+  "route_consequence": "The inherited prefix/normalization/observability gate is no longer a vague polylogarithmic placeholder. Its exact Hardy power is a max-plus expression, while the two sides add and must fit the shared RH-49 quarter-power budget. Normalization, logarithmic rank, depth-five memory, stopped constants, and mesh substitution carry zero sigma power. However normalized packet mechanics cannot control finite-prefix transients or absolute observation scale; explicit families keep every packet tail zero while assigning arbitrary positive Hardy power. Therefore RH-101 and RH-102 do not reduce the preferred Stage-A bundle to Q alone: uniform prefix and observation-weighted future estimates remain independent scalar gates.",
+  "status": "rh103_prefix_observability_power_ledger_archived",
+  "theorem": {
+    "explicit_directional_norm_ledger": true,
+    "observation_independence_barrier": true,
+    "prefix_independence_barrier": true,
+    "signed_max_plus_power_composition": true
+  }
+}

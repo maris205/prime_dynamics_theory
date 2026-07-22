@@ -1,0 +1,358 @@
+{
+  "audit_summary": {
+    "all_finite_anchor_gates_green": true,
+    "anchor_count": 5,
+    "finite_memory_depth": 5,
+    "maximum_clock_future_residual_upper": 5.0430243664253605e-09,
+    "maximum_clock_rank": 7,
+    "maximum_conditional_zero_power_hardy_upper": 1.8359703565040966,
+    "maximum_stopped_primary_endpoint_ratio": 1.0011724272719218,
+    "maximum_upstream_bridge_upper": 2.0218333875617674e-06,
+    "observation_counterexample_fitted_power": 0.7500000000000001,
+    "prefix_counterexample_fitted_power": 1.2500000000000002,
+    "scenario_count": 6,
+    "scenario_green_count": 4,
+    "stress_identification_envelope_first": 0.07354111655709987,
+    "stress_identification_envelope_last": 0.0029609346948629932
+  },
+  "closed_zero_power_overheads": {
+    "all_zero_power": true,
+    "fixed_1p01_stopped_endpoint_gate": true,
+    "fixed_depth_five_memory_action": true,
+    "logarithmic_packet_rank": true,
+    "normalized_coupling_source": true,
+    "strict_mesh_substitution_algebra": true
+  },
+  "counterexamples": {
+    "observation_scaling": {
+      "family": "A=1/2, X=1, Y_sigma=sigma^-b",
+      "fitted_hardy_power": 0.7500000000000001,
+      "normalized_packet_gram": 1.0,
+      "packet_relative_tail": 0.0,
+      "power": 0.75,
+      "rows": [
+        {
+          "hardy_energy": 6.4933583095019785,
+          "sigma": 0.1
+        },
+        {
+          "hardy_energy": 36.51483716701107,
+          "sigma": 0.01
+        },
+        {
+          "hardy_energy": 205.3380192160682,
+          "sigma": 0.001
+        },
+        {
+          "hardy_energy": 1154.7005383792516,
+          "sigma": 0.0001
+        },
+        {
+          "hardy_energy": 6493.358309501979,
+          "sigma": 9.999999999999999e-06
+        },
+        {
+          "hardy_energy": 36514.83716701108,
+          "sigma": 1e-06
+        }
+      ]
+    },
+    "prefix_transient": {
+      "family": "A_sigma=[[0,sigma^-a],[0,0]], X=e2, Y=e1*",
+      "fitted_hardy_power": 1.2500000000000002,
+      "normalized_packet_gram": 1.0,
+      "packet_relative_tail": 0.0,
+      "postblock_state_after_two_steps": 0.0,
+      "power": 1.25,
+      "rows": [
+        {
+          "hardy_energy": 17.782794100389225,
+          "sigma": 0.1
+        },
+        {
+          "hardy_energy": 316.2277660168379,
+          "sigma": 0.01
+        },
+        {
+          "hardy_energy": 5623.41325190349,
+          "sigma": 0.001
+        },
+        {
+          "hardy_energy": 99999.99999999999,
+          "sigma": 0.0001
+        },
+        {
+          "hardy_energy": 1778279.410038923,
+          "sigma": 9.999999999999999e-06
+        },
+        {
+          "hardy_energy": 31622776.601683795,
+          "sigma": 1e-06
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "The five-anchor ledger validates arithmetic and status, not any missing all-level exponent estimate.",
+    "The counterexamples are abstract stable systems showing logical independence; they do not assert that the physical folded-Gaussian family realizes the bad scaling.",
+    "The max-plus theorem records powers but does not provide the uniform prefix, reduced-future, observability, residual, or upstream bounds.",
+    "No Stage A, moving-cloud, Hilbert--Polya, zero-identification, or Riemann Hypothesis result is claimed."
+  ],
+  "max_plus_theorem": {
+    "rh49_full_range_condition": "delta<=1/4",
+    "side_expression": "alpha_s=max(u_s,n_s+p_s,n_s+z_s,n_s+o_s+r_s)",
+    "stress_mesh_decay_expression": "sigma^(3/4-delta) L(sigma)^-2",
+    "two_side_expression": "delta=alpha_left+alpha_right"
+  },
+  "open_uniform_terms": {
+    "absolute_packet_residual_power": "r_s",
+    "finite_prefix_directional_power": "p_s",
+    "future_observability_power": "o_s",
+    "reduced_packet_future_power": "z_s",
+    "uniform_upstream_bridge_power": "u_s"
+  },
+  "route_consequence": "The inherited prefix/normalization/observability gate is no longer a vague polylogarithmic placeholder. Its exact Hardy power is a max-plus expression, while the two sides add and must fit the shared RH-49 quarter-power budget. Normalization, logarithmic rank, depth-five memory, stopped constants, and mesh substitution carry zero sigma power. However normalized packet mechanics cannot control finite-prefix transients or absolute observation scale; explicit families keep every packet tail zero while assigning arbitrary positive Hardy power. Therefore RH-101 and RH-102 do not reduce the preferred Stage-A bundle to Q alone: uniform prefix and observation-weighted future estimates remain independent scalar gates.",
+  "rows": [
+    {
+      "all_finite_anchor_gates_green": true,
+      "clock_future_residual_upper": 5.0430243664253605e-09,
+      "clock_rank": 4,
+      "conditional_zero_power_hardy_upper": 1.078326087026452,
+      "finite_memory_depth": 5,
+      "finite_prefix_energy_upper": 1.0026231057242807,
+      "future_observability_sqrt_upper": 4.096627232010864,
+      "level": 0,
+      "sigma": 0.16,
+      "source_normalization_power": 0.0,
+      "stopped_primary_endpoint_ratio_upper": 1.0000061026631615,
+      "stress_mesh_identification_envelope_upper": 0.07354111655709987,
+      "upstream_bridge_upper": 1.4196464027364635e-06
+    },
+    {
+      "all_finite_anchor_gates_green": true,
+      "clock_future_residual_upper": 2.110162375089514e-12,
+      "clock_rank": 5,
+      "conditional_zero_power_hardy_upper": 1.3094988163269867,
+      "finite_memory_depth": 5,
+      "finite_prefix_energy_upper": 1.2652637645572729,
+      "future_observability_sqrt_upper": 6.07624484591174,
+      "level": 1,
+      "sigma": 0.08,
+      "source_normalization_power": 0.0,
+      "stopped_primary_endpoint_ratio_upper": 1.0000005390722186,
+      "stress_mesh_identification_envelope_upper": 0.02866059493391586,
+      "upstream_bridge_upper": 8.126348136166786e-07
+    },
+    {
+      "all_finite_anchor_gates_green": true,
+      "clock_future_residual_upper": 7.255464714331206e-13,
+      "clock_rank": 6,
+      "conditional_zero_power_hardy_upper": 1.5055853180613112,
+      "finite_memory_depth": 5,
+      "finite_prefix_energy_upper": 1.4845298584765994,
+      "future_observability_sqrt_upper": 9.29906356111547,
+      "level": 2,
+      "sigma": 0.04,
+      "source_normalization_power": 0.0,
+      "stopped_primary_endpoint_ratio_upper": 1.0000000030659941,
+      "stress_mesh_identification_envelope_upper": 0.012671725394593871,
+      "upstream_bridge_upper": 2.0218333875617674e-06
+    },
+    {
+      "all_finite_anchor_gates_green": true,
+      "clock_future_residual_upper": 6.261927526235562e-12,
+      "clock_rank": 6,
+      "conditional_zero_power_hardy_upper": 1.6789244026941117,
+      "finite_memory_depth": 5,
+      "finite_prefix_energy_upper": 1.6339877683011343,
+      "future_observability_sqrt_upper": 14.098981727818634,
+      "level": 3,
+      "sigma": 0.02,
+      "source_normalization_power": 0.0,
+      "stopped_primary_endpoint_ratio_upper": 1.0000021206490648,
+      "stress_mesh_identification_envelope_upper": 0.005996457653601196,
+      "upstream_bridge_upper": 6.632592062559585e-07
+    },
+    {
+      "all_finite_anchor_gates_green": true,
+      "clock_future_residual_upper": 1.7515485007545288e-12,
+      "clock_rank": 7,
+      "conditional_zero_power_hardy_upper": 1.8359703565040966,
+      "finite_memory_depth": 5,
+      "finite_prefix_energy_upper": 1.7603089964878795,
+      "future_observability_sqrt_upper": 21.255429650799847,
+      "level": 4,
+      "sigma": 0.01,
+      "source_normalization_power": 0.0,
+      "stopped_primary_endpoint_ratio_upper": 1.0011724272719218,
+      "stress_mesh_identification_envelope_upper": 0.0029609346948629932,
+      "upstream_bridge_upper": 3.118080235393925e-07
+    }
+  ],
+  "scenarios": [
+    {
+      "left_hardy_power": 0.0,
+      "left_terms": {
+        "finite_prefix": 0.0,
+        "normalization": 0.0,
+        "observability": 0.0,
+        "packet_residual": 0.0,
+        "reduced_future": 0.0,
+        "upstream_bridge": 0.0
+      },
+      "name": "zero_power_target",
+      "quarter_power_margin": 0.25,
+      "rh49_full_strict_mesh_range_green": true,
+      "right_hardy_power": 0.0,
+      "right_terms": {
+        "finite_prefix": 0.0,
+        "normalization": 0.0,
+        "observability": 0.0,
+        "packet_residual": 0.0,
+        "reduced_future": 0.0,
+        "upstream_bridge": 0.0
+      },
+      "stress_mesh_decay_power": 0.75,
+      "total_hardy_power": 0.0
+    },
+    {
+      "left_hardy_power": 0.125,
+      "left_terms": {
+        "finite_prefix": 0.125,
+        "normalization": 0.0,
+        "observability": 0.0,
+        "packet_residual": 0.0,
+        "reduced_future": 0.0,
+        "upstream_bridge": 0.0
+      },
+      "name": "balanced_quarter_boundary",
+      "quarter_power_margin": 0.0,
+      "rh49_full_strict_mesh_range_green": true,
+      "right_hardy_power": 0.125,
+      "right_terms": {
+        "finite_prefix": 0.0,
+        "normalization": 0.0,
+        "observability": 0.08,
+        "packet_residual": 0.045,
+        "reduced_future": 0.0,
+        "upstream_bridge": 0.0
+      },
+      "stress_mesh_decay_power": 0.5,
+      "total_hardy_power": 0.25
+    },
+    {
+      "left_hardy_power": 0.30000000000000004,
+      "left_terms": {
+        "finite_prefix": 0.0,
+        "normalization": 0.0,
+        "observability": 0.2,
+        "packet_residual": 0.1,
+        "reduced_future": 0.0,
+        "upstream_bridge": 0.0
+      },
+      "name": "one_sided_observability_leak",
+      "quarter_power_margin": -0.050000000000000044,
+      "rh49_full_strict_mesh_range_green": false,
+      "right_hardy_power": 0.0,
+      "right_terms": {
+        "finite_prefix": 0.0,
+        "normalization": 0.0,
+        "observability": 0.0,
+        "packet_residual": 0.0,
+        "reduced_future": 0.0,
+        "upstream_bridge": 0.0
+      },
+      "stress_mesh_decay_power": 0.44999999999999996,
+      "total_hardy_power": 0.30000000000000004
+    },
+    {
+      "left_hardy_power": 0.16,
+      "left_terms": {
+        "finite_prefix": 0.16,
+        "normalization": 0.0,
+        "observability": 0.0,
+        "packet_residual": 0.0,
+        "reduced_future": 0.0,
+        "upstream_bridge": 0.0
+      },
+      "name": "two_sided_prefix_leak",
+      "quarter_power_margin": -0.030000000000000027,
+      "rh49_full_strict_mesh_range_green": false,
+      "right_hardy_power": 0.12,
+      "right_terms": {
+        "finite_prefix": 0.12,
+        "normalization": 0.0,
+        "observability": 0.0,
+        "packet_residual": 0.0,
+        "reduced_future": 0.0,
+        "upstream_bridge": 0.0
+      },
+      "stress_mesh_decay_power": 0.47,
+      "total_hardy_power": 0.28
+    },
+    {
+      "left_hardy_power": 0.0,
+      "left_terms": {
+        "finite_prefix": 0.0,
+        "normalization": 0.0,
+        "observability": 0.5,
+        "packet_residual": -0.5,
+        "reduced_future": 0.0,
+        "upstream_bridge": 0.0
+      },
+      "name": "observation_residual_cancellation",
+      "quarter_power_margin": 0.25,
+      "rh49_full_strict_mesh_range_green": true,
+      "right_hardy_power": 0.0,
+      "right_terms": {
+        "finite_prefix": 0.0,
+        "normalization": 0.0,
+        "observability": 0.4,
+        "packet_residual": -0.4,
+        "reduced_future": 0.0,
+        "upstream_bridge": 0.0
+      },
+      "stress_mesh_decay_power": 0.75,
+      "total_hardy_power": 0.0
+    },
+    {
+      "left_hardy_power": 0.12000000000000001,
+      "left_terms": {
+        "finite_prefix": 0.12,
+        "normalization": 0.0,
+        "observability": 0.07,
+        "packet_residual": 0.05,
+        "reduced_future": 0.11,
+        "upstream_bridge": 0.0
+      },
+      "name": "max_not_sum_within_one_side",
+      "quarter_power_margin": 0.02999999999999997,
+      "rh49_full_strict_mesh_range_green": true,
+      "right_hardy_power": 0.1,
+      "right_terms": {
+        "finite_prefix": 0.1,
+        "normalization": 0.0,
+        "observability": 0.0,
+        "packet_residual": 0.0,
+        "reduced_future": 0.0,
+        "upstream_bridge": 0.0
+      },
+      "stress_mesh_decay_power": 0.53,
+      "total_hardy_power": 0.22000000000000003
+    }
+  ],
+  "status": "rh103_prefix_observability_sigma_power_ledger",
+  "theorem_boundary": {
+    "five_anchor_ledger_composed": true,
+    "hilbert_polya_operator": false,
+    "max_plus_sigma_power_ledger_theorem": true,
+    "moving_cloud_A5_closed": false,
+    "normalization_rank_memory_stop_mesh_overheads_power_zero": true,
+    "observation_independence_counterexample": true,
+    "only_uniform_quotient_gate_remains": false,
+    "prefix_independence_counterexample": true,
+    "prefix_observability_gate_closed": false,
+    "riemann_hypothesis": false,
+    "uniform_stage_A_closed": false
+  }
+}
