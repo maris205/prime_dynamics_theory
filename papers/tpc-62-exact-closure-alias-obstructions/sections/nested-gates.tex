@@ -1,0 +1,292 @@
+\section{Nested gates and exact sequential elimination}
+\label{sec:tpc62-nested-gates}
+
+Transitivity for nested shorts is part of the classical shorted-operator
+calculus \citep{Anderson1971,AndersonTrapp1975}.  The self-contained proof
+below records precisely how that identity acts on the staged nuisance
+spaces of the present closure problem.
+
+The master formula eliminates the full parent-null space at once.  A
+proof architecture may instead expose nuisance directions in several
+layers.  This section shows that exact shorting is transitive along nested
+retained spaces, so the sequential and one-shot procedures agree.  The
+statement is purely finite-dimensional and makes no arithmetic assertion.
+
+\subsection{Transitivity of the short}
+
+\begin{theorem}[Transitivity on nested retained spaces]
+\label{thm:tpc62-short-transitivity}
+Let \(G\ge0\) on a finite-dimensional Hilbert space \(\cK\), and let
+\begin{equation}
+ T\subseteq S\subseteq\cK
+ \label{eq:tpc62-nested-two-spaces}
+\end{equation}
+be subspaces.  Then
+\begin{equation}
+ \boxed{
+ \Sh_T\!\bigl(\Sh_S(G)\bigr)=\Sh_T(G).}
+ \label{eq:tpc62-short-transitivity}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Use the maximal characterization
+\eqref{eq:tpc62-short-order-definition}.  The operator
+\(\Sh_T(\Sh_S(G))\) is supported on \(T\) and satisfies
+\[
+ 0\le\Sh_T(\Sh_S(G))\le\Sh_S(G)\le G.
+\]
+It is therefore admissible in the defining maximum for \(\Sh_T(G)\), and
+hence
+\begin{equation}
+ \Sh_T(\Sh_S(G))\le\Sh_T(G).
+ \label{eq:tpc62-transitivity-first-order}
+\end{equation}
+Conversely, \(\Sh_T(G)\) is supported on \(T\subseteq S\) and is bounded
+above by \(G\).  It is therefore admissible in the defining maximum for
+\(\Sh_S(G)\), so \(\Sh_T(G)\le\Sh_S(G)\).  Since it is supported on
+\(T\), it is then admissible in the defining maximum for
+\(\Sh_T(\Sh_S(G))\).  Thus
+\begin{equation}
+ \Sh_T(G)\le\Sh_T(\Sh_S(G)).
+ \label{eq:tpc62-transitivity-second-order}
+\end{equation}
+Combining the two inequalities proves
+\eqref{eq:tpc62-short-transitivity}.
+\end{proof}
+
+There is also a direct variational reading.  Since \(T\subseteq S\),
+\begin{equation}
+ T^\perp=(S\cap T^\perp)\oplus S^\perp.
+ \label{eq:tpc62-nested-complement-decomposition}
+\end{equation}
+For \(t\in T\), applying \eqref{eq:tpc62-short-variational} twice gives
+\begin{align}
+ \left\langle\Sh_T(\Sh_S(G))t,t\right\rangle
+ &=\min_{u\in S\cap T^\perp}
+   \min_{n\in S^\perp}
+   \langle G(t+u+n),t+u+n\rangle
+ \notag\\
+ &=\min_{v\in T^\perp}
+   \langle G(t+v),t+v\rangle
+ \notag\\
+ &=\langle\Sh_T(G)t,t\rangle.
+ \label{eq:tpc62-transitivity-variational}
+\end{align}
+Thus transitivity is exactly the associativity of eliminating independent
+orthogonal nuisance layers.  Nestedness is essential to this statement;
+no commutation claim is made for two unrelated retained spaces.
+
+\subsection{A ladder of nuisance spaces}
+
+Let
+\begin{equation}
+ \cK=S_0\supseteq S_1\supseteq\cdots\supseteq S_k
+ \label{eq:tpc62-retained-ladder}
+\end{equation}
+be a nested ladder, and define the nuisance layer removed at stage \(j\)
+by
+\begin{equation}
+ E_j:=S_{j-1}\cap S_j^\perp,
+ \qquad 1\le j\le k.
+ \label{eq:tpc62-nuisance-layers}
+\end{equation}
+Then
+\begin{equation}
+ S_{j-1}=S_j\oplus E_j,
+ \qquad
+ S_j^\perp=E_j\oplus E_{j-1}\oplus\cdots\oplus E_1
+ \qquad(1\le j\le k).
+ \label{eq:tpc62-ladder-orthogonal-decomposition}
+\end{equation}
+Let \(F:\cK\to\cH\), set \(G_0=F^*F\), and recursively define
+\begin{equation}
+ G_j:=\Sh_{S_j}(G_{j-1}),
+ \qquad 1\le j\le k.
+ \label{eq:tpc62-sequential-shorts}
+\end{equation}
+
+\begin{theorem}[Sequential elimination equals one short]
+\label{thm:tpc62-sequential-equals-direct}
+For every \(j\),
+\begin{equation}
+ \boxed{G_j=\Sh_{S_j}(F^*F).}
+ \label{eq:tpc62-sequential-direct-operator}
+\end{equation}
+Moreover, for \(s\in S_j\),
+\begin{align}
+ \langle G_js,s\rangle
+ &=\min_{e_j\in E_j}\min_{e_{j-1}\in E_{j-1}}
+   \cdots\min_{e_1\in E_1}
+   \left\|F\!\left(s+\sum_{i=1}^j e_i\right)\right\|^2
+ \label{eq:tpc62-sequential-nuisance-formula}\\
+ &=\min_{n\in S_j^\perp}\|F(s+n)\|^2.
+ \label{eq:tpc62-one-shot-nuisance-formula}
+\end{align}
+All minima are attained.
+\end{theorem}
+
+\begin{proof}
+The operator identity follows inductively from
+\cref{thm:tpc62-short-transitivity}:
+\[
+ G_j
+ =\Sh_{S_j}\!\bigl(\Sh_{S_{j-1}}(F^*F)\bigr)
+ =\Sh_{S_j}(F^*F).
+\]
+For the form identity, the variational formula for shorting from
+\(S_{j-1}\) to \(S_j\) is
+\begin{equation}
+ \langle G_js,s\rangle
+ =\min_{e_j\in E_j}
+   \langle G_{j-1}(s+e_j),s+e_j\rangle.
+ \label{eq:tpc62-one-stage-elimination}
+\end{equation}
+Iterating \eqref{eq:tpc62-one-stage-elimination} proves
+\eqref{eq:tpc62-sequential-nuisance-formula}.  The orthogonal direct sum
+\eqref{eq:tpc62-ladder-orthogonal-decomposition} identifies
+\(\sum_{i=1}^j e_i\) with an arbitrary vector of \(S_j^\perp\), proving
+\eqref{eq:tpc62-one-shot-nuisance-formula}.  Every space is finite
+dimensional, and the least-squares argument
+\eqref{eq:tpc62-short-least-squares} shows that the minima are attained.
+\end{proof}
+
+For a nonzero parent form in \cref{sec:tpc62-master-shorted}, take the
+first retained space to be
+\begin{equation}
+ S_1=(\Ker R)^\perp.
+ \label{eq:tpc62-parent-first-retained-space}
+\end{equation}
+The first eliminated layer is \(E_1=\Ker R\), and
+\(G_1=\Sh_{S_1}(F^*F)\) is precisely the numerator in
+\eqref{eq:tpc62-master-global-eigenvalue}.  If a subsequent argument has
+genuinely nested retained spaces
+\(S_k\subseteq\cdots\subseteq S_1\), then
+\begin{equation}
+ \Sh_{S_k}\!\left(\cdots
+   \Sh_{S_2}\!\left(\Sh_{S_1}(F^*F)\right)\cdots\right)
+ =\Sh_{S_k}(F^*F).
+ \label{eq:tpc62-parent-all-at-once}
+\end{equation}
+Consequently no extra loss is created merely by staging exact nuisance
+elimination.  Any loss appearing only after replacing a short by an upper
+or lower certificate belongs to that certificate, not to the underlying
+finite-dimensional elimination.
+
+\subsection{Why compression is not elimination}
+
+Ordinary compression to \(S\) is
+\begin{equation}
+ \cC_S(G):=P_SGP_S.
+ \label{eq:tpc62-compression-definition}
+\end{equation}
+It evaluates the form after setting the discarded coefficient to zero.
+Shorting instead minimizes over that coefficient.  Therefore
+\begin{equation}
+ 0\le\Sh_S(G)\le\cC_S(G)
+ \label{eq:tpc62-short-below-compression}
+\end{equation}
+as operators supported on \(S\), and equality need not hold.  The next
+example shows that one compression in a nested chain can turn an exact
+zero into a false positive constant.
+
+\begin{example}[Intermediate compression destroys exact cancellation]
+\label{ex:tpc62-nested-compression-failure}
+Let \(\cK=\C^3\), \(\cH=\C^2\), and
+\begin{equation}
+ F(x,y,z)=(x+y,\,y+z).
+ \label{eq:tpc62-compression-counterexample-map}
+\end{equation}
+Take
+\begin{equation}
+ S_1=\operatorname{span}\{e_1,e_2\},
+ \qquad S_2=\operatorname{span}\{e_1\}.
+ \label{eq:tpc62-compression-counterexample-spaces}
+\end{equation}
+The Gram matrix is
+\begin{equation}
+ G=F^*F=
+ \begin{pmatrix}
+ 1&1&0\\
+ 1&2&1\\
+ 0&1&1
+ \end{pmatrix}.
+ \label{eq:tpc62-compression-counterexample-Gram}
+\end{equation}
+Exact elimination of \(z\) gives, on \(S_1\),
+\begin{equation}
+ \min_{z\in\C}\bigl(|x+y|^2+|y+z|^2\bigr)
+ =|x+y|^2,
+ \label{eq:tpc62-compression-counterexample-first-short}
+\end{equation}
+and exact elimination of \(y\) then gives zero.  Equivalently,
+\begin{equation}
+ \Sh_{S_2}(\Sh_{S_1}(G))
+ =\Sh_{S_2}(G)=0,
+ \label{eq:tpc62-compression-counterexample-exact-zero}
+\end{equation}
+because for any \(x\) one may choose \(y=-x\) and \(z=x\), making
+\(F(x,y,z)=0\).
+
+If the first short is incorrectly replaced by compression, the form on
+\(S_1\) is instead
+\begin{equation}
+ |x+y|^2+|y|^2.
+ \label{eq:tpc62-compression-counterexample-compressed-form}
+\end{equation}
+Shorting this compressed form to \(S_2\) yields
+\begin{equation}
+ \min_{y\in\C}\bigl(|x+y|^2+|y|^2\bigr)
+ =\frac12|x|^2,
+ \label{eq:tpc62-compression-counterexample-false-half}
+\end{equation}
+where the minimizer is \(y=-x/2\).  Thus
+\begin{equation}
+ \Sh_{S_2}(\cC_{S_1}(G))=\frac12 P_{S_2}\ne0.
+ \label{eq:tpc62-compression-counterexample-operator-half}
+\end{equation}
+Compressing at both stages is still worse:
+\begin{equation}
+ \cC_{S_2}(\cC_{S_1}(G))=P_{S_2}.
+ \label{eq:tpc62-compression-counterexample-operator-one}
+\end{equation}
+The numbers \(0\), \(1/2\), and \(1\) therefore arise from, respectively,
+exact elimination, one premature compression, and two premature
+compressions of the same positive Gram matrix.
+\end{example}
+
+The mechanism is not a numerical pathology.  In the example, the
+discarded coordinate \(z\) cancels the second output component.  Setting
+\(z=0\) retains a spurious penalty \(|y|^2\), which prevents the next
+layer from using \(y=-x\) and manufactures a positive lower bound.  In a
+physical closure argument, a coefficient direction may be compressed
+away only after proving that it cannot alter the final output, or after
+replacing the desired statement by one explicitly restricted to the
+compressed coefficient class.
+
+\subsection{Exact decisions and route failures}
+
+Combining
+\cref{thm:tpc62-master-shorted-gram,thm:tpc62-sequential-equals-direct}
+gives a quantifier-safe decision rule.
+After all genuine nuisance layers have been shorted, an actual zero
+eigenvalue is equivalent to a final kernel vector carrying positive parent
+energy.  It kills the uniform closure gate on the declared class.  By
+contrast, any of the following is only a failure of a proposed proof
+route:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.7em]
+ \item replacing a shorted operator by a compression and obtaining an
+       unusable bound;
+ \item failing to control a sufficient singular-value or norm
+       certificate;
+ \item exhausting an exponent budget in an upper-bound calculation;
+ \item proving a pointwise estimate for one distinguished vector but not
+       the uniform generalized eigenvalue.
+\end{enumerate}
+None of these statements supplies a vector in
+\(\Ker F\setminus\Ker R\).  Conversely, the mandatory-factor witness in
+\cref{prop:tpc62-mandatory-factor-kill} does supply such a vector and
+therefore survives every reformulation of the certificate.  This is the
+strict L0 boundary used below: exact operator kernels decide impossibility
+of the declared uniform gate, whereas failed certificates decide only
+which route should be abandoned or redesigned.

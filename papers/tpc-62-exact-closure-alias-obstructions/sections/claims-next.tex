@@ -1,0 +1,210 @@
+\section{Result ledger, claim boundary, and the next theorem}
+\label{sec:tpc62-claims-next}
+
+TPC--62 turns the TPC--53--TPC--61 interfaces into an exact decision system.
+It does not fill the remaining arithmetic inputs.  This final section
+separates the two achievements.
+
+\subsection{Result ledger}
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.22\textwidth}
+                >{\raggedright\arraybackslash}p{0.53\textwidth}
+                >{\raggedright\arraybackslash}p{0.14\textwidth}}
+\toprule
+Object & Exact conclusion & Status\\
+\midrule
+Master transfer
+& The optimal full-coefficient-space uniform constant from a nonzero
+  semidefinite parent form to a final map is the projected shorted-Gram eigenvalue in
+  \eqref{eq:tpc62-intro-master-eigenvalue}.
+& L0 theorem\\
+\addlinespace
+Kernel criterion
+& Positive finite-scale full-space uniform transfer holds exactly when
+  \(\Ker F\subseteq\Ker R\).
+& L0 iff test\\
+\addlinespace
+Nested nuisance elimination
+& Shorting to nested retained spaces is transitive; sequential exact
+  elimination equals one master shorting.
+& L0 theorem\\
+\addlinespace
+Mandatory/certificate split
+& A mandatory factor with a positive-energy kernel direction kills every
+  final map factoring through it; a zero sufficient-certificate constant
+  need not kill the physical map.
+& L0 decision\\
+\addlinespace
+Selector quantifiers
+& Frozen selector max--min is at most adaptive min--max, with a sharp
+  coordinate-projection gap.
+& L0 theorem\\
+\addlinespace
+Labeled uniformization
+& Retaining all selector labels by direct sum has exact constant
+  \(\lambda_{\min}(\sum_aS_a^*S_a)\); label erasure is a new map.
+& L0 theorem\\
+\addlinespace
+Certificate order
+& The exact shorted constant dominates valid reverse-triangle bounds;
+  restricted \(\kappa_M\) dominates residual and ambient relaxations,
+  which are generally incomparable.
+& L0 partial order\\
+\addlinespace
+Alias localization
+& \(\kappa_M\ge1+L\) forces a row of alias mass \(L\), a literal cell of
+  mass \(L/B\), and a pair/star witness after a degree bound.
+& L0 inverse theorem\\
+\addlinespace
+Degree--pair bridge
+& Row degree \(X^{\delta+o(1)}\) and pair bound
+  \(X^{-\tau+o(1)}\) imply
+  \(\nu_M\le(\delta-\tau)_+\).
+& L0 theorem; L1 target\\
+\addlinespace
+Literal alias entry
+& Each TPC--61 entry is the fixed-\(h_0\) weighted two-affine M\"obius
+  correlation, equivalently its determinant-cell sum.
+& L1 identity\\
+\addlinespace
+Three-module closure
+& Compatible represented, reassembly, and downstream lower constants
+  multiply; exponents must sum strictly below \(1/400\).
+& L0 theorem; fixed-\(h_0\) application conditional L1\\
+\addlinespace
+Independence models
+& Small raw missing mass, prime-block isometry, or good upstream constants
+  do not separately prevent exact coherent reassembly cancellation.
+& L0 sharpness\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+These statements reduce ambiguity.  They do not make an unproved input
+positive.
+
+\subsection{What is not proved}
+
+The following conclusions are absent.
+\begin{enumerate}[leftmargin=2.3em]
+ \item The master arithmetic constant \(\alpha_X\) is not shown to be
+       bounded below by \(X^{-\lambda+o(1)}\) for any
+       \(\lambda<1/400\).
+ \item The actual retained relation is not shown to have positive exposure
+       on every active row, nor is the missing mass shown to save a fixed
+       power in a uniform or distinguished scope.
+ \item Critical-window occupancy, terminal activation, singleton survival,
+       represented native transfer, boundary reconnection, and the tail
+       estimate are not jointly established on one carrier.
+ \item No frozen phase sector or dyadic block is shown to work uniformly for
+       every coefficient vector.  Adaptive selection is not relabeled
+       uniform.
+ \item The actual normalized collision graph is not shown to have degree
+       \(X^{\delta+o(1)}\) with a favorable \(\delta\).
+ \item No new upper bound is proved for the weighted correlation
+       \(\mu(mj+h_0)\mu(m'j+h_0)\), for its determinant form, or for a
+       dyadic row-star.
+ \item Consequently \(\kappa_M=X^{o(1)}\),
+       \(\nu_M<\sigma_M-\lambda_{\rm rep}\), and
+       \(\lambda_{\rm reasm}=0\) are not proved for the physical family.
+ \item No positive fixed-shift parity estimate, prime-pair lower bound,
+       prime-pair asymptotic, or twin-prime implication is obtained.
+\end{enumerate}
+
+In particular, \(h_0\) has not been specialized to \(2\).  Merely making
+that substitution in an L1 identity would not supply the missing carrier,
+correlation, reassembly, downstream, or target-identification theorems.
+
+In particular, the phrase ``localized alias obstruction'' means that a
+large eigenvalue must leave a literal witness.  It does not say that the
+witness is small.  Likewise, the conditional closure theorem concludes a
+lower bound only for the declared truncated packet form named in its
+hypotheses.  Identifying that form with a number-theoretic target requires
+the separately listed downstream theorem.
+
+\subsection{The next arithmetic theorem}
+
+The new calculus narrows the next useful theorem to a concrete alternative.
+
+\begin{enumerate}[label=\textbf{Route \arabic*.},leftmargin=4.3em]
+ \item \emph{Exposure first.}  Reopen the construction of the retained
+       relation \(\cI_X\) and prove, in one declared scope,
+       \begin{equation}
+        \cD_M(z)
+        \le X^{-\sigma_M+o(1)}\cD_{\rm ref}(z),
+        \qquad \sigma_M>0.
+        \label{eq:tpc62-next-exposure-target}
+       \end{equation}
+       Uniformly this requires every active row; distinguishedly it requires
+       the exact weights \(W_H(m)|z_m|^2\).
+
+ \item \emph{Represented reference in the same scope.}  Establish
+       \begin{equation}
+        \|A_Xz\|^2
+        \ge X^{-\lambda_{\rm rep}+o(1)}
+             \cD_{\rm ref}(z)
+        \label{eq:tpc62-next-represented-target}
+       \end{equation}
+       after proving the actual critical occupancy and terminal activation
+       used to define \(A_X\).
+
+ \item \emph{Alias degree and cancellation.}  On literal dyadic
+       determinant cells, prove either a pair/star estimate
+       \begin{equation}
+        |K_{m,n}|\le X^{-\tau+o(1)}\quad(m\ne n),
+        \qquad
+        \Delta_X\le X^{\delta+o(1)},
+        \label{eq:tpc62-next-alias-target}
+       \end{equation}
+       strong enough that
+       \begin{equation}
+        \sigma_M>
+        \lambda_{\rm rep}+(\delta-\tau)_+,
+        \label{eq:tpc62-next-localized-threshold}
+       \end{equation}
+       or compute a large row/cell witness that closes this subroute and
+       directs attention to exact shorting.
+
+ \item \emph{Exact reassembly alternative.}  If the degree--pair route is
+       too weak, estimate the master shorted Gram or the signed physical
+       cross term directly.  Apply the kernel tests before any asymptotic
+       eigenvalue analysis.
+
+ \item \emph{Downstream theorem.}  Only after one reassembly route is
+       quantified should the boundary and tail maps be reconnected and the
+       full strict ledger \eqref{eq:tpc62-complete-ledger} be tested.
+\end{enumerate}
+
+The first two routes prevent a sophisticated alias estimate from being
+spent on an unrepresented carrier.  The third turns every large operator
+obstruction into an explicit determinant cell, so failure is informative
+rather than merely numerical.
+
+\subsection{Possible outcomes}
+
+The next layer has three publishable outcomes with different strengths.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item A favorable exposure and alias estimate opens the restricted
+       mass--degree route and supplies a zero-cost reassembly input.  It
+       gives a conditional L1 packet lower bound only after the compatible
+       represented and downstream modules also pass the strict ledger.
+ \item A rank or kernel witness closes its matching architecture exactly;
+       a localized-cell witness that violates the proposed norm hypothesis
+       closes that narrower subroute and supplies an explicit pivot.
+ \item A theorem valid only for adaptive selectors, averaged shifts, or a
+       distinguished vector remains useful in that scope, provided it is
+       not promoted to the uniform fixed-shift route.
+\end{enumerate}
+
+\paragraph{Conclusion.}
+The TPC--53--TPC--61 sequence has not crossed the parity barrier.  It has
+replaced a loosely connected heuristic with a literal packet, exact
+finite-dimensional gates, sharp no-go tests, and one explicit remaining
+alias kernel.  TPC--62 adds the master closure constant, quantifier calculus,
+certificate order, and localization inverse theorem.  The surviving road is
+therefore narrower and falsifiable: prove actual cofactor exposure, prove a
+represented reference, and then control or exhibit one literal alias
+row/cell strongly enough to pass the single reassembly gate.  That is a
+precise next problem, not a claim that it has already been solved.

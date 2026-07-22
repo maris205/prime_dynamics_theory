@@ -1,0 +1,259 @@
+\section{Adaptive selectors and the quantifier barrier}
+\label{sec:tpc62-adaptive-selectors}
+
+Several earlier TPC reductions locate, for each coefficient vector, a
+sector, block, or face carrying a definite portion of its mass.  Such a
+statement has the quantifier order
+\[
+ \text{for every }z\text{ there exists a label }a=a(z).
+\]
+It does not by itself provide one label which works for every coefficient
+vector.  This section isolates that distinction as finite-dimensional
+linear algebra.  No arithmetic input is used.
+
+\subsection{The two selector constants}
+
+Let \(\cK\ne\{0\}\) be a finite-dimensional complex Hilbert space, let
+\(\cA\) be a finite nonempty label set, and let
+\begin{equation}
+ S_a:\cK\longrightarrow\cH_a
+ \qquad(a\in\cA)
+ \label{eq:tpc62-selector-family}
+\end{equation}
+be linear maps into finite-dimensional Hilbert spaces.  For \(z\ne0\),
+put
+\begin{equation}
+ q_a(z):=\frac{\|S_az\|^2}{\|z\|^2}.
+ \label{eq:tpc62-selector-Rayleigh}
+\end{equation}
+The adaptive and fixed-label lower constants are respectively
+\begin{align}
+ \lambda_{\rm ad}
+ &:=\inf_{z\ne0}\max_{a\in\cA}q_a(z),
+ \label{eq:tpc62-adaptive-constant}\\
+ \lambda_{\rm fix}
+ &:=\max_{a\in\cA}\inf_{z\ne0}q_a(z)
+   =\max_{a\in\cA}\lambda_{\min}(S_a^*S_a).
+ \label{eq:tpc62-fixed-constant}
+\end{align}
+The extrema exist because the unit sphere is compact and \(\cA\) is
+finite.
+
+\begin{theorem}[Quantifier-safe minimax inequality]
+\label{thm:tpc62-selector-minimax}
+For every family \eqref{eq:tpc62-selector-family},
+\begin{equation}
+ \boxed{
+ \sup_{a\in\cA}\inf_{z\ne0}q_a(z)
+ \quad\le\quad
+ \inf_{z\ne0}\sup_{a\in\cA}q_a(z).}
+ \label{eq:tpc62-minimax-order}
+\end{equation}
+Equivalently, \(\lambda_{\rm fix}\le\lambda_{\rm ad}\).  Consequently,
+for any \(c>0\),
+\begin{align}
+ \lambda_{\rm ad}\ge c
+ &\quad\Longleftrightarrow\quad
+ (\forall z\ne0)(\exists a\in\cA):
+ \|S_az\|^2\ge c\|z\|^2,
+ \label{eq:tpc62-forall-exists}\\
+ \lambda_{\rm fix}\ge c
+ &\quad\Longleftrightarrow\quad
+ (\exists a\in\cA)(\forall z\ne0):
+ \|S_az\|^2\ge c\|z\|^2.
+ \label{eq:tpc62-exists-forall}
+\end{align}
+The first statement does not imply the second.
+\end{theorem}
+
+\begin{proof}
+For every fixed pair \((a,z)\),
+\[
+ \inf_{w\ne0}q_a(w)\le q_a(z)
+ \le\sup_{b\in\cA}q_b(z).
+\]
+Taking the supremum over \(a\) in the left member and then the infimum
+over \(z\) in the right member proves
+\eqref{eq:tpc62-minimax-order}.  The two logical equivalences are merely
+the definitions of the two constants, together with attainment of the
+finite maximum and the compact-sphere minima.  The failure of the converse
+is witnessed quantitatively by the next example.
+\end{proof}
+
+\begin{example}[Coordinate projections give a strict gap]
+\label{ex:tpc62-coordinate-selector-gap}
+Fix \(r\ge2\), take \(\cK=\C^r\), \(\cA=\{1,\ldots,r\}\), and let
+\[
+ S_a z=z_a\in\C.
+\]
+For every \(z\ne0\),
+\[
+ \max_{1\le a\le r}\frac{|z_a|^2}{\|z\|^2}\ge\frac1r,
+\]
+with equality at \(z=r^{-1/2}(1,\ldots,1)\).  Hence
+\begin{equation}
+ \lambda_{\rm ad}=\frac1r.
+ \label{eq:tpc62-coordinate-adaptive}
+\end{equation}
+On the other hand, each \(S_a\) has a nonzero kernel, and therefore
+\begin{equation}
+ \lambda_{\rm fix}=0.
+ \label{eq:tpc62-coordinate-fixed}
+\end{equation}
+Thus a label can always be chosen after seeing \(z\), but no single label
+has any positive lower bound on all directions.  The gap is not a limiting
+or measurability artifact: it occurs in a finite family of coordinate
+projections in finite dimension.
+\end{example}
+
+The same example remains valid after multiplying every \(S_a\) by any
+common scale.  It therefore obstructs not only a constant lower bound but
+also any attempted fixed-power upgrade which preserves the same selector
+family: an adaptive gain \(X^{-\lambda}\) does not produce a fixed label
+with gain \(X^{-\lambda+o(1)}\).
+
+\subsection{Uniformization by retaining the label}
+
+There is a legitimate way to keep all adaptive alternatives without
+reversing their quantifiers: retain the selector label as an orthogonal
+output coordinate.  Define the labelled analysis map
+\begin{equation}
+ \mathsf S:\cK\longrightarrow
+ \bigoplus_{a\in\cA}\cH_a,
+ \qquad
+ \mathsf Sz:=(S_az)_{a\in\cA}.
+ \label{eq:tpc62-labelled-analysis-map}
+\end{equation}
+
+\begin{theorem}[Exact labelled direct-sum uniformization]
+\label{thm:tpc62-labeled-uniformization}
+The optimal coefficient-uniform constant for the label-retaining map is
+\begin{equation}
+ \boxed{
+ \lambda_{\rm lab}
+ :=\inf_{z\ne0}\frac{\|\mathsf Sz\|^2}{\|z\|^2}
+ =\lambda_{\min}\!\left(\sum_{a\in\cA}S_a^*S_a\right).}
+ \label{eq:tpc62-labelled-exact-constant}
+\end{equation}
+Moreover,
+\begin{equation}
+ \boxed{
+ \lambda_{\rm ad}\le\lambda_{\rm lab}
+ \le |\cA|\lambda_{\rm ad}.}
+ \label{eq:tpc62-labelled-adaptive-comparison}
+\end{equation}
+In particular, an adaptive bound \(\lambda_{\rm ad}\ge c\) gives the
+genuine uniform labelled inequality
+\begin{equation}
+ \sum_{a\in\cA}\|S_az\|^2\ge c\|z\|^2
+ \qquad(z\in\cK).
+ \label{eq:tpc62-labelled-uniform-lower}
+\end{equation}
+Conversely, \(\lambda_{\rm lab}\ge L\) implies only the adaptive bound
+\(\lambda_{\rm ad}\ge L/|\cA|\) without further information.
+\end{theorem}
+
+\begin{proof}
+Orthogonality of the labelled summands gives
+\begin{align*}
+ \|\mathsf Sz\|^2
+ &=\sum_{a\in\cA}\|S_az\|^2\\
+ &=\left\langle
+     \left(\sum_{a\in\cA}S_a^*S_a\right)z,z
+   \right\rangle.
+\end{align*}
+Rayleigh--Ritz proves \eqref{eq:tpc62-labelled-exact-constant}.  Pointwise
+in \(z\ne0\),
+\[
+ \max_a q_a(z)
+ \le\sum_a q_a(z)
+ \le |\cA|\max_a q_a(z).
+\]
+Taking the infimum over \(z\) proves
+\eqref{eq:tpc62-labelled-adaptive-comparison}, and the two consequences
+follow immediately.
+\end{proof}
+
+For the coordinate family in
+\cref{ex:tpc62-coordinate-selector-gap}, one has
+\[
+ \sum_{a=1}^rS_a^*S_a=I_{\C^r},
+ \qquad
+ \lambda_{\rm lab}=1,
+\]
+even though \(\lambda_{\rm fix}=0\).  Nothing contradictory has happened:
+the direct sum retains all \(r\) labels, whereas a fixed selector retains
+only one.
+
+\subsection{Label retention is not physical reassembly}
+
+The labelled theorem changes the output space.  A later map which erases
+or recombines the label can restore the very cancellations that the direct
+sum prevented.  This is an independent gate.
+
+\begin{proposition}[Recombination requires a new lower certificate]
+\label{prop:tpc62-recombination-new-gate}
+Positivity of \(\lambda_{\rm lab}\) alone gives no universal positive
+coefficient-uniform lower bound after an arbitrary linear recombination
+\[
+ \mathsf C:\bigoplus_{a\in\cA}\cH_a\longrightarrow\cH.
+\]
+Precisely, there exist a labelled map with \(\lambda_{\rm lab}>0\) and a
+recombination \(\mathsf C\) for which \(\mathsf C\mathsf S\) has lower
+constant zero.  There also exist a bounded-below represented map
+\(A=\mathsf S\) and a missing map \(M\) for which \(A+M\) has lower
+constant zero.
+\end{proposition}
+
+\begin{proof}
+For the first assertion, take \(\cK=\C^2\),
+\(S_1(z_1,z_2)=z_1\), \(S_2(z_1,z_2)=z_2\), and
+\[
+ \mathsf C(y_1,y_2)=y_1+y_2.
+\]
+Then \(\mathsf S=I_{\C^2}\) and \(\lambda_{\rm lab}=1\), while
+\(\mathsf C\mathsf S(1,-1)=0\).  Thus the recombined map has lower
+constant zero.
+
+For the second assertion, on the labelled output space take
+\(A=\mathsf S\) and \(M=-\mathsf S\).  Then \(A\) has lower constant
+\(\lambda_{\rm lab}>0\), but \(A+M=0\).  Hence neither label retention
+nor a represented lower bound controls signed reassembly without an
+additional angle, defect, or exact shorted-Gram estimate.
+\end{proof}
+
+The correct scope statement is therefore
+\begin{equation}
+ \boxed{
+ \text{adaptive selector}
+ \;\Longrightarrow\;
+ \text{uniform labelled direct sum}
+ \;\not\Longrightarrow\;
+ \text{uniform physical recombination}.}
+ \label{eq:tpc62-selector-scope-chain}
+\end{equation}
+The first arrow is
+\cref{thm:tpc62-labeled-uniformization}; the failed second arrow is
+\cref{prop:tpc62-recombination-new-gate}.  To pass the second arrow one
+must analyze the actual physical recombination and, when an undeleted
+represented map \(A\) is perturbed by a missing contribution \(M\), the
+actual map \(A+M\).  The exact shorted constant and its certificate
+lattice are developed in the next section.
+
+\subsection{Scope audit}
+
+All results in this section are L0 finite-dimensional statements.  They
+make three claims and no others.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+ \item An adaptive selector does not supply a fixed coefficient-uniform
+       selector.
+ \item Retaining the selector label gives a different, rigorously uniform
+       direct-sum map with exact constant
+       \(\lambda_{\min}(\sum_aS_a^*S_a)\).
+ \item Dropping or recombining that label, or adding a missing signed map,
+       requires a separate reassembly theorem.
+\end{enumerate}
+In particular, no sector, block, or label identified after inspecting a
+coefficient vector is promoted here to one physical label valid for all
+vectors.  No estimate for a fixed arithmetic shift, no parity
+improvement, and no prime-pair lower bound follows from this section.

@@ -1,0 +1,257 @@
+\section{Localized alias inverse theorems}
+\label{sec:tpc62-localized-alias}
+
+TPC--61 identifies the exact normalized missing Gram, but deliberately does
+not estimate its off-diagonal arithmetic kernel \citep{WangTPC61}.  This
+section records the converse information that is available without any new
+number theory: if the restricted native norm is large, then a large portion
+of that norm must already be visible on one row, on one literal collision
+cell, and finally on one row pair.  Thus a failure of a proposed norm bound
+cannot remain completely delocalized.
+
+Let \(F_M\) be the normalized physical missing incidence matrix on the
+active row space, and put
+\begin{equation}
+ \mathbf K_M:=F_M^*F_M,
+ \qquad
+ \mathbf H_M:=\mathbf K_M-I,
+ \qquad
+ \kappa_M:=\lambda_{\max}(\mathbf K_M).
+ \label{eq:tpc62-normalized-alias-gram}
+\end{equation}
+Every column of \(F_M\) has norm one.  Hence
+\begin{equation}
+ (\mathbf K_M)_{m,m}=1,
+ \qquad
+ (\mathbf H_M)_{m,m}=0,
+ \qquad
+ \kappa_M=1+\lambda_{\max}(\mathbf H_M).
+ \label{eq:tpc62-zero-diagonal-alias}
+\end{equation}
+The rows in this section are only the actually active rows.  No zero row is
+adjoined to inflate a degree or a dimension.
+
+\subsection{Literal collision-cell decompositions}
+
+We use a decomposition that is exact at the level of Gram summands.  Let
+\(\mathscr B\) be a nonempty set of \(B\) literal collision cells and write
+\begin{equation}
+ \mathbf H_M=\sum_{b\in\mathscr B}\mathbf H_M^{(b)}.
+ \label{eq:tpc62-cell-decomposition}
+\end{equation}
+Here every common-output product of two distinct source rows is assigned to
+exactly one cell, together with its conjugate product, and
+\((\mathbf H_M^{(b)})_{m,m}=0\).  Thus
+\eqref{eq:tpc62-cell-decomposition} is an identity with the literal phases;
+it is not a support majorant.  If the original packet is first partitioned
+into source cells, then \(\mathscr B\) must include all nonempty cell pairs
+that can contribute a Gram product.  In particular, \(B\) below counts
+correlation pieces, not merely the number of source-cell names.  The
+decomposition is fixed by the literal carrier before any coefficient vector
+or extremizing eigenvector is selected.
+
+For a row \(m\) and a cell \(b\), set
+\begin{equation}
+ \mathcal N_b(m)
+ :=\{n\ne m:(\mathbf H_M^{(b)})_{m,n}\ne0\},
+ \qquad
+ \Delta:=\max_{m,b}|\mathcal N_b(m)|.
+ \label{eq:tpc62-cell-neighbour-degree}
+\end{equation}
+This is the degree of the actual cellwise collision graph.  It is not an
+ambient number of labels that never occur.
+
+\begin{theorem}[Localized alias inverse theorem]
+\label{thm:tpc62-localized-alias-inverse}
+Assume the active row space is nonzero and
+\begin{equation}
+ \kappa_M\ge 1+L
+ \label{eq:tpc62-large-kappa-hypothesis}
+\end{equation}
+for some \(L>0\).  Then all of the following hold.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item There is an active row \(m\) such that
+ \begin{equation}
+  \sum_{n\ne m}|(\mathbf K_M)_{m,n}|\ge L.
+  \label{eq:tpc62-large-row-l1}
+ \end{equation}
+ \item There are an active row \(m\) and a literal cell
+       \(b\in\mathscr B\) such that
+ \begin{equation}
+  \sum_{n\ne m}|(\mathbf H_M^{(b)})_{m,n}|
+  \ge \frac{L}{B}.
+  \label{eq:tpc62-large-cell-row-l1}
+ \end{equation}
+ \item If \(\Delta<\infty\), then for some \(m\ne n\) and some
+       \(b\in\mathscr B\),
+ \begin{align}
+  |(\mathbf H_M^{(b)})_{m,n}|
+  &\ge \frac{L}{B\Delta},
+  \label{eq:tpc62-large-pair-witness}\\
+  \left(\sum_{n\in\mathcal N_b(m)}
+  |(\mathbf H_M^{(b)})_{m,n}|^2\right)^{1/2}
+  &\ge \frac{L}{B\sqrt{\Delta}}.
+  \label{eq:tpc62-large-l2-star}
+ \end{align}
+\end{enumerate}
+When \(L>0\), the conclusion itself forces \(\Delta\ge1\).
+\end{theorem}
+
+\begin{proof}
+The Hermitian matrix \(\mathbf H_M\) has zero diagonal.  Its largest
+eigenvalue is at most its spectral radius, and the spectral radius is at
+most the induced \(\ell^\infty\)-norm.  Therefore
+\[
+ L
+ \le\lambda_{\max}(\mathbf H_M)
+ \le\max_m\sum_{n\ne m}|(\mathbf H_M)_{m,n}|.
+\]
+This proves \eqref{eq:tpc62-large-row-l1}, because the off-diagonal entries
+of \(\mathbf H_M\) and \(\mathbf K_M\) agree.
+
+Choose a row \(m\) satisfying \eqref{eq:tpc62-large-row-l1}.  The exact
+cell decomposition and the triangle inequality give
+\[
+ L
+ \le\sum_{n\ne m}\left|
+       \sum_{b\in\mathscr B}(\mathbf H_M^{(b)})_{m,n}\right|
+ \le\sum_{b\in\mathscr B}\sum_{n\ne m}
+       |(\mathbf H_M^{(b)})_{m,n}|.
+\]
+At least one cell has the mass in
+\eqref{eq:tpc62-large-cell-row-l1}.  That cell has at most \(\Delta\)
+nonzero neighbours, so its largest entry is at least its \(\ell^1\)-mass
+divided by \(\Delta\), proving
+\eqref{eq:tpc62-large-pair-witness}.  Finally Cauchy--Schwarz on the same
+star gives
+\[
+ \frac{L}{B}
+ \le\sum_{n\in\mathcal N_b(m)}
+       |(\mathbf H_M^{(b)})_{m,n}|
+ \le\sqrt{\Delta}
+ \left(\sum_{n\in\mathcal N_b(m)}
+       |(\mathbf H_M^{(b)})_{m,n}|^2\right)^{1/2},
+\]
+which is \eqref{eq:tpc62-large-l2-star}.
+\end{proof}
+
+The theorem is one-sided.  A large cell entry is compatible with
+cancellation between cells and therefore need not force a comparably large
+entry of the completed Gram.  What the theorem says is that a large
+\emph{completed} norm forces at least one large literal cell sum.
+
+\subsection{Degree times pair correlation}
+
+The forward Schur estimate is the exact counterpart of the inverse theorem.
+
+\begin{corollary}[Pair correlation plus active degree]
+\label{cor:tpc62-degree-pair-exponent}
+Suppose, uniformly over all colliding distinct active rows, that
+\begin{align}
+ |\{n\ne m:(\mathbf K_M)_{m,n}\ne0\}|
+ &\le X^{\delta+o(1)},
+ \label{eq:tpc62-global-degree-exponent}\\
+ |(\mathbf K_M)_{m,n}|
+ &\le X^{-\tau+o(1)},
+ \label{eq:tpc62-pair-correlation-exponent}
+\end{align}
+where the two \(o(1)\) terms are uniform in the row indices.  Then
+\begin{equation}
+ \boxed{
+ \kappa_M
+ \le 1+X^{\delta-\tau+o(1)},
+ \qquad
+ \nu_M\le(\delta-\tau)_+,}
+ \label{eq:tpc62-degree-pair-kappa-bound}
+\end{equation}
+where
+\(
+ \nu_M:=\limsup_{X\to\infty}
+ \log\max\{1,\kappa_M\}/\log X
+\).
+In particular, a pair saving with \(\tau<\delta\) does not by itself give
+a subpower operator bound: this Schur certificate still permits the
+positive exponent \(\delta-\tau\).  It does not assert that the actual
+\(\nu_M\) is positive.
+\end{corollary}
+
+\begin{proof}
+Every off-diagonal absolute row sum is at most
+\(X^{\delta-\tau+o(1)}\).  The same induced-norm estimate used in
+\cref{thm:tpc62-localized-alias-inverse} yields the first assertion.  If
+\(\delta\le\tau\), the right side is \(X^{o(1)}\); otherwise its exponent
+is \(\delta-\tau\).  This proves the second assertion.
+\end{proof}
+
+If instead the available estimate is cellwise, with
+\(B=X^{b+o(1)}\), cell degree \(X^{\delta+o(1)}\), and
+\(|(\mathbf H_M^{(b)})_{m,n}|\le X^{-\tau+o(1)}\), then the same proof
+gives
+\begin{equation}
+ \nu_M\le(b+\delta-\tau)_+.
+ \label{eq:tpc62-cellwise-exponent-bound}
+\end{equation}
+The factor \(B\) may be omitted only when orthogonality or another exact
+summation mechanism removes it.
+
+Conversely, suppose
+\begin{equation}
+ \kappa_M\ge1+X^{\nu-o(1)},
+ \qquad
+ B\le X^{b+o(1)},
+ \qquad
+ \Delta\le X^{\delta+o(1)}.
+ \label{eq:tpc62-exponent-inverse-hypotheses}
+\end{equation}
+Then \cref{thm:tpc62-localized-alias-inverse} produces one cell and one
+row pair for which
+\begin{align}
+ |(\mathbf H_M^{(b)})_{m,n}|
+ &\ge X^{\nu-b-\delta-o(1)},
+ \label{eq:tpc62-exponent-pair-witness}\\
+ \left(\sum_{n\in\mathcal N_b(m)}
+ |(\mathbf H_M^{(b)})_{m,n}|^2\right)^{1/2}
+ &\ge X^{\nu-b-\delta/2-o(1)}.
+ \label{eq:tpc62-exponent-star-witness}
+\end{align}
+These are deterministic localization statements; no probability model is
+being invoked.
+
+\subsection{The arithmetic content of the localized witness}
+
+Conjugating \(\mathbf H_M\) and every cell piece by the same fixed diagonal
+source-divisor gauge preserves the decomposition, every entry magnitude,
+and all row/star norms above.  After this TPC--61 gauge, each direct-slice
+contribution to an off-diagonal entry is exactly the normalized,
+fixed-\(h_0\) two-affine M\"obius sum
+\begin{equation}
+ \frac{1}{\sqrt{W_M(m)W_M(m')}}
+ \sum_j
+ \mathfrak m_m(j)\mathfrak m_{m'}(j)
+ \mu(mj+h_0)\mu(m'j+h_0)
+ \overline{a_m(j)}a_{m'}(j)\Gamma_{m,m'}(j).
+ \label{eq:tpc62-fixed-shift-pair-kernel}
+\end{equation}
+The full off-diagonal entry is the sum of the left and right direct-slice
+expressions on their declared orthogonal output components; no cross-slice
+Gram term is inserted.
+Equivalently, the same sum is indexed by the literal solutions of
+\begin{equation}
+ m'pr-mp'r'=h_0(m'-m),
+ \label{eq:tpc62-determinant-surface}
+\end{equation}
+with all inherited largest-prime, cofactor, missing-carrier, orbit, and
+endpoint restrictions retained.  Restricting the Gram summands to a
+literal collision cell gives the entries
+\((\mathbf H_M^{(b)})_{m,m'}\) above.  Consequently
+\eqref{eq:tpc62-exponent-pair-witness} localizes a large restricted native
+norm to one normalized signed determinant sum.  It does not localize to one
+determinant quadruple, because many quadruples may still occur in that sum.
+
+This is an exact reformulation, not a cancellation theorem.  TPC--61 does
+not prove \eqref{eq:tpc62-pair-correlation-exponent} for any
+\(\tau>0\), either for one pair uniformly or for the growing matrix of row
+pairs.  The present inverse theorem likewise supplies no sign cancellation:
+it only says where a large norm must leave a witness.  The matrix statements
+are L0, their literal fixed-shift identification is L1, and no L2 parity or
+prime-pair improvement is claimed.

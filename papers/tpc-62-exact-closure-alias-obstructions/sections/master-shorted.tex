@@ -1,0 +1,357 @@
+\section{The master shorted--Gram gate}
+\label{sec:tpc62-master-shorted}
+
+The shorted-operator construction and its Loewner-maximal
+characterization are classical, originating with Anderson and the
+Anderson--Trapp development
+\citep{Anderson1971,AndersonTrapp1975}.  We include the finite-dimensional
+proof to fix the exact quotient, nuisance space, and quantifiers needed by
+the TPC closure specialization; no priority claim is made for the general
+shorted-operator theory.
+
+This section isolates the finite-dimensional closure problem before any
+arithmetic specialization.  Let \(\cK\) and \(\cH\) be finite-dimensional
+complex Hilbert spaces, let
+\begin{equation}
+ R=R^*\ge 0\quad\text{on }\cK,
+ \qquad
+ F:\cK\longrightarrow\cH,
+ \label{eq:tpc62-master-data}
+\end{equation}
+and assume \(R\ne0\).  The parent form is
+\(z\mapsto\langle Rz,z\rangle\), while \(F\) is the final physical map
+after every declared layer has been assembled.  Define the exact closure
+constant
+\begin{equation}
+ \alpha_R(F)
+ :=\inf_{\langle Rz,z\rangle>0}
+ \frac{\|Fz\|^2}{\langle Rz,z\rangle}.
+ \label{eq:tpc62-alpha-definition}
+\end{equation}
+We also write \(\alpha(F;R):=\alpha_R(F)\) when the map is the first
+argument in a chain of certificates.
+The order of the quantifiers in \eqref{eq:tpc62-alpha-definition} is part
+of the definition: one constant must control every parent-visible vector.
+The exclusion \(R=0\) is substantive rather than cosmetic.  In that case
+there is no parent-visible vector, the infimum in
+\eqref{eq:tpc62-alpha-definition} has empty domain, and the least
+eigenvalue on \(S=\{0\}\) is not defined.  Every inequality
+\(\|Fz\|^2\ge c\langle Rz,z\rangle\) is then vacuous, so the zero parent
+form is treated separately and is assigned no closure constant.
+
+Put
+\begin{equation}
+ N:=\Ker R,
+ \qquad S:=N^\perp=\Ran R,
+ \qquad R_S:=R|_S,
+ \label{eq:tpc62-master-NSR}
+\end{equation}
+so that \(R_S\) is positive definite on the nonzero space \(S\).  Write
+\begin{equation}
+ F_S:=F|_S,
+ \qquad F_N:=F|_N,
+ \qquad W:=F(N)=\Ran F_N,
+ \qquad P:=P_{W^\perp}.
+ \label{eq:tpc62-master-FSNWP}
+\end{equation}
+The subspace \(W\) is important: vectors in \(N\) cost no parent energy,
+but their final images may cancel the image of a parent-visible vector.
+
+\subsection{The finite-dimensional short}
+
+For a positive semidefinite operator \(G\) on \(\cK\) and a subspace
+\(L\subseteq\cK\), its \emph{short to \(L\)}, denoted \(\Sh_L(G)\), is
+the unique positive operator characterized by
+\begin{equation}
+ \Sh_L(G)
+ =\max\bigl\{B:0\le B\le G,\ \Ran B\subseteq L\bigr\}
+ \label{eq:tpc62-short-order-definition}
+\end{equation}
+in the Loewner order.  For completeness, it has the following exact
+variational description.  If \(s\in L\), then
+\begin{equation}
+ \left\langle\Sh_L(G)s,s\right\rangle
+ =\min_{n\in L^\perp}\langle G(s+n),s+n\rangle,
+ \label{eq:tpc62-short-variational}
+\end{equation}
+and \(\Sh_L(G)\) vanishes on \(L^\perp\).
+
+To verify both existence and maximality without invoking an
+infinite-dimensional theorem, write \(G=C^*C\) and put
+\(V=C(L^\perp)\).  Least squares gives
+\begin{equation}
+ \min_{n\in L^\perp}\|Cs+Cn\|^2
+ =\|P_{V^\perp}Cs\|^2.
+ \label{eq:tpc62-short-least-squares}
+\end{equation}
+The right-hand side is a positive quadratic form on \(L\), and therefore
+defines a positive operator supported on \(L\).  Call it \(B_L\).  For
+\(z=s+n\), \eqref{eq:tpc62-short-variational} gives
+\(\langle B_Lz,z\rangle\le\langle Gz,z\rangle\), so \(B_L\le G\).
+Conversely, if \(0\le B\le G\) and \(\Ran B\subseteq L\), then
+\(B=P_LBP_L\), and for every \(n\in L^\perp\),
+\[
+ \langle Bs,s\rangle
+ =\langle B(s+n),s+n\rangle
+ \le\langle G(s+n),s+n\rangle.
+\]
+Taking the minimum over \(n\) shows \(B\le B_L\).  Hence
+\(B_L=\Sh_L(G)\), proving \eqref{eq:tpc62-short-order-definition} and
+\eqref{eq:tpc62-short-variational} simultaneously.
+
+Apply this construction to the final Gram operator
+\begin{equation}
+ G:=F^*F.
+ \label{eq:tpc62-final-Gram}
+\end{equation}
+Relative to \(\cK=S\oplus N\), write
+\begin{equation}
+ G=
+ \begin{pmatrix}
+  G_{SS}&G_{SN}\\
+  G_{NS}&G_{NN}
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+  F_S^*F_S&F_S^*F_N\\
+  F_N^*F_S&F_N^*F_N
+ \end{pmatrix}.
+ \label{eq:tpc62-Gram-blocks}
+\end{equation}
+
+\begin{lemma}[Projected Gram and generalized Schur complement]
+\label{lem:tpc62-projected-Gram}
+The short of \(G\) to \(S\) is
+\begin{equation}
+ \Sh_S(G)
+ =\begin{pmatrix}Q&0\\0&0\end{pmatrix},
+ \qquad
+ \boxed{Q=F_S^*PF_S.}
+ \label{eq:tpc62-master-Q-projected}
+\end{equation}
+Equivalently,
+\begin{equation}
+ Q
+ =G_{SS}-G_{SN}G_{NN}^{\dagger}G_{NS}.
+ \label{eq:tpc62-master-Q-Schur}
+\end{equation}
+For each \(s\in S\),
+\begin{equation}
+ \min_{n\in N}\|F_Ss+F_Nn\|^2
+ =\|PF_Ss\|^2
+ =\langle Qs,s\rangle.
+ \label{eq:tpc62-master-nuisance-minimum}
+\end{equation}
+All minimizers are
+\begin{equation}
+ n_s=-F_N^\dagger F_Ss+n_0,
+ \qquad n_0\in\Ker F_N.
+ \label{eq:tpc62-master-minimizers}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The first equality in \eqref{eq:tpc62-master-nuisance-minimum} is the
+least-squares distance from \(-F_Ss\) to
+\(W=\Ran F_N\).  The Moore--Penrose least-squares formula gives
+\eqref{eq:tpc62-master-minimizers}.  Consequently the quadratic form of
+the short is \(\|PF_Ss\|^2\), proving
+\eqref{eq:tpc62-master-Q-projected}.  Finally,
+\[
+ F_N(F_N^*F_N)^\dagger F_N^*=P_W,
+\]
+and substitution in the block expression gives
+\eqref{eq:tpc62-master-Q-Schur}.
+\end{proof}
+
+\subsection{The master eigenvalue and exact kernel decision}
+
+\begin{theorem}[Master shorted--Gram formula]
+\label{thm:tpc62-master-shorted-gram}
+For the data in \eqref{eq:tpc62-master-data},
+\begin{equation}
+ \boxed{
+ \alpha_R(F)
+ =\lambda_{\min}\!\left(
+ R_S^{-1/2}QR_S^{-1/2}\bigm|_S
+ \right),
+ \qquad W=F(\Ker R),\quad Q=F_S^*P_{W^\perp}F_S.}
+ \label{eq:tpc62-master-eigenvalue}
+\end{equation}
+Equivalently,
+\begin{equation}
+ \alpha_R(F)
+ =\lambda_{\min}\!\left(
+ \left.
+ R^{\dagger/2}\Sh_S(F^*F)R^{\dagger/2}
+ \right|_S
+ \right).
+ \label{eq:tpc62-master-global-eigenvalue}
+\end{equation}
+Moreover,
+\begin{equation}
+ \boxed{
+ \alpha_R(F)>0
+ \quad\Longleftrightarrow\quad
+ \Ker F\subseteq\Ker R.}
+ \label{eq:tpc62-master-kernel-equivalence}
+\end{equation}
+Thus failure of the kernel inclusion is an exact finite-scale kill, not a
+loss in a sufficient estimate.
+\end{theorem}
+
+\begin{proof}
+Every \(z\in\cK\) has a unique decomposition \(z=s+n\), with
+\(s\in S\) and \(n\in N\).  Since \(Rn=0\),
+\[
+ \langle Rz,z\rangle=\langle R_Ss,s\rangle,
+\]
+which is positive precisely when \(s\ne0\).  Minimizing the numerator over
+\(n\) and using \cref{lem:tpc62-projected-Gram} gives
+\begin{equation}
+ \alpha_R(F)
+ =\inf_{s\in S\setminus\{0\}}
+ \frac{\langle Qs,s\rangle}{\langle R_Ss,s\rangle}.
+ \label{eq:tpc62-master-Rayleigh-quotient}
+\end{equation}
+The substitution \(x=R_S^{1/2}s\) and the Rayleigh--Ritz principle prove
+\eqref{eq:tpc62-master-eigenvalue}.  On \(S\),
+\(R^{\dagger/2}=R_S^{-1/2}\), while both
+\(R^{\dagger/2}\) and \(\Sh_S(F^*F)\) vanish on \(N\); this proves
+\eqref{eq:tpc62-master-global-eigenvalue}.
+
+If \(\Ker F\not\subseteq\Ker R\), choose \(z\in\Ker F\) with
+\(\langle Rz,z\rangle>0\).  Its quotient is zero, so
+\(\alpha_R(F)=0\).  Conversely, suppose
+\(\Ker F\subseteq N\).  If \(PF_Ss=0\), then
+\(F_Ss\in W\), so there is \(n\in N\) with
+\(F_Ss+F_Nn=0\).  Hence \(s+n\in\Ker F\subseteq N\).  Projecting this
+vector orthogonally onto \(S\) gives \(s=0\).  Thus \(PF_S\) is
+injective on \(S\).  In finite dimension its least generalized singular
+value relative to the positive definite form \(R_S\) is strictly
+positive.  Equation \eqref{eq:tpc62-master-eigenvalue} now gives
+\(\alpha_R(F)>0\).
+\end{proof}
+
+\begin{corollary}[Dimension kill]
+\label{cor:tpc62-master-dimension-kill}
+If
+\begin{equation}
+ \dim S>\dim\cH-\dim W,
+ \label{eq:tpc62-master-dimension-kill}
+\end{equation}
+then \(\alpha_R(F)=0\).
+\end{corollary}
+
+\begin{proof}
+The effective map \(PF_S:S\to W^\perp\) cannot be injective under
+\eqref{eq:tpc62-master-dimension-kill}; apply
+\eqref{eq:tpc62-master-kernel-equivalence}.
+\end{proof}
+
+The converse to \cref{cor:tpc62-master-dimension-kill} is false: compatible
+dimensions do not force injectivity.  Even the exact kernel inclusion has
+no asymptotic size content.  For example, with \(R_X=I\) and
+\(F_X=e^{-X}I\), one has \(\Ker F_X=\{0\}\) and
+\begin{equation}
+ \alpha_{R_X}(F_X)=e^{-2X}>0
+ \label{eq:tpc62-positive-superpolynomial-small}
+\end{equation}
+at every finite scale, but there is no finite exponent \(\lambda\) for
+which \(\alpha_{R_X}(F_X)\ge X^{-\lambda+o(1)}\).  Kernel survival and an
+endpoint-quality polynomial certificate are therefore separate gates.
+
+\subsection{A mandatory factor: an actual kill versus a failed certificate}
+
+Suppose the final map has a genuine factorization
+\begin{equation}
+ \cK\xrightarrow{\ T\ }\mathcal Y\xrightarrow{\ L\ }\cH,
+ \qquad F=LT.
+ \label{eq:tpc62-mandatory-factorization}
+\end{equation}
+Calling \(T\) \emph{mandatory} means the identity
+\eqref{eq:tpc62-mandatory-factorization} holds for the literal final map;
+it does not mean merely that one proof happens to use \(T\).
+
+\begin{proposition}[Mandatory-factor kernel kill]
+\label{prop:tpc62-mandatory-factor-kill}
+If
+\begin{equation}
+ \Ker T\not\subseteq\Ker R,
+ \label{eq:tpc62-T-visible-kernel}
+\end{equation}
+then
+\begin{equation}
+ \alpha_R(LT)=0
+ \label{eq:tpc62-T-kills-alpha}
+\end{equation}
+for every downstream map \(L\).  This conclusion requires an actual
+vector in \(\Ker T\setminus\Ker R\); failure to prove a positive bound for
+\(T\), or failure of one factorwise sufficient certificate, is not such a
+vector.
+\end{proposition}
+
+\begin{proof}
+Choose \(z\in\Ker T\setminus\Ker R\).  Positivity of \(R\) implies
+\(\langle Rz,z\rangle>0\), whereas \(LTz=0\).  Thus the quotient in
+\eqref{eq:tpc62-alpha-definition} vanishes.  Equivalently,
+\(\Ker T\subseteq\Ker(LT)\), so the kernel criterion
+\eqref{eq:tpc62-master-kernel-equivalence} fires.
+\end{proof}
+
+The converse of \cref{prop:tpc62-mandatory-factor-kill} is deliberately
+not asserted.  The inclusion \(\Ker T\subseteq\Ker R\) says only that the
+mandatory factor itself has not killed a parent-visible vector.  A
+downstream map can still do so: for \(R=I\), \(T=I\), and \(L=0\), the
+inclusion holds while \(\alpha_R(LT)=0\).
+
+Here is a precise sufficient certificate whose failure illustrates the
+logical distinction.  When \(T\ne0\), define
+\begin{align}
+ \tau_R(T)
+ &:=\inf_{\langle Rz,z\rangle>0}
+   \frac{\|Tz\|^2}{\langle Rz,z\rangle},
+ \label{eq:tpc62-tau-T}\\
+ \ell(L;T)
+ &:=\inf_{0\ne y\in\Ran T}
+   \frac{\|Ly\|^2}{\|y\|^2}.
+ \label{eq:tpc62-ell-LT}
+\end{align}
+Then, directly from the two definitions,
+\begin{equation}
+ \alpha_R(LT)\ge \ell(L;T)\,\tau_R(T).
+ \label{eq:tpc62-factorwise-certificate}
+\end{equation}
+The equality \(\tau_R(T)=0\) is an exact mandatory-factor kill precisely
+when \(\Ker T\not\subseteq\Ker R\), by
+\cref{thm:tpc62-master-shorted-gram} applied to \(T\).  In contrast,
+\(\ell(L;T)=0\) may only say that \(L\) has a kernel on a direction which
+the parent form already regards as invisible.
+
+\begin{example}[A factorwise certificate can fail while closure is exact]
+\label{ex:tpc62-factor-certificate-failure}
+Take \(\cK=\mathcal Y=\C^2\), \(\cH=\C\), and
+\begin{equation}
+ R=\begin{pmatrix}1&0\\0&0\end{pmatrix},
+ \qquad T=I,
+ \qquad L(x,y)=x.
+ \label{eq:tpc62-factor-certificate-example}
+\end{equation}
+Here \(\tau_R(T)=1\), but \(\ell(L;T)=0\) because
+\(L(0,1)=0\).  Thus the right-hand side of
+\eqref{eq:tpc62-factorwise-certificate} is zero.  Nevertheless
+\begin{equation}
+ \frac{\|LT(x,y)\|^2}{\langle R(x,y),(x,y)\rangle}=1
+ \qquad(x\ne0),
+ \label{eq:tpc62-factor-certificate-example-ratio}
+\end{equation}
+so \(\alpha_R(LT)=1\).  Indeed
+\(\Ker(LT)=\operatorname{span}\{(0,1)\}=\Ker R\).
+The certificate failed; the gate did not.
+\end{example}
+
+At an asymptotic scale, the same distinction must be maintained.  An
+exhibited vector in \(\Ker T_X\setminus\Ker R_X\) is a rigorous zero at
+that scale.  A nonpositive exponent budget, an uncontrolled norm, or the
+absence of a proof of \(\tau_{R_X}(T_X)\gg X^{-C}\) is only a failure of
+the chosen route.  It cannot be promoted to an operator kernel statement.

@@ -1,0 +1,214 @@
+\section{Introduction}
+\label{sec:tpc62-introduction}
+
+The papers TPC--53--TPC--61 replace a long heuristic transfer by explicit
+finite-dimensional objects on one fixed nonzero physical shift
+\citep{WangTPC53,WangTPC54,WangTPC55,WangTPC56,WangTPC57,WangTPC58,
+WangTPC59,WangTPC60,WangTPC61}.  They identify literal atom coefficients,
+sharp selection constants, prime-resolved singular values, adaptive phase
+sectors, undeleted singleton floors, residual and native alias Grams, a
+critical very-high cutoff, missing-coordinate reassembly, realized cofactor
+exposure, and finally a normalized two-affine M\"obius kernel.  Most of these
+objects are exact.  That does not mean they form one proved lower-bound
+chain.
+
+There are three reasons.
+\begin{enumerate}[leftmargin=2.3em]
+ \item Some results are coefficient-uniform, some concern one distinguished
+       physical vector, and some select a sector or block after seeing the
+       vector.  Their quantifiers cannot be silently exchanged.
+ \item Some maps are mandatory parts of the physical transformation, while
+       other projections, singleton floors, and mass--degree estimates are
+       only sufficient certificates.  Failure of a certificate does not
+       imply failure of the physical map.
+ \item The endpoint allows a total fixed-power loss strictly below
+       \(1/400\).  A numerical difference used inside one certificate is
+       not automatically an additive loss, and the same exponent may not be
+       charged twice.
+\end{enumerate}
+
+The purpose of this paper is to put these distinctions into a theorem-level
+closure calculus.  It is both a synthesis and a new finite-dimensional
+layer.  The synthesis records the literal dependency graph.  The new layer
+specializes classical shorted-operator theory to the exact master transfer
+constant and nuisance spaces of this closure problem, and adds a strict
+selector-quantifier obstruction, a partial order among reassembly
+certificates, and an inverse theorem localizing every large missing-alias
+eigenvalue to a row and a literal determinant cell.
+
+\subsection{The master constant}
+
+Let \(\cH_X\) be the original coefficient space, let
+\(0\ne R_X\succeq0\) represent the parent energy to be preserved, and let
+\(F_X:\cH_X\to\cY_X\) be the complete declared output map after every
+mandatory transformation in scope.  Define
+\begin{equation}
+ \alpha_X
+ :=\inf_{\langle R_Xz,z\rangle>0}
+   \frac{\|F_Xz\|^2}{\langle R_Xz,z\rangle}.
+ \label{eq:tpc62-intro-master-constant}
+\end{equation}
+If \(R_X=0\), the quotient has no admissible vector and the transfer
+problem is vacuous; throughout the master theorem no eigenvalue or loss
+exponent is assigned to that case.
+Write
+\begin{equation}
+ N_X:=\Ker R_X,
+ \qquad S_X:=N_X^\perp,
+ \qquad W_X:=F_X(N_X).
+ \label{eq:tpc62-intro-master-spaces}
+\end{equation}
+The vectors in \(N_X\) cost no parent energy, but their outputs can cancel
+the output of a vector in \(S_X\).  Therefore the correct numerator is not
+the compression \(F_{X,S}^*F_{X,S}\).  It is the shorted form
+\begin{equation}
+ F_{X,S}^*P_{W_X^\perp}F_{X,S}.
+ \label{eq:tpc62-intro-shorted-numerator}
+\end{equation}
+We prove
+\begin{equation}
+ \boxed{
+ \alpha_X=\lambda_{\min}\!\left(
+  R_{X,S}^{-1/2}F_{X,S}^*P_{W_X^\perp}F_{X,S}
+  R_{X,S}^{-1/2}
+ \right),}
+ \label{eq:tpc62-intro-master-eigenvalue}
+\end{equation}
+and the exact finite-scale criterion
+\begin{equation}
+ \boxed{
+ \alpha_X>0
+ \quad\Longleftrightarrow\quad
+ \Ker F_X\subseteq\Ker R_X.}
+ \label{eq:tpc62-intro-master-kernel}
+\end{equation}
+This extends the TPC--60 reassembly shorting from one represented/missing
+split to the entire declared packet.  It does not assert that
+\(\alpha_X\) has a polynomial lower bound for the arithmetic family.
+
+\subsection{Quantifier order is a mathematical gate}
+
+For a finite family of selector maps \(S_a\), two superficially similar
+constants are
+\begin{align}
+ \eta_{\rm frozen}
+ &:=\sup_a\inf_{z\ne0}
+   \frac{\|S_az\|^2}{\|z\|^2},
+ \label{eq:tpc62-intro-frozen}\\
+ \eta_{\rm adaptive}
+ &:=\inf_{z\ne0}\sup_a
+   \frac{\|S_az\|^2}{\|z\|^2}.
+ \label{eq:tpc62-intro-adaptive}
+\end{align}
+Always \(\eta_{\rm frozen}\le\eta_{\rm adaptive}\), and equality can
+fail maximally.  Coordinate projections have a positive adaptive constant,
+although every fixed projection has a nontrivial kernel and hence zero
+uniform constant.  This is the precise obstruction behind the implication
+\[
+ \forall z\ \exists a=a(z)
+ \quad\not\Longrightarrow\quad
+ \exists a\ \forall z.
+\]
+It applies to every coefficient-adaptive sector or maximal block.  A legal
+uniformization retains all selector labels by orthogonal direct sum; summing
+those outputs back into one physical coordinate is another alias/reassembly
+gate.
+
+\subsection{From a global eigenvalue to a literal obstruction}
+
+TPC--61 writes the missing native map after raw diagonal normalization as a
+matrix \(F_M\) with unit columns.  Its Gram is
+\begin{equation}
+ K_M=F_M^*F_M=I+\Xi_{\ne p},
+ \qquad
+ \kappa_M=\lambda_{\max}(K_M).
+ \label{eq:tpc62-intro-missing-gram}
+\end{equation}
+The off-diagonal entries are weighted correlations of
+\begin{equation}
+ \mu(mj+h_0)\mu(m'j+h_0),
+ \label{eq:tpc62-intro-two-affine}
+\end{equation}
+equivalently signed sums on
+\begin{equation}
+ m'pr-mp'r'=h_0(m'-m).
+ \label{eq:tpc62-intro-determinant}
+\end{equation}
+The operator norm is a global object, so a single pair estimate is not
+enough.  Conversely, a large operator norm cannot remain completely
+delocalized.  If \(\kappa_M\ge1+L\), the Schur bound forces one row to have
+off-diagonal absolute mass at least \(L\).  Partitioning that row into
+\(B\) literal correlation cells forces one cell to carry at least \(L/B\).  If that
+cell contains at most \(\Delta\) neighbors, one normalized determinant sum
+has size at least \(L/(B\Delta)\).  This is an inverse localization theorem:
+it produces a concrete witness to a large alias norm, but no cancellation
+estimate.
+
+At exponent level, a row-overlap degree
+\(X^{\delta+o(1)}\) and a uniform pair bound
+\(X^{-\tau+o(1)}\) imply
+\begin{equation}
+ \boxed{
+ \nu_M
+ :=\limsup_{X\to\infty}
+   \frac{\log\max\{1,\kappa_M\}}{\log X}
+ \le(\delta-\tau)_+.}
+ \label{eq:tpc62-intro-alias-exponent}
+\end{equation}
+The TPC--61 effective-product door would then open under
+\begin{equation}
+ \sigma_M>
+ \lambda_{\rm rep}+(\delta-\tau)_+.
+ \label{eq:tpc62-intro-localized-door}
+\end{equation}
+Neither \(\delta\) nor \(\tau\) is favorably estimated here on the
+arithmetic carrier.
+
+\subsection{Main conclusions and scope}
+
+The paper proves the following.
+\begin{enumerate}[leftmargin=2.3em]
+ \item The master shorted-Gram formula
+       \eqref{eq:tpc62-intro-master-eigenvalue} and kernel criterion
+       \eqref{eq:tpc62-intro-master-kernel} are exact.
+ \item Shorting is transitive on nested retained subspaces.  A sequence of
+       genuine nuisance eliminations is therefore equivalent to one master
+       elimination, whereas ordinary compression may overstate transfer.
+ \item A mandatory map with a kernel direction of positive parent energy
+       kills the route exactly.  A zero singleton, selection, mass--degree,
+       or other sufficient-certificate constant kills only that certificate
+       unless the final map actually factors through it.
+ \item Adaptive and frozen selector constants obey a strict min--max gap.
+       Orthogonal direct sum gives the exact uniformization on a labeled
+       output space.
+ \item Exact shorting dominates every valid reverse-triangle certificate;
+       the restricted missing Gram dominates its residual and ambient
+       relaxations.  Residual and ambient relaxations need not dominate one
+       another.
+ \item Every large missing-alias eigenvalue has a row/cell/pair witness, with
+       the quantitative and exponent consequences above.
+ \item If represented-chain, reassembly, and downstream lower bounds are
+       proved on the same carrier and in the same quantifier scope, their
+       exponents add.  A sum strictly below \(1/400\) closes only the
+       declared truncated fixed-\(h_0\) packet lower square.
+\end{enumerate}
+
+The first six conclusions and the abstract multiplication statement in the
+seventh are L0 finite-dimensional theorems.  The literal TPC coordinate
+identification in the sixth conclusion, including
+\eqref{eq:tpc62-intro-two-affine}--\eqref{eq:tpc62-intro-determinant}, is
+L1.  The fixed-\(h_0\) application of the seventh conclusion is conditional
+L1.  No theorem here proves
+\(\kappa_M=X^{o(1)}\), a new M\"obius correlation estimate, a lower square
+for one fixed prime pair, or any twin-prime statement.
+
+The paper is organized as follows.
+\Cref{sec:tpc62-dependency-graph} records the logical graph and quantifier
+signatures.  \Cref{sec:tpc62-master-shorted,sec:tpc62-nested-gates} develop
+the master closure calculus.
+\Cref{sec:tpc62-adaptive-selectors,sec:tpc62-certificate-lattice} prove the
+quantifier gap and certificate partial order.
+\Cref{sec:tpc62-localized-alias} localizes the missing-alias obstruction.
+The conditional closure theorem, independence models, endpoint decisions,
+and next targets appear in
+\cref{sec:tpc62-conditional-closure,sec:tpc62-independence-models,sec:tpc62-endpoint-decisions,sec:tpc62-claims-next}.

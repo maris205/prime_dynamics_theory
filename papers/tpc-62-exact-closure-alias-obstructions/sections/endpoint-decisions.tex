@@ -1,0 +1,225 @@
+\section{Endpoint arithmetic, kill tests, and pivot rules}
+\label{sec:tpc62-endpoint-decisions}
+
+The abstract theorems identify which constants are exact and which
+certificates dominate others.  This section places the three numerical
+comparisons inherited from TPC--60--TPC--61 into that decision structure.
+They are route tests, not new arithmetic estimates.
+
+\subsection{Three numerical comparisons}
+
+At the critical cofactor scale,
+\begin{equation}
+ \theta_J=\frac{133}{400},
+ \qquad
+ \lambda_L=\frac{99979}{210000}.
+ \label{eq:tpc62-endpoint-basic-exponents}
+\end{equation}
+The coefficient-blind residual determinant-ladder exponent is
+\begin{equation}
+ \lambda_L-\theta_J
+ =\frac{15077}{105000}.
+ \label{eq:tpc62-endpoint-residual-degree}
+\end{equation}
+Combined with the balanced cofactor saving, it leaves the conditional
+residual window
+\begin{equation}
+ \boxed{
+ 2\theta_J-\lambda_L
+ =\frac{39671}{210000}.}
+ \label{eq:tpc62-endpoint-residual-window}
+\end{equation}
+Thus the residual mass--degree certificate can be perturbative if
+\begin{equation}
+ e+\mu_{\rm erase}+\lambda_{\rm rep}
+ <\frac{39671}{210000}
+ \label{eq:tpc62-endpoint-residual-condition}
+\end{equation}
+with one uniform fixed margin over the compatible dyadic blocks.
+Since \(39671/210000\gg1/400\), this inequality is only a test for
+zero-cost reassembly.  A value of \(\lambda_{\rm rep}\) may satisfy this
+test and still make the represented-chain loss \(\Lambda_A\) too large for
+the final endpoint.  It is charged in the final ledger exactly when it is
+part of a represented-chain arrow, and never as a second reassembly arrow.
+
+The direct ambient native-degree route has instead the positive gap
+\begin{equation}
+ \boxed{
+ \frac{267}{400}-\frac{133}{400}
+ =\frac{67}{200}.}
+ \label{eq:tpc62-endpoint-ambient-gap}
+\end{equation}
+It cannot make the missing perturbation \(o(1)\) by combining the full
+ambient degree with the strongest nonempty pure-cardinality saving.  By the
+certificate order in \cref{sec:tpc62-certificate-lattice}, this closes only
+that coarse ambient proof.  It neither lower-bounds the restricted
+\(\kappa_M\) nor implies failure of the residual, signed, or shorted routes.
+
+Finally, the localized-alias theorem gives a different conditional door.
+Let \(\delta,\tau\ge0\).  If the actual normalized collision graph has row degree
+\begin{equation}
+ \Delta_X\le X^{\delta+o(1)}
+ \label{eq:tpc62-endpoint-overlap-degree}
+\end{equation}
+and every off-diagonal literal normalized pair entry satisfies, uniformly
+for colliding \(m\ne n\),
+\begin{equation}
+ |K_{m,n}|\le X^{-\tau+o(1)},
+ \label{eq:tpc62-endpoint-pair-saving}
+\end{equation}
+then
+\begin{equation}
+ \nu_M\le(\delta-\tau)_+.
+ \label{eq:tpc62-endpoint-kappa-from-pairs}
+\end{equation}
+The optimal restricted mass--degree certificate consequently has the strict
+sufficient condition
+\begin{equation}
+ \boxed{
+ \sigma_M>
+ \lambda_{\rm rep}+(\delta-\tau)_+.}
+ \label{eq:tpc62-endpoint-localized-condition}
+\end{equation}
+provided the degree, pair, missing-mass, and represented-reference estimates
+all hold on the same literal carrier and in the same quantifier scope.
+No favorable value of \(\delta\), \(\tau\), or \(\sigma_M\) is proved in
+this paper.
+
+\subsection{The complete physical ledger}
+
+Expanding the represented and downstream modules gives the inherited loss
+sum.  Every quantity denoted by \(\lambda\) below is a nonnegative loss
+exponent:
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ \Lambda_{\rm tot}:={}&
+ \lambda_{\rm sel}+\lambda_{\rm occ}
+ +\lambda_{\rm blk}+\lambda_{\rm term}
+ +\lambda_{\rm sing}\\
+ &+\lambda_H+\lambda_{\rm aff}
+ +\lambda_{\rm reasm}
+ +\lambda_{\rm bdry}+\lambda_{\rm tail}.
+ \end{aligned}}
+ \label{eq:tpc62-complete-ledger}
+\end{equation}
+The endpoint condition is
+\begin{equation}
+ \boxed{\Lambda_{\rm tot}<\frac1{400}.}
+ \label{eq:tpc62-strict-ledger}
+\end{equation}
+In the three-module notation,
+\begin{equation}
+ \Lambda_A=\lambda_{\rm sel}+\lambda_{\rm occ}
+ +\lambda_{\rm blk}+\lambda_{\rm term}+\lambda_{\rm sing}
+ +\lambda_H+\lambda_{\rm aff},
+ \qquad
+ \Lambda_{\rm out}=\lambda_{\rm bdry}+\lambda_{\rm tail}.
+ \label{eq:tpc62-module-ledger-identification}
+\end{equation}
+Every displayed identity, exact gauge, canonical relabeling, and diagnostic
+finite or logarithmic partition costs zero.  The quantities in
+\eqref{eq:tpc62-endpoint-residual-condition} and
+\eqref{eq:tpc62-endpoint-localized-condition} determine whether
+\(\lambda_{\rm reasm}\) is zero or positive; they are not added separately
+to \eqref{eq:tpc62-complete-ledger}.
+
+For a distinguished chain, the reassembly loss is replaced consistently by
+\(\lambda_{\rm reasm,*}\), and every upstream and downstream inequality
+must concern the same physical vector.  Equality in
+\eqref{eq:tpc62-strict-ledger} is rejected unless leading constants and all
+remainders recover a strict final inequality.
+
+\subsection{Exact kill and pivot table}
+
+The word ``kill'' is reserved for a proved zero in the object actually
+needed by the route.  The following table separates exact deaths from
+certificate failures.
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.29\textwidth}
+                >{\raggedright\arraybackslash}p{0.31\textwidth}
+                >{\raggedright\arraybackslash}p{0.29\textwidth}}
+\toprule
+Observed event & What is killed & Honest pivot\\
+\midrule
+\(\Ker F_X\not\subseteq\Ker R_X\)
+& The full-coefficient-space master transfer; its exact constant is zero.
+& Change scope to a declared distinguished vector, or change the actual
+  physical theorem.\\
+\addlinespace
+A mandatory factor \(T_X\) has a kernel vector of positive parent energy
+& Every final map that genuinely factors through \(T_X\).
+& None within the same mandatory factorization; reopen the physical map.\\
+\addlinespace
+An active row has \(W_R(m)=0<W_M(m)\), and its row direction lies in the
+declared uniform class
+& Uniform represented raw-mass transfer on that class.
+& Reopen the retained-relation provenance, or use a distinguished vector
+  known to avoid that row.\\
+\addlinespace
+\(\Ker(A_X+M_X)\not\subseteq\Ker A_X\)
+& Full-coefficient-space uniform represented-to-full reassembly.
+& A distinguished signed estimate may remain possible.\\
+\addlinespace
+The sharp singleton floor is zero
+& The singleton sufficient certificate only.
+& Estimate the complete coherent fiber or use another literal certificate.\\
+\addlinespace
+\(\eta_{\rm frozen}=0<\eta_{\rm adaptive}\)
+& One frozen selector as a uniform map.
+& Retain all selector labels by direct sum, or prove frozen-selector
+  stability and then reassembly.\\
+\addlinespace
+\(\sigma_M<\nu_M+\lambda_{\rm rep}\), or equality holds without a proved
+leading-constant margin
+& The zero-fixed-power conclusion from the exponent-only restricted
+  mass--degree test.
+& Test the exact shorted Gram, a signed distinguished vector, or improve the
+  exposure/alias inputs.\\
+\addlinespace
+The ambient gap is \(67/200\)
+& The full ambient-degree phase-blind proof.
+& Use the actual restricted Gram, residual quotient, or signed shorting.\\
+\addlinespace
+A necessary proved loss reaches \(1/400\)
+& The stated endpoint exponent route without a constant-level recovery.
+& Change the upstream architecture; do not hide the loss in an
+  \(X^{o(1)}\) term.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Operational order for the next arithmetic attack}
+
+The preceding tests should be applied in the following order.
+\begin{enumerate}[label=\textbf{Door \Alph*.},leftmargin=3.8em]
+ \item \emph{Master kernels.}  Check the kernel inclusions for every
+       mandatory map before estimating small eigenvalues.
+ \item \emph{Literal exposure.}  Recover the actual retained relation and
+       compute \(W_R(m)\), \(W_M(m)\), and their physical distinguished
+       weighting.
+ \item \emph{Represented chain.}  Prove critical occupancy, terminal
+       activation, and represented native transfer in one declared scope.
+ \item \emph{Alias localization.}  Compute actual row/cell degrees and
+       either prove a pair/star estimate for the TPC--61 determinant kernel
+       or exhibit a large obstruction witness.
+ \item \emph{Reassembly decision.}  Apply the optimal restricted product
+       test, the residual alternative, or the exact shorted/signed route.
+ \item \emph{Downstream reconnection.}  Prove boundary and tail arrows and
+       then audit the strict complete ledger.
+\end{enumerate}
+
+This order prevents a difficult parity estimate from being attempted on an
+empty represented carrier and prevents an adaptive or distinguished success
+from being promoted to a uniform map.
+
+\subsection{Forbidden repairs}
+
+None of the killed routes is repaired by replacing \(h_0\), averaging over
+shifts, dividing raw atoms by fiber sizes, deleting coefficient-dependent
+zeros, choosing atom phases, or substituting one favorable Rayleigh quotient
+for a uniform generalized eigenvalue.  Those operations define different
+objects.  They may be interesting in their own right, but their conclusions
+cannot be entered into \eqref{eq:tpc62-complete-ledger} for the fixed carrier.

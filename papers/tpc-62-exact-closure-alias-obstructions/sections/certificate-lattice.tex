@@ -1,0 +1,569 @@
+\section{The reassembly certificate lattice}
+\label{sec:tpc62-certificate-lattice}
+
+The same physical reassembly map admits several lower certificates.  They
+do not all contain the same information.  This section places the exact
+shorted constant, exact missing-to-represented ratios, the restricted
+native Gram, a two-stage residual certificate, and the ambient missing
+degree in one partial order.  The order is valid only when the scope---all
+coefficient vectors or one distinguished vector---is held fixed.
+
+\subsection{The exact shorted constant}
+
+Let \(\cK,\cH\) be finite-dimensional complex Hilbert spaces and let
+\begin{equation}
+ A,M:\cK\longrightarrow\cH,
+ \qquad B:=A+M,
+ \qquad A\ne0.
+ \label{eq:tpc62-lattice-AMB}
+\end{equation}
+The represented map is \(A\), the missing signed contribution is \(M\),
+and \(B\) is the physical reassembly.  Its optimal coefficient-uniform
+constant relative to the represented norm is
+\begin{equation}
+ \delta_{\rm sh}(A,M)
+ :=\inf_{Az\ne0}\frac{\|Bz\|^2}{\|Az\|^2}.
+ \label{eq:tpc62-lattice-delta-definition}
+\end{equation}
+In the notation of the master gate, this is exactly
+\(\alpha_{A^*A}(A+M)\).  We repeat the specialization here so that every
+node of the certificate lattice is defined in one place.
+
+Put
+\begin{equation}
+ N:=\Ker A,
+ \qquad S:=N^\perp,
+ \qquad A_S:=A|_S,
+ \label{eq:tpc62-lattice-NS}
+\end{equation}
+and write
+\begin{equation}
+ B_S:=B|_S,
+ \qquad B_N:=B|_N=M|_N,
+ \qquad P:=P_{(\Ran B_N)^\perp}.
+ \label{eq:tpc62-lattice-BSBP}
+\end{equation}
+Finally set
+\begin{equation}
+ R_S:=A_S^*A_S>0,
+ \qquad Q_S:=B_S^*PB_S\ge0.
+ \label{eq:tpc62-lattice-RQ}
+\end{equation}
+
+\begin{theorem}[Exact shorted reassembly constant]
+\label{thm:tpc62-lattice-exact-shorted}
+For the maps in \eqref{eq:tpc62-lattice-AMB},
+\begin{equation}
+ \boxed{
+ \delta_{\rm sh}(A,M)
+ =\lambda_{\min}\!\left(
+   R_S^{-1/2}Q_SR_S^{-1/2}
+  \right).}
+ \label{eq:tpc62-lattice-exact-shorted-formula}
+\end{equation}
+This is an identity, not a sufficient estimate.
+\end{theorem}
+
+\begin{proof}
+Every \(z\in\cK\) has a unique decomposition \(z=s+n\), with
+\(s\in S\) and \(n\in N\).  The denominator depends only on \(s\):
+\(Az=A_Ss\).  For this fixed \(s\), least squares gives
+\begin{align*}
+ \inf_{n\in N}\|B_Ss+B_Nn\|^2
+ &=\dist(B_Ss,\Ran B_N)^2\\
+ &=\|PB_Ss\|^2
+  =\langle Q_Ss,s\rangle.
+\end{align*}
+Since \(A_S\) is injective, \(R_S\) is positive definite.  Taking the
+infimum over \(s\ne0\) and applying Rayleigh--Ritz proves
+\eqref{eq:tpc62-lattice-exact-shorted-formula}.
+\end{proof}
+
+The projection \(P\) is essential: directions invisible to \(A\) may
+still be visible to \(B\), and can then cancel part of \(B_Ss\) without
+changing the denominator.  Any lower certificate which ignores this
+nuisance minimization is not the exact coefficient-uniform constant.
+
+\subsection{Exact norm ratios and the triangle certificate}
+
+For \(Az\ne0\), define the pointwise missing ratio and physical ratio
+\begin{equation}
+ q(z):=\frac{\|Mz\|^2}{\|Az\|^2},
+ \qquad
+ r(z):=\frac{\|(A+M)z\|^2}{\|Az\|^2}.
+ \label{eq:tpc62-pointwise-q-r}
+\end{equation}
+The corresponding uniform missing ratio is the extended-real number
+\begin{equation}
+ q_{\rm unif}:=\sup_{Az\ne0}q(z)\in[0,\infty].
+ \label{eq:tpc62-uniform-q}
+\end{equation}
+In finite dimension there is an exact dichotomy:
+\begin{equation}
+ \boxed{
+ q_{\rm unif}<\infty
+ \quad\Longleftrightarrow\quad
+ \Ker A\subseteq\Ker M.}
+ \label{eq:tpc62-q-finite-kernel-test}
+\end{equation}
+Indeed, if \(n\in\Ker A\) but \(Mn\ne0\), choose \(s\) with \(As\ne0\).
+Then \(A(s+tn)=As\), whereas
+\(\|M(s+tn)\|\to\infty\) as \(|t|\to\infty\), so
+\(q_{\rm unif}=\infty\).  Conversely, if \(M\) vanishes on
+\(\Ker A\), both numerator and denominator depend only on
+\(s\in(\Ker A)^\perp\); compactness of the corresponding normalized
+sphere gives a finite supremum.  The exact shorted constant remains well
+defined even in the infinite-\(q_{\rm unif}\) case.
+
+Let
+\begin{equation}
+ \varphi(t):=(1-\sqrt t)_+^2
+ \quad(0\le t<\infty),
+ \qquad
+ \varphi(\infty):=0.
+ \label{eq:tpc62-triangle-profile}
+\end{equation}
+This function is nonincreasing.
+
+\begin{proposition}[Pointwise and uniform triangle bounds]
+\label{prop:tpc62-q-certificates}
+For every \(z\) with \(Az\ne0\),
+\begin{equation}
+ \boxed{r(z)\ge\varphi(q(z)).}
+ \label{eq:tpc62-pointwise-q-certificate}
+\end{equation}
+Uniformly over all coefficient directions,
+\begin{equation}
+ \boxed{
+ \delta_{\rm sh}(A,M)\ge\varphi(q_{\rm unif}).}
+ \label{eq:tpc62-uniform-q-certificate}
+\end{equation}
+Neither inequality is an identity in general.
+\end{proposition}
+
+\begin{proof}
+The reverse triangle inequality gives
+\[
+ \|(A+M)z\|
+ \ge\bigl(\|Az\|-\|Mz\|\bigr)_+.
+\]
+Divide by \(\|Az\|\), square, and use
+\eqref{eq:tpc62-pointwise-q-r} to obtain
+\eqref{eq:tpc62-pointwise-q-certificate}.  Since
+\(q(z)\le q_{\rm unif}\) and \(\varphi\) is nonincreasing, taking the
+infimum over \(z\) proves
+\eqref{eq:tpc62-uniform-q-certificate}.
+\end{proof}
+
+Two elementary examples show why the shorted constant is strictly more
+informative.
+
+\begin{example}[Angle information is discarded]
+\label{ex:tpc62-q-angle-loss}
+Take \(\cK=\cH=\C\), \(Az=z\), and \(Mz=iz\).  Then
+\[
+ q_{\rm unif}=1,
+ \qquad
+ \varphi(q_{\rm unif})=0,
+ \qquad
+ \delta_{\rm sh}(A,M)=|1+i|^2=2.
+\]
+The norm of \(Mz\) alone does not record its favorable angle with \(Az\).
+\end{example}
+
+\begin{example}[An infinite uniform \(q\) can coexist with positive
+shorted reassembly]
+\label{ex:tpc62-q-infinite-shorted-positive}
+Take \(\cK=\cH=\C^2\) and
+\[
+ A(x,n)=(x,0),
+ \qquad
+ M(x,n)=(0,n).
+\]
+Then \(q_{\rm unif}=\infty\), so the triangle certificate is zero, but
+\[
+ \frac{\|(A+M)(x,n)\|^2}{\|A(x,n)\|^2}
+ =1+\frac{|n|^2}{|x|^2}\ge1.
+\]
+Thus \(\delta_{\rm sh}(A,M)=1\).  The shorting projection removes the
+orthogonal output generated by the \(A\)-invisible coordinate.
+\end{example}
+
+\subsection{The restricted native constant}
+
+Let \(\mathbf D\ge0\) be the raw atomic diagonal on \(\cK\), and write
+\begin{equation}
+ \cD(z):=\langle\mathbf Dz,z\rangle.
+ \label{eq:tpc62-raw-atomic-form}
+\end{equation}
+We assume
+\begin{equation}
+ \Ker\mathbf D\subseteq\Ker M,
+ \label{eq:tpc62-D-kernel-compatible}
+\end{equation}
+as holds when \(\mathbf D=L^*L\) is formed from the literal active atomic
+lift and \(M\) is obtained by grouping those atoms.  Put
+\(S_D:=\Ran\mathbf D=(\Ker\mathbf D)^\perp\).
+
+If \(S_D\ne\{0\}\), define
+\begin{equation}
+ \boxed{
+ \kappa_M
+ :=\lambda_{\max}\!\left(
+   \left.
+   \mathbf D^{\dagger/2}M^*M\mathbf D^{\dagger/2}
+   \right|_{S_D}
+  \right).}
+ \label{eq:tpc62-restricted-kappa-definition}
+\end{equation}
+If \(S_D=\{0\}\), set \(\kappa_M=0\).  In the Rayleigh formula below the
+supremum over the empty set is likewise defined to be zero.
+Rayleigh--Ritz gives the exact equivalent formulas
+\begin{align}
+ \kappa_M
+ &=\sup_{\cD(z)>0}\frac{\|Mz\|^2}{\cD(z)},
+ \label{eq:tpc62-restricted-kappa-Rayleigh}\\
+ &=\inf\{\kappa\ge0:M^*M\preceq\kappa\mathbf D\}.
+ \label{eq:tpc62-restricted-kappa-Loewner}
+\end{align}
+Thus \(\kappa_M\) is the least coefficient-uniform constant in
+\begin{equation}
+ \|Mz\|^2\le\kappa_M\cD(z).
+ \label{eq:tpc62-restricted-kappa-bound}
+\end{equation}
+
+Indeed, for \(\cD(z)>0\), set \(x=\mathbf D^{1/2}z\in S_D\).  By
+\eqref{eq:tpc62-D-kernel-compatible}, replacing \(z\) by
+\(\mathbf D^{\dagger/2}x\) does not change \(Mz\), and hence
+\[
+ \frac{\|Mz\|^2}{\cD(z)}
+ =\frac{\langle
+  \mathbf D^{\dagger/2}M^*M\mathbf D^{\dagger/2}x,x
+  \rangle}{\|x\|^2}.
+\]
+Taking the maximum Rayleigh quotient proves
+\eqref{eq:tpc62-restricted-kappa-Rayleigh}.  A quadratic-form bound for
+all \(z\) is equivalent to
+\(M^*M\preceq\kappa\mathbf D\), which proves
+\eqref{eq:tpc62-restricted-kappa-Loewner} and the asserted optimality.
+
+To compare \(\cD\) with represented mass, put
+\begin{equation}
+ \eta(z):=\frac{\cD(z)}{\|Az\|^2}
+ \quad(Az\ne0),
+ \qquad
+ \eta_{\rm unif}:=\sup_{Az\ne0}\eta(z)\in[0,\infty].
+ \label{eq:tpc62-eta-pointwise-uniform}
+\end{equation}
+The exact pointwise restricted quotient is
+\begin{equation}
+ \kappa_M(z):=
+ \begin{cases}
+ \|Mz\|^2/\cD(z),&\cD(z)>0,\\
+ 0,&\cD(z)=0.
+ \end{cases}
+ \label{eq:tpc62-pointwise-kappa-definition}
+\end{equation}
+The second line is consistent with
+\eqref{eq:tpc62-D-kernel-compatible}.  Therefore
+\begin{equation}
+ q(z)=\kappa_M(z)\eta(z),
+ \qquad
+ 0\le\kappa_M(z)\le\kappa_M.
+ \label{eq:tpc62-pointwise-factorization}
+\end{equation}
+
+\subsection{Residual and ambient upper bounds}
+
+There are two standard ways to upper-bound \(\kappa_M\), and they need
+not be comparable with one another.
+
+First suppose the missing map factors through a residual-labelled space,
+\begin{equation}
+ M=\mathsf E T,
+ \qquad
+ T:\cK\to\cR,
+ \qquad
+ \mathsf E:\cR\to\cH
+ \label{eq:tpc62-residual-factorization}
+\end{equation}
+and assume \(\Ker\mathbf D\subseteq\Ker T\), as for a residual grouping
+of the same literal atomic lift.  Define
+\begin{align}
+ \kappa_{\rm res}
+ &:=\sup_{\cD(z)>0}\frac{\|Tz\|^2}{\cD(z)},
+ \label{eq:tpc62-kappa-res-definition}\\
+ \beta_M
+ &:=\sup_{0\ne y\in\Ran T}
+       \frac{\|\mathsf Ey\|^2}{\|y\|^2}.
+ \label{eq:tpc62-beta-definition}
+\end{align}
+Zero maps are assigned constant zero.  Direct substitution gives
+\begin{equation}
+ \boxed{\kappa_M\le\kappa_{\rm res}\beta_M.}
+ \label{eq:tpc62-residual-product-bound}
+\end{equation}
+The restriction of \(\beta_M\) to the actual image \(\Ran T\) is
+essential; adjoining unused residual directions can only make the
+certificate coarser.
+
+Second, suppose the literal atomic factorization is
+\begin{equation}
+ \mathbf D=L^*L,
+ \qquad
+ M=\mathsf C L,
+ \label{eq:tpc62-ambient-atomic-factorization}
+\end{equation}
+where \(\mathsf C\) sums the active atomic coordinates in each native
+output fiber.  If \(\cF_i\) is the active fiber at native output \(i\),
+set
+\begin{equation}
+ d_{\rm missing}:=\max_i|\cF_i|.
+ \label{eq:tpc62-ambient-missing-degree}
+\end{equation}
+When there is no active fiber, this maximum is defined to be zero.
+Fiberwise Cauchy--Schwarz is sharp on the free atomic space and gives
+\(\|\mathsf C\|^2=d_{\rm missing}\).  Since
+\(L\mathbf D^{\dagger/2}|_{S_D}\) is an isometry,
+\begin{equation}
+ \boxed{\kappa_M\le d_{\rm missing}.}
+ \label{eq:tpc62-ambient-degree-bound}
+\end{equation}
+Both \eqref{eq:tpc62-residual-product-bound} and
+\eqref{eq:tpc62-ambient-degree-bound} are upper certificates for the same
+optimal restricted constant; neither is a second loss to be added to it.
+
+\subsection{The dominance partial order}
+
+For lower certificates in the same scope, say that \(C_1\) dominates
+\(C_2\) when \(C_1\ge C_2\) for every admissible instance.  Thus the
+larger number is the stronger guaranteed lower bound.
+
+\begin{theorem}[Uniform certificate lattice]
+\label{thm:tpc62-uniform-certificate-lattice}
+Assume \(\eta_{\rm unif}<\infty\).  Then
+\begin{equation}
+ q_{\rm unif}
+ \le\kappa_M\eta_{\rm unif}
+ \le
+ \begin{cases}
+  \kappa_{\rm res}\beta_M\eta_{\rm unif},\\
+  d_{\rm missing}\eta_{\rm unif}.
+ \end{cases}
+ \label{eq:tpc62-upper-constant-lattice}
+\end{equation}
+Consequently the corresponding coefficient-uniform lower certificates
+satisfy
+\begin{equation}
+ \boxed{
+ \delta_{\rm sh}(A,M)
+ \quad\ge\quad \varphi(q_{\rm unif})
+ \quad\ge\quad \varphi(\kappa_M\eta_{\rm unif})
+ \quad\ge\quad
+ \begin{cases}
+  \varphi(\kappa_{\rm res}\beta_M\eta_{\rm unif}),\\
+  \varphi(d_{\rm missing}\eta_{\rm unif}).
+ \end{cases}}
+ \label{eq:tpc62-lower-certificate-lattice}
+\end{equation}
+The restricted certificate therefore dominates each coarse certificate.
+The residual-product and ambient-degree branches are generally
+incomparable; they form a fork, not a linear chain.
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:tpc62-restricted-kappa-bound}, for every \(Az\ne0\),
+\[
+ q(z)
+ =\frac{\|Mz\|^2}{\|Az\|^2}
+ \le\kappa_M\frac{\cD(z)}{\|Az\|^2}
+ \le\kappa_M\eta_{\rm unif}.
+\]
+Taking the supremum proves the first inequality in
+\eqref{eq:tpc62-upper-constant-lattice}.  The remaining two follow from
+\eqref{eq:tpc62-residual-product-bound} and
+\eqref{eq:tpc62-ambient-degree-bound}.  Apply the nonincreasing function
+\(\varphi\), and use
+\cref{prop:tpc62-q-certificates}, to obtain
+\eqref{eq:tpc62-lower-certificate-lattice}.  The explicit strict examples
+below prove incomparability of the two terminal branches.
+\end{proof}
+
+The lattice records three distinct information losses.  Passing from
+\(\delta_{\rm sh}\) to \(q_{\rm unif}\) discards the angle and the exact
+nuisance elimination.  Passing from \(q_{\rm unif}\) to
+\(\kappa_M\eta_{\rm unif}\) separates two suprema which may be attained
+on different coefficient directions.  Passing from \(\kappa_M\) to
+either coarse branch enlarges the actual coefficient image.
+
+\subsection{Explicit incomparability models}
+
+We now construct two literal finite grouping models.  In both, the raw
+atomic norm is \(\cD(z)=\|Lz\|^2\), residual labels are retained by \(T\),
+and \(\mathsf E\) erases them.  Hence the examples compare the actual
+constants in \eqref{eq:tpc62-residual-product-bound} and
+\eqref{eq:tpc62-ambient-degree-bound}, rather than arbitrary numerical
+upper bounds.
+
+\begin{example}[The residual product can be strictly smaller than the
+ambient degree]
+\label{ex:tpc62-residual-better-than-ambient}
+Let \(\cK=\C\), let the free atomic space be \(\C^2\), and let two atoms
+share one native output but carry distinct residual labels.  Define
+\begin{equation}
+ Lz=\frac{z}{\sqrt2}(1,i),
+ \qquad
+ T=L,
+ \qquad
+ \mathsf E(y_1,y_2)=y_1+y_2.
+ \label{eq:tpc62-residual-better-model}
+\end{equation}
+Then \(\mathbf D=L^*L=1\), \(\kappa_{\rm res}=1\), and
+\(\Ran T=\C(1,i)\).  Therefore
+\begin{equation}
+ \beta_M
+ =\frac{|1+i|^2}{2}=1,
+ \qquad
+ \kappa_{\rm res}\beta_M=1.
+ \label{eq:tpc62-residual-better-product}
+\end{equation}
+The free native grouping has a fiber of size two, so
+\(d_{\rm missing}=2\).  The physical map is
+\(Mz=(1+i)z/\sqrt2\), and hence \(\kappa_M=1\).  Thus
+\begin{equation}
+ \kappa_M=\kappa_{\rm res}\beta_M=1<2=d_{\rm missing}.
+ \label{eq:tpc62-residual-strictly-better}
+\end{equation}
+Both atoms are active; the saving comes from restricting the erasure to
+the actual one-dimensional coefficient image, not from deleting an atom.
+\end{example}
+
+\begin{example}[The ambient degree can be strictly smaller than the
+residual product]
+\label{ex:tpc62-ambient-better-than-residual}
+Fix integers \(r,k\ge2\).  Take a free atomic space with two native
+fibers.  Fiber \(i=1\) contains \(r\) atoms, all with residual label
+\(s=1\).  Fiber \(i=2\) contains \(k\) atoms with distinct residual
+labels \(s=1,\ldots,k\).  Let \(\cK\) be the full atomic space and
+\(L=I\), so \(\mathbf D=I\).
+
+Let \(T\) first sum atoms having the same pair \((i,s)\), and let
+\(\mathsf E\) then sum residual labels at each fixed \(i\).  The first
+map has squared norm
+\begin{equation}
+ \kappa_{\rm res}=r,
+ \label{eq:tpc62-residual-first-stage-r}
+\end{equation}
+attained in the size-\(r\) group at \((1,1)\).  The map \(T\) is onto its
+\((1+k)\)-dimensional residual output: the first grouped coordinate and
+each of the \(k\) singleton coordinates can be prescribed independently.
+Consequently
+\begin{equation}
+ \beta_M=k,
+ \qquad
+ \kappa_{\rm res}\beta_M=rk.
+ \label{eq:tpc62-residual-product-rk}
+\end{equation}
+The composed map \(M=\mathsf ET\) is simply native grouping in the two
+fibers.  Its squared norm and its ambient degree are
+\begin{equation}
+ \kappa_M=d_{\rm missing}=\max\{r,k\}.
+ \label{eq:tpc62-ambient-max-rk}
+\end{equation}
+Thus
+\begin{equation}
+ d_{\rm missing}=\max\{r,k\}<rk
+ =\kappa_{\rm res}\beta_M.
+ \label{eq:tpc62-ambient-strictly-better}
+\end{equation}
+The two stage norms are attained in different native fibers, which is why
+multiplying them loses information.
+\end{example}
+
+Together,
+\cref{ex:tpc62-residual-better-than-ambient,ex:tpc62-ambient-better-than-residual}
+prove that no universal arrow exists between
+\(\kappa_{\rm res}\beta_M\) and \(d_{\rm missing}\).  In contrast, the
+arrows from both of them down to the optimal restricted constant
+\(\kappa_M\) are universal and sharp.
+
+\subsection{Distinguished vectors and scope preservation}
+
+The preceding lattice is coefficient-uniform.  For one distinguished
+physical vector \(z_*\) with \(Az_*\ne0\), the correct pointwise lattice
+is different.
+
+\begin{proposition}[Distinguished-vector certificate lattice]
+\label{prop:tpc62-distinguished-certificate-lattice}
+Let \(z_*\) satisfy \(Az_*\ne0\).  Then
+\begin{align}
+ r(z_*)
+ &\ge\varphi(q(z_*))
+  =\varphi\!\left(\kappa_M(z_*)\eta(z_*)\right)
+ \label{eq:tpc62-distinguished-exact-q}\\
+ &\ge\varphi\!\left(\kappa_M\eta(z_*)\right)
+ \notag\\
+ &\ge
+ \begin{cases}
+  \varphi\!\left(
+   \kappa_{\rm res}\beta_M\eta(z_*)
+  \right),\\
+  \varphi\!\left(
+   d_{\rm missing}\eta(z_*)
+  \right).
+ \end{cases}
+ \label{eq:tpc62-distinguished-lattice}
+\end{align}
+The number \(\kappa_M(z_*)\) is an exact Rayleigh quotient for this one
+vector.  A favorable value of it cannot replace \(\kappa_M\) in
+\cref{thm:tpc62-uniform-certificate-lattice}.
+\end{proposition}
+
+\begin{proof}
+The first inequality is
+\eqref{eq:tpc62-pointwise-q-certificate}; the equality is
+\eqref{eq:tpc62-pointwise-factorization}.  Since
+\(\kappa_M(z_*)\le\kappa_M\le
+\kappa_{\rm res}\beta_M\) and
+\(\kappa_M\le d_{\rm missing}\), monotonicity of \(\varphi\) gives all
+remaining inequalities.  A single Rayleigh quotient supplies no Loewner
+bound on other directions, so it cannot imply the uniform replacement.
+\end{proof}
+
+This distinction can be arbitrarily large.  Let \(A=I\),
+\(\mathbf D=I\), and
+\(M=\operatorname{diag}(0,L)\) on \(\C^2\).  At
+\(z_*=e_1\), \(\kappa_M(z_*)=0\), while the uniform constant is
+\(\kappa_M=L^2\).  Hence a perfect distinguished certificate may coexist
+with an arbitrarily poor uniform one.
+
+\subsection{How to read the lattice}
+
+The exact shorted constant is the decision quantity for coefficient-
+uniform reassembly.  The remaining nodes are sufficient lower
+certificates.  Under the standing hypothesis
+\(\eta_{\rm unif}<\infty\) of
+\cref{thm:tpc62-uniform-certificate-lattice}, the partial order is
+\begin{equation}
+ \delta_{\rm sh}(A,M)
+ \ge\varphi(q_{\rm unif})
+ \ge\varphi(\kappa_M\eta_{\rm unif})
+ \ge
+ \begin{cases}
+  \varphi(\kappa_{\rm res}\beta_M\eta_{\rm unif}),\\
+  \varphi(d_{\rm missing}\eta_{\rm unif}).
+ \end{cases}
+ \label{eq:tpc62-certificate-poset-display}
+\end{equation}
+The two bottom nodes are not ordered.  Improving either one is useful only
+as a way to bound \(\kappa_M\); once \(\kappa_M\) itself is known, neither
+coarser number is charged in addition.  Likewise, a pointwise value
+\(q(z_*)\) or \(\kappa_M(z_*)\) belongs only to the distinguished chain,
+whereas \(q_{\rm unif}\), \(\kappa_M\), and
+\(\delta_{\rm sh}\) belong to the uniform chain.
+
+All conclusions here are L0 finite-dimensional identities and
+inequalities.  They neither estimate the physical TPC constants nor show
+that any of them is subpower in \(X\).  In particular, the lattice does
+not establish cancellation in the affine M\"obius kernel, a fixed-shift
+parity gain, a prime-pair lower square, or a twin-prime statement.

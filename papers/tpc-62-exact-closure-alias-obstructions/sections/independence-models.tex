@@ -1,0 +1,218 @@
+\section{Exact independence models and scope counterexamples}
+\label{sec:tpc62-independence-models}
+
+The closure gates in this paper are logically distinct.  The following
+finite-dimensional models show that raw missing mass, prime-block
+isometries, a strong represented map, and successful reassembly cannot be
+interchanged.  Every coefficient and every atomic norm below is literal.
+The models are L0 interface examples; they are not asserted to arise from
+the fixed-\(h_0\) arithmetic carrier and therefore are not L1 or L2
+counterexamples.
+
+\subsection{One output and N distinct prime blocks}
+
+Fix \(N\ge2\).  Let the row coefficient space be \(\C^N\), let the native
+output space be \(\C\), and define
+\begin{equation}
+ A_N\zeta:=\frac1N\sum_{m=1}^N\zeta_m.
+ \label{eq:tpc62-one-output-represented-map}
+\end{equation}
+For each row \(m\), introduce one missing atom \(w_m\).  All \(N\) atoms
+land at the same native output, their terminal-prime labels
+\(p_1,\ldots,p_N\) are pairwise distinct, and their literal coefficients
+are
+\begin{equation}
+ c_{w_m}=-\frac1N.
+ \label{eq:tpc62-one-output-missing-coefficients}
+\end{equation}
+Thus the missing map and its raw atomic diagonal are
+\begin{equation}
+ M_N\zeta=-\frac1N\sum_{m=1}^N\zeta_m=-A_N\zeta,
+ \qquad
+ \mathbf D_M=\frac1{N^2}I_N.
+ \label{eq:tpc62-one-output-missing-map}
+\end{equation}
+
+\begin{proposition}[Exact coherent missing model]
+\label{prop:tpc62-exact-coherent-missing-model}
+The model in \eqref{eq:tpc62-one-output-missing-map} satisfies the
+fixed-\((i,p)\) singleton property and the exact prime-block identities
+\begin{equation}
+ M_{p_m}^*M_{p_m}=\mathbf D_{p_m},
+ \qquad
+ \sum_{m=1}^N\mathbf D_{p_m}=\mathbf D_M.
+ \label{eq:tpc62-model-prime-block-identities}
+\end{equation}
+Nevertheless
+\begin{equation}
+ \boxed{
+ F_M=M_N\mathbf D_M^{-1/2}
+      =[\,-1\ \cdots\ -1\,],
+ \quad
+ \mathbf K_M=\boldsymbol 1\boldsymbol 1^*,
+ \quad
+ \kappa_M=N.}
+ \label{eq:tpc62-model-coherent-gram}
+\end{equation}
+For the distinguished coefficient
+\(\zeta_\star=\boldsymbol 1\),
+\begin{equation}
+ \|A_N\zeta_\star\|^2=1,
+ \qquad
+ \langle\mathbf D_M\zeta_\star,\zeta_\star\rangle=\frac1N,
+ \qquad
+ (A_N+M_N)\zeta_\star=0.
+ \label{eq:tpc62-model-exact-cancellation}
+\end{equation}
+Thus a raw missing fraction \(1/N\) can coexist with complete reassembly
+failure.
+\end{proposition}
+
+\begin{proof}
+For a fixed terminal prime \(p_m\), the block map is
+\[
+ M_{p_m}\zeta=-\frac1N\zeta_m.
+\]
+There is exactly one atom at the pair consisting of the unique output and
+\(p_m\).  Hence
+\[
+ M_{p_m}^*M_{p_m}
+ =\frac1{N^2}e_me_m^*
+ =\mathbf D_{p_m}.
+\]
+Summing over \(m\) proves
+\eqref{eq:tpc62-model-prime-block-identities}.  Since
+\(\mathbf D_M^{-1/2}=NI_N\), the normalized incidence matrix has \(N\)
+unit columns, all equal to \(-1\).  Its Gram is
+\(\boldsymbol 1\boldsymbol 1^*\), whose eigenvalues are \(N,0,\ldots,0\).
+This proves \eqref{eq:tpc62-model-coherent-gram}.  The three identities in
+\eqref{eq:tpc62-model-exact-cancellation} follow by direct substitution.
+\end{proof}
+
+The mass--degree product is exactly critical in this example:
+\begin{equation}
+ \frac{\kappa_M
+ \langle\mathbf D_M\zeta_\star,\zeta_\star\rangle}
+ {\|A_N\zeta_\star\|^2}=1.
+ \label{eq:tpc62-model-critical-product}
+\end{equation}
+The reverse-triangle margin is therefore zero, and the actual operators
+attain that worst case.  The example does not say that equality must cause
+cancellation; it shows why a theorem based only on this certificate needs
+a strict margin or additional phase information.
+
+\subsection{A uniformly perfect represented map can still cancel}
+
+The rank-one nature of \(A_N\) in the preceding example is not the source
+of the obstruction.  Let both the coefficient and output spaces be
+\(\C^N\), put
+\begin{equation}
+ v:=N^{-1/2}\boldsymbol 1,
+ \qquad
+ \widetilde A_N:=I_N,
+ \qquad
+ \widetilde M_N:=-vv^*=-\frac1N
+ \boldsymbol 1\boldsymbol 1^*.
+ \label{eq:tpc62-uniform-represented-model}
+\end{equation}
+Realize \(\widetilde M_N\) by one atom \(w_{i,m}\) of coefficient
+\(-1/N\) for every output--row pair \((i,m)\).  Give the \(N^2\) atoms
+pairwise distinct formal terminal-prime labels.  Then every
+fixed-\((i,p)\) incidence is a singleton, each one-atom prime block is an
+exact isometry relative to its atomic diagonal, and
+\begin{equation}
+ \widetilde{\mathbf D}_M=\frac1N I_N,
+ \qquad
+ \widetilde F_M=-\frac1{\sqrt N}
+ \boldsymbol 1\boldsymbol 1^*,
+ \qquad
+ \widetilde{\mathbf K}_M=\boldsymbol 1\boldsymbol 1^*,
+ \qquad
+ \widetilde\kappa_M=N.
+ \label{eq:tpc62-uniform-model-gram}
+\end{equation}
+The represented map is uniformly optimal:
+\begin{equation}
+ \|\widetilde A_N\zeta\|^2=\|\zeta\|^2
+ \qquad(\zeta\in\C^N).
+ \label{eq:tpc62-uniform-perfect-represented}
+\end{equation}
+Yet on the unit vector \(v\),
+\begin{equation}
+ \langle\widetilde{\mathbf D}_Mv,v\rangle=\frac1N,
+ \qquad
+ (\widetilde A_N+\widetilde M_N)v=0.
+ \label{eq:tpc62-uniform-model-cancellation}
+\end{equation}
+Thus even a coefficient-uniform represented lower bound, literal raw
+missing mass, and all singleton prime-block identities do not imply a
+positive reassembled lower bound.  Control of the restricted native Gram
+or of the signed cross term is an independent gate.
+
+The same model also separates uniform and distinguished conclusions.  For
+every \(\zeta\perp v\), one has
+\begin{equation}
+ \widetilde M_N\zeta=0,
+ \qquad
+ (\widetilde A_N+\widetilde M_N)\zeta=\zeta.
+ \label{eq:tpc62-uniform-model-good-directions}
+\end{equation}
+Hence the large uniform value \(\widetilde\kappa_M=N\) does not prove
+failure for a specified physical vector.  Conversely, good reassembly on
+one such vector gives no uniform lower bound because the direction \(v\)
+is still dark.  Quantifier scope cannot be changed in either direction.
+
+\subsection{Pair decorrelation and collision degree are independent}
+
+For \(0\le\rho\le1\), take orthonormal vectors
+\(e_0,e_1,\ldots,e_N\) and define the unit columns
+\begin{equation}
+ f_m:=\sqrt{1-\rho}\,e_m+\sqrt\rho\,e_0
+ \qquad(1\le m\le N).
+ \label{eq:tpc62-equi-correlated-columns}
+\end{equation}
+Their Gram is
+\begin{equation}
+ \mathbf K_\rho=(1-\rho)I_N
+ +\rho\boldsymbol 1\boldsymbol 1^*,
+ \qquad
+ \lambda_{\max}(\mathbf K_\rho)=1+(N-1)\rho.
+ \label{eq:tpc62-equi-correlated-gram}
+\end{equation}
+Every pair correlation is only \(\rho\), but every row has \(N-1\)
+neighbours.  If
+\(N=X^{\delta+o(1)}\) and
+\(\rho=X^{-\tau+o(1)}\), this family has exact Gram exponent
+\begin{equation}
+ \limsup_{X\to\infty}
+ \frac{\log\lambda_{\max}(\mathbf K_\rho)}{\log X}
+ = (\delta-\tau)_+.
+ \label{eq:tpc62-equi-correlated-exponent}
+\end{equation}
+It therefore shows that the degree factor in
+\cref{cor:tpc62-degree-pair-exponent} cannot be removed at the Gram level.
+Small pair correlations and sparse collision support are separate inputs.
+
+\subsection{What the models do and do not refute}
+
+The examples establish exact logical independence at the finite-dimensional
+operator interface:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item prime-block isometry does not control unequal-prime cross terms;
+ \item small raw missing mass does not control native missing energy without
+       the restricted factor \(\kappa_M\);
+ \item a uniform represented lower bound does not prevent phase-aligned
+       cancellation by the missing map;
+ \item a large uniform \(\kappa_M\) does not force failure on a distinguished
+       coefficient vector; and
+ \item pairwise decorrelation does not imply an operator bound without an
+       active collision-degree estimate.
+\end{enumerate}
+They do not violate the exact TPC--61 formulas.  Rather, they attain those
+formulas in abstract incidence systems.  They also do not satisfy or refute
+the full fixed-\(h_0\) two-affine determinant restrictions.  Consequently
+they prove no negative theorem about the literal arithmetic packet and no
+parity, prime-pair, or twin-prime conclusion.  Their role is narrower and
+quantifier-safe: any successful physical closure theorem must use a
+hypothesis that excludes the displayed coherent configurations in the same
+scope as its conclusion.

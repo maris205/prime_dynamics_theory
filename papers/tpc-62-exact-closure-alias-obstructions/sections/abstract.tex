@@ -1,0 +1,57 @@
+\begin{abstract}
+The fixed-shift TPC packet now has exact coordinate, selection, prime-fiber,
+native-alias, high-face, missing-reassembly, and cofactor-exposure interfaces,
+but their conclusions carry different quantifiers and several are only
+certificates for one proof architecture.  We give a quantifier-safe closure
+calculus for this chain.
+
+For a nonzero positive semidefinite parent form \(R\) and a final physical
+map \(F\), let \(N=\Ker R\), \(S=N^\perp\), and \(W=F(N)\).  The optimal
+coefficient-uniform transfer constant is exactly
+\[
+ \alpha(F;R)=
+ \lambda_{\min}\!\left(
+ R_S^{-1/2}F_S^*P_{W^\perp}F_SR_S^{-1/2}
+ \right),
+\]
+and \(\alpha(F;R)>0\) if and only if
+\(\Ker F\subseteq\Ker R\).  Using classical shorted-operator theory, with
+self-contained finite-dimensional proofs, we apply transitivity on nested
+retained spaces: sequential elimination of genuine nuisance directions
+equals one master shorting, whereas ordinary compression can be strictly
+wrong.
+This separates mandatory kernel gates from sufficient certificates whose
+failure proves nothing about the final map.
+
+For a finite selector family \((S_a)\), we prove the strict quantifier gap
+\[
+ \sup_a\inf_{z\ne0}\frac{\|S_az\|^2}{\|z\|^2}
+ \le
+ \inf_{z\ne0}\sup_a\frac{\|S_az\|^2}{\|z\|^2}.
+\]
+Thus an adaptive good phase sector or dyadic block need not produce one
+frozen selector with a uniform lower bound.  Retaining the selector label by
+direct sum gives the exact uniform constant
+\(\lambda_{\min}(\sum_aS_a^*S_a)\), but erasing that label is a new
+reassembly problem.
+
+We also order the reassembly certificates.  The master shorted constant
+dominates every reverse-triangle lower certificate; the physical restricted
+Gram dominates both residual-factor and ambient-degree relaxations, while
+those two coarse relaxations are generally incomparable.  Finally, if the
+unit-column missing Gram has \(\kappa_M\ge1+L\), then some row and one of
+\(B\) literal correlation cells carry alias mass at least \(L/B\).  With at most
+\(\Delta\) neighbors in that cell, one normalized pair has magnitude at
+least \(L/(B\Delta)\).  Hence overlap degree
+\(X^{\delta+o(1)}\) and pair correlation
+\(X^{-\tau+o(1)}\) imply
+\(\nu_M\le(\delta-\tau)_+\).  On the TPC--61 carrier these entries are the
+explicit fixed-\(h_0\) two-affine M\"obius/determinant sums.  This localizes
+a large alias obstruction; it does not estimate a M\"obius correlation.
+
+A three-gate theorem closes only the declared truncated packet when the
+represented-chain, reassembly, and downstream losses are proved in the same
+scope and sum to less than \(1/400\).  We give sharp independence models and
+kill/pivot rules.  No fixed-shift parity improvement, prime-pair lower bound,
+or twin-prime consequence is asserted.
+\end{abstract}
