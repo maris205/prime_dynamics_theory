@@ -1,0 +1,48 @@
+{
+  "audit": {
+    "all_frobenius_propagation_inequalities_certified": true,
+    "maximum_clock_rank": 7,
+    "maximum_full_future_hardy_perturbation": 8.805437934405327e-08,
+    "maximum_interval_relative_terminal_residual": 4.084644382994634e-06,
+    "maximum_prefix_gram_relative_residual": 0.32550629686008936,
+    "maximum_source_packet_relative_residual": 0.8485549623982819,
+    "minimum_interval_terminal_energy_capture": 0.9999999999833156,
+    "minimum_midpoint_final_canonical_correlation": 0.8149251270134611,
+    "scale_count": 5
+  },
+  "program_boundary": {
+    "all_level_packet_decay_proved": false,
+    "five_scale_midblock_packet_validated": true,
+    "hilbert_polya_operator": false,
+    "prefix_only_rank_certificate": true,
+    "riemann_hypothesis": false,
+    "snapshot_packet_transfer": true,
+    "stage_A4_unconditional_closed": false,
+    "uniform_stage_A1_closed": false,
+    "unweighted_prefix_gram_no_go": true
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "2c551da2dbaf224f883be82c21f1f97abd90fd6189adfc9a89cdbc6b4e7b814f",
+    "figures/midblock_snapshot_packets.pdf": "f2eade508a2914160e72caaa1343e48a8bead096e3dc3cee7003169cc80345f0",
+    "figures/midblock_snapshot_packets.png": "44214888dc1eb866d2427951dcc47c077750092952080ed826b7545c4bf34c42",
+    "main.pdf": "27c9ef81cb7e93ecdf920e96f73680e742172183340d8991a8bed95c558f4a51",
+    "main.tex": "6fee553450ad632bc2076990fb3f99b2a61f082eb572a8e839140d36294865e5",
+    "midblock-snapshot-packets.pdf": "27c9ef81cb7e93ecdf920e96f73680e742172183340d8991a8bed95c558f4a51",
+    "pyproject.toml": "ce722f1a42acc4b76ec2bb57ecc202bed062b7a59d6c132ae90b887964695769",
+    "references.bib": "f140e685ee6625c5954f291884e1ada6d032dffe8064a84b8fbbc95509d10737",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "7b70472ac37bcf2999a2b9eefc69fbbf0920687c6fb712289fe5f46fede2b572",
+    "results/snapshot_packet_audit.json": "ca819f3152230b39d78fa01def45028334482d5b4e972d0084dc03704309f42b",
+    "results/snapshot_packet_smoke.json": "aeec2f1503a55da82a99f77656986b1b8c1fbcfb1b57aa44dac6a5873f762e9c"
+  },
+  "route_consequence": "A clock-rank packet constructed after roughly two thirds of the production horizon already captures the terminal postblock energy at all five archived scales, with 192-bit relative residual below 4.5e-6. The exact snapshot-transfer theorem propagates any such prefix packet through the unused suffix. Source-only and unweighted prefix-Gramian packets fail badly, so the next analytic object should be a terminally weighted or block-local dynamic packet, not a cumulative unweighted Krylov space.",
+  "status": "rh85_midblock_snapshot_packets_archived",
+  "theorem": {
+    "prefix_only_rank_certificate": true,
+    "snapshot_packet_transfer": true,
+    "unweighted_prefix_gram_no_go": true
+  }
+}

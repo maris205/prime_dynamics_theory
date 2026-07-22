@@ -1,0 +1,213 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Midblock Snapshot Packets and Prefix-Only Captured-Energy Certificates\\
+\large Dynamic Right Spaces, a Prefix-Gramian No-Go, and 192-Bit Evidence}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-84 reduced the preferred Stage-A effective-rank corridor to captured
+energy in a clock-dimensional postcritical packet space.  The optimal packet
+from the terminal singular-value decomposition is tautological, while raw
+coordinate and scale embeddings are not supported numerically.  This paper
+constructs the first temporally intrinsic alternative: a right packet formed
+strictly before the terminal production horizon.
+
+For $X_j=A^jS$ and any rank-$r$ packet $V$, the snapshot transfer theorem is
+\[
+ \norm{X_M(I-VV^*)}_2
+ \le \norm{A^{M-j}}\,\norm{X_j(I-VV^*)}_2.
+\]
+Consequently the leading right singular space of $X_j$, computed from the
+prefix through time $j<M$, supplies a valid rank-$r$ approximation of the
+terminal state.  This is a prefix-only certificate: the terminal singular
+vectors do not enter its construction.
+
+The natural unweighted prefix Gramian is not a safe replacement.  An explicit
+two-channel diagonal family has a prefix Gramian dominated by a transient
+mode while its terminal state is asymptotically supported on the other mode;
+the resulting rank-one packet misses asymptotically all terminal energy.
+
+At the five archived scales we choose $j=\lceil2M/3\rceil$ and
+$r=\lceil H_\sigma\rceil+2$.  Direct 192-bit Arb evaluation certifies a
+maximum relative terminal residual below $4.5\times10^{-6}$ and minimum
+captured energy above $0.99999999997$.  By contrast, source-only packets leave
+up to $84.9\%$ relative residual and unweighted prefix-Gramian packets up to
+$32.6\%$.  The audit proves finite frozen certificates, not an all-level
+packet-decay theorem.  Stage A, Hilbert--Polya, and the Riemann Hypothesis
+remain open.
+\end{abstract}
+
+\noindent\textbf{Keywords:} dynamic packet; captured energy; snapshot
+transfer; effective rank; interval arithmetic; transient growth.
+
+\medskip
+\noindent\textbf{MSC 2020:} 47B10; 47A75; 15A18; 65G20.
+
+\section{From optimal tails to constructible packets}
+
+RH-77 discovered strong postblock compression at five scales
+\citep{WangRankCompression2026}; RH-82 supplied the half-logarithmic rank
+clock \citep{WangHalfLog2026}.  RH-84 then showed that only a captured-energy
+lower bound is needed \citep{WangKyFan2026}.  The remaining issue is to build
+a packet from the dynamics rather than from the terminal state itself.
+
+Let $A:\mathcal H\to\mathcal H$ be bounded, let
+$S:\mathcal K\to\mathcal H$ be Hilbert--Schmidt, and set
+$X_j=A^jS$.  A matrix $V:\mathbb C^r\to\mathcal K$ with orthonormal columns
+defines the right packet projection $P=VV^*$.  The candidate $X_MP$ has rank
+at most $r$.
+
+\section{The snapshot transfer theorem}
+
+\begin{theorem}[Snapshot transfer theorem]
+\label{thm:transfer}
+For integers $0\le j\le M$ and every rank-$r$ orthogonal projection $P$ on
+$\mathcal K$,
+\begin{equation}
+ \boxed{\norm{X_M(I-P)}_2
+ \le \norm{A^{M-j}}\,\norm{X_j(I-P)}_2.}
+ \label{eq:transfer}
+\end{equation}
+If $P_{j,r}$ is the leading right singular projection of $X_j$, then
+\begin{equation}
+ \tau_r(X_M)
+ \le \norm{X_M(I-P_{j,r})}_2
+ \le \norm{A^{M-j}}\tau_r(X_j).
+ \label{eq:optimal-transfer}
+\end{equation}
+The packet $P_{j,r}$ depends only on the prefix ending at $j$.
+\end{theorem}
+
+\begin{proof}
+The identity
+$X_M(I-P)=A^{M-j}X_j(I-P)$ and the ideal inequality
+$\norm{BC}_2\le\norm{B}\norm{C}_2$ give \eqref{eq:transfer}.
+The leading right singular projection minimizes
+$\norm{X_j(I-P)}_2$ among rank-$r$ projections by Eckart--Young
+\citep{Bhatia1997}.  Since $X_MP_{j,r}$ has rank at most $r$, the first
+inequality in \eqref{eq:optimal-transfer} follows as well.
+\end{proof}
+
+The theorem separates two tasks.  One must prove a low-rank tail at an
+intermediate snapshot and control the unused suffix power.  Importantly, one
+need not identify the terminal singular directions.
+
+\begin{corollary}[Block-contractive suffix]
+If $M-j=kb+s$, $0\le s<b$, $\norm{A^b}\le q<1$, and
+$\max_{0\le t<b}\norm{A^t}\le C_b$, then
+\[
+ \norm{X_M(I-P_{j,r})}_2\le C_bq^k\tau_r(X_j).
+\]
+\end{corollary}
+
+\section{Why the unweighted prefix Gramian is unsafe}
+
+One might aggregate every prefix snapshot and choose the leading eigenspace
+of $G_M=\sum_{j=0}^MX_j^*X_j$.  The following proposition rules out a general
+terminal certificate of this form.
+
+\begin{proposition}[Unweighted prefix-Gramian no-go]
+\label{prop:nogo}
+For every $M\ge1$, let
+\[
+ A=\operatorname{diag}(1/2,1),\qquad
+ S=\operatorname{diag}(\sqrt{2(M+1)},1).
+\]
+The leading rank-one eigenspace of $G_M$ is the first coordinate, whereas the
+relative terminal residual left by that packet is
+\[
+ \frac{1}{\sqrt{1+2(M+1)4^{-M}}}\longrightarrow1.
+\]
+\end{proposition}
+
+\begin{proof}
+The two diagonal prefix energies are
+\[
+ 2(M+1)\frac{1-4^{-(M+1)}}{1-1/4}
+ \quad\text{and}\quad M+1.
+\]
+The first is larger, so the prefix Gramian selects the transient coordinate.
+At time $M$ the squared terminal energies are $2(M+1)4^{-M}$ and $1$.
+Discarding the second coordinate gives the stated relative residual.
+\end{proof}
+
+Thus a useful aggregate must discount early transients or localize near the
+terminal end of the available prefix.
+
+\section{Five-scale 192-bit audit}
+
+For each directional production model, we freeze the archived horizon $M$,
+construct the clock-rank packet from $X_{\lceil2M/3\rceil}$ in binary64,
+lift its entries exactly as binary rationals, and evaluate
+$X_M-X_MVV^*$ in 192-bit Arb arithmetic.  Rank at most $r$ is exact even if
+the lifted columns have a tiny orthogonality defect.  The same calculation
+certifies the Frobenius-norm version of \cref{thm:transfer}.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{rrrrr}
+\toprule
+$\sigma$ & $M$ & packet time & rank & worst relative residual\\
+\midrule
+0.16 & 4 & 3 & 4 & $4.09\times10^{-6}$\\
+0.08 & 9 & 6 & 5 & $9.46\times10^{-8}$\\
+0.04 & 16 & 11 & 6 & $2.0\times10^{-7}$\\
+0.02 & 25 & 17 & 6 & $5.0\times10^{-7}$\\
+0.01 & 32 & 22 & 7 & $2.0\times10^{-7}$\\
+\bottomrule
+\end{tabular}
+\caption{Worst directional channel at each scale.  Values are direct
+192-bit upper bounds rounded conservatively.}
+\label{tab:audit}
+\end{table}
+
+The numerical values in \cref{tab:audit} are generated automatically and are
+checked against a $4.5\times10^{-6}$ global gate.  The minimum certified
+captured energy exceeds $0.99999999997$.  The packet rank grows from four to
+seven while the ambient fine dimension grows from $32$ to $512$.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{figures/midblock_snapshot_packets.pdf}
+\caption{Interval prefix certificates, comparison with source and unweighted
+prefix packets, the explicit no-go family, and packet cost versus dimension.}
+\label{fig:audit}
+\end{figure}
+
+\section{Boundary and next target}
+
+RH-85 supplies a natural finite-scale packet and an exact mechanism for
+propagating it.  It does not yet prove that
+$\tau_{r_\sigma}(X_{\lfloor M_\sigma/2\rfloor})$ has a uniform
+polylogarithmic-rank bound, nor that the suffix constants are uniform in
+$\sigma$.  The failed unweighted aggregate points to the next object: a
+terminally weighted snapshot Gramian or a short block-local packet whose
+certificate depends only on a controlled late prefix window.
+
+No all-level effective-rank law, unconditional Stage A1 or Stage A4, relative
+fixed-disk determinant, self-adjoint Hilbert--Polya operator, zeta-zero
+identification, or Riemann Hypothesis proof is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

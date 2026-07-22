@@ -1,0 +1,138 @@
+{
+  "all_executed_packet_gates_green": true,
+  "audit_summary": {
+    "all_frobenius_propagation_inequalities_certified": true,
+    "maximum_clock_rank": 4,
+    "maximum_full_future_hardy_perturbation": 8.805437934405327e-08,
+    "maximum_interval_relative_terminal_residual": 4.084644382994634e-06,
+    "maximum_prefix_gram_relative_residual": 0.13764984477035688,
+    "maximum_source_packet_relative_residual": 0.1882811127720663,
+    "minimum_interval_terminal_energy_capture": 0.9999999999833156,
+    "minimum_midpoint_final_canonical_correlation": 0.9635178199486911,
+    "scale_count": 1
+  },
+  "limitations": [
+    "The packet uses a binary64 SVD of the two-thirds snapshot, although its terminal residual is evaluated rigorously after exact binary64 lifting.",
+    "The audit covers five frozen scales and does not prove uniform packet decay or a horizon law.",
+    "The Frobenius power bound is sufficient for certification and is not claimed sharp."
+  ],
+  "precision_bits": 192,
+  "prefix_gram_counterexample": [
+    {
+      "first_prefix_energy": 13.3203125,
+      "horizon": 4,
+      "prefix_selects_transient": 1.0,
+      "second_prefix_energy": 5.0,
+      "terminal_missed_relative": 0.9810229431759453
+    },
+    {
+      "first_prefix_energy": 23.999908447265625,
+      "horizon": 8,
+      "prefix_selects_transient": 1.0,
+      "second_prefix_energy": 9.0,
+      "terminal_missed_relative": 0.9998626991808874
+    },
+    {
+      "first_prefix_energy": 45.333333330694586,
+      "horizon": 16,
+      "prefix_selects_transient": 1.0,
+      "second_prefix_energy": 17.0,
+      "terminal_missed_relative": 0.9999999960418791
+    },
+    {
+      "first_prefix_energy": 88.0,
+      "horizon": 32,
+      "prefix_selects_transient": 1.0,
+      "second_prefix_energy": 33.0,
+      "terminal_missed_relative": 1.0
+    },
+    {
+      "first_prefix_energy": 173.33333333333334,
+      "horizon": 64,
+      "prefix_selects_transient": 1.0,
+      "second_prefix_energy": 65.0,
+      "terminal_missed_relative": 1.0
+    }
+  ],
+  "rank_offset": 2,
+  "route_consequence": "A clock-rank packet constructed after roughly two thirds of the production horizon already captures the terminal postblock energy at all five archived scales, with 192-bit relative residual below 4.5e-6. The exact snapshot-transfer theorem propagates any such prefix packet through the unused suffix. Source-only and unweighted prefix-Gramian packets fail badly, so the next analytic object should be a terminally weighted or block-local dynamic packet, not a cumulative unweighted Krylov space.",
+  "rows": [
+    {
+      "all_channels_green": true,
+      "channels": [
+        {
+          "binary64_midpoint_packet_relative_tail": 4.084644382976251e-06,
+          "binary64_optimal_final_relative_tail": 2.339345448215788e-07,
+          "binary64_source_packet_relative_tail": 0.01237115391565671,
+          "binary64_unweighted_prefix_gram_relative_tail": 0.011351855251352216,
+          "clock_rank": 4,
+          "dimension": 32,
+          "full_future_hardy_perturbation_ball": "[8.80543793440532600110920238361757613798e-8 +/- 7.73e-47]",
+          "full_future_hardy_perturbation_upper": 8.805437934405327e-08,
+          "horizon": 4,
+          "interval_frobenius_propagation_bound_ball": "[8.40951914311999386443590906993237662485756455169774e-8 +/- 1.64e-59]",
+          "interval_midpoint_residual_ball": "[1.013922565794435953777963212263880328554126804250066e-7 +/- 5.91e-59]",
+          "interval_propagation_gap_ball": "[6.26008317159687767599562596478536670626851533116283e-8 +/- 3.22e-59]",
+          "interval_relative_terminal_residual_ball": "[4.08464438299463256132122579368602240705367253747737e-6 +/- 5.11e-57]",
+          "interval_relative_terminal_residual_upper": 4.084644382994634e-06,
+          "interval_terminal_energy_capture_ball": "[0.999999999983315680264470397467500675196893373017434640391 +/- 3.92e-58]",
+          "interval_terminal_energy_capture_lower": 0.9999999999833156,
+          "interval_terminal_residual_ball": "[2.14943597152311618844028310514700991858904922053491e-8 +/- 1.58e-59]",
+          "interval_terminal_residual_upper": 2.1494359715231165e-08,
+          "midpoint_final_minimum_canonical_correlation": 0.9635178199486911,
+          "packet_gate_green": true,
+          "packet_horizon_fraction": 0.75,
+          "packet_orthogonality_defect": 7.941637317838669e-16,
+          "packet_time": 3,
+          "propagation_inequality_certified": true,
+          "side": "left",
+          "source_columns": 16
+        },
+        {
+          "binary64_midpoint_packet_relative_tail": 8.759040720650375e-07,
+          "binary64_optimal_final_relative_tail": 1.7337302130065834e-07,
+          "binary64_source_packet_relative_tail": 0.1882811127720663,
+          "binary64_unweighted_prefix_gram_relative_tail": 0.13764984477035688,
+          "clock_rank": 4,
+          "dimension": 16,
+          "full_future_hardy_perturbation_ball": "[2.218880643372362792300834027286426898129e-8 +/- 3.94e-48]",
+          "full_future_hardy_perturbation_upper": 2.218880643372363e-08,
+          "horizon": 4,
+          "interval_frobenius_propagation_bound_ball": "[5.82051578887597837596115150233448980645894164654570e-8 +/- 1.90e-59]",
+          "interval_midpoint_residual_ball": "[7.23376125549839085879529934264105886985820496012242e-8 +/- 1.89e-59]",
+          "interval_propagation_gap_ball": "[5.24683593575148937754103503047067464168617060825023e-8 +/- 6.60e-59]",
+          "interval_relative_terminal_residual_ball": "[8.7590407207516124707881210849628299504700166560269e-7 +/- 5.52e-57]",
+          "interval_relative_terminal_residual_upper": 8.759040720751614e-07,
+          "interval_terminal_energy_capture_ball": "[0.999999999999232792056522150731248491525427957613835179621 +/- 4.40e-58]",
+          "interval_terminal_energy_capture_lower": 0.9999999999992327,
+          "interval_terminal_residual_ball": "[5.73679853124488998420116471863815164772771038295465e-9 +/- 8.55e-60]",
+          "interval_terminal_residual_upper": 5.7367985312448904e-09,
+          "midpoint_final_minimum_canonical_correlation": 0.9904877655616336,
+          "packet_gate_green": true,
+          "packet_horizon_fraction": 0.75,
+          "packet_orthogonality_defect": 4.989931100624752e-16,
+          "packet_time": 3,
+          "propagation_inequality_certified": true,
+          "side": "right",
+          "source_columns": 16
+        }
+      ],
+      "clock": 1.769091146743121,
+      "clock_rank": 4,
+      "fine_dimension": 32,
+      "sigma": 0.16
+    }
+  ],
+  "status": "rh85_midblock_snapshot_packet_audit",
+  "theorem_boundary": {
+    "all_level_packet_decay_proved": false,
+    "five_scale_midblock_packet_validated": true,
+    "hilbert_polya_operator": false,
+    "prefix_only_rank_certificate": true,
+    "riemann_hypothesis": false,
+    "snapshot_packet_transfer": true,
+    "stage_A4_unconditional_closed": false,
+    "uniform_stage_A1_closed": false,
+    "unweighted_prefix_gram_no_go": true
+  }
+}

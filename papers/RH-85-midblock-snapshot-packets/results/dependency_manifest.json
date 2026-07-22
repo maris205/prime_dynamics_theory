@@ -1,0 +1,39 @@
+{
+  "external_inputs": {
+    "rh77_effective_rank_audit": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/results/effective_rank_audit.json",
+      "sha256": "08a123fb310bfd70572e5bd2b13ccf2fe397fd944f409c626d2e079b49be6c1a"
+    },
+    "rh82_rank_clock_audit": {
+      "path": "papers/RH-82-half-log-postblock-rank-clock/results/half_log_rank_audit.json",
+      "sha256": "b11949b5a77d7a6f3ec300bd87b1ed49bab3d569b1437be106306979556c2a27"
+    },
+    "rh84_tail_summary": {
+      "path": "papers/RH-84-ky-fan-tail-majorization/results/summary.json",
+      "sha256": "7b3518402760cc602670ec994266117327c561a7f673b2399fc922ae06b11794"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "48c9eb62d9f8f6b6d533ef517fb0c77df8b426d2de455b7cd5f6c9efe97e86a1",
+    "experiments/make_figures.py": "741e28afe38031a2eb4511ef8d37e83bbf8eef5d05bf3598e79688739fba2e2d",
+    "experiments/run_snapshot_packet_audit.py": "b0665bead72845c2aab8e83db71c051357448de04e9c9eafbdf243cf60c374db",
+    "experiments/verify_archive.py": "3c2b6f5c807450c3b80fc8b19671968ec9ffec4f489506c6e1d04c1f1cf582b0",
+    "src/snapshot_packets/__init__.py": "a26859344ea317ec7cc959837d546d4ef984dd81ced210693eb957187fa0277a",
+    "src/snapshot_packets/bounds.py": "68cd4e9d5871b289da38a7c855f144b97eca28045550f24b8b4e67dcb22dcbd2",
+    "tests/test_archived_results.py": "bd88621fc4b41fc0b840d6d1224387fe10f67ecf43497f50d457299b613b4cd7",
+    "tests/test_theory.py": "02b01e96e72c4f0e53ae7ad338bbe308ee1aa3fbbb02e5bdc7fb0076586d6a6a"
+  },
+  "publication_artifacts": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "2c551da2dbaf224f883be82c21f1f97abd90fd6189adfc9a89cdbc6b4e7b814f",
+    "figures/midblock_snapshot_packets.pdf": "f2eade508a2914160e72caaa1343e48a8bead096e3dc3cee7003169cc80345f0",
+    "figures/midblock_snapshot_packets.png": "44214888dc1eb866d2427951dcc47c077750092952080ed826b7545c4bf34c42",
+    "main.pdf": "27c9ef81cb7e93ecdf920e96f73680e742172183340d8991a8bed95c558f4a51",
+    "main.tex": "6fee553450ad632bc2076990fb3f99b2a61f082eb572a8e839140d36294865e5",
+    "midblock-snapshot-packets.pdf": "27c9ef81cb7e93ecdf920e96f73680e742172183340d8991a8bed95c558f4a51",
+    "pyproject.toml": "ce722f1a42acc4b76ec2bb57ecc202bed062b7a59d6c132ae90b887964695769",
+    "references.bib": "f140e685ee6625c5954f291884e1ada6d032dffe8064a84b8fbbc95509d10737",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "status": "all_rh85_inputs_sources_and_publication_artifacts_hashed"
+}
