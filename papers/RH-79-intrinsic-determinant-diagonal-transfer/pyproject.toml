@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rh79-intrinsic-determinant-diagonal-transfer"
+version = "0.1.0"
+description = "Trace-norm square and determinant transfer on small-noise diagonal schedules"
+requires-python = ">=3.10"
+dependencies = ["matplotlib>=3.7", "pytest>=7.0", "python-flint>=0.6"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]

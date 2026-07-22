@@ -1,0 +1,39 @@
+{
+  "external_inputs": {
+    "rh45_trace_summary": {
+      "path": "papers/RH-45-bulk-two-step-trace-norm-determinant/results/summary.json",
+      "sha256": "494af99c129041fbdf658e8c74a144d01b455ce2372422d682a4f87247937aec"
+    },
+    "rh46_double_pole_summary": {
+      "path": "papers/RH-46-small-noise-mesh-double-pole/results/summary.json",
+      "sha256": "a010a04b9351b18c7bc4053be8edbc4e7c3e5f844ca871762616c595dd05d04e"
+    },
+    "rh78_composition_audit": {
+      "path": "papers/RH-78-two-corridor-stage-A1-composition/results/stage_composition_audit.json",
+      "sha256": "713050fd5741650c4ad88596aed5e5e0261a767ba25c34686379474ceaf0acf5"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "532c206171e083a422804626c91ea2c32118485827823b92dc5f23c1cf686f3a",
+    "experiments/make_figures.py": "67a3bf13f8a70ba566c2303a72133f85e54ff9eaaf9fffb0734288772e163aec",
+    "experiments/run_determinant_transfer_audit.py": "19345a9d1b7974f3fe3061096922cce1f3b142f2644e9814351bbb4945ba92fb",
+    "experiments/verify_archive.py": "c1cb2d940796b46683a24d723388320c2ad443a74beb6ab9ddccea63476ee827",
+    "src/determinant_transfer/__init__.py": "18732524512eae8c3e418d5eb352fcf227a8fd20938f846468f959105115f528",
+    "src/determinant_transfer/bounds.py": "3739f5bb9e4a53d95af6c265026b25addf2d589367e271cba87aeca917f5b4de",
+    "tests/test_archived_results.py": "387a0013d016a3c955a3d3fd702035ab7cc4abeaeea7a78f52df2982804f5b7d",
+    "tests/test_theory.py": "532300209f5fc543aadfd50f0ec17b742423626d01d115a5ea934cf2907111de"
+  },
+  "publication_artifacts": {
+    ".gitignore": "45bc6f151fb9fa411571660ee59bb7d034af65fbb7c1c6104c4c7af4ada209fc",
+    "README.md": "956592ab14ce45fa5689038bf93ac6e5e5244d00a369a8b166bf90080fcaa088",
+    "figures/intrinsic_determinant_diagonal_transfer.pdf": "96c8d7abfaf7a032b6e9e49534301f221aaad5c43982bcd070501ff8c635abfe",
+    "figures/intrinsic_determinant_diagonal_transfer.png": "59b56aeeacf8abcefdcd30ea3040c25c9b7e475c6ca3d2b01bd5f24a158c7182",
+    "intrinsic-determinant-diagonal-transfer.pdf": "736880070aa78250dfc3e0f81003fd968ebb076bde0bd086205a3042fda51bcc",
+    "main.pdf": "736880070aa78250dfc3e0f81003fd968ebb076bde0bd086205a3042fda51bcc",
+    "main.tex": "5a89e7e8ce9fcd5ab5f70009c38d1df159345de4a7b634b80530d20948749680",
+    "pyproject.toml": "2239d37cef0dd33c62d3b70716e8b1ceed0055ec0a186006a196734ba7795031",
+    "references.bib": "95a1fd9009f0aba5b4062c51e57e9b68fcf19420655c561b5e8ca6eea65b0593",
+    "requirements.txt": "efa940308487b4bf6b29874b32bbfe6e51b228c5df2ddd12573594b8586c481f"
+  },
+  "status": "all_rh79_inputs_sources_and_publication_artifacts_hashed"
+}

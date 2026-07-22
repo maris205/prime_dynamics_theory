@@ -1,0 +1,45 @@
+{
+  "audit": {
+    "final_fixed_disk_error": 0.3050072354662042,
+    "final_shrinking_disk_error": 2.618172882787691e-05,
+    "final_square_error": 0.09179774267502004,
+    "initial_shrinking_disk_error": 0.0026279415323115208,
+    "initial_square_error": 0.575351949141989,
+    "minimum_fixed_disk_error": 0.01565836776867733,
+    "scale_count": 5,
+    "shrinking_disk_gates_green": true
+  },
+  "program_boundary": {
+    "conditional_square_and_shrinking_disk_transfer_closed": true,
+    "fixed_disk_transfer_closed": false,
+    "hilbert_polya_operator": false,
+    "pole_renormalized_limit_closed": false,
+    "riemann_hypothesis": false,
+    "stage_A5_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "45bc6f151fb9fa411571660ee59bb7d034af65fbb7c1c6104c4c7af4ada209fc",
+    "README.md": "956592ab14ce45fa5689038bf93ac6e5e5244d00a369a8b166bf90080fcaa088",
+    "figures/intrinsic_determinant_diagonal_transfer.pdf": "96c8d7abfaf7a032b6e9e49534301f221aaad5c43982bcd070501ff8c635abfe",
+    "figures/intrinsic_determinant_diagonal_transfer.png": "59b56aeeacf8abcefdcd30ea3040c25c9b7e475c6ca3d2b01bd5f24a158c7182",
+    "intrinsic-determinant-diagonal-transfer.pdf": "736880070aa78250dfc3e0f81003fd968ebb076bde0bd086205a3042fda51bcc",
+    "main.pdf": "736880070aa78250dfc3e0f81003fd968ebb076bde0bd086205a3042fda51bcc",
+    "main.tex": "5a89e7e8ce9fcd5ab5f70009c38d1df159345de4a7b634b80530d20948749680",
+    "pyproject.toml": "2239d37cef0dd33c62d3b70716e8b1ceed0055ec0a186006a196734ba7795031",
+    "references.bib": "95a1fd9009f0aba5b4062c51e57e9b68fcf19420655c561b5e8ca6eea65b0593",
+    "requirements.txt": "efa940308487b4bf6b29874b32bbfe6e51b228c5df2ddd12573594b8586c481f"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "cc9c54596a278fbb4596978a76fd92bf71db81fa1c536f5258f13c8615e936fd",
+    "results/determinant_transfer_audit.json": "3c0d5bb04856eeb6827176fce5e2f8487f190d34c3a9316debe18b1bdbbba79d",
+    "results/determinant_transfer_smoke.json": "da052594c52aa101d09e0e44b5ade2088960419f397ab64d454cdf6c024dc95e"
+  },
+  "route_consequence": "Conditional Stage-A identification is strong enough to transfer bulk squares in trace norm and determinants on disks |w|=O(sigma). The standard determinant continuity bound is not uniform on a fixed disk because the bulk trace norm is O(sigma^-1), producing exp(O(R/sigma)). Entry to A5 therefore requires pole renormalization or a sharper relative determinant argument, not merely stronger finite-dimensional precision.",
+  "status": "rh79_intrinsic_determinant_diagonal_transfer_archived",
+  "theorem": {
+    "fixed_disk_exponential_barrier": true,
+    "intrinsic_square_trace_transfer": true,
+    "shrinking_disk_determinant_transfer": true,
+    "strict_diagonal_trace_norm_closure": true
+  }
+}

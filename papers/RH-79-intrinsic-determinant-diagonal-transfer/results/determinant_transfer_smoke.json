@@ -1,0 +1,37 @@
+{
+  "all_executed_shrinking_disk_gates_green": true,
+  "constants": {
+    "bulk_hs_constant": 1.55,
+    "fixed_disk_radius": 0.01,
+    "shrinking_disk_multiple": 0.01
+  },
+  "fixed_disk_standard_bound_eventually_worsens": true,
+  "precision_bits": 256,
+  "route_consequence": "Conditional Stage-A identification is strong enough to transfer bulk squares in trace norm and determinants on disks |w|=O(sigma). The standard determinant continuity bound is not uniform on a fixed disk because the bulk trace norm is O(sigma^-1), producing exp(O(R/sigma)). Entry to A5 therefore requires pole renormalization or a sharper relative determinant argument, not merely stronger finite-dimensional precision.",
+  "rows": [
+    {
+      "bulk_hs_upper_ball": "[3.875000000000000070689981646054888571416769832861667137869073901046613306951 +/- 4.90e-76]",
+      "conditional_intrinsic_hs_error_ball": "[0.0735411165570998500876736303489367151403184753202147165032519096499027684010 +/- 5.11e-77]",
+      "conditional_intrinsic_hs_error_upper": 0.07354111655709987,
+      "fixed_disk_determinant_error_ball": "[0.0212398210780386875276115003266980930388219120802782605309444176944243743992 +/- 3.90e-77]",
+      "fixed_disk_determinant_error_upper": 0.021239821078038693,
+      "fixed_disk_radius": 0.01,
+      "level": 0,
+      "shrinking_disk_determinant_error_ball": "[0.00262794153231152038276078900217431534925375088767901043267368606238447136434 +/- 5.79e-78]",
+      "shrinking_disk_determinant_error_upper": 0.0026279415323115208,
+      "shrinking_disk_radius_ball": "[0.001600000000000000066613381477509393118752680064854125850152059330573834673717 +/- 4.07e-79]",
+      "sigma": 0.16,
+      "square_trace_error_ball": "[0.575351949141988794284831670714775886897864846531717419297192291802122395041 +/- 8.05e-76]",
+      "square_trace_error_upper": 0.575351949141989
+    }
+  ],
+  "status": "rh79_intrinsic_determinant_diagonal_transfer",
+  "theorem_boundary": {
+    "fixed_disk_standard_continuity_sufficient": false,
+    "intrinsic_square_trace_transfer": true,
+    "pole_renormalized_limit_closed": false,
+    "shrinking_disk_determinant_transfer": true,
+    "stage_A5_closed": false,
+    "strict_mesh_diagonal_limit_interchange": true
+  }
+}
