@@ -1,0 +1,60 @@
+{
+  "audit": {
+    "channel_count": 10,
+    "maximum_orthogonality_defect": 2.73994195821948e-15,
+    "maximum_primary_compressed_dimension": 11,
+    "maximum_source_seed_projector_distance": 7.959892143527701e-14,
+    "maximum_width_four_endpoint_to_reference_ratio": 1.0011724272719218,
+    "maximum_width_four_intermediate_reference_ratio": 3.0231780425481687,
+    "maximum_width_three_endpoint_to_reference_ratio": 1.4489393535711215,
+    "maximum_width_two_endpoint_to_reference_ratio": 11.397993555904634,
+    "minimum_primary_frame_gain": 2.1668917141822092e-14,
+    "minimum_primary_metric_determinant": 0.9999999999999964,
+    "minimum_width_four_cross_energy_fraction": 0.9753653055063822,
+    "minimum_width_three_cross_energy_fraction": 0.8945813997923265,
+    "minimum_width_two_cross_energy_fraction": 0.794909595053187,
+    "primary_update_count": 120,
+    "scale_count": 5,
+    "source_seed_equivalence_count": 10,
+    "width_four_endpoint_green_count": 10
+  },
+  "program_boundary": {
+    "ambient_gram_packet_action_removed": false,
+    "continuum_complexity_theorem_proved": false,
+    "four_direction_frozen_horizons_validated": true,
+    "hilbert_polya_operator": false,
+    "late_ambient_eigenspace_seed_removed": true,
+    "riemann_hypothesis": false,
+    "source_coordinate_svd_removed": false,
+    "source_seed_equivalence_theorem": true,
+    "source_seeded_recursive_horizon_theorem": true,
+    "uniform_all_level_four_direction_law_proved": false,
+    "uniform_stage_A1_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "cb2f2ef99bd4903b27dd832af9bbbe303e1fa6757ccbb0cab06701c347e61534",
+    "THEOREM_LEDGER.md": "091932f8da1f833fa329fb494e98afa2e66b3413f34f6d66bf1b34fbe41f2ac7",
+    "UPDATED_ROADMAP.md": "a689fa9a9da130c930e22f20f38b2d140c64833d7ebce4f7997c7164720b14cf",
+    "figures/source_seeded_four_direction_horizon.pdf": "21b68648e0d376319d468302dbe265766e27856abcf70a1f012c8aec969b9788",
+    "figures/source_seeded_four_direction_horizon.png": "41b2daf2acb3f6919543e18ecee8194767b5fc0af89b335f92bdcb4a26f6cbe1",
+    "main.pdf": "dad88ea76eff6520a6e3b910707febb66c8ae13bc54fb70a264fecb04114c172",
+    "main.tex": "68bbd3b329f7b3e49700e7737328723ab340d86bac45b557df1b0b456b7e7536",
+    "pyproject.toml": "bcccf6d9c3e08d294c97ebf2062fbc4634f66c6fa4d410a89be6ee7869a77aa0",
+    "references.bib": "cb8218d3ad953f4f31eef7b0e3c647115cb34720725097a271172667bac9353e",
+    "requirements.txt": "223859266dc308c42daaf834ec590bebdd11ebef66201f51760d5deb95108486",
+    "source-seeded-four-direction-horizon-refresh.pdf": "dad88ea76eff6520a6e3b910707febb66c8ae13bc54fb70a264fecb04114c172"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "b4537c4a4b9d0afa8e22fc68229a61e11c9b2c4769f9cafe72d15a3184dd5696",
+    "results/source_seeded_horizon_audit.json": "e4fc68343255c9ffc997b2182c446ca73d8673906db361a3230f72f0cff05e96",
+    "results/source_seeded_horizon_smoke.json": "07f4ff3e603e5d611385377c14fa1613a38a50919b6895b2b689c44b360dcaa8"
+  },
+  "route_consequence": "The recursively refreshed packet can be seeded once at time zero by the leading right singular subspace of the source, which is exactly the leading packet of the normalized source Gramian. Across the ten archived channels, four projected-cross directions carry this packet through the complete prefix to the RH-93 endpoint with endpoint tails within 1.01 of the ambient leading-packet reference. Widths two and three fail this robust full-horizon criterion, so four is the first tested width that removes the late ambient seed without losing endpoint accuracy.",
+  "status": "rh94_source_seeded_four_direction_horizon_archived",
+  "theorem": {
+    "four_direction_endpoint_recovery": true,
+    "source_seed_equivalence": true,
+    "source_seeded_recursive_horizon": true
+  }
+}
