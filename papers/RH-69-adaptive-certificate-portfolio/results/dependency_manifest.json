@@ -1,0 +1,44 @@
+{
+  "external_inputs": {
+    "rh60_phase_pilot": {
+      "path": "papers/RH-60-finite-horizon-phase-aware-tails/results/phase_tail_pilot.json",
+      "sha256": "813b421f4ca6ff429d5181bc295cc8fa1e4a8fa50268f30a3c13d940ccfd82f5"
+    },
+    "rh61_horizon_audit": {
+      "path": "papers/RH-61-directional-horizon-scaling-barrier/results/horizon_scaling_audit.json",
+      "sha256": "6ff5dca6c691ca6151d1b1e1c8bf34a122375df5067b97b5b57ce15e6885f4b7"
+    },
+    "rh67_covariance_pilot": {
+      "path": "papers/RH-67-physical-covariance-block-envelopes/results/covariance_envelope_pilot.json",
+      "sha256": "dab3fba69153eb4bfc40ab30a620fa509540d7567f9ba98415b06ff7e7288ff7"
+    },
+    "rh68_depth_pilot": {
+      "path": "papers/RH-68-phase-coherence-block-depth-barrier/results/depth_barrier_pilot.json",
+      "sha256": "94e04c24295f0b190b221d7fdc8bda6bf2353d90b7b83a3d899860948d3807de"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "ace62dde0c072e5c9d6be63f9ee909d60b3e2a7138542e62d23ba1d5a7ee6a7b",
+    "experiments/make_figures.py": "1219752def2bab3f8da0db58f5e83851a58545a9653d54de395a0e94a4d650ca",
+    "experiments/run_arb_portfolio_audit.py": "a23fdd149f53d674db682fd6bbec819d7c249df1bac789156496e1ba945224ab",
+    "experiments/run_certificate_portfolio.py": "007027cc3bb01df83f9038277ad0b4e8e68daf6bb6e56af476dd61deb0729977",
+    "experiments/verify_archive.py": "6bcfa7c7159829dcf0ebb9f08848cb38aafeb9ad8985f6ae9e3f425a0da4bd41",
+    "src/certificate_portfolio/__init__.py": "623dca9c5726d3a830ac4f39ec1bb4079ab838feca3ad1b62607df11ce41b41e",
+    "src/certificate_portfolio/portfolio.py": "75bebd9a45b31937bc9902d306ca9e381f1ea8875089915697f8bec8b41a7495",
+    "tests/test_smoke.py": "78bb0538baae71fbf0c0e6082160f1617d19fe451e515a7371628f078331356c",
+    "tests/test_theory.py": "61b7f0604d23c0f1c178899cd58c5ba8ae4da518febdf36abd92079c7c783bd1"
+  },
+  "publication_artifacts": {
+    ".gitignore": "edc0f305a8e021cd0c100a30cd2e601c77b965a68d5614105ffbf24a5a461fc3",
+    "README.md": "e7f27ce13ed9491918a9f104214a6facc65f3604d054a894ffeb93eddbe5b264",
+    "adaptive-certificate-portfolio.pdf": "00ccb7dd8e5a9273d88ec97be898fa25f9e8b4113e587efd5aac1d5ee2217b7a",
+    "figures/adaptive_certificate_portfolio.pdf": "5adc785ae9dea32061e1e9a9ea586d993efec2ddf013e2bff4a6370a14a8a389",
+    "figures/adaptive_certificate_portfolio.png": "47c3fb6fa50fee91e02badbe2119626376dd48e9e982ff24b854966007dd72b9",
+    "main.pdf": "00ccb7dd8e5a9273d88ec97be898fa25f9e8b4113e587efd5aac1d5ee2217b7a",
+    "main.tex": "90015def2ba3643d71eee170f91fd9f327e19adc70e3955d6c6f71e31c48471e",
+    "pyproject.toml": "c5a58d3766db719858395c71cd99b78389448735dc4b51e394ee5cc71541c338",
+    "references.bib": "5943545e8ba5754e2134c49093555e0a9b02358ff580ff8af07afc4e6adc1569",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "status": "all_rh69_inputs_sources_and_publication_artifacts_hashed"
+}

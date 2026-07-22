@@ -1,0 +1,317 @@
+{
+  "covariance_portfolio": [
+    {
+      "name": "exact_diagonal_cancellation",
+      "pareto_frontier": [
+        {
+          "costs": {
+            "focus_exponent": 28.0,
+            "global_gain": 48932.79383081463
+          },
+          "evidence": "exact_scalar_reduction",
+          "name": "covariance_eps_1e-28",
+          "upper": 1.0000102728440292
+        },
+        {
+          "costs": {
+            "focus_exponent": 24.0,
+            "global_gain": 489.96015138883155
+          },
+          "evidence": "exact_scalar_reduction",
+          "name": "covariance_eps_1e-24",
+          "upper": 1.001027284256585
+        },
+        {
+          "costs": {
+            "focus_exponent": 20.0,
+            "global_gain": 5.552491374029158
+          },
+          "evidence": "exact_scalar_reduction",
+          "name": "covariance_eps_1e-20",
+          "upper": 1.1025824044364925
+        },
+        {
+          "costs": {
+            "focus_exponent": 16.0,
+            "global_gain": 1.1608463045012283
+          },
+          "evidence": "exact_scalar_reduction",
+          "name": "covariance_eps_1e-16",
+          "upper": 2.8916347055381837
+        },
+        {
+          "costs": {
+            "focus_exponent": 12.0,
+            "global_gain": 1.1607686024671058
+          },
+          "evidence": "exact_scalar_reduction",
+          "name": "covariance_eps_1e-12",
+          "upper": 2.9245407449221963
+        },
+        {
+          "costs": {
+            "focus_exponent": 8.0,
+            "global_gain": 1.160768602466301
+          },
+          "evidence": "exact_scalar_reduction",
+          "name": "covariance_eps_1e-08",
+          "upper": 2.9245441218957327
+        },
+        {
+          "costs": {
+            "focus_exponent": 4.0,
+            "global_gain": 1.160768602466301
+          },
+          "evidence": "exact_scalar_reduction",
+          "name": "covariance_eps_1e-04",
+          "upper": 2.924544122233431
+        },
+        {
+          "costs": {
+            "focus_exponent": 0.0,
+            "global_gain": 1.1607686024663013
+          },
+          "evidence": "exact_scalar_reduction",
+          "name": "covariance_eps_1e+00",
+          "upper": 2.9245441222334647
+        }
+      ],
+      "selected": {
+        "costs": {
+          "focus_exponent": 24.0,
+          "global_gain": 489.96015138883155
+        },
+        "evidence": "exact_scalar_reduction",
+        "name": "covariance_eps_1e-24",
+        "upper": 1.001027284256585
+      },
+      "target_gain": 1.01
+    }
+  ],
+  "depth_triage": {
+    "exact_rings": [
+      {
+        "depth_budget": 8,
+        "dimension": 16,
+        "horizon": 8,
+        "lower_bound": 1.0,
+        "reason": "the certified projection lower bound excludes the displayed approximation budget",
+        "status": "red"
+      }
+    ],
+    "jittered_rings": [
+      {
+        "jitter": 0.0,
+        "observed_error": 1.0,
+        "reason": "the certified projection lower bound excludes the displayed approximation budget",
+        "spectral_lower_bound": 1.0,
+        "status": "red"
+      }
+    ],
+    "phase_arcs": [
+      {
+        "arc_width_radians": 0.0,
+        "depth_budget": 8,
+        "reason": "an observed depth meets the diagnostic target",
+        "required_depth": 1,
+        "status": "green"
+      },
+      {
+        "arc_width_radians": 0.03,
+        "depth_budget": 8,
+        "reason": "an observed depth meets the diagnostic target",
+        "required_depth": 2,
+        "status": "green"
+      },
+      {
+        "arc_width_radians": 0.1,
+        "depth_budget": 8,
+        "reason": "an observed depth meets the diagnostic target",
+        "required_depth": 3,
+        "status": "green"
+      },
+      {
+        "arc_width_radians": 0.3,
+        "depth_budget": 8,
+        "reason": "an observed depth meets the diagnostic target",
+        "required_depth": 7,
+        "status": "green"
+      },
+      {
+        "arc_width_radians": 1.0,
+        "depth_budget": 8,
+        "reason": "stored diagnostics miss the budget, but no analytic lower bound is claimed",
+        "required_depth": 16,
+        "status": "amber"
+      },
+      {
+        "arc_width_radians": 3.0,
+        "depth_budget": 8,
+        "reason": "stored diagnostics miss the budget, but no analytic lower bound is claimed",
+        "required_depth": 28,
+        "status": "amber"
+      },
+      {
+        "arc_width_radians": 6.283185307179586,
+        "depth_budget": 8,
+        "reason": "stored diagnostics miss the budget, but no analytic lower bound is claimed",
+        "required_depth": 33,
+        "status": "amber"
+      }
+    ],
+    "target_projection_error": 0.1
+  },
+  "evidence_level": "analytic portfolio logic over archived exact, Arb, and binary64 inputs; source claim levels are preserved per row",
+  "phase_horizon_portfolio": [
+    {
+      "claim_level": "selection among archived binary64 diagnostics; not a production validated upper",
+      "geometric_horizon_for_same_tolerance": 8,
+      "geometric_over_selected_horizon": 2.0,
+      "pareto_frontier": [
+        {
+          "costs": {
+            "horizon": 32.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L32",
+          "upper": 0.9999999999999978
+        },
+        {
+          "costs": {
+            "horizon": 16.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L16",
+          "upper": 1.0000000008118621
+        },
+        {
+          "costs": {
+            "horizon": 8.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L8",
+          "upper": 1.0000331950504537
+        },
+        {
+          "costs": {
+            "horizon": 4.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L4",
+          "upper": 1.007252261273035
+        },
+        {
+          "costs": {
+            "horizon": 2.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L2",
+          "upper": 1.1382575411360607
+        },
+        {
+          "costs": {
+            "horizon": 0.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L0",
+          "upper": 1.2964292577842484
+        }
+      ],
+      "selected": {
+        "costs": {
+          "horizon": 4.0
+        },
+        "evidence": "archived_binary64_phase_diagnostic",
+        "name": "phase_L4",
+        "upper": 1.007252261273035
+      },
+      "side": "left",
+      "sigma": 0.16,
+      "target_gain": 1.01
+    },
+    {
+      "claim_level": "selection among archived binary64 diagnostics; not a production validated upper",
+      "geometric_horizon_for_same_tolerance": 9,
+      "geometric_over_selected_horizon": 2.25,
+      "pareto_frontier": [
+        {
+          "costs": {
+            "horizon": 32.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L32",
+          "upper": 0.9999999999999998
+        },
+        {
+          "costs": {
+            "horizon": 16.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L16",
+          "upper": 1.0000000009562626
+        },
+        {
+          "costs": {
+            "horizon": 8.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L8",
+          "upper": 1.0000393897209794
+        },
+        {
+          "costs": {
+            "horizon": 4.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L4",
+          "upper": 1.0082739727413326
+        },
+        {
+          "costs": {
+            "horizon": 2.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L2",
+          "upper": 1.1365365759353618
+        },
+        {
+          "costs": {
+            "horizon": 1.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L1",
+          "upper": 1.47652657450114
+        },
+        {
+          "costs": {
+            "horizon": 0.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L0",
+          "upper": 1.5142681359397085
+        }
+      ],
+      "selected": {
+        "costs": {
+          "horizon": 4.0
+        },
+        "evidence": "archived_binary64_phase_diagnostic",
+        "name": "phase_L4",
+        "upper": 1.0082739727413326
+      },
+      "side": "right",
+      "sigma": 0.16,
+      "target_gain": 1.01
+    }
+  ],
+  "route_consequence": "The candidate architecture is now explicit: try finite phase fusion, prune impossible block depths with a lower gate, then optimize the surviving block/covariance upper on a Pareto ledger.",
+  "status": "rh69_adaptive_upper_lower_certificate_portfolio",
+  "theorem_boundary": {
+    "conditional_budget_closure": true,
+    "finite_prefix_tail_composition": true,
+    "green_red_amber_triage": true,
+    "production_upper_validation": false,
+    "safe_pareto_pruning": true,
+    "stage_A1_closed": false
+  }
+}

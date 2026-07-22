@@ -1,0 +1,1163 @@
+{
+  "arb": {
+    "focused_covariance_meets_physical_and_global_budgets_certified": true,
+    "fourier_lower_gate_rejects_ten_percent_budget_certified": true,
+    "geometric_first_horizon_certified": true,
+    "precision_bits": 256,
+    "production_interval_audit_executed": false
+  },
+  "portfolio": {
+    "covariance_rows": [
+      {
+        "name": "exact_diagonal_cancellation",
+        "pareto_frontier": [
+          {
+            "costs": {
+              "focus_exponent": 28.0,
+              "global_gain": 48932.79383081463
+            },
+            "evidence": "exact_scalar_reduction",
+            "name": "covariance_eps_1e-28",
+            "upper": 1.0000102728440292
+          },
+          {
+            "costs": {
+              "focus_exponent": 24.0,
+              "global_gain": 489.96015138883155
+            },
+            "evidence": "exact_scalar_reduction",
+            "name": "covariance_eps_1e-24",
+            "upper": 1.001027284256585
+          },
+          {
+            "costs": {
+              "focus_exponent": 20.0,
+              "global_gain": 5.552491374029158
+            },
+            "evidence": "exact_scalar_reduction",
+            "name": "covariance_eps_1e-20",
+            "upper": 1.1025824044364925
+          },
+          {
+            "costs": {
+              "focus_exponent": 16.0,
+              "global_gain": 1.1608463045012283
+            },
+            "evidence": "exact_scalar_reduction",
+            "name": "covariance_eps_1e-16",
+            "upper": 2.8916347055381837
+          },
+          {
+            "costs": {
+              "focus_exponent": 12.0,
+              "global_gain": 1.1607686024671058
+            },
+            "evidence": "exact_scalar_reduction",
+            "name": "covariance_eps_1e-12",
+            "upper": 2.9245407449221963
+          },
+          {
+            "costs": {
+              "focus_exponent": 8.0,
+              "global_gain": 1.160768602466301
+            },
+            "evidence": "exact_scalar_reduction",
+            "name": "covariance_eps_1e-08",
+            "upper": 2.9245441218957327
+          },
+          {
+            "costs": {
+              "focus_exponent": 4.0,
+              "global_gain": 1.160768602466301
+            },
+            "evidence": "exact_scalar_reduction",
+            "name": "covariance_eps_1e-04",
+            "upper": 2.924544122233431
+          },
+          {
+            "costs": {
+              "focus_exponent": 0.0,
+              "global_gain": 1.1607686024663013
+            },
+            "evidence": "exact_scalar_reduction",
+            "name": "covariance_eps_1e+00",
+            "upper": 2.9245441222334647
+          }
+        ],
+        "selected": {
+          "costs": {
+            "focus_exponent": 24.0,
+            "global_gain": 489.96015138883155
+          },
+          "evidence": "exact_scalar_reduction",
+          "name": "covariance_eps_1e-24",
+          "upper": 1.001027284256585
+        },
+        "target_gain": 1.01
+      },
+      {
+        "name": "nonnormal_three_packet_chain",
+        "pareto_frontier": [
+          {
+            "costs": {
+              "focus_exponent": 8.0,
+              "global_gain": 3.9343297510499418
+            },
+            "evidence": "binary64_block_diagnostic",
+            "name": "covariance_eps_1e-08",
+            "upper": 3.8991447885764603
+          },
+          {
+            "costs": {
+              "focus_exponent": 6.0,
+              "global_gain": 3.934328761819725
+            },
+            "evidence": "binary64_block_diagnostic",
+            "name": "covariance_eps_1e-06",
+            "upper": 3.8991447885787247
+          },
+          {
+            "costs": {
+              "focus_exponent": 4.0,
+              "global_gain": 3.934229951072261
+            },
+            "evidence": "binary64_block_diagnostic",
+            "name": "covariance_eps_1e-04",
+            "upper": 3.8991448111650104
+          },
+          {
+            "costs": {
+              "focus_exponent": 2.0,
+              "global_gain": 3.925351482919596
+            },
+            "evidence": "binary64_block_diagnostic",
+            "name": "covariance_eps_1e-02",
+            "upper": 3.8993404991133755
+          },
+          {
+            "costs": {
+              "focus_exponent": 0.0,
+              "global_gain": 3.851919450527246
+            },
+            "evidence": "binary64_block_diagnostic",
+            "name": "covariance_eps_1e+00",
+            "upper": 3.9500490397295116
+          }
+        ],
+        "selected": {
+          "costs": {
+            "focus_exponent": 0.0,
+            "global_gain": 3.851919450527246
+          },
+          "evidence": "binary64_block_diagnostic",
+          "name": "covariance_eps_1e+00",
+          "upper": 3.9500490397295116
+        },
+        "target_gain": 4.0
+      },
+      {
+        "name": "six_mode_complex_phase_packets",
+        "pareto_frontier": [
+          {
+            "costs": {
+              "focus_exponent": 8.0,
+              "global_gain": 1.1548990933698273
+            },
+            "evidence": "binary64_block_diagnostic",
+            "name": "covariance_eps_1e-08",
+            "upper": 1.288470779418554
+          },
+          {
+            "costs": {
+              "focus_exponent": 10.0,
+              "global_gain": 1.1548990931843979
+            },
+            "evidence": "binary64_block_diagnostic",
+            "name": "covariance_eps_1e-10",
+            "upper": 1.2884707794185541
+          },
+          {
+            "costs": {
+              "focus_exponent": 6.0,
+              "global_gain": 1.1548991119128067
+            },
+            "evidence": "binary64_block_diagnostic",
+            "name": "covariance_eps_1e-06",
+            "upper": 1.2884707794185823
+          },
+          {
+            "costs": {
+              "focus_exponent": 4.0,
+              "global_gain": 1.154900966225049
+            },
+            "evidence": "binary64_block_diagnostic",
+            "name": "covariance_eps_1e-04",
+            "upper": 1.2884707796983146
+          },
+          {
+            "costs": {
+              "focus_exponent": 2.0,
+              "global_gain": 1.1550865178670173
+            },
+            "evidence": "binary64_block_diagnostic",
+            "name": "covariance_eps_1e-02",
+            "upper": 1.288473517209117
+          },
+          {
+            "costs": {
+              "focus_exponent": 0.0,
+              "global_gain": 1.1692295363064311
+            },
+            "evidence": "binary64_block_diagnostic",
+            "name": "covariance_eps_1e+00",
+            "upper": 1.295052332409365
+          }
+        ],
+        "selected": {
+          "costs": {
+            "focus_exponent": 0.0,
+            "global_gain": 1.1692295363064311
+          },
+          "evidence": "binary64_block_diagnostic",
+          "name": "covariance_eps_1e+00",
+          "upper": 1.295052332409365
+        },
+        "target_gain": 1.3
+      }
+    ],
+    "depth_triage": {
+      "exact_rings": [
+        {
+          "depth_budget": 8,
+          "dimension": 16,
+          "horizon": 8,
+          "lower_bound": 1.0,
+          "reason": "the certified projection lower bound excludes the displayed approximation budget",
+          "status": "red"
+        },
+        {
+          "depth_budget": 16,
+          "dimension": 32,
+          "horizon": 16,
+          "lower_bound": 1.0,
+          "reason": "the certified projection lower bound excludes the displayed approximation budget",
+          "status": "red"
+        },
+        {
+          "depth_budget": 32,
+          "dimension": 64,
+          "horizon": 32,
+          "lower_bound": 1.0,
+          "reason": "the certified projection lower bound excludes the displayed approximation budget",
+          "status": "red"
+        },
+        {
+          "depth_budget": 64,
+          "dimension": 128,
+          "horizon": 64,
+          "lower_bound": 1.0,
+          "reason": "the certified projection lower bound excludes the displayed approximation budget",
+          "status": "red"
+        }
+      ],
+      "jittered_rings": [
+        {
+          "jitter": 0.0,
+          "observed_error": 1.0,
+          "reason": "the certified projection lower bound excludes the displayed approximation budget",
+          "spectral_lower_bound": 1.0,
+          "status": "red"
+        },
+        {
+          "jitter": 0.05,
+          "observed_error": 0.9998524028557999,
+          "reason": "the certified projection lower bound excludes the displayed approximation budget",
+          "spectral_lower_bound": 0.9998478472204975,
+          "status": "red"
+        },
+        {
+          "jitter": 0.2,
+          "observed_error": 0.9976358075259899,
+          "reason": "the certified projection lower bound excludes the displayed approximation budget",
+          "spectral_lower_bound": 0.9973089838696566,
+          "status": "red"
+        },
+        {
+          "jitter": 0.5,
+          "observed_error": 0.9851254530762483,
+          "reason": "the certified projection lower bound excludes the displayed approximation budget",
+          "spectral_lower_bound": 0.9784844447084445,
+          "status": "red"
+        }
+      ],
+      "phase_arcs": [
+        {
+          "arc_width_radians": 0.0,
+          "depth_budget": 8,
+          "reason": "an observed depth meets the diagnostic target",
+          "required_depth": 1,
+          "status": "green"
+        },
+        {
+          "arc_width_radians": 0.03,
+          "depth_budget": 8,
+          "reason": "an observed depth meets the diagnostic target",
+          "required_depth": 2,
+          "status": "green"
+        },
+        {
+          "arc_width_radians": 0.1,
+          "depth_budget": 8,
+          "reason": "an observed depth meets the diagnostic target",
+          "required_depth": 3,
+          "status": "green"
+        },
+        {
+          "arc_width_radians": 0.3,
+          "depth_budget": 8,
+          "reason": "an observed depth meets the diagnostic target",
+          "required_depth": 7,
+          "status": "green"
+        },
+        {
+          "arc_width_radians": 1.0,
+          "depth_budget": 8,
+          "reason": "stored diagnostics miss the budget, but no analytic lower bound is claimed",
+          "required_depth": 16,
+          "status": "amber"
+        },
+        {
+          "arc_width_radians": 3.0,
+          "depth_budget": 8,
+          "reason": "stored diagnostics miss the budget, but no analytic lower bound is claimed",
+          "required_depth": 28,
+          "status": "amber"
+        },
+        {
+          "arc_width_radians": 6.283185307179586,
+          "depth_budget": 8,
+          "reason": "stored diagnostics miss the budget, but no analytic lower bound is claimed",
+          "required_depth": 33,
+          "status": "amber"
+        }
+      ],
+      "target_projection_error": 0.1
+    },
+    "phase_horizon_rows": [
+      {
+        "claim_level": "selection among archived binary64 diagnostics; not a production validated upper",
+        "geometric_horizon_for_same_tolerance": 8,
+        "geometric_over_selected_horizon": 2.0,
+        "pareto_frontier": [
+          {
+            "costs": {
+              "horizon": 32.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L32",
+            "upper": 0.9999999999999978
+          },
+          {
+            "costs": {
+              "horizon": 16.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L16",
+            "upper": 1.0000000008118621
+          },
+          {
+            "costs": {
+              "horizon": 8.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L8",
+            "upper": 1.0000331950504537
+          },
+          {
+            "costs": {
+              "horizon": 4.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L4",
+            "upper": 1.007252261273035
+          },
+          {
+            "costs": {
+              "horizon": 2.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L2",
+            "upper": 1.1382575411360607
+          },
+          {
+            "costs": {
+              "horizon": 0.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L0",
+            "upper": 1.2964292577842484
+          }
+        ],
+        "selected": {
+          "costs": {
+            "horizon": 4.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L4",
+          "upper": 1.007252261273035
+        },
+        "side": "left",
+        "sigma": 0.16,
+        "target_gain": 1.01
+      },
+      {
+        "claim_level": "selection among archived binary64 diagnostics; not a production validated upper",
+        "geometric_horizon_for_same_tolerance": 9,
+        "geometric_over_selected_horizon": 2.25,
+        "pareto_frontier": [
+          {
+            "costs": {
+              "horizon": 32.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L32",
+            "upper": 0.9999999999999998
+          },
+          {
+            "costs": {
+              "horizon": 16.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L16",
+            "upper": 1.0000000009562626
+          },
+          {
+            "costs": {
+              "horizon": 8.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L8",
+            "upper": 1.0000393897209794
+          },
+          {
+            "costs": {
+              "horizon": 4.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L4",
+            "upper": 1.0082739727413326
+          },
+          {
+            "costs": {
+              "horizon": 2.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L2",
+            "upper": 1.1365365759353618
+          },
+          {
+            "costs": {
+              "horizon": 1.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L1",
+            "upper": 1.47652657450114
+          },
+          {
+            "costs": {
+              "horizon": 0.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L0",
+            "upper": 1.5142681359397085
+          }
+        ],
+        "selected": {
+          "costs": {
+            "horizon": 4.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L4",
+          "upper": 1.0082739727413326
+        },
+        "side": "right",
+        "sigma": 0.16,
+        "target_gain": 1.01
+      },
+      {
+        "claim_level": "selection among archived binary64 diagnostics; not a production validated upper",
+        "geometric_horizon_for_same_tolerance": 22,
+        "geometric_over_selected_horizon": 2.75,
+        "pareto_frontier": [
+          {
+            "costs": {
+              "horizon": 64.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L64",
+            "upper": 1.0000000000000013
+          },
+          {
+            "costs": {
+              "horizon": 32.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L32",
+            "upper": 1.0000000039407118
+          },
+          {
+            "costs": {
+              "horizon": 16.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L16",
+            "upper": 1.0000676862724107
+          },
+          {
+            "costs": {
+              "horizon": 8.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L8",
+            "upper": 1.008909628091507
+          },
+          {
+            "costs": {
+              "horizon": 4.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L4",
+            "upper": 1.107280880631546
+          },
+          {
+            "costs": {
+              "horizon": 2.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L2",
+            "upper": 1.439069162191959
+          },
+          {
+            "costs": {
+              "horizon": 0.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L0",
+            "upper": 1.8240960003104405
+          }
+        ],
+        "selected": {
+          "costs": {
+            "horizon": 8.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L8",
+          "upper": 1.008909628091507
+        },
+        "side": "left",
+        "sigma": 0.08,
+        "target_gain": 1.01
+      },
+      {
+        "claim_level": "selection among archived binary64 diagnostics; not a production validated upper",
+        "geometric_horizon_for_same_tolerance": 24,
+        "geometric_over_selected_horizon": 3.0,
+        "pareto_frontier": [
+          {
+            "costs": {
+              "horizon": 64.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L64",
+            "upper": 1.0000000000000004
+          },
+          {
+            "costs": {
+              "horizon": 32.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L32",
+            "upper": 1.000000003271573
+          },
+          {
+            "costs": {
+              "horizon": 16.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L16",
+            "upper": 1.0000659115172488
+          },
+          {
+            "costs": {
+              "horizon": 8.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L8",
+            "upper": 1.0094595051520538
+          },
+          {
+            "costs": {
+              "horizon": 4.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L4",
+            "upper": 1.1271450474642963
+          },
+          {
+            "costs": {
+              "horizon": 2.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L2",
+            "upper": 1.5144556799632705
+          },
+          {
+            "costs": {
+              "horizon": 1.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L1",
+            "upper": 1.889240652554372
+          },
+          {
+            "costs": {
+              "horizon": 0.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L0",
+            "upper": 1.9210661020537134
+          }
+        ],
+        "selected": {
+          "costs": {
+            "horizon": 8.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L8",
+          "upper": 1.0094595051520538
+        },
+        "side": "right",
+        "sigma": 0.08,
+        "target_gain": 1.01
+      },
+      {
+        "claim_level": "selection among archived binary64 diagnostics; not a production validated upper",
+        "geometric_horizon_for_same_tolerance": 67,
+        "geometric_over_selected_horizon": 4.1875,
+        "pareto_frontier": [
+          {
+            "costs": {
+              "horizon": 64.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L64",
+            "upper": 1.0000000000174676
+          },
+          {
+            "costs": {
+              "horizon": 32.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L32",
+            "upper": 1.0000053925753416
+          },
+          {
+            "costs": {
+              "horizon": 16.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L16",
+            "upper": 1.0029919861458283
+          },
+          {
+            "costs": {
+              "horizon": 8.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L8",
+            "upper": 1.0689700567983658
+          },
+          {
+            "costs": {
+              "horizon": 4.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L4",
+            "upper": 1.3560837870924332
+          },
+          {
+            "costs": {
+              "horizon": 2.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L2",
+            "upper": 1.8062258419358577
+          },
+          {
+            "costs": {
+              "horizon": 0.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L0",
+            "upper": 2.1706885460555503
+          }
+        ],
+        "selected": {
+          "costs": {
+            "horizon": 16.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L16",
+          "upper": 1.0029919861458283
+        },
+        "side": "left",
+        "sigma": 0.04,
+        "target_gain": 1.01
+      },
+      {
+        "claim_level": "selection among archived binary64 diagnostics; not a production validated upper",
+        "geometric_horizon_for_same_tolerance": 69,
+        "geometric_over_selected_horizon": 4.3125,
+        "pareto_frontier": [
+          {
+            "costs": {
+              "horizon": 64.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L64",
+            "upper": 1.0000000000358205
+          },
+          {
+            "costs": {
+              "horizon": 32.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L32",
+            "upper": 1.0000098024206088
+          },
+          {
+            "costs": {
+              "horizon": 16.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L16",
+            "upper": 1.0050623670689898
+          },
+          {
+            "costs": {
+              "horizon": 8.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L8",
+            "upper": 1.107289440433317
+          },
+          {
+            "costs": {
+              "horizon": 4.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L4",
+            "upper": 1.5456989398513763
+          },
+          {
+            "costs": {
+              "horizon": 2.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L2",
+            "upper": 2.051312190650549
+          },
+          {
+            "costs": {
+              "horizon": 1.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L1",
+            "upper": 2.466143762032064
+          },
+          {
+            "costs": {
+              "horizon": 0.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L0",
+            "upper": 2.7482160353534337
+          }
+        ],
+        "selected": {
+          "costs": {
+            "horizon": 16.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L16",
+          "upper": 1.0050623670689898
+        },
+        "side": "right",
+        "sigma": 0.04,
+        "target_gain": 1.01
+      },
+      {
+        "claim_level": "selection among archived binary64 diagnostics; not a production validated upper",
+        "geometric_horizon_for_same_tolerance": 220,
+        "geometric_over_selected_horizon": 6.875,
+        "pareto_frontier": [
+          {
+            "costs": {
+              "horizon": 64.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L64",
+            "upper": 1.0000000873671875
+          },
+          {
+            "costs": {
+              "horizon": 32.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L32",
+            "upper": 1.0003484224731407
+          },
+          {
+            "costs": {
+              "horizon": 16.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L16",
+            "upper": 1.0221996478122009
+          },
+          {
+            "costs": {
+              "horizon": 8.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L8",
+            "upper": 1.2009962640330665
+          },
+          {
+            "costs": {
+              "horizon": 4.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L4",
+            "upper": 1.6318673940086805
+          },
+          {
+            "costs": {
+              "horizon": 2.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L2",
+            "upper": 2.3393744715180196
+          },
+          {
+            "costs": {
+              "horizon": 1.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L1",
+            "upper": 2.7986962055563143
+          },
+          {
+            "costs": {
+              "horizon": 0.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L0",
+            "upper": 2.827416033546806
+          }
+        ],
+        "selected": {
+          "costs": {
+            "horizon": 32.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L32",
+          "upper": 1.0003484224731407
+        },
+        "side": "left",
+        "sigma": 0.02,
+        "target_gain": 1.01
+      },
+      {
+        "claim_level": "selection among archived binary64 diagnostics; not a production validated upper",
+        "geometric_horizon_for_same_tolerance": 165,
+        "geometric_over_selected_horizon": 5.15625,
+        "pareto_frontier": [
+          {
+            "costs": {
+              "horizon": 64.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L64",
+            "upper": 1.0000001353575019
+          },
+          {
+            "costs": {
+              "horizon": 32.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L32",
+            "upper": 1.000577193955375
+          },
+          {
+            "costs": {
+              "horizon": 16.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L16",
+            "upper": 1.039812511421126
+          },
+          {
+            "costs": {
+              "horizon": 8.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L8",
+            "upper": 1.3475564404833116
+          },
+          {
+            "costs": {
+              "horizon": 4.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L4",
+            "upper": 2.2392462795815256
+          },
+          {
+            "costs": {
+              "horizon": 2.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L2",
+            "upper": 3.129748225567253
+          },
+          {
+            "costs": {
+              "horizon": 1.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L1",
+            "upper": 3.7699887482983363
+          },
+          {
+            "costs": {
+              "horizon": 0.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L0",
+            "upper": 4.606115375566453
+          }
+        ],
+        "selected": {
+          "costs": {
+            "horizon": 32.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L32",
+          "upper": 1.000577193955375
+        },
+        "side": "right",
+        "sigma": 0.02,
+        "target_gain": 1.01
+      },
+      {
+        "claim_level": "selection among archived binary64 diagnostics; not a production validated upper",
+        "geometric_horizon_for_same_tolerance": 1111,
+        "geometric_over_selected_horizon": 34.71875,
+        "pareto_frontier": [
+          {
+            "costs": {
+              "horizon": 64.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L64",
+            "upper": 1.0000028843153341
+          },
+          {
+            "costs": {
+              "horizon": 32.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L32",
+            "upper": 1.004694552980059
+          },
+          {
+            "costs": {
+              "horizon": 16.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L16",
+            "upper": 1.1996822570073113
+          },
+          {
+            "costs": {
+              "horizon": 8.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L8",
+            "upper": 2.3252132300787234
+          },
+          {
+            "costs": {
+              "horizon": 4.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L4",
+            "upper": 5.02604934463092
+          },
+          {
+            "costs": {
+              "horizon": 2.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L2",
+            "upper": 8.779635575909746
+          },
+          {
+            "costs": {
+              "horizon": 1.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L1",
+            "upper": 11.012205484847097
+          },
+          {
+            "costs": {
+              "horizon": 0.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L0",
+            "upper": 13.09169632716973
+          }
+        ],
+        "selected": {
+          "costs": {
+            "horizon": 32.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L32",
+          "upper": 1.004694552980059
+        },
+        "side": "left",
+        "sigma": 0.01,
+        "target_gain": 1.01
+      },
+      {
+        "claim_level": "selection among archived binary64 diagnostics; not a production validated upper",
+        "geometric_horizon_for_same_tolerance": 307,
+        "geometric_over_selected_horizon": 9.59375,
+        "pareto_frontier": [
+          {
+            "costs": {
+              "horizon": 64.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L64",
+            "upper": 1.0000012995300376
+          },
+          {
+            "costs": {
+              "horizon": 32.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L32",
+            "upper": 1.0021691301039692
+          },
+          {
+            "costs": {
+              "horizon": 16.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L16",
+            "upper": 1.0939225451948842
+          },
+          {
+            "costs": {
+              "horizon": 8.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L8",
+            "upper": 1.7148228895219002
+          },
+          {
+            "costs": {
+              "horizon": 4.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L4",
+            "upper": 3.4278575476367346
+          },
+          {
+            "costs": {
+              "horizon": 2.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L2",
+            "upper": 4.710674739523093
+          },
+          {
+            "costs": {
+              "horizon": 1.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L1",
+            "upper": 5.643095399687182
+          },
+          {
+            "costs": {
+              "horizon": 0.0
+            },
+            "evidence": "archived_binary64_phase_diagnostic",
+            "name": "phase_L0",
+            "upper": 6.895503920411783
+          }
+        ],
+        "selected": {
+          "costs": {
+            "horizon": 32.0
+          },
+          "evidence": "archived_binary64_phase_diagnostic",
+          "name": "phase_L32",
+          "upper": 1.0021691301039692
+        },
+        "side": "right",
+        "sigma": 0.01,
+        "target_gain": 1.01
+      }
+    ]
+  },
+  "program_boundary": {
+    "asymptotic_phase_compression": false,
+    "hilbert_polya_operator": false,
+    "physical_covariance_theorem": false,
+    "production_interval_upper_portfolio": false,
+    "stage_A1_closed": false,
+    "stage_A4_unconditional_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "edc0f305a8e021cd0c100a30cd2e601c77b965a68d5614105ffbf24a5a461fc3",
+    "README.md": "e7f27ce13ed9491918a9f104214a6facc65f3604d054a894ffeb93eddbe5b264",
+    "adaptive-certificate-portfolio.pdf": "00ccb7dd8e5a9273d88ec97be898fa25f9e8b4113e587efd5aac1d5ee2217b7a",
+    "figures/adaptive_certificate_portfolio.pdf": "5adc785ae9dea32061e1e9a9ea586d993efec2ddf013e2bff4a6370a14a8a389",
+    "figures/adaptive_certificate_portfolio.png": "47c3fb6fa50fee91e02badbe2119626376dd48e9e982ff24b854966007dd72b9",
+    "main.pdf": "00ccb7dd8e5a9273d88ec97be898fa25f9e8b4113e587efd5aac1d5ee2217b7a",
+    "main.tex": "90015def2ba3643d71eee170f91fd9f327e19adc70e3955d6c6f71e31c48471e",
+    "pyproject.toml": "c5a58d3766db719858395c71cd99b78389448735dc4b51e394ee5cc71541c338",
+    "references.bib": "5943545e8ba5754e2134c49093555e0a9b02358ff580ff8af07afc4e6adc1569",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "result_hashes": {
+    "results/arb_portfolio_audit.json": "8035821072a4f8155b600c2a94ee5906e3383b5951092834d820d9aae20620b0",
+    "results/certificate_portfolio.json": "37a1a654017200514c5eb27fa67cf6d29c8df4cf8edfedf4301f451daf02a08e",
+    "results/certificate_portfolio_smoke.json": "9413a52592460aacaed5047e7d703576bf4f160409b7897cd43aa27cc332561e",
+    "results/dependency_manifest.json": "ed18b4d685775b3b9e6c3332276631c9f50c2424025c049b6dff4fb957a5ebaa"
+  },
+  "route_consequence": "The candidate architecture is now explicit: try finite phase fusion, prune impossible block depths with a lower gate, then optimize the surviving block/covariance upper on a Pareto ledger.",
+  "status": "rh69_adaptive_upper_lower_certificate_portfolio_audit",
+  "theorem": {
+    "adaptive_finite_prefix_tail_composition": true,
+    "conditional_polylogarithmic_ledger": true,
+    "safe_pareto_pruning": true,
+    "three_way_triage_soundness": true
+  }
+}

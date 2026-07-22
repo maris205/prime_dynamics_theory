@@ -1,0 +1,24 @@
+{
+  "covariance_branch": {
+    "global_gain": "[489.96015138883068202915818148817840944879528933506357417562080011573318897 +/- 6.15e-72]",
+    "physical_gain": "[1.001027284256585142205545103455119126287818778032518443879323963888268362567 +/- 6.01e-76]"
+  },
+  "evidence_level": "256-bit Arb arithmetic for one geometric, one covariance, and one exact lower-gate branch; not a production portfolio audit",
+  "focused_covariance_meets_physical_and_global_budgets_certified": true,
+  "fourier_lower_gate_rejects_ten_percent_budget_certified": true,
+  "geometric_branch": {
+    "at_horizon": "[0.00099314779592085674307501692172884992453722209232463062866340364334957801561 +/- 3.58e-78]",
+    "before_horizon": "[0.00100317959183924923542931002194833325710830514376225316026606428621169496526 +/- 3.38e-78]",
+    "contraction": "[0.9900000000000000000000000000000000000000000000000000000000000000000000000000 +/- 6.24e-78]",
+    "selected_horizon": 688,
+    "tolerance": "[0.001000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 7.86e-81]"
+  },
+  "geometric_first_horizon_certified": true,
+  "lower_gate_branch": {
+    "fourier_ring_projection_lower": "1.000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "target": "0.1"
+  },
+  "precision_bits": 256,
+  "production_interval_audit_executed": false,
+  "status": "arb_exact_adaptive_portfolio_branch_audit"
+}
