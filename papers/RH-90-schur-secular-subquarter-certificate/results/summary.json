@@ -1,0 +1,50 @@
+{
+  "audit": {
+    "channel_count": 10,
+    "correction_needed_count": 9,
+    "maximum_enriched_orthogonality_defect": 7.827523280827832e-16,
+    "maximum_interval_corrected_contraction": 0.23849282013306503,
+    "maximum_linear_solve_dimension": 7,
+    "maximum_trial_system_condition": 6130895741034.862,
+    "minimum_gain_to_required_ratio": 1.0039185181900796,
+    "minimum_negative_schur_margin": 2.9602605549241444e-16,
+    "predictor_already_green_count": 1,
+    "scale_count": 5,
+    "schur_negative_count": 9
+  },
+  "program_boundary": {
+    "full_reference_packet_removed_from_finite_certificate": true,
+    "hilbert_polya_operator": false,
+    "riemann_hypothesis": false,
+    "schur_trial_gain_certificate": true,
+    "stage_A4_unconditional_closed": false,
+    "target_contraction_corollary": true,
+    "ten_channel_subquarter_contraction_validated": true,
+    "uniform_schur_margin_proved": false,
+    "uniform_stage_A1_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "25079c79c5de07840d3b99d5e7fd5b5545cefe0d7225064097c88cd94c967bdf",
+    "figures/schur_secular_subquarter_certificate.pdf": "5b76ed3f7ae51e101b65327d530583d5cd6008459fbc9fcb0f289d5a07f74086",
+    "figures/schur_secular_subquarter_certificate.png": "12ba40a969b677ec28164b8150e70a88b1bbac501713e227b0ceebf5365e748c",
+    "main.pdf": "aef98d53f44bdd119da64fe49dd2a1e975df6478f5775a68f8da78dfa492b6bd",
+    "main.tex": "2c50d75e47cd349af0dbac8c57fee756f7450d5ac423345333e8d0a72894b879",
+    "pyproject.toml": "dca47726bd9266486dfe9c155870c31986e943feca8ea3733ba929e5a35f6fe8",
+    "references.bib": "0195f2de62bdb74d2b87635506e09983d30019066d3fef29062f6900d8ee03dc",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1",
+    "schur-secular-subquarter-certificate.pdf": "aef98d53f44bdd119da64fe49dd2a1e975df6478f5775a68f8da78dfa492b6bd"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "9bf51a7f3f0139ec04f1186d2b82e6076363a995ca22fe19336dab6714f22526",
+    "results/schur_certificate_audit.json": "71783a81b8a7318ecbb413b12ad5d63a709fe84ebf81c975ace9bf9bb9fbf4e4",
+    "results/schur_certificate_smoke.json": "911406586ed487a74f8da15ef7cb2bc024c19c3c31de69153e2cc5639925fa3b"
+  },
+  "route_consequence": "The rank-one enriched correction no longer needs a full reference packet for finite certification. A single r-dimensional trial solve supplies a Schur quadratic; negativity proves enough Ritz gain to reach a prescribed contraction target. At rho=0.24, one channel is already green and all nine remaining Schur forms are rigorously negative, while direct corrected tails stay below target. The all-level wall is now a uniform sign estimate for an explicit small Schur trial form.",
+  "status": "rh90_schur_secular_subquarter_certificate_archived",
+  "theorem": {
+    "full_reference_packet_removed": true,
+    "schur_trial_gain_certificate": true,
+    "target_contraction_corollary": true
+  }
+}

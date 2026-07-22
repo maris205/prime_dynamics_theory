@@ -1,0 +1,39 @@
+{
+  "external_inputs": {
+    "rh88_predictor_summary": {
+      "path": "papers/RH-88-predictor-corrector-energy-contraction/results/summary.json",
+      "sha256": "06317d94cbb563673f2ee65c149ccc04e3e7d66f14e092d2ad0acb7358683e25"
+    },
+    "rh89_ritz_audit": {
+      "path": "papers/RH-89-rank-one-complement-ritz-correction/results/ritz_correction_audit.json",
+      "sha256": "e9dcd0ac98be8de601c7ebe3ad4d59b9ea34f249445ff01da80c601dd1bb3bf7"
+    },
+    "rh89_ritz_summary": {
+      "path": "papers/RH-89-rank-one-complement-ritz-correction/results/summary.json",
+      "sha256": "47df4ebdce158dc5357c69e7e1f47cf76028be56c1a99e79c60755540a11cd60"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "387a74e3ef498bee94ef7f85161699854b19775036dcdd011b330e8f4a641365",
+    "experiments/make_figures.py": "ad75781f3f90dccc905f0f512c5c049540f044b88a127521e0ef1147c3abff56",
+    "experiments/run_schur_certificate_audit.py": "fb34b7c770e904b5ad22b198e794ea0cc4a01587a0677873a958443fd02f52ce",
+    "experiments/verify_archive.py": "4aac64ea1da7e3b45470697f1242654af8adbd28138dffcc10e0495bf2308a2c",
+    "src/schur_certificate/__init__.py": "42051840f89f38abef7ac8d0adc20704089705fc060022c9608586a8b1406d2e",
+    "src/schur_certificate/bounds.py": "ae5cb9eb189425b0f9c4856847a059b1ca2a38f61b1ce7a9a6daf8d514ca2379",
+    "tests/test_archived_results.py": "a04df09804cdb6940e1ebce76ca2e3f7db7d348e60d2bebff0ef455bdc0ac022",
+    "tests/test_theory.py": "5729797a3128317e360291724ea2a89c5981fa53cdfe38880009ff1d96931fa2"
+  },
+  "publication_artifacts": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "25079c79c5de07840d3b99d5e7fd5b5545cefe0d7225064097c88cd94c967bdf",
+    "figures/schur_secular_subquarter_certificate.pdf": "5b76ed3f7ae51e101b65327d530583d5cd6008459fbc9fcb0f289d5a07f74086",
+    "figures/schur_secular_subquarter_certificate.png": "12ba40a969b677ec28164b8150e70a88b1bbac501713e227b0ceebf5365e748c",
+    "main.pdf": "aef98d53f44bdd119da64fe49dd2a1e975df6478f5775a68f8da78dfa492b6bd",
+    "main.tex": "2c50d75e47cd349af0dbac8c57fee756f7450d5ac423345333e8d0a72894b879",
+    "pyproject.toml": "dca47726bd9266486dfe9c155870c31986e943feca8ea3733ba929e5a35f6fe8",
+    "references.bib": "0195f2de62bdb74d2b87635506e09983d30019066d3fef29062f6900d8ee03dc",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1",
+    "schur-secular-subquarter-certificate.pdf": "aef98d53f44bdd119da64fe49dd2a1e975df6478f5775a68f8da78dfa492b6bd"
+  },
+  "status": "all_rh90_inputs_sources_and_publication_artifacts_hashed"
+}
