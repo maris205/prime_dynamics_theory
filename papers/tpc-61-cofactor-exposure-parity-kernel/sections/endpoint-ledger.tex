@@ -1,0 +1,266 @@
+\section{Critical-cutoff ledger and route decisions}
+\label{sec:tpc61-endpoint-ledger}
+
+The exposure and Gram identities are exact at every finite \(X\).  Their
+role in the endpoint argument is determined only after missing mass,
+restricted grouping, and the represented reference have been measured on
+the same carrier and with the same quantifier.  This section performs that
+comparison and records which numerical differences are genuine tests rather
+than additive losses.
+
+\subsection{The critical arithmetic wedge}
+
+At the smallest very-high cutoff allowed by the fixed support constants, put
+\begin{equation}
+ \theta_J:=\frac{133}{400},
+ \qquad
+ \lambda_L:=\frac{99979}{210000}.
+ \label{eq:tpc61-ledger-basic-exponents}
+\end{equation}
+Thus \(J=X^{\theta_J+o(1)}\), and a critical cofactor block has
+\(R=X^{\theta_J+o(1)}\).  The coefficient-blind residual determinant-ladder
+degree on that block has exponent
+\begin{equation}
+ \mu_{\rm res}^{\rm amb}
+ :=\lambda_L-\theta_J
+ =\frac{15077}{105000}
+ =0.143590\ldots .
+ \label{eq:tpc61-ledger-critical-residual-degree}
+\end{equation}
+This number is much larger than \(1/400\), but it is not by itself an
+endpoint loss.  In the mass--degree certificate it is multiplied by the
+missing mass before the reverse triangle inequality is applied.
+
+Suppose the missing set in the critical block has cardinality
+\begin{equation}
+ |E_m(R)|\le X^{e+o(1)}
+ \label{eq:tpc61-ledger-critical-missing-count}
+\end{equation}
+uniformly in the stated row class, and suppose the balanced-exposure
+hypothesis \(H_m^{\rm eff}\ge X^{\theta_J+o(1)}\) holds there.  Then
+\cref{cor:tpc61-dyadic-saving-exponent} gives the conditional missing-mass
+saving
+\begin{equation}
+ \sigma_{\rm cof}=\theta_J-e.
+ \label{eq:tpc61-ledger-critical-missing-saving}
+\end{equation}
+Consequently the residual degree and cofactor saving leave the algebraic
+window
+\begin{equation}
+ \boxed{
+ 2\theta_J-\lambda_L
+ =\frac{39671}{210000}
+ =0.188909\ldots .}
+ \label{eq:tpc61-ledger-residual-window}
+\end{equation}
+
+Let the actual residual-label erasure on this block satisfy
+\begin{equation}
+ \beta_{M,R}\le X^{\mu_{\rm erase}+o(1)},
+ \label{eq:tpc61-ledger-erasure-input}
+\end{equation}
+and let the represented map obey
+\begin{equation}
+ \|A_X\zeta\|^2
+ \ge X^{-\lambda_{\rm rep}+o(1)}\cD_H(\zeta)
+ \label{eq:tpc61-ledger-represented-input}
+\end{equation}
+in the same uniform or distinguished scope.  Paying the ambient residual
+degree, but only the restricted erasure norm, gives
+\begin{equation}
+ \frac{\|M_{X,R}\zeta\|^2}{\|A_X\zeta\|^2}
+ \le
+ X^{e+\mu_{\rm erase}+\lambda_{\rm rep}
+      -(2\theta_J-\lambda_L)+o(1)}.
+ \label{eq:tpc61-ledger-residual-product}
+\end{equation}
+Hence this certificate has zero fixed-power reassembly cost under the strict
+condition
+\begin{equation}
+ \boxed{
+ e+\mu_{\rm erase}+\lambda_{\rm rep}
+ <\frac{39671}{210000}.}
+ \label{eq:tpc61-ledger-residual-door}
+\end{equation}
+For \(O(\log X)\) compatible blocks, the same conclusion follows only when
+the corresponding exponent inequality holds block by block with one fixed
+positive margin \(\delta>0\).  Then each block norm is
+\(O(X^{-\delta/2+o(1)}\|A_X\zeta\|)\), and the triangle inequality over
+the logarithmic family remains \(o(\|A_X\zeta\|)\).  Mere pointwise
+strictness with a margin tending to zero is not a uniform asymptotic
+certificate.  None of the three hypotheses in
+\eqref{eq:tpc61-ledger-critical-missing-count}--%
+\eqref{eq:tpc61-ledger-represented-input} is proved by the numerical window
+itself.
+
+\subsection{Why the direct ambient door remains closed}
+
+The inherited coefficient-blind native degree has exponent \(267/400\).
+Even the smallest nonempty missing set at the critical cofactor scale has
+\(e=0\), so the balanced harmonic certificate saves at most
+\(\theta_J=133/400\).  A direct phase-blind payment therefore leaves
+\begin{equation}
+ \boxed{
+ \frac{267}{400}-\frac{133}{400}
+ =\frac{67}{200}>0.}
+ \label{eq:tpc61-ledger-direct-native-gap}
+\end{equation}
+This proves that the particular proof architecture which combines the best
+pure-cardinality missing saving with the full ambient native degree cannot
+make the perturbation \(o(1)\).  It does not lower-bound \(\kappa_M\), does
+not rule out cancellation in the parity kernel, and is not a loss to be
+entered into the final ledger.
+
+The residual window in \eqref{eq:tpc61-ledger-residual-window} and the direct
+gap in \eqref{eq:tpc61-ledger-direct-native-gap} therefore have different
+logical meanings.  The first is conditional room for a two-stage proof; the
+second closes one support-only proof.  Neither is an arithmetic lower bound
+for the full physical map.
+
+\subsection{The optimal one-stage effective-product test}
+
+The restricted Gram eliminates the need to commit in advance to the
+residual factorization.  Fix a reference diagonal \(\cD_{\rm ref}\) and
+suppose, in one declared scope,
+\begin{align}
+ \cD_M(\zeta)
+ &\le X^{-\sigma_M+o(1)}\cD_{\rm ref}(\zeta),
+ \label{eq:tpc61-ledger-missing-input}\\
+ \kappa_M
+ &\le X^{\nu_M+o(1)},
+ \label{eq:tpc61-ledger-kappa-input}\\
+ \|A_X\zeta\|^2
+ &\ge X^{-\lambda_{\rm rep}+o(1)}
+        \cD_{\rm ref}(\zeta).
+ \label{eq:tpc61-ledger-reference-input}
+\end{align}
+Then the exact perturbation parameter is bounded by
+\begin{equation}
+ q_X(\zeta)
+ :=\frac{\kappa_M\cD_M(\zeta)}{\|A_X\zeta\|^2}
+ \le X^{\nu_M+\lambda_{\rm rep}-\sigma_M+o(1)}.
+ \label{eq:tpc61-ledger-q-bound}
+\end{equation}
+Thus
+\begin{equation}
+ \boxed{
+ \sigma_M>\nu_M+\lambda_{\rm rep}
+ \quad\Longrightarrow\quad
+ \lambda_{\rm reasm}=0}
+ \label{eq:tpc61-ledger-zero-cost-test}
+\end{equation}
+for a coefficient-uniform statement, and the analogous conclusion holds
+with \(\kappa_M(\zeta_*)\) and \(\lambda_{\rm reasm,*}=0\) for one
+distinguished physical vector.  These scopes cannot be interchanged.
+
+At equality of exponents, one must use the actual quantity \(q_X\).  If
+\begin{equation}
+ 1-\sqrt{q_X(\zeta)}\ge X^{-a+o(1)},
+ \label{eq:tpc61-ledger-critical-margin}
+\end{equation}
+then the reverse-triangle certificate charges at most
+\begin{equation}
+ \lambda_{\rm reasm}\le2a
+ \label{eq:tpc61-ledger-critical-cost}
+\end{equation}
+in the matching scope.  If \(q_X\ge1\), that certificate is silent.  It
+does not imply destructive interference, because the exact cross term may
+still be favorable and the TPC--60 shorted-Gram route remains available.
+
+The rank obstruction is a useful early test.  If
+\(r_M=X^{\rho_M+o(1)}\) and
+\(\rank F_M\le X^{\omega_M+o(1)}\), then
+\begin{equation}
+ \nu_M\ge(\rho_M-\omega_M)_+.
+ \label{eq:tpc61-ledger-rank-floor}
+\end{equation}
+Accordingly, the uniform mass--degree route cannot satisfy
+\eqref{eq:tpc61-ledger-zero-cost-test} unless
+\begin{equation}
+ \sigma_M>(\rho_M-\omega_M)_++\lambda_{\rm rep}.
+ \label{eq:tpc61-ledger-rank-necessary}
+\end{equation}
+Failure closes this certificate but need not close a distinguished vector
+orthogonal to the top singular directions.
+
+\subsection{The complete endpoint ledger}
+
+The prospective fixed-shift transfer chain remains the one inherited from
+TPC--60.  Its losses are recorded as
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ \Lambda_{\rm tot}:={}&
+ \lambda_{\rm sel}+\lambda_{\rm occ}
+ +\lambda_{\rm blk}+\lambda_{\rm term}
+ +\lambda_{\rm sing}\\
+ &+\lambda_H+\lambda_{\rm aff}
+ +\lambda_{\rm reasm}
+ +\lambda_{\rm bdry}+\lambda_{\rm tail}.
+ \end{aligned}}
+ \label{eq:tpc61-complete-endpoint-ledger}
+\end{equation}
+The endpoint requirement is
+\begin{equation}
+ \boxed{\Lambda_{\rm tot}<\frac1{400}.}
+ \label{eq:tpc61-strict-endpoint-budget}
+\end{equation}
+For a distinguished chain, \(\lambda_{\rm reasm}\) is consistently
+replaced by \(\lambda_{\rm reasm,*}\).  Equality is rejected unless the
+leading constants and all remainders are controlled strongly enough to
+recover a strict final inequality.
+
+In particular, in the equality-scale situation
+\eqref{eq:tpc61-ledger-critical-margin}--%
+\eqref{eq:tpc61-ledger-critical-cost}, put
+\(\Lambda_{\rm other}:=\Lambda_{\rm tot}-\lambda_{\rm reasm}\).  The
+reverse-triangle certificate can fit the endpoint only if
+\begin{equation}
+ \boxed{
+  2a+\Lambda_{\rm other}<\frac1{400}.}
+ \label{eq:tpc61-equality-margin-endpoint-test}
+\end{equation}
+Thus the number \(a\) is not free slack: it consumes twice its value in
+the loss ledger.
+
+The quantities \(e\), \(\sigma_M\), \(\nu_M\),
+\(\mu_{\rm erase}\), and \(67/200\) are not additional arrows in
+\eqref{eq:tpc61-complete-endpoint-ledger}.  They are inputs or diagnostics
+used to decide the single reassembly loss.  When \(\lambda_{\rm rep}\) is
+assembled from \(\lambda_H\), \(\lambda_{\rm aff}\), or other arrows already
+listed in that ledger, it enters the comparison tests above but is not charged
+a second time.  Likewise, the cutoff
+\(y\asymp Q\), exact coordinate changes, Moore--Penrose restriction to the
+active support, and finite or logarithmic block decompositions have zero
+fixed-power cost.
+
+\subsection{Stop and pivot rules}
+
+The current proof architecture has the following exact decisions.
+\begin{enumerate}[leftmargin=2.3em]
+ \item If some active row has \(W_R(m)=0<W_M(m)\), the
+       coefficient-uniform represented-mass route is dead.  An average over
+       other rows cannot repair it.
+ \item If the dimension exponents force
+       \[
+        (\rho_M-\omega_M)_++\lambda_{\rm rep}\ge\sigma_M,
+       \]
+       then the uniform restricted mass--degree certificate cannot satisfy
+       \eqref{eq:tpc61-ledger-zero-cost-test} at the proposed exponents.
+       The distinguished and signed routes remain separate questions.
+ \item If one pays the complete ambient native degree, the positive gap
+       \eqref{eq:tpc61-ledger-direct-native-gap} closes that proof even
+       before the other endpoint losses are charged.
+ \item If a literal coefficient vector satisfies
+       \(A_X\zeta\ne0\) but \((A_X+M_X)\zeta=0\), the TPC--60 uniform
+       shorted-Gram gate is exactly dead.
+ \item If a proved necessary loss reaches \(1/400\), or the sum in
+       \eqref{eq:tpc61-complete-endpoint-ledger} reaches it without a
+       quantified constant-level margin, the endpoint route must stop.
+\end{enumerate}
+
+None of these failures may be repaired by averaging over shifts, replacing
+the fixed \(h_0\), renormalizing the raw atoms by fiber sizes, deleting
+coefficient-dependent zeros, or substituting a pointwise Rayleigh quotient
+for a uniform operator norm.  Those operations change the mathematical
+problem rather than close the stated gate.

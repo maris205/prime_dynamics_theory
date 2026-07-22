@@ -1,0 +1,359 @@
+\section{Harmonic defect, conditional savings, and the native wall}
+\label{sec:tpc61-harmonic-defect}
+
+The row ladder shows that one omitted small cofactor is more dangerous than
+many omitted cofactors near the critical ceiling.  We now turn this fact
+into a literal weighted estimate and audit its endpoint strength.
+
+\subsection{A weighted harmonic certificate}
+
+For each row and orbit time define the coefficient-free high weight
+\begin{equation}
+ \Omega_m(j)
+ :=\sum_{\substack{w\in\cW_H(y)\\m(w)=m,\ j(w)=j}}
+       |\beta_w|^2.
+ \label{eq:tpc61-Omega-mj}
+\end{equation}
+Every summand at a fixed \((m,j)\) has the same recovered cofactor
+\begin{equation}
+ r_m(j):=\frac{mj+h_0}{\Pplus(mj+h_0)}
+ \label{eq:tpc61-realized-row-cofactor}
+\end{equation}
+whenever \(\Pplus(mj+h_0)>y\).  Different opposite-row atoms remain
+distinct in
+\eqref{eq:tpc61-Omega-mj}.  Thus
+\begin{equation}
+ W_H(m)=\sum_j\Omega_m(j),
+ \qquad
+ W_M(m)=\sum_{\substack{j\\r_m(j)\notin\cI_m}}\Omega_m(j).
+ \label{eq:tpc61-row-weight-orbit-form}
+\end{equation}
+
+For an active row put
+\begin{equation}
+ U_m:=\max_j\Omega_m(j),
+ \qquad
+ H_m^{\rm eff}:=\frac{W_H(m)}{U_m}.
+ \label{eq:tpc61-effective-high-exposure}
+\end{equation}
+The second quantity is a weighted effective number of exposed orbit times;
+it lies in \((0,\#\mathcal J_X]\).  Let
+\begin{equation}
+ E_m:=\{r\in\N:r\le N_+/y,\ r\notin\cI_m\}
+ \label{eq:tpc61-missing-cofactor-set}
+\end{equation}
+and define its rowwise sieve-harmonic capacity by
+\begin{equation}
+ \mathfrak h_m(E_m)
+ :=\frac m{\varphi(m)}
+   \sum_{r\in E_m}
+   \left(
+    1+\frac{J/r}{\log(2+J/r)}
+   \right).
+ \label{eq:tpc61-harmonic-defect}
+\end{equation}
+Including unrealized \(r\)'s in \(E_m\) only enlarges this upper
+certificate.
+
+\begin{theorem}[Literal harmonic-defect bound]
+\label{thm:tpc61-harmonic-defect-bound}
+For every active row,
+\begin{equation}
+ \boxed{
+ W_M(m)\ll U_m\mathfrak h_m(E_m),}
+ \label{eq:tpc61-row-missing-harmonic-bound}
+\end{equation}
+and hence
+\begin{equation}
+ \boxed{
+ \varepsilon_m
+ \ll\frac{\mathfrak h_m(E_m)}{H_m^{\rm eff}}.}
+ \label{eq:tpc61-row-defect-harmonic-bound}
+\end{equation}
+Consequently, if a number \(\epsilon_X\ge0\) satisfies
+\begin{equation}
+ \sup_{m:W_H(m)>0}
+ \frac{\mathfrak h_m(E_m)}{H_m^{\rm eff}}
+ \le\epsilon_X,
+ \label{eq:tpc61-uniform-harmonic-hypothesis}
+\end{equation}
+then, with an absolute fixed-carrier constant,
+\begin{equation}
+ \cD_M(\zeta)\ll\epsilon_X\cD_H(\zeta)
+ \label{eq:tpc61-uniform-harmonic-transfer}
+\end{equation}
+for every coefficient vector in the declared uniform class.
+\end{theorem}
+
+\begin{proof}
+Group the second sum in \eqref{eq:tpc61-row-weight-orbit-form} by the
+recovered cofactor.  For fixed \(r\), there are \(N_m(r)\) eligible orbit
+times, and each aggregate weight is at most \(U_m\).  Therefore
+\begin{equation}
+ W_M(m)
+ \le U_m\sum_{r\in E_m}N_m(r).
+ \label{eq:tpc61-WM-before-BT}
+\end{equation}
+Apply \cref{prop:tpc61-brun-titchmarsh-row-bound} and use
+\eqref{eq:tpc61-harmonic-defect}; this proves
+\eqref{eq:tpc61-row-missing-harmonic-bound}.  Division by
+\(W_H(m)=U_mH_m^{\rm eff}\) gives
+\eqref{eq:tpc61-row-defect-harmonic-bound}.  The uniform conclusion follows
+from \cref{thm:tpc61-rowwise-exposure-minimax}.
+\end{proof}
+
+The theorem is unconditional as an inequality, but a useful numerical
+value of its right side requires two arithmetic inputs: completion of the
+retained relation in harmonic capacity and a lower bound for the actual
+effective high exposure.
+
+\subsection{Dyadic exponent law}
+
+At the critical endpoint,
+\begin{equation}
+ \theta_J:=\frac{133}{400},
+ \qquad
+ J=X^{\theta_J+o(1)},
+ \qquad
+ \frac{N_+}{y}=X^{\theta_J+o(1)}
+ \label{eq:tpc61-critical-J-exponent}
+\end{equation}
+when \(y=C_{\rm vh}Q\) with the required fixed support constant
+\citep{WangTPC59}.  Suppose a dyadic block
+\(R=X^{\theta+o(1)}\), \(0\le\theta\le\theta_J\), satisfies uniformly
+on the claimed rows
+\begin{equation}
+ |E_m\cap[R,2R]|\le X^{e(\theta)+o(1)},
+ \qquad
+ H_m^{\rm eff}\ge X^{\eta_H+o(1)}.
+ \label{eq:tpc61-dyadic-defect-exposure-hypotheses}
+\end{equation}
+For this block write
+\begin{align}
+ \cW_{M,R}
+ &:=\{w\in\cW_M:R\le r(w)<2R\},
+ \label{eq:tpc61-missing-block-carrier}\\
+ W_{M,R}(m)
+ &:=\sum_{\substack{R\le r<2R\\r\notin\cI_m}}\nu_m(r),
+ \qquad
+ \cD_{M,R}(\zeta):=\sum_mW_{M,R}(m)|\zeta_m|^2.
+ \label{eq:tpc61-missing-block-diagonal}
+\end{align}
+
+\begin{corollary}[Dyadic cofactor-saving exponent]
+\label{cor:tpc61-dyadic-saving-exponent}
+The contribution of this block to the row defect obeys
+\begin{equation}
+ \frac{W_{M,R}(m)}{W_H(m)}
+ \le
+ X^{-\sigma_{\rm cof}(\theta)+o(1)},
+ \label{eq:tpc61-block-defect-saving}
+\end{equation}
+where
+\begin{equation}
+ \boxed{
+ \sigma_{\rm cof}(\theta)
+ :=\eta_H-e(\theta)-(\theta_J-\theta).}
+ \label{eq:tpc61-general-cofactor-saving}
+\end{equation}
+In the balanced-exposure case \(\eta_H=\theta_J\), this simplifies to
+\begin{equation}
+ \boxed{
+ \sigma_{\rm cof}(\theta)=\theta-e(\theta).}
+ \label{eq:tpc61-balanced-cofactor-saving}
+\end{equation}
+The conclusion is useful only when the displayed saving is positive.
+An \(O(\log X)\) dyadic union changes no fixed-power exponent.
+\end{corollary}
+
+\begin{proof}
+By \cref{cor:tpc61-dyadic-missing-census}, the harmonic numerator from
+the block has exponent at most
+\(e(\theta)+\theta_J-\theta\).  Divide by the effective-exposure lower
+bound in \eqref{eq:tpc61-dyadic-defect-exposure-hypotheses}.  Summing a
+logarithmic number of nonnegative block bounds contributes \(X^{o(1)}\).
+\end{proof}
+
+\begin{example}[One small missing cofactor defeats global density]
+\label{ex:tpc61-one-small-cofactor}
+Suppose all integers up to the critical ceiling are retained except
+\(r=1\).  Its unweighted global missing fraction is
+\(J^{-1+o(1)}=X^{-133/400+o(1)}\), but the row ladder is
+\begin{equation}
+ p=mj+h_0.
+ \label{eq:tpc61-r-one-ladder}
+\end{equation}
+The support capacity has \(J\) candidates and Brun--Titchmarsh removes
+only a logarithm.  Hence this cardinal statement certifies no positive
+fixed-power saving.  If the actual high weight on a row is supported on
+the realized points of this ladder, then \(\varepsilon_m=1\).  The current
+retained-relation interface contains no exposure hypothesis excluding that
+possibility.
+\end{example}
+
+\begin{example}[Weight concentration defeats cofactor counting]
+\label{ex:tpc61-weight-concentration}
+Even if the missing set has much smaller cardinality than the represented
+set, the exact measure can satisfy
+\(\nu_m(\cI_m)=0<\nu_m(\cI_m^c)\) when all represented profile squares vanish
+and one missing profile square is nonzero.  Less extremely, represented
+weights may be arbitrarily smaller than a missing weight.  Thus cardinality
+can replace \(\nu_m\) only after a two-sided physical-weight or effective-
+exposure estimate has been proved on the same carrier.
+\end{example}
+
+These examples explain why the correct support statistic is harmonic and
+why even harmonic smallness must be divided by actual exposure.  In
+particular, a proof based only on this certificate must cover every
+cofactor \(r<X^{\sigma-o(1)}\) exactly, or supply an independent
+prime/weight saving on the omitted small-cofactor ladders, before claiming
+an \(X^{-\sigma}\) missing-mass bound.
+
+\subsection{The residual wedge and the direct-native closure}
+
+The preceding exponent can now be compared with the grouping costs of
+TPC--60.  Write
+\begin{equation}
+ \lambda_L:=\frac{99979}{210000}.
+ \label{eq:tpc61-lambda-L}
+\end{equation}
+On a block \(R=X^{\theta+o(1)}\), the ambient residual-key degree from the
+fixed-determinant ladder is
+\begin{equation}
+ d_{\rm res}(R)\le X^{\lambda_L-\theta+o(1)}.
+ \label{eq:tpc61-residual-degree-exponent}
+\end{equation}
+In the balanced-exposure scenario with missing-cardinality exponent
+\(e(\theta)\), the phase-blind residual mass--degree exponent is therefore
+\begin{equation}
+ \lambda_L-2\theta+e(\theta).
+ \label{eq:tpc61-residual-product-exponent}
+\end{equation}
+
+At the critical block \(\theta=133/400\),
+\begin{equation}
+ \lambda_L-\theta
+ =\frac{15077}{105000},
+ \label{eq:tpc61-critical-residual-degree}
+\end{equation}
+whereas
+\begin{equation}
+ \boxed{
+ 2\theta-\lambda_L
+ =\frac{39671}{210000}
+ =0.1889095\ldots.}
+ \label{eq:tpc61-residual-wedge}
+\end{equation}
+Thus the residual-key exponents themselves leave a genuine positive
+window.  They do not close the physical map, because the latter also
+erases the residual label \(s\).
+
+To state the remaining requirement in the notation of the restricted-Gram
+section, factor the missing map on one block as
+\begin{equation}
+ \cK_X
+ \xrightarrow{\ L_{M,R}\ }
+ \ell^2(\cW_{M,R})
+ \xrightarrow{\ C_{{\rm res},R}\ }
+ \ell^2(i,s)
+ \xrightarrow{\ \mathsf E\ }
+ \ell^2(i),
+ \label{eq:tpc61-two-stage-missing-map}
+\end{equation}
+where \(T_{M,R}:=C_{{\rm res},R}L_{M,R}\) is the residual map on the block and
+\(\mathsf E\) is the canonical residual-label erasure.  Define the
+blockwise restricted erasure constant
+\begin{equation}
+ \beta_{M,R}
+ :=\left\|
+ \mathsf E\big|_{\Ran T_{M,R}}
+ \right\|^2
+ =X^{\mu_{\rm erase}+o(1)}.
+ \label{eq:tpc61-restricted-erasure-exponent}
+\end{equation}
+This is the block analogue of \(\beta_M\) in
+\cref{thm:tpc61-restricted-erasure-norm}; it is not the ambient number of
+residual labels at one native output.  Likewise
+\eqref{eq:tpc61-residual-degree-exponent} gives
+\begin{equation}
+ \kappa_{{\rm res},R}
+ :=\sup_{\cD_{M,R}(\zeta)>0}
+   \frac{\|T_{M,R}\zeta\|^2}{\cD_{M,R}(\zeta)}
+ \le d_{\rm res}(R)
+ \le X^{\lambda_L-\theta+o(1)}.
+ \label{eq:tpc61-block-residual-kappa}
+\end{equation}
+If the represented reference satisfies
+\begin{equation}
+ \|A_X\zeta\|^2
+ \ge X^{-\lambda_{\rm rep}+o(1)}\cD_H(\zeta),
+ \label{eq:tpc61-represented-reference-loss}
+\end{equation}
+then the critical-block contribution has zero fixed-power reassembly cost
+under the strict condition
+\begin{equation}
+ \boxed{
+ e+\mu_{\rm erase}+\lambda_{\rm rep}
+ <\frac{39671}{210000}.}
+ \label{eq:tpc61-critical-residual-route-condition}
+\end{equation}
+Indeed, the two-stage inequality
+\begin{equation}
+ \|M_{X,R}\zeta\|^2
+ \le\beta_{M,R}\kappa_{{\rm res},R}
+       \cD_{M,R}(\zeta)
+ \label{eq:tpc61-block-two-stage-upper}
+\end{equation}
+shows that the product of missing mass, residual degree, restricted
+erasure, and represented-reference loss is then \(o(1)\).  The reverse
+triangle certificate of TPC--60 yields the blockwise conclusion
+\begin{equation}
+ \frac{\|(A_X+M_{X,R})\zeta\|^2}{\|A_X\zeta\|^2}=1+o(1).
+ \label{eq:tpc61-zero-cost-reassembly-consequence}
+\end{equation}
+For the full missing map, the same conclusion holds only if every other
+nonempty dyadic block is empty or satisfies its analogous strict estimate
+uniformly with a fixed positive margin.  Since there are \(O(\log X)\)
+blocks, those estimates give
+\begin{equation}
+ \sum_R\|M_{X,R}\zeta\|=o(\|A_X\zeta\|),
+ \label{eq:tpc61-all-blocks-small}
+\end{equation}
+and then \(M_X=\sum_RM_{X,R}\) yields the full version of
+\eqref{eq:tpc61-zero-cost-reassembly-consequence}.  A favorable critical
+block alone does not control missing mass on smaller cofactors.
+The condition is uniform or distinguished according to the scope of
+\eqref{eq:tpc61-represented-reference-loss} and the cofactor-exposure
+hypotheses; the two scopes are not interchangeable.
+
+By contrast, the only inherited direct native-degree bound has exponent
+\begin{equation}
+ \mu_{\rm native}=\frac{267}{400}.
+ \label{eq:tpc61-crude-native-exponent}
+\end{equation}
+Even the best nonempty pure-cardinality certificate at the critical scale,
+one missing cofactor with balanced exposure, saves at most \(133/400\).
+Hence the direct-native phase-blind architecture has the fixed exponent
+deficit
+\begin{equation}
+ \boxed{
+ \frac{267}{400}-\frac{133}{400}
+ =\frac{67}{200}>0.}
+ \label{eq:tpc61-direct-native-deficit}
+\end{equation}
+It cannot prove reassembly by paying the full native degree.  This is a
+route-specific closure, not a lower bound for the actual restricted norm
+and not an endpoint loss to be inserted into the ledger.
+
+\paragraph{Claim boundary.}
+The exact row measure, cofactor ladder, Brun--Titchmarsh estimate, harmonic
+certificate, and exponent audit are L0/L1 results at one fixed \(h_0\).
+No estimate in this section proves that the actual retained relation has a
+small harmonic complement, that every active row has polynomial high
+exposure, or that \(\mu_{\rm erase}\) satisfies
+\eqref{eq:tpc61-critical-residual-route-condition}.  Consequently there is
+no L2 fixed-shift lower square, parity improvement, prime-pair asymptotic,
+or twin-prime implication.  The positive conclusion is narrower and
+falsifiable: the residual wedge is open, the coefficient-blind direct
+native door is closed, and restricted M\"obius erasure is the next
+arithmetic gate.

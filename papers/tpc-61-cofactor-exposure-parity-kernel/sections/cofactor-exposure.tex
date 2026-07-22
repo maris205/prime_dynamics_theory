@@ -1,0 +1,217 @@
+\section{Exact cofactor exposure on each physical row}
+\label{sec:tpc61-cofactor-exposure}
+
+We first isolate the part of the missing--high problem that is already
+diagonal in the inherited row coefficients.  This must be done before any
+residual or native grouping: after grouping, a statement about omitted
+atomic mass is no longer monotone.  The notation below retains the literal
+coefficient and raw counting normalization of TPC--53--TPC--60
+\citep{WangTPC53,WangTPC54,WangTPC59,WangTPC60}.
+
+\subsection{The realized cofactor measure}
+
+Work in the identical-support specialization of
+\cref{def:tpc61-identical-support}.  Thus a high Walsh atom is represented
+precisely when its recovered pair \((m,r)\) belongs to the fixed retained
+relation \(\cI_X\).  Let \(\cM_X\) be the declared source-row set and
+retain the notation
+\begin{equation}
+ \cI_m=\{r\in\N:(m,r)\in\cI_X\},
+ \qquad m\in\cM_X,
+ \label{eq:tpc61-row-retained-cofactors}
+\end{equation}
+from \eqref{eq:tpc61-retained-cofactor-row}.  The set \(\cI_m\) is fixed
+independently of the coefficient vector.
+
+Every \(w\in\cW_H(y)\) has the unique recovered labels in
+\eqref{eq:tpc61-recovered-mjp}--\eqref{eq:tpc61-recovered-rs}.  In
+particular,
+\begin{equation}
+ n(w)=m(w)j(w)+h_0,
+ \qquad
+ p(w)=\Pplus(n(w))>y,
+ \qquad
+ r(w)=\frac{n(w)}{p(w)}.
+ \label{eq:tpc61-recovered-prime-cofactor}
+\end{equation}
+Literal factorization is
+\(b_w(\zeta)=\beta_w\zeta_{m(w)}\), as in
+\eqref{eq:tpc61-literal-row-amplitude}; \(\beta_w\) contains every fixed
+physical factor but not the bounded row coefficient \(\zeta_m\).
+
+\begin{definition}[Realized row cofactor measure]
+\label{def:tpc61-realized-cofactor-measure}
+For \(m\in\cM_X\), define the finite positive measure on \(\N\)
+\begin{equation}
+ \nu_m(r)
+ :=\sum_{\substack{w\in\cW_H(y)\\m(w)=m,\ r(w)=r}}
+       |\beta_w|^2.
+ \label{eq:tpc61-nu-m-r}
+\end{equation}
+Write
+\begin{equation}
+ W_H(m):=\sum_r\nu_m(r),\qquad
+ W_R(m):=\sum_{r\in\cI_m}\nu_m(r),\qquad
+ W_M(m):=\sum_{r\notin\cI_m}\nu_m(r).
+ \label{eq:tpc61-row-HRM-weights}
+\end{equation}
+Thus \(W_H=W_R+W_M\) row by row.
+\end{definition}
+
+The measure \(\nu_m\) is not counting measure on possible cofactors.  It
+counts only cofactors actually realized by the largest-prime factorization
+of \(mj+h_0\), with the complete coefficient-free physical square attached.
+
+\begin{proposition}[Exact row disintegration]
+\label{prop:tpc61-exact-row-disintegration}
+For every row-coefficient vector \(\zeta\),
+\begin{align}
+ \cD_H(\zeta)
+ &=\sum_mW_H(m)|\zeta_m|^2,
+ \label{eq:tpc61-DH-row-disintegration}\\
+ \cD_R(\zeta)
+ &=\sum_mW_R(m)|\zeta_m|^2,
+ \label{eq:tpc61-DR-row-disintegration}\\
+ \cD_M(\zeta)
+ &=\sum_mW_M(m)|\zeta_m|^2.
+ \label{eq:tpc61-DM-row-disintegration}
+\end{align}
+In particular, the represented/missing split is an orthogonal coordinate
+projection before residual or native grouping.
+\end{proposition}
+
+\begin{proof}
+The sets \(\cW_R\) and \(\cW_M\) are the disjoint subsets of
+\(\cW_H\) on which respectively \(r(w)\in\cI_{m(w)}\) and
+\(r(w)\notin\cI_{m(w)}\).  Substitute
+\eqref{eq:tpc61-literal-row-amplitude} into the three raw atomic
+squares and group nonnegative terms first by \(m\), then by \(r\).
+No coherent sum occurs in this calculation.
+\end{proof}
+
+\subsection{Sharp uniform and distinguished exposure constants}
+
+For every row with \(W_H(m)>0\), define
+\begin{equation}
+ \varepsilon_m
+ :=\frac{W_M(m)}{W_H(m)},
+ \qquad
+ \rho_m:=\frac{W_R(m)}{W_H(m)}=1-\varepsilon_m.
+ \label{eq:tpc61-row-defect-and-exposure}
+\end{equation}
+
+\begin{theorem}[Sharp rowwise exposure minimax]
+\label{thm:tpc61-rowwise-exposure-minimax}
+Assume the bounded coefficient class contains a nonzero multiple of every
+coordinate direction.  If \(\cD_H\) is not identically zero, then
+\begin{equation}
+ \boxed{
+ \sup_{\cD_H(\zeta)>0}
+ \frac{\cD_M(\zeta)}{\cD_H(\zeta)}
+ =\max_{m:W_H(m)>0}\varepsilon_m,}
+ \label{eq:tpc61-sharp-missing-minimax}
+\end{equation}
+and
+\begin{equation}
+ \boxed{
+ \inf_{\cD_H(\zeta)>0}
+ \frac{\cD_R(\zeta)}{\cD_H(\zeta)}
+ =\min_{m:W_H(m)>0}\rho_m
+ =1-\max_{m:W_H(m)>0}\varepsilon_m.}
+ \label{eq:tpc61-sharp-represented-minimax}
+\end{equation}
+Both identities are sharp at every finite \(X\).
+\end{theorem}
+
+\begin{proof}
+Whenever \(\cD_H(\zeta)>0\),
+\begin{equation}
+ \frac{\cD_M(\zeta)}{\cD_H(\zeta)}
+ =\sum_{m:W_H(m)>0}
+   \frac{W_H(m)|\zeta_m|^2}{\cD_H(\zeta)}\,
+   \varepsilon_m.
+ \label{eq:tpc61-defect-convex-combination}
+\end{equation}
+This is a convex combination of the row defects.  It is at most their
+maximum, and concentrating \(\zeta\) on a maximizing row attains that
+maximum after a harmless scalar rescaling into the coefficient class.
+The represented identity follows from \(\rho_m=1-\varepsilon_m\), or by
+the same argument with a minimum.
+\end{proof}
+
+For one distinguished vector, the exact and generally weaker quantity is
+\begin{equation}
+ \varepsilon_*(\zeta)
+ :=\frac{\cD_M(\zeta)}{\cD_H(\zeta)}
+ =\sum_m
+   \frac{W_H(m)|\zeta_m|^2}{\cD_H(\zeta)}\varepsilon_m.
+ \label{eq:tpc61-distinguished-defect}
+\end{equation}
+A favorable value of \(\varepsilon_*(\zeta)\) does not imply the uniform
+bound in \eqref{eq:tpc61-sharp-missing-minimax}.
+
+\begin{corollary}[Exact missing-only-row kill test]
+\label{cor:tpc61-missing-only-row-kill}
+If one active row satisfies
+\begin{equation}
+ W_R(m_0)=0<W_M(m_0),
+ \label{eq:tpc61-missing-only-row}
+\end{equation}
+then the optimal uniform represented-mass constant is zero and the optimal
+uniform missing fraction is one.
+\end{corollary}
+
+\subsection{What the inherited relation does not determine}
+
+The papers preceding TPC--61 call \(\cI_X\) the retained or supported
+pair relation, but impose no rowwise completion rule on it; arbitrary
+finite cofactor multiplicity is explicitly allowed
+\citep{WangTPC53,WangTPC54}.  Consequently the displayed inherited
+hypotheses do not force
+\begin{equation}
+ \cI_m\cap\supp\nu_m\ne\varnothing
+ \quad\text{on every active row}.
+ \label{eq:tpc61-unproved-row-intersection}
+\end{equation}
+
+\begin{proposition}[Interface-insufficiency theorem]
+\label{prop:tpc61-interface-insufficiency}
+Within the finite-relation hypothesis class stated in
+TPC--53--TPC--60, there is no universal constant \(c>0\), and no exponent
+\(\sigma>0\), for which either
+\begin{equation}
+ \cD_R\ge c\cD_H
+ \qquad\text{or}\qquad
+ \cD_M\le X^{-\sigma+o(1)}\cD_H
+ \label{eq:tpc61-unavailable-uniform-conclusions}
+\end{equation}
+follows from scale compatibility, finiteness of \(\cI_X\), and boundedness
+of the row coefficients alone.
+\end{proposition}
+
+\begin{proof}
+Those assumptions do not exclude a retained relation which omits every
+realized cofactor on one otherwise active row.  Such a row satisfies
+\eqref{eq:tpc61-missing-only-row}, and
+\cref{cor:tpc61-missing-only-row-kill} gives both failures.  This is a
+non-implication for the stated interface, not a claim that the upstream
+physical provenance necessarily chooses such a relation.
+\end{proof}
+
+\begin{example}[Average-row dilution does not repair a uniform defect]
+\label{ex:tpc61-average-row-trap}
+Take any number of completed rows with \(\varepsilon_m=0\) and one active
+missing-only row with \(\varepsilon_{m_0}=1\).  The unweighted average of
+the row defects can tend to zero as the number of completed rows grows,
+whereas \eqref{eq:tpc61-sharp-missing-minimax} remains equal to one.
+The coefficient vector supported on \(m_0\) detects the bad row exactly.
+Thus an average census can support a distinguished-vector statement only
+after the physical coefficient weights in
+\eqref{eq:tpc61-distinguished-defect} are retained.
+\end{example}
+
+The result above closes only a proof architecture: it says that the opaque
+``retained relation'' interface is insufficient.  It is not a negative
+theorem about the actual upstream carrier.  A genuine arithmetic advance
+must either reopen the provenance of \(\cI_X\), or directly estimate the
+realized weighted measures \(\nu_m(I_m^c)\).

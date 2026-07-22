@@ -1,0 +1,309 @@
+\section{Result ledger, claim boundary, and the next gate}
+\label{sec:tpc61-claims-next}
+
+TPC--61 replaces two coarse quantities from TPC--60 by literal arithmetic
+objects.  The missing mass is the realized cofactor measure outside the
+fixed retained relation, and the effective native degree is the largest
+eigenvalue of the normalized physical row Gram.  The latter has now been
+calibrated to a two-affine-form M\"obius kernel.  These are reductions and
+certificates; the required exposure and spectral estimates remain open.
+
+\subsection{Result ledger}
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.23\textwidth}
+                >{\raggedright\arraybackslash}p{0.52\textwidth}
+                >{\raggedright\arraybackslash}p{0.15\textwidth}}
+\toprule
+Object & Exact conclusion & Status\\
+\midrule
+Literal high carrier
+& One fixed \(h_0\), the raw coefficient
+  \(b_w=\beta_w\zeta_{m(w)}\), and the canonical decoding
+  \(n=mj+h_0=pr\), \(p=\Pplus(n)>y\), \(s=d_mr\).
+& L1 interface\\
+\addlinespace
+Realized cofactor measure
+& The row measure \(\nu_m(r)\) gives exact identities
+  \(W_R(m)=\nu_m(\cI_m)\) and
+  \(W_M(m)=\nu_m(\cI_m^c)\), followed by the sharp rowwise minimax.
+& L1 identity and L0 minimax\\
+\addlinespace
+Opaque-carrier test
+& The inherited finite-relation hypotheses alone permit a missing-only
+  active row, so they imply neither positive uniform exposure nor a
+  fixed-power missing-mass saving.
+& Interface no-go\\
+\addlinespace
+Cofactor ladder
+& For fixed \(m,r\), all solutions are
+  \(j=j_0+rt\), \(p=p_0+mt\); Brun--Titchmarsh gives the literal
+  harmonic upper capacity.
+& L1 arithmetic upper bound\\
+\addlinespace
+Harmonic defect
+& \(\varepsilon_m\ll
+  \mathfrak h_m(E_m)/H_m^{\rm eff}\), with the exact dyadic exponent
+  law.  Its usefulness requires a small retained-relation complement
+  and a lower effective-exposure bound.
+& L1 conditional certificate\\
+\addlinespace
+Residual/native audit
+& A positive critical residual wedge remains, whereas paying the full
+  direct native degree has a fixed exponent deficit \(67/200\).
+& Route-specific opening and closure\\
+\addlinespace
+Restricted native degree
+& \(\kappa_M\) is the optimal generalized-Gram eigenvalue on the actual
+  row-coefficient image, with
+  \(1\le\kappa_M\le\min\{d_{\rm miss},\dim S_M\}\) when the carrier is
+  nonempty.
+& L0 theorem; L1 specialization\\
+\addlinespace
+Prime/residual alias split
+& On a nonempty missing carrier, same-prime blocks are isometric and
+  \(\kappa_M=1+\lambda_{\max}(\Xi_{\ne p})\); the latter splits into
+  same- and unequal-residual alias operators.
+& L0/L1 exact Gram\\
+\addlinespace
+Collision certificates
+& Stable rank, weighted Schur, codegree, exact Schur-complement, and
+  block certificates give falsifiable upper or lower tests for
+  \(\kappa_M\).
+& L0 theorems\\
+\addlinespace
+Parity calibration
+& A fixed row gauge turns every off-diagonal alias into the weighted
+  kernel
+  \(\mu(mj+h_0)\mu(m'j+h_0)\); equivalently it is a signed sum on
+  \(m'pr-mp'r'=h_0(m'-m)\).
+& L1 identity\\
+\addlinespace
+Static-mask overlap
+& On the complete nondegenerate direct cell, two rows retain
+  \(1-o(1)\) of the same opposite-row mass.  The mask costs no positive
+  power but does not diagonalize the parity kernel.
+& L0 inequality and L1 consequence\\
+\addlinespace
+Reassembly
+& If
+  \(\sigma_M>\nu_M+\lambda_{\rm rep}\), the effective mass--degree
+  certificate gives zero fixed-power reassembly loss in the matching
+  uniform or distinguished scope.
+& Conditional only\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Six-item physical audit}
+
+The statements above pass the interface audit in the following precise
+sense.  Passing this audit verifies that the right physical object is being
+studied; it does not prove a favorable exposure or spectral estimate.
+\begin{enumerate}[label=\textup{(A\arabic*)},leftmargin=3.2em]
+ \item \emph{Literal coefficients.}
+       Every atom has the single inherited coefficient
+       \(\beta_w\zeta_{m(w)}\).  The signs
+       \(-\mu(s(w))\) in \(M_X\) are the physical high-character signs.
+       The row gauge \(U_d\) is a fixed unitary change of coordinates,
+       not a choice of favorable atom phases.
+ \item \emph{Fixed physical shift.}
+       Every occurrence of a target, cofactor ladder, gcd identity, and
+       determinant equation comes from \(n=mj+h_0\) for the same fixed
+       nonzero \(h_0\).  No shift average or frozen family is substituted.
+ \item \emph{Physical atomic normalization.}
+       The measures \(\nu_m\), the weights \(W_M(m)\), and the matrix
+       \(\mathbf D_M\) use raw counting-measure atoms.  No division by a
+       native fiber size is hidden in the input norm.
+ \item \emph{Canonical active representation.}
+       The row \(m=d_m\ell_m\), largest prime \(p=\Pplus(n)\), cofactor
+       \(r=n/p\), residual label \(s=d_mr\), and native output \(i\) are
+       canonically recovered.  Moore--Penrose normalization is restricted
+       to \(S_M=\Ran\mathbf D_M\); only identically inactive rows disappear.
+ \item \emph{Actual support.}
+       The carriers \(\cW_H,\cW_R,\cW_M\) and the relation \(\cI_X\) are
+       fixed before \(\zeta\) is chosen.  The identity
+       \(w\in\cW_M\Longleftrightarrow r(w)\notin\cI_{m(w)}\) is used only
+       under the explicitly declared identical-support specialization.
+ \item \emph{Endpoint ledger.}
+       Exact disintegration, gauge calibration, determinant reindexing,
+       and finite/logarithmic partitions carry no fixed-power loss.  A
+       proved critical-margin loss is charged only as
+       \(\lambda_{\rm reasm}\), and every other arrow remains in the
+       strict \(1/400\) sum.
+\end{enumerate}
+
+\subsection{What is not proved}
+
+The following conclusions do not follow from this paper.
+\begin{enumerate}[leftmargin=2.3em]
+ \item The actual upstream relation \(\cI_X\) has not been shown to meet
+       \(\supp\nu_m\) on every active row, nor has its harmonic complement
+       been shown small.
+ \item No coefficient-uniform or distinguished fixed-power bound
+       \(\cD_M\le X^{-\sigma_M+o(1)}\cD_{\rm ref}\) is proved.
+ \item No lower bound for the represented reference
+       \(\|A_X\zeta\|^2\) is supplied; critical-window occupancy and
+       terminal activation remain separate upstream gates.
+ \item The exact parity target
+       \(\rho_{\rm par}(X)=\lambda_{\max}(\Xi_{\ne p})\) is not shown to
+       be \(X^{o(1)}\), or to satisfy any smaller fixed exponent than the
+       available missing-mass saving.
+ \item The gcd divisibility
+       \(\gcd(mj+h_0,m'j+h_0)\mid h_0(m-m')\), the distinctness of the
+       two high primes, and the determinant parametrization do not imply
+       cancellation of the M\"obius product.
+ \item The \(1-o(1)\) static-mask overlap is not an orthogonality theorem.
+       In fact it shows that the opposite-row coordinate alone supplies
+       no polynomial separation of two source rows.
+ \item No bound for one row pair is promoted to an operator-norm bound
+       over the polynomially growing row family.
+ \item No positive physical shorted-Gram lower bound, no value
+       \(\lambda_{\rm reasm}=0\), no fixed-shift parity improvement, no
+       prime-pair lower bound, no prime-pair asymptotic, and no twin-prime
+       implication is proved.
+\end{enumerate}
+
+In particular, treating \(\mu(mj+h_0)\) as an independent random sign
+would be a new unproved hypothesis.  Likewise, a result for fixed
+coefficients, a logarithmically averaged correlation, or an average over
+shifts cannot be inserted into
+\eqref{eq:tpc61-two-affine-mobius-kernel} without verifying the actual
+growing-slope, physical-weight, and operator-norm quantifiers.
+
+\subsection{The ordered next gate}
+
+The next work should preserve the following order.  A favorable spectral
+model cannot repair an empty represented carrier, while a favorable
+distinguished Rayleigh quotient cannot be entered as a uniform constant.
+
+\begin{enumerate}[label=\textbf{Door \Alph*.},leftmargin=3.8em]
+ \item \emph{Recover the actual retained relation.}
+       Reopen the provenance of \(\cI_X\) and evaluate the literal row
+       intersections
+       \begin{equation}
+        W_R(m)=\nu_m(\cI_m),
+        \qquad
+        W_M(m)=\nu_m(\cI_m^c).
+        \label{eq:tpc61-next-literal-row-census}
+       \end{equation}
+       The uniform route is killed immediately by an active row with
+       \(W_R(m)=0<W_M(m)\).  Equal row multiplicities, equal dyadic
+       capacities, or positive exposure on other rows do not repair it.
+       A distinguished route must instead retain the weights
+       \(W_H(m)|\zeta_m|^2\) exactly.
+
+ \item \emph{Prove a missing-mass saving in one declared scope.}
+       A uniform target has the form
+       \begin{equation}
+        \cD_M(\zeta)
+        \le X^{-\sigma_M+o(1)}\cD_{\rm ref}(\zeta)
+        \quad\text{for every declared }\zeta,
+        \label{eq:tpc61-next-uniform-missing-saving}
+       \end{equation}
+       while the distinguished version is asserted only at
+       \(\zeta=\zeta_*(X)\).  The harmonic theorem reduces this to a small
+       \(\mathfrak h_m(E_m)\) and a lower \(H_m^{\rm eff}\), but proves
+       neither input.  One omitted small cofactor can destroy a
+       cardinal-density argument.
+
+ \item \emph{Establish the represented reference in the same scope.}
+       Prove
+       \begin{equation}
+        \|A_X\zeta\|^2
+        \ge X^{-\lambda_{\rm rep}+o(1)}
+             \cD_{\rm ref}(\zeta).
+        \label{eq:tpc61-next-represented-reference}
+       \end{equation}
+       This step cannot absorb unproved critical-window occupancy,
+       terminal activation, singleton survival, native erasure, or affine
+       transversality into one unnamed exponent.  Their established losses
+       must be stated before \(\lambda_{\rm rep}\) is used.
+
+ \item \emph{Estimate the parity kernel, uniformly or pointwise.}
+       The coefficient-uniform target is
+       \begin{equation}
+        \kappa_M
+        =1+\lambda_{\max}(\Xi_{\ne p})
+        \le X^{\nu_M+o(1)}.
+        \label{eq:tpc61-next-uniform-parity-target}
+       \end{equation}
+       It may be attacked through the two-affine formula
+       \eqref{eq:tpc61-two-affine-mobius-kernel}, the determinant form
+       \eqref{eq:tpc61-determinant-parity-kernel}, or the exact collision
+       certificates.  Pairwise correlation estimates must be upgraded to
+       a Schur, block, stable-rank, or direct spectral bound.  For the
+       distinguished route, replace \(\kappa_M\) only by the exact
+       Rayleigh quotient \(\kappa_M(\zeta_*)\).
+
+ \item \emph{Apply the strict effective-product test.}
+       The zero-cost mass--degree door opens only when
+       \begin{equation}
+        \boxed{\sigma_M>\nu_M+\lambda_{\rm rep}.}
+        \label{eq:tpc61-next-effective-product-test}
+       \end{equation}
+       At exponent equality one must prove the actual subpower margin
+       \(1-\sqrt{q_X}\ge X^{-a+o(1)}\); it then costs
+       \(\lambda_{\rm reasm}\le2a\).  If the inequality fails, this
+       certificate is silent.  It does not prove that signed reassembly
+       fails.
+
+ \item \emph{Retain the shorted-Gram and signed fallbacks.}
+       Independently test the TPC--60 uniform kernel condition
+       \begin{equation}
+        \Ker(A_X+M_X)\subseteq\Ker A_X.
+        \label{eq:tpc61-next-shorted-kernel-test}
+       \end{equation}
+       An exact violation kills the uniform reassembly route.  If it is
+       killed, the physical distinguished vector may still survive through
+       a direct estimate of
+       \begin{equation}
+        2\operatorname{Re}
+          \langle A_X\zeta_*,M_X\zeta_*\rangle
+        +\|M_X\zeta_*\|^2.
+        \label{eq:tpc61-next-signed-fallback}
+       \end{equation}
+       This fallback must not be relabeled coefficient-uniform.
+
+ \item \emph{Close the complete endpoint ledger.}
+       The final loss remains
+       \begin{equation}
+        \begin{aligned}
+        \Lambda_{\rm tot}:={}&
+        \lambda_{\rm sel}+\lambda_{\rm occ}
+        +\lambda_{\rm blk}+\lambda_{\rm term}
+        +\lambda_{\rm sing}\\
+        &+\lambda_H+\lambda_{\rm aff}
+        +\lambda_{\rm reasm}
+        +\lambda_{\rm bdry}+\lambda_{\rm tail},
+        \end{aligned}
+        \label{eq:tpc61-final-complete-ledger}
+       \end{equation}
+       and the endpoint condition is
+       \begin{equation}
+        \boxed{\Lambda_{\rm tot}<\frac1{400}.}
+        \label{eq:tpc61-final-endpoint-condition}
+       \end{equation}
+       The exponents \(\sigma_M\) and \(\nu_M\) are inputs to the
+       reassembly test, not two additional losses to be double-counted.
+       Paying the full coefficient-blind native degree is already closed
+       by the \(67/200\) deficit; changing the normalization does not reopen
+       it.
+\end{enumerate}
+
+\paragraph{Conclusion.}
+TPC--60 reduced missing-high restoration to a shorted-Gram decision tree.
+TPC--61 resolves three structural subquestions in that decision tree at
+the L0/L1 level.  It identifies the
+exact realized cofactor defect, proves explicit one-dimensional
+cofactor-ladder and Brun--Titchmarsh harmonic certificates without assuming
+cancellation, and replaces the ambient native degree by the optimal
+restricted Gram.
+The remaining unequal-prime alias is now the explicit fixed-\(h_0\)
+two-affine M\"obius kernel
+\eqref{eq:tpc61-two-affine-mobius-kernel}, equivalently the signed
+determinant sum \eqref{eq:tpc61-determinant-parity-kernel}.  This is a
+strict narrowing of the route, not a parity breakthrough.  The next
+arithmetic theorem must control the actual retained-relation exposure and
+then beat the normalized parity-kernel exponent in the same scope.

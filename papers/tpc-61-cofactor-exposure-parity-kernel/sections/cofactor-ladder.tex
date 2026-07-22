@@ -1,0 +1,211 @@
+\section{The fixed-shift cofactor ladder}
+\label{sec:tpc61-cofactor-ladder}
+
+We now use the literal equation to bound how much of one row can be
+captured by a specified missing cofactor.  The resulting weight is harmonic
+in \(r\), rather than uniform over the cofactor set.
+
+\subsection{Coprimality of a realized cofactor}
+
+Write every source row in its inherited unique form
+\begin{equation}
+ m=d\ell,
+ \qquad d\in[D,2D],\quad \ell\in[L,2L]\cap\mathbb P,
+ \label{eq:tpc61-row-factorization}
+\end{equation}
+where \(d\) is squarefree, \((d,h_0)=1\), and \(L>|h_0|\) for large
+\(X\).  On the common high carrier, the TPC--45 support gives
+\((d,r)=1\) and squarefreeness of \(dr\)
+\citep{WangTPC45,WangTPC59,WangTPC60}.
+
+\begin{lemma}[Full row--cofactor coprimality]
+\label{lem:tpc61-full-row-cofactor-coprimality}
+For every actual high atom,
+\begin{equation}
+ \boxed{(m,r)=1.}
+ \label{eq:tpc61-m-r-coprime}
+\end{equation}
+Moreover \((m,h_0)=1\).
+\end{lemma}
+
+\begin{proof}
+It remains only to exclude \(\ell\mid r\).  If this held, then
+\(\ell\mid rp=mj+h_0\), while \(\ell\mid mj\); hence
+\(\ell\mid h_0\), contradicting \(\ell>|h_0|\).  Thus
+\((\ell,r)=1\), and the inherited relation \((d,r)=1\) proves
+\eqref{eq:tpc61-m-r-coprime}.  Finally \((d,h_0)=1\) and
+\(\ell>|h_0|\) imply \((m,h_0)=1\).
+\end{proof}
+
+\subsection{Exact rowwise progression}
+
+Let \(\mathcal J_X\) denote the fixed orbit slice.  It is contained in an
+integer interval of diameter at most \(C_JJ\), where \(C_J\) depends only
+on the declared compact normalized orbit interval.  Direct residue
+splitting may delete points from this interval and therefore only improves
+the upper bounds below.
+
+\begin{proposition}[Exact cofactor ladder]
+\label{prop:tpc61-exact-cofactor-ladder}
+Fix a source row \(m\) and a positive integer \(r\) which is realized by
+at least one high atom.  There are integers \(j_0,p_0\) such that every
+integral solution of
+\begin{equation}
+ rp-mj=h_0
+ \label{eq:tpc61-fixed-row-equation}
+\end{equation}
+has the unique form
+\begin{equation}
+ \boxed{
+ j=j_0+rt,
+ \qquad
+ p=p_0+mt,
+ \qquad t\in\mathbb Z.}
+ \label{eq:tpc61-row-cofactor-ladder}
+\end{equation}
+In addition,
+\begin{equation}
+ p\equiv h_0r^{-1}\pmod m,
+ \label{eq:tpc61-prime-residue-class}
+\end{equation}
+and this is a reduced residue class modulo \(m\).
+\end{proposition}
+
+\begin{proof}
+By \cref{lem:tpc61-full-row-cofactor-coprimality}, multiplication by
+\(m\) is invertible modulo \(r\).  Hence
+\(mj\equiv-h_0\pmod r\) has one residue class
+\(j\equiv j_0\pmod r\).  Substitution of \(j=j_0+rt\) into
+\eqref{eq:tpc61-fixed-row-equation} gives
+\(p=p_0+mt\), and every such pair is an integral solution.  Conversely,
+subtracting two solutions gives \(r(p-p')=m(j-j')\); coprimality of
+\(m,r\) recovers the same parameterization.  Reducing the original
+equation modulo \(m\) proves \eqref{eq:tpc61-prime-residue-class}.
+The residue is reduced because both \(r\) and \(h_0\) are coprime to
+\(m\).
+\end{proof}
+
+For the next estimates, let
+\begin{equation}
+ N_m(r)
+ :=\#\left\{j\in\mathcal J_X:
+ \begin{array}{l}
+ p=(mj+h_0)/r\text{ is prime},\ p>y,\\[-2pt]
+ p=\Pplus(mj+h_0),\text{ and there is a }\gamma\\[-2pt]
+ \text{for which the common high masks pass}
+ \end{array}\right\}.
+ \label{eq:tpc61-Nmr}
+\end{equation}
+All conditions after integrality only delete points from the ladder.
+
+\begin{corollary}[Deterministic rowwise capacity]
+\label{cor:tpc61-deterministic-row-capacity}
+Uniformly in every realized \(m,r\),
+\begin{equation}
+ \boxed{
+ N_m(r)\le 1+C_J\frac Jr.}
+ \label{eq:tpc61-trivial-row-capacity}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The admissible \(j\)'s lie in one residue class modulo \(r\) inside an
+interval of diameter at most \(C_JJ\).
+\end{proof}
+
+\subsection{The available one-dimensional sieve improvement}
+
+The prime coordinate in \eqref{eq:tpc61-row-cofactor-ladder} lies in one
+reduced residue class modulo \(m\).  Brun--Titchmarsh therefore improves
+\eqref{eq:tpc61-trivial-row-capacity} by a logarithm when the ladder is
+long.  We include the short-ladder case explicitly so that no expression
+with \(\log(J/r)\le0\) is used.
+
+\begin{proposition}[Brun--Titchmarsh row bound]
+\label{prop:tpc61-brun-titchmarsh-row-bound}
+There is a constant depending only on the fixed orbit interval such that
+\begin{equation}
+ \boxed{
+ N_m(r)
+ \ll
+ \frac m{\varphi(m)}
+ \left(
+  1+\frac{J/r}{\log(2+J/r)}
+ \right).}
+ \label{eq:tpc61-BT-row-bound}
+\end{equation}
+On the inherited row support,
+\begin{equation}
+ \frac m{\varphi(m)}=X^{o(1)}.
+ \label{eq:tpc61-m-over-phi-subpower}
+\end{equation}
+Thus the prime condition saves at most a logarithm in this
+coefficient-blind row census; it does not change its fixed-power exponent.
+\end{proposition}
+
+\begin{proof}
+Put \(T=J/r\).  If \(T\) is bounded by a sufficiently large constant
+depending on \(C_J\), \eqref{eq:tpc61-trivial-row-capacity} is \(O(1)\),
+which is dominated by the right side of \eqref{eq:tpc61-BT-row-bound}
+because \(m/\varphi(m)\ge1\).
+
+Suppose now that \(T\) exceeds that constant.  The prime values
+\(p=p_0+mt\) lie in an interval of length at most \(C_JmT+O(m)\) and in
+the reduced class \eqref{eq:tpc61-prime-residue-class}.  The interval form
+of the Brun--Titchmarsh theorem gives
+\begin{equation}
+ \#\{p\text{ on this ladder}\}
+ \ll
+ \frac{mT}{\varphi(m)\log T};
+ \label{eq:tpc61-BT-long-case}
+\end{equation}
+enlarging the interval by a fixed factor changes only the implied constant.
+The largest-prime and remaining physical conditions delete primes, so the
+same upper bound holds for \(N_m(r)\).  Combining the long and short cases
+and replacing \(\log T\) by the uniformly positive
+\(\log(2+T)\) proves \eqref{eq:tpc61-BT-row-bound}; see, for example,
+\citet{MontgomeryVaughan2007}.
+
+Finally the standard maximal-order estimate
+\(n/\varphi(n)\ll\log\log(3n)\), together with
+\(m=X^{O(1)}\), proves \eqref{eq:tpc61-m-over-phi-subpower}.
+\end{proof}
+
+\begin{corollary}[Dyadic missing-cofactor census]
+\label{cor:tpc61-dyadic-missing-census}
+For a set \(E_m(R)\subseteq[R,2R]\cap\N\), the number of high orbit
+times on row \(m\) whose cofactor lies in \(E_m(R)\) is at most
+\begin{equation}
+ \ll
+ \frac m{\varphi(m)}|E_m(R)|
+ \left(
+  1+\frac{J/R}{\log(2+J/R)}
+ \right).
+ \label{eq:tpc61-dyadic-missing-count}
+\end{equation}
+In fixed-power notation, if
+\begin{equation}
+ J=X^{\theta_J+o(1)},\quad
+ R=X^{\theta+o(1)},\quad
+ |E_m(R)|=X^{e(\theta)+o(1)},
+ \label{eq:tpc61-dyadic-count-exponents}
+\end{equation}
+then the exponent in \eqref{eq:tpc61-dyadic-missing-count} is at most
+\begin{equation}
+ e(\theta)+(\theta_J-\theta)_+.
+ \label{eq:tpc61-dyadic-capacity-exponent}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Sum \eqref{eq:tpc61-BT-row-bound} over \(r\in E_m(R)\), using
+\(r\asymp R\).  Equations
+\eqref{eq:tpc61-m-over-phi-subpower} and
+\eqref{eq:tpc61-dyadic-count-exponents} give the exponent formula.
+\end{proof}
+
+The estimate is an upper capacity, not a lower bound for actual missing
+mass.  Nevertheless it identifies the strongest conclusion obtainable
+from the fixed congruence and a one-dimensional upper-bound sieve alone.
+Any further fixed-power improvement must use the actual retained relation,
+the physical weights, a lower exposure estimate, or cancellation.

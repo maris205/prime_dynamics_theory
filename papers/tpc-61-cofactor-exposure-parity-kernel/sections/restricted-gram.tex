@@ -1,0 +1,540 @@
+\section{The restricted native Gram of the missing carrier}
+\label{sec:tpc61-restricted-gram}
+
+The ambient native degree from TPC--60 is the norm of a grouping operator
+on a free atomic space \citep{WangTPC60}.  The physical missing vector does
+not range over that free space: every atom in one source row is driven by
+the same row coefficient.  This section computes the optimal grouping
+constant on that actual coefficient image.  It also separates the
+same-residual determinant-ladder collisions from the new collisions created
+when the residual label is erased.
+
+\subsection{Atomic, residual, and native maps}
+
+Let \(\cW_M\) be the fixed missing-high carrier, let \(\cM_X\) be the
+declared finite source-row set, and put
+\[
+ \cM_M:=\{m\in\cM_X:
+ \text{some }w\in\cW_M\text{ satisfies }m(w)=m\}.
+\]
+All maps below act on the original coefficient space
+\(\cK_X=\ell^2(\cM_X)\); rows outside \(\cM_M\) remain zero directions of
+the missing diagonal rather than being deleted from the represented map.
+On an active missing atom
+\(w\), write the literal coefficient as
+\begin{equation}
+ b_w(\zeta)=\beta_w\zeta_{m(w)},
+ \qquad
+ m(w)\in\cM_M,
+ \label{eq:tpc61-literal-missing-coefficient}
+\end{equation}
+and absorb the physical high-character sign and the residual M\"obius gauge
+into
+\begin{equation}
+ c_w:=-\mu(s(w))\beta_w.
+ \label{eq:tpc61-sign-compatible-atom}
+\end{equation}
+The active squarefree support gives
+\(|c_w|=|\beta_w|\).  Define the atomic lift
+\begin{equation}
+ L_M:\cK_X\longrightarrow\ell^2(\cW_M),
+ \qquad
+ (L_M\zeta)_w=c_w\zeta_{m(w)}.
+ \label{eq:tpc61-atomic-lift}
+\end{equation}
+Its Gram is diagonal:
+\begin{align}
+ \mathbf D_M
+ &:=L_M^*L_M
+   =\operatorname{diag}\bigl(W_M(m)\bigr)_{m\in\cM_X},
+ \label{eq:tpc61-missing-diagonal-matrix}\\
+ W_M(m)
+ &:=\sum_{\substack{w\in\cW_M\\m(w)=m}}|\beta_w|^2,
+ \qquad
+ \cD_M(\zeta)=\langle\mathbf D_M\zeta,\zeta\rangle.
+ \label{eq:tpc61-row-missing-weight}
+\end{align}
+Thus \(\cD_M\) is exactly the raw missing atomic diagonal, with no fiber
+normalization.
+
+Let \(i(w)\) be the native output key and \(s(w)\) the residual label.
+The first grouping and the second erasure are
+\begin{align}
+ (T_M\zeta)_{i,s}
+ &:=
+ \sum_{\substack{w\in\cW_M\\i(w)=i,\ s(w)=s}}
+ c_w\zeta_{m(w)},
+ \label{eq:tpc61-residual-map}\\
+ (\mathsf E z)_i&:=\sum_s z_{i,s}.
+ \label{eq:tpc61-native-erasure}
+\end{align}
+All sums use the active labels of the declared carrier.  In particular,
+\(\mathsf E\) does not adjoin ambient residual labels with zero physical
+coefficient.
+
+\begin{proposition}[Literal three-level factorization]
+\label{prop:tpc61-three-level-factorization}
+The physical missing map of TPC--60 satisfies
+\begin{equation}
+ \boxed{M_X=\mathsf E T_M.}
+ \label{eq:tpc61-missing-factorization}
+\end{equation}
+Moreover \(\Ker\mathbf D_M\subseteq\Ker T_M\subseteq\Ker M_X\).
+\end{proposition}
+
+\begin{proof}
+At a native coordinate \(i\), the right side of
+\eqref{eq:tpc61-missing-factorization} is
+\[
+ \sum_s\sum_{\substack{w\in\cW_M\\i(w)=i,\ s(w)=s}}
+ -\mu(s(w))\beta_w\zeta_{m(w)}.
+\]
+This is exactly the sign-compatible missing-high contribution in the
+TPC--58/TPC--60 convention.  If
+\(\zeta\in\Ker\mathbf D_M\), then every atom driven by a nonzero coordinate
+of \(\zeta\) has zero fixed weight, so \(L_M\zeta=0\), and hence both
+grouped maps vanish.
+\end{proof}
+
+Put
+\begin{equation}
+ S_M:=\Ran\mathbf D_M=(\Ker\mathbf D_M)^\perp.
+ \label{eq:tpc61-active-row-space}
+\end{equation}
+Only the identically inactive rows are removed in \(S_M\).  In particular,
+one must not quotient by \(\Ker M_X\): a nonzero vector in that kernel is a
+genuine physical cancellation direction relative to the nonzero atomic
+norm \(\cD_M\).
+
+All uniform suprema below are unchanged if they are restricted to the
+declared bounded coefficient cube, provided that cube contains a nonzero
+scalar multiple of every direction in \(\cK_X\).  This follows from the
+degree-zero homogeneity of the Rayleigh quotients; it does not grant
+independent atom coefficients inside one source row.
+
+\subsection{The optimal effective native degree}
+
+\begin{theorem}[Exact restricted native degree]
+\label{thm:tpc61-optimal-kappa}
+If \(S_M\ne\{0\}\), define
+\begin{equation}
+ \boxed{
+ \kappa_M:=
+ \lambda_{\max}\!\left(
+  \mathbf D_M^{\dagger/2}M_X^*M_X
+  \mathbf D_M^{\dagger/2}\big|_{S_M}
+ \right).}
+ \label{eq:tpc61-kappa-definition}
+\end{equation}
+Then
+\begin{align}
+ \kappa_M
+ &=\sup_{\cD_M(\zeta)>0}
+   \frac{\|M_X\zeta\|^2}{\cD_M(\zeta)}
+ \label{eq:tpc61-kappa-rayleigh}\\
+ &=\inf\{\kappa\ge0:
+       M_X^*M_X\preceq\kappa\mathbf D_M\}.
+ \label{eq:tpc61-kappa-loewner}
+\end{align}
+Consequently
+\begin{equation}
+ \boxed{
+ \|M_X\zeta\|^2\le\kappa_M\cD_M(\zeta)}
+ \qquad(\zeta\in\cK_X),
+ \label{eq:tpc61-optimal-native-upper}
+\end{equation}
+and \(\kappa_M\) is the least possible coefficient-uniform constant in
+\eqref{eq:tpc61-optimal-native-upper}.  If \(S_M=\{0\}\), then
+\(M_X=0\), and we set \(\kappa_M=0\).
+\end{theorem}
+
+\begin{proof}
+For \(\cD_M(\zeta)>0\), put
+\(x=\mathbf D_M^{1/2}\zeta\in S_M\).  Since \(M_X\) vanishes on
+\(\Ker\mathbf D_M\),
+\[
+ M_X\zeta=M_X\mathbf D_M^{\dagger/2}x.
+\]
+The quotient in \eqref{eq:tpc61-kappa-rayleigh} is therefore the Rayleigh
+quotient of the positive operator in
+\eqref{eq:tpc61-kappa-definition}.  Rayleigh--Ritz proves
+\eqref{eq:tpc61-kappa-rayleigh}.  A quadratic-form inequality for every
+\(\zeta\) is equivalent to the Loewner inequality in
+\eqref{eq:tpc61-kappa-loewner}, which proves optimality.
+\end{proof}
+
+Let \(C_M:\ell^2(\cW_M)\to\ell^2(\cI_{\rm out})\) be the ambient native
+grouping
+\begin{equation}
+ (C_Ma)_i=\sum_{\substack{w\in\cW_M\\i(w)=i}}a_w,
+ \qquad
+ d_{\rm miss}:=\max_i|\{w\in\cW_M:i(w)=i\}|.
+ \label{eq:tpc61-ambient-native-grouping}
+\end{equation}
+Then \(M_X=C_ML_M\) after the unit gauges have been included in
+\eqref{eq:tpc61-sign-compatible-atom}.
+
+\begin{corollary}[Compression improves the ambient degree]
+\label{cor:tpc61-kappa-below-degree}
+One has
+\begin{equation}
+ \boxed{\kappa_M\le d_{\rm miss}.}
+ \label{eq:tpc61-kappa-ambient-bound}
+\end{equation}
+The inequality can be sharp, or the two sides can differ by an arbitrarily
+large factor.
+\end{corollary}
+
+\begin{proof}
+The map
+\[
+ U_M:=L_M\mathbf D_M^{\dagger/2}|_{S_M}
+\]
+is an isometry because \(U_M^*U_M=I_{S_M}\).  Also
+\(\|C_M\|^2=d_{\rm miss}\) by the exact fiberwise Cauchy--Schwarz
+calculation of TPC--60.  Hence
+\[
+ \kappa_M
+ =\|C_MU_M\|^2
+ \le\|C_M\|^2=d_{\rm miss}.
+\]
+Sharp examples are given in
+\cref{ex:tpc61-coherent-incidence,ex:tpc61-fourier-incidence}.
+\end{proof}
+
+\subsection{Prime blocks and the unequal-prime alias operator}
+
+For \(p>y\), let \(\cW_{M,p}\) be the missing atoms with terminal prime
+\(p\), and let \(M_p\) be their contribution to the native map.  Thus
+\begin{equation}
+ M_X=\sum_{p>y}M_p.
+ \label{eq:tpc61-prime-map-sum}
+\end{equation}
+Let
+\begin{equation}
+ \mathbf D_p
+ :=\operatorname{diag}\left(
+  \sum_{\substack{w\in\cW_{M,p}\\m(w)=m}}|\beta_w|^2
+ \right)_{m\in\cM_X}.
+ \label{eq:tpc61-prime-diagonal}
+\end{equation}
+The critical-cutoff fixed-\((i,p)\) singleton from TPC--59 and TPC--60
+states that a fixed native output \(i\) and prime \(p\) support at most one
+active high atom \citep{WangTPC59,WangTPC60}.
+
+\begin{theorem}[Prime-block isometry and exact alias Gram]
+\label{thm:tpc61-prime-block-identity}
+Assume \(S_M\ne\{0\}\).  On the literal fixed-\(h_0\) carrier,
+\begin{align}
+ M_p^*M_p&=\mathbf D_p,
+ \label{eq:tpc61-prime-block-isometry}\\
+ \sum_{p>y}\mathbf D_p&=\mathbf D_M.
+ \label{eq:tpc61-prime-diagonal-sum}
+\end{align}
+Define
+\begin{equation}
+ \widehat M_p
+ :=M_p\mathbf D_M^{\dagger/2}|_{S_M},
+ \qquad
+ \Xi_{\ne p}
+ :=\sum_{\substack{p,q>y\\p\ne q}}
+     \widehat M_p^*\widehat M_q.
+ \label{eq:tpc61-unequal-prime-operator}
+\end{equation}
+Then \(\Xi_{\ne p}\) is Hermitian and
+\begin{align}
+ \sum_p\widehat M_p^*\widehat M_p&=I_{S_M},
+ \label{eq:tpc61-normalized-prime-resolution}\\
+ \mathbf D_M^{\dagger/2}M_X^*M_X
+ \mathbf D_M^{\dagger/2}\big|_{S_M}
+ &=I_{S_M}+\Xi_{\ne p},
+ \label{eq:tpc61-native-gram-prime-split}\\
+ \kappa_M&=\boxed{1+\lambda_{\max}(\Xi_{\ne p})}.
+ \label{eq:tpc61-kappa-unequal-prime}
+\end{align}
+Every nonzero matrix entry of \(\Xi_{\ne p}\) is an unequal-prime alias
+at a common native output.
+\end{theorem}
+
+\begin{proof}
+For a fixed \(p\), the singleton property makes the summands at distinct
+atoms occupy distinct native coordinates.  Therefore
+\[
+ \|M_p\zeta\|^2
+ =\sum_{w\in\cW_{M,p}}
+   |\beta_w|^2|\zeta_{m(w)}|^2
+ =\langle\mathbf D_p\zeta,\zeta\rangle,
+\]
+which proves \eqref{eq:tpc61-prime-block-isometry}.  The prime carrier
+partition proves \eqref{eq:tpc61-prime-diagonal-sum}.  Normalize this
+identity by \(\mathbf D_M^{\dagger/2}\) to obtain
+\eqref{eq:tpc61-normalized-prime-resolution}.  Expanding the square of
+\(\sum_p\widehat M_p\) gives
+\eqref{eq:tpc61-native-gram-prime-split}; the ordered terms
+\((p,q)\) and \((q,p)\) show that \(\Xi_{\ne p}\) is Hermitian.
+Equation \eqref{eq:tpc61-kappa-unequal-prime} follows from
+\cref{thm:tpc61-optimal-kappa}.
+\end{proof}
+
+The operator \(\Xi_{\ne p}\) is generally indefinite; only
+\(I+\Xi_{\ne p}\) is positive.  This causes no loss in
+\eqref{eq:tpc61-kappa-unequal-prime}: adding the identity shifts every
+eigenvalue by exactly one, so
+\(\lambda_{\max}(I+\Xi_{\ne p})
+=1+\lambda_{\max}(\Xi_{\ne p})\) without any positivity assumption on
+\(\Xi_{\ne p}\).
+
+The diagonal of \(\Xi_{\ne p}\) is zero.  Indeed, \(i\) fixes the orbit
+time \(j\), while \(i\) and a source row \(m\) fix
+\(n=mj+h_0\), its unique prime \(p=\Pplus(n)>y\), the cofactor \(r=n/p\),
+and the residual label \(s=d_mr\).  Thus two different terminal primes
+from one source row cannot meet at the same native output.  In particular,
+if \(r_M:=\dim S_M>0\), the normalized native Gram has trace \(r_M\).
+
+\subsection{Same-residual and unequal-residual spectra}
+
+Let \(T_{M,p}\) denote the contribution of \(\cW_{M,p}\) to the residual
+map \(T_M\), and set
+\begin{equation}
+ \widehat T_p
+ :=T_{M,p}\mathbf D_M^{\dagger/2}|_{S_M}.
+ \label{eq:tpc61-normalized-residual-prime-map}
+\end{equation}
+Because the residual Hilbert space keeps \((i,s)\) orthogonal, the
+cross-prime products in
+\[
+ \sum_{p\ne q}\widehat T_p^*\widehat T_q
+\]
+retain only collisions with equal residual label.
+
+\begin{definition}[The two alias operators]
+\label{def:tpc61-two-alias-operators}
+Define
+\begin{align}
+ \Xi_{=s}
+ &:=\sum_{\substack{p,q>y\\p\ne q}}
+       \widehat T_p^*\widehat T_q,
+ \label{eq:tpc61-same-residual-alias}\\
+ \Xi_{\ne s}
+ &:=\Xi_{\ne p}-\Xi_{=s}.
+ \label{eq:tpc61-unequal-residual-alias}
+\end{align}
+\end{definition}
+
+\begin{theorem}[Residual/native positive-spectrum split]
+\label{thm:tpc61-residual-native-split}
+The two operators in
+\cref{def:tpc61-two-alias-operators} are Hermitian, have zero diagonal,
+and satisfy
+\begin{align}
+ \mathbf D_M^{\dagger/2}T_M^*T_M
+ \mathbf D_M^{\dagger/2}\big|_{S_M}
+ &=I+\Xi_{=s},
+ \label{eq:tpc61-residual-normalized-gram}\\
+ \mathbf D_M^{\dagger/2}M_X^*M_X
+ \mathbf D_M^{\dagger/2}\big|_{S_M}
+ &=I+\Xi_{=s}+\Xi_{\ne s}.
+ \label{eq:tpc61-native-normalized-gram-split}
+\end{align}
+Consequently, if
+\begin{equation}
+ \kappa_{\rm res}
+ :=\sup_{\cD_M(\zeta)>0}
+ \frac{\|T_M\zeta\|^2}{\cD_M(\zeta)},
+ \label{eq:tpc61-residual-effective-degree}
+\end{equation}
+then
+\begin{align}
+ \kappa_{\rm res}
+ &=1+\lambda_{\max}(\Xi_{=s}),
+ \label{eq:tpc61-residual-positive-spectrum}\\
+ \boxed{
+ \kappa_M
+ \le1+\lambda_{\max}(\Xi_{=s})
+       +\lambda_{\max}(\Xi_{\ne s}).}
+ \label{eq:tpc61-two-positive-spectrum-bound}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+The fixed-\((i,s,p)\) singleton gives
+\(T_{M,p}^*T_{M,p}=\mathbf D_p\).  Expanding
+\(T_M^*T_M\), normalizing, and using
+\eqref{eq:tpc61-prime-diagonal-sum} proves
+\eqref{eq:tpc61-residual-normalized-gram}.  Subtract it from
+\eqref{eq:tpc61-native-gram-prime-split} to obtain
+\eqref{eq:tpc61-native-normalized-gram-split}.  Rayleigh--Ritz gives
+\eqref{eq:tpc61-residual-positive-spectrum}, while the maximum-eigenvalue
+form of Weyl's inequality gives
+\eqref{eq:tpc61-two-positive-spectrum-bound}.
+\end{proof}
+
+The arithmetic roles of the two terms differ.  The support of
+\(\Xi_{=s}\) is governed by the determinant ladder
+\[
+ rp-dj\ell=h_0
+\]
+inside one residual label.  The operator \(\Xi_{\ne s}\) is created only
+after \(s\) is erased; its terms share the native output \(i\) but have
+different residual labels.  Thus the residual ladder does not by itself
+control \(\Xi_{\ne s}\).  Also, the present upper-norm problem needs only
+the positive spectra of these signed operators.  Bounding their full
+absolute norms is sufficient but can discard favorable cancellation.
+
+\subsection{The quotient on the actual residual image}
+
+Put
+\begin{equation}
+ \mathbf R_M:=T_M^*T_M,
+ \qquad
+ \mathbf N_M:=T_M^*\mathsf E^*\mathsf E T_M=M_X^*M_X,
+ \qquad
+ S_R:=\Ran\mathbf R_M=(\Ker T_M)^\perp,
+ \label{eq:tpc61-residual-native-gram-pair}
+\end{equation}
+and let
+\begin{equation}
+ \mathcal E_M:=\Ran T_M
+ \label{eq:tpc61-actual-residual-image}
+\end{equation}
+be the actual residual coefficient image.
+
+\begin{theorem}[Exact restricted erasure norm]
+\label{thm:tpc61-restricted-erasure-norm}
+If \(\mathcal E_M\ne\{0\}\), then
+\begin{align}
+ \beta_M
+ &:=\sup_{0\ne z\in\mathcal E_M}
+   \frac{\|\mathsf Ez\|^2}{\|z\|^2}
+ \label{eq:tpc61-beta-definition}\\
+ &=\lambda_{\max}\!\left(
+   \mathbf R_M^{\dagger/2}\mathbf N_M
+   \mathbf R_M^{\dagger/2}\big|_{S_R}
+   \right).
+ \label{eq:tpc61-beta-quotient-formula}
+\end{align}
+Moreover,
+\begin{equation}
+ \boxed{\kappa_M\le\kappa_{\rm res}\beta_M.}
+ \label{eq:tpc61-two-stage-upper}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The polar-normalized map
+\[
+ V:=T_M\mathbf R_M^{\dagger/2}|_{S_R}:S_R\longrightarrow\mathcal E_M
+\]
+is unitary.  Conjugating
+\(\mathsf E^*\mathsf E|_{\mathcal E_M}\) by \(V\) gives the operator in
+\eqref{eq:tpc61-beta-quotient-formula}.  Finally,
+\[
+ \|M_X\zeta\|^2
+ \le\beta_M\|T_M\zeta\|^2
+ \le\beta_M\kappa_{\rm res}\cD_M(\zeta),
+\]
+and optimality in \cref{thm:tpc61-optimal-kappa} proves
+\eqref{eq:tpc61-two-stage-upper}.
+\end{proof}
+
+For comparison with the coefficient-blind ladder bounds, put
+\begin{align}
+ d_{\rm res}
+ &:=\max_{i,s}
+   |\{w\in\cW_M:i(w)=i,\ s(w)=s\}|,
+ \label{eq:tpc61-ambient-residual-degree}\\
+ k_{\rm erase}
+ &:=\max_i
+   |\{s:(i,s)\text{ is active in the missing residual carrier}\}|.
+ \label{eq:tpc61-ambient-erasure-degree}
+\end{align}
+The two ambient grouping maps have squared norms \(d_{\rm res}\) and
+\(k_{\rm erase}\), respectively.  Compression to the physical images
+therefore gives
+\begin{equation}
+ \boxed{
+ \kappa_{\rm res}\le d_{\rm res},
+ \qquad
+ \beta_M\le k_{\rm erase}.}
+ \label{eq:tpc61-two-ambient-comparisons}
+\end{equation}
+Neither reverse comparison is valid: the common row coefficients and the
+literal phases may make the restricted norms much smaller.
+
+The ambient erasure norm is the largest number of active residual labels
+at one \(i\), but \(\beta_M\) is its compression to
+\(\mathcal E_M\).  These need not be comparable from below.  Likewise,
+the product in \eqref{eq:tpc61-two-stage-upper} is a useful certificate,
+not an identity in general; the one-stage constant \(\kappa_M\) remains
+optimal.
+
+\begin{remark}[Block notation and the residual M\"obius gauge]
+\label{rem:tpc61-block-erasure-notation}
+On a dyadic cofactor block \(R\), the quantity \(\beta_{M,R}\) in
+\eqref{eq:tpc61-restricted-erasure-exponent} is precisely the specialization
+of \(\beta_M\) to the corresponding atomic and residual maps.  If the
+residual M\"obius sign is instead stored in a final signed erasure
+\(C_\mu\), rather than in the residual input as in
+\eqref{eq:tpc61-sign-compatible-atom}, the two descriptions are conjugate
+by the diagonal unitary
+\[
+ (U_\mu z)_{i,s}=\mu(s)z_{i,s}.
+\]
+Thus the two gauges have the same restricted norm.  They describe one gate
+and must not both be charged in
+the endpoint ledger.
+\end{remark}
+
+\subsection{Uniform and distinguished quantifiers}
+
+For one coefficient vector with \(\cD_M(\zeta)>0\), define
+\begin{equation}
+ \kappa_M(\zeta)
+ :=\frac{\|M_X\zeta\|^2}{\cD_M(\zeta)}.
+ \label{eq:tpc61-pointwise-kappa}
+\end{equation}
+
+\begin{proposition}[Pointwise Rayleigh identity]
+\label{prop:tpc61-pointwise-rayleigh}
+Let \(x=\mathbf D_M^{1/2}\zeta\).  Then
+\begin{equation}
+ \boxed{
+ \kappa_M(\zeta)
+ =\frac{\langle(I+\Xi_{\ne p})x,x\rangle}{\|x\|^2},
+ \qquad
+ 0\le\kappa_M(\zeta)\le\kappa_M.}
+ \label{eq:tpc61-pointwise-rayleigh}
+\end{equation}
+The pointwise value may be zero even when the uniform constant is large.
+\end{proposition}
+
+\begin{proof}
+Insert \(x=\mathbf D_M^{1/2}\zeta\) into
+\eqref{eq:tpc61-native-gram-prime-split}.  Positivity gives the lower
+bound and \cref{thm:tpc61-optimal-kappa} gives the upper bound.
+\end{proof}
+
+For the represented map \(A_X\) and every vector with
+\(A_X\zeta\ne0\), the reverse triangle inequality now gives the optimal
+mass-to-native certificate available from \(\cD_M\):
+\begin{align}
+ \frac{\|(A_X+M_X)\zeta\|^2}{\|A_X\zeta\|^2}
+ &\ge
+ \left(
+  1-\sqrt{
+   \frac{\kappa_M\cD_M(\zeta)}
+        {\|A_X\zeta\|^2}}
+ \right)_+^2
+ \label{eq:tpc61-uniform-reassembly-certificate}\\
+ &\ge
+ \left(
+  1-\sqrt{
+   \frac{d_{\rm miss}\cD_M(\zeta)}
+        {\|A_X\zeta\|^2}}
+ \right)_+^2.
+ \notag
+\end{align}
+For one distinguished physical vector, \(\kappa_M\) in the first line can
+be replaced by the exact number \(\kappa_M(\zeta)\).  This replacement is
+pointwise only: a small Rayleigh quotient for one vector does not imply the
+Loewner inequality \eqref{eq:tpc61-kappa-loewner}.

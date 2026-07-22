@@ -1,0 +1,407 @@
+\section{The literal parity kernel}
+\label{sec:tpc61-parity-kernel}
+
+The normalized Gram in \cref{sec:tpc61-restricted-gram} is exact, but its
+off-diagonal operator still appears there as an unequal-prime alias.  We now
+calibrate every sign in that operator.  The result is a weighted correlation
+of the two affine values
+\[
+ mj+h_0\quad\hbox{and}\quad m'j+h_0
+\]
+on the actual missing carrier.  No randomness hypothesis for the M\"obius
+function is made, and no estimate for the resulting operator norm is asserted.
+
+\subsection{Row gauge and exact sign calibration}
+
+Retain the active row space \(S_M=\Ran\mathbf D_M\) and the unequal-prime
+alias operator \(\Xi_{\ne p}\) from
+\eqref{eq:tpc61-unequal-prime-operator}.  Let
+\begin{equation}
+ U_d:S_M\longrightarrow S_M,
+ \qquad
+ (U_dz)_m:=\mu(d_m)z_m.
+ \label{eq:tpc61-source-mobius-gauge}
+\end{equation}
+The squarefree support and \((d_m,h_0)=1\) make \(U_d\) a diagonal
+self-adjoint unitary.  Since \(\mathbf D_M\) is diagonal in the same row
+basis, \(U_d\) commutes with every power and Moore--Penrose power of
+\(\mathbf D_M\).
+
+For two active rows define the literal common-output form
+\begin{equation}
+ \mathfrak C_{m,m'}
+ :=
+ \sum_{\substack{w,w'\in\cW_M\\
+                   m(w)=m,\ m(w')=m'\\
+                   i(w)=i(w')}}
+ \mu(s(w))\mu(s(w'))
+ \overline{\beta_w}\beta_{w'}.
+ \label{eq:tpc61-common-output-form}
+\end{equation}
+For \(m=m'\), the fixed-\((i,m)\) singleton in
+\eqref{eq:tpc61-ip-im-singletons} gives
+\(\mathfrak C_{m,m}=W_M(m)\).  For \(m\ne m'\), the same expression is
+the off-diagonal entry of \(M_X^*M_X\).
+
+\begin{proposition}[Exact row-gauge calibration]
+\label{prop:tpc61-exact-row-gauge}
+Let \(m\ne m'\) be active missing rows.  Then
+\begin{equation}
+ \boxed{
+ \bigl(U_d\Xi_{\ne p}U_d\bigr)_{m,m'}
+ =\frac{1}{\sqrt{W_M(m)W_M(m')}}
+ \sum_{\substack{w,w'\in\cW_M\\
+                   m(w)=m,\ m(w')=m'\\
+                   i(w)=i(w')}}
+ \mu(n(w))\mu(n(w'))
+ \overline{\beta_w}\beta_{w'}.}
+ \label{eq:tpc61-two-affine-abstract-kernel}
+\end{equation}
+The diagonal of \(U_d\Xi_{\ne p}U_d\) is zero, and
+\begin{equation}
+ \lambda_{\max}(\Xi_{\ne p})
+ =\lambda_{\max}(U_d\Xi_{\ne p}U_d).
+ \label{eq:tpc61-row-gauge-spectrum}
+\end{equation}
+Consequently
+\begin{equation}
+ \kappa_M
+ =1+\lambda_{\max}(U_d\Xi_{\ne p}U_d).
+ \label{eq:tpc61-kappa-parity-gauge}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+On every high atom,
+\[
+ n(w)=p(w)r(w)
+\]
+is squarefree, \(p(w)\) is prime, and \((p(w),r(w))=1\).  Hence
+\begin{equation}
+ \mu(r(w))=-\mu(n(w)),
+ \qquad
+ \mu(s(w))
+ =\mu(d_{m(w)})\mu(r(w))
+ =-\mu(d_{m(w)})\mu(n(w)).
+ \label{eq:tpc61-high-sign-calibration}
+\end{equation}
+The two minus signs cancel in a Gram product.  Conjugating its row indices
+by \(U_d\) removes the remaining fixed factors
+\(\mu(d_m)\mu(d_{m'})\), leaving exactly
+\eqref{eq:tpc61-two-affine-abstract-kernel}.  The normalization by
+\(W_M(m)^{-1/2}\) is the action of
+\(\mathbf D_M^{\dagger/2}\) on the active row basis.  The diagonal
+statement was proved after \eqref{eq:tpc61-native-gram-prime-split}; it
+also follows directly because one pair \((i,m)\) determines one target and
+one very-high prime.  Finally, unitary conjugation preserves eigenvalues,
+which gives \eqref{eq:tpc61-row-gauge-spectrum}; combine this with
+\eqref{eq:tpc61-kappa-unequal-prime}.
+\end{proof}
+
+The source-divisor sign has therefore been removed exactly; it has not been
+discarded statistically.  The remaining arithmetic sign is the product of
+the M\"obius values of two actual affine targets.  This is the parity-bearing
+part of the native alias Gram.
+
+\subsection{The direct-cell two-affine formula}
+
+On the displayed left direct cell, write a high atom as
+\(w=(m,j,\gamma)\), extending its coefficient by zero when the declared
+literal support fails.  The factor dictionary of TPC--53 gives the exact
+coefficient-free separation
+\begin{equation}
+ \beta_{m,j,\gamma}
+ =a_m(j)K_{m\gamma}q_\gamma(j),
+ \label{eq:tpc61-direct-cell-factorization}
+\end{equation}
+where \(a_m(j)\) contains the source and terminal shapes,
+\(q_\gamma(j)\) contains the opposite-row shape and its fixed output
+phase, and \(K_{m\gamma}\in\{0,1\}\) is the literal static mask.  The
+fixed residue/orbit phase may be placed in either factor; the product in
+\eqref{eq:tpc61-direct-cell-factorization} is the literal coefficient.
+
+Let
+\begin{equation}
+ \mathfrak m_m(j)
+ :=\one_{\{(m,j,\gamma)\in\cW_M
+                 \text{ for some }\gamma\}},
+ \label{eq:tpc61-missing-time-indicator}
+\end{equation}
+where coefficient zeros caused only by \(K_{m\gamma}\) or
+\(q_\gamma(j)\) remain in the factors rather than in the indicator.  In
+the identical-support specialization,
+\begin{equation}
+ \mathfrak m_m(j)=1
+ \quad\Longleftrightarrow\quad
+ \Pplus(mj+h_0)>y,
+ \qquad
+ r_m(j)\notin\cI_m,
+ \label{eq:tpc61-missing-time-cofactor-test}
+\end{equation}
+where \(r_m(j)\) is defined in
+\eqref{eq:tpc61-realized-row-cofactor}, and all common high-support tests
+are understood.  Outside that specialization
+one must replace the last test by the full first-failure signature.
+
+Put
+\begin{equation}
+ \Gamma_{m,m'}(j)
+ :=\sum_\gamma
+ K_{m\gamma}K_{m'\gamma}|q_\gamma(j)|^2.
+ \label{eq:tpc61-two-row-output-overlap}
+\end{equation}
+
+\begin{corollary}[Literal two-affine M\"obius kernel]
+\label{cor:tpc61-two-affine-mobius-kernel}
+For two distinct active rows \(m,m'\),
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ \bigl(U_d\Xi_{\ne p}U_d\bigr)_{m,m'}
+ ={}&\frac{1}{\sqrt{W_M(m)W_M(m')}}
+ \sum_j
+ \mathfrak m_m(j)\mathfrak m_{m'}(j)\\
+ &\times
+ \mu(mj+h_0)\mu(m'j+h_0)
+ \overline{a_m(j)}a_{m'}(j)
+ \Gamma_{m,m'}(j).
+ \end{aligned}}
+ \label{eq:tpc61-two-affine-mobius-kernel}
+\end{equation}
+The sum is over the one fixed physical orbit slice.  The right direct slice
+has the symmetric formula, and the two sides are joined only by orthogonal
+direct sum.
+\end{corollary}
+
+\begin{proof}
+A common native output on the left is precisely a common pair
+\((\gamma,j)\).  Substitute
+\eqref{eq:tpc61-direct-cell-factorization} into
+\eqref{eq:tpc61-two-affine-abstract-kernel}, sum first over \(\gamma\),
+and use \eqref{eq:tpc61-two-row-output-overlap}.  The missing and high
+tests depend on \(m,j\), not on the surviving opposite coordinate, in the
+identical-support specialization.
+\end{proof}
+
+Equation \eqref{eq:tpc61-two-affine-mobius-kernel} is an identity, not a
+Chowla estimate.  In particular, cancellation for a single pair of rows
+would not by itself control the largest eigenvalue when the number of rows
+grows polynomially with \(X\).  The required statement is a weighted
+matrix estimate for the complete family of growing slopes \(m\asymp Q\).
+
+\subsection{Affine gcd separation}
+
+The two affine targets in
+\eqref{eq:tpc61-two-affine-mobius-kernel} have a simple exact resultant.
+
+\begin{lemma}[Gcd and very-high-prime separation]
+\label{lem:tpc61-affine-gcd-separation}
+Let \(m\ne m'\) and suppose both targets at the same physical time \(j\)
+are active very-high values:
+\begin{equation}
+ n=mj+h_0=pr,
+ \qquad
+ n'=m'j+h_0=p'r',
+ \qquad p,p'>y.
+ \label{eq:tpc61-two-high-factorizations}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{\gcd(n,n')\mid h_0(m-m').}
+ \label{eq:tpc61-affine-gcd-resultant}
+\end{equation}
+Moreover
+\begin{equation}
+ p\ne p',
+ \qquad p\nmid n',
+ \qquad p'\nmid n,
+ \label{eq:tpc61-no-cross-high-prime}
+\end{equation}
+and hence neither very-high prime divides the other target's cofactor.
+\end{lemma}
+
+\begin{proof}
+Every common divisor of \(n\) and \(n'\) divides the integer linear
+combination
+\[
+ m'n-mn'=h_0(m'-m),
+\]
+which proves \eqref{eq:tpc61-affine-gcd-resultant}.  If \(p\mid n'\),
+then, because \(p\mid n\), one has
+\(p\mid(m-m')j\).  The inequality \(p>J_+\) excludes \(p\mid j\), and
+\(|m-m'|\le\Delta_M<p\) excludes \(p\mid m-m'\).  Thus \(p\nmid n'\).
+Interchanging the two rows gives \(p'\nmid n\), and in particular
+\(p\ne p'\).  Since \(r'\mid n'\) and \(r\mid n\), the final assertion
+follows.
+\end{proof}
+
+The gcd restriction controls local common factors, but it does not assign a
+sign to
+\(\mu(n)\mu(n')\).  It therefore cannot be entered as a cancellation
+estimate for \(\Xi_{\ne p}\).
+
+\subsection{Determinant reindexing}
+
+For fixed distinct rows \(m,m'\), let
+\(\mathscr S_{m,m'}\) consist of quadruples
+\((p,r,p',r')\) satisfying all of the following:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item \(p,p'>y\) are primes and \(pr,p'r'\) lie on the declared
+       squarefree high support;
+ \item
+       \begin{equation}
+        m'pr-mp'r'=h_0(m'-m);
+        \label{eq:tpc61-double-prime-determinant}
+       \end{equation}
+ \item the common integer
+       \begin{equation}
+        j=\frac{pr-h_0}{m}
+         =\frac{p'r'-h_0}{m'}
+        \label{eq:tpc61-determinant-common-time}
+       \end{equation}
+       belongs to the fixed physical orbit slice; and
+ \item \(p=\Pplus(pr)\), \(p'=\Pplus(p'r')\), and both recovered
+       cofactors satisfy the literal missing tests.
+\end{enumerate}
+All inherited residue, profile, and endpoint conditions remain in this
+definition; the determinant equation does not enlarge the carrier.
+
+\begin{proposition}[Exact determinant form of one parity entry]
+\label{prop:tpc61-determinant-parity-entry}
+The map
+\begin{equation}
+ j\longmapsto
+ \bigl(p_m(j),r_m(j),p_{m'}(j),r_{m'}(j)\bigr)
+ \label{eq:tpc61-time-to-determinant-solution}
+\end{equation}
+is a bijection from the jointly missing times in
+\eqref{eq:tpc61-two-affine-mobius-kernel} onto
+\(\mathscr S_{m,m'}\).  Consequently
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ \bigl(U_d\Xi_{\ne p}U_d\bigr)_{m,m'}
+ ={}&\frac{1}{\sqrt{W_M(m)W_M(m')}}
+ \sum_{(p,r,p',r')\in\mathscr S_{m,m'}}
+ \mu(r)\mu(r')\\
+ &\times
+ \overline{a_m(j)}a_{m'}(j)
+ \Gamma_{m,m'}(j),
+ \end{aligned}}
+ \label{eq:tpc61-determinant-parity-kernel}
+\end{equation}
+where \(j\) is given by
+\eqref{eq:tpc61-determinant-common-time}.
+\end{proposition}
+
+\begin{proof}
+For a jointly missing time, unique largest-prime factorization supplies
+\((p,r)\) and \((p',r')\).  Multiplying the first equality in
+\eqref{eq:tpc61-two-high-factorizations} by \(m'\), the second by \(m\),
+and subtracting gives
+\eqref{eq:tpc61-double-prime-determinant}.  Thus the displayed map lands
+in \(\mathscr S_{m,m'}\), and it is injective because either product
+\(pr\) recovers \(j\).
+
+Conversely, conditions \textup{(ii)}--\textup{(iii)} imply both affine
+equalities at the same physical time, while \textup{(i)} and \textup{(iv)}
+give exactly the active high and missing
+tests.  Hence every quadruple comes from one jointly missing time.  Finally,
+squarefreeness gives
+\[
+ \mu(pr)\mu(p'r')
+ =(-\mu(r))(-\mu(r'))
+ =\mu(r)\mu(r'),
+\]
+so \eqref{eq:tpc61-two-affine-mobius-kernel} becomes
+\eqref{eq:tpc61-determinant-parity-kernel}.
+\end{proof}
+
+This reformulation exposes a possible bilinear or dispersion route, but it
+does not prove that the signed determinant sum is smaller than its absolute
+majorant.  The primes \(p,p'\) are distinct, yet distinctness alone gives no
+M\"obius cancellation in \(r,r'\).
+
+\subsection{Why the opposite-row mask does not diagonalize the kernel}
+
+For a fixed time \(j\), put
+\begin{equation}
+ B(j):=\sum_\gamma|q_\gamma(j)|^2
+ \label{eq:tpc61-opposite-row-mass}
+\end{equation}
+and, when \(B(j)>0\), define
+\begin{equation}
+ \eta_m(j)
+ :=\frac{1}{B(j)}
+   \sum_{\gamma:K_{m\gamma}=0}|q_\gamma(j)|^2.
+ \label{eq:tpc61-row-mask-defect}
+\end{equation}
+Set \(\eta_m(j)=0\) when \(B(j)=0\).
+
+\begin{proposition}[Exact two-row mask overlap]
+\label{prop:tpc61-two-row-mask-overlap}
+For every \(m,m',j\),
+\begin{equation}
+ \boxed{
+ \bigl(1-\eta_m(j)-\eta_{m'}(j)\bigr)_+B(j)
+ \le\Gamma_{m,m'}(j)\le B(j).}
+ \label{eq:tpc61-two-row-mask-overlap-bound}
+\end{equation}
+On a nondegenerate complete direct opposite-row cell to which the
+TPC--50 weighted mask theorem applies uniformly,
+\begin{equation}
+ \sup_{m,j}\eta_m(j)=o(1)
+ \quad\Longrightarrow\quad
+ \Gamma_{m,m'}(j)=(1-o(1))B(j)
+ \label{eq:tpc61-mask-overlap-asymptotic}
+\end{equation}
+uniformly for all active \(m,m',j\).
+\end{proposition}
+
+\begin{proof}
+The product \(K_{m\gamma}K_{m'\gamma}\) vanishes only on the union of
+the two forbidden opposite-row sets.  The weight of that union is at most
+the sum of their weights, which gives the lower bound.  The upper bound is
+immediate from \(0\le K_{m\gamma}K_{m'\gamma}\le1\).  The final statement
+follows from the uniform one-row defect estimate of TPC--50 and the same
+union bound \citep{WangTPC50}.
+\end{proof}
+
+Thus static-mask survival has zero positive-power cost on the declared
+interior cell, but it points in the opposite direction from an orthogonality
+argument: two source rows retain almost the same opposite-row mass.  The
+mask does not supply the open spectral estimate for
+\(\Xi_{\ne p}\).  Any such estimate must use the signed affine correlation
+in \eqref{eq:tpc61-two-affine-mobius-kernel}, the signed determinant form
+in \eqref{eq:tpc61-determinant-parity-kernel}, or additional literal
+structure not used here.
+
+\subsection{The exact open spectral target}
+
+The preceding results identify, but do not estimate, the remaining
+uniform quantity.  Assume \(S_M\ne\{0\}\); when \(S_M=\{0\}\), the
+missing map vanishes and this gate is vacuous.  Put
+\begin{equation}
+ \rho_{\rm par}(X)
+ :=\lambda_{\max}(\Xi_{\ne p})
+ =\lambda_{\max}(U_d\Xi_{\ne p}U_d)\ge0.
+ \label{eq:tpc61-parity-spectral-target}
+\end{equation}
+The nonnegativity follows because \(\Xi_{\ne p}\) is Hermitian with zero
+trace.  By
+\eqref{eq:tpc61-kappa-unequal-prime},
+\begin{equation}
+ \boxed{\kappa_M=1+\rho_{\rm par}(X).}
+ \label{eq:tpc61-kappa-parity-target}
+\end{equation}
+For one distinguished vector, only the corresponding Rayleigh quotient in
+\eqref{eq:tpc61-pointwise-rayleigh} is needed.  A bound for that one
+quadratic form is strictly weaker than
+\eqref{eq:tpc61-parity-spectral-target} and must remain labeled
+distinguished.
+
+Neither the gcd lemma, the determinant bijection, Brun--Titchmarsh on one
+cofactor ladder, nor the static-mask overlap proves
+\(\rho_{\rm par}(X)=X^{o(1)}\).  Treating
+\(\mu(mj+h_0)\) as an independent random sign would add an unproved
+hypothesis and is not part of the TPC interface.

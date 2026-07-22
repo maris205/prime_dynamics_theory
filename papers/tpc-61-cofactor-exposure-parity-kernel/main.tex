@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\srank}{\operatorname{srank}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Pplus}{P^{+}}
+
+\title{Cofactor Exposure and the Missing--High Parity Kernel\\
+at the Critical Cutoff:\\
+Exact Matching Profiles, Restricted Native Grams,\\
+and a Determinant Reformulation}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\noindent\textbf{Keywords:} fixed shift; largest-prime cofactor; weighted exposure;
+restricted Gram; M\"obius correlation; parity kernel.\\[0.5em]
+\noindent\textbf{Convention.} One nonzero physical shift \(h_0\), one direct
+residue/orbit slice, and one side of the inherited Walsh system are fixed
+unless an orthogonal direct sum is displayed.  Every atomic Hilbert norm is
+the raw counting norm.\\[0.5em]
+\noindent\textbf{MSC 2020:} Primary 11N35, 11P32; Secondary 15A18, 47A64.
+
+\input{sections/introduction}
+\input{sections/physical-interface}
+\input{sections/cofactor-exposure}
+\input{sections/cofactor-ladder}
+\input{sections/harmonic-defect}
+\input{sections/restricted-gram}
+\input{sections/parity-kernel}
+\input{sections/collision-certificates}
+\input{sections/endpoint-ledger}
+\input{sections/claims-next}
+
+\begingroup
+\small
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

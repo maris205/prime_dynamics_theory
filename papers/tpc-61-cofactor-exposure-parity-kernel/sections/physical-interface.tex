@@ -1,0 +1,170 @@
+\section{The literal missing-high interface}
+\label{sec:tpc61-physical-interface}
+
+We begin on the same one-side direct slice as TPC--53--60.  The purpose of
+this section is to freeze the arithmetic carrier before defining either an
+exposure profile or a normalized Gram.  None of the sets below may depend on
+the coefficient vector.
+
+\subsection{Scales, rows, and the critical cutoff}
+
+The inherited source row has the unique factorization
+\begin{equation}
+ m=d_m\ell_m,
+ \qquad d_m\asymp D,
+ \qquad \ell_m\asymp L,
+ \qquad m\asymp Q=DL,
+ \label{eq:tpc61-source-scales}
+\end{equation}
+inside one declared row system.  The orbit time satisfies \(j\asymp J\),
+and at the endpoint
+\begin{equation}
+ \begin{aligned}
+ Q&=X^{267/400+o(1)},
+ &J&=X^{133/400+o(1)},\\
+ D&=X^{10049/52500+o(1)},
+ &L&=X^{99979/210000+o(1)}.
+ \end{aligned}
+ \label{eq:tpc61-endpoint-scales}
+\end{equation}
+The physical shift \(h_0\ne0\) is fixed.  The equality support is
+squarefree and obeys
+\begin{equation}
+ (d_m,mj+h_0)=(d_m,h_0)=1.
+ \label{eq:tpc61-source-coprimality}
+\end{equation}
+
+Retain the support endpoints \(D_\pm,M_\pm,J_\pm,N_\pm\) of TPC--59 and
+\(\Delta_M=M_+-M_-\).  Throughout, the cutoff \(y\) is
+\emph{very-high admissible}:
+\begin{equation}
+ y>\max\{|h_0|,D_+,J_+,\Delta_M,\sqrt{N_+}\},
+ \qquad
+ \frac{D_+N_+}{y}<D_-N_-.
+ \label{eq:tpc61-very-high-admissible}
+\end{equation}
+In particular, \(y=C_{\rm vh}Q\) is allowed for a sufficiently large fixed
+support-dependent constant \citep{WangTPC59}.  The cutoff is a feasibility
+condition, not an energy estimate.
+
+\subsection{Recovered labels and raw amplitudes}
+
+Let \(\cW_H(y)\) be the complete nonzero very-high Walsh carrier on this
+slice.  A coordinate \(w\in\cW_H(y)\) uniquely recovers
+\begin{equation}
+ w=(m,j,\gamma),
+ \qquad
+ n(w)=mj+h_0,
+ \qquad
+ p(w)=\Pplus(n(w))>y,
+ \label{eq:tpc61-recovered-mjp}
+\end{equation}
+and, because \(p(w)^2>n(w)\),
+\begin{equation}
+ r(w)=\frac{n(w)}{p(w)},
+ \qquad
+ s(w)=d_mr(w).
+ \label{eq:tpc61-recovered-rs}
+\end{equation}
+The native key is
+\begin{equation}
+ i(w)=(L,\gamma,j)
+ \label{eq:tpc61-native-key-left}
+\end{equation}
+on the displayed left slice.  The right slice exchanges the two row
+systems and is added by orthogonal direct sum.  Thus a fixed native key
+fixes the side, opposite row, and the same physical orbit time \(j\).
+
+Literal factorization supplies
+\begin{equation}
+ b_w(\zeta)=\beta_w\zeta_{m(w)},
+ \qquad \zeta\in\cK_X,
+ \label{eq:tpc61-literal-row-amplitude}
+\end{equation}
+where \(\beta_w\) retains the source shapes, static mask, opposite-row
+factor, orbit multiplier, four-factor profile, and shaped terminal weight,
+but not the bounded row coefficient \(\zeta_m\).  It is the stripped
+TPC--45 coefficient: the physical high character is applied separately.
+No atom-dependent free phase is introduced.
+
+The represented terminal census injects into \(\cW_H(y)\).  Write
+\begin{equation}
+ \cW_H=\cW_R\,\dot\cup\,\cW_M
+ \label{eq:tpc61-RM-partition}
+\end{equation}
+for its image and complement.  The raw diagonals are
+\begin{equation}
+ \cD_E(\zeta)
+ :=\sum_{w\in\cW_E}|\beta_w|^2|\zeta_{m(w)}|^2,
+ \qquad E\in\{R,M,H\},
+ \label{eq:tpc61-raw-RMH-diagonals}
+\end{equation}
+so \(\cD_H=\cD_R+\cD_M\) exactly.
+
+On squarefree support, \(\mu(s)=\mu(d_m)\mu(r)\).  The missing native map
+is therefore
+\begin{equation}
+ (M_X\zeta)_i
+ :=-\sum_{\substack{w\in\cW_M\\i(w)=i}}
+       \mu(s(w))\beta_w\zeta_{m(w)}.
+ \label{eq:tpc61-missing-native-map}
+\end{equation}
+This is the same sign convention as TPC--58 and TPC--60; inserting another
+M\"obius sign would change the physical map \citep{WangTPC58,WangTPC60}.
+
+\subsection{The two singleton incidences}
+
+The very-high inequalities have two consequences used repeatedly.  First,
+for fixed \((i,p)\), there is at most one high atom.  Indeed, \(i\) fixes
+\(j\); if \(p\) meets rows \(m,m'\), then
+\(p\mid(m-m')j\).  The alternative \(p\mid j\) is excluded by
+\(p>J_+\), and \(|m-m'|\le\Delta_M<p\) then gives \(m=m'\); unique row
+factorization recovers the atom.  Second, for fixed \((i,m)\), the target
+\(mj+h_0\), hence \(p,r,s\), is already determined.  Consequently
+\begin{equation}
+ \#\{w\in\cW_H:(i(w),p(w))=(i,p)\}\le1,
+ \qquad
+ \#\{w\in\cW_H:(i(w),m(w))=(i,m)\}\le1.
+ \label{eq:tpc61-ip-im-singletons}
+\end{equation}
+These are coordinate incidences, not statements that a native output has
+only one prime or only one row.
+
+\subsection{When missing means cofactor mismatch}
+
+The exposure theorem below uses the following explicit specialization.
+\begin{definition}[Identical-support specialization]
+\label{def:tpc61-identical-support}
+The Walsh and terminal constructions have identical row, orbit,
+opposite-row, terminal-prime, literal-mask, and profile supports, with no
+additional terminal-only pruning.  If
+\begin{equation}
+ \cI_m:=\{r:(m,r)\in\cI_X\},
+ \label{eq:tpc61-retained-cofactor-row}
+\end{equation}
+then
+\begin{equation}
+ w\in\cW_M
+ \quad\Longleftrightarrow\quad
+ r(w)\notin\cI_{m(w)}.
+ \label{eq:tpc61-missing-iff-cofactor}
+\end{equation}
+\end{definition}
+TPC--60 proves this conditional support identity.  Outside this
+specialization one must retain the full first-failure partition; the
+cofactor complement alone need not equal \(\cW_M\).
+
+\subsection{Six-item physical audit}
+
+The construction satisfies the required interface audit.
+\begin{enumerate}[leftmargin=2.3em]
+ \item Every coefficient is the literal \(\beta_w\zeta_{m(w)}\).
+ \item Every target is \(mj+h_0\) for one fixed nonzero physical shift.
+ \item All atomic energies use raw counting measure, with no fiber average.
+ \item The row, largest prime, cofactor, residual label, and native key are
+       canonically recovered; only identically inactive rows are removed.
+ \item The carriers \(\cW_H,\cW_R,\cW_M\) and \(\cI_X\) are fixed before
+       \(\zeta\) is chosen.
+ \item Exposure and Gram identities have zero structural cost, but every
+       eventual reassembly loss remains in the strict \(1/400\) ledger.
+\end{enumerate}

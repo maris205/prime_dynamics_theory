@@ -1,0 +1,578 @@
+\section{Weighted collision certificates and sharp tests}
+\label{sec:tpc61-collision-certificates}
+
+The constant \(\kappa_M\) is an exact spectral target, but a direct
+eigenvalue computation is not always the best proof.  We now express it as
+the Gram of a literal weighted incidence matrix and give several rigorous
+certificates: collision-graph Schur tests, stable-rank obstructions, exact
+Schur complements, and blockwise estimates.  These statements retain the
+fixed physical coefficients.  Replacing their signed entries by support
+cardinalities is explicitly identified as a sufficient relaxation.
+
+\subsection{The normalized physical incidence matrix}
+
+Let
+\begin{equation}
+ F_M:=M_X\mathbf D_M^{\dagger/2}|_{S_M}
+ :S_M\longrightarrow\ell^2(\cI_{\rm out})
+ \label{eq:tpc61-normalized-incidence-map}
+\end{equation}
+and write its matrix as
+\begin{equation}
+ f_{i,m}
+ =\frac{1}{\sqrt{W_M(m)}}
+   \sum_{\substack{w\in\cW_M\\i(w)=i,\ m(w)=m}}c_w
+ \qquad(W_M(m)>0).
+ \label{eq:tpc61-normalized-incidence-entry}
+\end{equation}
+The fixed-\((i,m)\) decoding discussed after
+\cref{thm:tpc61-prime-block-identity} makes the sum in
+\eqref{eq:tpc61-normalized-incidence-entry} either empty or a single
+literal atom.  Define the row-collision Gram
+\begin{equation}
+ \mathbf K_M:=F_M^*F_M.
+ \label{eq:tpc61-collision-gram}
+\end{equation}
+Then
+\begin{equation}
+ (\mathbf K_M)_{m,n}
+ =\sum_i\overline{f_{i,m}}f_{i,n},
+ \qquad
+ \kappa_M=\lambda_{\max}(\mathbf K_M).
+ \label{eq:tpc61-collision-gram-entries}
+\end{equation}
+Every off-diagonal summand represents two different source rows landing at
+the same native output.  By the prime-block singleton, their terminal
+primes are unequal.  According to whether their residual labels agree, the
+same summand belongs to \(\Xi_{=s}\) or \(\Xi_{\ne s}\).
+
+\begin{theorem}[Unit columns, stable rank, and dimension obstruction]
+\label{thm:tpc61-stable-rank}
+Let
+\begin{equation}
+ r_M:=\dim S_M,
+ \qquad
+ d_M^{\rm out}:=\rank F_M.
+ \label{eq:tpc61-active-dimensions}
+\end{equation}
+If \(r_M>0\), then every column of \(F_M\) has norm one and
+\begin{align}
+ (\mathbf K_M)_{m,m}&=1
+ \qquad(m\in\cM_M),
+ \label{eq:tpc61-unit-gram-diagonal}\\
+ \|F_M\|_{\rm HS}^2
+ =\operatorname{tr}\mathbf K_M&=r_M,
+ \label{eq:tpc61-gram-trace}\\
+ \boxed{
+ \kappa_M
+ =\frac{r_M}{\srank(F_M)}
+ \ge\frac{r_M}{d_M^{\rm out}},}
+ \label{eq:tpc61-stable-rank-identity}\\
+ \boxed{
+ 1\le\kappa_M\le\min\{d_{\rm miss},r_M\}.}
+ \label{eq:tpc61-kappa-basic-range}
+\end{align}
+Moreover:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item \(\kappa_M=1\) if and only if the normalized physical row images
+       are orthonormal;
+ \item \(\kappa_M=r_M\) if and only if \(F_M\) has rank one.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Fix an active source row \(m\).  Distinct atoms driven by \(m\) cannot
+occupy the same native coordinate: \(i\) fixes \(j\), and \(m,j,h_0\) fix
+\(n\), its unique very-high prime, its cofactor, and its residual label.
+Therefore
+\[
+ \sum_i|f_{i,m}|^2
+ =\frac{1}{W_M(m)}
+   \sum_{\substack{w\in\cW_M\\m(w)=m}}|c_w|^2
+ =1.
+\]
+This proves \eqref{eq:tpc61-unit-gram-diagonal} and
+\eqref{eq:tpc61-gram-trace}.  By definition,
+\[
+ \srank(F_M)
+ =\frac{\|F_M\|_{\rm HS}^2}{\|F_M\|^2}
+ =\frac{r_M}{\kappa_M},
+\]
+and \(\srank(F_M)\le\rank F_M\), proving
+\eqref{eq:tpc61-stable-rank-identity}.  The lower bound one follows from
+the trace, the upper bound \(r_M\) follows because the largest eigenvalue
+of a positive matrix is at most its trace, and the
+\(d_{\rm miss}\)-bound is
+\cref{cor:tpc61-kappa-below-degree}.  If the largest eigenvalue is one,
+the trace forces all \(r_M\) eigenvalues to equal one, hence
+\(\mathbf K_M=I\).  If it equals \(r_M\), every other eigenvalue is zero,
+which is equivalent to rank one.
+\end{proof}
+
+\begin{corollary}[Asymptotic rank kill for a subpower degree]
+\label{cor:tpc61-rank-kill}
+Suppose
+\begin{equation}
+ r_M=X^{\rho_M+o(1)},
+ \qquad
+ d_M^{\rm out}\le X^{\omega_M+o(1)}.
+ \label{eq:tpc61-rank-exponents}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \kappa_M\ge
+ X^{(\rho_M-\omega_M)_++o(1)}.}
+ \label{eq:tpc61-rank-exponent-lower}
+\end{equation}
+In particular, a proof of \(\kappa_M=X^{o(1)}\) requires the actual native
+image rank to be within a subpower factor of the number of active missing
+rows.
+\end{corollary}
+
+This is a kill test for the \emph{mass--degree certificate}, not for the
+full reassembly problem.  A distinguished coefficient vector can avoid
+the large-singular-value direction even when
+\eqref{eq:tpc61-rank-exponent-lower} is polynomial.
+
+\subsection{The weighted collision graph}
+
+Let \(\mathscr G_M\) be the graph on active source rows with
+\begin{equation}
+ m\sim n
+ \quad\Longleftrightarrow\quad
+ m\ne n\ \text{ and }\ (\mathbf K_M)_{m,n}\ne0,
+ \label{eq:tpc61-collision-graph}
+\end{equation}
+and attach the signed edge weight \((\mathbf K_M)_{m,n}\).  A larger
+support graph may instead join two rows whenever they share some output;
+the signed graph is obtained after all literal phases on the shared outputs
+have been summed.
+
+\begin{theorem}[Component reduction and weighted Schur certificate]
+\label{thm:tpc61-graph-schur}
+Let \(\mathscr C\) be the connected components of
+\(\mathscr G_M\).  Then
+\begin{equation}
+ \boxed{
+ \kappa_M
+ =\max_{C\in\mathscr C}
+   \lambda_{\max}\bigl((\mathbf K_M)_{C,C}\bigr).}
+ \label{eq:tpc61-component-maximum}
+\end{equation}
+For every family of positive row weights \(t_m>0\),
+\begin{equation}
+ \boxed{
+ \kappa_M
+ \le
+ \max_m\left\{
+  1+\sum_{n\ne m}
+  |(\mathbf K_M)_{m,n}|\frac{t_n}{t_m}
+ \right\}.}
+ \label{eq:tpc61-weighted-graph-schur}
+\end{equation}
+In particular, if
+\begin{equation}
+ \Delta_{\rm coh}
+ :=\max_m\sum_{n\ne m}|(\mathbf K_M)_{m,n}|,
+ \label{eq:tpc61-coherent-degree}
+\end{equation}
+then
+\begin{equation}
+ \kappa_M\le1+\Delta_{\rm coh}.
+ \label{eq:tpc61-unweighted-coherent-degree}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+There is no matrix entry between different connected components, so
+\(\mathbf K_M\) is their orthogonal direct sum, proving
+\eqref{eq:tpc61-component-maximum}.  Entrywise absolute value and the
+Schur test give
+\[
+ \|\mathbf K_M\|
+ \le\bigl\||\mathbf K_M|\bigr\|
+ \le
+ \max_m\frac{1}{t_m}
+ \sum_n|(\mathbf K_M)_{m,n}|t_n.
+\]
+Use the unit diagonal from
+\eqref{eq:tpc61-unit-gram-diagonal}.  Taking \(t_m=1\) gives the last
+claim.
+\end{proof}
+
+Thus a subpower bound for the \emph{weighted coherent degree}, rather than
+the raw number of atoms in one output fiber, is sufficient for
+\(\kappa_M=X^{o(1)}\).  The weights \(t_m\) permit exceptional rows with
+small physical mass or asymmetric overlap to be handled without replacing
+the physical atomic norm.
+
+\subsection{A phase-blind overlap certificate}
+
+For an active row \(m\), put
+\begin{equation}
+ I_m:=\{i:f_{i,m}\ne0\}.
+ \label{eq:tpc61-row-output-support}
+\end{equation}
+For two distinct active rows define the directed weighted overlap
+\begin{equation}
+ \theta_{m\to n}
+ :=\sum_{i\in I_m\cap I_n}|f_{i,m}|^2.
+ \label{eq:tpc61-directed-overlap}
+\end{equation}
+By the unit-column identity, \(0\le\theta_{m\to n}\le1\).
+
+\begin{proposition}[Weighted-codegree bound]
+\label{prop:tpc61-weighted-codegree}
+For distinct active rows,
+\begin{equation}
+ |(\mathbf K_M)_{m,n}|
+ \le
+ \sqrt{\theta_{m\to n}\theta_{n\to m}}.
+ \label{eq:tpc61-codegree-cauchy}
+\end{equation}
+Consequently
+\begin{equation}
+ \boxed{
+ \kappa_M
+ \le
+ 1+\max_m\sum_{n\ne m}
+ \sqrt{\theta_{m\to n}\theta_{n\to m}}.}
+ \label{eq:tpc61-phase-blind-overlap-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Only the common outputs \(I_m\cap I_n\) occur in
+\((\mathbf K_M)_{m,n}\).  Cauchy--Schwarz on that set gives
+\eqref{eq:tpc61-codegree-cauchy}; insert it in
+\eqref{eq:tpc61-unweighted-coherent-degree}.
+\end{proof}
+
+The overlap certificate is deliberately phase blind.  Its failure does
+not prove that \(\kappa_M\) is large: the exact signed sum in
+\((\mathbf K_M)_{m,n}\) may be much smaller than its Cauchy--Schwarz
+envelope.
+
+For completeness, the incidence matrix itself admits the following
+rectangular Schur test.  If positive weights \(a_i,b_m\) and constants
+\(A,B\) satisfy
+\begin{equation}
+ \sum_m|f_{i,m}|b_m\le A a_i,
+ \qquad
+ \sum_i|f_{i,m}|a_i\le B b_m,
+ \label{eq:tpc61-rectangular-schur-hypothesis}
+\end{equation}
+then
+\begin{equation}
+ \boxed{\kappa_M=\|F_M\|^2\le AB.}
+ \label{eq:tpc61-rectangular-schur}
+\end{equation}
+This form can be more convenient when row and output weights factor into
+literal smooth profiles.
+
+\subsection{Exact Schur-complement certification}
+
+The preceding Schur bounds use absolute values.  The following criterion
+retains all signed cancellations and is exact.  Split the active row space
+as \(S_M=S_U\oplus S_V\) and write
+\begin{equation}
+ \mathbf K_M=
+ \begin{pmatrix}
+  K_{UU}&K_{UV}\\
+  K_{VU}&K_{VV}
+ \end{pmatrix}.
+ \label{eq:tpc61-blocked-collision-gram}
+\end{equation}
+
+\begin{proposition}[Exact recursive upper certificate]
+\label{prop:tpc61-exact-schur-complement}
+If \(\Lambda>\lambda_{\max}(K_{VV})\), then
+\begin{equation}
+ \lambda_{\max}(\mathbf K_M)\le\Lambda
+ \label{eq:tpc61-lambda-upper-target}
+\end{equation}
+if and only if
+\begin{equation}
+ \boxed{
+ K_{UU}
+ +K_{UV}(\Lambda I-K_{VV})^{-1}K_{VU}
+ \preceq\Lambda I.}
+ \label{eq:tpc61-strict-schur-certificate}
+\end{equation}
+At the boundary where
+\(C:=\Lambda I-K_{VV}\) may be singular, the exact conditions are
+\begin{align}
+ C&\succeq0,
+ \label{eq:tpc61-singular-schur-one}\\
+ \Ran K_{VU}&\subseteq\Ran C,
+ \label{eq:tpc61-singular-schur-two}\\
+ \Lambda I-K_{UU}-K_{UV}C^\dagger K_{VU}&\succeq0.
+ \label{eq:tpc61-singular-schur-three}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+The target is equivalent to positivity of
+\[
+ \Lambda I-\mathbf K_M
+ =
+ \begin{pmatrix}
+  \Lambda I-K_{UU}&-K_{UV}\\
+  -K_{VU}&\Lambda I-K_{VV}
+ \end{pmatrix}.
+\]
+The ordinary Schur complement gives
+\eqref{eq:tpc61-strict-schur-certificate} when the lower-right block is
+positive definite.  The Moore--Penrose positivity criterion for a
+Hermitian block matrix gives
+\eqref{eq:tpc61-singular-schur-one}--%
+\eqref{eq:tpc61-singular-schur-three}.
+\end{proof}
+
+This certificate permits a dense exceptional core \(V\) to be eliminated
+exactly while a large sparse part \(U\) is treated recursively.  A
+floating-point positive gap at finitely many values of \(X\) is not such a
+certificate; exact arithmetic or interval enclosures must also control its
+scale dependence.
+
+\subsection{Blockwise physical certificates}
+
+Let the missing carrier have a fixed disjoint partition
+\begin{equation}
+ \cW_M=\bigsqcup_{b=1}^{B}\cW_{M,b},
+ \qquad
+ M_X=\sum_{b=1}^{B}M_b,
+ \qquad
+ \mathbf D_M=\sum_{b=1}^{B}\mathbf D_b,
+ \label{eq:tpc61-missing-block-partition}
+\end{equation}
+where \(\mathbf D_b\) is the raw diagonal of the \(b\)-th block.  Put
+\begin{equation}
+ S_b:=\Ran\mathbf D_b,
+ \qquad
+ F_b:=M_b\mathbf D_b^{\dagger/2}|_{S_b},
+ \qquad
+ \kappa_b:=\|F_b\|^2.
+ \label{eq:tpc61-block-normalized-maps}
+\end{equation}
+
+\begin{theorem}[Block reassembly upper bounds]
+\label{thm:tpc61-block-upper}
+For every fixed carrier partition,
+\begin{equation}
+ \boxed{\kappa_M\le\sum_{b=1}^{B}\kappa_b.}
+ \label{eq:tpc61-sum-block-bound}
+\end{equation}
+More precisely, define
+\begin{equation}
+ a_{bc}:=\|F_b^*F_c\|,
+ \label{eq:tpc61-block-cross-norm}
+\end{equation}
+where the maps are extended by zero between their active row spaces.  Then
+\begin{equation}
+ \boxed{
+ \kappa_M\le
+ \bigl\|[a_{bc}]_{1\le b,c\le B}\bigr\|_{\ell^2_B\to\ell^2_B}.}
+ \label{eq:tpc61-block-cross-matrix-bound}
+\end{equation}
+In particular:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item if \(\Ran F_b\perp\Ran F_c\) for \(b\ne c\), then
+       \(\kappa_M\le\max_b\kappa_b\);
+ \item without any cross-block orthogonality,
+       \(a_{bc}\le\sqrt{\kappa_b\kappa_c}\), which recovers
+       \eqref{eq:tpc61-sum-block-bound}.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For \(\zeta\), set
+\(x_b=\mathbf D_b^{1/2}\zeta\in S_b\).  Then
+\[
+ M_X\zeta=\sum_bF_bx_b,
+ \qquad
+ \sum_b\|x_b\|^2=\cD_M(\zeta).
+\]
+The triangle inequality followed by Cauchy--Schwarz gives
+\[
+ \left\|\sum_bF_bx_b\right\|^2
+ \le
+ \left(\sum_b\sqrt{\kappa_b}\|x_b\|\right)^2
+ \le
+ \left(\sum_b\kappa_b\right)
+ \left(\sum_b\|x_b\|^2\right),
+\]
+which proves \eqref{eq:tpc61-sum-block-bound}.  On the orthogonal direct
+sum \(\bigoplus_bS_b\), the Gram of the row operator
+\((x_b)_b\mapsto\sum_bF_bx_b\) has blocks \(F_b^*F_c\).  The norm of a
+block operator matrix is at most the norm of the scalar matrix of block
+norms, proving \eqref{eq:tpc61-block-cross-matrix-bound}.  The two special
+cases follow immediately.
+\end{proof}
+
+If the carrier is divided into \(B=O(\log X)\) dyadic cofactor blocks and
+one proves
+\begin{equation}
+ \kappa_b=X^{o(1)}
+ \quad\text{uniformly in }b,
+ \label{eq:tpc61-subpower-block-hypothesis}
+\end{equation}
+then \eqref{eq:tpc61-sum-block-bound} gives
+\begin{equation}
+ \boxed{\kappa_M=X^{o(1)}}
+ \label{eq:tpc61-subpower-global-kappa}
+\end{equation}
+without any cross-block orthogonality hypothesis.  What is not automatic
+is \eqref{eq:tpc61-subpower-block-hypothesis}: on a compatible endpoint
+block, the ambient determinant-ladder bound still contains the
+positive-power factor \(1+L/R\).
+
+\subsection{Sharp examples}
+
+\begin{example}[Complete coherent incidence]
+\label{ex:tpc61-coherent-incidence}
+Take \(r\) source rows and one native output, with one atom of coefficient
+one in every row.  Then
+\begin{equation}
+ \mathbf D_M=I_r,
+ \qquad
+ F_M=[\,1\ \cdots\ 1\,],
+ \qquad
+ d_{\rm miss}=r,
+ \qquad
+ \kappa_M=r.
+ \label{eq:tpc61-coherent-example}
+\end{equation}
+Thus the ambient degree bound can be exactly sharp.
+\end{example}
+
+\begin{example}[Same support and magnitudes, Fourier cancellation]
+\label{ex:tpc61-fourier-incidence}
+Take \(r\) rows and \(r\) native outputs, with one atom at every pair
+\((i,m)\), all of modulus \(r^{-1/2}\).  The raw row weights are one and
+every native fiber has degree \(r\).  If all phases are equal, then
+\[
+ F_M=r^{-1/2}\one\one^{\mathsf T},
+ \qquad
+ \kappa_M=r.
+\]
+For the Fourier phases
+\begin{equation}
+ (F_M)_{i,m}
+ =r^{-1/2}\exp(2\pi\mathrm i\,im/r),
+ \label{eq:tpc61-fourier-matrix}
+\end{equation}
+\(F_M\) is unitary and
+\begin{equation}
+ \boxed{d_{\rm miss}=r,\qquad\kappa_M=1.}
+ \label{eq:tpc61-fourier-saving}
+\end{equation}
+The two arrays have identical support, identical atomic magnitudes, and
+identical native degrees.  Hence support and raw mass do not determine the
+restricted native norm.  This is an abstract sharpness example; it does
+not assert that the literal arithmetic phases form a Fourier matrix.
+\end{example}
+
+\begin{example}[Uniform and distinguished scopes separate sharply]
+\label{ex:tpc61-uniform-distinguished}
+For
+\[
+ F_M=[\,1\ \ 1\,]
+\]
+one has \(\kappa_M=2\).  The distinguished normalized coefficient
+\(x=(1,-1)\) has pointwise ratio zero, whereas \(x=(1,1)\) attains the
+uniform value two.  A good distinguished ratio therefore gives no
+coefficient-uniform bound, while a large uniform norm does not prove that
+the inherited physical vector occupies its top singular direction.
+\end{example}
+
+\begin{example}[Either stage of the residual quotient can carry the loss]
+\label{ex:tpc61-two-stage-sharpness}
+If \(T_M\) embeds \(r\) coefficient coordinates as the \(r\) residual
+labels over one native output, then
+\(\kappa_{\rm res}=1\), \(\beta_M=r\), and \(\kappa_M=r\).  Conversely,
+if \(T_M\) coherently groups \(r\) row coordinates into one residual
+coordinate and \(\mathsf E\) is the identity on that coordinate, then
+\(\kappa_{\rm res}=r\), \(\beta_M=1\), and again \(\kappa_M=r\).
+Thus neither factor in \eqref{eq:tpc61-two-stage-upper} can be omitted.
+\end{example}
+
+\subsection{Exponent consequence for the reassembly ledger}
+
+Suppose, in a stated uniform or distinguished scope,
+\begin{align}
+ \kappa_M&\le X^{\nu_M+o(1)},
+ \label{eq:tpc61-effective-degree-exponent}\\
+ \cD_M(\zeta)
+ &\le X^{-\sigma_M+o(1)}\cD_{\rm ref}(\zeta),
+ \label{eq:tpc61-missing-mass-saving}\\
+ \|A_X\zeta\|^2
+ &\ge X^{-\lambda_{\rm rep}+o(1)}
+       \cD_{\rm ref}(\zeta).
+ \label{eq:tpc61-represented-reference-lower}
+\end{align}
+Then
+\begin{equation}
+ q_X(\zeta)
+ :=\frac{\kappa_M\cD_M(\zeta)}
+          {\|A_X\zeta\|^2}
+ \le
+ X^{\nu_M+\lambda_{\rm rep}-\sigma_M+o(1)}.
+ \label{eq:tpc61-effective-product}
+\end{equation}
+Consequently
+\begin{equation}
+ \boxed{
+ \sigma_M>\nu_M+\lambda_{\rm rep}
+ \quad\Longrightarrow\quad
+ \frac{\|(A_X+M_X)\zeta\|^2}{\|A_X\zeta\|^2}
+ =1+o(1).}
+ \label{eq:tpc61-zero-cost-effective-degree}
+\end{equation}
+The upper half of the last equality follows from the triangle inequality,
+and the lower half from
+\eqref{eq:tpc61-uniform-reassembly-certificate}.
+
+At exponent equality one must retain the actual margin.  If
+\begin{equation}
+ 1-\sqrt{q_X(\zeta)}\ge X^{-a+o(1)}
+ \label{eq:tpc61-critical-margin}
+\end{equation}
+for some \(a\ge0\), then the certificate charges at most
+\begin{equation}
+ \lambda_{\rm reasm}\le2a
+ \label{eq:tpc61-critical-reassembly-cost}
+\end{equation}
+in the matching scope.  This cost must be entered in the strict
+\(1/400\) ledger.  If \(q_X\) is not bounded below one, the present
+reverse-triangle certificate is silent; that does not prove failure of a
+signed or shorted-Gram route.
+
+The dimension obstruction
+\eqref{eq:tpc61-rank-exponent-lower} gives the necessary lower scale
+\[
+ \nu_M\ge(\rho_M-\omega_M)_+.
+\]
+Thus a zero-cost mass--degree proof cannot follow from the available
+savings unless
+\begin{equation}
+ \sigma_M>
+ (\rho_M-\omega_M)_++\lambda_{\rm rep}.
+ \label{eq:tpc61-rank-necessary-saving}
+\end{equation}
+Failure of \eqref{eq:tpc61-rank-necessary-saving} closes this particular
+uniform certificate, not the distinguished signed route.
+
+At the critical cutoff, the coefficient-blind residual capacity exponent
+from TPC--60 is at least
+\[
+ \frac{15077}{105000}
+ \approx0.143590,
+\]
+far above \(1/400\).  The new quantity \(\nu_M\) is not that ambient
+capacity exponent.  A proof of
+\(\Delta_{\rm coh}=X^{o(1)}\), of the weighted overlap condition in
+\eqref{eq:tpc61-phase-blind-overlap-bound}, or of the block condition
+\eqref{eq:tpc61-subpower-block-hypothesis} would instead give
+\(\nu_M=0\).  None of those arithmetic estimates is asserted here.
