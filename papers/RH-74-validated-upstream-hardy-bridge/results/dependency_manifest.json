@@ -1,0 +1,47 @@
+{
+  "external_inputs": {
+    "rh58_production_constructor": {
+      "path": "papers/RH-58-time-ordered-schur-cross-gramian/experiments/run_schur_fusion_pilot.py",
+      "sha256": "20cf7a546983679b27553bfae85591bec900452729c9ec3ee3f611a753e68e72"
+    },
+    "rh70_frozen_audit": {
+      "path": "papers/RH-70-frozen-production-block-hardy-audit/results/frozen_production_interval_audit.json",
+      "sha256": "3a7ae810cc6a8d1b8c667267dd5bb7bd9279273b34b7f6305efaf9f9e8fbde26"
+    },
+    "rh71_bridge_slack": {
+      "path": "papers/RH-71-directional-tail-route-review/results/arb_bridge_slack_audit.json",
+      "sha256": "5edfe4854186265115b1a711e7ea30e1b994a4e89bf3448bc06cf294f3885f91"
+    },
+    "rh72_assembly_audit": {
+      "path": "papers/RH-72-validated-folded-gaussian-assembly/results/interval_assembly_audit.json",
+      "sha256": "5b3f172274bb8e632624a7ec975371db4eed1a2f70371e139a911beb5bc0f7de"
+    },
+    "rh73_peripheral_audit": {
+      "path": "papers/RH-73-validated-peripheral-rank-two-deflation/results/peripheral_validation_audit.json",
+      "sha256": "fcba88efdff52f1e6aba2e53ede48cd41cdc09402444b3fc3b49642c4b4dd5de"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "98dc6cda1f611a375841883b255071b0a27fb0c2ca4d41c17478cb1a5c5a0c9d",
+    "experiments/make_figures.py": "e00aa4e611bf1b60a0054f0deadabbf75667354759d27b6da712bac52125fd0f",
+    "experiments/run_validated_upstream_bridge.py": "eaa64203ae30373e80f906c87fca01ad7949a8b81e76cd804839b31ffb6a40eb",
+    "experiments/verify_archive.py": "d822289b257d3b6e8368d0360288536517d721056c8e02eb66de577077075a7f",
+    "src/upstream_bridge/__init__.py": "49a81fd9334100e1d7882bca578a31d57cff6e99272095412c5bc340a63a88af",
+    "src/upstream_bridge/certificates.py": "4de7add332589bc9c4cac5a221e2fc26e43bdd2ed1942761bd064068a1d3a4d8",
+    "tests/test_archived_results.py": "dada85edc9b9205e76fa0978b36a056219a98a4ba05282dce5d61c2e59da0866",
+    "tests/test_theory.py": "29bdcfd4d599a5545a36517dc549d7a32ea220916b23939a683c0b85bd9b4bb5"
+  },
+  "publication_artifacts": {
+    ".gitignore": "45bc6f151fb9fa411571660ee59bb7d034af65fbb7c1c6104c4c7af4ada209fc",
+    "README.md": "7a4fa5f066ff2075e9224d179c6d8c410ca134405138e3ddaf1fa1682cc25e04",
+    "figures/validated_upstream_hardy_bridge.pdf": "01bda3f870e37799e5931ad7786d2d7bcb67525a414dffd523b2ad4553b91d0f",
+    "figures/validated_upstream_hardy_bridge.png": "a5eccf5c0b3783a6dba9720a37fdc86ca3b8d0c1c1038c904072aba168eb87a3",
+    "main.pdf": "3586e46fe1f625a6bcdaf71cbb45a611c5798efcca7528a0ff4714c60e04e6cf",
+    "main.tex": "cd77f73e3cb684d76233abf5938c5275af995f165c693e9212520f9476bf4b7d",
+    "pyproject.toml": "72aba71908fed9868c7b162e235066873ed6098a14465ce67384a4af5c0596e3",
+    "references.bib": "5cac1e011225b044cc2e258f0d5012359a759f45acd78199f18a0a3ef8216a17",
+    "requirements.txt": "25be8263391d4091728342c19f59a0c799ec2444980149521892d447c2ce223b",
+    "validated-upstream-hardy-bridge.pdf": "3586e46fe1f625a6bcdaf71cbb45a611c5798efcca7528a0ff4714c60e04e6cf"
+  },
+  "status": "all_rh74_inputs_sources_and_publication_artifacts_hashed"
+}
