@@ -1,0 +1,377 @@
+\section{High-block transfer and completion of the affine face}
+\label{sec:tpc58-affine-completion}
+
+The preceding residual construction and the native affine column use two
+equivalent M\"obius conventions.  We first align them exactly.  This is
+essential: the terminal amplitudes of TPC--56 and TPC--57 already contain
+the residual sign, whereas the canonical Walsh lift stores that sign in the
+evaluation operator \citep{WangTPC45,WangTPC56,WangTPC57}.
+
+\subsection{The sign-compatible high block}
+
+Let \(i\) denote one native output coordinate, including its side, opposite
+row, and orbit time.  For a squarefree low label \(s\), define the canonical
+high Walsh coefficient
+\begin{equation}
+ z_{H;i,s}
+ :=-
+ \sum_{\substack{p\in\cP_y\\sp\text{ is an active equality label at }i}}
+ b_{i,sp}.
+ \label{eq:tpc58-canonical-high-coefficient}
+\end{equation}
+The minus sign is the fixed physical value of the high character.  Let
+\begin{equation}
+ (C_{\mu,H}z)_i
+ :=\sum_s\mu(s)z_{i,s},
+ \qquad
+ (U_\mu z)_{i,s}:=\mu(s)z_{i,s}.
+ \label{eq:tpc58-high-erasure-and-gauge}
+\end{equation}
+Both operators act on raw counting-measure spaces.  Put
+\begin{equation}
+ h:=C_{\mu,H}z_H.
+ \label{eq:tpc58-native-high-vector}
+\end{equation}
+By the definition of the TPC--45 vectors \(v_p\),
+\begin{equation}
+ \boxed{
+ h=-\sum_{p\in\cP_y}v_p.}
+ \label{eq:tpc58-high-vector-vp}
+\end{equation}
+
+For the same very-high-prime carrier, let
+\begin{equation}
+ A_{i,s}
+ :=\sum_{u:q(u)=(i,s)}x_u
+ \label{eq:tpc58-tpc57-residual-amplitude}
+\end{equation}
+be the undeleted TPC--57 residual amplitude.  Here the side tag in \(i\)
+is suppressed from the notation \(q(u)\).  Finally define the unsigned
+erasure
+\begin{equation}
+ (C_1A)_i:=\sum_sA_{i,s}.
+ \label{eq:tpc58-unsigned-erasure}
+\end{equation}
+
+\begin{proposition}[Exact gauge alignment]
+\label{prop:tpc58-exact-gauge-alignment}
+On the identical fixed-\(h_0\), very-high-prime carrier,
+\begin{equation}
+ \boxed{
+ A=U_\mu z_H,
+ \qquad
+ C_1A=C_{\mu,H}z_H=h,
+ \qquad
+ \|A\|_2=\|z_H\|_2.}
+ \label{eq:tpc58-gauge-alignment}
+\end{equation}
+Equivalently, \(C_{\mu,H}=C_1U_\mu\).  In particular, no second
+M\"obius sign is to be applied to the already physical amplitudes \(A\).
+\end{proposition}
+
+\begin{proof}
+Write an active high equality label as \(sp\), with \(s=d_mr\).  The
+stripped TPC--45 atom has the displayed leading minus sign, while the
+terminal multiplier in TPC--56 and TPC--57 contributes
+\(\mu(d_m)\mu(r)=\mu(s)\).  Thus, after summing all terminal primes with
+the same \((i,s)\),
+\[
+ A_{i,s}
+ =-\mu(s)\sum_p b_{i,sp}
+ =\mu(s)z_{H;i,s}.
+\]
+This proves the first identity.  Summing over \(s\) proves the second,
+and the third follows because \(U_\mu\) is diagonal unitary.
+\end{proof}
+
+Let \(z_0\) be the no-high part of the canonical Walsh lift, so that
+\((z_0)_{i,u}=b_{i,u}\) when \(u_{>y}=1\).  Then
+\begin{equation}
+ C_{\mu,0}z_0=v_0,
+ \qquad
+ C_{\mu,H}z_H=h,
+ \qquad
+ C_\mu(z_0\oplus z_H)=v_0+h.
+ \label{eq:tpc58-full-affine-erasure}
+\end{equation}
+Consequently the complete native affine energy is
+\begin{equation}
+ \boxed{
+ \cN_{\rm aff}:=\|v_0+h\|_2^2
+ =\left\|v_0-\sum_pv_p\right\|_2^2.}
+ \label{eq:tpc58-native-affine-energy}
+\end{equation}
+
+\subsection{The restricted high-transfer constant}
+
+For coefficient-uniform statements, fix once and for all a baseline
+carrier independent of the bounded row coefficient vector
+\(\zeta=(\zeta_m)\).  Remove atoms whose baseline factor is identically
+zero, but do not remove an atom merely because a particular
+\(\zeta_m\) vanishes.  On this fixed carrier, let
+\begin{equation}
+ T_H:\mathcal K_X\longrightarrow\cH_H,
+ \qquad
+ T_H\zeta=z_H(\zeta),
+ \qquad
+ E_H:=\Ran T_H,
+ \label{eq:tpc58-high-coefficient-map}
+\end{equation}
+where \(\mathcal K_X\) is the finite row-coefficient space and
+\(\cH_H\) is the canonical high-label Hilbert space.  The exact literal
+factorization \(x_u=c_u\zeta_{m(u)}\) makes \(T_H\) linear.  For the
+coefficient-uniform gate, assume \(E_H\ne\{0\}\) and define
+\begin{equation}
+ \alpha_H
+ :=\inf_{\substack{z\in E_H\\z\ne0}}
+ \frac{\|C_{\mu,H}z\|_2^2}{\|z\|_2^2}.
+ \label{eq:tpc58-alpha-H}
+\end{equation}
+If \(E_H=\{0\}\), the declared high carrier is inactive for the whole
+coefficient class.  The pointwise identities above still hold, but no
+least-eigenvalue constant \(\alpha_H\) is assigned and the two-stage lower
+chain has no nonzero high input.
+
+\begin{proposition}[Optimal high-block transfer]
+\label{prop:tpc58-optimal-high-transfer}
+Let \(P_{E_H}\) be the orthogonal projection onto \(E_H\).  Then
+\begin{equation}
+ \boxed{
+ \alpha_H
+ =\lambda_{\min}\!\left(
+ P_{E_H}C_{\mu,H}^{*}C_{\mu,H}P_{E_H}\big|_{E_H}
+ \right).}
+ \label{eq:tpc58-alpha-H-eigenvalue}
+\end{equation}
+Moreover,
+\begin{equation}
+ \alpha_H>0
+ \quad\Longleftrightarrow\quad
+ E_H\cap\Ker C_{\mu,H}=\{0\}.
+ \label{eq:tpc58-alpha-H-kernel-test}
+\end{equation}
+In particular,
+\begin{equation}
+ \dim E_H>\rank C_{\mu,H}
+ \quad\Longrightarrow\quad
+ \alpha_H=0.
+ \label{eq:tpc58-alpha-H-dimension-test}
+\end{equation}
+The same value is obtained if the infimum is restricted to any bounded
+coefficient cube containing a nonzero scalar multiple of every direction
+in \(\mathcal K_X\).
+\end{proposition}
+
+\begin{proof}
+The quadratic form of the compressed positive operator in
+\eqref{eq:tpc58-alpha-H-eigenvalue} is exactly
+\(\|C_{\mu,H}z\|_2^2\) on \(E_H\).  The Rayleigh--Ritz principle therefore
+gives the first assertion.  In finite dimension its least eigenvalue is
+zero exactly when the restriction of \(C_{\mu,H}\) to \(E_H\) has a
+nonzero kernel.  Rank--nullity proves
+\eqref{eq:tpc58-alpha-H-dimension-test}.  Finally, every nonzero
+coefficient vector can be multiplied by a sufficiently small positive
+scalar to enter the bounded cube, and the quotient
+\eqref{eq:tpc58-alpha-H} is homogeneous of degree zero.
+\end{proof}
+
+For the distinguished coefficient vector alone, no uniform coefficient
+class is needed.  Whenever \(z_H\ne0\), set
+\begin{equation}
+ \alpha_H(\zeta)
+ :=\frac{\|h(\zeta)\|_2^2}{\|z_H(\zeta)\|_2^2}.
+ \label{eq:tpc58-distinguished-alpha-H}
+\end{equation}
+This number is an identity, not an estimated lower bound.
+
+\subsection{The affine-separation constant}
+
+Let
+\begin{equation}
+ B_0:\mathcal K_X\longrightarrow\cH_{\rm out},
+ \qquad B_0\zeta=v_0(\zeta),
+ \label{eq:tpc58-base-map}
+\end{equation}
+denote the no-high native map on the same declared coefficient class, and
+define the coupled map
+\begin{equation}
+ J_{\rm aff}:\mathcal K_X
+ \longrightarrow\cH_{\rm out}\oplus\cH_{\rm out},
+ \qquad
+ J_{\rm aff}\zeta
+ :=\bigl(B_0\zeta,C_{\mu,H}T_H\zeta\bigr).
+ \label{eq:tpc58-coupled-affine-map}
+\end{equation}
+Both entries are therefore driven by the same coefficient vector.  Let
+\begin{equation}
+ \cF_{\rm aff}:=\Ran J_{\rm aff}
+ \subset\cH_{\rm out}\oplus\cH_{\rm out}.
+ \label{eq:tpc58-affine-pair-image}
+\end{equation}
+For the uniform affine gate assume \(\cF_{\rm aff}\ne\{0\}\).  If this
+image is zero, the declared native affine column vanishes identically; no
+restricted minimum \(\delta_{\rm aff}\) is assigned and no positive lower
+transfer is available on that class.
+Define the physical sum map
+\begin{equation}
+ D_+(b,g):=b+g
+ \label{eq:tpc58-affine-sum-map}
+\end{equation}
+and the optimal affine-separation constant
+\begin{equation}
+ \delta_{\rm aff}
+ :=\inf_{\substack{(b,g)\in\cF_{\rm aff}\\(b,g)\ne(0,0)}}
+ \frac{\|b+g\|_2^2}{\|b\|_2^2+\|g\|_2^2}.
+ \label{eq:tpc58-delta-aff}
+\end{equation}
+Thus \(0\le\delta_{\rm aff}\le2\).  Notice that this is the raw physical
+constant.  Dividing \(D_+\) by \(\sqrt2\) would produce a normalized
+principal-angle constant, but it would also change the physical norm.
+
+\begin{proposition}[Exact affine kernel test]
+\label{prop:tpc58-affine-kernel-test}
+One has
+\begin{equation}
+ \boxed{
+ \delta_{\rm aff}
+ =\sigma_{\min}\!\left(D_+\big|_{\cF_{\rm aff}}\right)^2,}
+ \label{eq:tpc58-delta-aff-singular-value}
+\end{equation}
+where the domain has the orthogonal-sum norm.  Hence
+\begin{equation}
+ \delta_{\rm aff}>0
+ \quad\Longleftrightarrow\quad
+ \cF_{\rm aff}\cap
+ \{(g,-g):g\in\cH_{\rm out}\}=\{(0,0)\}.
+ \label{eq:tpc58-delta-aff-kernel-test}
+\end{equation}
+The equivalence uses that \(\cF_{\rm aff}\) is a nonzero finite-dimensional
+linear subspace, and hence closed; it is not asserted for an arbitrary
+nonclosed admissible set.
+In particular,
+\begin{equation}
+ \dim\cF_{\rm aff}>\dim\cH_{\rm out}
+ \quad\Longrightarrow\quad
+ \delta_{\rm aff}=0.
+ \label{eq:tpc58-delta-aff-dimension-test}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The quotient in \eqref{eq:tpc58-delta-aff} is the squared Rayleigh
+quotient of \(D_+|_{\cF_{\rm aff}}\).  This proves
+\eqref{eq:tpc58-delta-aff-singular-value}.  Its kernel is the anti-diagonal
+\(\{(g,-g)\}\), which proves the second assertion.  The last follows from
+rank--nullity because \(D_+\) maps into \(\cH_{\rm out}\).
+\end{proof}
+
+\begin{theorem}[Two-stage residual-to-affine transfer]
+\label{thm:tpc58-two-stage-affine-transfer}
+Assume \(E_H\ne\{0\}\) and
+\(\cF_{\rm aff}\ne\{0\}\).  For every coefficient vector in the declared
+baseline class,
+\begin{equation}
+ \boxed{
+ \cN_{\rm aff}(\zeta)
+ \ge
+ \delta_{\rm aff}\,\alpha_H\,
+ \|z_H(\zeta)\|_2^2.}
+ \label{eq:tpc58-two-stage-affine-transfer}
+\end{equation}
+Equivalently, using the TPC--57 residual vector \(A=U_\mu z_H\),
+\begin{equation}
+ \cN_{\rm aff}(\zeta)
+ \ge
+ \delta_{\rm aff}\,\alpha_H\,\|A(\zeta)\|_2^2.
+ \label{eq:tpc58-two-stage-tpc57-transfer}
+\end{equation}
+For one distinguished vector the same conclusion holds with the pointwise
+ratios \(\alpha_H(\zeta)\) and
+\begin{equation}
+ \delta_{\rm aff}(\zeta)
+ :=\frac{\|v_0(\zeta)+h(\zeta)\|_2^2}
+ {\|v_0(\zeta)\|_2^2+\|h(\zeta)\|_2^2},
+ \label{eq:tpc58-distinguished-delta-aff}
+\end{equation}
+whenever their denominators are nonzero.
+\end{theorem}
+
+\begin{proof}
+By definition of \(\delta_{\rm aff}\),
+\[
+ \|v_0+h\|_2^2
+ \ge\delta_{\rm aff}
+ \bigl(\|v_0\|_2^2+\|h\|_2^2\bigr)
+ \ge\delta_{\rm aff}\|h\|_2^2.
+\]
+By \eqref{eq:tpc58-alpha-H},
+\[
+ \|h\|_2^2
+ =\|C_{\mu,H}z_H\|_2^2
+ \ge\alpha_H\|z_H\|_2^2.
+\]
+Multiplication proves \eqref{eq:tpc58-two-stage-affine-transfer}, and
+\cref{prop:tpc58-exact-gauge-alignment} gives
+\eqref{eq:tpc58-two-stage-tpc57-transfer}.  The distinguished statement is
+the same chain with the two defining identities inserted pointwise.
+\end{proof}
+
+\subsection{Two independent sharp obstructions}
+
+\begin{theorem}[Sharp independence of the two transfer gates]
+\label{thm:tpc58-two-independent-no-go}
+Neither stage in \cref{thm:tpc58-two-stage-affine-transfer} follows from
+positivity at the other stage.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item A residual packet may have positive energy, with every terminal-prime
+       fiber a singleton, while its native high vector is zero.
+ \item A native high vector may be nonzero while the complete affine vector
+       is zero.
+\end{enumerate}
+Both statements are sharp finite-dimensional assertions with raw counting
+measure.
+\end{theorem}
+
+\begin{proof}
+Both examples use one common coefficient space \(\mathcal K_X=\C\), so the
+two affine entries are genuinely coupled rather than selected independently.
+
+For (i), take one native coordinate \(i\), two distinct residual labels
+\(s_1,s_2\), and one terminal atom in each residual fiber.  Let \(z_d\ne0\)
+be the dark vector
+\[
+ (z_d)_{i,s_1}=\overline{\mu(s_1)},
+ \qquad
+ (z_d)_{i,s_2}=-\overline{\mu(s_2)},
+ \qquad C_{\mu,H}z_d=0.
+\]
+Define \(T_H\zeta=\zeta z_d\) and, for a fixed nonzero
+\(g\in\cH_{\rm out}\), define \(B_0\zeta=\zeta g\).  Then
+\(E_H=\operatorname{span}\{z_d\}\), so \(\alpha_H=0\), whereas
+\[
+ \cF_{\rm aff}=\operatorname{span}\{(g,0)\},
+ \qquad \delta_{\rm aff}=1.
+\]
+Thus a strictly positive affine gate does not prevent total loss at native
+erasure, even with singleton terminal-prime fibers.
+
+For (ii), choose a bright vector \(z_b\) with
+\(C_{\mu,H}z_b=g\ne0\), and set
+\(T_H\zeta=\zeta z_b\), \(B_0\zeta=-\zeta g\).  Then
+\[
+ \alpha_H=\frac{\|g\|_2^2}{\|z_b\|_2^2}>0,
+ \qquad
+ \cF_{\rm aff}=\operatorname{span}\{(-g,g)\},
+ \qquad \delta_{\rm aff}=0.
+\]
+Hence a positive high-transfer gate does not prevent exact base--high
+cancellation.  These are complete finite-dimensional coupled-map models;
+they do not assert that either bad direction occurs in the distinguished
+arithmetic image.
+\end{proof}
+
+The last sentence is part of the theorem boundary.  In particular, a dark
+direction on the unrestricted coordinate space is not evidence that the
+distinguished arithmetic coefficient occupies it.  Conversely, an upper
+bound for fiber multiplicity does not bound its angle away from that dark
+space.

@@ -1,0 +1,291 @@
+\section{The literal fixed-shift residual-to-native interface}
+\label{sec:tpc58-fixed-shift-interface}
+
+We now identify the high residual vector in
+\cref{sec:tpc58-two-gram-dictionary} with the literal terminal output of
+TPC--53--57.  This is a coordinatewise interface theorem at the one
+specified \(h_0\).  It is not a lower Gram estimate.
+
+\subsection{One side, one source system, and one physical intercept}
+
+Fix one side of the equality column.  On the left, a terminal atom is
+\begin{equation}
+ \mathfrak u=(m,r,j,\gamma),
+ \qquad m=d_m\ell_m,
+ \qquad p_{\mathfrak u}r-mj=h_0,
+ \label{eq:tpc58-left-terminal-atom}
+\end{equation}
+and its native and residual labels are
+\begin{equation}
+ i(\mathfrak u):=(L,\gamma,j),
+ \qquad s(\mathfrak u):=d_mr.
+ \label{eq:tpc58-left-native-residual-labels}
+\end{equation}
+The right side has
+\(\mathfrak u=(m,r,j,\alpha)\), with the source systems interchanged, and
+\(i(\mathfrak u)=(R,\alpha,j)\).  Every assertion below is first proved on
+one side.  The two-sided assertion is the orthogonal direct sum of the two
+one-sided maps; it is not a new coherent sum.
+
+The row, mask, and scale data are the literal ones from TPC--53:
+\begin{align}
+ m&=d_m\ell_m,
+ &a_m&=\mu(d_m)(\log\ell_m)\omega_D(d_m)
+       \psi_L(\ell_m/L)\zeta_m,
+ \label{eq:tpc58-literal-source-row}\\
+ K_{m\gamma}
+ &=\one_{\ell_m\ne\ell_\gamma}
+   \one_{|m-m_\gamma|>\Delta}
+   \one_{(d_m,d_\gamma)\le G},
+ &\Delta&=QX^{-1/400},\qquad G=X^{1/400}.
+ \label{eq:tpc58-literal-mask-and-scales}
+\end{align}
+The fixed opposite-row factor, orbit scalar, and four-factor profile are
+also retained.  We abbreviate their exact product by
+\begin{equation}
+ \mathfrak P_{m,\gamma}(j)
+ :=\eta_\gamma\mathscr R(q_\gamma)\xi_a
+   W_1(mj/X)\Psi_1(d_mj/K)
+   W_2(m_\gamma j/X)\Psi_2(d_\gamma j/K).
+ \label{eq:tpc58-literal-profile-product}
+\end{equation}
+Thus the pre-terminal coordinate is
+\begin{equation}
+ [G_X^L]_{\mathfrak u}
+ =a_mK_{m\gamma}\mathfrak P_{m,\gamma}(j).
+ \label{eq:tpc58-literal-preterminal-coordinate}
+\end{equation}
+
+Use the normalized shaped terminal weight
+\begin{equation}
+ \Lambda_X(n):=(\log n)\Phi_0(n/X).
+ \label{eq:tpc58-normalized-terminal-weight}
+\end{equation}
+This is the same inherited cutoff as the TPC--45 notation
+\(\Lambda(n)=(\log n)\Phi_0(n)\) after its scale has been absorbed into
+the profile.  We use \eqref{eq:tpc58-normalized-terminal-weight} throughout
+and do not identify it with the von Mangoldt function.
+
+Let \(\cU_{h_0}^{\rm term}\) be the exact terminal-admissible set: the
+candidate \(p_{\mathfrak u}=(mj+h_0)/r\) is prime in the inherited support,
+\(\Lambda_X(p_{\mathfrak u}r)\ne0\), and
+\begin{equation}
+ d_m,r,s=d_mr\ \text{are squarefree},
+ \qquad(d_m,r)=1.
+ \label{eq:tpc58-squarefree-terminal-support}
+\end{equation}
+For comparison with the TPC--45 very-high Gram, make the deterministic
+restriction
+\begin{equation}
+ \cU_{h_0,>y}^{\rm term}
+ :=\{\mathfrak u\in\cU_{h_0}^{\rm term}:p_{\mathfrak u}>y\},
+ \label{eq:tpc58-very-high-terminal-set}
+\end{equation}
+where \(y\) obeys
+\eqref{eq:tpc58-cutoff-geometric-condition}--
+\eqref{eq:tpc58-cutoff-label-separation}.  The conclusions in this section
+concern this very-high face.  They do not silently cover the remainder of
+the large-prime band.  At the endpoint cutoff, the cofactor ceiling
+\eqref{eq:tpc58-compatible-cofactor-ceiling} also makes this face disjoint
+from the old \(R\asymp J\) block.  Nontrivial activation on a compatible
+smaller cofactor band is an additional arithmetic hypothesis, not a
+consequence of the coordinate dictionary.
+
+\subsection{Baseline and distinguished supports}
+
+The exact factorization of TPC--56--57 has the form
+\begin{equation}
+ X_{\mathfrak u}
+ :=(D_{h_0}G_X^L)_{\mathfrak u}
+ =c_{\mathfrak u}\zeta_{m(\mathfrak u)},
+ \label{eq:tpc58-terminal-row-factorization}
+\end{equation}
+where \(c_{\mathfrak u}\) contains the common output factor, literal mask,
+all displayed profiles, source shapes, and \(\Lambda_X(mj+h_0)\), but not
+the bounded row coefficient \(\zeta_m\).  Define the baseline and physical
+very-high carriers separately:
+\begin{align}
+ \cU_{h_0,>y}^{\circ}
+ &:=\{\mathfrak u\in\cU_{h_0,>y}^{\rm term}:
+                 c_{\mathfrak u}\ne0\},
+ \label{eq:tpc58-baseline-terminal-carrier}\\
+ \cU_{h_0,>y}^{\rm phys}(\zeta)
+ &:=\{\mathfrak u\in\cU_{h_0,>y}^{\circ}:
+                 \zeta_{m(\mathfrak u)}\ne0\}.
+ \label{eq:tpc58-physical-terminal-carrier}
+\end{align}
+The Hilbert spaces and the erasure map are built on the fixed baseline
+carrier \eqref{eq:tpc58-baseline-terminal-carrier}.  A distinguished
+coefficient vector is represented by zeros on inactive baseline
+coordinates.  This keeps coefficient-dependent cancellation separate from
+structural deletion.
+
+TPC--55 proves, under \(D=o(J)\), row-factorization uniqueness, and large
+\(X\), that
+\begin{equation}
+ \mathfrak u\longmapsto
+ \bigl(i(\mathfrak u),s(\mathfrak u),p_{\mathfrak u}\bigr)
+ \label{eq:tpc58-prime-resolved-injection}
+\end{equation}
+is injective on one declared source system.  Thus a coordinate
+\((i,s,p)\) denotes at most one literal atom.  This is the canonical
+nonduplicated prime-resolved representation on the fixed baseline carrier
+used below; it is not a claim of minimal parameter dimension or physical
+identifiability \citep{WangTPC55}.
+
+\subsection{Sign calibration against the stripped TPC--45 atom}
+
+Let \(b_{i,sp}\) be the stripped TPC--45 coefficient on the coordinate
+corresponding through
+\eqref{eq:tpc58-prime-resolved-injection}.  The exact factor allocation of
+TPC--53 puts \(\mu(d_m)\) in the source coefficient and the terminal
+operator contributes \(\mu(r)\).  Hence
+\begin{equation}
+ \mu(d_m)\mu(r)=\mu(s)
+ \label{eq:tpc58-common-mobius-product}
+\end{equation}
+on \eqref{eq:tpc58-squarefree-terminal-support}.  With the leading sign in
+the TPC--45 stripped atom fixed as in that paper, coordinatewise comparison
+of the source coefficient, mask, opposite-row factor, orbit scalar,
+profiles, and shaped terminal weight gives
+\begin{equation}
+ \boxed{
+ X_{\mathfrak u}=-\mu(s(\mathfrak u))
+ b_{i(\mathfrak u),\,s(\mathfrak u)p_{\mathfrak u}}.}
+ \label{eq:tpc58-literal-sign-calibration}
+\end{equation}
+No modulus has been taken in
+\eqref{eq:tpc58-literal-sign-calibration}.  It is the coefficientwise
+global-sign calibration needed for the later base--high affine cross term
+\citep{WangTPC45,WangTPC53}.
+
+For clarity, define the stripped grouped high vector directly from the
+TPC--45 atoms by
+\begin{equation}
+ z_H(i,s)
+ :=-\sum_{\substack{p>y\\sp\in\cU_i^\circ}}b_{i,sp}.
+ \label{eq:tpc58-literal-stripped-high-vector}
+\end{equation}
+This is exactly the convention \(z_H=-\sum_p x_p\) of
+\eqref{eq:tpc58-high-residual-sign-convention}.  Put
+\begin{equation}
+ A_H:=\Uop_\mu z_H,
+ \qquad
+ A_H(i,s)=\mu(s)z_H(i,s).
+ \label{eq:tpc58-literal-physical-high-vector}
+\end{equation}
+Then \eqref{eq:tpc58-literal-sign-calibration} and the prime-resolved
+injection show
+\begin{equation}
+ \boxed{
+ A_H(i,s)
+ =\sum_{\substack{\mathfrak u\in\cU_{h_0,>y}^{\rm term}\\
+                   i(\mathfrak u)=i,\ s(\mathfrak u)=s}}
+   X_{\mathfrak u}.}
+ \label{eq:tpc58-terminal-grouped-equals-physical-high}
+\end{equation}
+Thus \(A_H\), not the stripped \(z_H\), is the TPC--57 terminal grouped
+amplitude.  In particular, the TPC--57 amplitude already contains the
+common M\"obius factor \(\mu(s)\); applying \(\Uop_\mu\) to it a second time
+would remove rather than restore the physical residual sign.
+
+\begin{proposition}[Literal fixed-shift erasure interface]
+\label{prop:tpc58-literal-fixed-shift-erasure}
+On one declared side and source system, under the cutoff conditions
+\eqref{eq:tpc58-cutoff-geometric-condition}--
+\eqref{eq:tpc58-cutoff-label-separation} and the TPC--55 injection,
+the following diagram commutes:
+\begin{equation}
+ \begin{array}{ccc}
+ \{\text{prime-resolved atoms }(i,s,p)\}
+ &\xrightarrow{\quad p\text{-grouping}\quad}&
+ A_H\in\ell^2(i,s)\\[3pt]
+ &&\ \downarrow\Eop\\[-1pt]
+ &&-\displaystyle\sum_{p\in\cP_y}v_p\in\ell^2(i).
+ \end{array}
+ \label{eq:tpc58-fixed-shift-commuting-diagram}
+\end{equation}
+Equivalently,
+\begin{equation}
+ \boxed{
+ \Eop A_H=-\sum_{p\in\cP_y}v_p.}
+ \label{eq:tpc58-fixed-shift-native-high-identity}
+\end{equation}
+Every arrow is pointwise at the one physical \(h_0\); no average over
+intercepts and no frozen-shift completion occurs.
+\end{proposition}
+
+\begin{proof}
+The first arrow is
+\eqref{eq:tpc58-terminal-grouped-equals-physical-high}.  Applying the
+unsigned erasure and using
+\eqref{eq:tpc58-literal-sign-calibration} gives, at a native coordinate
+\(i\),
+\[
+ (\Eop A_H)_i
+ =-\sum_{p>y}\sum_s\mu(s)b_{i,sp}
+ =-\sum_{p>y}(v_p)_i,
+\]
+which is \eqref{eq:tpc58-fixed-shift-native-high-identity}.  All sums are
+finite and retain the same literal carrier.
+\end{proof}
+
+\subsection{Raw norms and the second grouping gate}
+
+The terminal atomic, residual grouped, and native-high energies on this
+face are three different raw counting-measure quantities:
+\begin{align}
+ \cD_{h_0}^{>y}(G_X^L)
+ &:=\sum_{\mathfrak u\in\cU_{h_0,>y}^{\rm term}}
+      |X_{\mathfrak u}|^2,
+ \label{eq:tpc58-very-high-terminal-diagonal}\\
+ \cG_{h_0}^{>y}(G_X^L)
+ &:=\sum_{i,s}
+      \left|\sum_{\substack{\mathfrak u:\,
+                    i(\mathfrak u)=i,\ s(\mathfrak u)=s}}
+             X_{\mathfrak u}\right|^2
+   =\|A_H\|_{\cH_{\rm res}^{H}}^2,
+ \label{eq:tpc58-very-high-residual-grouped-energy}\\
+ \cN_{H}^{>y}(h_0)
+ &:=\sum_i\left|\sum_s A_H(i,s)\right|^2
+   =\|\Eop A_H\|_{\cH_{\rm nat}}^2.
+ \label{eq:tpc58-very-high-native-energy}
+\end{align}
+Equation \eqref{eq:tpc58-very-high-residual-grouped-energy} already forms
+the coherent terminal-prime sum at fixed \((i,s)\).  The input to the native
+Gram gate is therefore \(\cG_{h_0}^{>y}\), not
+\(\cD_{h_0}^{>y}\).  The passage from
+\eqref{eq:tpc58-very-high-residual-grouped-energy} to
+\eqref{eq:tpc58-very-high-native-energy} is the second grouping
+\((i,s)\to i\).
+
+The singleton and phase-sector results of TPC--56--57 concern the first
+grouping \(p\to(i,s)\) \citep{WangTPC56,WangTPC57}.  They do not constrain
+the cross-\(s\) sum in
+\eqref{eq:tpc58-very-high-native-energy}.  In particular:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item a terminal-prime singleton at \((i,s)\) may coexist with many other
+       singleton residual labels \(t\ne s\) in the same native coordinate;
+ \item the adaptive phase sector of TPC--56 deletes terminal coordinates
+       before the first grouping and is not the undeleted vector \(A_H\);
+ \item the conditional undeleted floor of TPC--57 can provide a lower
+       bound for \(\|A_H\|^2\), but no lower bound for
+       \(\|\Eop A_H\|^2\) follows without a new residual-label comparison.
+\end{enumerate}
+
+Finally, \eqref{eq:tpc58-very-high-native-energy} is only the very-high
+part of the native affine column on the declared direct slice.  Its complete
+native affine energy contains
+\begin{equation}
+ v_0+\Eop A_H=v_0-\sum_{p\in\cP_y}v_p.
+ \label{eq:tpc58-full-affine-sign-interface}
+\end{equation}
+Neither nonnegativity nor a triangle inequality permits a lower bound for
+\(\|\Eop A_H\|^2\) to be returned to
+\(\|v_0+\Eop A_H\|^2\).  Base completion is a separate affine gate.
+
+The fixed-shift interface proved here is therefore exact but deliberately
+limited: it aligns literal coefficients, signs, supports, and raw
+coordinates through both grouping maps.  It proves no positive lower
+singular value for \(\Eop\), no terminal activation, no residual-label
+occupancy estimate, and no native affine lower bound.

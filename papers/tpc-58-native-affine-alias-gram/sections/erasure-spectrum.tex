@@ -1,0 +1,304 @@
+\section{Canonical residual erasure and its exact spectrum}
+\label{sec:tpc58-erasure-spectrum}
+
+This section isolates the finite-dimensional linear algebra of forgetting a
+low label after its M\"obius phase has been restored.  No arithmetic
+distribution statement is used.  The distinction between a canonical
+coefficient array and its erased physical image is essential: the first is
+unique in its declared orthogonal basis, whereas the second generally has a
+large dark space.
+
+\subsection{The block erasure operator}
+
+Let \(\mathcal I\) be a finite set.  For each \(i\in\mathcal I\), let
+\(\mathcal T_i\) be a nonempty finite label set of size \(k_i\), and put
+\begin{equation}
+ \mathcal Z:=\bigoplus_{i\in\mathcal I}\C^{\mathcal T_i},
+ \qquad
+ \mathcal Y:=\C^{\mathcal I}.
+ \label{eq:tpc58-erasure-spaces}
+\end{equation}
+Both spaces carry their raw counting-measure inner products.  Attach a
+possibly complex unit gauge
+\begin{equation}
+ \bm\mu_i=(\mu_{i,t})_{t\in\mathcal T_i},
+ \qquad |\mu_{i,t}|=1,
+ \label{eq:tpc58-unit-mobius-gauge}
+\end{equation}
+and define the erasure operator
+\begin{equation}
+ (C_\mu z)_i:=\sum_{t\in\mathcal T_i}\mu_{i,t}z_{i,t}.
+ \label{eq:tpc58-erasure-operator}
+\end{equation}
+The classical squarefree M\"obius choice is real, but allowing a unitary
+gauge makes the conjugation in the spectral projector visible.
+
+For each fiber define
+\begin{equation}
+ \Pi_i z_i
+ :=\frac{\overline{\bm\mu_i}}{k_i}
+       \sum_{t\in\mathcal T_i}\mu_{i,t}z_{i,t}.
+ \label{eq:tpc58-bright-projector}
+\end{equation}
+Thus \(\Pi_i\) is the orthogonal projector onto
+\(\operatorname{span}\{\overline{\bm\mu_i}\}\), not in general onto
+\(\operatorname{span}\{\bm\mu_i\}\).
+
+\begin{theorem}[Exact erasure spectrum]
+\label{thm:tpc58-exact-erasure-spectrum}
+Let \(C_{\mu,i}:\C^{\mathcal T_i}\to\C\) denote the \(i\)-th block of
+\(C_\mu\).  Then
+\begin{align}
+ C_{\mu,i}^*C_{\mu,i}&=k_i\Pi_i,
+ \label{eq:tpc58-fiber-erasure-spectrum}\\
+ C_\mu^*C_\mu&=\bigoplus_{i\in\mathcal I}k_i\Pi_i,
+ \label{eq:tpc58-global-erasure-spectrum}\\
+ \Ker C_\mu
+ &=\bigoplus_{i\in\mathcal I}
+   \left\{z_i:\sum_{t\in\mathcal T_i}\mu_{i,t}z_{i,t}=0\right\}.
+ \label{eq:tpc58-exact-dark-space}
+\end{align}
+In particular,
+\begin{equation}
+ \rank C_\mu=|\mathcal I|,
+ \qquad
+ \dim\Ker C_\mu=\sum_{i\in\mathcal I}(k_i-1).
+ \label{eq:tpc58-erasure-rank-nullity}
+\end{equation}
+The nonzero singular value on the \(i\)-th fiber is \(\sqrt{k_i}\).
+\end{theorem}
+
+\begin{proof}
+In the standard coordinate convention the row of \(C_{\mu,i}\) is
+\(\bm\mu_i^{\mathsf T}\), so
+\begin{equation}
+ C_{\mu,i}^*C_{\mu,i}
+ =\overline{\bm\mu_i}\,\bm\mu_i^{\mathsf T}.
+ \label{eq:tpc58-rank-one-outer-product}
+\end{equation}
+Its range is the line spanned by \(\overline{\bm\mu_i}\), and
+\(\|\bm\mu_i\|^2=k_i\) by
+\eqref{eq:tpc58-unit-mobius-gauge}.  This proves
+\eqref{eq:tpc58-fiber-erasure-spectrum}.  Distinct fibers have disjoint
+domain and range coordinates, hence the direct-sum identity
+\eqref{eq:tpc58-global-erasure-spectrum}.  Each nonzero row has rank one,
+and its kernel has dimension \(k_i-1\), which proves the remaining claims.
+\end{proof}
+
+\begin{remark}[The hypotheses behind the scalar \(k_i\)]
+\label{rem:tpc58-erasure-weight-scope}
+For a nonzero general row \(g_i=(g_{i,t})_t\), the exact identity is
+\begin{equation}
+ C_i^*C_i
+ =\overline g_i g_i^{\mathsf T}
+ =\|g_i\|^2\Pi_{\operatorname{span}(\overline g_i)}.
+ \label{eq:tpc58-general-erasure-row}
+\end{equation}
+Thus the eigenvalue is \(k_i\) only when all \(k_i\) gauges have unit
+modulus.  In particular, nonsquarefree labels carrying M\"obius value zero
+cannot be counted among the \(k_i\) active unit-gauge labels.  Also, when
+the numbers \(k_i\) vary, there is no global scalar \(k\) for which
+\(C_\mu^*C_\mu=k\Pi\).
+\end{remark}
+
+\begin{proposition}[Sharp ambient obstruction]
+\label{prop:tpc58-sharp-ambient-obstruction}
+The best lower erasure constant on the entire canonical space is
+\begin{equation}
+ \alpha_{\rm amb}
+ :=\inf_{0\ne z\in\mathcal Z}
+   \frac{\|C_\mu z\|^2}{\|z\|^2}
+ =
+ \begin{cases}
+  1,&k_i=1\text{ for every }i,\\
+  0,&k_i\ge2\text{ for at least one }i.
+ \end{cases}
+ \label{eq:tpc58-sharp-ambient-constant}
+\end{equation}
+Both alternatives are sharp.
+\end{proposition}
+
+\begin{proof}
+If every \(k_i=1\), then \(C_\mu\) is diagonal with unit-modulus entries
+and is therefore unitary.  If \(k_i\ge2\), choose distinct labels
+\(t,u\in\mathcal T_i\), set
+\begin{equation}
+ z_{i,t}=\mu_{i,u},
+ \qquad z_{i,u}=-\mu_{i,t},
+ \label{eq:tpc58-two-label-dark-vector}
+\end{equation}
+and set every other coordinate to zero.  This is a nonzero vector in
+\(\Ker C_\mu\), so the infimum vanishes.
+\end{proof}
+
+The complex conjugation in
+\eqref{eq:tpc58-bright-projector} is not cosmetic.  For example, if
+\begin{equation}
+ C=[\,1\ \ i\,],
+ \label{eq:tpc58-complex-gauge-counterexample}
+\end{equation}
+then \(\Ran C^*=\operatorname{span}\{(1,-i)\}\).  Projecting instead onto
+\(\operatorname{span}\{(1,i)\}\) reverses both off-diagonal signs and does
+not give \(C^*C\).  Likewise, the row \([\,1\ \ 0\,]\) has two displayed
+coordinates but nonzero eigenvalue one, not two; this is the smallest
+counterexample to omitting the unit-gauge condition.
+
+\subsection{Canonical aggregation is not physical uniqueness}
+
+We record the exact sense in which the residual coordinate system is
+canonical.  For each \(i\), let
+\begin{equation}
+ \mathcal T_i=\mathcal T_i^0\mathbin{\dot\cup}\mathcal S_i
+ \label{eq:tpc58-canonical-label-partition}
+\end{equation}
+be a declared disjoint partition into no-high labels and residual labels.
+For \(t\in\mathcal T_i^0\) let \(b_{i,t}\in\C\), and for
+\(s\in\mathcal S_i\) let \(\mathcal P_{i,s}\) be a finite set with
+coefficients \(b_{i,s,p}\).  Put
+\begin{equation}
+ B_{i,s}:=\sum_{p\in\mathcal P_{i,s}}b_{i,s,p},
+ \qquad
+ z_{i,t}:=b_{i,t},
+ \qquad
+ z_{i,s}:=-B_{i,s}.
+ \label{eq:tpc58-canonical-residual-vector}
+\end{equation}
+Define
+\begin{align}
+ \cD_0
+ &:=\sum_i\left(
+      \sum_{t\in\mathcal T_i^0}|b_{i,t}|^2
+      +\sum_{s\in\mathcal S_i}\sum_{p\in\mathcal P_{i,s}}
+       |b_{i,s,p}|^2\right),
+ \label{eq:tpc58-ambient-diagonal}\\
+ \cD_H
+ &:=\sum_i\sum_{s\in\mathcal S_i}
+      \sum_{p\in\mathcal P_{i,s}}|b_{i,s,p}|^2,
+ \label{eq:tpc58-high-diagonal}\\
+ \cG_{\rm res}
+ &:=\sum_i\sum_{s\in\mathcal S_i}|B_{i,s}|^2.
+ \label{eq:tpc58-abstract-residual-grouped-energy}
+\end{align}
+
+\begin{proposition}[Canonical residual identity]
+\label{prop:tpc58-canonical-residual-identity}
+For the coefficient vector in
+\eqref{eq:tpc58-canonical-residual-vector},
+\begin{equation}
+ \boxed{
+ \cR_{\rm low}:=\|z\|^2
+ =\cD_0-\cD_H+\cG_{\rm res}.}
+ \label{eq:tpc58-canonical-low-energy}
+\end{equation}
+Equivalently,
+\begin{equation}
+ \cR_{\rm low}
+ =\cD_0+2\operatorname{Re}
+   \sum_i\sum_{s\in\mathcal S_i}
+   \sum_{\substack{p,q\in\mathcal P_{i,s}\\p<q}}
+   b_{i,s,p}\overline{b_{i,s,q}},
+ \label{eq:tpc58-residual-signed-offdiagonal}
+\end{equation}
+after fixing any order on each finite prime set.
+\end{proposition}
+
+\begin{proof}
+The declared partition
+\eqref{eq:tpc58-canonical-label-partition} is orthogonal in
+\(\mathcal Z\).  Hence
+\[
+ \|z\|^2
+ =\sum_i\sum_{t\in\mathcal T_i^0}|b_{i,t}|^2
+  +\sum_i\sum_{s\in\mathcal S_i}|B_{i,s}|^2,
+\]
+which is exactly
+\eqref{eq:tpc58-canonical-low-energy}.  Expanding every \(|B_{i,s}|^2\)
+and cancelling its diagonal contribution against \(-\cD_H\) gives
+\eqref{eq:tpc58-residual-signed-offdiagonal}.
+\end{proof}
+
+The vector \(z\) is unique as the coefficient vector in the fixed
+orthonormal coordinate family \((i,t)\).  This statement requires the
+partition in \eqref{eq:tpc58-canonical-label-partition} to have been fixed
+first; it neither recovers the separate coefficients inside a sum
+\(B_{i,s}\) nor makes \(z\) unique from \(C_\mu z\).  Its support is the
+smallest subset of this particular orthonormal coordinate family that
+represents \(z\), but the fixed baseline label bank need not be minimal for
+one realized coefficient vector.  Indeed,
+\begin{equation}
+ b_{i,s,p}=1,
+ \qquad b_{i,s,q}=-1
+ \label{eq:tpc58-cancelled-residual-counterexample}
+\end{equation}
+gives \(z_{i,s}=0\), even though two baseline atoms occur.  At the physical
+erasure level, the one-fiber vectors \((1,0)\) and \((0,1)\) have the same
+image under \([\,1\ \ 1\,]\).  Thus ``canonical'', ``minimal'', and
+``physically identifiable'' are three different assertions.
+
+\subsection{The signed native off-diagonal}
+
+Put
+\begin{equation}
+ (v_0)_i:=\sum_{t\in\mathcal T_i^0}\mu_{i,t}b_{i,t},
+ \qquad
+ w_i:=\sum_{s\in\mathcal S_i}\mu_{i,s}B_{i,s}.
+ \label{eq:tpc58-vzero-and-w}
+\end{equation}
+Then the erasure of the canonical residual vector is
+\begin{equation}
+ \boxed{C_\mu z=v_0-w.}
+ \label{eq:tpc58-erased-affine-difference}
+\end{equation}
+The exact coordinate expansion is
+\begin{align}
+ \|C_\mu z\|^2
+ ={}&\|z\|^2
+ +2\operatorname{Re}\sum_i
+   \sum_{\substack{t,u\in\mathcal T_i^0\\t<u}}
+   \mu_{i,t}\overline{\mu_{i,u}}
+   b_{i,t}\overline{b_{i,u}}
+ \notag\\
+ &+2\operatorname{Re}\sum_i
+   \sum_{\substack{s,r\in\mathcal S_i\\s<r}}
+   \mu_{i,s}\overline{\mu_{i,r}}
+   B_{i,s}\overline{B_{i,r}}
+ \notag\\
+ &-2\operatorname{Re}\sum_i
+   \sum_{\substack{t\in\mathcal T_i^0\\s\in\mathcal S_i}}
+   \mu_{i,t}\overline{\mu_{i,s}}
+   b_{i,t}\overline{B_{i,s}}.
+ \label{eq:tpc58-complete-signed-offdiagonal}
+\end{align}
+Thus erasure restores all unequal-low-label cross terms.  The mixed
+no-high/residual terms have a minus sign, while the no-high/no-high and
+residual/residual terms have a plus sign.  For a complex gauge the factor is
+\(\mu_{i,t}\overline{\mu_{i,u}}\); it cannot be replaced by a formal
+\(\mu(tu)\) without additional coprimality and reality hypotheses.
+
+If
+\begin{equation}
+ (v_p)_i
+ :=\sum_{\substack{s\in\mathcal S_i\\p\in\mathcal P_{i,s}}}
+   \mu_{i,s}b_{i,s,p},
+ \label{eq:tpc58-individual-high-vectors}
+\end{equation}
+then \(w=\sum_pv_p\) and
+\begin{equation}
+ \boxed{
+ \|v_0-w\|^2
+ =\|v_0\|^2+\sum_p\|v_p\|^2
+  +2\operatorname{Re}\sum_{p<q}\langle v_p,v_q\rangle
+  -2\operatorname{Re}\sum_p\langle v_0,v_p\rangle.}
+ \label{eq:tpc58-affine-signed-expansion}
+\end{equation}
+No positive lower comparison with \(\|z\|^2\) follows from the diagonal
+terms alone.  The minimal sharp example is
+\begin{equation}
+ C=[\,1\ \ 1\,],
+ \qquad z=(1,-1),
+ \qquad \|z\|^2=2,
+ \qquad \|Cz\|^2=0.
+ \label{eq:tpc58-sharp-native-cancellation}
+\end{equation}
+The restricted-range analysis in the next section identifies exactly what
+additional coefficient geometry is needed to exclude this dark direction.

@@ -1,0 +1,200 @@
+\section{Introduction}
+\label{sec:tpc58-introduction}
+
+The fixed-shift residual program has reached a point at which two
+nonnegative quantities that look similar must be separated sharply.
+The very-high-prime decomposition of TPC--45 produces the physical
+all-minus affine corner
+\begin{equation}
+ \cN_{\rm nat}
+ :=\left\|v_0-\sum_{p>y}v_p\right\|^2,
+ \label{eq:tpc58-intro-native}
+\end{equation}
+whereas averaging the low Walsh signs produces
+\begin{equation}
+ \cR_{\rm low}
+ :=\cD_0-\cD_H
+   +\left\|\sum_{p>y}x_p\right\|^2.
+ \label{eq:tpc58-intro-residual}
+\end{equation}
+For each individual \(p\), the diagonal norms agree,
+\(\|v_p\|=\|x_p\|\), but the cross inner products do not
+\citep{WangTPC45}.  The prime-resolved work in TPC--55--57 addresses the
+coherent sum over \(p\) at a fixed residual label.  It does not yet
+return that residual energy to the native output space
+\citep{WangTPC55,WangTPC56,WangTPC57}.
+
+The missing operation is simple to state and consequential to analyze:
+\begin{equation}
+ p\longmapsto(i,s)
+ \quad\hbox{followed by}\quad
+ (i,s)\longmapsto i.
+ \label{eq:tpc58-two-groupings}
+\end{equation}
+The first arrow groups terminal primes while retaining the residual
+label \(s\).  The second erases \(s\) inside the native output coordinate
+\(i\).  TPC--57 studies the first arrow.  This paper studies the second.
+In particular, one prime in every \((i,s)\)-fiber does not imply one
+residual label in every \(i\)-fiber.
+
+\subsection{The exact erasure identity}
+
+Fix the baseline active residual labels \(\cL_i\) at output \(i\), and
+write \(z_i=(z_{i,t})_{t\in\cL_i}\).  Once the M\"obius gauge is included,
+the native map is
+\begin{equation}
+ (\Eop_\mu z)_i:=\sum_{t\in\cL_i}\mu(t)z_{i,t}.
+ \label{eq:tpc58-intro-erasure}
+\end{equation}
+The entire discrepancy between resolved and native energies is
+\begin{equation}
+ \|\Eop_\mu z\|^2-\|z\|^2
+ =2\operatorname{Re}\sum_i
+   \sum_{t<t'}\mu(t)\overline{\mu(t')}
+      z_{i,t}\overline{z_{i,t'}}.
+ \label{eq:tpc58-intro-defect}
+\end{equation}
+For \(k_i=|\cL_i|>0\), the \(i\)-block has one nonzero singular value
+\(\sqrt{k_i}\) and a \(k_i-1\) dimensional kernel.  The M\"obius signs
+rotate this decomposition by a diagonal unitary; they do not eliminate
+the kernel.  Hence a support-only lower inequality
+\begin{equation}
+ \|\Eop_\mu z\|^2\ge c\|z\|^2
+ \label{eq:tpc58-intro-false-ambient}
+\end{equation}
+with \(c>0\) is false on the full ambient space whenever any \(k_i\ge2\).
+This negative result is exact, but its quantifier is equally important:
+it does not show failure on the smaller image traced out by the literal
+physical coefficients.
+
+\subsection{The actual coefficient image}
+
+Let a fixed baseline carrier be chosen independently of the bounded row
+coefficient vector \(\zeta\), and let
+\begin{equation}
+ T:\C^{\cM}\longrightarrow\cH_{\rm W},
+ \qquad z=T\zeta,
+ \qquad E:=\Ran T.
+ \label{eq:tpc58-intro-T}
+\end{equation}
+The best coefficient-uniform comparison is
+\begin{equation}
+ \alpha_E
+ :=\inf_{0\ne z\in E}
+   \frac{\|\Eop_\mu z\|^2}{\|z\|^2}.
+ \label{eq:tpc58-intro-alpha}
+\end{equation}
+In finite dimension it is the least eigenvalue, including zero, of the
+compression of \(\Eop_\mu^*\Eop_\mu\) to \(E\), and
+\begin{equation}
+ \alpha_E>0
+ \quad\Longleftrightarrow\quad
+ E\cap\Ker\Eop_\mu=\{0\}.
+ \label{eq:tpc58-intro-transversality}
+\end{equation}
+With
+\begin{equation}
+ R:=T^*T,
+ \qquad N:=T^*\Eop_\mu^*\Eop_\mu T,
+ \qquad \cS:=\Ran R,
+ \label{eq:tpc58-intro-two-Grams}
+\end{equation}
+the exact relative defect is
+\begin{equation}
+ \Theta:=R^{\dagger/2}(N-R)R^{\dagger/2}\big|_{\cS},
+ \qquad
+ \alpha_E=1+\lambda_{\min}(\Theta).
+ \label{eq:tpc58-intro-relative-defect}
+\end{equation}
+The restriction to \(\cS\) is essential: zero directions in \(\Ker T\)
+must not be counted as physical generalized eigenvectors.
+
+There are therefore three different questions:
+\begin{enumerate}[label=(\roman*)]
+ \item the ambient question, which has a sharp dark-space obstruction;
+ \item the coefficient-uniform question on the actual image \(E\); and
+ \item the distinguished-vector question for the one literal coefficient
+       vector inherited at scale \(X\).
+\end{enumerate}
+Failure of (i) does not imply failure of (ii) or (iii).  Conversely, a
+numerically favorable distinguished vector does not prove a uniform
+bound on \(E\).
+
+\subsection{The fixed-shift two-stage gate}
+
+Use the sign convention
+\begin{equation}
+ z_H(i,s):=-\sum_{p>y}b_{i,sp},
+ \qquad
+ h:=\Eop_{\mu,H}z_H=-\sum_{p>y}v_p.
+ \label{eq:tpc58-intro-high-convention}
+\end{equation}
+The TPC--57 terminal residual amplitude already contains the common
+physical M\"obius sign \(\mu(s)\).  If that vector is denoted by \(A\),
+then the literal interface is
+\begin{equation}
+ A=\Uop_\mu z_H,
+ \qquad
+ \Eop_1A=h,
+ \qquad
+ \|A\|=\|z_H\|.
+ \label{eq:tpc58-intro-terminal-interface}
+\end{equation}
+Thus no second M\"obius factor is inserted when the TPC--57 output is
+grouped natively.
+
+For the actual high coefficient image define \(\alpha_H\) by the
+analogue of \eqref{eq:tpc58-intro-alpha}.  Separately, on the actual
+paired image of \(v_0\) and \(h\), define
+\begin{equation}
+ \delta_{\rm aff}
+ :=\inf_{\substack{(b,g)\in\cF_{\rm aff}\\(b,g)\ne(0,0)}}
+   \frac{\|b+g\|^2}{\|b\|^2+\|g\|^2}.
+ \label{eq:tpc58-intro-delta}
+\end{equation}
+Here \(\cF_{\rm aff}\) is the nonzero image of the coupled map driven by
+the same row vector in both entries, defined precisely in
+\cref{sec:tpc58-affine-completion}.  Then the exact route is
+\begin{equation}
+ \cN_{\rm nat}
+ =\|v_0+h\|^2
+ \ge \delta_{\rm aff}\alpha_H\|z_H\|^2.
+ \label{eq:tpc58-intro-two-stage}
+\end{equation}
+The constants are independent gates.  Residual labels may cancel under
+native erasure even if the terminal-prime fibers are singletons, and the
+base vector may cancel the high vector even if native high energy is
+positive.
+
+There is also an upstream support gate.  At the endpoint cutoff
+\(y=X^{267/400+\eta}\) with fixed \(\eta>0\), the relation
+\(pr=mj+h_0\le X^{1+o(1)}\) forces
+\(r\le X^{133/400-\eta+o(1)}\).  Hence this very-high face is eventually
+disjoint from the older dyadic block
+\(R\asymp J=X^{133/400+o(1)}\).  The interface identities remain exact on
+their declared face, but they do not prove that the face carries a positive
+fraction of the inherited energy.  A compatible-band relocation and
+occupancy estimate is therefore charged separately in the endpoint ledger.
+
+\subsection{Claim boundary and organization}
+
+The finite-dimensional erasure spectrum, compressed Rayleigh quotient,
+generalized-Gram formula, and counterexamples are unconditional L0
+results.  The coordinate dictionary at one fixed \(h_0\ne0\) is an L1
+interface statement on the declared baseline carrier.  A positive
+polynomial lower bound for either \(\alpha_H\) or \(\delta_{\rm aff}\),
+relocation to and occupancy of the compatible smaller cofactor band,
+terminal activation at the endpoint, boundary/tail reconnection, and an
+estimate for the original arithmetic defect remain open.  In particular,
+no parity improvement and no twin-prime conclusion is asserted; the
+classical parity boundary remains in force \citep{FriedlanderIwaniec2010}.
+
+\Cref{sec:tpc58-two-gram-dictionary} fixes the two Gram forms and their
+literal signs.  \Cref{sec:tpc58-erasure-spectrum} proves the exact erasure
+spectrum, and \cref{sec:tpc58-restricted-range} gives the actual-image
+and generalized-Gram theorems.  The fixed-shift coordinate match is
+proved in \cref{sec:tpc58-fixed-shift-interface}; the full affine
+completion follows in \cref{sec:tpc58-affine-completion}.
+\Cref{sec:tpc58-transport-ledger,sec:tpc58-claims-next} record the
+transport restrictions, endpoint budget, kill criteria, and next
+arithmetic gate.

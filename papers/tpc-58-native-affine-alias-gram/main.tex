@@ -1,0 +1,114 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Pplus}{P^+}
+\newcommand{\Eop}{\mathsf E}
+\newcommand{\Uop}{\mathsf U}
+
+\hypersetup{
+  pdftitle={Canonical Residual Erasure and the Native Affine Gram at a Fixed Shift},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact alias defects, dark spaces, and restricted-range transfer gates between residual and native fixed-shift Gram forms},
+  pdfkeywords={Gram matrix, residual labels, aliasing, Walsh spectrum, fixed shift, parity boundary}
+}
+
+\title{\bfseries Canonical Residual Erasure and the Native Affine Gram at a Fixed Shift:\\
+Exact Alias Defects, Dark Spaces, and Two--Stage Transfer Gates}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\noindent\textbf{Keywords:} residual-label erasure; native affine Gram;
+dark space; generalized Rayleigh quotient; fixed physical shift; parity boundary.
+
+\medskip
+\noindent\textbf{Convention.}
+One nonzero physical shift \(h_0\), one direct residue/orbit slice, and one
+side of the inherited terminal system are fixed unless a left/right direct
+sum is displayed.  All Hilbert norms use raw counting measure.  The cutoff
+profile is written as
+\(\Lambda_X(n)=(\log n)\Phi_0(n/X)\); this is the normalized version of the
+same shaped terminal weight denoted \(\Lambda\) in the inherited papers and
+is not the von Mangoldt function.  Every label multiplicity is taken on a
+fixed baseline carrier after identically zero coordinates, but not
+coefficient-dependent cancellations, have been removed.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 15A18; Secondary 11N36,
+11P32, 47A10.
+
+\input{sections/introduction}
+\input{sections/two-gram-dictionary}
+\input{sections/erasure-spectrum}
+\input{sections/restricted-range}
+\input{sections/fixed-shift-interface}
+\input{sections/affine-completion}
+\input{sections/transport-ledger}
+\input{sections/claims-next}
+
+\begingroup
+\small
+\raggedright
+\setlength{\bibsep}{4pt plus 1pt minus 1pt}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

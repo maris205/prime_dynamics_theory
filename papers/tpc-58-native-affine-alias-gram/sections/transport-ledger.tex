@@ -1,0 +1,309 @@
+\section{Transport boundaries, the signed native exchange, and the endpoint ledger}
+\label{sec:tpc58-transport-ledger}
+
+The exact transfer theorem does not make either restricted-range constant
+positive.  This section explains why the two preceding papers do not supply
+that positivity, identifies the literal signed quadratic form that would
+supply it, and records the complete endpoint charge.
+
+\subsection{Why the adaptive phase sector does not transport}
+
+TPC--56 extracts a constant-energy subpacket after the terminal phases have
+been observed.  Its selector is a genuine coordinate projection once it is
+chosen, but it is not a coefficient-independent pre-terminal criterion
+\citep{WangTPC56}.  More basically, squared norms are not monotone under
+putting the deleted coordinates back into a coherent sum.
+
+\begin{proposition}[Sharp adaptive nontransport]
+\label{prop:tpc58-adaptive-nontransport}
+There is no constant \(c>0\) for which the grouped energy of the undeleted
+residual packet, or the complete native affine energy of the declared
+slice, is bounded below by
+\(c\) times the grouped energy of every phase-adaptively selected terminal
+subpacket.  This failure already occurs in one two-atom residual fiber.
+\end{proposition}
+
+\begin{proof}
+Take two terminal coordinates in one residual fiber with amplitudes \(1\)
+and \(-1\).  They lie in distinct phase sectors.  A sector containing either
+coordinate has terminal diagonal and selected grouped energy equal to one,
+whereas restoring the other coordinate makes the undeleted grouped amplitude
+zero.  After a common phase rotation avoiding sector boundaries, the two
+antipodal amplitudes occupy distinct members of the five equal sectors of
+TPC--56.  Since the
+native and affine maps are downstream of this already vanishing undeleted
+residual amplitude, no positive lower bound for either downstream quantity
+can follow.  The zero lower endpoint is attained, so the obstruction is
+sharp.
+\end{proof}
+
+The proposition does not weaken the TPC--56 selected-square theorem.  It
+states that the selected theorem may enter a physical chain only if the same
+selection is realized before terminal primality and is preserved by every
+later operation, or if a separate lower-reassembly theorem is proved.  No
+such realization is assumed here.
+
+\subsection{What the singleton theorem does and does not preserve}
+
+TPC--57 instead works with the undeleted residual packet.  For
+\(y=(i,s)\), let
+\begin{equation}
+ A_{i,s}:=\sum_{u\in\cF_y^{\rm term}}x_u,
+ \qquad
+ \cG_{\rm res}:=\sum_{i,s}|A_{i,s}|^2.
+ \label{eq:tpc58-residual-grouped-energy}
+\end{equation}
+Its singleton theorem applies to the first grouping
+\begin{equation}
+ \{\text{terminal primes}\}\longrightarrow(i,s).
+ \label{eq:tpc58-first-grouping}
+\end{equation}
+The native high column applies the different, second grouping
+\begin{equation}
+ (i,s)\longrightarrow i,
+ \qquad
+ H_i:=\sum_sA_{i,s}.
+ \label{eq:tpc58-second-grouping}
+\end{equation}
+
+\begin{proposition}[Singleton survival stops at the residual label]
+\label{prop:tpc58-singleton-stops-at-residual}
+If a terminal-prime fiber \(y=(i,s)\) is a physical singleton, then its
+energy survives the first grouping exactly.  Even if every active first-stage
+fiber is a singleton, however, there is no positive support-only lower bound
+for
+\begin{equation}
+ \cN_H:=\sum_i|H_i|^2
+ \label{eq:tpc58-native-high-energy}
+\end{equation}
+in terms of \(\cG_{\rm res}\).
+\end{proposition}
+
+\begin{proof}
+The first assertion is the identity
+\(\left|\sum_{u\in\cF_y}x_u\right|^2=|x_u|^2\) on a singleton.  For the
+second, take one native output \(i\), two distinct residual labels
+\(s_1,s_2\), and one terminal atom in each residual fiber.  Choose their
+already physical amplitudes to be
+\(A_{i,s_1}=1\) and \(A_{i,s_2}=-1\).  Then
+\(\cG_{\rm res}=2\), while \(H_i=0\) and \(\cN_H=0\).  Thus perfect
+singleton occupancy at the first grouping does not control the second
+grouping.
+\end{proof}
+
+Accordingly, the singleton exponent of TPC--57 and the native high-transfer
+exponent below are separate entries.  The factor-exchange theorem of
+TPC--57 studies collisions with equal \(s\); the new native gate consists of
+cross terms with unequal \(s\).
+
+\subsection{The exact signed native exchange}
+
+Return to the literal fixed-\(h_0\) amplitudes
+\begin{equation}
+ x_u=c_u\zeta_{m(u)},
+ \qquad
+ q(u)=(i,s(u)),
+ \qquad
+ s(u)=d_{m(u)}r_u,
+ \label{eq:tpc58-literal-terminal-factorization}
+\end{equation}
+where \(i\) contains the side, opposite row, and orbit time.  Every active
+atom satisfies
+\begin{equation}
+ p_ur_u-m(u)j_u=h_0.
+ \label{eq:tpc58-fixed-shift-equation}
+\end{equation}
+Choose any fixed total order on the finite residual-label set in each native
+fiber.
+
+\begin{proposition}[Exact native exchange identity]
+\label{prop:tpc58-native-exchange-identity}
+The difference between the native high energy and the residual grouped
+energy is
+\begin{align}
+ \cN_H-\cG_{\rm res}
+ &=2\operatorname{Re}
+   \sum_i\sum_{s<t}A_{i,s}\overline{A_{i,t}}
+ \label{eq:tpc58-native-exchange-residual}\\
+ &=2\operatorname{Re}
+   \sum_i\sum_{s<t}
+   \sum_{\substack{u:q(u)=(i,s)}}
+   \sum_{\substack{v:q(v)=(i,t)}}
+   c_u\overline{c_v}\,
+   \zeta_{m(u)}\overline{\zeta_{m(v)}}.
+ \label{eq:tpc58-native-exchange-atoms}
+\end{align}
+In every summand of \eqref{eq:tpc58-native-exchange-atoms}, both atoms
+satisfy \eqref{eq:tpc58-fixed-shift-equation}, but
+\begin{equation}
+ d_{m(u)}r_u=s\ne t=d_{m(v)}r_v.
+ \label{eq:tpc58-unequal-residual-condition}
+\end{equation}
+Hence the same-residual factor-exchange divisibility from TPC--57 is not
+available for this sum.
+\end{proposition}
+
+\begin{proof}
+Expanding the square in \eqref{eq:tpc58-second-grouping} gives
+\[
+ |H_i|^2
+ =\sum_s|A_{i,s}|^2
+  +2\operatorname{Re}\sum_{s<t}A_{i,s}\overline{A_{i,t}}.
+\]
+Summing over \(i\) proves \eqref{eq:tpc58-native-exchange-residual}.
+Substitution of \eqref{eq:tpc58-literal-terminal-factorization} proves
+\eqref{eq:tpc58-native-exchange-atoms}.  The index condition \(s<t\)
+implies \eqref{eq:tpc58-unequal-residual-condition}.  In contrast, the
+factor-exchange identity begins with equality of the two residual products,
+so its hypothesis fails here.
+\end{proof}
+
+The absence of the factor-exchange divisibility does not say that
+\eqref{eq:tpc58-native-exchange-atoms} is large or negative.  It says that a
+new signed estimate is required.  An absolute pair count is generally too
+coarse because the desired information is one-sided spectral control.
+
+To state the exact target, assume the high coefficient map is nonzero and let
+\begin{equation}
+ R_H:=T_H^*T_H,
+ \qquad
+ N_H:=T_H^*C_{\mu,H}^*C_{\mu,H}T_H,
+ \label{eq:tpc58-high-Gram-pair}
+\end{equation}
+so that \(\Ran R_H\ne\{0\}\), and on \(\Ran R_H\) define
+\begin{equation}
+ \Theta_H
+ :=R_H^{\dagger/2}(N_H-R_H)R_H^{\dagger/2}.
+ \label{eq:tpc58-high-relative-defect}
+\end{equation}
+
+\begin{corollary}[Exact negative-spectrum gate]
+\label{cor:tpc58-negative-spectrum-gate}
+For \(0<\delta\le1\), the uniform estimate
+\begin{equation}
+ \cN_H(\zeta)\ge\delta\,\cG_{\rm res}(\zeta)
+ \qquad\text{for every }\zeta
+ \label{eq:tpc58-uniform-native-high-lower}
+\end{equation}
+is equivalent to
+\begin{equation}
+ \lambda_{\min}(\Theta_H)\ge-1+\delta.
+ \label{eq:tpc58-negative-spectrum-condition}
+\end{equation}
+Equivalently, the signed exchange form must satisfy
+\begin{equation}
+ 2\operatorname{Re}
+ \sum_i\sum_{s<t}A_{i,s}\overline{A_{i,t}}
+ \ge-(1-\delta)\cG_{\rm res}
+ \label{eq:tpc58-exchange-form-target}
+\end{equation}
+for every coefficient vector.  Only the negative spectrum must be
+controlled; no upper bound for the positive exchange is required.
+\end{corollary}
+
+\begin{proof}
+On \(\Ran R_H\), the generalized native Gram is
+\[
+ R_H^{\dagger/2}N_HR_H^{\dagger/2}=I+\Theta_H.
+\]
+The Rayleigh--Ritz principle makes
+\eqref{eq:tpc58-uniform-native-high-lower} equivalent to
+\eqref{eq:tpc58-negative-spectrum-condition}.  The identity in
+\cref{prop:tpc58-native-exchange-identity} gives the equivalent form
+\eqref{eq:tpc58-exchange-form-target}.
+\end{proof}
+
+For a distinguished coefficient vector, the weakest pointwise target is
+just \eqref{eq:tpc58-exchange-form-target} for that vector.  Proving it
+uniformly over the bounded row-coefficient cube is stronger and is exactly
+the positivity of the restricted constant \(\alpha_H\).
+
+\subsection{The strict endpoint ledger}
+
+Let \(\cD_{\rm par}\) be the raw parent atomic energy on one declared
+carrier.  The endpoint very-high cutoff forces the smaller cofactor range
+\eqref{eq:tpc58-compatible-cofactor-ceiling}, so first suppose that a lower
+relocation transfer from the inherited parent packet into a compatible
+cofactor band has been proved.  Suppose further that selection,
+cofactor-block occupancy, terminal activation, and the undeleted TPC--57
+singleton bridge have given
+\begin{equation}
+ \cG_{\rm res}
+ \ge
+ X^{-(\lambda_{\rm reloc}+\lambda_{\rm sel}+\lambda_{\rm blk}
+      +\lambda_{\rm term}+\lambda_{\rm sing})+o(1)}
+ \cD_{\rm par}.
+ \label{eq:tpc58-upstream-residual-lower}
+\end{equation}
+Here \(\lambda_{\rm reloc}\ge0\) records the parent-to-compatible-band
+loss and is not absorbed silently into \(\lambda_{\rm blk}\).  This is a
+conditional input: TPC--57 neither proves this relocation nor proves the
+remaining occupancy and activation transfers asymptotically.  On the
+inherited \(R\asymp J\) carrier, the fixed-\(\eta\) very-high face is in
+fact empty for all sufficiently large \(X\).
+
+Assume also
+\begin{equation}
+ \alpha_H\ge X^{-\lambda_H+o(1)},
+ \qquad
+ \delta_{\rm aff}\ge X^{-\lambda_{\rm aff}+o(1)},
+ \label{eq:tpc58-two-Gram-losses}
+\end{equation}
+with nonnegative exponents.  Boundary restriction and tail reconstruction,
+if available as lower transfers, are assigned losses
+\(\lambda_{\rm bdry}\) and \(\lambda_{\rm tail}\).
+
+\begin{proposition}[Conditional endpoint propagation]
+\label{prop:tpc58-endpoint-propagation}
+Under the preceding lower-transfer hypotheses, the prospective final
+physical quantity satisfies
+\begin{equation}
+ \cN_{\rm final}
+ \ge X^{-\Lambda_{\rm tot}+o(1)}\cD_{\rm par},
+ \label{eq:tpc58-prospective-final-lower}
+\end{equation}
+where
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ \Lambda_{\rm tot}
+ :={}&\lambda_{\rm reloc}+\lambda_{\rm sel}+\lambda_{\rm blk}
+ +\lambda_{\rm term}+\lambda_{\rm sing}\\
+ &+\lambda_H+\lambda_{\rm aff}
+ +\lambda_{\rm bdry}+\lambda_{\rm tail}.
+ \end{aligned}}
+ \label{eq:tpc58-total-endpoint-exponent}
+\end{equation}
+Thus the safe endpoint requirement is
+\begin{equation}
+ \boxed{\Lambda_{\rm tot}<\frac1{400}.}
+ \label{eq:tpc58-strict-endpoint-budget}
+\end{equation}
+At equality, a separate closed constant-level comparison and quantified
+control of every \(o(1)\) term are required; equality of formal exponents
+alone does not absorb an error of size
+\(X^{-1/400+o(1)}\cD_{\rm par}\).
+\end{proposition}
+
+\begin{proof}
+Apply \cref{thm:tpc58-two-stage-affine-transfer} to
+\eqref{eq:tpc58-upstream-residual-lower}, then multiply the two assumed
+Gram transfers and the downstream boundary and tail transfers.  Polynomial
+loss exponents add, giving \eqref{eq:tpc58-total-endpoint-exponent}.  If
+\(\Lambda_{\rm tot}<1/400\), the main lower scale dominates an additive
+\(X^{-1/400+o(1)}\cD_{\rm par}\) error by a fixed power.  When the two
+exponents are equal, the unspecified constants and \(o(1)\) terms decide
+the sign, so exponent bookkeeping alone is insufficient.
+\end{proof}
+
+For the direct already-reassembled fixed-\(h_0\) route, no frozen-shift
+localization or projective-reassembly exponent is inserted.  If another
+route passes through a completed frozen family or a signed projective
+decomposition, its localization and lower-reassembly losses must be restored
+in \eqref{eq:tpc58-total-endpoint-exponent}.  It is convenient to record
+\begin{equation}
+ \lambda_{\rm Gram}:=\lambda_H+\lambda_{\rm aff},
+ \label{eq:tpc58-Gram-loss-split}
+\end{equation}
+but the two terms must remain separately auditable because their kernels are
+independent.

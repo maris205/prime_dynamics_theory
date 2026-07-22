@@ -1,0 +1,343 @@
+\section{Restricted-range transfer and the three quantifiers}
+\label{sec:tpc58-restricted-range}
+
+The ambient erasure constant vanishes as soon as one fiber contains two
+labels.  A physical coefficient family may nevertheless occupy a smaller
+subspace transverse to the dark kernel.  This section gives the exact
+finite-dimensional criterion, its Moore--Penrose form, and the distinction
+between an ambient theorem, a canonical-range theorem, and a statement for
+one distinguished vector.
+
+\subsection{Compression to the actual attainable range}
+
+Let \(\mathcal A\) be a finite-dimensional Hilbert space, let
+\begin{equation}
+ T:\mathcal A\longrightarrow\mathcal Z,
+ \qquad
+ E:=\Ran T,
+ \label{eq:tpc58-attainable-range}
+\end{equation}
+and assume \(E\ne\{0\}\).  The map \(T\) is part of the data: replacing it
+by a free ambient coefficient array changes the quantifier and may create
+dark directions that the declared family never attains.  Define
+\begin{equation}
+ \alpha_E
+ :=\inf_{0\ne z\in E}
+   \frac{\|C_\mu z\|^2}{\|z\|^2}.
+ \label{eq:tpc58-restricted-transfer-constant}
+\end{equation}
+
+\begin{theorem}[Exact restricted-range criterion]
+\label{thm:tpc58-exact-restricted-range}
+Let \(P_E\) be the orthogonal projector onto \(E\).  Then
+\begin{equation}
+ \boxed{
+ \alpha_E
+ =\lambda_{\min}\!\left(
+   (P_EC_\mu^*C_\mu P_E)|_E\right).}
+ \label{eq:tpc58-compressed-minimum-eigenvalue}
+\end{equation}
+Here \(\lambda_{\min}\) is the ordinary smallest eigenvalue, including
+zero.  Moreover,
+\begin{equation}
+ \boxed{
+ \alpha_E>0
+ \quad\Longleftrightarrow\quad
+ E\cap\Ker C_\mu=\{0\}.}
+ \label{eq:tpc58-transversality-criterion}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For \(z\in E\),
+\begin{equation}
+ \langle z,P_EC_\mu^*C_\mu P_Ez\rangle
+ =\langle z,C_\mu^*C_\mu z\rangle
+ =\|C_\mu z\|^2.
+ \label{eq:tpc58-compression-rayleigh-identity}
+\end{equation}
+The compression in
+\eqref{eq:tpc58-compressed-minimum-eigenvalue} is a positive self-adjoint
+operator on the finite-dimensional space \(E\).  The Rayleigh--Ritz
+principle proves the eigenvalue formula.  Its smallest eigenvalue is zero
+exactly when some nonzero \(z\in E\) has \(C_\mu z=0\), which is
+\eqref{eq:tpc58-transversality-criterion}.
+\end{proof}
+
+The finite-dimensional hypothesis is essential for the reverse implication
+in \eqref{eq:tpc58-transversality-criterion}.  On \(\ell^2(\N)\), the
+injective diagonal operator
+\begin{equation}
+ C(x_1,x_2,\ldots)=(x_1,x_2/2,x_3/3,\ldots)
+ \label{eq:tpc58-infinite-dimensional-counterexample}
+\end{equation}
+has trivial kernel but is not bounded below.  Even in finite dimension one
+must use the smallest eigenvalue rather than the smallest \emph{positive}
+eigenvalue: for
+\begin{equation}
+ C_\mu=[\,1\ \ 1\,],
+ \qquad E=\C^2,
+ \label{eq:tpc58-positive-eigenvalue-counterexample}
+\end{equation}
+the smallest positive eigenvalue of \(C_\mu^*C_\mu\) is two, while
+\(\alpha_E=0\).
+
+\subsection{The support-restricted pseudoinverse formula}
+
+Set
+\begin{equation}
+ R:=T^*T,
+ \qquad
+ N:=T^*C_\mu^*C_\mu T,
+ \qquad
+ S:=\Ran R=(\Ker T)^\perp.
+ \label{eq:tpc58-R-N-S}
+\end{equation}
+Let \(R^\dagger\) be the Moore--Penrose pseudoinverse and write
+\(R^{\dagger/2}:=(R^\dagger)^{1/2}\).
+
+\begin{theorem}[Range-normalized Gram formula]
+\label{thm:tpc58-range-normalized-gram}
+The operator
+\begin{equation}
+ U:=T R^{\dagger/2}|_S:S\longrightarrow E
+ \label{eq:tpc58-polar-unitary}
+\end{equation}
+is unitary.  Consequently,
+\begin{equation}
+ \boxed{
+ \alpha_E
+ =\lambda_{\min}\!\left(
+   (R^{\dagger/2}NR^{\dagger/2})|_S\right).}
+ \label{eq:tpc58-pseudoinverse-minimum}
+\end{equation}
+If
+\begin{equation}
+ \Theta
+ :=R^{\dagger/2}(N-R)R^{\dagger/2},
+ \label{eq:tpc58-relative-defect}
+\end{equation}
+then the equivalent defect formula is
+\begin{equation}
+ \boxed{
+ \alpha_E
+ =1+\lambda_{\min}(\Theta|_S).}
+ \label{eq:tpc58-relative-defect-minimum}
+\end{equation}
+The restriction to \(S\) in both formulas is mandatory.
+\end{theorem}
+
+\begin{proof}
+On \(S\), functional calculus for the positive operator \(R\) gives
+\begin{equation}
+ U^*U
+ =R^{\dagger/2}T^*TR^{\dagger/2}|_S
+ =R^{\dagger/2}RR^{\dagger/2}|_S
+ =I_S.
+ \label{eq:tpc58-polar-isometry}
+\end{equation}
+The range of \(U\) equals \(\Ran T=E\), either by the polar decomposition
+or directly on each positive eigenspace of \(R\).  Hence \(U\) is unitary
+from \(S\) onto \(E\).  Furthermore,
+\begin{equation}
+ U^*C_\mu^*C_\mu U
+ =(R^{\dagger/2}NR^{\dagger/2})|_S.
+ \label{eq:tpc58-unitary-gram-equivalence}
+\end{equation}
+The right side is therefore unitarily equivalent to the compressed operator
+in \eqref{eq:tpc58-compressed-minimum-eigenvalue}, proving
+\eqref{eq:tpc58-pseudoinverse-minimum}.  Finally,
+\begin{equation}
+ R^{\dagger/2}RR^{\dagger/2}|_S=I_S,
+ \label{eq:tpc58-pseudoinverse-support-identity}
+\end{equation}
+so subtracting this identity gives
+\eqref{eq:tpc58-relative-defect-minimum}.
+\end{proof}
+
+For reference, the same calculation gives the standard exact formulas
+\begin{equation}
+ T^\dagger=R^\dagger T^*,
+ \qquad
+ P_E=TT^\dagger=TR^\dagger T^*.
+ \label{eq:tpc58-moore-penrose-projector}
+\end{equation}
+Taking the minimum in
+\eqref{eq:tpc58-relative-defect-minimum} on the full parameter space
+\(\mathcal A\) is generally false, because \(\Theta\) vanishes on
+\(\Ker R\).  The smallest counterexample is
+\begin{equation}
+ T(a,b)=\frac{a}{\sqrt2}(1,1),
+ \qquad C_\mu=[\,1\ \ 1\,].
+ \label{eq:tpc58-pseudoinverse-support-counterexample}
+\end{equation}
+Here
+\begin{equation}
+ R=\begin{pmatrix}1&0\\0&0\end{pmatrix},
+ \qquad
+ N=\begin{pmatrix}2&0\\0&0\end{pmatrix},
+ \qquad
+ \Theta=\begin{pmatrix}1&0\\0&0\end{pmatrix}.
+ \label{eq:tpc58-pseudoinverse-counterexample-matrices}
+\end{equation}
+The true restricted constant is two, whereas
+\(1+\lambda_{\min}(\Theta)=1\) on all of \(\C^2\).
+
+\subsection{Dimension kill and its nonconverse}
+
+\begin{proposition}[One-way dimension kill]
+\label{prop:tpc58-dimension-kill}
+If
+\begin{equation}
+ \dim E>\rank C_\mu,
+ \label{eq:tpc58-dimension-kill-hypothesis}
+\end{equation}
+then \(\alpha_E=0\).  The converse is false.
+\end{proposition}
+
+\begin{proof}
+The restriction \(C_\mu|_E:E\to\mathcal Y\) has rank at most
+\(\rank C_\mu\).  Under
+\eqref{eq:tpc58-dimension-kill-hypothesis}, rank--nullity supplies a nonzero
+element of \(E\cap\Ker C_\mu\), and
+\cref{thm:tpc58-exact-restricted-range} gives \(\alpha_E=0\).
+
+For the nonconverse, take \(C_\mu=[\,1\ \ 1\,]\) and
+\(E=\operatorname{span}\{(1,-1)\}\).  Then
+\(\dim E=\rank C_\mu=1\), but \(E\subseteq\Ker C_\mu\) and
+\(\alpha_E=0\).
+\end{proof}
+
+In the erasure geometry of
+\cref{thm:tpc58-exact-erasure-spectrum},
+\(\rank C_\mu=|\mathcal I|\).  If the raw grouping map is surjective onto
+the full canonical space, then \(E=\mathcal Z\), and any fiber with
+\(k_i>1\) activates the dark space.  Thus a positive restricted theorem
+must use a genuinely smaller \emph{actual attainable range}; it cannot be
+obtained by declaring all canonical coordinates to be free and then
+forgetting that enlargement.
+
+\subsection{Ambient, canonical-range, and distinguished statements}
+
+There are three different quantifiers:
+\begin{align}
+ \alpha_{\rm amb}
+ &:=\inf_{0\ne z\in\mathcal Z}
+   \frac{\|C_\mu z\|^2}{\|z\|^2},
+ \label{eq:tpc58-ambient-quantifier}\\
+ \alpha_E
+ &:=\inf_{0\ne z\in E}
+   \frac{\|C_\mu z\|^2}{\|z\|^2},
+ \label{eq:tpc58-canonical-range-quantifier}\\
+ \rho(z_*)
+ &:=\frac{\|C_\mu z_*\|^2}{\|z_*\|^2}
+ \qquad(0\ne z_*\in E).
+ \label{eq:tpc58-distinguished-quantifier}
+\end{align}
+They obey only the one-way chain
+\begin{equation}
+ \boxed{
+ \alpha_{\rm amb}\le\alpha_E\le\rho(z_*).}
+ \label{eq:tpc58-three-quantifier-chain}
+\end{equation}
+The two reverse implications fail sharply.  With
+\(C=[\,1\ \ 1\,]\), the ambient constant is zero, while for
+\begin{equation}
+ E=\operatorname{span}\{(1,1)\}
+ \label{eq:tpc58-canonical-beats-ambient}
+\end{equation}
+one has \(\alpha_E=2\).  On the other hand, with the same \(C\) and
+\(E=\C^2\), one has \(\alpha_E=0\), while the distinguished vector
+\(z_*=(1,1)\) satisfies \(\rho(z_*)=2\).  Consequently:
+\begin{enumerate}[label=\textup{(Q\arabic*)},leftmargin=3.2em]
+ \item an ambient lower bound controls every canonical family and every
+       distinguished vector;
+ \item a canonical-range lower bound controls only vectors proved to lie in
+       that one declared range;
+ \item a positive distinguished ratio does not imply a uniform theorem on
+       its containing range.
+\end{enumerate}
+Calling one of these statements by the name of another is a quantifier
+change, not a harmless normalization.
+
+\subsection{The independent affine gate}
+
+The restricted-range constant resolves only the erasure from a residual
+coefficient vector to its native high component.  It does not prevent that
+component from cancelling a no-high vector.  Abstractly, let
+\(\mathcal Z_H\subseteq\mathcal Z\), let
+\(E_H=\Ran T_H\subseteq\mathcal Z_H\) be nonzero, and define
+\begin{equation}
+ \alpha_H
+ :=\inf_{0\ne r\in E_H}
+   \frac{\|C_\mu r\|^2}{\|r\|^2}.
+ \label{eq:tpc58-high-restricted-constant}
+\end{equation}
+For one signed residual vector \(r\in E_H\), put
+\begin{equation}
+ h:=C_\mu r,
+ \qquad
+ \cG_{\rm res}:=\|r\|^2,
+ \qquad
+ \cN_H:=\|h\|^2.
+ \label{eq:tpc58-abstract-native-high-energy}
+\end{equation}
+
+\begin{proposition}[Two independent transfer gates]
+\label{prop:tpc58-two-independent-gates}
+Let \(v_0\in\mathcal Y\).  Suppose \(r\ne0\) and, independently, that
+\begin{equation}
+ \|v_0+h\|^2
+ \ge\delta_{\rm aff}
+      (\|v_0\|^2+\|h\|^2)
+ \qquad(\delta_{\rm aff}\ge0).
+ \label{eq:tpc58-affine-angle-gate}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \|v_0+h\|^2
+ \ge\delta_{\rm aff}\cN_H
+ \ge\delta_{\rm aff}\alpha_H\cG_{\rm res}.}
+ \label{eq:tpc58-two-stage-transfer}
+\end{equation}
+Neither inequality supplies the hypothesis of the other.
+\end{proposition}
+
+\begin{proof}
+The first inequality follows from
+\(\|v_0\|^2+\|h\|^2\ge\|h\|^2=\cN_H\).  The definition of
+\(\alpha_H\) gives
+\(\cN_H\ge\alpha_H\cG_{\rm res}\), proving the chain.
+
+For independence, take the one-dimensional example
+\begin{equation}
+ r=1,
+ \qquad C_\mu r=h=1,
+ \qquad v_0=-1.
+ \label{eq:tpc58-independent-gate-counterexample}
+\end{equation}
+The restricted erasure constant and both high energies equal one, but
+\(\|v_0+h\|^2=0\), so no positive affine constant follows.  Conversely,
+an affine separation for one chosen pair says nothing about the infimum of
+\(C_\mu\) on all of \(E_H\).
+\end{proof}
+
+For a class \(\mathcal F\subseteq\mathcal Y\oplus\mathcal Y\) of
+admissible pairs, the exact affine constant is
+\begin{equation}
+ \delta_{\rm aff}
+ =\inf_{\substack{(v_0,h)\in\mathcal F\\
+                   \|v_0\|^2+\|h\|^2>0}}
+   \frac{\|v_0+h\|^2}{\|v_0\|^2+\|h\|^2}.
+ \label{eq:tpc58-exact-affine-constant}
+\end{equation}
+It lies in \([0,2]\), and a positive value is precisely a uniform exclusion
+of approach to the cancellation direction \(v_0=-h\).  For an arbitrary,
+possibly nonclosed class \(\mathcal F\), absence of one exact anti-diagonal
+pair does not suffice: normalized admissible pairs may still converge to the
+anti-diagonal.  If \(\mathcal F\) is a nonzero finite-dimensional linear
+subspace, as is the actual coupled image used below, compactness of its unit
+sphere makes positivity equivalent to trivial intersection with the
+anti-diagonal.  This is a separate signed off-diagonal problem; the spectrum
+of the residual erasure operator alone does not solve it.

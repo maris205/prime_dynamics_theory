@@ -1,0 +1,274 @@
+\section{Two inherited Gram forms and their common label dictionary}
+\label{sec:tpc58-two-gram-dictionary}
+
+The comparison problem starts with two exact identities from TPC--45,
+not with two names for the same quadratic form.  We restate the identities
+on one side of the equality column, retain the shaped terminal coefficient,
+and insert the two successive quotient maps that are needed later.  The
+right side is obtained by interchanging the two source systems; the full
+column is their orthogonal direct sum.  No estimate in this section mixes
+the two sides before that direct sum is taken.
+
+\subsection{The very-high cutoff and the baseline atoms}
+
+Fix the one physical intercept
+\begin{equation}
+ h_0\in\mathbb Z\setminus\{0\}.
+ \label{eq:tpc58-fixed-intercept-dictionary}
+\end{equation}
+Let \(N_\pm,D_\pm,J_+\), and \(\Delta_M\) be the support endpoints in the
+TPC--45 equality packet.  The very-high cutoff \(y=y_X\) is required to
+satisfy both inherited conditions
+\begin{align}
+ y&>\max\{|h_0|,D_+,J_+,\Delta_M,\sqrt{N_+}\},
+ \label{eq:tpc58-cutoff-geometric-condition}\\
+ \frac{D_+N_+}{y}&<D_-N_-.
+ \label{eq:tpc58-cutoff-label-separation}
+\end{align}
+At the endpoint one may take \(y=X^{267/400+\eta}\) for fixed
+\(0<\eta<133/400\), but no exponent calculation below uses more than
+\eqref{eq:tpc58-cutoff-geometric-condition}--
+\eqref{eq:tpc58-cutoff-label-separation}.
+
+This endpoint choice changes the admissible cofactor band.  On the physical
+equality support,
+\begin{equation}
+ pr=mj+h_0\le N_+=X^{1+o(1)},
+ \qquad p>y,
+ \label{eq:tpc58-endpoint-product-ceiling}
+\end{equation}
+and therefore
+\begin{equation}
+ \boxed{r\le \frac{N_+}{y}
+ =X^{133/400-\eta+o(1)}.}
+ \label{eq:tpc58-compatible-cofactor-ceiling}
+\end{equation}
+For fixed \(\eta>0\), this is eventually disjoint from the inherited block
+\(R\asymp J=X^{133/400+o(1)}\).  Thus every identity below is exact on the
+declared very-high face, but applying it to endpoint energy requires a
+separate lower transfer into a compatible smaller \(r\)-band.  The old
+\(R\asymp J\) block may otherwise make the identities empty truths; no
+occupancy statement is inferred from the cutoff alone.
+
+Write \(i\in\cI\) for one native output coordinate.  On the left side,
+\(i=(L,\gamma,j)\); on the right side, \(i=(R,\alpha,j)\).  TPC--45
+associates to each actually occurring squarefree equality label \(u\) a
+stripped coefficient \(b_{i,u}\in\C\).  The word \emph{stripped} means that
+the M\"obius character \(\mu(u)\) is not contained in \(b_{i,u}\); the
+ literal stripped source amplitude, mask, smooth profiles, and shaped
+ terminal weight are retained.  We use the canonical active label set
+\begin{equation}
+ \cU_i^\circ:=\{u:b_{i,u}\text{ is not identically zero on the declared
+ baseline carrier}\}.
+ \label{eq:tpc58-baseline-native-labels}
+\end{equation}
+For one distinguished coefficient vector some entries on this fixed
+carrier may vanish.  They remain zero coordinates; they do not change the
+definition of the carrier or create a new representation.
+
+The cutoff conditions give the unique factorization
+\begin{equation}
+ u=sq,
+ \qquad \Pplus(s)\le y,
+ \qquad q=1\ \text{or}\ q=p\in\cP_y,
+ \label{eq:tpc58-low-high-factorization}
+\end{equation}
+where \(\cP_y\) is the set of occurring primes \(p>y\).  If \(q=p\), then
+\(s=dr\) on the literal equality support.  For each fixed pair \((i,p)\)
+there is at most one source row on the chosen side.  This last statement is
+the inherited fixed-\((j,p)\) singleton incidence; it does not say that a
+fixed \((i,s)\) contains at most one terminal prime.
+
+\subsection{The native affine vectors}
+
+In the native output Hilbert space
+\begin{equation}
+ \cH_{\rm nat}:=\ell^2(\cI)
+ \label{eq:tpc58-native-space}
+\end{equation}
+define
+\begin{align}
+ (v_0)_i
+ &:=\sum_{\substack{u\in\cU_i^\circ\\u_{>y}=1}}
+       \mu(u)b_{i,u},
+ \label{eq:tpc58-native-base-vector}\\
+ (v_p)_i
+ &:=\sum_{\substack{s:\,sp\in\cU_i^\circ}}
+       \mu(s)b_{i,sp},
+ \qquad p\in\cP_y.
+ \label{eq:tpc58-native-high-vectors}
+\end{align}
+The sum in \eqref{eq:tpc58-native-high-vectors} has at most one nonzero
+term for fixed \((i,p)\), but writing the sum keeps the output map visible.
+At the physical all-minus prime-sign point the exact native column is
+\begin{equation}
+ \boxed{
+ S_{\rm nat}(h_0)=v_0-\sum_{p\in\cP_y}v_p,}
+ \qquad
+ \cN_{\rm nat}(h_0)=
+ \left\|v_0-\sum_{p\in\cP_y}v_p\right\|_{\cH_{\rm nat}}^2.
+ \label{eq:tpc58-native-affine-column}
+\end{equation}
+The minus sign is the physical value of the unique prime \(p>y\).  It is
+part of the affine identity and cannot be discarded when the base--high
+cross term is later formed \citep{WangTPC45}.
+
+\subsection{The residual-label Gram and the M\"obius gauge}
+
+The high residual Hilbert space is
+\begin{equation}
+ \cH_{\rm res}^{H}
+ :=\ell^2\{(i,s):i\in\cI,\ \Pplus(s)\le y,\
+                   \text{ and }sp\in\cU_i^\circ
+                   \text{ for some }p\in\cP_y\}.
+ \label{eq:tpc58-high-residual-space}
+\end{equation}
+For \(p\in\cP_y\), the TPC--45 residual vector is the \emph{stripped}
+vector
+\begin{equation}
+ (x_p)_{i,s}:=
+ \begin{cases}
+  b_{i,sp},&sp\in\cU_i^\circ,\\
+  0,&sp\notin\cU_i^\circ.
+ \end{cases}
+ \label{eq:tpc58-stripped-residual-vector}
+\end{equation}
+Define the residual M\"obius gauge and the unsigned residual-label erasure
+by
+\begin{align}
+ (\Uop_\mu z)_{i,s}&:=\mu(s)z_{i,s},
+ \label{eq:tpc58-mobius-gauge}\\
+ (\Eop z)_i&:=\sum_s z_{i,s}.
+ \label{eq:tpc58-dictionary-unsigned-erasure}
+\end{align}
+Squarefreeness makes \(\Uop_\mu\) unitary.  The definitions give the
+coordinatewise identity
+\begin{equation}
+ \boxed{\Eop\Uop_\mu x_p=v_p.}
+ \label{eq:tpc58-primewise-erasure-identity}
+\end{equation}
+Consequently
+\begin{equation}
+ \|x_p\|_{\cH_{\rm res}^{H}}
+ =\|\Uop_\mu x_p\|_{\cH_{\rm res}^{H}}
+ =\|v_p\|_{\cH_{\rm nat}}.
+ \label{eq:tpc58-primewise-diagonal-equality}
+\end{equation}
+The last equality uses the fixed-\((i,p)\) singleton incidence.  It is not
+an assertion that \(\Eop\) is an isometry on a sum of different prime
+columns.
+
+To fix the inherited global sign once and for all, put
+\begin{equation}
+ \boxed{
+ z_H:=-\sum_{p\in\cP_y}x_p,
+ \qquad
+ A_H:=\Uop_\mu z_H.}
+ \label{eq:tpc58-high-residual-sign-convention}
+\end{equation}
+Thus \(z_H\) is the stripped resolved high vector, whereas \(A_H\) is its
+physical residual-M\"obius version.  Equations
+\eqref{eq:tpc58-primewise-erasure-identity} and
+\eqref{eq:tpc58-high-residual-sign-convention} imply
+\begin{equation}
+ \boxed{
+ \Eop A_H=-\sum_{p\in\cP_y}v_p.}
+ \label{eq:tpc58-high-native-erasure}
+\end{equation}
+This is the sign convention used throughout TPC--58.
+
+The low-sign-averaged identity of TPC--45 is
+\begin{equation}
+ \boxed{
+ \mathbb E_{q\le y}Z_0(\varepsilon_{\le y},-\one_{>y})
+ =\cD_0-\cD_H+\|A_H\|_{\cH_{\rm res}^{H}}^2.}
+ \label{eq:tpc58-low-averaged-residual-gram}
+\end{equation}
+Here \(\cD_0\) is the raw stripped atomic diagonal and \(\cD_H\) is its
+very-high-prime part.  The equality
+\(\|A_H\|=\|z_H\|=\|\sum_px_p\|\) uses only the common diagonal gauge.
+In particular, the last term in
+\eqref{eq:tpc58-low-averaged-residual-gram} already contains the coherent
+cross terms between different terminal primes that share the same
+\((i,s)\).  It is not the terminal atomic diagonal
+\(\sum_p\|x_p\|^2\).
+
+\begin{proposition}[Exact two-Gram dictionary]
+\label{prop:tpc58-two-gram-dictionary}
+Under \eqref{eq:tpc58-cutoff-geometric-condition}--
+\eqref{eq:tpc58-cutoff-label-separation}, the native and residual
+very-high faces are related by
+\begin{align}
+ \sum_p\|v_p\|^2
+ &=\sum_p\|x_p\|^2=\cD_H,
+ \label{eq:tpc58-two-gram-common-diagonal}\\
+ \left\|-\sum_pv_p\right\|^2
+ &=\|\Eop A_H\|^2,
+ \label{eq:tpc58-two-gram-native-high}\\
+ \left\|\sum_px_p\right\|^2
+ &=\|A_H\|^2.
+ \label{eq:tpc58-two-gram-residual-high}
+\end{align}
+For \(p\ne q\), however,
+\begin{align}
+ \langle v_p,v_q\rangle_{\cH_{\rm nat}}
+ &=\sum_i\sum_{s,t}
+   \mu(s)\mu(t)b_{i,sp}\overline{b_{i,tq}},
+ \label{eq:tpc58-native-cross-product}\\
+ \langle x_p,x_q\rangle_{\cH_{\rm res}^{H}}
+ &=\sum_i\sum_s b_{i,sp}\overline{b_{i,sq}}.
+ \label{eq:tpc58-residual-cross-product}
+\end{align}
+Thus the residual Gram retains only \(s=t\), whereas the native Gram also
+contains every \(s\ne t\) alias pair sharing the same output \(i\).
+\end{proposition}
+
+\begin{proof}
+The common diagonal is
+\eqref{eq:tpc58-primewise-diagonal-equality} summed over \(p\).
+Equations \eqref{eq:tpc58-two-gram-native-high} and
+\eqref{eq:tpc58-two-gram-residual-high} follow from
+\eqref{eq:tpc58-high-residual-sign-convention}--
+\eqref{eq:tpc58-high-native-erasure}.  Expanding the two inner products
+gives \eqref{eq:tpc58-native-cross-product}--
+\eqref{eq:tpc58-residual-cross-product}.
+\end{proof}
+
+The proposition is an exact L1 dictionary for the inherited face.  It does
+not give either inequality between
+\(\|\Eop A_H\|^2\) and \(\|A_H\|^2\).  Nor may the nonnegative base term
+\(\cD_0-\cD_H\) in
+\eqref{eq:tpc58-low-averaged-residual-gram} be replaced by
+\(\|v_0\|^2\): the former is obtained after low-sign orthogonalization,
+while the latter retains the native base--base cross terms.
+
+\subsection{The two quotient maps are not interchangeable}
+
+For a literal terminal atom write its prime-resolved key as
+\begin{equation}
+ (i,s,p),
+ \qquad i=(L,\gamma,j)\ \text{or}\ (R,\alpha,j),
+ \qquad s=dr.
+ \label{eq:tpc58-prime-resolved-key}
+\end{equation}
+The two maps in the physical chain are
+\begin{equation}
+ \boxed{
+ (i,s,p)\longmapsto(i,s)
+ \longmapsto i.}
+ \label{eq:tpc58-two-grouping-maps}
+\end{equation}
+The first arrow coherently sums terminal primes in a fixed residual label;
+it is the \(p\to(i,s)\) grouping studied in TPC--55--57
+\citep{WangTPC55,WangTPC56,WangTPC57}.  The second arrow is the unsigned
+erasure \(\Eop\); it aliases different residual labels \(s\) in the same
+native output coordinate.  A singleton for the first arrow need not be a
+singleton for the second.  In particular, a lower square proved after the
+first grouping is an input to the native-alias problem, not its solution.
+
+All displayed sums use raw counting measure on their stated canonical
+coordinates.  Prime-resolved injectivity is used before the first arrow,
+and the \(p\)-sum is formed exactly once in each \((i,s)\).  Duplicating a
+prime-resolved atom, adjoining an ambient affine-prime solution, or
+inserting cancelling null pairs would change the Hilbert space and is not
+part of this dictionary.

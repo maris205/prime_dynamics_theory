@@ -1,0 +1,272 @@
+\section{Audit, claim boundary, and the next Gram gate}
+\label{sec:tpc58-claims-next}
+
+The point of the preceding construction is to locate, rather than conceal,
+the two comparisons that are still missing.  With the final sign convention
+of \cref{prop:tpc58-exact-gauge-alignment},
+\begin{equation}
+ z_H=-\sum_p b,
+ \qquad
+ h=C_{\mu,H}z_H=-\sum_pv_p,
+ \qquad
+ A=U_\mu z_H,
+ \qquad
+ C_1A=h.
+ \label{eq:tpc58-final-sign-ledger}
+\end{equation}
+Thus the physical affine column is \(v_0+h\).  The first missing constant
+controls the erasure \(z_H\mapsto h\), and the second controls the sum
+\((v_0,h)\mapsto v_0+h\).  They have independent kernels, so they must not
+be combined into one unnamed ``Gram loss.''
+
+\subsection{Six-point physical audit}
+
+The native-affine bridge passes the following bookkeeping audit.  Passing
+the audit certifies that the operators act on the intended physical object;
+it does not certify positivity of either restricted singular value.
+\begin{enumerate}[label=\textup{(A\arabic*)},leftmargin=3.2em]
+ \item \emph{Literal coefficients.}
+       The terminal amplitude is the inherited physical coefficient
+       \(x_u=c_u\zeta_{m(u)}\), including its output factor, source shape,
+       masks, profiles, cofactor sign, and terminal multiplier.  In the
+       TPC--56--57 common gauge, \(x_u\) already contains the factor
+       \(\mu(s(u))\).  Equation \eqref{eq:tpc58-final-sign-ledger} therefore
+       uses the unsigned second grouping \(C_1A\); no second M\"obius sign is
+       inserted.
+ \item \emph{Fixed physical shift.}
+       Every terminal atom satisfies
+       \(p_ur_u-m(u)j_u=h_0\) for the one declared nonzero physical shift.
+       The identities in
+       \cref{prop:tpc58-exact-gauge-alignment,prop:tpc58-native-exchange-identity}
+       are pointwise at this \(h_0\).  No intercept average, frozen-shift
+       family, or projective reassembly is substituted for the physical
+       column.
+ \item \emph{Physical atomic normalization.}
+       The terminal diagonal energy, the first grouped residual energy, and
+       the native high energy use the inherited raw counting-measure atoms.
+       Repeated cofactor labels remain distinct terminal atoms until the
+       declared grouping, and the terminal multiplier is not moved into a
+       renormalized input norm.  Consequently the two grouping maps compare
+       actual physical energies rather than support cardinalities.
+ \item \emph{Canonical representation and minimality scope.}
+       The first grouping uses the full residual key \(q(u)=(i,s(u))\); the
+       second grouping erases only \(s\).  The restricted space
+       \(E_H=\Ran T_H\) and the feasible affine pair space
+       \(\cF_{\rm aff}\) are the canonical images of one declared coefficient
+       map.  Moore--Penrose reductions are restricted to the active Gram
+       range, so null coefficient directions are not counted as physical
+       generalized eigenvectors.
+ \item \emph{Actual active support.}
+       The baseline carrier used to define \(T_H\) is fixed independently of
+       the row coefficient vector.  Only factors that vanish identically on
+       that baseline are removed.  Coefficient-dependent zeros may shrink a
+       distinguished support, but they do not redefine \(E_H\), its rank, or
+       the uniform constants.  The high residual identification also uses
+       the same \(p>y\) cutoff on both the Walsh and terminal sides.  At the
+       endpoint this cutoff forces the smaller cofactor range
+       \eqref{eq:tpc58-compatible-cofactor-ceiling}; occupancy of that range
+       is not inferred from the old \(R\asymp J\) block.
+ \item \emph{Endpoint budget.}
+       The two new losses are recorded separately as
+       \(\lambda_H\) and \(\lambda_{\rm aff}\).  Together with the separately
+       recorded compatible-band relocation, selection, cofactor-block,
+       terminal, singleton, boundary, and tail losses, they enter the exact
+       ledger
+       \eqref{eq:tpc58-total-endpoint-exponent}.  The safe condition is the
+       strict inequality
+       \(\Lambda_{\rm tot}<1/400\); equality is not accepted without a
+       constant-level comparison and quantified remainder.
+\end{enumerate}
+
+\subsection{Claim table}
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.29\textwidth}
+                >{\raggedright\arraybackslash}p{0.60\textwidth}}
+\toprule
+Statement & Status \\
+\midrule
+Signed residual-label erasure spectrum and bright/dark decomposition
+& Exact finite-dimensional theorem on the declared ambient fibers (L0). \\
+Support-only native lower bound
+& Sharply false whenever one native output contains at least two active
+  residual labels (L0 no-go). \\
+Restricted native constant \(\alpha_H\)
+& For nonzero \(E_H=\Ran T_H\), an exact least-eigenvalue and kernel
+  characterization, with one-way rank/dimension kill tests (L0).
+  Positivity and endpoint size are not proved. \\
+Affine constant \(\delta_{\rm aff}\)
+& Exact restricted singular-value and anti-diagonal kernel
+  characterizations on nonzero \(\cF_{\rm aff}\) (L0).  Positivity and
+  endpoint size are not proved. \\
+Two-stage affine transfer
+& Exact implication
+  \(\cN_{\rm aff}\ge\delta_{\rm aff}\alpha_H\|z_H\|^2\)
+  for vectors in the declared feasible images (L0). \\
+Fixed-\(h_0\) terminal/Walsh/native identification
+& Exact coordinatewise interface under the inherited injection, cutoff, and
+  common-carrier hypotheses (L1). \\
+TPC--56 adaptive selected sector
+& Valid for its selected pre-terminal object, but it does not transport to
+  the undeleted residual or native vector (L0 nontransport theorem). \\
+TPC--57 terminal singleton bridge
+& Controls only the first grouping \(p\mapsto(i,s)\), conditionally on its
+  own occupancy hypotheses and after a compatible smaller cofactor band has
+  been activated; it does not control the second grouping
+  \((i,s)\mapsto i\) (L0/L1 boundary). \\
+Native signed exchange identity
+& Exact expansion over unequal residual products at one fixed \(h_0\)
+  (L1).  The preceding same-residual factor-exchange estimate does not apply
+  to these pairs. \\
+Uniform native high lower square
+& On nonzero \(\Ran R_H\), equivalent to the negative-spectrum bound
+  \(\lambda_{\min}(\Theta_H)>-1\); not proved. \\
+Full native affine lower square
+& Requires both a native high lower square and independent base--high
+  noncancellation; not proved. \\
+Endpoint \(1/400\) comparison
+& Conditional exponent propagation only.  None of the missing positive
+  constants is entered as zero-cost. \\
+Parity improvement or twin-prime consequence
+& Not claimed. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The level terminology is deliberately conservative.  L0 comprises exact
+finite-dimensional identities, spectra, restricted minimax laws, and sharp
+counterexamples.  L1 is the exact specialization of those maps to the
+literal fixed-\(h_0\) carrier.  An L2 advance would require a quantitative
+arithmetic estimate proving a sufficiently strong lower bound for the
+distinguished physical vector or for the whole canonical coefficient image,
+together with every upstream and downstream transfer in
+\eqref{eq:tpc58-total-endpoint-exponent}.  No theorem in this paper is
+classified as L2.
+
+\subsection{The next gates and their kill tests}
+
+The remaining work begins with one support door and then separates into two
+spectral doors.  Compatible-band activation must be tested before either
+spectral constant: a Gram theorem on an empty inherited block carries no
+endpoint energy.  After activation, the native door precedes the affine
+door because an affine estimate cannot reconstruct a high component already
+lost in residual-label erasure.
+
+\begin{enumerate}[label=\textbf{Door \Alph*.},leftmargin=3.8em]
+ \item \emph{Compatible-band relocation and occupancy.}
+       With \(y=X^{267/400+\eta}\), replace the incompatible old block
+       \(R\asymp J\) by dyadic blocks contained in
+       \[
+        r\le X^{133/400-\eta+o(1)}.
+       \]
+       Prove a lower transfer from the inherited parent diagonal into these
+       blocks, retain one fixed \(h_0\), and then verify terminal activation
+       and the hypotheses of the TPC--57 undeleted singleton bridge.  The
+       relocation loss \(\lambda_{\rm reloc}\) and subsequent block loss
+       \(\lambda_{\rm blk}\) remain distinct.
+
+       The immediate kill test is asymptotic emptiness or a best possible
+       parent-to-band exponent already exhausting the \(1/400\) slack.  In
+       either case the endpoint route stops before any Gram computation.
+
+ \item \emph{Literal restricted-Gram assembly.}
+       Assemble the pair
+       \[
+        R_H=T_H^*T_H,
+        \qquad
+        N_H=T_H^*C_{\mu,H}^*C_{\mu,H}T_H
+       \]
+       from the actual fixed-carrier coefficients, after quotienting only
+       \(\Ker T_H\).  The first target is a certified census of the negative
+       spectrum of \(\Theta_H\), not merely a floating-point plot.  Exact
+       sparse elimination, interval eigenvalue bounds, and blockwise
+       Schur-complement certificates may be used, provided every block keeps
+       the literal normalization and active support.
+
+       The immediate kill test is
+       \[
+        E_H\cap\Ker C_{\mu,H}\ne\{0\}.
+       \]
+       If it holds on the actual image, then \(\alpha_H=0\) and the
+       coefficient-uniform native door is closed.  A positive numerical
+       eigenvalue at finitely many scales is scouting evidence only; a proof
+       requires a scale-uniform lower certificate with an explicit loss
+       exponent.
+
+ \item \emph{Distinguished signed exchange.}
+       If the uniform image contains a dark vector, retain the one inherited
+       coefficient vector and estimate the weakest exact target
+       \begin{equation}
+        2\Re\sum_i\sum_{s<t}A_{i,s}\overline{A_{i,t}}
+        \ge -(1-\delta_H)\sum_{i,s}|A_{i,s}|^2
+        \label{eq:tpc58-next-distinguished-exchange}
+       \end{equation}
+       with \(\delta_H\ge X^{-\lambda_H+o(1)}\).  Unlike the TPC--57
+       same-residual collision system, the pairs here satisfy
+       \(s(u)\ne s(v)\).  Any arithmetic proof must therefore expose a new
+       unequal-residual-product relation rather than reusing singleton
+       occupancy under a renamed key.
+
+       This door is closed for the endpoint if literal examples force
+       \(\delta_H\) to decay faster than the residual endpoint slack.  Such a
+       result would be a genuine negative theorem about this route, not a
+       claim of cancellation for unrelated coefficient families.
+
+ \item \emph{Base--high affine transversality.}
+       Conditional on surviving Door B or C, assemble the feasible pair image
+       \(\cF_{\rm aff}\) and test
+       \begin{equation}
+        \cF_{\rm aff}\cap\{(g,-g):g\in\cH_{\rm out}\}=\{0\}.
+        \label{eq:tpc58-next-affine-kill-test}
+       \end{equation}
+       A nonzero intersection proves \(\delta_{\rm aff}=0\) for the uniform
+       route.  Otherwise the target is a quantitative principal-angle lower
+       bound
+       \(\delta_{\rm aff}\ge X^{-\lambda_{\rm aff}+o(1)}\).  This analysis
+       must retain the joint dependence of \(v_0\) and \(h\) on the same
+       coefficient vector; treating them as independent ambient vectors can
+       only recover the sharp no-go of
+       \cref{thm:tpc58-two-independent-no-go}.
+
+ \item \emph{Distinguished affine ratio.}
+       If uniform affine transversality fails but the physical coefficient
+       vector avoids the anti-diagonal, study the exact pointwise ratio
+       \eqref{eq:tpc58-distinguished-delta-aff}.  As at the native gate, a
+       distinguished estimate is weaker than a coefficient-uniform theorem
+       and must be labeled accordingly.  Its loss exponent still enters the
+       same strict endpoint ledger.
+
+ \item \emph{Budget stop and route closure.}
+       At each scale record
+       \(\lambda_{\rm Gram}=\lambda_H+\lambda_{\rm aff}\) separately from
+       the five upstream and two downstream losses.  If the best rigorous
+       lower exponents force
+       \(\Lambda_{\rm tot}\ge1/400\), the current endpoint route is not
+       certified.  At equality, stop unless all constants and remainders are
+       closed.  If either exact kernel test is triggered, record the
+       corresponding negative result and return to a different physical
+       carrier or decomposition; do not replace the failed undeleted vector
+       by the adaptive TPC--56 sector.
+\end{enumerate}
+
+The most economical next paper is therefore a compatible-band census at the
+literal fixed shift: determine whether the smaller \(r\)-range forced by
+\(p>y\) carries a quantitatively useful part of the parent energy.  Only on
+a surviving nonzero carrier should the subsequent paper construct \(R_H\),
+\(N_H\), and the affine pair Gram and perform exact rank and kernel tests.
+This order permits a positive theorem or a sharp route-closure theorem
+without performing spectral analysis on an empty face.
+
+\paragraph{Conclusion.}
+The missing native bridge is now an exact signed alias problem.  TPC--57
+can, subject to its own unresolved arithmetic hypotheses, deliver energy
+after the first grouping, but residual-label erasure introduces the new
+unequal-residual exchange form.  Its optimal restricted constant is
+\(\alpha_H\).  Even if that gate is positive, completion of the physical
+column encounters the independent affine constant
+\(\delta_{\rm aff}\).  Both constants have exact spectral descriptions and
+sharp independent zero mechanisms; neither is proved positive on the
+endpoint carrier.  The paper therefore closes an L1 interface and exposes
+one upstream activation gate and the next two auditable spectral gates,
+while making no parity improvement and no twin-prime claim.
