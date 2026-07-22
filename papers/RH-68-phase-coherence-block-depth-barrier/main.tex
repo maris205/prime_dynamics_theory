@@ -1,0 +1,350 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\dist}{\operatorname{dist}}
+
+\title{Phase-Coherence Barriers to Uniform Block Krylov Depth\\
+\large An Exact Fourier-Ring No-Go Theorem and the Phase-Compression Escape}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-66 and RH-67 built phase-preserving block Krylov residual certificates,
+but left open whether the required block depth can remain uniform in a
+growing physical family.  This paper proves that no such conclusion follows
+from stability, spectral radius, or Lyapunov conditioning alone.
+
+Let $\omega_d=e^{2\pi i/d}$,
+\[
+ A_d=q\,\operatorname{diag}(1,\omega_d,\ldots,\omega_d^{d-1}),
+ \qquad z_d=d^{-1/2}(1,\ldots,1)^T,
+ \]
+with fixed $0<q<1$.  The normalized Krylov vectors
+$v_m=q^{-m}A_d^mz_d$ are the discrete Fourier basis.  Hence, for every
+$k\le L<d$,
+\[
+ \dist\!\left(v_L,\operatorname{span}\{v_0,\ldots,v_{k-1}\}\right)=1.
+\]
+The canonical Lyapunov metric is $(1-q^2)^{-1}I$, with condition number one,
+and every residual still propagates with exact contraction $q$.  Thus a
+depth-$k$ projection gives no directional reduction at horizon $L\ge k$;
+exact inclusion of that horizon requires depth $L+1$.
+
+We also prove a robust block version.  If $p$ normalized block Krylov vectors
+have mutual coherence at most $\mu$, and the target has the same coherence,
+then
+\[
+ \dist^2\ge
+ 1-\frac{p\mu^2}{1-(p-1)\mu}.
+\]
+For block width $r$, one takes $p=kr$.  A sharper computable lower bound uses
+the minimum Gram eigenvalue and target correlation norm.
+
+The numerical audit confirms the boundary.  Exact rings at horizons
+$8,16,32,64$ require depths $9,17,33,65$ for ten-percent error.  Even a
+half-cell deterministic phase perturbation leaves error $0.9851$ at depth
+$32$, horizon $32$.  Conversely, phase compression opens the route: at the
+same horizon, arcs of widths $0,0.03,0.1,0.3,1,3,2\pi$ require depths
+$1,2,3,7,16,28,33$.  A 256-bit Arb/Acb calculation certifies the displayed
+eight-point Fourier ring.  This is a no-go result for universal fixed depth,
+not for a physical family with proved phase compression or effective-rank
+decay.  No Stage A1 closure, arithmetic trace formula, or Hilbert--Polya
+conclusion is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} block Krylov depth; Fourier ring; mutual
+coherence; phase compression; Lyapunov metric; projection lower bound.
+
+\medskip
+\noindent\textbf{MSC 2020:} 47A10; 47B65; 65F35; 42A38; 15A60.
+
+\section{Introduction}
+
+The recent route has separated three losses.  RH-65 classified global metric
+conditioning, RH-66 restored cross-column phases, and RH-67 optimized the
+positive envelope for a physical coefficient covariance
+\citep{WangCovarianceEnvelope2026}.  All three are useful only if a moderate
+block Krylov space captures the reached dynamics.  The remaining question is
+whether that depth can be bounded independently of the small-noise or mesh
+parameter.
+
+There is an immediate algebraic warning: Krylov dimension is controlled by a
+minimal polynomial, not by spectral radius \citep{Saad2003}.  The example in
+this paper makes the warning exact while removing two possible excuses.  The
+operator is normal, its contraction is fixed below one, and its canonical
+metric has condition number one.  The obstruction is pure phase richness.
+
+\subsection*{Contributions and boundary}
+
+\begin{enumerate}[leftmargin=2.2em]
+ \item We prove an exact Fourier-ring depth obstruction and show that the
+       terminal residual retains the original contraction.
+ \item We derive spectral and mutual-coherence lower bounds for perturbed and
+       block Krylov families.
+ \item We audit exact rings, deterministic phase perturbations, and compressed
+       phase arcs.
+ \item We identify the positive replacement for a fixed-depth theorem:
+       physical phase compression, effective-rank decay, or an admissible
+       growing-depth ledger.
+\end{enumerate}
+
+The no-go theorem concerns universal assumptions.  It does not assert that
+the folded-Gaussian packet family contains a Fourier ring.
+
+\section{Exact Fourier-ring obstruction}
+\label{sec:ring}
+
+Fix $d\ge2$, $0<q<1$, and put
+\begin{equation}
+ \omega_d=e^{2\pi i/d},\qquad
+ A_d=q\,\operatorname{diag}(1,\omega_d,\ldots,\omega_d^{d-1}),
+ \qquad
+ z_d=\frac1{\sqrt d}(1,\ldots,1)^T.
+ \label{eq:ring}
+\end{equation}
+Define $v_m=q^{-m}A_d^mz_d$.
+
+\begin{theorem}[Fourier-ring depth barrier]
+\label{thm:ring}
+The vectors $v_0,\ldots,v_{d-1}$ form an orthonormal basis.  In particular,
+for integers $1\le k\le L<d$,
+\begin{equation}
+ \dist\!\left(v_L,
+ \mathcal K_k(A_d,z_d)\right)=1,
+ \qquad
+ \mathcal K_k(A_d,z_d)=
+ \operatorname{span}\{z_d,A_dz_d,\ldots,A_d^{k-1}z_d\}.
+ \label{eq:unit-distance}
+\end{equation}
+The first Krylov depth containing $A_d^Lz_d$ is $L+1$, while invariant
+closure requires depth $d$.
+\end{theorem}
+
+\begin{proof}
+For $m,n\in\{0,\ldots,d-1\}$,
+\[
+ \langle v_m,v_n\rangle
+ =\frac1d\sum_{j=0}^{d-1}\omega_d^{j(n-m)}
+ =\begin{cases}1,&m=n,\\0,&m\ne n.\end{cases}
+\]
+Thus $\mathcal K_k$ is exactly the span of the first $k$ Fourier vectors and
+$v_L$ is orthogonal to it when $k\le L<d$.  Distinct Fourier vectors remain
+linearly independent until all $d$ have appeared.
+\end{proof}
+
+\begin{proposition}[Metric and residual do not repair the ring]
+\label{prop:metric}
+The canonical Lyapunov equation gives
+\begin{equation}
+ M_d-A_d^*M_dA_d=I,
+ \qquad M_d=(1-q^2)^{-1}I.
+ \label{eq:ring-metric}
+\end{equation}
+Hence $\operatorname{cond}(M_d)=1$ and
+$\norm{A_dx}_{M_d}=q\norm{x}_{M_d}$ for every $x$.  For $k<d$, Arnoldi on
+$z_d$ has projected shift $H_k$ and residual $qv_k$; the residual orbit also
+contracts exactly by $q$.
+\end{proposition}
+
+\begin{proof}
+Since $A_d=qU_d$ with $U_d$ unitary, \eqref{eq:ring-metric} is immediate.
+Moreover $A_dv_m=qv_{m+1}$, cyclically modulo $d$.  Before closure, the next
+Fourier vector is orthogonal to the current Arnoldi space and has residual
+norm $q$.
+\end{proof}
+
+For $L\ge k$, the projected center $V_kH_k^L e_1$ is zero because $H_k$ is a
+nilpotent shift.  The residual identity remains exact, but it has merely moved
+the entire tail into a direction with the same contraction.  This is why the
+certificate can be valid without producing a shorter horizon.
+
+\begin{corollary}[No universal fixed depth]
+\label{cor:no-go}
+No bound on block Krylov depth depending only on a fixed contraction
+$q<1$, the canonical metric condition number, and a fixed block width can
+approximate all stable normal families at all growing horizons.  Even with
+condition number one, the required scalar depth can equal $L+1$.
+\end{corollary}
+
+\section{Robust coherence bounds}
+\label{sec:coherence}
+
+The exact ring is not needed for a lower bound.  Let
+$X=[x_1,\ldots,x_p]$ have normalized, linearly independent columns, let
+$y$ be normalized, and set
+\begin{equation}
+ G=X^*X,qquad c=X^*y.
+ \label{eq:gram-correlation}
+\end{equation}
+
+\begin{proposition}[Spectral projection lower bound]
+\label{prop:spectral}
+One has
+\begin{equation}
+ \dist(y,\operatorname{ran}X)^2
+ =1-c^*G^{-1}c
+ \ge1-\frac{\norm c^2}{\lambda_{\min}(G)}.
+ \label{eq:spectral-lower}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The orthogonal projector is $XG^{-1}X^*$, giving the equality.  The
+inequality follows from $G^{-1}\preceq\lambda_{\min}(G)^{-1}I$.
+\end{proof}
+
+\begin{corollary}[Mutual-coherence barrier]
+\label{cor:coherence}
+Suppose
+\begin{equation}
+ |\langle x_i,x_j\rangle|\le\mu\quad(i\ne j),
+ \qquad |\langle x_i,y\rangle|\le\mu,
+ \qquad (p-1)\mu<1.
+ \label{eq:coherence-assumption}
+\end{equation}
+Then
+\begin{equation}
+ \dist(y,\operatorname{ran}X)^2
+ \ge1-\frac{p\mu^2}{1-(p-1)\mu}.
+ \label{eq:coherence-lower}
+\end{equation}
+For block width $r$ and depth $k$, the same statement applies with at most
+$p=kr$ block Krylov columns.
+\end{corollary}
+
+\begin{proof}
+Gershgorin gives $\lambda_{\min}(G)\ge1-(p-1)\mu$, while
+$\norm c^2\le p\mu^2$.  Insert both estimates into
+\eqref{eq:spectral-lower}.  A block Krylov matrix has at most $kr$ columns.
+\end{proof}
+
+The spectral form \eqref{eq:spectral-lower} is sharper in computation.  The
+coherence form is useful analytically because exponential-sum estimates can
+bound $\mu$ without diagonalizing a Gram matrix.  It is a standard frame
+stability mechanism \citep{Christensen2016}.
+
+\section{Phase-family audit}
+\label{sec:audit}
+
+The audit fixes $q=0.995$.  Since the metric is scalar, all normalized
+projection errors depend only on phases.  Exact rings use $L=d/2$.
+
+\begin{table}[H]
+\centering
+\caption{Exact Fourier-ring depth scaling.}
+\label{tab:rings}
+\begin{tabular}{rrrrr}
+\toprule
+$d$ & $L$ & depth $L$ error & required depth & metric cond.\\
+\midrule
+16  & 8  & 1.000000 & 9  & 1\\
+32  & 16 & 1.000000 & 17 & 1\\
+64  & 32 & 1.000000 & 33 & 1\\
+128 & 64 & 1.000000 & 65 & 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For $d=64$, $L=32$, perturb the $j$th phase by
+\[
+ \frac{2\pi\delta}{64}\sin(14\pi j/64),
+\]
+where $\delta$ is measured in phase cells.  At depth $32$, errors for
+$\delta=0,0.05,0.2,0.5$ are respectively
+$1$, $0.999852$, $0.997636$, and $0.985125$.  The spectral lower bounds are
+$1$, $0.999848$, $0.997309$, and $0.978484$.  Thus the obstruction is robust
+to moderate deterministic perturbation.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.99\textwidth]{figures/phase_coherence_block_depth_barrier.pdf}
+\caption{Left: exact required depth grows as $L+1$.  Middle: perturbed phase
+rings retain nearly unit projection error.  Right: compressing phases to a
+short arc sharply reduces the effective depth.}
+\label{fig:audit}
+\end{figure}
+
+The right panel is the positive result.  At $d=64$, $L=32$, phase arc widths
+\[
+ 0, 0.03, 0.1, 0.3, 1, 3, 2\pi
+\]
+require depths
+\[
+ 1, 2, 3, 7, 16, 28, 33
+\]
+for normalized error at most $0.1$.  A narrow phase support has low numerical
+Krylov rank even when the ambient dimension is large.
+
+A 256-bit Arb/Acb audit certifies the eight-point ring at $L=k=4$: all DFT
+off-diagonal inner products and all target correlations contain zero, the
+diagonal norm contains one, and the canonical metric scalar is positive.
+This is a finite exact witness, not a production phase calculation.
+
+\section{Route consequence}
+\label{sec:route}
+
+The result rules out one tempting theorem target:
+\[
+ \text{stable family}+\text{well-conditioned metric}
+ \not\Longrightarrow \text{uniform fixed Krylov depth}.
+\]
+It does not rule out the active route.  Instead, RH-69 must combine three
+admissible mechanisms:
+
+\begin{enumerate}[leftmargin=2.2em]
+ \item a phase-compression certificate, for example a short angular support;
+ \item weighted effective-rank decay of the physical covariance Gram;
+ \item a growing block depth whose cost remains within the Stage A1 budget.
+\end{enumerate}
+
+The spectral lower bound in \cref{prop:spectral} is also a practical gate: if
+the target correlations and minimum Krylov Gram eigenvalue imply a lower
+error near one, no amount of residual-weight optimization can rescue that
+depth.  The algorithm should increase depth or change packetization before
+building the expensive positive envelope.
+
+\section{No arithmetic or Hilbert--Polya conclusion}
+
+This paper constructs no self-adjoint operator, no $T\log T$ counting law,
+no prime-power trace formula, and no completed-zeta identity.  It makes no
+Hilbert--Polya or Riemann-hypothesis claim.  Stage A1 and unconditional Stage
+A4 remain open.
+
+\section{Reproducibility}
+
+The directory contains coherence algebra, tests, phase-family pilots, the
+Arb/Acb audit, figures, hashes, and publication artifacts.  The main commands
+are:
+\begin{verbatim}
+pytest -q -p no:cacheprovider
+python experiments/run_depth_barrier_pilot.py
+python experiments/run_arb_fourier_ring_audit.py
+MPLBACKEND=Agg python experiments/make_figures.py
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+\end{verbatim}
+
+The Fourier-ring and coherence statements are analytic.  Perturbed rings and
+phase arcs are binary64 diagnostics.  Production phase compression,
+effective-rank decay, an admissible growing-depth theorem, Stage A1,
+unconditional Stage A4, a self-adjoint Hilbert--Polya operator, an arithmetic
+trace formula, and a zeta-zero identity remain open.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

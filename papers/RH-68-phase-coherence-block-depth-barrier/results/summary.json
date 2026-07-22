@@ -1,0 +1,598 @@
+{
+  "arb": {
+    "all_distinct_fourier_vectors_orthogonal_certified": true,
+    "precision_bits": 256,
+    "production_interval_audit_executed": false,
+    "strict_stability_and_positive_metric_certified": true,
+    "target_orthogonal_to_depth_space_certified": true,
+    "unit_norm_certified": true
+  },
+  "pilot": {
+    "exact_rings": [
+      {
+        "canonical_metric_condition_number": 1.0,
+        "contraction": 0.995,
+        "depths": [
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 1,
+            "minimum_gram_eigenvalue": 1.0,
+            "mutual_coherence": 8.40053871571179e-16,
+            "numerical_rank": 1,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 2.83276944882399e-16
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 2,
+            "minimum_gram_eigenvalue": 1.0,
+            "mutual_coherence": 8.40053871571179e-16,
+            "numerical_rank": 2,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 3.148331954494326e-16
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 4,
+            "minimum_gram_eigenvalue": 0.999999999999999,
+            "mutual_coherence": 8.40053871571179e-16,
+            "numerical_rank": 4,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 5.133792428810434e-16
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 8,
+            "minimum_gram_eigenvalue": 0.9999999999999983,
+            "mutual_coherence": 8.40053871571179e-16,
+            "numerical_rank": 8,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 8.669886381590057e-16
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 9,
+            "minimum_gram_eigenvalue": 0.9999999999999987,
+            "mutual_coherence": 8.40053871571179e-16,
+            "numerical_rank": 9,
+            "projection_error": 4.886879161363567e-16,
+            "spectral_lower_bound": 0.0,
+            "target_correlation_norm": 1.0
+          }
+        ],
+        "dimension": 16,
+        "horizon": 8,
+        "required_depth_for_10_percent_error": 9,
+        "residual_contraction_before_full_closure": 0.995
+      },
+      {
+        "canonical_metric_condition_number": 1.0,
+        "contraction": 0.995,
+        "depths": [
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 1,
+            "minimum_gram_eigenvalue": 1.0000000000000002,
+            "mutual_coherence": 1.4047023849308902e-15,
+            "numerical_rank": 1,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 4.9861314267392694e-17
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 2,
+            "minimum_gram_eigenvalue": 0.9999999999999996,
+            "mutual_coherence": 1.4047023849308902e-15,
+            "numerical_rank": 2,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 1.4401133167735633e-16
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 4,
+            "minimum_gram_eigenvalue": 0.9999999999999994,
+            "mutual_coherence": 1.4047023849308902e-15,
+            "numerical_rank": 4,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 3.1018017158243315e-16
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 8,
+            "minimum_gram_eigenvalue": 0.9999999999999989,
+            "mutual_coherence": 1.4047023849308902e-15,
+            "numerical_rank": 8,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 9.20858941074919e-16
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 16,
+            "minimum_gram_eigenvalue": 0.9999999999999963,
+            "mutual_coherence": 1.4047023849308902e-15,
+            "numerical_rank": 16,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 1.4719634366033465e-15
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 17,
+            "minimum_gram_eigenvalue": 0.9999999999999967,
+            "mutual_coherence": 1.4047023849308902e-15,
+            "numerical_rank": 17,
+            "projection_error": 7.258883629552949e-16,
+            "spectral_lower_bound": 0.0,
+            "target_correlation_norm": 1.0000000000000002
+          }
+        ],
+        "dimension": 32,
+        "horizon": 16,
+        "required_depth_for_10_percent_error": 17,
+        "residual_contraction_before_full_closure": 0.995
+      },
+      {
+        "canonical_metric_condition_number": 1.0,
+        "contraction": 0.995,
+        "depths": [
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 1,
+            "minimum_gram_eigenvalue": 1.0,
+            "mutual_coherence": 2.5595946018415897e-15,
+            "numerical_rank": 1,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 2.1632341619892149e-16
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 2,
+            "minimum_gram_eigenvalue": 1.0,
+            "mutual_coherence": 2.5595946018415897e-15,
+            "numerical_rank": 2,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 3.3311920988748474e-16
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 4,
+            "minimum_gram_eigenvalue": 0.9999999999999997,
+            "mutual_coherence": 2.5595946018415897e-15,
+            "numerical_rank": 4,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 6.869548097668504e-16
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 8,
+            "minimum_gram_eigenvalue": 0.9999999999999987,
+            "mutual_coherence": 2.5595946018415897e-15,
+            "numerical_rank": 8,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 1.3885957921126398e-15
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 16,
+            "minimum_gram_eigenvalue": 0.9999999999999972,
+            "mutual_coherence": 2.5595946018415897e-15,
+            "numerical_rank": 16,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 2.5597947719686794e-15
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 32,
+            "minimum_gram_eigenvalue": 0.9999999999999922,
+            "mutual_coherence": 2.5595946018415897e-15,
+            "numerical_rank": 32,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 2.9719350615292045e-15
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 33,
+            "minimum_gram_eigenvalue": 0.9999999999999926,
+            "mutual_coherence": 2.5595946018415897e-15,
+            "numerical_rank": 33,
+            "projection_error": 9.432391723567423e-16,
+            "spectral_lower_bound": 0.0,
+            "target_correlation_norm": 1.0
+          }
+        ],
+        "dimension": 64,
+        "horizon": 32,
+        "required_depth_for_10_percent_error": 33,
+        "residual_contraction_before_full_closure": 0.995
+      },
+      {
+        "canonical_metric_condition_number": 1.0,
+        "contraction": 0.995,
+        "depths": [
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 1,
+            "minimum_gram_eigenvalue": 1.0000000000000002,
+            "mutual_coherence": 4.297748578847318e-15,
+            "numerical_rank": 1,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 2.9959088471379756e-16
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 2,
+            "minimum_gram_eigenvalue": 1.0,
+            "mutual_coherence": 4.297748578847318e-15,
+            "numerical_rank": 2,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 5.276745670324992e-16
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 4,
+            "minimum_gram_eigenvalue": 0.9999999999999996,
+            "mutual_coherence": 4.297748578847318e-15,
+            "numerical_rank": 4,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 9.181614451782467e-16
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 8,
+            "minimum_gram_eigenvalue": 0.9999999999999996,
+            "mutual_coherence": 4.297748578847318e-15,
+            "numerical_rank": 8,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 1.75134143172874e-15
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 16,
+            "minimum_gram_eigenvalue": 0.9999999999999984,
+            "mutual_coherence": 4.297748578847318e-15,
+            "numerical_rank": 16,
+            "projection_error": 1.0000000000000002,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 2.837367415480564e-15
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 64,
+            "minimum_gram_eigenvalue": 0.9999999999999838,
+            "mutual_coherence": 4.297748578847318e-15,
+            "numerical_rank": 64,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 6.858510332654396e-15
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 65,
+            "minimum_gram_eigenvalue": 0.9999999999999842,
+            "mutual_coherence": 4.297748578847318e-15,
+            "numerical_rank": 65,
+            "projection_error": 1.240378436627833e-15,
+            "spectral_lower_bound": 0.0,
+            "target_correlation_norm": 1.0000000000000002
+          }
+        ],
+        "dimension": 128,
+        "horizon": 64,
+        "required_depth_for_10_percent_error": 65,
+        "residual_contraction_before_full_closure": 0.995
+      }
+    ],
+    "jittered_rings": [
+      {
+        "depths": [
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 8,
+            "minimum_gram_eigenvalue": 0.9999999999999987,
+            "mutual_coherence": 2.5595946018415897e-15,
+            "numerical_rank": 8,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 1.3885957921126398e-15
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 16,
+            "minimum_gram_eigenvalue": 0.9999999999999972,
+            "mutual_coherence": 2.5595946018415897e-15,
+            "numerical_rank": 16,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 2.5597947719686794e-15
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 32,
+            "minimum_gram_eigenvalue": 0.9999999999999922,
+            "mutual_coherence": 2.5595946018415897e-15,
+            "numerical_rank": 32,
+            "projection_error": 1.0,
+            "spectral_lower_bound": 1.0,
+            "target_correlation_norm": 2.9719350615292045e-15
+          },
+          {
+            "coherence_lower_bound": 1.0,
+            "depth": 33,
+            "minimum_gram_eigenvalue": 0.9999999999999926,
+            "mutual_coherence": 2.5595946018415897e-15,
+            "numerical_rank": 33,
+            "projection_error": 9.432391723567423e-16,
+            "spectral_lower_bound": 0.0,
+            "target_correlation_norm": 1.0
+          }
+        ],
+        "dimension": 64,
+        "horizon": 32,
+        "jitter_in_phase_cells": 0.0,
+        "required_depth_for_10_percent_error": 33
+      },
+      {
+        "depths": [
+          {
+            "coherence_lower_bound": 0.9986574259860576,
+            "depth": 8,
+            "minimum_gram_eigenvalue": 0.9828219506689866,
+            "mutual_coherence": 0.01717804933101382,
+            "numerical_rank": 8,
+            "projection_error": 0.9999999999995689,
+            "spectral_lower_bound": 0.9999999999995612,
+            "target_correlation_norm": 9.285996571489787e-07
+          },
+          {
+            "coherence_lower_bound": 0.9968148249716139,
+            "depth": 16,
+            "minimum_gram_eigenvalue": 0.9759998342636653,
+            "mutual_coherence": 0.01717804933101382,
+            "numerical_rank": 16,
+            "projection_error": 0.9999999997398124,
+            "spectral_lower_bound": 0.9999999997331203,
+            "target_correlation_norm": 2.282430812265014e-05
+          },
+          {
+            "coherence_lower_bound": 0.9898488767087305,
+            "depth": 32,
+            "minimum_gram_eigenvalue": 0.970920843471024,
+            "mutual_coherence": 0.01717804933101382,
+            "numerical_rank": 32,
+            "projection_error": 0.9998524028557999,
+            "spectral_lower_bound": 0.9998478472204975,
+            "target_correlation_norm": 0.01718819748402695
+          },
+          {
+            "coherence_lower_bound": 0.9891283731767542,
+            "depth": 33,
+            "minimum_gram_eigenvalue": 0.970920843329581,
+            "mutual_coherence": 0.01717804933101382,
+            "numerical_rank": 33,
+            "projection_error": 1.2180173349471358e-15,
+            "spectral_lower_bound": 0.0,
+            "target_correlation_norm": 1.0001477061578203
+          }
+        ],
+        "dimension": 64,
+        "horizon": 32,
+        "jitter_in_phase_cells": 0.05,
+        "required_depth_for_10_percent_error": 33
+      },
+      {
+        "depths": [
+          {
+            "coherence_lower_bound": 0.963169542440359,
+            "depth": 8,
+            "minimum_gram_eigenvalue": 0.9314398125731893,
+            "mutual_coherence": 0.06856018742681128,
+            "numerical_rank": 8,
+            "projection_error": 0.999999972423827,
+            "spectral_lower_bound": 0.9999999703940364,
+            "target_correlation_norm": 0.00023484536500327223
+          },
+          {
+            "coherence_lower_bound": 0.0,
+            "depth": 16,
+            "minimum_gram_eigenvalue": 0.9076208304999794,
+            "mutual_coherence": 0.06856018742681128,
+            "numerical_rank": 16,
+            "projection_error": 0.9999989465864383,
+            "spectral_lower_bound": 0.9999988192437306,
+            "target_correlation_norm": 0.0014640207328757333
+          },
+          {
+            "coherence_lower_bound": 0.0,
+            "depth": 32,
+            "minimum_gram_eigenvalue": 0.8913357439421308,
+            "mutual_coherence": 0.06856018742681128,
+            "numerical_rank": 32,
+            "projection_error": 0.9976358075259899,
+            "spectral_lower_bound": 0.9973089838696566,
+            "target_correlation_norm": 0.06921519385774491
+          },
+          {
+            "coherence_lower_bound": 0.0,
+            "depth": 33,
+            "minimum_gram_eigenvalue": 0.8913356091383959,
+            "mutual_coherence": 0.06856018742681128,
+            "numerical_rank": 33,
+            "projection_error": 1.3091752482045429e-15,
+            "spectral_lower_bound": 0.0,
+            "target_correlation_norm": 1.0023925094795776
+          }
+        ],
+        "dimension": 64,
+        "horizon": 32,
+        "jitter_in_phase_cells": 0.2,
+        "required_depth_for_10_percent_error": 33
+      },
+      {
+        "depths": [
+          {
+            "coherence_lower_bound": 0.0,
+            "depth": 8,
+            "minimum_gram_eigenvalue": 0.8307173263598089,
+            "mutual_coherence": 0.16928267364019295,
+            "numerical_rank": 8,
+            "projection_error": 0.9999633247376463,
+            "spectral_lower_bound": 0.9999558509275721,
+            "target_correlation_norm": 0.008564413560328327
+          },
+          {
+            "coherence_lower_bound": 0.0,
+            "depth": 16,
+            "minimum_gram_eigenvalue": 0.7872952604465735,
+            "mutual_coherence": 0.16928267364019295,
+            "numerical_rank": 16,
+            "projection_error": 0.9997591196435291,
+            "spectral_lower_bound": 0.9996640189182309,
+            "target_correlation_norm": 0.02299877723001905
+          },
+          {
+            "coherence_lower_bound": 0.0,
+            "depth": 32,
+            "minimum_gram_eigenvalue": 0.7612627416683199,
+            "mutual_coherence": 0.16928267364019295,
+            "numerical_rank": 32,
+            "projection_error": 0.9851254530762483,
+            "spectral_lower_bound": 0.9784844447084445,
+            "target_correlation_norm": 0.1800154941704947
+          },
+          {
+            "coherence_lower_bound": 0.0,
+            "depth": 33,
+            "minimum_gram_eigenvalue": 0.7612515115001187,
+            "mutual_coherence": 0.16928267364019295,
+            "numerical_rank": 33,
+            "projection_error": 1.6719594790548146e-15,
+            "spectral_lower_bound": 0.0,
+            "target_correlation_norm": 1.0160736086236308
+          }
+        ],
+        "dimension": 64,
+        "horizon": 32,
+        "jitter_in_phase_cells": 0.5,
+        "required_depth_for_10_percent_error": 33
+      }
+    ],
+    "phase_arcs": [
+      {
+        "arc_width_radians": 0.0,
+        "depth_16_error": 1.3877787807814457e-16,
+        "depth_4_error": 3.640109616122045e-16,
+        "depth_8_error": 3.700454283543204e-16,
+        "dimension": 64,
+        "horizon": 32,
+        "required_depth_for_10_percent_error": 1
+      },
+      {
+        "arc_width_radians": 0.03,
+        "depth_16_error": 1.431240240663408e-09,
+        "depth_4_error": 0.00013703528650550598,
+        "depth_8_error": 1.5656711483068436e-07,
+        "dimension": 64,
+        "horizon": 32,
+        "required_depth_for_10_percent_error": 2
+      },
+      {
+        "arc_width_radians": 0.1,
+        "depth_16_error": 4.7192127479533897e-07,
+        "depth_4_error": 0.01552996864575832,
+        "depth_8_error": 2.068752222031641e-05,
+        "dimension": 64,
+        "horizon": 32,
+        "required_depth_for_10_percent_error": 3
+      },
+      {
+        "arc_width_radians": 0.3,
+        "depth_16_error": 1.4378293822194086e-05,
+        "depth_4_error": 0.5756118522000534,
+        "depth_8_error": 0.008052427752966959,
+        "dimension": 64,
+        "horizon": 32,
+        "required_depth_for_10_percent_error": 7
+      },
+      {
+        "arc_width_radians": 1.0,
+        "depth_16_error": 0.043614623407150055,
+        "depth_4_error": 0.9775095636469449,
+        "depth_8_error": 0.9069360511456548,
+        "dimension": 64,
+        "horizon": 32,
+        "required_depth_for_10_percent_error": 16
+      },
+      {
+        "arc_width_radians": 3.0,
+        "depth_16_error": 0.9553787012000475,
+        "depth_4_error": 0.9986467538434387,
+        "depth_8_error": 0.9913851377153139,
+        "dimension": 64,
+        "horizon": 32,
+        "required_depth_for_10_percent_error": 28
+      },
+      {
+        "arc_width_radians": 6.283185307179586,
+        "depth_16_error": 1.0,
+        "depth_4_error": 1.0,
+        "depth_8_error": 1.0,
+        "dimension": 64,
+        "horizon": 32,
+        "required_depth_for_10_percent_error": 33
+      }
+    ]
+  },
+  "program_boundary": {
+    "admissible_growing_depth_budget": false,
+    "hilbert_polya_operator": false,
+    "production_effective_rank_decay": false,
+    "production_phase_compression": false,
+    "stage_A1_closed": false,
+    "stage_A4_unconditional_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "edc0f305a8e021cd0c100a30cd2e601c77b965a68d5614105ffbf24a5a461fc3",
+    "README.md": "952ed6a511c6fe5d57fe47a5dd47c041cc57ea779cbcd616c348e4e8b51afef2",
+    "figures/phase_coherence_block_depth_barrier.pdf": "cf4b21dd05a3bee1f6700a5552befde2592f5cd85865aae7d92242bf61d31655",
+    "figures/phase_coherence_block_depth_barrier.png": "86e5bf86f5c9af37354497024dc1ea4067851b4f115b96fff272a417f899843f",
+    "main.pdf": "b04a2b41307beb0939ed0cf6c87c53da19bc871e9b347817f9bf86a49743f9b0",
+    "main.tex": "e668181099cf2d7ebc2c61236db9c1e53221ec722a0222d3d69bdbbc68f953b4",
+    "phase-coherence-block-depth-barrier.pdf": "b04a2b41307beb0939ed0cf6c87c53da19bc871e9b347817f9bf86a49743f9b0",
+    "pyproject.toml": "121f142108cda4bcbe5f9d51fd42c61ae3ec3bf7025602014ab792ea766a589f",
+    "references.bib": "93ec91e14d0eff3a73856562f2c7587e2b81022d8fc2b8122099103811572325",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "result_hashes": {
+    "results/arb_fourier_ring_audit.json": "25dcaef5cd64dfa6a8e27b9918e8d0ee8bda254a2ce5b286fe513a45bf70377c",
+    "results/dependency_manifest.json": "edc52a99ef5d1cc4e7a5a75d783e1efe50ebad4744e1ce1ba53536f647a0109e",
+    "results/depth_barrier_pilot.json": "94e04c24295f0b190b221d7fdc8bda6bf2353d90b7b83a3d899860948d3807de",
+    "results/depth_barrier_smoke.json": "9cc39294b6ce74a4e7ec3386c7eba7f3580eb53153e5d58617c5680450d02988"
+  },
+  "route_consequence": "A fixed block depth cannot be justified from stability or spectral radius alone; the physical family must supply phase compression, effective-rank decay, or an admissible growing depth budget.",
+  "status": "rh68_phase_coherence_block_depth_barrier_audit",
+  "theorem": {
+    "canonical_metric_does_not_repair_ring": true,
+    "exact_fourier_ring_depth_barrier": true,
+    "mutual_coherence_block_bound": true,
+    "spectral_projection_lower_bound": true,
+    "universal_fixed_depth_no_go": true
+  }
+}
