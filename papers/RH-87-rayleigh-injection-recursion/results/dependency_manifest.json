@@ -1,0 +1,39 @@
+{
+  "external_inputs": {
+    "rh77_effective_rank_audit": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/results/effective_rank_audit.json",
+      "sha256": "08a123fb310bfd70572e5bd2b13ccf2fe397fd944f409c626d2e079b49be6c1a"
+    },
+    "rh85_snapshot_summary": {
+      "path": "papers/RH-85-midblock-snapshot-packets/results/summary.json",
+      "sha256": "4854dedb163a440e8ddf81590b2631b9d59c60091cf23023995fe8e1decc913e"
+    },
+    "rh86_memory_summary": {
+      "path": "papers/RH-86-trace-normalized-late-memory-packets/results/summary.json",
+      "sha256": "3e7fd298fddd6eea6c59d8750fb75066df3344b1e75423568b4662e4fc5ecea6"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "5a94b1ba38826136ab1377850cc80883c0a4424d9cbced22db05e9c292cb4b8e",
+    "experiments/make_figures.py": "f859de612908e1e3e36b00e8066a403d80c3bcbd1e9c1c2198bde70f6f26572e",
+    "experiments/run_injection_audit.py": "a15105f6d1304f2319dceb023ae5bc992db16dea80e202f87c08b2a2a60f1114",
+    "experiments/verify_archive.py": "c4d427e07280d61fb493a43a19121cb66b427f2d6295da251470f91e186f5bb1",
+    "src/rayleigh_injection/__init__.py": "2e996f7577dcff69e0a3301e814f9552a3857145f4b97e61c22d981af9851a58",
+    "src/rayleigh_injection/bounds.py": "00d93d911521773a28b9a42241cfd0b50d549f2e81f324165adb05082ed6fcb7",
+    "tests/test_archived_results.py": "7b4b3845481b798198287e08ed3e3b0c8ceefbf884531730312ff26a974ff9e7",
+    "tests/test_theory.py": "9e3c70dfd2af47fbbf9299ce2a6d53b69caa511984223299eed45d83e8c1959a"
+  },
+  "publication_artifacts": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "4b29049f0bb62127248f7f24f893af79f55facf1c150b86f006f4da7897a852f",
+    "figures/rayleigh_injection_recursion.pdf": "54ef725f2435b10682ce01035831e21c13e0cb5642b3bac5fd769d3fcdbe5bdf",
+    "figures/rayleigh_injection_recursion.png": "779e14c270756cb6497714504b80ebf9689d1f66ebea7a4e8ab8b0201ded4034",
+    "main.pdf": "78d26a116802bb2f38442fabd47a0ffdb070bbbcf91d614c234f1d8c2eb73bec",
+    "main.tex": "d8f605d237eaf0cb6d49d7e34d4fe265a9de1e4470990e9b855c65ada452e563",
+    "pyproject.toml": "7e774bd1056e151fcc456beb99adbada5ae86306e75f2cb7f76a52393d7914ca",
+    "rayleigh-injection-recursion.pdf": "78d26a116802bb2f38442fabd47a0ffdb070bbbcf91d614c234f1d8c2eb73bec",
+    "references.bib": "372403d91ee5c71056c546ebd1bb557b55f8b69207a1b0131b32d6f878eb6612",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "status": "all_rh87_inputs_sources_and_publication_artifacts_hashed"
+}

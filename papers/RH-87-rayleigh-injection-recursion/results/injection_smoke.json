@@ -1,0 +1,153 @@
+{
+  "all_executed_injection_gates_green": true,
+  "audit_summary": {
+    "all_binary64_recursions_green": true,
+    "all_lagged_propagation_inequalities_certified": true,
+    "maximum_clock_rank": 4,
+    "maximum_final_recursion_utilization": 0.007042643485608057,
+    "maximum_full_future_hardy_perturbation": 2.99135793605878e-05,
+    "maximum_interval_lagged_terminal_relative_residual": 0.0011808398099530108,
+    "maximum_interval_last_injection_relative_norm": 0.0004946621930699937,
+    "maximum_last_injection_energy_ratio": 0.09832947368055348,
+    "minimum_interval_last_injection_capture": 0.9999997553093146,
+    "scale_count": 1
+  },
+  "eta": 0.001953125,
+  "limitations": [
+    "Only the final one-step injection and lagged terminal residual are interval evaluated; the full recursion history is a binary64 diagnostic backed by an exact theorem.",
+    "The observed last-step decay ratio is not claimed uniform beyond the five frozen scales.",
+    "The audit uses the final clock rank throughout each prefix, which is admissible but does not itself derive the rank staircase dynamically."
+  ],
+  "precision_bits": 192,
+  "rank_offset": 2,
+  "route_consequence": "The normalized-memory tail obeys an exact scalar recursion: current tail energy is at most one-step Rayleigh injection plus eta times the previous tail. At the five anchors the final injection relative norm is below 5e-4, its energy falls by a factor below 0.18 from the preceding update, and every computed recursion is green. A one-update-lagged packet still predicts the terminal state within relative residual 0.0012. The all-level effective-rank problem is thereby reduced to a scalar late-time injection estimate, without a spectral-gap or angle theorem.",
+  "rows": [
+    {
+      "all_channels_green": true,
+      "channels": [
+        {
+          "all_binary64_recursions_green": true,
+          "binary64_current_packet_terminal_relative_tail": 1.0940807560154143e-05,
+          "clock_rank": 4,
+          "dimension": 32,
+          "eta": 0.001953125,
+          "final_recursion_utilization": 0.005097626712463807,
+          "full_future_hardy_perturbation_ball": "[8.8274993574185856193475943853132440889e-6 +/- 4.02e-44]",
+          "full_future_hardy_perturbation_upper": 8.827499357418587e-06,
+          "horizon": 4,
+          "injection_gate_green": true,
+          "interval_lagged_propagation_bound_ball": "[5.6838017980691221985448441992828835676725001315937471e-6 +/- 5.22e-59]",
+          "interval_lagged_propagation_gap_ball": "[3.5289805616039403435023948558328573849809696244261466e-6 +/- 5.53e-59]",
+          "interval_lagged_terminal_relative_residual_ball": "[0.00040948781803665818071403092109122603815361798782011613 +/- 3.28e-57]",
+          "interval_lagged_terminal_relative_residual_upper": 0.00040948781803665826,
+          "interval_last_injection_capture_ball": "[0.999999890208157442879489306622505003413011066727078143266 +/- 5.61e-58]",
+          "interval_last_injection_capture_lower": 0.9999998902081574,
+          "interval_last_injection_relative_norm_ball": "[0.000331348521284040908111822019443386121295804215841693326 +/- 9.29e-58]",
+          "interval_last_injection_relative_norm_upper": 0.00033134852128404097,
+          "lagged_propagation_inequality_certified": true,
+          "last_injection_energy_binary64": 1.0979184255712457e-07,
+          "last_injection_energy_ratio": 0.00437363524059877,
+          "packet_time": 3,
+          "preceding_injection_energy_binary64": 2.5103109088286378e-05,
+          "recursion_rows": [
+            {
+              "injection": 8.542718235795555e-05,
+              "rhs": 9.606333502610685e-05,
+              "slack": 6.303284692695289e-05,
+              "tail": 3.3030488099153964e-05,
+              "time": 1,
+              "utilization": 0.34384073892684824
+            },
+            {
+              "injection": 2.5103109088286378e-05,
+              "rhs": 2.516762176035504e-05,
+              "slack": 2.4997841490370174e-05,
+              "tail": 1.6978026998486426e-07,
+              "time": 2,
+              "utilization": 0.006745979878492467
+            },
+            {
+              "injection": 1.0979184255712457e-07,
+              "rhs": 1.1012344464693876e-07,
+              "slack": 1.0956207643383799e-07,
+              "tail": 5.613682131007645e-10,
+              "time": 3,
+              "utilization": 0.005097626712463807
+            }
+          ],
+          "side": "left",
+          "source_columns": 16
+        },
+        {
+          "all_binary64_recursions_green": true,
+          "binary64_current_packet_terminal_relative_tail": 9.340783548186429e-06,
+          "clock_rank": 4,
+          "dimension": 16,
+          "eta": 0.001953125,
+          "final_recursion_utilization": 0.007042643485608057,
+          "full_future_hardy_perturbation_ball": "[2.991357936058779790699301248756333382937e-5 +/- 6.71e-45]",
+          "full_future_hardy_perturbation_upper": 2.99135793605878e-05,
+          "horizon": 4,
+          "injection_gate_green": true,
+          "interval_lagged_propagation_bound_ball": "[1.05540420755122826359592326767469237310881827463277490e-5 +/- 5.98e-59]",
+          "interval_lagged_propagation_gap_ball": "[2.8200443657806283372409360447559716868515495259803702e-6 +/- 3.74e-59]",
+          "interval_lagged_terminal_relative_residual_ball": "[0.00118083980995301072355337853766612816350406983435271294 +/- 2.51e-57]",
+          "interval_lagged_terminal_relative_residual_upper": 0.0011808398099530108,
+          "interval_last_injection_capture_ball": "[0.999999755309314747184404852148410675250049278180741391840 +/- 3.93e-58]",
+          "interval_last_injection_capture_lower": 0.9999997553093146,
+          "interval_last_injection_relative_norm_ball": "[0.000494662193069993570483920619152374140533386197986749912 +/- 8.36e-58]",
+          "interval_last_injection_relative_norm_upper": 0.0004946621930699937,
+          "lagged_propagation_inequality_certified": true,
+          "last_injection_energy_binary64": 2.446906852528388e-07,
+          "last_injection_energy_ratio": 0.09832947368055348,
+          "packet_time": 3,
+          "preceding_injection_energy_binary64": 2.488477524529159e-06,
+          "recursion_rows": [
+            {
+              "injection": 0.014998892743432161,
+              "rhs": 0.015027118750476989,
+              "slack": 0.014877682462882772,
+              "tail": 0.00014943628759421653,
+              "time": 1,
+              "utilization": 0.009944440452995898
+            },
+            {
+              "injection": 2.488477524529159e-06,
+              "rhs": 2.7803452737366134e-06,
+              "slack": 2.179076952055786e-06,
+              "tail": 6.012683216808278e-07,
+              "time": 2,
+              "utilization": 0.21625671004262
+            },
+            {
+              "injection": 2.446906852528388e-07,
+              "rhs": 2.4586503744362166e-07,
+              "slack": 2.4413349763933055e-07,
+              "tail": 1.731539804291103e-09,
+              "time": 3,
+              "utilization": 0.007042643485608057
+            }
+          ],
+          "side": "right",
+          "source_columns": 16
+        }
+      ],
+      "clock": 1.769091146743121,
+      "clock_rank": 4,
+      "fine_dimension": 32,
+      "sigma": 0.16
+    }
+  ],
+  "status": "rh87_rayleigh_injection_recursion_audit",
+  "theorem_boundary": {
+    "all_level_injection_law_proved": false,
+    "five_scale_last_injection_validated": true,
+    "gap_free_current_snapshot_tail_transfer": true,
+    "hilbert_polya_operator": false,
+    "rank_staircase_injection_recursion": true,
+    "riemann_hypothesis": false,
+    "scalar_convolution_corollary": true,
+    "stage_A4_unconditional_closed": false,
+    "uniform_stage_A1_closed": false
+  }
+}

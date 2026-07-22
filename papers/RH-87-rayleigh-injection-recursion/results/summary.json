@@ -1,0 +1,49 @@
+{
+  "audit": {
+    "all_binary64_recursions_green": true,
+    "all_lagged_propagation_inequalities_certified": true,
+    "maximum_clock_rank": 7,
+    "maximum_final_recursion_utilization": 0.5275901739200154,
+    "maximum_full_future_hardy_perturbation": 2.99135793605878e-05,
+    "maximum_interval_lagged_terminal_relative_residual": 0.0011808398099530108,
+    "maximum_interval_last_injection_relative_norm": 0.0004946621930699937,
+    "maximum_last_injection_energy_ratio": 0.17564109636740308,
+    "minimum_interval_last_injection_capture": 0.9999997553093146,
+    "scale_count": 5
+  },
+  "program_boundary": {
+    "all_level_injection_law_proved": false,
+    "five_scale_last_injection_validated": true,
+    "gap_free_current_snapshot_tail_transfer": true,
+    "hilbert_polya_operator": false,
+    "rank_staircase_injection_recursion": true,
+    "riemann_hypothesis": false,
+    "scalar_convolution_corollary": true,
+    "stage_A4_unconditional_closed": false,
+    "uniform_stage_A1_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "4b29049f0bb62127248f7f24f893af79f55facf1c150b86f006f4da7897a852f",
+    "figures/rayleigh_injection_recursion.pdf": "54ef725f2435b10682ce01035831e21c13e0cb5642b3bac5fd769d3fcdbe5bdf",
+    "figures/rayleigh_injection_recursion.png": "779e14c270756cb6497714504b80ebf9689d1f66ebea7a4e8ab8b0201ded4034",
+    "main.pdf": "78d26a116802bb2f38442fabd47a0ffdb070bbbcf91d614c234f1d8c2eb73bec",
+    "main.tex": "d8f605d237eaf0cb6d49d7e34d4fe265a9de1e4470990e9b855c65ada452e563",
+    "pyproject.toml": "7e774bd1056e151fcc456beb99adbada5ae86306e75f2cb7f76a52393d7914ca",
+    "rayleigh-injection-recursion.pdf": "78d26a116802bb2f38442fabd47a0ffdb070bbbcf91d614c234f1d8c2eb73bec",
+    "references.bib": "372403d91ee5c71056c546ebd1bb557b55f8b69207a1b0131b32d6f878eb6612",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "f267940a6c3983443f8f9aa75f02f7a539d079194d3fc92c54dcb383b9135d4e",
+    "results/injection_audit.json": "1fc9c1f810d048187f7b390442576cc2360567594914338b32bd48aa91babf75",
+    "results/injection_smoke.json": "823e8a6b9f0e33163d3a07afbb9c747566a834f5a5473acb157df3a25fdea0fd"
+  },
+  "route_consequence": "The normalized-memory tail obeys an exact scalar recursion: current tail energy is at most one-step Rayleigh injection plus eta times the previous tail. At the five anchors the final injection relative norm is below 5e-4, its energy falls by a factor below 0.18 from the preceding update, and every computed recursion is green. A one-update-lagged packet still predicts the terminal state within relative residual 0.0012. The all-level effective-rank problem is thereby reduced to a scalar late-time injection estimate, without a spectral-gap or angle theorem.",
+  "status": "rh87_rayleigh_injection_recursion_archived",
+  "theorem": {
+    "gap_free_current_snapshot_tail": true,
+    "rank_staircase_injection_recursion": true,
+    "scalar_convolution_corollary": true
+  }
+}
