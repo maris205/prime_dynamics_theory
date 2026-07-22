@@ -1,0 +1,126 @@
+{
+  "all_executed_moment_solves_certified": true,
+  "precision_bits": 192,
+  "route_consequence": "The single-arc route does not explain the physical log-square horizons: source-weighted 99% phase arcs remain broad and the finest frozen-Schur normal surrogates still require the full monomial depth for 10% accuracy. This is a branch-level negative result, not a failure of Stage A; the next route is weighted effective-rank or multi-arc packet decay.",
+  "route_verdict": {
+    "effective_rank_fallback_required": true,
+    "single_arc_phase_compression_supported": false,
+    "ten_percent_depth_reduction_at_finest_scale": false
+  },
+  "rows": [
+    {
+      "all_moment_solves_certified": true,
+      "channels": [
+        {
+          "active_source_phase_count": 32,
+          "depth_fraction_10_percent_diagnostic": 1.0,
+          "dimension": 32,
+          "horizon": 4,
+          "moment_gram": {
+            "depth": 4,
+            "one_percent_compression_fails": true,
+            "projection_ball": "[0.733540608347606070478300137818234818020738341905175278 +/- 9.51e-55] + [+/- 2.54e-55]j",
+            "residual_ball": "[0.516197047310805459165189517962198738660659399329096280 +/- 9.29e-55]",
+            "residual_lower": 0.5161970473108054,
+            "residual_squared_ball": "[0.266459391652393929521699862181765181979261658094824722 +/- 9.51e-55]",
+            "residual_upper": 0.5161970473108056,
+            "target_horizon": 4,
+            "ten_percent_compression_fails": true
+          },
+          "required_depth_10_percent_diagnostic": 5,
+          "required_depth_1_percent_diagnostic": 5,
+          "schur_reconstruction_defect_diagnostic": 2.0178361048236127e-15,
+          "schur_unitary_defect_diagnostic": 3.5401450787580086e-15,
+          "side": "left",
+          "single_arc_narrowing_observed": false,
+          "weighted_arcs": {
+            "mass_0.9": {
+              "captured_mass_diagnostic": 0.9829809067964668,
+              "target_mass": 0.9,
+              "width_ball": "3.06076053631582567504665348678827285766601562500000000000",
+              "width_fraction_of_circle": 0.4871351689752643,
+              "width_lower": 3.0607605363158252,
+              "width_upper": 3.060760536315826
+            },
+            "mass_0.99": {
+              "captured_mass_diagnostic": 0.9911925418986856,
+              "target_mass": 0.99,
+              "width_ball": "3.67223153558879289448668714612722396850585937500000000000",
+              "width_fraction_of_circle": 0.5844538010668978,
+              "width_lower": 3.6722315355887925,
+              "width_upper": 3.6722315355887933
+            },
+            "mass_0.999": {
+              "captured_mass_diagnostic": 0.9993844616874542,
+              "target_mass": 0.999,
+              "width_ball": "5.26229075728259765298844286007806658744812011718750000000",
+              "width_fraction_of_circle": 0.8375195860083188,
+              "width_lower": 5.262290757282597,
+              "width_upper": 5.2622907572825985
+            }
+          }
+        },
+        {
+          "active_source_phase_count": 16,
+          "depth_fraction_10_percent_diagnostic": 1.0,
+          "dimension": 16,
+          "horizon": 4,
+          "moment_gram": {
+            "depth": 4,
+            "one_percent_compression_fails": true,
+            "projection_ball": "[0.7975788535653704193802921564388362435361238528714390836 +/- 6.32e-56] + [+/- 1.11e-56]j",
+            "residual_ball": "[0.4499123763963707418248459991089298630764065554325900338 +/- 3.75e-56]",
+            "residual_lower": 0.44991237639637066,
+            "residual_squared_ball": "[0.2024211464346295806197078435611637564638761471285609164 +/- 6.32e-56]",
+            "residual_upper": 0.4499123763963708,
+            "target_horizon": 4,
+            "ten_percent_compression_fails": true
+          },
+          "required_depth_10_percent_diagnostic": 5,
+          "required_depth_1_percent_diagnostic": 5,
+          "schur_reconstruction_defect_diagnostic": 1.2720379305563468e-15,
+          "schur_unitary_defect_diagnostic": 2.8990912876594656e-15,
+          "side": "right",
+          "single_arc_narrowing_observed": false,
+          "weighted_arcs": {
+            "mass_0.9": {
+              "captured_mass_diagnostic": 0.9989116320333389,
+              "target_mass": 0.9,
+              "width_ball": "4.67787916117364499513087139348499476909637451171875000000",
+              "width_fraction_of_circle": 0.7445075916873547,
+              "width_lower": 4.677879161173644,
+              "width_upper": 4.677879161173646
+            },
+            "mass_0.99": {
+              "captured_mass_diagnostic": 0.9989116320333389,
+              "target_mass": 0.99,
+              "width_ball": "4.67787916117364499513087139348499476909637451171875000000",
+              "width_fraction_of_circle": 0.7445075916873547,
+              "width_lower": 4.677879161173644,
+              "width_upper": 4.677879161173646
+            },
+            "mass_0.999": {
+              "captured_mass_diagnostic": 0.9998603870430816,
+              "target_mass": 0.999,
+              "width_ball": "4.67787916117364499513087139348499476909637451171875000000",
+              "width_fraction_of_circle": 0.7445075916873547,
+              "width_lower": 4.677879161173644,
+              "width_upper": 4.677879161173646
+            }
+          }
+        }
+      ],
+      "fine_dimension": 32,
+      "sigma": 0.16
+    }
+  ],
+  "status": "rh76_single_arc_phase_compression_barrier",
+  "theorem_boundary": {
+    "arc_binomial_krylov_upper": true,
+    "coherence_residual_lower": true,
+    "frozen_schur_phase_surrogate_audited": true,
+    "moment_gram_projection_identity": true,
+    "uniform_phase_compression_theorem": false,
+    "validated_continuum_phase_measure": false
+  }
+}

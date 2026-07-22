@@ -1,0 +1,546 @@
+{
+  "all_executed_moment_solves_certified": true,
+  "precision_bits": 192,
+  "route_consequence": "The single-arc route does not explain the physical log-square horizons: source-weighted 99% phase arcs remain broad and the finest frozen-Schur normal surrogates still require the full monomial depth for 10% accuracy. This is a branch-level negative result, not a failure of Stage A; the next route is weighted effective-rank or multi-arc packet decay.",
+  "route_verdict": {
+    "effective_rank_fallback_required": true,
+    "single_arc_phase_compression_supported": false,
+    "ten_percent_depth_reduction_at_finest_scale": false
+  },
+  "rows": [
+    {
+      "all_moment_solves_certified": true,
+      "channels": [
+        {
+          "active_source_phase_count": 32,
+          "depth_fraction_10_percent_diagnostic": 1.0,
+          "dimension": 32,
+          "horizon": 4,
+          "moment_gram": {
+            "depth": 4,
+            "one_percent_compression_fails": true,
+            "projection_ball": "[0.733540608347606070478300137818234818020738341905175278 +/- 9.51e-55] + [+/- 2.54e-55]j",
+            "residual_ball": "[0.516197047310805459165189517962198738660659399329096280 +/- 9.29e-55]",
+            "residual_lower": 0.5161970473108054,
+            "residual_squared_ball": "[0.266459391652393929521699862181765181979261658094824722 +/- 9.51e-55]",
+            "residual_upper": 0.5161970473108056,
+            "target_horizon": 4,
+            "ten_percent_compression_fails": true
+          },
+          "required_depth_10_percent_diagnostic": 5,
+          "required_depth_1_percent_diagnostic": 5,
+          "schur_reconstruction_defect_diagnostic": 2.0178361048236127e-15,
+          "schur_unitary_defect_diagnostic": 3.5401450787580086e-15,
+          "side": "left",
+          "single_arc_narrowing_observed": false,
+          "weighted_arcs": {
+            "mass_0.9": {
+              "captured_mass_diagnostic": 0.9829809067964668,
+              "target_mass": 0.9,
+              "width_ball": "3.06076053631582567504665348678827285766601562500000000000",
+              "width_fraction_of_circle": 0.4871351689752643,
+              "width_lower": 3.0607605363158252,
+              "width_upper": 3.060760536315826
+            },
+            "mass_0.99": {
+              "captured_mass_diagnostic": 0.9911925418986856,
+              "target_mass": 0.99,
+              "width_ball": "3.67223153558879289448668714612722396850585937500000000000",
+              "width_fraction_of_circle": 0.5844538010668978,
+              "width_lower": 3.6722315355887925,
+              "width_upper": 3.6722315355887933
+            },
+            "mass_0.999": {
+              "captured_mass_diagnostic": 0.9993844616874542,
+              "target_mass": 0.999,
+              "width_ball": "5.26229075728259765298844286007806658744812011718750000000",
+              "width_fraction_of_circle": 0.8375195860083188,
+              "width_lower": 5.262290757282597,
+              "width_upper": 5.2622907572825985
+            }
+          }
+        },
+        {
+          "active_source_phase_count": 16,
+          "depth_fraction_10_percent_diagnostic": 1.0,
+          "dimension": 16,
+          "horizon": 4,
+          "moment_gram": {
+            "depth": 4,
+            "one_percent_compression_fails": true,
+            "projection_ball": "[0.7975788535653704193802921564388362435361238528714390836 +/- 6.32e-56] + [+/- 1.11e-56]j",
+            "residual_ball": "[0.4499123763963707418248459991089298630764065554325900338 +/- 3.75e-56]",
+            "residual_lower": 0.44991237639637066,
+            "residual_squared_ball": "[0.2024211464346295806197078435611637564638761471285609164 +/- 6.32e-56]",
+            "residual_upper": 0.4499123763963708,
+            "target_horizon": 4,
+            "ten_percent_compression_fails": true
+          },
+          "required_depth_10_percent_diagnostic": 5,
+          "required_depth_1_percent_diagnostic": 5,
+          "schur_reconstruction_defect_diagnostic": 1.2720379305563468e-15,
+          "schur_unitary_defect_diagnostic": 2.8990912876594656e-15,
+          "side": "right",
+          "single_arc_narrowing_observed": false,
+          "weighted_arcs": {
+            "mass_0.9": {
+              "captured_mass_diagnostic": 0.9989116320333389,
+              "target_mass": 0.9,
+              "width_ball": "4.67787916117364499513087139348499476909637451171875000000",
+              "width_fraction_of_circle": 0.7445075916873547,
+              "width_lower": 4.677879161173644,
+              "width_upper": 4.677879161173646
+            },
+            "mass_0.99": {
+              "captured_mass_diagnostic": 0.9989116320333389,
+              "target_mass": 0.99,
+              "width_ball": "4.67787916117364499513087139348499476909637451171875000000",
+              "width_fraction_of_circle": 0.7445075916873547,
+              "width_lower": 4.677879161173644,
+              "width_upper": 4.677879161173646
+            },
+            "mass_0.999": {
+              "captured_mass_diagnostic": 0.9998603870430816,
+              "target_mass": 0.999,
+              "width_ball": "4.67787916117364499513087139348499476909637451171875000000",
+              "width_fraction_of_circle": 0.7445075916873547,
+              "width_lower": 4.677879161173644,
+              "width_upper": 4.677879161173646
+            }
+          }
+        }
+      ],
+      "fine_dimension": 32,
+      "sigma": 0.16
+    },
+    {
+      "all_moment_solves_certified": true,
+      "channels": [
+        {
+          "active_source_phase_count": 64,
+          "depth_fraction_10_percent_diagnostic": 1.0,
+          "dimension": 64,
+          "horizon": 9,
+          "moment_gram": {
+            "depth": 9,
+            "one_percent_compression_fails": true,
+            "projection_ball": "[0.9094797860796681608078402357694820759432761808919999 +/- 7.58e-53] + [+/- 4.95e-53]j",
+            "residual_ball": "[0.300865773926400340882148420126135668160412737006638 +/- 3.64e-52]",
+            "residual_lower": 0.3008657739264003,
+            "residual_squared_ball": "[0.0905202139203318391921597642305179240567238191080001 +/- 7.58e-53]",
+            "residual_upper": 0.3008657739264004,
+            "target_horizon": 9,
+            "ten_percent_compression_fails": true
+          },
+          "required_depth_10_percent_diagnostic": 10,
+          "required_depth_1_percent_diagnostic": 10,
+          "schur_reconstruction_defect_diagnostic": 3.2045457078356678e-15,
+          "schur_unitary_defect_diagnostic": 5.575721485356172e-15,
+          "side": "left",
+          "single_arc_narrowing_observed": false,
+          "weighted_arcs": {
+            "mass_0.9": {
+              "captured_mass_diagnostic": 0.9091735794011453,
+              "target_mass": 0.9,
+              "width_ball": "4.70369738867714737295955274021252989768981933593750000000",
+              "width_fraction_of_circle": 0.7486166902164082,
+              "width_lower": 4.7036973886771465,
+              "width_upper": 4.703697388677148
+            },
+            "mass_0.99": {
+              "captured_mass_diagnostic": 0.9902615731684481,
+              "target_mass": 0.99,
+              "width_ball": "4.96928363964324937285255145980045199394226074218750000000",
+              "width_fraction_of_circle": 0.790886054874908,
+              "width_lower": 4.9692836396432485,
+              "width_upper": 4.96928363964325
+            },
+            "mass_0.999": {
+              "captured_mass_diagnostic": 0.9995338130736399,
+              "target_mass": 0.999,
+              "width_ball": "5.50000430515208194037768407724797725677490234375000000000",
+              "width_fraction_of_circle": 0.875352872191659,
+              "width_lower": 5.500004305152081,
+              "width_upper": 5.500004305152083
+            }
+          }
+        },
+        {
+          "active_source_phase_count": 31,
+          "depth_fraction_10_percent_diagnostic": 0.8,
+          "dimension": 32,
+          "horizon": 9,
+          "moment_gram": {
+            "depth": 9,
+            "one_percent_compression_fails": true,
+            "projection_ball": "[0.9998926844915225723832301586017449712965153840997 +/- 5.90e-50] + [+/- 3.16e-50]j",
+            "residual_ball": "[0.01035931988488759896976715302306891250633886578 +/- 2.49e-48]",
+            "residual_lower": 0.010359319884887598,
+            "residual_squared_ball": "[0.0001073155084774276167698413982550287034846159003 +/- 5.90e-50]",
+            "residual_upper": 0.010359319884887601,
+            "target_horizon": 9,
+            "ten_percent_compression_fails": false
+          },
+          "required_depth_10_percent_diagnostic": 8,
+          "required_depth_1_percent_diagnostic": 10,
+          "schur_reconstruction_defect_diagnostic": 4.1496156523897355e-15,
+          "schur_unitary_defect_diagnostic": 4.023129261994789e-15,
+          "side": "right",
+          "single_arc_narrowing_observed": false,
+          "weighted_arcs": {
+            "mass_0.9": {
+              "captured_mass_diagnostic": 0.9332650762158778,
+              "target_mass": 0.9,
+              "width_ball": "3.81931631136447080621110217180103063583374023437500000000",
+              "width_fraction_of_circle": 0.6078630701851601,
+              "width_lower": 3.8193163113644704,
+              "width_upper": 3.8193163113644713
+            },
+            "mass_0.99": {
+              "captured_mass_diagnostic": 0.9978033078107416,
+              "target_mass": 0.99,
+              "width_ball": "5.05125080927202851910351455444470047950744628906250000000",
+              "width_fraction_of_circle": 0.8039315350925801,
+              "width_lower": 5.051250809272028,
+              "width_upper": 5.051250809272029
+            },
+            "mass_0.999": {
+              "captured_mass_diagnostic": 0.9994064650317683,
+              "target_mass": 0.999,
+              "width_ball": "5.06388047890101944403795641846954822540283203125000000000",
+              "width_fraction_of_circle": 0.8059416094436516,
+              "width_lower": 5.0638804789010186,
+              "width_upper": 5.06388047890102
+            }
+          }
+        }
+      ],
+      "fine_dimension": 64,
+      "sigma": 0.08
+    },
+    {
+      "all_moment_solves_certified": true,
+      "channels": [
+        {
+          "active_source_phase_count": 128,
+          "depth_fraction_10_percent_diagnostic": 1.0,
+          "dimension": 128,
+          "horizon": 16,
+          "moment_gram": {
+            "depth": 16,
+            "one_percent_compression_fails": true,
+            "projection_ball": "[0.7720085074494836701700692636376389194241279010663 +/- 5.01e-50] + [+/- 5.60e-51]j",
+            "residual_ball": "[0.4774845469232657060460247569998804579570703790005 +/- 4.07e-50]",
+            "residual_lower": 0.47748454692326564,
+            "residual_squared_ball": "[0.2279914925505163298299307363623610805758720989337 +/- 5.01e-50]",
+            "residual_upper": 0.47748454692326575,
+            "target_horizon": 16,
+            "ten_percent_compression_fails": true
+          },
+          "required_depth_10_percent_diagnostic": 17,
+          "required_depth_1_percent_diagnostic": 17,
+          "schur_reconstruction_defect_diagnostic": 3.200877414958004e-15,
+          "schur_unitary_defect_diagnostic": 6.998236365490453e-15,
+          "side": "left",
+          "single_arc_narrowing_observed": false,
+          "weighted_arcs": {
+            "mass_0.9": {
+              "captured_mass_diagnostic": 0.9015525276351383,
+              "target_mass": 0.9,
+              "width_ball": "4.38562361994315708102476492058485746383666992187500000000",
+              "width_fraction_of_circle": 0.6979936776545252,
+              "width_lower": 4.385623619943156,
+              "width_upper": 4.385623619943158
+            },
+            "mass_0.99": {
+              "captured_mass_diagnostic": 0.9900955870033232,
+              "target_mass": 0.99,
+              "width_ball": "5.33440446356141606543133093509823083877563476562500000000",
+              "width_fraction_of_circle": 0.8489968388272697,
+              "width_lower": 5.334404463561415,
+              "width_upper": 5.334404463561417
+            },
+            "mass_0.999": {
+              "captured_mass_diagnostic": 0.9990731413813944,
+              "target_mass": 0.999,
+              "width_ball": "5.65654451734377250460283903521485626697540283203125000000",
+              "width_fraction_of_circle": 0.9002670207546208,
+              "width_lower": 5.656544517343772,
+              "width_upper": 5.656544517343773
+            }
+          }
+        },
+        {
+          "active_source_phase_count": 64,
+          "depth_fraction_10_percent_diagnostic": 1.0,
+          "dimension": 64,
+          "horizon": 16,
+          "moment_gram": {
+            "depth": 16,
+            "one_percent_compression_fails": true,
+            "projection_ball": "[0.968851989502489704884119568234946555375124685921 +/- 4.05e-49] + [+/- 1.82e-49]j",
+            "residual_ball": "[0.176487989669298163026608005415772223832258995405 +/- 7.17e-49]",
+            "residual_lower": 0.17648798966929813,
+            "residual_squared_ball": "[0.031148010497510295115880431765053444624875314079 +/- 4.05e-49]",
+            "residual_upper": 0.17648798966929818,
+            "target_horizon": 16,
+            "ten_percent_compression_fails": true
+          },
+          "required_depth_10_percent_diagnostic": 17,
+          "required_depth_1_percent_diagnostic": 17,
+          "schur_reconstruction_defect_diagnostic": 4.5152796867767076e-15,
+          "schur_unitary_defect_diagnostic": 5.760534347322391e-15,
+          "side": "right",
+          "single_arc_narrowing_observed": false,
+          "weighted_arcs": {
+            "mass_0.9": {
+              "captured_mass_diagnostic": 0.9004235356320772,
+              "target_mass": 0.9,
+              "width_ball": "4.75190311313772895118745509535074234008789062500000000000",
+              "width_fraction_of_circle": 0.7562888695496357,
+              "width_lower": 4.751903113137728,
+              "width_upper": 4.75190311313773
+            },
+            "mass_0.99": {
+              "captured_mass_diagnostic": 0.9920981909080067,
+              "target_mass": 0.99,
+              "width_ball": "5.20402680560006469789868788211606442928314208984375000000",
+              "width_fraction_of_circle": 0.8282465900939763,
+              "width_lower": 5.204026805600064,
+              "width_upper": 5.204026805600066
+            },
+            "mass_0.999": {
+              "captured_mass_diagnostic": 0.9999994386066265,
+              "target_mass": 0.999,
+              "width_ball": "5.61856102920652311638605169719085097312927246093750000000",
+              "width_fraction_of_circle": 0.8942217608617052,
+              "width_lower": 5.618561029206522,
+              "width_upper": 5.618561029206524
+            }
+          }
+        }
+      ],
+      "fine_dimension": 128,
+      "sigma": 0.04
+    },
+    {
+      "all_moment_solves_certified": true,
+      "channels": [
+        {
+          "active_source_phase_count": 256,
+          "depth_fraction_10_percent_diagnostic": 1.0,
+          "dimension": 256,
+          "horizon": 25,
+          "moment_gram": {
+            "depth": 25,
+            "one_percent_compression_fails": true,
+            "projection_ball": "[0.7213609524020380940740729298469319526779152556556750 +/- 5.27e-53] + [+/- 9.41e-54]j",
+            "residual_ball": "[0.5278627166204882725046651844200760019473029374409107 +/- 6.37e-53]",
+            "residual_lower": 0.5278627166204881,
+            "residual_squared_ball": "[0.2786390475979619059259270701530680473220847443443250 +/- 5.27e-53]",
+            "residual_upper": 0.5278627166204883,
+            "target_horizon": 25,
+            "ten_percent_compression_fails": true
+          },
+          "required_depth_10_percent_diagnostic": 26,
+          "required_depth_1_percent_diagnostic": 26,
+          "schur_reconstruction_defect_diagnostic": 4.515740026482004e-15,
+          "schur_unitary_defect_diagnostic": 1.2155875334005697e-14,
+          "side": "left",
+          "single_arc_narrowing_observed": false,
+          "weighted_arcs": {
+            "mass_0.9": {
+              "captured_mass_diagnostic": 0.9000085488775285,
+              "target_mass": 0.9,
+              "width_ball": "4.97632273174414407890253642108291387557983398437500000000",
+              "width_fraction_of_circle": 0.7920063611776444,
+              "width_lower": 4.976322731744143,
+              "width_upper": 4.976322731744145
+            },
+            "mass_0.99": {
+              "captured_mass_diagnostic": 0.9909562672615018,
+              "target_mass": 0.99,
+              "width_ball": "5.54617144123151462054011062718927860260009765625000000000",
+              "width_fraction_of_circle": 0.8827006001070969,
+              "width_lower": 5.546171441231514,
+              "width_upper": 5.5461714412315155
+            },
+            "mass_0.999": {
+              "captured_mass_diagnostic": 0.9990454602889922,
+              "target_mass": 0.999,
+              "width_ball": "5.88753258160665016163193286047317087650299072265625000000",
+              "width_fraction_of_circle": 0.9370299129772861,
+              "width_lower": 5.887532581606649,
+              "width_upper": 5.887532581606651
+            }
+          }
+        },
+        {
+          "active_source_phase_count": 128,
+          "depth_fraction_10_percent_diagnostic": 1.0,
+          "dimension": 128,
+          "horizon": 25,
+          "moment_gram": {
+            "depth": 25,
+            "one_percent_compression_fails": true,
+            "projection_ball": "[0.64127710063669922719644842082947124910649432407458416 +/- 5.79e-54] + [+/- 4.67e-54]j",
+            "residual_ball": "[0.59893480393386789123643758341434863577715174602295325 +/- 4.60e-54]",
+            "residual_lower": 0.5989348039338678,
+            "residual_squared_ball": "[0.35872289936330077280355157917052875089350567592541584 +/- 5.79e-54]",
+            "residual_upper": 0.598934803933868,
+            "target_horizon": 25,
+            "ten_percent_compression_fails": true
+          },
+          "required_depth_10_percent_diagnostic": 26,
+          "required_depth_1_percent_diagnostic": 26,
+          "schur_reconstruction_defect_diagnostic": 4.656412658597336e-15,
+          "schur_unitary_defect_diagnostic": 6.437599827536881e-15,
+          "side": "right",
+          "single_arc_narrowing_observed": false,
+          "weighted_arcs": {
+            "mass_0.9": {
+              "captured_mass_diagnostic": 0.9135308941091151,
+              "target_mass": 0.9,
+              "width_ball": "4.93789569711610454305628081783652305603027343750000000000",
+              "width_fraction_of_circle": 0.7858905086682286,
+              "width_lower": 4.937895697116104,
+              "width_upper": 4.937895697116105
+            },
+            "mass_0.99": {
+              "captured_mass_diagnostic": 0.9904151109935049,
+              "target_mass": 0.99,
+              "width_ball": "5.80644032013305988471074670087546110153198242187500000000",
+              "width_fraction_of_circle": 0.9241236787172638,
+              "width_lower": 5.806440320133059,
+              "width_upper": 5.806440320133061
+            },
+            "mass_0.999": {
+              "captured_mass_diagnostic": 0.9994345078978693,
+              "target_mass": 0.999,
+              "width_ball": "5.94386181626888898676952521782368421554565429687500000000",
+              "width_fraction_of_circle": 0.9459949891143647,
+              "width_lower": 5.943861816268888,
+              "width_upper": 5.94386181626889
+            }
+          }
+        }
+      ],
+      "fine_dimension": 256,
+      "sigma": 0.02
+    },
+    {
+      "all_moment_solves_certified": true,
+      "channels": [
+        {
+          "active_source_phase_count": 512,
+          "depth_fraction_10_percent_diagnostic": 1.0,
+          "dimension": 512,
+          "horizon": 32,
+          "moment_gram": {
+            "depth": 32,
+            "one_percent_compression_fails": true,
+            "projection_ball": "[0.40556723435453646503991310930980831637707837295735806 +/- 4.26e-54] + [+/- 1.93e-54]j",
+            "residual_ball": "[0.77099465993316940415360371117810810954969336699571491 +/- 5.83e-54]",
+            "residual_lower": 0.7709946599331693,
+            "residual_squared_ball": "[0.59443276564546353496008689069019168362292162704264194 +/- 4.26e-54]",
+            "residual_upper": 0.7709946599331695,
+            "target_horizon": 32,
+            "ten_percent_compression_fails": true
+          },
+          "required_depth_10_percent_diagnostic": 33,
+          "required_depth_1_percent_diagnostic": 33,
+          "schur_reconstruction_defect_diagnostic": 4.8261853762420304e-15,
+          "schur_unitary_defect_diagnostic": 1.6592659518684747e-14,
+          "side": "left",
+          "single_arc_narrowing_observed": false,
+          "weighted_arcs": {
+            "mass_0.9": {
+              "captured_mass_diagnostic": 0.9017147015564332,
+              "target_mass": 0.9,
+              "width_ball": "5.34809415435656809734155103797093033790588378906250000000",
+              "width_fraction_of_circle": 0.8511756207867178,
+              "width_lower": 5.348094154356567,
+              "width_upper": 5.348094154356569
+            },
+            "mass_0.99": {
+              "captured_mass_diagnostic": 0.9917211419806099,
+              "target_mass": 0.99,
+              "width_ball": "5.90333496920906064531209267443045973777770996093750000000",
+              "width_fraction_of_circle": 0.9395449410768638,
+              "width_lower": 5.90333496920906,
+              "width_upper": 5.9033349692090615
+            },
+            "mass_0.999": {
+              "captured_mass_diagnostic": 0.9995875434091702,
+              "target_mass": 0.999,
+              "width_ball": "6.07731763521171686193156347144395112991333007812500000000",
+              "width_fraction_of_circle": 0.9672351423834928,
+              "width_lower": 6.077317635211716,
+              "width_upper": 6.077317635211718
+            }
+          }
+        },
+        {
+          "active_source_phase_count": 256,
+          "depth_fraction_10_percent_diagnostic": 1.0,
+          "dimension": 256,
+          "horizon": 32,
+          "moment_gram": {
+            "depth": 32,
+            "one_percent_compression_fails": true,
+            "projection_ball": "[0.62610475273455148245648576229679022277750159975447441 +/- 6.25e-54] + [+/- 3.28e-54]j",
+            "residual_ball": "[0.61146974354047029785037629805072407872263912179749455 +/- 7.40e-54]",
+            "residual_lower": 0.6114697435404702,
+            "residual_squared_ball": "[0.37389524726544851754351423770320977722249840024552559 +/- 6.25e-54]",
+            "residual_upper": 0.6114697435404705,
+            "target_horizon": 32,
+            "ten_percent_compression_fails": true
+          },
+          "required_depth_10_percent_diagnostic": 33,
+          "required_depth_1_percent_diagnostic": 33,
+          "schur_reconstruction_defect_diagnostic": 3.792683299537595e-15,
+          "schur_unitary_defect_diagnostic": 9.45526419168041e-15,
+          "side": "right",
+          "single_arc_narrowing_observed": false,
+          "weighted_arcs": {
+            "mass_0.9": {
+              "captured_mass_diagnostic": 0.9079659780069949,
+              "target_mass": 0.9,
+              "width_ball": "5.21914847745621290897588551160879433155059814453125000000",
+              "width_fraction_of_circle": 0.8306532789176959,
+              "width_lower": 5.219148477456212,
+              "width_upper": 5.219148477456214
+            },
+            "mass_0.99": {
+              "captured_mass_diagnostic": 0.9922513200411945,
+              "target_mass": 0.99,
+              "width_ball": "5.84649784379324799488131247926503419876098632812500000000",
+              "width_fraction_of_circle": 0.9304990316158033,
+              "width_lower": 5.846497843793247,
+              "width_upper": 5.846497843793249
+            },
+            "mass_0.999": {
+              "captured_mass_diagnostic": 0.9992247545552747,
+              "target_mass": 0.999,
+              "width_ball": "6.04724683619583380789208604255691170692443847656250000000",
+              "width_fraction_of_circle": 0.9624492260773921,
+              "width_lower": 6.047246836195833,
+              "width_upper": 6.047246836195835
+            }
+          }
+        }
+      ],
+      "fine_dimension": 512,
+      "sigma": 0.01
+    }
+  ],
+  "status": "rh76_single_arc_phase_compression_barrier",
+  "theorem_boundary": {
+    "arc_binomial_krylov_upper": true,
+    "coherence_residual_lower": true,
+    "frozen_schur_phase_surrogate_audited": true,
+    "moment_gram_projection_identity": true,
+    "uniform_phase_compression_theorem": false,
+    "validated_continuum_phase_measure": false
+  }
+}

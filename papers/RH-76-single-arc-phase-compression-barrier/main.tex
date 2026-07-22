@@ -1,0 +1,271 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\K}{\mathcal K}
+
+\title{Single-Arc Phase Compression Does Not Explain the Production Horizons\\
+\large Spectral-Measure Krylov Identities, Arc Polynomial Bounds, and a Frozen-Schur Negative Audit}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-75 reduced the uniform directional-Hardy problem to a log-square horizon
+and square-root block-contraction law.  One possible mechanism was that the
+physical source becomes concentrated on a shrinking spectral phase arc.  This
+paper derives exact tests for that mechanism and finds that it fails for the
+production Schur surrogates.
+
+For a unitary $U$ and source $x$ with spectral measure $\mu_x$,
+\[
+ \operatorname{dist}(U^Mx,\K_d(U,x))^2
+ =\inf_{\deg p<d}\int_{\mathbb T}|z^M-p(z)|^2\,d\mu_x(z).
+\]
+If the support lies in an arc of width $w$, truncating the binomial expansion
+around its center gives the explicit degree-$(d-1)$ upper
+\[
+ \sum_{j=d}^{M}\binom Mj\{2\sin(w/4)\}^j.
+\]
+Conversely, a moment-coherence bound gives
+\[
+ \operatorname{dist}^2\ge
+ 1-\frac{d\eta^2}{1-(d-1)\eta}.
+\]
+These formulas quantify how narrow an arc, or how coherent a moment sequence,
+must be to reduce depth below $M+1$.
+
+We form source-weighted phase measures from the frozen production Schur forms.
+The displayed binary64 phases and weights are then embedded as exact dyadic
+centers, and 192-bit Arb moment Gramians certify the projection residual at
+depth $M$.  The 99\% arc widths grow toward the full circle.  At
+$\sigma=0.01$ they are $5.9034$ and $5.8465$ radians, while the certified
+depth-$32$ residuals are above $0.7709$ and $0.6114$.  Both channels require
+the full monomial depth $33$ even for 10\% error.  Across all scales, nine of
+ten channels require full depth for 10\%, and all ten for 1\%.
+
+Thus single-arc phase compression is a closed negative branch.  This does not
+invalidate the RH-75 scaling law: broad phase support may still have low
+weighted effective rank, multi-arc packet structure, or rapid radial decay.
+RH-77 pursues that fallback.  The Schur construction remains a frozen
+diagnostic, so no continuum phase-measure theorem or Stage A1 closure is
+claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Krylov subspace; spectral measure; phase
+compression; moment Gramian; negative result; interval arithmetic.
+
+\medskip
+\noindent\textbf{MSC 2020:} 47A10; 47B15; 65F10; 65G20.
+
+\section{Introduction}
+
+The exact Fourier-ring construction of RH-68 showed that broad coherent phase
+support can force full Krylov depth even under perfect metric conditioning
+\citep{WangBarrier2026}.  RH-75 nevertheless left open a physical escape:
+perhaps the production source occupies a shrinking phase arc, unlike the
+adversarial full ring \citep{WangScaling2026}.
+
+There are two questions:
+\begin{enumerate}[leftmargin=2.2em]
+ \item What quantitative arc width is sufficient for depth reduction?
+ \item Do the source-weighted production phases exhibit that width?
+\end{enumerate}
+The first is answered exactly for normal phase packets.  The second is tested
+on the same frozen Schur data used by the phase-aware Hardy papers.  The answer
+is negative: the weighted phase support becomes broader, not narrower.
+
+This is intentionally a branch-level result.  A nonnormal system can gain from
+radial decay, multiple packets, source/observation cancellation, or singular
+value decay even when one global phase arc is broad.  The audit only rules out
+the simplest single-arc explanation.
+
+\section{Spectral-measure Krylov identity}
+
+Let $U$ be unitary on a finite-dimensional Hilbert space, let $x$ be a unit
+vector, and let $\mu_x$ be its spectral measure on $\mathbb T$.  Write
+\[
+ \K_d(U,x)=\operatorname{span}\{x,Ux,\ldots,U^{d-1}x\}.
+\]
+
+\begin{theorem}[Phase-measure projection identity]
+\label{thm:identity}
+For $M\ge d\ge1$,
+\begin{equation}
+ \operatorname{dist}(U^Mx,\K_d(U,x))^2
+ =\inf_{\deg p<d}\int_{\mathbb T}|z^M-p(z)|^2\,d\mu_x(z).
+ \label{eq:identity}
+\end{equation}
+If $G_{ab}=\widehat\mu_x(b-a)$ and
+$c_a=\widehat\mu_x(M-a)$ for $0\le a,b<d$, then, whenever $G$ is invertible,
+\begin{equation}
+ \operatorname{dist}^2=1-c^*G^{-1}c.
+ \label{eq:schur}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The spectral theorem identifies $U^jx$ with $z^j$ in
+$L^2(\mu_x)$.  Orthogonal projection onto the first $d$ monomials gives
+\eqref{eq:identity}; the normal equations give \eqref{eq:schur}.
+\end{proof}
+
+This identity is standard Krylov polynomial approximation in spectral-measure
+form \citep{Saad2003}.  It also provides a small interval certificate: one
+needs only the moment Gramian, not the full operator.
+
+\section{What a narrow arc would buy}
+
+Suppose the support lies in an arc centered at $z_0\in\mathbb T$ with angular
+width $w$.  Then $|z-z_0|\le\delta_w:=2\sin(w/4)$.
+
+\begin{proposition}[Arc binomial Krylov upper]
+\label{prop:arc}
+For $1\le d\le M+1$,
+\begin{equation}
+ \operatorname{dist}(U^Mx,\K_d(U,x))
+ \le\sum_{j=d}^{M}\binom Mj\delta_w^j.
+ \label{eq:arc-upper}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Expand
+$z^M=z_0^M(1+(z-z_0)/z_0)^M$ and retain orders below $d$.  The retained part
+is a polynomial of degree below $d$ in $z$; bound the remainder uniformly on
+the arc and use \eqref{eq:identity}.
+\end{proof}
+
+Stirling's bound shows the familiar scale
+$d\gtrsim eM\delta_w+\log(1/\varepsilon)$.  With
+$M=O(k^2)$, a depth $O(k)$ would therefore require $w=O(k^{-1})$.  An arc of
+fixed positive width does not explain logarithmic compression.
+
+\section{Moment-coherence obstruction}
+
+Let the monomials $1,z,\ldots,z^{d-1}$ be normalized in $L^2(\mu)$ and assume
+all off-diagonal basis moments and all correlations with $z^M$ have modulus
+at most $\eta$.
+
+\begin{proposition}[Moment-coherence lower]
+\label{prop:coherence}
+If $(d-1)\eta<1$, then
+\begin{equation}
+ \operatorname{dist}(z^M,\operatorname{span}\{1,\ldots,z^{d-1}\})^2
+ \ge1-\frac{d\eta^2}{1-(d-1)\eta}.
+ \label{eq:coherence}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Gershgorin gives $\lambda_{\min}(G)\ge1-(d-1)\eta$, while
+$\norm c^2\le d\eta^2$.  Apply \eqref{eq:schur}.
+\end{proof}
+
+The uniform Fourier ring has $\eta=0$ and residual one until the target
+monomial itself enters the basis.  The proposition makes that obstruction
+robust.
+
+\section{Frozen production phase audit}
+
+For each RH-75 scale and each left/right system, we compute a unitary complex
+Schur form $A=QTQ^*$ and source coordinates $Z=Q^*X$.  The diagonal phases
+$\theta_j=\arg T_{jj}$ receive weights
+\[
+ w_j=\norm{Z_{j,:}}_2^2.
+\]
+The minimal circular arc containing a prescribed fraction of $\sum_jw_j$ is
+then found by an exact sorted sliding window on the displayed dyadic centers.
+
+For the moment calculation, the binary64 $\theta_j,w_j$ are embedded as exact
+dyadic numbers.  Arb evaluates $e^{i\theta_j}$, assembles the depth-$M$ moment
+Gramian, solves its normal equations, and encloses
+$1-c^*G^{-1}c$ at 192 bits \citep{Johansson2017}.  This certifies the
+\emph{frozen-Schur normal surrogate}; it does not validate the Schur
+decomposition against the analytic continuum operator.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Source-weighted 99\% arc widths and certified residual at depth $M$.}
+\label{tab:audit}
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+&\multicolumn{2}{c}{left}&\multicolumn{2}{c}{right}\\
+\cmidrule(lr){2-3}\cmidrule(l){4-5}
+$\sigma$ & width & residual & width & residual & $M$\\
+\midrule
+0.16 & 3.6723 & 0.5161 & 4.6779 & 0.4499 & 4\\
+0.08 & 4.9693 & 0.3008 & 5.0513 & 0.01035 & 9\\
+0.04 & 5.3345 & 0.4774 & 5.2041 & 0.1764 & 16\\
+0.02 & 5.5462 & 0.5278 & 5.8065 & 0.5989 & 25\\
+0.01 & 5.9034 & 0.7709 & 5.8465 & 0.6114 & 32\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At the finest scale, the 99\% arcs occupy more than $93\%$ of the full circle.
+The exact moment-surrogate residual remains far above 10\% even after all
+degrees $0,\ldots,M-1$ are used.  A direct diagnostic search gives required
+10\% depths
+\[
+ (5,5),(10,8),(17,17),(26,26),(33,33),
+\]
+for left/right levels respectively; full depth is $M+1$.  At 1\%, every entry
+equals full depth.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/single_arc_phase_compression_barrier.pdf}
+\caption{Weighted arc widths, interval moment residuals, required phase-only
+depth, and active phase-coordinate counts.}
+\label{fig:audit}
+\end{figure}
+
+\section{Route verdict}
+
+The single-arc hypothesis predicts shrinking widths of order $1/k$ if it is to
+turn an $O(k^2)$ horizon into substantially smaller polynomial depth.  The
+frozen production surrogates show the opposite trend.  Single-arc phase
+compression is therefore marked as a failed branch.
+
+What survives is not a cosmetic variant of the same idea.  Broad support can
+still be harmless when:
+\begin{enumerate}[leftmargin=2.2em]
+ \item source weights have low effective rank or fast entropy-tail decay;
+ \item phases split into several packets with small total weighted complexity;
+ \item radial powers suppress most packets before phase approximation matters;
+ \item nonnormal cross-packet cancellation is retained rather than replaced by
+       a normal surrogate.
+\end{enumerate}
+RH-77 tests weighted effective rank and multi-packet decay.
+
+No validated continuum phase measure, uniform phase-compression theorem,
+Stage A1 closure, unconditional Stage A4, Hilbert--Polya operator,
+$T\log T$ law, prime-power trace formula, zeta-zero identity, or proof of the
+Riemann Hypothesis is obtained.
+
+\section{Conclusion}
+
+The maze has a clearly marked wall: one shrinking phase arc is not the source
+of the observed production horizons.  The negative result is useful because
+it prevents the RH-75 all-level target from being tied to a false mechanism.
+The remaining path is weighted rather than geometric: effective rank,
+multi-arc packets, and radial damping.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
