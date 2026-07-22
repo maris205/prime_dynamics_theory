@@ -1,0 +1,324 @@
+\section{The literal fixed-shift terminal-prime interface}
+\label{sec:tpc57-literal-interface}
+
+The singleton argument is meaningful only for the exact physical synthesis.
+This section therefore fixes the input atoms, terminal multiplier, output
+key, and counting normalization before any collision statistic is formed.
+The definitions are inherited from TPC--53, TPC--55, and TPC--56
+\citep{WangTPC53,WangTPC55,WangTPC56}; they are repeated here so that an
+ambient prime ladder, a renormalized model, or a selected output cannot be
+silently substituted for the literal map.
+
+\subsection{Rows, masks, and pre-terminal atoms}
+
+Fix one integer shift
+\begin{equation}
+ h_0\in\mathbb Z\setminus\{0\},
+ \qquad H:=\rad|h_0|,
+ \label{eq:tpc57-fixed-shift}
+\end{equation}
+one left source system, one direct residue group, and one inherited
+residue/orbit slice.  A direct row and an opposite row have the unique
+displayed factorizations
+\begin{equation}
+ m=d_m\ell_m,
+ \qquad
+ m_\gamma=d_\gamma\ell_\gamma,
+ \label{eq:tpc57-two-source-rows}
+\end{equation}
+where
+\begin{equation}
+ \ell_m,\ell_\gamma\in[L,2L]\ \text{are prime},
+ \qquad
+ d_m,d_\gamma\in[D,2D]\ \text{are squarefree},
+ \qquad
+ (d_md_\gamma,H)=1.
+ \label{eq:tpc57-row-support}
+\end{equation}
+The inherited scale relations are
+\begin{equation}
+ Q=LD,
+ \qquad K=DJ,
+ \qquad QJ\asymp X,
+ \qquad
+ \Delta=QX^{-1/400},
+ \qquad G=X^{1/400}.
+ \label{eq:tpc57-literal-scales}
+\end{equation}
+All fixed compact boxes, residue classes, and smooth-function families below
+are the declared ones from the parent packet; none is enlarged after the
+terminal equation is imposed.
+
+The exact direct source coefficient is
+\begin{equation}
+ a_m
+ =\mu(d_m)(\log\ell_m)\omega_D(d_m)
+   \psi_L(\ell_m/L)\zeta_m,
+ \qquad |\zeta_m|\ll1.
+ \label{eq:tpc57-source-coefficient}
+\end{equation}
+No lower bound, nonvanishing assumption, or phase condition is imposed on
+\(\zeta_m\).  The opposite row contributes
+\begin{equation}
+ \eta_\gamma\mathscr R(q_\gamma),
+ \qquad
+ q_\gamma=
+ \left(\log\frac{\ell_\gamma}{L},
+       \log\frac{d_\gamma}{D}\right),
+ \qquad |\eta_\gamma|=1,
+ \label{eq:tpc57-opposite-row-profile}
+\end{equation}
+and the fixed orbit class contributes \(\xi_a\ne0\).  Retain the literal
+mask and four-factor profile
+\begin{align}
+ K_{m\gamma}
+ &:=\one_{\ell_m\ne\ell_\gamma}
+    \one_{|m-m_\gamma|>\Delta}
+    \one_{(d_m,d_\gamma)\le G},
+ \label{eq:tpc57-literal-mask}\\
+ \cW_{m,\gamma}(j/J)
+ &:=W_1(mj/X)\Psi_1(d_mj/K)
+    W_2(m_\gamma j/X)\Psi_2(d_\gamma j/K).
+ \label{eq:tpc57-four-factor-profile}
+\end{align}
+
+Let \(\cI_X\) be the exact retained set of \((m,r)\)-pairs,
+\(\cO_X\) the complete opposite-row cell, and
+\begin{equation}
+ \cJ_{X,a}
+ :=\{j:j/J\in I_0,\ j\equiv a\pmod {H_{\rm orb}}\},
+ \qquad H_{\rm orb}=O_{h_0}(1).
+ \label{eq:tpc57-orbit-set}
+\end{equation}
+Here \(I_0\Subset(0,\infty)\) is fixed, so every retained time satisfies
+\(j\asymp J\).
+The full pre-terminal universe and the distinguished lifted vector are
+\begin{align}
+ \cU^{\rm pre}
+ &:=\{(m,r,j,\gamma):(m,r)\in\cI_X,
+       \ j\in\cJ_{X,a},\ \gamma\in\cO_X\},
+ \label{eq:tpc57-preterminal-universe}\\
+ [G_X^L]_u
+ &:=a_mK_{m\gamma}\eta_\gamma\mathscr R(q_\gamma)\xi_a
+    \cW_{m,\gamma}(j/J),
+ \qquad u=(m,r,j,\gamma).
+ \label{eq:tpc57-literal-preterminal-vector}
+\end{align}
+The scalar in \eqref{eq:tpc57-literal-preterminal-vector} has no explicit
+\(r\)-dependence.  Its repetitions over distinct retained cofactors are
+nevertheless distinct counting-measure atoms.
+
+\subsection{Terminal support and the complete output key}
+
+Let
+\begin{equation}
+ \Lambda(n):=(\log n)\Phi_0(n/X).
+ \label{eq:tpc57-shaped-terminal-weight}
+\end{equation}
+This is a shaped terminal logarithm, not the von Mangoldt function.  For
+\(u=(m,r,j,\gamma)\in\cU^{\rm pre}\), define
+\begin{equation}
+ p_u:=\frac{mj+h_0}{r}
+ \label{eq:tpc57-terminal-prime-candidate}
+\end{equation}
+when the quotient is integral.  The terminal-admissible universe is exactly
+\begin{equation}
+ \begin{split}
+ \cU_{h_0}^{\rm term}:=\{u\in\cU^{\rm pre}:{}&
+ p_u\text{ is prime in the inherited terminal support},\\
+ &p_ur-mj=h_0,\quad \Lambda(p_ur)\ne0,\\
+ &d_m,r,d_mr\text{ are squarefree},\quad(d_m,r)=1\}.
+ \end{split}
+ \label{eq:tpc57-terminal-universe}
+\end{equation}
+The actually nonzero pre-terminal support is kept separate:
+\begin{equation}
+ \cU_{h_0}^{\rm phys}
+ :=\{u\in\cU_{h_0}^{\rm term}:[G_X^L]_u\ne0\}.
+ \label{eq:tpc57-physical-universe}
+\end{equation}
+On \(\cU_{h_0}^{\rm term}\), writing \(m=d_m\ell_m\) and
+\(s=d_mr\), one has
+\begin{equation}
+ p_ur-d_m\ell_mj=h_0,
+ \qquad
+ s\ \text{squarefree},
+ \qquad
+ (d_m,r)=1,
+ \qquad
+ \mu(d_m)\mu(r)=\mu(s).
+ \label{eq:tpc57-terminal-equality-support}
+\end{equation}
+
+The complete physical key and its prime-resolved refinement are
+\begin{equation}
+ q(u):=(\gamma,d_mr,j),
+ \qquad
+ \widetilde q(u):=(\gamma,d_mr,j,p_u).
+ \label{eq:tpc57-output-keys}
+\end{equation}
+For \(y\in q(\cU_{h_0}^{\rm term})\), define
+\begin{equation}
+ \cF_y^{\rm term}
+ :=q^{-1}(y)\cap\cU_{h_0}^{\rm term},
+ \qquad
+ \cF_y^{\rm phys}
+ :=q^{-1}(y)\cap\cU_{h_0}^{\rm phys}.
+ \label{eq:tpc57-terminal-and-physical-fibers}
+\end{equation}
+
+\begin{proposition}[Inherited prime-resolved injectivity]
+\label{prop:tpc57-prime-resolved-injectivity}
+Assume \(D=o(J)\), uniqueness of the row factorization
+\eqref{eq:tpc57-two-source-rows}, and sufficiently large \(X\).  On the one
+declared source system, \(\widetilde q\) is injective on
+\(\cU_{h_0}^{\rm term}\).  Consequently, within a fixed complete output
+fiber, distinct terminal atoms have distinct source rows and distinct
+terminal primes.
+\end{proposition}
+
+\begin{proof}
+Suppose \(\widetilde q(u_1)=\widetilde q(u_2)\), and write
+\(m_i=d_i\ell_i\).  The two atoms have the same \(s,j,p,\gamma\), with
+\(r_i=s/d_i\).  Multiplying \(pr_i=d_i\ell_i j+h_0\) by \(d_i\) gives
+\[
+ ps=d_i^2\ell_i j+h_0d_i.
+\]
+Hence
+\begin{equation}
+ j(\ell_1d_1^2-\ell_2d_2^2)=h_0(d_2-d_1).
+ \label{eq:tpc57-fused-label-identity}
+\end{equation}
+If the integer in parentheses is nonzero, the left side has size
+\(\gg J\), whereas the right side is \(O_{h_0}(D)=o(J)\).  Thus both
+sides vanish.  Since \(h_0\ne0\), one gets \(d_1=d_2\), then
+\(\ell_1=\ell_2\), and finally \(r_1=r_2\).  The two atoms coincide.
+The assertions about rows and primes follow.
+\end{proof}
+
+\subsection{Terminalization, grouping, and raw energies}
+
+For an arbitrary array \(g=(g_u)_{u\in\cU^{\rm pre}}\), define the terminal
+diagonal by
+\begin{equation}
+ (D_{h_0}g)_u
+ :=\begin{cases}
+ \mu(r_u)\Lambda(p_ur_u)g_u,
+     &u\in\cU_{h_0}^{\rm term},\\
+ 0,&u\in\cU^{\rm pre}\setminus\cU_{h_0}^{\rm term}.
+ \end{cases}
+ \label{eq:tpc57-terminal-diagonal-operator}
+\end{equation}
+The literal grouped map is
+\begin{equation}
+ (\cT_{h_0}g)_y
+ :=\sum_{u\in\cF_y^{\rm term}}(D_{h_0}g)_u.
+ \label{eq:tpc57-literal-grouped-map}
+\end{equation}
+Every atomic Hilbert space uses raw counting measure.  Thus
+\begin{align}
+ \cE_{\rm pre}(g)
+ &:=\sum_{u\in\cU^{\rm pre}}|g_u|^2,
+ \label{eq:tpc57-preterminal-energy}\\
+ \cD_{h_0}(g)
+ &:=\|D_{h_0}g\|_2^2
+ =\sum_{u\in\cU_{h_0}^{\rm term}}
+   |\Lambda(p_ur_u)|^2|g_u|^2,
+ \label{eq:tpc57-terminal-diagonal-energy}\\
+ \cG_{h_0}(g)
+ &:=\|\cT_{h_0}g\|_2^2
+ =\sum_y\left|
+   \sum_{u\in\cF_y^{\rm term}}(D_{h_0}g)_u
+   \right|^2.
+ \label{eq:tpc57-undeleted-grouped-energy}
+\end{align}
+The second identity uses squarefreeness of \(r_u\) on the terminal support.
+The terminal multiplier remains inside \(D_{h_0}\); no factor such as
+\(1/(E_XJ)\) is inserted into any of these norms.
+
+For the distinguished vector, put
+\begin{equation}
+ x_u:=(D_{h_0}G_X^L)_u.
+ \label{eq:tpc57-distinguished-terminal-amplitude}
+\end{equation}
+If \(u=(d\ell,r,j,\gamma)\in\cU_{h_0}^{\rm term}\) and
+\(y=q(u)=(\gamma,s,j)\), define
+\begin{align}
+ \Omega_y
+ &:={}
+ \mu(s)\eta_\gamma\mathscr R(q_\gamma)\xi_a
+ W_2(m_\gamma j/X)\Psi_2(d_\gamma j/K),
+ \label{eq:tpc57-common-output-factor}\\
+ \kappa_u
+ &:={}
+ (\log\ell)\omega_D(d)\psi_L(\ell/L)K_{m\gamma}
+ W_1(mj/X)\Psi_1(dj/K)\Lambda(mj+h_0).
+ \label{eq:tpc57-row-free-terminal-factor}
+\end{align}
+The M\"obius identity in
+\eqref{eq:tpc57-terminal-equality-support} gives the exact factorization
+\begin{equation}
+ \boxed{
+ x_u=\Omega_{q(u)}\kappa_u\zeta_m
+     =c_u\zeta_m,
+ \qquad c_u:=\Omega_{q(u)}\kappa_u.}
+ \label{eq:tpc57-exact-row-factorization}
+\end{equation}
+Thus \(c_u\) contains every displayed literal factor except the bounded
+distinguished row coefficient \(\zeta_m\).  Since the terminal multiplier is
+nonzero on \(\cU_{h_0}^{\rm term}\),
+\begin{equation}
+ x_u\ne0
+ \quad\Longleftrightarrow\quad
+ [G_X^L]_u\ne0
+ \quad\Longleftrightarrow\quad
+ u\in\cU_{h_0}^{\rm phys}.
+ \label{eq:tpc57-active-support-equivalence}
+\end{equation}
+
+\subsection{Hostile interface audit}
+
+The following invariants are part of every subsequent statement.
+\begin{enumerate}[label=\textup{(I\arabic*)},leftmargin=3.2em]
+ \item \emph{One literal coefficient.}
+       Collision energies use \(|x_u|^2\) from
+       \eqref{eq:tpc57-distinguished-terminal-amplitude}, not an unweighted
+       count and not a coefficient envelope.
+ \item \emph{One fixed shift.}
+       The equality is always \(p_ur_u-m_uj=h_0\) for the same specified
+       \(h_0\ne0\).  No average over shifts, frozen intercept, or
+       shift-dependent reselection is part of the interface.
+ \item \emph{Three different supports.}
+       The containments
+       \[
+        \cU_{h_0}^{\rm phys}
+        \subseteq\cU_{h_0}^{\rm term}
+        \subseteq\cU^{\rm pre}
+       \]
+       are not identities.  In particular, ambient solutions of the
+       determinant equation are not automatically terminal or physical
+       atoms.
+ \item \emph{Complete fibers.}
+       Singleton multiplicity uses the full key
+       \(q(u)=(\gamma,d_mr,j)\) and every active terminal atom.
+       Restricting a cofactor block, phase sector, rank, or prime interval
+       changes the fiber system and cannot be undone by monotonicity of a
+       coherent square.
+ \item \emph{Prime resolution.}
+       The refined key \(\widetilde q\) is injective, but the physical output
+       forgets \(p_u\) and coherently adds all primes in one \(q\)-fiber.
+       The prime-resolved diagonal therefore does not itself lower-bound the
+       undeleted grouped output.
+ \item \emph{Raw ledger.}
+       Repeated cofactor labels remain separate counting-measure atoms.
+       Selection, cofactor-block occupancy, terminal activation, singleton
+       occupancy, native-Gram comparison, boundary control, and tail
+       reconnection must each be charged separately before any endpoint
+       conclusion is stated.
+\end{enumerate}
+
+Accordingly, the literal interface supplies exact identities and support
+geometry only.  It does not assert that a chosen block is nonempty, that
+terminal diagonal energy is comparable to pre-terminal energy, that a
+positive fraction of physical fibers are singletons, or that the undeleted
+grouped square has an asymptotic lower bound.

@@ -1,0 +1,210 @@
+\section{Introduction}
+\label{sec:tpc57-introduction}
+
+The preceding four stages separated the fixed-shift prime square into
+auditable gates.  TPC--53 fixed the literal coefficient dictionary and raw
+atomic normalization \citep{WangTPC53}.  TPC--54 separated pre-terminal
+energy selection from actual terminal occupancy \citep{WangTPC54}.
+TPC--55 identified the complete residual fiber and proved that adjoining
+the terminal prime removes every collision before the final coherent sum
+\citep{WangTPC55}.  TPC--56 then showed that a phase-adaptive pentant
+contains a constant fraction of the terminal diagonal and has a uniformly
+positive grouped square \citep{WangTPC56}.
+
+The last result is exact, but it deliberately deletes four phase channels.
+It therefore does not answer the undeleted question.  If
+\begin{equation}
+ x_{y,p}
+ :=(D_{h_0}G_X^L)_{u(y,p)}
+ \label{eq:tpc57-intro-amplitude}
+\end{equation}
+is the terminal amplitude indexed by the exact terminal prime \(p\) in the
+full output fiber \(y=(\gamma,s,j)\), then the two physical energies are
+\begin{equation}
+ \cD_{h_0}(G_X^L)
+ =\sum_y\sum_{p\in\cP_y^{\rm phys}}|x_{y,p}|^2,
+ \qquad
+ \cG_{h_0}(G_X^L)
+ =\sum_y\left|\sum_{p\in\cP_y^{\rm phys}}x_{y,p}\right|^2.
+ \label{eq:tpc57-intro-two-energies}
+\end{equation}
+The first quantity ignores interference; the second is the actual
+undeleted grouped square.  Arbitrary phases can make one nonsingleton fiber
+vanish.  Neither bounded multiplicity nor a large collision-free selected
+rank prevents the omitted coordinates from cancelling it.
+
+This paper opens a phase-blind door that does not delete any coordinate:
+\begin{quote}
+How much terminal diagonal energy already lies in fibers containing exactly
+one active atom, and what arithmetic event prevents an atom from being such
+a singleton?
+\end{quote}
+On a singleton fiber there is no interference to estimate.  Its grouped
+square equals its diagonal exactly, while every other grouped square is
+nonnegative.  Thus singleton energy embeds monotonically in the full
+output even though a selected block or rank output does not.
+
+\subsection{The rooted collision interface}
+
+For a finite fiber map \(q:\cU\to\cY\), an array \(x\), and active
+multiplicities
+\begin{equation}
+ n_y(x)=\#\{u\in q^{-1}(y):x_u\ne0\},
+ \label{eq:tpc57-intro-active-multiplicity}
+\end{equation}
+write \(D\) for the diagonal energy, \(G\) for the grouped energy, and
+\(D_1\) for the energy on fibers with \(n_y=1\).  The first rooted
+collision incidence is
+\begin{equation}
+ I_1(x)
+ =\sum_{u:x_u\ne0}|x_u|^2\bigl(n_{q(u)}(x)-1\bigr)
+ =\sum_{\substack{u\ne v\\q(u)=q(v)}}|x_u|^2.
+ \label{eq:tpc57-intro-rooted-incidence}
+\end{equation}
+We prove the sharp chain
+\begin{equation}
+ \boxed{G\ge D_1\ge(D-I_1)_+.}
+ \label{eq:tpc57-intro-singleton-floor}
+\end{equation}
+The first inequality uses the undeleted output itself.  The second is the
+first Bonferroni truncation of an exact collision-moment expansion.  Hence
+the concrete estimate
+\begin{equation}
+ I_1(x)\le(1-\delta)D(x)
+ \label{eq:tpc57-intro-needed-incidence}
+\end{equation}
+would imply \(G(x)\ge\delta D(x)\).  This is a genuine return to the full
+fixed-\(h_0\) output, not a statement about a favorable subpacket.
+
+The block version avoids another common logical error.  Let the root atom
+lie in a cofactor core \(R\le r\le2R\), but count all of its collision
+partners in the full active support.  Because the direct squarefree factor
+always lies in \([D,2D]\), equality \(d_ur_u=d_vr_v\) forces every partner
+into \(R/2\le r_v\le4R\).  Thus a core-block singleton estimate can be
+proved from one fixed enlarged block and then enters the full output
+directly.  No lower monotonicity of grouped norms is invoked.
+
+\subsection{Why unweighted singleton counts are insufficient}
+
+The inherited source hypothesis has the form
+\begin{equation}
+ x_u=c_u\zeta_{m(u)},
+ \qquad |\zeta_m|\le C,
+ \label{eq:tpc57-intro-row-factorization}
+\end{equation}
+where \(c_u\) contains every literal mask, profile, terminal, and common
+fiber factor independent of \(\zeta_m\).  One source row may feed many
+different fibers.  Therefore a large unweighted set of singleton atoms
+does not give a coefficient-uniform energy proportion: the allowed source
+energy can concentrate on rows meeting mostly nonsingleton fibers.
+
+We encode the exact obstruction in a weighted bipartite graph.  Its left
+vertices are source rows, its right vertices are baseline terminal fibers,
+and its edges are baseline-nondegenerate terminal atoms with weights
+\(|c_u|^2\).  If \(W_m\) is the total edge weight from row \(m\) and
+\(W_{m,1}\) is the part ending in structurally singleton fibers, define
+\begin{equation}
+ \beta_X
+ :=\min_{m:W_m>0}\frac{W_{m,1}}{W_m}.
+ \label{eq:tpc57-intro-beta}
+\end{equation}
+The exact minimax theorem is
+\begin{equation}
+ \boxed{
+ \inf_{\substack{0<D(\zeta)\\|\zeta_m|\le C}}
+ \frac{D_1^{\rm phys}(\zeta)}{D(\zeta)}
+ =\beta_X.}
+ \label{eq:tpc57-intro-minimax}
+\end{equation}
+Thus a uniform Door-A theorem is equivalent to a rowwise weighted
+occupancy statement.  If \(\beta_X=0\), singleton energy cannot by itself
+give a coefficient-uniform positive fraction.  This does not say that the
+full grouped energy vanishes, nor does it say that the distinguished source
+coefficients concentrate on a minimizing row.
+
+\subsection{Every collision is a factor exchange}
+
+The arithmetic side is equally explicit.  Suppose two distinct terminal
+atoms in one fiber have
+\begin{equation}
+ m_i=d_i\ell_i,
+ \qquad
+ d_1r_1=d_2r_2=s.
+ \label{eq:tpc57-intro-collision-data}
+\end{equation}
+The inherited equality support makes \(s\) squarefree and
+\((d_i,r_i)=1\).  Consequently there are unique pairwise coprime
+squarefree integers \(a,b,c,e\) such that
+\begin{equation}
+ d_1=ab,
+ \qquad d_2=ac,
+ \qquad r_1=ce,
+ \qquad r_2=be.
+ \label{eq:tpc57-intro-factor-exchange}
+\end{equation}
+The two terminal equations become
+\begin{equation}
+ ce\,p_1-ab\ell_1j=h_0,
+ \qquad
+ be\,p_2-ac\ell_2j=h_0,
+ \label{eq:tpc57-intro-exchange-equations}
+\end{equation}
+and force
+\begin{equation}
+ \boxed{
+ \frac{e}{(e,h_0)}\mid b\ell_1-c\ell_2.}
+ \label{eq:tpc57-intro-exchange-divisibility}
+\end{equation}
+This is not an ambient divisor model: the reverse statement retains every
+literal carrier, primality, mask, cutoff, residue, and orbit condition.
+
+The factor exchange gives deterministic sparsity.  Same-\(d\) collisions
+are impossible for \(r>\rad|h_0|L\).  At large cofactor scale, a
+cross-\(d\) collision must exchange two distinct comparable factors of
+quantified size.  After the rows and exchange pattern are fixed,
+simultaneous integrality occupies one residue class of \(j\).  In the
+separate fixed-\((s,j,d)\) description, the source and terminal primes run
+along two nonproportional affine forms.  These are the exact orbit and
+two-point objects that a future upper-bound sieve would have to sum.
+
+\subsection{What advances and what remains open}
+
+The advance is a complete reduction of the phase-blind undeleted route:
+\[
+ \begin{gathered}
+ \text{terminal activation}
+ +\text{weighted rooted-collision deficit}
+ \\
+ \Longrightarrow
+ \text{undeleted fixed-\(h_0\) lower square}.
+ \end{gathered}
+\]
+All collisions in the numerator now have a unique factor-exchange and
+orbit-ladder description.  The remaining estimate compares weighted
+one-atom terminal energy with a weighted two-atom incidence sum, retaining
+the two source primes and the two terminal primes in every collision.
+
+The current TPC--53--56 hypotheses do not imply
+\eqref{eq:tpc57-intro-needed-incidence}.  The retained carrier has no
+declared product-density theorem, terminal activation is itself open, a
+maximum-degree bound does not force any singleton, and the bounded source
+class permits rowwise energy concentration.  An upper-bound sieve for the
+two affine prime forms can estimate a numerator, but a positive proportion
+requires a compatible lower denominator and uniform control of the carrier
+and weights.  This is precisely where the next arithmetic input is needed.
+
+\Cref{sec:tpc57-literal-interface} fixes the literal support and energies.
+\Cref{sec:tpc57-singleton-theory} proves the finite collision-moment
+theory.  \Cref{sec:tpc57-block-bridge} gives the full-output block bridge.
+\Cref{sec:tpc57-row-minimax} proves the rowwise minimax theorem.
+\Cref{sec:tpc57-factor-exchange} parameterizes every collision, and
+\cref{sec:tpc57-orbit-reduction} resolves its orbit ladder.
+\Cref{sec:tpc57-endpoint-claims} states the exact missing estimate and the
+claim boundary.
+
+The finite-fiber identities are unconditional mathematics (L0).  Their
+specialization to the exact terminal-prime carrier and the factor-exchange
+structure are literal fixed-shift interface results (L1).  No positive
+singleton proportion, terminal-activation theorem, parity-sensitive sieve
+gain, or twin-prime conclusion is asserted; the classical parity boundary
+remains in force \citep{FriedlanderIwaniec2010}.

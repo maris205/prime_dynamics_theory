@@ -1,0 +1,253 @@
+\section{The sharp rowwise singleton constant}
+\label{sec:tpc57-row-minimax}
+
+The terminal amplitudes inherited from the literal packet contain one
+bounded coefficient \(\zeta_m\) for each source row.  This section gives
+the exact singleton constant that is uniform over that coefficient class.
+The result is a finite weighted-graph theorem; no distribution of primes is
+assumed.
+
+Let \(\cM\) be a finite set of source rows, let \(\cY\) be a finite set of
+output fibers, and let \(\cU^\circ\) be a finite set of baseline edges with
+maps
+\begin{equation}
+ m:\cU^\circ\to\cM,
+ \qquad
+ q:\cU^\circ\to\cY.
+ \label{eq:tpc57-row-fiber-maps}
+\end{equation}
+Assume that a fixed pair \((m_0,y)\) supports at most one edge.  Attach to
+each \(u\in\cU^\circ\) a nonzero baseline amplitude \(c_u\in\C\) and the
+positive weight
+\begin{equation}
+ w_u:=|c_u|^2.
+ \label{eq:tpc57-baseline-edge-weight}
+\end{equation}
+The baseline fiber degree is
+\begin{equation}
+ d_y^\circ:=|\{u\in\cU^\circ:q(u)=y\}|.
+ \label{eq:tpc57-baseline-fiber-degree}
+\end{equation}
+
+For a row coefficient vector \(\zeta=(\zeta_m)_{m\in\cM}\), set
+\begin{equation}
+ x_u(\zeta):=c_u\zeta_{m(u)}.
+ \label{eq:tpc57-row-factorized-amplitude}
+\end{equation}
+Its physical degree is
+\begin{equation}
+ n_y(\zeta)
+ :=|\{u\in\cU^\circ:q(u)=y,\ \zeta_{m(u)}\ne0\}|.
+ \label{eq:tpc57-physical-row-degree}
+\end{equation}
+Define
+\begin{align}
+ D(\zeta)
+ &:=\sum_{u\in\cU^\circ}|x_u(\zeta)|^2,
+ \label{eq:tpc57-row-diagonal-energy}\\
+ D_1^{\rm phys}(\zeta)
+ &:=\sum_{\substack{y\in\cY\\n_y(\zeta)=1}}
+      \sum_{\substack{u\in\cU^\circ\\q(u)=y}}
+      |x_u(\zeta)|^2.
+ \label{eq:tpc57-row-physical-singleton-energy}
+\end{align}
+The row weights and their structurally singleton portions are
+\begin{align}
+ W_m
+ &:=\sum_{\substack{u\in\cU^\circ\\m(u)=m}}w_u,
+ \label{eq:tpc57-total-row-weight}\\
+ W_{m,1}
+ &:=\sum_{\substack{u\in\cU^\circ\\m(u)=m,\ d_{q(u)}^\circ=1}}w_u.
+ \label{eq:tpc57-singleton-row-weight}
+\end{align}
+Assume \(\cU^\circ\ne\varnothing\), discard the rows with \(W_m=0\),
+and put
+\begin{equation}
+ \beta_X:=\min_{m:W_m>0}\frac{W_{m,1}}{W_m}.
+ \label{eq:tpc57-beta-definition}
+\end{equation}
+The subscript records the intended arithmetic application; the theorem
+itself is finite-dimensional.
+
+\begin{theorem}[Exact rowwise minimax constant]
+\label{thm:tpc57-row-minimax}
+For every \(C>0\),
+\begin{equation}
+ \boxed{
+ \inf_{\substack{\zeta\in\C^{\cM},\ 0<D(\zeta)\\
+                   |\zeta_m|\le C\ (m\in\cM)}}
+ \frac{D_1^{\rm phys}(\zeta)}{D(\zeta)}
+ =\beta_X.}
+ \label{eq:tpc57-exact-row-minimax}
+\end{equation}
+In particular, every admissible \(\zeta\) satisfies
+\begin{equation}
+ D_1^{\rm phys}(\zeta)\ge\beta_XD(\zeta).
+ \label{eq:tpc57-uniform-row-singleton-floor}
+\end{equation}
+If \(G(\zeta)\) denotes the undeleted grouped energy associated with
+\eqref{eq:tpc57-row-factorized-amplitude}, then
+\begin{equation}
+ G(\zeta)\ge\beta_XD(\zeta).
+ \label{eq:tpc57-uniform-row-grouped-floor}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+A baseline singleton edge remains a physical singleton whenever its row
+coefficient is nonzero.  Consequently,
+\begin{equation}
+ D_1^{\rm phys}(\zeta)
+ \ge\sum_m|\zeta_m|^2W_{m,1}
+ \ge\beta_X\sum_m|\zeta_m|^2W_m
+ =\beta_XD(\zeta).
+ \label{eq:tpc57-row-minimax-lower-proof}
+\end{equation}
+This proves the lower bound in
+\eqref{eq:tpc57-exact-row-minimax}.  The grouped estimate
+\eqref{eq:tpc57-uniform-row-grouped-floor} then follows from
+\cref{thm:tpc57-singleton-floor}.
+
+Choose a row \(m_0\) attaining the minimum in
+\eqref{eq:tpc57-beta-definition}.  Set \(\zeta_{m_0}=C\), and for every
+other row with positive weight set \(\zeta_m=\varepsilon\), where
+\(0<\varepsilon<C\).  Rows of zero weight may be assigned coefficient zero.
+All baseline edges are then active, so
+\(n_y(\zeta)=d_y^\circ\).  Hence the physical singleton energy is exactly
+the structural singleton energy:
+\begin{equation}
+ \frac{D_1^{\rm phys}(\zeta)}{D(\zeta)}
+ =
+ \frac{C^2W_{m_0,1}
+       +\varepsilon^2\sum_{m\ne m_0}W_{m,1}}
+      {C^2W_{m_0}
+       +\varepsilon^2\sum_{m\ne m_0}W_m}.
+ \label{eq:tpc57-row-minimax-extremizing-family}
+\end{equation}
+Letting \(\varepsilon\to0^+\) proves the reverse inequality and therefore
+the exact identity \eqref{eq:tpc57-exact-row-minimax}.
+\end{proof}
+
+There is an exact rowwise collision-moment form of
+\(W_{m,1}\).  Put
+\begin{equation}
+ M^\circ:=\max_{y\in\cY}d_y^\circ
+ \label{eq:tpc57-max-baseline-degree}
+\end{equation}
+and, for \(r\ge0\), define
+\begin{equation}
+ J_{m,r}
+ :=\sum_{\substack{u\in\cU^\circ\\m(u)=m}}
+ w_u\binom{d_{q(u)}^\circ-1}{r}.
+ \label{eq:tpc57-row-collision-moments}
+\end{equation}
+Thus \(J_{m,0}=W_m\), and
+\begin{equation}
+ J_{m,1}
+ =\sum_{\substack{u\in\cU^\circ\\m(u)=m}}w_u
+   \bigl(d_{q(u)}^\circ-1\bigr)
+ \label{eq:tpc57-first-row-collision-moment}
+\end{equation}
+is the baseline rooted collision incidence carried by row \(m\).
+
+\begin{proposition}[Row collision hierarchy]
+\label{prop:tpc57-row-collision-hierarchy}
+For every row \(m\) with \(W_m>0\),
+\begin{equation}
+ \boxed{
+ W_{m,1}=\sum_{r=0}^{M^\circ-1}(-1)^rJ_{m,r}.}
+ \label{eq:tpc57-exact-row-singleton-expansion}
+\end{equation}
+The corresponding Bonferroni truncations alternate around \(W_{m,1}\).
+In particular,
+\begin{equation}
+ W_{m,1}\ge W_m-J_{m,1}.
+ \label{eq:tpc57-first-row-bonferroni}
+\end{equation}
+If for some \(0<\delta\le1\),
+\begin{equation}
+ J_{m,1}\le(1-\delta)W_m
+ \qquad\text{for every }m\text{ with }W_m>0,
+ \label{eq:tpc57-uniform-row-incidence-target}
+\end{equation}
+then
+\begin{equation}
+ \beta_X\ge\delta
+ \qquad\text{and}\qquad
+ G(\zeta)\ge\delta D(\zeta)
+ \label{eq:tpc57-uniform-row-incidence-conclusion}
+\end{equation}
+for every admissible coefficient vector with positive energy.
+\end{proposition}
+
+\begin{proof}
+Apply the binomial identity
+\[
+ \one_{\{d=1\}}
+ =\sum_{r=0}^{d-1}(-1)^r\binom{d-1}{r}
+\]
+to \(d=d_{q(u)}^\circ\), multiply by \(w_u\), and sum over the edges
+rooted at row \(m\).  This proves
+\eqref{eq:tpc57-exact-row-singleton-expansion}.  Its first odd
+Bonferroni truncation is \eqref{eq:tpc57-first-row-bonferroni}.  Under
+\eqref{eq:tpc57-uniform-row-incidence-target}, this gives
+\(W_{m,1}\ge\delta W_m\) on every positive-weight row, hence
+\(\beta_X\ge\delta\).  The last assertion follows from
+\cref{thm:tpc57-row-minimax}.
+\end{proof}
+
+For one distinguished coefficient vector, uniform row control is stronger
+than necessary.  The following weighted criterion records the weaker
+target.
+
+\begin{corollary}[Distinguished weighted collision criterion]
+\label{cor:tpc57-distinguished-row-criterion}
+For every coefficient vector \(\zeta\),
+\begin{equation}
+ G(\zeta)
+ \ge
+ \left(
+ D(\zeta)-\sum_m|\zeta_m|^2J_{m,1}
+ \right)_+.
+ \label{eq:tpc57-weighted-row-collision-floor}
+\end{equation}
+Consequently, if \(D(\zeta)>0\) and
+\begin{equation}
+ \sum_m|\zeta_m|^2J_{m,1}
+ \le(1-\delta)D(\zeta),
+ \label{eq:tpc57-distinguished-row-incidence-target}
+\end{equation}
+then
+\begin{equation}
+ G(\zeta)\ge\delta D(\zeta).
+ \label{eq:tpc57-distinguished-row-incidence-conclusion}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Multiply \eqref{eq:tpc57-first-row-bonferroni} by
+\(|\zeta_m|^2\), sum over \(m\), and use
+\eqref{eq:tpc57-row-minimax-lower-proof} before its second inequality.
+This gives
+\[
+ D_1^{\rm phys}(\zeta)
+ \ge D(\zeta)-\sum_m|\zeta_m|^2J_{m,1}.
+\]
+Now apply \cref{thm:tpc57-singleton-floor} and nonnegativity of
+\(G(\zeta)\).  The hypothesis
+\eqref{eq:tpc57-distinguished-row-incidence-target} gives the final
+claim.
+\end{proof}
+
+\begin{remark}[What the minimax theorem does and does not prove]
+\label{rem:tpc57-row-minimax-scope}
+The number \(\beta_X\) is the exact best uniform constant for the
+\emph{singleton-energy} route over the declared bounded row-coefficient
+class.  If \(\beta_X=0\), the singleton ratio can be arbitrarily small in
+that class.  This does not imply that the grouped energy itself can be made
+zero: nonsingleton fibers may still contribute constructively.  Nor does it
+give a negative statement about one distinguished coefficient vector.
+Conversely, a positive value of \(\beta_X\) is a finite-system statement;
+an asymptotic lower bound for \(\beta_X\) requires separate information
+about the baseline terminal carrier.
+\end{remark}

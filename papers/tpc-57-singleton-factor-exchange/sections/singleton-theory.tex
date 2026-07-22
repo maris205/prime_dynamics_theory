@@ -1,0 +1,263 @@
+\section{Singleton energy and collision moments}
+\label{sec:tpc57-singleton-theory}
+
+This section isolates the finite-dimensional statement needed for the
+undeleted terminal output.  No arithmetic, phase hypothesis, or choice of a
+subpacket is used.  Let \(\cU\) and \(\cY\) be finite sets, let
+\(q:\cU\to\cY\) be a fiber map, and write
+\begin{equation}
+ \cF_y:=q^{-1}(y).
+ \label{eq:tpc57-abstract-fiber}
+\end{equation}
+For \(x=(x_u)_{u\in\cU}\in\C^{\cU}\), its active support and its active
+fiber multiplicities are
+\begin{equation}
+ \cU(x):=\{u\in\cU:x_u\ne0\},
+ \qquad
+ n_y(x):=|\cF_y\cap\cU(x)|.
+ \label{eq:tpc57-active-multiplicity}
+\end{equation}
+The diagonal and undeleted grouped energies are
+\begin{equation}
+ D(x):=\sum_{u\in\cU}|x_u|^2,
+ \qquad
+ G(x):=\sum_{y\in\cY}
+       \left|\sum_{u\in\cF_y}x_u\right|^2.
+ \label{eq:tpc57-diagonal-grouped-energies}
+\end{equation}
+Define the physical singleton energy by
+\begin{equation}
+ D_1(x):=
+ \sum_{\substack{y\in\cY\\n_y(x)=1}}
+ \sum_{u\in\cF_y}|x_u|^2.
+ \label{eq:tpc57-singleton-energy}
+\end{equation}
+The word ``physical'' here refers to the active support of the one vector
+\(x\): a fiber that becomes a singleton because some of its ambient
+coordinates vanish is counted in \eqref{eq:tpc57-singleton-energy}.
+
+\begin{theorem}[Undeleted singleton floor]
+\label{thm:tpc57-singleton-floor}
+For every finite fiber system and every \(x\in\C^{\cU}\),
+\begin{equation}
+ \boxed{G(x)\ge D_1(x).}
+ \label{eq:tpc57-singleton-floor}
+\end{equation}
+This is a lower bound for the complete grouped vector; no coordinate is
+deleted before grouping.
+\end{theorem}
+
+\begin{proof}
+If \(n_y(x)=1\), there is a unique \(u_y\in\cF_y\) with
+\(x_{u_y}\ne0\), and hence
+\[
+ \left|\sum_{u\in\cF_y}x_u\right|^2=|x_{u_y}|^2.
+\]
+Every remaining summand in \(G(x)\) is nonnegative.  Summing the displayed
+identity over the singleton fibers proves
+\eqref{eq:tpc57-singleton-floor}.
+\end{proof}
+
+We next encode singleton occupancy by rooted collision moments.  Adopt the
+convention \(\binom ab=0\) when \(b>a\), and define
+\begin{equation}
+ I_r(x):=
+ \sum_{u\in\cU(x)}|x_u|^2
+ \binom{n_{q(u)}(x)-1}{r},
+ \qquad r\ge0.
+ \label{eq:tpc57-rooted-collision-moments}
+\end{equation}
+Thus \(I_0(x)=D(x)\), while
+\begin{equation}
+ I_1(x)
+ =\sum_{u\in\cU(x)}|x_u|^2
+   \bigl(n_{q(u)}(x)-1\bigr)
+ =\sum_{\substack{u,v\in\cU(x)\\u\ne v,\ q(u)=q(v)}}|x_u|^2.
+ \label{eq:tpc57-first-rooted-collision}
+\end{equation}
+The last sum is over ordered collision pairs, with the energy placed on the
+root \(u\).
+
+\begin{theorem}[Exact collision-moment expansion]
+\label{thm:tpc57-collision-moment-expansion}
+Suppose \(x\ne0\), and put
+\begin{equation}
+ M(x):=\max_{y\in\cY}n_y(x).
+ \label{eq:tpc57-max-active-multiplicity}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ D_1(x)=\sum_{r=0}^{M(x)-1}(-1)^r I_r(x).}
+ \label{eq:tpc57-exact-singleton-expansion}
+\end{equation}
+More generally, every admissible odd truncation is a lower bound and every
+admissible even truncation is an upper bound:
+\begin{align}
+ \sum_{r=0}^{2k+1}(-1)^rI_r(x)
+ &\le D_1(x)
+ &&\text{if }2k+1\le M(x)-1,
+ \label{eq:tpc57-bonferroni-lower}\\
+ D_1(x)
+ &\le\sum_{r=0}^{2k}(-1)^rI_r(x)
+ &&\text{if }2k\le M(x)-1.
+ \label{eq:tpc57-bonferroni-upper}
+\end{align}
+In particular,
+\begin{equation}
+ \boxed{
+ G(x)\ge D_1(x)\ge D(x)-I_1(x),}
+ \qquad
+ G(x)\ge\bigl(D(x)-I_1(x)\bigr)_+.
+ \label{eq:tpc57-first-collision-floor}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For an active coordinate \(u\), set \(N=n_{q(u)}(x)-1\).  The binomial
+identity
+\begin{equation}
+ \sum_{r=0}^{N}(-1)^r\binom Nr
+ =(1-1)^N
+ =\one_{\{N=0\}}
+ \label{eq:tpc57-binomial-singleton-indicator}
+\end{equation}
+shows, after multiplication by \(|x_u|^2\) and summation over \(u\), that
+the right-hand side of \eqref{eq:tpc57-exact-singleton-expansion} equals
+\(D_1(x)\).
+
+For \(N\ge1\) and \(0\le s<N\), the partial-sum identity
+\begin{equation}
+ \sum_{r=0}^{s}(-1)^r\binom Nr
+ =(-1)^s\binom{N-1}{s}
+ \label{eq:tpc57-binomial-partial-sum}
+\end{equation}
+has the sign asserted in
+\eqref{eq:tpc57-bonferroni-lower}--
+\eqref{eq:tpc57-bonferroni-upper}; for \(s\ge N\), the partial sum is
+already the exact value in
+\eqref{eq:tpc57-binomial-singleton-indicator}.  Summing again with the
+nonnegative weights \(|x_u|^2\) proves both Bonferroni inequalities.  If
+\(M(x)=1\), then \(I_1(x)=0\) and \(D_1(x)=D(x)\) directly.  Otherwise the
+case \(s=1\), together with
+\cref{thm:tpc57-singleton-floor} and \(G(x)\ge0\), proves
+\eqref{eq:tpc57-first-collision-floor}.
+\end{proof}
+
+\begin{proposition}[Sharpness of the first-moment floor]
+\label{prop:tpc57-first-moment-sharpness}
+The nonnegative lower bound in
+\eqref{eq:tpc57-first-collision-floor} is sharp using only the two numbers
+\(D\) and \(I_1\).  More precisely, for every \(D_0>0\) and \(I_0\ge0\)
+there is a finite fiber system and a vector \(x\) such that
+\begin{equation}
+ D(x)=D_0,
+ \qquad I_1(x)=I_0,
+ \qquad G(x)=\bigl(D_0-I_0\bigr)_+.
+ \label{eq:tpc57-first-moment-equality-example}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Suppose first that \(I_0\le D_0\).  Use one singleton fiber carrying a
+coordinate of squared modulus \(D_0-I_0\), omitting it when
+\(I_0=D_0\).  If \(I_0>0\), use one further fiber with two coordinates
+\[
+ x_{u_1}=\sqrt{I_0/2},
+ \qquad
+ x_{u_2}=-\sqrt{I_0/2}.
+\]
+The two-atom fiber has diagonal energy and first rooted collision moment
+equal to \(I_0\), and its grouped energy is zero.  This proves the claim in
+the stated range.
+
+Now suppose \(I_0>D_0\), write
+\[
+ \frac{I_0}{D_0}=k+\theta,
+ \qquad k\in\mathbb N,
+ \qquad 0\le\theta<1,
+\]
+and use two fibers of degrees \(k+1\) and \(k+2\), with total diagonal
+energies \((1-\theta)D_0\) and \(\theta D_0\), respectively.  Omit the
+second fiber when \(\theta=0\).  Within each nonzero fiber, take equal
+coordinate magnitudes and phases proportional to all roots of unity of
+the corresponding degree.  Each fiber sum is zero.  A fiber of degree
+\(n\) contributes \((n-1)\) times its diagonal energy to \(I_1\), and
+therefore the two fibers give
+\[
+ I_1(x)
+ =\bigl(k(1-\theta)+(k+1)\theta\bigr)D_0
+ =(k+\theta)D_0
+ =I_0.
+\]
+They have total diagonal energy \(D_0\) and grouped energy zero, completing
+the proof.
+\end{proof}
+
+The following localized form is the deterministic bridge used later for a
+cofactor block.  It is formulated for an arbitrary coordinate subset so
+that no monotonicity of grouped norms is being assumed.
+
+\begin{proposition}[Core-to-full collision bridge]
+\label{prop:tpc57-core-to-full-bridge}
+Let \(\cB\subseteq\cU\), and define
+\begin{align}
+ D_{\cB}(x)
+ &:=\sum_{u\in\cB}|x_u|^2,
+ \label{eq:tpc57-core-energy}\\
+ I_{\cB}^{\rm full}(x)
+ &:=\sum_{u\in\cB\cap\cU(x)}|x_u|^2
+       \bigl(n_{q(u)}(x)-1\bigr).
+ \label{eq:tpc57-core-full-incidence}
+\end{align}
+Here the multiplicity in \eqref{eq:tpc57-core-full-incidence} is computed
+in the full active support \(\cU(x)\), not merely in \(\cB\).  Then
+\begin{equation}
+ \boxed{
+ G(x)\ge
+ \bigl(D_{\cB}(x)-I_{\cB}^{\rm full}(x)\bigr)_+.}
+ \label{eq:tpc57-core-full-floor}
+\end{equation}
+Consequently, if \(D_{\cB}(x)>0\) and, for some \(0<\delta\le1\),
+\begin{equation}
+ I_{\cB}^{\rm full}(x)
+ \le(1-\delta)D_{\cB}(x),
+ \label{eq:tpc57-undeleted-incidence-criterion}
+\end{equation}
+then the complete undeleted output satisfies
+\begin{equation}
+ G(x)\ge\delta D_{\cB}(x).
+ \label{eq:tpc57-undeleted-positive-criterion}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Let
+\[
+ E_{\cB}^{\rm mult}(x)
+ :=\sum_{\substack{u\in\cB\cap\cU(x)\\n_{q(u)}(x)\ge2}}|x_u|^2.
+\]
+Every active coordinate in \(\cB\) not counted by
+\(E_{\cB}^{\rm mult}(x)\) belongs to a singleton of the full fiber system.
+Hence \cref{thm:tpc57-singleton-floor} gives
+\[
+ G(x)\ge D_{\cB}(x)-E_{\cB}^{\rm mult}(x).
+\]
+For every term in \(E_{\cB}^{\rm mult}(x)\), the integer
+\(n_{q(u)}(x)-1\) is at least one.  Therefore
+\[
+ E_{\cB}^{\rm mult}(x)\le I_{\cB}^{\rm full}(x),
+\]
+which proves \eqref{eq:tpc57-core-full-floor}.  Substitution of
+\eqref{eq:tpc57-undeleted-incidence-criterion} proves
+\eqref{eq:tpc57-undeleted-positive-criterion}.
+\end{proof}
+
+\begin{remark}[Exact scope]
+\label{rem:tpc57-singleton-scope}
+The preceding results do not assert that singleton energy is present in a
+particular arithmetic packet.  They identify a sufficient statistic for
+the undeleted output: a positive relative upper bound for the rooted
+collision incidence.  Estimating that statistic is an additional
+arithmetic task.
+\end{remark}

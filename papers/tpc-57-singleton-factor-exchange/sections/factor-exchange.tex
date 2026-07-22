@@ -1,0 +1,363 @@
+\section{Exact factor exchange inside a residual fiber}
+\label{sec:tpc57-factor-exchange}
+
+We work only with the literal fixed-shift carrier inherited from
+TPC--55--TPC--56.  Fix \(h_0\ne0\), put
+\[
+ H:=\operatorname{rad}|h_0|,
+\]
+and take \(X\) sufficiently large that \(L>|h_0|\).  A terminal atom is
+written
+\[
+ u=(d\ell,r,j,\gamma),
+ \qquad
+ d\in[D,2D],\quad \ell\in[L,2L]\cap\mathbb P,
+\]
+where \(d,r,dr\) are squarefree, \((d,r)=1\), and
+\begin{equation}
+ rp-d\ell j=h_0
+ \label{eq:tpc57-terminal-equation}
+\end{equation}
+for the terminal prime \(p\), with every retained-row, cofactor, residue,
+profile, and terminal-support condition imposed exactly as in the literal
+carrier.  Its coarse output key is
+\[
+ q(u)=(\gamma,s,j),\qquad s=dr.
+\]
+No ambient Diophantine solution is called an atom unless it belongs to
+that exact carrier.
+
+\subsection{The factor-swap normal form}
+
+\begin{proposition}[Unique factor exchange]
+\label{prop:tpc57-factor-exchange}
+Let
+\[
+ u_i=(d_i\ell_i,r_i,j,\gamma),\qquad i=1,2,
+\]
+be two terminal atoms in the same coarse output fiber.  There are unique
+positive, pairwise coprime, squarefree integers \(a,b,c,e\) such that
+\begin{equation}
+ \boxed{
+ d_1=ab,\qquad d_2=ac,\qquad
+ r_1=ce,\qquad r_2=be,
+ \qquad s=abce.}
+ \label{eq:tpc57-factor-swap}
+\end{equation}
+They are given by
+\begin{equation}
+ a=(d_1,d_2),\qquad
+ b=d_1/a,\qquad c=d_2/a,
+ \qquad e=s/(abc)=(r_1,r_2).
+ \label{eq:tpc57-factor-swap-parameters}
+\end{equation}
+Conversely, any tuple of the form
+\eqref{eq:tpc57-factor-swap} that satisfies both literal terminal
+equations and all carrier restrictions gives two atoms in one coarse
+fiber.
+\end{proposition}
+
+\begin{proof}
+Because \(s\) is squarefree and \(d_i r_i=s\) with
+\((d_i,r_i)=1\), every prime of \(s\) lies in exactly one of four
+disjoint classes: in both \(d_1,d_2\), in \(d_1,r_2\), in
+\(d_2,r_1\), or in both \(r_1,r_2\).  Their products are respectively
+\(a,b,c,e\), which proves existence, pairwise coprimality, and
+\eqref{eq:tpc57-factor-swap}.  The four prime classes are recovered from
+\((d_1,d_2,r_1,r_2)\), so the representation is unique.  The converse is
+immediate after the literal support conditions, rather than only the
+displayed equations, are imposed.
+\end{proof}
+
+The normal form may also be viewed relative to one atom.  If
+\(d_1=d\) and \(r_1=r\), a different divisor choice is obtained by
+choosing \(b\mid d\) and \(c\mid r\) and exchanging these two coprime
+factor packets:
+\begin{equation}
+ d_2=\frac d b c,
+ \qquad
+ r_2=\frac r c b.
+ \label{eq:tpc57-relative-factor-swap}
+\end{equation}
+The pair \((b,c)\) is unique once the partner divisor \(d_2\) is known.
+
+\begin{proposition}[Exchange identity and exact divisibility]
+\label{prop:tpc57-exchange-identity}
+Under the hypotheses of
+\cref{prop:tpc57-factor-exchange}, the two terminal equations imply
+\begin{equation}
+ \boxed{
+ e(cp_1-bp_2)=aj(b\ell_1-c\ell_2).}
+ \label{eq:tpc57-exchange-identity}
+\end{equation}
+Moreover, for \(i=1,2\),
+\begin{equation}
+ (r_i,j)=(r_i,h_0),
+ \label{eq:tpc57-terminal-gcd-in-factor-section}
+\end{equation}
+and consequently
+\begin{equation}
+ \boxed{
+ \frac{e}{(e,h_0)}\mid b\ell_1-c\ell_2.}
+ \label{eq:tpc57-exchange-divisibility}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Substitute \eqref{eq:tpc57-factor-swap} into the two copies of
+\eqref{eq:tpc57-terminal-equation} and subtract:
+\[
+ cep_1-ab\ell_1j= bep_2-ac\ell_2j.
+\]
+This is \eqref{eq:tpc57-exchange-identity}.
+
+For sufficiently large \(X\), one has \((\ell_i,r_i)=1\).  Indeed,
+the prime \(\ell_i\) dividing \(r_i\) would divide both terms on the
+left of \eqref{eq:tpc57-terminal-equation}, and hence would divide the
+fixed nonzero integer \(h_0\), contrary to \(\ell_i\ge L>|h_0|\).
+Thus \((d_i\ell_i,r_i)=1\), and reduction of the terminal equation
+modulo \(r_i\) gives
+\[
+ j\equiv-h_0(d_i\ell_i)^{-1}\pmod {r_i}.
+\]
+Multiplication by a unit modulo \(r_i\) proves
+\eqref{eq:tpc57-terminal-gcd-in-factor-section}.
+
+Finally \((a,e)=1\), so \eqref{eq:tpc57-exchange-identity} gives
+\(e\mid j(b\ell_1-c\ell_2)\).  Since
+\((e,j)=(e,h_0)\), division by this gcd proves
+\eqref{eq:tpc57-exchange-divisibility}.
+\end{proof}
+
+\subsection{Same-divisor and cross-divisor separation}
+
+\begin{corollary}[Same-divisor collisions require a short cofactor]
+\label{cor:tpc57-same-divisor-short}
+Suppose \(u_1\ne u_2\) and \(d_1=d_2=d\).  Then \(r_1=r_2=r\),
+\(\ell_1\ne\ell_2\), and
+\begin{equation}
+ \frac r{(r,h_0)}\mid \ell_1-\ell_2.
+ \label{eq:tpc57-same-divisor-spacing}
+\end{equation}
+In particular,
+\begin{equation}
+ \boxed{r\le HL.}
+ \label{eq:tpc57-same-divisor-bound}
+\end{equation}
+Therefore, on a cofactor block \(r\in[R,2R]\) with \(R>HL\), a fixed
+divisor \(d\) contributes at most one terminal atom to any coarse output
+fiber.
+\end{corollary}
+
+\begin{proof}
+In the unique factorization of
+\cref{prop:tpc57-factor-exchange}, equality \(d_1=d_2\) gives
+\(b=c=1\), \(a=d\), and \(e=r\).  Distinctness then forces
+\(\ell_1\ne\ell_2\), while
+\eqref{eq:tpc57-exchange-divisibility} gives
+\eqref{eq:tpc57-same-divisor-spacing}.  Since \(r\) is squarefree,
+\((r,h_0)\mid H\), and since two points of \([L,2L]\) differ by at most
+\(L\), the asserted bound follows.
+\end{proof}
+
+\begin{proposition}[Large exchanged factors in a balanced block]
+\label{prop:tpc57-large-exchange}
+Assume in addition that \(L>4D\), that \(d_1\ne d_2\), and that
+\begin{equation}
+ d_i\in[D,2D],\qquad r_i\in[R,2R]\qquad(i=1,2).
+ \label{eq:tpc57-common-dyadic-block}
+\end{equation}
+Then
+\begin{equation}
+ b\ell_1-c\ell_2\ne0
+ \label{eq:tpc57-nonzero-source-exchange}
+\end{equation}
+and the exchanged factors in
+\eqref{eq:tpc57-factor-swap} obey
+\begin{equation}
+ \boxed{
+ b^2\ge\frac{R}{6HL},
+ \qquad
+ c^2\ge\frac{R}{6HL}.}
+ \label{eq:tpc57-large-exchange-bound}
+\end{equation}
+Equivalently, both exchanged factor packets have size at least
+\[
+ \left(\frac{R}{6HL}\right)^{1/2}.
+\]
+\end{proposition}
+
+\begin{proof}
+If \(b\ell_1=c\ell_2\), pairwise coprimality of \(b,c\) implies
+\(b\mid\ell_2\) and \(c\mid\ell_1\).  But
+\(b,c\le2D<L/2\le\ell_i/2\), and the \(\ell_i\) are prime.  Hence
+\(b=c=1\), contrary to \(d_1\ne d_2\).  This proves
+\eqref{eq:tpc57-nonzero-source-exchange}.
+
+By \eqref{eq:tpc57-exchange-divisibility}, squarefreeness of \(e\), and
+the definition of \(H\),
+\[
+ e\le H|b\ell_1-c\ell_2|
+ \le2HL(b+c).
+\]
+The ratio \(b/c=d_1/d_2\) lies in \([1/2,2]\).  Thus
+\(e\le6HLb\) and, symmetrically, \(e\le6HLc\).  Since
+\(r_2=be\ge R\) and \(r_1=ce\ge R\), one also has
+\(e\ge R/b\) and \(e\ge R/c\).  Combining the two pairs of inequalities
+gives \eqref{eq:tpc57-large-exchange-bound}.
+\end{proof}
+
+\subsection{The exact partner candidate set}
+
+Fix a terminal atom \(u=(d\ell,r,j,\gamma)\).  Define
+\(\mathfrak C(u)\) to be the set of triples \((b,c,\ell')\) for which
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item \(b\mid d\), \(c\mid r\), and
+       \((b,c)\ne(1,1)\);
+ \item
+       \[
+        d'=\frac d b c,
+        \qquad r'=\frac r c b
+       \]
+       are integers in the declared divisor and cofactor supports;
+ \item \(\ell'\) is in the exact declared source-prime support and the
+       atom
+       \[
+        u'=\left(d'\ell',r',j,\gamma\right)
+       \]
+       belongs to the literal terminal-admissible universe, including all
+       retained-pair, residue, cutoff, and carrier restrictions.
+\end{enumerate}
+The terminal prime of \(u'\) is not a free coordinate: it is exactly
+\begin{equation}
+ p'=\frac{d'\ell'j+h_0}{r'}.
+ \label{eq:tpc57-partner-prime}
+\end{equation}
+
+\begin{proposition}[Exact partner parameterization]
+\label{prop:tpc57-exact-partner-set}
+The map
+\begin{equation}
+ u'\longmapsto
+ \left(\frac d{(d,d')},
+       \frac{d'}{(d,d')},\ell'\right)
+ \label{eq:tpc57-partner-map}
+\end{equation}
+is a bijection from the distinct-divisor terminal partners of \(u\) in
+its full coarse output fiber onto \(\mathfrak C(u)\).  Same-divisor
+partners are exactly the further source primes on the single determinant
+ladder with \(d'=d\) and \(r'=r\).
+\end{proposition}
+
+\begin{proof}
+For a partner \(u'\), apply
+\cref{prop:tpc57-factor-exchange} with \(d_1=d,r_1=r\).  It gives the
+unique divisors \(b=d/(d,d')\) and \(c=d'/(d,d')\), and
+\eqref{eq:tpc57-relative-factor-swap}; literal membership gives all the
+conditions defining \(\mathfrak C(u)\).  Conversely, every element of
+\(\mathfrak C(u)\) defines a literal terminal atom with
+\(d'r'=dr=s\), the same \(j,\gamma\), and hence the same output key.
+Uniqueness of the factor swap and of the source row proves bijectivity.
+The case \(d'=d\) has \(b=c=1\) and is precisely the fixed-divisor
+ladder.
+\end{proof}
+
+Assume now that the root cofactor satisfies \(r\in[R,2R]\), and constrain
+its partners to the same block \(r'\in[R,2R]\).  Define
+\begin{equation}
+ \mathfrak E_R(d,r)
+ :=\left\{(b,c):\exists\ell'\;
+   \begin{array}{l}
+   (b,c,\ell')\in\mathfrak C(u),\\[-2pt]
+   r'=(r/c)b\in[R,2R]
+   \end{array}\right\}.
+ \label{eq:tpc57-same-block-exchange-set}
+\end{equation}
+The fixed-divisor ladder spacing gives the
+deterministic degree estimate
+\begin{equation}
+ \#\{u'\ne u:q(u')=q(u),\ r'\in[R,2R]\}
+ \le
+ \left\lfloor\frac{HL}{R}\right\rfloor
+ +\left(1+\left\lfloor\frac{HL}{R}\right\rfloor\right)
+   |\mathfrak E_R(d,r)|.
+ \label{eq:tpc57-partner-degree-bound}
+\end{equation}
+When \(d'\ne d\), every pair counted by
+\(\mathfrak E_R(d,r)\) additionally satisfies
+\eqref{eq:tpc57-large-exchange-bound}.  This is sharper structural
+information than the untruncated divisor bound
+\(|\mathfrak E_R(d,r)|\le\tau(d)\tau(r)\), although it does not by itself
+force the candidate set to be empty.
+
+\begin{corollary}[High-cofactor structural exclusion]
+\label{cor:tpc57-high-cofactor-exclusion}
+Under the hypotheses above, if
+\begin{equation}
+ R>24HLD^2,
+ \label{eq:tpc57-high-cofactor-threshold}
+\end{equation}
+then every coarse terminal fiber restricted to
+\(d\in[D,2D]\) and \(r\in[R,2R]\) contains at most one atom.
+\end{corollary}
+
+\begin{proof}
+The hypothesis implies \(R>HL\), so
+\cref{cor:tpc57-same-divisor-short} excludes a same-divisor pair.  For a
+cross-divisor pair, \(b\le d_1\le2D\), whereas
+\eqref{eq:tpc57-large-exchange-bound} and
+\eqref{eq:tpc57-high-cofactor-threshold} give \(b^2>4D^2\), a
+contradiction.
+\end{proof}
+
+There is also a full-fiber version, with only a harmless change of the
+constant.  It is useful when a core cofactor block is used merely to find
+energy and no block-restricted output is introduced.
+
+\begin{corollary}[A high-cofactor atom is a full-fiber singleton]
+\label{cor:tpc57-high-cofactor-full-singleton}
+Assume \(L>4D\).  Let \(u_1\) be a terminal atom with \(d_1\in[D,2D]\) and
+\(r_1\in[R,2R]\), while every possible source divisor in its full literal
+carrier remains in \([D,2D]\).  If
+\begin{equation}
+ R>48HLD^2,
+ \label{eq:tpc57-full-singleton-threshold}
+\end{equation}
+then \(u_1\) has no distinct terminal partner anywhere in its full coarse
+output fiber.
+\end{corollary}
+
+\begin{proof}
+Every partner has
+\(r_2/r_1=d_1/d_2\in[1/2,2]\), hence
+\(r_2\in[R/2,4R]\).  A same-divisor partner is excluded by
+\cref{cor:tpc57-same-divisor-short}.  For a cross-divisor partner, the
+proof of \cref{prop:tpc57-large-exchange} still gives
+\(e\le6HLb\), while \(r_2=be\ge R/2\).  Therefore
+\[
+ b^2\ge\frac{R}{12HL}>4D^2,
+\]
+contradicting \(b\le d_1\le2D\).
+\end{proof}
+
+The last corollary is a support theorem only.  In fact, the inherited
+large-prime carrier has a global cofactor ceiling that is disjoint from
+this high-cofactor regime; see
+\cref{eq:tpc57-large-prime-r-ceiling,eq:tpc57-high-cofactor-global-gap}.
+Thus the corollary is a sharp structural boundary, not an activation
+mechanism for the present physical packet.
+
+Finally, the factor geometry localizes possible partners up to a constant
+scale enlargement.  If one atom has \(r_1\in[R,2R]\), then every atom in
+its full coarse fiber satisfies
+\begin{equation}
+ \frac12\le\frac{r_2}{r_1}=\frac{d_1}{d_2}\le2,
+ \qquad
+ r_2\in[R/2,4R].
+ \label{eq:tpc57-cofactor-saturation}
+\end{equation}
+Thus a singleton audit for a core block needs to inspect only its
+constant-factor saturation, not remote cofactor scales.  This observation
+does not license a lower bound for a block-restricted output to be returned
+to the full sum; it merely identifies the complete set in which a full
+fiber partner can occur.

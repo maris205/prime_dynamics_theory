@@ -1,0 +1,429 @@
+\section{Occupancy barrier, endpoint ledger, and the next gate}
+\label{sec:tpc57-endpoint-claims}
+
+The preceding sections give exact lower bounds once a positive fraction of
+the terminal diagonal lies in singleton fibers of the complete physical
+output.  They do not supply that fraction.  This section records why the
+existing support bounds do not imply it, states the precise weighted
+factor-exchange estimate still missing, and places that estimate in the
+inherited \(1/400\) ledger.
+
+\subsection{Why a multiplicity upper bound is not singleton occupancy}
+
+The TPC--55 determinant-ladder argument gives an upper bound for the number
+of terminal atoms in one residual fiber.  Such a bound is useful for a
+post-terminal transversal cover, but it points in the wrong direction for
+the undeleted singleton route.
+
+\begin{proposition}[Sharp occupancy barrier]
+\label{prop:tpc57-occupancy-barrier}
+For every integer \(M\ge2\) and every \(E>0\), there is a finite fiber
+system and a vector \(x\) such that
+\begin{equation}
+ D(x)=E,
+ \qquad
+ \max_y n_y(x)\le M,
+ \qquad
+ D_1(x)=G(x)=0.
+ \label{eq:tpc57-bounded-degree-zero-singleton}
+\end{equation}
+Consequently no positive lower bound for \(D_1/D\), or for \(G/D\), follows
+from a finite maximal-fiber bound alone.  The conclusion remains true when
+the maximal degree is \(2\).
+\end{proposition}
+
+\begin{proof}
+Use one fiber with two coordinates
+\[
+ x_{u_1}=\sqrt{E/2},
+ \qquad
+ x_{u_2}=-\sqrt{E/2}.
+\]
+Its active degree is \(2\), its singleton energy is zero, and its grouped
+sum vanishes.  This is also the case \(D_0=I_0=E\) of
+\cref{prop:tpc57-first-moment-sharpness}.
+\end{proof}
+
+The obstruction is not cancellation-specific.  Even if both coordinates
+in every doubleton have the same phase, the singleton energy is still zero.
+Thus replacing the grouped square by a random-phase heuristic would not
+prove the required occupancy statement.  Likewise, terminal activation
+\(\cD_R^{\rm core}>0\) says only that some terminal energy survives; it does
+not say whether that energy lies in degree-one or multiple fibers.
+
+The rowwise minimax theorem makes the same boundary coefficient-sensitive.
+For a declared baseline carrier, the best constant uniform over the bounded
+row-coefficient class is
+\[
+ \beta_X=\min_{m:W_m>0}\frac{W_{m,1}}{W_m}.
+\]
+If one positive-weight row has no structurally singleton edge, then
+\(\beta_X=0\).  An upper bound on every fiber degree does not exclude this
+case.  Conversely, \(\beta_X=0\) is only a failure of the uniform singleton
+route; it is not a proof that the distinguished grouped vector vanishes.
+
+\subsection{The current endpoint scales}
+
+The literal scale dictionary inherited from TPC--53 and retained in
+TPC--55--56 is
+\begin{equation}
+ Q=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)},
+ \qquad
+ D=X^{10049/52500+o(1)},
+ \label{eq:tpc57-endpoint-QJD}
+\end{equation}
+and therefore
+\begin{equation}
+ L=Q/D=X^{99979/210000+o(1)}.
+ \label{eq:tpc57-endpoint-L}
+\end{equation}
+For a dyadic cofactor block
+\(r\asymp R=X^{\theta_R+o(1)}\), the inherited
+coefficient-blind capacity bound is
+\begin{equation}
+ M_X(R)
+ \ll X^{o(1)}\left(1+\frac LR\right),
+ \qquad
+ \mu_{\rm cap}
+ =\left(\frac{99979}{210000}-\theta_R\right)_+.
+ \label{eq:tpc57-capacity-exponent}
+\end{equation}
+
+The enlarged partner range \([R/2,4R]\) is the union of three dyadic
+blocks with scales comparable to \(R\).  Hence
+\begin{equation}
+ \max_y d_y^+(R)
+ \ll X^{o(1)}\left(1+\frac LR\right)
+ \label{eq:tpc57-enlarged-capacity-bound}
+\end{equation}
+under the same polynomial-size residual-label hypothesis as TPC--55.  The
+constant-factor enlargement changes no exponent.
+
+At the older cofactor scale \(R\asymp J\), one has
+\begin{equation}
+ \frac LR
+ =X^{15077/105000+o(1)},
+ \qquad
+ \mu_{\rm cap}=\frac{15077}{105000}.
+ \label{eq:tpc57-old-cofactor-capacity}
+\end{equation}
+This support-only exponent exceeds the nominal endpoint allowance by
+\begin{equation}
+ \frac{15077}{105000}-\frac1{400}
+ =\frac{29629}{210000}>0.
+ \label{eq:tpc57-capacity-endpoint-deficit}
+\end{equation}
+
+The factor-exchange geometry also gives an exact support theorem in a much
+higher cofactor regime: by
+\cref{cor:tpc57-high-cofactor-full-singleton}, every core atom is a
+singleton in its complete terminal fiber if
+\begin{equation}
+ R>48HLD^2,
+ \qquad H=\rad|h_0|.
+ \label{eq:tpc57-endpoint-high-cofactor-test}
+\end{equation}
+Here \(L>4D\) holds for all sufficiently large \(X\) at the declared
+scales, and \(H=X^{o(1)}\) because \(h_0\) is fixed.  Let \(N_+\) denote
+the inherited maximum positive target size.  The large-prime descent
+imposes the stronger global range restriction \citep{WangTPC45}
+\begin{equation}
+ p>\sqrt{N_+},
+ \qquad
+ r=\frac{mj+h_0}{p}<\sqrt{N_+}=X^{1/2+o(1)}.
+ \label{eq:tpc57-large-prime-r-ceiling}
+\end{equation}
+On the other hand,
+\begin{equation}
+ LD^2=X^{180371/210000+o(1)},
+ \qquad
+ \frac{\sqrt{N_+}}{HLD^2}
+ =X^{-75371/210000+o(1)}.
+ \label{eq:tpc57-high-cofactor-global-gap}
+\end{equation}
+Consequently no terminal atom in the inherited physical carrier can lie
+in a block satisfying
+\eqref{eq:tpc57-endpoint-high-cofactor-test} once \(X\) is large.  The
+high-cofactor theorem is a valid structural boundary, but its physical
+activation door is closed for the present packet.
+
+For comparison, at the older scale \(R\asymp J\),
+\begin{equation}
+ \frac{R}{HLD^2}
+ =X^{-55273/105000+o(1)}.
+ \label{eq:tpc57-high-cofactor-endpoint-gap}
+\end{equation}
+Thus even before using the global ceiling, the old block misses the
+threshold by a fixed positive power.
+
+For \(R\gg L\), the capacity is only \(X^{o(1)}\); nevertheless a carrier
+made entirely of doubletons still has zero singleton energy.  Thus moving
+to a balanced block removes the positive-power multiplicity cost of a
+transversal cover but does not prove the occupancy estimate needed here.
+Primality may thin the ambient ladder by logarithmic factors; the existing
+upper-bound sieve does not turn this support count into a weighted
+degree-one lower bound.
+
+\subsection{The exact missing weighted factor-exchange estimate}
+
+The weakest first-moment statement needed for the distinguished vector is
+not an unweighted count.  By
+\eqref{eq:tpc57-exact-weighted-physical-incidence}, it is precisely
+\begin{equation}
+ \boxed{
+ \sum_m|\zeta_m|^2
+   \mathfrak J_{m,1}^{R,+}(\zeta)
+ \le
+ (1-\delta_R)
+ \sum_m|\zeta_m|^2W_{m,R},
+ \qquad
+ \delta_R>0.}
+ \label{eq:tpc57-exact-missing-weighted-estimate}
+\end{equation}
+Every pair counted on the left satisfies the full literal system
+\begin{equation}
+ \begin{gathered}
+ u=(d\ell,r,j,\gamma),
+ \qquad
+ v=(d'\ell',r',j,\gamma),
+ \qquad
+ dr=d'r',\qquad u\ne v,\\
+ pr-d\ell j=h_0,
+ \qquad
+ p'r'-d'\ell'j=h_0,\\
+ R\le r\le2R,
+ \qquad
+ R/2\le r'\le4R,
+ \end{gathered}
+ \label{eq:tpc57-complete-factor-exchange-system}
+\end{equation}
+with both terminal primes, all squarefree/coprime conditions, the literal
+mask, every profile cutoff, and the actual row coefficients retained.
+The energy weight is attached to the root \(u\):
+\begin{equation}
+ |x_u|^2=|c_u|^2|\zeta_{m_u}|^2.
+ \label{eq:tpc57-root-physical-weight}
+\end{equation}
+Neither the partner count nor the root count may replace this weight
+without a separate comparison theorem.
+
+The coefficient-independent baseline majorant gives the stronger sufficient
+target
+\begin{equation}
+ \boxed{
+ \sum_m|\zeta_m|^2J_{m,1}^{R,+}
+ \le
+ (1-\delta_R)
+ \sum_m|\zeta_m|^2W_{m,R}.}
+ \label{eq:tpc57-baseline-distinguished-target}
+\end{equation}
+A still stronger, coefficient-uniform rowwise target is
+\begin{equation}
+ J_{m,1}^{R,+}
+ \le(1-\delta_R)W_{m,R}
+ \qquad(m:W_{m,R}>0).
+ \label{eq:tpc57-baseline-uniform-row-target}
+\end{equation}
+The implications are
+\begin{equation}
+ \eqref{eq:tpc57-baseline-uniform-row-target}
+ \Longrightarrow
+ \eqref{eq:tpc57-baseline-distinguished-target}
+ \Longrightarrow
+ \eqref{eq:tpc57-exact-missing-weighted-estimate}
+ \Longrightarrow
+ \cG_{h_0}(G_X^L)
+ \ge\delta_R\cD_R^{\rm core}.
+ \label{eq:tpc57-collision-target-hierarchy}
+\end{equation}
+On the admissible inherited carrier, no estimate in this chain is currently
+proved asymptotically for the \(R\asymp J\) packet.
+The first target is suitable for a theorem uniform over
+the bounded coefficient class; the middle target may exploit the
+distinguished coefficient energy; the last is the exact weakest target for
+the first rooted-moment bridge.
+
+If
+\begin{equation}
+ \delta_R=X^{-\lambda_{\rm sing}+o(1)},
+ \label{eq:tpc57-singleton-loss-exponent}
+\end{equation}
+then \(\lambda_{\rm sing}\) is the singleton-occupancy loss.  Together with
+the exact activation chain in
+\eqref{eq:tpc57-prospective-activation-ledger}, a direct already-reassembled
+fixed-\(h_0\) route must eventually satisfy
+\begin{equation}
+ \boxed{
+ \lambda_{\rm sel}+\lambda_{\rm blk}
+ +\lambda_{\rm term}+\lambda_{\rm sing}
+ +\lambda_{\rm Gram}+\lambda_{\rm bdry}+\lambda_{\rm tail}
+ \le\frac1{400}.}
+ \label{eq:tpc57-full-endpoint-budget}
+\end{equation}
+No separate coherence loss is inserted after the singleton estimate.  No
+frozen-shift localization or projective-reassembly loss is inserted in the
+direct physical route either.  If a different proof passes through those
+interfaces, their losses must be restored explicitly.  At equality in
+\eqref{eq:tpc57-full-endpoint-budget}, an error already of order
+\(X^{-1/400+o(1)}\) need not be absorbable; strict slack or a closed
+constant-level comparison is the safe endpoint condition.
+
+\subsection{Six-point physical audit}
+
+The proposed singleton bridge passes the following audit.
+\begin{enumerate}[label=\textup{(A\arabic*)},leftmargin=3.2em]
+ \item \emph{Literal coefficients.}
+       The terminal amplitude is the exact
+       \(x_u=(D_{h_0}G_X^L)_u\).  Its row-factorized form
+       \(x_u=c_u\zeta_{m_u}\) retains the common output factor, source
+       shapes, binary mask, profiles, cofactor sign, and shaped terminal
+       logarithm.  The collision statistic is weighted by \(|x_u|^2\),
+       not by a proxy counting measure.
+ \item \emph{Fixed physical shift.}
+       Both equations in
+       \eqref{eq:tpc57-complete-factor-exchange-system} use the one specified
+       \(h_0\).  No averaged or frozen intercept is introduced.
+ \item \emph{Physical atomic normalization.}
+       The pre-terminal, core terminal, collision, and grouped energies all
+       use the inherited raw counting-measure atoms.  Repetitions in the
+       cofactor label remain distinct, and the terminal multiplier is not
+       hidden in a modified input norm.
+ \item \emph{Canonical representation.}
+       Collisions are defined by the complete output key
+       \(q(u)=(\gamma,d_mr,j)\), with the terminal-prime coordinate resolved
+       exactly as in TPC--55.  The core and enlarged block are deterministic
+       cofactor ranges.  No favorable rank, phase sector, projective layer,
+       or ambient prime ladder is selected.
+ \item \emph{Actual active support.}
+       The baseline terminal carrier and the physically active carrier are
+       kept distinct.  The exact statistic
+       \(\mathfrak J_{m,1}^{R,+}(\zeta)\) uses active degrees, while
+       \(J_{m,1}^{R,+}\) is explicitly labeled as a support-only majorant.
+       The enlarged-block lemma accounts for every full-output partner of a
+       core root.
+ \item \emph{Endpoint budget.}
+       Block occupancy, terminal activation, and singleton occupancy have
+       separate exponents.  Native-Gram, boundary, and tail losses remain
+       visible in \eqref{eq:tpc57-full-endpoint-budget}.  No support-only
+       multiplicity estimate is entered as a positive singleton fraction,
+       and the high-cofactor support theorem is not used outside its literal
+       range.
+\end{enumerate}
+
+\subsection{Claim table}
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.29\textwidth}
+                >{\raggedright\arraybackslash}p{0.60\textwidth}}
+\toprule
+Statement & Status \\
+\midrule
+Singleton floor and rooted collision expansion
+& Unconditional finite-dimensional theorems (L0). \\
+Core-to-full collision bridge
+& Unconditional finite-dimensional lower bound for the undeleted grouped
+  vector (L0). \\
+Sharp rowwise minimax constant
+& Exact finite weighted-graph theorem for the bounded row-coefficient class
+  (L0). \\
+Prime-resolved literal row/fiber representation
+& Exact on the inherited fixed-\(h_0\) terminal support under the TPC--55
+  injection and TPC--56 gauge factorization (L1). \\
+Enlarged-block partner localization
+& Exact factor-exchange consequence of \(dr=d'r'\) and
+  \(d,d'\in[D,2D]\); no arithmetic occupancy assertion (L1). \\
+High-cofactor full-fiber singleton exclusion
+& Exact support theorem under \(R>48HLD^2\) (L1); the inherited
+  \(r<X^{1/2+o(1)}\) ceiling makes this range physically empty. \\
+Weighted physical incidence identity
+& Exact specialization to the distinguished physical coefficient vector
+  (L1). \\
+Positive singleton fraction on a cofactor core
+& Conditional on
+  \eqref{eq:tpc57-exact-missing-weighted-estimate}; not proved. \\
+Core block occupancy and terminal activation
+& Separate hypotheses; not proved here. \\
+Undeleted fixed-\(h_0\) residual lower square
+& Follows conditionally from the preceding three gates; no unconditional
+  asymptotic lower bound is claimed. \\
+Native affine Gram, boundary, and tail reconnection
+& Not proved. \\
+Parity improvement or twin-prime consequence
+& Not claimed. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The level terminology is therefore conservative.  L0 denotes exact
+finite-dimensional identities and extremal laws.  L1 denotes exact
+specialization to the declared literal support and factor-exchange geometry.
+An L2 advance would require a quantitative estimate such as
+\eqref{eq:tpc57-exact-missing-weighted-estimate}, together with activation
+and every downstream comparison needed to reconnect to the parent physical
+correlation.  No result in the current paper is labeled L2.
+
+\subsection{The next gate}
+
+The factor-exchange localization leaves one closed structural shortcut and
+four live analytic or negative routes.
+\begin{enumerate}[label=\textbf{Door \Alph*.},leftmargin=3.8em]
+ \item \emph{Closed high-cofactor shortcut.}
+       The support theorem would give \(\delta_R=1\) above
+       \(48HLD^2\), but
+       \cref{eq:tpc57-large-prime-r-ceiling,eq:tpc57-high-cofactor-global-gap}
+       show that the inherited carrier contains no such terminal atom.  This
+       door is closed for the current packet.  Reopening it would require a
+       different large-prime decomposition or physical carrier, not merely a
+       new dyadic choice of \(R\).
+ \item \emph{Distinguished weighted incidence.}
+       Estimate the exact left side of
+       \eqref{eq:tpc57-exact-missing-weighted-estimate}, retaining the root
+       energy \(|c_u\zeta_{m_u}|^2\).  This is the weakest first-moment
+       target and may exploit concentration of the actual coefficients away
+       from collision-rich rows.
+ \item \emph{Uniform row factor exchange.}
+       Prove \eqref{eq:tpc57-baseline-uniform-row-target} by analyzing the
+       coupled system \eqref{eq:tpc57-complete-factor-exchange-system} for
+       each source row.  This would give a theorem uniform over the inherited
+       bounded coefficient class, but is strictly stronger than Door B.
+ \item \emph{Higher rooted moments.}
+       If the first-moment truncation is too crude, define core-rooted
+       moments with
+       \(\binom{n_{q(u)}^{\rm phys}-1}{r}\).  The exact Bonferroni hierarchy
+       of \cref{thm:tpc57-collision-moment-expansion} can then certify
+       singleton energy through an odd higher truncation.  Each new moment
+       requires its own weighted factor-exchange estimate.
+ \item \emph{Saturation or route closure.}
+       If none of the preceding estimates can hold, construct literal
+       carriers for which the weighted singleton constant tends to zero, or
+       prove that every available support-only estimate is saturated by
+       collision-rich rows.  Such a theorem would close the singleton door
+       without asserting cancellation of the distinguished full output.
+\end{enumerate}
+
+Door A records a closed structural boundary.  Door B is the economical live
+analytic target.  The enlarged block shows that Door B is local in cofactor
+scale, but the occupancy barrier shows that it is not a consequence of the
+known ladder capacity bound.  A positive
+estimate, together with core terminal activation, would give the first
+undeleted fixed-\(h_0\) coherent lower square in this route; a sharp
+negative estimate would identify precisely why singleton occupancy cannot
+carry the endpoint argument.
+
+\paragraph{Conclusion.}
+The undeleted terminal square has an exact phase-blind floor: every unit of
+core energy whose full physical fiber is a singleton survives unchanged.
+All partners of a cofactor-core atom lie in one constant-factor enlarged
+block, and the resulting obstruction is the explicit coefficient-weighted
+factor-exchange incidence
+\eqref{eq:tpc57-exact-missing-weighted-estimate}.  The high-cofactor regime
+is disjoint from the inherited carrier; on its admissible cofactor range,
+the current support theory bounds how many partners may occur but does not
+show that a positive weighted fraction has none.  Terminal activation,
+weighted singleton occupancy,
+native-Gram comparison, boundary control, and tail reconnection therefore
+remain separate gates, all strictly before any parity-sensitive or
+twin-prime conclusion.

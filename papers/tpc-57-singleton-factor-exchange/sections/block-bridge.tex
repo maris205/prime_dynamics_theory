@@ -1,0 +1,384 @@
+\section{A cofactor-core bridge to the complete physical output}
+\label{sec:tpc57-block-bridge}
+
+The singleton floor becomes useful only after two support issues are kept
+separate.  First, a cofactor block is a set of input coordinates, whereas
+the target norm is the complete undeleted output.  A lower bound for the
+grouped norm of the restricted block is not monotone under restoring the
+omitted coordinates.  Second, whether a terminal-admissible coordinate is
+physically active depends on the distinguished source coefficient.  This
+section inserts both distinctions into the literal fixed-shift map and
+identifies the exact weighted collision estimate that would close the
+singleton route.
+
+\subsection{The literal terminalized vector and a cofactor core}
+
+Fix \(h_0\ne0\), one declared left source system, and the direct
+residue/orbit slice inherited from TPC--53--56
+\citep{WangTPC53,WangTPC55,WangTPC56}.  We use the exact terminal and
+physical sets
+\[
+ \cU_{h_0}^{\rm phys}\subseteq
+ \cU_{h_0}^{\rm term}\subseteq\cU^{\rm pre}
+\]
+and the complete output key
+\begin{equation}
+ q(u)=(\gamma,d_mr,j),
+ \qquad u=(m,r,j,\gamma),
+ \label{eq:tpc57-literal-output-key}
+\end{equation}
+from TPC--55.  Put
+\begin{equation}
+ x_u:=(D_{h_0}G_X^L)_u,
+ \qquad u\in\cU_{h_0}^{\rm term}.
+ \label{eq:tpc57-literal-terminalized-vector}
+\end{equation}
+By definition of \(\cU_{h_0}^{\rm phys}\), and because the terminal
+multiplier \(\mu(r_u)\Lambda(p_ur_u)\) is nonzero on
+\(\cU_{h_0}^{\rm term}\), one has
+\begin{equation}
+ x_u\ne0
+ \quad\Longleftrightarrow\quad
+ [G_X^L]_u\ne0
+ \quad\Longleftrightarrow\quad
+ u\in\cU_{h_0}^{\rm phys}.
+ \label{eq:tpc57-terminal-physical-equivalence}
+\end{equation}
+Thus the active multiplicity of a physical output fiber is
+\begin{equation}
+ n_y^{\rm phys}
+ :=\left|q^{-1}(y)\cap\cU_{h_0}^{\rm phys}\right|.
+ \label{eq:tpc57-physical-fiber-degree}
+\end{equation}
+All norms below use raw counting measure.  In particular,
+\begin{align}
+ \cD_{h_0}(G_X^L)
+ &=\sum_{u\in\cU_{h_0}^{\rm term}}|x_u|^2,
+ \label{eq:tpc57-literal-terminal-diagonal}\\
+ \cG_{h_0}(G_X^L)
+ &=\sum_y\left|\sum_{u\in q^{-1}(y)}x_u\right|^2.
+ \label{eq:tpc57-literal-complete-output}
+\end{align}
+The sum in \eqref{eq:tpc57-literal-complete-output} is the original
+undeleted fixed-\(h_0\) synthesis, not a selected packet.
+
+For a cofactor scale \(R>0\), define the pre-terminal and terminal core
+sets
+\begin{align}
+ \cB_R^{\rm pre}
+ &:=\{u\in\cU^{\rm pre}:R\le r_u\le2R\},
+ \label{eq:tpc57-preterminal-cofactor-core}\\
+ \cB_R^{\rm term}
+ &:=\cB_R^{\rm pre}\cap\cU_{h_0}^{\rm term}.
+ \label{eq:tpc57-terminal-cofactor-core}
+\end{align}
+Its terminal diagonal energy is
+\begin{equation}
+ \cD_R^{\rm core}
+ :=\sum_{u\in\cB_R^{\rm term}}|x_u|^2.
+ \label{eq:tpc57-core-terminal-energy}
+\end{equation}
+The rooted collision incidence of the core against the \emph{full}
+physical vector is
+\begin{equation}
+ \cI_R^{\rm full}
+ :=\sum_{u\in\cB_R^{\rm term}\cap\cU_{h_0}^{\rm phys}}
+ |x_u|^2\bigl(n_{q(u)}^{\rm phys}-1\bigr).
+ \label{eq:tpc57-core-full-physical-incidence}
+\end{equation}
+The multiplicity in \eqref{eq:tpc57-core-full-physical-incidence} is not
+computed in the restricted block.  This is the essential point that makes
+the resulting lower bound a statement about the complete output.
+
+\begin{theorem}[Full-output cofactor-core singleton bridge]
+\label{thm:tpc57-physical-core-bridge}
+For the distinguished literal terminal vector,
+\begin{equation}
+ \boxed{
+ \cG_{h_0}(G_X^L)
+ \ge
+ \bigl(\cD_R^{\rm core}-\cI_R^{\rm full}\bigr)_+.}
+ \label{eq:tpc57-physical-core-floor}
+\end{equation}
+Consequently, if \(\cD_R^{\rm core}>0\) and
+\begin{equation}
+ \cI_R^{\rm full}
+ \le(1-\delta_R)\cD_R^{\rm core}
+ \qquad(0<\delta_R\le1),
+ \label{eq:tpc57-core-incidence-target}
+\end{equation}
+then the complete undeleted output satisfies
+\begin{equation}
+ \boxed{
+ \cG_{h_0}(G_X^L)
+ \ge\delta_R\cD_R^{\rm core}.}
+ \label{eq:tpc57-core-positive-output}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Apply \cref{prop:tpc57-core-to-full-bridge} to the full terminalized vector
+\eqref{eq:tpc57-literal-terminalized-vector} and the coordinate subset
+\(\cB_R^{\rm term}\).  Equations
+\eqref{eq:tpc57-terminal-physical-equivalence} and
+\eqref{eq:tpc57-physical-fiber-degree} identify the abstract full active
+multiplicity with \(n_y^{\rm phys}\), giving
+\eqref{eq:tpc57-physical-core-floor}.  Substitution of
+\eqref{eq:tpc57-core-incidence-target} gives
+\eqref{eq:tpc57-core-positive-output}.
+\end{proof}
+
+No inequality between
+\(\cG_{h_0}(G_X^L\one_{\cB_R^{\rm pre}})\) and
+\(\cG_{h_0}(G_X^L)\) is used in the proof.  Coordinates outside the core
+may cancel a restricted block sum.  The theorem avoids that invalid
+monotonicity step by retaining only core coordinates that are singleton in
+the full active fiber system.
+
+\subsection{Every partner lies in one enlarged cofactor block}
+
+Although \eqref{eq:tpc57-core-full-physical-incidence} uses full active
+multiplicities, its possible partners are geometrically local.  Define
+\begin{align}
+ \cB_R^+
+ &:=\{u\in\cU_{h_0}^{\rm term}:R/2\le r_u\le4R\},
+ \label{eq:tpc57-enlarged-terminal-block}\\
+ n_y^+(R)
+ &:=\left|q^{-1}(y)\cap\cU_{h_0}^{\rm phys}\cap\cB_R^+\right|.
+ \label{eq:tpc57-enlarged-physical-degree}
+\end{align}
+
+\begin{lemma}[Factor-exchange localization]
+\label{lem:tpc57-factor-exchange-localization}
+Let \(u\in\cB_R^{\rm term}\), and suppose
+\(v\in\cU_{h_0}^{\rm term}\) satisfies \(q(v)=q(u)\).  Then
+\begin{equation}
+ R/2\le r_v\le4R.
+ \label{eq:tpc57-partner-cofactor-range}
+\end{equation}
+In particular, if a physical fiber meets the core, then its complete
+physical multiplicity is already visible in the enlarged block:
+\begin{equation}
+ n_{q(u)}^{\rm phys}=n_{q(u)}^+(R)
+ \qquad
+ \bigl(u\in\cB_R^{\rm term}\cap\cU_{h_0}^{\rm phys}\bigr).
+ \label{eq:tpc57-full-degree-enlarged-identity}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write
+\[
+ u=(d\ell,r,j,\gamma),
+ \qquad
+ v=(d'\ell',r',j,\gamma).
+\]
+Equality of the complete output keys gives the exact factor exchange
+\begin{equation}
+ dr=d'r'.
+ \label{eq:tpc57-factor-exchange-equation}
+\end{equation}
+Both source squarefree factors lie in the inherited dyadic interval
+\([D,2D]\).  Hence
+\[
+ r'=\frac d{d'}r,
+ \qquad
+ \frac12\le\frac d{d'}\le2.
+\]
+Together with \(R\le r\le2R\), this proves
+\eqref{eq:tpc57-partner-cofactor-range}.  Every full physical partner of a
+physical core atom is therefore counted by
+\eqref{eq:tpc57-enlarged-physical-degree}, proving
+\eqref{eq:tpc57-full-degree-enlarged-identity}.
+\end{proof}
+
+The constants \(1/2\) and \(4\) come only from the declared dyadic
+squarefree support.  Thus enlarging the core creates an \(O(1)\) cover and
+has no positive polynomial cost.  More explicitly,
+\begin{equation}
+ \boxed{
+ \cI_R^{\rm full}
+ =\sum_{\substack{u\in\cU_{h_0}^{\rm phys}\cap\cB_R^{\rm term}\\
+                  v\in\cU_{h_0}^{\rm phys}\cap\cB_R^+\\
+                  v\ne u,\ q(v)=q(u)}}|x_u|^2.}
+ \label{eq:tpc57-enlarged-rooted-pair-identity}
+\end{equation}
+This is an ordered pair sum with the terminal energy placed on the core
+root \(u\).  It is not an unweighted count of factor exchanges.
+
+\subsection{Row-factorized form of the exact missing estimate}
+
+The exact literal interface
+\eqref{eq:tpc57-exact-row-factorization} factors every terminal amplitude as
+\begin{equation}
+ x_u=\Omega_{q(u)}\kappa_u\zeta_{m_u}.
+ \label{eq:tpc57-literal-row-factorization}
+\end{equation}
+Here \(\kappa_u\) is the product of the shaped terminal logarithm, direct
+source shapes, mask, and every other displayed factor in the remaining
+amplitude except \(\zeta_{m_u}\).  Put
+\begin{equation}
+ c_u:=\Omega_{q(u)}\kappa_u
+ \label{eq:tpc57-baseline-physical-amplitude}
+\end{equation}
+and define the baseline-nondegenerate carrier
+\begin{equation}
+ \cU_{h_0}^{\circ}
+ :=\{u\in\cU_{h_0}^{\rm term}:c_u\ne0\}.
+ \label{eq:tpc57-baseline-terminal-carrier}
+\end{equation}
+Then
+\begin{equation}
+ x_u=c_u\zeta_{m_u},
+ \qquad
+ u\in\cU_{h_0}^{\circ},
+ \label{eq:tpc57-baseline-times-row-coefficient}
+\end{equation}
+and a baseline edge is physically active precisely when its row coefficient
+is nonzero.  Distinct terminal atoms in a fixed output fiber have distinct
+source rows by the prime-resolved injection of TPC--55.  Thus a fixed pair
+\((m,y)\) supports at most one baseline edge, as required by
+\cref{thm:tpc57-row-minimax}.
+
+For each row define its core baseline energy
+\begin{equation}
+ W_{m,R}
+ :=\sum_{\substack{u\in\cU_{h_0}^{\circ}\cap\cB_R^{\rm term}\\
+                   m_u=m}}|c_u|^2.
+ \label{eq:tpc57-core-row-weight}
+\end{equation}
+On the enlarged baseline carrier put
+\begin{equation}
+ d_y^+(R)
+ :=\left|q^{-1}(y)\cap\cU_{h_0}^{\circ}\cap\cB_R^+\right|,
+ \label{eq:tpc57-enlarged-baseline-degree}
+\end{equation}
+and define the support-only rooted row incidence
+\begin{equation}
+ J_{m,1}^{R,+}
+ :=\sum_{\substack{u\in\cU_{h_0}^{\circ}\cap\cB_R^{\rm term}\\
+                   m_u=m}}
+ |c_u|^2\bigl(d_{q(u)}^+(R)-1\bigr).
+ \label{eq:tpc57-enlarged-baseline-row-incidence}
+\end{equation}
+For the distinguished coefficient vector, let
+\begin{equation}
+ n_y^+(R;\zeta)
+ :=\left|\{v\in q^{-1}(y)\cap\cU_{h_0}^{\circ}\cap\cB_R^+:
+                   \zeta_{m_v}\ne0\}\right|
+ \label{eq:tpc57-enlarged-active-row-degree}
+\end{equation}
+and
+\begin{equation}
+ \mathfrak J_{m,1}^{R,+}(\zeta)
+ :=\one_{\{\zeta_m\ne0\}}
+   \sum_{\substack{u\in\cU_{h_0}^{\circ}\cap\cB_R^{\rm term}\\
+                   m_u=m}}
+ |c_u|^2\bigl(n_{q(u)}^+(R;\zeta)-1\bigr).
+ \label{eq:tpc57-enlarged-physical-row-incidence}
+\end{equation}
+The row indicator makes the active-root restriction literal.  In
+particular, an inactive row contributes zero rather than a spurious negative
+value from \(n_{q(u)}^+(R;\zeta)-1\).
+
+\begin{proposition}[Exact distinguished incidence and its baseline majorant]
+\label{prop:tpc57-weighted-incidence-factorization}
+The core diagonal and full rooted collision incidence satisfy
+\begin{align}
+ \cD_R^{\rm core}
+ &=\sum_m|\zeta_m|^2W_{m,R},
+ \label{eq:tpc57-weighted-core-energy}\\
+ \cI_R^{\rm full}
+ &=\sum_m|\zeta_m|^2
+   \mathfrak J_{m,1}^{R,+}(\zeta),
+ \label{eq:tpc57-exact-weighted-physical-incidence}\\
+ 0\le\mathfrak J_{m,1}^{R,+}(\zeta)
+ &\le J_{m,1}^{R,+}.
+ \label{eq:tpc57-physical-baseline-incidence-order}
+\end{align}
+Consequently the coefficient-weighted support estimate
+\begin{equation}
+ \sum_m|\zeta_m|^2J_{m,1}^{R,+}
+ \le(1-\delta_R)\sum_m|\zeta_m|^2W_{m,R}
+ \label{eq:tpc57-baseline-weighted-collision-target}
+\end{equation}
+is sufficient for the undeleted lower bound
+\eqref{eq:tpc57-core-positive-output}.
+\end{proposition}
+
+\begin{proof}
+Equation \eqref{eq:tpc57-weighted-core-energy} follows by substituting
+\eqref{eq:tpc57-baseline-times-row-coefficient} into
+\eqref{eq:tpc57-core-terminal-energy}.  For an active core root \(u\),
+\cref{lem:tpc57-factor-exchange-localization} identifies its full active
+degree with \(n_{q(u)}^+(R;\zeta)\).  Substitution into
+\eqref{eq:tpc57-core-full-physical-incidence} and grouping the roots by
+their source row proves \eqref{eq:tpc57-exact-weighted-physical-incidence}.
+Since active enlarged edges form a subset of the baseline enlarged carrier,
+\(n_y^+(R;\zeta)\le d_y^+(R)\), proving
+\eqref{eq:tpc57-physical-baseline-incidence-order}.  Therefore
+\eqref{eq:tpc57-baseline-weighted-collision-target} implies
+\eqref{eq:tpc57-core-incidence-target}, and
+\cref{thm:tpc57-physical-core-bridge} finishes the proof.
+\end{proof}
+
+The exact weakest first-moment target is
+\eqref{eq:tpc57-exact-weighted-physical-incidence} with
+\(\mathfrak J_{m,1}^{R,+}(\zeta)\).  Replacing it by the baseline quantity
+\(J_{m,1}^{R,+}\) is a stronger coefficient-independent sufficient
+condition.  Neither target follows from a maximal-degree upper bound: a
+carrier may consist entirely of doubleton fibers.
+
+\subsection{Activation and the prospective loss ledger}
+
+To state the route without hiding an occupancy assertion, let
+\(\cE_{\rm par}\) be the parent physical atomic energy before selection of
+the declared literal packet.  Define the selected pre-terminal energy and
+the core pre-terminal energy by
+\begin{align}
+ \cE_{\rm pre}(G_X^L)
+ &:=\sum_{u\in\cU^{\rm pre}}|[G_X^L]_u|^2,
+ \label{eq:tpc57-selected-preterminal-energy}\\
+ \cE_R^{\rm pre}(G_X^L)
+ &:=\sum_{u\in\cB_R^{\rm pre}}|[G_X^L]_u|^2.
+ \label{eq:tpc57-core-preterminal-energy}
+\end{align}
+Suppose, along a sequence of scales,
+\begin{align}
+ \cE_{\rm pre}(G_X^L)
+ &\ge X^{-\lambda_{\rm sel}+o(1)}\cE_{\rm par},
+ \label{eq:tpc57-parent-selection-hypothesis}\\
+ \cE_R^{\rm pre}(G_X^L)
+ &\ge X^{-\lambda_{\rm blk}+o(1)}
+       \cE_{\rm pre}(G_X^L),
+ \label{eq:tpc57-core-block-occupancy-hypothesis}\\
+ \cD_R^{\rm core}
+ &\ge X^{-\lambda_{\rm term}+o(1)}
+       \cE_R^{\rm pre}(G_X^L),
+ \label{eq:tpc57-core-terminal-activation-hypothesis}\\
+ \delta_R
+ &\ge X^{-\lambda_{\rm sing}+o(1)},
+ \qquad
+ \cI_R^{\rm full}\le(1-\delta_R)\cD_R^{\rm core}.
+ \label{eq:tpc57-core-singleton-fraction-hypothesis}
+\end{align}
+Then the exact bridge gives
+\begin{equation}
+ \boxed{
+ \cG_{h_0}(G_X^L)
+ \ge
+ X^{-(\lambda_{\rm sel}+\lambda_{\rm blk}
+       +\lambda_{\rm term}+\lambda_{\rm sing})+o(1)}
+ \cE_{\rm par}.}
+ \label{eq:tpc57-prospective-activation-ledger}
+\end{equation}
+
+Equation \eqref{eq:tpc57-prospective-activation-ledger} is a conditional
+composition, not an assertion that any of
+\eqref{eq:tpc57-parent-selection-hypothesis}--
+\eqref{eq:tpc57-core-singleton-fraction-hypothesis} holds for the inherited
+packet.  The new singleton gate is exactly
+\(\lambda_{\rm sing}\).  There is no additional coherence exponent after
+\eqref{eq:tpc57-core-singleton-fraction-hypothesis}, because the surviving
+core energy lies in singleton fibers of the complete output.  Native-Gram,
+boundary, and tail comparisons remain separate downstream operations.

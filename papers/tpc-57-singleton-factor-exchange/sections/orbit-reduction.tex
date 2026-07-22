@@ -1,0 +1,244 @@
+\section{Orbit congruence and the two-affine-prime reduction}
+\label{sec:tpc57-orbit-reduction}
+
+We retain the literal hypotheses and notation of
+\cref{sec:tpc57-factor-exchange}.  In particular \(h_0\ne0\) is fixed,
+\(H=\operatorname{rad}|h_0|\), \(X\) is sufficiently large that
+\(L>|h_0|\), and no solution is counted unless it belongs to the exact
+retained carrier.
+
+\subsection{Exact orbit congruence}
+
+\begin{lemma}[The terminal gcd is fixed by the intercept]
+\label{lem:tpc57-terminal-gcd}
+For every terminal atom \(u=(d\ell,r,j,\gamma)\),
+\begin{equation}
+ (d\ell,r)=1,
+ \qquad
+ j\equiv-h_0(d\ell)^{-1}\pmod r,
+ \qquad
+ \boxed{(r,j)=(r,h_0).}
+ \label{eq:tpc57-exact-orbit-congruence}
+\end{equation}
+Since \(r\) is squarefree, the common gcd in
+\eqref{eq:tpc57-exact-orbit-congruence} divides \(H\).
+\end{lemma}
+
+\begin{proof}
+The literal carrier gives \((d,r)=1\).  If the source prime
+\(\ell\) divided \(r\), then both \(rp\) and \(d\ell j\) would be
+divisible by \(\ell\), so the terminal equation would imply
+\(\ell\mid h_0\), impossible for \(\ell\ge L>|h_0|\).  Hence
+\((d\ell,r)=1\).  Reducing
+\(rp-d\ell j=h_0\) modulo \(r\) gives the displayed congruence.
+Multiplication by a unit modulo \(r\) preserves the gcd with \(r\), so
+\((r,j)=(r,h_0)\).  The final assertion follows from squarefreeness.
+\end{proof}
+
+\begin{corollary}[Orbit-time sparsity for a fixed row and cofactor]
+\label{cor:tpc57-fixed-row-orbit-sparsity}
+Fix \(d,r,\ell\) satisfying the literal source and cofactor conditions.
+In an orbit interval of diameter at most \(C_JJ\), the terminal equality
+can hold for at most
+\begin{equation}
+ 1+\left\lfloor\frac{C_JJ}{r}\right\rfloor
+ \label{eq:tpc57-fixed-row-j-count}
+\end{equation}
+integer values of \(j\).  Intersecting with the declared orbit residue
+class, profiles, or terminal-prime condition can only decrease this
+number.
+\end{corollary}
+
+\begin{proof}
+By \cref{lem:tpc57-terminal-gcd}, every possible \(j\) lies in one fixed
+residue class modulo \(r\).  The elementary spacing bound in an interval
+of diameter \(C_JJ\) proves the result.
+\end{proof}
+
+The congruence is stronger than the necessary statement
+\((r,j)\mid h_0\): on the literal terminal support the gcd is exactly
+\((r,h_0)\).  It does not assert that the unique residue class contains a
+retained \(j\), or that the resulting quotient is prime.
+
+\subsection{A simultaneous two-row orbit class}
+
+Use the factor-exchange notation
+\[
+ d_1=ab,\quad d_2=ac,
+ \qquad r_1=ce,\quad r_2=be,
+\]
+with \(a,b,c,e\) pairwise coprime.  For fixed
+\((a,b,c,e,\ell_1,\ell_2)\), the two terminal equalities require
+\begin{equation}
+ \begin{aligned}
+ j&\equiv-h_0(ab\ell_1)^{-1}\pmod {ce},\\
+ j&\equiv-h_0(ac\ell_2)^{-1}\pmod {be}.
+ \end{aligned}
+ \label{eq:tpc57-two-orbit-congruences}
+\end{equation}
+All inverses exist by \cref{lem:tpc57-terminal-gcd}.
+
+\begin{proposition}[Exact CRT compatibility and joint orbit spacing]
+\label{prop:tpc57-joint-orbit-class}
+The two congruences in
+\eqref{eq:tpc57-two-orbit-congruences} are compatible if and only if
+\begin{equation}
+ \boxed{
+ \frac e{(e,h_0)}\mid b\ell_1-c\ell_2.}
+ \label{eq:tpc57-crt-compatibility}
+\end{equation}
+When compatible, they define one residue class modulo
+\begin{equation}
+ \operatorname{lcm}(ce,be)=bce.
+ \label{eq:tpc57-joint-orbit-modulus}
+\end{equation}
+Consequently an orbit interval of diameter \(C_JJ\) contains at most
+\begin{equation}
+ 1+\left\lfloor\frac{C_JJ}{bce}\right\rfloor
+ \label{eq:tpc57-joint-orbit-count}
+\end{equation}
+simultaneously admissible integer times.  A fixed inherited orbit class
+can only thin this set further.
+\end{proposition}
+
+\begin{proof}
+The two residue classes must agree modulo
+\((ce,be)=e\).  Multiplying their equality modulo \(e\) by the available
+units shows that compatibility is equivalent to
+\[
+ e\mid h_0(b\ell_1-c\ell_2),
+\]
+which is exactly \eqref{eq:tpc57-crt-compatibility}.  The Chinese
+remainder theorem then gives one class modulo the least common multiple
+\(bce\), and the spacing estimate follows.
+\end{proof}
+
+This is an orbit-counting statement, not a prime-counting theorem.  Once
+\(j\) is chosen, both terminal candidates are determined, but the CRT
+does not prove either candidate prime.
+
+\subsection{The determinant ladder}
+
+Fix a coarse output \(y=(\gamma,s,j)\) and an admissible divisor
+\(d\mid s\), and put \(r=s/d\).  The source and terminal primes must solve
+\begin{equation}
+ rp-dj\ell=h_0.
+ \label{eq:tpc57-ladder-equation}
+\end{equation}
+Let
+\begin{equation}
+ g:=(r,dj)=(r,j),
+ \label{eq:tpc57-ladder-gcd}
+\end{equation}
+where the second equality uses \((d,r)=1\).
+
+\begin{proposition}[Complete nonproportional affine reduction]
+\label{prop:tpc57-two-affine-reduction}
+Equation \eqref{eq:tpc57-ladder-equation} has an integral solution if and
+only if \(g\mid h_0\).  If \((\ell_0,p_0)\) is one solution, every
+integral solution is uniquely
+\begin{equation}
+ \boxed{
+ \ell(t)=\ell_0+\frac r g t,
+ \qquad
+ p(t)=p_0+\frac{dj}{g}t,
+ \qquad t\in\mathbb Z.}
+ \label{eq:tpc57-two-affine-forms}
+\end{equation}
+The two affine forms have nonzero cross determinant
+\begin{equation}
+ \frac{dj}{g}\ell_0-\frac r g p_0
+ =-\frac{h_0}{g}\ne0.
+ \label{eq:tpc57-affine-determinant}
+\end{equation}
+On the literal terminal support,
+\begin{equation}
+ g=(r,h_0)\mid H.
+ \label{eq:tpc57-literal-ladder-gcd}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The gcd criterion for the linear Diophantine equation is
+\(g\mid h_0\).  Differences of two solutions satisfy
+\(r\Delta p=dj\Delta\ell\).  After division by \(g\), the two remaining
+coefficients are coprime, so
+\(\Delta\ell=(r/g)t\) and
+\(\Delta p=(dj/g)t\), proving
+\eqref{eq:tpc57-two-affine-forms}.  Substitution of the base solution
+gives \eqref{eq:tpc57-affine-determinant}.  Finally,
+\cref{lem:tpc57-terminal-gcd} gives \(g=(r,j)=(r,h_0)\), and
+squarefreeness of \(r\) gives the divisibility by \(H\).
+\end{proof}
+
+Let \(\mathfrak T_{\gamma,s,j,d}\subset\mathbb Z\) be the exact set of
+parameters \(t\) in \eqref{eq:tpc57-two-affine-forms} for which
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item \(\ell(t)\) belongs to the declared source-prime row support;
+ \item the pair \((d\ell(t),r)\), the orbit time \(j\), and the opposite
+       row \(\gamma\) satisfy every retained literal carrier condition;
+ \item \(p(t)\) is in the declared terminal-prime support and its shaped
+       terminal amplitude is nonzero.
+\end{enumerate}
+For terminal-admissible occupancy one does not additionally delete a zero
+source coefficient; for physical occupancy one intersects this set with
+the exact nonzero coefficient support.  With that convention, the fixed
+divisor occupancy is the identity
+\begin{equation}
+ N_{\gamma,s,j,d}
+ =\#\mathfrak T_{\gamma,s,j,d}
+ =\sum_{t\in\mathbb Z}
+   \mathbf 1_{\mathfrak T_{\gamma,s,j,d}}(t).
+ \label{eq:tpc57-exact-ladder-occupancy}
+\end{equation}
+This definition retains the literal carrier and does not replace it by
+all prime values of the two affine forms.
+
+\begin{corollary}[Deterministic ladder capacity]
+\label{cor:tpc57-ladder-capacity}
+For source-prime support inside \([L,2L]\),
+\begin{equation}
+ N_{\gamma,s,j,d}
+ \le1+\left\lfloor\frac{Lg}{r}\right\rfloor
+ \le1+\left\lfloor\frac{LH}{r}\right\rfloor.
+ \label{eq:tpc57-exact-ladder-capacity}
+\end{equation}
+In particular, \(r>LH\) forces \(N_{\gamma,s,j,d}\le1\).
+\end{corollary}
+
+\begin{proof}
+The first affine form in \eqref{eq:tpc57-two-affine-forms} has spacing
+\(r/g\), and \([L,2L]\) has diameter \(L\).  The second inequality uses
+\eqref{eq:tpc57-literal-ladder-gcd}.  Every further literal condition
+only deletes parameters.
+\end{proof}
+
+\subsection{What prime input remains}
+
+After the deterministic reductions, actual occupancy on one fixed
+divisor is a simultaneous-primality problem for the two nonproportional
+affine forms
+\begin{equation}
+ \ell_0+\frac r g t,
+ \qquad
+ p_0+\frac{dj}{g}t,
+ \label{eq:tpc57-two-prime-problem}
+\end{equation}
+whose determinant is the fixed nonzero integer
+\(-h_0/g\).  The determinant rules out proportional forms and exposes the
+local congruence data.  It does not provide a lower bound for prime
+values.  In particular:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item a lower bound on an individual growing ladder is a two-linear-form
+       prime problem and is not supplied by the elementary geometry;
+ \item an upper-bound sieve may thin the ambient ladder by logarithmic
+       factors, but it neither proves terminal activation nor compares a
+       collision second moment to the physical terminal energy;
+ \item averaging over \(d,r,j,s\) may be more tractable than one fixed
+       ladder, but uniformity in the moving coefficients, literal masks,
+       residue classes, and physical coefficient weights requires a
+       separate analytic theorem.
+\end{enumerate}
+Thus \cref{prop:tpc57-two-affine-reduction} is an exact arithmetic
+reduction of the next gate.  It is not a singleton-density theorem, a
+parity-breaking estimate, or a fixed-\(h_0\) prime-pair lower bound.
