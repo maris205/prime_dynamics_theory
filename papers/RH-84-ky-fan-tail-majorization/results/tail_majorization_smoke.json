@@ -1,0 +1,106 @@
+{
+  "all_executed_tail_gates_green": true,
+  "audit_summary": {
+    "extended_stress_scale_count": 0,
+    "interval_scale_count": 1,
+    "maximum_clock_rank": 4,
+    "maximum_extended_relative_tail": 0.0,
+    "maximum_interval_relative_tail": 2.3393454482415315e-07,
+    "maximum_tail_majorization_ratio": 0.013920723562217229,
+    "scale_count": 1
+  },
+  "limitations": [
+    "The first five physical tails inherit RH-82 Arb enclosures; the two new stress levels are binary64 diagnostics.",
+    "The extended horizons follow the proposed log-square schedule and are not an all-level contraction theorem.",
+    "Tail majorization is sufficient for the effective-rank corridor but is not yet proved for the analytic dyadic family."
+  ],
+  "rank_offset": 2,
+  "route_consequence": "RH-78 needs only a low-rank future residual, not termwise singular-value domination or a full endpoint factorization. The weaker Ky Fan tail-majorization condition is sufficient and is stable across rank staircases. At the five interval-certified anchors and two new stress levels up to dimension 2048, the clock-plus-two physical tail is at most 1.4 percent of the endpoint model tail. The next analytic gate is a uniform captured-energy lower bound for a clock-dimensional postcritical packet space.",
+  "rows": [
+    {
+      "all_channels_green": true,
+      "channels": [
+        {
+          "clock": 1.769091146743121,
+          "clock_rank": 4,
+          "dimension": 32,
+          "endpoint_model_tail": 8.84306484402153e-08,
+          "evidence_level": "192_bit_arb_frozen_postblock_residual",
+          "horizon": 4,
+          "offset_comparison": [
+            {
+              "endpoint_tail": 0.0003169048321565286,
+              "offset": 0,
+              "rank": 2,
+              "relative_postblock_tail": 0.009729918250102056
+            },
+            {
+              "endpoint_tail": 2.4633816007804445e-06,
+              "offset": 1,
+              "rank": 3,
+              "relative_postblock_tail": 4.463220007923081e-07
+            },
+            {
+              "endpoint_tail": 8.84306484402153e-08,
+              "offset": 2,
+              "rank": 4,
+              "relative_postblock_tail": 2.3393454480703017e-07
+            }
+          ],
+          "physical_relative_tail_upper": 2.3393454482415315e-07,
+          "physical_tail_upper": 1.2310186113638535e-09,
+          "side": "left",
+          "source_columns": 16,
+          "tail_majorization_ratio": 0.013920723562217229,
+          "tail_ratio_below_0_015": true
+        },
+        {
+          "clock": 1.769091146743121,
+          "clock_rank": 4,
+          "dimension": 16,
+          "endpoint_model_tail": 8.84306484402153e-08,
+          "evidence_level": "192_bit_arb_frozen_postblock_residual",
+          "horizon": 4,
+          "offset_comparison": [
+            {
+              "endpoint_tail": 0.0003169048321565286,
+              "offset": 0,
+              "rank": 2,
+              "relative_postblock_tail": 0.003604326899528688
+            },
+            {
+              "endpoint_tail": 2.4633816007804445e-06,
+              "offset": 1,
+              "rank": 3,
+              "relative_postblock_tail": 3.0251201192195737e-07
+            },
+            {
+              "endpoint_tail": 8.84306484402153e-08,
+              "offset": 2,
+              "rank": 4,
+              "relative_postblock_tail": 1.7337302133231635e-07
+            }
+          ],
+          "physical_relative_tail_upper": 1.7337302131347726e-07,
+          "physical_tail_upper": 1.1355194315654447e-09,
+          "side": "right",
+          "source_columns": 16,
+          "tail_majorization_ratio": 0.012840790513179686,
+          "tail_ratio_below_0_015": true
+        }
+      ],
+      "clock_rank": 4,
+      "fine_dimension": 32,
+      "sigma": 0.16
+    }
+  ],
+  "status": "rh84_ky_fan_tail_majorization_audit",
+  "theorem_boundary": {
+    "all_level_tail_majorization_proved": false,
+    "ky_fan_candidate_upper": true,
+    "riemann_hypothesis": false,
+    "seven_scale_tail_stress_audit": true,
+    "tail_majorization_transfer": true,
+    "uniform_stage_A1_closed": false
+  }
+}

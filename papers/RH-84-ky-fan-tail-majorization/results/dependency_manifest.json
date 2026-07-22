@@ -1,0 +1,43 @@
+{
+  "external_inputs": {
+    "rh16_endpoint_rank_audit": {
+      "path": "papers/RH-16-endpoint-gaussian-resolution-rank/results/endpoint_rank_audit.json",
+      "sha256": "8c971c8f9a086d4f2c3d96d532995418f7a29af88e77c31e8eca924d31d025fc"
+    },
+    "rh77_effective_rank_audit": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/results/effective_rank_audit.json",
+      "sha256": "08a123fb310bfd70572e5bd2b13ccf2fe397fd944f409c626d2e079b49be6c1a"
+    },
+    "rh82_rank_clock_audit": {
+      "path": "papers/RH-82-half-log-postblock-rank-clock/results/half_log_rank_audit.json",
+      "sha256": "b11949b5a77d7a6f3ec300bd87b1ed49bab3d569b1437be106306979556c2a27"
+    },
+    "rh83_factorization_summary": {
+      "path": "papers/RH-83-optimal-endpoint-singular-factorization/results/summary.json",
+      "sha256": "1c31892e016b17457db9a0cc9aa38da2b0a1dd5bb430c08c9761103b7e12449c"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "4406132623a1c536526b10f9e24b3191672f742630161b415c274bfee827d761",
+    "experiments/make_figures.py": "46ffdfa56bed0506a0e11e4830a0cdf157386ec97d775e628c1d46a25f2544e3",
+    "experiments/run_tail_majorization_audit.py": "cc467e9198f4e1a1ee1a245d6bea5955f5b2bf24cbccbec9b8f4f736444cc6e3",
+    "experiments/verify_archive.py": "4377282c127f23cff5ff7efad58ea30e3144b497950097f2e06e1e3471cb7c1a",
+    "src/tail_majorization/__init__.py": "df4e4c3cc32a267c469eb4e2a4aecb6cb1980b5039c1c5b8d7c4320ab11265a6",
+    "src/tail_majorization/bounds.py": "9f9fd14fdec439c666c6785774efd5380d587aa7798177ea4022f946fdf9628a",
+    "tests/test_archived_results.py": "70a0188a0a17faf974ff85c7ddc498d376acb61c688526d1e98c4c7560d7b42b",
+    "tests/test_theory.py": "1c504cbf7ad7bad6207c4810a526170b5aefc57144b368f914ac84a4ceacfd9f"
+  },
+  "publication_artifacts": {
+    ".gitignore": "e8c5d568962ae7f11638a973e785da93ef034ef01f2aaeed525ff4849785dbb1",
+    "README.md": "749618ab175b9526fe4d1b997dee9b425779e7aad08be2a9b3afaac4899d239f",
+    "figures/ky_fan_tail_majorization.pdf": "a93cb2e69e59fedcf9f3091bccad2fea4b98378ca653755cb5a01af396a62f6a",
+    "figures/ky_fan_tail_majorization.png": "3997d04afb377487cf219678cc1c9542b3ca8f3ae95285d8485e2e2b205f2a37",
+    "ky-fan-tail-majorization.pdf": "27d33c175f9cd732f84bcb9f2ef7615d66193e5bf9f96e48e34d1a35bb2a57d4",
+    "main.pdf": "27d33c175f9cd732f84bcb9f2ef7615d66193e5bf9f96e48e34d1a35bb2a57d4",
+    "main.tex": "59a15a9156baa5150f6689716cb3f014ef687f88428c8e47cd46954f21d6b4e9",
+    "pyproject.toml": "b40081c48a93476226b63f4afb15d1d4053f59205b268309b006a20f580edbb2",
+    "references.bib": "564e5da0407d3ad26a7bece63a9b2416e9a7656556a6d154b5ea6fd7668373e0",
+    "requirements.txt": "74d0800bd688a7c7d11237cab654221004d7e4fc437c70397c2fbcc1c5dd8054"
+  },
+  "status": "all_rh84_inputs_sources_and_publication_artifacts_hashed"
+}
