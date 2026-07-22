@@ -1,0 +1,69 @@
+{
+  "audit": {
+    "budget_factor_above_subquarter_count": 7,
+    "channel_count": 10,
+    "coercive_trial_count": 39,
+    "direct_target_contraction_count": 40,
+    "maximum_block_budget_geometric_mean": 0.23821161947688277,
+    "maximum_block_budget_product": 0.003219969564,
+    "maximum_individual_budget_factor": 0.753,
+    "maximum_interval_actual_block_geometric_mean": 0.23751367666449286,
+    "maximum_interval_actual_block_product": 0.003182397979258776,
+    "maximum_interval_individual_contraction": 0.7525382964847172,
+    "maximum_orthogonality_defect": 2.235301481186703e-15,
+    "maximum_refresh_to_corrected_ratio": 0.9999691394516964,
+    "maximum_trial_system_condition": 26220597148908.832,
+    "minimum_certified_relative_surplus": 0.00011169597149159237,
+    "minimum_negative_schur_margin": 7.399691410653159e-18,
+    "minimum_pointwise_failure_contraction": 0.2504283221493027,
+    "minimum_pointwise_sylvester_pivot": 2.825433379151996e-14,
+    "negative_direction_trial_count": 1,
+    "pointwise_positive_definite_obstruction_count": 7,
+    "pointwise_subquarter_failure_count": 7,
+    "refresh_dominance_count": 40,
+    "scale_count": 5,
+    "schur_negative_count": 40,
+    "update_count": 40
+  },
+  "program_boundary": {
+    "block_bootstrap_theorem": true,
+    "coercive_defect_identity": true,
+    "exact_schur_threshold_dichotomy": true,
+    "four_step_frozen_budget_validated": true,
+    "hilbert_polya_operator": false,
+    "pointwise_subquarter_law_rejected_on_frozen_window": true,
+    "reduced_packet_refresh_proved": false,
+    "riemann_hypothesis": false,
+    "stage_A4_unconditional_closed": false,
+    "uniform_all_level_four_step_law_proved": false,
+    "uniform_stage_A1_closed": false,
+    "variable_budget_contraction_theorem": true
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "4f36007d9075df84b88eb722fe91e472ed1102a031125b09e81f91b022f4cd29",
+    "THEOREM_LEDGER.md": "af1bde6e0428a6e2fc02e8d23e1810e2a6069695ef7b09314b75c5528b7a8b80",
+    "UPDATED_ROADMAP.md": "b0e062eda061d5838dc8d11ab0682f88262a4e59e92db7d62635b711b070e802",
+    "block-schur-contraction-budgets.pdf": "03b296930657ec5fc74fb6ede7104df9d687bbc45330503b521d1555af107d07",
+    "figures/block_schur_contraction_budgets.pdf": "3f28dcfce6057a28f3f84eda493f44c1edc14651e5f2f73466bea73e29920341",
+    "figures/block_schur_contraction_budgets.png": "24649b7237bd407b91ad72106cf0d628c84a9376cc4deeb1b55f482ee94c5732",
+    "main.pdf": "03b296930657ec5fc74fb6ede7104df9d687bbc45330503b521d1555af107d07",
+    "main.tex": "b3e7e3e775e6b8c94a6ada508679c7d490372ee439b854591a36980855849e5a",
+    "pyproject.toml": "0570de965f7dd3b98a403e475641240573a46e20625a44813ab454e55aefa7f6",
+    "references.bib": "218a837a13fea0d51cfa8df3f1b2517f37f8b3109620a434fe2cc699a96843f7",
+    "requirements.txt": "223859266dc308c42daaf834ec590bebdd11ebef66201f51760d5deb95108486"
+  },
+  "result_hashes": {
+    "results/block_schur_budget_audit.json": "8f39582cdf23efd2871d0a906a09257b44577e635816a1d7ce96ae47e92ecc26",
+    "results/block_schur_budget_smoke.json": "814557c4a749bbfdcbc3d66fda0bc821922c074cc47f06f981edf3f670f5f1ad",
+    "results/dependency_manifest.json": "ae13711f0dcdbd48cf5c348600018d21e60c1538e80a0a621a50ff0dd04766f7"
+  },
+  "route_consequence": "The RH-90 pointwise target can be replaced by a variable one-step budget whose four-factor product is contractive. All forty frozen updates admit negative Schur trials, refresh packets dominate the small corrected packets, and every channel has block geometric mean below 0.24. Seven individual updates rigorously reject a pointwise 0.24 target through positive-definite threshold matrices, so the block formulation is genuinely weaker. The preferred Stage-A gate becomes a uniform repeated block law, while reduced refresh and prefix/observability remain separate requirements.",
+  "status": "rh92_block_schur_contraction_budgets_archived",
+  "theorem": {
+    "block_contraction_bootstrap": true,
+    "coercive_trial_defect_identity": true,
+    "exact_schur_threshold_dichotomy": true,
+    "variable_budget_correction_and_refresh": true
+  }
+}
