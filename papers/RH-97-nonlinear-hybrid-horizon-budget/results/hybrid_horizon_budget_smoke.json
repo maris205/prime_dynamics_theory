@@ -1,0 +1,428 @@
+{
+  "all_executed_primary_hybrid_budget_gates_green": true,
+  "audit_summary": {
+    "channel_count": 2,
+    "primary_absolute_budget_green_count": 2,
+    "primary_maximum_absolute_horizon_budget_to_reference": 1.0034268027013675e-05,
+    "primary_maximum_absolute_propagation_multiplier": 1.0,
+    "primary_maximum_signed_endpoint_shift_to_reference": 7.057125580189076e-07,
+    "primary_omission_count": 4,
+    "primary_telescoping_green_count": 2,
+    "primary_threshold": 1e-08,
+    "scale_count": 1,
+    "threshold_summaries": {
+      "1e-04": {
+        "absolute_budget_green_count": 2,
+        "maximum_absolute_horizon_budget_to_reference": 1.1107602318430055e-05,
+        "maximum_absolute_propagation_multiplier": 1.0,
+        "maximum_adaptive_to_reference_ratio": 1.0000110529529258,
+        "maximum_signed_endpoint_shift_to_reference": 1.0893145748961218e-05,
+        "negative_propagated_contribution_count": 4,
+        "omission_count": 8,
+        "positive_propagated_contribution_count": 4,
+        "telescoping_green_count": 2,
+        "threshold": 0.0001
+      },
+      "1e-06": {
+        "absolute_budget_green_count": 2,
+        "maximum_absolute_horizon_budget_to_reference": 1.1185866271431524e-05,
+        "maximum_absolute_propagation_multiplier": 1.0,
+        "maximum_adaptive_to_reference_ratio": 1.00000596705913,
+        "maximum_signed_endpoint_shift_to_reference": 9.860407187751422e-07,
+        "negative_propagated_contribution_count": 3,
+        "omission_count": 7,
+        "positive_propagated_contribution_count": 4,
+        "telescoping_green_count": 2,
+        "threshold": 1e-06
+      },
+      "1e-08": {
+        "absolute_budget_green_count": 2,
+        "maximum_absolute_horizon_budget_to_reference": 1.0034268027013675e-05,
+        "maximum_absolute_propagation_multiplier": 1.0,
+        "maximum_adaptive_to_reference_ratio": 1.0000061026802505,
+        "maximum_signed_endpoint_shift_to_reference": 7.057125580189076e-07,
+        "negative_propagated_contribution_count": 2,
+        "omission_count": 4,
+        "positive_propagated_contribution_count": 2,
+        "telescoping_green_count": 2,
+        "threshold": 1e-08
+      }
+    }
+  },
+  "endpoint_absolute_budget": 0.01,
+  "limitations": [
+    "Hybrid replay is an exact a posteriori decomposition, not an a priori analytic Lipschitz estimate.",
+    "The absolute budget can be conservative because it discards signed cancellation.",
+    "No uniform block propagation multiplier or repeated-horizon theorem is proved.",
+    "Only the archived finite channels are validated.",
+    "No Hilbert--Polya operator, zero identification, or Riemann Hypothesis result is claimed."
+  ],
+  "precision_bits": 384,
+  "primary_threshold": 1e-08,
+  "rank_offset": 2,
+  "route_consequence": "Recursive quotient losses admit an exact nonlinear Duhamel decomposition through hybrid chains, without linearizing the Ritz map. The primary five omissions have a rigorously closed absolute endpoint budget below one percent in every channel, while the aggressive thresholds expose larger propagated budgets. The remaining task is to replace hybrid replay by an a priori block propagation envelope.",
+  "rows": [
+    {
+      "all_channels_green": true,
+      "channels": [
+        {
+          "chains": {
+            "1e-04": {
+              "absolute_horizon_budget": 1.5659676293320372e-17,
+              "absolute_horizon_budget_to_reference": 1.1107602318430055e-05,
+              "contributions": [
+                {
+                  "absolute_propagation_multiplier_upper": 1.1069564569995033e-09,
+                  "interval_local_quotient_loss_ball": "[8.020093470191824050502029903606857052776625177583263958605414109859811244064679567595036611013446175410751141816092e-11 +/- 9.70e-127]",
+                  "interval_local_quotient_loss_upper": 8.020093470191825e-11,
+                  "interval_propagated_endpoint_contribution_ball": "[-8.877894252568392296074232665589136268232338101790811416534872870576115415464210353977395711652308130371010182233325e-20 +/- 4.14e-135]",
+                  "propagated_endpoint_contribution_abs_upper": 8.877894252568393e-20,
+                  "selected_width": 3,
+                  "signed_propagation_multiplier": -1.1069564569995033e-09,
+                  "time": 1
+                },
+                {
+                  "absolute_propagation_multiplier_upper": 2.240851883132804e-09,
+                  "interval_local_quotient_loss_ball": "[2.784352565270107257630832043286161906990048598143339849663081220249668576188088387028003959655359800567413350395485e-11 +/- 3.54e-127]",
+                  "interval_local_quotient_loss_upper": 2.7843525652701076e-11,
+                  "interval_propagated_endpoint_contribution_ball": "[-6.239321689191172797469278601041691648892446760297049450871502635221457282621526649787827648220612548157548614074261e-20 +/- 6.33e-136]",
+                  "propagated_endpoint_contribution_abs_upper": 6.239321689191175e-20,
+                  "selected_width": 2,
+                  "signed_propagation_multiplier": -2.2408518831328037e-09,
+                  "time": 2
+                },
+                {
+                  "absolute_propagation_multiplier_upper": 0.00010034499650530246,
+                  "interval_local_quotient_loss_ball": "[2.496009516041438175347197022069215946991400524208002851848320443933078941018287805352672995145373927376133739557196e-15 +/- 4.42e-130]",
+                  "interval_local_quotient_loss_upper": 2.4960095160414386e-15,
+                  "interval_propagated_endpoint_contribution_ball": "[2.504620661643797720422262166012889758997956304661291916638809177180965354917719977691657460123495654777736888423417e-19 +/- 2.84e-134]",
+                  "propagated_endpoint_contribution_abs_upper": 2.504620661643798e-19,
+                  "selected_width": 2,
+                  "signed_propagation_multiplier": 0.00010034499650530246,
+                  "time": 3
+                },
+                {
+                  "absolute_propagation_multiplier_upper": 1.0,
+                  "interval_local_quotient_loss_ball": "[1.525804206773839207730878869632427634429720868645946748910362568268124473716280052504888281258592528879898968555388e-17 +/- 7.23e-133]",
+                  "interval_local_quotient_loss_upper": 1.5258042067738396e-17,
+                  "interval_propagated_endpoint_contribution_ball": "[1.525804206773839207730878869632427634429720868645946748910362568268124473716280052504888281258592528879898968555388e-17 +/- 7.23e-133]",
+                  "propagated_endpoint_contribution_abs_upper": 1.5258042067738396e-17,
+                  "selected_width": 2,
+                  "signed_propagation_multiplier": 1.0,
+                  "time": 4
+                }
+              ],
+              "endpoint": 4,
+              "final_hybrid_match_contains_zero": true,
+              "interval_adaptive_endpoint_tail_ball": "[1.409831656738556424611966208039574149398016157772352090429985287623558683997409261421040535700235470152936614220917e-12 +/- 2.17e-127]",
+              "interval_adaptive_to_reference_ball": "[1.000011052952925586890423253903302233302448753971162365060142128090817280130823055009218508048775771723941975800585 +/- 5.49e-115]",
+              "interval_adaptive_to_reference_upper": 1.0000110529529258,
+              "interval_endpoint_shift_ball": "[1.535733197448517619841557980025925704102575646830471807209344284534136554567371515278039632499954564749147778643315e-17 +/- 3.42e-132]",
+              "interval_final_hybrid_match_ball": "0",
+              "interval_full_endpoint_tail_ball": "[1.409816299406581939435767792459773890140975132015883785711913194180713342631863587705887755303910470607289122743130e-12 +/- 3.51e-127]",
+              "interval_reference_tail_ball": "[1.409816074107855574765373184236186074948477408388666832197556829983006315152896477771592670499072157989225643349297e-12 +/- 4.25e-127]",
+              "interval_signed_hybrid_sum_ball": "[1.535733197448517619841557980025925704102575646830471807209344284534136554567371515278039632499954564749147778643315e-17 +/- 3.42e-132]",
+              "interval_telescoping_error_ball": "0",
+              "omission_count": 4,
+              "signed_endpoint_shift_to_reference_abs_upper": 1.0893145748961218e-05,
+              "telescoping_error_contains_zero": true,
+              "threshold": 0.0001
+            },
+            "1e-06": {
+              "absolute_horizon_budget": 1.6881885897440017e-18,
+              "absolute_horizon_budget_to_reference": 1.1974530726019016e-06,
+              "contributions": [
+                {
+                  "absolute_propagation_multiplier_upper": 9.275526118707668e-08,
+                  "interval_local_quotient_loss_ball": "[1.606661071703550956700932853816666817454788905136038953841682905350761958694360965094484089874428523903053960807505e-12 +/- 6.07e-128]",
+                  "interval_local_quotient_loss_upper": 1.6066610717035511e-12,
+                  "interval_propagated_endpoint_contribution_ball": "[-1.490262673449714078735013397888678856465604192593504347257924241702985381766607024247394803448320256549791462233747e-19 +/- 4.31e-134]",
+                  "propagated_endpoint_contribution_abs_upper": 1.4902626734497143e-19,
+                  "selected_width": 3,
+                  "signed_propagation_multiplier": -9.275526118707668e-08,
+                  "time": 2
+                },
+                {
+                  "absolute_propagation_multiplier_upper": 4.6346038848931904e-05,
+                  "interval_local_quotient_loss_ball": "[1.087684598856174016792901061042093909489514318260202203244704593237084264764953682417883176168320827802559523727446e-15 +/- 1.57e-130]",
+                  "interval_local_quotient_loss_upper": 1.0876845988561743e-15,
+                  "interval_propagated_endpoint_contribution_ball": "[5.040987267397315935402905077296897977221486514049173019528418999004824153327764190440533746296977362774508740403605e-20 +/- 3.06e-135]",
+                  "propagated_endpoint_contribution_abs_upper": 5.040987267397317e-20,
+                  "selected_width": 3,
+                  "signed_propagation_multiplier": 4.634603884893191e-05,
+                  "time": 3
+                },
+                {
+                  "absolute_propagation_multiplier_upper": 1.0,
+                  "interval_local_quotient_loss_ball": "[1.488752449725056987691516050445725216107588861016462843158312898687392288808701875039968440569418953842963695031413e-18 +/- 6.90e-134]",
+                  "interval_local_quotient_loss_upper": 1.4887524497250571e-18,
+                  "interval_propagated_endpoint_contribution_ball": "[1.488752449725056987691516050445725216107588861016462843158312898687392288808701875039968440569418953842963695031413e-18 +/- 6.90e-134]",
+                  "propagated_endpoint_contribution_abs_upper": 1.4887524497250571e-18,
+                  "selected_width": 2,
+                  "signed_propagation_multiplier": 1.0,
+                  "time": 4
+                }
+              ],
+              "endpoint": 4,
+              "final_hybrid_match_contains_zero": true,
+              "interval_adaptive_endpoint_tail_ball": "[1.409817689542636993494506964503535319967285365259190683316051821985377849773855753024702274938208158163990938472767e-12 +/- 4.38e-127]",
+              "interval_adaptive_to_reference_ball": "[1.000001145847895400817405085224596181689938500011346284422122129161975993580877906910643862152311953400657199154116 +/- 3.41e-115]",
+              "interval_adaptive_to_reference_upper": 1.0000011458478957,
+              "interval_endpoint_shift_ball": "[1.390136055054058739172043761429826310233243306897604138627804664507141992165318814519634297687556701815729636212074e-18 +/- 4.65e-133]",
+              "interval_final_hybrid_match_ball": "0",
+              "interval_full_endpoint_tail_ball": "[1.409816299406581939435767792459773890140975132015883785711913194180713342631863587705887755303910470607289122743130e-12 +/- 3.51e-127]",
+              "interval_reference_tail_ball": "[1.409816074107855574765373184236186074948477408388666832197556829983006315152896477771592670499072157989225643349297e-12 +/- 4.25e-127]",
+              "interval_signed_hybrid_sum_ball": "[1.390136055054058739172043761429826310233243306897604138627804664507141992165318814519634297687556701815729636212074e-18 +/- 4.65e-133]",
+              "interval_telescoping_error_ball": "0",
+              "omission_count": 3,
+              "signed_endpoint_shift_to_reference_abs_upper": 9.860407187751422e-07,
+              "telescoping_error_contains_zero": true,
+              "threshold": 1e-06
+            },
+            "1e-08": {
+              "absolute_horizon_budget": 8.488725098838432e-19,
+              "absolute_horizon_budget_to_reference": 6.021157833804794e-07,
+              "contributions": [
+                {
+                  "absolute_propagation_multiplier_upper": 0.001093253456109044,
+                  "interval_local_quotient_loss_ball": "[2.029407982046731087854681600817260992554986565042594159003662410198128703856312021212497241003164301505747011281949e-16 +/- 1.20e-131]",
+                  "interval_local_quotient_loss_upper": 2.0294079820467313e-16,
+                  "interval_propagated_endpoint_contribution_ball": "[-2.218657290227869147766396986727561552594398673756291794692815959113486653960080895490253355926315305515452023845095e-19 +/- 1.06e-134]",
+                  "propagated_endpoint_contribution_abs_upper": 2.2186572902278695e-19,
+                  "selected_width": 3,
+                  "signed_propagation_multiplier": -0.0010932534561090437,
+                  "time": 3
+                },
+                {
+                  "absolute_propagation_multiplier_upper": 1.0,
+                  "interval_local_quotient_loss_ball": "[6.270067808610562078697875892649153013116269071985783985680677836961682096744816176812930901132988104075798867111009e-19 +/- 3.10e-134]",
+                  "interval_local_quotient_loss_upper": 6.270067808610563e-19,
+                  "interval_propagated_endpoint_contribution_ball": "[6.270067808610562078697875892649153013116269071985783985680677836961682096744816176812930901132988104075798867111009e-19 +/- 3.10e-134]",
+                  "propagated_endpoint_contribution_abs_upper": 6.270067808610563e-19,
+                  "selected_width": 3,
+                  "signed_propagation_multiplier": 1.0,
+                  "time": 4
+                }
+              ],
+              "endpoint": 4,
+              "final_hybrid_match_contains_zero": true,
+              "interval_adaptive_endpoint_tail_ball": "[1.409816704547633777705060885607664482300121184202923608661132292966901127451407866179415887571664991274568978777815e-12 +/- 3.23e-127]",
+              "interval_adaptive_to_reference_ball": "[1.000000447178741809911416487798582264656352801362273308382357123557074040907964529491600980787389350104621433449470 +/- 3.75e-115]",
+              "interval_adaptive_to_reference_upper": 1.000000447178742,
+              "interval_endpoint_shift_ball": "[4.051410518382692930931478905921591460521870398229492190987861877848195442784735281322677545206672798560346843265914e-19 +/- 4.15e-134]",
+              "interval_final_hybrid_match_ball": "0",
+              "interval_full_endpoint_tail_ball": "[1.409816299406581939435767792459773890140975132015883785711913194180713342631863587705887755303910470607289122743130e-12 +/- 3.51e-127]",
+              "interval_reference_tail_ball": "[1.409816074107855574765373184236186074948477408388666832197556829983006315152896477771592670499072157989225643349297e-12 +/- 4.25e-127]",
+              "interval_signed_hybrid_sum_ball": "[4.051410518382692930931478905921591460521870398229492190987861877848195442784735281322677545206672798560346843265914e-19 +/- 4.15e-134]",
+              "interval_telescoping_error_ball": "0",
+              "omission_count": 2,
+              "signed_endpoint_shift_to_reference_abs_upper": 2.873715651842361e-07,
+              "telescoping_error_contains_zero": true,
+              "threshold": 1e-08
+            }
+          },
+          "channel_gate_green": true,
+          "clock_rank": 4,
+          "dimension": 32,
+          "refresh_endpoint": 4,
+          "side": "left",
+          "source_columns": 16
+        },
+        {
+          "chains": {
+            "1e-04": {
+              "absolute_horizon_budget": 3.7099438716392865e-17,
+              "absolute_horizon_budget_to_reference": 1.0165953111516667e-05,
+              "contributions": [
+                {
+                  "absolute_propagation_multiplier_upper": 2.8557496618821547e-09,
+                  "interval_local_quotient_loss_ball": "[2.583087874933601174830159872797956368429556079830409370057105274947450592649819514961735084289442037293350095992044e-10 +/- 4.42e-125]",
+                  "interval_local_quotient_loss_upper": 2.5830878749336016e-10,
+                  "interval_propagated_endpoint_contribution_ball": "[-7.376652325453524786181910302926110464081285138937400075414274121058661840079113657662331585126666560414453188181120e-19 +/- 4.65e-134]",
+                  "propagated_endpoint_contribution_abs_upper": 7.376652325453526e-19,
+                  "selected_width": 3,
+                  "signed_propagation_multiplier": -2.855749661882155e-09,
+                  "time": 1
+                },
+                {
+                  "absolute_propagation_multiplier_upper": 1.1130213110583913e-05,
+                  "interval_local_quotient_loss_ball": "[7.921280852652631560712815904044615539225332315473685508013083071928719622905562660793532668542217642309406260690091e-14 +/- 3.04e-129]",
+                  "interval_local_quotient_loss_upper": 7.921280852652633e-14,
+                  "interval_propagated_endpoint_contribution_ball": "[8.816554399881164355187348534287979997474911288182704498787095088166215640186535961526333089151706243129632676516684e-19 +/- 3.49e-134]",
+                  "propagated_endpoint_contribution_abs_upper": 8.816554399881166e-19,
+                  "selected_width": 3,
+                  "signed_propagation_multiplier": 1.1130213110583913e-05,
+                  "time": 2
+                },
+                {
+                  "absolute_propagation_multiplier_upper": 0.00011215638640299464,
+                  "interval_local_quotient_loss_ball": "[2.044160433373067610816046490439343319817471815583284256452188060162124355326596354428662229155132337238089628767160e-13 +/- 2.37e-128]",
+                  "interval_local_quotient_loss_upper": 2.044160433373068e-13,
+                  "interval_propagated_endpoint_contribution_ball": "[-2.292656474351027770384857659986786683628648972446182341000352163126517393429358602020047818172543134073445441820461e-17 +/- 3.73e-132]",
+                  "propagated_endpoint_contribution_abs_upper": 2.292656474351028e-17,
+                  "selected_width": 2,
+                  "signed_propagation_multiplier": -0.00011215638640299464,
+                  "time": 3
+                },
+                {
+                  "absolute_propagation_multiplier_upper": 1.0,
+                  "interval_local_quotient_loss_ball": "[1.255355330034911406264261405943283712668319261929332990846810657192682309439767703383588631629039032709659467559937e-17 +/- 4.44e-132]",
+                  "interval_local_quotient_loss_upper": 1.2553553300349116e-17,
+                  "interval_propagated_endpoint_contribution_ball": "[1.255355330034911406264261405943283712668319261929332990846810657192682309439767703383588631629039032709659467559937e-17 +/- 4.44e-132]",
+                  "propagated_endpoint_contribution_abs_upper": 1.2553553300349116e-17,
+                  "selected_width": 3,
+                  "signed_propagation_multiplier": 1.0,
+                  "time": 4
+                }
+              ],
+              "endpoint": 4,
+              "final_hybrid_match_contains_zero": true,
+              "interval_adaptive_endpoint_tail_ball": "[3.649395871614387451004726889521507272123260635973484651363002479249321021086059872847006380921266334588875178248480e-12 +/- 4.46e-127]",
+              "interval_adaptive_to_reference_ball": "[1.000004005446082999454757435343994449349940891496576167058319517519606252486631006974201817300221018134138664992521 +/- 2.29e-115]",
+              "interval_adaptive_to_reference_upper": 1.0000040054460833,
+              "interval_endpoint_shift_ball": "[-1.022902123571839968430541871729884275626393449024396305919813296262759545988516675597819171503253704536634179377168e-17 +/- 4.58e-132]",
+              "interval_final_hybrid_match_ball": "0",
+              "interval_full_endpoint_tail_ball": "[3.649406100635623169404411194940224570966016899907974895326061677382283648681519758013762359112981367125920544590273e-12 +/- 3.27e-127]",
+              "interval_reference_tail_ball": "[3.649381254214537385748511480541658985486945294805899537801568588633594603484574149781080213557314442713306538355329e-12 +/- 1.37e-127]",
+              "interval_signed_hybrid_sum_ball": "[-1.022902123571839968430541871729884275626393449024396305919813296262759545988516675597819171503253704536634179377168e-17 +/- 4.58e-132]",
+              "interval_telescoping_error_ball": "0",
+              "omission_count": 4,
+              "signed_endpoint_shift_to_reference_abs_upper": 2.802946725257954e-06,
+              "telescoping_error_contains_zero": true,
+              "threshold": 0.0001
+            },
+            "1e-06": {
+              "absolute_horizon_budget": 4.082149068311286e-17,
+              "absolute_horizon_budget_to_reference": 1.1185866271431524e-05,
+              "contributions": [
+                {
+                  "absolute_propagation_multiplier_upper": 2.8557496618821547e-09,
+                  "interval_local_quotient_loss_ball": "[2.583087874933601174830159872797956368429556079830409370057105274947450592649819514961735084289442037293350095992044e-10 +/- 4.42e-125]",
+                  "interval_local_quotient_loss_upper": 2.5830878749336016e-10,
+                  "interval_propagated_endpoint_contribution_ball": "[-7.376652325453524786181910302926110464081285138937400075414274121058661840079113657662331585126666560414453188181120e-19 +/- 4.65e-134]",
+                  "propagated_endpoint_contribution_abs_upper": 7.376652325453526e-19,
+                  "selected_width": 3,
+                  "signed_propagation_multiplier": -2.855749661882155e-09,
+                  "time": 1
+                },
+                {
+                  "absolute_propagation_multiplier_upper": 1.1130213110583913e-05,
+                  "interval_local_quotient_loss_ball": "[7.921280852652631560712815904044615539225332315473685508013083071928719622905562660793532668542217642309406260690091e-14 +/- 3.04e-129]",
+                  "interval_local_quotient_loss_upper": 7.921280852652633e-14,
+                  "interval_propagated_endpoint_contribution_ball": "[8.816554399881164355187348534287979997474911288182704498787095088166215640186535961526333089151706243129632676516684e-19 +/- 3.49e-134]",
+                  "propagated_endpoint_contribution_abs_upper": 8.816554399881166e-19,
+                  "selected_width": 3,
+                  "signed_propagation_multiplier": 1.1130213110583913e-05,
+                  "time": 2
+                },
+                {
+                  "absolute_propagation_multiplier_upper": 0.16969233511408896,
+                  "interval_local_quotient_loss_ball": "[1.249806231502860337435689663317401890819678524020872792557693045761386555459457699287886687083559250403188026489335e-16 +/- 1.76e-131]",
+                  "interval_local_quotient_loss_upper": 1.2498062315028605e-16,
+                  "interval_propagated_endpoint_contribution_ball": "[-2.120825378638600092711375876236840925584707503436077319514134726321996684519118375060262291005590986765593115774836e-17 +/- 3.34e-132]",
+                  "propagated_endpoint_contribution_abs_upper": 2.1208253786386003e-17,
+                  "selected_width": 3,
+                  "signed_propagation_multiplier": -0.16969233511408896,
+                  "time": 3
+                },
+                {
+                  "absolute_propagation_multiplier_upper": 1.0,
+                  "interval_local_quotient_loss_ball": "[1.799391622419338702556254212216019829483600888763626593753676594886616543318600398908929635288892040199710244170605e-17 +/- 1.68e-132]",
+                  "interval_local_quotient_loss_upper": 1.799391622419339e-17,
+                  "interval_propagated_endpoint_contribution_ball": "[1.799391622419338702556254212216019829483600888763626593753676594886616543318600398908929635288892040199710244170605e-17 +/- 1.68e-132]",
+                  "propagated_endpoint_contribution_abs_upper": 1.799391622419339e-17,
+                  "selected_width": 3,
+                  "signed_propagation_multiplier": 1.0,
+                  "time": 4
+                }
+              ],
+              "endpoint": 4,
+              "final_hybrid_match_contains_zero": true,
+              "interval_adaptive_endpoint_tail_ball": "[3.649403030288268419554466544267407498942009228204443095349246410083066005635487763576231232186574602640423157279506e-12 +/- 1.18e-127]",
+              "interval_adaptive_to_reference_ball": "[1.000005967059129786840486892156628403373102852245522881472357945019406818215115129748825212103405296207894560798029 +/- 1.63e-115]",
+              "interval_adaptive_to_reference_upper": 1.00000596705913,
+              "interval_endpoint_shift_ball": "[-3.070347354749849944650672817072024007671703531799976815267299217643046031994437531126926406764485497387310767208749e-18 +/- 4.18e-133]",
+              "interval_final_hybrid_match_ball": "0",
+              "interval_full_endpoint_tail_ball": "[3.649406100635623169404411194940224570966016899907974895326061677382283648681519758013762359112981367125920544590273e-12 +/- 3.27e-127]",
+              "interval_reference_tail_ball": "[3.649381254214537385748511480541658985486945294805899537801568588633594603484574149781080213557314442713306538355329e-12 +/- 1.37e-127]",
+              "interval_signed_hybrid_sum_ball": "[-3.070347354749849944650672817072024007671703531799976815267299217643046031994437531126926406764485497387310767208749e-18 +/- 4.18e-133]",
+              "interval_telescoping_error_ball": "0",
+              "omission_count": 4,
+              "signed_endpoint_shift_to_reference_abs_upper": 8.413336784705678e-07,
+              "telescoping_error_contains_zero": true,
+              "threshold": 1e-06
+            },
+            "1e-08": {
+              "absolute_horizon_budget": 3.6618869637547994e-17,
+              "absolute_horizon_budget_to_reference": 1.0034268027013675e-05,
+              "contributions": [
+                {
+                  "absolute_propagation_multiplier_upper": 0.23289020063411245,
+                  "interval_local_quotient_loss_ball": "[8.414755904483733619796541092774990696562940905505843687247191462997383491595320939204619468827235255885614602806274e-17 +/- 3.43e-132]",
+                  "interval_local_quotient_loss_upper": 8.414755904483735e-17,
+                  "interval_propagated_endpoint_contribution_ball": "[-1.959714190882298967107993234815850925668168252606129692179274990957038725778045626802451575830354182481482856196729e-17 +/- 2.77e-132]",
+                  "propagated_endpoint_contribution_abs_upper": 1.9597141908822994e-17,
+                  "selected_width": 3,
+                  "signed_propagation_multiplier": -0.23289020063411245,
+                  "time": 3
+                },
+                {
+                  "absolute_propagation_multiplier_upper": 1.0,
+                  "interval_local_quotient_loss_ball": "[1.702172772872500001228114573813709610694258503484397604651048311063522939027382383906794730817443195232025514387627e-17 +/- 3.46e-132]",
+                  "interval_local_quotient_loss_upper": 1.7021727728725003e-17,
+                  "interval_propagated_endpoint_contribution_ball": "[1.702172772872500001228114573813709610694258503484397604651048311063522939027382383906794730817443195232025514387627e-17 +/- 3.46e-132]",
+                  "propagated_endpoint_contribution_abs_upper": 1.7021727728725003e-17,
+                  "selected_width": 3,
+                  "signed_propagation_multiplier": 1.0,
+                  "time": 4
+                }
+              ],
+              "endpoint": 4,
+              "final_hybrid_match_contains_zero": true,
+              "interval_adaptive_endpoint_tail_ball": "[3.649403525221443071414752396153614549552867160810483678005186395115484713523652251381333402544531238016048050016855e-12 +/- 2.36e-127]",
+              "interval_adaptive_to_reference_ball": "[1.000006102680250238500615143010809659853352284972796373179468245361058704469900499953019860790780810467521943214406 +/- 7.53e-116]",
+              "interval_adaptive_to_reference_upper": 1.0000061026802505,
+              "interval_endpoint_shift_ball": "[-2.575414180097989658798786610021413149739097491217320875282266798935157867506632428956568450129109872494573418091026e-18 +/- 2.24e-133]",
+              "interval_final_hybrid_match_ball": "0",
+              "interval_full_endpoint_tail_ball": "[3.649406100635623169404411194940224570966016899907974895326061677382283648681519758013762359112981367125920544590273e-12 +/- 3.27e-127]",
+              "interval_reference_tail_ball": "[3.649381254214537385748511480541658985486945294805899537801568588633594603484574149781080213557314442713306538355329e-12 +/- 1.37e-127]",
+              "interval_signed_hybrid_sum_ball": "[-2.575414180097989658798786610021413149739097491217320875282266798935157867506632428956568450129109872494573418091026e-18 +/- 2.24e-133]",
+              "interval_telescoping_error_ball": "0",
+              "omission_count": 2,
+              "signed_endpoint_shift_to_reference_abs_upper": 7.057125580189076e-07,
+              "telescoping_error_contains_zero": true,
+              "threshold": 1e-08
+            }
+          },
+          "channel_gate_green": true,
+          "clock_rank": 4,
+          "dimension": 16,
+          "refresh_endpoint": 4,
+          "side": "right",
+          "source_columns": 16
+        }
+      ],
+      "clock": 1.769091146743121,
+      "clock_rank": 4,
+      "fine_dimension": 32,
+      "sigma": 0.16
+    }
+  ],
+  "status": "rh97_nonlinear_hybrid_horizon_budget_audit",
+  "theorem_boundary": {
+    "a_priori_refresh_lipschitz_law_proved": false,
+    "absolute_propagated_horizon_budget": true,
+    "hilbert_polya_operator": false,
+    "nonlinear_hybrid_telescoping_identity": true,
+    "primary_frozen_hybrid_budget_validated": true,
+    "repeated_block_contraction_proved": false,
+    "riemann_hypothesis": false,
+    "uniform_block_propagation_envelope_proved": false,
+    "uniform_stage_A1_closed": false
+  },
+  "thresholds": [
+    1e-08,
+    1e-06,
+    0.0001
+  ]
+}

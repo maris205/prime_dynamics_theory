@@ -1,0 +1,88 @@
+{
+  "audit": {
+    "channel_count": 10,
+    "primary_absolute_budget_green_count": 10,
+    "primary_maximum_absolute_horizon_budget_to_reference": 1.0034268027013675e-05,
+    "primary_maximum_absolute_propagation_multiplier": 1.0,
+    "primary_maximum_signed_endpoint_shift_to_reference": 7.057125580189076e-07,
+    "primary_omission_count": 5,
+    "primary_telescoping_green_count": 10,
+    "primary_threshold": 1e-08,
+    "scale_count": 5,
+    "threshold_summaries": {
+      "1e-04": {
+        "absolute_budget_green_count": 9,
+        "maximum_absolute_horizon_budget_to_reference": 0.014091489782684088,
+        "maximum_absolute_propagation_multiplier": 1.0,
+        "maximum_adaptive_to_reference_ratio": 1.0140914928486782,
+        "maximum_signed_endpoint_shift_to_reference": 0.014091489782684088,
+        "negative_propagated_contribution_count": 5,
+        "omission_count": 22,
+        "positive_propagated_contribution_count": 17,
+        "telescoping_green_count": 10,
+        "threshold": 0.0001
+      },
+      "1e-06": {
+        "absolute_budget_green_count": 9,
+        "maximum_absolute_horizon_budget_to_reference": 0.02492069324439935,
+        "maximum_absolute_propagation_multiplier": 1.0,
+        "maximum_adaptive_to_reference_ratio": 1.024921232316618,
+        "maximum_signed_endpoint_shift_to_reference": 0.02492069324439935,
+        "negative_propagated_contribution_count": 3,
+        "omission_count": 11,
+        "positive_propagated_contribution_count": 8,
+        "telescoping_green_count": 10,
+        "threshold": 1e-06
+      },
+      "1e-08": {
+        "absolute_budget_green_count": 10,
+        "maximum_absolute_horizon_budget_to_reference": 1.0034268027013675e-05,
+        "maximum_absolute_propagation_multiplier": 1.0,
+        "maximum_adaptive_to_reference_ratio": 1.0011724272719218,
+        "maximum_signed_endpoint_shift_to_reference": 7.057125580189076e-07,
+        "negative_propagated_contribution_count": 2,
+        "omission_count": 5,
+        "positive_propagated_contribution_count": 3,
+        "telescoping_green_count": 10,
+        "threshold": 1e-08
+      }
+    }
+  },
+  "program_boundary": {
+    "a_priori_refresh_lipschitz_law_proved": false,
+    "absolute_propagated_horizon_budget": true,
+    "hilbert_polya_operator": false,
+    "nonlinear_hybrid_telescoping_identity": true,
+    "primary_frozen_hybrid_budget_validated": true,
+    "repeated_block_contraction_proved": false,
+    "riemann_hypothesis": false,
+    "uniform_block_propagation_envelope_proved": false,
+    "uniform_stage_A1_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "dd734248431f20a2dc65545f38e89ff61da4fbb99fae82ddf1089a95fb8a5a21",
+    "THEOREM_LEDGER.md": "410f6f70e81076d70d017fb28fcc21fcf4adf4d23ad79408d8ed41abc734cfdc",
+    "UPDATED_ROADMAP.md": "2149d67658d73a48260fa71164c2937cd0b9881bdc1bc20321015638c3455bde",
+    "figures/nonlinear_hybrid_horizon_budget.pdf": "1ed1db46164f8a4163b0fe2c6dd1aaf251705eda71bcfe0c9dbb4a2387a3a418",
+    "figures/nonlinear_hybrid_horizon_budget.png": "4ff66b88aae8a6097481db0882b09a382fc9a332a229adef4769b96d0ecbc896",
+    "main.pdf": "92f4686c8799411a9b88b067acc3c4eea6736b6e4267bdb5d172ea99ef146556",
+    "main.tex": "dea52386049fb69656ff4402d9b633ce3be67d1380b6b6d4f5b6e02ad3d31e3a",
+    "nonlinear-hybrid-horizon-budget.pdf": "92f4686c8799411a9b88b067acc3c4eea6736b6e4267bdb5d172ea99ef146556",
+    "pyproject.toml": "cf14cfe25d583bf3be7e2c44baa8f952fb266f635d485a801b12f678ae71d3c1",
+    "references.bib": "d563b17f416ef4f64c837209804fd84fe1eb3486a5c43564e6505df4c8b3491e",
+    "requirements.txt": "223859266dc308c42daaf834ec590bebdd11ebef66201f51760d5deb95108486"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "379df7c40e4e1a10f952860b4ccee4573b5ac99dd877ebc757a2cd56e01161f9",
+    "results/hybrid_horizon_budget_audit.json": "4c517954185f5ae3ca828fdd09835769a7197268141efb145b3d91be8262dc6f",
+    "results/hybrid_horizon_budget_smoke.json": "091668c9347f730490c7f8776230766dc487c6a256b01e447973013768a4bb9a"
+  },
+  "route_consequence": "Recursive quotient losses admit an exact nonlinear Duhamel decomposition through hybrid chains, without linearizing the Ritz map. The primary five omissions have a rigorously closed absolute endpoint budget below one percent in every channel, while the aggressive thresholds expose larger propagated budgets. The remaining task is to replace hybrid replay by an a priori block propagation envelope.",
+  "status": "rh97_nonlinear_hybrid_horizon_budget_archived",
+  "theorem": {
+    "absolute_propagated_budget": true,
+    "nonlinear_hybrid_telescoping": true,
+    "sparse_decision_reduction": true
+  }
+}
