@@ -1,0 +1,571 @@
+{
+  "all_executed_rank_gates_green": true,
+  "precision_bits": 160,
+  "route_consequence": "Although raw source phase support and raw effective rank grow with dimension, the actual postblock states are uniformly compressible at the five anchors: rank two captures at least 99% and rank four at least 99.9999% of energy. This reopens the route after the single-arc failure. The remaining task is an analytic all-level theorem forcing postblock singular-value decay.",
+  "rows": [
+    {
+      "all_rank_gates_green": true,
+      "channels": [
+        {
+          "dimension": 32,
+          "elapsed_seconds": 0.013531040051020682,
+          "full_observability_norm_upper_ball": "[16.7823546780529942311280851532083548008 +/- 2.19e-38]",
+          "horizon": 4,
+          "observability_prefix_ball": "[16.774938660401034095604832261816209527459429675 +/- 6.52e-46]",
+          "postblock_state_frobenius_ball": "[0.005262235264523248610428283336081879702794116305 +/- 7.23e-49]",
+          "postblock_state_frobenius_upper": 0.005262235264523249,
+          "rank_2_captures_99_percent": true,
+          "rank_4_captures_999999": true,
+          "rank_diagnostics": {
+            "entropy_rank_diagnostic": 1.009991029855161,
+            "participation_rank_diagnostic": 1.002503693591354
+          },
+          "side": "left",
+          "source_columns": 16,
+          "validated_rank_compression": {
+            "rank_1": {
+              "actual_rank": 1,
+              "energy_capture_lower": 0.998749826075646,
+              "energy_capture_lower_ball": "[0.99874982607564609544772352409262220611978037252 +/- 5.89e-48]",
+              "full_future_hardy_perturbation_ball": "[0.000762222784139909998314540987319253220469 +/- 7.08e-43]",
+              "full_future_hardy_perturbation_upper": 0.0007622227841399101,
+              "relative_residual_ball": "[0.0353577986355754980601487424778496665394101282 +/- 2.50e-47]",
+              "relative_residual_upper": 0.035357798635575505,
+              "residual_frobenius_ball": "[0.0001860610548560373898303462376183813886819047809 +/- 6.88e-50]",
+              "residual_frobenius_upper": 0.00018606105485603742
+            },
+            "rank_2": {
+              "actual_rank": 2,
+              "energy_capture_lower": 0.9999053286908463,
+              "energy_capture_lower_ball": "[0.99990532869084633112837438565314064869391665193 +/- 1.80e-48]",
+              "full_future_hardy_perturbation_ball": "[0.000209751898145165485607115832943558817828 +/- 4.12e-43]",
+              "full_future_hardy_perturbation_upper": 0.00020975189814516552,
+              "relative_residual_ball": "[0.00972991825010204654728748277826167807856855737 +/- 5.55e-48]",
+              "relative_residual_upper": 0.009729918250102049,
+              "residual_frobenius_ball": "[5.12011189366153271436523254835424392892125552e-5 +/- 5.94e-50]",
+              "residual_frobenius_upper": 5.120111893661533e-05
+            },
+            "rank_4": {
+              "actual_rank": 4,
+              "energy_capture_lower": 0.9999999999999452,
+              "energy_capture_lower_ball": "[0.99999999999994527462873791628811924376930508845 +/- 5.01e-48]",
+              "full_future_hardy_perturbation_ball": "[5.04302436642535970796846024815391349555e-9 +/- 6.25e-48]",
+              "full_future_hardy_perturbation_upper": 5.0430243664253605e-09,
+              "relative_residual_ball": "[2.3393454482415313405259174191521347180407e-7 +/- 6.08e-48]",
+              "relative_residual_upper": 2.3393454482415315e-07,
+              "residual_frobenius_ball": "[1.2310186113638532264580785840036698539002e-9 +/- 2.37e-50]",
+              "residual_frobenius_upper": 1.2310186113638535e-09
+            }
+          }
+        },
+        {
+          "dimension": 16,
+          "elapsed_seconds": 0.005225926986895502,
+          "full_observability_norm_upper_ball": "[14.95989986366549987419245201917002333066 +/- 3.35e-39]",
+          "horizon": 4,
+          "observability_prefix_ball": "[14.954004498768088116875876201545997695247670265 +/- 3.84e-46]",
+          "postblock_state_frobenius_ball": "[0.006549573993477924869170385912215028358635462637 +/- 4.15e-49]",
+          "postblock_state_frobenius_upper": 0.006549573993477926,
+          "rank_2_captures_99_percent": true,
+          "rank_4_captures_999999": true,
+          "rank_diagnostics": {
+            "entropy_rank_diagnostic": 1.0120768306412593,
+            "participation_rank_diagnostic": 1.0032144712404338
+          },
+          "side": "right",
+          "source_columns": 16,
+          "validated_rank_compression": {
+            "rank_1": {
+              "actual_rank": 1,
+              "energy_capture_lower": 0.9983953600463914,
+              "energy_capture_lower_ball": "[0.99839536004639156575969515263965580037340944960 +/- 5.54e-48]",
+              "full_future_hardy_perturbation_ball": "[0.001014766675851722325510651707474935067966 +/- 2.34e-43]",
+              "full_future_hardy_perturbation_upper": 0.0010147666758517225,
+              "relative_residual_ball": "[0.04005795743180665771157347984951178404960392844 +/- 7.45e-48]",
+              "relative_residual_upper": 0.040057957431806665,
+              "residual_frobenius_ball": "[0.0002623625562272066504168036436694926817179790689 +/- 6.20e-50]",
+              "residual_frobenius_upper": 0.0002623625562272067
+            },
+            "rank_2": {
+              "actual_rank": 2,
+              "energy_capture_lower": 0.9999870088276013,
+              "energy_capture_lower_ball": "[0.99998700882760133385555759057782042435301541119 +/- 8.82e-49]",
+              "full_future_hardy_perturbation_ball": "[9.13064734452367784292053345195551031827e-5 +/- 4.10e-44]",
+              "full_future_hardy_perturbation_upper": 9.130647344523679e-05,
+              "relative_residual_ball": "[0.00360432689952869625146754792915632960027395648 +/- 2.86e-48]",
+              "relative_residual_upper": 0.003604326899528697,
+              "residual_frobenius_ball": "[2.36068057251460703877129948447040834612522322e-5 +/- 5.59e-50]",
+              "residual_frobenius_upper": 2.3606805725146074e-05
+            },
+            "rank_4": {
+              "actual_rank": 4,
+              "energy_capture_lower": 0.9999999999999698,
+              "energy_capture_lower_ball": "[0.99999999999996994179548063656610105924657814362 +/- 9.28e-49]",
+              "full_future_hardy_perturbation_ball": "[4.391965437083253894447510041570981622014e-9 +/- 7.45e-49]",
+              "full_future_hardy_perturbation_upper": 4.391965437083255e-09,
+              "relative_residual_ball": "[1.7337302131347724165420400786212337996043e-7 +/- 5.86e-48]",
+              "relative_residual_upper": 1.7337302131347726e-07,
+              "residual_frobenius_ball": "[1.1355194315654445208646690080521699868180e-9 +/- 5.15e-50]",
+              "residual_frobenius_upper": 1.1355194315654447e-09
+            }
+          }
+        }
+      ],
+      "fine_dimension": 32,
+      "sigma": 0.16
+    },
+    {
+      "all_rank_gates_green": true,
+      "channels": [
+        {
+          "dimension": 64,
+          "elapsed_seconds": 0.1001373870531097,
+          "full_observability_norm_upper_ball": "[36.920751427468977664733969670998102882 +/- 1.69e-37]",
+          "horizon": 9,
+          "observability_prefix_ball": "[36.91159483324972033843792355529883819529998386 +/- 8.80e-45]",
+          "postblock_state_frobenius_ball": "[0.00461376754792409889132105680343104086009762450 +/- 3.40e-48]",
+          "postblock_state_frobenius_upper": 0.0046137675479241,
+          "rank_2_captures_99_percent": true,
+          "rank_4_captures_999999": true,
+          "rank_diagnostics": {
+            "entropy_rank_diagnostic": 1.3816946470286628,
+            "participation_rank_diagnostic": 1.2175666575384725
+          },
+          "side": "left",
+          "source_columns": 32,
+          "validated_rank_compression": {
+            "rank_1": {
+              "actual_rank": 1,
+              "energy_capture_lower": 0.9008184000723435,
+              "energy_capture_lower_ball": "[0.900818400072343626145793514414598038555627335 +/- 7.02e-46]",
+              "full_future_hardy_perturbation_ball": "[0.0088288986324207540210335171549086891901 +/- 5.02e-41]",
+              "full_future_hardy_perturbation_upper": 0.008828898632420756,
+              "relative_residual_ball": "[0.314931103461783167604380428094246784768576596 +/- 6.02e-46]",
+              "relative_residual_upper": 0.3149311034617832,
+              "residual_frobenius_ball": "[0.00145301890498390201699550301362732846349628783 +/- 5.21e-48]",
+              "residual_frobenius_upper": 0.0014530189049839022
+            },
+            "rank_2": {
+              "actual_rank": 2,
+              "energy_capture_lower": 0.999997429521711,
+              "energy_capture_lower_ball": "[0.99999742952171115980623908634983611375955173749 +/- 3.67e-48]",
+              "full_future_hardy_perturbation_ball": "[4.4946713918938116183519486183335892935e-5 +/- 4.16e-43]",
+              "full_future_hardy_perturbation_upper": 4.494671391893812e-05,
+              "relative_residual_ball": "[0.0016032711214389766338593426453952079501051028 +/- 1.67e-47]",
+              "relative_residual_upper": 0.0016032711214389768,
+              "residual_frobenius_ball": "[7.3971202706190274000003621928843689789233580e-6 +/- 8.12e-50]",
+              "residual_frobenius_upper": 7.3971202706190285e-06
+            },
+            "rank_4": {
+              "actual_rank": 4,
+              "energy_capture_lower": 0.9999999999999852,
+              "energy_capture_lower_ball": "[0.99999999999998532940227103404103721556144121867 +/- 5.09e-48]",
+              "full_future_hardy_perturbation_ball": "[3.3955871397924439023541466241080558948e-9 +/- 3.97e-47]",
+              "full_future_hardy_perturbation_upper": 3.395587139792444e-09,
+              "relative_residual_ball": "[1.211222429158491060791495811842879858415e-7 +/- 3.50e-47]",
+              "relative_residual_upper": 1.2112224291584913e-07,
+              "residual_frobenius_ball": "[5.588298736969241879697966364127537693645e-10 +/- 9.70e-50]",
+              "residual_frobenius_upper": 5.588298736969243e-10
+            }
+          }
+        },
+        {
+          "dimension": 32,
+          "elapsed_seconds": 0.03492714196909219,
+          "full_observability_norm_upper_ball": "[35.1911418717302175439768570425954972081 +/- 3.40e-38]",
+          "horizon": 9,
+          "observability_prefix_ball": "[35.18393569344274961690070611828271980411684909 +/- 3.00e-45]",
+          "postblock_state_frobenius_ball": "[0.00588720475735650425741420823753399589772550176 +/- 2.11e-48]",
+          "postblock_state_frobenius_upper": 0.005887204757356505,
+          "rank_2_captures_99_percent": true,
+          "rank_4_captures_999999": true,
+          "rank_diagnostics": {
+            "entropy_rank_diagnostic": 1.2881221925405042,
+            "participation_rank_diagnostic": 1.1492741877072679
+          },
+          "side": "right",
+          "source_columns": 32,
+          "validated_rank_compression": {
+            "rank_1": {
+              "actual_rank": 1,
+              "energy_capture_lower": 0.93018288031485,
+              "energy_capture_lower_ball": "[0.930182880314850131037164929021534979125866530 +/- 5.09e-46]",
+              "full_future_hardy_perturbation_ball": "[0.00922798296871786293418977385191479827595 +/- 7.01e-42]",
+              "full_future_hardy_perturbation_upper": 0.009227982968717865,
+              "relative_residual_ball": "[0.264229293768026161605350255522610496272427602 +/- 2.66e-46]",
+              "relative_residual_upper": 0.26422929376802623,
+              "residual_frobenius_ball": "[0.001555571955304072941265319628140061917082476626 +/- 8.13e-49]",
+              "residual_frobenius_upper": 0.0015555719553040732
+            },
+            "rank_2": {
+              "actual_rank": 2,
+              "energy_capture_lower": 0.9999982906978254,
+              "energy_capture_lower_ball": "[0.99999829069782548797242684129216325188807960239 +/- 3.74e-48]",
+              "full_future_hardy_perturbation_ball": "[4.56599301615715509824817658476351488609e-5 +/- 4.11e-44]",
+              "full_future_hardy_perturbation_upper": 4.565993016157156e-05,
+              "relative_residual_ball": "[0.0013074028355912448353414873012074084607469357 +/- 4.60e-47]",
+              "relative_residual_upper": 0.0013074028355912451,
+              "residual_frobenius_ball": "[7.6969481934741601792177726791290493321058563e-6 +/- 7.17e-50]",
+              "residual_frobenius_upper": 7.696948193474162e-06
+            },
+            "rank_4": {
+              "actual_rank": 4,
+              "energy_capture_lower": 0.9999999999999925,
+              "energy_capture_lower_ball": "[0.99999999999999257868154950595871485170867901326 +/- 2.83e-48]",
+              "full_future_hardy_perturbation_ball": "[3.00861318309371248060256033334984584887e-9 +/- 3.95e-48]",
+              "full_future_hardy_perturbation_upper": 3.008613183093713e-09,
+              "relative_residual_ball": "[8.61470745324183442474145902496251257900e-8 +/- 4.40e-47]",
+              "relative_residual_upper": 8.614707453241836e-08,
+              "residual_frobenius_ball": "[5.07165467019598625802029012808676406804e-10 +/- 2.00e-49]",
+              "residual_frobenius_upper": 5.071654670195988e-10
+            }
+          }
+        }
+      ],
+      "fine_dimension": 64,
+      "sigma": 0.08
+    },
+    {
+      "all_rank_gates_green": true,
+      "channels": [
+        {
+          "dimension": 128,
+          "elapsed_seconds": 0.5841500499518588,
+          "full_observability_norm_upper_ball": "[86.47258311366555211080680217761522046 +/- 4.05e-36]",
+          "horizon": 16,
+          "observability_prefix_ball": "[86.4473485320357705004743148165451464692367518 +/- 8.61e-44]",
+          "postblock_state_frobenius_ball": "[0.00221274433506295176546916806358491927161116900 +/- 5.99e-48]",
+          "postblock_state_frobenius_upper": 0.002212744335062952,
+          "rank_2_captures_99_percent": true,
+          "rank_4_captures_999999": true,
+          "rank_diagnostics": {
+            "entropy_rank_diagnostic": 1.6194562822681706,
+            "participation_rank_diagnostic": 1.4373440041183414
+          },
+          "side": "left",
+          "source_columns": 64,
+          "validated_rank_compression": {
+            "rank_1": {
+              "actual_rank": 1,
+              "energy_capture_lower": 0.8128319629385238,
+              "energy_capture_lower_ball": "[0.81283196293852388911255331369341394296361933 +/- 5.85e-45]",
+              "full_future_hardy_perturbation_ball": "[0.008901973490035022266102054105684530197 +/- 2.11e-40]",
+              "full_future_hardy_perturbation_upper": 0.008901973490035024,
+              "relative_residual_ball": "[0.43262921429496195187646774733503131134268846 +/- 5.85e-45]",
+              "relative_residual_upper": 0.432629214294962,
+              "residual_frobenius_ball": "[0.00095729784311391285088860352392530296240517249 +/- 5.01e-48]",
+              "residual_frobenius_upper": 0.000957297843113913
+            },
+            "rank_2": {
+              "actual_rank": 2,
+              "energy_capture_lower": 0.9999999984638928,
+              "energy_capture_lower_ball": "[0.99999999846389283356817203572860197583177155007 +/- 4.26e-48]",
+              "full_future_hardy_perturbation_ball": "[8.0645699166588809158261254557996346221e-7 +/- 6.07e-45]",
+              "full_future_hardy_perturbation_upper": 8.064569916658881e-07,
+              "relative_residual_ball": "[3.9193203064202700658956238563414791851530e-5 +/- 4.75e-46]",
+              "relative_residual_upper": 3.919320306420271e-05,
+              "residual_frobenius_ball": "[8.6724538053286448502089351405675082695958e-8 +/- 4.53e-49]",
+              "residual_frobenius_upper": 8.672453805328647e-08
+            },
+            "rank_4": {
+              "actual_rank": 4,
+              "energy_capture_lower": 0.9999999999982045,
+              "energy_capture_lower_ball": "[0.99999999999820469883570182536529292184002109754 +/- 5.02e-48]",
+              "full_future_hardy_perturbation_ball": "[2.7570148799548767554114735446165993973e-8 +/- 3.76e-46]",
+              "full_future_hardy_perturbation_upper": 2.7570148799548772e-08,
+              "relative_residual_ball": "[1.339888489501337060690182297534996934991e-6 +/- 6.33e-46]",
+              "relative_residual_upper": 1.3398884895013373e-06,
+              "residual_frobenius_ball": "[2.964830664760138901913678094857272769940e-9 +/- 6.53e-49]",
+              "residual_frobenius_upper": 2.9648306647601395e-09
+            }
+          }
+        },
+        {
+          "dimension": 64,
+          "elapsed_seconds": 0.24929823505226523,
+          "full_observability_norm_upper_ball": "[84.501936629748292704852325710784957822 +/- 3.78e-37]",
+          "horizon": 16,
+          "observability_prefix_ball": "[84.4771233511223184146600779281991672820210735 +/- 7.92e-44]",
+          "postblock_state_frobenius_ball": "[0.00407565410680477324457360481688522924031263804 +/- 3.51e-48]",
+          "postblock_state_frobenius_upper": 0.004075654106804774,
+          "rank_2_captures_99_percent": true,
+          "rank_4_captures_999999": true,
+          "rank_diagnostics": {
+            "entropy_rank_diagnostic": 1.4618175279515462,
+            "participation_rank_diagnostic": 1.2836918677046394
+          },
+          "side": "right",
+          "source_columns": 64,
+          "validated_rank_compression": {
+            "rank_1": {
+              "actual_rank": 1,
+              "energy_capture_lower": 0.8734990920243286,
+              "energy_capture_lower_ball": "[0.87349909202432879227511233238028906712633273 +/- 1.08e-45]",
+              "full_future_hardy_perturbation_ball": "[0.0133253146147073215898197012066244187881 +/- 2.54e-41]",
+              "full_future_hardy_perturbation_upper": 0.013325314614707323,
+              "relative_residual_ball": "[0.35566966130901748269920028827811712535980190 +/- 3.17e-45]",
+              "relative_residual_upper": 0.35566966130901756,
+              "residual_frobenius_ball": "[0.00144958651577995986551683273478843150051220161 +/- 6.63e-48]",
+              "residual_frobenius_upper": 0.00144958651577996
+            },
+            "rank_2": {
+              "actual_rank": 2,
+              "energy_capture_lower": 0.999999999355484,
+              "energy_capture_lower_ball": "[0.99999999935548411082900631744618842356270619432 +/- 4.27e-48]",
+              "full_future_hardy_perturbation_ball": "[9.5114661028101000562491676039931641471e-7 +/- 1.64e-45]",
+              "full_future_hardy_perturbation_upper": 9.511466102810101e-07,
+              "relative_residual_ball": "[2.5387317486709652021667476822868867884960e-5 +/- 4.12e-46]",
+              "relative_residual_upper": 2.5387317486709654e-05,
+              "residual_frobenius_ball": "[1.03469924775464827556739794021545097872594e-7 +/- 7.39e-49]",
+              "residual_frobenius_upper": 1.0346992477546485e-07
+            },
+            "rank_4": {
+              "actual_rank": 4,
+              "energy_capture_lower": 0.9999999999991386,
+              "energy_capture_lower_ball": "[0.99999999999913870184708651699581139890748600015 +/- 3.48e-48]",
+              "full_future_hardy_perturbation_ball": "[3.47702175682347261374337764049419147073e-8 +/- 5.11e-47]",
+              "full_future_hardy_perturbation_upper": 3.477021756823473e-08,
+              "relative_residual_ball": "[9.280615027644897437002814735283986543500e-7 +/- 4.79e-47]",
+              "relative_residual_upper": 9.280615027644899e-07,
+              "residual_frobenius_ball": "[3.782457675109502041650573748335608178196e-9 +/- 4.72e-49]",
+              "residual_frobenius_upper": 3.782457675109503e-09
+            }
+          }
+        }
+      ],
+      "fine_dimension": 128,
+      "sigma": 0.04
+    },
+    {
+      "all_rank_gates_green": true,
+      "channels": [
+        {
+          "dimension": 256,
+          "elapsed_seconds": 3.9522152689751238,
+          "full_observability_norm_upper_ball": "[198.7812857613637451662854407884296240 +/- 3.93e-35]",
+          "horizon": 25,
+          "observability_prefix_ball": "[198.75267564671467426835425251751571307680347 +/- 4.96e-42]",
+          "postblock_state_frobenius_ball": "[0.0009946719972806354562407077194794205470589236 +/- 4.34e-47]",
+          "postblock_state_frobenius_upper": 0.0009946719972806356,
+          "rank_2_captures_99_percent": true,
+          "rank_4_captures_999999": true,
+          "rank_diagnostics": {
+            "entropy_rank_diagnostic": 1.9447100083421245,
+            "participation_rank_diagnostic": 1.7653726675430603
+          },
+          "side": "left",
+          "source_columns": 128,
+          "validated_rank_compression": {
+            "rank_1": {
+              "actual_rank": 1,
+              "energy_capture_lower": 0.6897264656177695,
+              "energy_capture_lower_ball": "[0.6897264656177696412820865742705731658622891 +/- 5.28e-44]",
+              "full_future_hardy_perturbation_ball": "[0.007811600160345998091392673238001849450 +/- 2.81e-40]",
+              "full_future_hardy_perturbation_upper": 0.007811600160345999,
+              "relative_residual_ball": "[0.5570220232470439392814480494909723197050903 +/- 4.28e-44]",
+              "relative_residual_upper": 0.5570220232470441,
+              "residual_frobenius_ball": "[0.00055405420839243774906188095390683447964817238 +/- 6.47e-48]",
+              "residual_frobenius_upper": 0.0005540542083924379
+            },
+            "rank_2": {
+              "actual_rank": 2,
+              "energy_capture_lower": 0.9908453454613284,
+              "energy_capture_lower_ball": "[0.990845345461328570581986748924733896008106431 +/- 8.96e-46]",
+              "full_future_hardy_perturbation_ball": "[0.0013418025701637531163721385541076730967 +/- 7.61e-41]",
+              "full_future_hardy_perturbation_upper": 0.0013418025701637532,
+              "relative_residual_ball": "[0.09567995891863368383860184173777447412931948 +/- 6.87e-45]",
+              "relative_residual_upper": 0.09567995891863369,
+              "residual_frobenius_ball": "[9.517017583732651573943165508138490365705893e-5 +/- 5.26e-48]",
+              "residual_frobenius_upper": 9.517017583732652e-05
+            },
+            "rank_4": {
+              "actual_rank": 4,
+              "energy_capture_lower": 0.9999999999999983,
+              "energy_capture_lower_ball": "[0.99999999999999847914027819593497841971276316845 +/- 3.94e-48]",
+              "full_future_hardy_perturbation_ball": "[5.469054086442876839086634596632527159e-10 +/- 8.04e-47]",
+              "full_future_hardy_perturbation_upper": 5.469054086442878e-10,
+              "relative_residual_ball": "[3.899820152012224552426324675373573621e-8 +/- 1.91e-45]",
+              "relative_residual_upper": 3.899820152012225e-08,
+              "residual_frobenius_ball": "[3.879041899637270771590980330239516469e-11 +/- 3.34e-48]",
+              "residual_frobenius_upper": 3.8790418996372715e-11
+            }
+          }
+        },
+        {
+          "dimension": 128,
+          "elapsed_seconds": 1.358919267076999,
+          "full_observability_norm_upper_ball": "[196.19836084116358792815531864854698614 +/- 2.40e-36]",
+          "horizon": 25,
+          "observability_prefix_ball": "[196.17404919262980607008085070892976016617163 +/- 5.08e-42]",
+          "postblock_state_frobenius_ball": "[0.00220696637859119243785459593802560400100461470 +/- 4.43e-48]",
+          "postblock_state_frobenius_upper": 0.002206966378591193,
+          "rank_2_captures_99_percent": true,
+          "rank_4_captures_999999": true,
+          "rank_diagnostics": {
+            "entropy_rank_diagnostic": 1.5095293782724204,
+            "participation_rank_diagnostic": 1.2854648157263044
+          },
+          "side": "right",
+          "source_columns": 128,
+          "validated_rank_compression": {
+            "rank_1": {
+              "actual_rank": 1,
+              "energy_capture_lower": 0.8739875200105953,
+              "energy_capture_lower_ball": "[0.87398752001059538648451350585929795329203528 +/- 3.35e-45]",
+              "full_future_hardy_perturbation_ball": "[0.0109736267380044369817127549495800909370 +/- 5.11e-41]",
+              "full_future_hardy_perturbation_upper": 0.010973626738004439,
+              "relative_residual_ball": "[0.35498236574427836430907801654049122921105108 +/- 4.61e-45]",
+              "relative_residual_upper": 0.35498236574427844,
+              "residual_frobenius_ball": "[0.00078343414619038418610272211552182927802333978 +/- 5.38e-48]",
+              "residual_frobenius_upper": 0.0007834341461903843
+            },
+            "rank_2": {
+              "actual_rank": 2,
+              "energy_capture_lower": 0.9924855158847008,
+              "energy_capture_lower_ball": "[0.992485515884700909317907109350576423853063626 +/- 2.79e-46]",
+              "full_future_hardy_perturbation_ball": "[0.0026797420415094388439190355708986910053 +/- 5.31e-41]",
+              "full_future_hardy_perturbation_upper": 0.0026797420415094393,
+              "relative_residual_ball": "[0.08668612412202480449583163815916860566025781 +/- 1.63e-45]",
+              "relative_residual_upper": 0.08668612412202482,
+              "residual_frobenius_ball": "[0.00019131336142769169385218960566815191349683889 +/- 6.29e-48]",
+              "residual_frobenius_upper": 0.00019131336142769173
+            },
+            "rank_4": {
+              "actual_rank": 4,
+              "energy_capture_lower": 0.9999999999999994,
+              "energy_capture_lower_ball": "[0.99999999999999952108187948379510336413476877153 +/- 3.10e-48]",
+              "full_future_hardy_perturbation_ball": "[6.765097173522373059105340458283530253e-10 +/- 8.77e-47]",
+              "full_future_hardy_perturbation_upper": 6.765097173522374e-10,
+              "relative_residual_ball": "[2.1884197963740980942530970708146797885e-8 +/- 4.17e-46]",
+              "relative_residual_upper": 2.1884197963740984e-08,
+              "residual_frobenius_ball": "[4.829768912841018038558121742352951177e-11 +/- 5.17e-48]",
+              "residual_frobenius_upper": 4.829768912841019e-11
+            }
+          }
+        }
+      ],
+      "fine_dimension": 256,
+      "sigma": 0.02
+    },
+    {
+      "all_rank_gates_green": true,
+      "channels": [
+        {
+          "dimension": 512,
+          "elapsed_seconds": 25.705116787925363,
+          "full_observability_norm_upper_ball": "[451.7932896401012432057590835850989560 +/- 5.01e-35]",
+          "horizon": 32,
+          "observability_prefix_ball": "[451.76313665150542284515754919293505333403 +/- 2.01e-39]",
+          "postblock_state_frobenius_ball": "[0.0003825660421907648874423468565575519971947259 +/- 6.14e-47]",
+          "postblock_state_frobenius_upper": 0.0003825660421907649,
+          "rank_2_captures_99_percent": true,
+          "rank_4_captures_999999": true,
+          "rank_diagnostics": {
+            "entropy_rank_diagnostic": 1.9663775174623268,
+            "participation_rank_diagnostic": 1.8676117131396557
+          },
+          "side": "left",
+          "source_columns": 256,
+          "validated_rank_compression": {
+            "rank_1": {
+              "actual_rank": 1,
+              "energy_capture_lower": 0.6377339461273035,
+              "energy_capture_lower_ball": "[0.6377339461273035883053697205273912367970109 +/- 8.39e-44]",
+              "full_future_hardy_perturbation_ball": "[0.004894294816423906465077303187974948699 +/- 2.31e-40]",
+              "full_future_hardy_perturbation_upper": 0.004894294816423907,
+              "relative_residual_ball": "[0.6018854158996514609722330023922705305402464 +/- 5.37e-44]",
+              "relative_residual_upper": 0.6018854158996516,
+              "residual_frobenius_ball": "[0.0002302609214130721322209517876497860580751573 +/- 5.73e-47]",
+              "residual_frobenius_upper": 0.00023026092141307215
+            },
+            "rank_2": {
+              "actual_rank": 2,
+              "energy_capture_lower": 0.9965247201561133,
+              "energy_capture_lower_ball": "[0.99652472015611338823777350344738442658320632 +/- 5.45e-45]",
+              "full_future_hardy_perturbation_ball": "[0.0004793703812337300653234125430787267498 +/- 6.07e-41]",
+              "full_future_hardy_perturbation_upper": 0.00047937038123373014,
+              "relative_residual_ball": "[0.0589515041698395662083618621737881436263528 +/- 3.41e-44]",
+              "relative_residual_upper": 0.058951504169839575,
+              "residual_frobenius_ball": "[2.255284363144789567684643113031076637055355e-5 +/- 5.59e-48]",
+              "residual_frobenius_upper": 2.25528436314479e-05
+            },
+            "rank_4": {
+              "actual_rank": 4,
+              "energy_capture_lower": 0.9999999479955206,
+              "energy_capture_lower_ball": "[0.99999994799552070746975994789371419413245872801 +/- 8.51e-48]",
+              "full_future_hardy_perturbation_ball": "[1.8543712363947681615171218967188667976e-6 +/- 7.74e-44]",
+              "full_future_hardy_perturbation_upper": 1.8543712363947684e-06,
+              "relative_residual_ball": "[0.00022804490630691631401297045854328194162300 +/- 7.80e-45]",
+              "relative_residual_upper": 0.00022804490630691634,
+              "residual_frobenius_ball": "[8.724223724760077236061067040779517967538e-8 +/- 7.28e-48]",
+              "residual_frobenius_upper": 8.724223724760079e-08
+            }
+          }
+        },
+        {
+          "dimension": 256,
+          "elapsed_seconds": 7.5923165359999985,
+          "full_observability_norm_upper_ball": "[448.00620802808130116302079511363102234 +/- 5.68e-36]",
+          "horizon": 32,
+          "observability_prefix_ball": "[447.97813298941867300164265545093121804846 +/- 4.23e-39]",
+          "postblock_state_frobenius_ball": "[0.0008943481661015400197604071843994191775952370 +/- 2.22e-47]",
+          "postblock_state_frobenius_upper": 0.0008943481661015402,
+          "rank_2_captures_99_percent": true,
+          "rank_4_captures_999999": true,
+          "rank_diagnostics": {
+            "entropy_rank_diagnostic": 1.8862432184743056,
+            "participation_rank_diagnostic": 1.7041031663996558
+          },
+          "side": "right",
+          "source_columns": 256,
+          "validated_rank_compression": {
+            "rank_1": {
+              "actual_rank": 1,
+              "energy_capture_lower": 0.7127629732073936,
+              "energy_capture_lower_ball": "[0.7127629732073936863273514903406305076597896 +/- 3.38e-44]",
+              "full_future_hardy_perturbation_ball": "[0.010145392375902176480231830740973544181 +/- 2.00e-40]",
+              "full_future_hardy_perturbation_upper": 0.010145392375902179,
+              "relative_residual_ball": "[0.5359449848562875708707258893122517588405051 +/- 3.91e-44]",
+              "relative_residual_upper": 0.5359449848562877,
+              "residual_frobenius_ball": "[0.0004793214143375384269296272913383676967414372 +/- 1.77e-47]",
+              "residual_frobenius_upper": 0.00047932141433753845
+            },
+            "rank_2": {
+              "actual_rank": 2,
+              "energy_capture_lower": 0.9934042776177073,
+              "energy_capture_lower_ball": "[0.99340427761770738959589849421905123393075766 +/- 4.13e-45]",
+              "full_future_hardy_perturbation_ball": "[0.0015373750217002127879905384828603856745 +/- 1.94e-41]",
+              "full_future_hardy_perturbation_upper": 0.001537375021700213,
+              "relative_residual_ball": "[0.08121405286212854926162205482001858486283929 +/- 7.28e-45]",
+              "relative_residual_upper": 0.08121405286212856,
+              "residual_frobenius_ball": "[7.263363923891819542081562545645938146864220e-5 +/- 8.74e-48]",
+              "residual_frobenius_upper": 7.263363923891821e-05
+            },
+            "rank_4": {
+              "actual_rank": 4,
+              "energy_capture_lower": 0.9999999202963462,
+              "energy_capture_lower_ball": "[0.99999992029634627585595945190776098497212917894 +/- 5.18e-48]",
+              "full_future_hardy_perturbation_ball": "[5.3442621352891839303005881648781132152e-6 +/- 5.63e-44]",
+              "full_future_hardy_perturbation_upper": 5.344262135289185e-06,
+              "relative_residual_ball": "[0.00028231835527316327957754298636634688107497 +/- 5.42e-45]",
+              "relative_residual_upper": 0.0002823183552731633,
+              "residual_frobenius_ball": "[2.5249090329535661948188347987885236949719e-7 +/- 4.68e-48]",
+              "residual_frobenius_upper": 2.524909032953567e-07
+            }
+          }
+        }
+      ],
+      "fine_dimension": 512,
+      "sigma": 0.01
+    }
+  ],
+  "status": "rh77_validated_postblock_effective_rank_compression",
+  "theorem_boundary": {
+    "block_observability_upper": true,
+    "eckart_young_postblock_compression": true,
+    "frozen_postblock_rank4_validated": true,
+    "observability_lipschitz_transfer": true,
+    "uniform_analytic_effective_rank_theorem": false,
+    "uniform_stage_A1_closed": false
+  }
+}

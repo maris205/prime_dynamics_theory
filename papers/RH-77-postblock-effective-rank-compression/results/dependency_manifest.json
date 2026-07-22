@@ -1,0 +1,35 @@
+{
+  "external_inputs": {
+    "rh70_frozen_audit": {
+      "path": "papers/RH-70-frozen-production-block-hardy-audit/results/frozen_production_interval_audit.json",
+      "sha256": "3a7ae810cc6a8d1b8c667267dd5bb7bd9279273b34b7f6305efaf9f9e8fbde26"
+    },
+    "rh76_phase_summary": {
+      "path": "papers/RH-76-single-arc-phase-compression-barrier/results/summary.json",
+      "sha256": "4f21dcc479b70a258a49cbe9ebca0540877c2b8c7983d004b7143b425d1293f8"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "16f44bfca321c160b2a46b0d369d71c8e97a4f4a583399c8395cdc20a572bc6f",
+    "experiments/make_figures.py": "21b4001e4a927c57a5d31fae458c98b4a48e2000ea339cd7314321994e781b8a",
+    "experiments/run_effective_rank_audit.py": "f1ea040fd00577c2775fea8cc1bc4bf416cae76d06dd06b3a6b5ee27116cd3c3",
+    "experiments/verify_archive.py": "d9ec02656a3c943f0345a7d35452ba006cc355f999c5e14a0309691a1fcef8c1",
+    "src/effective_rank/__init__.py": "91cdcd81ecde7b7fa19334df876caab43d0ad1e0f7592773ed7e2109fa103c77",
+    "src/effective_rank/bounds.py": "5e6fd26a3a21cc0f3eacb44399f86a45fad9dac066f68c7008f007a29dd91f31",
+    "tests/test_archived_results.py": "c0bf6120b825c205805c4e4400e2f4a3effa1dd97c8fbca07817cf9e3c9fad69",
+    "tests/test_theory.py": "c6ceb5d0f5a3b72e7006e05baad7ca78cb57731cfdebd698bc9b3d177aeac06a"
+  },
+  "publication_artifacts": {
+    ".gitignore": "45bc6f151fb9fa411571660ee59bb7d034af65fbb7c1c6104c4c7af4ada209fc",
+    "README.md": "b14288f5f1e71b2c93c366b45f744b3ba43041e800762d0e303a2c4a85a0660b",
+    "figures/postblock_effective_rank_compression.pdf": "4dac4033531e50eb6c38fd3eafee459a121203b18144107031b85bf997a1aefb",
+    "figures/postblock_effective_rank_compression.png": "af0b564b10056371ab42d65916429b6eda0ccb5d7672ec59fd18c698665d691a",
+    "main.pdf": "6a58bdfa3c019a714c17dbe067856154c7ea00e9cfeeef025294df6785cf25b3",
+    "main.tex": "70b03f29e0880aa85b6996ac43c7eb92d565c3f65b7e849c9caa0b7e4e4eaa8c",
+    "postblock-effective-rank-compression.pdf": "6a58bdfa3c019a714c17dbe067856154c7ea00e9cfeeef025294df6785cf25b3",
+    "pyproject.toml": "53d7ec8e8ee734897544250dd5ae3431d6538ae0cbab0b0550534acf5e4d7f5d",
+    "references.bib": "e20efb3016ecefc29432da16f1fbd7e41b434c1986d779b9748fe4f75ba331f9",
+    "requirements.txt": "25be8263391d4091728342c19f59a0c799ec2444980149521892d447c2ce223b"
+  },
+  "status": "all_rh77_inputs_sources_and_publication_artifacts_hashed"
+}

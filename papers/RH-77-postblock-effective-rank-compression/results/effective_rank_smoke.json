@@ -1,0 +1,127 @@
+{
+  "all_executed_rank_gates_green": true,
+  "precision_bits": 160,
+  "route_consequence": "Although raw source phase support and raw effective rank grow with dimension, the actual postblock states are uniformly compressible at the five anchors: rank two captures at least 99% and rank four at least 99.9999% of energy. This reopens the route after the single-arc failure. The remaining task is an analytic all-level theorem forcing postblock singular-value decay.",
+  "rows": [
+    {
+      "all_rank_gates_green": true,
+      "channels": [
+        {
+          "dimension": 32,
+          "elapsed_seconds": 0.01357201300561428,
+          "full_observability_norm_upper_ball": "[16.7823546780529942311280851532083548008 +/- 2.19e-38]",
+          "horizon": 4,
+          "observability_prefix_ball": "[16.774938660401034095604832261816209527459429675 +/- 6.52e-46]",
+          "postblock_state_frobenius_ball": "[0.005262235264523248610428283336081879702794116305 +/- 7.23e-49]",
+          "postblock_state_frobenius_upper": 0.005262235264523249,
+          "rank_2_captures_99_percent": true,
+          "rank_4_captures_999999": true,
+          "rank_diagnostics": {
+            "entropy_rank_diagnostic": 1.009991029855161,
+            "participation_rank_diagnostic": 1.002503693591354
+          },
+          "side": "left",
+          "source_columns": 16,
+          "validated_rank_compression": {
+            "rank_1": {
+              "actual_rank": 1,
+              "energy_capture_lower": 0.998749826075646,
+              "energy_capture_lower_ball": "[0.99874982607564609544772352409262220611978037252 +/- 5.89e-48]",
+              "full_future_hardy_perturbation_ball": "[0.000762222784139909998314540987319253220469 +/- 7.08e-43]",
+              "full_future_hardy_perturbation_upper": 0.0007622227841399101,
+              "relative_residual_ball": "[0.0353577986355754980601487424778496665394101282 +/- 2.50e-47]",
+              "relative_residual_upper": 0.035357798635575505,
+              "residual_frobenius_ball": "[0.0001860610548560373898303462376183813886819047809 +/- 6.88e-50]",
+              "residual_frobenius_upper": 0.00018606105485603742
+            },
+            "rank_2": {
+              "actual_rank": 2,
+              "energy_capture_lower": 0.9999053286908463,
+              "energy_capture_lower_ball": "[0.99990532869084633112837438565314064869391665193 +/- 1.80e-48]",
+              "full_future_hardy_perturbation_ball": "[0.000209751898145165485607115832943558817828 +/- 4.12e-43]",
+              "full_future_hardy_perturbation_upper": 0.00020975189814516552,
+              "relative_residual_ball": "[0.00972991825010204654728748277826167807856855737 +/- 5.55e-48]",
+              "relative_residual_upper": 0.009729918250102049,
+              "residual_frobenius_ball": "[5.12011189366153271436523254835424392892125552e-5 +/- 5.94e-50]",
+              "residual_frobenius_upper": 5.120111893661533e-05
+            },
+            "rank_4": {
+              "actual_rank": 4,
+              "energy_capture_lower": 0.9999999999999452,
+              "energy_capture_lower_ball": "[0.99999999999994527462873791628811924376930508845 +/- 5.01e-48]",
+              "full_future_hardy_perturbation_ball": "[5.04302436642535970796846024815391349555e-9 +/- 6.25e-48]",
+              "full_future_hardy_perturbation_upper": 5.0430243664253605e-09,
+              "relative_residual_ball": "[2.3393454482415313405259174191521347180407e-7 +/- 6.08e-48]",
+              "relative_residual_upper": 2.3393454482415315e-07,
+              "residual_frobenius_ball": "[1.2310186113638532264580785840036698539002e-9 +/- 2.37e-50]",
+              "residual_frobenius_upper": 1.2310186113638535e-09
+            }
+          }
+        },
+        {
+          "dimension": 16,
+          "elapsed_seconds": 0.005514997988939285,
+          "full_observability_norm_upper_ball": "[14.95989986366549987419245201917002333066 +/- 3.35e-39]",
+          "horizon": 4,
+          "observability_prefix_ball": "[14.954004498768088116875876201545997695247670265 +/- 3.84e-46]",
+          "postblock_state_frobenius_ball": "[0.006549573993477924869170385912215028358635462637 +/- 4.15e-49]",
+          "postblock_state_frobenius_upper": 0.006549573993477926,
+          "rank_2_captures_99_percent": true,
+          "rank_4_captures_999999": true,
+          "rank_diagnostics": {
+            "entropy_rank_diagnostic": 1.0120768306412593,
+            "participation_rank_diagnostic": 1.0032144712404338
+          },
+          "side": "right",
+          "source_columns": 16,
+          "validated_rank_compression": {
+            "rank_1": {
+              "actual_rank": 1,
+              "energy_capture_lower": 0.9983953600463914,
+              "energy_capture_lower_ball": "[0.99839536004639156575969515263965580037340944960 +/- 5.54e-48]",
+              "full_future_hardy_perturbation_ball": "[0.001014766675851722325510651707474935067966 +/- 2.34e-43]",
+              "full_future_hardy_perturbation_upper": 0.0010147666758517225,
+              "relative_residual_ball": "[0.04005795743180665771157347984951178404960392844 +/- 7.45e-48]",
+              "relative_residual_upper": 0.040057957431806665,
+              "residual_frobenius_ball": "[0.0002623625562272066504168036436694926817179790689 +/- 6.20e-50]",
+              "residual_frobenius_upper": 0.0002623625562272067
+            },
+            "rank_2": {
+              "actual_rank": 2,
+              "energy_capture_lower": 0.9999870088276013,
+              "energy_capture_lower_ball": "[0.99998700882760133385555759057782042435301541119 +/- 8.82e-49]",
+              "full_future_hardy_perturbation_ball": "[9.13064734452367784292053345195551031827e-5 +/- 4.10e-44]",
+              "full_future_hardy_perturbation_upper": 9.130647344523679e-05,
+              "relative_residual_ball": "[0.00360432689952869625146754792915632960027395648 +/- 2.86e-48]",
+              "relative_residual_upper": 0.003604326899528697,
+              "residual_frobenius_ball": "[2.36068057251460703877129948447040834612522322e-5 +/- 5.59e-50]",
+              "residual_frobenius_upper": 2.3606805725146074e-05
+            },
+            "rank_4": {
+              "actual_rank": 4,
+              "energy_capture_lower": 0.9999999999999698,
+              "energy_capture_lower_ball": "[0.99999999999996994179548063656610105924657814362 +/- 9.28e-49]",
+              "full_future_hardy_perturbation_ball": "[4.391965437083253894447510041570981622014e-9 +/- 7.45e-49]",
+              "full_future_hardy_perturbation_upper": 4.391965437083255e-09,
+              "relative_residual_ball": "[1.7337302131347724165420400786212337996043e-7 +/- 5.86e-48]",
+              "relative_residual_upper": 1.7337302131347726e-07,
+              "residual_frobenius_ball": "[1.1355194315654445208646690080521699868180e-9 +/- 5.15e-50]",
+              "residual_frobenius_upper": 1.1355194315654447e-09
+            }
+          }
+        }
+      ],
+      "fine_dimension": 32,
+      "sigma": 0.16
+    }
+  ],
+  "status": "rh77_validated_postblock_effective_rank_compression",
+  "theorem_boundary": {
+    "block_observability_upper": true,
+    "eckart_young_postblock_compression": true,
+    "frozen_postblock_rank4_validated": true,
+    "observability_lipschitz_transfer": true,
+    "uniform_analytic_effective_rank_theorem": false,
+    "uniform_stage_A1_closed": false
+  }
+}
