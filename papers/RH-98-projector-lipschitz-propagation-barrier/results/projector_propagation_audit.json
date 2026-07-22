@@ -1,0 +1,1347 @@
+{
+  "all_executed_projector_bounds_green": true,
+  "audit_summary": {
+    "channel_count": 10,
+    "counterexample_tail_amplification_lower": 44.49492689443643,
+    "production_all_conditional_envelopes_green": true,
+    "production_all_endpoint_lipschitz_bounds_green": true,
+    "production_all_gap_distance_bounds_green": true,
+    "production_maximum_projector_secant_multiplier": 8.85111974409654,
+    "production_maximum_tail_amplification_upper": 1.0000000000000004,
+    "production_omission_count": 38,
+    "production_unit_tail_green_count": 24,
+    "production_unit_tail_roundoff_count": 38,
+    "scale_count": 5,
+    "threshold_summaries": {
+      "1e-04": {
+        "conditional_envelope_green_count": 22,
+        "endpoint_tail_lipschitz_green_count": 22,
+        "local_gap_distance_green_count": 22,
+        "maximum_local_gap_distance_slack": 19.282147815896536,
+        "maximum_projector_secant_multiplier": 1.377217218170741,
+        "maximum_tail_amplification_upper": 1.0000000000000004,
+        "omission_count": 22,
+        "unit_tail_propagation_green_count": 16,
+        "unit_tail_propagation_roundoff_count": 22
+      },
+      "1e-06": {
+        "conditional_envelope_green_count": 11,
+        "endpoint_tail_lipschitz_green_count": 11,
+        "local_gap_distance_green_count": 11,
+        "maximum_local_gap_distance_slack": 3.8253337682566526,
+        "maximum_projector_secant_multiplier": 7.75017323333285,
+        "maximum_tail_amplification_upper": 1.0000000000000004,
+        "omission_count": 11,
+        "unit_tail_propagation_green_count": 6,
+        "unit_tail_propagation_roundoff_count": 11
+      },
+      "1e-08": {
+        "conditional_envelope_green_count": 5,
+        "endpoint_tail_lipschitz_green_count": 5,
+        "local_gap_distance_green_count": 5,
+        "maximum_local_gap_distance_slack": 2.678441377677929,
+        "maximum_projector_secant_multiplier": 8.85111974409654,
+        "maximum_tail_amplification_upper": 1.0000000000000004,
+        "omission_count": 5,
+        "unit_tail_propagation_green_count": 2,
+        "unit_tail_propagation_roundoff_count": 5
+      }
+    }
+  },
+  "counterexample": {
+    "adaptive_width": 1,
+    "certified_tail_amplification_lower": 44.49492689443643,
+    "dimension": 6,
+    "endpoint_effect_abs_lower": 0.023533757224043807,
+    "endpoint_projector_distance": 0.15785907560222978,
+    "endpoint_tail_lipschitz_bound": 0.08697370216759408,
+    "endpoint_tail_lipschitz_green": true,
+    "full_width": 2,
+    "g1_minimum_eigenvalue": 0.005548747292551731,
+    "g1_trace": 1.0,
+    "g2_minimum_eigenvalue": 1.4449615193393436e-07,
+    "g2_trace": 1.0,
+    "interval_endpoint_effect_ball": "[-0.02353375722404381164061499837247497027817347286202482772924623790541760054176236427079394701171618530614107628240026 +/- 1.98e-117]",
+    "interval_local_loss_ball": "[0.0005289087737997030879232544539392654527161422418200494263738668397385316236828399517854145960331735348629690777505877 +/- 4.71e-119]",
+    "local_gap_distance_bound": 0.14118562396522813,
+    "local_gap_lower": 0.05306764460445137,
+    "local_loss_upper": 0.0005289087737997032,
+    "local_projector_distance": 0.0990955753045101,
+    "matrices": {
+      "g1": [
+        [
+          0.10541486073890646,
+          -0.0007911807905423473,
+          0.02950126416394244,
+          -0.04944466601315303,
+          -0.028074498954636134,
+          -0.06521953610868858
+        ],
+        [
+          -0.0007911807905423473,
+          0.09371152840290164,
+          0.12220200393487193,
+          -0.011019485111781094,
+          -0.043943889990385905,
+          -0.09161756588520494
+        ],
+        [
+          0.02950126416394244,
+          0.12220200393487193,
+          0.33587387407194924,
+          -0.09937548902348688,
+          -0.14123592318133432,
+          -0.24638215238779224
+        ],
+        [
+          -0.04944466601315303,
+          -0.011019485111781094,
+          -0.09937548902348688,
+          0.12003571049566512,
+          0.02550575122783969,
+          0.048056858598020356
+        ],
+        [
+          -0.028074498954636134,
+          -0.043943889990385905,
+          -0.14123592318133432,
+          0.02550575122783969,
+          0.10333027960870456,
+          0.12312353202259332
+        ],
+        [
+          -0.06521953610868858,
+          -0.09161756588520494,
+          -0.24638215238779224,
+          0.048056858598020356,
+          0.12312353202259332,
+          0.24163374668187304
+        ]
+      ],
+      "g2": [
+        [
+          0.11432898559123895,
+          0.014377404992049685,
+          0.07150763069752358,
+          -0.025938098018435142,
+          0.00809874666003317,
+          -0.029809516061752674
+        ],
+        [
+          0.014377404992049685,
+          0.33041133291643787,
+          0.03828762975682912,
+          -0.06257152992245828,
+          -0.0026551399458754122,
+          -0.1132811201826825
+        ],
+        [
+          0.07150763069752358,
+          0.03828762975682912,
+          0.06300922318183794,
+          -0.00374553748347712,
+          -0.016913934854654453,
+          -0.047163551173376846
+        ],
+        [
+          -0.025938098018435142,
+          -0.06257152992245828,
+          -0.00374553748347712,
+          0.05686387168108796,
+          0.0030657401232661967,
+          0.025754872502340598
+        ],
+        [
+          0.00809874666003317,
+          -0.0026551399458754122,
+          -0.016913934854654453,
+          0.0030657401232661967,
+          0.32000128817853934,
+          -0.02883969579581501
+        ],
+        [
+          -0.029809516061752674,
+          -0.1132811201826825,
+          -0.047163551173376846,
+          0.025754872502340598,
+          -0.02883969579581501,
+          0.11538529845085783
+        ]
+      ],
+      "initial_packet": [
+        [
+          -0.2931522762330079,
+          0.6554152338192613
+        ],
+        [
+          -0.33554672622977744,
+          -0.2901898624170004
+        ],
+        [
+          0.5279997976661587,
+          0.3943881742195437
+        ],
+        [
+          0.08331782976913564,
+          -0.023359510618667857
+        ],
+        [
+          0.716814410867123,
+          -0.1887729140938148
+        ],
+        [
+          -0.04383595255223108,
+          -0.5426765180399882
+        ]
+      ]
+    },
+    "projector_secant_multiplier": 1.5929982253712716,
+    "rank": 2,
+    "unit_tail_propagation_rejected": true
+  },
+  "limitations": [
+    "Production secant multipliers are a posteriori pairwise diagnostics, not neighborhood-uniform Lipschitz constants.",
+    "The counterexample rejects universal unit propagation but does not determine the sharp production envelope.",
+    "The local gap-to-distance estimate can be conservative.",
+    "No replay-free uniform block theorem is proved.",
+    "No Hilbert--Polya operator, zero identification, or Riemann Hypothesis result is claimed."
+  ],
+  "precision_bits": 384,
+  "route_consequence": "A projector-metric envelope factors endpoint propagation into a local compressed spectral gap, a future projector secant multiplier, and the endpoint Gram norm. All production omissions satisfy the conditional bounds and happen to have no tail amplification, but an explicit normalized positive-semidefinite two-step Ritz example amplifies a local quotient loss by more than forty-four. Therefore a unit propagation law cannot be assumed; the missing object is a certified future projector-Lipschitz constant.",
+  "rows": [
+    {
+      "channels": [
+        {
+          "chains": {
+            "1e-04": {
+              "omission_count": 4,
+              "records": [
+                {
+                  "conditional_projector_envelope": 0.000548196561990737,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0003380371137473436,
+                  "endpoint_tail_effect_abs_lower": 9.540033941744217e-20,
+                  "endpoint_tail_effect_abs_upper": 9.540033941744219e-20,
+                  "endpoint_tail_lipschitz_bound": 0.00033827305689928367,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[-9.540033941744217554552482459485173564176458881296327596130435435670315810666940315722528066164644831798512547767004e-20 +/- 3.71e-136]",
+                  "interval_local_loss_ball": "[8.020093470191057150704370604403274748477926778904145219318304271836126276307730992871428815256434251959069158730588e-11 +/- 3.41e-126]",
+                  "interval_local_loss_lower": 8.020093470191056e-11,
+                  "interval_local_loss_upper": 8.020093470191059e-11,
+                  "local_compressed_gap_lower": 8.618982481470515e-05,
+                  "local_gap_distance_bound": 0.0013641958176525434,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.0008417978539864344,
+                  "projector_secant_multiplier": 0.4015656634743465,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.189516553292359e-09,
+                  "time": 1,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.00024469026247435474,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 8.542651821918977e-05,
+                  "endpoint_tail_effect_abs_lower": 5.1881437251859214e-20,
+                  "endpoint_tail_effect_abs_upper": 5.1881437251859226e-20,
+                  "endpoint_tail_lipschitz_bound": 8.548614422221786e-05,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[-5.188143725185921812669677414692878366194331021713604057636569584815259696335655096311967727325813699564767344155421e-20 +/- 3.55e-135]",
+                  "interval_local_loss_ball": "[2.784352565046927160369170484093627303751795783644405498293029284697694809243740943850522080568482819106749674159719e-11 +/- 3.99e-126]",
+                  "interval_local_loss_lower": 2.784352565046927e-11,
+                  "interval_local_loss_upper": 2.7843525650469275e-11,
+                  "local_compressed_gap_lower": 1.811889583006261e-07,
+                  "local_gap_distance_bound": 0.017531183960490145,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.006124777117314854,
+                  "projector_secant_multiplier": 0.013947694190811858,
+                  "selected_width": 2,
+                  "tail_amplification_upper": 1.863321402007322e-09,
+                  "time": 2,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.0010570765148429358,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0004443698638768729,
+                  "endpoint_tail_effect_abs_lower": 2.382750163503192e-19,
+                  "endpoint_tail_effect_abs_upper": 2.382750163503193e-19,
+                  "endpoint_tail_lipschitz_bound": 0.0004446800251640405,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[2.382750163503192582992147061546905130961036654981980913206497471988591354680226407376375730511624025574201523567766e-19 +/- 2.66e-134]",
+                  "interval_local_loss_ball": "[2.496010498772678890689575791289826093758356975468700098543519850254854156035407115563180135976249205703915152136661e-15 +/- 3.05e-131]",
+                  "interval_local_loss_lower": 2.4960104987726784e-15,
+                  "interval_local_loss_upper": 2.496010498772679e-15,
+                  "local_compressed_gap_lower": 4.483406508614748e-10,
+                  "local_gap_distance_bound": 0.0033368304711619587,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.001403703362102325,
+                  "projector_secant_multiplier": 0.31656963705732005,
+                  "selected_width": 2,
+                  "tail_amplification_upper": 9.546234539777869e-05,
+                  "time": 3,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.00697934723567828,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0021224596203778105,
+                  "endpoint_tail_effect_abs_lower": 1.526625119293457e-17,
+                  "endpoint_tail_effect_abs_upper": 1.5266251192934575e-17,
+                  "endpoint_tail_lipschitz_bound": 0.002123941054789394,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[1.526625119293457243835604575429019059513430570226064860476568319295611320728878222278420923270316372031847063794288e-17 +/- 3.95e-133]",
+                  "interval_local_loss_ball": "[1.526625119293457243835604575429019059513430570226064860476568319295611320728878222278420923270316372031847063794288e-17 +/- 3.95e-133]",
+                  "interval_local_loss_lower": 1.526625119293457e-17,
+                  "interval_local_loss_upper": 1.5266251192934575e-17,
+                  "local_compressed_gap_lower": 6.276807855451232e-13,
+                  "local_gap_distance_bound": 0.006974479188543917,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.0021224596203778105,
+                  "projector_secant_multiplier": 1.0000000000000002,
+                  "selected_width": 2,
+                  "tail_amplification_upper": 1.0000000000000004,
+                  "time": 4,
+                  "unit_tail_propagation_green": false
+                }
+              ],
+              "threshold": 0.0001
+            },
+            "1e-06": {
+              "omission_count": 3,
+              "records": [
+                {
+                  "conditional_projector_envelope": 0.0006583245666454532,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.00034025653972691663,
+                  "endpoint_tail_effect_abs_lower": 1.5657127506443695e-19,
+                  "endpoint_tail_effect_abs_upper": 1.56571275064437e-19,
+                  "endpoint_tail_lipschitz_bound": 0.0003404940319938498,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[-1.565712750644369822868748015842616362619759254334324976653173929732144150190217408575550776395474812145976675740984e-19 +/- 2.67e-134]",
+                  "interval_local_loss_ball": "[1.606661071703547885055669306506890421938379129056707076893894886879960549863731331103562608674881790640592514806492e-12 +/- 1.60e-128]",
+                  "interval_local_loss_lower": 1.6066610717035477e-12,
+                  "interval_local_loss_upper": 1.606661071703548e-12,
+                  "local_compressed_gap_lower": 1.811757824205683e-07,
+                  "local_gap_distance_bound": 0.004211405506509084,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.0021781937268105195,
+                  "projector_secant_multiplier": 0.1562104121129514,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 9.745134043636471e-08,
+                  "time": 2,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.000692990335861844,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0003300505378116698,
+                  "endpoint_tail_effect_abs_lower": 5.709800746331537e-20,
+                  "endpoint_tail_effect_abs_upper": 5.70980074633154e-20,
+                  "endpoint_tail_lipschitz_bound": 0.00033028090649316614,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[5.709800746331538913064099720797545659477852454146439281352406532090837526197819064752152825398433683456032360860925e-20 +/- 4.69e-135]",
+                  "interval_local_loss_ball": "[1.087688230235063109240934428907913654142111960387371474302214799855866924440950215434380887621075081248974377886016e-15 +/- 2.81e-130]",
+                  "interval_local_loss_lower": 1.0876882302350629e-15,
+                  "interval_local_loss_upper": 1.0876882302350632e-15,
+                  "local_compressed_gap_lower": 4.483395850246901e-10,
+                  "local_gap_distance_bound": 0.0022027421876590655,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.001049832369748684,
+                  "projector_secant_multiplier": 0.3143840362730286,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 5.249482882698456e-05,
+                  "time": 3,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.002177319624136523,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.000702601017699884,
+                  "endpoint_tail_effect_abs_lower": 1.489348610594192e-18,
+                  "endpoint_tail_effect_abs_upper": 1.4893486105941923e-18,
+                  "endpoint_tail_lipschitz_bound": 0.0007030914191733634,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[1.489348610594192057248899708072419059694354543359072507240096824427202948077688691536210326276859010009072421399591e-18 +/- 3.30e-134]",
+                  "interval_local_loss_ball": "[1.489348610594192057248899708072419059694354543359072507240096824427202948077688691536210326276859010009072421399591e-18 +/- 3.30e-134]",
+                  "interval_local_loss_lower": 1.489348610594192e-18,
+                  "interval_local_loss_upper": 1.4893486105941923e-18,
+                  "local_compressed_gap_lower": 6.291990131198576e-13,
+                  "local_gap_distance_bound": 0.0021758009585365816,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.000702601017699884,
+                  "projector_secant_multiplier": 1.0000000000000002,
+                  "selected_width": 2,
+                  "tail_amplification_upper": 1.0000000000000002,
+                  "time": 4,
+                  "unit_tail_propagation_green": false
+                }
+              ],
+              "threshold": 1e-06
+            },
+            "1e-08": {
+              "omission_count": 2,
+              "records": [
+                {
+                  "conditional_projector_envelope": 0.0007202659519665941,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0003430342587634914,
+                  "endpoint_tail_effect_abs_lower": 2.0509647265488607e-19,
+                  "endpoint_tail_effect_abs_upper": 2.0509647265488612e-19,
+                  "endpoint_tail_lipschitz_bound": 0.0003432736898228176,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[-2.050964726548860978060833601771974898285293938082469964934968450461210888601580242370085517789860391203177531734071e-19 +/- 4.48e-134]",
+                  "interval_local_loss_ball": "[2.029407992878982811366388159994525966045201733046458970205521427692597864751740362687624654199930203350805407238032e-16 +/- 3.28e-132]",
+                  "interval_local_loss_lower": 2.0294079928789825e-16,
+                  "interval_local_loss_upper": 2.029407992878983e-16,
+                  "local_compressed_gap_lower": 4.4834021707717103e-10,
+                  "local_gap_distance_bound": 0.0009514716053384433,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.00045346467903194113,
+                  "projector_secant_multiplier": 0.756474042246913,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 0.0010106221783621231,
+                  "time": 3,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.0013954151460993439,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0005428118324182131,
+                  "endpoint_tail_effect_abs_lower": 6.105139644795445e-19,
+                  "endpoint_tail_effect_abs_upper": 6.105139644795446e-19,
+                  "endpoint_tail_lipschitz_bound": 0.0005431907042327052,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[6.105139644795445762686509029458380585815506346006723679243009691182279816854457886935141077241905622724871854425368e-19 +/- 3.42e-134]",
+                  "interval_local_loss_ball": "[6.105139644795445762686509029458380585815506346006723679243009691182279816854457886935141077241905622724871854425368e-19 +/- 3.42e-134]",
+                  "interval_local_loss_lower": 6.105139644795445e-19,
+                  "interval_local_loss_upper": 6.105139644795446e-19,
+                  "local_compressed_gap_lower": 6.279495866694118e-13,
+                  "local_gap_distance_bound": 0.0013944418535443482,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.0005428118324182131,
+                  "projector_secant_multiplier": 1.0000000000000002,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.0000000000000002,
+                  "time": 4,
+                  "unit_tail_propagation_green": false
+                }
+              ],
+              "threshold": 1e-08
+            }
+          },
+          "clock_rank": 4,
+          "dimension": 32,
+          "refresh_endpoint": 4,
+          "side": "left"
+        },
+        {
+          "chains": {
+            "1e-04": {
+              "omission_count": 4,
+              "records": [
+                {
+                  "conditional_projector_envelope": 0.002248015874925927,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0005874749534981568,
+                  "endpoint_tail_effect_abs_lower": 5.658468177864474e-19,
+                  "endpoint_tail_effect_abs_upper": 5.658468177864476e-19,
+                  "endpoint_tail_lipschitz_bound": 0.0005876652891259816,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[-5.658468177864475501598298562428723548323769215955388677774988698467203028303454733293197869808745710045962154014092e-19 +/- 4.55e-134]",
+                  "interval_local_loss_ball": "[2.583087874933488456298755885847130499298026469381098318644140981195486569743472714084350025583571821039127910911222e-10 +/- 1.15e-125]",
+                  "interval_local_loss_lower": 2.583087874933488e-10,
+                  "interval_local_loss_upper": 2.583087874933489e-10,
+                  "local_compressed_gap_lower": 0.00019301090254640062,
+                  "local_gap_distance_bound": 0.0016360390575350053,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.00042768530973981113,
+                  "projector_secant_multiplier": 1.3736149924241172,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 2.1905829192939e-09,
+                  "time": 1,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.0010043370602134537,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0004806298022699563,
+                  "endpoint_tail_effect_abs_lower": 7.090820337993519e-19,
+                  "endpoint_tail_effect_abs_upper": 7.090820337993521e-19,
+                  "endpoint_tail_lipschitz_bound": 0.000480785521206775,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[7.090820337993520639829611957284836623052192138056144374345858987898085896093285972031428068225167965244255213595983e-19 +/- 4.37e-134]",
+                  "interval_local_loss_ball": "[7.921280827469308251525306681348517125110522844831244158729151469217278450540979992759181455591896969483537741871434e-14 +/- 4.55e-129]",
+                  "interval_local_loss_lower": 7.921280827469306e-14,
+                  "interval_local_loss_upper": 7.921280827469309e-14,
+                  "local_compressed_gap_lower": 2.9809362218275265e-07,
+                  "local_gap_distance_bound": 0.000729014826308051,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.00034898619907493066,
+                  "projector_secant_multiplier": 1.377217218170741,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 8.951608322487538e-06,
+                  "time": 2,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.009760558107212028,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0021284897994689484,
+                  "endpoint_tail_effect_abs_lower": 2.2930304788537756e-17,
+                  "endpoint_tail_effect_abs_upper": 2.2930304788537762e-17,
+                  "endpoint_tail_lipschitz_bound": 0.0021291794074937477,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[-2.293030478853775858434164251815476395344717723354787417724457416659193709588348050464859482740428385641144154100651e-17 +/- 3.06e-133]",
+                  "interval_local_loss_ball": "[2.044160441597002839885321811684629223374972104979981141142568204177523014264852720963073643088464651886785804900965e-13 +/- 3.45e-128]",
+                  "interval_local_loss_lower": 2.0441604415970026e-13,
+                  "interval_local_loss_upper": 2.0441604415970032e-13,
+                  "local_compressed_gap_lower": 6.372505303372612e-10,
+                  "local_gap_distance_bound": 0.025328961557298694,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.005525288899325603,
+                  "projector_secant_multiplier": 0.38522687921870374,
+                  "selected_width": 2,
+                  "tail_amplification_upper": 0.00011217468219189016,
+                  "time": 3,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.0034684149704427517,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0016052216058156752,
+                  "endpoint_tail_effect_abs_lower": 1.2558043679946023e-17,
+                  "endpoint_tail_effect_abs_upper": 1.2558043679946026e-17,
+                  "endpoint_tail_lipschitz_bound": 0.0016057416805189823,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[1.255804367994602361899507726651701594373019956051408589703018951960409597519000786201504842374477469968675871409520e-17 +/- 3.30e-132]",
+                  "interval_local_loss_ball": "[1.255804367994602361899507726651701594373019956051408589703018951960409597519000786201504842374477469968675871409520e-17 +/- 3.30e-132]",
+                  "interval_local_loss_lower": 1.2558043679946023e-17,
+                  "interval_local_loss_upper": 1.2558043679946026e-17,
+                  "local_compressed_gap_lower": 2.0891578198402444e-12,
+                  "local_gap_distance_bound": 0.0034672916048923744,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.0016052216058156752,
+                  "projector_secant_multiplier": 1.0000000000000002,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.0000000000000002,
+                  "time": 4,
+                  "unit_tail_propagation_green": false
+                }
+              ],
+              "threshold": 0.0001
+            },
+            "1e-06": {
+              "omission_count": 4,
+              "records": [
+                {
+                  "conditional_projector_envelope": 0.002248015874925927,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0005874749534981568,
+                  "endpoint_tail_effect_abs_lower": 5.658468177864474e-19,
+                  "endpoint_tail_effect_abs_upper": 5.658468177864476e-19,
+                  "endpoint_tail_lipschitz_bound": 0.0005876652891259816,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[-5.658468177864475501598298562428723548323769215955388677774988698467203028303454733293197869808745710045962154014092e-19 +/- 4.55e-134]",
+                  "interval_local_loss_ball": "[2.583087874933488456298755885847130499298026469381098318644140981195486569743472714084350025583571821039127910911222e-10 +/- 1.15e-125]",
+                  "interval_local_loss_lower": 2.583087874933488e-10,
+                  "interval_local_loss_upper": 2.583087874933489e-10,
+                  "local_compressed_gap_lower": 0.00019301090254640062,
+                  "local_gap_distance_bound": 0.0016360390575350053,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.00042768530973981113,
+                  "projector_secant_multiplier": 1.3736149924241172,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 2.1905829192939e-09,
+                  "time": 1,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.0010043370602134537,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0004806298022699563,
+                  "endpoint_tail_effect_abs_lower": 7.090820337993519e-19,
+                  "endpoint_tail_effect_abs_upper": 7.090820337993521e-19,
+                  "endpoint_tail_lipschitz_bound": 0.000480785521206775,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[7.090820337993520639829611957284836623052192138056144374345858987898085896093285972031428068225167965244255213595983e-19 +/- 4.37e-134]",
+                  "interval_local_loss_ball": "[7.921280827469308251525306681348517125110522844831244158729151469217278450540979992759181455591896969483537741871434e-14 +/- 4.55e-129]",
+                  "interval_local_loss_lower": 7.921280827469306e-14,
+                  "interval_local_loss_upper": 7.921280827469309e-14,
+                  "local_compressed_gap_lower": 2.9809362218275265e-07,
+                  "local_gap_distance_bound": 0.000729014826308051,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.00034898619907493066,
+                  "projector_secant_multiplier": 1.377217218170741,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 8.951608322487538e-06,
+                  "time": 2,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.004855506929148214,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.002045948412804658,
+                  "endpoint_tail_effect_abs_lower": 2.1126168227713807e-17,
+                  "endpoint_tail_effect_abs_upper": 2.1126168227713813e-17,
+                  "endpoint_tail_lipschitz_bound": 0.002046611278299314,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[-2.112616822771381129354947471456833127010106445339628511153795216968865799131990246416344180109202334498869512114239e-17 +/- 3.60e-132]",
+                  "interval_local_loss_ball": "[1.249813404564998572699577513411491169744257708697724426544870404861517511686089056925886751237113919338287409267686e-16 +/- 3.71e-131]",
+                  "interval_local_loss_lower": 1.2498134045649984e-16,
+                  "interval_local_loss_upper": 1.249813404564999e-16,
+                  "local_compressed_gap_lower": 6.372505303372612e-10,
+                  "local_gap_distance_bound": 0.000626300104526076,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.000263987442758725,
+                  "projector_secant_multiplier": 7.75017323333285,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 0.16903457868630273,
+                  "time": 3,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.00414370407310483,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0019159609740746913,
+                  "endpoint_tail_effect_abs_lower": 1.791242487389576e-17,
+                  "endpoint_tail_effect_abs_upper": 1.7912424873895767e-17,
+                  "endpoint_tail_lipschitz_bound": 0.0019165817250236753,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[1.791242487389576397517832842122467811037798132203513576537827295278970455669053692946656552444532946041083298742296e-17 +/- 6.69e-133]",
+                  "interval_local_loss_ball": "[1.791242487389576397517832842122467811037798132203513576537827295278970455669053692946656552444532946041083298742296e-17 +/- 6.69e-133]",
+                  "interval_local_loss_lower": 1.791242487389576e-17,
+                  "interval_local_loss_upper": 1.7912424873895767e-17,
+                  "local_compressed_gap_lower": 2.087797057145669e-12,
+                  "local_gap_distance_bound": 0.0041423619919391235,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.0019159609740746913,
+                  "projector_secant_multiplier": 1.0000000000000002,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.0000000000000004,
+                  "time": 4,
+                  "unit_tail_propagation_green": false
+                }
+              ],
+              "threshold": 1e-06
+            },
+            "1e-08": {
+              "omission_count": 2,
+              "records": [
+                {
+                  "conditional_projector_envelope": 0.004550095549869409,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.001917238694232564,
+                  "endpoint_tail_effect_abs_lower": 1.9641314077649508e-17,
+                  "endpoint_tail_effect_abs_upper": 1.9641314077649514e-17,
+                  "endpoint_tail_lipschitz_bound": 0.0019178598591492704,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[-1.964131407764951146282295838108106810711129481602010971477971340576734101708196318432607737703893617755311239106923e-17 +/- 2.11e-132]",
+                  "interval_local_loss_ball": "[8.414755895274738789134127975519200090411601320447022916859003368833491546363326707826561546950231302450175339652506e-17 +/- 4.54e-132]",
+                  "interval_local_loss_lower": 8.414755895274738e-17,
+                  "interval_local_loss_upper": 8.41475589527474e-17,
+                  "local_compressed_gap_lower": 6.372477117058586e-10,
+                  "local_gap_distance_bound": 0.0005139035485168062,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.00021660973409735093,
+                  "projector_secant_multiplier": 8.85111974409654,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 0.23341513790886068,
+                  "time": 3,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.004043100602280739,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0018696017969835538,
+                  "endpoint_tail_effect_abs_lower": 1.7065925746978896e-17,
+                  "endpoint_tail_effect_abs_upper": 1.7065925746978902e-17,
+                  "endpoint_tail_lipschitz_bound": 0.0018702075280529252,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[1.706592574697889749960442141285782179455557370717854432709345785036403689456575146402368962432943738363539456881313e-17 +/- 7.55e-133]",
+                  "interval_local_loss_ball": "[1.706592574697889749960442141285782179455557370717854432709345785036403689456575146402368962432943738363539456881313e-17 +/- 7.55e-133]",
+                  "interval_local_loss_lower": 1.7065925746978896e-17,
+                  "interval_local_loss_upper": 1.7065925746978902e-17,
+                  "local_compressed_gap_lower": 2.089354437390251e-12,
+                  "local_gap_distance_bound": 0.004041791105011232,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.0018696017969835538,
+                  "projector_secant_multiplier": 1.0000000000000002,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.0000000000000004,
+                  "time": 4,
+                  "unit_tail_propagation_green": false
+                }
+              ],
+              "threshold": 1e-08
+            }
+          },
+          "clock_rank": 4,
+          "dimension": 16,
+          "refresh_endpoint": 4,
+          "side": "right"
+        }
+      ],
+      "clock": 1.769091146743121,
+      "clock_rank": 4,
+      "fine_dimension": 32,
+      "sigma": 0.16
+    },
+    {
+      "channels": [
+        {
+          "chains": {
+            "1e-04": {
+              "omission_count": 4,
+              "records": [
+                {
+                  "conditional_projector_envelope": 2.5142801780369748e-06,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 6.358836134151386e-07,
+                  "endpoint_tail_effect_abs_lower": 1.7195972636690202e-22,
+                  "endpoint_tail_effect_abs_upper": 1.7195972636690206e-22,
+                  "endpoint_tail_lipschitz_bound": 5.222786963008936e-07,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[-1.719597263669020446042924329628532460901100486252693380519432844565443215683040332299404599219311547491911525131209e-22 +/- 1.54e-137]",
+                  "interval_local_loss_ball": "[4.265704630445458011528003873550576738474036369628853015298031423771594678366235258463231260932841655982403413768148e-11 +/- 2.64e-126]",
+                  "interval_local_loss_lower": 4.2657046304454577e-11,
+                  "interval_local_loss_upper": 4.265704630445459e-11,
+                  "local_compressed_gap_lower": 2.6296232759967503e-06,
+                  "local_gap_distance_bound": 0.0056959165828763016,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.001183183924023096,
+                  "projector_secant_multiplier": 0.0005374342910719991,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 4.0312150339613345e-12,
+                  "time": 3,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 3.765334639206771e-06,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 1.1589378538617546e-06,
+                  "endpoint_tail_effect_abs_lower": 1.657046460104182e-22,
+                  "endpoint_tail_effect_abs_upper": 1.6570464601041824e-22,
+                  "endpoint_tail_lipschitz_bound": 9.518857517932425e-07,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[1.657046460104182197206969179159905208355919480533518043519195533017171375525378758911855086450730797496493683498426e-22 +/- 1.57e-137]",
+                  "interval_local_loss_ball": "[1.149743677279355939498927475206178596035595531364935502232503051019167639929612394468080086541399339462636118758317e-12 +/- 3.77e-127]",
+                  "interval_local_loss_lower": 1.1497436772793558e-12,
+                  "interval_local_loss_upper": 1.1497436772793562e-12,
+                  "local_compressed_gap_lower": 3.386316583264254e-07,
+                  "local_gap_distance_bound": 0.0026058639277475905,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.0006587687368093959,
+                  "projector_secant_multiplier": 0.001759248411627455,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.441231200353508e-10,
+                  "time": 4,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 1.5677840094656295e-05,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 1.1013586199949133e-05,
+                  "endpoint_tail_effect_abs_lower": 2.893621378535982e-20,
+                  "endpoint_tail_effect_abs_upper": 2.893621378535983e-20,
+                  "endpoint_tail_lipschitz_bound": 9.045934382887817e-06,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[2.893621378535982502837847696385588443845939855174406260432864027469495443078425631281574758992102471433256847126709e-20 +/- 1.42e-135]",
+                  "interval_local_loss_ball": "[6.015064858738619365647995519889615036371091840898877139884028156956288451295559344677882431029528758629981245109177e-15 +/- 3.32e-130]",
+                  "interval_local_loss_lower": 6.015064858738619e-15,
+                  "interval_local_loss_upper": 6.01506485873862e-15,
+                  "local_compressed_gap_lower": 1.2276143831206943e-08,
+                  "local_gap_distance_bound": 0.0009899292825311663,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.0005711778714038775,
+                  "projector_secant_multiplier": 0.019282235449491834,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 4.81062373638775e-06,
+                  "time": 5,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.000435518866007178,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.00026052913098686124,
+                  "endpoint_tail_effect_abs_lower": 3.4609380400155177e-17,
+                  "endpoint_tail_effect_abs_upper": 3.460938040015519e-17,
+                  "endpoint_tail_lipschitz_bound": 0.000213983836050497,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[3.460938040015518055156214846202407575290825866316496325030036768804486622605273365178541905587599875724862279261415e-17 +/- 2.64e-132]",
+                  "interval_local_loss_ball": "[3.460938040015518055156214846202407575290825866316496325030036768804486622605273365178541905587599875724862279261415e-17 +/- 2.64e-132]",
+                  "interval_local_loss_lower": 3.4609380400155177e-17,
+                  "interval_local_loss_upper": 3.460938040015519e-17,
+                  "local_compressed_gap_lower": 2.4618366360571073e-10,
+                  "local_gap_distance_bound": 0.0005302519750251471,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.00026052913098686124,
+                  "projector_secant_multiplier": 1.0000000000000002,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.0000000000000004,
+                  "time": 6,
+                  "unit_tail_propagation_green": false
+                }
+              ],
+              "threshold": 0.0001
+            },
+            "1e-06": {
+              "omission_count": 1,
+              "records": [
+                {
+                  "conditional_projector_envelope": 1.5113895391399882e-06,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 6.870203297560852e-07,
+                  "endpoint_tail_effect_abs_lower": 4.1680562442260147e-22,
+                  "endpoint_tail_effect_abs_upper": 4.1680562442260157e-22,
+                  "endpoint_tail_lipschitz_bound": 5.642794916983717e-07,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[4.168056244226015286809826895085739992717336218865837270378331141222566620508602051989763217191309999538999313970406e-22 +/- 2.67e-137]",
+                  "interval_local_loss_ball": "[4.168056244226015286809826895085739992717336218865837270378331141222566620508602051989763217191309999538999313970406e-22 +/- 2.67e-137]",
+                  "interval_local_loss_lower": 4.1680562442260147e-22,
+                  "interval_local_loss_upper": 4.1680562442260157e-22,
+                  "local_compressed_gap_lower": 2.461841555701965e-10,
+                  "local_gap_distance_bound": 1.8401436785246338e-06,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 6.870203297560852e-07,
+                  "projector_secant_multiplier": 1.0000000000000002,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.0000000000000002,
+                  "time": 6,
+                  "unit_tail_propagation_green": false
+                }
+              ],
+              "threshold": 1e-06
+            },
+            "1e-08": {
+              "omission_count": 1,
+              "records": [
+                {
+                  "conditional_projector_envelope": 1.5113895391399882e-06,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 6.870203297560852e-07,
+                  "endpoint_tail_effect_abs_lower": 4.1680562442260147e-22,
+                  "endpoint_tail_effect_abs_upper": 4.1680562442260157e-22,
+                  "endpoint_tail_lipschitz_bound": 5.642794916983717e-07,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[4.168056244226015286809826895085739992717336218865837270378331141222566620508602051989763217191309999538999313970406e-22 +/- 2.67e-137]",
+                  "interval_local_loss_ball": "[4.168056244226015286809826895085739992717336218865837270378331141222566620508602051989763217191309999538999313970406e-22 +/- 2.67e-137]",
+                  "interval_local_loss_lower": 4.1680562442260147e-22,
+                  "interval_local_loss_upper": 4.1680562442260157e-22,
+                  "local_compressed_gap_lower": 2.461841555701965e-10,
+                  "local_gap_distance_bound": 1.8401436785246338e-06,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 6.870203297560852e-07,
+                  "projector_secant_multiplier": 1.0000000000000002,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.0000000000000002,
+                  "time": 6,
+                  "unit_tail_propagation_green": false
+                }
+              ],
+              "threshold": 1e-08
+            }
+          },
+          "clock_rank": 5,
+          "dimension": 64,
+          "refresh_endpoint": 6,
+          "side": "left"
+        },
+        {
+          "chains": {
+            "1e-04": {
+              "omission_count": 4,
+              "records": [
+                {
+                  "conditional_projector_envelope": 1.9672382316751222e-05,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 1.733111692512214e-05,
+                  "endpoint_tail_effect_abs_lower": 1.091864064688193e-19,
+                  "endpoint_tail_effect_abs_upper": 1.0918640646881935e-19,
+                  "endpoint_tail_lipschitz_bound": 1.233063524441189e-05,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[1.091864064688193296774377449434737291234290158858735519385189678772594327732695241896459948614869345708290995952521e-19 +/- 3.62e-134]",
+                  "interval_local_loss_ball": "[2.025955020328558658289448543534956160447620424367927677680699896362559839857848572925211957944697741818503832913512e-9 +/- 1.66e-124]",
+                  "interval_local_loss_lower": 2.0259550203285583e-09,
+                  "interval_local_loss_upper": 2.025955020328559e-09,
+                  "local_compressed_gap_lower": 1.4674587104917048e-06,
+                  "local_gap_distance_bound": 0.052546882114004316,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.032936348335766856,
+                  "projector_secant_multiplier": 0.000526200316696967,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 5.3893795949681105e-11,
+                  "time": 3,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.0001137270747070229,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 8.522474175580918e-05,
+                  "endpoint_tail_effect_abs_lower": 5.156369014944248e-19,
+                  "endpoint_tail_effect_abs_upper": 5.15636901494425e-19,
+                  "endpoint_tail_lipschitz_bound": 6.0635169039036205e-05,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[5.156369014944249596682002930522763341343052551936999422901984454148228249449873423641849597546307721635155987824613e-19 +/- 1.18e-134]",
+                  "interval_local_loss_ball": "[8.812378933453211977022352255070872587158385755685769851345462959197380620978674223364348011689636278129195879768858e-11 +/- 3.22e-126]",
+                  "interval_local_loss_lower": 8.81237893345321e-11,
+                  "interval_local_loss_upper": 8.812378933453213e-11,
+                  "local_compressed_gap_lower": 1.508690379971121e-07,
+                  "local_gap_distance_bound": 0.03417917054170865,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.018223099369692766,
+                  "projector_secant_multiplier": 0.0046767424150442995,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 5.851279267360874e-09,
+                  "time": 4,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.0024301388771207594,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0015723232468912187,
+                  "endpoint_tail_effect_abs_lower": 3.428410565462024e-16,
+                  "endpoint_tail_effect_abs_upper": 3.428410565462025e-16,
+                  "endpoint_tail_lipschitz_bound": 0.001118666761495429,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[3.428410565462024754923923746693279066387670370195063874441055381116530158481151911896185776516279823898834757248224e-16 +/- 4.50e-132]",
+                  "interval_local_loss_ball": "[2.452067940961430819450659070592733884399185319409449236011574291838043559490617589278692445064435191433770993771365e-13 +/- 3.11e-128]",
+                  "interval_local_loss_lower": 2.45206794096143e-13,
+                  "interval_local_loss_upper": 2.452067940961431e-13,
+                  "local_compressed_gap_lower": 4.309448988295595e-09,
+                  "local_gap_distance_bound": 0.0106676897203151,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.004910661701030827,
+                  "projector_secant_multiplier": 0.32018561705465537,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 0.00139817111434432,
+                  "time": 5,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.0012497775909035146,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0011242571987007419,
+                  "endpoint_tail_effect_abs_lower": 2.2219294050833317e-16,
+                  "endpoint_tail_effect_abs_upper": 2.2219294050833327e-16,
+                  "endpoint_tail_lipschitz_bound": 0.000799879517169979,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[2.221929405083331982961679827402205616655218994708850641964257106476739012741843602310452839124613829270012271185094e-16 +/- 1.11e-132]",
+                  "interval_local_loss_ball": "[2.221929405083331982961679827402205616655218994708850641964257106476739012741843602310452839124613829270012271185094e-16 +/- 1.11e-132]",
+                  "interval_local_loss_lower": 2.2219294050833317e-16,
+                  "interval_local_loss_upper": 2.2219294050833327e-16,
+                  "local_compressed_gap_lower": 1.4401660969778672e-10,
+                  "local_gap_distance_bound": 0.0017566038674416524,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.0011242571987007419,
+                  "projector_secant_multiplier": 1.0000000000000002,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.0000000000000004,
+                  "time": 6,
+                  "unit_tail_propagation_green": false
+                }
+              ],
+              "threshold": 0.0001
+            },
+            "1e-06": {
+              "omission_count": 1,
+              "records": [
+                {
+                  "conditional_projector_envelope": 0.003158265075772329,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0031324199184708376,
+                  "endpoint_tail_effect_abs_lower": 1.4189393925063811e-15,
+                  "endpoint_tail_effect_abs_upper": 1.4189393925063815e-15,
+                  "endpoint_tail_lipschitz_bound": 0.0022286346352557496,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[1.418939392506381368456540412605262884652822257616131243404488318277574001324877574201293022363118642286515406818219e-15 +/- 2.27e-130]",
+                  "interval_local_loss_ball": "[1.418939392506381368456540412605262884652822257616131243404488318277574001324877574201293022363118642286515406818219e-15 +/- 2.27e-130]",
+                  "interval_local_loss_lower": 1.4189393925063811e-15,
+                  "interval_local_loss_upper": 1.4189393925063815e-15,
+                  "local_compressed_gap_lower": 1.4401723978457505e-10,
+                  "local_gap_distance_bound": 0.004439046344635475,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.0031324199184708376,
+                  "projector_secant_multiplier": 1.0000000000000002,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.0000000000000002,
+                  "time": 6,
+                  "unit_tail_propagation_green": false
+                }
+              ],
+              "threshold": 1e-06
+            },
+            "1e-08": {
+              "omission_count": 0,
+              "records": [],
+              "threshold": 1e-08
+            }
+          },
+          "clock_rank": 5,
+          "dimension": 32,
+          "refresh_endpoint": 6,
+          "side": "right"
+        }
+      ],
+      "clock": 2.438224041938098,
+      "clock_rank": 5,
+      "fine_dimension": 64,
+      "sigma": 0.08
+    },
+    {
+      "channels": [
+        {
+          "chains": {
+            "1e-04": {
+              "omission_count": 4,
+              "records": [
+                {
+                  "conditional_projector_envelope": 5.074791880928603e-07,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 3.009445789559019e-08,
+                  "endpoint_tail_effect_abs_lower": 2.1847359581466945e-25,
+                  "endpoint_tail_effect_abs_upper": 2.1847359581466954e-25,
+                  "endpoint_tail_lipschitz_bound": 2.6318602727154983e-08,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[2.184735958146694844331165906614226994825238597274066848717451791596130589496249337892969889398177072579893094698185e-25 +/- 3.85e-141]",
+                  "interval_local_loss_ball": "[7.929993648126913623211836485285778525904312745006284246543372487158383381661299367063634732691057617092165768735974e-13 +/- 2.25e-128]",
+                  "interval_local_loss_lower": 7.929993648126913e-13,
+                  "interval_local_loss_upper": 7.929993648126915e-13,
+                  "local_compressed_gap_lower": 3.1701674835976626e-07,
+                  "local_gap_distance_bound": 0.002236713268266077,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.00011599917652441662,
+                  "projector_secant_multiplier": 0.0002594368235817228,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 2.755028635694729e-13,
+                  "time": 6,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 6.153672174752857e-08,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 4.5541411645033886e-08,
+                  "endpoint_tail_effect_abs_lower": 1.9225633125679292e-25,
+                  "endpoint_tail_effect_abs_upper": 1.9225633125679297e-25,
+                  "endpoint_tail_lipschitz_bound": 3.982747670278215e-08,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[1.922563312567929433829066305557292791353461741786797984983560973840108700265261834090906328413413857545961536636262e-25 +/- 3.99e-140]",
+                  "interval_local_loss_ball": "[1.019062085367885554632336036005632428602787967414355479933723385069120628386291732236756604599364088262355124450833e-17 +/- 1.12e-132]",
+                  "interval_local_loss_lower": 1.0190620853678854e-17,
+                  "interval_local_loss_upper": 1.0190620853678857e-17,
+                  "local_compressed_gap_lower": 5.9680010956275394e-09,
+                  "local_gap_distance_bound": 5.8438743916159094e-05,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 3.782241961815514e-05,
+                  "projector_secant_multiplier": 0.0012040850930428988,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.8866007676793086e-08,
+                  "time": 9,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 3.6799779129861734e-05,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 1.9140755850732203e-05,
+                  "endpoint_tail_effect_abs_lower": 1.9870017842056646e-19,
+                  "endpoint_tail_effect_abs_upper": 1.9870017842056651e-19,
+                  "endpoint_tail_lipschitz_bound": 1.6739226567251275e-05,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[1.987001784205664777140454164820698135432438627264312695336114244952490184871739134798287525902004454295189102624072e-19 +/- 4.38e-134]",
+                  "interval_local_loss_ball": "[4.089329686364373725483395957236244878887434446025958412684876304357994855975102225753079053752158308755177303731595e-16 +/- 3.64e-131]",
+                  "interval_local_loss_lower": 4.0893296863643734e-16,
+                  "interval_local_loss_upper": 4.0893296863643744e-16,
+                  "local_compressed_gap_lower": 1.5771924182068555e-09,
+                  "local_gap_distance_bound": 0.000720109798068292,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.000327558516604825,
+                  "projector_secant_multiplier": 0.05843461513114649,
+                  "selected_width": 2,
+                  "tail_amplification_upper": 0.00048589914157110014,
+                  "time": 10,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.00021724593697855822,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0001409469780844202,
+                  "endpoint_tail_effect_abs_lower": 5.1319522073155645e-18,
+                  "endpoint_tail_effect_abs_upper": 5.131952207315566e-18,
+                  "endpoint_tail_lipschitz_bound": 0.00012326281253068993,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[5.131952207315565015141299835696035029057388863790331888631717281111210627934830568704105959642974097646673365884931e-18 +/- 3.03e-133]",
+                  "interval_local_loss_ball": "[5.131952207315565015141299835696035029057388863790331888631717281111210627934830568704105959642974097646673365884931e-18 +/- 3.03e-133]",
+                  "interval_local_loss_lower": 5.1319522073155645e-18,
+                  "interval_local_loss_upper": 5.131952207315566e-18,
+                  "local_compressed_gap_lower": 1.6632666558300128e-10,
+                  "local_gap_distance_bound": 0.0002484135944133384,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.0001409469780844202,
+                  "projector_secant_multiplier": 1.0000000000000002,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.0000000000000002,
+                  "time": 11,
+                  "unit_tail_propagation_green": false
+                }
+              ],
+              "threshold": 0.0001
+            },
+            "1e-06": {
+              "omission_count": 1,
+              "records": [
+                {
+                  "conditional_projector_envelope": 1.6829072376088476e-07,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 1.1403719005563723e-07,
+                  "endpoint_tail_effect_abs_lower": 9.497697067418091e-24,
+                  "endpoint_tail_effect_abs_upper": 9.497697067418094e-24,
+                  "endpoint_tail_lipschitz_bound": 9.972930935018345e-08,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[9.497697067418091612240787698950240598696533202821830120097130559088298346651635048715032190904678241138518151993697e-24 +/- 3.76e-139]",
+                  "interval_local_loss_ball": "[6.382149413793568506973564773592163574826155392320497536792404483119205848833925510620656976620545677147000787305244e-19 +/- 8.80e-135]",
+                  "interval_local_loss_lower": 6.382149413793567e-19,
+                  "interval_local_loss_upper": 6.382149413793569e-19,
+                  "local_compressed_gap_lower": 1.577192416468079e-09,
+                  "local_gap_distance_bound": 2.8448288356544435e-05,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 1.685849395967995e-05,
+                  "projector_secant_multiplier": 0.0067643758884024414,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.4881658907719988e-05,
+                  "time": 10,
+                  "unit_tail_propagation_green": true
+                }
+              ],
+              "threshold": 1e-06
+            },
+            "1e-08": {
+              "omission_count": 0,
+              "records": [],
+              "threshold": 1e-08
+            }
+          },
+          "clock_rank": 6,
+          "dimension": 128,
+          "refresh_endpoint": 11,
+          "side": "left"
+        },
+        {
+          "chains": {
+            "1e-04": {
+              "omission_count": 2,
+              "records": [
+                {
+                  "conditional_projector_envelope": 3.72497715512052e-05,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 2.7849698136517306e-05,
+                  "endpoint_tail_effect_abs_lower": 3.66954933037415e-20,
+                  "endpoint_tail_effect_abs_upper": 3.669549330374151e-20,
+                  "endpoint_tail_lipschitz_bound": 2.5933249168726668e-05,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[3.669549330374150468094852780804375943599591267064458119594683790960275623205867479282070523170893109686394883542869e-20 +/- 3.24e-135]",
+                  "interval_local_loss_ball": "[8.566054666793404132053380606264693226617689124184755799228349859915537993256110237643791946723841937622088032865639e-16 +/- 8.41e-132]",
+                  "interval_local_loss_lower": 8.566054666793403e-16,
+                  "interval_local_loss_upper": 8.566054666793405e-16,
+                  "local_compressed_gap_lower": 7.617402841673464e-10,
+                  "local_gap_distance_bound": 0.0014996915928410224,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.0010440836046451537,
+                  "projector_secant_multiplier": 0.02667382000120806,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 4.283826654293115e-05,
+                  "time": 10,
+                  "unit_tail_propagation_green": true
+                },
+                {
+                  "conditional_projector_envelope": 0.00288391394040353,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.0013159360728260362,
+                  "endpoint_tail_effect_abs_lower": 1.2951495045658247e-16,
+                  "endpoint_tail_effect_abs_upper": 1.2951495045658252e-16,
+                  "endpoint_tail_lipschitz_bound": 0.0012253812554602025,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[1.295149504565824975956187906868812554038490607961397194185122548838096996803320817190212744419535889577023461171004e-16 +/- 3.14e-132]",
+                  "interval_local_loss_ball": "[1.295149504565824975956187906868812554038490607961397194185122548838096996803320817190212744419535889577023461171004e-16 +/- 3.14e-132]",
+                  "interval_local_loss_lower": 1.2951495045658247e-16,
+                  "interval_local_loss_upper": 1.2951495045658252e-16,
+                  "local_compressed_gap_lower": 2.700587094294803e-11,
+                  "local_gap_distance_bound": 0.003097033162693204,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.0013159360728260362,
+                  "projector_secant_multiplier": 1.0000000000000002,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.0000000000000004,
+                  "time": 11,
+                  "unit_tail_propagation_green": false
+                }
+              ],
+              "threshold": 0.0001
+            },
+            "1e-06": {
+              "omission_count": 1,
+              "records": [
+                {
+                  "conditional_projector_envelope": 0.0002706521255672769,
+                  "conditional_projector_envelope_green": true,
+                  "endpoint_projector_distance": 0.00013264726691793072,
+                  "endpoint_tail_effect_abs_lower": 1.1406996909367747e-18,
+                  "endpoint_tail_effect_abs_upper": 1.140699690936775e-18,
+                  "endpoint_tail_lipschitz_bound": 0.00012351927865324687,
+                  "endpoint_tail_lipschitz_green": true,
+                  "interval_endpoint_tail_effect_ball": "[1.140699690936774815391050587862301255961585884929557686797102344173111655200617826380395271894369172841303878244372e-18 +/- 4.91e-133]",
+                  "interval_local_loss_ball": "[1.140699690936774815391050587862301255961585884929557686797102344173111655200617826380395271894369172841303878244372e-18 +/- 4.91e-133]",
+                  "interval_local_loss_lower": 1.1406996909367747e-18,
+                  "interval_local_loss_upper": 1.140699690936775e-18,
+                  "local_compressed_gap_lower": 2.7005443652404715e-11,
+                  "local_gap_distance_bound": 0.0002906531282684443,
+                  "local_gap_distance_green": true,
+                  "local_projector_distance": 0.00013264726691793072,
+                  "projector_secant_multiplier": 1.0000000000000002,
+                  "selected_width": 3,
+                  "tail_amplification_upper": 1.0000000000000004,
+                  "time": 11,
+                  "unit_tail_propagation_green": false
+                }
+              ],
+              "threshold": 1e-06
+            },
+            "1e-08": {
+              "omission_count": 0,
+              "records": [],
+              "threshold": 1e-08
+            }
+          },
+          "clock_rank": 6,
+          "dimension": 64,
+          "refresh_endpoint": 11,
+          "side": "right"
+        }
+      ],
+      "clock": 3.107356937133074,
+      "clock_rank": 6,
+      "fine_dimension": 128,
+      "sigma": 0.04
+    },
+    {
+      "channels": [
+        {
+          "chains": {
+            "1e-04": {
+              "omission_count": 0,
+              "records": [],
+              "threshold": 0.0001
+            },
+            "1e-06": {
+              "omission_count": 0,
+              "records": [],
+              "threshold": 1e-06
+            },
+            "1e-08": {
+              "omission_count": 0,
+              "records": [],
+              "threshold": 1e-08
+            }
+          },
+          "clock_rank": 6,
+          "dimension": 256,
+          "refresh_endpoint": 17,
+          "side": "left"
+        },
+        {
+          "chains": {
+            "1e-04": {
+              "omission_count": 0,
+              "records": [],
+              "threshold": 0.0001
+            },
+            "1e-06": {
+              "omission_count": 0,
+              "records": [],
+              "threshold": 1e-06
+            },
+            "1e-08": {
+              "omission_count": 0,
+              "records": [],
+              "threshold": 1e-08
+            }
+          },
+          "clock_rank": 6,
+          "dimension": 128,
+          "refresh_endpoint": 17,
+          "side": "right"
+        }
+      ],
+      "clock": 3.7764898323280507,
+      "clock_rank": 6,
+      "fine_dimension": 256,
+      "sigma": 0.02
+    },
+    {
+      "channels": [
+        {
+          "chains": {
+            "1e-04": {
+              "omission_count": 0,
+              "records": [],
+              "threshold": 0.0001
+            },
+            "1e-06": {
+              "omission_count": 0,
+              "records": [],
+              "threshold": 1e-06
+            },
+            "1e-08": {
+              "omission_count": 0,
+              "records": [],
+              "threshold": 1e-08
+            }
+          },
+          "clock_rank": 7,
+          "dimension": 512,
+          "refresh_endpoint": 22,
+          "side": "left"
+        },
+        {
+          "chains": {
+            "1e-04": {
+              "omission_count": 0,
+              "records": [],
+              "threshold": 0.0001
+            },
+            "1e-06": {
+              "omission_count": 0,
+              "records": [],
+              "threshold": 1e-06
+            },
+            "1e-08": {
+              "omission_count": 0,
+              "records": [],
+              "threshold": 1e-08
+            }
+          },
+          "clock_rank": 7,
+          "dimension": 256,
+          "refresh_endpoint": 22,
+          "side": "right"
+        }
+      ],
+      "clock": 4.445622727523028,
+      "clock_rank": 7,
+      "fine_dimension": 512,
+      "sigma": 0.01
+    }
+  ],
+  "status": "rh98_projector_lipschitz_propagation_barrier_audit",
+  "theorem_boundary": {
+    "conditional_projector_block_envelope": true,
+    "endpoint_tail_projector_lipschitz_theorem": true,
+    "hilbert_polya_operator": false,
+    "local_gap_loss_to_projector_theorem": true,
+    "production_unit_tail_propagation_observed": true,
+    "repeated_block_contraction_proved": false,
+    "replay_free_uniform_block_envelope_proved": false,
+    "riemann_hypothesis": false,
+    "uniform_refresh_projector_lipschitz_constant_proved": false,
+    "universal_unit_tail_propagation": false
+  }
+}
