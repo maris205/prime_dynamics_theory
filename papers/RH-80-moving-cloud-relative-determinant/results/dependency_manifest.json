@@ -1,0 +1,39 @@
+{
+  "external_inputs": {
+    "rh15_outer_resonance_cloud": {
+      "path": "papers/RH-15-parity-extracted-bulk-scattering/results/outer_resonance_cloud.csv",
+      "sha256": "854ebc047112f06b615b747b3ce48349d3d071f6b0f15d8859aa39d52bccabbd"
+    },
+    "rh46_double_pole_summary": {
+      "path": "papers/RH-46-small-noise-mesh-double-pole/results/summary.json",
+      "sha256": "a010a04b9351b18c7bc4053be8edbc4e7c3e5f844ca871762616c595dd05d04e"
+    },
+    "rh79_diagonal_transfer_summary": {
+      "path": "papers/RH-79-intrinsic-determinant-diagonal-transfer/results/summary.json",
+      "sha256": "90dd06da860ba12a9fb377f4a59100f180d8606a53fb96c5ed1d8c7fcb6efec5"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "dd4140c314440e95fef20fb74ab819063f40f029c506ec5a66db347bbf5e9aae",
+    "experiments/make_figures.py": "8525e30473d7c0c34f2885c768322070a82c63574b840c1d64407c9880169d50",
+    "experiments/run_cloud_renormalization_audit.py": "fc5fa77f5978316ef5a87ebeaaf3c8a3aff23fa0ce297bb95620d9a1aa10ffc8",
+    "experiments/verify_archive.py": "04b8ebba6a79e7b5fbc0b97e264f1e8e46b4947e5be4c64cf3419d65118cee9a",
+    "src/cloud_relative/__init__.py": "458f9dc41ab3db92f8ccac1bfe12f97381053b5a6c9562cb357ff1eaa70ebb16",
+    "src/cloud_relative/bounds.py": "27f0a2545a3f690959fca92ac0c24caf8276d5504b65f4396097f85436b37d7a",
+    "tests/test_archived_results.py": "b8bba6e40aedadd1ee6a1c070fa3f6e9fd061479f0d8c284f25232f9afb7ad1e",
+    "tests/test_theory.py": "dc09d27ba8cf8e964a36f3a0edd8d8219e4f5650602564f95aa2f635176faac6"
+  },
+  "publication_artifacts": {
+    ".gitignore": "e8c5d568962ae7f11638a973e785da93ef034ef01f2aaeed525ff4849785dbb1",
+    "README.md": "e7108f13a17443fc372c531a7317cba8bde01bae128c6a02cf5124fca37e063d",
+    "figures/moving_cloud_relative_determinant.pdf": "ab962886f36271cee5fd72760f2285a901025ff1d99a4ffccd639f545c469911",
+    "figures/moving_cloud_relative_determinant.png": "7e385869084879198cd8bf2951f99105690bbc6a1109e4c2af4ec70926cd8adb",
+    "main.pdf": "acaba0c4565b63a34913d3e578274dbd5f0716c9c098fb2236d13c19a3a0792f",
+    "main.tex": "6851e71481dc6ac3e67a1209a0de4b56ee19081cf408f698878f1e1ddf01e45d",
+    "moving-cloud-relative-determinant.pdf": "acaba0c4565b63a34913d3e578274dbd5f0716c9c098fb2236d13c19a3a0792f",
+    "pyproject.toml": "1f9a0a56e574a6158923e0a6b33b951f86254b473e5607135b8aeeab258ec429",
+    "references.bib": "f7175088bf394161d536dd460ef2a82fe72140df6c409521307bffe17ec00e69",
+    "requirements.txt": "080ef9103f20cd246740d8116f078385a9b53b95480030de47225edf4b09ac89"
+  },
+  "status": "all_rh80_inputs_sources_and_publication_artifacts_hashed"
+}

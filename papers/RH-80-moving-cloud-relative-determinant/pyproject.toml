@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rh80-moving-cloud-relative-determinant"
+version = "0.1.0"
+description = "Moving-cloud factorization and the relative determinant gate"
+requires-python = ">=3.10"
+dependencies = ["matplotlib>=3.7", "pytest>=7.0", "python-flint>=0.6"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
