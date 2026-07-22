@@ -1,0 +1,57 @@
+{
+  "external_inputs": {
+    "rh77_model_source": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/experiments/run_effective_rank_audit.py",
+      "sha256": "f1ea040fd00577c2775fea8cc1bc4bf416cae76d06dd06b3a6b5ee27116cd3c3"
+    },
+    "rh77_summary": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/results/summary.json",
+      "sha256": "70be2dc0d308ad2dc254bb5098c99606308bef42781446174c14f1f6323dce9a"
+    },
+    "rh82_clock_source": {
+      "path": "papers/RH-82-half-log-postblock-rank-clock/src/half_log_rank/bounds.py",
+      "sha256": "4433277802bf2e1fb0544c988dc34f1e814de9c375178126995aa691e0da5609"
+    },
+    "rh82_summary": {
+      "path": "papers/RH-82-half-log-postblock-rank-clock/results/summary.json",
+      "sha256": "b6e04a29d8d831d416337d2c12d0f8e4bcd07903005032e04416bfae57b03161"
+    },
+    "rh92_audit": {
+      "path": "papers/RH-92-block-schur-contraction-budgets/results/block_schur_budget_audit.json",
+      "sha256": "8f39582cdf23efd2871d0a906a09257b44577e635816a1d7ce96ae47e92ecc26"
+    },
+    "rh92_roadmap": {
+      "path": "papers/RH-92-block-schur-contraction-budgets/UPDATED_ROADMAP.md",
+      "sha256": "b0e062eda061d5838dc8d11ab0682f88262a4e59e92db7d62635b711b070e802"
+    },
+    "rh92_summary": {
+      "path": "papers/RH-92-block-schur-contraction-budgets/results/summary.json",
+      "sha256": "f4f98c702a88d6837bf48d3cd5efaea53c7f06465c69ef30d1cd24c179528e74"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "33dabca963bc292d105db68688b32941e0cfa4eba6d4be8c12584c2473c697db",
+    "experiments/make_figures.py": "a6f94a26fe76167b2304e3d48e0e0cc2c59c1c9be9baae566e09e7e445c3faba",
+    "experiments/run_two_direction_refresh_audit.py": "020fa83bea2568d3f056b91efdcda9d0bad43e2b6d0b345a069594658e3769eb",
+    "experiments/verify_archive.py": "f0e5c877a58ebd706f7cc4422281f0ef14971b797c274eb48b51149c238c252b",
+    "src/two_direction_refresh/__init__.py": "0a0f5f7aea4d7217d87705a4ae567be57d741bcdb2e2868827edc6a2806c3bac",
+    "src/two_direction_refresh/bounds.py": "85df0f14f346545beb1376b58bf0c48204115148d2347b02ce82b80957c39b40",
+    "tests/test_archived_results.py": "42170fa410f699cc66565778a69e3f95b2dd98c22ddae4e8a72d90d981005615",
+    "tests/test_theory.py": "1d130d90d3f88b5e70a1600cdaf260eaf57c2eba3031f37fa40a5cadbf3582a2"
+  },
+  "publication_artifacts": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "21d9ac66eaa2a3bf700caae3a1e22cb0cfd67afe3388a8cb53acd897bf8fbee1",
+    "THEOREM_LEDGER.md": "aa92c4805f997f8c3a7e0bfab1ad5c3f40a44ddb1333898efe176ab0b22bc75f",
+    "UPDATED_ROADMAP.md": "542cbde21db9889da6879b03ff6c910ca1181462bdf3a7e547fb02c7b1261d78",
+    "figures/two_direction_recursive_ritz_refresh.pdf": "01cf054acbee5e1dae20f65a2df480b1fb32a0b03314a17c33024310780a2056",
+    "figures/two_direction_recursive_ritz_refresh.png": "f8db2bc616ef6cc9024996c86a9d6dda1641b0689d91d74f6385ba753d7d08c5",
+    "main.pdf": "490ae1848d9e4c0e19082a5a4b83ce452fda22bdf679092d199b81e8c9d26f01",
+    "main.tex": "effb1fd32be03792f810449b35d94adcf8d0674b98fc65041eabe0ce56eb3f5f",
+    "pyproject.toml": "3cf512211e13c2facaacfc48161a3d43b3d4ccf63c13c3b4515645a9bc8ff8df",
+    "references.bib": "24be15b830d75bd16f9745bcb4b4a3c8624bef82d911f464e28150299c6c19bd",
+    "requirements.txt": "223859266dc308c42daaf834ec590bebdd11ebef66201f51760d5deb95108486",
+    "two-direction-recursive-ritz-refresh.pdf": "490ae1848d9e4c0e19082a5a4b83ce452fda22bdf679092d199b81e8c9d26f01"
+  },
+  "status": "all_rh93_inputs_sources_and_publication_artifacts_hashed"
+}
