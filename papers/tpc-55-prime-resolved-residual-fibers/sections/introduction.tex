@@ -1,0 +1,208 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The preceding two stages of this program placed the pre-terminal packet on
+an exact physical normalization.  TPC--53 identified every literal source,
+opposite-row, orbit, mask, and Mellin factor and proved a sampled interior
+profile comparison.  TPC--54 then solved the abstract energy-selection
+problem sharply: structural density, source shape, sampled carrier,
+cofactor occupancy, and coefficient capacity can be tracked without moving
+any of them through a nonlinear norm \citep{WangTPC53,WangTPC54}.  Both
+results stop before the terminal map.  That stopping point is forced, not
+cosmetic.
+
+Fix one left source system, one direct row/orbit residue slice, and a
+nonzero physical shift \(h_0\).  A retained pre-terminal coordinate has the
+form
+\[
+ u=(m,r,j,\gamma),
+ \qquad m=d(m)\ell(m),
+\]
+where \(\ell(m)\) is prime and \(d(m)\) is squarefree.  On the terminal
+support the equation
+\[
+ p r-mj=h_0
+\]
+determines at most one prime \(p\).  The literal output coordinate is
+\[
+ y=q(u)=(\gamma,s,j),\qquad s=d(m)r.
+\]
+Consequently the physical terminal map is a weighted sum over the full
+terminal fiber \(\cF_y^{\rm term}\).  If such a fiber contains two
+nonzero input directions, the map has a kernel on the unrestricted
+coefficient space.  This elementary obstruction was enough to disprove an
+automatic passage from pre-terminal coverage to post-terminal energy, but
+it did not describe the arithmetic fiber or the behavior of the
+distinguished physical vector.
+
+The present paper asks the next narrow question:
+\begin{quote}
+What is the exact spectral and arithmetic structure of a fixed-\(h_0\)
+residual fiber, and which part of its terminal diagonal energy can be made
+collision-free without claiming a lower bound for the unreduced coherent
+sum?
+\end{quote}
+
+There are four answers.
+
+\subsection{Prime resolution gives an exact desingularization}
+
+The first answer changes the geometry of the question.  Adjoin the unique
+terminal prime to the output key:
+\[
+ \widetilde q(u)=(\gamma,s,j,p_u),
+ \qquad p_u=\frac{mj+h_0}{r}.
+\]
+Under \(h_0\ne0\), \(D=o(J)\), uniqueness of the declared row labels,
+and sufficiently large \(X\), this refined map is injective on one
+declared source system.  Indeed,
+equality of \((s,j,p)\) gives equality of the fused squarefree label
+\[
+ d(m)(mj+h_0)=p s,
+\]
+and the fixed-coordinate label-injectivity argument of the large-prime
+descent recovers the unique row \citep{WangTPC45}.  We also give the short
+self-contained proof.  The fixed-shift terminal map therefore factors as
+\[
+ \boxed{\begin{aligned}
+ \text{literal terminal map}
+ &=\text{forget-}p\text{ synthesis}\\
+ &\quad\circ\text{terminal-restricted collision-free lift}.
+ \end{aligned}}
+\]
+Thus distinct points of one residual collision fiber necessarily carry
+distinct terminal primes.  In the literal fixed-\(h_0\) representation,
+``residual grouping'' and ``coherent terminal-prime synthesis'' are not two
+independent many-to-one operations.  The former is precisely the last
+operation that forgets the prime coordinate.  This statement concerns the
+physical \(h_0\)-slice; it does not identify the different coherent
+\(p\)-sum appearing after Fourier transformation of the completed frozen
+intercept family in TPC--48 \citep{WangTPC48}.
+
+\subsection{The grouping spectrum is completely explicit}
+
+Let \(q:\cU\to\cY\) be any finite fiber map and
+\[
+ (Tz)_y=\sum_{q(u)=y}c_uz_u
+\]
+between Hilbert spaces with positive atomic weights \(a_u\) and \(b_y\).
+Put
+\[
+ S_y=\sum_{q(u)=y}\frac{|c_u|^2}{a_u},
+ \qquad \rho_y^2=b_yS_y.
+\]
+We prove that the nonzero singular values of \(T\) are exactly the
+\(\rho_y\).  Every active fiber contributes one visible unit vector
+\[
+ (v_y)_u=\frac{\overline{c_u}}{a_u\sqrt{S_y}}
+ \quad(q(u)=y)
+\]
+and a kernel of codimension one.  This gives the exact pseudoinverse,
+minimum-norm representative of every output, and quotient norm.  On a
+restricted subspace, a lower bound is equivalent to a positive principal
+angle from this explicit kernel.
+
+For one distinguished vector \(z\), define
+\[
+ \eta_y(z)=
+ \frac{\left|\sum_{q(u)=y}c_uz_u\right|^2}
+ {S_y\sum_{q(u)=y}a_u|z_u|^2}.
+\]
+Then \(0\le\eta_y\le1\), and the grouped norm is exactly
+\[
+ \|Tz\|_b^2
+ =\sum_y\rho_y^2\eta_y(z)
+       \sum_{q(u)=y}a_u|z_u|^2.
+\]
+After terminal activation has been proved and any downstream interface
+gates required by the target correlation have been supplied, the remaining
+internal grouping question is therefore an arithmetic lower bound for a
+displayed alignment statistic.  There is no hidden spectral gap to infer
+from multiplicity or positive diagonal energy alone.
+
+\subsection{Balanced fibers admit a zero-cost transversal cover}
+
+Fix \(y=(\gamma,s,j)\), write \(s=dr\), and hold \(d\mid s\) fixed.  The
+admissible source prime \(\ell\) and terminal prime \(p\) lie on the exact
+determinant ladder
+\[
+ rp-dj\ell=h_0.
+\]
+If \(g=(r,dj)\mid h_0\), all integral solutions are
+\[
+ p=p_0+\frac{dj}{g}t,
+ \qquad
+ \ell=\ell_0+\frac r g t.
+\]
+The inherited squarefree support has \((d,r)=1\), so \(g=(r,j)\mid h_0\).
+On a source-prime interval of length \(O(L)\), the number of candidates for
+this \(d\) is \(O_{h_0}(1+L/r)\).  Summing over \(d\mid s\) gives the
+coefficient-blind upper bound
+\[
+ |\cF_y(R)|
+ \ll_{h_0}\tau(s)\left(1+\frac LR\right)
+ \qquad(r\asymp R),
+\]
+already implicit in the determinant-ladder boundary of TPC--45.  Since
+\(\tau(s)=X^{o(1)}\) on the polynomial-size support, balanced cofactors
+\(R\gg L\) give subpower multiplicity.
+
+Order the terminal primes in each full fiber and put the \(k\)-th smallest
+prime from every fiber into the \(k\)-th rank class.  These classes form a
+deterministic, coefficient-independent partition into at most the maximal
+fiber size many collision-free transversals.  If the terminal diagonal
+energy of the block is nonzero, one class captures at least the reciprocal
+of that number.  Hence a balanced block with nonzero terminal diagonal
+energy contains a collision-free subpacket with an \(X^{-o(1)}\) fraction
+of that energy.  The selector is post-terminal and need not be a smooth
+Mellin cell.  More importantly, a large collision-free summand does not
+lower-bound the sum of all rank classes: the omitted classes can still
+cancel it.
+
+\subsection{The M\"obius gauge is common, not random}
+
+On the inherited coprime squarefree equality support,
+\(d,r,s=dr\) are squarefree, \((d,r)=1\), and
+\[
+ \mu(d)\mu(r)=\mu(s).
+\]
+The source coefficient contains \(\mu(d)\), while the terminal multiplier
+contains \(\mu(r)\).  Their product is therefore constant on a fixed
+residual fiber.  This coherence was first isolated during the large-prime
+cofactor descent \citep{WangTPC45}; here it is inserted into the complete
+TPC--53 factor dictionary.  The opposite-row phase and opposite profile
+are also common on a full \((\gamma,s,j)\)-fiber.  After those factors are
+removed, only the actual source coefficient, source profile, mask support,
+and positive-or-signed terminal shape remain in the fiber sum.
+
+This is useful structural progress, but not a parity claim in the classical
+sieve-theoretic sense \citep[Ch.~16]{FriedlanderIwaniec2010}.  The inherited
+theory supplies no uniform sector bound for the remaining complex
+amplitudes.  We prove sharp phase-cone and magnitude-dominance criteria,
+and we prove that without either type of information the diagonal moduli
+alone may still form an exact polygonal cancellation.
+
+\subsection{Scope and order of the next gate}
+
+We use the program's level labels in the following precise sense.
+Level L0 consists of abstract finite-dimensional operator identities and
+inequalities that do not assert their arithmetic hypotheses for the
+literal packet.  Level L1 consists of exact structural statements proved
+on the declared inherited fixed-\(h_0\) support, including the
+prime-resolved injection and determinant-ladder upper bound.  Level L2
+would require a quantitative estimate reconnected to the full physical
+fixed-shift correlation, with activation, normalization, boundary, and
+all downstream comparison gates controlled.  Nothing in this paper is
+L2.
+
+The balanced transversal theorem is L1 but selects a post-terminal
+subpacket; it does not prove that the full physical output is large.  No
+step identifies the residual low-sign Gram with the native affine Gram,
+changes the physical shift, or estimates a twin-prime correlation.
+
+The result does, however, alter the practical order of attack.  The next
+paper need not search for an abstract lower bound for a many-to-one map.
+After terminal activation and the remaining downstream interface
+requirements are kept explicit, it should estimate the terminal-prime
+coherence on one literal fiber or one declared rank interaction, with the
+source, cofactor, fixed shift, and actual atomic normalization all retained.

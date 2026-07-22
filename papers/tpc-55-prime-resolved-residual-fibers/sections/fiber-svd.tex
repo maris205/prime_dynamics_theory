@@ -1,0 +1,333 @@
+\section{Exact singular-value geometry of a fiber sum}
+\label{sec:fiber-svd}
+
+The terminal arithmetic will be inserted only after the finite-dimensional
+operator has been solved exactly.
+
+\subsection{Weighted atomic spaces}
+
+Let \(\cU\) and \(\cY\) be finite sets, let
+\(q:\cU\to\cY\), and assign positive atomic weights \(a_u>0\) and
+\(b_y>0\).  Write
+\begin{equation}
+ \|z\|_a^2=\sum_{u\in\cU}a_u|z_u|^2,
+ \qquad
+ \|w\|_b^2=\sum_{y\in\cY}b_y|w_y|^2.
+ \label{eq:tpc55-weighted-norms}
+\end{equation}
+For coefficients \(c_u\in\C\), define
+\begin{equation}
+ (Tz)_y=\sum_{u\in F_y}c_uz_u,
+ \qquad F_y=q^{-1}(y).
+ \label{eq:tpc55-general-fiber-operator}
+\end{equation}
+Put
+\begin{equation}
+ S_y:=\sum_{u\in F_y}\frac{|c_u|^2}{a_u},
+ \qquad
+ \rho_y^2:=b_yS_y,
+ \qquad
+ \cY_+:=\{y:S_y>0\}.
+ \label{eq:tpc55-fiber-row-norm}
+\end{equation}
+
+\begin{theorem}[Complete weighted fiber SVD]
+\label{thm:tpc55-complete-svd}
+The multiset of nonzero singular values of \(T\) is exactly
+\begin{equation}
+ \{\!\{\rho_y:y\in\cY_+\}\!\},
+\label{eq:tpc55-all-singular-values}
+\end{equation}
+with one occurrence contributed by each active output fiber.  Thus distinct
+fibers with the same value of \(\rho_y\) contribute the corresponding
+singular-value multiplicity.  In particular,
+\begin{equation}
+ \rank T=|\cY_+|,
+ \qquad
+ \dim\ker T=|\cU|-|\cY_+|.
+ \label{eq:tpc55-rank-nullity}
+\end{equation}
+For \(y\in\cY_+\), the corresponding unit right and left singular
+vectors are
+\begin{equation}
+ (v_y)_u=
+ \begin{cases}
+ \dfrac{\overline{c_u}}{a_u\sqrt{S_y}},&u\in F_y,\\[6pt]
+ 0,&u\notin F_y,
+ \end{cases}
+ \qquad
+ f_y=b_y^{-1/2}e_y,
+ \label{eq:tpc55-singular-vectors}
+\end{equation}
+and \(Tv_y=\rho_yf_y\).
+
+If \(P_y\) is the \(a\)-orthogonal projection onto \(\C v_y\), then
+\begin{equation}
+ (P_yz)_u
+ =\frac{\overline{c_u}}{a_uS_y}
+   \sum_{v\in F_y}c_vz_v
+ \quad(u\in F_y),
+ \label{eq:tpc55-visible-projection}
+\end{equation}
+and, with \(P=\sum_{y\in\cY_+}P_y\),
+\begin{equation}
+ \cH_a(\cU)
+ =\ker T\mathbin{\mathop{\oplus}\limits^{\perp_a}}
+  \operatorname{Ran}P,
+ \qquad
+ T^*T=\sum_{y\in\cY_+}\rho_y^2P_y.
+ \label{eq:tpc55-svd-decomposition}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Conjugate \(T\) by the isometries
+\(x_u=\sqrt{a_u}z_u\) and \(W_y=\sqrt{b_y}w_y\).  The resulting matrix
+has row
+\[
+ d_{y,u}=\sqrt{\frac{b_y}{a_u}}c_u\one_{q(u)=y}.
+\]
+Distinct rows have disjoint supports, hence are orthogonal, and the squared
+norm of row \(y\) is \(b_yS_y=\rho_y^2\).  Normalizing the nonzero rows
+gives \eqref{eq:tpc55-singular-vectors}.  The projection formula follows
+by taking the \(a\)-inner product with \(v_y\).  The remaining identities
+are the spectral decomposition and rank--nullity theorem.
+\end{proof}
+
+Thus a collision fiber has no complicated internal spectrum: it has one
+visible direction and a completely flat zero spectrum in every transverse
+direction.
+
+\subsection{Kernel basis and coordinate transversals}
+
+\begin{proposition}[Explicit collision kernel]
+\label{prop:tpc55-kernel-basis}
+Fix \(y\in\cY_+\) and choose \(u_0\in F_y\) with \(c_{u_0}\ne0\).  Then
+\begin{equation}
+ k_{y,u}:=c_ue_{u_0}-c_{u_0}e_u,
+ \qquad u\in F_y\setminus\{u_0\},
+ \label{eq:tpc55-kernel-vectors}
+\end{equation}
+is a basis of the kernel of the fiber functional
+\(z\mapsto\sum_{u\in F_y}c_uz_u\).  Hence a coordinate subspace
+supported on \(S\subseteq\cU\) is a domain of injectivity for \(T\) if
+and only if
+\begin{equation}
+ c_u\ne0\quad(u\in S),
+ \qquad
+ q|_S\ \text{is injective}.
+ \label{eq:tpc55-coordinate-injectivity}
+\end{equation}
+When these conditions hold, the singular values of the restriction are
+exactly
+\begin{equation}
+ \left\{
+ |c_u|\sqrt{\frac{b_{q(u)}}{a_u}}:u\in S
+ \right\}.
+ \label{eq:tpc55-transversal-singular-values}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Every vector in \eqref{eq:tpc55-kernel-vectors} is killed because its two
+contributions are \(c_{u_0}c_u-c_uc_{u_0}=0\).  The vectors are independent
+and their number is \(|F_y|-1\), which is the local nullity.  If a coordinate
+restriction contains a zero coefficient or two directions from one active
+fiber, it has a kernel.  Conversely, under \eqref{eq:tpc55-coordinate-injectivity}
+the restricted matrix has one nonzero entry in each occupied row and column,
+giving \eqref{eq:tpc55-transversal-singular-values}.
+\end{proof}
+
+This necessary-and-sufficient statement is why a collision-free coordinate
+selection must retain at most one terminal atom from each complete output
+fiber.  Merely bounding the fiber size does not make the unrestricted map
+injective.
+
+\subsection{Canonical quotient and the minimum-norm lift}
+
+We use the standard Moore--Penrose inverse convention
+\cite{BenIsraelGreville2003}.
+
+\begin{theorem}[Exact pseudoinverse]
+\label{thm:tpc55-pseudoinverse}
+For every \(w\in\cH_b(\cY)\), the Moore--Penrose inverse is
+\begin{equation}
+ (T^\dagger w)_u
+ =
+ \begin{cases}
+ \dfrac{\overline{c_u}}{a_uS_{q(u)}}w_{q(u)},
+   &q(u)\in\cY_+,\\[6pt]
+ 0,&q(u)\notin\cY_+.
+ \end{cases}
+ \label{eq:tpc55-pseudoinverse-formula}
+\end{equation}
+Let \(Q_+\) denote the \(b\)-orthogonal projection onto the output
+coordinates indexed by \(\cY_+\).  Then
+\begin{align}
+ TT^\dagger&=Q_+,
+ &T^\dagger T&=P,
+ \label{eq:tpc55-pseudoinverse-identities}
+\end{align}
+and, for every \(w\) supported on \(\cY_+\), \(T^\dagger w\) is the unique
+minimum-\(a\)-norm solution of \(Tz=w\), with
+\begin{equation}
+ \inf_{Tz=w}\|z\|_a^2
+ =\sum_{y\in\cY_+}\frac{|w_y|^2}{S_y}.
+ \label{eq:tpc55-minimum-lift-energy}
+\end{equation}
+If \(\cY_+\ne\varnothing\), then
+\begin{equation}
+ \|T^\dagger\|_{b\to a}
+ =\left(\min_{y\in\cY_+}\rho_y\right)^{-1}.
+ \label{eq:tpc55-pseudoinverse-norm}
+\end{equation}
+If \(\cY_+=\varnothing\), then \(T=T^\dagger=0\) and
+\(\|T^\dagger\|_{b\to a}=0\).
+\end{theorem}
+
+\begin{proof}
+The formula is the inverse on each one-dimensional nonzero singular
+direction and zero on both the domain kernel and the inactive output
+coordinates.  Direct substitution gives
+\eqref{eq:tpc55-pseudoinverse-identities}.  Its input energy on one output
+coordinate is
+\[
+ \sum_{u\in F_y}a_u
+ \left|\frac{\overline{c_u}}{a_uS_y}w_y\right|^2
+ =\frac{|w_y|^2}{S_y}.
+\]
+Orthogonality of the fibers proves the energy and operator-norm formulas.
+When there is no active fiber, both operators are zero, which gives the last
+assertion.
+\end{proof}
+
+Thus the quotient by the collision kernel has a canonical realization.
+Choosing one representative coordinate in each fiber is useful for support
+selection, but it is not the minimum-norm quotient unless the fiber already
+has one active coordinate.
+
+\subsection{Restricted subspaces and the exact missing angle}
+
+Assume throughout this subsection that \(\cY_+\ne\varnothing\).  If
+\(\cY_+=\varnothing\), then \(T=0\), so no nonzero subspace can be a domain
+of injectivity for \(T\).
+
+Let
+\begin{equation}
+ \rho_{\min}=\min_{y\in\cY_+}\rho_y,
+ \qquad
+ \rho_{\max}=\max_{y\in\cY_+}\rho_y.
+ \label{eq:tpc55-rho-extremes}
+\end{equation}
+For a nonzero subspace \(V\subseteq\cH_a(\cU)\), define
+\begin{equation}
+ \alpha(V)
+ :=\inf_{\substack{z\in V\\\|z\|_a=1}}\|Pz\|_a,
+ \qquad
+ \gamma_T(V)
+ :=\inf_{\substack{z\in V\\\|z\|_a=1}}\|Tz\|_b.
+ \label{eq:tpc55-principal-angle}
+\end{equation}
+
+\begin{theorem}[Sharp angle criterion]
+\label{thm:tpc55-angle-criterion}
+For every nonzero subspace \(V\), in finite dimension,
+\begin{equation}
+ \alpha(V)>0
+ \quad\Longleftrightarrow\quad
+ V\cap\ker T=\{0\},
+ \label{eq:tpc55-angle-injectivity}
+\end{equation}
+and
+\begin{equation}
+ \rho_{\min}\alpha(V)
+ \le\gamma_T(V)
+ \le\rho_{\max}\alpha(V).
+ \label{eq:tpc55-angle-bounds}
+\end{equation}
+After normalizing the output coordinate \(y\) by \(1/\rho_y\), the
+resulting operator \(\widehat T\) satisfies the exact identity
+\begin{equation}
+ \|\widehat Tz\|_b=\|Pz\|_a,
+ \qquad
+ \gamma_{\widehat T}(V)=\alpha(V).
+ \label{eq:tpc55-normalized-angle-identity}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \cref{thm:tpc55-complete-svd},
+\[
+ \rho_{\min}^2\|Pz\|_a^2
+ \le\|Tz\|_b^2
+ \le\rho_{\max}^2\|Pz\|_a^2.
+\]
+Taking the infimum on the unit sphere of \(V\) proves
+\eqref{eq:tpc55-angle-bounds}.  Compactness of that sphere gives
+\eqref{eq:tpc55-angle-injectivity}.  Dividing each nonzero singular value
+by itself gives \eqref{eq:tpc55-normalized-angle-identity}.
+\end{proof}
+
+Pointwise injectivity on a sequence of changing subspaces is therefore not
+enough for a uniform theorem.  The subspaces must remain quantitatively
+separated from the explicit collision kernel.
+
+\subsection{Alignment of a distinguished vector}
+
+For \(z\in\cH_a(\cU)\), put
+\begin{equation}
+ E_y(z):=\sum_{u\in F_y}a_u|z_u|^2,
+ \qquad
+ A_y(z):=\sum_{u\in F_y}c_uz_u,
+ \label{eq:tpc55-fiber-energy-amplitude}
+\end{equation}
+and, when \(S_yE_y(z)>0\), define
+\begin{equation}
+ \eta_y(z):=\frac{|A_y(z)|^2}{S_yE_y(z)};
+ \label{eq:tpc55-fiber-alignment}
+\end{equation}
+set \(\eta_y=0\) in the zero case.
+
+\begin{theorem}[Exact visible-energy identity]
+\label{thm:tpc55-visible-energy}
+For every \(z\) and every active fiber \(y\in\cY_+\),
+\begin{equation}
+ 0\le\eta_y(z)\le1,
+ \qquad
+ \|P_yz\|_a^2=\eta_y(z)E_y(z),
+ \label{eq:tpc55-local-visible-energy}
+\end{equation}
+and
+\begin{equation}
+ \boxed{
+ \|Tz\|_b^2
+ =\sum_{y\in\cY_+}\rho_y^2\eta_y(z)E_y(z).}
+ \label{eq:tpc55-exact-alignment-identity}
+\end{equation}
+On an active fiber, equality \(\eta_y=1\) holds precisely when the
+restriction of \(z\) to that fiber is a nonzero scalar multiple of \(v_y\).
+Equality \(\eta_y=0\) holds precisely when that restriction lies in the
+fiber kernel, including the zero vector.  On an inactive fiber
+\(y\notin\cY_+\), one has \(\eta_y=0\) by convention, all coefficients
+\(c_u\) on \(F_y\) vanish, and the entire fiber is killed by \(T\).
+\end{theorem}
+
+\begin{proof}
+Cauchy--Schwarz in the weighted fiber gives
+\(|A_y|^2\le S_yE_y\).  Formula
+\eqref{eq:tpc55-visible-projection} gives
+\(\|P_yz\|_a^2=|A_y|^2/S_y\).  Multiplying by
+\(\rho_y^2=b_yS_y\) and summing gives
+\eqref{eq:tpc55-exact-alignment-identity}.  The equality cases are the
+equality case of Cauchy--Schwarz and the definition of the kernel.
+\end{proof}
+
+For the physical terminal map, the inherited atomic norms have
+\(a_u=b_y=1\) and
+\begin{equation}
+ c_u=\mu(r_u)\Lambda(p_ur_u).
+ \label{eq:tpc55-physical-svd-coefficient}
+\end{equation}
+The theorem must be applied with these literal coefficients.  Choosing
+artificial weights \(a_u=|c_u|^2\) would hide the terminal amplitude in a
+new domain norm and is not a physical normalization theorem.

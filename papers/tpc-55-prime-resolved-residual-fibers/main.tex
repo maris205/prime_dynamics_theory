@@ -1,0 +1,107 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\rad}{\operatorname{rad}}
+
+\hypersetup{
+  pdftitle={Prime-Resolved Residual Fibers at a Fixed Shift: Exact Grouping SVD, Common Moebius Gauge, and Collision-Free Transversals},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact spectral and arithmetic structure of residual grouping in a literal fixed-shift prime-squarefree packet},
+  pdfkeywords={residual grouping, fiber SVD, terminal prime, common Moebius gauge, determinant ladder, parity obstruction}
+}
+
+\title{\bfseries Prime-Resolved Residual Fibers at a Fixed Shift:\\
+Exact Grouping SVD, Common M\"obius Gauge, and Collision-Free Transversals}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\noindent\textbf{Keywords:} residual grouping; terminal-prime resolution;
+fiber singular values; common M\"obius gauge; determinant ladders; parity
+obstruction.
+
+\medskip
+\noindent\textbf{Convention.}
+The shift \(h_0\ne0\), one left-hand source system, and one direct
+residue/orbit slice are fixed.
+All physical domain and output norms use the inherited counting-measure
+atomic normalization.  Terminal weights are displayed in the operator and
+are never absorbed into a redefined input norm.  A collision means equality
+of the complete output key \((\gamma,s,j)\), not equality of \(s\) alone.
+The raw sampled-profile normalization is the one used in TPC--53, not the
+normalized \(1/(E_XJ)\) convention used in an earlier intermediate model.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 47A10; Secondary 11N36,
+15A18, 46C05.
+
+\input{sections/introduction}
+\input{sections/literal-map}
+\input{sections/fiber-svd}
+\input{sections/arithmetic-fibers}
+\input{sections/transversals}
+\input{sections/physical-coherence}
+\input{sections/endpoint-claims}
+
+\begingroup
+\small
+\raggedright
+\setlength{\bibsep}{4pt plus 1pt minus 1pt}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

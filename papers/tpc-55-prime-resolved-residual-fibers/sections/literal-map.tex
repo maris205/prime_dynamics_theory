@@ -1,0 +1,320 @@
+\section{The literal fixed-shift map and its prime-resolved lift}
+\label{sec:literal-map}
+
+\subsection{Rows, coefficients, and the terminal-admissible set}
+
+We use the exact left-packet convention of TPC--53
+\citep{WangTPC53}.  Fix \(h_0\ne0\), put \(H=\rad|h_0|\), and write a
+source row and an opposite row as
+\begin{equation}
+ \begin{aligned}
+ m&=d_m\ell_m,&
+ m_\gamma&=d_\gamma\ell_\gamma,\\
+ \ell_m,\ell_\gamma&\in[L,2L],&
+ d_m,d_\gamma&\in[D,2D],\\
+ (d_m,H)&=1,&
+ (d_\gamma,H)&=1.
+ \end{aligned}
+ \label{eq:tpc55-rows}
+\end{equation}
+with prime \(\ell\)'s and squarefree \(d\)'s.  The inherited separation
+makes an integer \(m\) determine \((d_m,\ell_m)\) on the declared cell.
+Write
+\begin{equation}
+ Q=LD,
+ \qquad K=DJ,
+ \qquad QJ\asymp X,
+ \qquad \kappa_0=\frac1{400},
+ \qquad \Delta=QX^{-\kappa_0},
+ \qquad G=X^{\kappa_0}.
+ \label{eq:tpc55-scales}
+\end{equation}
+Fix one direct row-residue group, one orbit class
+\(a\pmod{H_{\rm orb}}\), one opposite-row box \(\cQ\), and one compact
+orbit interval \(I_0\Subset(0,\infty)\).  Here
+\(H_{\rm orb}=O_{h_0}(1)\) denotes the common
+orbit period; it is not being identified with \(|h_0|\).
+
+The weights \(\omega_D\) and \(\psi_L\) range over the fixed bounded
+smooth dyadic families inherited from TPC--53: after the displayed
+normalization, their supports lie in \([D,2D]\) and \([1,2]\),
+respectively, and all normalized derivatives are uniformly bounded.
+We use the exact alias \(\zeta_m:=\zeta_m^{(1)}\).  Thus the source
+coefficient is
+\begin{equation}
+ a_m
+ =\mu(d_m)(\log\ell_m)\omega_D(d_m)
+   \psi_L(\ell_m/L)\zeta_m,
+ \qquad |\zeta_m|\ll1.
+ \label{eq:tpc55-source-coefficient}
+\end{equation}
+The opposite row has unary factor
+\(\eta_\gamma\mathscr R(q_\gamma)\), where
+\begin{equation}
+ q_\gamma
+ :=\left(\log\frac{\ell_\gamma}{L},
+          \log\frac{d_\gamma}{D}\right),
+ \qquad |\eta_\gamma|=1,
+ \label{eq:tpc55-normalized-opposite-row}
+\end{equation}
+and \(\mathscr R\) is the fixed smooth function denoted by \(R\) in
+TPC--53, relabeled here to avoid collision with the cofactor scale \(R\).
+It is supported on the normalized opposite-row
+box.  The direct
+orbit cell contributes a constant \(\xi_a\ne0\).  The literal binary mask
+is
+\begin{equation}
+ K_{m\gamma}
+ =\one_{\ell_m\ne\ell_\gamma}
+  \one_{|m-m_\gamma|>\Delta}
+  \one_{(d_m,d_\gamma)\le G}.
+ \label{eq:tpc55-mask}
+\end{equation}
+For the declared four-factor profile, set
+\begin{equation}
+ \cW_{m,\gamma}(j/J)
+ =W_1(mj/X)\Psi_1(d_mj/K)
+  W_2(m_\gamma j/X)\Psi_2(d_\gamma j/K),
+ \label{eq:tpc55-four-factor-profile}
+\end{equation}
+where \(W_1,W_2,\Psi_1,\Psi_2\in C_c^\infty((0,\infty))\) are the fixed
+smooth cutoff functions of the declared packet.
+
+Let \(\cI_X\) be the retained set of pairs \((m,r)\), let \(\cO_X\) be
+the complete opposite-row cell, and put
+\begin{equation}
+ \cJ_{X,a}
+ :=\{j:j/J\in I_0,\ j\equiv a\pmod{H_{\rm orb}}\}.
+ \label{eq:tpc55-retained-orbit-set}
+\end{equation}
+The full pre-terminal atomic universe is
+\begin{equation}
+ \cU^{\rm pre}
+ :=\{(m,r,j,\gamma):(m,r)\in\cI_X,\
+       j\in\cJ_{X,a},\ \gamma\in\cO_X\}.
+ \label{eq:tpc55-preterminal-universe}
+\end{equation}
+Thus the scalar coordinate of the lifted physical vector is
+\begin{equation}
+ g_u:=[G_X^L(m,r,j)]_\gamma
+ =a_mK_{m\gamma}\eta_\gamma\mathscr R(q_\gamma)\xi_a
+   \cW_{m,\gamma}(j/J),
+ \qquad u=(m,r,j,\gamma).
+ \label{eq:tpc55-literal-atom}
+\end{equation}
+The value is independent of \(r\) except for repetition over the retained
+cofactor support.
+
+Let \(\Phi_0\) be the inherited terminal cutoff and define
+\begin{equation}
+ \Lambda(n):=(\log n)\Phi_0(n/X).
+ \label{eq:tpc55-terminal-Lambda}
+\end{equation}
+This notation is a shaped prime amplitude, not the von Mangoldt function.
+For \(u=(m,r,j,\gamma)\in\cU^{\rm pre}\), put
+\begin{equation}
+ p_u:=\frac{mj+h_0}{r}
+ \label{eq:tpc55-terminal-prime}
+\end{equation}
+whenever the quotient is integral.  The terminal-admissible universe is
+the inherited coprime squarefree equality support
+\begin{equation}
+ \begin{split}
+ \cU_{h_0}^{\rm term}:=\{u\in\cU^{\rm pre}:{}&
+ p_u\text{ is a prime in the inherited terminal support},\\
+ &p_ur-mj=h_0,\quad \Lambda(p_ur)\ne0,\quad
+ d_m,r,d_mr\text{ are squarefree},\quad(d_m,r)=1\}.
+ \end{split}
+ \label{eq:tpc55-terminal-universe}
+\end{equation}
+Define separately the actually nonzero physical support
+\begin{equation}
+ \cU_{h_0}^{\rm phys}
+ :=\{u\in\cU_{h_0}^{\rm term}:g_u\ne0\}.
+ \label{eq:tpc55-physical-active-set}
+\end{equation}
+This distinction prevents pre-terminal rows from being silently treated as
+terminal-admissible atoms.
+
+Thus, on every terminal-admissible atom, the inherited TPC--45/48 support
+conditions \citep{WangTPC45,WangTPC48} give
+\begin{equation}
+ d_m, r, s=d_mr\ \text{squarefree},
+ \qquad (d_m,r)=1,
+ \qquad \mu(d_m)\mu(r)=\mu(s).
+ \label{eq:tpc55-squarefree-support}
+\end{equation}
+The complete physical output key and its prime refinement are
+\begin{equation}
+ q(u)=(\gamma,d_mr,j),
+ \qquad
+ \widetilde q(u)=(\gamma,d_mr,j,p_u).
+ \label{eq:tpc55-two-output-maps}
+\end{equation}
+
+\subsection{Three exact operators}
+
+Use counting measure on every atomic coordinate.  For an arbitrary array
+\(g=(g_u)_{u\in\cU^{\rm pre}}\), the terminal diagonal is an operator on
+the full pre-terminal universe, defined by
+\begin{equation}
+ (D_{h_0}g)_u
+ :=
+ \begin{cases}
+  \mu(r)\Lambda(p_ur)g_u,
+   &u=(m,r,j,\gamma)\in\cU_{h_0}^{\rm term},\\
+  0,&u\in\cU^{\rm pre}\setminus\cU_{h_0}^{\rm term}.
+ \end{cases}
+ \label{eq:tpc55-terminal-diagonal}
+\end{equation}
+Let \(\widetilde\cY_{h_0}=\widetilde q(\cU_{h_0}^{\rm term})\).  The
+prime-resolved lift is
+\begin{equation}
+ (\cR_{h_0}g)_{\widetilde y}
+ :=\sum_{\substack{u\in\cU_{h_0}^{\rm term}\\
+                    \widetilde q(u)=\widetilde y}}
+       (D_{h_0}g)_u,
+ \qquad \widetilde y\in\widetilde\cY_{h_0}.
+ \label{eq:tpc55-prime-resolved-lift}
+\end{equation}
+Finally, let \(\Sigma_p\) forget the prime coordinate:
+\begin{equation}
+ (\Sigma_p x)_{\gamma,s,j}
+ :=\sum_{p:(\gamma,s,j,p)\in\widetilde\cY_{h_0}}
+ x_{\gamma,s,j,p}.
+ \label{eq:tpc55-forget-prime}
+\end{equation}
+The exact terminal map of TPC--53 is
+ \begin{equation}
+  (\cT_{h_0}g)_{\gamma,s,j}
+  =\sum_{\substack{u=(m,r,j,\gamma)\in\cU_{h_0}^{\rm term}\\
+                    s=d_mr}}
+    \mu(r)\Lambda(p_ur)g_{m,r,j,\gamma}.
+  \label{eq:tpc55-literal-terminal-map}
+ \end{equation}
+ \begin{equation}
+  \cT_{h_0}=\Sigma_p\cR_{h_0}.
+  \label{eq:tpc55-terminal-factorization}
+ \end{equation}
+Every sum is restricted to the declared finite pre-terminal, terminal,
+and output supports.  No projective layer or frozen intercept is present
+in these definitions.
+
+\subsection{Prime-resolved injectivity}
+
+The factorization becomes useful because \(\cR_{h_0}\) has no collision
+after restriction to the terminal-admissible coordinate space.
+
+\begin{lemma}[Fixed-coordinate fused-label injectivity]
+\label{lem:tpc55-fused-injectivity}
+Assume \(D=o(J)\), \(h_0\ne0\), and the row uniqueness in
+\eqref{eq:tpc55-rows}.  For all sufficiently large \(X\), if two rows in
+the same source system satisfy
+\begin{equation}
+ d_1(d_1\ell_1j+h_0)=d_2(d_2\ell_2j+h_0)
+ \label{eq:tpc55-fused-label-equality}
+\end{equation}
+at the same retained \(j\asymp J\), then
+\((d_1,\ell_1)=(d_2,\ell_2)\).
+\end{lemma}
+
+\begin{proof}
+Rearranging gives
+\begin{equation}
+ j(\ell_1d_1^2-\ell_2d_2^2)=h_0(d_2-d_1).
+ \label{eq:tpc55-fused-injectivity-equation}
+\end{equation}
+If the integer in parentheses on the left is nonzero, the left side has
+absolute value at least a fixed multiple of \(J\), while the right side is
+\(O_{h_0}(D)=o(J)\), a contradiction.  Hence both sides vanish.  Since
+\(h_0\ne0\), first \(d_1=d_2\), and then \(\ell_1=\ell_2\).
+\end{proof}
+
+\begin{theorem}[Prime-resolved desingularization]
+\label{thm:tpc55-prime-resolved-injection}
+Assume \(h_0\ne0\), \(D=o(J)\), uniqueness of the row decomposition in
+\eqref{eq:tpc55-rows}, and sufficiently large \(X\).  On one declared
+source system, the map
+\(\widetilde q:\cU_{h_0}^{\rm term}\to\widetilde\cY_{h_0}\) is
+injective.  Consequently the restriction
+\(\cR_{h_0}|_{\ell^2(\cU_{h_0}^{\rm term})}\) is a weighted coordinate
+embedding.  After the separate restriction from \(\cU^{\rm pre}\) to
+\(\cU_{h_0}^{\rm term}\), all many-to-one behavior of \(\cT_{h_0}\)
+occurs in the forget-prime map \(\Sigma_p\).
+\end{theorem}
+
+\begin{proof}
+Suppose \(\widetilde q(u_1)=\widetilde q(u_2)\).  Then the two atoms have
+the same \(s,j,p,\gamma\).  Their fused labels satisfy
+\[
+ d_i(d_i\ell_i j+h_0)
+ =d_i(p r_i)=p(d_ir_i)=ps.
+\]
+Thus \eqref{eq:tpc55-fused-label-equality} holds, and
+\cref{lem:tpc55-fused-injectivity} gives the same source row.  Then
+\(r_i=s/d_i\) is also the same, so \(u_1=u_2\).  Formula
+\eqref{eq:tpc55-terminal-factorization} shows that only \(\Sigma_p\) can
+identify distinct inputs.
+\end{proof}
+
+\begin{corollary}[Terminal primes parameterize a full collision fiber]
+\label{cor:tpc55-fiber-prime-bijection}
+For \(y=(\gamma,s,j)\), put
+\begin{equation}
+ \begin{aligned}
+ \cF_y^{\rm term}&:=q^{-1}(y)\cap\cU_{h_0}^{\rm term},&
+ \cF_y^{\rm phys}&:=q^{-1}(y)\cap\cU_{h_0}^{\rm phys},\\
+ \cP_y^{\rm term}&:=\{p_u:u\in\cF_y^{\rm term}\},&
+ \cP_y^{\rm phys}&:=\{p_u:u\in\cF_y^{\rm phys}\}.
+ \end{aligned}
+ \label{eq:tpc55-fiber-and-primes}
+\end{equation}
+For compatibility below, write
+\(\cF_y:=\cF_y^{\rm term}\) and
+\(\cP_y:=\cP_y^{\rm term}\).  Then \(u\mapsto p_u\) is a bijection from
+\(\cF_y^{\rm term}\) to \(\cP_y^{\rm term}\), and its restriction is a
+bijection from \(\cF_y^{\rm phys}\) to \(\cP_y^{\rm phys}\).  In
+particular, two distinct terminal-admissible atoms in one full output
+fiber carry distinct terminal primes.
+\end{corollary}
+
+\subsection{The three energies}
+
+The preceding factorization keeps three norms separate.  For an arbitrary
+lifted array \(g\), define
+\begin{align}
+ \cE_{\rm pre}(g)
+ &:=\sum_{u\in\cU^{\rm pre}}|g_u|^2,
+ \label{eq:tpc55-preterminal-energy}\\
+ \cD_{h_0}(g)
+ &:=\|D_{h_0}g\|_2^2
+ =\sum_{u\in\cU_{h_0}^{\rm term}}
+   |\mu(r)|^2|\Lambda(p_ur)|^2|g_u|^2\notag\\
+ &=\sum_{u\in\cU_{h_0}^{\rm term}}
+   |\Lambda(p_ur)|^2|g_u|^2,
+ \label{eq:tpc55-terminal-diagonal-energy}\\
+ \cG_{h_0}(g)
+ &:=\|\cT_{h_0}g\|_2^2
+ =\sum_y\left|\sum_{u\in\cF_y^{\rm term}}
+   \mu(r_u)\Lambda(p_ur_u)g_u\right|^2.
+ \label{eq:tpc55-grouped-energy}
+\end{align}
+The last equality in \(\cD_{h_0}\) uses the inherited squarefree
+condition \(r\) on \(\cU_{h_0}^{\rm term}\), so
+\(|\mu(r)|^2=1\); it would be false on an unrestricted cofactor universe.
+The prime-resolved injection gives the exact identity
+\begin{equation}
+ \|\cR_{h_0}g\|_2^2=\cD_{h_0}(g).
+ \label{eq:tpc55-resolved-isometry}
+\end{equation}
+It does not give \(\cD_{h_0}\asymp\cE_{\rm pre}\): that comparison also
+requires terminal activation and two-sided control of \(\Lambda\) on the
+selected support.  Nor does it give a lower bound for
+\(\cG_{h_0}/\cD_{h_0}\), because \(\Sigma_p\) creates the cross terms.
+
+For the physical vector \(G_X^L\), the pre-terminal energy is the raw
+TPC--53 lifted profile sum.  It should not be confused with the normalized
+\(1/(E_XJ)\) model statistic used at an earlier intermediate stage in
+TPC--52 \citep{WangTPC52}.  Equations
+\eqref{eq:tpc55-preterminal-energy}--\eqref{eq:tpc55-grouped-energy} use
+literal counting-measure atoms throughout.

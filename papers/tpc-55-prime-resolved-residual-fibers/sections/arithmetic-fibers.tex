@@ -1,0 +1,224 @@
+\section{Arithmetic anatomy of a full residual fiber}
+\label{sec:arithmetic-fibers}
+
+\subsection{Divisor--prime parameterization}
+
+Fix an output \(y=(\gamma,s,j)\) and write a source row as
+\(m=d\ell\).  Equations
+\begin{equation}
+ s=dr,
+ \qquad
+ pr-d\ell j=h_0
+ \label{eq:tpc55-fiber-equations}
+\end{equation}
+give
+\begin{equation}
+ r=\frac sd,
+ \qquad
+ p=\frac{d^2\ell j+h_0d}{s},
+ \qquad
+ \ell=\frac{ps-h_0d}{d^2j}.
+ \label{eq:tpc55-fiber-parameterization}
+\end{equation}
+Since \(s\) is squarefree on the nonzero equality support, \(d\mid s\)
+there automatically satisfies \((d,s/d)=1\).  To avoid replacing the
+declared physical carrier by a larger Diophantine model, define the exact
+admissible triple set
+\begin{equation}
+ \mathfrak A_y
+ :=\left\{(d,\ell,p):
+ \begin{array}{l}
+ u=(d\ell,s/d,j,\gamma)\in\cU_{h_0}^{\rm term},\quad q(u)=y,\\
+ d=d_{d\ell},\quad \ell=\ell_{d\ell},\quad p=p_u
+ \end{array}\right\},
+ \label{eq:tpc55-admissible-triple-set}
+\end{equation}
+and let
+\begin{equation}
+ \mathfrak D_y^{\rm div}
+ :=\{d:\text{there exist }\ell,p\text{ with }(d,\ell,p)\in\mathfrak A_y\}.
+ \label{eq:tpc55-admissible-divisor-set}
+\end{equation}
+Writing \(\cF_y^{\rm term}:=\cF_y\), the map
+\begin{equation}
+ u=(m,r,j,\gamma)
+ \longmapsto(d_m,\ell_m,p_u)
+ \label{eq:tpc55-exact-fiber-bijection-map}
+\end{equation}
+is an exact bijection
+\begin{equation}
+ \boxed{\cF_y^{\rm term}\longleftrightarrow\mathfrak A_y.}
+ \label{eq:tpc55-exact-fiber-set}
+\end{equation}
+Indeed, the reverse map sends \((d,\ell,p)\) to
+\((d\ell,s/d,j,\gamma)\), and membership in \(\mathfrak A_y\) retains all
+source, residue, terminal, and carrier restrictions by definition.  The
+physical fiber
+\begin{equation}
+ \cF_y^{\rm phys}:=\cF_y\cap\cU_{h_0}^{\rm phys}
+ \label{eq:tpc55-physical-fiber-subset}
+\end{equation}
+corresponds only to the subset of \(\mathfrak A_y\) for which \(g_u\ne0\).
+Thus the terminal fiber must not be identified with its physical subset.
+
+The projection of \(\mathfrak A_y\) to \(p\) is one-to-one by
+\cref{cor:tpc55-fiber-prime-bijection}.  Projection to \(d\) need not be:
+one fixed divisor \(d\in\mathfrak D_y^{\rm div}\) can support several
+pairs of source and terminal primes.  Thus \(\tau(s)\) alone is not a
+fiber-size bound.
+
+\subsection{A fixed-divisor determinant ladder}
+
+Fix \(d\mid s\), put \(r=s/d\), and let
+\begin{equation}
+ g=(r,dj).
+ \label{eq:tpc55-ladder-gcd}
+\end{equation}
+Because \((d,r)=1\), one has \(g=(r,j)\).  The elementary solution theory
+of the determinant equation gives the exact ladder.
+
+\begin{lemma}[Complete integral ladder]
+\label{lem:tpc55-complete-ladder}
+The equation
+\begin{equation}
+ rp-dj\ell=h_0
+ \label{eq:tpc55-determinant-ladder-equation}
+\end{equation}
+has an integral solution if and only if \(g\mid h_0\).  When one solution
+\((p_0,\ell_0)\) exists, all integral solutions are
+\begin{equation}
+ \boxed{
+ p=p_0+\frac{dj}{g}t,
+ \qquad
+ \ell=\ell_0+\frac r g t,
+ \qquad t\in\mathbb Z.}
+ \label{eq:tpc55-complete-ladder}
+\end{equation}
+The two affine forms have nonzero cross determinant
+\begin{equation}
+ \frac{dj}{g}\ell_0-\frac r g p_0=-\frac{h_0}{g}.
+ \label{eq:tpc55-ladder-cross-determinant}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The gcd criterion is the standard solvability condition for a linear
+Diophantine equation.  Differences of two solutions satisfy
+\(r\Delta p=dj\Delta\ell\).  Dividing by \(g\) gives
+\(\Delta p=(dj/g)t\) and \(\Delta\ell=(r/g)t\).  Substitution of
+\((p_0,\ell_0)\) in the original equation gives the cross determinant.
+\end{proof}
+
+Primality of both affine forms, fixed residue classes, the mask, and the
+smooth terminal support only delete ladder points.  They do not make the
+ambient spacing shorter.
+
+\subsection{Exact ambient ladders and a coefficient-blind capacity upper bound}
+
+Let the source-prime support have diameter at most \(C_LL\), with \(C_L\)
+fixed, and define the exact cofactor-block fiber
+\begin{equation}
+ \cF_y(R):=\{u\in\cF_y:R\le r_u\le2R\}.
+ \label{eq:tpc55-cofactor-block}
+\end{equation}
+
+\begin{proposition}[Ambient-ladder capacity upper bound]
+\label{prop:tpc55-fiber-capacity}
+For every fixed \((\gamma,s,j)\), the number of terminal-admissible atoms
+with \(R\le r=s/d\le2R\) satisfies
+\begin{align}
+ |\cF_y(R)|
+ &\le
+ \sum_{\substack{d\in\mathfrak D_y^{\rm div}\\
+                  R\le s/d\le2R\\(s/d,j)\mid h_0}}
+ \left(1+\left\lfloor
+ \frac{C_LL(s/d,j)}{s/d}\right\rfloor\right)
+ \label{eq:tpc55-exact-capacity-sum}\\
+ &\ll_{h_0,C_L}
+ \tau(s)\left(1+\frac LR\right).
+ \label{eq:tpc55-fiber-capacity}
+\end{align}
+The same bound holds after imposing every literal prime, residue, mask, and
+profile support restriction.
+\end{proposition}
+
+\begin{proof}
+For a fixed \(d\), the \(\ell\)-coordinate in
+\eqref{eq:tpc55-complete-ladder} has spacing \(r/g\).  Hence an interval of
+diameter \(C_LL\) contains at most
+\(1+\lfloor C_LL g/r\rfloor\) integral ladder points.  Solvability forces
+\(g=(r,j)\mid h_0\), so \(g\le|h_0|\).  Sum over the eligible divisors and
+use \(r\ge R\).  Further arithmetic and support conditions only remove
+points.
+\end{proof}
+
+The refined first line is more informative than the final divisor bound:
+it records which admissible divisors actually meet the cofactor block and
+the orbit gcd.  Both lines are upper bounds.  No matching lower bound, or
+even nonemptiness of a particular fiber, is asserted.
+
+\begin{corollary}[Balanced subpower multiplicity]
+\label{cor:tpc55-balanced-multiplicity}
+Suppose every residual label has polynomial size in \(X\), and
+\(R\ge cL\) for a fixed \(c>0\).  Then
+\begin{equation}
+ M_X(R):=\max_y|\cF_y(R)|=X^{o(1)}.
+ \label{eq:tpc55-balanced-subpower}
+\end{equation}
+If \(R=X^{\theta_R+o(1)}\) and \(L=X^{\theta_L+o(1)}\), the
+coefficient-blind polynomial capacity cost is at most
+\begin{equation}
+ \mu_{\rm cap}=(\theta_L-\theta_R)_+.
+ \label{eq:tpc55-capacity-exponent}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The standard divisor bound \citep[Ch.~1]{MontgomeryVaughan2007} gives
+\(\tau(s)=X^{o(1)}\) uniformly for
+polynomial-size \(s\).  Apply \cref{prop:tpc55-fiber-capacity}.  At the
+exponent level, \(1+L/R=X^{(\theta_L-\theta_R)_++o(1)}\).
+\end{proof}
+
+An upper-bound sieve may remove logarithmic powers by requiring the two
+ladder forms to be prime.  Such a count does not by itself remove the
+positive-power term \(L/R\) from this ambient coefficient-blind upper
+bound, furnish a matching lower bound, or estimate the actual complex
+amplitudes on the surviving points.  Those are different tasks.
+
+\subsection{A local separation certificate}
+
+The prime parameterization also gives a simple collision-separation
+identity that does not use \(h_0\).
+
+\begin{proposition}[Scaled-prime gap]
+\label{prop:tpc55-scaled-prime-gap}
+If two distinct inputs \(u_1,u_2\in\cF_{\gamma,s,j}\) have rows
+\(m_i=d_i\ell_i\) and terminal primes \(p_i\), then
+\begin{equation}
+ \frac{p_1}{d_1}-\frac{p_2}{d_2}
+ =\frac{j(m_1-m_2)}s,
+ \qquad
+ \left|\frac{p_1}{d_1}-\frac{p_2}{d_2}\right|
+ \ge\frac js.
+ \label{eq:tpc55-scaled-prime-gap}
+\end{equation}
+Consequently, inside this fixed output fiber, any interval in the
+coordinate \(p/d\) of diameter strictly less than \(j/s\) contains at most
+one input atom.
+\end{proposition}
+
+\begin{proof}
+Since \(r_i=s/d_i\), the terminal equation gives
+\[
+ \frac{p_i}{d_i}=\frac{m_i j+h_0}{s}.
+\]
+Subtract.  Distinct inputs have distinct rows by
+\cref{thm:tpc55-prime-resolved-injection}, so
+\(|m_1-m_2|\ge1\).
+\end{proof}
+
+This is a deterministic local certificate, not an economical global cover:
+the number of \(p/d\)-intervals needed over the entire physical range can
+have a positive polynomial size.  The rank construction in the next
+section uses the actual fiber multiplicity instead.

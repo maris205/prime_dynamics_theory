@@ -1,0 +1,205 @@
+\section{Canonical collision-free transversals}
+\label{sec:transversals}
+
+The exact multiplicity bound can be converted into a selection theorem
+without assigning free phases or changing the physical atomic weights.
+
+\subsection{Rank coloring of the terminal primes}
+
+Assume \(\cU_{h_0}^{\rm term}\ne\varnothing\).  For each nonempty terminal
+output \(y=(\gamma,s,j)\), order its terminal-prime set
+from \cref{cor:tpc55-fiber-prime-bijection}:
+\begin{equation}
+ p_1(y)<p_2(y)<\cdots<p_{n_y}(y),
+ \qquad n_y=|\cF_y|.
+ \label{eq:tpc55-prime-order}
+\end{equation}
+Let \(u_k(y)\) be the unique input with terminal prime \(p_k(y)\), and put
+\begin{equation}
+ M=\max_y n_y,
+ \qquad
+ \cS_k:=\{u_k(y):n_y\ge k\},
+ \quad 1\le k\le M.
+ \label{eq:tpc55-rank-transversals}
+\end{equation}
+The construction depends only on the physical terminal prime and a fixed
+ordering rule, not on the coefficient values.
+
+\begin{theorem}[Canonical prime-rank cover]
+\label{thm:tpc55-prime-rank-cover}
+The terminal-admissible input set is the disjoint union
+\begin{equation}
+ \cU_{h_0}^{\rm term}
+ =\bigsqcup_{k=1}^{M}\cS_k,
+ \label{eq:tpc55-rank-partition}
+\end{equation}
+and \(q|_{\cS_k}\) is injective for every \(k\).  Conversely, a partition
+of the input coordinates into collision-free coordinate sets requires at
+least \(M\) sets whenever a fiber of size \(M\) is present.  Thus the number
+of rank classes is optimal.
+\end{theorem}
+
+\begin{proof}
+Every input has one rank inside its fiber, proving the disjoint union.  A
+fixed rank contributes at most one input to each fiber, so \(q\) is
+injective there.  A fiber with \(M\) coordinates forces its members into
+different collision-free sets, proving optimality.
+\end{proof}
+
+For any nonnegative atomic energy \(e_u\), write
+\begin{equation}
+ E_k=\sum_{u\in\cS_k}e_u,
+ \qquad E=\sum_ue_u.
+ \label{eq:tpc55-rank-energies}
+\end{equation}
+
+\begin{corollary}[Sharp energy capture]
+\label{cor:tpc55-rank-energy-capture}
+At least one rank class satisfies
+\begin{equation}
+ E_k\ge\frac EM.
+ \label{eq:tpc55-rank-pigeonhole}
+\end{equation}
+The constant \(1/M\) is optimal for arbitrary nonnegative atomic data.
+\end{corollary}
+
+\begin{proof}
+Sum the \(M\) rank energies.  Equality is possible when all \(E_k=E/M\).
+\end{proof}
+
+\subsection{Specialization to terminal diagonal energy}
+
+Let
+\begin{equation}
+ x=D_{h_0}g,
+ \qquad
+ e_u=|x_u|^2
+ =|\Lambda(p_ur_u)|^2|g_u|^2.
+ \label{eq:tpc55-terminalized-array}
+\end{equation}
+On a collision-free rank class, grouping creates no cross term:
+\begin{equation}
+ \|\cT_{h_0}(g\one_{\cS_k})\|_2^2
+ =\sum_{u\in\cS_k}|x_u|^2=E_k.
+ \label{eq:tpc55-transversal-exact-energy}
+\end{equation}
+
+For a cofactor scale \(R\), define the exact terminal block
+\begin{equation}
+ \mathcal B_R
+ :=\{u\in\cU_{h_0}^{\rm term}:R\le r_u\le2R\},
+ \qquad
+ g_R:=g\one_{\mathcal B_R},
+ \label{eq:tpc55-terminal-block}
+\end{equation}
+and, using \eqref{eq:tpc55-cofactor-block}, its maximal fiber size
+\begin{equation}
+ \cF_y(R)=\cF_y\cap\mathcal B_R,
+ \qquad
+ M_X(R):=\max_y|\cF_y(R)|.
+ \label{eq:tpc55-block-fibers}
+\end{equation}
+Within each nonempty \(\cF_y(R)\), order the terminal primes and let
+\(\cS_k(R)\) contain the atom of block rank \(k\), whenever it exists.
+Thus \(\{\cS_k(R):1\le k\le M_X(R)\}\) is the prime-rank cover applied
+to \(\mathcal B_R\), rather than the restriction of a possibly different global
+rank ordering.
+
+\begin{theorem}[Balanced collision-free block subpacket]
+\label{thm:tpc55-balanced-transversal}
+Assume that every residual label \(s\) occurring in \(\mathcal B_R\) has
+polynomial size in \(X\), and let \(g\) be a physical array such that
+\(\cD_{h_0}(g_R)>0\).  There is a canonical family of
+\begin{equation}
+ M_X(R)\ll_{h_0,C_L}X^{o(1)}\left(1+\frac LR\right)
+ \label{eq:tpc55-number-of-transversals}
+\end{equation}
+collision-free prime-rank classes covering every terminal-admissible atom in
+that block.  At least one block rank class satisfies
+\begin{equation}
+ \boxed{
+ \|\cT_{h_0}(g_R\one_{\cS_k(R)})\|_2^2
+ \ge\frac{\cD_{h_0}(g_R)}{M_X(R)}.}
+ \label{eq:tpc55-balanced-transversal-energy}
+\end{equation}
+In particular, if \(R\ge cL\), then conditional on nonzero block terminal
+diagonal energy, the selected collision-free block subpacket incurs no
+fixed positive-power loss relative to that block energy.
+\end{theorem}
+
+\begin{proof}
+Combine \cref{prop:tpc55-fiber-capacity,thm:tpc55-prime-rank-cover}.
+Apply \cref{cor:tpc55-rank-energy-capture} to the physical terminal
+diagonal weights of \(g_R\) in \eqref{eq:tpc55-terminalized-array}, then use
+\eqref{eq:tpc55-transversal-exact-energy}.
+\end{proof}
+
+This is a positive post-terminal selection result on a specified nonzero
+block.  It says that the balanced block terminal diagonal admits a
+coordinate subpacket with no fixed positive-power selection cost, on which
+physical grouping is exactly isometric after the literal terminal
+multiplier has been applied.  It does not assert that the block energy is
+nonzero, compare that energy with pre-terminal or global energy, or say
+that a preassigned rank captures it: the family is canonical, while the
+choice of its energy-rich member may depend on \(g_R\).
+
+\subsection{Why the selected lower bound does not return to the full sum}
+
+Write
+\begin{equation}
+ X_k:=\cT_{h_0}(g\one_{\cS_k}),
+ \qquad
+ \cT_{h_0}g=\sum_{k=1}^{M}X_k.
+ \label{eq:tpc55-rank-output-sum}
+\end{equation}
+The \(X_k\) occupy the same output coordinate system and are not
+orthogonal.  Therefore \(\|X_k\|^2\le\|\sum_lX_l\|^2\) is false in
+general.
+
+For one selected class \(S=\cS_k\), put
+\begin{equation}
+ D_S=\sum_{u\in S}|x_u|^2,
+ \qquad
+ D_R=\sum_{u\notin S}|x_u|^2.
+ \label{eq:tpc55-selected-complement-energy}
+\end{equation}
+Every remaining rank class is also collision-free.  The triangle and
+Cauchy--Schwarz inequalities give the valid one-sided estimate
+\begin{equation}
+ \boxed{
+ \|\cT_{h_0}g\|_2
+ \ge
+ \left(\sqrt{D_S}-\sqrt{(M-1)D_R}\right)_+.}
+ \label{eq:tpc55-transversal-complement-bound}
+\end{equation}
+Indeed, the sum of the norms of the other \(M-1\) rank outputs is at most
+\(\sqrt{M-1}\sqrt{D_R}\).  Unless the selected rank dominates its
+complement at this scale or the inter-rank phases are controlled,
+\eqref{eq:tpc55-transversal-complement-bound} can be zero.
+
+The obstruction is real already for a two-atom fiber: two equal terminal
+amplitudes with opposite remaining phases give positive diagonal energy in
+both rank classes and zero full output.  Hence
+\cref{thm:tpc55-balanced-transversal} cannot be upgraded by monotonicity.
+
+\subsection{Selection versus the canonical quotient}
+
+The rank class is a sparse coordinate representative of each occupied
+fiber.  The minimum-norm representative from
+\cref{thm:tpc55-pseudoinverse} instead distributes an output over all
+fiber coordinates in proportion to \(\overline{c_u}/a_u\).  These solve
+different problems:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item the pseudoinverse is canonical for reconstructing an already known
+       grouped output;
+ \item a rank transversal is canonical for eliminating collisions before
+       a lower-bound argument; and
+ \item neither construction supplies the phase relation among all rank
+       outputs of the distinguished physical array.
+\end{enumerate}
+
+The rank selector is also a post-terminal arithmetic selector.  It need not
+be representable by a fixed smooth source/Mellin box, and the present paper
+does not move earlier profile estimates through it.  Any later analytic
+use must verify stability of the relevant estimates on this exact subset or
+work directly with the full coherence statistic below.

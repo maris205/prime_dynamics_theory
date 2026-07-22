@@ -1,0 +1,261 @@
+\section{Endpoint ledger, claim boundary, and the next gate}
+\label{sec:endpoint-claims}
+
+\subsection{The capacity cost at the inherited endpoint}
+
+The declared row scales inherited from TPC--53 \citep{WangTPC53} are
+\begin{equation}
+ Q=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)},
+ \qquad
+ D=X^{10049/52500+o(1)}.
+ \label{eq:tpc55-endpoint-scales}
+\end{equation}
+Therefore
+\begin{equation}
+ L=\frac QD
+ =X^{99979/210000+o(1)}.
+ \label{eq:tpc55-endpoint-L}
+\end{equation}
+On a cofactor block
+\(R=X^{\theta_R+o(1)}\), the worst-case transversal-selection exponent
+certified by
+\cref{cor:tpc55-balanced-multiplicity} is
+\begin{equation}
+ \mu_{\rm cap}
+ =\left(\frac{99979}{210000}-\theta_R\right)_+.
+ \label{eq:tpc55-endpoint-capacity-cost}
+\end{equation}
+Thus every fixed balanced range \(R\gg L\) has
+\begin{equation}
+ M_X(R)=X^{o(1)},
+ \qquad \mu_{\rm cap}=0.
+ \label{eq:tpc55-balanced-zero-cost}
+\end{equation}
+This means that the rank cover has no fixed positive-power loss inside a
+balanced block.  It is not a claim that terminal diagonal energy is
+concentrated on, or even nonzero in, such a block.
+
+At the older cofactor scale \(R\asymp J\), the coefficient-blind ladder
+certificate gives the worst-case factor
+\begin{equation}
+ \frac LR
+ =X^{15077/105000+o(1)}.
+ \label{eq:tpc55-old-range-cost}
+\end{equation}
+The exponent in this support-only certificate exceeds the nominal endpoint
+allowance \(X^{1/400+o(1)}\) by
+\begin{equation}
+ \frac{15077}{105000}-\frac1{400}
+ =\frac{29629}{210000}>0.
+ \label{eq:tpc55-old-range-deficit}
+\end{equation}
+Thus that certificate alone cannot close the endpoint budget at
+\(R\asymp J\).  The actual physical multiplicity may be smaller; no matching
+lower bound is asserted.  Primality can give logarithmic thinning but does
+not improve this support-only power count.
+
+\subsection{A complete loss ledger}
+
+Suppose a parent physical atomic energy is first restricted to a declared
+compatible packet with fraction
+\begin{equation}
+ X^{-\lambda_{\rm sel}+o(1)},
+ \label{eq:tpc55-selection-loss}
+\end{equation}
+and then to the pre-terminal cofactor block
+\begin{equation}
+ \mathcal B_R^{\rm pre}
+ :=\{u\in\cU^{\rm pre}:R\le r_u\le2R\},
+ \qquad g_R^{\rm pre}:=g\one_{\mathcal B_R^{\rm pre}},
+ \label{eq:tpc55-preterminal-block}
+\end{equation}
+with energy fraction
+\begin{equation}
+ X^{-\lambda_{\rm blk}+o(1)}.
+ \label{eq:tpc55-block-loss}
+\end{equation}
+Suppose first that terminal activation on this full pre-terminal block
+satisfies
+\begin{equation}
+ \delta_{\rm term}(g_R^{\rm pre})
+ \ge X^{-\lambda_{\rm term}+o(1)}.
+ \label{eq:tpc55-terminal-loss}
+\end{equation}
+The resulting terminal diagonal energy is then partitioned by the block
+prime-rank classes of \cref{thm:tpc55-balanced-transversal}.  Selecting the
+energy-rich collision-free rank costs at most the certified exponent
+\(\mu_{\rm cap}\).  The selected-rank grouped energy therefore has the
+formal lower exponent
+\begin{equation}
+ \lambda_{\rm sel}+\lambda_{\rm blk}
+ +\mu_{\rm cap}+\lambda_{\rm term}.
+ \label{eq:tpc55-selected-rank-ledger}
+\end{equation}
+This conclusion is relative to the selected post-terminal rank.  The order
+is essential: terminal activation is established on the pre-terminal block
+before the rank pigeonhole is applied to its terminal diagonal energy.  The
+selected-rank statement does not return to the full output.
+
+For the undeleted physical terminal vector of the same block, instead
+suppose one proves
+\begin{equation}
+ \chi_{\rm grp}\ge X^{-\lambda_{\rm coh}+o(1)}.
+ \label{eq:tpc55-coherence-loss}
+\end{equation}
+Then the exact factorization
+\eqref{eq:tpc55-exact-gate-factorization} gives the combined exponent
+\begin{equation}
+ \lambda_{\rm sel}+\lambda_{\rm blk}
+ +\lambda_{\rm term}+\lambda_{\rm coh}.
+ \label{eq:tpc55-full-output-ledger}
+\end{equation}
+Any later native-Gram comparison, frozen-family localization, boundary
+truncation, or ultra-tail reconnection must add its own nonnegative loss.
+To remain within the nominal TPC endpoint budget, the complete eventual
+sum must satisfy
+\begin{equation}
+ \boxed{
+ \lambda_{\rm sel}+\lambda_{\rm blk}
+ +\lambda_{\rm term}+\lambda_{\rm coh}+\lambda_{\rm loc}
+ +\lambda_{\rm Gram}+\lambda_{\rm bdry}+\lambda_{\rm tail}
+ \le\frac1{400}.}
+ \label{eq:tpc55-full-endpoint-budget}
+\end{equation}
+At equality, a further error of size \(X^{-1/400+o(1)}\) need not be
+absorbed; strict slack or a constant-level comparison is the safe closure
+condition.
+
+The present paper proves none of \(\lambda_{\rm blk}\),
+\(\lambda_{\rm term}\), \(\lambda_{\rm coh}\), or the downstream losses
+for the full inherited packet.  It proves \(\mu_{\rm cap}=0\) for the
+coordinate-selection problem conditional on a declared balanced block with
+nonzero terminal diagonal energy.
+
+\subsection{Six-point physical audit}
+
+The interfaces used above satisfy the following audit.
+\begin{enumerate}[label=\textup{(A\arabic*)},leftmargin=3.2em]
+ \item \emph{Literal coefficients.}
+       The source coefficient, binary mask, four smooth profile factors,
+       cofactor sign, and terminal amplitude are displayed in
+       \eqref{eq:tpc55-source-coefficient},
+       \eqref{eq:tpc55-mask},
+       \eqref{eq:tpc55-four-factor-profile}, and
+       \eqref{eq:tpc55-terminal-diagonal}.
+ \item \emph{Fixed physical shift.}
+       Every arithmetic equation uses the one fixed \(h_0\).  The frozen
+       Fourier family is mentioned only to distinguish it from this map.
+ \item \emph{Atomic normalization.}
+       Domain, prime-resolved output, and grouped output all use inherited
+       counting measure.  The terminal coefficient is not hidden in the
+       norm.
+ \item \emph{Canonical representation.}
+       The map is the literal TPC--53 coordinate map.  No projective
+       representation or favorable Mellin layer is selected.
+ \item \emph{Actual support.}
+       The full pre-terminal universe, terminal-admissible subset, and
+       physically nonzero subset are separated in
+       \eqref{eq:tpc55-preterminal-universe},
+       \eqref{eq:tpc55-terminal-universe}, and
+       \eqref{eq:tpc55-physical-active-set}.
+ \item \emph{Endpoint budget.}
+       The only unconditional selection exponent is the explicit
+       \(\mu_{\rm cap}\) in \eqref{eq:tpc55-endpoint-capacity-cost}; all
+       unproved losses remain visible in
+       \eqref{eq:tpc55-full-endpoint-budget}.
+\end{enumerate}
+
+\subsection{Claim table}
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.27\textwidth}
+                >{\raggedright\arraybackslash}p{0.62\textwidth}}
+\toprule
+Statement & Status \\
+\midrule
+Weighted fiber SVD, kernel, pseudoinverse, and angle criterion
+& Unconditional finite-dimensional theorem (L0).\\
+Prime-resolved injection
+& Exact on one declared fixed-\(h_0\) physical source system under the
+  inherited \(D=o(J)\) row geometry (L1).\\
+Determinant-ladder capacity
+& Exact coefficient-blind upper bound on the declared squarefree terminal
+  support (L1).\\
+Balanced rank cover
+& Canonical post-terminal cover and existence of a collision-free subpacket
+  with an \(X^{-o(1)}\) fraction of nonzero block terminal diagonal energy;
+  no block-occupancy estimate (L1).\\
+Common M\"obius-gauge factorization
+& Exact common product \,\(\mu(d)\mu(r)=\mu(s)\) on the inherited coprime
+  squarefree support; no claim about the remaining complex amplitudes (L1).\\
+Terminal activation
+& Not proved for the full pre-terminal packet.\\
+Full coherent output lower bound
+& Not proved; exactly equivalent to a lower estimate for the displayed
+  physical coherence/alignment together with terminal activation.\\
+Parity or twin-prime consequence
+& Not claimed.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In particular, the following implications remain forbidden:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item subpower maximal multiplicity does not imply a lower bound for the
+       unselected full sum;
+ \item common M\"obius phase does not imply a sector condition for
+       \(\zeta_m\) and the source/mask profile;
+ \item a collision-free selected rank need not be a compatible smooth
+       pre-terminal cell;
+ \item refined-key, equivalently fixed \((s,j,p,\gamma)\), injectivity does
+       not make fixed \((s,j,\gamma)\) injective, because different terminal
+       primes are exactly the collision modes;
+ \item the physical fixed-\(h_0\) prime synthesis is not the
+       frozen-intercept Fourier \(p\)-sum; and
+ \item a residual output norm is not automatically the native affine
+       physical Gram face.
+\end{enumerate}
+
+\subsection{The next gate}
+
+The next paper should keep one literal full fiber or one explicitly
+declared cofactor block and study
+\begin{equation}
+ \sum_{u\in\cF_{\gamma,s,j}^{\rm phys}} b_u,
+ \label{eq:tpc55-next-fiber-sum}
+\end{equation}
+with \(b_u\) given by
+\eqref{eq:tpc55-remaining-fiber-amplitude}.  There are three honest doors:
+\begin{enumerate}[label=\textbf{Door \Alph*.},leftmargin=3.8em]
+ \item prove a deterministic sector, dominance, or restricted-Gram lower
+       bound for the distinguished physical amplitudes on one nonempty
+       literal regime;
+ \item prove a two-sided coherent terminal-prime square after an explicitly
+       labeled averaging or smoothing, then quantify exactly why that model
+       does or does not localize back to fixed \(h_0\); or
+ \item construct a literal admissible packet whose remaining amplitudes
+       approach the collision kernel, giving a coefficient-specific
+       saturation or no-go theorem for this route.
+\end{enumerate}
+An estimate for an arbitrary smooth proxy, a random-phase model, or an
+averaged shift would be useful only under its own label.  It would not be
+reported as a fixed-shift parity gain.
+
+\paragraph{Conclusion.}
+The residual-grouping obstruction is now explicitly identified at the
+operator and support levels.  Under the declared hypotheses, the refined
+terminal key is injective and the prime-resolved operator restricted to
+terminal-admissible coordinates is a weighted coordinate embedding;
+forgetting the terminal prime creates rank-one output fibers with an
+explicit collision kernel.  Balanced fibers admit an optimal subpower
+transversal cover, and the product of the two literal M\"obius signs is
+common inside each fiber.  After terminal activation is controlled, the
+remaining internal
+grouping question is how the distinguished source--mask--prime amplitudes
+align with the visible direction.  Fixed-shift localization, native-Gram
+comparison, boundary control, and tail reconnection remain separate
+downstream gates.  Every one of these steps is strictly upstream of a
+parity-sensitive or twin-prime conclusion.

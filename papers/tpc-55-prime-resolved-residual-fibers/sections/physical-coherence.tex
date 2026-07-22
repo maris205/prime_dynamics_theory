@@ -1,0 +1,258 @@
+\section{The physical fiber: common gauges and the exact coherence gate}
+\label{sec:physical-coherence}
+
+\subsection{Extraction of every common factor}
+
+Fix a physical output \(y=(\gamma,s,j)\) with nonzero terminal diagonal
+energy.  For \(u=(m,r,j,\gamma)\in\cF_y^{\rm phys}\), write
+\(m=d\ell\).  Combining
+\eqref{eq:tpc55-source-coefficient},
+\eqref{eq:tpc55-literal-atom}, and
+\eqref{eq:tpc55-squarefree-support} gives
+\begin{equation}
+ \mu(r)\mu(d)=\mu(s).
+ \label{eq:tpc55-common-mobius-gauge}
+\end{equation}
+Moreover, \(\gamma,s,j,a\) are fixed on the fiber.  Define the common
+output factor
+\begin{align}
+ \Omega_y
+ &:={}
+ \mu(s)\eta_\gamma\mathscr R(q_\gamma)\xi_a
+ W_2(m_\gamma j/X)\Psi_2(d_\gamma j/K),
+ \label{eq:tpc55-common-output-factor}
+\end{align}
+and the remaining source--terminal amplitude
+\begin{align}
+ b_u
+ &:={}
+ (\log\ell)\omega_D(d)\psi_L(\ell/L)\zeta_m
+ K_{m\gamma}
+ W_1(mj/X)\Psi_1(dj/K)
+ \Lambda(mj+h_0).
+ \label{eq:tpc55-remaining-fiber-amplitude}
+\end{align}
+The equality \(\Lambda(p_ur)=\Lambda(mj+h_0)\) has been used.
+
+\begin{proposition}[Literal fiber gauge factorization]
+\label{prop:tpc55-physical-gauge-factorization}
+For every \(u\in\cF_y^{\rm phys}\),
+\begin{equation}
+ (D_{h_0}G_X^L)_u=\Omega_y b_u.
+ \label{eq:tpc55-terminalized-factorization}
+\end{equation}
+Consequently
+\begin{align}
+ (\cT_{h_0}G_X^L)_y
+ &=\Omega_y\sum_{u\in\cF_y^{\rm phys}}b_u,
+ \label{eq:tpc55-physical-fiber-sum}\\
+ \cE_y^{\rm diag}
+ &:=\sum_{u\in\cF_y^{\rm phys}}|(D_{h_0}G_X^L)_u|^2
+ =|\Omega_y|^2\sum_{u\in\cF_y^{\rm phys}}|b_u|^2.
+ \label{eq:tpc55-physical-fiber-diagonal}
+\end{align}
+In particular, the product of the two M\"obius factors is the common sign
+\(\mu(s)\) on one full residual fiber; the individual factors
+\(\mu(d)\) and \(\mu(r)\) may vary.  The opposite-row unit phase is also
+common on the fiber.
+\end{proposition}
+
+\begin{proof}
+Substitute the literal factors.  The source sign \(\mu(d)\) and terminal
+sign \(\mu(r)\) combine by
+\eqref{eq:tpc55-common-mobius-gauge}.  All opposite-row factors depend
+only on \((\gamma,j)\), and the direct orbit multiplier depends only on the
+fixed class \(a\).  The remaining factors are exactly
+\eqref{eq:tpc55-remaining-fiber-amplitude}.  Squaring before summation
+gives \eqref{eq:tpc55-physical-fiber-diagonal}.
+\end{proof}
+
+This extends the common-M\"obius-phase observation of TPC--45 to the exact
+four-factor packet.  It rules out one tempting but incorrect heuristic:
+independent M\"obius randomness inside a fixed residual fiber cannot be the
+source of a grouping gain or loss.  The amplitude \(b_u\) still contains
+the inherited coefficient \(\zeta_m\), source shapes, the literal mask,
+and terminal amplitude, and these are not proved to have a common phase.
+
+\subsection{Terminal coherence and the cross-term identity}
+
+For an arbitrary terminalized array \(x=D_{h_0}g\), define on every
+nonzero terminal fiber
+\begin{equation}
+ D_y(x):=\sum_{u\in\cF_y^{\rm term}}|x_u|^2,
+ \qquad
+ \chi_y(x):=
+ \frac{\left|\sum_{u\in\cF_y^{\rm term}}x_u\right|^2}{D_y(x)}.
+ \label{eq:tpc55-fiber-coherent-gain}
+\end{equation}
+Put \(\chi_y=0\) when \(D_y=0\).
+
+\begin{theorem}[Exact terminal-coherence identity]
+\label{thm:tpc55-terminal-coherence}
+If \(n_y=|\{u\in\cF_y^{\rm term}:x_u\ne0\}|\), then
+\begin{equation}
+ 0\le\chi_y(x)\le n_y,
+ \label{eq:tpc55-coherence-range}
+\end{equation}
+and
+\begin{align}
+ \|\cT_{h_0}g\|_2^2
+ &=\sum_y\chi_y(x)D_y(x)
+ \label{eq:tpc55-coherence-energy}\\
+ &=\cD_{h_0}(g)
+ +2\operatorname{Re}
+  \sum_y\sum_{\substack{u<v\\u,v\in\cF_y^{\rm term}}}
+ x_u\overline{x_v}.
+ \label{eq:tpc55-exact-cross-term}
+\end{align}
+The upper endpoint is sharp for every \(n_y\ge1\).  The lower endpoint is
+sharp for \(n_y\ge2\); a nonzero one-atom fiber has \(\chi_y=1\).
+\end{theorem}
+
+\begin{proof}
+The upper bound is Cauchy--Schwarz and the lower bound is positivity.
+Expanding each squared fiber sum gives
+\eqref{eq:tpc55-coherence-energy} and
+\eqref{eq:tpc55-exact-cross-term}.  Equal nonzero phases and equal moduli
+give \(\chi_y=n_y\).  When \(n_y\ge2\), a nonzero vector in the fiber
+kernel gives \(\chi_y=0\); when \(n_y=1\), the quotient is identically one.
+\end{proof}
+
+For \(\cD_{h_0}(g)>0\), define the global physical grouping coherence
+\begin{equation}
+ \chi_{\rm grp}(g)
+ :=\frac{\|\cT_{h_0}g\|_2^2}{\cD_{h_0}(g)}
+ =\frac{\sum_y\chi_yD_y}{\sum_yD_y}.
+ \label{eq:tpc55-global-grouping-coherence}
+\end{equation}
+When \(\cD_{h_0}(g)=0\), put \(\chi_{\rm grp}(g):=0\).  This convention is
+compatible with the zero terminal output.
+This number can be zero, one, or larger than one.  It is the exact ratio
+needed when terminal diagonal energy, rather than pre-terminal energy, is
+the input normalization.
+
+The alignment from \cref{thm:tpc55-visible-energy} uses
+\begin{equation}
+ E_y(g):=\sum_{u\in\cF_y^{\rm term}}|g_u|^2,
+ \qquad
+ S_y:=\sum_{u\in\cF_y^{\rm term}}|\Lambda(p_ur_u)|^2.
+ \label{eq:tpc55-physical-alignment-data}
+\end{equation}
+Whenever
+\(S_yE_y(g)D_y(D_{h_0}g)>0\), the two diagnostics are related by
+\begin{equation}
+ \eta_y(g)
+ =\chi_y(D_{h_0}g)
+  \frac{D_y(D_{h_0}g)}{S_yE_y(g)}.
+ \label{eq:tpc55-eta-chi-relation}
+\end{equation}
+In the zero cases both diagnostics retain their separately declared
+conventions; the displayed quotient is not used.  They should not be
+interchanged when terminal weights are nonuniform.
+
+\subsection{Two sharp positive criteria}
+
+The exact coherence can be bounded below if new phase or magnitude
+information is supplied.
+
+\begin{theorem}[Sector criterion]
+\label{thm:tpc55-sector-criterion}
+Suppose that for every active fiber \(y\) there is an angle \(\vartheta_y\)
+such that
+\begin{equation}
+ |\arg(e^{-i\vartheta_y}x_u)|\le\theta<\frac\pi2
+ \qquad(u\in\cF_y^{\rm term}, x_u\ne0).
+ \label{eq:tpc55-sector-hypothesis}
+\end{equation}
+Then
+\begin{equation}
+ \left|\sum_{u\in\cF_y^{\rm term}}x_u\right|^2
+ \ge\cos^2\theta
+ \left(\sum_{u\in\cF_y^{\rm term}}|x_u|\right)^2
+ \ge\cos^2\theta D_y(x),
+ \label{eq:tpc55-sector-lower-bound}
+\end{equation}
+and hence
+\begin{equation}
+ \|\cT_{h_0}g\|_2^2
+ \ge\cos^2\theta\,\cD_{h_0}(g).
+ \label{eq:tpc55-global-sector-bound}
+\end{equation}
+For \(\theta=0\), all amplitudes lie on one ray and grouping cannot reduce
+terminal diagonal energy.
+\end{theorem}
+
+\begin{proof}
+After rotation by \(e^{-i\vartheta_y}\), the real part of each amplitude
+is at least \(\cos\theta\) times its modulus.  The modulus of the sum is at
+least its real part.  Sum over the fibers.
+\end{proof}
+
+The common gauge in \cref{prop:tpc55-physical-gauge-factorization}
+removes \(\mu(s)\eta_\gamma\) before testing
+\eqref{eq:tpc55-sector-hypothesis}.  It does not prove that the remaining
+\(b_u\) satisfy the sector condition.
+
+\begin{theorem}[Sharp magnitude-only lower envelope]
+\label{thm:tpc55-polygon-envelope}
+Fix \(n\ge1\) and nonnegative magnitudes \(r_1,\ldots,r_n\), put
+\begin{equation}
+ L_1=\sum_{i=1}^nr_i,
+ \qquad R_1=\max_i r_i.
+ \label{eq:tpc55-polygon-data}
+\end{equation}
+Then
+\begin{equation}
+ \min_{\theta_1,\ldots,\theta_n\in\R}
+ \left|\sum_{i=1}^nr_i e^{i\theta_i}\right|
+ =(2R_1-L_1)_+,
+ \qquad
+ \max_{\theta_1,\ldots,\theta_n\in\R}
+ \left|\sum_{i=1}^nr_i e^{i\theta_i}\right|=L_1.
+ \label{eq:tpc55-polygon-envelope}
+\end{equation}
+Thus magnitudes alone force a positive fiber lower bound if and only if one
+term strictly dominates the sum of all the others.
+\end{theorem}
+
+\begin{proof}
+The triangle inequality gives the maximum and the lower bound
+\(R_1-(L_1-R_1)=2R_1-L_1\).  If \(R_1\ge L_1-R_1\), place every smaller
+segment opposite the largest to attain that difference.  If
+\(R_1\le L_1-R_1\), the polygon inequality permits the segments to close,
+attaining zero.
+\end{proof}
+
+This theorem is a sharp non-implication for magnitude-based selection.
+Unless a dominance inequality is proved, the moduli selected in TPC--54
+do not imply a lower bound uniformly over their possible phases.  It does
+not assert that the fixed physical phases realize the minimizing polygon.
+
+\subsection{Exact gate factorization}
+
+For any selected pre-terminal packet with \(\cE_{\rm pre}(g)>0\), define
+\begin{equation}
+ \delta_{\rm term}(g)
+ :=\frac{\cD_{h_0}(g)}{\cE_{\rm pre}(g)}.
+ \label{eq:tpc55-terminal-activation-ratio}
+\end{equation}
+Combining definitions gives the exact ratio
+\begin{equation}
+ \boxed{
+ \frac{\|\cT_{h_0}g\|_2^2}{\cE_{\rm pre}(g)}
+ =\delta_{\rm term}(g)\,\chi_{\rm grp}(g).}
+ \label{eq:tpc55-exact-gate-factorization}
+\end{equation}
+The two factors ask different questions:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item \(\delta_{\rm term}\) measures which pre-terminal atoms meet a
+       prime and a nonzero terminal cutoff, together with the literal size
+       of \(\Lambda\);
+ \item \(\chi_{\rm grp}\) measures coherent addition after those terminal
+       atoms are resolved.
+\end{enumerate}
+Neither is supplied by pre-terminal carrier coverage.  The balanced
+transversal theorem obtains \(\chi_{\rm grp}=1\) on one selected rank
+class relative to that class's terminal diagonal, at the cost of deleting
+the other ranks.  For the undeleted physical vector, the second factor in
+\eqref{eq:tpc55-exact-gate-factorization} remains the next arithmetic gate.
