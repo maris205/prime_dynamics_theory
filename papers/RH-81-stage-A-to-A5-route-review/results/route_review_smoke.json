@@ -1,0 +1,123 @@
+{
+  "all_input_theorem_gates_true": true,
+  "closed_false_routes": [
+    "single-arc phase compression as the explanation of log-square horizons",
+    "generic absolute determinant continuity on a fixed disk",
+    "multiplication by the fixed limiting double-pole factor across the cloud circle"
+  ],
+  "closed_nodes": [
+    "finite_scale_hardy_chain",
+    "conditional_identification_composition",
+    "square_and_shrinking_disk_transfer",
+    "moving_cloud_factorization_theorem"
+  ],
+  "input_theorem_gate_count": 41,
+  "minimal_completion_bundles": {
+    "shrinking_disk_determinant_unconditional": [
+      [
+        "all_level_log_square_block_law"
+      ],
+      [
+        "all_level_postblock_effective_rank_law"
+      ]
+    ],
+    "stage_A1": [
+      [
+        "all_level_log_square_block_law"
+      ],
+      [
+        "all_level_postblock_effective_rank_law"
+      ]
+    ],
+    "stage_A4_unconditional": [
+      [
+        "all_level_log_square_block_law"
+      ],
+      [
+        "all_level_postblock_effective_rank_law"
+      ]
+    ],
+    "stage_A5_relative_fixed_disk_limit": [
+      [
+        "actual_cloud_coefficient_bridge",
+        "actual_moving_cloud_riesz_projection",
+        "all_level_log_square_block_law",
+        "uniform_complement_trace_class_limit"
+      ],
+      [
+        "actual_cloud_coefficient_bridge",
+        "actual_moving_cloud_riesz_projection",
+        "all_level_postblock_effective_rank_law",
+        "uniform_complement_trace_class_limit"
+      ]
+    ]
+  },
+  "next_priority": "Prove uniform all-level postblock singular-value decay; this is the preferred singleton completion gate for Stage A.",
+  "open_primitive_nodes": [
+    "all_level_log_square_block_law",
+    "all_level_postblock_effective_rank_law",
+    "actual_moving_cloud_riesz_projection",
+    "actual_cloud_coefficient_bridge",
+    "uniform_complement_trace_class_limit"
+  ],
+  "paper_ledger": [
+    {
+      "all_theorem_gates_true": true,
+      "directory": "RH-72-validated-folded-gaussian-assembly",
+      "paper": 72,
+      "primary_result": "exact dyadic stochastic repair and validated folded-Gaussian/Haar assembly",
+      "remaining_boundary": "peripheral rank-two data were not yet validated",
+      "route_effect": "validated_advance",
+      "summary_sha256": "ae2180e028c95a541704bb379596b515aa40a8db28410ef3414f478fdaba07e6",
+      "summary_status": "rh72_validated_folded_gaussian_assembly_archived",
+      "theorem_count": 5
+    }
+  ],
+  "program_boundary": {
+    "T_log_T_counting_law": false,
+    "canonical_scattering_object": false,
+    "completed_zeta_identity": false,
+    "finite_scale_end_to_end_hardy_closed": true,
+    "prime_power_trace_formula": false,
+    "riemann_hypothesis": false,
+    "self_adjoint_generator": false,
+    "shrinking_disk_determinant_unconditional_closed": false,
+    "stage_A4_unconditional_closed": false,
+    "stage_A5_relative_limit_closed": false,
+    "uniform_stage_A1_closed": false
+  },
+  "route_consequence": "The finite-scale Stage-A chain is green. The only Stage-A wall is an all-level theorem in either of two corridors, with postblock effective rank preferred after the single-arc failure. Conditional square and shrinking-disk determinant transfer are already available. Fixed-disk A5 requires a moving cloud factor plus three open operator gates; neither absolute continuity nor fixed scalar pole cancellation can substitute for them.",
+  "scope": "RH-72 through RH-80 are the nine audited inputs; RH-81 is the tenth synthesis layer.",
+  "stage_ledger": {
+    "A1_all_level_effective_rank_corridor": "amber_preferred",
+    "A1_all_level_full_block_corridor": "amber",
+    "A1_finite_scale_end_to_end_chain": "green",
+    "A1_single_arc_phase_corridor": "red",
+    "A4_conditional_intrinsic_identification": "green",
+    "A4_conditional_shrinking_disk_determinant": "green",
+    "A4_conditional_square_trace_transfer": "green",
+    "A4_unconditional_intrinsic_identification": "amber",
+    "A5_absolute_fixed_disk_continuity": "red_as_generic_method",
+    "A5_actual_cloud_and_complement_theorem": "amber",
+    "A5_fixed_scalar_pole_cancellation": "red_in_canonical_model",
+    "A5_moving_cloud_factorization_algebra": "green",
+    "B_canonical_scattering_completion": "not_started",
+    "C_self_adjoint_counting": "not_started",
+    "D_arithmetic_zeta_identity": "not_started"
+  },
+  "status": "rh81_stage_A_to_A5_ten_layer_route_review",
+  "surviving_route": [
+    "prove an all-level postblock effective-rank law, with the full-block log-square law as fallback",
+    "invoke the two-corridor composition to close Stage A1 and strict-mesh intrinsic identification",
+    "transfer intrinsic bulk squares in trace norm and determinants on shrinking disks",
+    "construct the actual moving cloud Riesz factor",
+    "prove its coefficient bridge and a uniform trace-class complementary limit",
+    "form the relative fixed-disk determinant before opening later spectral stages"
+  ],
+  "theorem": {
+    "dominated_bundle_pruning": true,
+    "monotone_and_or_completion_antichain": true,
+    "two_four_gate_stage_A5_completion_bundles": true,
+    "two_singleton_stage_A_corridors": true
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "all_executed_margin_gates_green": true,
+  "precision_bits": 256,
+  "rows": [
+    {
+      "ball": "0.9978307013133478177782653695260250970022752881050109863281250000000000000000",
+      "certified_lower": 0.9978307013133477,
+      "gate": true,
+      "metric": "finite_chain_slack_fraction_remaining"
+    },
+    {
+      "ball": "[0.00084534546132840837628918961854651570320129394531250000000000000000000000000 +/- 6.23e-78]",
+      "certified_lower": 0.0008453454613284083,
+      "gate": true,
+      "metric": "rank2_capture_excess_over_99_percent"
+    },
+    {
+      "ball": "[9.2029634621193423527074628509581089019775390625000000000000000000000000e-7 +/- 6.23e-78]",
+      "certified_lower": 9.202963462119341e-07,
+      "gate": true,
+      "metric": "rank4_capture_excess_over_99_9999_percent"
+    },
+    {
+      "ball": "[100.3731094148919804361356223906771643149273469590913546320040496780899127743 +/- 4.38e-74]",
+      "certified_lower": 100.37310941489197,
+      "gate": true,
+      "metric": "shrinking_disk_error_improvement_factor"
+    },
+    {
+      "ball": "[19.47886522861816098197119703129536256264836521469925016084832621182420894019 +/- 1.30e-75]",
+      "certified_lower": 19.478865228618158,
+      "gate": true,
+      "metric": "fixed_disk_reversal_factor"
+    },
+    {
+      "ball": "[519408626.5477644580055241565093343753586560363826293718393005786455309300425 +/- 1.48e-68]",
+      "certified_lower": 519408626.5477644,
+      "gate": true,
+      "metric": "fixed_pole_inside_outside_contrast"
+    }
+  ],
+  "scope": "These margins certify the archived finite-scale and model-route verdicts; they do not prove either open all-level corridor or the A5 cloud-complement theorem.",
+  "status": "rh81_arb_route_frontier_margin_audit"
+}

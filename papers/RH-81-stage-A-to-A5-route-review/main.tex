@@ -1,0 +1,311 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\M}{\mathfrak M}
+\newcommand{\A}{\mathsf A}
+
+\title{From Validated Assembly to Moving-Cloud Renormalization\\
+\large A Ten-Layer Audit and the Minimal Stage-A/A5 Completion Frontiers}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-72--RH-80 carried the small-noise directional program from validated
+folded-Gaussian assembly through intrinsic square determinants and into the
+first relative fixed-disk construction.  This tenth-layer review determines
+exactly which primitive gates remain, including the disjunctive structure
+hidden by a linear roadmap.
+
+We prove a completion-antichain theorem for monotone AND/OR dependency
+formulas.  Closed leaves contribute the empty completion, open leaves their
+singleton, OR takes the inclusion-minimal union of child families, and AND
+takes inclusion-minimal unions across their Cartesian product.  The resulting
+family is exactly the set of inclusion-minimal open-gate bundles whose closure
+makes the target true.
+
+For the archived program,
+\[
+ \A_1=F\wedge(L\vee E),
+\]
+where the finite-scale chain $F$ is now closed, $L$ is the all-level
+log-square block law, and $E$ is the all-level postblock effective-rank law.
+Thus Stage A has exactly two singleton completion alternatives:
+$\{L\}$ and $\{E\}$.  The effective-rank corridor is preferred after the
+single-arc route failed and rank four captured at least $99.9999\%$ at all
+anchors.  Either corridor would also close unconditional intrinsic
+identification and shrinking-disk determinants by RH-78--RH-79.
+
+The relative fixed-disk target has two minimal four-gate bundles:
+\[
+ \{L,P,C,U\},\qquad \{E,P,C,U\},
+\]
+where $P$ is an actual moving-cloud Riesz projection, $C$ its coefficient
+bridge, and $U$ a uniform trace-class complementary limit.  Generic absolute
+continuity and fixed scalar pole cancellation are both closed false
+shortcuts, while moving-cloud factorization is green algebraically.
+
+A 256-bit Arb audit certifies the archived route margins: at least
+$99.783\%$ of the finite Hardy slack remains, the shrinking-disk determinant
+bound improves by a factor exceeding $100.37$, the fixed-disk bound reverses
+by a factor exceeding $19.47$, and the RH-80 inside/outside pole-fork contrast
+exceeds $5.19\times10^8$.  These certify the finite and model-level verdicts,
+not the open all-level or cloud-complement theorems.  No Hilbert--Polya or
+Riemann-hypothesis conclusion is made.
+\end{abstract}
+
+\noindent\textbf{Keywords:} dependency frontier; monotone formula; validated
+numerics; effective rank; relative determinant; small noise.
+
+\medskip
+\noindent\textbf{MSC 2020:} 47A55; 47B10; 37C30; 65G20; 68R10.
+
+\section{Scope and outcome}
+
+The previous checkpoint ended with two open Stage-A tasks: complete the
+finite upstream interval chain and prove uniform small-noise scaling.  The
+first is now closed.  RH-72 validated exact stochastic folded-Gaussian and
+Haar assembly \citep{WangAssembly2026}; RH-73 validated Perron/parity
+rank-two deflation \citep{WangDeflation2026}; and RH-74 joined these layers to
+the frozen terminal Hardy certificate at all five scales
+\citep{WangBridge2026}.
+
+The uniform problem then split.  RH-75 isolated a sufficient log-square block
+law \citep{WangBlockLaw2026}.  RH-76 proved that a single narrow phase arc does
+not explain the observed horizons \citep{WangArcBarrier2026}.  RH-77 found a
+stronger surviving finite-scale phenomenon: the postblock future is nearly
+finite rank \citep{WangRankCompression2026}.  RH-78 proved that an all-level
+theorem for either phenomenon closes Stage A with zero Hardy power and hence
+closes strict-mesh intrinsic identification \citep{WangTwoCorridors2026}.
+
+RH-79 propagated that conditional result to trace-norm squares and
+shrinking-disk determinants, while locating the generic fixed-disk
+exponential wall \citep{WangDiagonalTransfer2026}.  RH-80 then proved that
+multiplication by the fixed limiting pole factor also fails across the cloud
+circle; the viable object is a quotient by the actual moving spectral cloud
+\citep{WangMovingCloud2026}.
+
+The outcome is not a linear list of five equally immediate tasks.  It is an
+AND/OR network with two Stage-A alternatives followed by three simultaneous
+A5 gates.  The purpose of this paper is to make that logic exact.
+
+\section{Minimal completion antichains}
+
+\begin{definition}[Monotone dependency formula]
+A dependency formula is built recursively from primitive leaves using
+$\wedge$ and $\vee$.  Each primitive leaf is currently either closed or open.
+A completion set is a set of open leaves which, when declared closed while all
+other statuses are held fixed, makes the formula true.  It is minimal if no
+proper subset is a completion set.
+\end{definition}
+
+For a finite family $\mathcal F$ of sets, let
+$\operatorname{Min}(\mathcal F)$ delete every member that strictly contains
+another member.  Define $\M(\Phi)$ recursively by
+\begin{align*}
+ \M(x)&=\{\varnothing\}, &&x\text{ a closed leaf},\\
+ \M(x)&=\{\{x\}\}, &&x\text{ an open leaf},\\
+ \M\!\left(\bigvee_i\Phi_i\right)
+ &=\operatorname{Min}\!\left(\bigcup_i\M(\Phi_i)\right),\\
+ \M\!\left(\bigwedge_i\Phi_i\right)
+ &=\operatorname{Min}\!\left\{
+     \bigcup_i S_i:S_i\in\M(\Phi_i)\right\}.
+\end{align*}
+
+\begin{theorem}[Monotone completion-antichain theorem]
+\label{thm:completion}
+For every finite monotone dependency formula $\Phi$, the family
+$\M(\Phi)$ is exactly the set of inclusion-minimal completion sets of
+$\Phi$.  In particular, it is an antichain.
+\end{theorem}
+
+\begin{proof}
+Proceed by structural induction.  The leaf statements are immediate.  An OR
+formula becomes true exactly when at least one child becomes true, so its
+completion sets are the union of the child completion families; deleting
+supersets leaves precisely the minimal ones.  An AND formula becomes true
+exactly when every child becomes true.  One must therefore choose a completion
+for each child and close their union.  Every completion arises this way, and
+again deleting supersets leaves exactly the inclusion-minimal choices.  This
+proves the recursion and the antichain property.
+\end{proof}
+
+The theorem is elementary but useful: it prevents a closed prerequisite from
+remaining on the active frontier, preserves genuine alternative corridors,
+and removes dominated route bundles automatically.
+
+\section{Application to Stage A and A5}
+
+Let
+\begin{itemize}[leftmargin=2em]
+ \item $F$: the finite-scale assembly/deflation/Hardy chain;
+ \item $L$: the all-level RH-75 log-square block law;
+ \item $E$: the all-level RH-77 postblock effective-rank law;
+ \item $P$: an actual moving-cloud Riesz projection;
+ \item $C$: the actual cloud coefficient bridge;
+ \item $U$: a uniform trace-class complementary limit.
+\end{itemize}
+The archived composition, square-transfer, and moving-cloud factorization
+theorems are closed in their conditional or algebraic scopes.  The active
+formulas therefore reduce to
+\begin{align}
+ \A_1&=F\wedge(L\vee E), \label{eq:A1}\\
+ \A_4&=\A_1\wedge(\text{closed conditional composition}), \label{eq:A4}\\
+ \A_{5,\mathrm{rel}}&=\A_4\wedge P\wedge C\wedge U
+ \wedge(\text{closed moving-cloud algebra}). \label{eq:A5}
+\end{align}
+
+\begin{corollary}[Current completion frontiers]
+\label{cor:frontiers}
+The minimal completion families are
+\begin{align*}
+ \M(\A_1)=\M(\A_4)
+ &=\bigl\{\{L\},\{E\}\bigr\},\\
+ \M(\A_{5,\mathrm{rel}})
+ &=\bigl\{\{L,P,C,U\},\{E,P,C,U\}\bigr\}.
+\end{align*}
+The unconditional shrinking-disk determinant has the same two singleton
+completion alternatives as Stage A.
+\end{corollary}
+
+\begin{proof}
+RH-74 closes $F$.  Substitute the current leaf statuses into
+\cref{eq:A1,eq:A4,eq:A5} and apply \cref{thm:completion}.
+\end{proof}
+
+The corollary separates two meanings of ``the next wall.''  Stage A has one
+logical wall with two alternative theorem forms.  A5 has three additional
+conjunctive operator gates after either Stage-A choice.  Those A5 gates may be
+studied in parallel, but the relative fixed-disk target needs all three.
+
+\section{Nine-paper theorem ledger}
+
+The build script hashes and reads every RH-72--RH-80 summary.  They contain
+forty-one boolean theorem gates, all true in their stated scopes.  This is an
+archive consistency count, not a claim of forty-one independent mathematical
+theorems.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{rlll}
+\toprule
+Paper & Route effect & Durable result & Remaining boundary\\
+\midrule
+72 & validated advance & folded-Gaussian assembly & peripheral factors\\
+73 & validated advance & Perron/parity rank-two deflation & Hardy propagation\\
+74 & finite closure & end-to-end five-scale bridge & all-level scaling\\
+75 & analytic corridor & sufficient log-square law & all-level proof\\
+76 & branch no-go & single-arc barrier & other compression routes\\
+77 & positive fallback & postblock rank compression & analytic rank decay\\
+78 & synthesis & either corridor closes Stage A & corridor premise\\
+79 & advance/barrier & square and shrinking-disk transfer & fixed disk\\
+80 & route correction & moving-cloud relative gate & actual cloud/complement\\
+\bottomrule
+\end{tabular}
+\caption{The nine inputs to the RH-81 synthesis.  ``No-go'' applies only to
+the named branch or proof method.}
+\label{tab:ledger}
+\end{table}
+
+Three false shortcuts are now durably marked:
+\begin{enumerate}[leftmargin=2em]
+ \item single-arc phase compression as the source of the production horizons;
+ \item generic absolute determinant continuity on a fixed small-noise disk;
+ \item fixed scalar double-pole cancellation across the finite-cloud circle.
+\end{enumerate}
+None is a no-go theorem for the full program.  Each one redirects the route to
+a surviving alternative already encoded in \cref{cor:frontiers}.
+
+\section{Validated route margins}
+
+The review audit uses Arb at 256-bit precision and exact binary64 rational
+lifting of the archived summary bounds.  The six values in
+\cref{tab:margins} serve different diagnostic roles and are not combined into
+one probability or theorem constant.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lrp{6.1cm}}
+\toprule
+Certified metric & Lower bound & Interpretation\\
+\midrule
+finite Hardy slack fraction remaining & 0.99783070 & RH-74 uses only about $0.217\%$ of inherited slack\\
+rank-two capture excess above $99\%$ & $8.45345\times10^{-4}$ & every RH-77 channel clears the rank-two gate\\
+rank-four excess above $99.9999\%$ & $9.20296\times10^{-7}$ & every channel clears the six-nine target\\
+shrinking-disk improvement factor & 100.3731 & RH-79 error decreases by over two orders of magnitude\\
+fixed-disk reversal factor & 19.4789 & the standard bound worsens after its minimum\\
+pole-fork inside/outside contrast & $5.19408\times10^8$ & RH-80 sharply separates interior convergence from exterior growth\\
+\bottomrule
+\end{tabular}
+\caption{Outward-certified margins inherited by the route review.}
+\label{tab:margins}
+\end{table}
+
+The finite-scale chain is therefore not marginal, and the effective-rank
+corridor is quantitatively compelling at the anchors.  Conversely, the two
+fixed-disk negative verdicts are not artifacts of tiny numerical differences.
+The open issue in each case is theorem-level uniformity or operator
+construction, not additional floating precision.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{figures/stage_A_to_A5_route_review.pdf}
+\caption{RH-72--RH-81 in one diagram: the input timeline, AND/OR completion
+architecture, certified margin audit, and revised stage ledger.}
+\label{fig:review}
+\end{figure}
+
+\section{Revised route and next theorem}
+
+The preferred immediate target is an all-level postblock singular-value
+decay theorem.  A representative sufficient form is
+\begin{equation}
+ s_{r+1}(O_kA_k^{M_k}S_k)
+ \le C\,\operatorname{polylog}(k)e^{-cr},
+ \label{eq:rank-target}
+\end{equation}
+or any estimate giving a $\operatorname{polylog}(k)$ rank with zero power of
+$\sigma_k$.  The proof should exploit smoothing after one production block,
+rank-two peripheral removal, and the low-dimensional source/observation
+geometry.  RH-76 shows why compressing the raw phase measure into one arc is
+the wrong object.
+
+If a rigorous lower bound defeats \eqref{eq:rank-target} with a forbidden
+noise power, the RH-75 full-block law remains the exact fallback.  Stage A
+should be reassessed only if both singleton completion alternatives are ruled
+out under every admissible mesh schedule.
+
+In parallel, A5 preparation should construct a moving contour and Riesz
+projection for the actual cloud, prove the cloud coefficient bridge, and
+control the complementary two-step trace norm.  A5 should be reassessed only
+if every natural cloud extraction leaves a non-normal relative family on the
+required fixed domain.
+
+The updated detailed roadmap is archived as \texttt{UPDATED\_ROADMAP.md}.
+Later Stages B--D remain unopened.  There is no canonical scattering
+completion, self-adjoint generator, intrinsic $T\log T$ counting law,
+prime-power trace formula, completed zeta identity, Hilbert--Polya operator,
+or Riemann Hypothesis result in this block.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

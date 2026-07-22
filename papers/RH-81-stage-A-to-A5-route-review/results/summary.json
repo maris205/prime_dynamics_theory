@@ -1,0 +1,116 @@
+{
+  "audit": {
+    "all_margin_gates_green": true,
+    "finite_chain_slack_fraction_remaining": 0.9978307013133477,
+    "fixed_disk_reversal_factor": 19.478865228618158,
+    "fixed_pole_inside_outside_contrast": 519408626.5477644,
+    "precision_bits": 256,
+    "rank2_capture_excess_over_99_percent": 0.0008453454613284083,
+    "rank4_capture_excess_over_99_9999_percent": 9.202963462119341e-07,
+    "shrinking_disk_error_improvement_factor": 100.37310941489197
+  },
+  "ledger": {
+    "all_input_theorem_gates_true": true,
+    "input_paper_count": 9,
+    "input_theorem_gate_count": 41
+  },
+  "minimal_completion_bundles": {
+    "shrinking_disk_determinant_unconditional": [
+      [
+        "all_level_log_square_block_law"
+      ],
+      [
+        "all_level_postblock_effective_rank_law"
+      ]
+    ],
+    "stage_A1": [
+      [
+        "all_level_log_square_block_law"
+      ],
+      [
+        "all_level_postblock_effective_rank_law"
+      ]
+    ],
+    "stage_A4_unconditional": [
+      [
+        "all_level_log_square_block_law"
+      ],
+      [
+        "all_level_postblock_effective_rank_law"
+      ]
+    ],
+    "stage_A5_relative_fixed_disk_limit": [
+      [
+        "actual_cloud_coefficient_bridge",
+        "actual_moving_cloud_riesz_projection",
+        "all_level_log_square_block_law",
+        "uniform_complement_trace_class_limit"
+      ],
+      [
+        "actual_cloud_coefficient_bridge",
+        "actual_moving_cloud_riesz_projection",
+        "all_level_postblock_effective_rank_law",
+        "uniform_complement_trace_class_limit"
+      ]
+    ]
+  },
+  "next_priority": "Prove uniform all-level postblock singular-value decay; this is the preferred singleton completion gate for Stage A.",
+  "program_boundary": {
+    "T_log_T_counting_law": false,
+    "canonical_scattering_object": false,
+    "completed_zeta_identity": false,
+    "finite_scale_end_to_end_hardy_closed": true,
+    "prime_power_trace_formula": false,
+    "riemann_hypothesis": false,
+    "self_adjoint_generator": false,
+    "shrinking_disk_determinant_unconditional_closed": false,
+    "stage_A4_unconditional_closed": false,
+    "stage_A5_relative_limit_closed": false,
+    "uniform_stage_A1_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "e8c5d568962ae7f11638a973e785da93ef034ef01f2aaeed525ff4849785dbb1",
+    "README.md": "a53a73fff5c2ee8eca058f4fcc31faa60668d16f22530c30c683e11681f530f6",
+    "UPDATED_ROADMAP.md": "e739649f00e6f17e4d27bda3089c5b85e37e4800a6059ed564388ad1ad62ecb6",
+    "figures/stage_A_to_A5_route_review.pdf": "81a95d94b242176042b22daeff997a4acdba75cbf29734a1f3d47774503b57bb",
+    "figures/stage_A_to_A5_route_review.png": "cf4c68737dff0412afe7c34ab4fda0d6feba8e347eef8cb8b866f27a8f7476eb",
+    "main.pdf": "6e2af59bc1e66dca4e55f2b153d6568eba86e568e2f48619a116fd0d58675c4a",
+    "main.tex": "2118b4d1b28f44a37aff180fc56062b5157ab6e486247273a7ddf1e28db16a68",
+    "pyproject.toml": "58523166a3dee6f7c5d86a58a6a163592f3d4670e29e6475e50c4751991e45b9",
+    "references.bib": "aa5b3ca83432b8b6d49a3826d827bcc136a18ca13571d68d0507bfe2a519fb8a",
+    "requirements.txt": "080ef9103f20cd246740d8116f078385a9b53b95480030de47225edf4b09ac89",
+    "stage-A-to-A5-route-review.pdf": "6e2af59bc1e66dca4e55f2b153d6568eba86e568e2f48619a116fd0d58675c4a"
+  },
+  "result_hashes": {
+    "results/arb_frontier_audit.json": "b38f5cac4970a933d4d1eda88da50c3817b69ce662e01aec6da1981917bc121b",
+    "results/arb_frontier_smoke.json": "0c750c89dc87886632c4968180161fb35a9f4f84a3c27305d52f7b248990f7f9",
+    "results/dependency_manifest.json": "3efe3920cb26a192d8fb47110b1849ddbd3e661b33346f734985b1b94b4f8e72",
+    "results/route_review.json": "c8f834b9ca7350857ea87d722a9610060b59dc83bb3d1f8c20aec4fe7ac74052",
+    "results/route_review_smoke.json": "4f9752e21006b9bb243d1436baff30181edc25dee9ce16c1cbb68fdd3790b432"
+  },
+  "route_consequence": "The finite-scale Stage-A chain is green. The only Stage-A wall is an all-level theorem in either of two corridors, with postblock effective rank preferred after the single-arc failure. Conditional square and shrinking-disk determinant transfer are already available. Fixed-disk A5 requires a moving cloud factor plus three open operator gates; neither absolute continuity nor fixed scalar pole cancellation can substitute for them.",
+  "stage_ledger": {
+    "A1_all_level_effective_rank_corridor": "amber_preferred",
+    "A1_all_level_full_block_corridor": "amber",
+    "A1_finite_scale_end_to_end_chain": "green",
+    "A1_single_arc_phase_corridor": "red",
+    "A4_conditional_intrinsic_identification": "green",
+    "A4_conditional_shrinking_disk_determinant": "green",
+    "A4_conditional_square_trace_transfer": "green",
+    "A4_unconditional_intrinsic_identification": "amber",
+    "A5_absolute_fixed_disk_continuity": "red_as_generic_method",
+    "A5_actual_cloud_and_complement_theorem": "amber",
+    "A5_fixed_scalar_pole_cancellation": "red_in_canonical_model",
+    "A5_moving_cloud_factorization_algebra": "green",
+    "B_canonical_scattering_completion": "not_started",
+    "C_self_adjoint_counting": "not_started",
+    "D_arithmetic_zeta_identity": "not_started"
+  },
+  "status": "rh81_stage_A_to_A5_route_review_archived",
+  "theorem": {
+    "dominated_bundle_pruning": true,
+    "monotone_and_or_completion_antichain": true,
+    "two_four_gate_stage_A5_completion_bundles": true,
+    "two_singleton_stage_A_corridors": true
+  }
+}

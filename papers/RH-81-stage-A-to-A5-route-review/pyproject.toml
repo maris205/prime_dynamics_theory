@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rh81-stage-a-to-a5-route-review"
+version = "0.1.0"
+description = "Ten-layer Stage-A to A5 dependency review"
+requires-python = ">=3.10"
+dependencies = ["matplotlib>=3.7", "pytest>=7.0", "python-flint>=0.6"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
