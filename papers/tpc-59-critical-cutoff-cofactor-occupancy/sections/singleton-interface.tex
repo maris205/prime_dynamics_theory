@@ -1,0 +1,279 @@
+\section{The selected cofactor core and the undeleted singleton bridge}
+\label{sec:tpc59-singleton}
+
+The dyadic theorem localizes raw terminal energy, not a coherent output
+norm.  We now connect one selected cell to the complete undeleted residual
+vector by the full-fiber singleton bridge of TPC--57.  The distinction
+between a very-high root and its full terminal fiber is essential: a
+collision partner of a root with \(p>y\) need not itself remain on the
+very-high face \citep{WangTPC57}.
+
+\subsection{Core energy and full active multiplicity}
+
+Let
+\begin{equation}
+ \cU_{h_0}^{\rm phys}(\zeta)
+ :=\{u\in\cU_{h_0}^{\rm term}:x_u\ne0\},
+ \qquad q(u)=(i(u),s(u)),
+ \label{eq:tpc59-full-physical-terminal-set}
+\end{equation}
+and define the complete active degree of a residual fiber by
+\begin{equation}
+ n_a^{\rm phys}(\zeta)
+ :=\bigl|q^{-1}(a)\cap\cU_{h_0}^{\rm phys}(\zeta)\bigr|.
+ \label{eq:tpc59-full-physical-degree}
+\end{equation}
+The degree in \eqref{eq:tpc59-full-physical-degree} is computed in the
+whole terminal vector, without imposing \(p>y\) or a cofactor block.
+The complete undeleted residual energy is
+\begin{equation}
+ \cG_{\rm full}(\zeta)
+ :=\sum_a\left|
+      \sum_{\substack{u\in\cU_{h_0}^{\rm term}\\q(u)=a}}x_u
+     \right|^2.
+ \label{eq:tpc59-complete-grouped-energy}
+\end{equation}
+The high-only residual energy used by the TPC--58 high-column interface is
+\begin{equation}
+ \cG_H(y;\zeta)
+ :=\sum_a\left|
+      \sum_{\substack{u\in\cU_{h_0,>y}^{\rm term}\\q(u)=a}}x_u
+     \right|^2.
+ \label{eq:tpc59-high-only-grouped-energy}
+\end{equation}
+This is the same quantity as \(\cG_H\) in
+\eqref{eq:tpc59-grouped-not-additive}.  The full degree below is deliberately
+stronger than the active degree inside the high-only vector.
+
+For a half-open cofactor core
+\begin{equation}
+ \cB_R(y)
+ :=\{u\in\cU_{h_0,>y}^{\rm term}:R\le r_u<2R\},
+ \label{eq:tpc59-very-high-core}
+\end{equation}
+put
+\begin{align}
+ \cD_R(y;\zeta)
+ &:=\sum_{u\in\cB_R(y)}|x_u|^2,
+ \label{eq:tpc59-core-terminal-diagonal}\\
+ \cI_R^{\rm full}(y;\zeta)
+ &:=\sum_{u\in\cB_R(y)\cap\cU_{h_0}^{\rm phys}(\zeta)}
+       |x_u|^2\bigl(n_{q(u)}^{\rm phys}(\zeta)-1\bigr).
+ \label{eq:tpc59-core-full-incidence}
+\end{align}
+Thus \(\cI_R^{\rm full}\) is a rooted, coefficient-weighted incidence,
+not an unweighted pair count and not a multiplicity computed after
+restricting the vector to \(\cB_R(y)\).
+
+\begin{theorem}[Very-high core to high-only and full-output singleton bridge]
+\label{thm:tpc59-core-full-singleton-bridge}
+For every fixed \(h_0\ne0\), every admissible cutoff \(y\), every cofactor
+scale \(R\), and every distinguished coefficient vector,
+\begin{equation}
+ \boxed{
+ \min\{\cG_H(y;\zeta),\cG_{\rm full}(\zeta)\}
+ \ge
+ \bigl(\cD_R(y;\zeta)-\cI_R^{\rm full}(y;\zeta)\bigr)_+.}
+ \label{eq:tpc59-core-full-singleton-floor}
+\end{equation}
+Consequently, if \(\cD_R(y;\zeta)>0\) and
+\begin{equation}
+ \cI_R^{\rm full}(y;\zeta)
+ \le(1-\delta_R)\cD_R(y;\zeta),
+ \qquad 0<\delta_R\le1,
+ \label{eq:tpc59-core-incidence-criterion}
+\end{equation}
+then
+\begin{equation}
+ \boxed{
+ \min\{\cG_H(y;\zeta),\cG_{\rm full}(\zeta)\}
+ \ge\delta_R\cD_R(y;\zeta).}
+ \label{eq:tpc59-core-positive-full-output}
+\end{equation}
+If \(R=2^{k_*}\) is the maximal-energy cell selected in
+\cref{thm:tpc59-exact-dyadic-localization}, then
+\begin{equation}
+ \min\{\cG_H(y;\zeta),\cG_{\rm full}(\zeta)\}
+ \ge\frac{\delta_R}{B_X(y)}\cD_H(y;\zeta)
+ \label{eq:tpc59-selected-block-singleton-transfer}
+\end{equation}
+whenever \eqref{eq:tpc59-core-incidence-criterion} holds.
+\end{theorem}
+
+\begin{proof}
+If \(n_a^{\rm phys}=1\), the unique active atom in the full fiber \(a\)
+survives with exactly its atomic energy both in
+\eqref{eq:tpc59-complete-grouped-energy} and, when it is a very-high root,
+in \eqref{eq:tpc59-high-only-grouped-energy}.  Hence each of
+\(\cG_H\) and \(\cG_{\rm full}\) dominates the energy of all core roots
+whose full active degree is one.  A core root with full degree
+at least two contributes at most
+\(
+ |x_u|^2(n_{q(u)}^{\rm phys}-1)
+\)
+to the energy removed from this singleton subcollection.  Summing over
+core roots proves
+\(
+ \min\{\cG_H,\cG_{\rm full}\}\ge
+ \cD_R-\cI_R^{\rm full}
+\);
+nonnegativity gives \eqref{eq:tpc59-core-full-singleton-floor}.
+Equation \eqref{eq:tpc59-core-positive-full-output} follows from
+\eqref{eq:tpc59-core-incidence-criterion}.  For the selected dyadic cell,
+combine it with \eqref{eq:tpc59-dyadic-pigeonhole}.
+\end{proof}
+
+No comparison between the restricted grouped norm
+\[
+ \sum_a\left|
+   \sum_{u\in q^{-1}(a)\cap\cB_R(y)}x_u
+ \right|^2
+\]
+and either \(\cG_H(y;\zeta)\) or \(\cG_{\rm full}(\zeta)\) occurs in the
+proof.  Restoring omitted coordinates can cancel a restricted coherent sum.
+The theorem instead retains only roots that are singletons in the complete
+active fiber system.  Those roots survive in particular in the high-only
+residual vector needed by the downstream native-erasure map.
+
+\subsection{Factor-exchange locality of every full partner}
+
+Define the enlarged, unrestricted terminal neighborhood
+\begin{equation}
+ \cB_R^+
+ :=\{v\in\cU_{h_0}^{\rm term}:R/2\le r_v<4R\}.
+ \label{eq:tpc59-enlarged-full-terminal-block}
+\end{equation}
+Unlike \(\cB_R(y)\), this set does not impose \(p_v>y\).
+
+\begin{proposition}[Every full partner is cofactor-local]
+\label{prop:tpc59-full-partner-locality}
+If \(u\in\cB_R(y)\) and
+\(v\in\cU_{h_0}^{\rm term}\) satisfies \(q(v)=q(u)\), then
+\begin{equation}
+ \boxed{R/2\le r_v<4R.}
+ \label{eq:tpc59-full-partner-range}
+\end{equation}
+Consequently, for every physical core root,
+\begin{equation}
+ n_{q(u)}^{\rm phys}(\zeta)
+ =\bigl|q^{-1}(q(u))\cap
+       \cU_{h_0}^{\rm phys}(\zeta)\cap\cB_R^+\bigr|,
+ \label{eq:tpc59-full-degree-localized}
+\end{equation}
+and the exact incidence is
+\begin{equation}
+ \boxed{
+ \cI_R^{\rm full}
+ =\sum_{\substack{u\in\cB_R(y)\cap\cU_{h_0}^{\rm phys}(\zeta)\\
+                   v\in\cB_R^+\cap\cU_{h_0}^{\rm phys}(\zeta)\\
+                   v\ne u,\ q(v)=q(u)}}|x_u|^2.}
+ \label{eq:tpc59-local-rooted-pair-identity}
+\end{equation}
+When \(R\) is dyadic, the enlarged range is the union of three adjacent
+half-open dyadic cells, so localization of all partners has \(O(1)\)
+covering cost.
+\end{proposition}
+
+\begin{proof}
+Write the two source rows as \(m=d\ell\) and \(m'=d'\ell'\).  Equality of
+the residual keys gives
+\begin{equation}
+ dr=d'r'.
+ \label{eq:tpc59-partner-factor-exchange}
+\end{equation}
+Both source divisors belong to the same declared cell
+\([D,2D]\).  Therefore
+\[
+ r'=\frac d{d'}r,
+ \qquad \frac12\le\frac d{d'}\le2.
+\]
+Together with \(R\le r<2R\), this proves
+\eqref{eq:tpc59-full-partner-range}.  Thus every full physical partner is
+already present in \(\cB_R^+\), proving
+\eqref{eq:tpc59-full-degree-localized}; expanding
+\(n_{q(u)}^{\rm phys}-1\) then gives
+\eqref{eq:tpc59-local-rooted-pair-identity}.
+\end{proof}
+
+The proposition is stronger than merely checking collisions inside the
+selected very-high cell, but weaker than an occupancy estimate.  A carrier
+made entirely of active doubletons obeys the same \(O(1)\) partner locality
+and still has no singleton energy.  Thus bounded scale displacement does
+not make \(\delta_R\) in
+\eqref{eq:tpc59-core-incidence-criterion} positive.
+
+\subsection{Critical compatibility does not create occupancy}
+
+At the critical cutoff \(y=C_{\rm vh}Q\),
+\cref{thm:tpc59-cutoff-cofactor-reciprocity} gives
+\begin{equation}
+ R_{\rm safe}(y)\asymp R_{\rm max}(y)\asymp J.
+ \label{eq:tpc59-critical-singleton-compatible-scale}
+\end{equation}
+Hence the exponent \(R\asymp J\) is once again compatible with the
+very-high dictionary.  This removes the fixed positive-power support gap
+created by \(y=X^{267/400+\eta}\); it proves none of the following:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item that the fixed retained-pair carrier contains a cofactor in the
+       critical window on every active row;
+ \item that such a coordinate terminalizes or has nonzero physical energy;
+ \item that the energy-rich dyadic cell \(k_*\) from
+       \cref{thm:tpc59-exact-dyadic-localization} lies at scale \(J\); or
+ \item that a positive weighted fraction of its full fibers are singletons.
+\end{enumerate}
+The first two failures are measured by the occupancy and terminal minimax
+constants of \cref{sec:tpc59-occupancy}; the fourth is precisely
+\eqref{eq:tpc59-core-incidence-criterion}.
+
+For comparison, retain the fixed-power cutoff
+\begin{equation}
+ y=X^{267/400+\eta},
+ \qquad \eta>0.
+ \label{eq:tpc59-fixed-eta-singleton-face}
+\end{equation}
+Then every very-high atom satisfies
+\begin{equation}
+ r\le R_{\rm max}(y)
+ =X^{133/400-\eta+o(1)},
+ \label{eq:tpc59-fixed-eta-compatible-ceiling}
+\end{equation}
+whereas an inherited root with \(R\asymp J\) and every one of its
+factor-exchange partners lie in a constant-factor neighborhood of \(J\).
+Thus, for large \(X\),
+\begin{equation}
+ [R/2,4R)\cap[1,R_{\rm max}(y)]=\varnothing.
+ \label{eq:tpc59-fixed-eta-factor-exchange-gap}
+\end{equation}
+The factor-exchange identity does not transport an old atom across this
+polynomial gap: it only locates other atoms already sharing the same full
+residual key.  In particular, it cannot turn geometric incompatibility
+into cofactor occupancy or create terminal energy in a missing block.
+
+\subsection{The remaining arithmetic door}
+
+After high-face activation and dyadic localization, the exact remaining
+singleton target is
+\begin{equation}
+ \boxed{
+ \cI_{R_*}^{\rm full}(y;\zeta)
+ \le(1-\delta_{R_*})\cD_{R_*}(y;\zeta),
+ \qquad
+ \delta_{R_*}\ge X^{-\lambda_{\rm sing}+o(1)},}
+ \label{eq:tpc59-remaining-weighted-incidence-gate}
+\end{equation}
+for the distinguished energy-rich block \(R_*=2^{k_*}\), or a stronger
+coefficient-uniform analogue on a fixed carrier.  By
+\eqref{eq:tpc59-local-rooted-pair-identity}, this is a local, weighted
+one-atom-versus-two-atom factor-exchange estimate retaining the literal
+terminal coefficient and the one physical shift \(h_0\).  A support-only
+upper bound for the maximal fiber degree does not imply it.
+
+The bridge theorem and partner localization are unconditional
+finite-dimensional and literal-support statements (L0/L1).  Positivity or
+a polynomial lower bound for \(\delta_{R_*}\) is a new arithmetic input;
+neither critical cutoff compatibility nor dyadic pigeonholing supplies it.
+Only a quantitative proof of
+\eqref{eq:tpc59-remaining-weighted-incidence-gate}, together with the
+upstream activation and downstream transfers, could contribute to an L2
+advance.  No undeleted asymptotic lower square, native-affine Gram transfer,
+parity improvement, or twin-prime consequence is claimed here.

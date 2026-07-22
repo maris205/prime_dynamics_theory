@@ -1,0 +1,195 @@
+\section{Critical cutoff admissibility and cutoff--cofactor reciprocity}
+\label{sec:tpc59-cutoff}
+
+We first separate the literal cutoff inequalities from one convenient
+power-scale choice.  This distinction is what permits the endpoint support
+door to be reopened without changing the physical shift or the coefficient
+packet.
+
+\subsection{Endpoint support data}
+
+Let the positive target and source supports satisfy
+\begin{align}
+ D_-&\le d_m\le D_+,&
+ M_-&\le m\le M_+,&
+ J_-&\le j\le J_+,&
+ N_-&\le n_{m,j}:=mj+h_0\le N_+,
+ \label{eq:tpc59-support-endpoints}
+\end{align}
+with fixed support-ratio bounds
+\begin{equation}
+ D_\pm\asymp D,
+ \qquad M_\pm\asymp Q,
+ \qquad J_\pm\asymp J,
+ \qquad N_\pm\asymp X,
+ \qquad \Delta_M:=M_+-M_-\ll Q.
+ \label{eq:tpc59-support-ratios}
+\end{equation}
+At the endpoint,
+\begin{equation}
+ Q=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)},
+ \qquad
+ D=X^{10049/52500+o(1)},
+ \qquad QJ\asymp X.
+ \label{eq:tpc59-endpoint-QJD}
+\end{equation}
+In particular,
+\begin{equation}
+ |h_0|+D_++J_++\sqrt{N_+}=o(Q).
+ \label{eq:tpc59-smaller-than-Q}
+\end{equation}
+We retain the inherited literal one-side row system and assume that each
+retained source row has its declared unique representation
+\begin{equation}
+ m=d_m\ell_m
+ \label{eq:tpc59-unique-source-row}
+\end{equation}
+inside that system.  This is the row-factorization hypothesis used when a
+fixed-\((j,p)\) incidence is lifted back from the integer \(m\) to the full
+source coordinate.
+
+Call a real cutoff \(y=y_X\) \emph{very-high admissible} if
+\begin{align}
+ y&>\max\{|h_0|,D_+,J_+,\Delta_M,\sqrt{N_+}\},
+ \label{eq:tpc59-admissible-geometric}\\
+ \frac{D_+N_+}{y}&<D_-N_-.
+ \label{eq:tpc59-admissible-separation}
+\end{align}
+These are the exact TPC--45 hypotheses; no exponent has yet been assigned to
+the amount by which \(y\) exceeds \(Q\) \citep{WangTPC45}.
+
+\begin{theorem}[Critical very-high cutoff]
+\label{thm:tpc59-critical-cutoff}
+Under \eqref{eq:tpc59-support-endpoints}--
+\eqref{eq:tpc59-smaller-than-Q} and
+\eqref{eq:tpc59-unique-source-row}, there is a fixed constant
+\(C_{\rm vh}>0\), depending only on the support-ratio constants, such that
+\begin{equation}
+ \boxed{y=C_{\rm vh}Q}
+ \label{eq:tpc59-critical-y}
+\end{equation}
+is very-high admissible for all sufficiently large \(X\).
+Consequently the unique very-high-prime factorization, the residual identity
+\(s=d_mr\), and fixed-\((j,p)\) row singleton incidence all hold already at
+the critical exponent \(267/400\).
+\end{theorem}
+
+\begin{proof}
+Choose \(C_{\rm vh}\) strictly larger than the fixed implied constant in
+\(\Delta_M\ll Q\).  Equation \eqref{eq:tpc59-smaller-than-Q} then proves
+\eqref{eq:tpc59-admissible-geometric} for large \(X\).  The ratio
+\[
+ \frac{D_+N_+}{D_-N_-}
+\]
+is bounded by \eqref{eq:tpc59-support-ratios}, whereas
+\(C_{\rm vh}Q\to\infty\).  Hence
+\(y>D_+N_+/(D_-N_-)\), which is equivalent to
+\eqref{eq:tpc59-admissible-separation}.
+
+For completeness, \(p>D_+\) prevents a very-high prime from lying in
+\(d_m\), and \(n_{m,j}<y^2\) permits at most one prime divisor \(p>y\) of
+\(n_{m,j}\).  If \(n_{m,j}=pr\), the fused label is
+\(d_mn_{m,j}=p(d_mr)\), so the residual label is \(s=d_mr\).  Finally, if
+the same \((j,p)\) meets two rows, then
+\(p\mid(m-m')j\).  The alternative \(p\mid j\) would imply
+\(p\mid h_0\), impossible because \(p>|h_0|\).  Thus
+\(p\mid m-m'\), but \(|m-m'|\le\Delta_M<p\), so \(m=m'\).
+The unique representation \eqref{eq:tpc59-unique-source-row} then recovers
+the same full source row.
+\end{proof}
+
+\begin{remark}[What the theorem does not say]
+The constant \(C_{\rm vh}\) need not place a previously chosen dyadic
+cofactor block inside the very-high face.  It proves that blocks of exponent
+\(133/400\) are geometrically compatible after a fixed-factor retuning.  A
+positive atomic-energy intersection is a separate occupancy statement.
+\end{remark}
+
+\subsection{Exact reciprocity for a general cutoff}
+
+Put
+\begin{equation}
+ \omega_X:=\frac yQ,
+ \qquad
+ R_{\rm safe}(y):=\frac{N_-}{2y},
+ \qquad
+ R_{\rm max}(y):=\frac{N_+}{y}.
+ \label{eq:tpc59-omega-safe-max}
+\end{equation}
+The names refer to dyadic cofactor blocks \([R,2R)\).
+
+\begin{theorem}[Cutoff--cofactor reciprocity]
+\label{thm:tpc59-cutoff-cofactor-reciprocity}
+Let \(y\) be very-high admissible, and let a terminal atom satisfy
+\begin{equation}
+ n=mj+h_0=pr,
+ \qquad N_-\le n\le N_+.
+ \label{eq:tpc59-terminal-npr}
+\end{equation}
+For a dyadic block \(R\le r<2R\), one has
+\begin{equation}
+ \frac{N_-}{2R}<p\le\frac{N_+}{R}.
+ \label{eq:tpc59-prime-window-from-R}
+\end{equation}
+Consequently:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item if \(R<R_{\rm safe}(y)\), every terminal prime in the block is
+       automatically greater than \(y\);
+ \item if \(R>R_{\rm max}(y)\), the block contains no very-high atom;
+ \item the interval between \(R_{\rm safe}(y)\) and
+       \(R_{\rm max}(y)\) meets only \(O(1)\) dyadic scales.
+\end{enumerate}
+Moreover,
+\begin{equation}
+ \boxed{
+ R_{\rm safe}(y)\asymp R_{\rm max}(y)
+ \asymp\frac J{\omega_X}.}
+ \label{eq:tpc59-cutoff-band-reciprocity}
+\end{equation}
+All implied constants depend only on the fixed support ratios.
+\end{theorem}
+
+\begin{proof}
+Since \(r<2R\) and \(n\ge N_-\), one has
+\(p=n/r>N_-/(2R)\).  Since \(r\ge R\) and \(n\le N_+\), one has
+\(p\le N_+/R\), proving \eqref{eq:tpc59-prime-window-from-R}.  If
+\(R<N_-/(2y)\), the lower endpoint is greater than \(y\).  If
+\(R>N_+/y\), then \(p>y\) and \(r\ge R\) would give
+\(n=pr>yR>N_+\), a contradiction.  Finally,
+\[
+ \frac{R_{\rm max}(y)}{R_{\rm safe}(y)}
+ =2\frac{N_+}{N_-}\asymp1,
+\]
+so only a bounded number of dyadic scales lies between them.  Using
+\(N_\pm\asymp X\asymp QJ\) and \(y=\omega_XQ\) proves
+\eqref{eq:tpc59-cutoff-band-reciprocity}.
+\end{proof}
+
+\begin{corollary}[Three cutoff regimes]
+\label{cor:tpc59-three-cutoff-regimes}
+Suppose \(\omega_X=X^{\xi+o(1)}\) with \(\xi\ge0\).  Then the top
+compatible cofactor exponent is
+\begin{equation}
+ \theta_R=\frac{133}{400}-\xi+o(1).
+ \label{eq:tpc59-compatible-theta-R}
+\end{equation}
+In particular:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=3em]
+ \item if \(\omega_X\asymp1\), compatible blocks have
+       \(R\asymp J\), with no geometrically forced positive-power
+       relocation;
+ \item if \(\omega_X=X^{o(1)}\), the displacement is subpower and has zero
+       fixed exponent;
+ \item if \(\omega_X=X^{\eta+o(1)}\) for fixed \(\eta>0\), every
+       compatible block satisfies
+       \(R\le X^{133/400-\eta+o(1)}\) and is eventually disjoint from any
+       fixed dyadic block \(R\asymp J\).
+\end{enumerate}
+\end{corollary}
+
+The last case is precisely the face audited in TPC--58.  The first case is
+not a contradiction; it uses the same literal unique-prime theorem with a
+sharper admissible cutoff.  No coefficient, norm, or physical shift has
+been changed.

@@ -1,0 +1,257 @@
+\section{Largest-prime census and zero-cost dyadic localization}
+\label{sec:tpc59-terminal}
+
+The preceding minimax constants are exact but still refer to a terminal
+indicator.  We now identify that indicator arithmetically and show that,
+once very-high terminal energy exists, localizing it to one cofactor block
+costs only a logarithm.
+
+\subsection{The exact largest-prime face}
+
+Adopt the convention \(\Pplus(1)=1\).  Let
+\(\cU_{h_0}^{\rm term}\) be the complete literal terminal universe of
+TPC--57, and define
+\begin{equation}
+ \cU_{h_0,>y}^{\rm term}
+ :=\{u=(m,r,j,\gamma)\in\cU_{h_0}^{\rm term}:p_u>y\}.
+ \label{eq:tpc59-very-high-terminal-universe}
+\end{equation}
+
+\begin{theorem}[Largest-prime census]
+\label{thm:tpc59-largest-prime-census}
+Assume \(y>\sqrt{N_+}\), and fix \((m,j,\gamma)\) with
+\(n=mj+h_0\in[N_-,N_+]\).  There is at most one terminal atom over this
+triple with \(p>y\).  Such an atom exists exactly when
+\begin{equation}
+ p_*:=\Pplus(n)>y,
+ \qquad
+ r_*:=\frac n{p_*},
+ \qquad
+ (m,r_*)\in\cI_X,
+ \label{eq:tpc59-largest-prime-retained-test}
+\end{equation}
+and \((m,r_*,j,\gamma)\) satisfies the remaining inherited terminal masks,
+squarefree conditions, coprimality conditions, and
+\(\Lambda_X(n)\ne0\).  In that case
+\begin{equation}
+ p_u=p_* = \Pplus(mj+h_0),
+ \qquad
+ r_u=\frac{mj+h_0}{\Pplus(mj+h_0)}.
+ \label{eq:tpc59-largest-prime-formula}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+If two distinct primes greater than \(y\) divided \(n\), their product
+would exceed \(y^2>N_+\ge n\).  Thus a prime divisor above \(y\) is unique
+and necessarily equals \(\Pplus(n)\).  The equality
+\(p_ur=mj+h_0=n\) then forces \(r=r_*\).  The retained-pair and remaining
+terminal conditions are plainly necessary.  Conversely, if all displayed
+and inherited conditions hold, \(p_*\) is prime by definition of largest
+prime factor, the equality \(p_*r_*=n\) holds, and the corresponding
+coordinate belongs to \(\cU_{h_0,>y}^{\rm term}\).
+\end{proof}
+
+For the literal terminal amplitude
+\begin{equation}
+ x_u=\mu(r_u)\Lambda_X(p_ur_u)[G_X^L]_u,
+ \label{eq:tpc59-literal-terminal-amplitude-repeat}
+\end{equation}
+define the very-high atomic diagonal
+\begin{equation}
+ \cD_H(y;\zeta)
+ :=\sum_{u\in\cU_{h_0,>y}^{\rm term}}|x_u|^2.
+ \label{eq:tpc59-very-high-terminal-diagonal}
+\end{equation}
+The theorem gives the exact weighted census
+\begin{equation}
+ \boxed{
+ \cD_H(y;\zeta)
+ =\sum_{m,j,\gamma}
+   \one_{\rm vh}(m,j,\gamma;y)
+   |\Lambda_X(mj+h_0)|^2
+   |c_{m,j,\gamma}|^2|\zeta_m|^2,}
+ \label{eq:tpc59-largest-prime-energy-census}
+\end{equation}
+where \(\one_{\rm vh}\) is precisely the test in
+\cref{thm:tpc59-largest-prime-census}.  Under the sign calibration of
+TPC--58, \(x_u=-\mu(d_mr_u)b_{i,d_mr_up_u}\), so
+\begin{equation}
+ |x_u|^2=|b_{i,d_mr_up_u}|^2.
+ \label{eq:tpc59-terminal-Walsh-atomic-match}
+\end{equation}
+Thus every matched terminal/Walsh coordinate has the same raw atomic
+weight on both sides of the dictionary \citep{WangTPC58}.  This coordinate
+injection is not asserted to be surjective onto the full Walsh carrier.
+
+The census is an identity, not a density theorem.  It permits
+\(\cD_H(y;\zeta)=0\) while the parent or full Walsh diagonal is positive:
+the targets may all be \(y\)-smooth, the required complementary cofactors
+may be absent from \(\cI_X\), terminal masks may fail, or the distinguished
+row coefficients may vanish on every surviving row.
+
+\subsection{Exact dyadic partition}
+
+Put
+\begin{equation}
+ R_+(y):=\frac{N_+}{y}.
+ \label{eq:tpc59-dyadic-R-plus}
+\end{equation}
+If \(R_+(y)<1\), the very-high terminal face is empty.  Otherwise, for
+integers
+\begin{equation}
+ 0\le k\le K_X:=\left\lfloor\log_2R_+(y)\right\rfloor,
+ \label{eq:tpc59-dyadic-index-range}
+\end{equation}
+define the half-open cofactor cells
+\begin{equation}
+ \cB_k(y)
+ :=\{u\in\cU_{h_0,>y}^{\rm term}:2^k\le r_u<2^{k+1}\}
+ \label{eq:tpc59-dyadic-terminal-cells}
+\end{equation}
+and their atomic energies
+\begin{equation}
+ \cD_k(y;\zeta):=\sum_{u\in\cB_k(y)}|x_u|^2.
+ \label{eq:tpc59-dyadic-terminal-energy}
+\end{equation}
+
+\begin{theorem}[Exact dyadic localization]
+\label{thm:tpc59-exact-dyadic-localization}
+The cells \(\cB_k(y)\) form a disjoint partition of the very-high terminal
+face and
+\begin{equation}
+ \boxed{
+ \cD_H(y;\zeta)=\sum_{k=0}^{K_X}\cD_k(y;\zeta).}
+ \label{eq:tpc59-dyadic-energy-partition}
+\end{equation}
+If \(\cD_H(y;\zeta)>0\), let \(k_*\) be the least index attaining the
+maximum dyadic energy.  Then
+\begin{equation}
+ \boxed{
+ \cD_{k_*}(y;\zeta)
+ \ge\frac{\cD_H(y;\zeta)}{B_X(y)},
+ \qquad
+ B_X(y):=1+\left\lfloor\log_2R_+(y)\right\rfloor.}
+ \label{eq:tpc59-dyadic-pigeonhole}
+\end{equation}
+For every admissible endpoint cutoff \(y\ge C_{\rm vh}Q\),
+\begin{equation}
+ B_X(y)=O(\log X)=X^{o(1)}.
+ \label{eq:tpc59-dyadic-count-subpower}
+\end{equation}
+Hence dyadic localization inside an already activated very-high terminal
+face has zero fixed-power loss.
+\end{theorem}
+
+\begin{proof}
+Every very-high atom has positive integral \(r_u\le N_+/p_u<N_+/y\), so it
+lies in exactly one half-open cell in the displayed index range.  Raw atomic
+energy is additive across disjoint coordinate sets, proving
+\eqref{eq:tpc59-dyadic-energy-partition}.  The maximum of \(B_X(y)\)
+nonnegative numbers is at least their average.  Finally,
+\(R_+(y)\le N_+/(C_{\rm vh}Q)=X^{133/400+o(1)}\), proving
+\eqref{eq:tpc59-dyadic-count-subpower}.
+\end{proof}
+
+In the TPC--58 loss notation, the theorem proves
+\begin{equation}
+ \boxed{\lambda_{\rm blk}=0}
+ \label{eq:tpc59-zero-block-exponent}
+\end{equation}
+conditional on a lower bound for \(\cD_H\).  It does not prove
+a parent-to-high-face energy transfer: the ratio
+\(\cD_H/\cE_{\rm par}\), or even \(\cD_H/\cD_0\), remains uncontrolled.
+
+\subsection{The base/represented/missing decomposition and its limit}
+
+Let \(\cW_0\) be the complete declared Walsh slice and define its raw
+atomic diagonal by
+\begin{equation}
+ \cD_0:=\sum_{w\in\cW_0}|b_w|^2.
+ \label{eq:tpc59-full-declared-Walsh-diagonal}
+\end{equation}
+Let \(\cW_H(y)\subseteq\cW_0\) be the set of high Walsh atoms in that
+slice, namely those whose unique very-high prime exceeds \(y\), and let
+\(\iota:\cU_{h_0,>y}^{\rm term}\to\cW_H(y)\) be the injective
+terminal/Walsh coordinate map.  Its image retains exactly the
+retained-pair and terminal-mask conditions in
+\cref{thm:tpc59-largest-prime-census}.  Define
+\begin{align}
+ \cD_{\rm base}(y)
+ &:=\sum_{w\in\cW_0\setminus\cW_H(y)}|b_w|^2,
+ \label{eq:tpc59-base-Walsh-energy}\\
+ \cD_{\rm miss}(y)
+ &:=\sum_{w\in\cW_H(y)\setminus\Ran\iota}|b_w|^2.
+ \label{eq:tpc59-missing-high-Walsh-energy}
+\end{align}
+The second term is the high Walsh mass whose complementary cofactor is
+absent from the retained carrier or whose remaining terminal conditions
+fail.  Unique very-high factorization and the atomic norm match
+\eqref{eq:tpc59-terminal-Walsh-atomic-match} now give the exact
+three-part decomposition
+\begin{equation}
+ \boxed{
+ \cD_0
+ =\cD_{\rm base}(y)+\cD_{\rm miss}(y)
+  +\sum_{k=0}^{K_X}\cD_k(y).}
+ \label{eq:tpc59-base-high-partition}
+\end{equation}
+In particular, with
+\(\cD_{\rm off}(y):=\cD_{\rm base}(y)+\cD_{\rm miss}(y)\), either
+\begin{equation}
+ \cD_{\rm off}(y)\ge\frac12\cD_0
+ \label{eq:tpc59-base-dominates}
+\end{equation}
+or some represented high cofactor block satisfies
+\begin{equation}
+ \cD_k(y)\ge\frac{\cD_0}{2B_X(y)}.
+ \label{eq:tpc59-high-block-dominates}
+\end{equation}
+This dichotomy is unconditional, but its favorable alternative is not.
+A proof requiring the represented high face cannot discard either the
+base mass or the unrepresented high mass.  In particular, the possibility
+\(\cD_{\rm miss}>0\) is exactly why the largest-prime census may vanish
+while the full Walsh diagonal is positive.
+
+\subsection{Why coherent energy is not a dyadic measure}
+
+Let \(q(u)=(i,s(u))\) be the residual output key and define
+\begin{equation}
+ A_k(i,s)
+ :=\sum_{\substack{u\in\cB_k(y)\\q(u)=(i,s)}}x_u.
+ \label{eq:tpc59-dyadic-grouped-vector}
+\end{equation}
+The complete very-high residual vector is \(A_H=\sum_kA_k\), and therefore
+\begin{equation}
+ \cG_H=\left\|\sum_kA_k\right\|_2^2,
+ \label{eq:tpc59-grouped-not-additive}
+\end{equation}
+not \(\sum_k\|A_k\|_2^2\).
+
+There is nevertheless one exact locality statement.  If two atoms have the
+same residual key, then
+\begin{equation}
+ d_mr=d_{m'}r',
+ \qquad d_m,d_{m'}\in[D,2D],
+ \qquad \frac12\le\frac{r'}r\le2.
+ \label{eq:tpc59-factor-exchange-locality}
+\end{equation}
+Thus
+\begin{equation}
+ \langle A_k,A_\ell\rangle=0
+ \qquad(|k-\ell|\ge2),
+ \label{eq:tpc59-dyadic-orthogonality}
+\end{equation}
+and
+\begin{equation}
+ \boxed{
+ \cG_H
+ =\sum_k\|A_k\|_2^2
+  +2\operatorname{Re}\sum_k\langle A_k,A_{k+1}\rangle.}
+ \label{eq:tpc59-block-tridiagonal-grouping}
+\end{equation}
+Adjacent blocks can still cancel exactly.  After the native erasure
+\((i,s)\mapsto i\), even this residual-label locality is lost because
+different \(s\) values share the same native output.  Hence the atomic
+pigeonhole theorem cannot be applied to a coherent norm without a new
+lower-reassembly estimate.

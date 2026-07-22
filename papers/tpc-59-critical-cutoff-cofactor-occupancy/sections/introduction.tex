@@ -1,0 +1,130 @@
+\section{Introduction}
+\label{sec:tpc59-introduction}
+
+The preceding native-affine analysis exposed an upstream support question
+before either of its two Gram gates can be useful.  On the very-high face,
+one writes
+\begin{equation}
+ n=mj+h_0=pr,
+ \qquad p>y,
+ \label{eq:tpc59-intro-terminal-equation}
+\end{equation}
+where \(p\) is prime and \(r\) is the target cofactor.  If one inserts the
+convenient fixed-power cutoff
+\begin{equation}
+ y=X^{267/400+\eta},
+ \qquad \eta>0,
+ \label{eq:tpc59-intro-fixed-eta}
+\end{equation}
+then \(n\le X^{1+o(1)}\) gives
+\begin{equation}
+ r\le X^{133/400-\eta+o(1)}.
+ \label{eq:tpc59-intro-small-r}
+\end{equation}
+This is disjoint from a dyadic block
+\(R\asymp J=X^{133/400+o(1)}\).  TPC--58 therefore recorded a separate
+parent-to-compatible-band loss \(\lambda_{\rm reloc}\)
+\citep{WangTPC58}.
+
+That conclusion is correct on the face declared in
+\eqref{eq:tpc59-intro-fixed-eta}, but it leaves a prior optimization
+question: is a fixed \(\eta\) forced by the unique-prime dictionary?  The
+answer is no.  TPC--45 uses only the literal inequalities
+\begin{align}
+ y&>\max\{|h_0|,D_+,J_+,\Delta_M,\sqrt{N_+}\},
+ \label{eq:tpc59-intro-cutoff-geometry}\\
+ \frac{D_+N_+}{y}&<D_-N_-.
+ \label{eq:tpc59-intro-cutoff-separation}
+\end{align}
+At the endpoint, \(\Delta_M=O(Q)\), every other growing term in the maximum
+is \(o(Q)\), and the second inequality only imposes a bounded lower
+threshold on \(y\).  A sufficiently large fixed multiple of \(Q\) therefore
+satisfies both conditions.  The corresponding cofactor ceiling is again a
+fixed multiple of \(J\).
+
+This cutoff retuning removes a geometric positive-power loss, but it does
+not move any atom and does not prove that the physical carrier occupies the
+newly compatible window.  The distinction is central:
+\begin{equation}
+ \boxed{
+ \text{cutoff compatibility}\ne
+ \text{cofactor occupancy}\ne
+ \text{terminal activation}.}
+ \label{eq:tpc59-three-gates}
+\end{equation}
+The first is a support theorem.  The second is an orthogonal projection of
+the pre-terminal carrier.  The third imposes the prime equation and all
+terminal masks.  They have different sharp constants and can fail
+independently.
+
+\subsection{Main results}
+
+Our first theorem introduces the dimensionless cutoff ratio
+\begin{equation}
+ \omega_X:=\frac yQ
+ \label{eq:tpc59-intro-omega}
+\end{equation}
+and proves the exact reciprocity
+\begin{equation}
+ R_{\rm safe}=\frac{N_-}{2y}\asymp\frac J{\omega_X},
+ \qquad
+ R_{\rm max}=\frac{N_+}{y}\asymp\frac J{\omega_X}.
+ \label{eq:tpc59-intro-reciprocity}
+\end{equation}
+A dyadic block below \(R_{\rm safe}\) is automatically contained in the
+very-high face whenever it terminalizes, while a block above
+\(R_{\rm max}\) is empty.  Only \(O(1)\) boundary shells lie between these
+two scales.
+
+Our second result makes occupancy exact.  In the literal lift,
+\begin{equation}
+ [G_X^L]_{m,r,j,\gamma}=c_{m,j,\gamma}\zeta_m,
+ \label{eq:tpc59-intro-row-factorization}
+\end{equation}
+with no \(r\)-dependence.  For a fixed cofactor set \(\cR\), let
+\(N(m)\) and \(N_{\cR}(m)\) be the total and retained cofactor
+multiplicities in row \(m\), and put
+\begin{equation}
+ B_m:=\sum_{j,\gamma}|c_{m,j,\gamma}|^2.
+ \label{eq:tpc59-intro-Bm}
+\end{equation}
+Then the sharp uniform energy-transfer constant is
+\begin{equation}
+ \boxed{
+ \beta_{\cR}
+ =\inf_{\cE_{\rm par}(\zeta)>0}
+   \frac{\cE_{\cR}(\zeta)}{\cE_{\rm par}(\zeta)}
+ =\min_{m:B_mN(m)>0}\frac{N_{\cR}(m)}{N(m)}.}
+ \label{eq:tpc59-intro-beta}
+\end{equation}
+This is a rowwise minimax law, not an asymptotic estimate.  The inherited
+carrier assumptions allow \(N_{\cR}(m)=0\) on an active row, so
+\(\beta_{\cR}=0\) is possible.
+
+Our third result identifies the terminal face exactly using the largest
+prime factor of \(mj+h_0\), and partitions its raw atomic energy into
+dyadic cofactor blocks.  If that face has positive energy, a maximal block
+retains an \(X^{-o(1)}\) fraction.  This proves
+\(\lambda_{\rm blk}=0\) after high-face activation.  It does not prove
+any parent-to-face energy transfer, nor does it permit a restricted
+coherent norm to be returned monotonically to the undeleted output.
+
+\subsection{Claim boundary and organization}
+
+The cutoff theorem, projection minimax, terminal census, and dyadic
+partition are exact finite-dimensional or support statements.  Their
+specialization to the literal fixed-\(h_0\) packet is L1.  A positive
+cofactor-occupancy ratio, a positive terminal activation ratio, weighted
+singleton occupancy, either represented native-affine Gram constant,
+missing-high/off-carrier reassembly, boundary/tail reconnection, and a
+lower bound for the original arithmetic defect remain open.  Nothing here
+crosses the classical parity boundary
+\citep{FriedlanderIwaniec2010}.
+
+\Cref{sec:tpc59-cutoff} proves cutoff--cofactor reciprocity.
+\Cref{sec:tpc59-occupancy} gives the exact projection and terminal minimax
+laws.  \Cref{sec:tpc59-terminal} proves the largest-prime census and dyadic
+localization.  \Cref{sec:tpc59-singleton} connects the selected block to the
+undeleted singleton bridge without assuming norm monotonicity.
+\Cref{sec:tpc59-endpoint,sec:tpc59-claims} give the endpoint audit, kill
+tests, and revised route.

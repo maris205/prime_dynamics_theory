@@ -1,0 +1,360 @@
+\section{Endpoint exponent audit and the revised loss ledger}
+\label{sec:tpc59-endpoint}
+
+The critical cutoff removes a geometrically forced positive-power
+displacement, but it does not improve the inherited determinant-ladder
+capacity or create singleton energy.  This section performs the complete
+endpoint calculation for a general cutoff exponent and then replaces the
+single relocation symbol of TPC--58 by the two logically distinct gates
+identified above.
+
+\subsection{The general \texorpdfstring{\(\xi\)}{xi} exponent dictionary}
+
+Write
+\begin{equation}
+ \omega_X=\frac yQ=X^{\xi+o(1)},
+ \qquad 0\le\xi<\frac{133}{400}.
+ \label{eq:tpc59-endpoint-xi}
+\end{equation}
+The upper restriction merely keeps the compatible cofactor ceiling
+polynomially growing; the identities below remain valid, with a bounded or
+empty cofactor range, at and beyond that endpoint.  From
+\eqref{eq:tpc59-endpoint-QJD} and
+\cref{thm:tpc59-cutoff-cofactor-reciprocity}, the largest compatible
+cofactor exponent is
+\begin{equation}
+ \theta_c(\xi)
+ :=\frac{133}{400}-\xi.
+ \label{eq:tpc59-critical-cofactor-exponent}
+\end{equation}
+The source-prime exponent and the high-cofactor singleton threshold
+exponent are, respectively,
+\begin{align}
+ \lambda_L
+ &:=\frac{267}{400}-\frac{10049}{52500}
+   =\frac{99979}{210000},
+ \label{eq:tpc59-endpoint-lambda-L}\\
+ \lambda_{LD^2}
+ &:=\lambda_L+2\frac{10049}{52500}
+   =\frac{180371}{210000}.
+ \label{eq:tpc59-endpoint-lambda-LD2}
+\end{align}
+For later reference, a compatible very-high residual label \(s=d_mr\)
+obeys
+\begin{equation}
+ s\le X^{\lambda_D+\theta_c(\xi)+o(1)}
+  =X^{110021/210000-\xi+o(1)},
+ \qquad \lambda_D:=\frac{10049}{52500}.
+ \label{eq:tpc59-compatible-residual-exponent}
+\end{equation}
+Thus every residual label remains of polynomial size, as required by the
+TPC--55/57 divisor bounds \citep{WangTPC55,WangTPC57}.
+Let \(M_X(R)\) denote the corresponding coefficient-blind maximum number
+of terminal atoms in one residual fiber on a block \(r\asymp R\).
+
+\begin{theorem}[Endpoint audit on every compatible cofactor block]
+\label{thm:tpc59-compatible-endpoint-audit}
+Let \(R=X^{\theta_R+o(1)}\) be a dyadic cofactor block contained in the
+very-high compatible range, so that
+\begin{equation}
+ 0\le\theta_R\le\theta_c(\xi).
+ \label{eq:tpc59-compatible-theta-range}
+\end{equation}
+Then the following statements hold.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item The source-prime/cofactor ratio satisfies
+ \begin{equation}
+  \frac RL
+  \le X^{-15077/105000-\xi+o(1)}.
+  \label{eq:tpc59-compatible-R-over-L}
+ \end{equation}
+ In particular \(R=o(L)\), uniformly over the compatible range.
+
+ \item The exponent supplied by the coefficient-blind determinant-ladder
+ capacity certificate is
+ \begin{equation}
+  \mu_{\rm cap}(R)
+  :=(\lambda_L-\theta_R)_+
+  =\lambda_L-\theta_R,
+  \label{eq:tpc59-compatible-capacity-exponent}
+ \end{equation}
+ and therefore
+ \begin{equation}
+  \boxed{
+  \mu_{\rm cap}(R)
+  \ge\frac{15077}{105000}+\xi.}
+  \label{eq:tpc59-compatible-capacity-floor}
+ \end{equation}
+ Its gap above the nominal endpoint allowance is
+ \begin{equation}
+  \boxed{
+  \mu_{\rm cap}(R)-\frac1{400}
+  \ge\frac{29629}{210000}+\xi.}
+  \label{eq:tpc59-compatible-capacity-budget-gap}
+ \end{equation}
+
+ \item The TPC--57 same-divisor exclusion condition \(R>HL\), where
+ \(H=\rad|h_0|=X^{o(1)}\), fails throughout the compatible range.  The
+ corresponding large-exchanged-factor lower bound is therefore
+ exponent-trivial there.
+
+ \item The automatic full-fiber singleton condition
+ \begin{equation}
+  R>48HLD^2
+  \label{eq:tpc59-automatic-singleton-condition}
+ \end{equation}
+ is separated from the largest compatible block by the fixed power
+ \begin{equation}
+  \boxed{
+  \lambda_{LD^2}-\theta_c(\xi)
+  =\frac{55273}{105000}+\xi.}
+  \label{eq:tpc59-automatic-singleton-gap}
+ \end{equation}
+ Consequently the automatic-singleton range is empty on the present
+ very-high carrier for every \(\xi\ge0\).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The right side of \eqref{eq:tpc59-compatible-theta-range} and
+\eqref{eq:tpc59-endpoint-lambda-L} give
+\[
+ \theta_R-\lambda_L
+ \le\frac{133}{400}-\xi-\frac{99979}{210000}
+ =-\frac{15077}{105000}-\xi,
+\]
+which proves \eqref{eq:tpc59-compatible-R-over-L}.  Since the right side is
+strictly negative, \((\lambda_L-\theta_R)_+=\lambda_L-\theta_R\), and its
+minimum occurs at \(\theta_R=\theta_c(\xi)\).  Hence
+\[
+ \lambda_L-\theta_R
+ \ge\frac{99979}{210000}
+       -\left(\frac{133}{400}-\xi\right)
+ =\frac{15077}{105000}+\xi.
+\]
+Subtracting \(1/400=525/210000\) proves
+\eqref{eq:tpc59-compatible-capacity-budget-gap}.  Because \(H=X^{o(1)}\),
+\eqref{eq:tpc59-compatible-R-over-L} rules out \(R>HL\).
+Finally,
+\[
+ \frac{180371}{210000}
+ -\left(\frac{133}{400}-\xi\right)
+ =\frac{55273}{105000}+\xi,
+\]
+which proves the last assertion.  Fixed constants such as \(48H\) are
+absorbed by the displayed \(X^{o(1)}\) term.
+\end{proof}
+
+The capacity calculation is a statement about the strength of an
+\emph{upper} certificate:
+\begin{equation}
+ M_X(R)\ll X^{o(1)}\left(1+\frac LR\right).
+ \label{eq:tpc59-capacity-certificate-reminder}
+\end{equation}
+It does not assert that the actual multiplicity is as large as the right
+side.  More importantly, even a degree-two carrier may have zero singleton
+energy.  Thus \eqref{eq:tpc59-compatible-capacity-budget-gap} kills a
+support-only transversal closure at the \(1/400\) endpoint; it is not a
+value that may be entered as a proved singleton-occupancy loss.  A weighted
+distinguished-vector estimate can still be strictly better, but none is
+proved here.
+
+\begin{corollary}[Critical cutoff is support-optimal]
+\label{cor:tpc59-critical-cutoff-optimal}
+Under the declared information \(\Delta_M=O(Q)\), and at the level of
+fixed-power exponents, among the certified polynomial schedules
+\(\omega_X=X^{\xi+o(1)}\), \(\xi\ge0\), the critical choice
+\begin{equation}
+ \boxed{\xi=0,\qquad y\asymp Q}
+ \label{eq:tpc59-xi-zero-optimal}
+\end{equation}
+maximizes the compatible cofactor exponent and simultaneously minimizes
+the certified capacity exponent, the failure exponent in \(R/L\), and the
+gap to the automatic-singleton threshold.  Every fixed \(\xi>0\) worsens
+all four quantities by exactly \(\xi\).
+\end{corollary}
+
+This is an endpoint optimization only.  It proves neither that a critical
+block is present in every active row nor that any such block terminalizes.
+Sharper support information such as \(\Delta_M=o(Q)\) could permit a
+different sub-\(Q\) cutoff analysis; no such information is assumed here.
+Those questions are measured exactly by
+\(\beta_{\cR}\), \(\rho_{\cR}(\zeta)\), and \(\tau_{\cR}\) in
+\cref{sec:tpc59-occupancy}.
+
+\subsection{Retiring relocation: feasibility before occupancy}
+
+TPC--58 used one symbol \(\lambda_{\rm reloc}\) for the passage from a
+parent carrier to the smaller cofactor range produced by its fixed-
+\(\eta\) cutoff \citep{WangTPC58}.  That notation mixed a support
+feasibility question with an energy-transfer estimate.  They are not
+additive loss exponents.  The correct replacement is the ordered pair
+\begin{equation}
+ \boxed{
+ \lambda_{\rm reloc}
+ \quad\rightsquigarrow\quad
+ \{\text{cutoff feasibility prerequisite}\}
+ \ \text{followed by}\ \lambda_{\rm occ}.}
+ \label{eq:tpc59-relocation-split}
+\end{equation}
+The feasibility prerequisite is the trichotomy in
+\cref{thm:tpc59-cutoff-cofactor-reciprocity}: a candidate block is safe,
+lies in the bounded boundary region, or is empty.  It has no associated
+lower-energy inequality.  At the critical cutoff, blocks at exponent
+\(133/400\) are feasible, so there is no separate geometric exponent to
+enter in an energy ledger.  For the fixed-\(\eta\) cutoff, by contrast, the
+old \(R\asymp J\) block is eventually empty; this is a closed gate, not an
+energy loss equal to \(\eta\).
+
+Once feasibility is established, the only parent-to-window energy charge
+is the actual occupancy exponent.  A typical distinguished input would be
+\begin{equation}
+ \cE_{\cR}(\zeta)
+ \ge X^{-\lambda_{\rm occ}+o(1)}\cE_{\rm par}(\zeta),
+ \label{eq:tpc59-occupancy-loss-input}
+\end{equation}
+or the corresponding coefficient-uniform assertion
+\(\beta_{\cR}\ge X^{-\lambda_{\rm occ}+o(1)}\).  Neither follows from
+cutoff admissibility.
+
+There is no hidden transport map behind
+\eqref{eq:tpc59-occupancy-loss-input}.  It is an orthogonal coordinate
+projection onto cofactor labels already present in the parent carrier.
+Moreover, factor exchange inside one residual fiber satisfies
+\(r'/r\in[1/2,2]\).  It cannot move energy across the fixed-power gap
+created by a cutoff with \(\xi>0\).
+
+\subsection{The complete prospective endpoint ledger}
+
+Let \(\cD_{\rm up}\) denote an explicitly declared upstream raw atomic
+energy.  If a packet-selection theorem is used, its normalization is
+\begin{equation}
+ \cE_{\rm par}(\zeta)
+ \ge X^{-\lambda_{\rm sel}+o(1)}\cD_{\rm up},
+ \label{eq:tpc59-upstream-selection-normalization}
+\end{equation}
+where \(\cE_{\rm par}\) is exactly the one-side slice energy defined in
+\eqref{eq:tpc59-parent-energy}.  For one distinguished coefficient vector,
+write the remaining conditional chain before inserting its exponents as
+\begin{equation}
+ \begin{aligned}
+ \cD_{\rm up}
+ &\xrightarrow{\rm selection}\cE_{\rm par}
+ \xrightarrow{\rm occupancy}\cE_{\cR}\\
+ &\xrightarrow{\rm terminal}\cD_{\cR}^{\rm term}
+ \hookrightarrow\cD_H
+ \xrightarrow{\rm dyadic}\cD_{k_*}\\
+ &\xrightarrow{\rm singleton}\cG_H(y;\zeta)
+ \xrightarrow{\rm native\ erasure}\mathcal N_H
+ \xrightarrow{\rm affine}\mathcal N_{\rm aff}^{\rm rep}\\
+ &
+ \xrightarrow{\rm off\mbox{-}carrier\ reassembly}
+ \mathcal N_{\rm slice}^{\rm full}\\
+ &
+ \xrightarrow{\rm boundary/tail}\text{parent arithmetic target}.
+ \end{aligned}
+ \label{eq:tpc59-prospective-transfer-chain}
+\end{equation}
+Every arrow denotes a different assertion.  The unlabeled inclusion is
+exact because the indicator defining \(\cD_{\cR}^{\rm term}\) already
+imposes \(p>y\).  Terminal activation includes primality, the shaped
+terminal cutoff, squarefree and coprimality conditions; it is not part of
+the cofactor projection.  The high-only square \(\cG_H\), not the terminal
+square containing \(p\le y\), is the input to the TPC--58 native-erasure
+map.
+
+Here the TPC--58 maps \(T_H\) and \(C_{\mu,H}\) are understood on the same
+represented terminal/Walsh baseline \(\Ran\iota\) used to define
+\(\cG_H\).  Thus \(\mathcal N_{\rm aff}^{\rm rep}\) contains the base
+column and the represented high column, but not the missing-high coordinates
+measured by \(\cD_{\rm miss}\) in
+\eqref{eq:tpc59-missing-high-Walsh-energy}.  Restoring those coordinates is
+the displayed off-carrier reassembly arrow.  It is a genuine lower-transfer
+gate: an omitted high vector can cancel the represented affine vector after
+restoration, so no norm monotonicity is available.
+If a future lower transfer proves
+\begin{equation}
+ \mathcal N_{\rm slice}^{\rm full}
+ \ge X^{-\lambda_{\rm reasm}+o(1)}
+       \mathcal N_{\rm aff}^{\rm rep},
+ \label{eq:tpc59-reassembly-loss-input}
+\end{equation}
+then \(\lambda_{\rm reasm}\) is its separate ledger charge.
+
+The least maximizing dyadic index \(k_*=k_*(\zeta)\) is allowed to depend
+on this distinguished vector.  Thus the zero block exponent in this chain
+is not a coefficient-uniform theorem for one fixed dyadic cell.  Such a
+uniform route would have to fix the cell independently of \(\zeta\) or
+prove a separate finite-cover lower reassembly.
+
+If future work proves polynomial lower bounds for all arrows in
+\eqref{eq:tpc59-prospective-transfer-chain}, the complete exponent is
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ \Lambda_{\rm tot}:={}&
+ \lambda_{\rm sel}+\lambda_{\rm occ}
+ +\lambda_{\rm blk}
+ +\lambda_{\rm term}+\lambda_{\rm sing}\\
+ &+\lambda_H+\lambda_{\rm aff}
+ +\lambda_{\rm reasm}
+ +\lambda_{\rm bdry}+\lambda_{\rm tail}.
+ \end{aligned}}
+ \label{eq:tpc59-complete-loss-ledger}
+\end{equation}
+The critical cutoff establishes feasibility at exponent \(R\asymp J\)
+without creating an energy-ledger entry.  The one exact zero fixed-power
+energy-localization cost established here is
+\begin{equation}
+ \boxed{\lambda_{\rm blk}=0,}
+ \label{eq:tpc59-zero-block-loss}
+\end{equation}
+as a distinguished-vector statement relative to an already activated
+nonzero very-high terminal diagonal, as in
+\cref{thm:tpc59-exact-dyadic-localization}.  No positive lower scale or
+numerical loss exponent is proved for the remaining arithmetic gates.
+
+The safe endpoint requirement is the strict inequality
+\begin{equation}
+ \boxed{\Lambda_{\rm tot}<\frac1{400}.}
+ \label{eq:tpc59-strict-endpoint-ledger}
+\end{equation}
+Equality is not accepted without a constant-level comparison and quantified
+remainders.  In particular, the logarithmic factor in the dyadic
+pigeonhole is \(X^{o(1)}\) and has zero fixed exponent, but it can still
+spoil a closure attempted exactly at \(1/400\).
+
+\subsection{Level and kill-test boundary}
+
+The conclusions of this section have the following precise status.
+\begin{description}[leftmargin=3.3em,style=nextline]
+ \item[Exact L0/L1 progress.]
+ The rational endpoint identities, cutoff optimization, support-capacity
+ audit, empty automatic-singleton range, feasibility/occupancy split, and
+ strict loss ledger are exact.  Their use of \(s=d_mr\), the literal fixed
+ shift, and raw cofactor atoms is the L1 specialization.
+
+ \item[Closed support-only doors.]
+ On every compatible block, the available transversal/capacity exponent
+ already exceeds \(1/400\), while the deterministic same-divisor and
+ automatic-singleton thresholds are outside the carrier.  Increasing
+ \(\xi\) cannot repair either failure.
+
+ \item[Open arithmetic doors.]
+ A positive distinguished or uniform cofactor occupancy, terminal
+ activation, weighted singleton fraction, native-erasure angle,
+ represented affine noncancellation angle, missing-high/off-carrier
+ reassembly, and boundary/tail reconnection remain independent hypotheses.
+
+ \item[Not proved (L2).]
+ No positive fixed-\(h_0\) arithmetic lower bound, parity improvement,
+ prime-pair asymptotic, or twin-prime conclusion follows from the endpoint
+ optimization.
+\end{description}
+
+Thus the critical cutoff genuinely removes one artificial positive-power
+support displacement and the dyadic theorem removes a second bookkeeping
+loss.  The remaining obstruction is no longer cutoff geometry: it is the
+ actual coefficient-weighted occupancy and activation of the compatible
+ carrier, followed by the two undeleted grouping gates and restoration of
+ the unrepresented high coordinates.

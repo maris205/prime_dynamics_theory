@@ -1,0 +1,228 @@
+\section{Exact cofactor occupancy and terminal activation}
+\label{sec:tpc59-occupancy}
+
+The critical cutoff makes a cofactor window possible at the desired
+exponent.  We now determine exactly what is needed for the literal carrier
+to place energy in that window.  This is an orthogonal projection problem
+before terminal grouping and therefore admits a sharp rowwise solution.
+
+\subsection{Literal pre-terminal energy}
+
+On one declared source system, let \(\cI_X\) be the fixed retained set of
+\((m,r)\)-pairs, \(\cJ_{X,a}\) the fixed orbit class, and \(\cO_X\) the
+complete opposite-row cell.  The TPC--53/57 factorization can be written
+\begin{equation}
+ [G_X^L]_{m,r,j,\gamma}
+ =c_{m,j,\gamma}\zeta_m,
+ \qquad
+ (m,r)\in\cI_X,\quad j\in\cJ_{X,a},\quad\gamma\in\cO_X,
+ \label{eq:tpc59-literal-preterminal-factorization}
+\end{equation}
+where \(c_{m,j,\gamma}\) contains the source shape with its M\"obius and
+prime-logarithm factors, literal mask, opposite-row factor, orbit phase, and
+four-factor profile, but not the bounded row coefficient \(\zeta_m\).  The
+essential fact is that \(c_{m,j,\gamma}\) has no \(r\)-dependence
+\citep{WangTPC53,WangTPC57}.
+
+Put
+\begin{equation}
+ B_m:=\sum_{j\in\cJ_{X,a}}\sum_{\gamma\in\cO_X}
+       |c_{m,j,\gamma}|^2,
+ \qquad
+ N(m):=\#\{r:(m,r)\in\cI_X\}.
+ \label{eq:tpc59-Bm-Nm}
+\end{equation}
+Then the raw parent energy is exactly
+\begin{equation}
+ \boxed{
+ \cE_{\rm par}(\zeta)
+ =\sum_mB_m|\zeta_m|^2N(m).}
+ \label{eq:tpc59-parent-energy}
+\end{equation}
+Repeated cofactors are distinct orthogonal atoms in this identity.
+
+For any fixed cofactor set \(\cR\subset(0,\infty)\), define
+\begin{equation}
+ N_{\cR}(m)
+ :=\#\{r:(m,r)\in\cI_X,\ r\in\cR\}
+ \label{eq:tpc59-compatible-row-multiplicity}
+\end{equation}
+and the projected energy
+\begin{equation}
+ \boxed{
+ \cE_{\cR}(\zeta)
+ =\sum_mB_m|\zeta_m|^2N_{\cR}(m).}
+ \label{eq:tpc59-compatible-energy}
+\end{equation}
+The set \(\cR\) may be the safe critical window, a union of dyadic blocks,
+or one distinguished block.  It is fixed independently of \(\zeta\).
+
+\begin{theorem}[Sharp rowwise occupancy minimax]
+\label{thm:tpc59-rowwise-occupancy-minimax}
+Assume \(\cE_{\rm par}\) is not identically zero on the coefficient cube
+\(|\zeta_m|\le1\).  The optimal coefficient-uniform projection constant is
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ \beta_{\cR}
+ &:={}
+ \inf_{\substack{|\zeta_m|\le1\\\cE_{\rm par}(\zeta)>0}}
+ \frac{\cE_{\cR}(\zeta)}{\cE_{\rm par}(\zeta)}\\
+ &=\min_{m:B_mN(m)>0}\frac{N_{\cR}(m)}{N(m)}.
+ \end{aligned}}
+ \label{eq:tpc59-beta-R-minimax}
+\end{equation}
+In particular,
+\begin{equation}
+ \beta_{\cR}>0
+ \quad\Longleftrightarrow\quad
+ N_{\cR}(m)>0
+ \quad\text{for every row with }B_mN(m)>0.
+ \label{eq:tpc59-beta-positive-test}
+\end{equation}
+The formula is sharp at every finite \(X\).
+\end{theorem}
+
+\begin{proof}
+For \(B_mN(m)>0\), write
+\[
+ \rho_m:=\frac{N_{\cR}(m)}{N(m)},
+ \qquad
+ w_m:=B_mN(m)|\zeta_m|^2.
+\]
+Whenever the denominator is positive,
+\begin{equation}
+ \frac{\cE_{\cR}(\zeta)}{\cE_{\rm par}(\zeta)}
+ =\frac{\sum_mw_m\rho_m}{\sum_mw_m},
+ \label{eq:tpc59-occupancy-convex-combination}
+\end{equation}
+which is a convex combination of the row ratios.  It is at least their
+minimum.  Conversely, choose a minimizing row \(m_*\), set
+\(\zeta_{m_*}=1\), and set every other row coefficient to zero.  Then the
+ratio equals \(\rho_{m_*}\).  The positivity test follows immediately.
+\end{proof}
+
+For one distinguished coefficient vector, define the exact weaker ratio
+\begin{equation}
+ \rho_{\cR}(\zeta)
+ :=\frac{\sum_mB_m|\zeta_m|^2N_{\cR}(m)}
+         {\sum_mB_m|\zeta_m|^2N(m)},
+ \label{eq:tpc59-distinguished-occupancy}
+\end{equation}
+whenever the denominator is positive.  Then
+\begin{equation}
+ \beta_{\cR}\le\rho_{\cR}(\zeta)\le1.
+ \label{eq:tpc59-uniform-distinguished-order}
+\end{equation}
+A favorable distinguished ratio does not prove a uniform carrier theorem.
+
+\begin{corollary}[Sharp zero-occupancy obstruction]
+\label{cor:tpc59-zero-occupancy-obstruction}
+If one active row has retained cofactors but none in \(\cR\), then
+\(\beta_{\cR}=0\).  Hence geometric compatibility of \(\cR\), positive
+cardinality of \(\cR\) in other rows, and boundedness of \(\zeta\) cannot
+imply a positive uniform parent-to-window transfer.
+\end{corollary}
+
+This is why the word ``relocation'' must be handled carefully.  The map is
+the coordinate projection onto already existing \(r\)-labels; it does not
+send an atom at one cofactor to another cofactor.  A fixed-factor cutoff
+retuning can change which existing labels are compatible, but it cannot
+create their energy.
+
+\subsection{Terminal activation as a second rowwise minimax}
+
+For a pre-terminal coordinate \(u=(m,r,j,\gamma)\), put
+\begin{equation}
+ n_u:=mj+h_0,
+ \qquad
+ p_u:=\frac{n_u}{r}
+ \label{eq:tpc59-terminal-candidate}
+\end{equation}
+when the quotient is integral.  Let \(\one_{\rm term}^{>y}(u)\) be the
+indicator that \(u\) satisfies the complete inherited terminal support:
+\(p_u\) is prime, \(p_u>y\), \(\Lambda_X(n_u)\ne0\), and all required
+squarefree, coprimality, and support conditions hold.  Define the rowwise
+terminal weight inside \(\cR\) by
+\begin{equation}
+ T_{\cR}(m)
+ :=\sum_{\substack{r:(m,r)\in\cI_X\\r\in\cR}}
+   \sum_{j,\gamma}
+   \one_{\rm term}^{>y}(m,r,j,\gamma)
+   |\Lambda_X(n_u)|^2|c_{m,j,\gamma}|^2.
+ \label{eq:tpc59-row-terminal-weight}
+\end{equation}
+The literal terminal amplitude is
+\begin{equation}
+ x_u=\mu(r)\Lambda_X(n_u)c_{m,j,\gamma}\zeta_m,
+ \label{eq:tpc59-terminal-amplitude}
+\end{equation}
+so the raw terminal diagonal in \(\cR\) is
+\begin{equation}
+ \boxed{
+ \cD_{\cR}^{\rm term}(\zeta)
+ =\sum_mT_{\cR}(m)|\zeta_m|^2.}
+ \label{eq:tpc59-terminal-energy-row-sum}
+\end{equation}
+
+\begin{proposition}[Exact terminal-activation minimax]
+\label{prop:tpc59-terminal-activation-minimax}
+Assume \(\cE_{\cR}\) is not identically zero.  The optimal uniform lower
+constant from compatible pre-terminal energy to its very-high terminal
+diagonal is
+\begin{equation}
+ \boxed{
+ \tau_{\cR}
+ :=\inf_{\substack{|\zeta_m|\le1\\\cE_{\cR}(\zeta)>0}}
+   \frac{\cD_{\cR}^{\rm term}(\zeta)}{\cE_{\cR}(\zeta)}
+ =\min_{m:B_mN_{\cR}(m)>0}
+   \frac{T_{\cR}(m)}{B_mN_{\cR}(m)}.}
+ \label{eq:tpc59-tau-R-minimax}
+\end{equation}
+The exact combined parent-to-terminal constant is
+\begin{equation}
+ \boxed{
+ \chi_{\cR}
+ :=\inf_{\substack{|\zeta_m|\le1\\\cE_{\rm par}(\zeta)>0}}
+   \frac{\cD_{\cR}^{\rm term}(\zeta)}{\cE_{\rm par}(\zeta)}
+ =\min_{m:B_mN(m)>0}\frac{T_{\cR}(m)}{B_mN(m)},}
+ \label{eq:tpc59-combined-minimax}
+\end{equation}
+with the convention \(T_{\cR}(m)=0\) if
+\(N_{\cR}(m)=0\).  Moreover,
+\begin{equation}
+ \chi_{\cR}\ge\beta_{\cR}\tau_{\cR}.
+ \label{eq:tpc59-combined-product-lower}
+\end{equation}
+None of these exact formulas asserts that the displayed constant is
+positive.
+\end{proposition}
+
+\begin{proof}
+The two minimax formulas follow from the same weighted-average argument as
+\cref{thm:tpc59-rowwise-occupancy-minimax}, concentrating \(\zeta\) on one
+row for sharpness.  If an active parent row has \(N_{\cR}(m)=0\), then
+\(\beta_{\cR}=\chi_{\cR}=0\), and
+\eqref{eq:tpc59-combined-product-lower} is immediate.  Otherwise every
+active parent row has \(N_{\cR}(m)>0\), and
+\[
+ \frac{T_{\cR}(m)}{B_mN(m)}
+ =\frac{N_{\cR}(m)}{N(m)}
+  \frac{T_{\cR}(m)}{B_mN_{\cR}(m)}.
+\]
+Taking rowwise minima proves
+\eqref{eq:tpc59-combined-product-lower}.
+\end{proof}
+
+The inherited hypotheses impose no prime-distribution lower bound on
+\(T_{\cR}(m)\).  Thus \(\tau_{\cR}\) and \(\chi_{\cR}\) may vanish even
+when \(\beta_{\cR}>0\).  Conversely, a positive terminal face in selected
+rows does not repair a row with zero compatible occupancy.  This formally
+separates the last two gates in \eqref{eq:tpc59-three-gates}.
+
+\begin{remark}[Activation constants are not probabilities]
+The literal multiplier \(|\Lambda_X(n)|^2\) remains inside
+\(T_{\cR}(m)\).  Consequently \(\tau_{\cR}\) and \(\chi_{\cR}\) are
+energy-transfer constants and can exceed one; only their possible vanishing
+and their polynomial lower scale are relevant to the loss ledger.
+\end{remark}
