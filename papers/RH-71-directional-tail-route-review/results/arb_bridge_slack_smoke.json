@@ -1,0 +1,72 @@
+{
+  "all_one_percent_slacks_positive": true,
+  "claim_boundary": "This certifies finite-scale bridge headroom relative to the archived RH-70 balls; it does not construct the upstream bridge.",
+  "minimum_one_percent_relative_slack_lower": 0.0064333382668419516,
+  "minimum_one_percent_slack_lower": 0.005815364340659024,
+  "precision_bits": 256,
+  "rows": [
+    {
+      "budgets": {
+        "1_percent": {
+          "relative_slack_ball": "[0.00643333826684195182403227937629522 +/- 5.11e-36]",
+          "relative_slack_lower": 0.0064333382668419516,
+          "slack_ball": "[0.00581536434065902469919998455843486 +/- 3.65e-36]",
+          "slack_lower": 0.005815364340659024,
+          "strictly_positive_certified": true
+        },
+        "2_percent": {
+          "relative_slack_ball": "[0.01643333826684195182403227937629522 +/- 5.13e-36]",
+          "relative_slack_lower": 0.016433338266841954,
+          "slack_ball": "[0.01485478384488745216989405524684824 +/- 2.60e-36]",
+          "slack_lower": 0.014854783844887452,
+          "strictly_positive_certified": true
+        },
+        "5_percent": {
+          "relative_slack_ball": "[0.04643333826684195182403227937629522 +/- 5.17e-36]",
+          "relative_slack_lower": 0.04643333826684195,
+          "slack_ball": "[0.04197304235757273458197626731208837 +/- 3.57e-36]",
+          "slack_lower": 0.04197304235757274,
+          "strictly_positive_certified": true
+        }
+      },
+      "finite_energy_ball": "[0.903941950422842747069407068841337635 +/- 6.34e-37]",
+      "frozen_full_upper_ball": "[0.907166005586412149840901154971316149 +/- 6.55e-37]",
+      "horizon": 4,
+      "side": "left",
+      "sigma": 0.16
+    },
+    {
+      "budgets": {
+        "1_percent": {
+          "relative_slack_ball": "[0.00678670966490197045380813426480437 +/- 3.75e-36]",
+          "relative_slack_lower": 0.00678670966490197,
+          "slack_ball": "[0.00680451192187300537597594071136316 +/- 4.89e-36]",
+          "slack_lower": 0.006804511921873005,
+          "strictly_positive_certified": true
+        },
+        "2_percent": {
+          "relative_slack_ball": "[0.01678670966490197045380813426480437 +/- 3.76e-36]",
+          "relative_slack_lower": 0.01678670966490197,
+          "slack_ball": "[0.01683074297911581150982514959802885 +/- 3.86e-36]",
+          "slack_lower": 0.016830742979115812,
+          "strictly_positive_certified": true
+        },
+        "5_percent": {
+          "relative_slack_ball": "[0.04678670966490197045380813426480437 +/- 3.79e-36]",
+          "relative_slack_lower": 0.04678670966490197,
+          "slack_ball": "[0.04690943615084422991137277625802592 +/- 1.15e-36]",
+          "slack_lower": 0.04690943615084423,
+          "strictly_positive_certified": true
+        }
+      },
+      "finite_energy_ball": "[1.002623105724280613384920888666569104 +/- 5.53e-37]",
+      "frozen_full_upper_ball": "[1.005844824859650414142794156841871639 +/- 3.68e-37]",
+      "horizon": 4,
+      "side": "right",
+      "sigma": 0.16
+    }
+  ],
+  "source": "papers/RH-70-frozen-production-block-hardy-audit/results/frozen_production_interval_audit.json",
+  "source_sha256": "3a7ae810cc6a8d1b8c667267dd5bb7bd9279273b34b7f6305efaf9f9e8fbde26",
+  "status": "rh71_arb_bridge_slack_certificate"
+}

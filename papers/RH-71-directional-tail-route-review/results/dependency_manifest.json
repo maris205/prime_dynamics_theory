@@ -1,0 +1,73 @@
+{
+  "external_inputs": {
+    "rh62_summary": {
+      "path": "papers/RH-62-krylov-residual-stein-tails/results/summary.json",
+      "sha256": "dbab18f4350b791e697d5a37d8c6493938828b354286aa9a32efcbf0e3a93097"
+    },
+    "rh63_summary": {
+      "path": "papers/RH-63-nested-krylov-residual-closure/results/summary.json",
+      "sha256": "95be09b75eda60948a365792b79b467b9dd2f7a7f2b83e93772673bd0ac79c39"
+    },
+    "rh64_summary": {
+      "path": "papers/RH-64-weighted-terminal-residuals/results/summary.json",
+      "sha256": "e0cba23c0c976461caa488d8e14430a7165ce23af4663186baf737458765d5e2"
+    },
+    "rh65_summary": {
+      "path": "papers/RH-65-physical-family-metric-conditioning/results/summary.json",
+      "sha256": "cf81410f4ba3a2bc9936ecdc6659aaa562c993043f2d29a8656ab71e598d6260"
+    },
+    "rh66_summary": {
+      "path": "papers/RH-66-block-cross-column-krylov-gram/results/summary.json",
+      "sha256": "160ee574e0bd8b85312303ede3abba3e7c7633c11d1b20718b6e80b355d476e4"
+    },
+    "rh67_summary": {
+      "path": "papers/RH-67-physical-covariance-block-envelopes/results/summary.json",
+      "sha256": "7b7167ff9bc18051b74670ca6f3cac3b3dd8e8c5a71730bd1208cd2eec42deb5"
+    },
+    "rh68_summary": {
+      "path": "papers/RH-68-phase-coherence-block-depth-barrier/results/summary.json",
+      "sha256": "e91780bdf38215a0e31bb8275a07450b92bdd70e9348ca4dda6eed08834e9e8f"
+    },
+    "rh69_summary": {
+      "path": "papers/RH-69-adaptive-certificate-portfolio/results/summary.json",
+      "sha256": "7492f3ca695b7f322873fd75cc1f0c4839df296fcba4ea1917e9124ffe3cdb80"
+    },
+    "rh70_interval_audit": {
+      "path": "papers/RH-70-frozen-production-block-hardy-audit/results/frozen_production_interval_audit.json",
+      "sha256": "3a7ae810cc6a8d1b8c667267dd5bb7bd9279273b34b7f6305efaf9f9e8fbde26"
+    },
+    "rh70_summary": {
+      "path": "papers/RH-70-frozen-production-block-hardy-audit/results/summary.json",
+      "sha256": "8cb310fa8763058ddb1066a60da78cd6f371760cd2c2f6d90f5fb683ec123f18"
+    },
+    "roadmap_after_rh50": {
+      "path": "papers/RH-ROADMAP-after-RH50.md",
+      "sha256": "4def72e8da1310ec01126aba3d7d3adfdc430c9019340fc8225747b547a0a874"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "a84cf35fa33deef68ff5bbac718e396087007ce48a79a6f2f197287d347ab4a3",
+    "experiments/build_route_review.py": "b0539fafbc9257c8b0bbc1461eb10dcd251283bf0e037dd4f0058be8aaf60377",
+    "experiments/make_figures.py": "33175f0434f5d8d5930e7a140315c519eb3399894e90eaeea50d61e93b8e449b",
+    "experiments/run_arb_bridge_slack_audit.py": "ba40d31ae44da6cb01f89ad270faf631e90aaba7ebc1f1f8b0418af92a7fbba1",
+    "experiments/verify_archive.py": "4fd2fb091883aecf4e26d357e963864e8693f8eed19085d99cb11852e125747f",
+    "src/route_review/__init__.py": "eefc63e4255e858e3727504d7b7fb2c474ec0cc6f51d222269b287de3745fc25",
+    "src/route_review/stack.py": "9fcf4c241cb75fe56d36bcbb3a92470864c03119e03a707e35dc8df804f983d4",
+    "tests/test_archived_results.py": "ee7c8ab4de63538dc0897096140d8a0da66c7619967eb06685e78128b321e451",
+    "tests/test_theory.py": "95394530fec3ed50c7512b7b9892d786b545e21b83bf1241e16f3fb081f889df"
+  },
+  "publication_artifacts": {
+    ".gitignore": "45bc6f151fb9fa411571660ee59bb7d034af65fbb7c1c6104c4c7af4ada209fc",
+    "README.md": "36c70aab0f8075e420dc58194d2fe4c25d5ed42505fe5611c409ff043cf7086f",
+    "UPDATED_ROADMAP.md": "a7549b2aef44c1fd2069667e1a5366b274dab2da6e2193e94ef7d3a25ec7b4d2",
+    "directional-tail-route-review.pdf": "04037ad32152f18e1bd4e6c36b83b643db49e692fe56aa4ef765ad14d99c4304",
+    "figures/directional_tail_route_review.pdf": "0cdf60eadfef195d084c9de90f416cbc10927598ab65564859de14ed30cc55ba",
+    "figures/directional_tail_route_review.png": "cd7f271b4fa5e397ec74fab2303173ddb75d0740e1c62570d6f1b77e28d52279",
+    "main.pdf": "04037ad32152f18e1bd4e6c36b83b643db49e692fe56aa4ef765ad14d99c4304",
+    "main.tex": "b4117b0651eb4f3cb32c2ff2dfdb20e9ad70ca61c7fa05cc92e79eccd4e795a6",
+    "pyproject.toml": "709ab94f7fb6ba375f9dc6d52b96dc096d5a7a4a295d9c1f5459e1b745bcac4f",
+    "references.bib": "0dc3e2f9b737610ed1bfd0726fe635e03ef8644b8317b72502932a5bffde58bd",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "status": "all_rh71_inputs_sources_and_publication_artifacts_hashed"
+}

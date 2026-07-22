@@ -1,0 +1,273 @@
+{
+  "bridge_budget_rows": [
+    {
+      "budgets": {
+        "1_percent": {
+          "absolute_bridge_slack": 0.005815364340659102,
+          "positive": true,
+          "relative_bridge_slack": 0.0064333382668420366
+        },
+        "2_percent": {
+          "absolute_bridge_slack": 0.014854783844887476,
+          "positive": true,
+          "relative_bridge_slack": 0.016433338266841978
+        },
+        "5_percent": {
+          "absolute_bridge_slack": 0.04197304235757282,
+          "positive": true,
+          "relative_bridge_slack": 0.046433338266842046
+        }
+      },
+      "completion_factor_upper": 1.003566661733158,
+      "finite_energy_lower": 0.9039419504228428,
+      "frozen_full_upper": 0.9071660055864121,
+      "horizon": 4,
+      "side": "left",
+      "sigma": 0.16
+    },
+    {
+      "budgets": {
+        "1_percent": {
+          "absolute_bridge_slack": 0.0068045119218731465,
+          "positive": true,
+          "relative_bridge_slack": 0.006786709664902111
+        },
+        "2_percent": {
+          "absolute_bridge_slack": 0.01683074297911591,
+          "positive": true,
+          "relative_bridge_slack": 0.016786709664902068
+        },
+        "5_percent": {
+          "absolute_bridge_slack": 0.04690943615084442,
+          "positive": true,
+          "relative_bridge_slack": 0.04678670966490216
+        }
+      },
+      "completion_factor_upper": 1.003213290335098,
+      "finite_energy_lower": 1.0026231057242807,
+      "frozen_full_upper": 1.0058448248596503,
+      "horizon": 4,
+      "side": "right",
+      "sigma": 0.16
+    }
+  ],
+  "bridge_budget_summary": {
+    "all_one_percent_diagnostic_slacks_positive": true,
+    "engineering_target_only": "the one-percent ledger is a finite-scale sharpness target, not a necessary condition for Stage A1",
+    "minimum_one_percent_relative_slack": 0.0064333382668420366,
+    "minimum_one_percent_relative_slack_percent": 0.6433338266842037
+  },
+  "closed_false_routes": [
+    "one-step or plain geometric norm propagation as a uniform proof",
+    "unlocalized full-space Lyapunov weighting as a polylogarithmic shortcut",
+    "universal fixed block Krylov depth from stability data alone",
+    "trace-global PSD sharpness without a physical/global-size tradeoff"
+  ],
+  "closed_nodes": [
+    "adaptive_cutoff_transfer",
+    "augmented_bridge_theorem",
+    "identification_composition_theorem",
+    "peripheral_factor_transfer",
+    "terminal_frozen_upper"
+  ],
+  "dependencies": {
+    "bridge_instance": [
+      "augmented_bridge_theorem",
+      "upstream_interval_triple"
+    ],
+    "finite_scale_validated_hardy": [
+      "terminal_frozen_upper",
+      "bridge_instance"
+    ],
+    "renormalized_determinant_limit": [
+      "stage_A4_unconditional",
+      "pole_renormalized_limit_theorem"
+    ],
+    "stage_A1": [
+      "finite_scale_validated_hardy",
+      "uniform_family_scaling"
+    ],
+    "stage_A4_unconditional": [
+      "stage_A1",
+      "peripheral_factor_transfer",
+      "adaptive_cutoff_transfer",
+      "identification_composition_theorem"
+    ]
+  },
+  "frontiers": {
+    "finite_scale": [
+      "upstream_interval_triple"
+    ],
+    "renormalized_determinant_limit": [
+      "pole_renormalized_limit_theorem",
+      "uniform_family_scaling",
+      "upstream_interval_triple"
+    ],
+    "stage_A1": [
+      "uniform_family_scaling",
+      "upstream_interval_triple"
+    ],
+    "stage_A4_unconditional": [
+      "uniform_family_scaling",
+      "upstream_interval_triple"
+    ]
+  },
+  "next_priority": "Validate the folded-Gaussian matrix and rank-two peripheral deflation before attempting more terminal-tail variants.",
+  "paper_ledger": [
+    {
+      "all_theorem_gates_true": true,
+      "directory": "RH-62-krylov-residual-stein-tails",
+      "paper": 62,
+      "primary_result": "Arnoldi residual identity and directional power upper",
+      "remaining_boundary": "residual propagation remained nondirectional",
+      "route_effect": "advance",
+      "stage_A1_closed": false,
+      "summary_sha256": "dbab18f4350b791e697d5a37d8c6493938828b354286aa9a32efcbf0e3a93097",
+      "summary_status": "rh62_krylov_residual_stein_tail_audit",
+      "theorem_count": 4
+    },
+    {
+      "all_theorem_gates_true": true,
+      "directory": "RH-63-nested-krylov-residual-closure",
+      "paper": 63,
+      "primary_result": "coherent nested residual closure and breakdown exactness",
+      "remaining_boundary": "uniform recursion depth remained open",
+      "route_effect": "advance",
+      "stage_A1_closed": false,
+      "summary_sha256": "95be09b75eda60948a365792b79b467b9dd2f7a7f2b83e93772673bd0ac79c39",
+      "summary_status": "rh63_nested_krylov_residual_closure_audit",
+      "theorem_count": 3
+    },
+    {
+      "all_theorem_gates_true": true,
+      "directory": "RH-64-weighted-terminal-residuals",
+      "paper": 64,
+      "primary_result": "Lyapunov-weighted terminal contraction",
+      "remaining_boundary": "metric conditioning became the controlling cost",
+      "route_effect": "advance",
+      "stage_A1_closed": false,
+      "summary_sha256": "e0cba23c0c976461caa488d8e14430a7165ce23af4663186baf737458765d5e2",
+      "summary_status": "rh64_weighted_terminal_residual_audit",
+      "theorem_count": 4
+    },
+    {
+      "all_theorem_gates_true": true,
+      "directory": "RH-65-physical-family-metric-conditioning",
+      "paper": 65,
+      "primary_result": "sharp Jordan coupling/gap conditioning threshold",
+      "remaining_boundary": "global weighting cannot replace localized deflation",
+      "route_effect": "no_go_boundary",
+      "stage_A1_closed": false,
+      "summary_sha256": "cf81410f4ba3a2bc9936ecdc6659aaa562c993043f2d29a8656ab71e598d6260",
+      "summary_status": "rh65_physical_family_metric_conditioning_audit",
+      "theorem_count": 5
+    },
+    {
+      "all_theorem_gates_true": true,
+      "directory": "RH-66-block-cross-column-krylov-gram",
+      "paper": 66,
+      "primary_result": "block Galerkin identity and phase-preserving Gram upper",
+      "remaining_boundary": "uniform PSD majorization could lose physical sharpness",
+      "route_effect": "advance",
+      "stage_A1_closed": false,
+      "summary_sha256": "160ee574e0bd8b85312303ede3abba3e7c7633c11d1b20718b6e80b355d476e4",
+      "summary_status": "rh66_block_cross_column_krylov_gram_audit",
+      "theorem_count": 5
+    },
+    {
+      "all_theorem_gates_true": true,
+      "directory": "RH-67-physical-covariance-block-envelopes",
+      "paper": 67,
+      "primary_result": "covariance-optimal PSD allocation and sharpness/size duality",
+      "remaining_boundary": "physical sharpness can force global PSD growth",
+      "route_effect": "advance_and_correct",
+      "stage_A1_closed": false,
+      "summary_sha256": "7b7167ff9bc18051b74670ca6f3cac3b3dd8e8c5a71730bd1208cd2eec42deb5",
+      "summary_status": "rh67_physical_covariance_block_envelope_audit",
+      "theorem_count": 5
+    },
+    {
+      "all_theorem_gates_true": true,
+      "directory": "RH-68-phase-coherence-block-depth-barrier",
+      "paper": 68,
+      "primary_result": "Fourier-ring obstruction to universal fixed Krylov depth",
+      "remaining_boundary": "phase compression or growing depth must be proved",
+      "route_effect": "exact_no_go",
+      "stage_A1_closed": false,
+      "summary_sha256": "e91780bdf38215a0e31bb8275a07450b92bdd70e9348ca4dda6eed08834e9e8f",
+      "summary_status": "rh68_phase_coherence_block_depth_barrier_audit",
+      "theorem_count": 5
+    },
+    {
+      "all_theorem_gates_true": true,
+      "directory": "RH-69-adaptive-certificate-portfolio",
+      "paper": 69,
+      "primary_result": "safe Pareto pruning and green/red/amber triage",
+      "remaining_boundary": "production interval execution was still absent",
+      "route_effect": "synthesis",
+      "stage_A1_closed": false,
+      "summary_sha256": "7492f3ca695b7f322873fd75cc1f0c4839df296fcba4ea1917e9124ffe3cdb80",
+      "summary_status": "rh69_adaptive_upper_lower_certificate_portfolio_audit",
+      "theorem_count": 4
+    },
+    {
+      "all_theorem_gates_true": true,
+      "directory": "RH-70-frozen-production-block-hardy-audit",
+      "paper": 70,
+      "primary_result": "outward-rounded frozen production block-Hardy upper",
+      "remaining_boundary": "upstream construction and uniform scaling remain open",
+      "route_effect": "validated_advance",
+      "stage_A1_closed": false,
+      "summary_sha256": "8cb310fa8763058ddb1066a60da78cd6f371760cd2c2f6d90f5fb683ec123f18",
+      "summary_status": "rh70_frozen_production_block_hardy_audit_archived",
+      "theorem_count": 5
+    }
+  ],
+  "program_boundary": {
+    "T_log_T_counting_law": false,
+    "canonical_scattering_object": false,
+    "completed_zeta_identity": false,
+    "finite_scale_end_to_end_hardy_closed": false,
+    "prime_power_trace_formula": false,
+    "renormalized_determinant_limit_closed": false,
+    "riemann_hypothesis": false,
+    "self_adjoint_generator": false,
+    "stage_A4_unconditional_closed": false,
+    "uniform_stage_A1_closed": false
+  },
+  "route_consequence": "The finite-scale terminal layer is no longer the active wall. The finite-scale frontier is one upstream inclusion gate, while full Stage A1 has a second independent gate: uniform family scaling.",
+  "scope": "RH-62 through RH-70 are audited as the nine inputs; RH-71 is the tenth synthesis layer.",
+  "source_hashes": {
+    "rh70_interval_audit": "3a7ae810cc6a8d1b8c667267dd5bb7bd9279273b34b7f6305efaf9f9e8fbde26"
+  },
+  "stage_ledger": {
+    "A1_frozen_production_execution": "green",
+    "A1_terminal_finite_matrix_mechanism": "green",
+    "A1_uniform_small_noise_family_bound": "amber",
+    "A1_upstream_interval_inclusion": "amber",
+    "A2_sufficient_peripheral_factor_transfer": "green",
+    "A3_analytic_adaptive_cutoff_transfer": "green",
+    "A3_production_interval_composition": "amber",
+    "A4_conditional_identification_composition": "green",
+    "A4_unconditional_identification": "amber",
+    "A5_renormalized_determinant_limit": "not_started",
+    "B_scattering_completion": "not_started",
+    "C_self_adjoint_counting": "not_started",
+    "D_arithmetic_zeta_identity": "not_started"
+  },
+  "status": "rh71_directional_tail_certificate_stack_route_review",
+  "surviving_route": [
+    "validated upstream folded-Gaussian and peripheral-factor inclusion",
+    "augmented H2 difference bridge to the frozen terminal certificate",
+    "analytic uniform horizon or phase-compression budget",
+    "conditional RH-54 identification composition",
+    "pole-renormalized determinant limit only after Stage A4"
+  ],
+  "theorem": {
+    "common_bridge_pareto_invariance": true,
+    "first_open_frontier_decomposition": true,
+    "polylogarithmic_stack_closure": true,
+    "relative_bridge_slack_criterion": true,
+    "stacked_bridge_upper": true
+  }
+}

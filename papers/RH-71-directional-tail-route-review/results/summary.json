@@ -1,0 +1,85 @@
+{
+  "audit": {
+    "all_one_percent_slacks_positive": true,
+    "archived_input_theorem_gate_count": 40,
+    "bridge_row_count": 10,
+    "input_paper_count": 9,
+    "minimum_one_percent_relative_slack_lower": 0.0006306266775125892,
+    "minimum_one_percent_slack_lower": 0.0008411455518283064,
+    "synthesis_layer_count": 10
+  },
+  "frontiers": {
+    "finite_scale": [
+      "upstream_interval_triple"
+    ],
+    "renormalized_determinant_limit": [
+      "pole_renormalized_limit_theorem",
+      "uniform_family_scaling",
+      "upstream_interval_triple"
+    ],
+    "stage_A1": [
+      "uniform_family_scaling",
+      "upstream_interval_triple"
+    ],
+    "stage_A4_unconditional": [
+      "uniform_family_scaling",
+      "upstream_interval_triple"
+    ]
+  },
+  "program_boundary": {
+    "T_log_T_counting_law": false,
+    "canonical_scattering_object": false,
+    "completed_zeta_identity": false,
+    "finite_scale_end_to_end_hardy_closed": false,
+    "prime_power_trace_formula": false,
+    "renormalized_determinant_limit_closed": false,
+    "riemann_hypothesis": false,
+    "self_adjoint_generator": false,
+    "stage_A4_unconditional_closed": false,
+    "uniform_stage_A1_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "45bc6f151fb9fa411571660ee59bb7d034af65fbb7c1c6104c4c7af4ada209fc",
+    "README.md": "36c70aab0f8075e420dc58194d2fe4c25d5ed42505fe5611c409ff043cf7086f",
+    "UPDATED_ROADMAP.md": "a7549b2aef44c1fd2069667e1a5366b274dab2da6e2193e94ef7d3a25ec7b4d2",
+    "directional-tail-route-review.pdf": "04037ad32152f18e1bd4e6c36b83b643db49e692fe56aa4ef765ad14d99c4304",
+    "figures/directional_tail_route_review.pdf": "0cdf60eadfef195d084c9de90f416cbc10927598ab65564859de14ed30cc55ba",
+    "figures/directional_tail_route_review.png": "cd7f271b4fa5e397ec74fab2303173ddb75d0740e1c62570d6f1b77e28d52279",
+    "main.pdf": "04037ad32152f18e1bd4e6c36b83b643db49e692fe56aa4ef765ad14d99c4304",
+    "main.tex": "b4117b0651eb4f3cb32c2ff2dfdb20e9ad70ca61c7fa05cc92e79eccd4e795a6",
+    "pyproject.toml": "709ab94f7fb6ba375f9dc6d52b96dc096d5a7a4a295d9c1f5459e1b745bcac4f",
+    "references.bib": "0dc3e2f9b737610ed1bfd0726fe635e03ef8644b8317b72502932a5bffde58bd",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "result_hashes": {
+    "results/arb_bridge_slack_audit.json": "5edfe4854186265115b1a711e7ea30e1b994a4e89bf3448bc06cf294f3885f91",
+    "results/arb_bridge_slack_smoke.json": "bae98a3a0d61300244f76f0e6e5b509393b1bf2b28c9cc7bbd252c0e291076de",
+    "results/dependency_manifest.json": "a8b2d91ac35ff019ac06739cc2387ec737a18b0c823f74898c537e8d75c490ea",
+    "results/route_review.json": "72b4f3e75ba9b05f8adf7f6cada797d584c8cfc992599f9a25d46fcd371fd883",
+    "results/route_review_smoke.json": "1cb296b0449a797b09adee464d49f6f949f1a58111d42c986d835bbc159893be"
+  },
+  "route_consequence": "The finite-scale terminal layer is no longer the active wall. The finite-scale frontier is one upstream inclusion gate, while full Stage A1 has a second independent gate: uniform family scaling.",
+  "stage_ledger": {
+    "A1_frozen_production_execution": "green",
+    "A1_terminal_finite_matrix_mechanism": "green",
+    "A1_uniform_small_noise_family_bound": "amber",
+    "A1_upstream_interval_inclusion": "amber",
+    "A2_sufficient_peripheral_factor_transfer": "green",
+    "A3_analytic_adaptive_cutoff_transfer": "green",
+    "A3_production_interval_composition": "amber",
+    "A4_conditional_identification_composition": "green",
+    "A4_unconditional_identification": "amber",
+    "A5_renormalized_determinant_limit": "not_started",
+    "B_scattering_completion": "not_started",
+    "C_self_adjoint_counting": "not_started",
+    "D_arithmetic_zeta_identity": "not_started"
+  },
+  "status": "rh71_directional_tail_route_review_archived",
+  "theorem": {
+    "common_bridge_pareto_invariance": true,
+    "first_open_frontier_decomposition": true,
+    "polylogarithmic_stack_closure": true,
+    "relative_bridge_slack_criterion": true,
+    "stacked_bridge_upper": true
+  }
+}
