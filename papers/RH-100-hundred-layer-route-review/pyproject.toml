@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rh100-hundred-layer-route-review"
+version = "0.1.0"
+description = "Hundred-layer theorem, barrier, and completion-frontier review"
+requires-python = ">=3.10"
+dependencies = ["matplotlib>=3.7", "numpy>=1.24", "pytest>=7.0"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
