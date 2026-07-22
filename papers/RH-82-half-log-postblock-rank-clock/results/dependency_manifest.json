@@ -1,0 +1,47 @@
+{
+  "external_inputs": {
+    "rh16_endpoint_rank_audit": {
+      "path": "papers/RH-16-endpoint-gaussian-resolution-rank/results/endpoint_rank_audit.json",
+      "sha256": "8c971c8f9a086d4f2c3d96d532995418f7a29af88e77c31e8eca924d31d025fc"
+    },
+    "rh16_endpoint_rank_manuscript": {
+      "path": "papers/RH-16-endpoint-gaussian-resolution-rank/main.tex",
+      "sha256": "f4b4cf95ad43b71b805ac8c7561afab849ee7dde26dfde2259cd33ae473557c2"
+    },
+    "rh77_effective_rank_audit": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/results/effective_rank_audit.json",
+      "sha256": "08a123fb310bfd70572e5bd2b13ccf2fe397fd944f409c626d2e079b49be6c1a"
+    },
+    "rh78_composition_summary": {
+      "path": "papers/RH-78-two-corridor-stage-A1-composition/results/summary.json",
+      "sha256": "eb77668752b7493c109b4cacf1cf386be6a7ae080182c985e5795574e9404bc5"
+    },
+    "rh81_route_summary": {
+      "path": "papers/RH-81-stage-A-to-A5-route-review/results/summary.json",
+      "sha256": "5a772171bd544386c3998ebdcebf66792908af628b6887a6b2ec13c4f05718d1"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "a8afe32757b7a72216723b3737810507c533b46044269d2807dd1065af210d10",
+    "experiments/make_figures.py": "475cb3ae7983eb2677659609373a5e41a6374d0e8f4a55df96d69c634537e72e",
+    "experiments/run_half_log_rank_audit.py": "2ded764b008e68eb3881f46a2a87a3729f3c2d52304bd3c7e1471eb204c6d8b1",
+    "experiments/verify_archive.py": "015972e49ac36a3e9bb6f838c72a8a3012ac8c14caa8a8bac114e7938602f77b",
+    "src/half_log_rank/__init__.py": "9a3f729a2a76a321a09405a214cb1dca9a712bebcc74c6a32ddf7bf9683c05e4",
+    "src/half_log_rank/bounds.py": "4433277802bf2e1fb0544c988dc34f1e814de9c375178126995aa691e0da5609",
+    "tests/test_archived_results.py": "8ee71775b4262c46f34b151e02d211bf7c5d9970e1bd96baf6859ed73f00957c",
+    "tests/test_theory.py": "b301bb384894bb4fbd5f5e34c1364c72ea2c4bfe91b881c2b8c074fcfdb1e7ac"
+  },
+  "publication_artifacts": {
+    ".gitignore": "e8c5d568962ae7f11638a973e785da93ef034ef01f2aaeed525ff4849785dbb1",
+    "README.md": "c22a78081a8e5ba937a921e54cf3521ee07a6086eafc566240dd279867d84d76",
+    "figures/half_log_postblock_rank_clock.pdf": "4207313141ffa8d06ddbe356606a827f47d7627cb2f4a2d1cbaa1c77b9df2ad5",
+    "figures/half_log_postblock_rank_clock.png": "c57bf52177f355206dd088b5c20c4125df92854916f7cc543fd3adcc7f2cdd5d",
+    "half-log-postblock-rank-clock.pdf": "24909e4eb445d22c6ae811456684640240a93df032ede6c9b5d7b3e037b2699d",
+    "main.pdf": "24909e4eb445d22c6ae811456684640240a93df032ede6c9b5d7b3e037b2699d",
+    "main.tex": "2a88af975212660b50765bdf6acd35b295d6df80ef235ca08737c6c050d68ef3",
+    "pyproject.toml": "0a1e2b027ea146dc33d428b11b3e84986a0d6cbda893486ebc7649c78414f670",
+    "references.bib": "d8a07a4ede0df045a16a0a1e9551a9da2a84708ae35ddb01a5040ef6273b36ca",
+    "requirements.txt": "99792beccbdbe43deeb5a4bccbc3e9ab346a992689810797cb03651a379983c3"
+  },
+  "status": "all_rh82_inputs_sources_and_publication_artifacts_hashed"
+}

@@ -1,0 +1,88 @@
+{
+  "all_executed_clock_gates_green": true,
+  "audit_summary": {
+    "maximum_clock_rank": 4,
+    "maximum_full_future_hardy_perturbation": 5.0430243664253605e-09,
+    "maximum_relative_residual": 2.3393454482415315e-07,
+    "minimum_energy_capture": 0.9999999999999452
+  },
+  "endpoint_linear_row_model": {
+    "evidence_level": "high_precision_boundary_ladder_plus_binary64_exact_affinity_gram",
+    "maximum_clock_plus_two_tail": 8.93949335456957e-08,
+    "rows": [
+      {
+        "clock": 4.445622727523028,
+        "clock_rank": 7,
+        "first_omitted_singular_value": 4.595667153640874e-08,
+        "optimal_hilbert_schmidt_tail": 8.93949335456957e-08,
+        "retained_gram_dimension": 34,
+        "sigma": 0.01
+      }
+    ]
+  },
+  "precision_bits": 192,
+  "rank_offset": 2,
+  "route_consequence": "The RH-16 endpoint resolution theorem sharpens to exponential Hilbert-Schmidt decay for every rank beyond the half-logarithmic clock. If the physical postblock state factors through that resolution operator with polylogarithmic outer norms, remainder, and future observability, RH-78's effective-rank corridor closes with logarithmic rank. At the five archived scales, rank ceil(H_sigma)+2 (four through seven) has validated relative residual below 2.34e-7. The remaining theorem is the actual endpoint-to-postblock factorization, not a new rank ansatz.",
+  "rows": [
+    {
+      "all_channels_green": true,
+      "channels": [
+        {
+          "clock": 1.769091146743121,
+          "clock_excess": 2.230908853256879,
+          "clock_rank": 4,
+          "dimension": 32,
+          "energy_capture_lower": 0.9999999999999452,
+          "energy_capture_lower_ball": "[0.999999999999945274628737916288119243769305088445775067564 +/- 4.74e-58]",
+          "full_future_hardy_perturbation_ball": "[5.04302436642535970796846024815391349555e-9 +/- 6.22e-48]",
+          "full_future_hardy_perturbation_upper": 5.0430243664253605e-09,
+          "horizon": 4,
+          "rank_is_logarithmic": true,
+          "relative_residual_ball": "[2.33934544824153134052591741915213471804065529950599e-7 +/- 6.77e-58]",
+          "relative_residual_below_1e_minus_6": true,
+          "relative_residual_upper": 2.3393454482415315e-07,
+          "residual_frobenius_ball": "[1.23101861136385322645807858400366985390021524529281e-9 +/- 2.15e-60]",
+          "residual_frobenius_upper": 1.2310186113638535e-09,
+          "side": "left",
+          "source_columns": 16,
+          "state_frobenius_ball": "[0.005262235264523248610428283336081879702794116305023350935 +/- 2.03e-58]"
+        },
+        {
+          "clock": 1.769091146743121,
+          "clock_excess": 2.230908853256879,
+          "clock_rank": 4,
+          "dimension": 16,
+          "energy_capture_lower": 0.9999999999999698,
+          "energy_capture_lower_ball": "[0.999999999999969941795480636566101059246578143619983556019 +/- 4.76e-58]",
+          "full_future_hardy_perturbation_ball": "[4.391965437083253894447510041570981622014e-9 +/- 5.80e-49]",
+          "full_future_hardy_perturbation_upper": 4.391965437083255e-09,
+          "horizon": 4,
+          "rank_is_logarithmic": true,
+          "relative_residual_ball": "[1.73373021313477241654204007862123379960425346605185e-7 +/- 7.10e-58]",
+          "relative_residual_below_1e_minus_6": true,
+          "relative_residual_upper": 1.7337302131347726e-07,
+          "residual_frobenius_ball": "[1.13551943156544452086466900805216998681804353613294e-9 +/- 3.13e-60]",
+          "residual_frobenius_upper": 1.1355194315654447e-09,
+          "side": "right",
+          "source_columns": 16,
+          "state_frobenius_ball": "[0.0065495739934779248691703859122150283586354626369697465179 +/- 6.19e-59]"
+        }
+      ],
+      "clock": 1.769091146743121,
+      "clock_rank": 4,
+      "fine_dimension": 32,
+      "sigma": 0.16
+    }
+  ],
+  "status": "rh82_half_log_plus_two_postblock_rank_clock",
+  "theorem_boundary": {
+    "actual_endpoint_postblock_factorization_proved": false,
+    "endpoint_exponential_excess_rank_tail": true,
+    "factor_through_resolution_transfer_criterion": true,
+    "half_log_plus_two_frozen_postblock_audit": true,
+    "hilbert_polya_operator": false,
+    "riemann_hypothesis": false,
+    "stage_A4_unconditional_closed": false,
+    "uniform_stage_A1_closed": false
+  }
+}

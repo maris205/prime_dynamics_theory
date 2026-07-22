@@ -1,0 +1,46 @@
+{
+  "audit": {
+    "endpoint_model_scale_count": 6,
+    "maximum_clock_rank": 7,
+    "maximum_endpoint_model_clock_plus_two_tail": 9.186352617511654e-08,
+    "maximum_full_future_hardy_perturbation": 5.0430243664253605e-09,
+    "maximum_relative_residual": 2.3393454482415315e-07,
+    "minimum_energy_capture": 0.9999999999999452,
+    "physical_scale_count": 5
+  },
+  "program_boundary": {
+    "actual_endpoint_postblock_factorization_proved": false,
+    "endpoint_exponential_excess_rank_tail": true,
+    "factor_through_resolution_transfer_criterion": true,
+    "half_log_plus_two_frozen_postblock_audit": true,
+    "hilbert_polya_operator": false,
+    "riemann_hypothesis": false,
+    "stage_A4_unconditional_closed": false,
+    "uniform_stage_A1_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "e8c5d568962ae7f11638a973e785da93ef034ef01f2aaeed525ff4849785dbb1",
+    "README.md": "c22a78081a8e5ba937a921e54cf3521ee07a6086eafc566240dd279867d84d76",
+    "figures/half_log_postblock_rank_clock.pdf": "4207313141ffa8d06ddbe356606a827f47d7627cb2f4a2d1cbaa1c77b9df2ad5",
+    "figures/half_log_postblock_rank_clock.png": "c57bf52177f355206dd088b5c20c4125df92854916f7cc543fd3adcc7f2cdd5d",
+    "half-log-postblock-rank-clock.pdf": "24909e4eb445d22c6ae811456684640240a93df032ede6c9b5d7b3e037b2699d",
+    "main.pdf": "24909e4eb445d22c6ae811456684640240a93df032ede6c9b5d7b3e037b2699d",
+    "main.tex": "2a88af975212660b50765bdf6acd35b295d6df80ef235ca08737c6c050d68ef3",
+    "pyproject.toml": "0a1e2b027ea146dc33d428b11b3e84986a0d6cbda893486ebc7649c78414f670",
+    "references.bib": "d8a07a4ede0df045a16a0a1e9551a9da2a84708ae35ddb01a5040ef6273b36ca",
+    "requirements.txt": "99792beccbdbe43deeb5a4bccbc3e9ab346a992689810797cb03651a379983c3"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "62453fda498d1a5f70b0e1ec5d4b503e822bde4898ef71f4ebe7fbc585addaa1",
+    "results/half_log_rank_audit.json": "b11949b5a77d7a6f3ec300bd87b1ed49bab3d569b1437be106306979556c2a27",
+    "results/half_log_rank_smoke.json": "82254162a2b8e46160c10bb68d214111b208644b35bc4ff8d155be4a486fafba"
+  },
+  "route_consequence": "The RH-16 endpoint resolution theorem sharpens to exponential Hilbert-Schmidt decay for every rank beyond the half-logarithmic clock. If the physical postblock state factors through that resolution operator with polylogarithmic outer norms, remainder, and future observability, RH-78's effective-rank corridor closes with logarithmic rank. At the five archived scales, rank ceil(H_sigma)+2 (four through seven) has validated relative residual below 2.34e-7. The remaining theorem is the actual endpoint-to-postblock factorization, not a new rank ansatz.",
+  "status": "rh82_half_log_postblock_rank_clock_archived",
+  "theorem": {
+    "endpoint_to_postblock_ideal_property_transfer": true,
+    "exponential_excess_rank_tail": true,
+    "factorized_stage_A_rank_criterion": true,
+    "logarithmic_accuracy_rank": true
+  }
+}

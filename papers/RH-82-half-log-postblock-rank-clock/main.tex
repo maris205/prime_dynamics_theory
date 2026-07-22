@@ -1,0 +1,323 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\Schatten}[1]{\mathfrak S_{#1}}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cO}{\mathcal O}
+
+\title{Exponential Excess-Rank Tails and the Half-Logarithmic Postblock Clock\\
+\large From Endpoint Gaussian Resolution to a Concrete Stage-A Factorization Gate}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-77 found that the physical postblock states are extraordinarily
+compressible, while RH-81 identified an all-level effective-rank theorem as
+the preferred remaining Stage-A gate.  This paper replaces that qualitative
+request by a specific factorization problem.
+
+RH-16 constructed the endpoint-projected Gaussian resolution operator
+$\cR_\sigma$ and proved its half-logarithmic threshold-rank law.  We sharpen
+that result from a count to a full approximation-number tail.  Let
+$J_\sigma=\max\{k:\delta_k\ge\sigma\}$ for the geometric endpoint ladder.
+If $\delta_{k+1}/\delta_k\le q<1$ eventually and the unresolved projected-row
+energy satisfies $F(t)\le Ct^2$, then for every $\ell\ge0$,
+\[
+ \tau_{J_\sigma+\ell}(\cR_\sigma)
+ \le \sqrt{\frac{C}{1-q^2}}q^\ell,
+\]
+where $\tau_r$ is the optimal Hilbert--Schmidt rank-$r$ residual.  Since
+$J_\sigma=\log(1/\sigma)/(2\log\lambda)+O(1)$, every extra rank beyond the
+half-logarithmic clock buys exponential tail decay.
+
+We then prove an ideal-property transfer theorem.  If a physical postblock
+state factors as
+\[
+ B_\sigma=U_\sigma\cR_\sigma V_\sigma+E_\sigma,
+\]
+then its rank tail is bounded by the endpoint tail multiplied by
+$\norm{U_\sigma}\norm{V_\sigma}$, plus $\norm{E_\sigma}_2$.  Polylogarithmic
+outer, remainder, and observability bounds therefore imply the RH-78
+effective-rank corridor with rank $O(\log(1/\sigma))$.
+
+A 192-bit Arb audit tests the canonical schedule
+$r_\sigma=\lceil\log(1/\sigma)/(2\log\lambda)\rceil+2$ on all ten archived
+postblock channels.  The ranks are four through seven, the maximum relative
+residual is $2.34\times10^{-7}$, and the maximum full-future Hardy
+perturbation is $5.05\times10^{-9}$.  In the RH-16 linear endpoint-row model,
+the same clock-plus-two tail remains below $9.19\times10^{-8}$ from
+$\sigma=10^{-2}$ to $10^{-12}$.
+
+The actual endpoint-to-postblock factorization is not proved here.  It is now
+the explicit first-open Stage-A gate.  Unconditional Stage A4,
+Hilbert--Polya, and the Riemann Hypothesis remain open.
+\end{abstract}
+
+\noindent\textbf{Keywords:} approximation numbers; effective rank; Gaussian
+resolution; postblock state; Hilbert--Schmidt tail; small noise.
+
+\medskip
+\noindent\textbf{MSC 2020:} 47B10; 47B06; 37C30; 65G20.
+
+\section{From a rank observation to a factorization gate}
+
+The RH-77 production audit showed that rank two captures at least $99\%$ and
+rank four at least $99.9999\%$ of every archived postblock state
+\citep{WangEffectiveRank2026}.  RH-78 proved that a polylogarithmic rank and
+future residual are enough for Stage A1 \citep{WangTwoCorridors2026}.  What
+remained unclear was why the physical family should possess such a rank law at
+all dyadic levels.
+
+There is already an analytic logarithmic-rank object in the program.  RH-16
+associated normalized Gaussian rows to the endpoint ladder
+\begin{equation}
+ \delta_k=C_b\lambda^{-2k}(1+o(1)),
+ \qquad \lambda=1.678573510428322\ldots,
+ \label{eq:ladder}
+\end{equation}
+removed their common endpoint vector, and obtained a Hilbert--Schmidt
+resolution operator $\cR_\sigma$ \citep{WangEndpointRank2026}.  Its squared
+Hilbert--Schmidt norm and fixed-threshold rank are
+\begin{equation}
+ H_\sigma+O(1),
+ \qquad
+ H_\sigma:=\frac{\log(1/\sigma)}{2\log\lambda}.
+ \label{eq:clock}
+\end{equation}
+
+A threshold count alone does not control the Frobenius tail required by
+RH-77.  The first result supplies that missing estimate.
+
+\section{Exponential tail beyond the half-log clock}
+
+Let $\psi_{\sigma,\delta_k}$ be the normalized endpoint Gaussian row,
+$Q_\sigma$ the orthogonal complement of the limiting endpoint row, and
+\begin{equation}
+ \cR_\sigma e_k=Q_\sigma\psi_{\sigma,\delta_k}.
+ \label{eq:R}
+\end{equation}
+Write
+\begin{equation}
+ F(t)=\norm{Q_\sigma\psi_{\sigma,\delta}}^2,
+ \qquad t=\delta/\sigma.
+ \label{eq:F}
+\end{equation}
+The exact Gaussian geometry of RH-16 gives $F(t)\le Ct^2$ for $0\le t\le1$.
+
+For a Hilbert--Schmidt operator $T$, define
+\begin{equation}
+ \tau_r(T)=\inf_{\operatorname{rank}L\le r}\norm{T-L}_2
+ =\left(\sum_{j>r}s_j(T)^2\right)^{1/2}.
+ \label{eq:tau}
+\end{equation}
+
+\begin{theorem}[Exponential excess-rank tail]
+\label{thm:tail}
+Assume that for all $k\ge k_0$,
+\begin{equation}
+ 0<\frac{\delta_{k+1}}{\delta_k}\le q<1.
+ \label{eq:ratio}
+\end{equation}
+Let $J_\sigma=\max\{k:\delta_k\ge\sigma\}$.  For all sufficiently small
+$\sigma$ and every integer $\ell\ge0$,
+\begin{equation}
+ \boxed{
+ \tau_{J_\sigma+\ell}(\cR_\sigma)
+ \le \sqrt{\frac{C}{1-q^2}}q^\ell.}
+ \label{eq:tail-bound}
+\end{equation}
+Moreover $J_\sigma=H_\sigma+O(1)$.
+\end{theorem}
+
+\begin{proof}
+Truncate \eqref{eq:R} after column $J_\sigma+\ell$.  The truncation has rank
+at most $J_\sigma+\ell$, hence
+\[
+ \tau_{J_\sigma+\ell}(\cR_\sigma)^2
+ \le \sum_{m\ge1}
+ F\!\left(\frac{\delta_{J_\sigma+\ell+m}}\sigma\right).
+\]
+Maximality gives $\delta_{J_\sigma+1}<\sigma$.  Iterating
+\eqref{eq:ratio} therefore gives
+\[
+ \frac{\delta_{J_\sigma+\ell+m}}\sigma
+ \le q^{\ell+m-1}\le1.
+\]
+Using $F(t)\le Ct^2$ and summing the geometric series proves
+\eqref{eq:tail-bound}.  The final clock identity follows from
+\eqref{eq:ladder}, as in RH-16.
+\end{proof}
+
+\begin{corollary}[Logarithmic accuracy rank]
+\label{cor:accuracy}
+For every target $0<\varepsilon<1$, there is a rank
+\begin{equation}
+ r_{\sigma,\varepsilon}
+ =H_\sigma+O\!\left(1+\log\frac1\varepsilon\right)
+ \label{eq:accuracy-rank}
+\end{equation}
+such that
+\[
+ \tau_{r_{\sigma,\varepsilon}}(\cR_\sigma)\le\varepsilon.
+\]
+In particular, a polylogarithmic accuracy target costs only
+$O(\log\log(1/\sigma))$ ranks beyond the half-log clock.
+\end{corollary}
+
+This strengthens the RH-16 threshold theorem without changing its geometric
+input.  The proof uses the unresolved end of the endpoint ladder, where the
+projected Gaussian rows vanish quadratically.
+
+\section{Transfer through a physical postblock factorization}
+
+Let $B_\sigma$ denote the postblock state $A_\sigma^{M_\sigma}X_\sigma$.
+The desired bridge is a factorization through the endpoint resolution
+operator.
+
+\begin{theorem}[Endpoint-to-postblock ideal-property transfer]
+\label{thm:factor}
+Suppose
+\begin{equation}
+ B_\sigma=U_\sigma\cR_\sigma V_\sigma+E_\sigma,
+ \label{eq:factorization}
+\end{equation}
+where $U_\sigma,V_\sigma$ are bounded and $E_\sigma$ is Hilbert--Schmidt.
+Then for every $\ell\ge0$,
+\begin{equation}
+ \boxed{
+ \tau_{J_\sigma+\ell}(B_\sigma)
+ \le
+ \norm{U_\sigma}\norm{V_\sigma}
+ \sqrt{\frac{C}{1-q^2}}q^\ell
+ +\norm{E_\sigma}_2.}
+ \label{eq:factor-tail}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let $R_{\sigma,r}$ be the column truncation used in
+\cref{thm:tail}.  The operator
+$U_\sigma R_{\sigma,r}V_\sigma$ has rank at most $r$.  The ideal property of
+the Hilbert--Schmidt class gives
+\[
+ \norm{B_\sigma-U_\sigma R_{\sigma,r}V_\sigma}_2
+ \le\norm{U_\sigma}\norm{V_\sigma}
+ \norm{\cR_\sigma-R_{\sigma,r}}_2+\norm{E_\sigma}_2.
+\]
+Insert \eqref{eq:tail-bound} and minimize over rank-$r$ approximants
+\citep{Simon2005}.
+\end{proof}
+
+\begin{corollary}[Sufficient Stage-A rank corridor]
+\label{cor:stageA}
+Assume \eqref{eq:factorization} and that
+\begin{equation}
+ \norm{U_\sigma}\norm{V_\sigma},\quad
+ \norm{E_\sigma}_2,\quad
+ \norm{\cO_\sigma}^{1/2}
+ \le \operatorname{polylog}(1/\sigma),
+ \label{eq:polylog-factors}
+\end{equation}
+where $\cO_\sigma$ is the future observability Gramian.  Then the reduced
+future and its residual are polylogarithmic at rank
+$r_\sigma=O(\log(1/\sigma))$.  Consequently the RH-78 effective-rank
+premise holds, provided the already isolated finite-prefix bounds hold.
+\end{corollary}
+
+\begin{proof}
+The RH-16 Hilbert--Schmidt law gives
+$\norm{\cR_\sigma}_2=O(\sqrt{\log(1/\sigma)})$.  Thus the rank-$r$ factorized
+approximant has polylogarithmic Hilbert--Schmidt norm.  Multiplication by
+$\norm{\cO_\sigma}^{1/2}$ controls its future Hardy seminorm.  The same
+observability factor applied to \eqref{eq:factor-tail} controls the residual.
+RH-78 then supplies the stated composition.
+\end{proof}
+
+The corollary is deliberately a criterion.  This paper does not assert
+\eqref{eq:factorization} for the physical folded-Gaussian postblock state.
+
+\section{Validated clock audit}
+
+The frozen audit uses exactly the RH-77 matrices and horizons.  Binary64
+matrix entries and SVD candidates are lifted exactly into Arb, and all matrix
+powers and residual norms are propagated at 192-bit precision.  The rank is
+fixed before inspecting each channel:
+\begin{equation}
+ r_\sigma=\lceil H_\sigma\rceil+2.
+ \label{eq:audit-rank}
+\end{equation}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{rrrrr}
+\toprule
+$\sigma$ & $H_\sigma$ & rank & max relative residual & max future error\\
+\midrule
+0.16 & 1.7691 & 4 & $2.340\times10^{-7}$ & $5.044\times10^{-9}$\\
+0.08 & 2.4383 & 5 & $7.528\times10^{-11}$ & $2.111\times10^{-12}$\\
+0.04 & 3.1074 & 6 & $1.937\times10^{-11}$ & $7.256\times10^{-13}$\\
+0.02 & 3.7765 & 6 & $2.870\times10^{-10}$ & $6.262\times10^{-12}$\\
+0.01 & 4.4457 & 7 & $1.048\times10^{-10}$ & $1.752\times10^{-12}$\\
+\bottomrule
+\end{tabular}
+\caption{Outward-rounded maxima over the two physical channels.}
+\label{tab:audit}
+\end{table}
+
+The coarsest channel is the worst one.  Across all ten channels, energy
+capture is at least $0.999999999999945$.  The clock-plus-two rule is therefore
+substantially stronger than the fixed rank-four engineering gate of RH-77.
+
+As an independent model check, the RH-16 linear-row Gram operator was replayed
+on six noise levels from $10^{-2}$ to $10^{-12}$.  The optimal
+Hilbert--Schmidt tail at \eqref{eq:audit-rank} lies between
+$8.93\times10^{-8}$ and $9.19\times10^{-8}$.  This floating Gram diagnostic
+is consistent with a fixed excess rank, but the theorem comes from
+\cref{thm:tail}, not from the fit.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{figures/half_log_postblock_rank_clock.pdf}
+\caption{Half-log clock, physical postblock residuals, endpoint-row model
+tails, and the geometric excess-rank majorant.}
+\label{fig:clock}
+\end{figure}
+
+\section{Route consequence and boundary}
+
+The preferred Stage-A route is now narrower.  It is unnecessary to guess a
+new singular-value law for the full physical matrices.  The endpoint
+resolution operator already has the exact logarithmic rank and exponential
+tail required downstream.  The next task is to build
+\eqref{eq:factorization}, with factor norms and remainder compatible with
+\eqref{eq:polylog-factors}.
+
+This paper proves the endpoint excess-rank theorem and the abstract
+factorization transfer.  It validates the half-log plus two schedule only for
+the five archived frozen families.  It does not prove the physical
+factorization, uniform Stage A1, unconditional Stage A4, an A5 relative
+determinant, a self-adjoint Hilbert--Polya operator, a $T\log T$ law, a
+prime-power trace formula, a zeta-zero identification, or the Riemann
+Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

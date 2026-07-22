@@ -1,0 +1,324 @@
+{
+  "all_executed_clock_gates_green": true,
+  "audit_summary": {
+    "maximum_clock_rank": 7,
+    "maximum_full_future_hardy_perturbation": 5.0430243664253605e-09,
+    "maximum_relative_residual": 2.3393454482415315e-07,
+    "minimum_energy_capture": 0.9999999999999452
+  },
+  "endpoint_linear_row_model": {
+    "evidence_level": "high_precision_boundary_ladder_plus_binary64_exact_affinity_gram",
+    "maximum_clock_plus_two_tail": 9.186352617511654e-08,
+    "rows": [
+      {
+        "clock": 4.445622727523028,
+        "clock_rank": 7,
+        "first_omitted_singular_value": 4.595667153640874e-08,
+        "optimal_hilbert_schmidt_tail": 8.93949335456957e-08,
+        "retained_gram_dimension": 34,
+        "sigma": 0.01
+      },
+      {
+        "clock": 8.891245455046056,
+        "clock_rank": 11,
+        "first_omitted_singular_value": 4.995504246457437e-08,
+        "optimal_hilbert_schmidt_tail": 9.062384951299306e-08,
+        "retained_gram_dimension": 39,
+        "sigma": 0.0001
+      },
+      {
+        "clock": 13.33686818256908,
+        "clock_rank": 16,
+        "first_omitted_singular_value": 5.481205921488941e-08,
+        "optimal_hilbert_schmidt_tail": 9.12805870623808e-08,
+        "retained_gram_dimension": 43,
+        "sigma": 1e-06
+      },
+      {
+        "clock": 17.78249091009211,
+        "clock_rank": 20,
+        "first_omitted_singular_value": 5.265781051987254e-08,
+        "optimal_hilbert_schmidt_tail": 9.083946782083109e-08,
+        "retained_gram_dimension": 48,
+        "sigma": 1e-08
+      },
+      {
+        "clock": 22.228113637615138,
+        "clock_rank": 25,
+        "first_omitted_singular_value": 5.7120357413210964e-08,
+        "optimal_hilbert_schmidt_tail": 9.113075689142132e-08,
+        "retained_gram_dimension": 52,
+        "sigma": 1e-10
+      },
+      {
+        "clock": 26.67373636513816,
+        "clock_rank": 29,
+        "first_omitted_singular_value": 5.2639423957034064e-08,
+        "optimal_hilbert_schmidt_tail": 9.186352617511654e-08,
+        "retained_gram_dimension": 57,
+        "sigma": 1e-12
+      }
+    ]
+  },
+  "precision_bits": 192,
+  "rank_offset": 2,
+  "route_consequence": "The RH-16 endpoint resolution theorem sharpens to exponential Hilbert-Schmidt decay for every rank beyond the half-logarithmic clock. If the physical postblock state factors through that resolution operator with polylogarithmic outer norms, remainder, and future observability, RH-78's effective-rank corridor closes with logarithmic rank. At the five archived scales, rank ceil(H_sigma)+2 (four through seven) has validated relative residual below 2.34e-7. The remaining theorem is the actual endpoint-to-postblock factorization, not a new rank ansatz.",
+  "rows": [
+    {
+      "all_channels_green": true,
+      "channels": [
+        {
+          "clock": 1.769091146743121,
+          "clock_excess": 2.230908853256879,
+          "clock_rank": 4,
+          "dimension": 32,
+          "energy_capture_lower": 0.9999999999999452,
+          "energy_capture_lower_ball": "[0.999999999999945274628737916288119243769305088445775067564 +/- 4.74e-58]",
+          "full_future_hardy_perturbation_ball": "[5.04302436642535970796846024815391349555e-9 +/- 6.22e-48]",
+          "full_future_hardy_perturbation_upper": 5.0430243664253605e-09,
+          "horizon": 4,
+          "rank_is_logarithmic": true,
+          "relative_residual_ball": "[2.33934544824153134052591741915213471804065529950599e-7 +/- 6.77e-58]",
+          "relative_residual_below_1e_minus_6": true,
+          "relative_residual_upper": 2.3393454482415315e-07,
+          "residual_frobenius_ball": "[1.23101861136385322645807858400366985390021524529281e-9 +/- 2.15e-60]",
+          "residual_frobenius_upper": 1.2310186113638535e-09,
+          "side": "left",
+          "source_columns": 16,
+          "state_frobenius_ball": "[0.005262235264523248610428283336081879702794116305023350935 +/- 2.03e-58]"
+        },
+        {
+          "clock": 1.769091146743121,
+          "clock_excess": 2.230908853256879,
+          "clock_rank": 4,
+          "dimension": 16,
+          "energy_capture_lower": 0.9999999999999698,
+          "energy_capture_lower_ball": "[0.999999999999969941795480636566101059246578143619983556019 +/- 4.76e-58]",
+          "full_future_hardy_perturbation_ball": "[4.391965437083253894447510041570981622014e-9 +/- 5.80e-49]",
+          "full_future_hardy_perturbation_upper": 4.391965437083255e-09,
+          "horizon": 4,
+          "rank_is_logarithmic": true,
+          "relative_residual_ball": "[1.73373021313477241654204007862123379960425346605185e-7 +/- 7.10e-58]",
+          "relative_residual_below_1e_minus_6": true,
+          "relative_residual_upper": 1.7337302131347726e-07,
+          "residual_frobenius_ball": "[1.13551943156544452086466900805216998681804353613294e-9 +/- 3.13e-60]",
+          "residual_frobenius_upper": 1.1355194315654447e-09,
+          "side": "right",
+          "source_columns": 16,
+          "state_frobenius_ball": "[0.0065495739934779248691703859122150283586354626369697465179 +/- 6.19e-59]"
+        }
+      ],
+      "clock": 1.769091146743121,
+      "clock_rank": 4,
+      "fine_dimension": 32,
+      "sigma": 0.16
+    },
+    {
+      "all_channels_green": true,
+      "channels": [
+        {
+          "clock": 2.438224041938098,
+          "clock_excess": 2.561775958061902,
+          "clock_rank": 5,
+          "dimension": 64,
+          "energy_capture_lower": 0.9999999999999999,
+          "energy_capture_lower_ball": "[0.999999999999999999994334349259169934261750097280927388089 +/- 2.77e-58]",
+          "full_future_hardy_perturbation_ball": "[2.11016237508951386900002577537276123871e-12 +/- 9.59e-51]",
+          "full_future_hardy_perturbation_upper": 2.110162375089514e-12,
+          "horizon": 9,
+          "rank_is_logarithmic": true,
+          "relative_residual_ball": "[7.527051707561245216724537574471982165121210175e-11 +/- 8.03e-57]",
+          "relative_residual_below_1e_minus_6": true,
+          "relative_residual_upper": 7.527051707561246e-11,
+          "residual_frobenius_ball": "[3.472806689989274783370626727952489795726353791e-13 +/- 5.65e-59]",
+          "residual_frobenius_upper": 3.4728066899892754e-13,
+          "side": "left",
+          "source_columns": 32,
+          "state_frobenius_ball": "[0.004613767547924098891321056803431040860097624498695097498 +/- 6.49e-58]"
+        },
+        {
+          "clock": 2.438224041938098,
+          "clock_excess": 2.561775958061902,
+          "clock_rank": 5,
+          "dimension": 32,
+          "energy_capture_lower": 0.9999999999999999,
+          "energy_capture_lower_ball": "[0.999999999999999999999959970336950649941436211716362327692 +/- 1.97e-58]",
+          "full_future_hardy_perturbation_ball": "[2.20961590606889911691230349069893262706e-13 +/- 5.15e-52]",
+          "full_future_hardy_perturbation_upper": 2.2096159060688993e-13,
+          "horizon": 9,
+          "rank_is_logarithmic": true,
+          "relative_residual_ball": "[6.32689995569315593740155944066269602287634532e-12 +/- 6.90e-57]",
+          "relative_residual_below_1e_minus_6": true,
+          "relative_residual_upper": 6.326899955693157e-12,
+          "residual_frobenius_ball": "[3.72477555184754036374516305154377435728143775e-14 +/- 3.98e-59]",
+          "residual_frobenius_upper": 3.724775551847541e-14,
+          "side": "right",
+          "source_columns": 32,
+          "state_frobenius_ball": "[0.005887204757356504257414208237533995897725501761814640980 +/- 3.11e-58]"
+        }
+      ],
+      "clock": 2.438224041938098,
+      "clock_rank": 5,
+      "fine_dimension": 64,
+      "sigma": 0.08
+    },
+    {
+      "all_channels_green": true,
+      "channels": [
+        {
+          "clock": 3.107356937133074,
+          "clock_excess": 2.892643062866926,
+          "clock_rank": 6,
+          "dimension": 128,
+          "energy_capture_lower": 0.9999999999999999,
+          "energy_capture_lower_ball": "[0.999999999999999999999693485502231296930829462100420114719 +/- 3.94e-58]",
+          "full_future_hardy_perturbation_ball": "[3.602433430862804326028141177566082758e-13 +/- 2.33e-50]",
+          "full_future_hardy_perturbation_upper": 3.602433430862805e-13,
+          "horizon": 16,
+          "rank_is_logarithmic": true,
+          "relative_residual_ball": "[1.75075554481116257628923272186612807640324743e-11 +/- 5.27e-56]",
+          "relative_residual_below_1e_minus_6": true,
+          "relative_residual_upper": 1.750755544811163e-11,
+          "residual_frobenius_ball": "[3.87397441386095178789880289145487338451882940e-14 +/- 7.06e-59]",
+          "residual_frobenius_upper": 3.873974413860952e-14,
+          "side": "left",
+          "source_columns": 64,
+          "state_frobenius_ball": "[0.00221274433506295176546916806358491927161116900383814870 +/- 1.48e-57]"
+        },
+        {
+          "clock": 3.107356937133074,
+          "clock_excess": 2.892643062866926,
+          "clock_rank": 6,
+          "dimension": 64,
+          "energy_capture_lower": 0.9999999999999999,
+          "energy_capture_lower_ball": "[0.999999999999999999999624967272753879447175254053235734049 +/- 5.14e-58]",
+          "full_future_hardy_perturbation_ball": "[7.2554647143312048789388139572674885265e-13 +/- 3.51e-51]",
+          "full_future_hardy_perturbation_upper": 7.255464714331206e-13,
+          "horizon": 16,
+          "rank_is_logarithmic": true,
+          "relative_residual_ball": "[1.93657617264625186967079392232387301436444524e-11 +/- 5.30e-56]",
+          "relative_residual_below_1e_minus_6": true,
+          "relative_residual_upper": 1.9365761726462522e-11,
+          "residual_frobenius_ball": "[7.89281463118596600795840572029021954065248495e-14 +/- 6.92e-59]",
+          "residual_frobenius_upper": 7.892814631185968e-14,
+          "side": "right",
+          "source_columns": 64,
+          "state_frobenius_ball": "[0.004075654106804773244573604816885229240312638039320239154 +/- 5.43e-58]"
+        }
+      ],
+      "clock": 3.107356937133074,
+      "clock_rank": 6,
+      "fine_dimension": 128,
+      "sigma": 0.04
+    },
+    {
+      "all_channels_green": true,
+      "channels": [
+        {
+          "clock": 3.7764898323280507,
+          "clock_excess": 2.2235101676719493,
+          "clock_rank": 6,
+          "dimension": 256,
+          "energy_capture_lower": 0.9999999999999999,
+          "energy_capture_lower_ball": "[0.999999999999999999917687328888913953011528311659530740768 +/- 6.31e-58]",
+          "full_future_hardy_perturbation_ball": "[4.023472031948763557474573859131875811e-12 +/- 6.09e-49]",
+          "full_future_hardy_perturbation_upper": 4.023472031948764e-12,
+          "horizon": 25,
+          "rank_is_logarithmic": true,
+          "relative_residual_ball": "[2.86901849263970494520569064654294850232051250e-10 +/- 4.73e-55]",
+          "relative_residual_below_1e_minus_6": true,
+          "relative_residual_upper": 2.8690184926397054e-10,
+          "residual_frobenius_ball": "[2.85373235430901343298349103067193782291579609e-13 +/- 3.59e-58]",
+          "residual_frobenius_upper": 2.853732354309014e-13,
+          "side": "left",
+          "source_columns": 128,
+          "state_frobenius_ball": "[0.00099467199728063545624070771947942054705892363895451149 +/- 2.56e-57]"
+        },
+        {
+          "clock": 3.7764898323280507,
+          "clock_excess": 2.2235101676719493,
+          "clock_rank": 6,
+          "dimension": 128,
+          "energy_capture_lower": 0.9999999999999999,
+          "energy_capture_lower_ball": "[0.999999999999999999958967378422126324789238917796088521663 +/- 5.68e-58]",
+          "full_future_hardy_perturbation_ball": "[6.2619275262355615049981034763619628337e-12 +/- 8.78e-50]",
+          "full_future_hardy_perturbation_upper": 6.261927526235562e-12,
+          "horizon": 25,
+          "rank_is_logarithmic": true,
+          "relative_residual_ball": "[2.025651045414132409440887329101107118146741578e-10 +/- 6.87e-56]",
+          "relative_residual_below_1e_minus_6": true,
+          "relative_residual_upper": 2.0256510454141326e-10,
+          "residual_frobenius_ball": "[4.47054375198709089345725988245864021616415430e-13 +/- 1.61e-58]",
+          "residual_frobenius_upper": 4.4705437519870914e-13,
+          "side": "right",
+          "source_columns": 128,
+          "state_frobenius_ball": "[0.00220696637859119243785459593802560400100461470224327061 +/- 2.95e-57]"
+        }
+      ],
+      "clock": 3.7764898323280507,
+      "clock_rank": 6,
+      "fine_dimension": 256,
+      "sigma": 0.02
+    },
+    {
+      "all_channels_green": true,
+      "channels": [
+        {
+          "clock": 4.445622727523028,
+          "clock_excess": 2.554377272476972,
+          "clock_rank": 7,
+          "dimension": 512,
+          "energy_capture_lower": 0.9999999999999999,
+          "energy_capture_lower_ball": "[0.999999999999999999989025758912262013273938888143470518228 +/- 3.07e-58]",
+          "full_future_hardy_perturbation_ball": "[8.518508370353108641237169441069518983e-13 +/- 9.05e-50]",
+          "full_future_hardy_perturbation_upper": 8.518508370353109e-13,
+          "horizon": 32,
+          "rank_is_logarithmic": true,
+          "relative_residual_ball": "[1.0475801204556139688859917926892802623353864e-10 +/- 4.28e-54]",
+          "relative_residual_below_1e_minus_6": true,
+          "relative_residual_upper": 1.047580120455614e-10,
+          "residual_frobenius_ball": "[4.007685805604289765221803899395027410735878e-14 +/- 2.25e-57]",
+          "residual_frobenius_upper": 4.00768580560429e-14,
+          "side": "left",
+          "source_columns": 256,
+          "state_frobenius_ball": "[0.00038256604219076488744234685655755199719472585901599566 +/- 4.77e-57]"
+        },
+        {
+          "clock": 4.445622727523028,
+          "clock_excess": 2.554377272476972,
+          "clock_rank": 7,
+          "dimension": 256,
+          "energy_capture_lower": 0.9999999999999999,
+          "energy_capture_lower_ball": "[0.999999999999999999991438555189958422140646660773512458119 +/- 2.80e-58]",
+          "full_future_hardy_perturbation_ball": "[1.7515485007545286436341759987216988504e-12 +/- 5.56e-50]",
+          "full_future_hardy_perturbation_upper": 1.7515485007545288e-12,
+          "horizon": 32,
+          "rank_is_logarithmic": true,
+          "relative_residual_ball": "[9.252807579346702192693095766282184473760446e-11 +/- 4.11e-54]",
+          "relative_residual_below_1e_minus_6": true,
+          "relative_residual_upper": 9.252807579346704e-11,
+          "residual_frobenius_ball": "[8.2752314898791528486293583068708660956804606e-14 +/- 4.89e-58]",
+          "residual_frobenius_upper": 8.275231489879154e-14,
+          "side": "right",
+          "source_columns": 256,
+          "state_frobenius_ball": "[0.00089434816610154001976040718439941917759523699640317784 +/- 3.67e-57]"
+        }
+      ],
+      "clock": 4.445622727523028,
+      "clock_rank": 7,
+      "fine_dimension": 512,
+      "sigma": 0.01
+    }
+  ],
+  "status": "rh82_half_log_plus_two_postblock_rank_clock",
+  "theorem_boundary": {
+    "actual_endpoint_postblock_factorization_proved": false,
+    "endpoint_exponential_excess_rank_tail": true,
+    "factor_through_resolution_transfer_criterion": true,
+    "half_log_plus_two_frozen_postblock_audit": true,
+    "hilbert_polya_operator": false,
+    "riemann_hypothesis": false,
+    "stage_A4_unconditional_closed": false,
+    "uniform_stage_A1_closed": false
+  }
+}
