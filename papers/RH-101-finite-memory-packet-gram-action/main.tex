@@ -1,0 +1,464 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\tr}{\operatorname{tr}}
+
+\title{Finite-Memory Packet Actions for Normalized Gram Recursions\\
+\large Exact Matrix-Free Expansion and a Five-Snapshot Frozen Closure}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The source-seeded projected-cross Ritz chain of RH-94 avoids repeated ambient
+eigenspace resets, but every refresh still appears to require the ambient
+memory Gramian.  We remove that assembly step exactly.
+
+Let
+\[
+ Q_t=\frac{X_t^*X_t}{\norm{X_t}_F^2},\qquad
+ G_t=Q_t+\eta G_{t-1},\qquad G_{-1}=0,quad 0\le\eta<1.
+\]
+For every trial packet $V$ and memory depth $m\le t+1$ we prove
+\[
+ G_tV=\sum_{j=0}^{m-1}\eta^j
+ \frac{X_{t-j}^*(X_{t-j}V)}{\norm{X_{t-j}}_F^2}
+ +\eta^mG_{t-m}V,
+\]
+with the last term absent when $m=t+1$.  Thus a complete-history action is
+exact and matrix free.  Dropping the old-history term gives a positive
+operator error $E_{t,m}=\eta^mG_{t-m}$ satisfying
+\[
+ \tr E_{t,m}\le\frac{\eta^m}{1-\eta},\qquad
+ \norm{E_{t,m}V}_F\le\frac{\eta^m\sqrt r}{1-\eta}
+\]
+for an isometric rank-$r$ packet.  The same tail controls projected-cross
+actions, Ritz compressions, and residual energies.
+
+We audit the theorem on all 120 RH-94 updates, using $\eta=1/512$, packet
+ranks four through seven, width-four enrichment, and 384-bit endpoint
+evaluation.  Complete-history state actions agree with assembled Gram actions
+to $8.88\times10^{-16}$ in Frobenius norm.  Every discarded-action norm lies
+below its geometric bound.  Among depths two through eight, depth five is the
+first common depth preserving all ten $1.01$ endpoint gates; depth four fails
+one channel with ratio $1.05493$, whereas depth five has worst ratio
+$1.001172$.
+
+The result closes the ambient-Gram assembly subproblem, not the nonlinear
+stability problem.  Nearly machine-precision action differences can still
+rotate recursively selected Ritz projectors by $1.75\times10^{-4}$.  A
+uniform gap-aware quotient law therefore remains necessary.  No uniform
+Stage A theorem, moving-cloud construction, Hilbert--Polya operator, zero
+identification, or Riemann Hypothesis result is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} matrix-free Gram action; finite memory; Ritz
+packet; geometric tail; positive operator; adaptive subspace iteration.
+
+\medskip
+\noindent\textbf{MSC 2020:} 47A58; 65F15; 65F50; 15A18; 37M25.
+
+\section{Introduction}
+
+The recursive packet route developed in RH-93--RH-100 has separated several
+operations that were initially hidden inside an ambient eigensolve.  The
+source packet can be seeded once from the source right singular space, four
+projected-cross directions carry it through every archived prefix, and weak
+fourth modes can be quotiented with local energy certificates
+\citep{WangSourceSeeded2026,WangReducedCross2026,WangWeakMode2026}.  The
+hundred-layer review nevertheless retained a structural gate: how should the
+normalized memory Gramian act on a changing clock-rank packet without ever
+forming the full Gram matrix \citep{WangHundredLayer2026}?
+
+This question is algebraic before it is asymptotic.  The memory Gramian is
+not arbitrary.  It obeys a scalar-decay recursion driven by normalized state
+snapshots.  Iterating that recursion after applying it to a packet produces
+an exact state-action formula.  The old history is itself a positive Gramian
+multiplied by $\eta^m$, so trace normalization immediately yields a uniform
+geometric tail.
+
+Three distinctions are essential.
+\begin{enumerate}[leftmargin=2em]
+\item \emph{Assembly versus action.}  We remove $X_t^*X_t$ and $G_t$ as
+ambient stored matrices.  We do not remove the products $X_tV$ and
+$X_t^*(X_tV)$.
+\item \emph{Action versus selected subspace.}  A small perturbation of
+$G_tV$ need not imply a comparably small perturbation of a Ritz projector
+when a cross or output gap is weak \citep{Kato1995,StewartSun1990}.
+\item \emph{Uniform formula versus uniform Stage A.}  The expansion and tail
+bound hold at every level.  Their use inside the nonlinear recursive packet
+chain still requires the scale-uniform gap-aware quotient gate isolated in
+RH-96 and RH-100.
+\end{enumerate}
+
+The exact theorem and its positive-tail consequences occupy
+\cref{sec:identity,sec:tail}.  \Cref{sec:implementation} describes a genuinely
+matrix-free Ritz refresh and its cost.  The finite audit in
+\cref{sec:audit,sec:results} identifies depth five as the first common tested
+memory and also records a nontrivial sensitivity warning.
+
+\section{Normalized memory Gramians}
+\label{sec:setting}
+
+Let $X_t\in\mathbb C^{p_t\times d}$ be nonzero and define
+\begin{equation}
+ Q_t=\frac{X_t^*X_t}{\norm{X_t}_F^2}.
+ \label{eq:snapshot}
+\end{equation}
+Every $Q_t$ is positive semidefinite and $\tr Q_t=1$.  Fix
+$0\le\eta<1$ and initialize
+\begin{equation}
+ G_{-1}=0,\qquad G_t=Q_t+\eta G_{t-1}.
+ \label{eq:memory}
+\end{equation}
+The archived packet chain uses $\eta=1/512$.
+
+Let $V\in\mathbb C^{d\times r}$ satisfy $V^*V=I_r$.  In a projected-cross
+refresh one needs
+\begin{equation}
+ G_tV,\qquad K_t(V)=(I-VV^*)G_tV.
+ \label{eq:needed-actions}
+\end{equation}
+After selecting a few left singular directions of $K_t(V)$ and forming an
+isometric enrichment $W$, one also needs the compressed matrix
+$W^*G_tW$.  All three objects can be obtained from actions on thin matrices;
+none logically requires an ambient $d\times d$ Gramian.
+
+\section{Exact finite-history action}
+\label{sec:identity}
+
+For $1\le m\le t+1$, define the recent-history action
+\begin{equation}
+ \mathcal A_{t,m}(V)=
+ \sum_{j=0}^{m-1}\eta^j
+ \frac{X_{t-j}^*(X_{t-j}V)}{\norm{X_{t-j}}_F^2}.
+ \label{eq:recent-action}
+\end{equation}
+
+\begin{theorem}[Structured finite-memory packet Gram action theorem]
+\label{thm:action}
+For every $t\ge0$, $1\le m\le t+1$, and trial matrix $V$,
+\begin{equation}
+ G_tV=\mathcal A_{t,m}(V)+\eta^mG_{t-m}V,
+ \label{eq:action-identity}
+\end{equation}
+where $G_{-1}=0$.  In particular,
+\begin{equation}
+ G_tV=\mathcal A_{t,t+1}(V)
+ \label{eq:full-history}
+\end{equation}
+is an exact matrix-free complete-history formula.
+\end{theorem}
+
+\begin{proof}
+Applying \eqref{eq:memory} to $V$ gives
+\[
+ G_tV=Q_tV+\eta G_{t-1}V.
+\]
+Substitute the same identity into the final term $m-1$ times.  Since
+$Q_sV=X_s^*(X_sV)/\norm{X_s}_F^2$, the resulting sum is
+\eqref{eq:recent-action}, followed by $\eta^mG_{t-m}V$.  For $m=t+1$ the
+remainder is $\eta^{t+1}G_{-1}V=0$.
+\end{proof}
+
+\begin{remark}
+The packet may change arbitrarily between refreshes.  The theorem is applied
+to the current $V$ and does not assume that $G_{t-1}V$ was stored for the
+previous packet.  This is exactly why the state-action expansion is useful.
+\end{remark}
+
+\begin{corollary}[Trace clock]
+\label{cor:trace}
+For every $s\ge0$,
+\begin{equation}
+ \tr G_s=\sum_{j=0}^{s}\eta^j
+ =\frac{1-\eta^{s+1}}{1-\eta}le\frac1{1-\eta}.
+ \label{eq:trace-clock}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Take traces in \eqref{eq:memory}, use $\tr Q_s=1$, and iterate.
+\end{proof}
+
+\section{Positive geometric tail}
+\label{sec:tail}
+
+Write
+\[
+ \widetilde G_{t,m}=\sum_{j=0}^{m-1}\eta^jQ_{t-j},
+ \qquad E_{t,m}=G_t-\widetilde G_{t,m}.
+\]
+When $m=t+1$, set $E_{t,m}=0$.
+
+\begin{theorem}[Geometric packet-action tail]
+\label{thm:tail}
+If $1\le m\le t$, then
+\begin{equation}
+ E_{t,m}=\eta^mG_{t-m}\succeq0
+ \label{eq:positive-tail}
+\end{equation}
+and
+\begin{align}
+ \tr E_{t,m}
+ &=\eta^m\frac{1-\eta^{t-m+1}}{1-\eta}
+ \le\frac{\eta^m}{1-\eta},
+ \label{eq:trace-tail}\\
+ \norm{E_{t,m}V}_F
+ &\le\frac{\eta^m\sqrt r}{1-\eta}.
+ \label{eq:action-tail}
+\end{align}
+The same Frobenius bound holds for the projected-cross error
+\[
+ (I-VV^*)G_tV-(I-VV^*)\widetilde G_{t,m}V.
+\]
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:positive-tail} is \cref{thm:action} before applying the
+operators to $V$.  Positivity and \cref{cor:trace} give
+$\norm{G_{t-m}}_2\le\tr G_{t-m}$, proving
+\eqref{eq:trace-tail}.  Since $\norm V_F=\sqrt r$,
+\[
+ \norm{E_{t,m}V}_F
+ \le\norm{E_{t,m}}_2\norm V_F
+ \le\tr(E_{t,m})\sqrt r.
+\]
+Finally, left multiplication by the orthogonal projector $I-VV^*$ is
+nonexpansive in Frobenius norm.
+\end{proof}
+
+\begin{corollary}[Horizon-independent action depth]
+\label{cor:depth}
+Given an absolute action tolerance $\varepsilon>0$, it is enough to choose
+\begin{equation}
+ m\ge
+ \left\lceil
+ \frac{\log\!\bigl(\sqrt r/((1-\eta)\varepsilon)\bigr)}
+      {\log(1/\eta)}
+ \right\rceil_+,
+ \label{eq:depth-choice}
+\end{equation}
+where $\lceil\cdot\rceil_+$ is at least one.  This choice is independent of
+the horizon $t$.
+\end{corollary}
+
+The positivity contains more information than an action norm alone.  Let
+$P=VV^*$ and define the residual energy
+$R_G(P)=\tr((I-P)G)$.
+
+\begin{proposition}[Residual and compression consequences]
+\label{prop:consequences}
+Let $W$ be any isometry with $q$ columns.  Then
+\begin{align}
+ 0&\le R_{G_t}(P)-R_{\widetilde G_{t,m}}(P)
+ \le\tr E_{t,m},
+ \label{eq:residual-tail}\\
+ 0&\preceq W^*G_tW-W^*\widetilde G_{t,m}W
+ \preceq \norm{E_{t,m}}_2I_q.
+ \label{eq:compression-tail}
+\end{align}
+Consequently every ordered Ritz value moves upward by at most
+$\tr E_{t,m}$, and any rank-$r$ Ky Fan sum moves by at most
+$r\tr E_{t,m}$.
+\end{proposition}
+
+\begin{proof}
+The residual difference equals $\tr((I-P)E_{t,m})$, which lies between zero
+and $\tr E_{t,m}$ because both factors are positive semidefinite.  The
+compression statement follows from $0\preceq E_{t,m}\preceq
+\norm{E_{t,m}}_2I$.  Eigenvalue and Ky Fan bounds then follow from monotonicity
+and Weyl's inequality \citep{Bhatia1997,HornJohnson2013}.
+\end{proof}
+
+\section{Matrix-free refresh and cost}
+\label{sec:implementation}
+
+A width-$k$ refresh can now be executed as follows.
+\begin{enumerate}[leftmargin=2em]
+\item Evaluate $Y=\mathcal A_{t,m}(V)$ by the state products in
+\eqref{eq:recent-action}.
+\item Form $K=Y-V(V^*Y)$ and select its leading $k$ left singular vectors.
+\item Orthonormalize those directions with $V$ to obtain
+$W\in\mathbb C^{d\times(r+k)}$.
+\item Evaluate $Z=\mathcal A_{t,m}(W)$ and diagonalize only the small matrix
+$W^*Z$.
+\end{enumerate}
+The algorithm never forms $Q_s$, $\widetilde G_{t,m}$, or $G_t$.  If
+$X_s$ has $p_s$ rows and the trial width is $q$, one state action costs
+$O(p_sdq)$ arithmetic and $O(dq)$ additional packet storage.  A depth-$m$
+action costs the sum over the retained snapshots.  By comparison, explicitly
+forming $X_s^*X_s$ costs $O(p_sd^2)$ and storing an ambient Gramian costs
+$O(d^2)$.
+
+This does not make the continuum problem free.  Recent states must be
+available or regenerable, and the products $X_sV$ may themselves be costly.
+Moreover, \eqref{eq:action-tail} is an absolute operator-action estimate.  To
+deduce a projector estimate for the nonlinear refresh, one still needs
+separation of the cross selection and output Ritz selection.  RH-99 shows
+that naive differential constants can be unusable near weak gaps
+\citep{WangTwoGap2026}.
+
+\section{Frozen-prefix audit}
+\label{sec:audit}
+
+We reuse the two finite channels at each of the five RH-94 scales
+\[
+ \sigma\in\{0.16,0.08,0.04,0.02,0.01\}.
+\]
+Their refresh endpoints are respectively $4,6,11,17,22$, and the half-log
+packet ranks are $4,5,6,6,7$.  The source right singular packet is propagated
+recursively with width-four projected-cross enrichment.  There are 120
+updates in total.
+
+For each update we perform three checks.
+\begin{enumerate}[leftmargin=2em]
+\item Compare the complete-history state action
+$\mathcal A_{t,t+1}(V)$ with an independently assembled $G_tV$.
+\item For every $m\in\{2,3,4,5,6,7,8\}$, evaluate the discarded action
+$\eta^mG_{t-m}V$ and compare it with the finite and uniform bounds of
+\cref{thm:tail}.
+\item Run a complete recursive matrix-free chain at each depth, then evaluate
+its endpoint residual against the assembled full Gramian and the ambient
+leading-packet reference.  The inherited gate is endpoint/reference
+$\le1.01$.
+\end{enumerate}
+
+The production chains are binary64.  Endpoint residuals are evaluated as
+quadratic forms in Arb at 384-bit precision, following RH-94
+\citep{Rump2010}.  Ambient Gramians are assembled only for independent audit
+and are not used by the structured refresh.
+
+\section{Results}
+\label{sec:results}
+
+\subsection{Exact action and geometric certificate}
+
+Across all 120 updates, the largest Frobenius discrepancy between a
+complete-history state action and the independently assembled action is
+\[
+ 8.88\times10^{-16}.
+\]
+Every nonzero discarded action satisfies \eqref{eq:action-tail}.  The largest
+observed ratio to the finite trace bound is $0.494$.  The trace of every
+discarded positive matrix agrees with \eqref{eq:trace-tail} to floating-point
+roundoff.
+
+\begin{table}[t]
+\centering
+\caption{Depth audit over the ten channels.  ``Omissions'' counts updates at
+which the retained history is genuinely shorter than the available history.}
+\label{tab:depth}
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+$m$ & omissions & max action error & error/bound & green & worst endpoint ratio\\
+\midrule
+2 & 110 & $3.77\times10^{-6}$  & 0.494 & 8/10  & 1.132832\\
+3 & 100 & $7.13\times10^{-9}$  & 0.477 & 8/10  & 1.030882\\
+4 & 90  & $1.37\times10^{-11}$ & 0.383 & 9/10  & 1.054930\\
+5 & 80  & $2.66\times10^{-14}$ & 0.382 & 10/10 & 1.001172\\
+6 & 72  & $5.20\times10^{-17}$ & 0.382 & 10/10 & 1.001173\\
+7 & 64  & $9.94\times10^{-20}$ & 0.374 & 10/10 & 1.001172\\
+8 & 58  & $1.94\times10^{-22}$ & 0.374 & 10/10 & 1.001173\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{First common tested depth}
+
+Depth five is the first tested common depth preserving all ten endpoint
+gates.  Depth four fails the right channel at $\sigma=0.16$, reaching
+$1.05492958$.  At depth five the worst endpoint/reference ratio is
+$1.00117186$.  The complete-history structured chain has worst ratio
+$1.00117229$, consistent with the RH-94 assembled chain.
+
+The endpoint ratios are not monotone in $m$.  In particular, the worst depth
+four endpoint is larger than the worst depth three endpoint even though its
+operator-action tail is much smaller.  This is not a contradiction: each
+depth follows a different nonlinear sequence of singular-vector and Ritz
+choices.  The theorem gives monotone action accuracy, not monotone recursive
+projector accuracy.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/finite_memory_packet_gram_action.pdf}
+\caption{Left: endpoint ratios for every channel and their maximum; depth
+five is the first common tested depth below the inherited $1.01$ gate.  Right:
+the discarded packet action decays geometrically beneath the uniform theorem
+bound.}
+\label{fig:audit}
+\end{figure}
+
+\subsection{A sensitivity boundary}
+
+The largest action discrepancy between complete-history and assembled
+implementations is below $10^{-15}$, yet the recursively obtained endpoint
+projectors can differ by
+\[
+ \norm{P_{\rm assembled}-P_{\rm structured}}_2
+ =1.75\times10^{-4}.
+\]
+Both packets retain essentially the same endpoint residual.  This is direct
+evidence that packet coordinates and even projectors can be sensitive along
+weak branches while the captured energy is stable.  It reinforces the
+program's division of labor: the present paper supplies the structured Gram
+action; the remaining quotient theorem must formulate stability in a
+gap-aware or energy-aware metric rather than demand coordinatewise agreement.
+
+\section{Route consequence and claim boundary}
+
+The structured packet Gram-action gate selected by RH-100 is closed in the
+following narrow sense: for every level and every trial packet there is an
+exact matrix-free history action, together with a horizon-independent
+geometric truncation law.  Five retained snapshots suffice on the complete
+archived prefix.
+
+What is not closed is equally explicit.  The theorem does not remove state
+propagation, source-coordinate singular vectors, or the state-packet
+products.  It does not turn an absolute action tolerance into a uniform
+recursive Ritz-projector tolerance.  That conversion is the separate
+scale-uniform gap-aware quotient gate $Q$ in the RH-100 dependency ledger.
+Nor does a ten-channel fixed-scale audit prove an all-level Stage A theorem.
+
+Moving-cloud Riesz projections, coefficient bridges, trace-class
+complements, self-adjoint counting, arithmetic zero identification, and the
+Hilbert--Polya program remain downstream.  In particular, this paper proves
+neither a Hilbert--Polya operator nor the Riemann Hypothesis.
+
+\section{Conclusion}
+
+Normalized Gram memory has more structure than a generic dense positive
+matrix.  On a thin packet, its action is an exact sum of state actions, and
+its forgotten history is a positive geometric tail.  This removes ambient
+Gram assembly from the recursive packet route and yields explicit residual,
+compression, and complexity bounds.
+
+The finite audit is positive but appropriately limited.  Depth five is the
+first common tested memory that preserves every RH-94 endpoint gate.  At the
+same time, tiny implementation-level action differences can rotate weak Ritz
+branches substantially.  The next route layer should therefore retain this
+matrix-free action while replacing unrestricted quotienting by an exact
+stopped budget clock.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

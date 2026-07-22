@@ -1,0 +1,53 @@
+{
+  "external_inputs": {
+    "rh100_roadmap": {
+      "path": "papers/RH-100-hundred-layer-route-review/UPDATED_ROADMAP.md",
+      "sha256": "88b2a8ad241d1a15f782108b213f7490eff14744635d53ebd1161c696b6af9b7"
+    },
+    "rh100_summary": {
+      "path": "papers/RH-100-hundred-layer-route-review/results/summary.json",
+      "sha256": "e35c8c00c4ed0cb7e1e69fe5affe5263c436e5ac56c750ca70e8724cf2771880"
+    },
+    "rh77_model_source": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/experiments/run_effective_rank_audit.py",
+      "sha256": "f1ea040fd00577c2775fea8cc1bc4bf416cae76d06dd06b3a6b5ee27116cd3c3"
+    },
+    "rh82_clock_source": {
+      "path": "papers/RH-82-half-log-postblock-rank-clock/src/half_log_rank/bounds.py",
+      "sha256": "4433277802bf2e1fb0544c988dc34f1e814de9c375178126995aa691e0da5609"
+    },
+    "rh94_source_seed": {
+      "path": "papers/RH-94-source-seeded-four-direction-horizon-refresh/src/source_seeded_refresh/bounds.py",
+      "sha256": "f6f7c15477d242172b00f4c4d5bba08dfb3e6fda4899ead46a3dce8cd4bd96d4"
+    },
+    "rh94_summary": {
+      "path": "papers/RH-94-source-seeded-four-direction-horizon-refresh/results/summary.json",
+      "sha256": "c316c414e8cc89b171b420f738f4829487c7df137a22f70d2d07127b6d70cd1b"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "3bb0969648d5777ce81aaf2b36fd3fb05b0366d06cb17e56411d2d7cdec890c7",
+    "experiments/make_figures.py": "8055deb2ff35e09c164930de01da081a5e3c15e8911cf9e6324fb60ffd02b041",
+    "experiments/run_finite_memory_gram_audit.py": "755d780f829f67ad723534ec8b4b40d9bc7f2b2ec29f7ba86200e3bfc462f184",
+    "experiments/verify_archive.py": "f4521371ddfd8db848b8e4679693fa02076d7ff39a954e2aa1daf3c01d103455",
+    "src/finite_memory_gram/__init__.py": "8a0df767fd54b37e813554672d0302ca24f1fab917adb0221d77c85add59bc62",
+    "src/finite_memory_gram/action.py": "02f269490751aad56524d57400cc381cebd32a012ea026a8001e30b4d5368121",
+    "tests/test_archived_results.py": "ae58499ee32c9d8bea935ce5374bdefe9b02a575be2c5d281cd4516d3eab033c",
+    "tests/test_theory.py": "66dff541bfa9c452729cc1b09c1469d0225bf79813901fb44cb510af4e693085"
+  },
+  "publication_artifacts": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "8dbf21c2cb67032aae538ac6a4c1360d0910f6f0c17342158a9bd7ae183eedd5",
+    "THEOREM_LEDGER.md": "428ec07574de706b700b72cdf4398c0b97d6ebea06e4492562df8aa270240625",
+    "UPDATED_ROADMAP.md": "53f416352ee02f00b5038b22bf9158531943ad5e7a0c9579f27c3c28e6eaf342",
+    "figures/finite_memory_packet_gram_action.pdf": "7c713ad3c687bb681a4414f4deab04ab81c564041c683ef18cd4addab8e89c57",
+    "figures/finite_memory_packet_gram_action.png": "de573d4df802e86ac4f22f59071312f7165755780aea1bf484ff6be198b37a89",
+    "finite-memory-packet-gram-action.pdf": "26fa06d05bea6ebcce1ad5123f79652fb72216f622ae3f5e05e6eb58deae87a2",
+    "main.pdf": "26fa06d05bea6ebcce1ad5123f79652fb72216f622ae3f5e05e6eb58deae87a2",
+    "main.tex": "eb63145b4e9b4394dbf395623754de578fddf16e25287a769190d6f504ec8124",
+    "pyproject.toml": "62ce1996764cce78af5e275b77e362cde655723ce4ab43c8cb3c9f072a1bb876",
+    "references.bib": "7034a71abbdddccfd68a1feee618bcae29eca5d2c58822482b846162691b3452",
+    "requirements.txt": "a5e2ad9ae84af4628f014846dc48a02f62cc3af22ec18c55b2ec99eee189fac5"
+  },
+  "status": "all_rh101_inputs_sources_and_publication_artifacts_hashed"
+}

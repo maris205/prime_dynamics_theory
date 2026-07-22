@@ -1,0 +1,109 @@
+{
+  "audit": {
+    "channel_count": 10,
+    "depth_summary": {
+      "2": {
+        "endpoint_green_count": 8,
+        "maximum_action_error": 3.7743581402440243e-06,
+        "maximum_endpoint_to_reference_ratio": 1.1328324024921905,
+        "maximum_error_to_finite_bound_ratio": 0.4937464381528597,
+        "maximum_tail_trace_to_bound_ratio": 1.0000000000000004,
+        "omitted_action_count": 110
+      },
+      "3": {
+        "endpoint_green_count": 8,
+        "maximum_action_error": 7.125041556118264e-09,
+        "maximum_endpoint_to_reference_ratio": 1.0308817372979886,
+        "maximum_error_to_finite_bound_ratio": 0.4772213717921073,
+        "maximum_tail_trace_to_bound_ratio": 1.0000000000000004,
+        "omitted_action_count": 100
+      },
+      "4": {
+        "endpoint_green_count": 9,
+        "maximum_action_error": 1.3660882298078443e-11,
+        "maximum_endpoint_to_reference_ratio": 1.054929581300846,
+        "maximum_error_to_finite_bound_ratio": 0.3825021735453117,
+        "maximum_tail_trace_to_bound_ratio": 1.0000000000000004,
+        "omitted_action_count": 90
+      },
+      "5": {
+        "endpoint_green_count": 10,
+        "maximum_action_error": 2.6641692440064335e-14,
+        "maximum_endpoint_to_reference_ratio": 1.001171856028044,
+        "maximum_error_to_finite_bound_ratio": 0.38193277578726104,
+        "maximum_tail_trace_to_bound_ratio": 1.0000000000000004,
+        "omitted_action_count": 80
+      },
+      "6": {
+        "endpoint_green_count": 10,
+        "maximum_action_error": 5.203454673742996e-17,
+        "maximum_endpoint_to_reference_ratio": 1.0011721313127888,
+        "maximum_error_to_finite_bound_ratio": 0.38193271112515803,
+        "maximum_tail_trace_to_bound_ratio": 1.0000000000000004,
+        "omitted_action_count": 72
+      },
+      "7": {
+        "endpoint_green_count": 10,
+        "maximum_action_error": 9.936922531661e-20,
+        "maximum_endpoint_to_reference_ratio": 1.00117180375408,
+        "maximum_error_to_finite_bound_ratio": 0.37343665552376204,
+        "maximum_tail_trace_to_bound_ratio": 1.0000000000000004,
+        "omitted_action_count": 64
+      },
+      "8": {
+        "endpoint_green_count": 10,
+        "maximum_action_error": 1.9409110226416512e-22,
+        "maximum_endpoint_to_reference_ratio": 1.0011724063501795,
+        "maximum_error_to_finite_bound_ratio": 0.37345702067357706,
+        "maximum_tail_trace_to_bound_ratio": 1.0000000000000004,
+        "omitted_action_count": 58
+      }
+    },
+    "maximum_direct_to_structured_projector_distance": 0.00017489664380162306,
+    "maximum_full_chain_endpoint_to_reference_ratio": 1.0011722874429183,
+    "maximum_full_history_to_assembled_action_error": 8.878225605091933e-16,
+    "minimum_successful_uniform_depth": 5,
+    "scale_count": 5,
+    "update_count": 120
+  },
+  "program_boundary": {
+    "ambient_gram_assembly_removed": true,
+    "exact_finite_history_packet_action": true,
+    "fixed_depth_frozen_prefix_validated": true,
+    "hilbert_polya_operator": false,
+    "moving_cloud_A5_closed": false,
+    "riemann_hypothesis": false,
+    "source_coordinate_svd_removed": false,
+    "state_packet_multiplication_removed": false,
+    "uniform_all_level_ritz_stability_proved": false,
+    "uniform_geometric_tail_bound": true,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "8dbf21c2cb67032aae538ac6a4c1360d0910f6f0c17342158a9bd7ae183eedd5",
+    "THEOREM_LEDGER.md": "428ec07574de706b700b72cdf4398c0b97d6ebea06e4492562df8aa270240625",
+    "UPDATED_ROADMAP.md": "53f416352ee02f00b5038b22bf9158531943ad5e7a0c9579f27c3c28e6eaf342",
+    "figures/finite_memory_packet_gram_action.pdf": "7c713ad3c687bb681a4414f4deab04ab81c564041c683ef18cd4addab8e89c57",
+    "figures/finite_memory_packet_gram_action.png": "de573d4df802e86ac4f22f59071312f7165755780aea1bf484ff6be198b37a89",
+    "finite-memory-packet-gram-action.pdf": "26fa06d05bea6ebcce1ad5123f79652fb72216f622ae3f5e05e6eb58deae87a2",
+    "main.pdf": "26fa06d05bea6ebcce1ad5123f79652fb72216f622ae3f5e05e6eb58deae87a2",
+    "main.tex": "eb63145b4e9b4394dbf395623754de578fddf16e25287a769190d6f504ec8124",
+    "pyproject.toml": "62ce1996764cce78af5e275b77e362cde655723ce4ab43c8cb3c9f072a1bb876",
+    "references.bib": "7034a71abbdddccfd68a1feee618bcae29eca5d2c58822482b846162691b3452",
+    "requirements.txt": "a5e2ad9ae84af4628f014846dc48a02f62cc3af22ec18c55b2ec99eee189fac5"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "41cb18e4e06207d8347153afcef1d1aec667a83920422de3852048b69d18746f",
+    "results/finite_memory_gram_audit.json": "5187ebbab3d77fe41bac4192a70f0c670c0e2a689493af9190c1c9d1e724353d",
+    "results/finite_memory_gram_smoke.json": "cb38a1a907555adacfaa42bd3ae467f63a8d631a5c98be4fa90e18b2e0587c43"
+  },
+  "route_consequence": "The normalized memory Gramian has an exact state-action expansion on every trial packet, so neither the Gramian nor its recent-history truncation must be assembled in ambient coordinates. Its omitted positive tail has a dimension-free geometric trace bound. On the ten RH-94 frozen channels, depth five is the first tested common memory depth preserving every 1.01 endpoint gate. The remaining state-packet products and gap-aware stability of the nonlinear Ritz branch are separate gates.",
+  "status": "rh101_finite_memory_packet_gram_action_archived",
+  "theorem": {
+    "horizon_independent_depth_law": true,
+    "positive_geometric_tail": true,
+    "residual_and_compression_consequences": true,
+    "structured_finite_memory_packet_action": true
+  }
+}
