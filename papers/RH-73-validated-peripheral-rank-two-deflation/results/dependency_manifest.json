@@ -1,0 +1,43 @@
+{
+  "external_inputs": {
+    "rh14_operator_source": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh42_grushin_source": {
+      "path": "papers/RH-42-uniform-euclidean-parity-contour/src/euclidean_contour/grushin.py",
+      "sha256": "78990d7b7f0f172ed70d3b821a6e92cc0432f7a5ffc233c585a22ad21d3dcd14"
+    },
+    "rh72_repair_source": {
+      "path": "papers/RH-72-validated-folded-gaussian-assembly/src/folded_assembly/bounds.py",
+      "sha256": "d325337625e26413f3bcf3157004d6982fb09f42420df7c36c1630ffcf300c65"
+    },
+    "rh72_summary": {
+      "path": "papers/RH-72-validated-folded-gaussian-assembly/results/summary.json",
+      "sha256": "ae2180e028c95a541704bb379596b515aa40a8db28410ef3414f478fdaba07e6"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "ddd3e468206652f6c9e993b6cdc7f645a34371fa984ce75f0fa17c56dc0dac28",
+    "experiments/make_figures.py": "d28321c046d9d54a56b33f458731830363bd89aae789fb6480e72b4c2f36c536",
+    "experiments/run_validated_peripheral_audit.py": "a6e2ecdbc0d42ca82a711790473726c8a02e65d912fe23e2d5f5f7cb76c26480",
+    "experiments/verify_archive.py": "4f89e97684d5841032f3efff00816d11724d3fcd5ad823cd9c61e15d80b0e27b",
+    "src/peripheral_validation/__init__.py": "bb127b623040adfdb578fbfcd5aec7f3c5c736a6c29ecc5116b2c9a43fc55800",
+    "src/peripheral_validation/certificates.py": "6618200362b65830ff7fcaca19ba6c847bce9cbff700fc1bc4a7ab10dfe08a5c",
+    "tests/test_archived_results.py": "3a9990f5477ab80548bc33dcc42feb93f6d4e81cde78e80e14d2ad4baeb46fb7",
+    "tests/test_theory.py": "794128ce542c55e12efb14bd1fac330f0c0ffa83e2a2ea5980078a4e0e4da979"
+  },
+  "publication_artifacts": {
+    ".gitignore": "45bc6f151fb9fa411571660ee59bb7d034af65fbb7c1c6104c4c7af4ada209fc",
+    "README.md": "521bce3aa74f341553af52578dec3009020c6f2171f1e3ae2c9c16310411bb9b",
+    "figures/validated_peripheral_rank_two.pdf": "44c88d24b58610bce83231c78b9da462442db695717f9c399599937c0521aa10",
+    "figures/validated_peripheral_rank_two.png": "42120c33333b02fc288319e68481f62ed3b15bc78db4c19f9f22c7229c98107c",
+    "main.pdf": "ca4833bf307246c3b6bffdcc31649b40544f6ed01c295e61d6f8144961c4bc0d",
+    "main.tex": "f50d7e0f9c137d3304bdee32928d541e989d0a1cce7e6cef0f56755d7a3e1c70",
+    "pyproject.toml": "1ad6d48f738bc5fc837888ced27a8dba9d78e653bee430a12900081bf0f08c28",
+    "references.bib": "80485a257000f5d80befa8cda3cd3052a28241c09188ad7fd0ba0a94c80c2f7b",
+    "requirements.txt": "25be8263391d4091728342c19f59a0c799ec2444980149521892d447c2ce223b",
+    "validated-peripheral-rank-two-deflation.pdf": "ca4833bf307246c3b6bffdcc31649b40544f6ed01c295e61d6f8144961c4bc0d"
+  },
+  "status": "all_rh73_inputs_sources_and_publication_artifacts_hashed"
+}
