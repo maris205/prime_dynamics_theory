@@ -1,0 +1,39 @@
+{
+  "external_inputs": {
+    "rh86_memory_summary": {
+      "path": "papers/RH-86-trace-normalized-late-memory-packets/results/summary.json",
+      "sha256": "3e7fd298fddd6eea6c59d8750fb75066df3344b1e75423568b4662e4fc5ecea6"
+    },
+    "rh87_injection_audit": {
+      "path": "papers/RH-87-rayleigh-injection-recursion/results/injection_audit.json",
+      "sha256": "1fc9c1f810d048187f7b390442576cc2360567594914338b32bd48aa91babf75"
+    },
+    "rh87_injection_summary": {
+      "path": "papers/RH-87-rayleigh-injection-recursion/results/summary.json",
+      "sha256": "cd44d82eb03333827a80654021446fd32216469de5982dcbb5948100b8b910a7"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "b6fc42f3c3cbc2ee7cdba648208608fd5c6d259ba49ee12a71b3e49368ef2470",
+    "experiments/make_figures.py": "9f58de057b25d1797d2298fe6f4ce2aa12c4fb142799bc6f2e420500995e785f",
+    "experiments/run_predictor_corrector_audit.py": "fea4a91eb5ed884c5d07905e5643b7981dea63f4ece1a865e129c77dd7e5ce06",
+    "experiments/verify_archive.py": "c7407f2a182e60e91dc327a2d4df389a1b2bee6c54a359a25b3c193232f92246",
+    "src/predictor_corrector/__init__.py": "4daf8f1639de87b17a6095a32d7524b9e16e545ce89d5c46977d1001476257be",
+    "src/predictor_corrector/bounds.py": "b884d5eb6854ec4aea5dd993b88b01929d60b39e7a2fac6f5234e0784b56512b",
+    "tests/test_archived_results.py": "5977014a340f54426ea820b2a41a7a94cebce3ba89551b7d1e8fe41e4a0e09b5",
+    "tests/test_theory.py": "8eea6e628651f86497e67b8b90ea5cf00bfecf63a46ab7376a3ac6e0156e397d"
+  },
+  "publication_artifacts": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "13f8f50bf2db8c7a829205a4606e9c2a5303b2ff8db64e520c0913e903cbd198",
+    "figures/predictor_corrector_energy_contraction.pdf": "bb8eb743ef8b5e574ad9a6377797e07a67352edd6d68f6bb95ace73741cb234f",
+    "figures/predictor_corrector_energy_contraction.png": "26cf77a7e9b65c8f238ae7773ec2d916a69e67cbb47b5a4d08ceeb2d366deb99",
+    "main.pdf": "4800e8191c81aac3fe40eb9216612286d90f9a4eca7d5e9c0c7f9429d3ba2d60",
+    "main.tex": "ecc03ce36bcd2ee1f19a961ee037b1e7c04afbdb6feea344736a7b7917838a39",
+    "predictor-corrector-energy-contraction.pdf": "4800e8191c81aac3fe40eb9216612286d90f9a4eca7d5e9c0c7f9429d3ba2d60",
+    "pyproject.toml": "bea101cad6245ee52bb1a242ba3987888dac62b2fca9ea376bdab4be9810a3c2",
+    "references.bib": "6a8fbe8757013763dd4da496672b4955f1485aa6b7722655173bc60d79c6318c",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "status": "all_rh88_inputs_sources_and_publication_artifacts_hashed"
+}

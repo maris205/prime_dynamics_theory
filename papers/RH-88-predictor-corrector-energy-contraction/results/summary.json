@@ -1,0 +1,52 @@
+{
+  "audit": {
+    "actual_memory_contraction_count": 10,
+    "channel_count": 10,
+    "global_norm_failure_count": 10,
+    "maximum_actual_memory_contraction": 0.23484393369891188,
+    "maximum_factorization_residual": 2.7755575615628914e-17,
+    "maximum_interval_point_rayleigh_coefficient_upper": 2.311390838463087,
+    "maximum_memory_predictor_coefficient": 1.0192341390759099,
+    "maximum_reoptimization_factor": 0.5275901739200154,
+    "memory_predictor_contraction_count": 9,
+    "minimum_interval_global_coefficient_lower": 2.6671867911587803,
+    "point_predictor_contraction_count": 6,
+    "scale_count": 5
+  },
+  "program_boundary": {
+    "five_scale_corrected_memory_contraction_observed": true,
+    "global_norm_route_rejected_at_anchors": true,
+    "hilbert_polya_operator": false,
+    "point_packet_contraction_rejected_as_uniform_anchor_law": true,
+    "predictor_corrector_contraction_identity": true,
+    "residual_rayleigh_factorization": true,
+    "riemann_hypothesis": false,
+    "stage_A4_unconditional_closed": false,
+    "uniform_reoptimization_gain_proved": false,
+    "uniform_stage_A1_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "13f8f50bf2db8c7a829205a4606e9c2a5303b2ff8db64e520c0913e903cbd198",
+    "figures/predictor_corrector_energy_contraction.pdf": "bb8eb743ef8b5e574ad9a6377797e07a67352edd6d68f6bb95ace73741cb234f",
+    "figures/predictor_corrector_energy_contraction.png": "26cf77a7e9b65c8f238ae7773ec2d916a69e67cbb47b5a4d08ceeb2d366deb99",
+    "main.pdf": "4800e8191c81aac3fe40eb9216612286d90f9a4eca7d5e9c0c7f9429d3ba2d60",
+    "main.tex": "ecc03ce36bcd2ee1f19a961ee037b1e7c04afbdb6feea344736a7b7917838a39",
+    "predictor-corrector-energy-contraction.pdf": "4800e8191c81aac3fe40eb9216612286d90f9a4eca7d5e9c0c7f9429d3ba2d60",
+    "pyproject.toml": "bea101cad6245ee52bb1a242ba3987888dac62b2fca9ea376bdab4be9810a3c2",
+    "references.bib": "6a8fbe8757013763dd4da496672b4955f1485aa6b7722655173bc60d79c6318c",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "dde105dc4f01d20459d371e3fc8e81cb700537552f15e2115de367c560fbcc8e",
+    "results/predictor_corrector_audit.json": "ab8b8628fe0cdcea44ae6312c2e7ff07f3cfba624ed03a91be92bf9e7dbc60e4",
+    "results/predictor_corrector_smoke.json": "56cf9bf4cb475cc07ede20fbdd4e4773c1c88a4cb409899687da49aa0e71c55e"
+  },
+  "route_consequence": "One-step injection factors exactly into current point-packet error times a residual/full Rayleigh quotient. The global operator-norm sufficient coefficient is rigorously above one in all ten channels, and the directional point predictor contracts in only six. Memory prediction contracts in nine, while variational packet correction restores contraction in all ten with actual factor below 0.235. The finest right channel specifically needs the correction dividend. The next analytic target is therefore a lower bound on packet reoptimization gain, not a global norm or point-packet contraction theorem.",
+  "status": "rh88_predictor_corrector_energy_contraction_archived",
+  "theorem": {
+    "global_norm_sufficient_condition_boundary": true,
+    "predictor_corrector_contraction_identity": true,
+    "residual_rayleigh_factorization": true
+  }
+}
