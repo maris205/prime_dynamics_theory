@@ -1,0 +1,194 @@
+\section{Adaptive necessity and the pre-terminal phase gate}
+\label{sec:adaptive-boundary}
+
+The constant in \cref{thm:tpc56-literal-pentant-extraction} does not come
+from a lower singular value of the full grouping map.  It comes from using
+the distinguished vector to choose a favorable coordinate cone.  We now
+show exactly why that dependence is necessary for the universal
+unrestricted-array guarantee, record the corresponding local fiberwise
+obstruction in the bounded literal class, and state a sufficient condition
+for replacing it by a finite fixed pre-terminal library.
+
+\subsection{The sharp coefficient-independent alternative}
+
+Let \(\Sigma\) be the abstract grouping map
+\eqref{eq:tpc56-abstract-grouping}.  For a fixed set \(S\subseteq\cU\),
+write \(P_S\) for its coordinate projection.  Here \(S\) is chosen from
+the fiber geometry and is independent of the input vector.
+
+The following is the unweighted specialization of the TPC--55
+coordinate-transversal criterion, recalled here for comparison
+\citep{WangTPC55}.
+
+\begin{theorem}[Fixed-selector dichotomy]
+\label{thm:tpc56-fixed-selector-dichotomy}
+The following are equivalent:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.8em]
+ \item There exists \(c>0\) such that
+ \begin{equation}
+  \|\Sigma P_Sx\|_2^2\ge c\|P_Sx\|_2^2
+  \qquad(x\in\C^{\cU}).
+  \label{eq:tpc56-fixed-selector-lower}
+ \end{equation}
+ \item Every fiber contains at most one selected coordinate:
+ \begin{equation}
+  |S\cap\cF_y|\le1\qquad(y\in\cY).
+  \label{eq:tpc56-fixed-selector-transversal}
+ \end{equation}
+\end{enumerate}
+When these conditions hold, \eqref{eq:tpc56-fixed-selector-lower} is an
+identity with \(c=1\).  If they fail, the restricted map has a nonzero
+two-coordinate kernel vector.
+\end{theorem}
+
+\begin{proof}
+If \eqref{eq:tpc56-fixed-selector-transversal} holds, every selected output
+is either zero or one input coordinate, hence
+\(\|\Sigma P_Sx\|_2=\|P_Sx\|_2\).  Conversely, suppose
+\(u,v\in S\cap\cF_y\) are distinct.  Take \(x_u=1\), \(x_v=-1\), and all
+other coordinates zero.  Then \(P_Sx=x\ne0\) but \(\Sigma P_Sx=0\), so no
+positive \(c\) is possible.
+\end{proof}
+
+Thus a single coefficient-independent selector with a uniform lower bound
+on the unrestricted coefficient space is exactly a transversal.  The
+pentant theorem escapes this dichotomy because its coordinate set changes
+with the realized phases.  It retains a constant fraction of the energy
+without claiming a lower bound for all vectors on the same selected set.
+
+\subsection{Realization of the local collision in the literal class}
+
+The abstract kernel direction is compatible with the source hypothesis
+actually inherited by the literal packet.  Factor the remaining amplitude
+\eqref{eq:tpc56-remaining-amplitude} as
+\begin{equation}
+ b_u=\kappa_u\zeta_{m_u},
+ \label{eq:tpc56-baseline-times-zeta}
+\end{equation}
+where \(\kappa_u\) is the product of every displayed factor other than
+\(\zeta_{m_u}\).  Call a terminal atom \emph{baseline nondegenerate} when
+\(\Omega_{q(u)}\kappa_u\ne0\).
+
+\begin{proposition}[Literal two-atom saturation]
+\label{prop:tpc56-literal-two-atom-saturation}
+Suppose \(C>0\) and one exact physical-capable fiber
+\(\cF_y^{\rm term}\) contains two
+distinct baseline-nondegenerate atoms \(u_1,u_2\).  In the inherited
+coefficient class \(|\zeta_m|\le C\), there are coefficient choices for
+which the restriction of that fiber to \(\{u_1,u_2\}\) has positive
+terminal diagonal and zero coherent output.  More precisely, for a
+sufficiently small \(t\ne0\), one may take
+\begin{equation}
+ \zeta_{m_{u_1}}=\frac{t}{\kappa_{u_1}},
+ \qquad
+ \zeta_{m_{u_2}}=-\frac{t}{\kappa_{u_2}},
+ \label{eq:tpc56-cancelling-zeta-choice}
+\end{equation}
+and set the source factors belonging to every other row in this fiber to
+zero.  Then
+\begin{equation}
+ D_y=2|\Omega_y t|^2>0,
+ \qquad
+ C_y=0.
+ \label{eq:tpc56-literal-local-cancellation}
+\end{equation}
+Here \(D_y,C_y\) refer to the resulting fiber, with all its other rows
+zeroed.
+\end{proposition}
+
+\begin{proof}
+Distinct terminal atoms in a fixed fiber have distinct rows.  Indeed, the
+row determines \(d\), and fixed \(s=dr\) then determines \(r\); fixed
+\((j,\gamma)\) would otherwise give the same input.  Thus the two values of
+\(\zeta_m\) in \eqref{eq:tpc56-cancelling-zeta-choice} are independent
+coordinates.  Choose \(|t|\) small enough that both values have modulus at
+most \(C\).  Equations \eqref{eq:tpc56-baseline-times-zeta} and
+\eqref{eq:tpc56-physical-gauge-factorization} give terminal amplitudes
+\(\Omega_yt\) and \(-\Omega_yt\), proving
+\eqref{eq:tpc56-literal-local-cancellation}.
+\end{proof}
+
+The proposition is a no-go statement for a uniform \emph{fiberwise} lower
+bound over the inherited bounded coefficient class.  It does not assert
+that the distinguished inherited coefficients realize these choices, that
+such a two-atom fiber carries global energy, or that other physical output
+fibers vanish.  Those stronger conclusions would require additional
+support information.
+
+Prime-resolved injectivity, common M\"obius phase, a nonzero terminal
+weight, and even multiplicity two therefore do not imply positive
+coherence for arbitrary bounded source phases.  This is a coefficient
+space obstruction, not a proof that the intended arithmetic vector
+cancels.
+
+\subsection{A finite fixed phase-provenance criterion}
+
+There is a precise way in which the adaptive selector could become
+compatible with an earlier source decomposition.  For an integer
+\(M\ge2\), let
+\begin{equation}
+ \cU^{\rm pre}=\bigsqcup_{k=0}^{M-1}\cA_k
+ \label{eq:tpc56-preterminal-phase-partition}
+\end{equation}
+be a partition chosen independently of terminal primality and independently
+of the numerical values of the source coefficients.  Its coordinate
+projections are fixed before \(D_{h_0}\) is applied.
+
+\begin{theorem}[Pre-terminal phase-realization criterion]
+\label{thm:tpc56-preterminal-phase-realization}
+Let \(g\in\C^{\cU^{\rm pre}}\) and put \(x=D_{h_0}g\).  Suppose
+\(0\le\theta<\pi/2\), and there are angles
+\(\alpha_0,\ldots,\alpha_{M-1}\) and unit output gauges \(\omega_y\), all
+fixed from coefficient-independent pre-terminal and output data before the
+realized numerical source phases are seen.  In particular, neither the
+angles nor the gauges may be chosen from the realized phases of \(x\).
+Suppose every nonzero terminal amplitude in
+\(\cA_k\cap\cF_y^{\rm term}\) satisfies
+\begin{equation}
+ \dist_{\T}
+ \left(\Arg(\overline{\omega_y}x_u),\alpha_k\right)
+ \le\theta.
+ \label{eq:tpc56-preterminal-sector-hypothesis}
+\end{equation}
+Then one of the \emph{fixed} pre-terminal cells, chosen by the least-index
+energy tie rule after terminal activation, satisfies
+\begin{equation}
+ \boxed{
+ \|\Sigma D_{h_0}P_{\cA_{k_*}}g\|_2^2
+ \ge\frac{\cos^2\theta}{M}\|D_{h_0}g\|_2^2.}
+ \label{eq:tpc56-preterminal-sector-lower}
+\end{equation}
+The same statement holds after restriction to a declared output-fiber
+family, relative to its terminal diagonal energy.
+\end{theorem}
+
+\begin{proof}
+The fixed cells partition the full pre-terminal coordinates and hence their
+terminal diagonal energies sum to \(\|D_{h_0}g\|_2^2\).  One cell retains
+at least an \(M^{-1}\) fraction.  On each output fiber its surviving
+amplitudes obey the acute-sector hypothesis
+\eqref{eq:tpc56-preterminal-sector-hypothesis}.  The real-projection proof
+of \eqref{eq:tpc56-fiber-sector-proof} gives a factor
+\(\cos^2\theta\).
+\end{proof}
+
+This theorem separates two kinds of adaptivity.  Choosing one member of a
+fixed finite library by energy pigeonhole is harmless at the exponent
+level.  Defining the library itself from the realized terminal phases, as
+in \cref{thm:tpc56-literal-pentant-extraction}, is a new post-terminal
+operation.
+
+The row provenance in TPC--25 permits fixed residue characters and
+unit-modulus factors inside \(\zeta_m\) \citep{WangTPC25}.  The interface
+inherited by TPC--53--55, however, records only \(|\zeta_m|\ll1\).  It does
+not prove that the distinguished \(\zeta_m\) phases are determined by a
+fixed finite residue partition.  Even if they are, one must also select
+sign-stable cells for every source and profile factor in
+\eqref{eq:tpc56-remaining-amplitude} and prove that those cells carry the
+required terminal diagonal energy.  Geometric nonempty support alone is
+insufficient by the concentration obstruction of TPC--54
+\citep{WangTPC54}.
+
+Accordingly, \cref{thm:tpc56-preterminal-phase-realization} is the exact
+next positive criterion, not a property silently attributed to the current
+packet.

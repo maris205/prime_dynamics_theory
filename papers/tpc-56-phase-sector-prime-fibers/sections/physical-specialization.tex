@@ -1,0 +1,228 @@
+\section{Specialization to the literal terminal-prime square}
+\label{sec:physical-specialization}
+
+We now apply \cref{thm:tpc56-equal-sector-selection} to
+\(x=D_{h_0}G_X^L\).  The specialization uses the exact physical support
+twice: first to identify each coordinate with one terminal prime, and then
+to remove the common fiber gauge without changing any phase difference.
+
+\subsection{Prime-indexed pentants}
+
+For an active output \(y\), let \(u(y,p)\) be the unique input associated
+with \(p\in\cP_y^{\rm phys}\) by
+\cref{prop:tpc56-prime-resolved-bijection}, and put
+\begin{equation}
+ x_{y,p}
+ :=(D_{h_0}G_X^L)_{u(y,p)}
+ =\mu(r_{y,p})\Lambda(p r_{y,p})
+   [G_X^L]_{u(y,p)}.
+ \label{eq:tpc56-prime-indexed-amplitude}
+\end{equation}
+Then
+\begin{align}
+ D_y&:=\sum_{p\in\cP_y^{\rm phys}}|x_{y,p}|^2,
+ \label{eq:tpc56-fiber-diagonal}\\
+ C_y&:=\left|\sum_{p\in\cP_y^{\rm phys}}x_{y,p}\right|^2.
+ \label{eq:tpc56-fiber-coherent-square}
+\end{align}
+Empty fibers have \(D_y=C_y=0\).  A nonzero singleton fiber has
+\(C_y=D_y\).  Globally,
+\begin{equation}
+ \cD_{h_0}(G_X^L)=\sum_yD_y,
+ \qquad
+ \cG_{h_0}(G_X^L)=\sum_yC_y.
+ \label{eq:tpc56-global-prime-square}
+\end{equation}
+
+For \(D_y>0\), use the literal unit gauge \(\omega_y\) from
+\eqref{eq:tpc56-unit-output-gauge}.  Equations
+\eqref{eq:tpc56-physical-gauge-factorization} and
+\eqref{eq:tpc56-prime-indexed-amplitude} show that
+\begin{equation}
+ \Arg(\overline{\omega_y}x_{y,p})
+ =\Arg b_{u(y,p)}.
+ \label{eq:tpc56-normalized-literal-phase}
+\end{equation}
+Partition these exact phases into the five fixed intervals
+\(I_0,\ldots,I_4\) of \eqref{eq:tpc56-equal-sectors}.  Let
+\begin{equation}
+ \cP_{y,k}^{\rm sec}
+ :=\{p\in\cP_y^{\rm phys}:
+     \Arg b_{u(y,p)}\in I_k\},
+ \label{eq:tpc56-prime-pentants}
+\end{equation}
+and pull this set back through the prime-resolved bijection.  This defines
+an orthogonal coordinate projection \(P_k^{\rm sec}\) on the terminal
+coordinate space.  Extend it by zero to the rest of \(\cU^{\rm pre}\).
+For the fixed realized vector, diagonal coordinate projections commute
+with the terminal diagonal:
+\begin{equation}
+ D_{h_0}P_k^{\rm sec}G_X^L
+ =P_k^{\rm sec}D_{h_0}G_X^L.
+ \label{eq:tpc56-selector-commutation}
+\end{equation}
+
+\begin{theorem}[Literal pentant extraction]
+\label{thm:tpc56-literal-pentant-extraction}
+Assume the hypotheses of
+\cref{prop:tpc56-prime-resolved-bijection}.  Let \(k_*\) be the least
+pentant index whose selected terminal diagonal energy is maximal.  Then
+\begin{align}
+ \cD_{h_0}(P_{k_*}^{\rm sec}G_X^L)
+ &\ge\frac15\cD_{h_0}(G_X^L),
+ \label{eq:tpc56-selected-diagonal-fraction}\\
+ \boxed{
+ \cG_{h_0}(P_{k_*}^{\rm sec}G_X^L)
+ \ge\frac{3+\sqrt5}{40}\cD_{h_0}(G_X^L).}
+ \label{eq:tpc56-literal-pentant-lower}
+\end{align}
+Both statements include the zero-energy case.  The selected support is an
+exact subset of the physical terminal-prime support; no ambient prime has
+been inserted.
+\end{theorem}
+
+\begin{proof}
+If \(\cD_{h_0}(G_X^L)=0\), take the zero projection.  Otherwise apply
+\cref{thm:tpc56-equal-sector-selection} to the finite terminalized vector
+with the gauges \eqref{eq:tpc56-unit-output-gauge}.  The first conclusion
+is the diagonal pigeonhole.  The second is
+\eqref{eq:tpc56-universal-sector-lower} with \(M=5\), together with
+\eqref{eq:tpc56-selector-commutation} and
+\eqref{eq:tpc56-pentant-constant}.
+\end{proof}
+
+The theorem is more restrictive and canonical than selecting one pentant
+separately in every fiber: remarkably, a single index \(k_*\) works in the
+normalized phase coordinates after the fiber-dependent canonical gauges are
+removed.  In absolute phase coordinates the five windows are rotated by
+\(\omega_y\).  The partition itself uses the realized phases \(\Arg b_u\).
+
+\subsection{Arbitrary fiber families and activation transfer}
+
+Let \(\cY_*\subseteq\cY_{h_0}^{\rm term}\) be any declared family of
+terminal output fibers, and let
+\begin{equation}
+ \cD_{h_0}(g;\cY_*)
+ :=\sum_{y\in\cY_*}\sum_{u\in\cF_y^{\rm term}}
+ |(D_{h_0}g)_u|^2.
+ \label{eq:tpc56-fiber-family-diagonal}
+\end{equation}
+Apply the sector theorem after setting every terminalized coordinate
+outside \(\cY_*\) to zero.
+
+\begin{corollary}[Activation--coverage--sector transfer]
+\label{cor:tpc56-activation-coverage-transfer}
+Let \(g\) be a literal selected pre-terminal packet with
+\(\cE_{\rm pre}(g)>0\).  Suppose
+\begin{align}
+ \cD_{h_0}(g)
+ &\ge X^{-\lambda_{\rm term}+o(1)}\cE_{\rm pre}(g),
+ \label{eq:tpc56-terminal-activation-hypothesis}\\
+ \cD_{h_0}(g;\cY_*)
+ &\ge X^{-\lambda_{\rm fib}+o(1)}\cD_{h_0}(g).
+ \label{eq:tpc56-fiber-coverage-hypothesis}
+\end{align}
+Use any exact unit gauges on the active fibers; for the physical vector
+they may be chosen as in \eqref{eq:tpc56-unit-output-gauge}.  Then an
+adaptive pentant projection supported over \(\cY_*\) satisfies
+\begin{equation}
+ \boxed{
+ \cG_{h_0}(P_*g)
+ \ge c_5X^{-(\lambda_{\rm term}+\lambda_{\rm fib})+o(1)}
+ \cE_{\rm pre}(g).}
+ \label{eq:tpc56-activation-sector-transfer}
+\end{equation}
+For the family of all active fibers, one has \(\lambda_{\rm fib}=0\).
+\end{corollary}
+
+\begin{proof}
+Apply \cref{thm:tpc56-equal-sector-selection} to the restriction of
+\(D_{h_0}g\) over \(\cY_*\).  This gives
+\(\cG_{h_0}(P_*g)\ge c_5\cD_{h_0}(g;\cY_*)\).  Substitute
+\eqref{eq:tpc56-terminal-activation-hypothesis} and
+\eqref{eq:tpc56-fiber-coverage-hypothesis}.
+\end{proof}
+
+The order of the hypotheses matters.  Terminal activation is measured on
+the full declared pre-terminal packet before any phase selector is formed.
+The phase selection then acts only on the surviving terminal coordinates.
+No assertion that a convenient fiber is nonempty or energetically
+representative is hidden in \eqref{eq:tpc56-fiber-coverage-hypothesis}.
+
+\subsection{Cofactor blocks and comparison with rank selection}
+
+For a cofactor interval \(\cB_R=[R,2R]\), put
+\begin{equation}
+ g_R=g\one_{r\in\cB_R}.
+ \label{eq:tpc56-cofactor-block}
+\end{equation}
+The fibers of \(D_{h_0}g_R\) are simply intersections of the full fibers
+with the block.  No new collision is created, so the sector theorem gives
+\begin{equation}
+ \cG_{h_0}(P_{*,R}g_R)
+ \ge c_5\cD_{h_0}(g_R)
+ \label{eq:tpc56-block-sector-lower}
+\end{equation}
+for every block, empty or nonempty.  Unlike the TPC--55 rank cover, this
+does not require \(R\gg L\) or a bound for the maximal fiber size.
+
+The two selectors solve different problems:
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.25\textwidth}
+                >{\raggedright\arraybackslash}p{0.31\textwidth}
+                >{\raggedright\arraybackslash}p{0.31\textwidth}}
+\toprule
+Feature & Prime-rank transversal & Phase-sector selector \\
+\midrule
+Atoms retained per fiber
+& At most one
+& Arbitrarily many in one acute sector \\
+Terminal diagonal retained
+& At least reciprocal maximal multiplicity
+& At least \(1/5\) globally \\
+Grouped/diagonal ratio on selected packet
+& Exactly one
+& At least \(\cos^2(\pi/5)\) \\
+Balanced cofactor input
+& Needed for subpower loss
+& Not needed \\
+Dependence on coefficient phases
+& None
+& Essential under the current coefficient class \\
+Pre-terminal smooth provenance
+& Not automatic
+& Not automatic \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Thus \eqref{eq:tpc56-literal-pentant-lower} improves the retained-energy
+constant over rank selection at the \emph{adaptive selected} grouping gate,
+at the price of coefficient adaptivity.  It removes the multiplicity cost
+there, but does not return the deleted four pentants to the full physical
+output.
+
+\subsection{Five-channel form of the remaining cancellation}
+
+For the physical vector define
+\begin{equation}
+ z_{y,k}:=
+ \sum_{p\in\cP_{y,k}^{\rm sec}}x_{y,p}.
+ \label{eq:tpc56-sector-channel}
+\end{equation}
+Then the original output and the phase-split energy satisfy the exact
+relations
+\begin{align}
+ (\cT_{h_0}G_X^L)_y
+ &=\sum_{k=0}^4z_{y,k},
+ \label{eq:tpc56-five-channel-reassembly}\\
+ \sum_y\sum_{k=0}^4|z_{y,k}|^2
+ &\ge\cos^2(\pi/5)\cD_{h_0}(G_X^L).
+ \label{eq:tpc56-five-channel-lower}
+\end{align}
+Accordingly, complete within-sector prime cancellation is uniformly
+excluded, with the quantitative lower bound in
+\eqref{eq:tpc56-five-channel-lower}.  The undeleted problem is now the explicit
+five-channel interference in \eqref{eq:tpc56-five-channel-reassembly}.
+The latter may still vanish by cancellation between different pentants.

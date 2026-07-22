@@ -1,0 +1,236 @@
+\section{Endpoint ledger, audit, and the next gate}
+\label{sec:endpoint-claims}
+
+\subsection{The selected coherence exponent}
+
+The inherited endpoint scales are
+\begin{equation}
+ Q=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)},
+ \qquad
+ D=X^{10049/52500+o(1)},
+ \label{eq:tpc56-endpoint-QJD}
+\end{equation}
+and hence
+\begin{equation}
+ L=Q/D=X^{99979/210000+o(1)}.
+ \label{eq:tpc56-endpoint-L}
+\end{equation}
+The constant \(c_5=(3+\sqrt5)/40\) in
+\eqref{eq:tpc56-literal-pentant-lower} is independent of every scale.
+Therefore the adaptive selected grouping gate has
+\begin{equation}
+ \lambda_{\rm coh}^{\rm sec}=0
+ \label{eq:tpc56-zero-sector-exponent}
+\end{equation}
+relative to terminal diagonal energy.  Unlike the coefficient-blind
+prime-rank certificate in TPC--55, this statement has no factor
+\(1+L/R\) and remains constant even at \(R\asymp J\).  Its price is
+structural adaptivity, not a hidden polynomial exponent.
+
+To place the theorem in the full prospective chain, suppose a parent
+physical atomic energy is first restricted to a compatible packet and a
+cofactor block at costs
+\begin{equation}
+ X^{-\lambda_{\rm sel}+o(1)},
+ \qquad
+ X^{-\lambda_{\rm blk}+o(1)}.
+ \label{eq:tpc56-upstream-selection-losses}
+\end{equation}
+Suppose terminal activation and any restriction to a declared output-fiber
+family cost
+\begin{equation}
+ X^{-\lambda_{\rm term}+o(1)},
+ \qquad
+ X^{-\lambda_{\rm fib}+o(1)}.
+ \label{eq:tpc56-activation-coverage-losses}
+\end{equation}
+Then \cref{cor:tpc56-activation-coverage-transfer} gives the selected
+fixed-shift residual-output exponent
+\begin{equation}
+ \lambda_{\rm sel}+\lambda_{\rm blk}
+ +\lambda_{\rm term}+\lambda_{\rm fib},
+ \label{eq:tpc56-selected-ledger}
+\end{equation}
+with no added positive-power coherence cost.
+
+Formula \eqref{eq:tpc56-selected-ledger} is valid only for the explicitly
+adaptive terminal subpacket.  It may enter the eventual physical proof
+chain only if later localization, Gram comparison, boundary truncation,
+and tail reconstruction preserve that coordinate selection, or if the
+selector is realized by the fixed pre-terminal criterion of
+\cref{thm:tpc56-preterminal-phase-realization}.  This is a logical gate,
+not an exponent silently set to zero.
+
+For the undeleted physical output, one must instead prove
+\begin{equation}
+ \cG_{h_0}(g)
+ \ge X^{-\lambda_{\rm coh}+o(1)}\cD_{h_0}(g).
+ \label{eq:tpc56-full-coherence-hypothesis}
+\end{equation}
+The present paper does not prove \eqref{eq:tpc56-full-coherence-hypothesis}.
+If a route uses a completed frozen shift family or signed projective
+layers, it must also charge \(\lambda_{\rm loc}\) and
+\(\lambda_{\rm reas}\) from estimates of the forms
+\eqref{eq:tpc56-required-shift-localization} and
+\eqref{eq:tpc56-required-lower-reassembly}.  The complete prospective
+undeleted ledger is therefore
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ &\lambda_{\rm sel}+\lambda_{\rm blk}
+ +\lambda_{\rm term}+\lambda_{\rm fib}+\lambda_{\rm coh}
+ +\lambda_{\rm loc}+\lambda_{\rm reas}\\
+ &\hspace{23mm}
+ +\lambda_{\rm Gram}+\lambda_{\rm bdry}+\lambda_{\rm tail}
+ \le\frac1{400}.
+ \end{aligned}}
+ \label{eq:tpc56-full-endpoint-budget}
+\end{equation}
+For a direct pointwise theorem at the already reassembled physical
+\(h_0\), no localization or projective-reassembly gate is inserted.  At
+equality in \eqref{eq:tpc56-full-endpoint-budget}, a further error of size
+\(X^{-1/400+o(1)}\) need not be absorbable; strict slack or a closed
+constant-level comparison remains the safe endpoint condition.
+
+\subsection{Six-point physical audit}
+
+The proof satisfies the following interface audit.
+\begin{enumerate}[label=\textup{(A\arabic*)},leftmargin=3.2em]
+ \item \emph{Literal coefficients.}
+       The source weight, bounded complex factor, binary mask, four
+       profiles, cofactor sign, and shaped terminal logarithm are all
+       displayed in
+       \eqref{eq:tpc56-source-coefficient}--
+       \eqref{eq:tpc56-terminal-diagonal}.  Sector membership is formed
+       from their product, not from a proxy coefficient.
+ \item \emph{Fixed physical shift.}
+       Every terminal equality uses the one specified \(h_0\).  Frozen
+       intercepts appear only in the nonlocalization warning of
+       \cref{sec:transport-boundaries}.
+ \item \emph{Physical atomic normalization.}
+       The pre-terminal, terminal diagonal, and grouped energies use raw
+       counting measure in
+       \eqref{eq:tpc56-preterminal-energy}--
+       \eqref{eq:tpc56-grouped-energy}.  The terminal amplitude is not
+       absorbed into a modified domain norm.
+ \item \emph{Canonical representation.}
+       The prime coordinate comes from the exact TPC--55 injection.  The
+       pentants are the five fixed equal arcs, the common output gauge is
+       \eqref{eq:tpc56-unit-output-gauge}, and ties use the least index.
+       The support remains explicitly coefficient-adaptive; no projective
+       layer is selected.
+ \item \emph{Actual active support.}
+       The full pre-terminal universe, terminal-admissible universe, and
+       physically nonzero universe are distinct in
+       \eqref{eq:tpc56-preterminal-universe},
+       \eqref{eq:tpc56-terminal-universe}, and
+       \eqref{eq:tpc56-physical-universe}.  Every selected prime belongs to
+       the exact physical prime set \(\cP_y^{\rm phys}\).
+ \item \emph{Endpoint budget.}
+       The constant sector step has zero positive polynomial exponent only
+       on the adaptive selected packet.  All activation, fiber coverage,
+       localization, reassembly, Gram, boundary, and tail losses remain
+       visible in \eqref{eq:tpc56-full-endpoint-budget}.
+\end{enumerate}
+
+\subsection{Claim table}
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.29\textwidth}
+                >{\raggedright\arraybackslash}p{0.60\textwidth}}
+\toprule
+Statement & Status \\
+\midrule
+Equal-sector compression and pentant constant
+& Unconditional finite-dimensional theorem (L0). \\
+Rotating-window and phase-error bounds
+& Unconditional finite-dimensional refinements (L0). \\
+Literal prime-indexed sector projection
+& Exact on the fixed-\(h_0\) terminal support under the inherited
+  prime-resolved injection (L1). \\
+Constant-energy selected coherent square
+& Exact post-terminal adaptive L1 selection; no multiplicity or balanced
+  cofactor cost. \\
+Fixed-selector dichotomy
+& Exact L0 theorem; fixed uniform lower selectors are precisely
+  transversals. \\
+Literal two-atom saturation
+& Local coefficient-class L1 no-go, conditional on a nondegenerate
+  two-atom carrier; not a claim about the distinguished coefficients or
+  global output. \\
+Fixed pre-terminal phase realization
+& Sufficient L0/L1 criterion; its phase and energy hypotheses are not
+  verified for the inherited packet. \\
+Terminal activation and energetic block occupancy
+& Not proved. \\
+Undeleted fixed-\(h_0\) coherent lower square
+& Not proved; the five inter-sector channels may still cancel. \\
+Frozen localization, native affine Gram, boundary, and tail
+& Not proved. \\
+Parity improvement or twin-prime consequence
+& Not claimed. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In particular, none of the following implications is permitted:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item a lower bound for one adaptive pentant does not lower-bound the sum
+       of all five pentants;
+ \item a constant selected fraction of terminal diagonal energy does not
+       prove that terminal activation occurs;
+ \item the common M\"obius gauge does not constrain the remaining
+       \(\zeta_m\) and profile phases;
+ \item a phase-defined terminal set is not automatically a fixed smooth or
+       residue cell available before primality is tested;
+ \item an average over frozen shifts or auxiliary Fourier phases does not
+       select the prescribed physical coefficient;
+ \item a favorable projective layer does not survive signed reassembly by
+       a lower Minkowski inequality; and
+ \item the residual grouped norm is not automatically the native affine
+       physical Gram.
+\end{enumerate}
+
+\subsection{The next gate}
+
+Complete within-sector cancellation is now uniformly excluded on a
+constant-energy subpacket.  The next stage should investigate the
+\emph{undeleted} five-channel problem by routes that are still pointwise in
+\(h_0\).  Three concrete quantities are available.
+\begin{enumerate}[label=\textbf{Door \Alph*.},leftmargin=3.8em]
+ \item Measure the terminal diagonal carried by singleton fibers.  Their
+       coherent square equals their diagonal without any phase hypothesis.
+       Equivalently, bound the energy-weighted collision incidence of
+       multiple fibers.
+ \item Use the distinct terminal primes to form an auxiliary
+       prime-modulated polynomial, compute its exact Parseval diagonal, and
+       quantify the microscopic localization needed to return its average
+       energy to the physical phase zero.
+ \item Audit whether the actual \(\zeta_m\) and sign-stable source profiles
+       admit the fixed finite phase partition in
+       \cref{thm:tpc56-preterminal-phase-realization}; if not, prove a
+       saturation theorem for every such fixed partition.
+\end{enumerate}
+Door A is phase-blind but needs arithmetic occupancy.  Door B has an exact
+mean square but a pointwise localization barrier.  Door C would convert the
+present adaptive theorem into a transportable pre-terminal selection.  A
+negative theorem for any door remains useful and must retain its own label.
+
+\paragraph{Conclusion.}
+The literal coherent-prime gate admits a universal constant-energy escape
+from its collision kernel: five gauge-normalized relative phase sectors
+suffice, and one global normalized-sector index retains at least
+\((3+\sqrt5)/40\) of the full terminal diagonal after grouping.  The
+absolute windows may rotate with the fibers.  This removes every positive polynomial
+multiplicity cost from the adaptive selected square.  The same theorem
+also exposes its exact limitation.  On the unrestricted coordinate space,
+uniform coefficient-independent lower selection is possible only on
+collision-free transversals.  The literal two-atom result proves the
+corresponding local fiberwise obstruction, not a global coefficient-class
+no-go.  The undeleted five-channel interference, terminal
+activation, fixed-shift localization, native-Gram comparison, boundary,
+and tail gates remain open, strictly before any parity-sensitive or
+twin-prime conclusion.

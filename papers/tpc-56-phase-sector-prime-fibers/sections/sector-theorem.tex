@@ -1,0 +1,269 @@
+\section{A universal phase-sector lower selection theorem}
+\label{sec:sector-theorem}
+
+We first remove all arithmetic.  Let \(\cU\) be a finite set partitioned
+into fibers
+\begin{equation}
+ \cU=\bigsqcup_{y\in\cY}\cF_y,
+ \label{eq:tpc56-abstract-fibers}
+\end{equation}
+and let \(x=(x_u)_{u\in\cU}\in\C^{\cU}\).  The unweighted grouping map is
+\begin{equation}
+ (\Sigma x)_y=\sum_{u\in\cF_y}x_u.
+ \label{eq:tpc56-abstract-grouping}
+\end{equation}
+Choose an arbitrary unit gauge \(\omega_y\in\C\),
+\(|\omega_y|=1\), on every fiber.  The gauge family is part of the data and
+is fixed before the maximizing sector index is selected.  These gauges only
+rotate output coordinates and hence do not change any grouped norm.
+
+\subsection{Equal sectors and one global choice}
+
+Fix an integer \(M\ge3\).  On the phase circle use the half-open sectors
+\begin{equation}
+ I_k=
+ \left[\frac{2\pi k}{M}-\frac\pi M,
+       \frac{2\pi k}{M}+\frac\pi M\right)
+ \pmod {2\pi},
+ \qquad 0\le k<M.
+ \label{eq:tpc56-equal-sectors}
+\end{equation}
+For \(x_u\ne0\), put
+\begin{equation}
+ \varphi_u=\Arg(\overline{\omega_{q(u)}}x_u)\pmod {2\pi},
+ \label{eq:tpc56-normalized-phase}
+\end{equation}
+where \(q(u)=y\) for \(u\in\cF_y\), and define
+\begin{equation}
+ \cS_k(x;\omega)=\{u:x_u\ne0,\ \varphi_u\in I_k\}.
+ \label{eq:tpc56-sector-support}
+\end{equation}
+Let \(P_k=P_k(x;\omega)\) be the orthogonal coordinate projection onto
+\(\cS_k(x;\omega)\).  Zero coordinates can be assigned to any sector;
+they affect none of the identities.  The notation records an important
+fact: after \(x\) is fixed, \(P_k\) is linear and orthogonal, but the rule
+\(x\mapsto P_k(x;\omega)\) is nonlinear.
+
+Define the selected diagonal and grouped energies
+\begin{equation}
+ D_k(x):=\|P_kx\|_2^2,
+ \qquad
+ C_k(x):=\|\Sigma P_kx\|_2^2.
+ \label{eq:tpc56-sector-energies}
+\end{equation}
+
+\begin{theorem}[Equal-sector compression and selection]
+\label{thm:tpc56-equal-sector-selection}
+For every finite fiber system, every \(x\), every fixed family of unit
+gauges, and every integer \(M\ge3\),
+\begin{align}
+ \sum_{k=0}^{M-1}D_k(x)
+ &=\|x\|_2^2,
+ \label{eq:tpc56-sector-diagonal-partition}\\
+ C_k(x)&\ge\cos^2(\pi/M)D_k(x)
+ \qquad(0\le k<M),
+ \label{eq:tpc56-each-sector-lower}\\
+ \sum_{k=0}^{M-1}C_k(x)
+ &\ge\cos^2(\pi/M)\|x\|_2^2.
+ \label{eq:tpc56-sector-compression-lower}
+\end{align}
+Let \(k_*\) be the least index maximizing \(D_k(x)\).  Then this canonical
+tie rule gives
+\begin{equation}
+ \boxed{
+ \|\Sigma P_{k_*}x\|_2^2
+ \ge c_M\|x\|_2^2,
+ \qquad
+ c_M:=\frac{\cos^2(\pi/M)}M.}
+ \label{eq:tpc56-universal-sector-lower}
+\end{equation}
+The same index \(k_*\) is used on every fiber in the normalized coordinates
+\(\Arg(\overline{\omega_y}x_u)\).  Since \(\omega_y\) may vary with \(y\),
+the corresponding absolute angular window is a fiber-dependent rotation.
+\end{theorem}
+
+\begin{proof}
+The sector supports partition the nonzero coordinates, proving
+\eqref{eq:tpc56-sector-diagonal-partition}.  Fix \(k\) and a fiber \(y\).
+For every \(u\in\cF_y\cap\cS_k\), one can write
+\begin{equation}
+ \overline{\omega_y}e^{-2\pi i k/M}x_u
+ =|x_u|e^{i\delta_u},
+ \qquad |\delta_u|\le\frac\pi M,
+ \label{eq:tpc56-sector-angle-form}
+\end{equation}
+with one endpoint understood by the half-open convention.  Therefore
+\begin{align}
+ \left|\sum_{u\in\cF_y\cap\cS_k}x_u\right|
+ &\ge
+ \operatorname{Re}\left(
+ \overline{\omega_y}e^{-2\pi i k/M}
+ \sum_{u\in\cF_y\cap\cS_k}x_u\right)\notag\\
+ &\ge\cos(\pi/M)
+ \sum_{u\in\cF_y\cap\cS_k}|x_u|\notag\\
+ &\ge\cos(\pi/M)
+ \left(\sum_{u\in\cF_y\cap\cS_k}|x_u|^2\right)^{1/2}.
+ \label{eq:tpc56-fiber-sector-proof}
+\end{align}
+Squaring and summing over \(y\) proves
+\eqref{eq:tpc56-each-sector-lower}; summing over \(k\) gives
+\eqref{eq:tpc56-sector-compression-lower}.  Finally,
+\(D_{k_*}\ge M^{-1}\|x\|_2^2\), so
+\eqref{eq:tpc56-each-sector-lower} gives
+\eqref{eq:tpc56-universal-sector-lower}.
+\end{proof}
+
+The theorem contains two different objects.  The phase-split synthesis
+\begin{equation}
+ x\longmapsto
+ \left(\sum_{u\in\cF_y\cap\cS_k}x_u\right)_{(y,k)}
+ \label{eq:tpc56-phase-split-synthesis}
+\end{equation}
+has a lower bound on the distinguished vector used to define its sectors.
+The original output instead sums the \(M\) sector outputs at fixed \(y\).
+Those final \(M\) channels may cancel.  Thus
+\eqref{eq:tpc56-sector-compression-lower} is not a lower bound for
+\(\|\Sigma x\|_2\).
+
+\subsection{Why five equal sectors are best in this family}
+
+\begin{proposition}[Optimal equal-sector count]
+\label{prop:tpc56-optimal-equal-sector-count}
+Among integers \(M\ge3\), the certified constant
+\(c_M=M^{-1}\cos^2(\pi/M)\) is uniquely maximized at \(M=5\).  Its value is
+\begin{equation}
+ \boxed{
+ c_5=\frac{\cos^2(\pi/5)}5
+     =\frac{3+\sqrt5}{40}
+     =0.1309016994\ldots .}
+ \label{eq:tpc56-pentant-constant}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For real \(t\ge3\), let
+\(f(t)=t^{-1}\cos^2(\pi/t)\).  Direct differentiation gives
+\begin{equation}
+ \frac{f'(t)}{f(t)}
+ =\frac{2\pi\tan(\pi/t)-t}{t^2}.
+ \label{eq:tpc56-equal-sector-derivative}
+\end{equation}
+After setting \(\theta=\pi/t\), the unique critical point is determined by
+\(2\theta\tan\theta=1\).  The left side is strictly increasing on
+\((0,\pi/2)\), and the corresponding \(t\) lies strictly between \(4\)
+and \(5\).  Hence the integer maximum is either \(4\) or \(5\).  Now
+\begin{equation}
+ c_4=\frac18,
+ \qquad
+ c_5=\frac{3+\sqrt5}{40}>\frac18.
+ \label{eq:tpc56-four-five-comparison}
+\end{equation}
+The monotonicity on either side of the critical point proves uniqueness.
+\end{proof}
+
+The word \emph{optimal} in \cref{prop:tpc56-optimal-equal-sector-count}
+refers only to the constants certified by equal finite sectorizations.  It
+is not a global optimality theorem over all nonlinear subset rules.
+
+\subsection{A continuously rotated window}
+
+The finite pentant library is convenient for a literal audit.  If a
+continuum of rotations is allowed, the constant can be improved slightly.
+For \(0<\theta<\pi/2\) and \(\alpha\in\T=\R/(2\pi\mathbb Z)\), retain the
+coordinates satisfying
+\begin{equation}
+ \dist_{\T}(\varphi_u,\alpha)\le\theta
+ \label{eq:tpc56-rotating-window}
+\end{equation}
+and denote the associated coordinate projection by \(P_{\alpha,\theta}\).
+
+\begin{theorem}[Rotating-window selection]
+\label{thm:tpc56-rotating-window}
+For every \(0<\theta<\pi/2\), there exists \(\alpha\in\T\) such that
+\begin{equation}
+ \|\Sigma P_{\alpha,\theta}x\|_2^2
+ \ge c(\theta)\|x\|_2^2,
+ \qquad
+ c(\theta):=\frac\theta\pi\cos^2\theta.
+ \label{eq:tpc56-rotating-window-bound}
+\end{equation}
+The function \(c(\theta)\) has a unique maximizer
+\(\theta_*\in(0,\pi/2)\) characterized by
+\begin{equation}
+ 2\theta_*\tan\theta_*=1.
+ \label{eq:tpc56-optimal-window-equation}
+\end{equation}
+Numerically,
+\begin{equation}
+ \theta_*=0.6532711871\ldots,
+ \qquad
+ c_*=c(\theta_*)=0.1311275284\ldots .
+ \label{eq:tpc56-optimal-window-constant}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For each nonzero coordinate, the set of centers \(\alpha\) satisfying
+\eqref{eq:tpc56-rotating-window} has normalized Haar measure
+\(\theta/\pi\).  Fubini therefore gives
+\begin{equation}
+ \int_{\T}\|P_{\alpha,\theta}x\|_2^2
+ \frac{d\alpha}{2\pi}
+ =\frac\theta\pi\|x\|_2^2.
+ \label{eq:tpc56-window-average-energy}
+\end{equation}
+Some center retains at least that much diagonal energy.  The proof of
+\eqref{eq:tpc56-fiber-sector-proof}, with \(\theta\) in place of
+\(\pi/M\), proves \eqref{eq:tpc56-rotating-window-bound}.  Finally,
+\begin{equation}
+ c'(\theta)=\frac{\cos\theta}{\pi}
+ \bigl(\cos\theta-2\theta\sin\theta\bigr),
+ \label{eq:tpc56-window-derivative}
+\end{equation}
+so the unique interior critical point satisfies
+\eqref{eq:tpc56-optimal-window-equation}; endpoint values are zero.
+\end{proof}
+
+\subsection{Stability under phase uncertainty}
+
+The sector theorem is not destroyed by small errors in the phases used to
+form the coordinate sets.
+
+\begin{theorem}[Phase-error stability]
+\label{thm:tpc56-phase-error-stability}
+Suppose approximate normalized phases \(\widehat\varphi_u\) satisfy
+\begin{equation}
+ \dist_{\T}(\widehat\varphi_u,\varphi_u)\le\varepsilon
+ \qquad(x_u\ne0).
+ \label{eq:tpc56-phase-error-hypothesis}
+\end{equation}
+Partition the coordinates by the \(M\) equal sectors of the approximate
+phases, and choose the least sector with maximal true diagonal energy.
+If
+\begin{equation}
+ 0\le\varepsilon<\frac\pi2-\frac\pi M,
+ \label{eq:tpc56-phase-error-range}
+\end{equation}
+then the resulting projection \(\widehat P_*\) satisfies
+\begin{equation}
+ \boxed{
+ \|\Sigma\widehat P_*x\|_2^2
+ \ge
+ \frac{\cos^2(\pi/M+\varepsilon)}M\|x\|_2^2.}
+ \label{eq:tpc56-phase-error-lower}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The approximate sectors still partition the active coordinates, so the
+selected sector carries at least \(M^{-1}\|x\|_2^2\) diagonal energy.
+Every true phase in that sector lies within
+\(\pi/M+\varepsilon<\pi/2\) of its center.  Apply the real-projection
+argument in \eqref{eq:tpc56-fiber-sector-proof} with this enlarged
+half-angle.
+\end{proof}
+
+The error \(\varepsilon\) may include both an atomwise phase error and a
+fiberwise error in the chosen common gauge.  The theorem requires exact
+magnitudes only to identify an energy-maximizing sector; a separate
+magnitude-approximation error would have to be charged explicitly.

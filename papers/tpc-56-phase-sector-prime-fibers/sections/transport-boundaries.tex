@@ -1,0 +1,151 @@
+\section{Why averaged phases and projective layers do not close the gate}
+\label{sec:transport-boundaries}
+
+The sector theorem is pointwise in the one physical terminal vector.  Two
+nearby routes produce legitimate positive averages but do not imply a lower
+bound for the prescribed undeleted output.  We record the elementary
+non-implications because both have appeared upstream in the TPC
+decomposition.
+
+\subsection{Shift averages do not select the prescribed shift}
+
+Write \(e(t)=e^{2\pi i t}\), and give \(\T\) normalized Haar measure.
+Let \(\mathscr H\subset\mathbb Z\) be a finite set of intercepts containing
+\(h_0\), and
+let \(F_h\) be vectors in an arbitrary Hilbert space.  A completed frozen
+family may satisfy a lower estimate for
+\(\sum_{h\in\mathscr H}\|F_h\|^2\), or equivalently for a Fourier integral.
+That is not a pointwise estimate at \(h_0\).
+
+\begin{proposition}[Sharp fixed-member nonlocalization]
+\label{prop:tpc56-fixed-member-nonlocalization}
+Assume \(|\mathscr H|\ge2\) and let \(w_h\ge0\) be weights with
+\(w_{h_1}>0\) for some \(h_1\ne h_0\).  There is no positive constant
+\(c\), depending only on the weights, such that
+\begin{equation}
+ \|F_{h_0}\|^2
+ \ge c\frac{\sum_{h\in\mathscr H}w_h\|F_h\|^2}
+              {\sum_{h\in\mathscr H}w_h}
+ \label{eq:tpc56-false-average-localization}
+\end{equation}
+for all vector families.  The same failure holds when the right-hand side
+is represented by Parseval as the \(L^2\)-energy of
+\begin{equation}
+ \widehat F_w(\alpha)
+ =\sum_{h\in\mathscr H}\sqrt{w_h}\,F_he(h\alpha).
+ \label{eq:tpc56-frozen-fourier-family}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Take \(F_{h_0}=0\), choose \(F_{h_1}\ne0\), and set every other member to
+zero.  The right-hand side of
+\eqref{eq:tpc56-false-average-localization} is positive and the left-hand
+side is zero.  Parseval gives
+\begin{equation}
+ \int_{\T}\|\widehat F_w(\alpha)\|^2\,d\alpha
+ =\sum_{h\in\mathscr H}w_h\|F_h\|^2,
+ \label{eq:tpc56-parseval-shift-average}
+\end{equation}
+so the Fourier formulation has the same counterexample.
+\end{proof}
+
+Consequently, a completed-family theorem transfers to the physical member
+only if it is already uniform pointwise in \(h\), or if one separately
+proves a localization estimate such as
+\begin{equation}
+ \|F_{h_0}\|^2
+ \ge X^{-\lambda_{\rm loc}+o(1)}
+ \frac{\sum_hw_h\|F_h\|^2}{\sum_hw_h}.
+ \label{eq:tpc56-required-shift-localization}
+\end{equation}
+TPC--48 proves that its frozen coefficient equals the active coefficient
+at the one original intercept \(h_0\) \citep{WangTPC48}.  For
+\(h\ne h_0\), the support and coefficients remain frozen from \(h_0\);
+they are algebraic extensions, not newly reconstructed physical packets.
+Thus an average over that family is useful only with its frozen-family
+label until \eqref{eq:tpc56-required-shift-localization} is supplied.
+
+\subsection{Layerwise lower squares do not survive signed reassembly}
+
+The projective representation also contains a signed or complex
+reassembly over auxiliary layers.  Upper estimates pass through this
+operation by Minkowski; lower estimates do not.
+
+\begin{proposition}[Lower-reassembly obstruction]
+\label{prop:tpc56-lower-reassembly-obstruction}
+Let \(\nu\) be a nonzero finite complex measure on \(\Omega\) such that
+\(\dim L^2(|\nu|)\ge2\), and let \(Z_\omega\) range in a nonzero Hilbert
+space.  There is no positive constant \(c\), depending only on \(|\nu|\),
+such that
+\begin{equation}
+ \left\|\int_\Omega Z_\omega\,d\nu(\omega)\right\|^2
+ \ge c\int_\Omega\|Z_\omega\|^2\,d|\nu|(\omega)
+ \label{eq:tpc56-false-lower-reassembly}
+\end{equation}
+for all layer fields.
+\end{proposition}
+
+\begin{proof}
+Let \(\rho=d\nu/d|\nu|\), so \(|\rho|=1\) almost everywhere.  Since
+\(\dim L^2(|\nu|)\ge2\), choose a nonzero
+\(f\in L^2(|\nu|)\) orthogonal to the constants, and choose a nonzero vector
+\(v\).  Put
+\(Z_\omega=\overline{\rho(\omega)}f(\omega)v\).  Then
+\[
+ \int_\Omega Z_\omega\,d\nu(\omega)
+ =v\int_\Omega f\,d|\nu|=0,
+ \qquad
+ \int_\Omega\|Z_\omega\|^2\,d|\nu|(\omega)>0.
+\]
+\end{proof}
+
+A favorable projective layer, or even a lower square in every layer, is
+therefore not a lower square for any signed physical reassembly with
+\(\dim L^2(|\nu|)\ge2\).  A valid
+transfer would require a separately proved lower frame estimate of the
+form
+\begin{equation}
+ \left\|\int Z_\omega\,d\nu(\omega)\right\|^2
+ \ge X^{-\lambda_{\rm reas}+o(1)}
+ \int\|Z_\omega\|^2\,d|\nu|(\omega)
+ \label{eq:tpc56-required-lower-reassembly}
+\end{equation}
+on the distinguished coefficient field or on a rigorously specified
+subspace.  Such an estimate is not a consequence of bounded total
+variation.
+
+\subsection{The five selected channels still do not lower-bound their sum}
+
+The same warning applies internally to
+\eqref{eq:tpc56-five-channel-reassembly}.  The sector theorem proves
+positive energy before the five channels are reassembled.  It does not
+control the signed cross terms between them.  For example, two nonzero
+channels with values \(v\) and \(-v\) in the same output coordinate have
+positive split energy and zero sum.  This is compatible with the local
+literal saturation of \cref{prop:tpc56-literal-two-atom-saturation}.
+
+There are three honest ways to use the present result downstream:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.8em]
+ \item retain the adaptive pentant as an explicitly selected physical
+       subpacket and prove that every later operation respects that
+       selection;
+ \item verify the fixed pre-terminal phase partition of
+       \cref{thm:tpc56-preterminal-phase-realization}; or
+ \item estimate the five-channel cross terms and prove a lower-reassembly
+       inequality for the undeleted distinguished vector.
+\end{enumerate}
+An average over auxiliary phases can help with the third route only after
+a pointwise localization estimate identifies the physical phase.
+
+\subsection{Parity boundary}
+
+No step above supplies a lower-bound sieve for simultaneous primes.  The
+terminal support is taken exactly as inherited; the sector theorem starts
+after the primality restriction and after the terminal diagonal is formed.
+It proves that a constant part of an already activated complex vector can
+be selected into an acute cone.  It does not prove that the vector is
+activated often, that the undeleted phases align, or that a fixed even gap
+occurs infinitely often.  In particular, the result is compatible with the
+classical parity obstruction \citep{FriedlanderIwaniec2010} and is not
+reported as a parity-sensitive advance.

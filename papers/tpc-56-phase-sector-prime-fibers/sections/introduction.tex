@@ -1,0 +1,163 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The preceding three stages of this program separated three losses that
+had previously been hidden inside one schematic prime square.  TPC--53
+fixed the literal four-factor coefficient dictionary and the raw atomic
+normalization \citep{WangTPC53}.  TPC--54 proved sharp pre-terminal energy
+selection laws and showed that magnitude information cannot survive an
+arbitrary many-to-one complex sum \citep{WangTPC54}.  TPC--55 then resolved
+the complete fixed-shift output fiber \citep{WangTPC55}.  If
+\[
+ u=(m,r,j,\gamma),\qquad m=d\ell,
+\]
+survives the exact terminal restriction, then
+\begin{equation}
+ p_u=\frac{mj+h_0}{r}
+ \label{eq:tpc56-intro-terminal-prime}
+\end{equation}
+is prime and the complete output is
+\begin{equation}
+ y=q(u)=(\gamma,s=d r,j).
+ \label{eq:tpc56-intro-output-key}
+\end{equation}
+Under the inherited row geometry, adjoining \(p_u\) to the key is
+injective.  Thus the only remaining collision is the deliberate operation
+that forgets \(p\) and coherently adds all terminal primes in the same
+\((\gamma,s,j)\)-fiber.
+
+Write the terminalized amplitude indexed by that prime as
+\begin{equation}
+ x_{y,p}
+ =\mu(r_{y,p})\Lambda(p r_{y,p})g_{u(y,p)}.
+ \label{eq:tpc56-intro-literal-amplitude}
+\end{equation}
+The exact diagonal and grouped energies are
+\begin{equation}
+ \cD_{h_0}(g)=\sum_y\sum_{p\in\cP_y}|x_{y,p}|^2,
+ \qquad
+ \cG_{h_0}(g)=\sum_y\left|\sum_{p\in\cP_y}x_{y,p}\right|^2.
+ \label{eq:tpc56-intro-two-energies}
+\end{equation}
+All sums in \eqref{eq:tpc56-intro-two-energies} are over the exact finite
+terminal support; \(\cP_y\) is not an ambient interval of primes.  The
+ratio \(\cG_{h_0}/\cD_{h_0}\) can be zero.  TPC--55 supplied two ways to
+avoid that zero: impose an acute sector condition, or retain at most one
+prime in each fiber.  The first was only a criterion.  The second was an
+unconditional post-terminal construction, but on a cofactor block it
+retained only the reciprocal of the maximal fiber multiplicity.
+
+The present paper asks a narrower question:
+\begin{quote}
+Can one always extract a genuinely coherent terminal-prime subpacket while
+retaining a constant fraction of the full terminal diagonal, independently
+of the fiber sizes?
+\end{quote}
+The answer is yes if the selection is permitted to use the realized phases.
+The proof is elementary, but its placement in the physical operator is
+order-sensitive.  Split the complex plane into five equal sectors after
+removing the common output gauge.  The five sectors partition the terminal
+diagonal, so one of them carries at least one fifth of that energy.  Inside
+one sector every amplitude has real projection at least
+\(\cos(\pi/5)\) times its modulus.  Therefore the selected grouped square
+is at least
+\begin{equation}
+ c_5\cD_{h_0}(g),
+ \qquad
+ c_5:=\frac{\cos^2(\pi/5)}5
+      =\frac{3+\sqrt5}{40}.
+ \label{eq:tpc56-intro-pentant-constant}
+\end{equation}
+Only one sector index is selected globally in the gauge-normalized phase
+coordinates; it is not chosen separately for every output fiber.  The
+corresponding absolute angular window is rotated by the canonical gauge of
+that fiber.
+
+This gives a real advance at the selected grouping gate.  No
+\(X^{\varepsilon}\), divisor, or maximal-multiplicity factor appears.
+If a pre-terminal packet satisfies the separate activation estimate
+\begin{equation}
+ \cD_{h_0}(g)\ge
+ X^{-\lambda_{\rm term}+o(1)}\cE_{\rm pre}(g),
+ \label{eq:tpc56-intro-activation}
+\end{equation}
+then the selected physical output satisfies
+\begin{equation}
+ \cG_{h_0}(P_*g)
+ \ge c_5X^{-\lambda_{\rm term}+o(1)}\cE_{\rm pre}(g).
+ \label{eq:tpc56-intro-selected-transfer}
+\end{equation}
+Thus the adaptive coherence exponent is zero.  In contrast with the
+rank-by-prime transversal, no balanced condition such as \(R\gg L\) is
+needed.
+
+There is an equally important negative half.  The sets selected by the
+five-sector rule depend on the phases of \(x_{y,p}\).  Once the realized
+vector is fixed, each is an ordinary orthogonal coordinate projection;
+as a rule on a coefficient class, however, the construction is nonlinear.
+On the unrestricted coordinate space, if a coefficient-independent set
+contains two coordinates of one fiber, the vector assigning opposite values
+to those coordinates lies in the grouping kernel.  The inherited hypothesis
+\(|\zeta_m|\ll1\) also realizes this cancellation \emph{inside} any
+nondegenerate two-atom literal fiber by sufficiently small choices of the
+two relevant source factors.  This proves failure of a uniform fiberwise
+lower bound for such a selector.  It does not by itself disprove a global
+lower bound over the coupled literal coefficient class, because the same
+row coefficients may activate other fibers.  A global literal-class no-go
+would require control or isolation of those additional outputs.
+
+This dichotomy is useful for the route ahead:
+\begin{equation}
+ \boxed{
+ \begin{array}{c}
+ \text{adaptive terminal phases}\Rightarrow
+ \text{constant-energy coherent subpacket},\\[2pt]
+ \text{uniform selection on unrestricted arrays}\Rightarrow
+ \text{at most one atom per fiber},
+ \end{array}}
+ \label{eq:tpc56-intro-dichotomy}
+\end{equation}
+It turns an unstructured prime-collision space into a five-channel phase
+interface.  A future paper can now ask whether the five channels come from
+fixed residue and sign-stable source cells, or whether every such attempted
+pre-terminal realization meets a collision obstruction, with global
+literal-class saturation requiring separate control of row couplings.
+
+\subsection{Relation to the earlier coherent square}
+
+The physical object in \eqref{eq:tpc56-intro-two-energies} must not be
+identified with the projective/frozen square isolated in TPC--48
+\citep{WangTPC48}.  That earlier object has the schematic form
+\begin{equation}
+ \sum_{m,r}
+ \left\|\sum_p A_\omega(p,r,m)
+ e(-pr\alpha)v_{\omega,p,r,m}\right\|^2,
+ \label{eq:tpc56-intro-projective-square}
+\end{equation}
+before signed projective reassembly.  It keeps \((m,r)\) separate and
+extends the physical coefficient field to frozen intercepts.  The present
+square is already reassembled, uses one specified \(h_0\), and groups by
+the complete literal output \((\gamma,d(m)r,j)\).  A lower estimate for an
+average of \eqref{eq:tpc56-intro-projective-square} does not become a lower
+estimate for \eqref{eq:tpc56-intro-two-energies} without separate lower
+reassembly and fixed-shift localization theorems.
+
+\subsection{Organization and claim level}
+
+\Cref{sec:literal-interface} states the full physical coefficient and
+support dictionary.  \Cref{sec:sector-theorem} proves the abstract
+finite-sector theorem, its optimal equal-sector constant, the rotating
+window refinement, and phase stability.  \Cref{sec:physical-specialization}
+specializes it through the exact terminal-prime bijection.
+\Cref{sec:adaptive-boundary} proves adaptive necessity and gives a
+pre-terminal phase-realization criterion.  \Cref{sec:transport-boundaries}
+records the frozen-average and signed-reassembly non-implications.
+\Cref{sec:endpoint-claims} gives the endpoint ledger and six-point audit.
+
+The sector theorem is unconditional finite-dimensional mathematics (L0).
+Its use on the literal fixed-\(h_0\) terminal vector is an exact physical
+interface result (L1).  Terminal activation and a pre-terminal realization
+of the adaptive selector are not proved.  Nothing here improves a sieve
+lower bound or crosses the parity boundary described in the classical
+sieve literature \citep{FriedlanderIwaniec2010}; no prime-pair or
+twin-prime conclusion is asserted.

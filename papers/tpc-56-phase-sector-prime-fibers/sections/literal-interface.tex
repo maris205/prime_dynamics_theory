@@ -1,0 +1,257 @@
+\section{The literal fixed-shift terminal-prime interface}
+\label{sec:literal-interface}
+
+This section repeats the complete coefficient and support information needed
+for the sector theorem.  The purpose is to prevent a lower bound for a
+renormalized model, an unrestricted prime ladder, or a frozen intercept from
+being substituted for the physical map.
+
+\subsection{Rows, masks, and the full pre-terminal universe}
+
+Fix \(h_0\in\mathbb Z\setminus\{0\}\), put \(H=\rad|h_0|\), and use one
+left source system.  A direct row and an opposite row are
+\begin{equation}
+ m=d_m\ell_m,
+ \qquad
+ m_\gamma=d_\gamma\ell_\gamma,
+ \label{eq:tpc56-two-rows}
+\end{equation}
+where the \(\ell\)'s are prime, the \(d\)'s are squarefree,
+\begin{equation}
+ \ell_m,\ell_\gamma\in[L,2L],
+ \qquad
+ d_m,d_\gamma\in[D,2D],
+ \qquad
+ (d_m d_\gamma,H)=1.
+ \label{eq:tpc56-row-support}
+\end{equation}
+The inherited separation makes each integer row determine its displayed
+factorization.  The scales are
+\begin{equation}
+ Q=LD,\qquad K=DJ,\qquad QJ\asymp X,\qquad
+ \kappa_0=\frac1{400},\qquad
+ \Delta=QX^{-\kappa_0},\qquad G=X^{\kappa_0}.
+ \label{eq:tpc56-scales}
+\end{equation}
+Fix one direct residue group, one orbit class
+\(a\pmod {H_{\rm orb}}\) with \(H_{\rm orb}=O_{h_0}(1)\), one compact
+opposite-row box, and one compact orbit interval.  None of these fixed
+choices has positive polynomial cost.
+
+The exact source coefficient is
+\begin{equation}
+ a_m
+ =\mu(d_m)(\log\ell_m)\omega_D(d_m)
+  \psi_L(\ell_m/L)\zeta_m,
+ \qquad |\zeta_m|\ll1.
+ \label{eq:tpc56-source-coefficient}
+\end{equation}
+Here \(\zeta_m=\zeta_m^{(1)}\) is the inherited bounded complex source
+factor; no lower bound or phase condition is assumed.  The opposite row
+contributes
+\begin{equation}
+ \eta_\gamma\mathscr R(q_\gamma),
+ \qquad
+ q_\gamma=
+ \left(\log\frac{\ell_\gamma}{L},
+       \log\frac{d_\gamma}{D}\right),
+ \qquad |\eta_\gamma|=1,
+ \label{eq:tpc56-opposite-profile}
+\end{equation}
+and the fixed orbit cell contributes \(\xi_a\ne0\).  The literal mask and
+the declared four-factor profile are
+\begin{align}
+ K_{m\gamma}
+ &=\one_{\ell_m\ne\ell_\gamma}
+   \one_{|m-m_\gamma|>\Delta}
+   \one_{(d_m,d_\gamma)\le G},
+ \label{eq:tpc56-literal-mask}\\
+ \cW_{m,\gamma}(j/J)
+ &=W_1(mj/X)\Psi_1(d_mj/K)
+   W_2(m_\gamma j/X)\Psi_2(d_\gamma j/K).
+ \label{eq:tpc56-four-factor-profile}
+\end{align}
+Every smooth function in these formulas belongs to the fixed bounded
+families declared in TPC--53 \citep{WangTPC53}.
+
+Let \(\cI_X\) be the exact retained set of \((m,r)\)-pairs,
+\(\cO_X\) the complete opposite-row cell, and
+\begin{equation}
+ \cJ_{X,a}
+ =\{j:j/J\in I_0,\ j\equiv a\pmod {H_{\rm orb}}\}.
+ \label{eq:tpc56-orbit-set}
+\end{equation}
+The full pre-terminal atomic universe and physical pre-terminal vector are
+\begin{align}
+ \cU^{\rm pre}
+ &=\{(m,r,j,\gamma):(m,r)\in\cI_X,
+      j\in\cJ_{X,a},\ \gamma\in\cO_X\},
+ \label{eq:tpc56-preterminal-universe}\\
+ [G_X^L]_u
+ &=a_mK_{m\gamma}\eta_\gamma\mathscr R(q_\gamma)\xi_a
+   \cW_{m,\gamma}(j/J),
+ \qquad u=(m,r,j,\gamma).
+ \label{eq:tpc56-literal-vector}
+\end{align}
+The repeated pre-terminal value in \eqref{eq:tpc56-literal-vector} has no
+\(r\)-dependence.  Its repetitions are distinct counting-measure atoms.
+
+\subsection{Terminal restriction and the prime-resolved key}
+
+Let
+\begin{equation}
+ \Lambda(n)=(\log n)\Phi_0(n/X).
+ \label{eq:tpc56-shaped-terminal-weight}
+\end{equation}
+This is a shaped terminal logarithm, not the von Mangoldt function.  For
+\(u=(m,r,j,\gamma)\in\cU^{\rm pre}\), set
+\begin{equation}
+ p_u=\frac{mj+h_0}{r}
+ \label{eq:tpc56-terminal-candidate}
+\end{equation}
+when the quotient is integral.  The exact terminal-admissible universe is
+\begin{equation}
+ \begin{split}
+ \cU_{h_0}^{\rm term}:=\{u\in\cU^{\rm pre}:{}&
+ p_u\text{ is prime in the inherited terminal support},\\
+ &p_ur-mj=h_0,\quad \Lambda(p_ur)\ne0,\\
+ &d_m,r,d_mr\text{ are squarefree},\quad(d_m,r)=1\}.
+ \end{split}
+ \label{eq:tpc56-terminal-universe}
+\end{equation}
+The actually nonzero physical support is the separate set
+\begin{equation}
+ \cU_{h_0}^{\rm phys}
+ =\{u\in\cU_{h_0}^{\rm term}:[G_X^L]_u\ne0\}.
+ \label{eq:tpc56-physical-universe}
+\end{equation}
+On \(\cU_{h_0}^{\rm term}\), the inherited equality support gives
+\begin{equation}
+ s=d_mr\text{ squarefree},\qquad(d_m,r)=1,\qquad
+ \mu(d_m)\mu(r)=\mu(s).
+ \label{eq:tpc56-common-mobius-identity}
+\end{equation}
+
+The grouped and refined keys are
+\begin{equation}
+ q(u)=(\gamma,d_mr,j),
+ \qquad
+ \widetilde q(u)=(\gamma,d_mr,j,p_u).
+ \label{eq:tpc56-two-keys}
+\end{equation}
+TPC--55 proves the following exact interface under the inherited geometry
+\citep{WangTPC55}.
+
+\begin{proposition}[Inherited prime-resolved bijection]
+\label{prop:tpc56-prime-resolved-bijection}
+Assume \(h_0\ne0\), \(D=o(J)\), uniqueness of the row factorization, and
+sufficiently large \(X\).  Then \(\widetilde q\) is injective on
+\(\cU_{h_0}^{\rm term}\) for one declared source system.  For every
+\(y=(\gamma,s,j)\), the map \(u\mapsto p_u\) is therefore a bijection
+\begin{equation}
+ \cF_y^{\rm term}
+ :=q^{-1}(y)\cap\cU_{h_0}^{\rm term}
+ \longleftrightarrow
+ \cP_y^{\rm term}:=\{p_u:u\in\cF_y^{\rm term}\},
+ \label{eq:tpc56-terminal-prime-bijection}
+\end{equation}
+and restricts to a bijection between the corresponding physical subsets.
+\end{proposition}
+
+Explicitly, the latter subsets are
+\begin{equation}
+ \cF_y^{\rm phys}
+ :=q^{-1}(y)\cap\cU_{h_0}^{\rm phys},
+ \qquad
+ \cP_y^{\rm phys}
+ :=\{p_u:u\in\cF_y^{\rm phys}\},
+ \label{eq:tpc56-physical-fiber-prime-sets}
+\end{equation}
+and \(u\mapsto p_u\) is a bijection between them.
+Thus \(\cP_y^{\rm term}\) is the exact finite set determined by the
+pre-terminal carrier together with the terminal equality, primality,
+terminal-weight, squarefreeness, and coprimality conditions.  It does not
+impose nonvanishing of every literal mask, source, or profile factor.  The
+set \(\cP_y^{\rm phys}\) imposes the additional condition
+\([G_X^L]_u\ne0\), and therefore records the actually nonzero literal
+support.  Replacing either set by all prime points on an ambient affine
+ladder would enlarge the corresponding operator.
+
+The exact terminal and physical output index sets are
+\begin{equation}
+ \cY_{h_0}^{\rm term}:=q(\cU_{h_0}^{\rm term}),
+ \qquad
+ \cY_{h_0}^{\rm phys}:=q(\cU_{h_0}^{\rm phys}).
+ \label{eq:tpc56-output-index-sets}
+\end{equation}
+
+\subsection{Three energies and the common physical gauge}
+
+For an arbitrary array \(g=(g_u)_{u\in\cU^{\rm pre}}\), define the terminal
+diagonal on the full pre-terminal space by
+\begin{equation}
+ (D_{h_0}g)_u=
+ \begin{cases}
+  \mu(r_u)\Lambda(p_ur_u)g_u,
+       &u\in\cU_{h_0}^{\rm term},\\
+  0,&u\notin\cU_{h_0}^{\rm term}.
+ \end{cases}
+ \label{eq:tpc56-terminal-diagonal}
+\end{equation}
+The literal grouped map is
+\begin{equation}
+ (\cT_{h_0}g)_y
+ =\sum_{u\in\cF_y^{\rm term}}(D_{h_0}g)_u.
+ \label{eq:tpc56-grouped-map}
+\end{equation}
+With counting measure throughout, put
+\begin{align}
+ \cE_{\rm pre}(g)
+ &=\sum_{u\in\cU^{\rm pre}}|g_u|^2,
+ \label{eq:tpc56-preterminal-energy}\\
+ \cD_{h_0}(g)
+ &=\|D_{h_0}g\|_2^2
+ =\sum_{u\in\cU_{h_0}^{\rm term}}
+   |\Lambda(p_ur_u)|^2|g_u|^2,
+ \label{eq:tpc56-terminal-energy}\\
+ \cG_{h_0}(g)
+ &=\|\cT_{h_0}g\|_2^2
+ =\sum_y\left|\sum_{u\in\cF_y^{\rm term}}
+  (D_{h_0}g)_u\right|^2.
+ \label{eq:tpc56-grouped-energy}
+\end{align}
+The simplification in \eqref{eq:tpc56-terminal-energy} uses squarefreeness
+of \(r\) on the terminal support.  The terminal weight has not been hidden
+in the input norm.
+
+For the distinguished physical vector, every nonzero terminal amplitude
+in a fiber has an exact common factor.  If \(u=(d\ell,r,j,\gamma)\) and
+\(y=(\gamma,s,j)\), define
+\begin{align}
+ \Omega_y
+ &:={}
+ \mu(s)\eta_\gamma\mathscr R(q_\gamma)\xi_a
+ W_2(m_\gamma j/X)\Psi_2(d_\gamma j/K),
+ \label{eq:tpc56-common-output-gauge}\\
+ b_u
+ &:={}
+ (\log\ell)\omega_D(d)\psi_L(\ell/L)\zeta_m
+ K_{m\gamma}W_1(mj/X)\Psi_1(dj/K)
+ \Lambda(mj+h_0).
+ \label{eq:tpc56-remaining-amplitude}
+\end{align}
+Then \eqref{eq:tpc56-common-mobius-identity} gives
+\begin{equation}
+ (D_{h_0}G_X^L)_u=\Omega_y b_u.
+ \label{eq:tpc56-physical-gauge-factorization}
+\end{equation}
+If a fiber has positive terminal diagonal energy, then \(\Omega_y\ne0\).
+Its canonical unit gauge is therefore
+\begin{equation}
+ \omega_y=\frac{\Omega_y}{|\Omega_y|}.
+ \label{eq:tpc56-unit-output-gauge}
+\end{equation}
+After multiplication by \(\overline{\omega_y}\), the phases tested below
+are exactly the phases of the remaining literal amplitudes \(b_u\).  The
+common M\"obius sign has disappeared, but no phase condition on \(b_u\) has
+been assumed.
