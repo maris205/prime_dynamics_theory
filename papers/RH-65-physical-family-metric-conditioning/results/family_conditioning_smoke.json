@@ -1,0 +1,114 @@
+{
+  "cases": [
+    {
+      "coupling_law": "0.2 * gap^0",
+      "coupling_power": 0.0,
+      "dimension": 2,
+      "endpoint": {
+        "condition_number": 159842.03999274384,
+        "condition_number_text": "1.5984203999274384858893e+5",
+        "coupling": 0.2,
+        "gap": 0.001,
+        "generic_horizon_1e_minus_6": 2209417875,
+        "lambda_max": "7.99614997467515405743452e+7",
+        "lambda_min": "5.00253248459425654784226e+2",
+        "metric_contraction_gap": 6.253009300060871e-09,
+        "metric_contraction_gap_text": "6.25300930006087056792882e-9",
+        "transfer_factor": 399.80250123372645
+      },
+      "fitted_condition_exponent": 2.0033770775381936,
+      "fitted_metric_gap_exponent": 3.001153136814258,
+      "predicted_condition_exponent": 2.0,
+      "predicted_metric_gap_exponent": 3.0,
+      "rows": [
+        {
+          "condition_number": 1586.039269747964,
+          "condition_number_text": "1.58603926974796396816424e+3",
+          "coupling": 0.2,
+          "gap": 0.01,
+          "generic_horizon_1e_minus_6": 2203553,
+          "lambda_max": "7.97497176903425502799325e+4",
+          "lambda_min": "5.02823096574497200674816e+1",
+          "metric_contraction_gap": 6.269634324662235e-06,
+          "metric_contraction_gap_text": "6.26963432466223511830855e-6",
+          "transfer_factor": 39.825108534038726
+        },
+        {
+          "condition_number": 159842.03999274384,
+          "condition_number_text": "1.5984203999274384858893e+5",
+          "coupling": 0.2,
+          "gap": 0.001,
+          "generic_horizon_1e_minus_6": 2209417875,
+          "lambda_max": "7.99614997467515405743452e+7",
+          "lambda_min": "5.00253248459425654784226e+2",
+          "metric_contraction_gap": 6.253009300060871e-09,
+          "metric_contraction_gap_text": "6.25300930006087056792882e-9",
+          "transfer_factor": 399.80250123372645
+        }
+      ]
+    },
+    {
+      "coupling_law": "0.2 * gap^0",
+      "coupling_power": 0.0,
+      "dimension": 3,
+      "endpoint": {
+        "condition_number": 28742384461.38235,
+        "condition_number_text": "2.87423844613823509708329e+10",
+        "coupling": 0.2,
+        "gap": 0.001,
+        "generic_horizon_1e_minus_6": 264996455301699,
+        "lambda_max": "9.59054152178795191451788e+12",
+        "lambda_min": "3.33672438856755153664939e+2",
+        "metric_contraction_gap": 5.2134699470734236e-14,
+        "metric_contraction_gap_text": "5.21346994707342341961264e-14",
+        "transfer_factor": 169535.7910925665
+      },
+      "fitted_condition_exponent": 4.007908610773682,
+      "fitted_metric_gap_exponent": 5.003292966205549,
+      "predicted_condition_exponent": 4.0,
+      "predicted_metric_gap_exponent": 5.0,
+      "rows": [
+        {
+          "condition_number": 2822371.5355518833,
+          "condition_number_text": "2.82237153555188339677502e+6",
+          "coupling": 0.2,
+          "gap": 0.01,
+          "generic_horizon_1e_minus_6": 2629947611,
+          "lambda_max": "9.5180978424194941122044e+7",
+          "lambda_min": "3.37237593368738954020051e+1",
+          "metric_contraction_gap": 5.25315046757481e-09,
+          "metric_contraction_gap_text": "5.25315046757481066274625e-9",
+          "transfer_factor": 1679.9915284167012
+        },
+        {
+          "condition_number": 28742384461.38235,
+          "condition_number_text": "2.87423844613823509708329e+10",
+          "coupling": 0.2,
+          "gap": 0.001,
+          "generic_horizon_1e_minus_6": 264996455301699,
+          "lambda_max": "9.59054152178795191451788e+12",
+          "lambda_min": "3.33672438856755153664939e+2",
+          "metric_contraction_gap": 5.2134699470734236e-14,
+          "metric_contraction_gap_text": "5.21346994707342341961264e-14",
+          "transfer_factor": 169535.7910925665
+        }
+      ]
+    }
+  ],
+  "evidence_level": "deterministic high-precision Jordan-family audit; the production folded-Gaussian family was not recomputed",
+  "gaps": [
+    0.01,
+    0.001
+  ],
+  "precision_decimal_digits": 80,
+  "route_consequence": "A full-space Lyapunov metric is viable only after the residual coupling is localized to the peripheral gap scale; global weighting is not a polylogarithmic substitute for Krylov or block deflation.",
+  "status": "rh65_physical_family_metric_conditioning_pilot",
+  "tail_tolerance": 1e-06,
+  "theorem_boundary": {
+    "exact_lyapunov_contraction_identity": true,
+    "matched_coupling_uniform_conditioning": true,
+    "production_family_uniformity": false,
+    "stage_A1_closed": false,
+    "unmatched_jordan_lower_obstruction": true
+  }
+}

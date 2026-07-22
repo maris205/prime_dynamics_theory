@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rh65-physical-family-metric-conditioning"
+version = "0.1.0"
+description = "Conditioning thresholds for Lyapunov metrics on near-peripheral Jordan families"
+requires-python = ">=3.10"
+dependencies = [
+  "mpmath>=1.3",
+  "numpy>=1.24",
+  "matplotlib>=3.7",
+  "pytest>=7.0",
+  "python-flint>=0.6",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
