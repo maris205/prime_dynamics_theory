@@ -1,0 +1,262 @@
+{
+  "archive_audit": {
+    "all_theorem_flags_green": true,
+    "all_uniform_stage_A_boundaries_open": true,
+    "negative_branch_count": 5,
+    "paper_count": 9,
+    "theorem_flag_count": 29
+  },
+  "bootstrap_budget": [
+    {
+      "certified_bound_ball": "[0.006778972566870843705771835757229745273830109781225684071485244164062061648689 +/- 6.85e-79]",
+      "certified_bound_upper": 0.006778972566870845,
+      "minimality_certified": true,
+      "previous_update_bound_lower": 0.013837519807632235,
+      "tolerance": 0.01,
+      "updates": 7
+    },
+    {
+      "certified_bound_ball": "[9.371251676442254338858985750794399866542743761566385660421201532399394023147e-5 +/- 8.60e-81]",
+      "certified_bound_upper": 9.371251676442255e-05,
+      "minimality_certified": true,
+      "previous_update_bound_lower": 0.00019128987382070802,
+      "tolerance": 0.0001,
+      "updates": 13
+    },
+    {
+      "certified_bound_ball": "[6.34653891767392288102404378967205074453960060274827258037724192054142962803e-7 +/- 5.31e-82]",
+      "certified_bound_upper": 6.346538917673924e-07,
+      "minimality_certified": true,
+      "previous_update_bound_lower": 1.295481831751377e-06,
+      "tolerance": 1e-06,
+      "updates": 20
+    },
+    {
+      "certified_bound_ball": "[8.77345539979243099072763813484264294925154387323921201511349923095647231779e-9 +/- 6.14e-84]",
+      "certified_bound_upper": 8.773455399792432e-09,
+      "minimality_certified": true,
+      "previous_update_bound_lower": 1.7908740842131037e-08,
+      "tolerance": 1e-08,
+      "updates": 26
+    },
+    {
+      "certified_bound_ball": "[5.94169040163886758300442764602534864769253434520790746820147524130078941561e-11 +/- 2.19e-86]",
+      "certified_bound_upper": 5.941690401638869e-11,
+      "minimality_certified": true,
+      "previous_update_bound_lower": 1.2128424744673054e-10,
+      "tolerance": 1e-10,
+      "updates": 33
+    },
+    {
+      "certified_bound_ball": "[8.21379281122557054674532077786544197057015947881541128404171937357421128814e-13 +/- 3.96e-88]",
+      "certified_bound_upper": 8.213792811225572e-13,
+      "minimality_certified": true,
+      "previous_update_bound_lower": 1.676633436703603e-12,
+      "tolerance": 1e-12,
+      "updates": 39
+    }
+  ],
+  "eta": 0.001953125,
+  "key_metrics": {
+    "rh82_maximum_frozen_relative_residual": 2.3393454482415315e-07,
+    "rh85_maximum_prefix_packet_relative_residual": 4.084644382994634e-06,
+    "rh86_minimum_angle_gap_ratio": 8984738.37994534,
+    "rh88_global_norm_failure_count": 10,
+    "rh89_minimum_ritz_dividend_fraction": 0.9612805406351573,
+    "rh90_maximum_corrected_contraction": 0.23849282013306503,
+    "rh90_minimum_schur_margin": 2.9602605549241444e-16
+  },
+  "layer_ledger": [
+    {
+      "all_theorem_flags_green": true,
+      "open_or_negative_boundary": "physical all-level transfer",
+      "paper": "RH-82",
+      "result": "half-log endpoint rank clock",
+      "route_effect": "rank clock",
+      "theorem_flag_count": 4
+    },
+    {
+      "all_theorem_flags_green": true,
+      "open_or_negative_boundary": "singular majorization; coordinate branch false",
+      "paper": "RH-83",
+      "result": "optimal singular factorization",
+      "route_effect": "factorization clarification",
+      "theorem_flag_count": 4
+    },
+    {
+      "all_theorem_flags_green": true,
+      "open_or_negative_boundary": "uniform physical tail energy",
+      "paper": "RH-84",
+      "result": "Ky Fan captured-energy gate",
+      "route_effect": "weaker invariant",
+      "theorem_flag_count": 3
+    },
+    {
+      "all_theorem_flags_green": true,
+      "open_or_negative_boundary": "uniform prefix packet; unweighted Gram false",
+      "paper": "RH-85",
+      "result": "strict-prefix snapshot transfer",
+      "route_effect": "dynamic packet",
+      "theorem_flag_count": 3
+    },
+    {
+      "all_theorem_flags_green": true,
+      "open_or_negative_boundary": "uniform memory law; angle route false",
+      "paper": "RH-86",
+      "result": "normalized-memory variational law",
+      "route_effect": "gap-free online packet",
+      "theorem_flag_count": 3
+    },
+    {
+      "all_theorem_flags_green": true,
+      "open_or_negative_boundary": "uniform injection law",
+      "paper": "RH-87",
+      "result": "rank-staircase injection recursion",
+      "route_effect": "scalar drift reduction",
+      "theorem_flag_count": 3
+    },
+    {
+      "all_theorem_flags_green": true,
+      "open_or_negative_boundary": "global norm and point predictor false",
+      "paper": "RH-88",
+      "result": "predictor-corrector identity",
+      "route_effect": "correction dividend",
+      "theorem_flag_count": 3
+    },
+    {
+      "all_theorem_flags_green": true,
+      "open_or_negative_boundary": "uniform cross-block enrichment",
+      "paper": "RH-89",
+      "result": "rank-one complement Ritz theorem",
+      "route_effect": "small corrector",
+      "theorem_flag_count": 3
+    },
+    {
+      "all_theorem_flags_green": true,
+      "open_or_negative_boundary": "uniform Schur sign",
+      "paper": "RH-90",
+      "result": "Schur trial gain certificate",
+      "route_effect": "full-reference-free finite closure",
+      "theorem_flag_count": 3
+    }
+  ],
+  "negative_branch_markers": [
+    "direct endpoint/physical coordinate identity",
+    "unweighted prefix Gramian",
+    "tail principal-angle perturbation",
+    "global operator-norm contraction",
+    "uniform point-packet contraction"
+  ],
+  "precision_bits": 256,
+  "rho": 0.24,
+  "route_consequence": "RH-82--RH-90 replace endpoint factorization by a direct dynamic packet route and reduce the postblock residual problem to a small uniform Schur sign. If a fixed rho<1 Schur update holds for m late clock-rank updates, the normalized postblock relative tail is at most rho^(m/2)/sqrt(1-eta). At eta=1/512 and rho=0.24, 20 updates certify 1e-6 and 39 certify 1e-12. Stage A nevertheless still needs the reduced packet future and prefix/observability bridge, while the alternative full-block corridor and all three A5 moving-cloud gates remain open.",
+  "route_frontier": {
+    "preferred_next_gate": "S: prove the RH-90 Schur trial sign uniformly after burn-in; pursue R and O in parallel",
+    "stage_A5_minimal_bundles": [
+      [
+        "C",
+        "L",
+        "P",
+        "U"
+      ],
+      [
+        "C",
+        "O",
+        "P",
+        "R",
+        "S",
+        "U"
+      ]
+    ],
+    "stage_A_formula": "finite_chain_closed AND (L OR (S AND R AND O))",
+    "stage_A_minimal_bundles": [
+      [
+        "L"
+      ],
+      [
+        "O",
+        "R",
+        "S"
+      ]
+    ],
+    "symbols": {
+      "C": "moving-cloud coefficient bridge",
+      "L": "all-level RH-75 full-block law",
+      "O": "polylogarithmic finite-prefix/normalization/observability bridge",
+      "P": "actual moving-cloud Riesz projection",
+      "R": "polylogarithmic reduced packet future",
+      "S": "uniform late Schur update/contraction law",
+      "U": "uniform trace-class complementary limit"
+    }
+  },
+  "source_summaries": [
+    {
+      "paper": 82,
+      "path": "papers/RH-82-half-log-postblock-rank-clock/results/summary.json",
+      "sha256": "b6e04a29d8d831d416337d2c12d0f8e4bcd07903005032e04416bfae57b03161",
+      "status": "rh82_half_log_postblock_rank_clock_archived"
+    },
+    {
+      "paper": 83,
+      "path": "papers/RH-83-optimal-endpoint-singular-factorization/results/summary.json",
+      "sha256": "1c31892e016b17457db9a0cc9aa38da2b0a1dd5bb430c08c9761103b7e12449c",
+      "status": "rh83_optimal_endpoint_singular_factorization_archived"
+    },
+    {
+      "paper": 84,
+      "path": "papers/RH-84-ky-fan-tail-majorization/results/summary.json",
+      "sha256": "7b3518402760cc602670ec994266117327c561a7f673b2399fc922ae06b11794",
+      "status": "rh84_ky_fan_tail_majorization_archived"
+    },
+    {
+      "paper": 85,
+      "path": "papers/RH-85-midblock-snapshot-packets/results/summary.json",
+      "sha256": "4854dedb163a440e8ddf81590b2631b9d59c60091cf23023995fe8e1decc913e",
+      "status": "rh85_midblock_snapshot_packets_archived"
+    },
+    {
+      "paper": 86,
+      "path": "papers/RH-86-trace-normalized-late-memory-packets/results/summary.json",
+      "sha256": "3e7fd298fddd6eea6c59d8750fb75066df3344b1e75423568b4662e4fc5ecea6",
+      "status": "rh86_trace_normalized_late_memory_packets_archived"
+    },
+    {
+      "paper": 87,
+      "path": "papers/RH-87-rayleigh-injection-recursion/results/summary.json",
+      "sha256": "cd44d82eb03333827a80654021446fd32216469de5982dcbb5948100b8b910a7",
+      "status": "rh87_rayleigh_injection_recursion_archived"
+    },
+    {
+      "paper": 88,
+      "path": "papers/RH-88-predictor-corrector-energy-contraction/results/summary.json",
+      "sha256": "06317d94cbb563673f2ee65c149ccc04e3e7d66f14e092d2ad0acb7358683e25",
+      "status": "rh88_predictor_corrector_energy_contraction_archived"
+    },
+    {
+      "paper": 89,
+      "path": "papers/RH-89-rank-one-complement-ritz-correction/results/summary.json",
+      "sha256": "47df4ebdce158dc5357c69e7e1f47cf76028be56c1a99e79c60755540a11cd60",
+      "status": "rh89_rank_one_complement_ritz_correction_archived"
+    },
+    {
+      "paper": 90,
+      "path": "papers/RH-90-schur-secular-subquarter-certificate/results/summary.json",
+      "sha256": "5d8232a495ac3d12bfe8d4ea0bb628ffaa4aff7eb51265e12d95c6ac47728ef4",
+      "status": "rh90_schur_secular_subquarter_certificate_archived"
+    }
+  ],
+  "status": "rh91_schur_packet_route_review",
+  "theorem_boundary": {
+    "hilbert_polya_operator": false,
+    "nine_summary_hash_audit": true,
+    "polylog_reduced_future_proved": false,
+    "relative_stage_A5_closed": false,
+    "revised_completion_frontier": true,
+    "riemann_hypothesis": false,
+    "schur_to_effective_rank_bootstrap": true,
+    "stage_A4_unconditional_closed": false,
+    "uniform_observability_bridge_proved": false,
+    "uniform_schur_margin_proved": false,
+    "uniform_stage_A1_closed": false
+  }
+}
