@@ -1,0 +1,48 @@
+{
+  "evidence_level": "deterministic binary64 block-Krylov model audit; no production folded-Gaussian packet computation",
+  "limitations": [
+    "The trace-optimal PSD envelope can remain conservative in a special cancelling coefficient direction.",
+    "The pilot uses canonical finite-dimensional Lyapunov metrics rather than production observation-weighted block metrics.",
+    "Uniform block depth and interval-certified physical packet transfer remain open."
+  ],
+  "models": [
+    {
+      "coefficient_norm": 1.4142135623730951,
+      "depths": [
+        {
+          "center_directional_energy": 1.3858872745291088e-16,
+          "depth": 1,
+          "directional_gain": 1.0000014223498481,
+          "directional_residual_radius": 8.372212262076477e-15,
+          "directional_upper": 1.3858892457456467e-16,
+          "exact_directional_energy": 1.3858872745290923e-16,
+          "gram_envelope_minimum_slack_eigenvalue": 2.7533531010703882e-14,
+          "independent_column_gain": 2.12897058576423e+18,
+          "independent_column_upper": 295.05132426573937,
+          "krylov_rank": 2,
+          "metric_contraction": 0.9950000000000001,
+          "rank_matched_fused_gain": 1.0,
+          "rank_matched_fused_upper": 1.3858872745290923e-16,
+          "residual_relation_norm": 0.15288461538461534,
+          "source_reconstruction_norm": 6.916653802134305e-16,
+          "trace_eta": 1.9245441222334687,
+          "uniform_gram_gain": 410.15903605957214,
+          "uniform_gram_upper": 5.684341886080802e-14
+        }
+      ],
+      "dimension": 3,
+      "horizon": 32,
+      "metric_condition_number": 96.24060150375982,
+      "name": "cancelling_slow_pair",
+      "source_columns": 2
+    }
+  ],
+  "status": "rh66_block_cross_column_krylov_gram_pilot",
+  "theorem_boundary": {
+    "block_power_identity": true,
+    "directional_center_radius_certificate": true,
+    "production_block_family_uniformity": false,
+    "stage_A1_closed": false,
+    "uniform_psd_gram_envelope": true
+  }
+}

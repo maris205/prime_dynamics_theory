@@ -1,0 +1,178 @@
+{
+  "arb": {
+    "block_residual_annihilates_fused_axis_certified": true,
+    "columnwise_loss_exceeds_1e18_certified": true,
+    "exact_fused_energy_positive_certified": true,
+    "fused_slow_and_fast_coordinates_cancel_certified": true,
+    "precision_bits": 256,
+    "production_interval_audit_executed": false
+  },
+  "limitations": [
+    "The trace-optimal PSD envelope can remain conservative in a special cancelling coefficient direction.",
+    "The pilot uses canonical finite-dimensional Lyapunov metrics rather than production observation-weighted block metrics.",
+    "Uniform block depth and interval-certified physical packet transfer remain open."
+  ],
+  "pilot": {
+    "model_count": 3,
+    "models": [
+      {
+        "depths": [
+          {
+            "center_directional_energy": 1.3858872745291088e-16,
+            "depth": 1,
+            "directional_gain": 1.0000014223498481,
+            "directional_residual_radius": 8.372212262076477e-15,
+            "directional_upper": 1.3858892457456467e-16,
+            "exact_directional_energy": 1.3858872745290923e-16,
+            "gram_envelope_minimum_slack_eigenvalue": 2.7533531010703882e-14,
+            "independent_column_gain": 2.12897058576423e+18,
+            "independent_column_upper": 295.05132426573937,
+            "krylov_rank": 2,
+            "metric_contraction": 0.9950000000000001,
+            "rank_matched_fused_gain": 1.0,
+            "rank_matched_fused_upper": 1.3858872745290923e-16,
+            "residual_relation_norm": 0.15288461538461534,
+            "source_reconstruction_norm": 6.916653802134305e-16,
+            "trace_eta": 1.9245441222334687,
+            "uniform_gram_gain": 410.15903605957214,
+            "uniform_gram_upper": 5.684341886080802e-14
+          }
+        ],
+        "dimension": 3,
+        "horizon": 32,
+        "name": "cancelling_slow_pair",
+        "source_columns": 2
+      },
+      {
+        "depths": [
+          {
+            "center_directional_energy": 2.035522240208709e-06,
+            "depth": 1,
+            "directional_gain": 3.899144788576458,
+            "directional_residual_radius": 1.7449969556736407,
+            "directional_upper": 3.0499956455057142,
+            "exact_directional_energy": 0.7822216949833349,
+            "gram_envelope_minimum_slack_eigenvalue": 0.002214726308831789,
+            "independent_column_gain": 11.365040990215508,
+            "independent_column_upper": 8.889981626921454,
+            "krylov_rank": 3,
+            "metric_contraction": 0.9873693198920781,
+            "rank_matched_fused_gain": 5.00768956458598,
+            "rank_matched_fused_upper": 3.9171234191608035,
+            "residual_relation_norm": 0.4199999999999993,
+            "source_reconstruction_norm": 1.525546659599613e-16,
+            "trace_eta": 1139.426339458898,
+            "uniform_gram_gain": 3.9500490397295085,
+            "uniform_gram_upper": 3.089814055124511
+          },
+          {
+            "center_directional_energy": 0.7822216949833422,
+            "depth": 2,
+            "directional_gain": 1.0000000000000389,
+            "directional_residual_radius": 1.308838582333588e-14,
+            "directional_upper": 0.7822216949833654,
+            "exact_directional_energy": 0.7822216949833349,
+            "gram_envelope_minimum_slack_eigenvalue": -4.309542305425673e-18,
+            "independent_column_gain": 11.48762384766803,
+            "independent_column_upper": 8.985868597453866,
+            "krylov_rank": 4,
+            "metric_contraction": 0.9873693198920781,
+            "rank_matched_fused_gain": 1.0000000000000262,
+            "rank_matched_fused_upper": 0.7822216949833555,
+            "residual_relation_norm": 6.430016263092426e-16,
+            "source_reconstruction_norm": 7.887944996791685e-16,
+            "trace_eta": 1.5814265432605533e-14,
+            "uniform_gram_gain": 1.000000000000039,
+            "uniform_gram_upper": 0.7822216949833656
+          }
+        ],
+        "dimension": 4,
+        "horizon": 24,
+        "name": "nonnormal_three_packet_chain",
+        "source_columns": 3
+      },
+      {
+        "depths": [
+          {
+            "center_directional_energy": 8.429244069094505,
+            "depth": 1,
+            "directional_gain": 1.2884707794185544,
+            "directional_residual_radius": 8.149043327848952,
+            "directional_upper": 122.1546477520556,
+            "exact_directional_energy": 94.80591232901695,
+            "gram_envelope_minimum_slack_eigenvalue": 0.3795244913619259,
+            "independent_column_gain": 1.7126267195145792,
+            "independent_column_upper": 162.3671386226311,
+            "krylov_rank": 3,
+            "metric_contraction": 0.9900000000000001,
+            "rank_matched_fused_gain": 1.129738738752241,
+            "rank_matched_fused_upper": 107.10591182083915,
+            "residual_relation_norm": 0.3670527830063832,
+            "source_reconstruction_norm": 7.196405783762668e-16,
+            "trace_eta": 3.020209125065455,
+            "uniform_gram_gain": 1.2950523324093648,
+            "uniform_gram_upper": 122.77861788789116
+          },
+          {
+            "center_directional_energy": 94.80591232901685,
+            "depth": 2,
+            "directional_gain": 1.0000000000000036,
+            "directional_residual_radius": 2.232799798287502e-14,
+            "directional_upper": 94.80591232901729,
+            "exact_directional_energy": 94.80591232901695,
+            "gram_envelope_minimum_slack_eigenvalue": 2.8086656288602336e-15,
+            "independent_column_gain": 1.7560081237405734,
+            "independent_column_upper": 166.47995222839035,
+            "krylov_rank": 6,
+            "metric_contraction": 0.9900000000000001,
+            "rank_matched_fused_gain": 1.000000000000054,
+            "rank_matched_fused_upper": 94.80591232902206,
+            "residual_relation_norm": 6.510767561060318e-16,
+            "source_reconstruction_norm": 8.925046918636119e-16,
+            "trace_eta": 2.2987020926242847e-15,
+            "uniform_gram_gain": 1.0000000000000029,
+            "uniform_gram_upper": 94.80591232901722
+          }
+        ],
+        "dimension": 6,
+        "horizon": 20,
+        "name": "six_mode_complex_phase_packets",
+        "source_columns": 3
+      }
+    ]
+  },
+  "program_boundary": {
+    "coefficient_adapted_uniform_psd_envelope": false,
+    "hilbert_polya_operator": false,
+    "production_interval_packet_transfer": false,
+    "stage_A1_closed": false,
+    "stage_A4_unconditional_closed": false,
+    "uniform_physical_family_block_depth": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "edc0f305a8e021cd0c100a30cd2e601c77b965a68d5614105ffbf24a5a461fc3",
+    "README.md": "257c00a0431c9a8ef77d202c415bee6c3ecb1919a3d9753159499b1c04ad4a61",
+    "block-cross-column-krylov-gram.pdf": "05226d2ca30911df32e6ffd70c32cc64894d5658225350667f25d90e62e7658a",
+    "figures/block_cross_column_krylov_gram.pdf": "cd3c7695c9b74e2cdec8fc41223378e7cc178e85a231fe4056166dbe9a26cbb3",
+    "figures/block_cross_column_krylov_gram.png": "907821472d5c608b2eb508b3ec3aa7fced012eadf3146dd4c2748f38283e27e8",
+    "main.pdf": "05226d2ca30911df32e6ffd70c32cc64894d5658225350667f25d90e62e7658a",
+    "main.tex": "948cfda75d953fb0fca227d911d8500a02dbfc22a865a3d8a097fae369e7062d",
+    "pyproject.toml": "a57d04ec969c1846c32dce4957b2ed72addfe90bf5a6e875561a6d66b761c491",
+    "references.bib": "12e8b247d10fa15e259cb6cca55cb14189e122832be23ef56d6728079d75ce84",
+    "requirements.txt": "25be8263391d4091728342c19f59a0c799ec2444980149521892d447c2ce223b"
+  },
+  "result_hashes": {
+    "results/arb_cancellation_audit.json": "be803f5140b432f2bf7cdafca83a9fbdeb66a338ec64b64d1223da7adb2532c6",
+    "results/block_gram_pilot.json": "ed97321a66df7f9510f252f82e32b72214b8972940c7811a97c8b1575d4cce60",
+    "results/block_gram_smoke.json": "f2afef555eff98878b6768a47fb4840efa0a19397f7581ef849ad345ee9ec4b9",
+    "results/dependency_manifest.json": "2d13dd9d78ff7ec8e0aab9d0f320272a860d5268e9a0874ec55ac7234f3b5658"
+  },
+  "status": "rh66_block_cross_column_krylov_gram_audit",
+  "theorem": {
+    "block_galerkin_power_identity": true,
+    "directional_center_radius_certificate": true,
+    "exact_fused_cancellation_criterion": true,
+    "invariant_block_exactness": true,
+    "uniform_psd_gram_envelope": true
+  }
+}
