@@ -1,0 +1,39 @@
+{
+  "external_inputs": {
+    "rh16_endpoint_rank_manuscript": {
+      "path": "papers/RH-16-endpoint-gaussian-resolution-rank/main.tex",
+      "sha256": "f4b4cf95ad43b71b805ac8c7561afab849ee7dde26dfde2259cd33ae473557c2"
+    },
+    "rh77_effective_rank_audit": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/results/effective_rank_audit.json",
+      "sha256": "08a123fb310bfd70572e5bd2b13ccf2fe397fd944f409c626d2e079b49be6c1a"
+    },
+    "rh82_rank_clock_summary": {
+      "path": "papers/RH-82-half-log-postblock-rank-clock/results/summary.json",
+      "sha256": "b6e04a29d8d831d416337d2c12d0f8e4bcd07903005032e04416bfae57b03161"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "9dc7d460bc422f76e10b6af5ca31ba5fce76bfff476972d70143f91464cd471e",
+    "experiments/make_figures.py": "ac606210685b21c3c1f08847238c894c20f8e8556fc1da0bee02c15109cddc99",
+    "experiments/run_singular_factorization_audit.py": "fb12033930958c0acd01fe51212abd3320e0368471a74e4d2021e3d058af7801",
+    "experiments/verify_archive.py": "29bd5ab8e668e3f7e366798a9230b4e9ced1aed583ace77b7af1d0e8150f1955",
+    "src/singular_factor/__init__.py": "a688824a777057a502cf02636740023d6c7169d592ecbfd35b542b7a351fc9c5",
+    "src/singular_factor/bounds.py": "1e224425c230cccd6498b85fa5f8c413a3e97e4505ebcbb0cb396104dd54dea0",
+    "tests/test_archived_results.py": "dd01b83499c3cc0595b0b6cdb587f219654d056e434fdb4793c234935424796f",
+    "tests/test_theory.py": "247a0cd98196691b3fce6a0d5b7e24842f31913b13e68d1bed4245904706c583"
+  },
+  "publication_artifacts": {
+    ".gitignore": "e8c5d568962ae7f11638a973e785da93ef034ef01f2aaeed525ff4849785dbb1",
+    "README.md": "d71f394325b69ce11626b35ad58c84be3ce667b45a5aef51553fd41d6ad6c3fa",
+    "figures/optimal_endpoint_singular_factorization.pdf": "5d5d7c77dfbf47483f788d8284cc70b32224c47bd12f48dc0787a2516244df25",
+    "figures/optimal_endpoint_singular_factorization.png": "947a945ee1ca00cb2c6a22f3f593206a55d2c704fb1e5a560d3f36a7dc0b0f22",
+    "main.pdf": "0fdcb9bb0725e4582b8850e01ea9618fdd8819f2685cc7c1d5814f4f5b68613f",
+    "main.tex": "82a04dbc15cbb9a49d1f369c52b58b4ba33e3432eef377b7b8ec70f244877c01",
+    "optimal-endpoint-singular-factorization.pdf": "0fdcb9bb0725e4582b8850e01ea9618fdd8819f2685cc7c1d5814f4f5b68613f",
+    "pyproject.toml": "b157bddbcb6719e8274ec9bfb65ca8308db95410addb4cf0c9ff40276fb8c7da",
+    "references.bib": "834c78ccf555d4b0b0d3ccbe12d9fdc8671d2db6322eb0cbe00fa6b3115dec7d",
+    "requirements.txt": "99792beccbdbe43deeb5a4bccbc3e9ab346a992689810797cb03651a379983c3"
+  },
+  "status": "all_rh83_inputs_sources_and_publication_artifacts_hashed"
+}
