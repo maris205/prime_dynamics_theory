@@ -1,0 +1,39 @@
+{
+  "external_inputs": {
+    "rh77_effective_rank_audit": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/results/effective_rank_audit.json",
+      "sha256": "08a123fb310bfd70572e5bd2b13ccf2fe397fd944f409c626d2e079b49be6c1a"
+    },
+    "rh84_tail_summary": {
+      "path": "papers/RH-84-ky-fan-tail-majorization/results/summary.json",
+      "sha256": "7b3518402760cc602670ec994266117327c561a7f673b2399fc922ae06b11794"
+    },
+    "rh85_snapshot_summary": {
+      "path": "papers/RH-85-midblock-snapshot-packets/results/summary.json",
+      "sha256": "4854dedb163a440e8ddf81590b2631b9d59c60091cf23023995fe8e1decc913e"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "91bd2d899d1ccd42d546f9be0340e5f830a1913819f76ea77531e41c371fe01c",
+    "experiments/make_figures.py": "033e45b5402b6a04e195db1e11ede454bddfa0675d5b55a5d4950221f0b6d245",
+    "experiments/run_late_memory_audit.py": "d2c010872385f9ce42146a22a36365f9f9a5667a30804efbdcb58862ef0198ea",
+    "experiments/verify_archive.py": "69e76d0ce695b1f557bb4faa44d4941e25ae966f05481f2282df1c806abc8fee",
+    "src/late_memory/__init__.py": "84d2ce28ee00180783c6ca16214b0548d60c398218bf80ce3d033e2324386d48",
+    "src/late_memory/bounds.py": "b4e63fa34e5840b0e637cea5ef49155680f845125e1d1a8da1385f69b93dbd78",
+    "tests/test_archived_results.py": "390da63a91cdeba788a23231642f5fcfc7f6ed2b7bc518d87915091d9b3ac9e4",
+    "tests/test_theory.py": "4a4108dc98d35a61a5a63c5dfa01a95893dcbc7ab3b8fbfff0dd9f562229ee4c"
+  },
+  "publication_artifacts": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "07e170f87b0f1635ad0c0b330f5877ac27caa5ce59eaba30102926222dd2e161",
+    "figures/trace_normalized_late_memory.pdf": "45a785aa490863f33bfb41350e7b2115fa6322d963b3e415d8fa7fd0912834bf",
+    "figures/trace_normalized_late_memory.png": "95f11debcee695bb5e09b820c4e86e58f242a3f7b4b7e72dce651b4d6e568aa2",
+    "main.pdf": "714f58655eb340626fd156d46c3ab003808de33b8b0804469f3c62a86f092d9e",
+    "main.tex": "5103eadd4b5a6bd9effdedefd78d3373ab0fb157e46427bdb85f35778c287d99",
+    "pyproject.toml": "ea396dd0bf734923105adb3af3bc4d95f88e3f4b02475c6fc1bc33cdfb35e483",
+    "references.bib": "acbf71119f946644471765169dfa6172b4f6d057efe6306e526533c992bf23d2",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1",
+    "trace-normalized-late-memory-packets.pdf": "714f58655eb340626fd156d46c3ab003808de33b8b0804469f3c62a86f092d9e"
+  },
+  "status": "all_rh86_inputs_sources_and_publication_artifacts_hashed"
+}

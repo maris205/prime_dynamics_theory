@@ -1,0 +1,50 @@
+{
+  "audit": {
+    "all_frobenius_propagation_inequalities_certified": true,
+    "maximum_angle_perturbation_gap_ratio": 8131523216.698193,
+    "maximum_clock_rank": 7,
+    "maximum_full_future_hardy_perturbation": 2.3662504228122522e-07,
+    "maximum_interval_relative_terminal_residual": 1.0940807560152896e-05,
+    "maximum_past_trace_fraction": 0.0019531249999999445,
+    "maximum_unweighted_improvement_factor": 4626568.822850941,
+    "minimum_angle_perturbation_gap_ratio": 8984738.37994534,
+    "minimum_interval_terminal_energy_capture": 0.9999999998802986,
+    "minimum_unweighted_improvement_factor": 1037.5701417777505,
+    "scale_count": 5
+  },
+  "program_boundary": {
+    "all_level_late_memory_packet_proved": false,
+    "angle_perturbation_route_rejected_at_anchors": true,
+    "five_scale_late_memory_packet_validated": true,
+    "gap_free_snapshot_energy_transfer": true,
+    "hilbert_polya_operator": false,
+    "normalized_memory_variational_theorem": true,
+    "riemann_hypothesis": false,
+    "stage_A4_unconditional_closed": false,
+    "uniform_stage_A1_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "07e170f87b0f1635ad0c0b330f5877ac27caa5ce59eaba30102926222dd2e161",
+    "figures/trace_normalized_late_memory.pdf": "45a785aa490863f33bfb41350e7b2115fa6322d963b3e415d8fa7fd0912834bf",
+    "figures/trace_normalized_late_memory.png": "95f11debcee695bb5e09b820c4e86e58f242a3f7b4b7e72dce651b4d6e568aa2",
+    "main.pdf": "714f58655eb340626fd156d46c3ab003808de33b8b0804469f3c62a86f092d9e",
+    "main.tex": "5103eadd4b5a6bd9effdedefd78d3373ab0fb157e46427bdb85f35778c287d99",
+    "pyproject.toml": "ea396dd0bf734923105adb3af3bc4d95f88e3f4b02475c6fc1bc33cdfb35e483",
+    "references.bib": "acbf71119f946644471765169dfa6172b4f6d057efe6306e526533c992bf23d2",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1",
+    "trace-normalized-late-memory-packets.pdf": "714f58655eb340626fd156d46c3ab003808de33b8b0804469f3c62a86f092d9e"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "abcb3d70efa8c8307294a4819a93e704a8631a889779d13cd76a447a652ab8b1",
+    "results/late_memory_audit.json": "a9110e1c03644a058660056b464fa94c5709d08b74b3e32f58d086b8b5060d3e",
+    "results/late_memory_smoke.json": "d06e1353c18aa4d7adc17eaeb0a93e5551fc6b0470adef31f4e374a5bea41096"
+  },
+  "route_consequence": "The trace-normalized recursion G_j = X_j^*X_j/||X_j||_2^2 + eta G_{j-1} is an online, scale-free packet statistic. With eta=1/512, its clock-rank packet has a 192-bit terminal relative residual below 1.2e-5 at all five anchors and improves the raw unweighted prefix packet by at least three orders of magnitude. Every Davis-Kahan perturbation/gap ratio exceeds one million, so principal-angle continuity is quantitatively unavailable even though captured energy is stable. The next proof should control weighted Rayleigh leakage directly, not singular-vector angles.",
+  "status": "rh86_trace_normalized_late_memory_packets_archived",
+  "theorem": {
+    "angle_gap_diagnostic_boundary": true,
+    "gap_free_snapshot_energy_transfer": true,
+    "normalized_memory_variational_theorem": true
+  }
+}
