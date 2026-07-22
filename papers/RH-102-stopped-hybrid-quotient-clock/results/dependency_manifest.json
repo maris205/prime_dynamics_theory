@@ -1,0 +1,61 @@
+{
+  "external_inputs": {
+    "rh100_roadmap": {
+      "path": "papers/RH-100-hundred-layer-route-review/UPDATED_ROADMAP.md",
+      "sha256": "88b2a8ad241d1a15f782108b213f7490eff14744635d53ebd1161c696b6af9b7"
+    },
+    "rh101_summary": {
+      "path": "papers/RH-101-finite-memory-packet-gram-action/results/summary.json",
+      "sha256": "31b3d555ef3f73ae63c32406fbdbdf9a668a6076553b4521e0907ac7f5bbff75"
+    },
+    "rh77_model_source": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/experiments/run_effective_rank_audit.py",
+      "sha256": "f1ea040fd00577c2775fea8cc1bc4bf416cae76d06dd06b3a6b5ee27116cd3c3"
+    },
+    "rh82_clock_source": {
+      "path": "papers/RH-82-half-log-postblock-rank-clock/src/half_log_rank/bounds.py",
+      "sha256": "4433277802bf2e1fb0544c988dc34f1e814de9c375178126995aa691e0da5609"
+    },
+    "rh94_source_seed": {
+      "path": "papers/RH-94-source-seeded-four-direction-horizon-refresh/src/source_seeded_refresh/bounds.py",
+      "sha256": "f6f7c15477d242172b00f4c4d5bba08dfb3e6fda4899ead46a3dce8cd4bd96d4"
+    },
+    "rh96_quotient_source": {
+      "path": "papers/RH-96-gap-weighted-weak-mode-quotient/experiments/run_weak_mode_quotient_audit.py",
+      "sha256": "1521e5a87a873ec6586d807c23d0e045b70057a5f7e932a621cd8d4e88b48486"
+    },
+    "rh96_summary": {
+      "path": "papers/RH-96-gap-weighted-weak-mode-quotient/results/summary.json",
+      "sha256": "04c21ca5111f0835613d4e8528c51455283135c0583c0d0fe75f7c08fb08dc3e"
+    },
+    "rh97_summary": {
+      "path": "papers/RH-97-nonlinear-hybrid-horizon-budget/results/summary.json",
+      "sha256": "7cbc511d04986a92772b9a563e46652cb3fc539c5d18c6b7239879917c7e2922"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "e1b4df940b90abb682f2812eddf4e08527ea8ab3c384c3cfdcb61fbc400d9538",
+    "experiments/make_figures.py": "b07ef88eab2d8fb030c0f6230350a4ef6277b506ce312edc9382d6b4ffdc96a2",
+    "experiments/run_stopped_hybrid_clock_audit.py": "34d283869ed4f39a442cd326899664f0f00c021eeaac96fa4c0e935ae18fa7c1",
+    "experiments/verify_archive.py": "7d5e04281dbf2a5a7c039f1aa8e28f1b89d6321c6904f2dd6411a9878fab0ae5",
+    "src/stopped_hybrid_clock/__init__.py": "7e62c5d6425cc6113182529b33d5de2967d702aa466ae31ca96eb603785f9f4b",
+    "src/stopped_hybrid_clock/clock.py": "a00e4b5144ab10b324bc47a899c32059606f2175d7e98b31f49a5a69e96e1f20",
+    "tests/test_archived_results.py": "18e84b756f2eb5c03b51bddd8af737abe9e75adebaba73afd5e849f9e24fa67b",
+    "tests/test_theory.py": "f2d539037945d6220367e41e5e89578316223e9ed4f26fa522d752409b6c5526"
+  },
+  "publication_artifacts": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "a31a8c0c1382f738e813ace24225eb0ffd2382b08dc14b22193c3bee9b398984",
+    "THEOREM_LEDGER.md": "c384f4c7acc7ae2b9ea63419dc1d3b797370a243ed2c28fa82d4e2dcbb8f50f5",
+    "UPDATED_ROADMAP.md": "dcea7321b3f803ad6beb411b1f43e15cbaea3060dbac003b061cf6ccb0d55ea7",
+    "figures/stopped_hybrid_quotient_clock.pdf": "c9d67237416843ea1af48471edf425f8b4aefb8775d96e78344733ed1f9741ba",
+    "figures/stopped_hybrid_quotient_clock.png": "1a95886bd9ce6e213af29a05fbc8bfa0daf87db96b71bee3c295e81b3491385b",
+    "main.pdf": "1a1eb11c5ce1a3191f0ac5d24ab67c610a2584e9f7cb8e82f5da9bf6f3a56bd8",
+    "main.tex": "51d4e94b114bd92a91dc1a55f10703c9d6b130c813361e9bc7af9171bc0538f6",
+    "pyproject.toml": "7f8320798ea439993ed704962c8d2bdc41e6802406020cb431dfa04036451675",
+    "references.bib": "362d66d79df1dcad2e23238cd848932706ee1cdacfab48723f460244929568e9",
+    "requirements.txt": "a5e2ad9ae84af4628f014846dc48a02f62cc3af22ec18c55b2ec99eee189fac5",
+    "stopped-hybrid-quotient-clock.pdf": "1a1eb11c5ce1a3191f0ac5d24ab67c610a2584e9f7cb8e82f5da9bf6f3a56bd8"
+  },
+  "status": "all_rh102_inputs_sources_and_publication_artifacts_hashed"
+}

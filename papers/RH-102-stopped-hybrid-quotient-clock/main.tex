@@ -1,0 +1,408 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Stopped Hybrid Quotient Clocks\\
+\large Exact Endpoint-Slack Control Without a Ritz Lipschitz Law}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Weak projected-cross modes can be removed locally by the gap-weighted theorem
+of RH-96, but local losses do not compose monotonically through the nonlinear
+Ritz refresh.  RH-97 resolves this by exact hybrid replay, while RH-98--RH-99
+show that the available smooth propagation constants are unusable.  We turn
+the exact replay into a stopped quotient clock.
+
+Let $H_0$ be the endpoint value of the full-width chain and $H_k$ the hybrid
+endpoint after the first $k$ accepted quotients, followed by a full-width
+suffix.  The exact debit of the $k$th candidate is
+$d_k\ge |H_k-H_{k-1}|$.  If a clock accepts only while
+$B_k=\sum_{j\le k}d_j\le A$, then at every stopping time
+\[
+ |H_k-H_0|\le B_k\le A.
+\]
+For a reference lower bound $R_-$, baseline upper bound $H_0^+$, target
+$\Gamma>1$, and safety fraction $0\le\rho<1$, choose
+\[
+ A=\rho\bigl(\Gamma R_--H_0^+\bigr)_+.
+\]
+Whenever the baseline has positive slack, the stopped endpoint is rigorously
+below $\Gamma R_-$.  No differentiability, monotonicity, or Lipschitz law for
+the recursive Ritz map is used.
+
+We compose this clock with RH-96 local gap certificates on all ten frozen
+channels, at relative quotient thresholds $10^{-8},10^{-6},10^{-4}$, using
+$\Gamma=1.01$, $\rho=0.99$, and 384-bit endpoint evaluation.  All five primary
+$10^{-8}$ quotients are accepted with no stop.  At $10^{-6}$ the unrestricted
+chain reaches $1.024921$; the clock rejects one candidate, stops one channel,
+and keeps all ten endpoints green with worst ratio $1.001172$.  At $10^{-4}$
+the unrestricted worst ratio is $1.014092$; two candidates are rejected and
+the stopped worst ratio is $1.006033$.  All 30 channel--threshold clocks have
+exact hybrid telescoping, green local certificates for accepted quotients,
+and certified endpoint gates.
+
+The price is explicit: every candidate is still evaluated by a full-suffix
+hybrid replay, and the absolute clock can stop conservatively before a signed
+cancellation.  Thus the stopped-horizon logic is closed, while the uniform
+quotient-supply and replay-cost problems remain.  No unconditional Stage A,
+moving-cloud construction, Hilbert--Polya operator, zero identification, or
+Riemann Hypothesis result is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} stopped budget; nonlinear telescoping; adaptive
+Ritz quotient; endpoint certificate; hybrid replay; weak spectral mode.
+
+\medskip
+\noindent\textbf{MSC 2020:} 47A75; 65F15; 65G20; 37M25; 15A18.
+
+\section{Introduction}
+
+The adaptive packet route has two distinct notions of safety.  A local
+quotient must not discard too much Ritz energy, and the accumulated nonlinear
+chain must remain inside its endpoint gate.  RH-96 supplies the first notion:
+a retained-to-omitted spectral gap converts a weak omitted block into a
+certified local Ky Fan loss \citep{WangWeakMode2026}.  RH-97 supplies an exact
+answer to the second: insert quotients one at a time, replay the remaining
+full-width suffix, and telescope the resulting endpoint differences
+\citep{WangHybridBudget2026}.
+
+The missing step is operational.  An unrestricted threshold rule may accept
+several locally certified quotients and nevertheless overspend the endpoint
+allowance.  This happens in the archived $10^{-6}$ and $10^{-4}$ chains.
+Trying to predict the propagation by a universal or differential Lipschitz
+constant is not currently viable: a positive finite-dimensional example
+amplifies projector loss by $44.49$, and the available two-gap constants can
+reach $10^{40}$ \citep{WangProjectorBarrier2026,WangTwoGap2026}.
+
+This paper takes the finite exact route seriously.  Each proposed quotient is
+priced by one exact hybrid replay.  It is accepted only when its absolute
+endpoint debit fits the remaining rigorous slack; otherwise the process
+switches permanently to full width.  The resulting theorem is a stopped
+nonlinear analogue of a variation-budget argument.  It requires no local
+linearization and remains valid even when a future refresh reverses the sign
+of a local loss.
+
+The theorem is developed abstractly in \cref{sec:hybrids,sec:clock}.  The
+composition with gap-weighted local certificates appears in
+\cref{sec:composition}.  The audit in \cref{sec:audit,sec:results} both
+salvages the two aggressive thresholds and exposes one deliberately
+conservative stop.
+
+\section{Hybrid endpoints}
+\label{sec:hybrids}
+
+Let $F_t$ denote the full-width update at time $t$, let $A_t$ denote a
+candidate quotient update, and let $J$ be a real endpoint functional.  These
+maps may be nonlinear and may depend on time.  Starting from $x$, suppose
+quotients have been accepted at times
+\[
+ 1\le t_1<\cdots<t_k\le N.
+\]
+Define $H_k$ to be the endpoint obtained from the accepted decisions through
+$t_k$ and the full maps at every other time, in particular throughout the
+suffix after $t_k$.  Thus $H_0=J(F_N\cdots F_1x)$ is the all-full baseline.
+
+The exact propagated contribution of the $k$th accepted quotient is
+\begin{equation}
+ \delta_k=H_k-H_{k-1}.
+ \label{eq:contribution}
+\end{equation}
+It is computed by comparing two chains with the same previously accepted
+prefix: one uses $F_{t_k}$ and a full suffix, the other uses $A_{t_k}$ and the
+same full suffix.  This is a nonlinear hybrid comparison, not a derivative.
+
+\begin{proposition}[Exact accepted-hybrid telescoping]
+\label{prop:telescoping}
+For every accepted sequence,
+\begin{equation}
+ H_k-H_0=\sum_{j=1}^k\delta_j.
+ \label{eq:telescoping}
+\end{equation}
+Consequently, for any certified debits $d_j\ge|\delta_j|$,
+\begin{equation}
+ |H_k-H_0|\le\sum_{j=1}^kd_j.
+ \label{eq:absolute}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Equation \eqref{eq:telescoping} is the scalar telescoping sum of
+\eqref{eq:contribution}.  The triangle inequality gives
+\eqref{eq:absolute}.
+\end{proof}
+
+The signs need not be positive.  In the primary audit two of the five
+accepted contributions are negative.  Hence summing local positive losses is
+not an exact endpoint law, while summing absolute hybrid debits is.
+
+\section{Stopped endpoint-slack theorem}
+\label{sec:clock}
+
+Let $R>0$ be a reference endpoint scale and let the target gate be
+\begin{equation}
+ H\le\Gamma R,qquad \Gamma>1.
+ \label{eq:gate}
+\end{equation}
+In validated computation we use a lower bound $R_-$ for $R$ and an upper
+bound $H_0^+$ for the all-full baseline.  Define the rigorous slack
+\begin{equation}
+ S=\bigl(\Gamma R_--H_0^+\bigr)_+.
+ \label{eq:slack}
+\end{equation}
+Fix $0\le\rho<1$ and set the stopped allowance $A=\rho S$.
+
+The clock maintains $B_0=0$.  At a candidate quotient it computes a debit
+$d\ge|H_{m candidate}-H_{m current}|$.  The candidate is accepted only if
+\begin{equation}
+ B+d\le A.
+ \label{eq:accept}
+\end{equation}
+After the first rejection the current step and all later steps use full
+width.
+
+\begin{theorem}[Stopped hybrid endpoint-budget theorem]
+\label{thm:stopped}
+Assume $S>0$.  At every accepted time and at the terminal stopping time,
+\begin{align}
+ |H_k-H_0|&\le B_k\le A,
+ \label{eq:budget-bound}\\
+ H_k&\le H_0^++A<\Gamma R_-\le\Gamma R.
+ \label{eq:gate-bound}
+\end{align}
+Therefore the stopped chain satisfies the endpoint gate
+\eqref{eq:gate} without a Lipschitz estimate for any update map.
+\end{theorem}
+
+\begin{proof}
+The clock accepts exactly when the cumulative certified debits remain below
+$A$.  Proposition \ref{prop:telescoping} gives the first inequality in
+\eqref{eq:budget-bound}; the clock gives the second.  Since
+$A=\rho(\Gamma R_--H_0^+)$ and $\rho<1$,
+\[
+ H_k\le H_0^++\rho(\Gamma R_--H_0^+)<\Gamma R_-.
+\]
+The last inequality in \eqref{eq:gate-bound} follows from $R_-\le R$.
+\end{proof}
+
+\begin{remark}
+If $S=0$, the baseline itself has no certified gate slack and the clock
+accepts no debit.  The theorem does not repair a failing baseline.
+\end{remark}
+
+\begin{remark}
+Stopping permanently at the first unaffordable candidate is stronger than
+necessary.  One could skip that candidate and price later ones, or maintain a
+signed account with additional structure.  The permanent stop is chosen
+because it makes the terminal chain exactly the last accepted hybrid and
+keeps the proof independent of cancellation.
+\end{remark}
+
+\section{Composition with local quotient certificates}
+\label{sec:composition}
+
+For one adaptive Ritz enrichment, write the full compression as
+\[
+ \begin{pmatrix}A&C\\C^*&D\end{pmatrix}.
+\]
+If the retained cutoff obeys $\lambda_r(A)\ge\alpha$, the omitted block obeys
+$D\preceq\beta I$, and $\alpha>\beta$, RH-96 proves that the local rank-$r$
+Ky Fan loss is at most
+\begin{equation}
+ \frac{\norm C_F^2}{\alpha-\beta}.
+ \label{eq:local-gap}
+\end{equation}
+This is the local admission certificate.  It establishes that the proposed
+weak-mode quotient is geometrically legitimate at its current step.
+
+The stopped algorithm requires two independent green lights:
+\begin{enumerate}[leftmargin=2em]
+\item the local gap certificate \eqref{eq:local-gap};
+\item the exact propagated debit test \eqref{eq:accept}.
+\end{enumerate}
+The first does not replace the second.  A small local loss can encounter a
+sensitive future branch; conversely, a local loss can be partly reversed by
+the future full refresh.  The endpoint debit prices the actual nonlinear
+future of the current accepted prefix.
+
+\begin{corollary}[Local-global stopped composition]
+\label{cor:composition}
+If every accepted quotient has a valid local gap certificate and every
+accepted propagated debit satisfies the stopped clock, then all accepted
+steps are locally certified and the terminal chain satisfies
+\eqref{eq:gate-bound}.
+\end{corollary}
+
+This corollary closes the logical $H_{\rm stop}$ gate selected in the RH-100
+route review \citep{WangHundredLayer2026}.  It does not remove the exact
+hybrid replay used to evaluate each debit.
+
+\section{Frozen audit}
+\label{sec:audit}
+
+We reuse the five RH-94 scales and two channels per scale.  Their endpoints
+are $4,6,11,17,22$, their packet ranks are $4,5,6,6,7$, and the full enrichment
+width is four.  At each proposed quotient we:
+\begin{enumerate}[leftmargin=2em]
+\item evaluate the RH-96 retained-to-omitted gap certificate;
+\item replay the full suffix from both the full and quotient candidates;
+\item evaluate both endpoint tails in Arb at 384-bit precision;
+\item debit the outward upper bound on the absolute hybrid difference;
+\item accept only if the local certificate is green and the debit fits.
+\end{enumerate}
+
+The endpoint gate is $\Gamma=1.01$ and the safety fraction is $\rho=0.99$.
+We test relative cross-mode thresholds $10^{-8}$, $10^{-6}$, and $10^{-4}$.
+The unrestricted comparator applies every quotient selected by its threshold.
+The stopped chain switches permanently to full width at its first rejected
+candidate.
+
+For independent verification we check that the full-suffix baseline at each
+candidate equals the preceding accepted hybrid, that accepted contributions
+telescope to the final endpoint shift, and that the interval-certified
+endpoint upper bound remains below $1.01R_-$.
+
+\section{Results}
+\label{sec:results}
+
+All 30 channel--threshold clocks pass every local-global verification.  The
+primary $10^{-8}$ rule proposes five quotients, accepts all five, and never
+stops.  Its largest spent fraction of the stopped allowance is only
+$1.02\times10^{-3}$.
+
+\begin{table}[t]
+\centering
+\caption{Stopped-clock decisions across ten channels.  The unrestricted
+column counts channels already below the $1.01$ endpoint gate.}
+\label{tab:decisions}
+\begin{tabular}{@{}rrrrrrr@{}}
+\toprule
+threshold & candidates & accepted & rejected & stopped & unrestricted green & stopped green\\
+\midrule
+$10^{-8}$ & 5  & 5  & 0 & 0 & 10/10 & 10/10\\
+$10^{-6}$ & 11 & 10 & 1 & 1 & 9/10  & 10/10\\
+$10^{-4}$ & 22 & 20 & 2 & 2 & 9/10  & 10/10\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Worst endpoint ratios and clock utilization.}
+\label{tab:endpoints}
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+threshold & worst unrestricted & worst stopped & max spent/allowance\\
+\midrule
+$10^{-8}$ & 1.00117232 & 1.00117243 & 0.00102\\
+$10^{-6}$ & 1.02492119 & 1.00117243 & 0.01253\\
+$10^{-4}$ & 1.01409152 & 1.00603284 & 0.60936\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The three stopping events}
+
+At $\sigma=0.08$ in the right channel, the $10^{-6}$ rule proposes one
+quotient at time six.  Its propagated debit is
+$1.419\times10^{-15}$, whereas the stopped allowance is
+$5.637\times10^{-16}$.  The quotient is rejected immediately and the final
+ratio is the full-width value $1.00000054$, instead of the unrestricted
+$1.02492119$.
+
+For the $10^{-4}$ rule in the same channel, quotients at times three, four,
+and five are accepted.  They spend $3.435\times10^{-16}$ of the
+$5.637\times10^{-16}$ allowance.  The time-six debit
+$2.222\times10^{-16}$ is slightly larger than the remaining
+$2.202\times10^{-16}$, so the clock stops.  Its endpoint ratio is
+$1.00603284$.
+
+At $\sigma=0.04$ in the right channel, the $10^{-4}$ rule accepts a tiny
+time-ten debit and rejects the time-eleven debit
+$1.295\times10^{-16}$ against remaining allowance
+$9.098\times10^{-17}$.  The stopped ratio is $1.00000399$, while the
+unrestricted ratio is $1.01409152$.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/stopped_hybrid_quotient_clock.pdf}
+\caption{Left: the stopped clock restores every endpoint gate at the two
+aggressive thresholds.  Right: each rejected proposal would cross its
+channel-specific rigorous allowance.}
+\label{fig:clock}
+\end{figure}
+
+\subsection{A conservative stop}
+
+The $\sigma=0.08$, right, $10^{-4}$ unrestricted endpoint is actually
+$1.00993513$, still below $1.01$.  The absolute clock nevertheless stops
+because the final proposed debit marginally exceeds the remaining safe
+allowance.  Signed future cancellation makes the unrestricted chain green,
+but the clock refuses to rely on it.  This is the intended tradeoff: the
+theorem certifies every accepted prefix from absolute data, at the cost of
+occasionally rejecting a harmless continuation.
+
+Across accepted events, ten propagated contributions are negative and
+twenty-five are positive over the three thresholds.  The presence of both
+signs explains why unrestricted endpoint quality and absolute clock spending
+need not be ordered monotonically.
+
+\section{Route consequence and claim boundary}
+
+The stopped-horizon gate now has an exact theorem and a finite stress test.
+An adaptive chain can be run safely without pretending that the recursive
+Ritz map has a usable uniform Lipschitz constant.  The primary quotients all
+survive, and the aggressive thresholds are automatically curtailed before a
+certified endpoint failure.
+
+Two open costs remain.  First, exact full-suffix replay is performed for each
+candidate; RH-102 organizes that work but does not replace it by a cheap
+analytic envelope.  Second, the theorem does not guarantee that an all-level
+family supplies useful locally gap-certified quotients.  That is the
+remaining uniform gate $Q$ in the preferred packet route.  RH-103 must still
+make the prefix, normalization, and observability factors explicit before
+the route can honestly say that only $Q$ remains inside Stage A.
+
+Nothing here constructs a moving-cloud Riesz projection, coefficient bridge,
+trace-class complement, self-adjoint spectral operator, or arithmetic trace
+formula.  In particular, no Hilbert--Polya operator, zero identification, or
+proof of the Riemann Hypothesis is claimed.
+
+\section{Conclusion}
+
+Exact nonlinear replay becomes substantially more useful when treated as a
+budget clock.  Each candidate quotient carries two prices: a local spectral
+certificate and an exact propagated endpoint debit.  Accepting only while
+both are green yields a stopped theorem that is independent of differentiable
+Ritz stability.
+
+The finite audit is decisive at the intended scale.  All five primary weak
+modes are removed, while three aggressive proposals are stopped and every
+one of the 30 endpoint gates is certified.  The remaining task is no longer
+to invent a propagation constant for these finite chains, but to expose the
+normalization/observability ledger and then confront the genuinely uniform
+gap-aware quotient law.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

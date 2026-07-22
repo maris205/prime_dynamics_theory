@@ -1,0 +1,97 @@
+{
+  "audit": {
+    "all_threshold_chain_count": 30,
+    "all_threshold_endpoint_green_count": 30,
+    "channel_count": 10,
+    "primary_accepted_quotient_count": 5,
+    "primary_stopped_channel_count": 0,
+    "primary_threshold": 1e-08,
+    "scale_count": 5,
+    "threshold_summary": {
+      "1e-04": {
+        "accepted_quotient_count": 20,
+        "candidate_count_before_stop": 22,
+        "endpoint_green_count": 10,
+        "maximum_certified_endpoint_to_reference_ratio": 1.0060328373803091,
+        "maximum_final_endpoint_to_reference_ratio": 1.0060328373803085,
+        "maximum_spent_fraction_of_allowance": 0.6093559101074641,
+        "maximum_unrestricted_endpoint_to_reference_ratio": 1.0140915204057648,
+        "negative_accepted_contribution_count": 5,
+        "positive_accepted_contribution_count": 15,
+        "rejected_quotient_count": 2,
+        "stopped_channel_count": 2,
+        "threshold": 0.0001,
+        "unrestricted_endpoint_green_count": 9
+      },
+      "1e-06": {
+        "accepted_quotient_count": 10,
+        "candidate_count_before_stop": 11,
+        "endpoint_green_count": 10,
+        "maximum_certified_endpoint_to_reference_ratio": 1.0011724272719222,
+        "maximum_final_endpoint_to_reference_ratio": 1.0011724272719218,
+        "maximum_spent_fraction_of_allowance": 0.012532928750069916,
+        "maximum_unrestricted_endpoint_to_reference_ratio": 1.0249211926604973,
+        "negative_accepted_contribution_count": 3,
+        "positive_accepted_contribution_count": 7,
+        "rejected_quotient_count": 1,
+        "stopped_channel_count": 1,
+        "threshold": 1e-06,
+        "unrestricted_endpoint_green_count": 9
+      },
+      "1e-08": {
+        "accepted_quotient_count": 5,
+        "candidate_count_before_stop": 5,
+        "endpoint_green_count": 10,
+        "maximum_certified_endpoint_to_reference_ratio": 1.0011724272719222,
+        "maximum_final_endpoint_to_reference_ratio": 1.0011724272719218,
+        "maximum_spent_fraction_of_allowance": 0.001016701854048487,
+        "maximum_unrestricted_endpoint_to_reference_ratio": 1.001172319664795,
+        "negative_accepted_contribution_count": 2,
+        "positive_accepted_contribution_count": 3,
+        "rejected_quotient_count": 0,
+        "stopped_channel_count": 0,
+        "threshold": 1e-08,
+        "unrestricted_endpoint_green_count": 10
+      }
+    }
+  },
+  "program_boundary": {
+    "all_frozen_threshold_endpoint_gates_certified": true,
+    "exact_accepted_hybrid_telescoping": true,
+    "gap_certificate_and_endpoint_debit_clock_composed": true,
+    "hilbert_polya_operator": false,
+    "hybrid_replay_removed": false,
+    "moving_cloud_A5_closed": false,
+    "riemann_hypothesis": false,
+    "stopped_hybrid_budget_theorem": true,
+    "uniform_gap_aware_quotient_law_proved": false,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "a31a8c0c1382f738e813ace24225eb0ffd2382b08dc14b22193c3bee9b398984",
+    "THEOREM_LEDGER.md": "c384f4c7acc7ae2b9ea63419dc1d3b797370a243ed2c28fa82d4e2dcbb8f50f5",
+    "UPDATED_ROADMAP.md": "dcea7321b3f803ad6beb411b1f43e15cbaea3060dbac003b061cf6ccb0d55ea7",
+    "figures/stopped_hybrid_quotient_clock.pdf": "c9d67237416843ea1af48471edf425f8b4aefb8775d96e78344733ed1f9741ba",
+    "figures/stopped_hybrid_quotient_clock.png": "1a95886bd9ce6e213af29a05fbc8bfa0daf87db96b71bee3c295e81b3491385b",
+    "main.pdf": "1a1eb11c5ce1a3191f0ac5d24ab67c610a2584e9f7cb8e82f5da9bf6f3a56bd8",
+    "main.tex": "51d4e94b114bd92a91dc1a55f10703c9d6b130c813361e9bc7af9171bc0538f6",
+    "pyproject.toml": "7f8320798ea439993ed704962c8d2bdc41e6802406020cb431dfa04036451675",
+    "references.bib": "362d66d79df1dcad2e23238cd848932706ee1cdacfab48723f460244929568e9",
+    "requirements.txt": "a5e2ad9ae84af4628f014846dc48a02f62cc3af22ec18c55b2ec99eee189fac5",
+    "stopped-hybrid-quotient-clock.pdf": "1a1eb11c5ce1a3191f0ac5d24ab67c610a2584e9f7cb8e82f5da9bf6f3a56bd8"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "4f61a42aeb549fd94e9c3966d02bd851f4d2a67eb8c15fd157b10b59eeb2f12f",
+    "results/stopped_hybrid_clock_audit.json": "a23f65ffcbf93d9f8ae71dbb1394bd528ce87229d01f6e759db4168dded6c731",
+    "results/stopped_hybrid_clock_smoke.json": "5d95921cc7b737f174cc1ce35568fed976ff6fe20918b2b1bbacd2e72aeadadf"
+  },
+  "route_consequence": "Exact hybrid replay can be organized as a stopped debit clock rather than an unrestricted adaptive chain. Every accepted quotient has a local gap certificate and an exact propagated endpoint price; the process switches permanently to full width before the next debit would exhaust the channel's rigorous 1.01 gate slack. This closes the stopped-horizon logic on the frozen channels while leaving hybrid replay and the all-level quotient supply open.",
+  "status": "rh102_stopped_hybrid_quotient_clock_archived",
+  "theorem": {
+    "accepted_hybrid_telescoping": true,
+    "local_global_certificate_composition": true,
+    "stopped_endpoint_budget": true,
+    "validated_gate_slack_allowance": true
+  }
+}
