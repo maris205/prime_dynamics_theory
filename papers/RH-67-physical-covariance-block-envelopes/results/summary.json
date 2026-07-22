@@ -1,0 +1,268 @@
+{
+  "arb": {
+    "focused_global_gain_exceeds_400_certified": true,
+    "focused_physical_gain_between_1_point_001_and_1_point_002_certified": true,
+    "isotropic_global_gain_below_1_point_2_certified": true,
+    "isotropic_physical_gain_between_2_and_3_certified": true,
+    "positive_exact_energies_certified": true,
+    "precision_bits": 256,
+    "production_interval_audit_executed": false
+  },
+  "limitations": [
+    "A nearly rank-one physical covariance can make the globally valid PSD envelope large off the physical ray.",
+    "The physically admissible coefficient covariance has not been derived from the production packet family.",
+    "Uniform block depth and interval transfer remain open."
+  ],
+  "pilot": {
+    "model_count": 3,
+    "models": [
+      {
+        "complement_center_energy": 19.74347324879776,
+        "complement_exact_energy": 145.47697403881952,
+        "complement_residual_upper": 73.12725981037441,
+        "dimension": 3,
+        "directional_optimal_gain": 1.0,
+        "exact_scalar_reduction": true,
+        "horizon": 32,
+        "name": "exact_diagonal_cancellation",
+        "rows": [
+          {
+            "epsilon": 1.0,
+            "global_spectral_gain": 1.1607686024663013,
+            "physical_gain": 2.9245441222334647,
+            "weighted_trace_gain": 1.1607686024663013,
+            "young_parameter": 1.9245441222334647
+          },
+          {
+            "epsilon": 0.0001,
+            "global_spectral_gain": 1.160768602466301,
+            "physical_gain": 2.924544122233431,
+            "weighted_trace_gain": 1.1607686024663093,
+            "young_parameter": 1.924544122233431
+          },
+          {
+            "epsilon": 1e-08,
+            "global_spectral_gain": 1.160768602466301,
+            "physical_gain": 2.9245441218957327,
+            "weighted_trace_gain": 1.1607686025503143,
+            "young_parameter": 1.9245441218957329
+          },
+          {
+            "epsilon": 1e-12,
+            "global_spectral_gain": 1.1607686024671058,
+            "physical_gain": 2.9245407449221963,
+            "weighted_trace_gain": 1.1607694425960056,
+            "young_parameter": 1.924540744922196
+          },
+          {
+            "epsilon": 1e-16,
+            "global_spectral_gain": 1.1608463045012283,
+            "physical_gain": 2.8916347055381837,
+            "weighted_trace_gain": 1.1690514046272855,
+            "young_parameter": 1.8916347055381837
+          },
+          {
+            "epsilon": 1e-20,
+            "global_spectral_gain": 5.552491374029158,
+            "physical_gain": 1.1025824044364925,
+            "weighted_trace_gain": 1.1940830716422517,
+            "young_parameter": 0.10258240443649243
+          },
+          {
+            "epsilon": 1e-24,
+            "global_spectral_gain": 489.96015138883155,
+            "physical_gain": 1.001027284256585,
+            "weighted_trace_gain": 1.0020538056162296,
+            "young_parameter": 0.0010272842565851427
+          },
+          {
+            "epsilon": 1e-28,
+            "global_spectral_gain": 48932.79383081463,
+            "physical_gain": 1.0000102728440292,
+            "weighted_trace_gain": 1.0000205456121376,
+            "young_parameter": 1.0272844029183254e-05
+          }
+        ],
+        "source_columns": 2,
+        "target_exact_energy": 6.929436372645467e-17
+      },
+      {
+        "depth": 1,
+        "dimension": 4,
+        "exact_scalar_reduction": false,
+        "horizon": 24,
+        "krylov_rank": 3,
+        "name": "nonnormal_three_packet_chain",
+        "rows": [
+          {
+            "directional_optimal_gain": 3.899144788576462,
+            "epsilon": 1.0,
+            "global_spectral_gain": 3.851919450527246,
+            "minimum_residual_weight": 8.096192874613229e-17,
+            "minimum_slack_eigenvalue": 0.002214726308831688,
+            "physical_gain": 3.9500490397295116,
+            "weighted_trace_gain": 4.004646994938852,
+            "young_parameter": 1139.426339458898
+          },
+          {
+            "directional_optimal_gain": 3.899144788576462,
+            "epsilon": 0.01,
+            "global_spectral_gain": 3.925351482919596,
+            "minimum_residual_weight": 6.40096831964811e-17,
+            "minimum_slack_eigenvalue": 0.003514405789321613,
+            "physical_gain": 3.8993404991133755,
+            "weighted_trace_gain": 3.9064963353790954,
+            "young_parameter": 1219.412546883271
+          },
+          {
+            "directional_optimal_gain": 3.899144788576462,
+            "epsilon": 0.0001,
+            "global_spectral_gain": 3.934229951072261,
+            "minimum_residual_weight": 6.314578715340433e-17,
+            "minimum_slack_eigenvalue": 0.0036516097897279064,
+            "physical_gain": 3.8991448111650104,
+            "weighted_trace_gain": 3.8992229116850083,
+            "young_parameter": 1223.0473983170402
+          },
+          {
+            "directional_optimal_gain": 3.899144788576462,
+            "epsilon": 1e-06,
+            "global_spectral_gain": 3.934328761819725,
+            "minimum_residual_weight": 6.313678622489594e-17,
+            "minimum_slack_eigenvalue": 0.0036531238263832226,
+            "physical_gain": 3.8991447885787247,
+            "weighted_trace_gain": 3.8991455703000524,
+            "young_parameter": 1223.0849241593596
+          },
+          {
+            "directional_optimal_gain": 3.899144788576462,
+            "epsilon": 1e-08,
+            "global_spectral_gain": 3.9343297510499418,
+            "minimum_residual_weight": 6.313669617787311e-17,
+            "minimum_slack_eigenvalue": 0.003653138982513969,
+            "physical_gain": 3.8991447885764603,
+            "weighted_trace_gain": 3.8991447963937444,
+            "young_parameter": 1223.0852995379764
+          },
+          {
+            "directional_optimal_gain": 3.899144788576462,
+            "epsilon": 1e-10,
+            "global_spectral_gain": 3.9343297609423566,
+            "minimum_residual_weight": 6.31366952773991e-17,
+            "minimum_slack_eigenvalue": 0.003653139134076655,
+            "physical_gain": 3.899144788576461,
+            "weighted_trace_gain": 3.8991447886546338,
+            "young_parameter": 1223.085303291775
+          }
+        ],
+        "source_columns": 3
+      },
+      {
+        "depth": 1,
+        "dimension": 6,
+        "exact_scalar_reduction": false,
+        "horizon": 20,
+        "krylov_rank": 3,
+        "name": "six_mode_complex_phase_packets",
+        "rows": [
+          {
+            "directional_optimal_gain": 1.2884707794185541,
+            "epsilon": 1.0,
+            "global_spectral_gain": 1.1692295363064311,
+            "minimum_residual_weight": 3.330369364107834e-16,
+            "minimum_slack_eigenvalue": 0.37952449136192884,
+            "physical_gain": 1.295052332409365,
+            "weighted_trace_gain": 1.3435574590934019,
+            "young_parameter": 3.020209125065455
+          },
+          {
+            "directional_optimal_gain": 1.2884707794185541,
+            "epsilon": 0.01,
+            "global_spectral_gain": 1.1550865178670173,
+            "minimum_residual_weight": 3.6060370198633624e-16,
+            "minimum_slack_eigenvalue": 0.4509262836804736,
+            "physical_gain": 1.288473517209117,
+            "weighted_trace_gain": 1.2895834664600294,
+            "young_parameter": 2.8106566757738536
+          },
+          {
+            "directional_optimal_gain": 1.2884707794185541,
+            "epsilon": 0.0001,
+            "global_spectral_gain": 1.154900966225049,
+            "minimum_residual_weight": 3.6113933003228178e-16,
+            "minimum_slack_eigenvalue": 0.4524870851228196,
+            "physical_gain": 1.2884707796983146,
+            "weighted_trace_gain": 1.288482021368408,
+            "young_parameter": 2.806844289267232
+          },
+          {
+            "directional_optimal_gain": 1.2884707794185541,
+            "epsilon": 1e-06,
+            "global_spectral_gain": 1.1548991119128067,
+            "minimum_residual_weight": 3.611447377675002e-16,
+            "minimum_slack_eigenvalue": 0.45250287930234917,
+            "physical_gain": 1.2884707794185823,
+            "weighted_trace_gain": 1.2884708918496828,
+            "young_parameter": 2.8068058465741204
+          },
+          {
+            "directional_optimal_gain": 1.2884707794185541,
+            "epsilon": 1e-08,
+            "global_spectral_gain": 1.1548990933698273,
+            "minimum_residual_weight": 3.611447918500493e-16,
+            "minimum_slack_eigenvalue": 0.4525030372629854,
+            "physical_gain": 1.288470779418554,
+            "weighted_trace_gain": 1.2884707805428663,
+            "young_parameter": 2.8068054621150256
+          },
+          {
+            "directional_optimal_gain": 1.2884707794185541,
+            "epsilon": 1e-10,
+            "global_spectral_gain": 1.1548990931843979,
+            "minimum_residual_weight": 3.6114479239087535e-16,
+            "minimum_slack_eigenvalue": 0.45250303884259735,
+            "physical_gain": 1.2884707794185541,
+            "weighted_trace_gain": 1.2884707794297972,
+            "young_parameter": 2.8068054582704316
+          }
+        ],
+        "source_columns": 3
+      }
+    ]
+  },
+  "program_boundary": {
+    "hilbert_polya_operator": false,
+    "production_covariance_derived": false,
+    "production_interval_packet_transfer": false,
+    "stage_A1_closed": false,
+    "stage_A4_unconditional_closed": false,
+    "uniform_physical_family_block_depth": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "edc0f305a8e021cd0c100a30cd2e601c77b965a68d5614105ffbf24a5a461fc3",
+    "README.md": "d8a8badc57a942207a81c3a91a250a6a2704407b044090ed36edfcacaba776b0",
+    "figures/physical_covariance_block_envelopes.pdf": "78ea192ba79bae3102ad83ff315259ecb07e9654eb3ab4a4dbcac7212e553f80",
+    "figures/physical_covariance_block_envelopes.png": "b75c1492d45d304f5888256338401ba5e7f4e5f8f35510fe502336916212bbd3",
+    "main.pdf": "a09b2093196fea16dbd6d8820e91f75680574259ac62b4ba7aaa8601da0ca262",
+    "main.tex": "dfc1586d4467cd1fbc23b8276caf1f5fd197d7e85077fd19c8852994f4d9a583",
+    "physical-covariance-block-envelopes.pdf": "a09b2093196fea16dbd6d8820e91f75680574259ac62b4ba7aaa8601da0ca262",
+    "pyproject.toml": "ef17b203bf11b45b2fb97ace4fe943f23264fa0cf5714f4adc4438d49e19c328",
+    "references.bib": "fda73519e56a1368e7eb129455e5e20aabead94c1725ff64fa42666c7d79911c",
+    "requirements.txt": "25be8263391d4091728342c19f59a0c799ec2444980149521892d447c2ce223b"
+  },
+  "result_hashes": {
+    "results/arb_covariance_tradeoff.json": "6d504e2c830ed5ae8331b8dfe3d2311c4497422e4a7543735d76a50d986e4a82",
+    "results/covariance_envelope_pilot.json": "dab3fba69153eb4bfc40ab30a620fa509540d7567f9ba98415b06ff7e7288ff7",
+    "results/covariance_envelope_smoke.json": "c7f873f1a400c8d098e94869fa52c315fc454d6ffef3b63e5c1a15f69600cf85",
+    "results/dependency_manifest.json": "c2765d8b3ff21de7c29ff6bd0e757205a31fd07fe8d6b653d924c4e1e28cad23"
+  },
+  "rh66_numeric_correction_recorded": true,
+  "status": "rh67_physical_covariance_block_envelope_audit",
+  "theorem": {
+    "covariance_optimal_residual_allocation": true,
+    "covariance_optimal_young_parameter": true,
+    "directional_rank_one_limit": true,
+    "factor_first_coefficient_frame": true,
+    "sharpness_global_size_duality": true
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "external_inputs": {
+    "rh66_manuscript": {
+      "path": "papers/RH-66-block-cross-column-krylov-gram/main.tex",
+      "sha256": "948cfda75d953fb0fca227d911d8500a02dbfc22a865a3d8a097fae369e7062d"
+    },
+    "rh66_summary": {
+      "path": "papers/RH-66-block-cross-column-krylov-gram/results/summary.json",
+      "sha256": "160ee574e0bd8b85312303ede3abba3e7c7633c11d1b20718b6e80b355d476e4"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "7a3b81acf2ae1c6ee39ec84aa180f5cdd9d277ad66fee7d86c71b10f8f8ff51e",
+    "experiments/make_figures.py": "adae757c7e44c26b6c103149108ff9793edb94b441306ed337a60c8470f4aa61",
+    "experiments/run_arb_covariance_tradeoff.py": "19f6487e282ebddae7115e7cf463442c108a80035976ce53b35f7da126dfa7b9",
+    "experiments/run_covariance_envelope_pilot.py": "ef186d229f7db0b9e608e7aab4bea4be957fb2767397369213052b0e47b2437f",
+    "experiments/verify_archive.py": "5b3ba66dd62a6bcfd31762a9388d4ada4ebc362bc60265bdb60f3d33d214249e",
+    "src/covariance_envelope/__init__.py": "119d9e6a6270a6218bf4ba9e56b7c01b4592ce65fb0167a92bd5e5ebe913b423",
+    "src/covariance_envelope/envelope.py": "112f7644f85287edb89d911d8eb17c7b78de5b7c670e4eb2c2d6d78ce53fe719",
+    "tests/test_smoke.py": "e283c1e6607df389101d14f3a85ca26fc54f0e5971719dfe8a6e7507a696ef1f",
+    "tests/test_theory.py": "424feb093735fff3a0407bc7bd0b72038ccbce05bb78955799cbb63417656582"
+  },
+  "publication_artifacts": {
+    ".gitignore": "edc0f305a8e021cd0c100a30cd2e601c77b965a68d5614105ffbf24a5a461fc3",
+    "README.md": "d8a8badc57a942207a81c3a91a250a6a2704407b044090ed36edfcacaba776b0",
+    "figures/physical_covariance_block_envelopes.pdf": "78ea192ba79bae3102ad83ff315259ecb07e9654eb3ab4a4dbcac7212e553f80",
+    "figures/physical_covariance_block_envelopes.png": "b75c1492d45d304f5888256338401ba5e7f4e5f8f35510fe502336916212bbd3",
+    "main.pdf": "a09b2093196fea16dbd6d8820e91f75680574259ac62b4ba7aaa8601da0ca262",
+    "main.tex": "dfc1586d4467cd1fbc23b8276caf1f5fd197d7e85077fd19c8852994f4d9a583",
+    "physical-covariance-block-envelopes.pdf": "a09b2093196fea16dbd6d8820e91f75680574259ac62b4ba7aaa8601da0ca262",
+    "pyproject.toml": "ef17b203bf11b45b2fb97ace4fe943f23264fa0cf5714f4adc4438d49e19c328",
+    "references.bib": "fda73519e56a1368e7eb129455e5e20aabead94c1725ff64fa42666c7d79911c",
+    "requirements.txt": "25be8263391d4091728342c19f59a0c799ec2444980149521892d447c2ce223b"
+  },
+  "status": "all_rh67_inputs_sources_and_publication_artifacts_hashed"
+}
