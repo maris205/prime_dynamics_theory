@@ -1,0 +1,43 @@
+{
+  "external_inputs": {
+    "rh14_folded_gaussian_operator": {
+      "path": "papers/RH-14-square-root-parity-boundary-layer/src/parity_boundary/operators.py",
+      "sha256": "08b6832be1d86e221e87ee884c8ed2d2bffa1c210df48fb6bc65cc811cda7acb"
+    },
+    "rh58_schur_fusion_pipeline": {
+      "path": "papers/RH-58-time-ordered-schur-cross-gramian/experiments/run_schur_fusion_pilot.py",
+      "sha256": "20cf7a546983679b27553bfae85591bec900452729c9ec3ee3f611a753e68e72"
+    },
+    "rh59_flag_metric_pipeline": {
+      "path": "papers/RH-59-flag-adapted-schur-stein-metrics/experiments/run_flag_metric_pilot.py",
+      "sha256": "f535c1035703802c867521ba17bf1f9817deec910411f0c2b7bf49d96a69ac68"
+    },
+    "rh60_phase_tail_pilot": {
+      "path": "papers/RH-60-finite-horizon-phase-aware-tails/results/phase_tail_pilot.json",
+      "sha256": "813b421f4ca6ff429d5181bc295cc8fa1e4a8fa50268f30a3c13d940ccfd82f5"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "edcfa0f60470a326edfa67dc129d3a413d35083faa480e73e9326ab9e885dcf3",
+    "experiments/make_figures.py": "1a30ab1ceeb8324d6e35071d5860f8777883eb5aaf7daf1f728abe8c8ab8597f",
+    "experiments/run_frozen_production_interval_audit.py": "54c9ac39e7f49968ed15843dbfb33f74229eeadf4377d2183cd29681a3e396af",
+    "experiments/verify_archive.py": "95b91605b49b6a0ffec55703bdb845ceea4b7ad2f414cfbf9cf4629314085887",
+    "src/production_hardy/__init__.py": "2b670eff8e01add3294c678bab44c83df7fc37d20b4c0a8c1715196e6aac92e6",
+    "src/production_hardy/block_tail.py": "f3c05ab5ed572c10ee3e462648f417dd8305d2a8b554f725a1236546dc33f70e",
+    "tests/test_smoke.py": "e109b4bc9706655157f49a17d155fc2c88c216cc61ac19bce4945090f0343fcf",
+    "tests/test_theory.py": "590b1dbb3e93f68d7f59edc89c6acdf08c78308442a84412cc12bbf5aec911c1"
+  },
+  "publication_artifacts": {
+    ".gitignore": "45bc6f151fb9fa411571660ee59bb7d034af65fbb7c1c6104c4c7af4ada209fc",
+    "README.md": "3ebdd10559203840fbd7a3d8e164666269f2fdc7d718f9ede2354e8d73ed139e",
+    "figures/frozen_production_block_hardy_audit.pdf": "6c6371fa54bf69a8b8ace0ab246a8771072cddfd36a51c0cf24a3d915a2d86fc",
+    "figures/frozen_production_block_hardy_audit.png": "f45292107525024699b5a79797892f1192755400dc2854bdc19a0434afa7e4e7",
+    "frozen-production-block-hardy-audit.pdf": "b6cb953270f1d32f1ce8274a95de7cc2f02548487871bb38148d813d057a8da7",
+    "main.pdf": "b6cb953270f1d32f1ce8274a95de7cc2f02548487871bb38148d813d057a8da7",
+    "main.tex": "adc0798e4055fa54345354eaf74cb89fc1fb79370b3707b2d0cfddab5965a201",
+    "pyproject.toml": "af5b13ca4939eb852a6750e8352a03db8e653f3bdb8a8f5126b4a2e510ab2f3a",
+    "references.bib": "7104024173c543fd81bab6edb9f6b8981166569517ebe2b342a1978b30582765",
+    "requirements.txt": "25be8263391d4091728342c19f59a0c799ec2444980149521892d447c2ce223b"
+  },
+  "status": "all_rh70_inputs_sources_and_publication_artifacts_hashed"
+}
