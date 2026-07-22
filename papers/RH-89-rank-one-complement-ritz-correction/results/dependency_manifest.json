@@ -1,0 +1,39 @@
+{
+  "external_inputs": {
+    "rh87_injection_summary": {
+      "path": "papers/RH-87-rayleigh-injection-recursion/results/summary.json",
+      "sha256": "cd44d82eb03333827a80654021446fd32216469de5982dcbb5948100b8b910a7"
+    },
+    "rh88_predictor_audit": {
+      "path": "papers/RH-88-predictor-corrector-energy-contraction/results/predictor_corrector_audit.json",
+      "sha256": "ab8b8628fe0cdcea44ae6312c2e7ff07f3cfba624ed03a91be92bf9e7dbc60e4"
+    },
+    "rh88_predictor_summary": {
+      "path": "papers/RH-88-predictor-corrector-energy-contraction/results/summary.json",
+      "sha256": "06317d94cbb563673f2ee65c149ccc04e3e7d66f14e092d2ad0acb7358683e25"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "929539b7d8b82d83d52e8784c7d507d0dcae9b60a0874e720c51f5eebbae7302",
+    "experiments/make_figures.py": "cf64874f852f53e3f6c1cb09de9b7715a15a4d93590dc92fb600f471a6bf7823",
+    "experiments/run_ritz_correction_audit.py": "1deb365261e529dbc03d2ef15d5755ea73eb3d54ebf54aef362fab5aed3b9c0d",
+    "experiments/verify_archive.py": "0b649d9be8614b7a01fc30504e92890ded93779db79bfef62de2a9758d52d4e4",
+    "src/ritz_correction/__init__.py": "387b7c928f1fb3d864d2f0d9779fef10128308656ac990bbc47ae1687157531d",
+    "src/ritz_correction/bounds.py": "d2f24866e62ba31dda1046054302fe7b0ec91db5f0f9a7a8e9f654dc3f84b5a9",
+    "tests/test_archived_results.py": "d4db75950870552791a470f6b593c7de60231a5bf58f1fcb7a7dbe755d55ac21",
+    "tests/test_theory.py": "03aa0d31bd068e2b40e12d9a2fc6ecafc6fb1053e12a1045ebd829781700e1c9"
+  },
+  "publication_artifacts": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "48a86224b536fd19ca830558603ae6bab002d9cdd36e5cfa5cd2913ab966f4a1",
+    "figures/rank_one_complement_ritz_correction.pdf": "63d3a23ea9448cccb37c4095cb1ae0b96db96eb6f6548ebb3373c2d41f59ff72",
+    "figures/rank_one_complement_ritz_correction.png": "9710111e501b9146398690111d5156defc0ec4702c10a503ff1b625643e0f40b",
+    "main.pdf": "5abdacc670f433956de826c3af3876e9c14255b084ac23a71c5489891eb41438",
+    "main.tex": "f726e13ddb5747927e4cafd197b80924085d7b2d62ac5ed91f7bec25cec28e25",
+    "pyproject.toml": "c355cda2766d06995dbc79870a68bfdf4b784778ff3b999b666deb2812f3da37",
+    "rank-one-complement-ritz-correction.pdf": "5abdacc670f433956de826c3af3876e9c14255b084ac23a71c5489891eb41438",
+    "references.bib": "afb4b1c8239d799e8960adad22bf359a3e4d367e3d23e858ee3e7644dbc8b1b2",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "status": "all_rh89_inputs_sources_and_publication_artifacts_hashed"
+}

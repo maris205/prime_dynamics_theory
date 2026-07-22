@@ -1,0 +1,46 @@
+{
+  "audit": {
+    "channel_count": 10,
+    "maximum_binary64_corrected_reference_tail_ratio": 3.272373540856031,
+    "maximum_enriched_dimension": 8,
+    "maximum_interval_corrected_contraction": 0.23849281765478655,
+    "minimum_interval_correction_gap": 2.0829887805881276e-14,
+    "minimum_interval_reference_dividend_fraction": 0.9612805406351573,
+    "scale_count": 5
+  },
+  "program_boundary": {
+    "cross_block_maximal_coupling_direction": true,
+    "hilbert_polya_operator": false,
+    "one_direction_reference_dividend_fraction_validated": true,
+    "rank_one_complement_ritz_theorem": true,
+    "riemann_hypothesis": false,
+    "stage_A4_unconditional_closed": false,
+    "ten_channel_corrected_contraction_validated": true,
+    "uniform_cross_block_enrichment_proved": false,
+    "uniform_stage_A1_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "48a86224b536fd19ca830558603ae6bab002d9cdd36e5cfa5cd2913ab966f4a1",
+    "figures/rank_one_complement_ritz_correction.pdf": "63d3a23ea9448cccb37c4095cb1ae0b96db96eb6f6548ebb3373c2d41f59ff72",
+    "figures/rank_one_complement_ritz_correction.png": "9710111e501b9146398690111d5156defc0ec4702c10a503ff1b625643e0f40b",
+    "main.pdf": "5abdacc670f433956de826c3af3876e9c14255b084ac23a71c5489891eb41438",
+    "main.tex": "f726e13ddb5747927e4cafd197b80924085d7b2d62ac5ed91f7bec25cec28e25",
+    "pyproject.toml": "c355cda2766d06995dbc79870a68bfdf4b784778ff3b999b666deb2812f3da37",
+    "rank-one-complement-ritz-correction.pdf": "5abdacc670f433956de826c3af3876e9c14255b084ac23a71c5489891eb41438",
+    "references.bib": "afb4b1c8239d799e8960adad22bf359a3e4d367e3d23e858ee3e7644dbc8b1b2",
+    "requirements.txt": "2c69af0a405f37fb43e7ccc0faad2386393075be21e5174028f113d0e6cc22a1"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "e680162eb86bf4bf3b5f31bffdc1ba22ccf638ca60ef48ba691b1cc9f96ea74b",
+    "results/ritz_correction_audit.json": "e9dcd0ac98be8de601c7ebe3ad4d59b9ea34f249445ff01da80c601dd1bb3bf7",
+    "results/ritz_correction_smoke.json": "e52a78a695e567904417dfc985287b73e99dde0f8b530c2cfa9dd5a615faefbb"
+  },
+  "route_consequence": "A single complement direction selected from the old-packet/new-Gram cross block, followed by a rank-r Ritz solve in dimension r+1, reproduces at least 96 percent of the full floating reference correction dividend in every channel. The resulting corrected memory tail still contracts by a factor below 0.24. Thus the RH-88 reoptimization dividend is carried by an explicitly low-dimensional cross-block corrector at the anchors. The next all-level target is a uniform lower bound on this one-direction enrichment gain.",
+  "status": "rh89_rank_one_complement_ritz_correction_archived",
+  "theorem": {
+    "cross_block_maximal_coupling_direction": true,
+    "rank_one_complement_ritz_theorem": true,
+    "small_corrector_tail_upper": true
+  }
+}

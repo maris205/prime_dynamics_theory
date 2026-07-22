@@ -1,0 +1,94 @@
+{
+  "all_executed_ritz_gates_green": true,
+  "audit_summary": {
+    "channel_count": 2,
+    "maximum_binary64_corrected_reference_tail_ratio": 1.4800878104240704,
+    "maximum_enriched_dimension": 5,
+    "maximum_interval_corrected_contraction": 0.004262375511152566,
+    "minimum_interval_correction_gap": 1.0956176048920937e-07,
+    "minimum_interval_reference_dividend_fraction": 0.9965949303586744,
+    "scale_count": 1
+  },
+  "eta": 0.001953125,
+  "limitations": [
+    "The interval audit treats the frozen binary64 memory Gramians and packet bases as exact binary inputs.",
+    "The dividend fraction compares the rank-one Ritz packet with the full binary64 reference packet, not with an interval eigendecomposition of the full Gramian.",
+    "The cross-block enrichment fraction is validated at ten channels and is not yet uniform in noise or time."
+  ],
+  "precision_bits": 256,
+  "rank_offset": 2,
+  "route_consequence": "A single complement direction selected from the old-packet/new-Gram cross block, followed by a rank-r Ritz solve in dimension r+1, reproduces at least 96 percent of the full floating reference correction dividend in every channel. The resulting corrected memory tail still contracts by a factor below 0.24. Thus the RH-88 reoptimization dividend is carried by an explicitly low-dimensional cross-block corrector at the anchors. The next all-level target is a uniform lower bound on this one-direction enrichment gain.",
+  "rows": [
+    {
+      "all_channels_green": true,
+      "channels": [
+        {
+          "binary64_corrected_contraction": 0.0033083010983139412,
+          "binary64_corrected_reference_tail_ratio": 1.0005636474675814,
+          "binary64_corrected_tail": 5.616842546629641e-10,
+          "binary64_old_previous_tail": 1.6978027028713427e-07,
+          "binary64_predictor_candidate_tail": 1.1012344458549705e-07,
+          "binary64_reference_dividend_fraction": 0.9999971120156589,
+          "binary64_reference_tail": 5.61367841100946e-10,
+          "clock_rank": 4,
+          "corrector_time": 3,
+          "cross_block_leading_singular_value": 0.000257423089082417,
+          "dimension": 32,
+          "enriched_dimension": 5,
+          "horizon": 4,
+          "interval_corrected_contraction_ball": "[0.003308300525284509599709311115747628994516237230814663692920704113655 +/- 4.74e-70]",
+          "interval_corrected_contraction_upper": 0.00330830052528451,
+          "interval_correction_gap_ball": "[1.095617604892093803949481355334129268524615649816338899363084740295066e-7 +/- 6.41e-77]",
+          "interval_correction_gap_lower": 1.0956176048920937e-07,
+          "interval_reference_dividend_fraction_ball": "[0.99999711633101805934380847338756045657008923321012963497730886624504 +/- 3.87e-69]",
+          "interval_reference_dividend_fraction_lower": 0.999997116331018,
+          "predictor_time": 2,
+          "ritz_gate_green": true,
+          "side": "left",
+          "source_columns": 16
+        },
+        {
+          "binary64_corrected_contraction": 0.004262375363149071,
+          "binary64_corrected_reference_tail_ratio": 1.4800878104240704,
+          "binary64_corrected_tail": 2.562831280528144e-09,
+          "binary64_old_previous_tail": 6.012683215761427e-07,
+          "binary64_predictor_candidate_tail": 2.458650376624405e-07,
+          "binary64_reference_dividend_fraction": 0.9965949316005864,
+          "binary64_reference_tail": 1.731540022475997e-09,
+          "clock_rank": 4,
+          "corrector_time": 3,
+          "cross_block_leading_singular_value": 0.00031397626124978595,
+          "dimension": 16,
+          "enriched_dimension": 5,
+          "horizon": 4,
+          "interval_corrected_contraction_ball": "[0.0042623755111525650192600658032820832771387095522564852529743164322042 +/- 7.29e-71]",
+          "interval_corrected_contraction_upper": 0.004262375511152566,
+          "interval_correction_gap_ball": "[2.433022060903406154736961962138826601611301729962533020252861648991546e-7 +/- 5.53e-77]",
+          "interval_correction_gap_lower": 2.433022060903406e-07,
+          "interval_reference_dividend_fraction_ball": "[0.996594930358674569017887624725855651462139368152810420440653042851686 +/- 9.23e-70]",
+          "interval_reference_dividend_fraction_lower": 0.9965949303586744,
+          "predictor_time": 2,
+          "ritz_gate_green": true,
+          "side": "right",
+          "source_columns": 16
+        }
+      ],
+      "clock": 1.769091146743121,
+      "clock_rank": 4,
+      "fine_dimension": 32,
+      "sigma": 0.16
+    }
+  ],
+  "status": "rh89_rank_one_complement_ritz_correction_audit",
+  "theorem_boundary": {
+    "cross_block_maximal_coupling_direction": true,
+    "hilbert_polya_operator": false,
+    "one_direction_reference_dividend_fraction_validated": true,
+    "rank_one_complement_ritz_theorem": true,
+    "riemann_hypothesis": false,
+    "stage_A4_unconditional_closed": false,
+    "ten_channel_corrected_contraction_validated": true,
+    "uniform_cross_block_enrichment_proved": false,
+    "uniform_stage_A1_closed": false
+  }
+}
