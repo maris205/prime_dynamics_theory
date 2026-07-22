@@ -1,0 +1,214 @@
+\section{Endpoint audit and the reassembly ledger}
+\label{sec:tpc60-endpoint-ledger}
+
+The exact constants above identify the reassembly problem.  We now compare
+the available coefficient-blind degree certificate with the endpoint
+budget and state the admissible ways to close the new gate.
+
+\subsection{Critical-cutoff exponent dictionary}
+
+Assume that \(y\) is very-high admissible and write
+\begin{equation}
+ \frac yQ=X^{\xi+o(1)},
+ \qquad 0\le\xi<\frac{133}{400}.
+ \label{eq:tpc60-xi-cutoff}
+\end{equation}
+At \(\xi=0\), admissibility retains the constant-scale requirement
+\(y\ge C_{\rm vh}Q\) for a sufficiently large support-dependent constant;
+the exponent identity alone is not enough.  The displayed range is the one
+in which a polynomially nonempty cofactor scale remains compatible.
+The compatible cofactor ceiling is
+\begin{equation}
+ r\le\frac{N_+}{y}
+ =X^{\theta_c(\xi)+o(1)},
+ \qquad
+ \theta_c(\xi):=\frac{133}{400}-\xi.
+ \label{eq:tpc60-compatible-cofactor-ceiling}
+\end{equation}
+The inherited source-prime and divisor exponents are
+\begin{equation}
+ \lambda_L
+ :=\frac{267}{400}-\frac{10049}{52500}
+ =\frac{99979}{210000},
+ \qquad
+ \lambda_D:=\frac{10049}{52500}.
+ \label{eq:tpc60-LD-exponents}
+\end{equation}
+Thus the residual label \(s=d_mr\) obeys
+\begin{equation}
+ s\le
+ X^{\lambda_D+\theta_c(\xi)+o(1)}
+ =X^{110021/210000-\xi+o(1)}.
+ \label{eq:tpc60-residual-label-ceiling}
+\end{equation}
+
+Let \(R=X^{\theta_R+o(1)}\) be any compatible dyadic cofactor block, so
+\begin{equation}
+ 0\le\theta_R\le\theta_c(\xi).
+ \label{eq:tpc60-compatible-thetaR}
+\end{equation}
+The determinant-ladder estimate
+\eqref{eq:tpc60-residual-degree-bound} supplies the coefficient-blind
+capacity exponent
+\begin{equation}
+ \mu_{\rm cap}(R)
+ :=\lambda_L-\theta_R.
+ \label{eq:tpc60-capacity-exponent}
+\end{equation}
+It satisfies
+\begin{equation}
+ \boxed{
+ \mu_{\rm cap}(R)
+ \ge\frac{15077}{105000}+\xi,}
+ \label{eq:tpc60-capacity-floor}
+\end{equation}
+and hence
+\begin{equation}
+ \boxed{
+ \mu_{\rm cap}(R)-\frac1{400}
+ \ge\frac{29629}{210000}+\xi.}
+ \label{eq:tpc60-capacity-budget-gap}
+\end{equation}
+At the critical choice \(\xi=0\), the lower floor is approximately
+\(0.143590\), whereas the entire endpoint allowance is \(0.0025\).
+
+This calculation must be interpreted in the correct direction.
+\(\mu_{\rm cap}\) is the exponent of an ambient \emph{upper} bound for a
+fiber size; it is not a proved energy loss and does not say that actual
+fibers attain that size.  It does show that a crude route which pays the
+complete ambient degree through coloring, a coefficient-blind transversal,
+or Cauchy--Schwarz cannot fit inside the \(1/400\) ledger.  That
+support-only closure is therefore unavailable.  A successful argument must
+use actual missing-mass sparsity, restricted-range geometry, or signed
+phase information.
+
+\subsection{Three admissible reassembly certificates}
+
+The following routes preserve the physical coefficient vector and the
+fixed shift.
+
+\begin{enumerate}[leftmargin=2.3em]
+ \item \emph{Shorted-Gram route.}  Prove directly that
+ \begin{equation}
+  \lambda_{\min}\left(
+   R_S^{-1/2}Q R_S^{-1/2}
+  \right)
+  \ge X^{-\lambda_{\rm reasm}+o(1)}.
+  \label{eq:tpc60-route-shorted-Gram}
+ \end{equation}
+ This is the optimal coefficient-uniform statement.  Before estimating an
+ eigenvalue, apply the exact kernel and dimension kill tests.
+
+ \item \emph{Signed distinguished-vector route.}  For the physical
+ coefficient vector \(\zeta_*\), prove
+ \begin{equation}
+  \mathfrak X(\zeta_*)
+  \ge-\left(1-X^{-\lambda_{\rm reasm,*}+o(1)}\right)
+       \|A_X\zeta_*\|^2.
+  \label{eq:tpc60-route-signed}
+ \end{equation}
+ This may remain open after the uniform gate is killed, but it cannot be
+ promoted to a uniform claim.
+
+ \item \emph{Mass--degree route.}  Prove a common-reference saving
+ \(\sigma\), a represented loss \(\lambda_{\rm rep}\), and a native degree
+ exponent \(\mu_{\rm miss}\) satisfying
+ \begin{equation}
+  \sigma>\mu_{\rm miss}+\lambda_{\rm rep}.
+  \label{eq:tpc60-route-mass-degree}
+ \end{equation}
+ Then \cref{thm:tpc60-pointwise-mass-degree} yields
+ \(\lambda_{\rm reasm}=0\) for a uniform scope, or
+ \(\lambda_{\rm reasm,*}=0\) for the distinguished-vector scope.  At
+ equality of exponents,
+ finer constant or subpower control must verify
+ \eqref{eq:tpc60-equality-subpower-test}; the exponent comparison alone is
+ inconclusive.
+\end{enumerate}
+
+The angle certificate of
+\cref{prop:tpc60-uniform-angle-certificate} is a fourth presentation of the
+ signed route.  Orthogonal full represented-affine and missing output
+ ranges, \(\Ran A\perp\Ran M\), give the
+safe special case \(\delta(A,M)\ge1\), but the fixed-\(h_0\) maps here do
+not currently satisfy such an orthogonality theorem.
+
+\subsection{Complete ledger}
+
+The prospective fixed-shift chain remains
+\begin{equation}
+ \begin{aligned}
+ \cD_{\rm up}
+ &\longrightarrow\cE_{\rm par}
+ \longrightarrow\cE_{\cR}
+ \longrightarrow\cD_{\cR}^{\rm term}
+ \longrightarrow\cD_H^{\rm rep}
+ \longrightarrow\cD_{k_*}\\
+ &\longrightarrow\cG_H
+ \longrightarrow\cN_H
+ \longrightarrow\cN_{\rm aff}^{\rm rep}
+ \xrightarrow{\rm reassembly}
+ \cN_{\rm slice}^{\rm full}
+ \xrightarrow{\rm boundary/tail}
+ \text{parent arithmetic target}.
+ \end{aligned}
+ \label{eq:tpc60-full-transfer-chain}
+\end{equation}
+Every arrow is a different assertion.  TPC--60 replaces the displayed
+reassembly arrow by the exact constant \(\delta(A_X,M_X)\); it does not
+estimate that constant from below for the arithmetic family.
+
+If all arrows eventually receive polynomial lower bounds, the energy loss
+is
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ \Lambda_{\rm tot}:={}&
+ \lambda_{\rm sel}+\lambda_{\rm occ}
+ +\lambda_{\rm blk}
+ +\lambda_{\rm term}+\lambda_{\rm sing}\\
+ &+\lambda_H+\lambda_{\rm aff}
+ +\lambda_{\rm reasm}
+ +\lambda_{\rm bdry}+\lambda_{\rm tail}.
+ \end{aligned}}
+ \label{eq:tpc60-complete-ledger}
+\end{equation}
+The endpoint requirement is the strict inequality
+\begin{equation}
+ \boxed{
+ \Lambda_{\rm tot}<\frac1{400}.}
+ \label{eq:tpc60-strict-endpoint}
+\end{equation}
+For a distinguished-vector chain, \(\lambda_{\rm reasm}\) in
+\eqref{eq:tpc60-complete-ledger} is replaced consistently by
+\(\lambda_{\rm reasm,*}\).  The two exponents are never interchanged: a
+pointwise certificate cannot be entered as a uniform one.
+Equality is rejected unless leading constants and all remainders are
+quantified.  The cutoff \(y\asymp Q\) is a feasibility choice and is not an
+additive energy loss.  TPC--59 proves
+\(\lambda_{\rm blk}=0\) only after represented high-face activation and
+with its distinguished-block scope.  The new identity
+\(\lambda_{\rm part}=0\) is a diagnostic finite/logarithmic partition and
+does not replace either reassembly exponent in its matching version of
+\eqref{eq:tpc60-complete-ledger}.
+
+\subsection{Stop rules}
+
+The current route must stop or change scope under any of the following
+events.
+\begin{enumerate}[leftmargin=2.3em]
+ \item A literal vector satisfies \(A_X\zeta\ne0\) and
+       \(B_X\zeta=0\); then the uniform reassembly gate is exactly dead.
+ \item An active row satisfies \(W_R(m)=0<W_H(m)\); then uniform
+       represented raw-mass transfer is exactly zero.
+ \item A necessary proved loss by itself reaches \(1/400\), or the sum of
+       necessary losses reaches it without a constant-level endpoint
+       argument.
+ \item The only available proof pays the full ambient capacity exponent in
+       \eqref{eq:tpc60-capacity-floor}; then that proof architecture exceeds
+       the endpoint allowance even at the critical cutoff.
+\end{enumerate}
+None of these events may be repaired by changing \(h_0\), averaging shifts,
+renormalizing atoms by their fiber sizes, deleting coefficient-dependent
+zeros, or selecting represented and missing vectors independently.  Such
+operations define different problems.

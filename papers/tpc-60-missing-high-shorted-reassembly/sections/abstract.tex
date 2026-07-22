@@ -1,0 +1,53 @@
+\begin{abstract}
+The critical-cutoff analysis of TPC--59 separates the complete high-prime
+Walsh face into coordinates represented by the terminal census and
+high coordinates absent from that image.  Restoring the latter is not a
+monotone operation: their native output may cancel the already represented
+affine vector.  We formulate this reassembly problem on the literal finite
+row-coefficient space at one fixed nonzero shift.
+
+For linear maps \(A,M:\cK\to\cH\), representing respectively the
+represented affine output and the missing-high correction, put \(B=A+M\)
+and
+\[
+ \delta_{\rm reasm}
+ =\inf_{Az\ne0}\frac{\|Bz\|^2}{\|Az\|^2}.
+\]
+The denominator does not see \(N=\Ker A\), while \(B(N)=M(N)\) can cancel
+the full output.  We prove that the exact quotient is obtained only after
+shorting \(B^*B\) against these nuisance directions.  If \(S=N^\perp\),
+\(B_1=B|_S\), \(B_0=B|_N\), and \(P\) projects onto
+\(B(N)^\perp\), then
+\[
+ \delta_{\rm reasm}
+ =\inf_{s\in S\setminus\{0\}}
+   \frac{\|PB_1s\|^2}{\|A s\|^2}.
+\]
+Equivalently, it is the least generalized eigenvalue of the pair
+\((Q,A_S^*A_S)\), where the shorted numerator is
+\[
+ Q=B_1^*B_1-B_1^*B_0(B_0^*B_0)^\dagger B_0^*B_1.
+\]
+This yields the exact finite-dimensional positivity test
+\(\Ker(A+M)\subseteq\Ker A\), an anti-diagonal image test, and a rank
+kill criterion.  A naive compression to \(N^\perp\) is shown by sharp
+examples to overestimate the transfer.
+
+We also give a distinguished-vector signed-defect identity and a sharp
+raw-mass certificate.  If each native output receives at most
+\(d_{\rm miss}\) missing atoms, then
+\[
+ \|Mz\|^2\le d_{\rm miss}\cD_{\rm miss}(z).
+\]
+Consequently a missing-mass saving \(X^{-\sigma_{\rm miss}}\)
+automatically defeats a fiber-degree cost \(X^{\mu_{\rm miss}}\) under
+the strict exponent inequality
+\(\sigma_{\rm miss}>\mu_{\rm miss}\), relative to the represented
+output.  At exponent equality, finer constant or subpower information
+decides whether this certificate still has zero fixed-power cost.
+The terminal image and its complement are identified on the same physical
+Walsh carrier and raw normalization.  No positive bound for the resulting
+arithmetic constant is proved.  Thus the work closes the L0 linear-algebra
+interface and the L1 fixed-shift dictionary, but proves no parity
+improvement, prime-pair asymptotic, or twin-prime consequence.
+\end{abstract}

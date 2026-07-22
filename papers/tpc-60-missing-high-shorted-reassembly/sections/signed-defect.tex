@@ -1,0 +1,161 @@
+\section{Signed defects and two routes to reassembly}
+\label{sec:tpc60-signed-defect}
+
+The Gram formulation is optimal for a coefficient-uniform theorem.  For a
+distinguished physical coefficient vector, the exact remaining task is
+often clearer as a signed cross-term estimate.
+
+\subsection{The pointwise signed defect}
+
+Define
+\begin{equation}
+ \mathfrak X(z)
+ :=2\operatorname{Re}\langle Az,Mz\rangle+\|Mz\|^2.
+ \label{eq:tpc60-signed-defect}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \|Bz\|^2=\|Az\|^2+\mathfrak X(z).}
+ \label{eq:tpc60-signed-defect-identity}
+\end{equation}
+For \(Az\ne0\), this becomes
+\begin{equation}
+ \boxed{
+ \frac{\|Bz\|^2}{\|Az\|^2}
+ =1+\frac{\mathfrak X(z)}{\|Az\|^2}.}
+ \label{eq:tpc60-signed-ratio}
+\end{equation}
+Consequently a desired pointwise transfer
+\begin{equation}
+ \|Bz\|^2\ge\delta_*\|Az\|^2
+ \label{eq:tpc60-desired-pointwise-transfer}
+\end{equation}
+is exactly equivalent to
+\begin{equation}
+ \boxed{
+ \mathfrak X(z)
+ \ge-(1-\delta_*)\|Az\|^2.}
+ \label{eq:tpc60-exact-signed-target}
+\end{equation}
+This is neither a positivity statement about \(\|Mz\|^2\) nor an unsigned
+estimate for the atomic missing mass.  The cross term is part of the
+physical problem.
+
+In the prime-resolved notation of
+\cref{prop:tpc60-same-prime-separation}, \(\mathfrak X\) is exactly the
+right side of \eqref{eq:tpc60-exact-prime-alias-defect}.  Hence its negative
+part can arise only from base--missing and unequal-prime native aliasing.
+The same-prime orthogonality is a genuine simplification, but it leaves the
+two surviving sums uncontrolled.
+
+\subsection{The nuisance-optimized defect}
+
+For \(s\in S\), define the best defect obtainable by moving inside its
+\(A\)-fiber:
+\begin{equation}
+ \mathfrak X_{\rm sh}(s)
+ :=\inf_{k\in N}
+ \left(
+  \|B(s+k)\|^2-\|A_Ss\|^2
+ \right).
+ \label{eq:tpc60-shorted-signed-defect}
+\end{equation}
+
+\begin{proposition}[Shorted defect operator]
+\label{prop:tpc60-shorted-defect-operator}
+With \(Q\) and \(R_S\) as in
+\cref{sec:tpc60-shorted-gram},
+\begin{equation}
+ \boxed{
+ \mathfrak X_{\rm sh}(s)
+ =\langle(Q-R_S)s,s\rangle.}
+ \label{eq:tpc60-shorted-defect-form}
+\end{equation}
+If
+\begin{equation}
+ \Theta_{\rm reasm}
+ :=R_S^{-1/2}(Q-R_S)R_S^{-1/2},
+ \label{eq:tpc60-Theta-reassembly}
+\end{equation}
+then
+\begin{equation}
+ \boxed{
+ \delta(A,M)
+ =1+\lambda_{\min}(\Theta_{\rm reasm}).}
+ \label{eq:tpc60-delta-Theta}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The least-squares identity
+\eqref{eq:tpc60-distance-identity} gives
+\[
+ \inf_{k\in N}\|B(s+k)\|^2
+ =\langle Qs,s\rangle.
+\]
+Subtracting \(\|A_Ss\|^2=\langle R_Ss,s\rangle\) proves
+\eqref{eq:tpc60-shorted-defect-form}.  Conjugating by \(R_S^{-1/2}\) and
+using \cref{thm:tpc60-shorted-generalized-eigenvalue} proves
+\eqref{eq:tpc60-delta-Theta}.
+\end{proof}
+
+Thus a coefficient-uniform signed route must control the negative spectrum
+of the \emph{shorted} defect.  Bounding the unshorted cross term only on the
+canonical sector \(S\) is insufficient when \(B(N)\ne0\).
+
+\subsection{An angle certificate}
+
+For \(Az\ne0\), put
+\begin{equation}
+ t(z):=\frac{\|Mz\|}{\|Az\|},
+ \label{eq:tpc60-size-ratio-t}
+\end{equation}
+and, when \(Mz\ne0\), define the destructive cosine
+\begin{equation}
+ \rho(z)
+ :=-\frac{\operatorname{Re}\langle Az,Mz\rangle}
+          {\|Az\|\,\|Mz\|}.
+ \label{eq:tpc60-destructive-cosine}
+\end{equation}
+Set \(\rho(z)=0\) if \(Mz=0\).  Then \(-1\le\rho(z)\le1\), and
+\begin{equation}
+ \frac{\|Bz\|^2}{\|Az\|^2}
+ =1+t(z)^2-2\rho(z)t(z).
+ \label{eq:tpc60-angle-size-identity}
+\end{equation}
+
+\begin{proposition}[Uniform angle certificate]
+\label{prop:tpc60-uniform-angle-certificate}
+Suppose there is \(0\le\rho_0<1\) such that
+\begin{equation}
+ \rho(z)\le\rho_0
+ \qquad\text{whenever }Az\ne0.
+ \label{eq:tpc60-uniform-angle-hypothesis}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \delta(A,M)\ge1-\rho_0^2>0.}
+ \label{eq:tpc60-uniform-angle-bound}
+\end{equation}
+In particular, if
+\(\operatorname{Re}\langle Az,Mz\rangle\ge0\) for all \(z\), then
+\(\delta(A,M)\ge1\).
+\end{proposition}
+
+\begin{proof}
+If \(\rho(z)\ge0\), complete the square:
+\[
+ 1+t^2-2\rho t=(t-\rho)^2+1-\rho^2
+ \ge1-\rho_0^2.
+\]
+If \(\rho(z)<0\), the left side is at least one.  Take the infimum over
+\(z\).
+\end{proof}
+
+This angle route may succeed even when the missing norm is not small.  It
+is also substantially more arithmetic: one must retain the phases in the
+base--missing and unequal-prime alias sums.  The mass--degree route in the
+next section is cruder, but it replaces phase control by a quantitative
+smallness condition.

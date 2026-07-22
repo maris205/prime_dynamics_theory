@@ -1,0 +1,286 @@
+\section{Raw missing mass times native fiber degree}
+\label{sec:tpc60-mass-degree}
+
+We now give a phase-blind sufficient condition.  It is sharp at the level
+of information it uses.
+
+\subsection{The exact grouping norm}
+
+Let \(\cW_M\) be a finite missing atomic carrier, let \(\cI_{\rm out}\) be
+the active native output set, and let
+\begin{equation}
+ \cF_i^{\rm miss}
+ :=\{w\in\cW_M:i(w)=i\}.
+ \label{eq:tpc60-missing-native-fibers}
+\end{equation}
+Absorb every fixed unit M\"obius or high-character phase into the atomic
+amplitude \(m_w(z)\), and define
+\begin{align}
+ L_M:\cK&\longrightarrow\ell^2(\cW_M),
+ &(L_Mz)_w&:=m_w(z),
+ \label{eq:tpc60-missing-atomic-lift}\\
+ C_M:\ell^2(\cW_M)&\longrightarrow\ell^2(\cI_{\rm out}),
+ &(C_Ma)_i&:=\sum_{w\in\cF_i^{\rm miss}}a_w.
+ \label{eq:tpc60-missing-grouping}
+\end{align}
+Then
+\begin{equation}
+ M=C_ML_M,
+ \qquad
+ \cD_{\rm miss}(z):=\|L_Mz\|_2^2.
+ \label{eq:tpc60-M-factorization-Dmiss}
+\end{equation}
+In the fixed-shift specialization, every absorbed phase has modulus one,
+so \(\cD_{\rm miss}(z)=\cD_M(z)\) with the raw diagonal of
+\eqref{eq:tpc60-BRM-diagonals}.
+Put
+\begin{equation}
+ d_{\rm miss}:=\max_{i\in\cI_{\rm out}}
+                   |\cF_i^{\rm miss}|,
+ \label{eq:tpc60-native-missing-degree}
+\end{equation}
+with \(d_{\rm miss}=0\) when the missing carrier is empty.
+
+\begin{proposition}[Exact native grouping norm]
+\label{prop:tpc60-exact-grouping-norm}
+One has
+\begin{equation}
+ \boxed{
+ \|C_M\|^2=d_{\rm miss},}
+ \label{eq:tpc60-CM-norm}
+\end{equation}
+and therefore, for every \(z\in\cK\),
+\begin{equation}
+ \boxed{
+ \|Mz\|^2\le d_{\rm miss}\cD_{\rm miss}(z).}
+ \label{eq:tpc60-mass-degree-upper}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Fiberwise Cauchy--Schwarz gives
+\[
+ |(C_Ma)_i|^2
+ \le|\cF_i^{\rm miss}|
+    \sum_{w\in\cF_i^{\rm miss}}|a_w|^2.
+\]
+Summing over the disjoint output fibers proves
+\(\|C_M\|^2\le d_{\rm miss}\).  On a fiber of maximal size, choose all
+coordinates equal with a common phase and set all other coordinates to
+zero.  Equality follows.  Applying the operator norm bound to \(L_Mz\)
+proves \eqref{eq:tpc60-mass-degree-upper}.
+\end{proof}
+
+The exact norm concerns the ambient grouping map.  The physical range
+\(\Ran L_M\) may have a smaller restricted norm, but proving that is another
+Gram problem.  Conversely, replacing \(d_{\rm miss}\) by an average degree
+is invalid for a coefficient-uniform estimate.
+
+\subsection{Distinguished-vector certificate}
+
+\begin{theorem}[Sharp mass--degree lower certificate]
+\label{thm:tpc60-pointwise-mass-degree}
+For every \(z\) with \(Az\ne0\),
+\begin{equation}
+ \boxed{
+ \frac{\|(A+M)z\|^2}{\|Az\|^2}
+ \ge
+ \left(
+  1-
+  \sqrt{\frac{d_{\rm miss}\cD_{\rm miss}(z)}{\|Az\|^2}}
+ \right)_+^2.}
+ \label{eq:tpc60-pointwise-mass-degree-bound}
+\end{equation}
+In particular, if
+\begin{equation}
+ d_{\rm miss}\cD_{\rm miss}(z)
+ \le\eta\|Az\|^2,
+ \qquad 0\le\eta<1,
+ \label{eq:tpc60-eta-mass-degree}
+\end{equation}
+then the ratio is at least \((1-\sqrt\eta)^2\).
+\end{theorem}
+
+\begin{proof}
+The reverse triangle inequality and
+\cref{prop:tpc60-exact-grouping-norm} give
+\[
+ \|(A+M)z\|
+ \ge(\|Az\|-\|Mz\|)_+
+ \ge
+ \left(
+  \|Az\|-\sqrt{d_{\rm miss}\cD_{\rm miss}(z)}
+ \right)_+.
+\]
+Divide by \(\|Az\|\) and square.
+\end{proof}
+
+\begin{example}[Sharp cancellation at the product threshold]
+\label{ex:tpc60-sharp-mass-degree-threshold}
+Take one represented native output \(Az=1\).  Let one native fiber contain
+\(n\) missing atoms, each of amplitude \(-1/n\).  Then
+\begin{equation}
+ d_{\rm miss}=n,
+ \qquad
+ \cD_{\rm miss}(z)=\frac1n,
+ \qquad
+ Mz=-1.
+ \label{eq:tpc60-threshold-example-data}
+\end{equation}
+Thus \(d_{\rm miss}\cD_{\rm miss}/\|Az\|^2=1\) and the full output
+vanishes.  The same construction with \(n=2\) shows that very small
+combinatorial degree is already compatible with exact cancellation.
+Therefore neither \(\cD_{\rm miss}=o(1)\) nor a bounded degree alone is a
+sufficient reassembly theorem.
+\end{example}
+
+\subsection{Uniform and canonical-sector versions}
+
+\begin{corollary}[Uniform mass--degree certificate]
+\label{cor:tpc60-uniform-mass-degree}
+Suppose \(\varepsilon\ge0\) and
+\begin{equation}
+ \cD_{\rm miss}(z)\le\varepsilon\|Az\|^2
+ \qquad\text{for every }z\in\cK.
+ \label{eq:tpc60-uniform-missing-mass-hypothesis}
+\end{equation}
+Then \(M|_{\Ker A}=0\) and
+\begin{equation}
+ \boxed{
+ \delta(A,M)
+ \ge(1-\sqrt{d_{\rm miss}\varepsilon})_+^2.}
+ \label{eq:tpc60-uniform-mass-degree-bound}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+If \(z\in\Ker A\), \eqref{eq:tpc60-uniform-missing-mass-hypothesis}
+forces \(\|L_Mz\|=0\), hence \(Mz=0\).  Apply
+\cref{thm:tpc60-pointwise-mass-degree} to every \(z\) with \(Az\ne0\) and
+take the infimum.
+\end{proof}
+
+The hypothesis in \cref{cor:tpc60-uniform-mass-degree} is strong: it
+automatically removes the nuisance image.  When only the canonical sector
+can be controlled, the following version retains the missing
+transversality explicitly.  With the notation of
+\cref{sec:tpc60-shorted-gram}, define
+\begin{equation}
+ \gamma_A
+ :=\inf_{s\in S\setminus\{0\}}
+   \frac{\|PA_Ss\|^2}{\|A_Ss\|^2}.
+ \label{eq:tpc60-gamma-A}
+\end{equation}
+
+\begin{proposition}[Canonical mass plus nuisance transversality]
+\label{prop:tpc60-canonical-mass-transversality}
+Suppose \(\varepsilon\ge0\) and
+\begin{equation}
+ \cD_{\rm miss}(s)
+ \le\varepsilon\|A_Ss\|^2
+ \qquad(s\in S).
+ \label{eq:tpc60-canonical-missing-bound}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \delta(A,M)
+ \ge
+ \left(
+  \sqrt{\gamma_A}-\sqrt{d_{\rm miss}\varepsilon}
+ \right)_+^2.}
+ \label{eq:tpc60-canonical-transversality-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For \(s\in S\),
+\begin{align*}
+ \|PB_Ss\|
+ &=\|P(A_Ss+Ms)\|\\
+ &\ge\|PA_Ss\|-\|PMs\|\\
+ &\ge
+ \left(\sqrt{\gamma_A}-\sqrt{d_{\rm miss}\varepsilon}\right)
+ \|A_Ss\|.
+\end{align*}
+Use \cref{thm:tpc60-exact-nuisance-elimination} and take the positive part.
+\end{proof}
+
+This estimate exposes two independent risks: the missing atomic output can
+be large, and the represented output can already lie close to the nuisance
+range \(B(\Ker A)\).  An estimate for only one of them does not close the
+uniform gate.
+
+\subsection{Exponent form}
+
+For a distinguished vector \(z_*(X)\), write
+\begin{equation}
+ \frac{\|B_Xz_*(X)\|^2}{\|A_Xz_*(X)\|^2}
+ \ge X^{-\lambda_{\rm reasm,*}+o(1)}
+ \label{eq:tpc60-pointwise-reassembly-exponent}
+\end{equation}
+when the denominator is nonzero.  The star distinguishes this pointwise
+exponent from the coefficient-uniform \(\lambda_{\rm reasm}\) of
+\cref{sec:tpc60-kernel-tests}.  Suppose now, for that distinguished vector
+or uniformly on a stated class,
+\begin{equation}
+ d_{\rm miss}=X^{\mu_{\rm miss}+o(1)},
+ \qquad
+ \frac{\cD_{\rm miss}(z)}{\|Az\|^2}
+ \le X^{-\sigma_{\rm miss}+o(1)}.
+ \label{eq:tpc60-degree-saving-exponents}
+\end{equation}
+Writing
+\begin{equation}
+ q_X(z):=
+ \frac{d_{\rm miss}\cD_{\rm miss}(z)}{\|Az\|^2},
+ \label{eq:tpc60-qX-product}
+\end{equation}
+the triangle inequality gives the two-sided estimate
+\begin{equation}
+ \bigl(1-\sqrt{q_X(z)}\bigr)_+^2
+ \le\frac{\|Bz\|^2}{\|Az\|^2}
+ \le\bigl(1+\sqrt{q_X(z)}\bigr)^2.
+ \label{eq:tpc60-qX-two-sided}
+\end{equation}
+Consequently
+\begin{equation}
+ \sigma_{\rm miss}>\mu_{\rm miss}
+ \quad\Longrightarrow\quad
+ \frac{\|Bz\|^2}{\|Az\|^2}=1+o(1)
+ \label{eq:tpc60-zero-cost-exponent-condition}
+\end{equation}
+Thus the mass--degree route gives \(\lambda_{\rm reasm,*}=0\) in the
+distinguished-vector scope and \(\lambda_{\rm reasm}=0\) when the hypotheses
+hold uniformly on the declared class.  At equality of the exponents, the exact
+sufficient condition furnished by this certificate is
+\begin{equation}
+ \bigl(1-\sqrt{q_X(z)}\bigr)_+^2\ge X^{-o(1)}.
+ \label{eq:tpc60-equality-subpower-test}
+\end{equation}
+This bound must hold pointwise for the distinguished vector, or uniformly over the
+declared coefficient class, according to the claimed scope.
+The simpler condition \(\limsup q_X(z)<1\) is sufficient but not
+necessary; for example, \(q_X=1-1/\log X\) still gives a subpower lower
+bound.  Thus exponent equality requires finer constant or subpower
+control.  If
+\(\sigma_{\rm miss}<\mu_{\rm miss}\), the certificate is silent; it does
+not prove failure.
+
+More generally, if a common reference diagonal satisfies
+\begin{equation}
+ \cD_{\rm miss}(z)
+ \le X^{-\sigma+o(1)}\cD_{\rm ref}(z),
+ \qquad
+ \|Az\|^2
+ \ge X^{-\lambda_{\rm rep}+o(1)}\cD_{\rm ref}(z),
+ \label{eq:tpc60-common-reference-bounds}
+\end{equation}
+then the zero-cost sufficient condition becomes
+\begin{equation}
+ \boxed{
+ \sigma>\mu_{\rm miss}+\lambda_{\rm rep}.}
+ \label{eq:tpc60-common-reference-threshold}
+\end{equation}
+Every exponent in this comparison refers to the same physical vector and
+the same raw reference measure.

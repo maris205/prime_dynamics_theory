@@ -1,0 +1,284 @@
+\section{Exact nuisance elimination and the shorted Gram}
+\label{sec:tpc60-shorted-gram}
+
+This section is finite-dimensional linear algebra.  It applies at every
+fixed scale \(X\), after which one may ask whether the resulting constants
+are uniform or polynomially controlled as \(X\to\infty\).
+
+Let \(\cK,\cH\) be finite-dimensional complex Hilbert spaces and let
+\begin{equation}
+ A,M:\cK\longrightarrow\cH,
+ \qquad B:=A+M.
+ \label{eq:tpc60-abstract-AMB}
+\end{equation}
+Assume \(A\ne0\), so that the quotient below has a nonempty domain, and
+define
+\begin{equation}
+ \delta(A,M)
+ :=\inf_{Az\ne0}\frac{\|Bz\|^2}{\|Az\|^2}.
+ \label{eq:tpc60-delta-AM}
+\end{equation}
+
+\subsection{The invisible directions}
+
+Put
+\begin{equation}
+ N:=\Ker A,
+ \qquad S:=N^\perp,
+ \qquad A_S:=A|_S,
+ \label{eq:tpc60-NSAS}
+\end{equation}
+and let
+\begin{equation}
+ B_S:=B|_S,
+ \qquad B_N:=B|_N=M|_N,
+ \qquad W:=\Ran B_N.
+ \label{eq:tpc60-BSBNW}
+\end{equation}
+Write
+\begin{equation}
+ P:=P_{W^\perp}=I-B_NB_N^\dagger.
+ \label{eq:tpc60-projection-P}
+\end{equation}
+Here \({}^\dagger\) denotes the Moore--Penrose inverse, and
+\(B_NB_N^\dagger\) is the orthogonal projection onto \(W\)
+\citep{BenIsraelGreville2003}.
+
+Every \(z\in\cK\) decomposes uniquely as \(z=s+k\), with \(s\in S\) and
+\(k\in N\).  The denominator of \eqref{eq:tpc60-delta-AM} depends only on
+\(s\), whereas the numerator is
+\begin{equation}
+ \|B_Ss+B_Nk\|^2.
+ \label{eq:tpc60-nuisance-numerator}
+\end{equation}
+Thus \(k\) is a nuisance direction which can be chosen to cancel the output
+without changing the represented norm.
+
+\begin{theorem}[Exact nuisance elimination]
+\label{thm:tpc60-exact-nuisance-elimination}
+For the maps in \eqref{eq:tpc60-abstract-AMB},
+\begin{equation}
+ \boxed{
+ \delta(A,M)
+ =\inf_{s\in S\setminus\{0\}}
+   \frac{\|PB_Ss\|^2}{\|A_Ss\|^2}.}
+ \label{eq:tpc60-exact-nuisance-quotient}
+\end{equation}
+For fixed \(s\), all minimizing nuisance vectors are
+\begin{equation}
+ k_s=-B_N^\dagger B_Ss+k_0,
+ \qquad k_0\in\Ker B_N.
+ \label{eq:tpc60-minimizing-nuisance}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For fixed \(s\), minimizing \eqref{eq:tpc60-nuisance-numerator} over
+\(k\in N\) is the least-squares problem of approximating \(-B_Ss\) by
+\(\Ran B_N\).  Hence
+\begin{align}
+ \inf_{k\in N}\|B_Ss+B_Nk\|^2
+ &=\dist(B_Ss,W)^2
+ \notag\\
+ &=\|PB_Ss\|^2.
+ \label{eq:tpc60-distance-identity}
+\end{align}
+The Moore--Penrose least-squares formula gives
+\eqref{eq:tpc60-minimizing-nuisance}.  Since \(A_S\) is injective,
+\(A_Ss\ne0\) precisely when \(s\ne0\).  Taking the infimum over \(s\)
+proves \eqref{eq:tpc60-exact-nuisance-quotient}.
+\end{proof}
+
+\subsection{Schur complement and shorted operator}
+
+Let \(G:=B^*B\), and write its block matrix relative to
+\(\cK=S\oplus N\):
+\begin{equation}
+ G=
+ \begin{pmatrix}
+  G_{SS}&G_{SN}\\
+  G_{NS}&G_{NN}
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+  B_S^*B_S&B_S^*B_N\\
+  B_N^*B_S&B_N^*B_N
+ \end{pmatrix}.
+ \label{eq:tpc60-G-blocks}
+\end{equation}
+Because \(G\ge0\), its blocks satisfy the standard range compatibility
+needed for the generalized Schur complement.  Define
+\begin{equation}
+ Q
+ :=G_{SS}-G_{SN}G_{NN}^\dagger G_{NS}.
+ \label{eq:tpc60-Q-Schur}
+\end{equation}
+
+\begin{proposition}[Shorted-Gram identity]
+\label{prop:tpc60-shorted-Gram-identity}
+One has
+\begin{equation}
+ \boxed{
+ Q=B_S^*PB_S\ge0.}
+ \label{eq:tpc60-Q-projected-Gram}
+\end{equation}
+Moreover the short of \(G\) to \(S\) is
+\begin{equation}
+ \short_S(G)
+ =
+ \begin{pmatrix}Q&0\\0&0\end{pmatrix}.
+ \label{eq:tpc60-shorted-G}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The Moore--Penrose projection identity gives
+\begin{equation}
+ B_N(B_N^*B_N)^\dagger B_N^*
+ =B_NB_N^\dagger=P_W.
+ \label{eq:tpc60-BN-projection-identity}
+\end{equation}
+Substitution into \eqref{eq:tpc60-Q-Schur} yields
+\[
+ Q=B_S^*(I-P_W)B_S=B_S^*PB_S.
+\]
+The block formula for the finite-dimensional shorted positive operator is
+then exactly \eqref{eq:tpc60-shorted-G}; see
+\citet{AndersonTrapp1975}.
+\end{proof}
+
+Let
+\begin{equation}
+ R:=A^*A,
+ \qquad R_S:=A_S^*A_S.
+ \label{eq:tpc60-RRS}
+\end{equation}
+The operator \(R_S\) is positive definite on \(S\).
+
+\begin{theorem}[Exact shorted generalized eigenvalue]
+\label{thm:tpc60-shorted-generalized-eigenvalue}
+The optimal reassembly constant is
+\begin{equation}
+ \boxed{
+ \delta(A,M)
+ =\lambda_{\min}\!\left(
+  R_S^{-1/2}QR_S^{-1/2}
+ \right).}
+ \label{eq:tpc60-delta-generalized-eigenvalue}
+\end{equation}
+Equivalently,
+\begin{equation}
+ \delta(A,M)
+ =\lambda_{\min}\!\left(
+ \left.
+ R^{\dagger/2}\short_S(B^*B)R^{\dagger/2}
+ \right|_S
+ \right).
+ \label{eq:tpc60-delta-global-shorted}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \cref{thm:tpc60-exact-nuisance-elimination,prop:tpc60-shorted-Gram-identity},
+\[
+ \delta(A,M)
+ =\inf_{s\ne0}
+   \frac{\langle Qs,s\rangle}{\langle R_Ss,s\rangle}.
+\]
+Set \(x=R_S^{1/2}s\) and apply the Rayleigh--Ritz principle
+\citep{HornJohnson2013}.  This proves
+\eqref{eq:tpc60-delta-generalized-eigenvalue}.  On \(S\), the restriction
+of \(R^{\dagger/2}\) is \(R_S^{-1/2}\), while it vanishes on \(N\), giving
+\eqref{eq:tpc60-delta-global-shorted}.
+\end{proof}
+
+\subsection{Effective output map}
+
+Let \(E:=\Ran A\).  The map
+\begin{equation}
+ A_S:S\longrightarrow E
+ \label{eq:tpc60-AS-bijection}
+\end{equation}
+is a Hilbert-space isomorphism, with inverse \(A^\dagger|_E\).  Define
+\begin{equation}
+ C_{\rm eff}:=PB_SA_S^{-1}:E\longrightarrow W^\perp.
+ \label{eq:tpc60-effective-map}
+\end{equation}
+
+\begin{corollary}[Effective singular value]
+\label{cor:tpc60-effective-singular-value}
+One has
+\begin{equation}
+ \boxed{
+ \delta(A,M)=\sigma_{\min}(C_{\rm eff})^2.}
+ \label{eq:tpc60-effective-singular-value}
+\end{equation}
+Thus reassembly consists of choosing a represented output \(y\in E\),
+taking its canonical coefficient preimage \(A_S^{-1}y\), forming the full
+output, and projecting away everything producible by an \(A\)-invisible
+coefficient direction.
+\end{corollary}
+
+\begin{proof}
+Substitute \(y=A_Ss\) in
+\eqref{eq:tpc60-exact-nuisance-quotient}.
+\end{proof}
+
+\subsection{Why ordinary compression is wrong}
+
+If one fixes the canonical representative \(s\in S\) and forbids motion
+along \(N\), one instead computes
+\begin{equation}
+ \delta_{\rm can}
+ :=\inf_{s\ne0}\frac{\|B_Ss\|^2}{\|A_Ss\|^2}
+ =\lambda_{\min}
+   \bigl(R_S^{-1/2}G_{SS}R_S^{-1/2}\bigr).
+ \label{eq:tpc60-naive-canonical-constant}
+\end{equation}
+Since \(P\) is a contraction,
+\begin{equation}
+ 0\le\delta(A,M)\le\delta_{\rm can},
+ \label{eq:tpc60-short-less-compression}
+\end{equation}
+and the inequality may be strict.
+
+\begin{example}[Canonical compression can miss total cancellation]
+\label{ex:tpc60-naive-compression-fails}
+Take \(\cK=\C^2\), \(\cH=\C\), and
+\begin{equation}
+ A(x,k)=x,
+ \qquad M(x,k)=k,
+ \qquad B(x,k)=x+k.
+ \label{eq:tpc60-basic-counterexample}
+\end{equation}
+Here \(S=\{(x,0)\}\), so the canonical ratio is identically one.  However
+\(N=\{(0,k)\}\) and \(B(N)=\C\), hence \(P=0\) and
+\(\delta(A,M)=0\).  Explicitly, choosing \(k=-x\) annihilates the full
+output without changing \(Ax=x\).
+\end{example}
+
+The compressed Gram equals the shorted Gram precisely when the Schur
+correction vanishes:
+\begin{equation}
+ G_{SN}G_{NN}^\dagger G_{NS}=0.
+ \label{eq:tpc60-zero-Schur-correction}
+\end{equation}
+Because this operator is positive, the condition is equivalent to
+\begin{equation}
+ \Ran B_S\perp\Ran B_N.
+ \label{eq:tpc60-orthogonal-SN-output}
+\end{equation}
+This operator identity is sufficient, but not necessary, for equality of
+the two least generalized eigenvalues: a nonzero correction may act only
+away from the minimizing eigenspace.  Thus
+\eqref{eq:tpc60-zero-Schur-correction} must not be advertised as an exact
+criterion for equality of the scalar minima.
+A particularly safe case is
+\begin{equation}
+ B|_{\Ker A}=0.
+ \label{eq:tpc60-B-descends}
+\end{equation}
+Then the full map genuinely descends to \(\cK/\Ker A\), \(W=\{0\}\), and
+no shorting is needed.  Without \eqref{eq:tpc60-B-descends}, replacing a
+coefficient vector by its minimum-norm representative changes the physical
+full output and is not an admissible simplification.

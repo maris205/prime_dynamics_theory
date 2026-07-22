@@ -1,0 +1,194 @@
+\section{Kernel, anti-diagonal, and rank kill tests}
+\label{sec:tpc60-kernel-tests}
+
+The shorted formula gives an exact qualitative test at each finite scale.
+It also shows why qualitative injectivity is weaker than the polynomial
+lower bound needed by an endpoint argument.
+
+\begin{theorem}[Exact positivity test]
+\label{thm:tpc60-exact-positivity-test}
+For finite-dimensional \(\cK,\cH\) and \(A\ne0\), the following are
+equivalent:
+\begin{enumerate}[label=\textup{\(\roman*\)},leftmargin=2.6em]
+ \item \(\delta(A,M)>0\);
+ \item \(PB_S:S\to W^\perp\) is injective;
+ \item \(\Ker(A+M)\subseteq\Ker A\);
+ \item there is no \(z\in\cK\) with \(Az\ne0\) and
+       \((A+M)z=0\).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+By \cref{cor:tpc60-effective-singular-value}, positivity is equivalent to
+injectivity of \(PB_S\) on \(S\).  If that map is not injective, there is
+\(s\in S\setminus\{0\}\) with \(B_Ss\in W=\Ran B_N\).  Choose \(k\in N\)
+so that \(B_Nk=-B_Ss\).  Then \(z=s+k\in\Ker B\), while
+\(Az=A_Ss\ne0\).  Conversely, any \(z=s+k\in\Ker B\setminus\Ker A\)
+has \(s\ne0\) and \(PB_Ss=-PB_Nk=0\).  This proves all equivalences.
+\end{proof}
+
+\begin{corollary}[Dimension kill criterion]
+\label{cor:tpc60-dimension-kill}
+If
+\begin{equation}
+ \dim S>\dim\cH-\rank B_N,
+ \label{eq:tpc60-dimension-kill}
+\end{equation}
+then \(\delta(A,M)=0\).
+\end{corollary}
+
+\begin{proof}
+The codomain \(W^\perp\) of \(PB_S\) has dimension
+\(\dim\cH-\rank B_N\).  Under \eqref{eq:tpc60-dimension-kill}, that map
+cannot be injective.
+\end{proof}
+
+For the TPC specialization this supplies a finite-scale kill test which can
+be checked exactly from the literal matrices.  If it fires, no uniform
+loss exponent \(\lambda_{\rm reasm}\) exists on the declared coefficient
+class: the ratio is exactly zero, not merely poorly estimated.  If it does
+not fire, no quantitative asymptotic lower bound follows automatically.
+
+\subsection{The pair-image formulation}
+
+Define the coupled represented--missing map
+\begin{equation}
+ J:\cK\longrightarrow\cH\oplus\cH,
+ \qquad Jz:=(Az,Mz),
+ \label{eq:tpc60-coupled-AM-map}
+\end{equation}
+and its actual feasible pair image
+\begin{equation}
+ \cF_{A,M}:=\Ran J.
+ \label{eq:tpc60-feasible-pair-image}
+\end{equation}
+The physical sum map is
+\begin{equation}
+ D_+(g,h):=g+h.
+ \label{eq:tpc60-pair-sum-map}
+\end{equation}
+When \(\cF_{A,M}\ne\{0\}\), put
+\begin{equation}
+ \delta_{\rm pair}
+ :=\inf_{(g,h)\in\cF_{A,M}\setminus\{0\}}
+   \frac{\|g+h\|^2}{\|g\|^2+\|h\|^2}.
+ \label{eq:tpc60-pair-angle}
+\end{equation}
+Here \(\cF_{A,M}\) carries the norm inherited from the Hilbert direct sum
+\(\cH\oplus\cH\).
+
+\begin{proposition}[Anti-diagonal test]
+\label{prop:tpc60-anti-diagonal-test}
+One has
+\begin{equation}
+ \delta_{\rm pair}
+ =\sigma_{\min}\!\left(D_+|_{\cF_{A,M}}\right)^2,
+ \qquad 0\le\delta_{\rm pair}\le2,
+ \label{eq:tpc60-pair-singular-value}
+\end{equation}
+and
+\begin{align}
+ \delta_{\rm pair}>0
+ &\Longleftrightarrow
+ \cF_{A,M}\cap\{(g,-g):g\in\cH\}=\{(0,0)\}
+ \label{eq:tpc60-pair-antidiagonal}\\
+ &\Longleftrightarrow
+ \Ker(A+M)\subseteq\Ker A.
+ \notag
+\end{align}
+Furthermore
+\begin{equation}
+ \boxed{\delta(A,M)\ge\delta_{\rm pair}.}
+ \label{eq:tpc60-delta-ge-pair}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The first identity is the Rayleigh quotient of \(D_+^*D_+\) on the actual
+pair image.  Its kernel is the anti-diagonal.  If
+\(Jz=(g,-g)\ne(0,0)\), then \(Bz=0\) and \(Az=g\ne0\); the converse is
+immediate.  Finally, for \(Az\ne0\),
+\[
+ \frac{\|Bz\|^2}{\|Az\|^2}
+ \ge
+ \frac{\|Bz\|^2}{\|Az\|^2+\|Mz\|^2}
+ \ge\delta_{\rm pair}.
+\]
+Taking the infimum proves \eqref{eq:tpc60-delta-ge-pair}.
+\end{proof}
+
+The pair formulation is often convenient for an exact matrix computation,
+but it must use \(\Ran J\), not an independently chosen product of the
+represented and missing ranges.  Enlarging the feasible set to
+\(\Ran A\times\Ran M\) can manufacture an anti-diagonal pair which no
+physical coefficient vector produces.
+
+\subsection{Qualitative and quantitative separation}
+
+\begin{example}[The kernel test has no quantitative content]
+\label{ex:tpc60-kernel-no-quantitative}
+Let \(A=I\) and \(M=-(1-\varepsilon)I\), where
+\(0<\varepsilon<1\).  Then \(B=\varepsilon I\), so
+\begin{equation}
+ \Ker B=\Ker A=\{0\},
+ \qquad
+ \delta(A,M)=\varepsilon^2.
+ \label{eq:tpc60-epsilon-example}
+\end{equation}
+The exact kernel test passes for every \(\varepsilon>0\), but the constant
+can be arbitrarily small.  For an \(X\)-dependent family, injectivity at
+each finite \(X\) does not imply a polynomial lower bound.
+\end{example}
+
+\begin{example}[Equal raw size, opposite reassembly]
+\label{ex:tpc60-same-mass-opposite-phase}
+Let \(A=I\) and \(M=\pm tI\), with \(t\ge0\).  In both cases
+\begin{equation}
+ \|Mz\|^2=t^2\|Az\|^2,
+ \label{eq:tpc60-same-raw-mass}
+\end{equation}
+but
+\begin{equation}
+ \delta(A,tI)=(1+t)^2,
+ \qquad
+ \delta(A,-tI)=(1-t)^2.
+ \label{eq:tpc60-opposite-phase-constants}
+\end{equation}
+Thus the missing norm alone cannot distinguish constructive from
+destructive interference.
+\end{example}
+
+\begin{example}[Pointwise success does not imply a uniform gate]
+\label{ex:tpc60-pointwise-not-uniform}
+Return to \cref{ex:tpc60-naive-compression-fails}.  The distinguished
+vector \(z_*=(1,0)\) satisfies
+\begin{equation}
+ \frac{\|Bz_*\|^2}{\|Az_*\|^2}=1,
+ \label{eq:tpc60-distinguished-success-example}
+\end{equation}
+while the uniform constant is zero because \((1,-1)\) cancels exactly.
+Any distinguished-vector claim must therefore remain explicitly labeled
+as such.
+\end{example}
+
+\subsection{Scale-dependent interpretation}
+
+For a family \((A_X,M_X)\), call \(\lambda_{\rm reasm}\ge0\) an admissible
+uniform loss exponent if
+\begin{equation}
+ \delta(A_X,M_X)
+ \ge X^{-\lambda_{\rm reasm}+o(1)}.
+ \label{eq:tpc60-uniform-loss-exponent}
+\end{equation}
+If the exact kernel test fails along an unbounded sequence of scales, no
+such finite exponent exists on that coefficient class.  If the test passes,
+\eqref{eq:tpc60-uniform-loss-exponent} is still a separate quantitative
+assertion.  For one distinguished physical vector \(\zeta_*(X)\), the
+analogous ratio
+\begin{equation}
+ \delta_*(X)
+ :=\frac{\|B_X\zeta_*(X)\|^2}{\|A_X\zeta_*(X)\|^2}
+ \label{eq:tpc60-distinguished-ratio}
+\end{equation}
+is a different object and may remain positive after the uniform gate is
+killed.

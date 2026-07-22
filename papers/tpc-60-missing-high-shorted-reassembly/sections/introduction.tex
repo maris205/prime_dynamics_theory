@@ -1,0 +1,153 @@
+\section{Introduction}
+\label{sec:tpc60-introduction}
+
+The large-prime branch of the TPC program begins with an exact Walsh
+expansion, resolves a unique very-high prime, transports the resulting
+atoms through residual fibers, and finally recombines them into the native
+affine output at a fixed physical shift \(h_0\ne0\)
+\citep{WangTPC45,WangTPC53,WangTPC57,WangTPC58}.  TPC--59 makes a necessary
+correction to that chain.  Its largest-prime census injects the retained
+terminal atoms into the high Walsh carrier, but it need not cover the full
+carrier.  With the notation of that paper,
+\begin{equation}
+ \cD_0
+ =\cD_{\rm base}+\cD_{\rm miss}
+  +\cD_H^{\rm rep}.
+ \label{eq:tpc60-inherited-three-part-diagonal}
+\end{equation}
+Here \(\cD_H^{\rm rep}\) is the represented high diagonal, while
+\(\cD_{\rm miss}\) is high Walsh mass outside the terminal image
+\citep{WangTPC59}.
+
+This distinction survives the final grouping.  Let \(g_{\rm rep}\) be the
+native affine vector built from the base column and the represented high
+column, and let \(h_{\rm miss}\) be the output of the missing high
+coordinates.  The full physical vector is
+\begin{equation}
+ g_{\rm full}=g_{\rm rep}+h_{\rm miss}.
+ \label{eq:tpc60-full-sum-intro}
+\end{equation}
+There is no inequality
+\(\|g_{\rm full}\|\ge\|g_{\rm rep}\|\): the omitted vector can be
+destructively aligned.  Nor does small raw missing mass by itself solve the
+problem, because many small missing atoms may enter one native output with
+the same phase.
+
+The purpose of this paper is to identify exactly what must be proved at
+this reassembly arrow.  The answer contains a subtle quotient.  Two row
+coefficient vectors may have the same represented output while having
+different missing output.  Therefore the full map need not descend to the
+quotient by the kernel of the represented map.  The correct uniform
+constant minimizes over that entire kernel fiber.  In matrix language this
+is a shorted operator, or equivalently a generalized Schur complement
+\citep{AndersonTrapp1975,BenIsraelGreville2003}.
+
+\subsection{The three questions}
+
+Fix finite-dimensional Hilbert spaces \(\cK\) and \(\cH\), and linear maps
+\begin{equation}
+ A,M:\cK\longrightarrow\cH,
+ \qquad B:=A+M.
+ \label{eq:tpc60-abstract-maps-intro}
+\end{equation}
+The TPC specialization is:
+\begin{itemize}[leftmargin=2em]
+ \item \(A\) is the base plus represented-high affine map;
+ \item \(M\) is the missing-high native grouping;
+ \item \(B\) is the full declared affine output on the same fixed slice.
+\end{itemize}
+We answer three separate questions.
+
+\begin{enumerate}[leftmargin=2.2em]
+ \item What is the optimal coefficient-uniform ratio
+ \begin{equation}
+  \delta_{\rm reasm}
+  :=\inf_{Az\ne0}\frac{\|Bz\|^2}{\|Az\|^2}?
+  \label{eq:tpc60-delta-intro}
+ \end{equation}
+ \item What exact kernel, image, or rank condition kills that uniform gate?
+ \item What arithmetic estimate on missing raw mass and native fiber degree
+       is sufficient for a distinguished-vector or uniform lower transfer?
+\end{enumerate}
+
+These questions must not be conflated.  A distinguished physical vector
+can reassemble safely even when the uniform constant vanishes.  Conversely,
+the qualitative kernel condition can hold while the least ratio tends to
+zero with \(X\).  Finally, a raw atomic estimate does not determine the
+sign of the represented--missing cross term.
+
+\subsection{Main results}
+
+Let
+\begin{equation}
+ N:=\Ker A,
+ \qquad S:=N^\perp,
+ \qquad W:=B(N)=M(N),
+ \label{eq:tpc60-NSW-intro}
+\end{equation}
+and let \(P_W^\perp\) denote the orthogonal projection onto \(W^\perp\).
+The first result is the exact nuisance-elimination formula
+\begin{equation}
+ \boxed{
+ \delta_{\rm reasm}
+ =\inf_{s\in S\setminus\{0\}}
+   \frac{\|P_W^\perp Bs\|^2}{\|As\|^2}.}
+ \label{eq:tpc60-main-short-formula-intro}
+\end{equation}
+Thus the effective map is not \(B|_S\), but its projection away from the
+output that can be generated freely by \(N\).  We derive the equivalent
+shorted-Gram and least-singular-value formulas and prove
+\begin{equation}
+ \boxed{
+ \delta_{\rm reasm}>0
+ \quad\Longleftrightarrow\quad
+ \Ker B\subseteq\Ker A.}
+ \label{eq:tpc60-main-kernel-intro}
+\end{equation}
+The equivalence is finite-dimensional.  It is an exact L0 statement; it
+does not assert the condition for the TPC coefficient family.
+
+For the literal missing atomic lift, let \(\cF_i^{\rm miss}\) be the
+missing atoms entering native output \(i\), and put
+\begin{equation}
+ d_{\rm miss}:=\max_i|\cF_i^{\rm miss}|,
+ \qquad
+ \cD_{\rm miss}(z)
+ :=\sum_i\sum_{u\in\cF_i^{\rm miss}}|m_u(z)|^2.
+ \label{eq:tpc60-degree-diagonal-intro}
+\end{equation}
+Then the grouping operator has squared norm \(d_{\rm miss}\), and hence
+\begin{equation}
+ \|Mz\|^2\le d_{\rm miss}\cD_{\rm miss}(z).
+ \label{eq:tpc60-mass-degree-intro}
+\end{equation}
+Together with the reverse triangle inequality this gives the sharp
+certificate
+\begin{equation}
+ \frac{\|Bz\|^2}{\|Az\|^2}
+ \ge
+ \left(
+  1-\sqrt{\frac{d_{\rm miss}\cD_{\rm miss}(z)}{\|Az\|^2}}
+ \right)_+^2.
+ \label{eq:tpc60-pointwise-certificate-intro}
+\end{equation}
+We exhibit a family saturating the threshold: \(d_{\rm miss}=n\), raw
+missing mass \(1/n\), and exact cancellation of a unit represented output.
+
+\subsection{Claim boundary and route position}
+
+The paper deliberately stops at the first honest boundary.
+The shorted-Gram theorem, signed-defect identity, and mass--degree estimate
+are L0.  Their construction from the complete high Walsh carrier,
+the represented terminal image, and its complement at one fixed \(h_0\)
+is L1.  No estimate here proves that the missing-mass saving exceeds the
+fiber-degree cost, that the effective map is injective uniformly in \(X\),
+or that the distinguished physical vector avoids cancellation.  Those are
+new arithmetic gates.
+
+Accordingly, no statement in this paper is an L2 parity advance.  In
+particular, we prove neither a positive fixed-\(h_0\) prime-pair lower bound
+nor an asymptotic for twin primes.  The value of the result is diagnostic:
+it replaces an informal ``restore the omitted coordinates'' arrow by an
+optimal constant, an exact zero test, and two quantitatively auditable
+routes to positivity.

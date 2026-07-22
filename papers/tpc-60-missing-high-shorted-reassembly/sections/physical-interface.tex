@@ -1,0 +1,274 @@
+\section{The represented, missing, and full physical maps}
+\label{sec:tpc60-physical-interface}
+
+We first place all three outputs on one coefficient space.  This prevents
+two common changes of problem: choosing the missing vector independently
+of the represented vector, and comparing norms formed from different
+atomic normalizations.
+
+\subsection{Fixed carriers and the literal high partition}
+
+Let \(\cW_0\) be the complete declared Walsh slice of TPC--59, after
+removing only coordinates which are identically inactive throughout the
+fixed bounded coefficient class.  Throughout, \(y\) is TPC--59
+very-high admissible:
+\begin{equation}
+ y>\max\{|h_0|,D_+,J_+,\Delta_M,\sqrt{N_+}\},
+ \qquad
+ \frac{D_+N_+}{y}<D_-N_-,
+ \label{eq:tpc60-very-high-admissibility}
+\end{equation}
+and every retained source row has its inherited unique representation
+\(m=d_m\ell_m\) in the declared one-side row system
+\citep{WangTPC59}.  Let \(\cW_H(y)\) be the resulting very-high part.
+The fixed-shift terminal census supplies an injection
+\begin{equation}
+ \iota:\cU_{h_0,>y}^{\rm term}\longrightarrow\cW_H(y).
+ \label{eq:tpc60-terminal-Walsh-injection}
+\end{equation}
+Set
+\begin{equation}
+ \cW_B:=\cW_0\setminus\cW_H(y),
+ \qquad
+ \cW_R:=\Ran\iota,
+ \qquad
+ \cW_M:=\cW_H(y)\setminus\cW_R.
+ \label{eq:tpc60-BRM-carriers}
+\end{equation}
+The letters \(B,R,M\) stand for base, represented high, and missing high.
+They form the disjoint partition
+\begin{equation}
+ \cW_0=\cW_B\,\dot\cup\,\cW_R\,\dot\cup\,\cW_M.
+ \label{eq:tpc60-W0-partition}
+\end{equation}
+
+Let \(\cK_X\) be the raw finite row-coefficient Hilbert space.  For each
+Walsh atom \(w\), literal factorization gives
+\begin{equation}
+ b_w(\zeta)=\beta_w\zeta_{m(w)},
+ \qquad \zeta\in\cK_X,
+ \label{eq:tpc60-literal-atom-linear}
+\end{equation}
+with \(\beta_w\) fixed by the declared row, orbit, cutoff, and profile
+data.  No favorable atom-dependent coefficient is introduced.  The raw
+atomic diagonals are
+\begin{equation}
+ \cD_E(\zeta):=\sum_{w\in\cW_E}|b_w(\zeta)|^2,
+ \qquad E\in\{B,R,M\}.
+ \label{eq:tpc60-BRM-diagonals}
+\end{equation}
+In the abstract atomic notation used below, the missing lift is normalized
+by the same physical amplitudes, so
+\begin{equation}
+ \cD_{\rm miss}(\zeta)=\cD_M(\zeta).
+ \label{eq:tpc60-missing-diagonal-identification}
+\end{equation}
+Therefore
+\begin{equation}
+ \boxed{
+ \cD_0=\cD_B+\cD_R+\cD_M,}
+ \qquad
+ \cD_R=\sum_k\cD_k
+ \label{eq:tpc60-exact-raw-partition}
+\end{equation}
+on the critical high face, with the dyadic cells of TPC--59.  This is a
+Pythagorean identity in the atomic space; it is not an additivity statement
+for the coherently grouped output.
+
+\subsection{Recovery of the physical labels}
+
+For a nonzero high Walsh atom \(w\), the literal fixed-shift dictionary
+recovers a unique triple \((m,j,\gamma)\), the target
+\begin{equation}
+ n=mj+h_0,
+ \label{eq:tpc60-target-n}
+\end{equation}
+and, because \(y>\sqrt{N_+}\), the unique factorization
+\begin{equation}
+ p=P^+(n)>y,
+ \qquad r=\frac np,
+ \qquad s=d_mr.
+ \label{eq:tpc60-prs-recovery}
+\end{equation}
+The native output key is denoted \(i=i(w)\); on the displayed left slice
+it includes the side, orbit tag, and row-time data, and the right slice is
+handled by orthogonal direct sum.  We write
+\begin{equation}
+ q(w)=(i(w),s(w)).
+ \label{eq:tpc60-residual-key}
+\end{equation}
+In particular, the native key \(i\) fixes the side, the opposite row, and
+the orbit time \(j\).  All of these labels are recovered from the physical
+atom.  They are not
+new choices made after seeing \(\zeta\).
+
+For \(E\in\{R,M\}\), define the sign-compatible high coefficient by
+\begin{equation}
+ z_E(i,s)
+ :=-\sum_{\substack{w\in\cW_E\\q(w)=(i,s)}}b_w.
+ \label{eq:tpc60-zRM}
+\end{equation}
+Let
+\begin{equation}
+ (C_\mu z)_i:=\sum_s\mu(s)z(i,s),
+ \qquad
+ h_R:=C_\mu z_R,
+ \qquad h_M:=C_\mu z_M.
+ \label{eq:tpc60-hRM}
+\end{equation}
+The minus sign in \eqref{eq:tpc60-zRM} is the fixed high-character sign;
+the remaining \(\mu(s)\) is the low-label gauge.  Thus these formulas use
+the TPC--58 sign convention and do not apply a second M\"obius sign.
+
+For the base carrier write
+\begin{equation}
+ (v_0)_i
+ :=\sum_{\substack{w\in\cW_B\\i(w)=i}}
+       \mu(u_w)b_w,
+ \label{eq:tpc60-base-vector}
+\end{equation}
+where \(u_w\) is its low Walsh label.  The precise inherited support masks
+are already contained in \(\cW_B\).
+
+\begin{proposition}[Literal three-map identity]
+\label{prop:tpc60-literal-three-map}
+There are linear maps
+\begin{equation}
+ A_X,M_X,B_X:\cK_X\longrightarrow\cH_{\rm out}
+ \label{eq:tpc60-three-map-domains}
+\end{equation}
+such that, for every physical row coefficient vector \(\zeta\),
+\begin{align}
+ A_X\zeta&=v_0(\zeta)+h_R(\zeta),
+ \label{eq:tpc60-represented-map}\\
+ M_X\zeta&=h_M(\zeta),
+ \label{eq:tpc60-missing-map}\\
+ B_X\zeta&=v_0(\zeta)+h_R(\zeta)+h_M(\zeta)
+            =(A_X+M_X)\zeta.
+ \label{eq:tpc60-full-map}
+\end{align}
+Moreover \(h_R=C_{\mu,H}T_H^{\rm rep}\zeta\) is exactly the TPC--58 high
+map restricted to \(\cW_R=\Ran\iota\), while \(h_M\) is the same physical
+grouping restricted to \(\cW_M\).  Consequently
+\begin{equation}
+ \cN_R(\zeta):=\|A_X\zeta\|_2^2,
+ \qquad
+ \cN_{\rm full}(\zeta):=\|B_X\zeta\|_2^2
+ \label{eq:tpc60-represented-full-energies}
+\end{equation}
+are the represented and full native affine energies on one and the same
+declared slice.
+\end{proposition}
+
+\begin{proof}
+Linearity follows from \eqref{eq:tpc60-literal-atom-linear} and the fixed
+carrier sums.  The gauge alignment of TPC--58 identifies the represented
+terminal output with \(C_{\mu,H}T_H^{\rm rep}\zeta\).  Restricting the
+identical atom-to-native map to the complementary high set defines \(M_X\).
+The disjoint coordinate partition \eqref{eq:tpc60-W0-partition} then gives
+the last identity before any output norm is taken.
+\end{proof}
+
+\begin{remark}[Why the atom partition does not imply output monotonicity]
+The equality \(\cD_0=\cD_B+\cD_R+\cD_M\) is taken before native grouping.
+After grouping,
+\[
+ \cN_{\rm full}-\cN_R
+ =\|h_M\|^2+2\operatorname{Re}\langle A_X\zeta,h_M\rangle.
+\]
+The cross term has no fixed sign.  Thus restoring a disjoint atomic
+coordinate set can decrease the physical output norm.
+\end{remark}
+
+\subsection{Prime-resolved alias structure}
+
+To locate the possible cancellation more precisely, decompose
+\begin{equation}
+ h_R=-\sum_{p>y}v_p^R,
+ \qquad
+ h_M=-\sum_{p>y}v_p^M,
+ \label{eq:tpc60-prime-decompositions}
+\end{equation}
+where, for \(E\in\{R,M\}\),
+\begin{equation}
+ (v_p^E)_i
+ :=\sum_{\substack{w\in\cW_E\\i(w)=i,\ p(w)=p}}
+       \mu(s(w))b_w.
+ \label{eq:tpc60-prime-vector-components}
+\end{equation}
+On the active very-high carrier, squarefree support gives
+\(|\mu(s(w))|=1\).  Hence no modulus is lost when the raw atom is placed in
+a prime-resolved component.
+
+\begin{proposition}[Same-prime separation and unequal-prime alias]
+\label{prop:tpc60-same-prime-separation}
+For every fixed pair \((i,p)\), there is at most one active high Walsh atom.
+Consequently
+\begin{equation}
+ \langle v_p^R,v_p^M\rangle=0
+ \label{eq:tpc60-same-prime-orthogonality}
+\end{equation}
+for every \(p\), and
+\begin{equation}
+ \sum_p\bigl(\|v_p^R\|^2+\|v_p^M\|^2\bigr)
+ =\cD_R+\cD_M.
+ \label{eq:tpc60-prime-resolved-Pythagoras}
+\end{equation}
+The exact reassembly defect is
+\begin{align}
+ \cN_{\rm full}-\cN_R
+ ={}&\left\|\sum_qv_q^M\right\|^2
+ -2\operatorname{Re}\sum_q\langle v_0,v_q^M\rangle
+ \notag\\
+ &+2\operatorname{Re}
+   \sum_{\substack{p,q>y\\p\ne q}}
+       \langle v_p^R,v_q^M\rangle.
+ \label{eq:tpc60-exact-prime-alias-defect}
+\end{align}
+Thus represented--missing cancellation cannot occur at the same prime;
+the remaining dangers are base--missing interaction and unequal-prime
+alias at a common native output.
+\end{proposition}
+
+\begin{proof}
+Fix \((i,p)\).  Since \(i\) fixes \(j\), suppose that \(p\) meets two
+source rows \(m,m'\).  Then \(p\mid(m-m')j\).  The alternative \(p\mid j\)
+is excluded by \(p>J_+\); hence \(p\mid m-m'\).  But
+\(|m-m'|\le\Delta_M<p\), so \(m=m'\), and the inherited unique row
+representation recovers the same full source atom.  This is exactly the
+TPC--59 critical-cutoff fixed-\((j,p)\) argument
+\citep{WangTPC59}.  Thus a fixed \((i,p)\) contains at most one high atom.
+Such an atom belongs to exactly one of
+\(\cW_R,\cW_M\), proving disjoint coordinate support and
+\eqref{eq:tpc60-same-prime-orthogonality}.  Summing the coordinate squares
+gives \eqref{eq:tpc60-prime-resolved-Pythagoras}.  Finally expand
+\[
+ \|v_0-\sum_pv_p^R-\sum_qv_q^M\|^2
+ -\|v_0-\sum_pv_p^R\|^2
+\]
+and delete the same-prime cross terms using
+\eqref{eq:tpc60-same-prime-orthogonality}.
+\end{proof}
+
+The proposition is useful but does not close reassembly.  Different high
+primes can land at the same native output, and degree two already permits
+exact cancellation.  Prime resolution is therefore a diagnostic layer,
+not a substitute for the full native Gram.
+
+\subsection{The six-item physical audit}
+
+The construction above passes the following interface audit.
+\begin{enumerate}[leftmargin=2.2em]
+ \item The coefficients are the literal \(b_w=\beta_w\zeta_{m(w)}\).
+ \item One fixed physical \(h_0\) appears in \(n=mj+h_0\).
+ \item Every atomic norm is the raw counting norm; no fiber average is
+       inserted.
+ \item The atom representation is nonduplicated, and the row space removes
+       only identically null columns.  A quotient by \(\Ker A_X\) is not
+       taken unless the full map actually descends to it.
+ \item The active supports are exactly \(\cW_B,\cW_R,\cW_M\) inside the
+       declared Walsh carrier; coefficient-dependent zeros do not redefine
+       them.
+ \item Any eventual reassembly loss remains an explicit term in the strict
+       endpoint budget \(<1/400\).
+\end{enumerate}

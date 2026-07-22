@@ -1,0 +1,281 @@
+\section{Arithmetic localization of the missing carrier}
+\label{sec:tpc60-missing-partition}
+
+The previous sections are exact for any pair of finite-dimensional maps.
+We now return to the fixed-\(h_0\) Walsh carrier and record what the literal
+arithmetic dictionary does and does not add.
+
+\subsection{Boolean signatures and ordered first failure}
+
+For \(w\in\cW_H(y)\), recover \(m,j,\gamma,n,p,r,s\) by
+\eqref{eq:tpc60-target-n}--\eqref{eq:tpc60-prs-recovery}.  Membership in
+the represented terminal image is a finite conjunction of declared tests.
+For definiteness, use the dependency order
+\begin{align}
+ T_1(w)&:=\one_{\{(m,r)\in\cI_X\}},
+ \label{eq:tpc60-test-retained-pair}\\
+ T_2(w)&:=\one_{\{j,\gamma,p\text{ lie in the declared terminal scopes}\}},
+ \label{eq:tpc60-test-terminal-scopes}\\
+ T_3(w)&:=\one_{\{\Lambda_X(n)\ne0\}},
+ \label{eq:tpc60-test-terminal-weight}\\
+ T_4(w)&:=\one_{\{d_m,r,s\text{ squarefree and }(d_m,r)=1\}},
+ \label{eq:tpc60-test-squarefree}\\
+ T_5(w)&:=\one_{\{\text{all remaining terminal-only masks pass}\}}.
+ \label{eq:tpc60-test-remaining-masks}
+\end{align}
+The lists inside \(T_2\) and \(T_5\) are the inherited literal declarations,
+not new favorable supports.  By construction,
+\begin{equation}
+ w\in\cW_R
+ \quad\Longleftrightarrow\quad
+ T_1(w)=\cdots=T_5(w)=1.
+ \label{eq:tpc60-represented-all-tests}
+\end{equation}
+
+The Boolean signature \((T_1,\ldots,T_5)\) is order independent.  A
+``first failure'' is not: it becomes well defined only after the order
+above is declared.  Define
+\begin{align}
+ \cF_1&:=\{w\in\cW_H:T_1(w)=0\},
+ \label{eq:tpc60-first-failure-1}\\
+ \cF_\nu&:=\{w\in\cW_H:
+ T_1(w)=\cdots=T_{\nu-1}(w)=1, T_\nu(w)=0\},
+ \quad2\le\nu\le5.
+ \label{eq:tpc60-first-failure-nu}
+\end{align}
+
+\begin{proposition}[Exact ordered missing partition]
+\label{prop:tpc60-exact-missing-partition}
+The first-failure sets are disjoint and
+\begin{equation}
+ \boxed{
+ \cW_M=\bigsqcup_{\nu=1}^5\cF_\nu.}
+ \label{eq:tpc60-missing-first-failure-partition}
+\end{equation}
+If
+\begin{equation}
+ \cD_\nu(\zeta):=\sum_{w\in\cF_\nu}|b_w(\zeta)|^2,
+ \label{eq:tpc60-first-failure-energy}
+\end{equation}
+then
+\begin{equation}
+ \boxed{
+ \cD_M=\sum_{\nu=1}^5\cD_\nu.}
+ \label{eq:tpc60-DM-failure-partition}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Every missing atom fails at least one test by
+\eqref{eq:tpc60-represented-all-tests}; its least failing index is unique.
+Conversely every atom in a first-failure set fails terminal admission and
+is missing.  Raw atomic additivity gives the energy identity.
+\end{proof}
+
+The adjective ``ordered'' is essential.  Reordering the tests changes the
+first-failure labels, although it does not change \(\cW_M\) or the full
+Boolean signature.
+
+\subsection{Empty pseudo-failure layers}
+
+Several apparent failure mechanisms are already excluded on the common
+active Walsh carrier.
+
+\begin{proposition}[Inherited automatic tests]
+\label{prop:tpc60-inherited-automatic-tests}
+For an actual nonzero high Walsh atom on the common TPC--45/TPC--53
+physical carrier:
+\begin{enumerate}[label=\textup{\(\alph*\)},leftmargin=2.5em]
+ \item \(p=P^+(n)>y\), \(pr=mj+h_0\), and \(r=n/p\) hold by the unique
+       high-prime decoding;
+ \item the nonzero Walsh amplitude already enforces
+       \(\Lambda_X(n)\ne0\) and its shared literal profile masks;
+ \item the inherited squarefree and coprimality support implies that
+       \(r\) and \(s=d_mr\) are squarefree and \((d_m,r)=1\).
+\end{enumerate}
+Consequently the first-failure layers created solely by \(T_3\) and \(T_4\)
+are empty.  The part of \(T_5\) consisting only of masks shared with the
+Walsh carrier is empty as well.
+\end{proposition}
+
+\begin{proof}
+Part \(a\) is the largest-prime census and the assumption
+\(y>\sqrt{N_+}\).  For \(b\), coordinates with zero shaped weight or zero
+shared profile were removed as identically inactive when the common Walsh
+carrier was formed.  For \(c\), the TPC--45 support makes \(d_mn\)
+squarefree and \((d_m,n)=1\).  Since \(n=pr\), every divisor \(r\) is
+squarefree, is coprime to \(d_m\), and therefore \(s=d_mr\) is squarefree.
+\end{proof}
+
+\begin{corollary}[Identical-support specialization]
+\label{cor:tpc60-identical-support-missing}
+Suppose the Walsh and terminal constructions use identical row, orbit,
+opposite-row, terminal-prime, literal-mask, and profile supports, and there
+is no additional terminal-only pruning.  Then
+\begin{equation}
+ \boxed{
+ \cW_M
+ =\{w\in\cW_H(y):(m(w),r(w))\notin\cI_X\}.}
+ \label{eq:tpc60-missing-only-cofactor}
+\end{equation}
+Thus the only missing-high mechanism in this specialization is failure of
+the complementary cofactor to enter the retained-pair carrier.
+\end{corollary}
+
+This is a support-alignment theorem, not an occupancy theorem.  It does not
+show that the set in \eqref{eq:tpc60-missing-only-cofactor} has small mass,
+or even that some active row contains a represented atom.
+
+\subsection{Zero-cost localization of the diagnostic branch}
+
+Let \(q\le5\) be the number of nonempty first-failure layers, and write
+\begin{equation}
+ N_{\rm dyad}(y)
+ :=1+\left\lfloor\log_2\frac{N_+}{y}\right\rfloor
+ =O(\log X)
+ \label{eq:tpc60-dyadic-block-count}
+\end{equation}
+for the number of represented cofactor cells.  If
+\(\cD_M>0\), one of them satisfies
+\begin{equation}
+ \max_\nu\cD_\nu\ge\frac{\cD_M}{q}.
+ \label{eq:tpc60-failure-pigeonhole}
+\end{equation}
+Combining this constant partition with the \(O(\log X)\) dyadic partition
+of the represented terminal face gives the exact dichotomy
+\begin{equation}
+ \cD_H^W:=\cD_R+\cD_M>0
+ \quad\Longrightarrow\quad
+ \begin{cases}
+  \exists k:\displaystyle
+  \cD_k\ge\dfrac{\cD_H^W}{2N_{\rm dyad}(y)},
+  &\cD_R\ge\cD_H^W/2,\\[8pt]
+  \exists\nu:\displaystyle
+  \cD_\nu\ge\dfrac{\cD_H^W}{2q},
+  &\cD_M\ge\cD_H^W/2,
+ \end{cases}
+ \label{eq:tpc60-represented-missing-dichotomy}
+\end{equation}
+Hence localization has zero fixed-power cost in
+either branch:
+\begin{equation}
+ \boxed{\lambda_{\rm part}=0.}
+ \label{eq:tpc60-zero-partition-cost}
+\end{equation}
+The conclusion is diagnostic.  It either finds a large represented block
+or identifies a dominant reason for missing mass.  It does not force the
+represented alternative and does not imply
+\(\lambda_{\rm reasm}=0\).
+
+\subsection{Exact rowwise represented-mass minimax}
+
+Write
+\begin{equation}
+ W_E(m):=\sum_{\substack{w\in\cW_E\\m(w)=m}}|\beta_w|^2,
+ \qquad E\in\{R,M,H\},
+ \qquad W_H:=W_R+W_M.
+ \label{eq:tpc60-row-weights}
+\end{equation}
+Then literal factorization gives
+\begin{equation}
+ \cD_E(\zeta)=\sum_mW_E(m)|\zeta_m|^2.
+ \label{eq:tpc60-row-diagonal-form}
+\end{equation}
+
+\begin{proposition}[Sharp represented-mass minimax]
+\label{prop:tpc60-rowwise-represented-minimax}
+The optimal constant uniform over any bounded coefficient cube containing
+a nonzero multiple of each coordinate direction is
+\begin{equation}
+ \boxed{
+ \inf_{\cD_H^W(\zeta)>0}
+ \frac{\cD_R(\zeta)}{\cD_H^W(\zeta)}
+ =\min_{m:W_H(m)>0}\frac{W_R(m)}{W_H(m)}.}
+ \label{eq:tpc60-rowwise-represented-minimax}
+\end{equation}
+In particular, if one active row has
+\(W_R(m)=0<W_H(m)\), the uniform represented-mass transfer is exactly zero.
+\end{proposition}
+
+\begin{proof}
+The quotient is a weighted average of the row ratios
+\(W_R(m)/W_H(m)\), with nonnegative weights
+\(W_H(m)|\zeta_m|^2\).  It is at least their minimum.  Concentrating
+\(\zeta\) on a minimizing row attains that minimum after a harmless scalar
+rescaling into the bounded cube.
+\end{proof}
+
+Thus a geometric density statement about the union of rows cannot replace
+a rowwise lower bound when the coefficient class has only upper bounds on
+\(|\zeta_m|\).
+
+\subsection{Residual ladders and ambient degree}
+
+Fix a common source-prime cell of diameter \(O(L)\), a residual key
+\((i,s)\), and a dyadic cofactor block \(R\le r<2R\).  Write
+\begin{equation}
+ m=d\ell,
+ \qquad r=\frac sd.
+ \label{eq:tpc60-d-ell-r}
+\end{equation}
+The fixed-shift equality becomes
+\begin{equation}
+ rp-dj\ell=h_0.
+ \label{eq:tpc60-determinant-equation}
+\end{equation}
+
+\begin{proposition}[Ambient residual ladder bound]
+\label{prop:tpc60-ambient-residual-degree}
+On one common \(D,L\) cell, the number of full, represented, missing, or
+first-failure high atoms with fixed residual key \((i,s)\) and
+\(R\le r<2R\) satisfies
+\begin{equation}
+ \boxed{
+ d_{\max}^{\rm res}(R)
+ \ll_{h_0}\tau(s)\left(1+\frac LR\right)
+ =X^{o(1)}\left(1+\frac LR\right).}
+ \label{eq:tpc60-residual-degree-bound}
+\end{equation}
+Moreover the prime-resolved degrees at \((i,p)\) and \((i,s,p)\) are at
+most one.  The direct native degree has only the inherited crude bound
+\begin{equation}
+ d_{\rm miss}\ll X^{o(1)}Q.
+ \label{eq:tpc60-crude-native-degree}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Fix \(d\mid s\), hence \(r=s/d\), and put
+\(g=(r,dj)=(r,j)\), using \((d,r)=1\).  If
+\eqref{eq:tpc60-determinant-equation} has one integral solution
+\((p_0,\ell_0)\), all integral solutions lie on the determinant ladder
+\begin{equation}
+ p=p_0+\frac{dj}{g}t,
+ \qquad
+ \ell=\ell_0+\frac rg t,
+ \qquad t\in\mathbb Z.
+ \label{eq:tpc60-determinant-ladder}
+\end{equation}
+Solvability forces \(g\mid h_0\), and therefore \(g\le|h_0|\).  Since
+\(\ell\) lies in an interval of diameter \(O(L)\), the ladder contributes
+\(O_{h_0}(1+L/R)\) candidates.  Summing over \(d\mid s\) gives
+\eqref{eq:tpc60-residual-degree-bound}; primality, retained-pair, residue,
+  mask, and profile tests only delete candidates.  The fixed-
+  \((i,s,p)\) assertion is the TPC--55/TPC--58 prime-resolved injection,
+  while the stronger fixed-\((i,p)\) assertion is the TPC--59
+  critical-cutoff row singleton proved again in
+  \cref{prop:tpc60-same-prime-separation}.
+
+  For the native bound, fixing \(i\) fixes the side, opposite row, and
+  \(j\).  Fixed-coordinate fused-label injectivity leaves at most one
+  active high atom per source row, and the inherited source-system support
+  bound is
+  \(\#\mathcal A_\sigma\ll X^{o(1)}Q\), \(\sigma\in\{1,2\}\).
+  This proves \eqref{eq:tpc60-crude-native-degree}.  A wider union of
+  \(D,L\) cells must pay explicitly for the additional cells.
+\end{proof}
+
+The residual estimate is not the native estimate used directly in
+\eqref{eq:tpc60-mass-degree-upper}: erasing \(s\) can merge many residual
+fibers.  Prime-resolved singleton structure therefore does not imply
+native singleton structure.

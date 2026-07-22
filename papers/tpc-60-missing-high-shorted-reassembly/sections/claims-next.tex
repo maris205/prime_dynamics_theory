@@ -1,0 +1,161 @@
+\section{Claims, limitations, and the next arithmetic gate}
+\label{sec:tpc60-claims-next}
+
+\subsection{Result ledger}
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.23\textwidth}
+                >{\raggedright\arraybackslash}p{0.50\textwidth}
+                >{\raggedright\arraybackslash}p{0.17\textwidth}}
+\toprule
+Object & Exact conclusion & Status\\
+\midrule
+Three physical maps
+& One row-coefficient space and one fixed \(h_0\) support
+  \(B_X=A_X+M_X\), with raw atomic
+  \(\cD_0=\cD_B+\cD_R+\cD_M\).
+& L1 identity\\
+\addlinespace
+Prime-resolved alias
+& Same-prime represented and missing vectors have disjoint support;
+  only base--missing interaction and unequal-prime aliasing remain.
+& L1 identity\\
+\addlinespace
+Uniform reassembly quotient
+& Exact nuisance elimination, shorted-Gram generalized eigenvalue,
+  and effective least singular value.
+& L0 theorem\\
+\addlinespace
+Uniform zero test
+& \(\delta(A,M)>0\) exactly when
+  \(\Ker(A+M)\subseteq\Ker A\); a dimension excess kills it.
+& L0 theorem\\
+\addlinespace
+Distinguished-vector defect
+& Exact signed identity
+  \(\|Bz\|^2-\|Az\|^2=\mathfrak X(z)\).
+& L0 identity\\
+\addlinespace
+Raw mass--degree bridge
+& \(\|Mz\|^2\le d_{\rm miss}\cD_{\rm miss}(z)\), with a sharp
+  reverse-triangle certificate.
+& L0 theorem\\
+\addlinespace
+Missing reason partition
+& Definitional ordered first-failure partition; the inherited-support
+  theorem makes the automatic pseudo-failure layers empty on the common
+  literal carrier.
+& L1 definitional partition plus inherited-support theorem\\
+\addlinespace
+Identical-support specialization
+& Missing high atoms are exactly those whose complementary pair
+  \((m,r)\) is outside \(\cI_X\).
+& Conditional L1 identity\\
+\addlinespace
+Localization
+& One represented dyadic block or one missing failure layer retains an
+  \(X^{-o(1)}\) fraction of its branch.
+& L1, \(\lambda_{\rm part}=0\)\\
+\addlinespace
+Endpoint certificate
+& A route that pays the full residual determinant-ladder capacity incurs
+  exponent at least \(15077/105000+\xi\), far above \(1/400\); this is not
+  a lower bound for the actual native degree.
+& Route-specific no-go\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{What is not proved}
+
+The following statements do not follow from this paper:
+\begin{enumerate}[leftmargin=2.3em]
+ \item \(\cD_M=o(\cD_R)\), either rowwise or for the distinguished
+       coefficient vector;
+ \item a polynomial lower bound for \(\delta(A_X,M_X)\);
+ \item a favorable sign for the base--missing or unequal-prime cross terms;
+ \item \(\lambda_{\rm reasm}=0\) for the physical TPC family;
+ \item a positive fixed-\(h_0\) parity gain, a prime-pair lower bound, a
+       prime-pair asymptotic, or a twin-prime consequence.
+\end{enumerate}
+The first-failure partition can identify where missing mass lies, but does
+not make that mass small.  The same-prime orthogonality deletes one class
+of cross terms, but different primes still alias at the native output.  A
+finite-scale positive eigenvalue is numerical scouting evidence unless its
+scale dependence is controlled.
+
+\subsection{The next ordered attack}
+
+The next paper should not introduce another abstract angle.  The exact
+reassembly theorem leaves a concrete arithmetic decision tree.
+
+\begin{enumerate}[leftmargin=2.3em]
+ \item \emph{Rowwise census.}  Compute or bound the literal weights
+ \begin{equation}
+  W_R(m),\qquad W_M(m),\qquad
+  \frac{W_R(m)}{W_R(m)+W_M(m)}
+  \label{eq:tpc60-next-row-census}
+ \end{equation}
+ on every active row.  If an active missing-only row occurs, record the
+ exact death of the uniform represented-mass route.
+
+ \item \emph{Cofactor-defect estimate.}  Under the identical-support
+ specialization, replace the vague terminal failure by the single event
+ \begin{equation}
+  (m,r)\notin\cI_X.
+  \label{eq:tpc60-next-cofactor-defect}
+ \end{equation}
+ Estimate its coefficient-weighted mass relative to the represented
+ affine reference, not merely its unweighted cardinality.
+
+ \item \emph{Restricted native degree.}  Factor the missing map through
+ residual keys and estimate its norm on the actual coefficient image.
+ The ambient bound \(X^{o(1)}Q\) is too large, while the residual ladder
+ bound alone does not survive erasure of \(s\).  A successful argument
+ must prove either a smaller restricted degree exponent or destructive
+ phase cancellation inside the missing map itself.
+
+ \item \emph{Shorted kernel audit.}  Assemble the literal matrices
+ \(A_X,M_X\) at finite scales and test
+ \begin{equation}
+  \Ker(A_X+M_X)\subseteq\Ker A_X,
+  \qquad
+  \dim\bigl((\Ker A_X)^\perp\bigr)
+  \le\dim\cH_{\rm out}
+       -\rank\!\left(B_X|_{\Ker A_X}\right).
+  \label{eq:tpc60-next-kernel-audit}
+ \end{equation}
+ Repeated exact failure closes the uniform door.  Repeated numerical
+ success does not prove an asymptotic lower singular value, but it can
+ identify the correct subspace for a theorem.
+
+ \item \emph{Signed fallback.}  If the uniform door is killed, retain the
+ physical distinguished vector and estimate
+ \begin{equation}
+  -2\operatorname{Re}
+    \langle A_X\zeta_*,M_X\zeta_*\rangle
+  \label{eq:tpc60-next-signed-cross-term}
+ \end{equation}
+ using the exact base--missing and unequal-prime decomposition.  This is a
+ legitimate narrower route, provided it is not relabeled uniform.
+\end{enumerate}
+
+The mass--degree route advances automatically at zero fixed-power cost when
+its arithmetic saving strictly beats the degree plus all
+represented-reference losses, as in
+\eqref{eq:tpc60-common-reference-threshold}.  At equality, the finer test
+\eqref{eq:tpc60-equality-subpower-test} decides whether this certificate
+still closes at subpower cost.  If every provable lower bound already
+spends the remaining \(1/400\) slack, the correct result is a route-closure
+theorem, not an adjusted normalization.
+
+\paragraph{Conclusion.}
+TPC--59 exposed a high Walsh boundary omitted by the represented terminal
+census.  The present paper closes the corresponding interface: it writes
+the physical maps on one coefficient space, identifies the precise
+same-prime simplification, eliminates invisible coefficient directions by
+shorting the full Gram, and gives sharp kernel and mass--degree
+certificates.  The route has therefore moved from an unspecified
+\emph{off-carrier restoration} to a finite list of falsifiable arithmetic
+tasks.  It has not crossed the parity barrier.
