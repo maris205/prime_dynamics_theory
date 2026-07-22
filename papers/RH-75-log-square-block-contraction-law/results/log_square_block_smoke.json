@@ -1,0 +1,77 @@
+{
+  "all_executed_anchors_green": true,
+  "constants": {
+    "finite_constant": 0.552,
+    "finite_log_power": 1,
+    "horizon_offset": 2,
+    "observation_density_constant": 2.561,
+    "q_constant": 0.086,
+    "sigma_zero": 0.16,
+    "source_block_constant": 3.1,
+    "source_log_power": 0
+  },
+  "precision_bits": 256,
+  "route_consequence": "The uniform Hardy gate is reduced to an explicit all-level law: M_k=O(k^2), ||A_k^{M_k}||=O(sqrt(sigma_k)), bounded one-block source energy, and logarithmic finite-prefix energy. All five validated anchors satisfy common constants, but the induction or analytic mechanism proving those constants for every dyadic level remains open.",
+  "rows": [
+    {
+      "all_channels_green": true,
+      "channels": [
+        {
+          "actual_tail_energy_squared_ball": "[0.0058391119573532650157933711378085059 +/- 2.37e-38]",
+          "actual_tail_energy_squared_upper": 0.005839111957353266,
+          "all_anchor_gates_green": true,
+          "allowed_log_square_horizon": 4,
+          "finite_energy_squared_ball": "[0.817111049734253094837349211053648524 +/- 7.18e-37]",
+          "finite_energy_squared_upper": 0.8171110497342532,
+          "finite_polylog_envelope_ball": "1.104000000000000092370555648813024163246154785156250000000000000000000000000",
+          "finite_polylog_envelope_upper": 1.1040000000000003,
+          "horizon_gate": true,
+          "normalized_q_over_sqrt_sigma_ball": "[0.0525531725117089940107389553414271381514610472 +/- 6.77e-47]",
+          "normalized_q_over_sqrt_sigma_upper": 0.052553172511709004,
+          "observation_density_ball": "[2.5599999999999995993967696082051501671 +/- 5.61e-38]",
+          "observation_density_upper": 2.56,
+          "selected_horizon": 4,
+          "side": "left",
+          "source_block_ball": "[0.825499863207628956016286115638899720 +/- 1.34e-37]",
+          "source_block_upper": 0.825499863207629,
+          "true_block_contraction_ball": "[0.02102126900468359782309211516006033257558041122 +/- 8.74e-48]",
+          "uniform_tail_envelope_ball": "[0.05878714996177876148509987806504161278668299599666760384332259582012839178677 +/- 3.97e-78]",
+          "uniform_tail_envelope_upper": 0.05878714996177877
+        },
+        {
+          "actual_tail_energy_squared_ball": "[0.00647071956473883527780034357585216479 +/- 3.02e-39]",
+          "actual_tail_energy_squared_upper": 0.006470719564738836,
+          "all_anchor_gates_green": true,
+          "allowed_log_square_horizon": 4,
+          "finite_energy_squared_ball": "[1.00525309213220198049117029007370689 +/- 3.19e-36]",
+          "finite_energy_squared_upper": 1.0052530921322023,
+          "finite_polylog_envelope_ball": "1.104000000000000092370555648813024163246154785156250000000000000000000000000",
+          "finite_polylog_envelope_upper": 1.1040000000000003,
+          "horizon_gate": true,
+          "normalized_q_over_sqrt_sigma_ball": "[0.04962848422787402363178988476134701603099090174 +/- 9.14e-48]",
+          "normalized_q_over_sqrt_sigma_upper": 0.04962848422787403,
+          "observation_density_ball": "[2.270953536495913648528424044594822352 +/- 4.03e-37]",
+          "observation_density_upper": 2.270953536495914,
+          "selected_horizon": 4,
+          "side": "right",
+          "source_block_ball": "[1.156408108052838365263195606306296302 +/- 5.16e-37]",
+          "source_block_upper": 1.1564081080528386,
+          "true_block_contraction_ball": "[0.01985139369114960965933602590590946201423425012 +/- 3.47e-48]",
+          "uniform_tail_envelope_ball": "[0.05878714996177876148509987806504161278668299599666760384332259582012839178677 +/- 3.97e-78]",
+          "uniform_tail_envelope_upper": 0.05878714996177877
+        }
+      ],
+      "fine_dimension": 32,
+      "level": 0,
+      "sigma": 0.16
+    }
+  ],
+  "status": "rh75_log_square_square_root_block_contraction_audit",
+  "theorem_boundary": {
+    "all_dyadic_levels_proved": false,
+    "five_scale_anchor_certificate": true,
+    "log_square_horizon_sufficiency_theorem": true,
+    "square_root_block_contraction_tail_theorem": true,
+    "uniform_stage_A1_closed": false
+  }
+}

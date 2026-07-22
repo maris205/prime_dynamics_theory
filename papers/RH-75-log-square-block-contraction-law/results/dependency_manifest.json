@@ -1,0 +1,35 @@
+{
+  "external_inputs": {
+    "rh70_frozen_audit": {
+      "path": "papers/RH-70-frozen-production-block-hardy-audit/results/frozen_production_interval_audit.json",
+      "sha256": "3a7ae810cc6a8d1b8c667267dd5bb7bd9279273b34b7f6305efaf9f9e8fbde26"
+    },
+    "rh74_true_bridge_audit": {
+      "path": "papers/RH-74-validated-upstream-hardy-bridge/results/validated_upstream_bridge_audit.json",
+      "sha256": "dd2d747e6c81d2b8bd0bb81da8c22eb2b67c4d336dc8ab3f0175d678d4dc34d4"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "c361223c631351b9e9eaf47ed6b5c6d844b6bfa3c0d0eec844026e745b97bd0d",
+    "experiments/make_figures.py": "f4efb04627a6fe31ada530067ffeb6527b4d2adffb172814f24137ec62d30d65",
+    "experiments/run_log_square_audit.py": "0678e3a87bad20223a80c1db85e4928fd622932460b4f8943bffe1cfcab0c292",
+    "experiments/verify_archive.py": "9bbdf135ad6ca511ce25c374873a5985a6fc19b0110f8fe23ac0f34422cefe69",
+    "src/block_scaling/__init__.py": "6c3d125aa151abae4669061872cd1c9f60eb7aef99874841e97a2ee3f0256db4",
+    "src/block_scaling/criteria.py": "0ca0346371206f0a5fd830d3d8942cd7db6a94160f235971328afc2ddf8bcef3",
+    "tests/test_archived_results.py": "027407107a35c57527c90300b521d03901cafc515ae60b9e3a4ea385e300550b",
+    "tests/test_theory.py": "69a036d6e0507f6fdd6591357e92f588c242cb828c7d472e2346b43546f8433c"
+  },
+  "publication_artifacts": {
+    ".gitignore": "45bc6f151fb9fa411571660ee59bb7d034af65fbb7c1c6104c4c7af4ada209fc",
+    "README.md": "3aa5962be1453375fcdda53918423cb976cb79fa0a6903ce0cea5df151b3d2bc",
+    "figures/log_square_block_contraction.pdf": "bb99c6506f3e28e0aa442a6b7f313e8f770d2b0a5fdb5bdfbebcdf83874d023b",
+    "figures/log_square_block_contraction.png": "8b574c3a1ec2b236d5e07b57f824f1126926b5fa440514f56bb0e0aaac843bd9",
+    "log-square-block-contraction-law.pdf": "2b30672573ec301fc55ac1b4abc54ace7e4664cdd367435ef58896c867add0bf",
+    "main.pdf": "2b30672573ec301fc55ac1b4abc54ace7e4664cdd367435ef58896c867add0bf",
+    "main.tex": "720eb57701a06a3afd9db28798416911bca2dfc6383b580d76c9c1931883481a",
+    "pyproject.toml": "377890240af8224de88148f7dead55eb97294cab3036d3ecf6c3e1c80c186f69",
+    "references.bib": "83a49ca4357c335e824dbf86e36e66f37be840e4f91feb758467efa1b7f8757b",
+    "requirements.txt": "efa940308487b4bf6b29874b32bbfe6e51b228c5df2ddd12573594b8586c481f"
+  },
+  "status": "all_rh75_inputs_sources_and_publication_artifacts_hashed"
+}
