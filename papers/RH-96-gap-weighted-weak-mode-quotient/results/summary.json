@@ -1,0 +1,105 @@
+{
+  "audit": {
+    "channel_count": 10,
+    "primary_gap_certificate_count": 5,
+    "primary_maximum_adaptive_to_full_tail_ratio": 1.0000046480940048,
+    "primary_maximum_endpoint_to_reference_ratio": 1.001172319664795,
+    "primary_omitted_update_count": 5,
+    "primary_threshold": 1e-08,
+    "primary_update_count": 120,
+    "primary_width_four_update_count": 115,
+    "primary_width_three_update_count": 5,
+    "scale_count": 5,
+    "threshold_summaries": {
+      "1e-04": {
+        "all_endpoints_green": false,
+        "all_gap_certificates_green": true,
+        "gap_certificate_count": 22,
+        "maximum_actual_tail_loss": 2.0259550205365028e-09,
+        "maximum_adaptive_to_full_tail_ratio": 1.0147271570846739,
+        "maximum_endpoint_to_reference_ratio": 1.0140915204057648,
+        "maximum_gap_bound_over_actual_loss": 12717292.483320959,
+        "maximum_gap_bound_to_full_tail": 137.60377498563412,
+        "minimum_retained_to_omitted_gap": 2.2130406467911544e-12,
+        "omitted_update_count": 22,
+        "threshold": 0.0001,
+        "update_count": 120,
+        "width_four_update_count": 98,
+        "width_three_update_count": 17,
+        "width_two_update_count": 5
+      },
+      "1e-06": {
+        "all_endpoints_green": false,
+        "all_gap_certificates_green": true,
+        "gap_certificate_count": 11,
+        "maximum_actual_tail_loss": 2.583087874933489e-10,
+        "maximum_adaptive_to_full_tail_ratio": 1.0249206385701743,
+        "maximum_endpoint_to_reference_ratio": 1.0249211926604973,
+        "maximum_gap_bound_over_actual_loss": 8954281.26922297,
+        "maximum_gap_bound_to_full_tail": 9.444090032351093,
+        "minimum_retained_to_omitted_gap": 2.1885904890233875e-12,
+        "omitted_update_count": 11,
+        "threshold": 1e-06,
+        "update_count": 120,
+        "width_four_update_count": 109,
+        "width_three_update_count": 10,
+        "width_two_update_count": 1
+      },
+      "1e-08": {
+        "all_endpoints_green": true,
+        "all_gap_certificates_green": true,
+        "gap_certificate_count": 5,
+        "maximum_actual_tail_loss": 2.0293267504725655e-16,
+        "maximum_adaptive_to_full_tail_ratio": 1.0000046480940048,
+        "maximum_endpoint_to_reference_ratio": 1.001172319664795,
+        "maximum_gap_bound_over_actual_loss": 5084.757867467763,
+        "maximum_gap_bound_to_full_tail": 0.0002890670425824514,
+        "minimum_retained_to_omitted_gap": 2.2218858259877526e-12,
+        "omitted_update_count": 5,
+        "threshold": 1e-08,
+        "update_count": 120,
+        "width_four_update_count": 115,
+        "width_three_update_count": 5,
+        "width_two_update_count": 0
+      }
+    }
+  },
+  "program_boundary": {
+    "adaptive_width_frozen_horizons_validated": true,
+    "gap_weighted_weak_mode_tail_loss_theorem": true,
+    "hilbert_polya_operator": false,
+    "repeated_block_contraction_proved": false,
+    "riemann_hypothesis": false,
+    "uniform_adaptive_width_law_proved": false,
+    "uniform_retained_to_omitted_gap_proved": false,
+    "uniform_stage_A1_closed": false,
+    "universal_omitted_block_bound": true,
+    "weak_cross_modes_geometrically_identified": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "4896738c20670aa20f3e913962a960991d39338933d30fdcfc3d6a9bc01800cf",
+    "THEOREM_LEDGER.md": "3d48208af9def1514de7fe96f1f2af26c07aff2c6f5c141efddf845ca702bfa4",
+    "UPDATED_ROADMAP.md": "de2d305ff613aa902211afd3291ecab090de914cea476f5947d3eb91c12c95c4",
+    "figures/gap_weighted_weak_mode_quotient.pdf": "be94e03a6c9c72ba6660ba35feb6568a1cf609d9f28985fa23524c942ba5e5e5",
+    "figures/gap_weighted_weak_mode_quotient.png": "7378e08a175708e6acc6feebe315695922e533566c3af779e71dee6eabfb6ebf",
+    "gap-weighted-weak-mode-quotient.pdf": "ba8f4ac419b3c72b213a5778258ba85a9654ac09c84313a296e115eb3158f038",
+    "main.pdf": "ba8f4ac419b3c72b213a5778258ba85a9654ac09c84313a296e115eb3158f038",
+    "main.tex": "5f7f432d9ade71d42c1eaef41de5da05d0d4dec9499e8b83328407e4032bfed5",
+    "pyproject.toml": "4a0e5517dd54e05b1ebd975e4491dd1d71d810344c2fc34c369d2c256bd7e418",
+    "references.bib": "054e0622f8a0a1f9c9d0bc94bb0131e908ba600338c417791f002a1dc136ac58",
+    "requirements.txt": "223859266dc308c42daaf834ec590bebdd11ebef66201f51760d5deb95108486"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "05842417586608450dfcc819f8043f0b911f415016ff9b02608094f132f2dc65",
+    "results/weak_mode_quotient_audit.json": "123b4a59da8d0e640567d6b4f720dd82e157a424054c009ea6048bb4ce95c398",
+    "results/weak_mode_quotient_smoke.json": "76a4cd1fd772d74145807497ee5ab3e50fbe353e463ed62aca0c11a505d152ff"
+  },
+  "route_consequence": "Weak complement directions can be quotiented by a gap-weighted energy bound instead of being geometrically reconstructed. At relative threshold 1e-8, the adaptive chain drops the weak fourth mode exactly where RH-95 found conditioning failures, certifies every omitted-mode loss, and preserves all ten source-to-endpoint gates. This removes the need to invert numerically meaningless fourth singular modes on the frozen horizons.",
+  "status": "rh96_gap_weighted_weak_mode_quotient_archived",
+  "theorem": {
+    "adaptive_relative_cutoff": true,
+    "gap_weighted_tail_loss": true,
+    "universal_omitted_block_bound": true
+  }
+}
