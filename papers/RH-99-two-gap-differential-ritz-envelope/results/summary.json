@@ -1,0 +1,66 @@
+{
+  "audit": {
+    "channel_count": 10,
+    "cross_gap_nonpositive_count": 0,
+    "differential_certificate_available_count": 115,
+    "differential_certificate_unavailable_count": 5,
+    "full_width_differential_unavailable_count": 5,
+    "maximum_bound_to_probe_ratio": 1.0317701224596055e+36,
+    "maximum_full_to_adaptive_bound_ratio_on_quotients": 9439376446.977642,
+    "maximum_probe_derivative": 7302048.220929079,
+    "maximum_quotient_distance_to_radius_ratio": 1.2147989891348718e+33,
+    "maximum_two_gap_derivative_bound": 1.4358886475147155e+40,
+    "minimum_bound_to_probe_ratio": 17639.64774709585,
+    "minimum_cross_squared_gap": 6.470248568072786e-30,
+    "minimum_ritz_gap": -4.675319830290504e-13,
+    "minimum_threshold_margin": 4.344867430769757e-09,
+    "minimum_two_gap_linearized_radius": 0.0,
+    "probe_count": 720,
+    "probe_green_update_count": 115,
+    "quotient_inside_linearized_radius_count": 0,
+    "quotient_update_count": 5,
+    "ritz_gap_nonpositive_count": 5,
+    "scale_count": 5,
+    "update_count": 120
+  },
+  "program_boundary": {
+    "adaptive_branch_uniformly_separated": false,
+    "all_frozen_cross_selection_gaps_separated": false,
+    "all_frozen_output_ritz_gaps_certified": false,
+    "cross_covariance_derivative_formula": true,
+    "finite_neighborhood_lipschitz_tube_proved": false,
+    "finite_tangent_probe_bounds_validated_where_available": true,
+    "hilbert_polya_operator": false,
+    "repeated_block_contraction_proved": false,
+    "replay_free_block_envelope_proved": false,
+    "riemann_hypothesis": false,
+    "spectral_projector_sylvester_bound": true,
+    "two_gap_refresh_derivative_theorem": true
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "d5b22ff0c142e390b60f7e355e05fb594b7524e76bc3aa1a81a935d6d62940de",
+    "THEOREM_LEDGER.md": "cc8ebf0cb4a6ce22c4af81bd5c3f2b21bedf397dc50ecf71413b0429fbfc28ca",
+    "UPDATED_ROADMAP.md": "e4ea5a3ad0484dcd131eabfdeb3dbd6a482b14f566daa14cbd9bfa7162b7c4af",
+    "figures/two_gap_differential_ritz_envelope.pdf": "61ca365f63bc453b154e34b17bc807cdf099f1e743d3abcb46d87784fb0b253c",
+    "figures/two_gap_differential_ritz_envelope.png": "34ac5e9517e49836a40a2ca7b93ec2313ad1db80947545879582a442b72db893",
+    "main.pdf": "c52570fc203bb68af8bff31cb5c9fddc8f314ca5fc09d1944d3bdd68d0fb6694",
+    "main.tex": "fa8554c3321741339959655e0d68fd9552796292e07e67553d31ad84edbbbe48",
+    "pyproject.toml": "d6a42afadeec02dc3e0438110f889e6c4ec9ccf66b1bab967096b620c8445e24",
+    "references.bib": "da11211773e6a44720a643a1435c88be6ffabcfb2f8491c93aff3f0a523ca770",
+    "requirements.txt": "223859266dc308c42daaf834ec590bebdd11ebef66201f51760d5deb95108486",
+    "two-gap-differential-ritz-envelope.pdf": "c52570fc203bb68af8bff31cb5c9fddc8f314ca5fc09d1944d3bdd68d0fb6694"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "0663c47de9466d93250b3603198f762e573f8e574ecc9a9c0433e1e0ced60462",
+    "results/two_gap_differential_audit.json": "ff61aff10bb7ba19d3938f5ebef86d24890f5ed4baae91ba77d8cb139cb6c0c7",
+    "results/two_gap_differential_smoke.json": "2de9eda3b7e12764c158d97dfe80ead8a4cc64675ebc5f5faca8151770bfd945"
+  },
+  "route_consequence": "The differential sensitivity of one invariant projected-cross Ritz refresh is controlled by two spectral gaps: the selected cross-covariance gap and the output Ritz gap. Adaptive weak-mode quotienting improves the formal derivative envelope at the five ill-conditioned updates, and all finite tangent probes lie below the theorem bound wherever both gaps are certified. However, five fine-scale output Ritz gaps cannot be certified positive with the binary64 residual guard, the available bounds remain highly conservative, and the actual quotient displacement is outside every first-order separation radius. A finite neighborhood tube is therefore not closed.",
+  "status": "rh99_two_gap_differential_ritz_envelope_archived",
+  "theorem": {
+    "cross_covariance_derivative": true,
+    "spectral_projector_sylvester_bound": true,
+    "two_gap_refresh_derivative": true
+  }
+}

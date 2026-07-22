@@ -1,0 +1,563 @@
+{
+  "all_executed_available_two_gap_probe_bounds_green": true,
+  "all_executed_two_gap_certificates_available": true,
+  "audit_summary": {
+    "channel_count": 2,
+    "cross_gap_nonpositive_count": 0,
+    "differential_certificate_available_count": 8,
+    "differential_certificate_unavailable_count": 0,
+    "full_width_differential_unavailable_count": 0,
+    "maximum_bound_to_probe_ratio": 7.156025616883882e+30,
+    "maximum_full_to_adaptive_bound_ratio_on_quotients": 6048023870.942325,
+    "maximum_probe_derivative": 168302.05082243457,
+    "maximum_quotient_distance_to_radius_ratio": 1.2147989891348718e+33,
+    "maximum_two_gap_derivative_bound": 1.2043737870594347e+36,
+    "minimum_bound_to_probe_ratio": 5.3835190559760065e+19,
+    "minimum_cross_squared_gap": 2.9064218705763804e-23,
+    "minimum_ritz_gap": 6.870676187827626e-13,
+    "minimum_threshold_margin": 9.649795639345901e-09,
+    "minimum_two_gap_linearized_radius": 4.151535058071847e-37,
+    "probe_count": 48,
+    "probe_green_update_count": 8,
+    "quotient_inside_linearized_radius_count": 0,
+    "quotient_update_count": 4,
+    "ritz_gap_nonpositive_count": 0,
+    "scale_count": 1,
+    "update_count": 8
+  },
+  "limitations": [
+    "The theorem is infinitesimal and assumes fixed selected cross and Ritz branches.",
+    "Finite probes do not certify all tangent directions or a neighborhood-uniform derivative bound.",
+    "First-order gap radii are diagnostics, not nonlinear invariant balls.",
+    "No replay-free block envelope or repeated-block theorem is proved.",
+    "No Hilbert--Polya operator, zero identification, or Riemann Hypothesis result is claimed."
+  ],
+  "precision_bits": 384,
+  "primary_threshold": 1e-08,
+  "probe_count_per_update": 6,
+  "route_consequence": "The differential sensitivity of one invariant projected-cross Ritz refresh is controlled by two spectral gaps: the selected cross-covariance gap and the output Ritz gap. Adaptive weak-mode quotienting improves the formal derivative envelope at the five ill-conditioned updates, and all finite tangent probes lie below the theorem bound wherever both gaps are certified. However, five fine-scale output Ritz gaps cannot be certified positive with the binary64 residual guard, the available bounds remain highly conservative, and the actual quotient displacement is outside every first-order separation radius. A finite neighborhood tube is therefore not closed.",
+  "rows": [
+    {
+      "all_channels_green": true,
+      "channels": [
+        {
+          "all_probe_bounds_green": true,
+          "clock_rank": 4,
+          "dimension": 32,
+          "refresh_endpoint": 4,
+          "side": "left",
+          "steps": [
+            {
+              "adaptive_to_full_projector_distance": 0.0,
+              "all_probes_below_two_gap_bound": true,
+              "cross_linearized_radius": 3.3752140672101825e-16,
+              "cross_squared_gap": 3.69686894430389e-15,
+              "differential_certificate_available": true,
+              "full_to_adaptive_bound_ratio": 1.0,
+              "full_width_derivative_bound": 6.56823100388135e+19,
+              "full_width_differential_certificate_available": true,
+              "gram_operator_norm": 0.955379115064443,
+              "maximum_probe_derivative": 1.2200627388121246,
+              "probe_count": 6,
+              "probe_rows": [
+                {
+                  "input_projector_distance": 6.341433327776672e-10,
+                  "output_projector_distance": 5.992382411999195e-10,
+                  "probe": 0,
+                  "secant_derivative": 0.9449570944397431
+                },
+                {
+                  "input_projector_distance": 7.122532469183844e-10,
+                  "output_projector_distance": 8.689936471630726e-10,
+                  "probe": 1,
+                  "secant_derivative": 1.2200627388121246
+                },
+                {
+                  "input_projector_distance": 7.333519781678704e-10,
+                  "output_projector_distance": 3.694168210436456e-10,
+                  "probe": 2,
+                  "secant_derivative": 0.5037374031042472
+                },
+                {
+                  "input_projector_distance": 6.483065284701357e-10,
+                  "output_projector_distance": 5.717219475505673e-10,
+                  "probe": 3,
+                  "secant_derivative": 0.8818697983802638
+                },
+                {
+                  "input_projector_distance": 6.040929000417125e-10,
+                  "output_projector_distance": 5.418907659828416e-10,
+                  "probe": 4,
+                  "secant_derivative": 0.8970321716170214
+                },
+                {
+                  "input_projector_distance": 6.6479687513711e-10,
+                  "output_projector_distance": 7.135334494643043e-10,
+                  "probe": 5,
+                  "secant_derivative": 1.0733104744470146
+                }
+              ],
+              "probe_step": 1e-09,
+              "quotient_displacement_inside_linearized_radius": true,
+              "ritz_gap": 8.618982481470517e-05,
+              "ritz_linearized_radius": 7.612399742100059e-21,
+              "selected_width": 4,
+              "threshold_margin": 1.211879877923376e-05,
+              "time": 1,
+              "two_gap_derivative_bound": 6.56823100388135e+19,
+              "two_gap_linearized_radius": 7.612399742100059e-21
+            },
+            {
+              "adaptive_to_full_projector_distance": 0.0,
+              "all_probes_below_two_gap_bound": true,
+              "cross_linearized_radius": 9.239366863122582e-22,
+              "cross_squared_gap": 1.0852516367322624e-20,
+              "differential_certificate_available": true,
+              "full_to_adaptive_bound_ratio": 1.0,
+              "full_width_derivative_bound": 1.1820643890987673e+28,
+              "full_width_differential_certificate_available": true,
+              "gram_operator_norm": 0.9893580592020267,
+              "maximum_probe_derivative": 208.39908529369674,
+              "probe_count": 6,
+              "probe_rows": [
+                {
+                  "input_projector_distance": 6.015677176393569e-10,
+                  "output_projector_distance": 1.0801193696742434e-07,
+                  "probe": 0,
+                  "secant_derivative": 179.5507534734071
+                },
+                {
+                  "input_projector_distance": 7.16873898476235e-10,
+                  "output_projector_distance": 1.3894798045084534e-07,
+                  "probe": 1,
+                  "secant_derivative": 193.8248564303832
+                },
+                {
+                  "input_projector_distance": 6.915573929284961e-10,
+                  "output_projector_distance": 1.2757789202074147e-07,
+                  "probe": 2,
+                  "secant_derivative": 184.47910950744827
+                },
+                {
+                  "input_projector_distance": 7.075800297899868e-10,
+                  "output_projector_distance": 1.0668440804257343e-07,
+                  "probe": 3,
+                  "secant_derivative": 150.77362778912496
+                },
+                {
+                  "input_projector_distance": 7.346579303794844e-10,
+                  "output_projector_distance": 1.3304279686511894e-07,
+                  "probe": 4,
+                  "secant_derivative": 181.09488969430473
+                },
+                {
+                  "input_projector_distance": 6.969992180372812e-10,
+                  "output_projector_distance": 1.452539994893913e-07,
+                  "probe": 5,
+                  "secant_derivative": 208.39908529369674
+                }
+              ],
+              "probe_step": 1e-09,
+              "quotient_displacement_inside_linearized_radius": true,
+              "ritz_gap": 1.8117578251906225e-07,
+              "ritz_linearized_radius": 4.2298880214233626e-29,
+              "selected_width": 4,
+              "threshold_margin": 1.3934666992477754e-08,
+              "time": 2,
+              "two_gap_derivative_bound": 1.1820643890987673e+28,
+              "two_gap_linearized_radius": 4.2298880214233626e-29
+            },
+            {
+              "adaptive_to_full_projector_distance": 0.0004534574650658114,
+              "all_probes_below_two_gap_bound": true,
+              "cross_linearized_radius": 2.630310870551626e-19,
+              "cross_squared_gap": 3.144498942607687e-18,
+              "differential_certificate_available": true,
+              "full_to_adaptive_bound_ratio": 386962502.7130135,
+              "full_width_derivative_bound": 6.549530740745553e+36,
+              "full_width_differential_certificate_available": true,
+              "gram_operator_norm": 0.998117255094503,
+              "maximum_probe_derivative": 3558.630465282598,
+              "probe_count": 6,
+              "probe_rows": [
+                {
+                  "input_projector_distance": 7.004854740299985e-10,
+                  "output_projector_distance": 2.3595301892808314e-06,
+                  "probe": 0,
+                  "secant_derivative": 3368.421297455461
+                },
+                {
+                  "input_projector_distance": 6.956706571130219e-10,
+                  "output_projector_distance": 1.7860124665158744e-06,
+                  "probe": 1,
+                  "secant_derivative": 2567.324707826092
+                },
+                {
+                  "input_projector_distance": 6.790842005925934e-10,
+                  "output_projector_distance": 2.0873130836820835e-06,
+                  "probe": 2,
+                  "secant_derivative": 3073.71763598773
+                },
+                {
+                  "input_projector_distance": 6.964058973999589e-10,
+                  "output_projector_distance": 2.478251242689961e-06,
+                  "probe": 3,
+                  "secant_derivative": 3558.630465282598
+                },
+                {
+                  "input_projector_distance": 6.606468821458126e-10,
+                  "output_projector_distance": 1.707324591436491e-06,
+                  "probe": 4,
+                  "secant_derivative": 2584.3224838827955
+                },
+                {
+                  "input_projector_distance": 7.005040997402412e-10,
+                  "output_projector_distance": 1.4190263356797001e-06,
+                  "probe": 5,
+                  "secant_derivative": 2025.721671301994
+                }
+              ],
+              "probe_step": 1e-09,
+              "quotient_displacement_inside_linearized_radius": false,
+              "ritz_gap": 4.4839749506436094e-10,
+              "ritz_linearized_radius": 2.954123875666888e-29,
+              "selected_width": 3,
+              "threshold_margin": 9.649795639345901e-09,
+              "time": 3,
+              "two_gap_derivative_bound": 1.6925491991669644e+28,
+              "two_gap_linearized_radius": 2.954123875666888e-29
+            },
+            {
+              "adaptive_to_full_projector_distance": 0.0005043280591903661,
+              "all_probes_below_two_gap_bound": true,
+              "cross_linearized_radius": 2.4186439985989557e-24,
+              "cross_squared_gap": 2.9064218705763804e-23,
+              "differential_certificate_available": true,
+              "full_to_adaptive_bound_ratio": 36182791.53210427,
+              "full_width_derivative_bound": 4.3577605663902466e+43,
+              "full_width_differential_certificate_available": true,
+              "gram_operator_norm": 1.0006973020555454,
+              "maximum_probe_derivative": 168302.05082243457,
+              "probe_count": 6,
+              "probe_rows": [
+                {
+                  "input_projector_distance": 6.557853243893159e-10,
+                  "output_projector_distance": 0.00010522838534819064,
+                  "probe": 0,
+                  "secant_derivative": 160461.6349812067
+                },
+                {
+                  "input_projector_distance": 6.775795303311659e-10,
+                  "output_projector_distance": 0.00011403802455003722,
+                  "probe": 1,
+                  "secant_derivative": 168302.05082243457
+                },
+                {
+                  "input_projector_distance": 6.04627503742672e-10,
+                  "output_projector_distance": 8.506279064169704e-05,
+                  "probe": 2,
+                  "secant_derivative": 140686.2739705926
+                },
+                {
+                  "input_projector_distance": 7.37416691813226e-10,
+                  "output_projector_distance": 7.410734918428113e-05,
+                  "probe": 3,
+                  "secant_derivative": 100495.89330838087
+                },
+                {
+                  "input_projector_distance": 7.050033770532252e-10,
+                  "output_projector_distance": 7.848921487403762e-05,
+                  "probe": 4,
+                  "secant_derivative": 111331.68638440715
+                },
+                {
+                  "input_projector_distance": 6.748852382920318e-10,
+                  "output_projector_distance": 5.091594088548597e-05,
+                  "probe": 5,
+                  "secant_derivative": 75443.8502971878
+                }
+              ],
+              "probe_step": 1e-09,
+              "quotient_displacement_inside_linearized_radius": false,
+              "ritz_gap": 6.870676187827626e-13,
+              "ritz_linearized_radius": 4.151535058071847e-37,
+              "selected_width": 3,
+              "threshold_margin": 9.897876233226033e-09,
+              "time": 4,
+              "two_gap_derivative_bound": 1.2043737870594347e+36,
+              "two_gap_linearized_radius": 4.151535058071847e-37
+            }
+          ]
+        },
+        {
+          "all_probe_bounds_green": true,
+          "clock_rank": 4,
+          "dimension": 16,
+          "refresh_endpoint": 4,
+          "side": "right",
+          "steps": [
+            {
+              "adaptive_to_full_projector_distance": 0.0,
+              "all_probes_below_two_gap_bound": true,
+              "cross_linearized_radius": 8.420005623317602e-18,
+              "cross_squared_gap": 8.766787036782808e-17,
+              "differential_certificate_available": true,
+              "full_to_adaptive_bound_ratio": 1.0,
+              "full_width_derivative_bound": 1.1463287565409579e+21,
+              "full_width_differential_certificate_available": true,
+              "gram_operator_norm": 0.9314797428121838,
+              "maximum_probe_derivative": 19.276071873393104,
+              "probe_count": 6,
+              "probe_rows": [
+                {
+                  "input_projector_distance": 7.930278750346324e-10,
+                  "output_projector_distance": 9.553838278837994e-09,
+                  "probe": 0,
+                  "secant_derivative": 12.047291879142037
+                },
+                {
+                  "input_projector_distance": 6.147246160055435e-10,
+                  "output_projector_distance": 4.1421610503765285e-09,
+                  "probe": 1,
+                  "secant_derivative": 6.738238460812142
+                },
+                {
+                  "input_projector_distance": 6.796875105540356e-10,
+                  "output_projector_distance": 7.878706003053338e-09,
+                  "probe": 2,
+                  "secant_derivative": 11.591659226798425
+                },
+                {
+                  "input_projector_distance": 6.197988211443925e-10,
+                  "output_projector_distance": 1.1947286623423626e-08,
+                  "probe": 3,
+                  "secant_derivative": 19.276071873393104
+                },
+                {
+                  "input_projector_distance": 6.884884076204264e-10,
+                  "output_projector_distance": 7.055362788519482e-09,
+                  "probe": 4,
+                  "secant_derivative": 10.247613046825917
+                },
+                {
+                  "input_projector_distance": 6.918309143029798e-10,
+                  "output_projector_distance": 1.2066942593625848e-08,
+                  "probe": 5,
+                  "secant_derivative": 17.442040163503393
+                }
+              ],
+              "probe_step": 1e-09,
+              "quotient_displacement_inside_linearized_radius": true,
+              "ritz_gap": 0.00019301090254640038,
+              "ritz_linearized_radius": 4.361750476440527e-22,
+              "selected_width": 4,
+              "threshold_margin": 1.2791842379820385e-07,
+              "time": 1,
+              "two_gap_derivative_bound": 1.1463287565409579e+21,
+              "two_gap_linearized_radius": 4.361750476440527e-22
+            },
+            {
+              "adaptive_to_full_projector_distance": 0.0,
+              "all_probes_below_two_gap_bound": true,
+              "cross_linearized_radius": 3.621075091787104e-21,
+              "cross_squared_gap": 4.147486977344669e-20,
+              "differential_certificate_available": true,
+              "full_to_adaptive_bound_ratio": 1.0,
+              "full_width_derivative_bound": 1.8101843487948262e+27,
+              "full_width_differential_certificate_available": true,
+              "gram_operator_norm": 0.9769742719495261,
+              "maximum_probe_derivative": 1.10233778385686,
+              "probe_count": 6,
+              "probe_rows": [
+                {
+                  "input_projector_distance": 7.141982180137265e-10,
+                  "output_projector_distance": 3.706426452037925e-10,
+                  "probe": 0,
+                  "secant_derivative": 0.5189632735777409
+                },
+                {
+                  "input_projector_distance": 7.911256423915698e-10,
+                  "output_projector_distance": 8.720876873862577e-10,
+                  "probe": 1,
+                  "secant_derivative": 1.10233778385686
+                },
+                {
+                  "input_projector_distance": 7.43250588164132e-10,
+                  "output_projector_distance": 4.658808509465287e-10,
+                  "probe": 2,
+                  "secant_derivative": 0.6268153141960895
+                },
+                {
+                  "input_projector_distance": 6.556710327380473e-10,
+                  "output_projector_distance": 3.541169325402108e-10,
+                  "probe": 3,
+                  "secant_derivative": 0.5400832351269772
+                },
+                {
+                  "input_projector_distance": 7.114200876945936e-10,
+                  "output_projector_distance": 4.2077690644070976e-10,
+                  "probe": 4,
+                  "secant_derivative": 0.5914605360726694
+                },
+                {
+                  "input_projector_distance": 7.329581042789154e-10,
+                  "output_projector_distance": 7.363287696863673e-10,
+                  "probe": 5,
+                  "secant_derivative": 1.0045987149712574
+                }
+              ],
+              "probe_step": 1e-09,
+              "quotient_displacement_inside_linearized_radius": true,
+              "ritz_gap": 2.980936920215763e-07,
+              "ritz_linearized_radius": 2.762149613838431e-28,
+              "selected_width": 4,
+              "threshold_margin": 1.6159014225805424e-07,
+              "time": 2,
+              "two_gap_derivative_bound": 1.8101843487948262e+27,
+              "two_gap_linearized_radius": 2.762149613838431e-28
+            },
+            {
+              "adaptive_to_full_projector_distance": 0.00021661070185316646,
+              "all_probes_below_two_gap_bound": true,
+              "cross_linearized_radius": 2.1597392886293228e-18,
+              "cross_squared_gap": 2.5890009696745448e-17,
+              "differential_certificate_available": true,
+              "full_to_adaptive_bound_ratio": 2781918212.327722,
+              "full_width_derivative_bound": 4.0401204263593917e+36,
+              "full_width_differential_certificate_available": true,
+              "gram_operator_norm": 0.9994816363014433,
+              "maximum_probe_derivative": 2443.6688601037154,
+              "probe_count": 6,
+              "probe_rows": [
+                {
+                  "input_projector_distance": 6.840253336046664e-10,
+                  "output_projector_distance": 1.6715314072517788e-06,
+                  "probe": 0,
+                  "secant_derivative": 2443.6688601037154
+                },
+                {
+                  "input_projector_distance": 8.186614225983095e-10,
+                  "output_projector_distance": 9.517772210811798e-07,
+                  "probe": 1,
+                  "secant_derivative": 1162.6017726111738
+                },
+                {
+                  "input_projector_distance": 6.251315077439404e-10,
+                  "output_projector_distance": 1.0769290578182695e-06,
+                  "probe": 2,
+                  "secant_derivative": 1722.7240100324452
+                },
+                {
+                  "input_projector_distance": 6.782584771235598e-10,
+                  "output_projector_distance": 1.3172893648900608e-06,
+                  "probe": 3,
+                  "secant_derivative": 1942.1642475838712
+                },
+                {
+                  "input_projector_distance": 6.423927418093241e-10,
+                  "output_projector_distance": 1.5360933356277908e-06,
+                  "probe": 4,
+                  "secant_derivative": 2391.205933151306
+                },
+                {
+                  "input_projector_distance": 7.289903256952707e-10,
+                  "output_projector_distance": 1.2806485172247386e-06,
+                  "probe": 5,
+                  "secant_derivative": 1756.7428154870597
+                }
+              ],
+              "probe_step": 1e-09,
+              "quotient_displacement_inside_linearized_radius": false,
+              "ritz_gap": 6.373141090754486e-10,
+              "ritz_linearized_radius": 3.4428654578924863e-28,
+              "selected_width": 3,
+              "threshold_margin": 9.692730935468444e-09,
+              "time": 3,
+              "two_gap_derivative_bound": 1.4522786501975882e+27,
+              "two_gap_linearized_radius": 3.4428654578924863e-28
+            },
+            {
+              "adaptive_to_full_projector_distance": 0.001866643498369467,
+              "all_probes_below_two_gap_bound": true,
+              "cross_linearized_radius": 3.341869920394556e-22,
+              "cross_squared_gap": 4.0128323892196674e-21,
+              "differential_certificate_available": true,
+              "full_to_adaptive_bound_ratio": 6048023870.942325,
+              "full_width_derivative_bound": 1.6873857472500514e+43,
+              "full_width_differential_certificate_available": true,
+              "gram_operator_norm": 1.000322682017164,
+              "maximum_probe_derivative": 39804.40901249627,
+              "probe_count": 6,
+              "probe_rows": [
+                {
+                  "input_projector_distance": 7.442570918546268e-10,
+                  "output_projector_distance": 1.7918997604396877e-05,
+                  "probe": 0,
+                  "secant_derivative": 24076.35452924503
+                },
+                {
+                  "input_projector_distance": 6.466722890491848e-10,
+                  "output_projector_distance": 1.8223555585669984e-05,
+                  "probe": 1,
+                  "secant_derivative": 28180.511047511318
+                },
+                {
+                  "input_projector_distance": 6.166709187723865e-10,
+                  "output_projector_distance": 1.6710137170639052e-05,
+                  "probe": 2,
+                  "secant_derivative": 27097.332891753846
+                },
+                {
+                  "input_projector_distance": 6.433472208792143e-10,
+                  "output_projector_distance": 2.5608055916929022e-05,
+                  "probe": 3,
+                  "secant_derivative": 39804.40901249627
+                },
+                {
+                  "input_projector_distance": 6.82460139733729e-10,
+                  "output_projector_distance": 1.9009200645978802e-05,
+                  "probe": 4,
+                  "secant_derivative": 27853.935401114413
+                },
+                {
+                  "input_projector_distance": 6.116761222124408e-10,
+                  "output_projector_distance": 1.66539152333844e-05,
+                  "probe": 5,
+                  "secant_derivative": 27226.688485316314
+                }
+              ],
+              "probe_step": 1e-09,
+              "quotient_displacement_inside_linearized_radius": false,
+              "ritz_gap": 2.1457528148452116e-12,
+              "ritz_linearized_radius": 1.7921284095230886e-34,
+              "selected_width": 3,
+              "threshold_margin": 9.862029767554144e-09,
+              "time": 4,
+              "two_gap_derivative_bound": 2.78997864964965e+33,
+              "two_gap_linearized_radius": 1.7921284095230886e-34
+            }
+          ]
+        }
+      ],
+      "clock": 1.769091146743121,
+      "clock_rank": 4,
+      "fine_dimension": 32,
+      "sigma": 0.16
+    }
+  ],
+  "status": "rh99_two_gap_differential_ritz_envelope_audit",
+  "theorem_boundary": {
+    "adaptive_branch_uniformly_separated": false,
+    "all_frozen_cross_selection_gaps_separated": false,
+    "all_frozen_output_ritz_gaps_certified": false,
+    "cross_covariance_derivative_formula": true,
+    "finite_neighborhood_lipschitz_tube_proved": false,
+    "finite_tangent_probe_bounds_validated_where_available": true,
+    "hilbert_polya_operator": false,
+    "repeated_block_contraction_proved": false,
+    "replay_free_block_envelope_proved": false,
+    "riemann_hypothesis": false,
+    "spectral_projector_sylvester_bound": true,
+    "two_gap_refresh_derivative_theorem": true
+  }
+}
