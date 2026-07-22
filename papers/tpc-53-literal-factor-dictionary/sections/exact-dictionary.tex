@@ -1,0 +1,180 @@
+\section{The exact factor dictionary}
+\label{sec:tpc53-dictionary}
+
+\subsection{Real-axis Mellin allocation}
+
+For \(U\in C_c^\infty((0,\infty))\), use the convention
+\begin{equation}
+ \widetilde U(\tau)
+ =\int_0^\infty U(z)z^{-i\tau}\,\frac{dz}{z},
+ \qquad
+ U(z)=\frac1{2\pi}\int_{\R}\widetilde U(\tau)z^{i\tau}\,d\tau.
+ \label{eq:tpc53-Mellin-convention}
+\end{equation}
+Every transform is Schwartz.  For
+\(\mathbf U=(W_1,\Psi_1,W_2,\Psi_2)\), define the specific complex
+provenance measure
+\begin{equation}
+ d\lambda(\bm\tau)
+ =(2\pi)^{-4}
+ \widetilde W_1(\tau_1)\widetilde\Psi_1(\tau_2)
+ \widetilde W_2(\tau_3)\widetilde\Psi_2(\tau_4)
+ \,d\bm\tau.
+ \label{eq:tpc53-four-factor-measure}
+\end{equation}
+Write \(d\lambda=\varepsilon\,d\mu\), where
+\(\mu=|\lambda|\) and \(|\varepsilon|=1\) almost everywhere.  No
+factor in \eqref{eq:tpc53-four-factor-measure} is moved into a row
+coefficient.
+
+Choose \(\chi\in C_c^\infty((0,\infty))\) equal to one on \(I_0\).
+For one coordinate \(i=(a,m,r,j,\gamma)\), set
+\begin{equation}
+ \mathfrak c_X(i):=
+ a_mK_{m\gamma}R(q_\gamma)\xi_a\chi(t_j)
+ \label{eq:tpc53-carrier-coordinate}
+\end{equation}
+and
+\begin{equation}
+ \Phi_{\bm\tau}(i)
+ :=\eta_\gamma\varepsilon(\bm\tau)
+   \prod_{\nu=1}^4 z_\nu(i)^{i\tau_\nu}.
+ \label{eq:tpc53-unimodular-phase}
+\end{equation}
+All \(z_\nu(i)\) are positive.  Therefore
+\(|\Phi_{\bm\tau}(i)|=1\), and Mellin inversion gives
+\begin{equation}
+ \int_{\R^4}\mathfrak c_X(i)\Phi_{\bm\tau}(i)\,d\mu(\bm\tau)
+ =a_mK_{m\gamma}\eta_\gamma R(q_\gamma)\xi_a
+   \prod_{\nu=1}^4U_\nu(z_\nu(i)).
+ \label{eq:tpc53-coordinate-reassembly}
+\end{equation}
+The auxiliary \(\chi\) disappears because it is one on every retained
+coordinate.
+
+\subsection{The allocation table}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.25\textwidth}
+                >{\raggedright\arraybackslash}p{0.30\textwidth}
+                >{\raggedright\arraybackslash}p{0.34\textwidth}}
+\toprule
+Literal factor & Exact location & Reason \\
+\midrule
+\(\gamma_m^{(1)}\), as in
+\eqref{eq:tpc53-source-coefficient}
+& outer source coefficient \(a_m\)
+& it is the single physical row coefficient in the left residual route \\
+coefficient-free opposite row
+& base weight \(\omega_{\gamma,X}=1\); fixed shape \(R(q_\gamma)\)
+in \(B,F\); unit phase \(\eta_\gamma\) in the layer phase
+& \(e=0\) removes the logarithm, not the fixed unary shape \\
+\(K_{m\gamma}\)
+& literal mask \(M_X(m,\gamma)\)
+& it is binary, so \(K^2=K\); no mask-layer parameter is introduced \\
+\(\xi_a\)
+& both carrier \(B\) and physical profile \(F\)
+& direct splitting has no Fourier normalization \\
+four Mellin transforms and \((2\pi)^{-4}\)
+& complex measure \(\lambda\), then positive measure \(\mu=|\lambda|\)
+& all remaining row/orbit powers are unimodular \\
+cofactor \(r\)
+& repeated orthogonal pre-terminal label
+& \(a_m\) has no \(r\)-dependence before the terminal map \\
+global residual sign
+& external fixed scalar when comparing with the original large-prime residual
+& it is absent from the declared physical vector and vanishes from squared identities \\
+\(\mu(r)\Lambda(pr)\), prime sum, and \(s=d_mr\)
+& not present
+& these are downstream operations \\
+\bottomrule
+\end{tabular}
+\caption{Literal factor allocation for the declared left packet.}
+\label{tab:tpc53-factor-allocation}
+\end{table}
+
+The entry \(\omega_{\gamma,X}=1\) deserves emphasis.  In the original
+symmetric TPC--25 packet, the second row may carry its own physical
+prime logarithm.  In the later left residual route, that row has become
+the opposite output coordinate; TPC--50 identifies its direct unary
+factor as the \(e=0\) case.  Its fixed smooth factor \(R\) remains in
+both profiles, while \(\eta_\gamma\) is a unit layer phase; only the base
+logarithmic weight is one.  The right residual route interchanges the
+two sides and again has \(e=0\) on its opposite row
+\citep{WangTPC25,WangTPC50}.
+
+\subsection{Coordinatewise theorem}
+
+Define the carrier and physical profiles on normalized coordinates by
+\begin{align}
+ B_{\beta,a}(q,t)
+ &:=\xi_a\chi(t)R(q),
+ \label{eq:tpc53-carrier-profile}\\
+ F_{\beta,a}(q,t)
+ &:=\xi_a\chi(t)R(q)
+  W_1(z_1(\beta,t))\Psi_1(z_2(\beta,t))
+  W_2(z_3(\beta,q,t))\Psi_2(z_4(\beta,q,t)).
+ \label{eq:tpc53-physical-profile}
+\end{align}
+
+\begin{theorem}[Exact actual-profile dictionary]
+\label{thm:tpc53-exact-dictionary}
+Fix the complete nondegenerate direct packet of
+\cref{sec:tpc53-literal-packet}, with no independent opposite-row
+pruning.  For every retained coordinate \(i=(a,m,r,j,\gamma)\), take
+\begin{equation}
+ M_X(m,\gamma)=K_{m\gamma},\qquad
+ \omega_{\gamma,X}=1,\qquad a_m=\gamma_m^{(1)}.
+ \label{eq:tpc53-dictionary-base-data}
+\end{equation}
+Then
+\begin{align}
+ |\mathfrak c_X(i)|^2
+ &=M_X(m,\gamma)|a_m|^2\omega_{\gamma,X}
+   |B_{\beta_m,a}(q_\gamma,t_j)|^2,
+ \label{eq:tpc53-carrier-dictionary}\\
+ |a_m|^2K_{m\gamma}|R(q_\gamma)|^2|\xi_a|^2
+ |\mathcal W_{m,\gamma}(t_j)|^2
+ &=M_X(m,\gamma)|a_m|^2\omega_{\gamma,X}
+   |F_{\beta_m,a}(q_\gamma,t_j)|^2.
+ \label{eq:tpc53-physical-dictionary}
+\end{align}
+Both identities are exact for every \(X\).  Direct residue cells are
+disjoint, \(a_m\) is independent of \(r\), and summing
+\eqref{eq:tpc53-physical-dictionary} gives precisely the lifted atomic
+norm \eqref{eq:tpc53-exact-lifted-energy}.
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:tpc53-carrier-coordinate}, the binary identity
+\(K_{m\gamma}^2=K_{m\gamma}\), and
+\eqref{eq:tpc53-carrier-profile} give
+\eqref{eq:tpc53-carrier-dictionary}.  Substitution of
+\eqref{eq:tpc53-four-arguments} in
+\eqref{eq:tpc53-four-factor-profile} gives
+\eqref{eq:tpc53-physical-profile}, hence
+\eqref{eq:tpc53-physical-dictionary}.  Coordinatewise Mellin
+reassembly is \eqref{eq:tpc53-coordinate-reassembly} with the exact
+normalization \eqref{eq:tpc53-four-factor-measure}.  Direct orbit
+residue classes do not overlap, while \(m,r,j,\gamma\) are orthogonal
+labels in \eqref{eq:tpc53-lifted-space}.  Summation therefore gives
+\eqref{eq:tpc53-exact-lifted-energy} without a cross term or a counting
+factor.
+\end{proof}
+
+\begin{corollary}[Discharge of the preceding dictionary hypothesis]
+\label{cor:tpc53-discharge-assumption}
+The exact-profile identification hypothesis of TPC--52 holds on the
+declared packet, with \(e=0\), in the retained-label pre-terminal
+coefficient space.  Its complete physical factor is
+\(\eta_\gamma R(q_\gamma)\xi_a\) times the named four-factor orbit
+product; the assertion \(e=0\) refers only to the logarithmic base
+weight.
+\end{corollary}
+
+The scope is essential.  The theorem does not identify an inherited
+packet whose \(\mathcal W\) contains undeclared extra factors, an
+independently pruned opposite row, or a post-terminal coordinate
+grouping.  Such a packet requires its own literal allocation table.

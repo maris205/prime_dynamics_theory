@@ -1,0 +1,156 @@
+\section{Transfer to a sampled prime--squarefree subpacket}
+\label{sec:tpc53-sampled}
+
+Fix the compact boxes supplied by
+\cref{thm:tpc53-explicit-overlap}, and write
+\(\cQ=[x_-,x_+]\times[y_-,y_+]\).  Let
+\(\cO_X(\cQ)\) consist of all opposite rows in the fixed admissible
+residue group for which
+\[
+ q_\gamma=(\log(\ell_\gamma/L),\log(d_\gamma/D))\in\cQ.
+\]
+This is a complete row universe inside a fixed interior interval, not an
+arbitrarily pruned subset.  The fixed-modulus prime number theorem and
+squarefree counting in progressions give
+\begin{equation}
+ |\cO_X(\cQ)|
+ =(c_{\cQ,\rm loc}+o(1))\frac{LD}{\log L},
+ \qquad c_{\cQ,\rm loc}>0,
+ \label{eq:tpc53-row-box-count}
+\end{equation}
+and the normalized empirical row measure converges to the restriction of
+\(d\nu=\e^{x+y}dxdy\) to \(\cQ\), divided by its mass
+\citep{IwaniecKowalski2004,WangTPC50,WangTPC51}.
+
+The geometric mass before the fixed local-density factor is
+\begin{equation}
+ p_{\rm row}=\nu(\cQ)
+ =(\e^{x_+}-\e^{x_-})(\e^{y_+}-\e^{y_-})>0.
+ \label{eq:tpc53-row-geometric-density}
+\end{equation}
+For the retained orbit class,
+\begin{equation}
+ \frac1J\#\{j:j/J\in I, j\equiv a\pmod {H_0}\}
+ =\frac{|I|}{H_0}+O(J^{-1}).
+ \label{eq:tpc53-orbit-geometric-density}
+\end{equation}
+Thus the row--orbit box has fixed geometric proportion
+\begin{equation}
+ p_{\rm geom}=p_{\rm row}\frac{|I|}{H_0}>0
+ \label{eq:tpc53-geometric-proportion}
+\end{equation}
+up to one fixed positive residue density.
+
+The full complete-universe degree estimate from TPC--50 is
+\begin{equation}
+ \sup_m\#\{\gamma:K_{m\gamma}=0\}
+ \le\epsilon_X|\cO_X|,
+ \qquad
+ \epsilon_X\ll_{h_0}
+ L^{-1+o(1)}+D^{-1+o(1)}+X^{-\kappa_0+o(1)}.
+ \label{eq:tpc53-mask-degree}
+\end{equation}
+Since \eqref{eq:tpc53-row-box-count} is a fixed positive fraction of
+the ambient count, restriction to \(\cQ\) changes the right side only by a
+fixed constant.  In particular, the relative deletion inside the
+selected row box is still \(o(1)\).
+
+For a selected source row \(m\), define the sampled carrier and profile
+energies
+\begin{align}
+ \mathscr B_X^M(m)
+ &:={}
+ \sum_{\gamma\in\cO_X(\cQ)}K_{m\gamma}
+ \sum_{\substack{j/J\in I\\j\equiv a\pmod {H_0}}}
+ |B_{\beta_m,a}(q_\gamma,t_j)|^2,
+ \label{eq:tpc53-sampled-carrier}\\
+ \mathscr P_X^M(m)
+ &:={}
+ \sum_{\gamma\in\cO_X(\cQ)}K_{m\gamma}
+ \sum_{\substack{j/J\in I\\j\equiv a\pmod {H_0}}}
+ |F_{\beta_m,a}(q_\gamma,t_j)|^2.
+ \label{eq:tpc53-sampled-profile}
+\end{align}
+
+\begin{theorem}[Sampled literal overlap]
+\label{thm:tpc53-sampled-overlap}
+Let every retained source parameter lie in
+\(\mathfrak B_0\) from
+\cref{thm:tpc53-explicit-overlap}.  Then, for all sufficiently large
+\(X\), the denominator below is nonzero and, uniformly in the source
+row,
+\begin{equation}
+ \boxed{
+ \frac{\mathscr P_X^M(m)}{\mathscr B_X^M(m)}
+ \ge \alpha_*>0,\qquad
+ \alpha_*:=w_{1,0}^2\psi_{1,0}^2
+             w_{2,0}^2\psi_{2,0}^2.}
+ \label{eq:tpc53-sampled-ratio}
+\end{equation}
+The same assertion holds for the symmetric right packet.
+\end{theorem}
+
+\begin{proof}
+On the selected box the exact identity
+\[
+ |F_{\beta_m,a}(q_\gamma,t_j)|^2
+ =|B_{\beta_m,a}(q_\gamma,t_j)|^2
+  \prod_{i=1}^2|W_i(z_{2i-1})|^2|\Psi_i(z_{2i})|^2
+\]
+and \eqref{eq:tpc53-box-lower-bounds} give the pointwise inequality
+\(|F|^2\ge\alpha_*|B|^2\).  Multiplication by the nonnegative literal
+mask and summation prove the displayed ratio whenever its denominator
+is nonzero.  Equations \eqref{eq:tpc53-row-box-count} and
+\eqref{eq:tpc53-orbit-geometric-density} provide a positive proportion
+of row--orbit coordinates, whereas \eqref{eq:tpc53-mask-degree} deletes
+only \(o(1)\) of the rows for each source.  Since
+\(|B|\ge r_0\) on the box, at least one surviving coordinate remains
+for every sufficiently large \(X\), so the denominator is positive.
+\end{proof}
+
+Let \(\cU_X\) be any finite set of retained \((m,r)\) pairs in the
+selected source box, and let the same \(a_m\) repeat on its cofactor
+fibers.  Put
+\begin{align}
+ \mathscr C_X
+ &=\sum_{(m,r)\in\cU_X}|a_m|^2\mathscr B_X^M(m),
+ \label{eq:tpc53-aggregate-carrier}\\
+ \mathscr Q_X
+ &=\sum_{(m,r)\in\cU_X}|a_m|^2\mathscr P_X^M(m).
+ \label{eq:tpc53-aggregate-profile}
+\end{align}
+
+\begin{corollary}[Certified interior coefficient bridge]
+\label{cor:tpc53-interior-bridge}
+If \(\mathscr C_X>0\), then
+\begin{equation}
+ \mathscr Q_X\ge\alpha_*\mathscr C_X.
+ \label{eq:tpc53-aggregate-overlap}
+\end{equation}
+For the provenance-canonical four-factor Mellin synthesis, using the
+notation \(\cE_{1,B}^{L}\) and \(\cS_X^{L}\) of TPC--52, the actual
+direction on the selected lifted packet has
+\begin{equation}
+ \boxed{
+ \frac{\cE_{1,B}^{L}(\one)^2}{\|\cS_X^{L}\one\|^2}
+ \le\frac{C_B}{\alpha_*}=O(1),}
+ \label{eq:tpc53-condition-number}
+\end{equation}
+where \(C_B\) is the finite-cell carrier constant of TPC--52 and depends
+only on the fixed cutoffs, boxes, residue data, and derivative order.
+\end{corollary}
+
+\begin{proof}
+Multiply \eqref{eq:tpc53-sampled-ratio} by \(|a_m|^2\) on each
+cofactor fiber and sum.  The exact dictionary theorem identifies
+\(\mathscr Q_X\) with the squared physical lifted norm.  The polar
+Mellin measure has fixed finite weighted variation, and every layer has
+carrier norm independent of its real Mellin parameter.  The finite-cell
+carrier estimate of TPC--52 therefore gives
+\(\cE_{1,B}^{L}(\one)^2\le C_B\mathscr C_X\).  Combine the two bounds.
+\end{proof}
+
+No source equidistribution and no uniform cofactor multiplicity is used
+\emph{inside the selected packet}.  This statement is different from
+showing that the selected packet captures a fixed fraction of a larger
+packet, which is the subject of the next section.

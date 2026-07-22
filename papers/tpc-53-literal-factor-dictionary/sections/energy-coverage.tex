@@ -1,0 +1,119 @@
+\section{Geometric coverage versus actual energy coverage}
+\label{sec:tpc53-energy}
+
+Let \(\cM_X^{\rm full}\) be a complete fixed-modulus source dyadic cell,
+and suppose the compatible cell \(\mathfrak B_0\) contains a fixed
+positive-volume source rectangle.  Let \(\cM_X^{\rm good}\) be the rows
+whose normalized parameters lie in that rectangle.  Fixed-modulus prime
+and squarefree counting then gives
+\begin{equation}
+ |\cM_X^{\rm good}|\asymp|\cM_X^{\rm full}|,
+ \label{eq:tpc53-source-geometric-density}
+\end{equation}
+but the actual coefficient contains \(\zeta_m^{(1)}\), for which the
+inherited interface assumes only an upper bound.
+
+For the repeated lifted packet, define the fiber carrier multiplier
+\begin{equation}
+ \mathfrak n_X(m)
+ :=\sum_{r:(m,r)\in\cI_X}\mathscr B_X^M(m)
+ =N_r(m)\mathscr B_X^M(m),
+ \label{eq:tpc53-fiber-multiplier}
+\end{equation}
+where \(N_r(m)\) is the retained cofactor multiplicity.  The good-carrier
+fraction in the full lifted packet is
+\begin{equation}
+ \sigma_X
+ :=\frac{\displaystyle
+   \sum_{m\in\cM_X^{\rm good}}|a_m|^2\mathfrak n_X(m)}
+  {\displaystyle
+   \sum_{m\in\cM_X^{\rm full}}|a_m|^2\mathfrak n_X(m)}
+ \label{eq:tpc53-good-carrier-fraction}
+\end{equation}
+when the denominator is positive.
+
+\begin{proposition}[Sharp coefficient-concentration obstruction]
+\label{prop:tpc53-zeta-obstruction}
+Assume the full packet has at least one source row outside
+\(\cM_X^{\rm good}\) on which the fixed source shapes and fiber
+multiplier are nonzero.  In the coefficient class
+\(|\zeta_m^{(1)}|\le1\), one may have
+\begin{equation}
+ |\cM_X^{\rm good}|\asymp|\cM_X^{\rm full}|
+ \qquad\text{but}\qquad \sigma_X=0.
+ \label{eq:tpc53-zero-energy-coverage}
+\end{equation}
+Thus no positive lower bound for \(\sigma_X\) follows from geometric
+density, row sampling, or profile overlap alone.
+\end{proposition}
+
+\begin{proof}
+Set \(\zeta_m^{(1)}=0\) on every good row and on any unwanted bad row,
+and set it equal to one on one nonzero bad row.  This respects the only
+stated coefficient hypothesis.  The numerator of
+\eqref{eq:tpc53-good-carrier-fraction} is zero and the denominator is
+positive.
+\end{proof}
+
+Even a unit-modulus \(\zeta_m^{(1)}\) does not by itself control
+\(\sigma_X\) if \(N_r(m)\) is allowed to concentrate arbitrarily on bad
+rows.  This is a second, logically independent coverage obstruction.
+
+There is a clean sufficient repair.  Let the fixed source unary shapes
+be bounded below on the good box, and suppose
+\begin{equation}
+ |\zeta_m^{(1)}|\ge\zeta_0>0
+ \quad(m\in\cM_X^{\rm good}),
+ \qquad |\zeta_m^{(1)}|\le C
+ \quad(m\in\cM_X^{\rm full}).
+ \label{eq:tpc53-source-nondegeneracy}
+\end{equation}
+
+\begin{proposition}[Source-energy coverage]
+\label{prop:tpc53-source-energy-coverage}
+Under \eqref{eq:tpc53-source-nondegeneracy}, fixed-modulus
+admissibility, uniform lower bounds for the source shapes on the good
+box, and uniform upper bounds for them on the full box, there is a constant
+\(c_{\rm src}>0\) such that
+\begin{equation}
+ \frac{\sum_{m\in\cM_X^{\rm good}}|a_m|^2}
+      {\sum_{m\in\cM_X^{\rm full}}|a_m|^2}
+ \ge c_{\rm src}+o(1).
+ \label{eq:tpc53-source-energy-fraction}
+\end{equation}
+If, in addition, for some \(A_X>0\) and fixed
+\(0<n_-\le n_+<\infty\),
+\begin{equation}
+ n_-A_X\le\mathfrak n_X(m)\le n_+A_X
+ \quad\text{on every nonzero full source row},
+ \label{eq:tpc53-balanced-fibers}
+\end{equation}
+then
+\begin{equation}
+ \sigma_X\ge\frac{n_-}{n_+}c_{\rm src}+o(1)>0.
+ \label{eq:tpc53-positive-good-fraction}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+On the good box, the lower bounds for the fixed source shapes and
+\(\zeta_m^{(1)}\), together with the fixed-modulus prime number theorem
+and squarefree counting, give
+\[
+ \sum_{m\in\cM_X^{\rm good}}|a_m|^2
+ \gg LD\log L.
+\]
+The inherited upper bounds and Chebyshev's estimate give
+\(\sum_{m\in\cM_X^{\rm full}}|a_m|^2\ll LD\log L\).
+This proves \eqref{eq:tpc53-source-energy-fraction}.  Multiplying the
+good numerator by the lower bound in
+\eqref{eq:tpc53-balanced-fibers} and the full denominator by the upper
+bound gives \eqref{eq:tpc53-positive-good-fraction}.
+\end{proof}
+
+Condition \eqref{eq:tpc53-balanced-fibers} is not proved by the present
+paper.  It is a transparent sufficient condition for turning source-row
+coverage into coverage after cofactor repetition.  Alternatively, a
+direct estimate of \eqref{eq:tpc53-good-carrier-fraction} may replace
+both \eqref{eq:tpc53-source-nondegeneracy} and
+\eqref{eq:tpc53-balanced-fibers}.

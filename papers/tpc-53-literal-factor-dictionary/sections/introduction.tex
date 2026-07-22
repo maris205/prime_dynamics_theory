@@ -1,0 +1,128 @@
+\section{Introduction}
+\label{sec:tpc53-introduction}
+
+TPC--52 separated a misleading scalar-frame problem from the actual
+label-preserving Mellin synthesis.  On the retained coefficient space it
+proved that the conditioning of the provenance-fixed direction is
+governed by a nonnegative physical profile-to-carrier ratio, rather than
+by a lower frame for every signed Mellin density
+\citep{WangTPC52}.  Its actual application deliberately retained two
+hypotheses: a coordinatewise dictionary identifying the abstract profile
+with the literal opened-row coefficient, and a uniform positive overlap
+of the physical cutoffs.  Neither may be inferred merely from bounded
+smoothness.
+
+The first gap is bookkeeping, but bookkeeping at this interface is
+mathematics.  There are three different row roles in the provenance
+chain.  The original symmetric opened-row packet has two physical row
+coefficients.  After large-prime descent, a left residual packet has one
+source coefficient and one coefficient-free opposite output row.  After
+residual grouping, different pairs \((m,r)\) may share the same physical
+label \(s=d(m)r\).  Moving a prime logarithm between the first two roles,
+or declaring \((m,r)\) orthogonal after the third operation, changes the
+norm being estimated.
+
+This paper fixes one representative four-factor packet and prints its
+factor allocation in full.  No unidentified \(\mathcal W\) remains in
+the main theorem.  The allocation converts the exact-profile dictionary
+of TPC--52 from an assumption into an equality on the named packet.
+
+The second gap is geometric.  For arbitrary fixed smooth tests, the
+nonzero sets of \(W\) and \(\Psi\) need not overlap every reachable
+scaled orbit.  We therefore do not assert that the full parameter box is
+uniformly active.  Instead we prove a necessary-and-sufficient strict
+support criterion for a nonempty active interior and a quantitative
+rectangle certificate for a compact subpacket.  This certificate is
+finite-dimensional and deterministic; it contains no prime-pair input.
+
+\subsection{Main results}
+
+The conclusions are as follows.
+
+\begin{enumerate}[label=\textup{(R\arabic*)},leftmargin=3.2em]
+ \item \textbf{Exact literal dictionary.}
+ On one complete nondegenerate direct left packet, with no independent
+ opposite-row pruning, we take
+ \[
+ a_m=\gamma_m^{(1)},\qquad
+ \omega_{\gamma,X}=1,\qquad
+ M_X(m,\gamma)=K_{m\gamma}.
+ \]
+ The fixed opposite unary shape is placed in both the carrier and
+ physical profiles, its unit phase is kept in the layer phase, and the
+ direct residue amplitudes are placed in both profiles.  The absolute
+ Mellin transforms and every factor
+ \((2\pi)^{-1}\) are placed in the positive provenance measure.  All
+ remaining row and orbit powers have modulus one.  The two coordinate
+ identities required in TPC--52 then hold exactly for every retained
+ \((a,m,r,j,\gamma)\).
+
+ \item \textbf{Atomic normalization.}
+ The exact squared norm is
+ \[
+ \sum_{m,r,j,\gamma}
+ |\gamma_m^{(1)}|^2K_{m\gamma}|R(q_\gamma)|^2|\xi_a|^2
+ \prod_{\nu=1}^4|U_{\nu}(z_{\nu})|^2,
+ \qquad \mathbf U=(W_1,\Psi_1,W_2,\Psi_2).
+ \]
+ It is the norm of a pre-terminal orthogonal lift.  The terminal factor
+ \(\mu(r)\Lambda(pr)\), coherent prime sum, and collision map
+ \(s=d(m)r\) are absent.  We prove no equality with the final
+ TPC--48 output norm or native affine Gram.
+
+ \item \textbf{Reachable-support certificate.}
+ A strict point at which the carrier and all four physical factors are
+ nonzero generates compact source, opposite-row, and orbit boxes with
+ explicit overlap
+ \[
+ \rho_*
+ \ge
+ \frac{r_0^2\prod_{\nu=1}^4w_{\nu,0}^2}{H_0b_+}
+ \left(\int_{\cQ}\e^{x+y}\,dx\,dy\right)|I|>0.
+ \]
+ Conversely, positive continuous profile energy implies such a strict
+ point.  Thus the active parameter set is relatively open and its compact subsets
+ are uniformly active.  A grazing limit of active parameters can lose
+ its lower bound at the boundary.
+
+ \item \textbf{A sampled interior bridge.}
+ The row box has limiting geometric mass
+ \[
+ (\e^{x_+}-\e^{x_-})(\e^{y_+}-\e^{y_-})>0,
+ \]
+ while one orbit residue class contributes
+ \( |I|/H_0+O(J^{-1})\).  Fixed-modulus prime and squarefree sampling,
+ together with the literal-mask degree estimate, transfers the explicit
+ continuous overlap to the sampled packet.  The canonical actual
+ direction therefore has \(O(1)\) condition number on that subpacket.
+
+ \item \textbf{Geometric density is not energy coverage.}
+ If only \(|\zeta_m|\ll1\) is known, the source weight may vanish on
+ every selected active box.  We give an exact construction with positive
+ geometric density but zero good-carrier fraction.  If instead the
+ remaining source factor is bounded below on a compatible fixed cell, the
+ standard fixed-modulus row asymptotics yield a positive source-energy
+ fraction for that declared finite cell decomposition.
+\end{enumerate}
+
+\subsection{Claim level}
+
+The factor identities and support criterion are Level L0 exact algebra
+and analysis.  Their application to the literal complete row cell and
+static mask is a Level L1 physical-interface theorem.  No coherent prime
+square, fixed-\(h_0\) arithmetic lower bound, parity-breaking estimate,
+Hardy--Littlewood asymptotic, or twin-prime conclusion is obtained.  In
+particular, selecting a positive-density interior subpacket is not a
+substitute for proving that it carries a positive fraction of the full
+actual energy.
+
+\subsection{Organization}
+
+\Cref{sec:tpc53-literal-packet} defines the packet and its correct norm.
+The exact factor allocation is proved in
+\cref{sec:tpc53-dictionary}.  The support criterion and explicit box
+certificate are in \cref{sec:tpc53-support}.  We transfer them to the
+sampled prime--squarefree packet in \cref{sec:tpc53-sampled}.  The
+source-energy obstruction and its sufficient repair are treated in
+\cref{sec:tpc53-energy}.  Endpoint costs and the remaining gates are
+audited in \cref{sec:tpc53-endpoint}.

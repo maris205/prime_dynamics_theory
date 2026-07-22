@@ -1,0 +1,98 @@
+\section{Endpoint ledger, limitations, and next gates}
+\label{sec:tpc53-endpoint}
+
+At the inherited endpoint,
+\begin{equation}
+ \begin{aligned}
+ Q&=X^{267/400+o(1)},&
+ J&=X^{133/400+o(1)},&
+ \kappa_0&=\frac1{400},\\
+ D&=X^{10049/52500+o(1)},&
+ V&=X^{23/120+o(1)}.
+ \end{aligned}
+ \label{eq:tpc53-endpoint-scales}
+\end{equation}
+The hard divisor boundary has the strict margin
+\begin{equation}
+ \frac{23}{120}-\frac{10049}{52500}
+ =\frac9{35000}>0.
+ \label{eq:tpc53-hard-cutoff-margin}
+\end{equation}
+Moreover \(L=Q/D\) and
+\begin{equation}
+ \left(\frac{267}{400}-\frac{10049}{52500}\right)
+ -\frac{10049}{52500}
+ =\frac{59783}{210000}>0.
+ \label{eq:tpc53-L-over-D-margin}
+\end{equation}
+Hence \(2D\le V\) and \(L>4D\) for all sufficiently large \(X\), each
+with a fixed power margin.  Together with the certified unary and
+residue support, the selected packet is genuinely nondegenerate; no
+endpoint loss is hidden in these conditions \citep{WangTPC50}.
+
+The costs of the present extraction are:
+\begin{enumerate}[label=\textup{(E\arabic*)},leftmargin=3em]
+ \item a fixed number of direct row and orbit residue cells;
+ \item fixed compact source, opposite-row, and orbit boxes;
+ \item row sampling error \(o(1)\) at fixed modulus;
+ \item orbit sampling error \(O(J^{-1})\); and
+ \item literal-mask deletion
+ \[
+ O\!\left(L^{-1+o(1)}+D^{-1+o(1)}
+          +X^{-1/400+o(1)}\right).
+ \]
+\end{enumerate}
+Every Mellin transform belongs to a fixed Schwartz library and has
+finite weighted variation.  Since the support certificate gives a fixed
+\(\rho_*>0\), only qualitative \(o(1)\) sampling is required.  Thus the
+local dictionary-and-overlap bridge has zero positive polynomial cost
+and spends none of the \(1/400\) allowance.
+
+This zero cost applies to the \emph{selected} packet.  It does not say
+that deleting the complement costs zero actual energy.  Under arbitrary
+bounded \(\zeta_m^{(1)}\) or arbitrary cofactor multiplicity, the
+complement may carry all of the lifted carrier energy by
+\cref{prop:tpc53-zeta-obstruction}.  A full-packet statement must prove a
+positive \(\sigma_X\), partition all nonzero energy into finitely many
+compatible cells, or bound the unselected complement by another method.
+
+\subsection{Exact claim ledger}
+
+\begin{description}[leftmargin=3.2em,style=nextline]
+ \item[Proved exactly (L0).]
+ The exact four-factor Mellin allocation and lifted atomic norm.  Also,
+ the reachable-support equivalence, explicit compact-box lower bound,
+ and source-concentration obstruction.
+ \item[Proved on the literal selected packet (L1).]
+ The exact TPC--52 profile dictionary with \(e=0\), fixed positive
+ geometric row--orbit density, sampled masked overlap, and an \(O(1)\)
+ canonical condition number in the retained-label pre-terminal space.
+ \item[Conditional subgate.]
+ Positive coverage of the full lifted carrier follows from a nonvanishing
+ source factor plus balanced carrier multiplicities, or from any direct
+ proof that \(\sigma_X\gg1\).
+ \item[Not proved (L2).]
+ A coherent-prime lower square, a fixed-\(h_0\) arithmetic lower bound,
+ a parity-sensitive estimate, or a twin-prime theorem.
+\end{description}
+
+\subsection{Dependency order after this paper}
+
+The remaining interfaces should not be permuted:
+\begin{enumerate}[label=\textup{(O\arabic*)},leftmargin=3em]
+ \item determine whether compatible cells capture a controlled fraction
+ of the full actual carrier energy, including cofactor multiplicity;
+ \item prove, or sharply delimit, a coherent prime square at fixed
+ \((m,r)\) that is stable under the certified carrier projection;
+ \item control the many-to-one grouping \(s=d(m)r\) and its cancellation;
+ \item localize a completed frozen shift family back to the single
+ physical intercept \(h_0\); and
+ \item compare the residual low-sign Gram with the native affine
+ physical Gram without deleting its cross terms.
+\end{enumerate}
+
+The present paper advances the first physical-interface line by replacing
+an abstract factor dictionary with an exact one and replacing an unnamed
+overlap assumption with a finite support certificate.  It does not move
+any downstream operation through a norm and does not hint at a resolution
+of the parity problem.

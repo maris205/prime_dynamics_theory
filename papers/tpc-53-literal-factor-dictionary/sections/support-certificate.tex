@@ -1,0 +1,155 @@
+\section{A deterministic support certificate}
+\label{sec:tpc53-support}
+
+The dictionary is exact even when the physical profile is zero.  A
+lower conditioning bound requires a separate overlap statement.  We now
+make that statement finite-dimensional and checkable.
+
+\subsection{Continuous carrier and profile energies}
+
+Let \(Y=[0,\log2]^2\), with interior \(Y^\circ=(0,\log2)^2\), and
+\begin{equation}
+ d\nu(q)=\e^{x+y}\,dx\,dy,
+ \qquad q=(x,y).
+ \label{eq:tpc53-row-limit-measure}
+\end{equation}
+This measure has mass one on \(Y\).  For a compact source-parameter set
+\(\mathfrak B\), equipped with its relative topology in the normalized
+parameter domain, define
+\begin{align}
+ \mathscr B(\beta)
+ &:=\frac1{H_0}\int_Y\int_{I_0}
+  |B_{\beta,a}(q,t)|^2\,dt\,d\nu(q),
+ \label{eq:tpc53-continuous-carrier-energy}\\
+ \mathscr P(\beta)
+ &:=\frac1{H_0}\int_Y\int_{I_0}
+  |F_{\beta,a}(q,t)|^2\,dt\,d\nu(q).
+ \label{eq:tpc53-continuous-profile-energy}
+\end{align}
+We discard a zero carrier cell.  Compactness then gives
+\begin{equation}
+ 0<b_-\le\mathscr B(\beta)\le b_+<\infty
+ \quad(\beta\in\mathfrak B)
+ \label{eq:tpc53-carrier-bounds}
+\end{equation}
+after restricting to a nonzero compact source cell.
+
+For a smooth function \(U\), write
+\begin{equation}
+ S_U:=\{z>0:U(z)\ne0\}.
+ \label{eq:tpc53-nonzero-set}
+\end{equation}
+Every \(S_U\) is open.
+
+\begin{definition}[Strictly reachable point]
+\label{def:tpc53-strict-point}
+A point \((\beta_0,q_0,t_0)\in
+\mathfrak B\times Y^\circ\times\operatorname{int}I_0\)
+is strictly reachable when
+\begin{equation}
+ B_{\beta_0,a}(q_0,t_0)\ne0,
+ \qquad
+ z_1\in S_{W_1},\quad z_2\in S_{\Psi_1},\quad
+ z_3\in S_{W_2},\quad z_4\in S_{\Psi_2},
+ \label{eq:tpc53-strict-reachability}
+\end{equation}
+with every argument evaluated at \((\beta_0,q_0,t_0)\).
+\end{definition}
+
+For the two opposite-row arguments, strict reachability implies the
+useful ratio condition
+\begin{equation}
+ \frac{z_3}{z_4}=\frac{c_X}{c'_X}\e^{x_0}
+ \in\left(\frac{c_X}{c'_X},
+          2\frac{c_X}{c'_X}\right).
+ \label{eq:tpc53-support-ratio}
+\end{equation}
+At the TPC--25 scaling \(c'_X=1\), this is a direct comparison between
+the nonzero sets of \(W_2\) and \(\Psi_2\).
+
+\begin{theorem}[Reachable-support equivalence]
+\label{thm:tpc53-support-equivalence}
+For a fixed \(\beta\) satisfying
+\eqref{eq:tpc53-carrier-bounds}, the following are equivalent:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item \(\mathscr P(\beta)>0\);
+ \item there is a strictly reachable point with source parameter
+ \(\beta\);
+ \item there are compact boxes \(\cQ\Subset Y^\circ\),
+ \(I\Subset\operatorname{int}I_0\), and constants
+ \(r_0,w_{1,0},\psi_{1,0},w_{2,0},\psi_{2,0}>0\) such that throughout
+ \(\cQ\times I\),
+ \begin{equation}
+ |B_{\beta,a}|\ge r_0,\quad
+ |W_i(z_{2i-1})|\ge w_{i,0},\quad
+ |\Psi_i(z_{2i})|\ge\psi_{i,0}\quad(i=1,2).
+ \label{eq:tpc53-box-lower-bounds}
+ \end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The integrand in \eqref{eq:tpc53-continuous-profile-energy} is
+continuous and nonnegative, and the measure
+\(d\nu(q)dt\) is positive on every nonempty interior box.  A positive
+integral therefore has a point where every factor is nonzero, proving
+\textup{(i)} implies \textup{(ii)}.  Openness of all nonzero sets and
+continuity give a compact product neighborhood and positive minima,
+which is \textup{(iii)}.  Integrating the positive lower bound in
+\textup{(iii)} proves \textup{(i)}.
+\end{proof}
+
+\begin{theorem}[Explicit compact-box overlap]
+\label{thm:tpc53-explicit-overlap}
+Suppose one strict point exists with
+\(\beta_0\in\operatorname{relint}\mathfrak B\).  Then there are
+\(\mathfrak B_0\Subset\mathfrak B\), \(\cQ\Subset Y^\circ\), and
+\(I\Subset\operatorname{int}I_0\) on which
+\eqref{eq:tpc53-box-lower-bounds} holds uniformly in
+\(\beta\in\mathfrak B_0\).  For the full continuous energies, with the
+source parameter restricted to \(\mathfrak B_0\),
+\begin{equation}
+ \boxed{
+ \rho_*:=\inf_{\beta\in\mathfrak B_0}
+ \frac{\mathscr P(\beta)}{\mathscr B(\beta)}
+ \ge
+ \frac{r_0^2w_{1,0}^2\psi_{1,0}^2w_{2,0}^2\psi_{2,0}^2}
+      {H_0b_+}
+ \left(\int_{\cQ}\e^{x+y}\,dx\,dy\right)|I|>0.}
+ \label{eq:tpc53-explicit-rho}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Continuity in \(\beta\) extends the strict inequalities to a compact
+source box.  The numerator of the profile energy is at least the
+integral over \(\cQ\times I\) of the product of the squared lower bounds.
+The carrier denominator is at most \(b_+\).  This gives
+\eqref{eq:tpc53-explicit-rho}.
+\end{proof}
+
+Thus the active source set
+\begin{equation}
+ \mathfrak B_{\rm act}
+ :=\{\beta:\mathscr P(\beta)>0\}
+ \label{eq:tpc53-active-set}
+\end{equation}
+is relatively open.  Every compact subset of it is uniformly active.  A sequence
+of active parameters whose reachable arguments graze a cutoff boundary
+can lose its lower bound at the boundary; compactness of the full closed
+scale range alone therefore gives no positive uniform bound.
+
+\subsection{A legal nonempty model cell}
+
+The certificate is not vacuous.  Take four nonnegative smooth cutoffs
+supported in \((1/2,2)\) and equal to one on \([3/4,5/4]\), take the
+fixed opposite unary shape \(R\) to equal one near the row point below,
+and take \(c_X=c'_X=1\).  Choose \(I_0\) to contain the point below.  With
+\[
+ x_m=y_m=x_\gamma=y_\gamma=\log(21/20),
+ \qquad t_0=(21/20)^{-2},
+\]
+the two \(W\)-arguments equal one and the two \(\Psi\)-arguments equal
+\(20/21\).  This is a strict interior point.  It proves that the allowed
+smooth cutoff class contains certified packets; it does not assert that
+an unspecified inherited cutoff has these supports.

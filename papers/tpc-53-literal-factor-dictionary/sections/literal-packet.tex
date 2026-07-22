@@ -1,0 +1,223 @@
+\section{The declared retained-label packet}
+\label{sec:tpc53-literal-packet}
+
+\subsection{Rows, scales, and the static mask}
+
+Fix \(h_0\ne0\), put \(H=\rad|h_0|\), and take one
+source-compatible opened-\(d\) block.  The source and opposite rows are
+\[
+ m=\ell_m d_m,\qquad m_\gamma=\ell_\gamma d_\gamma,
+ \qquad \ell_m,\ell_\gamma\in[L,2L],\quad
+ d_m,d_\gamma\in[D,2D],
+\]
+where the \(\ell\)'s are prime, the \(d\)'s are squarefree and coprime
+to \(H\).  Endpoint atoms may be assigned to either adjacent dyadic
+cell; every compact box selected below lies strictly inside these
+intervals.  The inherited size separation makes each integer row
+determine its pair \((\ell,d)\) uniquely
+\citep{WangTPC25,WangTPC36}.  Write
+\begin{equation}
+ Q=LD,\qquad QJ\asymp X,\qquad J=K/D,
+ \qquad
+ c_X=\frac{LDJ}{X},\quad c'_X=\frac{DJ}{K}=1.
+ \label{eq:tpc53-scales}
+\end{equation}
+The literal static mask is
+\begin{equation}
+ K_{m\gamma}
+ =\one_{\ell_m\ne\ell_\gamma}
+  \one_{|m-m_\gamma|>\Delta}
+  \one_{(d_m,d_\gamma)\le G},
+ \qquad
+ \Delta=QX^{-\kappa_0},\quad G=X^{\kappa_0}.
+ \label{eq:tpc53-literal-mask}
+\end{equation}
+It remains literal throughout this paper.
+
+Let \(H_0=O_{h_0}(1)\) denote the fixed orbit modulus and let
+\(q=O_{h_0}(1)\) be a common multiple of every fixed row and orbit
+residue modulus.  Fix one locally admissible source/opposite row-residue
+group modulo \(q\) and one orbit class \(a\pmod {H_0}\).  Direct
+splitting makes the periodic multiplier a constant \(\xi_a\) on this
+group and class.  Cells with \(\xi_a=0\) are discarded.  No Fourier
+normalization is attached to a direct cell.
+
+The opposite-row universe is complete within its fixed dyadic and
+residue supports.  Writing \(V\) for the inherited hard divisor cutoff,
+we assume the nondegenerate interior conditions
+\begin{equation}
+ L>4D,\qquad 2D\le V,\qquad L,D\longrightarrow\infty,
+ \label{eq:tpc53-nondegenerate-row-cell}
+\end{equation}
+and no independent opposite-row pruning.  Together with the fixed
+positive-density unary and admissible residue support declared below,
+these conditions put the packet in the TPC--50 nondegenerate interior
+regime, where the coefficient-free opposite factor is a complete
+prime--squarefree cell and the literal mask survives \citep{WangTPC50}.
+
+\subsection{The representative four-factor profile}
+
+The source coefficient is retained without alteration:
+\begin{equation}
+ a_m:=\gamma_m^{(1)}
+ =\mu(d_m)(\log\ell_m)\omega_D(d_m)
+   \psi_L(\ell_m/L)\zeta_m^{(1)},
+ \qquad |\zeta_m^{(1)}|\ll1.
+ \label{eq:tpc53-source-coefficient}
+\end{equation}
+In particular, \(a_m\) is independent of the pre-terminal cofactor
+label \(r\).  The coefficient-free opposite row still has its fixed
+unary shape.  We write it exactly as
+\begin{equation}
+ v_0(\gamma)=\eta_\gamma
+ R\!\left(\log\frac{\ell_\gamma}{L},
+          \log\frac{d_\gamma}{D}\right),\qquad
+ |\eta_\gamma|=1,\qquad
+ R\in C^\infty([0,\log2]^2),
+ \label{eq:tpc53-opposite-unary-shape}
+\end{equation}
+on its nonzero direct support.  Here \(R\) is the product of the fixed
+dyadic shapes and \(\eta_\gamma\) contains the M\"obius sign and any
+remaining unit-modulus direct-cell phase.  The exponent \(e=0\) removes
+the opposite prime logarithm; it does not replace \(R\) by one.
+
+We now name the smooth product that was abbreviated by
+\(\mathcal W\) in later interfaces.  For fixed
+\(W_1,W_2,\Psi_1,\Psi_2\in C_c^\infty((0,\infty))\), put
+\begin{align}
+ \mathcal W_{m,\gamma}(j/J)
+ &:={}
+ W_1(mj/X)\Psi_1(d_mj/K)
+ W_2(m_\gamma j/X)\Psi_2(d_\gamma j/K).
+ \label{eq:tpc53-four-factor-profile}
+\end{align}
+This is the representative product obtained by placing one source-row
+factor and one opposite-row factor into the actual opened-row
+provenance \citep{WangTPC25}.  Each has the form
+\(W(mj/X)\Psi(dj/K)\).  The same argument works verbatim for any fixed
+finite product; four factors keep the allocation visible.
+
+Introduce normalized variables
+\begin{equation}
+ \beta_m=(x_m,y_m,c_X,c'_X),\quad
+ x_m=\log(\ell_m/L),\quad y_m=\log(d_m/D),
+ \qquad
+ q_\gamma=(x_\gamma,y_\gamma),\quad t_j=j/J.
+ \label{eq:tpc53-normalized-variables}
+\end{equation}
+Then the four arguments in \eqref{eq:tpc53-four-factor-profile} are
+\begin{equation}
+ \begin{aligned}
+ z_1(\beta,t)&=c_X\e^{x_m+y_m}t,
+ &\qquad z_2(\beta,t)&=c'_X\e^{y_m}t,\\
+ z_3(\beta,q,t)&=c_X\e^{x_\gamma+y_\gamma}t,
+ &\qquad z_4(\beta,q,t)&=c'_X\e^{y_\gamma}t.
+ \end{aligned}
+ \label{eq:tpc53-four-arguments}
+\end{equation}
+The normalized scale parameters range over a fixed compact set after a
+fixed dyadic subdivision.
+
+\subsection{The pre-terminal lift}
+
+Let \(\cI_X\) contain the retained pairs \((m,r)\), let \(\cO_X\) be the
+complete opposite-row cell, and let
+\[
+ \cJ_{X,a}=\{j:j/J\in I_0, j\equiv a\pmod {H_0}\},
+\]
+where \(I_0\Subset(0,\infty)\) is one fixed interval containing the
+possible orbit support.  Define
+\begin{equation}
+ \cH_X^{\rm lift}
+ :=\bigoplus_{(m,r)\in\cI_X}
+   \ell^2(\cJ_{X,a};\ell^2(\cO_X)).
+ \label{eq:tpc53-lifted-space}
+\end{equation}
+For each outer summand, the map
+\(e_\gamma\mapsto e_{\gamma,d_mr}\) is an isometry onto the physical
+coefficient subspace.  Thus suppressing the deterministic residual
+coordinate here does not change the atomic normalization.
+The declared coefficient vector is
+\begin{equation}
+ G_X^{L}(m,r,j)
+ =\sum_{\gamma\in\cO_X}
+ a_mK_{m\gamma}\eta_\gamma R(q_\gamma)\xi_a
+ \mathcal W_{m,\gamma}(j/J)e_{\gamma}.
+ \label{eq:tpc53-literal-profile-vector}
+\end{equation}
+Consequently
+\begin{equation}
+ \boxed{
+ \|G_X^L\|_{\cH_X^{\rm lift}}^2
+ =\sum_{m,r,j,\gamma}
+ |a_m|^2K_{m\gamma}|R(q_\gamma)|^2|\xi_a|^2
+ |\mathcal W_{m,\gamma}(j/J)|^2.}
+ \label{eq:tpc53-exact-lifted-energy}
+\end{equation}
+Every sum in \eqref{eq:tpc53-exact-lifted-energy} is over the retained
+sets just defined.
+
+The label \(r\) is repeated orthogonally only in
+\eqref{eq:tpc53-lifted-space}.  The terminal residual vector later
+multiplies by \(\mu(r)\Lambda(pr)\), sums coherently over \(p\), and
+groups \(s=d_mr\) \citep{WangTPC48}.  Distinct \((m,r)\) can then
+collide.  Thus \eqref{eq:tpc53-exact-lifted-energy} is not an equality
+for that downstream norm.
+
+This boundary can be written as an exact operator.  Put
+\(\cR_X^{\rm res}:=\{d_mr:(m,r)\in\cI_X\}\), let
+\(\Phi_0\) be the fixed inherited smooth terminal cutoff, and put
+\(\Lambda(n)=(\log n)\Phi_0(n/X)\),
+and define
+\[
+ \mathcal T_{h_0}:\cH_X^{\rm lift}\longrightarrow
+ \ell^2(\cO_X\times\cR_X^{\rm res}\times\cJ_{X,a})
+\]
+on an arbitrary lifted array \(g=(g_{m,r,j,\gamma})\) by
+\begin{equation}
+ (\mathcal T_{h_0}g)_{\gamma,s,j}
+ :=
+ \sum_{\substack{m,r,p\\s=d_mr\\pr-mj=h_0}}
+ \mu(r)\Lambda(pr)g_{m,r,j,\gamma}.
+ \label{eq:tpc53-terminal-grouping-map}
+\end{equation}
+Here \(p\) is prime and every variable in the sum is restricted to the
+inherited finite terminal, row, cofactor, and orbit supports.  With
+those supports understood, the equation \(pr-mj=h_0\) determines the
+admissible terminal atoms.
+The TPC--48 physical left residual output is
+\(\mathcal T_{h_0}G_X^L\).  Its later identification with the original
+large-prime residual carries one inherited global sign.  Its norm is
+\begin{equation}
+ \|\mathcal T_{h_0}G_X^L\|^2
+ =
+ \sum_{\gamma,s,j}
+ \left|
+ \sum_{\substack{m,r,p\\s=d_mr\\pr-mj=h_0}}
+ \mu(r)\Lambda(pr)[G_X^L(m,r,j)]_\gamma
+ \right|^2,
+ \label{eq:tpc53-terminal-cross-term-norm}
+\end{equation}
+and therefore contains cross terms absent from
+\eqref{eq:tpc53-exact-lifted-energy}.
+
+Cauchy--Schwarz on each output fiber gives the upper bound
+\begin{equation}
+ \|\mathcal T_{h_0}g\|^2
+ \le
+ \left(
+  \sup_{\gamma,s,j}
+  \sum_{\substack{m,r,p\\s=d_mr\\pr-mj=h_0}}
+  |\mu(r)\Lambda(pr)|^2
+ \right)
+ \|g\|_{\cH_X^{\rm lift}}^2.
+ \label{eq:tpc53-terminal-upper-bound}
+\end{equation}
+No corresponding lower bound follows from multiplicity alone: every
+output fiber containing two input atoms has a nontrivial kernel as a
+linear functional on unrestricted arrays.  This is a logical
+non-implication, not a claim that the distinguished arithmetic array
+\(G_X^L\) belongs to that kernel.  Moreover, the residual output itself
+belongs to the low-sign-averaged Gram route; its cross-prime inner
+products have not been identified with the native affine physical Gram
+\citep{WangTPC48}.
