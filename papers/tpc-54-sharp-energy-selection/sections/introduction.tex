@@ -1,0 +1,105 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The TPC reduction studied in \citep{WangTPC25,WangTPC48,WangTPC50}
+contains several logically different kinds of ``mass.''  A fixed
+prime--squarefree source rectangle can contain a positive proportion of
+the admissible rows.  Fixed smooth source shapes can give those rows a
+positive proportion of a coefficient-free base energy.  The sampled
+carrier and repetition over retained cofactors then change the row
+weights.  Finally, the inherited coefficient \(\zeta_m\) may redistribute,
+or completely remove, the carrier energy.  Conflating any two of these
+statements turns a support theorem into an unjustified lower bound.
+
+TPC--52 \citep{WangTPC52} proved a conditional pre-terminal profile
+estimate once a fraction \(\sigma_X\) of the actual-coefficient carrier
+energy lies on
+compatible source fibers.  TPC--53 \citep{WangTPC53} supplied the literal
+factor dictionary, exact atomic normalization, and a fixed compatible box
+on which the sampled profile-to-carrier ratio is uniformly positive.  It
+also exhibited the remaining obstruction: the inherited theory assumes
+only \(|\zeta_m|\ll1\), and does not force the actual-coefficient carrier
+energy or the cofactor multiplicity to visit that box.  The present paper
+asks the narrow next question:
+
+\begin{quote}
+Given the structural size of a compatible set and only specified
+information about coefficient capacity and cofactor occupancy, what is the
+best possible lower bound for its actual-coefficient pre-terminal carrier
+energy?
+\end{quote}
+
+This question is finite-dimensional.  Its answer is therefore exact, not
+asymptotic.  The arithmetic work is to identify which weights occur in the
+physical packet and which hypotheses the inherited papers actually
+provide.
+
+\subsection{Main results}
+
+Our first result is a sharp capacity law.  Let \(W\) be total structural
+mass, let the good set carry mass \(\delta W\), and suppose
+\(|\zeta_m|\le C\).  If the coefficient energy is \(\kappa C^2W\), the bad set
+can hold at most \((1-\delta)C^2W\).  Hence the good energy fraction obeys
+\[
+ \sigma\ge
+ \frac{(\kappa-(1-\delta))_+}{\kappa}.
+\]
+Both regimes are attained: below the threshold one may place all energy
+on bad atoms, while above it one first saturates every bad atom.  In terms
+of the unsaturated capacity \(\epsilon=1-\kappa\), positive selection is
+forced exactly when \(\epsilon<\delta\).
+
+The second result describes changes of measure sharply.  If a multiplier
+is at least \(n_-\) on good atoms and at most \(n_+\) on bad atoms, then a
+good fraction \(u\) becomes at least
+\[
+ \mathsf T_{n_-/n_+}(u)
+ =\frac{n_-u}{n_-u+n_+(1-u)}.
+\]
+The identity
+\[
+ \frac{\mathsf T_\lambda(u)}{1-\mathsf T_\lambda(u)}
+ =\lambda\frac{u}{1-u}
+\]
+shows why independent losses multiply in odds coordinates.  Source-shape,
+sampled-carrier, cofactor-occupancy, and coefficient-floor losses therefore
+compose without the slack introduced by repeatedly discarding denominators.
+
+Our third result is negative but operationally decisive.  All selection
+quantities before the terminal map depend only on \(|\zeta_m|\), so
+rowwise unit phases cannot change them.  After the terminal map, two
+admissible inputs can collide only when their full output data agree; one
+coordinate is \(s=d(m)r\).  Any such output fiber containing two nonzero
+inputs has a one-dimensional cancellation direction.  A
+pre-terminal lower bound therefore does not survive grouping merely by
+positivity; one needs new information adapted to the distinguished
+arithmetic coefficients.
+
+\subsection{What is and is not arithmetic progress}
+
+The sharp inequalities are unconditional L0 statements.  Their
+specialization to the literal fixed-\(h_0\) carrier weights is also exact.
+The earlier source-cell and profile-overlap certificates then give an L1
+route under any one of several explicit additional hypotheses.  The full
+inherited class currently supplies only a coefficient upper bound and an
+arbitrary supported cofactor set.  It supplies neither a nonvanishing
+coefficient floor, a near-capacity estimate, nor balanced cofactor
+occupancy.  Consequently we do \emph{not} claim a positive coverage
+constant for the full inherited packet.
+
+Nothing here controls the coherent sum over the terminal prime, proves
+stability of residual grouping, identifies the residual Gram matrix with
+the native affine Gram matrix, or performs Fourier localization at a
+moving shift.  Only the literal fixed shift \(h_0\) is physical.  In
+particular, the paper contains no parity-breaking estimate and no
+twin-prime consequence.
+
+\subsection{Organization}
+
+\Cref{sec:coverage-ladder} defines the selection variables and the exact
+odds calculus.  \Cref{sec:capacity} proves the capacity and coefficient
+floor theorems.  \Cref{sec:occupancy} treats reweighting, multiple stages,
+and a finite-cover alternative.  \Cref{sec:physical} inserts the literal
+prime--squarefree weights.  \Cref{sec:grouping} proves the phase-invariance
+and grouping obstructions.  \Cref{sec:endpoint} records the polynomial
+budget, claim level, and the next gate.

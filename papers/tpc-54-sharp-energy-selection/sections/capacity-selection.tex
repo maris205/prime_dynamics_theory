@@ -1,0 +1,171 @@
+\section{Sharp selection from coefficient capacity}
+\label{sec:capacity}
+
+We first keep the structural weights fixed and ask what a coefficient
+upper bound plus one scalar global energy statistic can force.
+
+\begin{theorem}[Sharp capacity threshold]
+\label{thm:tpc54-capacity}
+Let \(0\le\delta\le1\), let \(|\zeta_m|\le C\), and suppose \(E>0\).
+Then
+\begin{equation}
+ \boxed{\quad
+ \sigma\ge
+ \frac{\bigl(\kappa-(1-\delta)\bigr)_+}{\kappa}
+ =\left(1-\frac{1-\delta}{\kappa}\right)_+ .
+ \quad}
+ \label{eq:tpc54-capacity-bound}
+\end{equation}
+For every admissible pair \((\delta,\kappa)\), the bound is attained by
+coefficients whose squared modulus is constant separately on \(\cG\) and
+\(\cM\setminus\cG\).  In particular, global information forces
+\(\sigma>0\) if and only if
+\begin{equation}
+ \kappa>1-\delta.
+ \label{eq:tpc54-positive-threshold}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The bad set has capacity
+\[
+ E(\cM\setminus\cG)
+ \le C^2W(\cM\setminus\cG)
+ =C^2W(1-\delta).
+\]
+Since \(E=\kappa C^2W\), subtraction gives
+\[
+ E(\cG)\ge
+ C^2W\bigl(\kappa-(1-\delta)\bigr).
+\]
+Combining this with \(E(\cG)\ge0\) and dividing by \(E\) proves
+\eqref{eq:tpc54-capacity-bound}.
+
+Assume first \(0<\delta<1\).  If \(0<\kappa\le1-\delta\), set
+\[
+ |\zeta_m|^2=0\quad(m\in\cG),
+ \qquad
+ |\zeta_m|^2=C^2\frac{\kappa}{1-\delta}
+ \quad(m\notin\cG).
+\]
+Then \(E=\kappa C^2W\) and \(\sigma=0\).  If
+\(1-\delta<\kappa\le1\), set
+\[
+ |\zeta_m|^2=C^2
+ \quad(m\notin\cG),
+ \qquad
+ |\zeta_m|^2=C^2\frac{\kappa-1+\delta}{\delta}
+ \quad(m\in\cG).
+\]
+This saturates the bad capacity and attains the positive branch of
+\eqref{eq:tpc54-capacity-bound}.  For \(\delta=0\), necessarily
+\(\sigma=0\); for \(\delta=1\), necessarily \(\sigma=1\).  These agree
+with the formula and complete the endpoint cases.
+\end{proof}
+
+The equality mechanism is transparent.  On the zero branch it is enough
+that all occupied energy fit on the bad set.  On the positive branch,
+equality requires every positive-weight bad atom to be saturated; the
+remaining prescribed energy is then placed on the good set.  No phase
+condition occurs.
+
+\begin{corollary}[Saturation-defect form]
+\label{cor:tpc54-defect}
+Write \(\epsilon:=1-\kappa\).  Then
+\begin{equation}
+ \sigma\ge\frac{(\delta-\epsilon)_+}{1-\epsilon}.
+ \label{eq:tpc54-defect-bound}
+\end{equation}
+If \(\epsilon\le(1-\tau)\delta\) for some \(0\le\tau\le1\), then
+\begin{equation}
+ \sigma\ge\frac{\tau\delta}{1-\epsilon}
+ \ge\tau\delta.
+ \label{eq:tpc54-defect-tau}
+\end{equation}
+The condition \(\epsilon<\delta\) for a positive conclusion is sharp.
+\end{corollary}
+
+Thus ``large total energy'' is meaningful only relative to the capacity
+of the complement.  A lower bound \(E\gg C^2W\) with an unspecified small
+constant need not select a small good set: the exact requirement is
+\(\kappa>1-\delta\).
+
+\subsection{A local coefficient floor}
+
+The other natural certificate is local rather than global.
+
+\begin{theorem}[Sharp good-cell floor]
+\label{thm:tpc54-floor}
+Suppose
+\begin{equation}
+ |\zeta_m|\ge\theta C\quad(m\in\cG),
+ \qquad |\zeta_m|\le C\quad(m\in\cM),
+ \qquad 0<\theta\le1.
+ \label{eq:tpc54-floor-hyp}
+\end{equation}
+If \(E>0\), then
+\begin{equation}
+ \boxed{\quad
+ \sigma\ge
+ \frac{\theta^2\delta}
+      {\theta^2\delta+1-\delta}
+ =\mathsf T_{\theta^2}(\delta).
+ \quad}
+ \label{eq:tpc54-floor-bound}
+\end{equation}
+The bound is sharp.
+\end{theorem}
+
+\begin{proof}
+Write \(A=E(\cG)\) and \(B=E(\cM\setminus\cG)\).  The hypotheses give
+\[
+ A\ge\theta^2C^2\delta W,
+ \qquad B\le C^2(1-\delta)W.
+\]
+Because \(A/(A+B)\) increases with \(A\) and decreases with \(B\), the
+claimed bound follows.  Equality is obtained by taking
+\(|\zeta_m|=\theta C\) on the good set and \(|\zeta_m|=C\) on the bad
+set, with the evident endpoint interpretations.
+\end{proof}
+
+If both the actual value of \(\kappa\) and a good-cell floor are known,
+neither certificate should be discarded.
+
+\begin{theorem}[Optimal combined certificate]
+\label{thm:tpc54-combined}
+Under \eqref{eq:tpc54-floor-hyp}, a positive capacity level \(\kappa\) is
+feasible only if \(\kappa\ge\theta^2\delta\).  For every feasible
+\(\kappa\in(0,1]\cap[\theta^2\delta,1]\),
+\begin{equation}
+ \boxed{\quad
+ \sigma\ge
+ \frac{
+  \max\{\theta^2\delta,\ \kappa-(1-\delta)\}}
+ {\kappa}.
+ \quad}
+ \label{eq:tpc54-combined-bound}
+\end{equation}
+The bound is sharp for each \((\delta,\theta,\kappa)\).
+\end{theorem}
+
+\begin{proof}
+The floor gives \(E(\cG)\ge\theta^2\delta C^2W\), while the bad-set
+capacity argument gives
+\(E(\cG)\ge(\kappa-(1-\delta))C^2W\).  Dividing their maximum by
+\(E=\kappa C^2W\) proves the inequality.
+
+If \(\kappa\le1-\delta+\theta^2\delta\), put exactly the floor energy on
+the good set and distribute
+\((\kappa-\theta^2\delta)C^2W\) uniformly over the bad set.  If
+\(\kappa\ge1-\delta+\theta^2\delta\), saturate the bad set and distribute
+the remaining \((\kappa-1+\delta)C^2W\) uniformly over the good set.
+All squared amplitudes lie in \([0,C^2]\) and respect the floor, proving
+sharpness.  The degenerate values \(\delta=0,1\) follow directly.
+\end{proof}
+
+After the floor is removed, the formula in
+\cref{thm:tpc54-combined} extends to \(\theta=0\) and reduces to the
+capacity law.
+If \(\kappa\) is not specified, minimizing over all feasible values
+recovers \cref{thm:tpc54-floor}.  If \(|\zeta_m|=C\) on every atom, then
+\(\kappa=1\) and \(\sigma=\delta\) exactly.

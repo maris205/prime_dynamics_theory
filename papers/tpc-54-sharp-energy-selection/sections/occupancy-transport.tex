@@ -1,0 +1,227 @@
+\section{Sharp transport through source and cofactor weights}
+\label{sec:occupancy}
+
+The previous section treated a fixed base measure.  We now quantify how a
+good fraction changes when the atoms are reweighted.
+
+\subsection{An exact four-factor odds identity}
+
+The sharp inequalities below are consequences of an exact identity that
+also gives a necessary-and-sufficient average-data summary.
+
+\begin{theorem}[Exact row--shape--amplitude--occupancy factorization]
+\label{thm:tpc54-exact-odds-factorization}
+Let \(q_m\ge0\) be reference row weights, let \(b_m\ge0\) be a fixed
+base-energy multiplier, let \(|\zeta_m|\le C\), and let \(N_m\ge0\) be
+an occupancy multiplier.  For \(A\in\{\cG,\cB\}\), where
+\(\cB=\cM\setminus\cG\), set
+\begin{align}
+ Q_A&:=\sum_{m\in A}q_m,
+ &\overline b_A&:=\frac{\sum_{m\in A}q_mb_m}{Q_A},
+ \nonumber\\
+ \vartheta_A&:=
+ \frac{\sum_{m\in A}q_mb_m|\zeta_m|^2}
+      {C^2\sum_{m\in A}q_mb_m},
+ &\overline N_A&:=
+ \frac{\sum_{m\in A}q_mb_m|\zeta_m|^2N_m}
+      {\sum_{m\in A}q_mb_m|\zeta_m|^2}.
+ \label{eq:tpc54-factor-averages}
+\end{align}
+Put \(\delta_0=Q_{\cG}/(Q_{\cG}+Q_{\cB})\), and define
+\[
+ F_A:=\sum_{m\in A}q_mb_m|\zeta_m|^2N_m,
+ \qquad \sigma_N:=\frac{F_{\cG}}{F_{\cG}+F_{\cB}}.
+\]
+Assume, for both \(A=\cG,\cB\), that \(Q_A\), the base mass
+\(\sum_Aq_mb_m\), the amplitude mass
+\(\sum_Aq_mb_m|\zeta_m|^2\), and \(F_A\) are all positive.  Then
+\begin{equation}
+ \boxed{\quad
+ \frac{\sigma_N}{1-\sigma_N}
+ =\frac{\overline N_{\cG}}{\overline N_{\cB}}
+  \frac{\vartheta_{\cG}}{\vartheta_{\cB}}
+  \frac{\overline b_{\cG}}{\overline b_{\cB}}
+  \frac{\delta_0}{1-\delta_0}.
+ \quad}
+ \label{eq:tpc54-exact-odds-factorization}
+\end{equation}
+The boundary cases are read directly from \(F_{\cG}\) and
+\(F_{\cB}\): the selected fraction is zero if only the bad energy is
+positive, one if only the good energy is positive, and undefined if both
+vanish.
+\end{theorem}
+
+\begin{proof}
+For either \(A\), the definitions telescope to
+\[
+ F_A=C^2Q_A\overline b_A\vartheta_A\overline N_A.
+\]
+Taking \(F_{\cG}/F_{\cB}\) proves
+\eqref{eq:tpc54-exact-odds-factorization}.
+\end{proof}
+
+Thus \(\sigma_N\ge s\), for \(0<s<1\), is equivalent to the right side
+of \eqref{eq:tpc54-exact-odds-factorization} being at least
+\(s/(1-s)\).  Pointwise coefficient floors and occupancy bounds are
+convenient sufficient conditions; the product of the good-to-bad weighted
+average ratios is an exact necessary-and-sufficient summary.  All unit
+phases have disappeared before any estimate is made.
+
+Taking \(N_m\equiv1\) and writing
+\[
+ \delta_b:=\frac{\sum_{\cG}q_mb_m}{\sum_{\cM}q_mb_m},
+ \qquad
+ \sigma_b:=\frac{\sum_{\cG}q_mb_m|\zeta_m|^2}
+                  {\sum_{\cM}q_mb_m|\zeta_m|^2},
+\]
+gives the exact amplitude identity
+\begin{equation}
+ \frac{\sigma_b}{1-\sigma_b}
+ =\frac{\vartheta_{\cG}}{\vartheta_{\cB}}
+  \frac{\delta_b}{1-\delta_b},
+ \label{eq:tpc54-exact-amplitude-odds}
+\end{equation}
+Taking \(b_m\equiv1\) and \(|\zeta_m|\equiv C\) isolates the exact
+energy-weighted occupancy ratio.
+
+\subsection{Pointwise sharp transport}
+
+\begin{theorem}[Sharp occupancy transport]
+\label{thm:tpc54-transport}
+ Let \(u_m\ge0\) have positive total mass and let
+\(\delta=\sum_{\cG}u_m/\sum_{\cM}u_m\).  Let \(v_m\ge0\) satisfy
+\begin{equation}
+ v_m\ge v_->0\quad(m\in\cG),
+ \qquad
+ v_m\le v_+<\infty\quad(m\notin\cG),
+ \qquad v_+>0,
+ \label{eq:tpc54-multiplier-bounds}
+\end{equation}
+Assume \(\sum_m u_mv_m>0\).  Then the good fraction after reweighting is
+\begin{equation}
+ \delta_v:=\frac{\sum_{m\in\cG}u_mv_m}
+                   {\sum_{m\in\cM}u_mv_m}
+ \ge
+ \mathsf T_{v_-/v_+}(\delta)
+ =\frac{v_-\delta}{v_-\delta+v_+(1-\delta)}.
+ \label{eq:tpc54-transport}
+\end{equation}
+The inequality is sharp.  If in addition \(v_-\le v_+\),
+\(v_m\le v_+\) on \(\cG\) and \(v_m\ge v_-\) on its complement, the
+corresponding sharp upper bound is
+\begin{equation}
+ \delta_v\le
+ \frac{v_+\delta}{v_+\delta+v_-(1-\delta)}.
+ \label{eq:tpc54-transport-upper}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Put \(A=\sum_{\cG}u_mv_m\) and
+\(B=\sum_{\cM\setminus\cG}u_mv_m\).  Then
+\(A\ge v_-\delta\sum u_m\) and
+\(B\le v_+(1-\delta)\sum u_m\).  Monotonicity of \(A/(A+B)\) gives the
+ lower bound.  Equality is attained by taking \(v=v_-\) on \(\cG\) and
+\(v=v_+\) on its complement.  Reversing the two inequalities proves and
+sharpens the upper bound; equality there is attained by taking
+\(v=v_+\) on \(\cG\) and \(v=v_-\) on its complement.
+\end{proof}
+
+Only a lower bound on good atoms and an upper bound on bad atoms are needed
+for the lower estimate.  Very large good multipliers help rather than
+hurt.  By contrast, a global upper bound with no good lower bound permits
+complete loss of occupancy.
+
+The exact factorization also gives a weaker-hypothesis version.  If
+\(E_A=\sum_{m\in A}u_m|\zeta_m|^2>0\) and
+\[
+ \overline N_A
+ =\frac{\sum_{m\in A}u_m|\zeta_m|^2N_m}{E_A},
+\]
+then, whenever both lifted masses are positive, the lifted odds are
+exactly the unlifted odds multiplied by
+\(\overline N_{\cG}/\overline N_{\cB}\).  If only the good lifted mass is
+positive the lifted fraction is one; if only the bad lifted mass is
+positive it is zero.  Hence pointwise bounds
+\(N_m\ge n_-\) on good atoms and \(N_m\le n_+\) on bad atoms are not
+necessary; they merely certify the corresponding average ratio.
+
+\subsection{Exact composition of the coverage ladder}
+
+Start with geometric weights \(q_m\) and good fraction
+\(\delta_{\rm geo}\).  Let a fixed source-shape multiplier have ratio
+\(\lambda_{\rm src}=a_-/a_+\), let the sampled-carrier multiplier have
+ratio \(\lambda_{\rm car}=b_-/b_+\), and let the cofactor-occupancy
+multiplier have ratio \(\lambda_{\rm cf}=n_-/n_+\), all in the sense of
+\eqref{eq:tpc54-multiplier-bounds}.  Applying
+\cref{thm:tpc54-transport,lem:tpc54-odds} gives
+\begin{equation}
+ \delta_{\rm lift}
+ \ge
+ \mathsf T_{\lambda_{\rm cf}}
+  \!\left(\mathsf T_{\lambda_{\rm car}}
+  \!\left(\mathsf T_{\lambda_{\rm src}}
+  (\delta_{\rm geo})\right)\right)
+ =\mathsf T_{\lambda_{\rm src}\lambda_{\rm car}\lambda_{\rm cf}}
+  (\delta_{\rm geo}).
+ \label{eq:tpc54-lifted-composition}
+\end{equation}
+If also \(|\zeta_m|\ge\theta C\) on the good set and
+\(|\zeta_m|\le C\) everywhere, one more application yields
+\begin{equation}
+ \boxed{\quad
+ \sigma\ge
+ \mathsf T_{\theta^2\lambda_{\rm src}\lambda_{\rm car}\lambda_{\rm cf}}
+  (\delta_{\rm geo}).
+ \quad}
+ \label{eq:tpc54-full-composition}
+\end{equation}
+Each stage, and the composition, is sharp in the unrestricted abstract
+finite-atom class: take every good multiplier at its lower endpoint and
+every bad multiplier at its upper endpoint.  Literal arithmetic factors
+need not realize all these extremizers simultaneously.
+
+Equation \eqref{eq:tpc54-full-composition} is stronger than multiplying a
+good numerator by several lower bounds while repeatedly replacing the total
+denominator by a global upper bound.  The odds coordinate keeps the exact
+denominator at every stage.
+
+If a coefficient floor is unavailable, define \(\kappa\) relative to the
+already lifted base weights.  Then \cref{thm:tpc54-capacity} gives instead
+\begin{equation}
+ \sigma\ge
+ \left(1-\frac{1-\delta_{\rm lift}}{\kappa}\right)_+.
+ \label{eq:tpc54-lifted-capacity}
+\end{equation}
+This route needs no pointwise lower bound, but near-saturation becomes more
+demanding when \(\delta_{\rm lift}\) is small.
+
+\subsection{A finite-cover alternative}
+
+Balance is sufficient, not logically necessary.  A second route is to
+cover every active atom by finitely many compatible cells.
+
+\begin{proposition}[Selection from a finite compatible cover]
+\label{prop:tpc54-finite-cover}
+Suppose \(E>0\) and the support of the coefficient-weighted atomic energy is contained in
+\(\cG_1\cup\cdots\cup\cG_R\), where every \(\cG_j\) has the required
+profile compatibility and \(R\) is independent of the scale.  Then some
+cell satisfies
+\begin{equation}
+ \frac{E(\cG_j)}{E}\ge\frac1R.
+ \label{eq:tpc54-cover-pigeonhole}
+\end{equation}
+The constant \(1/R\) is optimal.
+\end{proposition}
+
+\begin{proof}
+Since the cover may overlap,
+\(E\le\sum_{j=1}^R E(\cG_j)\).  One summand is therefore at least
+\(E/R\).  Equality occurs for a partition into \(R\) cells of equal
+energy.
+\end{proof}
+
+This proposition tolerates arbitrary source and cofactor concentration,
+but its premise is stronger geometrically: the compatible cells must cover
+the \emph{actual active support}, not merely one open positive-volume
+subset of the ambient parameter box.

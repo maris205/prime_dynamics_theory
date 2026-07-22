@@ -1,0 +1,97 @@
+\section{Phase blindness and the residual-grouping barrier}
+\label{sec:grouping}
+
+The selection theory is deliberately placed before the terminal map.  Two
+elementary invariances show why this order cannot be reversed for free.
+
+\subsection{Diagonal phases cannot repair magnitude coverage}
+
+\begin{proposition}[Pre-terminal phase blindness]
+\label{prop:tpc54-phase-blindness}
+For arbitrary real phases \(\vartheta_m\), replace
+\(\zeta_m\) by \(e^{i\vartheta_m}\zeta_m\).  Then
+\(E(S)\), \(\delta\), \(\kappa\), and \(\sigma\) are unchanged for every
+\(S\subseteq\cM\).  The same holds after orthogonal repetition over
+retained labels \((m,r)\).
+\end{proposition}
+
+\begin{proof}
+Every displayed quantity is a weighted sum of \(|\zeta_m|^2\), and
+\(|e^{i\vartheta_m}\zeta_m|=|\zeta_m|\).  Repetition over orthogonal
+coordinates only repeats the same diagonal squared modulus.
+\end{proof}
+
+Thus equidistribution, randomness, or oscillation of phases alone cannot
+move pre-terminal energy onto a good cell.  Such information can become
+relevant only when amplitudes are summed coherently later.
+
+\subsection{A two-atom kernel after grouping}
+
+Let \(\cU\) be a finite set of admissible post-prime input labels and let
+the residual grouping map have the fiber form
+\begin{equation}
+ (Tz)_y=\sum_{u:\,q(u)=y}c_u z_u,
+ \label{eq:tpc54-fiber-map}
+\end{equation}
+In the literal slice, one may take
+\[
+ u=(m,r,j,\gamma),\qquad
+ q(u)=(\gamma,d(m)r,j),
+\]
+where the terminal prime \(p_u\) is admissible and satisfies
+\(p_ur-mj=h_0\); the coefficient \(c_u\) includes
+\(\mu(r)\Lambda(p_ur)\) and the already formed prime amplitude.  Thus
+equality of \(d(m)r\) alone is not enough for a physical collision: the
+other output coordinates and terminal constraint must also agree.  This
+notation isolates only the linear-algebra issue and does not replace the
+literal terminal formula of TPC--53.
+
+\begin{theorem}[Two-atom collision obstruction]
+\label{thm:tpc54-two-atom-kernel}
+Suppose one output fiber contains distinct labels \(u_1,u_2\) with
+\(c_{u_1}c_{u_2}\ne0\).  Then \(T\) has a nonzero vector supported on
+that fiber in its kernel.  Consequently there is no constant \(c>0\)
+such that
+\begin{equation}
+ \|Tz\|_2^2\ge c\sum_{u\in\cU}|z_u|^2
+ \label{eq:tpc54-impossible-lower}
+\end{equation}
+for all coefficient arrays supported on any selected subspace containing
+both coordinate directions.
+\end{theorem}
+
+\begin{proof}
+Take
+\[
+ z_{u_1}=c_{u_2},\qquad z_{u_2}=-c_{u_1},
+ \qquad z_u=0\quad(u\ne u_1,u_2).
+\]
+Then the only potentially nonzero output is
+\(c_{u_1}c_{u_2}-c_{u_2}c_{u_1}=0\), while \(z\ne0\).  Scaling the vector
+also meets any prescribed common upper bound on its coordinates.
+\end{proof}
+
+At a fixed source \(m\), the map \(r\mapsto d(m)r\) is injective, so the
+literal pre-terminal \(r\)-square is exact.  Collisions, if present, can
+arise only across different sources.  TPC--53 displays the actual order:
+multiply by the
+terminal weight, form the coherent prime sum, and only then group equal
+values of \(s=d(m)r\).  Expanding the final squared norm produces cross
+terms absent from \eqref{eq:tpc54-literal-energy}.
+
+\begin{corollary}[Logical boundary of energy selection]
+\label{cor:tpc54-selection-boundary}
+If a selected compatible coordinate subspace contains both directions in
+such a nonzero collision fiber, it has a kernel vector with compatible
+input-energy fraction one.  Hence no uniform grouped lower bound holds on
+that subspace.  A coverage statement alone gives no lower bound until one
+checks how its selected support meets the physical collision fibers.  To
+pass the boundary one must prove an estimate for the distinguished
+arithmetic array---for example a coherent-prime lower square followed by
+grouping stability---or restrict to a collision-free set of labels.
+\end{corollary}
+
+The theorem is a no-go for an \emph{automatic implication}, not evidence
+that the physical coefficients actually choose a cancelling vector.  It
+pinpoints the next missing estimate without assigning adversarial freedom
+to a fixed arithmetic sequence.

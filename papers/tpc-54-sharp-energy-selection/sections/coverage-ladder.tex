@@ -1,0 +1,112 @@
+\section{The pre-terminal coverage ladder}
+\label{sec:coverage-ladder}
+
+\subsection{Finite weighted atoms}
+
+Let \(\cM\) be a nonempty finite set, let \(w_m\ge0\), and write
+\[
+ W(S):=\sum_{m\in S}w_m,
+ \qquad W:=W(\cM)>0.
+\]
+Atoms of zero weight may be deleted, so no result changes if one assumes
+\(w_m>0\).  Fix a good set \(\cG\subseteq\cM\) and define its structural
+fraction by
+\begin{equation}
+ \delta:=\frac{W(\cG)}{W}\in[0,1].
+ \label{eq:tpc54-delta}
+\end{equation}
+For coefficients \(\zeta_m\in\C\), put
+\begin{equation}
+ E(S):=\sum_{m\in S}w_m|\zeta_m|^2,
+ \qquad E:=E(\cM).
+ \label{eq:tpc54-energy}
+\end{equation}
+Whenever \(E>0\), the actual good-energy fraction is
+\begin{equation}
+ \sigma:=\frac{E(\cG)}{E}.
+ \label{eq:tpc54-sigma}
+\end{equation}
+These are atomic squared norms.  No sum of complex amplitudes has yet
+occurred.
+
+If \(|\zeta_m|\le C\) for a fixed \(C>0\), the total available capacity is
+\(C^2W\).  We normalize the occupied capacity by
+\begin{equation}
+ \kappa:=\frac{E}{C^2W}\in(0,1].
+ \label{eq:tpc54-kappa}
+\end{equation}
+The three numbers have different meanings: \(\delta\) is structural,
+\(\kappa\) is global magnitude information, and \(\sigma\) is the desired
+localized coefficient-energy fraction.
+
+\subsection{The odds transform}
+
+For \(\lambda\ge0\) and \(0\le u\le1\), set
+\begin{equation}
+ \mathsf T_\lambda(u)
+ :=\frac{\lambda u}{\lambda u+1-u},
+ \label{eq:tpc54-T-def}
+\end{equation}
+with the endpoint convention \(\mathsf T_0(1):=1\); thus
+\(\mathsf T_0(u)=0\) for \(u<1\).  There is no joint continuous extension
+at the exceptional corner \((0,1)\); the convention is only bookkeeping
+and will not be used with a zero lower multiplier.
+
+\begin{lemma}[Odds calculus]
+\label{lem:tpc54-odds}
+For \(0<u<1\) and \(\lambda>0\),
+\begin{equation}
+ \frac{\Tp{\lambda}{u}}{1-\Tp{\lambda}{u}}
+ =\lambda\frac{u}{1-u}.
+ \label{eq:tpc54-odds}
+\end{equation}
+Moreover, \(\mathsf T_\lambda\) is increasing in both variables and
+\begin{equation}
+ \mathsf T_\lambda\!\left(\mathsf T_\mu(u)\right)
+ =\mathsf T_{\lambda\mu}(u)
+ \label{eq:tpc54-composition}
+\end{equation}
+whenever the displayed expressions are defined by the stated endpoint
+conventions.
+\end{lemma}
+
+\begin{proof}
+Both identities follow by direct substitution.  Differentiation gives
+\[
+ \partial_u\mathsf T_\lambda(u)
+ =\frac{\lambda}{(1-(1-\lambda)u)^2},
+ \qquad
+ \partial_\lambda\mathsf T_\lambda(u)
+ =\frac{u(1-u)}{(1-(1-\lambda)u)^2},
+\]
+in the interior, proving monotonicity.  The ordinary endpoints follow by
+one-variable limits, while the exceptional corner and the composition law
+there are checked directly from the convention.
+\end{proof}
+
+The transform is the exact bookkeeping device for the rest of the paper.
+If a change of weight decreases the good-to-bad odds by at most a factor
+\(\lambda\), it changes the good fraction by \(\mathsf T_\lambda\).  A
+chain of changes multiplies the odds factors, rather than adding an
+artificial loss at each denominator.
+
+\subsection{Five distinct levels}
+
+For later reference we separate the following levels.
+
+\begin{enumerate}[label=\textup{(C\arabic*)},leftmargin=2.8em]
+ \item \emph{Geometric occupancy:} counting or prime--squarefree base
+       mass on a compatible source box.
+ \item \emph{Source base energy:} geometric mass reweighted by fixed
+       logarithmic and smooth source shapes, but not by \(\zeta_m\).
+ \item \emph{Sampled carrier energy:} source base energy reweighted by
+       the coefficient-free sampled carrier.
+ \item \emph{Lifted carrier energy:} sampled carrier energy repeated over
+       the actual retained cofactors.
+ \item \emph{Actual-coefficient carrier energy:} lifted carrier energy
+       multiplied by \(|\zeta_m|^2\).
+\end{enumerate}
+
+Levels C1--C5 are all pre-terminal.  The coherent prime sum and the map
+grouping \(s=d(m)r\) lie after this ladder.  Thus positivity permits exact
+selection within the ladder, but not across the terminal boundary.

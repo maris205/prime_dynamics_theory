@@ -1,0 +1,97 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\Tp}[2]{\mathsf T_{#1}\!\left(#2\right)}
+
+\hypersetup{
+  pdftitle={Sharp Energy Selection Before Residual Grouping: Capacity Saturation, Cofactor Occupancy, and the Exact Coverage Threshold},
+  pdfauthor={Liang Wang},
+  pdfsubject={Sharp energy-coverage inequalities for compatible prime-squarefree source cells before residual grouping},
+  pdfkeywords={energy selection, capacity saturation, cofactor occupancy, prime-squarefree cells, sieve parity}
+}
+
+\title{\bfseries Sharp Energy Selection Before Residual Grouping:\\
+Capacity Saturation, Cofactor Occupancy, and the Exact Coverage Threshold}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\noindent\textbf{Keywords:} energy selection; capacity saturation;
+cofactor occupancy; prime--squarefree cells; residual grouping; sieve parity.
+
+\newpage
+\medskip
+\noindent\textbf{Convention.}
+Every atomic energy in the selection statements is the
+actual-coefficient-weighted carrier energy on retained pre-terminal
+labels.  The unseparated physical-profile norm and a grouped output are
+named separately.  The shift \(h_0\ne0\) is fixed.  Unit phases are never
+converted into magnitude information, and the many-to-one grouping
+\(s=d(m)r\) is never moved through a squared norm.
+
+\medskip
+\noindent\textbf{MSC 2020:} Primary 11N35, 26D15; Secondary 46C05,
+11N36.
+
+\input{sections/introduction}
+\input{sections/coverage-ladder}
+\input{sections/capacity-selection}
+\input{sections/occupancy-transport}
+\input{sections/physical-specialization}
+\input{sections/grouping-barrier}
+\input{sections/endpoint-claims}
+
+\begingroup
+\small
+\raggedright
+\setlength{\bibsep}{4pt plus 1pt minus 1pt}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

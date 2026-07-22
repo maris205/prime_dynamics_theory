@@ -1,0 +1,263 @@
+\section{Specialization to the literal fixed-shift packet}
+\label{sec:physical}
+
+We now insert the exact factors identified in TPC--53.  This section does
+not alter the inherited coefficient class.
+
+\subsection{The physical structural weights}
+
+Fix the literal shift \(h_0\ne0\), the opposite-row box \(\cQ\), the
+orbit interval \(I\), and the direct residue class \(a\) used in the
+TPC--53 sampled carrier.  Fix one complete source dyadic/residue cell
+\(\cM_X^{\rm full}\) on this carrier slice and its compatible subset
+\(\cM_X^{\rm good}\).  Thus ``full'' below means complete only on the
+source side of the declared slice, not the whole TPC--48 residual packet.
+For a source row
+\(m=d_m\ell_m\), with \(\ell_m\) prime and \(d_m\) squarefree, remove the
+inherited factor \(\zeta_m^{(1)}\) and define
+\begin{equation}
+ u_m:=
+ \left|
+  \mu(d_m)(\log\ell_m)\omega_D(d_m)
+  \psi_L(\ell_m/L)
+ \right|^2.
+ \label{eq:tpc54-source-base-weight}
+\end{equation}
+All fixed residue and smooth-shape restrictions are understood as part of
+the declared source cell.  Let \(\cI_X\) be the retained pre-terminal set
+of pairs \((m,r)\), let
+\(N_r(m)=\#\{r:(m,r)\in\cI_X\}\), and let
+\(\mathscr B_X^M(m)\ge0\) be the sampled carrier norm of TPC--53.  The
+pre-terminal carrier is identical for every retained \(r\) over the same
+source row; neither \(\mu(r)\Lambda(pr)\) nor any terminal prime weight is
+included at this stage.  The exact factorization is
+\begin{equation}
+ b_m:=u_m\mathscr B_X^M(m),
+ \qquad N_m:=N_r(m),
+ \qquad w_m:=b_mN_m.
+ \label{eq:tpc54-literal-w}
+\end{equation}
+Delete zero-weight rows by putting
+\begin{equation}
+ \cA_X:=\{m\in\cM_X^{\rm full}:w_m>0\},
+ \qquad \cG_X:=\cA_X\cap\cM_X^{\rm good}.
+ \label{eq:tpc54-active-source}
+\end{equation}
+Consequently the actual-coefficient-weighted carrier energy is
+\begin{equation}
+ \mathscr C_X
+ =\sum_{m\in\cA_X}
+   w_m|\zeta_m^{(1)}|^2,
+ \label{eq:tpc54-literal-energy}
+\end{equation}
+and, whenever \(\mathscr C_X>0\), the compatible carrier-energy fraction is
+\begin{equation}
+ \sigma_X
+ =\frac{
+   \sum_{m\in\cG_X}w_m|\zeta_m^{(1)}|^2}
+  {\mathscr C_X}.
+ \label{eq:tpc54-literal-sigma}
+\end{equation}
+These formulas are simply the repeated orthogonal carrier normalization
+on \((m,r)\) before the terminal prime map
+\citep{WangTPC52,WangTPC53}.  The residual coordinate is not yet grouped.
+
+TPC--53 proves, on a fixed interior compatible source/orbit box, a
+pointwise sampled comparison
+\begin{equation}
+ \mathscr P_X^M(m)\ge\alpha_*\mathscr B_X^M(m),
+ \qquad \alpha_*>0,\qquad m\in\cG_X,
+ \label{eq:tpc54-profile-pointwise}
+\end{equation}
+for all large \(X\).  Define the exact unseparated physical-profile
+energies by
+\begin{align}
+ \mathscr Q_X
+ &:=\sum_{m\in\cA_X}
+ u_mN_r(m)|\zeta_m^{(1)}|^2\mathscr P_X^M(m),
+ \label{eq:tpc54-physical-total-energy}\\
+ \mathscr Q_{X,\rm good}
+ &:=\sum_{m\in\cG_X}
+ u_mN_r(m)|\zeta_m^{(1)}|^2\mathscr P_X^M(m).
+ \label{eq:tpc54-physical-good-energy}
+\end{align}
+Therefore any lower bound for \(\sigma_X\) implies the pre-terminal
+physical-profile estimate
+\begin{equation}
+ \mathscr Q_{X,\rm good}
+ \ge \alpha_*\sigma_X\mathscr C_X.
+ \label{eq:tpc54-selected-profile}
+\end{equation}
+This implication is pointwise and has no local-to-global normalization
+gap.
+
+\subsection{Three coefficient regimes}
+
+Assume \(\mathscr C_X>0\), and let \(C_X>0\) be any certified upper bound
+such that \(|\zeta_m^{(1)}|\le C_X\) on the declared full source slice.
+With the active carrier weights \(w_m\), define
+\begin{equation}
+ \delta_{{\rm cf},X}
+ :=\frac{\sum_{m\in\cG_X}w_m}
+         {\sum_{m\in\cA_X}w_m},
+ \qquad
+ \kappa_X
+ :=\frac{\mathscr C_X}
+ {C_X^2\sum_{m\in\cA_X}w_m}.
+ \label{eq:tpc54-physical-delta-kappa}
+\end{equation}
+The universal sharp capacity theorem gives the valid physical
+specialization
+\begin{equation}
+ \boxed{\quad
+ \sigma_X\ge
+ \left(1-\frac{1-\delta_{{\rm cf},X}}{\kappa_X}
+ \right)_+.
+ \quad}
+ \label{eq:tpc54-physical-capacity}
+\end{equation}
+
+More precisely, \cref{thm:tpc54-exact-odds-factorization} applies with
+reference row weight one on \(\cM_X^{\rm full}\), fixed base multiplier
+\(b_m=u_m\mathscr B_X^M(m)\), amplitude
+\(\zeta_m^{(1)}\), and occupancy \(N_m=N_r(m)\).  It gives the exact
+identity
+\begin{equation}
+ \frac{\sigma_X}{1-\sigma_X}
+ =\frac{\overline N_{\rm good}}{\overline N_{\rm bad}}
+  \frac{\vartheta_{\rm good}}{\vartheta_{\rm bad}}
+  \frac{\overline b_{\rm good}}{\overline b_{\rm bad}}
+  \frac{|\cM_X^{\rm good}|}
+       {|\cM_X^{\rm full}\setminus\cM_X^{\rm good}|},
+ \label{eq:tpc54-physical-exact-odds}
+\end{equation}
+whenever all four factors are nondegenerate.  This identity is the exact
+dictionary: raw row occupancy, carrier/source shape, coefficient
+magnitude, and cofactor occupancy are separate.  The boundary cases are
+handled by the good and bad carrier energies, not by assigning infinite
+ratios.
+
+This formula separates three cases.
+
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.6em]
+ \item For the full inherited class, only
+       \(|\zeta_m^{(1)}|\le C_X\) is known.  Provided
+       \(\cA_X\setminus\cG_X\ne\varnothing\), the bounded class permits a
+       coefficient that vanishes on every good row and has
+       \(\sigma_X=0\).  If \(\cA_X=\cG_X\), instead
+       \(\delta_{{\rm cf},X}=\sigma_X=1\) for every positive carrier
+       energy.
+ \item Suppose a quantitative provenance calculation on a fixed direct
+       residue cell verifies
+       \[
+        0<c_X\le|\zeta_m^{(1)}|\quad(m\in\cG_X),
+        \qquad |\zeta_m^{(1)}|\le C_X\quad(m\in\cA_X).
+       \]
+       Then
+       \[
+       \sigma_X\ge
+       \mathsf T_{(c_X/C_X)^2}(\delta_{{\rm cf},X}).
+       \]
+       Abstract diagonal unit phases attached to these coefficients do not
+       change the conclusion.  The Mellin factors in the literal
+       dictionary remain in the provenance measure or layer phase; no
+       favorable Mellin layer is selected and no signed-reassembly lower
+       bound is inferred.  The displayed floor is an extra checkable
+       quantitative hypothesis, not a consequence of qualitative
+       nonvanishing and not a theorem about every bounded inherited
+       coefficient \citep{WangTPC25,WangTPC50}.
+ \item If \(|\zeta_m^{(1)}|=C_X\) on the declared active packet, then
+       \(\sigma_X=\delta_{{\rm cf},X}\) exactly.  Even here, source-row
+       density alone does not control \(\delta_{{\rm cf},X}\) if
+       cofactor multiplicities concentrate on bad rows.
+\end{enumerate}
+
+Alternatively, without a coefficient floor, the single scalar estimate
+\begin{equation}
+ \kappa_X>1-\delta_{{\rm cf},X}
+ \label{eq:tpc54-physical-saturation-route}
+\end{equation}
+forces positive selection.  The threshold cannot be weakened using only
+the displayed data.
+
+\subsection{What geometric information already supplies}
+
+Assume explicitly that the compatible source box contains a fixed
+positive-volume subrectangle on which the declared unary source shapes
+\(\omega_D\) and \(\psi_L\) are bounded away from zero.  Under this
+compatibility hypothesis, the fixed-modulus prime--squarefree count and
+weighted asymptotic of TPC--50 give
+\begin{equation}
+ \delta_{{\rm src},X}
+ :=\frac{\sum_{m\in\cM_X^{\rm good}}u_m}
+         {\sum_{m\in\cM_X^{\rm full}}u_m}
+ \gg1.
+ \label{eq:tpc54-source-fraction}
+\end{equation}
+This is a source-base statement, not yet a carrier statement
+\citep{WangTPC50,WangTPC53}.
+
+On the fixed sampled carrier slice, the carrier lower bound on the good
+box, the global fixed-shape upper bound, and uniform mask count can be
+recorded as
+\begin{equation}
+ B_-S_X\le\mathscr B_X^M(m)\quad(m\in\cM_X^{\rm good}),
+ \qquad
+ \mathscr B_X^M(m)\le B_+S_X\quad(m\in\cM_X^{\rm full}),
+ \label{eq:tpc54-carrier-two-sided}
+\end{equation}
+with \(S_X>0\) and fixed \(0<B_-\le B_+<\infty\).  These are the sampled
+two-sided carrier data required from the declared TPC--53 box; if they are
+not verified for a larger full source slice, they must be retained as an
+explicit hypothesis.  Define
+\begin{equation}
+ \delta_{{\rm car},X}
+ :=\frac{\sum_{m\in\cM_X^{\rm good}}
+ u_m\mathscr B_X^M(m)}
+ {\sum_{m\in\cM_X^{\rm full}}u_m\mathscr B_X^M(m)}.
+ \label{eq:tpc54-carrier-fraction}
+\end{equation}
+Then
+\begin{equation}
+ \delta_{{\rm car},X}
+ \ge\mathsf T_{B_-/B_+}(\delta_{{\rm src},X})\gg1.
+ \label{eq:tpc54-carrier-transport}
+\end{equation}
+Neither statement yet gives the cofactor-lifted fraction
+\(\delta_{{\rm cf},X}\).
+
+For example, suppose one additionally proves, for some scalar
+\(R_X^{\rm occ}>0\), the balanced-occupancy condition
+\begin{equation}
+ n_-R_X^{\rm occ}\le N_m\le n_+R_X^{\rm occ}
+ \quad\text{on every positive-carrier full source row},
+ \qquad 0<n_-\le n_+<\infty.
+ \label{eq:tpc54-balanced-occupancy}
+\end{equation}
+Then the sharp transport theorem gives
+\begin{equation}
+ \delta_{{\rm cf},X}
+ \ge
+ \frac{n_-\delta_{{\rm car},X}}
+ {n_-\delta_{{\rm car},X}+n_+(1-\delta_{{\rm car},X})}.
+ \label{eq:tpc54-physical-occupancy}
+\end{equation}
+Together with a fixed nonzero coefficient floor, this yields
+\(\sigma_X\gg1\) and hence \eqref{eq:tpc54-selected-profile}.  The
+inherited supported-pair interface permits arbitrary finite cofactor
+multiplicity and does not prove \eqref{eq:tpc54-balanced-occupancy}.
+
+There are therefore three honest ways to finish this selection subgate:
+prove direct actual occupancy \(\delta_{{\rm cf},X}\gg1\); prove a
+product-like estimate such as \eqref{eq:tpc54-balanced-occupancy}; or
+construct a fixed finite compatible cover of every nonzero active carrier
+and apply \cref{prop:tpc54-finite-cover}.  TPC--53 proves openness of one
+active compatible set, not the third global cover.
+
+\begin{remark}[Carrier versus cofactor balance]
+The carrier factor in the literal dictionary is independent of the real
+Mellin-layer parameter and is uniformly two-sided on the declared fixed
+sampled cell.  This can reduce \eqref{eq:tpc54-balanced-occupancy} to a statement
+about \(N_r(m)\) after all relevant cell-uniformity constants are recorded.
+It does not itself establish that statement.
+\end{remark}

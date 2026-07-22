@@ -1,0 +1,142 @@
+\section{Endpoint ledger, conclusions, and next gate}
+\label{sec:endpoint}
+
+\subsection{Polynomial selection cost}
+
+The odds formula makes the endpoint budget explicit.  Suppose, along a
+sequence of scales,
+\begin{align}
+ \delta_{\rm geo}&=X^{-\nu+o(1)},
+ &\lambda_{\rm src}&=X^{-\omega_{\rm src}+o(1)},
+ \nonumber\\
+ \lambda_{\rm car}&=X^{-\omega_{\rm car}+o(1)},
+ &\lambda_{\rm cf}&=X^{-\omega_{\rm cf}+o(1)},
+ \nonumber\\
+ \theta&=X^{-\chi+o(1)},
+ \label{eq:tpc54-polynomial-data}
+\end{align}
+with nonnegative exponents.  Put
+\[
+ \mathfrak a_X
+ :=\theta^2\lambda_{\rm src}\lambda_{\rm car}\lambda_{\rm cf}.
+\]
+The elementary bound
+\[
+ \mathsf T_{\mathfrak a_X}(\delta_{\rm geo})
+ \ge\frac{\mathfrak a_X\delta_{\rm geo}}{1+\mathfrak a_X}
+\]
+and \eqref{eq:tpc54-full-composition} give
+\begin{equation}
+ \sigma_X\ge
+ X^{-(\nu+\omega_{\rm src}+\omega_{\rm car}
+          +\omega_{\rm cf}+2\chi)+o(1)}.
+ \label{eq:tpc54-selection-exponent}
+\end{equation}
+Thus the displayed sum is a sharp worst-case upper bound for the
+polynomial selection cost; the actual odds can be better.  The factor two
+on \(\chi\) is forced by squared energy.  No phase exponent appears.
+
+The inherited TPC--52 ledger, with fixed cell scale and fixed positive
+profile overlap, allows at most the nominal selection loss
+\begin{equation}
+ \boxed{\quad
+ \nu+\omega_{\rm src}+\omega_{\rm car}
+     +\omega_{\rm cf}+2\chi
+ \le\frac1{400}.
+ \quad}
+ \label{eq:tpc54-endpoint-budget}
+\end{equation}
+At equality, an error already of size \(X^{-1/400+o(1)}\) need not be
+absorbed without a constant-level comparison or an additional saving;
+strict slack is the safe closure condition.  The fixed compatible boxes,
+fixed nonzero shapes, fixed sampled-carrier ratio, and fixed overlap
+\(\alpha_*\) used in the declared TPC--53 cell have zero positive
+polynomial cost.  Under fixed-ratio coefficient and occupancy bounds, the
+selection cost is therefore also zero.
+
+If instead one uses the capacity route and such an exponent exists along
+the chosen subsequence, define \(\varsigma\) by
+\[
+ \left(1-\frac{1-\delta_{{\rm cf},X}}{\kappa_X}\right)_+
+ =X^{-\varsigma+o(1)}.
+\]
+The value \(\varsigma\) replaces the sum in
+\eqref{eq:tpc54-endpoint-budget}.  If the left side is zero infinitely
+often, or is smaller than \(X^{-A}\) for every fixed \(A>0\), this route
+fails the endpoint gate.
+
+A shrinking profile threshold would introduce its own exponent.  The
+existing sampled approximation supports the fixed interior
+\(\alpha_*>0\) regime; it should not be silently used as a relative-error
+theorem at a polynomially vanishing threshold.
+
+\subsection{Claim ledger}
+
+The exact status is as follows.
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.25\textwidth}
+                >{\raggedright\arraybackslash}p{0.62\textwidth}}
+\toprule
+Statement & Status \\
+\midrule
+Capacity threshold and extremizers & Unconditional finite-atom theorem
+(L0). \\
+Odds transport and composition & Unconditional sharp change-of-weight
+theorem (L0). \\
+Literal fixed-\(h_0\) carrier normalization & Exact specialization of the
+TPC--53 pre-terminal carrier dictionary on the declared slice (L1
+interface). \\
+Compatible geometric/source box & Previously certified for fixed boxes;
+not full actual-coefficient carrier-energy coverage. \\
+Positive declared-slice \(\sigma_X\) & Conditional on actual occupancy,
+balanced multiplicity plus a coefficient floor, capacity saturation, or a
+finite compatible cover. \\
+Post-grouping lower bound & Not proved; impossible uniformly on a selected
+subspace containing both directions of a two-atom collision. \\
+Parity or twin-prime consequence & Not claimed. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In particular, the following implications remain forbidden:
+geometric density does not imply actual-coefficient carrier energy; a unit-modulus source
+factor does not imply full lifted coverage without occupancy control;
+arbitrary cofactor multiplicity inside one selected packet does not imply
+that the packet captures a fixed fraction of the full carrier; and a
+pre-terminal lower bound does not commute with coherent prime summation or
+residual grouping.
+
+\subsection{The next gate}
+
+The correct order of further work is now forced by the maps:
+\begin{enumerate}[leftmargin=2.2em]
+ \item select actual retained \((m,r)\)-fibers by one of the sharp
+       certificates above;
+ \item prove a two-sided or lower coherent-prime square while the source
+       and cofactor labels remain separate;
+ \item control collisions in the grouping \(s=d(m)r\);
+ \item localize the resulting estimate to the literal fixed shift \(h_0\)
+       and compare the residual Gram with the native affine Gram; and
+ \item reconnect the controlled packet to the original ultra-tail defect.
+\end{enumerate}
+
+The immediate next paper takes the first step after selection: it keeps
+the residual grouping explicit, rewrites fibers by \(s=d(m)r\), and asks
+which exact divisor/cofactor structure can prevent the two-atom kernel
+from being the relevant arithmetic behavior.  The present paper has made
+that question quantitative, but has not answered it.
+
+\medskip
+\noindent\textbf{Conclusion.}
+Given declared structural, capacity, and occupancy data, the abstract
+finite-atom selection problem left by the literal factor dictionary has a
+complete sharp answer.  A positive lifted structural fraction is selected
+if it also has a local coefficient floor; alternatively, global
+coefficient energy may saturate capacity beyond the complement threshold,
+or a finite compatible cover may capture all active carrier energy.
+Source, carrier, and cofactor distortions act multiplicatively on odds and
+add at the exponent level.  These facts are exact before terminal
+grouping.  The same exactness also shows why the result stops there: phases
+are invisible before the sum, and collisions can cancel after it.
