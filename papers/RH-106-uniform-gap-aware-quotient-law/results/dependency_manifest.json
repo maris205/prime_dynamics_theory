@@ -1,0 +1,41 @@
+{
+  "external_inputs": {
+    "rh102_audit": {
+      "path": "papers/RH-102-stopped-hybrid-quotient-clock/results/stopped_hybrid_clock_audit.json",
+      "sha256": "a23f65ffcbf93d9f8ae71dbb1394bd528ce87229d01f6e759db4168dded6c731"
+    },
+    "rh103_summary": {
+      "path": "papers/RH-103-prefix-observability-power-ledger/results/summary.json",
+      "sha256": "75d61505381d72e8c06b4c084db6fce2ed0f97545781e66c7d385ef85d2d5865"
+    },
+    "rh96_audit": {
+      "path": "papers/RH-96-gap-weighted-weak-mode-quotient/results/weak_mode_quotient_audit.json",
+      "sha256": "123b4a59da8d0e640567d6b4f720dd82e157a424054c009ea6048bb4ce95c398"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "96f576c77b6b7c9bd98437d290839eb39368d5c2560dbdaf846f8ba82435753d",
+    "experiments/build_quotient_audit.py": "322ae107bcde85e2b8967b6e80960e0cb00fe9675423a00308e3e57e99ef24c0",
+    "experiments/make_figures.py": "89ee42653cc206c5590d2eb88db9229ae5441a0bf186a14d35eef5c7b3bb70f1",
+    "experiments/verify_archive.py": "27689ed6377cad9efe4f9e57e0352baf54af8751bd161b52fe224a57b29ced53",
+    "src/quotient_law/__init__.py": "e4d831149992a35ba021e3e092962eb944fdbf6a83b0af9cd1289661f25c16b9",
+    "src/quotient_law/bounds.py": "0c62910bba2e2068c3171539a4c390c8818ae0178dbd7e5cb9d504b7584df5e7",
+    "tests/test_archived_results.py": "92c43d86159fba9a19fcb4cc90ec6f4e28a581d663dc688395453317ed5c506e",
+    "tests/test_theory.py": "a80530c5715e05377d1d2570efc52f371c9bcca6a9bbd0eec0accce782c1cd4a"
+  },
+  "publication_artifacts": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "53cc5a99a76addb0e23a2dcdde4f69a69c39dbaf81c8e1b3c8470d42c552c91c",
+    "THEOREM_LEDGER.md": "4ff37685ba33aa49d6c91fbc0e977f16cc62d503b4085e2cdfddb74f25bd0e16",
+    "UPDATED_ROADMAP.md": "cf6cb75d8bb717573d1136365e0037d393d1bacc1318e84c1b867e5199f7a26e",
+    "figures/uniform_gap_aware_quotient.pdf": "400616a6d109997a4189130080b4d69e8c94843070a6fbab4f80628816f327b8",
+    "figures/uniform_gap_aware_quotient.png": "697c76b481b940c64023535ffecd9fdc6c392a5c2caf69fda4c8d02b58d5cfb5",
+    "main.pdf": "0886821b7994a7bf0cfe0e9a228c0036f860ae5d469cafc0210e5ca54c269dc1",
+    "main.tex": "43c6800ac4032185804d7c6d569b005b4464bab20ea61bc84062db2059346e92",
+    "pyproject.toml": "aaed02abaec8c9a860fe639655996ae06f4ea63cc45db600d50a19ad52f91349",
+    "references.bib": "cef62edfb7db2e2e126afe923066986457df057a616fe5e41ea7ed4e2c4b66bd",
+    "requirements.txt": "cd2dfd8413774638b179167ae213560b0be6138f81080840f5e95c501ca3bf16",
+    "uniform-gap-aware-quotient-law.pdf": "0886821b7994a7bf0cfe0e9a228c0036f860ae5d469cafc0210e5ca54c269dc1"
+  },
+  "status": "all_rh106_inputs_sources_and_publication_artifacts_hashed"
+}

@@ -1,0 +1,58 @@
+{
+  "audit": {
+    "accepted_count": 35,
+    "all_local_gap_certificates_green": true,
+    "candidate_count": 38,
+    "maximum_local_price_upper": 5.029065183255522e-08,
+    "maximum_replay_multiplier": 0.9740913430214303,
+    "maximum_spent_fraction": 0.6093559101074641,
+    "maximum_stopped_endpoint_ratio": 1.0060328373803085,
+    "maximum_unrestricted_endpoint_ratio": 1.0249211926604973,
+    "minimum_gap_lower": 2.1885904890233875e-12,
+    "primary_all_candidates_fit_stopped_budget": true,
+    "ratio_collapse_bad_price_power": 0.0,
+    "ratio_collapse_good_price_power": 1.5,
+    "rejected_count": 3,
+    "threshold_count": 3
+  },
+  "program_boundary": {
+    "five_anchor_uniform_price_audit": true,
+    "hilbert_polya_operator": false,
+    "local_gap_price_identity": true,
+    "ratio_not_gap_principle": true,
+    "replay_free_uniform_debit_envelope_proved": false,
+    "riemann_hypothesis": false,
+    "stopped_sparse_supply_safety_law": true,
+    "uniform_all_candidates_fit_law": true,
+    "uniform_gap_aware_physical_supply_proved": false,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "53cc5a99a76addb0e23a2dcdde4f69a69c39dbaf81c8e1b3c8470d42c552c91c",
+    "THEOREM_LEDGER.md": "4ff37685ba33aa49d6c91fbc0e977f16cc62d503b4085e2cdfddb74f25bd0e16",
+    "UPDATED_ROADMAP.md": "cf6cb75d8bb717573d1136365e0037d393d1bacc1318e84c1b867e5199f7a26e",
+    "figures/uniform_gap_aware_quotient.pdf": "400616a6d109997a4189130080b4d69e8c94843070a6fbab4f80628816f327b8",
+    "figures/uniform_gap_aware_quotient.png": "697c76b481b940c64023535ffecd9fdc6c392a5c2caf69fda4c8d02b58d5cfb5",
+    "main.pdf": "0886821b7994a7bf0cfe0e9a228c0036f860ae5d469cafc0210e5ca54c269dc1",
+    "main.tex": "43c6800ac4032185804d7c6d569b005b4464bab20ea61bc84062db2059346e92",
+    "pyproject.toml": "aaed02abaec8c9a860fe639655996ae06f4ea63cc45db600d50a19ad52f91349",
+    "references.bib": "cef62edfb7db2e2e126afe923066986457df057a616fe5e41ea7ed4e2c4b66bd",
+    "requirements.txt": "cd2dfd8413774638b179167ae213560b0be6138f81080840f5e95c501ca3bf16",
+    "uniform-gap-aware-quotient-law.pdf": "0886821b7994a7bf0cfe0e9a228c0036f860ae5d469cafc0210e5ca54c269dc1"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "70e4450164093658b0c7e3116cb9affe6f420155a7ea6ce84e3a48dc37f3eae9",
+    "results/uniform_quotient_audit.json": "6dfdaf63b36f55057e9285aa6601102dca3330c3c45da602fc87816bbada4e01",
+    "results/uniform_quotient_smoke.json": "62d6573b444f87ddbcedd0a4259899508ef213fd7b9d869f24299fbcf47b2adc"
+  },
+  "route_consequence": "The correct uniform quotient object is the propagated price K*c^2/g, summed over candidate count and compared with endpoint slack. A fixed positive gap is sufficient but not necessary: a collapsing gap is harmless when cross energy collapses faster. The all-candidate power law gives a sufficient no-stop regime; the stopped theorem gives safety when the supply is sparse or the price budget fails. The five frozen chains satisfy the local certificates and the stopped endpoint gates, but a replay-free all-level physical supply law remains open.",
+  "status": "rh106_uniform_gap_aware_quotient_law_archived",
+  "theorem": {
+    "local_gap_price": true,
+    "power_price_criterion": true,
+    "ratio_not_gap_boundary": true,
+    "stopped_sparse_supply_safety": true,
+    "uniform_all_candidate_admission": true
+  }
+}
