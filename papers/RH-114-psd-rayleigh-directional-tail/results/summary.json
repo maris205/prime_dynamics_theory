@@ -1,0 +1,103 @@
+{
+  "audit": {
+    "block_psd_failure_count": 0,
+    "certificate_failure_count": 0,
+    "channel_count": 10,
+    "fine_update_count": 234,
+    "maximum_block_roundoff_correction": 3.5314398008281464e-32,
+    "maximum_fine_block_gamma": 0.00017580219495896856,
+    "maximum_fine_exact_gamma": 6.593622044551118e-06,
+    "maximum_fine_scalar_gamma": 0.0013472437632688864,
+    "maximum_packet_block_roundoff_correction": 3.848520120968272e-17,
+    "maximum_tail_norm_enlargement": 1.0046062125297825,
+    "minimum_fine_block_gamma": 3.8331105677053855e-159,
+    "minimum_fine_exact_gamma": 0.0,
+    "minimum_fine_scalar_gamma": 1.2570750766892336e-12,
+    "scale_count": 5,
+    "update_count": 360
+  },
+  "program_boundary": {
+    "all_level_directional_tail_gram_law_proved": false,
+    "all_level_physical_volume_lower_bound_proved": false,
+    "five_scale_psd_audit_validated": true,
+    "hilbert_polya_operator": false,
+    "positive_tail_cross_gram_upper": true,
+    "relative_psd_rayleigh_volume_bound": true,
+    "riemann_hypothesis": false,
+    "sharp_multiplicative_factor": true,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "5f6b905cd9b11f87e4ddc772d696eb063971e1fda1322797894298b1d3161733",
+    "THEOREM_LEDGER.md": "797c830df658a369137a301f935fb9be43926f50d39e553913bedd961c5cd0df",
+    "UPDATED_ROADMAP.md": "31700908636b979c1bf2642ae8fd23c0dcc8a9bf813c247e8147fe987d97bcdf",
+    "figures/psd_rayleigh_directional_tail.pdf": "44a90c66047ec79788541e35b943e626ba616c7d161bf5e7752b0672ad6c8375",
+    "figures/psd_rayleigh_directional_tail.png": "5c3f919d1ef5e703e3e25d8e1c7ec2a26dd9180d5c6fe6000c2fe5f6f0e80330",
+    "main.pdf": "541100f053467829571dc1de4850bce4929433e447166c0d897f6ec57170fc41",
+    "main.tex": "236287bed9565f91a85a6a1a3a3e00737ca226ec53ee07079a8844199ac1c9a8",
+    "psd-rayleigh-directional-tail.pdf": "541100f053467829571dc1de4850bce4929433e447166c0d897f6ec57170fc41",
+    "pyproject.toml": "6f76f3c9c3b0f3ebf995d602b29477fb6f834a5e8f0dad4dec45b1c33a43a2d7",
+    "references.bib": "b2950cfc7d94f553a291489ca43e6c97f1f1c4153ec8c3979584cffc6d5ec18c",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "36b13dd84d28fd4e126b7a9dc3f9c25b3642ea86bc5d5c5a4c58d9c89cd19d7c",
+    "results/psd_rayleigh_audit.json": "6c25635d9aeb471b42df3be2305d3f7549cf5396c1617ed8268c51a68e8d878a",
+    "results/psd_rayleigh_smoke.json": "c251adf82135b2dfa416cc6ca72b1bc10b44189a5bd175325b47349cd3fcb26d"
+  },
+  "route_consequence": "Positive memory tails admit a four-dimensional PSD cross-Gram upper, and a relative Rayleigh comparison converts it into a multiplicative exterior-volume certificate. The theorem isolates the needed physical input as a relative generalized eigenvalue gamma. The five-scale audit compares scalar, packet-block, and exact relative versions; no all-level gamma law is inferred.",
+  "status": "rh114_psd_rayleigh_directional_tail_archived",
+  "theorem": {
+    "positive_tail_cross_gram_upper": true,
+    "relative_psd_rayleigh_volume_bound": true,
+    "sharp_multiplicative_factor": true
+  },
+  "threshold_summary": {
+    "1e-04": {
+      "actual_support_count": 65,
+      "block_support_count": 65,
+      "exact_relative_support_count": 65,
+      "fine_actual_support_count": 55,
+      "fine_block_support_count": 55,
+      "fine_exact_relative_support_count": 55,
+      "fine_product_support_count": 55,
+      "fine_scalar_support_count": 55,
+      "fine_update_count": 78,
+      "product_support_count": 65,
+      "scalar_support_count": 65,
+      "threshold": 0.0001,
+      "update_count": 120
+    },
+    "1e-06": {
+      "actual_support_count": 85,
+      "block_support_count": 85,
+      "exact_relative_support_count": 85,
+      "fine_actual_support_count": 72,
+      "fine_block_support_count": 72,
+      "fine_exact_relative_support_count": 72,
+      "fine_product_support_count": 72,
+      "fine_scalar_support_count": 72,
+      "fine_update_count": 78,
+      "product_support_count": 85,
+      "scalar_support_count": 85,
+      "threshold": 1e-06,
+      "update_count": 120
+    },
+    "1e-08": {
+      "actual_support_count": 99,
+      "block_support_count": 99,
+      "exact_relative_support_count": 99,
+      "fine_actual_support_count": 78,
+      "fine_block_support_count": 78,
+      "fine_exact_relative_support_count": 78,
+      "fine_product_support_count": 78,
+      "fine_scalar_support_count": 78,
+      "fine_update_count": 78,
+      "product_support_count": 99,
+      "scalar_support_count": 99,
+      "threshold": 1e-08,
+      "update_count": 120
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "external_inputs": {
+    "rh110_audit": {
+      "path": "papers/RH-110-finite-memory-three-mode-capacity/results/three_mode_capacity_audit.json",
+      "sha256": "6d10877863a1c32212815ec567ede896b7e2e9be83215e9fbc1e790c87cc495f"
+    },
+    "rh113_summary": {
+      "path": "papers/RH-113-right-frame-directional-wedge/results/summary.json",
+      "sha256": "fe1d7ef9b47ab7c1ab1d10b7cc3ced76c1319fa0398aebd5864c8a4946cbdd89"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "ddf28cc8f072bea93bcd10d69e9df55727785a70056ff4c73a554976ee9599b0",
+    "experiments/build_psd_rayleigh_audit.py": "197a2e3df5f2107cd43bb69190ec9194fff80f1bbbae935bcad29569451a80af",
+    "experiments/make_figures.py": "2573e78ad83e685a904c688ddf35e79bcc17a78be73211eb6b2d95631a4179ef",
+    "experiments/verify_archive.py": "41db244ad0c04b3ac35b56489ba7a0f5cb2ca06579009626b9743c129a791a28",
+    "src/psd_rayleigh_tail/__init__.py": "76cf8ff45b882e5c44caff8eaab8027ac6e394ff1c955f000acd0bb3cc01532a",
+    "src/psd_rayleigh_tail/bounds.py": "192e23581cbb8d5be74bf17584a29c99969f5def005ddea4c762657382fbbcd8",
+    "tests/test_archived_results.py": "747902295ea700aef87ce01148a3977b1a1e41212fe6ecbe699c450d4c4da888",
+    "tests/test_theory.py": "19796e027a582cd0353b62d6da175ca7213d719b0aa833e4bbe7c247526293a0"
+  },
+  "publication_artifacts": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "5f6b905cd9b11f87e4ddc772d696eb063971e1fda1322797894298b1d3161733",
+    "THEOREM_LEDGER.md": "797c830df658a369137a301f935fb9be43926f50d39e553913bedd961c5cd0df",
+    "UPDATED_ROADMAP.md": "31700908636b979c1bf2642ae8fd23c0dcc8a9bf813c247e8147fe987d97bcdf",
+    "figures/psd_rayleigh_directional_tail.pdf": "44a90c66047ec79788541e35b943e626ba616c7d161bf5e7752b0672ad6c8375",
+    "figures/psd_rayleigh_directional_tail.png": "5c3f919d1ef5e703e3e25d8e1c7ec2a26dd9180d5c6fe6000c2fe5f6f0e80330",
+    "main.pdf": "541100f053467829571dc1de4850bce4929433e447166c0d897f6ec57170fc41",
+    "main.tex": "236287bed9565f91a85a6a1a3a3e00737ca226ec53ee07079a8844199ac1c9a8",
+    "psd-rayleigh-directional-tail.pdf": "541100f053467829571dc1de4850bce4929433e447166c0d897f6ec57170fc41",
+    "pyproject.toml": "6f76f3c9c3b0f3ebf995d602b29477fb6f834a5e8f0dad4dec45b1c33a43a2d7",
+    "references.bib": "b2950cfc7d94f553a291489ca43e6c97f1f1c4153ec8c3979584cffc6d5ec18c",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd"
+  },
+  "status": "all_rh114_inputs_sources_and_publication_artifacts_hashed"
+}

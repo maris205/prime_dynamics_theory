@@ -1,0 +1,163 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,natbib,microtype}
+\newtheorem{theorem}{Theorem}\newtheorem{proposition}[theorem]{Proposition}\newtheorem{corollary}[theorem]{Corollary}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\PiP}{\mathsf P\mathsf P^*}
+\title{PSD-Rayleigh Directional Memory Tails\\\large A Relative Gramian Bound for Fourth-Mode Support}
+\author{Prime Dynamics Theory Program}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The right-frame reduction of RH-113 leaves one missing quantity: the tail
+acting on four recent right singular directions.  We prove a positive-tail
+cross-Gram inequality and turn it into a multiplicative exterior-volume
+bound.  If $T\succeq0$, $\norm T\leq\delta$, $P$ is a packet isometry,
+$Q$ is a right four-frame, and $R=(I-PP^*)TPQ$, then
+\[
+ R^*R\preceq\delta Q^*P^*TPQ.
+\]
+More generally, any PSD upper $D\succeq R^*R$ yields a generalized
+Rayleigh constant $\gamma$ and a four-volume factor $(1-\gamma)_+^4$.
+The five-scale audit has zero failures; on the fine chain the packet-block
+bound reduces the worst scalar gamma from $0.00134724$ to $0.000175802$.
+This is a directional theorem and finite audit, not an all-level physical
+law.
+\end{abstract}
+
+\section{The directional problem}
+Let $A$ be a recent finite-memory cross action and $K=A+R$ its full action on
+a packet.  RH-113 showed that a four-column action $Y=AQ$ gives a lower bound
+for the full fourth exterior norm.  A scalar error $\norm R\leq\delta$ leads
+to a weak-mode penalty because the relative constant is bounded by
+$\delta/s_4(Y)$.  The purpose of this paper is to preserve the Gramian of the
+tail in the same four-dimensional frame.
+
+We work in a Hilbert space, with $P$ an isometry from packet coordinates into
+the ambient domain and $Q:\mathbb C^4\to\operatorname{ran}P$ an isometry.
+Write $\Pi=PP^*$ and let $T\succeq0$ be a discarded memory tail.  Its
+directional cross action is
+\[
+ R=(I-\Pi)TPQ,
+ \qquad Y=(I-\Pi)APQ.
+\]
+All matrix inequalities below are in the usual Loewner order; the exterior
+volume identities use the standard singular-value calculus
+\citep{HornJohnson1991}.
+
+\section{Positive-tail cross-Gram theorem}
+\begin{theorem}[Positive-tail cross-Gram theorem]\label{thm:positive}
+If $T\succeq0$ and $\norm T\leq\delta$, then
+\begin{equation}\label{eq:block}
+ R^*R\preceq\delta Q^*P^*TPQ.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Since $0\preceq I-\Pi\preceq I$,
+\[
+ T(I-\Pi)T\preceq T^2\preceq\delta T.
+\]
+Compress this inequality on the left and right by $PQ$ to obtain
+\eqref{eq:block}.  No commutation between $T$ and the packet projection is
+needed.
+\end{proof}
+
+The scalar upper $R^*R\preceq\delta^2I$ follows from $\norm R\leq\delta$.
+Equation~\eqref{eq:block} is stronger when the tail has little energy in the
+current packet directions.  It is also compatible with matrix-free action:
+only the four columns $TPQ$ and the $4\times4$ packet block are required.
+
+\section{Relative Rayleigh volume theorem}
+Let $G=Y^*Y$ be positive definite and suppose $D\succeq R^*R$.  Define
+\[
+ \gamma^2=\lambda_{\max}(G^{-1/2}DG^{-1/2}).
+\]
+
+\begin{theorem}[Relative Rayleigh theorem]\label{thm:rayleigh}
+If $\gamma<1$, then
+\begin{equation}\label{eq:rayleigh}
+ (Y+R)^*(Y+R)\succeq(1-\gamma)^2G,
+ \qquad
+ D_4(Y+R)\geq(1-\gamma)^4D_4(Y).
+\end{equation}
+For arbitrary $\gamma$, the second lower bound is understood with
+$(1-\gamma)_+^4$.
+\end{theorem}
+\begin{proof}
+The definition of $\gamma$ is equivalent to $R^*R\preceq\gamma^2G$.
+Therefore $\norm{Rx}\leq\gamma\norm{Yx}$ for every $x$.  The reverse
+triangle inequality gives
+$\norm{(Y+R)x}\geq(1-\gamma)\norm{Yx}$ when $\gamma<1$, which is the first
+Loewner inequality.  Determinants are monotone on positive definite
+$4\times4$ matrices, so taking square roots of determinants gives the second
+claim.
+\end{proof}
+
+\begin{corollary}[Positive-tail certificate]
+Under Theorem~\ref{thm:positive}, use
+$D=\delta Q^*P^*TPQ$ in Theorem~\ref{thm:rayleigh}.  If $U\geq\norm K$,
+then the normalized fourth exterior volume obeys
+\[
+ \frac{\norm{\bigwedge^4K}_2}{U^4}
+ \geq (1-\gamma)_+^4\frac{D_4(Y)}{U^4}.
+\]
+\end{corollary}
+
+\section{Sharpness and comparison}
+The factor is sharp: take $R=-\gamma Y$, so $R^*R=\gamma^2G$ and
+$D_4(Y+R)=(1-\gamma)^4D_4(Y)$.  The scalar specialization has
+\[
+ \gamma_{\rm scalar}\leq\frac{\delta}{s_4(Y)},
+ \qquad D_{\rm scalar}=\delta^2I.
+\]
+The packet-block version replaces the isotropic identity by the tail energy
+seen by $PQ$.  It can be better by orders of magnitude, but it cannot be
+used unless that PSD block is itself controlled or computed with a validated
+upper enclosure.
+
+\section{Five-scale audit}
+We recompute the RH-110 finite-memory chain at five scales, two channels,
+three thresholds, and 360 records.  At each update we form the positive tail
+Gramian, the recent top-four frame, and three upper choices: scalar
+$\delta^2I$, positive packet-block $\delta Q^*P^*TPQ$, and the exact
+directional residual Gramian.  The analytic tail radius is enlarged only by
+outward floating-point guards; PSD corrections are recorded separately.
+
+There are zero block-dominance and certificate failures.  On the 234 fine
+records, the largest generalized constants are
+
+\begin{table}[h]
+\centering\begin{tabular}{lrrr}\toprule
+upper choice & minimum $\gamma$ & maximum $\gamma$ & fine support at $10^{-8}$\\\midrule
+scalar $\delta^2I$ & $1.2571\times10^{-12}$ & 0.00134724 & 78\\
+positive packet block & $3.83\times10^{-159}$ & 0.000175802 & 78\\
+exact directional Gram & 0 & 6.59362$\times10^{-6}$ & 78\\\bottomrule
+\end{tabular}
+\caption{Fine-chain generalized tail constants.  The exact lower endpoint is
+an audit reference; the packet-block line is the structured theorem route.}
+\end{table}
+
+The three certificates have the same fine threshold counts: 78, 72, and 55
+for thresholds $10^{-8}$, $10^{-6}$, and $10^{-4}$, respectively.  This is
+not a failure of the theorem: the archived thresholds are already crossed by
+the product-Weyl lower bound.  The gain is quantitative slack and a route to
+future scales where the scalar bound may cease to be usable.
+
+\begin{figure}[h]
+\centering\includegraphics[width=\textwidth]{figures/psd_rayleigh_directional_tail.pdf}
+\caption{Left: median generalized tail constants by scale.  Right: median
+normalized lower certificates on the finest threshold.}
+\end{figure}
+
+\section{Route consequence and boundary}
+RH-114 turns a vague directional-tail hope into a precise sufficient
+condition: control one $4\times4$ PSD block and one generalized eigenvalue.
+The positive-tail proof is unconditional for finite PSD tails.  What remains
+open is an all-level physical bound on that block, compatible with memory
+depth and the changing right frame.  RH-115 will compose the scalar,
+packet-block, trace-concentration, and capacity certificates and keep the
+strongest valid lower endpoint.
+
+No all-level exterior law, uniform Stage A, Hilbert--Polya operator, zeta-zero
+identification, or Riemann Hypothesis conclusion is claimed.
+\bibliographystyle{plainnat}\bibliography{references}
+\end{document}
