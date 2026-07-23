@@ -1,0 +1,41 @@
+{
+  "external_inputs": {
+    "rh103_summary": {
+      "path": "papers/RH-103-prefix-observability-power-ledger/results/summary.json",
+      "sha256": "75d61505381d72e8c06b4c084db6fce2ed0f97545781e66c7d385ef85d2d5865"
+    },
+    "rh75_audit": {
+      "path": "papers/RH-75-log-square-block-contraction-law/results/log_square_block_audit.json",
+      "sha256": "59c938cfd1ad480b46d2b94f7542308e01c91bd2dcd393646eeb4a25ba14e910"
+    },
+    "rh77_audit": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/results/effective_rank_audit.json",
+      "sha256": "08a123fb310bfd70572e5bd2b13ccf2fe397fd944f409c626d2e079b49be6c1a"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "5b9a49b90a2c6110a824bd05e51a3fc608ab2d64a785fd38e11c5f6361554485",
+    "experiments/build_prefix_audit.py": "0e05b30b7dbdaf99b324ab0c2ba65f58598d21270e98926610fd06d99ff4a9e7",
+    "experiments/make_figures.py": "814fa5cbd41e4c78f82a689d1fc44140209f35668dac7a78ab52381924028d49",
+    "experiments/verify_archive.py": "eeb1be04b0677c61181219a32525542c1702b91795898394aedbe4cd492c38fe",
+    "src/prefix_transient/__init__.py": "1370045751e2a1b4a989bf4db13d05ac01aa4b211b239fea656377d1d2c8247f",
+    "src/prefix_transient/bounds.py": "9e64bf38b9f8d9d3086a9b099da901eae8f52ae5c9d9c3cc898f89011dc0726e",
+    "tests/test_archived_results.py": "8cfd56e49ef3f20c52e805291f7c41cd0e1ce4bb24f94d6f836c266a130f8846",
+    "tests/test_theory.py": "3568c5e92fb5d741ce10608f11f861b10e5c367dbc967e094374133c79dae381"
+  },
+  "publication_artifacts": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "96869c74885698ea7bf8f164caa5e35a39b75c6bf810e04021587a6f2eb6c40f",
+    "THEOREM_LEDGER.md": "9585931040ff1e173bf290b8ad884667065befcdc98e3b08a9deb8540780610b",
+    "UPDATED_ROADMAP.md": "288bc52558ac5aa7e85891d2a1755f88f7ef9c421d062b5d2c416ce6ad3b48e0",
+    "figures/source_weighted_prefix_law.pdf": "517c0b9d24fc6a0beaacfef82b0c7aa11f42a989646c5ed28bce42f9464d8ee9",
+    "figures/source_weighted_prefix_law.png": "556f439c387b23db7380184e72260fff87d694a62aed3e7ec56e9419d7913a4d",
+    "main.pdf": "e2733cd3aa3b296571d9250562b5fca62ab34915a7faff78cb3f4f6fe4489543",
+    "main.tex": "051a674f649d630ffa868cb7b7f11a413db3564e6e48c80f0d2d4d97a0670d83",
+    "pyproject.toml": "a5d6af61db43cc5484c143221e25d491e5b9bdec2877bd688d089ce59566793b",
+    "references.bib": "954b0bd189da265d2eaf6a0f4c9784d4b3c0a5fc4dcb1e042f0c967886665893",
+    "requirements.txt": "eb80f53242f5f116b6809b9d7c37aab9505e60e18a7bdc4359c0418bef86713b",
+    "source-weighted-prefix-law.pdf": "e2733cd3aa3b296571d9250562b5fca62ab34915a7faff78cb3f4f6fe4489543"
+  },
+  "status": "all_rh104_inputs_sources_and_publication_artifacts_hashed"
+}

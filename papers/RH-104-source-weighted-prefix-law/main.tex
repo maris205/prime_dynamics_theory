@@ -1,0 +1,469 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\F}{\mathrm F}
+\newcommand{\tr}{\operatorname{tr}}
+
+\title{Source-Weighted Finite-Prefix Laws:\\
+\large Directional Certificates and a Block-Contraction Barrier}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The block-contraction and effective-rank layers of the directional Hardy
+program control the postblock future, but they do not by themselves control
+the finite prefix.  This paper isolates the missing object and gives a
+source-weighted law for it.  For a finite matrix triple $(A,X,Y)$ and a block
+horizon $M$, define
+\[
+ S_M=\sum_{r<M}\norm{A^rX}_{\F}^2,
+ \qquad
+ P_M^2=\sum_{r<M}\norm{YA^rX}_{\F}^2.
+\]
+The exact prefix identity is
+\[
+ P_M^2=\tr(X^*G_MX),
+ \qquad
+ G_M=\sum_{r<M}(A^r)^*Y^*YA^r.
+\]
+Thus the correct finite-prefix target is the directional, source-weighted
+quantity $P_M$, rather than the dimension-free but potentially much looser
+certificate $\norm{Y}_{\F}\sqrt{S_M}$.  If $q=\norm{A^M}_2<1$, the same source
+block supplies an exact transfer bound for the future tail:
+\[
+ \sum_{j\ge M}\norm{YA^jX}_{\F}^2
+ \le \frac{\norm{Y}_{\F}^2q^2}{1-q^2}S_M.
+\]
+Consequently a polylogarithmic directional prefix law, combined with the
+square-root block law, is sufficient for a polylogarithmic full Hardy bound.
+
+The five inherited dyadic anchors remain numerically favorable: the largest
+actual directional prefix upper is $1.76031$ and the largest source-block
+upper is $3.09926$.  The crude norm-product upper reaches $28.0815$, with a
+maximum loss factor $16.0554$.  This gap is not a numerical accident.  For
+\[
+ A_\sigma=\begin{pmatrix}0&\sigma^{-a}\\0&0\end{pmatrix},\quad
+ X=e_2,\quad Y_\sigma=\sigma^{-b}e_1^*,\quad 0\le b\le\tfrac12,
+\]
+one has $A_\sigma^2=0$, perfect normalized one-column packet Gramians, zero
+postblock residual, and $\sigma\norm{Y_\sigma}_{\F}^2\le1$, while the Hardy
+prefix has power $a+b$.  Hence block contraction, normalized packet tails,
+and observation scaling do not imply a uniform prefix law.  The five-anchor
+evidence supports the physical directional law, but its all-level proof
+remains an independent scalar gate.  No Stage A, Hilbert--Polya, zero
+identification, or Riemann Hypothesis result is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} finite-prefix transient; source-weighted Gramian;
+directional Hardy energy; block contraction; nonnormal barrier.
+
+\medskip
+\noindent\textbf{MSC 2020:} 47A10; 47B35; 65F15; 93B28; 65G20.
+
+\section{Introduction}
+
+The recent packet papers have made the postblock part of the directional
+route increasingly explicit.  RH-75 identified the square-root contraction
+scale needed to offset the mesh growth in the observation operator
+\citep{WangBlockLaw2026}.  RH-77 then showed that a low-rank approximation of
+the postblock state can be transferred through the complete future by a
+finite observability Gramian \citep{WangEffectiveRank2026}.  RH-103 exposed the
+remaining sigma powers in a max-plus ledger and, importantly, separated the
+finite prefix from the reduced future and the observation--residual term
+\citep{WangPowerLedger2026}.
+
+The prefix is easy to overlook because a block tail estimate is often written
+with a source norm and an observation norm.  That estimate is valid, but it
+does not identify the physical quantity being measured.  The finite transfer
+already contains the same source and observation directions that define the
+Hardy energy.  A scalar product of two separate norms can erase their
+alignment, and in the present family that loss grows with the mesh.
+
+This paper makes four precise contributions:
+\begin{enumerate}[leftmargin=2.2em]
+ \item it defines the exact source-weighted prefix Gramian and proves its
+       finite-prefix identity;
+ \item it gives a block-tail transfer theorem and a dyadic sufficient
+       criterion showing how a directional prefix law closes the full Hardy
+       estimate;
+ \item it audits the five available anchors and quantifies the loss of the
+       crude norm product;
+ \item it proves an elementary nilpotent barrier showing that block
+       contraction and normalized packet success cannot substitute for the
+       missing all-level directional law.
+\end{enumerate}
+
+The negative result is deliberately narrow.  It does not say that the
+folded-Gaussian production family fails.  It says that the present abstract
+packet hypotheses do not contain enough absolute information to prove the
+physical prefix bound.  That distinction keeps the route honest and gives the
+next papers a sharply stated target.
+
+\section{The source-weighted prefix object}
+\label{sec:object}
+
+Let $A\in\mathbb C^{d\times d}$, $X\in\mathbb C^{d\times m}$, and
+$Y\in\mathbb C^{p\times d}$.  All state and transfer matrices below are
+measured in Frobenius norm unless a subscript $2$ is displayed.  Fix an
+integer horizon $M\ge1$ and define
+\begin{align}
+ S_M(A,X)&=\sum_{r=0}^{M-1}\norm{A^rX}_{\F}^2,
+ \label{eq:source}\\
+ P_M(A,X,Y)^2&=\sum_{r=0}^{M-1}\norm{YA^rX}_{\F}^2,
+ \label{eq:prefix}\\
+ G_M(A,Y)&=\sum_{r=0}^{M-1}(A^r)^*Y^*YA^r.
+ \label{eq:gram}
+\end{align}
+
+\begin{definition}[Directional finite-prefix law]
+ A family of triples and horizons satisfies a source-weighted finite-prefix
+ law if there are constants $C_P\ge0$, $a>0$, and $p\ge0$ such that, on a
+ dyadic schedule $\sigma_k=\sigma_0 2^{-k}$,
+ \[
+ P_{M_k}(A_k,X_k,Y_k)^2\le C_P(k+a)^p.
+ \]
+ The exponent $p$ is allowed to be logarithmic; it carries zero power of
+ $\sigma_k$.
+\end{definition}
+
+\begin{proposition}[Exact directional prefix identity]
+ \label{prop:identity}
+ For every finite triple and every $M$,
+ \begin{equation}
+  P_M(A,X,Y)^2=\tr\!\bigl(X^*G_M(A,Y)X\bigr).
+  \label{eq:identity}
+ \end{equation}
+ In particular, $G_M$ is positive semidefinite and $P_M$ depends on the
+ source through its actual orientation, not only through $\norm X_{\F}$.
+\end{proposition}
+
+\begin{proof}
+ For each $r$,
+ \[
+ \norm{YA^rX}_{\F}^2
+ =\tr\!\bigl(X^*(A^r)^*Y^*YA^rX\bigr).
+ \]
+ Summing and using linearity of the trace gives \eqref{eq:identity}.  Each
+ summand in \eqref{eq:gram} is positive semidefinite.
+\end{proof}
+
+The identity is elementary, but its placement in the route matters.  It is
+the finite analogue of the full observability Gramian, with the source kept
+inside the quadratic form.  Replacing it immediately by two separate norms
+throws away precisely the directional cancellation that the production
+matrices may provide.
+
+\begin{proposition}[Crude product bound]
+ \label{prop:crude}
+ For every $M$,
+ \begin{equation}
+  P_M(A,X,Y)\le \norm Y_{\F}\sqrt{S_M(A,X)}.
+  \label{eq:crude}
+ \end{equation}
+\end{proposition}
+
+\begin{proof}
+ The Frobenius submultiplicativity inequality gives
+ $\norm{YA^rX}_{\F}\le\norm Y_{\F}\norm{A^rX}_{\F}$ for every $r$.
+ Square, sum, and take the square root.
+\end{proof}
+
+\begin{remark}
+ The bound in \cref{prop:crude} is useful for a black-box certificate and is
+ sometimes the only available estimate.  It is not an equivalent definition
+ of the prefix law.  In particular, $P_M$ may remain bounded while
+ $\norm Y_{\F}\sqrt{S_M}$ grows with the mesh.
+\end{remark}
+
+\section{Block transfer and the finite-prefix criterion}
+\label{sec:block}
+
+Let the complete directional Hardy energy be
+\begin{equation}
+ H(A,X,Y)^2=\sum_{j\ge0}\norm{YA^jX}_{\F}^2,
+ \label{eq:hardy}
+\end{equation}
+whenever the series converges.  Put $q=\norm{A^M}_2$.
+
+\begin{theorem}[Source-weighted block-tail transfer]
+ \label{thm:tail}
+ If $q<1$, then
+ \begin{equation}
+ \sum_{j\ge M}\norm{YA^jX}_{\F}^2
+ \le
+ \frac{\norm Y_{\F}^2q^2}{1-q^2}\,S_M(A,X).
+ \label{eq:tail}
+ \end{equation}
+ Consequently,
+ \begin{equation}
+ H(A,X,Y)^2\le P_M(A,X,Y)^2
+ +\frac{\norm Y_{\F}^2q^2}{1-q^2}S_M(A,X).
+ \label{eq:full}
+ \end{equation}
+\end{theorem}
+
+\begin{proof}
+ Write each $j\ge M$ uniquely as $j=bM+r$ with $b\ge1$ and
+ $0\le r<M$.  Since powers of one matrix commute,
+ $A^{bM+r}=A^{bM}A^r$.  Therefore
+ \[
+ \norm{YA^{bM+r}X}_{\F}
+ \le \norm Y_{\F}\,q^b\norm{A^rX}_{\F}.
+ \]
+ Square and sum first over $b$ and then over $r$:
+ \[
+ \sum_{b\ge1}\sum_{r<M}\norm{YA^{bM+r}X}_{\F}^2
+ \le \norm Y_{\F}^2S_M\sum_{b\ge1}q^{2b},
+ \]
+ which is \eqref{eq:tail}.  Adding the finite prefix gives
+ \eqref{eq:full}.
+\end{proof}
+
+The theorem deliberately uses $S_M$ for the tail, because a contraction of
+$A^M$ acts on the state after the source block.  The finite prefix itself is
+more sharply represented by the directional Gramian $G_M$.
+
+\begin{theorem}[Dyadic source-weighted finite-prefix criterion]
+ \label{thm:dyadic}
+ Let $\sigma_k=\sigma_0 2^{-k}$ and suppose that for all $k\ge0$ there are
+ horizons $M_k$ and constants $C_P,C_S,C_Y,C_q\ge0$, $a>0$, and $p,s\ge0$
+ such that
+ \begin{align}
+ P_{M_k}(A_k,X_k,Y_k)^2&\le C_P(k+a)^p,
+ \label{eq:dyadic-p}\\
+ S_{M_k}(A_k,X_k)&\le C_S(k+a)^s,
+ \label{eq:dyadic-s}\\
+ \sigma_k\norm{Y_k}_{\F}^2&\le C_Y,
+ \label{eq:dyadic-y}\\
+ \norm{A_k^{M_k}}_2&\le C_q\sqrt{\sigma_k}.
+ \label{eq:dyadic-q}
+ \end{align}
+ If $C_q^2\sigma_0<1$, then
+ \begin{equation}
+ H(A_k,X_k,Y_k)^2
+ \le C_P(k+a)^p
+ +\frac{C_YC_q^2C_S}{1-C_q^2\sigma_0}(k+a)^s.
+ \label{eq:dyadic-full}
+ \end{equation}
+ In particular, the full Hardy energy is polylogarithmic in
+ $1/\sigma_k$.
+\end{theorem}
+
+\begin{proof}
+ Apply \cref{thm:tail}.  The last two hypotheses imply
+ \[
+ \frac{\norm{Y_k}_{\F}^2\norm{A_k^{M_k}}_2^2}
+      {1-\norm{A_k^{M_k}}_2^2}
+ \le
+ \frac{(C_Y/\sigma_k)C_q^2\sigma_k}
+      {1-C_q^2\sigma_0}.
+ \]
+ Insert \eqref{eq:dyadic-p} and \eqref{eq:dyadic-s}.  Since
+ $k=\log_2(\sigma_0/\sigma_k)$, polynomial growth in $k$ is
+ polylogarithmic in $1/\sigma_k$.
+\end{proof}
+
+\begin{remark}[Power interpretation]
+ If the prefix itself has signed power $p_\mathrm{dir}$, then it enters the
+ directional Hardy ledger directly.  If one only inserts separate powers for
+ $\norm Y$ and $S_M$, the crude certificate has power
+ $p_Y+\tfrac12p_S$.  The two numbers need not agree.  RH-103's max-plus
+ ledger therefore has a genuine finite-prefix leaf; it cannot be replaced by
+ a source norm leaf without an additional alignment theorem
+ \citep{WangPowerLedger2026}.
+\end{remark}
+
+\section{Five-anchor audit}
+\label{sec:audit}
+
+The audit reads the exact dyadic source and transfer certificates from the
+RH-75 production ledger.  For every channel it records the certified source
+block upper $S_M$, the directional prefix upper $P_M$, the observation norm,
+and the contraction $q$.  The displayed values are outward-rounded inputs or
+direct consequences of them; the audit is intended as a reproducible finite
+check, not as an all-level theorem.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Largest left/right channel values at each inherited anchor.}
+\label{tab:anchors}
+\begin{tabular}{@{}rrrrrrr@{}}
+\toprule
+$k$ & $\sigma$ & $M$ & $\max P_M$ & $\max S_M$ & $\max\norm Y_{\F}$ & $\max q$\\
+\midrule
+0 & 0.16 & 4  & 1.003 & 1.156 & 4.000 & 0.0210\\
+1 & 0.08 & 9  & 1.265 & 1.600 & 5.657 & 0.0158\\
+2 & 0.04 & 16 & 1.485 & 2.205 & 8.000 & 0.0172\\
+3 & 0.02 & 25 & 1.634 & 2.671 & 11.314 & 0.0120\\
+4 & 0.01 & 32 & 1.760 & 3.099 & 16.000 & 0.0082\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The directional prefix remains below $1.761$ over all ten channels, and the
+source block remains below $3.100$.  These are exactly the type of finite
+envelopes required in \cref{thm:dyadic}.  The same data show why the separate
+norm certificate is not a satisfactory proxy:
+
+\begin{table}[H]
+\centering
+\small
+\caption{Directional prefix versus the crude product certificate.}
+\label{tab:loss}
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+$\sigma$ & $\max P_M$ & $\max\norm Y_{\F}\sqrt{S_M}$ &
+ maximum ratio\\
+\midrule
+0.16 & 1.003 & 4.051 & 4.041\\
+0.08 & 1.265 & 6.968 & 5.682\\
+0.04 & 1.485 & 11.722 & 8.031\\
+0.02 & 1.634 & 18.371 & 11.355\\
+0.01 & 1.760 & 28.082 & 16.055\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At the finest anchor, the crude bound is more than sixteen times the actual
+directional certificate.  The gap grows while the observation norm grows,
+which is exactly the sigma-power concern exposed by RH-103.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/source_weighted_prefix_law.pdf}
+\caption{The left panel compares the physical directional prefix with the
+separate norm product at the five anchors.  The right panel is the nilpotent
+barrier family: its block contraction and normalized packet tail are both
+zero, yet the prefix has power $3/2$.}
+\label{fig:audit}
+\end{figure}
+
+\section{A nilpotent independence barrier}
+\label{sec:barrier}
+
+The next proposition isolates the exact logical boundary.  It is finite
+dimensional, stable in the strongest possible block sense, and intentionally
+independent of the production construction.
+
+\begin{proposition}[Block-contraction and packet-normalization barrier]
+ \label{prop:barrier}
+ Let $a\ge0$ and $0\le b\le\tfrac12$, and for $0<\sigma<1$ set
+ \begin{equation}
+ A_\sigma=\begin{pmatrix}0&\sigma^{-a}\\0&0\end{pmatrix},
+ \qquad X=e_2,\qquad Y_\sigma=\sigma^{-b}e_1^*.
+ \label{eq:barrier-family}
+ \end{equation}
+ With block horizon $M=2$,
+ \begin{align}
+ A_\sigma^2&=0, & q&=0,\\
+ \sigma\norm{Y_\sigma}_{\F}^2&=\sigma^{1-2b}\le1,\\
+ H(A_\sigma,X,Y_\sigma)&=P_2(A_\sigma,X,Y_\sigma)
+ =\sigma^{-(a+b)}.
+ \label{eq:barrier-values}
+ \end{align}
+ Every nonzero state in the orbit has a one-column normalized Gram matrix
+ equal to $[1]$, and the postblock residual after $M=2$ is zero.  Hence the
+ block contraction, normalized packet tail, and observation-scaling gates can
+ all be perfect while the prefix has any prescribed power $\gamma=a+b>0$.
+\end{proposition}
+
+\begin{proof}
+ Since $A_\sigma e_2=\sigma^{-a}e_1$ and $A_\sigma e_1=0$,
+ \[
+ Y_\sigma X=0,\qquad
+ Y_\sigma A_\sigma X=\sigma^{-(a+b)},\qquad
+ Y_\sigma A_\sigma^jX=0\quad(j\ge2).
+ \]
+ This proves \eqref{eq:barrier-values}.  The matrix $A_\sigma^2$ is zero,
+ so the block contraction and postblock state vanish.  A nonzero one-column
+ state $z$ satisfies $z^*z/\norm z_{\F}^2=[1]$, which proves the normalized
+ Gram assertion.  Finally, for any $\gamma>0$, choose
+ $b=\min\{\gamma,1/2\}$ and $a=\gamma-b$.
+\end{proof}
+
+\begin{remark}
+ The barrier does not contradict a physical source-weighted prefix law.  It
+ shows only that such a law is additional information.  In particular, a
+ proof based on RH-75's contraction and RH-77's postblock rank transfer must
+ still establish how the physical source and observation directions interact
+ before the block horizon.
+\end{remark}
+
+\section{Route consequence and open theorem}
+\label{sec:route}
+
+The finite-prefix target can now be stated without ambiguity.  For the
+intended dyadic production family, the next all-level theorem should prove
+\begin{equation}
+ \sum_{r<M_k}\norm{Y_kA_k^rX_k}_{\F}^2
+ \le \operatorname{polylog}(1/\sigma_k),
+ \label{eq:open-law}
+\end{equation}
+preferably through a structural identity for the source-weighted Gramian
+$G_{M_k}$.  A bound obtained only by multiplying
+$\norm{Y_k}_{\F}^2$ and $S_{M_k}$ is sufficient only if its sigma powers
+cancel; the five-anchor data show that this route is substantially more
+expensive.
+
+Combining \eqref{eq:open-law} with the square-root block law gives the
+conditional conclusion of \cref{thm:dyadic}.  The postblock effective-rank
+theorem can then be applied to the remaining future, while the observation--
+residual product remains a separate ledger term.  Thus RH-104 does not close
+Stage A, but it changes the next question from a vague ``prefix bound'' to a
+specific source-weighted Gramian estimate.
+
+The logical status is therefore:
+\begin{itemize}[leftmargin=2.2em]
+ \item the exact finite-prefix identity and block-tail transfer are proved;
+ \item the five-anchor directional envelope is numerically green;
+ \item the nilpotent family proves that the packet hypotheses alone do not
+       imply the all-level law;
+ \item uniform directional prefix control remains open.
+\end{itemize}
+
+No statement here constructs a Hilbert--Polya operator, proves a
+$T\log T$ counting law, identifies dynamical zeros with zeta zeros, or proves
+the Riemann Hypothesis.
+
+\section{Reproducibility}
+
+The directory contains the scalar bound implementation, the audit builder,
+the smoke audit, tests, figures, and a hash-checked archive.  From this
+directory, run:
+\begin{verbatim}
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \\
+  experiments/build_prefix_audit.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \\
+  experiments/build_prefix_audit.py --smoke
+MPLBACKEND=Agg PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \\
+  experiments/make_figures.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/pytest -q -p no:cacheprovider
+\end{verbatim}
+The archive builder records all external inputs and publication hashes.  The
+separate verification script checks them again.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,104 @@
+{
+  "audit_summary": {
+    "anchor_count": 1,
+    "barrier_prefix_power": 1.5,
+    "channel_count": 2,
+    "directional_prefix_zero_power_anchor_envelope": true,
+    "maximum_actual_directional_prefix_energy": 1.0026231057242807,
+    "maximum_crude_prefix_upper": 4.0513493759912445,
+    "maximum_crude_to_directional_ratio": 4.040750061374864,
+    "maximum_observation_norm": 4.0,
+    "maximum_source_block_energy": 1.1564081080528386,
+    "source_block_zero_power_anchor_envelope": true
+  },
+  "barrier": {
+    "a": 1.0,
+    "block_contraction": 0.0,
+    "block_horizon": 2,
+    "family": "A_sigma=[[0,sigma^-a],[0,0]], X=e2, Y=sigma^-1/2 e1*",
+    "normalized_packet_relative_tail": 0.0,
+    "prefix_energy_power": 1.5,
+    "rows": [
+      {
+        "prefix_energy": 31.62277660168379,
+        "sigma": 0.1
+      },
+      {
+        "prefix_energy": 1000.0,
+        "sigma": 0.01
+      },
+      {
+        "prefix_energy": 31622.776601683792,
+        "sigma": 0.001
+      },
+      {
+        "prefix_energy": 999999.9999999999,
+        "sigma": 0.0001
+      },
+      {
+        "prefix_energy": 31622776.6016838,
+        "sigma": 9.999999999999999e-06
+      },
+      {
+        "prefix_energy": 1000000000.0,
+        "sigma": 1e-06
+      }
+    ],
+    "sigma_times_observation_norm_squared": 1.0,
+    "source_block_energy_scales_as": "sigma^(-2.0)"
+  },
+  "limitations": [
+    "The five-anchor source and directional envelopes are finite evidence, not an all-level theorem.",
+    "The crude norm-product certificate is intentionally dimension-free but can lose the physical directional cancellation.",
+    "The barrier family is abstract and does not claim failure of the folded-Gaussian family.",
+    "No Stage A, moving-cloud, Hilbert--Polya, zero-identification, or Riemann Hypothesis result is claimed."
+  ],
+  "route_consequence": "The correct prefix target is a source-weighted directional law, not a crude product of observation norm and source block norm. The five anchors have bounded source-block and directional-prefix envelopes, but the explicit nilpotent family shows that block contraction, normalized packet tails, and observation scaling alone cannot prove that law.",
+  "rows": [
+    {
+      "channels": [
+        {
+          "actual_directional_prefix_energy_upper": 0.9039419504228428,
+          "block_contraction_upper": 0.0210212690046836,
+          "block_tail_energy_squared_upper": 0.005839111957412263,
+          "crude_norm_product_prefix_upper": 3.6342809208042888,
+          "crude_to_directional_prefix_ratio": 4.020480429195987,
+          "full_actual_anchor_upper": 0.9071660055864122,
+          "full_crude_hardy_upper": 3.6350841700405625,
+          "horizon": 4,
+          "observation_norm_upper": 4.0,
+          "side": "left",
+          "sigma": 0.16,
+          "source_block_energy_upper": 0.825499863207629
+        },
+        {
+          "actual_directional_prefix_energy_upper": 1.0026231057242807,
+          "block_contraction_upper": 0.019851393691149608,
+          "block_tail_energy_squared_upper": 0.006470719564776903,
+          "crude_norm_product_prefix_upper": 4.0513493759912445,
+          "crude_to_directional_prefix_ratio": 4.040750061374864,
+          "full_actual_anchor_upper": 1.0058448248596508,
+          "full_crude_hardy_upper": 4.052147885493499,
+          "horizon": 4,
+          "observation_norm_upper": 3.7674208157703144,
+          "side": "right",
+          "sigma": 0.16,
+          "source_block_energy_upper": 1.1564081080528386
+        }
+      ],
+      "level": 0,
+      "sigma": 0.16
+    }
+  ],
+  "status": "rh104_source_weighted_prefix_transient_audit",
+  "theorem_boundary": {
+    "block_contraction_alone_closes_prefix": false,
+    "block_tail_transfer_theorem": true,
+    "hilbert_polya_operator": false,
+    "physical_five_anchor_directional_prefix_validated": true,
+    "riemann_hypothesis": false,
+    "source_weighted_prefix_ledger_theorem": true,
+    "uniform_directional_prefix_law_proved": false,
+    "uniform_stage_A_closed": false
+  }
+}

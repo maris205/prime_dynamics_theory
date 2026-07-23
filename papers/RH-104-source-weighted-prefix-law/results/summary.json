@@ -1,0 +1,51 @@
+{
+  "audit": {
+    "anchor_count": 5,
+    "barrier_prefix_power": 1.5,
+    "channel_count": 10,
+    "directional_prefix_zero_power_anchor_envelope": true,
+    "maximum_actual_directional_prefix_energy": 1.7603089964878795,
+    "maximum_crude_prefix_upper": 28.081535887152096,
+    "maximum_crude_to_directional_ratio": 16.055390425838194,
+    "maximum_observation_norm": 16.0,
+    "maximum_source_block_energy": 3.0992542435499257,
+    "source_block_zero_power_anchor_envelope": true
+  },
+  "program_boundary": {
+    "block_contraction_alone_closes_prefix": false,
+    "block_tail_transfer_theorem": true,
+    "hilbert_polya_operator": false,
+    "physical_five_anchor_directional_prefix_validated": true,
+    "riemann_hypothesis": false,
+    "source_weighted_prefix_ledger_theorem": true,
+    "uniform_directional_prefix_law_proved": false,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "96869c74885698ea7bf8f164caa5e35a39b75c6bf810e04021587a6f2eb6c40f",
+    "THEOREM_LEDGER.md": "9585931040ff1e173bf290b8ad884667065befcdc98e3b08a9deb8540780610b",
+    "UPDATED_ROADMAP.md": "288bc52558ac5aa7e85891d2a1755f88f7ef9c421d062b5d2c416ce6ad3b48e0",
+    "figures/source_weighted_prefix_law.pdf": "517c0b9d24fc6a0beaacfef82b0c7aa11f42a989646c5ed28bce42f9464d8ee9",
+    "figures/source_weighted_prefix_law.png": "556f439c387b23db7380184e72260fff87d694a62aed3e7ec56e9419d7913a4d",
+    "main.pdf": "e2733cd3aa3b296571d9250562b5fca62ab34915a7faff78cb3f4f6fe4489543",
+    "main.tex": "051a674f649d630ffa868cb7b7f11a413db3564e6e48c80f0d2d4d97a0670d83",
+    "pyproject.toml": "a5d6af61db43cc5484c143221e25d491e5b9bdec2877bd688d089ce59566793b",
+    "references.bib": "954b0bd189da265d2eaf6a0f4c9784d4b3c0a5fc4dcb1e042f0c967886665893",
+    "requirements.txt": "eb80f53242f5f116b6809b9d7c37aab9505e60e18a7bdc4359c0418bef86713b",
+    "source-weighted-prefix-law.pdf": "e2733cd3aa3b296571d9250562b5fca62ab34915a7faff78cb3f4f6fe4489543"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "6be1d106ba6c43e52ba90260c9948ef8c2aa39357896765668dc4be03135ffa7",
+    "results/prefix_transient_audit.json": "d96cc33b068c10259842351448e82f50ed5c6a2f13f4fdc2ced3ba96bc566eec",
+    "results/prefix_transient_smoke.json": "fc1542867a9b319d60e2bf1e77d9c7ce613438a5b241c170def205d290327fcc"
+  },
+  "route_consequence": "The correct prefix target is a source-weighted directional law, not a crude product of observation norm and source block norm. The five anchors have bounded source-block and directional-prefix envelopes, but the explicit nilpotent family shows that block contraction, normalized packet tails, and observation scaling alone cannot prove that law.",
+  "status": "rh104_source_weighted_prefix_law_archived",
+  "theorem": {
+    "dyadic_directional_prefix_criterion": true,
+    "exact_source_weighted_prefix_identity": true,
+    "nilpotent_prefix_independence_barrier": true,
+    "source_block_tail_transfer": true
+  }
+}
