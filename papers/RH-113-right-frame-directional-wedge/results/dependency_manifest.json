@@ -1,0 +1,37 @@
+{
+  "external_inputs": {
+    "rh110_audit": {
+      "path": "papers/RH-110-finite-memory-three-mode-capacity/results/three_mode_capacity_audit.json",
+      "sha256": "6d10877863a1c32212815ec567ede896b7e2e9be83215e9fbc1e790c87cc495f"
+    },
+    "rh112_summary": {
+      "path": "papers/RH-112-global-wedge-lipschitz-barrier/results/summary.json",
+      "sha256": "558b9040e6c35a8a318bb7ba4fa78fe1566f4ce51cde5903afc12de1a4d35930"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "9b7e5a80d47c9ee715728cf4ad81ecfba2cbed1499a0e17b574017321255fb7d",
+    "experiments/build_directional_wedge_audit.py": "536570f4bb55cce8e92abb4888618cd97b7ba86c0a4772b909ca4e59deca6e4a",
+    "experiments/make_figures.py": "e56ae99d8f10b315fb5b53076882731de26608c91e5b07e276078e24c6c66312",
+    "experiments/verify_archive.py": "24d813d0a04694fb77ce6aa6eafd2c25e371711884d7ddeece3513d130dbfa48",
+    "src/directional_wedge/__init__.py": "dc53dcdc3d3b90a37cd1c56f805d9641a9e7acdece1bb5b0710342a99d67a8dd",
+    "src/directional_wedge/bounds.py": "3f85187f59d91f60710bbe4d09896648eaf29f32148e4f317304d2111399dd98",
+    "tests/test_archived_results.py": "605bc42cb98e087add52d09612a047f6befb501f0e72a8783023f41ed570acd9",
+    "tests/test_theory.py": "99c4712b78e5ba20cd7afbca7f79c45ad1219b274d8dcc8f36ba2498f0646d1d"
+  },
+  "publication_artifacts": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "704eef2db48a7aa6626458f596f6550940a38267f0a4ac503feb586dfa2ab81b",
+    "THEOREM_LEDGER.md": "7ae44a897332f7bfead9e40af65585771ef12495cb82a862438b1139c9ce21f8",
+    "UPDATED_ROADMAP.md": "78047c9d614c1a9896e8a4d93572bdf95c849d714e939fbe7a1e1063dbb682f5",
+    "figures/right_frame_directional_wedge.pdf": "f1b11b9d61f5b92e207f2d10032d2ddb0ac191aa65ceea5203f90a7974aefd28",
+    "figures/right_frame_directional_wedge.png": "32158e8e9d3bdff559091fc0baf84009c0a3a3fdb3d54a05fa12ba6fcf1aefe0",
+    "main.pdf": "8e6b0741e65c8b434118557f6915cd54ebb63f2938c3779141f0aa45aff8322d",
+    "main.tex": "802b9980aa93e587d25b9928abc61eaaaf4e9ee4b1f5961cf4dc2e512715a678",
+    "pyproject.toml": "e23e3abe874140092b3135822ddcffce8f543e21572457378ee47ca0000b0243",
+    "references.bib": "b2950cfc7d94f553a291489ca43e6c97f1f1c4153ec8c3979584cffc6d5ec18c",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+    "right-frame-directional-wedge.pdf": "8e6b0741e65c8b434118557f6915cd54ebb63f2938c3779141f0aa45aff8322d"
+  },
+  "status": "all_rh113_inputs_sources_and_publication_artifacts_hashed"
+}

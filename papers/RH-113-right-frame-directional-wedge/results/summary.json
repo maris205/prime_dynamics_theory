@@ -1,0 +1,97 @@
+{
+  "audit": {
+    "channel_count": 10,
+    "fine_update_count": 234,
+    "frame_variational_failure_count": 0,
+    "global_frame_identity_failure_count": 0,
+    "leading_upper_failure_count": 0,
+    "maximum_capture_loss": 4.6899499954733415e-06,
+    "maximum_directional_tail_gain": 2.4057807210296938,
+    "maximum_fine_capture_loss": 3.885780586188048e-15,
+    "maximum_fine_directional_tail_gain": 2.3971651177218454,
+    "minimum_capture_ratio": 0.9999953100500045,
+    "minimum_directional_tail_gain": 0.9762529539962221,
+    "minimum_fine_capture_ratio": 0.9999999999999961,
+    "minimum_fine_directional_tail_gain": 0.9762529539962221,
+    "scale_count": 5,
+    "update_count": 360
+  },
+  "program_boundary": {
+    "all_level_directional_tail_law_proved": false,
+    "all_level_physical_volume_lower_bound_proved": false,
+    "approximate_action_weyl_certificate": true,
+    "directional_frame_variational_certificate": true,
+    "frame_resolved_tail_gain_validated": true,
+    "hilbert_polya_operator": false,
+    "recent_frame_recovers_product_weyl": true,
+    "riemann_hypothesis": false,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "704eef2db48a7aa6626458f596f6550940a38267f0a4ac503feb586dfa2ab81b",
+    "THEOREM_LEDGER.md": "7ae44a897332f7bfead9e40af65585771ef12495cb82a862438b1139c9ce21f8",
+    "UPDATED_ROADMAP.md": "78047c9d614c1a9896e8a4d93572bdf95c849d714e939fbe7a1e1063dbb682f5",
+    "figures/right_frame_directional_wedge.pdf": "f1b11b9d61f5b92e207f2d10032d2ddb0ac191aa65ceea5203f90a7974aefd28",
+    "figures/right_frame_directional_wedge.png": "32158e8e9d3bdff559091fc0baf84009c0a3a3fdb3d54a05fa12ba6fcf1aefe0",
+    "main.pdf": "8e6b0741e65c8b434118557f6915cd54ebb63f2938c3779141f0aa45aff8322d",
+    "main.tex": "802b9980aa93e587d25b9928abc61eaaaf4e9ee4b1f5961cf4dc2e512715a678",
+    "pyproject.toml": "e23e3abe874140092b3135822ddcffce8f543e21572457378ee47ca0000b0243",
+    "references.bib": "b2950cfc7d94f553a291489ca43e6c97f1f1c4153ec8c3979584cffc6d5ec18c",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+    "right-frame-directional-wedge.pdf": "8e6b0741e65c8b434118557f6915cd54ebb63f2938c3779141f0aa45aff8322d"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "b68249b4b89bcd0618e568cf3c79fd03fb93890f830d442f4b6581c94fbfc2b6",
+    "results/directional_wedge_audit.json": "3710123baf6b4299cac2124cabd7b13c7ccc8e096693c99e9d74d786b01a803b",
+    "results/directional_wedge_smoke.json": "d6dd717e2578fa3e3c6369a6eef5acb5c3bd208e752a2e03c5fad8ac45958897"
+  },
+  "route_consequence": "A four-column action on any orthonormal right frame gives a rigorous lower bound for the full fourth exterior norm. The recent top-four right frame with the global tail radius exactly reproduces product Weyl, while a frame-resolved residual can improve it without a full singular solve. The remaining theoretical input is an all-level directional tail-Gram bound.",
+  "status": "rh113_right_frame_directional_wedge_archived",
+  "theorem": {
+    "approximate_action_weyl_certificate": true,
+    "directional_frame_variational_certificate": true,
+    "recent_frame_recovers_product_weyl": true
+  },
+  "threshold_summary": {
+    "1e-04": {
+      "actual_spectral_support_count": 65,
+      "exact_directional_support_count": 65,
+      "fine_actual_spectral_support_count": 55,
+      "fine_exact_directional_support_count": 55,
+      "fine_global_frame_support_count": 55,
+      "fine_restricted_frame_support_count": 55,
+      "fine_update_count": 78,
+      "global_frame_support_count": 65,
+      "restricted_frame_support_count": 65,
+      "threshold": 0.0001,
+      "update_count": 120
+    },
+    "1e-06": {
+      "actual_spectral_support_count": 85,
+      "exact_directional_support_count": 85,
+      "fine_actual_spectral_support_count": 72,
+      "fine_exact_directional_support_count": 72,
+      "fine_global_frame_support_count": 72,
+      "fine_restricted_frame_support_count": 72,
+      "fine_update_count": 78,
+      "global_frame_support_count": 85,
+      "restricted_frame_support_count": 85,
+      "threshold": 1e-06,
+      "update_count": 120
+    },
+    "1e-08": {
+      "actual_spectral_support_count": 99,
+      "exact_directional_support_count": 99,
+      "fine_actual_spectral_support_count": 78,
+      "fine_exact_directional_support_count": 78,
+      "fine_global_frame_support_count": 78,
+      "fine_restricted_frame_support_count": 78,
+      "fine_update_count": 78,
+      "global_frame_support_count": 99,
+      "restricted_frame_support_count": 99,
+      "threshold": 1e-08,
+      "update_count": 120
+    }
+  }
+}

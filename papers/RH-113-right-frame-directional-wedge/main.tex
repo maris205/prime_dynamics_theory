@@ -1,0 +1,160 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,natbib,microtype}
+\newtheorem{theorem}{Theorem}\newtheorem{proposition}[theorem]{Proposition}\newtheorem{corollary}[theorem]{Corollary}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\title{Right-Frame Directional Wedge Certificates\\\large Four Actions Recover the Fourth Exterior Support}
+\author{Prime Dynamics Theory Program}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+Global norm-only perturbation of the fourth exterior power is sharp but
+inefficient.  We retain an orthonormal right four-frame $Q$ and use the
+restricted action $KQ$.  Its column volume
+$\det((KQ)^*KQ)^{1/2}$ is always bounded by
+$\norm{\bigwedge^4K}_2$, and the supremum over $Q$ equals that exterior norm.
+If $\widehat Y$ approximates $KQ$ within $\epsilon$, the product
+$\prod_{j=1}^4(\sigma_j(\widehat Y)-\epsilon)_+$ gives a rigorous lower
+certificate.  For the recent top right frame and the global tail radius this
+is exactly product Weyl, but a frame-resolved residual can be smaller.  In a
+360-record five-scale audit, the recent frame captures at least
+$0.99999531005$ of the full spectral four-volume and is exact on the fine
+chain to $3.9\times10^{-15}$; the directional residual radius gains a factor
+up to $2.40578$.  The result reduces the next theoretical target to a
+four-dimensional tail Gramian.
+\end{abstract}
+
+\section{Directional replacement for a global exterior map}
+Let $K:\mathcal H\to\mathcal G$ have at least four columns.  RH-112 showed
+that perturbing $\bigwedge^4K$ using only $\norm K$ is universally dominated
+by individual singular-value Weyl bounds.  The discarded information is the
+right frame on which the large four-volume is attained.
+
+Take an isometry $Q:\mathbb C^4\to\mathcal H$ and define
+\[
+ D_4(K;Q)=\det(Q^*K^*KQ)^{1/2}.
+\]
+This number requires four actions of $K$, followed by a $4\times4$ Gram
+determinant.  It does not require a full singular decomposition of $K$.
+
+\section{Frame variational theorem}
+\begin{theorem}[Frame variational theorem]\label{thm:frame}
+For every orthonormal right four-frame $Q$,
+\[
+ D_4(K;Q)\leq\norm{\bigwedge^4K}_2
+ =s_1(K)s_2(K)s_3(K)s_4(K).
+\]
+Moreover, equality is attained when $Q$ spans four leading right singular
+vectors.  Hence the supremum over all such frames equals the spectral fourth
+exterior norm.
+\end{theorem}
+\begin{proof}
+The vector $q_1\wedge\cdots\wedge q_4$ has unit norm and its image under
+$\bigwedge^4K$ has norm $D_4(K;Q)$.  This is at most the operator norm.  A
+leading right singular frame maps to mutually orthogonal vectors of lengths
+$s_1,\ldots,s_4$, proving equality \citep{HornJohnson1991}.
+\end{proof}
+
+The theorem makes any fixed frame a one-sided certificate.  A stale frame
+can lose volume but can never create a false positive.
+
+\section{Approximate action certificate}
+Suppose only a four-column approximation $\widehat Y$ to $KQ$ is available.
+
+\begin{theorem}[Approximate directional action]\label{thm:approx}
+If $\norm{KQ-\widehat Y}\leq\epsilon$ and $U\geq\norm K$, then
+\begin{equation}\label{eq:cert}
+ \frac{\norm{\bigwedge^4K}_2}{\norm K^4}
+ \geq \frac{\prod_{j=1}^4
+ (\sigma_j(\widehat Y)-\epsilon)_+}{U^4}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Theorem~\ref{thm:frame} lower-bounds the exterior norm by the column volume
+of $KQ$.  Weyl's inequality gives
+$\sigma_j(KQ)\geq(\sigma_j(\widehat Y)-\epsilon)_+$, and $\norm K^4\leq U^4$.
+\end{proof}
+
+Let $A$ be a recent operator, $\norm{K-A}\leq\delta$, and let $Q_A$ be its
+top right four-frame.  Then the singular values of $AQ_A$ are
+$s_1(A),\ldots,s_4(A)$.  Choosing $\widehat Y=AQ_A$, $\epsilon=\delta$, and
+$U=s_1(A)+\delta$ turns \eqref{eq:cert} into
+\[
+ \frac{\prod_{j=1}^4(s_j(A)-\delta)_+}{(s_1(A)+\delta)^4}.
+\]
+Thus the standard product-Weyl exterior certificate is already a
+right-frame directional certificate.  If a separate bound
+$\norm{(K-A)Q_A}\leq\epsilon_Q<\delta$ is available, the same formula uses
+$\epsilon_Q$ in the numerator while retaining the safe denominator.
+
+\section{Sharpness and the frame-selection barrier}
+Both one-sided steps above are sharp.  If
+$\widehat Y=\operatorname{diag}(a_1,a_2,a_3,a_4)$ with $a_4\geq\epsilon$ and
+$KQ=\widehat Y-\epsilon I$, then every singular-value lower endpoint in
+Theorem~\ref{thm:approx} is attained simultaneously.  If $Q$ is a leading
+right frame of $K$, Theorem~\ref{thm:frame} is also an equality.  Therefore
+no uniformly larger certificate can be inferred from only the four singular
+values of $\widehat Y$, the scalar action radius, and the leading upper bound.
+
+There is also no nontrivial lower bound for an arbitrary fixed frame.  On an
+eight-dimensional domain, take $K=[I_4\;0]$.  Its spectral four-volume is one,
+but the frame supported on the last four coordinates has directional volume
+zero.  Recent-frame tracking is thus not cosmetic: it is the datum that
+avoids this exact blindness example.
+
+The two observations delimit the gain available in RH-113.  Accuracy can
+improve only through a better frame or a smaller directional residual, and
+not through a sharper manipulation of the same three scalar inputs.  They
+also suggest a stable implementation: update $Q_A$ only when the packet is
+refreshed, evaluate four matrix-free actions, and form a $4\times4$ Gramian.
+The expensive ambient singular decomposition is needed only for audit, not
+for applying the directional theorem.
+
+\section{Five-scale audit}
+We recompute the RH-110 packet chain at five scales, two channels, and three
+thresholds.  At each update we form the recent right frame, its exact full
+directional action, and the omitted directional residual.  Outward guards
+are retained in the finite binary64 audit.
+
+Across 360 records there are no failures of the frame variational inequality,
+the leading upper bound, or the identity with product Weyl.  The minimum
+capture ratio over the full chain is $0.99999531005$; on the 234 fine records
+the maximum capture loss is $3.9\times10^{-15}$.  The fine packets have four
+right columns, so this exactness is structural rather than an unexplained
+numerical coincidence.  On wider coarse packets, the recent frame still
+loses less than $4.7\times10^{-6}$.
+
+\begin{table}[h]
+\centering\begin{tabular}{lrrrr}\toprule
+threshold & global-frame & frame-tail & exact frame & spectral\\\midrule
+$10^{-8}$&78&78&78&78\\
+$10^{-6}$&72&72&72&72\\
+$10^{-4}$&55&55&55&55\\\bottomrule
+\end{tabular}
+\caption{Fine certified updates out of 78.  The frame-tail refinement is
+quantitatively stronger on some records but does not cross a new threshold.}
+\end{table}
+
+\begin{figure}[h]
+\centering\includegraphics[width=\textwidth]{figures/right_frame_directional_wedge.pdf}
+\caption{Left: loss of the recent frame relative to the optimal full exterior
+frame.  Right: ratio of the global tail radius to the measured four-frame
+residual radius; values above one favor directional control.}
+\end{figure}
+
+The largest directional radius gain is $2.40578$.  A small number of
+roundoff-dominated records have a guarded ratio just below one; taking the
+maximum of the global and directional certificates preserves monotonicity.
+
+\section{What has and has not been reduced}
+RH-113 replaces a global exterior operator by four actions and a determinant.
+It proves that no spectral support is lost by this replacement when the frame
+is optimal, and the audit shows the recent physical frame is essentially
+optimal.  The unresolved input is now directional: control
+$(K-A)Q_A$ or its $4\times4$ Gramian.
+
+RH-114 will study a PSD-Rayleigh relative tail condition.  This paper does
+not prove that condition at all scales, an all-level physical exterior lower
+law, uniform Stage A, a Hilbert--Polya operator, identification of zeta zeros,
+or the Riemann Hypothesis.
+\bibliographystyle{plainnat}\bibliography{references}
+\end{document}
