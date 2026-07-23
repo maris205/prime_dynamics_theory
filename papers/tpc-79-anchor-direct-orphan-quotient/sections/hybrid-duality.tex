@@ -1,0 +1,76 @@
+\section{Hybrid infimal convolution and dual intersection}
+\label{sec:hybrid}
+
+\begin{definition}[Hybrid anchor--direct gauge]\label{def:hybrid}
+For \(k\in K\), define
+\begin{align}
+ h(k)
+ &=
+ \min_{v\in V_A}
+ \{\alpha(v)+\delta(k-v)\}
+ \label{eq:hybrid}\\
+ &=
+ \min_{\substack{x\in X_A,\ y\in X_D\\
+                  S_Ax+S_Dy=k}}
+ \{p_A(x)+p_D(y)\}.
+ \label{eq:hybrid-coeff}
+\end{align}
+\end{definition}
+
+The two formulas agree by the definition of the quotient coefficient
+norms.  Since \(S_D\) is surjective, \(h\) is a finite norm on \(K\).
+
+\begin{theorem}[Exact hybrid duality]\label{thm:hybrid-dual}
+For every \(k\in K\),
+\begin{equation}\label{eq:hybrid-dual}
+ \boxed{\displaystyle
+ h(k)
+ =
+ \max_{\lambda\in\cB_A\cap\cB_D}
+ [\lambda,k]_{\R}.}
+\end{equation}
+The primal and dual extrema are attained.
+\end{theorem}
+
+\begin{proof}
+Regard \(X_A\oplus X_D\) as a normed space with
+\[
+ p(x,y)=p_A(x)+p_D(y)
+\]
+and synthesis \(S(x,y)=S_Ax+S_Dy\).  Its polar norm is
+\[
+ p^\circ(\xi,\eta)=
+ \max\{p_A^\circ(\xi),p_D^\circ(\eta)\}.
+\]
+The quotient-norm dual formula therefore imposes both
+\[
+ p_A^\circ(S_A^*\lambda)\le1,
+ \qquad
+ p_D^\circ(S_D^*\lambda)\le1.
+\]
+These are precisely \(\lambda\in\cB_A\cap\cB_D\).
+Finite-dimensional quotient-norm duality gives attainment
+\cite{Rockafellar1970,RockafellarWets1998}.
+\end{proof}
+
+\begin{corollary}[Three-level hierarchy]\label{cor:hierarchy}
+For every \(k\in K\),
+\begin{equation}\label{eq:hierarchy}
+ \boxed{\displaystyle
+ \delta_{\rm orph}(\pi k)\le h(k)\le\delta(k).}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+If \(S_A^*\lambda=0\), then
+\(p_A^\circ(S_A^*\lambda)=0\), so the orphan dual feasible set is
+contained in \(\cB_A\cap\cB_D\).  This gives the first inequality.
+The second follows either from
+\(\cB_A\cap\cB_D\subseteq\cB_D\), or by taking \(v=0\) in
+\eqref{eq:hybrid}.
+\end{proof}
+
+The two inequalities measure different gaps.  The upper gap
+\(\delta-h\) is an actual saving produced by a costed anchor channel.
+The lower gap \(h-\delta_{\rm orph}\) is the price of realizing the
+chosen anchor-visible correction.

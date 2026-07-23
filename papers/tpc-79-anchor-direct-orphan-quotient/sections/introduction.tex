@@ -1,0 +1,68 @@
+\section{Introduction}
+
+The completion program now has two mature but separate interfaces.
+Direct primitive-entry completion has an exact quotient gauge and
+primal--dual certificates \cite{WangTPC75,WangTPC77}; sparse forest
+components admit additional closed reductions \cite{WangTPC78}.
+Separately, anchor or lower-content constructions organize four-corner
+and provenance information.  The next logical question is whether an
+anchor channel can lower the direct completion cost.
+
+That question is ill posed until both channels land in one target
+space.  An observation map out of the direct target, a shared divisor
+label, or a four-corner trace is not yet a vector that can be subtracted
+from a two-corner direct entry.  The missing object is a synthesis map
+\[
+ S_A:X_A\longrightarrow K
+\]
+into the same \(K\) used by the direct synthesis
+\(S_D:X_D\to K\).  Once this map exists, three different values appear:
+\begin{enumerate}[label=(\roman*),leftmargin=2.4em]
+\item the direct cost \(\delta(k)\);
+\item the direct cost on the quotient \(K/\Ran S_A\), where anchor
+directions are declared free;
+\item the hybrid cost \(h(k)\), where using an anchor direction incurs
+its actual coefficient cost.
+\end{enumerate}
+Confusing (ii) and (iii) can manufacture a saving that is not physically
+available.
+
+\paragraph{Main results.}
+We compute the duals of all three values.  The quotient floor uses
+direct charges annihilating the anchor range.  The hybrid cost uses the
+intersection of the anchor and direct polar balls.  This immediately
+gives
+\[
+ \delta_{\rm orph}\le h\le\delta,
+\]
+but the important content is the equality theory.  A fixed datum gets
+no hybrid improvement exactly when a direct norming functional is also
+anchor feasible.  A norming functional that annihilates the entire
+anchor range is a particularly strong no-improvement certificate.
+Globally, the anchor channel is redundant exactly when it is never
+cheaper than the direct channel on its own range.
+
+\paragraph{Relation to the previous layer.}
+TPC-78 reduces the cost of evaluating a direct component.  The present
+paper changes the admissible synthesis family: it asks whether a second
+family can share the load.  Thus it advances a different gate.  Forest
+closed forms can be inserted into \(\delta\), but they do not construct
+\(S_A\) or prove that the intersection of polar balls yields a strict
+physical gain.
+
+\paragraph{Scope and progress label.}
+All theorems are exact finite-dimensional convex analysis over complex
+spaces viewed as real spaces.  They are L0 convex-algebraic results that
+advance the L1 interface.  No literal arithmetic construction of
+\(S_A\), no carrier-density bound, and no fixed-\(h_0\) endpoint saving
+is assumed or claimed.
+
+\paragraph{Organization.}
+\Cref{sec:setup,sec:pure} define the two synthesis gauges.
+\Cref{sec:orphan} derives the quotient floor.
+\Cref{sec:hybrid} proves hybrid duality.
+\Cref{sec:equality} gives fixed-datum and global equality tests.
+\Cref{sec:stability} gives matched certificates.
+\Cref{sec:countermodels} separates observation from synthesis and
+quotient from hybrid cost.  \Cref{sec:physical,sec:boundary} state the
+literal transfer requirements and endpoint stop rule.

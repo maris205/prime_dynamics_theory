@@ -1,0 +1,79 @@
+\section{Requirements for a literal fixed-shift transfer}
+\label{sec:physical}
+
+Fix one nonzero physical shift \(h_0\).  A valid specialization at scale
+\(X\) must archive the following common-target diagram:
+\[
+\begin{array}{ccc}
+ X_{A,X} & \xrightarrow{\ S_{A,X}\ } & K_X\\
+ && \uparrow S_{D,X}\\[-0.3em]
+ && X_{D,X}.
+\end{array}
+\]
+The arrows must be literal coefficient assemblies.  A trace,
+restriction, aggregate, or four-corner observation into another space
+does not fill the top arrow.
+
+\begin{definition}[Physical hybrid packet]\label{def:packet}
+A physical packet to which the intersection formula applies consists
+of:
+\begin{enumerate}[label=(H\arabic*),leftmargin=2.7em]
+\item one fixed \(h_0\) and one target key set \(K_X\);
+\item literal maps \(S_{A,X},S_{D,X}\), including all provenance and
+content lifts before exact summation, with \(S_{D,X}\) surjective onto
+\(K_X\);
+\item coefficient norms \(p_{A,X},p_{D,X}\) derived from the same raw
+atomic measure;
+\item the datum \(k_X\) in the same units and orientation as both
+synthesis maps;
+\item a verified separable coefficient space
+\(X_{A,X}\oplus X_{D,X}\) with cost \(p_{A,X}+p_{D,X}\);
+\item primal coefficients and a dual charge with both polar constraints
+verified;
+\item a separately proved arithmetic inequality connecting the physical
+quantity of interest to \(\delta_X,h_X\), or their difference.
+\end{enumerate}
+\end{definition}
+
+If anchor and direct channels share or couple native variables, the
+packet is not separable and \(\cB_A\cap\cB_D\) need not be its dual
+ball.  One must instead construct the literal joint synthesis, joint
+coefficient norm, and its single polar ball; none of the intersection
+formulas may be applied until an exact separable reparameterization is
+proved.
+
+\begin{proposition}[Common-target necessity]\label{prop:common-target}
+Suppose anchor data are available only through an observation
+\(T_X:K_X\to Y_X\).  The values \(T_Xk_X\), the direct gauge
+\(\delta_X\), and a norm on \(Y_X\) do not in general determine a
+hybrid value on \(K_X\).  A synthesis \(R_X:Y_X\to K_X\), or a direct
+coefficient map from anchor variables into \(K_X\), is necessary.
+\end{proposition}
+
+\begin{proof}
+\Cref{ex:obs} gives two sections of the same observation with distinct
+target ranges and therefore potentially distinct hybrid gauges.  The
+input data listed in the statement cannot distinguish them.
+\end{proof}
+
+\begin{remark}[Majorization direction]
+Convex duality computes a finite value; it does not decide whether that
+value upper-bounds, lower-bounds, or equals a physical bad-set mass.
+The direction and every scale factor must be proved from the literal
+arithmetic assembly.  A saving in \(h_X\) is not an endpoint saving
+until this bridge is supplied.
+\end{remark}
+
+The minimal reproducible census records, for each \(X\), the dimensions
+and hashes of all native arrays, exact output keys, ranks and actual
+supports of both synthesis maps, the values
+\[
+ \delta_{{\rm orph},X}(\pi k_X),
+ \qquad
+ h_X(k_X),
+ \qquad
+ \delta_X(k_X),
+\]
+and their globally normalized gaps.  Numerical feasibility tolerances
+must be reported separately from exact support and exact adjoint
+constraints.

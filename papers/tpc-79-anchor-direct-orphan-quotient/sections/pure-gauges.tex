@@ -1,0 +1,66 @@
+\section{The pure anchor and direct gauges}
+\label{sec:pure}
+
+\begin{definition}[Pure synthesis gauges]\label{def:pure}
+For \(v\in K\) and \(k\in K\), set
+\begin{align}
+ \alpha(v)
+ &=
+ \inf\{p_A(x):S_Ax=v\},
+ \label{eq:alpha}\\
+ \delta(k)
+ &=
+ \min\{p_D(y):S_Dy=k\}.
+ \label{eq:delta}
+\end{align}
+By convention \(\alpha(v)=+\infty\) when \(v\notin V_A\).
+\end{definition}
+
+Finite dimensionality gives attainment in both definitions whenever
+the constraint is feasible.  The restriction of \(\alpha\) to \(V_A\)
+is a norm, and \(\delta\) is a norm on \(K\).
+
+\begin{proposition}[Pure dual formulas]\label{prop:pure-dual}
+For \(v\in V_A\) and \(k\in K\),
+\begin{align}
+ \alpha(v)
+ &=
+ \max_{\lambda\in\cB_A}[\lambda,v]_{\R},
+ \label{eq:alpha-dual}\\
+ \delta(k)
+ &=
+ \max_{\lambda\in\cB_D}[\lambda,k]_{\R}.
+ \label{eq:delta-dual}
+\end{align}
+In \eqref{eq:alpha-dual}, the objective is constant along annihilator
+directions, so the maximum is finite and attained after restriction to
+\(V_A^*\).
+\end{proposition}
+
+\begin{proof}
+Each gauge is the quotient norm induced by a surjective map onto its
+range.  The polar of a quotient norm consists exactly of those
+functionals whose pullback has polar norm at most one.  This gives
+\eqref{eq:BA}--\eqref{eq:BD} and the displayed support formulas.
+Equivalently, they follow from finite-dimensional Fenchel duality
+\cite{Rockafellar1970}.
+\end{proof}
+
+\begin{definition}[Direct norming face]\label{def:norming}
+For \(k\in K\), define
+\[
+ N_D(k)
+ =
+ \{\lambda\in\cB_D:[\lambda,k]_{\R}=\delta(k)\}.
+\]
+\end{definition}
+
+The set \(N_D(k)\) is a nonempty compact exposed face of \(\cB_D\).
+At \(k=0\), it is all of \(\cB_D\).
+
+\begin{remark}[Coefficient cost is part of the model]
+Replacing \(p_A\) or \(p_D\) by an unnormalized count changes its polar
+ball and therefore changes every equality test below.  In a physical
+specialization the coefficient norms must be those induced by the same
+global raw atomic normalization used in the target estimate.
+\end{remark}

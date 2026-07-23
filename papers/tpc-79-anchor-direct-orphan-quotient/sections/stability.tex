@@ -1,0 +1,81 @@
+\section{Matched certificates and perturbation stability}
+\label{sec:stability}
+
+\begin{theorem}[Decomposed primal--dual gap]\label{thm:gap}
+Let \(x\in X_A\), \(y\in X_D\) satisfy
+\[
+ S_Ax+S_Dy=k,
+\]
+and let \(\lambda\in\cB_A\cap\cB_D\).  Define
+\[
+ U=p_A(x)+p_D(y),
+ \qquad
+ L=[\lambda,k]_{\R}.
+\]
+Then
+\begin{equation}\label{eq:gap}
+ L\le h(k)\le U
+\end{equation}
+and the gap decomposes exactly as
+\begin{align}
+ U-L
+ &=
+ \bigl(p_A(x)-[S_A^*\lambda,x]_{\R}\bigr)
+ \nonumber\\
+ &\quad+
+ \bigl(p_D(y)-[S_D^*\lambda,y]_{\R}\bigr).
+ \label{eq:gap-decomp}
+\end{align}
+Both bracketed terms are nonnegative.  Hence \(U=L\) is a complete,
+separately auditable optimality certificate.
+\end{theorem}
+
+\begin{proof}
+Polar feasibility gives
+\[
+ [S_A^*\lambda,x]_{\R}\le p_A(x),
+ \qquad
+ [S_D^*\lambda,y]_{\R}\le p_D(y).
+\]
+Using the synthesis equality gives
+\[
+ L=[\lambda,S_Ax+S_Dy]_{\R}.
+\]
+Subtracting proves \eqref{eq:gap-decomp}; weak duality and primal
+feasibility give \eqref{eq:gap}.
+\end{proof}
+
+\begin{corollary}[Phase saturation conditions]\label{cor:saturation}
+If \(p_A,p_D\) are coordinate \(\ell^1\) norms, a zero gap requires
+coordinatewise saturation in both channels: every nonzero coefficient
+must align with a unit-modulus coordinate of the pulled-back dual
+charge.  Vanishing stationarity residual alone is not a lower
+certificate.
+\end{corollary}
+
+\begin{proposition}[Lipschitz stability]\label{prop:lipschitz}
+For all \(k,k'\in K\),
+\[
+ |h(k)-h(k')|\le h(k-k')\le\delta(k-k').
+\]
+Likewise,
+\[
+ |\delta_{\rm orph}(\pi k)-\delta_{\rm orph}(\pi k')|
+ \le\delta_{\rm orph}(\pi(k-k')).
+\]
+\end{proposition}
+
+\begin{proof}
+Both \(h\) and \(\delta_{\rm orph}\) are norms on their respective
+spaces, so the reverse triangle inequality applies.  The second
+inequality for \(h\) is \cref{cor:hierarchy}.
+\end{proof}
+
+\begin{remark}[Approximate computations]
+A numerical primal point always gives an upper bound if the synthesis
+equation is enforced exactly or its residual is charged explicitly.
+A numerical dual point gives a lower bound only after both polar
+constraints have been verified.  Projecting a nearly feasible charge
+or reporting its violation is preferable to silently treating a
+tolerance as feasibility.
+\end{remark}

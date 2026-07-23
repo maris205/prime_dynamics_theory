@@ -1,0 +1,64 @@
+\section{Common-target synthesis model}
+\label{sec:setup}
+
+Let \(K,X_A,X_D\) be finite-dimensional real or complex vector spaces;
+complex spaces are regarded as real vector spaces when taking duals.
+Pair each space with its real dual using \([\lambda,k]_{\R}\); after
+choosing Hermitian coordinates in the complex case this is
+\(\Real\langle\lambda,k\rangle\).
+
+Let
+\[
+ S_A:X_A\to K,
+ \qquad
+ S_D:X_D\to K
+\]
+be real-linear maps.  Assume \(S_D\) is surjective.  Let \(p_A,p_D\)
+be norms on the coefficient spaces, and write \(p_A^\circ,p_D^\circ\)
+for their polar norms.  The real adjoints are defined by
+\[
+ [S_A^*\lambda,x]_{\R}=[\lambda,S_Ax]_{\R},
+ \qquad
+ [S_D^*\lambda,y]_{\R}=[\lambda,S_Dy]_{\R}.
+\]
+
+\begin{definition}[Polar feasibility sets]\label{def:balls}
+Define
+\begin{align}
+ \cB_A
+ &=
+ \{\lambda\in K^*:p_A^\circ(S_A^*\lambda)\le1\},
+ \label{eq:BA}\\
+ \cB_D
+ &=
+ \{\lambda\in K^*:p_D^\circ(S_D^*\lambda)\le1\}.
+ \label{eq:BD}
+\end{align}
+\end{definition}
+
+Because \(S_D^*\) is injective, \(\cB_D\) is compact.  The set
+\(\cB_A\) may be unbounded along the annihilator of \(\Ran S_A\), but
+\(\cB_A\cap\cB_D\) is compact.
+
+\begin{definition}[Anchor range and orphan quotient]\label{def:orphan}
+Let
+\[
+ V_A=\Ran S_A,
+ \qquad
+ \pi:K\to Q_{\rm orph}:=K/V_A
+\]
+be the anchor-visible subspace and its quotient map.  A class
+\(\pi k\) is called the \emph{orphan part} of \(k\): it is the part no
+anchor synthesis can change.
+\end{definition}
+
+The term ``orphan'' is algebraic.  It does not assert that a physical
+carrier is absent; it says only that the chosen literal map \(S_A\)
+does not synthesize that quotient direction.
+
+\begin{remark}[Observation is not synthesis]\label{rem:obs}
+A map \(T:K\to Y\) measures or aggregates a target.  It does not define
+a map \(Y\to K\).  A right inverse, section, or reconstruction operator
+must be specified and proved compatible with the physical coefficients
+before its range may be called \(V_A\).
+\end{remark}

@@ -1,0 +1,63 @@
+\section{The free orphan quotient floor}
+\label{sec:orphan}
+
+Before charging for anchor coefficients, declare all directions in
+\(V_A\) free.
+
+\begin{definition}[Orphan quotient gauge]\label{def:orphan-gauge}
+For \(\pi k\in Q_{\rm orph}\), define
+\begin{equation}\label{eq:orph}
+ \delta_{\rm orph}(\pi k)
+ =
+ \inf_{v\in V_A}\delta(k-v).
+\end{equation}
+\end{definition}
+
+The value is independent of the representative \(k\) and is the
+quotient norm induced by \(\delta\).
+
+\begin{theorem}[Exact orphan dual]\label{thm:orphan-dual}
+For every \(k\in K\),
+\begin{equation}\label{eq:orphan-dual}
+ \boxed{\displaystyle
+ \delta_{\rm orph}(\pi k)
+ =
+ \max\left\{
+ [\lambda,k]_{\R}:
+ \lambda\in\cB_D,\ S_A^*\lambda=0
+ \right\}.}
+\end{equation}
+Both extrema are attained.
+\end{theorem}
+
+\begin{proof}
+The annihilator of \(V_A=\Ran S_A\) is
+\[
+ V_A^\perp=\{\lambda:S_A^*\lambda=0\}.
+\]
+The dual unit ball of a quotient norm is the intersection of the
+original dual unit ball with the annihilator of the quotient
+subspace.  Applying this to \(\delta\) proves
+\eqref{eq:orphan-dual}.  Direct finite-dimensional minimax duality gives
+the same result: the free variable \(v\in V_A\) forces its dual
+coefficient to vanish on \(V_A\).
+\end{proof}
+
+\begin{corollary}[Exact orphan zero test]\label{cor:orphan-zero}
+\[
+ \delta_{\rm orph}(\pi k)=0
+ \quad\Longleftrightarrow\quad
+ k\in V_A.
+\]
+\end{corollary}
+
+\begin{proof}
+It is a norm on \(K/V_A\).
+\end{proof}
+
+\begin{remark}[A floor, not an attainable hybrid price]
+The minimization in \eqref{eq:orph} charges nothing for \(v\).  It is a
+lower floor on any model that assigns a nonnegative cost to anchor
+synthesis.  It is not the actual joint cost unless the required anchor
+directions are free in that model.
+\end{remark}

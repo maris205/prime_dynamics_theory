@@ -1,0 +1,66 @@
+\begin{abstract}
+The fixed-shift completion program contains two formally different
+sources of information.  A direct channel synthesizes corrections in
+the target entry space; an anchor channel records lower-dimensional or
+four-corner structure.  These channels cannot be combined merely
+because their labels overlap.  One must construct a literal anchor
+synthesis into the same target.
+
+We study the resulting finite-dimensional convex problem.  Let
+\(S_A:X_A\to K\) and \(S_D:X_D\to K\) be anchor and direct synthesis
+maps, assume \(S_D\) is surjective, and assume the coefficient variables
+form a verified separable direct sum with additive cost
+\(p_A(x)+p_D(y)\).  Write
+\[
+ \alpha(v)=\inf_{S_Ax=v}p_A(x),
+ \qquad
+ \delta(k)=\min_{S_Dy=k}p_D(y),
+\]
+and \(V_A=\Ran S_A\).  The direct cost left after declaring anchor
+directions free is the orphan quotient gauge
+\[
+ \delta_{\rm orph}(\pi k)
+ =\inf_{v\in V_A}\delta(k-v).
+\]
+If \(\cB_A,\cB_D\) are the polar feasibility sets induced by the two
+coefficient norms, then
+\[
+ \delta_{\rm orph}(\pi k)
+ =
+ \max_{\lambda\in\cB_D,\ S_A^*\lambda=0}
+ [\lambda,k]_{\R}.
+\]
+
+The genuinely hybrid cost is instead
+\[
+ h(k)=\min_{v\in V_A}\{\alpha(v)+\delta(k-v)\}.
+\]
+We prove the exact dual intersection formula
+\[
+ h(k)
+ =
+ \max_{\lambda\in\cB_A\cap\cB_D}
+ [\lambda,k]_{\R}
+\]
+and the hierarchy
+\[
+ \delta_{\rm orph}(\pi k)\le h(k)\le\delta(k).
+\]
+For a fixed datum,
+\[
+ h(k)=\delta(k)
+ \quad\Longleftrightarrow\quad
+ N_D(k)\cap\cB_A\ne\varnothing,
+\]
+where \(N_D(k)\) is the face of direct norming functionals.  In
+particular, a direct norming functional annihilating the anchor range
+certifies that the anchor channel cannot help.  Globally, the anchor
+channel is redundant exactly when
+\(\alpha(v)\ge\delta(v)\) for all \(v\in V_A\).
+
+The results give a precise test for whether two previously separate
+completion mechanisms yield a real saving, only a quotient floor, or
+no interaction at all.  They do not construct the required physical
+anchor synthesis or prove that its literal fixed-shift coefficients
+cross any arithmetic endpoint.
+\end{abstract}

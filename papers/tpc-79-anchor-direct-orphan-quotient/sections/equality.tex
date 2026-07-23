@@ -1,0 +1,91 @@
+\section{Exact equality and strict-improvement tests}
+\label{sec:equality}
+
+\begin{theorem}[Fixed-datum no-improvement certificate]\label{thm:fixed-equality}
+For every \(k\in K\),
+\begin{equation}\label{eq:fixed-equality}
+ h(k)=\delta(k)
+ \quad\Longleftrightarrow\quad
+ N_D(k)\cap\cB_A\ne\varnothing.
+\end{equation}
+Equivalently, the anchor channel gives a strict saving exactly when
+every direct norming functional violates the anchor polar constraint.
+\end{theorem}
+
+\begin{proof}
+The hybrid feasible set is the compact subset
+\(\cB_A\cap\cB_D\) of the direct feasible set \(\cB_D\).  Their support
+functions agree at \(k\) precisely when a direct maximizer belongs to
+the subset.  This is exactly \eqref{eq:fixed-equality}.
+\end{proof}
+
+\begin{corollary}[Orphan norming obstruction]\label{cor:orphan-norming}
+If there exists \(\lambda\in N_D(k)\) with
+\(S_A^*\lambda=0\), then
+\[
+ \delta_{\rm orph}(\pi k)=h(k)=\delta(k).
+\]
+Thus no anchor synthesis, regardless of its coefficient price, can
+improve the direct cost at \(k\).
+\end{corollary}
+
+\begin{proof}
+Such a \(\lambda\) is feasible for the orphan dual and attains
+\(\delta(k)\).  Combine \eqref{eq:hierarchy} with the reverse lower
+bound supplied by \(\lambda\).
+\end{proof}
+
+\begin{theorem}[Global redundancy criterion]\label{thm:global-redundancy}
+The following are equivalent:
+\begin{enumerate}[label=(\roman*),leftmargin=2.4em]
+\item \(h(k)=\delta(k)\) for every \(k\in K\);
+\item \(\alpha(v)\ge\delta(v)\) for every \(v\in V_A\);
+\item \(\cB_D\subseteq\cB_A\).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Assume (ii).  For every \(v\in V_A\),
+\[
+ \alpha(v)+\delta(k-v)
+ \ge\delta(v)+\delta(k-v)
+ \ge\delta(k).
+\]
+Taking the infimum and using \(h\le\delta\) gives (i).
+Conversely, for \(v\in V_A\),
+\[
+ \delta(v)=h(v)\le\alpha(v)+\delta(0)=\alpha(v),
+\]
+so (i) implies (ii).
+
+By the pure support formulas, \(\alpha\ge\delta\) on \(V_A\) is
+equivalent to every \(\lambda\in\cB_D\) restricting to an
+\(\alpha\)-dual feasible functional on \(V_A\), which is exactly
+\(\cB_D\subseteq\cB_A\): support-function domination first gives
+inclusion after restriction to \(V_A^*\), and \(\cB_A\) is saturated
+along \(V_A^\perp\), so the inclusion lifts back to \(K^*\).
+Alternatively, (iii) makes the two dual support sets
+\(\cB_A\cap\cB_D\) and \(\cB_D\) identical.
+\end{proof}
+
+\begin{proposition}[When the quotient floor is attained]\label{prop:floor-equality}
+Let
+\[
+ N_H(k)=
+ \{\lambda\in\cB_A\cap\cB_D:
+   [\lambda,k]_{\R}=h(k)\}.
+\]
+Then
+\[
+ h(k)=\delta_{\rm orph}(\pi k)
+ \quad\Longleftrightarrow\quad
+ N_H(k)\cap\Ker S_A^*\ne\varnothing.
+\]
+\end{proposition}
+
+\begin{proof}
+The orphan dual feasible set is precisely
+\((\cB_A\cap\cB_D)\cap\Ker S_A^*\).  Equality of the two support values
+is therefore equivalent to the existence of a hybrid maximizer in that
+subset.
+\end{proof}

@@ -1,0 +1,99 @@
+\section{Countermodels: distinctions that cannot be skipped}
+\label{sec:countermodels}
+
+\begin{example}[Strict three-level hierarchy]\label{ex:strict}
+Let \(K=\R^2\), \(S_D=\mathrm{id}\), \(p_D(y)=\|y\|_1\), and
+\[
+ S_Aa=(a,0),
+ \qquad
+ p_A(a)=c|a|,
+ \qquad 0<c<1.
+\]
+Then
+\[
+ \delta(k)=|k_1|+|k_2|,
+ \qquad
+ \delta_{\rm orph}(\pi k)=|k_2|,
+\]
+whereas
+\[
+ h(k)=c|k_1|+|k_2|.
+\]
+For \(k_1k_2\ne0\), both inequalities in
+\eqref{eq:hierarchy} are strict.  The quotient floor is not the hybrid
+price, but the anchor channel does give a genuine saving.
+\end{example}
+
+\begin{example}[An expensive anchor gives no saving]\label{ex:expensive}
+Keep the same maps but take \(c\ge1\).  Then
+\[
+ h(k)=\delta(k)=|k_1|+|k_2|,
+ \qquad
+ \delta_{\rm orph}(\pi k)=|k_2|.
+\]
+The anchor range is nontrivial and the free quotient floor is smaller,
+yet the costed anchor is globally redundant.  This is
+\cref{thm:global-redundancy} in its simplest form.
+\end{example}
+
+\begin{example}[Full anchor range does not mean zero cost]
+Let \(K=\R\), \(S_A=S_D=\mathrm{id}\),
+\(\delta(k)=|k|\), and \(\alpha(k)=2|k|\).  Then
+\[
+ Q_{\rm orph}=\{0\},
+ \qquad
+ \delta_{\rm orph}=0,
+ \qquad
+ h(k)=\delta(k)=|k|.
+\]
+Declaring the full target anchor-visible erases the quotient but does
+not make anchor coefficients free.
+\end{example}
+
+\begin{example}[Observation does not determine synthesis]\label{ex:obs}
+Let \(T:\R^2\to\R\) be \(T(x_1,x_2)=x_1+x_2\).  The two sections
+\[
+ R_1(a)=(a,0),
+ \qquad
+ R_2(a)=(0,a)
+\]
+both satisfy \(T R_\ell=\mathrm{id}\), but they produce different
+anchor ranges.  For example, with
+\(\delta(x_1,x_2)=|x_1|+2|x_2|\) and \(p_A(a)=|a|\), the two induced
+hybrid gauges are
+\[
+ h_1(x_1,x_2)=|x_1|+2|x_2|,
+ \qquad
+ h_2(x_1,x_2)=|x_1|+|x_2|.
+\]
+Therefore the observation \(T(k)\) does not specify which target entry
+can be cancelled.  A chosen reconstruction must be part of the
+theorem, not a post hoc identification.
+\end{example}
+
+\begin{example}[A quotient gauge is not orthogonal projection]
+Let
+\[
+ \delta(x,y)=|x|+2|y|,
+ \qquad
+ V_A=\operatorname{span}\{(1,1)\},
+ \qquad
+ k=(1,0).
+\]
+Then
+\[
+ \inf_{t\in\R}\delta\bigl((1,0)-t(1,1)\bigr)=1,
+\]
+attained at \(t=0\).  Euclidean orthogonal projection uses
+\(t=1/2\) and leaves direct cost \(3/2\).  Quotient minimization is
+governed by the literal direct gauge, not an auxiliary Hilbert metric.
+\end{example}
+
+\begin{remark}[Shared labels do not imply independent channels]
+If anchor and direct columns share native coefficient variables, the
+coefficient space is not the direct sum used in
+\eqref{eq:hybrid-coeff}.  One must retain the shared variable and use
+its actual joint norm.  Duplicating it into two independently optimized
+copies can only decrease the computed cost and may create a false
+saving.
+\end{remark}

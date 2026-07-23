@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.75in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,longtable,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Anchor-Direct Infimal Convolution on the Orphan Quotient: Exact Hybrid Completion Duality and Stop Certificates},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Real}{\operatorname{Re}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cV}{\mathcal V}
+
+\title{Anchor--Direct Infimal Convolution on the Orphan Quotient:\\
+Exact Hybrid Completion Duality and Stop Certificates}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\noindent\textbf{Keywords:} infimal convolution; quotient gauge; anchor
+synthesis; direct completion; norming functional; dual intersection;
+fixed shift.\\[0.5em]
+\noindent\textbf{Convention.} Anchor and direct variables may be
+combined only after their synthesis maps land in the same literal
+target space.  Every physical specialization keeps one fixed nonzero
+shift \(h_0\), complete native keys, actual support, literal
+coefficients, and global raw atomic normalization.\\[0.5em]
+\noindent\textbf{MSC 2020:} Primary 90C25, 46A20; Secondary 15A04,
+11A25, 11N37.
+
+\input{sections/introduction}
+\input{sections/setup}
+\input{sections/pure-gauges}
+\input{sections/orphan-quotient}
+\input{sections/hybrid-duality}
+\input{sections/equality}
+\input{sections/stability}
+\input{sections/countermodels}
+\input{sections/physical-transfer}
+\input{sections/claim-boundary}
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}
