@@ -1,0 +1,58 @@
+\begin{abstract}
+Let \(F\) be the atomic-normalized missing-native incidence at one fixed
+nonzero shift and write its Gram as
+\[
+ F^*F=I+R+E.
+\]
+Here \(R\) contains collisions already present at a common residual output
+\((i,s)\), whereas \(E\) contains the unequal-residual cross terms created
+when \(s\) is erased inside a complete native key \(i\).  This paper
+resolves the exact algebra of mixed \(R/E\) operator words without asserting
+an arithmetic cancellation estimate.
+
+First, we decompose \(R=\sum_iR_i\) and \(E=\sum_iE_i\) over complete native
+keys.  The matrix \(R_i\) is block diagonal in the residual partition at
+\(i\), while \(E_i\) is strictly off block.  Consequently
+\[
+ \tr(E_iR_i^a)=0\qquad(a\ge0).
+\]
+In particular, the half-sector \(\tr(ER)\) in the full mixed
+second-moment coefficient \(S_{2,1}=2\tr(ER)\) is not a one-key
+phenomenon:
+\[
+ \tr(ER)=\sum_{i\ne j}\tr(E_iR_j).
+\]
+Its literal terms are two-key, two-row rectangles.  After the source-row
+gauge is removed, their four target Möbius signs reduce to the two residual
+signs on the unequal-residual edge.  The remaining complex coefficient is
+a gauge-invariant cross-key holonomy.
+
+Second, we give the exact cyclic sector formula for the coefficient
+\(S_{k,b}\) of \(t^b\) in
+\(\tr(R+tE)^k\).  The one-erasure sector is
+\[
+ S_{k,1}=k\tr(R^{k-1}E).
+\]
+On every same-residual edge the residual sign factor is one; after the
+complete decorated walk is closed, all source-row gauges telescope.  The
+remaining target-sign product is exactly the product of \(\mu(s)\) over
+the odd-degree boundary of the multigraph of erasure-edge residual labels.
+Thus the number of erasure edges alone does not decide whether the signs
+freeze.
+
+Third, although individual two-erasure words may be signed, their complete
+even-moment sector is nonnegative:
+\[
+ S_{2q,2}\ge0.
+\]
+We prove this by diagonalizing \(R\) and identifying the coefficient with
+the nonnegative divided difference of the odd increasing function
+\(x^{2q-1}\).  Hence the quadratic erasure response cannot supply a negative
+moment correction; any favorable signed response must enter through the
+linear sector or higher sectors.  Local star compensation, cross-key
+countermodels, determinant reindexing, and the remaining arithmetic and
+shorted-reassembly gates are recorded explicitly.  The matrix and sector
+identities are L0, their complete fixed-shift carrier and target-sign
+identifications are L1, and every uniform Möbius saving remains an unproved
+L2 input.
+\end{abstract}

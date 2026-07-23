@@ -1,0 +1,188 @@
+\section{Residual-boundary signs on decorated walks}
+\label{sec:residual-boundary}
+
+TPC--68 proves that target signs freeze on a same-residual edge
+\citep{WangTPC68}.  We strengthen the bookkeeping from a pure residual walk
+to an arbitrary mixed word and identify the exact surviving sign.
+
+\subsection{The edge identity}
+
+Consider an oriented decorated edge
+\[
+ \xi=(w_-,w_+)
+\]
+from row \(m\) to row \(n\), with common complete native key.  Abbreviate
+\[
+ s_-(\xi)=s(w_-),\qquad s_+(\xi)=s(w_+).
+\]
+The gauged target sign is
+\[
+ \varepsilon(\xi)
+ :=
+ \mu(n(w_-))\mu(n(w_+)).
+\]
+
+\begin{lemma}[Source and residual factorization of one edge]
+\label{lem:edge-sign-factorization}
+On the squarefree carrier,
+\begin{equation}
+ \boxed{
+ \varepsilon(\xi)
+ =
+ \mu(d_m)\mu(d_n)
+ \mu(s_-(\xi))\mu(s_+(\xi)).}
+ \label{eq:edge-sign-factorization}
+\end{equation}
+If \(\xi\) is an \(R\)-edge, this reduces to
+\begin{equation}
+ \varepsilon(\xi)=\mu(d_m)\mu(d_n).
+ \label{eq:R-edge-frozen}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Since \(n(w)=p(w)r(w)\) is squarefree and \(p(w)\) is prime,
+\[
+ \mu(n(w))=-\mu(r(w))
+ =-\mu(d_{m(w)})\mu(s(w)).
+\]
+Multiplying the two endpoint identities proves
+\eqref{eq:edge-sign-factorization}.  On an \(R\)-edge the two residual
+labels agree, so their Möbius factors square to one.
+\end{proof}
+
+\subsection{Open paths and closed walks}
+
+\begin{theorem}[Exact residual-boundary sign]
+\label{thm:residual-boundary-sign}
+Let
+\[
+ m_0,m_1,\ldots,m_k
+\]
+be a decorated row path with edge types
+\(\omega_\ell\in\{R,E\}\).  Then
+\begin{equation}
+ \boxed{
+ \prod_{\ell=1}^k\varepsilon(\xi_\ell)
+ =
+ \mu(d_{m_0})\mu(d_{m_k})
+ \prod_{\ell:\omega_\ell=E}
+ \mu(s_-(\xi_\ell))\mu(s_+(\xi_\ell)).}
+ \label{eq:open-path-boundary-sign}
+\end{equation}
+If \(m_k=m_0\), the source-row boundary disappears:
+\begin{equation}
+ \boxed{
+ \prod_{\ell=1}^k\varepsilon(\xi_\ell)
+ =
+ \prod_{\ell:\omega_\ell=E}
+ \mu(s_-(\xi_\ell))\mu(s_+(\xi_\ell)).}
+ \label{eq:closed-walk-erasure-sign}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Apply \cref{lem:edge-sign-factorization} to every edge.  Each intermediate
+row gauge \(\mu(d_{m_\ell})\) occurs twice and squares to one.  Only the
+endpoint row gauges remain on an open path.  Every \(R\)-edge residual
+pair also squares to one, leaving exactly
+\eqref{eq:open-path-boundary-sign}.  On a closed path the two endpoint
+gauges agree and square to one.
+\end{proof}
+
+For a closed decorated walk, build a residual multigraph
+\(\mathscr G_E\) as follows.  Its vertices are the integer residual labels
+appearing on \(E\)-edge endpoints, and every \(E\)-edge contributes the
+unordered residual edge
+\[
+ \{s_-(\xi),s_+(\xi)\}.
+\]
+The two endpoints are distinct by definition, although parallel edges are
+allowed.  Let \(\deg_E(s)\) be the degree of residual vertex \(s\), counted
+with multiplicity.
+
+\begin{corollary}[Odd residual boundary]
+\label{cor:odd-residual-boundary}
+The closed-walk target sign is
+\begin{equation}
+ \boxed{
+ \prod_s\mu(s)^{\deg_E(s)}
+ =
+ \prod_{\deg_E(s)\ {\rm odd}}\mu(s).}
+ \label{eq:odd-residual-boundary}
+\end{equation}
+In particular, if \(\mathscr G_E\) is Eulerian, the target sign is forced
+to be \(+1\).
+\end{corollary}
+
+\begin{proof}
+Group the factors in
+\eqref{eq:closed-walk-erasure-sign} by residual label and use
+\(\mu(s)^2=1\).
+\end{proof}
+
+\begin{remark}[Edge-count parity is not residual parity]
+\label{rem:edge-count-not-enough}
+The number of \(E\)-edges does not determine the sign.  Two edges
+\((a,b),(b,c)\) leave \(\mu(a)\mu(c)\), while three edges forming the
+residual triangle \((a,b),(b,c),(c,a)\) force sign \(+1\).  A nonempty odd
+boundary means only that the sign is not algebraically forced by the
+interface; its value on one actual carrier can still happen to equal
+\(+1\).
+\end{remark}
+
+\subsection{The literal closed-walk expansion}
+
+For a closed decorated word of length \(k\), the product of the
+normalizing denominators is
+\[
+ \prod_{\ell=0}^{k-1}W_{m_\ell}.
+\]
+Combining this with \cref{thm:residual-boundary-sign} gives
+\begin{equation}
+\boxed{
+\begin{aligned}
+\tr(H_{\omega_1}\cdots H_{\omega_k})
+={}&
+\sum_{\substack{m_k=m_0\\
+                 \xi_\ell\in
+                 \cC^{\omega_\ell}_{m_{\ell-1}m_\ell}}}
+\left[
+\prod_{\ell:\omega_\ell=E}
+\mu(s_-(\xi_\ell))\mu(s_+(\xi_\ell))
+\right]
+\\
+&\times
+\frac{
+\displaystyle\prod_{\ell=1}^k
+\overline{\beta_{w_{\ell,-}}}\beta_{w_{\ell,+}}
+}{
+\displaystyle\prod_{\ell=0}^{k-1}W_{m_\ell}
+}.
+\end{aligned}}
+\label{eq:literal-residual-boundary-walk}
+\end{equation}
+Here
+\(\cC^R_{mn}\) and \(\cC^E_{mn}\) are the complete equal- and
+unequal-residual native collision lists.  The sum retains the native key,
+side, block, opposite row, \(\gamma\), time, mask, and every literal
+coefficient on every edge.
+
+The complex phase product in
+\eqref{eq:literal-residual-boundary-walk} does not generally telescope.
+It becomes positive on an exactly atom-consistent backtracking decoration,
+but adjacent matrix edges share only a source-row index, not necessarily
+an atom.  Treating every complex weight as a vertex gauge would therefore
+change the sum.
+
+\begin{corollary}[One-erasure sign]
+\label{cor:one-erasure-sign}
+Every decorated term in the one-erasure sector has precisely the residual
+sign
+\begin{equation}
+ \mu(s_-(\xi_E))\mu(s_+(\xi_E)),
+ \label{eq:one-erasure-sign}
+\end{equation}
+where \(\xi_E\) is its unique \(E\)-edge.  No same-residual edge contributes
+a target Möbius sign after the closed product is formed.
+\end{corollary}

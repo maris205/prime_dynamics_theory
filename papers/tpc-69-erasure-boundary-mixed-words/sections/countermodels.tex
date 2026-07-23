@@ -1,0 +1,124 @@
+\section{Separating countermodels}
+\label{sec:countermodels}
+
+The following finite-dimensional examples test the exact logical boundary
+of the preceding identities.  They are not asserted to be realizations of
+the full arithmetic carrier.
+
+\begin{example}[One key can contain both defects but no local mixed trace]
+\label{ex:one-key-both-defects}
+Take one native key \(i\), three rows, amplitudes
+\[
+ f_i=(1,1,1),
+\]
+and residual classes
+\[
+ A_{i,a}=\{1,2\},\qquad A_{i,b}=\{3\}.
+\]
+Then \(R_i\) contains the edge \(1\leftrightarrow2\), while \(E_i\)
+contains the edges \(1\leftrightarrow3\) and
+\(2\leftrightarrow3\).  Both matrices are nonzero.  Nevertheless,
+\[
+ \tr(E_iR_i^a)=0
+\]
+for every \(a\ge0\), because \(R_i^a\) remains inside the two residual
+blocks and \(E_i\) crosses them.  Thus the local vanishing theorem is not
+the trivial assertion that one of the two matrices is zero.
+\end{example}
+
+\begin{example}[Two keys create the first mixed rectangle]
+\label{ex:two-key-first-rectangle}
+Take two rows and two native keys \(i,j\), with
+\[
+ f_i=2^{-1/2}(1,1),\qquad
+ f_j=2^{-1/2}(1,1).
+\]
+At \(i\), give the two rows different residual labels; at \(j\), give them
+the same residual label.  Each normalized row has total squared mass one.
+The only nonzero off-diagonal entries are
+\[
+ (E_i)_{12}=\frac12,\qquad
+ (R_j)_{12}=\frac12.
+\]
+Hence
+\[
+ \tr(E_iR_j)=\frac12\ne0.
+\]
+The full Gram is positive because it is assembled from the two key
+incidences.  This disproves any inference from one-key vanishing to global
+Hilbert--Schmidt orthogonality.
+\end{example}
+
+\begin{example}[Same support and magnitudes, opposite holonomy]
+\label{ex:holonomy-phase}
+Keep the preceding support and residual partitions, but put
+\[
+ f_i=2^{-1/2}(1,1),\qquad
+ f_j=2^{-1/2}(1,e^{\mathrm i\theta}).
+\]
+Then
+\[
+ \tr(E_iR_j)=\frac12\cos\theta.
+\]
+At \(\theta=0\), \(R_j\) and \(E_i\) reinforce and the full defect has
+off-diagonal entry one.  At \(\theta=\pi\), they cancel and the full defect
+vanishes.  The two models have identical key support, residual partitions,
+atomic magnitudes, and row masses.  Their difference is exactly the
+rectangle holonomy.
+\end{example}
+
+\begin{example}[Zero global cross trace with a large local star]
+\label{ex:global-cross-trace-zero}
+Take the orthogonal direct sum of two copies of
+\cref{ex:holonomy-phase}: use \(\theta=0\) on rows \(1,2\) and
+\(\theta=\pi\) on rows \(3,4\).  The two cross traces are \(1/2\) and
+\(-1/2\), so
+\[
+ \tr(ER)=0.
+\]
+On the first component the full defect has off-diagonal entry one, while
+on the second it vanishes.  Therefore
+\[
+ s_1(H)=s_2(H)=1,\qquad \|H\|=1.
+\]
+Global rectangle cancellation gives no uniform local compensation.
+\end{example}
+
+\begin{example}[Erasure-edge parity is not sign parity]
+\label{ex:E-count-parity}
+Assign residual endpoint pairs
+\[
+ (a,b),(b,c)
+\]
+to two erasure edges.  Their sign is \(\mu(a)\mu(c)\), not identically one.
+By contrast, the three erasure edges
+\[
+ (a,b),(b,c),(c,a)
+\]
+have sign one.  Thus evenness of the number of erasure edges is neither
+necessary nor sufficient for an algebraically frozen target sign.
+\end{example}
+
+\begin{example}[Averaged second trace can miss a fixed obstruction]
+\label{ex:normalized-trace}
+Let \(H_r\) be the \(r\times r\) Hermitian matrix whose only nonzero block
+is
+\[
+ \begin{pmatrix}0&1\\1&0\end{pmatrix}
+\]
+on the first two rows.  Then
+\[
+ \|H_r\|=1,\qquad
+ \tr H_r^2=2,\qquad
+ \frac1r\tr H_r^2\longrightarrow0.
+\]
+An averaged row or normalized moment estimate therefore cannot replace an
+unnormalized operator certificate.
+\end{example}
+
+\begin{remark}[Scope of the countermodels]
+The examples prove non-implications for the finite-dimensional interface.
+They neither show that the actual fixed-shift carrier realizes the bad
+phases nor show that it avoids them.  Deciding that question requires the
+literal arithmetic weights and is L2.
+\end{remark}

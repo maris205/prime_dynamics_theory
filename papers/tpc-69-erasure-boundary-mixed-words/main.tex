@@ -1,0 +1,77 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.75in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,longtable,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Erasure-Boundary Expansions in a Fixed-Shift Native Gram},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cW}{\mathcal W}
+
+\title{Erasure-Boundary Expansions in a Fixed-Shift Native Gram:\\
+Mixed Words, Residual Parity, and Cross-Key Holonomy}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\noindent\textbf{Keywords:} fixed shift; native Gram; residual erasure;
+noncommutative word; Möbius sign; cross-key rectangle; divided difference;
+operator moment.\\[0.5em]
+\noindent\textbf{Convention.} The arithmetic specialization uses one fixed
+nonzero shift \(h_0\), the complete literal missing-high carrier, complete
+native output keys, and raw atomic normalization; the shift is not \(2\).\\[0.5em]
+\noindent\textbf{MSC 2020:} Primary 15A18, 47A30; Secondary 11N35, 05C50.
+
+\input{sections/introduction}
+\input{sections/literal-interface}
+\input{sections/key-local}
+\input{sections/mixed-words}
+\input{sections/residual-boundary}
+\input{sections/cross-key}
+\input{sections/quadratic-response}
+\input{sections/local-star}
+\input{sections/countermodels}
+\input{sections/arithmetic-ledger}
+\input{sections/claim-boundary}
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

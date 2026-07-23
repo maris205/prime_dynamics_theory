@@ -1,0 +1,141 @@
+\section{Local star compensation and global trace}
+\label{sec:local-star}
+
+Operator moments permit cancellation between closed walks starting at
+different rows.  The star certificate of TPC--68 instead tests each row
+locally.  We record the exact relation between the two viewpoints.
+
+\subsection{Rowwise compensation identity}
+
+For an active row \(m\), let
+\[
+ r_m=(R_{mn})_{n\ne m},
+ \qquad
+ e_m=(E_{mn})_{n\ne m}
+\]
+be its residual and erasure stars.  Define
+\begin{align}
+ s_m(R)&:=\|r_m\|_2,
+ &
+ s_m(E)&:=\|e_m\|_2,
+ &
+ s_m(H)&:=\|r_m+e_m\|_2,
+ \label{eq:local-stars}\\
+ c_m&:=2\operatorname{Re}
+ \sum_{n\ne m}R_{mn}\overline{E_{mn}}.
+ \label{eq:local-compensation}
+\end{align}
+
+\begin{proposition}[Exact local compensation]
+\label{prop:local-compensation}
+For every active row,
+\begin{equation}
+ \boxed{
+ s_m(H)^2=s_m(R)^2+s_m(E)^2+c_m.}
+ \label{eq:local-compensation-identity}
+\end{equation}
+Moreover,
+\begin{equation}
+ \bigl(s_m(R)-s_m(E)\bigr)^2
+ \le s_m(H)^2
+ \le
+ \bigl(s_m(R)+s_m(E)\bigr)^2.
+ \label{eq:local-star-triangle}
+\end{equation}
+The global mixed trace is the sum of local compensations:
+\begin{equation}
+ \boxed{
+ 2\tr(RE)=\sum_m c_m.}
+ \label{eq:global-local-compensation}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Expand \(\|r_m+e_m\|_2^2\) and apply Cauchy--Schwarz to its cross term.
+Since \(R,E\) are Hermitian,
+\[
+ \tr(RE)
+ =
+ \sum_{m,n}R_{mn}E_{nm}
+ =
+ \sum_m\operatorname{Re}
+ \sum_{n\ne m}R_{mn}\overline{E_{mn}}.
+\]
+This proves the final identity.
+\end{proof}
+
+Thus a small \(s_m(H)\) in a row where both component stars are large
+requires almost extremal negative alignment:
+\[
+ c_m\approx-2s_m(R)s_m(E).
+\]
+A cancellation statement for the scalar sum
+\(\sum_mc_m\) does not imply this rowwise alignment.
+
+\subsection{What is needed for a star route}
+
+Let
+\[
+ s_*(H):=\max_m s_m(H)
+\]
+and let \(\Delta_H\) be the maximum degree of the actual nonzero collision
+graph.  TPC--68 proves
+\begin{equation}
+ s_*(H)\le\|H\|\le\sqrt{\Delta_H}\,s_*(H).
+ \label{eq:star-sandwich}
+\end{equation}
+Consequently, a target \(s_*(H)\le\eta\) requires the uniform inequalities
+\begin{equation}
+ c_m
+ \le
+ \eta^2-s_m(R)^2-s_m(E)^2
+ \qquad\text{for every active }m.
+ \label{eq:uniform-local-compensation-target}
+\end{equation}
+An average over rows, a density-one set of rows, or a cancellation between
+positive \(c_m\)'s and negative \(c_m\)'s does not prove
+\eqref{eq:uniform-local-compensation-target}.
+
+The rectangle formula refines the local cross term:
+\begin{equation}
+ \frac{c_m}{2}
+ =
+ \operatorname{Re}
+ \sum_{\substack{i\ne j\\n\ne m}}
+ \one_{\{s_i(m)\ne s_i(n)\}}
+ \one_{\{s_j(m)=s_j(n)\}}
+ \mathcal H_{i,j}(m,n).
+ \label{eq:local-cross-key-rectangles}
+\end{equation}
+Thus a local star proof requires a cross-key rectangle estimate uniformly
+in the base row \(m\), not merely the complete global sum in
+\eqref{eq:full-cross-key-rectangle}.
+
+\subsection{Why a normalized global trace is insufficient}
+
+For a zero-diagonal Hermitian matrix,
+\begin{equation}
+ \tr H^2=\sum_m s_m(H)^2.
+ \label{eq:trace-two-star-sum}
+\end{equation}
+The unnormalized trace is a valid upper certificate:
+\[
+ \|H\|^2\le\tr H^2.
+\]
+However, in a row space of growing dimension \(r\), an estimate for the
+average \(r^{-1}\tr H^2\) does not bound \(\|H\|\).  One nonzero two-row
+block can have norm one while \(r^{-1}\tr H^2\to0\) after isolated rows are
+adjoined.
+
+Similarly, \(\tr(RE)=0\) says only that the local compensations sum to
+zero.  It permits one component with coherent reinforcement and another
+with exact cancellation.  A countermodel is given in
+\cref{ex:global-cross-trace-zero}.
+
+For higher even moments the full unnormalized quantity
+\[
+ \bigl(\tr H^{2q}\bigr)^{1/(2q)}
+\]
+does bound \(\|H\|\).  But a fixed normalized moment or one isolated sector
+need not have the correct scale.  If \(q=q_X\) grows, all constants in the
+literal decorated-walk estimate must be uniform in both \(X\) and \(q_X\).

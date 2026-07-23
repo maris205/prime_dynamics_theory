@@ -1,0 +1,170 @@
+\section{Key-local residual blocks and erasure links}
+\label{sec:key-local}
+
+This section proves that one erasure edge cannot close against powers of
+the same native-key residual operator.  The conclusion is purely
+finite-dimensional and uses the complete key rather than a reduced
+collision cell.
+
+\subsection{The residual partition at one native key}
+
+For a native key \(i\), let
+\[
+ A_i:=\{m\in\cM_M:f_i(m)\ne0\}.
+\]
+For \(m\in A_i\), let \(s_i(m)\) denote the residual label of the unique
+atom selected by \((i,m)\).  Extend \(f_i\) by zero to all of \(S_M\), and
+put
+\begin{equation}
+ D_i:=\diag\bigl(|f_i(m)|^2\bigr)_{m\in\cM_M}.
+ \label{eq:key-local-diagonal}
+\end{equation}
+Define two positive matrices by their entries:
+\begin{align}
+ (K_i)_{mn}
+ &:=\overline{f_i(m)}f_i(n),
+ \label{eq:key-native-Gram}\\
+ (K_i^{\rm res})_{mn}
+ &:=
+ \one_{\{s_i(m)=s_i(n)\}}
+ \overline{f_i(m)}f_i(n),
+ \label{eq:key-residual-Gram}
+\end{align}
+where an indicator is zero if either amplitude vanishes.  Equivalently,
+if
+\[
+ A_{i,s}:=\{m\in A_i:s_i(m)=s\},
+\]
+then \(K_i^{\rm res}\) is the orthogonal direct sum of the rank-one Grams
+on the coordinate spaces \(\ell^2(A_{i,s})\).
+
+\begin{definition}[Key-local defects]
+\label{def:key-local-defects}
+Set
+\begin{equation}
+ R_i:=K_i^{\rm res}-D_i,
+ \qquad
+ E_i:=K_i-K_i^{\rm res}.
+ \label{eq:key-local-defects}
+\end{equation}
+\end{definition}
+
+Thus \(R_i\) has the same-residual off-diagonal entries at \(i\), and
+\(E_i\) has the unequal-residual entries at \(i\).  Both have zero
+diagonal.
+
+\begin{proposition}[Exact complete-key decomposition]
+\label{prop:complete-key-decomposition}
+On \(S_M\),
+\begin{equation}
+ \boxed{
+ \sum_iD_i=I,\qquad
+ R=\sum_iR_i,\qquad
+ E=\sum_iE_i.}
+ \label{eq:complete-key-decomposition}
+\end{equation}
+Every sum is over the actual complete native output keys.
+\end{proposition}
+
+\begin{proof}
+For a fixed active row \(m\), the fixed-\((i,m)\) singleton property and
+\eqref{eq:gauged-key-amplitude} give
+\[
+ \sum_i|f_i(m)|^2
+ =
+ \frac1{W_m}
+ \sum_{\substack{w\in\cW_M\\m(w)=m}}|\beta_w|^2
+ =1.
+\]
+This proves \(\sum_iD_i=I\).  Summing \(K_i^{\rm res}\) over \(i\) gives
+the normalized residual Gram \(I+R\), because equality of both \(i\) and
+\(s\) is precisely equality of the residual output.  Summing \(K_i\)
+gives the native Gram \(I+R+E\).  Subtracting the diagonal identity proves
+the other two formulas.
+\end{proof}
+
+\subsection{The local off-block theorem}
+
+Let
+\begin{equation}
+ \mathscr P_i
+ :=
+ \bigoplus_s\ell^2(A_{i,s})
+ \oplus\ell^2(A_i^c)
+ \label{eq:residual-coordinate-partition}
+\end{equation}
+be the coordinate decomposition induced by residual labels at \(i\).
+Relative to \(\mathscr P_i\), \(R_i\) is block diagonal.  The diagonal
+blocks of \(E_i\), including the \(A_i^c\)-block, are zero.
+
+\begin{theorem}[One-key mixed traces vanish]
+\label{thm:one-key-mixed-trace}
+For every complete native key \(i\) and every integer \(a\ge0\),
+\begin{equation}
+ \boxed{\tr(E_iR_i^a)=0.}
+ \label{eq:one-key-mixed-trace}
+\end{equation}
+More generally,
+\begin{equation}
+ \tr(E_iP(R_i))=0
+ \label{eq:polynomial-local-vanishing}
+\end{equation}
+for every polynomial \(P\).
+\end{theorem}
+
+\begin{proof}
+Every power of the block-diagonal matrix \(R_i\) is block diagonal relative
+to \(\mathscr P_i\).  The product of the strictly off-block matrix \(E_i\)
+with a block-diagonal matrix has zero diagonal blocks and hence zero trace.
+Linearity gives the polynomial statement.  The case \(a=0\) is simply
+\(\tr E_i=0\).
+\end{proof}
+
+\begin{corollary}[The first mixed trace is cross-key]
+\label{cor:first-mixed-cross-key}
+One has
+\begin{equation}
+ \boxed{
+ \tr(ER)=\sum_{\substack{i,j\\i\ne j}}\tr(E_iR_j).}
+ \label{eq:first-mixed-cross-key}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Expand \(E=\sum_iE_i\) and \(R=\sum_jR_j\).  The terms with \(i=j\)
+vanish by \cref{thm:one-key-mixed-trace} with \(a=1\).
+\end{proof}
+
+\begin{remark}[Disjoint pair lists do not imply matrix orthogonality]
+\label{rem:not-HS-orthogonal}
+At one key, an atom pair cannot be simultaneously equal-residual and
+unequal-residual.  This set-theoretic disjointness proves
+\(\tr(E_iR_i)=0\).  It does not prove \(\tr(ER)=0\), because \(E_i\) and
+\(R_j\) with \(i\ne j\) are matrices on the same row space and may occupy
+the same row-pair entry.
+\end{remark}
+
+\subsection{Higher one-erasure words}
+
+The local theorem removes only the word whose erasure edge and all residual
+edges carry the same native key.  Indeed,
+\begin{equation}
+ \tr(ER^{k-1})
+ =
+ \sum_{i,j_1,\ldots,j_{k-1}}
+ \tr(E_iR_{j_1}\cdots R_{j_{k-1}}).
+ \label{eq:key-expansion-one-erasure}
+\end{equation}
+The term with \(j_1=\cdots=j_{k-1}=i\) vanishes.  Other key sequences need
+not vanish, even if some adjacent keys agree.  Thus the one-erasure sector
+of a longer moment is a cross-key polygon rather than a one-key ladder.
+
+\begin{remark}[Why complete keys matter]
+If side, external block, opposite row, \(\gamma\), or orbit time is removed
+from \(i\), two different physical output coordinates can be placed in one
+artificial local block.  The proof of
+\eqref{eq:one-key-mixed-trace} would then concern the compressed model, not
+the native Gram.  Conversely, splitting one actual key into coefficient-
+dependent subkeys would manufacture orthogonality.  Neither operation is
+allowed.
+\end{remark}

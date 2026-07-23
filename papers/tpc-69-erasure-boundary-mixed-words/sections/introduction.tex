@@ -1,0 +1,131 @@
+\section{Introduction}
+\label{sec:introduction}
+
+TPC--61 identifies the exact atomic-normalized native Gram of the
+missing-high carrier and splits its off-diagonal alias operator into
+same-residual and unequal-residual parts \citep{WangTPC61}.  TPC--68 removes
+the fixed source-row Möbius gauge, exposes the two-affine target signs, and
+develops pair, star, Perron, and operator-walk certificates
+\citep{WangTPC68}.  It also proves a decisive negative fact: on a
+same-residual collision, the two target signs freeze.  Therefore the
+same-residual operator has no cancellation coming from those signs alone.
+
+The next question is not whether one can rename the unequal-residual terms
+as a signed perturbation.  That is immediate.  The useful question is
+\emph{where the first genuinely new sign survives after the full operator
+product is expanded}.  A one-edge calculation does not answer it, because
+operator moments join several collision edges through common source rows,
+and the complete native key can change from edge to edge.
+
+We write
+\[
+ R:=H_{\rm res},\qquad E:=H_{\rm erase},\qquad H=R+E.
+\]
+This notation is used only after the residual erasure map has been defined;
+it must not be confused with the represented carrier or with that map.
+The two defects act on the same active row space.  They are separated by
+residual labels at the atomic output level, but they are not automatically
+orthogonal as matrices on the source-row space.
+
+\subsection{Main algebraic results}
+
+The first result is a key-local decomposition.  For every complete native
+key \(i\), the fixed-\((i,m)\) singleton property gives one normalized
+amplitude \(f_i(m)\), or zero, for each source row.  The residual label
+\(s_i(m)\) partitions the active rows at that key.  We construct
+\[
+ R=\sum_iR_i,\qquad E=\sum_iE_i,
+\]
+where \(R_i\) is block diagonal and \(E_i\) is off block with respect to
+that partition.  It follows that
+\[
+ \tr(E_iP(R_i))=0
+\]
+for every polynomial \(P\).  The first mixed trace is therefore
+\[
+ \tr(ER)=\sum_{i\ne j}\tr(E_iR_j).
+\]
+Each term uses two rows and two distinct complete native keys.  Its four
+literal amplitudes form a rectangle, and their product is invariant under
+both row phases and output-key phases.  We call this product the
+\emph{cross-key holonomy}.
+
+The second result organizes every noncommutative mixed moment.  If
+\[
+ \tr(R+tE)^k=\sum_{b=0}^kt^bS_{k,b},
+\]
+then, for \(1\le b\le k\),
+\[
+ S_{k,b}
+ =
+ \frac{k}{b}
+ \sum_{\substack{a_1+\cdots+a_b=k-b\\a_\nu\ge0}}
+ \tr\!\left(
+ E R^{a_1}E R^{a_2}\cdots E R^{a_b}
+ \right).
+\]
+No commutativity is assumed.  This is a marked-erasure counting identity.
+It gives \(S_{k,1}=k\tr(R^{k-1}E)\) and isolates the first mixed signed
+sector.
+
+The third result evaluates the signs in every decorated closed walk.  An
+erasure edge has two unequal residual endpoints.  Form the multigraph whose
+vertices are the integer residual labels and whose edges are these endpoint
+pairs.  The complete product of target Möbius signs is
+\[
+ \prod_{\deg_E(s)\ {\rm odd}}\mu(s).
+\]
+All source-row gauges and all same-residual signs have disappeared
+exactly.  Thus a residual Eulerian subgraph forces sign \(+1\), while a
+nonempty residual boundary is the only place where the target signs can
+remain algebraically nontrivial.
+
+Finally, the complete exactly-two-erasure sector in every even trace is
+nonnegative:
+\[
+ S_{2q,2}\ge0.
+\]
+This is not a heuristic positivity statement about individual decorated
+walks.  It follows from the exact formula
+\[
+ S_{2q,2}
+ =
+ q\sum_{\alpha,\beta}|E_{\alpha\beta}|^2
+ \frac{\lambda_\alpha^{2q-1}-\lambda_\beta^{2q-1}}
+      {\lambda_\alpha-\lambda_\beta},
+\]
+where \(\lambda_\alpha\) are the eigenvalues of \(R\) and the diagonal
+quotient has its derivative value.  The divided difference is nonnegative
+because \(x^{2q-1}\) is increasing on the real line.
+
+\subsection{What these results do and do not change}
+
+The paper advances the operator interface in three ways.  It shows that the
+first mixed second moment is necessarily cross-key; it reduces every closed
+walk sign to a residual boundary; and it proves that the full quadratic
+erasure response in an even moment cannot be negative.  These facts remove
+several possible but incorrect proof shortcuts.
+
+They do not estimate the resulting arithmetic sums.  In particular, this
+paper proves none of the following:
+\[
+ \tr(R^{2q-1}E)=o(\text{absolute majorant}),\qquad
+ \|R+E\|=X^{o(1)},\qquad
+ \|C_N\|=o(1).
+\]
+It also proves no missing-mass saving, represented lower frame, parity
+estimate, prime-pair theorem, or twin-prime conclusion.  The fixed shift is
+never averaged and is not silently specialized to \(2\).
+
+\subsection{Organization}
+
+\Cref{sec:literal-interface} freezes the complete physical carrier.
+\Cref{sec:key-local} proves the key-local diagonal/off-block decomposition.
+\Cref{sec:mixed-words} gives the cyclic sector formula.
+\Cref{sec:residual-boundary} proves the residual-boundary sign theorem.
+\Cref{sec:cross-key} derives the exact two-key rectangle and its direct-cell
+form.  \Cref{sec:quadratic-response} proves positivity of the quadratic
+even-moment response.  \Cref{sec:local-star} separates local compensation
+from global trace cancellation.  Countermodels and the conditional
+arithmetic ledger follow, and the final section records L0, L1, L2, and
+endpoint boundaries.

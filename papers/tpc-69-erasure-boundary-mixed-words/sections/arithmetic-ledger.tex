@@ -1,0 +1,213 @@
+\section{Conditional arithmetic targets and reassembly ledger}
+\label{sec:arithmetic-ledger}
+
+The preceding algebra identifies the first places where unequal-residual
+Möbius signs can survive.  This section states what an arithmetic estimate
+would have to control and how such an estimate would enter the existing
+endpoint ledger.
+
+\subsection{The first rectangle target}
+
+For complete keys \(i\ne j\), define the literal oriented rectangle sum
+\begin{equation}
+\begin{aligned}
+\mathfrak X_{i,j}
+:={}&
+\sum_{m<n}
+\one_{\{s_i(m)\ne s_i(n)\}}
+\one_{\{s_j(m)=s_j(n)\}}
+\\
+&\times
+\mu(s_i(m))\mu(s_i(n))
+\frac{
+\overline{\beta_{i,m}}\beta_{i,n}
+\overline{\beta_{j,n}}\beta_{j,m}
+}{W_mW_n}.
+\end{aligned}
+\label{eq:literal-rectangle-target}
+\end{equation}
+Then
+\begin{equation}
+ \tr(ER)=2\operatorname{Re}\sum_{i\ne j}\mathfrak X_{i,j}.
+ \label{eq:rectangle-target-trace}
+\end{equation}
+The notation in \eqref{eq:literal-rectangle-target} includes only actual
+four-corner rectangles.  A zero coefficient at any corner deletes the
+term.  The complete key \(i\) contains its side, external block, opposite
+row, \(\gamma\), and time; the same is true independently for \(j\).
+
+There are three inequivalent scopes for a possible estimate:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item a bound for one fixed \((i,j)\);
+ \item a bound after summing all key pairs incident to one fixed row \(m\);
+ \item a bound for the complete trace sum.
+\end{enumerate}
+The first does not imply the second when the key degree grows.  The third
+does not imply uniform local star compensation.  A proof must state which
+scope it supplies.
+
+\subsection{Higher one-erasure targets}
+
+For \(q\ge1\), put
+\begin{equation}
+ \mathfrak L_{2q}(X)
+ :=
+ S_{2q,1}
+ =
+ 2q\tr(ER^{2q-1}).
+ \label{eq:linear-erasure-target}
+\end{equation}
+By \eqref{eq:literal-residual-boundary-walk}, this is a complete weighted
+sum of cross-key closed walks, each carrying one residual pair sign.  A
+useful L2 estimate would compare
+\[
+ |\mathfrak L_{2q}(X)|
+\]
+with its literal absolute majorant, with constants uniform in all physical
+blocks and, if \(q=q_X\) grows, uniform in \(q_X\).
+
+Such an estimate cannot be replaced by:
+\begin{itemize}
+ \item randomness of independent Möbius signs;
+ \item an average over \(h\);
+ \item a density-one set of row or key pairs;
+ \item a fixed-dimensional computation;
+ \item the determinant bijection alone; or
+ \item cancellation on the pure \(R\) words, whose target signs are already
+       frozen.
+\end{itemize}
+
+\subsection{A conditional full-moment certificate}
+
+\begin{proposition}[Conditional moment-to-native certificate]
+\label{prop:conditional-moment-certificate}
+Let \(q=q_X\ge1\).  Suppose an L2 argument for the complete literal carrier
+proves
+\begin{equation}
+ \tr(R+E)^{2q}
+ \le \mathfrak M_{2q}(X).
+ \label{eq:L2-full-moment-premise}
+\end{equation}
+Then
+\begin{align}
+ \|R+E\|
+ &\le \mathfrak M_{2q}(X)^{1/(2q)},
+ \label{eq:moment-operator-bound}\\
+ \kappa_M
+ &\le1+\mathfrak M_{2q}(X)^{1/(2q)},
+ \label{eq:moment-native-upper}\\
+ \alpha_M
+ &\ge
+ \left(1-\mathfrak M_{2q}(X)^{1/(2q)}\right)_+.
+ \label{eq:moment-native-lower}
+\end{align}
+If
+\[
+ \mathfrak M_{2q}(X)
+ \le X^{2q\nu_H+o(q)},
+\]
+then
+\[
+ \|R+E\|\le X^{\nu_H+o(1)}.
+\]
+\end{proposition}
+
+\begin{proof}
+The defect is Hermitian, so
+\[
+ \|R+E\|^{2q}\le\tr(R+E)^{2q}.
+\]
+The native Gram is \(I+R+E\); its extremal eigenvalues give the next two
+inequalities.
+\end{proof}
+
+Premise \eqref{eq:L2-full-moment-premise} concerns the \emph{complete}
+moment.  Bounds for \(\mathfrak L_{2q}\) or \(S_{2q,2}\) do not by
+themselves supply it.  In particular, the positivity of \(S_{2q,2}\) is a
+structural restriction, not an upper estimate of the correct size.
+
+\subsection{Mass, degree, and represented comparison}
+
+Let \(\mathcal D_{\rm ref}\) be a nonnegative quadratic form.  Suppose, in
+one explicitly stated uniform or distinguished scope, that the following
+three estimates hold for every coefficient vector \(\zeta\) in that same
+scope:
+\begin{align}
+ \kappa_M&\le X^{\nu_M+o(1)},
+ \label{eq:effective-native-exponent}\\
+ \langle D_M\zeta,\zeta\rangle
+ &\le X^{-\sigma_M+o(1)}\mathcal D_{\rm ref}(\zeta),
+ \label{eq:missing-mass-exponent}\\
+ \|A_X\zeta\|^2
+ &\ge X^{-\lambda_{\rm rep}+o(1)}
+       \mathcal D_{\rm ref}(\zeta).
+ \label{eq:represented-lower-exponent}
+\end{align}
+Then the optimal missing-native upper estimate gives the universally
+valid comparison
+\begin{equation}
+ \|M_X\zeta\|^2
+ \le
+ X^{\nu_M+\lambda_{\rm rep}-\sigma_M+o(1)}
+ \|A_X\zeta\|^2.
+ \label{eq:mass-degree-ratio}
+\end{equation}
+Thus the familiar zero-cost condition remains
+\begin{equation}
+ \boxed{\sigma_M>\nu_M+\lambda_{\rm rep}.}
+ \label{eq:zero-cost-mass-degree-gate}
+\end{equation}
+The present paper changes only how \(\nu_M\) might be bounded.  It does not
+prove \eqref{eq:effective-native-exponent},
+\eqref{eq:missing-mass-exponent}, or
+\eqref{eq:represented-lower-exponent}.
+
+\subsection{The shorted reassembly penalty remains separate}
+
+Let \(A\) be the represented map, \(M\) the missing map, and \(B=A+M\).
+Writing \(N_A=\Ker A\), the represented comparison must remove
+\[
+ W_{\rm nuis}=B(N_A)=M(N_A)
+\]
+from the full output.  TPC--68 expresses the exact shorted Gram as
+\begin{equation}
+ G_{\rm sh}=G_{\rm dir}-C_N,
+ \qquad C_N\succeq0.
+ \label{eq:shorted-penalty}
+\end{equation}
+The defect \(R+E\) studied here is the atomic-normalized
+\emph{missing-native} Gram defect.  It is not automatically the direct
+represented-normalized defect in \(G_{\rm dir}\).  A separate physical mass
+comparison is required to transfer a bound, and a separate estimate
+\[
+ \|C_N\|=o(1)
+\]
+is required to make the nuisance shorting penalty negligible.
+
+Consequently, even the hypothetical estimate
+\[
+ \|R+E\|=o(1)
+\]
+would not by itself prove the endpoint reassembly theorem.  It would close
+one native gate and leave the missing-mass, represented-frame, and nuisance
+gates.
+
+\subsection{Endpoint accounting}
+
+All identities proved here cost zero fixed power of \(X\).  An eventual
+arithmetic estimate may introduce:
+\[
+ \lambda_{\rm native},\qquad
+ \lambda_{\rm mass},\qquad
+ \lambda_{\rm rep},\qquad
+ \lambda_{\rm nuis},
+\]
+or equivalent losses in the upstream notation.  The complete literal loss,
+after signs and quantifier scopes have been matched, must remain strictly
+below
+\[
+ \frac1{400}.
+\]
+Equality is not enough.  A result outside that budget can still be a valid
+operator or arithmetic theorem, but it cannot be promoted to the current
+endpoint implication.

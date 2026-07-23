@@ -1,0 +1,144 @@
+\section{Claims, stops, and the next arithmetic door}
+\label{sec:claim-boundary}
+
+\subsection{L0 results proved here}
+
+For finite atomic-normalized native incidences:
+\begin{enumerate}[label=\textup{(\arabic*)},leftmargin=3em]
+ \item the same-residual and erasure defects decompose exactly over complete
+       native keys:
+       \[
+       R=\sum_iR_i,\qquad E=\sum_iE_i;
+       \]
+ \item \(R_i\) is residual-block diagonal and \(E_i\) is off block, giving
+       \[
+       \tr(E_iP(R_i))=0;
+       \]
+ \item the first mixed trace is the cross-key rectangle sum
+       \[
+       \tr(ER)=\sum_{i\ne j}\tr(E_iR_j);
+       \]
+ \item the rectangle coefficient is invariant under independent row and
+       native-key unit gauges;
+ \item every erasure-count sector \(S_{k,b}\) has the exact cyclic
+       composition formula \eqref{eq:cyclic-sector-formula};
+ \item the complete two-erasure sector in every even moment is nonnegative,
+       with the divided-difference formula
+       \eqref{eq:quadratic-divided-difference}.
+\end{enumerate}
+
+\subsection{L1 identifications}
+
+The matrices above are identified with the actual TPC fixed-shift
+interface by retaining:
+\begin{itemize}
+ \item the one fixed nonzero shift \(h_0\);
+ \item every target \(mj+h_0\), largest prime \(p\), cofactor \(r\), and
+       residual label \(s=d_mr\);
+ \item every complete native key, including side, external block,
+       opposite row, \(\gamma\), and physical orbit time;
+ \item every literal complex coefficient \(\beta_w\);
+ \item the raw row mass \(W_M(m)\); and
+ \item every actual missing and first-failure condition.
+\end{itemize}
+On that physical squarefree carrier, the exact source-row gauge gives two
+additional L1 identities: source-row signs telescope on every decorated
+closed walk, leaving the odd residual boundary
+\eqref{eq:odd-residual-boundary}, and a one-erasure word retains exactly
+one unequal-residual sign pair.  The rectangle reduction
+\eqref{eq:rectangle-sign-reduction} is their shortest instance.
+The direct-cell \(\Gamma\)-formula is L1 only under its explicitly declared
+identical-support specialization.  The general atom formula is the
+unconditional L1 object.
+
+\subsection{L2 statements not proved}
+
+This paper does not prove:
+\begin{itemize}
+ \item cancellation in one literal cross-key rectangle sum;
+ \item a uniform local compensation estimate in every active row;
+ \item a saving for
+       \(2q\tr(ER^{2q-1})\) at fixed or growing \(q\);
+ \item an upper bound of the required scale for the nonnegative sector
+       \(S_{2q,2}\);
+ \item a complete even-moment bound uniform in all physical blocks;
+ \item \(\|R+E\|=X^{o(1)}\), much less \(\|R+E\|=o(1)\);
+ \item the missing-mass and represented-frame estimates in
+       \eqref{eq:missing-mass-exponent}--%
+       \eqref{eq:represented-lower-exponent};
+ \item a negligible shorting penalty \(C_N\); or
+ \item any parity-breaking estimate, prime-pair theorem, or twin-prime
+       conclusion.
+\end{itemize}
+
+\subsection{Kill criteria}
+
+\begin{enumerate}[label=\textup{(K\arabic*)},leftmargin=3.5em]
+ \item \textbf{Incomplete key.}  A calculation that removes side,
+       external block, opposite row, \(\gamma\), time, or another
+       still-orthogonal output label estimates a different operator.
+
+ \item \textbf{False one-key door.}  Searching for
+       \(\tr(E_iR_i)\) cancellation cannot advance the mixed second moment:
+       that trace is identically zero.  The first target is cross-key.
+
+ \item \textbf{Wrong parity statistic.}  The number of erasure edges does
+       not determine the sign.  Only the odd residual boundary does.
+
+ \item \textbf{Quadratic negative-correction stop.}  A proposal that uses
+       the complete \(S_{2q,2}\) as a negative correction is impossible:
+       \(S_{2q,2}\ge0\).  This does not kill the linear or higher sectors.
+
+ \item \textbf{Global-to-local stop.}  A small \(\tr(ER)\), an averaged
+       row estimate, or a normalized trace does not prove the uniform local
+       star bound.
+
+ \item \textbf{Arithmetic scope mismatch.}  A fixed-pair theorem, an
+       average over keys or shifts, a density-one statement, or a random
+       sign model does not give the required complete growing-family
+       estimate at the prescribed fixed \(h_0\).
+
+ \item \textbf{Moment nonuniformity.}  If \(q=q_X\) grows, estimates whose
+       constants depend uncontrolledly on \(q\) do not imply
+       \eqref{eq:moment-operator-bound}.
+
+ \item \textbf{Reassembly mismatch.}  The missing-native defect \(R+E\) is
+       not \(H_{\rm dir}\), and neither controls \(C_N\) without additional
+       physical comparison.
+
+ \item \textbf{Endpoint stop.}  If the combined literal loss is at least
+       \(1/400\), the present endpoint route must stop even if every
+       intermediate theorem is correct.
+\end{enumerate}
+
+\subsection{The next specified door}
+
+The shortest unresolved arithmetic object is now
+\[
+ \tr(ER)
+\]
+in the exact rectangle form
+\eqref{eq:direct-cell-two-key-rectangle}.  A useful next step should:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item census the actual two-key rectangles without compressing their
+       native labels;
+ \item split them by the two determinant equations and residual
+       equality/inequality pattern;
+ \item determine whether the rectangle holonomy admits a literal pairing,
+       dispersion identity, or local star bound; and
+ \item either prove a uniform saving or construct an actual-carrier
+       obstruction closing this linear door.
+\end{enumerate}
+If the linear sector is structurally too large or its residual boundary
+freezes on the actual support, the next alternatives are higher
+one-erasure polygons, literal complex-phase cancellation, or direct
+shorted reassembly.  The nonnegative quadratic sector is not an alternative
+source of negative compensation.
+
+\subsection{Status line}
+
+TPC--69 moves the signed operator route from edgewise Möbius products to the
+first exact cross-key holonomy and proves a new positivity obstruction for
+the quadratic erasure response.  This is a genuine L0/L1 refinement of the
+proof architecture.  It is not an L2 cancellation theorem and provides no
+evidence that the parity barrier has been broken.

@@ -1,0 +1,145 @@
+\section{Cyclic sectors of noncommutative mixed words}
+\label{sec:mixed-words}
+
+We now organize all words in \(R\) and \(E\) before using their arithmetic
+entries.  The identities in this section hold for arbitrary finite square
+matrices for which the displayed traces are defined.
+
+\subsection{The erasure-count generating polynomial}
+
+For integers \(k\ge1\) and \(0\le b\le k\), define
+\begin{equation}
+ S_{k,b}
+ :=
+ \sum_{\substack{\omega\in\{R,E\}^k\\|\omega|_E=b}}
+ \tr(H_{\omega_1}\cdots H_{\omega_k}),
+ \qquad H_R=R,\quad H_E=E.
+ \label{eq:sector-definition}
+\end{equation}
+Equivalently,
+\begin{equation}
+ \tr(R+tE)^k
+ =
+ \sum_{b=0}^kt^bS_{k,b}.
+ \label{eq:sector-generating-polynomial}
+\end{equation}
+The order of the letters is retained in
+\eqref{eq:sector-definition}; no binomial commutativity is assumed.
+
+\begin{theorem}[Exact cyclic erasure-sector formula]
+\label{thm:cyclic-sector}
+For \(1\le b\le k\),
+\begin{equation}
+ \boxed{
+ S_{k,b}
+ =
+ \frac{k}{b}
+ \sum_{\substack{a_1+\cdots+a_b=k-b\\a_\nu\ge0}}
+ \tr\!\left(
+ E R^{a_1}E R^{a_2}\cdots E R^{a_b}
+ \right).}
+ \label{eq:cyclic-sector-formula}
+\end{equation}
+Also \(S_{k,0}=\tr R^k\).
+\end{theorem}
+
+\begin{proof}
+Mark one of the \(b\) occurrences of \(E\) in every word contributing to
+\(S_{k,b}\).  This produces \(b\) marked copies of each linear word.  Rotate
+a marked word so that its marked \(E\) is first.  The numbers of consecutive
+\(R\)'s after the successive \(E\)'s form a weak composition
+\[
+ a_1+\cdots+a_b=k-b.
+\]
+Conversely, a weak composition and one of the \(k\) possible rotation
+offsets reconstruct a marked linear word.  Trace cyclicity makes all
+rotations have the displayed trace.  Therefore \(bS_{k,b}\) is \(k\)
+times the sum over weak compositions, proving
+\eqref{eq:cyclic-sector-formula}.  The counting remains valid for periodic
+words because the marked occurrence and rotation offset are retained.
+\end{proof}
+
+\begin{corollary}[The one- and two-erasure sectors]
+\label{cor:first-two-sectors}
+For \(k\ge2\),
+\begin{align}
+ S_{k,1}
+ &=\boxed{k\tr(ER^{k-1})},
+ \label{eq:one-erasure-sector}\\
+ S_{k,2}
+ &=\boxed{
+ \frac{k}{2}
+ \sum_{a=0}^{k-2}
+ \tr(E R^aE R^{k-2-a}).}
+ \label{eq:two-erasure-sector}
+\end{align}
+\end{corollary}
+
+The first two even expansions are
+\begin{align}
+ \tr(R+E)^2
+ &=
+ \tr R^2+2\tr(RE)+\tr E^2,
+ \label{eq:second-moment-expansion}\\
+ \tr(R+E)^4
+ &=
+ \tr R^4
+ +4\tr(R^3E)
+ +4\tr(R^2E^2)
+ +2\tr(RERE)
+ +4\tr(RE^3)
+ +\tr E^4.
+ \label{eq:fourth-moment-expansion}
+\end{align}
+The two distinct two-erasure necklaces in
+\eqref{eq:fourth-moment-expansion} must not be merged before their traces
+are evaluated.
+
+\subsection{Key expansion of the one-erasure sector}
+
+Combining \cref{prop:complete-key-decomposition,cor:first-two-sectors}
+gives
+\begin{equation}
+ S_{k,1}
+ =
+ k
+ \sum_{i,j_1,\ldots,j_{k-1}}
+ \tr(E_iR_{j_1}\cdots R_{j_{k-1}}).
+ \label{eq:key-expanded-linear-sector}
+\end{equation}
+By \cref{thm:one-key-mixed-trace}, the fully local term
+\[
+ \tr(E_iR_i^{k-1})
+\]
+vanishes.  Hence each surviving decorated contribution changes complete
+native key at least once.  At \(k=2\) this forces two distinct keys exactly.
+For \(k>2\), it produces cross-key polygons with one off-residual edge.
+
+\begin{remark}[Sector control versus moment control]
+A bound for \(S_{2q,1}\) alone is not a bound for
+\(\tr(R+E)^{2q}\).  The zero-erasure sector, the nonnegative quadratic
+sector proved in \cref{sec:quadratic-response}, and all higher sectors
+remain.  Conversely, a bad estimate for one sector does not prove that the
+full moment is large, because different sectors can cancel after \(t\) is
+set to one.  A valid moment argument must state which sectors are bounded
+absolutely and which are combined with their literal signs.
+\end{remark}
+
+\subsection{Decorated key words}
+
+For later use, a decorated realization of a word consists of:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item a row path \(m_0,m_1,\ldots,m_k\);
+ \item a complete native key \(i_\ell\) on each edge;
+ \item the unique atoms \(w_{\ell,-}\), \(w_{\ell,+}\) at
+       \((i_\ell,m_{\ell-1})\) and \((i_\ell,m_\ell)\); and
+ \item the condition
+       \[
+       s(w_{\ell,-})=s(w_{\ell,+})
+       \quad\Longleftrightarrow\quad \omega_\ell=R.
+       \]
+\end{enumerate}
+The row path joins edges, but it does not identify their keys, atoms,
+times, residual labels, sides, or \(\gamma\)-coordinates.  This distinction
+is responsible for both the cross-key rectangles below and the absence of
+a general telescope for literal complex weights.

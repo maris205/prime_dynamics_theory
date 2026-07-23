@@ -1,0 +1,227 @@
+\section{Two-key rectangles and cross-key holonomy}
+\label{sec:cross-key}
+
+The shortest mixed closed word is \(ER\).  By
+\cref{cor:first-mixed-cross-key}, it necessarily uses two distinct complete
+native keys.  We now write its four corners explicitly.
+
+\subsection{Exact rectangle formula}
+
+For keys \(i,j\) and rows \(m,n\), define
+\begin{equation}
+ \mathcal H_{i,j}(m,n)
+ :=
+ \overline{f_i(m)}f_i(n)
+ \overline{f_j(n)}f_j(m).
+ \label{eq:rectangle-holonomy}
+\end{equation}
+It vanishes when one of the four key-row corners is absent.
+Throughout this section, a residual-relation indicator is also defined to
+be zero if either amplitude named by that indicator vanishes.
+
+\begin{theorem}[Cross-key rectangle identity]
+\label{thm:cross-key-rectangle}
+For \(i\ne j\),
+\begin{equation}
+\boxed{
+\begin{aligned}
+\tr(E_iR_j)
+={}&
+2\operatorname{Re}
+\sum_{m<n}
+\one_{\{s_i(m)\ne s_i(n)\}}
+\one_{\{s_j(m)=s_j(n)\}}
+\mathcal H_{i,j}(m,n).
+\end{aligned}}
+\label{eq:cross-key-rectangle}
+\end{equation}
+Consequently,
+\begin{equation}
+\boxed{
+\tr(ER)
+=
+2\operatorname{Re}
+\sum_{\substack{i\ne j\\m<n}}
+\one_{\{s_i(m)\ne s_i(n)\}}
+\one_{\{s_j(m)=s_j(n)\}}
+\mathcal H_{i,j}(m,n).}
+\label{eq:full-cross-key-rectangle}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By definition,
+\[
+ \tr(E_iR_j)
+ =
+ \sum_{m,n}(E_i)_{mn}(R_j)_{nm}.
+\]
+The diagonal terms vanish.  For \(m\ne n\), substitute
+\[
+ (E_i)_{mn}
+ =
+ \one_{\{s_i(m)\ne s_i(n)\}}
+ \overline{f_i(m)}f_i(n)
+\]
+and
+\[
+ (R_j)_{nm}
+ =
+ \one_{\{s_j(n)=s_j(m)\}}
+ \overline{f_j(n)}f_j(m).
+\]
+The ordered terms \((m,n)\) and \((n,m)\) are complex conjugates, giving
+\eqref{eq:cross-key-rectangle}.  Sum over \(i\ne j\) and use
+\eqref{eq:first-mixed-cross-key}.
+\end{proof}
+
+The key \(i\) carries the unequal-residual edge and \(j\) carries the
+same-residual edge.  The roles are not interchangeable in
+\eqref{eq:full-cross-key-rectangle}; the term with \((j,i)\) is present
+only if the residual relations are reversed at those keys.
+
+\subsection{Gauge invariance}
+
+\begin{proposition}[Rectangle holonomy is gauge invariant]
+\label{prop:holonomy-gauge-invariant}
+Let \(u_m,v_i\in\mathbb C\) have modulus one and replace
+\[
+ f_i(m)\longmapsto u_mv_if_i(m).
+\]
+Then every \(\mathcal H_{i,j}(m,n)\) is unchanged.
+\end{proposition}
+
+\begin{proof}
+In \eqref{eq:rectangle-holonomy}, the row phases occur as
+\[
+ \overline{u_m}u_n\overline{u_n}u_m=1
+\]
+and the key phases as
+\[
+ \overline{v_i}v_i\overline{v_j}v_j=1.
+\]
+\end{proof}
+
+Thus the rectangle phase cannot be removed by moving a unit phase between
+source rows and outputs.  It is a genuine four-corner quantity.  Support
+and coefficient magnitudes do not determine it.
+
+\subsection{The residual sign on a rectangle}
+
+Let \(\beta_{i,m}\) be the literal coefficient of the unique atom at
+\((i,m)\), extended by zero.  The row-gauged amplitude is
+\[
+ f_i(m)
+ =
+ \mu(n_{i,m})\frac{\beta_{i,m}}{\sqrt{W_m}},
+\qquad
+ n_{i,m}=m\,j(i)+h_0.
+\]
+
+\begin{proposition}[Four target signs reduce to one erasure pair]
+\label{prop:rectangle-sign-reduction}
+On a rectangle contributing to
+\eqref{eq:cross-key-rectangle},
+\begin{equation}
+\boxed{
+\mathcal H_{i,j}(m,n)
+=
+\mu(s_i(m))\mu(s_i(n))
+\frac{
+\overline{\beta_{i,m}}\beta_{i,n}
+\overline{\beta_{j,n}}\beta_{j,m}
+}{W_mW_n}.}
+\label{eq:rectangle-sign-reduction}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The product of the four target signs is
+\[
+ \mu(n_{i,m})\mu(n_{i,n})
+ \mu(n_{j,n})\mu(n_{j,m}).
+\]
+Use
+\[
+ \mu(n_{k,m})=-\mu(d_m)\mu(s_k(m)).
+\]
+The four minus signs cancel, and each source-row sign occurs twice.  At the
+same-residual key \(j\),
+\(\mu(s_j(m))\mu(s_j(n))=1\).  The two residual signs at the erasure key
+\(i\) remain, proving the formula.
+\end{proof}
+
+Equation \eqref{eq:rectangle-sign-reduction} is the minimal instance of the
+residual-boundary theorem.  It also shows why a one-key estimate cannot
+see the first mixed response: the sign-bearing unequal-residual edge and
+its same-residual return occupy different complete native keys.
+
+\subsection{The direct-cell two-time rectangle}
+
+In the identical-support direct-cell specialization, let \(c\) collect a
+fixed side and external cell, and let
+\[
+ \mathfrak m_m^c(t)
+\]
+be the actual missing-time indicator.  Put
+\[
+ \chi_E^{mn}(t)=\one_{\{s_m(t)\ne s_n(t)\}},
+ \qquad
+ \chi_R^{mn}(t)=\one_{\{s_m(t)=s_n(t)\}}.
+\]
+After summing the two independent orthogonal \(\gamma\)-coordinates
+exactly, \eqref{eq:full-cross-key-rectangle} becomes
+\begin{equation}
+\boxed{
+\begin{aligned}
+\tr(ER)
+={}&
+2\operatorname{Re}
+\sum_{m<n}\frac1{W_mW_n}
+\sum_{\substack{c,t\\c',u}}
+\mathfrak m_m^c(t)\mathfrak m_n^c(t)
+\mathfrak m_n^{c'}(u)\mathfrak m_m^{c'}(u)
+\\
+&\times
+\chi_E^{mn}(t)\chi_R^{mn}(u)
+\mu(s_m(t))\mu(s_n(t))
+\\
+&\times
+\overline{a_m^c(t)}a_n^c(t)
+\overline{a_n^{c'}(u)}a_m^{c'}(u)
+\Gamma_{mn}^c(t)\Gamma_{nm}^{c'}(u).
+\end{aligned}}
+\label{eq:direct-cell-two-key-rectangle}
+\end{equation}
+The two times \(t\) and \(u\), two sides/cells \(c,c'\), and the two
+\(\gamma\)-sums are independent.  Formula
+\eqref{eq:direct-cell-two-key-rectangle} is invalid outside the declared
+specialization unless the full \(\gamma\)-dependent first-failure
+indicators are restored.
+
+\subsection{Two determinant edges}
+
+For the \(i\)-edge at time \(t=j(i)\), write
+\[
+ p_{i,m}r_{i,m}=mt+h_0,\qquad
+ p_{i,n}r_{i,n}=nt+h_0.
+\]
+Then
+\begin{equation}
+ n p_{i,m}r_{i,m}-m p_{i,n}r_{i,n}
+ =h_0(n-m).
+ \label{eq:i-edge-determinant}
+\end{equation}
+The same identity holds at key \(j\), generally with another time.  The
+rectangle conditions are
+\begin{align}
+ d_mr_{i,m}&\ne d_nr_{i,n},
+ \label{eq:E-determinant-condition}\\
+ d_mr_{j,m}&=d_nr_{j,n}.
+ \label{eq:R-determinant-condition}
+\end{align}
+Thus the first mixed trace is a pair of determinant solutions sharing two
+source rows, with unequal residual labels on one horizontal edge and equal
+residual labels on the other.  The determinant identities are exact
+reindexings; they do not pair the signs in
+\eqref{eq:rectangle-sign-reduction}.

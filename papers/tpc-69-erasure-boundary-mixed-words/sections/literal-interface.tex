@@ -1,0 +1,227 @@
+\section{The complete fixed-shift interface}
+\label{sec:literal-interface}
+
+We restate the part of the TPC--61/TPC--68 interface needed below.  The
+purpose is to ensure that every later matrix entry is attached to an actual
+physical atom and a complete output key.
+
+\subsection{Atoms and recovered arithmetic labels}
+
+Fix a scale \(X\), a nonzero integer \(h_0\), all direct sides and external
+blocks in the declared scope, all source and opposite-row blocks, residue
+and orbit classes, masks, profiles, endpoint restrictions, and the
+very-high cutoff before choosing a coefficient vector.  Let
+\(\cW_M\) be the resulting complete set of nonzero missing-high atoms and
+let
+\[
+ \cK_X=\ell^2(\cM_X)
+\]
+be the full declared source-row space.
+
+Every \(w\in\cW_M\) canonically recovers
+\begin{equation}
+ m(w)=d_{m(w)}\ell_{m(w)},\qquad
+ j(w),\qquad
+ n(w)=m(w)j(w)+h_0,
+ \label{eq:recovered-row-time-target}
+\end{equation}
+its largest prime \(p(w)>y\), its cofactor
+\[
+ r(w)=\frac{n(w)}{p(w)},
+\]
+and its residual label
+\begin{equation}
+ s(w)=d_{m(w)}r(w).
+ \label{eq:residual-label}
+\end{equation}
+The physical support is squarefree and gives
+\begin{equation}
+ \mu(s(w))=\mu(d_{m(w)})\mu(r(w)).
+ \label{eq:residual-mobius-factor}
+\end{equation}
+
+The complete native output key is denoted by \(i(w)\).  It includes the
+direct side, external block, opposite row, \(\gamma\)-coordinate, physical
+orbit time \(j\), and every remaining label that is orthogonal in the
+native range.  In particular,
+\begin{equation}
+ i(w)=i(w')\quad\Longrightarrow\quad j(w)=j(w'),
+ \label{eq:key-fixes-time}
+\end{equation}
+but equality of \(i\) does not force equality of \(s\).  The critical-cutoff
+singleton property states
+\begin{equation}
+ \#\{w\in\cW_M:(i(w),m(w))=(i,m)\}\le1.
+ \label{eq:im-singleton}
+\end{equation}
+It does not say that one native key supports only one row, one prime, or
+one residual label.
+
+The literal atom driven by a row coefficient \(\zeta_m\) is
+\[
+ \beta_w\zeta_{m(w)}.
+\]
+The fixed nonzero coefficient \(\beta_w\) retains every physical source
+shape, mask, multiplier, opposite-row factor, output phase, profile, and
+terminal weight.  No atomwise phase is introduced after the carrier is
+formed.
+
+\subsection{Atomic, residual, and native maps}
+
+Absorb the physical high character in the TPC--61 convention by putting
+\begin{equation}
+ c_w=-\mu(s(w))\beta_w,\qquad
+ (L_X\zeta)_w=c_w\zeta_{m(w)}.
+ \label{eq:atomic-lift}
+\end{equation}
+Define
+\begin{align}
+ (T_X\zeta)_{i,s}
+ &:=
+ \sum_{\substack{w\in\cW_M\\i(w)=i,\ s(w)=s}}
+ c_w\zeta_{m(w)},
+ \label{eq:residual-map}\\
+ (\mathsf Ez)_i&:=\sum_s z_{i,s}.
+ \label{eq:erasure-map}
+\end{align}
+Then the literal missing-native map is
+\begin{equation}
+ \boxed{M_X=\mathsf ET_X.}
+ \label{eq:missing-native-factorization}
+\end{equation}
+Only \(s\) is erased.  Applying a second Möbius sign after
+\eqref{eq:erasure-map} would change the physical map.
+
+For every declared row put
+\begin{equation}
+ W_m:=W_M(m)
+ :=
+ \sum_{\substack{w\in\cW_M\\m(w)=m}}|\beta_w|^2,
+ \qquad
+ D_M:=\diag(W_m)_{m\in\cM_X}.
+ \label{eq:raw-row-mass}
+\end{equation}
+This is raw atomic mass, not an average over output fibers.  Moreover
+\[
+ D_M=L_X^*L_X.
+\]
+The active missing-row space is
+\begin{equation}
+ \cM_M:=\{m\in\cM_X:W_M(m)>0\},
+ \qquad
+ S_M:=\Ran D_M=(\Ker D_M)^\perp
+     =\ell^2(\cM_M).
+ \label{eq:active-row-space}
+\end{equation}
+Rows in \(\Ker D_M\) remain present in the full coefficient space and in
+the represented map.  Only the normalized missing Gram is restricted to
+\(S_M\).
+
+Assume \(S_M\ne\{0\}\), and define
+\begin{equation}
+ F:=M_XD_M^{\dagger/2}\big|_{S_M},
+ \qquad
+ F_{\rm res}:=T_XD_M^{\dagger/2}\big|_{S_M}.
+ \label{eq:normalized-incidences}
+\end{equation}
+TPC--61 gives Hermitian zero-diagonal matrices
+\[
+ R:=H_{\rm res},\qquad E:=H_{\rm erase}
+\]
+such that
+\begin{align}
+ F_{\rm res}^*F_{\rm res}&=I+R,
+ \label{eq:residual-gram}\\
+ F^*F&=I+R+E.
+ \label{eq:native-gram}
+\end{align}
+Thus \(R\) contains common-\((i,s)\) collisions already visible before
+erasure, whereas \(E\) contains exactly the unequal-\(s\) cross terms
+created at a common \(i\) by \(\mathsf E\).
+
+\subsection{The source-row gauge}
+
+On the squarefree active support, let
+\begin{equation}
+ U_d=\diag(\mu(d_m))_{m\in\cM_M}.
+ \label{eq:row-gauge}
+\end{equation}
+It is a self-adjoint unitary.  Conjugating the normalized Gram by \(U_d\)
+does not change its spectrum, norms, traces of powers, or collision graph.
+The signed amplitude of an atom in the gauged normalized incidence is
+\begin{equation}
+ f_i(m)
+ :=
+ \frac{\mu(n(w))\beta_w}{\sqrt{W_m}}
+ \quad\text{if }w\text{ is the unique atom with }
+ (i(w),m(w))=(i,m),
+ \label{eq:gauged-key-amplitude}
+\end{equation}
+and \(f_i(m)=0\) when no such atom exists.  Indeed,
+\[
+ \mu(d_m)c_w
+ =-\mu(d_m)\mu(s(w))\beta_w
+ =-\mu(r(w))\beta_w
+ =\mu(n(w))\beta_w.
+\]
+
+Consequently, for \(m\ne n\), the gauged full defect has entry
+\begin{equation}
+ (U_d(R+E)U_d)_{mn}
+ =
+ \sum_i\overline{f_i(m)}f_i(n).
+ \label{eq:gauged-full-entry}
+\end{equation}
+Every summand uses one complete native key.  In the remainder we work in
+these gauged coordinates and suppress \(U_d\) from the notation.
+
+\subsection{Direct-cell specialization}
+
+Only in the identical-support direct-cell specialization, a displayed
+left-side atom may be written \(w=(m,j,\gamma)\) with
+\begin{equation}
+ \beta_{m,j,\gamma}
+ =a_m(j)K_{m\gamma}q_\gamma(j),
+ \qquad
+ K_{m\gamma}\in\{0,1\}.
+ \label{eq:direct-cell-factorization}
+\end{equation}
+For two rows define the literal orthogonal output sum
+\begin{equation}
+ \Gamma_{mn}(j)
+ =
+ \sum_\gamma
+ K_{m\gamma}K_{n\gamma}|q_\gamma(j)|^2.
+ \label{eq:Gamma-overlap}
+\end{equation}
+The \(\gamma\)-coordinate has not been deleted in this formula; it has been
+summed exactly in the Gram over orthogonal output coordinates.  Outside the
+declared specialization, one must keep the full atom pair sum or place the
+complete \(\gamma\)-dependent first-failure indicator inside
+\eqref{eq:Gamma-overlap}.
+
+The opposite direct side is orthogonal at the output level.  Hence its Gram
+adds to the displayed-side Gram.  This eliminates \(F_L^*F_R\), but it does
+not imply
+\[
+ H^LH^R=0.
+\]
+An operator walk may therefore use a different side, block, \(\gamma\), or
+time on each edge.
+
+\subsection{Six-item physical audit}
+
+The interface satisfies:
+\begin{enumerate}[label=\textup{(L1.\arabic*)},leftmargin=4em]
+ \item every atom uses the literal coefficient
+       \(-\mu(s(w))\beta_w\);
+ \item every target is \(m(w)j(w)+h_0\) for one fixed \(h_0\ne0\);
+ \item \(D_M\) is raw atomic mass, with no fiber normalization;
+ \item source rows and complete native outputs are canonical, and only
+       \(s\) is erased;
+ \item the carrier and all key partitions are fixed before choosing a
+       coefficient vector or an operator extremizer; and
+ \item the identities in this paper have zero structural exponent cost,
+       while every later estimate remains subject to the strict \(1/400\)
+       endpoint ledger.
+\end{enumerate}

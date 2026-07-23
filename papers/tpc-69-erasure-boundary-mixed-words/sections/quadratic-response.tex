@@ -1,0 +1,194 @@
+\section{The nonnegative quadratic response of even moments}
+\label{sec:quadratic-response}
+
+The residual-boundary formula shows that individual two-erasure
+decorations can retain nontrivial signs.  Nevertheless, after all words
+with exactly two \(E\)'s are assembled, the even-moment coefficient has a
+definite sign.  This is a global matrix identity, not an arithmetic
+estimate.
+
+\subsection{Divided-difference formula}
+
+\begin{theorem}[Nonnegative two-erasure sector]
+\label{thm:quadratic-response}
+Let \(R\) and \(E\) be finite Hermitian matrices.  For every integer
+\(q\ge1\),
+\begin{equation}
+ \boxed{S_{2q,2}\ge0.}
+ \label{eq:quadratic-response-positive}
+\end{equation}
+More precisely, choose an orthonormal eigenbasis
+\((e_\alpha)\) with
+\[
+ Re_\alpha=\lambda_\alpha e_\alpha,
+\qquad
+ P_\alpha=e_\alpha e_\alpha^*,
+\qquad
+ R=\sum_\alpha\lambda_\alpha P_\alpha,
+\]
+where equal eigenvalues may occur at different indices, and put
+\(E_{\alpha\beta}=\langle Ee_\beta,e_\alpha\rangle\).  Then
+\begin{equation}
+ \boxed{
+ S_{2q,2}
+ =
+ q\sum_{\alpha,\beta}
+ |E_{\alpha\beta}|^2
+ \Phi_q(\lambda_\alpha,\lambda_\beta),}
+ \label{eq:quadratic-divided-difference}
+\end{equation}
+where
+\begin{equation}
+ \Phi_q(x,y)
+ :=
+ \sum_{a=0}^{2q-2}x^{2q-2-a}y^a
+ =
+ \begin{cases}
+ \displaystyle
+ \frac{x^{2q-1}-y^{2q-1}}{x-y},&x\ne y,\\[8pt]
+ (2q-1)x^{2q-2},&x=y.
+ \end{cases}
+ \label{eq:Phi-divided-difference}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:two-erasure-sector},
+\[
+ S_{2q,2}
+ =
+ q\sum_{a=0}^{2q-2}
+ \tr(E R^aE R^{2q-2-a}).
+\]
+In an eigenbasis of \(R\),
+\[
+ \tr(E R^aE R^{2q-2-a})
+ =
+ \sum_{\alpha,\beta}
+ |E_{\alpha\beta}|^2
+ \lambda_\beta^a
+ \lambda_\alpha^{2q-2-a}.
+\]
+Summing over \(a\) gives
+\eqref{eq:quadratic-divided-difference}.  The function
+\[
+ g_q(x)=x^{2q-1}
+\]
+is increasing on \(\mathbb R\), because
+\[
+ g_q'(x)=(2q-1)x^{2q-2}\ge0.
+\]
+Therefore every off-diagonal divided difference in
+\eqref{eq:Phi-divided-difference} is nonnegative, and the diagonal value
+is also nonnegative.  Each summand in
+\eqref{eq:quadratic-divided-difference} is nonnegative.
+\end{proof}
+
+\begin{corollary}[Quantitative upper bound and equality cases]
+\label{cor:quadratic-upper}
+One has
+\begin{equation}
+ 0\le S_{2q,2}
+ \le
+ \binom{2q}{2}
+ \|R\|^{2q-2}\|E\|_{\rm HS}^2.
+ \label{eq:quadratic-upper}
+\end{equation}
+For \(q=1\),
+\[
+ S_{2,2}=\|E\|_{\rm HS}^2.
+\]
+For \(q\ge2\), equality \(S_{2q,2}=0\) holds if and only if
+\begin{equation}
+ E=P_{\Ker R}EP_{\Ker R}.
+ \label{eq:quadratic-zero-characterization}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+From the finite sum in \eqref{eq:Phi-divided-difference},
+\[
+ |\Phi_q(x,y)|
+ \le(2q-1)\max\{|x|,|y|\}^{2q-2}.
+\]
+Insert this into \eqref{eq:quadratic-divided-difference} and use
+\(q(2q-1)=\binom{2q}{2}\).  When \(q=1\), \(\Phi_1=1\).
+For \(q\ge2\), the odd power \(x^{2q-1}\) is strictly increasing, so
+\(\Phi_q(x,y)>0\) unless \(x=y=0\).  Hence the sum vanishes exactly when
+every nonzero matrix entry of \(E\) lies inside the zero eigenspace of
+\(R\).
+\end{proof}
+
+\subsection{Response interpretation}
+
+Put
+\begin{equation}
+ \mathcal F_q(t):=\tr(R+tE)^{2q}.
+ \label{eq:moment-response-function}
+\end{equation}
+Then
+\begin{align}
+ \mathcal F_q'(0)&=S_{2q,1}
+ =2q\tr(ER^{2q-1}),
+ \label{eq:first-response}\\
+ \frac12\mathcal F_q''(0)&=S_{2q,2}\ge0.
+ \label{eq:second-response}
+\end{align}
+Applying the theorem with \(R\) replaced by \(R+tE\) shows that
+\(\mathcal F_q''(t)\ge0\) for every real \(t\).  Thus
+\(\mathcal F_q\) is convex.  This is also consistent with the convexity of
+the \(2q\)-th power of the Schatten \(2q\)-norm
+\citep{Bhatia1997,HornJohnson2013}.
+
+The conclusion is deliberately limited:
+\begin{itemize}
+ \item the linear response can have either sign;
+ \item the complete quadratic response cannot be negative;
+ \item sectors of order three and above can again be signed; and
+ \item convexity in \(t\) does not by itself compare
+       \(\mathcal F_q(1)\) with \(\mathcal F_q(0)\), because the initial
+       derivative may be negative.
+\end{itemize}
+
+\subsection{Individual words need not be positive}
+
+The positivity in \cref{thm:quadratic-response} occurs only after every
+two-erasure word is assembled with its correct cyclic multiplicity.  For
+example, take
+\[
+ R=\begin{pmatrix}1&0\\0&-1\end{pmatrix},
+ \qquad
+ E=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+\]
+Then
+\[
+ \tr(RERE)=-2,
+\qquad
+ \tr(R^2E^2)=2.
+\]
+At fourth order,
+\[
+ S_{4,2}
+ =
+4\tr(R^2E^2)+2\tr(RERE)
+=4>0.
+\]
+Taking the alternating word alone would therefore give the wrong sign for
+the full quadratic sector.
+
+\subsection{Arithmetic meaning}
+
+At the literal level, \eqref{eq:quadratic-response-positive} says that all
+two-erasure residual-boundary signs and all complex coefficient phases,
+after being summed over every word position and every decorated walk, form
+a nonnegative total.  It supplies no smallness.  Indeed, the upper bound in
+\eqref{eq:quadratic-upper} can be large.  The theorem closes only a proposed
+mechanism: the complete quadratic sector cannot be invoked as a negative
+correction that cancels the zero-erasure moment.
+
+The first potentially favorable perturbative term is therefore the
+cross-key linear response
+\[
+ S_{2q,1}=2q\tr(ER^{2q-1}),
+\]
+whose residual-boundary sign remains an L2 arithmetic problem.
