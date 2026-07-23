@@ -1,0 +1,113 @@
+\section{Primitive coordinates at the erasure key}
+\label{sec:erasure-coordinates}
+
+The unequal-residual edge has one common cofactor content and two
+primitive residual directions.
+
+\begin{definition}[Primitive erasure coordinates]
+\label{def:primitive-erasure-coordinates}
+Put
+\begin{equation}
+ q:=(S_m,S_n),\qquad
+ S_m=qu,\qquad S_n=qv.
+ \label{eq:erasure-cofactor-coordinates}
+\end{equation}
+Then \((u,v)=1\).
+\end{definition}
+
+\begin{theorem}[Erasure divisor and prime line]
+\label{thm:erasure-divisor-line}
+On the squarefree physical support:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item \(q,u,v\) are squarefree and pairwise coprime;
+ \item \(q\) is coprime to \(gab\), \(u\) is coprime to \(ga\), and \(v\)
+       is coprime to \(gb\);
+ \item
+       \begin{equation}
+       \boxed{q\mid |H|;}
+       \label{eq:q-divides-H}
+       \end{equation}
+ \item the largest-prime labels obey
+       \begin{equation}
+       \boxed{nuQ_m-mvQ_n=\frac{H}{q};}
+       \label{eq:erasure-prime-line}
+       \end{equation}
+ \item the unequal-residual condition is exactly
+       \begin{equation}
+       \boxed{(u,v)\ne(b,a).}
+       \label{eq:erasure-excluded-point}
+       \end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The residual labels are
+\[
+ d_mS_m=gaqu,\qquad d_nS_n=gbqv.
+\]
+Both are squarefree by \eqref{eq:squarefree-residuals}.  Since
+\((u,v)=1\) by construction, the stated squarefreeness and coprimality
+conditions follow.
+
+Substitute \eqref{eq:erasure-cofactor-coordinates} into
+\eqref{eq:erasure-prime-determinant}:
+\[
+ q(nuQ_m-mvQ_n)=H.
+\]
+This proves \eqref{eq:q-divides-H} and
+\eqref{eq:erasure-prime-line}.
+
+Finally,
+\[
+ d_mS_m=d_nS_n
+ \quad\Longleftrightarrow\quad
+ au=bv.
+\]
+If \(au=bv\), then \((a,b)=1\) gives \(a\mid v\) and \(b\mid u\).
+Write \(u=bk\), \(v=a\ell\).  The equality gives \(k=\ell\), while
+\((u,v)=1\) forces \(k=\ell=1\).  Thus equality holds precisely at
+\((u,v)=(b,a)\), proving \eqref{eq:erasure-excluded-point}.
+\end{proof}
+
+\begin{corollary}[Two divisor coordinates, one primitive plane]
+\label{cor:two-divisors-one-plane}
+For a fixed row pair, both common-content variables satisfy
+\[
+ t,q\mid |h_0(n-m)|.
+\]
+The anchor variable \(t\) determines its two cofactors completely through
+\((bt,at)\).  By contrast, after \(q\) is fixed, the erasure edge still
+ranges over primitive pairs \((u,v)\), except for the single forbidden
+pair \((b,a)\).
+\end{corollary}
+
+\begin{proposition}[Primitive four-corner equations]
+\label{prop:primitive-four-corner-equations}
+After \eqref{eq:anchor-cofactor-compression} and
+\eqref{eq:erasure-cofactor-coordinates}, the vertical and cross relations
+become
+\begin{align}
+ q uQ_m-btP_m&=m\Delta,
+ \label{eq:primitive-m-vertical}\\
+ q vQ_n-atP_n&=n\Delta,
+ \label{eq:primitive-n-vertical}\\
+ tq(bvP_mQ_n-auQ_mP_n)&=H\Delta.
+ \label{eq:primitive-cross-determinant}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+The first two formulas are
+\eqref{eq:m-vertical-difference}--\eqref{eq:n-vertical-difference}
+after substitution.  The third is \eqref{eq:prime-cross-determinant} in
+the same coordinates.
+\end{proof}
+
+\begin{remark}[The cross equation does not collapse the plane]
+\label{rem:cross-does-not-collapse-plane}
+The variables \(P_m,P_n,Q_m,Q_n,\Delta\) change with the physical keys.
+Consequently \eqref{eq:primitive-cross-determinant} is a compatibility
+condition on each point, not a fixed conic that removes the
+two-dimensional \((u,v)\)-sum.  Any such further reduction would require
+additional physical information.
+\end{remark}

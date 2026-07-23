@@ -1,0 +1,107 @@
+\section{From one primitive plane back to the operator}
+\label{sec:operator-ledger}
+
+The exact transform concerns the first mixed trace.  We state the
+remaining interfaces before any arithmetic gain can influence the
+fixed-shift endpoint.
+
+\subsection{The hierarchy of scopes}
+
+For a possible estimate of
+\eqref{eq:primitive-plane-transform}, distinguish:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item one dyadic \((U,V)\)-box for one fixed
+       \((m,n,\mathfrak a,q)\);
+ \item all cofactor boxes for that anchor;
+ \item all anchors and erasure keys for one row pair;
+ \item all partners incident to one active row;
+ \item the complete trace sum; and
+ \item a full local-star or operator-norm estimate.
+\end{enumerate}
+These scopes are not interchangeable.  A small complete trace can result
+from cancellation between rows while one local star remains large.  A
+fixed-anchor saving can be lost when the number or total mass of anchors
+grows.
+
+\subsection{The rectangle is only the linear erasure sector}
+
+The first mixed moment is
+\[
+ 2\tr(ER).
+\]
+Higher even moments contain one-erasure sectors
+\[
+ 2q\,\tr(ER^{2q-1})
+\]
+and sectors with two or more erasure edges.  TPC--69 proves that the full
+two-erasure sector in every even moment is nonnegative
+\citep{WangTPC69}.  Therefore a saving for the rectangle sum does not
+bound a complete even moment, and the quadratic sector cannot be used as
+a negative correction.
+
+Even a theorem of the form
+\[
+ \tr(ER)=o\!\left(\sum_{\text{rectangles}}|\cA|\right)
+\]
+would close only the first signed scalar door.  To reach a native
+operator estimate, one must either:
+\begin{itemize}
+ \item extend primitive-plane control to the local stars and all relevant
+       mixed words; or
+ \item find a different certificate that converts the same literal
+       arithmetic input to \(\|R+E\|\).
+\end{itemize}
+
+\subsection{Mass and shorting gates}
+
+Let \(M_X\) be the missing-native map and \(D_M\) its raw atomic row mass.
+The normalized missing Gram has the form
+\[
+ D_M^{\dagger/2}M_X^*M_XD_M^{\dagger/2}
+ =I+R+E
+\]
+on the active row space \citep{WangTPC61,WangTPC68}.  A hypothetical
+operator estimate for \(R+E\) still does not finish reassembly.  It must
+be combined with:
+\begin{enumerate}[label=\textup{(\arabic*)},leftmargin=3em]
+ \item a missing-mass comparison in the literal coefficient norm;
+ \item a lower-frame estimate for the represented map; and
+ \item a negligible nuisance shorting penalty.
+\end{enumerate}
+In the notation of the existing route, the shorted Gram is
+\[
+ G_{\rm sh}=G_{\rm dir}-C_N,\qquad C_N\succeq0,
+\]
+and \(\|C_N\|=o(1)\) is a separate physical statement.  The primitive
+cofactor plane neither identifies \(C_N\) nor bounds it.
+
+\subsection{Endpoint exponent ledger}
+
+All identities in this paper cost zero fixed power of \(X\).  Future
+arguments may introduce losses for:
+\[
+ \lambda_{\rm plane},\quad
+ \lambda_{\rm anchor},\quad
+ \lambda_{\rm native},\quad
+ \lambda_{\rm mass},\quad
+ \lambda_{\rm rep},\quad
+ \lambda_{\rm nuis}.
+\]
+Only losses proved in a common literal physical scope may be added.  The
+total must remain strictly below
+\[
+ \frac1{400}.
+\]
+Equality is insufficient for the present endpoint.  A valid theorem
+outside this budget may still be valuable, but it cannot be promoted to
+the fixed-shift endpoint implication.
+
+\subsection{No fixed-shift arithmetic promotion}
+
+The paper does not establish that the primitive-plane transform is
+smaller than its absolute majorant.  Consequently it supplies no new
+exponent for the literal physical coefficients, no bound for
+\(\|R+E\|\), and no improvement in the endpoint ledger.  Its forward
+value is architectural: it closes an exact reindexing interface and
+permanently rules out time-ray M\"obius oscillation as the missing
+mechanism.

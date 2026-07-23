@@ -1,0 +1,144 @@
+\section{Claims, stops, and the next gate}
+\label{sec:claim-boundary}
+
+\subsection{L0 results proved here}
+
+For four squarefree largest-prime targets attached to two primitive rows:
+\begin{enumerate}[label=\textup{(\arabic*)},leftmargin=3em]
+ \item the five four-corner identities
+       \eqref{eq:anchor-determinant}--\eqref{eq:cross-determinant};
+ \item the same-residual normal form
+       \[
+       R_m=bt,\qquad R_n=at,\qquad t\mid |h_0(n-m)|;
+       \]
+ \item the primitive erasure normal form
+       \[
+       S_m=qu,\qquad S_n=qv,\qquad
+       q\mid |h_0(n-m)|;
+       \]
+ \item the exact erasure criterion
+       \[
+       d_mS_m\ne d_nS_n
+       \quad\Longleftrightarrow\quad
+       (u,v)\ne(b,a);
+       \]
+ \item the anchor and erasure affine-ray parametrizations and their exact
+       census bounds;
+ \item the sign identity
+       \[
+       \mu(d_mS_m)\mu(d_nS_n)
+       =\mu(a)\mu(b)\mu(u)\mu(v);
+       \]
+ \item the fact that this sign is frozen along every fixed
+       \((q,u,v)\)-ray; and
+ \item the exact finite primitive-plane partition of an anchored
+       rectangle sum.
+\end{enumerate}
+
+\subsection{L1 identification}
+
+The L0 coordinates are identified with the literal TPC two-key rectangle
+by retaining:
+\begin{itemize}
+ \item the fixed nonzero \(h_0\) in every target;
+ \item the actual largest prime and cofactor at all four corners;
+ \item every complete native key and actual support condition;
+ \item all four literal complex coefficients;
+ \item raw atomic row normalization; and
+ \item the full physical kernel \(K_{\mathfrak a,q}(u,v)\), with zero
+       coefficient at every absent corner.
+\end{itemize}
+Consequently \eqref{eq:complete-primitive-plane-transform} is an exact L1
+reindexing of \(\tr(ER)\), not a model average.
+
+\subsection{L2 statements not proved}
+
+This paper does not prove:
+\begin{itemize}
+ \item cancellation in one primitive cofactor box;
+ \item a uniform two-dimensional Mertens or variation bound for the actual
+       kernel;
+ \item a saving after summing all \(q,t\), anchors, keys, or row pairs;
+ \item a local-star bound or a complete mixed-moment bound;
+ \item a subpower or vanishing bound for \(\|R+E\|\);
+ \item missing-mass, represented-frame, or nuisance-shorting estimates;
+ \item any fixed-\(h_0\) parity-breaking estimate;
+ \item a prime-pair theorem, a twin-prime theorem, or a positive lower
+       bound for prime pairs.
+\end{itemize}
+
+\subsection{Kill criteria}
+
+\begin{enumerate}[label=\textup{(K\arabic*)},leftmargin=3.5em]
+ \item \textbf{Nonprimitive rows.}  The exact ray spacings use
+       \((mn,h_0)=1\).  Applying them outside that scope without extracting
+       the additional gcd changes the parametrization.
+
+ \item \textbf{Nonsquarefree support.}  The sign formula is a
+       \(\{-1,1\}\)-identity on the active squarefree carrier.  Terms with
+       vanishing M\"obius factors must be removed or treated separately.
+
+ \item \textbf{Time-only compression.}  Replacing complete native keys by
+       their times deletes orthogonal labels and estimates a different
+       operator.
+
+ \item \textbf{False ray randomness.}  The target M\"obius sign is constant
+       on a fixed \((q,u,v)\)-ray.  Random-sign or time-oscillation
+       heuristics cannot certify a saving there.
+
+ \item \textbf{Divisor-count overclaim.}  Although \(t,q\mid H\), the
+       primitive pair, ray points, and complete keys remain.  The number
+       of rectangles is not bounded by \(\tau(H)^2\).
+
+ \item \textbf{Silent rectangularization.}  Zero-extending the ragged
+       support is allowed only if every new boundary and variation term is
+       retained.
+
+ \item \textbf{Unsigned-to-signed promotion.}  A Brun--Selberg upper bound
+       is an absolute population estimate, not cancellation of
+       \(\mu(u)\mu(v)\).
+
+ \item \textbf{Trace-to-operator promotion.}  A small
+       \(\tr(ER)\) does not imply a local-star, moment, or operator-norm
+       bound.
+
+ \item \textbf{Reassembly mismatch.}  A missing-native estimate does not
+       prove the mass, represented-frame, or nuisance shorting gates.
+
+ \item \textbf{Endpoint stop.}  Any combined literal loss at least
+       \(1/400\) stops the present endpoint implication.
+\end{enumerate}
+
+\subsection{The next specified gate}
+
+The next falsifiable question is not another coordinate change.  It is:
+\begin{quote}
+For the zero-extended literal kernels \(K_{\mathfrak a,q}\), can
+two-dimensional summation by parts combine unconditional Mertens
+cancellation with a uniformly subcritical boundary-and-variation total?
+\end{quote}
+A complete next step should:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item derive an exact discrete two-dimensional Abel identity;
+ \item separate interior mixed variation from four edges and four corners;
+ \item charge the primitive condition, the excluded point, ragged cofactor
+       support, prime-line masks, and missing masks literally;
+ \item compare the resulting certificate with
+       \(\sum|K_{\mathfrak a,q}|\) in every dyadic box; and
+ \item either prove a uniform saving or give an actual-kernel lower bound
+       showing that the variation route cannot save.
+\end{enumerate}
+If the certificate succeeds only for smoothed, averaged, or frozen
+kernels, that result must remain in its weaker scope.  If it fails because
+hard physical masks have full variation, the failure is a publishable
+negative boundary and the route should return to literal complex phases
+or direct shorted reassembly.
+
+\subsection{Status line}
+
+TPC--70 compresses both common-content variables to divisors of the fixed
+row-pair determinant and identifies the surviving sign as a primitive
+two-dimensional M\"obius product.  It also proves that time-ray sign
+oscillation is impossible.  This is a genuine L0/L1 advance and a sharper
+analytic target.  It is not L2 cancellation and gives no evidence that
+the parity barrier has been crossed.

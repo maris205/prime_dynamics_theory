@@ -1,0 +1,168 @@
+\section{Affine rays and frozen arithmetic signs}
+\label{sec:rays-and-signs}
+
+The divisor coordinates determine exact congruence classes for the two
+physical times.  The following statements concern physical solutions:
+primality, largest-prime, interval, native-key, and mask conditions may
+delete points from the displayed affine rays, but cannot create points
+off them.
+
+\subsection{The anchor ray}
+
+\begin{theorem}[Fixed-\(t\) anchor ray]
+\label{thm:anchor-ray}
+Fix \(m,n,h_0,d_m,d_n\) and a divisor \(t\) supplied by
+\cref{thm:anchor-compression}.  If one physical anchor solution
+\((j_{R,0},P_{m,0},P_{n,0})\) exists, then every other physical anchor
+solution with the same \(t\) is uniquely of the form
+\begin{align}
+ j_R&=j_{R,0}+abt\,z,
+ \label{eq:anchor-time-ray}\\
+ P_m&=P_{m,0}+ma\,z,
+ \label{eq:anchor-Pm-ray}\\
+ P_n&=P_{n,0}+nb\,z
+ \label{eq:anchor-Pn-ray}
+\end{align}
+for an integer \(z\).
+\end{theorem}
+
+\begin{proof}
+Take two fixed-\(t\) anchor solutions and write differences with a
+\(\delta\).  From
+\[
+ mj_R+h_0=btP_m
+\]
+one obtains
+\[
+ m\,\delta j_R=bt\,\delta P_m.
+\]
+By \cref{rem:primitive-gcd}, \((m,bt)=1\), so \(bt\mid\delta j_R\).
+Likewise \(at\mid\delta j_R\).  Since \(a,b,t\) are pairwise coprime,
+\[
+ \operatorname{lcm}(at,bt)=abt.
+\]
+Thus \(\delta j_R=abt\,z\).  Substitution gives
+\(\delta P_m=ma\,z\) and \(\delta P_n=nb\,z\).  Uniqueness is immediate.
+\end{proof}
+
+\begin{corollary}[Anchor census]
+\label{cor:anchor-census}
+If the allowed anchor-time interval has length \(J_R\), then for fixed
+\(t\)
+\begin{equation}
+ \#\{j_R\text{ in the physical carrier with this }t\}
+ \le 1+\frac{J_R}{abt}.
+ \label{eq:anchor-census}
+\end{equation}
+\end{corollary}
+
+\subsection{The erasure ray}
+
+\begin{theorem}[Fixed-\((q,u,v)\) erasure ray]
+\label{thm:erasure-ray}
+Fix \(m,n,h_0\) and a primitive erasure triple \((q,u,v)\) from
+\cref{thm:erasure-divisor-line}.  If one physical erasure solution
+\((j_{E,0},Q_{m,0},Q_{n,0})\) exists, then every other physical erasure
+solution with the same \((q,u,v)\) is uniquely of the form
+\begin{align}
+ j_E&=j_{E,0}+quv\,z,
+ \label{eq:erasure-time-ray}\\
+ Q_m&=Q_{m,0}+mv\,z,
+ \label{eq:erasure-Qm-ray}\\
+ Q_n&=Q_{n,0}+nu\,z
+ \label{eq:erasure-Qn-ray}
+\end{align}
+for an integer \(z\).
+\end{theorem}
+
+\begin{proof}
+For two solutions,
+\[
+ m\,\delta j_E=qu\,\delta Q_m,\qquad
+ n\,\delta j_E=qv\,\delta Q_n.
+\]
+By \cref{rem:primitive-gcd}, \((m,qu)=(n,qv)=1\).  Hence
+\(qu\mid\delta j_E\) and \(qv\mid\delta j_E\).  The integers \(q,u,v\)
+are pairwise coprime, so their least common multiple is \(quv\).
+Writing \(\delta j_E=quv\,z\) gives the two prime increments.
+\end{proof}
+
+\begin{corollary}[Erasure census]
+\label{cor:erasure-census}
+If the allowed erasure-time interval has length \(J_E\), then
+\begin{equation}
+ \#\{j_E\text{ in the physical carrier with fixed }q,u,v\}
+ \le 1+\frac{J_E}{quv}.
+ \label{eq:erasure-census}
+\end{equation}
+\end{corollary}
+
+\subsection{The sign theorem}
+
+\begin{theorem}[Primitive cofactor sign]
+\label{thm:primitive-cofactor-sign}
+The residual sign in the literal rectangle contribution
+\eqref{eq:rectangle-residual-sign} is
+\begin{equation}
+ \boxed{
+ \mu(d_mS_m)\mu(d_nS_n)
+ =
+ \mu(a)\mu(b)\mu(u)\mu(v).}
+ \label{eq:primitive-cofactor-sign}
+\end{equation}
+Equivalently, the product of the four target M\"obius signs is
+\begin{equation}
+ \boxed{
+ \mu(A_m)\mu(A_n)\mu(B_m)\mu(B_n)
+ =
+ \mu(a)\mu(b)\mu(u)\mu(v).}
+ \label{eq:four-target-sign}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Using the squarefree and coprimality conclusions of
+\cref{thm:erasure-divisor-line},
+\begin{align*}
+ \mu(d_mS_m)\mu(d_nS_n)
+ &=
+ \mu(gaqu)\mu(gbqv)\\
+ &=
+ \mu(g)^2\mu(q)^2
+ \mu(a)\mu(b)\mu(u)\mu(v),
+\end{align*}
+which proves \eqref{eq:primitive-cofactor-sign}.
+
+For the target signs, each largest prime is coprime to its cofactor and
+contributes one minus sign:
+\[
+ \mu(A_m)\mu(A_n)\mu(B_m)\mu(B_n)
+ =
+ \mu(R_m)\mu(R_n)\mu(S_m)\mu(S_n).
+\]
+The anchor factors give
+\[
+ \mu(bt)\mu(at)=\mu(a)\mu(b),
+\]
+and the erasure factors give
+\[
+ \mu(qu)\mu(qv)=\mu(u)\mu(v).
+\]
+This proves \eqref{eq:four-target-sign}.
+\end{proof}
+
+\begin{corollary}[Frozen sign on every prime ray]
+\label{cor:frozen-ray-sign}
+For fixed rows \(m,n\) and fixed primitive erasure coordinates
+\((q,u,v)\), the M\"obius sign of every physical point on
+\eqref{eq:erasure-time-ray}--\eqref{eq:erasure-Qn-ray} is the same.
+There is no arithmetic sign oscillation in the ray variable \(z\).
+\end{corollary}
+
+\begin{remark}[What can still oscillate]
+\label{rem:literal-phase-can-oscillate}
+The literal amplitude \(\cA\) can vary with the complete native key and
+with \(z\).  Its complex phases may cancel.  The theorem says only that
+such cancellation cannot be attributed to a varying target M\"obius sign
+inside one fixed \((q,u,v)\)-ray.
+\end{remark}

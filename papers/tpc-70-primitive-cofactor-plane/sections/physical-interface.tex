@@ -1,0 +1,120 @@
+\section{The literal two-key interface}
+\label{sec:physical-interface}
+
+We isolate only the information used by the arithmetic reduction.  All
+other physical labels remain attached to the coefficients.
+
+\subsection{Rows, times, and four targets}
+
+Fix a scale \(X\), one integer \(h_0\ne0\), and two distinct positive
+source rows \(m,n\) satisfying
+\begin{equation}
+ (mn,h_0)=1.
+ \label{eq:primitive-rows}
+\end{equation}
+The TPC carrier also assigns fixed squarefree row divisors
+\[
+ d_m\mid m,\qquad d_n\mid n.
+\]
+Choose two complete native keys.  Their physical times are denoted by
+\(j_R\) and \(j_E\), where \(R\) indicates the same-residual key and \(E\)
+the unequal-residual, or erasure, key.  Put
+\begin{align}
+ A_m&=mj_R+h_0=P_mR_m,&
+ A_n&=nj_R+h_0=P_nR_n,
+ \label{eq:anchor-targets}\\
+ B_m&=mj_E+h_0=Q_mS_m,&
+ B_n&=nj_E+h_0=Q_nS_n.
+ \label{eq:erasure-targets}
+\end{align}
+Here
+\[
+ P_m=\Pplus(A_m),\quad P_n=\Pplus(A_n),\quad
+ Q_m=\Pplus(B_m),\quad Q_n=\Pplus(B_n)
+\]
+are the literal largest-prime labels selected by the missing-high
+carrier, and \(R_m,R_n,S_m,S_n\) are the corresponding cofactors.
+
+Every active atom considered below lies in the squarefree physical
+support.  Thus all four targets and all four residual labels have
+nonvanishing M\"obius value:
+\begin{equation}
+ \mu(A_m),\ \mu(A_n),\ \mu(B_m),\ \mu(B_n),\
+ \mu(d_mR_m),\ \mu(d_nR_n),\
+ \mu(d_mS_m),\ \mu(d_nS_n)\in\{-1,1\}.
+ \label{eq:squarefree-residuals}
+\end{equation}
+The residual relations defining the two keys are
+\begin{align}
+ d_mR_m&=d_nR_n,
+ \label{eq:same-residual-anchor}\\
+ d_mS_m&\ne d_nS_n.
+ \label{eq:unequal-residual-erasure}
+\end{align}
+
+\begin{remark}[Why primitivity is the correct hypothesis]
+\label{rem:primitive-gcd}
+For every integer \(j\),
+\[
+ (m,mj+h_0)=(m,h_0)=1,\qquad
+ (n,nj+h_0)=(n,h_0)=1.
+\]
+Thus each source row is coprime to every cofactor and largest-prime label
+on its own side.  This elementary fact is what makes the ray spacings in
+\cref{sec:rays-and-signs} exact.  No coprimality assumption between
+\(m\) and \(n\) is required.
+\end{remark}
+
+\subsection{Complete keys and literal weights}
+
+A complete native key contains the direct side, external block, opposite
+row, \(\gamma\)-coordinate, physical time, and every other still
+orthogonal output label.  Equality of complete keys fixes the time, but
+equality of time alone need not fix the key.  We denote the two complete
+keys by \(\iota_R\) and \(\iota_E\).
+
+At a present key-row corner, let \(\beta_{\iota,r}\in\C\) be the literal
+nonzero coefficient after every physical mask and profile has been
+imposed.  Let \(W_r>0\) be the raw atomic mass of active row \(r\).  The
+residual-sign-free rectangle amplitude is
+\begin{equation}
+ \cA(\iota_E,\iota_R;m,n)
+ :=
+ \frac{
+ \overline{\beta_{\iota_E,m}}\beta_{\iota_E,n}
+ \overline{\beta_{\iota_R,n}}\beta_{\iota_R,m}
+ }{W_mW_n}.
+ \label{eq:literal-rectangle-amplitude}
+\end{equation}
+It is defined to be zero if any corner is absent.  No sign, phase, or
+normalization is averaged in this definition.
+
+TPC--69 proves that the oriented rectangle contribution after the fixed
+source-row gauge is
+\begin{equation}
+ \mu(d_mS_m)\mu(d_nS_n)
+ \cA(\iota_E,\iota_R;m,n),
+ \label{eq:rectangle-residual-sign}
+\end{equation}
+and that the full first mixed trace is twice the real part of the sum of
+these oriented contributions over actual rectangles
+\citep{WangTPC69}.  We shall reindex \eqref{eq:rectangle-residual-sign}
+exactly.  Formula \eqref{eq:literal-rectangle-amplitude}, rather than a
+time-only surrogate, is retained throughout.
+
+\subsection{The six-item audit}
+
+The specialization used below retains:
+\begin{enumerate}[label=\textup{(L1.\arabic*)},leftmargin=4em]
+ \item the literal physical coefficients at all four corners;
+ \item the one fixed shift \(h_0\) in all four targets;
+ \item raw atomic row masses \(W_m,W_n\);
+ \item canonical source rows and complete native output keys;
+ \item the actual active squarefree support, fixed before any extremizer is
+       chosen; and
+ \item zero structural exponent cost for all identities, with every future
+       estimate still subject to the strict \(1/400\) endpoint ledger.
+\end{enumerate}
+The reduction does not replace complete keys by times.  It only groups
+already existing keys according to arithmetic coordinates recovered from
+their atoms.

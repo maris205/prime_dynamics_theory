@@ -1,0 +1,141 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The fixed-shift native-operator route separates the missing-high Gram
+defect into a same-residual part \(R\) and an erasure-created part \(E\).
+TPC--68 identifies the signed operator certificates attached to
+\(R+E\), and TPC--69 proves that the first mixed trace is a cross-key
+rectangle rather than a one-key correction
+\citep{WangTPC68,WangTPC69}.  At its shortest, the relevant term has two
+source rows and two complete native keys:
+\[
+ \begin{matrix}
+     &m&n\\
+ \text{erasure key}&\bullet&\bullet\\
+ \text{same-residual key}&\bullet&\bullet .
+ \end{matrix}
+\]
+The erasure edge carries the residual sign; the return edge has equal
+residual labels and contributes no variable target sign after the closed
+product is formed.
+
+The immediate question is arithmetic rather than matrix-theoretic:
+\emph{what coordinates does an actual rectangle possess, and along which
+coordinate can its M\"obius sign vary?}  The answer is more rigid than a
+generic two-time correlation.  Equal residual labels at the return key
+compress the two cofactors to a single divisor \(t\) of
+\(h_0(n-m)\).  At the erasure key, the common cofactor content is another
+divisor \(q\) of the same determinant.  After removing this content, the
+only variable arithmetic sign is \(\mu(u)\mu(v)\) on a primitive
+two-dimensional cofactor plane.
+
+\subsection{Main results}
+
+Let
+\[
+ A_m=mj_R+h_0=P_mR_m,\qquad
+ A_n=nj_R+h_0=P_nR_n
+\]
+be the two targets at the same-residual key, and let
+\[
+ B_m=mj_E+h_0=Q_mS_m,\qquad
+ B_n=nj_E+h_0=Q_nS_n
+\]
+be the targets at the erasure key.  The letters \(P_m,P_n,Q_m,Q_n\)
+denote the actual largest-prime labels of the four physical atoms.  The
+cofactors are \(R_m,R_n,S_m,S_n\).
+
+The paper proves the following exact chain.
+\begin{enumerate}[label=\textup{(\arabic*)},leftmargin=3em]
+ \item The four targets obey two horizontal determinant equations, two
+       vertical difference equations, and one cross determinant:
+       \[
+       nA_m-mA_n=nB_m-mB_n=h_0(n-m),
+       \qquad A_mB_n-B_mA_n=h_0(n-m)(j_E-j_R).
+       \]
+
+ \item If \(d_m=ga\), \(d_n=gb\), \((a,b)=1\), then the same-residual
+       equality \(d_mR_m=d_nR_n\) is equivalent on the squarefree carrier
+       to
+       \[
+       R_m=bt,\qquad R_n=at.
+       \]
+       The horizontal determinant forces \(t\mid h_0(n-m)\).  Every
+       fixed-\(t\) physical anchor lies on one affine prime ray of spacing
+       \(abt\).
+
+ \item Writing
+       \[
+       q=(S_m,S_n),\qquad S_m=qu,\quad S_n=qv,\quad (u,v)=1,
+       \]
+       the erasure determinant forces \(q\mid h_0(n-m)\).  The erased
+       residual labels are unequal precisely when
+       \[
+       (u,v)\ne(b,a).
+       \]
+       Every fixed-\((q,u,v)\) physical erasure lies on one affine prime
+       ray of spacing \(quv\).
+
+ \item The exact rectangle sign is
+       \[
+       \mu(a)\mu(b)\mu(u)\mu(v).
+       \]
+       The common factors \(g,q\) disappear, and the sign is constant on
+       each time ray.  Therefore an exact grouping of the literal
+       rectangle sum yields a primitive two-dimensional M\"obius
+       transform in \((u,v)\).
+\end{enumerate}
+
+The compression is real: \(t\) and \(q\) run only over divisors of a fixed
+determinant for a fixed row pair.  It is not cancellation.  The
+\(z\)-fibers still carry two affine primality conditions, a largest-prime
+condition, interval restrictions, missing and first-failure masks,
+complete native labels, and literal complex weights.  More importantly,
+their M\"obius sign is frozen.  A Brun or Selberg upper-bound sieve can
+bound the number of prime points on one ray, but it cannot make
+\(\mu(u)\mu(v)\) oscillate along that ray.
+
+\subsection{Why this is a useful boundary}
+
+The result rules out an attractive but incorrect strategy: reparametrize
+by time and hope that the target M\"obius signs fluctuate along each
+prime progression.  They do not.  Any future signed gain must come from
+one of two sources:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item cancellation across primitive cofactor pairs \((u,v)\); or
+ \item literal complex-phase cancellation already present in the physical
+       kernel.
+\end{enumerate}
+This locates the next analytic door without claiming that the door is
+open.  A natural continuation is a two-dimensional summation-by-parts
+criterion for the actual ragged kernel, including its boundary and
+variation costs.
+
+\subsection{Claim discipline}
+
+We use the following labels throughout.
+\begin{itemize}
+ \item \textbf{L0} denotes finite exact arithmetic and algebraic
+       identities.
+ \item \textbf{L1} denotes their exact identification with the complete
+       fixed-\(h_0\) native carrier, with no physical label or coefficient
+       removed.
+ \item \textbf{L2} denotes a genuinely new cancellation estimate for the
+       literal growing arithmetic family.
+\end{itemize}
+This paper proves L0 identities and an L1 reindexing.  It proves no L2
+estimate.  In particular, divisor compression, a ray census, or an
+unsigned prime upper bound is not fixed-\(h_0\) parity progress.
+
+\subsection{Organization}
+
+\Cref{sec:physical-interface} fixes the literal two-key carrier.
+\Cref{sec:four-corner} proves the four-corner identities.
+\Cref{sec:anchor-compression} compresses the same-residual anchor, and
+\cref{sec:erasure-coordinates} constructs the primitive erasure
+coordinates.  The ray and sign theorems are proved in
+\cref{sec:rays-and-signs}.  \Cref{sec:cofactor-plane} gives the exact
+M\"obius-plane transform.  \Cref{sec:sieve-boundary} records the unsigned
+sieve boundary, and \cref{sec:counterexamples} gives sharp examples.
+The existing-theorem mismatch, operator ledger, and complete claim
+boundary occupy the final three sections.

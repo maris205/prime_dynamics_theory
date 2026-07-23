@@ -1,0 +1,105 @@
+\section{Unsigned ray bounds and the sieve boundary}
+\label{sec:sieve-boundary}
+
+The affine rays expose two prime forms, so classical upper-bound sieve
+technology can count candidate points.  This is useful support control,
+but it is sign-blind.
+
+\subsection{Nonproportional prime forms}
+
+On a fixed anchor ray define
+\[
+ L_{m,R}(z)=P_{m,0}+ma\,z,\qquad
+ L_{n,R}(z)=P_{n,0}+nb\,z.
+\]
+Equation \eqref{eq:anchor-prime-line} gives
+\begin{equation}
+ nbL_{m,R}(z)-maL_{n,R}(z)=H/t\ne0.
+ \label{eq:anchor-form-determinant}
+\end{equation}
+Hence the forms are nonproportional.  They are primitive because
+\((P_{m,0},ma)=(P_{n,0},nb)=1\), a consequence of
+\eqref{eq:primitive-rows}.
+
+Likewise, on a fixed erasure ray,
+\[
+ L_{m,E}(z)=Q_{m,0}+mv\,z,\qquad
+ L_{n,E}(z)=Q_{n,0}+nu\,z,
+\]
+and
+\begin{equation}
+ nuL_{m,E}(z)-mvL_{n,E}(z)=H/q\ne0.
+ \label{eq:erasure-form-determinant}
+\end{equation}
+These two forms need not be primitive a priori because, for example,
+\(Q_{m,0}\) can divide the cross-cofactor \(v\).  If one form is
+imprimitive, however, it assumes a positive prime value at most once.
+Consequently every erasure ray containing two distinct simultaneous prime
+points has two primitive forms; singleton rays are already covered by the
+trivial census.
+
+\begin{proposition}[Fixed-ray Brun--Selberg boundary]
+\label{prop:fixed-ray-sieve-boundary}
+Fix either pair of primitive, nonproportional affine forms above.  If the
+pair is admissible, the upper-bound sieve gives, for an interval
+\(\cI\subset\Z\) of length \(Z\),
+\begin{equation}
+ \#\{z\in\cI:L_1(z),L_2(z)\text{ are prime}\}
+ \ll_{L_1,L_2}
+ 1+\frac{Z}{(\log(2+Z))^2}.
+ \label{eq:fixed-ray-sieve-bound}
+\end{equation}
+If the pair has a fixed local obstruction, simultaneous prime values are
+confined to \(O_{L_1,L_2}(1)\) exceptional points.
+\end{proposition}
+
+\begin{proof}
+This is the standard dimension-two upper-bound sieve for a product of
+two primitive, nonproportional affine forms; see, for example, the
+Selberg sieve treatment in \citep{IwaniecKowalski2004}.  A fixed local
+obstruction forces at least one form to equal one of finitely many local
+primes at every simultaneous prime point.
+\end{proof}
+
+\begin{remark}[Uniformity is not supplied]
+\label{rem:sieve-nonuniform}
+The constant in \eqref{eq:fixed-ray-sieve-bound} is allowed to depend on
+the ray data.  The physical coefficients \(m,n,a,b,u,v\) grow with \(X\),
+the ray length can be as short as
+\[
+ Z\asymp \frac{J_R}{abt}
+ \quad\text{or}\quad
+ Z\asymp \frac{J_E}{quv},
+\]
+and the carrier contains additional largest-prime and hard-mask
+conditions.  A uniform weighted bound over the complete family is a
+separate theorem.
+\end{remark}
+
+\subsection{Why an upper-bound sieve does not move the sign}
+
+Even a perfectly uniform version of \eqref{eq:fixed-ray-sieve-bound}
+would estimate only the absolute population of one ray.  By
+\cref{cor:frozen-ray-sign},
+\begin{equation}
+\begin{aligned}
+ &\sum_{z}
+ \mu(a)\mu(b)\mu(u)\mu(v)\,
+ \cA_z\\
+ &\qquad =
+ \mu(a)\mu(b)\mu(u)\mu(v)\sum_z\cA_z.
+\end{aligned}
+\label{eq:sieve-sign-factor-out}
+\end{equation}
+If the amplitudes \(\cA_z\) are nonnegative, taking an upper-bound sieve
+loses no arithmetic cancellation because none exists inside the fiber.
+For complex amplitudes, any gain in \(\sum_z\cA_z\) is a phase theorem,
+not a M\"obius theorem.
+
+\begin{corollary}[Unsigned support gain is not parity progress]
+\label{cor:unsigned-not-parity}
+The divisor counts, ray spacings, and Brun--Selberg upper bounds in this
+paper can reduce an unsigned majorant.  None of them proves cancellation
+in \eqref{eq:dyadic-primitive-plane-target}; hence none is a fixed-shift
+parity-breaking estimate.
+\end{corollary}

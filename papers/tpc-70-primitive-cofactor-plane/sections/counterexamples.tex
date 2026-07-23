@@ -1,0 +1,144 @@
+\section{Sharp examples and no-go models}
+\label{sec:counterexamples}
+
+The following examples separate exact determinant geometry from signed
+cancellation.
+
+\subsection{One anchor, both signs}
+
+\begin{example}[Opposite signs with the same rows and anchor]
+\label{ex:opposite-sign-rectangles}
+Take
+\[
+ m=3,\qquad n=5,\qquad h_0=1,\qquad d_m=d_n=1.
+\]
+Then \(g=a=b=1\) and \(H=2\).  Choose \(j_R=2\).  The anchor targets are
+\[
+ A_m=7=7\cdot1,\qquad
+ A_n=11=11\cdot1.
+\]
+Thus \(R_m=R_n=1\), the residuals agree, and \(t=1\).
+
+First take \(j_E=4\).  Then
+\[
+ B_m=13=13\cdot1,\qquad
+ B_n=21=7\cdot3.
+\]
+Hence
+\[
+ q=1,\qquad (u,v)=(1,3),
+\]
+and the rectangle sign is
+\[
+ \mu(1)\mu(1)\mu(1)\mu(3)=-1.
+\]
+The cross determinant is
+\[
+ 7\cdot21-13\cdot11=4=H(j_E-j_R).
+\]
+
+Now take \(j_E=18\).  Then
+\[
+ B_m=55=11\cdot5,\qquad
+ B_n=91=13\cdot7,
+\]
+where the displayed primes are the largest prime factors.  Thus
+\[
+ q=1,\qquad (u,v)=(5,7),
+\]
+and the sign is
+\[
+ \mu(5)\mu(7)=+1.
+\]
+Again all four targets are squarefree and
+\[
+ 7\cdot91-55\cdot11=32=H(j_E-j_R).
+\]
+Therefore the four-corner identities and the divisor conditions admit
+both signs even with the rows and same-residual anchor fixed.
+\end{example}
+
+\begin{remark}[Scope of the example]
+\label{rem:small-example-scope}
+The example realizes the exact squarefree largest-prime arithmetic
+dictionary.  It is not asserted to satisfy every scale-dependent
+missing-high, block, or endpoint mask of the full TPC carrier.  Its role
+is sharp: no argument using only the identities proved in
+\cref{sec:four-corner} can determine the sign.
+\end{remark}
+
+\subsection{Two points on one frozen ray}
+
+\begin{example}[A nontrivial ray with constant sign]
+\label{ex:frozen-ray-two-points}
+Keep the same rows and anchor, and the erasure coordinates
+\[
+ (q,u,v)=(1,1,3).
+\]
+The point \(j_E=4\) above has
+\[
+ (Q_m,Q_n)=(13,7).
+\]
+\Cref{thm:erasure-ray} gives the candidate ray
+\[
+ j_E=4+3z,\qquad Q_m=13+9z,\qquad Q_n=7+5z.
+\]
+At \(z=2\), this gives
+\[
+ j_E=10,\qquad Q_m=31,\qquad Q_n=17,
+\]
+and indeed
+\[
+ 3\cdot10+1=31\cdot1,\qquad
+ 5\cdot10+1=17\cdot3.
+\]
+Both \(z=0\) and \(z=2\) are squarefree largest-prime points, and both
+have sign \(-1\).  The intermediate candidate \(z=1\) is deleted because
+\(Q_m=22\) is not prime.  Thus primality thins the ray but does not change
+its arithmetic sign.
+\end{example}
+
+\subsection{Kernel-level obstruction}
+
+\begin{proposition}[No cancellation from the coordinate change alone]
+\label{prop:kernel-level-no-go}
+For every finite set
+\[
+ \Omega\subset
+ \{(u,v)\in\N^2:(u,v)=1,\ (u,v)\ne(b,a)\}
+\]
+on which \(\mu(u)\mu(v)=\sigma\in\{-1,1\}\), there is a nonnegative kernel
+\(K\) supported on \(\Omega\) for which
+\begin{equation}
+ \left|
+ \sum_{(u,v)}\mu(u)\mu(v)K(u,v)
+ \right|
+ =
+ \sum_{(u,v)}K(u,v).
+ \label{eq:kernel-no-cancellation}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Choose any nonzero nonnegative function \(K\) supported on \(\Omega\).
+The signed sum is \(\sigma\sum K\), proving the identity.
+\end{proof}
+
+The proposition is an abstract sharpness model, not a claim about the
+actual physical kernel.  It proves that divisor compression and primitive
+coordinates alone cannot imply a signed saving.  A future theorem must use
+additional regularity, distribution, or phase structure of the literal
+kernel.
+
+\subsection{Three common invalid inferences}
+
+\begin{enumerate}[label=\textup{(\arabic*)},leftmargin=3em]
+ \item From \(t,q\mid H\) one cannot infer that there are only
+       divisor-many rectangles: the primitive pair \((u,v)\), the ray
+       points, and the complete native labels remain.
+ \item From \(t\mid H\) and \(q\mid H\) one cannot infer \(tq\mid H\).
+       The exact cross relation only gives \(tq\mid H\Delta\).
+ \item From two nonproportional prime forms one cannot infer signed
+       cancellation.  Upper-bound sieves control their population, while
+       the sign \(\mu(u)\mu(v)\) is constant on the whole ray.
+\end{enumerate}

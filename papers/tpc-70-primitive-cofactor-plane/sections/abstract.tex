@@ -1,0 +1,65 @@
+\begin{abstract}
+The first signed mixed term in a fixed-shift missing-native Gram is a
+two-key rectangle: one key joins two source rows through equal residual
+labels, while a second key joins the same rows through unequal residual
+labels.  We give an exact arithmetic normal form for every such rectangle.
+For distinct primitive rows \(m,n\), put
+\[
+ H=h_0(n-m),\qquad \Delta=j_E-j_R,
+\]
+where \(j_R\) and \(j_E\) are the same-residual and erasure times.  The four
+targets satisfy
+\[
+ nA_m-mA_n=nB_m-mB_n=H,\qquad
+ A_mB_n-B_mA_n=H\Delta.
+\]
+Write the fixed row divisors as
+\[
+ d_m=ga,\qquad d_n=gb,\qquad (a,b)=1.
+\]
+If the anchor cofactors obey \(d_mR_m=d_nR_n\), then squarefreeness forces
+\[
+ R_m=bt,\qquad R_n=at,\qquad t\mid H.
+\]
+For fixed \(t\), all physical anchor solutions lie on one affine ray
+\[
+ j_R=j_{R,0}+abt\,z,\quad
+ P_m=P_{m,0}+ma\,z,\quad
+ P_n=P_{n,0}+nb\,z.
+\]
+At the erasure key, write
+\[
+ q=(S_m,S_n),\qquad S_m=qu,\qquad S_n=qv,\qquad (u,v)=1.
+\]
+Then \(q\mid H\), and unequal residual labels are equivalent to
+\((u,v)\ne(b,a)\).  For fixed \(q,u,v\), all physical erasure solutions lie
+on one ray
+\[
+ j_E=j_{E,0}+quv\,z,\quad
+ Q_m=Q_{m,0}+mv\,z,\quad
+ Q_n=Q_{n,0}+nu\,z.
+\]
+The four target M\"obius signs reduce exactly to
+\[
+ \mu(a)\mu(b)\mu(u)\mu(v).
+\]
+In particular, the arithmetic sign is constant along each prime ray.
+After retaining every native mask, coefficient, and phase in a literal
+kernel \(K_{\mathfrak a,q}(u,v)\), the rectangle sum becomes the exact
+primitive-plane transform
+\[
+ \mu(a)\mu(b)
+ \sum_{q\mid |H|}
+ \sum_{\substack{(u,v)=1\\(u,v)\ne(b,a)}}
+ \mu(u)\mu(v)K_{\mathfrak a,q}(u,v).
+\]
+Thus common content is compressed to divisor-many \(t,q\), but the
+variable sign survives across the two-dimensional primitive cofactor
+plane, not along the time variable.  Brun--Selberg bounds can thin each
+prime ray only unsignedly.  Explicit squarefree largest-prime rectangles
+show that the determinant identities admit both signs.  The paper proves
+exact algebra and an exact physical reindexing; it does not prove
+cancellation in the cofactor plane, a native operator bound, parity
+breaking, a prime-pair
+theorem, or a twin-prime result.
+\end{abstract}

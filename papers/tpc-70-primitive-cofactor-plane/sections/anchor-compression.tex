@@ -1,0 +1,99 @@
+\section{Same-residual divisor compression}
+\label{sec:anchor-compression}
+
+The equal-residual edge is much more rigid than a generic pair of
+cofactors.
+
+\subsection{Primitive row-divisor coordinates}
+
+Write
+\begin{equation}
+ g:=(d_m,d_n),\qquad
+ d_m=ga,\qquad d_n=gb.
+ \label{eq:row-divisor-coordinates}
+\end{equation}
+Then \((a,b)=1\).  Since \(d_m,d_n\) are squarefree, the three integers
+\(g,a,b\) are squarefree and pairwise coprime.
+
+\begin{theorem}[Exact anchor compression]
+\label{thm:anchor-compression}
+Under \eqref{eq:same-residual-anchor} and the squarefree support
+\eqref{eq:squarefree-residuals}, there is a unique positive integer \(t\)
+such that
+\begin{equation}
+ \boxed{R_m=bt,\qquad R_n=at.}
+ \label{eq:anchor-cofactor-compression}
+\end{equation}
+Moreover \(t\) is squarefree, is coprime to \(gab\), and
+\begin{equation}
+ \boxed{t\mid |H|.}
+ \label{eq:t-divides-H}
+\end{equation}
+The two largest-prime labels obey the exact line
+\begin{equation}
+ \boxed{nbP_m-maP_n=\frac{H}{t}.}
+ \label{eq:anchor-prime-line}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The residual equality and \eqref{eq:row-divisor-coordinates} give
+\[
+ aR_m=bR_n.
+\]
+Because \((a,b)=1\), one has \(b\mid R_m\) and \(a\mid R_n\).  Write
+\[
+ R_m=bt_m,\qquad R_n=at_n.
+\]
+Substitution gives \(t_m=t_n\), proving
+\eqref{eq:anchor-cofactor-compression} and uniqueness.
+
+The common residual is
+\[
+ d_mR_m=d_nR_n=gabt.
+\]
+It is squarefree by \eqref{eq:squarefree-residuals}.  Therefore \(t\) is
+squarefree and coprime to \(gab\).  Substituting
+\eqref{eq:anchor-cofactor-compression} into
+\eqref{eq:anchor-prime-determinant} gives
+\[
+ t(nbP_m-maP_n)=H.
+\]
+This proves \eqref{eq:t-divides-H} and
+\eqref{eq:anchor-prime-line}.
+\end{proof}
+
+\begin{corollary}[Divisor-many common residual cores]
+\label{cor:divisor-many-anchor-cores}
+For fixed \(m,n,h_0,d_m,d_n\), the scale \(t\) of an actual
+same-residual anchor belongs to the finite set
+\[
+ \{t\in\N:t\mid |h_0(n-m)|\}.
+\]
+Hence the number of possible \(t\)-values is at most
+\(\tau(|h_0(n-m)|)\).  If a physical cofactor window forces
+\(t>|H|\), that row pair has no same-residual anchor in the window.
+\end{corollary}
+
+\begin{remark}[What is and is not compressed]
+\label{rem:anchor-compression-scope}
+The parameter \(t\) records the entire common residual after the fixed
+row factors \(g,a,b\) are removed.  The theorem does not remove the
+largest-prime constraints, the native-key labels, or the literal
+coefficient weights.  In particular, \(\tau(|H|)\) is a count of
+arithmetic core types, not a bound for the number or total mass of
+physical rectangles.
+\end{remark}
+
+\subsection{A first cross-determinant consequence}
+
+The same-residual substitution also rewrites the cross determinant as
+\begin{equation}
+ tq\bigl(bvP_mQ_n-auQ_mP_n\bigr)=H\Delta
+ \label{eq:primitive-cross-determinant-preview}
+\end{equation}
+once the erasure coordinates \(q,u,v\) of
+\cref{sec:erasure-coordinates} are introduced.  Thus every physical
+rectangle later satisfies \(tq\mid H\Delta\).  This compatibility is
+automatic for actual targets, but it does not imply \(tq\mid H\) and it
+does not determine a M\"obius sign.

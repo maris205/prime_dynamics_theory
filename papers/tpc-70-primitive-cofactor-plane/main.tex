@@ -1,0 +1,97 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,longtable,float,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Primitive Cofactor Coordinates for Two-Key Erasure Rectangles},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact divisor compression and primitive cofactor-plane reduction for fixed-shift native rectangles},
+  pdfkeywords={fixed shift, Mobius function, largest prime factor, cofactor plane, affine prime ray, parity barrier}
+}
+
+\setlength{\parindent}{1.35em}
+\setlength{\parskip}{0.12em}
+\setlist{itemsep=0.22em,topsep=0.35em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conditional}[theorem]{Conditional input}
+\crefname{conditional}{conditional input}{conditional inputs}
+\Crefname{conditional}{Conditional input}{Conditional inputs}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Pplus}{P^{+}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\mathfrakA}{\mathfrak a}
+
+\title{Primitive Cofactor Coordinates for Two-Key Erasure Rectangles:\\
+Divisor Compression, Frozen Prime Rays, and the Residual M\"obius Plane}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\noindent\textbf{Keywords:} fixed shift; largest prime factor; residual
+cofactor; M\"obius function; affine prime ray; divisor compression;
+parity barrier.\\[0.45em]
+\noindent\textbf{Convention.} The arithmetic specialization retains one
+fixed nonzero shift \(h_0\), every complete native output label, the actual
+squarefree carrier, and raw atomic normalization.  The shift is not set to
+\(2\).\\[0.45em]
+\noindent\textbf{MSC 2020:} Primary 11N35, 11B25; Secondary 11N36, 15A18.
+
+\input{sections/introduction}
+\input{sections/physical-interface}
+\input{sections/four-corner}
+\input{sections/anchor-compression}
+\input{sections/erasure-coordinates}
+\input{sections/rays-and-signs}
+\input{sections/cofactor-plane}
+\input{sections/sieve-boundary}
+\input{sections/counterexamples}
+\input{sections/literature-boundary}
+\input{sections/operator-ledger}
+\input{sections/claim-boundary}
+
+\clearpage
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

@@ -1,0 +1,115 @@
+\section{Existing-theorem boundary}
+\label{sec:literature-boundary}
+
+The primitive-plane transform changes the analytic shape of the problem.
+It does not solve it.  We record which standard inputs are genuinely
+available and which interfaces remain unmatched.
+
+\subsection{Unconditional Mertens cancellation is available only through
+the kernel}
+
+The prime number theorem is equivalent to
+\begin{equation}
+ M(x):=\sum_{n\le x}\mu(n)=o(x).
+ \label{eq:mertens-pnt}
+\end{equation}
+Consequently a sufficiently regular product-like kernel can be treated by
+one- or two-dimensional summation by parts.  Formula
+\eqref{eq:primitive-plane-transform} makes this possibility visible:
+the variable sign is the separable product \(\mu(u)\mu(v)\).
+
+However, \eqref{eq:mertens-pnt} does not control
+\[
+ \sum_{u,v}\mu(u)\mu(v)K(u,v)
+\]
+for an arbitrary bounded or sign-correlated kernel.  The literal
+\(K_{\mathfrak a,q}\) includes prime-ray solvability, largest-prime
+conditions, ragged cofactor ranges, missing masks, and complex weights.
+A proof must charge the boundary and variation produced by these
+features.  This is the precise reason the Mertens theorem is not silently
+inserted into \cref{thm:primitive-plane-transform}.
+
+\subsection{Nearby correlation theorems}
+
+TPC--33 gives a detailed comparison between the physical fixed-determinant
+families and existing Chowla--Elliott technology
+\citep{WangTPC33}.  The relevant theorem forms include:
+\begin{itemize}
+ \item Tao's logarithmically averaged two-point theorem for fixed
+       nonproportional affine forms \citep{Tao2016LogChowla};
+ \item the Matom\"aki--Radziwi\l\l--Tao averaged Chowla theorem, which
+       includes an additional averaging parameter
+       \citep{MatomakiRadziwillTao2015}; and
+ \item the Frantzikinakis--Host mean-zero theorem for fixed independent
+       linear forms on a full multidimensional box
+       \citep{FrantzikinakisHost2017}.
+\end{itemize}
+These results are strong precedents, but none is invoked here as a bound
+for \eqref{eq:dyadic-primitive-plane-target}.  As stated in the cited
+sources, they do not simultaneously supply all of:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item the actual finite, ragged \((u,v)\)-support;
+ \item coefficients and ray slopes growing with the physical scale;
+ \item the hard two-prime and largest-prime masks inside \(K\);
+ \item every complete native block and literal complex weight; and
+ \item the uniform row, anchor, and divisor scope needed by the operator
+       ledger.
+\end{enumerate}
+This statement compares the displayed theorem forms with the present
+interface; it is not a claim that no future combination or refinement of
+those methods can apply.
+
+\subsection{The classical parity boundary}
+
+Brun--Selberg sieves provide the unsigned ray estimate in
+\cref{prop:fixed-ray-sieve-boundary}.  They do not distinguish the two
+values of \(\mu(u)\mu(v)\).  This is the familiar sign-sensitive boundary
+of sieve theory; see the classical parity discussion in
+\citep{HeathBrown1982Parity}.  Our coordinate change does not evade that
+boundary.  It identifies the exact two-dimensional location at which an
+additional input would have to act.
+
+\begin{table}[H]
+\centering
+\caption{Available inputs and the remaining primitive-plane interface.}
+\label{tab:literature-boundary}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}
+>{\raggedright\arraybackslash}p{0.28\textwidth}
+>{\raggedright\arraybackslash}p{0.40\textwidth}@{}}
+\toprule
+Input & What it controls & What remains here \\
+\midrule
+Prime number theorem
+& \(M(x)=o(x)\)
+& two-dimensional boundary and variation of the actual ragged kernel \\
+Brun--Selberg upper bound
+& population on one fixed prime ray
+& sign is frozen on that ray; growing-family weighted uniformity \\
+Two-point logarithmic Chowla
+& fixed affine forms under logarithmic averaging
+& physical dyadic kernel, growing slopes, native masks, and operator scope \\
+Full-box multiplicative averages
+& fixed independent forms on a full box
+& determinant-coupled prime-ray kernel on a nonrectangular support \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{A precise positive route}
+
+The literature boundary is not purely negative.  It suggests a concrete
+test.  Zero-extend \(K_{\mathfrak a,q}\) on each dyadic cofactor box and
+prove a two-dimensional Abel identity whose right-hand side contains:
+\begin{enumerate}[label=\textup{(\arabic*)},leftmargin=3em]
+ \item products of Mertens partial sums;
+ \item mixed finite differences of \(K_{\mathfrak a,q}\);
+ \item four edge terms and four corner terms; and
+ \item explicit jumps created by primitive, prime-line, and missing
+       indicators.
+\end{enumerate}
+If the resulting variation and boundary total is smaller than the
+literal \(\ell^1\) mass in the required uniform scope, it yields a genuine
+L2 saving.  If the hard masks force variation comparable to the full
+mass, this route stops cleanly and the failure is itself a rigorous
+boundary result.

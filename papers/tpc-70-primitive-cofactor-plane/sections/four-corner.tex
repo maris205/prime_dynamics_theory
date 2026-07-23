@@ -1,0 +1,84 @@
+\section{The exact four-corner algebra}
+\label{sec:four-corner}
+
+Set
+\begin{equation}
+ H:=h_0(n-m),\qquad
+ \Delta:=j_E-j_R.
+ \label{eq:H-Delta}
+\end{equation}
+Since \(m\ne n\) and \(h_0\ne0\), one has \(H\ne0\).
+
+\begin{theorem}[Four-corner identities]
+\label{thm:four-corner-identities}
+The targets in \eqref{eq:anchor-targets}--\eqref{eq:erasure-targets}
+satisfy
+\begin{align}
+ nA_m-mA_n&=H,
+ \label{eq:anchor-determinant}\\
+ nB_m-mB_n&=H,
+ \label{eq:erasure-determinant}\\
+ B_m-A_m&=m\Delta,
+ \label{eq:m-vertical-difference}\\
+ B_n-A_n&=n\Delta,
+ \label{eq:n-vertical-difference}\\
+ A_mB_n-B_mA_n&=H\Delta.
+ \label{eq:cross-determinant}
+\end{align}
+Equivalently, after exposing the four largest primes,
+\begin{align}
+ nP_mR_m-mP_nR_n&=H,
+ \label{eq:anchor-prime-determinant}\\
+ nQ_mS_m-mQ_nS_n&=H,
+ \label{eq:erasure-prime-determinant}\\
+ P_mR_mQ_nS_n-Q_mS_mP_nR_n&=H\Delta.
+ \label{eq:prime-cross-determinant}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Substitution gives
+\[
+ nA_m-mA_n
+ =n(mj_R+h_0)-m(nj_R+h_0)
+ =h_0(n-m)=H,
+\]
+and the same calculation at \(j_E\) proves
+\eqref{eq:erasure-determinant}.  Subtracting the targets on each row
+proves \eqref{eq:m-vertical-difference} and
+\eqref{eq:n-vertical-difference}.  Finally,
+\begin{align*}
+ A_mB_n-B_mA_n
+ &=(mj_R+h_0)(nj_E+h_0)
+   -(mj_E+h_0)(nj_R+h_0)\\
+ &=h_0(n-m)(j_E-j_R)
+ =H\Delta.
+\end{align*}
+The prime-cofactor forms are the same identities after using
+\eqref{eq:anchor-targets}--\eqref{eq:erasure-targets}.
+\end{proof}
+
+\begin{corollary}[A two-time compatibility identity]
+\label{cor:two-time-compatibility}
+Every rectangle satisfies
+\begin{equation}
+ n(Q_mS_m-P_mR_m)
+ =
+ m(Q_nS_n-P_nR_n).
+ \label{eq:two-time-compatibility}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Subtract \eqref{eq:anchor-prime-determinant} from
+\eqref{eq:erasure-prime-determinant}.
+\end{proof}
+
+\begin{remark}[Identities are not estimates]
+\label{rem:determinants-not-estimates}
+The five relations are exact and useful for reindexing.  They neither
+restrict the sign of a rectangle nor provide cancellation.  Indeed,
+\cref{sec:counterexamples} gives two rectangles with identical
+\((m,n,h_0,j_R)\) and opposite signs, both satisfying all five
+identities.
+\end{remark}

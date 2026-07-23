@@ -1,0 +1,199 @@
+\section{The exact primitive cofactor-plane transform}
+\label{sec:cofactor-plane}
+
+We now group the literal rectangle sum without dropping any native label.
+
+\subsection{Anchored rectangles}
+
+Fix \(m<n\).  A \emph{same-residual anchor}
+\(\mathfrak a\) consists of:
+\[
+ \mathfrak a
+ =
+ (m,n,\iota_R,j_R,P_m,P_n,R_m,R_n,t)
+\]
+together with its two literal corner coefficients.  Every entry is
+recovered from an actual complete native key satisfying
+\eqref{eq:same-residual-anchor}.  Let \(\cR_{m,n}\) be the finite set of
+such anchors.
+
+For a fixed anchor, let \(\cE(\mathfrak a)\) be the finite set of actual
+erasure keys \(\iota_E\) completing the other two corners and satisfying
+\eqref{eq:unequal-residual-erasure}.  Define the oriented anchored sum
+\begin{equation}
+ \mathfrak X_{\mathfrak a}
+ :=
+ \sum_{\iota_E\in\cE(\mathfrak a)}
+ \mu(d_mS_m(\iota_E))
+ \mu(d_nS_n(\iota_E))
+ \cA(\iota_E,\iota_R;m,n).
+ \label{eq:anchored-rectangle-sum}
+\end{equation}
+With the oriented convention of \cref{sec:physical-interface},
+\begin{equation}
+ \tr(ER)
+ =
+ 2\operatorname{Re}
+ \sum_{m<n}\sum_{\mathfrak a\in\cR_{m,n}}
+ \mathfrak X_{\mathfrak a}.
+ \label{eq:trace-by-anchors}
+\end{equation}
+
+\subsection{The literal ray kernel}
+
+Fix \(\mathfrak a\), a positive divisor \(q\mid |H|\), and positive
+coprime integers \(u,v\).  If an erasure ray with these coordinates is
+nonempty, choose one arithmetic representative
+\[
+ (j_{E,0},Q_{m,0},Q_{n,0}).
+\]
+Every actual key in that fiber has the form
+\[
+ j_E=j_{E,0}+quv\,z,\qquad
+ Q_m=Q_{m,0}+mv\,z,\qquad
+ Q_n=Q_{n,0}+nu\,z.
+\]
+Define
+\begin{equation}
+\begin{aligned}
+ K_{\mathfrak a,q}(u,v)
+ &:=
+ \sum_{z\in\Z}
+ \ \sum_{\substack{\iota_E\in\cE(\mathfrak a)\\
+                    j(\iota_E)=j_{E,0}+quv z\\
+                    (S_m(\iota_E),S_n(\iota_E))=(qu,qv)}}
+ \cA(\iota_E,\iota_R;m,n).
+\end{aligned}
+\label{eq:literal-ray-kernel}
+\end{equation}
+If no representative exists, set \(K_{\mathfrak a,q}(u,v)=0\).
+This definition is independent of the chosen representative, since
+changing it only translates \(z\).
+
+The kernel in \eqref{eq:literal-ray-kernel} retains:
+\begin{itemize}
+ \item both affine primality and largest-prime conditions;
+ \item all squarefree and coprimality conditions not displayed outside the
+       kernel;
+ \item the actual finite cofactor and time ranges;
+ \item side, block, opposite-row, \(\gamma\), missing, first-failure, and
+       endpoint masks;
+ \item all four literal complex coefficients; and
+ \item raw atomic normalization by \(W_mW_n\).
+\end{itemize}
+It is therefore a ragged, generally complex kernel.  No positivity,
+smoothness, product structure, or low variation is assumed.
+
+\begin{theorem}[Exact primitive-plane transform]
+\label{thm:primitive-plane-transform}
+For every same-residual anchor \(\mathfrak a\),
+\begin{equation}
+\boxed{
+ \mathfrak X_{\mathfrak a}
+ =
+ \mu(a)\mu(b)
+ \sum_{q\mid |H|}
+ \ \sum_{\substack{u,v\ge1\\(u,v)=1\\(u,v)\ne(b,a)}}
+ \mu(u)\mu(v)K_{\mathfrak a,q}(u,v).}
+\label{eq:primitive-plane-transform}
+\end{equation}
+All sums are finite because the physical carrier is finite.
+\end{theorem}
+
+\begin{proof}
+Every \(\iota_E\in\cE(\mathfrak a)\) has a unique triple
+\[
+ q=(S_m,S_n),\qquad u=S_m/q,\qquad v=S_n/q.
+\]
+By \cref{thm:erasure-divisor-line}, this triple satisfies
+\[
+ q\mid |H|,\qquad (u,v)=1,\qquad (u,v)\ne(b,a).
+\]
+Conversely, the kernel in \eqref{eq:literal-ray-kernel} contains exactly
+the actual erasure keys with the displayed coordinates.  Thus the
+right-hand side partitions \(\cE(\mathfrak a)\) without omission or
+multiplicity.  Finally, \cref{thm:primitive-cofactor-sign} replaces the
+residual sign on each part by
+\(\mu(a)\mu(b)\mu(u)\mu(v)\).
+\end{proof}
+
+\begin{corollary}[Complete rectangle transform]
+\label{cor:complete-rectangle-transform}
+The first mixed trace has the exact expansion
+\begin{equation}
+\boxed{
+\begin{aligned}
+ \tr(ER)
+ =2\operatorname{Re}
+ \sum_{m<n}
+ \sum_{\mathfrak a\in\cR_{m,n}}
+ \mu(a)\mu(b)
+ \sum_{q\mid |h_0(n-m)|}
+ \sum_{\substack{(u,v)=1\\(u,v)\ne(b,a)}}
+ \mu(u)\mu(v)K_{\mathfrak a,q}(u,v).
+\end{aligned}}
+\label{eq:complete-primitive-plane-transform}
+\end{equation}
+\end{corollary}
+
+\subsection{The exact location of possible cancellation}
+
+For a fixed primitive pair, \cref{cor:frozen-ray-sign} gives
+\begin{equation}
+\begin{aligned}
+ &\left|
+ \mu(a)\mu(b)\mu(u)\mu(v)
+ K_{\mathfrak a,q}(u,v)
+ \right|
+ =
+ |K_{\mathfrak a,q}(u,v)|.
+\end{aligned}
+\label{eq:fiber-absolute-value}
+\end{equation}
+Thus grouping or estimating the \(z\)-fiber cannot by itself create
+M\"obius cancellation.  It may create complex-phase cancellation inside
+\(K\), but the arithmetic sign is a scalar outside the fiber.
+
+A genuine signed estimate must control a sum of the form
+\begin{equation}
+ \sum_{\substack{u\sim U,\ v\sim V\\(u,v)=1\\(u,v)\ne(b,a)}}
+ \mu(u)\mu(v)K_{\mathfrak a,q}(u,v)
+ \label{eq:dyadic-primitive-plane-target}
+\end{equation}
+uniformly over the actual growing family of rows, anchors, divisors,
+blocks, and coefficient profiles.  Small or boundary values of \(u,v\)
+are part of the physical support; the notation \(u\sim U,v\sim V\) is only
+a possible later dyadic partition, not a hypothesis of this paper.
+
+\begin{remark}[Zero extension and boundary cost]
+\label{rem:zero-extension-boundary-cost}
+One may extend \(K_{\mathfrak a,q}\) by zero to a rectangle in
+\(\Z_{\ge1}^2\) and absorb the primitive and excluded-point indicators
+into the kernel.  This is algebraically valid.  Analytically, every jump
+created by the ragged support, hard prime-line conditions, or a missing
+mask contributes to the two-dimensional boundary or variation.  Such
+costs cannot be discarded in a later summation-by-parts argument.
+\end{remark}
+
+\subsection{A useful but unproved L2 target}
+
+Let
+\[
+ \|K\|_{\ell^1(U,V)}
+ :=
+ \sum_{\substack{u\sim U\\v\sim V}}|K(u,v)|.
+\]
+A representative L2 input would be a number \(\eta_X=o(1)\) such that
+\begin{equation}
+ \left|
+ \sum_{\substack{u\sim U,\ v\sim V\\(u,v)=1\\(u,v)\ne(b,a)}}
+ \mu(u)\mu(v)K_{\mathfrak a,q}(u,v)
+ \right|
+ \le
+ \eta_X\,
+ \|K_{\mathfrak a,q}\|_{\ell^1(U,V)}
+ \label{eq:unproved-plane-saving}
+\end{equation}
+in the required uniform physical scope.  No estimate of the form
+\eqref{eq:unproved-plane-saving} is proved here.  It is displayed to make
+the next arithmetic door falsifiable.
