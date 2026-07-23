@@ -1,0 +1,45 @@
+{
+  "external_inputs": {
+    "rh102_audit": {
+      "path": "papers/RH-102-stopped-hybrid-quotient-clock/results/stopped_hybrid_clock_audit.json",
+      "sha256": "a23f65ffcbf93d9f8ae71dbb1394bd528ce87229d01f6e759db4168dded6c731"
+    },
+    "rh106_summary": {
+      "path": "papers/RH-106-uniform-gap-aware-quotient-law/results/summary.json",
+      "sha256": "27cfd0b1a530cec292ec22d8717e2060c94f95da4efc3c6fa943b8fa5cc6d047"
+    },
+    "rh94_audit": {
+      "path": "papers/RH-94-source-seeded-four-direction-horizon-refresh/results/source_seeded_horizon_audit.json",
+      "sha256": "e4fc68343255c9ffc997b2182c446ca73d8673906db361a3230f72f0cff05e96"
+    },
+    "rh96_audit": {
+      "path": "papers/RH-96-gap-weighted-weak-mode-quotient/results/weak_mode_quotient_audit.json",
+      "sha256": "123b4a59da8d0e640567d6b4f720dd82e157a424054c009ea6048bb4ce95c398"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "b4dc85386e2d5dfce0aa6ab5d1c1e46836c9d47d9f05948ccfd3b6fc3c1534a5",
+    "experiments/build_support_audit.py": "389a34b9bfc009f5f1488ff42b3332073e2c0a8ae05a5b327af4405962e820dd",
+    "experiments/make_figures.py": "b6701854f9c11862c903f4903453c5d687365a1678fd57d5ef9e09333e83e819",
+    "experiments/verify_archive.py": "0a8d6d55ae19fb5728b4be98befb74da4e08fc95e44bc12e7dd8a94818a74955",
+    "src/quotient_support/__init__.py": "42ca077f81e329f2238e2895d75fa2ba0f5f70c5907a66404929f1929c490968",
+    "src/quotient_support/bounds.py": "4fe2ded2a8c2384ba0a71c65d3eaee89d6a384cdac57436a465552b97f654a25",
+    "tests/test_archived_results.py": "d5d20a5e3601fea70b42a23fa63f18a3fecf352662d27fa98d5c1b9cb1715299",
+    "tests/test_theory.py": "636849db07d212fcba651743b5ff7b112157b3393f50ac63fe716ceb8dd91509"
+  },
+  "publication_artifacts": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "208f827a6e0b99348618de6208b5a7e3c8b0bc1a35edb551f5d198d6fbf358e1",
+    "THEOREM_LEDGER.md": "4b974c0cf899a0cea8bef59359dd759a78f4f36c63aefda38be09f364aeaa7fe",
+    "UPDATED_ROADMAP.md": "7736c3a2799431897e1e0c8d4f5630dbddb61b78acf746f15eb5c79ad456be20",
+    "figures/source_seeded_quotient_support.pdf": "625f0ecf8c9a273a8378956617c336f56b14164cae3b331139883f58b8655448",
+    "figures/source_seeded_quotient_support.png": "da140ae7a9badc81e57cc548ad18389316a17509e1797cd2749a084b913b02c1",
+    "main.pdf": "6f24a43e5c32dbd9dbd5987edda5b875222b0746ed70c857a150ef05464cbcb0",
+    "main.tex": "d0f1bd887be5a9c6d68697e05884557afb0190db1fb02c8ea6c3fd8be946beb9",
+    "pyproject.toml": "cf7f6e145c78780de923aecbce0f5d515f4a584d5e16ebe357ee7344bced90d8",
+    "references.bib": "4a239724b235acff89385e5631099d205884abf06ac1fb1fb64fa0787c111c60",
+    "requirements.txt": "cd2dfd8413774638b179167ae213560b0be6138f81080840f5e95c501ca3bf16",
+    "source-seeded-quotient-support-law.pdf": "6f24a43e5c32dbd9dbd5987edda5b875222b0746ed70c857a150ef05464cbcb0"
+  },
+  "status": "all_rh107_inputs_sources_and_publication_artifacts_hashed"
+}

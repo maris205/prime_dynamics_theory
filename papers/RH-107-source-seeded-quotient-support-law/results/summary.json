@@ -1,0 +1,54 @@
+{
+  "audit": {
+    "all_finite_fine_supports_empty": true,
+    "all_finite_selector_equivalences_green": true,
+    "maximum_coarse_price_upper_with_max_replay": 6.701548082174744e-08,
+    "maximum_stopped_endpoint_ratio": 1.0060328373803085,
+    "maximum_total_local_price": 7.500006057491218e-08,
+    "maximum_unrestricted_endpoint_ratio": 1.0249211926604973,
+    "minimum_fine_support_margin": 7.364933902997914,
+    "primary_fine_support_start_level": 2,
+    "threshold_count": 3,
+    "total_candidate_comparisons": 360,
+    "total_weak_mode_events": 38
+  },
+  "program_boundary": {
+    "adaptive_support_equivalence": true,
+    "all_level_fine_support_separation_proved": false,
+    "all_level_quotient_supply_closed": false,
+    "coarse_support_to_price_reduction": true,
+    "finite_extrapolation_barrier": true,
+    "five_anchor_fine_support_separation_validated": true,
+    "hilbert_polya_operator": false,
+    "riemann_hypothesis": false,
+    "stopped_sparse_supply_safety": true,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "208f827a6e0b99348618de6208b5a7e3c8b0bc1a35edb551f5d198d6fbf358e1",
+    "THEOREM_LEDGER.md": "4b974c0cf899a0cea8bef59359dd759a78f4f36c63aefda38be09f364aeaa7fe",
+    "UPDATED_ROADMAP.md": "7736c3a2799431897e1e0c8d4f5630dbddb61b78acf746f15eb5c79ad456be20",
+    "figures/source_seeded_quotient_support.pdf": "625f0ecf8c9a273a8378956617c336f56b14164cae3b331139883f58b8655448",
+    "figures/source_seeded_quotient_support.png": "da140ae7a9badc81e57cc548ad18389316a17509e1797cd2749a084b913b02c1",
+    "main.pdf": "6f24a43e5c32dbd9dbd5987edda5b875222b0746ed70c857a150ef05464cbcb0",
+    "main.tex": "d0f1bd887be5a9c6d68697e05884557afb0190db1fb02c8ea6c3fd8be946beb9",
+    "pyproject.toml": "cf7f6e145c78780de923aecbce0f5d515f4a584d5e16ebe357ee7344bced90d8",
+    "references.bib": "4a239724b235acff89385e5631099d205884abf06ac1fb1fb64fa0787c111c60",
+    "requirements.txt": "cd2dfd8413774638b179167ae213560b0be6138f81080840f5e95c501ca3bf16",
+    "source-seeded-quotient-support-law.pdf": "6f24a43e5c32dbd9dbd5987edda5b875222b0746ed70c857a150ef05464cbcb0"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "5de9f0d00ff7927917301a9dee9495774915932382be2609ce0fff7feaa252bb",
+    "results/source_seeded_support_audit.json": "cbd7f3c0c09ed9adb8bf9f7cb03b9c914572a82af8fa44e65041b50783dc02de",
+    "results/source_seeded_support_smoke.json": "4afa8b78ead22caedf5a60eb37495efdfb28a0af348f3d99bc054551e5684153"
+  },
+  "route_consequence": "For each audited threshold, all weak-mode quotient events lie in a coarse support layer and the fine support is empty. The adaptive selector equivalence makes this a direct fourth-cross-ratio statement, so no fine-scale quotient price accumulates on the archived chain. A conditional all-level support separation would reduce the uniform quotient law to finitely many coarse prices; finite anchors alone cannot prove that separation because separated and persistent-support extensions agree on every observed level.",
+  "status": "rh107_source_seeded_quotient_support_law_archived",
+  "theorem": {
+    "adaptive_support_equivalence": true,
+    "coarse_support_price_reduction": true,
+    "finite_extrapolation_barrier": true,
+    "support_reduced_stopped_endpoint": true
+  }
+}

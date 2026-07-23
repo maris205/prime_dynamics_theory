@@ -1,0 +1,236 @@
+{
+  "audit_summary": {
+    "all_finite_fine_supports_empty": true,
+    "all_finite_selector_equivalences_green": true,
+    "maximum_coarse_price_upper_with_max_replay": 3.550867869267553e-13,
+    "maximum_stopped_endpoint_ratio": 1.0011724272719218,
+    "maximum_total_local_price": 4.2966352394264777e-13,
+    "maximum_unrestricted_endpoint_ratio": 1.001172319664795,
+    "minimum_fine_support_margin": 8.221456456552742,
+    "primary_fine_support_start_level": 2,
+    "threshold_count": 1,
+    "total_candidate_comparisons": 120,
+    "total_weak_mode_events": 5
+  },
+  "events": [
+    {
+      "fourth_cross_ratio": 3.502043606540993e-10,
+      "gap_certificate_green": true,
+      "local_price_upper": 7.295064027793082e-16,
+      "side": "left",
+      "sigma": 0.16,
+      "support_margin": 0.03502043606540993,
+      "threshold": 1e-08,
+      "time": 3
+    },
+    {
+      "fourth_cross_ratio": 1.0341860405793753e-10,
+      "gap_certificate_green": true,
+      "local_price_upper": 3.723017058008169e-18,
+      "side": "left",
+      "sigma": 0.16,
+      "support_margin": 0.010341860405793752,
+      "threshold": 1e-08,
+      "time": 4
+    },
+    {
+      "fourth_cross_ratio": 3.072690645315564e-10,
+      "gap_certificate_green": true,
+      "local_price_upper": 4.278753566048609e-13,
+      "side": "right",
+      "sigma": 0.16,
+      "support_margin": 0.030726906453155636,
+      "threshold": 1e-08,
+      "time": 3
+    },
+    {
+      "fourth_cross_ratio": 1.3828848457162016e-10,
+      "gap_certificate_green": true,
+      "local_price_upper": 1.0549173808535176e-15,
+      "side": "right",
+      "sigma": 0.16,
+      "support_margin": 0.013828848457162016,
+      "threshold": 1e-08,
+      "time": 4
+    },
+    {
+      "fourth_cross_ratio": 5.655132569230243e-09,
+      "gap_certificate_green": true,
+      "local_price_upper": 2.0537095991468843e-20,
+      "side": "left",
+      "sigma": 0.08,
+      "support_margin": 0.5655132569230242,
+      "threshold": 1e-08,
+      "time": 6
+    }
+  ],
+  "finite_extrapolation": [
+    {
+      "level": 0,
+      "observed_min_ratio": 1.0341860405793753e-10,
+      "separated_extension": 1.0341860405793753e-10,
+      "threshold": 1e-08
+    },
+    {
+      "level": 1,
+      "observed_min_ratio": 5.655132569230243e-09,
+      "separated_extension": 5.655132569230243e-09,
+      "threshold": 1e-08
+    },
+    {
+      "level": 2,
+      "observed_min_ratio": 8.221456456552742e-08,
+      "separated_extension": 8.221456456552742e-08,
+      "threshold": 1e-08
+    },
+    {
+      "level": 3,
+      "observed_min_ratio": 0.0009767659416499957,
+      "separated_extension": 0.0009767659416499957,
+      "threshold": 1e-08
+    },
+    {
+      "level": 4,
+      "observed_min_ratio": 0.0007364933902997915,
+      "separated_extension": 0.0007364933902997915,
+      "threshold": 1e-08
+    },
+    {
+      "level": 5,
+      "observed_min_ratio": null,
+      "persistent_extension": 5e-09,
+      "separated_extension": 2e-08,
+      "threshold": 1e-08
+    },
+    {
+      "level": 6,
+      "observed_min_ratio": null,
+      "persistent_extension": 5e-09,
+      "separated_extension": 2e-08,
+      "threshold": 1e-08
+    },
+    {
+      "level": 7,
+      "observed_min_ratio": null,
+      "persistent_extension": 5e-09,
+      "separated_extension": 2e-08,
+      "threshold": 1e-08
+    },
+    {
+      "level": 8,
+      "observed_min_ratio": null,
+      "persistent_extension": 5e-09,
+      "separated_extension": 2e-08,
+      "threshold": 1e-08
+    }
+  ],
+  "limitations": [
+    "Fine support separation is validated only on the five archived scales.",
+    "The source-seeded cross-ratio arrays are finite numerical certificates, not an analytic asymptotic theorem.",
+    "The coarse price reduction still uses the archived replay multipliers for its finite audit.",
+    "No Stage A, Hilbert--Polya, zero-identification, or Riemann Hypothesis result is claimed."
+  ],
+  "route_consequence": "For each audited threshold, all weak-mode quotient events lie in a coarse support layer and the fine support is empty. The adaptive selector equivalence makes this a direct fourth-cross-ratio statement, so no fine-scale quotient price accumulates on the archived chain. A conditional all-level support separation would reduce the uniform quotient law to finitely many coarse prices; finite anchors alone cannot prove that separation because separated and persistent-support extensions agree on every observed level.",
+  "status": "rh107_source_seeded_quotient_support_audit",
+  "theorem_boundary": {
+    "adaptive_support_equivalence": true,
+    "all_level_fine_support_separation_proved": false,
+    "all_level_quotient_supply_closed": false,
+    "coarse_support_to_price_reduction": true,
+    "finite_extrapolation_barrier": true,
+    "five_anchor_fine_support_separation_validated": true,
+    "hilbert_polya_operator": false,
+    "riemann_hypothesis": false,
+    "stopped_sparse_supply_safety": true,
+    "uniform_stage_A_closed": false
+  },
+  "thresholds": [
+    {
+      "all_selector_equivalences_green": true,
+      "candidate_count": 5,
+      "coarse_event_count": 5,
+      "coarse_price_upper_with_max_replay": 3.550867869267553e-13,
+      "event_count_by_scale": [
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      "fine_event_count": 0,
+      "fine_support_start_level": 2,
+      "fine_support_start_sigma": 0.04,
+      "maximum_local_price": 4.278753566048609e-13,
+      "maximum_replay_multiplier": 0.16597674133155313,
+      "maximum_stopped_endpoint_ratio": 1.0011724272719218,
+      "maximum_unrestricted_endpoint_ratio": 1.001172319664795,
+      "minimum_fine_fourth_cross_ratio": 8.221456456552742e-08,
+      "minimum_fine_support_margin": 8.221456456552742,
+      "scale_records": [
+        {
+          "all_local_certificates_green": true,
+          "level": 0,
+          "local_price_sum": 4.2966350340555177e-13,
+          "maximum_fourth_cross_ratio": 1.212879877923376e-05,
+          "maximum_local_price": 4.278753566048609e-13,
+          "minimum_event_support_margin": 0.010341860405793752,
+          "minimum_fourth_cross_ratio": 1.0341860405793753e-10,
+          "sigma": 0.16,
+          "update_count": 8,
+          "weak_event_count": 4
+        },
+        {
+          "all_local_certificates_green": true,
+          "level": 1,
+          "local_price_sum": 2.0537095991468843e-20,
+          "maximum_fourth_cross_ratio": 0.058767918935713946,
+          "maximum_local_price": 2.0537095991468843e-20,
+          "minimum_event_support_margin": 0.5655132569230242,
+          "minimum_fourth_cross_ratio": 5.655132569230243e-09,
+          "sigma": 0.08,
+          "update_count": 12,
+          "weak_event_count": 1
+        },
+        {
+          "all_local_certificates_green": true,
+          "level": 2,
+          "local_price_sum": 0,
+          "maximum_fourth_cross_ratio": 0.1337671307547641,
+          "maximum_local_price": 0.0,
+          "minimum_event_support_margin": null,
+          "minimum_fourth_cross_ratio": 8.221456456552742e-08,
+          "sigma": 0.04,
+          "update_count": 22,
+          "weak_event_count": 0
+        },
+        {
+          "all_local_certificates_green": true,
+          "level": 3,
+          "local_price_sum": 0,
+          "maximum_fourth_cross_ratio": 0.24250101875140237,
+          "maximum_local_price": 0.0,
+          "minimum_event_support_margin": null,
+          "minimum_fourth_cross_ratio": 0.0009767659416499957,
+          "sigma": 0.02,
+          "update_count": 34,
+          "weak_event_count": 0
+        },
+        {
+          "all_local_certificates_green": true,
+          "level": 4,
+          "local_price_sum": 0,
+          "maximum_fourth_cross_ratio": 0.3214418458099968,
+          "maximum_local_price": 0.0,
+          "minimum_event_support_margin": null,
+          "minimum_fourth_cross_ratio": 0.0007364933902997915,
+          "sigma": 0.01,
+          "update_count": 44,
+          "weak_event_count": 0
+        }
+      ],
+      "stopped_rejected_count": 0,
+      "threshold": 1e-08,
+      "total_local_price": 4.2966352394264777e-13
+    }
+  ]
+}
