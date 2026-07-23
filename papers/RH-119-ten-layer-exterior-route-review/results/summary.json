@@ -1,0 +1,196 @@
+{
+  "audit": {
+    "closed_route_count": 4,
+    "constructive_layer_count": 6,
+    "each_physical_packet_individually_completes_conditional_graph": true,
+    "eventual_support_reachable": false,
+    "finite_actual_support_count": 322,
+    "finite_adaptive_support_count": 322,
+    "finite_archive_support_reachable": true,
+    "frontier_packet_count": 3,
+    "layer_count": 10,
+    "mathematical_minimal_frontier_count": 3,
+    "negative_layer_count": 2,
+    "proved_frontier_packet_count": 0,
+    "synthesis_layer_count": 2,
+    "theorem_check_failure_count": 0,
+    "upstream_archive_count": 9,
+    "validated_minimal_frontier_count": 3
+  },
+  "closed_routes": [
+    {
+      "reason": "sharply dominated by product Weyl",
+      "route": "global norm-only wedge perturbation as an improvement",
+      "source": "RH-112"
+    },
+    {
+      "reason": "exact blindness example",
+      "route": "arbitrary fixed-frame universal positive capture",
+      "source": "RH-113"
+    },
+    {
+      "reason": "outward-admissibility failure on one weak record",
+      "route": "unguarded fusion of independently rounded Gram assemblies",
+      "source": "RH-115"
+    },
+    {
+      "reason": "bounded smooth continuations have incompatible limits",
+      "route": "finite-anchor fitting as an all-level proof",
+      "source": "RH-117"
+    }
+  ],
+  "factor_ledger": {
+    "composite_rule": "maximum of outward-admitted lower bounds",
+    "core_identity": "q4 = nu4 / Lambda23",
+    "definitions": [
+      "nu4 = q2*q3*q4",
+      "Lambda23 = q2*q3"
+    ],
+    "directional_variant": "nu4 >= (1-gamma_upper)^4 * frame_volume_lower",
+    "trace_variant": "nu4^2 = Theta4 / kappa4"
+  },
+  "physical_frontier": [
+    {
+      "comment": "logically shortest, but close to restating the desired support margin",
+      "packet": "direct_margin_packet",
+      "primitive_count": 1,
+      "research_priority": 2
+    },
+    {
+      "comment": "best structural route; PSD tail geometry and finite directional gains are available",
+      "packet": "directional_rayleigh_packet",
+      "primitive_count": 3,
+      "research_priority": 1
+    },
+    {
+      "comment": "rigorous but currently never wins the finite composite maximum",
+      "packet": "trace_concentration_packet",
+      "primitive_count": 3,
+      "research_priority": 3
+    }
+  ],
+  "program_boundary": {
+    "all_level_outward_admissibility_proved": false,
+    "eventual_fourth_mode_support_proved": false,
+    "finite_archive_support_complete": true,
+    "hilbert_polya_operator": false,
+    "proof_frontier_antichain_identified": true,
+    "riemann_hypothesis": false,
+    "ten_layer_factor_ledger_verified": true,
+    "uniform_stage_A_closed": false,
+    "zeta_zero_identification": false
+  },
+  "proof_graph": {
+    "mathematical_minimal_missing_sets": [
+      [
+        "direct_margin_packet"
+      ],
+      [
+        "directional_rayleigh_packet"
+      ],
+      [
+        "trace_concentration_packet"
+      ]
+    ],
+    "proved_nodes": [
+      "capacity_gate",
+      "conditional_liminf_theorem",
+      "directional_factor",
+      "factor_identity",
+      "finite_anchor_nonidentifiability",
+      "finite_archive_support",
+      "monotone_maximum",
+      "nested_depth_first_passage",
+      "outward_degradation_rule",
+      "trace_conversion",
+      "trace_identity"
+    ],
+    "reached_nodes": [
+      "capacity_gate",
+      "conditional_liminf_theorem",
+      "directional_factor",
+      "factor_identity",
+      "finite_anchor_nonidentifiability",
+      "finite_archive_support",
+      "monotone_maximum",
+      "nested_depth_first_passage",
+      "outward_degradation_rule",
+      "trace_conversion",
+      "trace_identity"
+    ],
+    "rules": {
+      "eventual_fourth_mode_support": [
+        [
+          "conditional_liminf_theorem",
+          "direct_margin_packet"
+        ],
+        [
+          "conditional_liminf_theorem",
+          "trace_concentration_packet"
+        ],
+        [
+          "conditional_liminf_theorem",
+          "directional_rayleigh_packet"
+        ]
+      ],
+      "validated_eventual_fourth_mode_support": [
+        [
+          "eventual_fourth_mode_support",
+          "all_level_outward_admissibility"
+        ]
+      ]
+    },
+    "single_packet_addition_audit": {
+      "direct_margin_packet": true,
+      "directional_rayleigh_packet": true,
+      "trace_concentration_packet": true
+    },
+    "validated_minimal_missing_sets": [
+      [
+        "all_level_outward_admissibility",
+        "direct_margin_packet"
+      ],
+      [
+        "all_level_outward_admissibility",
+        "directional_rayleigh_packet"
+      ],
+      [
+        "all_level_outward_admissibility",
+        "trace_concentration_packet"
+      ]
+    ]
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "8af6bd0041082e60c1ebc419c2dcad2bfcdc768f75874a32022fb25735912492",
+    "THEOREM_LEDGER.md": "5fccfc8734abc6ac1316f6c84d86f81326e7e3a105d113ccc6fff85b646bd2ea",
+    "UPDATED_ROADMAP.md": "0d906b65f5940e2364e747eb3b1f3f2e20c565dd41472f20c47201946d4305b8",
+    "figures/ten_layer_exterior_route_review.pdf": "7f5f9c3b15bdf2b030ac3f00d7303e0944cbfb2dcaa0d740eebecd215609d507",
+    "figures/ten_layer_exterior_route_review.png": "7f9a106c56fb8eedf36569ecf9d6900294b137d904d59f5059e96d1068338815",
+    "main.pdf": "42700440c0bf39a54080998b03e0819dd04726ca804cf99c6df525e1c2b01a74",
+    "main.tex": "8afa11a1ee12d53392107c83803cf676018765ac6e821c2cb6de18168de34e80",
+    "pyproject.toml": "0e12debeeb7a4db5ff89efe50fd36693f33513b843b497ecbe2f990c7cae2b74",
+    "references.bib": "ed28e9ee163e4b9902a59f550ed2fd13a32fcb02b0f5712f4de0ae0b4137e38a",
+    "requirements.txt": "44f068d0df72a1cfee6232f18a998bfa62b664807c6080247cc07d6453065dbe",
+    "ten-layer-exterior-route-review.pdf": "42700440c0bf39a54080998b03e0819dd04726ca804cf99c6df525e1c2b01a74"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "8de391e9521c87e2efacf9aca29e444068547edba87f7b3f7543c501edec85be",
+    "results/ten_layer_review_audit.json": "0d0256bf4ea31a27ce4d197662286fd0f77d974b177c0f7bfadb4cea64e1505c",
+    "results/ten_layer_review_smoke.json": "2a7e923c04fc27a4acfdffc3859eb91bb05babdf223e4901bbb85b2a31ddbc6f"
+  },
+  "revised_roadmap": [
+    "First attack a cross-level directional-Rayleigh transfer inequality for frame volume and relative gamma.",
+    "Use one assembly path or validated outward transport from the outset.",
+    "In parallel, seek a direct-margin recurrence as the logically shortest fallback.",
+    "Defer trace-concentration unless an independent physical exterior-trace source law appears.",
+    "Do not advance to Hilbert--Polya or zero claims before one all-level support packet is actually proved."
+  ],
+  "route_consequence": "The ten-layer route has a verified exact factor ledger, six constructive layers, two rigorous route-closing layers, and two synthesis layers. Four tempting branches are explicitly closed. The current proof graph reaches complete finite support but not eventual all-level support. Its inclusion-minimal mathematical frontier is the three-way antichain consisting of direct margin, trace-concentration, and directional-Rayleigh packets; adding any one packet completes the conditional graph, while validated numerical closure also needs all-level outward admissibility.",
+  "status": "rh119_ten_layer_exterior_route_review_archived",
+  "theorem": {
+    "minimal_missing_sets_verified": true,
+    "proof_frontier_antichain_identified": true,
+    "ten_layer_factor_ledger_verified": true
+  }
+}
