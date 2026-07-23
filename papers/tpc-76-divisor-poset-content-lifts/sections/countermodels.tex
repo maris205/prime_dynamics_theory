@@ -1,0 +1,154 @@
+\section{Countermodels and exact comparison examples}
+\label{sec:countermodels}
+
+For this section write
+\[
+ M(x)=\sum_{n\le x}\mu(n),\qquad
+ \Delta_{12}F(x,y)
+ =
+ F(x,y)-F(x+1,y)-F(x,y+1)+F(x+1,y+1),
+\]
+and retain the TPC--75 notation
+\(\cC_D(F)=\|A_DF\|_1\) for the complete low-plaquette plus exact-tail
+cost.
+
+\subsection{The zeta lift can beat the zero completion}
+
+Take \(U=V=4\), \(D=1\), and \(\Delta=12\).  Put all content in the
+rectangle \(B=[1,4]^2\).  For every primitive
+\((u,v)\in B\), set
+\[
+ t(u,v)=\left\lfloor\frac4{\max\{u,v\}}\right\rfloor,
+ \qquad
+ G_d(u,v)=\one_{d\mid12}\one_{d\le t(u,v)},
+\]
+and define the literal slices by the exact inverse transform
+\[
+ L_q(u,v)
+ =
+ \sum_{q\mid d\mid12}\mu(d/q)G_d(u,v).
+\]
+If \(L_q(u,v)\ne0\), then necessarily \(q\le t(u,v)\); hence every
+inserted point \((du,dv)\), \(d\mid q\), still lies in \(B\).
+Thus this is a full lift on the declared rectangle, not a truncation.
+By construction its zeta profiles are the displayed \(G_d\), so the
+zeta lift is the constant \(4\)-by-\(4\) rectangle:
+\[
+ F^{\rm Z}(x,y)=1
+ \qquad(1\le x,y\le4).
+\]
+Its primitive aggregate is also identically \(1\) on the primitive
+sites of \(B\).
+
+For the zero completion, the \(d=1\) plaquette terms with nonzero cost
+are
+\[
+\begin{array}{c|cccccccc}
+(x,y)&(1,1)&(1,3)&(1,4)&(3,1)&(3,3)&(3,4)&(4,1)&(4,3)\\
+\hline
+|M(x)M(y)\Delta_{12}F^0(x,y)|
+&1&1&1&1&2&1&1&1.
+\end{array}
+\]
+Its higher diagonal tail vanishes, so
+\[
+ \cC_1(F^0)=9.
+\]
+For the constant zeta rectangle, only the terminal \(d=1\) plaquette
+contributes, with cost \(1\).  Its exact tail has one unit contribution
+at \(a=2\) and one at \(a=3\).  Hence
+\[
+ \cC_1(F^{\rm Z})=1+1+1=3<9.
+\]
+This is an exact example in the full cost, not merely a comparison of
+\(d=1\) variation.
+
+\subsection{The zero completion can beat the zeta lift}
+
+Take \(D=1\), \(\Delta=2\), one primitive atom at \((1,1)\), and
+\[
+ L_1(1,1)=1,
+ \qquad
+ L_2(1,1)=-1.
+\]
+The aggregate primitive datum is zero, so \(F^0=0\) and
+\(\cC_1(F^0)=0\).  But
+\[
+ F^{\rm Z}(2,2)=L_2(1,1)=-1.
+\]
+The tail coordinate \(a=2,x=y=1\) has unit weight, hence
+\[
+ \cC_1(F^{\rm Z})\ge1.
+\]
+Therefore neither distinguished completion universally dominates the
+other.
+
+\subsection{Zeta inversion is not smoothing}
+
+If \(L_q(u_0,v_0)=1\) for every \(q\mid|\Delta|\) at one primitive
+coordinate, then
+\[
+ G_d(u_0,v_0)
+ =
+ \#\{q:d\mid q\mid|\Delta|\}.
+\]
+The total absolute profile mass is
+\[
+ \sum_{d\mid|\Delta|}|G_d(u_0,v_0)|
+ =
+ \sum_{q\mid|\Delta|}\tau(q),
+\]
+whereas the literal slice mass is only \(\tau(|\Delta|)\).  The zeta
+transform is an invertible provenance expansion, not a contraction.
+
+\subsection{Few diagonal indices need not mean a small tail}
+
+Take one large coefficient \(A\) at a prime content \(q>D\), supported
+at the primitive coordinate \((1,1)\).  The
+zeta lift places \(A\) on the layer \(d=q\).  The tail coordinate
+\((d,x,y)=(q,1,1)\) then has weight
+\[
+ |\mu(q)\mu(q)\mu(q)|=1
+\]
+and contributes \(|A|\), even though only one high diagonal index need
+be active.  Sparsity of divisor indices and smallness of normalized mass
+are different statements.
+
+\subsection{Optimizing after aggregation is broader}
+
+The unrestricted gauge \(\gamma_D(k)\) sees only the aggregate primitive
+datum \(k=\sum_qL_q\).  The provenance gauge also sees the decomposition
+\((L_q)\).  Two slice families with the same aggregate can therefore
+have the same unrestricted gauge but different provenance programs,
+different zeta lifts, and different dual annihilators
+\[
+ B_{\boldsymbol L}^*A_D^*z=0.
+\]
+One may not use the cheaper decomposition unless it is the literal one
+carried by the complete physical keys.
+
+\subsection{A fill is not a new collision}
+
+At \(d>1\), the number
+\[
+ F^W(du,dv)
+\]
+is an analytic copy of amplitudes already present at primitive
+coordinates.  Counting it as an additional native key would change both
+the Gram entry and the raw row mass.  The completion invariance theorem
+allows the value only because the physical M\"obius functional samples
+primitive sites.
+
+\subsection{Pairwise filters are not a universal rule}
+
+Let one shared real parameter \(t\) control two row pairs, with optimal
+cost profiles
+\[
+ p_{12}(t)=|t|,
+ \qquad
+ p_{23}(t)=|1-t|.
+\]
+Each pair-dependent provenance optimum is zero, but a single filter pays
+at least \(1/2\).  The exact independent factorization in
+\cref{thm:provenance-factorization} cannot be re-labelled as a uniform
+filter theorem.

@@ -1,0 +1,171 @@
+\section{Hermitian reversal and matrix aggregation}
+\label{sec:Hermitian-aggregation}
+
+\subsection{Reversed content profiles}
+
+Return to the actual row-pair notation.  TPC--74 proves
+\[
+ L_{nm,q}(v,u)
+ =
+ \overline{L_{mn,q}(u,v)}
+ \qquad(m\ne n).
+\]
+The divisor set of
+\[
+ |\Delta_{mn}|=|h_0(n-m)|
+\]
+is unchanged by reversal.
+
+\begin{proposition}[Filtered Hermitian reversal]
+\label{prop:filtered-reversal}
+If the reverse filter obeys
+\[
+ w^{nm}_{d,q}
+ =
+ \overline{w^{mn}_{d,q}},
+\]
+then
+\[
+ F^{W^{nm}}_{nm}(v,u)
+ =
+ \overline{F^{W^{mn}}_{mn}(u,v)}.
+\]
+In particular, the zero and zeta lifts are Hermitian compatible, and any
+single real filter can be used in both orientations.
+\end{proposition}
+
+\begin{proof}
+Conjugate \eqref{eq:filtered-completion}, exchange \(u,v\), and use the
+literal slice reversal.
+\end{proof}
+
+Fix transpose rectangles and equal cutoffs:
+\[
+ B_{nm}=B_{mn}^{\mathsf T},
+ \qquad
+ D_{nm}=D_{mn}.
+\]
+The divisor--variation cost is invariant under transpose conjugation.
+Thus the pair-dependent provenance gauges satisfy
+\[
+ \gamma^{\rm prov}_{nm}
+ =
+ \gamma^{\rm prov}_{mn}.
+\]
+
+\subsection{The provenance matrix}
+
+Let \(Q^{\rm all}\) be the matrix of unrestricted TPC--75 edge gauges and
+let
+\[
+ Q^{\rm prov}_{mn}
+ =
+ \begin{cases}
+  \gamma^{\rm prov}_{mn},&m\ne n,\\
+  0,&m=n.
+ \end{cases}
+\]
+Let \(P^0\) and \(P^{\rm Z}\) contain the costs of the zero and zeta
+completions, respectively, with zero diagonal.  More generally, for a
+family of filters \(\boldsymbol W=(W^{mn})_{m<n}\), put
+\[
+ P(\boldsymbol W)_{mn}
+ =
+ \cC_{D_{mn}}\!\left(F^{W^{mn}}_{mn}\right)
+ \quad(m\ne n),
+ \qquad
+ P(\boldsymbol W)_{mm}=0,
+\]
+and mirror the upper triangle.
+The superscript ``all'' means all post-\(q\)-aggregation analytic
+completions of the fixed primitive kernel; it does not mean a
+pre-\(q\), slice-by-slice optimization.
+
+\begin{theorem}[Four-level completion hierarchy]
+\label{thm:matrix-hierarchy}
+For the gauged direct-entry matrix \(\widetilde H\),
+\begin{equation}
+ \boxed{
+ \|H\|=\|\widetilde H\|
+ \le
+ \rho(|\widetilde H|)
+ \le
+ \rho(Q^{\rm all})
+ \le
+ \rho(Q^{\rm prov})
+ \le
+ \min\{\rho(P^0),\rho(P^{\rm Z})\}.}
+ \label{eq:matrix-hierarchy}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Apply \cref{eq:completion-hierarchy} to every unordered row pair.
+All matrices are symmetric and nonnegative, so entrywise order passes to
+Perron spectral radius.  The first two inequalities are the TPC--75
+absolute-entry floor.
+\end{proof}
+
+\begin{theorem}[Independent provenance factorization]
+\label{thm:provenance-factorization}
+If every unordered row pair may choose its own provenance filter before
+the later matrix extremizer is selected, then
+\[
+ \inf_{\boldsymbol W}
+ \rho(P(\boldsymbol W))
+ =
+ \rho(Q^{\rm prov}),
+\]
+and the infimum is attained.
+\end{theorem}
+
+\begin{proof}
+Each edge minimum is attained by
+\cref{thm:content-flow-dual}.  Choose all finitely many upper-triangle
+minimizers simultaneously and conjugate them on the reverse edges.
+Every other filter family gives an entrywise larger nonnegative
+majorant, so Perron monotonicity proves equality.
+\end{proof}
+
+\begin{remark}[A universal filter is a different problem]
+A single formula \(w_{d,q}\) shared across row pairs, blocks, scales, or a
+finite coefficient family couples the edge variables and can be more
+expensive than \(\rho(Q^{\rm prov})\).  It must be optimized with the
+fixed-data affine coupled-rule theorem of TPC--75.  Uniformity over a
+growing coefficient class adds a minimax quantifier and is not obtained
+by choosing the best filter after each literal kernel is known.
+\end{remark}
+
+\subsection{Dual obstruction matrices}
+
+For every edge, a feasible charge in
+\cref{eq:content-flow-dual} gives
+\[
+ O^{\rm prov}_{mn}
+ =
+ \left|
+ \Real\langle z_{mn},A_{D_{mn}}F^0_{mn}\rangle
+ \right|
+ \le
+ \gamma^{\rm prov}_{mn}.
+\]
+Indeed, dual feasibility is invariant under \(z\mapsto-z\), so the
+absolute dual objective is still bounded by the optimum.  Mirror this
+value and put zero on the diagonal.
+
+\begin{corollary}[Perron obstruction]
+\label{cor:provenance-Perron-obstruction}
+\[
+\rho(O^{\rm prov})
+\le
+\rho(Q^{\rm prov}).
+\]
+Thus a certified nonnegligible obstruction matrix closes the declared
+provenance-filter majorant at that scale.  It does not lower-bound
+\(\|H\|\), because the latter may exploit signed cancellation below the
+absolute Perron floor.
+\end{corollary}
+
+\begin{proof}
+Use entrywise monotonicity.
+\end{proof}

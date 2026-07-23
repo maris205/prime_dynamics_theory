@@ -1,0 +1,158 @@
+\section{Exact diagonal filtration}
+\label{sec:diagonal-filtration}
+
+\subsection{Nested profiles}
+
+For a finitely supported kernel \(F\), recall
+\[
+ F^{[a]}(x,y)=F(ax,ay).
+\]
+Write
+\[
+ r=(x,y),\qquad x=ru,\qquad y=rv,\qquad(u,v)=1.
+\]
+
+\begin{theorem}[Diagonal filtration identity]
+\label{thm:diagonal-filtration}
+For the content zeta lift and every \(a,x,y\ge1\),
+\begin{equation}
+ \boxed{
+ (F^{\rm Z})^{[a]}(x,y)
+ =
+ \one_{ar\mid|\Delta|}
+ G_{ar}(u,v)
+ =
+ \one_{ar\mid|\Delta|}
+ \sum_{\substack{q\mid|\Delta|\\ar\mid q}}L_q(u,v).}
+ \label{eq:diagonal-filtration}
+\end{equation}
+In particular,
+\begin{equation}
+ (F^{\rm Z})^{[a]}\equiv0
+ \qquad\text{whenever }a\nmid|\Delta|.
+ \label{eq:nondivisor-slices-vanish}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The greatest common divisor of \(ax\) and \(ay\) is \(ar\), and their
+primitive reduction is \((u,v)\).  Apply
+\cref{eq:zeta-lift,eq:profile-zeta}.  If \(a\nmid|\Delta|\), then
+\(ar\nmid|\Delta|\) for every \(r\), so the slice vanishes.
+\end{proof}
+
+\begin{remark}[A filtration, not independent copies]
+As the diagonal index grows through divisors of \(|\Delta|\), the allowed
+content set shrinks:
+\[
+ a_1\mid a_2
+ \quad\Longrightarrow\quad
+ \{q:a_2\mid q\mid|\Delta|\}
+ \subseteq
+ \{q:a_1\mid q\mid|\Delta|\}.
+\]
+The higher slices are nested content tails.  Treating them as unrelated
+ambient kernels discards this exact dependence.
+\end{remark}
+
+\subsection{Exact tail restriction}
+
+The TPC--71 exact diagonal tail \citep{WangTPC71} is
+\[
+ \cT_D(F)
+ =
+ \sum_{a>D}|\mu(a)|
+ \sum_{x,y\ge1}
+ |\mu(ax)\mu(ay)F(ax,ay)|.
+\]
+
+\begin{corollary}[Divisor-supported tail]
+\label{cor:divisor-supported-tail}
+For the zeta lift,
+\begin{equation}
+ \boxed{
+ \cT_D(F^{\rm Z})
+ =
+ \sum_{\substack{a\mid|\Delta|\\a>D}}|\mu(a)|
+ \sum_{x,y\ge1}
+ \left|
+ \mu(ax)\mu(ay)
+ \one_{a(x,y)\mid|\Delta|}
+ G_{a(x,y)}
+ \left(\frac{x}{(x,y)},\frac{y}{(x,y)}\right)
+ \right|.}
+ \label{eq:zeta-exact-tail}
+\end{equation}
+Every tail index not dividing \(|\Delta|\) is absent exactly.
+\end{corollary}
+
+\begin{proof}
+Insert \eqref{eq:diagonal-filtration} into the definition of
+\(\cT_D\), and delete the identically zero indices by
+\eqref{eq:nondivisor-slices-vanish}.
+\end{proof}
+
+\begin{remark}[No tail saving yet]
+The number of possible diagonal indices is at most
+\(\tau(|\Delta|)\), but \eqref{eq:zeta-exact-tail} is weighted by the
+actual complex amplitudes and their multiplicities.  A divisor-count
+bound does not imply smallness relative to raw atomic mass.
+\end{remark}
+
+\subsection{Actual support census}
+
+Let
+\[
+ S_q=\supp L_q
+\]
+inside the primitive plane and
+\[
+ S_{\ge d}=\bigcup_{\substack{q\mid|\Delta|\\d\mid q}}S_q.
+\]
+
+\begin{proposition}[Layered support bound]
+\label{prop:layered-support}
+The content layer with greatest common divisor \(d\) satisfies
+\[
+ \supp G_d\subseteq S_{\ge d}.
+\]
+Consequently,
+\begin{equation}
+ \#\supp F^{\rm Z}
+ =
+ \sum_{d\mid|\Delta|}\#\supp G_d
+ \le
+ \sum_{d\mid|\Delta|}\#S_{\ge d}
+ \le
+ \tau(|\Delta|)
+ \#\bigcup_{q\mid|\Delta|}S_q.
+ \label{eq:support-census}
+\end{equation}
+All inequalities may be strict because literal \(q\)-slices can cancel
+inside a layer.
+\end{proposition}
+
+\begin{proof}
+\Cref{eq:profile-zeta} gives the first inclusion.  Distinct greatest
+common divisors define disjoint lattice layers, giving the equality.
+Sum the inclusions and use
+\(S_{\ge d}\subseteq\bigcup_qS_q\).
+\end{proof}
+
+\begin{corollary}[All provenance filters share the divisor carrier]
+\label{cor:filter-divisor-carrier}
+Every completion of the form
+\[
+ F(du,dv)
+ =
+ \sum_{\substack{q\mid|\Delta|\\d\mid q}}c_{d,q}L_q(u,v)
+\]
+vanishes outside the greatest-common-divisor layers
+\(d\mid|\Delta|\), and its layer-\(d\) support is contained in
+\(S_{\ge d}\).  In particular, it satisfies the same two cardinality
+upper bounds as the right-hand side of \eqref{eq:support-census}.
+\end{corollary}
+
+\begin{proof}
+Only the coefficients change; the allowed incidences do not.
+\end{proof}

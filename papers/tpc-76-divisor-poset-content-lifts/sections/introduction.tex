@@ -1,0 +1,102 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The completion problem now has an exact analytic optimum, but a physical
+rule must remember where its coefficients came from.  For one actual
+row pair, TPC--74 \citep{WangTPC74} gives
+\[
+ L(u,v)=\sum_{q\mid|\Delta|}L_q(u,v),
+ \qquad
+ \Delta=h_0(n-m)\ne0,
+\]
+on the primitive cofactor plane.  The \(q\)-slice is not an auxiliary
+Fourier label: it is the greatest common content of the two literal
+residual factors, and its divisor restriction follows from the exact
+fixed-shift Diophantine identity.  Aggregation over \(q\) must occur
+before an absolute-value estimate, because distinct slices can cancel at
+the same primitive coordinate.
+
+TPC--75 \citep{WangTPC75} proves that, for a finite rectangle and full
+divisor--variation analysis operator \(A_D\),
+\[
+ \gamma_D(L)
+ =
+ \min_{RF=L}\|A_DF\|_1
+\]
+has an exact strong dual.  That theorem deliberately allows arbitrary
+nonprimitive values.  Such freedom provides the sharpest separated
+analytic benchmark, but it may mix literal contents in a way no uniform
+physical rule can reproduce.
+
+The present paper inserts an intermediate class:
+\[
+ \text{zero completion}
+ \subset
+ \text{content-filter completions}
+ \subset
+ \text{all analytic completions}.
+\]
+The class is generated only from the actual \(q\)-resolved kernels.  It
+therefore preserves fixed-\(h_0\) provenance without declaring its
+nonprimitive values to be new atoms.
+
+\subsection{The divisor-poset lift}
+
+Every lattice point has a unique representation
+\[
+ (x,y)=(du,dv),
+ \qquad d=(x,y),\quad(u,v)=1.
+\]
+We fill that point with the cumulative content above \(d\):
+\[
+ F^{\rm Z}(du,dv)
+ =
+ \sum_{d\mid q\mid|\Delta|}L_q(u,v).
+\]
+This is the upper zeta transform on the finite divisor poset of
+\(|\Delta|\).  Poset M\"obius inversion \citep{Rota1964} recovers every
+literal slice.  Hence the lift is information-preserving on the full
+divisor profile even though its primitive trace sees only the aggregate.
+
+The same cumulative structure identifies every diagonal slice exactly.
+Only \(a\mid|\Delta|\) can contribute to the \(a\)-th divisor lift.
+This is a genuine carrier reduction relative to an arbitrary ambient
+completion.  It is not a tail estimate: a function supported on few
+diagonal indices can still have large coefficients.
+
+\subsection{A provenance-compatible optimization}
+
+The zeta coefficient \(1\) is only one rule.  Allow weights
+\(w_{d,q}\) whenever \(d\mid q\), while fixing \(w_{1,q}=1\) so the
+primitive datum is unchanged.  Both the zero completion and zeta lift
+belong to this affine family.  For fixed literal slices, the completion is
+linear in the free weights, so its exact TPC--75 cost becomes a smaller
+finite convex program.  We derive its reduced strong dual.  The dual
+stationarity condition says that the analysis charge annihilates every
+permitted content-flow direction.
+
+\subsection{What is and is not gained}
+
+The new results are exact:
+\begin{itemize}
+ \item the lift, inverse, diagonal support, and Hermitian reversal;
+ \item a sharp support census in terms of the actual \(q\)-slice supports;
+ \item the full provenance-filter hierarchy;
+ \item primal and dual attainment in that hierarchy; and
+ \item exact operator upper and obstruction matrices after row-pair
+       aggregation.
+\end{itemize}
+They do not order the zero and zeta costs universally.  Lower
+\(d=1\) variation can be exchanged for higher diagonal mass.  They also
+do not turn the divisor bound
+\(\#\{d:d\mid\Delta\}=\tau(|\Delta|)\) into a normalized saving.
+
+\subsection{Organization}
+
+\Cref{sec:zeta-lift} proves the zeta lift and inversion.
+\Cref{sec:diagonal-filtration} derives the exact diagonal hierarchy and
+support census.  \Cref{sec:provenance-gauge} introduces all content
+filters and their reduced dual.  \Cref{sec:Hermitian-aggregation}
+handles reversal and full matrices.  \Cref{sec:countermodels} records
+the non-substitution laws.  \Cref{sec:physical-gate} states the actual
+fixed-shift gate, and \cref{sec:claim-boundary} gives the audit ledger.

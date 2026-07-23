@@ -1,0 +1,67 @@
+\begin{abstract}
+TPC--74 resolved every direct off-diagonal missing-native Gram entry into
+literal primitive kernels \(L_{mn,q}(u,v)\), where the content
+\(q\) divides the fixed-shift difference
+\(\Delta_{mn}=h_0(n-m)\).  TPC--75 then made the cost of an arbitrary
+nonprimitive completion exactly primal--dual.  The unrestricted optimum,
+however, need not preserve any \(q\)-slice provenance and therefore does
+not yet identify a physical construction rule.
+
+This paper develops a provenance-compatible completion class for this
+TPC chain.
+For a fixed nonzero \(\Delta\), define the divisor-poset content lift
+\[
+ F^{\rm Z}(du,dv)
+ =
+ \sum_{d\mid q\mid|\Delta|}L_q(u,v),
+ \qquad (u,v)=1.
+\]
+At \(d=1\) it equals the exact post-\(q\)-aggregation primitive datum, so
+it is a legal analytic completion.  Its diagonal profiles are the zeta
+transform on the divisor lattice.  We prove the exact inversion
+\[
+ L_q(u,v)
+ =
+ \sum_{q\mid d\mid|\Delta|}
+ \mu(d/q)F^{\rm Z}(du,dv),
+\]
+so the lift retains, rather than smooths away, the complete content
+decomposition.
+
+The same formula gives an exact diagonal filtration.  If
+\((x,y)=r\) and \(x=ru,y=rv\), then
+\[
+ (F^{\rm Z})^{[a]}(x,y)
+ =
+ \sum_{ar\mid q\mid|\Delta|}L_q(u,v).
+\]
+Consequently every auxiliary slice with \(a\nmid|\Delta|\) vanishes.
+The high-diagonal tail is therefore supported only on actual divisors of
+the fixed row-pair difference, although no smallness of its mass is
+asserted.
+
+We next introduce all provenance filters
+\[
+ F^W(du,dv)
+ =
+ \sum_{d\mid q\mid|\Delta|}w_{d,q}L_q(u,v),
+ \qquad w_{1,q}=1.
+\]
+This affine class contains the primitive zero completion and the zeta
+lift.  Its optimal full divisor--variation cost is attained and has the
+reduced exact dual
+\[
+ \min_\theta\|A_D(F^0+B_L\theta)\|_1
+ =
+ \max_{\substack{\|z\|_\infty\le1\\B_L^*A_D^*z=0}}
+ \operatorname{Re}\langle z,A_DF^0\rangle.
+\]
+Thus a provenance-compatible fill and a content-flow obstruction are
+again exact alternatives.
+
+The construction is attached to the complete literal fixed-\(h_0\)
+carrier with its original raw normalization.  It proves neither that the
+zeta lift improves the zero completion nor that the optimal provenance
+matrix has small Perron radius.  No fixed-\(2\), parity-breaking,
+prime-pair, or twin-prime conclusion is claimed.
+\end{abstract}

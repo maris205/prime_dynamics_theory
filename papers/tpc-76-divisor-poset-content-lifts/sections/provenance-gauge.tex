@@ -1,0 +1,203 @@
+\section{The provenance-compatible completion gauge}
+\label{sec:provenance-gauge}
+
+\subsection{Content filters}
+
+Let
+\[
+ \cI_\Delta
+ =
+ \{(d,q):d,q\mid|\Delta|,\ d\mid q\}.
+\]
+
+\begin{definition}[Provenance filter]
+\label{def:provenance-filter}
+A content filter is an array
+\[
+ W=(w_{d,q})_{(d,q)\in\cI_\Delta}
+\]
+satisfying
+\[
+ w_{1,q}=1\qquad(q\mid|\Delta|).
+\]
+Its completion is
+\begin{equation}
+ F^W(du,dv)
+ =
+ \sum_{\substack{q\mid|\Delta|\\d\mid q}}
+ w_{d,q}L_q(u,v),
+ \qquad (u,v)=1.
+ \label{eq:filtered-completion}
+\end{equation}
+\end{definition}
+
+Every \(F^W\) is a completion of the same post-\(q\)-aggregation datum.
+Two distinguished filters are:
+\begin{align*}
+ W^0:\quad&
+ w^0_{1,q}=1,\qquad w^0_{d,q}=0\ (d>1),\\
+ W^{\rm Z}:\quad&
+ w^{\rm Z}_{d,q}=1\qquad(d\mid q).
+\end{align*}
+They give the primitive zero completion \(F^0\) and the zeta lift
+\(F^{\rm Z}\), respectively.
+
+\begin{remark}[Analytic coefficients]
+The numbers \(w_{d,q}\) are analytic copying weights.  They are not
+physical multiplicities, new contents, or changes to the raw row mass.
+Complex weights are allowed in the pair-dependent analytic benchmark.
+A single reversal-invariant rule will later be taken real, or conjugated
+on the reversed edge.
+\end{remark}
+
+\subsection{Reduced linear parametrization}
+
+Let
+\[
+ \Theta_\Delta
+ =
+ \C^{\{(d,q)\in\cI_\Delta:d>1\}}.
+\]
+For the fixed literal slice family \(\boldsymbol L=(L_q)\), define
+\[
+ B_{\boldsymbol L}:\Theta_\Delta\longrightarrow\C^B
+\]
+by writing each \((x,y)\in B\) uniquely as
+\((x,y)=(du,dv)\), where \(d=(x,y)\) and \((u,v)=1\), and setting
+\begin{equation}
+ (B_{\boldsymbol L}\theta)(du,dv)
+ =
+ \one_{d>1}
+ \sum_{\substack{q\mid|\Delta|\\d\mid q}}
+ \theta_{d,q}L_q(u,v).
+ \label{eq:content-flow-map}
+\end{equation}
+Then every filter parameter gives a provenance completion through
+\[
+ F^W=F^0+B_{\boldsymbol L}\theta,
+\]
+and every provenance completion arises this way.  The representation
+need not be unique: different \(\theta\) can yield the same kernel when
+the actual slice columns are linearly dependent.
+
+Let \(A_D\) be the full divisor--variation analysis operator of TPC--75
+\citep{WangTPC75}.
+
+\begin{definition}[Provenance gauge]
+\label{def:provenance-gauge}
+\[
+ \gamma_D^{\rm prov}(\boldsymbol L)
+ =
+ \min_{\theta\in\Theta_\Delta}
+ \left\|
+ A_D(F^0+B_{\boldsymbol L}\theta)
+ \right\|_1.
+\]
+\end{definition}
+
+\begin{theorem}[Reduced content-flow dual]
+\label{thm:content-flow-dual}
+The minimum is attained and
+\begin{equation}
+ \boxed{
+ \gamma_D^{\rm prov}(\boldsymbol L)
+ =
+ \max_{\substack{\|z\|_\infty\le1\\
+ B_{\boldsymbol L}^*A_D^*z=0}}
+ \Real\langle z,A_DF^0\rangle.}
+ \label{eq:content-flow-dual}
+\end{equation}
+The dual maximum is attained.
+\end{theorem}
+
+\begin{proof}
+Put \(b=A_DF^0\) and \(C=A_DB_{\boldsymbol L}\).  Under the real
+pairing, the polar of the complex \(\ell^1\)-ball is the coordinatewise
+unit polydisc.  Finite-dimensional distance-to-a-subspace duality
+therefore gives
+\[
+ \inf_\theta\|b+C\theta\|_1
+ =
+ \max_{\substack{\|z\|_\infty\le1\\
+ z\perp_{\mathbb R}\Ran C}}
+ \Real\langle z,b\rangle.
+\]
+The annihilator condition is exactly \(C^*z=0\), which is the displayed
+constraint because \(C=A_DB_{\boldsymbol L}\).  The image
+\(b+\Ran C\) is a closed affine subspace, so its distance from the
+origin is attained.  The dual feasible set is compact, so the maximum
+is attained as well.
+\end{proof}
+
+\begin{corollary}[Exact provenance obstruction]
+\label{cor:provenance-obstruction}
+Every \(z\) satisfying
+\[
+ \|z\|_\infty\le1,
+ \qquad
+ B_{\boldsymbol L}^*A_D^*z=0
+\]
+proves that all content-filter completions have cost at least
+\[
+ \Real\langle z,A_DF^0\rangle.
+\]
+At the optimum this lower obstruction equals the best provenance fill.
+\end{corollary}
+
+\begin{corollary}[Completion hierarchy]
+\label{cor:completion-hierarchy}
+Let \(\gamma_D(k)\) be the unrestricted TPC--75 completion gauge of the
+aggregate primitive datum.  Then
+\begin{equation}
+ \boxed{
+ |\cS_{\rm prim}(k)|
+ \le
+ \gamma_D(k)
+ \le
+ \gamma_D^{\rm prov}(\boldsymbol L)
+ \le
+ \min\{\cC_D(F^0),\cC_D(F^{\rm Z})\}.}
+ \label{eq:completion-hierarchy}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The physical lower bound and unrestricted gauge are TPC--75.  The
+provenance class is a subclass of all analytic completions, while
+\(W^0\) and \(W^{\rm Z}\) are feasible provenance filters.
+\end{proof}
+
+\begin{remark}[Parameter count is not rank]
+The number of free weights is
+\[
+ \sum_{q\mid|\Delta|}\bigl(\tau(q)-1\bigr).
+\]
+The actual dimension is
+\(\operatorname{rank}B_{\boldsymbol L}\), which can be much smaller
+because a literal slice may vanish or different content-flow columns may
+coincide.  A sparse implementation should delete the kernel of
+\(B_{\boldsymbol L}\) before optimization.
+\end{remark}
+
+\subsection{KKT balance}
+
+\begin{proposition}[Content-flow KKT condition]
+\label{prop:content-KKT}
+A provenance fill \(\theta_*\) and dual charge \(z_*\) are jointly
+optimal if and only if
+\begin{align*}
+ B_{\boldsymbol L}^*A_D^*z_*&=0,\\
+ \|z_*\|_\infty&\le1,\\
+ \Real\langle z_*,
+ A_D(F^0+B_{\boldsymbol L}\theta_*)\rangle
+ &=
+ \|A_D(F^0+B_{\boldsymbol L}\theta_*)\|_1.
+\end{align*}
+Thus the optimal analysis charge is balanced against every allowed
+content-flow direction.
+\end{proposition}
+
+\begin{proof}
+These are primal feasibility, dual feasibility, and equality in the
+support-function bound of \cref{thm:content-flow-dual}.
+\end{proof}

@@ -1,0 +1,127 @@
+\section{The divisor-poset content lift}
+\label{sec:zeta-lift}
+
+\subsection{Literal content data}
+
+Fix an integer \(\Delta\ne0\) and put
+\[
+ \cD_\Delta=\{q\in\N:q\mid|\Delta|\}.
+\]
+Let \(P\) be a finite set of primitive pairs.  For every
+\(q\in\cD_\Delta\), let
+\[
+ L_q:P\longrightarrow\C
+\]
+be a finitely supported content slice, extended by zero to all primitive
+pairs.  Its physical aggregate is
+\[
+ k(u,v)=\sum_{q\in\cD_\Delta}L_q(u,v).
+\]
+This abstract notation will later be specialized to
+\(L_{mn,q}\), with all complete native key labels already summed inside
+the literal fiber.
+
+Choose a finite rectangle \(B\) containing every point
+\((du,dv)\) for which \(d\mid q\mid|\Delta|\) and
+\((u,v)\in\supp L_q\).  Values outside \(B\) are zero.
+
+\begin{definition}[Content zeta lift]
+\label{def:content-zeta-lift}
+For \(x,y\ge1\), write
+\[
+ d=(x,y),\qquad x=du,\qquad y=dv.
+\]
+Define
+\begin{equation}
+ (\mathfrak Z_\Delta\boldsymbol L)(x,y)
+ =
+ \one_{d\mid|\Delta|}
+ \sum_{\substack{q\mid|\Delta|\\d\mid q}}
+ L_q(u,v).
+ \label{eq:zeta-lift}
+\end{equation}
+We denote this kernel by \(F^{\rm Z}\).
+\end{definition}
+
+\begin{proposition}[Completion and provenance]
+\label{prop:zeta-legal}
+The zeta lift is a legal completion of \(k\):
+\[
+ F^{\rm Z}(u,v)=k(u,v)\qquad((u,v)=1).
+\]
+Every nonzero nonprimitive value uses only literal slices whose actual
+content is a multiple of the inserted common factor.
+\end{proposition}
+
+\begin{proof}
+At a primitive site \(d=1\), every \(q\in\cD_\Delta\) occurs in
+\eqref{eq:zeta-lift}, giving the aggregate \(k\).  At a nonprimitive
+site, the displayed divisibility condition is exactly \(d\mid q\).
+\end{proof}
+
+\subsection{Exact zeta inversion}
+
+For every divisor \(d\mid|\Delta|\), define the diagonal profile
+\[
+ G_d(u,v)=F^{\rm Z}(du,dv)
+ \qquad((u,v)=1).
+\]
+Then
+\begin{equation}
+G_d(u,v)
+=
+\sum_{\substack{q\mid|\Delta|\\d\mid q}}L_q(u,v).
+\label{eq:profile-zeta}
+\end{equation}
+For notational convenience in formulas carrying a divisibility
+indicator, extend this definition by \(G_e=0\) whenever
+\(e\nmid|\Delta|\).
+
+\begin{theorem}[Divisor-poset inversion]
+\label{thm:zeta-inversion}
+For every \(q\mid|\Delta|\) and primitive \((u,v)\),
+\begin{equation}
+ \boxed{
+ L_q(u,v)
+ =
+ \sum_{\substack{d\mid|\Delta|\\q\mid d}}
+ \mu(d/q)G_d(u,v).}
+ \label{eq:zeta-inversion}
+\end{equation}
+Thus the full profile
+\((G_d)_{d\mid|\Delta|}\) and the literal slice family
+\((L_q)_{q\mid|\Delta|}\) determine each other uniquely.
+\end{theorem}
+
+\begin{proof}
+For a fixed primitive coordinate, \eqref{eq:profile-zeta} is the upper
+zeta transform on the divisor poset.  Its incidence-algebra inverse is
+\[
+ \mu_{\cD_\Delta}(q,d)=\mu(d/q)
+ \qquad(q\mid d),
+\]
+the ordinary number-theoretic M\"obius function on the quotient interval.
+Apply finite M\"obius inversion.
+\end{proof}
+
+\begin{remark}[The primitive trace is not invertible]
+The primitive datum is only \(G_1=\sum_qL_q\).  It cannot recover the
+individual slices.  Inversion requires the entire nonprimitive divisor
+profile.  Thus the zeta lift uses literal provenance that is additional
+to the aggregated completion datum, while preserving the same physical
+functional.
+\end{remark}
+
+\begin{corollary}[Cancellation can reappear below the primitive layer]
+\label{cor:hidden-content}
+If \(|\Delta|>1\), it is possible that \(G_1=0\) but
+\(G_d\ne0\) for some \(d>1\).
+Consequently the zeta lift of a zero aggregate need not be the zero
+completion.
+\end{corollary}
+
+\begin{proof}
+Choose any divisor \(r>1\) of \(|\Delta|\), take
+\(L_1=F,L_r=-F\), and set the other slices to zero.  Then
+\(G_1=0\), while \(G_r=L_r=-F\).
+\end{proof}
