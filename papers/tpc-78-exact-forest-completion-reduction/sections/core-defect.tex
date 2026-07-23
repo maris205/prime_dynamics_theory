@@ -1,0 +1,67 @@
+\section{The exact defect of a pruned tree core}
+\label{sec:core-defect}
+
+Let a nontrivial connected pruned core contain \(p\) analysis rows and
+\(q\) variables.  Every variable now has degree at least two.
+
+\begin{lemma}[All surviving variables are matchable]\label{lem:var-match}
+Every set \(S\subseteq J\) of variables in a pruned tree core satisfies
+\[
+ |N(S)|\ge |S|+1.
+\]
+In particular, a matching saturates every variable.
+\end{lemma}
+
+\begin{proof}
+The subgraph induced by \(S\cup N(S)\) is a forest.  Because every edge
+incident to a variable of \(S\) remains inside this induced graph and
+every such variable has degree at least two,
+\[
+ 2|S|
+ \le |E(S,N(S))|
+ \le |S|+|N(S)|-1.
+\]
+The stated inequality follows.  Hall's theorem then supplies a
+matching saturating \(J\).
+\end{proof}
+
+\begin{theorem}[Pruned-core defect identity]\label{thm:defect}
+For a connected pruned tree core,
+\begin{equation}\label{eq:defect}
+ \rank_{\C}C=q,
+ \qquad
+ d:=\dim_{\C}\Ker C^*
+ =p-q
+ =1+\sum_{j\in J}\bigl(\deg(j)-2\bigr).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+\Cref{lem:var-match,thm:forest-rank} give \(\rank C=q\), hence
+\(\dim\Ker C^*=p-q\).  The tree identity
+\[
+ p+q-1=|E|=\sum_{j\in J}\deg(j)
+\]
+rearranges to the last equality in \eqref{eq:defect}.
+\end{proof}
+
+\begin{corollary}[One-defect topology]\label{cor:one-defect-topology}
+A nontrivial pruned tree core has \(d=1\) if and only if every variable
+has degree two.  Each unit of excess degree
+\(\deg(j)-2\) adds one complex dual degree of freedom.
+\end{corollary}
+
+Thus branching is measured exactly.  A degree-three variable is not a
+minor perturbation of the scalar case: it creates at least a
+two-complex-dimensional dual feasible section.  An isolated analysis
+row is treated separately as the degenerate \(p=1,q=0\) core and has
+value \(|b_i|\).
+
+\begin{remark}[Combinatorics versus coefficients]
+The dimension formula is coefficient-independent only because forest
+support prevents determinant cancellation.  It does not say that the
+value \(\Gamma(b,C)\) is coefficient-independent.  Even at defect one,
+the transported charge and its pairing with \(b\) retain all literal
+edge magnitudes and phases.
+\end{remark}
+

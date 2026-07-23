@@ -1,0 +1,51 @@
+\begin{abstract}
+Sparse provenance completion reduces, component by component, to
+\[
+  \Gamma(b,C)=\min_{\theta\in\C^J}\|b+C\theta\|_1.
+\]
+The preceding incidence decomposition identifies the exact nonzero
+bipartite graph but does not by itself solve a nontrivial component.  We
+solve the forest-supported complex-scalar case to the extent permitted
+by its intrinsic defect.
+
+First, a variable leaf and its adjacent analysis row can be erased
+without changing the value.  Second, for a matrix with forest support
+and nonzero edge coefficients,
+\[
+  \rank_{\C} C=\nu(G),
+\]
+where \(\nu(G)\) is the maximum matching number.  Consequently a
+row-saturating matching is exactly the graph-theoretic condition for
+zero completion cost for every datum.  After exhaustive variable-leaf
+erasure, every surviving variable has degree at least two, the variables
+are matchable, and each connected core satisfies
+\[
+ \dim_{\C}\Ker C^*
+ =|I|-|J|
+ =1+\sum_{j\in J}\bigl(\deg(j)-2\bigr).
+\]
+Thus a core has one complex obstruction precisely when every surviving
+variable has degree two.
+
+For any one-defect component, if \(\Ker C^*=\C\alpha\), we obtain the
+closed formula
+\[
+ \Gamma(b,C)=
+ \frac{|\langle\alpha,b\rangle|}{\|\alpha\|_\infty},
+\]
+together with explicit primal and dual optimizers and the complete
+optimal-residual face.  On a degree-two tree, \(\alpha\) is recovered by
+edgewise phase transport.  For branching cores we give an exact
+matching-based reduction to a complex second-order cone program having
+only \(\dim\Ker C^*\) variables.  We also prove an exact
+column-dominant pivot rule and additive or fractional lower bounds from
+balanced Hall-circuit motifs.
+
+These results convert a large sparse completion problem into closed
+forms on defect-one trees and auditable low-dimensional programs on the
+remaining cores.  They are algebraic and convex-analytic interface
+theorems.  No estimate here proves that the literal fixed-shift
+arithmetic matrix has forest support, that its motif scores are
+non-negligible, or that any global endpoint budget is crossed.
+\end{abstract}
+

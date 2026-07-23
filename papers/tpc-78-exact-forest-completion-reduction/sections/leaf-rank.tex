@@ -1,0 +1,102 @@
+\section{Variable-leaf erasure and forest rank}
+\label{sec:leaf-rank}
+
+\begin{theorem}[Exact variable-leaf erasure]\label{thm:leaf-erasure}
+Suppose \(j\in J\) is adjacent to exactly one row \(i\in I\), with
+\(c_{ij}\ne0\).  Let \(C'\) and \(b'\) be obtained by deleting row
+\(i\) and column \(j\).  Then
+\[
+ \Gamma(b,C)=\Gamma(b',C').
+\]
+If deletion disconnects the remaining graph, the right-hand side is
+the sum of the resulting component values.
+\end{theorem}
+
+\begin{proof}
+Fix all variables except \(\theta_j\).  Because column \(j\) appears
+only in row \(i\), choosing
+\[
+ \theta_j
+ =
+ -\frac{b_i+\sum_{k\ne j}c_{ik}\theta_k}{c_{ij}}
+\]
+sets the \(i\)-th residual to zero and changes no other residual.
+Minimizing over the remaining variables proves the equality.
+Equivalently, the \(j\)-th dual balance equation is
+\(\overline{c_{ij}}z_i=0\), so every dual feasible vector has
+\(z_i=0\).
+\end{proof}
+
+\begin{definition}[Variable-leaf pruning]\label{def:pruning}
+Repeatedly erase a variable leaf and its adjacent analysis row by
+\cref{thm:leaf-erasure}; also erase every isolated variable produced by
+the operation.  The surviving forest is called a \emph{pruned core}.
+\end{definition}
+
+Every erasure preserves the total value, irrespective of the order.
+Different orders may label the surviving components differently, but
+all yield exact residual programs.
+
+\begin{theorem}[Forest structural rank]\label{thm:forest-rank}
+Let the actual support of \(C\) be a forest and suppose every supported
+entry is nonzero.  Then
+\begin{equation}\label{eq:forest-rank}
+ \rank_{\C}C=\nu(G(C)).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For every matrix, a nonzero \(r\times r\) minor supplies a size-\(r\)
+matching through one nonzero determinant term.  Hence
+\(\rank C\le\nu(G(C))\).
+
+Conversely, take a matching of size \(r\) and the submatrix on its
+incident rows and columns.  The matching gives one nonzero determinant
+monomial.  If another determinant monomial were nonzero, the two
+perfect matchings of this induced bipartite graph would have a
+nonempty alternating cycle in their symmetric difference.  That is
+impossible in a forest.  The determinant is therefore, up to sign, the
+product of the matched nonzero entries and is nonzero.  Thus
+\(\rank C\ge r\).  Maximize over matchings.
+\end{proof}
+
+\begin{corollary}[Uniform zero-cost test]\label{cor:zero-test}
+For a forest-supported \(C\), the following are equivalent:
+\begin{enumerate}[label=(\roman*),leftmargin=2.5em]
+\item \(\Gamma(b,C)=0\) for every \(b\in\C^I\);
+\item \(C\) has full row rank;
+\item \(G(C)\) has a matching saturating every analysis row;
+\item variable-leaf pruning erases every analysis row.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+The first two statements are equivalent to \(\Ran C=\C^I\), and
+\cref{thm:forest-rank} gives the equivalence with (iii).
+
+If pruning erases all rows, repeated use of
+\cref{thm:leaf-erasure} gives zero value for every datum, hence (iv)
+implies (i).  Conversely, if a nonempty pruned core remains, every
+surviving variable has degree at least two.  On a connected core with
+\(p\) rows and \(q\) variables, the tree identity gives
+\[
+ p+q-1=|E|\ge2q,
+\]
+so \(p\ge q+1\).  Such a core has no row-saturating matching.  Hence
+(iii) implies (iv): indeed, when a variable leaf \(j\) adjacent to
+\(i\) is erased, any row-saturating matching can first be modified to
+use \((i,j)\) (freeing the edge formerly incident to \(i\)), and then
+restricted to the remaining graph.  Row saturation is therefore
+preserved at every pruning step.
+\end{proof}
+
+\begin{remark}[Datum-specific cancellation]\label{rem:specific-zero}
+The graph test is uniform in \(b\).  For one particular datum,
+\[
+ \Gamma(b,C)=0
+ \quad\Longleftrightarrow\quad
+ -b\in\Ran C,
+\]
+even when no row-saturating matching exists.  Topology alone cannot
+decide this datum-specific equality.
+\end{remark}

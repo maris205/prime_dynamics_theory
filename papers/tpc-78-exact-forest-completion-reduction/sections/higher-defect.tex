@@ -1,0 +1,87 @@
+\section{Exact reduction of a branching core}
+\label{sec:higher-defect}
+
+Let a connected pruned tree core have \(p\) rows, \(q\) variables, and
+defect \(d=p-q\ge1\).  By \cref{lem:var-match}, choose a matching that
+saturates all variables.  Let \(M\subset I\) be its \(q\) matched rows
+and \(U=I\setminus M\) the \(d\) unmatched rows.  Write \(C_M\) and
+\(C_U\) for the corresponding row restrictions.
+
+\begin{theorem}[Defect-dimensional dual reduction]\label{thm:reduced-socp}
+The square matrix \(C_M\) is invertible.  Define
+\[
+ K:\C^U\longrightarrow\C^I,
+ \qquad
+ (K\xi)_U=\xi,
+ \qquad
+ (K\xi)_M=-(C_M^*)^{-1}C_U^*\xi.
+\]
+Then \(K\) is an isomorphism from \(\C^U\) onto \(\Ker C^*\), and
+\begin{equation}\label{eq:reduced-socp}
+ \boxed{\displaystyle
+ \Gamma(b,C)
+ =
+ \max_{\xi\in\C^U}
+ \left\{
+ [K\xi,b]_{\R}:\|K\xi\|_\infty\le1
+ \right\}.}
+\end{equation}
+Thus a branching tree core reduces exactly to a complex
+second-order-cone program in \(d\) complex variables.
+\end{theorem}
+
+\begin{proof}
+The matching is the unique perfect matching of the forest subgraph on
+\(M\sqcup J\); otherwise the symmetric difference of two perfect
+matchings would contain a cycle.  Hence
+\(\det C_M\) is, up to sign, the product of its matched nonzero entries.
+It is nonzero.
+
+Writing \(z=(z_M,z_U)\), the balance equation is
+\[
+ C_M^*z_M+C_U^*z_U=0.
+\]
+After setting \(z_U=\xi\), invertibility gives the displayed formula
+for \(z_M\), uniquely.  Substitution into \eqref{eq:dual} proves
+\eqref{eq:reduced-socp}.  Each constraint
+\(|(K\xi)_i|\le1\) is a two-dimensional second-order-cone constraint.
+\end{proof}
+
+\begin{remark}[What the reduction does and does not close]
+At \(d=1\), \eqref{eq:reduced-socp} is a disk and reduces to
+\cref{thm:one-defect}.  At \(d>1\), it is an intersection of complex
+ellipsoidal cylinders.  The theorem removes all redundant primal
+variables and exposes the exact intrinsic dimension, but it does not
+replace a genuinely multidimensional feasible body by a fictitious
+single scalar.
+\end{remark}
+
+\begin{proposition}[Exact a posteriori certificate]\label{prop:reduced-gap}
+For any primal trial \(\theta\) and reduced dual trial \(\xi\) with
+\(\|K\xi\|_\infty\le1\), set
+\[
+ U(\theta)=\|b+C\theta\|_1,
+ \qquad
+ L(\xi)=[K\xi,b]_{\R}.
+\]
+Then
+\[
+ L(\xi)\le\Gamma(b,C)\le U(\theta),
+ \qquad
+ 0\le U(\theta)-L(\xi).
+\]
+Equality is a complete optimality certificate.
+\end{proposition}
+
+This certificate is stable under the component sum of TPC-77: upper
+and lower values add, so the global gap is the sum of component gaps.
+
+\begin{remark}[Exact min--sum remains available]
+Rooting a general tree also yields an exact convex min--sum recursion.
+For real data and real scalar variables the messages are
+piecewise-linear.  For genuinely complex data they are generally
+curved cone-representable functions.  We use
+\eqref{eq:reduced-socp} as the canonical finite certificate because it
+does not suggest a nonexistent coordinatewise-median formula.
+\end{remark}
+

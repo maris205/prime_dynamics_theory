@@ -1,0 +1,79 @@
+\section{A column-dominant exact pivot}
+\label{sec:dominance}
+
+Variable leaves are maximally sparse pivots.  A larger class of exact
+\(\ell^1\) eliminations is available when one coefficient dominates the
+rest of its column.
+
+\begin{theorem}[Column-dominant pivot elimination]\label{thm:pivot}
+Choose a row \(r\in I\) and variable \(j\in J\) with \(c_{rj}\ne0\).
+Assume
+\begin{equation}\label{eq:dominance}
+ |c_{rj}|\ge\sum_{i\ne r}|c_{ij}|.
+\end{equation}
+For \(i\ne r\) and \(k\ne j\), define
+\begin{equation}\label{eq:pivot-data}
+ b'_i=b_i-\frac{c_{ij}}{c_{rj}}b_r,
+ \qquad
+ c'_{ik}=c_{ik}-\frac{c_{ij}}{c_{rj}}c_{rk}.
+\end{equation}
+Then
+\begin{equation}\label{eq:pivot-equality}
+ \Gamma(b,C)=\Gamma(b',C'),
+\end{equation}
+where \(C'\) deletes row \(r\) and column \(j\) after the update.
+There exists an optimizer whose \(r\)-th residual is zero.  If
+\eqref{eq:dominance} is strict, every optimizer has zero \(r\)-th
+residual.
+\end{theorem}
+
+\begin{proof}
+Fix all variables \(k\ne j\), and let
+\[
+ u_i=b_i+\sum_{k\ne j}c_{ik}\theta_k.
+\]
+Write \(\theta_j=-u_r/c_{rj}+\delta\).  The objective becomes
+\[
+ |c_{rj}\delta|
+ +\sum_{i\ne r}
+ \left|u_i-\frac{c_{ij}}{c_{rj}}u_r+c_{ij}\delta\right|.
+\]
+The triangle inequality bounds this below by its value at \(\delta=0\)
+plus
+\[
+ \left(|c_{rj}|-\sum_{i\ne r}|c_{ij}|\right)|\delta|.
+\]
+Thus \(\delta=0\) is always optimal under \eqref{eq:dominance}, and is
+forced under strict dominance.  Substitution at \(\delta=0\) produces
+\eqref{eq:pivot-data} and \eqref{eq:pivot-equality}.
+\end{proof}
+
+\begin{proposition}[Matched dual lift]\label{prop:dual-lift}
+Under \eqref{eq:dominance}, every dual feasible \(z'\) for the reduced
+program lifts by
+\begin{equation}\label{eq:dual-lift}
+ z_i=z'_i\ (i\ne r),
+ \qquad
+ z_r=
+ -\frac{1}{\overline{c_{rj}}}
+ \sum_{i\ne r}\overline{c_{ij}}z'_i.
+\end{equation}
+The lift satisfies \(|z_r|\le1\), \(C^*z=0\), and
+\([z,b]_{\R}=[z',b']_{\R}\).
+\end{proposition}
+
+\begin{proof}
+The bound follows from \(\|z'\|_\infty\le1\) and
+\eqref{eq:dominance}.  Formula \eqref{eq:dual-lift} is exactly the
+\(j\)-column balance equation.  Substitution shows that every other
+column balance is the corresponding reduced equation, while the
+objective identity follows from the update of \(b'\).
+\end{proof}
+
+A component that can be exhausted by successive pivots satisfying
+\eqref{eq:dominance} is \emph{dominance-peelable}.  The theorem and its
+dual lift then give an exact recursion with matched upper and lower
+certificates.  A variable leaf is the special case in which every
+off-pivot entry of column \(j\) is zero.  An analysis leaf is not such a
+case unless its incident column also satisfies the dominance inequality.
+

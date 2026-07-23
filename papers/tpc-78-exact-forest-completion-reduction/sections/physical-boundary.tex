@@ -1,0 +1,107 @@
+\section{Literal fixed-shift census and claim boundary}
+\label{sec:physical-boundary}
+
+The exact theorems become a physical certificate only after a literal
+assembly has been archived.  Fix one nonzero physical shift \(h_0\).
+For each truncation or scale \(X\), the required record is:
+\begin{enumerate}[label=(P\arabic*),leftmargin=2.7em]
+\item the native input and output keys, with no collapsed or missing
+carrier labels;
+\item the literal baseline vector \(b_X\) and completion matrix \(C_X\);
+\item the exact nonzero support after all algebraic sums;
+\item the decomposition into fixed rows, zero columns, and actual
+connected components;
+\item for every forest component, its matching, pruning trace, defect,
+transported charge or reduced matrix \(K\);
+\item matched primal and dual values, with numerical tolerances recorded
+separately from graph adjacency;
+\item the common global raw atomic normalizer, whether it is already
+absorbed into \(b_X,C_X\), and every component contribution under that
+single convention.
+\end{enumerate}
+
+\begin{proposition}[Auditable forest census identity]\label{prop:census}
+For any archived finite literal program, let \(\cF_X\) be its actual
+forest components and \(\cU_X\) its remaining components.  Then
+\begin{equation}\label{eq:census}
+ \Gamma(b_X,C_X)
+ =
+ \|b_{X,\mathrm{fix}}\|_1
+ +\sum_{S\in\cF_X}\Gamma_S
+ +\sum_{S\in\cU_X}\Gamma_S.
+\end{equation}
+Every zero-prunable forest term and every defect-one forest term in
+\eqref{eq:census} is exactly computable by this paper.  Every other
+forest term admits the defect-reduced interval of this paper.  Every
+remaining term, including a nonforest component, retains the matched
+TPC-77 primal--dual interval.
+\end{proposition}
+
+\begin{proof}
+This is the exact component factorization of TPC-77, followed by
+\cref{thm:leaf-erasure,cor:zero-test,thm:one-defect,thm:reduced-socp}
+on the forest terms.  No thresholding or change of normalization occurs.
+\end{proof}
+
+No literal fixed-\(h_0\) dataset is included in this paper.  Therefore
+we make no numerical statement about the frequency of forest
+components, the distribution of their defects, or the normalized size
+of their scores.
+
+\subsection*{Progress labels}
+
+\begin{center}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.20\linewidth}
+>{\raggedright\arraybackslash}p{0.70\linewidth}@{}}
+\toprule
+Label & Status after this paper\\
+\midrule
+L0: model algebra &
+Exact for the finite complex-scalar forest program.\\
+L1: interface/certificate &
+Advanced: forest rank, pruning, defect-one values, reduced SOCPs, and
+motif packings are now exact and auditable.\\
+L2: fixed-\(h_0\) arithmetic &
+Not advanced here: no density, cancellation, or endpoint estimate for
+literal arithmetic coefficients is proved.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Endpoint loss ledger and stop rule}
+
+The inherited arithmetic ledger permits a \emph{total fixed-power
+exponent loss strictly smaller than \(1/400\)}.  Equality is not enough:
+the route stops once accumulated certified losses reach or exceed
+\(1/400\).  The exact finite-dimensional reductions in this paper add
+zero exponent loss by themselves, but they also prove no arithmetic
+gain.  Any downstream dictionary, carrier restriction, approximation,
+or reassembly loss must be entered in the same ledger.
+
+In particular, neither a component gauge nor a motif-packing lower
+score is a \(1/400\) gain without a separate literal transfer theorem
+that proves the direction, scale, and global raw normalization.  If
+that transfer incurs total loss at least \(1/400\), or reduces to an
+unproved parity-sensitive correlation, this branch must be recorded as
+an L1 interface result or a negative transfer result rather than an L2
+advance.
+
+\subsection*{Conclusion}
+
+Forest sparsity creates an exact hierarchy:
+\[
+\begin{split}
+\text{variable-leaf pruning}
+&\longrightarrow \text{uniform zero test},\\
+\text{degree-two core}
+&\longrightarrow \text{one-obstruction closed form},\\
+\text{branching core}
+&\longrightarrow \text{defect-dimensional SOCP},\\
+\text{balanced motifs}
+&\longrightarrow \text{additive dual lower certificates}.
+\end{split}
+\]
+This closes a substantial finite-dimensional subgate of sparse
+provenance completion.  It does not identify the needed physical
+carriers or prove a parity-breaking arithmetic estimate.  That precise
+separation is the basis for the next transfer layer.

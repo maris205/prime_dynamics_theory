@@ -1,0 +1,111 @@
+\section{Closed form at one complex defect}
+\label{sec:one-defect}
+
+The next theorem does not require forest support; it applies whenever
+the dual obstruction space is one complex dimensional.
+
+\begin{theorem}[One-defect primal--dual formula]\label{thm:one-defect}
+Assume
+\[
+ \Ker C^*=\C\alpha,
+ \qquad \alpha\ne0.
+\]
+Set
+\[
+ \beta=\langle\alpha,b\rangle,
+ \qquad
+ M=\|\alpha\|_\infty.
+\]
+Then
+\begin{equation}\label{eq:one-defect-value}
+ \boxed{\displaystyle
+\Gamma(b,C)=\frac{|\beta|}{M}.}
+\end{equation}
+If \(\beta=0\), the unique optimal residual is \(y=0\), and \(z=0\)
+is a dual optimizer.
+If \(\beta\ne0\), a dual optimizer is
+\begin{equation}\label{eq:dual-opt}
+ z_*=\frac{\beta}{M|\beta|}\,\alpha.
+\end{equation}
+For any \(r\) with \(|\alpha_r|=M\), define
+\begin{equation}\label{eq:primal-residual}
+ y_r=\frac{\beta}{\overline{\alpha_r}},
+ \qquad
+ y_i=0\quad(i\ne r).
+\end{equation}
+Then \(y-b\in\Ran C\), so any solution of \(C\theta=y-b\) is a primal
+optimizer.
+\end{theorem}
+
+\begin{proof}
+Every dual feasible charge has the form \(z=\lambda\alpha\) with
+\(|\lambda|M\le1\).  Therefore \eqref{eq:dual} becomes
+\[
+ \max_{|\lambda|\le M^{-1}}
+ \Real(\overline{\lambda}\beta)
+ =\frac{|\beta|}{M},
+\]
+attained by \(\lambda=\beta/(M|\beta|)\) when \(\beta\ne0\).
+
+For \eqref{eq:primal-residual},
+\[
+ \langle\alpha,y\rangle
+ =\overline{\alpha_r}
+   \frac{\beta}{\overline{\alpha_r}}
+ =\beta
+ =\langle\alpha,b\rangle.
+\]
+Thus \(y-b\perp\Ker C^*\).  In finite dimensions,
+\((\Ker C^*)^\perp=\Ran C\), so \(C\theta=y-b\) is solvable.  Finally,
+\(\|y\|_1=|\beta|/M\), matching the dual value.
+\end{proof}
+
+The proof gives more than one optimizer.
+
+\begin{theorem}[Complete optimal-residual face]\label{thm:residual-face}
+Assume the hypotheses of \cref{thm:one-defect} and \(\beta\ne0\).
+Let
+\[
+ S=\{i\in I:|\alpha_i|=M\}.
+\]
+A residual \(y\in b+\Ran C\) minimizes \(\|y\|_1\) if and only if
+\begin{equation}\label{eq:residual-face}
+ y_i=0\ (i\notin S),
+ \qquad
+ y_i=t_i(z_*)_i\ (i\in S),
+ \qquad
+ t_i\ge0,\quad
+ \sum_{i\in S}t_i=\frac{|\beta|}{M}.
+\end{equation}
+In particular, a unique maximum-modulus coordinate of \(\alpha\)
+forces a unique optimal residual.
+\end{theorem}
+
+\begin{proof}
+For any feasible residual,
+\[
+ \|y\|_1
+ \ge [z_*,y]_{\R}
+ = [z_*,b]_{\R}
+ =\Gamma(b,C).
+\]
+Equality in the coordinatewise inequalities
+\(\Real(\overline{(z_*)_i}y_i)\le
+ |(z_*)_i||y_i|\le|y_i|\)
+holds exactly when \(y_i=0\) wherever \(|(z_*)_i|<1\), and
+\(y_i=t_i(z_*)_i\) with \(t_i\ge0\) wherever
+\(|(z_*)_i|=1\).  These are precisely the support and phase conditions
+in \eqref{eq:residual-face}.  They satisfy
+\(\langle\alpha,y\rangle=\beta\) exactly when the displayed sum of the
+\(t_i\) is \(|\beta|/M\).  Hence they are also sufficient.
+\end{proof}
+
+\begin{corollary}[Exact zero and positive obstruction]
+Under the one-defect hypothesis,
+\[
+ \Gamma(b,C)=0
+ \quad\Longleftrightarrow\quad
+ \langle\alpha,b\rangle=0.
+\]
+Thus one literal complex scalar is the complete obstruction.
+\end{corollary}

@@ -1,0 +1,90 @@
+\section{Degree-two trees and phase transport}
+\label{sec:degree-two}
+
+Let a pruned tree core have only degree-two variables.  Contract each
+variable \(j\), adjacent to rows \(u\) and \(v\), into an edge between
+those rows.  The contracted graph is a tree on \(I\).
+
+\begin{theorem}[Explicit transported obstruction]\label{thm:transport}
+Choose a root row \(r\) and set \(\alpha_r=1\).  Orient every contracted
+edge away from the root.  If variable \(j\) connects parent row \(u\)
+to child row \(v\), define
+\begin{equation}\label{eq:transport}
+ \alpha_v
+ =
+ -\frac{\overline{c_{uj}}}{\overline{c_{vj}}}\alpha_u.
+\end{equation}
+Then every \(\alpha_i\) is nonzero,
+\[
+ C^*\alpha=0,
+ \qquad
+ \Ker C^*=\C\alpha,
+\]
+and the value is
+\begin{equation}\label{eq:tree-closed}
+ \Gamma(b,C)
+ =
+ \frac{\left|\sum_{i\in I}\overline{\alpha_i}b_i\right|}
+      {\max_{i\in I}|\alpha_i|}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+There is a unique root path to every row, so \eqref{eq:transport} is
+consistent and nonzero.  For the column \(j\) joining \(u,v\), it gives
+\[
+ \overline{c_{uj}}\alpha_u+
+ \overline{c_{vj}}\alpha_v=0.
+\]
+Thus \(C^*\alpha=0\).  The core has one complex defect by
+\cref{cor:one-defect-topology}, so \(\alpha\) spans the kernel.
+\Cref{thm:one-defect} gives \eqref{eq:tree-closed}.
+\end{proof}
+
+\begin{proposition}[Recovery of primal variables]\label{prop:recover}
+Let \(y\) be any optimal residual supplied by
+\cref{thm:residual-face} and set \(d=y-b\).  The solution of
+\(C\theta=d\) can be recovered by repeatedly removing a nonroot
+analysis leaf \(\ell\).  If \(j\) is its incident variable and \(u\) is
+the parent row, set
+\[
+ \theta_j=\frac{d_\ell}{c_{\ell j}},
+ \qquad
+ d_u\leftarrow d_u-c_{uj}\theta_j,
+\]
+then delete \(\ell,j\).  The last root equation holds automatically.
+\end{proposition}
+
+\begin{proof}
+Each step solves the leaf equation exactly and substitutes it into its
+parent equation.  After all nonroot rows are removed, the only possible
+remaining inconsistency is in the root row.  But
+\(\langle\alpha,d\rangle=0\) and the transported nonzero coefficients
+express the root equation as the unique linear dependence among the
+rows, so it also vanishes.
+\end{proof}
+
+\begin{corollary}[Weighted incidence columns]\label{cor:incidence}
+Suppose every contracted edge \(e=\{u,v\}\) has column
+\[
+ C_e=w_e(e_u-e_v),
+ \qquad w_e\ne0.
+\]
+Then \(\alpha\equiv1\) and
+\begin{equation}\label{eq:conservation}
+ \Gamma(b,C)=\left|\sum_{i\in I}b_i\right|.
+\end{equation}
+\end{corollary}
+
+Equation \eqref{eq:conservation} is the unique conservation law of a
+tree incidence matrix.  For general complex edge coefficients, the
+ordinary sum is replaced by the literal phase-and-magnitude transported
+sum in \eqref{eq:tree-closed}.
+
+\begin{remark}[No cycle holonomy on a tree]
+The recursion \eqref{eq:transport} never compares two paths to the same
+row.  A cycle would impose a multiplicative consistency condition on
+the transported phases and magnitudes.  That genuinely new phenomenon
+is not part of the forest theorem.
+\end{remark}
+

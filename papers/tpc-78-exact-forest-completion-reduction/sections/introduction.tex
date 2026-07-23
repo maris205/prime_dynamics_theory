@@ -1,0 +1,77 @@
+\section{Introduction}
+
+The completion layers developed in
+\cite{WangTPC75,WangTPC77} separate a fixed-shift physical assembly from
+a finite convex program.  After immutable coordinates and exact zero
+columns are removed and the actual incidence graph is split into
+connected components, the active algebraic problem is
+\begin{equation}\label{eq:intro-program}
+ \Gamma(b,C)
+ =
+ \min_{\theta\in\C^J}
+ \sum_{i\in I}
+ \left|b_i+\sum_{j\in J}c_{ij}\theta_j\right|.
+\end{equation}
+For an arbitrary matrix, the primal--dual certificate of TPC-77 is the
+right stopping point.  The purpose of this paper is to identify what
+becomes exactly solvable when the \emph{actual} nonzero support of \(C\)
+is a forest.
+
+There are three distinct questions.
+\begin{enumerate}[label=(Q\arabic*),leftmargin=2.7em]
+\item When does the parameter family cancel every datum?
+\item If cancellation is impossible, how many independent obstructions
+remain and when is there a closed formula?
+\item When the obstruction space is multidimensional, what exact
+reduction and lower certificates survive?
+\end{enumerate}
+Forest support answers all three without genericity assumptions on the
+nonzero coefficients.  Its decisive feature is not merely sparsity.
+Every matching minor contains a unique determinant monomial, so no
+coefficient cancellation can destroy its rank.  This converts matching
+theory \cite{LovaszPlummer1986,Schrijver2003} into an exact algebraic
+test.
+
+\paragraph{Main results.}
+Variable leaves can be removed exactly.  Forest rank equals maximum
+matching size.  Once variable-leaf pruning stops, a connected core has
+defect
+\[
+ d=\dim_{\C}\Ker C^*
+   =1+\sum_{j}(\deg(j)-2).
+\]
+The case \(d=1\) has a complete closed solution, including both
+optimizers and the entire optimal residual face.  Higher defect is not
+hidden behind a scalar surrogate: it is reduced exactly to a
+\(d\)-complex-variable second-order cone problem.  In parallel, a
+column-dominant pivot gives a different exact elimination rule, and
+balanced local charges give checkable dual-packing lower bounds.
+
+\paragraph{What is genuinely new at this layer.}
+Component decomposition alone says that independent pieces add.
+Here we determine the value of every defect-one forest piece in closed
+form and give a structural zero test for every forest piece.  We also
+isolate the exact branching statistic that measures the dimension of
+the unsolved core.  This is a real reduction of the completion
+interface, not a relabeling of the previous dual program.
+
+\paragraph{Scope.}
+The forest theorems use nonzero complex-scalar entries \(c_{ij}\).
+TPC-77 allowed general real-linear maps \(\C\to\C\); a nonzero
+real-linear leaf block need not be surjective, so those results do not
+extend verbatim.  Moreover, forest topology says nothing about how
+frequently a literal fixed-shift arithmetic assembly realizes a given
+motif, or how large the corresponding datum score is.  Those are later
+arithmetic-transfer questions.  We keep them outside every theorem
+below.
+
+\paragraph{Organization.}
+\Cref{sec:setup} records the primal--dual normal form.
+\Cref{sec:leaf-rank} proves leaf erasure and the matching-rank theorem.
+\Cref{sec:core-defect} identifies the pruned-core defect.
+\Cref{sec:one-defect,sec:degree-two} give the closed solution and phase
+transport.  \Cref{sec:dominance} proves a second exact pivot rule.
+\Cref{sec:higher-defect,sec:motifs} treat branching cores and dual
+packings.  \Cref{sec:countermodels,sec:physical-boundary} state the
+failure modes and the physical claim boundary.
+

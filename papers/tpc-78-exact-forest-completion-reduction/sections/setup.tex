@@ -1,0 +1,68 @@
+\section{Complex-scalar completion and its support graph}
+\label{sec:setup}
+
+Let \(I\) and \(J\) be finite sets, let \(b\in\C^I\), and let
+\(C=(c_{ij})_{i\in I,j\in J}\in\C^{I\times J}\).  We use
+\[
+ \langle x,y\rangle=\sum_i\overline{x_i}y_i,
+ \qquad
+ [x,y]_{\R}=\Real\langle x,y\rangle.
+\]
+The component value is
+\begin{equation}\label{eq:gamma}
+ \Gamma(b,C)
+ =
+ \min_{\theta\in\C^J}\|b+C\theta\|_1.
+\end{equation}
+Since this is distance to a finite-dimensional subspace, the minimum is
+attained.  Standard finite-dimensional convex duality
+\cite{Rockafellar1970} gives
+\begin{equation}\label{eq:dual}
+ \Gamma(b,C)
+ =
+ \max\left\{
+ [z,b]_{\R}:
+ z\in\C^I,\ \|z\|_\infty\le1,\ C^*z=0
+ \right\}.
+\end{equation}
+Both extrema are attained.  The condition \(C^*z=0\) is a complex
+linear balance equation because the variables in \eqref{eq:gamma}
+range over \(\C^J\).
+
+\begin{definition}[Actual incidence graph]\label{def:actual-graph}
+The actual bipartite support graph is
+\[
+ G(C)=(I\sqcup J,E),
+ \qquad
+ (i,j)\in E\ \Longleftrightarrow\ c_{ij}\ne0.
+\]
+It is built after all algebraic sums defining \(C\) have been
+performed.
+\end{definition}
+
+Permutation of rows and columns by the connected components of \(G(C)\)
+block diagonalizes \(C\).  Therefore \(\Gamma\) is the sum of its
+connected component values, together with \(|b_i|\) for isolated
+analysis rows.  Isolated variable columns contribute nothing.  We may
+accordingly prove the main statements for a connected component and
+sum them afterwards.
+
+\begin{remark}[Why scalar blocks are stated explicitly]\label{rem:scalar}
+In TPC-77 an edge could carry a general real-linear coordinate map
+\(L:\C\to\C\).  Here an edge carries multiplication by a nonzero
+complex number.  This ensures that a leaf variable can realize every
+complex correction at its adjacent row and that a matching minor is an
+ordinary complex determinant.  \Cref{sec:countermodels} shows that
+``nonzero real-linear block'' is insufficient.
+\end{remark}
+
+\begin{definition}[Forest component and matching number]
+A component is a \emph{forest component} when \(G(C)\) is a tree.
+For a forest \(G\), let \(\nu(G)\) denote the largest number of
+pairwise vertex-disjoint edges.
+\end{definition}
+
+We distinguish two types of leaves throughout:
+an analysis leaf belongs to \(I\), while a variable leaf belongs to
+\(J\).  Only the second is unconditionally free.
+

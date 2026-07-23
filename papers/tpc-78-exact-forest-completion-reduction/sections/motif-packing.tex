@@ -1,0 +1,91 @@
+\section{Hall-circuit motifs and dual packings}
+\label{sec:motifs}
+
+The reduced program is exact, but a lower bound may be certified
+without solving it globally.  The correct local objects are balanced
+charges, not merely dense-looking subgraphs.
+
+\begin{definition}[Row Hall circuit]\label{def:hall-circuit}
+A nonempty row set \(S\subseteq I\) is a \emph{row Hall circuit} when
+\[
+ |N(S)|<|S|
+\]
+and no proper nonempty subset of \(S\) has this property.  Here
+\(N(S)\) contains \emph{every} variable adjacent to a row of \(S\).
+\end{definition}
+
+\begin{theorem}[Canonical circuit charge]\label{thm:circuit-charge}
+Assume \(G(C)\) is a forest and \(S\) is a row Hall circuit.  Then
+\[
+ |N(S)|=|S|-1,
+ \qquad
+ \dim_{\C}\Ker C_{S,N(S)}^*=1.
+\]
+Every nonzero generator \(g^S\) of this kernel has
+\(g_i^S\ne0\) for all \(i\in S\).  Extending \(g^S\) by zero outside
+\(S\) gives a global balanced charge \(C^*g^S=0\).  Consequently
+\begin{equation}\label{eq:motif-score}
+ \Gamma(b,C)\ge
+ \frac{|\langle g^S,b_S\rangle|}
+      {\|g^S\|_\infty}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For each \(i\in S\), minimality gives
+\(|N(S\setminus\{i\})|\ge|S|-1\), while
+\(N(S\setminus\{i\})\subseteq N(S)\).  Hence
+\(|N(S)|=|S|-1\).
+
+Every proper row subset is matchable, whereas \(S\) is not.  The
+forest-rank theorem therefore gives row rank \(|S|-1\) for
+\(C_{S,N(S)}\), so its left kernel is one dimensional.  If a generator
+vanished at \(i\), its restriction would give a nonzero left-kernel
+vector on the proper set \(S\setminus\{i\}\), contradicting its full
+row rank.  The zero extension is globally balanced because \(N(S)\)
+contains all columns incident to \(S\).  Normalize it to
+\(\ell^\infty\)-norm one, rotate its phase to make the pairing with
+\(b\) nonnegative, and apply \eqref{eq:dual}.
+\end{proof}
+
+The insistence on the full neighbor set is essential.  A charge
+balanced only against columns drawn inside a picture of the motif may
+fail the global equation at an incident boundary column.
+
+\begin{theorem}[Disjoint and fractional motif packing]\label{thm:packing}
+Let \(g^1,\ldots,g^m\in\Ker C^*\).
+\begin{enumerate}[label=(\alph*),leftmargin=2.4em]
+\item If their row supports are pairwise disjoint and
+\(\|g^s\|_\infty=1\), then
+\begin{equation}\label{eq:disjoint-pack}
+ \Gamma(b,C)\ge
+ \sum_{s=1}^m|\langle g^s,b\rangle|.
+\end{equation}
+\item More generally, if
+\begin{equation}\label{eq:capacity}
+ \sum_{s=1}^m|g_i^s|\le1
+ \qquad(i\in I),
+\end{equation}
+then the same lower bound \eqref{eq:disjoint-pack} holds.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For each \(s\), choose \(\omega_s\in\C\), \(|\omega_s|=1\), so that
+\(\langle \omega_s g^s,b\rangle\) is nonnegative real.  The sum
+\[
+ z=\sum_s\omega_s g^s
+\]
+is balanced.  Disjoint support in (a), or the capacity inequality in
+(b), gives \(\|z\|_\infty\le1\).  Its dual objective is the stated sum.
+\end{proof}
+
+\begin{remark}[Certificate, not prevalence]
+\Cref{thm:packing} is useful only after actual balanced motifs and their
+literal datum scores have been exhibited.  Counting an ambient graph
+motif, replacing an exact zero by a tolerance, or ignoring incident
+columns does not produce a feasible charge.  Moreover, a large abstract
+packing has arithmetic force only if its global raw normalization is
+kept and its physical carrier set has the required size.
+\end{remark}
+

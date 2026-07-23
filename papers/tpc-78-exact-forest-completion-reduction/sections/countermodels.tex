@@ -1,0 +1,89 @@
+\section{Sharp countermodels and stop rules}
+\label{sec:countermodels}
+
+The following examples prevent five tempting but false extensions.
+
+\begin{example}[An analysis leaf is not free]\label{ex:row-leaf}
+Let
+\[
+ C=\begin{pmatrix}1\\-1\end{pmatrix},
+ \qquad
+ b=\begin{pmatrix}1\\1\end{pmatrix}.
+\]
+Both analysis rows are leaves, but
+\[
+ \min_{\theta\in\C}
+ \bigl(|1+\theta|+|1-\theta|\bigr)=2.
+\]
+For \(b=(1,-1)^\mathsf T\), the value is instead zero.  The same tree
+topology therefore implies neither a positive cost nor a saving for a
+specific datum.
+\end{example}
+
+\begin{example}[A complex star is a geometric median]\label{ex:median}
+For one variable with points \(0,1,\mathrm i\), the objective is
+\[
+ |\theta|+|\theta-1|+|\theta-\mathrm i|.
+\]
+The coordinatewise median is \(0\) and has value \(2\).  The planar
+Fermat point
+\[
+ \theta_*=\frac{3-\sqrt3}{6}(1+\mathrm i)
+\]
+has value \(\sqrt{2+\sqrt3}<2\).  Complex star components are weighted
+geometric-median problems; only collinear data reduce to an ordinary
+weighted median.  With two points \(p_1,p_2\) and weights \(w_1,w_2\),
+the exact value is
+\[
+ \min(w_1,w_2)|p_1-p_2|.
+\]
+\end{example}
+
+\begin{example}[Cycle support does not fix rank]\label{ex:cycle-rank}
+The matrices
+\[
+ C_+=\begin{pmatrix}1&1\\1&1\end{pmatrix},
+ \qquad
+ C_-=\begin{pmatrix}1&1\\1&-1\end{pmatrix}
+\]
+have the same \(K_{2,2}\) support, but ranks one and two.  For
+\(b=(1,-1)^\mathsf T\),
+\[
+ \Gamma(b,C_+)=2,
+ \qquad
+ \Gamma(b,C_-)=0.
+\]
+The forest hypothesis in \cref{thm:forest-rank} is therefore necessary.
+\end{example}
+
+\begin{example}[Nonzero real-linear leaves need not be surjective]
+Let a single real-linear block be \(C(z)=\Real z\), regarded as a map
+\(\C\to\C\), and take \(b=\mathrm i\).  Then
+\[
+ \min_{z\in\C}|\mathrm i+\Real z|=1.
+\]
+The one-edge graph is a tree, but the leaf cannot be erased.  General
+real-linear blocks require a surjective leaf map; the matching and
+phase-transport formulas require further invertibility and conformality.
+\end{example}
+
+\begin{example}[Real and complex parameter fields differ]
+\[
+ \min_{t\in\R}|\mathrm i+t|=1,
+ \qquad
+ \min_{t\in\C}|\mathrm i+t|=0.
+\]
+For real parameters the dual stationarity condition is a real
+projection equation, not \(C^*z=0\) as a complex equation.  No theorem
+may switch parameter fields silently.
+\end{example}
+
+\begin{remark}[Topology is not a lower bound by itself]
+A Hall circuit supplies a one-dimensional space of possible charges.
+Its score can still vanish because
+\(\langle g^S,b_S\rangle=0\).  Likewise, many motifs can overlap so
+strongly that their fractional packing has small total capacity.
+Arithmetic usefulness needs both carrier prevalence and noncancelling
+literal scores.
+\end{remark}
+
