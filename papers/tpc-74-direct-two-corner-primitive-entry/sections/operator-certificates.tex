@@ -1,0 +1,218 @@
+\section{From primitive entry kernels to operator majorants}
+\label{sec:operator-certificates}
+
+\subsection{Tail-free entrywise Abel identity}
+
+Set
+\[
+ M(x)=\sum_{r\le x}\mu(r)
+\]
+and, for a zero-extended finite kernel \(F\),
+\[
+ F^{[d]}(x,y)=F(dx,dy),
+ \qquad
+ \Delta_{12}F(x,y)
+ =
+ F(x,y)-F(x+1,y)-F(x,y+1)+F(x+1,y+1).
+\]
+Define the location-sensitive weighted plaquette cost
+\begin{equation}
+ \cC_\square(F)
+ =
+ \sum_{x,y\ge1}
+ |M(x)M(y)|\,|\Delta_{12}F(x,y)|.
+ \label{eq:entry-plaquette-cost}
+\end{equation}
+For comparison with the divisor lift of TPC--73, also define its exact
+large-diagonal tail
+\begin{equation}
+ \cT_D(F)
+ =
+ \sum_{d>D}|\mu(d)|
+ \sum_{x,y\ge1}|\mu(dx)\mu(dy)F(dx,dy)|.
+ \label{eq:entry-diagonal-tail}
+\end{equation}
+
+\begin{theorem}[Primitive entry Abel certificate]
+\label{thm:primitive-entry-Abel}
+For every \(m\ne n\),
+\begin{align}
+ \widetilde H_{mn}
+ &=
+ \sum_{x,y\ge1}
+ M(x)M(y)\Delta_{12}L_{mn}^{0}(x,y),
+ \label{eq:full-entry-Abel}\\
+ \widetilde E_{mn}
+ &=
+ \sum_{x,y\ge1}
+ M(x)M(y)\Delta_{12}L_{mn}^{E}(x,y).
+ \label{eq:erasure-entry-Abel}
+\end{align}
+Consequently,
+\begin{align}
+ |\widetilde H_{mn}|
+ &\le \cC_\square(L_{mn}^{0}),
+ \label{eq:full-entry-majorant}\\
+ |\widetilde E_{mn}|
+ &\le \cC_\square(L_{mn}^{E}),
+ \label{eq:erasure-entry-majorant}\\
+ |\widetilde R_{mn}|
+ &=|L_{mn}(b_{mn},a_{mn})|.
+ \label{eq:residual-entry-exact-magnitude}
+\end{align}
+Moreover, for \(d\ge2\),
+\[
+ (L_{mn}^{0})^{[d]}\equiv0,\qquad
+ (L_{mn}^{E})^{[d]}\equiv0.
+\]
+Thus the auxiliary diagonal tails of the support-faithful entry kernels
+vanish for every cutoff \(D\ge1\).
+\end{theorem}
+
+\begin{proof}
+Both kernels are finitely supported on the primitive lattice.  Apply
+two-dimensional summation by parts to
+\eqref{eq:full-direct-plane} and
+\eqref{eq:erasure-direct-plane}, then take absolute values.  If \(d\ge2\),
+the point \((dx,dy)\) has greatest common divisor at least \(d\), so both
+primitive-supported kernels vanish there.  The residual magnitude follows
+from \eqref{eq:residual-direct-point}.
+\end{proof}
+
+\begin{remark}[No cancellation theorem yet]
+Equations \eqref{eq:full-entry-Abel} and
+\eqref{eq:erasure-entry-Abel} are exact.  They do not assert that either
+weighted plaquette cost is smaller than the literal entry mass.  The
+prime number theorem statement \(M(x)=o(x)\) does not by itself supply a
+uniform fixed-power saving over the growing row-pair family.
+\end{remark}
+
+\subsection{The nonnegative entry matrix}
+
+For \(m<n\), define
+\begin{align}
+ P^H_{mn}
+ &=\cC_\square(L_{mn}^{0}),
+ \label{eq:full-Perron-majorant}\\
+ P^E_{mn}
+ &=\cC_\square(L_{mn}^{E}),
+ \label{eq:erasure-Perron-majorant}\\
+ P^R_{mn}
+ &=|L_{mn}(b_{mn},a_{mn})|.
+ \label{eq:residual-Perron-majorant}
+\end{align}
+Set
+\[
+ P^\chi_{nm}=P^\chi_{mn},\qquad
+ P^\chi_{mm}=0
+ \quad(\chi\in\{H,E,R\}).
+\]
+This upper-triangle definition makes all three matrices symmetric without
+an orientation convention.  It agrees with the reversed kernels by
+\cref{thm:reversed-pair-conjugacy}, since transposition and conjugation
+preserve \(\cC_\square\), while
+\((b_{nm},a_{nm})=(a_{mn},b_{mn})\).
+
+\begin{theorem}[Literal Perron operator certificates]
+\label{thm:literal-Perron-certificates}
+The exact physical matrices satisfy
+\begin{align}
+ \boxed{\|H\|=\|\widetilde H\|\le\|P^H\|=\rho(P^H),}
+ \label{eq:full-Perron-certificate}\\
+ \boxed{\|E\|=\|\widetilde E\|\le\|P^E\|=\rho(P^E),}
+ \label{eq:erasure-Perron-certificate}\\
+ \boxed{\|R\|=\|\widetilde R\|\le\|P^R\|=\rho(P^R).}
+ \label{eq:residual-Perron-certificate}
+\end{align}
+For every \(c=(c_m)\in(0,\infty)^{\cM_M}\),
+\begin{equation}
+ \rho(P^H)
+ \le
+ \max_m\frac{\sum_nP^H_{mn}c_n}{c_m},
+ \qquad
+ \rho(P^H)
+ =
+ \inf_{c_m>0}
+ \max_m\frac{\sum_nP^H_{mn}c_n}{c_m}.
+ \label{eq:weighted-Collatz}
+\end{equation}
+The analogous statements hold for \(P^E\) and \(P^R\).
+\end{theorem}
+
+\begin{proof}
+The entry inequalities in
+\cref{thm:primitive-entry-Abel} give
+\(|\widetilde H_{mn}|\le P^H_{mn}\), and similarly for \(E,R\).
+For arbitrary vectors \(x,y\),
+\[
+ |\langle x,\widetilde H y\rangle|
+ \le
+ \langle |x|,P^H|y|\rangle
+ \le
+ \|P^H\|\,\|x\|_2\|y\|_2.
+\]
+Hence \(\|\widetilde H\|\le\|P^H\|\).  The majorant is symmetric and
+nonnegative, so its operator norm is its Perron root.  The weighted bound
+and the reducible-safe infimum formula are the Collatz--Wielandt
+characterization \citep{BermanPlemmons1994}.  The other matrices are
+identical.
+\end{proof}
+
+\begin{corollary}[Schur and row-star forms]
+\label{cor:Schur-row-star}
+Let
+\[
+ \Delta_H
+ =
+ \max_m\#\{n:P^H_{mn}>0\}.
+\]
+Then
+\begin{equation}
+ \|H\|
+ \le
+ \max_m\sum_nP^H_{mn}
+ \le
+ \sqrt{\Delta_H}\,
+ \max_m\left(\sum_n(P^H_{mn})^2\right)^{1/2}.
+ \label{eq:row-star-majorant}
+\end{equation}
+The weighted form \eqref{eq:weighted-Collatz} may be strictly sharper than
+the unweighted maximum row sum.
+\end{corollary}
+
+\begin{corollary}[A conditional normalized-Gram consequence]
+\label{cor:conditional-Gram}
+For a family indexed by \(X\), if a literal certificate proves
+\[
+ \rho(P_X^H)\le\eta_X<1,
+\]
+then
+\[
+ 1-\eta_X
+ \le
+ \lambda_{\min}(G_{{\rm nat},X})
+ \le
+ \lambda_{\max}(G_{{\rm nat},X})
+ \le
+ 1+\eta_X.
+\]
+This implication is deterministic.  The hypothesis is not proved here.
+\end{corollary}
+
+\begin{proof}
+Use \(G_{\rm nat}=I+H\) and
+\eqref{eq:full-Perron-certificate}.
+\end{proof}
+
+\subsection{Completion freedom returns at the estimate level}
+
+The physical entry samples only primitive sites.  Therefore the analytic
+completion gauge of TPC--73 can be applied separately to every
+\(L_{mn}^{0}\).  A nonprimitive completion may reduce its \(d=1\)
+variation, but all higher diagonal slices and the exact tail of that same
+completion must be restored.  To obtain an operator theorem, the complete
+family of completion rules must be declared before the later coefficient
+extremizer is chosen, must respect
+\eqref{eq:kernel-Hermitian-reversal}, and must produce one controlled
+majorant matrix.  Pairwise optimization with no uniform summability is
+not an L2 result.

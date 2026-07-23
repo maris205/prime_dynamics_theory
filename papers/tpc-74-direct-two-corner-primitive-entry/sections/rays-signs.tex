@@ -1,0 +1,170 @@
+\section{Affine rays and the direct-entry sign}
+\label{sec:rays-signs}
+
+\subsection{Exact ray spacing}
+
+\begin{theorem}[General fixed-\((q,u,v)\) direct-entry ray]
+\label{thm:direct-entry-ray}
+Fix \(m,n,h_0\), and suppose one actual key realizes coordinates
+\((q,u,v)\), with data
+\[
+ (j_0,Q_{m,0},Q_{n,0})
+\]
+exists, define
+\begin{equation}
+ \lambda_{mn}(q,u,v)
+ =
+ \operatorname{lcm}\left(
+       \frac{qu}{(m,qu)},
+       \frac{qv}{(n,qv)}
+      \right)
+ \label{eq:general-ray-spacing}
+\end{equation}
+Then every other physical key with the same \((q,u,v)\) has a unique
+integer \(z\) for which
+\begin{align}
+ j&=j_0+\lambda_{mn}(q,u,v)\,z,
+ \label{eq:direct-time-ray}\\
+ Q_m&=Q_{m,0}+\frac{m\lambda_{mn}(q,u,v)}{qu}\,z,
+ \label{eq:direct-Qm-ray}\\
+ Q_n&=Q_{n,0}+\frac{n\lambda_{mn}(q,u,v)}{qv}\,z
+ \label{eq:direct-Qn-ray}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+For two keys with the same coordinates, take differences.  From
+\[
+ mj+h_0=quQ_m,\qquad nj+h_0=qvQ_n
+\]
+one obtains
+\[
+ m\,\delta j=qu\,\delta Q_m,\qquad
+ n\,\delta j=qv\,\delta Q_n.
+\]
+The first divisibility is equivalent to
+\(qu/(m,qu)\mid\delta j\), and the second to
+\(qv/(n,qv)\mid\delta j\).  Their simultaneous solution lattice is
+therefore exactly
+\(\delta j=\lambda_{mn}(q,u,v)z\).  Substitution gives the two displayed
+prime increments; they are integers by the definition of \(\lambda_{mn}\).
+\end{proof}
+
+\begin{remark}[Containment, not prime production]
+The lattice theorem is one-way.  It places every realized key on the
+displayed lattice; it does not assert that every integer \(z\) produces
+prime largest factors or survives the largest-prime test, masks, complete
+output labels, physical interval, or endpoints.
+\end{remark}
+
+\begin{corollary}[Physical primitive-row spacing]
+\label{cor:primitive-row-spacing}
+On the inherited physical carrier
+\[
+ (mn,h_0)=1,
+\]
+one has
+\[
+ (m,qu)=(n,qv)=1,\qquad
+ \lambda_{mn}(q,u,v)=quv.
+\]
+Consequently,
+\[
+ j=j_0+quv\,z,\qquad
+ Q_m=Q_{m,0}+mv\,z,\qquad
+ Q_n=Q_{n,0}+nu\,z.
+\]
+\end{corollary}
+
+\begin{proof}
+Apply \eqref{eq:physical-row-primitivity} to both realized rows.
+Since \(qu\mid mj+h_0\), any common divisor of \(m\) and \(qu\) divides
+\(h_0\); hence it is \(1\).  The argument for \(n,qv\) is identical.
+Now \(q,u,v\) are pairwise coprime, so
+\(\operatorname{lcm}(qu,qv)=quv\).  Substitute this value into
+\cref{eq:direct-time-ray,eq:direct-Qm-ray,eq:direct-Qn-ray}.
+\end{proof}
+
+\noindent
+For a complete key \(i\), let \(\ell(i)\) denote the tuple of all its
+labels other than the time coordinate.  This tuple retains, in
+particular, the side, external block, opposite row, \(\gamma\)-coordinate,
+orbit class, and every remaining orthogonal label.
+
+\begin{corollary}[Ray census]
+\label{cor:direct-ray-census}
+If the allowed time interval has length \(J\), then
+\[
+ \#\{i\in\cI_{mn}:
+       (q_i,u_i,v_i)=(q,u,v),\ \ell(i)=\ell_0\}
+ \le
+ 1+\left\lfloor\frac{J}{\lambda_{mn}(q,u,v)}\right\rfloor
+\]
+for each fixed label tuple \(\ell_0\).  The unrestricted key count
+requires summation over the realized \(\ell_0\)'s; no label multiplicity
+is hidden in the displayed bound, and the sum does not exploit literal
+phases.
+\end{corollary}
+
+\subsection{Frozen target sign}
+
+\begin{theorem}[Primitive sign of one direct key]
+\label{thm:direct-key-sign}
+For every \(i\in\cI_{mn}\),
+\begin{equation}
+ \boxed{
+ \mu(N_{i,m})\mu(N_{i,n})
+ =
+ \mu(u_i)\mu(v_i).}
+ \label{eq:direct-primitive-sign}
+\end{equation}
+Consequently, the M\"obius sign is constant along every arithmetic ray in
+\cref{thm:direct-entry-ray}, irrespective of whether its spacing
+simplifies to \(quv\).
+\end{theorem}
+
+\begin{proof}
+Each largest prime is coprime to its cofactor on the squarefree target
+support, so
+\[
+ \mu(N_{i,m})=-\mu(S_{i,m}),\qquad
+ \mu(N_{i,n})=-\mu(S_{i,n}).
+\]
+The two minus signs cancel.  The pairwise coprimality from
+\cref{thm:canonical-primitive-key} gives
+\[
+ \mu(q_i u_i)\mu(q_i v_i)
+ =
+ \mu(q_i)^2\mu(u_i)\mu(v_i)
+ =
+ \mu(u_i)\mu(v_i).
+\]
+\end{proof}
+
+\begin{corollary}[Same-residual sign check]
+\label{cor:same-residual-sign-check}
+At the distinguished point \((u,v)=(b,a)\),
+\[
+ \mu(u)\mu(v)=\mu(a)\mu(b)
+ =\mu(d_m)\mu(d_n).
+\]
+This agrees with the same-residual sign-freezing theorem of TPC--68.
+\end{corollary}
+
+\begin{proof}
+The first equality is symmetry.  Since the squarefree factors
+\(g,a,b\) are pairwise coprime,
+\[
+ \mu(d_m)\mu(d_n)
+ =\mu(ga)\mu(gb)
+ =\mu(g)^2\mu(a)\mu(b).
+\]
+\end{proof}
+
+\begin{remark}[What can oscillate]
+The theorem freezes only the target M\"obius sign inside a fixed ray.
+The literal coefficient
+\(\overline{\beta_{i,m}}\beta_{i,n}\) may carry complex phases and
+amplitude variation, and the set of surviving prime points may be highly
+irregular.
+\end{remark}

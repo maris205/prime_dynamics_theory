@@ -1,0 +1,176 @@
+\section{Countermodels and non-substitution laws}
+\label{sec:countermodels}
+
+\subsection{A literal orphan erasure edge}
+
+Take the finite fixed-shift interface
+\[
+ m=2,\qquad n=3,\qquad h_0=1,\qquad d_m=d_n=1,
+\]
+with one complete common-output key at time \(j=3\).  Its targets are
+\[
+ 2j+1=7=7\cdot1,\qquad
+ 3j+1=10=5\cdot2.
+\]
+Thus
+\[
+ q=1,\qquad (u,v)=(1,2),\qquad (b,a)=(1,1).
+\]
+The residuals \(1\) and \(2\) are unequal.  Choose one literal coefficient
+at each row, both equal to \(1\); then \(W_m=W_n=1\).  With a finite high
+threshold below \(5\), the largest-prime labels are literal and all target
+and residual M\"obius values are nonzero.  The exact matrices are
+\[
+ R=0,\qquad
+ E=H=
+ \begin{pmatrix}
+ 0&-1\\
+ -1&0
+ \end{pmatrix}.
+\]
+Indeed,
+\[
+ L_{mn,1}(1,2)=1,\qquad
+ \mu(1)\mu(2)=-1.
+\]
+
+Every four-corner \(ER\) anchor coefficient vanishes because \(R=0\),
+whereas the direct erasure entry and its operator norm are nonzero.  This
+is a literal finite-interface witness that the anchored primitive plane
+cannot substitute for the direct plane.  It does not assert that orphan
+edges carry nonnegligible mass in the full asymptotic carrier.
+
+\subsection{A literal same-residual direction}
+
+Take
+\[
+ m=2,\qquad n=3,\qquad h_0=1,\qquad d_m=2,\qquad d_n=3,
+\]
+so \(g=1\), \(a=2\), and \(b=3\).  At time \(j=7\),
+\[
+ 2j+1=15=5\cdot3,\qquad
+ 3j+1=22=11\cdot2.
+\]
+Thus
+\[
+ q=1,\qquad (u,v)=(3,2)=(b,a),
+\]
+and the two residual labels agree:
+\[
+ d_mS_m=2\cdot3=6=3\cdot2=d_nS_n.
+\]
+This finite arithmetic key checks the distinguished \(R\)-direction.
+Entry into a particular asymptotic physical family still requires all
+of that family's literal masks and endpoint conditions.
+
+\subsection{The same-residual point need not cancel}
+
+Let the only nonzero direction for one row pair be
+\[
+ L_{mn}^{0}=ce_{b,a}.
+\]
+Then
+\[
+ \widetilde R_{mn}=\mu(a)\mu(b)c,\qquad
+ \widetilde E_{mn}=0.
+\]
+The full magnitude is \(|c|\).  Primitive support, affine-ray structure,
+and the divisor bound on \(q\) do not create M\"obius cancellation inside
+the distinguished direction.  Literal phases across keys are a separate
+possible mechanism.
+
+\subsection{One common key does not have unit normalized weight}
+
+Let each of two rows carry \(T\) literal unit coefficients, but let only
+one complete output key be common to the rows.  Then
+\[
+ W_m=W_n=T
+\]
+and the common key contributes
+\[
+ \frac{\overline{\beta_{i,m}}\beta_{i,n}}{\sqrt{W_mW_n}}
+ =\frac1T,
+\]
+not \(1\).  Neither the singleton property nor equality of the common
+key permits replacing the raw row masses by collision degrees.  This
+also illustrates why the entry audit
+\eqref{eq:atomic-entry-l1-audit} is a normalization bound rather than a
+uniform saving.
+
+\subsection{Mixed-trace cancellation does not control an entry}
+
+Consider the abstract Hermitian zero-diagonal matrices
+\[
+ R=
+ \begin{pmatrix}
+ 0&1\\
+ 1&0
+ \end{pmatrix},
+ \qquad
+ E=
+ \begin{pmatrix}
+ 0&i\\
+ -i&0
+ \end{pmatrix}.
+\]
+Then \(ER\ne0\), but
+\[
+ \tr(ER)=0,\qquad \|E\|=\|R\|=1.
+\]
+Thus even cancellation of a nonzero first mixed carrier does not bound
+either factor.  The direct-entry theorem is a new object interface, not a
+corollary of a scalar trace estimate.
+
+\subsection{Fixed-pair decay does not control the operator}
+
+For \(N\ge2\), let \(A_N\) be the \(N\)-by-\(N\) matrix with zero diagonal
+and every off-diagonal entry equal to \(1/(N-1)\).  For each fixed pair,
+\[
+ (A_N)_{mn}\longrightarrow0,
+\]
+while
+\[
+ \|A_N\|=1
+\]
+because the all-ones vector is an eigenvector.  Hence fixed-pair
+little-oh notation for
+\(\cC_\square(L_{mn}^{0})\) is insufficient.  A row, weighted Schur, or
+Perron estimate over the complete growing pair family is necessary.
+
+\subsection{Pre-aggregation costs can lose literal cancellation}
+
+In the ambient finite-kernel class, two content slices \(F\) and \(-F\)
+have
+\[
+ L_{mn}=F+(-F)=0,
+\]
+although their separate weighted costs are positive.  Therefore
+\[
+ \cC_\square\!\left(\sum_qL_{mn,q}\right)
+ \le
+ \sum_q\cC_\square(L_{mn,q})
+\]
+is valid but may be strict.  This model does not assert that exact
+cancellation occurs in every physical family; it fixes the legal order of
+operations.
+
+\subsection{A time-only compression can change the carrier}
+
+Equality of complete native outputs implies equality of time, but the
+converse fails.  Two atoms at the same time with different side,
+\(\gamma\), block, or remaining output labels do not form a Gram
+collision.  Replacing \(\cI_{mn}\) in
+\eqref{eq:q-slice-entry-kernel} by a time set may therefore create
+spurious two-corner products.  The compressed direct-cell
+\(\Gamma_{m,n}(j)\) formula is legal only under its identical-support
+hypothesis.
+
+\subsection{Failure of the majorant is not failure of cancellation}
+
+A large value of \(\rho(P^H)\) proves only that the present
+absolute-value certificate is inconclusive.  The signed matrix \(H\) may
+still be small because of cancellations between plaquettes, row pairs,
+contents, sides, or literal phases discarded by \(P^H\).  To close the
+Abel--Perron route negatively, one needs an actual-carrier lower
+obstruction for every declared admissible completion or for the exact
+majorant architecture, at a nonnegligible physical mass scale.

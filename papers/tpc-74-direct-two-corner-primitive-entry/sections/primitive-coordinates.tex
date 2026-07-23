@@ -1,0 +1,127 @@
+\section{Primitive coordinates at one complete output key}
+\label{sec:primitive-coordinates}
+
+For every ordered pair \(m\ne n\), define
+\begin{equation}
+ g_{mn}=(d_m,d_n),\qquad
+ a_{mn}=\frac{d_m}{g_{mn}},\qquad
+ b_{mn}=\frac{d_n}{g_{mn}}.
+ \label{eq:row-divisor-split}
+\end{equation}
+The three factors \(g_{mn},a_{mn},b_{mn}\) are squarefree and pairwise
+coprime, and reversal gives
+\[
+ g_{nm}=g_{mn},\qquad a_{nm}=b_{mn},\qquad b_{nm}=a_{mn}.
+\]
+Fix distinct active rows \(m<n\) and abbreviate
+\[
+ g=g_{mn},\qquad a=a_{mn},\qquad b=b_{mn}.
+\]
+Put
+\[
+ \Delta_{mn}=h_0(n-m)\ne0.
+\]
+
+\begin{definition}[Direct-entry cofactor coordinates]
+\label{def:direct-entry-coordinates}
+For \(i\in\cI_{mn}\), define
+\begin{equation}
+ q_i=(S_{i,m},S_{i,n}),
+ \qquad
+ S_{i,m}=q_i u_i,
+ \qquad
+ S_{i,n}=q_i v_i.
+ \label{eq:direct-entry-coordinates}
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Canonical primitive key coordinates]
+\label{thm:canonical-primitive-key}
+At every actual key \(i\in\cI_{mn}\):
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item \(q_i,u_i,v_i\) are squarefree and pairwise coprime;
+ \item \(q_i\) is coprime to \(gab\), \(u_i\) is coprime to \(ga\), and
+       \(v_i\) is coprime to \(gb\);
+ \item
+       \begin{equation}
+       \boxed{q_i\mid |\Delta_{mn}|;}
+       \label{eq:direct-q-divides-Delta}
+       \end{equation}
+ \item the two largest-prime labels satisfy
+       \begin{equation}
+       \boxed{
+       n u_i Q_{i,m}-m v_iQ_{i,n}=\frac{\Delta_{mn}}{q_i};}
+       \label{eq:direct-prime-line}
+       \end{equation}
+ \item the residual labels are equal exactly in one primitive direction:
+       \begin{equation}
+       \boxed{
+       s_{i,m}=s_{i,n}
+       \quad\Longleftrightarrow\quad
+       (u_i,v_i)=(b,a).}
+       \label{eq:unique-residual-direction}
+       \end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The residual labels are
+\[
+ s_{i,m}=gaq_i u_i,\qquad
+ s_{i,n}=gbq_i v_i.
+\]
+Both are squarefree by \eqref{eq:squarefree-key-carrier}.  Together with
+\((u_i,v_i)=1\), which follows from the definition of \(q_i\), this gives
+the stated squarefreeness and coprimality: squarefreeness of
+\(gaq_iu_i\) makes \(g,a,q_i,u_i\) pairwise coprime, and squarefreeness
+of \(gbq_iv_i\) does the same for \(g,b,q_i,v_i\).
+
+The common time in the complete key gives
+\begin{align*}
+ nN_{i,m}-mN_{i,n}
+ &=
+ n(mj(i)+h_0)-m(nj(i)+h_0)\\
+ &=h_0(n-m)=\Delta_{mn}.
+\end{align*}
+Substitute \(N_{i,m}=Q_{i,m}q_i u_i\) and
+\(N_{i,n}=Q_{i,n}q_i v_i\).  This yields
+\[
+ q_i\bigl(nu_iQ_{i,m}-mv_iQ_{i,n}\bigr)=\Delta_{mn},
+\]
+proving \eqref{eq:direct-q-divides-Delta} and
+\eqref{eq:direct-prime-line}.
+
+Finally,
+\[
+ s_{i,m}=s_{i,n}
+ \quad\Longleftrightarrow\quad
+ au_i=bv_i.
+\]
+If \(au_i=bv_i\), then \((a,b)=1\) gives
+\(u_i=bk\), \(v_i=a\ell\).  The equality gives \(k=\ell\), while
+\((u_i,v_i)=1\) forces \(k=\ell=1\).  The converse is immediate.
+\end{proof}
+
+\begin{remark}[No anchor is used]
+\label{rem:no-anchor-needed}
+The coordinate \(q_i\) is recovered from the two cofactors at the same
+complete output key.  A same-residual return key is not part of
+\cref{def:direct-entry-coordinates}.  The row-divisor split only marks
+which point of the full primitive plane belongs to \(R\).
+\end{remark}
+
+\begin{corollary}[Divisor-many content slices]
+\label{cor:divisor-many-direct-slices}
+For fixed \(m,n,h_0\), every actual entry key belongs to one of at most
+\(\tau(|\Delta_{mn}|)\) content slices.  This divisor bound controls
+multiplicity only; it gives no cancellation among literal slice
+amplitudes.
+\end{corollary}
+
+\begin{remark}[Actual support is smaller]
+The arithmetic conditions above are necessary, not sufficient.  Primality
+of \(Q_{i,m},Q_{i,n}\), their largest-prime status, the physical interval,
+complete-key incidence, sides, masks, profiles, and endpoints may delete
+points from a primitive direction.  They are retained inside the literal
+kernel defined below.
+\end{remark}

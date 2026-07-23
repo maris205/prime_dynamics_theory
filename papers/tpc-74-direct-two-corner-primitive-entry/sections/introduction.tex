@@ -1,0 +1,91 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The fixed-shift missing-native Gram has the atomic-normalized form
+\[
+ G_{\rm nat}=I+H,\qquad H=R+E,
+\]
+where \(R\) contains same-residual collisions and \(E\) contains
+unequal-residual collisions created by erasure
+\citep{WangTPC61,WangTPC68}.  The exact source-row gauge of TPC--68 turns
+every off-diagonal entry into a signed two-affine sum, while preserving
+the spectrum, entry magnitudes, row stars, and collision graph
+\citep{WangTPC68}.  Consequently, a direct arithmetic representation of
+those gauged entries would be a genuine operator interface.
+
+TPC--70 instead begins with the first mixed trace \(\tr(ER)\).  A
+same-residual key and an erasure key form a four-corner rectangle.  The
+same-residual key freezes two signs, and the remaining erasure key is
+reindexed by primitive cofactor coordinates
+\[
+ q=(S_m,S_n),\qquad S_m=qu,\qquad S_n=qv
+\]
+\citep{WangTPC70}.  TPC--71 gives a divisor-lifted Abel certificate for
+the resulting plane \citep{WangTPC71}.  TPC--73 then observes that the
+support-faithful zero extension is already primitive-supported; its
+auxiliary high-diagonal tail is identically zero
+\citep{WangTPC73}.
+
+That chain is exact but remains attached to a four-corner scalar.  Even a
+perfect estimate for \(\tr(ER)\) does not bound \(E_{mn}\), a row star, or
+\(\|H\|\).  The present paper returns to the two-corner formula of
+TPC--68 and applies the cofactor coordinates to the actual common-output
+key itself.  No same-residual anchor is needed to define the coordinates.
+The row divisors still identify one direction:
+\[
+ d_mS_m=d_nS_n
+ \quad\Longleftrightarrow\quad
+ (u,v)=(b,a),
+\]
+where \(d_m=ga\), \(d_n=gb\), and \((a,b)=1\).  The point \((b,a)\)
+therefore is not deleted from the full plane.  It is exactly \(R_{mn}\);
+the punctured plane is exactly \(E_{mn}\).
+
+\subsection{Main results}
+
+The paper proves the following finite, literal statements.
+\begin{enumerate}[label=\textup{(\arabic*)},leftmargin=3em]
+ \item Every actual complete common-output key determines canonical
+       squarefree, pairwise coprime coordinates \(q,u,v\), with
+       \(q\mid|h_0(n-m)|\).
+ \item Fixed \((q,u,v)\) keys lie in an exact affine solution lattice
+       with a general least-common-multiple spacing; the proved
+       primitive-row property of the inherited physical carrier
+       simplifies it to \(quv\).
+       Their gauged M\"obius sign is the frozen value
+       \(\mu(u)\mu(v)\).
+ \item Same residual is equivalent to the unique primitive direction
+       \((b,a)\).
+ \item The complete gauged matrices \(\widetilde H,\widetilde R,\widetilde
+       E\) have exact entry formulas in the literal kernels
+       \(L_{mn,q}\), with normalization \(1/\sqrt{W_mW_n}\).
+ \item Reversing the row pair swaps \(u,v\) and conjugates the kernel, so
+       the representation is manifestly Hermitian.
+ \item Primitive support removes the auxiliary diagonal tail from every
+       entry kernel.  Weighted plaquette costs give explicit entry
+       majorants.
+ \item A symmetric nonnegative matrix of these majorants controls the
+       operator norm through its Perron radius.  This is an exact carrier
+       theorem, not a saving for that radius.
+\end{enumerate}
+
+\subsection{Logical level}
+
+The coordinate and matrix identities are L1: they retain the same fixed
+\(h_0\), raw masses, complete keys, literal coefficients, actual support,
+and unitary gauge as the physical Gram.  The finite-matrix comparison
+principles are L0.  Estimating the complete growing majorant matrix is the
+new L2 arithmetic gate.  In particular, one fixed pair, one side, a
+direct-cell compression, or the first mixed trace cannot be substituted
+for that gate.
+
+\subsection{Organization}
+
+\Cref{sec:literal-entry} fixes the complete-key native entry.
+\Cref{sec:primitive-coordinates} constructs its primitive coordinates,
+and \cref{sec:rays-signs} proves the ray and sign theorems.
+\Cref{sec:exact-representation} gives the exact \(R/E/H\) entry formulas
+and Hermitian reversal.  \Cref{sec:operator-certificates} builds
+entry-to-operator majorants.  Countermodels and non-substitution laws
+appear in \cref{sec:countermodels}.  The remaining physical gates and
+claim ledger are in \cref{sec:physical-gates,sec:claim-boundary}.

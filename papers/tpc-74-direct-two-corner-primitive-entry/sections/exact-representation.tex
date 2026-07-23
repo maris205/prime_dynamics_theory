@@ -1,0 +1,203 @@
+\section{Exact direct-entry primitive-plane representation}
+\label{sec:exact-representation}
+
+\subsection{Literal pair kernels}
+
+\begin{definition}[Complete-key entry kernel]
+\label{def:complete-key-entry-kernel}
+For \(m\ne n\), \(q,u,v\ge1\), define
+\begin{equation}
+ L_{mn,q}(u,v)
+ =
+ \frac1{\sqrt{W_mW_n}}
+ \sum_{\substack{i\in\cI_{mn}\\
+                  (q_i,u_i,v_i)=(q,u,v)}}
+ \overline{\beta_{i,m}}\beta_{i,n}.
+ \label{eq:q-slice-entry-kernel}
+\end{equation}
+The sum retains every complete-key label; it is zero when the indicated
+actual fiber is empty.  Aggregate contents before absolute values:
+\begin{equation}
+ L_{mn}(u,v)
+ =
+ \sum_{q\mid|\Delta_{mn}|}L_{mn,q}(u,v),
+ \qquad (u,v)=1.
+ \label{eq:aggregate-entry-kernel}
+\end{equation}
+Its support-faithful zero extension to \(\N^2\) is
+\begin{equation}
+ L_{mn}^{0}(u,v)
+ =
+ \begin{cases}
+  L_{mn}(u,v),&(u,v)=1,\\
+  0,&\gcd(u,v)>1.
+ \end{cases}
+ \label{eq:zero-entry-kernel}
+\end{equation}
+\end{definition}
+
+Different \(q\)-slices may cancel at the same primitive coordinate, so
+only
+\[
+ \supp L_{mn}^{0}
+ \subseteq
+ \bigcup_{q\mid|\Delta_{mn}|}\supp L_{mn,q}
+\]
+is asserted.
+
+For each ordered pair \(m\ne n\), define the punctured erasure kernel
+\begin{equation}
+ L_{mn}^{E}(u,v)
+ =
+ L_{mn}^{0}(u,v)
+ -L_{mn}(b_{mn},a_{mn})e_{b_{mn},a_{mn}}(u,v),
+ \qquad
+ e_{r,s}(u,v)=\one_{(u,v)=(r,s)}.
+ \label{eq:punctured-entry-kernel}
+\end{equation}
+
+\begin{theorem}[Exact two-corner primitive planes]
+\label{thm:exact-two-corner-planes}
+For every pair of distinct active rows \(m<n\),
+\begin{align}
+ \boxed{
+ \widetilde H_{mn}
+ =
+ \sum_{u,v\ge1}
+ \mu(u)\mu(v)L_{mn}^{0}(u,v),}
+ \label{eq:full-direct-plane}\\
+ \boxed{
+ \widetilde R_{mn}
+ =
+ \mu(a)\mu(b)L_{mn}(b,a),}
+ \label{eq:residual-direct-point}\\
+ \boxed{
+ \widetilde E_{mn}
+ =
+ \sum_{u,v\ge1}
+ \mu(u)\mu(v)L_{mn}^{E}(u,v)
+ =
+ \sum_{\substack{(u,v)=1\\(u,v)\ne(b,a)}}
+ \mu(u)\mu(v)L_{mn}(u,v).}
+ \label{eq:erasure-direct-plane}
+\end{align}
+The normalizing factor in every kernel is
+\(1/\sqrt{W_mW_n}\).
+\end{theorem}
+
+\begin{proof}
+Partition the complete finite sum
+\eqref{eq:literal-gauged-entry} by its canonical triple
+\((q_i,u_i,v_i)\).  By \cref{thm:canonical-primitive-key}, every \(q_i\)
+divides \(|\Delta_{mn}|\) and every \((u_i,v_i)\) is primitive.  By
+\cref{thm:direct-key-sign}, the sign on that fiber is
+\(\mu(u_i)\mu(v_i)\).  This proves
+\eqref{eq:full-direct-plane}.
+
+The definition of \(R\) retains exactly the keys with
+\(s_{i,m}=s_{i,n}\).  By
+\eqref{eq:unique-residual-direction}, these are exactly the keys at
+\((u_i,v_i)=(b,a)\), and their sign is
+\(\mu(b)\mu(a)\).  This proves
+\eqref{eq:residual-direct-point}.  The complementary keys form \(E\),
+giving \eqref{eq:erasure-direct-plane}.
+\end{proof}
+
+\begin{proposition}[Atomic-mass audit]
+\label{prop:atomic-mass-audit}
+For every distinct active pair,
+\begin{equation}
+ \sum_{q,u,v\ge1}|L_{mn,q}(u,v)|
+ \le
+ \frac{\sum_{i\in\cI_{mn}}
+ |\beta_{i,m}\beta_{i,n}|}{\sqrt{W_mW_n}}
+ \le1.
+ \label{eq:atomic-entry-l1-audit}
+\end{equation}
+In particular,
+\[
+ |\widetilde R_{mn}|+|\widetilde E_{mn}|\le1,
+ \qquad |\widetilde H_{mn}|\le1.
+\]
+These are entry-normalization checks, not operator-norm savings.
+\end{proposition}
+
+\begin{proof}
+The canonical triples partition \(\cI_{mn}\).  Apply the triangle
+inequality inside each fiber and then Cauchy--Schwarz to the common-key
+subset:
+\[
+ \sum_{i\in\cI_{mn}}|\beta_{i,m}\beta_{i,n}|
+ \le
+ \left(\sum_i|\beta_{i,m}|^2\right)^{1/2}
+ \left(\sum_i|\beta_{i,n}|^2\right)^{1/2}
+ =\sqrt{W_mW_n}.
+\]
+The \(R\)- and \(E\)-keys are disjoint subfamilies of the same partition.
+\end{proof}
+
+\begin{remark}[One point is not one key]
+The value \(L_{mn}(b,a)\) may aggregate many contents, times, sides,
+\(\gamma\)-coordinates, and complete keys.  The theorem identifies one
+primitive direction, not one physical atom.
+\end{remark}
+
+\begin{remark}[Two-corner versus four-corner normalization]
+The direct kernel uses \(1/\sqrt{W_mW_n}\).  The TPC--70 mixed-trace
+rectangle uses four coefficients and \(1/(W_mW_n)\).  Replacing one by
+the other changes both the object and its physical scale.
+\end{remark}
+
+\subsection{Hermitian reversal}
+
+\begin{theorem}[Reversed-pair conjugacy]
+\label{thm:reversed-pair-conjugacy}
+For every \(m\ne n\), \(q,u,v\ge1\),
+\begin{equation}
+ \boxed{
+ L_{nm,q}(v,u)=\overline{L_{mn,q}(u,v)},\qquad
+ L_{nm}^{0}(v,u)=\overline{L_{mn}^{0}(u,v)}.}
+ \label{eq:kernel-Hermitian-reversal}
+\end{equation}
+For the punctured kernels,
+\[
+ L_{nm}^{E}(v,u)=\overline{L_{mn}^{E}(u,v)}.
+\]
+Consequently, \eqref{eq:full-direct-plane}--\eqref{eq:erasure-direct-plane}
+are manifestly Hermitian.
+\end{theorem}
+
+\begin{proof}
+The complete-key set is the same:
+\(\cI_{nm}=\cI_{mn}\).  Reversing the rows swaps the two cofactors, hence
+\((q,u,v)\) becomes \((q,v,u)\).  It also replaces
+\[
+ \frac{\overline{\beta_{i,m}}\beta_{i,n}}{\sqrt{W_mW_n}}
+ \quad\text{by}\quad
+ \frac{\overline{\beta_{i,n}}\beta_{i,m}}{\sqrt{W_nW_m}},
+\]
+which is its complex conjugate.  Summing gives the first identity.
+The indexed row-divisor factors swap under reversal, so the ordered
+puncture \((b_{mn},a_{mn})\) becomes
+\((b_{nm},a_{nm})=(a_{mn},b_{mn})\).  The remaining assertions follow.
+\end{proof}
+
+\subsection{Direct-cell compression is optional}
+
+Under the identical-support direct-cell specialization of TPC--68, the
+\(\gamma\)-sum in \eqref{eq:q-slice-entry-kernel} may be compressed into
+the literal overlap
+\[
+ \Gamma_{m,n}(j)
+ =
+ \sum_\gamma K_{m\gamma}K_{n\gamma}|\psi_\gamma(j)|^2.
+\]
+Here \(K_{m\gamma}\in\{0,1\}\) is the inherited static support mask and
+\(\psi_\gamma(j)\) is the inherited opposite-row profile and output
+phase.  The notation \(\psi_\gamma\) avoids confusion with the cofactor
+content \(q\).
+Outside that declared specialization, the masks and first-failure
+conditions may depend on \(\gamma\).  Then the complete-key formula
+\eqref{eq:q-slice-entry-kernel}, rather than a compressed
+\(\Gamma_{m,n}\), is the theorem.  No later result requires identical
+support.

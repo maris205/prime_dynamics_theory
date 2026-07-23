@@ -1,0 +1,64 @@
+\begin{abstract}
+The primitive cofactor plane was previously attached to a four-corner
+coefficient in the first mixed trace of a fixed-shift normalized
+missing-native Gram.  That
+representation preserves arithmetic signs but does not control a matrix
+entry or operator norm.  We remove this object mismatch.  For two active
+rows \(m<n\), every complete common-output key fixes one time \(j\) and two
+squarefree targets
+\[
+ mj+h_0=Q_mS_m,\qquad nj+h_0=Q_nS_n.
+\]
+Writing
+\[
+ q=(S_m,S_n),\qquad S_m=qu,\qquad S_n=qv
+\]
+gives pairwise coprime squarefree coordinates \(q,u,v\),
+\(q\mid |h_0(n-m)|\), and an exact affine solution lattice containing
+every realized prime key.  Without assuming row--shift coprimality its
+spacing is
+\[
+\operatorname{lcm}\left(\frac{qu}{(m,qu)},\frac{qv}{(n,qv)}\right);
+\]
+the proved primitive-row property of the inherited physical carrier
+reduces it to \(quv\).
+After the inherited unitary row gauge, the target sign at every key is
+\(\mu(u)\mu(v)\).
+
+Let \(d_m=ga\), \(d_n=gb\), \((a,b)=1\).  We prove that the residual labels
+are equal if and only if
+\[
+ (u,v)=(b,a).
+\]
+Thus the same-residual part is one distinguished primitive direction for
+each row pair, while every other primitive direction is the erasure part.
+Defining a literal kernel \(L_{mn,q}(u,v)\) by summing
+\(\overline{\beta_{i,m}}\beta_{i,n}/\sqrt{W_mW_n}\) over complete keys with
+the indicated coordinates, and aggregating the divisor-many \(q\)-slices,
+we obtain the exact formulas
+\[
+ \widetilde H_{mn}
+ =\sum_{(u,v)=1}\mu(u)\mu(v)L_{mn}(u,v),
+\]
+\[
+ \widetilde R_{mn}
+ =\mu(a)\mu(b)L_{mn}(b,a),\qquad
+ \widetilde E_{mn}
+ =\sum_{\substack{(u,v)=1\\(u,v)\ne(b,a)}}
+ \mu(u)\mu(v)L_{mn}(u,v).
+\]
+Hermitian reversal becomes
+\(L_{nm,q}(v,u)=\overline{L_{mn,q}(u,v)}\).
+
+The support-faithful entry kernels are primitive-supported, so their
+auxiliary diagonal tails vanish and ordinary two-dimensional Abel
+summation gives exact location-sensitive entry majorants.  Collecting
+these majorants in a symmetric nonnegative matrix \(P\) yields
+\(\|H\|\le\rho(P)\), together with weighted Schur and row-star
+certificates.  These are genuine operator carriers because they retain
+all entries, but no arithmetic estimate showing that \(\rho(P)\) is small
+is proved.  Countermodels separate direct entries from mixed traces,
+fixed-pair decay from operator control, and general complete-key formulas
+from direct-cell compressions.  No fixed-\(2\), parity-breaking, or
+prime-pair conclusion is drawn.
+\end{abstract}

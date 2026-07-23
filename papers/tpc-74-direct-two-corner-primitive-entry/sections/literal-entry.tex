@@ -1,0 +1,174 @@
+\section{The complete literal two-corner entry}
+\label{sec:literal-entry}
+
+\subsection{Frozen physical carrier}
+
+Fix a finite scale \(X\), one nonzero integer shift \(h_0\), one external
+block, one direct side, all source and opposite-row blocks, orbit classes,
+masks, profiles, endpoint restrictions, and the very-high cutoff before
+any coefficient vector is selected.  The opposite direct side is included
+only by the orthogonal direct sum proved in TPC--68.  Let \(\cW_M\) be
+the complete set of actual nonzero missing-high atoms in this exact scope,
+\(\cM_X\) the declared source-row set, and
+\[
+ \cI_X=\{i(w):w\in\cW_M\}
+\]
+the set of actual complete native output keys.  A key \(i(w)\) retains
+the side, fixed external block, opposite row, \(\gamma\)-coordinate,
+physical time \(j(w)\), and every remaining orthogonal output label.
+
+Every \(w\in\cW_M\) has a canonical source row \(m(w)\), literal
+coefficient \(\beta_w\), target, largest prime, cofactor, and residual
+label
+\begin{equation}
+ N_w=m(w)j(w)+h_0=Q_wS_w,
+ \qquad
+ s(w)=d_{m(w)}S_w.
+ \label{eq:key-target-residual}
+\end{equation}
+Here \(\beta_w\) is the stripped TPC--68 literal coefficient: it retains
+all physical shapes, masks, phases, profiles, and terminal weights, but
+not a second residual M\"obius sign.  The signed atomic coefficient is
+\(c_w=-\mu(s(w))\beta_w\), as recorded below.
+The TPC--61 singleton property says that at most one \(w\) occurs at a
+fixed pair \((i,m)\).  Hence define
+\[
+ \beta_{i,m}=
+ \begin{cases}
+  \beta_w,&i(w)=i,\ m(w)=m,\\
+  0,&\text{if that corner is absent},
+ \end{cases}
+\]
+and use \(N_{i,m},Q_{i,m},S_{i,m},s_{i,m}\) for the corresponding
+quantities whenever \(\beta_{i,m}\ne0\).
+More explicitly, the side decomposition is
+\[
+ \cW_M=\cW_M^+\sqcup\cW_M^-,
+ \qquad
+ W_m^\sigma
+ =\sum_{\substack{w\in\cW_M^\sigma\\m(w)=m}}|\beta_w|^2,
+ \qquad
+ W_m=W_m^++W_m^-,
+\]
+where the union is an orthogonal output union, not a cross-side collision
+set.
+The raw atomic row mass is
+\begin{equation}
+ W_m
+ =\sum_{\substack{w\in\cW_M\\m(w)=m}}|\beta_w|^2
+ =\sum_{i\in\cI_X}|\beta_{i,m}|^2.
+ \label{eq:raw-row-mass}
+\end{equation}
+No output degree or collision multiplicity divides this mass.
+
+Let
+\[
+ \cM_M=\{m\in\cM_X:W_m>0\}.
+\]
+Assume \(\cM_M\ne\varnothing\); otherwise the missing-native analysis is
+vacuous.
+All normalized matrices below act on
+\(\ell^2(\cM_M)\).  Every active target and residual label is on the
+inherited squarefree carrier:
+\begin{equation}
+ \mu(N_{i,m}),\ \mu(s_{i,m})\in\{-1,1\}
+ \qquad(\beta_{i,m}\ne0).
+ \label{eq:squarefree-key-carrier}
+\end{equation}
+The inherited row divisors satisfy
+\begin{equation}
+ d_m\mid m.
+ \label{eq:row-divisor-condition}
+\end{equation}
+The direct coordinate and entry theorems below do not need a coprimality
+assumption between a source row and \(h_0\).  We therefore prove the
+general ray lattice first.  For sufficiently large \(X\), the actual
+TPC--61 missing-high carrier additionally satisfies
+\begin{equation}
+ (m,h_0)=1
+ \label{eq:physical-row-primitivity}
+\end{equation}
+for every realized source row \citep{WangTPC61}; this proved property,
+rather than a new hypothesis, simplifies the physical ray spacing.
+
+\subsection{Normalized missing-native Gram and row gauge}
+
+Set
+\[
+ c_w=-\mu(s(w))\beta_w,\qquad
+ (M_X\zeta)_i
+ =\sum_{\substack{w\in\cW_M\\i(w)=i}}
+ c_w\zeta_{m(w)},
+ \qquad
+ D_M=\diag(W_m).
+\]
+On \(S_M=\ell^2(\cM_M)=\Ran D_M\), the atomic-normalized
+missing-native incidence is
+\[
+ F=M_XD_M^{\dagger/2}\big|_{S_M}.
+\]
+Its normalized missing-native Gram is
+\[
+ G_{\rm nat}=F^*F=I+H,\qquad H=R+E,
+\]
+where all three displayed matrices are Hermitian, \(H,R,E\) have zero
+diagonal, \(R\) sums common-output pairs with equal residual labels, and
+\(E\) sums those with unequal residual labels
+\citep{WangTPC68}.
+
+Define the self-adjoint unitary row gauge
+\begin{equation}
+ U_d=\diag\bigl(\mu(d_m)\bigr)_{m\in\cM_M},
+ \qquad
+ \widetilde H=U_dHU_d,
+ \quad
+ \widetilde R=U_dRU_d,
+ \quad
+ \widetilde E=U_dEU_d.
+ \label{eq:row-gauge}
+\end{equation}
+For \(m\ne n\), put
+\[
+ \cI_{mn}=\{i\in\cI_X:\beta_{i,m}\beta_{i,n}\ne0\}.
+\]
+The exact TPC--68 two-affine formula is
+\begin{equation}
+ \boxed{
+ \widetilde H_{mn}
+ =
+ \frac1{\sqrt{W_mW_n}}
+ \sum_{i\in\cI_{mn}}
+ \mu(N_{i,m})\mu(N_{i,n})
+ \overline{\beta_{i,m}}\beta_{i,n}.}
+ \label{eq:literal-gauged-entry}
+\end{equation}
+Equality of complete keys fixes one common time \(j(i)\).  Thus
+\eqref{eq:literal-gauged-entry} is a literal two-corner sum, not a
+time-only surrogate and not the four-corner coefficient of
+\(\tr(ER)\).
+
+\begin{remark}[Sides and global row mass]
+\label{rem:sides-global-mass}
+The side is part of the complete output key, so atoms on different sides
+never form a Gram pair.  If
+\(W_m=W_m^{+}+W_m^{-}\), however, the normalization in
+\eqref{eq:literal-gauged-entry} is still the global \(W_m\).  The
+diagonal contribution of one side alone is \(W_m^\pm/W_m\), not
+automatically \(1\).  Orthogonality across sides therefore does not
+license a separate identity-diagonal normalization on each side.
+\end{remark}
+
+\subsection{Six-item audit}
+
+Every reindexing below retains:
+\begin{enumerate}[label=\textup{(L1.\arabic*)},leftmargin=4em]
+ \item the literal coefficients
+       \(\overline{\beta_{i,m}}\beta_{i,n}\);
+ \item one fixed nonzero shift \(h_0\) in both targets;
+ \item the raw normalization \(1/\sqrt{W_mW_n}\);
+ \item canonical rows and equality of complete native output keys;
+ \item the complete actual squarefree support, including sides, masks,
+       endpoints, and absent-corner zeros; and
+ \item zero structural exponent loss for the exact identities, with every
+       later estimate subject to the strict \(1/400\) endpoint ledger.
+\end{enumerate}
