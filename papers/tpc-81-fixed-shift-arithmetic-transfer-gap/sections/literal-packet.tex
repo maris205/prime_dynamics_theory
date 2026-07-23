@@ -1,0 +1,99 @@
+\section{The literal fixed-shift packet}
+\label{sec:literal-packet}
+
+All spaces in the finite algebra below are complex Hilbert spaces with
+their standard inner products, linear in the first variable.  The
+same statements hold over real spaces.  The index \(X\) is suppressed
+when no ambiguity is possible.
+
+\begin{definition}[Complete native packet]
+\label{def:complete-packet}
+A complete native packet at scale \(X\) consists of:
+\begin{enumerate}[label=(P\arabic*),leftmargin=2.7em]
+\item one fixed nonzero integer \(h_0\), not averaged over a family;
+\item a finite native key set \(\cK_X\), including all row, orbit,
+content, divisor, orientation, source, and endpoint labels used by
+the construction;
+\item a coefficient space \(\cH_X=\C^{\cK_X}\) and the literal
+physical coefficient \(z_X\in\cH_X\);
+\item a pre-bin key set \(\cY_X\) and literal maps
+\[
+ \cA_X,\cM_X:\cH_X\longrightarrow\C^{\cY_X},
+ \qquad
+ \cB_X:=\cA_X+\cM_X;
+\]
+\item a determinant key set \(\cN_X\), an exact determinant label
+\(\nu_X:\cY_X\to\cN_X\), and all literal scalar multipliers attached
+to the aggregation;
+\item the actual post-aggregation coefficient
+\(a_X=(A_{C_X}(n))_{n\in\cN_X}\), with exact zeros retained until the
+aggregation has been performed;
+\item one global raw atomic energy \(D_{{\rm raw},X}>0\), computed
+before block deletion, renormalization, thresholding, or selection.
+\end{enumerate}
+\end{definition}
+
+The words ``represented'' and ``missing'' describe provenance, not
+sign.  Thus \(\cM_X\) already includes its literal signs and phases;
+reassembly is \(\cA_X+\cM_X\), never an unsigned union of supports.
+Similarly, \(D_{{\rm raw},X}\) is not recomputed on the represented
+support.  Per-component normalizers can conceal an arbitrarily large
+deleted mass and are therefore inadmissible for the physical transfer.
+
+\begin{definition}[Exact determinant binning]
+\label{def:binning}
+Let \(\tau_X(y)\in\C\) be the archived multiplier on a pre-bin key
+\(y\in\cY_X\).  Define
+\begin{equation}
+ (\cJ_Xu)(n)
+ :=
+ \sum_{\substack{y\in\cY_X\\ \nu_X(y)=n}}
+ \tau_X(y)u(y),
+ \qquad n\in\cN_X.
+ \label{eq:literal-binning}
+\end{equation}
+The sum is taken over every native pre-bin key in the fiber.  The
+dictionary residual is
+\begin{equation}
+ r_X:=a_X-\cJ_X\cB_Xz_X.
+ \label{eq:dictionary-residual}
+\end{equation}
+\end{definition}
+
+If the proposed carrier is literally the physical coefficient, then
+\(r_X=0\) by exact finite arithmetic.  If only a model, restriction,
+or surrogate carrier has been constructed, \eqref{eq:dictionary-residual}
+does not vanish automatically.  The residual is the correct location
+for that discrepancy.
+
+\begin{remark}[Actual support]
+The support of a synthesis map is its exact nonzero support after
+literal coefficient aggregation.  A geometrically available edge,
+a thresholded numerical entry, or a union of possible carriers is not
+an actual edge.  In particular, a spectral radius computed on an
+ambient support is not the Perron constant used below unless it is
+proved to majorize the normalized Gram on the actual active
+coordinates.
+\end{remark}
+
+\begin{remark}[No change of target]
+The completion maps take values in the pre-bin space
+\(\C^{\cY_X}\), while the arithmetic coefficient lives in
+\(\C^{\cN_X}\).  An observation on another quotient, a four-corner
+trace, or a common-target gauge does not define \(\cJ_X\).  The
+determinant map and every aggregation multiplier must be constructed
+explicitly.
+\end{remark}
+
+For reference, write
+\begin{equation}
+ Z_X=\langle a_X,\bm 1\rangle,
+ \qquad
+ D_X=\|a_X\|_2^2,
+ \qquad
+ \mathfrak D_{h_0}(X)=\frac{D_X}{Q_X^3J_X^2}.
+ \label{eq:packet-statistics}
+\end{equation}
+These are physical, post-aggregation statistics.  None is replaced by
+the corresponding statistic of \(\cA_Xz_X\),
+\(\cB_Xz_X\), or an unsigned majorant.

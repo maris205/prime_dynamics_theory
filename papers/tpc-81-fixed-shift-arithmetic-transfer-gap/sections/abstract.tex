@@ -1,0 +1,52 @@
+\begin{abstract}
+The distinguished zero determinant frequency in a fixed-shift
+prime--M\"obius packet is controlled by a ratio, not by an amplitude
+estimate alone.  If \(a_X=(A_{C_X}(n))_n\) is the literal determinant
+coefficient, the required quantity is
+\[
+ \mathfrak F_{h_0}(X)
+ =\frac{|\sum_n A_{C_X}(n)|^2}
+        {\sum_n|A_{C_X}(n)|^2}.
+\]
+Earlier work isolated the threshold
+\(\mathfrak F_{h_0}(X)\le X^{1/400+o(1)}\) and an amplitude target
+\(|\sum_n A_{C_X}(n)|\ll X^{o(1)}Q_X^2\), but did not supply the
+matching lower bound for the denominator.
+
+This paper gives an exact transfer architecture for that missing
+denominator.  A represented synthesis \(\cA_X\), a literal missing
+synthesis \(\cM_X\), and their reassembly
+\(\cB_X=\cA_X+\cM_X\) yield coefficient-specific and uniform energy
+survival bounds from a normalized missing-Gram Perron certificate.
+An explicit determinant-binning map \(\cJ_X\), a verified restricted
+lower modulus \(s_X\), and the dictionary defect
+\(r_X=a_X-\cJ_X\cB_Xz_X\) then give
+\[
+ \|a_X\|_2^2\ge
+ \left(
+ s_X\sqrt{\delta_{{\rm reasm},X}\Gamma_{{\rm pre},X}}
+ -\frac{\|r_X\|_2}{\sqrt{D_{{\rm raw},X}}}
+ \right)_+^2D_{{\rm raw},X}.
+\]
+At the high-row scales
+\(Q_X=X^{267/400+o(1)}\) and
+\(J_X=X^{133/400+o(1)}\), an amplitude exponent
+\(\eta_Z\) and an energy-loss exponent \(\lambda_D\) give
+\[
+ \mathfrak F_{h_0}(X)
+ \le X^{1/400+\lambda_D-2\eta_Z+o(1)}.
+\]
+For this exponent transfer, the sharp recorded-bounds condition is
+\(2\eta_Z\ge\lambda_D\), with genuine robustness only under strict
+inequality.  It is not claimed to be necessary for the physical
+packet when the recorded exponents are nonoptimal.
+
+Two sharp countermodels show why this bridge is not formal:
+unsigned support and energy do not determine the zero mode, and raw
+atomic mass can disappear completely inside one determinant bin.
+Accordingly, the results are exact L0 algebra and a conditional L1
+arithmetic interface.  They do not prove determinant-energy survival
+for the physical packet, a full-block cover, a fixed-shift
+Hardy--Littlewood asymptotic, twin primes, or a breach of the parity
+barrier.
+\end{abstract}

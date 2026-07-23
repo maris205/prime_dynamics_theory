@@ -1,0 +1,179 @@
+\section{Completion-to-survival from the missing Gram}
+\label{sec:completion-survival}
+
+We first prove a finite-dimensional theorem independent of arithmetic.
+Let \(K,Y\) be finite index sets, let
+\(\cA,\cM:\C^K\to\C^Y\) be linear maps, and put
+\(\cB=\cA+\cM\).  The missing Gram is
+\begin{equation}
+ G_{\cM}:=\cM^*\cM.
+ \label{eq:missing-Gram}
+\end{equation}
+We use only standard Hermitian and nonnegative-matrix comparison
+principles \citep{HornJohnson2013}.
+Let
+\[
+ d_j=(G_{\cM})_{jj}=\|\cM e_j\|^2.
+\]
+If \(d_j=0\), positivity of \(G_{\cM}\) gives
+\((G_{\cM})_{ij}=0\) for every \(i\), so that coordinate contributes
+nothing to \(\cM\).  We therefore restrict the Gram normalization to
+the exact active set
+\begin{equation}
+ K^+:=\{j:d_j>0\}
+ \label{eq:active-missing-set}
+\end{equation}
+and extend all resulting quadratic inequalities by zero on its
+complement.
+
+Define the full diagonal operator
+\begin{equation}
+ D_{\cM}:=\diag(d_j:j\in K)
+ \quad\text{on }\C^K.
+ \label{eq:full-missing-diagonal}
+\end{equation}
+Let \(G_{\cM}^+\) and \(D_{\cM}^+\) be the principal restrictions of
+\(G_{\cM}\) and \(D_{\cM}\) to \(K^+\), and set
+\begin{equation}
+ R_{\cM}:=
+ (D_{\cM}^+)^{-1/2}
+ (G_{\cM}^+-D_{\cM}^+)
+ (D_{\cM}^+)^{-1/2}.
+ \label{eq:normalized-missing-Gram}
+\end{equation}
+Thus \(R_{\cM}\) acts on \(\C^{K^+}\) and is Hermitian with zero
+diagonal, while \(\langle D_{\cM}z,z\rangle\) below is the full
+zero-extended quadratic form on \(\C^K\).
+
+\begin{definition}[Verified Perron majorant]
+\label{def:Perron-majorant}
+A verified Perron majorant is a real symmetric nonnegative matrix
+\(P\) on \(K^+\) such that
+\begin{equation}
+ |(R_{\cM})_{ij}|\le P_{ij}
+ \quad(i,j\in K^+).
+ \label{eq:P-majorizes}
+\end{equation}
+We put
+\begin{equation}
+ \widehat\kappa:=1+\rho(P).
+ \label{eq:kappa-hat}
+\end{equation}
+If \(K^+=\varnothing\), \(P\) and \(R_{\cM}\) are the unique empty
+matrices and we set \(\rho(P)=0\), so \(\widehat\kappa=1\).
+\end{definition}
+
+\begin{lemma}[Missing-energy majorization]
+\label{lem:missing-energy}
+For every \(z\in\C^K\),
+\begin{equation}
+ \|\cM z\|^2
+ \le
+ \widehat\kappa\,
+ \langle D_{\cM}z,z\rangle.
+ \label{eq:missing-energy-majorization}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If \(K^+=\varnothing\), then \(\cM=0\) and the assertion is
+immediate.  Otherwise, after discarding the zero columns, write
+\(z_+=z|_{K^+}\) and set
+\(w=(D_{\cM}^+)^{1/2}z_+\).  Entrywise domination and Hermitian
+symmetry give
+\[
+ |\langle R_{\cM}w,w\rangle|
+ \le |w|^{\mathsf T}P|w|
+ \le \rho(P)\|w\|_2^2.
+\]
+Hence
+\[
+ \|\cM z\|^2
+ =\langle G_{\cM}z,z\rangle
+ =\langle G_{\cM}^+z_+,z_+\rangle
+ =\|w\|_2^2+\langle R_{\cM}w,w\rangle
+ \le(1+\rho(P))\|w\|_2^2,
+\]
+and
+\(\|w\|_2^2=\langle D_{\cM}z,z\rangle\), which proves
+\eqref{eq:missing-energy-majorization}.
+\end{proof}
+
+\begin{theorem}[Coefficient-specific completion survival]
+\label{thm:coefficient-specific}
+For \(z\in\C^K\) with \(\cA z\ne0\), define
+\begin{equation}
+ \Xi(z):=
+ \widehat\kappa
+ \frac{\langle D_{\cM}z,z\rangle}
+      {\|\cA z\|^2}.
+ \label{eq:Xi-definition}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \left(1-\sqrt{\Xi(z)}\right)_+^2
+ \le
+ \frac{\|\cB z\|^2}{\|\cA z\|^2}
+ \le
+ \left(1+\sqrt{\Xi(z)}\right)^2.}
+ \label{eq:coefficient-specific-survival}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \cref{lem:missing-energy},
+\[
+ \frac{\|\cM z\|}{\|\cA z\|}
+ \le\sqrt{\Xi(z)}.
+\]
+The triangle and reverse-triangle inequalities yield
+\[
+ \bigl(\|\cA z\|-\|\cM z\|\bigr)_+
+ \le\|\cA z+\cM z\|
+ \le\|\cA z\|+\|\cM z\|.
+\]
+Divide by \(\|\cA z\|\) and square.
+\end{proof}
+
+\begin{remark}[What the theorem does not use]
+\Cref{thm:coefficient-specific} does not infer the phases of the
+missing entries from their support.  The map \(\cM\), and therefore
+its Gram, is literal.  The matrix \(P\) only majorizes the already
+constructed normalized Gram; it is not a replacement for that
+construction.
+\end{remark}
+
+\begin{remark}[The nontrivial regime]
+The lower bound in \eqref{eq:coefficient-specific-survival} is
+positive only if \(\Xi(z)<1\).  A finite completion certificate with
+\(\Xi(z)\ge1\) can still be exact and useful as a stop certificate,
+but it gives no energy survival for that coefficient.
+\end{remark}
+
+\begin{corollary}[Uniform coefficient class]
+\label{cor:uniform-Xi}
+Let \(E\subseteq\C^K\) be a verified coefficient subspace on which
+\[
+ \langle D_{\cM}z,z\rangle
+ \le\chi\,\|\cA z\|^2
+ \quad(z\in E)
+\]
+for some \(\chi\ge0\).  Then
+\[
+ \|\cB z\|^2
+ \ge
+ \left(1-\sqrt{\widehat\kappa\chi}\right)_+^2
+ \|\cA z\|^2
+ \quad(z\in E).
+\]
+\end{corollary}
+
+\begin{proof}
+If \(\cA z=0\), the hypothesis gives
+\(\langle D_{\cM}z,z\rangle=0\).  By
+\cref{lem:missing-energy}, \(\cM z=0\), and hence \(\cB z=0\), so
+the claim is trivial.  If \(\cA z\ne0\), apply
+\cref{thm:coefficient-specific} with
+\(\Xi(z)\le\widehat\kappa\chi\).
+\end{proof}

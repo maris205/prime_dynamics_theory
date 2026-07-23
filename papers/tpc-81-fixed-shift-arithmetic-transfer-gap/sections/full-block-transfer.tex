@@ -1,0 +1,171 @@
+\section{Conditional transfer to the matched shell and full block}
+\label{sec:full-block}
+
+We now record the strongest valid arithmetic implication.  Every
+premise is explicit.
+
+\begin{theorem}[Literal fixed-shift flatness transfer]
+\label{thm:literal-flatness-transfer}
+Fix \(h_0\ne0\), and let \(a_X\) be the actual determinant coefficient
+of the TPC-32 matched packet with
+\[
+ C_X=\lfloor J_X\rfloor,\qquad
+ Q_XJ_X\asymp X,\qquad
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)}.
+\]
+Write
+\begin{equation}
+ N_{0,X}:=J_XQ_X^2\asymp XQ_X
+ \label{eq:matched-raw-scale}
+\end{equation}
+for the literal raw scale of this matched shell.  Suppose there are
+fixed exponents \(\eta_Z,\lambda_D\ge0\) for which the following
+assumptions hold:
+\begin{enumerate}[label=(T\arabic*),leftmargin=2.7em]
+\item the complete packet of \cref{def:complete-packet} is literal,
+with the same signs, units, orientation, and global raw normalization
+as \(a_X\);
+\item the missing-Gram hypotheses of
+\cref{thm:raw-reassembly} give
+\(\delta_{{\rm reasm},X}\);
+\item an exact determinant map \(\cJ_X\), a verified subspace \(E_X\),
+and a dictionary residual \(r_X\) satisfy
+\cref{thm:dictionary-lower};
+\item the resulting lower bound proves
+\[
+ D_X\ge X^{-\lambda_D+o(1)}Q_X^3J_X^2;
+ \]
+\item independently, the actual zero mode satisfies
+\[
+ |Z_X|\le X^{-\eta_Z+o(1)}Q_X^2
+ \]
+with \(2\eta_Z\ge\lambda_D\).
+\end{enumerate}
+Then
+\begin{equation}
+ \mathfrak F_{h_0}(X)\le X^{1/400+o(1)}.
+ \label{eq:literal-flatness-output}
+\end{equation}
+Consequently, by the conditional zero-frequency theorem of TPC-32,
+every fixed
+\begin{equation}
+ \sigma<\frac{133}{400}
+ \label{eq:matched-saving}
+\end{equation}
+is a power-saving exponent relative to its raw scale \(N_{0,X}\) for
+the complete matched cutoff shell.
+Equivalently, if \(\cS_X\) denotes that shell, then
+\begin{equation}
+ |\cS_X|\le X^{-\sigma+o(1)}N_{0,X}.
+ \label{eq:matched-shell-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Assumptions (T4)--(T5) and
+\cref{cor:zero-slack} give
+\eqref{eq:literal-flatness-output}.  Assumption (T1) identifies this
+ratio with the distinguished coefficient used in TPC-32, rather than
+with a surrogate.  Its conditional high-row closure theorem then
+gives \eqref{eq:matched-shell-bound} for every
+\(\sigma\) satisfying \eqref{eq:matched-saving}
+\citep{WangTPC32}.
+\end{proof}
+
+\begin{remark}[What completion contributes]
+Assumptions (T2)--(T3) can prove (T4), but they do not prove (T5).
+In particular, a complete carrier census, a positive reassembly
+constant, and an injective determinant dictionary still do not
+cancel the signed zero mode.  The amplitude estimate remains an
+arithmetic premise.
+\end{remark}
+
+The matched shell is not automatically the whole Type-II residual.
+The global step requires an exact block identity of the kind isolated
+in TPC-18 \citep{WangTPC18}.
+
+\begin{theorem}[Conditional full-block transfer]
+\label{thm:full-block-transfer}
+Fix \(h_0\ne0\).  Assume that the physical hard remainder has an exact
+decomposition
+\begin{equation}
+ \cB_{h_0,\delta}(X)
+ =
+ \sum_{b\in\mathscr B_X}w_{b,X}\cS_{b,X}
+ +R_X,
+ \qquad
+ |\mathscr B_X|=O(\log X),
+ \label{eq:full-block-cover}
+\end{equation}
+where:
+\begin{enumerate}[label=(F\arabic*),leftmargin=2.7em]
+\item every \(\cS_{b,X}\) is a literal matched packet with complete
+native keys and the same fixed shift \(h_0\), and
+\(N_{0,b,X}\) denotes its own literal raw scale;
+\item the hypotheses of
+\cref{thm:literal-flatness-transfer} hold uniformly in \(b\), with
+its own literal coefficient \(a_{b,X}\), determinant dictionary, and
+certificate data for every block;
+\item \(|w_{b,X}|\le X^{o(1)}\), \(R_X=o(X)\), and for some fixed
+\(0<\sigma_*<133/400\),
+\begin{equation}
+ \sum_{b\in\mathscr B_X}
+ |w_{b,X}|N_{0,b,X}X^{-\sigma_*}=o(X);
+ \label{eq:block-normalization-close}
+\end{equation}
+\item all calibration, drift, endpoint, nonprimitive, and prime-power
+terms omitted from \eqref{eq:full-block-cover} are already included in
+\(R_X\) with their literal signs.
+\end{enumerate}
+Then
+\begin{equation}
+ \cB_{h_0,\delta}(X)=o(X).
+ \label{eq:hard-remainder-small}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Choose a fixed
+\(\sigma\) with
+\(\sigma_*<\sigma<133/400\).
+Uniform application of
+\cref{thm:literal-flatness-transfer} gives
+\[
+ |\cS_{b,X}|
+ \le X^{-\sigma+o(1)}N_{0,b,X}.
+\]
+The fixed gap \(\sigma-\sigma_*\) absorbs the uniform \(o(1)\).
+Insert the resulting
+\(|\cS_{b,X}|\le X^{-\sigma_*}N_{0,b,X}\) in
+\eqref{eq:full-block-cover}, sum absolutely, and use
+\eqref{eq:block-normalization-close} and \(R_X=o(X)\).
+\end{proof}
+
+\begin{remark}[Two different uses of \(\cB\)]
+The synthesis operator \(\cB_X=\cA_X+\cM_X\) acts on completion
+coefficients.  The scalar \(\cB_{h_0,\delta}(X)\) in
+\eqref{eq:full-block-cover} is the physical hard remainder.  The
+shared letter does not identify these differently typed objects.
+\end{remark}
+
+\begin{remark}[Status of the cover]
+\Cref{thm:full-block-transfer} is a logical implication, not a proof
+of \eqref{eq:full-block-cover}.  The all-block cover was isolated
+earlier as an additional hypothesis.  Nor does the present paper
+verify the uniform zero-mode or energy premises for even one growing
+physical block.  Therefore \eqref{eq:hard-remainder-small} is not an
+unconditional result.
+\end{remark}
+
+\begin{remark}[No prime-pair claim]
+For an admissible even \(h_0\) with nonzero main-term integral
+\(\mathcal I_0(W)\), in the earlier Vaughan normal form a theorem of
+the strength
+\(\cB_{h_0,\delta}(X)=o(X)\), together with all inherited identities,
+would reach a weighted fixed-shift Hardy--Littlewood asymptotic.
+That observation measures the strength of the missing premises.  It
+does not prove them, and it must not be restated as a twin-prime or
+parity result.  For the standard analytic-number-theory framework in
+which such reductions sit, see \citet{IwaniecKowalski2004}.
+\end{remark}

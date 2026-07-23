@@ -1,0 +1,119 @@
+\section{Sharp nonidentifiability and no-go models}
+\label{sec:nonidentifiability}
+
+The next examples show that each interface in
+\cref{sec:introduction} carries information absent from the preceding
+one.
+
+\begin{proposition}[Unsigned completion data do not determine the zero mode]
+\label{prop:unsigned-no-go}
+For every integer \(N\ge2\), there are vectors \(u,v\in\C^N\) with
+identical support, identical coordinate moduli, and identical energy,
+but
+\begin{equation}
+ \left|\sum_{j=0}^{N-1}u_j\right|=N,
+ \qquad
+ \sum_{j=0}^{N-1}v_j=0.
+ \label{eq:phase-no-go}
+\end{equation}
+Consequently, no statistic depending only on unsigned support,
+coordinate masses, or total energy can determine zero-frequency
+flatness.
+\end{proposition}
+
+\begin{proof}
+Take \(u_j=1\) and
+\[
+ v_j=\exp(2\pi i j/N).
+\]
+Both vectors have full support, \(|u_j|=|v_j|=1\), and squared norm
+\(N\).  The first sum is \(N\), while the second is the sum of all
+\(N\)-th roots of unity and vanishes.
+\end{proof}
+
+\begin{remark}[Real version]
+For even \(N\), the real vectors
+\[
+ u=(1,\ldots,1),
+ \qquad
+ v=(1,-1,1,-1,\ldots,1,-1)
+\]
+already give the same conclusion.  Thus the obstruction is not
+caused by complex phases.
+\end{remark}
+
+\begin{proposition}[Raw atomic mass need not survive a determinant bin]
+\label{prop:bin-cancellation}
+There is no positive universal constant \(c\) such that
+\[
+ \|\cJ w\|_2^2\ge c\|w\|_2^2
+\]
+for every sum-binning map and every raw vector \(w\).
+Indeed, two nonzero raw atoms in a single determinant bin can have raw
+energy \(2\) and determinant energy \(0\).
+\end{proposition}
+
+\begin{proof}
+Let \(\cY=\{y_1,y_2\}\), let both keys have the same determinant
+label \(n_0\), take unit multipliers, and set
+\[
+ w(y_1)=1,\qquad w(y_2)=-1.
+\]
+Then \(\|w\|_2^2=2\), while
+\[
+ (\cJ w)(n_0)=1-1=0.
+\]
+Thus \(w\in\Ker\cJ\), and the ambient lower modulus is zero.
+\end{proof}
+
+\begin{corollary}[Support survival is not energy survival]
+\label{cor:support-not-energy}
+The facts that every raw atom is represented, every determinant bin
+is nonempty, and the raw energy has its natural order do not imply a
+positive lower bound for \(D_X\).
+\end{corollary}
+
+\begin{proof}
+\Cref{prop:bin-cancellation} has all three properties and
+post-bin energy zero.
+\end{proof}
+
+\begin{example}[The same majorant can hide opposite reassemblies]
+\label{ex:same-majorant}
+In one dimension take \(\cA z=z\).  The choices
+\(\cM_+z=z\) and \(\cM_-z=-z\) have the same missing Gram,
+the same diagonal mass, and the same Perron constant
+\(\widehat\kappa=1\).  Yet
+\[
+ (\cA+\cM_+)z=2z,
+ \qquad
+ (\cA+\cM_-)z=0.
+\]
+The coefficient-specific bound correctly permits both outcomes when
+\(\Xi(z)=1\).  Therefore the Perron majorant is a bound, not a phase
+reconstruction theorem.
+\end{example}
+
+\begin{proposition}[A small zero mode does not force natural energy]
+\label{prop:zero-not-energy}
+For every \(\varepsilon>0\) there is a nonzero coefficient \(a\) with
+\(\sum_na_n=0\) and \(0<\|a\|_2^2<\varepsilon\).
+\end{proposition}
+
+\begin{proof}
+Take \(a=(t,-t)\) with
+\(0<2|t|^2<\varepsilon\).
+\end{proof}
+
+This last example is elementary but prevents a common reversal:
+cancellation in \(Z_X\) does not furnish a lower bound for \(D_X\).
+The numerator and denominator in \(\mathfrak F_{h_0}(X)\) require
+separate arithmetic inputs.
+
+\begin{remark}[Averaging over shifts]
+An averaged-\(h\) lower bound for determinant energy is compatible
+with a zero or tiny value at one prescribed \(h_0\).  Hence
+mean-square estimates over shifts cannot be relabeled as the
+fixed-\(h_0\) hypothesis \eqref{eq:energy-exponent}.  This is a
+quantifier obstruction, not a technical normalization issue.
+\end{remark}

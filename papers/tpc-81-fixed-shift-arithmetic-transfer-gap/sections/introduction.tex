@@ -1,0 +1,187 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Fix one nonzero integer shift \(h_0\).  The high-row branch of the
+fixed-shift program reaches a finite determinant coefficient
+\begin{equation}
+ a_X=(A_{C_X}(n))_{n\in\cN_X},
+ \qquad C_X=\lfloor J_X\rfloor,
+ \label{eq:intro-coefficient}
+\end{equation}
+formed after literal aggregation of a complete set of native
+prime--M\"obius keys.  Its zero mode and determinant energy are
+\begin{equation}
+ Z_X:=\sum_{n\in\cN_X}A_{C_X}(n),
+ \qquad
+ D_X:=\sum_{n\in\cN_X}|A_{C_X}(n)|^2.
+ \label{eq:intro-ZD}
+\end{equation}
+The zero-frequency concentration is
+\begin{equation}
+ \mathfrak F_{h_0}(X)
+ :=
+ \begin{cases}
+ |Z_X|^2/D_X,&D_X>0,\\
+ 0,&D_X=0.
+ \end{cases}
+ \label{eq:intro-flatness}
+\end{equation}
+The zero convention in the second line is harmless only because then
+\(a_X=0\) and hence \(Z_X=0\).
+Here ``zero frequency'' means the normalized determinant-DFT
+frequency \(r=0\) used in TPC-32.  It is neither a generic nonzero
+determinant frequency nor any orbit, divisor, or transfer-operator
+zero mode.
+
+TPC-32 proved a conditional transfer at
+\begin{equation}
+ Q_X=X^{267/400+o(1)},
+ \qquad
+ J_X=X^{133/400+o(1)}:
+ \label{eq:intro-scales}
+\end{equation}
+the estimate
+\begin{equation}
+ \mathfrak F_{h_0}(X)\le X^{1/400+o(1)}
+ \label{eq:intro-threshold}
+\end{equation}
+delivers every strict saving below \(133/400\) for its complete
+matched raw cutoff shell \citep{WangTPC32}.  TPC-33 isolated the
+sufficient amplitude estimate
+\begin{equation}
+ |Z_X|\ll X^{o(1)}Q_X^2,
+ \label{eq:intro-amplitude}
+\end{equation}
+but explicitly did not prove a matching lower bound for \(D_X\)
+\citep{WangTPC33}.  Indeed, \eqref{eq:intro-amplitude} alone says
+nothing about \eqref{eq:intro-threshold} when the denominator may be
+small.
+
+The purpose of this paper is to identify exactly what a completion
+certificate must additionally prove before it controls \(D_X\).  The
+finite completion, sparse-incidence, and scalar Perron layers that
+motivate this interface were developed in
+\citep{WangTPC75,WangTPC77,WangTPC80}; none of those layers by itself
+identifies the determinant coefficient.
+The
+relevant normalized statistic is
+\begin{equation}
+ \boxed{\displaystyle
+ \mathfrak D_{h_0}(X)
+ :=\frac{D_X}{Q_X^3J_X^2}.}
+ \label{eq:intro-energy-statistic}
+\end{equation}
+At the scales \eqref{eq:intro-scales}, the denominator
+\(Q_X^3J_X^2\) is the energy scale that pairs with
+\eqref{eq:intro-amplitude}.  The needed zero-loss statement is
+\begin{equation}
+ \mathfrak D_{h_0}(X)\ge X^{-o(1)}.
+ \label{eq:intro-energy-target}
+\end{equation}
+No such physical estimate is proved here.
+
+\subsection{The three interfaces}
+
+There are three logically different maps:
+\[
+ \text{native coefficients}
+ \xrightarrow{\ \cA_X+\cM_X\ }
+ \text{pre-bin atoms}
+ \xrightarrow{\ \cJ_X\ }
+ \text{determinant bins}
+ \xrightarrow{\ \bm 1^*\ }
+ \text{zero mode}.
+\]
+The first arrow is a completion/reassembly problem.  The second can
+lose energy through collisions in a determinant fiber.  The third is
+the arithmetic signed sum.  Success at one arrow does not imply
+success at either later arrow.
+
+For the first arrow we prove a missing-Gram majorant theorem.  If
+\(\cB_X=\cA_X+\cM_X\), then for every coefficient vector \(z\) with
+\(\cA_Xz\ne0\),
+\begin{equation}
+ \left(1-\sqrt{\Xi_X(z)}\right)_+^2
+ \le
+ \frac{\|\cB_Xz\|_2^2}{\|\cA_Xz\|_2^2}
+ \le
+ \left(1+\sqrt{\Xi_X(z)}\right)^2,
+ \label{eq:intro-specific}
+\end{equation}
+where
+\begin{equation}
+ \Xi_X(z)
+ :=
+ \widehat\kappa_X
+ \frac{\langle D_{\cM,X}z,z\rangle}
+      {\|\cA_Xz\|_2^2},
+ \qquad
+ \widehat\kappa_X=1+\rho(P_X).
+ \label{eq:intro-Xi}
+\end{equation}
+Here \(D_{\cM,X}\) is the exact diagonal of the missing Gram and
+\(P_X\) is an entrywise nonnegative majorant of its normalized
+off-diagonal part.
+
+For the second arrow we require a literal binning map, not an
+analogy.  If \(s_X\) is a verified lower modulus of \(\cJ_X\) on the
+actual reassembled subspace and
+\[
+ r_X=a_X-\cJ_X\cB_Xz_X,
+\]
+then the lower bound displayed in the abstract follows.  The residual
+\(r_X\) records every mismatch between the completion carrier and the
+physical determinant coefficient.
+
+For the final arrow we prove the exact exponent arithmetic.  If
+\begin{equation}
+ |Z_X|\le X^{-\eta_Z+o(1)}Q_X^2,
+ \qquad
+ D_X\ge X^{-\lambda_D+o(1)}Q_X^3J_X^2,
+ \label{eq:intro-exponents}
+\end{equation}
+then
+\begin{equation}
+ \mathfrak F_{h_0}(X)
+ \le
+ X^{1/400+\lambda_D-2\eta_Z+o(1)}.
+ \label{eq:intro-exponent-transfer}
+\end{equation}
+Consequently these recorded bounds recover the TPC-32 threshold
+whenever \(2\eta_Z\ge\lambda_D\), and this condition is sharp for the
+two bounds alone.  The current amplitude target has \(\eta_Z=0\);
+within this transfer ledger it therefore permits no positive
+certified energy loss.  Such a loss cannot be absorbed unless it is
+offset by a new amplitude saving.
+
+\subsection{Level ledger}
+
+The level labels used throughout are:
+\begin{itemize}[leftmargin=2em]
+\item \textbf{L0:} exact finite-dimensional algebra, including Gram
+majorization, reassembly inequalities, and determinant-binning
+identities;
+\item \textbf{L1:} a verified literal interface from those identities
+to the actual fixed-\(h_0\) coefficient, together with asymptotic
+bounds for every certificate statistic;
+\item \textbf{L2:} a new arithmetic estimate for the actual
+fixed-\(h_0\) packet, and then a separately verified global block
+cover.
+\end{itemize}
+This paper proves L0 theorems and states auditable L1 implications.
+It proves no new L2 cancellation estimate.  In particular, none of
+the following can be inferred from the results below: a fixed-shift
+prime-pair asymptotic, positivity at \(h_0=2\), twin primes, or a
+breach of the sieve parity barrier \citep{HeathBrown1982Parity}.
+
+\subsection{Organization}
+
+\Cref{sec:literal-packet} defines the physical packet and its global
+normalization.  \Cref{sec:completion-survival} proves the
+coefficient-specific Gram bound, and \cref{sec:uniform-reassembly}
+extracts a uniform survival certificate.
+\Cref{sec:dictionary} adds the determinant dictionary.
+\Cref{sec:zero-slack} gives the exponent theorem.
+\Cref{sec:nonidentifiability} supplies sharp no-go models.
+\Cref{sec:full-block} states the conditional global transfer, and
+\cref{sec:audit} gives the archive and stop protocol.

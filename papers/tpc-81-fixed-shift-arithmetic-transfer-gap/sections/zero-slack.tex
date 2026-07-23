@@ -1,0 +1,149 @@
+\section{Zero-frequency flatness and the recorded zero-slack condition}
+\label{sec:zero-slack}
+
+We now combine an amplitude estimate with determinant-energy survival.
+The calculation is elementary, but its direction is decisive.
+
+\begin{theorem}[General exponent transfer]
+\label{thm:general-exponent-transfer}
+Fix \(h_0\ne0\).  Assume
+\begin{equation}
+ Q_X=X^{\beta+o(1)},
+ \qquad
+ J_X=X^{1-\beta+o(1)}
+ \label{eq:general-scales}
+\end{equation}
+for a fixed \(0<\beta<1\).  Suppose that for fixed
+\(\eta_Z,\lambda_D\ge0\),
+\begin{align}
+ |Z_X|
+ &\le X^{-\eta_Z+o(1)}Q_X^2,
+ \label{eq:zero-mode-exponent}\\
+ D_X
+ &\ge X^{-\lambda_D+o(1)}Q_X^3J_X^2.
+ \label{eq:energy-exponent}
+\end{align}
+Then
+\begin{equation}
+ \boxed{\displaystyle
+ \mathfrak F_{h_0}(X)
+ \le
+ X^{3\beta-2+\lambda_D-2\eta_Z+o(1)}.}
+ \label{eq:general-flatness-transfer}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The lower bound \eqref{eq:energy-exponent} is positive for all
+sufficiently large \(X\), so \(D_X>0\) there.  Hence
+\begin{align*}
+ \mathfrak F_{h_0}(X)
+ &=\frac{|Z_X|^2}{D_X}\\
+ &\le
+ X^{\lambda_D-2\eta_Z+o(1)}
+ \frac{Q_X^4}{Q_X^3J_X^2}\\
+ &=X^{\lambda_D-2\eta_Z+o(1)}
+ \frac{Q_X}{J_X^2}.
+\end{align*}
+By \eqref{eq:general-scales},
+\(Q_X/J_X^2=X^{\beta-2(1-\beta)+o(1)}
+=X^{3\beta-2+o(1)}\).
+\end{proof}
+
+\begin{corollary}[The high-row zero-slack transfer]
+\label{cor:zero-slack}
+At
+\begin{equation}
+ \beta=\frac{267}{400},
+ \qquad
+ Q_X=X^{267/400+o(1)},
+ \qquad
+ J_X=X^{133/400+o(1)},
+ \label{eq:high-row-scales}
+\end{equation}
+the conclusion is
+\begin{equation}
+ \boxed{\displaystyle
+ \mathfrak F_{h_0}(X)
+ \le
+ X^{1/400+\lambda_D-2\eta_Z+o(1)}.}
+ \label{eq:high-row-flatness}
+\end{equation}
+Consequently, the two recorded exponent bounds imply the TPC-32
+hypothesis
+\(\mathfrak F_{h_0}(X)\le X^{1/400+o(1)}\) whenever
+\begin{equation}
+ \boxed{2\eta_Z\ge\lambda_D.}
+ \label{eq:zero-slack-condition}
+\end{equation}
+Strict inequality gives a fixed power of robustness; equality gives
+no spare fixed-power margin.  The condition is sharp for a deduction
+from the recorded bounds alone; it is not asserted to be necessary
+for the physical packet unless the two exponents are optimal.
+\end{corollary}
+
+\begin{proof}
+The identity
+\[
+ 3\cdot\frac{267}{400}-2
+ =\frac{801-800}{400}
+ =\frac1{400}
+\]
+and \cref{thm:general-exponent-transfer} give
+\eqref{eq:high-row-flatness}.  Its recorded exponent is at most
+\(1/400+o(1)\) under \eqref{eq:zero-slack-condition}.  If that
+condition fails, these bounds alone do not close the threshold.
+\end{proof}
+
+\begin{corollary}[The current amplitude target requires natural energy]
+\label{cor:current-target}
+The TPC-33 amplitude target
+\[
+ |Z_X|\le X^{o(1)}Q_X^2
+\]
+has \(\eta_Z=0\).  Under that target,
+\eqref{eq:zero-slack-condition} permits no positive certified energy
+loss.  The sufficient zero-loss requirement is
+\begin{equation}
+ \lambda_D=0,
+ \qquad\text{equivalently}\qquad
+ D_X\ge X^{-o(1)}Q_X^3J_X^2.
+ \label{eq:natural-energy-required}
+\end{equation}
+Thus any positive fixed-power determinant-energy loss cannot close
+this transfer from the current amplitude bound unless a new
+zero-mode saving compensates for it.
+\end{corollary}
+
+\begin{proof}
+For the sufficient ledger condition, both exponents are nonnegative,
+so \(0\ge\lambda_D\) implies \(\lambda_D=0\).
+\end{proof}
+
+\begin{remark}[Additional losses]
+If a later comparison contributes an additional squared-energy loss
+\(\lambda_{\rm aux}\ge0\), then the condition for this augmented
+certificate becomes
+\[
+ 2\eta_Z\ge\lambda_D+\lambda_{\rm aux}.
+\]
+Such a loss cannot be hidden in an \(o(1)\) term when it is a fixed
+positive power.
+\end{remark}
+
+\begin{remark}[Two distinct appearances of \(1/400\)]
+The exponent \(1/400\) in \eqref{eq:high-row-flatness} is the
+geometric baseline \(Q_X/J_X^2\) and is the allowed TPC-32 flatness
+endpoint.  It is not a free account from which unrecorded losses may
+be spent.  Separately, whenever the wider route compares accumulated
+fixed-power losses with an inherited \(1/400\) margin, the operational
+rule is strict:
+\[
+ \text{continue only if total loss}<\frac1{400};
+ \qquad
+ \text{stop if total loss}\ge\frac1{400}.
+\]
+In particular equality in \eqref{eq:zero-slack-condition} is a valid
+conditional implication but has zero robustness against any further
+fixed-power degradation.
+\end{remark}

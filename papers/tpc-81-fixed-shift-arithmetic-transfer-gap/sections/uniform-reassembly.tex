@@ -1,0 +1,112 @@
+\section{A conservative uniform reassembly certificate}
+\label{sec:uniform-reassembly}
+
+The coefficient-specific ratio is the sharpest statement available
+from the triangle inequality.  For an archive it is often convenient
+to compare every term with the same global raw normalization.
+
+\begin{theorem}[Raw-normalized reassembly]
+\label{thm:raw-reassembly}
+Let \(D_{\rm raw}>0\), \(\Gamma_{\rm pre}>0\),
+\(0\le\eta<1\), and \(\chi\ge0\).  Suppose a literal coefficient
+\(z\) satisfies
+\begin{align}
+ \|\cA z\|^2
+ &\ge(1-\eta)\Gamma_{\rm pre}D_{\rm raw},
+ \label{eq:represented-lower}\\
+ \langle D_{\cM}z,z\rangle
+ &\le\chi\Gamma_{\rm pre}D_{\rm raw}.
+ \label{eq:missing-diagonal-upper}
+\end{align}
+Then
+\begin{equation}
+ \|\cB z\|^2
+ \ge
+ \delta_{\rm sharp}\Gamma_{\rm pre}D_{\rm raw},
+ \qquad
+ \delta_{\rm sharp}
+ :=
+ \left(\sqrt{1-\eta}
+       -\sqrt{\widehat\kappa\chi}\right)_+^2.
+ \label{eq:sharp-reassembly}
+\end{equation}
+In particular,
+\begin{equation}
+ \boxed{
+ \|\cB z\|^2
+ \ge
+ \delta_{\rm reasm}\Gamma_{\rm pre}D_{\rm raw},\qquad
+ \delta_{\rm reasm}
+ :=
+ \left[
+ 1-2\sqrt{\widehat\kappa\chi}
+ -\widehat\kappa\chi-\eta
+ \right]_+.}
+ \label{eq:uniform-reassembly}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+\Cref{lem:missing-energy} and
+\eqref{eq:missing-diagonal-upper} imply
+\[
+ \|\cM z\|
+ \le
+ \sqrt{\widehat\kappa\chi\,
+       \Gamma_{\rm pre}D_{\rm raw}}.
+\]
+Together with \eqref{eq:represented-lower}, the reverse-triangle
+inequality gives \eqref{eq:sharp-reassembly}.
+
+It remains to compare the displayed constants.  If the bracket in
+\eqref{eq:uniform-reassembly} is nonpositive, the claim follows from
+nonnegativity.  Otherwise
+\(\sqrt{1-\eta}>\sqrt{\widehat\kappa\chi}\), and expansion gives
+\begin{align*}
+ \delta_{\rm sharp}
+ &=1-\eta
+ -2\sqrt{(1-\eta)\widehat\kappa\chi}
+ +\widehat\kappa\chi\\
+ &\ge
+ 1-\eta-2\sqrt{\widehat\kappa\chi}
+ -\widehat\kappa\chi
+ =\delta_{\rm reasm}.
+\end{align*}
+\end{proof}
+
+\begin{remark}[Why retain the weaker constant]
+The sharper constant in \eqref{eq:sharp-reassembly} should be used
+when all quantities are exact.  The conservative form
+\eqref{eq:uniform-reassembly} separates the represented defect
+\(\eta\), the cross-term cost \(2\sqrt{\widehat\kappa\chi}\), and an
+explicit missing self-energy reserve
+\(\widehat\kappa\chi\).  It is therefore convenient for a route
+ledger, but it is not advertised as sharp.
+\end{remark}
+
+\begin{proposition}[Certificate stop condition]
+\label{prop:reassembly-stop}
+The data \(\rho(P)<\infty\) and
+\(\Gamma_{\rm pre}>0\) alone do not imply
+\(\delta_{\rm reasm}>0\).  A positive conclusion requires a
+quantitative relation among \(\widehat\kappa\), \(\chi\), and \(\eta\).
+If
+\[
+ 1-2\sqrt{\widehat\kappa\chi}
+ -\widehat\kappa\chi-\eta\le0,
+\]
+then \eqref{eq:uniform-reassembly} supplies no positive survival
+estimate and this certificate branch must stop.  This failure is not
+a proof that the actual reassembled energy vanishes.
+\end{proposition}
+
+\begin{proof}
+The formula itself gives the second assertion.  For the first, take
+\(\cM=-\cA\) on the one-dimensional span of \(z\).  Then
+\(\cB z=0\), although both maps have finite Gram matrices and
+\(\Gamma_{\rm pre}\) may be positive.
+\end{proof}
+
+The one-dimensional example also shows why a claim of ``the missing
+part is constructible'' is weaker than an energy statement.  Exact
+constructibility can produce exact destructive interference.

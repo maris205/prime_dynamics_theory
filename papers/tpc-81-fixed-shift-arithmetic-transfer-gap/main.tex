@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.75in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,longtable,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={A Fixed-Shift Arithmetic Transfer Gap: From Literal Completion Certificates to Zero-Frequency Flatness},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Real}{\operatorname{Re}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\rhoo}{\operatorname{\rho}}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cY}{\mathcal Y}
+
+\title{A Fixed-Shift Arithmetic Transfer Gap:\\
+From Literal Completion Certificates to Zero-Frequency Flatness}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\noindent\textbf{Keywords:} fixed shift; provenance completion;
+determinant binning; zero-frequency flatness; energy survival; Gram
+majorant; parity barrier.\\[0.5em]
+\noindent\textbf{Convention.} Every physical statement retains one
+fixed nonzero shift \(h_0\), literal coefficients, complete native
+keys, exact post-aggregation support, and one global raw atomic
+normalizer.  No averaged-shift, frozen-family, or support-only
+substitute is accepted as a fixed-\(h_0\) arithmetic estimate.\\[0.5em]
+\noindent\textbf{MSC 2020:} Primary 11N37, 15A63; Secondary 11A25,
+42A16, 90C25.
+
+\input{sections/introduction}
+\input{sections/literal-packet}
+\input{sections/completion-survival}
+\input{sections/uniform-reassembly}
+\input{sections/determinant-dictionary}
+\input{sections/zero-slack}
+\input{sections/nonidentifiability}
+\input{sections/full-block-transfer}
+\input{sections/audit-boundary}
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

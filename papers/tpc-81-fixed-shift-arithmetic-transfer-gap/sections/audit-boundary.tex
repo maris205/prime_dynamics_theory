@@ -1,0 +1,150 @@
+\section{Reproducible audit, claim boundary, and next gate}
+\label{sec:audit}
+
+The transfer is useful only if every object can be checked against the
+literal packet.  We record a minimum archive.
+
+\subsection{Carrier and dictionary census}
+
+For each audited scale \(X\), archive:
+\begin{enumerate}[label=(A\arabic*),leftmargin=2.7em]
+\item the fixed value \(h_0\), the exact \(Q_X,J_X,C_X\), and the
+version of every upstream identity;
+\item the complete ordered native key sets
+\(\cK_X,\cY_X,\cN_X\), including field names, integer ranges,
+orientations, contents, provenance labels, and cryptographic hashes;
+\item the exact sparse arrays of \(\cA_X,\cM_X,\cB_X\), before
+thresholding, together with dimensions, ranks, and actual nonzero
+supports;
+\item the literal coefficient \(z_X\), the actual determinant
+coefficient \(a_X\), and a direct exact check of
+\(r_X=a_X-\cJ_X\cB_Xz_X\);
+\item the determinant label \(\nu_X\), every multiplier
+\(\tau_X(y)\), every fiber cardinality, and the sparse matrix of
+\(\cJ_X\);
+\item the single global \(D_{{\rm raw},X}\), with its atomic measure
+and units; no block-renormalized replacement;
+\item \(G_{\cM,X}\), its exact active diagonal
+\(D_{\cM,X}\), the normalized residual \(R_{\cM,X}\), the majorant
+\(P_X\), an entrywise proof of \(|R_{\cM,X}|\le P_X\), and a certified
+bound for \(\rho(P_X)\);
+\item the quantities \(\eta_X,\chi_X,\Gamma_{{\rm pre},X}\),
+\(\Xi_X(z_X)\), \(\delta_{{\rm sharp},X}\), and
+\(\delta_{{\rm reasm},X}\);
+\item the defining constraints for \(E_X\), an exact proof that
+\(\cB_Xz_X\in E_X\), and a certified lower bound for \(s_X\);
+\item the exact values \(Z_X,D_X,\mathfrak D_{h_0}(X)\), and
+\(\mathfrak F_{h_0}(X)\), followed by the complete polynomial-loss
+ledger of \cref{cor:lambda-D}.
+\end{enumerate}
+
+Exact integer, rational, algebraic, or interval certificates should be
+used whenever feasible.  Floating-point tolerances are reported
+separately and never used to change the exact support.  A regression
+over finitely many \(X\) may motivate an exponent, but it does not
+prove the asymptotic inequalities in
+\cref{thm:literal-flatness-transfer}.
+
+\subsection{Six mandatory physical checks}
+
+Before any L1 claim, answer all six questions:
+\begin{enumerate}[label=(C\arabic*),leftmargin=2.7em]
+\item Are the coefficients literal physical coefficients rather than
+majorant, trace, or averaged-family coefficients?
+\item Is the same prescribed nonzero \(h_0\) retained in every map?
+\item Is the atomic normalization global and physical?
+\item Is the representation canonical, or has every multiplicity in a
+nonminimal representation been restored?
+\item Is the support the actual exact post-aggregation support?
+\item Does the endpoint ledger keep every fixed-power loss explicit
+and obey the strict \(1/400\) stop rule?
+\end{enumerate}
+Failure of any check returns the result to L0.
+
+\subsection{Decision protocol}
+
+The next arithmetic decision is a deliberate trichotomy.
+
+\begin{enumerate}[label=\textbf{Route \Alph*.},leftmargin=3.5em]
+\item Construct the literal dictionary with \(r_X=0\), and prove
+\[
+ s_X,\ \delta_{{\rm reasm},X},\ \Gamma_{{\rm pre},X}
+ \ge X^{-o(1)},
+ \qquad
+ D_{{\rm raw},X}\ge X^{-o(1)}Q_X^3J_X^2.
+\]
+Then \eqref{eq:natural-energy-required} follows and the remaining
+independent task is the zero-mode amplitude estimate.
+\item Prove an amplitude gain
+\(\eta_Z>0\).  Then a determinant-energy loss
+\(\lambda_D\le2\eta_Z\) is admissible, subject to the separate strict
+endpoint ledger.
+\item Show that the required lower bound for \(D_X\), after exact
+expansion, contains an unresolved fixed-shift signed correlation of
+the same strength as a Chowla/parity input.  Then record a negative
+transfer theorem and stop this route rather than rename the missing
+arithmetic as a completion lemma.
+\end{enumerate}
+
+\subsection{Claim table}
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.31\textwidth}
+                    >{\raggedright\arraybackslash}p{0.27\textwidth}
+                    >{\raggedright\arraybackslash}p{0.31\textwidth}@{}}
+\toprule
+Statement & Status here & Missing physical input\\
+\midrule
+Missing-Gram energy bound
+& Exact L0 theorem
+& Literal \(\cM_X\) and asymptotic certificate statistics\\
+\addlinespace
+Uniform reassembly
+& Exact conditional L0 theorem
+& Positive \(\delta_{{\rm reasm},X}\) at physical scale\\
+\addlinespace
+Determinant-energy lower bound
+& Exact conditional L1 implication
+& Literal \(\cJ_X\), lower modulus, and small \(r_X\)\\
+\addlinespace
+Condition \(2\eta_Z\ge\lambda_D\)
+& Exact criterion for this exponent transfer
+& Bounds for the actual numerator and denominator\\
+\addlinespace
+Matched-shell saving
+& Conditional inherited implication
+& All hypotheses of \cref{thm:literal-flatness-transfer}\\
+\addlinespace
+\(\cB_{h_0,\delta}(X)=o(X)\)
+& Conditional full-block implication
+& Exact cover, normalization sum, and uniform packet estimates\\
+\addlinespace
+Fixed-shift prime-pair asymptotic or twin primes
+& Not proved
+& L2 arithmetic closure and all inherited bridges\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Conclusion}
+
+The new point is not a hidden cancellation theorem.  It is an exact
+factorization of the remaining inference:
+\[
+\boxed{
+\begin{array}{c}
+\text{literal completion}\\
+\Downarrow\ \text{Gram survival}\\
+\text{pre-bin energy}\\
+\Downarrow\ \text{restricted binning + dictionary}\\
+\text{determinant energy}\\
+\Downarrow\ \text{independent zero-mode estimate}\\
+\text{zero-frequency flatness}.
+\end{array}}
+\]
+The first two downward arrows are now governed by explicit,
+falsifiable constants.  The final arithmetic inputs remain open.
+That separation prevents exact finite algebra from being mislabeled
+as fixed-shift parity progress while leaving a precise route for a
+genuine future advance.
