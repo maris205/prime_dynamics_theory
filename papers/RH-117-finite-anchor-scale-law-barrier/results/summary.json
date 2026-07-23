@@ -1,0 +1,141 @@
+{
+  "audit": {
+    "alignment_failure_count": 0,
+    "continuation_anchor_failure_count": 0,
+    "maximum_capacity": 0.38763640177569464,
+    "maximum_concentration": 2.33011598857783,
+    "maximum_fit_residual_factor": 141.94184914020119,
+    "maximum_leave_one_out_exponent_span": 4.478217157444362,
+    "maximum_observed_certifying_depth": 6,
+    "minimum_capacity": 1.0736537153236515e-11,
+    "minimum_concentration": 1.0,
+    "physical_record_count": 120,
+    "scale_count": 5
+  },
+  "continuation_barrier": {
+    "all_anchor_errors_below_tolerance": true,
+    "anchor_count": 5,
+    "anchor_metric": "median three-mode capacity",
+    "examples": {
+      "interior_limit": {
+        "maximum_relative_anchor_error": 1.6653345369377348e-15,
+        "probe_value": 0.5
+      },
+      "unit_limit": {
+        "maximum_relative_anchor_error": 1.6653345369377348e-15,
+        "probe_value": 0.999999
+      },
+      "vanishing": {
+        "maximum_relative_anchor_error": 1.6653345369377348e-15,
+        "probe_value": 1.0000000000000008e-06
+      }
+    },
+    "preserved_range": [
+      0.0,
+      1.0
+    ],
+    "probe_scale": 1.0000000000000002e-06
+  },
+  "descriptive_power_law_fits": {
+    "capacity_median": {
+      "coefficient": 1.9582185019775166e-10,
+      "exponent": -4.496193277191101,
+      "leave_one_out_exponent_maximum": -2.6207917006020782,
+      "leave_one_out_exponent_minimum": -5.836010581554796,
+      "leave_one_out_exponents": [
+        -5.836010581554796,
+        -4.264092629569182,
+        -4.4961932771910975,
+        -5.034342080370332,
+        -2.6207917006020782
+      ],
+      "maximum_multiplicative_residual": 13.614212441211954,
+      "r_squared": 0.8377307355389116
+    },
+    "capacity_minimum": {
+      "coefficient": 6.104033609747071e-14,
+      "exponent": -5.114162710860588,
+      "leave_one_out_exponent_maximum": -2.0828824094646134,
+      "leave_one_out_exponent_minimum": -6.561099566908975,
+      "leave_one_out_exponents": [
+        -6.561099566908975,
+        -4.998193794489692,
+        -5.114162710860581,
+        -6.135470738858649,
+        -2.0828824094646134
+      ],
+      "maximum_multiplicative_residual": 141.94184914020119,
+      "r_squared": 0.7276579630342483
+    },
+    "concentration_median": {
+      "coefficient": 0.9583335752030498,
+      "exponent": -0.017913664708618084,
+      "leave_one_out_exponent_maximum": -0.0008942610644519096,
+      "leave_one_out_exponent_minimum": -0.024933178322133653,
+      "leave_one_out_exponents": [
+        -0.0008942610644519096,
+        -0.02357031637793176,
+        -0.017913664708618084,
+        -0.01797123591396189,
+        -0.024933178322133653
+      ],
+      "maximum_multiplicative_residual": 1.0278263629106097,
+      "r_squared": 0.5166040270186338
+    },
+    "fourth_mode_ratio_median": {
+      "coefficient": 1.2444201757688275e-11,
+      "exponent": -5.1091557417816675,
+      "leave_one_out_exponent_maximum": -3.32040347667942,
+      "leave_one_out_exponent_minimum": -6.573108164019454,
+      "leave_one_out_exponents": [
+        -6.573108164019454,
+        -4.837821327879636,
+        -5.109155741781663,
+        -5.566090065891943,
+        -3.32040347667942
+      ],
+      "maximum_multiplicative_residual": 11.938126409825898,
+      "r_squared": 0.8752940422277744
+    }
+  },
+  "program_boundary": {
+    "all_level_capacity_law_proved": false,
+    "all_level_concentration_law_proved": false,
+    "all_level_uniform_depth_proved": false,
+    "arbitrary_near_zero_germ_extension": true,
+    "bounded_interval_anchor_extension": true,
+    "descriptive_fit_is_asymptotic_law": false,
+    "finite_anchor_asymptotic_nonidentifiability": true,
+    "five_scale_physical_envelopes_audited": true,
+    "hilbert_polya_operator": false,
+    "positive_smooth_anchor_extension": true,
+    "riemann_hypothesis": false,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "e50d55e862b7860710197eea2108260cff04c895d36969261feb135b84c68762",
+    "THEOREM_LEDGER.md": "40c420575e066bdb7ed98196035b77528628f8e701a2dba08a98106889e472f6",
+    "UPDATED_ROADMAP.md": "ad67beb9c13a748790dd88b2ece7af1abc4693963141ef9270fc791c362fdd8f",
+    "figures/finite_anchor_scale_law_barrier.pdf": "2828b6524daf5e4e62a0661f62caab30634758d94da23d050cd9f486a0617aaa",
+    "figures/finite_anchor_scale_law_barrier.png": "942317c9d02a0283aa6f0a0d3a6e16e1fd9ed34c5500d5432dc57e8eaf46ca3e",
+    "finite-anchor-scale-law-barrier.pdf": "0636ae7a74ac21c1e726a4f4b35575ac403f6ea0a151104cc64b3c11ca56b749",
+    "main.pdf": "0636ae7a74ac21c1e726a4f4b35575ac403f6ea0a151104cc64b3c11ca56b749",
+    "main.tex": "abdc1cbe192d3d281069afcb5df4f7ee23ef3a282561148b9c308e46563c846a",
+    "pyproject.toml": "42f2614cff085a668274de9aaacb49aa1df39c343ace3d0f778a3f0fef513935",
+    "references.bib": "7cf1f749c1324e6b828eb4f36608265799bd6a9259bf6265a4451267f915402d",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "437350d64cd84c91b8ef5c608b2eead0fb1961a5ffebde73a5f2ce0aa400be6a",
+    "results/scale_law_audit.json": "4ccd0fa6935d104ae5f49bf59e8c3152e9c399665d0acc6f8c5b02225310ec4d",
+    "results/scale_law_smoke.json": "56d6c0cc61a0b0f7e95be6c9d265995473314965449d67b0fefa6fa42297a10d"
+  },
+  "route_consequence": "Capacity, exterior concentration, fourth-volume, fourth-mode ratio, and certifying depth now have a common five-scale envelope ledger. Power-law fits are archived as descriptive diagnostics only. A positive smooth-extension theorem proves that any finite anchor set is compatible with arbitrary positive behavior near zero, so all-level closure requires an independent physical inequality rather than extrapolation.",
+  "status": "rh117_finite_anchor_scale_law_barrier_archived",
+  "theorem": {
+    "bounded_interval_anchor_extension": true,
+    "finite_anchor_asymptotic_nonidentifiability": true,
+    "positive_smooth_anchor_extension": true
+  }
+}

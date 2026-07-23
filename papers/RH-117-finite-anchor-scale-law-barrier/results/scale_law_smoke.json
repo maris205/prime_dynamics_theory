@@ -1,0 +1,246 @@
+{
+  "audit_summary": {
+    "alignment_failure_count": 0,
+    "continuation_anchor_failure_count": 0,
+    "maximum_capacity": 0.2896790773467524,
+    "maximum_concentration": 2.33011598857783,
+    "maximum_fit_residual_factor": 87.73774751343971,
+    "maximum_leave_one_out_exponent_span": 19.365377290458923,
+    "maximum_observed_certifying_depth": 6,
+    "minimum_capacity": 1.0736537153236515e-11,
+    "minimum_concentration": 1.0,
+    "physical_record_count": 42,
+    "scale_count": 3
+  },
+  "continuation_barrier": {
+    "all_anchor_errors_below_tolerance": true,
+    "anchor_count": 3,
+    "anchor_metric": "median three-mode capacity",
+    "examples": {
+      "interior_limit": {
+        "maximum_relative_anchor_error": 1.6653345369377348e-15,
+        "probe_value": 0.5
+      },
+      "unit_limit": {
+        "maximum_relative_anchor_error": 1.6653345369377348e-15,
+        "probe_value": 0.9999960000000001
+      },
+      "vanishing": {
+        "maximum_relative_anchor_error": 1.6653345369377348e-15,
+        "probe_value": 4.000000000000001e-06
+      }
+    },
+    "preserved_range": [
+      0.0,
+      1.0
+    ],
+    "probe_scale": 4.000000000000001e-06
+  },
+  "descriptive_power_law_fits": {
+    "capacity_median": {
+      "coefficient": 5.900570026637333e-13,
+      "exponent": -6.890940656928806,
+      "leave_one_out_exponent_maximum": -1.767843261233793,
+      "leave_one_out_exponent_minimum": -12.014038052623805,
+      "leave_one_out_exponents": [
+        -12.014038052623805,
+        -6.8909406569288,
+        -1.767843261233793
+      ],
+      "maximum_multiplicative_residual": 10.669334337884957,
+      "r_squared": 0.8444225125473513
+    },
+    "capacity_minimum": {
+      "coefficient": 1.3289681614266041e-17,
+      "exponent": -8.643190864409553,
+      "leave_one_out_exponent_maximum": 1.0394977808199062,
+      "leave_one_out_exponent_minimum": -18.325879509639016,
+      "leave_one_out_exponents": [
+        -18.325879509639016,
+        -8.643190864409553,
+        1.0394977808199062
+      ],
+      "maximum_multiplicative_residual": 87.73774751343971,
+      "r_squared": 0.7050528783879028
+    },
+    "concentration_median": {
+      "coefficient": 0.9877494245396554,
+      "exponent": -0.006452015461315313,
+      "leave_one_out_exponent_maximum": -0.00427763591899364,
+      "leave_one_out_exponent_minimum": -0.008626395003636983,
+      "leave_one_out_exponents": [
+        -0.00427763591899364,
+        -0.006452015461315312,
+        -0.008626395003636983
+      ],
+      "maximum_multiplicative_residual": 1.0010052816567019,
+      "r_squared": 0.9635228684160048
+    },
+    "fourth_mode_ratio_median": {
+      "coefficient": 2.9114572262512934e-14,
+      "exponent": -7.6016721111808545,
+      "leave_one_out_exponent_maximum": -3.318143681603565,
+      "leave_one_out_exponent_minimum": -11.885200540758138,
+      "leave_one_out_exponents": [
+        -11.885200540758138,
+        -7.601672111180852,
+        -3.318143681603565
+      ],
+      "maximum_multiplicative_residual": 7.23847418220778,
+      "r_squared": 0.9042871703202304
+    }
+  },
+  "limitations": [
+    "The five scale records are correlated outputs of one finite model family and do not support inferential asymptotics.",
+    "The continuation examples are impossibility witnesses, not proposed physical models.",
+    "No uniform Stage A, Hilbert--Polya, zero identification, or Riemann Hypothesis result is claimed."
+  ],
+  "primary_threshold": 1e-08,
+  "route_consequence": "Capacity, exterior concentration, fourth-volume, fourth-mode ratio, and certifying depth now have a common five-scale envelope ledger. Power-law fits are archived as descriptive diagnostics only. A positive smooth-extension theorem proves that any finite anchor set is compatible with arbitrary positive behavior near zero, so all-level closure requires an independent physical inequality rather than extrapolation.",
+  "rows": [
+    {
+      "alignment_holds": true,
+      "capacity": {
+        "lower_quartile": 1.0484267723957588e-08,
+        "maximum": 0.0018502792705815832,
+        "median": 5.5104526648249234e-08,
+        "minimum": 1.0736537153236515e-11,
+        "upper_quartile": 2.6743489706579017e-05
+      },
+      "certifying_depth": {
+        "lower_quartile": 2.0,
+        "maximum": 3.0,
+        "median": 2.5,
+        "minimum": 2.0,
+        "upper_quartile": 3.0
+      },
+      "concentration": {
+        "lower_quartile": 1.0,
+        "maximum": 1.0,
+        "median": 1.0,
+        "minimum": 1.0,
+        "upper_quartile": 1.0
+      },
+      "fourth_mode_ratio": {
+        "lower_quartile": 2.6479543178754466e-10,
+        "maximum": 1.212879877923376e-05,
+        "median": 1.2142436217741688e-08,
+        "minimum": 1.0289650676935433e-10,
+        "upper_quartile": 1.463363549646936e-07
+      },
+      "maximum_certifying_depth": 3,
+      "normalized_four_volume": {
+        "lower_quartile": 7.439029980798376e-18,
+        "maximum": 2.2441664958271434e-08,
+        "median": 1.705864191987494e-16,
+        "minimum": 1.1103576848039028e-21,
+        "upper_quartile": 4.504427746984465e-12
+      },
+      "positive_ratio_count": 8,
+      "record_count": 8,
+      "sigma": 0.16,
+      "support_count": 4
+    },
+    {
+      "alignment_holds": true,
+      "capacity": {
+        "lower_quartile": 4.608525687087837e-05,
+        "maximum": 0.01867096889664366,
+        "median": 0.00022791509983068812,
+        "minimum": 3.527797601477203e-06,
+        "upper_quartile": 0.0021011617364372417
+      },
+      "certifying_depth": {
+        "lower_quartile": 2.0,
+        "maximum": 5.0,
+        "median": 3.0,
+        "minimum": 1.0,
+        "upper_quartile": 4.5
+      },
+      "concentration": {
+        "lower_quartile": 1.0005489105037275,
+        "maximum": 1.3112805634957623,
+        "median": 1.0029694313296385,
+        "minimum": 1.0000760274596283,
+        "upper_quartile": 1.051092884399472
+      },
+      "fourth_mode_ratio": {
+        "lower_quartile": 1.251932964725076e-06,
+        "maximum": 0.058767918935713946,
+        "median": 4.5931190075914824e-05,
+        "minimum": 5.686231439676863e-09,
+        "upper_quartile": 0.002128209210655854
+      },
+      "maximum_certifying_depth": 5,
+      "normalized_four_volume": {
+        "lower_quartile": 3.6607169732865315e-11,
+        "maximum": 0.001097253986569191,
+        "median": 5.104220578798247e-09,
+        "minimum": 8.028971697086693e-13,
+        "upper_quartile": 2.2065398822718628e-05
+      },
+      "positive_ratio_count": 12,
+      "record_count": 12,
+      "sigma": 0.08,
+      "support_count": 11
+    },
+    {
+      "alignment_holds": true,
+      "capacity": {
+        "lower_quartile": 0.00014972782046128333,
+        "maximum": 0.2896790773467524,
+        "median": 0.000776152299089966,
+        "minimum": 1.7162622424485866e-06,
+        "upper_quartile": 0.020194064330356986
+      },
+      "certifying_depth": {
+        "lower_quartile": 2.0,
+        "maximum": 6.0,
+        "median": 3.0,
+        "minimum": 1.0,
+        "upper_quartile": 4.0
+      },
+      "concentration": {
+        "lower_quartile": 1.0017069327934918,
+        "maximum": 2.33011598857783,
+        "median": 1.0089845132607826,
+        "minimum": 1.0000036456661014,
+        "upper_quartile": 1.0554982169700349
+      },
+      "fourth_mode_ratio": {
+        "lower_quartile": 3.185166424675485e-05,
+        "maximum": 0.133767130754764,
+        "median": 0.0004581086331363743,
+        "minimum": 8.21978393374845e-08,
+        "upper_quartile": 0.031560402598087296
+      },
+      "maximum_certifying_depth": 6,
+      "normalized_four_volume": {
+        "lower_quartile": 7.192779917725511e-09,
+        "maximum": 0.03874953901636242,
+        "median": 4.0636885324368955e-07,
+        "minimum": 3.751763056562828e-13,
+        "upper_quartile": 0.0005826613018838766
+      },
+      "positive_ratio_count": 22,
+      "record_count": 22,
+      "sigma": 0.04,
+      "support_count": 22
+    }
+  ],
+  "status": "rh117_finite_anchor_scale_law_barrier_audit",
+  "theorem_boundary": {
+    "all_level_capacity_law_proved": false,
+    "all_level_concentration_law_proved": false,
+    "all_level_uniform_depth_proved": false,
+    "arbitrary_near_zero_germ_extension": true,
+    "bounded_interval_anchor_extension": true,
+    "descriptive_fit_is_asymptotic_law": false,
+    "finite_anchor_asymptotic_nonidentifiability": true,
+    "five_scale_physical_envelopes_audited": false,
+    "hilbert_polya_operator": false,
+    "positive_smooth_anchor_extension": true,
+    "riemann_hypothesis": false,
+    "uniform_stage_A_closed": false
+  }
+}

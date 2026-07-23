@@ -1,0 +1,41 @@
+{
+  "external_inputs": {
+    "rh110_capacity_audit": {
+      "path": "papers/RH-110-finite-memory-three-mode-capacity/results/three_mode_capacity_audit.json",
+      "sha256": "6d10877863a1c32212815ec567ede896b7e2e9be83215e9fbc1e790c87cc495f"
+    },
+    "rh111_concentration_audit": {
+      "path": "papers/RH-111-tail-energy-exterior-concentration/results/exterior_concentration_audit.json",
+      "sha256": "b81a21100a1e02626d4eda0d8f6e54a34bfdaae1a4d96532e58f3bfe369de18f"
+    },
+    "rh116_depth_audit": {
+      "path": "papers/RH-116-monotone-memory-depth-optimization/results/memory_depth_audit.json",
+      "sha256": "bf210d467e098889ae2bf2fc96fcb929479c3adcbdf10229aee79678b45ab5b9"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "e31311453205ba1fe23d47fa93cf080b6517dc72fa0489a6e2a2938b7dee653a",
+    "experiments/build_scale_law_audit.py": "3b1acbde0ac9abfb6319dfee2bdb812398900ac944d7f2a06fc578a9d6b49856",
+    "experiments/make_figures.py": "b0cb82c7fe452af655a1a4c53ac09988f7fb7d161209c4b52aec30a8b39d7982",
+    "experiments/verify_archive.py": "af88230d60a2d5510f0bb7659bb488493e8c9d1411343fe202a78300f874f6a8",
+    "src/scale_law/__init__.py": "21c005cb795602cf67a35ebf4ab4908f37c6eedeece73588d7cd4e3aa34c5cde",
+    "src/scale_law/barrier.py": "485ead8eaaa5a23dc6ddf4f2712535fe4f11d2f367e7d095de07f086335e2a70",
+    "tests/test_archived_results.py": "e804ae88f1029591a99cc5ff2f13ce3152bdf29258d78b87491fc9553a34ad56",
+    "tests/test_theory.py": "4d9621fad2f6ec72c47a6b34a3be5fe905fb542107f2080b70dfbfff6616ab54"
+  },
+  "publication_artifacts": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "e50d55e862b7860710197eea2108260cff04c895d36969261feb135b84c68762",
+    "THEOREM_LEDGER.md": "40c420575e066bdb7ed98196035b77528628f8e701a2dba08a98106889e472f6",
+    "UPDATED_ROADMAP.md": "ad67beb9c13a748790dd88b2ece7af1abc4693963141ef9270fc791c362fdd8f",
+    "figures/finite_anchor_scale_law_barrier.pdf": "2828b6524daf5e4e62a0661f62caab30634758d94da23d050cd9f486a0617aaa",
+    "figures/finite_anchor_scale_law_barrier.png": "942317c9d02a0283aa6f0a0d3a6e16e1fd9ed34c5500d5432dc57e8eaf46ca3e",
+    "finite-anchor-scale-law-barrier.pdf": "0636ae7a74ac21c1e726a4f4b35575ac403f6ea0a151104cc64b3c11ca56b749",
+    "main.pdf": "0636ae7a74ac21c1e726a4f4b35575ac403f6ea0a151104cc64b3c11ca56b749",
+    "main.tex": "abdc1cbe192d3d281069afcb5df4f7ee23ef3a282561148b9c308e46563c846a",
+    "pyproject.toml": "42f2614cff085a668274de9aaacb49aa1df39c343ace3d0f778a3f0fef513935",
+    "references.bib": "7cf1f749c1324e6b828eb4f36608265799bd6a9259bf6265a4451267f915402d",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd"
+  },
+  "status": "all_rh117_inputs_sources_and_publication_artifacts_hashed"
+}
