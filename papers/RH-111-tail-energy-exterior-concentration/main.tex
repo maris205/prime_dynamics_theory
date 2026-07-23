@@ -1,0 +1,201 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,graphicx,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}\usepackage[numbers]{natbib}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{proposition}[theorem]{Proposition}\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}\newcommand{\e}{\operatorname{e}}
+\title{Tail-Energy Exterior Concentration\\\large Reducing the Trace-to-Spectral Four-Volume Penalty}
+\author{Liang Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+For a projected cross $K$ with singular values $s_1\ge\cdots\ge s_r$, define
+\[
+ \kappa_4(K)=\frac{\e_4(s_1^2,\ldots,s_r^2)}{s_1^2s_2^2s_3^2s_4^2}.
+\]
+RH-109 used the universal bound $1\le\kappa_4\le\binom r4$ to convert a
+trace exterior moment into a spectral four-volume.  This paper replaces the
+worst combinatorial factor by a perturbation-stable tail-energy bound.  If
+$\widehat s_j$ are recent singular values, $\norm{K-\widehat K}_2\le\delta$,
+$\ell_j=(\widehat s_j-\delta)_+$, $u_j=\widehat s_j+\delta$, and
+\[
+ S_+=\left(\norm{\widehat K}_F+\sqrt r\,\delta\right)^2-
+ \sum_{j=1}^4\ell_j^2,
+\]
+then $\kappa_4(K)$ is bounded by the minimum of $\binom r4$ and an explicit
+degree-four polynomial in $S_+$.  Dividing the trace exterior lower bound by
+this concentration upper bound gives a refined spectral-volume certificate.
+On the archived fine chain the true concentration never exceeds $2.29093$
+although $\binom74=35$.  The refined trace certificate covers 78, 69, and 55
+of 78 updates at thresholds $10^{-8},10^{-6},10^{-4}$, improving the generic
+counts 78, 65, and 42.  At $10^{-4}$ it matches the spectral exterior count.
+No all-level concentration, Stage A, Hilbert--Polya, or Riemann Hypothesis
+result is claimed.
+\end{abstract}
+
+\section{Introduction}
+RH-109 separated spectral and trace four-volumes, and RH-110 isolated the
+relative capacity factor \citep{WangExterior2026,WangCapacity2026}.  The
+remaining trace loss is the multiplicity of four-dimensional singular
+products.  A packet of rank seven has $35$ exterior coordinates, but the
+physical spectrum need not distribute mass evenly among them.  The scalar
+$\kappa_4$ measures that distribution exactly.
+
+This paper proves a concentration estimate from a quantity already present
+in the finite-memory calculation: the Frobenius energy outside the first four
+recent singular directions.  The result is useful when lower singular modes
+carry little energy, and it is sharp at the two universal endpoints.
+
+\section{Exterior concentration}
+Let $a_j=s_j^2$ and $P_4=a_1a_2a_3a_4$.  Since the eigenvalues of
+$\wedge^4(K^*K)$ are the products $a_{i_1}\cdots a_{i_4}$,
+\begin{equation}
+ \kappa_4=\frac{\operatorname{tr}(\wedge^4K^*K)}
+ {\lambda_{\max}(\wedge^4K^*K)}
+ =\frac{\e_4(a_1,\ldots,a_r)}{P_4}.
+ \label{eq:kappa}
+\end{equation}
+Thus $\kappa_4$ is the stable rank of the exterior Gramian in trace/operator
+form \citep{HornJohnson1991}.
+
+\begin{proposition}[Sharp universal range]
+\label{prop:range}
+For $s_4>0$,
+\[
+ 1\le\kappa_4\le D_r:=\binom r4.
+\]
+Both bounds are sharp: rank exactly four gives one, and a flat nonzero
+spectrum gives $D_r$.
+\end{proposition}
+\begin{proof}
+The numerator of \eqref{eq:kappa} is a sum of $D_r$ nonnegative products,
+each no larger than $P_4$, and one term equals $P_4$.
+\end{proof}
+
+\section{Tail-energy concentration theorem}
+Assume $\norm{K-\widehat K}_2\le\delta$ and set
+$\ell_j=(\widehat s_j-\delta)_+$, $u_j=\widehat s_j+\delta$.  The Frobenius
+perturbation obeys
+\[
+ \norm{K}_F\le\norm{\widehat K}_F+\sqrt r\,\delta.
+\]
+Hence the squared singular energy below the first four modes satisfies
+\begin{equation}
+ S:=\sum_{j\ge5}s_j^2\le S_+:=
+ \left(\norm{\widehat K}_F+\sqrt r\,\delta\right)^2-
+ \sum_{j=1}^4\ell_j^2.
+ \label{eq:tailenergy}
+\end{equation}
+The right side is replaced by zero if negative.
+
+\begin{theorem}[Tail-energy concentration upper bound]
+\label{thm:upper}
+If $\prod_{j=1}^4\ell_j>0$, then
+\begin{equation}
+ \kappa_4(K)\le\min\left\{D_r,
+ \frac{1}{\prod_{j=1}^4\ell_j^2}
+ \sum_{k=0}^4
+ \e_{4-k}(u_1^2,u_2^2,u_3^2,u_4^2)\frac{S_+^k}{k!}
+ \right\}.
+ \label{eq:upper}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Split the elementary symmetric polynomial into terms containing exactly $k$
+tail eigenvalues:
+\[
+ \e_4(a_1,\ldots,a_r)=\sum_{k=0}^4
+ \e_{4-k}(a_1,\ldots,a_4)\e_k(a_5,\ldots,a_r).
+\]
+Weyl gives $a_j\le u_j^2$ for the top modes and
+$P_4\ge\prod\ell_j^2$.  For nonnegative tail eigenvalues,
+$\e_k(a_5,\ldots,a_r)\le S^k/k!\le S_+^k/k!$.  Insert these inequalities and
+combine with \cref{prop:range}.
+\end{proof}
+
+\begin{corollary}[Refined trace exterior certificate]
+\label{cor:certificate}
+Let $\kappa_+$ denote the right side of \eqref{eq:upper}.  Then
+\begin{equation}
+ \frac{s_4(K)}{s_1(K)}\ge
+ \frac{\sqrt{\e_4(\ell_1^2,\ldots,\ell_r^2)/\kappa_+}}
+ {(\widehat s_1+\delta)^4}.
+ \label{eq:certificate}
+\end{equation}
+\end{corollary}
+\begin{proof}
+The trace exterior norm squared is $\e_4(s_1^2,\ldots,s_r^2)$, while the
+spectral exterior norm squared is the trace divided by $\kappa_4$.  Use the
+coordinatewise Weyl lower bounds, \cref{thm:upper}, and the RH-109 inequality
+$s_4/s_1\ge\nu_4$.
+\end{proof}
+
+\section{Sharpness and interpretation}
+The flat spectrum shows that the dimension cap in \eqref{eq:upper} cannot be
+removed generically.  The rank-four spectrum shows that tail energy zero
+makes the trace and spectral routes identical.  Between these endpoints,
+$S_+$ records how many lower modes can participate in exterior products and
+how much weight they can carry.
+
+The theorem is insensitive to singular-vector orientation; this is both its
+strength and its remaining limitation.  A directional tail estimate can be
+strictly sharper than the Frobenius energy $S_+$.  That question is deferred
+to the next layer.
+
+\section{Archived audit}
+The audit reads the complete recent and full spectra archived by RH-110 for
+five scales, two channels, and three thresholds.  There are 360 records.  No
+true concentration exceeds the bound in \eqref{eq:upper}.
+
+\begin{table}[t]\centering\small
+\caption{Fine support counts out of 78.}
+\begin{tabular}{@{}lrrr@{}}\toprule
+threshold & generic trace & tail-energy trace & spectral exterior\\\midrule
+$10^{-8}$ & 78 & 78 & 78\\
+$10^{-6}$ & 65 & 69 & 72\\
+$10^{-4}$ & 42 & 55 & 55\\\bottomrule
+\end{tabular}
+\end{table}
+
+Across the fine records,
+\[
+ 1.0000000003\le\kappa_4\le2.29093,
+\]
+and the refined lower bound is between $1.836$ and $5.908$ times the generic
+$D_r^{-1/2}$ trace bound.  The minimum refined fine lower bound is
+$2.42222\times10^{-8}$, compared with
+$1.31917\times10^{-8}$ generically.  At $10^{-4}$ the refinement recovers
+every spectral-volume success; at $10^{-6}$ three spectral successes remain
+outside the trace route.
+
+\begin{figure}[t]\centering
+\includegraphics[width=\textwidth]{figures/tail_energy_exterior_concentration.pdf}
+\caption{Left: observed concentration is far below the universal exterior
+dimension.  Right: the tail-energy refinement closes most of the generic
+trace-to-spectral gap.}
+\end{figure}
+
+\section{Claim boundary and next step}
+The paper proves a tail-energy concentration theorem and a refined trace
+certificate.  It validates the refinement on the archived finite chain.  It
+does not prove that $S_+$ or $\kappa_4$ obeys an all-level scale law, and it
+does not provide the missing physical four-volume lower bound.
+
+The next test is whether one should propagate the exterior operator directly
+rather than through individual singular values.  A global wedge-Lipschitz
+bound is mathematically natural, but its multilinear mixed terms may erase
+weak four-volume.  RH-112 will decide that route quantitatively.  No Stage A,
+Hilbert--Polya operator, zero identification, or Riemann Hypothesis claim is
+made.
+
+\section{Reproducibility}
+\begin{verbatim}
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_concentration_audit.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_concentration_audit.py --smoke
+MPLBACKEND=Agg PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/make_figures.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/pytest -q -p no:cacheprovider
+\end{verbatim}
+\bibliographystyle{plainnat}\bibliography{references}\end{document}

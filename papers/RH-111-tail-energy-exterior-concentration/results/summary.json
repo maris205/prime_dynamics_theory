@@ -1,0 +1,92 @@
+{
+  "audit": {
+    "channel_count": 10,
+    "concentration_enclosure_failure_count": 0,
+    "fine_update_count": 234,
+    "maximum_concentration": 2.33011598857783,
+    "maximum_fine_concentration": 2.290926510933534,
+    "maximum_fine_refinement_gain": 5.9084160147422375,
+    "minimum_fine_concentration": 1.00000000031761,
+    "minimum_fine_refinement_gain": 1.8361735481055625,
+    "scale_count": 5,
+    "update_count": 360
+  },
+  "program_boundary": {
+    "all_level_exterior_concentration_law_proved": false,
+    "all_level_physical_volume_lower_bound_proved": false,
+    "fine_refinement_validated": true,
+    "hilbert_polya_operator": false,
+    "refined_trace_exterior_certificate": true,
+    "riemann_hypothesis": false,
+    "sharp_concentration_range": true,
+    "tail_energy_concentration_upper_bound": true,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "e611d0009dfb61a846769144939de776a19a951173669304d9a129f20a56be19",
+    "THEOREM_LEDGER.md": "6e1bbc8580a26eb78cffbfa33b5f002399b444d99eb8035fa25761b7dff341c7",
+    "UPDATED_ROADMAP.md": "d93839d826ce7ff45bb24e9fa742f3ada782fc1dff48d33d6156755de3a56f9d",
+    "figures/tail_energy_exterior_concentration.pdf": "8f868d4741396e07d32869168e565d78554b1c72a299a9d2bb9b2be18cefb503",
+    "figures/tail_energy_exterior_concentration.png": "360eec92d1e2ac36bbd9c68823e8d8b88c3b60ad6c12c27d42439198293646bd",
+    "main.pdf": "2da9b1442f1f6e3045201123390c88e6ef9f81348c6a158292d90814b3e8d9a6",
+    "main.tex": "57f0700cd9e1550ba137022508a41f5009c1c6332c242866baf7f97373d009e5",
+    "pyproject.toml": "88b24ab7f442349636145df69afc8931151d8fc7d7bb53597d848e1cda1f1dfc",
+    "references.bib": "71bab51b9f823b4b61236b74e61343023bcc456d0676816009c2fd53f742ab4b",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+    "tail-energy-exterior-concentration.pdf": "2da9b1442f1f6e3045201123390c88e6ef9f81348c6a158292d90814b3e8d9a6"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "1fcea3a304b24478e9412487c5c5c60ccaa202fb5ccd0d280226f0a92d7030fe",
+    "results/exterior_concentration_audit.json": "b81a21100a1e02626d4eda0d8f6e54a34bfdaae1a4d96532e58f3bfe369de18f",
+    "results/exterior_concentration_smoke.json": "461e3a75d3176f9b3e129f90bd94dd975b9a2b1fd37b9296acee7e35f785c241"
+  },
+  "route_consequence": "A tail-energy estimate replaces the worst binomial exterior penalty by a physical concentration upper bound. On the archived fine chain it raises trace-certificate coverage from 65 to 69 records at 1e-6 and from 42 to 55 records at 1e-4, while preserving complete 1e-8 coverage. The remaining gap to the spectral certificate is a genuine exterior-concentration problem.",
+  "status": "rh111_tail_energy_exterior_concentration_archived",
+  "theorem": {
+    "refined_trace_exterior_certificate": true,
+    "sharp_concentration_range": true,
+    "tail_energy_concentration_upper_bound": true
+  },
+  "threshold_summary": {
+    "1e-04": {
+      "fine_generic_support_count": 42,
+      "fine_refined_support_count": 55,
+      "fine_spectral_support_count": 55,
+      "fine_update_count": 78,
+      "generic_support_count": 52,
+      "minimum_fine_generic_lower": 1.3191664287913583e-08,
+      "minimum_fine_refined_lower": 2.4222185020955724e-08,
+      "refined_support_count": 65,
+      "spectral_support_count": 65,
+      "threshold": 0.0001,
+      "update_count": 120
+    },
+    "1e-06": {
+      "fine_generic_support_count": 65,
+      "fine_refined_support_count": 69,
+      "fine_spectral_support_count": 72,
+      "fine_update_count": 78,
+      "generic_support_count": 77,
+      "minimum_fine_generic_lower": 1.3191664287913583e-08,
+      "minimum_fine_refined_lower": 2.4222185020955724e-08,
+      "refined_support_count": 82,
+      "spectral_support_count": 85,
+      "threshold": 1e-06,
+      "update_count": 120
+    },
+    "1e-08": {
+      "fine_generic_support_count": 78,
+      "fine_refined_support_count": 78,
+      "fine_spectral_support_count": 78,
+      "fine_update_count": 78,
+      "generic_support_count": 97,
+      "minimum_fine_generic_lower": 1.3191664287913583e-08,
+      "minimum_fine_refined_lower": 2.4222185020955724e-08,
+      "refined_support_count": 99,
+      "spectral_support_count": 99,
+      "threshold": 1e-08,
+      "update_count": 120
+    }
+  }
+}

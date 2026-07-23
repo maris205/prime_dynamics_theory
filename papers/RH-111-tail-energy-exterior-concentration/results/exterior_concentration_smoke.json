@@ -1,0 +1,559 @@
+{
+  "audit_summary": {
+    "channel_count": 2,
+    "concentration_enclosure_failure_count": 0,
+    "fine_update_count": 0,
+    "maximum_concentration": 1.0,
+    "maximum_fine_concentration": 1.0,
+    "maximum_fine_refinement_gain": 1.0,
+    "minimum_fine_concentration": 1.0,
+    "minimum_fine_refinement_gain": 0.0,
+    "scale_count": 1,
+    "update_count": 24
+  },
+  "barrier": {
+    "maximum_flat_error": 0.0,
+    "maximum_rank_four_error": 0.0,
+    "rows": [
+      {
+        "dimension": 1,
+        "flat_concentration": 1.0,
+        "rank": 4,
+        "rank_four_concentration": 1.0
+      },
+      {
+        "dimension": 5,
+        "flat_concentration": 5.0,
+        "rank": 5,
+        "rank_four_concentration": 1.0
+      },
+      {
+        "dimension": 15,
+        "flat_concentration": 15.0,
+        "rank": 6,
+        "rank_four_concentration": 1.0
+      },
+      {
+        "dimension": 35,
+        "flat_concentration": 35.0,
+        "rank": 7,
+        "rank_four_concentration": 1.0
+      }
+    ]
+  },
+  "limitations": [
+    "The refinement is based on finite recent spectra and does not prove an all-level concentration law.",
+    "The Frobenius tail estimate can be conservative in weak branches.",
+    "No uniform Stage A, Hilbert--Polya, zero identification, or Riemann Hypothesis conclusion is claimed."
+  ],
+  "route_consequence": "A tail-energy estimate replaces the worst binomial exterior penalty by a physical concentration upper bound. On the archived fine chain it raises trace-certificate coverage from 65 to 69 records at 1e-6 and from 42 to 55 records at 1e-4, while preserving complete 1e-8 coverage. The remaining gap to the spectral certificate is a genuine exterior-concentration problem.",
+  "rows": [
+    {
+      "channels": [
+        {
+          "side": "left",
+          "thresholds": [
+            {
+              "steps": [
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": true,
+                  "generic_trace_lower": 2.2441657571650773e-08,
+                  "packet_rank": 4,
+                  "refined_support": true,
+                  "refined_trace_lower": 2.2441657571650773e-08,
+                  "refinement_gain": 1.0,
+                  "spectral_support": true,
+                  "spectral_volume_lower": 2.2441657571650777e-08,
+                  "tail_energy_upper": 6.226471432630581e-16,
+                  "threshold": 1e-08,
+                  "time": 1
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 3.2910866036450396e-16,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 3.2910866036450396e-16,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 3.291086603645039e-16,
+                  "tail_energy_upper": 5.223821592306721e-16,
+                  "threshold": 1e-08,
+                  "time": 2
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 1.8484127053956343e-19,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 1.8484127053956343e-19,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 1.8484127053956343e-19,
+                  "tail_energy_upper": 3.089184745173597e-17,
+                  "threshold": 1e-08,
+                  "time": 3
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": Infinity,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 0.0,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 0.0,
+                  "refinement_gain": 0.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 0.0,
+                  "tail_energy_upper": Infinity,
+                  "threshold": 1e-08,
+                  "time": 4
+                }
+              ],
+              "threshold": 1e-08
+            },
+            {
+              "steps": [
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 2.2441657571650773e-08,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 2.2441657571650773e-08,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 2.2441657571650777e-08,
+                  "tail_energy_upper": 6.226471432630581e-16,
+                  "threshold": 1e-06,
+                  "time": 1
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 3.2910866036450396e-16,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 3.2910866036450396e-16,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 3.291086603645039e-16,
+                  "tail_energy_upper": 5.223821592306721e-16,
+                  "threshold": 1e-06,
+                  "time": 2
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 3.538049174742063e-18,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 3.538049174742063e-18,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 3.538049174742063e-18,
+                  "tail_energy_upper": 3.089280036380163e-17,
+                  "threshold": 1e-06,
+                  "time": 3
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": Infinity,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 0.0,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 0.0,
+                  "refinement_gain": 0.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 0.0,
+                  "tail_energy_upper": Infinity,
+                  "threshold": 1e-06,
+                  "time": 4
+                }
+              ],
+              "threshold": 1e-06
+            },
+            {
+              "steps": [
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 2.2441657571650773e-08,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 2.2441657571650773e-08,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 2.2441657571650777e-08,
+                  "tail_energy_upper": 6.226471432630581e-16,
+                  "threshold": 0.0001,
+                  "time": 1
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 4.887811004425391e-16,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 4.887811004425391e-16,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 4.887811004425391e-16,
+                  "tail_energy_upper": 5.223957117578282e-16,
+                  "threshold": 0.0001,
+                  "time": 2
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 6.7674207100982816e-18,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 6.7674207100982816e-18,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 6.7674207100982816e-18,
+                  "tail_energy_upper": 3.092445822020526e-17,
+                  "threshold": 0.0001,
+                  "time": 3
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": Infinity,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 0.0,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 0.0,
+                  "refinement_gain": 0.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 0.0,
+                  "tail_energy_upper": Infinity,
+                  "threshold": 0.0001,
+                  "time": 4
+                }
+              ],
+              "threshold": 0.0001
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "thresholds": [
+            {
+              "steps": [
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 4.61431891665487e-13,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 4.61431891665487e-13,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 4.61431891665487e-13,
+                  "tail_energy_upper": 8.197435785728402e-15,
+                  "threshold": 1e-08,
+                  "time": 1
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 1.6631778752611848e-11,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 1.6631778752611848e-11,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 1.663177875261185e-11,
+                  "tail_energy_upper": 1.456655264887429e-16,
+                  "threshold": 1e-08,
+                  "time": 2
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 9.512023551599383e-18,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 9.512023551599383e-18,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 9.512023551599383e-18,
+                  "tail_energy_upper": 3.770770982005451e-17,
+                  "threshold": 1e-08,
+                  "time": 3
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": Infinity,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 0.0,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 0.0,
+                  "refinement_gain": 0.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 0.0,
+                  "tail_energy_upper": Infinity,
+                  "threshold": 1e-08,
+                  "time": 4
+                }
+              ],
+              "threshold": 1e-08
+            },
+            {
+              "steps": [
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 4.61431891665487e-13,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 4.61431891665487e-13,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 4.61431891665487e-13,
+                  "tail_energy_upper": 8.197435785728402e-15,
+                  "threshold": 1e-06,
+                  "time": 1
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 1.8233087197358192e-11,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 1.8233087197358192e-11,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 1.8233087197358195e-11,
+                  "tail_energy_upper": 1.4568776110360834e-16,
+                  "threshold": 1e-06,
+                  "time": 2
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 2.6318936761117105e-17,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 2.6318936761117105e-17,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 2.63189367611171e-17,
+                  "tail_energy_upper": 3.770773628983411e-17,
+                  "threshold": 1e-06,
+                  "time": 3
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": Infinity,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 0.0,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 0.0,
+                  "refinement_gain": 0.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 0.0,
+                  "tail_energy_upper": Infinity,
+                  "threshold": 1e-06,
+                  "time": 4
+                }
+              ],
+              "threshold": 1e-06
+            },
+            {
+              "steps": [
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 4.61431891665487e-13,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 4.61431891665487e-13,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 4.61431891665487e-13,
+                  "tail_energy_upper": 8.197435785728402e-15,
+                  "threshold": 0.0001,
+                  "time": 1
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 1.8233087197358192e-11,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 1.8233087197358192e-11,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 1.8233087197358195e-11,
+                  "tail_energy_upper": 1.4568776110360834e-16,
+                  "threshold": 0.0001,
+                  "time": 2
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": 1.0,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 2.6318936761117105e-17,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 2.6318936761117105e-17,
+                  "refinement_gain": 1.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 2.63189367611171e-17,
+                  "tail_energy_upper": 3.770773628983411e-17,
+                  "threshold": 0.0001,
+                  "time": 3
+                },
+                {
+                  "actual_concentration": 1.0,
+                  "concentration_enclosed": true,
+                  "concentration_upper": Infinity,
+                  "exterior_dimension": 1,
+                  "generic_support": false,
+                  "generic_trace_lower": 0.0,
+                  "packet_rank": 4,
+                  "refined_support": false,
+                  "refined_trace_lower": 0.0,
+                  "refinement_gain": 0.0,
+                  "spectral_support": false,
+                  "spectral_volume_lower": 0.0,
+                  "tail_energy_upper": Infinity,
+                  "threshold": 0.0001,
+                  "time": 4
+                }
+              ],
+              "threshold": 0.0001
+            }
+          ]
+        }
+      ],
+      "clock_rank": 4,
+      "sigma": 0.16
+    }
+  ],
+  "status": "rh111_tail_energy_exterior_concentration_audit",
+  "theorem_boundary": {
+    "all_level_exterior_concentration_law_proved": false,
+    "all_level_physical_volume_lower_bound_proved": false,
+    "fine_refinement_validated": false,
+    "hilbert_polya_operator": false,
+    "refined_trace_exterior_certificate": true,
+    "riemann_hypothesis": false,
+    "sharp_concentration_range": true,
+    "tail_energy_concentration_upper_bound": true,
+    "uniform_stage_A_closed": false
+  },
+  "threshold_summary": {
+    "1e-04": {
+      "fine_generic_support_count": 0,
+      "fine_refined_support_count": 0,
+      "fine_spectral_support_count": 0,
+      "fine_update_count": 0,
+      "generic_support_count": 0,
+      "minimum_fine_generic_lower": null,
+      "minimum_fine_refined_lower": null,
+      "refined_support_count": 0,
+      "spectral_support_count": 0,
+      "threshold": 0.0001,
+      "update_count": 8
+    },
+    "1e-06": {
+      "fine_generic_support_count": 0,
+      "fine_refined_support_count": 0,
+      "fine_spectral_support_count": 0,
+      "fine_update_count": 0,
+      "generic_support_count": 0,
+      "minimum_fine_generic_lower": null,
+      "minimum_fine_refined_lower": null,
+      "refined_support_count": 0,
+      "spectral_support_count": 0,
+      "threshold": 1e-06,
+      "update_count": 8
+    },
+    "1e-08": {
+      "fine_generic_support_count": 0,
+      "fine_refined_support_count": 0,
+      "fine_spectral_support_count": 0,
+      "fine_update_count": 0,
+      "generic_support_count": 1,
+      "minimum_fine_generic_lower": null,
+      "minimum_fine_refined_lower": null,
+      "refined_support_count": 1,
+      "spectral_support_count": 1,
+      "threshold": 1e-08,
+      "update_count": 8
+    }
+  }
+}
