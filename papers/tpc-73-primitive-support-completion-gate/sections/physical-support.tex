@@ -1,0 +1,203 @@
+\section{The canonical primitive physical datum}
+\label{sec:physical-support}
+
+We restate the literal input needed from TPC--70 and TPC--71.  No estimate
+is made in this section.
+
+\subsection{Rows, anchors, and erasure coordinates}
+
+Fix a finite physical scale, one nonzero integer shift \(h_0\), two
+distinct active rows \(m<n\) satisfying
+\[
+ (mn,h_0)=1,
+\]
+and squarefree row divisors
+\[
+ d_m\mid m,\qquad d_n\mid n,\qquad
+ d_m=ga,\qquad d_n=gb,\qquad(a,b)=1.
+\]
+An active row \(r\) is a canonical source row with positive raw atomic
+mass \(W_r\).  On the active row space, the atomic-normalized native Gram
+has the inherited decomposition
+\[
+ G_{\rm nat}=I+R+E,
+\]
+where \(R\) retains common-output pairs with equal residual labels and
+\(E\) retains those with unequal residual labels
+\citep{WangTPC68}.  A complete native key retains the direct side,
+external block, opposite row, \(\gamma\)-coordinate, physical time, and
+every other orthogonal output label; equality of times alone is not used
+as equality of keys.
+
+For the row pair \((m,n)\), a complete same-residual anchor
+\(\mathfrak a\) contains a complete key \(\iota_R\), its time \(j_R\), and
+both active row corners
+\[
+ mj_R+h_0=P_mR_m,\qquad
+ nj_R+h_0=P_nR_n,\qquad
+ d_mR_m=d_nR_n.
+\]
+At an actual erasure key \(\iota_E\), with time \(j_E\), the corresponding
+targets are
+\[
+ mj_E+h_0=Q_mS_m,\qquad
+ nj_E+h_0=Q_nS_n,\qquad
+ d_mS_m\ne d_nS_n.
+\]
+Here \(P_m,P_n,Q_m,Q_n\) are the literal largest-prime labels and
+\(R_m,R_n,S_m,S_n\) their cofactors.  At a present corner, let
+\(\beta_{\iota,r}\) denote the literal coefficient after every physical
+mask and profile.  The residual-sign-free four-corner amplitude is
+\begin{equation}
+ \cA(\iota_E,\iota_R;m,n)
+ =
+ \frac{
+ \overline{\beta_{\iota_E,m}}\beta_{\iota_E,n}
+ \overline{\beta_{\iota_R,n}}\beta_{\iota_R,m}
+ }{W_mW_n},
+ \label{eq:literal-four-corner-amplitude}
+\end{equation}
+and is zero if a required corner is absent
+\citep{WangTPC70}.
+
+Every target and residual label used below lies on the inherited
+squarefree physical support.  In particular, at an erasure key
+\[
+ mj_E+h_0=Q_mS_m,\qquad nj_E+h_0=Q_nS_n,
+\]
+and
+\[
+ \mu(mj_E+h_0),\ \mu(nj_E+h_0),\
+ \mu(d_mS_m),\ \mu(d_nS_n)\in\{-1,1\}.
+\]
+The analogous nonvanishing conditions are retained at the
+same-residual anchor.
+Put
+\[
+ H=h_0(n-m).
+\]
+At an actual erasure key, the two target cofactors are \(S_m,S_n\).
+Their canonical content and primitive coordinates are
+\begin{equation}
+ q=(S_m,S_n),\qquad S_m=qu,\qquad S_n=qv.
+ \label{eq:canonical-erasure-coordinates}
+\end{equation}
+The determinant identity of TPC--70 \citep{WangTPC70} gives
+\[
+ q\mid |H|,
+ \qquad
+ nuQ_m-mvQ_n=H/q,
+\]
+and the unequal-residual condition is
+\begin{equation}
+ (u,v)\ne(b,a).
+ \label{eq:excluded-anchor-direction}
+\end{equation}
+Every physical coordinate in \eqref{eq:canonical-erasure-coordinates}
+satisfies
+\begin{equation}
+ (u,v)=1.
+ \label{eq:physical-primitivity}
+\end{equation}
+
+Let \(k_{\mathfrak a,q}(u,v)\) be the TPC--70 complete literal ray sum of
+\eqref{eq:literal-four-corner-amplitude} at these coordinates.  It contains
+every physical time, complete native key, largest-prime condition,
+endpoint, mask, profile, complex phase, and the four-corner normalization
+\(1/(W_mW_n)\).  It is zero when the corresponding actual ray is absent.
+Aggregate the exact contents before taking absolute values:
+\begin{equation}
+ k_{\mathfrak a}(u,v)
+ =
+ \one_{(u,v)\ne(b,a)}
+ \sum_{q\mid|H|}k_{\mathfrak a,q}(u,v),
+ \qquad (u,v)=1.
+ \label{eq:primitive-anchor-datum}
+\end{equation}
+Different \(q\)-slices may cancel at the same primitive coordinate.
+Accordingly,
+\[
+ \supp k_{\mathfrak a}
+ \subseteq
+ \bigcup_{q\mid|H|}\supp k_{\mathfrak a,q},
+\]
+and equality is not asserted.
+
+\subsection{Canonical zero completion}
+
+Write
+\[
+ \cP_2=\{(u,v)\in\N^2:(u,v)=1\}.
+\]
+
+\begin{definition}[Support-faithful completion]
+\label{def:canonical-zero-completion}
+The canonical physical zero completion of
+\eqref{eq:primitive-anchor-datum} is
+\begin{equation}
+ K_{\mathfrak a}^{0}(u,v)
+ =
+ \begin{cases}
+  k_{\mathfrak a}(u,v),&(u,v)\in\cP_2,\\
+  0,&(u,v)\notin\cP_2,
+ \end{cases}
+ \qquad u,v\ge1.
+ \label{eq:canonical-zero-completion}
+\end{equation}
+It is zero both at absent primitive rays and at every nonprimitive
+coordinate.
+\end{definition}
+
+The superscript \(0\) denotes zero completion, not the removal of a
+physical atom.  The same-residual direction \((b,a)\) is already absent
+from the literal erasure datum.
+
+\begin{theorem}[Literal primitive support]
+\label{thm:literal-primitive-support}
+For every physical anchor \(\mathfrak a\),
+\begin{equation}
+ \supp K_{\mathfrak a}^{0}\subseteq\cP_2.
+ \label{eq:literal-primitive-support}
+\end{equation}
+The property is preserved by exact \(q\)-aggregation, finite sums over
+anchors, and multiplication by anchor-dependent scalars.
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:physical-primitivity} follows from the definition
+\(q=(S_m,S_n)\).  Thus no actual ray has a nonprimitive coordinate.
+Definition \ref{def:canonical-zero-completion} assigns zero to every
+remaining site.  Pointwise sums and scalar multiplication cannot create
+support outside \(\cP_2\).
+\end{proof}
+
+\begin{remark}[Canonical means support-faithful]
+\label{rem:not-variation-minimal}
+The completion is canonical because it inserts no coefficient at an
+absent physical coordinate.  This does not say that it minimizes mixed
+variation among all analytic completions.  That different optimization
+problem is treated in \cref{sec:completion-gauge}.
+\end{remark}
+
+\subsection{The anchored signed coefficient}
+
+Let
+\[
+ \varepsilon_{\mathfrak a}=\mu(a)\mu(b).
+\]
+The frozen-sign theorem of TPC--70 \citep{WangTPC70} gives the exact
+anchored scalar
+coefficient
+\begin{equation}
+ \boxed{
+ \mathfrak X_{\mathfrak a}
+ =
+ \varepsilon_{\mathfrak a}
+ \sum_{u,v\ge1}
+ \mu(u)\mu(v)K_{\mathfrak a}^{0}(u,v).}
+ \label{eq:anchored-physical-sum}
+\end{equation}
+The explicit coprimality condition may be omitted because
+\eqref{eq:literal-primitive-support} already enforces it.  This is a
+four-corner contribution to \(\tr(ER)\); it is not a two-corner entry of
+the erasure operator.

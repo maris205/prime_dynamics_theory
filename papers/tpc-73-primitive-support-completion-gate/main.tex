@@ -1,0 +1,81 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.75in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,longtable,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Primitive-Support Collapse and the Analytic Completion Gate},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\one}{\mathbf 1}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\N}{\mathbb N}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Ext}{\operatorname{Ext}}
+
+\title{Primitive-Support Collapse and the Analytic Completion Gate:\\
+Tail-Free Abel Certificates, Rectangle Charges, and Physical Extension Invariance}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\noindent\textbf{Keywords:} M\"obius function; primitive cofactor plane;
+canonical zero completion; two-dimensional Abel summation; mixed variation;
+rectangle atoms; fixed shift; analytic completion.\\[0.5em]
+\noindent\textbf{Convention.} Every physical specialization retains one fixed
+nonzero shift \(h_0\), literal coefficients, complete native keys, the actual
+active support, and raw atomic normalization.  No statement is specialized
+to \(h_0=2\).\\[0.5em]
+\noindent\textbf{MSC 2020:} Primary 11N37, 11A25; Secondary 26A45.
+
+\input{sections/introduction}
+\input{sections/physical-support}
+\input{sections/tail-collapse}
+\input{sections/rectangle-charges}
+\input{sections/completion-gauge}
+\input{sections/q-aggregation}
+\input{sections/countermodels}
+\input{sections/physical-ledger}
+\input{sections/route-plan}
+\input{sections/claim-boundary}
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

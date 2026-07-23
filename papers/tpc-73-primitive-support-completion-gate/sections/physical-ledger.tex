@@ -1,0 +1,113 @@
+\section{The reduced physical gate}
+\label{sec:physical-ledger}
+
+The canonical physical branch now has no diagonal-cutoff choice.  Its
+remaining trace-level problem is a weighted plaquette estimate.
+From this point, let \(X\to\infty\) through one declared physical family.
+The active rows, anchors, kernels, and reference scales all depend on
+\(X\); the index is suppressed, and every \(o(\,\cdot\,)\) statement is
+with respect to this limit.
+
+\subsection{Reference masses}
+
+For one anchor define the exact post-\(q\)-aggregation mass
+\begin{equation}
+ \mathfrak W_{\mathfrak a}
+ =
+ \sum_{u,v\ge1}|K_{\mathfrak a}^{0}(u,v)|.
+ \label{eq:anchored-physical-mass}
+\end{equation}
+Absolute values occur after the exact \(q\)-sum.  This mass is neither the
+sum of pre-aggregation ray masses nor automatically the raw global Gram
+mass.  Let \(\mathfrak A_{\rm tr}>0\) be one explicitly declared physical
+reference scale for the complete first mixed trace.
+
+\begin{proposition}[Canonical physical closure criterion]
+\label{prop:canonical-physical-criterion}
+If
+\begin{equation}
+ \sum_{m<n}\sum_{\mathfrak a\in\cR_{m,n}}
+ \cC_\square(K_{\mathfrak a}^{0})
+ =
+ o(\mathfrak A_{\rm tr}),
+ \label{eq:global-weighted-plaquette-target}
+\end{equation}
+then
+\begin{equation}
+ \tr(ER)=o(\mathfrak A_{\rm tr}).
+ \label{eq:trace-saving}
+\end{equation}
+The conclusion remains valid if the left side of
+\eqref{eq:global-weighted-plaquette-target} is replaced by the sharper
+\(\cC_\square(K_{\rm tr}^{0})\).
+\end{proposition}
+
+\begin{proof}
+Use \eqref{eq:global-trace-certificate}.
+\end{proof}
+
+This is an exact sufficient condition, not a theorem that the physical
+cost is small.  It allows a nonuniform anchor family because the
+quantifier is global and the total cost is explicit.
+
+\subsection{Completion route}
+
+For each anchor choose a declared analytic completion
+\[
+ F_{\mathfrak a}
+ \in
+ \Ext_{U_{\mathfrak a},V_{\mathfrak a}}(k_{\mathfrak a})
+\]
+before any later operator extremizer is selected.  The general sufficient
+condition is
+\begin{equation}
+ \sum_{m<n}\sum_{\mathfrak a\in\cR_{m,n}}
+ \cC_{D_{\mathfrak a}}(F_{\mathfrak a})
+ =
+ o(\mathfrak A_{\rm tr}).
+ \label{eq:completion-physical-target}
+\end{equation}
+Here variation and diagonal tail refer to the same completion.  A future
+physical construction may, for example, move a common coordinate factor
+into an existing \(q\)-label and fill only those nonprimitive sites
+compatible with literal content data.  An arbitrary smooth interpolation
+is an L0 analytic device until its coefficient norm, support, and
+quantifier dependence are controlled.
+
+\subsection{Exact stop rules}
+
+The route has the following logically different outcomes.
+\begin{enumerate}[label=\textup{(G\arabic*)},leftmargin=3.2em]
+ \item If \eqref{eq:global-weighted-plaquette-target} fails by a proved
+       lower obstruction on a nonnegligible physical family, only the
+       canonical tail-free certificate is closed.
+ \item To close the full completion route, one needs a lower obstruction
+       for every declared admissible completion rule, or for the infimum
+       in \eqref{eq:completion-gauge}, at the same physical mass scale.
+ \item Failure of an ambient tail estimate closes only that ambient
+       specialization.  The auxiliary diagonal tail of the canonical
+       zero extension is already zero.
+ \item A large zero-completion variation does not prove that the original
+       signed sum is large.  Literal complex phases, a structured
+       completion, or a different signed sector may still cancel.
+ \item A completed estimate for \(\tr(ER)\) remains trace-level.  It does
+       not imply an entrywise erasure bound, a row star, a Perron estimate,
+       or an operator norm.
+ \item The geometric short-ray mass, physical endpoint cells, represented
+       lower frame, missing-mass comparison, nuisance shorting, and final
+       boundary reconstruction are untouched.
+\end{enumerate}
+
+\subsection{Exponent interpretation}
+
+The classical prime number theorem gives \(M(x)=o(x)\)
+\citep{IwaniecKowalski2004}.  It does not by itself provide the fixed
+polynomial saving required by the strict endpoint ledger.  For a coarse
+anchorwise estimate, one would need quantitative control of
+\[
+ \mathfrak M(U_{\mathfrak a})
+ \mathfrak M(V_{\mathfrak a})
+ \cV_\square(K_{\mathfrak a}^{0})
+\]
+relative to the literal reference mass.  Calling \(M(x)=o(x)\) an endpoint
+power saving would be incorrect.

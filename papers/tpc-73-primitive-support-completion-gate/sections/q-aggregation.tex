@@ -1,0 +1,170 @@
+\section{Aggregation over contents, anchors, and row pairs}
+\label{sec:q-aggregation}
+
+All index sets at a finite physical scale are finite.  We may therefore
+aggregate exact scalar kernels before applying absolute values.
+
+\subsection{The \texorpdfstring{\(q\)}{q}-sum}
+
+Let \(K_{\mathfrak a,q}^{0}\) be the canonical zero completion of the
+\(q\)-slice, with the excluded direction removed.  Linearity gives
+\begin{equation}
+ K_{\mathfrak a}^{0}
+ =
+ \sum_{q\mid|H|}K_{\mathfrak a,q}^{0},
+ \qquad
+ \Delta_{12}K_{\mathfrak a}^{0}
+ =
+ \sum_{q\mid|H|}
+ \Delta_{12}K_{\mathfrak a,q}^{0}.
+ \label{eq:q-aggregation-difference}
+\end{equation}
+
+\begin{proposition}[Post-aggregation sharpness]
+\label{prop:q-aggregation-sharpness}
+One has
+\begin{align}
+ \cC_\square(K_{\mathfrak a}^{0})
+ &\le
+ \sum_{q\mid|H|}\cC_\square(K_{\mathfrak a,q}^{0}),
+ \label{eq:q-weighted-subadditivity}\\
+ \cV_\square(K_{\mathfrak a}^{0})
+ &\le
+ \sum_{q\mid|H|}\cV_\square(K_{\mathfrak a,q}^{0}).
+ \label{eq:q-variation-subadditivity}
+\end{align}
+Both inequalities can be strict in the ambient class of finite
+primitive-supported kernels, including the case in which the left side is
+zero and the right side is positive.  This does not assert that every
+literal physical family realizes such exact slice cancellation.
+\end{proposition}
+
+\begin{proof}
+Apply the triangle inequality pointwise to
+\eqref{eq:q-aggregation-difference}, first with weights
+\(|M(x)M(y)|\), then without them.  Ambient strictness follows by taking
+two nonzero slices \(F\) and \(-F\).
+\end{proof}
+
+Thus the exact \(q\)-sum precedes absolute values.  The divisor bound
+\(\tau(|H|)=|H|^{o(1)}\) controls the number of slices only; it supplies no
+signed cancellation.
+
+\subsection{Scalar trace kernel}
+
+For each row pair \(m<n\), let \(\cR_{m,n}\) be its complete set of actual
+same-residual anchors.  Extend every finite kernel by zero to \(\N^2\) and
+define
+\begin{equation}
+ K_{\rm tr}^{0}(u,v)
+ =
+ \sum_{m<n}
+ \sum_{\mathfrak a\in\cR_{m,n}}
+ \varepsilon_{\mathfrak a}K_{\mathfrak a}^{0}(u,v).
+ \label{eq:scalar-trace-kernel}
+\end{equation}
+Although the coordinate labels originate from different row pairs, the
+right side is only a scalar reindexing of a finite sum.  It is not an
+operator identification.
+
+\begin{theorem}[Global trace Abel summation]
+\label{thm:global-trace-Abelization}
+The complete first mixed trace satisfies
+\begin{align}
+ \tr(ER)
+ &=
+ 2\operatorname{Re}
+ \sum_{u,v\ge1}
+ \mu(u)\mu(v)K_{\rm tr}^{0}(u,v)
+ \label{eq:trace-global-plane}\\
+ &=
+ 2\operatorname{Re}
+ \sum_{x,y\ge1}
+ M(x)M(y)\Delta_{12}K_{\rm tr}^{0}(x,y).
+ \label{eq:trace-global-Abel}
+\end{align}
+Consequently,
+\begin{equation}
+ \boxed{
+ |\tr(ER)|
+ \le
+ 2\cC_\square(K_{\rm tr}^{0})
+ \le
+ 2\sum_{m<n}\sum_{\mathfrak a\in\cR_{m,n}}
+ \cC_\square(K_{\mathfrak a}^{0}).}
+ \label{eq:global-trace-certificate}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+TPC--70 \citep{WangTPC70} gives
+\[
+ \tr(ER)
+ =
+ 2\operatorname{Re}
+ \sum_{m<n}\sum_{\mathfrak a\in\cR_{m,n}}
+ \mathfrak X_{\mathfrak a}.
+\]
+Insert \eqref{eq:anchored-physical-sum} and interchange finite sums to
+obtain \eqref{eq:trace-global-plane}.  The kernel in
+\eqref{eq:scalar-trace-kernel} remains primitive-supported, so
+\cref{thm:tail-free-abel} gives \eqref{eq:trace-global-Abel}.  Apply the
+triangle inequality once after full scalar aggregation, or before anchor
+aggregation for the second bound.
+\end{proof}
+
+\subsection{Anchor-safe labelled form}
+
+Let \(\cI_X\) be the finite set of all triples
+\((m,n,\mathfrak a)\), and define the \(\ell^1(\cI_X)\)-valued kernel
+\begin{equation}
+ \mathbf K^{0}(u,v)
+ =
+ \bigl(
+ \varepsilon_{\mathfrak a}K_{\mathfrak a}^{0}(u,v)
+ \bigr)_{(m,n,\mathfrak a)\in\cI_X}.
+ \label{eq:anchor-labelled-kernel}
+\end{equation}
+
+\begin{proposition}[Anchor-safe global certificate]
+\label{prop:anchor-safe-certificate}
+One has the exact vector identity
+\[
+ \sum_{u,v}\mu(u)\mu(v)\mathbf K^{0}(u,v)
+ =
+ \bigl(\mathfrak X_{\mathfrak a}\bigr)_{(m,n,\mathfrak a)\in\cI_X}
+\]
+and
+\begin{equation}
+ \boxed{
+ \sum_{m<n}\sum_{\mathfrak a\in\cR_{m,n}}
+ |\mathfrak X_{\mathfrak a}|
+ \le
+ \sum_{m<n}\sum_{\mathfrak a\in\cR_{m,n}}
+ \cC_\square(K_{\mathfrak a}^{0}).}
+ \label{eq:anchor-safe-global-certificate}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Apply the Banach-valued two-dimensional Abel identity in
+\(\ell^1(\cI_X)\).  The norm of the mixed difference is the sum of the
+coordinatewise absolute values, giving the right side of
+\eqref{eq:anchor-safe-global-certificate}.
+\end{proof}
+
+\begin{remark}[Uniform anchors are not required]
+A sufficient trace-level theorem may prove that the total cost on all
+anchors is small relative to the declared total post-\(q\)-aggregation
+mass.  Individual bad anchors are allowed if their aggregate cost is
+negligible.  This is weaker than a uniform anchorwise estimate and stronger
+than fixed-anchor little-oh notation with no domination.
+\end{remark}
+
+\begin{remark}[Still not an operator theorem]
+Cancellation in \(K_{\rm tr}^{0}\) can occur across anchors and row pairs.
+Neither \eqref{eq:global-trace-certificate} nor
+\eqref{eq:anchor-safe-global-certificate} bounds a two-corner entry, row
+star, Perron radius, or operator norm.  A direct-entry or row-local bridge
+remains necessary.
+\end{remark}

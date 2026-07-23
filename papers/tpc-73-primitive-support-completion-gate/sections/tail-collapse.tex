@@ -1,0 +1,148 @@
+\section{Tail collapse and single-slice Abel summation}
+\label{sec:tail-collapse}
+
+For a finitely supported kernel \(F:\N^2\to\mathbb C\), define
+\[
+ F^{[d]}(x,y)=F(dx,dy).
+\]
+TPC--71 \citep{WangTPC71} introduces the exact diagonal tail
+\begin{equation}
+ \cT_D(F)
+ =
+ \sum_{d>D}|\mu(d)|
+ \sum_{x,y\ge1}
+ |\mu(dx)\mu(dy)F(dx,dy)|.
+ \label{eq:diagonal-tail}
+\end{equation}
+
+\begin{theorem}[Primitive-support collapse]
+\label{thm:primitive-support-collapse}
+If \(F\) is supported on \(\cP_2\), then
+\begin{equation}
+ F^{[d]}\equiv0\qquad(d\ge2).
+ \label{eq:higher-slices-vanish}
+\end{equation}
+Consequently,
+\begin{equation}
+ \cT_D(F)=0\qquad(D\ge1).
+ \label{eq:tail-vanishes}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For \(d\ge2\) and \(x,y\ge1\),
+\[
+ \gcd(dx,dy)=d\gcd(x,y)\ge d>1.
+\]
+Hence \((dx,dy)\notin\cP_2\), so \(F(dx,dy)=0\).  Every summand in
+\eqref{eq:diagonal-tail} has \(d>D\ge1\), and therefore vanishes.
+\end{proof}
+
+\begin{corollary}[Physical diagonal hierarchy collapses]
+\label{cor:physical-diagonal-collapse}
+For every physical anchor \(\mathfrak a\) and every \(D\ge1\),
+\[
+ (K_{\mathfrak a}^{0})^{[d]}\equiv0\quad(d\ge2),
+ \qquad
+ \cT_D(K_{\mathfrak a}^{0})=0.
+\]
+Thus the support-faithful physical branch requires neither a growing
+diagonal cutoff nor a restricted-Mertens estimate uniform in \(d\).
+\end{corollary}
+
+\subsection{Exact weighted-plaquette identity}
+
+Set
+\[
+ M(x)=\sum_{n\le x}\mu(n).
+\]
+For a zero-extended finite kernel, write
+\begin{align*}
+ \Delta_1F(x,y)&=F(x,y)-F(x+1,y),\\
+ \Delta_2F(x,y)&=F(x,y)-F(x,y+1),\\
+ \Delta_{12}F(x,y)
+ &=F(x,y)-F(x+1,y)-F(x,y+1)+F(x+1,y+1).
+\end{align*}
+
+\begin{theorem}[Finite two-dimensional Abel identity]
+\label{thm:tail-free-abel}
+If \(F:\N^2\to\mathbb C\) is finitely supported, then
+\begin{equation}
+ \boxed{
+ \sum_{u,v\ge1}\mu(u)\mu(v)F(u,v)
+ =
+ \sum_{x,y\ge1}M(x)M(y)\Delta_{12}F(x,y).}
+ \label{eq:tail-free-abel}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+All sums are finite.  Apply one-dimensional summation by parts in \(u\)
+and then in \(v\).
+\end{proof}
+
+\begin{remark}
+Primitive support is not needed for the Abel identity itself.  It is
+needed at the physical interface: it permits the coprimality mask to be
+omitted in \eqref{eq:anchored-physical-sum} and makes every \(d\ge2\)
+slice of the TPC--71 divisor lift vanish separately.
+\end{remark}
+
+\begin{definition}[Weighted plaquette cost]
+\label{def:weighted-plaquette-cost}
+For a finitely supported kernel \(F\), define
+\begin{equation}
+ \cC_\square(F)
+ =
+ \sum_{x,y\ge1}
+ |M(x)M(y)|\,|\Delta_{12}F(x,y)|.
+ \label{eq:weighted-plaquette-cost}
+\end{equation}
+\end{definition}
+
+\begin{corollary}[Exact anchored certificate]
+\label{cor:exact-anchored-certificate}
+For every physical anchor,
+\begin{align}
+ \mathfrak X_{\mathfrak a}
+ &=
+ \varepsilon_{\mathfrak a}
+ \sum_{x,y\ge1}
+ M(x)M(y)\Delta_{12}K_{\mathfrak a}^{0}(x,y),
+ \label{eq:anchored-Abel-identity}\\
+ |\mathfrak X_{\mathfrak a}|
+ &\le \cC_\square(K_{\mathfrak a}^{0}).
+ \label{eq:anchored-weighted-cost}
+\end{align}
+\end{corollary}
+
+\begin{proof}
+Combine \eqref{eq:anchored-physical-sum} with
+\cref{thm:tail-free-abel}, then take absolute values.
+\end{proof}
+
+\begin{remark}[Sharper than a product of maxima]
+\label{rem:weighted-is-sharper}
+If \(F\) is supported in \([1,U]\times[1,V]\), then
+\[
+ \cC_\square(F)
+ \le
+ \mathfrak M(U)\mathfrak M(V)\cV_\square(F),
+\]
+where
+\[
+ \mathfrak M(U)=\max_{x\le U}|M(x)|,
+ \qquad
+ \cV_\square(F)=\sum_{x,y}|\Delta_{12}F(x,y)|.
+\]
+The weighted cost retains the actual location of every plaquette and can
+be strictly smaller.  Neither quantity is estimated for the physical
+kernel here.
+\end{remark}
+
+\begin{remark}[What tail has not disappeared]
+Equation \eqref{eq:tail-vanishes} concerns only the auxiliary diagonal
+tail introduced by coprimality inversion.  It says nothing about the
+geometric short-ray mass, outer physical endpoints, the ultra-tail of the
+original packet, or downstream boundary reconstruction.
+\end{remark}

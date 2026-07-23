@@ -1,0 +1,101 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The primitive-plane route began with a four-corner coefficient in the first
+mixed trace.  TPC--69 shows that the first surviving signed term is
+cross-key and that its residual sign is carried by the odd erasure
+boundary \citep{WangTPC69}.  TPC--70 then gives exact cofactor coordinates:
+after extracting the common erasure content \(q\), the surviving sign is a
+product \(\mu(a)\mu(b)\mu(u)\mu(v)\) that is frozen along each affine prime
+ray \citep{WangTPC70}.  TPC--71 applies coprimality inversion and
+two-dimensional Abel summation to a general finitely supported plane kernel
+\citep{WangTPC71}.  Its master certificate contains
+\[
+ \sum_{d\le D}
+ \mathfrak M_d(U/d)\mathfrak M_d(V/d)
+ \cV_\square(K^{[d]})
+ +
+ \cT_D(K).
+\]
+TPC--72 carries the mass-normalized variation, the representation-dependent
+diagonal tail before a completion is fixed, and complete anchor summation
+as open gates; it also warns that a four-corner trace coefficient is not a
+two-corner erasure entry
+\citep{WangTPC72}.
+
+The present paper re-examines only the literal support of the kernel before
+trying to estimate it.  The physical coordinates are not an arbitrary pair
+followed by a coprimality mask.  They are defined by
+\[
+ q=(S_m,S_n),\qquad S_m=qu,\qquad S_n=qv.
+\]
+Consequently \((u,v)=1\) identically.  If a kernel is extended by zero at
+coordinates which do not occur physically, then it is already supported on
+the primitive lattice.  For \(d\ge2\), the point \((dx,dy)\) cannot be
+primitive.  Hence every higher diagonal slice vanishes.
+
+This observation has two different consequences which must not be
+conflated.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item The support-faithful physical completion is tail-free.  Its exact
+       Abel certificate has one slice and needs no growing-\(d\)
+       restricted-Mertens theorem.
+ \item Values away from the primitive lattice are invisible to the
+       physical signed sum.  They may therefore be introduced as an
+       analytic completion.  Such a completion can fill hard coprimality
+       holes and reduce variation, but its higher diagonal slices and tail
+       return and must be charged.
+\end{enumerate}
+Thus variation and diagonal tail are not independent invariants of the
+primitive physical datum.  They form a coupled analytic completion gauge.
+Tail freedom is canonical for the support-faithful zero extension; low
+variation is a separate theorem.
+
+\subsection{Main results}
+
+The paper proves seven groups of statements.
+\begin{enumerate}[label=\textup{(\arabic*)},leftmargin=3em]
+ \item The exact \(q\)-coordinates make every literal anchored kernel
+       primitive-supported after the \(q\)-sum and the removal of the
+       same-residual direction.
+ \item The canonical zero completion annihilates all \(d\ge2\) diagonal
+       slices and every exact diagonal tail with cutoff \(D\ge1\).
+ \item The anchored coefficient and the complete scalar mixed trace have
+       exact \(d=1\) Abel identities and weighted-plaquette majorants.
+ \item A Banach-valued, anchor-labelled version retains the complete
+       growing anchor family and replaces uniform anchorwise little-oh
+       notation by one global cost inequality.
+ \item Every finitely supported kernel has a unique terminal-rectangle
+       expansion.  Mixed variation is precisely the \(\ell^1\)-mass of
+       its rectangle charges, and diagonal downsampling is contractive.
+ \item Every analytic completion of the same primitive datum gives the
+       same physical sum.  Taking the infimum of the full divisor-variation
+       cost over declared completions is an exact sufficient certificate.
+ \item Counterexamples show that zero completion need not be
+       variation-optimal, completion costs can be inflated arbitrarily,
+       primitive support need not cancel, and scalar trace cancellation
+       does not control the erasure operator.
+\end{enumerate}
+
+\subsection{Logical level}
+
+The finite-support identities and completion calculus are L0.  The
+identification of the literal fixed-\(h_0\) kernel with its canonical
+primitive zero completion is L1: it retains all complete native keys,
+actual support, literal coefficients, and raw atomic normalization.  The
+paper does not estimate the resulting physical weighted plaquette cost
+relative to the anchored or trace mass.  That missing inequality is the
+next L2 gate.  In particular, eliminating an auxiliary diagonal tail is
+not a parity breakthrough.
+
+\subsection{Organization}
+
+\Cref{sec:physical-support} fixes the physical datum and its support.
+\Cref{sec:tail-collapse} proves tail collapse and the single-slice Abel
+form.  \Cref{sec:rectangle-charges} gives the canonical rectangle
+decomposition.  \Cref{sec:completion-gauge} develops analytic completions.
+\Cref{sec:q-aggregation} treats the order of \(q\), anchor, and trace
+aggregation.  Countermodels appear in \cref{sec:countermodels}.
+\Cref{sec:physical-ledger} states the exact remaining physical gate, and
+\cref{sec:route-plan,sec:claim-boundary} give the adaptive next route and
+the final claim ledger.

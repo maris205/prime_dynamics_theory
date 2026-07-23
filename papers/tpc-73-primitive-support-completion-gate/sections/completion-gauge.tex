@@ -1,0 +1,175 @@
+\section{Analytic completions and the coupled certificate gauge}
+\label{sec:completion-gauge}
+
+The physical datum is prescribed only on the primitive lattice, including
+zeros at absent primitive rays.  Values at nonprimitive coordinates do not
+change the physical sum.  They can nevertheless change every term of a
+triangle-inequality certificate.
+
+\subsection{Declared finite completions}
+
+Fix \(U,V\in\N\) and a rectangle
+\[
+ B_{U,V}=[1,U]\times[1,V]
+\]
+containing the primitive physical datum
+\[
+ k:\cP_2\cap B_{U,V}\longrightarrow\mathbb C.
+\]
+
+\begin{definition}[Completion class]
+\label{def:completion-class}
+Let \(\Ext_{U,V}(k)\) be the affine space of kernels
+\(F:\N^2\to\mathbb C\) such that
+\[
+ \supp F\subseteq B_{U,V},
+ \qquad
+ F(u,v)=k(u,v)
+ \quad\bigl((u,v)\in\cP_2\cap B_{U,V}\bigr).
+\]
+The values at nonprimitive sites are free analytic variables.  The
+support-faithful zero completion
+\[
+ K^0(u,v)=
+ \begin{cases}
+  k(u,v),&(u,v)\in\cP_2\cap B_{U,V},\\
+  0,&\text{otherwise}
+ \end{cases}
+\]
+belongs to this class.
+\end{definition}
+
+Define the primitive signed functional
+\begin{equation}
+ \cS_{\rm prim}(k)
+ =
+ \sum_{\substack{u\le U,\ v\le V\\(u,v)=1}}
+ \mu(u)\mu(v)k(u,v).
+ \label{eq:primitive-functional}
+\end{equation}
+
+\begin{theorem}[Completion invariance]
+\label{thm:completion-invariance}
+For every \(F\in\Ext_{U,V}(k)\),
+\begin{equation}
+ \boxed{
+ \cS_{\rm prim}(k)
+ =
+ \sum_{\substack{u,v\ge1\\(u,v)=1}}
+ \mu(u)\mu(v)F(u,v).}
+ \label{eq:completion-invariance}
+\end{equation}
+Thus the physical functional is constant on the complete affine class
+\(\Ext_{U,V}(k)\).
+\end{theorem}
+
+\begin{proof}
+The summation in \eqref{eq:completion-invariance} samples only primitive
+coordinates, where every member of the class equals \(k\).
+\end{proof}
+
+\subsection{The full completion cost}
+
+For \(d\ge1\), put
+\[
+ M_d(x)=\sum_{\substack{n\le x\\(n,d)=1}}\mu(n),
+ \qquad
+ \mathfrak M_d(T)
+ =\max_{1\le n\le\lfloor T\rfloor}|M_d(n)|,
+ \qquad
+ F^{[d]}(x,y)=F(dx,dy).
+\]
+We set \(\mathfrak M_d(T)=0\) for \(T<1\).
+For \(D\ge1\), define the exact weighted completion cost
+\begin{align}
+ \cC_D(F)
+ :={}&
+ \sum_{d\le D}|\mu(d)|
+ \sum_{x,y\ge1}
+ |M_d(x)M_d(y)|
+ |\Delta_{12}F^{[d]}(x,y)|
+ \notag\\
+ &+
+ \cT_D(F),
+ \label{eq:full-completion-cost}
+\end{align}
+where \(\cT_D\) is the exact tail in
+\eqref{eq:diagonal-tail}.
+
+\begin{theorem}[Completion-gauge certificate]
+\label{thm:completion-gauge}
+For every declared completion class and every \(D\ge1\),
+\begin{equation}
+ \boxed{
+ |\cS_{\rm prim}(k)|
+ \le
+ \inf_{F\in\Ext_{U,V}(k)}\cC_D(F).}
+ \label{eq:completion-gauge}
+\end{equation}
+For the canonical zero completion,
+\begin{equation}
+ \cC_D(K^0)=\cC_\square(K^0)
+ \qquad(D\ge1).
+ \label{eq:canonical-cost-collapse}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Fix \(F\in\Ext_{U,V}(k)\).  By
+\cref{thm:completion-invariance}, its primitive sum is the physical
+functional.  The exact TPC--71 diagonal divisor lift
+\citep{WangTPC71} followed by
+two-dimensional Abel summation gives
+\[
+ \cS_{\rm prim}(k)
+ =
+ \sum_{d\le D}\mu(d)
+ \sum_{x,y\ge1}
+ M_d(x)M_d(y)\Delta_{12}F^{[d]}(x,y)
+ +\cR_D(F),
+ \qquad
+ |\cR_D(F)|\le\cT_D(F).
+\]
+Taking absolute values gives
+\[
+ |\cS_{\rm prim}(k)|\le\cC_D(F).
+\]
+Take the infimum.  For \(K^0\), all \(d\ge2\) slices and the tail vanish by
+\cref{thm:primitive-support-collapse}; the \(d=1\) term is exactly
+\eqref{eq:weighted-plaquette-cost}.
+\end{proof}
+
+\begin{remark}[Infimum versus a physical construction]
+\label{rem:completion-quantifier}
+The infimum is an exact finite-dimensional analytic benchmark.  To use a
+completion in a uniform physical theorem, one must construct it before any
+later extremizing coefficient vector is selected and control its cost
+uniformly in all literal labels.  An optimizer chosen after seeing the
+operator extremizer changes the quantifier.  Moreover, nonprimitive values
+are analytic fill-ins and are never added to the physical reference mass.
+\end{remark}
+
+\begin{remark}[No separate monotonicity]
+The \(d=1\) variation and the higher-diagonal tail can move in opposite
+directions when a completion changes.  Neither term is an invariant of
+the primitive datum.  Only the original physical functional and a proved
+bound for the complete cost are invariant conclusions.
+\end{remark}
+
+\subsection{A coarse completion norm}
+
+The weighted cost is the full location-sensitive deterministic majorant.
+A coarser but sometimes convenient completion cost is
+\begin{equation}
+ \cE_D(F)
+ :=
+ \sum_{d\le D}|\mu(d)|
+ \mathfrak M_d(U/d)\mathfrak M_d(V/d)
+ \cV_\square(F^{[d]})
+ +
+ \cT_D(F).
+ \label{eq:coarse-completion-cost}
+\end{equation}
+Then \(\cC_D(F)\le\cE_D(F)\).  The two displayed pieces in
+\eqref{eq:coarse-completion-cost} must be evaluated for the same completion;
+minimizing them independently would splice incompatible analytic objects.

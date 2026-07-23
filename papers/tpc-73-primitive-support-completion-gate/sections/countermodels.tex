@@ -1,0 +1,147 @@
+\section{Countermodels and non-substitution laws}
+\label{sec:countermodels}
+
+The following finite examples separate the conclusions proved above from
+the estimates which remain open.
+
+\subsection{Zero completion need not minimize variation}
+
+Fix \(U,V\ge3\) and prescribe the primitive datum
+\[
+ k(u,v)=1
+ \qquad
+ ((u,v)=1,\ u\le U,\ v\le V).
+\]
+Its canonical zero completion is
+\[
+ K^0(u,v)=\one_{u\le U,v\le V}\one_{(u,v)=1}.
+\]
+The constant rectangle
+\[
+ F(u,v)=\one_{u\le U,v\le V}
+\]
+belongs to the same completion class.  By
+\cref{thm:terminal-rectangle-expansion},
+\[
+ \cV_\square(F)=1.
+\]
+The zero completion is much rougher.  Put \(L=\min(U,V)\).  For every
+\(2\le n\le L-1\),
+\[
+ K^0(n,n)=K^0(n+1,n+1)=0,
+ \qquad
+ K^0(n+1,n)=K^0(n,n+1)=1,
+\]
+and hence
+\[
+ \Delta_{12}K^0(n,n)=-2.
+\]
+Therefore
+\begin{equation}
+ \cV_\square(K^0)\ge2(L-2).
+ \label{eq:primitive-mask-variation-lower}
+\end{equation}
+The completion \(F\) reduces the \(d=1\) variation, but
+\(F^{[d]}\) is nonzero for many \(d\) and its diagonal tail need not
+vanish.  This is the basic variation-tail trade-off.
+
+\begin{remark}
+The example does not show that the full cost \(\cC_D(F)\) is smaller than
+\(\cC_\square(K^0)\) at every scale.  It shows only that zero completion is not
+variation-minimal, which is the precise claim needed to prevent a false
+optimization statement.
+\end{remark}
+
+\subsection{Completion cost can be inflated arbitrarily}
+
+Take the zero primitive datum \(k=0\), a prime \(p\le\min(U,V)\), and
+\[
+ F_A=Ae_{p,p}.
+\]
+The point \((p,p)\) is nonprimitive, so \(F_A\in\Ext_{U,V}(0)\) and the
+physical functional is zero.  For \(D=1\), the exact tail contains the
+term \(d=p,x=y=1\), giving
+\[
+ \cT_1(F_A)\ge |A|.
+\]
+Thus
+\[
+ \cC_1(F_A)\ge|A|
+\]
+can be arbitrarily large while the physical datum and physical sum remain
+zero.  A large cost for an arbitrary analytic completion is not a physical
+obstruction.
+
+\subsection{Primitive support and tail freedom do not cancel}
+
+Let \((u_0,v_0)=1\) and
+\[
+ K^0=ce_{u_0,v_0}.
+\]
+It is primitive-supported and has zero diagonal tail, but
+\[
+ \left|
+ \sum_{u,v}\mu(u)\mu(v)K^0(u,v)
+ \right|
+ =
+ |c|\,|\mu(u_0)\mu(v_0)|.
+\]
+When \(u_0,v_0\) are squarefree this equals the full \(\ell^1\)-mass
+\(|c|\).  Tail freedom is therefore an exact bookkeeping improvement, not
+an arithmetic cancellation theorem.
+
+\subsection{Slice and anchor cancellation are different}
+
+In the ambient finite-kernel class, two formal \(q\)-slices \(F\) and
+\(-F\) have zero post-\(q\)-aggregation kernel although the sum of the two
+separate costs is positive.  Likewise, an abstract anchor-compatible model
+may have
+\[
+ \varepsilon_{\mathfrak a_1}K_{\mathfrak a_1}^{0}=F,
+ \qquad
+ \varepsilon_{\mathfrak a_2}K_{\mathfrak a_2}^{0}=-F.
+\]
+Then \(K_{\rm tr}^{0}=0\) and the scalar trace certificate vanishes, while
+the anchor-labelled \(\ell^1\) cost is twice the cost of \(F\).
+Consequently:
+\begin{align*}
+ \text{separate \(q\)-cost}
+ &\not\equiv
+ \text{post-\(q\)-aggregation cost},\\
+ \text{scalar trace cancellation}
+ &\not\equiv
+ \text{anchorwise or row-local control}.
+\end{align*}
+
+\subsection{A vanishing mixed carrier does not control the erasure operator}
+
+The abstract example
+\[
+ R=0,
+ \qquad
+ E=
+ \begin{pmatrix}
+ 0&1\\
+ 1&0
+ \end{pmatrix}
+\]
+has
+\[
+ \tr(ER)=0,
+ \qquad
+ \|E\|=1.
+\]
+In this abstract model the mixed carrier \(ER\) vanishes identically,
+while the erasure operator is nonzero.  No scalar completion theorem
+can remove the need for a genuine two-corner, row-local, or complete-moment
+operator carrier.
+
+\subsection{Quantifier-adaptive completion is invalid}
+
+For each fixed primitive datum, finite-dimensional optimization can choose
+a completion with small cost.  A coefficient-uniform operator theorem
+requires a single declared completion rule valid for the entire physical
+coefficient class.  Choosing a different completion after the maximizing
+coefficient vector or row is known reverses the max--min order.  The
+pointwise infimum in \eqref{eq:completion-gauge} is therefore an analytic
+benchmark; it is not automatically a uniform L2 theorem.

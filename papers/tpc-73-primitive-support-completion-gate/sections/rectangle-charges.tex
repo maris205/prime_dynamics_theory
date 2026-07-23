@@ -1,0 +1,145 @@
+\section{Mixed variation as canonical rectangle charge}
+\label{sec:rectangle-charges}
+
+The remaining canonical cost is concentrated in
+\(\Delta_{12}K^0\).  We record its exact geometric meaning.
+
+For \(r,s\ge1\), define the terminal rectangle
+\begin{equation}
+ R_{r,s}(u,v)=\one_{u\le r}\one_{v\le s}.
+ \label{eq:terminal-rectangle}
+\end{equation}
+It is a rectangle anchored at \((1,1)\) and terminating at \((r,s)\).
+
+\begin{theorem}[Unique terminal-rectangle expansion]
+\label{thm:terminal-rectangle-expansion}
+Every finitely supported \(F:\N^2\to\mathbb C\) has the exact expansion
+\begin{equation}
+ \boxed{
+ F(u,v)
+ =
+ \sum_{r,s\ge1}
+ \Delta_{12}F(r,s)R_{r,s}(u,v).}
+ \label{eq:terminal-rectangle-expansion}
+\end{equation}
+The coefficients are unique.  Moreover,
+\begin{equation}
+ \Delta_{12}R_{r,s}(x,y)=\one_{(x,y)=(r,s)}
+ \label{eq:rectangle-unit-charge}
+\end{equation}
+and hence
+\begin{equation}
+ \cV_\square(F)
+ =
+ \sum_{r,s\ge1}|\Delta_{12}F(r,s)|
+ \label{eq:rectangle-charge-mass}
+\end{equation}
+is exactly the \(\ell^1\)-mass of the canonical rectangle charges.
+\end{theorem}
+
+\begin{proof}
+Finite support permits two successive telescoping sums:
+\begin{align*}
+ \sum_{r\ge u}\sum_{s\ge v}\Delta_{12}F(r,s)
+ &=
+ \sum_{r\ge u}\sum_{s\ge v}
+ \bigl(
+ F(r,s)-F(r+1,s)\\
+ &\hspace{3cm}
+ -F(r,s+1)+F(r+1,s+1)
+ \bigr)\\
+ &=F(u,v).
+\end{align*}
+This is \eqref{eq:terminal-rectangle-expansion}.  Direct substitution gives
+\eqref{eq:rectangle-unit-charge}.  Applying \(\Delta_{12}\) to any
+terminal-rectangle expansion therefore recovers every coefficient, proving
+uniqueness and \eqref{eq:rectangle-charge-mass}.
+\end{proof}
+
+\begin{corollary}[Weighted rectangle form of the physical coefficient]
+\label{cor:weighted-rectangle-form}
+For every physical anchor,
+\begin{equation}
+ \mathfrak X_{\mathfrak a}
+ =
+ \varepsilon_{\mathfrak a}
+ \sum_{r,s\ge1}
+ M(r)M(s)\,
+ \Delta_{12}K_{\mathfrak a}^{0}(r,s).
+ \label{eq:weighted-rectangle-form}
+\end{equation}
+Thus the canonical Abel problem is exactly a discrepancy estimate for the
+literal terminal-rectangle charges against the weight \(M(r)M(s)\).
+\end{corollary}
+
+\begin{remark}
+Low mixed variation means that the physical datum admits a sparse
+canonical superposition of large terminal rectangles.  Sparse support in
+the point basis is a different property and can produce maximal rectangle
+charge.
+\end{remark}
+
+\subsection{Diagonal downsampling}
+
+The next identity is useful both for the general TPC--71 certificate and
+for later analytic completions.
+
+\begin{theorem}[Downsampling contraction]
+\label{thm:downsampling-contraction}
+Let \(F^{[d]}(x,y)=F(dx,dy)\).  Then
+\begin{equation}
+ \Delta_{12}F^{[d]}(x,y)
+ =
+ \sum_{r=dx}^{d(x+1)-1}
+ \sum_{s=dy}^{d(y+1)-1}
+ \Delta_{12}F(r,s).
+ \label{eq:downsampling-block-charge}
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{
+ \cV_\square(F^{[d]})
+ \le
+ \cV_\square(F).}
+ \label{eq:downsampling-contraction}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Telescoping over the displayed \(d\)-by-\(d\) block gives
+\begin{align*}
+ &\sum_{r=dx}^{d(x+1)-1}
+ \sum_{s=dy}^{d(y+1)-1}\Delta_{12}F(r,s)\\
+ &\qquad =
+ F(dx,dy)-F(d(x+1),dy)-F(dx,d(y+1))
+ +F(d(x+1),d(y+1)),
+\end{align*}
+which is \(\Delta_{12}F^{[d]}(x,y)\).  The blocks indexed by
+\((x,y)\in\N^2\) are disjoint.  Apply the triangle inequality and sum.
+\end{proof}
+
+\begin{remark}
+For the canonical physical completion,
+\cref{thm:primitive-support-collapse} is much stronger:
+\(F^{[d]}\) is identically zero for \(d\ge2\).  The contraction theorem is
+needed when a nonprimitive analytic completion is deliberately introduced.
+\end{remark}
+
+\subsection{Point and rectangle extremes}
+
+For \(p,q\ge1\), write
+\[
+ e_{p,q}(u,v)=\one_{(u,v)=(p,q)}.
+\]
+If \(p,q>1\), a point mass \(ce_{p,q}\) has four nonzero rectangle charges
+and
+\[
+ \cV_\square(ce_{p,q})=4|c|.
+\]
+By contrast, a constant terminal rectangle \(cR_{U,V}\) has one charge and
+\[
+ \cV_\square(cR_{U,V})=|c|.
+\]
+These are exact identities, not asymptotic estimates.  They explain why
+filling nonprimitive holes may trade pointwise sparsity for rectangular
+coherence.
