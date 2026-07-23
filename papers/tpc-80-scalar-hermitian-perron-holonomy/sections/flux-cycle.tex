@@ -1,0 +1,74 @@
+\section{Exact flux spectrum on a cycle}
+\label{sec:flux}
+
+Let \(P\) be the adjacency matrix of the unweighted cycle \(C_n\),
+\(n\ge3\), so \(\rho(P)=2\).  Let \(|H|=P\), and suppose the total
+oriented holonomy is \(e^{\mathrm i\Theta}\).
+
+\begin{theorem}[Flux-cycle spectrum]\label{thm:flux}
+After switching and uniformly distributing the flux,
+\begin{equation}\label{eq:flux-spectrum}
+ \spec(H)
+ =
+ \left\{
+ 2\cos\left(\frac{\Theta+2\pi k}{n}\right):
+ 0\le k<n
+ \right\}.
+\end{equation}
+Define
+\[
+ d_+(\Theta)=\dist(\Theta,2\pi\mathbb Z),
+ \qquad
+ d_-(\Theta)=\dist(\Theta,n\pi+2\pi\mathbb Z),
+\]
+with distances represented in \([0,\pi]\).  Then
+\begin{align}
+ \delta_+
+ &=
+ 2\left(1-\cos\frac{d_+}{n}\right),
+ \label{eq:flux-plus}\\
+ \delta_-
+ &=
+ 2\left(1-\cos\frac{d_-}{n}\right),
+ \label{eq:flux-minus}\\
+ 2-\|H\|
+ &=
+ 2\min_{\sigma\in\{+,-\}}
+ \left(1-\cos\frac{d_\sigma}{n}\right).
+ \label{eq:flux-norm}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Switch all but one edge to phase \(1\), then conjugate by a diagonal
+unitary that distributes the remaining phase equally around the cycle.
+The Fourier vectors diagonalize the resulting twisted circulant and
+give \eqref{eq:flux-spectrum}.  Maximizing the cosine gives
+\eqref{eq:flux-plus}.  Multiplication of every edge by \(-1\) changes
+total holonomy by \((-1)^n=e^{\mathrm i n\pi}\), which gives
+\eqref{eq:flux-minus}.  Equation \eqref{eq:norm-defect} gives the last
+formula.
+\end{proof}
+
+\begin{corollary}[Quadratic small-flux law]\label{cor:quadratic}
+For either sector,
+\begin{equation}\label{eq:quadratic}
+ \frac{4d_\sigma^2}{\pi^2n^2}
+ \le\delta_\sigma
+ \le\frac{d_\sigma^2}{n^2}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Use
+\[
+ \frac{2t^2}{\pi^2}\le1-\cos t\le\frac{t^2}{2}
+ \qquad(|t|\le\pi).
+\]
+\end{proof}
+
+Thus a nontrivial but shrinking flux can make every finite matrix
+strict while producing no uniform power-scale gap.  For an even cycle,
+both sectors are balanced exactly at holonomy \(1\).  For an odd cycle,
+operator-norm equality can occur at holonomy \(1\) through the positive
+sector or at holonomy \(-1\) through the negative sector.

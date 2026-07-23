@@ -1,0 +1,70 @@
+\section{Reducible majorants and dominant components}
+\label{sec:reducible}
+
+Let
+\[
+ P=\bigoplus_{\alpha}P_\alpha
+\]
+be the decomposition into connected row-support components.  Entrywise
+domination forces the same block decomposition
+\(H=\bigoplus_\alpha H_\alpha\).  Set
+\(\rho_\alpha=\rho(P_\alpha)\) and
+\[
+ \cT(P)=\{\alpha:\rho_\alpha=\rho(P)\}.
+\]
+
+\begin{theorem}[Reducible saturation]\label{thm:reducible}
+\[
+ \|H\|=\rho(P)
+\]
+if and only if at least one \(\alpha\in\cT(P)\) satisfies, for some
+\(\sigma\in\{\pm1\}\) and diagonal unitary \(D_\alpha\),
+\[
+ |H_\alpha|=P_\alpha,
+ \qquad
+ H_\alpha=\sigma D_\alpha P_\alpha D_\alpha^*.
+\]
+Other components may have arbitrary amplitude slack or frustration.
+\end{theorem}
+
+\begin{proof}
+If \(P=0\), entrywise domination gives \(H=0\), and the assertion is
+immediate on any isolated component.  Assume henceforth that
+\(\rho(P)>0\).
+\[
+ \|H\|=\max_\alpha\|H_\alpha\|,
+ \qquad
+ \rho(P)=\max_\alpha\rho_\alpha,
+\]
+and \(\|H_\alpha\|\le\rho_\alpha\).  Equality globally therefore
+requires and is implied by equality on a Perron-dominant component.
+Apply \cref{thm:saturation} there.
+\end{proof}
+
+\begin{corollary}[Exact component gap assembly]\label{cor:component-gap}
+\begin{equation}\label{eq:component-gap}
+ \boxed{\displaystyle
+ \rho(P)-\|H\|
+ =
+ \min_\alpha
+ \left[
+ \rho(P)-\rho_\alpha
+ +
+ \rho_\alpha-\|H_\alpha\|
+ \right].}
+\end{equation}
+\end{corollary}
+
+Consequently, quantitative control on one frustrated dominant
+component is not sufficient if another dominant component still
+saturates.  Conversely, frustration on a spectrally subdominant
+component cannot by itself change the global norm.
+
+\begin{corollary}[Reducible nonnegative equality]
+If \(0\le A\le P\) are symmetric, then
+\[
+ \rho(A)=\rho(P)
+\]
+if and only if \(A_\alpha=P_\alpha\) on at least one
+\(\alpha\in\cT(P)\).
+\end{corollary}

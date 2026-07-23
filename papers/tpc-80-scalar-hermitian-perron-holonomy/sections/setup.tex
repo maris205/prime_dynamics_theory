@@ -1,0 +1,84 @@
+\section{Dominated scalar Hermitian normal form}
+\label{sec:setup}
+
+Let \(V\) be a finite index set.  Let \(P=(p_{ij})_{i,j\in V}\) be
+real symmetric, entrywise nonnegative, and zero on the diagonal.  Let
+\(H=H^*\in\C^{V\times V}\) be zero on the diagonal and satisfy
+\begin{equation}\label{eq:domination}
+ |H_{ij}|\le p_{ij}.
+\end{equation}
+Write
+\[
+ q_{ij}=|H_{ij}|,
+ \qquad
+ H_{ij}=q_{ij}\phi_{ij}
+\]
+on every edge with \(q_{ij}>0\), where
+\[
+ |\phi_{ij}|=1,
+ \qquad
+ \phi_{ji}=\overline{\phi_{ij}}.
+\]
+The value of \(\phi_{ij}\) on a zero \(q\)-edge is irrelevant.
+
+\begin{definition}[Row support graph]\label{def:row-graph}
+The undirected graph \(G_P\) has vertex set \(V\) and edge
+\(\{i,j\}\) exactly when \(p_{ij}>0\).  The graph \(G_q\) is defined
+similarly using \(q_{ij}>0\).
+\end{definition}
+These are exact post-aggregation graphs.  In particular, two atomic
+contributions that cancel in \(H_{ij}\) remove the edge from \(G_q\),
+even if they were separately nonzero before summation.
+
+Assume first that \(G_P\) is connected and \(P\ne0\).  Perron--Frobenius
+theory \cite{BermanPlemmons1994,HornJohnson2013} gives
+\begin{equation}\label{eq:perron}
+ Pr=\rho r,
+ \qquad
+ r_i>0,
+ \qquad
+ \sum_i r_i^2=1,
+\end{equation}
+where \(\rho=\rho(P)\).
+
+\begin{definition}[Two spectral sectors]\label{def:sectors}
+For \(\sigma\in\{+1,-1\}\), define
+\begin{align}
+ \delta_\sigma(P,H)
+ &=
+ \rho(P)-\lambda_{\max}(\sigma H).
+ \label{eq:sector-defect}
+\end{align}
+Thus
+\[
+ \delta_+=\rho-\lambda_{\max}(H),
+ \qquad
+ \delta_-=\rho+\lambda_{\min}(H),
+\]
+and
+\begin{equation}\label{eq:norm-defect}
+ \rho(P)-\|H\|=\min\{\delta_+,\delta_-\}.
+\end{equation}
+\end{definition}
+
+The sign \(\sigma\) is global.  It is not an independently chosen sign
+on each edge.
+
+\begin{definition}[Cycle holonomy]\label{def:holonomy}
+For an oriented cycle
+\[
+ C=(v_0,v_1,\ldots,v_\ell=v_0)
+\]
+contained in \(G_q\), set
+\begin{equation}\label{eq:holonomy}
+ \Hol_\phi(C)
+ =
+ \prod_{k=0}^{\ell-1}\phi_{v_kv_{k+1}},
+ \qquad
+ \Hol_\sigma(C)
+ =
+ \sigma^\ell\Hol_\phi(C).
+\end{equation}
+Reversing orientation conjugates the holonomy, so the condition that it
+equal \(1\) is orientation independent.
+\end{definition}

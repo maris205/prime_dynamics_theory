@@ -1,0 +1,66 @@
+\section{Switching and cycle holonomy}
+\label{sec:holonomy}
+
+Assume throughout this section that \(P=|H|\) and \(G_P\) is connected.
+
+\begin{theorem}[Holonomy classification]\label{thm:holonomy}
+For a fixed \(\sigma\in\{\pm1\}\), the following are equivalent:
+\begin{enumerate}[label=(\roman*),leftmargin=2.4em]
+\item \(H=\sigma DPD^*\) for a diagonal unitary \(D\);
+\item there are phases \(d_i\) such that
+\[
+ \phi_{ij}=\sigma d_i\overline{d_j}
+ \quad\text{on every edge};
+\]
+\item every oriented cycle \(C\) satisfies
+\begin{equation}\label{eq:cycle-condition}
+ \Hol_\phi(C)=\sigma^{|C|},
+ \quad\text{equivalently}\quad
+ \Hol_\sigma(C)=1.
+\end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The first two statements are entrywise equivalent.  Their phases
+telescopically give \eqref{eq:cycle-condition}.
+
+Conversely, fix a root and a spanning tree.  Set the root phase
+arbitrarily and propagate \(d_i\) along the unique tree paths using
+\(\phi_{ij}=\sigma d_i\overline{d_j}\).  For a chord, its fundamental
+cycle condition says that the already assigned endpoint phases satisfy
+the same equation.  Hence the formula holds on every edge.
+\end{proof}
+
+\begin{definition}[Balanced and antibalanced sectors]
+The phase pattern is \emph{balanced} when the theorem holds for
+\(\sigma=+1\), and \emph{antibalanced} when it holds for
+\(\sigma=-1\).
+\end{definition}
+
+For a cycle of length \(\ell\), balanced means holonomy \(1\), whereas
+antibalanced means holonomy \((-1)^\ell\).  On an odd graph the two
+conditions are distinct; on a bipartite graph they coincide after a
+bipartition sign switch.
+
+\begin{corollary}[Fundamental-cycle census]\label{cor:fundamental}
+Let \(T\) be any spanning tree of \(G_P\).  It is enough to test
+\eqref{eq:cycle-condition} on the
+\[
+ |E|-|V|+1
+\]
+fundamental cycles formed by the chords \(e\notin T\).
+\end{corollary}
+
+\begin{proof}
+The spanning-tree construction in \cref{thm:holonomy} uses exactly
+those conditions.  All other cycle holonomies are products of
+fundamental ones and their conjugates.
+\end{proof}
+
+\begin{remark}[Gauge normal form]
+A diagonal unitary can switch every tree-edge phase to \(+1\).  The
+remaining chord phase is, up to orientation conjugation, the holonomy
+of its fundamental cycle.  Thus cycle rank, not edge count, is the
+number of independent scalar phase defects.
+\end{remark}

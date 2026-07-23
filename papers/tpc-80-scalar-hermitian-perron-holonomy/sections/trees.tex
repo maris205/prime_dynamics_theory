@@ -1,0 +1,42 @@
+\section{Trees cannot create scalar phase saving}
+\label{sec:trees}
+
+\begin{theorem}[Arbitrary phases on a tree]\label{thm:tree}
+Suppose \(G_{|H|}\) is a tree and every tree edge is nonzero.  Then a
+diagonal unitary \(D\) satisfies
+\[
+ D^*HD=|H|.
+\]
+Moreover the tree is bipartite, so another diagonal unitary switches
+\(H\) to \(-|H|\).  Consequently
+\begin{equation}\label{eq:tree-spectrum}
+ \lambda_{\max}(H)=\rho(|H|),
+ \qquad
+ \lambda_{\min}(H)=-\rho(|H|),
+ \qquad
+ \|H\|=\rho(|H|).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+There are no cycle constraints, so the root propagation in
+\cref{thm:holonomy} switches all phases to \(+1\).  Let
+\(S=\diag(s_i)\), where \(s_i=+1\) on one bipartition class and
+\(-1\) on the other.  Then \(S|H|S=-|H|\).  Hence \(H\) is unitarily
+similar to both signs of \(|H|\), and \eqref{eq:tree-spectrum} follows.
+\end{proof}
+
+\begin{corollary}[Tree stop rule]\label{cor:tree-stop}
+If every Perron-dominant connected component of the literal row graph
+\(G_{|H|}\) is a tree, then the phase-frustration gap
+\(\rho(|H|)-\|H\|\) is zero.  Any strict gap relative to a larger
+majorant \(P\) is entirely amplitude/completion slack.
+\end{corollary}
+
+\begin{remark}[Not the TPC-78 tree]
+TPC-78 uses a bipartite graph whose vertices are analysis coordinates
+and completion variables.  The present tree has physical Hermitian rows
+as vertices.  One can be a forest while the other contains many
+cycles.  No tree conclusion transfers without constructing the actual
+row matrix and its support.
+\end{remark}

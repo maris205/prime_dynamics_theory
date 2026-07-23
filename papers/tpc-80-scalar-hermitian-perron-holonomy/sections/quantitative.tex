@@ -1,0 +1,140 @@
+\section{Quantitative two-sector frustration bounds}
+\label{sec:quantitative}
+
+Assume \(P=|H|\) and \(G_P\) is connected.  Define Perron
+conductances
+\begin{equation}\label{eq:conductance}
+ c_{ij}=p_{ij}r_ir_j>0.
+\end{equation}
+Then \cref{cor:variation} becomes
+\begin{equation}\label{eq:magnetic}
+ \boxed{\displaystyle
+ \delta_\sigma
+ =
+ \min_{f\ne0}
+ \frac{\sum_{\{i,j\}}c_{ij}
+ |f_i-\sigma\phi_{ij}f_j|^2}
+ {\sum_i r_i^2|f_i|^2}.}
+\end{equation}
+
+\begin{corollary}[Strictness criterion]\label{cor:strictness}
+\[
+ \delta_\sigma=0
+ \quad\Longleftrightarrow\quad
+ \Hol_\sigma(C)=1
+ \quad\text{for every cycle }C.
+\]
+Consequently,
+\[
+ \|H\|<\rho(P)
+\]
+if and only if the phase pattern is neither balanced nor antibalanced.
+\end{corollary}
+
+\begin{definition}[Cycle defect and unimodular frustration]
+For an oriented cycle \(C\), set
+\[
+ \eta_\sigma(C)=|1-\Hol_\sigma(C)|.
+\]
+Define
+\begin{equation}\label{eq:frustration}
+ \mathfrak F_\sigma
+ =
+ \min_{\substack{z\in\C^V\\|z_i|=1}}
+ \sum_{\{i,j\}}c_{ij}|z_i-\sigma\phi_{ij}z_j|^2.
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Fundamental-cycle upper certificate]\label{thm:upper}
+For every spanning tree \(T\),
+\begin{equation}\label{eq:upper}
+ 0\le\delta_\sigma
+ \le\mathfrak F_\sigma
+ \le
+ \sum_{e\notin T}c_e\eta_\sigma(C_e)^2,
+\end{equation}
+where \(C_e\) is the fundamental cycle of chord \(e\).
+\end{theorem}
+
+\begin{proof}
+Restricting \eqref{eq:magnetic} to unimodular \(f=z\) makes its
+denominator \(\sum_i r_i^2=1\), which gives
+\(\delta_\sigma\le\mathfrak F_\sigma\).
+Choose the vertex phases by propagating along \(T\) so that every tree
+edge has zero energy.  On a chord \(e\), the remaining mismatch is,
+up to a unit factor and orientation conjugation,
+\(1-\Hol_\sigma(C_e)\).  Evaluating this test phase proves the last
+inequality.
+\end{proof}
+
+Small defects or defects carried by tiny \(c_e\) can therefore yield
+arbitrarily small strictness.
+
+\begin{theorem}[One-cycle resistance lower certificate]\label{thm:lower}
+Fix a cycle \(C\) and a root \(o\in C\) with
+\(\eta_\sigma(C)>0\).  Set
+\[
+ R_C=\sum_{e\in C}c_e^{-1}.
+\]
+For every \(v\in V\), choose a path \(P_v\) from \(o\) to \(v\) and set
+\[
+ R_v=\sum_{e\in P_v}c_e^{-1}.
+\]
+Then
+\begin{equation}\label{eq:lower}
+\boxed{\displaystyle
+ \delta_\sigma
+ \ge
+ \left[
+ \sum_{v\in V}r_v^2
+ \left(
+ \frac{\sqrt{R_C}}{\eta_\sigma(C)}
+ +\sqrt{R_v}
+ \right)^2
+ \right]^{-1}.}
+\end{equation}
+In particular,
+\begin{equation}\label{eq:lower-coarse}
+ \delta_\sigma
+ \ge
+ \left(
+ \frac{\sqrt{R_C}}{\eta_\sigma(C)}
+ +\sqrt{\max_vR_v}
+ \right)^{-2}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let \(\cE_\sigma(f)\) be the numerator in
+\eqref{eq:magnetic}.  Transport \(f\) once around \(C\) and telescope
+the edge errors.  Weighted Cauchy--Schwarz gives
+\[
+ \eta_\sigma(C)|f_o|
+ \le \sqrt{R_C}\sqrt{\cE_\sigma(f)}.
+\]
+Transporting from \(o\) to \(v\) along \(P_v\) similarly gives
+\[
+ |f_v|
+ \le |f_o|+\sqrt{R_v}\sqrt{\cE_\sigma(f)}
+ \le
+ \left(
+ \frac{\sqrt{R_C}}{\eta_\sigma(C)}
+ +\sqrt{R_v}
+ \right)\sqrt{\cE_\sigma(f)}.
+\]
+Multiply the squared inequalities by \(r_v^2\), sum, and insert the
+result into \eqref{eq:magnetic}.  Since \(\sum_vr_v^2=1\), bounding
+every \(R_v\) by its maximum gives \eqref{eq:lower-coarse}.
+\end{proof}
+
+\begin{corollary}[Certified operator saving]\label{cor:both-sectors}
+If a defective cycle is supplied separately for each sector, with
+lower bounds \(L_+>0\) and \(L_->0\) from \cref{thm:lower}, then
+\[
+ \rho(P)-\|H\|
+ \ge\min\{L_+,L_-\}>0.
+\]
+\end{corollary}
+
+The cycles may be different.  Finding a defect only in the positive
+sector is insufficient.

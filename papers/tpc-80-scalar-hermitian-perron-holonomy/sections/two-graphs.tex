@@ -1,0 +1,51 @@
+\section{The incidence graph and the row graph are not substitutes}
+\label{sec:two-graphs}
+
+The completion incidence graph of TPC-77/78 is bipartite:
+\[
+ G_C\subseteq I_{\rm analysis}\sqcup J_{\rm variables}.
+\]
+It factorizes or solves the coefficient program
+\(\min_\theta\|b+C\theta\|_1\).  The present graph
+\[
+ G_{\rm row}(P)\subseteq V_{\rm physical}\times V_{\rm physical}
+\]
+controls the Perron eigenvector and scalar Hermitian phase transport.
+
+\begin{proposition}[Graph non-substitution]\label{prop:non-substitution}
+Neither of the following implications holds without an additional
+literal construction:
+\[
+ G_C\text{ is a forest}
+ \ \Longrightarrow\
+ G_{\rm row}(P)\text{ is a forest},
+\]
+\[
+ G_{\rm row}(P)\text{ is a forest}
+ \ \Longrightarrow\
+ G_C\text{ is a forest}.
+\]
+\end{proposition}
+
+\begin{proof}
+Take \(C=I_4\).  Its bipartite support is a matching, hence a forest,
+while an independently assembled row majorant may be the adjacency
+matrix of \(C_4\), whose row graph has a cycle.
+
+Conversely, take a \(2\times2\) matrix \(C\) with all four entries
+nonzero.  Its support is \(K_{2,2}\), which has a cycle, while a
+two-row Hermitian majorant with one nonzero off-diagonal entry has a
+tree row graph.  These examples can share the same analysis-row labels;
+support of one matrix does not determine support of the other.
+\end{proof}
+
+\begin{remark}[Different phase transports]
+TPC-78 transports a dual charge through degree-two variable nodes of a
+bipartite tree.  TPC-80 switches eigenvector phases along Hermitian row
+edges.  Their equations, vertices, and obstruction spaces are
+different even when both happen to be one-dimensional.
+\end{remark}
+
+The literal interface must therefore archive both graphs, with distinct
+names and hashes.  A cycle counted before post-\(q\) entry aggregation
+is not a row holonomy cycle if its final Hermitian edge cancels to zero.

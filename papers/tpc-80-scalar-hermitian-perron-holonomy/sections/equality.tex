@@ -1,0 +1,73 @@
+\section{Complete saturation criterion}
+\label{sec:equality}
+
+\begin{theorem}[Connected Perron saturation]\label{thm:saturation}
+Assume \(G_P\) is connected.  The following are equivalent:
+\begin{enumerate}[label=(\roman*),leftmargin=2.4em]
+\item \(\|H\|=\rho(P)\);
+\item for some \(\sigma\in\{\pm1\}\),
+\(\delta_\sigma(P,H)=0\);
+\item for some \(\sigma\in\{\pm1\}\) and diagonal unitary
+\(D=\diag(d_i)\),
+\begin{equation}\label{eq:saturation}
+ |H|=P,
+ \qquad
+ H=\sigma DPD^*.
+\end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The equivalence of (i) and (ii) is \eqref{eq:norm-defect}.
+Suppose (ii) holds.  A nonzero minimizer \(f\) in
+\eqref{eq:variation} has zero energy.  If any edge has
+\(q_{ij}<p_{ij}\), its amplitude term forces \(f_i=f_j=0\).
+Across any adjacent saturated edge, the phase term then forces the next
+vertex value to vanish; across any adjacent nonsaturated edge, the
+amplitude term does the same.  Connectivity would give \(f=0\), a
+contradiction.  Hence \(q_{ij}=p_{ij}\) on every edge.
+
+The remaining zero-energy equations are
+\[
+ f_i=\sigma\phi_{ij}f_j.
+\]
+They imply equal modulus along every edge; connectivity gives
+\(|f_i|=a>0\) for all \(i\).  Put \(d_i=f_i/a\).  Then
+\(\phi_{ij}=\sigma d_i\overline{d_j}\), which is
+\eqref{eq:saturation}.
+
+Conversely, if \eqref{eq:saturation} holds, \(H\) is unitarily similar
+to \(\sigma P\), so one of its extremal eigenvalues has modulus
+\(\rho(P)\).
+\end{proof}
+
+\begin{corollary}[Pure nonnegative equality]\label{cor:nonnegative}
+If \(0\le A\le P\), both matrices are symmetric, and \(G_P\) is
+connected, then
+\[
+ \rho(A)=\rho(P)
+ \quad\Longleftrightarrow\quad
+ A=P.
+\]
+\end{corollary}
+
+\begin{proof}
+Apply \cref{thm:saturation} with \(H=A\).  Since every nonzero edge
+phase equals \(1\), amplitude saturation is necessary and sufficient.
+\end{proof}
+
+\begin{corollary}[Exact amplitude--phase split]\label{cor:split}
+For every Hermitian \(H\) dominated by \(P\),
+\begin{equation}\label{eq:split}
+ \boxed{\displaystyle
+ \rho(P)-\|H\|
+ =
+ \bigl[\rho(P)-\rho(|H|)\bigr]
+ +
+ \bigl[\rho(|H|)-\|H\|\bigr].}
+\end{equation}
+\end{corollary}
+
+The first bracket is completion or amplitude slack.  The second is
+phase-frustration slack.  This algebraic identity is simple, but it
+prevents one source from being reported as evidence for the other.

@@ -1,0 +1,109 @@
+\section{Literal carrier specialization and claim boundary}
+\label{sec:boundary}
+
+Let \(\widetilde H_X\) be a finite scalar Hermitian carrier with zero
+diagonal, and let \(P_X\) be a finite real symmetric nonnegative
+zero-diagonal matrix.  Earlier completion layers may supply such a
+majorant, including the most complete all-content or provenance-aware
+versions.  Once the entrywise inequality
+\[
+ |\widetilde H_X|\le P_X
+\]
+is checked on complete post-aggregation keys, the present equality
+theorem applies to this pair without further heuristic assumptions.
+
+\begin{proposition}[Literal Perron equality audit]\label{prop:literal}
+Under the finite scalar, symmetric/Hermitian, and zero-diagonal
+hypotheses above,
+\[
+ \|\widetilde H_X\|=\rho(P_X)
+\]
+if and only if some Perron-dominant connected component of \(P_X\)
+simultaneously satisfies:
+\begin{enumerate}[label=(\roman*),leftmargin=2.4em]
+\item every edge majorant is tight,
+\[
+ (P_X)_{mn}=|(\widetilde H_X)_{mn}|;
+\]
+\item the exact entry phases are balanced or antibalanced on every
+fundamental row cycle.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+This is \cref{thm:reducible,thm:holonomy}.
+\end{proof}
+
+The minimal archive records:
+\begin{enumerate}[label=(A\arabic*),leftmargin=2.7em]
+\item fixed \(h_0\), scale \(X\), complete row keys, and the common
+global raw normalizer;
+\item literal complex entries after every atomic/content sum and exact
+zero test;
+\item the chosen majorant and an entrywise slack table;
+\item connected components, their Perron radii and positive
+eigenvectors;
+\item a spanning forest, chord list, both sector holonomies, and
+Perron conductances;
+\item separate amplitude and phase gaps from \eqref{eq:split};
+\item interval-verified eigenvalue or cycle certificates and data
+hashes.
+\end{enumerate}
+
+No such growing literal carrier census is included here.  Thus no claim
+is made that a dominant component contains a defective cycle, that both
+sectors have a uniform gap, or that the gap survives global
+normalization.
+
+\subsection*{Progress and stop rules}
+
+\begin{center}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.19\linewidth}
+>{\raggedright\arraybackslash}p{0.71\linewidth}@{}}
+\toprule
+Level & Status\\
+\midrule
+L0: spectral algebra &
+Exact for finite scalar Hermitian matrices.\\
+L1: operator interface &
+Advanced by complete equality and weighted cycle-defect certificates.\\
+L2: fixed-\(h_0\) arithmetic &
+Open; no uniform growing-carrier or mass-normalized estimate is proved.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The branch stops as a phase-saving route if a Perron-dominant component
+of the exact post-aggregation graph \(G_{|\widetilde H_X|}\) is a tree
+or if any dominant component is balanced or antibalanced.  Frustrating
+only one sector, thresholding an exact edge, or measuring a
+pre-aggregation atom phase is insufficient.  Even a positive finite
+gap must be bounded uniformly on the complete growing family and
+connected to the physical scale.
+
+The inherited exponent ledger permits total fixed-power loss strictly
+below \(1/400\) and stops at loss at least \(1/400\), including
+equality.  This paper adds no exponent loss by itself and proves no
+exponent gain.  A cycle gap cannot be entered as an arithmetic saving
+until a separate literal transfer theorem supplies its direction,
+normalization, and carrier coverage.
+
+\subsection*{Conclusion}
+
+The Perron gap now has an exact decision procedure:
+\[
+\begin{array}{c}
+\text{amplitude tightness on dominant components}\\
+\downarrow\\
+\text{positive and negative cycle-holonomy tests}\\
+\downarrow\\
+\begin{cases}
+\text{one sector consistent} &\Rightarrow \text{Perron saturation},\\
+\text{both sectors defective} &\Rightarrow \text{quantified strictness}.
+\end{cases}
+\end{array}
+\]
+This closes the finite scalar Hermitian equality gate.  The remaining
+question is arithmetic: whether the literal fixed-shift growing carrier
+contains sufficiently weighted, persistently defective dominant
+cycles.

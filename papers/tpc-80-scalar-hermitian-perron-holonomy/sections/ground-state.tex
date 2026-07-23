@@ -1,0 +1,75 @@
+\section{The exact Perron ground-state transform}
+\label{sec:ground}
+
+\begin{theorem}[Dominated Hermitian sum of squares]\label{thm:ground}
+Assume \(G_P\) is connected.  For \(\sigma\in\{\pm1\}\) and
+\(x_i=r_if_i\),
+\begin{equation}\label{eq:ground}
+\boxed{\begin{aligned}
+x^*(\rho I-\sigma H)x
+={}&
+\sum_{\{i,j\}\in E(G_P)}r_ir_j
+\Bigl[
+q_{ij}|f_i-\sigma\phi_{ij}f_j|^2\\
+&\hspace{5.0em}
++(p_{ij}-q_{ij})(|f_i|^2+|f_j|^2)
+\Bigr].
+\end{aligned}}
+\end{equation}
+On an edge with \(q_{ij}=0\), the first term is interpreted as zero.
+\end{theorem}
+
+\begin{proof}
+For one undirected edge, the summand expands to
+\[
+ p_{ij}r_ir_j(|f_i|^2+|f_j|^2)
+ -
+ 2\sigma q_{ij}r_ir_j
+ \Real(\overline{f_i}\phi_{ij}f_j).
+\]
+Summing its diagonal part over edges and using \eqref{eq:perron} gives
+\[
+ \sum_i r_i|f_i|^2\sum_jp_{ij}r_j
+ =
+ \rho\sum_i r_i^2|f_i|^2.
+\]
+The off-diagonal part is exactly \(-\sigma x^*Hx\), because \(H\) is
+Hermitian.  This proves \eqref{eq:ground}.
+\end{proof}
+
+\begin{corollary}[Exact two-sector variational formula]\label{cor:variation}
+Define
+\begin{align}
+ \cE_\sigma(f)
+ =
+ \sum_{\{i,j\}}r_ir_j
+ \Bigl[
+ q_{ij}|f_i-\sigma\phi_{ij}f_j|^2
+ +(p_{ij}-q_{ij})(|f_i|^2+|f_j|^2)
+ \Bigr].
+ \label{eq:energy}
+\end{align}
+Then
+\begin{equation}\label{eq:variation}
+ \boxed{\displaystyle
+ \delta_\sigma(P,H)
+ =
+ \min_{f\ne0}
+ \frac{\cE_\sigma(f)}
+      {\sum_i r_i^2|f_i|^2}.}
+\end{equation}
+In particular, both sector defects are nonnegative and
+\(\|H\|\le\rho(P)\).
+\end{corollary}
+
+\begin{proof}
+Apply the Rayleigh principle to \(\rho I-\sigma H\) and substitute
+\(x_i=r_if_i\).  The substitution is bijective because every
+\(r_i>0\).
+\end{proof}
+
+\begin{remark}[Two independent sources of energy]
+The first term in \eqref{eq:energy} is phase or magnetic frustration.
+The second is amplitude-majorant slack.  They are separately
+nonnegative; neither can cancel the other.
+\end{remark}

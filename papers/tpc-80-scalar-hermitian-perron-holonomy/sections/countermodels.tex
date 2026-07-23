@@ -1,0 +1,67 @@
+\section{Sharp countermodels and scalar boundary}
+\label{sec:countermodels}
+
+\begin{example}[Arbitrary tree phases still saturate]
+Put arbitrary unit phases and positive weights on the edges of any
+tree.  \Cref{thm:tree} gives
+\[
+ \|H\|=\rho(|H|).
+\]
+Nonconstant phases alone are not evidence of cancellation.
+\end{example}
+
+\begin{example}[The negative sector on a triangle]\label{ex:triangle}
+\[
+ H=
+ \begin{pmatrix}
+ 0&1&-1\\
+ 1&0&1\\
+ -1&1&0
+ \end{pmatrix}
+\]
+has total holonomy \(-1\) and spectrum \(\{-2,1,1\}\).  It is not
+balanced, but it is antibalanced, so
+\(\|H\|=2=\rho(|H|)\).
+\end{example}
+
+\begin{example}[True frustration on an even cycle]
+On \(C_4\), put phase \(-1\) on one edge and \(+1\) on the other
+three.  Total holonomy is \(-1\), which fits neither sector because the
+cycle length is even.  \Cref{thm:flux} gives
+\[
+ \|H\|=\sqrt2<2=\rho(|H|).
+\]
+\end{example}
+
+\begin{example}[Balanced phases with amplitude slack]
+Let \(H=(1-\varepsilon)P\), where \(0<\varepsilon<1\) and \(P\) is
+connected and nonzero.  Every phase is balanced, but
+\[
+ \|H\|=(1-\varepsilon)\rho(P)<\rho(P).
+\]
+This is completion slack, not phase frustration.
+\end{example}
+
+\begin{example}[Frustration off the controlling component]
+Take the direct sum of a balanced triangle and a frustrated \(C_4\);
+both absolute components have Perron radius \(2\).  The triangle still
+saturates the global norm.  Finding one frustrated dominant component
+does not suffice when another dominant component is balanced.
+\end{example}
+
+\begin{example}[Finite strictness can vanish arbitrarily fast]
+On a fixed cycle, take total flux \(\Theta_X=X^{-100}\).  Every finite
+\(X\) is strictly frustrated in the positive sector, but
+\cref{cor:quadratic} gives a defect \(O(X^{-200})\).  Strict inequality
+does not imply a fixed power useful to an arithmetic ledger.
+\end{example}
+
+\begin{remark}[Why scalar is essential]
+For matrix-valued edges, a cycle holonomy such as
+\(\diag(1,e^{\mathrm i\vartheta})\ne I\) can still have a common
+invariant first coordinate carrying a Perron eigenvector.  Equality may
+require a common invariant section rather than trivial holonomy.  For a
+general real-linear block \(z\mapsto az+b\overline z\), there is no
+single edge phase.  The scalar \(U(1)\) classification must not be
+quoted for either setting.
+\end{remark}

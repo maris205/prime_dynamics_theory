@@ -1,0 +1,72 @@
+\section{Introduction}
+
+The fixed-shift completion hierarchy produces nonnegative matrices that
+majorize the absolute entries of a scalar Hermitian carrier
+\cite{WangTPC75}.  Its operator estimate ends with
+\begin{equation}\label{eq:intro-chain}
+ \|H\|\le\rho(|H|)\le\rho(P).
+\end{equation}
+TPC-78 classifies certain forest components of the \emph{completion
+incidence program} \cite{WangTPC78}.  It does not answer when the
+Hermitian inequality \eqref{eq:intro-chain} is strict, because the graph
+governing that question has physical rows as vertices and post-summation
+matrix entries as edges.
+
+Two mechanisms can create slack.  First,
+\(|H_{ij}|<P_{ij}\) leaves amplitude or completion slack.  Second,
+even when \(P=|H|\), edge phases can be inconsistent around cycles.
+These are different phenomena, and they must be separated before a
+strict Perron comparison can be interpreted.
+
+\paragraph{Main results.}
+We derive an exact Perron ground-state transform that is simultaneously
+valid for the positive and negative extremal sectors.  It yields a
+necessary-and-sufficient equality theorem:
+\[
+ \|H\|=\rho(P)
+ \quad\Longleftrightarrow\quad
+ |H_\alpha|=P_\alpha,\quad
+ H_\alpha=\sigma D_\alpha P_\alpha D_\alpha^*
+\]
+on a Perron-dominant connected component, for some
+\(\sigma\in\{\pm1\}\).  In the saturated connected case, diagonal
+switching is equivalent to a \(U(1)\) cycle-holonomy condition.
+
+The two sectors matter.  Frustrating the positive Perron eigenvector
+does not force operator-norm strictness if the negative sector still
+saturates.  A signed triangle with total phase \(-1\) is the smallest
+example.  Genuine phase saving requires both sectors to have a
+positive defect.
+
+\paragraph{Quantitative content.}
+The ground-state identity is an exact magnetic Dirichlet energy.
+It gives a variational formula, a fundamental-cycle upper certificate,
+and a defective-cycle lower certificate in terms of Perron
+conductances.  The flux cycle \(C_n\) is solved in closed form and
+shows quadratic small-angle loss.  Thus finite strictness alone cannot
+be upgraded to an asymptotic power saving.
+
+\paragraph{Scope.}
+The phase classification is scalar and Hermitian.  A general
+real-linear completion block has no single \(U(1)\) phase.  A
+matrix-valued block can saturate on a common invariant subspace without
+having trivial matrix holonomy.  A non-Hermitian carrier requires
+singular-vector or dilation arguments, while a nonsymmetric
+nonnegative majorant need not bound the Euclidean operator norm by its
+spectral radius.
+
+\paragraph{Progress label.}
+The identities are exact L0 spectral algebra and advance the L1
+operator interface for a literal scalar Hermitian carrier.  They do not
+provide the missing growing-carrier census or any fixed-\(h_0\)
+arithmetic exponent estimate.
+
+\paragraph{Organization.}
+\Cref{sec:setup} defines the two-sector phases.
+\Cref{sec:ground} proves the exact sum of squares.
+\Cref{sec:equality} classifies saturation.
+\Cref{sec:holonomy,sec:trees} give switching and tree consequences.
+\Cref{sec:quantitative,sec:flux} prove weighted bounds and the cycle
+model.  \Cref{sec:reducible} handles reducible majorants.
+\Cref{sec:two-graphs,sec:countermodels,sec:boundary} record the
+interface, counterexamples, and stop rules.
