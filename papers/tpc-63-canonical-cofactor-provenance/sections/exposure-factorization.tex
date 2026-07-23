@@ -1,0 +1,308 @@
+\section{Maximal eligibility and exact row exposure}
+\label{sec:exposure-factorization}
+
+The incidence calculus separates two questions which were previously hidden
+inside the phrase ``retained pair.''  First, does a native high atom pass all
+terminal tests other than membership in the pair relation?  Second, if it
+does, is its recovered pair retained?  This section disintegrates the two
+questions before any residual or native grouping.  All sets are fixed before
+the row coefficient is chosen.
+
+\subsection{The relation-free admissible high carrier}
+
+Let \(\cW_H(y)\) be the complete nonzero native very-high carrier on one
+fixed side and direct residue slice.  Every \(w\in\cW_H(y)\) canonically
+recovers
+\begin{equation}
+ m(w),\qquad j(w),\qquad
+ n(w)=m(w)j(w)+h_0,\qquad
+ p(w)=\Pplus(n(w))>y,\qquad
+ r(w)=\frac{n(w)}{p(w)}.
+ \label{eq:exposure-recovered-labels}
+\end{equation}
+Write its literal amplitude as
+\begin{equation}
+ b_w(\zeta)=\beta_w\zeta_{m(w)},
+ \label{eq:exposure-literal-amplitude}
+\end{equation}
+where \(\beta_w\) contains every coefficient-free source, mask, orbit,
+opposite-row, and shaped terminal factor.  No free atom phase is inserted.
+
+Remove only the retained-pair membership test from the complete terminal
+admission predicate.  Let
+\begin{equation}
+ A_X(w)\in\{0,1\}
+ \label{eq:exposure-nonrelation-predicate}
+\end{equation}
+be the conjunction of all remaining declared tests: terminal-prime and
+orbit scope, nonvanishing terminal weight, squarefree and coprimality
+conditions, literal mask and profile support, and every further
+terminal-only condition.  Define
+\begin{align}
+ \cW_A(y)&:=\{w\in\cW_H(y):A_X(w)=1\},
+ \label{eq:exposure-admissible-high-carrier}\\
+ \cI_X^{\max}
+ &:=\{(m(w),r(w)):w\in\cW_A(y)\}.
+ \label{eq:exposure-maximal-eligible-relation}
+\end{align}
+The superscript ``max'' refers only to removal of the retained-pair test.
+It does not enlarge any other literal support.  Under the exact
+terminal--Walsh coordinate injection, \(\cI_X^{\max}\) is the pair
+projection of the coefficient-free terminal incidence.  Identifying it
+with the residual projection \(\cI_X^{\rm res}\) from
+\cref{def:audit-residual-incidences} additionally requires equality of the
+two declared support systems; this equality is not inferred from their
+common scales.
+
+Let \(\cI_X\subseteq\cM_X\times\N\) be any declared finite,
+coefficient-independent pair relation and put
+\begin{equation}
+ \cI_m:=\{r:(m,r)\in\cI_X\},
+ \qquad
+ \cI_X^{\rm eff}:=\cI_X\cap\cI_X^{\max}.
+ \label{eq:exposure-effective-core}
+\end{equation}
+Its represented high carrier and its full missing complement are
+\begin{align}
+ \cW_R^{\cI}
+ &:=\{w\in\cW_A(y):(m(w),r(w))\in\cI_X\},
+ \label{eq:exposure-represented-carrier}\\
+ \cW_M^{\cI}
+ &:=\cW_H(y)\setminus\cW_R^{\cI}.
+ \label{eq:exposure-missing-carrier}
+\end{align}
+Thus \(\cW_M^{\cI}\) includes both non-relation failure and failure of a
+different terminal test.  In the identical-support specialization of
+TPC--60/61, \(A_X=1\) on \(\cW_H\), so only the first mechanism remains
+\citep{WangTPC60,WangTPC61}.
+
+\begin{proposition}[Effective core and the eligibility lattice]
+\label{prop:exposure-effective-core}
+For every declared relation \(\cI_X\),
+\begin{equation}
+ \boxed{
+ \cW_R^{\cI}
+ =\cW_R^{\cI_X^{\rm eff}}.}
+ \label{eq:exposure-effective-core-identity}
+\end{equation}
+If \(\cI_X\subseteq\cJ_X\), then
+\begin{equation}
+ \cW_R^{\cI}\subseteq\cW_R^{\cJ}.
+ \label{eq:exposure-relation-monotonicity}
+\end{equation}
+Moreover, \(\cI_X^{\max}\) is the unique least pair relation which
+represents every atom of \(\cW_A(y)\).  Any superset of
+\(\cI_X^{\max}\) gives the same represented carrier
+\(\cW_A(y)\).
+\end{proposition}
+
+\begin{proof}
+Membership in \(\cW_R^{\cI}\) requires both \(A_X(w)=1\) and
+\((m(w),r(w))\in\cI_X\).  The first condition already places the recovered
+pair in \(\cI_X^{\max}\), proving
+\eqref{eq:exposure-effective-core-identity}.  Relation inclusion gives
+\eqref{eq:exposure-relation-monotonicity}.  Finally, every relation which
+represents all of \(\cW_A\) must contain the pair of every one of its
+atoms, hence must contain their projection \(\cI_X^{\max}\).  Conversely,
+that projection represents every admissible atom by definition.
+\end{proof}
+
+The proposition is a maximal-support identity.  It is not a statement that
+\(\cW_A\) has positive mass relative to \(\cW_H\), and it is not a theorem
+that the inherited relation equals \(\cI_X^{\max}\).
+
+\subsection{Two realized measures and the exact factorization}
+
+For a source row \(m\), define finite positive measures on \(\N\) by
+\begin{align}
+ \nu_m^H(r)
+ &:=\sum_{\substack{w\in\cW_H(y)\\
+                    m(w)=m,\ r(w)=r}}|\beta_w|^2,
+ \label{eq:exposure-native-high-measure}\\
+ \nu_m^A(r)
+ &:=\sum_{\substack{w\in\cW_A(y)\\
+                    m(w)=m,\ r(w)=r}}|\beta_w|^2.
+ \label{eq:exposure-admissible-high-measure}
+\end{align}
+Put
+\begin{align}
+ W_H(m)&:=\nu_m^H(\N),
+ &W_A(m)&:=\nu_m^A(\N),
+ \label{eq:exposure-high-admissible-row-weights}\\
+ W_R^{\cI}(m)&:=\nu_m^A(\cI_m),
+ &W_M^{\cI}(m)&:=W_H(m)-W_R^{\cI}(m).
+ \label{eq:exposure-represented-missing-row-weights}
+\end{align}
+All weights use raw counting-measure atoms.  In particular, neither
+\(\nu_m^H\) nor \(\nu_m^A\) is divided by a row, orbit, cofactor, or native
+fiber multiplicity.
+
+For every row with \(W_H(m)>0\), define the alignment factor
+\begin{equation}
+ \alpha_m:=\frac{W_A(m)}{W_H(m)}\in[0,1].
+ \label{eq:exposure-alignment-factor}
+\end{equation}
+When \(W_A(m)>0\), define the relation-completion factor
+\begin{equation}
+ \theta_m(\cI)
+ :=\frac{\nu_m^A(\cI_m)}{W_A(m)}\in[0,1];
+ \label{eq:exposure-completion-factor}
+\end{equation}
+when \(W_A(m)=0\), put \(\theta_m(\cI):=0\).
+
+\begin{theorem}[Exact alignment--completion factorization]
+\label{thm:exposure-exact-factorization}
+For every native-high active row,
+\begin{equation}
+ \boxed{
+ \frac{W_R^{\cI}(m)}{W_H(m)}
+ =\alpha_m\theta_m(\cI).}
+ \label{eq:exposure-alpha-theta-factorization}
+\end{equation}
+Consequently,
+\begin{equation}
+ W_R^{\cI}(m)>0
+ \quad\Longleftrightarrow\quad
+ W_A(m)>0
+ \quad\text{and}\quad
+ \cI_m\cap\supp\nu_m^A\ne\varnothing.
+ \label{eq:exposure-positive-row-criterion}
+\end{equation}
+For the canonical maximal relation,
+\begin{equation}
+ \theta_m(\cI_X^{\max})=1
+ \quad\text{whenever }W_A(m)>0,
+ \qquad
+ \frac{W_R^{\max}(m)}{W_H(m)}=\alpha_m.
+ \label{eq:exposure-maximal-relation-value}
+\end{equation}
+Thus maximal relation completion removes only relation-induced missing
+mass; it does not remove the alignment defect \(1-\alpha_m\).
+\end{theorem}
+
+\begin{proof}
+If \(W_A(m)>0\), substitute
+\(W_R^{\cI}(m)=\nu_m^A(\cI_m)\) and insert \(W_A(m)\) between numerator
+and denominator.  If \(W_A(m)=0\), both sides of
+\eqref{eq:exposure-alpha-theta-factorization} vanish by convention.  A
+positive finite measure charges \(\cI_m\) precisely when that set meets
+its support, proving \eqref{eq:exposure-positive-row-criterion}.  Finally,
+\(\cI_X^{\max}\) contains every pair in \(\supp\nu_m^A\), which gives
+\eqref{eq:exposure-maximal-relation-value}.
+\end{proof}
+
+Under identical support one has \(\nu_m^A=\nu_m^H\) and
+\(\alpha_m=1\).  Then \eqref{eq:exposure-alpha-theta-factorization}
+reduces exactly to the TPC--61 realized-cofactor formula
+\begin{equation}
+ \frac{W_R^{\cI}(m)}{W_H(m)}
+ =\frac{\nu_m^H(\cI_m)}{\nu_m^H(\N)}.
+ \label{eq:exposure-identical-support-specialization}
+\end{equation}
+The specialization is useful only after identical support itself has been
+proved for the declared packet.
+
+\subsection{Sharp uniform and distinguished constants}
+
+For a row-coefficient vector \(\zeta\), let
+\begin{align}
+ \cD_H(\zeta)
+ &:=\sum_mW_H(m)|\zeta_m|^2,
+ \label{eq:exposure-DH}\\
+ \cD_R^{\cI}(\zeta)
+ &:=\sum_mW_R^{\cI}(m)|\zeta_m|^2,
+ \qquad
+ \cD_M^{\cI}(\zeta)
+ :=\cD_H(\zeta)-\cD_R^{\cI}(\zeta).
+ \label{eq:exposure-DR-DM}
+\end{align}
+
+\begin{theorem}[Uniform and distinguished exposure minimax]
+\label{thm:exposure-uniform-distinguished-minimax}
+Assume the declared uniform coefficient class contains a nonzero multiple
+of each active row direction.  If \(\cD_H\) is not identically zero, then
+\begin{align}
+ \inf_{\cD_H(\zeta)>0}
+ \frac{\cD_R^{\cI}(\zeta)}{\cD_H(\zeta)}
+ &=\min_{m:W_H(m)>0}\alpha_m\theta_m(\cI),
+ \label{eq:exposure-uniform-minimum}\\
+ \sup_{\cD_H(\zeta)>0}
+ \frac{\cD_M^{\cI}(\zeta)}{\cD_H(\zeta)}
+ &=\max_{m:W_H(m)>0}
+   \bigl(1-\alpha_m\theta_m(\cI)\bigr).
+ \label{eq:exposure-uniform-maximum}
+\end{align}
+For one distinguished physical vector \(\zeta_*\) with
+\(\cD_H(\zeta_*)>0\), the exact represented fraction is instead
+\begin{equation}
+ \boxed{
+ \rho_*(X)
+ :=\frac{\cD_R^{\cI}(\zeta_*)}{\cD_H(\zeta_*)}
+ =\sum_{m:W_H(m)>0}
+ \frac{W_H(m)|\zeta_{*,m}|^2}{\cD_H(\zeta_*)}
+ \alpha_m\theta_m(\cI).}
+ \label{eq:exposure-distinguished-average}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \cref{thm:exposure-exact-factorization}, each quotient is a convex
+combination of the row values \(\alpha_m\theta_m(\cI)\), with weights
+\(W_H(m)|\zeta_m|^2/\cD_H(\zeta)\).  It is bounded below by their minimum,
+and concentration on a minimizing coordinate attains that value after a
+harmless scalar rescaling into the declared class.  Apply the same argument
+to \(1-\alpha_m\theta_m\) for the missing quotient.  Keeping the literal
+weights of \(\zeta_*\) gives \eqref{eq:exposure-distinguished-average}.
+\end{proof}
+
+At one finite scale, coefficient-uniform positive exposure is therefore
+equivalent to
+\begin{equation}
+ \min_{m:W_H(m)>0}\alpha_m\theta_m(\cI)>0.
+ \label{eq:exposure-finite-positive-uniform}
+\end{equation}
+A scale-uniform constant requires the infimum of this minimum over all
+large \(X\) to be positive.  The much stronger fixed-power missing-mass
+target requires
+\begin{equation}
+ \max_{m:W_H(m)>0}
+ \bigl(1-\alpha_m\theta_m(\cI)\bigr)
+ \le X^{-\sigma+o(1)}
+ \label{eq:exposure-power-target}
+\end{equation}
+for some \(\sigma>0\).  Mere rowwise nonemptiness proves neither statement.
+
+\subsection{The sharp support no-go and its scope}
+
+\begin{corollary}[Finite-relation insufficiency]
+\label{cor:exposure-finite-relation-no-go}
+The inherited hypotheses ``\(\cI_X\) is finite and fixed before
+\(\zeta\)'' do not imply a positive value in
+\eqref{eq:exposure-uniform-minimum}, even under identical support.  They
+also do not imply \eqref{eq:exposure-power-target}.
+\end{corollary}
+
+\begin{proof}
+The stated hypotheses permit an otherwise active row \(m_0\) for which
+\(\cI_{m_0}\cap\supp\nu_{m_0}^A=\varnothing\).  Under identical support,
+\(\alpha_{m_0}=1\), but \(\theta_{m_0}=0\).  Hence the exact minimum is
+zero and the exact maximum missing fraction is one.  This is an admissible
+model of the displayed interface, not an assertion that the literal
+upstream construction necessarily chooses such a row.
+\end{proof}
+
+The distinguished route is logically different.  It may survive a bad row
+when \(\zeta_{*,m}=0\) there, but the upper bound
+\(|\zeta_{*,m}|\ll1\) alone supplies no lower bound for
+\eqref{eq:exposure-distinguished-average}.  Likewise, defining
+\(\cI_X^{\max}\) from support gives the exact value \(\theta_m=1\), but
+does not prove \(\alpha_m>0\), parent-to-high activation, or any
+post-grouping lower bound.
+
+The lattice and factorization theorems are L0 finite-incidence statements.
+Their use with \eqref{eq:exposure-recovered-labels}, the literal
+\(\beta_w\), one fixed \(h_0\), and the raw native atomic norm is an L1
+physical-interface specialization.  The support no-go closes only an
+inference from opaque finite relations.  It neither lower-bounds actual
+missing mass nor estimates the signed parity kernel, and it has no L2
+prime-pair consequence.

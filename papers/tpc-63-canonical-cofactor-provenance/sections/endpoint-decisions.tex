@@ -1,0 +1,210 @@
+\section{Endpoint ledger and route decisions}
+\label{sec:tpc63-endpoint-decisions}
+
+The preceding results settle a provenance question and close one
+support-only certificate.  They do not supply a new favorable exponent.
+This section records exactly how those facts enter the inherited endpoint
+calculus.
+
+\subsection{What the single-band calculation certifies}
+
+The critical row and cofactor scales remain
+\begin{equation}
+ \theta_Q=\frac{267}{400},
+ \qquad
+ \theta_J=\frac{133}{400},
+ \qquad
+ \lambda_L=\frac{99979}{210000}.
+ \label{eq:tpc63-critical-scale-exponents}
+\end{equation}
+The balanced inherited band has lower cofactor threshold
+\(R_0=X^{\lambda_L+o(1)}\), whereas the critical high face has ceiling
+\(R_{\max}=X^{\theta_J+o(1)}\).  Since
+\begin{equation}
+ \lambda_L-\theta_J
+ =\frac{15077}{105000}>\frac1{400},
+ \label{eq:tpc63-balanced-band-gap}
+\end{equation}
+the balanced band, and in fact every band certified by the inherited
+freezing inequality, is eventually disjoint from the critical high face.
+Retuning \(R_0\) down to the top critical scale makes the first inherited
+freezing loss equal to the left side of
+\eqref{eq:tpc63-balanced-band-gap}, already beyond the entire endpoint
+budget.  Thus the old simultaneous band/freezing certificate is closed
+before exposure is estimated.
+
+If a different theorem permits such a retuned band, every full omitted
+dyadic block below its cofactor window still faces a second obstruction: the
+available support-cardinality/Brun--Titchmarsh harmonic argument cancels
+its best possible cofactor saving.  More precisely, if
+\(\eta_H\le\theta_J\) is its effective-exposure exponent, then
+\begin{equation}
+ \sigma_{\rm cof}^{\rm card}(\eta_H)
+ :=\eta_H-\theta_J\le0,
+ \qquad
+ \boxed{\sup_{\eta_H\le\theta_J}
+        \bigl(\sigma_{\rm cof}^{\rm card}(\eta_H)\bigr)_+=0.}
+ \label{eq:tpc63-cardinality-certified-saving}
+\end{equation}
+Here \(x_+:=\max\{x,0\}\).  Thus the certificate has no positive
+fixed-power saving.
+It cannot satisfy the strict sufficient condition
+\begin{equation}
+ \sigma_M>\lambda_{\rm rep}+\nu_M,
+ \qquad \lambda_{\rm rep},\nu_M\ge0.
+ \label{eq:tpc63-restricted-product-test}
+\end{equation}
+This kills the specified harmonic certificate on the full omitted blocks.
+Together with \eqref{eq:tpc63-balanced-band-gap}, it does
+not prove that the actual weighted missing mass has exponent zero, and it
+does not kill a weighted distribution estimate, a signed estimate, or the
+exact shorted-Gram route.
+
+By contrast, the labeled completion in
+\cref{thm:tpc63-exact-labelled-completion} has exact raw-energy constant
+one and only \(O(\log X)=X^{o(1)}\) external labels.  Its bookkeeping
+exponent is exactly zero.  The erasure map is a different gate.  If its
+actual range-restricted lower constant is
+\begin{equation}
+ \eta(\cE_a;S_X)
+ \ge X^{-\lambda_{\rm erase}+o(1)},
+ \label{eq:tpc63-erasure-loss-input}
+\end{equation}
+then \(\lambda_{\rm erase}\) is charged once inside the physical
+reassembly loss.  Neither \(L_X\) nor
+\(\lambda_{\rm erase}\) may be charged again under another name.
+
+\subsection{The strict complete ledger}
+
+Retaining the module names of TPC--61--TPC--62, every nonnegative
+fixed-power loss on the actual physical chain must occur once in
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ \Lambda_{\rm tot}:={}&
+ \lambda_{\rm sel}+\lambda_{\rm occ}
+ +\lambda_{\rm blk}+\lambda_{\rm term}
+ +\lambda_{\rm sing}\\
+ &+\lambda_H+\lambda_{\rm aff}
+ +\lambda_{\rm reasm}
+ +\lambda_{\rm bdry}+\lambda_{\rm tail}.
+ \end{aligned}}
+ \label{eq:tpc63-complete-endpoint-ledger}
+\end{equation}
+The endpoint gate is
+\begin{equation}
+ \boxed{\Lambda_{\rm tot}<\frac1{400}.}
+ \label{eq:tpc63-strict-endpoint-budget}
+\end{equation}
+Here \(\lambda_{\rm reasm}\) includes every genuine loss from labeled
+represented output to the declared physical output, including
+\(\lambda_{\rm erase}\) when erasure is a mandatory factor.  Exact
+provenance identities, set partitions, canonical relabelings, and the
+logarithmic block count cost zero.  The quantities \(\sigma_M\) and
+\(\nu_M\) determine whether a chosen mass--degree certificate makes
+reassembly perturbative; they are not extra summands in
+\eqref{eq:tpc63-complete-endpoint-ledger}.
+
+All estimates in the ledger must hold for the same fixed \(h_0\), the same
+literal carrier, the same raw atomic normalization, and the same uniform
+or distinguished coefficient scope.  Equality at \(1/400\) is rejected
+unless a separate leading-constant argument recovers a strict final
+inequality.  No such constant-level recovery is proved here.
+
+\subsection{Decision tree with exact kill rules}
+
+The next attack should follow the order below.
+\begin{enumerate}[label=\textbf{Gate \arabic*.},leftmargin=4.4em]
+ \item \emph{Pair faithfulness.}  Apply the pre-terminal, terminal, and
+       grouped rectangularization tests to the literal full incidence.  If
+       pair projection creates a terminal-active spurious cross, retain the
+       full incidence hypergraph; do not force a pair-only model.
+ \item \emph{Alignment first.}  Compute the parent-to-terminal
+       alignment mass \(W_A(m)\).  A row with
+       \(W_A(m)=0<W_H(m)\) kills a uniform activation theorem on every
+       coefficient class containing that row.  Enlarging the retained pair
+       relation cannot repair this zero.
+ \item \emph{Relation completion.}  On aligned mass, compute the exact
+       completion ratio.  Passing to \(\cI_X^{\max}\) removes only the
+       relation-induced defect; it does not improve the alignment ratio.
+ \item \emph{Labeled multiscale realization.}  Retain every nonempty
+       cofactor block as an orthogonal label.  This passes the raw-energy
+       gate exactly, but each newly included block still needs its own
+       literal coefficient and terminal compatibility theorem.
+ \item \emph{Erasure kernels.}  Identify the actual upstream range \(S_X\)
+       and compute \(S_X\cap\Ker\cE_a\).  A nonzero intersection kills the
+       full-coefficient lower bound for that declared physical
+       composition.  A kernel in the ambient labeled space but outside
+       \(S_X\) does not kill the composition.
+ \item \emph{Weighted exposure or exact shorting.}  The single-band
+       inherited freezing certificate is incompatible with the critical
+       face by \eqref{eq:tpc63-balanced-band-gap}.  After any independently
+       justified retuning, the cardinality proof is still closed by
+       \eqref{eq:tpc63-cardinality-certified-saving}.  Either prove a new
+       weighted terminal/largest-prime-factor estimate, or use the exact
+       signed or shorted-Gram route.  Do not rename label count as missing
+       mass saving.
+ \item \emph{Represented and downstream chain.}  Only after activation,
+       represented native transfer, and reassembly are quantified in one
+       scope should boundary and tail arrows be attached and
+       \eqref{eq:tpc63-strict-endpoint-budget} tested.
+\end{enumerate}
+
+The exact deaths and surviving pivots can be summarized as follows.
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.29\textwidth}
+                >{\raggedright\arraybackslash}p{0.31\textwidth}
+                >{\raggedright\arraybackslash}p{0.29\textwidth}}
+\toprule
+Observed event & What is killed & Honest pivot\\
+\midrule
+No pair-only terminal-faithful relation exists
+& Pair-rectangular completion of the literal incidence.
+& Retain the full incidence hypergraph.\\
+\addlinespace
+The inherited freezing inequality certifies the single band
+& Its intersection with the critical high face: the certified band is
+  eventually empty.
+& Prove a new band/freezing theorem or realize a genuinely multiscale
+  carrier.\\
+\addlinespace
+Retuning the old band to \(R_0\asymp J\)
+& The inherited sufficient freezing route: its first loss already exceeds
+  \(1/400\).
+& A new coefficient-sensitive freezing estimate is required.\\
+\addlinespace
+\(W_A(m_0)=0<W_H(m_0)\) on a required row
+& Uniform parent-to-terminal activation on a class containing that row.
+& A justified distinguished class may avoid the row; otherwise reopen the
+  terminal carrier.\\
+\addlinespace
+The canonical completion ratio is one but \(W_A/W_H\) is small
+& The assertion that relation completion alone repairs exposure.
+& Prove terminal alignment or a weighted alignment theorem.\\
+\addlinespace
+\(S_X\cap\Ker\cE_a\ne\{0\}\)
+& Uniform lower transfer through that actual erasure composition.
+& Change the physical representation, restrict to a justified
+  distinguished vector, or estimate a different exact shorted map.\\
+\addlinespace
+Best possible positive-part cardinality saving is zero
+& The support-cardinality/harmonic proof of the strict product test.
+& Weighted distribution, signed cancellation, or exact shorting.\\
+\addlinespace
+A necessary proved loss reaches \(1/400\)
+& The stated endpoint exponent route without constant-level recovery.
+& Change the architecture; do not absorb the loss into \(X^{o(1)}\).\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Forbidden substitutions}
+
+None of these gates is repaired by specializing \(h_0\) to \(2\),
+averaging over shifts, deleting a coefficient-dependent zero, normalizing
+raw atoms by fiber size, choosing phases after seeing the coefficient
+vector, or replacing the literal active support by its terminal image.
+Those operations change either the object or the quantifier.  Their
+conclusions cannot be entered into
+\eqref{eq:tpc63-complete-endpoint-ledger} for the present fixed carrier.

@@ -1,0 +1,352 @@
+\section{Canonical faithful completion and the hypergraph alternative}
+\label{sec:canonical-completion}
+
+The preceding calculus decides whether one proposed pair projection is
+faithful.  We now solve the inverse problem: given the literal full
+incidence, when does any pair-only rectangular representation exist, and
+what is its unique least relation?  The answer depends on whether one asks
+to preserve the parent form or only the terminal atomic field.
+
+\subsection{Two canonical active incidences}
+
+Continue with the finite data of \cref{sec:incidence-calculus}.  Because the
+structural support is fixed before \(z\), the following sets are also
+coefficient-independent.
+
+\begin{definition}[Pre-terminal and terminal active incidences]
+\label{def:completion-active-incidences}
+For a full incidence \(\cU\subseteq\Omega\), define
+\begin{align}
+ \cU^{\mathrm{pre},+}
+ &:=\{u\in\cU:c_u\ne0\},
+ \label{eq:completion-pre-active}\\
+ \cU_h^+
+ &:=\{u\in\cU:t_h(u)c_u\ne0\}.
+ \label{eq:completion-terminal-active}
+\end{align}
+\end{definition}
+
+The second set is contained in the first.  It may depend on the fixed
+physical shift and terminal support, but not on the row coefficient vector.
+It must not be substituted for \(\cU^{\mathrm{pre},+}\) in an upstream
+parent form: that substitution would make terminal activation true by
+definition.
+
+\begin{proposition}[Unique minimal coordinate supports]
+\label{prop:completion-minimal-coordinate-supports}
+Let \(V\subseteq\cU\).
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item The following are equivalent:
+       \begin{equation}
+        C_V=C_{\cU},
+        \qquad
+        P_V=P_{\cU}\text{ on }Z,
+        \qquad
+        \cU^{\mathrm{pre},+}\subseteq V.
+        \label{eq:completion-pre-minimal-equivalence}
+       \end{equation}
+       Consequently \(\cU^{\mathrm{pre},+}\) is the unique least
+       coordinate support preserving the pre-terminal synthesis and form.
+ \item The following are equivalent:
+       \begin{equation}
+        D_hC_V=D_hC_{\cU},
+        \qquad
+        A_{h,V}=A_{h,\cU}\text{ on }Z,
+        \qquad
+        \cU_h^+\subseteq V.
+        \label{eq:completion-terminal-minimal-equivalence}
+       \end{equation}
+       Consequently \(\cU_h^+\) is the unique least coordinate support
+       preserving the terminal atomic synthesis and form.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+If \(V\) contains the stated active set, every omitted coordinate has zero
+coefficient in the relevant synthesis.  Conversely, if
+\(u_0\in\cU^{\mathrm{pre},+}\setminus V\), then, at
+\(z=e_{m(u_0)}\),
+\[
+ P_{\cU}(z)-P_V(z)\ge |c_{u_0}|^2>0.
+\]
+The terminal statement follows identically with
+\(|t_h(u_0)c_{u_0}|^2\).  Thus every preserving support contains the
+corresponding active set.
+\end{proof}
+
+There need not be a unique least coordinate support preserving only the
+grouped operator.  Exact cancellations inside a grouped fiber can make
+different subsets synthesize the same output.  The terminal atomic support
+is canonical because it is defined before that cancellation.
+
+\subsection{Active rectangular closure}
+
+For \(I\subseteq\cM\times\cR\), define
+\begin{align}
+ \operatorname{PRect}(I)
+ &:=\{u\in\Rect(I):c_u\ne0\},
+ \label{eq:completion-PRect}\\
+ \TRect_h(I)
+ &:=\{u\in\Rect(I):t_h(u)c_u\ne0\}.
+ \label{eq:completion-TRect}
+\end{align}
+Both operations are monotone in \(I\).
+
+\begin{definition}[Atomic-faithful pair relation]
+\label{def:completion-atomic-faithful}
+A pair relation \(I\) is
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.7em]
+ \item \emph{pre-terminal faithful} for \(\cU\) if
+       \begin{equation}
+        \operatorname{PRect}(I)=\cU^{\mathrm{pre},+};
+        \label{eq:completion-pre-faithful}
+       \end{equation}
+ \item \emph{terminal-atomic faithful} for \((\cU,h)\) if
+       \begin{equation}
+        \TRect_h(I)=\cU_h^+.
+        \label{eq:completion-terminal-faithful}
+       \end{equation}
+\end{enumerate}
+\end{definition}
+
+These definitions demand both completeness and absence of active spurious
+crosses.  They are stronger than equality after grouping and are the
+appropriate notions for raw exposure forms.
+
+\begin{theorem}[Unique least terminal-faithful pair relation]
+\label{thm:completion-least-terminal-faithful-relation}
+Put
+\begin{equation}
+ I_h^{\min}:=\pr_{m,r}\cU_h^+.
+ \label{eq:completion-Ih-min}
+\end{equation}
+There exists a terminal-atomic faithful pair relation for \((\cU,h)\) if
+and only if
+\begin{equation}
+ \boxed{\TRect_h(I_h^{\min})=\cU_h^+.}
+ \label{eq:completion-terminal-rectangularity-criterion}
+\end{equation}
+When this condition holds, \(I_h^{\min}\) is the unique least faithful
+relation.  More precisely, \(I\) is terminal-atomic faithful if and only if
+\begin{equation}
+ I_h^{\min}\subseteq I
+ \quad\text{and}\quad
+ \TRect_h(I\setminus I_h^{\min})=\varnothing.
+ \label{eq:completion-all-terminal-faithful-relations}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Every \(u\in\cU_h^+\) has its pair in \(I_h^{\min}\), hence
+\begin{equation}
+ \cU_h^+\subseteq\TRect_h(I_h^{\min}).
+ \label{eq:completion-active-contained-in-min-closure}
+\end{equation}
+If a faithful relation \(I\) exists, it contains the pair of every
+\(u\in\cU_h^+\), so \(I_h^{\min}\subseteq I\).  Monotonicity gives
+\[
+ \cU_h^+
+ \subseteq\TRect_h(I_h^{\min})
+ \subseteq\TRect_h(I)
+ =\cU_h^+,
+\]
+which proves \eqref{eq:completion-terminal-rectangularity-criterion}.
+Conversely, that condition says exactly that \(I_h^{\min}\) is faithful,
+and every faithful relation contains it.
+
+Assume the criterion holds.  If \(I\) is faithful, any active atom created
+by a pair in \(I\setminus I_h^{\min}\) has a pair absent from the
+projection of \(\cU_h^+\), and so lies outside \(\cU_h^+\), a
+contradiction.  This proves necessity of the second condition in
+\eqref{eq:completion-all-terminal-faithful-relations}.  The two conditions
+are sufficient because the first retains all of
+\(\TRect_h(I_h^{\min})=\cU_h^+\), while the second adds no active atom.
+\end{proof}
+
+\begin{corollary}[Unique least pre-terminal faithful relation]
+\label{cor:completion-least-preterminal-faithful-relation}
+Put
+\begin{equation}
+ I_{\mathrm{pre}}^{\min}
+ :=\pr_{m,r}\cU^{\mathrm{pre},+}.
+ \label{eq:completion-Ipre-min}
+\end{equation}
+A pre-terminal faithful pair relation exists if and only if
+\begin{equation}
+ \boxed{
+ \operatorname{PRect}(I_{\mathrm{pre}}^{\min})
+ =\cU^{\mathrm{pre},+}.}
+ \label{eq:completion-pre-rectangularity-criterion}
+\end{equation}
+When it exists, \(I_{\mathrm{pre}}^{\min}\) is the unique least one.
+\end{corollary}
+
+\begin{proof}
+Repeat the proof of
+\cref{thm:completion-least-terminal-faithful-relation}, replacing
+\(\TRect_h\) by \(\operatorname{PRect}\) and \(\cU_h^+\) by
+\(\cU^{\mathrm{pre},+}\).
+\end{proof}
+
+Condition \eqref{eq:completion-pre-rectangularity-criterion} is stronger
+than \eqref{eq:completion-terminal-rectangularity-criterion}.  A crossed
+coordinate can carry nonzero parent energy and still be terminal-null.
+Thus exact terminal factorization through a pair relation does not justify
+using the rectangular lift's parent form as the upstream parent form.
+
+\subsection{Pair projection is not full provenance}
+
+\begin{example}[The same pair projection supports different incidences]
+\label{ex:completion-same-pair-different-incidence}
+Take one row \(m\), two cofactors \(r_1,r_2\), and two base labels
+\(b_1,b_2\in\cJ\times\Gamma\).  In the resulting four-point rectangle let
+\begin{align}
+ \cU_{\mathrm{diag}}
+ &:=\{(m,r_1,b_1),(m,r_2,b_2)\},
+ \label{eq:completion-diagonal-incidence}\\
+ \cU_{\mathrm{cross}}
+ &:=\{(m,r_1,b_2),(m,r_2,b_1)\},
+ \label{eq:completion-cross-incidence}\\
+ \cU_{\mathrm{full}}
+ &:=\{m\}\times\{r_1,r_2\}\times\{b_1,b_2\}.
+ \label{eq:completion-full-incidence}
+\end{align}
+All three pair projections equal
+\(\{(m,r_1),(m,r_2)\}\).  Let every point of the ambient rectangle be
+terminal-active and let the output key resolve individual atoms.  The
+projected relation is faithful for \(\cU_{\mathrm{full}}\), but no pair
+relation is terminal-atomic faithful for either
+\(\cU_{\mathrm{diag}}\) or \(\cU_{\mathrm{cross}}\): retaining both actual
+pairs necessarily creates the other two active crosses.
+
+The atom-resolved operators are different even if all coefficients have
+modulus one.  To make the scalar raw forms differ as well, assign terminal
+coefficient modulus one to the diagonal points and modulus two to the
+cross points.  At \(z=e_m\), the diagonal and cross forms are then \(2\)
+and \(8\), while their pair projections remain equal.
+\end{example}
+
+\begin{example}[Grouped equality can conceal a nonfaithful rectangle]
+\label{ex:completion-grouped-concealment}
+Suppose
+\(\Rect(I_h^{\min})\setminus\cU_h^+\) contains two active crosses with the
+same row and grouped output key, having terminal coefficients \(1\) and
+\(-1\).  The rectangular lift is not terminal-atomic faithful, yet the
+spurious columns cancel in the grouped operator.  Hence grouped equality
+does not certify an exposure identity.  Under
+\(q=(\gamma,d_mr,j)\), this cancellation is excluded by
+\cref{cor:incidence-physical-key-singleton}.
+\end{example}
+
+These are finite-incidence countermodels, not asserted arithmetic
+counterexamples inside the actual TPC carrier.  Their exact conclusion is
+that hypotheses recording only the pair projection cannot reconstruct the
+full incidence.
+
+\subsection{When the full incidence hypergraph is mandatory}
+
+\begin{theorem}[Sharp hypergraph-necessity criterion]
+\label{thm:completion-hypergraph-necessity}
+If
+\begin{equation}
+ \TRect_h(I_h^{\min})\setminus\cU_h^+\ne\varnothing,
+ \label{eq:completion-active-spurious-obstruction}
+\end{equation}
+then no pair relation is simultaneously complete for every atom of
+\(\cU_h^+\) and free of terminal-active spurious coordinates.  The full
+incidence hypergraph
+\[
+ \cU_h^+\subseteq\cM\times\cR\times\cJ\times\Gamma
+\]
+is then the unique least terminal-atomic coordinate subcarrier among
+subsets of the literal carrier \(\cU\).
+
+If instead the terminal criterion
+\eqref{eq:completion-terminal-rectangularity-criterion} holds but the
+pre-terminal criterion
+\eqref{eq:completion-pre-rectangularity-criterion} fails, a pair relation
+can represent the terminal atomic field exactly but does not preserve the
+parent raw form.  A proof chain using that parent must retain the full
+pre-terminal incidence or insert a separate proved parent comparison.
+\end{theorem}
+
+\begin{proof}
+The first assertion follows from
+\cref{thm:completion-least-terminal-faithful-relation}; unique coordinate
+minimality follows from
+\cref{prop:completion-minimal-coordinate-supports}.  The second assertion
+is the simultaneous application of
+\cref{thm:completion-least-terminal-faithful-relation,%
+cor:completion-least-preterminal-faithful-relation}, together with the
+positive discrepancy \eqref{eq:incidence-P-positive-difference}.
+\end{proof}
+
+The term \emph{hypergraph} records the four-label incidence; it introduces
+no new averaging device.  Keeping it merely refuses an identification
+which the pair projection cannot reconstruct.
+
+\subsection{The noncircular fixed-shift audit}
+
+Let \(\cU_X^{\mathrm{lit}}\) be obtained by copying every pre-terminal
+coordinate of the upstream coefficientwise field, including its row,
+cofactor, orbit, and opposite-row support tests, and put
+\begin{equation}
+ I_X^{\mathrm{lit}}:=\pr_{m,r}\cU_X^{\mathrm{lit}}.
+ \label{eq:completion-literal-pair-projection}
+\end{equation}
+This projection alone does not prove that a later rectangular space is
+faithful.
+
+\begin{proposition}[Noncircular provenance criterion]
+\label{prop:completion-noncircular-provenance-criterion}
+Identification of a later retained relation \(\cI_X\) with the literal
+pair projection is valid at the following respective levels only after
+the corresponding statements have been proved:
+\begin{align}
+ \cI_X=I_X^{\mathrm{lit}}
+ \quad\text{and}\quad
+ \operatorname{PRect}(I_X^{\mathrm{lit}})
+   &=(\cU_X^{\mathrm{lit}})^{\mathrm{pre},+},
+ \label{eq:completion-required-pre-provenance}\\
+ \cI_X=I_{X,h}^{\min}
+ \quad\text{and}\quad
+ \TRect_h(I_{X,h}^{\min})
+   &=(\cU_X^{\mathrm{lit}})_h^+,
+ \label{eq:completion-required-terminal-provenance}
+\end{align}
+where
+\[
+ I_{X,h}^{\min}:=\pr_{m,r}(\cU_X^{\mathrm{lit}})_h^+.
+\]
+The first line proves pre-terminal and hence terminal fidelity.  The second
+proves terminal-atomic fidelity only.  Finiteness of \(\cI_X\), equality
+of cardinalities, or agreement of dyadic cofactor ranges does not imply
+either line.
+\end{proposition}
+
+\begin{proof}
+Sufficiency and the exact logical strength of the two lines are
+\cref{cor:completion-least-preterminal-faithful-relation,%
+thm:completion-least-terminal-faithful-relation}.  Conversely, a missing
+actual pair deletes a nonzero coordinate, while failed rectangularity adds
+an active spurious cross.  Cardinality and range data record neither event,
+as \cref{ex:completion-same-pair-different-incidence} demonstrates.
+\end{proof}
+
+\begin{remark}[No inherited identification is assumed]
+\label{rem:completion-no-inherited-identification}
+Neither \eqref{eq:completion-required-pre-provenance} nor
+\eqref{eq:completion-required-terminal-provenance} is inferred from the
+phrase \emph{supported pairs}.  In the physical application one must
+return to the TPC--47 coefficient field, write
+\(\cU_X^{\mathrm{lit}}\) by a literal set-builder formula, and verify the
+chosen equality atom by atom.  If that verification fails, the correct
+repair is the full-incidence carrier, not a redefinition of \(\cI_X\)
+chosen to make exposure favorable.
+\end{remark}
+
+On the very-high face \(p>\sqrt{N_+}\), largest-prime factorization makes
+the terminal cofactor unique for fixed \((m,j,\gamma)\).  This helps check
+\eqref{eq:completion-required-terminal-provenance}, but does not prove the
+required saturation: one must still show that every base label crossed
+with a retained pair is present or terminal-null.

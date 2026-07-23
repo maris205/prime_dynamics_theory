@@ -1,0 +1,270 @@
+\section{Labeled multiscale completion and the erasure gate}
+\label{sec:tpc63-labeled-completion}
+
+The single-band obstruction does not force one to sum different cofactor
+scales coherently.  There is a canonical finite construction which first
+retains the scale as an orthogonal label.  This construction is exact at
+the raw-energy level.  It is important, however, not to identify it with
+the later physical output, where that label is absent.
+
+\subsection{The canonical dyadic direct sum}
+
+Let \(\Omega_X\) be the coefficient-independent finite literal incidence
+which is being completed.  Thus an atom \(\omega\in\Omega_X\) carries, in
+particular, its recovered cofactor \(r(\omega)\), and its pair projection
+is the declared canonical relation (in the maximal eligible application,
+this is \(\cI_X^{\max}\)).  No coefficient-dependent zero is removed from
+\(\Omega_X\).
+
+For \(k\in\Z\), set
+\begin{equation}
+ B_k=[2^k,2^{k+1})\cap\N,
+ \qquad
+ \Omega_{X,k}:=\{\omega\in\Omega_X:r(\omega)\in B_k\},
+ \label{eq:tpc63-dyadic-atoms}
+\end{equation}
+and retain only the nonempty labels
+\begin{equation}
+ K_X^{\rm dyad}:=\{k:\Omega_{X,k}\ne\varnothing\},
+ \qquad L_X:=|K_X^{\rm dyad}|.
+ \label{eq:tpc63-nonempty-block-labels}
+\end{equation}
+If \(1\le r(\omega)\le X^{C+o(1)}\) for one fixed \(C\), as in the
+inherited polynomial cofactor ranges, then
+\begin{equation}
+ L_X\le 2+\log_2\!\left(
+       \frac{\max_{\omega\in\Omega_X}r(\omega)}
+            {\min_{\omega\in\Omega_X}r(\omega)}
+                         \right)
+ =O(\log X)=X^{o(1)}.
+ \label{eq:tpc63-logarithmic-label-count}
+\end{equation}
+Empty \(\Omega_X\) is harmless and may be treated separately; below we
+assume it is nonempty.
+
+Define
+\begin{equation}
+ \cH_X^{\rm raw}:=\ell^2(\Omega_X),
+ \qquad
+ \cH_{X,k}:=\ell^2(\Omega_{X,k}),
+ \qquad
+ \cH_X^{\rm lab}:=
+       \bigoplus_{k\in K_X^{\rm dyad}}^{\perp}\cH_{X,k},
+ \label{eq:tpc63-labelled-raw-spaces}
+\end{equation}
+all with raw counting-measure atomic norms.  The restriction map is
+\begin{equation}
+ \mathsf J_X:\cH_X^{\rm raw}\longrightarrow\cH_X^{\rm lab},
+ \qquad
+ \mathsf J_Xx=(x|_{\Omega_{X,k}})_{k\in K_X^{\rm dyad}}.
+ \label{eq:tpc63-canonical-block-analysis}
+\end{equation}
+
+\begin{theorem}[Exact labeled multiscale completion]
+\label{thm:tpc63-exact-labelled-completion}
+The map \(\mathsf J_X\) is unitary and, for every raw atom vector \(x\),
+\begin{equation}
+ \boxed{
+ \|\mathsf J_Xx\|_{\cH_X^{\rm lab}}^2
+ =\sum_{k\in K_X^{\rm dyad}}
+      \|x|_{\Omega_{X,k}}\|_2^2
+ =\|x\|_{\cH_X^{\rm raw}}^2.}
+ \label{eq:tpc63-exact-block-energy}
+\end{equation}
+At the pair level, writing
+\(
+ \cI_{X,k}^{\max}
+ :=\{(m,r)\in\cI_X^{\max}:r\in B_k\}
+\), one likewise has the disjoint identity
+\begin{equation}
+ \cI_X^{\max}
+ =\coprod_{k\in K_X^{\rm dyad}}\cI_{X,k}^{\max}.
+ \label{eq:tpc63-pair-block-completion}
+\end{equation}
+Consequently the passage to labeled dyadic blocks has exactly zero raw
+energy loss and zero fixed-power bookkeeping cost.
+\end{theorem}
+
+\begin{proof}
+The sets in \eqref{eq:tpc63-dyadic-atoms} are pairwise disjoint and their
+union is \(\Omega_X\).  Parseval's identity for this coordinate partition
+gives \eqref{eq:tpc63-exact-block-energy}; the inverse to \(\mathsf J_X\) simply
+forgets the external block notation while retaining every atom.  The pair
+identity follows from the same disjoint partition by the recovered
+cofactor.  Finally, \eqref{eq:tpc63-logarithmic-label-count} implies
+\(L_X^A=X^{o(1)}\) for every fixed \(A\), while the exact Hilbert identity
+itself pays no factor at all.
+\end{proof}
+
+The theorem neither creates an arithmetically active atom nor asserts that
+every block has a physical terminal realization.  It says only that once a
+literal completed incidence has been declared, separating its cofactor
+scales loses no raw mass.  In particular, the union in
+\eqref{eq:tpc63-pair-block-completion} must not be substituted for a
+coefficientwise physical identity that has been proved only on one of its
+blocks.
+
+\subsection{Exact analysis of label erasure}
+
+We now isolate the additional map hidden by the phrase ``forget the
+labels.''  Let \(\Xi_X\) be a finite output-coordinate set, let
+\(\pi:\Omega_X\to\Xi_X\) be the declared grouping map, and attach a
+nonzero complex weight \(a_\omega\) to every atom.  Define
+\begin{equation}
+ \cE_a:\ell^2(\Omega_X)\longrightarrow\ell^2(\Xi_X),
+ \qquad
+ (\cE_ax)(\xi)
+ :=\sum_{\omega\in F_\xi}a_\omega x(\omega),
+ \qquad
+ F_\xi:=\pi^{-1}(\{\xi\}).
+ \label{eq:tpc63-weighted-erasure-map}
+\end{equation}
+Coordinates with empty fiber carry no output information; henceforth they
+are deleted, so every \(F_\xi\) is nonempty.  Put
+\begin{equation}
+ s_\xi:=\sum_{\omega\in F_\xi}|a_\omega|^2.
+ \label{eq:tpc63-fiber-square-mass}
+\end{equation}
+
+\begin{theorem}[Fiber spectrum, norm, and kernel tests]
+\label{thm:tpc63-erasure-fiber-tests}
+For the grouping map in \eqref{eq:tpc63-weighted-erasure-map},
+\begin{align}
+ \cE_a\cE_a^*
+ &=\operatorname{diag}(s_\xi)_{\xi\in\Xi_X},
+ \label{eq:tpc63-erasure-co-Gram}\\
+ \|\cE_a\|^2
+ &=\max_{\xi:F_\xi\ne\varnothing}s_\xi,
+ \label{eq:tpc63-erasure-exact-norm}\\
+ \Ker\cE_a
+ &=\left\{x:
+       \sum_{\omega\in F_\xi}a_\omega x(\omega)=0
+       \text{ for every }\xi\right\},
+ \label{eq:tpc63-erasure-exact-kernel}\\
+ \operatorname{rank}\cE_a
+ &=\#\{\xi:F_\xi\ne\varnothing\},
+ \qquad
+ \dim\Ker\cE_a
+ =\sum_\xi(|F_\xi|-1).
+ \label{eq:tpc63-erasure-rank-nullity}
+\end{align}
+The nonzero squared singular values are exactly the numbers \(s_\xi\).
+In particular, the full-domain lower constant
+\begin{equation}
+ \eta_a:=\inf_{x\ne0}
+            \frac{\|\cE_ax\|_2^2}{\|x\|_2^2}
+ \label{eq:tpc63-erasure-full-lower-constant}
+\end{equation}
+is positive if and only if every nonempty fiber is a singleton.  In that
+case
+\begin{equation}
+ \eta_a=\min_{\omega\in\Omega_X}|a_\omega|^2;
+ \label{eq:tpc63-erasure-singleton-lower}
+\end{equation}
+if some fiber contains at least two atoms, then \(\eta_a=0\).
+\end{theorem}
+
+\begin{proof}
+The adjoint is
+\((\cE_a^*y)(\omega)=\overline{a_\omega}y(\pi(\omega))\).
+Hence \((\cE_a\cE_a^*y)(\xi)=s_\xi y(\xi)\), proving
+\eqref{eq:tpc63-erasure-co-Gram} and
+\eqref{eq:tpc63-erasure-exact-norm}.  The displayed fiber equations give
+the kernel.  A nonempty fiber contributes one to the rank and
+\(|F_\xi|-1\) to the nullity, proving
+\eqref{eq:tpc63-erasure-rank-nullity}.  The positive spectrum of
+\(\cE_a^*\cE_a\) equals that of \(\cE_a\cE_a^*\).  If a fiber contains
+two atoms, a nonzero weighted difference supported on those atoms lies in
+the kernel.  If every fiber is a singleton, the Gram is diagonal with
+entries \(|a_\omega|^2\), which proves
+\eqref{eq:tpc63-erasure-singleton-lower}.
+\end{proof}
+
+For the literal unweighted erasure \(a_\omega=1\), the exact formulas
+specialize to
+\begin{equation}
+ \|\cE_1\|^2=\max_\xi|F_\xi|,
+ \qquad
+ \Ker\cE_1
+ =\left\{x:\sum_{\omega\in F_\xi}x(\omega)=0
+                   \text{ for every }\xi\right\}.
+ \label{eq:tpc63-unweighted-erasure-formulas}
+\end{equation}
+If the only discarded coordinate is the dyadic block label and each block
+contributes at most one atom to a given output coordinate, then
+\begin{equation}
+ \|\cE_1\|^2\le L_X=O(\log X)=X^{o(1)}.
+ \label{eq:tpc63-pure-block-erasure-upper}
+\end{equation}
+This is an upper norm, not a lower reassembly estimate.  Two blocks which
+land on the same physical coordinate already give the kernel vector
+\((1,-1)\) on that fiber.
+
+Normalizing each fiber by \(|F_\xi|^{-1/2}\) would make the nonzero
+singular values equal to one, but it would neither remove the fiber kernel
+nor preserve the literal raw atomic normalization.  Such a normalization
+therefore cannot be silently inserted into the physical packet.
+
+\subsection{The relevant test is on the actual upstream range}
+
+The full labeled space may be larger than the image of the actual
+coefficient map.  Let
+\(\mathsf A_X^{\rm lab}:V_X^{\rm coef}\to\cH_X^{\rm lab}\) be any declared
+upstream analysis map and put \(S_X=\Ran\mathsf A_X^{\rm lab}\).  Assume
+\(S_X\ne\{0\}\), and define
+\begin{equation}
+ \eta(\cE_a;S_X)
+ :=\inf_{0\ne v\in S_X}
+       \frac{\|\cE_av\|_2^2}{\|v\|_2^2}.
+ \label{eq:tpc63-range-erasure-constant}
+\end{equation}
+
+\begin{proposition}[Exact range and composition criteria]
+\label{prop:tpc63-range-erasure-criterion}
+In finite dimension,
+\begin{equation}
+ \eta(\cE_a;S_X)>0
+ \quad\Longleftrightarrow\quad
+ S_X\cap\Ker\cE_a=\{0\},
+ \label{eq:tpc63-range-kernel-iff}
+\end{equation}
+and \(\eta(\cE_a;S_X)\) is the least eigenvalue of the compression of
+\(\cE_a^*\cE_a\) to \(S_X\).  If
+\begin{equation}
+ \|\mathsf A_X^{\rm lab}z\|_2^2\ge\alpha_X\|z\|_2^2,
+ \qquad
+ \eta(\cE_a;S_X)\ge\eta_X,
+ \label{eq:tpc63-two-composable-lowers}
+\end{equation}
+then
+\begin{equation}
+ \|\cE_a\mathsf A_X^{\rm lab}z\|_2^2
+ \ge\eta_X\alpha_X\|z\|_2^2.
+ \label{eq:tpc63-composed-erasure-lower}
+\end{equation}
+Conversely, a nonzero \(z\) with
+\(\mathsf A_X^{\rm lab}z\in\Ker\cE_a\) kills every full-coefficient lower bound for this
+particular composition.
+\end{proposition}
+
+\begin{proof}
+The unit sphere of \(S_X\) is compact.  The continuous function
+\(v\mapsto\|\cE_av\|^2\) has positive minimum exactly when it has no zero
+there, which proves \eqref{eq:tpc63-range-kernel-iff}.  Rayleigh--Ritz gives
+the compressed-Gram statement.  Applying the two inequalities in
+\eqref{eq:tpc63-two-composable-lowers} successively proves
+\eqref{eq:tpc63-composed-erasure-lower}; the final assertion is immediate.
+\end{proof}
+
+Thus the honest implication is
+\begin{equation}
+ \boxed{
+ \text{exact labeled raw completion}
+ \quad\not\Longrightarrow\quad
+ \text{physical grouped lower bound}.}
+ \label{eq:tpc63-labelled-not-physical}
+\end{equation}
+One must first identify the literal grouping map and the actual upstream
+range, apply the kernel test, and only then estimate the compressed Gram.
+The logarithmic number of labels controls bookkeeping and certain upper
+norms; it does not control coherent cancellation after grouping.

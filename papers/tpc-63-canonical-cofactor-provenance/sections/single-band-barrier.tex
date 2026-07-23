@@ -1,0 +1,332 @@
+\section{The single-band completion barrier}
+\label{sec:single-band-barrier}
+
+We now compare the literal global prime band inherited by TPC--47 with the
+critical very-high face of TPC--59.  The comparison is made at the same
+fixed shift and on the same target interval.  It has two parts.  First, an
+exact constant-factor sandwich identifies which cofactors one band can
+see.  Second, the TPC--61 harmonic certificate is evaluated on every full
+dyadic block that the band omits.  Neither part estimates the actual mass
+of those blocks.
+
+\subsection{An exact constant-factor window}
+
+Let every target satisfy
+\begin{equation}
+ N_-\le n=mj+h_0=pr\le N_+,
+ \qquad
+ \kappa_N:=\frac{N_+}{N_-}.
+ \label{eq:band-target-endpoints}
+\end{equation}
+The fixed support ratios give \(1\le\kappa_N\ll1\).  For a parameter
+\(R_0\) in the admissible TPC--45 range, the inherited global prime band is
+\begin{equation}
+ \cP_{R_0}^{\sharp}
+ :=\left\{p\in\Pp:
+      \sqrt{N_+}<p\le\frac{N_-}{R_0}\right\}.
+ \label{eq:band-single-prime-band}
+\end{equation}
+Let \(y\) be very-high admissible.  In particular,
+\(y>\sqrt{N_+}\), and put
+\begin{equation}
+ R_{\rm safe}(y):=\frac{N_-}{2y},
+ \qquad
+ R_{\max}(y):=\frac{N_+}{y}
+ =2\kappa_NR_{\rm safe}(y).
+ \label{eq:band-safe-max}
+\end{equation}
+These are the exact TPC--59 safe and maximal cofactor scales
+\citep{WangTPC59}.
+
+Define the portion of the native high carrier selected solely by the prime
+band condition:
+\begin{equation}
+ \cW_{R_0}^{\rm band}(y)
+ :=\{w\in\cW_H(y):p(w)\in\cP_{R_0}^{\sharp}\}.
+ \label{eq:band-high-intersection}
+\end{equation}
+All other row, orbit, opposite-row, mask, profile, and terminal labels are
+those already present in \(\cW_H(y)\); no favorable support is added.
+
+\begin{theorem}[Exact single-band/high-face sandwich]
+\label{thm:band-exact-window-sandwich}
+For every very-high admissible \(y\),
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ \{w\in\cW_H(y):\ &\kappa_NR_0\le r(w)<R_{\max}(y)\}
+ \\
+ &\subseteq \cW_{R_0}^{\rm band}(y)
+ \\
+ &\subseteq
+ \{w\in\cW_H(y):R_0\le r(w)<R_{\max}(y)\}.
+ \end{aligned}}
+ \label{eq:band-exact-window-sandwich}
+\end{equation}
+Thus the only uncertainty created by the target-width constants lies in
+the fixed-ratio transition window
+\begin{equation}
+ R_0\le r<\kappa_NR_0.
+ \label{eq:band-transition-window}
+\end{equation}
+In particular, every high atom with \(r<R_0\) is absent from the single
+band, while every high atom with \(r\ge\kappa_NR_0\) is present in it.
+\end{theorem}
+
+\begin{proof}
+If \(w\in\cW_{R_0}^{\rm band}(y)\), then
+\(p(w)\le N_-/R_0\) and \(n(w)\ge N_-\), so
+\begin{equation}
+ r(w)=\frac{n(w)}{p(w)}\ge R_0.
+ \label{eq:band-right-inclusion-lower}
+\end{equation}
+Also \(p(w)>y\) and \(n(w)\le N_+\), hence
+\begin{equation}
+ r(w)<\frac{N_+}{y}=R_{\max}(y).
+ \label{eq:band-right-inclusion-upper}
+\end{equation}
+This proves the right inclusion.
+
+Conversely, let \(w\in\cW_H(y)\) and suppose
+\(r(w)\ge\kappa_NR_0\).  Then
+\begin{equation}
+ p(w)=\frac{n(w)}{r(w)}
+ \le\frac{N_+}{\kappa_NR_0}
+ =\frac{N_-}{R_0}.
+ \label{eq:band-left-inclusion-upper}
+\end{equation}
+The very-high inequality \(p(w)>y>\sqrt{N_+}\) supplies the lower endpoint
+of \eqref{eq:band-single-prime-band}.  Thus \(p(w)\) lies in the band.
+The upper bound \(r(w)<R_{\max}(y)\) is automatic on the high face.
+\end{proof}
+
+\begin{corollary}[Empty, top-window, and multiscale regimes]
+\label{cor:band-three-regimes}
+The sandwich has the following exact consequences.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item If \(R_0\ge R_{\max}(y)\), then
+       \(\cW_{R_0}^{\rm band}(y)=\varnothing\).
+ \item If \(R_0\asymp R_{\max}(y)\), the intersection is confined to
+       \(O(1)\) top dyadic cofactor blocks.
+ \item If \(R_0=X^{\theta_0+o(1)}\) and
+       \(R_{\max}(y)=X^{\theta_J+o(1)}\) with
+       \(0\le\theta_0<\theta_J\), then the band may contain high blocks
+       of exponent \(\theta\ge\theta_0\), but it omits every full block
+       with \(2R<R_0\).
+\end{enumerate}
+These are support statements.  In cases \textup{(ii)} and \textup{(iii)},
+the permitted blocks may still carry zero actual atomic mass.
+\end{corollary}
+
+\subsection{The endpoint mismatch with the inherited freezing certificate}
+
+At the critical cutoff of TPC--59,
+\begin{equation}
+ y=C_{\rm vh}Q,
+ \qquad
+ R_{\max}(y)\asymp J
+ =X^{\theta_J+o(1)},
+ \qquad
+ \theta_J:=\frac{133}{400}.
+ \label{eq:band-critical-ceiling}
+\end{equation}
+The balanced global band of TPC--45 has
+\begin{equation}
+ R_0=\ell_+
+ =X^{\lambda_L+o(1)},
+ \qquad
+ \lambda_L:=\frac{99979}{210000},
+ \label{eq:band-balanced-R0}
+\end{equation}
+and therefore
+\begin{equation}
+ \lambda_L-\theta_J
+ =\frac{15077}{105000}>0.
+ \label{eq:band-balanced-critical-gap}
+\end{equation}
+
+\begin{corollary}[The balanced band misses the critical high face]
+\label{cor:band-balanced-empty}
+For all sufficiently large \(X\), the balanced band satisfies
+\begin{equation}
+ R_0>R_{\max}(C_{\rm vh}Q),
+ \qquad
+ \boxed{\cW_{R_0}^{\rm band}(C_{\rm vh}Q)=\varnothing.}
+ \label{eq:band-balanced-empty}
+\end{equation}
+\end{corollary}
+
+This is not peculiar to the exact balanced choice.  Write
+\(R_0=X^{\theta_0+o(1)}\).  The sufficient TPC--45 band/cutoff freezing
+condition has the form
+\begin{equation}
+ (\lambda_L-\theta_0)_+
+ +\lambda_0\left(1-\frac1A\right)<\frac1{400},
+ \qquad A>1,
+ \label{eq:band-inherited-freezing-condition}
+\end{equation}
+where the second term is nonnegative \citep{WangTPC45}.  Hence every band
+certified by this inequality obeys
+\begin{equation}
+ \theta_0>\lambda_L-\frac1{400}
+ =\theta_J+\frac{29629}{210000}.
+ \label{eq:band-certified-exponent-gap}
+\end{equation}
+
+\begin{theorem}[Single-band endpoint incompatibility]
+\label{thm:band-endpoint-incompatibility}
+At \(y=C_{\rm vh}Q\), every single band certified by
+\eqref{eq:band-inherited-freezing-condition} is eventually disjoint from
+the critical very-high face.  Conversely, retuning
+\(R_0=X^{\theta_J+o(1)}\) to meet the top critical cofactor window incurs
+the coefficient-blind band exponent
+\begin{equation}
+ \lambda_L-\theta_J
+ =\frac{15077}{105000}
+ >\frac1{400},
+ \label{eq:band-retuned-cost}
+\end{equation}
+so the inherited sufficient freezing certificate no longer closes.
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:band-certified-exponent-gap} gives
+\(R_0/R_{\max}(y)=X^{c+o(1)}\) for a fixed \(c>0\).  Apply
+\cref{cor:band-three-regimes}\textup{(i)}.  For the retuned value,
+substitution of \(\theta_0=\theta_J\) in the first term of
+\eqref{eq:band-inherited-freezing-condition} gives
+\eqref{eq:band-retuned-cost}; adding the nonnegative cutoff term cannot
+improve the inequality.
+\end{proof}
+
+The theorem closes one simultaneous use of the old support-only freezing
+certificate and the critical high face.  It does not say that a different
+coefficient-specific freezing theorem is impossible.
+
+\subsection{Full omitted blocks and the harmonic zero-saving theorem}
+
+Suppose now that the band is retuned so that
+\(R_0<R_{\max}(y)\).  The exact sandwich still forces every cofactor
+\(r<R_0\) to be absent from the band-generated relation.  Let
+\([R,2R)\) be a full dyadic block satisfying
+\begin{equation}
+ 1\le R<2R\le R_0,
+ \qquad
+ R\le R_{\max}(y).
+ \label{eq:band-full-omitted-block}
+\end{equation}
+For a row \(m\), call the block \emph{fully omitted} when
+\begin{equation}
+ [R,2R)\cap\N\subseteq E_m
+ :=\{r\le R_{\max}(y):r\notin\cI_m\}.
+ \label{eq:band-full-omission}
+\end{equation}
+The TPC--61 harmonic capacity is
+\begin{equation}
+ \mathfrak h_m(E_m)
+ :=\frac m{\varphi(m)}
+   \sum_{r\in E_m}
+   \left(1+\frac{J/r}{\log(2+J/r)}\right),
+ \label{eq:band-harmonic-capacity}
+\end{equation}
+and its effective high exposure is
+\begin{equation}
+ H_m^{\rm eff}=\frac{W_H(m)}{U_m},
+ \qquad
+ 0<H_m^{\rm eff}\le\#\cJ_X\ll J.
+ \label{eq:band-effective-exposure-upper}
+\end{equation}
+
+\begin{theorem}[Harmonic zero-saving on a full omitted block]
+\label{thm:band-harmonic-zero-saving}
+Assume \eqref{eq:band-full-omission} on an active row.  Then
+\begin{equation}
+ \boxed{
+ \mathfrak h_m(E_m)
+ \gg
+ R+\frac{J}{\log(2+J/R)}.}
+ \label{eq:band-harmonic-lower}
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{
+ \frac{\mathfrak h_m(E_m)}{H_m^{\rm eff}}
+ \gg
+ \frac RJ+\frac1{\log(2+J/R)}.}
+ \label{eq:band-harmonic-ratio-lower}
+\end{equation}
+If
+\begin{equation}
+ J=X^{\theta_J+o(1)},
+ \qquad
+ R=X^{\theta+o(1)},
+ \qquad 0\le\theta\le\theta_J,
+ \label{eq:band-block-exponents}
+\end{equation}
+then the right side of \eqref{eq:band-harmonic-ratio-lower} is
+\(X^{-o(1)}\).  Therefore the TPC--61 harmonic sufficient condition cannot
+certify
+\begin{equation}
+ \frac{\mathfrak h_m(E_m)}{H_m^{\rm eff}}
+ \le X^{-\sigma+o(1)}
+ \label{eq:band-unavailable-harmonic-saving}
+\end{equation}
+for any fixed \(\sigma>0\).
+\end{theorem}
+
+\begin{proof}
+The factor \(m/\varphi(m)\) is at least one.  There are \(\gg R\)
+integers in \([R,2R)\).  Each contributes one to
+\eqref{eq:band-harmonic-capacity}.  Moreover, for
+\(R\le r<2R\),
+\begin{equation}
+ \frac{J/r}{\log(2+J/r)}
+ \ge
+ \frac{J/(2R)}{\log(2+J/R)}.
+ \label{eq:band-harmonic-term-lower}
+\end{equation}
+Summing over the block proves \eqref{eq:band-harmonic-lower}.  Divide by
+\(H_m^{\rm eff}\ll J\) to obtain
+\eqref{eq:band-harmonic-ratio-lower}.  Under
+\eqref{eq:band-block-exponents}, either \(R/J=X^{-o(1)}\), or
+\(\log(2+J/R)=O(\log X)\); in both cases the displayed lower bound is
+\(X^{-o(1)}\), which is larger than \(X^{-\sigma+o(1)}\) for every fixed
+positive \(\sigma\).
+\end{proof}
+
+The same conclusion appears in the exponent law of TPC--61.  A full block
+has cardinality exponent \(e(\theta)=\theta\), while necessarily
+\(H_m^{\rm eff}\le X^{\theta_J+o(1)}\).  Even at the optimal balanced
+exposure exponent \(\eta_H=\theta_J\), its certified saving is
+\begin{equation}
+ \sigma_{\rm cof}(\theta)
+ =\eta_H-e(\theta)-(\theta_J-\theta)
+ =0.
+ \label{eq:band-zero-saving-exponent}
+\end{equation}
+Any smaller effective-exposure exponent only worsens the certificate.
+
+\begin{remark}[A certificate barrier, not an actual lower bound]
+\label{rem:band-certificate-only}
+TPC--61 proves the one-sided implication
+\begin{equation}
+ \frac{W_M(m)}{W_H(m)}
+ \ll\frac{\mathfrak h_m(E_m)}{H_m^{\rm eff}}.
+ \label{eq:band-one-sided-harmonic-bound}
+\end{equation}
+A lower bound for the right side does not lower-bound the left side.  The
+omitted block may contain no realized largest-prime cofactors, or its
+literal weights may vanish.
+\Cref{thm:band-harmonic-zero-saving} says only that the declared
+support-cardinality/Brun--Titchmarsh certificate cannot prove a fixed-power
+upper saving for a full omitted block.  A weighted largest-prime-factor
+distribution theorem, an actual terminal-incidence estimate, or signed
+cancellation could still do so.
+\end{remark}
+
+The window sandwich and endpoint exponent comparison are L0 arithmetic
+support statements specialized at L1 to the literal fixed-\(h_0\) target
+interval and prime band.  The harmonic lower calculation closes one L1
+support-only certificate.  None of these results proves a positive
+high-face mass, a lower terminal square, a M\"obius correlation estimate,
+or an L2 fixed-shift parity improvement.

@@ -1,0 +1,167 @@
+\section{The inherited support and the missing provenance arrow}
+\label{sec:provenance-audit}
+
+We first state exactly what is inherited and what is not.  This section is
+not a historical survey: it fixes the logical hypotheses used in every
+later theorem.
+
+\subsection{The literal residual atom set}
+
+Fix one side and one direct residue cell.  A source row is uniquely encoded
+by
+\begin{equation}
+ m=d_m\ell_m\asymp Q,
+ \qquad
+ Q=X^{267/400+o(1)},
+ \qquad
+ j\asymp J=X^{133/400+o(1)}.
+ \label{eq:audit-scales}
+\end{equation}
+The physical shift \(h_0\ne0\) is fixed.  On the TPC--47 residual sector,
+an eligible atom has the determinant relation
+\begin{equation}
+ pr-mj=h_0,
+ \qquad
+ p\in\cP_{R_0}^{\sharp}
+ :=\{p\in\Pp:\sqrt{N_+}<p\le N_-/R_0\},
+ \label{eq:audit-band-determinant}
+\end{equation}
+together with the inherited row, orbit, opposite-row, terminal, mask,
+squarefree, and coprimality restrictions.  Write
+\(\Lambda_X(n):=(\log n)\Phi_0(n/X)\) for \(n>0\), zero-extended to
+\(\Z\), for the inherited smooth terminal weight.  Thus \(\Lambda_X\) is
+not the von Mangoldt function.  The literal coefficient is
+\begin{equation}
+ \gamma_m^{(1)}\mathfrak A_{m,\gamma}^{\rm act}(j)
+ \mu(r)\Lambda_X(pr),
+ \qquad s=d_mr.
+ \label{eq:audit-literal-coefficient}
+\end{equation}
+The large prime is unique and every occurring cofactor obeys
+\begin{equation}
+ R_0\le r<\sqrt{N_+}
+ \label{eq:audit-cofactor-range}
+\end{equation}
+\citep{WangTPC45,WangTPC47}.
+
+Remove only the bounded row coefficient \(\zeta_m\) from
+\(\gamma_m^{(1)}\), retaining every fixed source shape and logarithmic
+factor.  Let \(c_{m,j,\gamma}\) denote the remaining coefficient-free
+pre-terminal factor.  The structural support is defined using
+\(c_{m,j,\gamma}\ne0\), not using \(c_{m,j,\gamma}\zeta_m\ne0\).  Thus it
+is fixed before the coefficient vector is chosen.
+
+\begin{definition}[Literal eligible and active residual incidences]
+\label{def:audit-residual-incidences}
+Let \(\cE_X^{\rm res}\) be the finite set of tuples
+\(e=(m,r,p,j,\gamma)\) satisfying
+\eqref{eq:audit-band-determinant} and every declared structural support
+condition.  Let
+\begin{equation}
+ \cA_X^{\rm res}
+ :=\{e\in\cE_X^{\rm res}:
+      c_{m,j,\gamma}\mu(r)\Lambda_X(pr)\ne0\}
+ \label{eq:audit-active-residual-incidence}
+\end{equation}
+and define its pair projection
+\begin{equation}
+ \cI_X^{\rm res}:=\pr_{m,r}\cA_X^{\rm res}.
+ \label{eq:audit-residual-pair-projection}
+\end{equation}
+\end{definition}
+
+This is a genuine coefficient-independent finite relation, but its
+definition is a projection of the full residual incidence.  It is not a
+row-completion theorem and, by itself, it is not an identification with the
+later native high carrier.
+
+\subsection{What reassembly preserves}
+
+TPC--47 proves a coefficientwise signed Bochner reassembly for every
+already supported \((m,r)\), and TPC--48 proves an exact orthogonal
+\(r\)-square at fixed \(m\) before residual grouping
+\citep{WangTPC47,WangTPC48}.  Both statements preserve the relation
+\(\cI_X^{\rm res}\).  They neither select a favorable pair nor add a
+missing one.  More explicitly, at fixed \(m\), distinct cofactors occupy
+the distinct residual coordinates \(d_mr\), so
+\begin{equation}
+ \left\|\sum_r B_{m,r}\right\|^2
+ =\sum_r\|B_{m,r}\|^2
+ \label{eq:audit-fixed-row-r-square}
+\end{equation}
+whenever the vectors are evaluated in the ungrouped residual-label space.
+An empty fixed-row cofactor fiber is compatible with this identity.
+
+The orbit projector acts in the \(j\)-factor, and the all-band tiling acts
+on the same orbit-frequency quotient.  Neither operator creates a new
+\((m,r)\)-label.  By contrast, the later map
+\begin{equation}
+ (\gamma,d_mr,j)\longmapsto(\gamma,j)
+ \label{eq:audit-residual-erasure}
+\end{equation}
+groups different residual labels and is not norm-monotone from below.
+Support preservation before that map is therefore not a lower reassembly
+estimate after it.
+
+\subsection{Where the pair relation becomes opaque}
+
+The coefficient spaces of TPC--51 and TPC--52 introduce a finite relation
+\(\cI_X\) described only as containing the supported pairs before coherent
+prime summation.  TPC--53 uses the rectangular lifted space
+\begin{equation}
+ \bigoplus_{(m,r)\in\cI_X}
+ \ell^2(\cJ_{X,a};\ell^2(\cO_X\times\cS_X)),
+ \label{eq:audit-rectangular-space}
+\end{equation}
+and its exact factor dictionary is valid for any declared finite retained
+set.  TPC--54 then keeps only the multiplicity
+\begin{equation}
+ N_r(m)=\#\{r:(m,r)\in\cI_X\}
+ \label{eq:audit-row-multiplicity}
+\end{equation}
+and explicitly leaves balanced occupancy unproved
+\citep{WangTPC51,WangTPC52,WangTPC53,WangTPC54}.
+
+The displayed interfaces therefore do not prove any of
+\begin{align}
+ \cI_m\cap\supp\nu_m&\ne\varnothing
+       &&\text{on every native-high active row},
+ \label{eq:audit-unproved-intersection}\\
+ \inf_m\frac{\nu_m(\cI_m)}{\nu_m(\N)}&>0,
+ \label{eq:audit-unproved-positive-exposure}\\
+ \sup_m\frac{\nu_m(\cI_m^c)}{\nu_m(\N)}
+ &\le X^{-\sigma+o(1)}
+       &&\text{for some \(\sigma>0\)}.
+ \label{eq:audit-unproved-power-exposure}
+\end{align}
+The statement is a logical non-implication.  It does not assert that the
+actual arithmetic relation has a bad row.
+
+\begin{proposition}[Support-preservation boundary]
+\label{prop:audit-support-preservation-boundary}
+Under the displayed TPC--47/48 interface, \(\cI_X^{\rm res}\) is finite,
+is preserved by coefficientwise signed reassembly and orbit-band tiling,
+and has the fixed-row orthogonality \eqref{eq:audit-fixed-row-r-square}.
+Those statements do not imply any of
+\eqref{eq:audit-unproved-intersection}--
+\eqref{eq:audit-unproved-power-exposure} for an independently specified
+native-high measure family \((\nu_m)\).
+\end{proposition}
+
+\begin{proof}
+Finiteness follows from the finite row, orbit, terminal, and opposite-row
+supports.  The residual label is \(d_mr\); at fixed \(m\), its injectivity
+in \(r\) gives \eqref{eq:audit-fixed-row-r-square}.  The coefficientwise
+identities in TPC--47/48 are indexed by the already supported pair and hence
+do not alter its projection.  For the non-implication, take one source row,
+let \(\cI_m^{\rm res}=\{r_0\}\), and let an otherwise admissible native-high
+measure be \(\nu_m=\delta_{r_1}\) with \(r_1\ne r_0\).  Every stated
+finite-support and orthogonality property remains true, while
+\(\nu_m(\cI_m^{\rm res})=0<\nu_m(\N)\).  This model witnesses
+insufficiency of the displayed hypotheses only.
+\end{proof}
+
+The next sections replace the opaque arrow by a full-incidence calculus.
+That calculus will show exactly when a pair projection is faithful and
+exactly which extra theorem would be needed to identify it with the native
+high support.

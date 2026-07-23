@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,longtable,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Rect}{\operatorname{Rect}}
+\newcommand{\TRect}{\operatorname{TRect}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\pr}{\operatorname{pr}}
+\newcommand{\Pplus}{P^{+}}
+
+\title{Canonical Cofactor Provenance at a Fixed Shift:\\
+Minimal Faithful Relations, Exact Exposure Factorization,\\
+and the Single--Band Completion Barrier}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\noindent\textbf{Keywords:} fixed shift; cofactor provenance; retained relation;
+terminal incidence; exposure factorization; support obstruction.\\[0.5em]
+\noindent\textbf{Convention.} Every physical specialization uses one fixed
+nonzero shift \(h_0\), the literal coefficient-free structural support before
+the row coefficient is chosen, and raw counting-measure atomic norms.  The
+symbol \(h_0\) is not specialized to \(2\).  A support identity is never
+promoted to a prime-pair or parity statement.\\[0.5em]
+\noindent\textbf{MSC 2020:} Primary 11N35, 11P32; Secondary 15A18, 47A64.
+
+\input{sections/introduction}
+\input{sections/provenance-audit}
+\input{sections/incidence-calculus}
+\input{sections/canonical-completion}
+\input{sections/exposure-factorization}
+\input{sections/single-band-barrier}
+\input{sections/labeled-completion}
+\input{sections/endpoint-decisions}
+\input{sections/claims-next}
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

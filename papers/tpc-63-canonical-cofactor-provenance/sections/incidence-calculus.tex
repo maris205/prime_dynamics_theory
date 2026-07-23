@@ -1,0 +1,311 @@
+\section{A finite full-incidence calculus}
+\label{sec:incidence-calculus}
+
+The retained-pair question is finite at every value of \(X\).  We therefore
+begin with a finite-dimensional theorem which keeps all four pre-terminal
+labels.  The theorem distinguishes preservation of the pre-terminal raw
+form, preservation of the terminal atomic form, and preservation of the
+grouped physical operator.  These notions coincide only under additional
+incidence hypotheses.
+
+\subsection{The ambient incidence and its pair projection}
+
+Let \(\cM,\cR\subset\N_{\ge1}\) and \(\cJ\subset\Z\) be finite, and let
+\(\Gamma\) be a finite label set.  Put
+\begin{equation}
+ \Omega:=\cM\times\cR\times\cJ\times\Gamma
+ \label{eq:incidence-ambient-product}
+\end{equation}
+and write
+\[
+ u=(m,r,j,\gamma),\qquad m(u)=m,
+\]
+and take the row-coefficient space to be \(Z:=\C^{\cM}\).  All sets,
+structural coefficients, and maps below are fixed before \(z\in Z\) is
+chosen.  A version with a finite base fiber
+\(B_m\subseteq\cJ\times\Gamma\) depending on \(m\) is obtained by replacing
+\(\cJ\times\Gamma\) by \(B_m\); none of the proofs changes.
+
+Let \(c=(c_u)_{u\in\Omega}\) be the coefficient-free structural field.  It
+contains every literal source shape, mask, opposite-row factor, and orbit
+factor preceding terminalization, but not the free row coefficient \(z_m\).
+For \(V\subseteq\Omega\), define the zero-extended synthesis operator
+\begin{equation}
+ (C_Vz)_u:=\one_V(u)c_u z_{m(u)},
+ \qquad C_V:Z\longrightarrow\ell^2(\Omega).
+ \label{eq:incidence-CV}
+\end{equation}
+Thus every carrier is compared in the same counting-measure Hilbert space.
+
+\begin{definition}[Full incidence, pair projection, and rectangle]
+\label{def:incidence-full-pair-rectangle}
+Let \(\cU\subseteq\Omega\) be a declared full pre-terminal incidence.  Its
+pair projection and rectangular completion are
+\begin{align}
+ I(\cU)
+ &:=\pr_{m,r}\cU
+   =\{(m,r):\text{there exists }(j,\gamma)
+                    \text{ with }(m,r,j,\gamma)\in\cU\},
+ \label{eq:incidence-pair-projection}\\
+ \Rect(I)
+ &:=\{(m,r,j,\gamma)\in\Omega:(m,r)\in I\}.
+ \label{eq:incidence-rectangular-completion}
+\end{align}
+The associated spurious-cross set is
+\begin{equation}
+ \cS(\cU):=\Rect(I(\cU))\setminus\cU.
+ \label{eq:incidence-spurious-set}
+\end{equation}
+\end{definition}
+
+By construction, \(\cU\subseteq\Rect(I(\cU))\).  This containment does not
+say that the new crossed coordinates in \(\cS(\cU)\) have zero structural
+coefficient or fail the terminal test.
+
+\subsection{Terminal restriction and the grouped operator}
+
+Fix \(h\in\Z\).  For \(u=(m,r,j,\gamma)\), put
+\begin{equation}
+ p_h(u):=\frac{mj+h}{r}
+ \label{eq:incidence-prime-candidate}
+\end{equation}
+when the quotient is a positive integer.  Let
+\(\one_{\mathrm{term},h}(u)\) be zero when that quotient is not a positive
+integer, and otherwise the indicator of the complete declared terminal
+predicate: the quotient in \eqref{eq:incidence-prime-candidate} is a prime
+in the stated support, and every required terminal cutoff,
+squarefree condition, coprimality condition, literal mask, and nonvanishing
+terminal profile holds.  Define
+\begin{equation}
+ t_h(u):=\mu(r)\Lambda_X(mj+h)\one_{\mathrm{term},h}(u),
+ \qquad
+ (D_hx)_u:=t_h(u)x_u.
+ \label{eq:incidence-terminal-diagonal}
+\end{equation}
+Here \(\mu(r)\) is the single inherited cofactor sign, and
+\(\Lambda_X(n)=(\log n)\Phi_0(n/X)\) for \(n>0\), zero-extended to
+\(\Z\), is the inherited smooth terminal weight rather than the von
+Mangoldt function.  No additional M\"obius factor may be inserted in the
+physical specialization.
+
+Let \(\mathcal Q\) be a finite output-key set, let
+\(q:\Omega\to\mathcal Q\) be fixed, and define
+\begin{equation}
+ (Gx)_a:=\sum_{\substack{u\in\Omega\\q(u)=a}}x_u,
+ \qquad
+ G:\ell^2(\Omega)\longrightarrow\ell^2(\mathcal Q).
+ \label{eq:incidence-grouping-map}
+\end{equation}
+For the fixed-shift residual packet the literal key is
+\begin{equation}
+ q(m,r,j,\gamma)=(\gamma,d_mr,j).
+ \label{eq:incidence-physical-key}
+\end{equation}
+For \(V\subseteq\Omega\), write
+\begin{align}
+ P_V(z)&:=\|C_Vz\|_2^2,
+ \label{eq:incidence-preterminal-form}\\
+ A_{h,V}(z)&:=\|D_hC_Vz\|_2^2,
+ \label{eq:incidence-terminal-atomic-form}\\
+ F_{h,V}&:=GD_hC_V.
+ \label{eq:incidence-grouped-operator}
+\end{align}
+The first two forms use raw counting measure.  The last map is coherent on
+each output fiber, so its squared norm need not be a sum of atomic squares.
+
+\subsection{Exact rectangularization identities}
+
+\begin{theorem}[Rectangularization difference identities]
+\label{thm:incidence-rectangularization-difference}
+Let \(\cU\subseteq V\subseteq\Omega\), and put
+\(\cS:=V\setminus\cU\).  Then
+\begin{align}
+ C_V-C_{\cU}&=C_{\cS},
+ \label{eq:incidence-C-difference}\\
+ D_hC_V-D_hC_{\cU}&=D_hC_{\cS},
+ \label{eq:incidence-D-difference}\\
+ F_{h,V}-F_{h,\cU}&=GD_hC_{\cS}.
+ \label{eq:incidence-F-difference}
+\end{align}
+Moreover, for every \(z\in Z\),
+\begin{align}
+ P_V(z)-P_{\cU}(z)
+ &=\sum_{u\in\cS}|c_u|^2|z_{m(u)}|^2,
+ \label{eq:incidence-P-positive-difference}\\
+ A_{h,V}(z)-A_{h,\cU}(z)
+ &=\sum_{u\in\cS}|t_h(u)c_u|^2|z_{m(u)}|^2.
+ \label{eq:incidence-A-positive-difference}
+\end{align}
+Finally, the \((a,m)\)-matrix entry of the grouped difference is
+\begin{equation}
+ \boxed{
+ (F_{h,V}-F_{h,\cU})_{a,m}
+ =\sum_{\substack{u\in\cS\\q(u)=a,\ m(u)=m}}t_h(u)c_u.}
+ \label{eq:incidence-grouped-matrix-entry}
+\end{equation}
+In particular, the identities apply to
+\(V=\Rect(I(\cU))\) and \(\cS=\cS(\cU)\).
+\end{theorem}
+
+\begin{proof}
+Since \(V=\cU\,\dot\cup\,\cS\), one has
+\(\one_V-\one_{\cU}=\one_{\cS}\).  Substitution in
+\eqref{eq:incidence-CV} proves \eqref{eq:incidence-C-difference};
+applying \(D_h\) and \(G\) gives the next two identities.  The vectors on
+\(\cU\) and \(\cS\) have disjoint coordinate supports, before and after
+the diagonal map \(D_h\), so Pythagoras proves the two form identities.
+Finally, evaluate \eqref{eq:incidence-F-difference} at the row basis vector
+\(e_m\) and read its \(a\)-coordinate.
+\end{proof}
+
+The positive identities
+\eqref{eq:incidence-P-positive-difference} and
+\eqref{eq:incidence-A-positive-difference} must not be transferred through
+\(G\): terms in \eqref{eq:incidence-grouped-matrix-entry} can cancel.
+
+\begin{theorem}[Three exact fidelity criteria]
+\label{thm:incidence-three-fidelity-criteria}
+Let \(I=I(\cU)\), and put
+\(\cS=\Rect(I)\setminus\cU\).  Then:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item The rectangular lift preserves the pre-terminal synthesis and raw
+       form exactly if and only if
+       \begin{equation}
+        \begin{aligned}
+        C_{\Rect(I)}=C_{\cU}
+        &\ \Longleftrightarrow\
+        P_{\Rect(I)}=P_{\cU}\text{ on }Z\\
+        &\ \Longleftrightarrow\
+        c_u=0\quad(u\in\cS).
+        \end{aligned}
+        \label{eq:incidence-preterminal-iff}
+       \end{equation}
+ \item It preserves the terminal atomic synthesis and raw form exactly if
+       and only if
+       \begin{equation}
+        \begin{aligned}
+        D_hC_{\Rect(I)}=D_hC_{\cU}
+        &\ \Longleftrightarrow\
+        A_{h,\Rect(I)}=A_{h,\cU}\text{ on }Z\\
+        &\ \Longleftrightarrow\
+        t_h(u)c_u=0\quad(u\in\cS).
+        \end{aligned}
+        \label{eq:incidence-terminal-iff}
+       \end{equation}
+ \item It preserves the grouped physical operator exactly if and only if
+       \begin{equation}
+        \boxed{
+        \begin{aligned}
+        F_{h,\Rect(I)}=F_{h,\cU}
+        \quad\Longleftrightarrow\quad&
+        \sum_{\substack{u\in\cS\\q(u)=a,\ m(u)=m}}t_h(u)c_u=0\\[-2pt]
+        &\text{for every }(a,m).
+        \end{aligned}}
+        \label{eq:incidence-grouped-iff}
+       \end{equation}
+\end{enumerate}
+Consequently, pre-terminal fidelity implies terminal-atomic fidelity,
+which implies grouped-operator fidelity.  Neither converse holds for a
+general grouping map.
+\end{theorem}
+
+\begin{proof}
+Map equality implies equality of the corresponding squared norms.
+Conversely, take \(z=e_m\) in
+\eqref{eq:incidence-P-positive-difference}.  Equality of the pre-terminal
+forms gives
+\[
+ \sum_{\substack{u\in\cS\\m(u)=m}}|c_u|^2=0
+ \qquad(m\in\cM),
+\]
+so every \(c_u\) on \(\cS\) vanishes.  The terminal argument is identical
+using \eqref{eq:incidence-A-positive-difference}.  The grouped criterion
+is \eqref{eq:incidence-grouped-matrix-entry}, because a linear map from
+\(\C^{\cM}\) is zero exactly when every matrix entry is zero.
+\end{proof}
+
+\begin{example}[The hierarchy is strict]
+\label{ex:incidence-strict-hierarchy}
+If a spurious coordinate \(u_0\) has \(c_{u_0}\ne0\) but
+\(t_h(u_0)=0\), pre-terminal fidelity fails while both later fidelities can
+hold.  Separately, two spurious atoms in the same row and output fiber with
+terminal coefficients \(1\) and \(-1\) violate terminal-atomic fidelity
+but cancel in the grouped operator.  The latter is an abstract example;
+the literal key \eqref{eq:incidence-physical-key} has the singleton
+property below.
+\end{example}
+
+\subsection{Spurious-cross witnesses}
+
+\begin{proposition}[Exact spurious-cross witnesses]
+\label{prop:incidence-spurious-cross-witness}
+Let \(I=I(\cU)\), let \(\cS=\Rect(I)\setminus\cU\), and take
+\(u_0\in\cS\), with \(m_0=m(u_0)\) and \(a_0=q(u_0)\).
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.7em]
+ \item If \(c_{u_0}\ne0\), then
+       \begin{equation}
+        P_{\Rect(I)}(e_{m_0})-P_{\cU}(e_{m_0})
+        \ge |c_{u_0}|^2>0.
+        \label{eq:incidence-preterminal-witness}
+       \end{equation}
+ \item If \(t_h(u_0)c_{u_0}\ne0\), then
+       \begin{equation}
+        A_{h,\Rect(I)}(e_{m_0})-A_{h,\cU}(e_{m_0})
+        \ge |t_h(u_0)c_{u_0}|^2>0.
+        \label{eq:incidence-terminal-witness}
+       \end{equation}
+ \item If
+       \begin{equation}
+        \Sigma_{a_0,m_0}(\cS)
+        :=\sum_{\substack{u\in\cS\\q(u)=a_0,\ m(u)=m_0}}
+                    t_h(u)c_u\ne0,
+        \label{eq:incidence-spurious-fiber-sum}
+       \end{equation}
+       then
+       \begin{equation}
+        \|(F_{h,\Rect(I)}-F_{h,\cU})e_{m_0}\|_2
+        \ge |\Sigma_{a_0,m_0}(\cS)|>0.
+        \label{eq:incidence-grouped-witness}
+       \end{equation}
+       In particular, this holds when \(u_0\) is the only terminal-active
+       spurious atom in its \((a_0,m_0)\)-fiber.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The first two assertions are the single-summand lower bounds in
+\eqref{eq:incidence-P-positive-difference} and
+\eqref{eq:incidence-A-positive-difference}.  For the last assertion, the
+\(a_0\)-coordinate of the displayed difference vector is exactly
+\(\Sigma_{a_0,m_0}(\cS)\).
+\end{proof}
+
+\begin{corollary}[The literal residual key removes accidental rowwise
+cancellation]
+\label{cor:incidence-physical-key-singleton}
+Assume every row integer \(m\) determines \(d_m\), and use
+\(q(u)=(\gamma,d_mr,j)\).  For fixed \((a,m)\), at most one
+\(u\in\Omega\) satisfies \(q(u)=a\) and \(m(u)=m\).  Hence
+\begin{equation}
+ F_{h,\Rect(I)}=F_{h,\cU}
+ \quad\Longleftrightarrow\quad
+ D_hC_{\Rect(I)}=D_hC_{\cU}.
+ \label{eq:incidence-physical-grouped-atomic-equivalence}
+\end{equation}
+Cancellation between different rows cannot repair this uniform equality,
+because the row variables \(z_m\) are independent.
+\end{corollary}
+
+\begin{proof}
+Fix \(a=(\gamma,s,j)\) and \(m\).  The row determines \(d_m\), and
+\(s=d_mr\) determines \(r\).  Thus \(m,r,j,\gamma\), hence \(u\), are
+fixed.  Every sum in \eqref{eq:incidence-grouped-iff} has at most one term.
+\end{proof}
+
+This corollary does not identify the inherited relation \(\cI_X\) with the
+projection of any particular full incidence.  It says only that, after the
+literal full incidence has been written down, an active spurious cross
+cannot be hidden by the residual-key grouping
+\(q=(\gamma,d_mr,j)\) in a coefficient-uniform comparison.  A later map
+which erases \(d_mr\) can merge distinct cofactors and requires the separate
+fiber/kernel test of \cref{sec:tpc63-labeled-completion}.

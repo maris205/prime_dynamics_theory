@@ -1,0 +1,126 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The fixed-shift route preceding this paper has reached a precise but
+unresolved reassembly problem.  TPC--59 decomposes the literal Walsh
+carrier into base, represented high, and missing high coordinates;
+TPC--60 identifies the exact shorted-Gram and kernel tests for restoring
+the missing high image; TPC--61 disintegrates its raw mass into realized
+row cofactor measures; and TPC--62 arranges all available closure
+certificates in the correct quantifier order
+\citep{WangTPC59,WangTPC60,WangTPC61,WangTPC62}.  The favorable
+mass--degree route would require, in matching scope,
+\begin{equation}
+ \cD_M(z)\le X^{-\sigma_M+o(1)}\cD_{\rm ref}(z),
+ \qquad
+ \sigma_M>\lambda_{\rm rep}+\nu_M.
+ \label{eq:intro-mass-degree-target}
+\end{equation}
+The first inequality is not a formal consequence of the definitions.  It
+depends on which cofactors the inherited relation \(\cI_X\) actually
+retains on every active row.
+
+That relation has an unresolved provenance.  TPC--47 and TPC--48 begin
+with literal sums over already supported \((p,r,m,j)\)-atoms and prove
+coefficientwise signed reassembly and fixed-row \(r\)-orthogonality
+\citep{WangTPC47,WangTPC48}.  TPC--51 first names a set
+\(\cI_X\) containing the supported \((m,r)\)-pairs; TPC--52 and
+TPC--53 then form a direct sum over that relation, and TPC--54 explicitly
+permits arbitrary finite cofactor multiplicity
+\citep{WangTPC51,WangTPC52,WangTPC53,WangTPC54}.  None of those displayed
+interfaces supplies a set-builder membership rule or a row-completion
+theorem.  TPC--61 therefore correctly proves that the finite-relation
+hypothesis alone implies no positive exposure, but leaves open whether the
+literal upstream incidence repairs that defect.
+
+This paper opens precisely that box.  Its first point is conceptual but
+mathematically exact: a pair relation and a full four-label incidence are
+not interchangeable.  If
+\[
+ \cU\subseteq\cM\times\cR\times\cJ\times\Gamma
+\]
+is the literal incidence and \(I=\pr_{m,r}\cU\), then the later lifted
+space uses the rectangular completion
+\[
+ \Rect(I)=\{(m,r,j,\gamma):(m,r)\in I,
+                 j\in\cJ,\ \gamma\in\Gamma\}.
+\]
+It may contain spurious crosses.  Some crosses are harmless because the
+terminal predicate kills them; some alter the raw parent form but not the
+terminal map; and some alter even the grouped physical operator.  We give
+sharp finite-scale if-and-only-if tests for all three cases.
+
+The second point is an exact repair.  Removing the retained-pair test from
+the literal terminal predicate defines a coefficient-independent eligible
+universe and its maximal pair projection \(\cI_X^{\max}\).  Every declared
+relation selects the same native-high carrier as its effective core
+\(\cI_X\cap\cI_X^{\max}\).  This selector identity is not an identity for a
+rectangular terminal operator, which still requires the terminal-faithfulness
+test.  On the native high carrier we further separate
+the alignment mass \(W_A\), which passes every non-relation terminal test,
+from the amount retained by \(\cI_X\).  This produces an exact two-gate
+factorization and the correct uniform/distinguished minimax laws.  Setting
+\(\cI_X=\cI_X^{\max}\) eliminates only relation-induced missing mass.  It
+does not prove parent-to-terminal activation, nor may the terminal-active
+support be substituted retroactively for the parent support.
+
+The third point decides what the old one-band support can and cannot do.
+On the large-prime band of TPC--45/47,
+\begin{equation}
+ \sqrt{N_+}<p\le N_-/R_0,
+ \label{eq:intro-old-prime-band}
+\end{equation}
+every represented atom has \(r\ge R_0\).  On the critical very-high face
+of TPC--59, \(p>y\asymp Q\) implies
+\begin{equation}
+ r<N_+/y\asymp J.
+ \label{eq:intro-critical-cofactor-ceiling}
+\end{equation}
+The exact comparison is stronger than a mere top-window localization.  The
+balanced inherited threshold has exponent \(99979/210000>133/400\), and
+every band satisfying the inherited freezing inequality remains
+polynomially above the critical ceiling.  Its intersection with the
+critical face is therefore empty.  If one independently retunes
+\(R_0\asymp J\) to create a top-window intersection, the old
+coefficient-blind freezing loss is \(15077/105000>1/400\).  Moreover, if
+the unseen lower blocks are then treated by the TPC--61 ladder and
+Brun--Titchmarsh certificate, their full cardinality exactly cancels the
+available cofactor exponent.  These are genuine negative theorems for two
+specified certificates, not evidence that the actual weighted missing
+mass is large.
+
+The resulting fork is useful.  One may prove a new coefficient-specific
+band/freezing theorem and then seek a weighted distribution theorem for
+its low-cofactor complement, or canonically realize a multiscale relation
+and separately pay for the enlarged parent/label-reassembly gates.  Either
+route is now falsifiable.
+Neither route is described as progress on the fixed-\(h=2\) parity kernel
+until a genuinely signed arithmetic estimate on the literal carrier has
+been proved.
+
+\paragraph{Main results.}
+The paper proves the following finite-scale statements.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.7em]
+ \item Exact pre-terminal, terminal-atomic, and grouped-operator
+       rectangularization criteria, including explicit spurious-cross
+       witnesses.
+ \item A unique least terminal-faithful pair relation when pair-only
+       completion is possible, and a sharp criterion requiring the full
+       incidence hypergraph when it is not.
+ \item The maximal-eligible relation, effective-core identity, monotonicity
+       lattice, exact alignment/completion factorization, and sharp
+       uniform/distinguished exposure constants.
+ \item Exact cofactor-window inclusions, the disjointness of every band
+       certified by the inherited freezing inequality from the critical
+       face, and the over-budget cost of the top-scale retuning.
+ \item A zero-saving theorem for the full omitted dyadic blocks under the
+       inherited support-cardinality/harmonic certificate, even after an
+       independently justified retuning.
+ \item A labeled multiscale completion with zero fixed-power bookkeeping
+       cost, together with the proof that erasing its labels is a separate
+       reassembly map.
+\end{enumerate}
+
+All exact support and operator statements are L0.  Their specialization to
+one literal fixed shift, coefficient field, and raw atomic norm is L1.  No
+new L2 cancellation or prime-distribution lower bound is claimed.
