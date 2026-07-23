@@ -1,0 +1,126 @@
+{
+  "audit": {
+    "channel_count": 10,
+    "composite_support_count": 321,
+    "diagnostic_exact_dominance_failure_count": 3,
+    "dominance_failure_count": 0,
+    "fine_composite_support_count": 234,
+    "fine_new_selected_count": 81,
+    "fine_update_count": 234,
+    "maximum_composite_minus_direct": 1.550911604596833e-06,
+    "maximum_diagnostic_exact_excess": 6.924343525895396e-07,
+    "maximum_fine_composite_minus_direct": 1.550911604596833e-06,
+    "minimum_fine_composite_margin": 0.0006361331902781984,
+    "new_selected_count": 171,
+    "scale_count": 5,
+    "update_count": 360
+  },
+  "program_boundary": {
+    "all_level_directional_tail_law_proved": false,
+    "all_level_physical_capacity_law_proved": false,
+    "cross_assembly_exact_directional_admitted": false,
+    "factorized_capacity_gate": true,
+    "five_scale_composition_validated": true,
+    "hilbert_polya_operator": false,
+    "monotone_composite_gate": true,
+    "riemann_hypothesis": false,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "2f595780b602e2e458fb41a5f056a82caaca8d1a5ed8ff7f653b7e27664b0bb4",
+    "THEOREM_LEDGER.md": "20c9dd85bf14e1e4e7eaf637da32fb332a2fec7404aeeb9f318f7df7c69db298",
+    "UPDATED_ROADMAP.md": "0d80e0602d0ab23df632ab4d339205f0c1aab55fb15a5efc2606bbc4e004bca3",
+    "composite-directional-support-gate.pdf": "1168583af4fc491adb63f5f3e0a25e3ff141905f36690a21e5a127f8320227bf",
+    "figures/composite_directional_support_gate.pdf": "a0fbb0bf9b23f50009deac379a4ffdab6e03a8db36289f9ad06c61aed939afba",
+    "figures/composite_directional_support_gate.png": "4e9e26bf8f6cd76ffa721e8df40daa3784e9f607aadaea6c7ea7e87e919d61a0",
+    "main.pdf": "1168583af4fc491adb63f5f3e0a25e3ff141905f36690a21e5a127f8320227bf",
+    "main.tex": "2ad1672beeebbe642ae5104d2494f8a4cd2e48c7bb579dc2a64e15f931601efe",
+    "pyproject.toml": "736ef3e0b933565e4bfbd9bf3a7b0ac623d7a9f2d53f3acd9a9f46ba4261f447",
+    "references.bib": "ed28e9ee163e4b9902a59f550ed2fd13a32fcb02b0f5712f4de0ae0b4137e38a",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd"
+  },
+  "result_hashes": {
+    "results/composite_gate_audit.json": "c5f642c0b123fcbab94483c2f6f0240a32497e87948a9db9b6dc66802813cf6b",
+    "results/composite_gate_smoke.json": "7fd7da3c3c845619362296fee23d8b63f518faf9f83d829048a1a3b092132539",
+    "results/dependency_manifest.json": "c8f5da2228fc8ab2a7b56a3a2047873cb0241f390963be7fd827216b7e7e9147"
+  },
+  "route_consequence": "Every admitted candidate is a separately valid lower bound for q4; taking their maximum preserves validity. The packet-block certificate adds one full-chain 1e-8 support record beyond direct Weyl. The exact-directional diagnostic would add a second, but it is excluded because three threshold-labelled copies of one weak record lack an outward guard between two binary64 Gram assembly paths. On the fine chain all thresholds were already closed.",
+  "status": "rh115_composite_directional_support_gate_archived",
+  "theorem": {
+    "factorized_capacity_gate": true,
+    "monotone_composite_gate": true,
+    "outward_admissibility_filter": true
+  },
+  "threshold_summary": {
+    "1e-04": {
+      "candidate_support_counts": {
+        "capacity_volume": 98,
+        "direct_weyl": 98,
+        "psd_packet_block": 98,
+        "tail_energy_trace": 95
+      },
+      "composite_support_count": 98,
+      "diagnostic_exact_support_count": 98,
+      "fine_candidate_support_counts": {
+        "capacity_volume": 78,
+        "direct_weyl": 78,
+        "psd_packet_block": 78,
+        "tail_energy_trace": 78
+      },
+      "fine_composite_support_count": 78,
+      "fine_diagnostic_exact_support_count": 78,
+      "fine_selected_new_count": 27,
+      "fine_update_count": 78,
+      "selected_new_count": 57,
+      "threshold": 0.0001,
+      "update_count": 120
+    },
+    "1e-06": {
+      "candidate_support_counts": {
+        "capacity_volume": 109,
+        "direct_weyl": 109,
+        "psd_packet_block": 109,
+        "tail_energy_trace": 105
+      },
+      "composite_support_count": 109,
+      "diagnostic_exact_support_count": 109,
+      "fine_candidate_support_counts": {
+        "capacity_volume": 78,
+        "direct_weyl": 78,
+        "psd_packet_block": 78,
+        "tail_energy_trace": 78
+      },
+      "fine_composite_support_count": 78,
+      "fine_diagnostic_exact_support_count": 78,
+      "fine_selected_new_count": 27,
+      "fine_update_count": 78,
+      "selected_new_count": 57,
+      "threshold": 1e-06,
+      "update_count": 120
+    },
+    "1e-08": {
+      "candidate_support_counts": {
+        "capacity_volume": 113,
+        "direct_weyl": 113,
+        "psd_packet_block": 114,
+        "tail_energy_trace": 113
+      },
+      "composite_support_count": 114,
+      "diagnostic_exact_support_count": 115,
+      "fine_candidate_support_counts": {
+        "capacity_volume": 78,
+        "direct_weyl": 78,
+        "psd_packet_block": 78,
+        "tail_energy_trace": 78
+      },
+      "fine_composite_support_count": 78,
+      "fine_diagnostic_exact_support_count": 78,
+      "fine_selected_new_count": 27,
+      "fine_update_count": 78,
+      "selected_new_count": 57,
+      "threshold": 1e-08,
+      "update_count": 120
+    }
+  }
+}

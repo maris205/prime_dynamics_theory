@@ -1,0 +1,41 @@
+{
+  "external_inputs": {
+    "rh110_audit": {
+      "path": "papers/RH-110-finite-memory-three-mode-capacity/results/three_mode_capacity_audit.json",
+      "sha256": "6d10877863a1c32212815ec567ede896b7e2e9be83215e9fbc1e790c87cc495f"
+    },
+    "rh111_audit": {
+      "path": "papers/RH-111-tail-energy-exterior-concentration/results/exterior_concentration_audit.json",
+      "sha256": "b81a21100a1e02626d4eda0d8f6e54a34bfdaae1a4d96532e58f3bfe369de18f"
+    },
+    "rh114_audit": {
+      "path": "papers/RH-114-psd-rayleigh-directional-tail/results/psd_rayleigh_audit.json",
+      "sha256": "6c25635d9aeb471b42df3be2305d3f7549cf5396c1617ed8268c51a68e8d878a"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "e3e8463dcfe83dc3567eea21066cc8d60e59c135122f0c3dde045459acfefe58",
+    "experiments/build_composite_gate_audit.py": "0bb19c2cb61a1237ece8d44566f1958895c7b0f94687deb13b7ec6bdf37a0c5a",
+    "experiments/make_figures.py": "113fae8ccd41ba3305e272c9383b8e9c77202aa51dbefaf58bbf418da99433f3",
+    "experiments/verify_archive.py": "d45c081e6098f3b18d3bd2091ca9e8a72e4c91fcbd7a332ae3713f3b0726dee2",
+    "src/composite_gate/__init__.py": "afffdb03029c77e291087ae596871daa47cbb18e8ebbb16062ed6143977c714b",
+    "src/composite_gate/bounds.py": "9502094ced4767eed01e0a03ecb4d035134ec5c404cd0d3528933b7dc6f9742e",
+    "tests/test_archived_results.py": "495087972f96a0e035210b37b87b90d6190567de2558089de21d0c05d780efa6",
+    "tests/test_theory.py": "590d1ae940f3fb61da247ea29020b88122f0ce30c2aaac6c396245a46e37fc38"
+  },
+  "publication_artifacts": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "2f595780b602e2e458fb41a5f056a82caaca8d1a5ed8ff7f653b7e27664b0bb4",
+    "THEOREM_LEDGER.md": "20c9dd85bf14e1e4e7eaf637da32fb332a2fec7404aeeb9f318f7df7c69db298",
+    "UPDATED_ROADMAP.md": "0d80e0602d0ab23df632ab4d339205f0c1aab55fb15a5efc2606bbc4e004bca3",
+    "composite-directional-support-gate.pdf": "1168583af4fc491adb63f5f3e0a25e3ff141905f36690a21e5a127f8320227bf",
+    "figures/composite_directional_support_gate.pdf": "a0fbb0bf9b23f50009deac379a4ffdab6e03a8db36289f9ad06c61aed939afba",
+    "figures/composite_directional_support_gate.png": "4e9e26bf8f6cd76ffa721e8df40daa3784e9f607aadaea6c7ea7e87e919d61a0",
+    "main.pdf": "1168583af4fc491adb63f5f3e0a25e3ff141905f36690a21e5a127f8320227bf",
+    "main.tex": "2ad1672beeebbe642ae5104d2494f8a4cd2e48c7bb579dc2a64e15f931601efe",
+    "pyproject.toml": "736ef3e0b933565e4bfbd9bf3a7b0ac623d7a9f2d53f3acd9a9f46ba4261f447",
+    "references.bib": "ed28e9ee163e4b9902a59f550ed2fd13a32fcb02b0f5712f4de0ae0b4137e38a",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd"
+  },
+  "status": "all_rh115_inputs_sources_and_publication_artifacts_hashed"
+}
