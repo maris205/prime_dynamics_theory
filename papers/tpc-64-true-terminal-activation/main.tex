@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,longtable,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={True Terminal Activation on Canonical Multiscale Incidences},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\title{True Terminal Activation on Canonical Multiscale Incidences:\\
+Pair-Lift Minimality, Parent Inflation,\\
+and Sharp Capacity Laws}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\noindent\textbf{Keywords:} fixed shift; full incidence; terminal activation;
+parent inflation; multiscale repair; capacity saturation.\\[0.5em]
+\noindent\textbf{Convention.} Every physical specialization uses one fixed
+nonzero shift \(h_0\), literal coefficient-free support, and raw
+counting-measure atomic norms.  The symbol \(h_0\) is not specialized to
+\(2\).  No support, activation, or capacity identity is promoted to a
+prime-pair or parity statement.\\[0.5em]
+\noindent\textbf{MSC 2020:} Primary 11N35, 11P32; Secondary 15A18, 47A64.
+
+\input{sections/introduction}
+\input{sections/literal-parent}
+\input{sections/parent-faithful-lifts}
+\input{sections/hybrid-repair}
+\input{sections/inflation-laws}
+\input{sections/activation-factorization}
+\input{sections/capacity-certificate}
+\input{sections/sharp-countermodels}
+\input{sections/compatible-chain}
+\input{sections/claim-boundary}
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

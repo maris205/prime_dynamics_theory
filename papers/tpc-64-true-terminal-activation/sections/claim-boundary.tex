@@ -1,0 +1,215 @@
+\section{Result ledger, claim boundary, and the next arithmetic target}
+\label{sec:tpc64-claim-boundary}
+
+TPC--64 separates true terminal activation from two representation
+effects: deletion of parent mass and inflation by terminal-null crossed
+coordinates.  It supplies exact finite-scale tests and a sharp capacity
+certificate.  It does not prove that the physical terminal incidence is
+large.
+
+\subsection{Result ledger}
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.23\textwidth}
+                >{\raggedright\arraybackslash}p{0.52\textwidth}
+                >{\raggedright\arraybackslash}p{0.14\textwidth}}
+\toprule
+Object & Exact conclusion & Status\\
+\midrule
+Literal parent and terminal
+& The full incidence gives exact row masses \(P_m,H_m,T_m\), raw block
+  disintegration, and, on rows with \(P_m,H_m>0\), the factorization
+  \(T_m/P_m=(H_m/P_m)(T_m/H_m)\).
+& L0 theorem; L1 dictionary\\
+\addlinespace
+Uniform activation
+& On a class containing every active row direction, the optimal constant
+  is \(\min_{P_m>0}T_m/P_m\); one zero row kills it.
+& L0 minimax\\
+\addlinespace
+Parent-faithful pair lift
+& A pair lift exists exactly when the parent projection creates no
+  terminal-active spurious cross.  The least faithful relation and the
+  hypergraph alternative are explicit.
+& L0 iff test\\
+\addlinespace
+Parent inflation
+& A parent-complete, terminal-faithful populated rectangle has
+  \(\widetilde P_m=P_m+\Delta_m\) while preserving \(T_m\).  The optimal
+  domination is the largest row inflation; a new-only row makes it
+  infinite.
+& L0 theorem\\
+\addlinespace
+Canonical hybrid
+& Pair-good blocks use their least parent-complete lift, pair-bad blocks
+  retain the literal active incidence, and the literal-active-hypergraph baseline has
+  exactly zero inflation.
+& L0 construction\\
+\addlinespace
+Threshold capacity
+& If \(g_m=T_m/\widetilde P_m\), then threshold capacity
+  \(\delta_\eta\) and occupied capacity \(\kappa_X\) give the sharp lower
+  bound
+  \(\eta(1-(1-\delta_\eta)/\kappa_X)_+\).
+& L0 sharp theorem\\
+\addlinespace
+Denominator chain
+& Literal activation, inflation, represented transfer, reassembly, and
+  downstream arrows compose only with the same vector, carrier, raw norm,
+  and quantifier scope.
+& L0 compatibility\\
+\addlinespace
+Endpoint
+& Inflation is charged once inside
+  \(\lambda_{\rm term}^{\rm eff}\); all distinct physical losses must sum
+  strictly below \(1/400\).
+& L0 ledger; L1 conditional\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{The L0/L1/L2 boundary}
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.12\textwidth}
+                >{\raggedright\arraybackslash}p{0.38\textwidth}
+                >{\raggedright\arraybackslash}p{0.38\textwidth}}
+\toprule
+Level & Established here & Not licensed by that level\\
+\midrule
+L0
+& Exact finite-incidence parent/terminal forms, faithful-lift criteria,
+  inflation identities, rowwise minimax laws, capacity extremizers, and
+  compatible-form composition.
+& No counting, density, or lower-bound assertion for the declared prime
+  candidates, and no assertion that any asymptotic constant is favorable.\\
+\addlinespace
+L1
+& Conditional specialization to one fixed nonzero \(h_0\), the literal
+  TPC coefficient field, one cofactor M\"obius sign, raw atomic norms, and
+  the stated terminal predicate.
+& No proof that every physical row activates, that
+  \(\delta_\eta\) or \(\kappa_X\) passes the threshold, or that physical
+  label erasure is bounded below.\\
+\addlinespace
+L2
+& None.
+& No signed fixed-shift cancellation estimate, no specialization to
+  \(h_0=2\), no parity-barrier advance, no prime-pair lower bound, and no
+  twin-prime consequence.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{What is not proved}
+
+The following statements remain absent.
+\begin{enumerate}[leftmargin=2.3em]
+ \item No favorable lower bound is proved for
+       \(\delta_{\eta_X}\) at any fixed or polynomially shrinking
+       threshold \(\eta_X\).
+ \item The actual physical coefficient vector is not shown to satisfy
+       \(\kappa_X>1-\delta_{\eta_X}\), let alone with an
+       endpoint-quality quantitative margin.
+ \item No bound
+       \[
+        \min_{m:P_m>0}\frac{T_m}{P_m}
+        \ge X^{-\lambda+o(1)}
+       \]
+       is proved for the full coefficient class.  Finite-scale positivity
+       of every row would still be weaker than such a bound.
+ \item No subpower or endpoint-quality bound is proved for the parent
+       inflation of a pair-populated repair.  The literal-active-hypergraph baseline
+       avoids that inflation but may not satisfy a downstream demand for
+       pair coordinates.
+ \item The labeled terminal square is not shown to survive dyadic-label
+       erasure, residual grouping, comparison with the native affine
+       Gram, boundary reconnection, or the ultra-tail map.
+ \item None of the nonnegative endpoint losses is newly shown to fit
+       inside the strict total budget.
+\end{enumerate}
+
+The capacity theorem is therefore not evidence that
+\(\delta_\eta\) or \(\kappa_X\) is favorable.  Likewise, failure of its
+threshold is failure of that certificate; it does not prove that the
+actual terminal ratio \(T(z)/\widetilde P(z)\) is small.
+
+\subsection{The next genuinely arithmetic theorem}
+
+The next layer must estimate the terminal incidence itself.  There are
+two honest quantifier scopes.
+
+\paragraph{Uniform row target.}
+For a full-coefficient theorem, prove on the literal multiscale carrier
+\begin{equation}
+ \boxed{
+ T_m
+ \ge X^{-\lambda_{\rm row}+o(1)}\widetilde P_m
+ \quad\text{for every }m\text{ with }\widetilde P_m>0,}
+ \label{eq:tpc64-next-uniform-row-target}
+\end{equation}
+with one uniform remainder and an exponent compatible with
+\eqref{eq:tpc64-strict-stop-rule}.  Expanded literally, this is a weighted
+lower theorem for terminal candidates
+\begin{equation}
+ p=\frac{mj+h_0}{r}
+ \label{eq:tpc64-next-prime-candidate}
+\end{equation}
+which pass the declared prime, cofactor, squarefree, coprimality, mask, and
+profile tests on every active source row.  A positive average over rows
+does not prove \eqref{eq:tpc64-next-uniform-row-target}.
+
+\paragraph{Distinguished capacity target.}
+For the actual physical vector \(z_*(X)\), one may instead prove, for a
+declared \(\eta_X>0\),
+\begin{align}
+ \delta_{\eta_X}
+ &=
+ \frac{\sum_{m:g_m\ge\eta_X}\widetilde P_m}
+      {\sum_m\widetilde P_m},
+ \label{eq:tpc64-next-delta-target}\\
+ \kappa_X(z_*;C_X)
+ &=
+ \frac{\widetilde P(z_*)}
+      {C_X^2\sum_m\widetilde P_m},
+ \label{eq:tpc64-next-kappa-target}
+\end{align}
+and establish the quantitative threshold
+\begin{equation}
+ \boxed{
+ \eta_X
+ \left(
+ 1-\frac{1-\delta_{\eta_X}}
+          {\kappa_X(z_*;C_X)}
+ \right)_+
+ \ge X^{-\lambda_{\rm term,*}^{\rm eff}+o(1)}.}
+ \label{eq:tpc64-next-distinguished-capacity-target}
+\end{equation}
+This gives a distinguished terminal arrow only.  It cannot be entered as
+the uniform constant in
+\eqref{eq:tpc64-next-uniform-row-target}.
+
+The natural arithmetic work is therefore a weighted prime-candidate
+census in the progressions
+\(mj+h_0\equiv0\pmod r\), simultaneously with the literal row, orbit,
+cofactor, and terminal windows.  A successful lower theorem advances the
+L1 activation gate.  An explicit active row with \(T_m=0\), or a proved
+endpoint-sized dilution, closes the corresponding uniform architecture
+and is an honest negative result.
+
+\paragraph{After activation.}
+Only after one of the two targets above is proved should the next paper
+seek a represented-reference Gram lower bound on precisely the same
+terminal carrier.  Determinant-pair cancellation, physical reassembly,
+boundary terms, and the tail remain later gates.
+
+\paragraph{Conclusion.}
+TPC--64 gives the exact meaning of true terminal activation relative to a
+parent-faithful denominator.  Pair completion can preserve the numerator
+while diluting that denominator; threshold capacity can recover a sharp
+lower bound only when its two inputs pass a strict quantitative test.
+Neither mechanism supplies the missing arithmetic incidence theorem.
+The next progress must come from the literal terminal candidates, not
+from a relabeling of their parent.

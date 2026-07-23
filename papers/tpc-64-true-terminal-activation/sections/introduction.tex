@@ -1,0 +1,146 @@
+\section{Introduction}
+\label{sec:tpc64-introduction}
+
+The fixed-shift program now has two distinct notions of ``completion.''
+TPC--63 completes the logical provenance interface: a pair relation may be
+rectangularized only after its literal full incidence has passed the
+appropriate parent, terminal, or grouped-output test
+\citep{WangTPC63}.  It also proves that retaining dyadic cofactor scales as
+orthogonal labels costs only \(X^{o(1)}\) at the raw-energy level.  Neither
+statement says that the chosen completed space has the same parent
+denominator as the coefficientwise physical field of TPC--47
+\citep{WangTPC47}.
+
+That denominator matters.  Suppose a rectangle adds coordinates which are
+terminal-null but carry nonzero pre-terminal coefficient.  Its terminal
+numerator is unchanged, while its parent form is larger.  Parseval on the
+enlarged space is exact but answers the wrong comparison unless the extra
+parent mass is recorded.  Conversely, replacing the parent by the
+terminal-active incidence deletes the very alignment defect which the
+activation theorem is meant to estimate.  The present paper isolates this
+missing arrow before any represented-Gram or signed-cancellation argument is
+attempted.
+
+For each dyadic block \(k\), let \(\mathcal U_{X,k}\) be the literal full
+incidence and let
+\[
+ \mathcal U_{X,k}^{\mathrm{pre},+}
+ =\{u:c_u\ne0\},
+ \qquad
+ \mathcal U_{X,h,k}^{+}
+ =\{u:t_h(u)c_u\ne0\}.
+\]
+The literal row masses are
+\begin{align}
+ P_m&=\sum_{k}\sum_{\substack{u\in
+       \mathcal U_{X,k}^{\mathrm{pre},+}\\m(u)=m}}|c_u|^2,
+ \label{eq:tpc64-intro-parent-mass}\\
+ H_m&=\sum_{k}\sum_{\substack{u\in
+       \mathcal U_{X,h,k}^{+}\\m(u)=m}}|c_u|^2,
+ \qquad
+ T_m=\sum_{k}\sum_{\substack{u\in
+       \mathcal U_{X,h,k}^{+}\\m(u)=m}}|t_h(u)c_u|^2.
+ \label{eq:tpc64-intro-terminal-masses}
+\end{align}
+All three are fixed before the free row coefficient is chosen.  In the
+physical specialization, \(t_h\) contains one inherited cofactor sign and
+the literal smooth terminal multiplier.  It is not normalized to a
+probability.
+
+The first result is an exact existence theorem.  Put
+\[
+ I_{\mathrm{pre},k}
+ :=\operatorname{pr}_{m,r}
+   \mathcal U_{X,k}^{\mathrm{pre},+}.
+\]
+A pair relation which retains every literal parent atom and introduces no
+terminal-active spurious cross exists exactly when
+\begin{equation}
+ \operatorname{TRect}_{h,k}(I_{\mathrm{pre},k})
+ =\mathcal U_{X,h,k}^{+}.
+ \label{eq:tpc64-intro-faithful-test}
+\end{equation}
+When it exists, \(I_{\mathrm{pre},k}\) is the unique least relation.  Its
+parent is uninflated exactly when its pre-terminal rectangle is already the
+literal active incidence.  Blocks which fail
+\eqref{eq:tpc64-intro-faithful-test} admit no parent-complete faithful
+pair-rectangular lift.  Our canonical fallback retains their literal active
+incidence, giving a pair-good/hypergraph hybrid.
+
+The second result measures the cost of every populated repair.  With
+\(\Delta_m\) the structural, \(z\)-independent squared mass of new
+terminal-null parent coordinates,
+\begin{equation}
+ \widetilde P_m=P_m+\Delta_m.
+ \label{eq:tpc64-intro-inflated-parent}
+\end{equation}
+The optimal full-row comparison is the largest row inflation; a new-only row
+makes the comparison infinite.  The literal-active-hypergraph realization has
+\(\Delta_m=0\) identically.  This distinguishes parent inflation from the
+Mellin-frame conditioning of TPC--51, the capacity saturation of TPC--54,
+and the physical label-erasure loss of TPC--62
+\citep{WangTPC51,WangTPC54,WangTPC62}.
+
+The third result gives the correct activation quantity.  On rows with all
+denominators positive,
+\begin{equation}
+ \frac{T_m}{\widetilde P_m}
+ =\underbrace{\frac{H_m}{P_m}}_{\text{terminal-support alignment}}
+  \underbrace{\frac{T_m}{H_m}}_{\text{literal multiplier intensity}}
+  \underbrace{\frac{P_m}{\widetilde P_m}}_{\text{inverse inflation}}.
+ \label{eq:tpc64-intro-three-factor}
+\end{equation}
+The paper extends this identity through all zero rows, proves the sharp
+uniform and distinguished minimax laws, and shows that the loss
+\(\mathfrak I_X^{-1}\) in passing from the literal hypergraph parent to the
+repaired parent cannot be improved from representation data alone.
+
+There remains an honest distinguished alternative inherited from the sharp
+energy-selection interface of TPC--54.  If good rows
+\(g_m=T_m/\widetilde P_m\ge\eta\) occupy a structural repaired-parent
+fraction \(\delta_\eta\), while a coefficient vector occupies at least a
+fraction \(\kappa_X\) of the available capped energy, then
+\begin{equation}
+ \frac{T(z)}{\widetilde P(z)}
+ \ge
+ \eta\left(1-\frac{1-\delta_\eta}{\kappa_X}\right)_+.
+ \label{eq:tpc64-intro-capacity}
+\end{equation}
+We prove that this bound and the threshold
+\(\kappa_X>1-\delta_\eta\) are sharp from the stated data.  The theorem
+does not assert that either input is favorable on the physical vector.
+
+The compatible endpoint chain uses the same carrier, row vector, raw norm,
+and uniform or distinguished scope throughout TPC--47, TPC--51, TPC--54,
+TPC--59, TPC--62, and TPC--63
+\citep{WangTPC47,WangTPC51,WangTPC54,WangTPC59,WangTPC62,WangTPC63}.
+If a literal terminal estimate is first proved relative to \(P\), parent
+inflation is charged once in its effective loss.  If a direct estimate is
+proved relative to \(\widetilde P\), it is not charged again.  Equality at
+the inherited endpoint \(1/400\) is a stop, not a success.
+
+\paragraph{Main results.}
+The paper proves the following finite-scale statements.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item Exact literal parent, terminal-support, and shaped terminal forms,
+       with block disintegration and raw atomic normalization.
+ \item A necessary and sufficient parent-complete/terminal-faithful pair-lift
+       criterion, its unique least relation, and the exact zero-inflation
+       test.
+ \item A canonical hybrid repair and an exact literal-active-hypergraph zero-inflation
+       baseline.
+ \item Exact parent-inflation identities, the optimal domination constant,
+       and sharp arbitrary-inflation and zero-row countermodels.
+ \item Zero-safe three-factor activation, uniform row minima,
+       distinguished weighted averages, and sharp inflation-corrected
+       transfer.
+ \item The sharp threshold-capacity certificate
+       \eqref{eq:tpc64-intro-capacity}, including all endpoint extremizers.
+ \item A denominator-compatible five-arrow chain, a no-double-charge
+       exponent ledger, and the strict \(1/400\) stop rule.
+\end{enumerate}
+
+The incidence and minimax theorems are L0.  Their use with one literal
+fixed-shift coefficient field is L1 and remains conditional on an arithmetic
+terminal-incidence estimate.  No L2 cancellation, parity, prime-pair, or
+twin-prime conclusion is claimed.

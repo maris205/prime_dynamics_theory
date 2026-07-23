@@ -1,0 +1,267 @@
+\section{Parent-complete terminal-faithful pair lifts}
+\label{sec:tpc64-parent-faithful-lifts}
+
+A pair relation can be useful only if its rectangular lift represents the
+same terminal field without deleting the parent against which activation
+is measured.  This section gives the exact existence test, the unique
+least relation, and the resulting parent inflation.
+
+\subsection{Block rectangles and two active closures}
+
+Fix \(k\in K_X\).  For a relation
+\[
+ I\subseteq\mathcal M_X\times\mathcal R_{X,k},
+\]
+define its block rectangle inside the declared ambient incidence by
+\begin{equation}
+ \operatorname{Rect}_k(I)
+ :=
+ \{u\in\Omega_{X,k}:(m(u),r(u))\in I\}.
+ \label{eq:tpc64-block-rectangle}
+\end{equation}
+Its pre-terminal and terminal-active closures are
+\begin{align}
+ \operatorname{PRect}_k(I)
+ &:=
+ \{u\in\operatorname{Rect}_k(I):c_u\ne0\},
+ \label{eq:tpc64-block-pre-rectangle}\\
+ \operatorname{TRect}_{h,k}(I)
+ &:=
+ \{u\in\operatorname{Rect}_k(I):t_h(u)c_u\ne0\}.
+ \label{eq:tpc64-block-terminal-rectangle}
+\end{align}
+Both are monotone in \(I\).
+
+\begin{definition}[Parent-complete and terminal-atomic faithful]
+\label{def:tpc64-parent-complete-terminal-faithful}
+A pair relation \(I\) on block \(k\) is
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item \emph{parent-complete} if
+ \begin{equation}
+  \mathcal U_{X,k}^{\mathrm{pre},+}
+  \subseteq\operatorname{PRect}_k(I);
+  \label{eq:tpc64-parent-complete}
+ \end{equation}
+ \item \emph{terminal-atomic faithful} if
+ \begin{equation}
+  \operatorname{TRect}_{h,k}(I)
+  =\mathcal U_{X,h,k}^{+}.
+  \label{eq:tpc64-terminal-atomic-faithful}
+ \end{equation}
+\end{enumerate}
+\end{definition}
+
+Parent completeness retains every nonzero literal pre-terminal coordinate.
+Terminal-atomic faithfulness demands equality before any coherent grouping;
+terminal-active spurious crosses are therefore forbidden even when a later
+grouping might cancel them.
+
+Put
+\begin{equation}
+ I_{\mathrm{pre},k}
+ :=
+ \operatorname{pr}_{m,r}
+ \mathcal U_{X,k}^{\mathrm{pre},+}.
+ \label{eq:tpc64-minimal-parent-relation}
+\end{equation}
+By construction,
+\begin{equation}
+ I\text{ is parent-complete}
+ \quad\Longleftrightarrow\quad
+ I_{\mathrm{pre},k}\subseteq I.
+ \label{eq:tpc64-parent-complete-relation-inclusion}
+\end{equation}
+
+\subsection{The exact existence and minimality theorem}
+
+\begin{theorem}[Parent-complete faithful-lift criterion]
+\label{thm:tpc64-parent-complete-faithful-lift}
+There exists a pair relation on block \(k\) which is simultaneously
+parent-complete and terminal-atomic faithful if and only if
+\begin{equation}
+ \boxed{
+ \operatorname{TRect}_{h,k}(I_{\mathrm{pre},k})
+ =\mathcal U_{X,h,k}^{+}.}
+ \label{eq:tpc64-parent-complete-lift-iff}
+\end{equation}
+When \eqref{eq:tpc64-parent-complete-lift-iff} holds,
+\(I_{\mathrm{pre},k}\) is the unique least such relation.  More precisely,
+\(I\) is parent-complete and terminal-atomic faithful if and only if
+\begin{equation}
+ I_{\mathrm{pre},k}\subseteq I
+ \quad\text{and}\quad
+ \operatorname{TRect}_{h,k}
+     (I\setminus I_{\mathrm{pre},k})=\varnothing.
+ \label{eq:tpc64-all-parent-complete-faithful-relations}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Every point of \(\mathcal U_{X,h,k}^{+}\) belongs to
+\(\mathcal U_{X,k}^{\mathrm{pre},+}\), so its pair lies in
+\(I_{\mathrm{pre},k}\).  Hence
+\begin{equation}
+ \mathcal U_{X,h,k}^{+}
+ \subseteq
+ \operatorname{TRect}_{h,k}(I_{\mathrm{pre},k}).
+ \label{eq:tpc64-terminal-contained-in-parent-closure}
+\end{equation}
+If \(I\) is parent-complete, then
+\(I_{\mathrm{pre},k}\subseteq I\) by
+\eqref{eq:tpc64-parent-complete-relation-inclusion}.  If it is also
+terminal-atomic faithful, monotonicity gives
+\[
+ \mathcal U_{X,h,k}^{+}
+ \subseteq
+ \operatorname{TRect}_{h,k}(I_{\mathrm{pre},k})
+ \subseteq
+ \operatorname{TRect}_{h,k}(I)
+ =\mathcal U_{X,h,k}^{+},
+\]
+which proves necessity of
+\eqref{eq:tpc64-parent-complete-lift-iff}.  Conversely, that equality
+makes \(I_{\mathrm{pre},k}\) both parent-complete and faithful.
+Every parent-complete relation contains it, proving unique leastness.
+
+Assume the criterion.  Adding pairs outside \(I_{\mathrm{pre},k}\)
+preserves terminal equality exactly when those pairs create no
+terminal-active point, which is the second condition in
+\eqref{eq:tpc64-all-parent-complete-faithful-relations}.  The first
+condition is exactly parent completeness.
+\end{proof}
+
+If \eqref{eq:tpc64-parent-complete-lift-iff} fails, every pair relation
+which retains all literal parent atoms creates a terminal-active spurious
+cross.  No enlargement of the relation can remove that cross.  Hence no
+parent-complete, terminal-atomic faithful pair-rectangular lift exists.  The
+canonical repair used below then falls back to the literal active
+hypergraph.  This statement excludes pair rectangles only; it makes no
+minimality claim among arbitrary nonlinear, quotient, or grouped
+representations.
+
+\subsection{Exact parent inflation}
+
+For a parent-complete relation \(I\), define its populated rectangular
+row weight by
+\begin{equation}
+ \widetilde P_{k,m}(I)
+ :=
+ \sum_{\substack{u\in\operatorname{PRect}_k(I)\\m(u)=m}}
+ |c_u|^2
+ \label{eq:tpc64-rectangular-parent-weight}
+\end{equation}
+and its added row mass by
+\begin{equation}
+ \Delta_{k,m}(I)
+ :=
+ \sum_{\substack{
+ u\in\operatorname{PRect}_k(I)
+       \setminus\mathcal U_{X,k}^{\mathrm{pre},+}\\
+ m(u)=m}}
+ |c_u|^2.
+ \label{eq:tpc64-block-added-parent-mass}
+\end{equation}
+Because parent completeness gives inclusion of the literal active
+incidence, the union is disjoint and
+\begin{equation}
+ \boxed{
+ \widetilde P_{k,m}(I)
+ =P_{k,m}+\Delta_{k,m}(I).}
+ \label{eq:tpc64-block-parent-inflation-identity}
+\end{equation}
+
+Likewise define
+\begin{equation}
+ \widetilde T_{k,m}(I)
+ :=
+ \sum_{\substack{
+ u\in\operatorname{TRect}_{h,k}(I)\\m(u)=m}}
+ |t_h(u)c_u|^2.
+ \label{eq:tpc64-rectangular-terminal-weight}
+\end{equation}
+If \(I\) is terminal-atomic faithful, then
+\begin{equation}
+ \boxed{\widetilde T_{k,m}(I)=T_{k,m}}
+ \label{eq:tpc64-block-terminal-preservation}
+\end{equation}
+for every row.  Thus a terminal-faithful rectangle can change the
+denominator while leaving the terminal numerator exactly unchanged.
+
+\begin{theorem}[Minimal parent inflation and its zero test]
+\label{thm:tpc64-minimal-parent-inflation}
+Assume \eqref{eq:tpc64-parent-complete-lift-iff}.  Then, for every
+parent-complete terminal-atomic faithful relation \(I\),
+\begin{equation}
+ \Delta_{k,m}(I_{\mathrm{pre},k})
+ \le\Delta_{k,m}(I)
+ \qquad(m\in\mathcal M_X).
+ \label{eq:tpc64-rowwise-minimal-inflation}
+\end{equation}
+The canonical pair lift has zero parent inflation on every row if and only
+if the literal pre-terminal active incidence is rectangular over its pair
+projection:
+\begin{equation}
+ \boxed{
+ \Delta_{k,m}(I_{\mathrm{pre},k})=0
+ \text{ for every }m
+ \quad\Longleftrightarrow\quad
+ \operatorname{PRect}_k(I_{\mathrm{pre},k})
+ =\mathcal U_{X,k}^{\mathrm{pre},+}.}
+ \label{eq:tpc64-zero-inflation-iff}
+\end{equation}
+If the terminal criterion holds but
+\eqref{eq:tpc64-zero-inflation-iff} fails, then some row has strictly
+positive added parent mass, and every added nonzero coordinate is
+terminal-null.
+\end{theorem}
+
+\begin{proof}
+Every admissible \(I\) contains \(I_{\mathrm{pre},k}\).  Monotonicity of
+\(\operatorname{PRect}_k\), followed by termwise nonnegativity in
+\eqref{eq:tpc64-block-added-parent-mass}, proves
+\eqref{eq:tpc64-rowwise-minimal-inflation}.  The inclusion
+\[
+ \mathcal U_{X,k}^{\mathrm{pre},+}
+ \subseteq\operatorname{PRect}_k(I_{\mathrm{pre},k})
+\]
+always holds.  Therefore all rowwise added sums vanish exactly when the
+two finite active sets are equal, proving
+\eqref{eq:tpc64-zero-inflation-iff}.  If they are unequal, a spurious
+point has \(c_u\ne0\) and contributes positively to its row.  Terminal
+faithfulness forces \(t_h(u)c_u=0\) at every such point.
+\end{proof}
+
+For \(P_{k,m}>0\), define the block inflation
+\begin{equation}
+ \iota_{k,m}(I)
+ :=\frac{\widetilde P_{k,m}(I)}{P_{k,m}}
+ =1+\frac{\Delta_{k,m}(I)}{P_{k,m}}.
+ \label{eq:tpc64-block-inflation-factor}
+\end{equation}
+If \(P_{k,m}=\widetilde P_{k,m}(I)=0\), put
+\(\iota_{k,m}(I)=1\).  If
+\(P_{k,m}=0<\widetilde P_{k,m}(I)\), put
+\(\iota_{k,m}(I)=+\infty\).  The last case cannot occur for the canonical
+relation \(I_{\mathrm{pre},k}\), but it can occur after arbitrary extra
+rows are inserted.
+
+The identities
+\eqref{eq:tpc64-block-parent-inflation-identity} and
+\eqref{eq:tpc64-block-terminal-preservation} show exactly which
+denominator a later activation theorem must use.  They do not by
+themselves give a positive activation constant.
+
+\begin{remark}[Terminal-only least relations do not preserve the parent]
+\label{rem:tpc64-terminal-only-relation}
+The smaller relation
+\(\operatorname{pr}_{m,r}\mathcal U_{X,h,k}^{+}\) may represent the
+terminal atomic field while omitting pairs which carry nonzero
+pre-terminal mass.  A favorable ratio obtained after that deletion is not
+a lower bound relative to \(P_{k,m}\).  Parent completeness is precisely
+the condition preventing this substitution.
+\end{remark}
+
+The exact size of the resulting activation dilution, new-only row
+failures, and sharp finite countermodels are separate from the existence
+theorem.  They must be evaluated from the populated repaired parent, not
+from the number of pair or block labels.

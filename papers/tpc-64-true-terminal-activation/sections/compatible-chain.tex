@@ -1,0 +1,350 @@
+\section{Denominator compatibility and the effective activation loss}
+\label{sec:tpc64-compatible-chain}
+
+A terminal numerator becomes useful only when every paper in the chain
+uses the same parent denominator.  This section records the exact
+compatibility requirements, defines the inflation and effective terminal
+losses, and inserts them into the inherited endpoint ledger without
+double charging.
+
+\subsection{The literal compatibility audit}
+
+Fix either a declared coefficient class
+\(\mathfrak Z_X\) or one distinguished singleton
+\(\{z_*(X)\}\).  Every item below must concern that same scope.
+
+\begin{definition}[Compatible realization]
+\label{def:tpc64-denominator-compatible-realization}
+A realization of the TPC--47/51/54/59/62/63 chain is
+\emph{denominator compatible} if all of the following hold
+\citep{WangTPC47,WangTPC51,WangTPC54,WangTPC59,WangTPC62,WangTPC63}.
+\begin{enumerate}[label=\textup{(D\arabic*)},leftmargin=3.4em]
+ \item The TPC--47 physical slice uses one fixed \(h_0\), its literal row
+       coefficient \(z_m\), one cofactor sign \(\mu(r)\), and the actual
+       coefficient-independent full incidence.  No frozen shift or
+       independently selected coefficient vector replaces this slice.
+ \item The TPC--51 direct sum retains the same
+       \((m,r,j,\gamma)\)-atoms and their raw counting-measure norm.
+       A Mellin \(L^1\) envelope, a quotient-frame norm, or a
+       representation-dependent layer norm is not substituted for the
+       physical parent.
+ \item The TPC--54 capacity weights are exactly the row masses of the
+       parent used here.  After a populated repair they are
+       \(\widetilde P_m\), so both \(\delta_\eta\) and \(\kappa_X\) are
+       computed with \(\widetilde P_m\), not with source-row cardinality,
+       \(P_m\), or a terminal-active submeasure.
+ \item The TPC--59 terminal multiplier and support predicate give exactly
+       \(T_m\) on the same atoms.  The compatible pre-terminal
+       denominator is not replaced by the terminal-support mass \(H_m\).
+ \item The TPC--63 provenance test is applied before pair
+       rectangularization.  Pair-bad blocks retain their literal active incidence;
+       on pair-good blocks every added parent atom and its inflation remain
+       in \(\widetilde P_m\).  Terminal-active support is not used
+       retroactively as the parent.
+ \item In the TPC--62 chain, the form leaving this activation module is
+       literally the form entering the represented/native module.  Every
+       external block label is retained, or its actual erasure map and
+       range-restricted lower bound are inserted as a separate reassembly
+       arrow.
+\end{enumerate}
+\end{definition}
+
+These conditions are identities of objects, not estimates.  When they
+hold, the relevant beginning of the chain is
+\begin{equation}
+ \boxed{
+ P(z)
+ \xrightarrow[\text{parent completion}]{\widetilde P=P+\Delta}
+ \widetilde P(z)
+ \xrightarrow[\text{literal terminal map}]{\quad}
+ T(z).}
+ \label{eq:tpc64-exact-denominator-chain}
+\end{equation}
+The first arrow is not a lower transfer: it records a possible
+denominator enlargement.  The lower constant for the second arrow must
+therefore be measured by \(T(z)/\widetilde P(z)\).
+
+\subsection{Exact constants and exponent definitions}
+
+Assume first that the declared class contains at least one vector with
+positive literal parent.  Define
+\begin{align}
+ \mathfrak I_X(\mathfrak Z_X)
+ &:=
+ \sup_{\substack{z\in\mathfrak Z_X\\\widetilde P(z)>0}}
+ \frac{\widetilde P(z)}{P(z)}
+ \in[1,+\infty],
+ \label{eq:tpc64-compatible-inflation-constant}\\
+ c_{\rm term}^{\rm lit}(X;\mathfrak Z_X)
+ &:=
+ \inf_{\substack{z\in\mathfrak Z_X\\P(z)>0}}
+ \frac{T(z)}{P(z)},
+ \label{eq:tpc64-literal-terminal-constant}\\
+ c_{\rm term}^{\rm eff}(X;\mathfrak Z_X)
+ &:=
+ \inf_{\substack{z\in\mathfrak Z_X\\
+                  \widetilde P(z)>0}}
+ \frac{T(z)}{\widetilde P(z)}.
+ \label{eq:tpc64-effective-terminal-constant}
+\end{align}
+In \eqref{eq:tpc64-compatible-inflation-constant}, the quotient is
+understood as \(+\infty\) when
+\(P(z)=0<\widetilde P(z)\).  Thus a finite compatible inflation
+constant automatically excludes a new-only vector from the declared
+scope.
+For the canonical hybrid repair there is no new-only row, and the
+full-space value of \(\mathfrak I_X\) is the maximum row inflation.  For a
+distinguished singleton, all three quantities are ratios on that one
+vector and must retain the distinguished label.
+
+The exact comparison is
+\begin{equation}
+ \boxed{
+ c_{\rm term}^{\rm eff}(X;\mathfrak Z_X)
+ \ge
+ \frac{c_{\rm term}^{\rm lit}(X;\mathfrak Z_X)}
+      {\mathfrak I_X(\mathfrak Z_X)}}
+ \label{eq:tpc64-compatible-activation-comparison}
+\end{equation}
+whenever the right side is defined with finite
+\(\mathfrak I_X\).  Indeed, finiteness gives \(P(z)>0\) whenever
+\(\widetilde P(z)>0\), and for every such vector
+\[
+ \frac{T(z)}{\widetilde P(z)}
+ =
+ \frac{T(z)}{P(z)}
+ \left(\frac{\widetilde P(z)}{P(z)}\right)^{-1}
+ \ge
+ \frac{c_{\rm term}^{\rm lit}(X;\mathfrak Z_X)}
+      {\mathfrak I_X(\mathfrak Z_X)}.
+\]
+Taking the infimum proves
+\eqref{eq:tpc64-compatible-activation-comparison}.  This is sharp
+already in a one-row model.  A direct estimate relative to
+\(\widetilde P\), such as
+\cref{thm:tpc64-threshold-capacity}, can be stronger.
+
+For an asymptotic family of scopes, define the optimal fixed-power losses
+\begin{align}
+ \lambda_{\rm infl}
+ &:=
+ \limsup_{X\to\infty}
+ \frac{\log \mathfrak I_X(\mathfrak Z_X)}{\log X},
+ \label{eq:tpc64-lambda-infl-definition}\\
+ \lambda_{\rm term}^{\rm eff}
+ &:=
+ \limsup_{X\to\infty}
+ \frac{\log^+\!\bigl(
+       1/c_{\rm term}^{\rm eff}(X;\mathfrak Z_X)\bigr)}
+      {\log X},
+ \label{eq:tpc64-lambda-term-eff-definition}
+\end{align}
+provided the corresponding constant is positive eventually.  If
+\(\mathfrak I_X=+\infty\) or
+\(c_{\rm term}^{\rm eff}=0\) infinitely often, assign the relevant loss
+\(+\infty\).  Here \(\log^+u:=\max\{\log u,0\}\).  Define
+\(\lambda_{\rm term}^{\rm lit}\) analogously from
+\(c_{\rm term}^{\rm lit}\).
+
+\begin{proposition}[Effective loss from the two honest routes]
+\label{prop:tpc64-two-effective-loss-routes}
+In one fixed nonempty quantifier scope.  In route \textup{(ii)} this scope
+is a normalized or capacity-restricted slice and need not be homogeneous:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item if
+       \(\mathfrak I_X\le X^{\lambda_{\rm infl}+o(1)}\) and
+       \(c_{\rm term}^{\rm lit}
+          \ge X^{-\lambda_{\rm term}^{\rm lit}+o(1)}\),
+       then
+       \begin{equation}
+        c_{\rm term}^{\rm eff}
+        \ge
+        X^{-(\lambda_{\rm term}^{\rm lit}
+             +\lambda_{\rm infl})+o(1)};
+        \label{eq:tpc64-inflated-terminal-exponent}
+       \end{equation}
+ \item if common \(C_X>0\) and \(0<\kappa_X\le1\) exist such that every
+       \(z\in\mathfrak Z_X\) satisfies
+       \[
+        |z_m|\le C_X
+        \quad(m\in\mathcal M_X^+),
+        \qquad
+        \widetilde P(z)
+        \ge\kappa_XC_X^2\widetilde W_X>0,
+       \]
+       and the threshold-capacity inputs give
+       \begin{equation}
+        \eta_X
+        \left(
+        1-\frac{1-\delta_{\eta_X}}{\kappa_X}
+        \right)_+
+        \ge X^{-\lambda_{\rm cap}+o(1)},
+        \label{eq:tpc64-capacity-exponent-input}
+       \end{equation}
+       on the same declared class, then
+       \begin{equation}
+        c_{\rm term}^{\rm eff}
+        \ge X^{-\lambda_{\rm cap}+o(1)}.
+        \label{eq:tpc64-capacity-effective-exponent}
+       \end{equation}
+\end{enumerate}
+If both routes apply, the larger lower constant may be used.  In
+particular,
+\begin{equation}
+ \lambda_{\rm term}^{\rm eff}
+ \le
+ \min\{
+ \lambda_{\rm term}^{\rm lit}+\lambda_{\rm infl},
+ \lambda_{\rm cap}
+ \}.
+ \label{eq:tpc64-best-effective-loss}
+\end{equation}
+No equality is asserted: a direct terminal estimate may be better than
+either certificate.
+\end{proposition}
+
+\begin{proof}
+The first conclusion is
+\eqref{eq:tpc64-compatible-activation-comparison} in exponent form.  The
+second is \cref{thm:tpc64-threshold-capacity}.  Taking the better of two
+proved lower bounds gives \eqref{eq:tpc64-best-effective-loss}.
+\end{proof}
+
+If \(\mathfrak Z_X=\{z_*(X)\}\), every constant and exponent above is
+distinguished.  A bound proved there cannot be inserted into the
+full-space versions of
+\eqref{eq:tpc64-compatible-inflation-constant}--%
+\eqref{eq:tpc64-effective-terminal-constant}.
+
+\subsection{The compatible physical chain}
+
+Let \(\mathcal Q_{\rm in}\), \(\mathcal Q_A\),
+\(\mathcal Q_F\), and \(\mathcal Q_{\rm out}\) denote, respectively, the
+declared upstream input, represented native output, full
+represented-plus-missing output, and downstream reconnected output.  The
+terminal form \(T\) and repaired parent \(\widetilde P\) are inserted as
+two additional named nodes.
+
+\begin{theorem}[Exact five-arrow compatible chain]
+\label{thm:tpc64-five-arrow-compatible-chain}
+Suppose all six forms are nonnegative quadratic forms evaluated on the same
+initial \(z\) in the same scope.  Suppose also that
+\[
+ c_{\rm pre},c_{\rm term},c_{\rm post},c_{\rm reasm},c_{\rm out}\ge0
+\]
+and that
+\begin{align}
+ \widetilde P(z)
+ &\ge c_{\rm pre}(X)\mathcal Q_{\rm in}(z),
+ \label{eq:tpc64-pre-parent-arrow}\\
+ T(z)
+ &\ge c_{\rm term}(X)\widetilde P(z),
+ \label{eq:tpc64-terminal-arrow}\\
+ \mathcal Q_A(z)
+ &\ge c_{\rm post}(X)T(z),
+ \label{eq:tpc64-post-terminal-arrow}\\
+ \mathcal Q_F(z)
+ &\ge c_{\rm reasm}(X)\mathcal Q_A(z),
+ \label{eq:tpc64-reassembly-arrow}\\
+ \mathcal Q_{\rm out}(z)
+ &\ge c_{\rm out}(X)\mathcal Q_F(z).
+ \label{eq:tpc64-downstream-arrow}
+\end{align}
+Every output carrier and normalization in one line is required to be the
+literal input carrier and normalization in the next.  Then
+\begin{equation}
+ \boxed{
+ \mathcal Q_{\rm out}(z)
+ \ge
+ c_{\rm out}c_{\rm reasm}c_{\rm post}
+ c_{\rm term}c_{\rm pre}\,
+ \mathcal Q_{\rm in}(z).}
+ \label{eq:tpc64-five-arrow-product}
+\end{equation}
+The statement is uniform only if all five inequalities and all their
+remainders are uniform on the same \(\mathfrak Z_X\).
+\end{theorem}
+
+\begin{proof}
+Apply the five inequalities successively to the named intermediate forms
+generated by the same \(z\).  No supremum, infimum, selector, shift, or
+coefficient vector changes during the substitutions.
+\end{proof}
+
+The exact TPC--47/51 dictionary may make
+\(c_{\rm pre}=1\) on a literally identical carrier.  TPC--54 selection
+or TPC--59 occupancy costs belong to \(c_{\rm pre}\) only if they compare
+\(\mathcal Q_{\rm in}\) with the precise repaired parent used in
+\eqref{eq:tpc64-terminal-arrow}.  TPC--62 reassembly begins only at
+\eqref{eq:tpc64-reassembly-arrow}; it cannot repair a zero terminal
+constant.
+
+\subsection{No-double-charge ledger and stop rule}
+
+Write
+\begin{equation}
+ \Lambda_{\rm pre}
+ :=\lambda_{\rm sel}+\lambda_{\rm occ}+\lambda_{\rm blk}.
+ \label{eq:tpc64-pre-terminal-ledger}
+\end{equation}
+When each symbol corresponds to a genuinely distinct arrow in
+\cref{thm:tpc64-five-arrow-compatible-chain}, the inherited physical
+ledger is
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ \Lambda_{\rm tot}^{(64)}
+ :={}&
+ \lambda_{\rm sel}+\lambda_{\rm occ}+\lambda_{\rm blk}
+ +\lambda_{\rm term}^{\rm eff}
+ +\lambda_{\rm sing}\\
+ &+\lambda_H+\lambda_{\rm aff}
+ +\lambda_{\rm reasm}
+ +\lambda_{\rm bdry}+\lambda_{\rm tail}.
+ \end{aligned}}
+ \label{eq:tpc64-complete-loss-ledger}
+\end{equation}
+The strict endpoint test is
+\begin{equation}
+ \boxed{\Lambda_{\rm tot}^{(64)}<\frac1{400}.}
+ \label{eq:tpc64-strict-stop-rule}
+\end{equation}
+
+The following no-double-charge rules are part of the formula.
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.8em]
+ \item If
+       \(\lambda_{\rm term}^{\rm eff}\) is obtained from
+       \(\lambda_{\rm term}^{\rm lit}+\lambda_{\rm infl}\), only
+       \(\lambda_{\rm term}^{\rm eff}\) enters
+       \eqref{eq:tpc64-complete-loss-ledger}; the two diagnostic inputs are
+       not added again.
+ \item If the capacity theorem proves the terminal arrow directly relative
+       to \(\widetilde P\), then
+       \(\eta_X,\delta_{\eta_X},\kappa_X\), and
+       \(\lambda_{\rm cap}\) are ingredients of the one term
+       \(\lambda_{\rm term}^{\rm eff}\), not four further arrows.
+ \item If selection, occupancy, or block losses were already used to prove
+       the same direct ratio \(T/\widetilde P\), they must be removed from
+       \(\Lambda_{\rm pre}\).  Conversely, if they compare an earlier
+       \(\mathcal Q_{\rm in}\) with \(\widetilde P\), they remain separate.
+ \item A represented-reference exponent used only to certify
+       \(\lambda_{\rm reasm}\) is not charged again if its physical arrow
+       is already included in \(\lambda_H+\lambda_{\rm aff}\).
+ \item Exact set identities, faithful hypergraph retention, literal
+       coordinate permutations or unitary relabelings, and \(O(\log X)\)
+       diagnostic labels have zero fixed-power cost.  A more general
+       coordinate change has zero such cost only after a uniform or
+       \(X^{o(1)}\) condition-number bound is proved; otherwise its loss
+       must enter the ledger.  Erasing diagnostic labels is not a
+       coordinate change and belongs to \(\lambda_{\rm reasm}\).
+\end{enumerate}
+
+If a mandatory constant in
+\cref{thm:tpc64-five-arrow-compatible-chain} is zero infinitely often,
+the matching exponent route stops.  If a necessary proved loss is at
+least \(1/400\), the exponent-only endpoint route also stops, including at
+equality.  A separate constant-sensitive endpoint argument at equality
+would lie outside this strict exponent ledger and would not satisfy
+\eqref{eq:tpc64-strict-stop-rule}.  A distinguished success, an
+averaged-shift success, or a different-denominator success does not evade
+either stop rule.

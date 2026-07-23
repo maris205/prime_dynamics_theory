@@ -1,0 +1,272 @@
+\section{The literal multiscale parent and its terminal field}
+\label{sec:tpc64-literal-parent}
+
+The multiscale construction must begin before pair projection.  This
+section fixes the literal finite incidence, its raw parent form, and the
+terminal form to which every later repair will be compared.  In
+particular, neither a rectangular completion nor the terminal-active
+support is used to define the parent.
+
+\subsection{Finite arithmetic blocks and full incidences}
+
+Fix \(X\ge 2\) and one integer
+\begin{equation}
+ h\in\mathbb Z\setminus\{0\}.
+ \label{eq:tpc64-fixed-shift}
+\end{equation}
+The physical specialization will take \(h=h_0\), but no value of \(h_0\)
+is selected here.  Let \(K_X\subset\mathbb Z\) be a finite set of block
+labels.  For \(k\in K_X\), let
+\(\mathcal R_{X,k}\subset\mathbb N\) be finite, with the
+\(\mathcal R_{X,k}\) pairwise disjoint, and let
+\begin{equation}
+ \Omega_{X,k}\subseteq
+ \mathcal M_X\times\mathcal R_{X,k}
+ \times\mathcal J_X\times\Gamma_X
+ \label{eq:tpc64-block-ambient}
+\end{equation}
+be a finite coefficient-independent ambient incidence.  Here
+\(\mathcal M_X,\mathcal J_X\subset\mathbb N\) and \(\Gamma_X\) is a
+finite auxiliary label set.  A point is written
+\[
+ u=(m,r,j,\gamma),\qquad
+ m(u)=m,\quad r(u)=r,\quad j(u)=j,\quad\gamma(u)=\gamma.
+\]
+Allowing \(\Omega_{X,k}\) to be a subset of the displayed product permits
+fixed residue, side, orbit, and support restrictions.  They are part of
+the ambient arithmetic data and are fixed before a row coefficient is
+chosen.
+
+For every \(k\), let
+\begin{equation}
+ \mathcal U_{X,k}\subseteq\Omega_{X,k}
+ \label{eq:tpc64-literal-full-incidence}
+\end{equation}
+be the literal full pre-terminal incidence on that block.  The word
+\emph{full} means that all four labels are retained; it does not mean that
+\(\mathcal U_{X,k}\) is a Cartesian product.  Attach a structural
+coefficient
+\begin{equation}
+ c_u\in\mathbb C,\qquad u\in\Omega_{X,k},
+ \label{eq:tpc64-structural-coefficient}
+\end{equation}
+containing every coefficient-free source, mask, opposite-row, residue,
+and orbit factor preceding terminalization.  Both
+\(\mathcal U_{X,k}\) and \(c_u\) are fixed independently of
+\[
+ z=(z_m)_{m\in\mathcal M_X}\in
+ Z_X:=\mathbb C^{\mathcal M_X}.
+\]
+Thus a zero of \(z_m\) never deletes an atom from the structural support.
+
+\subsection{The literal terminal multiplier}
+
+For \(u=(m,r,j,\gamma)\), put
+\begin{equation}
+ n_h(u):=mj+h.
+ \label{eq:tpc64-target-integer}
+\end{equation}
+If \(n_h(u)>0\) and \(r\mid n_h(u)\), define
+\begin{equation}
+ p_h(u):=\frac{n_h(u)}r\in\mathbb N.
+ \label{eq:tpc64-prime-candidate}
+\end{equation}
+Otherwise \(p_h(u)\) is left undefined and the terminal indicator below
+is zero.  Let
+\(\mathbf 1_{\mathrm{term},h}(u)\in\{0,1\}\) be the conjunction of the
+complete declared terminal conditions.  In the fixed-shift arithmetic
+specialization these include
+\begin{equation}
+ n_h(u)>0,\qquad r\mid n_h(u),\qquad
+ p_h(u)\in\mathbb P,
+ \label{eq:tpc64-basic-terminal-tests}
+\end{equation}
+the declared prime and cofactor windows, and every inherited squarefree,
+coprimality, literal-mask, and terminal-profile support condition.  No
+test is allowed to depend on \(z\).
+
+Let \(\Lambda_X:\mathbb N\to\mathbb C\) be the literal shaped terminal
+weight and define
+\begin{equation}
+ t_h(u):=
+ \mu(r(u))\Lambda_X(n_h(u))
+ \mathbf 1_{\mathrm{term},h}(u).
+ \label{eq:tpc64-literal-terminal-multiplier}
+\end{equation}
+The factor \(\mu(r)\) occurs once.  If the physical packet uses an
+equivalent calibrated multiplier, that multiplier is inserted in
+\eqref{eq:tpc64-literal-terminal-multiplier} without changing any argument
+below.
+
+\begin{definition}[Literal active incidences]
+\label{def:tpc64-literal-active-incidences}
+For \(k\in K_X\), define
+\begin{align}
+ \mathcal U_{X,k}^{\mathrm{pre},+}
+ &:=
+ \{u\in\mathcal U_{X,k}:c_u\ne0\},
+ \label{eq:tpc64-pre-active-incidence}\\
+ \mathcal U_{X,h,k}^{+}
+ &:=
+ \{u\in\mathcal U_{X,k}:t_h(u)c_u\ne0\}.
+ \label{eq:tpc64-terminal-active-incidence}
+\end{align}
+\end{definition}
+
+Both sets are coefficient-independent and
+\begin{equation}
+ \mathcal U_{X,h,k}^{+}
+ \subseteq\mathcal U_{X,k}^{\mathrm{pre},+}.
+ \label{eq:tpc64-active-incidence-inclusion}
+\end{equation}
+The inclusion may be strict.  Replacing the first set by the second in an
+upstream parent form would discard terminal-null parent mass and make
+activation circular.
+
+\subsection{Raw parent, support-aligned, and terminal forms}
+
+For \(m\in\mathcal M_X\) and \(k\in K_X\), define
+\begin{align}
+ P_{k,m}
+ &:=
+ \sum_{\substack{u\in\mathcal U_{X,k}^{\mathrm{pre},+}\\m(u)=m}}
+ |c_u|^2,
+ \label{eq:tpc64-block-parent-weight}\\
+ H_{k,m}
+ &:=
+ \sum_{\substack{u\in\mathcal U_{X,h,k}^{+}\\m(u)=m}}
+ |c_u|^2,
+ \label{eq:tpc64-block-aligned-weight}\\
+ T_{k,m}
+ &:=
+ \sum_{\substack{u\in\mathcal U_{X,h,k}^{+}\\m(u)=m}}
+ |t_h(u)c_u|^2.
+ \label{eq:tpc64-block-terminal-weight}
+\end{align}
+An empty sum is zero.  Aggregate the blocks by
+\begin{equation}
+ P_m:=\sum_{k\in K_X}P_{k,m},\qquad
+ H_m:=\sum_{k\in K_X}H_{k,m},\qquad
+ T_m:=\sum_{k\in K_X}T_{k,m}.
+ \label{eq:tpc64-aggregate-row-weights}
+\end{equation}
+Then
+\begin{equation}
+ 0\le H_m\le P_m,\qquad
+ P_m=0\Longrightarrow H_m=T_m=0.
+ \label{eq:tpc64-row-weight-order}
+\end{equation}
+There is no universal order between \(T_m\) and \(H_m\), because the
+literal multiplier \(\lvert\Lambda_X\rvert^2\) remains in \(T_m\).
+
+The corresponding quadratic forms on the original row-coefficient space
+are
+\begin{align}
+ \mathcal P_X(z)
+ &:=\sum_{m\in\mathcal M_X}P_m|z_m|^2,
+ \label{eq:tpc64-literal-parent-form}\\
+ \mathcal H_{X,h}(z)
+ &:=\sum_{m\in\mathcal M_X}H_m|z_m|^2,
+ \label{eq:tpc64-literal-aligned-form}\\
+ \mathcal T_{X,h}(z)
+ &:=\sum_{m\in\mathcal M_X}T_m|z_m|^2.
+ \label{eq:tpc64-literal-terminal-form}
+\end{align}
+These are raw counting-measure forms.  Repeated cofactors, orbit points,
+or auxiliary labels remain distinct orthogonal atoms.  In particular,
+there is no division by a row multiplicity, cofactor multiplicity, or
+terminal fiber size.
+
+Equivalently, on the labeled spaces
+\begin{equation}
+ \mathcal H_X^{\mathrm{pre}}
+ :=
+ \bigoplus_{k\in K_X}^{\perp}
+ \ell^2(\mathcal U_{X,k}^{\mathrm{pre},+}),
+ \qquad
+ \mathcal H_{X,h}^{\mathrm{term}}
+ :=
+ \bigoplus_{k\in K_X}^{\perp}
+ \ell^2(\mathcal U_{X,h,k}^{+}),
+ \label{eq:tpc64-literal-Hilbert-spaces}
+\end{equation}
+Write
+\(
+ \mathcal U^{\mathrm{pre},+}
+ :=(\mathcal U_{X,k}^{\mathrm{pre},+})_{k\in K_X}
+\)
+for the literal parent family.
+For any family \(\mathcal V=(\mathcal V_{X,k})_{k\in K_X}\) satisfying
+\[
+ \mathcal U_{X,h,k}^{+}\subseteq\mathcal V_{X,k}\subseteq\Omega_{X,k},
+ \qquad k\in K_X,
+\]
+define the typed terminal operator
+\[
+ D_{X,h}^{\mathcal V}:
+ \bigoplus_{k\in K_X}^{\perp}\ell^2(\mathcal V_{X,k})
+ \longrightarrow \mathcal H_{X,h}^{\mathrm{term}},
+ \qquad
+ (D_{X,h}^{\mathcal V}a)(k,u):=t_h(u)a(k,u)
+ \quad(u\in\mathcal U_{X,h,k}^{+}).
+\]
+Thus the operator domain changes with the populated parent incidence, while
+the terminal codomain remains literal.  The literal analysis and terminal
+maps are
+\begin{align}
+ (C_X^{\mathrm{lit}}z)(k,u)
+ &:=c_u z_{m(u)},
+ \label{eq:tpc64-literal-analysis-map}\\
+ (D_{X,h}^{\mathcal U^{\mathrm{pre},+}}C_X^{\mathrm{lit}}z)(k,u)
+ &:=t_h(u)c_u z_{m(u)}.
+ \label{eq:tpc64-literal-terminal-map}
+\end{align}
+Thus
+\begin{equation}
+ \|C_X^{\mathrm{lit}}z\|_2^2=\mathcal P_X(z),
+ \qquad
+ \|D_{X,h}^{\mathcal U^{\mathrm{pre},+}}C_X^{\mathrm{lit}}z\|_2^2
+ =\mathcal T_{X,h}(z).
+ \label{eq:tpc64-literal-map-forms}
+\end{equation}
+
+\begin{proposition}[Exact block disintegration]
+\label{prop:tpc64-exact-block-disintegration}
+For every \(z\in Z_X\),
+\begin{align}
+ \mathcal P_X(z)
+ &=\sum_{k\in K_X}
+   \sum_m P_{k,m}|z_m|^2,
+ \label{eq:tpc64-parent-block-disintegration}\\
+ \mathcal T_{X,h}(z)
+ &=\sum_{k\in K_X}
+   \sum_m T_{k,m}|z_m|^2.
+ \label{eq:tpc64-terminal-block-disintegration}
+\end{align}
+These are exact identities with constant one, independently of
+\(|K_X|\).
+\end{proposition}
+
+\begin{proof}
+The external block labels make the summands orthogonal, and the cofactor
+blocks are disjoint.  Expanding the two raw squared norms in
+\eqref{eq:tpc64-literal-map-forms} and regrouping first by \(k\) and then
+by \(m\) gives the displayed identities.
+\end{proof}
+
+\subsection{The activation comparison is not yet an estimate}
+
+The literal activation problem is the comparison of
+\(\mathcal T_{X,h}\) with \(\mathcal P_X\), in one declared uniform or
+distinguished coefficient scope.  If \(\mathcal P_X\equiv0\), there is no
+parent-visible vector and no activation constant or exponent is assigned.
+If \(\mathcal P_X\not\equiv0\), the definitions above do not assert that
+every active parent row has \(T_m>0\), nor that any positive ratio has a
+fixed-power lower bound.
+
+Normalizing \(\mathcal T_{X,h}\) by
+\(\mathcal H_{X,h}\), or declaring
+\(\mathcal U_{X,h,k}^{+}\) to be the parent incidence, would delete the
+parent-to-terminal-support alignment loss.  Such a terminal-active parent
+cannot be substituted for \(\mathcal P_X\) in a chain whose upstream
+reference is the literal pre-terminal form.

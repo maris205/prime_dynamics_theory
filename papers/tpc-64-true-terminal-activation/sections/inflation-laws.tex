@@ -1,0 +1,222 @@
+\section{Exact parent-inflation laws}
+\label{sec:tpc64-inflation-laws}
+
+The terminal-faithfulness test does not by itself preserve the parent
+denominator.  A pair rectangle may add coordinates which are terminal-null
+but carry nonzero pre-terminal mass.  This section records that mass exactly.
+All incidences, coefficients, and repairs are fixed before the row
+coefficient vector is chosen.
+
+\subsection{Repaired parent data}
+
+Continue with the literal blocks, incidences, and row masses
+\[
+ \mathcal U_{X,k}^{\mathrm{pre},+},\qquad
+ \mathcal U_{X,h,k}^{+},\qquad
+ P_m,\ H_m,\ T_m
+\]
+from \cref{sec:tpc64-literal-parent}.  In particular, \(P_m,H_m,T_m\)
+are not recomputed after a pair projection or terminal restriction.
+
+Fix a populated parent enlargement
+\(\widetilde{\mathcal U}_{X,k}^{\mathrm{pre},+}\) which preserves every
+literal parent atom and is terminal-atomic faithful.  Thus
+\begin{equation}
+ \mathcal U_{X,k}^{\mathrm{pre},+}
+ \subseteq\widetilde{\mathcal U}_{X,k}^{\mathrm{pre},+}
+ \subseteq\{u\in\Omega_{X,k}:c_u\ne0\},
+ \qquad
+ \{u\in\widetilde{\mathcal U}_{X,k}^{\mathrm{pre},+}:
+               t_h(u)c_u\ne0\}
+ =\mathcal U_{X,h,k}^{+}.
+ \label{eq:tpc64-parent-complete-terminal-faithful}
+\end{equation}
+The added-parent incidence
+\begin{equation}
+ \mathcal N_{X,k}
+ :=\widetilde{\mathcal U}_{X,k}^{\mathrm{pre},+}
+      \setminus\mathcal U_{X,k}^{\mathrm{pre},+}
+ \label{eq:tpc64-new-parent-incidence}
+\end{equation}
+therefore satisfies
+\begin{equation}
+ t_h(u)c_u=0
+ \qquad(u\in\mathcal N_{X,k}).
+ \label{eq:tpc64-new-parent-terminal-null}
+\end{equation}
+For a pair lift, the first condition is parent completeness in the sense
+of \cref{def:tpc64-parent-complete-terminal-faithful}.  For the canonical
+hybrid repair, take
+\(\widetilde{\mathcal U}_{X,k}^{\mathrm{pre},+}
+=\mathcal V_{X,k}^{\mathrm{hyb}}\): this is the least admissible
+parent-complete rectangle on a pair-good block and the literal active
+incidence on a pair-bad block.  The results below use only
+\eqref{eq:tpc64-parent-complete-terminal-faithful}, so they also apply to
+any larger populated terminal-faithful repair.
+
+For every source row \(m\), define only the genuinely new quantity
+\begin{equation}
+ \Delta_m
+ :=\sum_{k\in K_X}
+     \sum_{\substack{u\in\mathcal N_{X,k}\\m(u)=m}}
+       |c_u|^2.
+ \label{eq:tpc64-added-parent-mass}
+\end{equation}
+The populated repaired parent mass therefore obeys
+\begin{equation}
+ \widetilde P_m=P_m+\Delta_m.
+ \label{eq:tpc64-repaired-parent-mass}
+\end{equation}
+In the canonical hybrid specialization,
+\(\Delta_m=\Delta_m^{\mathrm{hyb}}\), and
+\eqref{eq:tpc64-repaired-parent-mass} is exactly the previously defined
+hybrid row parent \eqref{eq:tpc64-hybrid-row-parent}; no second hybrid
+parent is being introduced.
+All four quantities are nonnegative, and
+\begin{equation}
+ 0\le H_m\le P_m\le\widetilde P_m.
+ \label{eq:tpc64-row-mass-order}
+\end{equation}
+Terminal faithfulness means that the repair changes neither \(H_m\) nor
+\(T_m\).  It changes only the parent against which terminal activation is
+measured.
+
+For \(z=(z_m)_{m\in\mathcal M_X}\in Z_X\), set
+\begin{align}
+ P(z)&:=\mathcal P_X(z)=\sum_mP_m|z_m|^2,
+ &
+ \Delta(z)&:=\sum_m\Delta_m|z_m|^2,
+ \label{eq:tpc64-parent-added-forms}\\
+ \widetilde P(z)&:=\sum_m\widetilde P_m|z_m|^2,
+ &
+ T(z)&:=\mathcal T_{X,h}(z)=\sum_mT_m|z_m|^2.
+ \label{eq:tpc64-repaired-terminal-forms}
+\end{align}
+We assume throughout that \(P\) is not identically zero.  Rows on which
+\(P_m=\widetilde P_m=0\) are harmless zero rows.
+
+\subsection{The exact inflation constant}
+
+The row inflation ratio is an extended nonnegative number.  We use the
+convention
+\begin{equation}
+ \iota_m:=
+ \begin{cases}
+  \displaystyle\frac{\widetilde P_m}{P_m}
+   =1+\frac{\Delta_m}{P_m},&P_m>0,\\[8pt]
+  1,&P_m=\widetilde P_m=0,\\
+  +\infty,&P_m=0<\widetilde P_m.
+ \end{cases}
+ \label{eq:tpc64-row-inflation-convention}
+\end{equation}
+A row in the last case is called a \emph{new-only parent row}.  Define
+\begin{equation}
+ \mathfrak I_X
+ :=\sup_{\substack{z\in Z_X\\P(z)>0}}
+       \frac{\widetilde P(z)}{P(z)}
+ \in[1,+\infty].
+ \label{eq:tpc64-global-inflation-constant}
+\end{equation}
+The supremum is taken on the full row-coefficient space.  A
+range-restricted or distinguished coefficient class has its own constant
+and must not be substituted for \(\mathfrak I_X\).
+
+\begin{theorem}[Exact parent inflation and sharp domination]
+\label{thm:tpc64-exact-parent-inflation}
+For every coefficient vector,
+\begin{equation}
+ \boxed{\widetilde P(z)=P(z)+\Delta(z).}
+ \label{eq:tpc64-exact-parent-inflation-identity}
+\end{equation}
+Moreover,
+\begin{equation}
+ \boxed{\mathfrak I_X=\max_{m\in\mathcal M_X}\iota_m}
+ \label{eq:tpc64-inflation-row-maximum}
+\end{equation}
+with the conventions in
+\eqref{eq:tpc64-row-inflation-convention}.  Consequently, the following
+are equivalent:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item there is a finite \(C\) such that
+       \(\widetilde P(z)\le C P(z)\) for every \(z\);
+ \item the repair has no new-only parent row;
+ \item \(\mathfrak I_X<\infty\).
+\end{enumerate}
+When these conditions hold, the least possible domination constant is
+\(\mathfrak I_X\):
+\begin{equation}
+ \widetilde P(z)\le\mathfrak I_XP(z)
+ \qquad(z\in Z_X).
+ \label{eq:tpc64-sharp-parent-domination}
+\end{equation}
+For the separate literal-active-hypergraph baseline, which makes no
+pair-rectangularization claim,
+\(\Delta_m=0\), \(\widetilde P_m=P_m\), and
+\(\mathfrak I_X=1\) exactly, consistently with
+\eqref{eq:tpc64-hybrid-hypergraph-zero-inflation}.
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:tpc64-exact-parent-inflation-identity} follows by
+summing \eqref{eq:tpc64-repaired-parent-mass} against \(|z_m|^2\).
+First suppose there is no new-only row.  Whenever \(P(z)>0\),
+\begin{equation}
+ \frac{\widetilde P(z)}{P(z)}
+ =
+ \sum_{\substack{m:P_m>0}}
+ \frac{P_m|z_m|^2}{P(z)}\,\iota_m.
+ \label{eq:tpc64-inflation-convex-combination}
+\end{equation}
+This is a convex combination of the active row ratios.  It is at most
+their maximum, and a row basis vector attaining the maximum gives
+equality.
+
+Now suppose \(P_{m_1}=0<\widetilde P_{m_1}\).  Choose a row \(m_0\) with
+\(P_{m_0}>0\) and put
+\[
+ z^{(\varepsilon)}:=e_{m_1}+\varepsilon e_{m_0}.
+\]
+Then
+\[
+ P(z^{(\varepsilon)})=\varepsilon^2P_{m_0}>0,
+ \qquad
+ \widetilde P(z^{(\varepsilon)})
+ \ge\widetilde P_{m_1},
+\]
+so the quotient tends to \(+\infty\).  This proves
+\eqref{eq:tpc64-inflation-row-maximum} and all three equivalences.  The
+hypergraph statement is the case
+\(\widetilde{\mathcal U}_{X,k}^{\mathrm{pre},+}
+=\mathcal U_{X,k}^{\mathrm{pre},+}\) for every block.
+\end{proof}
+
+\begin{proposition}[Sharpness of the inflation law]
+\label{prop:tpc64-inflation-sharpness}
+For every prescribed \(L\in[1,\infty)\), there is a one-row,
+one-block terminal-faithful repair with
+\begin{equation}
+ P_m=1,\qquad
+ \Delta_m=L-1,\qquad
+ \widetilde P_m=L,\qquad
+ \mathfrak I_X=L.
+ \label{eq:tpc64-prescribed-inflation-model}
+\end{equation}
+Thus neither the coefficient \(1\) in
+\eqref{eq:tpc64-exact-parent-inflation-identity} nor the constant
+\(\mathfrak I_X\) in \eqref{eq:tpc64-sharp-parent-domination} can be
+improved under the stated hypotheses.
+\end{proposition}
+
+\begin{proof}
+Take one literal parent atom of square mass \(1\) and one added
+terminal-null parent atom of square mass \(L-1\), omitting the latter when
+\(L=1\).  The repair is terminal-faithful because the added coordinate
+has zero terminal multiplier.  All formulas are immediate.  An explicit
+pair-rectangle realization, with arbitrarily large integral inflation, is
+given in \cref{ex:tpc64-arbitrary-faithful-inflation}.
+\end{proof}
+
+The value \(\mathfrak I_X\) is a parent-denominator constant.  It is not
+the number of dyadic labels, a terminal occupancy proportion, an erasure
+norm, or a cancellation exponent.  In particular, an \(X^{o(1)}\) label
+count places no bound on \(\mathfrak I_X\).

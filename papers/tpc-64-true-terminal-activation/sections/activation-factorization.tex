@@ -1,0 +1,277 @@
+\section{True terminal activation and its three exact factors}
+\label{sec:tpc64-activation-factorization}
+
+We now compare the shaped terminal energy with the repaired parent, not
+with a terminal-active parent chosen after the fact.  The distinction
+produces three factors: literal support alignment, literal multiplier
+intensity, and inverse parent inflation.  Only the first and third are
+proportions.
+
+\subsection{Zero-safe row factors}
+
+Continue with \(P_m,H_m,T_m,\Delta_m,\widetilde P_m\) from
+\cref{sec:tpc64-inflation-laws}.  The finite incidence definitions imply
+\begin{equation}
+ H_m=0\quad\Longrightarrow\quad T_m=0,
+ \qquad
+ P_m=0\quad\Longrightarrow\quad H_m=T_m=0.
+ \label{eq:tpc64-zero-propagation}
+\end{equation}
+Define the support-alignment, multiplier-intensity, inverse-inflation, and
+repaired-activation factors by
+\begin{align}
+ \alpha_m
+ &:=
+ \begin{cases}
+  H_m/P_m,&P_m>0,\\
+  0,&P_m=0,
+ \end{cases}
+ \label{eq:tpc64-support-alignment-factor}\\
+ \vartheta_m
+ &:=
+ \begin{cases}
+  T_m/H_m,&H_m>0,\\
+  0,&H_m=0,
+ \end{cases}
+ \label{eq:tpc64-multiplier-intensity-factor}\\
+ \rho_m
+ &:=
+ \begin{cases}
+  P_m/\widetilde P_m,&\widetilde P_m>0,\\
+  1,&\widetilde P_m=0,
+ \end{cases}
+ \label{eq:tpc64-inverse-inflation-factor}\\
+ g_m
+ &:=
+ \begin{cases}
+  T_m/\widetilde P_m,&\widetilde P_m>0,\\
+  0,&\widetilde P_m=0.
+ \end{cases}
+ \label{eq:tpc64-repaired-row-activation}
+\end{align}
+With \(1/(+\infty):=0\), the row conventions give
+\(\rho_m=\iota_m^{-1}\) on every row.  Thus
+\(0\le\alpha_m,\rho_m\le1\), but there is no upper bound \(1\) on
+\(\vartheta_m\).  Indeed, when \(H_m>0\),
+\begin{equation}
+ \vartheta_m
+ =
+ \sum_{k\in K_X}
+ \sum_{\substack{u\in\mathcal U_{X,h,k}^{+}\\m(u)=m}}
+ \frac{|c_u|^2}{H_m}\,|t_h(u)|^2.
+ \label{eq:tpc64-intensity-weighted-average}
+\end{equation}
+It is a weighted average of squared literal multiplier magnitudes, not a
+probability of terminal survival.  In particular, shaped logarithmic or
+profile weights can make it larger than one.
+On a row with a zero denominator, the displayed zero values are
+bookkeeping conventions chosen to make the universal product identity
+below valid.  They are not conditional probabilities and do not assign a
+physical multiplier intensity to an empty support.
+
+\begin{theorem}[Exact three-factor activation law]
+\label{thm:tpc64-exact-three-factor-activation}
+On every row for which all three raw denominators are positive,
+\begin{equation}
+ \boxed{
+ \frac{T_m}{\widetilde P_m}
+ =
+ \frac{H_m}{P_m}\,
+ \frac{T_m}{H_m}\,
+ \frac{P_m}{\widetilde P_m}.}
+ \label{eq:tpc64-three-raw-fractions}
+\end{equation}
+With the zero conventions
+\eqref{eq:tpc64-support-alignment-factor}--
+\eqref{eq:tpc64-repaired-row-activation}, the universal statement is
+\begin{equation}
+ \boxed{g_m=\alpha_m\vartheta_m\rho_m}
+ \qquad(m\in\mathcal M_X).
+ \label{eq:tpc64-three-factor-activation}
+\end{equation}
+More explicitly:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item if \(P_m,H_m,\widetilde P_m>0\), then
+       \eqref{eq:tpc64-three-raw-fractions} holds by cancellation;
+ \item if \(P_m>0\) but \(H_m=0\), then \(T_m=g_m=0\);
+ \item if \(P_m=0<\widetilde P_m\), then the row is new-only,
+       \(H_m=T_m=0\), and \(g_m=\rho_m=0\);
+ \item if \(\widetilde P_m=0\), then all four row masses vanish,
+       \(g_m=0\), and the harmless convention \(\rho_m=1\) agrees with
+       the reciprocal of \(\iota_m=1\); the row contributes to no
+       quadratic form.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The regular identity is obtained by inserting \(H_m\) and \(P_m\) between
+the numerator and denominator.  The remaining cases follow from
+\eqref{eq:tpc64-zero-propagation} and
+\(0\le P_m\le\widetilde P_m\).
+\end{proof}
+
+The factorization separates three logically independent tasks.
+Parent-to-terminal support alignment controls \(\alpha_m\), the literal
+shaped coefficient controls \(\vartheta_m\), and the chosen repair controls
+\(\rho_m\).  Completing a relation can improve neither of the first two
+factors, while a terminal-faithful rectangle can strictly reduce the third.
+
+\subsection{Uniform and distinguished activation}
+
+Define the literal-hypergraph and repaired-parent uniform constants by
+\begin{align}
+ \tau_{\mathrm{hyp}}
+ &:=
+ \inf_{\substack{z\in Z_X\\P(z)>0}}
+       \frac{T(z)}{P(z)},
+ \label{eq:tpc64-hypergraph-uniform-activation}\\
+ \tau_{\mathrm{rep}}
+ &:=
+ \inf_{\substack{z\in Z_X\\\widetilde P(z)>0}}
+       \frac{T(z)}{\widetilde P(z)}.
+ \label{eq:tpc64-repaired-uniform-activation}
+\end{align}
+These are full-row constants.  They are not statements about one
+distinguished physical vector.
+
+\begin{theorem}[Sharp uniform row minima]
+\label{thm:tpc64-uniform-activation-minima}
+On the full row-coefficient space,
+\begin{align}
+ \boxed{
+ \tau_{\mathrm{hyp}}
+ =\min_{m:P_m>0}\frac{T_m}{P_m}
+ =\min_{m:P_m>0}\alpha_m\vartheta_m,}
+ \label{eq:tpc64-hypergraph-row-minimum}\\
+ \boxed{
+ \tau_{\mathrm{rep}}
+ =\min_{m:\widetilde P_m>0}\frac{T_m}{\widetilde P_m}
+ =\min_{m:\widetilde P_m>0}
+       \alpha_m\vartheta_m\rho_m.}
+ \label{eq:tpc64-repaired-row-minimum}
+\end{align}
+In particular, one new-only parent row forces
+\(\tau_{\mathrm{rep}}=0\), and one literal row with
+\(P_m>0=T_m\) forces both uniform constants to vanish.
+\end{theorem}
+
+\begin{proof}
+For \(P(z)>0\),
+\[
+ \frac{T(z)}{P(z)}
+ =
+ \sum_{m:P_m>0}
+ \frac{P_m|z_m|^2}{P(z)}\,\frac{T_m}{P_m}.
+\]
+This is a convex combination of the active literal row ratios.  A
+minimizing row basis vector attains the minimum.  The same argument with
+\(\widetilde P_m\) proves
+\eqref{eq:tpc64-repaired-row-minimum}.  The two zero-row conclusions follow
+from \eqref{eq:tpc64-zero-propagation}.
+\end{proof}
+
+For a fixed distinguished vector \(z_*\) satisfying
+\(\widetilde P(z_*)>0\), put
+\begin{equation}
+ \tau_{\mathrm{rep},*}(X)
+ :=\frac{T(z_*)}{\widetilde P(z_*)}.
+ \label{eq:tpc64-distinguished-repaired-activation}
+\end{equation}
+
+\begin{theorem}[Exact distinguished weighted average]
+\label{thm:tpc64-distinguished-activation-average}
+The distinguished repaired activation is exactly
+\begin{equation}
+ \boxed{
+ \tau_{\mathrm{rep},*}(X)
+ =
+ \sum_{m:\widetilde P_m>0}
+ \frac{\widetilde P_m|z_{*,m}|^2}
+      {\widetilde P(z_*)}\,
+ g_m.}
+ \label{eq:tpc64-distinguished-activation-average}
+\end{equation}
+The displayed coefficients are nonnegative and sum to one.  If also
+\(P(z_*)>0\), then
+\begin{equation}
+ \tau_{\mathrm{hyp},*}(X)
+ :=\frac{T(z_*)}{P(z_*)}
+ =
+ \sum_{m:P_m>0}
+ \frac{P_m|z_{*,m}|^2}{P(z_*)}\,
+ \alpha_m\vartheta_m.
+ \label{eq:tpc64-distinguished-hypergraph-average}
+\end{equation}
+Neither distinguished identity implies the corresponding row minimum:
+a distinguished vector may avoid a bad row, whereas a full-row statement
+must test it.
+\end{theorem}
+
+\begin{proof}
+Insert the definitions of \(T(z_*)\), \(\widetilde P(z_*)\), and \(g_m\).
+The second formula is identical with \(P_m\) in place of
+\(\widetilde P_m\).
+\end{proof}
+
+\subsection{Sharp transfer through parent inflation}
+
+\begin{theorem}[Inflation-corrected activation transfer]
+\label{thm:tpc64-inflation-corrected-activation}
+Assume \(\mathfrak I_X<\infty\).  For every \(z\) with \(P(z)>0\),
+\begin{equation}
+ \boxed{
+ \frac{T(z)}{\widetilde P(z)}
+ \ge
+ \frac1{\mathfrak I_X}\,
+ \frac{T(z)}{P(z)}.}
+ \label{eq:tpc64-pointwise-inflation-transfer}
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{
+ \tau_{\mathrm{rep}}
+ \ge\frac{\tau_{\mathrm{hyp}}}{\mathfrak I_X}.}
+ \label{eq:tpc64-uniform-inflation-transfer}
+\end{equation}
+For every \(a>0\) and \(L\ge1\), a one-row terminal-faithful model attains
+simultaneously
+\begin{equation}
+ \tau_{\mathrm{hyp}}=a,\qquad
+ \mathfrak I_X=L,\qquad
+ \tau_{\mathrm{rep}}=\frac aL.
+ \label{eq:tpc64-inflation-transfer-sharp-model}
+\end{equation}
+Thus the factor \(\mathfrak I_X^{-1}\) is sharp.
+\end{theorem}
+
+\begin{proof}
+By \cref{thm:tpc64-exact-parent-inflation},
+\(\widetilde P(z)\le\mathfrak I_XP(z)\).  A finite inflation constant
+excludes new-only rows, so \(\widetilde P(z)>0\) if and only if
+\(P(z)>0\), up to common zero rows.  Multiplying the parent domination by
+the nonnegative number \(T(z)/(P(z)\widetilde P(z))\) proves
+\eqref{eq:tpc64-pointwise-inflation-transfer}.  Taking the infimum and
+using \eqref{eq:tpc64-hypergraph-uniform-activation} gives
+\eqref{eq:tpc64-uniform-inflation-transfer}.
+
+For sharpness, take one literal terminal-active atom with
+\(|c|^2=1\) and \(|t_h|^2=a\), and add terminal-null parent mass \(L-1\).
+Then
+\[
+ P_m=H_m=1,\qquad T_m=a,\qquad
+ \widetilde P_m=L,
+\]
+which gives \eqref{eq:tpc64-inflation-transfer-sharp-model}.
+\end{proof}
+
+If \(\mathfrak I_X=+\infty\), there is no coefficient-uniform comparison
+from the literal parent to the repaired parent.  Writing
+\(\mathfrak I_X^{-1}=0\) makes
+\eqref{eq:tpc64-uniform-inflation-transfer} formally true but
+quantitatively empty; it is not an activation theorem.
+
+The results of this section are exact finite-dimensional identities.  They
+do not prove that \(\alpha_m\), \(\vartheta_m\), \(g_m\), or either
+activation constant has a favorable lower bound on the physical carrier.
+In particular, they contain no signed parity estimate and no prime-pair
+consequence.

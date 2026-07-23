@@ -1,0 +1,219 @@
+\section{Canonical hybrid repair and the activation-inflation law}
+\label{sec:tpc64-hybrid-repair}
+
+The blockwise criterion permits a canonical repair without forcing a
+pair-only model on blocks where pair projection is unfaithful.  Pair-good
+blocks use their unique least parent-complete rectangle; pair-bad blocks
+retain their literal active incidence.  All block labels remain orthogonal
+until a separately declared physical erasure.
+
+\subsection{Pair-good and hypergraph blocks}
+
+Define
+\begin{align}
+ K_X^{\mathrm{pair}}
+ &:=
+ \left\{k\in K_X:
+ \operatorname{TRect}_{h,k}(I_{\mathrm{pre},k})
+ =\mathcal U_{X,h,k}^{+}\right\},
+ \label{eq:tpc64-pair-good-blocks}\\
+ K_X^{\mathrm{hyp}}
+ &:=
+ K_X\setminus K_X^{\mathrm{pair}}.
+ \label{eq:tpc64-hypergraph-blocks}
+\end{align}
+For each block, define the canonical repaired parent incidence
+\begin{equation}
+ \mathcal V_{X,k}^{\mathrm{hyb}}
+ :=
+ \begin{cases}
+  \operatorname{PRect}_k(I_{\mathrm{pre},k}),
+     &k\in K_X^{\mathrm{pair}},\\[2mm]
+  \mathcal U_{X,k}^{\mathrm{pre},+},
+     &k\in K_X^{\mathrm{hyp}}.
+ \end{cases}
+ \label{eq:tpc64-canonical-hybrid-incidence}
+\end{equation}
+Write
+\(
+ \mathcal V^{\mathrm{hyb}}
+ :=(\mathcal V_{X,k}^{\mathrm{hyb}})_{k\in K_X}
+\)
+for this populated parent family.
+The external label \(k\) is retained even if two underlying ambient
+coordinates would otherwise be written with the same tuple.
+
+The literal hypergraph baseline and the hybrid parent spaces are
+\begin{align}
+ \mathcal H_X^{\mathrm{hyp}}
+ &:=
+ \bigoplus_{k\in K_X}^{\perp}
+ \ell^2(\mathcal U_{X,k}^{\mathrm{pre},+}),
+ \label{eq:tpc64-hypergraph-parent-space}\\
+ \mathcal H_X^{\mathrm{hyb}}
+ &:=
+ \bigoplus_{k\in K_X}^{\perp}
+ \ell^2(\mathcal V_{X,k}^{\mathrm{hyb}}).
+ \label{eq:tpc64-hybrid-parent-space}
+\end{align}
+Their populated analyses use the same literal field:
+\begin{align}
+ (C_X^{\mathrm{hyp}}z)(k,u)
+ &:=c_u z_{m(u)},
+ \label{eq:tpc64-hypergraph-analysis}\\
+ (C_X^{\mathrm{hyb}}z)(k,u)
+ &:=c_u z_{m(u)}.
+ \label{eq:tpc64-hybrid-analysis}
+\end{align}
+The formulas have different coordinate domains.  In particular,
+\(C_X^{\mathrm{hyb}}\) populates the terminal-null spurious crosses on
+pair-good blocks.  Merely embedding
+\(\mathcal H_X^{\mathrm{hyp}}\) into a larger ambient space by zero
+extension would not do so and would have no parent inflation.
+
+\subsection{Exact hybrid identities}
+
+Put
+\begin{equation}
+ \Delta_m^{\mathrm{hyb}}
+ :=
+ \sum_{k\in K_X^{\mathrm{pair}}}
+ \Delta_{k,m}(I_{\mathrm{pre},k})
+ \label{eq:tpc64-hybrid-added-parent-mass}
+\end{equation}
+and
+\begin{equation}
+ \widetilde P_m
+ :=P_m+\Delta_m^{\mathrm{hyb}}.
+ \label{eq:tpc64-hybrid-row-parent}
+\end{equation}
+The hybrid parent form is
+\begin{equation}
+ \widetilde{\mathcal P}_X(z)
+ :=\|C_X^{\mathrm{hyb}}z\|_2^2
+ =\sum_m\widetilde P_m|z_m|^2.
+ \label{eq:tpc64-hybrid-parent-form}
+\end{equation}
+
+\begin{theorem}[Canonical hybrid repair]
+\label{thm:tpc64-canonical-hybrid-repair}
+For every \(z\in Z_X\),
+\begin{align}
+ \widetilde{\mathcal P}_X(z)
+ &=
+ \mathcal P_X(z)
+ +\sum_m\Delta_m^{\mathrm{hyb}}|z_m|^2,
+ \label{eq:tpc64-hybrid-parent-identity}\\
+ \|D_{X,h}^{\mathcal V^{\mathrm{hyb}}}C_X^{\mathrm{hyb}}z\|_2^2
+ &=\mathcal T_{X,h}(z).
+ \label{eq:tpc64-hybrid-terminal-identity}
+\end{align}
+Thus the hybrid repair is parent-complete and terminal-atomic faithful on
+every block.  Among all repairs which use a parent-complete
+terminal-atomic faithful pair relation on every block in
+\(K_X^{\mathrm{pair}}\) and retain the literal active incidence on every block in
+\(K_X^{\mathrm{hyp}}\), it minimizes the parent weight row by row.
+
+The literal-active-hypergraph choice has the stronger exact identities
+\begin{equation}
+ \boxed{
+ \|C_X^{\mathrm{hyp}}z\|_2^2=\mathcal P_X(z),
+ \qquad
+ \|D_{X,h}^{\mathcal U^{\mathrm{pre},+}}C_X^{\mathrm{hyp}}z\|_2^2
+ =\mathcal T_{X,h}(z).}
+ \label{eq:tpc64-hybrid-hypergraph-zero-inflation}
+\end{equation}
+Hence the literal active hypergraph baseline has exactly zero parent inflation,
+not merely zero fixed-power inflation.
+\end{theorem}
+
+\begin{proof}
+On a pair-good block,
+\eqref{eq:tpc64-block-parent-inflation-identity} and
+\eqref{eq:tpc64-block-terminal-preservation} apply to
+\(I_{\mathrm{pre},k}\).  On a hypergraph block both forms are the literal
+ones by definition.  Orthogonality of the external block labels allows
+the identities to be summed over \(k\), proving
+\eqref{eq:tpc64-hybrid-parent-identity} and
+\eqref{eq:tpc64-hybrid-terminal-identity}.  Rowwise minimality follows
+from \eqref{eq:tpc64-rowwise-minimal-inflation} on every pair-good block.
+For the literal-active-hypergraph choice, every block is the original
+literal active coordinate set,
+so exact block disintegration gives
+\eqref{eq:tpc64-hybrid-hypergraph-zero-inflation}.
+\end{proof}
+
+No theorem requires using a pair rectangle on a pair-good block.  Within
+populated incidence repairs retaining every literal parent atom, the
+literal active hypergraph is the parent-minimal baseline.  The
+hybrid construction records the least cost incurred when a downstream
+argument explicitly requires pair coordinates on the blocks where such a
+representation is faithful.
+
+\subsection{Block count is not an inflation estimate}
+
+Suppose the cofactor blocks lie in a fixed polynomial range.  Then the
+dyadic choice has
+\begin{equation}
+ |K_X|=O(\log X)=X^{o(1)}.
+ \label{eq:tpc64-logarithmic-block-count}
+\end{equation}
+This controls only the number of external labels.  It does not control
+\(\Delta_m^{\mathrm{hyb}}\), or any ratio of repaired to literal parent
+mass.  Parent inflation of arbitrary polynomial size can already occur
+inside a single pair-good block.
+
+For clarity, put
+\begin{equation}
+ \widetilde P_{k,m}^{\mathrm{hyb}}
+ :=
+ \begin{cases}
+  P_{k,m}+\Delta_{k,m}(I_{\mathrm{pre},k}),
+      &k\in K_X^{\mathrm{pair}},\\
+  P_{k,m},&k\in K_X^{\mathrm{hyp}}.
+ \end{cases}
+ \label{eq:tpc64-hybrid-block-parent-weight}
+\end{equation}
+If a separate estimate proves, for one common finite \(I_X\),
+\begin{equation}
+ \widetilde P_{k,m}^{\mathrm{hyb}}
+ \le I_XP_{k,m}
+ \label{eq:tpc64-hybrid-blockwise-inflation-input}
+\end{equation}
+on every block and active row, then summing gives
+\begin{equation}
+ \widetilde P_m
+ =\sum_k\widetilde P_{k,m}^{\mathrm{hyb}}
+ \le I_X\sum_kP_{k,m}
+ =I_XP_m.
+ \label{eq:tpc64-blockwise-to-global-inflation}
+\end{equation}
+Indeed, \(P_{k,m}=0\) implies
+\(\widetilde P_{k,m}^{\mathrm{hyb}}=0\): no pair with first coordinate
+\(m\) then occurs in \(I_{\mathrm{pre},k}\), and a hypergraph block keeps
+the same empty active row.  Thus
+\eqref{eq:tpc64-hybrid-blockwise-inflation-input} also holds trivially on
+every inactive row, justifying the sum over all \(k\).
+No additional factor \(|K_X|\) is needed in this comparison.  Conversely,
+\eqref{eq:tpc64-logarithmic-block-count} supplies no value of \(I_X\).
+The label count and the parent-inflation bound are logically independent
+data.
+
+Erasing the external label \(k\), coherently grouping residual labels, or
+mapping the terminal vector to a native physical output is a later map.
+Neither \eqref{eq:tpc64-logarithmic-block-count} nor
+\eqref{eq:tpc64-hybrid-hypergraph-zero-inflation} supplies a lower bound through
+that map.  Its kernel and range-restricted Gram belong to the reassembly
+gate, not to parent inflation.
+
+\begin{remark}[Claim boundary]
+\label{rem:tpc64-hybrid-claim-boundary}
+All results in this section are exact finite-incidence statements.  Their
+use with the literal multiplier
+\eqref{eq:tpc64-literal-terminal-multiplier}, one fixed nonzero shift,
+and the raw physical atom norm is an arithmetic-interface
+specialization.  No estimate here proves that
+\(T_m>0\), gives a polynomial terminal-activation lower bound,
+specializes \(h\) to \(2\), estimates a signed parity kernel, or implies a
+prime-pair statement.
+\end{remark}

@@ -1,0 +1,274 @@
+\section{Sharp countermodels and zero tests}
+\label{sec:tpc64-sharp-countermodels}
+
+The exact formulas above separate identities from arithmetic lower bounds.
+This section shows that the separation is necessary.  Every example is a
+finite coefficient-independent incidence with raw counting-measure norms.
+The examples are sharp models of the stated interfaces; they are not
+asserted to occur inside the literal fixed-shift prime carrier.
+
+\subsection{Faithful rectangles can have arbitrary parent inflation}
+
+\begin{example}[Arbitrarily large faithful inflation]
+\label{ex:tpc64-arbitrary-faithful-inflation}
+Take one block \(k\), one row \(m\), one cofactor \(r\), one auxiliary
+label \(\gamma_0\), and \(N\ge2\) base labels
+\(j_0,\ldots,j_{N-1}\).  Let the declared ambient incidence contain
+\[
+ u_i:=(m,r,j_i,\gamma_0),\qquad 0\le i<N,
+\]
+with \(c_{u_i}=1\).  Let the literal pre-terminal incidence be
+\[
+ \mathcal U_{X,k}^{\mathrm{pre},+}=\{u_0\},
+\]
+and set
+\[
+ t_h(u_0)=1,\qquad t_h(u_i)=0\quad(1\le i<N).
+\]
+The literal parent pair relation is the singleton
+\[
+ I_{\mathrm{pre},k}=\{(m,r)\}.
+\]
+Its rectangle contains all \(N\) ambient points.  It is parent-complete
+and terminal-atomic faithful because \(u_0\) is the only terminal-active
+point.  Nevertheless,
+\begin{equation}
+ P_m=H_m=T_m=1,\qquad
+ \Delta_m=N-1,\qquad
+ \widetilde P_m=N.
+ \label{eq:tpc64-arbitrary-inflation-data}
+\end{equation}
+Consequently,
+\begin{equation}
+ \mathfrak I_X=N,\qquad
+ \tau_{\mathrm{hyp}}=1,\qquad
+ \tau_{\mathrm{rep}}=\frac1N.
+ \label{eq:tpc64-arbitrary-inflation-constants}
+\end{equation}
+The terminal field and retained pair are unchanged; only the populated
+parent rectangle has grown.
+
+Taking \(N=2\) and replacing the single terminal-null unit coefficient by
+one of modulus \(\sqrt{L-1}\) realizes every real \(L\ge1\).  Thus
+\cref{prop:tpc64-inflation-sharpness,thm:tpc64-inflation-corrected-activation}
+are sharp at every admissible value of the constants.
+\end{example}
+
+\begin{corollary}[One block and logarithmic label count give no inflation
+control]
+\label{cor:tpc64-one-block-no-inflation-control}
+For every fixed \(A>0\), there is a family of examples with
+\begin{equation}
+ |K_X|=1,\qquad
+ \mathfrak I_X=X^{A+o(1)}.
+ \label{eq:tpc64-one-block-polynomial-inflation}
+\end{equation}
+Hence even the stronger statement \(|K_X|=1\), and therefore the usual
+\(|K_X|=O(\log X)=X^{o(1)}\), supplies no upper bound on parent inflation.
+\end{corollary}
+
+\begin{proof}
+In \cref{ex:tpc64-arbitrary-faithful-inflation}, take
+\(N=\lceil X^A\rceil\).  All points have the same cofactor and hence the
+same external cofactor-block label.
+\end{proof}
+
+This also proves that parent inflation is not a disguised block-count
+loss.  A polynomial loss may occur entirely inside one block.
+
+\subsection{New-only rows and terminal-zero rows}
+
+\begin{proposition}[New-only row no-go]
+\label{prop:tpc64-countermodel-new-only-row}
+There are terminal-faithful populated repairs with a row \(m_1\) satisfying
+\begin{equation}
+ P_{m_1}=H_{m_1}=T_{m_1}=0
+ <\widetilde P_{m_1}.
+ \label{eq:tpc64-countermodel-new-only-data}
+\end{equation}
+For every such repair,
+\begin{equation}
+ \mathfrak I_X=+\infty,
+ \qquad
+ \tau_{\mathrm{rep}}=0.
+ \label{eq:tpc64-countermodel-new-only-death}
+\end{equation}
+Thus no finite literal-to-repaired parent domination and no positive
+full-row repaired activation theorem can hold.
+\end{proposition}
+
+\begin{proof}
+Take a literal terminal-active atom on a row \(m_0\), with unit parent and
+terminal square.  Add to the declared repair a different pair on a row
+\(m_1\) whose populated rectangle contains one coordinate \(v\) with
+\(c_v=1\) and \(t_h(v)=0\), and declare \(v\) to be the only ambient
+coordinate over that added pair.  The extra coordinate is terminal-null, so
+terminal faithfulness is preserved, but
+\eqref{eq:tpc64-countermodel-new-only-data} holds with
+\(\widetilde P_{m_1}=1\).  The row convention and
+\cref{thm:tpc64-exact-parent-inflation,thm:tpc64-uniform-activation-minima}
+give \eqref{eq:tpc64-countermodel-new-only-death}.  Equivalently, the row
+direction \(e_{m_1}\) has positive repaired parent and zero terminal
+energy.
+\end{proof}
+
+The canonical least parent-complete relation does not insert an arbitrary
+extra row.  The point of the proposition is that any larger populated
+repair, change of row coordinates, or claimed comparison must prove that
+new-only rows are absent; terminal faithfulness alone does not prove it.
+
+\begin{proposition}[Terminal-zero row kill]
+\label{prop:tpc64-countermodel-terminal-zero-row}
+If a required row satisfies
+\begin{equation}
+ P_{m_0}>0,\qquad H_{m_0}=T_{m_0}=0,
+ \label{eq:tpc64-countermodel-terminal-zero-data}
+\end{equation}
+then
+\begin{equation}
+ \tau_{\mathrm{hyp}}=\tau_{\mathrm{rep}}=0
+ \label{eq:tpc64-countermodel-terminal-zero-death}
+\end{equation}
+for every parent-complete terminal-faithful repair on a full coefficient
+class containing \(e_{m_0}\).  Enlarging the retained pair relation cannot
+repair the zero without changing the terminal field.
+\end{proposition}
+
+\begin{proof}
+The literal row direction has positive parent and zero terminal energy,
+so \(\tau_{\mathrm{hyp}}=0\).  Terminal faithfulness leaves \(T_{m_0}\)
+unchanged, while parent completeness gives
+\(\widetilde P_{m_0}\ge P_{m_0}>0\).  The same direction therefore forces
+\(\tau_{\mathrm{rep}}=0\).
+\end{proof}
+
+A distinguished vector can avoid either bad row by having zero coefficient
+there.  That is a different quantifier and yields only the weighted average
+in \cref{thm:tpc64-distinguished-activation-average}.
+
+\subsection{The terminal-active-parent tautology}
+
+\begin{example}[Deleting the alignment defect by redefining the parent]
+\label{ex:tpc64-terminal-active-parent-tautology}
+Fix \(L\ge1\).  On one row, take two literal pre-terminal atoms:
+\[
+ |c_{u_0}|^2=1,\quad t_h(u_0)=1,
+ \qquad
+ |c_{u_1}|^2=L-1,\quad t_h(u_1)=0,
+\]
+omitting \(u_1\) when \(L=1\).  Then
+\begin{equation}
+ P_m=L,\qquad H_m=T_m=1,
+ \qquad
+ \frac{T_m}{P_m}=\frac1L.
+ \label{eq:tpc64-tautology-true-activation}
+\end{equation}
+If one replaces the literal parent by the terminal-active incidence
+\(\{u_0\}\), the newly defined parent mass is \(H_m=1\), and the displayed
+ratio becomes
+\begin{equation}
+ \frac{T_m}{H_m}=1.
+ \label{eq:tpc64-tautology-false-parent-ratio}
+\end{equation}
+The apparent improvement can be arbitrarily large, but it is obtained by
+deleting the literal terminal-null parent mass \(L-1\).  It is not a lower
+bound relative to the original parent.
+\end{example}
+
+The example is the exact reason that multiplier intensity is not itself
+terminal activation.  In the notation of
+\cref{thm:tpc64-exact-three-factor-activation}, redefining the parent as
+the terminal-active support silently replaces the alignment factor
+\(\alpha_m=1/L\) by \(1\).
+
+\subsection{Multiplier intensity is not a probability}
+
+\begin{example}[Unbounded literal multiplier intensity]
+\label{ex:tpc64-unbounded-multiplier-intensity}
+Take one literal terminal-active atom with \(|c_u|^2=1\) and
+\(|t_h(u)|=M\), where \(M>0\).  Then
+\begin{equation}
+ P_m=H_m=1,\qquad
+ T_m=M^2,\qquad
+ \vartheta_m=M^2.
+ \label{eq:tpc64-unbounded-intensity-data}
+\end{equation}
+The number \(M\) is arbitrary.  Hence \(\vartheta_m\) is a shaped
+multiplier intensity and can exceed \(1\) by an arbitrary factor.
+\end{example}
+
+Any argument which clips \(T_m/H_m\) at one, interprets it as a survival
+probability, or removes the literal shaped weight changes the physical
+quadratic form.
+
+\subsection{A largest block can be chosen only after positivity}
+
+For \(z\in Z_X\), define the nonnegative shaped energy on block \(k\) by
+\begin{equation}
+ T_k(z):=\sum_{m\in\mathcal M_X}T_{k,m}|z_m|^2.
+ \label{eq:tpc64-block-terminal-form}
+\end{equation}
+Exact block disintegration gives
+\begin{equation}
+ T(z)=\sum_{k\in K_X}T_k(z).
+ \label{eq:tpc64-terminal-block-sum}
+\end{equation}
+
+\begin{theorem}[Largest-block quantifier and sharpness]
+\label{thm:tpc64-largest-block-after-positivity}
+Assume \(1\le L_X:=|K_X|<\infty\).  For each fixed vector \(z\),
+\begin{equation}
+ \boxed{
+ \max_{k\in K_X}T_k(z)\ge\frac{T(z)}{L_X}.}
+ \label{eq:tpc64-largest-block-bound}
+\end{equation}
+The constant \(L_X^{-1}\) is sharp.  Consequently:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item if a prior theorem gives
+       \[
+        T(z)\ge X^{-\lambda+o(1)}P(z)
+       \]
+       for one fixed distinguished \(z\), and
+       \(L_X=O(\log X)\), then some block \(k=k(z,X)\) satisfies the same
+       fixed-power lower bound up to \(X^{o(1)}\);
+ \item if \(T(z)=0\), every block energy is zero, so the largest-block
+       step creates no activation;
+ \item the maximizing block may depend on the row or coefficient vector,
+       and \eqref{eq:tpc64-largest-block-bound} alone does not select one
+       block supporting a coefficient-uniform lower bound.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The maximum of \(L_X\) nonnegative numbers is at least their average.
+Equality holds when all \(T_k(z)=T(z)/L_X\), proving sharpness.  The first
+consequence uses \(L_X^{-1}=X^{-o(1)}\); the second is immediate from
+nonnegativity.
+
+For the last assertion, take two rows and two blocks.  Put
+\[
+ P_{m_1}=P_{m_2}=1,\qquad
+ T_{1,m_1}=1,\quad T_{2,m_2}=1,
+\]
+with the two cross terms zero.  The total terminal form equals the parent
+form, so its uniform activation constant is one.  On block \(1\), the row
+direction \(e_{m_2}\) has zero energy; on block \(2\), the direction
+\(e_{m_1}\) has zero energy.  Thus neither single block has a positive
+full-row activation constant.
+\end{proof}
+
+The block theorem is therefore downstream of activation, not a source of
+activation.  A logarithmic number of blocks costs no fixed power only
+after a positive total terminal estimate has been proved in the same
+coefficient scope.
+
+\subsection{Claim boundary}
+
+These countermodels prove non-implications for finite parent and terminal
+interfaces.  They show that terminal faithfulness does not control parent
+inflation, that label count does not control populated parent mass, that
+zero rows kill uniform activation, and that block selection cannot create
+positivity.  They do not show that the literal arithmetic carrier has a
+bad row or large inflation.  Conversely, none of the exact identities in
+this paper proves positive physical activation, signed M\"obius
+cancellation, a fixed-shift parity estimate, or a prime-pair lower bound.

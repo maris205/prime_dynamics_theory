@@ -1,0 +1,238 @@
+\section{A sharp threshold-capacity certificate}
+\label{sec:tpc64-capacity-certificate}
+
+The rowwise minimax is the correct answer for a homogeneous
+full-coefficient theorem.  A different exact certificate is available for
+one coefficient vector, or for a declared class on which a quantitative
+capacity lower bound is known.  This section gives that certificate with
+its quantifiers exposed.
+
+\subsection{Good rows and occupied repaired-parent capacity}
+
+Use the repaired row masses \(\widetilde P_m\) and the unchanged terminal
+masses \(T_m\).  Delete rows with
+\(\widetilde P_m=0\), and assume that the remaining set
+\begin{equation}
+ \mathcal M_X^+
+ :=\{m:\widetilde P_m>0\}
+ \label{eq:tpc64-capacity-active-rows}
+\end{equation}
+is nonempty.  Put
+\begin{equation}
+ \widetilde W_X:=\sum_{m\in\mathcal M_X^+}\widetilde P_m
+ \label{eq:tpc64-total-parent-capacity}
+\end{equation}
+and define the exact repaired-parent row activation
+\begin{equation}
+ g_m:=\frac{T_m}{\widetilde P_m}\ge0
+ \qquad(m\in\mathcal M_X^+).
+ \label{eq:tpc64-row-gain}
+\end{equation}
+There is no assertion that \(g_m\le1\): the literal shaped terminal
+multiplier remains inside \(T_m\).
+
+For a threshold \(\eta>0\), define
+\begin{align}
+ \mathcal G_\eta
+ &:=\{m\in\mathcal M_X^+:g_m\ge\eta\},
+ \label{eq:tpc64-threshold-good-rows}\\
+ \delta_\eta
+ &:=\frac{\sum_{m\in\mathcal G_\eta}\widetilde P_m}
+              {\widetilde W_X}
+ \in[0,1].
+ \label{eq:tpc64-threshold-capacity-fraction}
+\end{align}
+Thus \(\delta_\eta\) is a structural fraction measured in the exact
+repaired-parent denominator.  It is not the unweighted density of good
+rows and is not an actual-coefficient energy fraction.
+
+Let \(C_X>0\) be a declared coefficient bound and let \(z\) satisfy
+\begin{equation}
+ |z_m|\le C_X\qquad(m\in\mathcal M_X^+).
+ \label{eq:tpc64-coefficient-cap}
+\end{equation}
+Whenever \(\widetilde P(z)>0\), its occupied capacity is
+\begin{equation}
+ \kappa_X(z;C_X)
+ :=\frac{\widetilde P(z)}
+ {C_X^2\widetilde W_X}
+ \in(0,1].
+ \label{eq:tpc64-occupied-parent-capacity}
+\end{equation}
+For a real number \(x\), write \(x_+:=\max\{x,0\}\).
+
+\subsection{The exact threshold theorem}
+
+\begin{theorem}[Sharp threshold-capacity lower bound]
+\label{thm:tpc64-threshold-capacity}
+Fix \(\eta>0\) and \(0<\kappa_X\le1\).  If a coefficient vector \(z\)
+satisfies \eqref{eq:tpc64-coefficient-cap} and
+\begin{equation}
+ \widetilde P(z)
+ \ge \kappa_X C_X^2\widetilde W_X>0,
+ \label{eq:tpc64-capacity-lower-hypothesis}
+\end{equation}
+then
+\begin{equation}
+ \boxed{
+ \frac{T(z)}{\widetilde P(z)}
+ \ge
+ \eta
+ \left(
+  1-\frac{1-\delta_\eta}{\kappa_X}
+ \right)_+.}
+ \label{eq:tpc64-threshold-capacity-bound}
+\end{equation}
+More generally, if only
+\(\delta_\eta\ge\underline\delta_\eta\) is known, then the same conclusion
+holds with \(\underline\delta_\eta\) in place of \(\delta_\eta\).
+
+Using only \(\eta\), \(\delta_\eta\), the coefficient cap, and the
+capacity lower bound, the right side of
+\eqref{eq:tpc64-threshold-capacity-bound} is optimal.  In particular, it
+is positive exactly when
+\begin{equation}
+ \boxed{\kappa_X>1-\delta_\eta.}
+ \label{eq:tpc64-capacity-positive-threshold}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Write
+\begin{equation}
+ E_{\rm good}(z)
+ :=\sum_{m\in\mathcal G_\eta}
+       \widetilde P_m|z_m|^2,
+ \qquad
+ E_{\rm bad}(z)
+ :=\widetilde P(z)-E_{\rm good}(z).
+ \label{eq:tpc64-good-bad-parent-energy}
+\end{equation}
+The coefficient cap and
+\eqref{eq:tpc64-threshold-capacity-fraction} give
+\[
+ E_{\rm bad}(z)
+ \le C_X^2(1-\delta_\eta)\widetilde W_X.
+\]
+Subtracting this from
+\eqref{eq:tpc64-capacity-lower-hypothesis}, and also using
+\(E_{\rm good}(z)\ge0\), yields
+\[
+ \frac{E_{\rm good}(z)}{\widetilde P(z)}
+ \ge
+ \left(
+  1-\frac{1-\delta_\eta}{\kappa_X}
+ \right)_+.
+\]
+Since \(T_m=g_m\widetilde P_m\) and
+\(g_m\ge\eta\) on \(\mathcal G_\eta\),
+\[
+ T(z)
+ =\sum_mg_m\widetilde P_m|z_m|^2
+ \ge\eta E_{\rm good}(z),
+\]
+which proves \eqref{eq:tpc64-threshold-capacity-bound}.  Monotonicity in
+\(\delta_\eta\) proves the version with a lower bound for that fraction.
+
+For sharpness, normalize \(C_X=\widetilde W_X=1\) and prescribe
+\(\delta\in[0,1]\), \(\kappa\in(0,1]\).  Take \(g_m=\eta\) on a good
+part of parent capacity \(\delta\) and \(g_m=0\) on its complement.  If
+\(0<\delta<1\) and \(\kappa\le1-\delta\), put zero coefficient energy on
+the good part and constant squared coefficient
+\(\kappa/(1-\delta)\) on the bad part.  The terminal quotient is zero.
+If \(\kappa>1-\delta\), saturate the bad part at squared coefficient one
+and put constant squared coefficient
+\((\kappa-1+\delta)/\delta\) on the good part.  Then
+\[
+ \widetilde P(z)=\kappa,
+ \qquad
+ \frac{T(z)}{\widetilde P(z)}
+ =\eta\frac{\kappa-1+\delta}{\kappa}.
+\]
+These are equality cases for the two branches.  When \(\delta=0\), take
+only bad rows; when \(\delta=1\), take only good rows.  Constant squared
+coefficient \(\kappa\) gives the required occupied capacity at both
+endpoints.  Finite weighted rows realize all of these models, so the
+bound cannot be improved from the stated data.
+\end{proof}
+
+The theorem also has the exact actual-capacity form
+\begin{equation}
+ \frac{T(z)}{\widetilde P(z)}
+ \ge
+ \eta
+ \left(
+  1-\frac{1-\delta_\eta}
+           {\kappa_X(z;C_X)}
+ \right)_+.
+ \label{eq:tpc64-actual-capacity-bound}
+\end{equation}
+A certified lower bound for
+\(\kappa_X(z;C_X)\) may then be substituted because the right side is
+increasing in the capacity variable.
+
+\subsection{Uniform and distinguished quantifiers}
+
+For \(C_X>0\) and \(0<\kappa_X\le1\), let
+\begin{equation}
+ \mathfrak Z_X(C_X,\kappa_X)
+ :=
+ \left\{
+ z:\ |z_m|\le C_X,\quad
+ \widetilde P(z)\ge
+ \kappa_XC_X^2\widetilde W_X
+ \right\}.
+ \label{eq:tpc64-capacity-restricted-class}
+\end{equation}
+Theorem \ref{thm:tpc64-threshold-capacity} is coefficient-uniform on this
+declared restricted class.  It is not a theorem on the entire bounded
+coefficient cube: that cube contains vectors with arbitrarily small
+occupied capacity and, whenever bad rows exist, vectors supported entirely
+on those rows.
+
+\begin{proposition}[The full-space boundary]
+\label{prop:tpc64-capacity-full-space-boundary}
+On any homogeneous declared class \(\mathfrak Z_X\) containing a nonzero
+multiple of each active row direction,
+\begin{equation}
+ \inf_{\substack{z\in\mathfrak Z_X\\\widetilde P(z)>0}}
+ \frac{T(z)}{\widetilde P(z)}
+ =\min_{m\in\mathcal M_X^+}g_m.
+ \label{eq:tpc64-capacity-full-space-minimax}
+\end{equation}
+Consequently a favorable value of
+\eqref{eq:tpc64-threshold-capacity-bound} for one distinguished physical
+vector does not imply a full-space uniform terminal lower bound.
+\end{proposition}
+
+\begin{proof}
+Every quotient is a convex combination of the \(g_m\), with weights
+\(\widetilde P_m|z_m|^2/\widetilde P(z)\).  A permitted row direction
+attains the minimum.
+\end{proof}
+
+For a distinguished vector \(z_*(X)\), all of
+\(C_X\), \(\kappa_X(z_*;C_X)\), and the threshold \(\eta\) must concern
+that same vector and the same repaired parent.  An averaged vector, an
+adaptively selected coefficient, or a capacity estimate computed with
+\(P_m\) instead of \(\widetilde P_m\) cannot be inserted into
+\eqref{eq:tpc64-threshold-capacity-bound}.
+
+\subsection{What the certificate does not supply}
+
+The theorem is an implication from \(\delta_\eta\) and occupied capacity.
+It proves neither input favorable.  In particular:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item a positive number of terminal-active rows does not lower-bound
+       their \(\widetilde P_m\)-capacity;
+ \item boundedness of the inherited coefficients does not imply
+       \(\kappa_X>1-\delta_\eta\);
+ \item positivity of each \(T_m\) does not give a fixed-power lower bound
+       for \(g_m\); and
+ \item the raw terminal form \(T\) still precedes label erasure, residual
+       grouping, and the native physical reassembly map.
+\end{enumerate}
+Thus the threshold theorem is a sharp L0 capacity law and, after the
+literal fixed-shift dictionary is verified, a conditional L1
+certificate.  It is not a new prime-distribution or cancellation
+estimate.
