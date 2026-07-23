@@ -1,0 +1,60 @@
+\section{Introduction}
+
+TPC-65 reduced the represented-reference question to the smallest eigenvalue
+of an actual row Gram on the terminal range \citep{WangTPC65}. Its literal
+matrix entries are residual-fiber correlations. That result closed the carrier
+and normalization problem, but deliberately left two arithmetic questions:
+how often are two physical rows exposed to the same output, and can those
+collisions create a small singular direction?
+
+This paper answers the first question at the critical cofactor scale and
+develops exact support-level tests for the second. The starting observation is
+simple but decisive. For the physical key
+\[
+ q(m,r,j,\gamma)=(\gamma,d_mr,j),
+\]
+fixing \(m\) and \(q\) fixes \(r\), \(j\), and \(\gamma\), and the terminal
+prime is then fixed by \(pr-mj=h_0\). Thus a row never coherently sums two of
+its own terminal atoms inside one output coordinate. The normalized physical
+row Gram has unit diagonal. Its off-diagonal graph is the entire problem.
+
+The arithmetic result uses, but does not rebrand, the factor-exchange and CRT
+identities of TPC-57 \citep{WangTPC57}. Those identities treat one fixed
+exchange pattern. Here the rows are fixed and all admissible exchange factors
+are summed. A divisor-thinning argument leaves only \(X^{o(1)}\) factors, and
+the CRT modulus is at least the root cofactor \(R\). Consequently the reduced
+pair codegree is
+\[
+ C_{m,n}^{\rm red}(R)
+ \le X^{o(1)}\left(1+\frac JR\right).
+\]
+At \(R\asymp J\) this is subpower uniformly in the distinct row pair. This is
+not the older fiber-degree estimate: the same skeleton can have high right
+degree and low left pair codegree.
+
+Pairwise sparsity is not yet a lower frame. We therefore prove a hierarchy of
+exact finite-dimensional results. Private output energy gives a sharp positive
+lower bound. The absolute overlap matrix gives the optimal phase-blind
+comparison bound and its weighted Collatz--Wielandt form. On forests, all edge
+phases are gauge, giving an exact spectral-radius formula and a sharp star law.
+At the support level, Hall deficiency is a universal rank obstruction, while a
+unique-matching minor is a universal injectivity certificate. Ordinary Hall
+matching lies strictly between them: it gives only generic full rank and does
+not settle the one literal coefficient array.
+
+The boundary is a cycle. A degree-two, codegree-one support pattern with fixed
+entry magnitudes can be singular or nonsingular depending on one cycle
+holonomy. This proves that exposure, bounded degrees, bounded codegrees, Hall
+matching, and magnitude data do not determine the physical lower frame. The
+next arithmetic gate is therefore global: combine the proved reduced-cell
+pair thinning with actual full-output diffuseness and expansion, or control
+the remaining holonomy. It is not legitimate to infer such control from
+support counts.
+
+\subsection*{Claim levels}
+The support and matrix theorems are L0. The row-singleton dictionary,
+factor-exchange summation, CRT spacing, and divisor bound are unconditional L1
+statements on one literal fixed-\(h_0\) carrier. A positive exposure lower
+bound, polynomial diffuseness, global smallest-singular-value estimate,
+fixed-\(h_0=2\) parity estimate, or twin-prime conclusion would be L2 and is
+not proved here.

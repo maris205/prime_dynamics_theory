@@ -1,0 +1,443 @@
+\section{Actual-support lower-frame certificates}
+\label{sec:tpc66-support-lower-frames}
+
+This section begins after terminal activation and restriction to the actual
+activated range.  Thus there is no semidefinite parent nuisance to eliminate
+and no shorted operator to recompute.  The input is one finite matrix of
+literal represented columns, and the target is its smallest Gram eigenvalue.
+All inner products in this paper are conjugate-linear in the first variable.
+
+\subsection{Actual columns and diagonal normalization}
+
+Let \(\mathcal M\) and \(\mathcal Y\) be finite nonempty sets, and let
+\[
+ B:\mathbb C^{\mathcal M}\longrightarrow\ell^2(\mathcal Y),
+ \qquad
+ (Bz)_y=\sum_{m\in\mathcal M}a_{y,m}z_m .
+\]
+The \(m\)-th column is
+\[
+ g_m=(a_{y,m})_{y\in\mathcal Y},
+ \qquad
+ S_m:=\{y\in\mathcal Y:a_{y,m}\ne0\}.
+\]
+Here \(S_m\) is the support after every coherent sum defining the entry
+\(a_{y,m}\) has been taken.  It is not the larger set of output coordinates
+which could have occurred before those sums.
+In the unit-diagonal fixed-shift application from the preceding sections,
+\[
+ a_{y,m}=\frac{b_{y,m}}{\sqrt{T_m(R)}},
+ \qquad e_m=1.
+\]
+The slightly more general notation below keeps the diagonal-exposure gate
+visible and also applies after an additional declared output multiplier.
+
+Define
+\begin{equation}
+ G:=B^*B,
+ \qquad
+ G_{m,n}=\langle g_m,g_n\rangle
+ =\sum_{y\in\mathcal Y}\overline{a_{y,m}}a_{y,n},
+ \qquad
+ \beta:=\lambda_{\min}(G).
+ \label{eq:tpc66-basic-gram}
+\end{equation}
+If one column is zero, then \(\beta=0\).  We therefore assume below that
+\begin{equation}
+ e_m:=\|g_m\|^2=\sum_{y\in S_m}|a_{y,m}|^2>0
+ \qquad(m\in\mathcal M).
+ \label{eq:tpc66-row-exposure}
+\end{equation}
+Put
+\[
+ D:=\operatorname{diag}(e_m),
+ \qquad
+ v_m:=\frac{g_m}{\sqrt{e_m}},
+ \qquad
+ C:=D^{-1/2}GD^{-1/2}.
+\]
+Then \(C\) is the Gram matrix of the unit columns \(v_m\), and
+\(C_{m,m}=1\).
+
+\begin{proposition}[Diagonal exposure and normalized collision]
+\label{prop:tpc66-diagonal-normalization}
+If
+\[
+ e_{\min}:=\min_m e_m,
+ \qquad
+ e_{\max}:=\max_m e_m,
+ \qquad
+ \kappa:=\lambda_{\min}(C),
+\]
+then
+\begin{equation}
+ \boxed{
+ e_{\min}\kappa
+ \le \beta
+ \le e_{\max}\kappa .}
+ \label{eq:tpc66-diagonal-normalization-bound}
+\end{equation}
+In particular, a lower-frame proof must control both the least diagonal
+exposure \(e_{\min}\) and the normalized collision gap \(\kappa\).
+\end{proposition}
+
+\begin{proof}
+Since \(G=D^{1/2}CD^{1/2}\), for every \(z\),
+\[
+ \langle z,Gz\rangle
+ \ge\kappa\|D^{1/2}z\|^2
+ \ge e_{\min}\kappa\|z\|^2.
+\]
+For the reverse inequality, let \(x\) be a unit eigenvector of \(C\)
+with eigenvalue \(\kappa\), and set \(z=D^{-1/2}x\).  Then
+\[
+ \frac{\langle z,Gz\rangle}{\|z\|^2}
+ =
+ \frac{\kappa}{\langle x,D^{-1}x\rangle}
+ \le e_{\max}\kappa.
+\]
+\end{proof}
+
+\subsection{Private exposure}
+
+For \(y\in\mathcal Y\), let
+\[
+ d_y:=|\{m\in\mathcal M:y\in S_m\}|
+\]
+be its actual output degree.  The private support and private energy of
+column \(m\) are
+\begin{equation}
+ P_m:=\{y\in S_m:d_y=1\},
+ \qquad
+ p_m:=\sum_{y\in P_m}|a_{y,m}|^2.
+ \label{eq:tpc66-private-exposure}
+\end{equation}
+
+\begin{theorem}[Exact private-exposure certificate]
+\label{thm:tpc66-private-exposure}
+The represented Gram satisfies
+\begin{equation}
+ \boxed{
+ G\succeq\operatorname{diag}(p_m),
+ \qquad
+ \beta\ge\min_{m\in\mathcal M}p_m.}
+ \label{eq:tpc66-private-exposure-bound}
+\end{equation}
+The coefficient one in this estimate is optimal.
+\end{theorem}
+
+\begin{proof}
+Restrict \(B\) to the union of the private output coordinates.  Because a
+private coordinate is occupied by exactly one column, the Gram of this
+restriction is \(\operatorname{diag}(p_m)\).  The Gram of all remaining
+output coordinates is positive semidefinite.  Their sum is \(G\), proving
+the operator inequality and hence the eigenvalue bound.
+
+For sharpness, take one private output for each column and no shared output.
+Then \(G=\operatorname{diag}(p_m)\), so equality holds.
+\end{proof}
+
+\begin{corollary}[Private counts require atomic weight]
+\label{cor:tpc66-private-counts}
+Suppose that numbers \(\ell_m>0\) satisfy
+\[
+ |a_{y,m}|^2\ge\ell_m
+ \qquad(y\in P_m).
+\]
+Then
+\begin{equation}
+ \beta\ge\min_m\ell_m|P_m|.
+ \label{eq:tpc66-private-count-bound}
+\end{equation}
+Without such a weight lower bound, the counts \(|P_m|\), even when all are
+positive, imply no scale-uniform numerical lower bound.
+\end{corollary}
+
+\begin{proof}
+The first assertion follows from
+\(p_m\ge\ell_m|P_m|\) and
+\eqref{eq:tpc66-private-exposure-bound}.  For the second, use disjoint
+supports and give every nonzero entry magnitude \(\varepsilon\).  The
+support pattern and all private counts remain fixed while
+\(\beta=\varepsilon^2\) tends to zero.
+\end{proof}
+
+\subsection{The optimal phase-blind comparison matrix}
+
+For \(m\ne n\), define the support-weight overlap
+\begin{equation}
+ \Omega_{m,n}
+ :=
+ \sum_{y\in S_m\cap S_n}|a_{y,m}|\,|a_{y,n}|,
+ \qquad
+ \Omega_{m,m}:=0.
+ \label{eq:tpc66-overlap-envelope}
+\end{equation}
+Thus \(\Omega\) is a symmetric entrywise nonnegative matrix and
+\begin{equation}
+ |G_{m,n}|\le\Omega_{m,n}.
+ \label{eq:tpc66-entry-overlap-bound}
+\end{equation}
+Its comparison matrix is
+\begin{equation}
+ Q_\Omega:=\operatorname{diag}(e_m)-\Omega.
+ \label{eq:tpc66-comparison-matrix}
+\end{equation}
+
+\begin{theorem}[Comparison matrix and optimized weighted Gershgorin]
+\label{thm:tpc66-optimal-comparison}
+For every finite matrix \(B\) above,
+\begin{equation}
+ \boxed{
+ \beta\ge
+ \max\{0,\lambda_{\min}(Q_\Omega)\}.}
+ \label{eq:tpc66-comparison-lower-bound}
+\end{equation}
+Moreover,
+\begin{equation}
+ \boxed{
+ \lambda_{\min}(Q_\Omega)
+ =
+ \sup_{t\in(0,\infty)^{\mathcal M}}
+ \min_{m\in\mathcal M}
+ \left(
+ e_m-\sum_{n\ne m}
+ \Omega_{m,n}\frac{t_n}{t_m}
+ \right).}
+ \label{eq:tpc66-collatz-wielandt-comparison}
+\end{equation}
+No irreducibility hypothesis is required.  In the present symmetric setting,
+a positive maximizing vector can be assembled from the positive ground-state
+vectors of the connected components.
+\end{theorem}
+
+\begin{proof}
+For \(z\in\mathbb C^{\mathcal M}\), the triangle inequality gives
+\begin{align*}
+ \langle z,Gz\rangle
+ &=
+ \sum_m e_m|z_m|^2
+ +2\operatorname{Re}\sum_{m<n}
+   \overline{z_m}G_{m,n}z_n\\
+ &\ge
+ \sum_m e_m|z_m|^2
+ -2\sum_{m<n}\Omega_{m,n}|z_m|\,|z_n|\\
+ &=\langle |z|,Q_\Omega|z|\rangle_{\mathbb R}.
+\end{align*}
+Rayleigh--Ritz gives
+\(\lambda_{\min}(G)\ge\lambda_{\min}(Q_\Omega)\); positivity of \(G\)
+allows the right-hand side to be replaced by its positive part.
+
+For the variational identity, choose
+\(s\ge\max_m e_m\) and put
+\[
+ A:=sI-Q_\Omega.
+\]
+Then \(A\) is entrywise nonnegative and
+\[
+ \rho(A)=s-\lambda_{\min}(Q_\Omega).
+\]
+The upper Collatz--Wielandt formula, valid for every finite nonnegative
+matrix, says
+\[
+ \rho(A)
+ =
+ \inf_{t>0}\max_m\frac{(At)_m}{t_m}.
+\]
+Subtracting this identity from \(s\), and using
+\[
+ s-\max_m\frac{(At)_m}{t_m}
+ =
+ \min_m\frac{(Q_\Omega t)_m}{t_m},
+\]
+proves \eqref{eq:tpc66-collatz-wielandt-comparison}.
+Since \(\Omega\) is symmetric, its connected components give an orthogonal
+block decomposition.  On each nontrivial component, Perron--Frobenius
+applied to \(sI-Q_\Omega\) supplies a strictly positive eigenvector
+corresponding to the smallest eigenvalue of that block.  Combining these
+vectors, and using a positive scalar on every isolated vertex, gives the
+asserted positive maximizer.
+\end{proof}
+
+\begin{remark}[Sharpness and scope]
+\label{rem:tpc66-comparison-sharpness}
+For two columns the comparison estimate is exact whenever their inner
+product has the extremal negative phase.  More explicitly, for
+\(e_1,e_2>0\) and
+\(0\le\omega\le\sqrt{e_1e_2}\), the positive semidefinite Gram
+\[
+ \begin{pmatrix}
+ e_1&-\omega\\
+ -\omega&e_2
+ \end{pmatrix}
+\]
+can be realized using one shared output, with private outputs carrying any
+remaining diagonal energy, and with \(\Omega_{1,2}=\omega\).  Hence neither
+the coefficient one in
+\eqref{eq:tpc66-comparison-lower-bound} nor the weighted optimization in
+\eqref{eq:tpc66-collatz-wielandt-comparison} can be improved from only the
+diagonal energies and phase-blind pair envelopes.
+\end{remark}
+
+Normalize the overlap matrix by
+\begin{equation}
+ W_{m,n}:=
+ \frac{\Omega_{m,n}}{\sqrt{e_me_n}},
+ \qquad
+ W_{m,m}:=0.
+ \label{eq:tpc66-normalized-overlap-matrix}
+\end{equation}
+It is symmetric and entrywise nonnegative.
+
+\begin{corollary}[Spectral-radius and weighted Schur certificates]
+\label{cor:tpc66-spectral-radius-certificate}
+One has
+\begin{equation}
+ \boxed{
+ \beta
+ \ge
+ e_{\min}\bigl(1-\rho(W)\bigr)_+.}
+ \label{eq:tpc66-spectral-radius-lower}
+\end{equation}
+In particular, if there are \(t_m>0\) and \(0<\delta\le1\) such that
+\begin{equation}
+ \sum_{n\ne m}W_{m,n}\frac{t_n}{t_m}
+ \le1-\delta
+ \qquad(m\in\mathcal M),
+ \label{eq:tpc66-weighted-schur-margin}
+\end{equation}
+then
+\begin{equation}
+ \beta\ge e_{\min}\delta.
+ \label{eq:tpc66-weighted-schur-lower}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The comparison matrix factors as
+\[
+ Q_\Omega=D^{1/2}(I-W)D^{1/2}.
+\]
+Since
+\(\lambda_{\min}(I-W)=1-\rho(W)\), congruence gives
+\[
+ \lambda_{\min}(Q_\Omega)
+ \ge e_{\min}(1-\rho(W))
+\]
+whenever the last factor is nonnegative.  Combine this with
+\eqref{eq:tpc66-comparison-lower-bound}.  Finally, the upper
+Collatz--Wielandt formula gives
+\[
+ \rho(W)
+ \le
+ \max_m\sum_{n\ne m}W_{m,n}\frac{t_n}{t_m}
+ \le1-\delta,
+\]
+which proves the last assertion.
+\end{proof}
+
+\subsection{Degree, codegree, and flatness}
+
+Let
+\begin{align}
+ s_m&:=|S_m|,
+ &
+ c_{m,n}&:=|S_m\cap S_n|,
+ \label{eq:tpc66-support-codegree}\\
+ \Delta&:=
+ \max_m|\{n\ne m:S_m\cap S_n\ne\varnothing\}|,
+ &
+ \varrho_m&:=
+ s_m\max_{y\in S_m}\frac{|a_{y,m}|^2}{e_m}.
+ \label{eq:tpc66-degree-flatness}
+\end{align}
+Every \(\varrho_m\ge1\); equality means that the squared magnitudes in
+column \(m\) are flat on their support.  Define the phase-blind codegree
+matrix
+\begin{equation}
+ W^{\mathrm{sup}}_{m,n}
+ :=
+ \begin{cases}
+ \displaystyle
+ c_{m,n}
+ \sqrt{\frac{\varrho_m\varrho_n}{s_ms_n}},
+ &m\ne n,\\[3mm]
+ 0,&m=n.
+ \end{cases}
+ \label{eq:tpc66-support-codegree-matrix}
+\end{equation}
+
+\begin{proposition}[Low-codegree lower-frame certificate]
+\label{prop:tpc66-low-codegree}
+The normalized overlap matrix obeys
+\[
+ 0\le W\le W^{\mathrm{sup}}
+\]
+entrywise.  Consequently,
+\begin{equation}
+ \boxed{
+ \beta
+ \ge
+ e_{\min}
+ \bigl(1-\rho(W^{\mathrm{sup}})\bigr)_+.}
+ \label{eq:tpc66-low-codegree-spectral}
+\end{equation}
+If
+\[
+ s_*:=\min_m s_m,\qquad
+ c_*:=\max\bigl(\{c_{m,n}:m\ne n\}\cup\{0\}\bigr),\qquad
+ \varrho_*:=\max_m\varrho_m,
+\]
+then the coarser but explicit estimate is
+\begin{equation}
+ \boxed{
+ \beta
+ \ge
+ e_{\min}
+ \left(
+ 1-\frac{\varrho_*\Delta c_*}{s_*}
+ \right)_+.}
+ \label{eq:tpc66-coarse-degree-codegree}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For every common output,
+\[
+ \frac{|a_{y,m}|}{\sqrt{e_m}}
+ \frac{|a_{y,n}|}{\sqrt{e_n}}
+ \le
+ \sqrt{\frac{\varrho_m\varrho_n}{s_ms_n}}.
+\]
+Summing over the \(c_{m,n}\) common outputs proves the entrywise bound.
+Monotonicity of the Perron root for nonnegative matrices gives
+\(\rho(W)\le\rho(W^{\mathrm{sup}})\), and
+\eqref{eq:tpc66-low-codegree-spectral} follows from
+\eqref{eq:tpc66-spectral-radius-lower}.
+
+Every row of \(W^{\mathrm{sup}}\) has at most \(\Delta\) nonzero
+off-diagonal entries, each at most
+\(\varrho_*c_*/s_*\).  Therefore
+\[
+ \rho(W^{\mathrm{sup}})
+ \le\|W^{\mathrm{sup}}\|_{\ell^\infty\to\ell^\infty}
+ \le\frac{\varrho_*\Delta c_*}{s_*},
+\]
+which proves \eqref{eq:tpc66-coarse-degree-codegree}.
+\end{proof}
+
+\begin{remark}[Strict margin and claim level]
+\label{rem:tpc66-support-claim-level}
+The strict inequality
+\(\rho(W^{\mathrm{sup}})<1\), or an equivalent weighted margin, is the
+substantive hypothesis.  Nonempty supports, bounded codegree, and small
+pair overlap considered without the collision degree do not supply it.
+All statements in this section are finite-dimensional L0 theorems for the
+actual matrix \(B\).  They begin after the activated-range restriction and
+make no new claim about the general shorted-operator calculus of TPC--62.
+An arithmetic L1 use must identify \(a_{y,m}\), \(S_m\), and \(e_m\) with
+the literal coherently grouped coefficients at one fixed nonzero shift and
+in the physical atomic norm.  None of the displayed identities proves a
+polynomial exposure, a strict spectral-radius margin, a parity estimate, or
+a prime-pair lower bound.
+\end{remark}

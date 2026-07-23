@@ -1,0 +1,420 @@
+\section{Forest exactness, matching certificates, and cycle holonomy}
+\label{sec:tpc66-forest-cycle}
+
+We continue with a finite family of nonzero columns
+\(g_m\in\ell^2(\mathcal Y)\), but restate every object needed in this
+section.  Inner products are conjugate-linear in the first variable.  Let
+\[
+ e_m=\|g_m\|^2,\qquad
+ v_m=\frac{g_m}{\sqrt{e_m}},\qquad
+ C_{m,n}=\langle v_m,v_n\rangle.
+\]
+Thus \(C\succeq0\) and \(C_{m,m}=1\).  The actual support of \(g_m\) is
+\[
+ S_m=\{y:g_m(y)\ne0\}.
+\]
+
+\subsection{Exact phase removal on forests}
+
+The actual Gram graph \(\mathcal G_C\) has vertex set \(\mathcal M\) and
+an edge \(\{m,n\}\) exactly when \(C_{m,n}\ne0\).  Let \(W_C\) be its
+nonnegative weighted adjacency matrix:
+\begin{equation}
+ (W_C)_{m,n}:=
+ \begin{cases}
+ |C_{m,n}|,&m\ne n,\\
+ 0,&m=n.
+ \end{cases}
+ \label{eq:tpc66-actual-weighted-graph}
+\end{equation}
+
+\begin{theorem}[Forest-exact comparison]
+\label{thm:tpc66-forest-exact}
+If \(\mathcal G_C\) is a forest, then there is a diagonal unitary matrix
+\(U\) such that
+\begin{equation}
+ \boxed{
+ U^*CU=I-W_C.}
+ \label{eq:tpc66-forest-unitary-gauge}
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{
+ \lambda_{\min}(C)=1-\rho(W_C).}
+ \label{eq:tpc66-forest-exact-eigenvalue}
+\end{equation}
+In particular, positivity of the normalized lower-frame constant is
+equivalent to \(\rho(W_C)<1\).
+\end{theorem}
+
+\begin{proof}
+Choose a root in every tree component and give it phase \(u_m=1\).  Proceed
+away from the root.  If \(n\) is a child of \(m\), choose the unit scalar
+\(u_n\) so that
+\[
+ \overline{u_m}C_{m,n}u_n=-|C_{m,n}|.
+\]
+There is no cycle, so this recursive prescription cannot impose two
+inconsistent phases on one vertex.  With \(U=\operatorname{diag}(u_m)\),
+every nonzero off-diagonal entry of \(U^*CU\) is the negative of its
+magnitude, proving \eqref{eq:tpc66-forest-unitary-gauge}.
+
+Unitary similarity preserves eigenvalues.  Since \(W_C\) is symmetric and
+entrywise nonnegative,
+\[
+ \lambda_{\min}(I-W_C)
+ =1-\lambda_{\max}(W_C)
+ =1-\rho(W_C),
+\]
+which proves \eqref{eq:tpc66-forest-exact-eigenvalue}.
+\end{proof}
+
+\begin{corollary}[Support-forest singleton formula]
+\label{cor:tpc66-support-forest-singleton}
+Suppose the support collision graph, with an edge when
+\(S_m\cap S_n\ne\varnothing\), is a forest, and suppose every colliding
+pair has codegree one.  If \(y(m,n)\) is its unique common output, then
+\begin{equation}
+ |C_{m,n}|
+ =
+ \frac{|g_m(y(m,n))|\,|g_n(y(m,n))|}
+      {\sqrt{e_me_n}}.
+ \label{eq:tpc66-singleton-edge-weight}
+\end{equation}
+Therefore the normalized lower-frame constant is given exactly by
+\eqref{eq:tpc66-forest-exact-eigenvalue}, independently of all entry
+phases.
+\end{corollary}
+
+\begin{proof}
+With only one common output, the inner product of the two columns consists
+of one nonzero summand, whose magnitude is
+\eqref{eq:tpc66-singleton-edge-weight}.  The actual Gram graph is a
+subforest of the support collision graph, so
+Theorem~\ref{thm:tpc66-forest-exact} applies.
+\end{proof}
+
+\begin{corollary}[Exact star law]
+\label{cor:tpc66-exact-star}
+Suppose one connected component of the normalized Gram has center \(0\),
+leaves \(1,\ldots,d\), and no leaf--leaf edges.  Put
+\[
+ \gamma_j:=C_{0,j}.
+\]
+The component Gram has eigenvalues
+\begin{equation}
+ 1-\|\gamma\|_2,\qquad
+ 1\ \text{with multiplicity }d-1,\qquad
+ 1+\|\gamma\|_2.
+ \label{eq:tpc66-star-spectrum}
+\end{equation}
+Hence its exact lower-frame constant is
+\begin{equation}
+ \boxed{
+ 1-\left(\sum_{j=1}^d|\gamma_j|^2\right)^{1/2}.}
+ \label{eq:tpc66-star-lower-frame}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+After the forest gauge, the component is
+\[
+ \begin{pmatrix}
+ 1&-w^*\\
+ -w&I_d
+ \end{pmatrix},
+ \qquad
+ w=(|\gamma_1|,\ldots,|\gamma_d|)^{\mathsf T}.
+\]
+The leaf subspace orthogonal to \(w\) has eigenvalue one.  Restriction to
+the span of the center and \(w\) gives eigenvalues
+\(1\pm\|w\|_2\).
+\end{proof}
+
+\begin{proposition}[Unnormalized star Schur test]
+\label{prop:tpc66-star-schur}
+Let a Hermitian Gram component have the star form
+\[
+ H=
+ \begin{pmatrix}
+ e_0&c^*\\
+ c&\operatorname{diag}(e_1,\ldots,e_d)
+ \end{pmatrix},
+ \qquad e_j>0.
+\]
+Then
+\begin{equation}
+ \boxed{
+ H\succ0
+ \quad\Longleftrightarrow\quad
+ e_0>\sum_{j=1}^d\frac{|c_j|^2}{e_j}.}
+ \label{eq:tpc66-star-schur-condition}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The lower-right diagonal block is positive definite.  The assertion is
+exactly its scalar Schur-complement criterion.
+\end{proof}
+
+\subsection{Hall deficiency, generic rank, and unique matching}
+
+Let \(\mathcal B\) be the bipartite support graph with left vertex set
+\(\mathcal M\), right vertex set \(\mathcal Y\), and edge \(m\sim y\)
+when \(y\in S_m\).  For \(J\subseteq\mathcal M\), write
+\[
+ N(J):=\bigcup_{m\in J}S_m.
+\]
+Let \(r:=|\mathcal M|\), and let
+\[
+ B=(a_{y,m})_{y\in\mathcal Y,\,m\in\mathcal M},
+ \qquad
+ \beta=\lambda_{\min}(B^*B).
+\]
+
+\begin{theorem}[Support-rank hierarchy]
+\label{thm:tpc66-support-rank-hierarchy}
+The following three statements have different quantifiers.
+\begin{enumerate}
+\item If some \(J\subseteq\mathcal M\) satisfies
+\begin{equation}
+ |N(J)|<|J|,
+ \label{eq:tpc66-hall-deficiency}
+\end{equation}
+then \(\beta=0\) for every assignment of values on the declared support.
+\item If
+\begin{equation}
+ |N(J)|\ge|J|
+ \qquad(J\subseteq\mathcal M),
+ \label{eq:tpc66-hall-condition}
+\end{equation}
+then a generic assignment of nonzero complex values on the support has
+full column rank.  This conclusion is generic, not a statement about the
+one literal coefficient array.
+\item Suppose there is a subset
+\(\mathcal Y_0\subseteq\mathcal Y\), with
+\(|\mathcal Y_0|=r\), for which the square induced support graph has a
+unique perfect matching
+\(\phi:\mathcal M\to\mathcal Y_0\).  Then every assignment which is
+nonzero on the declared support has full column rank.  If
+\[
+ T:=B|_{\ell^2(\mathcal Y_0)}
+ \]
+is the corresponding square row restriction, then
+\begin{equation}
+ \boxed{
+ \beta
+ \ge\sigma_{\min}(T)^2
+ \ge
+ \frac{\displaystyle\prod_{m\in\mathcal M}
+       |a_{\phi(m),m}|^2}
+      {\|T\|^{2(r-1)}}.}
+ \label{eq:tpc66-unique-matching-quantitative}
+\end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+If \eqref{eq:tpc66-hall-deficiency} holds, the columns indexed by \(J\)
+are contained in the coordinate space \(\ell^2(N(J))\), whose dimension is
+strictly smaller than \(|J|\).  Those columns are linearly dependent.
+
+Under \eqref{eq:tpc66-hall-condition}, Hall's theorem gives a matching of
+all columns into \(r\) distinct output coordinates.  In the determinant of
+the corresponding square minor, this matching supplies a nonzero monomial
+in the independent entry variables.  The determinant polynomial is
+therefore not identically zero, so it is nonzero outside a proper algebraic
+set of fillings.  This proves the generic statement.
+
+Under the unique-matching hypothesis, the determinant of \(T\) has exactly
+one nonzero permutation term:
+\[
+ \det T
+ =
+ \pm\prod_{m\in\mathcal M}a_{\phi(m),m}\ne0.
+\]
+Thus \(T\), and hence \(B\), has full column rank.  Removing output rows can
+only decrease a Gram, so
+\[
+ B^*B\succeq T^*T
+\]
+and \(\beta\ge\sigma_{\min}(T)^2\).  Finally,
+\[
+ |\det T|
+ =\prod_{j=1}^r\sigma_j(T)
+ \le\|T\|^{r-1}\sigma_{\min}(T),
+\]
+which proves \eqref{eq:tpc66-unique-matching-quantitative}.
+\end{proof}
+
+\begin{remark}[Sharpness and asymptotic limitation]
+\label{rem:tpc66-matching-sharpness}
+The determinant--norm inequality in
+\eqref{eq:tpc66-unique-matching-quantitative} is sharp: take a diagonal
+matrix with \(r-1\) diagonal entries equal to \(\|T\|\) and one smaller
+entry.  Nevertheless, the product of \(r\) matching pivots may be
+exponentially small in \(r\).  Unique matching therefore closes a
+finite-scale kernel gate, but supplies no polynomial asymptotic lower bound
+without quantitative pivot and complexity control.
+\end{remark}
+
+\begin{proposition}[Private-coordinate peeling]
+\label{prop:tpc66-private-peeling}
+Suppose a choice of \(r\) output rows and an ordering of rows and columns
+make the selected square matrix triangular with nonzero diagonal.  Write
+\[
+ T=D_p(I+N),
+ \]
+where \(D_p\) is diagonal, \(N\) is strictly triangular, and
+\[
+ p_{\min}:=\min_j|(D_p)_{j,j}|>0.
+\]
+Then
+\begin{equation}
+ \boxed{
+ \sigma_{\min}(B)
+ \ge\sigma_{\min}(T)
+ \ge
+ \frac{p_{\min}}
+      {\displaystyle\sum_{k=0}^{r-1}\|N\|^k}.}
+ \label{eq:tpc66-peeling-inverse-bound}
+\end{equation}
+If \(\|N\|<1\), this implies
+\begin{equation}
+ \sigma_{\min}(B)\ge p_{\min}(1-\|N\|).
+ \label{eq:tpc66-peeling-small-nilpotent}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Since \(N^r=0\),
+\[
+ (I+N)^{-1}
+ =\sum_{k=0}^{r-1}(-N)^k.
+\]
+Therefore
+\[
+ \|T^{-1}\|
+ \le
+ \frac{1}{p_{\min}}
+ \sum_{k=0}^{r-1}\|N\|^k.
+\]
+Taking reciprocals gives the first estimate.  If \(\|N\|<1\), bound the
+finite geometric sum by \((1-\|N\|)^{-1}\).
+\end{proof}
+
+\subsection{Cycles retain a gauge-invariant phase}
+
+For a graph containing cycles, diagonal column phases cannot remove every
+edge phase independently.  The product of oriented edge phases around a
+cycle is invariant under diagonal unitary conjugation.  The following
+model calculates the resulting spectral freedom exactly.
+
+\begin{theorem}[Uniform cycle-holonomy law]
+\label{thm:tpc66-uniform-cycle-holonomy}
+Let \(r\ge3\), \(0\le a\le1/2\), and let \(C_\varphi\) be a Hermitian
+\(r\times r\) matrix with diagonal one, cycle graph \(C_r\), every edge
+magnitude equal to \(a\), and total oriented edge phase
+\(e^{i\varphi}\).  Then
+\begin{equation}
+ \boxed{
+ \operatorname{spec}(C_\varphi)
+ =
+ \left\{
+ 1+2a\cos\left(\frac{\varphi+2\pi k}{r}\right):
+ k=0,\ldots,r-1
+ \right\}.}
+ \label{eq:tpc66-cycle-spectrum}
+\end{equation}
+Thus the edge magnitudes and support graph do not determine the smallest
+eigenvalue; the cycle holonomy is additional data.
+\end{theorem}
+
+\begin{proof}
+Diagonal unitary conjugation can distribute the total phase equally over
+the \(r\) oriented edges.  The resulting magnetic cycle is circulant after
+the twisted boundary condition is absorbed into the Fourier modes.  The
+modes have angles
+\((\varphi+2\pi k)/r\), and the two oriented neighbors contribute
+\[
+ ae^{i(\varphi+2\pi k)/r}
+ +ae^{-i(\varphi+2\pi k)/r}.
+\]
+Adding the diagonal one gives \eqref{eq:tpc66-cycle-spectrum}.
+\end{proof}
+
+\begin{example}[Same supports and magnitudes, zero or positive gap]
+\label{ex:tpc66-cycle-countermodel}
+Fix \(r\ge3\), outputs \(y_1,\ldots,y_r\), and columns
+\(m_1,\ldots,m_r\).  For \(|\omega|=1\), define \(B_\omega\) by
+\begin{align}
+ a_{y_j,m_j}&=2^{-1/2}
+ &&(1\le j\le r),\nonumber\\
+ a_{y_{j+1},m_j}&=2^{-1/2}
+ &&(1\le j<r),\nonumber\\
+ a_{y_1,m_r}&=\omega\,2^{-1/2},
+ \label{eq:tpc66-cycle-incidence}
+\end{align}
+with all other entries zero.  Every column has norm one and
+\[
+ S_{m_j}=\{y_j,y_{j+1}\},
+\]
+where indices are cyclic.  Hence every support has size two, every output
+degree is two, the collision degree is two, every pair codegree is at most
+one, the flatness is one, and Hall's condition holds.  All these data,
+including every nonzero magnitude, are independent of \(\omega\).
+
+There are exactly two perfect matchings, and direct expansion gives
+\begin{equation}
+ \det B_\omega
+ =
+ 2^{-r/2}
+ \left(1+(-1)^{r-1}\omega\right).
+ \label{eq:tpc66-cycle-determinant}
+\end{equation}
+If \(\omega=(-1)^r\), then
+\[
+ \lambda_{\min}(B_\omega^*B_\omega)=0.
+\]
+If \(\omega=(-1)^{r-1}\), Theorem~\ref{thm:tpc66-uniform-cycle-holonomy}
+with \(a=1/2\) gives
+\begin{equation}
+ \lambda_{\min}(B_\omega^*B_\omega)
+ =
+ 1-\cos\left(\frac{\pi}{r}\right)>0.
+ \label{eq:tpc66-cycle-positive-gap}
+\end{equation}
+Phases approaching the singular choice make the least eigenvalue
+arbitrarily small while preserving the complete support and magnitude
+ledger.
+\end{example}
+
+\begin{remark}[Sharp support-only boundary]
+\label{rem:tpc66-cycle-sharp-boundary}
+The singular member of
+Example~\ref{ex:tpc66-cycle-countermodel} has
+\[
+ \frac{\varrho_*\Delta c_*}{s_*}
+ =
+ \frac{1\cdot2\cdot1}{2}=1.
+\]
+It therefore attains the threshold of the coarse low-codegree certificate.
+The strict inequality in that certificate cannot be replaced by a
+nonstrict one.  The example also shows that Hall's condition, bounded
+degree and codegree, flat nonzero magnitudes, and unit diagonal exposure
+do not determine the literal lower-frame constant.
+\end{remark}
+
+\begin{remark}[L0/L1 boundary and nonduplication]
+\label{rem:tpc66-forest-cycle-claim-level}
+The forest gauge, matching hierarchy, determinant bound, and cycle model
+are finite-dimensional L0 results.  They analyze the actual Gram after the
+activated carrier and represented map have already been identified.  They
+neither restate nor strengthen the master shorting theorem of TPC--62.
+For an arithmetic L1 specialization, the supports must be those of the
+literal coherently summed entries at one fixed nonzero shift; potential
+incidence, generic matrix fillings, and freely chosen cycle phases cannot
+be substituted for the physical coefficients.  No theorem here proves a
+favorable physical holonomy, a polynomial matching-pivot product, a
+parity-breaking estimate, or a prime-pair conclusion.
+\end{remark}

@@ -1,0 +1,114 @@
+\section{From reduced codegree to the decorated Gram}
+
+The arithmetic codegree theorem counts reduced cells \(c=(s,j)\), whereas a
+full physical output also carries \(\gamma\). The \(\gamma\)-multiplicity
+must not be silently inserted into or removed from a support count.
+
+For a reduced cell \(c=(s,j)\), let \(\Gamma_c\) be the ambient set of
+opposite labels occurring over that cell. For a row \(m\), define the
+decorated cell vector, extended by zero on unused labels,
+\[
+ V_{m,c}:=
+ \bigl(b_{(\gamma,s,j),m}\bigr)_\gamma
+\]
+in \(\ell^2(\Gamma_c)\), with
+\[
+ E_m(c):=\|V_{m,c}\|^2.
+\]
+Let \(\mathcal C_{m,n}(R)\) be the common reduced cells of rows \(m,n\)
+in the represented block and put
+\[
+ C_{m,n}^{\rm red}(R):=|\mathcal C_{m,n}(R)|.
+\]
+This symmetric represented codegree is bounded by the stronger rooted
+codegree \(c_{m,n}^{\rm red}(R)\) of
+\cref{sec:tpc66-pair-codegree}, in either row ordering.
+Then the normalized Gram entry has the exact disintegration
+\begin{equation}\label{eq:tpc66-decorated-gram}
+ K_X(m,n)
+ =
+ \frac{1}{\sqrt{T_m(R)T_n(R)}}
+ \sum_{c\in\mathcal C_{m,n}(R)}
+ \langle V_{m,c},V_{n,c}\rangle.
+\end{equation}
+Whenever both cell energies are nonzero, define the opposite overlap
+\begin{equation}\label{eq:tpc66-opposite-overlap}
+ \omega_{m,n}(c)
+ :=
+ \frac{|\langle V_{m,c},V_{n,c}\rangle|}
+ {\sqrt{E_m(c)E_n(c)}}\in[0,1].
+\end{equation}
+Thus a reduced cell decorated by many \(\gamma\)'s is one Gram correlation,
+not automatically many independent phases.
+
+\begin{definition}[Cell diffuseness]
+For an active row, set
+\begin{equation}\label{eq:tpc66-diffuseness}
+ \rho_m(R):=\max_c\frac{E_m(c)}{T_m(R)}\in(0,1].
+\end{equation}
+\end{definition}
+
+\begin{proposition}[Codegree--diffuseness bridge]
+\label{prop:tpc66-codegree-diffuseness}
+For distinct active rows,
+\begin{equation}\label{eq:tpc66-pair-gram-bound}
+ \boxed{\quad
+ |K_X(m,n)|
+ \le C_{m,n}^{\rm red}(R)
+ \sqrt{\rho_m(R)\rho_n(R)}.
+ \quad}
+\end{equation}
+On the critical block \(R\asymp J\), the arithmetic codegree theorem therefore
+gives
+\begin{equation}\label{eq:tpc66-critical-pair-bound}
+ |K_X(m,n)|
+ \le X^{o(1)}\sqrt{\rho_m(R)\rho_n(R)}
+\end{equation}
+uniformly for distinct rows.
+\end{proposition}
+
+\begin{proof}
+Each summand in \eqref{eq:tpc66-decorated-gram} has magnitude at most
+\[
+ \sqrt{E_m(c)E_n(c)}
+ \le
+ \sqrt{\rho_mT_m\,\rho_nT_n}.
+\]
+There are at most
+\(C_{m,n}^{\rm red}(R)\) common reduced cells. Divide by
+\(\sqrt{T_mT_n}\).
+\end{proof}
+
+\begin{corollary}[Concentration inverse statement]
+If \(|K_X(m,n)|\ge\eta>0\), then
+\[
+ \rho_m(R)\rho_n(R)
+ \ge\frac{\eta^2}{(C_{m,n}^{\rm red}(R))^2}.
+\]
+At \(R\asymp J\), a large off-diagonal correlation therefore forces both rows
+to place nonnegligible normalized energy in a small family of common
+arithmetic cells.
+\end{corollary}
+
+Neither TPC-64 nor TPC-65 proves a fixed-power upper bound for \(\rho_m(R)\).
+Support cardinality cannot replace it: a row may have many nonzero cells and
+place almost all energy in one of them.
+
+\subsection{Why the residual M\"obius sign is not cancellation}
+On the squarefree terminal support,
+\[
+ \mu(d_m)\mu(r)=\mu(s),\qquad s=d_mr.
+\]
+The source sign \(\mu(d_m)\) and terminal sign \(\mu(r)\) therefore combine
+in the literal coefficient into the output sign \(\mu(s)\), common to every
+row contributing to \((\gamma,s,j)\).
+Multiplication of one output coordinate by a common unit scalar leaves every
+Gram entry unchanged. Thus the residual represented Gram cannot obtain a
+parity saving from these M\"obius factors. The fixed-complexity mask analysis
+does not furnish small decorated overlap either: its canonical-cell theorem
+instead retains \(1-o(1)\) of the relevant product energy across the static
+mask, which is a different quantity from
+\(\omega_{m,n}(c)\) \citep{WangTPC50}. Genuine signed two-affine
+cancellation belongs to the later native/reassembly map studied around
+TPC-61 \citep{WangTPC61}, not to the signless residual skeleton isolated
+here.

@@ -1,0 +1,64 @@
+\section{Sharp route-separation models}
+
+These models are finite-dimensional or coefficient-blind diagnostics. They do
+not contradict the literal arithmetic theorems.
+
+\begin{example}[Large candidate exposure, empty terminal support]
+Take any number of congruence candidates in
+\eqref{eq:tpc66-row-exposure-upper}, but let the terminal prime indicator or a
+literal mask delete every candidate. Then the actual row energy is zero. An
+upper census cannot be reversed into activation.
+\end{example}
+
+\begin{example}[Many cells, no diffuseness]
+For \(N\ge2\) and \(0<\varepsilon<1\), let a unit column have squared magnitudes
+\[
+ 1-\varepsilon,\quad
+ \frac{\varepsilon}{N-1},\ldots,\frac{\varepsilon}{N-1}
+\]
+on \(N\) cells. Its support grows with \(N\), while its cell concentration is
+\(\rho=1-\varepsilon\). Exposure cardinality alone gives no decay of \(\rho\).
+\end{example}
+
+\begin{example}[Pair codegree one, arbitrary global rank loss]
+Let \(N\) unit columns all be supported on the same single output. Every
+distinct pair has codegree one, yet the Gram is the all-ones matrix and has
+rank one. Subpower pair codegree is not a global lower-frame theorem when the
+row collision degree is unbounded.
+\end{example}
+
+\begin{example}[Same support data, different pair geometry]
+The normalized columns
+\[
+ 2^{-1/2}(1,1),\quad2^{-1/2}(1,1)
+\]
+have a kernel, whereas
+\[
+ 2^{-1/2}(1,1),\quad2^{-1/2}(1,-1)
+\]
+are orthogonal. Exposure, pair codegree, output degrees, and entry magnitudes
+are identical. The relative phase is missing support data.
+\end{example}
+
+\begin{example}[\(\gamma\)-decoration does not equal reduced codegree]
+Let two rows share one reduced cell and let its \(\gamma\)-space have dimension
+\(G\ge2\). If both decorated vectors are nonzero in all \(G\) coordinates, the raw
+full-key support intersection is \(G\), while the reduced codegree is one.
+Their normalized overlap can be any number in \([0,1]\). Thus raw
+\(\gamma\)-multiplicity and Gram-relevant cell codegree are different objects.
+\end{example}
+
+\begin{example}[Private-energy bound is sharp]
+For \(0\le\delta\le1\), take two normalized columns
+\[
+ v_1=(\sqrt\delta,0,\sqrt{1-\delta}),\qquad
+ v_2=(0,\sqrt\delta,\sqrt{1-\delta}).
+\]
+Each row has private energy \(\delta\), and the Gram eigenvalues are
+\(\delta\) and \(2-\delta\). Hence the private-output lower bound equals the
+true smallest eigenvalue.
+\end{example}
+
+The cycle-holonomy section supplies the strongest combined no-go: even bounded
+row support, output degree, collision degree, pair codegree, Hall matching, and
+fixed magnitudes do not determine whether the lower frame is positive.

@@ -1,0 +1,70 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,longtable,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Actual Exposure and Low Pair Codegree in an Activated Fixed-Shift Residual Gram},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\rad}{\operatorname{rad}}
+
+\title{Actual Exposure and Low Pair Codegree\\
+in an Activated Fixed-Shift Residual Gram:\\
+Row Singletons, Forest-Exact Lower Frames,\\
+and Cycle-Holonomy Obstructions}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\noindent\textbf{Keywords:} fixed shift; residual fiber; pair codegree;
+actual support; lower frame; unique matching; cycle holonomy.\\[0.5em]
+\noindent\textbf{Convention.} Arithmetic specializations use one fixed
+nonzero shift \(h_0\), literal physical coefficients, actual nonzero support,
+and raw counting-measure atomic norms. The shift is not specialized to \(2\).
+Inner products are conjugate linear in the first variable.\\[0.5em]
+\noindent\textbf{MSC 2020:} Primary 11N35, 15A18; Secondary 05C50, 47A64.
+
+\input{sections/introduction}
+\input{sections/row-singletons}
+\input{sections/exposure-disintegration}
+\input{sections/pair-codegree}
+\input{sections/gamma-diffuseness}
+\input{sections/support-lower-frames}
+\input{sections/forest-cycle-holonomy}
+\input{sections/countermodels}
+\input{sections/claim-boundary}
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

@@ -1,0 +1,59 @@
+\section{Actual exposure by cofactor--orbit cells}
+
+The row-singleton theorem identifies outputs with literal atoms, but it does
+not prove that a row contains any such atom. We record the exact exposure
+decomposition and its coefficient-blind upper bound.
+
+For an active row \(m\), a cofactor \(r\in[R,2R]\), and an orbit time \(j\),
+put
+\[
+ \Gamma_m(r,j)
+ :=\{\gamma:(m,r,j,\gamma)\in\mathcal U_X(R)\}
+\]
+and
+\begin{equation}\label{eq:tpc66-cell-energy}
+ E_m(r,j):=\sum_{\gamma\in\Gamma_m(r,j)}
+ |a_{m,r,j,\gamma}|^2.
+\end{equation}
+Then the exposure and energy disintegrate exactly:
+\begin{align}
+ S_m
+ &=\bigsqcup_{\substack{r\in[R,2R]\\j}}
+   \{(\gamma,d_mr,j):\gamma\in\Gamma_m(r,j)\},
+ \label{eq:tpc66-exposure-disintegration}\\
+ T_m(R)&=\sum_{r,j}E_m(r,j).
+ \label{eq:tpc66-energy-disintegration}
+\end{align}
+
+\begin{proposition}[One-row orbit spacing]\label{prop:tpc66-row-spacing}
+For sufficiently large \(X\), fix a literal row \(m=d_m\ell_m\) and a
+retained cofactor \(r\). If one solution of
+\[
+ rp-mj=h_0
+\]
+exists, all integral solutions are
+\begin{equation}\label{eq:tpc66-row-ladder}
+ j=j_0+rt,\qquad p=p_0+mt,\qquad t\in\mathbb Z.
+\end{equation}
+Consequently an orbit interval of length \(O(J)\) contains at most
+\begin{equation}\label{eq:tpc66-row-exposure-upper}
+ 1+O\!\left(\frac Jr\right)
+ \le1+O\!\left(\frac JR\right)
+\end{equation}
+candidate \(j\)-values for this \((m,r)\).
+\end{proposition}
+
+\begin{proof}
+On the inherited terminal support, \((d_m,r)=1\). If the source prime
+\(\ell_m\) divided \(r\), then it would divide both \(rp\) and
+\(d_m\ell_mj\), hence \(h_0\), impossible once
+\(\ell_m>|h_0|\). Thus \((m,r)=1\). Differences of two solutions obey
+\(r\Delta p=m\Delta j\), yielding \eqref{eq:tpc66-row-ladder}. The spacing
+of \(j\) is \(r\), which gives \eqref{eq:tpc66-row-exposure-upper}.
+\end{proof}
+
+Primality of \(p\), the mask, the Mellin profile, and every other literal
+support condition only delete these candidates. Therefore
+\eqref{eq:tpc66-row-exposure-upper} is an upper census. It proves neither
+nonemptiness nor a lower bound for \(T_m(R)\). Even a large candidate count
+does not imply energy diffuseness among the surviving cells.

@@ -1,0 +1,114 @@
+\section{Literal row singletons and the unit diagonal}
+
+Fix one declared source system, one cofactor block \(R\le r\le2R\), and one
+external block label until its explicit erasure. A terminal atom is
+\[
+ u=(m,r,j,\gamma),\qquad m=d_m\ell_m,
+\]
+with terminal prime
+\[
+ p_u=\frac{mj+h_0}{r}
+\]
+and physical residual key
+\begin{equation}\label{eq:tpc66-output-key}
+ q(u)=(\gamma,s=d_mr,j).
+\end{equation}
+Let \(\mathcal U_X(R)\) be the actual nonzero terminal atoms in this scope.
+Write their literal coefficients as \(a_u\ne0\). For every physical row \(m\)
+and output \(y\), define
+\begin{equation}\label{eq:tpc66-row-column}
+ b_{y,m}:=\sum_{\substack{u\in\mathcal U_X(R)\\m(u)=m,\ q(u)=y}}a_u.
+\end{equation}
+The physical row synthesis is
+\[
+ (B_Xz)_y=\sum_m b_{y,m}z_m.
+\]
+
+\begin{lemma}[Row--output singleton]\label{lem:tpc66-row-singleton}
+For fixed \(m\) and \(y\), the sum in \eqref{eq:tpc66-row-column} contains at
+most one terminal atom. Consequently
+\begin{equation}\label{eq:tpc66-singleton-column}
+ b_{y,m}=a_u\quad\text{for the unique such atom, or}\quad b_{y,m}=0.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write \(y=(\gamma,s,j)\). The row fixes \(d_m\), and the output fixes
+\(r=s/d_m\), \(j\), and \(\gamma\). The terminal equation then fixes
+\(p=(mj+h_0)/r\). The external block label has been retained, so there is no
+second copy from another declared block. Thus the atom is unique.
+\end{proof}
+
+Let
+\[
+ T_m(R):=\sum_{\substack{u\in\mathcal U_X(R)\\m(u)=m}}|a_u|^2
+\]
+be the terminal energy in row \(m\), and retain only active rows
+\(\mathcal M_X^+(R)=\{m:T_m(R)>0\}\). Define
+\[
+ v_m(y):=\frac{b_{y,m}}{\sqrt{T_m(R)}},\qquad
+ K_X(m,n):=\langle v_m,v_n\rangle.
+\]
+
+\begin{theorem}[Exact unit-diagonal residual Gram]
+\label{thm:tpc66-unit-diagonal}
+If the active row space is nonempty, then on that space
+\begin{equation}\label{eq:tpc66-unit-diagonal}
+ \boxed{\qquad K_X(m,m)=1\quad(m\in\mathcal M_X^+(R)).\qquad}
+\end{equation}
+The represented-to-terminal lower constant on this block is
+\begin{equation}\label{eq:tpc66-beta}
+ \beta_X(R)=\lambda_{\min}(K_X).
+\end{equation}
+Thus every loss from the residual grouping occurs in cross-row correlations;
+there is no within-row coherent loss.
+\end{theorem}
+
+\begin{proof}
+By \cref{lem:tpc66-row-singleton}, distinct atoms from a fixed row occupy
+distinct output coordinates. Hence
+\[
+ \sum_y|b_{y,m}|^2
+ =\sum_{u:m(u)=m}|a_u|^2=T_m(R),
+\]
+which proves \eqref{eq:tpc66-unit-diagonal}. Equation
+\eqref{eq:tpc66-beta} is the activated-range Gram identity of
+\citet{WangTPC65} in this literal basis.
+\end{proof}
+
+\begin{remark}[Scope]
+The theorem is not an ambient-incidence assertion. Zero physical
+coefficients have already been removed, the terminal prime equation is
+imposed, the block label is retained, and the norm is the raw atomic norm.
+The inherited factorization \(m=d_m\ell_m\) is fixed on each physical row,
+and \(u=(m,r,j,\gamma)\) is the declared atomic coordinate: no additional
+label has been silently quotiented out in this scope.
+If multiple block labels are coherently erased, the resulting cross-block map
+is a later reassembly gate.
+\end{remark}
+
+\subsection{Actual support and collision data}
+Define
+\[
+ S_m:=\{y:v_m(y)\ne0\},\qquad
+ d_y:=|\{m:y\in S_m\}|,
+\]
+and for distinct rows
+\[
+ c_{m,n}:=|S_m\cap S_n|.
+\]
+These are actual supports after terminal restriction. They are not potential
+congruence classes. Double counting gives
+\begin{align}
+ \sum_m|S_m|&=\sum_y d_y, \label{eq:tpc66-incidence-count}\\
+ \sum_{m<n}c_{m,n}&=\sum_y\binom{d_y}{2}. \label{eq:tpc66-pair-count}
+\end{align}
+Moreover, if \(d_y\le D_R\) for every output, then the collision load rooted
+at one row satisfies
+\begin{equation}\label{eq:tpc66-rooted-load}
+ \sum_{n\ne m}c_{m,n}
+ =\sum_{y\in S_m}(d_y-1)
+ \le(D_R-1)|S_m|.
+\end{equation}
+These identities distinguish right degree \(d_y\) from left pair codegree
+\(c_{m,n}\); neither determines the other.

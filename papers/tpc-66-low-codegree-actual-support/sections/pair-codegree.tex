@@ -1,0 +1,404 @@
+\section{Divisor-thin reduced codegree of a fixed row pair}
+\label{sec:tpc66-pair-codegree}
+
+The determinant-ladder bound of TPC--55 controls how many rows can enter
+one residual output \citep{WangTPC55}.  That is a right-degree estimate.
+The present section proves a different statement: after two source rows
+are fixed, the number of reduced residual cells in which they can meet is
+much smaller on a critical cofactor block.  The proof sums the
+factor-exchange and simultaneous-CRT description of TPC--57 over every
+exchange cofactor that can occur \citep{WangTPC57}.
+
+\subsection{Reduced collision cells}
+
+Work on one declared source system and one fixed direct residue/orbit
+slice of the literal terminal carrier.  Fix \(h_0\ne0\).  Source rows
+have their inherited unique factorizations
+\begin{equation}
+ m_i=d_i\ell_i,\qquad
+ d_i\in[D,2D],\qquad
+ \ell_i\in[L,2L]\cap\mathbb P,
+ \qquad i=1,2,
+ \label{eq:tpc66-two-row-factorizations}
+\end{equation}
+where the \(d_i\) are squarefree.  A terminal atom on row \(m_i\) has
+cofactor \(r_i\), terminal prime \(p_i\), and satisfies
+\begin{equation}
+ r_ip_i-m_ij=h_0.
+ \label{eq:tpc66-two-terminal-equations-short}
+\end{equation}
+The literal equality support also has
+\[
+ d_i,r_i,d_ir_i\ \hbox{squarefree},
+ \qquad (d_i,r_i)=1.
+\]
+Every prime, residue, mask, profile, and endpoint restriction remains
+part of the carrier.
+Let \(\mathcal J_X\) denote the retained orbit interval and fix
+\(C_J\ge1\), independent of the rows and \(X\), such that
+\[
+ \operatorname{diam}(\mathcal J_X)\le C_JJ.
+\]
+
+For \(R>0\) and two distinct rows \(m_1\ne m_2\), define
+\(\mathcal C^{\mathrm{red}}_{m_1,m_2}(R)\) to be the set of pairs
+\((s,j)\) for which there are opposite labels \(\gamma_1,\gamma_2\) and two
+literal terminal atoms
+\[
+ u_i=(m_i,r_i,j,\gamma_i),\qquad d_ir_i=s,\qquad i=1,2,
+\]
+with \(R\le r_1\le2R\).  Put
+\begin{equation}
+ c^{\mathrm{red}}_{m_1,m_2}(R)
+ :=\left|\mathcal C^{\mathrm{red}}_{m_1,m_2}(R)\right|.
+ \label{eq:tpc66-reduced-codegree}
+\end{equation}
+Thus each row must be genuinely exposed over the reduced cell, but the two
+opposite labels need not agree and are not counted with multiplicity. This
+stronger reduced codegree contains the set of arithmetic cells that can
+contribute to the row-pair Gram entry. It is not the cardinality of the
+intersection of the two full \((\gamma,s,j)\)-supports.
+The definition is rooted at \(m_1\) and may be asymmetric.  The symmetric
+intersection in which both cofactors lie in \([R,2R]\) is a subset of this
+rooted set, in either ordering.
+
+\subsection{Exact factor exchange and the simultaneous orbit class}
+
+The following lemma records the fixed-row consequences of the
+factor-exchange normal form.  It is included to make the subsequent
+summation transparent.
+
+\begin{lemma}[Fixed-row exchange equations and determinant]
+\label{lem:tpc66-fixed-row-exchange}
+Let \((s,j)\in\mathcal C^{\mathrm{red}}_{m_1,m_2}(R)\).  There are unique
+positive, pairwise coprime, squarefree integers \(a,b,c,e\) such that
+\begin{equation}
+ d_1=ab,\qquad d_2=ac,\qquad
+ r_1=ce,\qquad r_2=be,\qquad
+ s=abce.
+ \label{eq:tpc66-factor-exchange}
+\end{equation}
+For fixed rows, \(a=(d_1,d_2)\), \(b=d_1/a\), and \(c=d_2/a\) are fixed;
+only \(e\) can vary.  The two terminal equations are
+\begin{align}
+ ce\,p_1-ab\ell_1j&=h_0,
+ \label{eq:tpc66-exchange-terminal-one}\\
+ be\,p_2-ac\ell_2j&=h_0,
+ \label{eq:tpc66-exchange-terminal-two}
+\end{align}
+and imply
+\begin{align}
+ e(cp_1-bp_2)
+ &=aj(b\ell_1-c\ell_2),
+ \label{eq:tpc66-exchange-identity}\\
+ \frac{e}{(e,h_0)}
+ &\mid b\ell_1-c\ell_2.
+ \label{eq:tpc66-exchange-divisibility}
+\end{align}
+Moreover,
+\begin{equation}
+ b\ell_1-c\ell_2\ne0.
+ \label{eq:tpc66-nonzero-row-difference}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The unique squarefree factor exchange is the one from TPC--57:
+the prime factors of \(s\) are partitioned according to whether they
+belong to both \(d_i\), only \(d_1\), only \(d_2\), or both \(r_i\).
+Substitution in the two copies of
+\eqref{eq:tpc66-two-terminal-equations-short} gives
+\eqref{eq:tpc66-exchange-terminal-one} and
+\eqref{eq:tpc66-exchange-terminal-two}; subtracting them gives
+\eqref{eq:tpc66-exchange-identity}.
+
+On the literal carrier, \((m_i,r_i)=1\).  Reducing the two terminal
+equations modulo \(r_i\) therefore gives
+\[
+ j\equiv-h_0(ab\ell_1)^{-1}\pmod{ce},
+ \qquad
+ j\equiv-h_0(ac\ell_2)^{-1}\pmod{be}.
+ \]
+Compatibility modulo the common factor \(e\) is equivalent to
+\(e\mid h_0(b\ell_1-c\ell_2)\), which is
+\eqref{eq:tpc66-exchange-divisibility}.  Finally, equality in
+\eqref{eq:tpc66-nonzero-row-difference} would give
+\(m_1=ab\ell_1=ac\ell_2=m_2\), contrary to the hypothesis.
+\end{proof}
+
+\begin{proposition}[Exact CRT class and two terminal-prime forms]
+\label{prop:tpc66-crt-and-prime-forms}
+Fix the two distinct rows and an admissible exchange cofactor \(e\) arising
+from \cref{lem:tpc66-fixed-row-exchange}; in particular, \(e\) is squarefree,
+\((e,abc)=1\), and it satisfies
+\eqref{eq:tpc66-exchange-divisibility}.  The two orbit congruences are
+compatible and determine one residue class
+\begin{equation}
+ j\equiv j_e\pmod{bce}.
+ \label{eq:tpc66-joint-crt-class}
+\end{equation}
+Consequently an orbit interval of diameter at most \(C_JJ\) contains at
+most
+\begin{equation}
+ 1+\left\lfloor\frac{C_JJ}{bce}\right\rfloor
+ \label{eq:tpc66-fixed-e-orbit-count}
+\end{equation}
+simultaneously integral times.
+
+Writing \(j=j_e+bce\,q\), the two terminal candidates are
+\begin{equation}
+ p_1(q)=p_{1,e}+ab^2\ell_1q,\qquad
+ p_2(q)=p_{2,e}+ac^2\ell_2q.
+ \label{eq:tpc66-two-prime-forms}
+\end{equation}
+They are nonproportional: their cross determinant is
+\begin{equation}
+ (ac^2\ell_2)p_{1,e}-(ab^2\ell_1)p_{2,e}
+ =
+ -\frac{ah_0}{e}(b\ell_1-c\ell_2)\ne0.
+ \label{eq:tpc66-two-prime-cross-determinant}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The two moduli are \(ce\) and \(be\).  Since \(b,c,e\) are pairwise
+coprime, their gcd and least common multiple are respectively \(e\) and
+\(bce\).  The compatibility condition is precisely
+\eqref{eq:tpc66-exchange-divisibility}, so the Chinese remainder theorem
+gives \eqref{eq:tpc66-joint-crt-class}.  The spacing bound gives
+\eqref{eq:tpc66-fixed-e-orbit-count}.
+
+Substituting \(j=j_e+bce\,q\) in
+\eqref{eq:tpc66-exchange-terminal-one} and
+\eqref{eq:tpc66-exchange-terminal-two} gives
+\eqref{eq:tpc66-two-prime-forms}.  At \(q=0\), multiply the first
+terminal equation by \(c\ell_2\), the second by \(b\ell_1\), and
+subtract.  This gives
+\[
+ e(c^2\ell_2p_{1,e}-b^2\ell_1p_{2,e})
+ =-h_0(b\ell_1-c\ell_2).
+ \]
+Multiplication by \(a\), followed by
+\eqref{eq:tpc66-nonzero-row-difference}, proves
+\eqref{eq:tpc66-two-prime-cross-determinant}.
+\end{proof}
+
+\subsection{Summing every exchange cofactor}
+
+\begin{theorem}[Divisor-thin rooted fixed-row-pair codegree]
+\label{thm:tpc66-divisor-thin-pair-codegree}
+Assume that, for one fixed \(A>0\), all row and orbit labels are at most
+\(X^A\), while \(h_0\ne0\) is fixed.  Uniformly over distinct literal
+source rows,
+\begin{align}
+ c^{\mathrm{red}}_{m_1,m_2}(R)
+ &\le
+ \sum_{\substack{e\ge1\ {\rm squarefree}\\
+          (e,abc)=1\\
+          e/(e,h_0)\mid b\ell_1-c\ell_2\\
+          R\le ce\le2R}}
+ \left(
+ 1+\left\lfloor\frac{C_JJ}{bce}\right\rfloor
+ \right)
+ \label{eq:tpc66-exact-codegree-sum}\\
+ &\ll_{h_0,C_J}
+ X^{o(1)}
+ \left(1+\frac JR\right).
+ \label{eq:tpc66-codegree-main-bound}
+\end{align}
+The \(o(1)\) is uniform over the declared row pair.
+\end{theorem}
+
+\begin{proof}
+For fixed rows, \(a,b,c,\ell_1,\ell_2\) are fixed.  Put
+\[
+ N_{12}:=b\ell_1-c\ell_2\ne0.
+ \]
+For every admissible \(e\), let \(\delta=(e,h_0)\).  Since \(e\) is
+squarefree, \(\delta\) is one of the \(O_{h_0}(1)\) divisors of
+\(\operatorname{rad}|h_0|\), while
+\[
+ e/\delta\mid N_{12}
+ \]
+by \eqref{eq:tpc66-exchange-divisibility}.  The map
+\(e\mapsto(\delta,e/\delta)\) is injective.  Hence
+\begin{equation}
+ \#\{e:e\ {\rm squarefree},\ e/(e,h_0)\mid N_{12}\}
+ \le
+ \tau(\operatorname{rad}|h_0|)\tau(|N_{12}|)
+ =X^{o(1)},
+ \label{eq:tpc66-number-of-exchange-cofactors}
+\end{equation}
+uniformly, by the standard divisor bound and the polynomial size of
+\(N_{12}\).
+
+For each \(e\), \cref{prop:tpc66-crt-and-prime-forms} gives at most
+\eqref{eq:tpc66-fixed-e-orbit-count} possible times.  Every literal
+primality, residue, mask, profile, and endpoint condition only deletes
+such times, proving \eqref{eq:tpc66-exact-codegree-sum}.  On the root
+block, \(ce=r_1\ge R\), and therefore
+\[
+ bce=br_1\ge R.
+ \]
+Each summand in \eqref{eq:tpc66-exact-codegree-sum} is consequently
+\(O_{C_J}(1+J/R)\).  Combining this with
+\eqref{eq:tpc66-number-of-exchange-cofactors} proves
+\eqref{eq:tpc66-codegree-main-bound}.
+\end{proof}
+
+\begin{corollary}[Critical-block pair linearity]
+\label{cor:tpc66-critical-pair-linearity}
+If \(R/J=X^{o(1)}\) and \(J/R=X^{o(1)}\), in particular if
+\[
+ R\asymp J=X^{133/400+o(1)},
+ \]
+then, uniformly over distinct active rows,
+\begin{equation}
+ \boxed{
+ c^{\mathrm{red}}_{m_1,m_2}(R)=X^{o(1)}.}
+ \label{eq:tpc66-critical-subpower-codegree}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Insert \(J/R=X^{o(1)}\) in
+\eqref{eq:tpc66-codegree-main-bound}.
+\end{proof}
+
+\subsection{Asymmetry with the right-fiber degree}
+
+The low pair codegree does not say that one residual output has low
+multiplicity.  TPC--55 proves, on a cofactor range comparable to \(R\),
+\begin{equation}
+ \Delta_R^{\mathrm{fib}}
+ :=
+ \max_y
+ \#\{u:q(u)=y,\ r_u\asymp R\}
+ \ll
+ X^{o(1)}
+ \left(1+\frac LR\right).
+ \label{eq:tpc66-right-fiber-degree}
+\end{equation}
+The same bound applies to the reduced cell \((s,j)\) obtained by
+forgetting \(\gamma\): before the opposite-label masks are imposed, the
+candidate rows are already the source/terminal-prime solutions of the
+fixed-\((s,j,d)\) determinant ladder, and allowing the existence of some
+\(\gamma\) does not create an additional arithmetic solution.  Opposite
+labels only decorate or delete such a row.
+The constant-factor saturation \(r_u\in[R/2,4R]\) changes no exponent.
+At the inherited endpoint,
+\[
+ L=X^{99979/210000+o(1)},
+ \qquad
+ R\asymp J=X^{133/400+o(1)},
+ \]
+so
+\begin{equation}
+ \Delta_R^{\mathrm{fib}}
+ \le
+ X^{15077/105000+o(1)},
+ \qquad
+ \max_{m_1\ne m_2}
+ c^{\mathrm{red}}_{m_1,m_2}(R)
+ =X^{o(1)}.
+ \label{eq:tpc66-degree-codegree-asymmetry}
+\end{equation}
+Thus the literal reduced incidence may have polynomially large right
+degree while remaining subpower-linear from the viewpoint of every fixed
+left row pair.
+
+\subsection{A four-cycle consequence}
+
+Let \(\mathscr G_R^{\mathrm{red}}\) be the bipartite graph whose left
+vertices are source rows and whose right vertices are reduced cells
+\((s,j)\); join \(m\) to \((s,j)\) when a literal terminal atom on row
+\(m\), with \(r\in[R,2R]\), occurs over that cell for at least one
+\(\gamma\).  Write
+\[
+ I_m(R):=\{(s,j):m\sim(s,j)\},\qquad
+ H_m(R):=|I_m(R)|,
+ \]
+and let \(d_R(s,j)\) be the right degree.  Put
+\[
+ C_R:=\max_{m\ne n}|I_m(R)\cap I_n(R)|,
+ \qquad
+ \Delta_R:=\max_{(s,j)}d_R(s,j).
+ \]
+
+\begin{corollary}[Rooted four-cycle bound]
+\label{cor:tpc66-four-cycle-bound}
+The number \(\mathfrak C_4(m;R)\) of unoriented four-cycles of
+\(\mathscr G_R^{\mathrm{red}}\) containing a fixed left vertex \(m\)
+satisfies
+\begin{align}
+ \mathfrak C_4(m;R)
+ &=
+ \sum_{n\ne m}
+ \binom{|I_m(R)\cap I_n(R)|}{2}
+ \label{eq:tpc66-four-cycle-identity}\\
+ &\le
+ \frac{\max\{C_R-1,0\}}{2}
+ \sum_{(s,j)\in I_m(R)}
+ \bigl(d_R(s,j)-1\bigr)
+ \label{eq:tpc66-four-cycle-incidence-bound}\\
+ &\le
+ \frac{\max\{C_R-1,0\}}{2}
+ H_m(R)(\Delta_R-1).
+ \label{eq:tpc66-four-cycle-degree-bound}
+\end{align}
+At \(R\asymp J\),
+\begin{equation}
+ \mathfrak C_4(m;R)
+ \le
+ H_m(R)\,
+ X^{15077/105000+o(1)}.
+ \label{eq:tpc66-critical-four-cycle-bound}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+A four-cycle through \(m\) is uniquely a second row \(n\ne m\) together
+with two distinct common reduced cells, proving
+\eqref{eq:tpc66-four-cycle-identity}.  For
+\(0\le c\le C_R\),
+\[
+ \binom c2\le\frac{\max\{C_R-1,0\}}{2}c.
+\]
+Moreover, double-counting the ordered pairs consisting of a cell
+incident to \(m\) and another row incident to that cell gives
+\[
+ \sum_{n\ne m}|I_m(R)\cap I_n(R)|
+ =
+ \sum_{(s,j)\in I_m(R)}(d_R(s,j)-1).
+ \]
+These two identities prove
+\eqref{eq:tpc66-four-cycle-incidence-bound}; the maximal right-degree
+bound gives \eqref{eq:tpc66-four-cycle-degree-bound}.  Finally use
+\cref{cor:tpc66-critical-pair-linearity} and
+\eqref{eq:tpc66-degree-codegree-asymmetry}.
+\end{proof}
+
+\begin{remark}[Literal scope and the \(\gamma\)-boundary]
+\label{rem:tpc66-codegree-scope}
+Every result in this section is L1: it is an unconditional upper
+statement on one literal fixed-\(h_0\) terminal carrier, using the actual
+squarefree factor exchange and the actual orbit congruences.  The
+argument does not enlarge the carrier; omitted primality, mask, profile,
+residue, or endpoint tests can only reduce the counted set.
+
+The reduction from \((\gamma,s,j)\) to \((s,j)\) is deliberate.  The raw
+full-support intersection is
+\[
+ \sum_{(s,j)\in\mathcal C^{\mathrm{red}}_{m_1,m_2}(R)}
+ \#\{\gamma:
+   b_{(\gamma,s,j),m_1}b_{(\gamma,s,j),m_2}\ne0\},
+ \]
+and the inner multiplicity can be polynomially large.  Therefore
+\eqref{eq:tpc66-critical-subpower-codegree} is not a subpower theorem
+for raw \(\gamma\)-decorated support.  Its role is to bound the number of
+arithmetic cells contributing to one row-pair Gram entry after the
+opposite-label coordinates are combined with their literal weights.
+No lower exposure, coefficient diffuseness, signed cancellation,
+smallest-eigenvalue estimate, parity improvement, or prime-pair
+conclusion is asserted.
+\end{remark}

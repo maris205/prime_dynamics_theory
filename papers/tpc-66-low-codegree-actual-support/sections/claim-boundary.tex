@@ -1,0 +1,62 @@
+\section{Conclusions, dependency graph, and the next gate}
+
+\subsection{What advanced}
+The paper proves three kinds of results.
+\begin{enumerate}[label=(\arabic*)]
+\item \textbf{Literal row geometry.} A fixed physical row is a singleton in
+each residual output fiber. The active normalized row Gram therefore has
+diagonal exactly one.
+\item \textbf{Arithmetic pair geometry.} Summing the TPC-57 exchange patterns
+for a fixed pair of distinct rows gives
+\[
+ C_{m,n}^{\rm red}(R)
+ \le X^{o(1)}\left(1+\frac JR\right).
+\]
+At \(R\asymp J\), fixed row pairs have subpower reduced codegree even though a
+single output fiber can retain polynomial degree.
+\item \textbf{Lower-frame support calculus.} Private energy, the absolute
+comparison matrix, forests, stars, and unique matchings give exact positive
+certificates. Cycle holonomy proves the sharp boundary of support-only data.
+\end{enumerate}
+
+This is a real structural advance from the TPC-65 abstract Gram: the unknown
+matrix is now a unit-diagonal Gram whose reduced-cell pair codegrees are
+subpower on the critical block. The full decorated support and the global row
+collision graph may still be large. This is not yet an endpoint lower bound.
+
+\subsection{What remains open}
+No result here proves:
+\begin{itemize}
+\item that every relevant row is nonempty or has positive private energy;
+\item a fixed-power diffuseness bound for \(\rho_m(R)\);
+\item a favorable bound for the aggregate collision spectral radius or for
+cycle holonomies;
+\item a polynomial lower bound for the physical smallest singular value;
+\item a native/reassembly signed estimate, parity improvement, or prime-pair
+lower bound.
+\end{itemize}
+
+The exact matrix/support statements are L0. The fixed-\(h_0\) row singleton,
+factor exchange, CRT spacing, divisor thinning, and critical pair-codegree
+bound are L1 on the declared literal carrier. No theorem specializes to
+\(h_0=2\) through any property special to that shift, and no theorem reaches
+L2.
+
+\subsection{Route update for TPC-67}
+The next paper should not seek M\"obius randomness in the residual Gram:
+the row/output gauge removes that sign. The smallest next gate is global
+geometry on the full collision skeleton, using only the pair thinning that
+has actually been proved:
+\begin{enumerate}[label=(\roman*)]
+\item quantify Hall deficiency and uniquely matched minors on the actual
+critical incidence;
+\item bound the nonpeelable collision core, alternating cycles, and
+cycle-holonomy dimension;
+\item combine pair codegree, right degree, and actual row-energy diffuseness
+through Cauchy--Binet or trace/minor identities.
+\end{enumerate}
+If these mechanisms yield only exponentially small determinant bounds, that is
+a route stop for uniform closure but still a precise negative theorem. If they
+give a polynomially conditioned minor or a strict comparison-matrix margin,
+the route advances to reassembly. Signed two-affine cancellation remains a
+separate later door.
