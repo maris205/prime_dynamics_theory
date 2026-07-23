@@ -1,0 +1,170 @@
+\section{The zero-slack endpoint ledger}
+\label{sec:endpoint-ledger}
+
+For the actual determinant coefficient, define
+\begin{equation}
+ Z_X=\sum_{n\in\cN_X}A_{C_X}(n),\qquad
+ D_X=\sum_{n\in\cN_X}|A_{C_X}(n)|^2,
+\label{eq:ZD-audit}
+\end{equation}
+and, when \(D_X>0\),
+\begin{equation}
+ \mathfrak F_{h_0}(X)=\frac{|Z_X|^2}{D_X}.
+\label{eq:flatness-audit}
+\end{equation}
+If \(D_X=0\), then \(a_X=0\) and hence \(Z_X=0\); the flatness is set
+to zero by convention.  Both statistics in \eqref{eq:ZD-audit} are
+post-aggregation quantities.
+
+\begin{theorem}[General two-exponent transfer]
+\label{thm:general-two-exponent}
+Fix \(h_0\ne0\) and \(C_X=\lfloor J_X\rfloor\).  Let
+\[
+ Q_X=X^{\beta+o(1)},\qquad
+ J_X=X^{1-\beta+o(1)}
+\]
+for a fixed \(0<\beta<1\).  Suppose, for fixed
+\(\eta_Z,\lambda_D\ge0\), that the literal fixed-\(h_0\) coefficient
+satisfies
+\begin{align}
+ |Z_X|&\le X^{-\eta_Z+o(1)}Q_X^2,
+ \label{eq:zero-exponent-audit}\\
+ D_X&\ge X^{-\lambda_D+o(1)}Q_X^3J_X^2.
+ \label{eq:energy-exponent-audit}
+\end{align}
+Then
+\begin{equation}
+ \mathfrak F_{h_0}(X)
+ \le
+ X^{3\beta-2+\lambda_D-2\eta_Z+o(1)}.
+\label{eq:general-flatness-audit}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The assumed lower bound for \(D_X\) is positive for all sufficiently
+large \(X\).  For those \(X\),
+\[
+ \frac{|Z_X|^2}{D_X}
+ \le
+ X^{\lambda_D-2\eta_Z+o(1)}
+ \frac{Q_X}{J_X^2}.
+\]
+The last ratio is
+ \(X^{\beta-2(1-\beta)+o(1)}
+ =X^{3\beta-2+o(1)}\).
+\end{proof}
+
+\begin{theorem}[Zero-slack compatibility]
+\label{thm:zero-slack-audit}
+At the critical scales
+\begin{equation}
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)},
+\label{eq:critical-scales-audit}
+\end{equation}
+\cref{thm:general-two-exponent} gives
+\begin{equation}
+\boxed{
+ \mathfrak F_{h_0}(X)
+ \le
+ X^{1/400+\lambda_D-2\eta_Z+o(1)}.}
+\label{eq:critical-flatness-audit}
+\end{equation}
+Within this two-exponent transfer ledger, the two recorded bounds
+imply the TPC-32 condition
+\begin{equation}
+ \mathfrak F_{h_0}(X)\le X^{1/400+o(1)}
+\label{eq:tpc32-threshold-audit}
+\end{equation}
+whenever
+\begin{equation}
+\boxed{2\eta_Z\ge\lambda_D.}
+\label{eq:zero-slack-audit}
+\end{equation}
+Strict inequality supplies a fixed-power reserve.  Equality reaches
+the threshold and supplies no additional polynomial reserve.  The
+condition is sharp for a deduction from the recorded bounds alone.
+\end{theorem}
+
+\begin{proof}
+Since
+\[
+ 3\cdot\frac{267}{400}-2=\frac1{400},
+\]
+\eqref{eq:critical-flatness-audit} follows from
+\cref{thm:general-two-exponent}.  The exponent contributed beyond
+the baseline \(1/400\) is nonpositive exactly under
+\eqref{eq:zero-slack-audit}.  This is a statement about what the
+two recorded hypotheses imply; it is not a converse characterization
+of every possible proof of \eqref{eq:tpc32-threshold-audit}.
+\end{proof}
+
+\begin{corollary}[Natural energy in the current transfer ledger]
+\label{cor:natural-energy-audit}
+The current TPC-33 zero-mode target
+\[
+ |Z_X|\le X^{o(1)}Q_X^2
+\]
+has \(\eta_Z=0\).  Since \(\lambda_D\ge0\), the sufficient condition
+\eqref{eq:zero-slack-audit} then permits no positive certified loss:
+\[
+ \lambda_D=0,\qquad
+ D_X\ge X^{-o(1)}Q_X^3J_X^2.
+\]
+Thus any positive fixed-power determinant-energy loss cannot close
+the present transfer from this amplitude bound unless a compensating
+positive
+\(\eta_Z\) is proved.
+\end{corollary}
+
+\begin{proof}
+The sufficient ledger condition becomes \(0\ge\lambda_D\), hence
+\(\lambda_D=0\).
+\end{proof}
+
+\subsection{Two ledgers, not two copies of the margin}
+
+The \(1/400\) in \eqref{eq:critical-flatness-audit} is the geometric
+baseline \(Q_X/J_X^2\) and the TPC-32 flatness endpoint
+\citep{WangTPC32}.  It is not a free allowance that can be spent
+again.  Separately, the complete physical route contains activation,
+represented-frame, missing-mass, native-operator, nuisance-shorting,
+dictionary, cover, endpoint, and calibration losses.  Every
+fixed-power loss must be derived in the same literal carrier and
+quantifier scope.  This is the strict route rule inherited from the
+TPC-72 dependency audit \citep{WangTPC72}.
+
+\begin{proposition}[Strict physical loss rule]
+\label{prop:strict-loss-rule}
+Let \(\Lambda_{\rm phys}\) be the sum of all fixed-power exponent
+losses actually used in the full physical comparison, after repeated
+terms have been identified and open terms have been left open.  The
+route may continue only if
+\begin{equation}
+ \Lambda_{\rm phys}<\frac1{400}.
+\label{eq:strict-physical-loss}
+\end{equation}
+It must stop if
+\begin{equation}
+ \Lambda_{\rm phys}\ge\frac1{400},
+\label{eq:physical-stop}
+\end{equation}
+including equality.
+\end{proposition}
+
+\begin{proof}
+The inherited endpoint requires a strict positive remainder after
+all fixed-power degradations.  Equality leaves no such remainder, and
+an open term cannot be assigned exponent zero.  Counting the same
+baseline or gain twice does not change the literal inequality, so it
+is excluded from the ledger.
+\end{proof}
+
+\begin{remark}[TPC-81 remains conditional]
+\Cref{thm:zero-slack-audit} turns two explicit estimates into the
+conditional flatness threshold.  It proves neither
+\eqref{eq:zero-exponent-audit} nor
+\eqref{eq:energy-exponent-audit}.  In particular,
+\eqref{eq:zero-slack-audit} is not itself an \(\Ltwo\) input.
+\end{remark}

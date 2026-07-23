@@ -1,0 +1,95 @@
+\section{A no-teleportation theorem}
+\label{sec:no-teleportation}
+
+Four spaces recur in the block:
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item the actual nonzero provenance incidence graph
+\(\cG_X^{\rm inc}\) of TPC-77/78;
+\item the common synthesis target \(K_X\) and quotient
+\(K_X/V_{A,X}\) of TPC-79;
+\item the scalar row space on which the Hermitian pair
+\((H_X^{\rm hol},P_X^{\rm hol})\) of TPC-80 acts; and
+\item the determinant-bin space \(\C^{\cN_X}\) containing \(a_X\).
+\end{enumerate}
+They can share indices or provenance labels while carrying different
+operations.
+
+\begin{definition}[Literal bridge]
+\label{def:literal-bridge}
+A literal bridge between two audited objects is a specified linear or
+affine map, constructed from the complete physical packet, that:
+\begin{enumerate}[label=(B\arabic*),leftmargin=2.7em]
+\item preserves all native multiplicities, signs, phases, and
+normalization factors;
+\item has the stated source and target, rather than an observation
+space with the arrows reversed;
+\item maps actual nonzero support to the actual object being
+estimated; and
+\item proves the norm, quadratic-form, or aggregation inequality
+needed for the next step uniformly in the original quantifier range.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[No teleportation]
+\label{thm:no-teleportation}
+Data consisting only of
+\[
+ \cG_X^{\rm inc},\qquad K_X/V_{A,X},\qquad
+ (H_X^{\rm hol},P_X^{\rm hol}),
+\]
+and their support, quotient-gauge, or scalar-spectral invariants do
+not determine a nontrivial cancellation bound for \(|Z_X|\) or a
+positive lower bound for \(D_X\).  Any inference from the listed
+structural data to such a conclusion requires, at minimum, a literal
+bridge
+to the pre-bin coefficient and an exact determinant map
+\[
+ \cJ_X:\C^{\cY_X}\longrightarrow\C^{\cN_X}.
+\]
+In particular, the conclusions of TPC-78, TPC-79, and TPC-80 cannot
+substitute for one another or for a determinant-frequency estimate.
+\end{theorem}
+
+\begin{proof}
+The listed structural data contain no map to
+\(\C^{\cN_X}\).  Keeping them fixed therefore imposes no algebraic
+restriction on a vector assigned to that separate space.  One may
+assign the same structural triple to \(a=(1,\ldots,1)\) or, for even
+dimension, to \(b=(1,-1,\ldots,1,-1)\).  The two determinant vectors
+have the same support, entrywise absolute values, and energy, while
+their zero modes are different.  Thus the structural triple does not
+determine \(Z_X\).
+
+Even a map into a raw atomic space does not determine \(D_X\): a
+determinant fiber may send two atoms \((1,-1)\) to zero.  Hence a
+positive raw norm does not give a positive post-bin norm without a
+lower modulus for the actual \(\cJ_X\) on a verified range.  These
+examples are formalized in \cref{sec:counterexamples}.  A literal
+bridge and determinant map add exactly the missing relations.
+\end{proof}
+
+\begin{corollary}[Three prohibited identifications]
+\label{cor:prohibited-identifications}
+Without additional proofs, none of the following is valid:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item treating a four-corner observation or trace as an anchor
+synthesis vector in the direct target;
+\item treating a block-valued carrier as a scalar Hermitian edge
+matrix, or replacing the actual row graph by an ambient graph; or
+\item treating raw atomic mass or pre-bin energy as determinant-bin
+energy.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+Item (i) reverses or changes the target of a map, item (ii) changes
+the operator algebra, and item (iii) discards the kernel of
+\(\cJ_X\).  Each violates \cref{def:literal-bridge}.
+\end{proof}
+
+\begin{remark}[What the theorem does not say]
+\Cref{thm:no-teleportation} is a typed nonidentifiability result.  It
+does not assert that no useful bridge exists.  Constructing such a
+bridge is precisely Route~I-A of \cref{sec:decision-tree}; the direct
+determinant-energy Route~I-B does not require this completion bridge.
+\end{remark}

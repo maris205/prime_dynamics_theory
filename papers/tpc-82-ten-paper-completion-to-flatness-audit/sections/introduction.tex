@@ -1,0 +1,85 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The purpose of a route audit is not to make a long proof program look
+closer to its final conjecture than it is.  It is to identify which
+interfaces have become exact, which quantities still require
+arithmetic information, and which apparent shortcuts are type errors.
+That distinction is especially important in a fixed-shift problem.
+An estimate averaged over shifts, frequencies, or carrier families
+may be deep, yet it does not automatically control one prescribed
+nonzero \(h_0\).  Likewise, a finite-dimensional completion theorem can
+be completely rigorous while remaining silent about the signed
+coefficient to which it is intended to apply.
+
+TPC-73--TPC-80 develop a chain of exact algebraic tools
+\citep{WangTPC73,WangTPC74,WangTPC75,WangTPC76,WangTPC77,WangTPC78,WangTPC79,WangTPC80}.
+The preceding TPC-72 audit isolated the missing direct two-corner
+operator bridge and imposed the strict physical loss rule
+\(\Lambda_{\rm phys}<1/400\) \citep{WangTPC72}.  TPC-74 closes that
+direct entry bridge, while TPC-73--TPC-80 close or sharpen a sequence
+of \(\Lzero/\Lone\) certificate subgates.  Their quantitative
+aggregation on the small growing physical carrier remains open.
+TPC-81 then asks for the first time in this block how those tools could
+reach the determinant coefficient and the distinguished zero
+frequency used in the matched-shell argument
+\citep{WangTPC81,WangTPC32,WangTPC33}.  The answer is both useful and
+restrictive.  Completion can contribute a lower bound for pre-bin
+energy, but determinant aggregation can erase that energy.  Even if
+determinant energy survives, its unsigned size does not cancel the
+zero mode.  The two tasks must be recorded separately.
+
+This paper is the tenth item in the block.  Its main outputs are as
+follows.
+
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item We give formal definitions of \(\Lzero,\Lone,\Ltwo\) and audit
+TPC-73--TPC-81 against them.  The block contains substantial exact
+\(\Lzero\) structure and several \(\Lone\) transfer interfaces, but no
+completed \(\Ltwo\) arithmetic estimate.
+\item We write the typed dependency graph.  The sparse incidence
+graph of TPC-77/78, the common-target quotient of TPC-79, the scalar
+Hermitian row graph of TPC-80, and the determinant coefficient space
+of TPC-81 are distinct objects.  Shared labels do not identify them.
+\item We isolate a no-teleportation principle: without an explicit
+literal synthesis or intertwining map, a theorem on one of those
+objects supplies no determinant-energy or zero-frequency estimate.
+\item We restate the exact anchor--direct and scalar-holonomy
+interfaces and record their application conditions.  In particular,
+the orphan quotient is not the physical hybrid cost, trees supply no
+phase-frustration saving, and one sector gap does not give norm
+strictness.
+\item We crosswalk the TPC-81 reassembly and determinant-dictionary
+inequalities into one conditional energy-survival statement.  Every
+factor in that statement is visible; none is silently declared to be
+\(X^{o(1)}\).
+\item We prove the recorded-bounds zero-slack compatibility condition
+\[
+ 2\eta_Z\ge\lambda_D.
+\]
+Equality reaches the TPC-32 flatness threshold but leaves no
+fixed-power reserve.  It is not permission to spend another
+\(1/400\).
+\item We give two exact nonidentifiability examples and a three-route
+decision tree with hard stop rules.  These permit a clean negative
+paper if the two remaining inputs reduce to a fixed-shift
+Chowla-type correlation, rather than disguising that correlation as
+a consequence of completion geometry.
+\end{enumerate}
+
+The distinction between structural and arithmetic progress is
+standard in spirit.  Sieve parity and multiplicative correlations
+are not resolved by unsigned support information
+\citep{HeathBrown1982Parity,IwaniecKowalski2004}.  Strong averaged
+correlation theorems provide essential comparison points
+\citep{MatomakiRadziwillTao2015,Tao2016LogChowla}, but they do not
+become a theorem for the literal distinguished frequency and fixed
+\(h_0\) without a separate localization argument.
+
+Our convention is deliberately strict.  The actual coefficient is
+formed with all native keys, literal signs and phases, exact
+post-aggregation support, and one global raw normalization.  An
+ambient support, an unsigned envelope, a fitted reduced space, or a
+componentwise renormalization may be a diagnostic, but it is not the
+physical input.  This strictness turns several vague obstacles into
+finite checklists and makes the remaining arithmetic gate precise.

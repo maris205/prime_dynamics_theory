@@ -1,0 +1,145 @@
+\section{The TPC-73--TPC-81 stage ledger}
+\label{sec:stage-ledger}
+
+\begingroup
+\small
+\hbadness=10000
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{@{}p{0.075\linewidth}p{0.34\linewidth}
+ p{0.135\linewidth}p{0.355\linewidth}@{}}
+\toprule
+Paper & Exact closure & Highest verified stage & Open gate \\
+\midrule
+\endfirsthead
+\toprule
+Paper & Exact closure & Highest verified stage & Open gate \\
+\midrule
+\endhead
+TPC-73 &
+Canonical primitive support, zero completion, and exact disappearance
+of every \(d\ge2\) diagonal slice. &
+\(\Lone\) local carrier identity. &
+The actual \(d=1\) mixed variation and a complete operator bound.
+\\
+TPC-74 &
+Literal normalized two-corner primitive-plane entry for the
+missing-native Gram, termwise Abel majorants, and a Perron majorant
+interface. &
+\(\Lone\) exact entry representation. &
+A small \(\rho(P_X)\), including the actual row, star, and operator
+summations.
+\\
+TPC-75 &
+Strong duality for the completion gauge, quotient seminorms,
+obstruction witnesses, and an independent row-pair Perron floor. &
+\(\Lzero\), with \(\Lone\) typing. &
+A small optimum on the growing carrier and any genuinely coupled
+minimax problem.
+\\
+TPC-76 &
+Divisor-poset zeta lift and inversion, provenance-compatible affine
+classes, diagonal filtration, and reduced dual problems. &
+\(\Lzero/\Lone\) interface. &
+An actual lift whose literal growing optimum gives an asymptotic
+saving.
+\\
+TPC-77 &
+Factorization over components of the actual nonzero incidence graph,
+componentwise primal--dual certificates, and a manifest schema. &
+\(\Lzero\), advancing \(\Lone\). &
+A complete scale-uniform literal census and a quantitative bound on
+its component optima.
+\\
+TPC-78 &
+For complex-scalar incidence maps: forest leaf erasure, matching
+rank, defect reduction, a one-defect closed form, a reduced SOCP, and
+motif dual packings. &
+\(\Lzero\). &
+Proof that the actual carrier is covered by the claimed forests or
+motifs, with acceptable aggregate cost.
+\\
+TPC-79 &
+Exact orphan quotient and hybrid duality, together with fixed-datum
+and global equality tests. &
+\(\Lzero\), with an \(\Lone\) admissibility test. &
+Common physical target, separable variables, correct coefficient
+prices, and an actual strict saving.
+\\
+TPC-80 &
+Scalar Hermitian Perron saturation, switching/holonomy
+classification, sector defects, and weighted defect bounds. &
+\(\Lzero\), advancing \(\Lone\) diagnostics. &
+The actual scalar row graph, quantitative defects in both sectors,
+and treatment of any block-valued carrier.
+\\
+TPC-81 &
+Exact completion/reassembly-to-determinant-energy transfer and the
+zero-mode/energy exponent ledger. &
+\(\Lone\)-typed conditional interface; no verified physical
+specialization. &
+A small dictionary residual, determinant-energy survival, and
+distinguished-zero-mode cancellation.
+\\
+\midrule
+Block &
+Exact support, completion, quotient, sparse, forest, hybrid, scalar
+spectral, and arithmetic-transfer interfaces. &
+\(\Lzero/\Lone\); no \(\Ltwo\). &
+No new fixed-\(h_0\) asymptotic cancellation estimate has been
+proved.
+\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\begin{theorem}[Stage audit]
+\label{thm:stage-audit}
+Every unconditional theorem in TPC-73--TPC-81 is an \(\Lzero\) or
+\(\Lone\) statement in the sense of \cref{def:levels}.  None supplies
+even the current target
+\begin{equation}
+ |Z_X|\le X^{o(1)}Q_X^2,
+\label{eq:missing-zero-baseline}
+\end{equation}
+let alone
+\begin{equation}
+ |Z_X|\le X^{-\eta+o(1)}Q_X^2
+ \quad\text{for some fixed \(\eta>0\),}
+\label{eq:missing-zero-saving}
+\end{equation}
+or a polynomially adequate lower bound for the literal determinant
+energy \(D_X\).  Consequently this ten-paper block contains no
+completed \(\Ltwo\) fixed-shift arithmetic estimate.
+\end{theorem}
+
+\begin{proof}
+TPC-73 and TPC-74 identify literal primitive pieces and entries, but
+leave their growing operator aggregation open
+\citep{WangTPC73,WangTPC74}.  TPC-75--TPC-80 are exact finite
+optimization, incidence, reduction, quotient, or scalar spectral
+theorems; their physical conclusions are conditional on an actual
+manifest and quantitative hypotheses
+\citep{WangTPC75,WangTPC76,WangTPC77,WangTPC78,WangTPC79,WangTPC80}.
+TPC-81 constructs the exact crosswalk to \(D_X\) and \(Z_X\), but
+states energy survival and zero-mode cancellation as hypotheses
+\citep{WangTPC81}.  None of these papers proves
+\eqref{eq:missing-zero-baseline}, \eqref{eq:missing-zero-saving}, or
+the determinant-energy lower bound
+used in \cref{sec:endpoint-ledger}.  By
+\cref{def:levels}, no \(\Ltwo\) estimate is present.
+\end{proof}
+
+\begin{corollary}[No arithmetic relabeling]
+\label{cor:no-arithmetic-relabeling}
+The labels ``exact'', ``optimal'', ``dual certificate'', and
+``spectral gap'' in the audited block describe their stated
+\(\Lzero/\Lone\) objects.  They cannot be relabeled as a fixed-shift
+M\"obius saving, a parity-breaking estimate, or a prime-pair theorem.
+\end{corollary}
+
+\begin{proof}
+Those arithmetic statements require an \(\Ltwo\) estimate for the
+literal coefficient.  \Cref{thm:stage-audit} shows that such an
+estimate is not among the premises or conclusions audited here.
+\end{proof}

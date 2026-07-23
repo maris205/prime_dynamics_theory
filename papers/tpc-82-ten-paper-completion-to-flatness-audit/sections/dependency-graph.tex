@@ -1,0 +1,109 @@
+\section{The typed dependency graph}
+\label{sec:dependency-graph}
+
+The principal completion chain is
+\begin{equation}
+\begin{gathered}
+\text{TPC-73: primitive support}\\[-0.1em]
+\downarrow\\[-0.1em]
+\text{TPC-74: direct two-corner entries}\\[-0.1em]
+\downarrow\\[-0.1em]
+\text{TPC-75: completion duality}
+\longrightarrow
+\text{TPC-76: provenance lifts}\\[-0.1em]
+\longrightarrow
+\text{TPC-77: sparse components}
+\longrightarrow
+\text{TPC-78: complex-scalar forest and motif reductions}.
+\end{gathered}
+\label{eq:completion-chain}
+\end{equation}
+Two auxiliary branches leave this chain.  A verified anchor synthesis
+and a direct synthesis can enter TPC-79 only if they share one target:
+\begin{equation}
+\left.
+\begin{array}{c}
+\text{direct synthesis into \(V\)}\\
+\text{anchor synthesis into the same \(V\)}
+\end{array}
+\right\}
+\longrightarrow
+\text{TPC-79: hybrid/orphan quotient}.
+\label{eq:anchor-branch}
+\end{equation}
+Likewise, the TPC-80 theorem requires a literal scalar Hermitian
+matrix \(H_X^{\rm hol}\) and a nonnegative majorant
+\(P_X^{\rm hol}\) on the same row graph:
+\begin{equation}
+(H_X^{\rm hol},P_X^{\rm hol})
+\text{ on one scalar actual row graph}
+\longrightarrow
+\text{TPC-80: Perron/holonomy audit}.
+\label{eq:holonomy-branch}
+\end{equation}
+
+None of \eqref{eq:completion-chain}--\eqref{eq:holonomy-branch} is a
+determinant-frequency statement.  The only typed route from those
+completion branches to that statistic in the present block is
+\begin{equation}
+\begin{gathered}
+\text{literal pre-bin coefficient \(\cB_Xz_X\)}
+\xrightarrow{\ \cJ_X\ }
+a_X=(A_{C_X}(n))_n\\
+\downarrow\\[-0.2em]
+(Z_X,D_X)
+\longrightarrow
+\mathfrak F_{h_0}(X)
+\longrightarrow
+\text{the conditional TPC-32 threshold}.
+\end{gathered}
+\label{eq:determinant-chain}
+\end{equation}
+Here \(\cJ_X\) is the exact determinant dictionary, not a label
+identification.
+
+\begin{theorem}[Typed dependency theorem]
+\label{thm:typed-dependency}
+The implications in \eqref{eq:completion-chain} are composable only
+through their stated synthesis and dual maps.  The TPC-79 branch
+additionally requires a common target and separable native variables;
+the TPC-80 branch additionally requires scalar Hermitian entries and
+one common actual row graph.  A conclusion from either branch enters
+\eqref{eq:determinant-chain} only through an explicit estimate for the
+literal \(\cB_X\), the verified binning map \(\cJ_X\), and its
+dictionary residual.  Shared labels, shared support, or a numerical
+correlation do not replace these maps.
+\end{theorem}
+
+\begin{proof}
+The completion results of TPC-73--TPC-78 concern representations and
+norms of synthesis targets
+\citep{WangTPC73,WangTPC74,WangTPC75,WangTPC76,WangTPC77,WangTPC78}.
+TPC-79 forms an infimal convolution in one target space
+\citep{WangTPC79}.  TPC-80 compares quadratic forms of two scalar
+matrices on one vertex space \citep{WangTPC80}.  By contrast,
+\(a_X\) is indexed by determinant bins.  These domains and codomains
+are not canonically identical.  Composition is therefore defined
+only after the intervening maps and their literal multipliers are
+specified.  TPC-81 makes precisely that extra map explicit
+\citep{WangTPC81}.  Without it, the displayed objects are merely
+different typed data sets.
+\end{proof}
+
+\begin{remark}[No silent Perron-pair identification]
+The TPC-80 pair
+\((H_X^{\rm hol},P_X^{\rm hol})\) and the TPC-81 normalized
+missing-Gram pair \((R_{\cM,X},P_{\cM,X})\) have different
+provenance.  TPC-80 can sharpen the missing-Gram estimate only after
+an exact equality or a norm-preserving intertwining between these
+pairs is proved on the same actual scalar graph.
+\end{remark}
+
+\begin{remark}[Direction of inference]
+The graph records legal implication, not automatic quantitative
+success.  An exact TPC-78 reduction may return a large optimum; an
+exact TPC-79 dual witness may certify no saving in the declared
+hybrid class; and a TPC-80 equality certificate may show exact Perron
+saturation.  These are useful stop certificates but they do not close
+\eqref{eq:determinant-chain}.
+\end{remark}

@@ -1,0 +1,224 @@
+\section{The TPC-79 and TPC-80 interface audits}
+\label{sec:interface-audits}
+
+\subsection{Anchor--direct synthesis in one target}
+
+Let \(K,X_A,X_D\) be finite-dimensional real or complex spaces,
+regarded as real when duality is taken.  Let
+\[
+ S_A:X_A\to K,\qquad S_D:X_D\to K
+\]
+be real-linear maps, assume \(S_D\) is surjective, and let
+\(p_A,p_D\) be the literal coefficient norms.  Put
+\[
+ V_A=\Ran S_A,
+\]
+\[
+ \alpha(v)=\inf_{S_Ax=v}p_A(x),\qquad
+ \delta(k)=\min_{S_Dy=k}p_D(y),
+\]
+with \(\alpha(v)=+\infty\) for \(v\notin V_A\).  Their polar feasible
+sets are
+\begin{align}
+ B_A&=\{\lambda:p_A^\circ(S_A^*\lambda)\le1\},\label{eq:BA-audit}\\
+ B_D&=\{\lambda:p_D^\circ(S_D^*\lambda)\le1\}.\label{eq:BD-audit}
+\end{align}
+
+\begin{proposition}[Exact TPC-79 interface]
+\label{prop:tpc79-interface}
+For the quotient map \(\pi:K\to K/V_A\), define
+\begin{align}
+ \delta_{\rm orph}(\pi k)
+ &=\inf_{v\in V_A}\delta(k-v),\label{eq:orphan-audit}\\
+ h(k)
+ &=\min_{v\in V_A}\{\alpha(v)+\delta(k-v)\}.\label{eq:hybrid-audit}
+\end{align}
+Then
+\begin{align}
+ \delta_{\rm orph}(\pi k)
+ &=\max_{\substack{\lambda\in B_D\\S_A^*\lambda=0}}
+ [\lambda,k]_{\R},\label{eq:orphan-dual-audit}\\
+ h(k)
+ &=\max_{\lambda\in B_A\cap B_D}
+ [\lambda,k]_{\R},\label{eq:hybrid-dual-audit}\\
+ \delta_{\rm orph}(\pi k)&\le h(k)\le\delta(k).
+\label{eq:three-gauges-audit}
+\end{align}
+Moreover, with
+\[
+ N_D(k)=\{\lambda\in B_D:[\lambda,k]_{\R}=\delta(k)\},
+\]
+one has
+\begin{equation}
+ h(k)=\delta(k)
+ \iff N_D(k)\cap B_A\ne\varnothing,
+\label{eq:fixed-equality-audit}
+\end{equation}
+and
+\begin{equation}
+ h\equiv\delta
+ \iff \alpha\ge\delta\text{ on }V_A
+ \iff B_D\subseteq B_A.
+\label{eq:global-redundancy-audit}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+These are the quotient-norm and infimal-convolution dual formulas,
+fixed-datum norming-face test, and global redundancy theorem of
+TPC-79 \citep{WangTPC79}.  Finite dimensionality gives attainment.
+\end{proof}
+
+\begin{proposition}[TPC-79 admissibility audit]
+\label{prop:tpc79-admissibility}
+The formulas in \cref{prop:tpc79-interface} apply to a physical
+anchor/direct proposal only if:
+\begin{enumerate}[label=(A\arabic*),leftmargin=2.7em]
+\item \(S_Ax\) and \(S_Dy\) are synthesis vectors in the same target
+\(K\);
+\item the native variable space is the verified direct sum
+\(X_A\oplus X_D\), or an equivalent separable model is proved;
+\item the physical coefficient cost is
+\(p_A(x)+p_D(y)\) with the same global normalization; and
+\item both maps use the complete literal packet and actual support.
+\end{enumerate}
+An observation, trace, or shared label does not imply (A1).
+Coupled variables or a coupled cost require a new joint polar, not
+\eqref{eq:hybrid-dual-audit}.
+\end{proposition}
+
+\begin{proof}
+The proof of \eqref{eq:hybrid-dual-audit} takes the polar of the
+additive norm on \(X_A\oplus X_D\) and uses the common synthesis
+\(S_Ax+S_Dy\).  If the targets, variables, or costs differ, that
+primal program is not the physical program and its dual intersection
+is not valid.
+\end{proof}
+
+The free orphan quotient \(\delta_{\rm orph}\) is a lower floor, not
+the physical hybrid price: it charges zero for every anchor-visible
+direction.  An orphan normer \(S_A^*\lambda=0\) is a strong sufficient
+certificate for no improvement, but it is not necessary; the exact
+test is \eqref{eq:fixed-equality-audit}.  Finally, solver failure
+proves no obstruction.  A no-improvement claim requires an exact
+normer or dual witness.
+
+\subsection{Scalar Perron saturation and holonomy}
+
+Let \(P\ne0\) be a real symmetric nonnegative matrix with zero
+diagonal and connected support graph, and let \(H\) be Hermitian on
+the same scalar vertex space, with zero diagonal and entrywise
+domination \(|H|\le P\).
+Write
+\[
+ \delta_\sigma=\rho(P)-\lambda_{\max}(\sigma H),
+ \qquad \sigma\in\{+1,-1\}.
+\]
+
+\begin{proposition}[Exact TPC-80 saturation audit]
+\label{prop:tpc80-interface}
+One has
+\begin{equation}
+ \rho(P)-\|H\|=\min\{\delta_+,\delta_-\}.
+\label{eq:sector-min}
+\end{equation}
+Moreover,
+\begin{equation}
+ \|H\|=\rho(P)
+ \iff
+ |H|=P
+ \quad\text{and}\quad
+ H=\sigma DPD^*
+\label{eq:perron-saturation-audit}
+\end{equation}
+for some \(\sigma\in\{\pm1\}\) and diagonal unitary \(D\).  When
+\(|H|=P\), writing \(H_{ij}=P_{ij}\phi_{ij}\), the switching
+condition is equivalent to
+\begin{equation}
+ \Hol_\phi(C)=\sigma^{|C|}
+\quad\text{for every oriented cycle \(C\)}.
+\label{eq:holonomy-audit}
+\end{equation}
+It is enough to test the fundamental cycles of a spanning tree.
+\end{proposition}
+
+\begin{proof}
+This is the two-sector Perron saturation and scalar holonomy
+classification of TPC-80 \citep{WangTPC80}; it also follows from the
+equality case in the Perron comparison
+\citep{HornJohnson2013,BermanPlemmons1994}.
+\end{proof}
+
+\begin{remark}[Distinct Perron pairs]
+In a physical TPC-80 specialization, denote the pair above by
+\((H_X^{\rm hol},P_X^{\rm hol})\).  It is not automatically the
+TPC-81 missing-Gram pair
+\((R_{\cM,X},P_{\cM,X})\).  Using the holonomy theorem inside the
+missing-Gram certificate requires a proof that
+\(H_X^{\rm hol}=R_{\cM,X}\) and
+\(P_X^{\rm hol}=P_{\cM,X}\) on the same actual scalar graph, or an
+explicit intertwining that preserves the required quadratic forms
+and operator norms.  Without that bridge,
+\cref{thm:no-teleportation} applies.
+\end{remark}
+
+\begin{corollary}[Tree and two-sector audit]
+\label{cor:tree-two-sector}
+On a tree, every scalar edge-phase pattern switches away.  Hence a
+tree cannot yield phase-frustration saving.  On a graph with cycles,
+a positive defect in only one sector does not prove
+\(\|H\|<\rho(P)\); both \(\delta_+>0\) and \(\delta_->0\) are needed.
+\end{corollary}
+
+\begin{proof}
+A tree has no cycle constraint, so
+\eqref{eq:holonomy-audit} is vacuous for either admissible switching
+sector.  The second statement is immediate from
+\eqref{eq:sector-min}.
+\end{proof}
+
+\begin{proposition}[Reducible component crosswalk]
+\label{prop:reducible-holonomy}
+For an actual scalar graph with connected components \(V_j\), the
+domination \(|H|\le P\) gives block decompositions
+\(H=\bigoplus_jH_j\) and \(P=\bigoplus_jP_j\), and
+\[
+ \|H\|=\max_j\|H_j\|,
+ \qquad
+ \rho(P)=\max_j\rho(P_j).
+\]
+Consequently \(\|H\|=\rho(P)\) if and only if some
+\(\rho(P)\)-dominant component satisfies
+\(\|H_j\|=\rho(P_j)=\rho(P)\); on that component the connected
+saturation criterion of \cref{prop:tpc80-interface} applies.
+\end{proposition}
+
+\begin{proof}
+If \(i\) and \(j\) lie in different components, then \(P_{ij}=0\), so
+\(|H_{ij}|\le P_{ij}\) gives \(H_{ij}=0\).  The two norm identities
+follow from block diagonalization.  Equality of the two maxima is
+equivalent to saturation on at least one component attaining the
+Perron maximum.
+\end{proof}
+
+\begin{proposition}[TPC-80 application boundary]
+\label{prop:tpc80-boundary}
+The scalar theorem does not by itself provide a useful endpoint
+estimate in any of the following cases:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the physical entries are blocks or operators rather than
+scalars;
+\item \(H\) and \(P\) do not live on the same actual row graph;
+\item only qualitative strictness
+\(\|H\|<\rho(P)\) is known while \(\rho(P)\) itself is too large; or
+\item no literal bridge relates the row quadratic form to
+\(\cJ_X\cB_Xz_X\) or \(Z_X\).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Items (i)--(ii) violate the hypotheses of
+\cref{prop:tpc80-interface}.  In (iii), an arbitrarily small strict
+gap need not reduce a fixed exponent.  In (iv),
+\cref{thm:no-teleportation} applies.
+\end{proof}

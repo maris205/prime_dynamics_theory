@@ -1,0 +1,83 @@
+\section{Two exact nonidentifiability counterexamples}
+\label{sec:counterexamples}
+
+\begin{example}[Unsigned data do not determine the zero mode]
+\label{ex:unsigned-zero}
+Let \(N\) be even and define vectors in \(\C^N\) by
+\[
+ a_n=1,\qquad b_n=(-1)^n,\qquad 1\le n\le N.
+\]
+They have identical support, identical entrywise absolute values, and
+identical energy:
+\[
+ \supp a=\supp b,\qquad |a_n|=|b_n|=1,\qquad
+ \|a\|_2^2=\|b\|_2^2=N.
+\]
+Nevertheless,
+\[
+ \left|\sum_{n=1}^Na_n\right|=N,\qquad
+ \sum_{n=1}^Nb_n=0.
+\]
+\end{example}
+
+\begin{proposition}[First nonidentifiability consequence]
+\label{prop:unsigned-nonidentifiability}
+Support, absolute coefficient data, total energy, and any completion
+cost or nonnegative Perron envelope determined solely by those
+unsigned data do not individually or jointly determine the
+distinguished zero mode.
+\end{proposition}
+
+\begin{proof}
+Every listed unsigned datum is identical for the two vectors in
+\cref{ex:unsigned-zero}, while the zero modes have maximal and zero
+magnitude, respectively.
+\end{proof}
+
+\begin{example}[Raw atom energy can disappear in one determinant bin]
+\label{ex:bin-cancellation}
+Let the raw space be \(\C^2\), let the determinant space be
+\(\C\), and let
+\[
+ \cJ(u_1,u_2)=u_1+u_2.
+\]
+For
+\[
+ u^+=(1,1),\qquad u^-=(1,-1),
+\]
+the raw unsigned data and raw energies agree:
+\[
+ |u^+|=|u^-|=(1,1),\qquad
+ \|u^+\|_2^2=\|u^-\|_2^2=2.
+\]
+After binning,
+\[
+ \|\cJ u^+\|_2^2=4,\qquad
+ \|\cJ u^-\|_2^2=0.
+\]
+\end{example}
+
+\begin{proposition}[Second nonidentifiability consequence]
+\label{prop:raw-bin-nonidentifiability}
+A positive raw atomic energy, even together with exact unsigned
+support and multiplicity, does not imply a positive determinant-bin
+energy.  Such an implication requires a lower modulus for the literal
+binning map on a verified subspace, or an equivalent range-geometry
+estimate.
+\end{proposition}
+
+\begin{proof}
+\Cref{ex:bin-cancellation} has identical positive raw energy in both
+cases, while the second vector lies in \(\Ker\cJ\).  A lower modulus
+as in \eqref{eq:lower-modulus-audit} excludes precisely this
+possibility on the verified range.
+\end{proof}
+
+\begin{remark}[Sharp scope of the examples]
+These examples do not show that the actual fixed-\(h_0\) coefficient
+has large zero mode or vanishing determinant energy.  They prove that
+the invariants used before TPC-81 are insufficient to decide those
+questions.  Attaching an example to the literal physical map would
+upgrade it from an \(\Lzero\) nonidentifiability theorem to an
+\(\Lone\) negative diagnostic.
+\end{remark}

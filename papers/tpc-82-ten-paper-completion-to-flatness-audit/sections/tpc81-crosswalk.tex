@@ -1,0 +1,237 @@
+\section{The TPC-81 completion-to-energy crosswalk}
+\label{sec:tpc81-crosswalk}
+
+We now record exactly what completion geometry can transfer to the
+determinant coefficient.  Let
+\[
+ \cA_X,\cM_X:\C^{\cK_X}\longrightarrow\C^{\cY_X},
+ \qquad
+ \cB_X=\cA_X+\cM_X,
+\]
+be the literal represented, missing, and reassembled maps, and let
+\(z_X\) be the physical coefficient.  The terms ``represented'' and
+``missing'' indicate provenance, not sign: \(\cM_X\) contains its
+literal phases.
+
+\subsection{The normalized missing Gram}
+
+Suppress \(X\) temporarily and define
+\[
+ G_{\cM}=\cM^*\cM,\qquad
+ d_j=(G_{\cM})_{jj}.
+\]
+Let the full diagonal operator on \(\C^{\cK}\) be
+\[
+ D_{\cM}=\diag(d_j:j\in\cK).
+\]
+On the exact active set \(K^+=\{j:d_j>0\}\), let
+\(G_{\cM}^+\) and \(D_{\cM}^+\) be the corresponding principal
+restrictions and put
+\[
+ R_{\cM}=(D_{\cM}^+)^{-1/2}
+ (G_{\cM}^+-D_{\cM}^+)(D_{\cM}^+)^{-1/2}.
+\]
+Let \(P_{\cM}\) be a verified real symmetric nonnegative majorant
+satisfying
+\[
+ |(R_{\cM})_{ij}|\le (P_{\cM})_{ij}
+\]
+on \(K^+\), and set
+\[
+ \widehat\kappa=1+\rho(P_{\cM}).
+\]
+If \(K^+=\varnothing\), \(P_{\cM}\) and \(R_{\cM}\) are the unique
+empty matrices and we set \(\rho(P_{\cM})=0\), so
+\(\widehat\kappa=1\).
+
+\begin{proposition}[Coefficient-specific completion survival]
+\label{prop:coefficient-survival}
+For every \(z\) with \(\cA z\ne0\), define
+\begin{equation}
+ \Xi(z)=
+ \widehat\kappa
+ \frac{\langle D_{\cM}z,z\rangle}{\|\cA z\|_2^2}.
+\label{eq:Xi-audit}
+\end{equation}
+Then
+\begin{equation}
+ \left(1-\sqrt{\Xi(z)}\right)_+^2
+ \le
+ \frac{\|\cB z\|_2^2}{\|\cA z\|_2^2}
+ \le
+ \left(1+\sqrt{\Xi(z)}\right)^2.
+\label{eq:coefficient-survival-audit}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The entrywise majorant and Perron comparison give
+\[
+ \|\cM z\|_2^2
+ \le\widehat\kappa\langle D_{\cM}z,z\rangle.
+\]
+Apply the triangle and reverse-triangle inequalities to
+\(\cB z=\cA z+\cM z\), divide by \(\|\cA z\|_2\), and square.  This is the
+coefficient-specific theorem of TPC-81 \citep{WangTPC81}.
+\end{proof}
+
+\begin{remark}[Exact but not automatically positive]
+\Cref{prop:coefficient-survival} is an exact transfer inequality.  Its
+lower bound is positive only when \(\Xi(z)<1\).  Constructibility of
+the missing part, or merely finiteness of \(\rho(P_{\cM})\), does not
+that condition.
+\end{remark}
+
+For a common raw normalization, suppose
+\(D_{\rm raw}>0\), \(\Gamma_{\rm pre}>0\),
+\(0\le\eta<1\), and \(\chi\ge0\), and assume
+\begin{align}
+ \|\cA z\|_2^2
+ &\ge(1-\eta)\Gamma_{\rm pre}D_{\rm raw},
+ \label{eq:represented-lower-audit}\\
+ \langle D_{\cM}z,z\rangle
+ &\le\chi\Gamma_{\rm pre}D_{\rm raw}.
+ \label{eq:missing-upper-audit}
+\end{align}
+Then TPC-81 gives
+\begin{align}
+ \|\cB z\|_2^2
+ &\ge
+ \left(\sqrt{1-\eta}-\sqrt{\widehat\kappa\chi}\right)_+^2
+ \Gamma_{\rm pre}D_{\rm raw},\label{eq:sharp-reasm-audit}\\
+ \|\cB z\|_2^2
+ &\ge
+ \delta_{\rm reasm}\Gamma_{\rm pre}D_{\rm raw},\label{eq:uniform-reasm-audit}\\
+ \delta_{\rm reasm}
+ &:=
+ \left[
+ 1-2\sqrt{\widehat\kappa\chi}
+ -\widehat\kappa\chi-\eta
+ \right]_+.
+\label{eq:delta-reasm-audit}
+\end{align}
+The second constant is conservative and ledger-friendly.  If its
+bracket is nonpositive, it is a stop certificate, not a positive
+survival theorem.
+
+\subsection{The determinant dictionary}
+
+Let \(\nu_X:\cY_X\to\cN_X\) be the literal determinant label and let
+\(\tau_X(y)\) be the archived aggregation multiplier.  The exact
+binning map is
+\begin{equation}
+ (\cJ_Xu)(n)=
+ \sum_{\substack{y\in\cY_X\\\nu_X(y)=n}}
+ \tau_X(y)u(y).
+\label{eq:literal-binning-audit}
+\end{equation}
+Define
+\begin{equation}
+ r_X=a_X-\cJ_X\cB_Xz_X.
+\label{eq:dictionary-residual-audit}
+\end{equation}
+For a verified subspace \(E_X\) containing
+\(\cB_Xz_X\), let
+\begin{equation}
+ s_X=
+ \inf_{\substack{u\in E_X\\u\ne0}}
+ \frac{\|\cJ_Xu\|_2}{\|u\|_2}.
+\label{eq:lower-modulus-audit}
+\end{equation}
+If \(E_X=\{0\}\), set \(s_X=1\).
+This is a lower modulus on an independently verified range, not on a
+one-dimensional span fitted after seeing \(z_X\).
+
+\begin{theorem}[Literal dictionary-energy transfer]
+\label{thm:dictionary-energy-audit}
+Assume the complete packet of \cref{def:literal-packet}, the pre-bin
+data
+\[
+ D_{{\rm raw},X}>0,\qquad
+ \Gamma_{{\rm pre},X}>0,\qquad
+ \delta_{{\rm reasm},X}\ge0,
+\]
+and the pre-bin bound
+\[
+ \|\cB_Xz_X\|_2^2
+ \ge
+ \delta_{{\rm reasm},X}\Gamma_{{\rm pre},X}
+ D_{{\rm raw},X},
+\]
+and \(\cB_Xz_X\in E_X\).  Then
+\begin{equation}
+\boxed{
+ D_X\ge
+ \left(
+ s_X\sqrt{\delta_{{\rm reasm},X}\Gamma_{{\rm pre},X}}
+ -
+ \frac{\|r_X\|_2}{\sqrt{D_{{\rm raw},X}}}
+ \right)_+^2D_{{\rm raw},X}.}
+\label{eq:dictionary-energy-audit}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:lower-modulus-audit},
+\[
+ \|\cJ_X\cB_Xz_X\|_2
+ \ge
+ s_X\sqrt{\delta_{{\rm reasm},X}\Gamma_{{\rm pre},X}
+ D_{{\rm raw},X}}.
+\]
+Since \(a_X=\cJ_X\cB_Xz_X+r_X\), the reverse-triangle inequality and
+\(D_X=\|a_X\|_2^2\) give
+\eqref{eq:dictionary-energy-audit}.  This is the exact TPC-81
+dictionary theorem \citep{WangTPC81}.
+\end{proof}
+
+\begin{corollary}[Visible energy-loss ledger]
+\label{cor:visible-energy-ledger}
+Fix nonnegative exponents
+\(\lambda_{\rm raw},\lambda_s,\lambda_\delta,\lambda_\Gamma,
+\lambda_r\).  Suppose
+\begin{align*}
+ D_{{\rm raw},X}
+ &\ge X^{-\lambda_{\rm raw}+o(1)}Q_X^3J_X^2,\\
+ s_X&\ge X^{-\lambda_s+o(1)},\\
+ \delta_{{\rm reasm},X}
+ &\ge X^{-\lambda_\delta+o(1)},\\
+ \Gamma_{{\rm pre},X}
+ &\ge X^{-\lambda_\Gamma+o(1)}
+\end{align*}
+and, for \(0<\tau_X\le1\) satisfying
+\(\tau_X\ge X^{-\lambda_r+o(1)}\),
+\[
+ \frac{\|r_X\|_2}{\sqrt{D_{{\rm raw},X}}}
+ \le
+ (1-\tau_X)s_X
+ \sqrt{\delta_{{\rm reasm},X}\Gamma_{{\rm pre},X}}.
+\]
+Then
+\begin{equation}
+ D_X\ge X^{-\lambda_D^{\rm cert}+o(1)}Q_X^3J_X^2,
+\qquad
+ \lambda_D^{\rm cert}=
+ \lambda_{\rm raw}+2\lambda_s+\lambda_\delta
+ +\lambda_\Gamma+2\lambda_r.
+\label{eq:lambdaD-audit}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The positive part in \eqref{eq:dictionary-energy-audit} is at least
+\(\tau_Xs_X
+\sqrt{\delta_{{\rm reasm},X}\Gamma_{{\rm pre},X}}\).
+Square and collect all losses.
+\end{proof}
+
+\begin{remark}[Status]
+\label{rem:tpc81-conditional-status}
+\Cref{prop:coefficient-survival,thm:dictionary-energy-audit,cor:visible-energy-ledger}
+are exact \(\Lone\)-typed conditional interfaces.  They do not prove
+that the
+bracket in \eqref{eq:dictionary-energy-audit} is positive for the
+actual carrier, that the certified exponent in
+\eqref{eq:lambdaD-audit} vanishes, or that the zero mode cancels.
+Those are the remaining arithmetic inputs.
+\end{remark}
