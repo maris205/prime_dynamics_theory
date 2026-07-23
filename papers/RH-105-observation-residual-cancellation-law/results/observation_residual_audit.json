@@ -1,0 +1,295 @@
+{
+  "audit_summary": {
+    "all_weighted_residuals_below_1e_minus_8": true,
+    "anchor_count": 5,
+    "channel_count": 10,
+    "maximum_clock_rank": 7,
+    "maximum_clock_residual": 1.2310186113638535e-09,
+    "maximum_observation_factor": 21.25542965079985,
+    "maximum_recomposition_discrepancy": 4.920741319792731e-16,
+    "maximum_residual_over_sqrt_sigma": 3.077546528409634e-09,
+    "maximum_sqrt_sigma_observation_factor": 2.1255429650799855,
+    "maximum_weighted_residual": 5.043024366425363e-09,
+    "sharp_barrier_weighted_growth_power": 0.25
+  },
+  "limitations": [
+    "The five-anchor recomposition validates archived finite matrices only.",
+    "A tiny finite weighted product does not prove an all-level residual decay exponent.",
+    "The scalar sharpness family is abstract and does not assert failure of the folded-Gaussian family.",
+    "No Stage A, Hilbert--Polya, zero-identification, or Riemann Hypothesis result is claimed."
+  ],
+  "route_consequence": "Observation growth and packet residual decay must be composed as a signed product before powers are truncated. The exact growth power is max(0,o-rho), so residual decay rho at least as large as observation growth o gives a zero-power future error. At the five anchors the square-root-normalized observation factor is at most 2.126, the normalized residual is at most 3.078e-9, and every weighted residual is below 5.044e-9. The all-level observation and residual hypotheses remain separate open laws.",
+  "rows": [
+    {
+      "channels": [
+        {
+          "archived_full_future_perturbation_upper": 5.0430243664253605e-09,
+          "clock_rank": 4,
+          "clock_residual_frobenius_upper": 1.2310186113638535e-09,
+          "full_observability_norm_upper": 16.782354678052997,
+          "horizon": 4,
+          "observation_factor_upper": 4.096627232010865,
+          "relative_recomposition_discrepancy": 4.920741319792731e-16,
+          "residual_over_sqrt_sigma": 3.077546528409634e-09,
+          "side": "left",
+          "sigma": 0.16,
+          "sqrt_sigma_observation_factor": 1.6386508928043464,
+          "weighted_residual_below_1e_minus_8": true,
+          "weighted_residual_upper": 5.043024366425363e-09
+        },
+        {
+          "archived_full_future_perturbation_upper": 4.391965437083255e-09,
+          "clock_rank": 4,
+          "clock_residual_frobenius_upper": 1.1355194315654447e-09,
+          "full_observability_norm_upper": 14.959899863665502,
+          "horizon": 4,
+          "observation_factor_upper": 3.8678029763246093,
+          "relative_recomposition_discrepancy": 3.766790173569153e-16,
+          "residual_over_sqrt_sigma": 2.838798578913612e-09,
+          "side": "right",
+          "sigma": 0.16,
+          "sqrt_sigma_observation_factor": 1.547121190529844,
+          "weighted_residual_below_1e_minus_8": true,
+          "weighted_residual_upper": 4.3919654370832566e-09
+        }
+      ],
+      "level": 0,
+      "sigma": 0.16
+    },
+    {
+      "channels": [
+        {
+          "archived_full_future_perturbation_upper": 2.110162375089514e-12,
+          "clock_rank": 5,
+          "clock_residual_frobenius_upper": 3.4728066899892754e-13,
+          "full_observability_norm_upper": 36.920751427468986,
+          "horizon": 9,
+          "observation_factor_upper": 6.076244845911741,
+          "relative_recomposition_discrepancy": 3.8281109382023224e-16,
+          "residual_over_sqrt_sigma": 1.2278225801207127e-12,
+          "side": "left",
+          "sigma": 0.08,
+          "sqrt_sigma_observation_factor": 1.7186215738776003,
+          "weighted_residual_below_1e_minus_8": true,
+          "weighted_residual_upper": 2.110162375089515e-12
+        },
+        {
+          "archived_full_future_perturbation_upper": 2.2096159060688993e-13,
+          "clock_rank": 5,
+          "clock_residual_frobenius_upper": 3.724775551847541e-14,
+          "full_observability_norm_upper": 35.191141871730224,
+          "horizon": 9,
+          "observation_factor_upper": 5.932212224097367,
+          "relative_recomposition_discrepancy": 3.427321766340314e-16,
+          "residual_over_sqrt_sigma": 1.3169070255546307e-13,
+          "side": "right",
+          "sigma": 0.08,
+          "sqrt_sigma_observation_factor": 1.677882996438792,
+          "weighted_residual_below_1e_minus_8": true,
+          "weighted_residual_upper": 2.2096159060689e-13
+        }
+      ],
+      "level": 1,
+      "sigma": 0.08
+    },
+    {
+      "channels": [
+        {
+          "archived_full_future_perturbation_upper": 3.602433430862805e-13,
+          "clock_rank": 6,
+          "clock_residual_frobenius_upper": 3.873974413860952e-14,
+          "full_observability_norm_upper": 86.47258311366556,
+          "horizon": 16,
+          "observation_factor_upper": 9.299063561115474,
+          "relative_recomposition_discrepancy": 4.2044161733797353e-16,
+          "residual_over_sqrt_sigma": 1.9369872069304763e-13,
+          "side": "left",
+          "sigma": 0.04,
+          "sqrt_sigma_observation_factor": 1.8598127122230952,
+          "weighted_residual_below_1e_minus_8": true,
+          "weighted_residual_upper": 3.6024334308628066e-13
+        },
+        {
+          "archived_full_future_perturbation_upper": 7.255464714331206e-13,
+          "clock_rank": 6,
+          "clock_residual_frobenius_upper": 7.892814631185968e-14,
+          "full_observability_norm_upper": 84.5019366297483,
+          "horizon": 16,
+          "observation_factor_upper": 9.192493493592929,
+          "relative_recomposition_discrepancy": 4.1750955938980306e-16,
+          "residual_over_sqrt_sigma": 3.9464073155929844e-13,
+          "side": "right",
+          "sigma": 0.04,
+          "sqrt_sigma_observation_factor": 1.838498698718586,
+          "weighted_residual_below_1e_minus_8": true,
+          "weighted_residual_upper": 7.255464714331209e-13
+        }
+      ],
+      "level": 2,
+      "sigma": 0.04
+    },
+    {
+      "channels": [
+        {
+          "archived_full_future_perturbation_upper": 4.023472031948764e-12,
+          "clock_rank": 6,
+          "clock_residual_frobenius_upper": 2.853732354309014e-13,
+          "full_observability_norm_upper": 198.78128576136376,
+          "horizon": 25,
+          "observation_factor_upper": 14.098981727818638,
+          "relative_recomposition_discrepancy": 4.015405403750562e-16,
+          "residual_over_sqrt_sigma": 2.0178934994233553e-12,
+          "side": "left",
+          "sigma": 0.02,
+          "sqrt_sigma_observation_factor": 1.9938971175131572,
+          "weighted_residual_below_1e_minus_8": true,
+          "weighted_residual_upper": 4.023472031948766e-12
+        },
+        {
+          "archived_full_future_perturbation_upper": 6.261927526235562e-12,
+          "clock_rank": 6,
+          "clock_residual_frobenius_upper": 4.4705437519870914e-13,
+          "full_observability_norm_upper": 196.1983608411636,
+          "horizon": 25,
+          "observation_factor_upper": 14.007082524250496,
+          "relative_recomposition_discrepancy": 2.5800157014334896e-16,
+          "residual_over_sqrt_sigma": 3.161151802621224e-12,
+          "side": "right",
+          "sigma": 0.02,
+          "sqrt_sigma_observation_factor": 1.980900607507422,
+          "weighted_residual_below_1e_minus_8": true,
+          "weighted_residual_upper": 6.261927526235564e-12
+        }
+      ],
+      "level": 3,
+      "sigma": 0.02
+    },
+    {
+      "channels": [
+        {
+          "archived_full_future_perturbation_upper": 8.518508370353109e-13,
+          "clock_rank": 7,
+          "clock_residual_frobenius_upper": 4.00768580560429e-14,
+          "full_observability_norm_upper": 451.7932896401013,
+          "horizon": 32,
+          "observation_factor_upper": 21.25542965079985,
+          "relative_recomposition_discrepancy": 3.556052003882832e-16,
+          "residual_over_sqrt_sigma": 4.007685805604291e-13,
+          "side": "left",
+          "sigma": 0.01,
+          "sqrt_sigma_observation_factor": 2.1255429650799855,
+          "weighted_residual_below_1e_minus_8": true,
+          "weighted_residual_upper": 8.518508370353112e-13
+        },
+        {
+          "archived_full_future_perturbation_upper": 1.7515485007545288e-12,
+          "clock_rank": 7,
+          "clock_residual_frobenius_upper": 8.275231489879154e-14,
+          "full_observability_norm_upper": 448.00620802808135,
+          "horizon": 32,
+          "observation_factor_upper": 21.166157138887577,
+          "relative_recomposition_discrepancy": 4.611882380638254e-16,
+          "residual_over_sqrt_sigma": 8.275231489879154e-13,
+          "side": "right",
+          "sigma": 0.01,
+          "sqrt_sigma_observation_factor": 2.1166157138887582,
+          "weighted_residual_below_1e_minus_8": true,
+          "weighted_residual_upper": 1.7515485007545296e-12
+        }
+      ],
+      "level": 4,
+      "sigma": 0.01
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "matched_square_root",
+      "nonnegative_growth_power": 0.0,
+      "observation_growth_power": 0.5,
+      "residual_decay_power": 0.5,
+      "signed_product_power": 0.0,
+      "zero_power": true
+    },
+    {
+      "name": "strict_overcancellation",
+      "nonnegative_growth_power": 0.0,
+      "observation_growth_power": 0.5,
+      "residual_decay_power": 0.75,
+      "signed_product_power": -0.25,
+      "zero_power": true
+    },
+    {
+      "name": "undercancellation",
+      "nonnegative_growth_power": 0.25,
+      "observation_growth_power": 0.5,
+      "residual_decay_power": 0.25,
+      "signed_product_power": 0.25,
+      "zero_power": false
+    },
+    {
+      "name": "bounded_observation",
+      "nonnegative_growth_power": 0.0,
+      "observation_growth_power": 0.0,
+      "residual_decay_power": 0.0,
+      "signed_product_power": 0.0,
+      "zero_power": true
+    }
+  ],
+  "sharpness_barrier": {
+    "family": "T_sigma(z)=sigma^-o |z|, B_sigma=sigma^rho, B_r=0",
+    "observation_growth_power": 0.5,
+    "residual_decay_power": 0.25,
+    "rows": [
+      {
+        "observation_factor": 3.162277660168379,
+        "residual": 0.5623413251903491,
+        "sigma": 0.1,
+        "weighted_residual": 1.7782794100389225
+      },
+      {
+        "observation_factor": 10.0,
+        "residual": 0.31622776601683794,
+        "sigma": 0.01,
+        "weighted_residual": 3.1622776601683795
+      },
+      {
+        "observation_factor": 31.622776601683793,
+        "residual": 0.1778279410038923,
+        "sigma": 0.001,
+        "weighted_residual": 5.623413251903491
+      },
+      {
+        "observation_factor": 100.0,
+        "residual": 0.1,
+        "sigma": 0.0001,
+        "weighted_residual": 10.0
+      },
+      {
+        "observation_factor": 316.2277660168379,
+        "residual": 0.05623413251903491,
+        "sigma": 1e-05,
+        "weighted_residual": 17.78279410038923
+      },
+      {
+        "observation_factor": 1000.0,
+        "residual": 0.03162277660168379,
+        "sigma": 1e-06,
+        "weighted_residual": 31.622776601683793
+      }
+    ],
+    "weighted_growth_power": 0.25
+  },
+  "status": "rh105_observation_residual_cancellation_audit",
+  "theorem_boundary": {
+    "five_anchor_clock_cancellation_validated": true,
+    "hilbert_polya_operator": false,
+    "matched_scale_factorization_theorem": true,
+    "riemann_hypothesis": false,
+    "sharp_rate_matching_boundary": true,
+    "signed_observation_residual_cancellation_theorem": true,
+    "uniform_clock_residual_decay_law_proved": false,
+    "uniform_observation_growth_law_proved": false,
+    "uniform_observation_residual_law_closed": false,
+    "uniform_stage_A_closed": false
+  }
+}

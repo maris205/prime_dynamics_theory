@@ -1,0 +1,41 @@
+{
+  "external_inputs": {
+    "rh103_summary": {
+      "path": "papers/RH-103-prefix-observability-power-ledger/results/summary.json",
+      "sha256": "75d61505381d72e8c06b4c084db6fce2ed0f97545781e66c7d385ef85d2d5865"
+    },
+    "rh77_audit": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/results/effective_rank_audit.json",
+      "sha256": "08a123fb310bfd70572e5bd2b13ccf2fe397fd944f409c626d2e079b49be6c1a"
+    },
+    "rh82_audit": {
+      "path": "papers/RH-82-half-log-postblock-rank-clock/results/half_log_rank_audit.json",
+      "sha256": "b11949b5a77d7a6f3ec300bd87b1ed49bab3d569b1437be106306979556c2a27"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "72414a3b16931d2ee7aeea16b68aa3d5a4f8031f9c90c26d87892c55c7b187d6",
+    "experiments/build_cancellation_audit.py": "293bd0e424632596b912fe88cbb27b5c8ea56dbad8f04b8ed3a4745886f1559a",
+    "experiments/make_figures.py": "cd4da9220daac0c7bd0038f3307e892919b835819724e5831de9b9e9bc3d88e1",
+    "experiments/verify_archive.py": "117251b61931739ee069be5a1aa0cf77e4cac96acf103407e300c5c9fb1e9eaf",
+    "src/observation_cancellation/__init__.py": "0b8abdfc4590212d34542b400a63286bad585b59bc6b4e2fa98be8c0412e4886",
+    "src/observation_cancellation/bounds.py": "10307ac29b0151af2f2aa987c7c6bd4f631724181b65e65398220756d41834f2",
+    "tests/test_archived_results.py": "5bf065ed9ace539b0ccedd3ddaa6cc5d3be4a02394c6ab092b9e4b076e6c02c0",
+    "tests/test_theory.py": "e9983ab2c7c0f1b05860467b73306172715a0f261c25968a7adaeec99e757def"
+  },
+  "publication_artifacts": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "56794571e37f8bc4ceea76c8ea2d329ac6218f23d61546a76a28bad7c41ed41a",
+    "THEOREM_LEDGER.md": "b5e26ce2d8db1a5bf9545ac7849f3bea9b131aebdd070b4c01288fb40fbd7716",
+    "UPDATED_ROADMAP.md": "6f607f1b34b66f8b88c8efe28c53174d57f228b35e447740d77b13004b98f8c9",
+    "figures/observation_residual_cancellation.pdf": "c29f98c8d2b367e9086843ad4081066463253776f7bf2a4b497d94dda0145296",
+    "figures/observation_residual_cancellation.png": "b32e4bd4fb76a88bff8fdff16c82e6ed0b6727a987d401590f9278135fbc2a97",
+    "main.pdf": "bd21f6988e2a09109b24dead714944464d5b644f2c4238b72429a07f22ab5fe2",
+    "main.tex": "a797fbde1de60f5f8a1b86508ba32d6828b2d2869905fe5b81c507e043b79396",
+    "observation-residual-cancellation-law.pdf": "bd21f6988e2a09109b24dead714944464d5b644f2c4238b72429a07f22ab5fe2",
+    "pyproject.toml": "5b2e6a99864b777a83cdd685804e81ef1a0a59896e648742bdc68d62009dc764",
+    "references.bib": "4f28f2c73a1c1e9580e5f40c794bbf332a2d5189a1be03a132553dc437a80352",
+    "requirements.txt": "cd2dfd8413774638b179167ae213560b0be6138f81080840f5e95c501ca3bf16"
+  },
+  "status": "all_rh105_inputs_sources_and_publication_artifacts_hashed"
+}

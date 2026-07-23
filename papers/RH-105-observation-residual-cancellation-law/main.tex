@@ -1,0 +1,402 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\F}{\mathrm F}
+
+\title{Observation--Residual Cancellation in Postblock Hardy Transfer\\
+\large A Signed-Power Theorem and a Sharp Rate-Matching Boundary}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The postblock effective-rank route contains a product that should not be
+estimated by separately truncating both factors.  If $B$ is a postblock state,
+$B_r$ a rank-$r$ approximation, $q=\norm{A^M}_2<1$, and
+\[
+ O_M=\sum_{j=0}^{M-1}(A^j)^*Y^*YA^j,
+ \qquad
+ \Omega=\sqrt{\frac{\norm{O_M}_2}{1-q^2}},
+\]
+then the full-future perturbation is bounded by
+\[
+ |T(B)-T(B_r)|\le \Omega\,\tau_r(B).
+\]
+We prove the associated signed-power law.  If
+$\Omega=O(\sigma^{-o}\operatorname{polylog})$ and
+$\tau_r(B)=O(\sigma^{\rho}\operatorname{polylog})$, the product has growth
+power $\max(0,o-\rho)$.  Thus residual decay of order at least the
+observability growth is exactly the zero-power threshold.  A matched-scale
+factorization gives the equivalent criterion
+\[
+ \Omega\tau_r(B)=
+ (\sigma^\theta\Omega)(\sigma^{-\theta}\tau_r(B)),
+\]
+with the natural mesh split $\theta=1/2$ when observation growth is of
+square-root order.  We also prove sharpness by a scalar seminorm family.
+
+The five archived RH-77/RH-82 channels satisfy the algebraic cancellation
+with a large margin.  The square-root-normalized observation factor is at
+most $2.12555$, the normalized residual is at most $3.07755\times10^{-9}$,
+and every recomposed future perturbation is below $5.044\times10^{-9}$.
+The recomposition agrees with the archived interval result to relative error
+below $5\times10^{-16}$.  This is a positive theorem about composition and a
+strong finite audit, not an all-level residual-decay proof.  The uniform
+observation law and uniform clock-residual law remain separate gates.  No
+Stage A, Hilbert--Polya, zero identification, or Riemann Hypothesis result is
+claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} observation--residual cancellation; effective
+rank; Hardy seminorm; signed sigma power; postblock compression.
+
+\medskip
+\noindent\textbf{MSC 2020:} 47A10; 47B35; 65F30; 93B28; 65G20.
+
+\section{Introduction}
+
+RH-77 established the basic mechanism by which a low-rank postblock state can
+be transferred through the complete future: the full observability Gramian
+turns a Frobenius state residual into a Hardy-energy residual
+\citep{WangEffectiveRank2026}.  RH-82 supplied a half-logarithmic rank clock
+and found extremely small residuals at the five production anchors
+\citep{WangClock2026}.  RH-103 subsequently exposed a bookkeeping hazard:
+the observability factor may grow with the mesh while the state residual
+decays, so their powers must be composed with signs intact
+\citep{WangPowerLedger2026}.
+
+The distinction is not cosmetic.  If one first replaces every factor by a
+nonnegative growth power, a decaying residual is recorded as power zero and
+its cancellation with observation growth disappears.  Conversely, a small
+finite residual can look persuasive while failing to supply the decay rate
+needed at all levels.  The purpose of this paper is to isolate exactly what
+is proved, what is sharp, and what remains open.
+
+The contributions are:
+\begin{enumerate}[leftmargin=2.2em]
+ \item an observation--residual cancellation theorem in signed sigma powers;
+ \item a matched-scale criterion and a finite propagator fallback bound;
+ \item a scalar sharpness example showing that the rate threshold cannot be
+       weakened to mere residual convergence;
+ \item an independent recomposition of the five RH-77/RH-82 channels.
+\end{enumerate}
+
+The result closes an algebraic ambiguity in the route.  It does not close the
+physical all-level hypotheses that feed the algebra.
+
+\section{Full-future observability and rank residuals}
+\label{sec:setup}
+
+Let $A\in\mathbb C^{d\times d}$, $Y\in\mathbb C^{p\times d}$, and let
+$B,B_r\in\mathbb C^{d\times m}$.  For a stable $A$, define the future Hardy
+seminorm
+\begin{equation}
+ T(Z)^2=\sum_{\ell\ge0}\norm{YA^\ell Z}_{\F}^2.
+ \label{eq:T}
+\end{equation}
+At a block horizon $M$, set
+\begin{equation}
+ O_M=\sum_{j=0}^{M-1}(A^j)^*Y^*YA^j,
+ \qquad q=\norm{A^M}_2.
+ \label{eq:OM}
+\end{equation}
+Regrouping time indices in blocks gives the positive Gramian identity
+\begin{equation}
+ O=\sum_{b\ge0}(A^{*M})^bO_M(A^M)^b,
+ \qquad
+ \norm O_2\le\frac{\norm{O_M}_2}{1-q^2},
+ \label{eq:O}
+\end{equation}
+whenever $q<1$.  Define the certified future observability factor
+\begin{equation}
+ \Omega_M=\sqrt{\frac{\norm{O_M}_2}{1-q^2}}.
+ \label{eq:Omega}
+\end{equation}
+
+\begin{proposition}[Full-future residual transfer]
+ \label{prop:transfer}
+ If $q<1$, then for every $B,B_r$,
+ \begin{equation}
+ \left|T(B)-T(B_r)\right|
+ \le \Omega_M\norm{B-B_r}_{\F}.
+ \label{eq:transfer}
+ \end{equation}
+ In particular, if $\tau_r(B)$ is the optimal rank-$r$ Frobenius residual,
+ \begin{equation}
+ \tau_r(B)=\left(\sum_{j>r}s_j(B)^2\right)^{1/2},
+ \label{eq:tau}
+ \end{equation}
+ then a truncated SVD satisfies
+ \begin{equation}
+ \left|T(B)-T(B_r)\right|\le\Omega_M\tau_r(B).
+ \label{eq:rank-transfer}
+ \end{equation}
+\end{proposition}
+
+\begin{proof}
+ Equation \eqref{eq:O} implies
+ $T(Z)=\norm{O^{1/2}Z}_{\F}$ and
+ $\norm O_2^{1/2}\le\Omega_M$.  The reverse triangle inequality for this
+ seminorm gives \eqref{eq:transfer}.  The Eckart--Young theorem supplies
+ \eqref{eq:tau} and the rank-$r$ approximation.
+\end{proof}
+
+This proposition is valid for nonnormal, non-diagonalizable matrices.  The
+remaining question is how the two factors in \eqref{eq:rank-transfer} scale
+together.
+
+\section{Signed powers and exact cancellation}
+\label{sec:powers}
+
+\begin{definition}[Signed sigma power]
+ For a nonnegative family $f_\sigma$, a signed power $a$ means
+ \[
+ f_\sigma=O\!\left(\sigma^{-a}\operatorname{polylog}(1/\sigma)\right).
+ \]
+ Thus $a>0$ records growth and $a<0$ records decay.  A final norm growth
+ exponent is truncated below at zero only after all products have been
+ formed.
+\end{definition}
+
+\begin{theorem}[Observation--residual cancellation law]
+ \label{thm:cancellation}
+ Suppose, along a small-noise family,
+ \begin{align}
+ \Omega_\sigma&=O\!\left(\sigma^{-o}L_\Omega(\sigma)\right),
+ \label{eq:omega-power}\\
+ \tau_r(B_\sigma)&=O\!\left(\sigma^{\rho}L_\tau(\sigma)\right),
+ \label{eq:tau-power}
+ \end{align}
+ where $o,\rho\in\mathbb R$ and the $L$ factors are polylogarithmic.  Then
+ \begin{equation}
+ \left|T(B_\sigma)-T(B_{\sigma,r})\right|
+ =O\!\left(\sigma^{\rho-o}
+ L_\Omega(\sigma)L_\tau(\sigma)\right),
+ \label{eq:product-power}
+ \end{equation}
+ and its nonnegative growth power is
+ \begin{equation}
+ \boxed{\beta=\max\{0,o-\rho\}.}
+ \label{eq:beta}
+ \end{equation}
+ In particular, $\rho\ge o$ is sufficient for zero power, and $\rho>o$
+ gives a decaying weighted residual up to logarithms.
+\end{theorem}
+
+\begin{proof}
+ Multiply the two estimates in \cref{prop:transfer}.  Powers multiply by
+ addition in the signed convention: $\sigma^{-o}\sigma^\rho
+ =\sigma^{\rho-o}$.  If $\rho-o\ge0$, the product is bounded by a
+ polylogarithm; otherwise it grows as $\sigma^{-(o-\rho)}$.
+\end{proof}
+
+\begin{corollary}[Matched-scale factorization]
+ \label{cor:matched}
+ For any fixed $\theta\in\mathbb R$,
+ \begin{equation}
+ \Omega_\sigma\tau_r(B_\sigma)
+ =\bigl(\sigma^\theta\Omega_\sigma\bigr)
+  \bigl(\sigma^{-\theta}\tau_r(B_\sigma)\bigr).
+ \label{eq:matched}
+ \end{equation}
+ If both factors on the right are polylogarithmic, the weighted residual has
+ zero sigma power.  The natural square-root split is $\theta=1/2$ when
+ $\Omega_\sigma$ has the mesh scale $\sigma^{-1/2}$.
+\end{corollary}
+
+\begin{proof}
+ This is the exact identity obtained by inserting cancelling powers of
+ $\sigma$ into the product.  The polylogarithmic conclusion follows from
+ \cref{thm:cancellation}.
+\end{proof}
+
+\begin{proposition}[Finite-propagator fallback]
+ \label{prop:fallback}
+ Define
+ \[
+ K_M(A)^2=\sum_{j=0}^{M-1}\norm{A^j}_2^2.
+ \]
+ Then
+ \begin{equation}
+ \Omega_M
+ \le \frac{\norm{Y}_2 K_M(A)}{\sqrt{1-q^2}}.
+ \label{eq:fallback}
+ \end{equation}
+ Consequently, if $K_M$ is polylogarithmic, $q$ is uniformly below one,
+ $\norm{Y}_2=O(\sigma^{-1/2}\operatorname{polylog})$, and
+ $\tau_r(B)=O(\sigma^{1/2}\operatorname{polylog})$, then the weighted residual
+ is polylogarithmic.
+\end{proposition}
+
+\begin{proof}
+ By submultiplicativity,
+ \[
+ \norm{O_M}_2
+ \le\sum_{j<M}\norm{A^j}_2^2\norm{Y}_2^2
+ =K_M(A)^2\norm{Y}_2^2.
+ \]
+ Insert this into \eqref{eq:Omega}; the final claim is
+ \cref{cor:matched} with $\theta=1/2$.
+\end{proof}
+
+If the finite propagator is nonexpansive, $K_M\le\sqrt M$.  Thus a
+log-square horizon contributes only a polylogarithm.  The proposition is a
+fallback criterion, not an assertion that the production matrices are
+one-step contractions.
+
+\section{Sharpness of the rate threshold}
+\label{sec:sharp}
+
+The inequality in \cref{thm:cancellation} is rate-sharp, even in one
+dimension.
+
+\begin{proposition}[Scalar under-cancellation barrier]
+ \label{prop:sharp}
+ Let $o,\rho\ge0$ and consider the scalar seminorm
+ \[
+ T_\sigma(z)=\sigma^{-o}|z|,
+ \qquad B_\sigma=\sigma^\rho,
+ \qquad B_{\sigma,r}=0.
+ \]
+ Then $\tau_r(B_\sigma)=\sigma^\rho$ and
+ \begin{equation}
+ \left|T_\sigma(B_\sigma)-T_\sigma(B_{\sigma,r})\right|
+ =\sigma^{\rho-o}.
+ \label{eq:sharp}
+ \end{equation}
+ If $\rho<o$, the weighted residual has exactly growth power $o-\rho$.
+ Hence no theorem based only on $\tau_r(B_\sigma)\to0$ can guarantee zero
+ power.
+\end{proposition}
+
+\begin{proof}
+ All assertions follow by direct substitution.  The scalar example saturates
+ the product estimate, so the exponent in \cref{thm:cancellation} cannot be
+ improved without additional structure.
+\end{proof}
+
+\begin{remark}
+ The barrier is a logical rate boundary, not a counterexample to the
+ folded-Gaussian production family.  It says that an all-level proof must
+ establish a quantitative residual rate matched to the observation scale.
+\end{remark}
+
+\section{Five-anchor recomposition}
+\label{sec:audit}
+
+The audit independently reads RH-77's outward-rounded full observability
+norms and RH-82's outward-rounded clock residuals.  It takes the square root
+of the former, multiplies by the latter, and compares the result with the
+archived full-future perturbation.  No archived product is used as an input to
+the recomposition.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Largest left/right values at each dyadic anchor.}
+\label{tab:audit}
+\begin{tabular}{@{}rrrrrrr@{}}
+\toprule
+$\sigma$ & rank & $\max\Omega$ & $\max\tau_r$ &
+$\max\sqrt\sigma\Omega$ & $\max\tau_r/\sqrt\sigma$ & $\max\Omega\tau_r$\\
+\midrule
+0.16 & 4 & 4.097 & $1.231\,10^{-9}$ & 1.639 & $3.078\,10^{-9}$ & $5.043\,10^{-9}$\\
+0.08 & 5 & 6.076 & $3.473\,10^{-13}$ & 1.719 & $1.228\,10^{-12}$ & $2.110\,10^{-12}$\\
+0.04 & 6 & 9.299 & $7.893\,10^{-14}$ & 1.860 & $3.946\,10^{-13}$ & $7.255\,10^{-13}$\\
+0.02 & 6 & 14.099 & $4.471\,10^{-13}$ & 1.994 & $3.161\,10^{-12}$ & $6.262\,10^{-12}$\\
+0.01 & 7 & 21.255 & $8.275\,10^{-14}$ & 2.126 & $8.276\,10^{-13}$ & $1.752\,10^{-12}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The raw observation factor grows by a factor of about five from the first to
+the last anchor.  The square-root-normalized factor remains below $2.126$,
+while the normalized residual is below $3.078\times10^{-9}$.  The largest
+recomposed product is $5.0430244\times10^{-9}$, and the largest relative
+discrepancy from the archived product is $4.93\times10^{-16}$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/observation_residual_cancellation.pdf}
+\caption{The matched square-root factors and their product at the five
+anchors.  The observation factor grows, but the residual factor is much
+smaller; the signed product remains below the displayed audit gate.}
+\label{fig:audit}
+\end{figure}
+
+The numerical result is stronger than the minimal rate-matching threshold at
+these anchors.  It does not, however, prove that the residual retains a
+comparable exponent for every dyadic level.  The clock construction itself is
+logarithmic; the missing physical theorem is the uniform supply of the tiny
+residual after the clock rank.
+
+\section{Route consequence}
+\label{sec:route}
+
+RH-105 settles the algebraic question in the absolute-scale ledger:
+observation growth and residual decay must be carried as a signed pair until
+their product is formed.  In the notation of RH-103, the signed residual
+power is $r_s=-\rho_s$, so the term previously written as $o_s+r_s$ is
+$o_s-\rho_s$.  It has the exact threshold
+\[
+ \text{zero weighted power}\quad\Longleftrightarrow\quad
+ \rho_s\ge o_s
+ \quad\Longleftrightarrow\quad r_s\le-o_s.
+\]
+The finite propagator fallback shows one way to obtain the square-root split,
+but only under an additional bound on the preblock powers of $A$.
+
+The remaining dependency graph is therefore:
+\begin{itemize}[leftmargin=2.2em]
+ \item RH-105 proves the signed cancellation theorem and its sharp rate
+       boundary;
+ \item RH-77/RH-82 supply strong finite evidence for the matched factors;
+ \item the all-level observation growth law is still open;
+ \item the all-level clock-residual decay law is still open;
+ \item their combination can be used only after both physical laws are
+       proved uniformly.
+\end{itemize}
+
+This is a positive route refinement, not a Stage-A closure.  No claim here
+constructs a Hilbert--Polya operator, proves a $T\log T$ law or prime-power
+trace formula, identifies zeta zeros, or proves the Riemann Hypothesis.
+
+\section{Reproducibility}
+
+The directory contains the cancellation helpers, a full and smoke audit, the
+figure, tests, and a hash-checked publication archive.  Run:
+\begin{verbatim}
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \\
+  experiments/build_cancellation_audit.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \\
+  experiments/build_cancellation_audit.py --smoke
+MPLBACKEND=Agg PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \\
+  experiments/make_figures.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/pytest -q -p no:cacheprovider
+\end{verbatim}
+The archive scripts record the exact RH-77/RH-82 inputs and verify all
+publication hashes.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
