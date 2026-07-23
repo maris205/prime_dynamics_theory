@@ -1,0 +1,330 @@
+\section{TPC--70--TPC--71: the primitive-plane frontier}
+\label{sec:primitive-frontier}
+
+\subsection{TPC--70: exact cofactor coordinates}
+
+Fix distinct physical rows \(m,n\), one nonzero shift \(h_0\) satisfying
+\((mn,h_0)=1\), and one full same-residual anchor \(\mathfrak a\).  Put
+\begin{equation}
+ H=h_0(n-m).
+ \label{eq:tpc72-H}
+\end{equation}
+At a same-residual anchor, TPC--70 writes
+\begin{equation}
+ d_m=ga,\qquad d_n=gb,\qquad(a,b)=1.
+ \label{eq:tpc72-anchor-primitive}
+\end{equation}
+Equality of residuals forces the complementary cofactors to have the form
+\begin{equation}
+ R_m=bt,\qquad R_n=at,\qquad t\mid |H|.
+ \label{eq:tpc72-anchor-cofactors}
+\end{equation}
+For fixed data, the anchor times lie on an affine ray
+\begin{equation}
+ j_R=j_{R,0}+abt\,z.
+ \label{eq:tpc72-anchor-ray}
+\end{equation}
+
+At an erasure edge, write
+\begin{equation}
+ S_m=qu,\qquad S_n=qv,\qquad(u,v)=1.
+ \label{eq:tpc72-erasure-primitive}
+\end{equation}
+The determinant relation forces \(q\mid |H|\), and admissible erasure times
+lie on
+\begin{equation}
+ j_E=j_{E,0}+quv\,z.
+ \label{eq:tpc72-erasure-ray}
+\end{equation}
+The erased residuals are unequal exactly when
+\begin{equation}
+ (u,v)\ne(b,a).
+ \label{eq:tpc72-excluded-anchor}
+\end{equation}
+
+On the squarefree physical carrier, the four-corner target sign collapses
+to
+\begin{equation}
+ \mu(d_mS_m)\mu(d_nS_n)
+ =
+ \mu(a)\mu(b)\mu(u)\mu(v).
+ \label{eq:tpc72-primitive-sign}
+\end{equation}
+The common contents \(g\) and \(q\) disappear.  More importantly,
+\eqref{eq:tpc72-primitive-sign} is constant in the affine parameter \(z\).
+The prime ray contributes masks, endpoints, native constraints, and complex
+amplitudes, but no new M\"obius oscillation.
+
+Let \(\cK_{\mathfrak a,q}(u,v)\) be the complete ray sum for the fixed full
+anchor \(\mathfrak a\), with every physical
+coefficient and native label retained and with absent rays assigned zero.
+Aggregate the divisor slices before taking absolute values and impose the
+literal unequal-residual condition by setting
+\begin{equation}
+ \cK_{\mathfrak a}^{\circ}(u,v)
+ :=
+ \one_{(u,v)\ne(b,a)}
+ \sum_{q\mid |H|}\cK_{\mathfrak a,q}(u,v).
+ \label{eq:tpc72-aggregate-erasure-kernel}
+\end{equation}
+The literal contribution of that anchor is exactly
+\begin{equation}
+ \mathfrak X_{\mathfrak a}
+ =
+ \mu(a)\mu(b)
+ \sum_{\substack{u,v\ge1\\(u,v)=1}}
+ \mu(u)\mu(v)\cK_{\mathfrak a}^{\circ}(u,v).
+ \label{eq:tpc72-physical-plane}
+\end{equation}
+The complete \(\tr(ER)\) is obtained only after summing these anchored
+contributions over the actual rows and full same-residual anchors.
+The divisor sum should be aggregated before absolute values whenever the
+literal phases allow it.
+
+\subsection{The physical type check}
+
+Write
+\[
+ \alpha_{\iota,m}
+ =
+ \frac{\beta_{\iota,m}}{\sqrt{W_m}}
+\]
+for the complete signed and phased coefficient of native key \(\iota\) in
+row \(m\), including atomic normalization.  An off-diagonal erasure entry
+is the two-corner object
+\begin{equation}
+ E_{mn}
+ =
+ \sum_{\iota_E}
+ \overline{\alpha_{\iota_E,m}}\alpha_{\iota_E,n},
+ \label{eq:tpc72-two-corner-entry}
+\end{equation}
+with the unequal-residual restriction understood.  By contrast, fixing a
+same-residual anchor \(\mathfrak a=\iota_R\) gives the four-corner scalar
+\begin{equation}
+ \mathfrak X_{\mathfrak a}
+ =
+ \sum_{\iota_E}
+ \overline{\alpha_{\iota_E,m}}\alpha_{\iota_E,n}
+ \overline{\alpha_{\iota_R,n}}\alpha_{\iota_R,m},
+ \label{eq:tpc72-four-corner-scalar}
+\end{equation}
+which is the literal quantity parametrized in
+\eqref{eq:tpc72-physical-plane}.  Hence
+\begin{equation}
+ \tr(ER)
+ =
+ 2\Re
+ \sum_{m<n}
+ \sum_{\mathfrak a\in\mathcal R_{m,n}}
+ \mathfrak X_{\mathfrak a}.
+ \label{eq:tpc72-anchored-trace}
+\end{equation}
+In terms of the unnormalized coefficients \(\beta\), the four-corner
+amplitude in \eqref{eq:tpc72-four-corner-scalar} already contains
+\(1/(W_mW_n)\).
+
+\begin{proposition}[Four corners are not an erasure entry]
+\label{prop:four-corners-not-entry}
+Suppose
+\(
+ |\mathfrak X_{\mathfrak a}|
+ \le \mathcal B_{\mathfrak a}
+\)
+for every literal anchor.  Then
+\begin{equation}
+ |\tr(ER)|
+ \le
+ 2\sum_{m<n}
+ \sum_{\mathfrak a\in\mathcal R_{m,n}}
+ \mathcal B_{\mathfrak a}.
+ \label{eq:tpc72-correct-trace-majorant}
+\end{equation}
+This premise alone implies no entrywise bound for \(E_{mn}\), no row-star
+bound, and no Perron or operator-norm bound for \(E\).  Dividing
+\(\mathcal B_{\mathfrak a}\) again by \(\sqrt{W_mW_n}\) is a second,
+unjustified normalization.
+\end{proposition}
+
+\begin{proof}
+Equation \eqref{eq:tpc72-correct-trace-majorant} follows from
+\eqref{eq:tpc72-anchored-trace} and the triangle inequality.  The remaining
+claims follow already from the abstract example \(R=0\), \(E\ne0\):
+every four-corner \(ER\) target vanishes, while \(E\) can have arbitrarily
+large norm.  Thus no inequality involving only these targets can dominate
+the entries or norm of \(E\).
+\end{proof}
+
+\begin{proposition}[No ray-sign door]
+\label{prop:no-ray-sign-door}
+No cancellation based only on changes of the M\"obius sign along \(z\) can
+bound \eqref{eq:tpc72-physical-plane}.
+\end{proposition}
+
+\begin{proof}
+For fixed \(a,b,q,u,v\), the sign in
+\eqref{eq:tpc72-primitive-sign} is independent of \(z\).  Any cancellation
+along the ray must therefore come from the literal complex amplitude, not
+from a changing M\"obius factor.
+\end{proof}
+
+The divisor, determinant, and affine-ray algebra is \(\Lzero\).  Its exact
+reindexing of the full native rectangle is \(\Lone\).  No cancellation is
+asserted by TPC--70 \citep{WangTPC70}.
+
+\subsection{TPC--71: abstract diagonal lift and two-dimensional Abel summation}
+
+The primitive sign has the elementary but decisive identity
+\begin{equation}
+ \one_{(u,v)=1}\mu(u)\mu(v)=\mu(uv).
+ \label{eq:tpc72-primitive-collapse}
+\end{equation}
+For a finitely supported kernel \(K\), M\"obius inversion of the
+coprimality condition gives the exact diagonal divisor lift
+\begin{equation}
+ \sum_{\substack{u,v\ge1\\(u,v)=1}}
+ \mu(u)\mu(v)K(u,v)
+ =
+ \sum_{d\ge1}\mu(d)
+ \sum_{\substack{a,b\ge1\\(a,d)=(b,d)=1}}
+ \mu(a)\mu(b)K(da,db).
+ \label{eq:tpc72-diagonal-lift}
+\end{equation}
+Define the restricted Mertens function
+\begin{equation}
+ M_d(x)
+ :=
+ \sum_{\substack{n\le x\\(n,d)=1}}\mu(n).
+ \label{eq:tpc72-restricted-Mertens}
+\end{equation}
+Extend \(K^{[d]}(a,b)=K(da,db)\) by zero outside its finite support, and put
+\begin{equation}
+ \cV_\square(K^{[d]})
+ :=
+ \sum_{a,b\ge1}
+ |\Delta_1\Delta_2K^{[d]}(a,b)|.
+ \label{eq:tpc72-mixed-variation}
+\end{equation}
+Two-dimensional Abel summation then gives the exact fixed-\(d\) identity
+\begin{equation}
+ \sum_{\substack{a,b\ge1\\(a,d)=(b,d)=1}}
+ \mu(a)\mu(b)K(da,db)
+ =
+ \sum_{x,y\ge1}
+ M_d(x)M_d(y)\Delta_1\Delta_2K^{[d]}(x,y).
+ \label{eq:tpc72-double-Abel}
+\end{equation}
+Zero extension places the edge and corner terms inside the mixed
+difference.  Omitting the boundary jumps would give a false certificate.
+
+For
+\[
+ \mathfrak M_d(X)=\max_{1\le x\le X}|M_d(x)|,
+\]
+with \(\mathfrak M_d(X)=0\) when \(X<1\), define the exact diagonal tail
+\begin{equation}
+ \cT_D(K)
+ :=
+ \sum_{d>D}|\mu(d)|
+ \sum_{x,y\ge1}
+ |\mu(dx)\mu(dy)K(dx,dy)|.
+ \label{eq:tpc72-exact-diagonal-tail}
+\end{equation}
+Truncation at \(d\le D\) yields
+\begin{align}
+ \left|
+ \sum_{\substack{u\le U,\ v\le V\\(u,v)=1}}
+ \mu(u)\mu(v)K(u,v)
+ \right|
+ \le{}&
+ \sum_{d\le D}
+ \mathfrak M_d(U/d)\mathfrak M_d(V/d)
+ \cV_\square(K^{[d]})
+ +\cT_D(K).
+ \label{eq:tpc72-master-plane-certificate}
+\end{align}
+This tail retains the actual support and coefficients.  The ambient
+specialization
+\begin{equation}
+ \cT_D(K)
+ \le
+ \|K\|_\infty
+ \sum_{d>D}
+ \left\lfloor\frac Ud\right\rfloor
+ \left\lfloor\frac Vd\right\rfloor
+ \le
+ \|K\|_\infty\frac{UV}{D}
+ \label{eq:tpc72-ambient-tail}
+\end{equation}
+is only an optional upper bound and may be much larger than the exact tail.
+
+For every fixed \(d\), the prime number theorem gives
+\begin{equation}
+ M_d(x)=o_d(x).
+ \label{eq:tpc72-fixed-d-PNT}
+\end{equation}
+Consequently, a bounded family satisfying
+\[
+ \cV_\square(K^{[d]})\ll_d\|K\|_\infty
+\]
+for every fixed \(d\) has
+\begin{equation}
+ \sum_{\substack{u\le U,\ v\le V\\(u,v)=1}}
+ \mu(u)\mu(v)K(u,v)
+ =
+ o(\|K\|_\infty UV)
+ \label{eq:tpc72-smooth-kernel-cancellation}
+\end{equation}
+as \(\min(U,V)\to\infty\).  In particular, the unweighted primitive
+rectangle cancels unconditionally.  This use of prime number theory is
+standard; see, for example, \citet{IwaniecKowalski2004}.
+
+\subsection{Why the smooth theorem is not the physical theorem}
+
+The physical denominator is not the ambient area
+\(\|K\|_\infty UV\).  It is an actual anchored, trace-sector, or atomic
+mass, and the kernel can contain hard prime-line masks.  Therefore the next
+physical requirements are:
+\begin{enumerate}[label=\textup{(V\arabic*)},leftmargin=3.5em]
+ \item a mass-normalized bound for
+       \(\cV_\square((\cK_{\mathfrak a}^{\circ})^{[d]})\), after the
+       literal \(q\)-aggregation in
+       \eqref{eq:tpc72-aggregate-erasure-kernel};
+ \item the exact tail
+       \(\cT_D(\cK_{\mathfrak a}^{\circ})\) small relative to the same
+       physical mass;
+ \item justified uniformity in the divisor cutoff and over anchors, blocks,
+       rows, and complete keys;
+ \item summation over every literal anchor and row pair to control the
+       complete \(\tr(ER)\), without losing an unaffordable multiplicity;
+       and
+ \item for an operator theorem, either a new direct representation of the
+       two-corner entries \eqref{eq:tpc72-two-corner-entry}, row-local
+       anchored sums that dominate the relevant stars, or a separate
+       expansion controlling complete decorated moments.
+\end{enumerate}
+Sign-selected hard masks show that bounded amplitude alone cannot imply
+these conditions.
+
+\begin{theorem}[Primitive-frontier classification]
+\label{thm:primitive-frontier}
+TPC--70 and TPC--71 close the algebraic reduction from a cross-key rectangle
+to \eqref{eq:tpc72-master-plane-certificate} and prove cancellation for
+regular kernels.  They do not prove a fixed-power or mass-normalized saving
+for the actual physical kernel.  Their physical target is the anchored
+mixed scalar \(\mathfrak X_{\mathfrak a}\), so the reduction does not
+produce an erasure-entry, star, Perron, or operator certificate.
+\end{theorem}
+
+\begin{proof}
+The exact reduction is
+\eqref{eq:tpc72-physical-plane}--\eqref{eq:tpc72-master-plane-certificate}.
+The regular-kernel corollary normalizes by \(\|K\|_\infty UV\).
+No audited theorem bounds the actual kernel's mixed variation or tail
+relative to the physical mass, nor sums all literal anchors and rows at an
+endpoint-quality scale.  Moreover,
+\cref{prop:four-corners-not-entry} rules out promotion of that scalar bound
+to an entrywise operator majorant without a new representation.  The
+missing implications are therefore new quantitative and type-correct
+premises, not consequences of the regular-kernel theorem.
+\end{proof}

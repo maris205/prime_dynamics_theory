@@ -1,0 +1,133 @@
+\section{TPC--68--TPC--69: signed native operators and mixed words}
+\label{sec:native-mixed}
+
+\subsection{TPC--68: the complete missing-native defect}
+
+TPC--68 retains every missing-active row and every still-orthogonal native
+label \citep{WangTPC68}.  Physical atomic normalization gives
+\begin{equation}
+ K_M=I+H,
+ \qquad
+ H=H^*,
+ \qquad
+ H_{mm}=0.
+ \label{eq:tpc72-native-gram}
+\end{equation}
+The residual split is
+\[
+ H=R+E,
+\]
+where \(R\) contains same-residual collisions and \(E\) contains
+unequal-residual erasure edges.
+
+After a unitary row gauge, a literal off-diagonal entry exposes target signs
+\[
+ \mu(mj+h_0)\mu(nj+h_0).
+\]
+On a same-residual collision this product reduces to a row gauge
+\(\mu(d_m)\mu(d_n)\).  Every pure \(R\)-closed walk therefore has target-sign
+product one.  New signed information must use an \(E\)-edge or a literal
+complex phase.
+
+TPC--68 proves exact pair, star, Perron, and even-walk certificates.  If
+\(\Delta_P\le X^{\delta+o(1)}\) and each pair majorant is at most
+\(X^{-\tau+o(1)}\), then
+\begin{equation}
+ \|H\|\le X^{\delta-\tau+o(1)}.
+ \label{eq:tpc72-pair-route}
+\end{equation}
+If instead the maximal \(\ell^2\)-star is
+\(X^{-\sigma+o(1)}\), then
+\begin{equation}
+ \|H\|\le X^{\delta/2-\sigma+o(1)}.
+ \label{eq:tpc72-star-route}
+\end{equation}
+For a growing even moment,
+\begin{equation}
+ \tr H^{2q_X}
+ \le
+ X^{2q_X\nu+o(q_X\log X)}
+ \quad\Longrightarrow\quad
+ \|H\|\le X^{\nu+o(1)}.
+ \label{eq:tpc72-walk-route}
+\end{equation}
+The displayed premises are \(\Ltwo\) targets and are not proved there.
+
+\subsection{TPC--69: the first exact cross-key holonomy}
+
+TPC--69 refines the split by complete native key:
+\begin{equation}
+ R=\sum_iR_i,
+ \qquad
+ E=\sum_iE_i.
+ \label{eq:tpc72-key-decomposition}
+\end{equation}
+Relative to the residual partition of key \(i\), \(R_i\) is block diagonal
+and \(E_i\) is off block.  Hence, for every polynomial \(P\),
+\begin{equation}
+ \tr(E_iP(R_i))=0.
+ \label{eq:tpc72-one-key-vanishing}
+\end{equation}
+The first mixed half-sector is therefore necessarily cross-key:
+\begin{equation}
+ S_{2,1}=2\tr(ER),
+ \qquad
+ \tr(ER)=\sum_{i\ne j}\tr(E_iR_j).
+ \label{eq:tpc72-cross-key-first}
+\end{equation}
+Each term is a genuine four-corner rectangle, invariant under independent
+row and key unit gauges.
+
+For
+\[
+ \tr(R+tE)^k=\sum_{b=0}^kt^bS_{k,b},
+\]
+the exact cyclic sector formula is
+\begin{equation}
+ S_{k,b}
+ =
+ \frac{k}{b}
+ \sum_{\substack{a_1+\cdots+a_b=k-b\\a_\ell\ge0}}
+ \tr(ER^{a_1}\cdots ER^{a_b}).
+ \label{eq:tpc72-cyclic-sector}
+\end{equation}
+On the squarefree physical carrier, source-row signs telescope around a
+closed decorated walk.  The surviving target sign is the product of
+\(\mu(s)\) over residual labels of odd erasure degree.
+
+The complete two-erasure sector has a further obstruction.  If
+\(\lambda_\alpha\) are the eigenvalues of \(R\), then
+\begin{equation}
+ S_{2q,2}
+ =
+ q\sum_{\alpha,\beta}
+ |E_{\alpha\beta}|^2
+ \frac{\lambda_\alpha^{2q-1}-\lambda_\beta^{2q-1}}
+      {\lambda_\alpha-\lambda_\beta}
+ \ge0,
+ \label{eq:tpc72-quadratic-positive}
+\end{equation}
+with the derivative value on the diagonal.  The inequality follows because
+the odd power \(x^{2q-1}\) is increasing.
+
+\begin{corollary}[Signed-door reduction]
+\label{cor:signed-door-reduction}
+The following proposed sources of negative compensation are closed:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item M\"obius randomness internal to pure same-residual walks;
+ \item one-key cancellation in the first mixed sector; and
+ \item the complete quadratic erasure sector as a negative correction.
+\end{enumerate}
+The shortest remaining signed object is the cross-key rectangle in
+\eqref{eq:tpc72-cross-key-first}.
+\end{corollary}
+
+\begin{proof}
+The first statement follows from row-gauge telescoping; the second from
+\eqref{eq:tpc72-one-key-vanishing}; the third from
+\eqref{eq:tpc72-quadratic-positive}.
+\end{proof}
+
+A small global \(\tr(ER)\) is not a row-star estimate.  Even a complete
+linear-sector saving does not bound the full moment unless all remaining
+sectors are controlled at the correct scale.

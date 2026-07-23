@@ -1,0 +1,177 @@
+\section{Closed interfaces, failed mechanisms, and open doors}
+\label{sec:closed-open}
+
+The word ``closed'' has two meanings.  An interface may be solved positively,
+or a proposed route may be ruled out.  Mixing these meanings obscures the
+remaining work.
+
+\subsection{Positively closed interfaces}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.19\textwidth}
+                  >{\raggedright\arraybackslash}p{0.60\textwidth}
+                  >{\raggedright\arraybackslash}p{0.10\textwidth}}
+\toprule
+Interface & Exact closure & Level\\
+\midrule
+\endfirsthead
+\toprule
+Interface & Exact closure & Level\\
+\midrule
+\endhead
+Provenance
+& Minimal faithful pair relation when it exists; literal hypergraph
+  fallback when it does not; three separate faithfulness tests.
+& \(\Lzero/\Lone\)\\
+\addlinespace
+Activation calculus
+& Exact \(P_m,H_m,T_m\), parent inflation, hybrid repair, and sharp capacity
+  certificate.
+& \(\Lzero/\Lone\)\\
+\addlinespace
+Represented range
+& Exact activated row Gram, repair invariance, kernel fusion, and
+  label-erasure boundary.
+& \(\Lzero/\Lone\)\\
+\addlinespace
+Pair support
+& Unit diagonal and critical fixed-row-pair reduced codegree
+  \(X^{o(1)}\).
+& \(\Lone\)\\
+\addlinespace
+Determinant conversion
+& Peeling, cycle activity, Cauchy--Binet mass, and the componentwise
+  determinant-to-gap inequality.
+& \(\Lzero/\Lone\)\\
+\addlinespace
+Native operator
+& Exact pair, star, Perron, moment, and shorted-Gram certificates on the
+  complete missing carrier.
+& \(\Lzero/\Lone\)\\
+\addlinespace
+Mixed sectors
+& Key-local vanishing, cyclic erasure-count formula, odd residual boundary,
+  and nonnegative quadratic erasure response.
+& \(\Lzero/\Lone\)\\
+\addlinespace
+Primitive plane
+& Exact divisor and affine-ray parametrization of the first cross-key
+  coefficient.
+& \(\Lzero/\Lone\)\\
+\addlinespace
+Variation certificate
+& Exact diagonal divisor lift, two-dimensional Abel formula, tail bound,
+  and smooth-kernel cancellation.
+& \(\Lzero/\Lone\)\\
+\bottomrule
+\end{longtable}
+
+\subsection{Mechanisms closed by obstruction}
+
+\begin{enumerate}[label=\textup{(F\arabic*)},leftmargin=3.5em]
+ \item \textbf{Inherited single band.}
+       The old freezing certificate misses the critical face, and its
+       retuning already exceeds \(1/400\).
+ \item \textbf{Label-count dilution.}
+       \(O(\log X)\) labels give bookkeeping economy, not a lower bound after
+       coherent erasure.
+ \item \textbf{Capacity transport.}
+       Row capacity does not imply spectral capacity without a reducing or
+       basis-transport theorem.
+ \item \textbf{Support-only Gram closure.}
+       Low pair codegree does not control \(\gamma\)-multiplicity, energy
+       diffuseness, or cycle holonomy.
+ \item \textbf{Same-residual randomness.}
+       Its target sign is a removable row gauge on closed walks.
+ \item \textbf{One-key mixed cancellation.}
+       \(\tr(E_iR_i^a)=0\) identically.
+ \item \textbf{Negative quadratic correction.}
+       The full \(S_{2q,2}\) is nonnegative.
+ \item \textbf{Prime-ray M\"obius oscillation.}
+       The primitive sign is constant along the affine ray parameter.
+ \item \textbf{Bounded-amplitude variation.}
+       Hard sign-selected masks show that \(\|K\|_\infty\) alone does not
+       control the primitive-plane sum.
+ \item \textbf{Four-corner-to-entry promotion.}
+       An anchored primitive-plane target contributes to \(\tr(ER)\); it is
+       not a matrix entry of \(E\), and cannot be inserted directly into a
+       pair, star, or Perron operator certificate.
+\end{enumerate}
+
+Each failure is local to the named mechanism.  None is evidence that the
+twin-prime conjecture is false.
+
+\subsection{Open doors}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.22\textwidth}
+                  >{\raggedright\arraybackslash}p{0.49\textwidth}
+                  >{\raggedright\arraybackslash}p{0.18\textwidth}}
+\toprule
+Door & Required theorem & Current status\\
+\midrule
+\endfirsthead
+\toprule
+Door & Required theorem & Current status\\
+\midrule
+\endhead
+Terminal activation
+& \eqref{eq:tpc72-uniform-activation-target} or the exact distinguished
+  capacity target in the same downstream scope.
+& Open \(\Ltwo\)\\
+\addlinespace
+Represented frame
+& Physical unlabelled Gram lower bound, for example an endpoint-quality
+  worst-component determinant mass.
+& Open \(\Ltwo\)\\
+\addlinespace
+Primitive variation
+& Mass-normalized mixed variation and diagonal tail for the actual
+  aggregated kernel \(\cK_{\mathfrak a}^{\circ}(u,v)\).
+& Open \(\Ltwo\)\\
+\addlinespace
+Anchored mixed trace
+& Mass-normalized variation and tail, followed by the complete sum over
+  divisors, anchors, row pairs, keys, and blocks in
+  \eqref{eq:tpc72-correct-trace-majorant}.
+& Open \(\Ltwo\)\\
+\addlinespace
+Operator carrier
+& A direct two-corner representation of \(E_{mn}\), row-local anchored
+  bounds dominating the relevant stars, or complete decorated-moment
+  estimates for the full missing-native operator.
+& Open \(\Ltwo\)\\
+\addlinespace
+Missing mass
+& \eqref{eq:tpc72-missing-mass} in the same reference form as the
+  represented lower bound.
+& Open \(\Ltwo\)\\
+\addlinespace
+Nuisance shorting
+& \(\|C_N\|=o(1)\), or an explicitly charged nonzero loss.
+& Open \(\Ltwo\)\\
+\addlinespace
+Boundary and tail
+& Reconnection of the certified physical packet to the endpoint target,
+  with all remaining losses recorded.
+& Open \(\Ltwo\)\\
+\bottomrule
+\end{longtable}
+
+\begin{theorem}[No completed arithmetic column]
+\label{thm:no-L2-column}
+No theorem among TPC--63--TPC--71 proves one of the open doors above with
+all six physical invariants of \cref{sec:audit-rules} and simultaneously
+closes the endpoint chain.
+\end{theorem}
+
+\begin{proof}
+TPC--63--TPC--65 explicitly leave activation and unlabelled representation
+open.  TPC--66 proves support codegree but not a Gram gap.  TPC--67 leaves
+actual determinant mass open.  TPC--68--TPC--69 state their pair, star,
+walk, missing-mass, and nuisance premises conditionally.  TPC--70 gives an
+exact reindexing without cancellation.  TPC--71 proves regular-kernel
+cancellation but explicitly leaves physical mass-normalized variation,
+tail, and complete anchor summation open.  Its four-corner scalar target
+cannot be used as an entrywise operator majorant by
+\cref{prop:four-corners-not-entry}.  Thus no audited theorem satisfies the
+stated conjunction.
+\end{proof}

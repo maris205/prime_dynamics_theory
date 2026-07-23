@@ -1,0 +1,187 @@
+\section{Revised next-stage routes}
+\label{sec:revised-routes}
+
+\subsection{Route A: anchored primitive-plane variation}
+
+For one row pair and one full same-residual anchor \(\mathfrak a\), let
+\(U_{\mathfrak a},V_{\mathfrak a}\) be the actual primitive-coordinate
+extents of the aggregated literal kernel
+\(\cK_{\mathfrak a}^{\circ}\) from
+\eqref{eq:tpc72-aggregate-erasure-kernel}.  Define the exact Abel cost
+\begin{equation}
+ \mathfrak A_{\mathfrak a}(D)
+ :=
+ \sum_{d\le D}
+ \mathfrak M_d(U_{\mathfrak a}/d)
+ \mathfrak M_d(V_{\mathfrak a}/d)
+ \cV_\square((\cK_{\mathfrak a}^{\circ})^{[d]})
+ +
+ \cT_D(\cK_{\mathfrak a}^{\circ}).
+ \label{eq:tpc72-Abel-cost}
+\end{equation}
+Define the anchored plane mass, with absolute values taken after the exact
+\(q\)- and ray-aggregation, by
+\begin{equation}
+ \mathfrak W_{\mathfrak a}
+ :=
+ \sum_{u,v\ge1}
+ |\cK_{\mathfrak a}^{\circ}(u,v)|.
+ \label{eq:tpc72-anchored-plane-mass}
+\end{equation}
+Because \(\cK_{\mathfrak a}^{\circ}\) already contains the normalized
+four-corner amplitudes,
+\[
+ |\mathfrak X_{\mathfrak a}|
+ \le
+ \mathfrak W_{\mathfrak a}.
+\]
+This mass can be smaller than the sum of absolute pre-aggregation ray
+atoms, and it is not automatically the global trace or raw atomic mass.
+A first useful arithmetic target is
+\begin{equation}
+ \mathfrak A_{\mathfrak a}(D_X)
+ \le
+ X^{-\tau_{\rm plane}+o(1)}\mathfrak W_{\mathfrak a}
+ \label{eq:tpc72-plane-saving}
+\end{equation}
+uniformly over every active anchor, pair, block, and key in a declared
+scope.  The physical conclusion comes only after the complete anchor and
+row sum in \eqref{eq:tpc72-correct-trace-majorant}.
+If \(D_X\) grows, \eqref{eq:tpc72-plane-saving} additionally requires a
+proved restricted-Mertens estimate uniform throughout \(d\le D_X\).
+With only fixed-\(d\) input, the safe formulation fixes \(D\), takes the
+physical scale limit, and only then lets \(D\to\infty\).
+
+This target must be attacked in the following order:
+\begin{enumerate}[label=\textup{(A\arabic*)},leftmargin=3.6em]
+ \item compute the actual support and form the literal \(q\)-aggregate
+       \(\cK_{\mathfrak a}^{\circ}\) before absolute values;
+ \item compute its zero-extended mixed variation, including bulk, edge, and
+       corner jumps;
+ \item estimate the exact tail
+       \(\cT_D(\cK_{\mathfrak a}^{\circ})\); use
+       \eqref{eq:tpc72-ambient-tail} only when that specialization is sharp
+       enough;
+ \item choose a fixed cutoff or justify a growing \(D_X\) against the
+       physical mass rather than ambient area;
+ \item test whether the resulting saving survives complete trace
+       aggregation.
+\end{enumerate}
+If a sharp lower obstruction proves that the exact mass-normalized cost in
+\eqref{eq:tpc72-Abel-cost} is necessarily trivial on a nonnegligible anchor
+family, this Abel certificate is closed for that carrier.  Failure of the
+ambient upper bound alone closes only the ambient-tail specialization, and
+failure to prove the sufficient inequality is an unresolved gate rather
+than a negative theorem.
+
+\subsection{Route B: build a genuine operator carrier}
+
+Equation \eqref{eq:tpc72-plane-saving} does not give an entrywise pair
+bound.  To invoke the TPC--68 pair/star machinery, one must first construct
+a direct primitive or other arithmetic representation of the two-corner
+entry \eqref{eq:tpc72-two-corner-entry}.  If that new representation gives
+an entrywise saving \(X^{-\tau_{\rm ent}+o(1)}\) and the actual pair graph
+has degree exponent \(\delta\), the TPC--68 pair route requires
+\begin{equation}
+ \tau_{\rm ent}\ge\delta
+ \quad\text{for a subpower norm,}
+ \qquad
+ \tau_{\rm ent}>\delta
+ \quad\text{for decay.}
+ \label{eq:tpc72-pair-threshold}
+\end{equation}
+If square summation improves the local estimate to star exponent \(\sigma\),
+the threshold becomes
+\begin{equation}
+ \sigma\ge\delta/2
+ \quad\text{or}\quad
+ \sigma>\delta/2.
+ \label{eq:tpc72-star-threshold}
+\end{equation}
+Below these thresholds the corresponding certificate supplies neither a
+subpower bound nor decay by itself.  It does not kill the whole operator
+route: a positive norm exponent may still be absorbed by the mass-degree
+gate \eqref{eq:tpc72-zero-cost-reassembly}.
+
+A second bridge may instead prove row-local anchored bounds that dominate
+the actual stars without first identifying every entry.  This requires a
+new row-local crosswalk and cannot be inferred from the global trace.
+A third bridge is to estimate complete decorated moments with constants
+uniform in the growing length.  The moment option requires a new crosswalk
+for every decorated sector actually used; the first mixed trace cannot
+stand in for the full moment.
+
+The global trace \(\tr(ER)\) is useful as a diagnostic of the linear sector,
+but it is not an operator aggregation target.  The next paper must therefore
+choose explicitly among a direct two-corner entry route, a row-local
+anchored-star bridge, and a full-moment route.  A fixed-row star or
+reducible-safe Perron majorant becomes available only after a literal
+carrier dominating that object has been constructed.
+
+\subsection{Route C: represented-frame closure in parallel}
+
+The primitive-plane branch should not monopolize the program.  Independently,
+one needs:
+\begin{enumerate}[label=\textup{(R\arabic*)},leftmargin=3.6em]
+ \item a terminal-candidate lower theorem giving
+       \eqref{eq:tpc72-uniform-activation-target} or its distinguished
+       analogue;
+ \item a physical represented Gram lower bound, through determinant mass,
+       a comparison matrix, or a different exact certificate;
+ \item an explicit physical label-erasure or fusion-angle estimate.
+\end{enumerate}
+The determinant route is alive precisely because its conversion is exact,
+but it needs actual matching, pivot, and cycle-activity input.  If the worst
+actual component determinant mass is proved superpolynomially small, that
+closes this certificate at endpoint scale while leaving other represented
+certificates open.
+
+\subsection{Route D: final mass-degree and shorting merge}
+
+Only after Routes A--C give compatible inputs should one test
+\begin{equation}
+ \sigma_M>\nu_M+\lambda_{\rm rep}
+ \label{eq:tpc72-final-mass-degree}
+\end{equation}
+and
+\begin{equation}
+ \|C_N\|=o(1).
+ \label{eq:tpc72-final-nuisance}
+\end{equation}
+Both must use the same reference energy, carrier, support, coefficient
+scope, and fixed shift.  The endpoint ledger is then evaluated once, with
+boundary and tail attached last.
+
+\subsection{Fallbacks if the anchored trace door closes}
+
+If the physical primitive-plane variation is too large, or if its residual
+boundary is frozen on the actual support, the remaining signed alternatives
+are:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item higher one-erasure polygons;
+ \item cancellation from literal complex phases;
+ \item a direct shorted reassembly estimate; or
+ \item a coefficient-specific distinguished theorem with its scope stated
+       explicitly.
+\end{enumerate}
+The complete quadratic sector is not a fallback source of negative
+compensation by \eqref{eq:tpc72-quadratic-positive}.
+
+\subsection{Stage schedule}
+
+A disciplined next block can be organized as follows.
+\begin{enumerate}[label=\textbf{Stage \arabic*.},leftmargin=4.5em]
+ \item Anchored physical variation census and boundary decomposition.
+ \item A uniform or obstructed first-mixed-trace estimate.
+ \item A direct two-corner, row-local anchored-star, or complete-moment
+       operator crosswalk.
+ \item Pair-to-star/Perron aggregation or uniform moment control, according
+       to the carrier established in Stage 3.
+ \item Parallel terminal activation and represented determinant work.
+ \item Missing-mass and nuisance-shorting comparison.
+ \item Boundary, tail, and strict endpoint audit.
+\end{enumerate}
+At every stage, success means either a literal exponent improvement, a
+necessary interface closure, or an exact actual-carrier obstruction.  A
+model refinement without one of these outputs should not be reported as
+movement toward the parity endpoint.

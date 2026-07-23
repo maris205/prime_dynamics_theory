@@ -1,0 +1,159 @@
+\section{TPC--65--TPC--67: represented range, support, and determinants}
+\label{sec:represented-support}
+
+\subsection{TPC--65: the actual activated range}
+
+Let \(L_X\) be the terminal map and
+\[
+ Y_X=\Ran L_X.
+\]
+TPC--65 places the represented comparison on \(Y_X\), rather than on a free
+ambient atom space \citep{WangTPC65}.  If \(A_X:Y_X\to H_X\) is the
+represented map, its exact lower constant is
+\begin{equation}
+ \beta_X
+ =
+ \inf_{0\ne y\in Y_X}
+ \frac{\|A_Xy\|^2}{\|y\|^2}
+ =
+ \lambda_{\min}(K_X),
+ \label{eq:tpc72-represented-gram}
+\end{equation}
+where \(K_X\) is the normalized activated row Gram with literal
+residual-fiber entries.
+
+Terminal-faithful canonical repair leaves downstream Grams unchanged when
+both descriptions factor through the same terminal map.  Parent inflation
+is therefore charged in the parent-to-terminal arrow, not again in
+\(\beta_X\).
+
+For orthogonally labeled blocks \(A_\nu\),
+\begin{equation}
+ \Ker\!\left(\bigoplus_\nu A_\nu\right)
+ =
+ \bigcap_\nu\Ker A_\nu.
+ \label{eq:tpc72-kernel-fusion}
+\end{equation}
+Singular blocks can fuse into a positive global Gram.  Coherently erasing
+their labels instead creates cross-block terms and requires a separate
+fusion-angle theorem.  TPC--65 also gives a sharp counterexample to
+transporting physical row capacity into spectral capacity.
+
+On one common carrier, define activation, represented, and reassembly
+constants \(\tau_X,\beta_X,\delta_X\).  The exact compatible product is
+\begin{equation}
+ \Gamma_X\ge\tau_X\beta_X\delta_X.
+ \label{eq:tpc72-three-stage-product}
+\end{equation}
+This is a compatibility law, not a proof that any physical factor is
+favorable.
+
+\subsection{TPC--66: actual pair geometry}
+
+TPC--66 opens the literal entries of \(K_X\) \citep{WangTPC66}.  A fixed
+physical row contributes at most one terminal atom to a fixed residual
+output key.  After row normalization,
+\begin{equation}
+ (K_X)_{mm}=1
+ \label{eq:tpc72-unit-diagonal}
+\end{equation}
+for every active row.
+
+For distinct literal rows \(m_1,m_2\), factor exchange and simultaneous CRT
+give the reduced pair-codegree bound
+\begin{equation}
+ c^{\rm red}_{m_1,m_2}(R)
+ \ll_{h_0}
+ X^{o(1)}\left(1+\frac{J}{R}\right).
+ \label{eq:tpc72-codegree}
+\end{equation}
+Consequently,
+\begin{equation}
+ c^{\rm red}_{m_1,m_2}(R)=X^{o(1)}
+ \qquad(R\asymp J)
+ \label{eq:tpc72-critical-codegree}
+\end{equation}
+uniformly over fixed active row pairs.
+
+This is a genuine arithmetic support theorem at one fixed \(h_0\), but its
+scope must be retained.  It counts reduced arithmetic cells, not the raw
+\(\gamma\)-decorated intersection.  A right fiber may still have polynomial
+degree.  The exact bridge
+\begin{equation}
+ |K_X(m,n)|
+ \le
+ C_{m,n}^{\rm red}(R)
+ \sqrt{\rho_m(R)\rho_n(R)}
+ \label{eq:tpc72-codegree-diffuseness}
+\end{equation}
+shows that a physical Gram estimate still needs row-energy diffuseness.
+
+Private outputs, comparison matrices, weighted diagonal dominance, forest
+gauges, star spectra, and unique-matching minors give exact lower-frame
+certificates.  A cycle with fixed support, degree, codegree, and entry
+magnitudes can nevertheless be singular or nonsingular according to its
+holonomy.  Support sparsity alone is therefore not a lower-frame theorem.
+
+\subsection{TPC--67: determinant mass on actual components}
+
+TPC--67 factors every square actual minor by iterative degree-one peeling
+\citep{WangTPC67}.  A residual core with no perfect matching has zero
+determinant.  Relative to a declared core matching, all remaining terms are
+vertex-disjoint alternating-cycle families.  Forest phases gauge away;
+cycle holonomies remain.
+
+If \(\cA_\phi\) is the total absolute activity relative to matching
+\(\phi\), the phase-safe certificate has the form
+\begin{equation}
+ |\det T|
+ \ge
+ P_{\rm for}P_\phi(1-\cA_\phi)_+.
+ \label{eq:tpc72-activity-certificate}
+\end{equation}
+The threshold one is sharp for information consisting only of total
+activity.
+
+For a synthesis matrix \(B\) with \(r\) unit columns and Gram \(K=B^*B\),
+Cauchy--Binet yields
+\begin{equation}
+ \mathfrak D(B)
+ :=
+ \sum_{|I|=r}|\det B[I]|^2
+ =
+ \det K,
+ \qquad
+ \lambda_{\min}(K)\ge e^{-1}\mathfrak D(B).
+ \label{eq:tpc72-determinant-gap}
+\end{equation}
+The actual full-support collision components are orthogonal, so the useful
+bound is
+\begin{equation}
+ \beta_X
+ \ge
+ e^{-1}\min_{C\in\mathscr C_X}\mathfrak D_C,
+ \label{eq:tpc72-componentwise-gap}
+\end{equation}
+not a product over unrelated components.
+
+\begin{proposition}[Represented branch frontier]
+\label{prop:represented-frontier}
+The represented branch would close at fixed-power scale if one proved,
+uniformly over actual full-support components,
+\[
+ \mathfrak D_C\ge X^{-\lambda_{\det}+o(1)}
+\]
+with an exponent compatible with the endpoint ledger.  TPC--66 does not
+imply this premise.
+\end{proposition}
+
+\begin{proof}
+\Cref{eq:tpc72-componentwise-gap} gives the implication.  TPC--66 controls
+only reduced fixed-pair codegree.  It supplies neither a full-output Hall
+matching, pivot lower bounds, long-cycle activity, nor
+\(\gamma\)-multiplicity.  Hence its hypotheses do not determine
+\(\mathfrak D_C\).
+\end{proof}
+
+All determinant conversions are \(\Lzero\), and the full-output
+identification is \(\Lone\).  The displayed lower bound for the actual
+worst component is an open \(\Ltwo\) target.

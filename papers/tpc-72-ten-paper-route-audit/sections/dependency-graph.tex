@@ -1,0 +1,129 @@
+\section{The dependency graph}
+\label{sec:dependency-graph}
+
+\subsection{Two branches and one merge}
+
+The audited chain is
+\begin{center}
+\begin{tabular}{c}
+\(\boxed{\text{TPC--63 provenance}}\)\\[-1mm]
+\(\downarrow\)\\[-1mm]
+\(\boxed{\text{TPC--64 activation}}\)\\[-1mm]
+\(\downarrow\)\\[-1mm]
+\(\boxed{\text{TPC--65 represented Gram}}\)\\[-1mm]
+\(\downarrow\)\\[-1mm]
+\(\boxed{\text{TPC--66 support geometry}}\)\\[-1mm]
+\(\downarrow\)\\[-1mm]
+\(\boxed{\text{TPC--67 determinant mass}}\)
+\end{tabular}
+\qquad
+\begin{tabular}{c}
+\(\boxed{\text{TPC--68 signed native}}\)\\[-1mm]
+\(\downarrow\)\\[-1mm]
+\(\boxed{\text{TPC--69 first mixed trace}}\)\\[-1mm]
+\(\downarrow\)\\[-1mm]
+\(\boxed{\text{TPC--70 anchored plane}}\)\\[-1mm]
+\(\downarrow\)\\[-1mm]
+\(\boxed{\text{TPC--71 abstract variation}}\)\\[2mm]
+\(\phantom{\boxed{\text{TPC--71 abstract variation}}}\)
+\end{tabular}
+\end{center}
+The left branch seeks to control the represented map \(A\).  The right
+column starts from the missing map \(M\), but after TPC--68 it descends to
+the scalar sector \(\tr(ER)\); it does not return to an operator bound for
+\(M\).  The full maps merge through
+\[
+ B=A+M
+\]
+and a shorted comparison relative to \(A\).
+
+\subsection{The exact reassembly object}
+
+Let
+\[
+ N_A=\Ker A,
+ \qquad
+ W_{\rm nuis}=B(N_A)=M(N_A).
+\]
+The direct represented-normalized Gram is not the final uniform comparison,
+because vectors in \(N_A\) can produce physical output through \(M\).  The
+exact shorted Gram has the form
+\begin{equation}
+ G_{\rm sh}=G_{\rm dir}-C_N,
+ \qquad
+ C_N\succeq0,
+ \label{eq:tpc72-shorted-gram}
+\end{equation}
+following the classical shorted-operator framework
+\citep{AndersonTrapp1975} and the TPC--68 specialization
+\citep{WangTPC68}.
+
+The native Gram \(I+R+E\) controls an atomic-normalized part of \(M^*M\).
+It is not automatically \(G_{\rm dir}\), which is normalized by represented
+energy, and it does not control \(C_N\).
+
+\begin{theorem}[Dependency theorem]
+\label{thm:dependency}
+A uniform endpoint certificate from the audited architecture requires, in
+one literal carrier and one quantifier scope:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item a positive terminal activation arrow;
+ \item a represented lower frame for \(A\);
+ \item a missing-mass comparison;
+ \item an upper bound for the complete missing-native Gram;
+ \item a negligible or explicitly charged nuisance penalty \(C_N\);
+ \item boundary and tail closure; and
+ \item a total physical loss strictly below \(1/400\).
+\end{enumerate}
+No proper subset of these requirements is supplied as the full endpoint
+theorem by TPC--63--TPC--71.
+\end{theorem}
+
+\begin{proof}
+TPC--64 shows that a terminal-inactive row kills the uniform first arrow.
+TPC--65 identifies the represented lower constant with the actual activated
+Gram and separates label erasure.  TPC--67 gives only a conditional
+determinant route to the second arrow.  TPC--68 provides exact abstract
+certificates for the fourth arrow but no physical arithmetic premise.
+TPC--69--TPC--71 analyze only the first mixed trace, and
+\cref{prop:four-corners-not-entry} prevents that scalar analysis from being
+promoted to the fourth arrow.
+The mass-degree comparison in TPC--68 requires the third arrow, while
+\eqref{eq:tpc72-shorted-gram} shows that the fifth is independent.  None of
+these papers proves the downstream boundary and tail estimates.  Finally,
+TPC--63--TPC--65 record the strict endpoint budget.  Each item is therefore
+a distinct necessary input in the declared staged architecture.
+\end{proof}
+
+\subsection{Non-substitution laws}
+
+\begin{corollary}[No cross-branch substitution]
+\label{cor:no-cross-branch-substitution}
+The following implications are invalid without additional hypotheses:
+\begin{align*}
+ \text{determinant mass}
+ &\not\Longrightarrow
+ \text{missing-native operator bound},\\
+ \text{primitive-plane scalar cancellation}
+ &\not\Longrightarrow
+ \text{represented lower frame},\\
+ \text{anchored primitive-plane bound}
+ &\not\Longrightarrow
+ \text{entrywise erasure bound},\\
+ \|R+E\|=o(1)
+ &\not\Longrightarrow
+ \|C_N\|=o(1),\\
+ \tr(ER)=o(1)
+ &\not\Longrightarrow
+ \text{uniform row-star saving}.
+\end{align*}
+\end{corollary}
+
+\begin{proof}
+The first two statements concern different maps.  The third is
+\cref{prop:four-corners-not-entry}.  The fourth follows because
+\(C_N\) depends on \(B(N_A)\), which is not determined by the canonical
+representative of \(M\) on \((\Ker A)^\perp\).  The fifth is disproved by
+orthogonal direct sums of reinforcing and cancelling local stars, as in the
+TPC--69 countermodels \citep{WangTPC69}.
+\end{proof}

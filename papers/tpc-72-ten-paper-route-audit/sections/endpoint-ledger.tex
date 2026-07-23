@@ -1,0 +1,221 @@
+\section{The strict endpoint ledger}
+\label{sec:endpoint-ledger}
+
+\subsection{One global accounting}
+
+The complete inherited fixed-power loss is
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ \Lambda_{\rm tot}:={}&
+ \lambda_{\rm sel}
+ +\lambda_{\rm occ}
+ +\lambda_{\rm blk}
+ +\lambda_{\rm term}^{\rm eff}
+ +\lambda_{\rm sing}\\
+ &+\lambda_H+\lambda_{\rm aff}
+ +\lambda_{\rm reasm}
+ +\lambda_{\rm bdry}
+ +\lambda_{\rm tail}.
+ \end{aligned}}
+ \label{eq:tpc72-global-ledger}
+\end{equation}
+Every symbol in \eqref{eq:tpc72-global-ledger} denotes the nonnegative
+optimal fixed-power loss of one distinct physical comparison in the
+declared scope; it is \(+\infty\) when a mandatory comparison constant
+vanishes infinitely often.  The dictionary is:
+\begin{description}[leftmargin=3.4em,style=nextline]
+ \item[\(\lambda_{\rm sel}\)]
+       canonical selection from the parent input energy;
+ \item[\(\lambda_{\rm occ}\)]
+       retention of the required occupied or activated support;
+ \item[\(\lambda_{\rm blk}\)]
+       localization to the actual compatible block or component;
+ \item[\(\lambda_{\rm term}^{\rm eff}\)]
+       true terminal activation;
+ \item[\(\lambda_{\rm sing}\)]
+       the weighted singleton-occupancy comparison;
+ \item[\(\lambda_H\)]
+       native residual-label erasure on the represented image;
+ \item[\(\lambda_{\rm aff}\)]
+       base--represented-high affine transversality;
+ \item[\(\lambda_{\rm reasm}\)]
+       physical label erasure and shorted reassembly;
+ \item[\(\lambda_{\rm bdry},\lambda_{\rm tail}\)]
+       final boundary restriction and tail reconstruction.
+\end{description}
+The endpoint gate is
+\begin{equation}
+ \boxed{\Lambda_{\rm tot}<\frac1{400}.}
+ \label{eq:tpc72-strict-budget}
+\end{equation}
+Equality is not accepted by the exponent-only route.
+
+The terminal loss satisfies
+\begin{equation}
+ \lambda_{\rm term}^{\rm eff}
+ \le
+ \min\{
+ \lambda_{\rm term}^{\rm lit}+\lambda_{\rm infl},
+ \lambda_{\rm cap}
+ \},
+ \label{eq:tpc72-terminal-loss}
+\end{equation}
+when the two TPC--64 certificates are available.  No equality is asserted;
+a direct terminal theorem can be better.  The two certificates in the
+minimum must hold in the same declared coefficient and quantifier scope.
+
+\subsection{Coarse and fine notations}
+
+TPC--65 compresses part of the chain to
+\begin{equation}
+ \Gamma_X\ge\tau_X\beta_X\delta_X,
+ \qquad
+ \Gamma_X
+ \ge
+ X^{-(\lambda_{\rm act}+\lambda_{\rm rep}
+       +\lambda_{\rm reasm})+o(1)}.
+ \label{eq:tpc72-coarse-ledger}
+\end{equation}
+This is not an additional loss on top of
+\eqref{eq:tpc72-global-ledger}.  It is a coarser grouping of some of its
+arrows.  Here \(\lambda_{\rm act}\) is the aggregate of the distinct
+selection, occupancy, block, terminal, and singleton arrows actually used
+on the activation side; \(\lambda_{\rm rep}\) is the represented lower
+comparison; and \(\lambda_{\rm reasm}\) is the physical shorted-reassembly
+arrow.  The represented comparison equals or is bounded using
+\(\lambda_H+\lambda_{\rm aff}\) only when those are the same physical
+arrows in the same scope.  In particular:
+\begin{itemize}
+ \item parent inflation belongs to activation;
+ \item a represented exponent belongs to the represented arrow once;
+ \item physical label erasure and missing-native perturbation belong to
+       reassembly;
+ \item exact coordinate relabeling costs zero only when it is unitary or
+       has \(X^{o(1)}\) condition number.
+\end{itemize}
+Two inherited no-double-charge rules are especially easy to violate.
+If selection, occupancy, or block losses were already used inside a direct
+terminal ratio \(T/\widetilde P\), they are removed from the pre-terminal
+sum.  If the represented comparison \(\lambda_{\rm rep}\) merely
+repackages the physical arrow already encoded by
+\(\lambda_H+\lambda_{\rm aff}\), it is not charged again through
+\(\lambda_{\rm reasm}\).
+
+\subsection{Mass-degree feasibility is not a second ledger}
+
+Let \(A_X\) and \(M_X\) be the represented and missing-native maps on the
+same raw physical coefficient space \(\cK_X\).  With missing atoms
+\(\mathcal W_M\), define
+\begin{equation}
+ W_M(m)
+ :=
+ \sum_{\substack{w\in\mathcal W_M\\m(w)=m}}|\beta_w|^2,
+ \qquad
+ D_M:=\operatorname{diag}(W_M(m)),
+ \qquad
+ S_M:=\operatorname{Ran}D_M.
+ \label{eq:tpc72-physical-missing-diagonal}
+\end{equation}
+Thus \(D_M\) uses raw physical atomic mass.  The missing-native synthesis
+\(M_X\) is built from the same atoms, so, with \(P_{S_M}\) the orthogonal
+projection onto \(S_M\),
+\begin{equation}
+ M_X(I-P_{S_M})=0.
+ \label{eq:tpc72-missing-kernel-compatibility}
+\end{equation}
+If \(S_M\ne\{0\}\), set
+\begin{equation}
+ \kappa_M
+ :=
+ \sup_{\substack{z\in\cK_X\\
+                 \langle D_Mz,z\rangle>0}}
+ \frac{\|M_Xz\|^2}{\langle D_Mz,z\rangle}
+ =
+ \left\|
+ M_XD_M^{\dagger/2}\big|_{S_M}
+ \right\|^2;
+ \label{eq:tpc72-kappa-Rayleigh}
+\end{equation}
+set \(\kappa_M=0\) when the missing carrier is empty.  In particular,
+\begin{equation}
+ \|M_Xz\|^2
+ \le
+ \kappa_M\langle D_Mz,z\rangle.
+ \label{eq:tpc72-Rayleigh-domination}
+\end{equation}
+This is the restricted physical Rayleigh constant, not an ambient degree,
+\(\|M_X\|^2\), or a quotient for a vector selected after the estimate.
+
+Let \(\cD_{\rm ref}\) be one nonnegative reference form.  Fix either the
+uniform represented scope \(z\in(\ker A_X)^\perp\) or one predeclared
+distinguished vector.  In the distinguished case one may use the
+corresponding fixed-vector Rayleigh quotient, but it must not be reported
+as the uniform \(\kappa_M\).  Suppose, throughout the chosen scope,
+\begin{align}
+ \kappa_M
+ &\le X^{\nu_M+o(1)},
+ \label{eq:tpc72-native-exponent}\\
+ \langle D_Mz,z\rangle
+ &\le
+ X^{-\sigma_M+o(1)}\cD_{\rm ref}(z),
+ \label{eq:tpc72-missing-mass}\\
+ \|A_Xz\|^2
+ &\ge
+ X^{-\lambda_{\rm rep}+o(1)}\cD_{\rm ref}(z).
+ \label{eq:tpc72-represented-comparison}
+\end{align}
+Then
+\begin{equation}
+ \frac{\|M_Xz\|^2}{\|A_Xz\|^2}
+ \le
+ X^{\nu_M+\lambda_{\rm rep}-\sigma_M+o(1)}
+ \label{eq:tpc72-relative-missing}
+\end{equation}
+ whenever \(A_Xz\ne0\).  Thus
+\begin{equation}
+ \boxed{\sigma_M>\nu_M+\lambda_{\rm rep}}
+ \label{eq:tpc72-zero-cost-reassembly}
+\end{equation}
+makes the missing perturbation \(o(1)\).
+
+When \eqref{eq:tpc72-native-exponent}--%
+\eqref{eq:tpc72-represented-comparison} are used only to prove
+\eqref{eq:tpc72-zero-cost-reassembly}, their exponents are diagnostic inputs
+to \(\lambda_{\rm reasm}\); they are not added a second time to
+\eqref{eq:tpc72-global-ledger}.  If the comparison gives a genuine nonzero
+loss instead, that resulting physical loss is charged once.
+
+The nuisance condition
+\begin{equation}
+ \|C_N\|=o(1)
+ \label{eq:tpc72-nuisance-small}
+\end{equation}
+remains separate.
+
+\begin{proposition}[No-double-charge law]
+\label{prop:no-double-charge}
+Choose one decomposition of the actual physical chain into composable
+arrows.  Algebraic identities and isometric or \(X^{o(1)}\)-conditioned
+relabelings cost zero.  The fixed-power loss of each non-isometric physical
+arrow is entered exactly once.  Any refined exponents used only to certify
+one arrow are not added again.
+\end{proposition}
+
+\begin{proof}
+Successive lower comparisons multiply, so their logarithmic losses add.
+Factoring one arrow internally and then adding both its internal losses and
+its already-derived external loss counts the same ratio twice.  Conversely,
+omitting a distinct non-isometric arrow removes a necessary comparison.
+This proves the stated accounting rule.
+\end{proof}
+
+\subsection{Current endpoint status}
+
+The algebraic identities and isometric or subpower-conditioned relabelings
+in TPC--63--TPC--71 cost zero.  Their non-isometric physical comparisons,
+including parent inflation when used, must be charged once.  The block does
+not assign endpoint-quality values simultaneously to
+\(\lambda_{\rm term}^{\rm eff}\), \(\lambda_{\rm rep}\),
+\(\nu_M,\sigma_M\), the nuisance term, and the downstream boundary and tail.
+Therefore \eqref{eq:tpc72-strict-budget} has not been verified.
