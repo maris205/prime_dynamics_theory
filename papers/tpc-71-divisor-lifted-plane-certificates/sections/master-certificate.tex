@@ -1,0 +1,250 @@
+\section{The master divisor--variation certificate}
+\label{sec:master-certificate}
+
+Let \(K\) be supported on
+\([1,U]\times[1,V]\).  For \(D\ge1\), define the exact diagonal tail
+\begin{equation}
+ \cT_D(K)
+ =
+ \sum_{d>D}|\mu(d)|
+ \sum_{x,y\ge1}
+ |\mu(dx)\mu(dy)K(dx,dy)|.
+\label{eq:exact-diagonal-tail}
+\end{equation}
+This definition retains the actual support and coefficients.  It can be
+substantially smaller than the ambient estimate used below.
+
+\begin{theorem}[Exact truncated expansion and master bound]
+\label{thm:master-certificate}
+For every integer \(D\ge1\),
+\begin{align}
+ \cS(K)
+ ={}&
+ \sum_{d\le D}\mu(d)
+ \sum_{x,y\ge1}
+ M_d(x)M_d(y)\Delta_{12}K^{[d]}(x,y)
+ +\cR_D(K),
+\label{eq:exact-truncated-expansion}\\
+ |\cR_D(K)|
+ \le{}&\cT_D(K).
+\label{eq:tail-remainder-bound}
+\end{align}
+In particular,
+\begin{equation}
+ \boxed{
+ |\cS(K)|
+ \le
+ \sum_{d\le D}
+ \mathfrak M_d(U/d)\mathfrak M_d(V/d)
+ \cV_\square(K^{[d]})
+ +\cT_D(K).}
+\label{eq:master-certificate}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Split the exact diagonal lift
+\eqref{eq:exact-diagonal-lift} at \(d\le D\).  Apply
+\cref{prop:one-diagonal-abel} to every low diagonal.  The remaining exact
+sum is \(\cR_D(K)\); the triangle inequality gives
+\eqref{eq:tail-remainder-bound}.  A second triangle inequality and
+\eqref{eq:one-diagonal-bound} give \eqref{eq:master-certificate}.
+\end{proof}
+
+\begin{proposition}[Ambient diagonal-tail estimate]
+\label{prop:ambient-tail}
+For every \(D\ge1\),
+\begin{equation}
+ \boxed{
+ \cT_D(K)
+ \le
+ \|K\|_\infty
+ \sum_{d>D}\left\lfloor\frac Ud\right\rfloor
+ \left\lfloor\frac Vd\right\rfloor
+ \le
+ \frac{\|K\|_\infty UV}{D}.}
+\label{eq:ambient-tail}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Drop the M\"obius factors in \eqref{eq:exact-diagonal-tail}.  For fixed
+\(d\), at most \(\lfloor U/d\rfloor\lfloor V/d\rfloor\) pairs occur.
+Finally,
+\[
+ \sum_{d>D}\frac1{d^2}\le\frac1D.
+\]
+\end{proof}
+
+\begin{remark}[Order of limits]
+The safe unconditional procedure is: first fix \(D\), use
+\cref{lem:fixed-d-mertens} on the finitely many low diagonals, take the
+physical scale to infinity, and only then let \(D\to\infty\).  Choosing a
+growing \(D\) at the start would require a new uniform estimate for
+\(M_d\).
+\end{remark}
+
+\subsection{A mass-normalized form}
+
+For applications, choose a positive reference scale \(\cA(K)\).  It may be
+the actual \(\ell^1\) atomic mass, a row-pair majorant, or a normalized
+Gram denominator.  Define
+\begin{equation}
+ \cB_D(K)
+ =
+ \sum_{d\le D}
+ \mathfrak M_d(U/d)\mathfrak M_d(V/d)
+ \cV_\square(K^{[d]})
+ +\cT_D(K).
+\label{eq:certificate-numerator}
+\end{equation}
+Then
+\begin{equation}
+ \frac{|\cS(K)|}{\cA(K)}
+ \le
+ \frac{\cB_D(K)}{\cA(K)}
+\label{eq:relative-certificate}
+\end{equation}
+whenever \(\cA(K)>0\).  This tautological-looking normalization is
+essential.  A bound \(o(\|K\|_\infty UV)\) can be useless if the physical
+carrier has only \(o(UV)\) actual mass.
+
+\begin{definition}[Variation--tail gate]
+\label{def:variation-tail-gate}
+A family \(K_X\) closes the variation--tail gate at reference scale
+\(\cA_X\) if there is a choice of \(D=D(X)\), justified with whatever
+uniform restricted-Mertens input it uses, such that
+\[
+ \cB_{D(X)}(K_X)=o(\cA_X).
+\]
+With fixed-\(d\) input only, a sufficient safe formulation is a two-limit
+statement: low-diagonal contributions are \(o_D(\cA_X)\) for each fixed
+\(D\), and
+\[
+ \lim_{D\to\infty}\limsup_{X\to\infty}
+ \frac{\cT_D(K_X)}{\cA_X}=0.
+\]
+\end{definition}
+
+\begin{remark}
+The definition is a sufficient certificate, not a necessary condition for
+cancellation.  Large variation can make this route fail even when the
+original signed sum is small for another reason.
+\end{remark}
+
+\subsection{Banach-valued version}
+
+The exact formulas also hold for kernels taking values in a complex Banach
+space \(\mathsf X\).  Replace absolute values of mixed differences by
+\(\mathsf X\)-norms and define
+\[
+ \cV_{\square,\mathsf X}(K)
+ =
+ \sum_{x,y}\|\Delta_{12}K(x,y)\|_{\mathsf X}.
+\]
+
+\begin{corollary}[Banach-valued certificate]
+\label{cor:banach-valued}
+For finitely supported \(K:\N^2\to\mathsf X\),
+\[
+ \|\cS(K)\|_{\mathsf X}
+ \le
+ \sum_{d\le D}
+ \mathfrak M_d(U/d)\mathfrak M_d(V/d)
+ \cV_{\square,\mathsf X}(K^{[d]})
+ +\cT_{D,\mathsf X}(K),
+\]
+where the tail is defined by replacing scalar absolute values in
+\eqref{eq:exact-diagonal-tail} with \(\mathsf X\)-norms.
+\end{corollary}
+
+\begin{proof}
+All sums are finite.  The Abel identities use only addition and scalar
+multiplication; the final estimate is the triangle inequality in
+\(\mathsf X\).
+\end{proof}
+
+\begin{remark}
+Taking \(\mathsf X\) to be a matrix space with operator or star norm can
+avoid an entrywise loss when a common primitive coordinate system exists.
+In the literal carrier, however, the primitive coordinates depend on the
+row pair.  That alignment issue must be verified rather than assumed.
+\end{remark}
+
+\subsection{An anisotropic one-direction certificate}
+
+The full mixed-variation norm is not the only option.  If one cofactor
+direction is regular while the other is rough, perform Abel summation only
+in the regular direction and take absolute values in the other.
+
+\begin{definition}
+For a finitely supported kernel \(F\), set
+\[
+ \cV_{1,\ell^1}(F)
+ =
+ \sum_{x,y\ge1}|\Delta_1F(x,y)|,
+ \qquad
+ \cV_{2,\ell^1}(F)
+ =
+ \sum_{x,y\ge1}|\Delta_2F(x,y)|.
+\]
+Zero extension again includes terminal boundary jumps.
+\end{definition}
+
+\begin{proposition}[One-direction diagonal certificate]
+\label{prop:anisotropic-certificate}
+For every \(D\ge1\),
+\begin{align}
+ |\cS(K)|
+ &\le
+ \sum_{d\le D}
+ \mathfrak M_d(U/d)\cV_{1,\ell^1}(K^{[d]})
+ +\cT_D(K),
+\label{eq:u-anisotropic-certificate}\\
+ |\cS(K)|
+ &\le
+ \sum_{d\le D}
+ \mathfrak M_d(V/d)\cV_{2,\ell^1}(K^{[d]})
+ +\cT_D(K).
+\label{eq:v-anisotropic-certificate}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+In the low-\(d\) term of \eqref{eq:exact-diagonal-lift}, fix \(y\) and
+apply one-dimensional summation by parts in \(x\).  Its absolute value is
+at most
+\[
+ \mathfrak M_d(U/d)\sum_x|\Delta_1K^{[d]}(x,y)|.
+\]
+Sum over \(y\), using
+\(|\mu(y)\one_{(y,d)=1}|\le1\), then sum over \(d\le D\) and retain the
+same exact tail.  The other inequality is symmetric.
+\end{proof}
+
+\begin{corollary}[One regular direction is enough at ambient scale]
+\label{cor:one-regular-direction}
+Suppose \(U\to\infty\), \(B=\|K\|_\infty>0\), and, for every fixed \(d\),
+\[
+ \cV_{1,\ell^1}(K^{[d]})\ll_d BV.
+\]
+Then
+\[
+ \cS(K)=o(BUV)
+\]
+provided the ambient diagonal tail is treated by taking the scale limit
+first and then \(D\to\infty\).  A symmetric statement holds when only
+\(V\to\infty\).
+\end{corollary}
+
+\begin{proof}
+Use \eqref{eq:u-anisotropic-certificate},
+\(\mathfrak M_d(U/d)=o_d(U/d)\), and
+\eqref{eq:ambient-tail}.
+\end{proof}
+
+\begin{remark}
+The anisotropic certificate gains only one Mertens factor, but it does not
+charge variation in the rough direction.  It is therefore a genuine
+alternative gate, not merely a weakening of notation.
+\end{remark}

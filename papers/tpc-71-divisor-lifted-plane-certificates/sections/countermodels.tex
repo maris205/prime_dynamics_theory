@@ -1,0 +1,179 @@
+\section{Countermodels and kill criteria}
+\label{sec:countermodels}
+
+The following examples prevent the regular-kernel theorem from being
+silently promoted to the literal carrier.
+
+\subsection{Bounded amplitude is insufficient}
+
+Define on \([1,U]\times[1,V]\)
+\[
+ K_{\rm match}(u,v)=\mu(uv).
+\]
+Then \(\|K_{\rm match}\|_\infty\le1\), but
+\begin{equation}
+ \cS(K_{\rm match})
+ =
+ \sum_{u\le U,v\le V}\mu(uv)^2
+ =
+ \mathfrak S_{\rm sf}UV+o(UV).
+\label{eq:sign-matched-countermodel}
+\end{equation}
+Thus no estimate of the form \(o(UV)\) can hold for all bounded kernels.
+The kernel has selected the exact arithmetic sign.
+
+There is also a nonnegative version:
+\[
+ K_+(u,v)=\one_{\mu(uv)=1}.
+\]
+By \eqref{eq:squarefree-pair-asymptotic} and
+\eqref{eq:primitive-rectangle},
+\begin{equation}
+ \cS(K_+)
+ =
+ \frac{\mathfrak S_{\rm sf}}2UV+o(UV).
+\label{eq:nonnegative-sign-selected-mask}
+\end{equation}
+Hence nonnegativity of the mask does not prevent coherent parity selection.
+These are abstract plane kernels; we do not assert that the physical
+prime-line mask equals either one.
+
+\subsection{A prime mask can freeze the plane sign}
+
+Let
+\[
+ K_{\mathbb P,N}(u,v)
+ =
+ \one_{\substack{u,v\le N\ {\rm prime}\\u\ne v}}.
+\]
+Its support is primitive and squarefree.  Since \(\mu(p)=-1\) for every
+prime,
+\[
+ \cS(K_{\mathbb P,N})
+ =
+ \pi(N)(\pi(N)-1)
+ =
+ \|K_{\mathbb P,N}\|_{\ell^1}.
+\]
+Thus prime support by itself does not create M\"obius cancellation; it can
+freeze the sign completely.  This example is not the literal two-prime-line
+kernel, but it explains why an upper-bound sieve for its capacity cannot
+serve as a variation or discrepancy theorem.
+
+\subsection{A primitive line contains a Chowla-type boundary}
+
+Take
+\[
+ K_{\rm line,N}(u,v)=\one_{v=u+1,\ u\le N}.
+\]
+Every supporting pair is coprime, but
+\[
+ \cS(K_{\rm line,N})
+ =
+ \sum_{u\le N}\mu(u)\mu(u+1).
+\]
+An unweighted \(o(N)\) theorem here is the open two-point Chowla
+correlation.  The regular-kernel theorem correctly does not apply: a thin
+diagonal graph has mixed variation growing like its line length, rather
+than \(O(\|K\|_\infty)\).  Known logarithmically averaged results
+\citep{Tao2016LogChowla} do not turn this raw fixed line into an
+unweighted theorem.
+
+\subsection{Small ambient bound can be physically vacuous}
+
+Let \(K\) be supported on a set of size \(A=o(UV)\), with
+\(|K|\le1\).  The unconditional conclusion
+\[
+ \cS(K)=o(UV)
+\]
+does not imply \(o(A)\), and may be larger than the entire physical mass.
+The only relevant statement is the relative certificate
+\[
+ \cB_D(K)=o(\cA(K))
+\]
+with \(\cA(K)\) chosen from the actual normalization.  This is why
+\cref{def:variation-tail-gate} is not cosmetic.
+
+\subsection{Pairwise decay can lose to row growth}
+
+For each dimension \(R\), let a symmetric defect have zero diagonal and
+all off-diagonal entries \(R^{-1}\).  Every fixed entry tends to zero, but
+the top eigenvalue is
+\[
+ \frac{R-1}{R}\longrightarrow1.
+\]
+Therefore a fixed-pair primitive-plane estimate, even if uniform in all
+other parameters, is not an operator saving unless its row sum or Perron
+radius also tends to zero.
+
+\subsection{A mixed trace does not control the erasure operator}
+
+Let
+\[
+ R=0,
+ \qquad
+ E=
+ \begin{pmatrix}
+ 0&1\\
+ 1&0
+ \end{pmatrix}.
+\]
+Then every \(ER\) rectangle scalar and
+\(\operatorname{tr}(ER)\) vanish, while
+\[
+ \|E\|=1.
+\]
+Thus even perfect cancellation in the anchored TPC--70 target cannot be
+renamed as an erasure-operator bound.  A direct two-corner or complete
+moment bridge is indispensable.
+
+\subsection{Separate \texorpdfstring{\(q\)}{q}-bounds can destroy cancellation}
+
+Take two divisor slices with
+\[
+ K_{q_1}=F,\qquad K_{q_2}=-F.
+\]
+The aggregate kernel is zero, while
+\[
+ \cV_\square(K_{q_1})+\cV_\square(K_{q_2})
+ =
+ 2\cV_\square(F).
+\]
+Thus the q-resolved triangle inequality can be strictly weaker than
+variation of the exact aggregate.  Conversely, no cancellation between
+q-slices may be assumed unless their literal phases produce it.
+
+\subsection{Failure of one certificate is not failure of cancellation}
+
+Let \(K\) be any highly oscillatory kernel whose signed plane sum happens
+to vanish exactly.  Its mixed variation can still be of order \(UV\).
+Therefore a large value of
+\(\cV_\square(K^{[d]})\) kills the divisor--variation route only.  It does
+not prove that the original physical coefficient is large.
+
+\subsection{Explicit stop rules}
+
+For the current route, the following outcomes are decisive.
+
+\begin{enumerate}[label=\textup{K\arabic*.},leftmargin=2.4em]
+ \item If the exact physical kernel has
+ \[
+ \cB_D(K^\circ_{\mathfrak a})
+ \not=o(\cA_{\mathfrak a})
+ \]
+ for an anchor family carrying a nonnegligible part of the declared trace
+ scale, then the present anchored variation route does not close.
+ \item Even if the anchored sums make
+ \(\operatorname{tr}(ER)=o(1)\) at its declared scale, the operator route
+ stops unless a new direct-entry, row-local, or growing-moment bridge is
+ proved.  Global trace cancellation alone is not such a bridge.
+ \item If the native defect becomes small but the mass comparison,
+ represented lower frame, or nuisance shorting term fails, reassembly
+ stops; the plane result is not upgraded to a prime-pair statement.
+ \item If a required net exponent loss reaches or exceeds \(1/400\),
+ including equality, the current endpoint implication stops.
+\end{enumerate}
+
+Each stop rule leaves a valid negative or boundary result: it identifies
+which exact certificate fails without claiming that every possible route
+fails.

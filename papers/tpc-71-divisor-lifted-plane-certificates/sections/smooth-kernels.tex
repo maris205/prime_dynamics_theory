@@ -1,0 +1,194 @@
+\section{Unconditional cancellation for regular plane kernels}
+\label{sec:smooth-kernels}
+
+The master certificate has a positive unconditional consequence.  It is
+useful both as a theorem and as a calibration of what the physical kernel
+would need to resemble.
+
+\begin{theorem}[Bounded fixed-d variation implies cancellation]
+\label{thm:regular-kernel-cancellation}
+Let \(K_{U,V}\) be supported on
+\([1,U]\times[1,V]\), and put
+\[
+ B_{U,V}=\|K_{U,V}\|_\infty.
+\]
+Assume \(B_{U,V}>0\) and, for every fixed \(d\ge1\),
+\begin{equation}
+ \cV_\square(K_{U,V}^{[d]})
+ \le C_d B_{U,V}
+\label{eq:fixed-d-variation-hypothesis}
+\end{equation}
+with \(C_d\) independent of \(U,V\).  Then, as
+\(\min(U,V)\to\infty\),
+\begin{equation}
+ \boxed{
+ \sum_{\substack{u\le U,\ v\le V\\(u,v)=1}}
+ \mu(u)\mu(v)K_{U,V}(u,v)
+ =
+ o(B_{U,V}UV).}
+\label{eq:regular-kernel-cancellation}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Fix \(D\).  By \cref{lem:fixed-d-mertens}, for every \(d\le D\),
+\[
+ \mathfrak M_d(U/d)\mathfrak M_d(V/d)
+ =
+ o_d(UV/d^2).
+\]
+The finitely many low-diagonal terms in
+\eqref{eq:master-certificate}, divided by \(B_{U,V}UV\), therefore tend to
+zero by \eqref{eq:fixed-d-variation-hypothesis}.  The ambient tail
+\eqref{eq:ambient-tail} contributes at most \(1/D\).  Take the scale limit
+first and then \(D\to\infty\).
+\end{proof}
+
+\begin{corollary}[The primitive rectangle]
+\label{cor:primitive-rectangle}
+As \(\min(U,V)\to\infty\),
+\begin{equation}
+ \sum_{\substack{u\le U,\ v\le V\\(u,v)=1}}
+ \mu(u)\mu(v)=o(UV).
+\label{eq:primitive-rectangle}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Take \(K=\one_{[1,U]\times[1,V]}\).  For every \(d\), its zero-extended
+dilation is another rectangle and
+\[
+ \cV_\square(K^{[d]})=1.
+\]
+Apply \cref{thm:regular-kernel-cancellation}.
+\end{proof}
+
+\begin{remark}
+\Cref{cor:primitive-rectangle} is not the two-point Chowla conjecture.
+The two variables are independently averaged over a full rectangle, and
+the coprimality condition turns the sign into \(\mu(uv)\).  No prescribed
+affine relation such as \(v=u+1\) is imposed.
+\end{remark}
+
+\subsection{Projective bounded variation}
+
+For a finitely supported one-dimensional sequence \(f\), define its
+zero-extended variation
+\[
+ \cV_0(f)=\sum_{x\ge1}|f(x)-f(x+1)|.
+\]
+
+\begin{lemma}[Projective variation bound]
+\label{lem:projective-variation}
+If
+\[
+ K(x,y)=\sum_{r=1}^R f_r(x)g_r(y),
+\]
+then
+\begin{equation}
+ \cV_\square(K)
+ \le
+ \sum_{r=1}^R\cV_0(f_r)\cV_0(g_r).
+\label{eq:projective-variation}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For a rank-one kernel,
+\[
+ \Delta_{12}(fg)(x,y)
+ =
+ \bigl(f(x)-f(x+1)\bigr)
+ \bigl(g(y)-g(y+1)\bigr).
+\]
+Sum absolute values and then use the triangle inequality over \(r\).
+\end{proof}
+
+\begin{corollary}[Finite projective-BV families]
+\label{cor:projective-bv}
+Suppose that, for every fixed \(d\), the dilated kernels admit
+representations
+\[
+ K_{U,V}^{[d]}(x,y)
+ =
+ \sum_r f_{r,d}(x)g_{r,d}(y)
+\]
+such that
+\[
+ \sum_r\cV_0(f_{r,d})\cV_0(g_{r,d})
+ \ll_d B_{U,V}.
+\]
+Then \eqref{eq:regular-kernel-cancellation} holds.
+\end{corollary}
+
+\begin{proof}
+Combine \cref{lem:projective-variation} with
+\cref{thm:regular-kernel-cancellation}.
+\end{proof}
+
+\subsection{Dyadic localization}
+
+The same argument applies to translated rectangles.  If \(K\) is supported
+on
+\[
+ U_0<u\le U_1,\qquad V_0<v\le V_1,
+\]
+zero extension automatically inserts the four boundary jumps.  One may
+also use interval partial sums
+\[
+ M_d(x)-M_d(U_0/d)
+\]
+inside the Abel formula.  On dyadic boxes with \(U,V\to\infty\),
+\[
+ U<u\le2U,\qquad V<v\le2V,
+\]
+fixed-\(d\) Mertens cancellation is still \(o(U)\) and \(o(V)\).
+Therefore \cref{thm:regular-kernel-cancellation} is stable under a bounded
+number of dyadic localizations.  Summing \(O(\log^2 X)\) boxes is harmless
+only when the target ledger permits that subpower bookkeeping and when the
+variation bounds are uniform over the boxes.
+Boxes with \(U=O(1)\) or \(V=O(1)\) belong instead to the boundary or
+anisotropic sectors of \cref{sec:physical-gate}.
+
+\subsection{A squarefree-pair calibration}
+
+The set on which \(\mu(uv)\ne0\) has positive planar density
+\begin{equation}
+ \mathfrak S_{\rm sf}
+ =
+ \prod_p\left(1-\frac3{p^2}+\frac2{p^3}\right)>0.
+\label{eq:squarefree-pair-density}
+\end{equation}
+Indeed, the local condition is that the sum of the two \(p\)-adic
+valuations is at most one.  Its local density is
+\[
+ (1-p^{-1})^2
+ +2(p^{-1}-p^{-2})(1-p^{-1})
+ =
+ 1-\frac3{p^2}+\frac2{p^3}.
+\]
+For a fixed \(z\), the Chinese remainder theorem therefore gives the
+product of these factors over \(p\le z\), up to
+\(O_z(U+V+1)\) boundary pairs.  A violation caused by a prime \(p>z\)
+requires
+\[
+ p^2\mid u,\qquad\text{or}\qquad
+ p^2\mid v,\qquad\text{or}\qquad p\mid(u,v).
+\]
+The union of these events contains at most
+\[
+ 3UV\sum_{p>z}\frac1{p^2}
+\]
+pairs.  Let first \(\min(U,V)\to\infty\) and then \(z\to\infty\).
+This proves
+\begin{equation}
+ \sum_{u\le U,v\le V}\mu(uv)^2
+ =
+ \mathfrak S_{\rm sf}UV+o(UV)
+\label{eq:squarefree-pair-asymptotic}
+\end{equation}
+as \(\min(U,V)\to\infty\).  Together with
+\cref{cor:primitive-rectangle}, this shows that the signs \(+1\) and
+\(-1\) of \(\mu(uv)\) each occupy asymptotically
+\(\mathfrak S_{\rm sf}UV/2\) points.  This fact will calibrate the hard-mask
+countermodel in \cref{sec:countermodels}.

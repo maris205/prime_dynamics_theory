@@ -1,0 +1,177 @@
+\section{The primitive-plane interface}
+\label{sec:primitive-interface}
+
+We first state the precise input inherited from TPC--70.  This section is a
+dictionary, not a new estimate.
+
+\subsection{Anchor and erasure coordinates}
+
+Fix two distinct physical rows \(m,n\), one nonzero shift \(h_0\), a
+same-residual anchor time \(j_R\), and an unequal-residual erasure time
+\(j_E\).  We retain the literal hypotheses
+\[
+ (mn,h_0)=1,\qquad d_m\mid m,\qquad d_n\mid n,
+\]
+and all physical targets and residual labels used below are squarefree.
+Put
+\[
+ H=h_0(n-m),
+ \qquad
+ \Delta=j_E-j_R.
+\]
+At the anchor, write the two targets as
+\[
+ A_m=mj_R+h_0=P_mR_m,
+ \qquad
+ A_n=nj_R+h_0=P_nR_n.
+\]
+At the erasure time, write
+\[
+ B_m=mj_E+h_0=Q_mS_m,
+ \qquad
+ B_n=nj_E+h_0=Q_nS_n.
+\]
+The four exact determinant identities are
+\begin{align}
+ nA_m-mA_n&=H,
+ &
+ nB_m-mB_n&=H,
+\label{eq:two-determinants}\\
+ B_m-A_m&=m\Delta,
+ &
+ B_n-A_n&=n\Delta,
+\label{eq:vertical-differences}\\
+ A_mB_n-B_mA_n&=H\Delta.
+\label{eq:four-corner-determinant}
+\end{align}
+
+Suppose that the anchor residuals agree after their row factors:
+\[
+ d_mR_m=d_nR_n.
+\]
+Write
+\[
+ (d_m,d_n)=g,
+ \qquad
+ d_m=ga,\quad d_n=gb,\quad(a,b)=1.
+\]
+On the squarefree physical carrier, \(g,a,b\) are pairwise coprime and
+squarefree.  The equality forces
+\[
+ R_m=bt,\qquad R_n=at
+\]
+for a squarefree \(t\) coprime to \(gab\), and the determinant equation
+forces
+\[
+ t\mid |H|.
+\]
+For fixed \(t\), the anchor prime factors lie on
+\[
+ nbP_m-maP_n=H/t.
+\]
+
+At the erasure time, write
+\[
+ q=(S_m,S_n),
+ \qquad
+ S_m=qu,\quad S_n=qv,\quad(u,v)=1.
+\]
+Then
+\[
+ q\mid |H|,
+ \qquad
+ nuQ_m-mvQ_n=H/q.
+\]
+The residuals are unequal exactly when
+\[
+ (u,v)\ne(b,a).
+\]
+
+\subsection{Frozen sign and the aggregate kernel}
+
+The physical target signs on the erasure edge reduce to
+\begin{equation}
+ \mu(d_mS_m)\mu(d_nS_n)
+ =
+ \mu(a)\mu(b)\mu(u)\mu(v).
+\label{eq:frozen-primitive-sign}
+\end{equation}
+The common content \(q\) cancels, and the right side is constant along the
+affine prime ray that parametrizes the admissible erasure times for fixed
+\((q,u,v)\).  Thus the time variable supplies weights and masks, not a new
+M\"obius oscillation.
+
+For a fixed same-residual anchor \(\mathfrak a\), let
+\[
+ K_{\mathfrak a,q}(u,v)
+\]
+denote the complete sum along that ray, including every literal terminal
+mask, endpoint, native-key constraint, prime-factor condition, normalization,
+and complex amplitude, and summing only actual unequal-residual erasure
+keys completing \(\mathfrak a\).  It is defined to be zero when the
+corresponding ray is absent.  In particular,
+\[
+ K_{\mathfrak a,q}(b,a)=0.
+\]
+Aggregate the divisor-many contents before taking absolute values:
+\begin{equation}
+ K_{\mathfrak a}(u,v)
+ =
+ \sum_{q\mid |H|}K_{\mathfrak a,q}(u,v).
+\label{eq:aggregate-q-kernel}
+\end{equation}
+Thus the literal aggregate is already zero at the excluded direction; set
+\begin{equation}
+ K^\circ_{\mathfrak a}(u,v)
+ =
+ K_{\mathfrak a}(u,v).
+\label{eq:anchor-removed-kernel}
+\end{equation}
+If one instead introduces an enlarged bookkeeping kernel
+\(\widehat K_{\mathfrak a}\) that includes the candidate site \((b,a)\),
+the corresponding literal kernel is
+\[
+ K^\circ_{\mathfrak a}
+ =
+ \widehat K_{\mathfrak a}
+ -
+ \widehat K_{\mathfrak a}(b,a)e_{b,a}.
+\]
+That is an optional analytic convention, not an extra physical atom.
+The literal signed sum attached to \(\mathfrak a\) is then
+\begin{equation}
+ \boxed{
+ \mathfrak X_{\mathfrak a}
+ =
+ \mu(a)\mu(b)
+ \sum_{\substack{u,v\ge1\\(u,v)=1}}
+ \mu(u)\mu(v)K^\circ_{\mathfrak a}(u,v).}
+\label{eq:physical-plane-coefficient}
+\end{equation}
+If \(\cR_{m,n}\) is the set of actual same-residual anchors for
+\(m<n\), TPC--70 gives
+\begin{equation}
+ \operatorname{tr}(ER)
+ =
+ 2\operatorname{Re}
+ \sum_{m<n}\sum_{\mathfrak a\in\cR_{m,n}}
+ \mathfrak X_{\mathfrak a}.
+\label{eq:trace-by-primitive-anchors}
+\end{equation}
+The normalization \(W_mW_n\) is already contained in every literal
+four-corner amplitude inside \(K_{\mathfrak a,q}\).
+
+\begin{remark}[Aggregation order]
+The sum over \(q\mid |H|\) in \eqref{eq:aggregate-q-kernel} precedes all
+absolute values.  Bounding each \(q\)-slice separately is valid, but may pay
+an unnecessary divisor factor and discard literal phase cancellation.
+\end{remark}
+
+\begin{remark}[Anchor and operator scope]
+The primitive coordinates \(a,b,u,v\) depend on the row pair and the
+kernel depends on the complete same-residual anchor.  A theorem for one
+\(\mathfrak a\), or even cancellation after summing all anchors in
+\eqref{eq:trace-by-primitive-anchors}, is not an entrywise theorem for
+\(E\) and is not an operator theorem.  This distinction is retained in
+\cref{sec:physical-gate}.
+\end{remark}

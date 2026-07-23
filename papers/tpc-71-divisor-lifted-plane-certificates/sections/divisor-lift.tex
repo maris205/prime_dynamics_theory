@@ -1,0 +1,154 @@
+\section{Coprimality collapse and the diagonal divisor lift}
+\label{sec:divisor-lift}
+
+Throughout this section, \(K:\N^2\to\mathbb C\) has finite support.  All
+sums are therefore finite, and no limiting interchange is hidden.
+
+\begin{lemma}[Primitive sign collapse]
+\label{lem:primitive-sign-collapse}
+For all positive integers \(u,v\),
+\begin{equation}
+ \boxed{
+ \one_{(u,v)=1}\mu(u)\mu(v)=\mu(uv).}
+\label{eq:primitive-sign-collapse}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If either \(u\) or \(v\) is not squarefree, both sides vanish.  If both are
+squarefree and coprime, multiplicativity gives
+\(\mu(uv)=\mu(u)\mu(v)\).  If both are squarefree but share a prime, then
+\(uv\) is not squarefree, so both sides again vanish.
+\end{proof}
+
+The identity is elementary, but its role is structural.  The coprimality
+mask and the two signs are not three separate objects; together they are
+one product M\"obius coefficient.
+
+\begin{lemma}[Coprimality inversion]
+\label{lem:coprimality-inversion}
+For all \(u,v\ge1\),
+\begin{equation}
+ \mu(uv)
+ =
+ \mu(u)\mu(v)\sum_{d\mid(u,v)}\mu(d).
+\label{eq:mu-product-inversion}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If \(\mu(u)\mu(v)=0\), both sides vanish.  Otherwise \(u\) and \(v\) are
+squarefree, and
+\[
+ \sum_{d\mid(u,v)}\mu(d)=\one_{(u,v)=1}.
+\]
+Apply \cref{lem:primitive-sign-collapse}.
+\end{proof}
+
+\begin{theorem}[Exact diagonal divisor lift]
+\label{thm:diagonal-divisor-lift}
+Define
+\[
+ \cS(K)
+ =
+ \sum_{\substack{u,v\ge1\\(u,v)=1}}
+ \mu(u)\mu(v)K(u,v).
+\]
+Then
+\begin{align}
+ \cS(K)
+ &=
+ \sum_{u,v\ge1}\mu(uv)K(u,v)
+\label{eq:plane-as-product-mu}\\
+ &=
+ \sum_{d\ge1}\mu(d)
+ \sum_{\substack{x,y\ge1\\(x,d)=(y,d)=1}}
+ \mu(x)\mu(y)K(dx,dy).
+\label{eq:exact-diagonal-lift}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+The first equality is \cref{lem:primitive-sign-collapse}.  Insert
+\eqref{eq:mu-product-inversion} and interchange finite sums:
+\[
+ \cS(K)
+ =
+ \sum_{d\ge1}\mu(d)
+ \sum_{x,y\ge1}\mu(dx)\mu(dy)K(dx,dy).
+\]
+Only squarefree \(d\) contribute.  For such \(d\),
+\[
+ \mu(dx)
+ =
+ \mu(d)\mu(x)\one_{(x,d)=1},
+\]
+with the same identity for \(y\).  The two factors \(\mu(d)\) square to
+one, leaving \eqref{eq:exact-diagonal-lift}.
+\end{proof}
+
+\begin{remark}[The diagonal variable is new]
+The divisor \(d\) in \eqref{eq:exact-diagonal-lift} is introduced by
+coprimality inversion.  It is not the row cofactor \(d_m\), the anchor
+content \(t\), or the erasure content \(q\) of
+\cref{sec:primitive-interface}.  Conflating these variables would change
+both the support and the sign.
+\end{remark}
+
+\begin{remark}[Why the lift helps]
+For a fixed \(d\), the two variable signs in
+\eqref{eq:exact-diagonal-lift} separate.  Their only modification is the
+fixed local condition \((x,d)=(y,d)=1\).  The price is a sum over diagonal
+dilations \(K(dx,dy)\).  Low \(d\) will be handled by the prime number
+theorem; large \(d\) will be an explicit tail.
+\end{remark}
+
+\subsection{Removing one primitive direction}
+
+The physical erasure plane excludes the anchor direction \((b,a)\), where
+\((a,b)=1\).  For any kernel \(K\), define
+\[
+ K^\circ=K-K(b,a)e_{b,a},
+ \qquad
+ e_{b,a}(u,v)=\one_{(u,v)=(b,a)}.
+\]
+Then
+\begin{equation}
+ \cS(K^\circ)
+ =
+ \cS(K)-\mu(a)\mu(b)K(b,a).
+\label{eq:anchor-point-removal}
+\end{equation}
+Thus the unequal-residual condition is exactly one primitive-plane site
+correction.  Its value may aggregate several underlying labels and is not
+called one physical atom.  For the literal TPC--70 erasure kernel the site
+is already zero; the formula is useful only if one first works with an
+enlarged bookkeeping kernel.
+
+\begin{lemma}[Diagonal visibility of the removed point]
+\label{lem:anchor-diagonal-visibility}
+Let \(K^{[d]}(x,y)=K(dx,dy)\).  The removed point \((b,a)\) appears in
+\((K^\circ)^{[d]}\) only for \(d=1\).  For every \(d>1\),
+\[
+ (K^\circ)^{[d]}=K^{[d]},
+\]
+and hence
+\[
+ \cV_\square\bigl((K^\circ)^{[d]}\bigr)
+ =
+ \cV_\square(K^{[d]})
+\]
+For \(d=1\),
+\[
+ \cV_\square(K^\circ)
+ \le
+ \cV_\square(K)+4|K(b,a)|.
+\]
+\end{lemma}
+
+\begin{proof}
+The point survives the \(d\)-dilation only if \(d\mid a\) and \(d\mid b\).
+Since \((a,b)=1\), this forces \(d=1\).  A point mass has four nonzero
+mixed differences, counted with multiplicity at the axes when necessary,
+and hence mixed variation at most four times its amplitude.
+\end{proof}

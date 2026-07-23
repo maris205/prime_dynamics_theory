@@ -1,0 +1,40 @@
+\section{Relation to existing M\"obius-correlation results}
+\label{sec:literature-boundary}
+
+The present theorem uses only one-variable Mertens cancellation after a
+full two-dimensional average and a diagonal divisor lift.  It should not
+be confused with a theorem for a prescribed pair of affine forms.
+
+For fixed nonproportional affine forms, logarithmically averaged two-point
+Chowla is known \citep{Tao2016LogChowla}.  Averaged unweighted results are
+also available when an additional shift or coefficient is averaged
+\citep{MatomakiRadziwillTao2015}.  Those theorems are powerful but do not
+directly control the literal kernel here, whose coefficients can grow with
+the physical scale and whose prime-line and native-key masks select a
+restricted subset of the cofactor plane.
+
+TPC--33 records the detailed mismatch \citep{WangTPC33}.  The unresolved
+physical requirements include:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item growing affine coefficients and row-dependent primitive coordinates;
+ \item a fixed dyadic physical shell rather than only logarithmic averaging;
+ \item complete prime-line, endpoint, and native-key masks;
+ \item actual complex weights and row normalization;
+ \item uniformity over all active row pairs; and
+ \item an operator-scale saving compatible with the endpoint ledger.
+\end{enumerate}
+
+\Cref{thm:regular-kernel-cancellation} avoids the fixed-form Chowla barrier
+because it assumes regularity in two independent cofactor directions.
+If the kernel collapses onto a thin prescribed affine graph, its
+zero-extended mixed variation can be as large as its length, and the theorem
+does not manufacture a saving.  This is the correct behavior: the family
+of prescribed affine directions contains open two-point M\"obius
+correlations.
+
+The classical parity obstruction for sieve methods remains relevant
+\citep{HeathBrown1982Parity}.  The divisor lift is not a parity-breaking
+sieve.  It is an exact reindexing followed by prime-number-theorem
+cancellation under a deterministic regularity hypothesis.  Whether the
+literal physical kernel satisfies that hypothesis is precisely the new
+arithmetic gate.

@@ -1,0 +1,220 @@
+\section{Return to the fixed-shift mixed trace}
+\label{sec:physical-gate}
+
+We now apply the deterministic theorem to the exact anchored kernel in
+\eqref{eq:physical-plane-coefficient}.  This section states certificates,
+not estimates for the physical kernel.  The object being bounded is kept
+explicit: it is an anchored four-corner scalar contributing to
+\(\operatorname{tr}(ER)\), not a two-corner matrix entry of \(E\).
+
+\subsection{One same-residual anchor}
+
+Assume that \(K^\circ_{\mathfrak a}\) is supported on
+\([1,U_{\mathfrak a}]\times[1,V_{\mathfrak a}]\).  Define
+\begin{align}
+ \cB_{\mathfrak a}(D)
+ ={}&
+ \sum_{d\le D}
+ \mathfrak M_d(U_{\mathfrak a}/d)
+ \mathfrak M_d(V_{\mathfrak a}/d)
+ \cV_\square\bigl((K^\circ_{\mathfrak a})^{[d]}\bigr)
+\notag\\
+ &+\cT_D(K^\circ_{\mathfrak a}).
+\label{eq:physical-anchor-majorant}
+\end{align}
+
+\begin{proposition}[Literal anchored certificate]
+\label{prop:literal-anchor-certificate}
+For every \(D\ge1\),
+\begin{equation}
+ \boxed{
+ |\mathfrak X_{\mathfrak a}|
+ \le
+ \cB_{\mathfrak a}(D).}
+\label{eq:literal-anchor-certificate}
+\end{equation}
+For the literal erasure kernel the excluded site is already zero.  If an
+enlarged bookkeeping kernel is used, removing that site changes only the
+\(d=1\) variation, by at most
+\(4|\widehat K_{\mathfrak a}(b,a)|\).
+\end{proposition}
+
+\begin{proof}
+The prefactor \(\mu(a)\mu(b)\) in
+\eqref{eq:physical-plane-coefficient} has modulus one.  Apply
+\cref{thm:master-certificate} and then
+\cref{lem:anchor-diagonal-visibility}.
+\end{proof}
+
+\subsection{The exact global trace certificate}
+
+\begin{corollary}[Linear mixed-sector majorant]
+\label{cor:linear-mixed-sector-majorant}
+For every choice of anchorwise cutoffs \(D_{\mathfrak a}\ge1\),
+\begin{align}
+ |\operatorname{tr}(ER)|
+ &\le
+ 2\sum_{m<n}
+ \sum_{\mathfrak a\in\cR_{m,n}}
+ \cB_{\mathfrak a}(D_{\mathfrak a}),
+\label{eq:trace-plane-certificate}\\
+ |S_{2,1}|
+ &\le
+ 4\sum_{m<n}
+ \sum_{\mathfrak a\in\cR_{m,n}}
+ \cB_{\mathfrak a}(D_{\mathfrak a}),
+\label{eq:linear-sector-plane-certificate}
+\end{align}
+where \(S_{2,1}=2\operatorname{tr}(ER)\) is the full linear erasure
+coefficient in \(\operatorname{tr}(R+tE)^2\).
+\end{corollary}
+
+\begin{proof}
+Use the exact anchor expansion
+\eqref{eq:trace-by-primitive-anchors}, the triangle inequality, and
+\cref{prop:literal-anchor-certificate}.  The second formula uses the
+definition of \(S_{2,1}\).
+\end{proof}
+
+\begin{remark}[Normalization is already present]
+Every \(K_{\mathfrak a,q}\) is built from a four-corner amplitude divided
+by \(W_mW_n\).  No further factor
+\(\sqrt{W_mW_n}\) is introduced in
+\eqref{eq:physical-anchor-majorant}.  Doing so would double-normalize the
+rectangle scalar and would not turn it into an entry of \(E\).
+\end{remark}
+
+\subsection{The three trace-level physical gates}
+
+\Cref{cor:linear-mixed-sector-majorant} separates the remaining work at
+the level it actually controls.
+
+\paragraph{Gate A: low-diagonal variation.}
+For every relevant anchor and every low \(d\), one must control
+\[
+ \cV_\square\bigl((K^\circ_{\mathfrak a})^{[d]}\bigr).
+\]
+The kernel contains the actual prime-ray incidence and every native mask.
+Replacing it by a smooth envelope proves a theorem for the envelope, not
+for the literal coefficient, unless the replacement error is separately
+bounded.
+
+\paragraph{Gate B: diagonal tail relative to actual anchored mass.}
+The ambient estimate
+\[
+ \cT_D(K^\circ_{\mathfrak a})
+ \le
+ \|K^\circ_{\mathfrak a}\|_\infty
+ U_{\mathfrak a}V_{\mathfrak a}/D
+\]
+may be too large for a sparse carrier.  It must be compared with an actual
+anchored reference scale, for example
+\[
+ \cA_{\mathfrak a}
+ =
+ \sum_{u,v}|K^\circ_{\mathfrak a}(u,v)|,
+\]
+or directly within the global physical trace ledger.
+
+\paragraph{Gate C: growing-anchor summability.}
+A saving for every fixed anchor does not imply a saving after summing the
+growing family
+\[
+ \bigcup_{m<n}\cR_{m,n}.
+\]
+One needs
+\[
+ \sum_{m<n}\sum_{\mathfrak a\in\cR_{m,n}}
+ \cB_{\mathfrak a}(D_{\mathfrak a})
+ =
+ o(\cA_{\rm tr})
+\]
+at the declared trace reference scale \(\cA_{\rm tr}\).  Fixed-anchor
+little-oh notation without uniform domination is insufficient.
+
+\subsection{Boundary, long-ray interior, and short-ray tail}
+
+The diagonal tail \(\cT_D\) should not be confused with the geometric
+short-ray tail.  For each anchor, split the primitive support disjointly
+into
+\[
+ \Omega_{\rm bd}\sqcup\Omega_{\rm int}\sqcup\Omega_{\rm short}.
+\]
+Here \(\Omega_{\rm bd}\) contains small \(u\) or small \(v\);
+\(\Omega_{\rm int}\) contains cells on which both cofactor coordinates
+grow and the affine ray has many admissible time positions; and
+\(\Omega_{\rm short}\) contains directions whose ray length is \(O(1)\).
+Let the corresponding zero-extended kernels be
+\[
+ K_{\rm bd},\qquad K_{\rm int},\qquad K_{\rm short}.
+\]
+Then the exact triangle decomposition gives
+\begin{equation}
+ |\cS(K^\circ_{\mathfrak a})|
+ \le
+ \|K_{\rm bd}\|_{\ell^1}
+ +\|K_{\rm short}\|_{\ell^1}
+ +\cB_D(K_{\rm int}).
+\label{eq:boundary-interior-short}
+\end{equation}
+Thus a sufficient anchored closure consists of
+\[
+ \|K_{\rm bd}\|_{\ell^1}
+ +\|K_{\rm short}\|_{\ell^1}
+ =o(\cA_{\mathfrak a})
+\]
+together with a mass-normalized variation--tail certificate for the
+interior.  Having only one time point on each short ray does not make the
+sum over all such directions small; its literal total mass must be
+estimated.
+
+If only one of \(u,v\) is large in an intermediate sector, the anisotropic
+certificate \cref{prop:anisotropic-certificate} can be applied instead of
+discarding the sector.  Its one-direction variation must still be verified
+for the complete hard mask.
+
+\subsection{Why the \texorpdfstring{\(q\)}{q}-sum is not a fourth sign source}
+
+The common erasure content \(q\mid |H|\) disappears from
+\eqref{eq:frozen-primitive-sign}.  It remains inside
+\(K_{\mathfrak a,q}\) through ray geometry and weights.  Therefore:
+\begin{itemize}
+ \item cancellation among \(q\)-slices can occur only through their literal
+ complex amplitudes;
+ \item applying the triangle inequality before
+ \eqref{eq:aggregate-q-kernel} may lose that cancellation; and
+ \item the divisor bound \(\tau(|H|)=|H|^{o(1)}\) controls only
+ multiplicity, not M\"obius parity.
+\end{itemize}
+
+\subsection{The trace-to-operator bridge is open}
+
+A small value of \(\operatorname{tr}(ER)\) is not a norm bound for \(E\),
+for \(R+E\), or for the missing-native Gram.  Global cancellation among
+anchors can coexist with large row-local defects.  In particular,
+\cref{prop:literal-anchor-certificate} gives no entrywise domination of
+\(E\), so the star and Perron certificates of TPC--68 cannot be invoked
+directly.
+
+An operator-level continuation needs at least one genuinely new bridge:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item a direct primitive reindexing of the two-corner entries \(E_{m,n}\);
+ \item row-local anchored sums that dominate the relevant stars;
+ \item or uniform control of complete growing mixed moments, without
+ reducing them to the single global trace.
+\end{enumerate}
+This is an L2 interface, not a consequence of two-dimensional Abel
+summation.
+
+\subsection{Reassembly remains separate}
+
+Even an operator-level missing-native bound would control only one branch.
+The same-residual defect, total missing mass, represented lower frame, and
+the nuisance shorting term remain separate.  In the full reassembly notation
+of TPC--68,
+\[
+ G_{\rm sh}=G_{\rm dir}-C_N.
+\]
+No plane estimate implies \(\|C_N\|=o(1)\), and no missing-native estimate
+supplies the represented lower bound.  These arrows must be verified on
+the same carrier and with the same normalization.

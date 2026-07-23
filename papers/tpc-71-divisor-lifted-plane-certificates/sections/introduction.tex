@@ -1,0 +1,141 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The signed missing-native route separates two questions which are often
+blurred.  The first is algebraic: after a residual label is erased, where
+does a nontrivial M\"obius sign actually survive?  TPC--68 shows that
+same-residual collisions freeze the target signs
+\citep{WangTPC68}.  TPC--69 then expands the residual and erasure operators
+in noncommutative words and proves that the complete two-erasure sector in
+every even moment is nonnegative \citep{WangTPC69}.  The first useful signed
+door is therefore the linear erasure sector or a higher, genuinely mixed
+sector.
+
+TPC--70 opens the linear sector at the level of one two-key rectangle
+\citep{WangTPC70}.  Its primitive coordinates have two decisive features.
+The common contents belong to divisor sets determined by
+\(H=h_0(n-m)\), while the remaining erasure direction is a coprime pair
+\((u,v)\).  More importantly, the surviving sign
+\[
+ \mu(a)\mu(b)\mu(u)\mu(v)
+\]
+is constant along the affine time parameter of each prime ray.  There is no
+time-randomness left to average on that ray.  Any cancellation must join
+different primitive directions.
+
+The present paper asks the next narrow question:
+
+\begin{quote}
+\emph{Which deterministic regularity of the exact primitive-plane kernel is
+sufficient to force cancellation, using only the prime number theorem?}
+\end{quote}
+
+The answer begins with a small identity that changes the geometry of the
+problem:
+\[
+ \one_{(u,v)=1}\mu(u)\mu(v)=\mu(uv).
+\]
+The apparently rough coprimality boundary can be opened by a diagonal
+divisor lift.  At each fixed divisor \(d\), the resulting signs separate
+again into two copies of the M\"obius function restricted to integers
+coprime to \(d\).  Two-dimensional Abel summation then transfers all
+cancellation into their partial sums and all geometric irregularity into
+the mixed variation of the dilated kernel.
+
+\subsection{Main results}
+
+Let \(K\) be supported on
+\([1,U]\times[1,V]\).  Write
+\[
+ K^{[d]}(a,b)=K(da,db)
+\]
+and extend it by zero outside its finite rectangle.  If
+\[
+ \cV_\square(K^{[d]})
+ =
+ \sum_{a,b\ge1}
+ \left|
+ K^{[d]}(a,b)-K^{[d]}(a+1,b)-K^{[d]}(a,b+1)
+ +K^{[d]}(a+1,b+1)
+ \right|,
+\]
+and define
+\[
+ \mathfrak M_d(X)=
+ \max_{1\le x\le X}
+ \left|\sum_{\substack{n\le x\\(n,d)=1}}\mu(n)\right|,
+ \qquad
+ \cT_D(K)\le \|K\|_\infty UV/D.
+\]
+Then the exact master bound proved below is
+\begin{align}
+\left|
+\sum_{\substack{u\le U,\ v\le V\\(u,v)=1}}
+\mu(u)\mu(v)K(u,v)
+\right|
+\le{}&
+\sum_{d\le D}
+\mathfrak M_d(U/d)\mathfrak M_d(V/d)
+\cV_\square(K^{[d]})
+\notag\\
+&+\cT_D(K),
+\label{eq:intro-master}
+\end{align}
+The formula before absolute values is exact.
+
+For fixed \(d\), the prime number theorem gives
+\(\mathfrak M_d(X)=o(X)\).  Hence if
+\[
+ \cV_\square(K^{[d]})\ll_d\|K\|_\infty
+\]
+for every fixed \(d\), then the left side of
+\eqref{eq:intro-master} is
+\[
+ o(\|K\|_\infty UV)
+\]
+as \(\min(U,V)\to\infty\).  This includes constant rectangles,
+finite projective sums of one-dimensional bounded-variation weights, and
+smooth rescaled kernels with uniformly bounded rectangular variation.
+
+The result is deliberately normalized by ambient area.  The physical
+prime-line kernel may be sparse, and its relevant denominator is an actual
+anchored rectangle mass rather than \(\|K\|_\infty UV\).  We therefore retain
+the right side of \eqref{eq:intro-master} as a literal majorant for each
+anchored sum and then sum those majorants in the exact trace formula.  This
+produces three explicit arithmetic gates:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item a mixed-variation bound after every low diagonal dilation;
+ \item a diagonal-divisor tail small relative to actual physical mass; and
+ \item summability over the growing row-and-anchor family at the physical
+ trace scale.
+\end{enumerate}
+None is silently identified with the smooth-kernel corollary.
+Moreover, a small mixed trace is not an operator bound.  An entrywise,
+row-local, or growing-moment bridge remains a separate theorem.
+
+\subsection{What this does not prove}
+
+The exact physical kernel contains prime-line solvability, terminal masks,
+native-key coincidences, finite endpoints, and complex amplitudes.  Those
+features can create many jumps in \((u,v)\).  We do not prove that its mixed
+variation is bounded, or even smaller than its actual mass by a power.  We
+also do not replace a row-pair estimate by a uniform operator estimate.
+Existing fixed-form and averaged Chowla technology does not automatically
+provide those missing interfaces; the coefficient and averaging mismatch
+was audited in TPC--33 \citep{WangTPC33}.
+
+Accordingly, the paper proves no fixed-\(2\) estimate, no parity-breaking
+statement, and no prime-pair or twin-prime theorem.  Its contribution is a
+positive theorem for regular primitive-plane kernels and an exact,
+falsifiable certificate for the irregular physical kernel.
+
+\subsection{Organization}
+
+\Cref{sec:primitive-interface} records the literal plane inherited from
+TPC--70.  \Cref{sec:divisor-lift} proves the coprimality collapse and
+diagonal lift.  \Cref{sec:double-abel} gives the exact Abel identity and
+restricted Mertens input.  \Cref{sec:master-certificate} proves the master
+truncation theorem.  \Cref{sec:smooth-kernels} develops unconditional
+regular-kernel consequences.  \Cref{sec:physical-gate} transfers the bound
+back to anchored and global mixed-trace certificates.  Countermodels and the
+literature boundary follow before the final L0/L1/L2 ledger.

@@ -1,0 +1,176 @@
+\section{Restricted Mertens sums and two-dimensional Abel summation}
+\label{sec:double-abel}
+
+\subsection{Zero-extended differences}
+
+For a finitely supported kernel \(F:\N^2\to\mathbb C\), set
+\begin{align*}
+ \Delta_1F(x,y)&=F(x,y)-F(x+1,y),\\
+ \Delta_2F(x,y)&=F(x,y)-F(x,y+1),\\
+ \Delta_{12}F(x,y)
+ &=F(x,y)-F(x+1,y)-F(x,y+1)+F(x+1,y+1).
+\end{align*}
+All values outside the declared support are zero.  Define the rectangular
+mixed variation
+\begin{equation}
+ \cV_\square(F)
+ =
+ \sum_{x,y\ge1}|\Delta_{12}F(x,y)|.
+\label{eq:mixed-variation}
+\end{equation}
+Because of zero extension, \(\cV_\square\) includes all upper and right
+boundary jumps and the terminal corner.  No separate edge term is omitted.
+
+\begin{lemma}[Two-dimensional Abel identity]
+\label{lem:double-abel}
+Let \((\alpha_x)\) and \((\beta_y)\) be finitely supported sequences, and
+put
+\[
+ A(x)=\sum_{r\le x}\alpha_r,
+ \qquad
+ B(y)=\sum_{s\le y}\beta_s.
+\]
+For every finitely supported \(F\),
+\begin{equation}
+ \boxed{
+ \sum_{x,y\ge1}\alpha_x\beta_yF(x,y)
+ =
+ \sum_{x,y\ge1}A(x)B(y)\Delta_{12}F(x,y).}
+\label{eq:double-abel}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+One-dimensional summation by parts with zero extension gives
+\[
+ \sum_x\alpha_xG(x)
+ =
+ \sum_xA(x)\bigl(G(x)-G(x+1)\bigr).
+\]
+Apply this first in \(x\) for each \(y\), and then in \(y\).  The resulting
+second difference is exactly \(\Delta_{12}F\).
+\end{proof}
+
+\begin{remark}[Equivalent edge--corner form]
+If a kernel is specified only on a closed rectangle and not zero-extended,
+expanding \eqref{eq:double-abel} produces an interior mixed-difference sum,
+two terminal edge sums, and one corner term.  Definition
+\eqref{eq:mixed-variation} packages all four pieces without losing them.
+\end{remark}
+
+\subsection{Restricted Mertens envelopes}
+
+For \(d\ge1\), define
+\begin{equation}
+ M_d(x)
+ =
+ \sum_{\substack{n\le x\\(n,d)=1}}\mu(n),
+ \qquad
+ \mathfrak M_d(X)
+ =
+ \max_{1\le x\le X}|M_d(x)|.
+\label{eq:restricted-mertens}
+\end{equation}
+We set \(\mathfrak M_d(X)=0\) when \(X<1\).
+These quantities depend only on the squarefree kernel of \(d\):
+\[
+ M_d=M_{\operatorname{rad}(d)}.
+\]
+We use only the classical prime-number-theorem consequence
+\[
+ M_1(x)=o(x);
+\]
+see, for example, \citet[Chapter 5]{IwaniecKowalski2004}.
+
+\begin{lemma}[Fixed local factors preserve Mertens cancellation]
+\label{lem:fixed-d-mertens}
+For every fixed positive integer \(d\),
+\begin{equation}
+ M_d(x)=o_d(x),
+ \qquad
+ \mathfrak M_d(X)=o_d(X).
+\label{eq:fixed-d-mertens}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+It suffices to adjoin one prime at a time.  If \(p\nmid d\), partition the
+sum defining \(M_d(x)\) according to divisibility by \(p\).  For the
+\(p\)-divisible terms, write \(n=pr\).  A nonzero term requires
+\((r,dp)=1\), and then \(\mu(pr)=-\mu(r)\).  Therefore
+\[
+ M_{dp}(x)=M_d(x)+M_{dp}(x/p).
+\]
+Iteration gives
+\begin{equation}
+ M_{dp}(x)=\sum_{k\ge0}M_d(x/p^k),
+\label{eq:restricted-mertens-recursion}
+\end{equation}
+where the sum is finite.
+
+If \(M_d(t)=o(t)\), split \eqref{eq:restricted-mertens-recursion} at a
+fixed large threshold.  Above the threshold, the geometric sum is
+\(o(x)\); below it, the trivial estimate \(|M_d(t)|\le t\) gives a bounded
+geometric tail, also \(o(x)\).  Starting with \(d=1\) proves the first
+claim by induction over the prime divisors of \(d\).
+
+For the maximal claim, given \(\varepsilon>0\), take \(x_0\) such that
+\(|M_d(x)|\le\varepsilon x\) for \(x\ge x_0\).  Then
+\[
+ \mathfrak M_d(X)
+ \le
+ \max_{x<x_0}|M_d(x)|+\varepsilon X
+\]
+Divide by \(X\), take the limit superior, and then let
+\(\varepsilon\to0\).  This proves \(\mathfrak M_d(X)=o(X)\).
+\end{proof}
+
+\begin{remark}[No growing-\(d\) uniformity]
+\Cref{lem:fixed-d-mertens} holds for each fixed \(d\).  It does not state
+a uniform estimate when \(d\) grows with the physical scale.  The master
+certificate below avoids silently assuming such uniformity by truncating at
+fixed \(D\) and retaining the remainder as an explicit tail.
+\end{remark}
+
+\begin{proposition}[Abel form of one diagonal slice]
+\label{prop:one-diagonal-abel}
+For
+\[
+ K^{[d]}(x,y)=K(dx,dy),
+\]
+one has
+\begin{align}
+ &\sum_{\substack{x,y\ge1\\(x,d)=(y,d)=1}}
+ \mu(x)\mu(y)K(dx,dy)
+\notag\\
+ &\hspace{2cm}=
+ \sum_{x,y\ge1}
+ M_d(x)M_d(y)\Delta_{12}K^{[d]}(x,y).
+\label{eq:one-diagonal-abel}
+\end{align}
+Consequently,
+\begin{equation}
+ \left|
+ \sum_{\substack{x,y\ge1\\(x,d)=(y,d)=1}}
+ \mu(x)\mu(y)K(dx,dy)
+ \right|
+ \le
+ \mathfrak M_d(U/d)\mathfrak M_d(V/d)
+ \cV_\square(K^{[d]})
+\label{eq:one-diagonal-bound}
+\end{equation}
+when \(K\) is supported on \([1,U]\times[1,V]\).
+\end{proposition}
+
+\begin{proof}
+Apply \cref{lem:double-abel} to
+\[
+ \alpha_x=\mu(x)\one_{(x,d)=1},
+ \qquad
+ \beta_y=\mu(y)\one_{(y,d)=1}.
+\]
+Although these sequences are infinite, the kernel is supported on a finite
+rectangle; truncate both sequences beyond that rectangle before applying
+the lemma.
+Their partial sums are \(M_d(x)\) and \(M_d(y)\).
+\end{proof}

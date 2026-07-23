@@ -1,0 +1,77 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.75in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,longtable,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Divisor-Lifted Moebius Certificates on the Primitive Cofactor Plane},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\one}{\mathbf 1}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\N}{\mathbb N}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\tr}{\operatorname{tr}}
+
+\title{Divisor-Lifted M\"obius Certificates on the Primitive Cofactor Plane:\\
+Two-Dimensional Abel Summation, Coprimality Tails, and the Physical Variation Gate}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\noindent\textbf{Keywords:} M\"obius function; primitive cofactor plane;
+two-dimensional Abel summation; bounded variation; diagonal divisor lift;
+fixed shift; mixed-trace certificate.\\[0.5em]
+\noindent\textbf{Convention.} The arithmetic specialization retains one fixed
+nonzero shift \(h_0\), complete native keys, the actual physical carrier, and
+raw atomic normalization; the shift is not specialized to \(2\).\\[0.5em]
+\noindent\textbf{MSC 2020:} Primary 11N37, 11A25; Secondary 47A30, 26A45.
+
+\input{sections/introduction}
+\input{sections/primitive-interface}
+\input{sections/divisor-lift}
+\input{sections/double-abel}
+\input{sections/master-certificate}
+\input{sections/smooth-kernels}
+\input{sections/physical-gate}
+\input{sections/countermodels}
+\input{sections/literature-boundary}
+\input{sections/claim-ledger}
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}
