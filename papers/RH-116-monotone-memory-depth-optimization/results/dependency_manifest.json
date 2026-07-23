@@ -1,0 +1,53 @@
+{
+  "external_inputs": {
+    "rh101_memory_action": {
+      "path": "papers/RH-101-finite-memory-packet-gram-action/src/finite_memory_gram/action.py",
+      "sha256": "02f269490751aad56524d57400cc381cebd32a012ea026a8001e30b4d5368121"
+    },
+    "rh115_summary": {
+      "path": "papers/RH-115-composite-directional-support-gate/results/summary.json",
+      "sha256": "c1eebff8686953102f500fc1b1fe2fc231cd47bbe466f1bb6aaa5aa45dc8b78e"
+    },
+    "rh77_model_builder": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/experiments/run_effective_rank_audit.py",
+      "sha256": "f1ea040fd00577c2775fea8cc1bc4bf416cae76d06dd06b3a6b5ee27116cd3c3"
+    },
+    "rh82_rank_clock": {
+      "path": "papers/RH-82-half-log-postblock-rank-clock/src/half_log_rank/bounds.py",
+      "sha256": "4433277802bf2e1fb0544c988dc34f1e814de9c375178126995aa691e0da5609"
+    },
+    "rh94_source_packet": {
+      "path": "papers/RH-94-source-seeded-four-direction-horizon-refresh/src/source_seeded_refresh/bounds.py",
+      "sha256": "f6f7c15477d242172b00f4c4d5bba08dfb3e6fda4899ead46a3dce8cd4bd96d4"
+    },
+    "rh96_refresh_step": {
+      "path": "papers/RH-96-gap-weighted-weak-mode-quotient/experiments/run_weak_mode_quotient_audit.py",
+      "sha256": "1521e5a87a873ec6586d807c23d0e045b70057a5f7e932a621cd8d4e88b48486"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "95befdd0595c0078648c0fc53018f2650f416970e7641c5005fe91572eff21c7",
+    "experiments/build_depth_audit.py": "3d558f59f459ec6f5d3126b8118ac1b7f4cea6540d851c6a79bda572683cf849",
+    "experiments/make_figures.py": "163dee08c64ab2dd619f5b696f73737b2bcaa47a82a7d1fb5e5149ba3fe1cc02",
+    "experiments/verify_archive.py": "00542a2d3e3695621c438985ff54f18ea0024f5d42a5d0259730edf6d92dceb2",
+    "src/memory_depth/__init__.py": "631323e9c4ea8e9efd33394d47090cce71edd96556f2245f78e6f3f47b36a2bf",
+    "src/memory_depth/bounds.py": "dd0ca65970721b45a66bda103de69c5440708659f1f89a448fd39155cc0be363",
+    "tests/test_archived_results.py": "4ffa0ef799e47e252e0218a15af0a73ec691a00d595aca050c44d68335afe8da",
+    "tests/test_theory.py": "e63824e0ead8f52287523e4e012ab9c9cd81624ac1cbc1b10b8563e4e3d5f848"
+  },
+  "publication_artifacts": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "f4518a4a9b2e65f1eb1413874a27f862fe061ddc0ee1624843a28685f159dc6a",
+    "THEOREM_LEDGER.md": "eef3a5d37bd79480bca9cf671afd6d35d4d882250890566350849538c1e6effc",
+    "UPDATED_ROADMAP.md": "60d4190da4ff89ffd053757db63c06ab1a7f86af687889bde5cbcf924779b3fc",
+    "figures/monotone_memory_depth_optimization.pdf": "fba434a207713ee5324c6f9af47280b5c4e0ebe91e23ce3a1d553ddcf215db26",
+    "figures/monotone_memory_depth_optimization.png": "9c0ca9424965e34ada44beffe4cff84863c6be7a640d1f2044e2694445888f31",
+    "main.pdf": "00b0f8a44bc496277f2f044e7ea55989b7151d5f7d954b8d99b5d154ef961cbf",
+    "main.tex": "263208ce127ab49395258fe4b0d64bac25746bd2d90fb854db6d7668bdb6ff3b",
+    "monotone-memory-depth-optimization.pdf": "00b0f8a44bc496277f2f044e7ea55989b7151d5f7d954b8d99b5d154ef961cbf",
+    "pyproject.toml": "9b0e433d48497fe546fbca2e7bed7af2a43457c89d89d4fe553121df8579389c",
+    "references.bib": "ed28e9ee163e4b9902a59f550ed2fd13a32fcb02b0f5712f4de0ae0b4137e38a",
+    "requirements.txt": "2a794dbea88e04345a620b093bcf56d2494ca9cc93b465a3c0588f0bba1a891c"
+  },
+  "status": "all_rh116_inputs_sources_and_publication_artifacts_hashed"
+}

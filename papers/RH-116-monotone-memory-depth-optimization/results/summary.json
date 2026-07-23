@@ -1,0 +1,124 @@
+{
+  "audit": {
+    "adaptive_certificate_count": 322,
+    "aggregate_cost_reduction": 0.735422063639474,
+    "channel_count": 10,
+    "completeness_failure_count": 0,
+    "dominance_failure_count": 0,
+    "fine_update_count": 234,
+    "maximum_certifying_depth": 6,
+    "mean_relative_cost": 0.3477475214701182,
+    "minimum_depth_failure_count": 0,
+    "monotone_failure_count": 0,
+    "raw_floating_decrease_count": 0,
+    "scale_count": 5,
+    "supported_update_count": 322,
+    "tail_enclosure_failure_count": 0,
+    "total_full_snapshot_actions": 20459,
+    "total_minimum_snapshot_actions": 5413,
+    "total_saved_snapshot_actions": 15046,
+    "update_count": 360
+  },
+  "program_boundary": {
+    "all_level_physical_support_proved": false,
+    "all_level_uniform_depth_proved": false,
+    "finite_full_history_search_is_complete": true,
+    "first_passage_depth_is_cost_minimal": true,
+    "five_scale_adaptive_depth_audit_validated": true,
+    "hilbert_polya_operator": false,
+    "nested_weyl_lower_monotonicity": true,
+    "riemann_hypothesis": false,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "f4518a4a9b2e65f1eb1413874a27f862fe061ddc0ee1624843a28685f159dc6a",
+    "THEOREM_LEDGER.md": "eef3a5d37bd79480bca9cf671afd6d35d4d882250890566350849538c1e6effc",
+    "UPDATED_ROADMAP.md": "60d4190da4ff89ffd053757db63c06ab1a7f86af687889bde5cbcf924779b3fc",
+    "figures/monotone_memory_depth_optimization.pdf": "fba434a207713ee5324c6f9af47280b5c4e0ebe91e23ce3a1d553ddcf215db26",
+    "figures/monotone_memory_depth_optimization.png": "9c0ca9424965e34ada44beffe4cff84863c6be7a640d1f2044e2694445888f31",
+    "main.pdf": "00b0f8a44bc496277f2f044e7ea55989b7151d5f7d954b8d99b5d154ef961cbf",
+    "main.tex": "263208ce127ab49395258fe4b0d64bac25746bd2d90fb854db6d7668bdb6ff3b",
+    "monotone-memory-depth-optimization.pdf": "00b0f8a44bc496277f2f044e7ea55989b7151d5f7d954b8d99b5d154ef961cbf",
+    "pyproject.toml": "9b0e433d48497fe546fbca2e7bed7af2a43457c89d89d4fe553121df8579389c",
+    "references.bib": "ed28e9ee163e4b9902a59f550ed2fd13a32fcb02b0f5712f4de0ae0b4137e38a",
+    "requirements.txt": "2a794dbea88e04345a620b093bcf56d2494ca9cc93b465a3c0588f0bba1a891c"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "5dae919006d19e009591e0cafe6ba35808a506605ad68db57726a09d3e0d1481",
+    "results/memory_depth_audit.json": "bf210d467e098889ae2bf2fc96fcb929479c3adcbdf10229aee79678b45ab5b9",
+    "results/memory_depth_smoke.json": "ffe08081a6c33f60381000577cdfaa3b43789362a34cec11ea5b05da57d4aa0d"
+  },
+  "route_consequence": "For additive memory windows whose discarded budgets split one increment at a time, the Weyl fourth-mode ratio lower bound is monotone in depth. Consequently the first passing depth is the exact cost minimizer within this certificate family, and full-history enumeration is complete. The five-scale audit uses one Gram assembly path and tests every available depth; it does not infer an all-level uniform depth law.",
+  "status": "rh116_monotone_memory_depth_optimization_archived",
+  "theorem": {
+    "finite_full_history_search_is_complete": true,
+    "first_passage_depth_is_cost_minimal": true,
+    "nested_weyl_lower_monotonicity": true
+  },
+  "threshold_summary": {
+    "1e-04": {
+      "actual_support_count": 98,
+      "adaptive_certificate_count": 98,
+      "depth_histogram": {
+        "1": 18,
+        "2": 31,
+        "3": 26,
+        "4": 23
+      },
+      "fine_certificate_count": 78,
+      "fine_update_count": 78,
+      "maximum_certifying_depth": 4,
+      "maximum_relative_cost": 1.0,
+      "mean_relative_cost": 0.3135135044613825,
+      "median_certifying_depth": 2.5,
+      "minimum_certifying_depth": 1,
+      "saved_snapshot_actions": 4880,
+      "threshold": 0.0001,
+      "update_count": 120
+    },
+    "1e-06": {
+      "actual_support_count": 109,
+      "adaptive_certificate_count": 109,
+      "depth_histogram": {
+        "1": 18,
+        "2": 32,
+        "3": 29,
+        "4": 25,
+        "5": 5
+      },
+      "fine_certificate_count": 78,
+      "fine_update_count": 78,
+      "maximum_certifying_depth": 5,
+      "maximum_relative_cost": 1.0,
+      "mean_relative_cost": 0.3512915014097771,
+      "median_certifying_depth": 3.0,
+      "minimum_certifying_depth": 1,
+      "saved_snapshot_actions": 5042,
+      "threshold": 1e-06,
+      "update_count": 120
+    },
+    "1e-08": {
+      "actual_support_count": 115,
+      "adaptive_certificate_count": 115,
+      "depth_histogram": {
+        "1": 18,
+        "2": 33,
+        "3": 31,
+        "4": 25,
+        "5": 7,
+        "6": 1
+      },
+      "fine_certificate_count": 78,
+      "fine_update_count": 78,
+      "maximum_certifying_depth": 6,
+      "maximum_relative_cost": 1.0,
+      "mean_relative_cost": 0.3735617810651901,
+      "median_certifying_depth": 3.0,
+      "minimum_certifying_depth": 1,
+      "saved_snapshot_actions": 5124,
+      "threshold": 1e-08,
+      "update_count": 120
+    }
+  }
+}

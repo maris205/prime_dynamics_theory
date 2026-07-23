@@ -1,0 +1,1692 @@
+{
+  "audit_summary": {
+    "adaptive_certificate_count": 5,
+    "aggregate_cost_reduction": 0.0,
+    "channel_count": 2,
+    "completeness_failure_count": 0,
+    "dominance_failure_count": 0,
+    "fine_update_count": 0,
+    "maximum_certifying_depth": 3,
+    "mean_relative_cost": 1.0,
+    "minimum_depth_failure_count": 0,
+    "monotone_failure_count": 0,
+    "raw_floating_decrease_count": 0,
+    "scale_count": 1,
+    "supported_update_count": 5,
+    "tail_enclosure_failure_count": 0,
+    "total_full_snapshot_actions": 48,
+    "total_minimum_snapshot_actions": 48,
+    "total_saved_snapshot_actions": 0,
+    "update_count": 24
+  },
+  "depth_envelope": [
+    {
+      "certified_by_depth": 0,
+      "depth": 1,
+      "eligible_supported_records": 5,
+      "infinite_tail_bound": 0.0019569471624266144
+    },
+    {
+      "certified_by_depth": 3,
+      "depth": 2,
+      "eligible_supported_records": 5,
+      "infinite_tail_bound": 3.822162426614481e-06
+    },
+    {
+      "certified_by_depth": 5,
+      "depth": 3,
+      "eligible_supported_records": 2,
+      "infinite_tail_bound": 7.465160989481409e-09
+    },
+    {
+      "certified_by_depth": 5,
+      "depth": 4,
+      "eligible_supported_records": 0,
+      "infinite_tail_bound": 1.4580392557580876e-11
+    },
+    {
+      "certified_by_depth": 5,
+      "depth": 5,
+      "eligible_supported_records": 0,
+      "infinite_tail_bound": 2.847732921402515e-14
+    }
+  ],
+  "eta": 0.001953125,
+  "limitations": [
+    "Completeness concerns the nested Weyl certificate family, not every possible support argument.",
+    "The depth distribution is a five-scale observation and is not an asymptotic theorem.",
+    "No uniform Stage A, Hilbert--Polya, zero identification, or Riemann Hypothesis result is claimed."
+  ],
+  "precision_bits": 384,
+  "route_consequence": "For additive memory windows whose discarded budgets split one increment at a time, the Weyl fourth-mode ratio lower bound is monotone in depth. Consequently the first passing depth is the exact cost minimizer within this certificate family, and full-history enumeration is complete. The five-scale audit uses one Gram assembly path and tests every available depth; it does not infer an all-level uniform depth law.",
+  "rows": [
+    {
+      "channels": [
+        {
+          "side": "left",
+          "thresholds": [
+            {
+              "clock_rank": 4,
+              "refresh_endpoint": 4,
+              "side": "left",
+              "sigma": 0.16,
+              "steps": [
+                {
+                  "actual_ratio": 1.212879877923376e-05,
+                  "actual_support": true,
+                  "certificate_found": true,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 1.4311914813792379e-16,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 6.080188273291956e-08,
+                      "leading_singular_value": 0.005013017681570287,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019531250000000004,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 6.080188273650652e-08,
+                      "leading_singular_value": 0.0050130176815702514,
+                      "ratio_lower": 1.2128798779233758e-05,
+                      "snapshot_action_cost": 8,
+                      "support_certified": true,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": 2,
+                  "full_snapshot_action_cost": 8,
+                  "history_length": 2,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": 8,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": 1.0,
+                  "saved_snapshot_actions": 0,
+                  "threshold": 1e-08,
+                  "time": 1
+                },
+                {
+                  "actual_ratio": 2.3934668398783997e-08,
+                  "actual_support": true,
+                  "certificate_found": true,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 3.905976095744613e-11,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.3423152804224676e-10,
+                      "leading_singular_value": 0.004352490534388276,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569396972656254,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 2.6416796909269526e-08,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 4.22029926273807e-10,
+                      "leading_singular_value": 0.0043524910051718,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.814697265625001e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.0417541765034814e-10,
+                      "leading_singular_value": 0.004352490534426655,
+                      "ratio_lower": 2.3934668398783994e-08,
+                      "snapshot_action_cost": 12,
+                      "support_certified": true,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": 3,
+                  "full_snapshot_action_cost": 12,
+                  "history_length": 3,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": 12,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": 1.0,
+                  "saved_snapshot_actions": 0,
+                  "threshold": 1e-08,
+                  "time": 2
+                },
+                {
+                  "actual_ratio": 3.5020403669937745e-10,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 8.978212181410014e-14,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 5.14255731963796e-15,
+                      "leading_singular_value": 0.0002574230584342897,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569471478462224,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 2.8311269098480664e-09,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 3.3721766668676935e-14,
+                      "leading_singular_value": 0.00025742142875541607,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.822147846221925e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 2.3130505313912644e-10,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.1331347045698854e-13,
+                      "leading_singular_value": 0.00025742300924162895,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 7.45058059692383e-09,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 4,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 9.015059420316582e-14,
+                      "leading_singular_value": 0.00025742305843422643,
+                      "ratio_lower": 3.502040366993774e-10,
+                      "snapshot_action_cost": 16,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 16,
+                  "history_length": 4,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 1e-08,
+                  "time": 3
+                },
+                {
+                  "actual_ratio": 1.0289650676935433e-10,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 9.546704433363124e-16,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 3.8312441462118705e-17,
+                      "leading_singular_value": 9.163615821108482e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569471623981376,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 1.186877204393996e-10,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 5.76785746882461e-17,
+                      "leading_singular_value": 9.163723456963351e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.822162398137153e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 2.902858749313943e-12,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 7.802771447584296e-17,
+                      "leading_singular_value": 9.163616961945662e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 7.465132512152197e-09,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 7.281038655937639e-13,
+                      "depth": 4,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.1913459682829555e-16,
+                      "leading_singular_value": 9.163615638712374e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 16,
+                      "support_certified": false,
+                      "tail_bound": 1.4551915228366855e-11,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 5,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 9.429040573701587e-16,
+                      "leading_singular_value": 9.163615821125075e-06,
+                      "ratio_lower": 1.0289650676935432e-10,
+                      "snapshot_action_cost": 20,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 20,
+                  "history_length": 5,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 1e-08,
+                  "time": 4
+                }
+              ],
+              "threshold": 1e-08
+            },
+            {
+              "clock_rank": 4,
+              "refresh_endpoint": 4,
+              "side": "left",
+              "sigma": 0.16,
+              "steps": [
+                {
+                  "actual_ratio": 1.212879877923376e-05,
+                  "actual_support": true,
+                  "certificate_found": true,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 1.4311914813792379e-16,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 6.080188273291956e-08,
+                      "leading_singular_value": 0.005013017681570287,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019531250000000004,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 6.080188273650652e-08,
+                      "leading_singular_value": 0.0050130176815702514,
+                      "ratio_lower": 1.2128798779233758e-05,
+                      "snapshot_action_cost": 8,
+                      "support_certified": true,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": 2,
+                  "full_snapshot_action_cost": 8,
+                  "history_length": 2,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": 8,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": 1.0,
+                  "saved_snapshot_actions": 0,
+                  "threshold": 1e-06,
+                  "time": 1
+                },
+                {
+                  "actual_ratio": 2.3934668398783997e-08,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 3.905976095744613e-11,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.3423152804224676e-10,
+                      "leading_singular_value": 0.004352490534388276,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569396972656254,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 2.6416796909269526e-08,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 4.22029926273807e-10,
+                      "leading_singular_value": 0.0043524910051718,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.814697265625001e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.0417541765034814e-10,
+                      "leading_singular_value": 0.004352490534426655,
+                      "ratio_lower": 2.3934668398783994e-08,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 12,
+                  "history_length": 3,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 1e-06,
+                  "time": 2
+                },
+                {
+                  "actual_ratio": 5.431105171947293e-09,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 1.4566331280794785e-12,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 6.399613840971876e-15,
+                      "leading_singular_value": 0.000257431046051258,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569471478462224,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 2.8312081212780483e-09,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 3.828695360658391e-14,
+                      "leading_singular_value": 0.0002574294162971599,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.822147846221925e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 2.312821967451562e-10,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.4754010691905932e-13,
+                      "leading_singular_value": 0.0002574309968634863,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 7.45058059692383e-09,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 4,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.3981350856305e-12,
+                      "leading_singular_value": 0.000257431046051573,
+                      "ratio_lower": 5.4311051719472924e-09,
+                      "snapshot_action_cost": 16,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 16,
+                  "history_length": 4,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 1e-06,
+                  "time": 3
+                },
+                {
+                  "actual_ratio": 2.3193812035605705e-10,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 2.1711835245274116e-15,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 8.970691168160495e-17,
+                      "leading_singular_value": 9.163592059837389e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569471623981376,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 1.186864010240044e-10,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 5.552539212039236e-17,
+                      "leading_singular_value": 9.16369969478932e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.822162398137153e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 2.9028283719792547e-12,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.0577106611768558e-16,
+                      "leading_singular_value": 9.163593200718349e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 7.465132512152197e-09,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 7.28090885646495e-13,
+                      "depth": 4,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.0718159369587758e-16,
+                      "leading_singular_value": 9.163591877467465e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 16,
+                      "support_certified": false,
+                      "tail_bound": 1.4551915228366855e-11,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 5,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.1253863180671483e-15,
+                      "leading_singular_value": 9.163592059832108e-06,
+                      "ratio_lower": 2.3193812035605703e-10,
+                      "snapshot_action_cost": 20,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 20,
+                  "history_length": 5,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 1e-06,
+                  "time": 4
+                }
+              ],
+              "threshold": 1e-06
+            },
+            {
+              "clock_rank": 4,
+              "refresh_endpoint": 4,
+              "side": "left",
+              "sigma": 0.16,
+              "steps": [
+                {
+                  "actual_ratio": 1.212879877923376e-05,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 1.4311914813792379e-16,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 6.080188273291956e-08,
+                      "leading_singular_value": 0.005013017681570287,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019531250000000004,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 6.080188273650652e-08,
+                      "leading_singular_value": 0.0050130176815702514,
+                      "ratio_lower": 1.2128798779233758e-05,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 8,
+                  "history_length": 2,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 0.0001,
+                  "time": 1
+                },
+                {
+                  "actual_ratio": 3.499654811509963e-08,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 1.907844049621191e-10,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.3634351923435178e-10,
+                      "leading_singular_value": 0.004352591354053691,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569396972656254,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 2.6416572218879974e-08,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 4.28653640646988e-10,
+                      "leading_singular_value": 0.004352591826332539,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.814697265625001e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.5232567275375837e-10,
+                      "leading_singular_value": 0.0043525913542323295,
+                      "ratio_lower": 3.499654811509962e-08,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 12,
+                  "history_length": 3,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 0.0001,
+                  "time": 2
+                },
+                {
+                  "actual_ratio": 6.641513687357627e-09,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 2.542421603944767e-10,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 5.565347716340052e-14,
+                      "leading_singular_value": 0.0002576583944838448,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569471478462224,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 2.8320744776215975e-09,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 3.245813183798787e-13,
+                      "leading_singular_value": 0.00025765676676639966,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.822147846221925e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 2.3120120850385335e-10,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.7736696777507237e-12,
+                      "leading_singular_value": 0.0002576583460115698,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 7.45058059692383e-09,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 4,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.711241758234068e-12,
+                      "leading_singular_value": 0.00025765839517751524,
+                      "ratio_lower": 6.641513687357626e-09,
+                      "snapshot_action_cost": 16,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 16,
+                  "history_length": 4,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 0.0001,
+                  "time": 3
+                },
+                {
+                  "actual_ratio": 2.473401913963989e-10,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 9.891690360881812e-13,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 5.1054839921251846e-17,
+                      "leading_singular_value": 9.163684733360898e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569471623981376,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 1.1868555961233323e-10,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.3702349003633544e-16,
+                      "leading_singular_value": 9.163792368250627e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.822162398137153e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 2.9026379505139876e-12,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 7.991630196109882e-17,
+                      "leading_singular_value": 9.163685874151946e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 7.465132512152197e-09,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 7.280931813573882e-13,
+                      "depth": 4,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.0424432437083573e-15,
+                      "leading_singular_value": 9.163684551113594e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 16,
+                      "support_certified": false,
+                      "tail_bound": 1.4551915228366855e-11,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 5,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.266547535879935e-15,
+                      "leading_singular_value": 9.163684733499136e-06,
+                      "ratio_lower": 2.4734019139639887e-10,
+                      "snapshot_action_cost": 20,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 20,
+                  "history_length": 5,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 0.0001,
+                  "time": 4
+                }
+              ],
+              "threshold": 0.0001
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "thresholds": [
+            {
+              "clock_rank": 4,
+              "refresh_endpoint": 4,
+              "side": "right",
+              "sigma": 0.16,
+              "steps": [
+                {
+                  "actual_ratio": 1.3791842377591294e-07,
+                  "actual_support": true,
+                  "certificate_found": true,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 1.41165969692393e-16,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 9.363112212857831e-09,
+                      "leading_singular_value": 0.06788877046343933,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019531250000000004,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 9.363112214402302e-09,
+                      "leading_singular_value": 0.06788877046343929,
+                      "ratio_lower": 1.3791842377591291e-07,
+                      "snapshot_action_cost": 8,
+                      "support_certified": true,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": 2,
+                  "full_snapshot_action_cost": 8,
+                  "history_length": 2,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": 8,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": 1.0,
+                  "saved_snapshot_actions": 0,
+                  "threshold": 1e-08,
+                  "time": 1
+                },
+                {
+                  "actual_ratio": 1.7159014853103552e-07,
+                  "actual_support": true,
+                  "certificate_found": true,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 1.6360976292864779e-09,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.008675745896375e-10,
+                      "leading_singular_value": 0.001186861873380982,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569396972656254,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 1.7526376763933666e-07,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.595936423415308e-10,
+                      "leading_singular_value": 0.001186999512713951,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.814697265625001e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.0365380626430716e-10,
+                      "leading_singular_value": 0.0011868618799375436,
+                      "ratio_lower": 1.715901485310355e-07,
+                      "snapshot_action_cost": 12,
+                      "support_certified": true,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": 3,
+                  "full_snapshot_action_cost": 12,
+                  "history_length": 3,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": 12,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": 1.0,
+                  "saved_snapshot_actions": 0,
+                  "threshold": 1e-08,
+                  "time": 2
+                },
+                {
+                  "actual_ratio": 3.0723937516368754e-10,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 1.353851089067723e-14,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 9.49054603119677e-14,
+                      "leading_singular_value": 0.000313976261127971,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569471478462224,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 3.502497198950485e-08,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.433274851023332e-13,
+                      "leading_singular_value": 0.0003139969544467743,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.822147846221925e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 3.629590493334714e-10,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.8426750927614877e-13,
+                      "leading_singular_value": 0.00031397641691744354,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 7.45058059692383e-09,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 4,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 9.646587028520318e-14,
+                      "leading_singular_value": 0.00031397626112801845,
+                      "ratio_lower": 3.072393751636875e-10,
+                      "snapshot_action_cost": 16,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 16,
+                  "history_length": 4,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 1e-08,
+                  "time": 3
+                },
+                {
+                  "actual_ratio": 1.3746360165911603e-10,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 9.2205618725212e-16,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 6.004585595862943e-17,
+                      "leading_singular_value": 5.9836493438648636e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569471623981376,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 5.898651385391875e-10,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 3.999649604007174e-17,
+                      "leading_singular_value": 5.984224540866361e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.822162398137153e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 5.6427203824331195e-11,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 7.065189896611534e-17,
+                      "leading_singular_value": 5.983675973230895e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 7.465132512152197e-09,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 1.9969161521106363e-12,
+                      "depth": 4,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 3.165201851066315e-16,
+                      "leading_singular_value": 5.983650450208965e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 16,
+                      "support_certified": false,
+                      "tail_bound": 1.4551915228366855e-11,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 5,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 8.225339898701505e-16,
+                      "leading_singular_value": 5.983649343845076e-06,
+                      "ratio_lower": 1.37463601659116e-10,
+                      "snapshot_action_cost": 20,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 20,
+                  "history_length": 5,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 1e-08,
+                  "time": 4
+                }
+              ],
+              "threshold": 1e-08
+            },
+            {
+              "clock_rank": 4,
+              "refresh_endpoint": 4,
+              "side": "right",
+              "sigma": 0.16,
+              "steps": [
+                {
+                  "actual_ratio": 1.3791842377591294e-07,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 1.41165969692393e-16,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 9.363112212857831e-09,
+                      "leading_singular_value": 0.06788877046343933,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019531250000000004,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 9.363112214402302e-09,
+                      "leading_singular_value": 0.06788877046343929,
+                      "ratio_lower": 1.3791842377591291e-07,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 8,
+                  "history_length": 2,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 1e-06,
+                  "time": 1
+                },
+                {
+                  "actual_ratio": 1.714656837031779e-07,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 2.0753804772646113e-09,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.9026086454466483e-10,
+                      "leading_singular_value": 0.0011867975793067162,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569396972656254,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 1.7526376184433365e-07,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.233892859343598e-10,
+                      "leading_singular_value": 0.001186935230502399,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.814697265625001e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.034950599733423e-10,
+                      "leading_singular_value": 0.001186797588756069,
+                      "ratio_lower": 1.7146568370317787e-07,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 12,
+                  "history_length": 3,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 1e-06,
+                  "time": 2
+                },
+                {
+                  "actual_ratio": 7.366527463953941e-10,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 4.597166217275101e-13,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 9.505254028729584e-14,
+                      "leading_singular_value": 0.00031397633613652404,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569471478462224,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 3.5024976237772164e-08,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.4359382389057918e-13,
+                      "leading_singular_value": 0.0003139970294547697,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.822147846221925e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 3.6295440541992434e-10,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.8464308647093845e-13,
+                      "leading_singular_value": 0.0003139764919238216,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 7.45058059692383e-09,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 4,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.312915303181603e-13,
+                      "leading_singular_value": 0.00031397633613655993,
+                      "ratio_lower": 7.36652746395394e-10,
+                      "snapshot_action_cost": 16,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 16,
+                  "history_length": 4,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 1e-06,
+                  "time": 3
+                },
+                {
+                  "actual_ratio": 1.5763581452943668e-10,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 1.0582899653586709e-15,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.4630772947354513e-17,
+                      "leading_singular_value": 5.983643222028052e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569471623981376,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 5.898643425739354e-10,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.8707376199052174e-17,
+                      "leading_singular_value": 5.984218418338704e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.822162398137153e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 5.642718706242993e-11,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 6.184817136163691e-17,
+                      "leading_singular_value": 5.983669851472252e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 7.465132512152197e-09,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 1.9969090929966367e-12,
+                      "depth": 4,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 3.2009619508312327e-16,
+                      "leading_singular_value": 5.983644328498771e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 16,
+                      "support_certified": false,
+                      "tail_bound": 1.4551915228366855e-11,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 5,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 9.432364731712228e-16,
+                      "leading_singular_value": 5.983643222112347e-06,
+                      "ratio_lower": 1.5763581452943665e-10,
+                      "snapshot_action_cost": 20,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 20,
+                  "history_length": 5,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 1e-06,
+                  "time": 4
+                }
+              ],
+              "threshold": 1e-06
+            },
+            {
+              "clock_rank": 4,
+              "refresh_endpoint": 4,
+              "side": "right",
+              "sigma": 0.16,
+              "steps": [
+                {
+                  "actual_ratio": 1.3791842377591294e-07,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 1.41165969692393e-16,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 9.363112212857831e-09,
+                      "leading_singular_value": 0.06788877046343933,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019531250000000004,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 9.363112214402302e-09,
+                      "leading_singular_value": 0.06788877046343929,
+                      "ratio_lower": 1.3791842377591291e-07,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 8,
+                  "history_length": 2,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 0.0001,
+                  "time": 1
+                },
+                {
+                  "actual_ratio": 1.714656837031779e-07,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 2.0753804772646113e-09,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.9026086454466483e-10,
+                      "leading_singular_value": 0.0011867975793067162,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569396972656254,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 1.7526376184433365e-07,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.233892859343598e-10,
+                      "leading_singular_value": 0.001186935230502399,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.814697265625001e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.034950599733423e-10,
+                      "leading_singular_value": 0.001186797588756069,
+                      "ratio_lower": 1.7146568370317787e-07,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 12,
+                  "history_length": 3,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 0.0001,
+                  "time": 2
+                },
+                {
+                  "actual_ratio": 7.366527463953941e-10,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 4.597166217275101e-13,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 9.505254028729584e-14,
+                      "leading_singular_value": 0.00031397633613652404,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569471478462224,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 3.5024976237772164e-08,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.4359382389057918e-13,
+                      "leading_singular_value": 0.0003139970294547697,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.822147846221925e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 3.6295440541992434e-10,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.8464308647093845e-13,
+                      "leading_singular_value": 0.0003139764919238216,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 7.45058059692383e-09,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 4,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.312915303181603e-13,
+                      "leading_singular_value": 0.00031397633613655993,
+                      "ratio_lower": 7.36652746395394e-10,
+                      "snapshot_action_cost": 16,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 16,
+                  "history_length": 4,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 0.0001,
+                  "time": 3
+                },
+                {
+                  "actual_ratio": 1.8736365102928424e-10,
+                  "actual_support": false,
+                  "certificate_found": false,
+                  "completeness_holds": true,
+                  "depths": [
+                    {
+                      "actual_tail_cross_norm": 9.951614239927226e-12,
+                      "depth": 1,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 2.93495332558079e-17,
+                      "leading_singular_value": 5.987351741696496e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 4,
+                      "support_certified": false,
+                      "tail_bound": 0.0019569471623981376,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 5.900414841318925e-10,
+                      "depth": 2,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 4.261675321405828e-17,
+                      "leading_singular_value": 5.987926940085065e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 8,
+                      "support_certified": false,
+                      "tail_bound": 3.822162398137153e-06,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 5.6419960241640654e-11,
+                      "depth": 3,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.1900931175455007e-15,
+                      "leading_singular_value": 5.98737837046583e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 12,
+                      "support_certified": false,
+                      "tail_bound": 7.465132512152197e-09,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 1.9969666274030544e-12,
+                      "depth": 4,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 5.535175438410746e-15,
+                      "leading_singular_value": 5.9873528614936614e-06,
+                      "ratio_lower": 0.0,
+                      "snapshot_action_cost": 16,
+                      "support_certified": false,
+                      "tail_bound": 1.4551915228366855e-11,
+                      "tail_enclosed": true
+                    },
+                    {
+                      "actual_tail_cross_norm": 0.0,
+                      "depth": 5,
+                      "dominance_holds": true,
+                      "fourth_singular_value": 1.1218120852058097e-15,
+                      "leading_singular_value": 5.987351757094414e-06,
+                      "ratio_lower": 1.8736365102928422e-10,
+                      "snapshot_action_cost": 20,
+                      "support_certified": false,
+                      "tail_bound": 0.0,
+                      "tail_enclosed": true
+                    }
+                  ],
+                  "first_certifying_depth": null,
+                  "full_snapshot_action_cost": 20,
+                  "history_length": 5,
+                  "minimum_depth_holds": true,
+                  "minimum_snapshot_action_cost": null,
+                  "monotone_failure_count": 0,
+                  "packet_rank": 4,
+                  "raw_decrease_count": 0,
+                  "relative_cost": null,
+                  "saved_snapshot_actions": null,
+                  "threshold": 0.0001,
+                  "time": 4
+                }
+              ],
+              "threshold": 0.0001
+            }
+          ]
+        }
+      ],
+      "clock": 1.769091146743121,
+      "clock_rank": 4,
+      "sigma": 0.16
+    }
+  ],
+  "status": "rh116_monotone_memory_depth_optimization_audit",
+  "theorem_boundary": {
+    "all_level_physical_support_proved": false,
+    "all_level_uniform_depth_proved": false,
+    "finite_full_history_search_is_complete": true,
+    "first_passage_depth_is_cost_minimal": true,
+    "five_scale_adaptive_depth_audit_validated": false,
+    "hilbert_polya_operator": false,
+    "nested_weyl_lower_monotonicity": true,
+    "riemann_hypothesis": false,
+    "uniform_stage_A_closed": false
+  },
+  "threshold_summary": {
+    "1e-04": {
+      "actual_support_count": 0,
+      "adaptive_certificate_count": 0,
+      "depth_histogram": {},
+      "fine_certificate_count": 0,
+      "fine_update_count": 0,
+      "maximum_certifying_depth": null,
+      "maximum_relative_cost": null,
+      "mean_relative_cost": null,
+      "median_certifying_depth": null,
+      "minimum_certifying_depth": null,
+      "saved_snapshot_actions": 0,
+      "threshold": 0.0001,
+      "update_count": 8
+    },
+    "1e-06": {
+      "actual_support_count": 1,
+      "adaptive_certificate_count": 1,
+      "depth_histogram": {
+        "2": 1
+      },
+      "fine_certificate_count": 0,
+      "fine_update_count": 0,
+      "maximum_certifying_depth": 2,
+      "maximum_relative_cost": 1.0,
+      "mean_relative_cost": 1.0,
+      "median_certifying_depth": 2.0,
+      "minimum_certifying_depth": 2,
+      "saved_snapshot_actions": 0,
+      "threshold": 1e-06,
+      "update_count": 8
+    },
+    "1e-08": {
+      "actual_support_count": 4,
+      "adaptive_certificate_count": 4,
+      "depth_histogram": {
+        "2": 2,
+        "3": 2
+      },
+      "fine_certificate_count": 0,
+      "fine_update_count": 0,
+      "maximum_certifying_depth": 3,
+      "maximum_relative_cost": 1.0,
+      "mean_relative_cost": 1.0,
+      "median_certifying_depth": 2.5,
+      "minimum_certifying_depth": 2,
+      "saved_snapshot_actions": 0,
+      "threshold": 1e-08,
+      "update_count": 8
+    }
+  },
+  "thresholds": [
+    1e-08,
+    1e-06,
+    0.0001
+  ]
+}
