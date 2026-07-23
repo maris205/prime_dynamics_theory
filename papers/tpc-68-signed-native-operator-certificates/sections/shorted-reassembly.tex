@@ -1,0 +1,201 @@
+\section{The shorted boundary for full reassembly}
+\label{sec:tpc68-shorted-reassembly}
+
+The preceding sections control the literal missing-native map relative to
+its own atomic diagonal.  Full reassembly introduces a represented map and
+coefficient directions invisible to its denominator.  We now state the
+exact L0 relation, following the shorted-Gram framework of TPC--60.
+The underlying finite-dimensional shorted-operator identity is classical
+\citep{AndersonTrapp1975}.
+
+\subsection{Direct and shorted Grams}
+
+Let \(\mathcal K,\mathcal Y\) be finite-dimensional Hilbert spaces and let
+\[
+ A,M:\mathcal K\longrightarrow\mathcal Y,
+ \qquad B:=A+M.
+\]
+Assume \(A\ne0\), and define the uniform reassembly constant
+\begin{equation}
+ \delta(A,M)
+ :=
+ \inf_{Az\ne0}\frac{\|Bz\|^2}{\|Az\|^2}.
+ \label{eq:tpc68-delta-AM}
+\end{equation}
+Put
+\[
+ N_A:=\Ker A,\qquad S_A:=N_A^\perp,\qquad
+ A_{S_A}:=A|_{S_A},\quad
+ M_{S_A}:=M|_{S_A},\quad
+ B_{S_A}:=B|_{S_A},
+\]
+and
+\begin{equation}
+ R_A:=A_{S_A}^*A_{S_A}>0\quad\text{on }S_A.
+ \label{eq:tpc68-R-represented}
+\end{equation}
+Let
+\begin{equation}
+ W_{\rm nuis}:=B(N_A)=M(N_A)
+ \label{eq:tpc68-W-nuis}
+\end{equation}
+and let \(P_{W_{\rm nuis}}\) be its orthogonal projection.  This nuisance
+space is unrelated to the row mass \(W_M(m)\).
+
+\begin{definition}[Direct Gram and shorting penalty]
+\label{def:tpc68-direct-shorted}
+Define on \(S_A\)
+\begin{align}
+ G_{\rm dir}
+ &:=
+ R_A^{-1/2}B_{S_A}^*B_{S_A}R_A^{-1/2},
+ \label{eq:tpc68-G-direct}\\
+ C_N
+ &:=
+ R_A^{-1/2}B_{S_A}^*P_{W_{\rm nuis}}B_{S_A}R_A^{-1/2}\succeq0,
+ \label{eq:tpc68-CN}\\
+ G_{\rm sh}
+ &:=
+ G_{\rm dir}-C_N.
+ \label{eq:tpc68-G-shorted}
+\end{align}
+\end{definition}
+
+\begin{theorem}[Exact direct-minus-nuisance formula]
+\label{thm:tpc68-direct-minus-nuisance}
+The shorted operator is positive semidefinite and
+\begin{equation}
+ \boxed{
+ \delta(A,M)=\lambda_{\min}(G_{\rm sh}).}
+ \label{eq:tpc68-delta-shorted}
+\end{equation}
+If
+\begin{equation}
+ G_{\rm dir}=I+H_{\rm dir},
+ \qquad
+ \|H_{\rm dir}\|\le c,
+ \qquad
+ \|C_N\|\le\eta,
+ \label{eq:tpc68-direct-penalty-hypotheses}
+\end{equation}
+then
+\begin{equation}
+ \boxed{
+ \delta(A,M)\ge\max\{0,1-c-\eta\}.}
+ \label{eq:tpc68-direct-penalty-bound}
+\end{equation}
+If \(W_{\rm nuis}=\{0\}\), then \(C_N=0\) and no shorting penalty occurs.
+\end{theorem}
+
+\begin{proof}
+For \(z=s+n\), with \(s\in S_A\) and \(n\in N_A\), the denominator is
+\(\|A_{S_A}s\|^2\), while minimization over \(n\) gives
+\[
+ \inf_{n\in N_A}\|B_{S_A}s+B n\|^2
+ =\|(I-P_{W_{\rm nuis}})B_{S_A}s\|^2.
+\]
+Hence
+\[
+ \delta(A,M)
+ =
+ \inf_{s\ne0}
+ \frac{\langle
+ B_{S_A}^*(I-P_{W_{\rm nuis}})B_{S_A}s,s\rangle}
+ {\langle R_As,s\rangle}.
+\]
+Rayleigh--Ritz after the substitution \(x=R_A^{1/2}s\) proves
+\eqref{eq:tpc68-delta-shorted} and the positivity of \(G_{\rm sh}\).
+Under \eqref{eq:tpc68-direct-penalty-hypotheses},
+\[
+ \lambda_{\min}(G_{\rm sh})
+ \ge1-\|H_{\rm dir}\|-\|C_N\|
+ \ge1-c-\eta.
+\]
+Positivity adds the maximum with zero.  If \(W_{\rm nuis}=\{0\}\), its projection
+vanishes.
+\end{proof}
+
+\begin{remark}[The missing-native \(H\) is not \(H_{\rm dir}\)]
+\label{rem:tpc68-H-not-Hdir}
+The main operator \(H\) in
+\eqref{eq:tpc68-K-IH} comes from \(M^*M\) normalized by the missing atomic
+diagonal.  By contrast, \(H_{\rm dir}\) contains
+\[
+ A_{S_A}^*M_{S_A}
+ +M_{S_A}^*A_{S_A}
+ +M_{S_A}^*M_{S_A}
+\]
+after represented normalization.  No identity in this paper identifies
+those cross terms with the two-affine formula
+\eqref{eq:tpc68-two-affine-entry}.  The missing-native certificate must be
+combined with a separate mass comparison before it can bound
+\(H_{\rm dir}\).
+\end{remark}
+
+\subsection{A safe direct-norm corollary}
+
+\begin{corollary}[Canonical perturbation plus nuisance penalty]
+\label{cor:tpc68-canonical-perturbation}
+Suppose
+\begin{equation}
+ \|M_{S_A}s\|\le\varepsilon\|A_{S_A}s\|
+ \qquad(s\in S_A).
+ \label{eq:tpc68-relative-missing-bound}
+\end{equation}
+Then
+\begin{equation}
+ \|G_{\rm dir}-I\|\le2\varepsilon+\varepsilon^2.
+ \label{eq:tpc68-Gdir-perturbation}
+\end{equation}
+Consequently, if also \(\|C_N\|\le\eta\), then
+\begin{equation}
+ \delta(A,M)
+ \ge
+ \max\{0,1-2\varepsilon-\varepsilon^2-\eta\}.
+ \label{eq:tpc68-safe-reassembly}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The map \(U:=A_{S_A}R_A^{-1/2}\) is an isometry and
+\(V:=M_{S_A}R_A^{-1/2}\) has norm at most \(\varepsilon\).  Therefore
+\[
+ G_{\rm dir}
+ =(U+V)^*(U+V)
+ =I+U^*V+V^*U+V^*V,
+\]
+which gives \eqref{eq:tpc68-Gdir-perturbation}.  Apply
+\cref{thm:tpc68-direct-minus-nuisance}.
+\end{proof}
+
+\begin{corollary}[How the missing-native certificate can enter]
+\label{cor:tpc68-missing-to-direct}
+Assume that \(\mathcal K=\mathcal K_X\), that \(M=M_X\) is the literal
+missing-native map, and that its full physical diagonal is \(D_M\) from
+\eqref{eq:tpc68-row-missing-mass}.  Assume on \(S_A\) that
+\begin{equation}
+ \langle D_Mz,z\rangle\le\chi\,\|Az\|^2.
+ \label{eq:tpc68-missing-mass-comparison}
+\end{equation}
+Then the exact missing-native upper bound gives
+\[
+ \|Mz\|^2\le\kappa_M\langle D_Mz,z\rangle
+ \le\kappa_M\chi\|Az\|^2.
+\]
+Thus \cref{cor:tpc68-canonical-perturbation} applies with
+\begin{equation}
+ \varepsilon=(\kappa_M\chi)^{1/2}.
+ \label{eq:tpc68-epsilon-kappa-chi}
+\end{equation}
+The conclusion still requires a separate bound for \(C_N\).
+\end{corollary}
+
+\begin{proof}
+The first inequality is the definition of \(\kappa_M\); the second is
+\eqref{eq:tpc68-missing-mass-comparison}.  Taking square roots yields
+\eqref{eq:tpc68-relative-missing-bound}.
+\end{proof}
+
+This corollary is a bookkeeping interface, not a proved physical estimate:
+neither a favorable \(\chi\) nor a favorable shorting penalty is obtained
+in this paper.

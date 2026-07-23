@@ -1,0 +1,449 @@
+\section{The complete literal missing-native interface}
+\label{sec:tpc68-literal-interface}
+
+This section specializes the TPC--61 construction without changing its
+carrier.  It is included to make the quantifiers and the place where signs
+become physical completely explicit.
+
+\subsection{Frozen carrier and complete output labels}
+
+Fix a scale \(X\), a nonzero integer \(h_0\), one direct side, one external
+block, all source and opposite-row blocks, residue and orbit classes,
+masks, profiles, endpoint restrictions, and the very-high cutoff before
+choosing a coefficient vector.  The opposite direct side is included by
+orthogonal direct sum.  Let \(\mathcal W_M\) be the complete set of actual
+nonzero missing-high atoms in this scope.  Let \(\mathcal M_X\) be the
+complete declared physical row set and
+\begin{equation}
+ \mathcal K_X:=\ell^2(\mathcal M_X)
+ \label{eq:tpc68-full-coefficient-space}
+\end{equation}
+the full coefficient space.
+
+Every \(w\in\mathcal W_M\) canonically recovers
+\[
+ m=m(w)=d_m\ell_m,\qquad
+ j=j(w),\qquad
+ n(w)=m(w)j(w)+h_0,
+\]
+its largest prime \(p(w)>y\), cofactor \(r(w)=n(w)/p(w)\), and residual
+label
+\[
+ s(w)=d_{m(w)}r(w).
+\]
+The squarefree physical support gives
+\[
+ \mu(s(w))=\mu(d_{m(w)})\mu(r(w)).
+\]
+The complete native key is denoted by \(i(w)\).  It retains the side,
+external block, opposite row, \(\gamma\)-coordinate, orbit time \(j\), and
+every other label that remains orthogonal after native reassembly.  Thus
+\[
+ i(w)=i(w')\quad\Longrightarrow\quad j(w)=j(w'),
+\]
+but the residual labels \(s(w)\) and \(s(w')\) may differ.
+
+The literal atom driven by row coefficient \(\zeta_m\) is
+\[
+ \beta_w\zeta_{m(w)},
+\]
+where \(\beta_w\ne0\) retains every physical source shape, mask, multiplier,
+opposite-row factor, profile, and terminal weight.  There is no freely
+chosen atomwise phase.  The TPC--61 singleton incidence says that, for a
+fixed pair \((i,m)\), at most one atom of \(\mathcal W_M\) occurs.  Define
+\[
+ \mathcal M_M
+ :=\{m:\text{some }w\in\mathcal W_M\text{ has }m(w)=m\}.
+\]
+Rows in \(\mathcal M_X\setminus\mathcal M_M\) have identically zero
+missing mass.  They remain in \(\mathcal K_X\) and in the represented map;
+only the normalized missing Gram will be restricted to its active range.
+
+\subsection{Residual map, erasure, and native map}
+
+Set
+\begin{equation}
+ c_w:=-\mu(s(w))\beta_w,
+ \qquad
+ (L_X\zeta)_w:=c_w\zeta_{m(w)}
+ \qquad(\zeta\in\mathcal K_X).
+ \label{eq:tpc68-atomic-lift}
+\end{equation}
+The physical high-character and residual M\"obius sign occur exactly once
+in \(c_w\).  Put
+\begin{align}
+ (T_X\zeta)_{i,s}
+ &:=
+ \sum_{\substack{w\in\mathcal W_M\\
+                 i(w)=i,\ s(w)=s}}
+ c_w\zeta_{m(w)},
+ \label{eq:tpc68-residual-map}\\
+ (\mathsf Ez)_i&:=\sum_s z_{i,s}.
+ \label{eq:tpc68-erasure-map}
+\end{align}
+Then the literal missing-native map is exactly
+\begin{equation}
+ \boxed{M_X=\mathsf E T_X.}
+ \label{eq:tpc68-missing-native-factorization}
+\end{equation}
+This is the TPC--61 sign convention.  In particular, inserting a second
+M\"obius sign after \eqref{eq:tpc68-erasure-map} would change the physical
+map.
+
+Before erasure, multiplication by
+\[
+ (U_\mu z)_{i,s}:=\mu(s)z_{i,s}
+\]
+is unitary on the residual space.  This fact says only that storing the
+common residual sign in the input or in a signed erasure is a coordinate
+choice.  It does \emph{not} say that the sign disappears from
+\(\mathsf EU_\mu\): after \(s\) is erased, different residual coordinates
+meet and their relative signs are genuine.
+
+\subsection{Physical atomic normalization}
+
+For every row \(m\in\mathcal M_X\), set
+\begin{equation}
+ W_M(m)
+ :=
+ \sum_{\substack{w\in\mathcal W_M\\m(w)=m}}|\beta_w|^2\ge0,
+ \qquad
+ D_M:=\diag\bigl(W_M(m)\bigr)_{m\in\mathcal M_X}.
+ \label{eq:tpc68-row-missing-mass}
+\end{equation}
+This is raw counting-measure atomic mass.  No output-fiber degree or
+collision multiplicity is divided out; equivalently,
+\[
+ D_M=L_X^*L_X
+\]
+on the full coefficient space.  Let
+\begin{equation}
+ S_M:=\Ran D_M=(\Ker D_M)^\perp
+     =\ell^2(\mathcal M_M).
+ \label{eq:tpc68-active-missing-range}
+\end{equation}
+If \(S_M=\{0\}\), then \(\mathcal W_M=\varnothing\) and \(M_X=0\); the
+missing-native analysis is vacuous.  Henceforth assume
+\(S_M\ne\{0\}\).
+
+Define the normalized missing-native incidence
+\begin{equation}
+ F:=M_XD_M^{\dagger/2}\big|_{S_M}:
+ S_M\longrightarrow
+ \ell^2(\mathcal I_X^{\rm nat}).
+ \label{eq:tpc68-normalized-F}
+\end{equation}
+Thus zero missing rows remain in \(\mathcal K_X\), while the normalized
+Gram acts only on the support of the physical missing diagonal.
+
+Define also the normalized residual incidence
+\begin{equation}
+ F_{\rm res}:=T_XD_M^{\dagger/2}\big|_{S_M}.
+ \label{eq:tpc68-normalized-residual}
+\end{equation}
+The TPC--61 residual/native split gives Hermitian zero-diagonal operators
+\begin{equation}
+ H_{\rm res}:=\Xi_{=s},
+ \qquad
+ H_{\rm erase}:=\Xi_{\ne s},
+ \label{eq:tpc68-res-erase-defects}
+\end{equation}
+such that
+\begin{align}
+ F_{\rm res}^*F_{\rm res}
+ &=I_{S_M}+H_{\rm res},
+ \label{eq:tpc68-residual-Gram-split}\\
+ F^*F
+ &=I_{S_M}+H_{\rm res}+H_{\rm erase}
+ =I_{S_M}+\Xi_{\ne p}.
+ \label{eq:tpc68-native-Gram-split}
+\end{align}
+In particular, the residual Gram in
+\eqref{eq:tpc68-residual-Gram-split} is not generally \(I\).
+Multiplication by \(U_\mu\) leaves it unchanged, because two contributions
+meeting at one residual output have the same \(s\).  The operator
+\(H_{\rm erase}\) consists exactly of the new cross terms created by
+erasing unequal residual labels.
+
+\begin{proposition}[Normalized signed alias Gram]
+\label{prop:tpc68-normalized-signed-Gram}
+One has
+\begin{equation}
+ K:=F^*F=I_{S_M}+H,
+ \label{eq:tpc68-K-IH}
+\end{equation}
+where
+\begin{equation}
+ H=H_{\rm res}+H_{\rm erase}=\Xi_{\ne p}
+ \label{eq:tpc68-full-H-split}
+\end{equation}
+is Hermitian and has zero diagonal.  Moreover
+\begin{align}
+ \kappa_M
+ &:=\sup_{\substack{\zeta\in\mathcal K_X\\
+                    \langle D_M\zeta,\zeta\rangle>0}}
+   \frac{\|M_X\zeta\|^2}{\langle D_M\zeta,\zeta\rangle}
+   =\lambda_{\max}(K)
+   =1+\lambda_{\max}(H),
+ \label{eq:tpc68-upper-native-eigenvalue}\\
+ \alpha_M
+ &:=\inf_{\substack{\zeta\in\mathcal K_X\\
+                    \langle D_M\zeta,\zeta\rangle>0}}
+   \frac{\|M_X\zeta\|^2}{\langle D_M\zeta,\zeta\rangle}
+   =\lambda_{\min}(K)
+   =1+\lambda_{\min}(H)\ge0.
+ \label{eq:tpc68-lower-native-eigenvalue}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+For a fixed \(m\in\mathcal M_M\), the \((i,m)\)-singleton property makes distinct missing
+atoms occupy distinct native coordinates within that column.  Hence
+\[
+ \|Fe_m\|^2
+ =\frac1{W_M(m)}
+   \sum_{\substack{w\in\mathcal W_M\\m(w)=m}}|\beta_w|^2
+ =1.
+\]
+Thus \(K=F^*F\) is positive semidefinite with unit diagonal.  Therefore
+\(H=K-I\) is Hermitian with zero diagonal.  Substituting
+\(x=D_M^{1/2}\zeta\in S_M\) into the two Rayleigh quotients gives the
+extremal eigenvalue identities.  The map \(M_X\) vanishes on
+\(\Ker D_M\), so retaining zero missing rows in \(\mathcal K_X\) does not
+change either quotient.
+\end{proof}
+
+\begin{remark}[Notation]
+The symbol \(\alpha_M\) in
+\eqref{eq:tpc68-lower-native-eigenvalue} is the lower eigenvalue of the
+atomic-normalized missing-native Gram.  It is not the restricted erasure
+upper norm denoted by \(\beta_M\) in TPC--61.
+\end{remark}
+
+\subsection{Exact removal of the row gauge}
+
+Define the diagonal row gauge
+\begin{equation}
+ U_d:=\diag\bigl(\mu(d_m)\bigr)_{m\in\mathcal M_M}.
+ \label{eq:tpc68-row-gauge}
+\end{equation}
+It is a self-adjoint unitary on the squarefree active support.
+
+\begin{theorem}[Gauge-to-genuine-sign identity]
+\label{thm:tpc68-gauge-to-sign}
+Put \(\widetilde H:=U_dHU_d\).  Then \(\widetilde H\) is unitarily
+equivalent to \(H\), has the same zero diagonal, spectrum, entry
+magnitudes, star norms, and collision graph, and for \(m\ne n\),
+\begin{equation}
+ \boxed{
+ \widetilde H_{mn}
+ =
+ \frac1{\sqrt{W_M(m)W_M(n)}}
+ \sum_{\substack{w,w'\in\mathcal W_M\\
+                 m(w)=m,\ m(w')=n\\
+                 i(w)=i(w')}}
+ \mu(mj(w)+h_0)\mu(nj(w')+h_0)
+ \overline{\beta_w}\beta_{w'}.}
+ \label{eq:tpc68-two-affine-entry}
+\end{equation}
+Every label summed in \eqref{eq:tpc68-two-affine-entry} is an actual
+complete native output; no reduced collision cell has been substituted.
+\end{theorem}
+
+\begin{proof}
+The normalized matrix entry is
+\[
+ K_{mn}
+ =
+ \frac1{\sqrt{W_M(m)W_M(n)}}
+ \sum_{\substack{w,w'\in\mathcal W_M\\
+                 m(w)=m,\ m(w')=n\\
+                 i(w)=i(w')}}
+ \mu(s(w))\mu(s(w'))
+ \overline{\beta_w}\beta_{w'}.
+\]
+The two minus signs in the definition of \(M_X\) cancel.  For \(m\ne n\),
+this is \(H_{mn}\).  Multiplication by the row gauges replaces
+\(\mu(s(w))\) by
+\[
+ \mu(d_m)\mu(s(w))
+ =\mu(r(w)).
+\]
+Since \(mj(w)+h_0=p(w)r(w)\) is squarefree and
+\(p(w)\nmid r(w)\),
+\[
+ \mu(mj(w)+h_0)=-\mu(r(w)).
+\]
+The two extra minus signs again cancel in the product for \(m,n\), giving
+\eqref{eq:tpc68-two-affine-entry}.  Unitary conjugation proves every
+spectral and magnitude assertion.
+\end{proof}
+
+\subsection{Direct-cell formula and the orthogonal second side}
+
+Assume in this subsection the identical-support direct-cell specialization
+of TPC--61: after the literal mask and opposite-row factors are retained,
+the high and missing tests depend on \((m,j)\) and not on the surviving
+\(\gamma\)-coordinate.  On the displayed left direct cell, write the unique atom as
+\(w=(m,j,\gamma)\), extending its coefficient by zero when the declared
+literal support fails, and factor
+\begin{equation}
+ \beta_{m,j,\gamma}
+ =a_m(j)K_{m\gamma}q_\gamma(j).
+ \label{eq:tpc68-direct-cell-factorization}
+\end{equation}
+Here \(a_m(j)\) contains the source and terminal shapes,
+\(q_\gamma(j)\) contains the opposite-row shape and its fixed output phase,
+and \(K_{m\gamma}\in\{0,1\}\) is the literal static mask.  Define the
+actual missing-time indicator
+\begin{equation}
+ \mathfrak m_m(j)
+ :=
+ \mathbf1_{\{(m,j,\gamma)\in\mathcal W_M
+                 \text{ for some }\gamma\}},
+ \label{eq:tpc68-missing-time-indicator}
+\end{equation}
+where coefficient zeros caused only by \(K_{m\gamma}\) or
+\(q_\gamma(j)\) remain inside those factors.  Put
+\begin{equation}
+ \Gamma_{m,n}(j)
+ :=
+ \sum_\gamma
+ K_{m\gamma}K_{n\gamma}|q_\gamma(j)|^2.
+ \label{eq:tpc68-Gamma-overlap}
+\end{equation}
+
+\begin{corollary}[Literal direct-cell two-affine formula]
+\label{cor:tpc68-direct-cell-formula}
+For distinct active rows \(m,n\), the left direct-cell contribution is
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ \widetilde H^{\,L}_{mn}
+ ={}&
+ \frac1{\sqrt{W_M(m)W_M(n)}}
+ \sum_j
+ \mathfrak m_m(j)\mathfrak m_n(j)\\
+ &\times
+ \mu(mj+h_0)\mu(nj+h_0)
+ \overline{a_m(j)}a_n(j)\Gamma_{m,n}(j).
+ \end{aligned}}
+ \label{eq:tpc68-direct-cell-two-affine}
+\end{equation}
+The right direct slice has the symmetric formula with the two row systems
+exchanged.  Its output range is orthogonal to the left slice, so
+\[
+ K=F_L^*F_L+F_R^*F_R.
+\]
+Consequently, for \(m\ne n\),
+\[
+ H_{mn}=H^L_{mn}+H^R_{mn},
+\]
+with no cross-slice Gram term.
+\end{corollary}
+
+\begin{proof}
+A common complete native output on the left fixes the same pair
+\((\gamma,j)\).  Substitute
+\eqref{eq:tpc68-direct-cell-factorization} into
+\eqref{eq:tpc68-two-affine-entry}, retain the two actual missing
+indicators, and sum over \(\gamma\).  Orthogonality of the declared side
+labels gives the final assertion.
+\end{proof}
+
+Outside the declared identical-support specialization, the compressed
+\(\Gamma_{m,n}(j)\)-formula need not be valid.  One must either retain the
+general literal pair sum \eqref{eq:tpc68-two-affine-entry}, or replace
+\(\mathfrak m_m(j)\) by the full \(\gamma\)-dependent first-failure
+indicator inside the \(\gamma\)-sum.  No later theorem requires the
+compressed formula.
+
+\begin{corollary}[Full versus erasure-only certificates]
+\label{cor:tpc68-full-versus-erasure}
+Every certificate developed below applies directly to the full defect
+\[
+ H=H_{\rm res}+H_{\rm erase}.
+\]
+The row gauge \(U_d\) conjugates both summands separately, so the same
+decomposition holds in the gauged coordinates used below.
+Alternatively, it may be applied separately to the two summands, followed
+by
+\begin{equation}
+ \|H\|\le\|H_{\rm res}\|+\|H_{\rm erase}\|.
+ \label{eq:tpc68-res-erase-triangle}
+\end{equation}
+A certificate for \(H_{\rm erase}\) alone does not bound
+\(\kappa_M\) unless \(H_{\rm res}\) is controlled separately.
+\end{corollary}
+
+\begin{proof}
+The first statement is definitional, and the second is the operator
+triangle inequality combined with
+\eqref{eq:tpc68-full-H-split}.
+\end{proof}
+
+\begin{proposition}[Same-residual target signs are frozen]
+\label{prop:tpc68-same-residual-sign-freeze}
+Fix distinct rows \(m,n\).  If a common-output pair
+\((w,w')\) also satisfies
+\[
+ s(w)=s(w')=:s,
+\]
+then its gauged target sign is
+\begin{equation}
+ \boxed{
+ \mu(mj(w)+h_0)\mu(nj(w')+h_0)
+ =\mu(d_m)\mu(d_n),}
+ \label{eq:tpc68-same-residual-frozen-sign}
+\end{equation}
+which is independent of the collision pair.  Thus \(H_{\rm res}\) has no
+intra-pair oscillation coming from the two target M\"obius signs.  Any
+cancellation there must come from the literal complex weights; new
+residual-sign interference occurs in \(H_{\rm erase}\), or in cancellation
+between the two completed operators.
+\end{proposition}
+
+\begin{proof}
+Squarefreeness gives
+\[
+ \mu(s)=\mu(d_m)\mu(r(w))
+       =\mu(d_n)\mu(r(w')).
+\]
+Since each row gauge is a sign,
+\[
+ \mu(mj(w)+h_0)
+ =-\mu(r(w))
+ =-\mu(d_m)\mu(s),
+\]
+and similarly for \(n,w'\).  Multiplying the two identities proves
+\eqref{eq:tpc68-same-residual-frozen-sign}.  Before the row gauge, the two
+residual signs at the same \((i,s)\) multiply to \(\mu(s)^2=1\).
+\end{proof}
+
+\begin{remark}[What the identity does not prove]
+\label{rem:tpc68-gauge-not-cancellation}
+The theorem exposes the exact signs on which new arithmetic would have to
+act.  It supplies no saving for their sum.  The output gauge \(U_\mu\) and
+the source-row gauge \(U_d\) act on different spaces and must not be
+identified.  Either diagonal gauge can reveal a useful formula, but
+neither can reduce an operator norm.
+\end{remark}
+
+\subsection{Six-item L1 audit}
+
+The literal specialization satisfies the following audit.
+\begin{enumerate}[label=\textup{(L1.\arabic*)},leftmargin=4em]
+ \item The entries are the actual coefficients
+       \(-\mu(s(w))\beta_w\), with no free atomwise phase.
+ \item Every target is \(mj+h_0\) for one fixed physical \(h_0\ne0\).
+ \item The full diagonal \(D_M\) is raw physical atomic mass; its zero
+       rows are retained in \(\mathcal K_X\).
+ \item Source rows and every retained output label are canonical; only the
+       residual label is erased.
+ \item The carrier, active rows, complete native outputs, collision graph,
+       and every certificate family below are fixed before the later
+       coefficient vector or extremizer.
+ \item The exact identities cost no endpoint exponent.  Every eventual
+       arithmetic estimate must still fit the total strict \(1/400\)
+       endpoint ledger.
+\end{enumerate}

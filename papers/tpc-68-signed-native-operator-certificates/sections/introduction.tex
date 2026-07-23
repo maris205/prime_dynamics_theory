@@ -1,0 +1,108 @@
+\section{Introduction}
+\label{sec:tpc68-introduction}
+
+The missing-high reassembly problem contains two different questions.  The
+first asks how much a family of literal missing atoms can amplify after its
+residual labels are erased and its contributions are coherently returned to
+native outputs.  The second asks whether the resulting missing map can
+cancel a represented map along coefficient directions invisible to the
+represented denominator.  The first is a signed native-Gram problem.  The
+second is a shorted-operator problem.  Conflating them turns a useful
+restricted norm estimate into a false uniform reassembly statement.
+
+TPC--60 defined the physical missing-high map and proved exact nuisance
+elimination by a shorted Gram \citep{WangTPC60}.  TPC--61 then fixed the
+complete missing carrier before the coefficient vector, factored the map
+through residual coordinates, and identified its optimal normalized native
+Gram \citep{WangTPC61}.  TPC--62 supplied inverse localization and
+phase-blind Schur bounds: a large operator norm leaves a row, cell, and pair
+witness, whereas a uniform pair estimate must still beat the actual
+collision degree \citep{WangTPC62}.  TPC--67 pursued a different door,
+using all-row full-output minors, matching holonomy, and determinant mass
+to certify a lower frame \citep{WangTPC67}.  The present paper returns to
+the direct operator door advertised there.
+
+\subsection{The narrow object of this paper}
+
+The main arithmetic object is only the \emph{literal missing-native map}
+\[
+ M_X:\ell^2(\mathcal M_X)\longrightarrow\ell^2(\mathcal I_X^{\rm nat})
+\]
+from the TPC--61 very-high missing carrier.  Its source rows, atoms,
+external blocks, side labels, orbit labels, residual labels, native labels,
+masks, profiles, and coefficients are frozen before a coefficient vector is
+chosen.  We neither extend the TPC--61 entry formula to the entire prime
+packet nor assert that it already describes the cross terms of the full
+represented-plus-missing Gram.
+
+There are two output levels.  Before erasure the residual output is
+\((i,s)\); after erasure the native output is \(i\).  Every still-orthogonal
+physical label, including side, external block, opposite row, the
+\(\gamma\)-label, and orbit time \(j\), remains inside \(i\).  Only the
+residual label \(s\) is summed out, because only that erasure occurs in the
+physical construction.  This is stricter than replacing \(i\) by a
+reduced arithmetic collision cell.  The pre-erasure normalized Gram is
+not assumed to be the identity: its same-residual defect remains part of
+the full native operator.
+
+\subsection{The six exact layers}
+
+After physical row normalization, write
+\[
+ K=F^*F=I+H.
+\]
+The six finite-dimensional layers proved below are:
+\begin{enumerate}[label=\textup{(\Alph*)},leftmargin=3em]
+ \item an exact gauge-to-genuine-sign identity for \(H\);
+ \item complex-weight sign-reversing pair certificates;
+ \item exact star-norm bounds and their local sharpness;
+ \item an entrywise pair majorant and its Perron/weighted-Schur optimum;
+ \item even operator-walk and trace certificates that retain cancellation
+       between complete walks; and
+ \item a certificate lattice converting any of these estimates into upper
+       and lower eigenvalue bounds for \(K\).
+\end{enumerate}
+These layers are deterministic.  They do not assume random signs,
+independence, generic phases, or an average over shifts.
+
+\subsection{Why operator walks are a genuinely different door}
+
+A pair majorant first takes an absolute value of every off-diagonal entry.
+Once that is done, cancellation between different row pairs is lost.
+By contrast, \(H^{2q}\) expands into complete row walks.  Products of the
+row gauges telescope on closed walks, while unequal-residual target signs
+and literal complex phases remain.  Pure same-residual target signs also
+telescopically trivialize, a limitation made explicit below.  An arithmetic
+estimate for a whole decorated walk sum could
+therefore succeed even when every pair-majorant bound is too expensive.
+This is a logical possibility, not a theorem that such an estimate exists.
+
+\subsection{Claim levels and nonclaims}
+
+We use the following hierarchy throughout.
+\begin{itemize}
+ \item \textbf{L0:} exact finite-dimensional linear algebra for a fixed
+       coefficient array.
+ \item \textbf{L1:} identification of that array with the complete literal
+       fixed-\(h_0\) missing carrier and its physical atomic normalization.
+ \item \textbf{L2:} any new uniform cancellation or saving for the
+       two-affine M\"obius sums, their stars, or their operator walks.
+\end{itemize}
+The paper proves L0 and records the L1 crosswalk.  It does not prove the L2
+premises needed for a subpower native norm, an endpoint reassembly
+inequality, a parity improvement, a prime-pair estimate, or a twin-prime
+result.  In particular, all statements hold for an arbitrary fixed
+nonzero \(h_0\); none is specialized to \(h_0=2\).
+
+\subsection{Organization}
+
+\Cref{sec:tpc68-literal-interface} freezes the physical carrier and derives
+the signed Gram.  \Cref{sec:tpc68-gauge-pairing} gives pair certificates.
+\Cref{sec:tpc68-star-perron} proves star and Perron bounds, and
+\cref{sec:tpc68-operator-walks} gives the walk route.
+\Cref{sec:tpc68-certificate-lattice} assembles the exact certificate
+lattice.  \Cref{sec:tpc68-shorted-reassembly} restores the nuisance
+directions of the full reassembly problem.
+\Cref{sec:tpc68-countermodels} gives five separating examples.
+\Cref{sec:tpc68-conditional-arithmetic,sec:tpc68-claim-boundary} state the
+conditional arithmetic targets, kill criteria, and precise stopping line.

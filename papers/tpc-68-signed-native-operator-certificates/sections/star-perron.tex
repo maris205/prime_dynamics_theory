@@ -1,0 +1,227 @@
+\section{Star norms and the optimal pair majorant}
+\label{sec:tpc68-star-perron}
+
+Let
+\[
+ \mathcal N_H(m):=\{n\ne m:H_{mn}\ne0\},
+ \qquad
+ \Delta_H:=\max_m|\mathcal N_H(m)|
+\]
+be the actual collision graph and its maximum degree.  Define the row
+\(\ell^2\)-star
+\begin{equation}
+ s_m(H):=
+ \left(\sum_{n\ne m}|H_{mn}|^2\right)^{1/2},
+ \qquad
+ s_*(H):=\max_m s_m(H).
+ \label{eq:tpc68-star-norm}
+\end{equation}
+All definitions use the completed literal entries after summing their
+native collision lists.
+
+\begin{theorem}[Exact star sandwich]
+\label{thm:tpc68-star-sandwich}
+For every finite Hermitian zero-diagonal matrix \(H\),
+\begin{equation}
+ \boxed{
+ s_*(H)\le\|H\|_{2\to2}
+ \le\sqrt{\Delta_H}\,s_*(H).}
+ \label{eq:tpc68-star-sandwich}
+\end{equation}
+Both sides are interpreted as zero when \(H=0\).
+\end{theorem}
+
+\begin{proof}
+Hermitian symmetry gives
+\[
+ \|He_m\|_2
+ =\left(\sum_n|H_{nm}|^2\right)^{1/2}
+ =s_m(H),
+\]
+so the operator norm is at least \(s_*(H)\).  On the other hand,
+Cauchy--Schwarz on every actual row gives
+\[
+ \sum_n|H_{mn}|
+ \le\sqrt{|\mathcal N_H(m)|}\,s_m(H)
+ \le\sqrt{\Delta_H}\,s_*(H).
+\]
+For a Hermitian matrix, the maximum absolute column sum equals the maximum
+absolute row sum.  Therefore
+\[
+ \|H\|_{2\to2}
+ \le\sqrt{\|H\|_1\|H\|_\infty}
+ =\|H\|_\infty,
+\]
+which proves the upper bound.
+\end{proof}
+
+\begin{proposition}[Local phase no-go]
+\label{prop:tpc68-local-star-extremizer}
+For every row \(m\),
+\begin{equation}
+ \boxed{
+ \sup_{\substack{\|x\|_2\le1\\
+                 \supp x\subseteq\mathcal N_H(m)}}
+ |(Hx)_m|
+ =s_m(H).}
+ \label{eq:tpc68-local-star-sharp}
+\end{equation}
+If \(s_m(H)>0\), equality is obtained by taking
+\[
+ x_n=\frac{\overline{H_{mn}}}{s_m(H)}
+ \qquad(n\in\mathcal N_H(m)).
+\]
+\end{proposition}
+
+\begin{proof}
+The upper bound is Cauchy--Schwarz.  If \(s_m(H)=0\), the zero vector is
+admissible and gives equality.  Otherwise the displayed vector has norm one
+and gives
+\[
+ (Hx)_m=\frac1{s_m(H)}
+ \sum_{n\in\mathcal N_H(m)}|H_{mn}|^2=s_m(H).
+\]
+\end{proof}
+
+Thus cancellation in one scalar row sum
+\(\sum_nH_{mn}\), or against any other distinguished row vector, cannot
+prove a uniform operator estimate.  The later coefficient vector is free
+to align with the conjugate star.  A valid star route must control the
+\(\ell^2\)-mass of every actual row star.
+
+\subsection{Pair defects imply star bounds}
+
+For the pair-defect matrix \(P\) of
+\eqref{eq:tpc68-optimal-pair-defect}, set
+\[
+ s_m(P):=\left(\sum_{n\ne m}P_{mn}^2\right)^{1/2},
+ \qquad s_*(P):=\max_m s_m(P),
+\]
+and let
+\[
+ \Delta_P:=\max_m|\{n\ne m:P_{mn}>0\}|.
+\]
+
+\begin{corollary}[Pair-to-star certificate]
+\label{cor:tpc68-pair-to-star}
+One has
+\begin{equation}
+ s_m(H)\le s_m(P),
+ \qquad
+ \|H\|\le\sqrt{\Delta_P}\,s_*(P).
+ \label{eq:tpc68-pair-to-star}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The first inequality follows entry by entry from
+\eqref{eq:tpc68-entry-below-defect}.  The support of \(H\) is contained in
+the support of \(P\), so \(\Delta_H\le\Delta_P\).  Apply
+\cref{thm:tpc68-star-sandwich}.
+\end{proof}
+
+\subsection{The Perron certificate}
+
+The star estimate still pays the worst degree by Cauchy--Schwarz.  The full
+nonnegative pair matrix permits optimal row weights; the matrix-norm and
+Perron facts used below are standard \citep{HornJohnson2013}.
+
+\begin{theorem}[Pair-majorant/Perron certificate]
+\label{thm:tpc68-Perron-certificate}
+Let \(P\) be any finite symmetric nonnegative matrix such that
+\[
+ |H_{mn}|\le P_{mn}
+ \qquad\text{for all }m,n.
+\]
+Then
+\begin{equation}
+ \boxed{
+ \|H\|_{2\to2}
+ \le\rho(P)
+ =
+ \min_{a_m>0}
+ \max_m\frac{\sum_nP_{mn}a_n}{a_m}.}
+ \label{eq:tpc68-Perron-CW}
+\end{equation}
+The minimum formula is valid even when \(P\) is reducible.
+\end{theorem}
+
+\begin{proof}
+For every \(x\),
+\[
+ |Hx|\le P|x|
+\]
+coordinatewise.  Hence
+\[
+ \|Hx\|_2\le\|P|x|\|_2
+ \le\|P\|_{2\to2}\|x\|_2.
+\]
+Since \(P\) is real symmetric and nonnegative,
+\(\|P\|_{2\to2}=\rho(P)\).
+
+For completeness, fix \(a>0\) and put
+\[
+ c(a):=\max_m\frac{(Pa)_m}{a_m}.
+\]
+The weighted row-sum bound gives \(\rho(P)\le c(a)\), so
+\[
+ \rho(P)\le\inf_{a>0}c(a).
+\]
+Conversely, for every
+\(\lambda>\rho(P)\),
+\[
+ a_\lambda:=(\lambda I-P)^{-1}\mathbf1
+ =\sum_{k\ge0}\lambda^{-k-1}P^k\mathbf1
+ >0.
+\]
+It satisfies \(Pa_\lambda=\lambda a_\lambda-\mathbf1<\lambda a_\lambda\),
+so
+\[
+ \inf_{a>0}c(a)\le\lambda
+ \qquad(\lambda>\rho(P)).
+\]
+Letting \(\lambda\downarrow\rho(P)\) proves equality of the infimum with
+\(\rho(P)\).
+
+It remains to verify attainment.  Permute \(P\) into the orthogonal direct
+sum of the connected components of its undirected support graph.  On each
+nonzero irreducible block choose a strictly positive Perron eigenvector,
+and on every isolated zero block choose any positive entry.  Concatenating
+these vectors gives \(a>0\) for which
+\[
+ \max_m\frac{(Pa)_m}{a_m}
+ =\max_C\rho(P_C)=\rho(P).
+\]
+\end{proof}
+
+\begin{remark}[Optimality is relative to the majorant]
+The right side of \eqref{eq:tpc68-Perron-CW} is the best diagonal
+weighted-Schur aggregation of the chosen pair certificates.  It need not
+equal \(\|H\|\), because replacing \(H\) by \(P\) has already discarded
+all phase cancellation between different row pairs.
+\end{remark}
+
+\begin{corollary}[Uniform pair bound plus actual degree]
+\label{cor:tpc68-pair-degree}
+If
+\[
+ P_{mn}\le p_*
+ \quad(m\ne n),
+ \qquad
+ \Delta_P\le\Delta,
+\]
+then
+\begin{equation}
+ \|H\|\le\rho(P)\le\Delta p_*.
+ \label{eq:tpc68-pair-degree-bound}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Take \(a_m=1\) in \eqref{eq:tpc68-Perron-CW}.
+\end{proof}
+
+This recovers the phase-blind degree-times-pair barrier isolated in
+TPC--62, but the defect \(P_{mn}\) may be substantially smaller than the
+absolute sum of the original collision terms because opposite two-affine
+signs were paired first.

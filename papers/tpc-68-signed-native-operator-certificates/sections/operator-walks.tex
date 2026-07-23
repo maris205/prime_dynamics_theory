@@ -1,0 +1,207 @@
+\section{Even operator walks and closed-walk signs}
+\label{sec:tpc68-operator-walks}
+
+Pair and Perron certificates take absolute values before different row
+pairs interact.  Powers of the signed matrix provide a later place to take
+absolute values.
+
+\subsection{Power-row certificate}
+
+For an integer \(q\ge1\), define
+\begin{equation}
+ \Omega_{2q}(H)
+ :=
+ \max_m\sum_n|(H^{2q})_{mn}|.
+ \label{eq:tpc68-Omega-power}
+\end{equation}
+
+\begin{theorem}[Even operator-walk certificate]
+\label{thm:tpc68-even-walk-certificate}
+For every finite Hermitian matrix \(H\) and every \(q\ge1\),
+\begin{equation}
+ \boxed{
+ \|H\|_{2\to2}
+ \le\Omega_{2q}(H)^{1/(2q)}.}
+ \label{eq:tpc68-even-walk-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The matrix \(H^{2q}\) is Hermitian, and its maximum absolute row and column
+sums agree.  Therefore
+\[
+ \|H\|^{2q}
+ =\|H^{2q}\|_{2\to2}
+ \le\sqrt{\|H^{2q}\|_1\|H^{2q}\|_\infty}
+ =\Omega_{2q}(H).
+\]
+Taking \(2q\)-th roots proves the result.
+\end{proof}
+
+The case \(q=1\) already includes interference between two-edge walks:
+\[
+ (H^2)_{mn}=\sum_kH_{mk}H_{kn}.
+\]
+It is not identical to the star estimate.  In particular,
+\((H^2)_{mm}=s_m(H)^2\), while off-diagonal entries may cancel.
+
+\subsection{Even moments}
+
+Let \(r=\dim S_M\).
+
+\begin{theorem}[Even-moment certificate]
+\label{thm:tpc68-even-moment}
+For every \(q\ge1\),
+\begin{equation}
+ \boxed{
+ \|H\|
+ \le\bigl(\tr H^{2q}\bigr)^{1/(2q)}
+ \le r^{1/(2q)}\|H\|.}
+ \label{eq:tpc68-even-moment-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+If \(\lambda_1,\ldots,\lambda_r\) are the real eigenvalues of \(H\), then
+\[
+ \tr H^{2q}=\sum_{\nu=1}^r|\lambda_\nu|^{2q}.
+\]
+This sum is at least \(\max_\nu|\lambda_\nu|^{2q}\) and at most \(r\)
+times that maximum.
+\end{proof}
+
+For a fixed finite matrix, the middle quantity decreases to \(\|H\|\) as
+\(q\to\infty\).  In an asymptotic family whose dimension grows with \(X\),
+using \(q=q_X\to\infty\) requires estimates uniform in both \(X\) and
+\(q_X\).  A fixed-moment estimate cannot silently be extrapolated to that
+regime.
+
+\subsection{Literal decorated-walk expansion}
+
+For \(m\ne n\), abbreviate each literal summand in
+\eqref{eq:tpc68-literal-pair-list} by
+\[
+ a_{mn}(\xi):=\varepsilon_\xi^{mn}v_\xi^{mn},
+ \qquad \xi\in\mathcal C_{mn}.
+\]
+For a collision pair \(\xi=(w,w')\), define
+\[
+ j(\xi):=j(w)=j(w'),
+\]
+where equality follows from the common complete native key.
+Set \(\mathcal C_{mm}=\varnothing\), consistently with \(H_{mm}=0\).
+
+\begin{proposition}[Exact decorated-walk identity]
+\label{prop:tpc68-decorated-walk}
+For every integer \(k\ge1\),
+\begin{equation}
+ (H^k)_{mn}
+ =
+ \sum_{\substack{m=m_0,m_1,\ldots,m_k=n\\
+                 \xi_\ell\in\mathcal C_{m_{\ell-1}m_\ell}}}
+ \prod_{\ell=1}^k
+ a_{m_{\ell-1}m_\ell}(\xi_\ell).
+ \label{eq:tpc68-decorated-walk-expansion}
+\end{equation}
+Consequently
+\begin{equation}
+ \tr H^{2q}
+ =
+ \sum_{\substack{m_0=m_{2q}\\
+                 m_0,m_1,\ldots,m_{2q-1}\\
+                 \xi_\ell\in\mathcal C_{m_{\ell-1}m_\ell}}}
+ \prod_{\ell=1}^{2q}
+ \varepsilon_{\xi_\ell}^{m_{\ell-1}m_\ell}
+ v_{\xi_\ell}^{m_{\ell-1}m_\ell}.
+ \label{eq:tpc68-literal-closed-walk-moment}
+\end{equation}
+Both identities sum the complete literal native collision lists on every
+edge.
+\end{proposition}
+
+\begin{proof}
+Expand the matrix product
+\[
+ (H^k)_{mn}
+ =\sum_{m_1,\ldots,m_{k-1}}
+ H_{mm_1}H_{m_1m_2}\cdots H_{m_{k-1}n}
+\]
+and then expand every entry by
+\eqref{eq:tpc68-literal-pair-list}.  Summing the diagonal at \(k=2q\)
+gives \eqref{eq:tpc68-literal-closed-walk-moment}.
+\end{proof}
+
+\begin{proposition}[Row gauges telescope on closed walks]
+\label{prop:tpc68-gauge-telescoping}
+Let \(u_m\in\mathbb C\) with \(|u_m|=1\), let
+\(U=\diag(u_m)\), and put \(\widehat H=U^*HU\).  In every closed-walk term
+of \(\tr\widehat H^{2q}\), the product of the row-gauge factors is one.
+Hence
+\[
+ \tr\widehat H^{2q}=\tr H^{2q}.
+\]
+For the real self-adjoint M\"obius row gauge \(U_d=U_d^*=U_d^{-1}\), the
+same statement applies to \(U_dHU_d\).
+\end{proposition}
+
+\begin{proof}
+An edge \(m_{\ell-1}\to m_\ell\) contributes
+\(\overline{u_{m_{\ell-1}}}u_{m_\ell}\).  Their product around a closed
+walk is
+\[
+ \prod_{\ell=1}^{2q}
+ \overline{u_{m_{\ell-1}}}u_{m_\ell}=1
+\]
+because \(m_{2q}=m_0\).  The trace identity also follows from unitary
+invariance.
+\end{proof}
+
+\begin{proposition}[Pure same-residual walks have no target-sign gain]
+\label{prop:tpc68-pure-residual-walk-sign}
+Consider one decorated closed-walk term in
+\eqref{eq:tpc68-literal-closed-walk-moment}.  If every decorated edge
+\((w_\ell,w'_\ell)\) is a same-residual collision, then
+\begin{equation}
+ \prod_{\ell=1}^{2q}
+ \varepsilon_{\xi_\ell}^{m_{\ell-1}m_\ell}=1.
+ \label{eq:tpc68-pure-residual-sign-product}
+\end{equation}
+Therefore pure \(H_{\rm res}\) walks have no cancellation from the target
+M\"obius signs themselves.  Their literal complex weights may still
+cancel, and walks containing \(H_{\rm erase}\) edges retain
+unequal-residual sign information.
+\end{proposition}
+
+\begin{proof}
+By \cref{prop:tpc68-same-residual-sign-freeze}, the edge sign is
+\[
+ \varepsilon_{\xi_\ell}^{m_{\ell-1}m_\ell}
+ =\mu(d_{m_{\ell-1}})\mu(d_{m_\ell}).
+\]
+Every vertex gauge occurs twice in the closed product, so the product is
+one.
+\end{proof}
+
+The telescoping proposition explains why the common residual/source gauge
+is not the arithmetic cancellation sought here.  It disappears from every
+closed walk automatically.  The signs
+\[
+ \prod_{\ell=1}^{2q}
+ \mu(m_{\ell-1}j(\xi_\ell)+h_0)
+ \mu(m_\ell j(\xi_\ell)+h_0)
+\]
+in \eqref{eq:tpc68-literal-closed-walk-moment} are the genuine target
+signs.  The proposition above identifies the pure same-residual subfamily
+on which they are trivial.  Bounding the remaining complete weighted sum
+is an L2 problem.
+
+\subsection{Why a support walk count is insufficient}
+
+Taking absolute values term by term in
+\eqref{eq:tpc68-literal-closed-walk-moment} reduces the method to a
+positive walk count and loses its intended advantage.  Conversely, a
+random-sign heuristic for the decorated walks is not a proof for the one
+literal M\"obius array.  A valid operator-walk input must estimate the
+complete fixed-\(h_0\) weighted sum, uniformly over all start rows needed
+by \(\Omega_{2q}\), or the complete closed-walk sum needed by
+\(\tr H^{2q}\).

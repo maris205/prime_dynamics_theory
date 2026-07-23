@@ -1,0 +1,124 @@
+\section{The signed native certificate lattice}
+\label{sec:tpc68-certificate-lattice}
+
+The preceding theorems take absolute values at different stages.  Their
+conclusions can be compared only after each is evaluated on the same
+complete literal matrix.
+
+\begin{definition}[Available certificates]
+\label{def:tpc68-certificate-family}
+For the gauged alias operator \(H\), define
+\begin{align}
+ C_{\rm star}
+ &:=\sqrt{\Delta_H}\,s_*(H),
+ \label{eq:tpc68-C-star}\\
+ C_{\rm pair}
+ &:=\rho(P),
+ \label{eq:tpc68-C-pair}\\
+ C_{{\rm walk},q}
+ &:=\Omega_{2q}(H)^{1/(2q)},
+ \label{eq:tpc68-C-walk}\\
+ C_{{\rm mom},q}
+ &:=\bigl(\tr H^{2q}\bigr)^{1/(2q)}
+ \qquad(q\ge1).
+ \label{eq:tpc68-C-moment}
+\end{align}
+Here \(P\) may be the optimal literal pairing-defect matrix or any other
+proved symmetric nonnegative pair majorant.  Put
+\begin{equation}
+ \mathcal C_X
+ :=
+ \min\left\{
+ C_{\rm star},C_{\rm pair},
+ \inf_{q\ge1}C_{{\rm walk},q},
+ \inf_{q\ge1}C_{{\rm mom},q}
+ \right\}.
+ \label{eq:tpc68-master-certificate}
+\end{equation}
+\end{definition}
+
+At a fixed finite \(X\), all terms are finite and computable in principle.
+The infima over \(q\) are mathematical certificates; their exact
+evaluation by arbitrarily high powers is not claimed to be computationally
+efficient.
+
+\begin{theorem}[Exact native eigenvalue certificate]
+\label{thm:tpc68-native-certificate-lattice}
+For the atomic-normalized literal missing-native Gram \(K=I+H\),
+\begin{align}
+ \kappa_M
+ &\le1+\mathcal C_X,
+ \label{eq:tpc68-kappa-lattice}\\
+ \alpha_M
+ &\ge\max\{0,1-\mathcal C_X\}.
+ \label{eq:tpc68-alpha-lattice}
+\end{align}
+Every individual term in
+\eqref{eq:tpc68-master-certificate} may replace \(\mathcal C_X\).
+\end{theorem}
+
+\begin{proof}
+\Cref{thm:tpc68-star-sandwich,thm:tpc68-Perron-certificate,thm:tpc68-even-walk-certificate,thm:tpc68-even-moment}
+shows that \(\|H\|\) is at most every listed certificate.  Hence
+\(\|H\|\le\mathcal C_X\).  Since
+\[
+ \lambda_{\max}(H)\le\|H\|,
+ \qquad
+ \lambda_{\min}(H)\ge-\|H\|,
+\]
+the eigenvalue identities
+\eqref{eq:tpc68-upper-native-eigenvalue}--\eqref{eq:tpc68-lower-native-eigenvalue}
+give the two bounds.  Positivity of \(K\) supplies the additional zero in
+\eqref{eq:tpc68-alpha-lattice}.
+\end{proof}
+
+\begin{remark}[Exact but not automatically small]
+\label{rem:tpc68-certificate-not-saving}
+The theorem is an exact L0 implication.  It does not say that
+\(\mathcal C_X=o(1)\), \(X^{o(1)}\), or even bounded.  Computing a large
+certificate exactly is diagnostically useful but does not prove
+cancellation.
+\end{remark}
+
+\subsection{Full-support components}
+
+Let the actual collision graph of \(H\) have connected components
+\(\mathscr C_X\).  After a simultaneous permutation of rows,
+\[
+ H=\bigoplus_{C\in\mathscr C_X}H_C,
+ \qquad
+ K=\bigoplus_{C\in\mathscr C_X}(I_C+H_C).
+\]
+
+\begin{proposition}[Worst-component rule]
+\label{prop:tpc68-worst-component}
+One has
+\begin{align}
+ \|H\|&=\max_{C\in\mathscr C_X}\|H_C\|,
+ \label{eq:tpc68-component-norm}\\
+ \kappa_M&=\max_{C\in\mathscr C_X}
+ \lambda_{\max}(I_C+H_C),
+ \label{eq:tpc68-component-upper}\\
+ \alpha_M&=\min_{C\in\mathscr C_X}
+ \lambda_{\min}(I_C+H_C).
+ \label{eq:tpc68-component-lower}
+\end{align}
+Thus a uniform theorem must include every actual component.  Selecting a
+favorable component or deleting a difficult row changes the operator.
+\end{proposition}
+
+\begin{proof}
+These are the standard norm and extremal-eigenvalue formulas for a finite
+orthogonal direct sum.
+\end{proof}
+
+\subsection{Quantifier-safe finite certificates}
+
+The pairing \(\tau\), Abel ordering, Perron weight \(a\), power \(q\), and
+component decomposition may all be chosen after the finite literal matrix
+is known.  They still yield coefficient-uniform operator inequalities
+because none depends on the vector to which \(H\) is later applied.  What
+is forbidden is to choose or alter the physical carrier, erase extra
+output labels, delete active rows, or rebuild the certificate separately
+for each later coefficient vector while advertising one uniform operator
+bound.

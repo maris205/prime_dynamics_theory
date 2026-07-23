@@ -1,0 +1,173 @@
+\section{Conditional arithmetic routes and exponent ledgers}
+\label{sec:tpc68-conditional-arithmetic}
+
+This section states transparent sufficient premises for an asymptotic
+family \(X\to\infty\).  None of the premises below is proved in this paper.
+Every \(o(1)\) is required to be uniform over all active rows, row pairs,
+blocks, sides, and components in the declared physical scope.
+
+\subsection{Route P: uniform literal pair defects}
+
+\begin{proposition}[Conditional pair route]
+\label{prop:tpc68-conditional-pair}
+Assume that the literal pair-defect matrix satisfies
+\begin{align}
+ \Delta_P&\le X^{\delta+o(1)},
+ \label{eq:tpc68-L2-pair-degree}\\
+ P_{mn}&\le X^{-\tau+o(1)}
+ \qquad(m\ne n).
+ \label{eq:tpc68-L2-pair-saving}
+\end{align}
+Then
+\begin{equation}
+ \|H\|
+ \le X^{\delta-\tau+o(1)}.
+ \label{eq:tpc68-pair-exponent-output}
+\end{equation}
+Thus this route gives a subpower certificate only when
+\(\tau\ge\delta\), and gives decay only when \(\tau>\delta\).
+\end{proposition}
+
+\begin{proof}
+Apply \cref{cor:tpc68-pair-degree} with the two assumed exponents.
+\end{proof}
+
+The hypothesis concerns the completed fixed-\(h_0\) pair entries with
+their literal complex weights.  An averaged shift estimate, a density-one
+set of row pairs, or a reduced-cell support count does not imply
+\eqref{eq:tpc68-L2-pair-saving}.
+
+\subsection{Route S: uniform star cancellation}
+
+\begin{proposition}[Conditional star route]
+\label{prop:tpc68-conditional-star}
+Assume \eqref{eq:tpc68-L2-pair-degree} and
+\begin{equation}
+ \max_m\left(\sum_{n\ne m}P_{mn}^2\right)^{1/2}
+ \le X^{-\sigma+o(1)}.
+ \label{eq:tpc68-L2-star-saving}
+\end{equation}
+Then
+\begin{equation}
+ \|H\|
+ \le X^{\delta/2-\sigma+o(1)}.
+ \label{eq:tpc68-star-exponent-output}
+\end{equation}
+This route gives a subpower certificate when
+\(\sigma\ge\delta/2\), and decay when \(\sigma>\delta/2\).
+\end{proposition}
+
+\begin{proof}
+Use \cref{cor:tpc68-pair-to-star}.
+\end{proof}
+
+An estimate for one scalar sum \(\sum_nH_{mn}\) is insufficient by
+\cref{prop:tpc68-local-star-extremizer}.  The premise must control the
+entire \(\ell^2\)-star for every actual row.
+
+\subsection{Route W: complete operator walks}
+
+\begin{proposition}[Conditional operator-walk route]
+\label{prop:tpc68-conditional-walk}
+Let \(q_X\ge1\) be integers.  If
+\begin{equation}
+ \Omega_{2q_X}(H)
+ \le
+ X^{2q_X\nu+o(q_X\log X)},
+ \label{eq:tpc68-L2-walk-hypothesis}
+\end{equation}
+then
+\begin{equation}
+ \|H\|\le X^{\nu+o(1)}.
+ \label{eq:tpc68-walk-exponent-output}
+\end{equation}
+The same conclusion follows from the analogous bound
+\[
+ \tr H^{2q_X}
+ \le X^{2q_X\nu+o(q_X\log X)}.
+\]
+\end{proposition}
+
+\begin{proof}
+Take \(2q_X\)-th roots in
+\cref{thm:tpc68-even-walk-certificate,thm:tpc68-even-moment}.
+\end{proof}
+
+When \(q_X\to\infty\), the error term in
+\eqref{eq:tpc68-L2-walk-hypothesis} must be uniform at that growing walk
+length.  A heuristic square-root cancellation for independent signs, a
+fixed-\(q\) estimate with uncontrolled constants, or a count of unsigned
+support walks is not the stated premise.
+
+\subsection{Missing mass, represented scale, and strict reassembly}
+
+Suppose the physical represented and missing maps are now placed in the
+same declared scope.  Let \(\mathcal E_X(z)\) be one fixed reference
+energy, put \(S_A=(\Ker A)^\perp\), and assume uniformly for
+\(z\in S_A\) that
+\begin{align}
+ \langle D_Mz,z\rangle
+ &\le X^{-\sigma_M+o(1)}\mathcal E_X(z),
+ \label{eq:tpc68-L2-missing-mass}\\
+ \|Az\|^2
+ &\ge X^{-\lambda_{\rm rep}+o(1)}\mathcal E_X(z),
+ \label{eq:tpc68-L2-represented-lower}\\
+ \kappa_M
+ &\le X^{\nu_M+o(1)}.
+ \label{eq:tpc68-L2-kappa-exponent}
+\end{align}
+The certificate lattice may be used to prove the last inequality only if
+one of the preceding L2 routes is actually established.
+
+\begin{proposition}[Conditional strict exponent gate]
+\label{prop:tpc68-strict-exponent-gate}
+Under
+\eqref{eq:tpc68-L2-missing-mass}--\eqref{eq:tpc68-L2-kappa-exponent},
+\begin{equation}
+ \varepsilon_X^2
+ :=
+ \sup_{z\in S_A\setminus\{0\}}
+ \frac{\|Mz\|^2}{\|Az\|^2}
+ \le
+ X^{\nu_M-\sigma_M+\lambda_{\rm rep}+o(1)}.
+ \label{eq:tpc68-relative-exponent}
+\end{equation}
+Hence
+\begin{equation}
+ \boxed{\sigma_M>\nu_M+\lambda_{\rm rep}}
+ \label{eq:tpc68-strict-reassembly-exponent}
+\end{equation}
+is sufficient for \(\varepsilon_X=o(1)\).  If, in addition,
+\begin{equation}
+ \|C_N\|=o(1),
+ \label{eq:tpc68-L2-shorting-small}
+\end{equation}
+then
+\[
+ \delta(A,M)\ge1-o(1).
+\]
+\end{proposition}
+
+\begin{proof}
+Combine the three assumed inequalities to obtain
+\eqref{eq:tpc68-relative-exponent}.  The strict inequality
+\eqref{eq:tpc68-strict-reassembly-exponent} makes its right side tend to
+zero.  Then \cref{cor:tpc68-canonical-perturbation} and
+\eqref{eq:tpc68-L2-shorting-small} give the final assertion.
+\end{proof}
+
+Equality in \eqref{eq:tpc68-strict-reassembly-exponent} gives only a
+subpower upper bound and does not imply that the perturbation tends to
+zero.  Also, no estimate for \(C_N\) follows formally from
+\(\kappa_M\): the nuisance output \(B(N)\) is a separate geometric object.
+
+\subsection{Endpoint ledger}
+
+The exact L0 identities and the L1 carrier crosswalk have zero exponent
+cost.  Every positive exponent in
+\(\delta,\tau,\sigma,\nu_M,\sigma_M,\lambda_{\rm rep}\), every block
+summation, and every comparison between reference energies must be charged
+once in the common endpoint ledger.  If the literal physical family forces
+total loss at least \(1/400\), the endpoint route must stop.  Reallocating
+the same loss among pair, star, walk, or reassembly notation does not repair
+the budget.

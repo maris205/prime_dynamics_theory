@@ -1,0 +1,172 @@
+\section{Literal pair cancellation after gauge removal}
+\label{sec:tpc68-gauge-pairing}
+
+Because \(H\) and \(\widetilde H\) are unitarily equivalent, we work with
+the gauged matrix and drop the tilde in this and the next three sections.
+Thus every off-diagonal entry has the exact form
+\eqref{eq:tpc68-two-affine-entry}.
+
+\subsection{Signed complex pair lists}
+
+Fix distinct active rows \(m,n\).  Let
+\[
+ \mathcal C_{mn}
+ :=
+ \{(w,w')\in\mathcal W_M^2:
+ m(w)=m,\ m(w')=n,\ i(w)=i(w')\}
+\]
+be their complete native collision list.  For
+\(\xi=(w,w')\in\mathcal C_{mn}\), define
+\begin{align}
+ \varepsilon_\xi^{mn}
+ &:=
+ \mu(mj(w)+h_0)\mu(nj(w')+h_0)\in\{-1,1\},
+ \label{eq:tpc68-pair-sign}\\
+ v_\xi^{mn}
+ &:=
+ \frac{\overline{\beta_w}\beta_{w'}}
+ {\sqrt{W_M(m)W_M(n)}}\in\mathbb C.
+ \label{eq:tpc68-pair-complex-weight}
+\end{align}
+Then
+\begin{equation}
+ H_{mn}=\sum_{\xi\in\mathcal C_{mn}}
+ \varepsilon_\xi^{mn}v_\xi^{mn}.
+ \label{eq:tpc68-literal-pair-list}
+\end{equation}
+The coefficient \(v_\xi^{mn}\) is complex and literal.  Replacing it by its
+magnitude before pairing would discard physical phase information.
+
+Write
+\[
+ \mathcal C_{mn}^{\pm}
+ :=\{\xi\in\mathcal C_{mn}:\varepsilon_\xi^{mn}=\pm1\}.
+\]
+
+\begin{definition}[Admissible sign-reversing matching]
+\label{def:tpc68-admissible-pairing}
+An admissible matching for the row pair \((m,n)\) is a bijection
+\[
+ \tau:A\longrightarrow B
+\]
+between subsets \(A\subseteq\mathcal C_{mn}^{+}\) and
+\(B\subseteq\mathcal C_{mn}^{-}\).  The matching may depend on the fixed
+literal carrier, the row pair, and all literal coefficients
+\(v_\xi^{mn}\).  It may not depend on a coefficient vector subsequently
+inserted into the row space or on an extremizing eigenvector of \(H\).
+\end{definition}
+
+\begin{theorem}[Complex sign-reversing pair certificate]
+\label{thm:tpc68-pair-certificate}
+For every admissible matching \(\tau:A\to B\),
+\begin{equation}
+ |H_{mn}|
+ \le
+ \sum_{\xi\in A}|v_\xi^{mn}-v_{\tau(\xi)}^{mn}|
+ +\sum_{\xi\in\mathcal C_{mn}\setminus(A\cup B)}
+ |v_\xi^{mn}|.
+ \label{eq:tpc68-pair-matching-bound}
+\end{equation}
+Consequently the literal pair defect
+\begin{equation}
+ P_{mn}
+ :=
+ \min_{\tau\ {\rm admissible}}
+ \left\{
+ \sum_{\xi\in\operatorname{dom}\tau}
+ |v_\xi^{mn}-v_{\tau(\xi)}^{mn}|
+ +
+ \sum_{\xi\ {\rm unmatched}}|v_\xi^{mn}|
+ \right\}
+ \label{eq:tpc68-optimal-pair-defect}
+\end{equation}
+is well defined, symmetric after setting \(P_{nm}=P_{mn}\), satisfies
+\begin{equation}
+ |H_{mn}|\le P_{mn},
+ \label{eq:tpc68-entry-below-defect}
+\end{equation}
+and is computable from the finite literal coefficient array.  If
+\(P_{mn}=0\), then \(H_{mn}=0\).
+\end{theorem}
+
+\begin{proof}
+Every matched positive-negative pair contributes
+\[
+ (+1)v_\xi^{mn}+(-1)v_{\tau(\xi)}^{mn}
+ =v_\xi^{mn}-v_{\tau(\xi)}^{mn}.
+\]
+The remaining terms are unmatched.  The triangle inequality gives
+\eqref{eq:tpc68-pair-matching-bound}.  There are finitely many partial
+matchings, including the empty one, so the minimum exists.  Swapping
+\((m,n)\) conjugates every weight and leaves all absolute defects
+unchanged; hence the symmetric convention is consistent.
+\end{proof}
+
+\begin{remark}[Exact orthogonality is stronger than sign balance]
+Equal cardinalities
+\(|\mathcal C_{mn}^{+}|=|\mathcal C_{mn}^{-}|\) do not imply
+\(P_{mn}=0\).  Exact cancellation also requires a matching of the
+\emph{complex literal weights}.  Conversely, unequal cardinalities do not
+preclude \(H_{mn}=0\), because several complex terms may cancel without a
+pairwise equality.  Thus \(P_{mn}\) is a sufficient certificate, not an
+exact formula for \(|H_{mn}|\).
+\end{remark}
+
+\subsection{An ordered partial-sum certificate}
+
+Some arithmetic decompositions supply an order on the collision list
+rather than a literal matching.  The following exact Abel certificate
+records what such an order would need to control.
+
+\begin{proposition}[Complex Abel certificate]
+\label{prop:tpc68-Abel-certificate}
+If \(\mathcal C_{mn}=\varnothing\), then \(H_{mn}=0\).  Otherwise let
+\(\xi_1,\ldots,\xi_N\), with \(N\ge1\), be any fixed ordering of
+\(\mathcal C_{mn}\), and abbreviate
+\[
+ \varepsilon_k:=\varepsilon_{\xi_k}^{mn},
+ \qquad v_k:=v_{\xi_k}^{mn},
+ \qquad A_t:=\sum_{k\le t}\varepsilon_k.
+\]
+Then
+\begin{equation}
+ |H_{mn}|
+ \le
+ \max_{1\le t\le N}|A_t|
+ \left(
+ |v_N|+\sum_{k=1}^{N-1}|v_{k+1}-v_k|
+ \right).
+ \label{eq:tpc68-Abel-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The empty-list assertion follows from
+\eqref{eq:tpc68-literal-pair-list}.  For \(N\ge1\), summation by parts
+gives the exact identity
+\[
+ \sum_{k=1}^{N}\varepsilon_kv_k
+ =A_Nv_N+\sum_{k=1}^{N-1}A_k(v_k-v_{k+1}).
+\]
+Taking absolute values proves \eqref{eq:tpc68-Abel-bound}, with no
+restriction that the complex weights lie on one ray.
+\end{proof}
+
+Neither the partial sums \(A_t\) nor the variation of the actual physical
+weights are estimated here.  Choosing an order after inspecting a later
+extremizing vector would violate the L1 quantifier; choosing it from the
+fixed carrier and literal pair coefficients is allowed.
+
+\subsection{Pair certificates and their limit}
+
+The matrix
+\[
+ P=(P_{mn})_{m,n\in\mathcal M_M},
+\qquad P_{mm}:=0,
+\]
+is a symmetric nonnegative majorant of \(|H|\).  It contains more signed
+information than the raw support degree, but it has already taken an
+absolute value at the level of each completed row pair.  Therefore it
+cannot see cancellation between different edges in a row star or between
+different complete operator walks.  The next two sections distinguish
+these levels.

@@ -1,0 +1,150 @@
+\section{Five separating countermodels}
+\label{sec:tpc68-countermodels}
+
+The examples below are finite-dimensional.  Their purpose is not to model
+the full arithmetic carrier, but to show exactly which inference fails
+without additional physical input.
+
+\begin{example}[A residual gauge becomes genuine after erasure]
+\label{ex:tpc68-erasure-gauge}
+Let
+\[
+ T:\mathbb C\longrightarrow\mathbb C^2,
+ \qquad Tz=(z,z),
+\]
+and let \(\mathsf E(z_1,z_2)=z_1+z_2\).  The diagonal residual gauge
+\[
+ U=\diag(1,-1)
+\]
+is unitary, so \(T\) and \(UT\) have the same residual norm and the same
+support magnitudes.  Nevertheless,
+\[
+ \|\mathsf ETz\|^2=4|z|^2,
+ \qquad
+ \|\mathsf EUTz\|^2=0.
+\]
+Thus the location of a residual unit phase is a coordinate choice only
+before erasure.  Once two residual coordinates meet, their relative phase
+changes the native Gram.
+\end{example}
+
+\begin{example}[Small pair entries can form a large operator]
+\label{ex:tpc68-small-pairs-large-operator}
+For \(r\ge2\), let
+\[
+ H_r:=r^{-1/2}(J_r-I_r),
+ \qquad K_r:=I_r+H_r.
+\]
+Every off-diagonal pair has magnitude \(r^{-1/2}\to0\), and \(K_r\succeq0\)
+because the eigenvalues of \(H_r\) are
+\[
+ \frac{r-1}{\sqrt r},
+ \qquad -\frac1{\sqrt r}\quad(r-1\text{ times}).
+\]
+However
+\[
+ \|H_r\|=\frac{r-1}{\sqrt r}\asymp\sqrt r.
+\]
+This is the degree-times-pair obstruction in its simplest positive-Gram
+form.
+\end{example}
+
+\begin{example}[A scalar signed star sum is not an operator bound]
+\label{ex:tpc68-scalar-star-fails}
+On vertices \(0,1,2,3,4\), let \(H\) be the Hermitian star with
+\[
+ (H_{01},H_{02},H_{03},H_{04})=(1,-1,i,-i)
+\]
+and \(H_{n0}=\overline{H_{0n}}\).  Then
+\[
+ \sum_{n=1}^4H_{0n}=0,
+ \qquad
+ s_0(H)=2,
+ \qquad
+ \|H\|=2.
+\]
+Indeed, a Hermitian weighted star has nonzero eigenvalues
+\(\pm s_0(H)\).  For \(0<a\le1/2\), the matrix \(I+aH\) is positive
+semidefinite, while the distinguished scalar row sum remains zero and
+\(\|aH\|=2a\).  Cancellation against the all-ones vector therefore says
+nothing uniform about the star.
+\end{example}
+
+\begin{example}[Support and magnitudes do not determine the norm]
+\label{ex:tpc68-same-support-different-phase}
+Let \(r=2^k\) with \(k\ge2\), let \(S_r\) be a symmetric Sylvester Hadamard matrix, and
+put
+\[
+ Q_r:=S_r-\diag(S_r).
+\]
+Both \(J_r-I_r\) and \(Q_r\) have complete off-diagonal support and every
+off-diagonal entry has magnitude one.  But
+\[
+ \|J_r-I_r\|=r-1,
+\]
+whereas, using \(S_r^2=rI_r\),
+\[
+ \|Q_r\|\le\|S_r\|+\|\diag(S_r)\|
+ \le\sqrt r+1.
+\]
+After multiplying both matrices by \(a=(r-1)^{-1}\), they still have
+identical support and entry magnitudes; both \(I+a(J_r-I_r)\) and
+\(I+aQ_r\) are positive semidefinite.  Indeed,
+\[
+ a\|Q_r\|
+ \le\frac{\sqrt r+1}{r-1}\le1
+ \qquad(r\ge4),
+\]
+while the spectrum of \(a(J_r-I_r)\) is
+\(\{1,-(r-1)^{-1},\ldots,-(r-1)^{-1}\}\).
+Also
+\[
+ \|Q_r\|
+ \ge\frac{\|Q_r\|_{\rm F}}{\sqrt r}
+ =\sqrt{r-1},
+\]
+because \(Q_r\) has \(r(r-1)\) unit-modulus off-diagonal entries.
+Their defect norms differ by
+a factor of order \(\sqrt r\).  A support graph, codegree, and entry
+magnitudes cannot recover the missing phase information.
+\end{example}
+
+\begin{example}[Canonical success can be destroyed by shorting]
+\label{ex:tpc68-shorting-kills}
+Let
+\[
+ \mathcal K=\mathbb C^2,\qquad\mathcal Y=\mathbb C,
+\]
+and define
+\[
+ A(z_1,z_2)=z_1,\qquad
+ M(z_1,z_2)=z_2,\qquad
+ B(z_1,z_2)=z_1+z_2.
+\]
+Then \(S_A=\mathbb C(1,0)\), and on \(S_A\) the full map agrees exactly with
+the represented map:
+\[
+ G_{\rm dir}=I.
+\]
+But \(N=\mathbb C(0,1)\) and \(B(N)=\mathbb C\), so
+\[
+ C_N=I,\qquad G_{\rm sh}=0,\qquad\delta(A,M)=0.
+\]
+Equivalently, the nuisance choice \(z_2=-z_1\) annihilates the full output
+without changing the denominator.  A canonical representative estimate
+cannot replace the shorted quotient.
+\end{example}
+
+\subsection{Logical separation}
+
+\Cref{ex:tpc68-erasure-gauge} prevents the residual unitary gauge from
+being called cancellation.
+\Cref{ex:tpc68-small-pairs-large-operator} prevents a small pair estimate
+from being promoted without aggregation.
+\Cref{ex:tpc68-scalar-star-fails} forces an \(\ell^2\)-star or stronger
+uniform object.
+\Cref{ex:tpc68-same-support-different-phase} separates literal phases from
+support geometry.
+\Cref{ex:tpc68-shorting-kills} forces the nuisance penalty in full
+reassembly.  These obstructions are independent: repairing one does not
+repair the others.
