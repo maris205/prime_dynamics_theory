@@ -1,0 +1,111 @@
+\section{Claim ledger and next gate}
+\label{sec:claim-boundary}
+
+\subsection{Exact conclusions}
+
+The paper proves:
+\begin{enumerate}[label=\textup{(\arabic*)},leftmargin=2.8em]
+ \item exact and distinct deletion rules for zero columns, immutable
+       rows, and range-solvable blocks;
+ \item exact primal factorization over the connected components of the
+       assembled nonzero graph of \(C\);
+ \item exact dual factorization over the same components, including the
+       fixed-row phases;
+ \item componentwise and global matched fill/charge bounds with an
+       additive certified gap;
+ \item phase saturation as the exact zero-gap condition;
+ \item a proof that the ambient tripartite graph is a safe coarse
+       decomposition and that the actual \(C\)-graph refines it;
+ \item Hermitian transport of the component census;
+ \item an exact fixed-shift specialization to every finite literal
+       TPC--76 provenance program; and
+ \item a reproducible archive protocol that distinguishes literal,
+       validated, rounded, and toy inputs.
+\end{enumerate}
+
+\subsection{Statements not proved}
+
+The paper does not prove:
+\begin{itemize}
+ \item a numerical census for a literal coefficient table that was not
+       archived by the preceding papers;
+ \item that most actual components are small or cheap;
+ \item a mass-normalized component saving;
+ \item decay of complete row sums or Perron radius;
+ \item that edgewise components factor the row matrix;
+ \item a single filter uniform over a growing coefficient class;
+ \item that a failed solver run is a dual obstruction;
+ \item that thresholded floating support equals literal support;
+ \item closure of represented-frame, activation, missing-mass,
+       nuisance, endpoint, or reconstruction gates;
+ \item the strict endpoint budget below \(1/400\);
+ \item a statement special to \(h_0=2\); or
+ \item a parity-breaking, prime-pair, or twin-prime theorem.
+\end{itemize}
+
+\subsection{Audit levels}
+
+\begin{center}
+\begin{tabular}{p{0.29\textwidth}p{0.49\textwidth}l}
+\toprule
+Result & Scope & Level\\
+\midrule
+Deletion and graph factorization &
+All finite affine \(\ell^1\) programs on complex coordinates with
+real-linear \(C\) & L0\\
+Dual and gap certificates &
+All exact finite component blocks & L0\\
+Ambient refinement theorem &
+All finite factorizations \(C=AB\) & L0\\
+Literal fixed-\(h_0\) protocol &
+Complete TPC--76 carrier when its coefficient table is supplied & L1\\
+Actual growing-carrier census &
+Complete literal coefficient family & Open L1\\
+Normalized/Perron saving &
+Complete growing row family & Open L2\\
+Physical reassembly and endpoint &
+One common carrier and coefficient scope & Open\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Next decision}
+
+The next useful question is structural rather than larger-scale
+numerics. Once a component is isolated, can its optimum or obstruction
+be read from a small exact motif? Candidate motifs include a surjective
+block, an immutable leaf, a one-dimensional quotient, a tree of
+incidences, and disjoint dual-charge packings. TPC--78 is planned to
+investigate exact motif reduction and to identify which local patterns
+can or cannot generate a nonzero cost.
+
+\subsection{Endpoint ledger}
+
+Component certification changes no downstream implication. Terminal
+activation, represented-frame recovery, missing-mass comparison,
+nuisance shorting, endpoint cells, and packet reconstruction remain
+open. If cumulative fixed-power loss reaches \(1/400\), including
+equality, the current route stops.
+
+\subsection{Conclusion}
+
+The provenance completion gauge is no longer a black-box finite
+program. Its exact assembled incidence matrix
+\[
+ C=A_DB_{\boldsymbol L}
+\]
+determines a canonical coordinate graph, and every connected component
+carries its own attained primal and dual problem. Immutable costs,
+component optima, and certificate gaps add without approximation.
+
+The distinction between the ambient tripartite graph and the actual
+product graph is essential. The former is safe for early coarse
+blocking; the latter is required for maximal exact deletion because
+complex paths can cancel. The distinction between a solver vector and a
+certificate is equally essential: only an exact annihilating charge
+provides a lower obstruction.
+
+This advances the L1 route by making every future finite carrier census
+auditable. It does not supply the missing literal dataset, an
+asymptotic component law, or a physical saving. Those remain separate
+gates.

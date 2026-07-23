@@ -1,0 +1,105 @@
+\section{Actual-incidence component factorization}
+\label{sec:components}
+
+\begin{definition}[Actual incidence graph]
+\label{def:actual-graph}
+Let \(\cG_C\) be the bipartite graph with vertex set
+\[
+ I_{\rm act}\sqcup J_{\rm act}
+\]
+and edge \(i\sim j\) if and only if \(C_{ij}\ne0\).
+Write its connected components as
+\[
+ (I_s,J_s),\qquad 1\le s\le r,
+\]
+and put
+\[
+ b_s=b|_{I_s},
+ \qquad
+ C_s=C[I_s,J_s].
+\]
+\end{definition}
+
+No component consists of only one side: active rows and columns have at
+least one incident edge.
+
+\begin{theorem}[Exact primal component factorization]
+\label{thm:primal-factorization}
+One has
+\begin{equation}
+ \boxed{
+ \Gamma(b,C)
+ =
+ \|b_{\rm fix}\|_1
+ +
+ \sum_{s=1}^r\gamma_s,
+ \qquad
+ \gamma_s
+ =
+ \min_{\theta_s\in\C^{J_s}}
+ \|b_s+C_s\theta_s\|_1.}
+ \label{eq:primal-factorization}
+\end{equation}
+Every component minimum is attained. A global minimizer is exactly a
+tuple of component minimizers, together with arbitrary zero-column
+coordinates.
+\end{theorem}
+
+\begin{proof}
+Permute active rows and columns by components. If \(s\ne t\), then
+\(C[I_s,J_t]=0\), otherwise an edge would join the two components.
+Hence
+\[
+ C|_{I_{\rm act}\times J_{\rm act}}
+ =
+ \bigoplus_{s=1}^rC_s.
+\]
+The parameter space is the Cartesian product of the component spaces,
+and the \(\ell^1\) norm is the sum over disjoint row sets. Fixed rows
+have already split off by \cref{thm:deletion}. Therefore minimization
+separates into the displayed sum. Finite-dimensional attainment holds
+componentwise.
+\end{proof}
+
+\begin{corollary}[Exact component census identities]
+\label{cor:census-identities}
+The active counts satisfy
+\[
+ |I_{\rm act}|=\sum_s|I_s|,
+ \qquad
+ |J_{\rm act}|=\sum_s|J_s|,
+ \qquad
+ \#\supp C=\sum_s\#\supp C_s.
+\]
+The cost identity \eqref{eq:primal-factorization} is independent of the
+component ordering.
+\end{corollary}
+
+\begin{remark}[Support maximality]
+\(\cG_C\) gives the finest decomposition obtained by permuting the
+declared coordinate rows and columns until \(C\) is block diagonal.
+Further reduction may be possible after a non-coordinate change of
+basis or a quotient by \(\Ker C\), but that is algebraic compression,
+not another connected-component statement.
+\end{remark}
+
+\subsection{Hermitian reversal}
+
+\begin{proposition}[Component transport under reversal]
+\label{prop:reversal-transport}
+Suppose a reversed row pair has
+\[
+ b_{nm}=\overline{T b_{mn}},
+ \qquad
+ C_{nm}=\overline{T C_{mn}S},
+\]
+where \(T,S\) are coordinate permutations induced by transposition and
+content-label reversal. Then \(\cG_{C_{nm}}\) is isomorphic to
+\(\cG_{C_{mn}}\), with the same component sizes and values.
+\end{proposition}
+
+\begin{proof}
+Permutation and conjugation preserve exact zeros and the
+\(\ell^1\)-distance. A primal minimizer and dual charge transfer by the
+same maps.
+\end{proof}

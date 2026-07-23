@@ -1,0 +1,77 @@
+\section{Finite realified normal form}
+\label{sec:normal-form}
+
+\subsection{Spaces and pairing}
+
+Let \(I\) and \(J\) be finite index sets. Regard
+\(\C^I,\C^J\) as real vector spaces and use
+\[
+ [x,y]_{\mathbb R}
+ =
+ \Real\langle x,y\rangle
+ =
+ \Real\sum_i\overline{x_i}y_i.
+\]
+The adjoint of a real-linear map \(C\) is characterized by
+\[
+ [C\theta,z]_{\mathbb R}
+ =
+ [\theta,C^*z]_{\mathbb R}.
+\]
+Complex-linear provenance filters are the main case, while the
+real-linear convention also covers a shared filter constrained by
+conjugation.
+
+For a real-linear map, \(C_{ij}\) below denotes the real-linear
+coordinate block from the \(j\)-th copy of \(\C\) to the \(i\)-th copy,
+not necessarily multiplication by one complex scalar. Thus
+\(C_{ij}\ne0\) means that this block map is nonzero. In the
+complex-linear pair-dependent program, it is the usual scalar matrix
+entry.
+
+\begin{definition}[Affine completion value]
+\label{def:Gamma}
+For \(b\in\C^I\) and a real-linear map
+\(C:\C^J\to\C^I\), define
+\[
+ \Gamma(b,C)
+ =
+ \min_{\theta\in\C^J}\|b+C\theta\|_1.
+\]
+\end{definition}
+
+The minimum exists. Indeed, \(b+\Ran C\) is a closed affine subspace in
+finite dimension, and a nearest point to the origin exists. The
+parameter \(\theta\) need not be unique.
+
+\subsection{Global dual}
+
+Finite-dimensional distance-to-a-subspace duality
+\citep[Section 15]{Rockafellar1970} gives
+\begin{equation}
+ \Gamma(b,C)
+ =
+ \max_{\substack{\|z\|_\infty\le1\\C^*z=0}}
+ [z,b]_{\mathbb R}.
+ \label{eq:global-dual}
+\end{equation}
+Both extrema are attained. The coordinatewise unit polydisc, rather
+than a real cube, is the dual ball of complex \(\ell^1\).
+
+\subsection{Exact support}
+
+All graph statements use
+\[
+\supp C=\{(i,j)\in I\times J:C_{ij}\ne0\}
+\]
+after exact assembly. If entries are validated intervals, an edge may
+be deleted only when its interval is the singleton \(\{0\}\). A small
+floating magnitude is not an exact zero.
+
+\begin{remark}[Canonical coordinates]
+Changing bases in parameter space can alter the support graph while
+preserving \(\Ran C\). The graph factorization below concerns the
+declared literal filter coordinates. It is maximal among decompositions
+read directly from that coordinate support, not among all possible
+algebraic decompositions of the quotient.
+\end{remark}

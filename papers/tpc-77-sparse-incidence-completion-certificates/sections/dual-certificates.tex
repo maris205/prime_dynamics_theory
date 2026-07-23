@@ -1,0 +1,120 @@
+\section{Dual factorization and matched certificates}
+\label{sec:dual-certificates}
+
+\begin{theorem}[Exact dual component factorization]
+\label{thm:dual-factorization}
+For each active component,
+\begin{equation}
+ \boxed{
+ \gamma_s
+ =
+ \max_{\substack{\|z_s\|_\infty\le1\\C_s^*z_s=0}}
+ [z_s,b_s]_{\mathbb R}.}
+ \label{eq:component-dual}
+\end{equation}
+All maxima are attained. The global dual feasible set is the product of
+the component annihilators and the free unit discs on fixed rows. An
+optimal fixed-row charge is
+\[
+ (z_{\rm fix})_i
+ =
+ \begin{cases}
+ b_i/|b_i|,&b_i\ne0,\\
+ 0,&b_i=0.
+ \end{cases}
+\]
+\end{theorem}
+
+\begin{proof}
+Apply \eqref{eq:global-dual} to every \(C_s\). Equivalently, after the
+component permutations,
+\[
+ C^*z=0
+ \quad\Longleftrightarrow\quad
+ C_s^*z_s=0\quad(1\le s\le r),
+\]
+while fixed-row coordinates do not occur in \(C^*z\). Their support
+function is \(\sum_{i\in I_{\rm fix}}|b_i|\), attained by the displayed
+phase. Objectives and constraints then factor.
+\end{proof}
+
+\begin{theorem}[Matched fill--charge certificate]
+\label{thm:gap-certificate}
+For arbitrary \(\theta_s\in\C^{J_s}\) and exact dual-feasible
+\(z_s\in\C^{I_s}\), define
+\[
+ y_s=b_s+C_s\theta_s,\qquad
+ U_s=\|y_s\|_1,\qquad
+ L_s=[z_s,b_s]_{\mathbb R}.
+\]
+Then
+\begin{equation}
+ L_s\le\gamma_s\le U_s,
+ \qquad
+ U_s-L_s
+ =
+ \|y_s\|_1-[z_s,y_s]_{\mathbb R}\ge0.
+ \label{eq:component-gap}
+\end{equation}
+Globally,
+\begin{equation}
+ \|b_{\rm fix}\|_1+\sum_sL_s
+ \le
+ \Gamma(b,C)
+ \le
+ \|b_{\rm fix}\|_1+\sum_sU_s,
+ \label{eq:global-gap}
+\end{equation}
+and the global gap is exactly \(\sum_s(U_s-L_s)\).
+\end{theorem}
+
+\begin{proof}
+Weak duality gives the first inequalities. Since \(C_s^*z_s=0\),
+\[
+ [z_s,b_s]_{\mathbb R}
+ =
+ [z_s,b_s+C_s\theta_s]_{\mathbb R}
+ =
+ [z_s,y_s]_{\mathbb R}.
+\]
+The coordinatewise bound \(|z_{s,i}|\le1\) gives
+\([z_s,y_s]_{\mathbb R}\le\|y_s\|_1\). Sum the component inequalities
+and use \cref{thm:primal-factorization}.
+\end{proof}
+
+\begin{corollary}[Exact optimality and phase saturation]
+\label{cor:phase-saturation}
+The component gap is zero if and only if
+\begin{align*}
+ C_s^*z_s&=0,&
+ \|z_s\|_\infty&\le1,\\
+ z_{s,i}&=y_{s,i}/|y_{s,i}|
+ &&\text{whenever }y_{s,i}\ne0.
+\end{align*}
+At coordinates where \(y_{s,i}=0\), only
+\(|z_{s,i}|\le1\) is required. A zero global gap forces every component
+gap to vanish.
+\end{corollary}
+
+\begin{proof}
+Equality in
+\(\Real(\overline z_i y_i)\le |y_i|\) holds for nonzero \(y_i\)
+exactly at the displayed phase. Every component gap is nonnegative, so
+their sum vanishes exactly when each does.
+\end{proof}
+
+\subsection{What a numerical vector proves}
+
+A floating trial fill always gives a rigorous upper bound after its
+residual is evaluated with certified arithmetic. A floating charge with
+\(C_s^*z_s\ne0\), however small, is not a lower certificate for the
+unbounded parameter problem: the error term
+\([\theta_s,C_s^*z_s]_{\mathbb R}\) has no uniform bound. A lower
+certificate must lie exactly in \(\Ker C_s^*\), or be enclosed by a
+validated projection argument that proves exact dual feasibility.
+
+\begin{remark}[Solver status is not a theorem]
+Infeasibility, timeout, ill-conditioning, or failure to find a small
+upper bound supplies no obstruction. The obstruction is the explicit
+dual-feasible \(z_s\) and its checked objective.
+\end{remark}

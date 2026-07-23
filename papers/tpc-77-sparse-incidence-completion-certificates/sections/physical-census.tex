@@ -1,0 +1,104 @@
+\section{Literal fixed-shift specialization and census protocol}
+\label{sec:physical-census}
+
+\subsection{Frozen physical data}
+
+Fix one nonzero \(h_0\), one declared external block, both orthogonal
+direct sides, and the complete TPC--74 missing-high keys. For every
+active unordered row pair \(e=\{m,n\}\), freeze
+\[
+ \Delta_{mn}=h_0(n-m)\ne0,
+\]
+the literal slices \(L_{mn,q}\), the rectangle \(B_{mn}\), the cutoff
+\(D_{mn}\), and all complete native key labels. Form
+\[
+ F^0_{mn}
+ \quad\text{from}\quad
+ k_{mn}=\sum_{q\mid|\Delta_{mn}|}L_{mn,q},
+\]
+and form \(B_{\boldsymbol L,mn}\) only from the actual directions
+\(d\mid q\mid|\Delta_{mn}|\).
+
+The normalization remains
+\[
+ \frac1{\sqrt{W_mW_n}},
+\]
+where \(W_m,W_n\) are the global raw masses of all actual atoms on both
+direct sides. Analytic copies, graph vertices, and component counts do
+not enter these masses.
+
+\begin{corollary}[Literal edge decomposition]
+\label{cor:literal-edge-decomposition}
+With
+\[
+ b_{mn}=A_{D_{mn}}F^0_{mn},
+ \qquad
+ C_{mn}=A_{D_{mn}}B_{\boldsymbol L,mn},
+\]
+the provenance gauge satisfies
+\[
+ \gamma^{\rm prov}_{mn}
+ =
+ \|(b_{mn})_{\rm fix}\|_1
+ +
+ \sum_s\gamma_{mn,s},
+\]
+and every \(\gamma_{mn,s}\) has the exact matched certificate of
+\cref{thm:gap-certificate}.
+\end{corollary}
+
+\begin{proof}
+All data are finite and have exactly the TPC--76 affine form. Apply
+\cref{thm:primal-factorization,thm:dual-factorization}.
+\end{proof}
+
+\subsection{Verified archive format}
+
+A finite census is reproducible only if it archives:
+\begin{enumerate}[label=\textup{(C\arabic*)},leftmargin=3.4em]
+ \item the object identity: \(h_0,m,n,\Delta_{mn},B_{mn},D_{mn}\),
+       both-side block labels, complete-key identifiers, and raw
+       \(W_m,W_n\);
+ \item the literal \(q\)-slice table and exact or validated
+       \(F^0,B_{\boldsymbol L},A_D,C=A_DB_{\boldsymbol L}\);
+ \item the exact-zero policy, immutable-row ledger, zero-column ledger,
+       and component index sets;
+ \item for every component,
+       \(\theta_s,y_s,z_s,U_s,L_s\), together with checks of
+       \(y_s=b_s+C_s\theta_s\),
+       \(C_s^*z_s=0\), \(\|z_s\|_\infty\le1\), and the saturation defect
+       \(U_s-L_s\); phase saturation is required only when zero gap and
+       optimality are claimed;
+ \item the fixed-row cost and total certified gap;
+ \item the Hermitian reverse checksum and assembled entry
+       \(Q^{\rm prov}_{mn}\); and
+ \item an input-certification statement distinguishing literal
+       coefficients from a rounded surrogate.
+\end{enumerate}
+
+\begin{remark}[No invented census]
+TPC--74 through TPC--76 provide symbolic exact formulas but no archived
+complete literal coefficient table for a growing physical carrier.
+Therefore the present paper proves the protocol and factorization
+theorems but reports no numerical physical component counts. A census
+of a toy or rounded instance would be labelled as such, not as the
+literal L1 carrier.
+\end{remark}
+
+\subsection{Matrix boundary}
+
+For independent unordered edges, the component sums assemble the
+entries of \(Q^{\rm prov}\), after which the TPC--76 Perron majorant
+applies. Components within one edge add to that edge cost. They do not
+imply
+\[
+ \rho\!\left(\sum_sQ^{(s)}\right)
+ =
+ \sum_s\rho(Q^{(s)}),
+\]
+nor a direct-sum decomposition of the row matrix.
+
+If a parameter is shared across edges, blocks, coefficient samples, or
+scales, one must first stack the entire coupled affine problem and build
+one global \(C\). A shared column can connect several edge blocks.
+Pairwise components cannot be reused as a universal-filter theorem.

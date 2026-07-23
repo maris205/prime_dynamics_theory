@@ -1,0 +1,79 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The completion route has reached a finite but nontrivial optimization
+problem. TPC--75 \citep{WangTPC75} proves strong duality for arbitrary
+nonprimitive completions. TPC--76 \citep{WangTPC76} restricts the free
+values to literal content-flow directions and obtains
+\[
+ \gamma_D^{\rm prov}(\boldsymbol L)
+ =
+ \min_\theta
+ \|A_D(F^0+B_{\boldsymbol L}\theta)\|_1.
+\]
+Set
+\[
+ b=A_DF^0,\qquad C=A_DB_{\boldsymbol L}.
+\]
+The remaining finite question is the distance of \(-b\) from
+\(\Ran C\) in complex \(\ell^1\).
+
+The matrix \(C\), however, is highly structured. A filter variable first
+copies literal \(q\)-slice amplitudes onto permitted nonprimitive sites;
+the divisor--variation operator then sends those sites to low
+plaquettes and high-tail coordinates. Many formal variables vanish,
+many analysis rows are immutable, and some groups cannot interact.
+Ignoring this structure obscures both computation and proof.
+
+\subsection{Why the product \texorpdfstring{\(C=AB\)}{C=AB} is the correct graph}
+
+It is tempting to draw a graph from the support of
+\(B_{\boldsymbol L}\) and the stencil of \(A_D\). That graph is useful,
+but it is not necessarily sharp. For fixed analysis row \(i\) and
+filter column \(j\),
+\[
+ C_{ij}
+ =
+ \sum_k(A_D)_{ik}(B_{\boldsymbol L})_{kj}.
+\]
+Distinct site contributions can cancel exactly. The maximal
+support-based decomposition therefore uses the nonzero entries of the
+assembled \(C\), after all literal sums and signs are fixed. The
+tripartite graph will be proved to give a safe coarser partition.
+
+\subsection{Main advance}
+
+The paper proves four exact statements.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.8em]
+ \item immutable coordinates and cost-null variables have different
+       deletion rules;
+ \item the actual incidence graph of \(C\) block-diagonalizes the affine
+       \(\ell^1\) distance exactly;
+ \item the same components factor the strong dual, including the fixed
+       rows; and
+ \item matched primal and dual data give a locally and globally
+       checkable gap certificate.
+\end{enumerate}
+These statements turn a monolithic solver output into a sum of
+independent mathematical claims.
+
+\subsection{What is deliberately absent}
+
+The previous TPC papers define the literal carrier symbolically but do
+not archive a table of all active \(L_{mn,q}\) coefficients on a
+declared growing block. Consequently this paper proves the exact census
+protocol but does not fabricate a numerical census. Even a completed
+finite census would remain L1: asymptotic normalized component mass,
+row sums, Perron decay, shared-rule uniformity, and physical reassembly
+would still be open.
+
+\subsection{Organization}
+
+\Cref{sec:normal-form} fixes the realified complex normal form.
+\Cref{sec:deletion} proves exact deletion rules.
+\Cref{sec:components} gives primal component factorization.
+\Cref{sec:dual-certificates} gives the dual and gap certificates.
+\Cref{sec:ambient-graph} compares actual and ambient graphs.
+\Cref{sec:physical-census} states the literal fixed-shift protocol.
+\Cref{sec:countermodels} records non-substitution examples, and
+\cref{sec:claim-boundary} gives the claim ledger.

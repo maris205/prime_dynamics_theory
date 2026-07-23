@@ -1,0 +1,85 @@
+\section{Countermodels and non-substitution laws}
+\label{sec:countermodels}
+
+\subsection{A connected ambient graph need not be actual}
+
+\Cref{ex:ambient-cancellation} already shows that two nonzero paths can
+cancel in \(AB\). Support multiplication in the Boolean semiring gives
+only an upper envelope for actual complex support.
+
+\subsection{A zero column need not be a zero fill direction}
+
+Let
+\[
+ A=\begin{pmatrix}1&-1\end{pmatrix},
+ \qquad
+ B=\begin{pmatrix}1\\1\end{pmatrix}.
+\]
+The nonzero kernel direction \(B\theta=(\theta,\theta)\) is annihilated
+by \(A\). Deleting the column from the cost program is valid, but
+deleting it from an exported analytic completion changes the fill.
+
+\subsection{Small stationarity residual is not a lower bound}
+
+Take \(C=[1]\), \(b=1\), and a real trial charge
+\(z=\varepsilon\) with \(0<\varepsilon\le1\). Its apparent objective is
+\(\varepsilon\), but
+\(C^*z=\varepsilon\ne0\). The true optimum is zero because
+\(\theta=-1\). Indeed,
+\[
+ [z,b+C\theta]_{\mathbb R}
+ =
+ \Real\!\bigl(\varepsilon(1+\theta)\bigr)
+\]
+is unbounded below along real \(\theta\) when the erroneous
+stationarity term is separated. A tiny residual is not a tiny
+certificate error without a parameter bound.
+
+\subsection{Component factorization does not factor Perron radius}
+
+Let
+\[
+ Q^{(1)}
+ =
+ \begin{pmatrix}0&1&0\\1&0&0\\0&0&0\end{pmatrix},
+ \qquad
+ Q^{(2)}
+ =
+ \begin{pmatrix}0&0&0\\0&0&1\\0&1&0\end{pmatrix}.
+\]
+Each has spectral radius \(1\), whereas
+\[
+ \rho(Q^{(1)}+Q^{(2)})=\sqrt2\ne2.
+\]
+Adding certified edge-component costs is exact entrywise; adding their
+Perron radii is not.
+
+\subsection{Pairwise components can merge under a shared rule}
+
+Consider two scalar edge problems
+\[
+ |t|,\qquad |1-t|.
+\]
+With independent variables each graph is a separate zero-cost
+component. A shared variable \(t\) connects the stacked rows into one
+component and the combined optimum is \(1\). Thus a pairwise incidence
+census cannot be promoted after the fact to a shared-filter result.
+
+\subsection{Finite sparsity is not asymptotic smallness}
+
+One immutable row with coefficient \(A_X\) forms a component of size
+one and contributes \(|A_X|\). Its graph remains maximally sparse even
+when \(|A_X|\) is comparable to the full raw mass. Component counts and
+normalized component cost are different statistics.
+
+\subsection{Rounded support can create false disconnection}
+
+For
+\[
+ C_\varepsilon=
+ \begin{pmatrix}1&\varepsilon\\0&1\end{pmatrix},
+ \qquad \varepsilon\ne0,
+\]
+the actual graph is connected. Thresholding \(\varepsilon\) to zero
+splits it. Any certificate assembled from the false blocks is a theorem
+about the thresholded matrix, not about \(C_\varepsilon\).

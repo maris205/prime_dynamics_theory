@@ -1,0 +1,90 @@
+\section{Ambient tripartite graph versus actual incidence}
+\label{sec:ambient-graph}
+
+Let \(K\) index the nonprimitive kernel sites. Write
+\[
+ B:\C^J\to\C^K,\qquad
+ A:\C^K\to\C^I,\qquad
+ C=AB.
+\]
+For real-linear maps, \(A_{ik}B_{kj}\) below means composition of the
+corresponding real coordinate blocks, and the sum is taken in
+\(\operatorname{Hom}_{\mathbb R}(\C,\C)\). In the pair-dependent
+TPC--76 specialization all maps are complex-linear and these are the
+usual complex scalar entries.
+
+\begin{definition}[Ambient tripartite graph]
+\label{def:tripartite}
+The graph \(\cG_{A,B}\) has vertex set
+\[
+ J\sqcup K\sqcup I
+\]
+and edges
+\[
+ j\sim k\iff B_{kj}\ne0,
+ \qquad
+ k\sim i\iff A_{ik}\ne0.
+\]
+\end{definition}
+
+\begin{theorem}[Safe coarse factorization and refinement]
+\label{thm:ambient-refinement}
+If \(i\in I\) and \(j\in J\) lie in different connected components of
+\(\cG_{A,B}\), then \(C_{ij}=0\). Consequently, the partition induced
+on \(I\sqcup J\) by \(\cG_{A,B}\) gives a valid block decomposition of
+\(C\). The actual graph \(\cG_C\) refines this partition and can split
+an ambient component further.
+\end{theorem}
+
+\begin{proof}
+Each summand in
+\[
+ C_{ij}
+ =
+ \sum_{k\in K}A_{ik}B_{kj}
+\]
+can be nonzero only when there is a length-two path
+\(j-k-i\) in \(\cG_{A,B}\). If \(i,j\) are in different components,
+every summand vanishes. Thus no actual edge crosses the ambient
+partition. The converse can fail because the nonzero summands can
+cancel, so \(\cG_C\) may contain fewer edges.
+\end{proof}
+
+\begin{example}[Exact cancellation splits an ambient block]
+\label{ex:ambient-cancellation}
+Take two sites, one analysis row, and one filter variable, with
+\[
+ B=
+ \begin{pmatrix}1\\1\end{pmatrix},
+ \qquad
+ A=
+ \begin{pmatrix}1&-1\end{pmatrix}.
+\]
+The tripartite graph is connected, but \(C=AB=0\). The column is
+cost-null and the row is immutable. A graph built before multiplication
+misses this exact deletion.
+\end{example}
+
+\begin{remark}[Unknown is not zero]
+When \(C_{ij}\) is known only inside an interval containing both zero
+and nonzero values, the edge must be retained. Deleting it by a
+tolerance can manufacture a false component factorization and a false
+dual certificate.
+\end{remark}
+
+\subsection{Assembly order}
+
+For the TPC application, the safe order is:
+\begin{enumerate}[label=\textup{(\arabic*)},leftmargin=2.8em]
+ \item freeze the literal \(q\)-resolved carrier and raw normalization;
+ \item assemble \(B_{\boldsymbol L}\) while retaining every declared
+       \((d,q)\) provenance column; exact complete-key cancellation may
+       occur inside one fixed \(q\)-slice, but distinct \(q\)-columns
+       are not merged;
+ \item assemble the full low-plaquette and exact-tail operator \(A_D\);
+ \item compute or validate \(C=A_DB_{\boldsymbol L}\);
+ \item delete exact zeros and build \(\cG_C\); and
+ \item solve and certify each resulting component.
+\end{enumerate}
+Changing this order can confuse ambient support, actual support, and
+post-\(q\) aggregation.

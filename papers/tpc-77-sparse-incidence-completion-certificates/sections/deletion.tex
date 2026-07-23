@@ -1,0 +1,96 @@
+\section{Exact deletion rules}
+\label{sec:deletion}
+
+Define
+\begin{align*}
+ I_{\rm fix}
+ &=
+ \{i\in I:C_{i,*}=0\},&
+ I_{\rm act}
+ &=
+ I\setminus I_{\rm fix},\\
+ J_0
+ &=
+ \{j\in J:C_{*,j}=0\},&
+ J_{\rm act}
+ &=
+ J\setminus J_0.
+\end{align*}
+
+\begin{definition}[Closed coordinate block]
+A pair \(S=(I_S,J_S)\), with \(I_S\subseteq I\) and
+\(J_S\subseteq J\), is closed if
+\[
+ C[I_S,J\setminus J_S]=0,
+ \qquad
+ C[I\setminus I_S,J_S]=0.
+\]
+Thus its variables affect no outside rows and no outside variables
+affect its rows.
+\end{definition}
+
+\begin{theorem}[Sparse deletion normal form]
+\label{thm:deletion}
+The following reductions are exact.
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.5em]
+ \item Every column in \(J_0\) may be fixed canonically to zero without
+       changing \(\Gamma(b,C)\).
+ \item The rows in \(I_{\rm fix}\) contribute the immutable amount
+       \[
+       \|b_{\rm fix}\|_1
+       =
+       \sum_{i\in I_{\rm fix}}|b_i|.
+       \]
+ \item A fixed row with \(b_i=0\) may be removed from the reduced
+       optimization data; zero columns are removed independently as in
+       \textup{(a)}.
+ \item A closed coordinate block \(S=(I_S,J_S)\) can be deleted as
+       zero-cost if an exact vector \(\theta_S\) satisfying
+       \(C_S\theta_S=-b_S\) is supplied. The assertion cannot be made
+       from dimension count or solver failure alone.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Zero columns do not occur in \(C\theta\). Fixed rows equal \(b_i\) for
+every \(\theta\), so their absolute values split from the objective.
+The zero fixed coordinates contribute nothing. For a closed block the
+objective and parameter space split from the complementary coordinates.
+Finally,
+\(\min_\theta\|b_S+C_S\theta\|_1=0\) if and only if
+\(-b_S\in\Ran C_S\), which is equivalent to the displayed exact
+equation.
+\end{proof}
+
+\begin{remark}[Cost-null is not provenance-null]
+A column can vanish in \(C=A_DB_{\boldsymbol L}\) even when the
+underlying column of \(B_{\boldsymbol L}\) is nonzero. It is invisible
+to the declared cost, but it remains part of the content-flow manifest
+if an analytic fill is reconstructed. Deletion from optimization is not
+deletion from provenance.
+\end{remark}
+
+\begin{corollary}[Range and obstruction alternatives]
+\label{cor:zero-cost-alternative}
+For any closed active block \(S\), exactly one of the following holds:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.7em]
+ \item \(-b_S\in\Ran C_S\), and the block value is zero; or
+ \item there exists \(z_S\in\Ker C_S^*\) with
+       \([z_S,b_S]_{\mathbb R}>0\), and the block value is positive after
+       normalizing \(\|z_S\|_\infty\le1\).
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+If \(-b_S\notin\Ran C_S\), finite-dimensional separation supplies a
+real functional annihilating \(\Ran C_S\) but not \(b_S\). Change its
+sign and normalize. The converse follows by pairing with
+\(b_S+C_S\theta_S=0\).
+\end{proof}
+
+\begin{remark}[The offset must be retained]
+Building a graph only from \(C\) does not permit one to discard \(b\).
+Rows with no incident column are immutable costs, and the values
+\(b_s\) on active components determine whether those components can be
+cancelled.
+\end{remark}

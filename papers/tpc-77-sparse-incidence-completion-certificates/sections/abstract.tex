@@ -1,0 +1,62 @@
+\begin{abstract}
+TPC--76 reduces every fixed-row-pair provenance completion problem to
+\[
+ \Gamma(b,C)
+ =
+ \min_{\theta\in\C^J}\|b+C\theta\|_1,
+ \qquad
+ b=A_DF^0,\qquad
+ C=A_DB_{\boldsymbol L}.
+\]
+The formula is exact, but it does not say which parts of a literal
+carrier interact or how a finite optimum can be independently checked.
+This paper closes that sparse finite-dimensional layer.
+
+We first separate zero columns, immutable rows, and active coordinates.
+Let \(\cG_C\) be the bipartite graph on active analysis rows and active
+filter variables, with \(i\sim j\) exactly when the fully assembled
+coefficient \(C_{ij}\) is nonzero. If
+\((I_s,J_s)\) are its connected components, then
+\[
+ \Gamma(b,C)
+ =
+ \|b_{\rm fix}\|_1
+ +
+ \sum_s
+ \gamma_s,\qquad
+ \gamma_s
+ =
+ \min_{\theta_s}\|b_s+C_s\theta_s\|_1.
+\]
+This is an exact factorization, not a sparsity heuristic. Its dual
+factors over the same components:
+\[
+ \gamma_s
+ =
+ \max_{\substack{\|z_s\|_\infty\le1\\C_s^*z_s=0}}
+ \operatorname{Re}\langle z_s,b_s\rangle .
+\]
+
+For every trial fill \(\theta_s\) and exact dual-feasible charge \(z_s\),
+the quantities
+\[
+ U_s=\|b_s+C_s\theta_s\|_1,\qquad
+ L_s=\operatorname{Re}\langle z_s,b_s\rangle
+\]
+satisfy \(L_s\le\gamma_s\le U_s\), and their gaps add exactly. Equality
+is equivalent to phase saturation of the residual. Thus each reported
+finite value can carry a matched fill/charge certificate.
+
+We also compare \(\cG_C\) with the ambient
+filter--site--analysis tripartite graph. The ambient graph gives a safe
+coarse block decomposition, whereas exact cancellations in
+\(C=A_DB_{\boldsymbol L}\) may produce additional splitting. Thresholded
+floating support is not admissible for this purpose.
+
+The specialization preserves the complete literal fixed-\(h_0\)
+carrier and its original global raw masses. No archived literal
+coefficient census exists in the preceding papers, so no numerical
+physical census is invented here. The results are L0 component theorems
+and an L1 certificate protocol, not an L2 saving, Perron decay,
+fixed-\(2\), prime-pair, or twin-prime conclusion.
+\end{abstract}
