@@ -1,0 +1,181 @@
+\section{Exact primal--dual completion theorem}
+\label{sec:primal-dual}
+
+We first state the theorem for arbitrary finite spaces.  This separates the
+convex fact from the arithmetic realization of \(A_D\).
+
+\begin{theorem}[Strong completion duality]
+\label{thm:strong-completion-duality}
+Let \(\cX,\cY,\cK\) be finite-dimensional complex spaces, regarded as
+real spaces with the pairing \([\cdot,\cdot]_{\mathbb R}\).  Let
+\[
+ A:\cX\to\cY,\qquad R:\cX\to\cK
+\]
+be complex-linear maps, and define
+\[
+ \gamma(k)
+ =
+ \inf\{\|AF\|_1:RF=k\},
+\]
+with value \(+\infty\) when the constraint is infeasible.  Then
+\begin{equation}
+ \boxed{
+ \gamma(k)
+ =
+ \sup_{\substack{A^*z=R^*\lambda\\\|z\|_\infty\le1}}
+ [\lambda,k]_{\mathbb R}.}
+ \label{eq:strong-dual}
+\end{equation}
+If \(k\in\Ran R\), both the primal minimum and the dual maximum are
+attained.  If \(k\notin\Ran R\), the dual is unbounded above.
+\end{theorem}
+
+\begin{proof}
+The real Fenchel conjugate of the complex \(\ell^1\)-norm is
+\[
+ \bigl(\|\cdot\|_1\bigr)^*(z)
+ =
+ \begin{cases}
+  0,&\|z\|_\infty\le1,\\
+  +\infty,&\|z\|_\infty>1.
+ \end{cases}
+\]
+Indeed, each complex coordinate is a two-dimensional Euclidean block and
+\[
+ \sup_y\{[z,y]_{\mathbb R}-|y|\}
+ \]
+is finite exactly when \(|z|\le1\).
+
+For the equality constraint use the Lagrangian
+\[
+ \cL(F,\lambda)
+ =
+ \|AF\|_1+[\lambda,k-RF]_{\mathbb R}.
+\]
+The infimum over \(F\) is finite precisely when there is
+\(z\in\cY\) satisfying
+\[
+ \|z\|_\infty\le1,
+ \qquad
+ A^*z=R^*\lambda.
+\]
+In that case the infimum equals \([\lambda,k]_{\mathbb R}\); otherwise it
+is \(-\infty\).  This gives the displayed dual.  Finite-dimensional
+Fenchel--Rockafellar duality, applied on the nonempty affine space
+\(\{F:RF=k\}\), gives equality whenever \(k\in\Ran R\)
+\citep{Rockafellar1970}.
+
+For completeness, primal attainment does not require coercivity on all
+of \(\cX\).  Quotient the feasible direction space \(\ker R\) by
+\(\ker A\cap\ker R\), choose a linear complement, and restrict there.
+The induced map into \(\Ran A\) is injective, so its norm controls the
+complement variable.  A minimizing sequence is therefore bounded modulo
+the cost-free direction, and has a convergent representative.
+
+For dual attainment, restrict \(\lambda\) to
+\((\ker R^*)^\perp\).  On that subspace \(R^*\) is injective and
+\(A^*z=R^*\lambda\), \(\|z\|_\infty\le1\), bounds \(\lambda\).
+The resulting feasible set is closed and bounded, hence compact.
+Adding a vector in \(\ker R^*\) does not change the objective for
+\(k\in\Ran R\).
+
+If \(k\notin\Ran R\), choose
+\(\lambda_0\in(\Ran R)^\perp\) with
+\([\lambda_0,k]_{\mathbb R}>0\).  Then
+\(R^*\lambda_0=0=A^*0\), so
+\((t\lambda_0,0)\) is dual feasible for every \(t>0\), and its objective
+tends to \(+\infty\).
+\end{proof}
+
+\begin{corollary}[Exact certificate/obstruction alternative]
+\label{cor:certificate-obstruction}
+Suppose \(k\in\Ran R\) and \(\varepsilon\ge0\).  Exactly one of the
+following strict alternatives can occur:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.6em]
+ \item there is \(F\) with \(RF=k\) and \(\|AF\|_1\le\varepsilon\);
+ \item there are \(\lambda,z\) with
+       \(A^*z=R^*\lambda\), \(\|z\|_\infty\le1\), and
+       \([\lambda,k]_{\mathbb R}>\varepsilon\).
+\end{enumerate}
+If the optimum equals \(\varepsilon\), the primal and dual optimizers
+meet at equality rather than satisfying the strict second alternative.
+\end{corollary}
+
+\begin{proof}
+Both optima equal \(\gamma(k)\) by
+\cref{thm:strong-completion-duality}.  Compare this common value with
+\(\varepsilon\).
+\end{proof}
+
+\begin{remark}[What is checkable]
+A proposed completion is verified by the equality \(RF=k\) and a direct
+evaluation of \(\|AF\|_1\).  A proposed obstruction is verified by one
+adjoint equality and one coordinatewise unit-ball inequality.  Neither
+certificate requires trusting an optimizer or a numerical convergence
+diagnostic.
+\end{remark}
+
+\begin{corollary}[KKT certificate]
+\label{cor:KKT-certificate}
+For feasible \(k\), a primal--dual feasible quadruple
+\((F,\lambda,z,k)\) is optimal if and only if
+\begin{equation}
+ [z,AF]_{\mathbb R}=\|AF\|_1.
+ \label{eq:KKT-saturation}
+\end{equation}
+Equivalently, coordinatewise,
+\[
+ z_\nu=
+ \frac{(AF)_\nu}{|(AF)_\nu|}
+ \quad\text{when }(AF)_\nu\ne0,
+ \qquad
+ |z_\nu|\le1
+ \quad\text{when }(AF)_\nu=0.
+\]
+\end{corollary}
+
+\begin{proof}
+Primal and dual feasibility give
+\[
+ [\lambda,k]_{\mathbb R}
+ =
+ [R^*\lambda,F]_{\mathbb R}
+ =
+ [A^*z,F]_{\mathbb R}
+ =
+ [z,AF]_{\mathbb R}
+ \le\|AF\|_1.
+\]
+Equality is exactly simultaneous optimality by strong duality.  Equality
+in each complex coordinate support inequality gives the stated phase
+condition.
+\end{proof}
+
+\begin{remark}[LP versus second-order cone form]
+For real kernels the absolute values give a linear program after the
+usual positive/negative epigraph split.  For complex kernels, each
+constraint \(|z_j|\le1\) is a two-dimensional second-order cone.
+Thus the exact finite problem is an SOCP in general and an LP only in the
+real specialization.  No asymptotic conclusion follows merely from
+solving either finite program.
+\end{remark}
+
+\begin{corollary}[TPC--73 gauge dual]
+\label{cor:tpc73-gauge-dual}
+For the operator \(A_D\) in
+\cref{def:analysis-operator} and primitive restriction \(R\),
+\begin{equation}
+ \boxed{
+ \gamma_D(k)
+ =
+ \max_{\substack{A_D^*z=R^*\lambda\\\|z\|_\infty\le1}}
+ \Real\langle\lambda,k\rangle.}
+ \label{eq:tpc73-gauge-dual}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Use \cref{prop:exact-normal-form,thm:strong-completion-duality}.  Here
+\(R\) is surjective, so both optima are finite and attained for every
+\(k\in\cK\).
+\end{proof}

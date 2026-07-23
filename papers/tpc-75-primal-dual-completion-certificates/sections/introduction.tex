@@ -1,0 +1,134 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The primitive-plane program has reached a precise optimization boundary.
+The divisor lift of TPC--71 \citep{WangTPC71} converts a coprime
+two-variable M\"obius sum into diagonal slices.  TPC--73
+\citep{WangTPC73} proves that the support-faithful physical kernel has no
+auxiliary slices with \(d\ge2\), and that every nonprimitive analytic
+completion preserves the primitive physical functional.  Its complete
+certificate cost is nevertheless a coupled sum of low-diagonal
+plaquette variation and a high-diagonal tail.  TPC--74
+\citep{WangTPC74} then constructs the missing interface for the gauged
+perturbation \(\widetilde H=U_dHU_d\):
+\[
+ \widetilde H_{mn}
+ =
+ \sum_{(u,v)=1}\mu(u)\mu(v)L_{mn}^{0}(u,v)
+\]
+for every actual off-diagonal row pair of the normalized missing-native
+Gram.  A completion certificate can therefore be asked entry by entry
+and aggregated into a nonnegative Hermitian majorant.
+
+Three logical gaps remain if the completion infimum is left only as a
+definition.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.7em]
+ \item A failed search for a smooth or \(q\)-compatible completion is not
+       a proof that no cheaper completion exists.
+ \item Separate entrywise optimizers need not define one admissible rule
+       when a fixed finite stacked family is required to share parameters
+       across row pairs.
+ \item Even an exact lower obstruction for every absolute-value
+       completion majorant may obstruct only that certificate
+       architecture, not the signed matrix itself.
+\end{enumerate}
+The purpose of this paper is to close all three logical gaps at the
+finite-dimensional level.
+
+\subsection{Main results}
+
+Fix a finite rectangle and a diagonal cutoff \(D\).  The full TPC--73
+cost is a finite sum of absolute values of linear functionals of the
+completion.  We stack those functionals, with their literal weights, into
+one operator \(A_D\).  If \(R\) is restriction to the primitive lattice,
+then
+\[
+ \cC_D(F)=\|A_DF\|_1,
+ \qquad
+ \gamma_D(k)=\min_{RF=k}\|A_DF\|_1.
+\]
+Our first result is an exact strong dual over the underlying real spaces:
+\[
+ \gamma_D(k)
+ =
+ \max
+ \left\{
+ \Real\langle\lambda,k\rangle:
+ A_D^*z=R^*\lambda,\ \|z\|_\infty\le1
+ \right\}.
+\]
+The formula treats complex literal coefficients without discarding their
+phases.  It also proves attainment on both sides.  Any feasible
+\((\lambda,z)\) gives a rigorously checkable lower obstruction, while an
+optimal completion gives a matching upper certificate.
+
+The second result identifies the geometry of the optimum.  The map
+\(k\mapsto\gamma_D(k)\) is a seminorm on the primitive data space, with
+\[
+ \ker\gamma_D=R(\ker A_D).
+\]
+It is therefore a norm on the corresponding quotient.  This removes a
+common ambiguity: zero completion cost is possible exactly when the
+prescribed primitive datum is the trace of a zero-analysis completion,
+not merely when one chosen interpolation happens to have small
+variation.
+
+The third result treats the complete direct-entry family.  For
+independent unordered row-pair completion classes, define the symmetric
+matrix
+\[
+ Q^\gamma_{mn}
+ =
+ \begin{cases}
+  \gamma_{mn},&m\ne n,\\
+  0,&m=n.
+ \end{cases}
+\]
+Then
+\[
+ \|H\|=\|\widetilde H\|
+ \le \rho(|\widetilde H|)
+ \le \rho(Q^\gamma)
+ =
+ \inf_{\boldsymbol F}\rho(P(\boldsymbol F)).
+\]
+The last equality is exact.  Each edge minimum can be attained
+simultaneously, and Perron monotonicity leaves no hidden joint gain.
+Hence a genuine joint gate cannot be attributed to Hermitian reversal
+alone.  It appears only when one declares additional cross-edge
+constraints, such as a shared \(q\)-compatible rule or a
+finite stacked-data parametrization.  We give the exact primal and dual
+for every such finite affine coupled rule; uniformity over a growing
+coefficient class remains a separate minimax problem.
+
+\subsection{What this advances}
+
+The paper converts an open-ended search problem into an exact decision
+problem.  At a declared finite scale and within a declared completion
+class, exactly one numerical value controls both sides:
+\[
+ \text{best completion cost}
+ =
+ \text{strongest dual obstruction}.
+\]
+This is a real theoretical advance at the interface level.  It does not
+show that the value is small on the growing physical carrier.  Nor does
+it identify a classical Mertens estimate sufficient for that smallness.
+
+The absolute-entry Perron floor makes the limitation sharper.  We give a
+deterministic symmetric family for which the signed operator norm tends
+to zero but the absolute-entry spectral radius tends to one.  Thus a
+large dual obstruction can close the entire Abel--completion--Perron
+route while a different signed-moment route remains viable.
+
+\subsection{Organization}
+
+\Cref{sec:finite-normal-form} writes the divisor--variation cost as one
+finite linear analysis norm.  \Cref{sec:primal-dual} proves strong
+duality and attainment.  \Cref{sec:quotient-witnesses} develops the
+quotient geometry and physical witness.  \Cref{sec:hermitian-family}
+proves the exact independent-edge Perron theorem.
+\Cref{sec:coupled-rules} handles shared affine rules.
+\Cref{sec:countermodels} records the necessary non-substitution laws.
+\Cref{sec:physical-gate} returns to the literal fixed-shift carrier, and
+\cref{sec:claim-boundary} gives the claim ledger and next decision.

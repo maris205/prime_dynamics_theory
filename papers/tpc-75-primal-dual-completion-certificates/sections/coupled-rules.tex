@@ -1,0 +1,179 @@
+\section{Shared affine completion rules}
+\label{sec:coupled-rules}
+
+The independent-edge optimum is the broadest analytic benchmark.  A
+physical construction may require one declared rule across many row
+pairs.  We now give the exact finite dual after such a rule is imposed.
+
+\subsection{Global constraint operator}
+
+Let
+\[
+ \cX_{\cE}=\bigoplus_{e\in\cE}\cX_e
+\]
+contain one upper-triangle kernel per unordered edge.  A declared affine
+rule is encoded by a real-linear map
+\[
+ \mathscr R:\cX_{\cE}\longrightarrow\cK_{\rm glob}
+\]
+and a target \(\kappa\in\cK_{\rm glob}\).  The components of
+\(\mathscr R\boldsymbol F=\kappa\) include every primitive restriction
+\(R_eF_e=k_e\) and may also include:
+\begin{itemize}
+ \item equality of shared interpolation parameters;
+ \item a fixed \(q\)-resolved content-lift relation;
+ \item block, side, or scale compatibility;
+ \item a linear parametrization shared by one explicitly stacked finite
+       coefficient family.
+\end{itemize}
+Nonlinear or data-adaptive rules are not silently included.
+
+\begin{remark}[Fixed data versus a coefficient class]
+\label{rem:fixed-data-coupling}
+\Cref{thm:coupled-rule-dual} below fixes one finite target
+\(\kappa\) and one positive Schur weight \(c\).  A rule chosen before a
+growing or infinite coefficient class introduces an additional
+\(\inf_{\rm rule}\sup_{\rm coefficients}\) quantifier.  It is covered
+only when the relevant finite coefficient family is explicitly stacked
+inside \(\kappa\) and \(\mathscr R\); it is not a consequence of the
+single-datum theorem.
+\end{remark}
+
+For fixed \(c>0\), define
+\begin{align}
+ \Theta_c^{\mathscr R}(\kappa)
+ =
+ \min_{\eta,\boldsymbol F}\quad&\eta
+ \label{eq:coupled-primal}\\
+ \textup{subject to}\quad&
+ \mathscr R\boldsymbol F=\kappa,\notag\\
+ &
+ \sum_{n\ne m}\frac{c_n}{c_m}
+ \|A_{\{m,n\}}F_{\{m,n\}}\|_1
+ \le\eta
+ \qquad(m\in\cM).\notag
+\end{align}
+
+\begin{theorem}[Coupled-rule strong dual]
+\label{thm:coupled-rule-dual}
+If \(\kappa\in\Ran\mathscr R\), then
+\begin{align}
+ \Theta_c^{\mathscr R}(\kappa)
+ =
+ \max\quad&
+ [\lambda,\kappa]_{\mathbb R}
+ \label{eq:coupled-dual}\\
+ \textup{subject to}\quad&
+ \alpha_m\ge0,\qquad\sum_m\alpha_m=1,\notag\\
+ &
+ \bigoplus_{m<n}A_{mn}^*z_{mn}
+ =
+ \mathscr R^*\lambda,\notag\\
+ &
+ \|z_{mn}\|_\infty
+ \le
+ \alpha_m\frac{c_n}{c_m}
+ +
+ \alpha_n\frac{c_m}{c_n}
+ \qquad(m<n).\notag
+\end{align}
+The primal and dual optima are attained.  If
+\(\kappa\notin\Ran\mathscr R\), the primal is infeasible and the dual is
+unbounded above.
+\end{theorem}
+
+\begin{proof}
+Use row multipliers \(\alpha_m\) exactly as in
+\cref{thm:fixed-weight-dual}, and use \(\lambda\) for the single global
+equality constraint.  The infimum in \(\eta\) imposes
+\(\sum_m\alpha_m=1\).  The support-function representation of every
+edge norm introduces \(z_{mn}\) with the displayed radius.  The
+infimum in the global variable \(\boldsymbol F\) is finite precisely when
+the displayed block-adjoint stationarity equation holds.  A feasible
+\(\boldsymbol F\) and a strictly larger \(\eta\) give relative Slater
+feasibility, so finite-dimensional convex duality gives equality and
+dual attainment.
+
+Primal attainment follows separately.  Fix one feasible
+\(\boldsymbol F_0\), quotient \(\ker\mathscr R\) by the common zero-cost
+subspace
+\[
+ \left\{
+ \boldsymbol G\in\ker\mathscr R:
+ A_eG_e=0\text{ for every }e
+ \right\},
+\]
+and choose a linear complement.  On that finite-dimensional complement,
+the maximum of the positively weighted row norms controls the variable,
+so a minimizing sequence has a convergent representative.  For dual
+attainment, \(\alpha\) lies in a compact simplex and every \(z_e\) is
+uniformly bounded.  Restricting \(\lambda\) to
+\((\ker\mathscr R^*)^\perp\) then makes the adjoint stationarity equation
+bound \(\lambda\), and the feasible set is closed.
+
+The infeasible case follows by separating
+\(\kappa\) from \(\Ran\mathscr R\), as in
+\cref{thm:strong-completion-duality}.
+\end{proof}
+
+\begin{corollary}[Exact shared-rule obstruction]
+\label{cor:shared-rule-obstruction}
+Every feasible tuple
+\((\alpha,\lambda,(z_{mn}))\) in
+\eqref{eq:coupled-dual} proves that every completion family obeying the
+declared shared rule has weighted-Schur cost at least
+\[
+ [\lambda,\kappa]_{\mathbb R}.
+\]
+An optimal tuple proves the best possible lower obstruction for that
+rule and that fixed \(c\).
+\end{corollary}
+
+\begin{remark}[Restriction of scope]
+A witness for one \(\mathscr R\) does not obstruct a different completion
+class.  Conversely, the independent-edge value can be strictly smaller
+than the shared-rule value because its feasible set is larger.  Any
+negative conclusion must name the exact rule class that its witness
+covers.
+\end{remark}
+
+\subsection{Hermitian symmetrization}
+
+Suppose both orientations are initially represented by legal completions.
+Define
+\[
+ \widehat F_{mn}(u,v)
+ =
+ \frac12
+ \left(
+ F_{mn}(u,v)+\overline{F_{nm}(v,u)}
+ \right)
+\]
+and reconstruct the reverse by conjugate transpose.
+
+\begin{proposition}[No factor loss from reversal]
+\label{prop:Hermitian-symmetrization}
+If the two orientation costs are transpose compatible, then
+\[
+ \cC_D(\widehat F_{mn})
+ \le
+ \frac12
+ \left(
+ \cC_D(F_{mn})+\cC_D(F_{nm})
+ \right).
+\]
+The symmetrized pair preserves the common Hermitian primitive datum.
+\end{proposition}
+
+\begin{proof}
+The primitive restrictions agree by the inherited reversal identity.
+The cost is the \(\ell^1\)-norm of a linear analysis map, so convexity and
+transpose compatibility give the bound.
+\end{proof}
+
+\begin{remark}
+The proposition confirms that Hermitian compatibility itself costs no
+fixed factor.  Shared \(q\)-provenance or a finite stacked-data rule may
+still impose a genuine cross-edge cost because those are additional
+constraints, not consequences of reversal.
+\end{remark}

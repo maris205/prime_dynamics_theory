@@ -1,0 +1,169 @@
+\section{Countermodels and non-substitution laws}
+\label{sec:countermodels}
+
+The following finite examples separate the exact conclusions of the
+duality theory from the physical estimates that remain open.
+
+\subsection{A shared rule creates a real joint gap}
+
+Let one scalar \(t\in\mathbb R\) control two edge completions, with costs
+\[
+ p_{12}(t)=|t|,
+ \qquad
+ p_{23}(t)=|1-t|.
+\]
+Each edge separately has optimal cost zero.  Under the shared rule,
+\[
+ \inf_t\max\{p_{12}(t),p_{23}(t)\}
+ =
+ \frac12.
+\]
+Thus a joint gap can be real, but it comes from the common parameter,
+not from Hermitian reversal.
+
+\subsection{Adaptive choice reverses max and min}
+
+In the same example,
+\[
+ \max_{e\in\{12,23\}}\inf_t p_e(t)=0,
+ \qquad
+ \inf_t\max_{e\in\{12,23\}}p_e(t)=\frac12.
+\]
+Choosing the completion after the worst edge or operator extremizer has
+been revealed changes the problem.  A coefficient-uniform theorem must
+use the second order of quantifiers.
+
+\subsection{Fixed-pair decay does not control a matrix}
+
+Let \(P_N\) be the symmetric zero-diagonal matrix with
+\[
+ (P_N)_{mn}=\frac1{N-1}\qquad(m\ne n).
+\]
+Every fixed entry tends to zero, but
+\[
+ \rho(P_N)=1.
+\]
+Hence even optimal entrywise completion costs of order \(o(1)\) are
+insufficient without a row, weighted-Schur, or Perron aggregation over
+the complete growing active set.
+
+\subsection{The absolute Perron floor can miss signed cancellation}
+
+Let \(N=2^r\), and let \(S_N\) be the symmetric Sylvester Hadamard matrix.
+Then
+\[
+ S_N=S_N^{\mathsf T},
+ \qquad
+ S_NS_N^{\mathsf T}=NI,
+ \qquad
+ |(S_N)_{mn}|=1.
+\]
+Define the real symmetric zero-diagonal matrix
+\[
+ H_N=\frac{S_N-\diag(S_N)}{N}.
+\]
+Since \(\|S_N\|=\sqrt N\),
+\[
+ \|H_N\|
+ \le
+ \frac1{\sqrt N}+\frac1N
+ \longrightarrow0.
+\]
+On the other hand,
+\[
+ |H_N|=\frac{J-I}{N},
+ \qquad
+ \rho(|H_N|)=\frac{N-1}{N}\longrightarrow1.
+\]
+By \cref{thm:Perron-floor}, every entrywise absolute completion majorant
+of this signed matrix has spectral radius asymptotically at least one.
+Thus failure of the whole completion--Perron architecture need not be
+failure of signed operator cancellation.
+
+\subsection{One bad completion is not an obstruction}
+
+Take zero primitive datum, a prime \(p>D\), and a rectangle containing
+the nonprimitive site \((p,p)\).  The fill
+\[
+ F_A=Ae_{p,p}
+\]
+is legal for every \(A\in\C\).  The tail coordinate
+\((d,x,y)=(p,1,1)\) has unit weight, so its exact tail cost is at least
+\(|A|\).  The optimum remains zero because the zero completion is legal.
+A large cost for a chosen interpolation proves nothing about
+\(\gamma_D(0)\); only an optimal dual witness can lower-bound the
+infimum.
+
+\subsection{A dual obstruction is not a signed lower bound}
+
+In the abstract normal form \(R=I\), \(A=I\), take
+\[
+ k=(1,-1),
+ \qquad
+ \sigma=(1,1).
+\]
+Then the signed functional vanishes:
+\[
+ \langle\sigma,k\rangle=0,
+\]
+whereas the completion gauge is
+\[
+ \gamma(k)=\|k\|_1=2.
+\]
+The optimal dual witness obstructs a cheap \(\ell^1\) certificate, not
+the signed functional.  The Hadamard construction above is the matrix
+version of the same separation.
+
+\subsection{Costs before content aggregation can discard cancellation}
+
+Suppose two literal content slices satisfy
+\[
+ L_{mn,q_1}=F,
+ \qquad
+ L_{mn,q_2}=-F.
+\]
+The physically relevant post-\(q\)-aggregation datum is zero.  Completing
+the two slices separately and adding their absolute costs can be
+positive, whereas completing their exact sum costs zero.  Therefore a
+paper must declare whether its completion rule acts after exact
+\(q\)-aggregation or retains \(q\) as a coupled label.  One may not move
+between the two orders after seeing which is cheaper.
+
+\subsection{Sidewise renormalization changes the object}
+
+Suppose two orthogonal sides each contribute row mass one, so the raw
+global masses are \(W_m=W_n=2\).  If one side contains one common unit
+key, its correct normalized two-corner contribution is
+\[
+ \frac1{\sqrt{W_mW_n}}=\frac12.
+\]
+Renormalizing that side alone gives \(1\), doubling the physical entry.
+Analytic fill values never enter \(W_m\) or \(W_n\); a completion cannot
+authorize a new normalization.
+
+\subsection{Hermitian-incompatible scalar completions}
+
+For zero primitive data, both
+\[
+ F_{12}=Ae_{2,2},
+ \qquad
+ F_{21}=0
+\]
+are legal scalar completions.  Unless \(A=0\), they do not satisfy
+\[
+ F_{21}(v,u)=\overline{F_{12}(u,v)}.
+\]
+They cannot be inserted together into one Hermitian analytic carrier.
+One must use upper-triangle variables or apply
+\cref{prop:Hermitian-symmetrization}.
+
+\subsection{A fixed weight is not automatically Perron-optimal}
+
+For a nonnegative matrix \(P\) and an arbitrary \(c>0\),
+\[
+ \rho(P)\le\max_m\frac{(Pc)_m}{c_m},
+\]
+and the inequality may be strict.  Equality requires an appropriate
+Perron weight or the infimum over all positive \(c\).  A dual lower
+witness for one fixed-\(c\) Schur problem does not by itself lower-bound
+the infimum over \(c\).

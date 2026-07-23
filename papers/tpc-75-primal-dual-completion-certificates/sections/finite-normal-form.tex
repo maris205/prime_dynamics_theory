@@ -1,0 +1,144 @@
+\section{The finite completion problem in linear normal form}
+\label{sec:finite-normal-form}
+
+\subsection{Real pairings on complex spaces}
+
+Every complex vector space below is regarded as a finite-dimensional real
+space when convex duality is used.  For vectors of the same dimension set
+\[
+ [x,y]_{\mathbb R}
+ :=
+ \Real\langle x,y\rangle
+ =
+ \Real\sum_j\overline{x_j}y_j .
+\]
+Adjoints are characterized by
+\[
+ [Ax,z]_{\mathbb R}=[x,A^*z]_{\mathbb R}.
+\]
+This convention is essential when a Hermitian reversal contains complex
+conjugation: conjugation is real-linear but not complex-linear.
+
+\subsection{Primitive restriction}
+
+Fix positive integers \(U,V\), put
+\[
+ B=[1,U]\times[1,V],
+ \qquad
+ P=B\cap\{(u,v):(u,v)=1\},
+\]
+and let
+\[
+ \cX=\C^B,\qquad \cK=\C^P.
+\]
+The restriction map
+\[
+ R:\cX\longrightarrow\cK,
+ \qquad
+ (RF)(u,v)=F(u,v)\quad((u,v)\in P)
+\]
+is surjective.  For prescribed primitive data \(k\in\cK\), its full
+analytic completion class is the affine space
+\[
+ \Ext_B(k)=\{F\in\cX:RF=k\}.
+\]
+Zeros at absent primitive rays are part of \(k\); only nonprimitive sites
+are free.
+
+\subsection{The analysis operator}
+
+For \(d\ge1\), define
+\[
+ M_d(x)=\sum_{\substack{r\le x\\(r,d)=1}}\mu(r),
+ \qquad
+ F^{[d]}(x,y)=F(dx,dy),
+\]
+using zero extension outside \(B\).  Let
+\[
+ \Delta_{12}G(x,y)
+ =
+ G(x,y)-G(x+1,y)-G(x,y+1)+G(x+1,y+1).
+\]
+Fix \(D\ge1\).  We use two finite output index sets:
+\begin{align*}
+ J_{\rm low}
+ &=
+ \{(d,x,y)\in\N^3:1\le d\le D,\ dx\le U,\ dy\le V\},\\
+ J_{\rm tail}
+ &=
+ \{(d,x,y)\in\N^3:d>D,\ dx\le U,\ dy\le V\}.
+\end{align*}
+Indices carrying zero weights may be retained or deleted.
+
+\begin{definition}[Divisor--variation analysis operator]
+\label{def:analysis-operator}
+Let
+\[
+ \cY_D=\C^{J_{\rm low}}\oplus\C^{J_{\rm tail}}.
+\]
+Define \(A_D:\cX\to\cY_D\) by
+\begin{align}
+ (A_DF)_{d,x,y}^{\rm low}
+ &=
+ |\mu(d)|\,|M_d(x)M_d(y)|
+ \Delta_{12}F^{[d]}(x,y),
+ \label{eq:analysis-low}\\
+ (A_DF)_{d,x,y}^{\rm tail}
+ &=
+ |\mu(d)\mu(dx)\mu(dy)|F(dx,dy).
+ \label{eq:analysis-tail}
+\end{align}
+\end{definition}
+
+\begin{proposition}[Exact normal form]
+\label{prop:exact-normal-form}
+For every \(F\in\cX\),
+\begin{equation}
+ \boxed{\cC_D(F)=\|A_DF\|_1,}
+ \label{eq:cost-as-l1}
+\end{equation}
+where \(\cC_D\) is the complete TPC--73 low-diagonal weighted plaquette
+cost plus its exact high-diagonal tail.
+\end{proposition}
+
+\begin{proof}
+The \(\ell^1\)-sum of the coordinates in
+\eqref{eq:analysis-low} is
+\[
+ \sum_{d\le D}|\mu(d)|
+ \sum_{x,y\ge1}
+ |M_d(x)M_d(y)|
+ |\Delta_{12}F^{[d]}(x,y)|.
+\]
+The \(\ell^1\)-sum of \eqref{eq:analysis-tail} is
+\[
+ \sum_{d>D}|\mu(d)|
+ \sum_{x,y\ge1}
+ |\mu(dx)\mu(dy)F(dx,dy)|.
+\]
+All sums are finite and their sum is precisely \(\cC_D(F)\).
+\end{proof}
+
+\begin{remark}[Literal weights are not envelopes]
+The coordinates of \(A_D\) contain the exact restricted Mertens weights,
+the exact support rectangle, and the literal completion values.  Replacing
+them by maxima, support counts, or a smooth ambient box defines a
+different and generally coarser operator.
+\end{remark}
+
+\begin{definition}[Optimal completion gauge]
+\label{def:completion-gauge}
+For \(k\in\cK\), set
+\begin{equation}
+ \gamma_D(k)
+ :=
+ \inf_{F\in\Ext_B(k)}\cC_D(F)
+ =
+ \inf_{RF=k}\|A_DF\|_1.
+ \label{eq:completion-gauge}
+\end{equation}
+\end{definition}
+
+Because \(R\) is surjective, the feasible set is never empty.  We retain
+the more general range formulation in the dual theorem so that later
+affine coupled-rule systems can be included without changing notation.

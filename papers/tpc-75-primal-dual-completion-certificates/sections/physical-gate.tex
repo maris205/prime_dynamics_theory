@@ -1,0 +1,227 @@
+\section{The literal fixed-shift completion gate}
+\label{sec:physical-gate}
+
+\subsection{Inherited carrier}
+
+We now specialize only to the physical object proved in TPC--74
+\citep{WangTPC74}.  Fix one nonzero shift \(h_0\), one external block,
+and the actual TPC--61/TPC--68 missing-high carrier.  The two direct sides
+are combined through their proved orthogonal direct sum.  Every key
+retains its side, block, opposite row, profile, time, mask, endpoint, and
+remaining native output labels.
+
+For an active unordered row pair \(m<n\), write
+\[
+ \Delta_{mn}=h_0(n-m)
+\]
+and let \(L_{mn,q}(u,v)\) be the literal \(q\)-resolved direct-entry
+kernel of TPC--74.  Its post-content aggregation is
+\[
+ L_{mn}(u,v)
+ =
+ \sum_{q\mid|\Delta_{mn}|}L_{mn,q}(u,v).
+\]
+Before optimizing, choose a finite rectangle \(B_{mn}\) containing the
+union of the primitive supports of all \(L_{mn,q}\) and every declared
+lifted nonprimitive site.  Fix \(D_{mn}\ge1\), and set
+\[
+ B_{nm}=B_{mn}^{\mathsf T},
+ \qquad
+ D_{nm}=D_{mn}.
+\]
+These choices are used in \(\gamma_{mn}\), \(Q^\gamma\), \(P^0\), and
+\(P^{\rm lift}\); changing them changes the optimization problem.
+Prescribe
+\begin{equation}
+ k_{mn}(u,v)=L_{mn}(u,v)
+ \qquad((u,v)=1),
+ \label{eq:physical-primitive-data}
+\end{equation}
+including zero at every absent primitive site.  Only nonprimitive sites
+are completion variables.
+
+Here \(\gamma_{mn}\) is the pair-dependent optimum formed after exact
+\(q\)-aggregation of this fixed literal datum.  In contrast,
+\(F^{\rm lift}_{mn}\) below is a candidate informed by retained
+pre-aggregation \(q\)-provenance.  It is not a slice-by-slice
+absolute-value optimization.
+
+The normalization inside every \(L_{mn,q}\) remains
+\[
+ \frac1{\sqrt{W_M(m)W_M(n)}},
+ \qquad
+ W_M(m)=\sum_{w:m(w)=m}|\beta_w|^2,
+\]
+where the sum uses both orthogonal sides on the declared block.
+This is the \(W_m\) notation used in TPC--74.
+Nonprimitive fill values are not physical atoms and never enter \(W_M\).
+
+\subsection{Three exact majorants}
+
+Let \(F^0_{mn}\) be the canonical zero completion.  Let
+\(\gamma_{mn}\) be the exact unrestricted analytic optimum from
+\cref{eq:completion-gauge}.  TPC--74 and
+\cref{thm:Perron-floor} give
+\begin{equation}
+ \|H\|=\|\widetilde H\|
+ \le\rho(|\widetilde H|)
+ \le\rho(Q^\gamma)
+ \le\rho(P^0).
+ \label{eq:physical-majorant-hierarchy}
+\end{equation}
+Every matrix in this chain refers to the same literal row set, complete
+keys, raw masses, and fixed \(h_0\).
+
+There is also a canonical provenance-preserving candidate that was not
+available before the \(q\)-resolved direct-entry representation.
+Write a site uniquely as
+\[
+ (x,y)=(du,dv),
+ \qquad
+ d=(x,y),\quad(u,v)=1.
+\]
+Define the content lift, inside \(B_{mn}\), by
+\begin{equation}
+ F^{\rm lift}_{mn}(du,dv)
+ =
+ \sum_{\substack{r\mid|\Delta_{mn}|\\d\mid r}}
+ L_{mn,r}(u,v).
+ \label{eq:content-lift}
+\end{equation}
+The sum is zero when no such \(r\) exists.
+
+\begin{proposition}[Literal content lift]
+\label{prop:literal-content-lift}
+The kernel \(F^{\rm lift}_{mn}\) is a legal completion of
+\eqref{eq:physical-primitive-data}.  It uses only actual
+\(q\)-slices with \(q\mid|\Delta_{mn}|\), introduces no physical mass,
+and respects Hermitian reversal:
+\[
+ F^{\rm lift}_{nm}(v,u)
+ =
+ \overline{F^{\rm lift}_{mn}(u,v)}.
+\]
+\end{proposition}
+
+\begin{proof}
+At a primitive site \(d=1\), \eqref{eq:content-lift} gives
+\[
+ F^{\rm lift}_{mn}(u,v)
+ =
+ \sum_{r\mid|\Delta_{mn}|}L_{mn,r}(u,v)
+ =
+ k_{mn}(u,v).
+\]
+Thus the primitive restriction is correct, including absent-ray zeros.
+Every nonprimitive value is only a sum of already existing literal
+content slices.  It is not inserted into the physical key set or row
+mass, and \eqref{eq:content-lift} is a declared analytic copying rule,
+not a physical movement or identity between atoms.  Finally, TPC--74 gives
+\[
+ L_{nm,r}(v,u)=\overline{L_{mn,r}(u,v)};
+\]
+the divisor set of \(|\Delta_{mn}|\) is unchanged by reversal.
+\end{proof}
+
+Let \(P^{\rm lift}\) be the symmetric matrix of the full costs
+\(\cC_{D_{mn}}(F^{\rm lift}_{mn})\).  Then
+\begin{equation}
+ \rho(Q^\gamma)
+ \le
+ \min\{\rho(P^0),\rho(P^{\rm lift})\}.
+ \label{eq:lift-upper-bound}
+\end{equation}
+No ordering between \(P^0\) and \(P^{\rm lift}\) is asserted.
+The lift may reduce the \(d=1\) plaquette term while increasing higher
+diagonal terms or the tail.
+
+\subsection{Exact positive and negative outcomes}
+
+Let \(X\to\infty\) through one declared physical family, with all objects
+above indexed by \(X\).
+
+\paragraph{Positive separated outcome.}
+If one proves
+\[
+ \rho(Q^\gamma_X)\le\eta_X<1,
+\]
+then the normalized missing-native Gram
+\[
+ G_{{\rm nat},X}=I+H_X
+\]
+obeys
+\[
+ U_{d,X}G_{{\rm nat},X}U_{d,X}
+ =
+ I+\widetilde H_X.
+\]
+The two Grams are unitarily equivalent, so
+\[
+ 1-\eta_X
+ \le\lambda_{\min}(G_{{\rm nat},X})
+ \le\lambda_{\max}(G_{{\rm nat},X})
+ \le1+\eta_X.
+\]
+This is a deterministic implication.  The hypothesis is not proved
+here.
+
+\paragraph{Negative separated outcome.}
+For each edge, a dual witness gives the nonnegative lower bound
+\[
+ W_{mn}
+ =
+ \left|
+ [\lambda_{mn},k_{mn}]_{\mathbb R}
+ \right|
+ \le\gamma_{mn};
+\]
+changing the common sign of \((\lambda_{mn},z_{mn})\) makes this absolute
+value a feasible dual objective.
+Set \(W_{nm}=W_{mn}\) and \(W_{mm}=0\).  Then
+\[
+\rho(W)\le\rho(Q^\gamma).
+\]
+Thus a nonnegligible actual-carrier lower bound for \(\rho(W)\) closes the
+broad independent absolute-completion route at that scale.  It still
+does not lower-bound \(\|H\|\).
+
+\paragraph{Shared-rule outcome.}
+For a declared affine \(q\)-compatible rule at one fixed finite stacked
+datum,
+\cref{thm:coupled-rule-dual} gives the exact fixed-\(c\) value and its
+obstruction.  A witness for one \(c\) does not close the Perron infimum;
+one needs a bound uniform over positive \(c\), a direct nonnegative
+matrix floor, or an exact evaluation of the resulting Collatz problem.
+Nor does the single-datum theorem supply a rule uniform over a growing
+coefficient class; that requires the additional minimax quantifier in
+\cref{rem:fixed-data-coupling}.
+
+\subsection{Remaining physical gates}
+
+Even a successful missing-native estimate must still be combined on one
+carrier with:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.7em]
+ \item terminal activation and the represented lower frame;
+ \item missing-mass comparison and nuisance shorting;
+ \item geometric endpoint and packet-boundary terms; and
+ \item the complete fixed-power loss ledger.
+\end{enumerate}
+If the accumulated loss reaches \(1/400\), including equality, the
+current strict endpoint implication stops.  None of the completion
+identities changes that budget.
+
+\subsection{TPC--76 decision}
+
+TPC--75 leaves two rigorously separated next doors.
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.6em]
+ \item Analyze the literal content lift
+       \eqref{eq:content-lift} on the divisor poset and compare its exact
+       KKT/dual flow with the zero completion.
+ \item If an actual absolute-Perron floor is already nonnegligible, pivot
+       to a signed full-\(H\) moment or a hybrid direct/anchor
+       architecture, because no entrywise absolute completion can cross
+       that floor.
+\end{enumerate}
+The first route is the default theoretical next step; the second is an
+explicit kill-criterion fallback rather than an overclaim that
+cancellation has failed.

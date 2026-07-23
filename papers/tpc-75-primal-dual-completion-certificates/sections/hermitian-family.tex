@@ -1,0 +1,285 @@
+\section{Hermitian row-pair families and the exact Perron gauge}
+\label{sec:hermitian-family}
+
+\subsection{Unordered-edge convention}
+
+Let \(\cM\) be a nonempty finite active row set and
+\[
+ \cE=\{\{m,n\}:m,n\in\cM,\ m<n\}.
+\]
+For every edge \(e=\{m,n\}\), choose one upper-triangle completion
+rectangle \(B_e\), primitive datum \(k_e\), restriction \(R_e\), cutoff
+\(D_e\), and analysis operator \(A_e=A_{D_e}\).  The reversed rectangle
+is the transpose of \(B_e\), and the lower-triangle completion is defined
+by
+\begin{equation}
+ F_{nm}(v,u)=\overline{F_{mn}(u,v)}.
+ \label{eq:Hermitian-reversal}
+\end{equation}
+We assume the inherited TPC--74 reversal compatibility:
+\[
+ k_{nm}(v,u)=\overline{k_{mn}(u,v)},
+ \qquad
+ \|A_{nm}F_{nm}\|_1=\|A_{mn}F_{mn}\|_1.
+\]
+Encoding only \(m<n\) avoids treating the real-linear conjugate reversal
+as a complex-linear constraint.
+
+For an admissible upper-triangle family
+\(\boldsymbol F=(F_e)_{e\in\cE}\), define
+\[
+ p_e(F_e)=\|A_eF_e\|_1
+\]
+and the symmetric nonnegative matrix
+\begin{equation}
+ P(\boldsymbol F)_{mn}
+ =
+ \begin{cases}
+  p_{\{m,n\}}(F_{\{m,n\}}),&m\ne n,\\
+  0,&m=n.
+ \end{cases}
+ \label{eq:completion-majorant}
+\end{equation}
+The single-edge optimal costs are
+\[
+ \gamma_{mn}
+ =
+ \min_{R_{mn}F=k_{mn}}\|A_{mn}F\|_1
+ \qquad(m<n),
+\]
+and \(\gamma_{nm}=\gamma_{mn}\).  Set
+\begin{equation}
+ Q^\gamma_{mn}
+ =
+ \begin{cases}
+  \gamma_{mn},&m\ne n,\\
+  0,&m=n.
+ \end{cases}
+ \label{eq:optimal-entry-matrix}
+\end{equation}
+
+\subsection{No hidden independent-edge gain}
+
+\begin{theorem}[Exact separated Perron completion]
+\label{thm:separated-Perron}
+Suppose the admissible family is the product of the unordered-edge
+completion classes:
+\[
+ R_eF_e=k_e\qquad(e\in\cE),
+\]
+with no additional cross-edge constraint.  Then
+\begin{equation}
+ \boxed{
+ \inf_{\boldsymbol F}\rho(P(\boldsymbol F))
+ =
+ \rho(Q^\gamma).}
+ \label{eq:separated-Perron}
+\end{equation}
+The infimum is attained.
+\end{theorem}
+
+\begin{proof}
+For every admissible family,
+\[
+ P(\boldsymbol F)_{mn}\ge Q^\gamma_{mn}
+\]
+entrywise.  Perron spectral radius is monotone on nonnegative matrices
+\citep{BermanPlemmons1994}, so
+\[
+ \rho(P(\boldsymbol F))\ge\rho(Q^\gamma).
+\]
+Each single-edge minimum is attained by
+\cref{thm:strong-completion-duality}.  Because \(\cE\) is finite and the
+classes are independent, choose all upper-edge minimizers
+simultaneously and reconstruct the lower triangle by
+\eqref{eq:Hermitian-reversal}.  For that family
+\(P(\boldsymbol F)=Q^\gamma\).
+\end{proof}
+
+\begin{remark}[Where a joint gap can arise]
+Hermitian reversal alone causes no gap between entrywise and matrix
+optimization.  A genuine joint problem requires an additional shared
+rule: a common parameter, a common content-lift formula, cross-edge
+regularity, a uniform cutoff, or a rule fixed over a coefficient class.
+Those constraints must be written into the primal feasible set.
+\end{remark}
+
+\subsection{The universal absolute-entry floor}
+
+Let \(\widetilde H\) be the exact gauged Hermitian zero-diagonal matrix
+whose entries are the primitive signed functionals of the \(k_{mn}\).
+If \(H\) is the ungauged missing-native perturbation of TPC--74, then
+\[
+ \widetilde H=U_dHU_d,
+ \qquad
+ U_d=\diag(\mu(d_m)).
+\]
+Thus \(|\widetilde H|=|H|\) entrywise and
+\(\|\widetilde H\|=\|H\|\).  Explicitly,
+\[
+ \widetilde H_{mn}
+ =
+ \sum_{(u,v)=1}\mu(u)\mu(v)k_{mn}(u,v)
+ \qquad(m<n),
+\]
+exactly.
+
+\begin{theorem}[Perron floor and canonical ceiling]
+\label{thm:Perron-floor}
+For every admissible completion family,
+\begin{equation}
+ \boxed{
+ \|H\|=\|\widetilde H\|
+ \le
+ \rho(|\widetilde H|)
+ \le
+ \rho(Q^\gamma)
+ \le
+ \rho(P(\boldsymbol F)).}
+ \label{eq:Perron-floor}
+\end{equation}
+In particular, if \(P^0\) is the canonical primitive zero-completion
+matrix, then
+\begin{equation}
+ \|H\|=\|\widetilde H\|
+ \le\rho(|\widetilde H|)
+ \le\rho(Q^\gamma)
+ =
+ \inf_{\boldsymbol F}\rho(P(\boldsymbol F))
+ \le\rho(P^0).
+ \label{eq:Perron-sandwich}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+\Cref{thm:arithmetic-dual-witness} gives
+\[
+ |\widetilde H_{mn}|\le\gamma_{mn}\le P(\boldsymbol F)_{mn}.
+\]
+All three right-hand matrices are symmetric and nonnegative, so Perron
+monotonicity gives the spectral-radius inequalities.  Finally, for
+arbitrary vectors \(x,y\),
+\[
+ |\langle x,\widetilde Hy\rangle|
+ \le \langle |x|,|\widetilde H||y|\rangle
+ \le \rho(|\widetilde H|)\|x\|_2\|y\|_2,
+\]
+which proves
+\(\|H\|=\|\widetilde H\|\le\rho(|\widetilde H|)\).
+\end{proof}
+
+\begin{remark}[Meaning of the floor]
+No completion whose final step takes entrywise absolute values can beat
+\(\rho(|\widetilde H|)=\rho(|H|)\).  A large floor closes that
+certificate architecture, not the possibility that signs in \(H\) make
+\(\|H\|\) small.
+\end{remark}
+
+\subsection{Fixed weighted-Schur aggregation}
+
+Fix \(c=(c_m)_{m\in\cM}\in(0,\infty)^{\cM}\).  Define
+\begin{equation}
+ \Theta_c(\boldsymbol k)
+ =
+ \min_{\boldsymbol F}
+ \max_{m\in\cM}
+ \sum_{n\ne m}\frac{c_n}{c_m}
+ \|A_{\{m,n\}}F_{\{m,n\}}\|_1,
+ \label{eq:fixed-c-primal}
+\end{equation}
+subject to \(R_eF_e=k_e\) on every edge.
+
+\begin{theorem}[Fixed-weight Hermitian strong dual]
+\label{thm:fixed-weight-dual}
+For
+\(\alpha=(\alpha_m)_{m\in\cM}\) in the probability simplex, put
+\[
+ \omega_{mn}(\alpha,c)
+ =
+ \alpha_m\frac{c_n}{c_m}
+ +
+ \alpha_n\frac{c_m}{c_n}
+ \qquad(m<n).
+\]
+Then
+\begin{align}
+ \Theta_c(\boldsymbol k)
+ =
+ \max\quad&
+ \sum_{m<n}[\lambda_{mn},k_{mn}]_{\mathbb R}
+ \label{eq:fixed-weight-dual}\\
+ \textup{subject to}\quad&
+ \alpha_m\ge0,\qquad\sum_m\alpha_m=1,\notag\\
+ &
+ A_{mn}^*z_{mn}=R_{mn}^*\lambda_{mn},
+ \qquad
+ \|z_{mn}\|_\infty
+ \le\omega_{mn}(\alpha,c)
+ \quad(m<n).\notag
+\end{align}
+Both sides are attained, and
+\begin{equation}
+ \Theta_c(\boldsymbol k)
+ =
+ \max_m\sum_{n\ne m}\frac{c_n}{c_m}\gamma_{mn}.
+ \label{eq:fixed-weight-factorization}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Introduce an epigraph variable \(\eta\) and one inequality
+\[
+ \sum_{n\ne m}\frac{c_n}{c_m}\|A_{mn}F_{mn}\|_1
+ \le\eta
+\]
+for every row \(m\).  Give these inequalities multipliers
+\(\alpha_m\ge0\).  The infimum in \(\eta\) is finite exactly when
+\(\sum_m\alpha_m=1\).  Edge \(\{m,n\}\) then carries the norm multiplier
+\(\omega_{mn}(\alpha,c)\).  Applying
+\cref{thm:strong-completion-duality} edge by edge gives
+\eqref{eq:fixed-weight-dual}.  Strict feasibility of the row inequalities
+after choosing any feasible completions gives strong duality and dual
+attainment.
+
+This also covers \(\omega_{mn}=0\): under the real pairing,
+\[
+ \bigl(\omega\|A\cdot\|_1\bigr)^*(\xi)
+ =
+ \begin{cases}
+  0,&\exists z:\ A^*z=\xi,\ \|z\|_\infty\le\omega,\\
+  +\infty,&\text{otherwise}.
+ \end{cases}
+\]
+
+For \eqref{eq:fixed-weight-factorization}, every edge cost is at least
+\(\gamma_{mn}\), giving the lower bound row by row.  Simultaneously choose
+all edge minimizers to obtain equality.
+\end{proof}
+
+\begin{corollary}[Collatz reduction]
+\label{cor:Collatz-reduction}
+\[
+ \rho(Q^\gamma)
+ =
+ \inf_{c>0}\Theta_c(\boldsymbol k)
+ =
+ \inf_{c>0}
+ \max_m\sum_{n\ne m}\frac{c_n}{c_m}\gamma_{mn}.
+\]
+The infimum is valid for reducible \(Q^\gamma\), although a strictly
+positive minimizing \(c\) need not exist.
+\end{corollary}
+
+\begin{proof}
+This is the reducible-safe Collatz--Wielandt formula for the symmetric
+nonnegative matrix \(Q^\gamma\).
+\end{proof}
+
+\begin{remark}[Do not dualize through the \(c\)-infimum]
+\Cref{thm:fixed-weight-dual} is a convex dual for each fixed positive
+\(c\).  The ratios \(c_n/c_m\) make joint optimization in
+\((c,\boldsymbol F)\) nonconvex in these coordinates.  Taking the
+infimum of the fixed-\(c\) primal values is legitimate; claiming a single
+strong dual after moving that infimum through the dual maximization is
+not.
+\end{remark}

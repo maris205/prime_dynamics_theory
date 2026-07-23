@@ -1,0 +1,199 @@
+\section{Quotient geometry and arithmetic witnesses}
+\label{sec:quotient-witnesses}
+
+\subsection{The exact nullspace}
+
+\begin{theorem}[Completion quotient seminorm]
+\label{thm:quotient-seminorm}
+On \(\Ran R\), the optimal completion cost
+\[
+ \gamma(k)=\min_{RF=k}\|AF\|_1
+\]
+is a seminorm and
+\begin{equation}
+ \boxed{\ker\gamma=R(\ker A).}
+ \label{eq:gauge-nullspace}
+\end{equation}
+Consequently it induces a norm on
+\[
+ \Ran R\big/R(\ker A).
+\]
+\end{theorem}
+
+\begin{proof}
+Positive homogeneity follows by scaling a completion.  If
+\(RF_i=k_i\), then \(R(F_1+F_2)=k_1+k_2\) and
+\[
+ \|A(F_1+F_2)\|_1
+ \le \|AF_1\|_1+\|AF_2\|_1.
+\]
+Taking minima gives the triangle inequality.
+
+If \(k=RF\) for some \(F\in\ker A\), then \(\gamma(k)=0\).
+Conversely, if \(\gamma(k)=0\), primal attainment in
+\cref{thm:strong-completion-duality} supplies \(F\) with
+\(RF=k\) and \(\|AF\|_1=0\), so \(F\in\ker A\).
+\end{proof}
+
+\begin{corollary}[Stability]
+\label{cor:gauge-stability}
+For \(k,k'\in\Ran R\),
+\[
+ |\gamma(k)-\gamma(k')|
+ \le \gamma(k-k').
+\]
+Thus the gauge is Lipschitz with constant one in its own quotient norm.
+\end{corollary}
+
+\begin{proof}
+Apply the triangle inequality twice.
+\end{proof}
+
+\subsection{The dual unit ball}
+
+Define
+\[
+ \cD_{A,R}
+ =
+ \left\{
+ \lambda\in\cK:
+ \exists z,\ A^*z=R^*\lambda,\ \|z\|_\infty\le1
+ \right\}.
+\]
+When \(R\) is surjective this set is compact, convex, balanced, and
+\begin{equation}
+ \gamma(k)
+ =
+ \max_{\lambda\in\cD_{A,R}}
+ [\lambda,k]_{\mathbb R}.
+ \label{eq:gauge-support-function}
+\end{equation}
+It is the unit ball of the dual of the quotient norm in
+\cref{thm:quotient-seminorm}.  A lower obstruction is therefore not a
+heuristic roughness statistic; it is a separating functional in the exact
+dual unit ball.
+
+\begin{proposition}[Zero-cost criterion by annihilators]
+\label{prop:zero-cost-annihilator}
+For \(k\in\Ran R\), the following are equivalent:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.6em]
+ \item \(\gamma(k)=0\);
+ \item \(k\in R(\ker A)\);
+ \item \([\lambda,k]_{\mathbb R}=0\) for every
+       \(\lambda\) satisfying
+       \(R^*\lambda\in\Ran A^*\).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The first two statements are
+\cref{thm:quotient-seminorm}.  In finite dimensions,
+\[
+ \bigl(R(\ker A)\bigr)^\perp
+ =
+ \{\lambda:R^*\lambda\in(\ker A)^\perp\}
+ =
+ \{\lambda:R^*\lambda\in\Ran A^*\}.
+\]
+The third statement says exactly that \(k\) belongs to the double
+orthogonal complement of \(R(\ker A)\).
+\end{proof}
+
+\subsection{The physical M\"obius direction}
+
+For the primitive lattice \(P\), define
+\[
+ \sigma(u,v)=\mu(u)\mu(v)
+ \qquad((u,v)\in P).
+\]
+The physical functional is
+\[
+ \cS_{\rm prim}(k)=\langle\sigma,k\rangle.
+\]
+
+\begin{theorem}[Arithmetic dual witness]
+\label{thm:arithmetic-dual-witness}
+For every \(D\ge1\), there is
+\(z^\sigma_D\in\cY_D\) such that
+\begin{equation}
+ A_D^*z^\sigma_D=R^*\sigma,
+ \qquad
+ \|z^\sigma_D\|_\infty\le1.
+ \label{eq:arithmetic-dual-feasible}
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{
+ |\cS_{\rm prim}(k)|
+ \le \gamma_D(k).}
+ \label{eq:physical-below-gauge}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The exact diagonal divisor lift followed by Abel summation
+\citep{WangTPC71} gives, for every completion \(F\),
+\begin{align*}
+ \langle\sigma,RF\rangle
+ ={}&
+ \sum_{d\le D}\mu(d)
+ \sum_{x,y}M_d(x)M_d(y)
+ \Delta_{12}F^{[d]}(x,y)\\
+ &+
+ \sum_{d>D}\mu(d)
+ \sum_{x,y}\mu(dx)\mu(dy)F(dx,dy).
+\end{align*}
+Explicitly, with \(\operatorname{sgn}(0)=0\), take
+\begin{align*}
+ (z^\sigma_D)^{\rm low}_{d,x,y}
+ &=
+ \operatorname{sgn}\!\left(
+ \mu(d)M_d(x)M_d(y)
+ \right),\\
+ (z^\sigma_D)^{\rm tail}_{d,x,y}
+ &=
+ \operatorname{sgn}\!\left(
+ \mu(d)\mu(dx)\mu(dy)
+ \right).
+\end{align*}
+Thus every nonzero coordinate is the corresponding real coefficient
+divided by its absolute value.  This defines \(z^\sigma_D\) with coordinate
+modulus at most one and
+\[
+ \langle z^\sigma_D,A_DF\rangle
+ =
+ \langle\sigma,RF\rangle
+ \qquad(F\in\cX).
+\]
+Hence \(A_D^*z^\sigma_D=R^*\sigma\).
+
+For any unit complex number \(\omega\), the pair
+\((\omega\sigma,\omega z^\sigma_D)\) is also dual feasible.  Choose
+\(\omega\) so that
+\(\Real\langle\omega\sigma,k\rangle
+=|\langle\sigma,k\rangle|\), and apply
+\cref{cor:tpc73-gauge-dual}.
+\end{proof}
+
+\begin{remark}[The witness need not be optimal]
+The arithmetic sign witness recovers the original TPC--73 upper
+certificate for the physical functional.  The dual optimizer may give a
+strictly larger value than
+\(|\cS_{\rm prim}(k)|\).  Such a gap obstructs the chosen
+absolute-value certificate architecture; it does not prove that the
+physical signed functional is large.
+\end{remark}
+
+\begin{corollary}[Single-atom rigidity]
+\label{cor:single-atom-rigidity}
+If \(k=ce_{u_0,v_0}\) with
+\((u_0,v_0)=1\) and \(\mu(u_0)\mu(v_0)\ne0\), then
+\[
+ \gamma_D(k)\ge|c|.
+\]
+No nonprimitive analytic fill can erase this nonzero physical atom.
+\end{corollary}
+
+\begin{proof}
+Use \cref{eq:physical-below-gauge}.
+\end{proof}
