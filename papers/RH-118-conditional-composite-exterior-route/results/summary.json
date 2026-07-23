@@ -1,0 +1,153 @@
+{
+  "audit": {
+    "actual_support_count": 322,
+    "adaptive_false_positive_count": 0,
+    "adaptive_missed_supported_count": 0,
+    "adaptive_support_count": 322,
+    "all_level_physical_packet_count_proved": 0,
+    "archived_composite_reconstruction_failure_count": 0,
+    "composite_false_positive_count": 0,
+    "composite_missed_supported_count": 1,
+    "composite_support_count": 321,
+    "fine_update_count": 234,
+    "physical_packet_count": 3,
+    "scale_count": 5,
+    "selected_route_counts": {
+      "direct_weyl": 189,
+      "directional_rayleigh": 171,
+      "spectral_capacity": 0,
+      "trace_concentration": 0
+    },
+    "support_label_disagreement_count": 0,
+    "update_count": 360
+  },
+  "minimal_physical_packets": {
+    "direct_margin": {
+      "all_level_condition_proved": false,
+      "compound_condition": "liminf direct_weyl_lower > tau",
+      "finite_algebra_closed": true,
+      "five_scale_validated": true,
+      "primitive_physical_inputs": [
+        "uniform recent fourth-mode support margin against the omitted tail"
+      ]
+    },
+    "directional_rayleigh": {
+      "all_level_condition_proved": false,
+      "compound_condition": "liminf (1-gamma_upper)^4 frame_volume_lower/capacity_upper > tau",
+      "finite_algebra_closed": true,
+      "five_scale_validated": true,
+      "primitive_physical_inputs": [
+        "normalized recent-frame volume lower",
+        "relative tail gamma upper below one",
+        "route-closing capacity upper"
+      ]
+    },
+    "trace_concentration": {
+      "all_level_condition_proved": false,
+      "compound_condition": "liminf sqrt(theta_lower/kappa_upper)/capacity_upper > tau",
+      "finite_algebra_closed": true,
+      "five_scale_validated": true,
+      "primitive_physical_inputs": [
+        "normalized exterior-trace lower",
+        "exterior-concentration upper",
+        "route-closing capacity upper"
+      ]
+    }
+  },
+  "program_boundary": {
+    "alternating_route_closure": true,
+    "any_all_level_physical_packet_proved": false,
+    "conditional_composite_liminf_theorem": true,
+    "directional_rayleigh_factorization": true,
+    "finite_anchor_extrapolation_admitted": false,
+    "five_scale_complete_gate_audited": true,
+    "hilbert_polya_operator": false,
+    "normalized_trace_factorization": true,
+    "riemann_hypothesis": false,
+    "strict_margin_outward_robustness": true,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "068003cf7a03a80b14d5d7a555f1982d10bc5f40a9676484b111d4da19fec41e",
+    "THEOREM_LEDGER.md": "12ed1980b6f078adc17a8d577ca63e118b7919e3ba2eb65f0ee4e6e987caefd9",
+    "UPDATED_ROADMAP.md": "53f2dda68797d090f3c44458b95b8f121295944f00811c7af24d439f6fb9237a",
+    "conditional-composite-exterior-route.pdf": "50e448951d71ea2535a576cb5081edf4f7970d2feb666a1f2ba9b6181b82a658",
+    "figures/conditional_composite_exterior_route.pdf": "90ec32cf7ad4a0f2e489a5eb351cd77c3aafe877dd0de5a1c7fbd9d1cb4a06bb",
+    "figures/conditional_composite_exterior_route.png": "e207df470b1c162b20e6b651b043b96cd6bed1f186d9d34790656cb3a4dde239",
+    "main.pdf": "50e448951d71ea2535a576cb5081edf4f7970d2feb666a1f2ba9b6181b82a658",
+    "main.tex": "ec739001ca69478c6051eb3d87a03d81dbf45400d86f863c3581ad5a47148a9e",
+    "pyproject.toml": "9bd44582dcbbc8d1417bb72333cb371673d214adfa6e27c07cd1b60df4aa2627",
+    "references.bib": "ed28e9ee163e4b9902a59f550ed2fd13a32fcb02b0f5712f4de0ae0b4137e38a",
+    "requirements.txt": "44f068d0df72a1cfee6232f18a998bfa62b664807c6080247cc07d6453065dbe"
+  },
+  "result_hashes": {
+    "results/conditional_route_audit.json": "8e6624288fb0c2b3149b32cb9cbac4eeba43071e2d40a8a32fc6b3d3c5b48cc0",
+    "results/conditional_route_smoke.json": "7af776fb4b4161203b8d6f7a11a0b9bc1bc2f42e4b9bd453b6e729e47335856e",
+    "results/dependency_manifest.json": "42cd6b9a0d0505e3738449af420240268e727056958fe2b09d75921582d5ac78"
+  },
+  "route_consequence": "All algebraic, compositional, first-passage, and finite-audit steps of the exterior route are now explicit. Eventual support follows from a strict liminf crossing by any admitted combination of direct, trace-concentration, or directional-Rayleigh candidates, even if the winning route alternates with level. None of the three minimal all-level physical packets is currently proved, and RH-117 excludes finite-anchor fitting as a substitute.",
+  "status": "rh118_conditional_composite_exterior_route_archived",
+  "theorem": {
+    "alternating_route_closure": true,
+    "conditional_composite_liminf_theorem": true,
+    "normalized_trace_factorization": true,
+    "strict_margin_outward_robustness": true
+  },
+  "threshold_summary": {
+    "1e-04": {
+      "actual_support_count": 98,
+      "adaptive_missed_supported_count": 0,
+      "adaptive_support_count": 98,
+      "candidate_support_counts": {
+        "direct_weyl": 98,
+        "directional_rayleigh": 98,
+        "spectral_capacity": 98,
+        "trace_concentration": 95
+      },
+      "composite_missed_supported_count": 0,
+      "composite_support_count": 98,
+      "fine_adaptive_support_count": 78,
+      "fine_composite_support_count": 78,
+      "fine_update_count": 78,
+      "threshold": 0.0001,
+      "update_count": 120
+    },
+    "1e-06": {
+      "actual_support_count": 109,
+      "adaptive_missed_supported_count": 0,
+      "adaptive_support_count": 109,
+      "candidate_support_counts": {
+        "direct_weyl": 109,
+        "directional_rayleigh": 109,
+        "spectral_capacity": 109,
+        "trace_concentration": 105
+      },
+      "composite_missed_supported_count": 0,
+      "composite_support_count": 109,
+      "fine_adaptive_support_count": 78,
+      "fine_composite_support_count": 78,
+      "fine_update_count": 78,
+      "threshold": 1e-06,
+      "update_count": 120
+    },
+    "1e-08": {
+      "actual_support_count": 115,
+      "adaptive_missed_supported_count": 0,
+      "adaptive_support_count": 115,
+      "candidate_support_counts": {
+        "direct_weyl": 113,
+        "directional_rayleigh": 114,
+        "spectral_capacity": 113,
+        "trace_concentration": 113
+      },
+      "composite_missed_supported_count": 1,
+      "composite_support_count": 114,
+      "fine_adaptive_support_count": 78,
+      "fine_composite_support_count": 78,
+      "fine_update_count": 78,
+      "threshold": 1e-08,
+      "update_count": 120
+    }
+  }
+}

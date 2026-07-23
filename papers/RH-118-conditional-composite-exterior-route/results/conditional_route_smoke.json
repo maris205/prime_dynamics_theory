@@ -1,0 +1,756 @@
+{
+  "audit_summary": {
+    "actual_support_count": 5,
+    "adaptive_false_positive_count": 0,
+    "adaptive_missed_supported_count": 0,
+    "adaptive_support_count": 5,
+    "all_level_physical_packet_count_proved": 0,
+    "archived_composite_reconstruction_failure_count": 0,
+    "composite_false_positive_count": 0,
+    "composite_missed_supported_count": 0,
+    "composite_support_count": 5,
+    "fine_update_count": 0,
+    "physical_packet_count": 3,
+    "scale_count": 1,
+    "selected_route_counts": {
+      "direct_weyl": 0,
+      "directional_rayleigh": 24,
+      "spectral_capacity": 0,
+      "trace_concentration": 0
+    },
+    "support_label_disagreement_count": 0,
+    "update_count": 24
+  },
+  "limitations": [
+    "The finite adaptive route uses its own internally consistent assembly and is not numerically fused with RH-115 candidates without transport losses.",
+    "The liminf theorem is conditional and does not establish any of its physical hypotheses.",
+    "No uniform Stage A, Hilbert--Polya, zero identification, or Riemann Hypothesis result is claimed."
+  ],
+  "minimal_physical_packets": {
+    "direct_margin": {
+      "all_level_condition_proved": false,
+      "compound_condition": "liminf direct_weyl_lower > tau",
+      "finite_algebra_closed": true,
+      "five_scale_validated": false,
+      "primitive_physical_inputs": [
+        "uniform recent fourth-mode support margin against the omitted tail"
+      ]
+    },
+    "directional_rayleigh": {
+      "all_level_condition_proved": false,
+      "compound_condition": "liminf (1-gamma_upper)^4 frame_volume_lower/capacity_upper > tau",
+      "finite_algebra_closed": true,
+      "five_scale_validated": false,
+      "primitive_physical_inputs": [
+        "normalized recent-frame volume lower",
+        "relative tail gamma upper below one",
+        "route-closing capacity upper"
+      ]
+    },
+    "trace_concentration": {
+      "all_level_condition_proved": false,
+      "compound_condition": "liminf sqrt(theta_lower/kappa_upper)/capacity_upper > tau",
+      "finite_algebra_closed": true,
+      "five_scale_validated": false,
+      "primitive_physical_inputs": [
+        "normalized exterior-trace lower",
+        "exterior-concentration upper",
+        "route-closing capacity upper"
+      ]
+    }
+  },
+  "route_consequence": "All algebraic, compositional, first-passage, and finite-audit steps of the exterior route are now explicit. Eventual support follows from a strict liminf crossing by any admitted combination of direct, trace-concentration, or directional-Rayleigh candidates, even if the winning route alternates with level. None of the three minimal all-level physical packets is currently proved, and RH-117 excludes finite-anchor fitting as a substitute.",
+  "rows": [
+    {
+      "channels": [
+        {
+          "side": "left",
+          "thresholds": [
+            {
+              "steps": [
+                {
+                  "adaptive_actual_support": true,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": 2,
+                  "adaptive_first_lower": 1.2128798779233758e-05,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": true,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 1.2128794789854722e-05,
+                    "directional_rayleigh": 1.212879877635593e-05,
+                    "spectral_capacity": 1.212879478438341e-05,
+                    "trace_concentration": 1.2128794784383409e-05
+                  },
+                  "composite_actual_support": true,
+                  "composite_false_positive": false,
+                  "composite_lower": 1.212879877635593e-05,
+                  "composite_missed_supported": false,
+                  "composite_support": true,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-08,
+                  "time": 1
+                },
+                {
+                  "adaptive_actual_support": true,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": 3,
+                  "adaptive_first_lower": 2.3934668398783994e-08,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": true,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 2.3930074668530128e-08,
+                    "directional_rayleigh": 2.3934223890945646e-08,
+                    "spectral_capacity": 2.3930066700818065e-08,
+                    "trace_concentration": 2.3930066700818068e-08
+                  },
+                  "composite_actual_support": true,
+                  "composite_false_positive": false,
+                  "composite_lower": 2.3934223890945646e-08,
+                  "composite_missed_supported": false,
+                  "composite_support": true,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-08,
+                  "time": 2
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 2.725213185074134e-10,
+                    "directional_rayleigh": 3.3762674824093906e-10,
+                    "spectral_capacity": 2.725147410865184e-10,
+                    "trace_concentration": 2.725147410865184e-10
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 3.3762674824093906e-10,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-08,
+                  "time": 3
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 0.0,
+                    "directional_rayleigh": 3.3638074955719295e-12,
+                    "spectral_capacity": 0.0,
+                    "trace_concentration": 0.0
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 3.3638074955719295e-12,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-08,
+                  "time": 4
+                }
+              ],
+              "threshold": 1e-08
+            },
+            {
+              "steps": [
+                {
+                  "adaptive_actual_support": true,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": 2,
+                  "adaptive_first_lower": 1.2128798779233758e-05,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": true,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 1.2128794789854722e-05,
+                    "directional_rayleigh": 1.212879877635593e-05,
+                    "spectral_capacity": 1.212879478438341e-05,
+                    "trace_concentration": 1.2128794784383409e-05
+                  },
+                  "composite_actual_support": true,
+                  "composite_false_positive": false,
+                  "composite_lower": 1.212879877635593e-05,
+                  "composite_missed_supported": false,
+                  "composite_support": true,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-06,
+                  "time": 1
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 2.3930074668530128e-08,
+                    "directional_rayleigh": 2.3934223890945646e-08,
+                    "spectral_capacity": 2.3930066700818065e-08,
+                    "trace_concentration": 2.3930066700818068e-08
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 2.3934223890945646e-08,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-06,
+                  "time": 2
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 5.353403958301837e-09,
+                    "directional_rayleigh": 5.417979132799939e-09,
+                    "spectral_capacity": 5.353273814468236e-09,
+                    "trace_concentration": 5.353273814468236e-09
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 5.417979132799939e-09,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-06,
+                  "time": 3
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 0.0,
+                    "directional_rayleigh": 7.207967808520736e-11,
+                    "spectral_capacity": 0.0,
+                    "trace_concentration": 0.0
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 7.207967808520736e-11,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-06,
+                  "time": 4
+                }
+              ],
+              "threshold": 1e-06
+            },
+            {
+              "steps": [
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 1.2128794789854722e-05,
+                    "directional_rayleigh": 1.212879877635593e-05,
+                    "spectral_capacity": 1.212879478438341e-05,
+                    "trace_concentration": 1.2128794784383409e-05
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 1.212879877635593e-05,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 0.0001,
+                  "time": 1
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 3.499195359519227e-08,
+                    "directional_rayleigh": 3.49961015295895e-08,
+                    "spectral_capacity": 3.4991942114406604e-08,
+                    "trace_concentration": 3.4991942114406604e-08
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 3.49961015295895e-08,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 0.0001,
+                  "time": 2
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 6.563898058164763e-09,
+                    "directional_rayleigh": 6.62827772934492e-09,
+                    "spectral_capacity": 6.56337770856196e-09,
+                    "trace_concentration": 6.56337770856196e-09
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 6.62827772934492e-09,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 0.0001,
+                  "time": 3
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 0.0,
+                    "directional_rayleigh": 8.37561151557994e-11,
+                    "spectral_capacity": 0.0,
+                    "trace_concentration": 0.0
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 8.37561151557994e-11,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 0.0001,
+                  "time": 4
+                }
+              ],
+              "threshold": 0.0001
+            }
+          ]
+        },
+        {
+          "side": "right",
+          "thresholds": [
+            {
+              "steps": [
+                {
+                  "adaptive_actual_support": true,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": 2,
+                  "adaptive_first_lower": 1.3791842377591291e-07,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": true,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 1.379181291828491e-07,
+                    "directional_rayleigh": 1.379184235555224e-07,
+                    "spectral_capacity": 1.3791812874006655e-07,
+                    "trace_concentration": 1.3791812874006655e-07
+                  },
+                  "composite_actual_support": true,
+                  "composite_false_positive": false,
+                  "composite_lower": 1.379184235555224e-07,
+                  "composite_missed_supported": false,
+                  "composite_support": true,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-08,
+                  "time": 1
+                },
+                {
+                  "adaptive_actual_support": true,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": 3,
+                  "adaptive_first_lower": 1.715901485310355e-07,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": true,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 1.715732919734292e-07,
+                    "directional_rayleigh": 1.7158779751723659e-07,
+                    "spectral_capacity": 1.715732881170243e-07,
+                    "trace_concentration": 1.7157328811702428e-07
+                  },
+                  "composite_actual_support": true,
+                  "composite_false_positive": false,
+                  "composite_lower": 1.7158779751723659e-07,
+                  "composite_missed_supported": false,
+                  "composite_support": true,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-08,
+                  "time": 2
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 2.4354391898926223e-10,
+                    "directional_rayleigh": 2.984136530398664e-10,
+                    "spectral_capacity": 2.4354199146017224e-10,
+                    "trace_concentration": 2.4354199146017224e-10
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 2.984136530398664e-10,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-08,
+                  "time": 3
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 0.0,
+                    "directional_rayleigh": 1.0860718616780512e-13,
+                    "spectral_capacity": 0.0,
+                    "trace_concentration": 0.0
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 1.0860718616780512e-13,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-08,
+                  "time": 4
+                }
+              ],
+              "threshold": 1e-08
+            },
+            {
+              "steps": [
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 1.379181291828491e-07,
+                    "directional_rayleigh": 1.379184235555224e-07,
+                    "spectral_capacity": 1.3791812874006655e-07,
+                    "trace_concentration": 1.3791812874006655e-07
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 1.379184235555224e-07,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-06,
+                  "time": 1
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 1.7144882504211974e-07,
+                    "directional_rayleigh": 1.7146332379157205e-07,
+                    "spectral_capacity": 1.7144882149677696e-07,
+                    "trace_concentration": 1.714488214967769e-07
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 1.7146332379157205e-07,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-06,
+                  "time": 2
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 6.729646846126098e-10,
+                    "directional_rayleigh": 7.277939020808054e-10,
+                    "spectral_capacity": 6.729593653616976e-10,
+                    "trace_concentration": 6.729593653616978e-10
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 7.277939020808054e-10,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-06,
+                  "time": 3
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 0.0,
+                    "directional_rayleigh": 9.895457096683991e-13,
+                    "spectral_capacity": 0.0,
+                    "trace_concentration": 0.0
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 9.895457096683991e-13,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 1e-06,
+                  "time": 4
+                }
+              ],
+              "threshold": 1e-06
+            },
+            {
+              "steps": [
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 1.379181291828491e-07,
+                    "directional_rayleigh": 1.379184235555224e-07,
+                    "spectral_capacity": 1.3791812874006655e-07,
+                    "trace_concentration": 1.3791812874006655e-07
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 1.379184235555224e-07,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 0.0001,
+                  "time": 1
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 1.7144882504211974e-07,
+                    "directional_rayleigh": 1.7146332379157205e-07,
+                    "spectral_capacity": 1.7144882149677696e-07,
+                    "trace_concentration": 1.714488214967769e-07
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 1.7146332379157205e-07,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 0.0001,
+                  "time": 2
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 6.729646846126098e-10,
+                    "directional_rayleigh": 7.277939020808054e-10,
+                    "spectral_capacity": 6.729593653616976e-10,
+                    "trace_concentration": 6.729593653616978e-10
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 7.277939020808054e-10,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 0.0001,
+                  "time": 3
+                },
+                {
+                  "adaptive_actual_support": false,
+                  "adaptive_false_positive": false,
+                  "adaptive_first_depth": null,
+                  "adaptive_first_lower": null,
+                  "adaptive_missed_supported": false,
+                  "adaptive_support": false,
+                  "archived_composite_agrees": true,
+                  "candidates": {
+                    "direct_weyl": 0.0,
+                    "directional_rayleigh": 3.713001416127044e-12,
+                    "spectral_capacity": 0.0,
+                    "trace_concentration": 0.0
+                  },
+                  "composite_actual_support": false,
+                  "composite_false_positive": false,
+                  "composite_lower": 3.713001416127044e-12,
+                  "composite_missed_supported": false,
+                  "composite_support": false,
+                  "selected_route": "directional_rayleigh",
+                  "support_labels_agree": true,
+                  "threshold": 0.0001,
+                  "time": 4
+                }
+              ],
+              "threshold": 0.0001
+            }
+          ]
+        }
+      ],
+      "sigma": 0.16
+    }
+  ],
+  "status": "rh118_conditional_composite_exterior_route_audit",
+  "theorem_boundary": {
+    "alternating_route_closure": true,
+    "any_all_level_physical_packet_proved": false,
+    "conditional_composite_liminf_theorem": true,
+    "directional_rayleigh_factorization": true,
+    "finite_anchor_extrapolation_admitted": false,
+    "five_scale_complete_gate_audited": false,
+    "hilbert_polya_operator": false,
+    "normalized_trace_factorization": true,
+    "riemann_hypothesis": false,
+    "strict_margin_outward_robustness": true,
+    "uniform_stage_A_closed": false
+  },
+  "threshold_summary": {
+    "1e-04": {
+      "actual_support_count": 0,
+      "adaptive_missed_supported_count": 0,
+      "adaptive_support_count": 0,
+      "candidate_support_counts": {
+        "direct_weyl": 0,
+        "directional_rayleigh": 0,
+        "spectral_capacity": 0,
+        "trace_concentration": 0
+      },
+      "composite_missed_supported_count": 0,
+      "composite_support_count": 0,
+      "fine_adaptive_support_count": 0,
+      "fine_composite_support_count": 0,
+      "fine_update_count": 0,
+      "threshold": 0.0001,
+      "update_count": 8
+    },
+    "1e-06": {
+      "actual_support_count": 1,
+      "adaptive_missed_supported_count": 0,
+      "adaptive_support_count": 1,
+      "candidate_support_counts": {
+        "direct_weyl": 1,
+        "directional_rayleigh": 1,
+        "spectral_capacity": 1,
+        "trace_concentration": 1
+      },
+      "composite_missed_supported_count": 0,
+      "composite_support_count": 1,
+      "fine_adaptive_support_count": 0,
+      "fine_composite_support_count": 0,
+      "fine_update_count": 0,
+      "threshold": 1e-06,
+      "update_count": 8
+    },
+    "1e-08": {
+      "actual_support_count": 4,
+      "adaptive_missed_supported_count": 0,
+      "adaptive_support_count": 4,
+      "candidate_support_counts": {
+        "direct_weyl": 4,
+        "directional_rayleigh": 4,
+        "spectral_capacity": 4,
+        "trace_concentration": 4
+      },
+      "composite_missed_supported_count": 0,
+      "composite_support_count": 4,
+      "fine_adaptive_support_count": 0,
+      "fine_composite_support_count": 0,
+      "fine_update_count": 0,
+      "threshold": 1e-08,
+      "update_count": 8
+    }
+  }
+}

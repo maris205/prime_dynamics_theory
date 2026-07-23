@@ -1,0 +1,53 @@
+{
+  "external_inputs": {
+    "rh110_summary": {
+      "path": "papers/RH-110-finite-memory-three-mode-capacity/results/summary.json",
+      "sha256": "bb4f8f56dcfc8779d25d9c38dec302c6ab56ebdb6b2be31c231cb195d3b39123"
+    },
+    "rh111_summary": {
+      "path": "papers/RH-111-tail-energy-exterior-concentration/results/summary.json",
+      "sha256": "18bb44ec6c711b018890d09d653e11be43a5472c3f8fe427650338e4cb25b2b5"
+    },
+    "rh114_summary": {
+      "path": "papers/RH-114-psd-rayleigh-directional-tail/results/summary.json",
+      "sha256": "4db8c5d6691c888ce3c200a63baeffb6642b9a3ba2e70d8ddde0a7325ccdd316"
+    },
+    "rh115_composite_audit": {
+      "path": "papers/RH-115-composite-directional-support-gate/results/composite_gate_audit.json",
+      "sha256": "c5f642c0b123fcbab94483c2f6f0240a32497e87948a9db9b6dc66802813cf6b"
+    },
+    "rh116_depth_audit": {
+      "path": "papers/RH-116-monotone-memory-depth-optimization/results/memory_depth_audit.json",
+      "sha256": "bf210d467e098889ae2bf2fc96fcb929479c3adcbdf10229aee79678b45ab5b9"
+    },
+    "rh117_summary": {
+      "path": "papers/RH-117-finite-anchor-scale-law-barrier/results/summary.json",
+      "sha256": "a2359680f85ce156c10c2537c40f9a006fb35819fa646ac92ac9294719b57143"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "66849ec66adb67a2173b0074a5290e7f677fc037974922e814233dec25ab8ce1",
+    "experiments/build_route_audit.py": "ba9ea1bd4467f9fd04b8089ddb2fd44578564bd58a609a25fad76aed829b1aca",
+    "experiments/make_figures.py": "ee3098392bf85f47643bdd4df95a3b36ef372e3fcd818dbd93e2b68a83810853",
+    "experiments/verify_archive.py": "77288d8ed6422a68436177fe181df1cf4bf8ceb5f5f03af4b98fe83c32dc2e83",
+    "src/conditional_route/__init__.py": "86a03acac4f5e1636da7777a7f4e6ae9199589e65e49b65c710a7f66712267ca",
+    "src/conditional_route/gate.py": "982732ca0ccb2ba71b79c4406d5444323b9bd63d2d26778b1611d05bf13c102b",
+    "tests/test_archived_results.py": "c35dcea1d4f90a2aaf47e9d7451d93fb00b98cad9881424f1a73abf3bcf30d29",
+    "tests/test_theory.py": "a1eb47a5171aaf9a61b86e9f150b72141b92a2592a2a7aee7b0c3012c0a3d18c"
+  },
+  "publication_artifacts": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "068003cf7a03a80b14d5d7a555f1982d10bc5f40a9676484b111d4da19fec41e",
+    "THEOREM_LEDGER.md": "12ed1980b6f078adc17a8d577ca63e118b7919e3ba2eb65f0ee4e6e987caefd9",
+    "UPDATED_ROADMAP.md": "53f2dda68797d090f3c44458b95b8f121295944f00811c7af24d439f6fb9237a",
+    "conditional-composite-exterior-route.pdf": "50e448951d71ea2535a576cb5081edf4f7970d2feb666a1f2ba9b6181b82a658",
+    "figures/conditional_composite_exterior_route.pdf": "90ec32cf7ad4a0f2e489a5eb351cd77c3aafe877dd0de5a1c7fbd9d1cb4a06bb",
+    "figures/conditional_composite_exterior_route.png": "e207df470b1c162b20e6b651b043b96cd6bed1f186d9d34790656cb3a4dde239",
+    "main.pdf": "50e448951d71ea2535a576cb5081edf4f7970d2feb666a1f2ba9b6181b82a658",
+    "main.tex": "ec739001ca69478c6051eb3d87a03d81dbf45400d86f863c3581ad5a47148a9e",
+    "pyproject.toml": "9bd44582dcbbc8d1417bb72333cb371673d214adfa6e27c07cd1b60df4aa2627",
+    "references.bib": "ed28e9ee163e4b9902a59f550ed2fd13a32fcb02b0f5712f4de0ae0b4137e38a",
+    "requirements.txt": "44f068d0df72a1cfee6232f18a998bfa62b664807c6080247cc07d6453065dbe"
+  },
+  "status": "all_rh118_inputs_sources_and_publication_artifacts_hashed"
+}
