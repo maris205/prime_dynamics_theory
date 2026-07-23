@@ -1,0 +1,98 @@
+{
+  "audit": {
+    "all_threshold_counts_match_direct_weyl": true,
+    "capacity_enclosure_failure_count": 0,
+    "channel_count": 10,
+    "fine_update_count": 234,
+    "maximum_capacity_relative_width": 0.09277343396007913,
+    "maximum_fine_capacity": 0.38763640177569464,
+    "maximum_fine_capacity_relative_width": 0.0017606449194704902,
+    "maximum_volume_capacity_identity_error": 1.3877787807814457e-17,
+    "minimum_fine_capacity": 5.2335552827292874e-05,
+    "minimum_fine_recovery_efficiency": 0.9982342849855093,
+    "recovery_implication_failure_count": 0,
+    "scale_count": 5,
+    "selector_equivalence_failure_count": 0,
+    "threshold_count": 3,
+    "update_count": 360
+  },
+  "program_boundary": {
+    "all_level_capacity_upper_law_proved": false,
+    "all_level_physical_volume_lower_bound_proved": false,
+    "capacity_aware_volume_recovery": true,
+    "finite_memory_capacity_interval": true,
+    "five_scale_recovery_matches_direct_counts": true,
+    "hilbert_polya_operator": false,
+    "riemann_hypothesis": false,
+    "sharp_fixed_volume_capacity_interval": true,
+    "uniform_fine_support_separation_proved": false,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "96e1c5340449d11ece2dd04cf1a94fbf08bc156304a4ce7ba00a03b2d376b15b",
+    "THEOREM_LEDGER.md": "fce4fb316c8c034bf30a63e36ab3c2345766216dfa6b91a50bb10390eb42213d",
+    "UPDATED_ROADMAP.md": "9042d81f61c64442086144e334c9b90ec4b7b79773a4fe36d7450fc789d60e7a",
+    "figures/finite_memory_three_mode_capacity.pdf": "85860271a3a6d01536298fa8825f63be41e76befd4c2b6d17a90a148ddefdd9a",
+    "figures/finite_memory_three_mode_capacity.png": "2b7bc09f49f8b436a3016b4c5f9b3100328f45818147d79a017152567549eca6",
+    "finite-memory-three-mode-capacity.pdf": "209792d251c38f4084a4ddf5d2e4b6e95935ccfc0424a6b7182e26541b0ff444",
+    "main.pdf": "209792d251c38f4084a4ddf5d2e4b6e95935ccfc0424a6b7182e26541b0ff444",
+    "main.tex": "c17df5ff1352892af26cf7e934d4576e904a5f7a114a762214bc4aae3d97610d",
+    "pyproject.toml": "0e8eefd8ed30ea01e617d95e931cd5c4c545e8b4ac02f31647b9061e24e4e468",
+    "references.bib": "d74988f5bb2f4672b15b59f6ec6a63d2bf212ebb357aec6f456bf0ca5ac37243",
+    "requirements.txt": "2a794dbea88e04345a620b093bcf56d2494ca9cc93b465a3c0588f0bba1a891c"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "6036da49c8a5d20f59983677d45873a3d2d14b65884bb8bb0fa1056a2f510bb8",
+    "results/three_mode_capacity_audit.json": "6d10877863a1c32212815ec567ede896b7e2e9be83215e9fbc1e790c87cc495f",
+    "results/three_mode_capacity_smoke.json": "ad4273c3fe2cca84285bedd85d4b130f62a8784d2005d24a1693af47c6081a7e"
+  },
+  "route_consequence": "The relative second/third-mode capacity has an explicit finite-memory Weyl enclosure. Dividing the RH-109 spectral-volume lower bound by the capacity upper endpoint reconstructs the fourth-mode support count exactly on all five archived scales and all three thresholds, with only a small quantitative loss from the direct Weyl ratio. This is a conditional composition theorem; an all-level physical capacity law and volume lower bound remain open.",
+  "status": "rh110_finite_memory_three_mode_capacity_archived",
+  "theorem": {
+    "capacity_aware_volume_recovery": true,
+    "finite_memory_capacity_interval": true,
+    "sharp_fixed_volume_capacity_interval": true
+  },
+  "threshold_summary": {
+    "1e-04": {
+      "actual_support_count": 98,
+      "counts_match": true,
+      "direct_support_count": 98,
+      "fine_direct_support_count": 78,
+      "fine_recovery_support_count": 78,
+      "fine_update_count": 78,
+      "minimum_fine_recovered_ratio": 0.0007359672842672474,
+      "minimum_fine_recovery_efficiency": 0.9982342849855093,
+      "recovery_support_count": 98,
+      "threshold": 0.0001,
+      "update_count": 120
+    },
+    "1e-06": {
+      "actual_support_count": 109,
+      "counts_match": true,
+      "direct_support_count": 109,
+      "fine_direct_support_count": 78,
+      "fine_recovery_support_count": 78,
+      "fine_update_count": 78,
+      "minimum_fine_recovered_ratio": 0.0007359672842672474,
+      "minimum_fine_recovery_efficiency": 0.9982342849855093,
+      "recovery_support_count": 109,
+      "threshold": 1e-06,
+      "update_count": 120
+    },
+    "1e-08": {
+      "actual_support_count": 115,
+      "counts_match": true,
+      "direct_support_count": 113,
+      "fine_direct_support_count": 78,
+      "fine_recovery_support_count": 78,
+      "fine_update_count": 78,
+      "minimum_fine_recovered_ratio": 0.0007359672842672474,
+      "minimum_fine_recovery_efficiency": 0.9982342849855093,
+      "recovery_support_count": 113,
+      "threshold": 1e-08,
+      "update_count": 120
+    }
+  }
+}
