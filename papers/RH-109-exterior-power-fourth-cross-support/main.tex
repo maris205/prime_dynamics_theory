@@ -1,0 +1,567 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\e}{\operatorname{e}}
+
+\title{Exterior-Power Fourth-Cross Support\\
+\large Finite-Memory Volume Certificates and a Sharp Scalar-Volume Barrier}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-108 reduced eventual source-seeded support to a physical lower bound for
+the fourth projected-cross singular ratio.  This paper tests the first
+determinantal surrogate for that missing statement.
+
+Let $K_t=(I-VV^*)G_tV$ be the projected cross, let
+$s_1\ge\cdots\ge s_r\ge0$ be its singular values, and put
+\[
+ q_4(K_t)=\frac{s_4}{s_1},
+ \qquad
+ \nu_4(K_t)=\frac{\norm{\wedge^4K_t}_2}{s_1^4}
+ =\frac{s_1s_2s_3s_4}{s_1^4}.
+\]
+For a depth-$m$ recent cross with singular values $\widehat s_j$ and the
+positive memory-tail radius $\delta$, we prove the finite-memory spectral
+exterior certificate
+\[
+ q_4(K_t)\ge\nu_4(K_t)\ge
+ \frac{\prod_{j=1}^4(\widehat s_j-\delta)_+}
+      {(\widehat s_1+\delta)^4}.
+\]
+We also prove a reduced trace exterior certificate.  If
+$D_r=\binom r4$, it is
+\[
+ q_4(K_t)\ge
+ \frac{\bigl[\e_4((\widehat s_1-\delta)_+^2,\ldots,
+ (\widehat s_r-\delta)_+^2)/D_r\bigr]^{1/2}}
+      {(\widehat s_1+\delta)^4}.
+\]
+The distinction is structural: for
+$C=K^*K=M_2-A^2$, the spectral four-volume squared is
+$\lambda_{\max}(\wedge^4C)$, whereas
+$\e_4(C)=\tr(\wedge^4C)$ is the Frobenius four-volume squared.  They coincide
+with $\det C$ only when the packet rank is four.
+
+On the two finest archived scales, the spectral certificate covers
+$78/78$, $72/78$, and $55/78$ updates at cutoffs
+$10^{-8},10^{-6},10^{-4}$; the trace certificate covers
+$78/78$, $65/78$, and $42/78$.  The minimum fine spectral lower bound is
+$5.10911\times10^{-8}$.  Finally, we prove the sharp scalar-volume interval
+\[
+ \nu_4\le q_4\le\nu_4^{1/3}
+\]
+and realize both endpoints by trace-one source-seeded memory families with
+the same scalar volume, trace clock, packet block, and complement block.
+Thus exterior volume closes the archived $10^{-8}$ gate but cannot by itself
+recover stronger fourth-mode support in the intermediate information band.
+No all-level Stage A, Hilbert--Polya operator, zero identification, or
+Riemann Hypothesis result is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} projected-cross singular values; exterior power;
+four-volume; elementary symmetric polynomial; finite memory; support barrier.
+
+\medskip
+\noindent\textbf{MSC 2020:} 15A18; 15A75; 47A75; 65F15; 37M25.
+
+\section{Introduction}
+
+The source-seeded route updates a low-dimensional right packet through a
+frozen physical prefix by adjoining projected-cross directions
+\citep{WangSourceSeeded2026,WangWeakMode2026}.  The reduced identity of RH-95
+removes the ambient cross solve:
+\begin{equation}
+ K^*K=M_2-A^2,
+ \qquad
+ A=V^*GV,
+ \qquad M_2=V^*G^2V.
+ \label{eq:reduced-intro}
+\end{equation}
+RH-101 supplies a finite-memory action formula, and RH-108 converts its
+positive tail into a direct Weyl certificate for $s_4/s_1$
+\citep{WangReducedCross2026,WangFiniteMemory2026,WangFourthCross2026}.
+The remaining all-level input is physical nondegeneracy: why should the
+recent fourth mode stay large enough?
+
+A four-column determinant or exterior volume is the first natural
+surrogate.  It vanishes exactly at rank loss and is intrinsic under changes
+of packet coordinates.  Two cautions are necessary.  First, a normalized
+four-volume contains the second and third relative singular ratios in
+addition to the fourth.  Second, when the packet rank exceeds four,
+$\e_4(K^*K)$ is a sum of squared four-volumes, not the leading four-volume
+itself.  Ignoring either distinction makes a determinant argument appear
+stronger than it is.
+
+This paper makes the exterior route exact.  Its contributions are:
+\begin{enumerate}[leftmargin=2.2em]
+ \item a finite-memory spectral exterior certificate for the fourth ratio;
+ \item a trace certificate expressed by $\e_4(M_2-A^2)$ with the exact
+       exterior-dimension penalty;
+ \item a sharp scalar-volume inversion theorem and an admissible
+       source-seeded realization of both endpoints;
+ \item a five-scale audit locating precisely which support thresholds are
+       closed by volume and which remain open.
+\end{enumerate}
+
+\section{Projected crosses and two four-volumes}
+\label{sec:setting}
+
+Let $V\in\mathbb R^{d\times r}$ satisfy $V^*V=I_r$, put $P=VV^*$, and let
+$H\succeq0$.  The projected cross is
+\begin{equation}
+ K_H=(I-P)HV.
+ \label{eq:cross}
+\end{equation}
+Write its singular values as
+$s_1\ge s_2\ge\cdots\ge s_r\ge0$, padding by zero if necessary, and assume
+$s_1>0$.  Define
+\begin{equation}
+ q_4(K_H)=\frac{s_4}{s_1},
+ \qquad
+ \nu_4(K_H)=\frac{\norm{\wedge^4K_H}_2}{s_1^4}
+ =\frac{s_1s_2s_3s_4}{s_1^4}.
+ \label{eq:qnu}
+\end{equation}
+The second quantity is the normalized \emph{spectral} four-volume.  The
+normalized trace or Frobenius four-volume is
+\begin{equation}
+ \phi_4(K_H)
+ =\frac{\norm{\wedge^4K_H}_F}{s_1^4}
+ =\frac{\bigl[\e_4(s_1^2,\ldots,s_r^2)\bigr]^{1/2}}{s_1^4}.
+ \label{eq:phi}
+\end{equation}
+Here $\e_4$ is the fourth elementary symmetric polynomial.  Since
+$\wedge^4K_H$ has at most
+\begin{equation}
+ D_r=\binom r4
+ \label{eq:dimension}
+\end{equation}
+singular values, the operator/Frobenius inequalities give
+\begin{equation}
+ \frac{\phi_4}{\sqrt{D_r}}\le\nu_4\le\phi_4.
+ \label{eq:operator-frobenius}
+\end{equation}
+
+For the memory recursion, let
+\begin{equation}
+ G_t=Q_t+\eta G_{t-1},
+ \qquad G_{-1}=0,
+ \qquad Q_t\succeq0,
+ \qquad \tr Q_t=1,
+ \qquad 0\le\eta<1.
+ \label{eq:memory}
+\end{equation}
+At depth $m$, set
+\begin{equation}
+ \widetilde G_{t,m}=\sum_{j=0}^{m-1}\eta^jQ_{t-j},
+ \qquad
+ \widehat K_{t,m}=(I-P)\widetilde G_{t,m}V.
+ \label{eq:recent}
+\end{equation}
+For $m\le t$, RH-108 proves
+\begin{equation}
+ \norm{K_t-\widehat K_{t,m}}_2\le
+ \delta_{t,m}:=eta^m\frac{1-\eta^{t-m+1}}{1-\eta};
+ \label{eq:tail}
+\end{equation}
+the tail is zero when the recent window contains the complete history.
+
+\section{Finite-memory exterior certificates}
+\label{sec:certificates}
+
+Let $\widehat s_1\ge\cdots\ge\widehat s_r$ be the singular values of the
+recent cross.  For any certified radius $\delta\ge
+\norm{K_t-\widehat K_{t,m}}_2$, define
+\begin{equation}
+ \ell_j=(\widehat s_j-\delta)_+,
+ \qquad u_1=\widehat s_1+\delta.
+ \label{eq:ell}
+\end{equation}
+
+\begin{theorem}[Finite-memory spectral exterior certificate]
+\label{thm:spectral}
+If $s_1(K_t)>0$, then
+\begin{equation}
+ q_4(K_t)\ge\nu_4(K_t)\ge
+ B_4^{\mathrm{sp}}
+ :=\frac{\ell_1\ell_2\ell_3\ell_4}{u_1^4}.
+ \label{eq:spectral-certificate}
+\end{equation}
+Consequently, $B_4^{\mathrm{sp}}\ge\tau$ is a sufficient no-quotient support
+certificate at relative cutoff $\tau$.
+\end{theorem}
+
+\begin{proof}
+Singular-value perturbation gives
+$s_j(K_t)\ge(\widehat s_j-\delta)_+=\ell_j$ and
+$s_1(K_t)\le\widehat s_1+\delta=u_1$
+\citep{Bhatia1997,StewartSun1990}.  Therefore
+\[
+ \nu_4(K_t)
+ =\frac{\prod_{j=1}^4s_j(K_t)}{s_1(K_t)^4}
+ \ge\frac{\prod_{j=1}^4\ell_j}{u_1^4}.
+\]
+Also
+$\nu_4=(s_2/s_1)(s_3/s_1)q_4\le q_4$.  This proves both inequalities.
+The support implication follows from the selector equivalence in RH-107
+\citep{WangSupportLaw2026}.
+\end{proof}
+
+The spectral certificate is simply the multiplicative form of four Weyl
+inequalities.  It is weaker than the direct RH-108 ratio bound because it
+also pays for the first three relative singular factors.  Its advantage is
+structural: it is a coordinate-free exterior nondegeneracy target that can
+in principle be estimated from determinants, wedge products, or reduced
+moments.
+
+\begin{theorem}[Trace exterior certificate]
+\label{thm:trace}
+Let $D_r=\binom r4$.  Under the assumptions of
+\cref{thm:spectral},
+\begin{equation}
+ q_4(K_t)\ge
+ B_4^{\mathrm{tr}}
+ :=\frac{\bigl[\e_4(\ell_1^2,\ldots,\ell_r^2)/D_r\bigr]^{1/2}}
+          {u_1^4}.
+ \label{eq:trace-certificate}
+\end{equation}
+Moreover,
+\begin{equation}
+ 0\le B_4^{\mathrm{tr}}\le B_4^{\mathrm{sp}}.
+ \label{eq:trace-order}
+\end{equation}
+At packet rank $r=4$, the two certificates coincide.
+\end{theorem}
+
+\begin{proof}
+Coordinatewise Weyl bounds imply
+\[
+ \e_4(s_1(K_t)^2,\ldots,s_r(K_t)^2)
+ \ge \e_4(\ell_1^2,\ldots,\ell_r^2).
+\]
+Apply the left inequality in \eqref{eq:operator-frobenius}, followed by the
+upper bound $s_1(K_t)\le u_1$, to obtain \eqref{eq:trace-certificate}.
+Every four-fold product in $\e_4(\ell_1^2,\ldots,\ell_r^2)$ is at most
+$\ell_1^2\ell_2^2\ell_3^2\ell_4^2$.  Averaging over the $D_r$ products proves
+\eqref{eq:trace-order}.  If $r=4$, there is one product and equality holds.
+\end{proof}
+
+The binomial factor is not a numerical convenience.  It is the exact price
+of converting a trace on the fourth exterior space into its leading
+eigenvalue without any concentration information.
+
+\section{Reduced moments: spectral versus trace exterior data}
+\label{sec:moments}
+
+For $H\succeq0$, define
+\begin{equation}
+ A_H=V^*HV,
+ \qquad M_{2,H}=V^*H^2V,
+ \qquad C_H=K_H^*K_H.
+\end{equation}
+The RH-95 identity is
+\begin{equation}
+ C_H=M_{2,H}-A_H^2\succeq0.
+ \label{eq:moment}
+\end{equation}
+Let $\lambda_1\ge\cdots\ge\lambda_r\ge0$ be the eigenvalues of $C_H$.
+Then $\lambda_j=s_j^2$, and exterior functoriality gives
+\begin{align}
+ \norm{\wedge^4K_H}_2^2
+ &=\lambda_{\max}(\wedge^4C_H)
+ =\lambda_1\lambda_2\lambda_3\lambda_4,
+ \label{eq:spectral-moment}\\
+ \norm{\wedge^4K_H}_F^2
+ &=\tr(\wedge^4C_H)
+ =\e_4(C_H)
+ =\sum_{|I|=4}\prod_{i\in I}\lambda_i.
+ \label{eq:trace-moment}
+\end{align}
+These standard exterior-power identities may be read directly from the
+singular values of $\wedge^4K_H$ \citep{HornJohnson1991}.
+
+Equations \eqref{eq:spectral-moment} and \eqref{eq:trace-moment} are equal
+only in special cases.  If $r=4$, both are $\det C_H$.  If $r>4$,
+$\e_4(C_H)$ is the sum of all principal four-by-four minors; it is not the
+leading exterior eigenvalue.  For trace-only evaluation one may use Newton's
+identity
+\begin{equation}
+ \e_4(C)=\frac{p_1^4-6p_1^2p_2+3p_2^2+8p_1p_3-6p_4}{24},
+ \qquad p_j=\tr(C^j).
+ \label{eq:newton}
+\end{equation}
+No moments of $H$ beyond $A_H$ and $M_{2,H}$ are algebraically needed once
+$C_H$ has been formed.
+
+This is an exact reduction, not an automatic positivity theorem.  It also
+does not remove floating-point cancellation in $M_{2,H}-A_H^2$.  As in
+RH-108, the finite audit therefore evaluates the recent thin cross directly
+and uses \eqref{eq:moment} as an algebraic identification and consistency
+check \citep{Higham2002}.
+
+\section{A sharp scalar-volume information barrier}
+\label{sec:barrier}
+
+The normalized spectral volume factors exactly as
+\begin{equation}
+ \nu_4=\alpha_2\alpha_3q_4,
+ \qquad \alpha_j=\frac{s_j}{s_1}.
+ \label{eq:lossfactor}
+\end{equation}
+The missing factor $\alpha_2\alpha_3$ quantifies how much a scalar
+four-volume loses relative to the fourth singular ratio.
+
+\begin{theorem}[Sharp scalar-volume interval]
+\label{thm:interval}
+For every projected cross with $s_1>0$,
+\begin{equation}
+ \nu_4\le q_4\le\nu_4^{1/3}.
+ \label{eq:sharpinterval}
+\end{equation}
+Both endpoints are sharp for every $0\le\nu_4\le1$.
+\end{theorem}
+
+\begin{proof}
+The singular ordering gives
+$1\ge\alpha_2\ge\alpha_3\ge q_4\ge0$.  Hence
+\[
+ q_4^3\le\alpha_2\alpha_3q_4=\nu_4\le q_4,
+\]
+which is equivalent to \eqref{eq:sharpinterval}.  For a prescribed
+$\nu\in[0,1]$, the spectrum
+$(1,1,1,\nu)$ attains $q_4=\nu$, while
+$(1,\nu^{1/3},\nu^{1/3},\nu^{1/3})$ attains
+$q_4=\nu^{1/3}$.  Both have normalized spectral volume $\nu$.
+\end{proof}
+
+For a support threshold $\tau$, volume $\nu_4\ge\tau$ is sufficient and
+$q_4\ge\tau$ forces $\nu_4\ge\tau^3$.  In the open band
+\begin{equation}
+ \tau^3<\nu_4<\tau,
+ \label{eq:band}
+\end{equation}
+the same scalar volume is compatible with both $q_4<\tau$ and
+$q_4>\tau$.  No universal scalar-volume rule can decide support there.
+
+The endpoint spectra can be embedded in the same normalized-memory class as
+the preceding route.
+
+\begin{theorem}[Source-seeded scalar-volume barrier]
+\label{thm:sourcebarrier}
+Let $V=[e_1,\ldots,e_4]$, $U=[e_5,\ldots,e_8]$, and for a diagonal
+$D=\diag(d_1,\ldots,d_4)$ with $0\le d_j\le1$ define
+\begin{equation}
+ Q_D=\frac18
+ \begin{pmatrix}I_4&D\\D&I_4\end{pmatrix},
+ \qquad
+ Q_{\rm src}=\frac1{12}\diag(2I_4,I_4),
+ \qquad
+ G_D=Q_D+\eta Q_{\rm src}.
+ \label{eq:barrierfamily}
+\end{equation}
+Then $Q_D$ and $Q_{\rm src}$ are trace-one positive semidefinite snapshots,
+$V$ is the unique leading rank-four packet of $Q_{\rm src}$, and
+\begin{align}
+ \tr G_D&=1+\eta,\nonumber\\
+ V^*G_DV&=\left(\frac18+\frac\eta6\right)I_4,\nonumber\\
+ U^*G_DU&=\left(\frac18+\frac\eta{12}\right)I_4,\label{eq:fixedblocks}\\
+ (I-VV^*)G_DV&=\frac18UD.\nonumber
+\end{align}
+For any $\nu\in[0,1]$, the choices
+\begin{equation}
+ D_{\rm lin}=\diag(1,1,1,\nu),
+ \qquad
+ D_{\rm cub}=\diag(1,\nu^{1/3},\nu^{1/3},\nu^{1/3})
+ \label{eq:endpoints}
+\end{equation}
+have the same normalized spectral volume $\nu$ and the same data in
+\eqref{eq:fixedblocks}, while their fourth ratios are respectively
+$\nu$ and $\nu^{1/3}$.
+\end{theorem}
+
+\begin{proof}
+The eigenvalues of $Q_D$ are $(1\pm d_j)/8$, so it is positive semidefinite
+and has trace one.  The assertions for $Q_{\rm src}$ are immediate from its
+two distinct diagonal eigenvalues.  Block multiplication gives
+\eqref{eq:fixedblocks} and the displayed cross.  Its singular values are
+$d_j/8$, so \eqref{eq:endpoints} realizes exactly the endpoint spectra from
+\cref{thm:interval}.
+\end{proof}
+
+The barrier is compatible with generic normalized snapshots, source seeding,
+and one-step memory.  It is not asserted to belong to the specific
+folded-Gaussian production family.  Its role is to show exactly which
+additional physical information a better volume inversion would require.
+
+\section{Five-scale exterior audit}
+\label{sec:audit}
+
+We replay the RH-96 source-seeded chains at
+\[
+ \sigma\in\{0.16,0.08,0.04,0.02,0.01\}
+\]
+with the inherited RH-94 horizons, $\eta=1/512$, depth $m=5$, and cutoffs
+$10^{-8},10^{-6},10^{-4}$.  Packet ranks range from four to seven.  At each
+update we form the recent thin action, pay the analytic tail
+\eqref{eq:tail}, add the same absolute $2\times10^{-14}$ binary64 action
+guard as RH-108, and evaluate both exterior certificates.  The full cross is
+formed only to continue the finite comparator and audit the implications.
+This is a guarded finite replay, not an all-level floating-point theorem
+\citep{Rump2010}.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Exterior support counts.  The five middle columns show the spectral
+certificate count at each scale.  The last columns compare the trace and
+direct Weyl certificates on the two fine scales, which contain 78 updates
+for each threshold.}
+\label{tab:counts}
+\begin{tabular}{@{}lrrrrr rr@{}}
+\toprule
+$\tau$ & $0.16$ & $0.08$ & $0.04$ & $0.02$ & $0.01$
+& fine trace & fine Weyl\\
+\midrule
+$10^{-8}$ & $1/8$ & $5/12$ & $15/22$ & $34/34$ & $44/44$ & $78/78$ & $78/78$\\
+$10^{-6}$ & $0/8$ & $3/12$ & $10/22$ & $31/34$ & $41/44$ & $65/78$ & $78/78$\\
+$10^{-4}$ & $0/8$ & $2/12$ & $8/22$ & $23/34$ & $32/44$ & $42/78$ & $78/78$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+There are 360 threshold-update records.  On the two fine scales, the
+minimum spectral certificate is
+\begin{equation}
+ 5.1091096\times10^{-8},
+ \label{eq:minspec}
+\end{equation}
+and the minimum trace certificate is
+$1.3191664\times10^{-8}$.  Therefore both exterior routes close every fine
+update at $\tau=10^{-8}$.  The corresponding minimum actual normalized
+volume is $5.1119586\times10^{-8}$, and the minimum actual fourth ratio is
+$7.3649339\times10^{-4}$.
+
+The gap between these two scales is explained exactly by
+\eqref{eq:lossfactor}.  The minimum observed fine loss factor is
+\begin{equation}
+ \min\alpha_2\alpha_3=5.2335553\times10^{-5},
+ \label{eq:lossvalue}
+\end{equation}
+while its maximum is $0.38764$.  Thus a normalized four-volume can be roughly
+$2\times10^4$ smaller than the direct fourth ratio on the same archived
+chain.  This is why the exterior certificate is complete at $10^{-8}$ but
+not at the larger cutoffs.
+
+All spectral and trace certificate implications hold, all observed recent
+cross errors lie below the guarded tail, and all selector equivalences agree.
+The exact reduced moment identity remains numerically delicate: the largest
+binary64 discrepancy between $M_2-A^2$ and the direct recent cross Gramian is
+$0.7272$, with cancellation index $3.89\times10^{15}$.  The audit therefore
+uses the thin SVD for numerical values and does not interpret unstable
+moment subtraction as a failure of the algebra.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/exterior_power_fourth_cross_support.pdf}
+\caption{Left: minimum spectral and trace exterior lower bounds over the five
+archived scales; dashed lines are the selector cutoffs.  Right: fine replay
+points lie inside the sharp scalar-volume interval.  The two boundary curves
+are realized exactly by the source-seeded family in
+\cref{thm:sourcebarrier}.}
+\label{fig:audit}
+\end{figure}
+
+\section{Route consequence and claim boundary}
+\label{sec:route}
+
+RH-109 gives a genuine positive result: a recent physical wedge estimate can
+be propagated through forgotten memory and becomes a valid fourth-mode
+support certificate.  It also identifies two distinct losses:
+\begin{equation}
+ \underbrace{\e_4\ \longrightarrow\ \lambda_{\max}(\wedge^4C)}_{
+ \text{exterior concentration, factor at most }\sqrt{D_r}}
+ \qquad\text{and}\qquad
+ \underbrace{\nu_4\ \longrightarrow\ q_4}_{
+ \text{relative capacity }\alpha_2\alpha_3}.
+ \label{eq:twolosses}
+\end{equation}
+The first loss concerns the use of a trace moment instead of a spectral
+exterior value.  The second is present even when the leading four-volume is
+known exactly.
+
+The next analytic target is consequently sharper than ``prove a
+determinant bound.''  One needs either
+\begin{enumerate}[leftmargin=2.2em]
+ \item a physical lower bound for $\nu_4$ together with an upper law for
+       $\alpha_2\alpha_3$, so that
+       $q_4=\nu_4/(\alpha_2\alpha_3)$; or
+ \item a direct physical fourth-mode transversality estimate that bypasses
+       scalar volume inversion.
+\end{enumerate}
+If the reduced $\e_4$ route is used, exterior concentration must also be
+controlled to improve the generic binomial factor.
+
+The claim boundary is:
+\begin{enumerate}[leftmargin=2.2em]
+ \item proved: the finite-memory spectral and trace exterior certificates;
+ \item proved: the exact reduced-moment spectral/trace distinction;
+ \item proved: the sharp scalar-volume interval and source-seeded barrier;
+ \item validated: complete fine exterior support at $\tau=10^{-8}$ on the
+       five archived scales;
+ \item open: an all-level physical exterior lower bound and loss-factor law;
+ \item open: unconditional fine-support separation and Stage A closure;
+ \item not addressed: a Hilbert--Polya operator, zeta-zero identification,
+       a prime-power trace formula, or the Riemann Hypothesis.
+\end{enumerate}
+
+Thus the determinant route remains open, but only in a model-specific form.
+Generic exterior algebra supplies the correct certificate and also proves
+why a scalar volume cannot finish the route alone.
+
+\section{Reproducibility}
+
+The directory contains the exterior bounds, exact barrier constructor, full
+and smoke audits, figures, tests, and hash-checked archive.  Run:
+\begin{verbatim}
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_exterior_support_audit.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_exterior_support_audit.py --smoke
+MPLBACKEND=Agg PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/make_figures.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/pytest -q -p no:cacheprovider
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+cp main.pdf exterior-power-fourth-cross-support.pdf
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_archive.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/verify_archive.py
+\end{verbatim}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
