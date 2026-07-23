@@ -1,0 +1,195 @@
+\section{Sharp stop models and route distinctions}
+\label{sec:tpc67-countermodels}
+
+The determinant identity separates exact rank information from the
+strength of a particular quantitative certificate.  The following
+models show that these stops must not be conflated.
+
+\subsection{Exponential determinant loss with a uniform spectral gap}
+
+\begin{example}[The path Gram]
+\label{ex:tpc67-path-determinant-decay}
+Let \(P_r\) be the path on \(r\) vertices, let \(A(P_r)\) be its adjacency
+matrix, and fix
+\[
+ 0<a<\frac12.
+\]
+Define the unit-diagonal matrix
+\begin{equation}
+ K_r:=I_r+aA(P_r).
+ \label{eq:tpc67-path-Gram}
+\end{equation}
+Its eigenvalues are
+\begin{equation}
+ 1+2a\cos\frac{k\pi}{r+1},
+ \qquad k=1,\ldots,r.
+ \label{eq:tpc67-path-spectrum}
+\end{equation}
+Consequently
+\begin{equation}
+ \lambda_{\min}(K_r)
+ =
+ 1-2a\cos\frac{\pi}{r+1}
+ >
+ 1-2a>0
+ \label{eq:tpc67-path-uniform-gap}
+\end{equation}
+uniformly in \(r\).  In particular, \(K_r\) is a Gram matrix; one may
+take \(B_r=K_r^{1/2}\).
+
+Put \(D_r:=\det K_r\), with \(D_0:=1\).  Expansion along an endpoint of
+the path gives
+\begin{equation}
+ D_0=D_1=1,
+ \qquad
+ D_r=D_{r-1}-a^2D_{r-2}
+ \quad(r\ge2).
+ \label{eq:tpc67-path-determinant-recurrence}
+\end{equation}
+If
+\begin{equation}
+ q_\pm:=\frac{1\pm\sqrt{1-4a^2}}2,
+ \label{eq:tpc67-path-characteristic-roots}
+\end{equation}
+then
+\begin{equation}
+ D_r
+ =
+ \frac{q_+^{\,r+1}-q_-^{\,r+1}}{q_+-q_-}
+ \asymp_a q_+^r,
+ \qquad
+ 0<q_-<q_+<1.
+ \label{eq:tpc67-path-determinant-decay}
+\end{equation}
+Thus the exact determinant mass of the square synthesis
+\(B_r=K_r^{1/2}\) decays exponentially, while its smallest Gram
+eigenvalue stays uniformly positive.
+\end{example}
+
+\begin{proof}
+The path-adjacency spectrum is
+\[
+ \left\{2\cos\frac{k\pi}{r+1}:1\le k\le r\right\},
+\]
+which proves
+\eqref{eq:tpc67-path-spectrum}--\eqref{eq:tpc67-path-uniform-gap}.
+The tridiagonal determinant expansion gives
+\eqref{eq:tpc67-path-determinant-recurrence}.  Solving its characteristic
+equation \(q^2-q+a^2=0\) gives the displayed formula.  Since
+\(0<q_-/q_+<1\), the factor
+\[
+ \frac{q_+\bigl(1-(q_-/q_+)^{r+1}\bigr)}{q_+-q_-}
+\]
+is bounded above and below by positive constants depending only on
+\(a\), which proves the final comparison.
+\end{proof}
+
+\begin{remark}[A determinant-route stop is not a spectral stop]
+\label{rem:tpc67-determinant-not-spectral-stop}
+For the path family,
+\[
+ c_r\det K_r\asymp_a q_+^r
+\]
+is exponentially small, although
+\(\lambda_{\min}(K_r)>1-2a\).  Therefore failure to obtain a
+dimension-uniform lower bound through determinant mass does not prove
+that the actual lower frame is small.  It only stops the determinant
+conversion as a sufficiently strong route; direct spectral-radius,
+Schur, forest, or other Gram estimates may still succeed.
+\end{remark}
+
+\subsection{Hall stops and activity-certificate stops}
+
+\begin{example}[Support Hall deficiency is a genuine kernel]
+\label{ex:tpc67-Hall-deficiency-kernel}
+Let
+\[
+ B=\begin{pmatrix}1&1\end{pmatrix}.
+\]
+Both unit columns have the same unique output neighbor.  For the set of
+both columns, the support neighborhood has size one, so Hall deficiency
+is one.  Moreover,
+\[
+ K=B^*B=
+ \begin{pmatrix}1&1\\1&1\end{pmatrix},
+ \qquad
+ \det K=0,
+ \qquad
+ \lambda_{\min}(K)=0.
+\]
+Here the support obstruction forces an actual kernel; this is a genuine
+spectral stop.
+\end{example}
+
+\begin{example}[Positive cycle activity is only certificate failure]
+\label{ex:tpc67-activity-certificate-failure}
+For \(|\omega|=1\), let
+\begin{equation}
+ B_\omega
+ :=
+ \frac1{\sqrt2}
+ \begin{pmatrix}
+  1&1\\
+  1&\omega
+ \end{pmatrix}.
+ \label{eq:tpc67-two-matching-cycle}
+\end{equation}
+The support is the complete bipartite graph \(K_{2,2}\).  It satisfies
+all Hall inequalities, has two perfect matchings, and its square support
+contains one alternating four-cycle.  Thus a unique-matching, forced-
+matching certificate is unavailable.  Relative to either perfect
+matching, the nonidentity cycle term has magnitude one, so
+\(\mathcal A_\phi=1\) and the strict activity certificate
+\(\mathcal A_\phi<1\) is also unavailable.
+
+Nevertheless,
+\begin{equation}
+ \det B_\omega=\frac{\omega-1}{2}.
+ \label{eq:tpc67-two-matching-determinant}
+\end{equation}
+For \(\omega=1\), matching terms cancel and the Gram has a kernel.  For
+\(\omega=-1\),
+\[
+ B_{-1}^*B_{-1}=I_2,
+ \qquad
+ |\det B_{-1}|^2=1,
+ \qquad
+ \lambda_{\min}(B_{-1}^*B_{-1})=1.
+\]
+Hence activity at least one does not imply a kernel or even a small
+gap.  It says only that support alone no longer certifies the literal
+determinant without controlling the alternating-cycle holonomy.
+\end{example}
+
+\begin{remark}[Four distinct stop statements]
+\label{rem:tpc67-stop-distinctions}
+The examples and the exact determinant identity give four logically
+different conclusions.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=3em]
+ \item A support Hall deficiency forces
+       \(\mathfrak D_X=\beta_X=0\).  This is a support-level kernel stop.
+ \item Hall may hold while literal matching terms cancel, as for
+       \(B_1\).  This is an actual coefficient kernel, not a support
+       deficiency.
+ \item Activity \(\mathcal A_\phi\ge1\), or failure of a unique-matching
+       certificate, does not imply
+       \(\mathfrak D_X=0\).  The matrix \(B_{-1}\) has no such certificate
+       but has determinant mass and spectral gap equal to one.
+ \item Even an exactly known positive determinant mass may be
+       exponentially small while the true spectral gap is uniform, as
+       in \cref{ex:tpc67-path-determinant-decay}.  This stops only the
+       determinant-to-gap route at the desired scale.
+\end{enumerate}
+In particular, an empty certified-minor family gives a zero
+\emph{certified lower sum}; it does not say that the omitted minors, the
+full determinant mass, or the lower frame vanish.
+\end{remark}
+
+\begin{remark}[Claim level]
+\label{rem:tpc67-countermodel-claim-level}
+These are L0 finite-dimensional countermodels.  They separate route
+diagnostics before any L1 arithmetic specialization.  None asserts that
+the literal fixed-\(h_0\) collision core realizes the path family, the
+two-matching phase, or a Hall defect.  Establishing any such property
+for the physical coefficients is a separate arithmetic task.
+\end{remark}

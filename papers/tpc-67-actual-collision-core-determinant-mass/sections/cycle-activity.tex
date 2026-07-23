@@ -1,0 +1,303 @@
+\section{Cycle activity and phase-uniform determinant certificates}
+\label{sec:tpc67-cycle-activity}
+
+Retain the matching-normalized core \(I+E_\phi\) and the directed graph
+\(\mathcal D_\phi\) from \cref{sec:tpc67-forced-core}.  Absolute values of
+matrices in this section are entrywise.  The point is to separate two
+questions:
+\begin{enumerate}[label=(\roman*)]
+\item the exact total mass of all nonidentity determinant terms; and
+\item coefficient-blind upper bounds for that mass.
+\end{enumerate}
+The first has the sharp threshold one.  A convenient bound through the sum
+of individual cycle weights has the smaller sufficient threshold
+\(\log 2\), which is not sharp.
+
+\subsection{The exact permanent activity}
+
+\begin{definition}[Matching activity]
+\label{def:tpc67-matching-activity}
+The phase-blind activity of the matching \(\phi\) is
+\begin{equation}
+ \mathcal A_\phi
+ :=
+ \per(I+|E_\phi|)-1.
+ \label{eq:tpc67-activity-permanent}
+\end{equation}
+\end{definition}
+
+\begin{proposition}[Exact activity identity]
+\label{prop:tpc67-exact-activity}
+The activity is exactly the total absolute weight of all nonempty
+vertex-disjoint directed-cycle families:
+\begin{equation}
+ \boxed{
+ \mathcal A_\phi
+ =
+ \sum_{\mathcal F\in\mathfrak F_\phi}
+ |w_\phi(\mathcal F)|.}
+ \label{eq:tpc67-activity-family-sum}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Expand the permanent of \(I+|E_\phi|\).  Its identity term is one.
+The correspondence in \cref{thm:tpc67-cycle-family-expansion} applies
+again, now without permutation signs.  The term attached to
+\(\mathcal F\) is precisely
+\[
+ \prod_{C\in\mathcal F}\prod_{(i,j)\in C}|(E_\phi)_{i,j}|
+ =
+ |w_\phi(\mathcal F)|.
+\]
+Subtracting the identity term proves
+\eqref{eq:tpc67-activity-family-sum}.
+\end{proof}
+
+\begin{theorem}[Sharp phase-uniform activity certificate]
+\label{thm:tpc67-activity-certificate}
+Let
+\[
+ P_{\mathrm{for}}
+ :=
+ \prod_{e\in\mathcal P_{\mathrm{for}}}|t_e|,
+ \qquad
+ P_\phi:=\prod_{i\in V}|p_i|.
+\]
+Then
+\begin{equation}
+ \boxed{
+ |\det T|
+ \ge
+ P_{\mathrm{for}}P_\phi
+ (1-\mathcal A_\phi)_+.}
+ \label{eq:tpc67-activity-determinant-bound}
+\end{equation}
+In particular, \(\mathcal A_\phi<1\) implies that the literal minor is
+nonsingular, uniformly in all phases having the prescribed entry
+magnitudes.
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:tpc67-exact-cycle-family-expansion}, the identity term of
+\(\det(I+E_\phi)\) is one and the sum of the absolute values of all other
+terms is \(\mathcal A_\phi\).  The reverse triangle inequality gives
+\[
+ |\det(I+E_\phi)|
+ \ge (1-\mathcal A_\phi)_+.
+\]
+Multiplication by the exact pivot factors in
+\eqref{eq:tpc67-full-core-normalization} proves the result.
+\end{proof}
+
+\begin{proposition}[Why the threshold one is sharp]
+\label{prop:tpc67-activity-threshold-sharp}
+Neither the threshold \(1\) nor the coefficient in
+\((1-\mathcal A_\phi)_+\) can be improved using only the total activity.
+Indeed, for
+\begin{equation}
+ I+E=
+ \begin{pmatrix}
+ 1&x\\
+ y&1
+ \end{pmatrix}
+ \label{eq:tpc67-two-cycle-model}
+\end{equation}
+one has
+\[
+ \mathcal A_\phi=|xy|,
+ \qquad
+ \det(I+E)=1-xy.
+\]
+Taking \(x,y>0\) gives equality in
+\eqref{eq:tpc67-activity-determinant-bound}; at \(xy=1\), the determinant
+vanishes and \(\mathcal A_\phi=1\).  On the other hand,
+\(\mathcal A_\phi\ge1\) does not imply singularity: taking \(xy\le-1\) gives
+\(|\det(I+E)|=1+\mathcal A_\phi\).
+\end{proposition}
+
+\subsection{From single-cycle mass to family activity}
+
+Let \(\mathscr C_\phi\) be the set of simple directed cycles of
+\(\mathcal D_\phi\), and define the single-cycle mass
+\begin{equation}
+ \Xi_\phi
+ :=
+ \sum_{C\in\mathscr C_\phi}
+ |w_\phi(C)|.
+ \label{eq:tpc67-single-cycle-mass}
+\end{equation}
+
+\begin{theorem}[Exponential domination of disjoint-cycle activity]
+\label{thm:tpc67-exponential-activity}
+One has
+\begin{equation}
+ \boxed{
+ \mathcal A_\phi
+ \le
+ \exp(\Xi_\phi)-1.}
+ \label{eq:tpc67-activity-exponential-bound}
+\end{equation}
+Consequently, if
+\begin{equation}
+ \Xi_\phi<\log 2,
+ \label{eq:tpc67-logtwo-condition}
+\end{equation}
+then
+\begin{equation}
+ \boxed{
+ |\det T|
+ \ge
+ P_{\mathrm{for}}P_\phi
+ \bigl(2-e^{\Xi_\phi}\bigr)>0.}
+ \label{eq:tpc67-logtwo-determinant-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Expand the exponential:
+\[
+ e^{\Xi_\phi}
+ =
+ \sum_{k=0}^{\infty}
+ \frac1{k!}
+ \left(
+ \sum_{C\in\mathscr C_\phi}|w_\phi(C)|
+ \right)^k.
+\]
+For a family of \(k\) distinct vertex-disjoint cycles, its weight appears
+exactly \(k!\) times in the \(k\)-th power, once for every ordering of its
+cycles, and hence with coefficient one after division by \(k!\).  The
+exponential also contains nonnegative terms from repeated or intersecting
+cycles.  It therefore majorizes one plus the family sum in
+\eqref{eq:tpc67-activity-family-sum}, which proves
+\eqref{eq:tpc67-activity-exponential-bound}.  If
+\(\Xi_\phi<\log2\), then
+\(\mathcal A_\phi\le e^{\Xi_\phi}-1<1\); substituting this estimate into
+\eqref{eq:tpc67-activity-determinant-bound} gives
+\eqref{eq:tpc67-logtwo-determinant-bound}.
+\end{proof}
+
+\begin{remark}[The \(\log2\) threshold is sufficient, not sharp]
+\label{rem:tpc67-logtwo-not-sharp}
+The sharp phase-blind threshold applies to
+\(\mathcal A_\phi\), not to its exponential majorant.  In the two-cycle
+model \eqref{eq:tpc67-two-cycle-model}, put
+\[
+ xy=q\in(\log2,1).
+\]
+There is only one simple cycle, so
+\[
+ \Xi_\phi=\mathcal A_\phi=q,
+ \qquad
+ \det(I+E)=1-q>0.
+\]
+Thus the exact activity certificate succeeds although
+\(\Xi_\phi<\log2\) fails.  The loss comes solely from allowing arbitrary
+ordered tuples of repeated and intersecting cycles in the exponential.
+\end{remark}
+
+\subsection{A degree--entry-size bound}
+
+Put
+\begin{align}
+ q_\phi
+ &:=
+ |\{(i,j):i\ne j,\ (E_\phi)_{i,j}\ne0\}|,
+ \nonumber\\
+ \Delta_\phi^+
+ &:=
+ \max_{i\in V}
+ |\{j\ne i:(E_\phi)_{i,j}\ne0\}|,
+ \nonumber\\
+ \eta_\phi
+ &:=
+ \max_{i\ne j}|(E_\phi)_{i,j}|,
+ \label{eq:tpc67-degree-entry-parameters}
+\end{align}
+with \(\eta_\phi=0\) when \(q_\phi=0\), and write \(n=|V|\).
+
+\begin{proposition}[Cycle mass from out-degree and pivot ratios]
+\label{prop:tpc67-degree-entry-cycle-bound}
+For every matching-normalized core,
+\begin{equation}
+ \boxed{
+ \Xi_\phi
+ \le
+ \sum_{k=2}^{n}
+ \frac{q_\phi}{k}
+ (\Delta_\phi^+)^{k-2}\eta_\phi^k.}
+ \label{eq:tpc67-finite-degree-entry-bound}
+\end{equation}
+If \(\Delta_\phi^+\eta_\phi<1\), then
+\begin{align}
+ \Xi_\phi
+ &\le
+ \frac{q_\phi\eta_\phi^2}
+      {2(1-\Delta_\phi^+\eta_\phi)}
+ \label{eq:tpc67-geometric-cycle-bound}\\
+ &\le
+ \frac{n\Delta_\phi^+\eta_\phi^2}
+      {2(1-\Delta_\phi^+\eta_\phi)}.
+ \label{eq:tpc67-coarse-geometric-cycle-bound}
+\end{align}
+Consequently,
+\begin{equation}
+ \mathcal A_\phi
+ \le
+ \exp\left\{
+ \frac{q_\phi\eta_\phi^2}
+      {2(1-\Delta_\phi^+\eta_\phi)}
+ \right\}-1,
+ \label{eq:tpc67-degree-entry-activity-bound}
+\end{equation}
+and the explicit sufficient condition
+\begin{equation}
+ \frac{q_\phi\eta_\phi^2}
+      {2(1-\Delta_\phi^+\eta_\phi)}
+ <\log2
+ \label{eq:tpc67-degree-entry-logtwo}
+\end{equation}
+implies the positive determinant margin
+\eqref{eq:tpc67-logtwo-determinant-bound}.
+\end{proposition}
+
+\begin{proof}
+For a directed simple cycle of length \(k\), choose one of its \(k\)
+oriented edges as the starting edge.  There are at most \(q_\phi\) choices
+for that edge and at most
+\((\Delta_\phi^+)^{k-2}\) choices for the next \(k-2\) edges; the closing
+edge, if present, is then fixed.  Since each cycle was counted \(k\) times,
+the number of length-\(k\) cycles is at most
+\[
+ \frac{q_\phi}{k}(\Delta_\phi^+)^{k-2}.
+\]
+Every such cycle has absolute weight at most \(\eta_\phi^k\), proving
+\eqref{eq:tpc67-finite-degree-entry-bound}.
+
+When \(\Delta_\phi^+\eta_\phi<1\), use \(1/k\le1/2\) for \(k\ge2\) and
+sum the resulting geometric series.  This gives
+\eqref{eq:tpc67-geometric-cycle-bound}.  The inequality
+\(q_\phi\le n\Delta_\phi^+\) gives
+\eqref{eq:tpc67-coarse-geometric-cycle-bound}.  Finally apply
+\cref{thm:tpc67-exponential-activity}.
+\end{proof}
+
+\begin{remark}[What the combinatorial bound does not supply]
+\label{rem:tpc67-cycle-activity-boundary}
+The entry parameter is the pivot ratio
+\[
+ \eta_\phi
+ =
+ \max_{i\ne j}
+ \frac{|t_{\phi(i),j}|}{|t_{\phi(j),j}|},
+\]
+not merely the largest unnormalized collision coefficient.  Moreover,
+TPC--66's reduced pair-codegree estimate does not by itself bound
+\(q_\phi\), \(\Delta_\phi^+\), or \(\eta_\phi\) for an actual full
+\((\gamma,s,j)\)-minor \citep{WangTPC66}.  The present activity estimates
+are therefore L0 certificates.  They become L1 only after the literal
+minor, matching, pivot ratios, and full decorated collision core have been
+identified.  No polynomial physical determinant bound, parity improvement,
+or prime-pair conclusion is asserted here.
+\end{remark}

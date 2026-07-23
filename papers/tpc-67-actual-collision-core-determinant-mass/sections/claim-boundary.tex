@@ -1,0 +1,89 @@
+\section{Conclusions, stop rules, and the next door}
+
+\subsection{What is now exact}
+The determinant route has four exact layers.
+\begin{enumerate}[label=(\arabic*)]
+\item Every square actual minor factors into the pivots exposed by iterative
+degree-one peeling and a nonpeelable residual core. A residual core without
+a perfect matching has zero determinant.
+\item If the residual core admits a declared perfect matching, all possible
+cancellation is encoded by vertex-disjoint alternating-cycle families and
+their gauge-invariant holonomies.
+\item Dominant-matching activity gives a literal, phase-safe determinant
+certificate. It makes no randomness assumption.
+\item Cauchy--Binet aggregates every full minor, and unit diagonal converts
+that determinant mass to the Gram gap with the sharp fixed-dimension factor
+\(c_r\); the bound \(c_r\ge e^{-1}\) is uniform in the dimension.
+\end{enumerate}
+
+Consequently, if the literal physical matrix satisfies
+\[
+ \mathfrak D_X
+ :=
+ \sum_{\substack{Y_0\subseteq\mathcal Y_X^{\mathrm{full}}\\
+                  |Y_0|=|\mathcal M_X^{\mathrm{act}}|}}
+ |\det (B_X)_{Y_0,\mathcal M_X^{\mathrm{act}}}|^2
+ \ge X^{-\lambda_{\det}+o(1)},
+\]
+then its represented Gram has the same fixed-power exponent:
+\[
+ \beta_X\ge e^{-1}X^{-\lambda_{\det}+o(1)}.
+\]
+The determinant-to-gap conversion is L0; identifying \(B_X\) with the literal
+fixed-\(h_0\) carrier is L1. Proving the displayed physical lower bound would
+be L2, and remains open.
+The sharper componentwise version requires only
+\[
+ \min_{C\in\mathscr C_X}\mathfrak D_C
+ \ge X^{-\lambda_{\det}+o(1)},
+\]
+uniformly over all actual components, and gives the same conclusion by
+\cref{cor:tpc67-componentwise-determinant-gap}; it avoids the irrelevant
+product over mutually orthogonal collision components. This is likewise an
+unproved L2 premise.
+
+\subsection{What remains unavailable}
+TPC-66's reduced pair-codegree theorem does not supply:
+\begin{itemize}
+\item a full-output Hall matching involving every active row;
+\item lower bounds for matching pivots or their products;
+\item a bound below one for the activity of an actual core;
+\item control of long alternating cycles or \(\gamma\)-multiplicity;
+\item a polynomial lower bound for \(\mathfrak D_X\), or, more usefully, a
+uniform lower bound for \(\min_C\mathfrak D_C\) or for the corresponding
+worst-component certified-minor mass.
+\end{itemize}
+Deleting difficult rows, replacing full outputs by reduced cells, or selecting
+a generic coefficient filling would change the quantifier and is not allowed.
+
+\subsection{Stop rules}
+The following failures have different force.
+\begin{enumerate}[label=(\roman*)]
+\item A full-support Hall deficiency forces
+\(\mathfrak D_X=0\). More generally, \(\mathfrak D_X=0\) is equivalent to
+a genuine kernel for the represented map, even when the support satisfies
+Hall's condition.
+\item \(\mathcal A_\phi\ge1\) kills only the chosen
+dominant-matching certificate. The same minor may still be nonsingular.
+\item A small global product
+\(\mathfrak D_X=\prod_C\mathfrak D_C\) alone is not a stop: many orthogonal
+components can make that product exponentially small while every component
+gap is good. Failure of one chosen certified-minor family gives a stop only
+for that family. The present determinant conversion is genuinely too weak at
+the desired fixed-power scale only if the \emph{actual} worst-component mass
+\(\min_C\mathfrak D_C\), or the actual mass of the single connected component
+under study, is proved to be \(X^{-\omega(1)}\). Even then it does not show
+that the Gram gap is small. The connected path countermodel proves the latter
+distinction sharply.
+\end{enumerate}
+
+\subsection{Route update for TPC-68}
+The determinant door is now fully specified but still needs new physical
+matching, pivot, and cycle-activity input. The next independent door is the
+signed native/reassembly map, where the common residual M\"obius gauge has
+already been removed and genuine two-affine signs first reappear. TPC-68
+should isolate exact pair, star, and operator cancellation certificates there,
+test them against the actual full-output normalization, and state a hard stop
+if only support or generic-phase information is available. No parity,
+fixed-\(2\), prime-pair, or twin-prime conclusion follows from the present
+paper.

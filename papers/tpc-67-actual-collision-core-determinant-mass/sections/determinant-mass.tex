@@ -1,0 +1,243 @@
+\section{Determinant mass and the sharp lower-spectrum conversion}
+\label{sec:tpc67-determinant-mass}
+
+The preceding interface fixes the literal normalized full-output matrix
+\(B_X\), its unit-diagonal Gram
+\[
+ K_X=B_X^*B_X,
+\]
+the number \(r_X\ge1\) of active physical rows, and the full determinant
+mass
+\[
+ \mathfrak D_X
+ =
+ \sum_{\substack{I\subseteq\mathcal Y_X^{\mathrm{full}}\\|I|=r_X}}
+ |\det B_X[I]|^2.
+\]
+No output quotient or selected-row restriction is made in this section.
+
+\subsection{The exact Cauchy--Binet identity}
+
+\begin{theorem}[Full determinant mass is the Gram determinant]
+\label{thm:tpc67-cauchy-binet-mass}
+For every \(r_X\ge1\),
+\begin{equation}
+ \boxed{\qquad
+ \mathfrak D_X=\det(B_X^*B_X)=\det K_X.
+ \qquad}
+ \label{eq:tpc67-cauchy-binet-mass}
+\end{equation}
+The identity also holds when
+\(|\mathcal Y_X^{\mathrm{full}}|<r_X\): both sides then vanish.
+\end{theorem}
+
+\begin{proof}
+Fix the orderings from the full-minor interface.  Cauchy--Binet applied
+to \(B_X^*B_X\) gives
+\[
+ \det(B_X^*B_X)
+ =
+ \sum_{\substack{I\subseteq\mathcal Y_X^{\mathrm{full}}\\|I|=r_X}}
+ \det\!\bigl(B_X[I]^*\bigr)\det B_X[I].
+\]
+Each summand is \(|\det B_X[I]|^2\), which proves
+\eqref{eq:tpc67-cauchy-binet-mass}.  If the output space has dimension
+less than \(r_X\), then \(B_X\) has rank less than \(r_X\), while the
+minor sum is empty by convention; hence both sides are zero.
+\end{proof}
+
+For later use, define
+\begin{equation}
+ c_1:=1,
+ \qquad
+ c_r:=\left(\frac{r-1}{r}\right)^{r-1}
+ \quad(r\ge2).
+ \label{eq:tpc67-sharp-determinant-constant}
+\end{equation}
+
+\begin{theorem}[Sharp determinant-to-gap conversion]
+\label{thm:tpc67-sharp-determinant-gap}
+Let \(K\succeq0\) be an \(r\times r\) matrix with unit diagonal, and put
+\(\beta=\lambda_{\min}(K)\).  If \(r=1\), then
+\[
+ \beta=\det K=1.
+\]
+If \(r\ge2\), then
+\begin{equation}
+ \det K
+ \le
+ \beta
+ \left(\frac{r-\beta}{r-1}\right)^{r-1}
+ \le
+ \frac{\beta}{c_r}.
+ \label{eq:tpc67-refined-determinant-upper}
+\end{equation}
+Consequently, for the literal matrix,
+\begin{equation}
+ \boxed{\qquad
+ \beta_X
+ \ge
+ c_{r_X}\mathfrak D_X
+ \ge
+ e^{-1}\mathfrak D_X.
+ \qquad}
+ \label{eq:tpc67-determinant-gap-lower}
+\end{equation}
+For every fixed \(r\ge2\), \(c_r\) is the largest universal constant
+for which
+\[
+ \lambda_{\min}(K)\ge c_r\det K
+\]
+holds for every unit-diagonal positive semidefinite \(K\).
+\end{theorem}
+
+\begin{proof}
+The case \(r=1\) is immediate.  Suppose \(r\ge2\), and list the
+eigenvalues as
+\[
+ 0\le\lambda_1=\beta\le\lambda_2\le\cdots\le\lambda_r.
+\]
+The unit diagonal gives
+\[
+ \sum_{j=1}^r\lambda_j=\operatorname{tr}K=r.
+\]
+The arithmetic--geometric mean inequality applied to
+\(\lambda_2,\ldots,\lambda_r\) yields
+\[
+ \prod_{j=2}^r\lambda_j
+ \le
+ \left(\frac{r-\beta}{r-1}\right)^{r-1}
+ \le
+ \left(\frac r{r-1}\right)^{r-1}.
+\]
+Multiplication by \(\beta\) proves
+\eqref{eq:tpc67-refined-determinant-upper}.  Combine it with
+\cref{thm:tpc67-cauchy-binet-mass} to obtain the first inequality in
+\eqref{eq:tpc67-determinant-gap-lower}.  Moreover,
+\[
+ c_r
+ =
+ \left(1+\frac1{r-1}\right)^{-(r-1)}
+ \ge e^{-1},
+\]
+which proves the second.
+
+It remains to prove sharpness.  For \(0<\varepsilon\le1\), let
+\begin{equation}
+ K_{r,\varepsilon}
+ :=
+ \frac{r-\varepsilon}{r-1}I_r
+ -
+ \frac{1-\varepsilon}{r-1}\mathbf1\mathbf1^*.
+ \label{eq:tpc67-negative-equicorrelation}
+\end{equation}
+This is the negative equicorrelation matrix with diagonal one.  Its
+eigenvalue on \(\mathbf1\) is \(\varepsilon\), and every vector
+orthogonal to \(\mathbf1\) has eigenvalue
+\((r-\varepsilon)/(r-1)\).  Thus it is positive definite and
+\begin{align*}
+ \lambda_{\min}(K_{r,\varepsilon})
+ &=\varepsilon,\\
+ \det K_{r,\varepsilon}
+ &=
+ \varepsilon
+ \left(\frac{r-\varepsilon}{r-1}\right)^{r-1}.
+\end{align*}
+Therefore
+\[
+ \frac{\lambda_{\min}(K_{r,\varepsilon})}
+      {\det K_{r,\varepsilon}}
+ =
+ \left(\frac{r-1}{r-\varepsilon}\right)^{r-1}
+ \longrightarrow c_r
+ \qquad(\varepsilon\downarrow0).
+\]
+Any universal multiplier larger than \(c_r\) fails for sufficiently
+small \(\varepsilon\).
+\end{proof}
+
+\begin{remark}[What sharpness does and does not say]
+\label{rem:tpc67-determinant-sharpness-scope}
+The negative equicorrelation family proves sharpness among all
+unit-diagonal Gram matrices of a fixed dimension.  It does not assert
+that the literal fixed-\(h_0\) matrix has this form.  Any improvement for
+the physical carrier must use additional actual-support or coefficient
+structure.
+\end{remark}
+
+\subsection{Summing certified full minors}
+
+\begin{corollary}[Certified-minor mass]
+\label{cor:tpc67-certified-minor-sum}
+Let
+\[
+ \mathscr I_X^{\mathrm{cert}}
+ \subseteq
+ \{I\subseteq\mathcal Y_X^{\mathrm{full}}:|I|=r_X\},
+\]
+and suppose that for each \(I\in\mathscr I_X^{\mathrm{cert}}\) an actual
+coefficient calculation supplies a number \(\eta_X(I)\ge0\) such that
+\begin{equation}
+ |\det B_X[I]|\ge\eta_X(I).
+ \label{eq:tpc67-certified-one-minor}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{\qquad
+ \mathfrak D_X
+ \ge
+ \sum_{I\in\mathscr I_X^{\mathrm{cert}}}\eta_X(I)^2,
+ \qquad
+ \beta_X
+ \ge
+ c_{r_X}
+ \sum_{I\in\mathscr I_X^{\mathrm{cert}}}\eta_X(I)^2.
+ \qquad}
+ \label{eq:tpc67-certified-minor-mass}
+\end{equation}
+In particular, if \(L_X\) distinct certified minors all satisfy
+\(|\det B_X[I]|\ge\eta_X\), then
+\begin{equation}
+ \beta_X\ge c_{r_X}L_X\eta_X^2.
+ \label{eq:tpc67-uniform-certified-minors}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Retain only the indicated nonnegative summands in
+\eqref{eq:tpc67-cauchy-binet-mass}, apply
+\eqref{eq:tpc67-certified-one-minor}, and then use
+\cref{thm:tpc67-sharp-determinant-gap}.
+\end{proof}
+
+\begin{remark}[Activity labels are not numerical certificates]
+\label{rem:tpc67-activity-needs-minor-bound}
+The preceding forced-matching and cycle-activity analysis can be used to
+construct \(\mathscr I_X^{\mathrm{cert}}\).  For example, if the minor
+\(B_X[I]\), a matching \(\phi\), and its forced factors satisfy
+\cref{thm:tpc67-activity-certificate}, then one valid choice is
+\begin{equation}
+ \eta_X(I)
+ :=
+ P_{\mathrm{for}}(I)P_\phi(I)
+ \bigl(1-\mathcal A_\phi(I)\bigr)_+.
+ \label{eq:tpc67-activity-certified-eta}
+\end{equation}
+However, a combinatorial activity label by itself is not an admissible
+\(\eta_X(I)\).  The corollary begins only after the literal determinant
+expansion has been shown to have the numerical lower bound
+\eqref{eq:tpc67-certified-one-minor}.  Conversely, minors not covered by
+the chosen certificate family remain in \(\mathfrak D_X\); omitting them
+from the certified sum cannot be used as evidence that they vanish.
+\end{remark}
+
+\begin{remark}[Claim level]
+\label{rem:tpc67-determinant-mass-claim-level}
+\Cref{thm:tpc67-cauchy-binet-mass,thm:tpc67-sharp-determinant-gap,cor:tpc67-certified-minor-sum}
+are finite-dimensional L0 statements.
+Their L1 specialization uses the already fixed literal full-output
+matrix \(B_X\).  They do not prove that a certified full minor exists,
+that the certified mass is polynomially large, or that
+\(\mathfrak D_X\) avoids exponential decay as \(r_X\) grows.  No parity
+or prime-pair conclusion follows from the determinant identity alone.
+\end{remark}

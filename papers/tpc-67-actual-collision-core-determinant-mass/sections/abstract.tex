@@ -1,0 +1,43 @@
+\begin{abstract}
+The preceding fixed-shift analysis identifies an actual unit-diagonal residual
+Gram and proves subpower reduced-cell codegree for every fixed row pair, but
+does not control its global smallest eigenvalue. We open a determinant route
+on the literal full-output matrix. For every square full-column minor, repeated
+degree-one peeling factors off exactly all pivots found by the iterative
+degree-one rule. A residual core without a perfect matching has zero
+determinant. If the core admits a perfect matching, normalizing that matching
+to the identity makes every other determinant term a vertex-disjoint family
+of directed alternating cycles; diagonal gauge leaves only the
+cycle-holonomy parameters. If
+\(\mathcal A_\phi=\operatorname{per}(I+|E|)-1\) is the total absolute activity
+of the nonempty cycle families, \(P_{\mathrm{for}}\) is the product of the
+forced-pivot magnitudes, and \(P_\phi\) is the core matching-pivot product,
+then
+\[
+ |\det T|
+ \ge
+ P_{\mathrm{for}}P_\phi(1-\mathcal A_\phi)_+.
+\]
+We next aggregate rather than select minors. For a synthesis matrix \(B\) with
+\(r\) unit columns and Gram \(K=B^*B\), Cauchy--Binet and the trace constraint
+give, for \(r\ge2\), the sharp conversion
+\[
+ \mathfrak D(B):=\sum_{|Y_0|=r}|\det B_{Y_0}|^2=\det K,
+ \qquad
+ \lambda_{\min}(K)
+ \ge
+ \left(\frac{r-1}{r}\right)^{r-1}\mathfrak D(B)
+ \ge e^{-1}\mathfrak D(B).
+\]
+The case \(r=1\) is exact with constant one.
+Thus certified determinant mass transfers to the physical Gram without the
+dimension-exponential norm penalty of a one-minor estimate. The theorem is
+sharp, but the route is not automatically sufficient: a path-Gram family has
+a uniform spectral gap while its determinant decays exponentially. The
+remaining arithmetic task for this certificate is to lower-bound the
+determinant mass of every actual full-support collision component, or the
+corresponding certified-minor mass; a global determinant-mass lower bound is
+a stronger sufficient condition. A direct spectral or signed-reassembly
+argument remains an independent route. No such physical lower bound, parity
+improvement, or prime-pair conclusion is claimed.
+\end{abstract}

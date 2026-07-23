@@ -1,0 +1,343 @@
+\section{Exact decomposition by full-support collision components}
+\label{sec:tpc67-componentwise}
+
+The determinant mechanisms in the preceding sections can be tested one
+actual collision component at a time, but the components must then be
+reassembled with the correct quantifier.  This is an exact orthogonal
+decomposition of the full matrix \(B_X\), not permission to retain only a
+favorable component.
+
+\subsection{The full-support row collision graph}
+
+Define the row collision graph \(\mathscr G_X^{\mathrm{full}}\) on
+\(\mathcal M_X^{\mathrm{act}}\) by
+\begin{equation}
+ m\sim n
+ \quad\Longleftrightarrow\quad
+ m\ne n
+ \ \text{ and there is }y\in\mathcal Y_X^{\mathrm{full}}
+ \text{ with }
+ (B_X)_{y,m}(B_X)_{y,n}\ne0.
+ \label{eq:tpc67-full-row-collision-graph}
+\end{equation}
+Let \(\mathscr C_X\) be its connected components.  Isolated active rows
+are included as one-vertex components.  For \(C\in\mathscr C_X\), put
+\begin{equation}
+ \mathcal Y_C
+ :=
+ N_X^{\mathrm{full}}(C)
+ =
+ \{y:(B_X)_{y,m}\ne0
+       \text{ for some }m\in C\},
+ \label{eq:tpc67-component-output-set}
+\end{equation}
+and define the literal component matrix
+\begin{equation}
+ B_C:=B_X[\mathcal Y_C,C]:
+ \ell^2(C)\longrightarrow\ell^2(\mathcal Y_C).
+ \label{eq:tpc67-component-matrix}
+\end{equation}
+
+\begin{lemma}[Disjoint output support of distinct components]
+\label{lem:tpc67-component-output-disjointness}
+If \(C,C'\in\mathscr C_X\) and \(C\ne C'\), then
+\begin{equation}
+ \mathcal Y_C\cap\mathcal Y_{C'}=\varnothing.
+ \label{eq:tpc67-disjoint-component-outputs}
+\end{equation}
+Moreover,
+\begin{equation}
+ \mathcal Y_X^{\mathrm{full}}
+ =\bigsqcup_{C\in\mathscr C_X}\mathcal Y_C.
+ \label{eq:tpc67-full-output-component-partition}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If \(y\) belonged to both output sets, it would support nonzero entries
+from rows \(m\in C\) and \(n\in C'\).  Then \(m\sim n\) in
+\(\mathscr G_X^{\mathrm{full}}\), contradicting the assumption that the
+rows lie in different components.  Every full output has a nonzero entry
+by \eqref{eq:tpc67-full-output-set}, so it belongs to the output set of
+the component containing that row.
+\end{proof}
+
+\begin{proposition}[Exact block diagonalization]
+\label{prop:tpc67-exact-component-blocks}
+After permutation of full-output and active-row coordinates,
+\begin{align}
+ B_X
+ &=
+ \bigoplus_{C\in\mathscr C_X}B_C,
+ \label{eq:tpc67-B-component-sum}\\
+ K_X=B_X^*B_X
+ &=
+ \bigoplus_{C\in\mathscr C_X}K_C,
+ \qquad
+ K_C:=B_C^*B_C.
+ \label{eq:tpc67-K-component-sum}
+\end{align}
+Every column of every \(B_C\) still has norm one.
+\end{proposition}
+
+\begin{proof}
+By \cref{lem:tpc67-component-output-disjointness}, a row in \(C\) has no
+nonzero matrix entry in \(\mathcal Y_{C'}\) for \(C'\ne C\).  This proves
+the first orthogonal direct-sum identity.  Taking the Gram gives the
+second.  Component restriction removes no output touched by a column in
+\(C\), so the unit-column identity
+\eqref{eq:tpc67-unit-columns} remains unchanged.
+\end{proof}
+
+\subsection{Componentwise lower-frame and kernel reduction}
+
+For each component put
+\begin{equation}
+ \beta_C:=\lambda_{\min}(K_C)
+          =\sigma_{\min}(B_C)^2.
+ \label{eq:tpc67-component-beta}
+\end{equation}
+
+\begin{theorem}[Exact componentwise lower-frame law]
+\label{thm:tpc67-componentwise-lower-frame}
+For \(x=\bigoplus_Cx_C\),
+\begin{equation}
+ \|B_Xx\|^2
+ =
+ \sum_{C\in\mathscr C_X}\|B_Cx_C\|^2.
+ \label{eq:tpc67-component-energy-identity}
+\end{equation}
+Consequently,
+\begin{align}
+ \boxed{
+ \beta_X
+ =\min_{C\in\mathscr C_X}\beta_C,}
+ \label{eq:tpc67-global-beta-minimum}\\
+ \ker B_X
+ &=
+ \bigoplus_{C\in\mathscr C_X}\ker B_C,
+ \label{eq:tpc67-kernel-component-sum}\\
+ \dim\ker B_X
+ &=
+ \sum_{C\in\mathscr C_X}\dim\ker B_C.
+ \label{eq:tpc67-nullity-component-sum}
+\end{align}
+In particular, \(B_X\) is injective if and only if every component matrix
+\(B_C\) is injective.
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:tpc67-component-energy-identity} is the squared-norm
+identity for the orthogonal direct sum in
+\eqref{eq:tpc67-B-component-sum}.  It gives the lower bound
+\[
+ \|B_Xx\|^2
+ \ge
+ \left(\min_C\beta_C\right)\sum_C\|x_C\|^2.
+\]
+Conversely, a unit vector supported on a component attaining the minimum
+shows equality in \eqref{eq:tpc67-global-beta-minimum}.  The kernel and
+nullity formulas follow from the same direct sum.
+\end{proof}
+
+Thus a component with a very good lower frame cannot compensate for one
+singular component.  An isolated active row has \(\beta_C=1\), but this
+does not raise the minimum if another component is bad.
+
+\subsection{Support and rank defects factor componentwise}
+
+For \(C\in\mathscr C_X\), define the local support Hall defect and literal
+rank defect
+by
+\begin{align}
+ \mathfrak h_C^{\mathrm{supp}}
+ &:=
+ \max_{S\subseteq C}
+ \bigl(|S|-|N_X^{\mathrm{full}}(S)|\bigr)_+,
+ \label{eq:tpc67-component-support-defect}\\
+ \mathfrak h_C^{\mathrm{act}}
+ &:=
+ \max_{S\subseteq C}
+ \left(
+ |S|-\rank B_X[N_X^{\mathrm{full}}(S),S]
+ \right).
+ \label{eq:tpc67-component-actual-defect}
+\end{align}
+
+\begin{proposition}[Componentwise defect accounting]
+\label{prop:tpc67-component-Hall-accounting}
+The two global defects satisfy
+\begin{align}
+ \mathfrak h_X^{\mathrm{supp}}
+ &=
+ \sum_{C\in\mathscr C_X}
+ \mathfrak h_C^{\mathrm{supp}},
+ \label{eq:tpc67-support-defect-sum}\\
+ \mathfrak h_X^{\mathrm{act}}
+ &=
+ \sum_{C\in\mathscr C_X}
+ \mathfrak h_C^{\mathrm{act}}
+ =
+ \sum_{C\in\mathscr C_X}\dim\ker B_C.
+ \label{eq:tpc67-actual-defect-sum}
+\end{align}
+Hence ordinary full-support Hall holds globally if and only if it holds
+inside every component, and the literal full-rank condition from
+\cref{thm:tpc67-actual-Hall-kernel} holds globally if and only if it holds
+inside every component.
+\end{proposition}
+
+\begin{proof}
+For \(S\subseteq\mathcal M_X^{\mathrm{act}}\), write
+\(S_C=S\cap C\).  The component output sets are disjoint, so
+\[
+ |S|-|N_X^{\mathrm{full}}(S)|
+ =
+ \sum_C
+ \left(
+ |S_C|-|N_X^{\mathrm{full}}(S_C)|
+ \right).
+\]
+Allowing \(S_C=\varnothing\) gives zero contribution, so maximizing the
+positive deficiency independently in each component proves
+\eqref{eq:tpc67-support-defect-sum}.  The rank-defect identity follows either
+by the same block-rank calculation or from
+\cref{thm:tpc67-actual-Hall-kernel,thm:tpc67-componentwise-lower-frame}.
+\end{proof}
+
+For \(C\in\mathscr C_X\), let \(r_C=|C|\) and define its literal full
+determinant mass by
+\begin{equation}
+ \mathfrak D_C
+ :=
+ \sum_{\substack{I_C\subseteq\mathcal Y_C\\|I_C|=r_C}}
+ |\det B_C[I_C]|^2.
+ \label{eq:tpc67-component-determinant-mass}
+\end{equation}
+
+\begin{proposition}[Exact determinant-mass product]
+\label{prop:tpc67-determinant-mass-product}
+The full determinant mass factors as
+\begin{equation}
+ \boxed{
+ \mathfrak D_X
+ =
+ \prod_{C\in\mathscr C_X}\mathfrak D_C.}
+ \label{eq:tpc67-determinant-mass-factorization}
+\end{equation}
+Consequently \(\mathfrak D_X>0\) if and only if
+\(\mathfrak D_C>0\) for every component.
+\end{proposition}
+
+\begin{proof}
+Consider a full row set
+\(I\subseteq\mathcal Y_X^{\mathrm{full}}\) with \(|I|=r_X\), and put
+\(I_C=I\cap\mathcal Y_C\).  In the block matrix
+\eqref{eq:tpc67-B-component-sum}, its determinant can be nonzero only if
+\[
+ |I_C|=r_C
+ \qquad(C\in\mathscr C_X).
+\]
+Indeed, if one block is assigned fewer than \(r_C\) output rows, that
+block cannot have full column rank; because the total numbers of selected
+rows and columns agree, an excess in another block cannot repair this
+deficit.  When all equalities hold, permutation to component order gives
+\[
+ |\det B_X[I]|^2
+ =
+ \prod_C|\det B_C[I_C]|^2.
+\]
+Summing independently over the \(I_C\)'s proves
+\eqref{eq:tpc67-determinant-mass-factorization}.  This is a block-support
+factorization; it does not reprove the preceding quantitative
+Cauchy--Binet lower inequality.
+\end{proof}
+
+\begin{corollary}[Componentwise determinant conversion]
+\label{cor:tpc67-componentwise-determinant-gap}
+With \(c_r\) as in
+\eqref{eq:tpc67-sharp-determinant-constant},
+\begin{equation}
+ \boxed{
+ \beta_X
+ \ge
+ \min_{C\in\mathscr C_X}
+ c_{r_C}\mathfrak D_C
+ \ge
+ e^{-1}\min_{C\in\mathscr C_X}\mathfrak D_C.}
+ \label{eq:tpc67-componentwise-determinant-gap}
+\end{equation}
+More generally, suppose that for each component \(C\) a family
+\(\mathscr I_C^{\mathrm{cert}}\) of literal full-column component minors has
+certified lower bounds
+\[
+ I_C\in\mathscr I_C^{\mathrm{cert}},
+ \qquad
+ |\det B_C[I_C]|\ge\eta_C(I_C).
+\]
+Then
+\begin{equation}
+ \beta_X
+ \ge
+ \min_{C\in\mathscr C_X}
+ c_{r_C}
+ \sum_{I_C\in\mathscr I_C^{\mathrm{cert}}}\eta_C(I_C)^2.
+ \label{eq:tpc67-componentwise-certified-mass}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Every \(B_C\) has \(r_C\) unit columns by
+\cref{prop:tpc67-exact-component-blocks}.  Cauchy--Binet gives
+\(\mathfrak D_C=\det K_C\).  Apply
+\cref{thm:tpc67-sharp-determinant-gap} to each component Gram and combine
+the result with
+\eqref{eq:tpc67-global-beta-minimum}.  Retaining only the certified
+nonnegative component-minor summands proves the last formula.
+\end{proof}
+
+\begin{remark}[Why the componentwise conversion matters]
+\label{rem:tpc67-componentwise-versus-product}
+The global identity
+\(\mathfrak D_X=\prod_C\mathfrak D_C\) can be exponentially smaller than
+every individual component mass when the number of components grows.
+Equation~\eqref{eq:tpc67-componentwise-determinant-gap} pays no such
+gratuitous product: a uniform lower frame needs the worst component, not
+the product of all component determinants.  This improvement is exact only
+for the full-support coordinate components above; it does not authorize an
+arbitrary row partition or deletion.
+\end{remark}
+
+\subsection{Full components are the mandatory scope}
+
+The reduced projection
+\((\gamma,s,j)\mapsto(s,j)\) can join two rows that occupy disjoint
+\(\gamma\)-coordinates.  Therefore the reduced collision graph can merge
+several components of \(\mathscr G_X^{\mathrm{full}}\).  It may be used as
+an arithmetic supergraph, but it is not the graph whose connected
+components produce the canonical coordinate block decomposition
+\eqref{eq:tpc67-B-component-sum}.  In particular, reduced-cell codegree
+does not alter the identities
+\eqref{eq:tpc67-global-beta-minimum} or
+\eqref{eq:tpc67-determinant-mass-factorization}.
+
+\begin{remark}[No favorable-component selection]
+\label{rem:tpc67-no-component-deletion}
+The component partition is determined by the full actual nonzero support
+after all active rows have been included and before a test vector is
+chosen.  Passing to components is lossless because
+\eqref{eq:tpc67-component-energy-identity} retains every summand.  A
+uniform physical theorem must prove the desired estimate in every
+component: the global lower frame is the minimum of the local constants,
+the global kernel is their direct sum, and the determinant mass is their
+product.  Deleting a singular or poorly conditioned component would
+change the coefficient space and is not an L1 theorem for the original
+physical map.
+
+All results in this section are exact finite-dimensional L0 statements
+for \(B_X\).  Their L1 content is solely that \(B_X\), its support graph,
+and its components are the literal fixed-\(h_0\), full-output objects
+from \cref{sec:tpc67-physical-minor-interface}.  No componentwise
+positivity, polynomial determinant mass, parity gain, or prime-pair
+conclusion is asserted.
+\end{remark}

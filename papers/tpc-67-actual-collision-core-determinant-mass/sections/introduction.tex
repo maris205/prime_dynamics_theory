@@ -1,0 +1,73 @@
+\section{Introduction}
+
+TPC-65 reduced the represented-reference gate to the least eigenvalue of an
+actual activated-range Gram \citep{WangTPC65}. TPC-66 then opened its literal
+fixed-shift geometry: after retaining every active physical row and every full
+output key \((\gamma,s,j)\), the normalized row columns have norm one; fixed
+row pairs meet in only \(X^{o(1)}\) reduced cells on the critical cofactor
+block \citep{WangTPC66}. That is genuine pair thinning, but not a lower-frame
+theorem. The full \(\gamma\)-decorated support, right degrees, energy
+concentration, and global cycles can still be large.
+
+This paper asks the smallest next question:
+\begin{quote}
+\emph{Can the global lower frame be certified by the determinant mass of the
+actual full-output matrix, and exactly which collision geometry controls that
+mass?}
+\end{quote}
+The answer has a positive exact part and a sharp negative boundary.
+
+First, a square physical minor is reduced to its nonpeelable collision core.
+Every degree-one support vertex forces one matching pivot and one Laplace
+factor. Once a perfect matching of the core is placed on the diagonal, the
+normalized matrix is \(I+E\). The determinant expansion is then not an
+unstructured sum: every nonidentity term is exactly a vertex-disjoint family
+of directed alternating cycles. A diagonal similarity removes all phases on a
+spanning forest, leaving only chord holonomies. This generalizes the
+unique-matching and one-cycle examples of TPC-66 without replacing the literal
+coefficients by generic fillings.
+
+Second, the absolute activity
+\[
+ \mathcal A_\phi=\operatorname{per}(I+|E|)-1
+\]
+gives a sharp dominant-matching certificate. If
+\(\mathcal A_\phi<1\), the chosen matching term cannot be canceled by all
+cycle families combined. A useful sufficient version sums simple directed
+cycle weights. Its \(\log 2\) threshold is deliberately presented only as a
+consequence of an exponential majorant, not as a sharp physical threshold.
+
+Third, we avoid the main quantitative defect of a one-minor argument.
+If \(B\) has \(r\) unit columns and \(K=B^*B\), all full-column minors satisfy
+\[
+ \sum_{|Y_0|=r}|\det B_{Y_0}|^2=\det K.
+\]
+Since \(\operatorname{tr}K=r\), the other \(r-1\) eigenvalues can consume only
+the remaining trace. For \(r\ge2\) this yields
+\[
+ \lambda_{\min}(K)
+ \ge
+ c_r\det K,
+ \qquad
+ c_r=\left(\frac{r-1}{r}\right)^{r-1}\ge e^{-1}.
+\]
+while \(c_1=1\). The constant is sharp. Hence a fixed-power lower bound for the aggregate
+determinant mass transfers with zero exponent loss, unlike the
+\(\|T\|^{-2(r-1)}\) conversion attached to one arbitrary minor.
+
+The limitation is equally important. Determinant mass multiplies all
+eigenvalues. It may therefore be exponentially small in the number of rows
+even when the least eigenvalue stays uniformly positive. We exhibit this
+behavior on a path Gram. Failure of the determinant route is consequently not
+a physical spectral obstruction; it is a certified reason to return to the
+direct comparison/forest route of TPC-66 or to open the later signed
+reassembly door.
+
+\subsection*{Claim levels}
+The peeling, alternating-cycle expansion, holonomy count, activity bounds,
+Cauchy--Binet identity, trace conversion, and countermodels are L0. Identifying
+their matrix with the literal fixed-\(h_0\) full-output synthesis and retaining
+all active rows is L1. A polynomial lower bound for the actual determinant
+mass or physical Gram gap would be L2 and is not proved. Reduced cells are not
+substituted for \((\gamma,s,j)\), no random phase or generic filling is used,
+and no property special to \(h_0=2\) enters.

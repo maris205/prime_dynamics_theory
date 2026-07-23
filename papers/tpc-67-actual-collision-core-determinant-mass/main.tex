@@ -1,0 +1,68 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,longtable,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Determinant Mass on the Actual Collision Core at a Fixed Shift},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\per}{\operatorname{per}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\rank}{\operatorname{rank}}
+
+\title{Determinant Mass on the Actual Collision Core\\
+at a Fixed Shift:\\
+Forced Matchings, Alternating Holonomy,\\
+and Cauchy--Binet Lower Frames}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\noindent\textbf{Keywords:} fixed shift; determinant mass; collision core;
+forced matching; alternating cycle; holonomy; Cauchy--Binet; lower frame.\\[0.5em]
+\noindent\textbf{Convention.} Arithmetic specializations use one fixed
+nonzero shift \(h_0\), literal full output coordinates
+\((\gamma,s,j)\), actual nonzero coefficients, all active physical rows, and
+raw counting-measure atomic norms. The shift is not specialized to \(2\).\\[0.5em]
+\noindent\textbf{MSC 2020:} Primary 15A15, 15A18; Secondary 05C50, 11N35.
+
+\input{sections/introduction}
+\input{sections/physical-minor-interface}
+\input{sections/forced-core}
+\input{sections/cycle-activity}
+\input{sections/determinant-mass}
+\input{sections/componentwise}
+\input{sections/countermodels}
+\input{sections/claim-boundary}
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

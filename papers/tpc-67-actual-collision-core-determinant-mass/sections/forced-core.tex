@@ -1,0 +1,288 @@
+\section{Forced peeling and the actual alternating-cycle core}
+\label{sec:tpc67-forced-core}
+
+This section is finite-dimensional.  Let
+\[
+ T=(t_{y,m})_{y\in\mathcal Y_0,\ m\in\mathcal M}
+\]
+be a square matrix, where
+\(|\mathcal Y_0|=|\mathcal M|=r\).  In the arithmetic application \(T\)
+is a full-column minor of the literal physical synthesis matrix: its rows
+are actual full output coordinates and its columns are all active physical
+rows.  None of the arguments below replaces those coefficients by generic
+fillings.
+
+The bipartite support graph \(\mathcal H(T)\) has parts
+\(\mathcal M\) and \(\mathcal Y_0\), with \(m\sim y\) precisely when
+\(t_{y,m}\ne0\).  We use the convention that the determinant of the empty
+matrix is one.
+
+\subsection{Exact two-sided degree-one peeling}
+
+A degree-one vertex on either side of \(\mathcal H(T)\) forces its unique
+incident edge in every nonzero determinant monomial.  Iterating this
+observation gives an exact factorization, not merely a support reduction.
+
+\begin{theorem}[Two-sided forced-peeling factorization]
+\label{thm:tpc67-forced-peeling}
+Choose any iterative procedure with the following rule.  Whenever the
+current bipartite support graph has a degree-one vertex, delete that vertex,
+its unique neighbor, and their incident edge.  Let
+\(\mathcal P_{\mathrm{for}}\) be the ordered set of deleted edges, and let
+\(T_{\mathrm{core}}\) be the square matrix left after the deletions.
+Then there is a sign
+\(\varepsilon_{\mathrm{for}}\in\{-1,1\}\) such that
+\begin{equation}
+ \boxed{
+ \det T
+ =
+ \varepsilon_{\mathrm{for}}
+ \left(\prod_{e\in\mathcal P_{\mathrm{for}}}t_e\right)
+ \det T_{\mathrm{core}}.}
+ \label{eq:tpc67-forced-factorization}
+\end{equation}
+If a zero-degree vertex occurs at any stage, then
+\(\det T=0\).  Otherwise the final core is empty or every one of its
+bipartite vertices has degree at least two.
+\end{theorem}
+
+\begin{proof}
+Suppose first that a column vertex \(m\) has the unique neighbor \(y\).
+Laplace expansion down column \(m\) gives
+\[
+ \det T=(-1)^{\iota(y)+\iota(m)}t_{y,m}
+ \det T_{\widehat y,\widehat m},
+\]
+where the hats mean that the indicated row and column have been removed.
+The same formula follows by expansion across a row when the degree-one
+vertex is on the output side.  Iterating these identities proves
+\eqref{eq:tpc67-forced-factorization}; all Laplace signs are absorbed into
+\(\varepsilon_{\mathrm{for}}\).
+
+A zero row or zero column makes the current determinant zero and hence,
+through the preceding exact expansions, makes \(\det T=0\).  If no such
+vertex occurs, termination without another degree-one vertex leaves either
+the empty matrix or minimum degree at least two on both sides.
+\end{proof}
+
+\begin{remark}[Order and scope]
+\label{rem:tpc67-peeling-order}
+The factorization is valid for every chosen peeling order; no uniqueness of
+the residual core is needed.  If the support admits a perfect matching,
+every peeled edge belongs to every perfect matching of the current graph,
+and the residual support again admits a perfect matching.  If no perfect
+matching remains, its determinant is zero.  Thus order dependence cannot
+turn a singular minor into a certified nonsingular one.
+\end{remark}
+
+\subsection{Normalization by one core matching}
+
+Assume from now on that \(T_{\mathrm{core}}\) is nonempty and that its
+support admits a perfect matching
+\[
+ \phi:V\longrightarrow\mathcal Y_{\mathrm{core}},
+\]
+where \(V\) indexes the core columns.  Reorder the core output rows so that
+row \(i\) is \(\phi(i)\), and put
+\begin{equation}
+ p_i:=t_{\phi(i),i}\ne0,
+ \qquad
+ D_\phi:=\diag(p_i)_{i\in V}.
+ \label{eq:tpc67-matching-pivots}
+\end{equation}
+The matching-normalized matrix is
+\begin{equation}
+ N_\phi
+ :=
+ \bigl(t_{\phi(i),j}\bigr)_{i,j\in V}D_\phi^{-1}
+ =I+E_\phi,
+ \label{eq:tpc67-matching-normalization}
+\end{equation}
+where
+\begin{equation}
+ (E_\phi)_{i,i}=0,
+ \qquad
+ (E_\phi)_{i,j}
+ =
+ \frac{t_{\phi(i),j}}{p_j}
+ \quad(i\ne j).
+ \label{eq:tpc67-normalized-offmatching-entry}
+\end{equation}
+Consequently,
+\begin{equation}
+ |\det T|
+ =
+ \left(\prod_{e\in\mathcal P_{\mathrm{for}}}|t_e|\right)
+ \left(\prod_{i\in V}|p_i|\right)
+ |\det(I+E_\phi)|.
+ \label{eq:tpc67-full-core-normalization}
+\end{equation}
+The ratios in \eqref{eq:tpc67-normalized-offmatching-entry}, rather than the
+unnormalized entry magnitudes alone, are the numerical data that control
+the remaining cancellation.
+
+\subsection{Exact alternating-cycle expansion}
+
+Let \(\mathcal D_\phi\) be the directed graph on \(V\) having the arc
+\(i\to j\) exactly when \(i\ne j\) and
+\((E_\phi)_{i,j}\ne0\).  The arc \(i\to j\) represents the off-matching
+bipartite edge joining row \(\phi(i)\) to column \(j\).  A directed cycle
+\[
+ C=(i_1\to i_2\to\cdots\to i_k\to i_1)
+\]
+therefore lifts to a bipartite cycle alternating, for each \(\nu\), the
+off-matching and matching edges
+\[
+ \phi(i_\nu)\!-\!i_{\nu+1}
+ \qquad\text{and}\qquad
+ \phi(i_\nu)\!-\!i_\nu.
+\]
+Define its normalized complex weight by
+\begin{equation}
+ w_\phi(C)
+ :=
+ \prod_{\nu=1}^{k}(E_\phi)_{i_\nu,i_{\nu+1}},
+ \qquad i_{k+1}:=i_1.
+ \label{eq:tpc67-cycle-weight}
+\end{equation}
+
+Let \(\mathfrak F_\phi\) be the set of all nonempty families
+\(\mathcal F\) of pairwise vertex-disjoint simple directed cycles in
+\(\mathcal D_\phi\), and put
+\[
+ w_\phi(\mathcal F):=\prod_{C\in\mathcal F}w_\phi(C),
+ \qquad
+ |V(\mathcal F)|:=\sum_{C\in\mathcal F}|C|.
+\]
+
+\begin{theorem}[Determinant terms are disjoint alternating-cycle families]
+\label{thm:tpc67-cycle-family-expansion}
+There is a weight-preserving bijection between the nonidentity nonzero
+permutation terms in \(\det(I+E_\phi)\) and the families in
+\(\mathfrak F_\phi\).  Explicitly,
+\begin{equation}
+ \boxed{
+ \det(I+E_\phi)
+ =
+ 1+
+ \sum_{\mathcal F\in\mathfrak F_\phi}
+ (-1)^{|V(\mathcal F)|-|\mathcal F|}
+ w_\phi(\mathcal F).}
+ \label{eq:tpc67-exact-cycle-family-expansion}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Expand the determinant over permutations of \(V\).  Because the diagonal
+of \(E_\phi\) is zero, every fixed point of a permutation contributes the
+diagonal entry one, while every moved vertex \(i\) contributes the arc
+\(i\to\sigma(i)\).  The restriction of a permutation to its moved vertices
+is uniquely a family of pairwise vertex-disjoint cycles of length at least
+two.  Conversely, such a family, extended by the identity off its vertices,
+is a unique permutation with a nonzero term.
+
+A cycle of length \(k\) has permutation sign \((-1)^{k-1}\).
+Multiplication over the cycles gives the sign
+\[
+ (-1)^{\sum_{C\in\mathcal F}(|C|-1)}
+ =
+ (-1)^{|V(\mathcal F)|-|\mathcal F|},
+\]
+and its matrix-entry product is \(w_\phi(\mathcal F)\).  This proves both
+the bijection and \eqref{eq:tpc67-exact-cycle-family-expansion}.
+\end{proof}
+
+\begin{corollary}[Acyclic normalized core]
+\label{cor:tpc67-acyclic-core}
+If \(\mathcal D_\phi\) has no directed cycle, then
+\[
+ \det(I+E_\phi)=1
+\]
+and the chosen matching is the only perfect matching of the core support.
+In particular, all possible determinant cancellation is confined to the
+directed alternating-cycle families.
+\end{corollary}
+
+\begin{proof}
+The sum in \eqref{eq:tpc67-exact-cycle-family-expansion} is empty.  The same
+permutation--cycle correspondence shows that a second perfect matching
+would produce a nonempty directed cycle family.
+\end{proof}
+
+\subsection{Diagonal similarity and the holonomy dimension}
+
+For a diagonal unitary matrix
+\[
+ S=\diag(e^{i\theta_i})_{i\in V},
+\]
+the transformation
+\begin{equation}
+ I+E_\phi
+ \longmapsto
+ S^{-1}(I+E_\phi)S
+ =
+ I+S^{-1}E_\phi S
+ \label{eq:tpc67-diagonal-similarity}
+\end{equation}
+preserves the determinant and every entry magnitude.  It changes an arc
+phase by
+\[
+ \arg(E_{i,j})\longmapsto
+ \arg(E_{i,j})-\theta_i+\theta_j,
+\]
+while every directed-cycle product
+\eqref{eq:tpc67-cycle-weight} is unchanged.
+
+Write
+\[
+ \mathcal E_{\mathrm{off}}
+ :=
+ \{(i,j):i\ne j,\ (E_\phi)_{i,j}\ne0\},
+ \qquad q_\phi:=|\mathcal E_{\mathrm{off}}|,
+\]
+and let \(c_\phi\) be the number of weakly connected components of
+\(\mathcal D_\phi\), isolated vertices included.
+
+\begin{proposition}[Gauge reduction to chord phases]
+\label{prop:tpc67-holonomy-dimension}
+There is a diagonal unitary similarity for which the weights on a spanning
+forest of the underlying weak graph are positive real.  Hence, after entry
+magnitudes are fixed, at most
+\begin{equation}
+ \boxed{
+ q_\phi-|V|+c_\phi}
+ \label{eq:tpc67-holonomy-count}
+\end{equation}
+arc phases remain.  All phase dependence of the determinant factors through
+these residual chord phases, and every directed alternating-cycle weight is
+a gauge-invariant holonomy.
+\end{proposition}
+
+\begin{proof}
+Choose one root in each weak component and a spanning forest containing
+\(|V|-c_\phi\) directed arcs after their orientations are forgotten.
+Starting at the roots, choose the vertex phases recursively so that the
+selected arc joining each new vertex to the preceding tree is positive
+real.  A forest imposes no inconsistent phase equation.  The selected
+\(|V|-c_\phi\) phases have thereby been removed from the
+\(q_\phi\) off-diagonal phases, leaving at most
+\(q_\phi-|V|+c_\phi\).  Diagonal similarity preserves the determinant, and
+the vertex phases telescope around every directed cycle, proving the last
+assertion.
+\end{proof}
+
+\begin{remark}[L0 status and nonduplication with TPC--66]
+\label{rem:tpc67-forced-core-L0}
+The peeling factorization, matching normalization, exact cycle-family
+expansion, and gauge count are L0 matrix theorems.  TPC--66 proved a
+support-rank hierarchy, an exact formula on forest Gram graphs, and a
+single uniform-cycle obstruction \citep{WangTPC66}.  The present result
+does not repeat those statements: it factors an arbitrary square minor down
+to its nonpeelable matching core and describes \emph{all} of that core's
+determinant monomials by disjoint alternating-cycle families.
+
+An L1 application must use an actual full-output minor, all active physical
+rows, its literal nonzero pivots, and its literal coefficient ratios.
+Nothing here proves that such a minor exists, that its forced-pivot product
+is polynomially large, or that its residual holonomies are favorable.
+\end{remark}
