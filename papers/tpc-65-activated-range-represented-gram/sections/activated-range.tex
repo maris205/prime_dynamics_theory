@@ -1,0 +1,122 @@
+\section{The literal activated range}
+
+Fix a scale \(X\), a nonzero shift \(h_0\), and every external choice before
+the coefficient vector. Let
+\[
+ Z_X=\mathbb C^{\mathcal M_X},\qquad
+ z=(z_m)_{m\in\mathcal M_X},
+\]
+be the physical row space. The terminal construction of
+\citet{WangTPC64} gives a finite Hilbert space
+\[
+ \mathcal H_X^{\rm term}
+ =\bigoplus_{k\in K_X}^{\perp}
+   \ell^2(\mathcal U^+_{X,h_0,k})
+\]
+and one literal analysis map
+\[
+ L_X:Z_X\longrightarrow\mathcal H_X^{\rm term}.
+\]
+Its columns are
+\[
+ f_m=L_Xe_m,\qquad T_m=\|f_m\|^2.
+\]
+Different physical rows populate disjoint labelled terminal coordinates at
+this stage, so
+\begin{equation}\label{eq:terminal-diagonal}
+ T_X:=L_X^*L_X=\operatorname{diag}(T_m),\qquad
+ \Tform_X(z)=\|L_Xz\|^2=\sum_mT_m|z_m|^2.
+\end{equation}
+The \emph{activated range} is
+\[
+ Y_X:=\Ran L_X\subseteq\mathcal H_X^{\rm term}.
+\]
+It is this range, not the free ambient terminal space, that enters every
+represented-reference assertion below.
+
+TPC-64 supplies two compatible parent forms. Write
+\[
+ R_{X,\mathrm{hyp}}=\operatorname{diag}(P_m),\qquad
+ R_{X,\mathrm{rep}}=\operatorname{diag}(\widetilde P_m),
+\]
+for the literal-hypergraph and canonical-repair forms. Thus
+\[
+ \mathcal P_{X,\nu}(z)=\langle R_{X,\nu}z,z\rangle,
+ \qquad \nu\in\{\mathrm{hyp},\mathrm{rep}\}.
+\]
+When the finite inflation constant \(\mathfrak I_X\) is available,
+\begin{equation}\label{eq:parent-order}
+ R_{X,\mathrm{hyp}}\preceq R_{X,\mathrm{rep}}
+ \preceq \mathfrak I_XR_{X,\mathrm{hyp}}.
+\end{equation}
+
+\begin{definition}[Descending map]
+A row-space map \(F_X:Z_X\to H_X\) \emph{descends through terminalization} if
+there is a linear map \(A_X:Y_X\to H_X\) such that
+\[
+ F_X=A_XL_X.
+\]
+Equivalently, \(\Ker L_X\subseteq\Ker F_X\).
+\end{definition}
+
+\begin{lemma}[Exact quotient/range criterion]\label{lem:descent}
+A linear map \(F_X:Z_X\to H_X\) descends through \(L_X\) if and only if
+\(\Ker L_X\subseteq\Ker F_X\). When it descends, the induced map on \(Y_X\)
+is unique.
+\end{lemma}
+
+\begin{proof}
+Necessity is immediate. Conversely, define \(A_X(L_Xz)=F_Xz\). If
+\(L_Xz=L_Xz'\), then \(z-z'\in\Ker L_X\), so \(F_Xz=F_Xz'\). The definition
+is well posed, linear, and unique because \(L_XZ_X=Y_X\).
+\end{proof}
+
+The distinction is essential. A map acting before terminalization may read
+repair-only parent coordinates which terminalize to zero. Such a map need not
+descend, and neither the activated-range Gram nor the repair invariance proved
+later applies to it.
+
+\subsection{Activation kernels and transported parent metrics}
+Let
+\[
+ S_T=(\Ker T_X)^\perp
+     =\operatorname{span}\{e_m:T_m>0\}.
+\]
+The restriction \(L_X|_{S_T}:S_T\to Y_X\) is an isomorphism. If, for a parent
+form \(R_{X,\nu}\),
+\begin{equation}\label{eq:kernel-equality}
+ \Ker R_{X,\nu}=\Ker T_X,
+\end{equation}
+then the parent metric transports to \(Y_X\) by
+\[
+ \widehat R_{X,\nu}
+ =(L_X|_{S_T}^{-1})^*R_{X,\nu}|_{S_T}(L_X|_{S_T}^{-1}).
+\]
+In the normalized row basis \(u_m=f_m/\sqrt{T_m}\), this metric is diagonal:
+\begin{equation}\label{eq:transported-parent}
+ [\widehat R_{X,\nu}]_{u_m}
+ =\operatorname{diag}\left(
+ \frac{R_{X,\nu}(m,m)}{T_m}\right)_{T_m>0}.
+\end{equation}
+This is a transported \emph{parent} metric, not the represented Gram.
+
+\begin{proposition}[Mandatory activation kill]\label{prop:activation-kill}
+If there is \(z\in\Ker L_X\) with
+\(\langle R_{X,\nu}z,z\rangle>0\), then for every downstream map \(A_X\)
+defined on \(Y_X\),
+\[
+ \inf_{\mathcal P_{X,\nu}(w)>0}
+ \frac{\|A_XL_Xw\|^2}{\mathcal P_{X,\nu}(w)}=0.
+\]
+For the diagonal forms this occurs exactly when some row has
+\(R_{X,\nu}(m,m)>0=T_m\).
+\end{proposition}
+
+\begin{proof}
+Use \(w=z\). The numerator vanishes and the denominator is positive. The
+diagonal characterization follows from \eqref{eq:terminal-diagonal}.
+\end{proof}
+
+Thus the kernel equality \eqref{eq:kernel-equality} is not cosmetic. Failure
+of the reverse inclusion is an activation-layer obstruction that no later
+represented operator can repair.

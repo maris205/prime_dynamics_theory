@@ -1,0 +1,112 @@
+\section{Labelled kernel fusion and coherent label erasure}
+
+The external multiscale label \(k\) is retained orthogonally in the literal
+terminal carrier. Assume \(Y_X\ne\{0\}\). This creates two distinct represented
+maps which must not be conflated.
+
+Let \(F_{X,k}:Z_X\to H_{X,k}\) be the represented map from block \(k\).
+Assume throughout this section that
+\begin{equation}\label{eq:block-descent}
+ \Ker T_X=\Ker L_X\subseteq\Ker F_{X,k}
+ \qquad(k\in K_X),
+\end{equation}
+so every block descends through the activated quotient. Define the labelled
+direct sum
+\[
+ F_X^{\rm lab}z=\bigoplus_{k\in K_X}F_{X,k}z.
+\]
+Put
+\[
+ G_{X,k}=F_{X,k}^*F_{X,k},\qquad
+ K_{X,k}=T_{X,S}^{-1/2}G_{X,k,S}T_{X,S}^{-1/2}.
+\]
+Its exact labelled lower constant is
+\begin{equation}\label{eq:labeled-beta-definition}
+ \beta_X^{\rm lab}
+ :=\inf_{\Tform_X(z)>0}
+ \frac{\sum_k\|F_{X,k}z\|^2}{\Tform_X(z)}.
+\end{equation}
+
+\begin{theorem}[Multiblock kernel fusion]\label{thm:kernel-fusion}
+The labelled normalized Gram and its lower constant are
+\begin{equation}\label{eq:labeled-sum}
+ K_X^{\rm lab}=\sum_kK_{X,k},\qquad
+ \beta_X^{\rm lab}=\lambda_{\min}\left(\sum_kK_{X,k}\right).
+\end{equation}
+In particular,
+\begin{equation}\label{eq:kernel-intersection}
+ \beta_X^{\rm lab}>0
+ \quad\Longleftrightarrow\quad
+ \bigcap_k\Ker K_{X,k}=\{0\}
+ \quad\text{on }S_T.
+\end{equation}
+For each nonzero \(K_{X,k}\), let \(P_k\) be its support projection and
+\(\eta_k=\lambda_{\min}^+(K_{X,k})\). Then
+\begin{equation}\label{eq:support-projection-bound}
+ \boxed{\quad
+ \beta_X^{\rm lab}
+ \ge\lambda_{\min}\left(\sum_k\eta_kP_k\right).
+ \quad}
+\end{equation}
+Thus individually singular blocks can produce a positive labelled Gram when
+their blind subspaces are complementary.
+\end{theorem}
+
+\begin{proof}
+Orthogonality of the output labels gives
+\((F_X^{\rm lab})^*F_X^{\rm lab}=\sum_kG_{X,k}\), proving
+\eqref{eq:labeled-sum}. For positive semidefinite matrices,
+\(\Ker(\sum_kK_{X,k})=\cap_k\Ker K_{X,k}\), which proves
+\eqref{eq:kernel-intersection}. The spectral theorem gives
+\(K_{X,k}\succeq\eta_kP_k\); summing and taking the smallest eigenvalue gives
+\eqref{eq:support-projection-bound}.
+\end{proof}
+
+\subsection{The physical coherent map}
+Let \(U_k:H_{X,k}\to H_X^{\rm phys}\) be the maps that erase labels or place
+block outputs in one physical codomain. The coherent represented map is
+\[
+ F_X^{\rm coh}z=\sum_kU_kF_{X,k}z.
+\]
+Its full Gram is
+\begin{equation}\label{eq:coherent-full-gram}
+ G_X^{\rm coh}
+ =\sum_{k,\ell}F_{X,k}^*U_k^*U_\ell F_{X,\ell}.
+\end{equation}
+The cross terms in \eqref{eq:coherent-full-gram} are physical. They cannot be
+discarded merely because the input construction once carried orthogonal
+labels.
+Define the coherent lower constant by
+\begin{equation}\label{eq:coherent-beta-definition}
+ \beta_X^{\rm coh}
+ :=\inf_{\Tform_X(z)>0}
+ \frac{\|F_X^{\rm coh}z\|^2}{\Tform_X(z)}.
+\end{equation}
+
+\begin{proposition}[Fusion-angle transfer]\label{prop:fusion-angle}
+Assume that for every family \(v_k\in F_{X,k}(Z_X)\),
+\begin{equation}\label{eq:fusion-angle}
+ \left\|\sum_kU_kv_k\right\|^2
+ \ge\theta_X\sum_k\|v_k\|^2
+\end{equation}
+with \(\theta_X\ge0\). Then
+\[
+ \beta_X^{\rm coh}\ge\theta_X\beta_X^{\rm lab}.
+\]
+This implication is sharp already in one dimension.
+\end{proposition}
+
+\begin{proof}
+Apply \eqref{eq:fusion-angle} to \(v_k=F_{X,k}z\), then use the definition of
+\(\beta_X^{\rm lab}\). Equality is attained when both inequalities are
+equalities on the same vector. For an explicit equality model take one block
+with \(T=I\), \(F=I\), and \(U=\sqrt{\theta_X}I\).
+\end{proof}
+
+No positive \(\theta_X\) follows from the individual block lower bounds. For
+\(F_1=F_2=I\), \(U_1=I\), and \(U_2=-I\), each block is an isometry while
+\(F^{\rm coh}=0\). The labelled theorem is therefore a genuine positive
+mechanism, but the physical unlabelled route additionally requires a
+fusion-angle or cross-Gram estimate. Identifying the literal fixed-shift map
+and its active support is L1; proving an endpoint-quality physical estimate is
+an L2 arithmetic task. Neither follows from multiscale bookkeeping.

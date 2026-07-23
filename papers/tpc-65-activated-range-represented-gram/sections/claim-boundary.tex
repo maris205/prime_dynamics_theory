@@ -1,0 +1,68 @@
+\section{Fixed-shift dictionary, conclusions, and next gate}
+
+\subsection{What is now exact}
+On the literal TPC-64 terminal carrier, the following statements are proved
+without asymptotics:
+\begin{enumerate}[label=(\arabic*)]
+\item the represented reference is the actual activated range \(Y_X\), not a
+free ambient atom space;
+\item a genuinely descending represented map is governed by the normalized
+row Gram \eqref{eq:normalized-row-gram}, with exact kernel and dimension tests;
+\item every Gram entry is the literal residual-fiber correlation
+\eqref{eq:literal-gram};
+\item terminal-faithful repair leaves downstream Grams unchanged when both
+descriptions use the same factorization through the common terminal map; it
+changes direct parent constants only through the parent metric;
+\item labelled blocks can fuse complementary kernels according to
+\eqref{eq:kernel-intersection}, while coherent label erasure requires a
+separate fusion-angle estimate;
+\item spectral capacity has a sharp projection law, but row capacity cannot be
+transported to it without a reducing or basis-transport theorem;
+\item activation, representation, and reassembly multiply compatibly on the
+same vector, with each loss charged once.
+\end{enumerate}
+
+The prime-resolved construction of \citet{WangTPC55} gives a conditional
+benchmark. Under its hypotheses \(h_0\ne0\), \(D=o(J)\), uniqueness of the
+declared row labels, and sufficiently large \(X\), the refined key
+\((\gamma,d(m)r,j,p)\) is injective on one declared source system. If this full
+key and the external block label are retained, the represented map is a
+coordinate relabelling and hence an isometry on its populated range. In that
+labelled benchmark \(\beta_X^{\rm lab}=1\). This does not prove anything about
+the physical map that forgets \(p\), erases other labels, or coherently
+reassembles blocks: all unresolved cancellation is localized to those later
+arrows.
+
+\subsection{What remains unproved}
+This paper does not establish:
+\begin{itemize}
+\item a favorable lower bound for the actual terminal activation ratio
+\(\tau_{X,\nu}\);
+\item injectivity, let alone a polynomial smallest singular value, for the
+physical unlabelled represented map;
+\item a positive physical fusion angle \(\theta_X\);
+\item a reassembly or downstream lower bound with the literal arithmetic
+coefficients;
+\item a statement specialized to \(h_0=2\), a parity-breaking estimate, or a
+twin-prime conclusion.
+\end{itemize}
+
+All exact matrix results are L0. The fixed-\(h_0\) identification is L1 only
+because it preserves the literal carrier, coefficients, and support. An L2
+arithmetic advance begins only when one controls the actual matrix
+\(b_{y,m}\) uniformly or on a declared physical cone.
+
+\subsection{The next smallest gate}
+The row formula identifies the next paper's target. For each active row \(m\),
+one must determine
+\begin{enumerate}[label=(\roman*)]
+\item the number and weight of actually exposed output fibers \(y\);
+\item the physical collision degree between the supports of
+\(b_{\cdot,m}\) and \(b_{\cdot,n}\);
+\item whether the diagonal energy dominates the accumulated off-diagonal
+correlations on the same fixed-shift carrier.
+\end{enumerate}
+Support degree alone cannot prove cancellation, but it can turn a subsequent
+pair-correlation estimate into a Gram bound. This is the route pursued next:
+actual exposure and collision geometry first, signed cancellation only after
+the literal neighbor graph is known.

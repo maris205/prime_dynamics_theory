@@ -1,0 +1,107 @@
+\section{Compatible transfer and the one-charge ledger}
+
+We now place activation, representation, and coherent reassembly on one
+carrier. Fix a nonzero parent form \(R_{X,\nu}\), the common terminal map
+\(L_X\) with \(Y_X\ne\{0\}\), a nonzero
+represented map \(A_X:Y_X\to H_X\), and a missing/reassembly map
+\(M_X:Y_X\to H_X\). Set
+\[
+ B_X=A_X+M_X.
+\]
+All maps and supports are fixed before \(z\).
+
+Define the exact stage constants
+\begin{align}
+ \tau_{X,\nu}
+ &:=\inf_{\mathcal P_{X,\nu}(z)>0}
+       \frac{\|L_Xz\|^2}{\mathcal P_{X,\nu}(z)},
+ \label{eq:tau-stage}\\
+ \beta_X
+ &:=\inf_{0\ne y\in Y_X}\frac{\|A_Xy\|^2}{\|y\|^2},
+ \label{eq:beta-stage}\\
+ \delta_X
+ &:=\inf_{A_Xy\ne0}
+       \frac{\|B_Xy\|^2}{\|A_Xy\|^2}.
+ \label{eq:delta-stage}
+\end{align}
+The direct parent-to-final constant is
+\begin{equation}\label{eq:direct-gamma}
+ \Gamma_{X,\nu}
+ :=\inf_{\mathcal P_{X,\nu}(z)>0}
+ \frac{\|B_XL_Xz\|^2}{\mathcal P_{X,\nu}(z)}.
+\end{equation}
+The next product is the TPC-62 three-module mechanism specialized to the
+common activated carrier; its role here is compatibility and loss provenance,
+not a new abstract multiplication theorem.
+
+\begin{theorem}[Compatible three-stage certificate]\label{thm:three-stage}
+If \(\tau_{X,\nu},\beta_X,\delta_X\) are defined on the common carrier above,
+then
+\begin{equation}\label{eq:stage-product}
+ \boxed{\quad
+ \Gamma_{X,\nu}\ge\tau_{X,\nu}\beta_X\delta_X.
+ \quad}
+\end{equation}
+The product can be sharp, but it need not equal the direct constant and can be
+arbitrarily smaller.
+\end{theorem}
+
+\begin{proof}
+If \(\mathcal P_{X,\nu}(z)>0\) and \(L_Xz=0\), then
+\(\tau_{X,\nu}=0\) and the claim is trivial. Otherwise apply the three
+definitions successively to the same vector \(z\), \(L_Xz\), and \(A_XL_Xz\).
+If the latter vanishes, then either \(\beta_X=0\), or the ratio in
+\eqref{eq:delta-stage} is outside its nonzero reference set; the displayed
+bound again reduces to zero. Taking the infimum proves
+\eqref{eq:stage-product}. One-dimensional scalar maps give equality.
+\end{proof}
+
+The exact reassembly constant \(\delta_X\) is the TPC-62 shorted generalized
+eigenvalue relative to \(A_X^*A_X\). Its specialization to the current carrier
+is recorded for compatibility; it is not a new proof of the master short.
+
+\begin{proposition}[Shorting-collapse dichotomy]\label{prop:short-collapse}
+If \(\beta_X>0\), then \(A_X\) is injective on \(Y_X\), so the null space in
+the reassembly short is zero. Consequently
+\begin{equation}\label{eq:ordinary-reassembly-gram}
+ \delta_X=\lambda_{\min}\!\left[
+ (A_X^*A_X)^{-1/2}B_X^*B_X(A_X^*A_X)^{-1/2}
+ \right].
+\end{equation}
+If the short is genuinely nontrivial, then the uniform staged represented
+gate has already failed, although the direct final constant may still be
+positive.
+\end{proposition}
+
+\begin{proof}
+By \cref{thm:row-gram}, \(\beta_X>0\) is equivalent to
+\(\Ker A_X=\{0\}\) on \(Y_X\). The nuisance image used in the short is then
+zero, so the projected Gram reduces to \eqref{eq:ordinary-reassembly-gram}.
+Conversely a nonzero nuisance null space implies \(\beta_X=0\). Direct
+positivity is logically independent: for example, on \(\mathbb C^2\), take
+\(A(x_1,x_2)=(x_1,0)\), \(M(x_1,x_2)=(0,x_2)\); then \(A+M=I\).
+\end{proof}
+
+\subsection{Exponent bookkeeping}
+Suppose, with uniform remainders on the same scope,
+\[
+ \tau_{X,\nu}\ge X^{-\lambda_{\rm act}+o(1)},\qquad
+ \beta_X\ge X^{-\lambda_{\rm rep}+o(1)},\qquad
+ \delta_X\ge X^{-\lambda_{\rm reasm}+o(1)}.
+\]
+Then
+\begin{equation}\label{eq:exponent-ledger}
+ \Gamma_{X,\nu}
+ \ge X^{-(\lambda_{\rm act}+\lambda_{\rm rep}
+                 +\lambda_{\rm reasm})+o(1)}.
+\end{equation}
+Parent inflation belongs entirely to \(\lambda_{\rm act}\). The represented
+Gram is normalized by terminal energy and the reassembly Gram by represented
+energy, so charging the same repair inflation in either later arrow would be a
+double count. A downstream arithmetic endpoint still requires the complete
+loss sum to be \emph{strictly} below its budget; equality at \(1/400\) is not a
+certificate.
+
+Nothing in this paper proves any of the three displayed polynomial bounds for
+the physical unlabelled fixed-shift map. Formula \eqref{eq:exponent-ledger} is
+a compatibility theorem, not a claimed endpoint estimate.

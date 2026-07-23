@@ -1,0 +1,302 @@
+\section{Spectral capacity after exact nuisance elimination}
+\label{sec:tpc65-spectral-capacity}
+
+The general shorted-Gram formula and its kernel criterion belong to the
+closure calculus developed in TPC-62; we do not reprove them here.  We begin
+after exact nuisance elimination has produced a positive semidefinite
+effective Gram \(Q\) on the reference-visible space \(S\), together with a
+positive definite reference Gram \(R_{\mathrm{ref},S}\).  In normalized
+coordinates,
+\begin{equation}
+  K_{\mathrm{eff}}
+  :=
+  R_{\mathrm{ref},S}^{-1/2}
+  Q
+  R_{\mathrm{ref},S}^{-1/2}
+  \ge 0,
+  \qquad
+  x:=R_{\mathrm{ref},S}^{1/2}s,
+  \label{eq:tpc65-effective-gram}
+\end{equation}
+the exact short implies that every represented/reference quotient with
+visible coordinate \(s\) is bounded below by
+\begin{equation}
+  \frac{\langle K_{\mathrm{eff}}x,x\rangle}{\|x\|^2}.
+  \label{eq:tpc65-effective-rayleigh}
+\end{equation}
+Thus the remaining question is finite-dimensional: when do structural
+capacity constraints force a vector to place a definite fraction of its
+energy in a spectrally good part of a fixed positive semidefinite Gram?
+
+\subsection{Reducing blocks and structural spectral capacity}
+
+\begin{definition}[Spectral-capacity data]
+\label{def:tpc65-spectral-capacity}
+Let \(\mathcal S\) be a finite-dimensional Hilbert space, let
+\(K\colon\mathcal S\to\mathcal S\) be positive semidefinite, and fix an
+orthogonal \(K\)-reducing decomposition over a finite index set
+\(\mathcal J\), with every \(\mathcal S_j\ne\{0\}\):
+\begin{equation}
+  \mathcal S=\bigoplus_{j\in\mathcal J}\mathcal S_j,
+  \qquad
+  KP_j=P_jK,
+  \label{eq:tpc65-reducing-decomposition}
+\end{equation}
+where \(P_j\) is the orthogonal projection onto \(\mathcal S_j\).
+Assign a structural capacity weight \(w_j>0\) to each block and put
+\[
+  0<W:=\sum_{j\in\mathcal J}w_j<\infty.
+\]
+These weights are declared energy budgets; they need not equal block
+dimensions, ranks, traces, or spectral multiplicities.
+
+For a threshold \(\eta>0\), define
+\begin{equation}
+  \mathcal G_\eta
+  :=
+  \left\{
+    j\in\mathcal J:
+    K|_{\mathcal S_j}\ge \eta I_{\mathcal S_j}
+  \right\},
+  \qquad
+  \delta_\eta
+  :=
+  \frac{\sum_{j\in\mathcal G_\eta}w_j}{W}.
+  \label{eq:tpc65-good-blocks}
+\end{equation}
+Given \(C>0\) and \(0<\kappa\le 1\), a nonzero vector
+\(x\in\mathcal S\) belongs to the corresponding spectral-capacity class if
+\begin{equation}
+  \|P_jx\|^2\le C^2w_j
+  \quad (j\in\mathcal J),
+  \qquad
+  \|x\|^2\ge \kappa C^2W.
+  \label{eq:tpc65-capacity-class}
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Sharp spectral-capacity lower bound]
+\label{thm:tpc65-sharp-spectral-capacity}
+For the data of \cref{def:tpc65-spectral-capacity}, every vector satisfying
+\eqref{eq:tpc65-capacity-class} obeys
+\begin{equation}
+  \boxed{
+  \frac{\langle Kx,x\rangle}{\|x\|^2}
+  \ge
+  \eta
+  \left(
+    1-\frac{1-\delta_\eta}{\kappa}
+  \right)_+ ,
+  }
+  \qquad
+  t_+:=\max\{t,0\}.
+  \label{eq:tpc65-capacity-bound}
+\end{equation}
+In particular, the right-hand side is positive precisely when
+\begin{equation}
+  \kappa>1-\delta_\eta.
+  \label{eq:tpc65-positive-threshold}
+\end{equation}
+The coefficient in \eqref{eq:tpc65-capacity-bound} is optimal if one knows
+only \(\eta\), \(\delta_\eta\), \(\kappa\), the block caps, and the total
+occupancy condition.
+\end{theorem}
+
+\begin{proof}
+Orthogonality and the block caps give
+\begin{equation}
+  \sum_{j\notin\mathcal G_\eta}\|P_jx\|^2
+  \le
+  C^2\sum_{j\notin\mathcal G_\eta}w_j
+  =
+  C^2(1-\delta_\eta)W.
+  \label{eq:tpc65-bad-energy-cap}
+\end{equation}
+Dividing this estimate by
+\(\|x\|^2\ge\kappa C^2W\) shows that the fraction of the energy in the good
+blocks is at least
+\[
+  \frac{\sum_{j\in\mathcal G_\eta}\|P_jx\|^2}{\|x\|^2}
+  \ge
+  \left(
+    1-\frac{1-\delta_\eta}{\kappa}
+  \right)_+.
+\]
+Because the decomposition is \(K\)-reducing, there are no cross terms between
+distinct blocks.  Positivity of \(K\) on the remaining blocks and the
+definition of \(\mathcal G_\eta\) therefore yield
+\[
+  \langle Kx,x\rangle
+  =
+  \sum_{j\in\mathcal J}
+  \langle KP_jx,P_jx\rangle
+  \ge
+  \eta
+  \sum_{j\in\mathcal G_\eta}\|P_jx\|^2.
+\]
+This proves \eqref{eq:tpc65-capacity-bound}, and
+\eqref{eq:tpc65-positive-threshold} follows immediately.
+
+It remains to prove optimality.  Normalize \(C=W=1\).  First suppose
+\(0<\delta_\eta<1\), and take two one-dimensional reducing blocks with
+weights
+\[
+  w_{\mathrm g}=\delta_\eta,
+  \qquad
+  w_{\mathrm b}=1-\delta_\eta,
+\]
+on which \(K\) acts by \(\eta\) and \(0\), respectively.  If
+\(\kappa\le 1-\delta_\eta\), choose
+\[
+  \|x_{\mathrm g}\|^2=0,
+  \qquad
+  \|x_{\mathrm b}\|^2=\kappa.
+\]
+All caps hold, the total energy is \(\kappa\), and the Rayleigh quotient is
+zero.  If \(\kappa>1-\delta_\eta\), choose instead
+\[
+  \|x_{\mathrm b}\|^2=1-\delta_\eta,
+  \qquad
+  \|x_{\mathrm g}\|^2=\kappa-1+\delta_\eta.
+\]
+The good-block cap holds because \(\kappa\le1\), and the resulting quotient is
+\[
+  \eta\,
+  \frac{\kappa-1+\delta_\eta}{\kappa}
+  =
+  \eta
+  \left(
+    1-\frac{1-\delta_\eta}{\kappa}
+  \right).
+\]
+For the endpoint \(\delta_\eta=0\), a single bad block with energy
+\(\kappa\) gives quotient zero.  For \(\delta_\eta=1\), a single good block
+on which \(K=\eta I\), again with energy \(\kappa\), gives quotient \(\eta\).
+Thus equality is attained in every parameter regime.
+\end{proof}
+
+\begin{remark}[Actual occupancy]
+\label{rem:tpc65-actual-occupancy}
+For a fixed capped vector \(x\ne0\) and a fixed cap scale \(C\), the actual
+occupancy is
+\begin{equation}
+  \kappa(x;C)
+  :=
+  \frac{\|x\|^2}{C^2W}
+  \in(0,1].
+  \label{eq:tpc65-actual-occupancy}
+\end{equation}
+Applying \cref{thm:tpc65-sharp-spectral-capacity} with this value, rather than
+with a weaker a priori lower bound, gives
+\[
+  \frac{\langle Kx,x\rangle}{\|x\|^2}
+  \ge
+  \eta
+  \left(
+    1-\frac{1-\delta_\eta}{\kappa(x;C)}
+  \right)_+.
+\]
+Combining this estimate with \eqref{eq:tpc65-effective-rayleigh} gives the
+exact capacity consequence for the original quotient.  It applies once the
+normalized effective Gram and a valid reducing capacity ledger have both been
+identified.
+\end{remark}
+
+\subsection{Why physical row capacity does not transfer}
+
+The reducing qualification in \cref{def:tpc65-spectral-capacity} is
+indispensable.  Diagonal information in a physical row basis does not control
+coherent off-diagonal cancellation.
+
+\begin{proposition}[Sharp row-capacity non-transfer]
+\label{prop:tpc65-row-capacity-nontransfer}
+There is a positive semidefinite Gram for which every physical coordinate row
+has unit diagonal gain and a vector has maximal row-capacity occupancy, while
+the represented energy of that vector is zero.  Consequently, physical
+row-capacity data alone imply no positive spectral-capacity lower bound.
+\end{proposition}
+
+\begin{proof}
+Let
+\begin{equation}
+  \mathcal S=\mathbb C^2,
+  \qquad
+  A=\begin{pmatrix}1&-1\end{pmatrix},
+  \qquad
+  K=A^*A
+  =
+  \begin{pmatrix}
+    1&-1\\
+    -1&1
+  \end{pmatrix}.
+  \label{eq:tpc65-collision-gram}
+\end{equation}
+For the physical coordinate vectors \(e_1,e_2\),
+\[
+  \langle Ke_1,e_1\rangle
+  =
+  \langle Ke_2,e_2\rangle
+  =1.
+\]
+Hence a ledger that treats the two physical coordinate rows as independent
+good blocks at threshold \(\eta=1\) would record
+\(\delta_{\mathrm{row}}=1\).  Give the rows weights
+\(w_1=w_2=1\), take \(C=1\), and set
+\[
+  x=\begin{pmatrix}1\\1\end{pmatrix}.
+\]
+Both row caps are saturated, and the row occupancy is maximal:
+\[
+  \kappa_{\mathrm{row}}
+  =
+  \frac{\|x\|^2}{C^2(w_1+w_2)}
+  =1.
+\]
+Nevertheless,
+\[
+  Ax=0,
+  \qquad
+  \langle Kx,x\rangle=0.
+\]
+The invalid scalar substitution
+\((\eta,\delta,\kappa)=(1,1,1)\) into
+\eqref{eq:tpc65-capacity-bound} would predict the lower bound \(1\), whereas
+the true Rayleigh quotient is \(0\).
+
+The spectral resolution explains the failure.  The eigenvalues of \(K\) are
+\(0\) and \(2\), and its kernel is the coherent direction
+\(\operatorname{span}\{(1,1)\}\).  The physical coordinate decomposition
+\(\mathbb Ce_1\oplus\mathbb Ce_2\) does not reduce \(K\), so it is not an
+admissible decomposition in \cref{def:tpc65-spectral-capacity}.  The
+off-diagonal terms cancel two individually favorable diagonal gains. Both
+diagonal gains and the occupancy saturate the chosen unit normalization, so no
+strengthening based only on those scalar row data can repair the conclusion.
+\end{proof}
+
+\begin{remark}[Valid recovery routes]
+\label{rem:tpc65-valid-recovery}
+A physical row-capacity certificate can be transferred to
+\cref{thm:tpc65-sharp-spectral-capacity} only after an additional structural
+statement is proved.  Sufficient routes include:
+\begin{enumerate}
+  \item the physical one-row decomposition itself reduces \(K\) (equivalently,
+  the relevant Gram is diagonal), or an explicitly declared row grouping gives
+  a reducing block-diagonal decomposition;
+  \item a quantitative basis-transport or coherence estimate converts the
+  physical row caps into caps for a declared \(K\)-reducing decomposition; or
+  \item the argument is formulated directly with the spectral projectors of
+  the exact effective Gram.
+\end{enumerate}
+Without one of these bridges, no favorable capacity conclusion is asserted.
+\end{remark}
+
+\subsection{Claim boundary}
+
+\Cref{thm:tpc65-sharp-spectral-capacity} and
+\cref{prop:tpc65-row-capacity-nontransfer} are finite-dimensional L0
+statements.  The operator \(K\), its reducing blocks, the weights, and the
+capacity caps are declared data.  This section does not prove that a physical
+TPC represented Gram has a favorable value of \(\delta_\eta\), a favorable
+occupancy \(\kappa\), or a positive smallest eigenvalue.  It makes no L1
+arithmetic identification, does not specialize to the fixed shift \(h_0=2\),
+and yields no parity-breaking, prime-pair, or twin-prime conclusion.

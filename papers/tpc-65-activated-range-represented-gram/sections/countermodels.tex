@@ -1,0 +1,79 @@
+\section{Sharp countermodels}
+
+The following finite-dimensional models mark the exact limits of the preceding
+theorems. Some specialize diagnostics already present in TPC-62 to the
+activated carrier; they are included to close the quantifier audit, not claimed
+as new counterexamples. None is an arithmetic counterexample.
+
+\begin{example}[Ambient grouping kernel, positive activated range]
+Let \(Lz=(z,z)\in\mathbb C^2\) and \(A(x_1,x_2)=x_1+x_2\). The ambient map
+\(A\) has kernel \(\operatorname{span}(1,-1)\), but this kernel misses
+\(Y=\operatorname{span}(1,1)\). Since
+\(\|ALz\|^2/\|Lz\|^2=2\), the activated constant is \(2\). An ambient kernel
+therefore does not decide the range-restricted gate.
+\end{example}
+
+\begin{example}[Every row visible, global coherent kernel]
+Take \(T=I_2\) and \(F=[\,1\ -1\,]\). Each row column has squared norm \(1\),
+but \(F(1,1)=0\). The normalized Gram
+\[
+ K=\begin{pmatrix}1&-1\\-1&1\end{pmatrix}
+\]
+has eigenvalues \(0,2\). Thus even perfect rowwise diagonal data do not give a
+uniform represented lower bound.
+\end{example}
+
+\begin{example}[Distinguished success, uniform failure]
+For \(F=[\,1\ 1\,]\), the physical-looking vector \((1,1)\) has quotient \(2\),
+whereas \((1,-1)\) is killed. A favorable distinguished coefficient does not
+imply a full-space generalized eigenvalue bound.
+\end{example}
+
+\begin{example}[Injectivity without a polynomial exponent]
+Let \(T_X=I_2\) and \(F_X=\operatorname{diag}(1,e^{-X})\). The map is injective
+for every finite \(X\), yet \(\beta_X=e^{-2X}\). Kernel exclusion alone has no
+polynomial quantitative content.
+\end{example}
+
+\begin{example}[Reference route fails while a direct route succeeds]
+Let terminal energy be \(T=I_2\), choose a reference projection
+\(J(x_1,x_2)=x_1\), and take the final map \(A=I_2\). The comparison
+\(\|Jy\|^2/\|y\|^2\) has zero infimum, while the direct \(A/T\) constant is
+\(1\). Failure of a chosen intermediate reference kills that modular route,
+not every direct closure.
+\end{example}
+
+\begin{example}[Stage product can be arbitrarily loose]
+For \(0<\varepsilon\le1\), on \(\mathbb C^2\) take parent metric \(R=I\),
+\(L=\operatorname{diag}(\sqrt\varepsilon,1)\), and
+\(A=\operatorname{diag}(1,\sqrt\varepsilon)\), with no reassembly loss. The
+activation and represented constants are both \(\varepsilon\), so their product
+is \(\varepsilon^2\). But \(AL=\sqrt\varepsilon I\), and the exact direct
+constant is \(\varepsilon\).
+\end{example}
+
+\begin{example}[Complementary singular blocks]
+Let \(T=I_2\), \(F_1=[\,1\ 0\,]\), and \(F_2=[\,0\ 1\,]\). Both block Grams
+are singular, but the labelled sum is \(I_2\). This saturates the kernel-fusion
+criterion. If label erasure instead takes \(F_1=[\,1\ 0\,]\) and
+\(F_2=[\,0\ -1\,]\) on two independent block inputs, then the coherent map is
+\((x_1,x_2)\mapsto x_1-x_2\) and has the diagonal kernel. Labelled fusion and
+physical fusion are distinct gates.
+\end{example}
+
+\begin{example}[Terminal-null repair can be read upstream]
+Let the repaired parent be \(\mathbb C^2\), terminalization \(L(x,n)=x\), and
+the original parent be the subspace \(n=0\). Every downstream map \(AL\) is
+repair invariant. The pre-terminal map \(F(x,n)=x+Cn\), however, has a Gram
+whose behavior changes arbitrarily with \(C\). Descent through \(L\) is a
+necessary hypothesis, not notation.
+\end{example}
+
+\begin{example}[Represented success, reassembly cancellation]
+Take \(A=I\), a unit vector \(v\), and \(M=-vv^*\). The represented constant is
+\(1\), but \(A+M\) kills \(v\). Activation and represented transfer cannot be
+used as substitutes for the reassembly short.
+\end{example}
+
+Together these examples show why the actual row Gram, its off-diagonal entries,
+the label-erasure angle, and the reassembly map must be audited separately.

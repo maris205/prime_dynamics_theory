@@ -1,0 +1,416 @@
+\section{Terminal-faithful repair invariance and parent covariance}
+\label{sec:tpc65-repair-invariance}
+
+This section compares the literal-active-hypergraph carrier with the
+canonical pair-repaired carrier.  The comparison is made after the typed
+terminal operator, where both constructions take values in the same literal
+terminal Hilbert space.  This placement is essential: a map acting on a
+pre-terminal parent space may see repair-only coordinates which the terminal
+operator annihilates.
+
+\subsection{One terminal map from two parent carriers}
+
+Retain the finite scale \(X\), the fixed nonzero shift \(h_0\), and the
+coefficient space
+\[
+ Z_X=\mathbb C^{\mathcal M_X}.
+\]
+In the notation of \citet{WangTPC64}, define
+\begin{align}
+ L_X^{\mathrm{hyp}}
+ &:=
+ D_{X,h_0}^{\mathcal U^{\mathrm{pre},+}}
+ C_X^{\mathrm{hyp}},
+ \label{eq:tpc65-hypergraph-terminal-map}\\
+ L_X^{\mathrm{rep}}
+ &:=
+ D_{X,h_0}^{\mathcal V^{\mathrm{hyb}}}
+ C_X^{\mathrm{hyb}}.
+ \label{eq:tpc65-repaired-terminal-map}
+\end{align}
+Both maps have codomain
+\[
+ \mathcal H_X^{\mathrm{term}}
+ =
+ \bigoplus_{k\in K_X}^{\perp}
+ \ell^2(\mathcal U_{X,h_0,k}^{+}),
+\]
+the literal terminal atom space.  Their parent spaces are different, but
+their displayed codomain is not.
+
+\begin{theorem}[Common terminal map]
+\label{thm:tpc65-common-terminal-map}
+The hypergraph and canonical pair-repaired constructions
+induce the same terminal map:
+\begin{equation}
+ \boxed{
+ L_X^{\mathrm{hyp}}=L_X^{\mathrm{rep}}=:L_X.}
+ \label{eq:tpc65-common-terminal-map}
+\end{equation}
+Moreover,
+\begin{equation}
+ \boxed{
+ L_X^*L_X=T_X=\operatorname{diag}(T_m).}
+ \label{eq:tpc65-common-terminal-gram}
+\end{equation}
+Consequently their activated ranges agree exactly:
+\begin{equation}
+ Y_X:=\Ran L_X^{\mathrm{hyp}}
+     =\Ran L_X^{\mathrm{rep}}
+     =\Ran L_X.
+ \label{eq:tpc65-common-activated-range}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Fix a literal terminal coordinate \((k,u)\), with
+\(u\in\mathcal U_{X,h_0,k}^{+}\).  Both populated parent analyses assign
+the value \(c_u z_{m(u)}\) to this coordinate, and both typed terminal
+operators multiply it by the same literal multiplier \(t_{h_0}(u)\).
+Thus
+\[
+ (L_X^{\mathrm{hyp}}z)(k,u)
+ =
+ t_{h_0}(u)c_u z_{m(u)}
+ =
+ (L_X^{\mathrm{rep}}z)(k,u)
+\]
+for every \(z\in Z_X\). The typed repaired terminal operator discards every
+repair-only coordinate before entering the displayed literal terminal
+codomain, so those coordinates contribute nothing. This proves
+\eqref{eq:tpc65-common-terminal-map}.
+
+Distinct row indices populate disjoint labelled terminal coordinates.
+Hence the columns \(L_Xe_m\) are mutually orthogonal, and their squared
+norms are precisely
+\[
+ \|L_Xe_m\|^2
+ =
+ \sum_{k\in K_X}
+ \sum_{\substack{u\in\mathcal U_{X,h_0,k}^{+}\\m(u)=m}}
+ |t_{h_0}(u)c_u|^2
+ =T_m.
+\]
+This proves \eqref{eq:tpc65-common-terminal-gram}, and
+\eqref{eq:tpc65-common-activated-range} follows immediately.
+\end{proof}
+
+\subsection{The exact represented Gram on the common range}
+
+Let
+\[
+ A_X:Y_X\longrightarrow\mathcal H_X^{\mathrm{rep}}
+\]
+be one declared represented map on the common activated range.  This means
+that the hypergraph and repaired descriptions use the same downstream map
+after terminalization.  Assume \(Y_X\ne\{0\}\); when \(Y_X=\{0\}\), there is
+no nonzero represented reference and no lower constant is assigned.  Define
+\begin{equation}
+ \beta_X
+ :=
+ \inf_{0\ne y\in Y_X}
+ \frac{\|A_Xy\|^2}{\|y\|^2}.
+ \label{eq:tpc65-beta-on-range}
+\end{equation}
+
+Put
+\[
+ \mathcal M_X^{T}:=\{m\in\mathcal M_X:T_m>0\},
+ \qquad
+ u_m:=\frac{L_Xe_m}{\sqrt{T_m}}
+ \quad(m\in\mathcal M_X^{T}).
+\]
+By \eqref{eq:tpc65-common-terminal-gram},
+\((u_m)_{m\in\mathcal M_X^{T}}\) is an orthonormal basis of \(Y_X\).
+Define its represented row Gram by
+\begin{equation}
+ \mathsf G_X^{\mathrm{act}}(m,n)
+ :=
+ \langle A_Xu_m,A_Xu_n\rangle,
+ \qquad m,n\in\mathcal M_X^{T}.
+ \label{eq:tpc65-activated-row-gram}
+\end{equation}
+
+\begin{proposition}[Exact and repair-invariant represented constant]
+\label{prop:tpc65-repair-invariant-beta}
+One has
+\begin{equation}
+ \boxed{
+ \beta_X
+ =
+ \lambda_{\min}\!\left(\mathsf G_X^{\mathrm{act}}\right)
+ =
+ \sigma_{\min}(A_X|_{Y_X})^2.}
+ \label{eq:tpc65-beta-exact-eigenvalue}
+\end{equation}
+In particular,
+\begin{equation}
+ \boxed{
+ \beta_X>0
+ \quad\Longleftrightarrow\quad
+ \Ker A_X\cap Y_X=\{0\}.}
+ \label{eq:tpc65-beta-kernel-test}
+\end{equation}
+The matrix \(\mathsf G_X^{\mathrm{act}}\), the number \(\beta_X\), and
+the kernel test are identical for the hypergraph and canonical repaired
+descriptions.
+\end{proposition}
+
+\begin{proof}
+The matrix in \eqref{eq:tpc65-activated-row-gram} is the matrix of
+\(A_X^*A_X|_{Y_X}\) in the orthonormal basis \((u_m)\).  The Rayleigh
+principle therefore gives
+\[
+ \inf_{0\ne y\in Y_X}
+ \frac{\langle A_X^*A_Xy,y\rangle}{\|y\|^2}
+ =
+ \lambda_{\min}(\mathsf G_X^{\mathrm{act}}),
+\]
+which is \eqref{eq:tpc65-beta-exact-eigenvalue}.  In finite dimensions
+the smallest eigenvalue is positive exactly when the restricted map is
+injective, proving \eqref{eq:tpc65-beta-kernel-test}.  Repair invariance
+then follows from \cref{thm:tpc65-common-terminal-map}: both constructions
+have the same \(L_X\), the same range \(Y_X\), the same normalized row
+basis, and the same declared map \(A_X\).
+\end{proof}
+
+\begin{remark}[What is and is not invariant]
+\label{rem:tpc65-parent-versus-represented-gram}
+The repair-invariant object is the represented Gram on \(Y_X\).  The
+diagonal matrix with entries \(P_m/T_m\), when it is defined, is instead
+the literal parent metric transported to \(Y_X\); replacing \(P_m\) by
+\(\widetilde P_m\) changes that metric.  It must not be called the
+represented Gram.
+\end{remark}
+
+\subsection{Direct closure relative to the two parents}
+
+Let
+\begin{equation}
+ R_{X,\mathrm{hyp}}:=\operatorname{diag}(P_m),
+ \qquad
+ R_{X,\mathrm{rep}}:=\operatorname{diag}(\widetilde P_m).
+ \label{eq:tpc65-two-parent-operators}
+\end{equation}
+For the canonical hybrid repair there are no new-only rows, so, provided
+the literal parent is nonzero,
+\begin{equation}
+ R_{X,\mathrm{hyp}}
+ \preceq R_{X,\mathrm{rep}}
+ \preceq\mathfrak I_XR_{X,\mathrm{hyp}},
+ \qquad
+ 1\le\mathfrak I_X<\infty,
+ \label{eq:tpc65-parent-operator-order}
+\end{equation}
+and the two parent operators have the same kernel.  Let
+\[
+ B_X:Y_X\longrightarrow\mathcal H_X^{\mathrm{out}}
+\]
+be any fixed downstream map; it may be the represented map \(A_X\) or a
+complete represented-plus-missing output.  For
+\(\nu\in\{\mathrm{hyp},\mathrm{rep}\}\), define the direct parent-to-output
+constant
+\begin{equation}
+ \Gamma_{X,\nu}(B_X)
+ :=
+ \inf_{\langle R_{X,\nu}z,z\rangle>0}
+ \frac{\|B_XL_Xz\|^2}
+      {\langle R_{X,\nu}z,z\rangle}.
+ \label{eq:tpc65-direct-closure-constant}
+\end{equation}
+
+\begin{theorem}[Exact direct Gram and repair covariance]
+\label{thm:tpc65-direct-repair-covariance}
+Let
+\[
+ N_X:=\Ker R_{X,\mathrm{hyp}}
+     =\Ker R_{X,\mathrm{rep}},
+ \qquad
+ S_X:=N_X^\perp.
+\]
+Then \(N_X\subseteq\Ker L_X\), and for each
+\(\nu\in\{\mathrm{hyp},\mathrm{rep}\}\),
+\begin{equation}
+ \boxed{
+ \Gamma_{X,\nu}(B_X)
+ =
+ \lambda_{\min}\!\left(
+ R_{X,\nu,S}^{-1/2}
+ L_{X,S}^*B_X^*B_XL_{X,S}
+ R_{X,\nu,S}^{-1/2}
+ \right).}
+ \label{eq:tpc65-direct-generalized-gram}
+\end{equation}
+Its exact positivity test is
+\begin{equation}
+ \boxed{
+ \Gamma_{X,\nu}(B_X)>0
+ \quad\Longleftrightarrow\quad
+ \Ker(B_XL_X)\subseteq\Ker R_{X,\nu}.}
+ \label{eq:tpc65-direct-kernel-test}
+\end{equation}
+The two parent normalizations obey the sharp sandwich
+\begin{equation}
+ \boxed{
+ \frac{1}{\mathfrak I_X}\,
+ \Gamma_{X,\mathrm{hyp}}(B_X)
+ \le
+ \Gamma_{X,\mathrm{rep}}(B_X)
+ \le
+ \Gamma_{X,\mathrm{hyp}}(B_X).}
+ \label{eq:tpc65-direct-repair-sandwich}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The literal implication \(P_m=0\Rightarrow T_m=0\), together with
+\eqref{eq:tpc65-common-terminal-gram}, gives
+\(N_X\subseteq\Ker L_X\).  Consequently \(B_XL_X\) also annihilates
+\(N_X\).  Every numerator and denominator in
+\eqref{eq:tpc65-direct-closure-constant} therefore depends only on the
+\(S_X\)-component of \(z\).  On \(S_X\), the parent operator is positive
+definite.  The substitution
+\[
+ x=R_{X,\nu,S}^{1/2}z
+\]
+turns the quotient into the Rayleigh quotient of the matrix in
+\eqref{eq:tpc65-direct-generalized-gram}.  This proves the exact formula.
+Its smallest eigenvalue is positive precisely when \(B_XL_X\) has no
+kernel vector outside \(N_X\), giving
+\eqref{eq:tpc65-direct-kernel-test}.  This is the compatible-kernel case
+of the general shorted formula of \citet{WangTPC62}; no nuisance-output
+projection remains.
+
+The common kernel in \eqref{eq:tpc65-parent-operator-order} makes the
+admissible set of nonzero denominators the same for both parents.  For
+every vector in this set,
+\[
+ \frac{1}{\mathfrak I_X}
+ \frac{\|B_XL_Xz\|^2}
+      {\langle R_{X,\mathrm{hyp}}z,z\rangle}
+ \le
+ \frac{\|B_XL_Xz\|^2}
+      {\langle R_{X,\mathrm{rep}}z,z\rangle}
+ \le
+ \frac{\|B_XL_Xz\|^2}
+      {\langle R_{X,\mathrm{hyp}}z,z\rangle}.
+\]
+Taking infima proves \eqref{eq:tpc65-direct-repair-sandwich}.
+\end{proof}
+
+\begin{example}[Sharpness of the repair charge]
+\label{ex:tpc65-repair-sandwich-sharp}
+Take \(Z_X=Y_X=\mathcal H_X^{\mathrm{out}}=\mathbb C\),
+\(L_Xz=\sqrt a\,z\), \(B_X=I\),
+\(R_{X,\mathrm{hyp}}=1\), and
+\(R_{X,\mathrm{rep}}=\mathfrak I_X\), where
+\(a>0\) and \(\mathfrak I_X\ge1\).  Then
+\[
+ \Gamma_{X,\mathrm{hyp}}=a,
+ \qquad
+ \Gamma_{X,\mathrm{rep}}=\frac{a}{\mathfrak I_X}.
+\]
+Thus the factor \(1/\mathfrak I_X\) cannot be improved.  The coefficient
+one in the upper inequality is attained when the two parent forms agree
+globally, in particular when \(\mathfrak I_X=1\).
+\end{example}
+
+Define the activation constants
+\begin{equation}
+ \tau_{X,\nu}
+ :=
+ \inf_{\langle R_{X,\nu}z,z\rangle>0}
+ \frac{\|L_Xz\|^2}{\langle R_{X,\nu}z,z\rangle}.
+ \label{eq:tpc65-two-activation-constants}
+\end{equation}
+Applying \eqref{eq:tpc65-beta-on-range} to \(y=L_Xz\) gives the useful
+but generally non-exact staged certificate
+\begin{equation}
+ \Gamma_{X,\nu}(A_X)
+ \ge \beta_X\tau_{X,\nu}.
+ \label{eq:tpc65-staged-beta-activation}
+\end{equation}
+Here \(\beta_X\) is repair invariant; the parent repair is charged through
+\(\tau_{X,\nu}\), or equivalently through the direct sandwich
+\eqref{eq:tpc65-direct-repair-sandwich}.  Charging
+\(\mathfrak I_X\) once in activation and again in the represented Gram
+would double-count the same parent enlargement.
+
+\begin{remark}[Generic repairs with new-only rows]
+\label{rem:tpc65-new-only-repair}
+The finite lower comparison in
+\eqref{eq:tpc65-direct-repair-sandwich} relies on the absence of a row
+with \(P_m=0<\widetilde P_m\).  For a generic larger repair such a row has
+\(T_m=0\), hence \(L_Xe_m=0\), while its repaired-parent energy is
+positive.  It follows directly from
+\eqref{eq:tpc65-direct-closure-constant} that
+\(\Gamma_{X,\mathrm{rep}}(B_X)=0\) for every downstream \(B_X\).
+Thus terminal faithfulness alone does not provide a finite repair charge;
+the no-new-only property of the canonical hybrid carrier is substantive.
+\end{remark}
+
+\subsection{Why pre-terminal maps are not repair invariant}
+
+\begin{example}[A terminal-null coordinate read before terminalization]
+\label{ex:tpc65-preterminal-noninvariance}
+Let \(Z=\mathbb C\) and embed both parent descriptions in
+\(\mathcal H^{\mathrm{pre}}=\mathbb C^2\).  Put
+\[
+ C_{\mathrm{hyp}}z=(z,0),
+ \qquad
+ C_{\mathrm{rep}}z=(z,z),
+ \qquad
+ D(a,b)=a.
+\]
+Then
+\[
+ DC_{\mathrm{hyp}}z=z=DC_{\mathrm{rep}}z,
+\]
+so the terminal map and its activated range are identical.  The second
+coordinate is repair-only and terminal-null.  For
+\[
+ Q_\lambda(a,b):=a+\lambda b
+\]
+one nevertheless has
+\[
+ Q_\lambda C_{\mathrm{hyp}}z=z,
+ \qquad
+ Q_\lambda C_{\mathrm{rep}}z=(1+\lambda)z.
+\]
+The two pre-terminal output Grams are therefore \(1\) and
+\(|1+\lambda|^2\).  They can be separated arbitrarily, and the repaired
+output even vanishes when \(\lambda=-1\).
+\end{example}
+
+The obstruction in \cref{ex:tpc65-preterminal-noninvariance} is exactly
+failure of descent: when \(\lambda\ne0\),
+\[
+ \Ker D\nsubseteq\Ker Q_\lambda.
+\]
+Accordingly, repair invariance may be invoked only after proving a common
+factorization through the literal terminal map,
+\begin{equation}
+ F_X^{\mathrm{hyp}}=A_XL_X^{\mathrm{hyp}},
+ \qquad
+ F_X^{\mathrm{rep}}=A_XL_X^{\mathrm{rep}},
+ \label{eq:tpc65-common-downstream-factorization}
+\end{equation}
+with the same \(A_X\).  Equality of terminal norms alone does not imply
+\eqref{eq:tpc65-common-downstream-factorization}.
+
+\begin{remark}[L0/L1 claim boundary]
+\label{rem:tpc65-repair-claim-boundary}
+The abstract represented-Gram and repair-sandwich consequences are
+finite-dimensional L0 statements for declared maps and carriers. Identifying
+the two coordinatewise terminal maps with the literal TPC-64 fixed-shift
+constructions is an L1 dictionary statement. Any arithmetic use
+must retain one fixed nonzero shift \(h_0\), the literal coefficients and
+terminal multiplier, the actual active support, every required external
+label until its declared erasure, and the raw counting-measure atomic
+norm.  The exact identities prove neither a favorable activation census
+nor a polynomial bound for \(\mathfrak I_X\), \(\tau_{X,\nu}\),
+\(\beta_X\), or \(\Gamma_{X,\nu}\).  Finite-scale injectivity can have a
+superpolynomially small least singular value.  Nothing in this section
+specializes \(h_0\) to \(2\), controls a parity-sensitive signed kernel,
+or implies a prime-pair lower bound.
+\end{remark}
