@@ -1,0 +1,59 @@
+{
+  "audit": {
+    "barrier_minimum_ratio": 0.0,
+    "certificate_implication_violation_count": 0,
+    "channel_count": 10,
+    "fine_update_count": 234,
+    "maximum_fine_actual_to_certificate_loss": 3.3228776456961824e-06,
+    "maximum_moment_cancellation_index": 3886432491336652.5,
+    "maximum_moment_cross_gram_relative_error": 0.7272139316570702,
+    "maximum_tail_operator_bound": 4.847732921402516e-14,
+    "minimum_fine_certificate_margin_ratio": 7.3604523001828355,
+    "minimum_fine_certified_ratio": 0.0007360452300182836,
+    "observed_cross_error_bound_failure_count": 0,
+    "scale_count": 5,
+    "selector_equivalence_failure_count": 0,
+    "threshold_count": 3,
+    "update_count": 360
+  },
+  "program_boundary": {
+    "all_level_fourth_cross_lower_bound_proved": false,
+    "exact_normalized_memory_nondegeneracy_barrier": true,
+    "finite_memory_weyl_support_certificate": true,
+    "five_snapshot_fine_support_validated": true,
+    "hilbert_polya_operator": false,
+    "reduced_first_two_moment_realization": true,
+    "riemann_hypothesis": false,
+    "source_seeded_physical_transversality_proved": false,
+    "uniform_fine_support_separation_proved": false,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "9fb4e9b5dda67d4000728b37ebb8887301bff8cf1e975a68945a155954b543db",
+    "README.md": "a6555aff7ed1cde7fea8802b97e4d25797e5a76ce52fd706770712205f43e57e",
+    "THEOREM_LEDGER.md": "59aed84452fff5d41c9e2da57f5540461131801430a040f7c5e31e9f9c79add4",
+    "UPDATED_ROADMAP.md": "a7a232072235cfdfcd98f208f038f160be2ce3beb1e5d5eb962386e875b47955",
+    "figures/finite_memory_fourth_cross_support.pdf": "85a79a1d9afd001e52a7a2913aa9921f01298b4d0c0543d40c0f1734a182e695",
+    "figures/finite_memory_fourth_cross_support.png": "14cd13c0742476feb1d8484dcd9e05803d4cfe68dddd3150f5f8588c462f5b49",
+    "finite-memory-fourth-cross-support.pdf": "b6213380b0cb75cfde7255a268f5b4d8b4561e95f69e98beafb3a70ba5fe77e2",
+    "main.pdf": "b6213380b0cb75cfde7255a268f5b4d8b4561e95f69e98beafb3a70ba5fe77e2",
+    "main.tex": "ca847d49a1265761cf1ba2849c339d186cd26bccd4c0a48b04cab648de8e819f",
+    "pyproject.toml": "81f1c75bad8e4e55b686f42bcc88d49374601f0519fdd8a7e1ba9887df1e5c46",
+    "references.bib": "ac34b086938143a02643c327fcbd14b897d3b83f5af4b80e4c22818e12dcb090",
+    "requirements.txt": "2a794dbea88e04345a620b093bcf56d2494ca9cc93b465a3c0588f0bba1a891c"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "22f27f8b331633891351fbacef60c58b41e0159dd1a431d6dfb747a362e4bff2",
+    "results/fourth_cross_support_audit.json": "0dcb357ebb5947f2c3d2e36b663d5c12e7761dc877044e26efd821ba3ce9e8ed",
+    "results/fourth_cross_support_smoke.json": "9d65a875d266686ed0358cec72cebec464ae2b10f0a6392471137d4ea77b4b40"
+  },
+  "route_consequence": "RH-95 and RH-101 combine into a conditional support certificate: a recent-memory fourth-cross margin larger than the positive memory tail certifies the full fourth-cross ratio. On the two finest archived scales this certificate is green for every threshold and every update. The exact source-seeded normalized-memory barrier shows that trace clocks, packet/complement diagonal blocks, and generic finite-memory bounds do not force a positive margin; an additional physical transversality or volume law is required for an all-level theorem.",
+  "status": "rh108_finite_memory_fourth_cross_support_archived",
+  "theorem": {
+    "exact_normalized_memory_nondegeneracy_barrier": true,
+    "finite_memory_weyl_support_certificate": true,
+    "radius_only_sharpness": true,
+    "reduced_first_two_moment_realization": true,
+    "threshold_support_margin": true
+  }
+}

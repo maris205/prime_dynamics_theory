@@ -1,0 +1,568 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+
+\title{Finite-Memory Fourth-Cross Support\\
+\large A Weyl Certificate, Reduced Moments, and a Normalized-Memory Barrier}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-107 reduced the fine-scale quotient problem to a single missing statement:
+the fourth projected-cross singular ratio must eventually stay above the
+adaptive cutoff.  This paper asks whether the reduced moments of RH-95 and
+the finite-memory action law of RH-101 supply that statement.
+
+Let $V$ be an isometric packet, $P=VV^*$, and
+$K_t=(I-P)G_tV$, where
+$G_t=\sum_{j=0}^{t}\eta^jQ_{t-j}$ is the normalized memory Gramian.  For
+the recent-memory truncation $\widetilde G_{t,m}$, we prove the exact
+Weyl support certificate
+\begin{equation}
+ \frac{s_4(K_t)}{s_1(K_t)}
+ \ge
+ \frac{\bigl(\widehat s_4-\delta_{t,m}\bigr)_+}
+      {\widehat s_1+\delta_{t,m}},
+ \qquad
+ \delta_{t,m}=\frac{\eta^m(1-\eta^{t-m+1})}{1-\eta},
+ \label{eq:abstract-certificate}
+\end{equation}
+whenever $m\le t$, with zero tail for a complete history.  Here
+$\widehat s_j$ are the singular values of
+$\widehat K_{t,m}=(I-P)\widetilde G_{t,m}V$.  Equivalently, the support is
+certified at threshold $\tau$ when
+$\widehat s_4-\tau\widehat s_1\ge(1+\tau)\delta_{t,m}$.
+The RH-95 identity
+$\widehat K_{t,m}^*\widehat K_{t,m}=\widehat M_2-\widehat A^2$
+shows that only the first two packet moments are needed for this exact
+finite-dimensional test; the third moment remains necessary for the full
+Ritz block but not for support.
+
+On the 120 source-seeded updates at the five archived scales, a five-snapshot
+audit certifies every one of the 78 updates on the two finest scales for all
+three cutoffs $10^{-8},10^{-6},10^{-4}$.  The smallest certified fine-scale
+ratio is $7.36045\times10^{-4}$, giving a minimum margin of $7.36045$ at
+$\tau=10^{-4}$.  The moment identity is exact, but binary64 moment
+subtraction becomes unreliable in weak branches, with a largest observed
+relative discrepancy $0.7272$; the support certificate therefore uses the
+direct recent cross action and treats moments as an algebraic reduction and
+consistency audit.
+
+The result is conditional rather than all-level.  We give an exact barrier
+family of trace-one normalized snapshots whose memory clock, packet block,
+complement block, and first three cross singular values are fixed while
+$s_4/s_1=\varepsilon/4\to0$.  Thus generic positivity, trace normalization,
+finite memory, and source seeding do not imply a positive fourth-cross lower
+bound.  An additional physical transversality or volume law is required.
+No unconditional fine-support separation, Stage A theorem, Hilbert--Polya
+operator, zero identification, or Riemann Hypothesis result is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} projected-cross singular values; finite memory;
+Weyl perturbation; reduced moments; source-seeded packet; nondegeneracy barrier.
+
+\medskip
+\noindent\textbf{MSC 2020:} 15A18; 47A75; 65F15; 65G20; 37M25.
+
+\section{Introduction}
+
+The source-seeded route of RH-94 carries a low-dimensional packet through a
+complete frozen prefix by repeatedly enriching it with projected-cross
+directions \citep{WangSourceSeeded2026}.  RH-95 removed the ambient cross
+spectral solve algebraically \citep{WangReducedCross2026}:
+if $A=V^*GV$ and $M_j=V^*G^jV$, then
+\begin{equation}
+ K^*K=M_2-A^2,
+ \qquad K=(I-VV^*)GV.
+ \label{eq:rh95}
+\end{equation}
+RH-101 removed ambient Gram assembly from the packet action
+\citep{WangFiniteMemory2026}.  For
+normalized snapshot Gramians $Q_t$ and $0\le\eta<1$,
+\begin{equation}
+ G_tV=\sum_{j=0}^{m-1}\eta^jQ_{t-j}V+\eta^mG_{t-m}V.
+ \label{eq:rh101}
+\end{equation}
+RH-107 then isolated the remaining fine-scale question
+\citep{WangSupportLaw2026}.  For a maximum
+width-four selector, no quotient is proposed exactly when
+$s_4(K_t)/s_1(K_t)\ge\tau$.
+
+The two earlier identities look close to closing this gate, but they solve
+different problems.  Equation \eqref{eq:rh95} is an exact measurement
+identity; it does not make the smallest eigenvalue of $M_2-A^2$ positive.
+Equation \eqref{eq:rh101} is an exact memory decomposition; its positive
+tail controls the error between a recent cross and the full cross, but it
+does not prevent the recent cross itself from becoming rank deficient.
+
+This paper joins the two facts in the strongest elementary way.  A singular
+value perturbation theorem turns a recent fourth-cross margin into a full
+memory support certificate.  The certificate is useful on the two finest
+archived scales.  A separate exact construction proves that no positive
+margin can follow from the generic normalized-memory data alone.
+
+The contributions are:
+\begin{enumerate}[leftmargin=2.2em]
+ \item a finite-memory Weyl certificate for the relative fourth-cross ratio;
+ \item a reduced-moment realization showing that support needs only $M_1$
+       and $M_2$, while $M_3$ belongs to the downstream Ritz compression;
+ \item a sharpness observation for the perturbation radius;
+ \item an exact source-seeded normalized-memory barrier with
+       $s_4/s_1\to0$ and fixed diagonal memory data;
+ \item a five-snapshot audit connecting the certificate to the RH-107
+       fine-support boundary.
+\end{enumerate}
+
+\section{Memory cross operators}
+\label{sec:setting}
+
+Let $\mathcal K=\mathbb R^d$ (the complex case is identical), let
+$V\in\mathbb R^{d\times r}$ satisfy $V^*V=I_r$, and put $P=VV^*$.  A
+normalized snapshot Gramian has the form
+\begin{equation}
+ Q_j=\frac{X_j^*X_j}{\norm{X_j}_F^2},
+ \qquad Q_j\succeq0,
+ \qquad \tr Q_j=1.
+ \label{eq:snapshot}
+\end{equation}
+The finite-memory recursion is
+\begin{equation}
+ G_{-1}=0,
+ \qquad G_t=Q_t+\eta G_{t-1},
+ \qquad 0\le\eta<1.
+ \label{eq:memory}
+\end{equation}
+The projected-cross operator at time $t$ is
+\begin{equation}
+ K_t=(I-P)G_tV.
+ \label{eq:fullcross}
+\end{equation}
+For $m\ge1$, define the recent operator and its cross by
+\begin{align}
+ \widetilde G_{t,m}&=\sum_{j=0}^{m-1}\eta^jQ_{t-j},
+ \label{eq:recentgram}\\
+ \widehat K_{t,m}&=(I-P)\widetilde G_{t,m}V.
+ \label{eq:recentcross}
+\end{align}
+If $m>t+1$, the sum is understood to stop at $j=t$.
+
+Iterating \eqref{eq:memory} gives
+\begin{equation}
+ G_t-\widetilde G_{t,m}=\eta^mG_{t-m}
+ \quad (m\le t),
+ \label{eq:tailidentity}
+\end{equation}
+and the difference is zero for a complete history.  Since every $Q_j$ has
+unit trace,
+\begin{equation}
+ \tr G_u=\frac{1-\eta^{u+1}}{1-\eta}
+ \le\frac1{1-\eta}.
+ \label{eq:traceclock}
+\end{equation}
+The crucial point for singular values is that the packet is an isometry:
+the operator norm, rather than the Frobenius norm, is enough.
+
+\section{The finite-memory support certificate}
+\label{sec:certificate}
+
+Write $\widehat s_1\ge\widehat s_2\ge\cdots$ for the singular values of
+$\widehat K_{t,m}$ and $s_1\ge s_2\ge\cdots$ for those of $K_t$.
+
+\begin{theorem}[Finite-memory fourth-cross Weyl certificate]
+\label{thm:weyl}
+For $m\le t$, define
+\begin{equation}
+ \delta_{t,m}
+ =\eta^m\frac{1-\eta^{t-m+1}}{1-\eta}.
+ \label{eq:delta}
+\end{equation}
+Then
+\begin{equation}
+ \norm{K_t-\widehat K_{t,m}}_2\le\delta_{t,m},
+ \label{eq:crossperturbation}
+\end{equation}
+and, whenever $\widehat s_4>\delta_{t,m}$,
+\begin{equation}
+ \frac{s_4}{s_1}
+ \ge
+ \frac{\widehat s_4-\delta_{t,m}}
+      {\widehat s_1+\delta_{t,m}}.
+ \label{eq:ratio-bound}
+\end{equation}
+For $m=t+1$, take $\delta_{t,m}=0$ and $\widehat K_{t,m}=K_t$.
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:tailidentity},
+\begin{align*}
+ K_t-\widehat K_{t,m}
+ &=(I-P)\eta^mG_{t-m}V.
+\end{align*}
+Orthogonal projection and multiplication by an isometry are
+nonexpansive in operator norm.  Since a positive semidefinite matrix is
+bounded in operator norm by its trace,
+\begin{align*}
+ \norm{K_t-\widehat K_{t,m}}_2
+ &\le\eta^m\norm{G_{t-m}}_2
+ \le\eta^m\tr G_{t-m}
+ =\delta_{t,m}.
+\end{align*}
+Weyl's singular-value perturbation inequality
+\citep{Bhatia1997,StewartSun1990} gives
+\begin{equation*}
+ s_j\ge\widehat s_j-\delta_{t,m},
+ \qquad
+ s_j\le\widehat s_j+\delta_{t,m}.
+\end{equation*}
+Applying these statements for $j=4$ and $j=1$ proves
+\eqref{eq:ratio-bound}.
+\end{proof}
+
+\begin{corollary}[Threshold form]
+\label{cor:threshold}
+For a relative cutoff $\tau>0$, the full cross satisfies
+$s_4/s_1\ge\tau$ whenever
+\begin{equation}
+ \widehat s_4-\tau\widehat s_1
+ \ge (1+\tau)\delta_{t,m}.
+ \label{eq:margin}
+\end{equation}
+Thus \eqref{eq:margin} is a sufficient no-quotient certificate for the
+maximum-width-four selector.
+\end{corollary}
+
+\begin{proof}
+Rearranging \eqref{eq:ratio-bound} gives exactly \eqref{eq:margin}.
+The adaptive support equivalence of RH-107 then implies that the selector
+keeps width four.
+\end{proof}
+
+The operator-norm tail in Theorem \ref{thm:weyl} is sharper for support than
+the Frobenius packet-action estimate from RH-101.  The latter contains a
+$\sqrt r$ factor because it bounds a matrix in Frobenius norm; singular-value
+perturbation needs only the operator norm of the positive tail.
+
+\begin{proposition}[Sharpness of the radius-only lower bound]
+\label{prop:sharp}
+Fix $a>b>\delta\ge0$ and set
+\[
+ \widehat K=\diag(a,a,a,b),
+ \qquad E=-\delta e_4e_4^*.
+\]
+Then $\norm E_2=\delta$ and the fourth singular value of
+$\widehat K+E$ is $b-\delta$.  Hence no lower bound based only on
+$(\widehat s_4,\norm E_2)$ can improve the numerator
+$(\widehat s_4-\delta)_+$ in general.
+\end{proposition}
+
+\begin{proof}
+The matrices are diagonal and their singular values are displayed directly.
+\end{proof}
+
+\section{Reduced moments and what they do not prove}
+\label{sec:moments}
+
+For any positive semidefinite $H$ and packet $V$, define
+\begin{equation}
+ A_H=V^*HV,
+ \qquad M_{2,H}=V^*H^2V,
+ \qquad K_H=(I-P)HV.
+\end{equation}
+The RH-95 calculation gives the exact identity
+\begin{equation}
+ C_H:=K_H^*K_H=M_{2,H}-A_H^2\succeq0.
+ \label{eq:momentcross}
+\end{equation}
+Consequently, for the recent memory,
+\begin{equation}
+ \widehat s_j^2
+ =\lambda_j\!\left(
+ V^*\widetilde G_{t,m}^{\,2}V
+ -(V^*\widetilde G_{t,m}V)^2
+ \right).
+ \label{eq:moment-eigen}
+\end{equation}
+The support certificate can therefore be evaluated in three algebraically
+equivalent ways:
+\begin{enumerate}[leftmargin=2.2em]
+ \item form the thin action $\widetilde G_{t,m}V$ and take the SVD of its
+       projected cross;
+ \item form the small matrix $C_H$ and diagonalize it;
+ \item use a validated enclosure for either of the preceding objects.
+\end{enumerate}
+
+The first two are not numerically interchangeable.  The difference
+$M_{2,H}-A_H^2$ can be much smaller than either summand.  The exact identity
+does not prevent cancellation \citep{Higham2002}.  The third moment
+\begin{equation}
+ N_H=V^*H^3V-M_{2,H}A_H-A_HM_{2,H}+A_H^3
+ \label{eq:thirdmoment}
+\end{equation}
+is needed to assemble the complement Ritz block in RH-95, but it is not
+needed to decide whether the fourth cross mode is supported.  This separates
+the current gate from the downstream Ritz-conditioning problem.
+
+\begin{remark}[No coercivity from the identity]
+Equation \eqref{eq:momentcross} says that the fourth mode is exactly
+measurable from reduced moments.  It does not imply
+$\lambda_4(C_H)>0$, let alone a scale-uniform lower bound for
+$\lambda_4(C_H)/\lambda_1(C_H)$.  Such a lower bound is a separate
+nondegeneracy statement.
+\end{remark}
+
+\section{An exact normalized-memory barrier}
+\label{sec:barrier}
+
+We now show that generic assumptions used by RH-95 and RH-101 cannot supply
+the missing nondegeneracy.  Let $V=[e_1,e_2,e_3,e_4]$ in $\mathbb R^8$ and
+let $U=[e_5,e_6,e_7,e_8]$.  For $0\le\varepsilon\le1$, define
+\begin{equation}
+ D_\varepsilon=\diag(4,3,2,\varepsilon),
+ \qquad
+ Q_\varepsilon=\frac1{34}
+ \begin{pmatrix}
+ I_4&D_\varepsilon\\
+ D_\varepsilon&\diag(16,9,4,1)
+ \end{pmatrix}.
+ \label{eq:qbarrier}
+\end{equation}
+
+\begin{theorem}[Source-seeded normalized-memory barrier]
+\label{thm:barrier}
+The matrix $Q_\varepsilon$ is a trace-one positive semidefinite snapshot
+Gramian.  Let
+\begin{equation}
+ Q_{\mathrm{src}}=\frac1{12}\diag(2,2,2,2,1,1,1,1),
+ \qquad G_1=Q_\varepsilon+\eta Q_{\mathrm{src}}.
+ \label{eq:barriermemory}
+\end{equation}
+The unique leading rank-four packet of $Q_{\mathrm{src}}$ is $V$.  With this source
+packet,
+\begin{align}
+ \tr G_1&=1+\eta,
+ \\
+ V^*G_1V&=\left(\frac1{34}+\frac\eta6\right)I_4,
+ \\
+ U^*G_1U&=\frac1{34}\diag(16,9,4,1)+\frac\eta{12}I_4,
+ \label{eq:barrierblocks}
+ \\
+ s(K_1)&=\frac1{34}(4,3,2,\varepsilon),
+ \\
+ \frac{s_4(K_1)}{s_1(K_1)}&=\frac\varepsilon4.
+ \label{eq:barrierratio}
+\end{align}
+In particular, the memory clock and both diagonal packet/complement blocks
+are independent of $\varepsilon$, while the fourth-cross ratio can be zero.
+\end{theorem}
+
+\begin{proof}
+The block matrix in \eqref{eq:qbarrier} is the sum of four rank-one or
+positive two-by-two blocks.  More explicitly, define the $5\times8$ matrix
+whose rows are
+\begin{equation}
+ e_1^*+4e_5^*,\quad e_2^*+3e_6^*,\quad
+ e_3^*+2e_7^*,\quad e_4^*+\varepsilon e_8^*,\quad
+ \sqrt{1-\varepsilon^2}\,e_8^*.
+ \label{eq:factorbarrier}
+\end{equation}
+Its squared Frobenius norm is $34$, and its normalized Gramian is
+exactly $Q_\varepsilon$.  Thus $Q_\varepsilon\succeq0$ and
+$\tr Q_\varepsilon=1$.
+
+The source matrix $Q_{\mathrm{src}}$ has eigenvalue $2/12$ on $\operatorname{Ran}V$ and
+$1/12$ on its complement, so its top rank-four packet is $V$.  Since
+$Q_{\mathrm{src}}$
+has no packet/complement cross block, the cross of $G_1$ is the cross of
+$Q_\varepsilon$:
+\begin{equation*}
+ (I-P)G_1V=UD_\varepsilon/34.
+\end{equation*}
+The remaining identities follow by taking the displayed blocks and singular
+values.
+\end{proof}
+
+\begin{remark}
+The construction is compatible with the finite-memory snapshot class, not
+with a claim about the specific folded-Gaussian production operator.  If an
+actual one-step matrix realization is desired, take square state factors of
+$Q_{\mathrm{src}}$ and $Q_\varepsilon$ and set
+$A=cQ_\varepsilon^{1/2}Q_{\mathrm{src}}^{-1/2}$ with $c>0$ small enough that
+$\rho(A)<1$; multiplying a state by $c$ does not change its normalized
+snapshot Gramian.  The barrier therefore identifies missing physical input,
+not a failure of the finite-memory algebra.
+\end{remark}
+
+The barrier also clarifies the role of moments.  The full matrix
+$M_2-A^2$ changes in its fourth direction as $\varepsilon$ changes, so exact
+moments can detect the collapse.  What they do not provide automatically is
+a lower bound on that changing eigenvalue.  Any all-level proof must control
+that eigenvalue by a model-specific transversality, determinant, or volume
+estimate.
+
+\section{Five-scale certificate audit}
+\label{sec:audit}
+
+We replay the two source-seeded channels at
+\[
+ \sigma\in\{0.16,0.08,0.04,0.02,0.01\}
+\]
+using the RH-94 frozen horizons and the RH-96 adaptive packet updates
+\citep{WangWeakMode2026}.  The
+memory parameter is $\eta=1/512$, the recent depth is $m=5$, and the three
+relative cutoffs are $10^{-8},10^{-6},10^{-4}$.  At each update we compute
+the recent cross action, apply Theorem \ref{thm:weyl}, and compare the
+certificate with the full assembled cross.  The full chain is used only as
+the finite comparator and to continue the inherited packet; the certificate
+itself uses the recent action.
+
+The exact geometric tail bound is evaluated first.  To protect the finite
+binary64 comparison against summation error, the audit adds an absolute
+$2\times10^{-14}$ action guard.  Every observed full-minus-recent cross error
+lies below this guarded bound.  This is a finite numerical guard, not an
+all-level rounding theorem \citep{Rump2010}.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Certified support counts.  Each entry is the number of updates whose
+five-snapshot lower bound clears the indicated threshold, out of the total
+updates at that scale (two channels combined).  The last two scales are fully
+certified for every threshold.}
+\label{tab:counts}
+\begin{tabular}{@{}lrrrrr c@{}}
+\toprule
+threshold & $0.16$ & $0.08$ & $0.04$ & $0.02$ & $0.01$ & fine margin\\
+\midrule
+$10^{-8}$ & $4/8$ & $11/12$ & $20/22$ & $34/34$ & $44/44$ & $7.36045$\\
+$10^{-6}$ & $1/8$ & $10/12$ & $20/22$ & $34/34$ & $44/44$ & $736.045$\\
+$10^{-4}$ & $0/8$ & $4/12$ & $16/22$ & $34/34$ & $44/44$ & $7.36045$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+There are 360 threshold-update records.  On the fine pair
+$\sigma\in\{0.02,0.01\}$, all 234 threshold-update records are certified;
+equivalently, all 78 physical updates clear all three cutoffs.  The minimum
+certified ratio over the fine records is
+\begin{equation}
+ 7.3604523\times10^{-4},
+ \label{eq:finevalue}
+\end{equation}
+which occurs at $\tau=10^{-4}$ on the finest right channel.  The maximum
+analytic tail bound is $2.84774\times10^{-14}$; after the binary64 guard it
+is $4.84774\times10^{-14}$.  No selector-equivalence failure and no observed
+tail-bound failure occurred.
+
+The reduced-moment audit tells a complementary story.  The largest relative
+discrepancy between the moment evaluation of $\widehat K^*\widehat K$ and
+the direct recent-cross Gramian is $0.7272$, and the largest cancellation
+index is $3.89\times10^{15}$.  These are not failures of
+\eqref{eq:momentcross}; they are failures of naive binary64 subtraction in
+the weak regime.  Direct thin actions are therefore the numerically stable
+implementation of the exact certificate on this dataset.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/finite_memory_fourth_cross_support.pdf}
+\caption{Left: minimum five-snapshot lower bounds at the five archived
+scales; dashed lines are the three selector cutoffs.  Right: the exact
+normalized-memory barrier has fixed diagonal memory data while its fourth
+cross ratio follows $\varepsilon/4$ to zero.}
+\label{fig:audit}
+\end{figure}
+
+\section{Route consequence and claim boundary}
+\label{sec:route}
+
+RH-108 closes one conditional implication that was previously implicit:
+\begin{equation}
+ \begin{gathered}
+ \text{recent fourth-cross margin}\\[-2pt]
+ +\ \text{positive finite-memory tail bound}
+ \end{gathered}
+ \quad\Longrightarrow\quad
+ \text{full-memory no-quotient support}.
+ \label{eq:route}
+\end{equation}
+This is enough to certify the last two archived scales and explains why the
+observed RH-107 fine boundary is numerically robust.  It does not yet make
+that boundary uniform in the level.
+
+The exact barrier identifies the missing theorem in a sharper form.  One
+must prove, for the physical source-seeded family, a lower bound of the type
+\begin{equation}
+ \widehat s_4-\tau\widehat s_1
+ \ge (1+\tau)\delta_{t,m}+\Gamma_t,
+ \qquad \Gamma_t\ge0,
+ \label{eq:openlaw}
+\end{equation}
+on all sufficiently fine levels, or replace it with a model-specific volume
+or determinant estimate that implies the same inequality.  Generic trace
+normalization, positivity, source packet rank, and finite-memory decay do not
+control $\Gamma_t$.
+
+The claim boundary is therefore:
+\begin{enumerate}[leftmargin=2.2em]
+ \item proved: the finite-memory Weyl support certificate;
+ \item proved: exact realization through the first two reduced moments;
+ \item proved: the normalized-memory/source-seed barrier;
+ \item validated: all fine updates at the two smallest archived scales;
+ \item open: an all-level physical fourth-cross lower bound;
+ \item open: unconditional fine-support separation and closure of the
+       quotient supply;
+ \item not addressed: a Hilbert--Polya operator, zeta-zero identification,
+       a prime-power trace formula, or the Riemann Hypothesis.
+\end{enumerate}
+
+In particular, the present result moves the route forward by converting the
+next analytic task into a concrete nondegeneracy problem.  If that problem
+is solved for the physical folded-Gaussian family, RH-107's finite coarse
+support reduction applies.  If it is not, the barrier explains exactly why
+the generic moment/memory architecture cannot substitute for it.
+
+\section{Reproducibility}
+
+The directory contains the certificate helpers, exact barrier constructor,
+full and smoke audits, figures, tests, and hash-checked archive.  Run:
+\begin{verbatim}
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_support_certificate_audit.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_support_certificate_audit.py --smoke
+MPLBACKEND=Agg PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/make_figures.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/pytest -q -p no:cacheprovider
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+cp main.pdf finite-memory-fourth-cross-support.pdf
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/build_archive.py
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python \
+  experiments/verify_archive.py
+\end{verbatim}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
