@@ -1,0 +1,231 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,natbib,microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Tr}{\operatorname{Tr}}
+\title{Moving-Frame Memory-Tail Recurrences\\\large Exact Birth Slices, Sharp Defect Forcing, and Strong Raw Contraction}
+\author{Prime Dynamics Theory Program}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-133 fixed a natural dyadic packet gauge but found that packet angles do
+not control normalized tail alignment.  We now return to the source of the
+tail and derive its exact one-step law.  For trace-normalized snapshots
+$X_t\succeq0$, memory decay $0\leq\eta<1$, and depth $d$, write
+\[
+ T_t=\sum_{a=d}^{t}\eta^aX_{t-a}.
+\]
+Then
+\[
+ T_{t+1}=\eta T_t+\eta^dX_{t-d+1}.
+\]
+The second term is the unique snapshot crossing the finite-memory boundary.
+
+If $U_t,U_{t+1}$ are moving four-frames, $O_t$ is their polar alignment,
+$E_t=U_{t+1}-U_tO_t$, and $K_t=U_t^*T_tU_t$, the exact identity and the
+sharp matrix Young inequality imply, for every $\tau>0$,
+\[
+ K_{t+1}\preceq
+ \eta(1+\tau)O_t^*K_tO_t
+ +\eta(1+\tau^{-1})\|T_t\|\|E_t\|^2I
+ +\eta^dU_{t+1}^*X_{t-d+1}U_{t+1}.
+\]
+Thus the raw compressed tail has a source-level affine recurrence: old-tail
+transport, frame-change forcing, and a positive birth slice.
+
+For the finite tail envelope
+$\delta_p=\eta^d(1-\eta^p)/(1-\eta)$, its ratio is at most $1+\eta$.
+Consequently the weighted tail $D_t=\delta_pK_t$ has old-tail coefficient
+at most $\eta(1+\tau)(1+\eta)$.  With the model values
+$\eta=1/512$ and $\tau=1$, this is $0.0039138794$.
+
+All 330 temporal transitions in the five-scale packet satisfy the exact
+identity and both raw and weighted Loewner bounds.  The maximum identity
+error is $2.62\times10^{-30}$; 24 transitions are first births.  Although
+consecutive frames can be nearly orthogonal, every one of the 240 nonzero
+forcing updates is dominated by the boundary-slice term.  Strong raw
+contraction is therefore proved; the remaining difficulty is conversion to
+the recent-Gram relative metric.
+\end{abstract}
+
+\section{Finite memory separates old tail from new birth}
+Let the normalized memory Gramian satisfy
+\[
+ M_t=X_t+\eta M_{t-1},\qquad \Tr X_t=1,
+\]
+with $M_{-1}=0$.  Split it at depth $d$ into
+\[
+ R_t=\sum_{a=0}^{d-1}\eta^aX_{t-a},\qquad
+ T_t=\sum_{a=d}^{t}\eta^aX_{t-a},
+\]
+where absent negative-time snapshots are zero.  Both pieces are positive,
+and $M_t=R_t+T_t$.  Direct assembly of these disjoint sums was already
+essential in RH-130 because it avoids cancellation between nearly equal
+full and recent Gramians.
+
+\begin{theorem}[Exact tail-birth identity]\label{thm:birth}
+For every $t$,
+\[
+ T_{t+1}=\eta T_t+B_{t+1},\qquad
+ B_{t+1}=\eta^dX_{t-d+1}\succeq0.
+\]
+At the first crossing of the memory boundary, $T_t=0$ and the entire next
+tail is the birth slice $B_{t+1}$.
+\end{theorem}
+\begin{proof}
+Shift the age index in $\eta T_t$.  Every old term in $T_{t+1}$ is obtained,
+except the age-$d$ term $\eta^dX_{t-d+1}$.  Positivity is inherited from the
+snapshot.
+\end{proof}
+
+The identity explains the rank-creation obstruction of RH-130 without any
+spectral calculation.  A zero tail becomes nonzero because a positive
+snapshot crosses the boundary.  No finite multiplicative factor can create
+that range; the correct recurrence is affine from the start.
+
+\section{Moving-frame compression}
+Let $U_t$ and $U_{t+1}$ be isometries from $\mathbb C^r$ into the common
+source-coordinate space.  Choose an orthogonal $O_t$ and write
+\[
+ U_{t+1}=U_tO_t+E_t.
+\]
+The polar/Procrustes choice minimizes the Frobenius defect among orthogonal
+maps \citep{GolubVanLoan2013}.  Define the compressed old tail
+$K_t=U_t^*T_tU_t$.
+
+\begin{theorem}[Moving-frame affine tail bound]\label{thm:moving}
+For every $\tau>0$,
+\begin{align*}
+ K_{t+1}\preceq{}&\eta(1+\tau)O_t^*K_tO_t\\
+ &+\eta(1+\tau^{-1})\|T_t\|\|E_t\|^2I\\
+ &+U_{t+1}^*B_{t+1}U_{t+1}.
+\end{align*}
+The coefficients $1+\tau$ and $1+\tau^{-1}$ are jointly sharp under only
+norm information on the frame defect.
+\end{theorem}
+
+\begin{proof}
+Insert Theorem~\ref{thm:birth} into
+$K_{t+1}=U_{t+1}^*T_{t+1}U_{t+1}$.  For the old-tail term set
+$A=T_t^{1/2}U_tO_t$ and $C=T_t^{1/2}E_t$.  The positive matrix form of
+Young's inequality gives
+\[
+ (A+C)^*(A+C)\preceq(1+\tau)A^*A+(1+\tau^{-1})C^*C.
+\]
+Moreover $C^*C\preceq\|T_t\|\|E_t\|^2I$.  Multiplication by $\eta$ and
+addition of the birth compression prove the formula.  In the scalar case,
+$C=\tau A$ attains equality in Young's inequality, proving joint sharpness
+\citep{Bhatia1997}.
+\end{proof}
+
+Large frame motion does not enter the multiplicative coefficient; it enters
+as positive forcing weighted by the already decayed old-tail norm.  This is
+the structural advantage of deriving the recurrence before normalizing by a
+possibly weak recent Gramian.
+
+\section{Finite-envelope weighting}
+Since every snapshot has trace one,
+\[
+ \|T_t\|\leq\Tr T_t\leq
+ \delta_p=\eta^d\frac{1-\eta^p}{1-\eta},
+\]
+where $p=t-d+1$ is the number of discarded snapshots.  For $p\geq1$,
+\[
+ \frac{\delta_{p+1}}{\delta_p}
+ =\frac{1-\eta^{p+1}}{1-\eta^p}
+ \leq1+\eta,
+\]
+with equality at $p=1$.
+
+\begin{corollary}[Weighted affine recurrence]\label{cor:weighted}
+Set $D_t=\delta_pK_t$.  Away from the first birth,
+\[
+ D_{t+1}\preceq\rho_p O_t^*D_tO_t+F_t,
+\]
+where
+\[
+ \rho_p=\eta(1+\tau)\frac{\delta_{p+1}}{\delta_p}
+ \leq\eta(1+\tau)(1+\eta)
+\]
+and
+\[
+ F_t=\delta_{p+1}\left[
+ \eta(1+\tau^{-1})\delta_p\|E_t\|^2I
+ +U_{t+1}^*B_{t+1}U_{t+1}
+ \right].
+\]
+At the first birth, take $\rho_p=0$ and the whole next weighted tail as
+forcing.
+\end{corollary}
+
+The first-birth convention is not a weakness: it is the exact semidefinite
+logic required by RH-130.  For $eta=1/512$ and $\tau=1$, the uniform old-tail
+coefficient equals
+\[
+ \frac{2}{512}\left(1+\frac1{512}\right)
+ =0.00391387939453125.
+\]
+The parameter $\tau$ can later be optimized against the relative size of
+frame forcing, but no optimization is needed to expose strict contraction.
+
+\section{Five-scale temporal audit}
+The audit uses five scales, two channels, three adaptive thresholds, and all
+consecutive times from the first four-frame action to the inherited endpoint.
+This gives 30 temporal chains and 330 transitions.  Recent and old memory
+parts are assembled directly.  At each step the two packet input frames are
+polar aligned, the exact boundary snapshot is identified, and the raw and
+weighted Loewner slacks are evaluated.
+
+All 330 exact tail identities pass; the maximum spectral-norm discrepancy is
+$2.62\times10^{-30}$.  Every raw and weighted Loewner comparison passes.
+There are 24 first-birth transitions, one in each eligible
+scale/channel/threshold chain.  The envelope ratio is reproduced exactly in
+floating arithmetic and the maximum $\rho_p$ is the theoretical
+$0.0039138794$.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/moving_frame_memory_tail_recurrence.pdf}
+\caption{Strong weighted contraction, birth versus frame forcing, and
+consecutive-frame motion across all 330 temporal updates.}
+\label{fig:audit}
+\end{figure}
+
+Frame coherence is not assumed.  The minimum principal cosine is
+$0.002204$, the median spectral frame defect is $0.567$, and the maximum is
+$1.413$.  Nevertheless all 240 updates with nonzero forcing are
+birth-dominated: the boundary-slice norm exceeds the frame-forcing norm in
+every case.  Weighted forcing norms lie between $2.69\times10^{-29}$ and
+$7.53\times10^{-28}$, with median $4.92\times10^{-28}$.
+
+Those tiny absolute numbers are not yet a relative Rayleigh conclusion.
+The recent action Gramian can have condition number near $10^{10}$, so
+normalization by $G_{t+1}^{-1/2}$ may amplify forcing severely.  This is the
+precise remaining bridge, not a defect in the raw memory recurrence.
+
+\section{Route consequence and boundary}
+RH-134 proves the source mechanism sought after RH-130: old tail contracts
+by the geometric memory factor, rank is created only by an explicit positive
+boundary slice, and moving-frame error is a separately quantified forcing.
+The result is stronger than a numerical fit and independent of the Gaussian
+details beyond snapshot positivity and trace normalization.
+
+The next layer must transport the recent Gram metric simultaneously.  It
+should convert Corollary~\ref{cor:weighted} into
+$\gamma_{t+1}^2\leq\rho_t\gamma_t^2+q_t$, determine how weak Gram directions
+amplify the two forcing pieces, and isolate a sharp obstruction if no uniform
+lower metric bound is available.
+
+We have not proved a relative-Gram recurrence, a cross-scale source identity,
+uniform bounds on $q_t$, a normalized-base liminf, uniform Stage A, a
+Hilbert--Polya operator, zeta-zero identification, or the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

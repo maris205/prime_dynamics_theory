@@ -1,0 +1,60 @@
+{
+  "audit": {
+    "birth_dominant_transition_count": 240,
+    "birth_transition_count": 24,
+    "chain_count": 30,
+    "frame_dominant_transition_count": 0,
+    "maximum_envelope_ratio_error": 0.0,
+    "maximum_frame_defect_norm": 1.412654412882355,
+    "maximum_positive_forcing_norm": 7.533196285242399e-28,
+    "maximum_tail_recurrence_error": 2.6183485993529415e-30,
+    "maximum_weighted_multiplicative_factor": 0.00391387939453125,
+    "median_frame_defect_norm": 0.5671721711898211,
+    "median_positive_forcing_norm": 4.921918913920664e-28,
+    "minimum_positive_forcing_norm": 2.6874064355300714e-29,
+    "minimum_principal_cosine": 0.0022037548820040536,
+    "raw_loewner_failure_count": 0,
+    "scale_count": 5,
+    "tail_identity_failure_count": 0,
+    "transition_count": 330,
+    "weighted_loewner_failure_count": 0
+  },
+  "program_boundary": {
+    "cross_scale_source_recurrence_proved": false,
+    "exact_memory_tail_birth_identity": true,
+    "finite_envelope_ratio_bound": true,
+    "hilbert_polya_operator": false,
+    "moving_frame_affine_loewner_recurrence": true,
+    "relative_gram_normalized_recurrence_proved": false,
+    "riemann_hypothesis": false,
+    "sharp_young_frame_defect_constants": true,
+    "temporal_frozen_packet_audited": true,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "41463bc20b04daef1b8ab97daced282759ba6d9ca004e918fc1bdd680259f331",
+    "THEOREM_LEDGER.md": "6e97d768cd9ef0c4c68295acfab171405c88d1f916c48928330de1ef5dd6173a",
+    "UPDATED_ROADMAP.md": "e71b5db4ce909e88816fd2a4091c7af2bef0cd91577ab8391b0caecd2ea37600",
+    "figures/moving_frame_memory_tail_recurrence.pdf": "fc09ad517350e5f8acbcbf4e9a2a379378ca55c56d83eb788aa36fd9ffda2144",
+    "figures/moving_frame_memory_tail_recurrence.png": "070e4f5bf3024b3101033a1ed1d133af54b8b61c0b71c20f7840097f309a00ea",
+    "main.pdf": "e3cccb846b018d3323cdd9986df109032c8d992b6036b4789eb8b6a3b4ec4ff3",
+    "main.tex": "66f69d18a8b1af41743c611eabdac540ea8614697ba65890e1b10679b30c8008",
+    "moving-frame-memory-tail-recurrence.pdf": "e3cccb846b018d3323cdd9986df109032c8d992b6036b4789eb8b6a3b4ec4ff3",
+    "pyproject.toml": "b1f1a96c101c855693f9814b962b7e0a67f9fe78ff51edbad0f714041fd41d7e",
+    "references.bib": "d616f6f271f78a8cd8cf89b0339c44149443404c3b9f8f091dea5a740042f94c",
+    "requirements.txt": "b6efa8218da0501de62ea68dcf20c52b995433d53ca4f46f6afd2d12226a981e"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "7a41fbbe36311cab2a45af275ca72990fff7b4bdb21e51db108d0ecfbf9669ef",
+    "results/memory_tail_audit.json": "915cef24734eea97fe140907c279cd5cfdd921fcf24311f4f48d62b70de3c15f",
+    "results/memory_tail_smoke.json": "23b96d6c9dbccd5467e0f0ec012c9c708e3c164055188057d4e6601299d3aade"
+  },
+  "route_consequence": "The finite-memory tail has an exact one-step birth law. In moving packet frames it admits a source-level affine Loewner recurrence with a strongly contractive old-tail coefficient, an explicit frame-change forcing, and the newly crossed memory slice. The remaining step is to transport the recent Gram metric simultaneously and convert these raw terms into relative coefficients rho_n and q_n.",
+  "status": "rh134_moving_frame_memory_tail_recurrence_archived",
+  "theorem": {
+    "exact_tail_birth_identity": true,
+    "sharp_moving_frame_affine_bound": true,
+    "strong_weighted_raw_contraction": true
+  }
+}
