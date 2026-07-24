@@ -1,0 +1,143 @@
+\section{Prioritized next-stage roadmap}
+\label{sec:next-roadmap}
+
+The priorities below are ordered by how directly the existing exact
+reductions expose a checkable next theorem.  Priorities one and two
+may run in parallel because zero-mode cancellation and energy survival
+are both required.
+
+\subsection{Priority 1: zero-mode low-frequency, Tauberian, and
+surrogate branch}
+
+\paragraph{Deliverable 1A: literal low-window export.}
+Write every
+\(\widehat A_X(r)\), \(0<d_{q_X}(r,0)\le R_X\), in the native affine
+variables, retain the TPC-86 multiplier, and partition resonant,
+short-fiber, and generic sectors without deletion.  The first theorem
+target is the complete multiplier-weighted window, not an individual
+generic frequency.  Choose \(R_X=X^{\varrho+o(1)}\) and filter order
+\(k\) so that \(R_X<q_X/2\),
+\(\varrho<267/400\), and
+\((k-\tfrac12)\varrho>133/400+\eta_Z\); the
+\(133/600+\eps\) window, with fixed \(0<\eps<107/240\), is
+reserved for the second-order zero-loss corner unless
+\(\eta_Z<3\eps/2\).
+
+\paragraph{Deliverable 1B: signed Tauberian certificate.}
+For any logarithmic input, compute the exact unnormalized primitive
+and its signed backward Ces\`aro defect on every physical prefix.
+Then prove that the coefficient-weighted fiber defects, short-fiber
+return, and content completion together meet
+\eqref{eq:tauberian-aggregate-target}, or the corresponding
+quantitative target of the attached block.  A per-fiber \(o(1)\)
+defect is not enough when the number or weights of fibers grow.  If
+only normalized window cancellation is available, record a negative
+transfer result rather than treating it as ordinary cancellation.
+
+\paragraph{Deliverable 1C: surrogate feasibility test.}
+Construct candidate same-frame surrogates only after an exact support
+map.  Prove or disprove the simultaneous
+\[
+ \rho(b_X),\quad
+ \|A_X-b_X\|_2/\|b_X\|_2
+ \le X^{o(1)}/J_X
+\]
+requirements.  A sharp lower bound on the best achievable error would
+be a publishable negative result.
+
+\subsection{Priority 2: determinant mass and equal-determinant
+coherence}
+
+\paragraph{Deliverable 2A: native-key census.}
+Implement the TPC-84 streaming/external-sort schema with exact
+determinant and provenance keys.  Report \(M_X,D_X,E_{\rm trip}\),
+\(C_{\rm eq}\), dominant-fiber mass, pairing-class totals, and the
+unpaired remainder under one normalization.  This computation chooses
+the next theorem; it does not prove asymptotics.
+
+\paragraph{Deliverable 2B: one growing lower bound.}
+Target either:
+\[
+ M_X\ge X^{-o(1)}N_{0,X},
+\]
+a positive same-scale lower bound for one literal pairing class with
+controlled remainder, or a rigorously quantified fixed-loss profile.
+If a fixed-power mass loss is proved instead, abandon the natural
+corner and recalculate the full TPC-88 ledger.
+
+\subsection{Priority 3: primitive affine arithmetic}
+
+TPC-90 shows that the next useful theorem is not another local root
+count.  Expand one literal low-frequency or determinant block into
+the squarefree-supported Liouville correlation and seek a bound that
+is uniform in the growing slopes, intercepts, origins, masks, and
+prefixes.  The preferred progression is:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item one literal residual block with a fixed-power or arbitrary-log
+  saving;
+\item a controlled family of square-divisor moduli with exact
+  complementary return;
+\item the full multiplier-weighted low window or TPC-18 generic
+  block; and
+\item complete outer reassembly.
+\end{enumerate}
+At each stage, averaged shifts, frozen coefficients, and density-one
+ranges retain those qualifiers.
+
+\subsection{Priority 4: full-block reassembly, exact cover first}
+
+Export the TPC-16/TPC-18 hard packet to the TPC-91 incidence format.
+The first calculation is exact feasibility, preferably with rational
+or interval-certified arithmetic.  There are three publishable
+outcomes:
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item an allowed exact cover with acceptable coefficient cost;
+\item a dual residual or Farkas certificate that kills the proposed
+  zero-residual block family; or
+\item an explicit residual plus a new physical theorem controlling
+  it.
+\end{enumerate}
+Outcome (a) closes reassembly with zero residual.  Outcome (b) does
+not kill the original TPC-18 residual route.  Outcome (c) closes
+reassembly only at the rate actually proved.  Primitive determinant
+dispersion remains a separate subsequent theorem.
+
+\subsection{Final merge audit}
+
+No branch is declared complete in isolation.  Before any endpoint
+claim, rerun the following audit:
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
+\item literal physical coefficients and one prescribed \(h_0\);
+\item actual support and all native keys;
+\item one global atomic normalization;
+\item canonical, complete representation with no deleted sectors;
+\item the recorded determinant compatibility
+  \(\lambda_D\le2\eta_Z\); and
+\item the independent strict physical budget
+  \(\Lambda_{\rm phys}<1/400\).
+\end{enumerate}
+Then verify the TPC-18 reassembly (exact cover or a controlled
+physical residual) and primitive determinant input separately.  Any
+duplicated loss is removed before the comparison.
+
+\begin{proposition}[Roadmap outcome trichotomy]
+\label{prop:roadmap-trichotomy}
+Every prioritized branch has three honest outcomes:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item a literal positive estimate, which advances the dependency
+  graph at its proved level;
+\item an exact negative certificate, which permanently removes the
+  specified route or family; or
+\item a conditional interface or numerical diagnostic, which is
+  retained without promotion.
+\end{enumerate}
+None of these labels implies a prime-pair theorem unless the entire
+remaining conjunction is proved.
+\end{proposition}
+
+\begin{proof}
+The positive and negative certificates are the go/stop tests in
+\cref{sec:stop-go-tests}; every other outcome lacks at least one
+promotion item in \cref{prop:promotion-rule}.  The final statement
+follows because the completion conjunction remains unproved.
+\end{proof}

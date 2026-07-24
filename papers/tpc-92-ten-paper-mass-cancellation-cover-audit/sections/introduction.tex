@@ -1,0 +1,106 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Long proof programs accumulate two different kinds of progress.
+Some steps establish an arithmetic estimate on the literal physical
+coefficient.  Others remove ambiguity: they identify the correct
+normalization, prove an exact transfer theorem, or exhibit a
+counterexample to an invalid shortcut.  Both are useful, but they
+must not be reported at the same proof level.
+
+TPC-83 through TPC-91 were designed as a controlled exploration of
+the fixed-shift determinant route after the completion-to-flatness
+audit in TPC-82 \citep{WangTPC82}.  They investigate three quantities
+and two reassembly interfaces:
+\[
+ M_X=\sum_n|A_X(n)|,\qquad
+ D_X=\sum_n|A_X(n)|^2,\qquad
+ Z_X=\sum_nA_X(n),
+\]
+together with the TPC-18 all-block reassembly and primitive determinant
+dispersion \citep{WangTPC18}.  Here \(A_X\) is always the already
+aggregated literal determinant coefficient on its actual support.
+At the audited critical row we use
+\[
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)},\qquad
+ N_{0,X}=J_XQ_X^2.
+\]
+The padded Fourier modulus satisfies \(q_X\asymp Q_X\), and
+\[
+ d_q(r,0)=\min_{m\in\mathbb Z}|r+mq|
+\]
+denotes cyclic distance.  If \(v\ne0\) is a coefficient on the same
+literal frame \(\Omega\), with \(S=\#\Omega\), put
+\[
+ Z(v)=\sum_{\omega\in\Omega}v_\omega,\qquad
+ D(v)=\sum_{\omega\in\Omega}|v_\omega|^2,\qquad
+ \rho(v)=\frac{|Z(v)|}{\sqrt{S D(v)}}.
+\]
+Every surrogate comparison below uses this same \(\Omega\); zero
+padding or changing the frame changes \(\rho\).
+
+The nine papers do not supply nine interchangeable estimates.
+Instead, they form four branches:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item post-bin mass, determinant energy, and equal-determinant
+  coherence;
+\item distinguished zero-mode cancellation through Fourier,
+  Tauberian, or surrogate interfaces;
+\item primitive affine local support versus the remaining sign
+  correlation; and
+\item full-block reassembly of the upstream hard packet, with exact
+  coverage as its zero-residual sufficient certificate.
+\end{enumerate}
+These branches must merge only after their normalizations and losses
+have been matched literally.
+
+\subsection{Purpose of the present audit}
+
+This paper has four tasks.  First, it records the precise dependency
+graph for TPC-83--TPC-91 from their actual theorem statements, rather
+than from suggestive titles.  Second, it classifies every advance as
+\(\Lzero\), \(\Lone\), or \(\Ltwo\).  Third, it identifies which
+routes have been sharpened, which shortcuts have been killed, and
+which arithmetic gates remain independent.  Fourth, it turns those
+gates into a prioritized roadmap with explicit stop/go criteria.
+
+The result is not a proof by accumulation.  Exact identities do not
+become a growing fixed-shift correlation estimate merely because
+many of them are now available.  Conversely, a negative transfer
+result can be durable progress when it prevents an invalid route from
+being retried.
+
+\subsection{Headline conclusion}
+
+The nine-paper block has made the route substantially more
+falsifiable:
+\begin{itemize}[leftmargin=2em]
+\item the correct mass variable is post-bin, not raw;
+\item any determinant-energy lower bound with fixed loss below one
+  requires equal-determinant coherence;
+\item the zero mode is a coherent low-frequency or affine-sign
+  problem, not a centering convention;
+\item logarithmic-to-ordinary transfer requires a signed Tauberian
+  defect with a rate that survives outer reassembly;
+\item a surrogate must have uniform worst-case accuracy at the full
+  \(J^{-1}\) scale (or \(X^{o(1)}/J_X\) in the physical convention);
+\item local squarefree density does not supply sign cancellation; and
+\item bounded overlap does not supply an exact full-block certificate,
+  while a nonzero coefficient residual still needs a physical
+  remainder theorem.
+\end{itemize}
+No paper in the block proves the remaining growing arithmetic bound.
+The honest aggregate status is therefore strong \(\Lzero/\Lone\)
+progress with no new \(\Ltwo\) theorem.
+
+\subsection{Organization}
+
+\Cref{sec:audit-protocol} fixes the proof levels and literal
+invariants.  \Cref{sec:dependency-graph} gives the dependency graph
+and paper-by-paper scorecard.  \Cref{sec:exact-advances} records the
+exact positive advances and killed shortcuts.
+\Cref{sec:independent-gates} states the remaining conjunction and
+separate ledgers.  \Cref{sec:stop-go-tests,sec:next-roadmap} give the
+branch tests and priority order.  \Cref{sec:claim-boundary} states the
+final audited boundary.

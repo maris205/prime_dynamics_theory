@@ -1,0 +1,200 @@
+\section{The remaining independent gates}
+\label{sec:independent-gates}
+
+\subsection{Current-route completion vector}
+
+The exact papers now permit the remaining hypotheses to be stated
+without substitution.  Fix exponent parameters
+\(\lambda_D,\eta_Z\ge0\).  On the current route, write:
+\begin{align*}
+\mathsf G_{\rm mass}:\quad&
+D_X\ge
+X^{-\lambda_D+o(1)}Q_X^3J_X^2,
+\\
+\mathsf G_{\rm zero}:\quad&
+|Z_X|\le X^{-\eta_Z+o(1)}Q_X^2,
+\\
+\mathsf G_{\rm reasm}:\quad&
+w_X=B_Xc_X+r_X,\quad c_X\in\mathscr C_X^{\rm up},\quad
+\mathcal T_X(r_X)=o(X),
+\\
+\mathsf G_{\rm DD}:\quad&
+\text{the TPC-18 primitive determinant estimate holds on every
+returned block},
+\\
+\mathsf G_{\rm phys}:\quad&
+\Lambda_{\rm phys}<\frac1{400}.
+\end{align*}
+Here \(\mathscr C_X^{\rm up}\) is the coefficient rule actually
+derived upstream; in the original unit-coefficient packet it is not
+replaceable by an arbitrary signed solution.  The reassembly gate
+includes coefficient amplification and the quantitative residual
+rate required by the physical ledger, and \(\mathcal T_X\) is the
+original literal physical reassembly functional.  The exact cover
+\(B_Xc_X=w_X\) is the special sufficient case \(r_X=0\).
+The determinant-dispersion gate includes every prefix and exceptional
+block required by TPC-18.
+
+\begin{definition}[Audited completion conjunction]
+\label{def:completion-conjunction}
+The current route has an \emph{audited completion certificate} only
+when all five gates above hold in one literal frame and the recorded
+mass/zero-mode bounds satisfy
+\begin{equation}
+ \lambda_D\le2\eta_Z.
+ \label{eq:determinant-compatibility}
+\end{equation}
+\end{definition}
+
+This definition does not assert that the gates have been proved.  It
+records the conjunction required by the present chain.  A genuinely
+different proof may bypass a gate, but must then replace the
+corresponding dependency by another literal theorem.
+
+\subsection{Determinant and physical ledgers}
+
+The determinant compatibility
+\eqref{eq:determinant-compatibility} compares the recorded lower
+bound for \(D_X\) with the recorded upper bound for \(Z_X\).  At the
+critical row it is the sufficient flatness ledger derived in
+TPC-82 and reproduced exactly by TPC-88
+\citep{WangTPC82,WangTPC88}.  If
+\(\lambda_D>2\eta_Z\), those particular recorded bounds do not
+certify the target.  This failure need not disprove a sharper bound
+for the actual coefficient.
+
+The physical ledger records fixed-power degradation elsewhere in the
+literal interface and downstream comparison:
+\begin{equation}
+ \boxed{\Lambda_{\rm phys}<\frac1{400}.}
+ \label{eq:strict-physical-ledger}
+\end{equation}
+It is strict.  Equality or excess stops the route.  A polynomial
+reassembly-amplification or physical-residual loss enters this ledger
+once if it is not already present in the block error.  A determinant-energy loss already
+represented by \(\lambda_D\), or a zero-mode gain represented by
+\(\eta_Z\), is not charged again.
+
+\begin{theorem}[Ledger separation]
+\label{thm:ledger-separation}
+The audited chain requires the conjunction
+\[
+ \lambda_D\le2\eta_Z
+ \qquad\text{and}\qquad
+ \Lambda_{\rm phys}<1/400.
+\]
+It supplies no theorem that adds these inequalities into one budget,
+converts one into the other, or permits the same loss to be entered
+twice.
+\end{theorem}
+
+\begin{proof}
+The first inequality compares two statistics of the same literal
+post-bin coefficient.  The second counts losses in distinct physical
+maps and reassembly steps, excluding losses already represented in
+the first comparison.  They have different definitions and inputs.
+TPC-87--TPC-91 explicitly preserve this separation
+\citep{WangTPC87,WangTPC88,WangTPC89,WangTPC90,WangTPC91}.
+\end{proof}
+
+\begin{remark}[Equality]
+Equality \(\lambda_D=2\eta_Z\) is compatible with the recorded
+flatness exponent but leaves no determinant-ledger reserve.
+Equality \(\Lambda_{\rm phys}=1/400\) violates the strict physical
+rule and is a stop.  These two equality cases must not be conflated.
+\end{remark}
+
+\subsection{Reassembly and determinant dispersion}
+
+\begin{proposition}[TPC-18 gate independence]
+\label{prop:cover-dd-independence}
+Within the audited theorem chain:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item an exact allowed cover \(B_Xc_X=w_X\) is a sufficient
+  zero-residual reassembly certificate, but does not prove the
+  primitive determinant estimate on any column;
+\item a determinant estimate on every candidate column does not prove
+  either exact coverage or a physical bound for the residual;
+\item a nonzero coefficient residual does not by itself fail the
+  TPC-18 reassembly gate, but closes it only after
+  \(\mathcal T_X(r_X)\) is bounded at the required rate.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Zero-residual coverage is a constrained coefficient identity.
+Determinant dispersion is an arithmetic bound on the column
+statistics.  TPC-91 gives finite systems with bounded overlap but
+positive cover defect, while the TPC-18 estimate is stated
+conditionally for already admissible blocks
+\citep{WangTPC18,WangTPC91}.  If
+\(w_X=B_Xc_X+r_X\), reassembly contains the additional term
+\(\mathcal T_X(r_X)\); Euclidean smallness alone does not estimate it.
+\end{proof}
+
+\subsection{Local support and sign arithmetic}
+
+The TPC-90 product
+\[
+ \prod_p(1-\nu_{p,2}/p^2)>0
+\]
+certifies that primitive affine squarefree support has no local
+annihilation.  It is not a saving in \(\eta_Z\), a lower bound for
+\(D_X\), a TPC-18 determinant estimate, or a reduction of
+\(\Lambda_{\rm phys}\).  The remaining Liouville product is a signed
+arithmetic gate and must be estimated on its literal growing family.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash}p{0.21\textwidth}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{0.28\textwidth}@{}}
+\toprule
+Gate & Required literal certificate & Present status\\
+\midrule
+Mass/energy
+&
+\(\mathsf G_{\rm mass}\), equivalently natural post-bin mass in the
+subpower corner
+&
+Transfer proved; lower bound open
+\\
+\addlinespace
+Zero mode
+&
+\(\mathsf G_{\rm zero}\), via Fourier, Tauberian, surrogate, or direct
+estimate
+&
+Exact reductions proved; growing estimate open
+\\
+\addlinespace
+Full-block reassembly
+&
+Upstream-prescribed \(w_X=B_Xc_X+r_X\), with exact cover or a
+physical bound on \(\mathcal T_X(r_X)\)
+&
+Exact-cover certificate theory proved; physical system and residual
+route not solved
+\\
+\addlinespace
+Primitive dispersion
+&
+Uniform TPC-18 estimate on every returned block
+&
+Independent conditional input
+\\
+\addlinespace
+Endpoint
+&
+\(\lambda_D\le2\eta_Z\) and
+\(\Lambda_{\rm phys}<1/400\), with no duplication
+&
+Bookkeeping exact; hypotheses unproved
+\\
+\bottomrule
+\end{tabularx}
+\caption{No row may be substituted for another.}
+\label{tab:remaining-gates}
+\end{table}

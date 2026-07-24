@@ -1,0 +1,375 @@
+\section{Exact advances and permanently removed shortcuts}
+\label{sec:exact-advances}
+
+\subsection{Magnitude branch: mass, energy, and coherence}
+
+Let
+\[
+ S_X=\#\supp A_X,\qquad
+ L_X=\|A_X\|_\infty,\qquad
+ M_X=\|A_X\|_1,\qquad
+ D_X=\|A_X\|_2^2,
+\]
+and \(N_{0,X}=J_XQ_X^2\).  TPC-83 combines the universal inequalities
+\[
+ \frac{M_X^2}{S_X}\le D_X\le L_XM_X
+\]
+with the verified literal envelopes
+\[
+ S_X\ll Q_X,\qquad
+ L_X\ll X^{o(1)}\frac{N_{0,X}}{Q_X}.
+\]
+It follows exactly that subpower natural mass survival is equivalent
+to subpower natural energy survival.  This closes the choice of
+variable, not its lower bound \citep{WangTPC83}.
+
+TPC-84 opens the post-bin coefficient into native determinant fibers.
+For fiber moduli \(r_i\), the sharp free-phase resultant interval is
+\[
+ \left[(2r_{\max}-\sum_i r_i)_+,\ \sum_i r_i\right].
+\]
+It also proves
+\[
+ D_X=E_{{\rm trip},X}+C_{{\rm eq},X},
+\]
+where the physical triplet diagonal is at most on the loss-one scale.
+Thus an eventual energy lower bound with fixed loss
+\(\lambda_D<1\) must be carried asymptotically by positive
+equal-determinant off-diagonal coherence.  This is a necessary
+mechanism, not a proved lower bound \citep{WangTPC84}.
+
+\begin{proposition}[Audited magnitude output]
+\label{prop:magnitude-output}
+Under the literal support and pointwise envelopes above, natural
+post-bin mass survival is equivalent to natural determinant-energy
+survival.  Moreover, if a future theorem proves
+\[
+ D_X\ge X^{-\lambda_D+o(1)}Q_X^3J_X^2
+ \qquad\text{with fixed }\lambda_D<1,
+\]
+then
+\[
+ C_{{\rm eq},X}=(1-o(1))D_X>0.
+\]
+Neither conclusion supplies the mass or energy lower bound itself.
+\end{proposition}
+
+\begin{proof}
+The first statement is the two-sided TPC-83 exponent transfer.  For
+the second, TPC-84 proves that the physical triplet diagonal is at
+most on the loss-one scale, so it is \(o(D_X)\) under the displayed
+fixed-loss hypothesis.  Insert this in
+\(D_X=E_{{\rm trip},X}+C_{{\rm eq},X}\).
+\end{proof}
+
+A continuation may seek dominant-native-term survival on enough
+actual fibers, or a positive structured same-determinant pairing
+with controlled remainder.  These are research strategies, not an
+exhaustive theorem-level disjunction.  Raw mass precedes fiber
+summation and cannot lower-bound the post-bin norm.
+
+\subsection{Zero-mode branch: Fourier, Tauberian, and surrogate
+interfaces}
+
+TPC-85 proves that
+\[
+ A_X(0)=0
+\quad\not\Longrightarrow\quad
+ Z_X=\widehat A_X(0)=0.
+\]
+Under no-wrap padding,
+\[
+ A_X=A_X^\circ+\frac{Z_X}{q_X}\one,\qquad
+ D_X=\|A_X^\circ\|_2^2+\frac{|Z_X|^2}{q_X},
+\]
+and
+\[
+ Z_X=-\sum_{r\ne0}\widehat A_X(r).
+\]
+Conditional expectation preserves \(Z_X\) and changes the energy
+normalization; content inversion returns the full shell in its
+\(t=1\) term.  These identities eliminate three normalization
+shortcuts but retain coherent Fourier reassembly as a valid branch
+\citep{WangTPC85}.
+
+TPC-86 sharpens that branch.  A positive-density structural zero arc
+supports a fixed-order filter with bounded Wiener norm.  For the
+literal packet,
+\[
+ |Z_X|
+ \ll_k
+ \max_{0<d_{q_X}(r,0)\le R}
+ |\widehat A_X(r)|
+ +
+ X^{o(1)}N_{0,X}R^{1/2-k}.
+\]
+Write
+\[
+ R_X=X^{\varrho+o(1)}<q_X/2,\qquad
+ \varrho<\frac{267}{400}.
+\]
+At the critical row, a target
+\[
+ |Z_X|\le X^{-\eta_Z+o(1)}Q_X^2
+\]
+has an admissible filter tail whenever
+\[
+ (k-\tfrac12)\varrho>\frac{133}{400}+\eta_Z.
+\]
+The often quoted choice
+\[
+ k=2,\qquad R_X=X^{133/600+\eps}
+\]
+is the zero-loss corner \(\eta_Z=0\), with sufficiently small fixed
+\[
+ 0<\eps<\frac{267}{400}-\frac{133}{600}
+ =\frac{107}{240}.
+\]
+More generally that same window requires
+\(\eta_Z<3\eps/2\).  The missing input is therefore
+a coherent literal low-frequency estimate at a window matched to
+the desired rate, not control of all \(q_X\) frequencies
+\citep{WangTPC86}.
+
+TPC-87 identifies the exact cost of importing logarithmic
+cancellation.  For
+\[
+ S_N=\sum_{n\le N}a_n,\qquad
+ L_N=\sum_{n\le N}\frac{a_n}{n},
+\]
+one has
+\[
+ \frac{S_N}{N}
+ =
+ \underbrace{L_N-\frac1N\sum_{m<N}L_m}_{\mathcal T_N(L)}.
+\]
+Thus ordinary cancellation is exactly the vanishing of the signed
+backward Ces\`aro defect.  Normalized logarithmic cancellation alone
+does not imply it.  Terminal-half control or vanishing dyadic
+logarithmic variation can bound the defect for one sequence, but a
+physical application must also survive the weighted outer sum.  If
+\[
+ Z_X=\sum_{\theta\in\Theta_X}
+ c_{\theta,X}S_{\theta,X}(N_{\theta,X})
+ +E_{\mathrm{content},X},
+\]
+the relevant quantitative certificate is
+\begin{equation}
+ \sum_{\theta\in\Theta_X}|c_{\theta,X}|N_{\theta,X}
+ \left|\mathcal T_{N_{\theta,X}}(L_{\theta,X})\right|
+ +|E_{\mathrm{content},X}|
+ \le X^{-\eta_Z+o(1)}Q_X^2.
+\label{eq:tauberian-aggregate-target}
+\end{equation}
+The Abel identity itself is \(\Lzero\); the growing estimate
+\eqref{eq:tauberian-aggregate-target} is not proved
+\citep{WangTPC87}.
+
+TPC-88 and TPC-89 turn the same target into magnitude--phase and
+projective geometry.  For \(A_X\ne0\),
+\[
+ \Flat_X
+ =
+ \frac{|Z_X|^2}{D_X}
+ =
+ \underbrace{\left(\frac{|Z_X|}{M_X}\right)^2}_{\canc_X^2}
+ \underbrace{\frac{M_X^2}{D_X}}_{S_{\mathrm{eff},X}}.
+\]
+Under natural post-bin mass survival,
+\[
+ S_{\mathrm{eff},X}=X^{o(1)}Q_X,
+\]
+and at the critical endpoint
+\[
+ \Flat_X\le X^{1/400+o(1)}
+ \iff
+ \canc_X\le\frac{X^{o(1)}}{J_X}
+ \iff
+ |Z_X|\le X^{o(1)}Q_X^2.
+\]
+If a same-frame surrogate \(b_X\) is used, its projective angle
+transfers with the sharp law
+\[
+ |\rho(A_X)-\rho(b_X)|
+ \le
+ \frac{\|A_X-b_X\|_2}{\|b_X\|_2}.
+\]
+Uniform transfer of the critical angle therefore requires relative
+accuracy \(O(J_X^{-1})\) in order; \(o(1)\) is insufficient
+\citep{WangTPC88,WangTPC89}.
+
+\begin{theorem}[Audited zero-mode fork]
+\label{thm:zero-mode-fork}
+In the natural-mass corner, any positive zero-mode continuation must
+establish at least one of the following on the same literal frame:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the TPC-86 coherent low-frequency bound with
+  \((k-\tfrac12)\varrho>133/400+\eta_Z\);
+\item the TPC-87 signed Tauberian defects on every required affine
+  fiber and prefix, with the aggregate rate
+  \eqref{eq:tauberian-aggregate-target};
+\item a same-frame TPC-89 surrogate with both angle and relative
+  error \(X^{o(1)}/J_X\); or
+\item a direct bound of equivalent strength for \(Z_X\).
+\end{enumerate}
+The audited results prove the equivalence or sufficiency of these
+certificates where stated, but prove none for the growing physical
+coefficient.
+\end{theorem}
+
+\begin{proof}
+Items (i)--(iii) are the literal sufficient interfaces proved in
+TPC-86, TPC-87, and TPC-89.  TPC-88 converts their common target to
+the displayed \(Z_X\) scale under natural mass.  Each source paper
+explicitly leaves its growing arithmetic hypothesis unproved.
+\end{proof}
+
+\subsection{Primitive affine branch}
+
+For individually primitive forms
+\[
+ L_1(r)=d+sr,\qquad L_2(r)=u+ar,\qquad su-ad=h_0\ne0,
+\]
+TPC-90 proves
+\[
+ \gcd(a,s)\mid h_0,\qquad
+ \gcd(L_1(r),L_2(r))\mid h_0.
+\]
+If \(\nu_{p,k}\) counts residues modulo \(p^k\) on which
+\(p^k\mid L_1(r)\) or \(p^k\mid L_2(r)\), then
+\[
+ \nu_{p,k}
+ =
+ \one_{p\nmid s}+\one_{p\nmid a}
+ -
+ \one_{p\nmid as}\one_{p^k\mid h_0}.
+\]
+Consequently the simultaneous squarefree local product is positive
+and uniformly bounded below by
+\[
+ \prod_p\left(1-\frac2{p^2}\right)>0.
+\]
+On positive intervals the exact sign split is
+\[
+ \mu(L_1)\mu(L_2)
+ =
+ \mu^2(L_1)\mu^2(L_2)
+ \lambda(L_1)\lambda(L_2).
+\]
+All square-power local obstructions are now explicit; the unresolved
+quantity is the weighted Liouville product on the actual growing
+physical family \citep{WangTPC90}.
+
+\subsection{Full-block reassembly branch}
+
+TPC-91 places the zero-residual strengthening of the TPC-18
+all-block hypothesis on the literal atom space.  With exact candidate
+columns \(B_X\), target \(w_X\), and the coefficient rule
+\(\mathscr C_X\) actually authorized upstream, this certificate is
+\[
+ B_Xc_X=w_X,\qquad c_X\in\mathscr C_X.
+\]
+For unrestricted synthesis the exact defect is
+\[
+ \eps_{\cov}
+ =
+ \|(I-B_XB_X^\dagger)w_X\|_2.
+\]
+For nonnegative synthesis, Farkas' alternative gives an exact dual
+obstruction.  For a general coefficient rule, exact feasibility is
+the membership \(w_X\in B_X\mathscr C_X\); zero distance is equivalent
+only when the attainable image is closed.  Bounded overlap, even
+overlap one with every atom covered, need not give an
+\(o(1)\)-relative coefficient cover.
+
+The original TPC-18 hypothesis is weaker: it may allow
+\[
+ w_X=B_Xc_X+r_X,\qquad \mathcal T_X(r_X)=o(X)
+\]
+in its physical scale, where \(\mathcal T_X\) denotes the original
+literal physical reassembly functional, with the prescribed
+coefficients and every
+quantitative loss retained.  Thus exact coverage is the clean
+zero-remainder sufficient route.  Its failure does not kill TPC-18
+reassembly unless the physical residual route is also ruled out
+\citep{WangTPC18,WangTPC91}.
+
+\subsection{Shortcuts removed by exact counterexamples}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash}p{0.33\textwidth}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{0.13\textwidth}@{}}
+\toprule
+Invalid shortcut & Exact reason it fails & Source\\
+\midrule
+Raw or pre-bin absolute mass \(\Rightarrow\) post-bin mass
+&
+Opposite atoms may cancel inside one determinant fiber
+&
+TPC-83/84
+\\
+\addlinespace
+Magnitude spreading \(\Rightarrow\) phase cancellation
+&
+Identical magnitudes can have maximal or zero flatness
+&
+TPC-88
+\\
+\addlinespace
+\(A_X(0)=0\), centering, conditional expectation, or content
+inversion \(\Rightarrow Z_X=0\)
+&
+Each operation has an exact identity that retains or extracts the
+unknown zero mode
+&
+TPC-85
+\\
+\addlinespace
+Mean-square or all-but-exceptional frequencies \(\Rightarrow\)
+coherent reassembly
+&
+Exceptional modes must be charged by multiplier mass and phase
+&
+TPC-86
+\\
+\addlinespace
+Normalized logarithmic cancellation \(\Rightarrow\) ordinary mean
+&
+The dyadic countermodel has terminal log cancellation but ordinary
+limits \(\pm1/3\)
+&
+TPC-87
+\\
+\addlinespace
+Relative surrogate error \(o(1)\Rightarrow J^{-1}\) angle control
+&
+The sharp tangent example has angle error exactly \(\delta\)
+&
+TPC-89
+\\
+\addlinespace
+Positive squarefree density \(\Rightarrow\) sign cancellation
+&
+The remaining factor is the independent Liouville product
+&
+TPC-90
+\\
+\addlinespace
+Bounded overlap, coarse-key cover, or small Euclidean residual
+\(\Rightarrow\) exact or physically controlled reassembly
+&
+Explicit residual and Farkas counterexamples prevent exact
+feasibility; Euclidean size alone does not control the physical image
+&
+TPC-91
+\\
+\bottomrule
+\end{tabularx}
+\caption{These routes are removed as automatic transfers.  A new
+theorem using additional arithmetic structure is not excluded.}
+\label{tab:killed-shortcuts}
+\end{table}

@@ -1,0 +1,166 @@
+\section{Dependency graph and paper-by-paper scorecard}
+\label{sec:dependency-graph}
+
+\subsection{Directed dependency graph}
+
+The arrows below mean ``uses or sharpens an interface from,'' not
+``logically implies the final arithmetic theorem'':
+\[
+\begin{array}{rclcl}
+\text{TPC-83} &\longrightarrow& \text{TPC-84},
+&\qquad&
+\text{TPC-83}\longrightarrow\text{TPC-88}
+\longrightarrow\text{TPC-89},
+\\[2mm]
+\text{TPC-85} &\longrightarrow& \text{TPC-86}
+\longrightarrow\text{TPC-87},
+&&
+\text{TPC-85},\text{TPC-87}\longrightarrow\text{TPC-90},
+\\[2mm]
+\text{TPC-18} &\longrightarrow& \text{TPC-91},
+&&
+\text{TPC-83--91}\longrightarrow\text{TPC-92}.
+\end{array}
+\]
+TPC-84 is the coherence continuation of the mass branch.
+TPC-86 and TPC-87 sharpen the Fourier and logarithmic alternatives
+opened by TPC-85.  TPC-88 and TPC-89 express the final flatness target
+as relative phase cancellation and then as a sharp surrogate-angle
+requirement.  TPC-90 opens the affine correlation from TPC-85 after
+the Tauberian warning in TPC-87.  TPC-91 is a cross-cutting audit of
+the separate TPC-18 reassembly gate.
+
+\subsection{Exact scorecard}
+
+\begin{theorem}[Dependency audit]
+\label{thm:dependency-audit}
+The outputs summarized in \cref{tab:paper-scorecard} close exact identities,
+sharp stability thresholds, and falsifiable interfaces.  Taken
+together, they do not prove any of the remaining-gate entries in the
+same row or in another row.
+\end{theorem}
+
+\begin{proof}
+TPC-83 and TPC-88 explicitly assume rather than prove mass or energy
+survival \citep{WangTPC83,WangTPC88}.  TPC-84 proves only a
+conditional necessity for positive coherence
+\citep{WangTPC84}.  TPC-85--TPC-87 give identities, reductions, and
+countermodels but no literal M\"obius bound
+\citep{WangTPC85,WangTPC86,WangTPC87}.  TPC-89 supplies a sharp
+transfer conditional on a surrogate that it does not construct
+\citep{WangTPC89}.  TPC-90 proves local squarefree support while
+leaving the Liouville product unresolved \citep{WangTPC90}.  TPC-91
+defines and diagnoses the stronger zero-residual certificate and its
+residual alternative, but neither instantiates the full physical
+system, controls its physical remainder, nor proves determinant dispersion
+\citep{WangTPC91}.  Therefore no remaining-gate entry is supplied by
+the audited theorem statements.
+\end{proof}
+
+\begin{table}[H]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash}p{0.08\textwidth}
+  >{\raggedright\arraybackslash}p{0.27\textwidth}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{0.16\textwidth}@{}}
+\toprule
+Paper & Exact advance & Remaining literal gate & Highest new level\\
+\midrule
+TPC-83
+&
+\(M^2/S\le D\le LM\); natural post-bin mass
+\(\Longleftrightarrow\) natural energy
+&
+Prove a lower bound for the actual post-bin \(M_X\) or \(D_X\)
+&
+\(\Lzero+\Lone\)
+\\
+\addlinespace
+TPC-84
+&
+Sharp fiber resultant interval;
+\(D=E_{\rm trip}+C_{\rm eq}\)
+&
+Prove dominant-native-term survival on enough actual fibers, or a
+positive same-scale structured \(C_{\rm eq}\) with controlled
+remainder; census not executed
+&
+\(\Lzero+\Lone\)
+\\
+\addlinespace
+TPC-85
+&
+Exact zero-mode disintegration and three normalization barriers
+&
+Bound the literal \(Z_X\), coherent modes, or growing affine pair
+&
+\(\Lzero+\Lone\)
+\\
+\addlinespace
+TPC-86
+&
+Optimal zero-set kernel and low-frequency reduction to
+\(R=X^{133/600+\eps}\) when \(\eta_Z=0\), \(k=2\), and
+\(0<\eps<107/240\)
+&
+Prove the multiplier-weighted literal low-frequency estimate
+&
+\(\Lzero+\Lone\)
+\\
+\addlinespace
+TPC-87
+&
+Exact signed Ces\`aro criterion and sharp structure-free countermodel
+&
+Uniform terminal cancellation for all physical affine fibers and
+prefixes
+&
+\(\Lzero+\Lone\)
+\\
+\addlinespace
+TPC-88
+&
+\(\Flat=\canc^2\Seff\); critical relative target \(X^{o(1)}/J\)
+&
+Prove natural mass and the required relative phase cancellation
+&
+\(\Lzero+\Lone\)
+\\
+\addlinespace
+TPC-89
+&
+Sharp principal-angle perturbation; accuracy threshold \(O(J^{-1})\)
+&
+Construct and prove a literal same-frame surrogate at that accuracy
+&
+\(\Lzero+\Lone\)
+\\
+\addlinespace
+TPC-90
+&
+Exact local roots, uniformly positive local Euler product,
+fixed-pair squarefree density, and \(\mu^2\lambda\) sign split
+&
+Growing fixed-\(h_0\) weighted Liouville cancellation with full return
+&
+\(\Lzero+\Lone\) interface
+\\
+\addlinespace
+TPC-91
+&
+Exact zero-residual \(Bc=w\) certificate, projection residual, and
+Farkas obstruction
+&
+Build the physical incidence system; prove exact cover or control its
+physical residual; separately prove TPC-18 determinant dispersion
+&
+\(\Lzero+\Lone\) schema
+\\
+\bottomrule
+\end{tabularx}
+\caption{No row contains a new \(\Ltwo\) growing fixed-shift
+arithmetic estimate.}
+\label{tab:paper-scorecard}
+\end{table}

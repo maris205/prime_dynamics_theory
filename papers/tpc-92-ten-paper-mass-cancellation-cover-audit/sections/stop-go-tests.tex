@@ -1,0 +1,233 @@
+\section{Explicit branch stop/go tests}
+\label{sec:stop-go-tests}
+
+A stop test kills only the stated branch or certificate unless an
+end-to-end impossibility theorem is proved.  Numerical failure is a
+diagnostic, not a stop certificate.
+
+\subsection{Branch I: zero-mode control}
+
+\paragraph{Fourier go test.}
+Fix the TPC-86 filter of order \(k\ge2\), its literal padding, and
+\[
+ R_X=X^{\varrho+o(1)}<q_X/2,\qquad
+ \varrho<\frac{267}{400},\qquad
+ (k-\tfrac12)\varrho>\frac{133}{400}+\eta_Z.
+\]
+For the zero-loss target \(\eta_Z=0\), the second-order choice
+\(R_X=X^{133/600+\eps}\) is admissible for fixed
+\(0<\eps<107/240\); for positive \(\eta_Z\) the window must be
+enlarged according to the displayed condition while remaining below
+\(q_X/2\).
+The branch advances if the multiplier-weighted low-frequency term and
+returned tail jointly imply
+\[
+ |Z_X|\le X^{-\eta_Z+o(1)}Q_X^2
+\]
+for an \(\eta_Z\) compatible with
+\eqref{eq:determinant-compatibility}.  Every exceptional frequency
+must be charged by reconstruction-multiplier mass, not cardinality.
+
+\paragraph{Fourier stop test.}
+The particular filter certificate stops if a rigorous literal lower
+bound on its exceptional or resonant contribution makes the target
+impossible, if the zero arc loses positive density without a
+replacement estimate, or if its unavoidable physical loss makes
+\(\Lambda_{\rm phys}\ge1/400\).  A mean-square theorem or an
+all-but-exceptional theorem that does not return the weighted
+exceptional set is merely insufficient input, not a global
+impossibility result.
+
+\paragraph{Tauberian go test.}
+For every physical affine sequence and every prefix used by outer
+reassembly, prove a quantitative signed defect, terminal-half, or
+variation bound such that the complete returned estimate satisfies
+\[
+ \sum_{\theta\in\Theta_X}|c_{\theta,X}|N_{\theta,X}
+ \left|
+ L_{\theta,X}(N_{\theta,X})
+ -\frac1{N_{\theta,X}}\sum_{m<N_{\theta,X}}
+ L_{\theta,X}(m)
+ \right|
+ +|E_{\mathrm{content},X}|
+ \le X^{-\eta_Z+o(1)}Q_X^2,
+\]
+or the corresponding quantitative target for the literal block to
+which the certificate is attached.  A per-fiber \(o(1)\) statement
+without this outer rate does not pass.  The reciprocal weight
+introduced on translated fibers must be transferred exactly.
+
+\paragraph{Tauberian stop test.}
+A theorem controlling only normalized logarithmic means, only fixed
+forms, or almost all scales/origins fails this certificate until its
+exceptional quantifiers are removed.  A proof that no available
+uniformity can survive the literal growing coefficients kills that
+transfer route, not M\"obius-specific alternatives.
+
+\paragraph{Surrogate go test.}
+Construct a same-frame \(b_X\) and prove
+\[
+ \rho(b_X)\le\frac{X^{o(1)}}{J_X},
+\qquad
+ \frac{\|A_X-b_X\|_2}{\|b_X\|_2}
+ \le\frac{X^{o(1)}}{J_X}.
+\]
+The support map must be exact because zero padding changes \(\rho\).
+
+\paragraph{Surrogate stop test.}
+The chosen surrogate class is killed by a rigorous lower bound showing
+that every allowed \(b_X\) has relative error
+\(\gg X^c/J_X\) for some fixed \(c>0\), or by an exact
+nonidentifiability counterexample.  Merely obtaining \(o(1)\) error
+does not pass the gate.
+
+\subsection{Branch II: determinant mass and coherence}
+
+\paragraph{Mass go test.}
+Prove
+\[
+ M_X\ge X^{-o(1)}N_{0,X}
+\]
+for the literal post-bin coefficient, or prove the equivalent natural
+energy lower bound directly.  A more general fixed-loss result is
+still usable, but must enter the full
+\((\mu,\lambda_D,\eta_Z)\) profile rather than the natural corner.
+
+\paragraph{Census go test.}
+Execute the native-key TPC-84 decomposition with exact determinant
+keys, then prove either a dominant-term lower bound on enough fibers
+or a positive structured pairing whose unpaired remainder is smaller
+uniformly in \(X\).  Finite computation can certify finite identities;
+the growing lower bound requires a theorem.
+
+\paragraph{Mass stop tests.}
+The phase-blind dominant-term strategy stops if its exact lower
+envelope is too small.  The natural-mass branch stops if one proves on
+an unbounded sequence of scales the literal upper bound
+\[
+ M_X\le X^{-c+o(1)}N_{0,X}
+\]
+for some fixed \(c>0\).  Neither event rules out a nonnatural
+loss-profile route.  A raw majorant or unexecuted census proves no
+stop.
+
+\subsection{Branch III: primitive affine sign arithmetic}
+
+\paragraph{Go test.}
+Prove cancellation for
+\[
+ \sum_{\substack{r\\
+ L_{1,\theta,X}(r)L_{2,\theta,X}(r)\ne0}}
+ W_{\theta,X}(r)
+ \mu^2(|L_{1,\theta,X}(r)|)
+ \mu^2(|L_{2,\theta,X}(r)|)
+ \lambda(|L_{1,\theta,X}(r)|)
+ \lambda(|L_{2,\theta,X}(r)|)
+\]
+uniformly over the literal growing coefficients, prescribed
+nonzero determinant \(h_0\), origins, masks, relevant prefixes,
+short-fiber treatment, polarizations, and outer keys.  The aggregate
+bound must fit either the zero-mode target or the TPC-18 block target
+to which it is attached.
+
+\paragraph{Weaker go tests.}
+A fixed-power saving on one literal residual block, a certified range
+of square-divisor moduli, or a smoothed/frozen one-slot theorem is
+publishable progress at its native level if it has an exact route back
+toward the physical coefficient.  It is not reported as full
+fixed-\(h_0\) cancellation.
+
+\paragraph{Stop tests.}
+Further local Euler-product calculations do not address the remaining
+sign factor.  The present implementation stops if a rigorous transfer
+lower bound shows that returning its excluded sectors necessarily
+forces \(\Lambda_{\rm phys}\ge1/400\).  An averaged-shift or fixed-form
+theorem that cannot select the prescribed growing family is an input
+mismatch, not proof that every affine route fails.
+
+\subsection{Branch IV: full-block reassembly}
+
+\paragraph{Exact-cover go test.}
+Export the complete physical target and candidate blocks to one
+native row list.  Solve the coefficient rule actually derived
+upstream; for the original unit cover the test is
+\[
+ B_X\one=w_X,
+\]
+not merely existence of an arbitrary signed solution.  Verify the
+coefficient-weighted block error under the original normalization.
+
+\paragraph{Exact-cover stop test.}
+For the proposed block family, any verified nonzero orthogonal
+residual or applicable Farkas vector is a rigorous stop certificate
+for that zero-residual candidate family.  It is not a stop for the
+original TPC-18 asymptotic reassembly.  A coarse determinant-key
+solution does not pass.
+
+\paragraph{Physical-residual go test.}
+If only \(w_X=B_Xc_X+r_X\) is available with the upstream-prescribed
+coefficients, prove the required physical estimate for
+\(\mathcal T_X(r_X)\), retain its rate in
+\(\Lambda_{\rm phys}\), and verify the original global normalization.
+Small \(\|r_X\|_2\) alone is not this theorem.
+
+\paragraph{Determinant-dispersion go test.}
+After an admissible exact or residual reassembly, prove the TPC-18
+primitive generic estimate uniformly on every returned block with the
+required strict exponent margin.  Reassembly and dispersion are
+checked separately.
+
+\paragraph{Global stop test.}
+Even if every local branch passes, equality or excess in
+\(\Lambda_{\rm phys}\) stops the assembled route.  Failure of
+\(\lambda_D\le2\eta_Z\) stops only the certificate formed from those
+recorded \(D_X,Z_X\) bounds unless a sharper estimate is impossible.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash}p{0.19\textwidth}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}X@{}}
+\toprule
+Branch & Go certificate & Rigorous branch kill\\
+\midrule
+Zero mode
+&
+Literal low-frequency, signed-Tauberian, surrogate, or direct
+\(Z_X\) bound
+&
+Unavoidable weighted residual or accuracy lower bound beyond the
+target
+\\
+\addlinespace
+Mass/coherence
+&
+Post-bin \(M_X\) or \(D_X\) lower bound; structured coherence with
+remainder
+&
+Literal fixed-power mass-loss upper bound kills the natural corner
+\\
+\addlinespace
+Affine sign
+&
+Growing fixed-\(h_0\) weighted Liouville cancellation with full return
+&
+Proved return loss reaches \(1/400\), or exact obstruction for the
+specified subroute
+\\
+\addlinespace
+Full-block reassembly
+&
+Allowed exact \(B_Xc_X=w_X\), or a proved physical residual; then
+separate DD
+&
+Nonzero dual/Farkas residual kills only that exact-cover family
+\\
+\bottomrule
+\end{tabularx}
+\caption{A failed heuristic or finite experiment is not a rigorous
+kill certificate.}
+\label{tab:stop-go-summary}
+\end{table}
