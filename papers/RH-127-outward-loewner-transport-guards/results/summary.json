@@ -1,0 +1,46 @@
+{
+  "audit": {
+    "certified_count": 4096,
+    "false_certification_count": 0,
+    "maximum_gram_guard_ratio": 0.20568261045926822,
+    "maximum_tail_guard_ratio": 0.21611528307957642,
+    "sample_count": 4096,
+    "sharp_gram_error": 0.0,
+    "sharp_tail_error": 0.0
+  },
+  "program_boundary": {
+    "all_level_roundoff_radii_proved": false,
+    "cross_assembly_spectral_radius_transport": true,
+    "five_scale_independent_assembly_revalidated": false,
+    "guard_sharpness": true,
+    "hilbert_polya_operator": false,
+    "outward_loewner_guard_theorem": true,
+    "riemann_hypothesis": false,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "8065449b13621138f1823f8072f55fdb1076f4068cc9d37bf9c7cc787f4ea5a9",
+    "README.md": "15e5a835bbe1ee9fae8778502228597b129faee2408767db401d3ba0652b76c9",
+    "THEOREM_LEDGER.md": "7433956113d0fe2a9f385d91dab01ef9755c73485cfd88b73b39a26d019c176c",
+    "UPDATED_ROADMAP.md": "290c4d4343fa7ec53adaed0db17d8cb817b3d31f0d2479c0ca3a891706fe924a",
+    "figures/outward_loewner_transport_guards.pdf": "a2ad5ef13217fa482bdc222d0a8dcd6e11cf88020cbaff8434065c02b6b4db0b",
+    "figures/outward_loewner_transport_guards.png": "1ae532ccc97318c19899495c17398242459f0978df46f49d12a5dfb5f01af4e1",
+    "main.pdf": "8c26bc0bdfc525ae9430c98e9387bc9ce92eb4403a293f1908d300f4ec51e7de",
+    "main.tex": "d6650da1bd5585a7ab69a903097f148ab9b475bc16712ec5cff71b09e8dfe94f",
+    "outward-loewner-transport-guards.pdf": "8c26bc0bdfc525ae9430c98e9387bc9ce92eb4403a293f1908d300f4ec51e7de",
+    "pyproject.toml": "d283f8cc68b5f74522b45cc8182f18508eb699281151daf9c0f184e890406190",
+    "references.bib": "ed28e9ee163e4b9902a59f550ed2fd13a32fcb02b0f5712f4de0ae0b4137e38a",
+    "requirements.txt": "408aa57fdb2c5a55bd8a4ee2356c6deab1623d728dbad693e1a35ac2c5e6ebf1"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "4aaf2c336050cf34b6c0bfe54f9b69932951b7dc8cf0f8aebf228ced53258555",
+    "results/outward_guard_audit.json": "6efc96c43da9104891547cf2c0dd2ebba6d47e6ba2df99a770ddfaa35ee501d5",
+    "results/outward_guard_smoke.json": "6212fe7a2a7730b702617520d3fac3656597e69436d5e0592345dc53157c8017"
+  },
+  "route_consequence": "Spectral-norm enclosure radii transport through a gauge with the exact squared gauge norm. Subtracting the resulting guards from numerical Loewner slacks makes independently assembled comparisons rigorous. The theorem closes the logical gap but does not supply physical all-level radii.",
+  "status": "rh127_outward_loewner_transport_guards_archived",
+  "theorem": {
+    "outward_loewner_guard": true,
+    "sharp_radius_amplification": true
+  }
+}
