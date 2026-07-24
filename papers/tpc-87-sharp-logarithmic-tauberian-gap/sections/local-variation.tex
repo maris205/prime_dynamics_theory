@@ -1,0 +1,192 @@
+\section{Quantitative local and variation hypotheses}
+\label{sec:local-variation}
+
+The exact criterion \(\cT_N(L)\to0\) can be difficult to verify
+directly.  This section gives two stronger but local conditions with
+explicit costs.
+
+\subsection{Terminal-half logarithmic cancellation}
+
+\begin{definition}[Terminal-half modulus]
+\label{def:terminal-modulus}
+For \(N\ge2\), put
+\begin{equation}
+ \omega_N(L):=
+ \max_{\lfloor N/2\rfloor\le m\le N}|L_N-L_m|
+ =
+ \max_{\lfloor N/2\rfloor\le m\le N}
+ \left|\sum_{m<n\le N}\frac{a_n}{n}\right|.
+\label{eq:terminal-modulus}
+\end{equation}
+\end{definition}
+
+\begin{lemma}[One-step localization]
+\label{lem:one-step-localization}
+Let \(M=\lfloor N/2\rfloor\).  Then
+\begin{equation}
+ \cA_N(L)\le
+ \omega_N(L)+\frac{M}{N}\cA_M(L).
+\label{eq:one-step-localization}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For \(m<M\),
+\[
+ |L_N-L_m|
+ \le |L_N-L_M|+|L_M-L_m|
+ \le\omega_N(L)+|L_M-L_m|.
+\]
+For \(M\le m<N\), the first term alone is at most
+\(\omega_N(L)\).  Summing both ranges and dividing by \(N\) gives
+\eqref{eq:one-step-localization}.
+\end{proof}
+
+\begin{theorem}[Geometric local-to-global transfer]
+\label{thm:local-to-global}
+Let \(N_0=N\) and \(N_{j+1}=\lfloor N_j/2\rfloor\), stopping when
+\(N_J=1\).  Then
+\begin{equation}
+ \frac{|S_N|}{N}
+ \le\cA_N(L)
+ \le
+ \sum_{j=0}^{J-1}\frac{N_j}{N}\omega_{N_j}(L)
+ +\frac{\cA_1(L)}{N}.
+\label{eq:geometric-local-global}
+\end{equation}
+In particular,
+\begin{equation}
+ \omega_N(L)\longrightarrow0
+ \quad\Longrightarrow\quad
+ \frac{S_N}{N}\longrightarrow0.
+\label{eq:slow-oscillation-sufficient}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Iterate \eqref{eq:one-step-localization}.  The product of the
+successive floor ratios telescopes to \(N_j/N\), giving
+\eqref{eq:geometric-local-global}.  Also
+\(N_j/N\le2^{-j}\).
+
+To prove the last assertion, fix \(\varepsilon>0\) and choose \(R\)
+so that \(\omega_m(L)\le\varepsilon\) for \(m\ge R\).  The terms with
+\(N_j\ge R\) contribute at most \(2\varepsilon\).  The remaining
+terms involve only finitely many moduli below \(R\); their numerators
+are bounded independently of \(N\), and their total coefficient is
+\(O_R(N^{-1})\).  Now let \(N\to\infty\), then
+\(\varepsilon\to0\).
+\end{proof}
+
+\begin{corollary}[Fixed-power transfer]
+\label{cor:power-transfer}
+Suppose \(0<\eta<1\) and
+\[
+ \omega_N(L)\le C N^{-\eta}\qquad(N\ge2).
+\]
+Then
+\begin{equation}
+ \frac{|S_N|}{N}
+ \le
+ \frac{C}{1-2^{-(1-\eta)}}N^{-\eta}
+ +O_L\left(\frac1N\right).
+\label{eq:power-transfer}
+\end{equation}
+Thus the local-to-global conversion loses no fixed power below one.
+\end{corollary}
+
+\begin{proof}
+In \eqref{eq:geometric-local-global}, use
+\[
+ \frac{N_j}{N}\omega_{N_j}(L)
+ \le \frac{C}{N}N_j^{1-\eta}
+ \le C N^{-\eta}2^{-j(1-\eta)}
+\]
+and sum the geometric series.
+\end{proof}
+
+\begin{remark}[The missing fixed-ratio datum]
+\label{rem:fixed-ratio-datum}
+A theorem on windows \((x/\Omega(x),x]\) with
+\(\Omega(x)\to\infty\) does not automatically give
+\(\omega_N(L)\to0\), which is a fixed-ratio window with ratio
+\(2+O(N^{-1})\) after endpoint rounding, and an \(o(1)\), rather
+than \(o(\log\Omega)\), target.  This is
+the precise local Tauberian datum exposed by
+\cref{thm:local-to-global}.
+\end{remark}
+
+\subsection{Dyadic logarithmic variation}
+
+\begin{definition}[Dyadic variation]
+\label{def:dyadic-variation}
+For \(k\ge0\), define
+\begin{equation}
+ V_k(L):=
+ \sum_{2^k\le n<2^{k+1}}|\Delta L_n|
+ =\sum_{2^k\le n<2^{k+1}}\frac{|a_n|}{n}.
+\label{eq:dyadic-variation}
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Variation convolution bound]
+\label{thm:variation-convolution}
+If \(2^K\le N<2^{K+1}\), then
+\begin{equation}
+ \boxed{\quad
+ \frac{|S_N|}{N}
+ \le
+ V_K(L)+
+ \sum_{k=0}^{K-1}2^{k+1-K}V_k(L)
+ =
+ V_K(L)+2\sum_{j=1}^{K}2^{-j}V_{K-j}(L).
+ \quad}
+\label{eq:variation-convolution}
+\end{equation}
+Consequently,
+\begin{equation}
+ V_k(L)\longrightarrow0
+ \quad\Longrightarrow\quad
+ \frac{S_N}{N}\longrightarrow0.
+\label{eq:variation-sufficient}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Use \(S_N=\sum_{n\le N}n\Delta L_n\).  On a completed block
+\(2^k\le n<2^{k+1}\) with \(k<K\),
+\[
+ \frac{n}{N}\le2^{k+1-K}.
+\]
+On the terminal block \(n/N\le1\).  Taking absolute values block by
+block proves \eqref{eq:variation-convolution}.
+
+For the final assertion, the last expression in
+\eqref{eq:variation-convolution} is a geometric convolution.  Split
+it into the finitely many recent terms, where \(V_{K-j}\to0\), and
+the geometrically small tail.  The finitely many initial values are
+multiplied by \(O(2^{-K})\).
+\end{proof}
+
+\begin{corollary}[Variation power rate]
+\label{cor:variation-power}
+If \(0<\eta<1\) and \(V_k(L)\le C2^{-\eta k}\), then
+\[
+ \frac{|S_N|}{N}\ll_{\eta,C}N^{-\eta}.
+\]
+\end{corollary}
+
+\begin{proof}
+Insert the hypothesis into
+\eqref{eq:variation-convolution} and sum
+\(\sum_{j\ge1}2^{-j}2^{\eta j}\).
+\end{proof}
+
+\begin{remark}[Strength of the variation condition]
+\label{rem:variation-strong}
+The condition \(V_k\to0\) is an absolute-variation hypothesis and is
+stronger than signed terminal cancellation.  It is useful because it
+is representation-stable and quantitative, not because it is
+expected automatically for M\"obius signs.  The dyadic counterexample
+below has \(V_k\asymp1\).
+\end{remark}

@@ -1,0 +1,211 @@
+\section{The literal growing fixed-\texorpdfstring{\(h_0\)}{h0} interface}
+\label{sec:physical-interface}
+
+The exact Tauberian theorem is useful only after the physical
+coefficient has been retained.  We therefore formulate the
+crosswalk without claiming that its arithmetic hypothesis is known.
+
+\subsection{The affine fibers}
+
+After one physical column is opened, the literal TPC-33 affine
+correlation has the schematic form
+\begin{equation}
+ \mathfrak a_{\theta,X}(r)
+ =
+ \mu(\widetilde d_{\theta,X}+s_{\theta,X}r)
+ \mu(\widetilde u_{\theta,X}+\alpha_{\theta,X}r)
+ M_{\theta,X}(r)W_{\theta,X}(r),
+\label{eq:literal-affine-sequence}
+\end{equation}
+where \(M_{\theta,X}\) contains the actual coprimality, residue, and
+joint masks, \(W_{\theta,X}\) contains the physical smooth and
+logarithmic weights, and
+\begin{equation}
+ s_{\theta,X}\widetilde u_{\theta,X}
+ -\alpha_{\theta,X}\widetilde d_{\theta,X}=h_0\ne0.
+\label{eq:fixed-determinant}
+\end{equation}
+The parameter \(\theta\) also records the opposite row,
+polarization, divisor layer, interval component, and native keys.
+The slopes and intercepts may grow with \(X\).
+
+For an ordered fiber of length \(N_{\theta,X}\), absorb every literal
+local factor into a sequence \(b_{\theta,X}(n)\), \(1\le n\le
+N_{\theta,X}\), and define
+\begin{equation}
+ S_{\theta,X}(N)=\sum_{n\le N}b_{\theta,X}(n),\qquad
+ L_{\theta,X}(N)=\sum_{n\le N}\frac{b_{\theta,X}(n)}n.
+\label{eq:fiber-primitives}
+\end{equation}
+This definition does not assert that an existing logarithmic
+correlation theorem applies to \(b_{\theta,X}\).
+
+\subsection{An exact conditional certificate}
+
+\begin{theorem}[Literal Tauberian reassembly certificate]
+\label{thm:literal-certificate}
+Suppose the complete raw hard zero mode has an exact reassembly
+\begin{equation}
+ Z_X=
+ \sum_{\theta\in\Theta_X}
+ c_{\theta,X}
+ S_{\theta,X}(N_{\theta,X})
+ +E_{\mathrm{content},X},
+\label{eq:literal-reassembly}
+\end{equation}
+with all native keys and both polarizations retained.  Then
+\begin{equation}
+ |Z_X|
+ \le
+ \sum_{\theta\in\Theta_X}
+ |c_{\theta,X}|N_{\theta,X}
+ \left|
+ \cT_{N_{\theta,X}}(L_{\theta,X})
+ \right|
+ +|E_{\mathrm{content},X}|.
+\label{eq:literal-defect-bound}
+\end{equation}
+The signed defect in \eqref{eq:literal-defect-bound} may be replaced
+by the absolute oscillation \(\cA_N\), the right side of
+\eqref{eq:geometric-local-global}, or the right side of
+\eqref{eq:variation-convolution}.
+\end{theorem}
+
+\begin{proof}
+By \cref{thm:sharp-criterion},
+\[
+ S_{\theta,X}(N_{\theta,X})
+ =
+ N_{\theta,X}
+ \cT_{N_{\theta,X}}(L_{\theta,X}).
+\]
+Insert this identity into \eqref{eq:literal-reassembly}, then take
+one triangle inequality after the complete reassembly.  The
+alternative bounds follow from
+\cref{cor:absolute-sufficient,thm:local-to-global,thm:variation-convolution}.
+\end{proof}
+
+\begin{remark}[What is exact and what is conditional]
+\label{rem:exact-conditional}
+The passage from \eqref{eq:literal-reassembly} to
+\eqref{eq:literal-defect-bound} is finite \(\Lzero\) algebra.  The
+claim that \eqref{eq:literal-reassembly} is the actual raw physical
+packet, with no missing mask or renormalization, is an \(\Lone\)
+verification.  A uniform power bound for the defects of the growing
+M\"obius family \eqref{eq:literal-affine-sequence} is an \(\Ltwo\)
+arithmetic estimate and is not proved here.
+\end{remark}
+
+\begin{remark}[Short fibers]
+\label{rem:short-fibers}
+The asymptotic condition \(\omega_N(L)\to0\) says nothing about a
+fiber whose length stays \(O(1)\).  Such fibers must be returned by
+an exact finite estimate or controlled after a separate outer
+reassembly.  Their mere cardinality is not a cancellation theorem.
+\end{remark}
+
+\begin{remark}[Weights and origins]
+\label{rem:weights-origins}
+The harmonic factor \(1/n\) in \eqref{eq:fiber-primitives} is tied to
+the chosen local ordering.  Partial summation can transfer some
+smooth weights only when the required prefix estimates are uniform.
+It cannot silently change the prescribed interval origin, delete the
+joint mask, or freeze coefficients that grow with \(X\).
+In particular, the \(1/n\) in a fixed-form logarithmic theorem is
+attached to the original arithmetic variable.  After translating a
+physical fiber with origin \(r_{\theta,X}\), the inherited weight is
+\(1/(r_{\theta,X}+n)\), not \(1/n\).  Replacing one by the other
+requires an exact change of variables or a uniform partial-summation
+lemma for the same prefixes; it is not a formal relabeling.
+\end{remark}
+
+\subsection{Fixed-power and endpoint ledger}
+
+The exact identity itself spends no fixed power.  A useful physical
+application, however, must prove a rate that survives the full outer
+sum.  For example, if
+\[
+ \omega_M(L_{\theta,X})
+ \ll M^{-\eta+o(1)},\qquad 0<\eta<1,
+\]
+uniformly in every literal long fiber and every relevant prefix
+\(2\le M\le N_{\theta,X}\), then
+\cref{cor:power-transfer} gives the same per-fiber power.  Losses
+from the number and size of fibers, masks, short-fiber treatment,
+content completion, and calibrated downstream drift remain to be
+charged separately.
+
+At the critical physical scales
+\[
+ Q=X^{267/400+o(1)},\qquad J=X^{133/400+o(1)},
+\]
+the recorded two-exponent transfer takes the form
+\begin{equation}
+ |Z_X|\le X^{-\eta_Z+o(1)}Q^2,\qquad
+ D_X\ge X^{-\lambda_D+o(1)}Q^3J^2
+\label{eq:two-exponent-input}
+\end{equation}
+and yields
+\begin{equation}
+ \frac{|Z_X|^2}{D_X}
+ \le X^{1/400+\lambda_D-2\eta_Z+o(1)}.
+\label{eq:two-exponent-output}
+\end{equation}
+This is a sufficient ledger, not a claim that the displayed
+exponents are optimal; see TPC-81 and TPC-82
+\citep{WangTPC81,WangTPC82}.
+Retaining the baseline exponent in
+\eqref{eq:two-exponent-output} requires the determinant-flatness
+compatibility
+\begin{equation}
+ \lambda_D\le 2\eta_Z.
+\label{eq:determinant-flatness-ledger}
+\end{equation}
+This is one ledger: it compares the certified lower loss for \(D_X\)
+with the certified cancellation gain for \(Z_X\).
+
+\begin{definition}[Strict physical endpoint rule]
+\label{def:strict-endpoint}
+Let \(\Lambda_{\mathrm{phys}}\) be the sum of all fixed-power losses
+actually incurred by localization, coefficient growth, masks,
+short-fiber treatment, outer reassembly, content completion,
+dictionary transfer, and downstream calibrated drift.  A proposed
+route continues only if
+\begin{equation}
+ \boxed{\qquad \Lambda_{\mathrm{phys}}<\frac1{400}. \qquad}
+\label{eq:strict-endpoint}
+\end{equation}
+Equality or excess is a stop condition.
+This is a second, independent ledger.  A loss already included in
+\(\lambda_D-2\eta_Z\) is not charged a second time; an interface or
+downstream loss absent from those exponents must be entered in
+\(\Lambda_{\mathrm{phys}}\).
+\end{definition}
+
+\begin{proposition}[Success checklist]
+\label{prop:success-checklist}
+A logarithmic-to-ordinary advance qualifies as a literal \(\Lone\)
+or \(\Ltwo\) input only if it returns:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.5em]
+ \item the same fixed \(h_0\) and actual growing affine forms;
+ \item the ordinary physical fibers with their prescribed origins;
+ \item all periodic, coprimality, residue, smooth-weight, and
+ joint-mask factors;
+ \item both polarizations and every native outer key;
+ \item a separate exact or outer estimate for bounded-length fibers;
+ \item a quantitative signed-defect or stronger local bound uniform
+ over the active family and all prefixes used by the dyadic
+ recursion;
+ \item a complete fixed-power ledger satisfying
+ \eqref{eq:strict-endpoint}.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Items (i)--(v) ensure that the sequence in
+\eqref{eq:fiber-primitives} is the literal coefficient rather than a
+frozen or averaged substitute.  Item (vi) supplies the hypothesis of
+\cref{thm:literal-certificate}; qualitative normalized logarithmic
+cancellation alone is ruled out by
+\cref{cor:black-box-failure}.  Item (vii) is the endpoint rule.
+\end{proof}

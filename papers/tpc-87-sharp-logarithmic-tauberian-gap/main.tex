@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={The Sharp Logarithmic Tauberian Gap: Signed Cesaro Defects, Dyadic Countermodels, and the Literal Fixed-Shift Affine Gate},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{The Sharp Logarithmic Tauberian Gap:\\
+Signed Ces\`aro Defects, Dyadic Countermodels,\\
+and the Literal Fixed-Shift Affine Gate}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\noindent\textbf{Keywords:} logarithmic average; Tauberian theorem;
+Ces\`aro defect; dyadic oscillation; local variation; fixed shift;
+affine M\"obius correlation.
+
+\medskip
+\noindent\textbf{Convention.}
+Every physical statement retains one fixed nonzero integer shift
+\(h_0\), the literal growing affine coefficient, its actual interval
+and masks, all native keys, both polarizations, and one global
+post-aggregation normalization.  A result for fixed forms, averaged
+shifts, almost all scales, almost all interval origins, or a
+structure-free sequence is not identified with the literal packet.
+
+\input{sections/introduction}
+\input{sections/discrete-identity}
+\input{sections/cesaro-criterion}
+\input{sections/local-variation}
+\input{sections/dyadic-counterexample}
+\input{sections/literature-quantifiers}
+\input{sections/physical-interface}
+\input{sections/claim-boundary}
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

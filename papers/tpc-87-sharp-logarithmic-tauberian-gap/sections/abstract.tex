@@ -1,0 +1,58 @@
+\begin{abstract}
+Let
+\[
+ S_N=\sum_{n\le N}a_n,\qquad
+ L_N=\sum_{n\le N}\frac{a_n}{n},\qquad L_0=0.
+\]
+We isolate the exact discrete Tauberian interface between logarithmic
+and ordinary cancellation.  Summation by parts gives the identity
+\[
+ \boxed{\quad
+ S_N=NL_N-\sum_{m<N}L_m,\qquad
+ \frac{S_N}{N}
+ =L_N-\frac1N\sum_{m<N}L_m.
+ \quad}
+\]
+Consequently ordinary cancellation is equivalent, with identical
+rate, to the vanishing of the \emph{signed backward Ces\`aro defect}
+of the unnormalized logarithmic primitive \(L\).  Convergence of
+\(L_N\) is sufficient by Ces\`aro convergence, but boundedness is not.
+Indeed, for
+\[
+ a_n=(-1)^k\qquad(2^k\le n<2^{k+1}),
+\]
+one has \(|a_n|=1\), \(L_N=O(1)\), and even
+\[
+ \frac{1}{\log\omega(x)}
+ \sum_{x/\omega(x)<n\le x}\frac{a_n}{n}\longrightarrow0
+\]
+for every \(1\le\omega(x)\le x\) with \(\omega(x)\to\infty\), whereas
+\(S_N/N\) has subsequential limits \(1/3\) and \(-1/3\).
+Thus normalized logarithmic cancellation alone has no
+structure-free implication for the ordinary mean.
+
+We then give quantitative positive criteria.  The absolute Ces\`aro
+oscillation dominates \(|S_N|/N\).  If
+\[
+ \omega_N(L):=
+ \max_{\lfloor N/2\rfloor\le m\le N}|L_N-L_m|
+\longrightarrow0,
+\]
+then \(S_N/N\to0\); a power bound
+\(\omega_N(L)\ll N^{-\eta}\), \(0<\eta<1\), transfers with the same
+power.  A second criterion uses the dyadic logarithmic variation
+\[
+ V_k=\sum_{2^k\le n<2^{k+1}}\frac{|a_n|}{n}.
+\]
+We prove an explicit geometrically weighted convolution bound, hence
+\(V_k\to0\) also suffices.
+
+Finally, we audit what these identities do and do not supply for the
+literal growing fixed-\(h_0\) affine M\"obius packet.  The exact
+Tauberian statements and countermodel are \(\Lzero\).  Their faithful
+attachment to every physical fiber and the complete outer
+reassembly is an \(\Lone\) certificate.  Establishing the required
+uniform terminal cancellation for the actual growing affine family
+is an unproved \(\Ltwo\) arithmetic problem.  No parity breach,
+prime-pair lower bound, or twin-prime conclusion is claimed.
+\end{abstract}

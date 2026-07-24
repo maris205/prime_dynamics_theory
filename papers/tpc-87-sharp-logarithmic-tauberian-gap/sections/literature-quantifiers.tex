@@ -1,0 +1,133 @@
+\section{Quantifier audit of available arithmetic theorems}
+\label{sec:literature-quantifiers}
+
+The Tauberian identity is exact only after the same ordered
+coefficient sequence has been fixed.  A theorem that changes the
+forms, shift, scale, interval origin, or outer averaging measure does
+not automatically control its signed Ces\`aro defect.
+
+\subsection{Fixed-form logarithmic correlation}
+
+For fixed \(a_1,a_2\in\N\) and
+\(b_1,b_2\in\Z_{\ge0}\) with
+\(a_1b_2-a_2b_1\ne0\), Tao proved
+\begin{equation}
+ \sum_{x/\omega(x)<n\le x}
+ \frac{\lambda(a_1n+b_1)\lambda(a_2n+b_2)}n
+ =o(\log\omega(x)),
+\label{eq:tao-logarithmic}
+\end{equation}
+where \(1\le\omega(x)\le x\) and \(\omega(x)\to\infty\)
+\citep{Tao2016LogChowla}.  This is a genuine two-point cancellation
+theorem in its stated logarithmic setting.
+
+Equation \eqref{eq:tao-logarithmic} does not by itself verify
+\(\omega_N(L)\to0\).  Its ratio \(\omega(x)\) must grow, its
+conclusion is normalized by \(\log\omega(x)\), and the affine
+coefficients are fixed.  The literal packet instead contains
+polynomially growing slopes and intercepts, fixed-ratio terminal
+windows, actual masks, and a quantitative outer sum.  The dyadic
+counterexample proves that this mismatch cannot be repaired for
+arbitrary bounded sequences by a Tauberian black box alone.
+
+\subsection{Averaged shifts, almost-all scales, and short intervals}
+
+For fixed \(k\) and \(1\le H=H(X)\le X\) with \(H(X)\to\infty\),
+Matom\"aki, Radziwi{\l}{\l}, and Tao proved
+\begin{equation}
+ \sum_{h_1,\ldots,h_k\le H}
+ \left|
+ \sum_{n\le X}\lambda(n+h_1)\cdots\lambda(n+h_k)
+ \right|
+ =o(H^kX)
+\label{eq:mrt-averaged-shifts}
+\end{equation}
+\citep{MatomakiRadziwillTao2015}.  This is ordinary cancellation
+averaged over shifts; it does not select one prescribed \(h_0\).
+
+Tao and Ter\"av\"ainen proved unweighted Chowla and Elliott cases at
+all scales outside a set of zero logarithmic density.  For fixed
+Liouville shifts, their stated Chowla cases include odd order and
+order two \citep{TaoTeravainen2019}.  A prescribed sparse sequence
+of physical scales can lie inside the exceptional set, so an
+additional scale-localization theorem is required.
+
+Matom\"aki and Radziwi{\l}{\l} proved mean-value control for
+multiplicative functions on almost all short intervals, including
+M\"obius cancellation on almost all intervals whose length tends to
+infinity arbitrarily slowly \citep{MatomakiRadziwill2016}.  A
+physical affine fiber has a prescribed origin, and some literal
+fibers have \(O(1)\) length.  Neither feature is selected by an
+almost-all-origin theorem.  Moreover, the cited result concerns the
+mean of one multiplicative function; it is not itself a theorem for
+the two-sign affine product in
+\eqref{eq:literal-affine-sequence}.
+
+\subsection{Principal quantifier mismatches}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.16}
+\begin{tabularx}{\textwidth}{
+ >{\raggedright\arraybackslash}p{0.18\textwidth}
+ >{\raggedright\arraybackslash}p{0.28\textwidth}
+ >{\raggedright\arraybackslash}X}
+\toprule
+Input & Native quantifiers & Missing literal certificate\\
+\midrule
+Tao 2016
+& Fixed nonproportional forms; \(1/n\) weight; growing window ratio
+& Fixed-ratio \(o(1)\) logarithmic increments, growing coefficients,
+actual masks, outer rate\\
+\addlinespace
+MRT 2015
+& Ordinary correlations averaged over \(h_1,\ldots,h_k\)
+& Selection of the prescribed \(h_0\), growing two-slope forms,
+actual masks and weights, and outer reassembly\\
+\addlinespace
+TT 2019
+& Ordinary correlations outside a zero-log-density set of scales
+& Every prescribed physical scale, growing forms, literal masks and
+weights, outer reassembly, and a uniform fixed-power rate\\
+\addlinespace
+MR 2016
+& One multiplicative function on almost all short-interval origins
+& The two-sign affine product, prescribed origin, growing forms,
+literal masks and weights, outer reassembly, and \(O(1)\)-length
+fibers\\
+\bottomrule
+\end{tabularx}
+\caption{A theorem can be strong in its native quantifiers without
+controlling the literal signed Ces\`aro defect.}
+\label{tab:quantifier-mismatch}
+\end{table}
+
+\begin{proposition}[Averages do not select a literal member]
+\label{prop:average-selection}
+An estimate
+\[
+ \frac1H\sum_{h\le H}|B_X(h)|=o(1)
+\]
+does not logically imply \(B_X(h_0)=o(1)\) for one prescribed
+\(h_0\).  Likewise, a theorem outside a zero-logarithmic-density set
+of scales does not logically imply its conclusion along a prescribed
+sparse scale sequence.
+\end{proposition}
+
+\begin{proof}
+For the first statement set \(B_X(h_0)=1\) and
+\(B_X(h)=0\) otherwise.  For the second, put the prescribed sparse
+sequence into the exceptional set.  For example,
+\(\{2^k:k\ge0\}\) has zero logarithmic density because
+\[
+ \frac1{\log X}\sum_{2^k\le X}\frac1{2^k}\longrightarrow0.
+\]
+\end{proof}
+
+\begin{remark}[Logical versus arithmetic countermodels]
+\label{rem:quantifier-countermodel}
+\Cref{prop:average-selection} classifies a quantifier gap.  It does
+not assert that an actual M\"obius correlation is exceptional at
+\(h_0\) or at the selected physical scales.
+\end{remark}

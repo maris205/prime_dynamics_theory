@@ -1,0 +1,104 @@
+\section{The exact discrete Abel interface}
+\label{sec:discrete-identity}
+
+No boundedness, multiplicativity, or reality assumption is required
+in this section.
+
+\begin{definition}[Three means]
+\label{def:three-means}
+For \(a_n\in\C\), put
+\[
+ S_0=L_0=0,\qquad
+ S_N=\sum_{n=1}^Na_n,\qquad
+ L_N=\sum_{n=1}^N\frac{a_n}{n}.
+\]
+Also put
+\[
+ H_N=\sum_{n=1}^N\frac1n,\qquad
+ \lambda_N=\frac{L_N}{H_N}.
+\]
+Thus \(S_N/N\) is the ordinary mean, \(L_N\) is the unnormalized
+logarithmic primitive, and \(\lambda_N\) is the normalized
+logarithmic mean.
+\end{definition}
+
+The increment of the logarithmic primitive is
+\begin{equation}
+ \Delta L_n:=L_n-L_{n-1}=\frac{a_n}{n}.
+\label{eq:delta-L}
+\end{equation}
+
+\begin{theorem}[Exact discrete Abel identities]
+\label{thm:exact-abel}
+For every \(N\ge1\),
+\begin{align}
+ S_N
+ &=\sum_{n=1}^Nn\Delta L_n
+ =NL_N-\sum_{m=0}^{N-1}L_m,
+\label{eq:abel-forward}\\
+ \frac{S_N}{N}
+ &=L_N-\frac1N\sum_{m=0}^{N-1}L_m
+ =\frac1N\sum_{m=0}^{N-1}(L_N-L_m).
+\label{eq:abel-defect}
+\end{align}
+Conversely,
+\begin{equation}
+ L_N=\frac{S_N}{N}
+ +\sum_{n=1}^{N-1}\frac{S_n}{n(n+1)}.
+\label{eq:abel-reverse}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:delta-L},
+\[
+ \sum_{n=1}^Nn\Delta L_n
+ =\sum_{n=1}^NnL_n-\sum_{m=0}^{N-1}(m+1)L_m
+ =NL_N-\sum_{m=0}^{N-1}L_m.
+\]
+The left side is \(S_N\), proving \eqref{eq:abel-forward}.
+Dividing by \(N\) and rearranging gives
+\eqref{eq:abel-defect}.  For the reverse identity, write
+\(a_n=S_n-S_{n-1}\) and sum by parts:
+\[
+ \sum_{n=1}^N\frac{S_n-S_{n-1}}n
+ =\frac{S_N}{N}
+ +\sum_{n=1}^{N-1}S_n
+ \left(\frac1n-\frac1{n+1}\right).
+\]
+\end{proof}
+
+\begin{corollary}[Exact normalized formulation]
+\label{cor:normalized-formulation}
+With the notation of \cref{def:three-means},
+\begin{equation}
+ \frac{S_N}{N}
+ =H_N\lambda_N
+ -\frac1N\sum_{m=0}^{N-1}H_m\lambda_m,
+\qquad H_0\lambda_0:=0.
+\label{eq:normalized-defect}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Substitute \(L_m=H_m\lambda_m\) into
+\eqref{eq:abel-defect}.
+\end{proof}
+
+\begin{remark}[Normalization is not cosmetic]
+\label{rem:normalization-not-cosmetic}
+The right side of \eqref{eq:normalized-defect} is not
+\(\lambda_N\) minus the Ces\`aro mean of \(\lambda\).  The harmonic
+factor \(H_m\) remains inside both terms.  Therefore
+\(\lambda_N\to0\) alone does not imply ordinary cancellation.
+\Cref{sec:dyadic-counterexample} gives a bounded-coefficient example.
+\end{remark}
+
+\begin{remark}[Indexing]
+\label{rem:indexing}
+The backward average in \eqref{eq:abel-defect} has denominator \(N\)
+and contains \(L_0,\ldots,L_{N-1}\), but not \(L_N\).  Replacing it
+by the conventional average \(N^{-1}\sum_{m=1}^NL_m\) changes the
+identity by \(L_N/N\), which cannot be discarded without an
+additional growth hypothesis.
+\end{remark}

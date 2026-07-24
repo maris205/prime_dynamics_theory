@@ -1,0 +1,113 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Logarithmic averaging is often substantially more accessible than
+ordinary averaging in multiplicative number theory.  In particular,
+Tao proved logarithmically averaged two-point Chowla and Elliott
+theorems for fixed affine forms \citep{Tao2016LogChowla}.  The
+literal fixed-shift route considered in TPC-32 and TPC-33, however,
+returns ordinary sums over a growing family of affine columns, with a
+prescribed nonzero determinant \(h_0\), actual masks, short fibers,
+and a complete outer reassembly \citep{WangTPC32,WangTPC33}.
+
+TPC-85 exhibited a bounded dyadic sequence showing that no
+structure-free black box simply deletes the logarithmic weight
+\citep{WangTPC85}.  The purpose of the present paper is to sharpen
+that obstruction into an exact theorem:
+\begin{quote}
+the missing datum is the signed Ces\`aro defect of the
+\emph{unnormalized} logarithmic primitive.
+\end{quote}
+This distinction matters.  If
+\[
+ H_N=\sum_{n\le N}\frac1n,\qquad
+ \lambda_N=\frac1{H_N}\sum_{n\le N}\frac{a_n}{n},
+\]
+then \(\lambda_N\) is the normalized logarithmic mean, while
+\[
+ L_N=H_N\lambda_N
+\]
+is the unnormalized logarithmic primitive.  The exact discrete Abel
+identity is written in terms of \(L_N\), not \(\lambda_N\).
+
+TPC-86 develops a different positive interface: coherent Fourier
+reassembly of the distinguished zero mode from a controlled
+low-frequency window \citep{WangTPC86}.  The present paper does not
+replace that route.  It audits the separate possibility of obtaining
+ordinary affine cancellation from logarithmically averaged
+correlation information.
+
+\subsection{Main results}
+
+For an arbitrary complex sequence \(a=(a_n)\), define
+\[
+ S_N=\sum_{n=1}^Na_n,\qquad
+ L_N=\sum_{n=1}^N\frac{a_n}{n},\qquad S_0=L_0=0.
+\]
+Our first result is the pointwise identity
+\begin{equation}
+ \frac{S_N}{N}
+ =L_N-\frac1N\sum_{m=0}^{N-1}L_m
+ =\frac1N\sum_{m=0}^{N-1}(L_N-L_m).
+\label{eq:intro-abel}
+\end{equation}
+Therefore \(S_N/N\to0\) if and only if the signed quantity on the
+right tends to zero.  This is not merely an implication: the two
+objects are equal for every \(N\), so there is no hidden exponent
+loss.
+
+Convergence \(L_N\to\ell\) is sufficient.  Boundedness \(L_N=O(1)\)
+is sharply insufficient.  The dyadic block sequence
+\[
+ a_n=(-1)^{\lfloor\log_2n\rfloor}
+\]
+has a bounded logarithmic primitive and normalized logarithmic mean
+\(\lambda_N\to0\), yet its natural means oscillate between
+\(\pm1/3\) along complete dyadic blocks.  More strongly, every
+terminal multiplicative interval has uniformly bounded logarithmic
+sum, so every Tao-shaped normalized window with
+\(\omega(x)\to\infty\) has cancellation.
+
+The exact criterion also identifies useful additional hypotheses.
+We prove:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.5em]
+ \item an absolute Ces\`aro oscillation criterion;
+ \item a terminal-half local criterion
+ \[
+  \max_{N/2\le m\le N}
+  \left|\sum_{m<n\le N}\frac{a_n}{n}\right|\to0;
+ \]
+ \item a rate-preserving version for fixed powers below one;
+ \item an explicit dyadic variation convolution bound.
+\end{enumerate}
+These are genuine Tauberian inputs: none follows from boundedness of
+the global logarithmic primitive alone.
+
+\subsection{Arithmetic status}
+
+The results have three proof levels.
+\begin{enumerate}[label=\textup{\(\mathrm{L}\arabic*\):},leftmargin=3.2em,start=0]
+ \item finite discrete identities, quantitative inequalities, and
+ structure-free countermodels;
+ \item a literal transfer certificate retaining the same fixed
+ \(h_0\), growing affine coefficients, actual fibers, masks, outer
+ reassembly, and global normalization;
+ \item a new uniform M\"obius-correlation estimate for that actual
+ growing family.
+\end{enumerate}
+This paper proves \(\Lzero\) results and formulates the \(\Lone\)
+certificate.  It proves no \(\Ltwo\) estimate.  In particular, the
+dyadic sequence is not multiplicative and does not obstruct a proof
+that uses M\"obius-specific structure.
+
+\subsection{Organization}
+
+\Cref{sec:discrete-identity} proves the exact Abel identities.
+\Cref{sec:cesaro-criterion} gives the necessary-and-sufficient
+criterion and the convergence theorem.  Quantitative local and
+variation conditions appear in \cref{sec:local-variation}.
+\Cref{sec:dyadic-counterexample} proves the sharp dyadic
+counterexample.  The theorem-quantifier audit is
+\cref{sec:literature-quantifiers}; the literal physical certificate
+and endpoint ledger are in \cref{sec:physical-interface}.  The claim
+boundary is recorded in \cref{sec:claim-boundary}.

@@ -1,0 +1,113 @@
+\section{The necessary-and-sufficient Ces\`aro oscillation criterion}
+\label{sec:cesaro-criterion}
+
+\begin{definition}[Signed defect and absolute oscillation]
+\label{def:defect-oscillation}
+For a sequence \(L=(L_N)_{N\ge0}\), define
+\begin{align}
+ \cT_N(L)
+ &:=L_N-\frac1N\sum_{m=0}^{N-1}L_m,
+\label{eq:signed-defect}\\
+ \cA_N(L)
+ &:=\frac1N\sum_{m=0}^{N-1}|L_N-L_m|.
+\label{eq:absolute-oscillation}
+\end{align}
+We call \(\cT_N\) the signed backward Ces\`aro defect and
+\(\cA_N\) the absolute backward Ces\`aro oscillation.
+\end{definition}
+
+\begin{theorem}[Sharp discrete Tauberian criterion]
+\label{thm:sharp-criterion}
+For every complex sequence \(a\),
+\begin{equation}
+ \boxed{\qquad
+ \frac{S_N}{N}=\cT_N(L).
+ \qquad}
+\label{eq:sharp-criterion}
+\end{equation}
+Consequently,
+\[
+ \frac{S_N}{N}\longrightarrow0
+ \quad\Longleftrightarrow\quad
+ \cT_N(L)\longrightarrow0,
+\]
+and any quantitative rate on one side is exactly the same rate on
+the other.
+\end{theorem}
+
+\begin{proof}
+This is \eqref{eq:abel-defect}.
+\end{proof}
+
+\begin{corollary}[Absolute oscillation is sufficient]
+\label{cor:absolute-sufficient}
+For every \(N\ge1\),
+\begin{equation}
+ \frac{|S_N|}{N}\le\cA_N(L).
+\label{eq:absolute-dominates}
+\end{equation}
+In particular, \(\cA_N(L)\to0\) implies \(S_N/N\to0\).
+\end{corollary}
+
+\begin{proof}
+Take absolute values in the last expression in
+\eqref{eq:abel-defect}.
+\end{proof}
+
+\begin{remark}[Why the signed adjective is essential]
+\label{rem:signed-essential}
+The necessary-and-sufficient object is \(\cT_N\), not \(\cA_N\).
+Cancellation among the differences \(L_N-L_m\) can make
+\(\cT_N\) small while their absolute mean is not.  Thus
+\(\cA_N\to0\) is a useful stronger hypothesis, but it is not asserted
+to be necessary.
+\end{remark}
+
+\begin{corollary}[Convergent logarithmic primitive]
+\label{cor:convergent-primitive}
+If \(L_N\to\ell\in\C\), then \(S_N/N\to0\).  More precisely, with
+\(e_m=|L_m-\ell|\),
+\begin{equation}
+ \frac{|S_N|}{N}
+ \le e_N+\frac1N\sum_{m=1}^{N-1}e_m+\frac{|\ell|}{N}.
+\label{eq:convergence-rate}
+\end{equation}
+If
+\[
+ \varepsilon_M=\sup_{n\ge M}|L_n-\ell|,
+\]
+then, for \(N>M\),
+\begin{equation}
+ \frac{|S_N|}{N}
+ \le2\varepsilon_M+
+ \frac{|\ell|+\sum_{m=1}^{M-1}|L_m-\ell|}{N}.
+\label{eq:tail-convergence-rate}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Subtract \(\ell\) in both terms of \eqref{eq:abel-defect} and use
+the triangle inequality.  This proves \eqref{eq:convergence-rate}.
+For \eqref{eq:tail-convergence-rate}, split the backward average at
+\(M\).  The two tail contributions are bounded by
+\(\varepsilon_M\), while the finite prefix has the displayed cost.
+\end{proof}
+
+\begin{remark}[Convergence is sufficient, not necessary]
+\label{rem:convergence-not-necessary}
+Let \(a_1=0\) and \(a_n=1/\log n\) for \(n\ge2\).  Since
+\(a_n\to0\), Ces\`aro convergence gives \(S_N/N\to0\), whereas
+\[
+ L_N=\sum_{2\le n\le N}\frac1{n\log n}
+ =\log\log N+O(1)
+\]
+diverges.  Thus the exact criterion is strictly weaker than
+convergence of \(L_N\).
+\end{remark}
+
+\begin{remark}[Classical terminology]
+The implication in \cref{cor:convergent-primitive} is the elementary
+discrete Kronecker lemma.  We prove it here because the exact defect
+and its normalization, rather than the name of the lemma, are the
+relevant physical interface; see also \citet{Hardy1949}.
+\end{remark}
