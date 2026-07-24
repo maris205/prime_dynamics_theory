@@ -1,0 +1,108 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The matched-shell determinant coefficient of TPC-32 is a signed sum.
+TPC-83 shows that its natural determinant energy is equivalent, at
+subpower resolution, to survival of the \emph{post-bin} \(\ell^1\)
+mass \citep{WangTPC32,WangTPC83}.  That equivalence is exact and useful,
+but it moves rather than removes the next obstruction: why should
+literal contributions landing in the same determinant bin fail to
+cancel?
+
+This paper resolves the finite-dimensional part of that question and
+then states the remaining arithmetic task in an audit-ready form.
+There are two separate losses:
+\begin{enumerate}[leftmargin=2.1em]
+ \item the literal native packet may have too little raw absolute mass;
+ \item even if that mass is natural, equal-determinant aggregation may
+ cancel it.
+\end{enumerate}
+Neither loss is controlled by the upper-bound axioms presently
+available.  In particular, bounded row multipliers are allowed to
+vanish, and all native coefficients can be rescaled down while
+preserving those axioms.
+
+\subsection{The three conclusions}
+
+Our first conclusion is a sharp phase-envelope theorem.  In one fiber,
+knowledge of the moduli alone forces a nonzero resultant exactly when
+one term dominates the sum of all the others.  Summed over fibers this
+produces a computable, optimal lower certificate for the post-bin
+mass.  If this certificate vanishes on most of the raw mass, the
+failure is conclusive for every phase-blind argument, but says nothing
+against a signed arithmetic mechanism.
+
+Our second conclusion is structural.  The determinant energy is not
+primarily a diagonal quantity at its natural scale.  If
+\[
+ N_0=JQ^2,\qquad QJ\asymp X,
+\]
+then the natural energy is
+\[
+ \frac{N_0^2}{Q}=Q^3J^2,
+\]
+whereas the literal triplet diagonal is at most
+\[
+ X^{o(1)}JQ^2
+ \asymp X^{-1+o(1)}Q^3J^2.
+\]
+Thus a successful energy theorem with any fixed loss
+\(\lambda_D<1\) would have to prove \emph{positive aggregate
+coherence} among distinct native terms with equal determinant.  The
+present paper proves this conditional \(\Lone\) necessity statement,
+not its energy-lower-bound hypothesis.
+
+Our third conclusion is methodological.  We specify an audit-ready
+schema for a future native archive and census.  The proposed
+classification distinguishes literal diagonal terms, exact duplicate
+atoms, determinant-preserving symmetries, shared-target/shared-divisor
+pairings, and an unpaired remainder.  No census is executed here, and
+no asymptotic size is assigned to the last four classes without exact
+key data and a proof.
+
+\subsection{What is new and what is not}
+
+The phase envelope, the energy decomposition, and the conditional
+mass-to-energy transfer are finite \(\Lzero\) results.  The diagonal
+upper bound and support statement are \(\Lone\) physical imports from
+TPC-32, used only in its high-\(\beta\) domain
+\(C=\lfloor J\rfloor\ll Q\).  Together they convert a vague
+``cancellation problem'' into a conditional signed lower-correlation
+gate.  The proposed archive and census schema are an \(\Lone\)
+interface, not a completed computation.
+
+The missing \(\Ltwo\) theorem is still substantial: one must prove a
+growing-scale lower bound for the actual raw mass, the actual
+post-bin mass, or a positive family of off-diagonal equal-determinant
+pairings.  General results on multiplicative functions, including
+short-interval and logarithmically averaged theorems
+\citep{MatomakiRadziwill2016,Tao2016}, do not automatically apply to
+the restricted high-row geometry and its literal weights.
+
+\subsection{Fixed-shift and endpoint discipline}
+
+All statements are made at one fixed \(h_0\ne0\).  No averaging over
+shifts, determinant frequencies, row slopes, or masks may replace the
+physical coefficient.  The full route also has a strict endpoint
+budget: every accumulated fixed-power loss must be
+\[
+ \boxed{\text{strictly smaller than }1/400.}
+\]
+Equality is not reserve and is a stopping point.  This paper neither
+identifies \(h_0\) with \(2\) nor asserts any prime-pair consequence.
+The determinant-energy interface and the physical endpoint loss are
+kept as independent ledgers; an energy exponent is not automatically
+added to the latter without a proved crosswalk.
+
+\subsection{Organization}
+
+\Cref{sec:native-packet} fixes the literal objects.
+\Cref{sec:phase-envelope} proves the sharp fiber theorem.
+\Cref{sec:loss-ledger} transfers raw and fiber losses to energy.
+\Cref{sec:correlation-decomposition} isolates the conditional
+positive-coherence gate.  \Cref{sec:opened-arithmetic} opens the
+M\"obius variables and marks the Chowla boundary.
+\Cref{sec:pairing-classification,sec:census-protocol} classify and
+specify the proposed census schema.
+\Cref{sec:decision-rules,sec:claim-boundary}
+give success, kill, and claim rules.

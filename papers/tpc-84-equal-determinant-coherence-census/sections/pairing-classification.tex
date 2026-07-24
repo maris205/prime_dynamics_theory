@@ -1,0 +1,148 @@
+\section{A literal classification of candidate positive pairings}
+\label{sec:pairing-classification}
+
+The identity \(D=E_{\trip}+C_{\eqc}\) makes candidate pairings worth
+examining only after determinant equality and literal coefficients
+have been checked.  The following hierarchy prevents the same pair
+from being counted twice.  It is a classification protocol, not an
+asymptotic theorem.
+
+The proposed precedence is explicit: after removing the diagonal,
+Class \(1\) (proved exact duplicate) takes priority over Class \(2\)
+(a registered determinant-preserving symmetry), which takes priority
+over Class \(3\) (a registered shared-target or shared-divisor
+relation); every remaining ordered pair is Class \(4\).  A future
+executable census must freeze this precedence and the finite lists of
+allowed symmetry and shared-relation tests in a versioned registry.
+No such machine-readable registry is supplied here, so the class
+totals below are proposed \(\Lone\) outputs, not computed results.
+
+\subsection{Class 0: the literal diagonal}
+
+Pairs with \(t=t'\) contribute exactly
+\[
+ E_{\trip}=\sum_t|u_t|^2.
+\]
+They are nonnegative, and the imported upper bound places their total
+at least one full power below natural determinant energy, up to soft
+factors, by \cref{prop:triplet-diagonal-upper}.  Treating an expanded
+channel or divisor record as a new triplet would artificially inflate
+this class; identity is determined by the parent triplet
+\((\alpha,\gamma,j)\), not by a row in a flattened expansion table.
+
+\subsection{Class 1: exact duplicate physical atoms}
+
+Distinct native keys \(t\ne t'\) are \emph{exact duplicates} only if
+the archive proves equality of the complete physical atom data:
+\begin{equation}
+ \nu(t)=\nu(t'),\qquad
+ u_t=u_{t'},
+\label{eq:duplicate-condition}
+\end{equation}
+including cutoff sign, row coefficients, mask, orientation, content,
+divisor provenance, and aggregation multiplier.  Such an ordered pair
+contributes \(|u_t|^2\ge0\), and the contribution is strictly positive
+only when \(u_t\ne0\).  A numerical equality after floating-point
+rounding is not a proof of \eqref{eq:duplicate-condition}.
+
+If a physical atom occurs with literal multiplicity \(m\), its
+within-copy energy is \(m^2|u|^2\): \(m|u|^2\) is diagonal and
+\(m(m-1)|u|^2\) is nonnegative off-diagonal coherence.  Conversely,
+records created solely by a computational expansion do not acquire
+physical multiplicity.
+
+\subsection{Class 2: determinant-preserving symmetries}
+
+A map \(\sigma:t\mapsto\sigma t\) is a candidate symmetry pairing
+only after proving
+\begin{equation}
+ \nu(\sigma t)=\nu(t)
+\label{eq:symmetry-det-preserve}
+\end{equation}
+and tracking the exact coefficient ratio
+\[
+ u_{\sigma t}/u_t.
+\]
+Positivity requires the real part of
+\(u_t\overline{u_{\sigma t}}\) to have a controlled positive sign
+after summation.
+
+The most tempting permutation fails the first test.  Exchanging the
+two rows gives
+\begin{equation}
+ \Delta^\#_{\gamma,\alpha}(j)
+ =-\Delta^\#_{\alpha,\gamma}(j).
+\label{eq:row-swap-sign}
+\end{equation}
+Since the off-diagonal mask removes determinant \(0\), plain row
+exchange maps \(F_n\) to \(F_{-n}\), not \(F_n\), and contributes
+nothing to \(C_{\eqc}\) as defined.  It becomes relevant only if an
+additional archived transformation restores the determinant sign and
+preserves all other physical orientations.
+
+\subsection{Class 3: shared-target or shared-divisor pairings}
+
+Two distinct keys may satisfy exact relations such as
+\begin{equation}
+ N_\alpha(j)=N_{\alpha'}(j'),\qquad
+ N_\gamma(j)=N_{\gamma'}(j'),
+\label{eq:shared-target}
+\end{equation}
+or may share selected divisor variables after
+\eqref{eq:fully-opened-atom} is expanded.  Such equalities can pair
+M\"obius factors and leave positive weights.  They are candidates
+only if all of the following are verified:
+\begin{enumerate}[leftmargin=2.2em]
+ \item the exact target or divisor equations;
+ \item the determinant identity \(\nu(t)=\nu(t')\);
+ \item the literal cutoff signs and orientations;
+ \item the true multiplicity after inverse aggregation;
+ \item the sign of the complete coefficient product.
+\end{enumerate}
+Sharing a target residue class, a content value, or a divisor bound is
+not the same as sharing the literal target or divisor.
+
+\subsection{Class 4: genuinely unpaired remainder}
+
+After Classes 1--3 are removed in the declared order above, all
+remaining ordered pairs form the unpaired remainder.  Its total may
+be positive or negative.  Bounding each term absolutely is generally
+too expensive; proving uniform cancellation over an enlarged affine
+family may cross the Chowla boundary described in
+\cref{sec:opened-arithmetic}.  A viable theorem may instead localize
+the remainder by content, determinant multiplicity, or a
+geometry-specific completion.
+
+\begin{proposition}[What the classification proves]
+\label{prop:classification-scope}
+For any conjugation-closed priority partition of the ordered
+equal-determinant pairs,
+\begin{equation}
+ C_{\eqc}
+ =C_{\rm dup}+C_{\rm sym}+C_{\rm share}+C_{\rm rem}.
+\label{eq:Ceq-class-sum}
+\end{equation}
+The duplicate term is nonnegative when
+\eqref{eq:duplicate-condition} is proved.  No sign or asymptotic size
+for the other three terms follows from the classification alone.
+\end{proposition}
+
+\begin{proof}
+The equality is a disjoint partition of the finite ordered sum
+\eqref{eq:Ceq-definition}.  Conjugation closure makes every class
+sum real.  Exact duplicates have
+\(u_t\overline{u_{t'}}=|u_t|^2\).  The remaining assertions require
+additional arithmetic information not contained in their labels.
+\end{proof}
+
+\begin{remark}[A positive main-term route]
+A successful alternative to the mass ledger would identify a
+conjugation-closed family \(\cP\) with
+\[
+ \sum_{(t,t')\in\cP}
+ u_t\overline{u_{t'}}
+ \ge X^{-\lambda_P+o(1)}Q^3J^2
+\]
+and prove that the complement is smaller.  This is a positive-pairing
+theorem, not an assertion that every off-diagonal pair is positive.
+\end{remark}

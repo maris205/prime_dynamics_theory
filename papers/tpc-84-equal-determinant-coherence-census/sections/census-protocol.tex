@@ -1,0 +1,222 @@
+\section{An audit-ready proposed native-key census schema}
+\label{sec:census-protocol}
+
+The proposed computation is not a search over rounded determinant
+bins.  This section specifies an audit-ready schema and a scalable
+execution design for a future census of the literal coefficient.
+No census is executed in this paper, and no native archive, parameter
+manifest, machine-readable schema, code, or census output is supplied.
+Thus the word ``proposed'' is essential: the requirements below are
+not themselves a reproducibility claim.  Every listed field is needed
+either to reconstruct \(u_t\), to prove determinant equality, or to
+prevent a change of normalization.
+
+\subsection{Archive schema}
+
+For each fixed \(X\), fixed \(h_0\), and fixed packet, a future
+implementation should archive:
+\begin{enumerate}[leftmargin=2.2em]
+ \item \textbf{Experiment identity:} code revision, parameter file,
+ fixed \(h_0\), smooth-support identifiers, residue data, and
+ random-seed field if any.  The typed packet-scale tuple is
+ \[
+ (L,D_{\rm row},Q,J,R_{\rm cut},T,U_0,C).
+ \]
+ \item \textbf{Native row keys:} complete \(\alpha,\gamma\), row
+ slopes \(m_\alpha,m_\gamma\), row provenance, literal complex
+ coefficients \(\gamma_\alpha^{(1)},\gamma_\gamma^{(2)}\), and row
+ orientation.
+ \item \textbf{Orbit and targets:} \(j\), exact integers
+ \(N_\alpha(j),N_\gamma(j)\), their gcd \(c_t\), and every active
+ support flag.
+ \item \textbf{Determinant data:} numerator
+ \(m_\alpha-m_\gamma\), exact signed quotient
+ \(\nu_t=(m_\alpha-m_\gamma)/c_t\), and a proof flag for exact
+ divisibility.
+ \item \textbf{Expansion-tree data:} parent native-triplet key,
+ matched-shell channel, \(Y\in\{U_0,T\}\), cutoff sign
+ \(\epsilon_Y\), orientation label, and inverse aggregation map.
+ These child records do not enlarge the native triplet multiset.
+ \item \textbf{Divisor expansion data:} exact \(u,v\), divisor witnesses,
+ \(b_R(u),b_R(v)\), squarefree and coprimality flags, and any
+ exact-content inversion variable kept as a separate field.
+ \item \textbf{Joint multiplier:} literal
+ \(\mathfrak A_{\alpha,\gamma}(j)\), its mask, periodic and smooth
+ factors, and a provenance hash.
+ \item \textbf{Aggregation data:} physical multiplicity,
+ computational expansion multiplicity, aggregation multiplier, and
+ the final exact or certified-interval value of \(u_t\).
+\end{enumerate}
+
+The complete native key is a tuple of these identity fields.  A future
+implementation must fix a canonical serialization, hash algorithm,
+schema version, and precision policy.  A hash then supplies a
+reproducibility check, not a mathematical proof of equality.  None of
+those machine-readable choices is frozen in this paper.
+
+\subsection{Fiber statistics}
+
+After exact aggregation, the proposed output records for every
+determinant \(n\):
+\begin{equation}
+\begin{aligned}
+ m_n&=\#F_n,&
+ R_n&=\sum_{t\in F_n}|u_t|,\\
+ r_{\max,n}&=\max_{t\in F_n}|u_t|,&
+ d_n&=(2r_{\max,n}-R_n)_+,\\
+ A(n)&=\sum_{t\in F_n}u_t,&
+ D_n&=|A(n)|^2.
+\end{aligned}
+\label{eq:fiber-census-fields}
+\end{equation}
+Global checks are
+\begin{equation}
+\begin{aligned}
+ R&=\sum_nR_n,
+ &M_{\min}^{\rm mag}&=\sum_nd_n,
+ &M&=\sum_n|A(n)|,\\
+ D&=\sum_nD_n,
+ &E_{\trip}&=\sum_t|u_t|^2,
+ &C_{\eqc}&=D-E_{\trip}.
+\end{aligned}
+\label{eq:global-census-checks}
+\end{equation}
+\subsection{Scalable determinant aggregation}
+
+Let \(N_{\rm rec}=\#\cT\) be the number of native records after inverse
+aggregation to parent triplets, and let \(B\) be an available-memory
+record budget.  The proposed exact-key pipeline is:
+\begin{enumerate}[leftmargin=2.2em]
+ \item stream the expansion records, verify inverse multiplicities,
+ aggregate them to native parent keys, emit
+ \((\nu(t),t,u_t)\), and accumulate \(E_{\trip}\);
+ \item stable-sort the emitted records by the exact integer
+ determinant key \(\nu(t)\), using bounded in-memory runs and an
+ external merge when \(N_{\rm rec}>B\);
+ \item scan each determinant fiber once to compute
+ \(m_n,R_n,r_{\max,n},A(n),D_n\), and then sum \(R,M,D\);
+ \item compute the total off-diagonal correlation by the exact
+ identity
+ \[
+  C_{\eqc}=D-E_{\trip},
+ \]
+ rather than by forming all ordered pairs.
+\end{enumerate}
+With comparison sorting this requires
+\(O(N_{\rm rec}\log N_{\rm rec})\) comparisons,
+\(O(N_{\rm rec})\) disk storage, and \(O(B)\) working memory, apart
+from the standard external-merge pass count.  When the exact keys fit
+in memory, deterministic sorting has the same comparison bound and
+hash aggregation has expected \(O(N_{\rm rec})\) work.  Exact or
+directed-interval accumulators must be used throughout; the final
+subtraction returns an exact value or a certified interval.
+
+\subsection{Compressed class joins}
+
+Class totals should also avoid a global pair table.  Exact duplicates
+are obtained by sorting or hashing the complete physical-atom key and
+using group sums and multiplicities.  For a fixed registry of
+\(K\) determinant-preserving maps, symmetry candidates are obtained
+by \(K\) indexed key lookups.  Shared-target and shared-divisor
+candidates are produced by exact sort-merge joins on their declared
+integer relation keys.  Their nominal costs are, respectively,
+\[
+ O(N_{\rm rec}\log N_{\rm rec}),\qquad
+ O(KN_{\rm rec}\log N_{\rm rec}),\qquad
+ O(N_{\rm rec}\log N_{\rm rec}+Z),
+\]
+where \(Z\) is the join-output size; hash indexes may replace the
+logarithmic lookup factors in expected time.
+
+The quantity \(Z\) can be quadratic.  Whenever a class contribution
+factorizes over a relation-key group, the implementation must store
+compressed group sums, squared norms, counts, and formally verified
+inverse multiplicities instead of materializing its pairs.  The
+unpaired remainder is then computed by subtracting the disjoint
+certified class totals from \(C_{\eqc}\).  A full ordered-pair table
+is permitted only for a declared bounded exploratory run.  A class
+whose relation does not admit certified compression must report its
+output-sensitive cost and is not called scalable merely because the
+global determinant aggregation is scalable.
+
+\subsection{Classification fields}
+
+Every pair materialized in a bounded run, and every compressed class
+join representing such pairs, carries:
+\begin{enumerate}[leftmargin=2.2em]
+ \item an exact equal-determinant witness;
+ \item a class label from \cref{sec:pairing-classification} and the
+ declared priority-rule and registry versions;
+ \item duplicate, symmetry, shared-target, and shared-divisor flags,
+ each accompanied by the exact equations used;
+ \item coefficient product \(u_t\overline{u_{t'}}\), or a rigorous
+ complex interval enclosing it;
+ \item physical multiplicity and expansion multiplicity separately;
+ \item a conjugate-partner identifier, ensuring each reported class
+ is real;
+ \item the contribution to the chosen candidate main term and to its
+ complement.
+\end{enumerate}
+
+\subsection{Exactness and support rules}
+
+Integer targets, gcds, divisors, determinants, and M\"obius signs are
+computed exactly.  Rational algebraic coefficients are stored
+exactly when possible; otherwise directed interval arithmetic must
+certify all signs and inequalities used in a theorem.  Floating-point
+phase proximity is exploratory evidence only.  Overlapping numerical
+intervals do not prove exact coefficient equality: Class \(1\)
+requires a symbolic identity, a shared canonical provenance proof, or
+another exact equality certificate.  Otherwise the pair remains
+outside the duplicate class.
+
+The active support is
+\[
+ \{n:A(n)\ne0\}
+\]
+after complete aggregation.  It may not be replaced by the available
+determinant interval, a thresholded support, or the set of raw fiber
+labels.  If numerical precision cannot decide whether \(A(n)=0\), the
+bin is marked unresolved and no exact support count is reported.
+
+\subsection{Scaling tests}
+
+For a growing sequence of \(X\), a future census should report the
+nonnegative loss diagnostics
+\begin{align}
+ \lambda_R(X)&=
+ \frac{[\log(N_0/R)]_+}{\log X},
+\label{eq:empirical-raw-loss}\\
+ \lambda_{\rm fib}(X)&=
+ \frac{[\log(R/M)]_+}{\log X},
+\label{eq:empirical-fiber-loss}\\
+ \lambda_D(X)&=
+ \frac{[\log(Q^3J^2/D)]_+}{\log X},
+\label{eq:empirical-energy-loss}
+\end{align}
+where \([y]_+=\max\{y,0\}\), whenever the displayed ratios are
+defined.  The report also includes the untruncated raw ratios,
+uncertainty intervals, and local slopes.  These quantities are
+diagnostics, not asymptotic exponents until a theorem controls their
+limits.
+
+The following residual checks detect normalization errors:
+\begin{equation}
+ 0\le M_{\min}^{\rm mag}\le M\le R,\qquad
+ \frac{M^2}{S}\le D\le LM,\qquad
+ D-E_{\trip}=C_{\eqc}.
+\label{eq:census-invariants}
+\end{equation}
+where the middle lower bound is asserted only when \(A\ne0\).
+Every future run must record the original global \(N_0=JQ^2\); no
+per-fiber or per-triplet renormalization is permitted.
+
+\begin{remark}[Sampling is not a completed census]
+A sampled pair table can estimate which classes deserve attention,
+but it cannot prove multiplicity, support, or a signed remainder
+bound.  A publishable \(\Lone\) computation may use the compressed
+exact joins above, provided the serialization, registry, compression
+map, inverse multiplicities, manifests, and output checksums are
+versioned and formally verified.  Those implementation artifacts
+remain future work.
+\end{remark}

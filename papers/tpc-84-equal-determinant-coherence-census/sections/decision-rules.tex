@@ -1,0 +1,134 @@
+\section{Success certificates, partial advances, and kill criteria}
+\label{sec:decision-rules}
+
+This section turns the preceding identities into a branchable
+research plan.  The purpose is to make a failed route informative
+without converting it into a claim about the whole parity problem.
+
+\subsection{Route A: raw mass followed by fiber survival}
+
+Route A succeeds at losses
+\((\lambda_R,\lambda_{\rm fib},\lambda_S)\) only if all of the
+following are proved for the literal fixed-\(h_0\) packet:
+\begin{align}
+ R&\ge X^{-\lambda_R+o(1)}N_0,
+\label{eq:routeA-raw}\\
+ M&\ge X^{-\lambda_{\rm fib}+o(1)}R,
+\label{eq:routeA-fiber}\\
+ S&\le X^{\lambda_S+o(1)}Q.
+\label{eq:routeA-support}
+\end{align}
+Then
+\[
+ \lambda_D^{\rm cert}
+ =2\lambda_R+2\lambda_{\rm fib}+\lambda_S.
+\]
+The verified support theorem supplies \(\lambda_S=0\).  If a
+zero-mode transfer has gain \(\eta_Z\), require
+\[
+ \lambda_D^{\rm cert}\le2\eta_Z,
+\]
+and separately verify the strict complete loss budget
+\eqref{eq:strict-endpoint}.  The certified energy loss is not
+automatically added to \(\Lambda_{\rm phys}\); such an addition
+requires the crosswalk described after
+\eqref{eq:strict-endpoint}.
+
+The fiber step may use the sharp magnitude certificate:
+\[
+ \sum_n(2r_{\max,n}-R_n)_+
+ \ge X^{-\lambda_{\rm fib}+o(1)}R.
+\]
+If that fails, Route A remains open to a signed arithmetic lower
+bound for \(M\).
+
+\subsection{Route B: a positive pairing main term}
+
+Choose a rigorously defined conjugation-closed pair family \(\cP\)
+and write
+\[
+ C_{\eqc}=C_{\cP}+C_{\cR}.
+\]
+Route B succeeds if
+\begin{align}
+ C_{\cP}
+ &\ge X^{-\lambda_P+o(1)}Q^3J^2,
+\label{eq:routeB-main}\\
+ |C_{\cR}|
+ &=o(C_{\cP}),
+\label{eq:routeB-rem}
+\end{align}
+or if a one-sided remainder estimate leaves a positive constant
+fraction of \(C_{\cP}\).  Then
+\[
+ D=E_{\trip}+C_{\cP}+C_{\cR}
+\ge X^{-\lambda_P+o(1)}Q^3J^2.
+\]
+The candidate family must preserve the exact determinant and all
+physical orientations.  A pairing main term found only after
+averaging over \(h\) or changing the packet is not a Route B
+certificate.
+
+\subsection{Publishable partial advances}
+
+The following remain useful even when neither route reaches the final
+endpoint:
+\begin{enumerate}[leftmargin=2.2em]
+ \item a rigorous positive raw exponent \(\lambda_R\);
+ \item a nontrivial magnitude-survival exponent for a positive share
+ of the raw mass;
+ \item an exact multiplicity theorem for one pairing class;
+ \item a positive \(C_{\cP}\) main term with a remainder too large for
+ the endpoint;
+ \item a localization theorem showing that a broad Chowla-hard
+ remainder is confined to a small, explicitly weighted class;
+ \item an exact negative census showing that a named symmetry or
+ duplicate mechanism has insufficient mass.
+\end{enumerate}
+Each result must retain its \(\Lzero/\Lone/\Ltwo\) label and measured
+loss.  A positive exponent larger than the available budget is
+progress on the local gate, not completion of the physical route.
+
+\subsection{Kill criteria}
+
+A branch stops, or is relabeled purely exploratory, if any of the
+following occurs:
+\begin{enumerate}[leftmargin=2.2em]
+ \item it proves only upper bounds for \(R\) or \(M\);
+ \item the sharp magnitude envelope is zero on all but a negligible
+ share of the raw mass, and the branch has no signed mechanism;
+ \item a proposed pairing changes determinant sign, target,
+ orientation, cutoff sign, or physical multiplicity;
+ \item its gain appears only after averaging the fixed shift,
+ determinant frequency, row slopes, masks, or incompatible packets;
+ \item the required remainder theorem, uniformly stated, contains an
+ unproved Chowla specialization and no geometry-specific
+ localization;
+ \item the certified energy loss violates
+ \(\lambda_D^{\rm cert}\le 2\eta_Z\);
+ \item the complete physical loss is at least \(1/400\), including
+ equality.
+\end{enumerate}
+
+A killed branch supports only a branch-local negative conclusion:
+for example, ``magnitude dominance does not certify fiber survival in
+this packet.''  It does not prove a universal parity barrier or rule
+out a different fixed-shift mechanism.
+
+\subsection{Next theorem target}
+
+The most informative next theorem is one of the following:
+\begin{enumerate}[leftmargin=2.2em,label=(\roman*)]
+ \item a raw nondegeneracy lower bound for \(R\);
+ \item a census theorem showing
+ \(\sum_nd_n\ge X^{-\lambda_{\rm fib}+o(1)}R\);
+ \item an exact positive main term from duplicate or
+ shared-target/shared-divisor pairings;
+ \item a localization of the unpaired remainder to a family on which
+ an existing mean-value theorem applies without introducing an
+ unproved special case.
+\end{enumerate}
+A future executed census should decide which of (ii)--(iv) has enough
+literal mass before a long analytic argument is attempted.  The
+schema in \cref{sec:census-protocol} does not itself make that
+decision.

@@ -1,0 +1,169 @@
+\section{The raw--fiber--energy loss ledger}
+\label{sec:loss-ledger}
+
+We now translate the two survival stages into the determinant-energy
+exponent needed by the fixed-shift route.  The notation
+\(X^{-\lambda+o(1)}\) records a fixed loss exponent \(\lambda\);
+all soft factors are taken only after the fixed margins have been
+chosen.
+
+\begin{definition}[Two losses]
+\label{def:two-losses}
+A \emph{raw nondegeneracy certificate} of loss \(\lambda_R\ge0\) is
+\begin{equation}
+ R\ge X^{-\lambda_R+o(1)}N_0.
+\label{eq:raw-certificate}
+\end{equation}
+A \emph{fiber-survival certificate} of loss
+\(\lambda_{\rm fib}\ge0\) is
+\begin{equation}
+ M\ge X^{-\lambda_{\rm fib}+o(1)}R.
+\label{eq:fiber-certificate}
+\end{equation}
+The second certificate may come either from the sharp magnitude
+envelope
+\[
+ M_{\min}^{\rm mag}
+ \ge X^{-\lambda_{\rm fib}+o(1)}R
+\]
+or from a stronger theorem using the actual signed arithmetic.
+\end{definition}
+
+\begin{theorem}[Certified energy loss]
+\label{thm:certified-energy-loss}
+Assume \eqref{eq:raw-certificate} and
+\eqref{eq:fiber-certificate}.  If the actual postaggregation support
+satisfies
+\begin{equation}
+ S\le X^{\lambda_S+o(1)}Q,
+\label{eq:support-loss}
+\end{equation}
+then
+\begin{equation}
+ D\ge
+ X^{-\lambda_D^{\rm cert}+o(1)}Q^3J^2,
+\qquad
+ \lambda_D^{\rm cert}
+ =2\lambda_R+2\lambda_{\rm fib}+\lambda_S.
+\label{eq:general-energy-ledger}
+\end{equation}
+For the verified TPC-32 support bound \(S\ll Q\), this specializes to
+\begin{equation}
+ \boxed{
+ \lambda_D^{\rm cert}=2(\lambda_R+\lambda_{\rm fib}).}
+\label{eq:special-energy-ledger}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Cauchy--Schwarz on the actual nonzero determinant bins gives
+\[
+ M^2
+ =\left(\sum_{A(n)\ne0}|A(n)|\right)^2
+ \le S\sum_n|A(n)|^2
+ =SD.
+\]
+The two survival hypotheses imply
+\[
+ M\ge
+ X^{-(\lambda_R+\lambda_{\rm fib})+o(1)}N_0.
+\]
+Together with \eqref{eq:support-loss},
+\[
+ D\ge\frac{M^2}{S}
+ \ge
+ X^{-2\lambda_R-2\lambda_{\rm fib}-\lambda_S+o(1)}
+ \frac{N_0^2}{Q}.
+\]
+Since \(N_0=JQ^2\),
+\[
+ \frac{N_0^2}{Q}=Q^3J^2,
+\]
+which proves the theorem.
+\end{proof}
+
+\begin{remark}[Why the fiber loss is doubled]
+The exponent \(2\lambda_{\rm fib}\) is not an artifact of an
+estimate: energy is quadratic in the surviving post-bin mass.  The
+equal-amplitude construction in TPC-83 makes the
+\(M^2/S\) inequality sharp, so no universal improvement is possible
+without using more than mass and support \citep{WangTPC83}.
+\end{remark}
+
+\subsection{Compatibility with a zero-mode gain}
+
+Suppose a later transfer theorem supplies a fixed zero-mode gain
+\(\eta_Z\) and requires
+\begin{equation}
+ \lambda_D\le2\eta_Z.
+\label{eq:zero-mode-requirement}
+\end{equation}
+Then the present route is sufficient provided
+\begin{equation}
+ \lambda_R+\lambda_{\rm fib}
+ +\frac{\lambda_S}{2}
+ \le\eta_Z.
+\label{eq:zero-mode-ledger}
+\end{equation}
+With the literal \(S\ll Q\) support bound, this becomes
+\[
+ \lambda_R+\lambda_{\rm fib}\le\eta_Z.
+\]
+Equality in \eqref{eq:zero-mode-ledger} leaves no reserve for any other
+fixed-power loss.  It is therefore an interface equality, not a
+successful end-to-end budget.
+
+\subsection{The inherited reverse direction}
+
+The literal post-bin singleton bound at \(C=\lfloor J\rfloor\) gives
+\begin{equation}
+ L:=\max_n|A(n)|
+ \ll X^{o(1)}\frac{N_0}{Q}.
+\label{eq:L-upper}
+\end{equation}
+Because \(D\le LM\), any certificate
+\begin{equation}
+ D\ge X^{-\lambda_D+o(1)}\frac{N_0^2}{Q}
+\label{eq:D-certificate}
+\end{equation}
+forces
+\begin{equation}
+ M\ge X^{-\lambda_D+o(1)}N_0.
+\label{eq:D-to-M}
+\end{equation}
+Together with \cref{thm:certified-energy-loss}, this recovers the
+sharp TPC-83 interval: a post-bin mass loss \(\lambda_M\) certifies
+energy loss \(2\lambda_M\), whereas energy loss \(\lambda_D\) forces
+post-bin mass loss no worse than \(\lambda_D\).  Neither direction
+provides the missing lower bound by itself.
+
+\subsection{Independent energy and physical endpoint ledgers}
+
+The determinant-energy certificate and the end-to-end physical loss
+are separate accounting objects.  The first must meet the transfer
+interface
+\begin{equation}
+ \boxed{\lambda_D^{\rm cert}\le2\eta_Z.}
+\label{eq:energy-interface-ledger}
+\end{equation}
+Let \(\Lambda_{\rm phys}\) denote the sum of fixed-power degradations
+that a complete physical transfer theorem proves must be paid, with
+no duplicated slack and no absorption into \(o(1)\).  Independently,
+the endpoint requires
+\begin{equation}
+ \boxed{\Lambda_{\rm phys}<\frac1{400}.}
+\label{eq:strict-endpoint}
+\end{equation}
+We do not assert any formula that automatically adds
+\(\lambda_D^{\rm cert}\) to previously incurred physical losses.
+Such a formula would require a term-by-term crosswalk proving that a
+determinant-energy loss survives as a new physical degradation rather
+than already being encoded in the zero-mode interface or another
+transfer factor.  Without that crosswalk, adding the two ledgers may
+double count.
+
+Equality in \eqref{eq:strict-endpoint} is a stop.  Equality in
+\eqref{eq:energy-interface-ledger} meets that interface but leaves no
+energy reserve and is not by itself end-to-end success.  Averaging
+over \(h\), frequencies, or alternative packets does not repair a
+failure of either ledger for the literal fixed-\(h_0\) coefficient.

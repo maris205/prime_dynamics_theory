@@ -1,0 +1,154 @@
+\section{The conditional positive-coherence gate}
+\label{sec:correlation-decomposition}
+
+The quadratic energy can be opened before any estimate.  Define the
+ordered off-diagonal equal-determinant correlation
+\begin{equation}
+ C_{\eqc}
+ :=
+ \sum_n
+ \sum_{\substack{t,t'\in F_n\\t\ne t'}}
+ u_t\overline{u_{t'}}.
+\label{eq:Ceq-definition}
+\end{equation}
+The word ``ordered'' means that both \((t,t')\) and \((t',t)\) occur.
+
+\begin{proposition}[Exact diagonal--coherence identity]
+\label{prop:D-decomposition}
+For every finite native packet,
+\begin{equation}
+ \boxed{D=E_{\trip}+C_{\eqc}.}
+\label{eq:D-decomposition}
+\end{equation}
+Moreover \(C_{\eqc}\in\R\), although it need not be nonnegative.
+\end{proposition}
+
+\begin{proof}
+Opening one fiber gives
+\[
+ |A(n)|^2
+ =\sum_{t,t'\in F_n}u_t\overline{u_{t'}}
+ =\sum_{t\in F_n}|u_t|^2
+ +\sum_{\substack{t,t'\in F_n\\t\ne t'}}
+ u_t\overline{u_{t'}}.
+\]
+Sum over \(n\).  The off-diagonal ordered terms occur in conjugate
+pairs, so their total is real.
+\end{proof}
+
+\subsection{The imported diagonal upper bound loses at least one power}
+
+\begin{proposition}[\(\Lone\) imported triplet-diagonal upper bound]
+\label{prop:triplet-diagonal-upper}
+For the literal TPC-32 matched packet in the high-\(\beta\) domain
+\eqref{eq:high-beta-domain},
+\begin{equation}
+ E_{\trip}
+ \ll_{\varepsilon,h_0,\mathscr D}
+ X^\varepsilon JQ^2
+ =X^\varepsilon N_0.
+\label{eq:Etrip-upper}
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{
+ E_{\trip}
+ \ll_{\varepsilon,h_0,\mathscr D}
+ X^{-1+\varepsilon}Q^3J^2.}
+\label{eq:Etrip-natural-comparison}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+From \eqref{eq:triplet-weight}, the joint multiplier is uniformly
+bounded, and the exact prefix envelope gives
+\[
+ |\cK_{\alpha,\gamma}^{\rm sh}(j)|
+ \ll_{\varepsilon,\mathscr D}X^\varepsilon
+\]
+on the physical support.  That support contains
+\(O_{\mathscr D}(J)\) orbit integers.  Hence, after starting with a
+smaller soft exponent,
+\begin{align*}
+ E_{\trip}
+ &\ll X^\varepsilon
+ \sum_j\sum_{\alpha,\gamma}
+ |\gamma_\alpha^{(1)}|^2
+ |\gamma_\gamma^{(2)}|^2\\
+ &\ll X^\varepsilon J
+ \left(\sum_\alpha|\gamma_\alpha^{(1)}|^2\right)
+ \left(\sum_\gamma|\gamma_\gamma^{(2)}|^2\right).
+\end{align*}
+The row energy bounds
+\[
+ \sum_\alpha|\gamma_\alpha^{(i)}|^2
+ \ll_{\mathscr D}Q\log(2L),\qquad i=1,2,
+\]
+give \eqref{eq:Etrip-upper} after absorbing logarithms into
+\(X^\varepsilon\).  Finally, \(QJ\asymp X\) implies
+\[
+ Q^3J^2=(QJ)(JQ^2)\asymp XN_0,
+\]
+which yields \eqref{eq:Etrip-natural-comparison}.
+\end{proof}
+
+\begin{theorem}[\(\Lone\) conditional positive coherence below loss one]
+\label{thm:positive-coherence-necessary}
+Fix \(0\le\lambda_D<1\).  If along a growing sequence
+\begin{equation}
+ D\ge X^{-\lambda_D+o(1)}Q^3J^2,
+\label{eq:D-fixed-loss-lower}
+\end{equation}
+then
+\begin{equation}
+ C_{\eqc}=D-E_{\trip}=(1-o(1))D.
+\label{eq:Ceq-dominates}
+\end{equation}
+In particular \(C_{\eqc}>0\) eventually and has the same
+fixed-power scale as \(D\).
+\end{theorem}
+
+\begin{proof}
+Choose \(\varepsilon>0\) strictly smaller than
+\(1-\lambda_D\).  By \cref{prop:triplet-diagonal-upper},
+\[
+ \frac{E_{\trip}}{D}
+ \ll
+ X^{-1+\varepsilon+\lambda_D+o(1)}
+ =o(1).
+\]
+Now use \eqref{eq:D-decomposition}.
+\end{proof}
+
+\begin{corollary}[\(\Lone\) conditional off-diagonal target]
+\label{cor:natural-energy-offdiagonal}
+At subpower loss, \(D\ge X^{-o(1)}Q^3J^2\) can hold only if
+\[
+ C_{\eqc}\ge X^{-o(1)}Q^3J^2.
+\]
+Thus an argument proving cancellation of the entire off-diagonal sum
+down to \(o(Q^3J^2)\) cannot prove natural determinant energy.
+\end{corollary}
+
+\begin{remark}[The decorrelation trap]
+\label{rem:decorrelation-trap}
+The precise hypothesis that makes the diagonal asymptotic is
+\[
+ C_{\eqc}=o(E_{\trip}).
+\]
+Under this hypothesis,
+\(D=(1+o(1))E_{\trip}\ll X^{o(1)}N_0\).  Since
+\(Q^3J^2\asymp XN_0\), this lies at most on the loss-one scale and
+therefore loses at least one full power, up to soft factors.  The
+conditional route to a lower bound below loss one is not ``more
+cancellation everywhere''; it must prove that a specific structured
+part of \eqref{eq:Ceq-definition} is positive and macroscopic.
+\end{remark}
+
+\begin{remark}[A distinct energy from TPC-33]
+The column upper-energy \(E_L+E_R\) used in the zero-frequency
+analysis of TPC-33 is not the determinant energy \(D\)
+\citep{WangTPC33}.  An upper bound for that column energy cannot be
+substituted for the lower bound in
+\eqref{eq:D-fixed-loss-lower}.
+\end{remark}

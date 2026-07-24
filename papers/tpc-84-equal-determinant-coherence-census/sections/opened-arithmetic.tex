@@ -1,0 +1,121 @@
+\section{Opening the arithmetic and locating the correlation boundary}
+\label{sec:opened-arithmetic}
+
+The exact matched shell is a difference of two quadratic prefixes.
+For \(Y\in\{U_0,T\}\), write
+\[
+ \epsilon_{U_0}=1,\qquad \epsilon_T=-1,
+\]
+and recall
+\[
+ b_R(w)=-\mu(w)w_R(w)
+\]
+on its squarefree support, with \(w_R(w)>0\).  The native weight may
+be opened as
+\begin{equation}
+\begin{split}
+ u_t={}&
+ \sum_{Y\in\{U_0,T\}}\epsilon_Y
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \mathfrak A_{\alpha,\gamma}(j)\\
+ &\quad\times
+ \sum_{\substack{u,v\le Y\\
+ u\mid N_\alpha(j),\ v\mid N_\gamma(j)}}
+ b_R(u)b_R(v)\,
+ \one_{c_t\le C}.
+\end{split}
+\label{eq:fully-opened-atom}
+\end{equation}
+Every cutoff sign, row orientation, content restriction, and
+aggregation multiplier is part of the native reconstruction record,
+but its expansion children remain attached to the same parent
+triplet.
+
+\subsection{Four M\"obius factors after crossing}
+
+The row provenance contains \(\mu(d_\alpha)\) and
+\(\mu(d_\gamma)\).  Target primitivity gives
+\((d_\alpha,u)=(d_\gamma,v)=1\) on contributing terms, so on the two
+legs
+\begin{equation}
+ \mu(d_\alpha)b_R(u)
+ =-\mu(d_\alpha u)w_R(u),\qquad
+ \mu(d_\gamma)b_R(v)
+ =-\mu(d_\gamma v)w_R(v).
+\label{eq:sign-fusion}
+\end{equation}
+Squaring \eqref{eq:fully-opened-atom}, or crossing two distinct native
+atoms in one determinant fiber, therefore produces structured
+correlations containing four M\"obius factors, together with positive
+divisor weights and literal smooth, residue, cutoff, and mask
+coefficients.  Schematically, one encounters
+\begin{equation}
+ \mu(d_\alpha u)\mu(d_\gamma v)
+ \mu(d_{\alpha'}u')\mu(d_{\gamma'}v')
+ \one_{\nu(t)=\nu(t')},
+\label{eq:four-mobius-schematic}
+\end{equation}
+not an unweighted generic four-point correlation.
+
+\begin{remark}[Do not over-fuse]
+Any M\"obius factor introduced by exact-content inversion may share a
+prime factor with \(u\) or \(v\).  It cannot be fused into
+\eqref{eq:sign-fusion} unless the requisite coprimality has been
+proved for the literal key.  A future census must store such factors
+separately.
+\end{remark}
+
+\subsection{The Chowla boundary}
+
+A theorem uniform over a broad affine family must be tested against
+its smallest specializations.  For example, if its admissible
+parameters include \(a=s=h=1\), so that consecutive unit-scale
+targets are allowed, then a specialization can contain
+\begin{equation}
+ \sum_{t\le x}\mu(t)\mu(t+1),
+\label{eq:chowla-specialization}
+\end{equation}
+the classical unweighted two-point Chowla correlation.  An
+unconditional theorem uniform enough to imply cancellation in
+\eqref{eq:chowla-specialization} would include a currently unproved
+special case.  Logarithmically averaged variants are known
+\citep{Tao2016}, but they are not literal substitutes for the
+unweighted high-row packet.
+
+This observation is a stress test, not an equivalence theorem.  The
+actual family here has large structured rows, fixed support
+restrictions, determinant equality, divisor weights, and coupled
+targets.  We do \emph{not} prove that its correlation problem is
+equivalent to classical Chowla.  A localization, completion, or
+pairing mechanism may exploit precisely those restrictions.
+
+\subsection{Why a positive term is plausible but unproved}
+
+Equation \eqref{eq:four-mobius-schematic} shows two competing
+features:
+\begin{enumerate}[leftmargin=2.1em]
+ \item generic off-diagonal terms have genuinely oscillatory
+ M\"obius signs;
+ \item exact repeated targets, divisors, or native atoms can pair
+ those signs and leave positive weights.
+\end{enumerate}
+Theorem \ref{thm:positive-coherence-necessary} says conditionally
+that the second feature would have to dominate at the desired scale.
+It does not say which pairings occur or how many survive.  The
+proposed schema organizes the arithmetic census gate still missing.
+
+\begin{proposition}[No lower bound from the opened formula alone]
+\label{prop:no-lower-opened}
+The representation \eqref{eq:fully-opened-atom}, together with the
+current boundedness and support axioms, does not imply a positive
+fixed-power lower bound for \(R\), \(M\), or \(C_{\eqc}\).
+\end{proposition}
+
+\begin{proof}
+As in \cref{rem:no-lower-from-axioms}, the allowed literal
+multipliers can vanish or be uniformly rescaled.  Moreover,
+\eqref{eq:fully-opened-atom} is a signed difference between two cutoff
+levels.  An identity and upper envelopes for its summands cannot
+exclude cancellation within a native atom, within a determinant
+fiber, or across the ordered correlation sum.
+\end{proof}

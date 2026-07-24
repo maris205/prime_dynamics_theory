@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.74in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Equal-Determinant Coherence: Sharp Fiber Phase Envelopes, a Conditional Positive-Coherence Gate, and a Census Schema},
+  pdfauthor={Liang Wang},
+  pdfsubject={Sharp phase envelopes, a conditional coherence gate, and an audit-ready census schema},
+  pdfkeywords={determinant fiber, phase envelope, coherent energy, Mobius correlation, fixed shift, endpoint audit}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\trip}{\mathrm{trip}}
+\newcommand{\eqc}{\mathrm{eq}}
+
+\title{Equal-Determinant Coherence:\\
+Sharp Fiber Phase Envelopes, a Conditional\\
+Positive-Coherence Gate, and a Census Schema}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\noindent\textbf{Keywords:} fixed shift; determinant fiber; phase
+envelope; coherent energy; prime--M\"obius packet; arithmetic census;
+endpoint audit.\\[0.5em]
+\noindent\textbf{Convention.} Every arithmetic statement concerns the
+literal matched coefficient at one fixed nonzero shift \(h_0\), with
+complete native keys, actual coefficients and active support, and the
+original global normalization.  A lower bound for a raw absolute
+majorant is never reported as a lower bound after determinant
+aggregation.  Every TPC-32 estimate imported below is restricted to
+its high-\(\beta\) theorem domain \(C=\lfloor J\rfloor\ll Q\).\\[0.5em]
+\noindent\textbf{MSC 2020:} Primary 11N37, 15A63; Secondary 11A25,
+42A16.
+
+\input{sections/introduction}
+\input{sections/native-packet}
+\input{sections/phase-envelope}
+\input{sections/loss-ledger}
+\input{sections/correlation-decomposition}
+\input{sections/opened-arithmetic}
+\input{sections/pairing-classification}
+\input{sections/census-protocol}
+\input{sections/decision-rules}
+\input{sections/claim-boundary}
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

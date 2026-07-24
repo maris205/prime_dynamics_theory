@@ -1,0 +1,153 @@
+\section{Sharp phase envelopes inside determinant fibers}
+\label{sec:phase-envelope}
+
+The first question is purely geometric.  How much of a fiber's
+absolute mass survives if only its moduli are known?
+
+\begin{theorem}[Complete resultant interval]
+\label{thm:resultant-interval}
+Let \(m\ge1\), let \(r_1,\ldots,r_m\ge0\), and set
+\[
+ R_f=\sum_{i=1}^m r_i,\qquad
+ r_{\max}=\max_{1\le i\le m}r_i,
+\]
+and allow arbitrary phases \(\theta_i\in\R\).  Then
+\begin{equation}
+ \left\{
+ \left|\sum_{i=1}^m r_i e^{i\theta_i}\right|:
+ \theta_1,\ldots,\theta_m\in\R
+ \right\}
+ =
+ \left[(2r_{\max}-R_f)_+,\,R_f\right].
+\label{eq:complete-resultant-interval}
+\end{equation}
+Both endpoints, and every magnitude between them, are attained.
+\end{theorem}
+
+\begin{proof}
+We prove by induction that the attainable magnitudes form the stated
+closed interval.  The assertion is immediate for \(m=1\).
+
+Suppose the first \(m-1\) lengths have attainable interval
+\([L',R']\), where
+\[
+ R'=\sum_{i<m}r_i,\qquad
+ L'=(2r'_{\max}-R')_+.
+\]
+Write \(r=r_m\).  If a partial resultant has magnitude \(s\), adding
+the last vector produces every magnitude in
+\([|s-r|,s+r]\), by varying the angle between the two vectors.  As
+\(s\) runs continuously through \([L',R']\), these intervals overlap
+and their union is an interval.  Its upper endpoint is \(R'+r\), and
+its lower endpoint is the distance from \(r\) to \([L',R']\):
+\begin{equation}
+ \min_{s\in[L',R']}|s-r|
+ =\max\{L'-r,\ r-R',\ 0\}.
+\label{eq:distance-interval}
+\end{equation}
+If \(r\ge r'_{\max}\), the right side of
+\eqref{eq:distance-interval} equals
+\((2r-(R'+r))_+\).  If \(r<r'_{\max}\), then
+\(L'-r=(2r'_{\max}-(R'+r))_+\) whenever it is positive, while
+\(r-R'\le0\) because \(R'\ge r'_{\max}>r\).  Thus in both cases the
+new lower endpoint is
+\[
+ \bigl(2\max\{r'_{\max},r\}-(R'+r)\bigr)_+.
+\]
+This is exactly the claimed formula for \(m\) lengths.  The induction
+also proves that every intermediate magnitude is attained.
+\end{proof}
+
+\begin{remark}[Polygon interpretation]
+The lower endpoint is zero precisely when the longest segment is no
+longer than the sum of the remaining segments.  This is the polygon
+closure condition.  When one segment dominates, placing all other
+segments directly opposite it attains the positive defect
+\(2r_{\max}-R_f\).  The theorem is the sharp form of the polygon
+inequality \citep{HardyLittlewoodPolya1952}.
+\end{remark}
+
+For the actual fiber \(F_n\), define
+\begin{equation}
+ R_n=\sum_{t\in F_n}|u_t|,\qquad
+ r_{\max,n}=\max_{t\in F_n}|u_t|,
+\qquad
+ d_n=(2r_{\max,n}-R_n)_+,
+\label{eq:fiber-defect}
+\end{equation}
+with all three quantities zero for an empty fiber.
+
+\begin{corollary}[Sharp global magnitude certificate]
+\label{cor:sharp-global-envelope}
+For every choice of phases consistent with the fiber moduli,
+\begin{equation}
+ \boxed{
+ M=\sum_n|A(n)|
+ \ge M_{\min}^{\rm mag}:=\sum_n d_n.}
+\label{eq:global-mag-lower}
+\end{equation}
+Moreover,
+\begin{equation}
+ M_{\min}^{\rm mag}
+ \le M\le R=\sum_nR_n,
+\label{eq:global-envelope}
+\end{equation}
+and both global endpoints are attainable by independent choices of
+phases within the unrestricted free-phase comparison class.  Hence no
+lower bound depending only on the multiset of fiber moduli can improve
+\eqref{eq:global-mag-lower}.
+\end{corollary}
+
+\begin{proof}
+Apply \cref{thm:resultant-interval} separately to every nonempty
+fiber.  The determinant fibers are disjoint, so their phases may be
+chosen independently in the free-phase comparison class.  Choosing a
+minimizing configuration in every fiber attains the sum of lower
+endpoints; aligning every fiber attains \(\sum_nR_n=R\).
+\end{proof}
+
+\begin{remark}[Free-phase sharpness versus physical realizability]
+\label{rem:free-phase-sharpness}
+The lower bound \eqref{eq:global-mag-lower} applies to the literal
+coefficient because it uses only its actual moduli.  The endpoint
+attainability statement is sharper in a different sense: it is
+optimal over all complex packets having the same fiber partition and
+moduli while allowing the phases to vary independently.  Literal
+phases may be coupled through shared rows, masks, smooth factors, or
+orientations, so an extremizing free-phase assignment need not be
+realizable by the physical packet.  The corollary therefore proves
+optimality for modulus-only arguments, not the existence of a
+physical cancellation or coherence configuration.
+\end{remark}
+
+\begin{definition}[Raw and fiber survival]
+\label{def:survival}
+When \(R>0\), define the actual fiber-survival ratio and its
+phase-blind certificate by
+\begin{equation}
+ \vartheta_{\rm fib}=\frac{M}{R},\qquad
+ \underline\vartheta_{\rm mag}
+ =\frac{M_{\min}^{\rm mag}}{R}.
+\label{eq:survival-ratios}
+\end{equation}
+Then \(0\le\underline\vartheta_{\rm mag}
+\le\vartheta_{\rm fib}\le1\).
+\end{definition}
+
+\begin{remark}[What a zero envelope means]
+\label{rem:zero-envelope}
+It is possible that \(d_n=0\) in every fiber while \(R\) is arbitrarily
+large.  Thus a zero phase-blind certificate kills the
+\emph{magnitude-only route}, not the actual signed coefficient.  A
+positive arithmetic pairing can still force a large resultant.  The
+proposed census schema in \cref{sec:census-protocol} is designed to
+distinguish these two outcomes in a future executed audit.
+\end{remark}
+
+\begin{example}[Sharpness at both extremes]
+If every fiber is a singleton, then \(d_n=R_n\), so \(M=R\)
+independently of phase.  If one fiber contains two equal moduli, then
+its lower envelope is zero and opposite phases attain complete
+cancellation.  No interpolation inequality can distinguish those
+cases without the actual fiber multiplicities and moduli.
+\end{example}

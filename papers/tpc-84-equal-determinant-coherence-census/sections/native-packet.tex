@@ -1,0 +1,142 @@
+\section{Literal native packet and determinant fibers}
+\label{sec:native-packet}
+
+Fix \(h_0\in\Z\setminus\{0\}\).  We use the one-packet notation of
+TPC-32 and suppress \(X\) from symbols when no ambiguity is possible.
+The row and orbit scales obey
+\begin{equation}
+ QJ\asymp_{\mathscr D}X,\qquad
+ N_0:=JQ^2,
+\label{eq:scales}
+\end{equation}
+and the content cutoff is \(C=\lfloor J\rfloor\).  We work only in the
+inherited high-\(\beta\) regime
+\begin{equation}
+ J\ll_{\mathscr D}Q,\qquad
+ C=\lfloor J\rfloor\ll_{\mathscr D}Q,
+\label{eq:high-beta-domain}
+\end{equation}
+which is the theorem domain required by the TPC-32 estimates imported
+below.  No proposition in this paper imports those estimates outside
+\eqref{eq:high-beta-domain}.  The symbol \(\mathscr D\) collects fixed
+supports, residue conditions, smooth weights, and positive margins.
+
+The symbol \(R\) below denotes raw absolute mass.  When the inherited
+divisor coefficient \(b_R\) is used in \cref{sec:opened-arithmetic},
+its subscript denotes the typed TPC-32 sieve cutoff
+\(R_{\rm cut}\), not the raw mass.  We retain the historical notation
+\(b_R\) only to make comparison with TPC-32 immediate.
+
+\subsection{Native triplets}
+
+A native triplet is the physical key
+\[
+ t=(\alpha,\gamma,j)
+\]
+after the three shell channels have been recombined pointwise.  Its
+archive record also stores content, orientation, and coefficient
+provenance, but these metadata do not create additional copies of
+\(t\).
+Its row targets are
+\[
+ N_\alpha(j)=m_\alpha j+h_0,\qquad
+ N_\gamma(j)=m_\gamma j+h_0.
+\]
+The normalized determinant label is
+\begin{equation}
+ \nu(t)=\Delta^\#_{\alpha,\gamma}(j)
+ :=\frac{m_\alpha-m_\gamma}
+ {(N_\alpha(j),N_\gamma(j))}\in\Z\setminus\{0\}.
+\label{eq:determinant-label}
+\end{equation}
+All channel terms are first recombined into the exact matched shell.
+At that level a convenient triplet weight is
+\begin{equation}
+ u_t=
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \mathfrak A_{\alpha,\gamma}(j)
+ \cK_{\alpha,\gamma}^{\rm sh}(j)
+ \one_{c_t\le C},
+\qquad
+ c_t=(N_\alpha(j),N_\gamma(j)).
+\label{eq:triplet-weight}
+\end{equation}
+If an implementation opens channel, cutoff, divisor, or provenance
+fields further, every expansion record retains its parent-triplet
+identifier and literal aggregation multiplier.  Expansion records are
+not additional native triplets.  This prevents a formal opening from
+silently changing \(E_{\trip}\), multiplicity, or normalization.
+
+\begin{definition}[Fibers and masses]
+\label{def:fibers}
+Let \(\cT\) be the finite multiset of native keys, retaining distinct
+keys even if their displayed numerical fields happen to coincide.
+For \(n\in\Z\), put
+\begin{equation}
+ F_n=\{t\in\cT:\nu(t)=n\},\qquad
+ A(n)=\sum_{t\in F_n}u_t .
+\label{eq:fiber-coefficient}
+\end{equation}
+Define
+\begin{align}
+ R&=\sum_{t\in\cT}|u_t|,
+ &M&=\sum_n|A(n)|,\label{eq:raw-post-masses}\\
+ D&=\sum_n|A(n)|^2,
+ &E_{\trip}&=\sum_{t\in\cT}|u_t|^2.
+\label{eq:energies}
+\end{align}
+The exact active support is
+\[
+ S=\#\{n:A(n)\ne0\}.
+\]
+\end{definition}
+
+The distinction between \(R\) and \(M\) is fundamental.  The triangle
+inequality gives
+\begin{equation}
+ 0\le M\le R,
+\label{eq:M-le-R}
+\end{equation}
+but gives no reverse inequality.  The global normalizer in
+\eqref{eq:scales} is not divided by the number of fibers, channels,
+or native records.
+
+\subsection{Inherited upper bounds}
+
+\begin{proposition}[\(\Lone\) imported one-sided information]
+\label{prop:available-upper}
+For the literal TPC-32 packet in
+\eqref{eq:high-beta-domain} at \(C=\lfloor J\rfloor\),
+\begin{align}
+ R&\ll_{\varepsilon,h_0,\mathscr D}X^\varepsilon N_0,
+\label{eq:R-upper}\\
+ M&\le R,\label{eq:M-upper}\\
+ S&\ll_{\mathscr D}Q,\label{eq:S-upper}\\
+ D&\ll_{\varepsilon,h_0,\mathscr D}
+ X^\varepsilon Q^3J^2.
+\label{eq:D-upper}
+\end{align}
+None of these statements is a lower bound for \(R\) or \(M\).
+\end{proposition}
+
+\begin{proof}
+The TPC-32 physical absolute-mass interface bounds the sum of the
+absolute values of complete matched summands by
+\(X^\varepsilon JQ^2\).  This gives \eqref{eq:R-upper}; then
+\eqref{eq:M-upper} is \eqref{eq:M-le-R}.  The determinant labels lie
+in an interval of length \(O_{\mathscr D}(Q)\), giving
+\eqref{eq:S-upper}.  Finally, the inherited singleton bound and raw
+absolute mass yield \eqref{eq:D-upper}; equivalently one may use the
+post-bin \(\ell^\infty\)-by-\(\ell^1\) estimate from TPC-32
+\citep{WangTPC32,WangTPC83}.
+\end{proof}
+
+\begin{remark}[Why the lower bound is absent]
+\label{rem:no-lower-from-axioms}
+The permitted joint multiplier
+\(\mathfrak A_{\alpha,\gamma}(j)\) is only bounded above and may
+vanish.  Multiplying every row or mask coefficient by
+\(X^{-B}\) preserves all stated upper axioms while making \(R\)
+arbitrarily small on the natural scale.  Therefore no uniform lower
+bound for \(R\), \(M\), or \(D\) follows from those axioms alone.
+\end{remark}
