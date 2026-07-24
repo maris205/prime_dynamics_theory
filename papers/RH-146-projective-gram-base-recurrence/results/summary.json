@@ -1,0 +1,107 @@
+{
+  "audit": {
+    "by_sigma": {
+      "0.01": {
+        "maximum_total_variation": 234.16264339179102,
+        "median_step_distance": 10.813232283206322,
+        "median_total_variation": 228.00850950626796,
+        "minimum_terminal_exact_base": 0.002136584328952621,
+        "minimum_terminal_projective_lower": 1.658518997970943e-52,
+        "transition_count": 126
+      },
+      "0.02": {
+        "maximum_total_variation": 204.04457819675764,
+        "median_step_distance": 8.837231267165649,
+        "median_total_variation": 167.52388445051423,
+        "minimum_terminal_exact_base": 0.0009761153391646399,
+        "minimum_terminal_projective_lower": 5.376330372714461e-46,
+        "transition_count": 96
+      },
+      "0.04": {
+        "maximum_total_variation": 188.45841587655949,
+        "median_step_distance": 14.24427658287377,
+        "median_total_variation": 150.27824516438676,
+        "minimum_terminal_exact_base": 8.215531296937601e-08,
+        "minimum_terminal_projective_lower": 1.5963362287328615e-42,
+        "transition_count": 60
+      },
+      "0.08": {
+        "maximum_total_variation": 122.76058859198515,
+        "median_step_distance": 21.668310861553582,
+        "median_total_variation": 108.5637922318796,
+        "minimum_terminal_exact_base": 5.661078243622693e-09,
+        "minimum_terminal_projective_lower": 1.499311740933022e-29,
+        "transition_count": 30
+      },
+      "0.16": {
+        "maximum_total_variation": 142.05151097596425,
+        "median_step_distance": 44.74912826175656,
+        "median_total_variation": 135.59794995538545,
+        "minimum_terminal_exact_base": 1.0365725459187261e-10,
+        "minimum_terminal_projective_lower": 6.456466748382525e-38,
+        "transition_count": 18
+      }
+    },
+    "chain_count": 30,
+    "cumulative_failure_count": 0,
+    "finite_trend_supports_projective_summability": false,
+    "maximum_cumulative_dominance_ratio": 1.2882483297246221e+49,
+    "maximum_projective_distance": 58.679067771939,
+    "maximum_terminal_exact_base": 0.005113189179991864,
+    "maximum_terminal_projective_lower": 3.1621935906938025e-23,
+    "maximum_total_projective_variation": 234.16264339179102,
+    "median_cumulative_dominance_ratio": 284505782699891.9,
+    "median_projective_distance": 11.891379698538218,
+    "median_terminal_exact_base": 6.666193290281229e-06,
+    "median_terminal_projective_lower": 1.1339946707435031e-36,
+    "median_total_projective_variation": 135.59794995538545,
+    "minimum_cumulative_dominance_ratio": 7.001520698487033,
+    "minimum_projective_distance": 3.9206469551592757,
+    "minimum_terminal_exact_base": 1.0365725459187261e-10,
+    "minimum_terminal_projective_lower": 1.658518997970943e-52,
+    "minimum_total_projective_variation": 97.53403208961478,
+    "observed_step_distances_approach_zero": false,
+    "one_step_failure_count": 0,
+    "projective_distance_q90": 23.983242419984222,
+    "scale_count": 5,
+    "transition_count": 330
+  },
+  "program_boundary": {
+    "bounded_nonsummable_obstruction": true,
+    "half_coefficient_sharp": true,
+    "hilbert_polya_operator": false,
+    "physical_polar_gauge_audited": true,
+    "positive_normalized_base_liminf": false,
+    "projective_base_recurrence_proved": true,
+    "projective_variation_summable_for_model": false,
+    "riemann_hypothesis": false,
+    "summable_variation_implies_positive_base_liminf": true,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "91b9b88a3d406554e43253fd93ef35cf31b2c27d846c142a81fa14abd7660cb2",
+    "README.md": "1f6396f0eb542beb9afbc219aea0cdb196e85a551f23cc1ffaf9dce28d214a5c",
+    "THEOREM_LEDGER.md": "b7580456a0c6dcf7d2089addfb5e3d79aa2081312b017ff28ef76ce8a75dd4ba",
+    "UPDATED_ROADMAP.md": "a95da823b90dd679435815d090b98ca73f3514c162eb447308aaceba681ce273",
+    "figures/projective_gram_base_recurrence.pdf": "611a8db52db7b70890421985fccf9ed8a379b28b13f3197698795a79fed032ef",
+    "figures/projective_gram_base_recurrence.png": "3752d89febb47acea5716b198c35c108619231a7356cdd6765d3cf3a0fa089c9",
+    "main.pdf": "1003346fd1beaee75220d64b8dc99a80a75b74cf9569f83277034d0d22d86fd7",
+    "main.tex": "ed17544b0396f5c0fe9a99e14e2f5013868f4db14e5c74e191bb003bb36a30f8",
+    "projective-gram-base-recurrence.pdf": "1003346fd1beaee75220d64b8dc99a80a75b74cf9569f83277034d0d22d86fd7",
+    "pyproject.toml": "a4fb4a166b146599a262e4101b0857cca92c7fd5e8a5b5235b8896f183c7299e",
+    "references.bib": "34ae626471d0e6e73fa46e74b94801649a4e6b3841fe69c2b6d8ae261a3a378e",
+    "requirements.txt": "fd291221898aaf54eb80c0b9f8e9f85f46b016e87e5c3756f1230b27c30e1095"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "8dbe95d3205efa29ea2778a579aeb624653a0d3463f07d27d20ffdc773e95f6a",
+    "results/projective_gram_audit.json": "75668981e2282383c9167aa69b41f4d07c0d970d4abe76bfca81b3a8e222ab86",
+    "results/projective_gram_smoke.json": "a9d742c5088c59f97603b10c2c7894f3c980658b640fffb4e2358b7d327d7e46"
+  },
+  "route_consequence": "Summable Hilbert projective variation is a rigorous sufficient packet for a positive normalized-base liminf. The 330-step physical polar-gauge audit verifies the sharp recurrence but accumulates 97.5--234.2 units of variation per chain, producing terminal universal lowers between roughly 1e-52 and 1e-23. Exact bases are vastly larger, so correlation-aware control is the next route; finite data neither proves nor supports all-level projective summability.",
+  "status": "rh146_projective_gram_base_recurrence_archived",
+  "theorem": {
+    "bounded_distortion_obstruction": true,
+    "sharp_projective_recurrence": true,
+    "summable_variation_corollary": true
+  }
+}
