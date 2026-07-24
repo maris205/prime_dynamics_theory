@@ -1,0 +1,54 @@
+{
+  "audit": {
+    "equal_rank_procrustes_sample_count": 2048,
+    "forcing_dominance_failure_count": 0,
+    "maximum_partial_isometry_defect": 2.9983423303509722e-15,
+    "minimum_random_procrustes_gap": -1.7763568394002505e-15,
+    "minimum_unmatched_trace_slack": 3.853618611975151e-19,
+    "partial_isometry_failure_count": 0,
+    "procrustes_failure_count": 0,
+    "rh130_four_to_four_count": 42,
+    "rh130_subunit_birth_forcing_count": 22,
+    "rh130_zero_to_four_count": 24,
+    "rh130_zero_to_zero_count": 30,
+    "sample_count": 4096,
+    "unmatched_lower_failure_count": 0
+  },
+  "program_boundary": {
+    "canonical_polar_partial_isometry": true,
+    "hilbert_polya_operator": false,
+    "minimal_trace_positive_forcing": true,
+    "natural_dynamical_gauge_derived": false,
+    "physical_all_level_affine_recurrence_proved": false,
+    "principal_angle_procrustes_optimality": true,
+    "riemann_hypothesis": false,
+    "uniform_stage_A_closed": false,
+    "unmatched_target_forcing_lower_bound": true
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "115bee107d48cbb0bd2ad5db12c948c0c75bcc5f5858013281bbe22fd93fed22",
+    "THEOREM_LEDGER.md": "b5490aa715bbf36bcfa996f9a1fdff7496f738fd330a849dd70f88efe5ca4bbb",
+    "UPDATED_ROADMAP.md": "d87665cd2037bf5dedce6915e69def31abaa34df2ac449c98c96f5781099d99d",
+    "canonical-partial-isometry-forcing-gauge.pdf": "86653094309b2cd71c7774ac576bca433d77ef2627a8ccf072c230e594097207",
+    "figures/canonical_partial_isometry_forcing_gauge.pdf": "a6f5173bbd62b02d6088205190dea8db99a7b4aadefd128b06238c348150f033",
+    "figures/canonical_partial_isometry_forcing_gauge.png": "93f27b8c285aab62ac010442bc17649c7dd25d0df62dd95abe93c63c64f72874",
+    "main.pdf": "86653094309b2cd71c7774ac576bca433d77ef2627a8ccf072c230e594097207",
+    "main.tex": "5433a7411b84783ea0087886d115f0b9909c46d118a6eb750f30eb487d6b92ff",
+    "pyproject.toml": "74755602d92c8053df7afbf32f659194cc63fcfc8668990ee86baf375c95285d",
+    "references.bib": "f059791595fa9a9c3ded1d43c03458934db8c0117733df2ba1fd4150dea90c5d",
+    "requirements.txt": "b6efa8218da0501de62ea68dcf20c52b995433d53ca4f46f6afd2d12226a981e"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "b37cc6d9fd289ffb717b656256d8b119529468b1819146049f051bb29374c210",
+    "results/partial_isometry_audit.json": "9db4793a2f5557b2f115834dc2c70d538b61de366a8e68f2c86d864a0d8525e8",
+    "results/partial_isometry_smoke.json": "f555d592cb6cf7d986d7cd0c566a5eea3d4725ee4290a7000219ba7cb0696ac5"
+  },
+  "route_consequence": "The polar factor of the support overlap is a canonical, basis-independent partial-isometry gauge. Any target range outside its final space is necessarily additive forcing, and the positive part of the residual is the unique trace-minimal cost. RH-130 splits into 30 vacuous, 42 transport-eligible, and 24 forcing-only edges; 22 of the 24 birth strengths are subunit.",
+  "status": "rh132_canonical_partial_isometry_forcing_gauge_archived",
+  "theorem": {
+    "polar_principal_angle_gauge": true,
+    "trace_minimal_positive_forcing": true,
+    "unmatched_target_lower_bound": true
+  }
+}

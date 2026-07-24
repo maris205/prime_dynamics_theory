@@ -1,0 +1,41 @@
+{
+  "external_inputs": {
+    "rh130_audit": {
+      "path": "papers/RH-130-floor-free-semidefinite-directional-audit/results/floor_free_audit.json",
+      "sha256": "f71b77248fbbf7cc027147b8c41f3c93691aa2a02d7ee01a15ce1a3c5bcd1f35"
+    },
+    "rh130_summary": {
+      "path": "papers/RH-130-floor-free-semidefinite-directional-audit/results/summary.json",
+      "sha256": "6439cc70ace61917fc5dff2d028b2193be431da48e2e038c11a9be66a1ec155d"
+    },
+    "rh131_summary": {
+      "path": "papers/RH-131-singular-gram-support-rayleigh-theory/results/summary.json",
+      "sha256": "9a836b377451720c9bd2667c44a4a25a14b233143932d576d6876c4840e3dec8"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "40b7d8f349b92beb7c41a977bcf8a5314253ef0428951c1e6c18190bb95651ff",
+    "experiments/build_partial_isometry_audit.py": "fe1edca6e59b8ce9f1a158d8700dc3881d284972f474671be9ce03f60929f0d4",
+    "experiments/make_figures.py": "0b2f70538e8c422ac94b0acd6e9d05384b77df161d53feee47a4da4735b084dd",
+    "experiments/verify_archive.py": "c8bdec51ae130aab2e65524582dd85a9556eeb4a1e63df5a5e9fe1bb86a051dc",
+    "src/partial_isometry_gauge/__init__.py": "5ab084dffcd18ecbb3f575a0c4391b5ae604dbdcedf8e378cd24b1659e4b21eb",
+    "src/partial_isometry_gauge/gauge.py": "cceda2356d77f18d75738b8989d135ee592fc7501588891b95d142f2b1a8002c",
+    "tests/test_archived_results.py": "534f5af6ca42b6019b79baf023fff829df608e7f8ffd3813929fa892eda7db1a",
+    "tests/test_theory.py": "d0be6feb071053968ca742f34089b6444e4bf83c06ed043a8435538de8cabd04"
+  },
+  "publication_artifacts": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "115bee107d48cbb0bd2ad5db12c948c0c75bcc5f5858013281bbe22fd93fed22",
+    "THEOREM_LEDGER.md": "b5490aa715bbf36bcfa996f9a1fdff7496f738fd330a849dd70f88efe5ca4bbb",
+    "UPDATED_ROADMAP.md": "d87665cd2037bf5dedce6915e69def31abaa34df2ac449c98c96f5781099d99d",
+    "canonical-partial-isometry-forcing-gauge.pdf": "86653094309b2cd71c7774ac576bca433d77ef2627a8ccf072c230e594097207",
+    "figures/canonical_partial_isometry_forcing_gauge.pdf": "a6f5173bbd62b02d6088205190dea8db99a7b4aadefd128b06238c348150f033",
+    "figures/canonical_partial_isometry_forcing_gauge.png": "93f27b8c285aab62ac010442bc17649c7dd25d0df62dd95abe93c63c64f72874",
+    "main.pdf": "86653094309b2cd71c7774ac576bca433d77ef2627a8ccf072c230e594097207",
+    "main.tex": "5433a7411b84783ea0087886d115f0b9909c46d118a6eb750f30eb487d6b92ff",
+    "pyproject.toml": "74755602d92c8053df7afbf32f659194cc63fcfc8668990ee86baf375c95285d",
+    "references.bib": "f059791595fa9a9c3ded1d43c03458934db8c0117733df2ba1fd4150dea90c5d",
+    "requirements.txt": "b6efa8218da0501de62ea68dcf20c52b995433d53ca4f46f6afd2d12226a981e"
+  },
+  "status": "all_rh132_inputs_sources_and_publication_artifacts_hashed"
+}
