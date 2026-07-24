@@ -1,0 +1,51 @@
+{
+  "audit": {
+    "compatible_failure_count": 0,
+    "compatible_sample_count": 4096,
+    "kernel_leakage_sample_count": 1024,
+    "leakage_detection_failure_count": 0,
+    "maximum_gamma_error": 1.2212453270876722e-15,
+    "maximum_sharp_volume_error": 3.552713678800501e-15,
+    "minimum_outward_margin": 6.088004727081153e-10,
+    "outward_failure_count": 0,
+    "rh130_full_tail_state_count": 66,
+    "rh130_rank_creation_pair_count": 24,
+    "rh130_zero_tail_state_count": 54
+  },
+  "program_boundary": {
+    "hilbert_polya_operator": false,
+    "kernel_compatibility_criterion": true,
+    "outward_support_radius_formula": true,
+    "physical_all_level_support_projector_proved": false,
+    "pseudoinverse_support_rayleigh_formula": true,
+    "riemann_hypothesis": false,
+    "sharp_supported_pseudovolume_bound": true,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "ec7961649ee27d7843c621a5eada55c0528f3876c70eab2acabe8b54a5738d7b",
+    "THEOREM_LEDGER.md": "d91a1b48420b33795e780e2f0e87f1892d36ffe8aac97c213f6c988d350ac737",
+    "UPDATED_ROADMAP.md": "85d50369bb27933d565530aabc6866c36e09cf97af99f5df6413e3211cc4acc8",
+    "figures/singular_gram_support_rayleigh.pdf": "c0f5df87fa0429402b438bd5712da2b0ce098ca88299f2a84c24834b69d16b0f",
+    "figures/singular_gram_support_rayleigh.png": "f7b835a5e378564b182bc2eda75b35e82feaed67d05c09379bd7a642297a1708",
+    "main.pdf": "d32782edb6db3407a7435b795df813eac87057f3686bc145458e5349ee08d26c",
+    "main.tex": "9ca3b21dec83d30b6b1983da1be0fec94991d5480b171953d843c966b8b250e0",
+    "pyproject.toml": "4482f33c0ff519db275c8665d63094d960d57f3903af375ea393e416e1c8031f",
+    "references.bib": "6a68f07cdc5e7651539d4733b71260c79293456754c5b617f5a724ccd668ea5c",
+    "requirements.txt": "b6efa8218da0501de62ea68dcf20c52b995433d53ca4f46f6afd2d12226a981e",
+    "singular-gram-support-rayleigh-theory.pdf": "d32782edb6db3407a7435b795df813eac87057f3686bc145458e5349ee08d26c"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "d4fe7a2df21f3760321e55654f61ada90db24e4d19c9fa238571c515627b9617",
+    "results/support_rayleigh_audit.json": "c49e3412668d1d976746d318f5a1e0df4715e5c3cf859531794c394d5354f999",
+    "results/support_rayleigh_smoke.json": "c6856de73e6a4241542efa2d98ae7f373f37299d8137b0a846ee910c3d658e1b"
+  },
+  "route_consequence": "Singular recent Gramians are mathematically manageable on their true support, with a sharp pseudodeterminant volume theorem and an outward radius correction. Full-space control has a discontinuous kernel-compatibility gate. On RH-130, the 24 rank-creating edges exactly match the 24 infinite multiplicative factors.",
+  "status": "rh131_singular_gram_support_rayleigh_theory_archived",
+  "theorem": {
+    "kernel_compatibility_and_pseudoinverse_formula": true,
+    "outward_support_rayleigh_bound": true,
+    "sharp_supported_pseudovolume_transfer": true
+  }
+}
