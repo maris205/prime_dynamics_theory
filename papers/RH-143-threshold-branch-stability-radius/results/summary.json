@@ -1,0 +1,87 @@
+{
+  "audit": {
+    "fp64_budget_stable_count": 360,
+    "primary_minimum_branch_radius_to_fp64_budget": 2388.6161067521307,
+    "primary_minimum_relative_branch_radius": 4.344867387321084e-09,
+    "selected_width_mismatch_count": 0,
+    "strict_branch_count": 360,
+    "threshold_count": 3,
+    "threshold_summaries": {
+      "1e-04": {
+        "fp64_budget_stable_count": 120,
+        "median_relative_branch_radius": 0.013370546940049612,
+        "minimum_branch_radius_to_fp64_budget": 889448.6421942118,
+        "minimum_relative_branch_radius": 3.2357953102990426e-06,
+        "strict_branch_count": 120,
+        "threshold": 0.0001,
+        "update_count": 120,
+        "width_four_count": 98,
+        "width_three_count": 17,
+        "width_two_count": 5
+      },
+      "1e-06": {
+        "fp64_budget_stable_count": 120,
+        "median_relative_branch_radius": 0.013470870523873094,
+        "minimum_branch_radius_to_fp64_budget": 17738.983634608554,
+        "minimum_relative_branch_radius": 3.226702326102632e-08,
+        "strict_branch_count": 120,
+        "threshold": 1e-06,
+        "update_count": 120,
+        "width_four_count": 109,
+        "width_three_count": 10,
+        "width_two_count": 1
+      },
+      "1e-08": {
+        "fp64_budget_stable_count": 120,
+        "median_relative_branch_radius": 0.01347187386002488,
+        "minimum_branch_radius_to_fp64_budget": 2388.6161067521307,
+        "minimum_relative_branch_radius": 4.344867387321084e-09,
+        "strict_branch_count": 120,
+        "threshold": 1e-08,
+        "update_count": 120,
+        "width_four_count": 115,
+        "width_three_count": 5,
+        "width_two_count": 0
+      }
+    },
+    "update_record_count": 360
+  },
+  "program_boundary": {
+    "all_archived_branches_have_positive_nominal_margin": true,
+    "all_archived_branches_stable_under_local_fp64_proxy": true,
+    "fp64_proxy_is_an_interval_source_to_cross_enclosure": false,
+    "hilbert_polya_operator": false,
+    "projected_cross_projector_lipschitz_bound": true,
+    "rh142_packet_balls_propagated_through_updates": false,
+    "riemann_hypothesis": false,
+    "sharp_clipped_relative_threshold_branch_radius": true,
+    "stage_A": false,
+    "uniform_all_level_packet_update": false,
+    "uniform_threshold_margin": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "8065449b13621138f1823f8072f55fdb1076f4068cc9d37bf9c7cc787f4ea5a9",
+    "README.md": "c90543026888feb5629a92193f116bceebeb98c3930909d7c23753bebe9db602",
+    "THEOREM_LEDGER.md": "045ac26804fdc5fcc1d6a964d96a28795f92ed439bd8e74c9ca5f000657b82ef",
+    "UPDATED_ROADMAP.md": "7dac9ca310391ea94fd6d76c8f718049b50e0a8859dd296dfb94f00fd085d6f7",
+    "figures/threshold_branch_stability.pdf": "ab65bac90f621e65ecd9915ecea515ee024c976dafc0e9b07a6b93673c55d0f4",
+    "figures/threshold_branch_stability.png": "682d4642753ff753e7b2865036d1fbf3028dd68ba7f5d4ffa53ae039dd5ea549",
+    "main.pdf": "8ef1a4631ec6f7667945fd469c31ac4a1c44d4adf3bfc2dc363e27d372b63efb",
+    "main.tex": "1c90f1439cd1f2f38a688bc1419c44b88008d81fd3dfb0c8952adbcb8f9e17c9",
+    "pyproject.toml": "a953806c2445108914f5bef52b015e1c79a4bbc6f63ac341a8a6108f529d4c02",
+    "references.bib": "2802910111f64ca79791f5bc868aa02080c3571a1e96e9273f7d44b4c39bb22e",
+    "requirements.txt": "408aa57fdb2c5a55bd8a4ee2356c6deab1623d728dbad693e1a35ac2c5e6ebf1",
+    "threshold-branch-stability-radius.pdf": "8ef1a4631ec6f7667945fd469c31ac4a1c44d4adf3bfc2dc363e27d372b63efb"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "610e89f84b52481ba62ab7da930edbd24983fb21660ec4b88870965730139155",
+    "results/threshold_branch_audit.json": "288703de894753427a6fc72264102875c2b2c1ab2eb46c25bb1786ade16e7bb9",
+    "results/threshold_branch_smoke.json": "6a28226f806793b43161727c5770b3d4aa0901250404508b7894b83894ceb344"
+  },
+  "route_consequence": "Every archived RH-96 width decision lies strictly inside a computable branch ball, and all 360 decisions dominate a conservative local fp64 backward proxy. The primary minimum relative radius is only 4.34e-9, however, so this is not yet a source-to-update interval certificate. A projector/snapshot error must be pushed through the projected-cross Lipschitz bound and compared step by step.",
+  "status": "rh143_threshold_branch_stability_radius_archived",
+  "theorem": {
+    "projected_cross_lipschitz_bound": true,
+    "sharp_threshold_branch_radius": true
+  }
+}
