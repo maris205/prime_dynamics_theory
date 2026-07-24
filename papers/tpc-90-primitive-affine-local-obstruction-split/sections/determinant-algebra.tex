@@ -1,0 +1,139 @@
+\section{Determinant algebra and primitive reduction}
+\label{sec:determinant-algebra}
+
+Throughout, divisibility is in \(\Z\) and every greatest common
+divisor is positive.
+
+\begin{definition}[Primitive affine pair]
+\label{def:primitive-affine-pair}
+The pair \((L_1,L_2)\) in \eqref{eq:affine-pair} is
+\emph{individually primitive} if
+\[
+ \gcd(d,s)=1,\qquad \gcd(u,a)=1.
+\]
+No coprimality between the two slopes is assumed.
+\end{definition}
+
+\begin{theorem}[Fixed-determinant gcd confinement]
+\label{thm:gcd-confinement}
+Let \(L_1,L_2\) be as in \eqref{eq:affine-pair} and suppose
+\eqref{eq:fixed-determinant}.  Then
+\begin{align}
+ \boxed{\gcd(a,s)\mid h_0,}
+\label{eq:slope-gcd}\\
+ \boxed{\gcd\bigl(L_1(r),L_2(r)\bigr)\mid h_0
+ \quad(r\in\Z).}
+\label{eq:value-gcd}
+\end{align}
+More generally, if an integer \(m\) divides both \(L_1(r)\) and
+\(L_2(r)\), then \(m\mid h_0\).
+\end{theorem}
+
+\begin{proof}
+Every common divisor of \(a\) and \(s\) divides both \(su\) and
+\(ad\), and hence divides \(su-ad=h_0\).  For the value statement,
+use the exact Bezout-type identity
+\begin{equation}
+ sL_2(r)-aL_1(r)
+ =s(u+ar)-a(d+sr)
+ =h_0.
+\label{eq:value-bezout}
+\end{equation}
+Every common value divisor therefore divides \(h_0\).
+\end{proof}
+
+\begin{corollary}[Common prime powers are fixed]
+\label{cor:common-prime-powers}
+For every prime \(p\), integer \(k\ge1\), and \(r\in\Z\),
+\[
+ p^k\mid L_1(r),\quad p^k\mid L_2(r)
+ \quad\Longrightarrow\quad
+ p^k\mid h_0.
+\]
+In particular, all simultaneous prime divisors belong to the fixed
+finite set \(\{p:p\mid h_0\}\).
+\end{corollary}
+
+\begin{proof}
+Apply \eqref{eq:value-bezout}.
+\end{proof}
+
+\begin{remark}[What is and is not fixed]
+\label{rem:fixed-vs-moving-primes}
+The prime divisors of \(\gcd(a,s)\) are confined to \(h_0\), but the
+prime divisors of nonzero \(a\) or \(s\) separately need not be.
+Thus a growing family can have new one-slope primes.  If one slope
+vanishes, primitivity forces the corresponding affine form to be the
+constant unit \(1\) or \(-1\); that degenerate one-form branch is
+recorded separately in \cref{sec:local-root-counts}.  None of these
+primes is automatically a common-root prime.
+\end{remark}
+
+\subsection{Exact content audit}
+
+The primitive hypothesis cannot be imposed by silently dividing
+coefficients.  The next proposition records the precise reduction.
+
+\begin{proposition}[Content factorization]
+\label{prop:content-factorization}
+For an arbitrary affine pair satisfying
+\eqref{eq:fixed-determinant}, put
+\[
+ c_1=\gcd(d,s),\qquad c_2=\gcd(u,a),
+\]
+and write
+\[
+ L_1=c_1L_1^\ast,\qquad L_2=c_2L_2^\ast.
+\]
+Then \(L_1^\ast,L_2^\ast\) are individually primitive and
+\begin{equation}
+ c_1c_2\mid h_0,\qquad
+ \det(L_1^\ast,L_2^\ast)
+ =
+ \frac{h_0}{c_1c_2}\ne0.
+\label{eq:content-determinant}
+\end{equation}
+If \(p^2\mid c_i\), then \(\mu(L_i(r))=0\) whenever \(L_i(r)>0\).
+If \(c_i\) is squarefree, then
+\begin{equation}
+ \mu(c_iL_i^\ast(r))
+ =
+ \mu(c_i)\mu(L_i^\ast(r))
+ \ind_{\gcd(c_i,L_i^\ast(r))=1}
+\label{eq:content-mobius}
+\end{equation}
+on positive values.
+\end{proposition}
+
+\begin{proof}
+Write
+\[
+ d=c_1d^\ast,\quad s=c_1s^\ast,\qquad
+ u=c_2u^\ast,\quad a=c_2a^\ast.
+\]
+Then
+\[
+ h_0=su-ad
+ =c_1c_2(s^\ast u^\ast-a^\ast d^\ast),
+\]
+which proves \eqref{eq:content-determinant}.  The reduced coefficient
+pairs are primitive by the definition of content.
+
+If \(p^2\mid c_i\), then \(p^2\mid L_i(r)\) for every \(r\), so the
+Mobius value vanishes.  If \(c_i\) is squarefree,
+\(\mu(c_in)\) equals \(\mu(c_i)\mu(n)\) when \((c_i,n)=1\) and
+vanishes when \((c_i,n)>1\), proving
+\eqref{eq:content-mobius}.
+\end{proof}
+
+\begin{remark}[Literal status of content reduction]
+\label{rem:content-literal-status}
+Because \(c_1c_2\mid h_0\), all content primes come from a fixed
+finite set.  Nevertheless, \eqref{eq:content-mobius} introduces an
+actual local mask, and the reduced determinant is
+\(h_0/(c_1c_2)\), not \(h_0\).  Verifying that the physical packet is
+already primitive, or tracking these constants and masks through the
+outer sum, is an \(\Lone\) task.  The rest of the paper works on the
+primitive branch and never relabels the reduced determinant as the
+original one.
+\end{remark}

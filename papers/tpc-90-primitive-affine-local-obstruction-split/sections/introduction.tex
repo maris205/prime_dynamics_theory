@@ -1,0 +1,149 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Consider two integral affine forms
+\begin{equation}
+ L_1(r)=d+sr,\qquad
+ L_2(r)=u+ar
+\label{eq:affine-pair}
+\end{equation}
+whose coefficient determinant is prescribed:
+\begin{equation}
+ su-ad=h_0\ne0.
+\label{eq:fixed-determinant}
+\end{equation}
+This is the literal algebraic shape returned by the primitive-column
+gate of the fixed-shift TPC route \citep{WangTPC33}.  The same
+determinant appears in the two-point logarithmic Chowla setting, but
+the physical packet has growing coefficients, ordinary weighted
+fibers, prescribed origins, masks, and a nontrivial outer
+reassembly.  Those quantifiers cannot be removed by notation.
+
+The present paper asks a deliberately narrower question:
+\begin{quote}
+\emph{Which part of the two-Mobius coefficient is completely
+explained by primitive affine local arithmetic, and which part
+remains a genuine parity correlation?}
+\end{quote}
+The answer is exact.  The fixed determinant confines every common
+value divisor to \(h_0\).  Primitivity then gives a closed formula for
+the root count modulo every prime power.  At the squarefree level,
+the forbidden residues form an explicit periodic local support with
+a positive Euler product.  None of these facts cancels the remaining
+Liouville signs.
+
+\subsection{The three proof levels}
+
+We use the proof-level convention of the surrounding TPC series.
+\begin{description}[leftmargin=3.2em,style=nextline]
+\item[\(\Lzero\):]
+finite integer algebra, exact congruence counts, Chinese-remainder
+identities, fixed-form density theorems, and structure-free logical
+separations;
+\item[\(\Lone\):]
+verification that the exact objects are the literal physical
+coefficients on their actual intervals, with every mask, origin,
+weight, polarization, key, and global normalization retained;
+\item[\(\Ltwo\):]
+a new uniform arithmetic cancellation estimate for the resulting
+growing fixed-\(h_0\) family.
+\end{description}
+This paper proves \(\Lzero\) theorems and formulates an exact
+\(\Lone\) crosswalk.  It proves no \(\Ltwo\) estimate.
+
+\subsection{Main results}
+
+Assume first that the forms are primitive:
+\[
+ \gcd(d,s)=\gcd(u,a)=1.
+\]
+For a prime \(p\) and \(k\ge1\), write
+\[
+ \Rset_{p,k}
+ =
+ \{r\bmod p^k:p^k\mid L_1(r)\}
+ \cup
+ \{r\bmod p^k:p^k\mid L_2(r)\},
+ \qquad
+ \nu_{p,k}=\#\Rset_{p,k}.
+\]
+The exact count is
+\begin{equation}
+ \nu_{p,k}
+ =
+ \ind_{p\nmid s}+\ind_{p\nmid a}
+ -\ind_{p\nmid as}\ind_{p^k\mid h_0}.
+\label{eq:intro-root-count}
+\end{equation}
+On the two-nonconstant branch \(as\ne0\), this formula distinguishes
+two kinds of exceptional prime:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item a \emph{joint} or collision prime divides \(h_0\), hence belongs
+to a fixed finite set when \(h_0\) is fixed;
+\item a one-slope prime divides exactly one of \(a,s\), may move with
+the growing coefficients, and deletes one local root rather than
+creating a simultaneous obstruction.
+\end{enumerate}
+In particular, a collision modulo \(p\) requires \(p\mid h_0\), while
+a collision modulo \(p^2\) requires the strictly stronger condition
+\(p^2\mid h_0\).
+
+The squarefree support is
+\[
+ \Qsf(r)=\mu^2(|L_1(r)|)\mu^2(|L_2(r)|),
+\]
+away from the at most two zeros of the forms.  Its local density is
+\[
+ \Mloc(L_1,L_2)
+ =
+ \prod_p\left(1-\frac{\nu_{p,2}}{p^2}\right)>0.
+\]
+For fixed coefficients this is the natural density of
+\(\Qsf(r)=1\).  This is a special linear instance of the classical
+squarefree-pattern framework of \citet{Mirsky1949}; we include a
+complete elementary proof because the exact dependence on the
+slopes and \(h_0\) matters here.
+
+Finally, on a positive active interval,
+\[
+ \mu(L_1)\mu(L_2)
+ =
+ \Qsf\,\lambda(L_1)\lambda(L_2).
+\]
+The local factor \(\Qsf\) is fully classified.  The surviving
+weighted correlation of the two Liouville signs is not.  Tao's
+two-point theorem treats fixed affine forms with logarithmic
+averaging \citep{Tao2016}; averaged-shift theorems change a different
+quantifier \citep{MatomakiRadziwillTao2015}.  Neither theorem supplies
+the literal growing-coefficient, fixed-\(h_0\), ordinary weighted,
+uniform-prefix statement required here; the logarithmic-to-ordinary
+gap is audited in TPC-87 \citep{WangTPC87}.
+
+\subsection{What the split does not say}
+
+A positive squarefree Euler product says that no finite collection
+of square-power congruences annihilates the support.  It does not
+give cancellation of \(\lambda(L_1)\lambda(L_2)\), does not select a
+prescribed shift from an averaged theorem, and does not produce a
+lower bound for primes.  In a growing physical family, even the
+passage from a formal local product to uniform support mass on every
+short translated fiber requires its own estimate.
+
+The conclusion is therefore a precise fork.  A positive continuation
+must prove sign cancellation on the literal squarefree support.  A
+negative continuation may show that a proposed theorem cannot retain
+the growing forms, interval origins, or endpoint budget.  Either
+outcome must keep the compatibility and physical-loss ledgers
+independent.
+
+\subsection{Organization}
+
+\Cref{sec:determinant-algebra} proves the determinant and content
+identities.  \Cref{sec:local-root-counts} gives the complete
+prime-power root classification.  The squarefree Euler product,
+fixed-form density, and uniformity warning appear in
+\cref{sec:squarefree-support}.  \Cref{sec:parity-split} proves the
+exact Mobius--Liouville and square-divisor decompositions.
+\Cref{sec:physical-interface} identifies the unresolved literal
+correlation.  The independent ledgers and final claim boundary are
+recorded in \cref{sec:separate-ledgers,sec:claim-boundary}.

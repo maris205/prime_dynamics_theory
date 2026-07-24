@@ -1,0 +1,168 @@
+\section{Independent compatibility and physical-loss ledgers}
+\label{sec:separate-ledgers}
+
+The local split introduces no automatic fixed-power saving.  To
+prevent local density, sign cancellation, determinant energy, and
+physical reassembly from being charged against one another, we keep
+their ledgers explicit.
+
+\subsection{Determinant compatibility}
+
+At the inherited critical scales and with the compatibility
+bookkeeping of TPC-81 and TPC-82
+\citep{WangTPC81,WangTPC82}, write
+\begin{equation}
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)}.
+\label{eq:critical-scales}
+\end{equation}
+Suppose a future theorem proves the complete literal zero-mode bound
+\begin{equation}
+ |Z_X|
+ \le
+ X^{-\eta_Z+o(1)}Q_X^2
+\label{eq:conditional-zero-mode}
+\end{equation}
+and an independent theorem proves the determinant-energy lower bound
+\begin{equation}
+ D_X
+ \ge
+ X^{-\lambda_D+o(1)}Q_X^3J_X^2.
+\label{eq:conditional-energy}
+\end{equation}
+These are hypotheses; neither is proved here.
+
+\begin{proposition}[Compatibility exponent]
+\label{prop:compatibility-exponent}
+Under \eqref{eq:critical-scales}--\eqref{eq:conditional-energy},
+\begin{equation}
+ \frac{|Z_X|^2}{D_X}
+ \le
+ X^{1/400+\lambda_D-2\eta_Z+o(1)}.
+\label{eq:compatibility-ratio}
+\end{equation}
+Thus the recorded bounds preserve the baseline exponent whenever
+\begin{equation}
+ \boxed{\lambda_D\le2\eta_Z.}
+\label{eq:compatibility-ledger}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Squaring \eqref{eq:conditional-zero-mode} and dividing by
+\eqref{eq:conditional-energy} gives
+\[
+ \frac{|Z_X|^2}{D_X}
+ \le
+ X^{\lambda_D-2\eta_Z+o(1)}
+ \frac{Q_X}{J_X^2}.
+\]
+By \eqref{eq:critical-scales},
+\[
+ \frac{Q_X}{J_X^2}=X^{1/400+o(1)}.
+\]
+This proves \eqref{eq:compatibility-ratio} and
+\eqref{eq:compatibility-ledger}.
+\end{proof}
+
+\begin{remark}[Local density is not \(\eta_Z\)]
+\label{rem:local-density-not-saving}
+The factor \(\Mloc(L_1,L_2)\) measures unsigned squarefree support
+mass.  Its positivity or boundedness away from zero is not a signed
+zero-mode saving and cannot be entered as a positive contribution to
+\(\eta_Z\).  Any actual \(\eta_Z\) must come from cancellation in the
+complete literal sum \eqref{eq:hard-growing-correlation}, possibly
+together with a separately proved outer-reassembly mechanism.
+\end{remark}
+
+\subsection{The independent physical-loss rule}
+
+\begin{definition}[Physical loss]
+\label{def:physical-loss}
+Let \(\Lambda_{\mathrm{phys}}\) be the sum of fixed-power losses
+actually incurred by coefficient growth, interval localization,
+squarefree-tail localization, masks, short-fiber treatment, content
+reduction, both polarizations, outer reassembly, dictionary transfer,
+and downstream calibrated drift, after removing any loss already
+included in \(\lambda_D-2\eta_Z\).
+\end{definition}
+
+The inherited endpoint rule is
+\begin{equation}
+ \boxed{\Lambda_{\mathrm{phys}}<\frac1{400}.}
+\label{eq:physical-loss-rule}
+\end{equation}
+Equality or excess is a stop condition.
+
+\begin{proposition}[The ledgers are independent]
+\label{prop:ledgers-independent}
+None of the following conversions is licensed by the results of this
+paper:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item replacing a sign-cancellation gain \(\eta_Z\) by the positive
+local factor \(\Mloc\);
+\item subtracting a squarefree-density constant from
+\(\Lambda_{\mathrm{phys}}\);
+\item treating an unproved uniform support-tail estimate as
+determinant energy;
+\item adding \eqref{eq:compatibility-ledger} and
+\eqref{eq:physical-loss-rule} into one budget;
+\item charging a loss already present in
+\(\lambda_D-2\eta_Z\) a second time in
+\(\Lambda_{\mathrm{phys}}\).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The compatibility ledger compares a signed zero mode with an
+\(\ell^2\) determinant energy.  The local factor describes unsigned
+residue support.  The physical ledger records losses created by
+literal localization and reassembly.  No theorem in this paper
+identifies these quantities, so no conversion follows.
+\end{proof}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash}p{0.23\textwidth}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{0.22\textwidth}@{}}
+\toprule
+Ledger & Required comparison & Status in this paper\\
+\midrule
+Local support
+&
+\(\nu_{p,2}\) and \(\Mloc\) describe squarefree residue mass
+&
+Exact \(\Lzero\); no sign saving
+\\
+\addlinespace
+Determinant compatibility
+&
+\(\lambda_D\le2\eta_Z\)
+&
+Conditional \(\Lone\) bookkeeping; neither analytic input proved
+\\
+\addlinespace
+Physical reassembly
+&
+\(\Lambda_{\mathrm{phys}}<1/400\)
+&
+Independent inherited stop rule
+\\
+\bottomrule
+\end{tabularx}
+\caption{Unsigned local mass, signed cancellation, determinant
+energy, and physical loss have different inputs.}
+\label{tab:independent-ledgers}
+\end{table}
+
+\begin{remark}[Where a local-uniformity cost belongs]
+If a future proof truncates the square-divisor expansion and pays a
+fixed-power cost to make \eqref{eq:finite-interval-tail} uniform over
+the physical family, that cost belongs in
+\(\Lambda_{\mathrm{phys}}\) unless it has already been explicitly
+incorporated into \(\eta_Z\) or \(\lambda_D\).  The proof must state
+which ledger contains it.
+\end{remark}

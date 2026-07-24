@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,enumitem,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Primitive Affine Local-Obstruction Splitting at a Fixed Determinant},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\C}{\mathbb C}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Qsf}{\mathcal Q}
+\newcommand{\Rset}{\mathcal R}
+\newcommand{\Mloc}{\mathfrak S_{\mathrm{sf}}}
+
+\title{\textbf{Primitive Affine Local-Obstruction Splitting}\\
+\textbf{at a Fixed Determinant:}\\
+Squarefree Support, Exact Root Counts, and the Remaining
+Liouville Parity Correlation}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\noindent\textbf{Keywords:}
+affine forms; fixed determinant; local obstruction; squarefree
+support; Liouville correlation; parity barrier; fixed shift.
+
+\medskip
+\noindent\textbf{Literal-frame convention.}
+Every physical statement retains one prescribed nonzero determinant
+\(h_0\), the literal growing affine coefficients, the actual
+interval origin, all native masks and weights, both polarizations,
+every outer key, and one global post-aggregation normalization.
+No statement is specialized to \(h_0=2\).
+
+\input{sections/introduction}
+\input{sections/determinant-algebra}
+\input{sections/local-root-counts}
+\input{sections/squarefree-support}
+\input{sections/parity-split}
+\input{sections/physical-interface}
+\input{sections/separate-ledgers}
+\input{sections/claim-boundary}
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

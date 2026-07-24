@@ -1,0 +1,178 @@
+\section{Exact squarefree-support and parity splitting}
+\label{sec:parity-split}
+
+Let \(\lambda(n)=(-1)^{\Omega(n)}\) be the Liouville function.  For
+every \(n\in\N\),
+\begin{equation}
+ \boxed{\mu(n)=\mu^2(n)\lambda(n).}
+\label{eq:mu-squarefree-lambda}
+\end{equation}
+Indeed, both sides vanish when \(n\) is not squarefree, while on a
+squarefree integer both equal \((-1)^{\omega(n)}\).
+
+\begin{theorem}[Exact two-form split]
+\label{thm:two-form-split}
+Let \(I\subset\Z\) be a finite interval on which
+\(L_1(r),L_2(r)>0\), and let \(W:I\to\C\) be arbitrary.  Then
+\begin{equation}
+ \boxed{
+ \sum_{r\in I}W(r)\mu(L_1(r))\mu(L_2(r))
+ =
+ \sum_{r\in I}
+ W(r)\Qsf(r)\lambda(L_1(r))\lambda(L_2(r)).}
+\label{eq:weighted-parity-split}
+\end{equation}
+The factor \(\Qsf\) is determined entirely by the square-power local
+sets \(\Rset_{p,2}\); the remaining factor is a two-point Liouville
+sign.
+\end{theorem}
+
+\begin{proof}
+Apply \eqref{eq:mu-squarefree-lambda} to both forms, multiply, and
+sum.
+\end{proof}
+
+\begin{remark}[Support is not sign cancellation]
+\label{rem:support-not-sign}
+The positive density and exact root counts of
+\cref{sec:local-root-counts,sec:squarefree-support} concern only
+\(\Qsf\).  They do not estimate the signed sum on the right of
+\eqref{eq:weighted-parity-split}.  Replacing the Liouville product by
+the constant sign \(1\) preserves every local-support statement and
+produces no cancellation for nonnegative \(W\).  This is a logical
+separation, not a model for the actual Liouville function.
+\end{remark}
+
+\subsection{Exact square-divisor expansion}
+
+The identity
+\begin{equation}
+ \mu^2(n)=\sum_{q^2\mid n}\mu(q)
+\label{eq:squarefree-divisor-identity}
+\end{equation}
+turns the local support into congruence classes.  The determinant
+gives a particularly sharp compatibility condition.
+
+\begin{theorem}[Primitive square-divisor compatibility]
+\label{thm:square-divisor-compatibility}
+Let \(q_1,q_2\) be positive squarefree integers and put
+\(g=\gcd(q_1,q_2)\).  For a primitive pair
+\((L_1,L_2)\), the system
+\begin{equation}
+ q_1^2\mid L_1(r),\qquad
+ q_2^2\mid L_2(r)
+\label{eq:square-divisor-system}
+\end{equation}
+has an integral solution \(r\) if and only if
+\begin{equation}
+ \boxed{
+ \gcd(q_1,s)=1,\qquad
+ \gcd(q_2,a)=1,\qquad
+ g^2\mid h_0.}
+\label{eq:square-divisor-compatibility}
+\end{equation}
+When soluble, \eqref{eq:square-divisor-system} defines exactly one
+residue class modulo
+\begin{equation}
+ \lcm(q_1^2,q_2^2)
+ =\frac{q_1^2q_2^2}{g^2}.
+\label{eq:square-divisor-modulus}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The first congruence in \eqref{eq:square-divisor-system} is soluble
+if and only if \((q_1,s)=1\).  To see this prime by prime, if
+\(p\mid(q_1,s)\), primitivity gives \(p\nmid d\), so there is no root
+even modulo \(p\); if \((q_1,s)=1\), there is one root modulo
+\(q_1^2\).  The second congruence is analogous.
+
+Under these two coprimality conditions, the individual congruences
+specify one class modulo \(q_1^2\) and one class modulo \(q_2^2\).
+The generalized Chinese remainder theorem says they are compatible
+exactly when their reductions agree modulo
+\(\gcd(q_1^2,q_2^2)=g^2\).  Since \(q_1,q_2\) are squarefree, this can
+be checked at every prime \(p\mid g\).  Both slopes are then units
+modulo \(p\), and \cref{lem:common-root-criterion} with \(k=2\) says
+that the roots agree modulo \(p^2\) exactly when \(p^2\mid h_0\).
+Thus compatibility is equivalent to \(g^2\mid h_0\).  The unique
+class modulo \(\lcm(q_1^2,q_2^2)\) is the standard conclusion of the
+generalized Chinese remainder theorem.
+\end{proof}
+
+\begin{corollary}[Exact weighted divisor expansion]
+\label{cor:exact-weighted-divisor-expansion}
+Under the hypotheses of \cref{thm:two-form-split},
+\begin{align}
+ &\sum_{r\in I}W(r)\mu(L_1(r))\mu(L_2(r))
+\notag\\
+ &\quad=
+ \sum_{\substack{q_1,q_2\ge1\\
+                 (q_1,s)=(q_2,a)=1\\
+                 \gcd(q_1,q_2)^2\mid h_0}}
+ \mu(q_1)\mu(q_2)
+ \sum_{\substack{r\in I\\
+                 q_1^2\mid L_1(r)\\
+                 q_2^2\mid L_2(r)}}
+ W(r)\lambda(L_1(r))\lambda(L_2(r)).
+\label{eq:exact-weighted-divisor-expansion}
+\end{align}
+The outer sum is finite: only \(q_i^2\le
+\max_{r\in I}L_i(r)\) can contribute.  Each nonempty inner sum is
+over one residue class modulo
+\(\lcm(q_1^2,q_2^2)\).
+\end{corollary}
+
+\begin{proof}
+Insert \eqref{eq:squarefree-divisor-identity} twice into the
+right-hand side of \eqref{eq:weighted-parity-split}, interchange the
+finite sums, and apply
+\cref{thm:square-divisor-compatibility}.  Terms with nonsquarefree
+\(q_i\) vanish because \(\mu(q_i)=0\).
+\end{proof}
+
+\begin{remark}[What the divisor expansion exposes]
+\label{rem:divisor-expansion-exposes}
+The overlap \(\gcd(q_1,q_2)\) is supported only on prime squares
+dividing \(h_0\), a fixed finite resource.  However,
+\eqref{eq:exact-weighted-divisor-expansion} still contains Liouville
+correlations on progressions whose moduli, endpoints, and
+coefficients can grow.  The exact local resolution therefore
+organizes the parity problem; it does not eliminate it.
+\end{remark}
+
+\subsection{A fixed-form consequence and its boundary}
+
+\begin{corollary}[Unsigned support mass]
+\label{cor:unsigned-support-mass}
+For a fixed primitive pair,
+\[
+ \sum_{r\le R}\Qsf(r)
+ =
+ \Mloc(L_1,L_2)R+o(R).
+\]
+Consequently,
+\[
+ \left|
+ \sum_{\substack{1\le r\le R\\L_1(r)L_2(r)\ne0}}
+ \mu(|L_1(r)|)\mu(|L_2(r)|)
+ \right|
+ \le
+ \Mloc(L_1,L_2)R+o(R).
+\]
+\end{corollary}
+
+\begin{proof}
+The first statement is
+\cref{thm:fixed-pair-squarefree-density}.  For every nonzero integer
+\(n\), the identity
+\(\mu(|n|)=\mu^2(|n|)\lambda(|n|)\) holds.  Apply it to both forms
+and use \(|\lambda|=1\); the at most two integral zeros have already
+been excluded.
+\end{proof}
+
+\begin{remark}[No nontrivial signed saving]
+The last upper bound is the support-mass bound and is generally of
+order \(R\).  It is not a Chowla estimate and supplies no
+\(o(R)\) cancellation.
+\end{remark}

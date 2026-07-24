@@ -1,0 +1,158 @@
+\section{Claim boundary and conclusion}
+\label{sec:claim-boundary}
+
+\subsection{What is proved}
+
+\begin{theorem}[Audited primitive affine split]
+\label{thm:audited-primitive-split}
+Let
+\[
+ L_1(r)=d+sr,\qquad
+ L_2(r)=u+ar
+\]
+be individually primitive integral affine forms with
+\(su-ad=h_0\ne0\).  Then:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item
+\[
+ \gcd(a,s)\mid h_0,\qquad
+ \gcd(L_1(r),L_2(r))\mid h_0;
+\]
+\item for every prime \(p\) and \(k\ge1\),
+\[
+ \nu_{p,k}
+ =
+ \ind_{p\nmid s}+\ind_{p\nmid a}
+ -\ind_{p\nmid as}\ind_{p^k\mid h_0};
+\]
+\item the simultaneous squarefree local product is positive and
+uniformly bounded below:
+\[
+ \Mloc(L_1,L_2)
+ =
+ \prod_p\left(1-\frac{\nu_{p,2}}{p^2}\right)
+ \ge
+ \prod_p\left(1-\frac2{p^2}\right)>0;
+\]
+\item for fixed coefficients, \(\Mloc(L_1,L_2)\) is the natural
+density of \(r\) for which both values are squarefree;
+\item for squarefree \(q_1,q_2\), the simultaneous square-divisor
+system is soluble exactly under
+\[
+ (q_1,s)=(q_2,a)=1,\qquad
+ \gcd(q_1,q_2)^2\mid h_0,
+\]
+and then gives one class modulo
+\(\lcm(q_1^2,q_2^2)\);
+\item on every positive finite interval and for every complex
+weight \(W\),
+\[
+ \sum W\,\mu(L_1)\mu(L_2)
+ =
+ \sum W\,\mu^2(L_1)\mu^2(L_2)
+ \lambda(L_1)\lambda(L_2).
+\]
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Combine
+\cref{thm:gcd-confinement,thm:prime-power-root-count,prop:euler-product-positive,thm:fixed-pair-squarefree-density,thm:square-divisor-compatibility,thm:two-form-split}.
+\end{proof}
+
+All statements in \cref{thm:audited-primitive-split}, including the
+fixed-form density theorem, are \(\Lzero\).  They apply to the
+abstract affine pair exactly as stated.
+
+\subsection{What requires a literal
+\texorpdfstring{\(\Lone\)}{L1} verification}
+
+To use the split in the physical packet, one must verify all of the
+following:
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item the displayed coefficients are the literal growing
+coefficients and satisfy the same prescribed nonzero \(h_0\);
+\item each pair is primitive, or the exact content constants,
+changed determinant, finite coprimality masks, and identically zero
+branches of \cref{prop:content-factorization} are retained;
+\item the interval origin, positivity range, all residue,
+coprimality, smooth, and joint masks, and all logarithmic or ordinary
+weights are unchanged;
+\item both polarizations and every native outer key are present;
+\item short or bounded-length fibers receive a separate exact or
+outer estimate;
+\item every prefix required by partial summation or dyadic recursion
+is controlled;
+\item \eqref{eq:literal-outer-reassembly} is the complete raw
+physical coefficient under one global post-aggregation
+normalization;
+\item the physical-loss ledger satisfies
+\(\Lambda_{\mathrm{phys}}<1/400\).
+\end{enumerate}
+Only after these checks does
+\eqref{eq:literal-local-parity-split} become a literal \(\Lone\)
+certificate rather than an abstract identity.
+
+\subsection{What is not proved}
+
+This paper does not prove:
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item a uniform squarefree-density asymptotic on the actual growing,
+translated, possibly short physical fibers;
+\item cancellation of
+\(\lambda(L_{1,\theta,X})\lambda(L_{2,\theta,X})\) on the literal
+squarefree support;
+\item the prefix estimate \eqref{eq:uniform-prefix-target};
+\item a power saving for the complete outer correlation
+\eqref{eq:hard-growing-correlation};
+\item uniformity of a fixed-form logarithmic theorem in the growing
+physical coefficients;
+\item selection of the prescribed \(h_0\) from an averaged-shift
+theorem;
+\item a determinant-energy lower bound for \(D_X\);
+\item either conditional hypothesis
+\eqref{eq:conditional-zero-mode} or
+\eqref{eq:conditional-energy};
+\item a fixed-\(h_0\) Hardy--Littlewood asymptotic, a breach of the
+sieve parity barrier, or a prime-pair lower bound.
+\end{enumerate}
+These missing signed estimates are \(\Ltwo\), not consequences of
+the local classification.
+
+\subsection{Conclusion and next gate}
+
+The primitive affine determinant resolves the local geometry more
+completely than a generic ``finite bad primes'' slogan.  It proves
+two different facts:
+\[
+ \text{common value primes divide }h_0,
+\]
+while
+\[
+ \text{one-slope primes may move but delete one local root.}
+\]
+At square level, the exact formula
+\[
+ \nu_{p,2}
+ =
+ \ind_{p\nmid s}+\ind_{p\nmid a}
+ -\ind_{p\nmid as}\ind_{p^2\mid h_0}
+\]
+shows that the squarefree support has no local annihilation.  The
+identity \(\mu=\mu^2\lambda\) then places every remaining sign issue
+in the explicit correlation \eqref{eq:hard-growing-correlation}.
+
+The next positive gate is therefore not another local-density
+calculation.  It is a theorem that gains cancellation from the
+Liouville product while retaining the literal growing forms, fixed
+nonzero determinant, support, origins, weights, masks, prefixes, and
+outer reassembly.  A viable weaker step could control one literal
+residual block or a certified range of square-divisor moduli, provided
+it is labeled at its actual proof level and its loss is entered in
+the correct ledger.  A proof that such a route necessarily loses
+\(1/400\) or more would be a valid negative endpoint.
+
+Nothing here specializes \(h_0\) to \(2\), proves that the affine
+values are prime, gives a prime-pair lower bound, or proves the
+twin-prime conjecture.  The result is an exact local-obstruction
+split and a sharper statement of the parity gate.

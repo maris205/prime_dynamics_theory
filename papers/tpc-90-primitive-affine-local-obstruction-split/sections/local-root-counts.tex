@@ -1,0 +1,221 @@
+\section{Exact local root counts}
+\label{sec:local-root-counts}
+
+Assume in this section that \((L_1,L_2)\) is individually primitive.
+For a prime \(p\) and \(k\ge1\), define
+\begin{align}
+ \Rset_{1;p,k}
+ &=
+ \{r\bmod p^k:p^k\mid L_1(r)\},
+\notag\\
+ \Rset_{2;p,k}
+ &=
+ \{r\bmod p^k:p^k\mid L_2(r)\},
+\notag\\
+ \Rset_{p,k}
+ &=\Rset_{1;p,k}\cup\Rset_{2;p,k},
+ \qquad
+ \nu_{p,k}=\#\Rset_{p,k}.
+\label{eq:local-root-sets}
+\end{align}
+Also put
+\[
+ \epsilon_{1,p}=\ind_{p\nmid s},\qquad
+ \epsilon_{2,p}=\ind_{p\nmid a}.
+\]
+
+\begin{lemma}[One primitive linear congruence]
+\label{lem:one-linear-congruence}
+For every prime \(p\) and \(k\ge1\),
+\[
+ \#\Rset_{1;p,k}=\epsilon_{1,p},
+ \qquad
+ \#\Rset_{2;p,k}=\epsilon_{2,p}.
+\]
+More precisely, if \(p\nmid s\), then
+\[
+ \Rset_{1;p,k}
+ =
+ \{-ds^{-1}\bmod p^k\},
+\]
+whereas if \(p\mid s\), then \(\Rset_{1;p,k}\) is empty.  The
+analogous statement holds with \((d,s)\) replaced by \((u,a)\).
+\end{lemma}
+
+\begin{proof}
+If \(p\nmid s\), the slope is invertible modulo \(p^k\), so there is
+exactly one solution.  If \(p\mid s\), primitivity gives
+\(p\nmid d\), and \(d+sr\not\equiv0\pmod p\) for every \(r\).
+Therefore there is no solution modulo \(p^k\).  The proof for
+\(L_2\) is identical.
+\end{proof}
+
+\begin{lemma}[Common-root criterion]
+\label{lem:common-root-criterion}
+For every prime \(p\) and \(k\ge1\),
+\begin{equation}
+ \Rset_{1;p,k}\cap\Rset_{2;p,k}\ne\varnothing
+ \quad\Longleftrightarrow\quad
+ p\nmid as\ \text{ and }\ p^k\mid h_0.
+\label{eq:common-root-iff}
+\end{equation}
+When the intersection is nonempty, it consists of one residue class.
+\end{lemma}
+
+\begin{proof}
+If the two root sets meet, \cref{lem:one-linear-congruence} gives
+\(p\nmid as\), and \cref{cor:common-prime-powers} gives
+\(p^k\mid h_0\).
+
+Conversely, suppose \(p\nmid as\) and \(p^k\mid h_0\).  Let
+\(r_1\) be the unique root of \(L_1\) modulo \(p^k\).  From
+\eqref{eq:value-bezout},
+\[
+ sL_2(r_1)=h_0+aL_1(r_1)\equiv0\pmod{p^k}.
+\]
+Since \(s\) is a unit modulo \(p^k\), \(L_2(r_1)\equiv0\pmod{p^k}\).
+Thus the unique roots coincide.
+\end{proof}
+
+\begin{theorem}[Complete prime-power root count]
+\label{thm:prime-power-root-count}
+For every prime \(p\) and \(k\ge1\),
+\begin{equation}
+ \boxed{
+ \nu_{p,k}
+ =
+ \epsilon_{1,p}+\epsilon_{2,p}
+ -\epsilon_{1,p}\epsilon_{2,p}\ind_{p^k\mid h_0}.}
+\label{eq:exact-root-count}
+\end{equation}
+Equivalently,
+\[
+\begin{array}{c|c|c}
+\text{slope status at }p
+&
+\text{determinant status}
+&
+\nu_{p,k}
+\\
+\hline
+p\nmid as
+&
+p^k\nmid h_0
+&
+2
+\\
+p\nmid as
+&
+p^k\mid h_0
+&
+1
+\\
+p\mid s,\ p\nmid a
+&
+\text{arbitrary}
+&
+1
+\\
+p\mid a,\ p\nmid s
+&
+\text{arbitrary}
+&
+1
+\\
+p\mid\gcd(a,s)
+&
+\text{necessarily }p\mid h_0
+&
+0.
+\end{array}
+\]
+\end{theorem}
+
+\begin{proof}
+By inclusion--exclusion,
+\[
+ \nu_{p,k}
+ =
+ \#\Rset_{1;p,k}+\#\Rset_{2;p,k}
+ -\#(\Rset_{1;p,k}\cap\Rset_{2;p,k}).
+\]
+Apply \cref{lem:one-linear-congruence,lem:common-root-criterion}.
+The last row also uses \eqref{eq:slope-gcd}.
+\end{proof}
+
+\begin{corollary}[The \(p\) versus \(p^2\) distinction]
+\label{cor:p-versus-p2}
+Suppose \(p\nmid as\).
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item The roots of \(L_1,L_2\) coincide modulo \(p\) if and only if
+\(p\mid h_0\).
+\item They coincide modulo \(p^2\) if and only if \(p^2\mid h_0\).
+\item If \(p\mid h_0\) but \(p^2\nmid h_0\), the two roots coincide
+modulo \(p\) but are distinct modulo \(p^2\).
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+Apply \cref{lem:common-root-criterion} with \(k=1,2\).
+\end{proof}
+
+\subsection{A careful exceptional-prime taxonomy}
+
+\begin{remark}[The zero-slope unit branch]
+\label{rem:zero-slope-branch}
+If \(as=0\), then \(h_0\ne0\) forces exactly one slope to vanish.
+Primitivity forces the corresponding intercept to be \(1\) or
+\(-1\), so that form has no root modulo any prime power and contributes
+no Mobius or squarefree obstruction on a positive interval.  The
+formula \eqref{eq:exact-root-count} remains valid and reduces to the
+one-form root count.  Because every prime divides the integer \(0\),
+finite exceptional-set language for ``primes dividing the zero
+slope'' would be misleading.  The taxonomy below therefore concerns
+the two-nonconstant branch \(as\ne0\).
+\end{remark}
+
+\begin{definition}[Joint and slope-exceptional primes]
+\label{def:exceptional-primes}
+For a fixed primitive pair with \(as\ne0\), define
+\[
+ \mathcal E_{\mathrm{joint}}=\{p:p\mid h_0\},
+ \qquad
+ \mathcal E_{\mathrm{slope}}=\{p:p\mid as\}.
+\]
+The generic set is the complement of
+\(\mathcal E_{\mathrm{joint}}\cup\mathcal E_{\mathrm{slope}}\).
+\end{definition}
+
+\begin{proposition}[Exceptional-prime audit]
+\label{prop:exceptional-prime-audit}
+On the branch \(as\ne0\), the following statements hold.
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item For \(p\nmid ash_0\), one has \(\nu_{p,k}=2\) for every
+\(k\ge1\).
+\item Every common-value or common-root prime lies in the fixed set
+\(\mathcal E_{\mathrm{joint}}\).
+\item If \(p\mid as\) but \(p\nmid h_0\), then \(p\) divides exactly
+one slope and \(\nu_{p,k}=1\) for every \(k\ge1\).
+\item If \(p\mid\gcd(a,s)\), then \(p\mid h_0\) and neither form has a
+root modulo \(p\).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Part (a) follows from \eqref{eq:exact-root-count}.  Part (b) is
+\cref{cor:common-prime-powers}.  For (c), if \(p\) divided both
+slopes then \eqref{eq:slope-gcd} would give \(p\mid h_0\);
+the root count is then the third or fourth row of the table in
+\cref{thm:prime-power-root-count}.  Part (d) follows from
+\eqref{eq:slope-gcd} and primitivity.
+\end{proof}
+
+\begin{remark}[Fixed versus moving exceptions]
+\label{rem:exceptional-taxonomy-warning}
+The joint set is fixed when \(h_0\) is fixed.  The one-slope set may
+grow with \(X\), so it is inaccurate to say that \emph{all} primes at
+which the root count differs from two divide \(h_0\).  On the other
+hand, a one-slope prime removes a forbidden root: it raises, rather
+than lowers, the squarefree local factor relative to the generic
+factor \(1-2/p^2\).
+\end{remark}

@@ -1,0 +1,186 @@
+\section{The literal growing fixed-\texorpdfstring{\(h_0\)}{h0}
+correlation}
+\label{sec:physical-interface}
+
+We now index the forms by a scale \(X\) and an outer key
+\(\theta\in\Theta_X\):
+\begin{equation}
+ L_{1,\theta,X}(r)
+ =d_{\theta,X}+s_{\theta,X}r,\qquad
+ L_{2,\theta,X}(r)
+ =u_{\theta,X}+a_{\theta,X}r.
+\label{eq:growing-affine-family}
+\end{equation}
+The literal branch requires
+\begin{equation}
+ s_{\theta,X}u_{\theta,X}
+ -a_{\theta,X}d_{\theta,X}
+ =h_0\ne0
+\label{eq:growing-fixed-determinant}
+\end{equation}
+with the same prescribed \(h_0\) for every active key.  It also
+requires individual primitivity, or the exact content audit of
+\cref{prop:content-factorization}.
+
+Let \(I_{\theta,X}\) be the actual translated interval on which both
+forms are positive.  Combine the physical smooth weight,
+coprimality and residue masks, joint mask, polarization, and every
+other local multiplier into one literal coefficient
+\[
+ W_{\theta,X}:I_{\theta,X}\to\C.
+\]
+No assumption of positivity or translation invariance is made.
+
+\begin{definition}[Literal parity correlation]
+\label{def:literal-parity-correlation}
+Define
+\begin{align}
+ C_{\theta,X}
+ &=
+ \sum_{r\in I_{\theta,X}}
+ W_{\theta,X}(r)
+ \mu(L_{1,\theta,X}(r))
+ \mu(L_{2,\theta,X}(r)),
+\label{eq:literal-mobius-correlation}\\
+ \Qsf_{\theta,X}(r)
+ &=
+ \mu^2(L_{1,\theta,X}(r))
+ \mu^2(L_{2,\theta,X}(r)).
+\label{eq:literal-squarefree-support}
+\end{align}
+\end{definition}
+
+\begin{theorem}[Exact literal local-parity split]
+\label{thm:literal-local-parity-split}
+For every active key,
+\begin{equation}
+ \boxed{
+ C_{\theta,X}
+ =
+ \sum_{r\in I_{\theta,X}}
+ W_{\theta,X}(r)\Qsf_{\theta,X}(r)
+ \lambda(L_{1,\theta,X}(r))
+ \lambda(L_{2,\theta,X}(r)).}
+\label{eq:literal-local-parity-split}
+\end{equation}
+At each fixed \(X,\theta\), the local sets and root counts of
+\(\Qsf_{\theta,X}\) are given exactly by
+\cref{thm:prime-power-root-count}.  In particular, all simultaneous
+root primes divide \(h_0\).
+\end{theorem}
+
+\begin{proof}
+Apply \cref{thm:two-form-split} to the literal interval and weight.
+The local classification follows from
+\cref{thm:gcd-confinement,thm:prime-power-root-count}.
+\end{proof}
+
+\subsection{The actual unresolved estimate}
+
+In the determinant packet introduced in TPC-32
+\citep{WangTPC32}, suppose the complete raw distinguished coefficient
+has an exact outer reassembly
+\begin{equation}
+ Z_X
+ =
+ \sum_{\theta\in\Theta_X}
+ c_{\theta,X}C_{\theta,X}
+ +E_{\mathrm{content},X},
+\label{eq:literal-outer-reassembly}
+\end{equation}
+where all native keys and both polarizations occur once, the
+\(c_{\theta,X}\) are the literal outer coefficients, and
+\(E_{\mathrm{content},X}\) contains only explicitly audited content
+or bounded-fiber terms.
+
+\begin{definition}[Growing fixed-determinant parity gate]
+\label{def:growing-parity-gate}
+The \emph{literal growing fixed-\(h_0\) weighted parity gate} is the
+problem of obtaining the required saving for
+\begin{equation}
+ \sum_{\theta\in\Theta_X}c_{\theta,X}
+ \sum_{r\in I_{\theta,X}}
+ W_{\theta,X}(r)\Qsf_{\theta,X}(r)
+ \lambda(L_{1,\theta,X}(r))
+ \lambda(L_{2,\theta,X}(r)),
+\label{eq:hard-growing-correlation}
+\end{equation}
+uniformly in the actual active family and with every physical loss
+and completion term included.
+\end{definition}
+
+Equation \eqref{eq:hard-growing-correlation}, not the Euler product,
+is the remaining arithmetic object.  A strong fiberwise theorem
+sufficient for many partial-summation or dyadic-reassembly arguments
+would control every relevant prefix \(I_{\theta,X}(M)\):
+\begin{equation}
+ \sup_{\substack{\theta\in\Theta_X\\
+                 M\text{ an active prefix}}}
+ \left|
+ \sum_{r\in I_{\theta,X}(M)}
+ W_{\theta,X}(r)\Qsf_{\theta,X}(r)
+ \lambda(L_{1,\theta,X}(r))
+ \lambda(L_{2,\theta,X}(r))
+ \right|
+ \le
+ X^{-\eta+o(1)}
+ \mathcal M_{\theta,X}(M),
+\label{eq:uniform-prefix-target}
+\end{equation}
+where
+\[
+ \mathcal M_{\theta,X}(M)
+ =
+ \sum_{r\in I_{\theta,X}(M)}
+ |W_{\theta,X}(r)|\Qsf_{\theta,X}(r).
+\]
+Here \(\eta>0\) is only a schematic desired saving.
+Equation \eqref{eq:uniform-prefix-target} is not asserted to be
+necessary: cancellation may also occur in the exact outer sum
+\eqref{eq:literal-outer-reassembly}.  The minimal requirement is the
+calibrated bound on that complete sum.
+
+\begin{proposition}[Why fixed-form local information is insufficient]
+\label{prop:fixed-form-insufficient}
+The results proved in
+\cref{sec:determinant-algebra,sec:local-root-counts,sec:squarefree-support,sec:parity-split}
+do not imply either \eqref{eq:uniform-prefix-target} or a power saving
+for \eqref{eq:hard-growing-correlation}.
+\end{proposition}
+
+\begin{proof}
+Those results determine the zero set of \(\Qsf_{\theta,X}\), its
+finite periodic densities, and the exact placement of square
+divisors.  They contain no estimate for the signs
+\(\lambda(L_{1,\theta,X})\lambda(L_{2,\theta,X})\).  Even the
+fixed-form density theorem is unsigned and asymptotic in an interval
+whose length tends to infinity with fixed coefficients.  It supplies
+neither uniformity in the growing coefficients nor control of
+translated short prefixes and literal weights.  Therefore the stated
+signed conclusions do not follow.
+\end{proof}
+
+\subsection{Comparison with available correlation theorems}
+
+Tao's logarithmically averaged two-point theorem fixes the affine
+coefficients before the main scale tends to infinity
+\citep{Tao2016}.  The averaged Chowla theorem of
+\citet{MatomakiRadziwillTao2015} averages over a shift box whose side
+length \(H=H(X)\) tends to infinity with the scale.  Neither
+quantifier pattern gives
+\eqref{eq:hard-growing-correlation}: the physical problem prescribes
+one determinant, lets the slopes and intercepts grow, retains
+ordinary local weights and masks, and then performs a specific outer
+sum.  Moreover, replacing a weight \(1/(r_0+r)\) by \(1/r\) after
+translating a fiber requires a uniform partial-summation theorem; it
+is not a formal relabeling.  These distinctions are exactly the
+Tauberian and literal-coefficient gaps isolated in TPC-87
+\citep{WangTPC87}.
+
+\begin{remark}[No specialization]
+\label{rem:no-specialization}
+The determinant in \eqref{eq:growing-fixed-determinant} remains an
+arbitrary prescribed nonzero integer.  None of the local identities
+or conditional targets selects \(h_0=2\), produces prime values, or
+proves a fixed-shift Hardy--Littlewood asymptotic.
+\end{remark}

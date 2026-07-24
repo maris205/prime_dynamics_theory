@@ -1,0 +1,199 @@
+\section{Squarefree local support}
+\label{sec:squarefree-support}
+
+For \(r\) with \(L_1(r)L_2(r)\ne0\), define
+\begin{equation}
+ \Qsf(r)
+ =
+ \mu^2(|L_1(r)|)\mu^2(|L_2(r)|).
+\label{eq:squarefree-support}
+\end{equation}
+At an integral zero of either form, set \(\Qsf(r)=0\).  This
+convention changes at most two values and is convenient for density
+statements.
+
+\subsection{Finite local support}
+
+For \(z\ge2\), let
+\[
+ P(z)=\prod_{p\le z}p^2
+\]
+and define the truncated local indicator
+\begin{equation}
+ \Qsf_z(r)
+ =
+ \prod_{p\le z}
+ \ind_{r\bmod p^2\notin\Rset_{p,2}}.
+\label{eq:truncated-support}
+\end{equation}
+
+\begin{theorem}[Exact finite local density]
+\label{thm:finite-local-density}
+The function \(\Qsf_z\) is periodic modulo \(P(z)\), and
+\begin{equation}
+ \frac1{P(z)}
+ \sum_{r\bmod P(z)}\Qsf_z(r)
+ =
+ \prod_{p\le z}
+ \left(1-\frac{\nu_{p,2}}{p^2}\right).
+\label{eq:finite-local-product}
+\end{equation}
+Every factor on the right is positive.
+\end{theorem}
+
+\begin{proof}
+For each \(p\le z\), exactly \(p^2-\nu_{p,2}\) residue classes
+modulo \(p^2\) are allowed.  The moduli \(p^2\) are pairwise
+coprime, so the Chinese remainder theorem multiplies the allowed
+counts.  Finally, \(\nu_{p,2}\le2<p^2\), including at \(p=2\).
+\end{proof}
+
+\begin{corollary}[No squarefree local annihilation]
+\label{cor:no-squarefree-local-annihilation}
+For every finite set of primes, there is a residue class satisfying
+\(p^2\nmid L_i(r)\) for \(i=1,2\) and every prime in the set.
+Quantitatively,
+\begin{equation}
+ \prod_{p\le z}
+ \left(1-\frac{\nu_{p,2}}{p^2}\right)
+ \ge
+ \prod_{p\le z}\left(1-\frac2{p^2}\right)>0.
+\label{eq:finite-universal-lower}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Use \(\nu_{p,2}\le2\) in
+\eqref{eq:finite-local-product}.
+\end{proof}
+
+\subsection{The Euler product and fixed-form density}
+
+\begin{definition}[Squarefree singular factor]
+\label{def:squarefree-singular-factor}
+For a fixed primitive affine pair, put
+\begin{equation}
+ \Mloc(L_1,L_2)
+ =
+ \prod_p
+ \left(1-\frac{\nu_{p,2}}{p^2}\right).
+\label{eq:squarefree-singular-factor}
+\end{equation}
+\end{definition}
+
+\begin{proposition}[Absolute convergence and uniform positivity]
+\label{prop:euler-product-positive}
+The product \eqref{eq:squarefree-singular-factor} converges to a
+positive number and satisfies
+\begin{equation}
+ \boxed{
+ 1\ge\Mloc(L_1,L_2)
+ \ge
+ \prod_p\left(1-\frac2{p^2}\right)>0.}
+\label{eq:universal-squarefree-lower}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Since \(0\le\nu_{p,2}\le2\) and
+\(\sum_p p^{-2}<\infty\), the logarithm of the Euler product
+converges absolutely after finitely many initial factors.  Every
+factor is positive.  The lower bound follows termwise.
+\end{proof}
+
+\begin{theorem}[Simultaneous squarefree density for a fixed pair]
+\label{thm:fixed-pair-squarefree-density}
+For every fixed primitive affine pair with \(h_0\ne0\),
+\begin{equation}
+ \lim_{R\to\infty}
+ \frac1R\sum_{1\le r\le R}\Qsf(r)
+ =
+ \Mloc(L_1,L_2).
+\label{eq:fixed-pair-density}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Fix \(z\).  Periodicity and
+\cref{thm:finite-local-density} give
+\[
+ \lim_{R\to\infty}
+ \frac1R\sum_{r\le R}\Qsf_z(r)
+ =
+ \prod_{p\le z}
+ \left(1-\frac{\nu_{p,2}}{p^2}\right).
+\]
+It remains to remove primes \(p>z\).
+
+Let
+\[
+ B_R=\max_{1\le r\le R}
+ \max\{|L_1(r)|,|L_2(r)|\}.
+\]
+For the fixed affine pair, \(B_R\ll_{L_1,L_2}R\).  Away from the at
+most two integral zeros, a discrepancy
+\(\Qsf_z(r)\ne\Qsf(r)\) requires
+\[
+ p^2\mid L_i(r)
+\]
+for some \(i\in\{1,2\}\) and prime
+\(z<p\le\sqrt{B_R}\).  If \(p\) divides the relevant slope, there is
+no root by \cref{lem:one-linear-congruence}; otherwise there is one
+residue class modulo \(p^2\).  Hence the number of discrepancies is
+at most
+\[
+ 2R\sum_{p>z}\frac1{p^2}
+ +2\pi(\sqrt{B_R})+O(1)
+ \ll
+ \frac{R}{z}+\sqrt R+O(1).
+\]
+After division by \(R\), first let \(R\to\infty\), then
+\(z\to\infty\).  The finite products converge to
+\eqref{eq:squarefree-singular-factor}, proving the theorem.
+\end{proof}
+
+\begin{remark}[What the density proves]
+\label{rem:density-scope}
+The theorem proves that a \emph{fixed} primitive pair has positive
+simultaneous squarefree density.  It does not prove cancellation of
+Mobius or Liouville signs.  It also does not give a uniform
+translated-short-interval theorem for coefficients depending on
+\(X\).
+\end{remark}
+
+\subsection{Why growing physical fibers need a separate theorem}
+
+\begin{proposition}[Elementary tail bound on one finite interval]
+\label{prop:finite-interval-tail}
+Let \(I\subset\Z\) be an interval of \(N\) consecutive integers, and
+put
+\[
+ B=\max_{r\in I}\max\{|L_1(r)|,|L_2(r)|\}.
+\]
+Apart from integral zeros of the forms,
+\begin{equation}
+ \#\{r\in I:\Qsf_z(r)\ne\Qsf(r)\}
+ \ll
+ \frac{N}{z}+\sqrt B.
+\label{eq:finite-interval-tail}
+\end{equation}
+The implied constant is absolute.
+\end{proposition}
+
+\begin{proof}
+Repeat the union bound in the proof of
+\cref{thm:fixed-pair-squarefree-density}.  A single soluble class
+modulo \(p^2\) meets \(I\) at most \(N/p^2+1\) times, and only primes
+\(p\le\sqrt B\) can occur.
+\end{proof}
+
+\begin{remark}[A limitation, not a counterexample]
+\label{rem:tail-bound-limitation}
+If the slopes and interval origins grow, then \(B\) may be much
+larger than \(N^2\), and \eqref{eq:finite-interval-tail} gives no
+useful relative error.  This does not prove that squarefree mass is
+small; it proves only that the fixed-form density argument is not a
+uniform physical theorem.  Likewise, the exact periodic density in
+\eqref{eq:finite-local-product} need not be visible inside an
+interval much shorter than \(P(z)\).
+\end{remark}
