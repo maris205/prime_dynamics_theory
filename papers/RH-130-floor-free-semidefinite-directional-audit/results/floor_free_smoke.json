@@ -1,0 +1,619 @@
+{
+  "audit_summary": {
+    "chain_count": 4,
+    "exact_discrete_rank_four_count": 8,
+    "finite_superunit_gamma_transfer_count": 0,
+    "fp64_rank_four_chain_count": 4,
+    "fp64_supported_rank_counts": {
+      "4": 8
+    },
+    "infinite_tail_factor_count": 1,
+    "maximum_condition_log10": 9.984400297825156,
+    "minimum_tail_dominance_slack": 0.0,
+    "pair_count": 4,
+    "positive_chain_count": 3,
+    "positive_floor_free_candidate_count": 7,
+    "positive_transfer_count": 3,
+    "scale_count": 2,
+    "state_count": 8,
+    "subunit_floor_free_gamma_count": 7
+  },
+  "chains": [
+    {
+      "all_edges_positive": true,
+      "all_states_fp64_rank_four": true,
+      "edge_count": 1,
+      "phase": 0.25,
+      "side": "left",
+      "terminal_one_step_lower_log10": -3.2454204836521217,
+      "threshold": 1e-08
+    },
+    {
+      "all_edges_positive": true,
+      "all_states_fp64_rank_four": true,
+      "edge_count": 1,
+      "phase": 0.5,
+      "side": "left",
+      "terminal_one_step_lower_log10": -4.120851482098748,
+      "threshold": 1e-08
+    },
+    {
+      "all_edges_positive": true,
+      "all_states_fp64_rank_four": true,
+      "edge_count": 1,
+      "phase": 0.75,
+      "side": "left",
+      "terminal_one_step_lower_log10": -5.908537473643738,
+      "threshold": 1e-08
+    },
+    {
+      "all_edges_positive": false,
+      "all_states_fp64_rank_four": true,
+      "edge_count": 1,
+      "phase": 1.0,
+      "side": "left",
+      "terminal_one_step_lower_log10": null,
+      "threshold": 1e-08
+    }
+  ],
+  "common_assembly": true,
+  "pairs": [
+    {
+      "gamma_transfer_upper": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "optimal_tail_factor": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "pair_id": "0.16-0.08:left:1e-08:p0.25",
+      "phase": 0.25,
+      "positive_transfer": true,
+      "side": "left",
+      "source_fp64_rank": 4,
+      "source_sigma": 0.16,
+      "target_candidate": {
+        "infinite": false,
+        "log10": -3.2454204836521217,
+        "value": 0.0005683024343218426
+      },
+      "target_fp64_rank": 4,
+      "target_lower": {
+        "infinite": false,
+        "log10": -3.2454204836521217,
+        "value": 0.0005683024343218426
+      },
+      "target_sigma": 0.08,
+      "threshold": 1e-08
+    },
+    {
+      "gamma_transfer_upper": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "optimal_tail_factor": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "pair_id": "0.16-0.08:left:1e-08:p0.50",
+      "phase": 0.5,
+      "positive_transfer": true,
+      "side": "left",
+      "source_fp64_rank": 4,
+      "source_sigma": 0.16,
+      "target_candidate": {
+        "infinite": false,
+        "log10": -4.120851482098748,
+        "value": 7.570917572897734e-05
+      },
+      "target_fp64_rank": 4,
+      "target_lower": {
+        "infinite": false,
+        "log10": -4.120851482098748,
+        "value": 7.570917572897734e-05
+      },
+      "target_sigma": 0.08,
+      "threshold": 1e-08
+    },
+    {
+      "gamma_transfer_upper": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "optimal_tail_factor": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "pair_id": "0.16-0.08:left:1e-08:p0.75",
+      "phase": 0.75,
+      "positive_transfer": true,
+      "side": "left",
+      "source_fp64_rank": 4,
+      "source_sigma": 0.16,
+      "target_candidate": {
+        "infinite": false,
+        "log10": -5.908537473643738,
+        "value": 1.2344187972020371e-06
+      },
+      "target_fp64_rank": 4,
+      "target_lower": {
+        "infinite": false,
+        "log10": -5.908537473643738,
+        "value": 1.2344187972020371e-06
+      },
+      "target_sigma": 0.08,
+      "threshold": 1e-08
+    },
+    {
+      "gamma_transfer_upper": {
+        "infinite": true,
+        "log10": null,
+        "value": null
+      },
+      "optimal_tail_factor": {
+        "infinite": true,
+        "log10": null,
+        "value": null
+      },
+      "pair_id": "0.16-0.08:left:1e-08:p1.00",
+      "phase": 1.0,
+      "positive_transfer": false,
+      "side": "left",
+      "source_fp64_rank": 4,
+      "source_sigma": 0.16,
+      "target_candidate": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "target_fp64_rank": 4,
+      "target_lower": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "target_sigma": 0.08,
+      "threshold": 1e-08
+    }
+  ],
+  "positive_gram_floor": 0.0,
+  "positive_tail_floor": 0.0,
+  "precision_decimal_digits": 90,
+  "route_consequence": "A common extended-precision assembly removes the RH-121 conditioning floor and separates exact rank in the frozen discrete model from directions certifiable at fp64 scale. The resulting floor-free Rayleigh and transfer counts decide whether the previous regularized chains represented genuine four-directional support.",
+  "state_rows": [
+    {
+      "capacity_upper": 0.0018502792705816134,
+      "condition_log10": 4.916182208922762,
+      "directional_candidate": {
+        "infinite": false,
+        "log10": -4.916182208922762,
+        "value": 1.2128798780703306e-05
+      },
+      "exact_discrete_rank": 4,
+      "fp64_support_radius": 2.279656510641088e-15,
+      "fp64_supported_rank": 4,
+      "frame_volume": {
+        "infinite": false,
+        "log10": -16.848547979927393,
+        "value": 1.417268126035839e-17
+      },
+      "gamma": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "leading_upper": 0.005013017681570278,
+      "minimum_tail_dominance_slack": 0.0,
+      "phase": 0.25,
+      "relative_spectrum": [
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.16,
+      "state_id": "0.16:left:1e-08:p0.25",
+      "threshold": 1e-08,
+      "time": 1
+    },
+    {
+      "capacity_upper": 1.3752933063233183e-08,
+      "condition_log10": 7.620972576602221,
+      "directional_candidate": {
+        "infinite": false,
+        "log10": -7.620972576602197,
+        "value": 2.393466886399017e-08
+      },
+      "exact_discrete_rank": 4,
+      "fp64_support_radius": 1.979283540288946e-15,
+      "fp64_supported_rank": 4,
+      "frame_volume": {
+        "infinite": false,
+        "log10": -24.927625906120888,
+        "value": 1.1813377817826445e-25
+      },
+      "gamma": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "leading_upper": 0.004352490534426687,
+      "minimum_tail_dominance_slack": 0.0,
+      "phase": 0.5,
+      "relative_spectrum": [
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.16,
+      "state_id": "0.16:left:1e-08:p0.50",
+      "threshold": 1e-08,
+      "time": 2
+    },
+    {
+      "capacity_upper": 6.782717126564154e-10,
+      "condition_log10": 9.455682091890846,
+      "directional_candidate": {
+        "infinite": false,
+        "log10": -9.455682091890731,
+        "value": 3.5020142433579246e-10
+      },
+      "exact_discrete_rank": 4,
+      "fp64_support_radius": 1.1706245388106337e-16,
+      "fp64_supported_rank": 4,
+      "frame_volume": {
+        "infinite": false,
+        "log10": -32.9816886033367,
+        "value": 1.0430650570367743e-33
+      },
+      "gamma": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "leading_upper": 0.0002574230584364419,
+      "minimum_tail_dominance_slack": 0.0,
+      "phase": 0.75,
+      "relative_spectrum": [
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.16,
+      "state_id": "0.16:left:1e-08:p0.75",
+      "threshold": 1e-08,
+      "time": 3
+    },
+    {
+      "capacity_upper": 1.0736549216087055e-11,
+      "condition_log10": 9.984400297825156,
+      "directional_candidate": {
+        "infinite": false,
+        "log10": -9.984400297825063,
+        "value": 1.0365725459189449e-10
+      },
+      "exact_discrete_rank": 4,
+      "fp64_support_radius": 4.167130096360927e-18,
+      "fp64_supported_rank": 4,
+      "frame_volume": {
+        "infinite": false,
+        "log10": -41.10526805292371,
+        "value": 7.847511251984497e-42
+      },
+      "gamma": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "leading_upper": 9.163615990808327e-06,
+      "minimum_tail_dominance_slack": 0.0,
+      "phase": 1.0,
+      "relative_spectrum": [
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.16,
+      "state_id": "0.16:left:1e-08:p1.00",
+      "threshold": 1e-08,
+      "time": 4
+    },
+    {
+      "capacity_upper": 0.00026067045997752814,
+      "condition_log10": 3.2454204836521208,
+      "directional_candidate": {
+        "infinite": false,
+        "log10": -3.2454204836521217,
+        "value": 0.0005683024343218426
+      },
+      "exact_discrete_rank": 4,
+      "fp64_support_radius": 9.146690145005495e-15,
+      "fp64_supported_rank": 4,
+      "frame_volume": {
+        "infinite": false,
+        "log10": -14.81947349074751,
+        "value": 1.5153973004383803e-15
+      },
+      "gamma": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "leading_upper": 0.010056892170097696,
+      "minimum_tail_dominance_slack": 0.0,
+      "phase": 0.25,
+      "relative_spectrum": [
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.08,
+      "state_id": "0.08:left:1e-08:p0.25",
+      "threshold": 1e-08,
+      "time": 2
+    },
+    {
+      "capacity_upper": 5.065180840843038e-05,
+      "condition_log10": 4.120851482098748,
+      "directional_candidate": {
+        "infinite": false,
+        "log10": -4.120851482098748,
+        "value": 7.570917572897734e-05
+      },
+      "exact_discrete_rank": 4,
+      "fp64_support_radius": 8.63315959065685e-16,
+      "fp64_supported_rank": 4,
+      "frame_volume": {
+        "infinite": false,
+        "log10": -20.506778143360968,
+        "value": 3.113306344160532e-21
+      },
+      "gamma": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "leading_upper": 0.0009492259354373099,
+      "minimum_tail_dominance_slack": 0.0,
+      "phase": 0.5,
+      "relative_spectrum": [
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.08,
+      "state_id": "0.08:left:1e-08:p0.50",
+      "threshold": 1e-08,
+      "time": 3
+    },
+    {
+      "capacity_upper": 3.238560225641637e-05,
+      "condition_log10": 5.9085374736437375,
+      "directional_candidate": {
+        "infinite": false,
+        "log10": -5.908537473643738,
+        "value": 1.2344187972020371e-06
+      },
+      "exact_discrete_rank": 4,
+      "fp64_support_radius": 1.3369081390975946e-16,
+      "fp64_supported_rank": 4,
+      "frame_volume": {
+        "infinite": false,
+        "log10": -25.728979920490143,
+        "value": 1.8664659844840759e-26
+      },
+      "gamma": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "leading_upper": 0.00014699460442061795,
+      "minimum_tail_dominance_slack": 0.0,
+      "phase": 0.75,
+      "relative_spectrum": [
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        },
+        {
+          "infinite": false,
+          "log10": null,
+          "value": 0.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.08,
+      "state_id": "0.08:left:1e-08:p0.75",
+      "threshold": 1e-08,
+      "time": 4
+    },
+    {
+      "capacity_upper": 0.00014199537250218484,
+      "condition_log10": 8.247100842547177,
+      "directional_candidate": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "exact_discrete_rank": 4,
+      "fp64_support_radius": 3.6205622697146375e-19,
+      "fp64_supported_rank": 4,
+      "frame_volume": {
+        "infinite": false,
+        "log10": -37.694980377606356,
+        "value": 2.0184575600372408e-38
+      },
+      "gamma": {
+        "infinite": false,
+        "log10": 0.48740123338716906,
+        "value": 3.0718586882359618
+      },
+      "leading_upper": 3.9808505994105166e-07,
+      "minimum_tail_dominance_slack": 1.6149502676854304e-29,
+      "phase": 1.0,
+      "relative_spectrum": [
+        {
+          "infinite": false,
+          "log10": -15.38439762565169,
+          "value": 4.126695024383093e-16
+        },
+        {
+          "infinite": false,
+          "log10": -13.308724424804916,
+          "value": 4.9121947339611523e-14
+        },
+        {
+          "infinite": false,
+          "log10": -8.860242144838775,
+          "value": 1.379614833321667e-09
+        },
+        {
+          "infinite": false,
+          "log10": 0.9748024667743381,
+          "value": 9.436315800490762
+        }
+      ],
+      "side": "left",
+      "sigma": 0.08,
+      "state_id": "0.08:left:1e-08:p1.00",
+      "threshold": 1e-08,
+      "time": 6
+    }
+  ],
+  "status": "rh130_floor_free_semidefinite_directional_audit",
+  "theorem_boundary": {
+    "artificial_positive_gram_floor_removed": true,
+    "exact_discrete_action_rank_distinguished_from_fp64_supported_rank": true,
+    "floor_free_common_assembly_completed": false,
+    "four_directional_chain_survives_floor_removal": false,
+    "hilbert_polya_operator": false,
+    "physical_all_level_recurrence_proved": false,
+    "riemann_hypothesis": false,
+    "uniform_stage_A_closed": false
+  }
+}
