@@ -1,0 +1,176 @@
+{
+  "arb_source_precision_bits": 160,
+  "audit_summary": {
+    "arb_bound_failure_count": 0,
+    "channel_count": 2,
+    "maximum_rank1_certified_operator_radius": 0.040057957431806665,
+    "maximum_rank2_certified_operator_radius": 0.009729918250102049,
+    "maximum_rank4_certified_operator_radius": 2.3393454482415315e-07,
+    "maximum_rank4_direct_proxy_operator_distance": 5.472541231126363e-14,
+    "maximum_svd_trace_identity_error": 4.969982758673552e-16,
+    "rank2_radius_below_1e_2_count": 2,
+    "rank4_radius_below_1e_3_count": 2,
+    "rank4_radius_below_1e_5_count": 2,
+    "rank_record_count": 6
+  },
+  "route_consequence": "The trace-normalization map no longer constitutes an uncontrolled interface: the RH-77 Arb residuals give rigorous operator-norm balls for every archived rank-four postblock snapshot. The largest radius is at the finest right channel; spectral packet and frame stability inside these balls remains to be proved.",
+  "rows": [
+    {
+      "arb_relative_state_residual_upper": 0.035357798635575505,
+      "certified_frobenius_snapshot_radius": 0.050003478366087796,
+      "certified_operator_snapshot_radius": 0.035357798635575505,
+      "certified_trace_snapshot_radius": 0.07071559727115101,
+      "direct_proxy_distances": {
+        "frobenius": 0.0017050172408537947,
+        "operator": 0.0012501739243541048,
+        "trace": 0.002500347848708312
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.03535779863557554,
+      "horizon": 4,
+      "ideal_svd_operator_radius": 0.0012501739243539075,
+      "ideal_svd_trace_radius": 0.002500347848707815,
+      "rank": 1,
+      "side": "left",
+      "sigma": 0.16,
+      "source_shape": [
+        32,
+        16
+      ],
+      "svd_trace_identity_error": 4.969982758673552e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 0.009729918250102049,
+      "certified_frobenius_snapshot_radius": 0.013760182350075811,
+      "certified_operator_snapshot_radius": 0.009729918250102049,
+      "certified_trace_snapshot_radius": 0.019459836500204098,
+      "direct_proxy_distances": {
+        "frobenius": 0.00013380815650179738,
+        "operator": 9.467130895447725e-05,
+        "trace": 0.00018934261830764885
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.009729918250102042,
+      "horizon": 4,
+      "ideal_svd_operator_radius": 9.467130915366879e-05,
+      "ideal_svd_trace_radius": 0.00018934261830733757,
+      "rank": 2,
+      "side": "left",
+      "sigma": 0.16,
+      "source_shape": [
+        32,
+        16
+      ],
+      "svd_trace_identity_error": 3.112744437205883e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 2.3393454482415315e-07,
+      "certified_frobenius_snapshot_radius": 3.3083340599789414e-07,
+      "certified_operator_snapshot_radius": 2.3393454482415315e-07,
+      "certified_trace_snapshot_radius": 4.678690896483063e-07,
+      "direct_proxy_distances": {
+        "frobenius": 7.738465244841012e-14,
+        "operator": 5.472541231126363e-14,
+        "trace": 1.0984586508708927e-13
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 2.3393454480705468e-07,
+      "horizon": 4,
+      "ideal_svd_operator_radius": 5.472537125408387e-14,
+      "ideal_svd_trace_radius": 1.0945074250816774e-13,
+      "rank": 4,
+      "side": "left",
+      "sigma": 0.16,
+      "source_shape": [
+        32,
+        16
+      ],
+      "svd_trace_identity_error": 3.951225789215273e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 0.040057957431806665,
+      "certified_frobenius_snapshot_radius": 0.05665050668102511,
+      "certified_operator_snapshot_radius": 0.040057957431806665,
+      "certified_trace_snapshot_radius": 0.08011591486361333,
+      "direct_proxy_distances": {
+        "frobenius": 0.0022601734433447354,
+        "operator": 0.0016046399536083866,
+        "trace": 0.0032092799072170218
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.04005795743180665,
+      "horizon": 4,
+      "ideal_svd_operator_radius": 0.0016046399536084337,
+      "ideal_svd_trace_radius": 0.0032092799072168674,
+      "rank": 1,
+      "side": "right",
+      "sigma": 0.16,
+      "source_shape": [
+        16,
+        16
+      ],
+      "svd_trace_identity_error": 1.5439038936193583e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 0.003604326899528697,
+      "certified_frobenius_snapshot_radius": 0.005097287984539651,
+      "certified_operator_snapshot_radius": 0.003604326899528697,
+      "certified_trace_snapshot_radius": 0.007208653799057394,
+      "direct_proxy_distances": {
+        "frobenius": 1.8357688292423847e-05,
+        "operator": 1.2991172307172099e-05,
+        "trace": 2.5982344797397244e-05
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.003604326899528693,
+      "horizon": 4,
+      "ideal_svd_operator_radius": 1.2991172398666121e-05,
+      "ideal_svd_trace_radius": 2.5982344797332243e-05,
+      "rank": 2,
+      "side": "right",
+      "sigma": 0.16,
+      "source_shape": [
+        16,
+        16
+      ],
+      "svd_trace_identity_error": 6.500130837229501e-17
+    },
+    {
+      "arb_relative_state_residual_upper": 1.7337302131347726e-07,
+      "certified_frobenius_snapshot_radius": 2.451864780911192e-07,
+      "certified_operator_snapshot_radius": 1.7337302131347726e-07,
+      "certified_trace_snapshot_radius": 3.467460426269545e-07,
+      "direct_proxy_distances": {
+        "frobenius": 4.240378051690461e-14,
+        "operator": 3.0061477277466645e-14,
+        "trace": 6.020945040571927e-14
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 1.7337302132587554e-07,
+      "horizon": 4,
+      "ideal_svd_operator_radius": 3.0058204523662493e-14,
+      "ideal_svd_trace_radius": 6.011640904732499e-14,
+      "rank": 4,
+      "side": "right",
+      "sigma": 0.16,
+      "source_shape": [
+        16,
+        16
+      ],
+      "svd_trace_identity_error": 9.30413583942809e-17
+    }
+  ],
+  "status": "rh140_normalized_snapshot_enclosure",
+  "theorem_boundary": {
+    "all_five_anchor_scales_and_both_channels_audited": false,
+    "arb_certified_source_state_residuals_reused": true,
+    "computed_svd_is_itself_interval_validated": false,
+    "full_source_to_packet_interval_enclosure": false,
+    "hilbert_polya_operator": false,
+    "orthogonal_svd_quadratic_improvement_theorem": true,
+    "riemann_hypothesis": false,
+    "sharp_normalized_snapshot_perturbation_theorem": true,
+    "stage_A": false,
+    "uniform_all_level_source_enclosure": false
+  }
+}

@@ -1,0 +1,752 @@
+{
+  "arb_source_precision_bits": 160,
+  "audit_summary": {
+    "arb_bound_failure_count": 0,
+    "channel_count": 10,
+    "maximum_rank1_certified_operator_radius": 0.6018854158996516,
+    "maximum_rank2_certified_operator_radius": 0.09567995891863369,
+    "maximum_rank4_certified_operator_radius": 0.0002823183552731633,
+    "maximum_rank4_direct_proxy_operator_distance": 6.435064277419127e-08,
+    "maximum_svd_trace_identity_error": 4.440892098500626e-15,
+    "rank2_radius_below_1e_2_count": 6,
+    "rank4_radius_below_1e_3_count": 10,
+    "rank4_radius_below_1e_5_count": 8,
+    "rank_record_count": 30
+  },
+  "route_consequence": "The trace-normalization map no longer constitutes an uncontrolled interface: the RH-77 Arb residuals give rigorous operator-norm balls for every archived rank-four postblock snapshot. The largest radius is at the finest right channel; spectral packet and frame stability inside these balls remains to be proved.",
+  "rows": [
+    {
+      "arb_relative_state_residual_upper": 0.035357798635575505,
+      "certified_frobenius_snapshot_radius": 0.050003478366087796,
+      "certified_operator_snapshot_radius": 0.035357798635575505,
+      "certified_trace_snapshot_radius": 0.07071559727115101,
+      "direct_proxy_distances": {
+        "frobenius": 0.0017050172408537947,
+        "operator": 0.0012501739243541048,
+        "trace": 0.002500347848708312
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.03535779863557554,
+      "horizon": 4,
+      "ideal_svd_operator_radius": 0.0012501739243539075,
+      "ideal_svd_trace_radius": 0.002500347848707815,
+      "rank": 1,
+      "side": "left",
+      "sigma": 0.16,
+      "source_shape": [
+        32,
+        16
+      ],
+      "svd_trace_identity_error": 4.969982758673552e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 0.009729918250102049,
+      "certified_frobenius_snapshot_radius": 0.013760182350075811,
+      "certified_operator_snapshot_radius": 0.009729918250102049,
+      "certified_trace_snapshot_radius": 0.019459836500204098,
+      "direct_proxy_distances": {
+        "frobenius": 0.00013380815650179738,
+        "operator": 9.467130895447725e-05,
+        "trace": 0.00018934261830764885
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.009729918250102042,
+      "horizon": 4,
+      "ideal_svd_operator_radius": 9.467130915366879e-05,
+      "ideal_svd_trace_radius": 0.00018934261830733757,
+      "rank": 2,
+      "side": "left",
+      "sigma": 0.16,
+      "source_shape": [
+        32,
+        16
+      ],
+      "svd_trace_identity_error": 3.112744437205883e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 2.3393454482415315e-07,
+      "certified_frobenius_snapshot_radius": 3.3083340599789414e-07,
+      "certified_operator_snapshot_radius": 2.3393454482415315e-07,
+      "certified_trace_snapshot_radius": 4.678690896483063e-07,
+      "direct_proxy_distances": {
+        "frobenius": 7.738465244841012e-14,
+        "operator": 5.472541231126363e-14,
+        "trace": 1.0984586508708927e-13
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 2.3393454480705468e-07,
+      "horizon": 4,
+      "ideal_svd_operator_radius": 5.472537125408387e-14,
+      "ideal_svd_trace_radius": 1.0945074250816774e-13,
+      "rank": 4,
+      "side": "left",
+      "sigma": 0.16,
+      "source_shape": [
+        32,
+        16
+      ],
+      "svd_trace_identity_error": 3.951225789215273e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 0.040057957431806665,
+      "certified_frobenius_snapshot_radius": 0.05665050668102511,
+      "certified_operator_snapshot_radius": 0.040057957431806665,
+      "certified_trace_snapshot_radius": 0.08011591486361333,
+      "direct_proxy_distances": {
+        "frobenius": 0.0022601734433447354,
+        "operator": 0.0016046399536083866,
+        "trace": 0.0032092799072170218
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.04005795743180665,
+      "horizon": 4,
+      "ideal_svd_operator_radius": 0.0016046399536084337,
+      "ideal_svd_trace_radius": 0.0032092799072168674,
+      "rank": 1,
+      "side": "right",
+      "sigma": 0.16,
+      "source_shape": [
+        16,
+        16
+      ],
+      "svd_trace_identity_error": 1.5439038936193583e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 0.003604326899528697,
+      "certified_frobenius_snapshot_radius": 0.005097287984539651,
+      "certified_operator_snapshot_radius": 0.003604326899528697,
+      "certified_trace_snapshot_radius": 0.007208653799057394,
+      "direct_proxy_distances": {
+        "frobenius": 1.8357688292423847e-05,
+        "operator": 1.2991172307172099e-05,
+        "trace": 2.5982344797397244e-05
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.003604326899528693,
+      "horizon": 4,
+      "ideal_svd_operator_radius": 1.2991172398666121e-05,
+      "ideal_svd_trace_radius": 2.5982344797332243e-05,
+      "rank": 2,
+      "side": "right",
+      "sigma": 0.16,
+      "source_shape": [
+        16,
+        16
+      ],
+      "svd_trace_identity_error": 6.500130837229501e-17
+    },
+    {
+      "arb_relative_state_residual_upper": 1.7337302131347726e-07,
+      "certified_frobenius_snapshot_radius": 2.451864780911192e-07,
+      "certified_operator_snapshot_radius": 1.7337302131347726e-07,
+      "certified_trace_snapshot_radius": 3.467460426269545e-07,
+      "direct_proxy_distances": {
+        "frobenius": 4.240378051690461e-14,
+        "operator": 3.0061477277466645e-14,
+        "trace": 6.020945040571927e-14
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 1.7337302132587554e-07,
+      "horizon": 4,
+      "ideal_svd_operator_radius": 3.0058204523662493e-14,
+      "ideal_svd_trace_radius": 6.011640904732499e-14,
+      "rank": 4,
+      "side": "right",
+      "sigma": 0.16,
+      "source_shape": [
+        16,
+        16
+      ],
+      "svd_trace_identity_error": 9.30413583942809e-17
+    },
+    {
+      "arb_relative_state_residual_upper": 0.3149311034617832,
+      "certified_frobenius_snapshot_radius": 0.44537983772877826,
+      "certified_operator_snapshot_radius": 0.3149311034617832,
+      "certified_trace_snapshot_radius": 0.6298622069235664,
+      "direct_proxy_distances": {
+        "frobenius": 0.1402621461882554,
+        "operator": 0.0991815999276563,
+        "trace": 0.19836319985531298
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.31493110346178305,
+      "horizon": 9,
+      "ideal_svd_operator_radius": 0.0991815999276563,
+      "ideal_svd_trace_radius": 0.1983631998553126,
+      "rank": 1,
+      "side": "left",
+      "sigma": 0.08,
+      "source_shape": [
+        64,
+        32
+      ],
+      "svd_trace_identity_error": 3.885780586188048e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 0.0016032711214389768,
+      "certified_frobenius_snapshot_radius": 0.0022673677641001228,
+      "certified_operator_snapshot_radius": 0.0016032711214389768,
+      "certified_trace_snapshot_radius": 0.0032065422428779536,
+      "direct_proxy_distances": {
+        "frobenius": 3.469016066559114e-06,
+        "operator": 2.5704772065618944e-06,
+        "trace": 5.140956577992515e-06
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.0016032711214389826,
+      "horizon": 9,
+      "ideal_svd_operator_radius": 2.570478288840213e-06,
+      "ideal_svd_trace_radius": 5.140956577680426e-06,
+      "rank": 2,
+      "side": "left",
+      "sigma": 0.08,
+      "source_shape": [
+        64,
+        32
+      ],
+      "svd_trace_identity_error": 3.1208928941584696e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 1.2112224291584913e-07,
+      "certified_frobenius_snapshot_radius": 1.7129271863664238e-07,
+      "certified_operator_snapshot_radius": 1.2112224291584913e-07,
+      "certified_trace_snapshot_radius": 2.4224448583169826e-07,
+      "direct_proxy_distances": {
+        "frobenius": 1.9774478608349016e-14,
+        "operator": 1.4674484741450715e-14,
+        "trace": 2.987999098433529e-14
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 1.211222429140091e-07,
+      "horizon": 9,
+      "ideal_svd_operator_radius": 1.467059772852023e-14,
+      "ideal_svd_trace_radius": 2.934119545704046e-14,
+      "rank": 4,
+      "side": "left",
+      "sigma": 0.08,
+      "source_shape": [
+        64,
+        32
+      ],
+      "svd_trace_identity_error": 5.387955272948295e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 0.26422929376802623,
+      "certified_frobenius_snapshot_radius": 0.37367665082300744,
+      "certified_operator_snapshot_radius": 0.26422929376802623,
+      "certified_trace_snapshot_radius": 0.5284585875360525,
+      "direct_proxy_distances": {
+        "frobenius": 0.09873510890759922,
+        "operator": 0.06981711968514964,
+        "trace": 0.13963423937029967
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.264229293768026,
+      "horizon": 9,
+      "ideal_svd_operator_radius": 0.06981711968514978,
+      "ideal_svd_trace_radius": 0.13963423937029956,
+      "rank": 1,
+      "side": "right",
+      "sigma": 0.08,
+      "source_shape": [
+        32,
+        32
+      ],
+      "svd_trace_identity_error": 1.1102230246251565e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 0.0013074028355912451,
+      "certified_frobenius_snapshot_radius": 0.0018489468215781807,
+      "certified_operator_snapshot_radius": 0.0013074028355912451,
+      "certified_trace_snapshot_radius": 0.0026148056711824902,
+      "direct_proxy_distances": {
+        "frobenius": 2.337508525606851e-06,
+        "operator": 1.7093016441058625e-06,
+        "trace": 3.418604349154189e-06
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.0013074028355912445,
+      "horizon": 9,
+      "ideal_svd_operator_radius": 1.7093021745120267e-06,
+      "ideal_svd_trace_radius": 3.4186043490240534e-06,
+      "rank": 2,
+      "side": "right",
+      "sigma": 0.08,
+      "source_shape": [
+        32,
+        32
+      ],
+      "svd_trace_identity_error": 1.3013560091730894e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 8.614707453241836e-08,
+      "certified_frobenius_snapshot_radius": 1.218303611625119e-07,
+      "certified_operator_snapshot_radius": 8.614707453241836e-08,
+      "certified_trace_snapshot_radius": 1.7229414906483672e-07,
+      "direct_proxy_distances": {
+        "frobenius": 1.0095064745394366e-14,
+        "operator": 7.4298845792425e-15,
+        "trace": 1.5064539733835255e-14
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 8.614707453941713e-08,
+      "horizon": 9,
+      "ideal_svd_operator_radius": 7.421318451699892e-15,
+      "ideal_svd_trace_radius": 1.4842636903399784e-14,
+      "rank": 4,
+      "side": "right",
+      "sigma": 0.08,
+      "source_shape": [
+        32,
+        32
+      ],
+      "svd_trace_identity_error": 2.2190283043547114e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 0.432629214294962,
+      "certified_frobenius_snapshot_radius": 0.6118301023347513,
+      "certified_operator_snapshot_radius": 0.432629214294962,
+      "certified_trace_snapshot_radius": 0.865258428589924,
+      "direct_proxy_distances": {
+        "frobenius": 0.26469557536889804,
+        "operator": 0.18716803706147625,
+        "trace": 0.37433607412295394
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.43262921429496215,
+      "horizon": 16,
+      "ideal_svd_operator_radius": 0.18716803706147628,
+      "ideal_svd_trace_radius": 0.37433607412295256,
+      "rank": 1,
+      "side": "left",
+      "sigma": 0.04,
+      "source_shape": [
+        128,
+        64
+      ],
+      "svd_trace_identity_error": 1.3877787807814457e-15
+    },
+    {
+      "arb_relative_state_residual_upper": 3.919320306420271e-05,
+      "certified_frobenius_snapshot_radius": 5.542755932623822e-05,
+      "certified_operator_snapshot_radius": 3.919320306420271e-05,
+      "certified_trace_snapshot_radius": 7.838640612840542e-05,
+      "direct_proxy_distances": {
+        "frobenius": 1.8039756487955482e-09,
+        "operator": 1.2485972197748491e-09,
+        "trace": 3.072215548340398e-09
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 3.9193203064200555e-05,
+      "horizon": 16,
+      "ideal_svd_operator_radius": 1.5361071664316597e-09,
+      "ideal_svd_trace_radius": 3.0722143328633193e-09,
+      "rank": 2,
+      "side": "left",
+      "sigma": 0.04,
+      "source_shape": [
+        128,
+        64
+      ],
+      "svd_trace_identity_error": 1.2154770786253944e-15
+    },
+    {
+      "arb_relative_state_residual_upper": 1.3398884895013373e-06,
+      "certified_frobenius_snapshot_radius": 1.8948884739203918e-06,
+      "certified_operator_snapshot_radius": 1.3398884895013373e-06,
+      "certified_trace_snapshot_radius": 2.6797769790026747e-06,
+      "direct_proxy_distances": {
+        "frobenius": 2.3182463509996183e-12,
+        "operator": 1.7693659364668771e-12,
+        "trace": 3.5919163658827146e-12
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 1.3398884894996352e-06,
+      "horizon": 16,
+      "ideal_svd_operator_radius": 1.795301164293614e-12,
+      "ideal_svd_trace_radius": 3.590602328587228e-12,
+      "rank": 4,
+      "side": "left",
+      "sigma": 0.04,
+      "source_shape": [
+        128,
+        64
+      ],
+      "svd_trace_identity_error": 1.3140372954864898e-15
+    },
+    {
+      "arb_relative_state_residual_upper": 0.35566966130901756,
+      "certified_frobenius_snapshot_radius": 0.5029928587478579,
+      "certified_operator_snapshot_radius": 0.35566966130901756,
+      "certified_trace_snapshot_radius": 0.7113393226180351,
+      "direct_proxy_distances": {
+        "frobenius": 0.1788992992559635,
+        "operator": 0.12650090797567135,
+        "trace": 0.2530018159513433
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.3556696613090174,
+      "horizon": 16,
+      "ideal_svd_operator_radius": 0.12650090797567115,
+      "ideal_svd_trace_radius": 0.2530018159513423,
+      "rank": 1,
+      "side": "right",
+      "sigma": 0.04,
+      "source_shape": [
+        64,
+        64
+      ],
+      "svd_trace_identity_error": 9.992007221626409e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 2.5387317486709654e-05,
+      "certified_frobenius_snapshot_radius": 3.590308870197643e-05,
+      "certified_operator_snapshot_radius": 2.5387317486709654e-05,
+      "certified_trace_snapshot_radius": 5.077463497341931e-05,
+      "direct_proxy_distances": {
+        "frobenius": 7.334851408849484e-10,
+        "operator": 5.629842409468126e-10,
+        "trace": 1.289032447226274e-09
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 2.5387317486706836e-05,
+      "horizon": 16,
+      "ideal_svd_operator_radius": 6.445158891708507e-10,
+      "ideal_svd_trace_radius": 1.2890317783417013e-09,
+      "rank": 2,
+      "side": "right",
+      "sigma": 0.04,
+      "source_shape": [
+        64,
+        64
+      ],
+      "svd_trace_identity_error": 6.688845726760709e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 9.280615027644899e-07,
+      "certified_frobenius_snapshot_radius": 1.3124771639258972e-06,
+      "certified_operator_snapshot_radius": 9.280615027644899e-07,
+      "certified_trace_snapshot_radius": 1.8561230055289797e-06,
+      "direct_proxy_distances": {
+        "frobenius": 1.1470135046308903e-12,
+        "operator": 8.587220854044313e-13,
+        "trace": 1.7233349986669113e-12
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 9.280615027627197e-07,
+      "horizon": 16,
+      "ideal_svd_operator_radius": 8.612981529101975e-13,
+      "ideal_svd_trace_radius": 1.722596305820395e-12,
+      "rank": 4,
+      "side": "right",
+      "sigma": 0.04,
+      "source_shape": [
+        64,
+        64
+      ],
+      "svd_trace_identity_error": 7.38692846516326e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 0.5570220232470441,
+      "certified_frobenius_snapshot_radius": 0.7877480998164712,
+      "certified_operator_snapshot_radius": 0.5570220232470441,
+      "certified_trace_snapshot_radius": 1.1140440464940882,
+      "direct_proxy_distances": {
+        "frobenius": 0.4324346241554727,
+        "operator": 0.31027353438223004,
+        "trace": 0.6205470687644624
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.5570220232470436,
+      "horizon": 25,
+      "ideal_svd_operator_radius": 0.31027353438223004,
+      "ideal_svd_trace_radius": 0.6205470687644601,
+      "rank": 1,
+      "side": "left",
+      "sigma": 0.02,
+      "source_shape": [
+        256,
+        128
+      ],
+      "svd_trace_identity_error": 2.3314683517128287e-15
+    },
+    {
+      "arb_relative_state_residual_upper": 0.09567995891863369,
+      "certified_frobenius_snapshot_radius": 0.13531189555003234,
+      "certified_operator_snapshot_radius": 0.09567995891863369,
+      "certified_trace_snapshot_radius": 0.19135991783726738,
+      "direct_proxy_distances": {
+        "frobenius": 0.010286287108294061,
+        "operator": 0.007366088853211669,
+        "trace": 0.018309309077344415
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.0956799589186335,
+      "horizon": 25,
+      "ideal_svd_operator_radius": 0.009154654538671394,
+      "ideal_svd_trace_radius": 0.018309309077342788,
+      "rank": 2,
+      "side": "left",
+      "sigma": 0.02,
+      "source_shape": [
+        256,
+        128
+      ],
+      "svd_trace_identity_error": 1.627170620466245e-15
+    },
+    {
+      "arb_relative_state_residual_upper": 3.899820152012225e-08,
+      "certified_frobenius_snapshot_radius": 5.515178549791595e-08,
+      "certified_operator_snapshot_radius": 3.899820152012225e-08,
+      "certified_trace_snapshot_radius": 7.79964030402445e-08,
+      "direct_proxy_distances": {
+        "frobenius": 2.0420166181848553e-15,
+        "operator": 1.5148591720908373e-15,
+        "trace": 4.852737365960058e-15
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 3.899820152084896e-08,
+      "horizon": 25,
+      "ideal_svd_operator_radius": 1.5208597218607462e-15,
+      "ideal_svd_trace_radius": 3.0417194437214925e-15,
+      "rank": 4,
+      "side": "left",
+      "sigma": 0.02,
+      "source_shape": [
+        256,
+        128
+      ],
+      "svd_trace_identity_error": 1.811017922238565e-15
+    },
+    {
+      "arb_relative_state_residual_upper": 0.35498236574427844,
+      "certified_frobenius_snapshot_radius": 0.502020876038845,
+      "certified_operator_snapshot_radius": 0.35498236574427844,
+      "certified_trace_snapshot_radius": 0.7099647314885569,
+      "direct_proxy_distances": {
+        "frobenius": 0.1730713176346178,
+        "operator": 0.12601247998940437,
+        "trace": 0.2520249599788103
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.3549823657442785,
+      "horizon": 25,
+      "ideal_svd_operator_radius": 0.1260124799894047,
+      "ideal_svd_trace_radius": 0.2520249599788094,
+      "rank": 1,
+      "side": "right",
+      "sigma": 0.02,
+      "source_shape": [
+        128,
+        128
+      ],
+      "svd_trace_identity_error": 8.881784197001252e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 0.08668612412202482,
+      "certified_frobenius_snapshot_radius": 0.12259269240292502,
+      "certified_operator_snapshot_radius": 0.08668612412202482,
+      "certified_trace_snapshot_radius": 0.17337224824404965,
+      "direct_proxy_distances": {
+        "frobenius": 0.00879513175697785,
+        "operator": 0.006617290863166761,
+        "trace": 0.015028968230598991
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.08668612412202487,
+      "horizon": 25,
+      "ideal_svd_operator_radius": 0.007514484115299101,
+      "ideal_svd_trace_radius": 0.015028968230598202,
+      "rank": 2,
+      "side": "right",
+      "sigma": 0.02,
+      "source_shape": [
+        128,
+        128
+      ],
+      "svd_trace_identity_error": 7.892991815694472e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 2.1884197963740984e-08,
+      "certified_frobenius_snapshot_radius": 3.094892956198017e-08,
+      "certified_operator_snapshot_radius": 2.1884197963740984e-08,
+      "certified_trace_snapshot_radius": 4.376839592748197e-08,
+      "direct_proxy_distances": {
+        "frobenius": 5.95594405619023e-16,
+        "operator": 4.811890872028031e-16,
+        "trace": 1.8165613149244956e-15
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 2.188419796997779e-08,
+      "horizon": 25,
+      "ideal_svd_operator_radius": 4.7891812078918e-16,
+      "ideal_svd_trace_radius": 9.5783624157836e-16,
+      "rank": 4,
+      "side": "right",
+      "sigma": 0.02,
+      "source_shape": [
+        128,
+        128
+      ],
+      "svd_trace_identity_error": 8.587250733461355e-16
+    },
+    {
+      "arb_relative_state_residual_upper": 0.6018854158996516,
+      "certified_frobenius_snapshot_radius": 0.8511945181598582,
+      "certified_operator_snapshot_radius": 0.6018854158996516,
+      "certified_trace_snapshot_radius": 1.2037708317993032,
+      "direct_proxy_distances": {
+        "frobenius": 0.509877742215715,
+        "operator": 0.36226605387269584,
+        "trace": 0.724532107745395
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.6018854158996509,
+      "horizon": 32,
+      "ideal_svd_operator_radius": 0.3622660538726958,
+      "ideal_svd_trace_radius": 0.7245321077453916,
+      "rank": 1,
+      "side": "left",
+      "sigma": 0.01,
+      "source_shape": [
+        512,
+        256
+      ],
+      "svd_trace_identity_error": 3.4416913763379853e-15
+    },
+    {
+      "arb_relative_state_residual_upper": 0.058951504169839575,
+      "certified_frobenius_snapshot_radius": 0.0833700167192812,
+      "certified_operator_snapshot_radius": 0.058951504169839575,
+      "certified_trace_snapshot_radius": 0.11790300833967915,
+      "direct_proxy_distances": {
+        "frobenius": 0.003782939582633567,
+        "operator": 0.0026757200005838293,
+        "trace": 0.0069505596877744505
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.05895150416983952,
+      "horizon": 32,
+      "ideal_svd_operator_radius": 0.0034752798438866064,
+      "ideal_svd_trace_radius": 0.006950559687773213,
+      "rank": 2,
+      "side": "left",
+      "sigma": 0.01,
+      "source_shape": [
+        512,
+        256
+      ],
+      "svd_trace_identity_error": 1.2377252001094519e-15
+    },
+    {
+      "arb_relative_state_residual_upper": 0.00022804490630691634,
+      "certified_frobenius_snapshot_radius": 0.0003225041993293429,
+      "certified_operator_snapshot_radius": 0.00022804490630691634,
+      "certified_trace_snapshot_radius": 0.0004560898126138327,
+      "direct_proxy_distances": {
+        "frobenius": 5.964984338107477e-08,
+        "operator": 4.546737336119106e-08,
+        "trace": 1.0400895996539842e-07
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.00022804490630692065,
+      "horizon": 32,
+      "ideal_svd_operator_radius": 5.2004479292532216e-08,
+      "ideal_svd_trace_radius": 1.0400895858506443e-07,
+      "rank": 4,
+      "side": "left",
+      "sigma": 0.01,
+      "source_shape": [
+        512,
+        256
+      ],
+      "svd_trace_identity_error": 1.380333983214901e-15
+    },
+    {
+      "arb_relative_state_residual_upper": 0.5359449848562877,
+      "certified_frobenius_snapshot_radius": 0.7579406662696052,
+      "certified_operator_snapshot_radius": 0.5359449848562877,
+      "certified_trace_snapshot_radius": 1.0718899697125754,
+      "direct_proxy_distances": {
+        "frobenius": 0.4016129797605834,
+        "operator": 0.2872370267926066,
+        "trace": 0.5744740535852172
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.5359449848562876,
+      "horizon": 32,
+      "ideal_svd_operator_radius": 0.2872370267926064,
+      "ideal_svd_trace_radius": 0.5744740535852128,
+      "rank": 1,
+      "side": "right",
+      "sigma": 0.01,
+      "source_shape": [
+        256,
+        256
+      ],
+      "svd_trace_identity_error": 4.440892098500626e-15
+    },
+    {
+      "arb_relative_state_residual_upper": 0.08121405286212856,
+      "certified_frobenius_snapshot_radius": 0.11485401501290769,
+      "certified_operator_snapshot_radius": 0.08121405286212856,
+      "certified_trace_snapshot_radius": 0.16242810572425712,
+      "direct_proxy_distances": {
+        "frobenius": 0.00736218664150693,
+        "operator": 0.005112064875806395,
+        "trace": 0.013191444764588271
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.08121405286212866,
+      "horizon": 32,
+      "ideal_svd_operator_radius": 0.006595722382292627,
+      "ideal_svd_trace_radius": 0.013191444764585255,
+      "rank": 2,
+      "side": "right",
+      "sigma": 0.01,
+      "source_shape": [
+        256,
+        256
+      ],
+      "svd_trace_identity_error": 3.0166841247236675e-15
+    },
+    {
+      "arb_relative_state_residual_upper": 0.0002823183552731633,
+      "certified_frobenius_snapshot_radius": 0.00039925844693417336,
+      "certified_operator_snapshot_radius": 0.0002823183552731633,
+      "certified_trace_snapshot_radius": 0.0005646367105463266,
+      "direct_proxy_distances": {
+        "frobenius": 9.002549210306824e-08,
+        "operator": 6.435064277419127e-08,
+        "trace": 1.5940731040253584e-07
+      },
+      "direct_within_arb_radius": true,
+      "float_truncation_fraction": 0.0002823183552731702,
+      "horizon": 32,
+      "ideal_svd_operator_radius": 7.970365372414794e-08,
+      "ideal_svd_trace_radius": 1.594073074482959e-07,
+      "rank": 4,
+      "side": "right",
+      "sigma": 0.01,
+      "source_shape": [
+        256,
+        256
+      ],
+      "svd_trace_identity_error": 2.954239955879574e-15
+    }
+  ],
+  "status": "rh140_normalized_snapshot_enclosure",
+  "theorem_boundary": {
+    "all_five_anchor_scales_and_both_channels_audited": true,
+    "arb_certified_source_state_residuals_reused": true,
+    "computed_svd_is_itself_interval_validated": false,
+    "full_source_to_packet_interval_enclosure": false,
+    "hilbert_polya_operator": false,
+    "orthogonal_svd_quadratic_improvement_theorem": true,
+    "riemann_hypothesis": false,
+    "sharp_normalized_snapshot_perturbation_theorem": true,
+    "stage_A": false,
+    "uniform_all_level_source_enclosure": false
+  }
+}

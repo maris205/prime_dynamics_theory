@@ -1,0 +1,242 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,natbib,microtype,array}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\title{Sharp Enclosures for Trace-Normalized Gram Snapshots\\\large A Validated Source Interface for the Directional Packet Program}
+\author{Prime Dynamics Theory Program}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $S$ be a nonzero finite matrix and
+\[
+  \mathcal N(S)=\frac{S^*S}{\|S\|_F^2}.
+\]
+This trace-one positive matrix is the normalized snapshot consumed by the
+moving-memory construction of RH-130--RH-139.  We prove a sharp perturbation
+theorem for this nonlinear normalization.  If $S,H\ne0$ and
+\[
+ \delta=\min\!\left\{1,\frac{\|S-H\|_F}
+ {\max(\|S\|_F,\|H\|_F)}\right\},
+\]
+then
+\[
+ \|\mathcal N(S)-\mathcal N(H)\|\leq\delta,\qquad
+ \|\mathcal N(S)-\mathcal N(H)\|_F\leq\sqrt2\,\delta,
+ \qquad
+ \|\mathcal N(S)-\mathcal N(H)\|_1\leq2\delta.
+\]
+All three constants are simultaneously attained by one-row matrices.  If
+$H$ is an exact orthogonal singular-value truncation and
+$q=\|S-H\|_F/\|S\|_F$, the same bounds improve quadratically to
+$q^2,\sqrt2q^2,2q^2$, with equality in trace norm.  The degeneration as
+$\delta\uparrow1$ is unavoidable because normalization is discontinuous at
+the zero matrix.
+
+We then transport the 160-bit Arb residuals of RH-77 through the universal
+theorem at all five archived scales and both source channels.  Every
+rank-four postblock snapshot lies in a certified operator ball of radius at
+most $2.824\times10^{-4}$; eight of ten radii are below $1.34\times10^{-6}$.
+The direct floating proxies exhibit the expected quadratic cancellation, but
+we do not treat that cancellation as interval-validated.  Thus snapshot
+normalization is no longer an uncontrolled finite interface.  Spectral
+projector stability, packet construction, threshold updates, and every
+all-level statement remain open.
+\end{abstract}
+
+\section{The interface problem}
+The source model produces rectangular postblock states, whereas the later
+directional machinery consumes trace-normalized right Gramians.  A small
+absolute state error alone does not control this map near zero: both numerator
+and denominator change, and the denominator can vanish.  RH-77 supplied Arb
+balls for the state residual after rank compression, but those balls had not
+been converted into snapshot balls.  Consequently RH-138 validated a frozen
+matrix assembly rather than the intended source model.
+
+The correct geometry is projective Hilbert--Schmidt geometry.  Regard a
+matrix as a vector in the tensor product of its row and column spaces.  The
+rank-one density matrix of the normalized vector has $\mathcal N(S)$ as a
+partial trace.  Contractivity of trace distance under partial trace then
+gives constants independent of either matrix dimension
+\citep{NielsenChuang2010}.  This dimension-free feature is essential at the
+five scale-dependent discretizations.
+
+\section{Sharp normalized-snapshot enclosure}
+Write $\|\cdot\|$, $\|\cdot\|_F$, and $\|\cdot\|_1$ for operator,
+Hilbert--Schmidt, and trace norm.  The following theorem is valid over real or
+complex matrices.
+
+\begin{theorem}[Sharp projective snapshot bound]\label{thm:main}
+For nonzero matrices $S,H$ of the same shape, set
+\[
+ d=\|S-H\|_F,
+ \qquad
+ \delta=\min\left\{1,\frac d{\max(\|S\|_F,\|H\|_F)}\right\}.
+\]
+Then
+\begin{align}
+ \|\mathcal N(S)-\mathcal N(H)\|&\leq\delta,\label{eq:op}\\
+ \|\mathcal N(S)-\mathcal N(H)\|_F&\leq\sqrt2\,\delta,\label{eq:fro}\\
+ \|\mathcal N(S)-\mathcal N(H)\|_1&\leq2\delta.\label{eq:trace}
+\end{align}
+For every $0\leq\delta<1$, one pair of one-row matrices attains equality in
+all three inequalities.
+\end{theorem}
+
+\begin{proof}
+Let $u=S/\|S\|_F$ and $v=H/\|H\|_F$, interpreted as unit vectors in
+Hilbert--Schmidt space.  If $\theta$ is their projective angle, projection
+orthogonal to either endpoint gives
+\[
+ \|S\|_F\sin\theta\leq d,
+ \qquad
+ \|H\|_F\sin\theta\leq d.
+\]
+Hence $\sin\theta\leq\delta$.  The trace distance between the pure states
+$uu^*$ and $vv^*$ equals $2\sin\theta$.  Since partial trace is positive and
+trace preserving on Hermitian matrices, it contracts trace norm, while
+partial tracing the row factor gives $\mathcal N(S)$ and $\mathcal N(H)$.
+This proves \eqref{eq:trace}.
+
+The difference is Hermitian and traceless.  Its positive and negative parts
+therefore each have trace at most $\delta$.  Thus its operator norm is at
+most $\delta$, and the sum of the squared eigenvalues is at most
+$\delta^2+\delta^2$, proving \eqref{eq:op}--\eqref{eq:fro}.
+
+For sharpness take
+\[
+ H=(1,0),\qquad
+ S=(1-\delta^2,\delta\sqrt{1-\delta^2}).
+\]
+Then $\|H\|_F=1$, $\|S-H\|_F=\delta$, and the normalized rows meet at angle
+$\arcsin\delta$.  Their snapshot difference has eigenvalues $\pm\delta$.
+\end{proof}
+
+An immediate consequence is the outward Loewner enclosure
+\[
+ \mathcal N(H)-\delta I\preceq\mathcal N(S)
+ \preceq\mathcal N(H)+\delta I.
+\]
+No factor depending on row count, column count, or rank occurs.
+
+\section{Quadratic cancellation for singular truncation}
+The general theorem cannot exploit the special geometry of a singular-value
+truncation.  That geometry gives one extra order.
+
+\begin{proposition}[Orthogonal split]\label{prop:svd}
+Suppose $S=H+R$, $H^*R=0$, $HR^*=0$, and
+$q=\|R\|_F/\|S\|_F$.  Then
+\[
+ \|\mathcal N(S)-\mathcal N(H)\|\leq q^2,
+ \quad
+ \|\mathcal N(S)-\mathcal N(H)\|_F\leq\sqrt2q^2,
+ \quad
+ \|\mathcal N(S)-\mathcal N(H)\|_1=2q^2.
+\]
+In particular this applies to an exact truncated SVD.
+\end{proposition}
+
+\begin{proof}
+Put $A=H^*H/\|H\|_F^2$ and, when $R\ne0$,
+$B=R^*R/\|R\|_F^2$.  The cross terms vanish, $A$ and $B$ have orthogonal
+supports, and
+\[
+ \mathcal N(S)=(1-q^2)A+q^2B,
+ \qquad \mathcal N(H)=A.
+\]
+Thus the difference is $q^2(B-A)$.  Its positive and negative parts have
+trace $q^2$, proving the trace identity and the other two bounds.
+\end{proof}
+
+The distinction between Theorem~\ref{thm:main} and
+Proposition~\ref{prop:svd} matters computationally.  A numerically returned
+SVD is not automatically an exact orthogonal split of the Arb state.  The
+linear theorem is therefore the certified statement used below; the
+quadratic formula is recorded as a diagnostic and as a target for a later
+interval projector calculation.  This avoids silently turning backward
+error into a spectral theorem \citep{Wedin1972,Bhatia1997}.
+
+\section{The zero-state obstruction}
+The strict nonzero condition cannot be removed.  As $\delta\uparrow1$ in the
+sharp witness, $S\to0$ while its normalized row tends to a direction
+orthogonal to $H$.  At relative radius one, arbitrarily small matrices can
+produce snapshot operator distance arbitrarily close to one.  For any radius
+larger than one, a ball around $H$ contains small matrices in every
+orthogonal direction.  Hence no reference-sensitive modulus below the full
+state-space diameter survives across zero.
+
+This is also the correct practical gate.  A state enclosure must certify a
+positive norm before normalization.  RH-77 does so at the five anchors; an
+all-level theorem would have to do so uniformly.
+
+\section{Arb anchor audit}
+The audit reads the exact residual and state-norm balls produced at 160-bit
+precision by RH-77.  It does not reinterpret displayed decimal residuals as
+exact data: the dependency manifest hashes the original Arb result and its
+construction script.  For each scale, side, and rank, the archived upper
+$q=\|S-H\|_F/\|S\|_F$ is inserted into Theorem~\ref{thm:main}.  Since the
+maximum endpoint norm is at least $\|S\|_F$, $q$ is a valid, possibly
+nonoptimal, operator radius.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{cccc}
+\toprule
+compression & maximum certified radius & channels below gate & gate\\
+\midrule
+rank one & $6.019\times10^{-1}$ & $2/10$ & $10^{-1}$\\
+rank two & $9.568\times10^{-2}$ & $6/10$ & $10^{-2}$\\
+rank four & $2.824\times10^{-4}$ & $10/10$ & $10^{-3}$\\
+\bottomrule
+\end{tabular}
+\caption{Dimension-free operator balls inherited from the RH-77 Arb state
+residuals.  Rank-dependent gates summarize scale, not a theorem premise.}
+\label{tab:audit}
+\end{table}
+
+All ten rank-four balls are below $10^{-3}$ and eight are below $10^{-5}$;
+the two finest-scale channels carry the visible residual.  The maximum direct
+floating proxy distance is $6.44\times10^{-8}$, consistent with the
+quadratic SVD law, but only the larger $2.824\times10^{-4}$ radius is claimed
+as certified.  All thirty direct proxies lie inside their Arb-derived
+universal balls, and the float SVD trace identity holds to the expected
+roundoff scale.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/normalized_snapshot_enclosure.pdf}
+\caption{Certified snapshot radii, quadratic cancellation in the rank-four
+proxy, sharp witness constants, and finite rank-compression gates.}
+\label{fig:audit}
+\end{figure}
+
+\section{Consequence and claim boundary}
+The finite source interface can now be written without an implicit
+normalization assumption:
+\[
+ S\in B_F(H,\varepsilon)
+ \quad\Longrightarrow\quad
+ \mathcal N(S)\in
+ [\mathcal N(H)-\delta I,\mathcal N(H)+\delta I].
+\]
+This supplies the first component of the source-to-packet enclosure $P_E$
+identified by RH-139.  It does not supply the whole packet.  Eigenprojectors
+can be unstable when a selected cluster has no gap; polar frames can be
+unstable at rank loss; threshold decisions can change when a singular value
+meets the cutoff.  The next layer must compare the RH-140 radii with the
+actual packet spectral gaps and state the corresponding obstruction sharply.
+
+No all-level source norm lower, uniform rank-four compression theorem,
+controlled-tail tube, normalized-base liminf, Stage A theorem,
+Hilbert--Polya operator, zeta-zero identification, or Riemann-hypothesis
+statement is proved here.  The result is a rigorous finite bridge from
+validated source-state residuals to normalized snapshot norm balls.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

@@ -1,0 +1,52 @@
+{
+  "audit": {
+    "arb_bound_failure_count": 0,
+    "channel_count": 10,
+    "maximum_rank1_certified_operator_radius": 0.6018854158996516,
+    "maximum_rank2_certified_operator_radius": 0.09567995891863369,
+    "maximum_rank4_certified_operator_radius": 0.0002823183552731633,
+    "maximum_rank4_direct_proxy_operator_distance": 6.435064277419127e-08,
+    "maximum_svd_trace_identity_error": 4.440892098500626e-15,
+    "rank2_radius_below_1e_2_count": 6,
+    "rank4_radius_below_1e_3_count": 10,
+    "rank4_radius_below_1e_5_count": 8,
+    "rank_record_count": 30
+  },
+  "program_boundary": {
+    "all_five_anchor_scales_and_both_channels_audited": true,
+    "arb_certified_source_state_residuals_reused": true,
+    "computed_svd_is_itself_interval_validated": false,
+    "full_source_to_packet_interval_enclosure": false,
+    "hilbert_polya_operator": false,
+    "orthogonal_svd_quadratic_improvement_theorem": true,
+    "riemann_hypothesis": false,
+    "sharp_normalized_snapshot_perturbation_theorem": true,
+    "stage_A": false,
+    "uniform_all_level_source_enclosure": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "8065449b13621138f1823f8072f55fdb1076f4068cc9d37bf9c7cc787f4ea5a9",
+    "README.md": "e7b29ca4f49e3e7261b08cdf68c2046374e3f65157d953a862db7fabdd7c3c1a",
+    "THEOREM_LEDGER.md": "6a0db088b556663fc637c34b73c6e9cbd2068ebd5aaeac2584f10a88495a450b",
+    "UPDATED_ROADMAP.md": "99c445b568719bf48e7fee9c1fb6fd2398c114e08229b97921bed892d22aeb0d",
+    "figures/normalized_snapshot_enclosure.pdf": "84a510c1ff9dfc0f09e3ff854f1652490c9a98ef74356c0bfb174994a3499f6d",
+    "figures/normalized_snapshot_enclosure.png": "a93a029741494e69c9492d9905cb2b1ea3ff66d7c60131e59e0fabc80a5760c3",
+    "main.pdf": "c153c5800b54e47259e134236eb42b5fc7a90b1fa308aefbd2efc1a896224473",
+    "main.tex": "ef37780e3216e5ef9a91c0c70ef0e51a75315b9b37cb9ffa3b89c8e7a0479432",
+    "normalized-snapshot-enclosure.pdf": "c153c5800b54e47259e134236eb42b5fc7a90b1fa308aefbd2efc1a896224473",
+    "pyproject.toml": "3a92801d842c006cac1cbf82c7397a463346b6c32f9363b03c3f689491e49b35",
+    "references.bib": "94bee34d8586646800607a7ca15fc79e2ec0b0e42932ac9e8d6f13f050949243",
+    "requirements.txt": "408aa57fdb2c5a55bd8a4ee2356c6deab1623d728dbad693e1a35ac2c5e6ebf1"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "c867e37f65fe8a16d8fd050070cb232e2aafaf4c9b1de81129a65dc48f8b5f0e",
+    "results/snapshot_enclosure_audit.json": "f39d9bd4fbd4833e537bea76d832da5487f14a5f88e468e30a9f110d121f958c",
+    "results/snapshot_enclosure_smoke.json": "2eabc903ecddc193462585b770928ddaf392b73bf0dc56751c7affed26340b76"
+  },
+  "route_consequence": "The trace-normalization map no longer constitutes an uncontrolled interface: the RH-77 Arb residuals give rigorous operator-norm balls for every archived rank-four postblock snapshot. The largest radius is at the finest right channel; spectral packet and frame stability inside these balls remains to be proved.",
+  "status": "rh140_normalized_snapshot_enclosure_archived",
+  "theorem": {
+    "orthogonal_svd_quadratic_improvement": true,
+    "sharp_normalized_snapshot_perturbation": true
+  }
+}
