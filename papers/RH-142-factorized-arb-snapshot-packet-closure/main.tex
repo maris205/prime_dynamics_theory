@@ -1,0 +1,206 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,natbib,microtype,array}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\title{Factorized Arb Closure of the Snapshot-to-Packet Interface\\\large Direct Quadratic Cancellation and Two Thin-Gap Rescues}
+\author{Prime Dynamics Theory Program}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-141 proved a sharp gap criterion for turning a normalized-snapshot norm
+ball into a spectral packet, but the universal RH-140 ball certified only
+four of ten rank-four source anchors.  We retain the low-rank geometry
+directly.  Write the numerical rank-four approximation as an exact
+factorized binary matrix $H=LR$, evaluate the frozen binary source state $S$
+and
+\[
+ D=\frac{S^*S}{\|S\|_F^2}-\frac{H^*H}{\|H\|_F^2}
+\]
+in 512-bit Arb arithmetic, and lower-bound the fourth-mode gap by
+\[
+ g_H\geq
+ \frac{\lambda_{\min}(L^*L)\lambda_{\min}(RR^*)}{\|LR\|_F^2}.
+\]
+The factorization keeps $H$ exactly rank at most four and avoids dense
+reconstruction noise.
+
+Eight of ten channels satisfy $g_H>2\|D\|_F$.  The two coarsest channels do
+not: the Frobenius upper loses the small margin.  For those two matrices we
+compute validated interval eigenvalue enclosures for $D$ and use their
+maximum modulus instead.  Both then pass.  The minimum certified ratio
+$g_H/(2\|D\|)$ is $1.02227$, on the coarse right channel.  Thus all ten
+rank-four packets are rigorously identified for the frozen binary source
+model.  This is a genuine closure of the finite snapshot-to-projector
+interface, not an all-level source theorem.  Moreover, the same coarse right
+channel has projector radius $0.9574$: non-crossing is proved, but tight
+frame-level propagation through a recursive threshold update is not.
+\end{abstract}
+
+\section{Why the universal ball lost six packets}
+RH-140 used only the Frobenius state residual.  That information allows the
+state error to point in the worst projective direction, so the normalized
+snapshot radius is linear in the residual.  A singular-value truncation is
+more correlated: to first order, the retained and discarded pieces are
+orthogonal and the normalized Gram error is quadratic.  RH-141 showed that
+the difference is decisive.  Its universal radius crossed only four
+rank-four gaps, while the quadratic diagnostic crossed all ten.
+
+The issue is not solved by recording a dense floating rank-four matrix.
+Entrywise rounding of a dense product can create tiny extra singular values
+and obscure the exact zero beyond rank four.  We instead retain the computed
+factors $L$ and $R$ as binary inputs and define $H=LR$ inside Arb.  The
+candidate then has exact algebraic rank at most four relative to those
+inputs, and both its gap and its normalized Gram can be enclosed without an
+unvalidated SVD claim.
+
+\section{A factorized gap lower}
+The following elementary inequality is the central reduction from the large
+ambient matrix to two four-dimensional Gramians.
+
+\begin{theorem}[Factorized normalized gap]\label{thm:gap}
+Let $L\in\mathbb C^{m\times r}$ have full column rank and
+$R\in\mathbb C^{r\times n}$ have full row rank.  For $H=LR$, the smallest
+nonzero eigenvalue of $H^*H/\|H\|_F^2$ obeys
+\[
+ \lambda_r\!\left(\frac{H^*H}{\|H\|_F^2}\right)
+ \geq
+ \frac{\lambda_{\min}(L^*L)\lambda_{\min}(RR^*)}{\|LR\|_F^2}.
+\]
+Since $\operatorname{rank}H=r$, this is also its top-$r$ packet gap.
+\end{theorem}
+
+\begin{proof}
+For every vector $x$ orthogonal to $\ker R$,
+\[
+ \|LRx\|^2
+ \geq\lambda_{\min}(L^*L)\|Rx\|^2
+ \geq\lambda_{\min}(L^*L)\lambda_{\min}(RR^*)\|x\|^2.
+\]
+The min--max principle gives the lower bound for the smallest nonzero
+singular value squared of $LR$.  Division by $\|LR\|_F^2$ proves the claim
+\citep{HornJohnson2013}.
+\end{proof}
+
+In the audit, both $r\times r$ factor Gramians are enclosed by Arb and their
+smallest eigenvalues are bounded below by outward Gershgorin disks.  This
+avoids an ambient eigenproblem for the candidate gap.
+
+\section{Direct normalized-snapshot enclosure}
+Let $S$ be the exact result of evaluating the archived binary operator and
+source matrices in Arb, and let $H=LR$ be the exact factorized binary
+candidate.  Positive interval lowers for both Frobenius norms validate the
+normalizations.  Arb then evaluates the entries of
+\[
+ D=\mathcal N(S)-\mathcal N(H)
+\]
+with directed rounding \citep{Johansson2017}.
+
+The universally safe extraction is
+\[
+ \|D\|\leq\|D\|_F.
+\]
+When the resulting radius $f$ satisfies $g_H>2f$, RH-141 immediately gives
+a packet certificate.  When it fails, we ask Arb for interval enclosures of
+all eigenvalues of the real symmetric $D$ and set
+\[
+ e=\max_j\sup |\lambda_j(D)|.
+\]
+Then $\|D\|\leq e$, and the same gap theorem applies with $e$.  This second
+step is needed only in dimension sixteen at the two coarse channels.
+
+\begin{proposition}[Sharp Frobenius-loss obstruction]\label{prop:fro}
+No constant smaller than $\sqrt2$ converts the operator norm of every
+traceless Hermitian matrix to its Frobenius norm.  Consequently a packet with
+gap ratio between $1$ and $\sqrt2$ may be certifiable by a sharp spectral
+radius while failing the Frobenius gate.
+\end{proposition}
+\begin{proof}
+For $D=\operatorname{diag}(a,-a)$,
+$\|D\|_F=\sqrt2|a|$ and $\|D\|=|a|$.  This attains the constant.  Choosing a
+gap between $2|a|$ and $2\sqrt2|a|$ gives the stated separation.
+\end{proof}
+
+Thus the two interval-eigen rescues are not cosmetic.  The coarse margins are
+small enough that a sharp norm extraction changes the logical outcome.
+
+\section{512-bit audit}
+At each of five scales and both channels, the script rebuilds the frozen
+binary source state using binary powering, computes a floating SVD only to
+choose the binary factors $L,R$, and performs every subsequent matrix product,
+normalization, gap lower, and residual enclosure in 512-bit Arb arithmetic.
+The dependency archive hashes the source builder, both preceding interface
+papers, and all local scripts.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lccc}
+\toprule
+certificate route & channels & minimum gap ratio & result\\
+\midrule
+Frobenius extraction & $8$ & $25.64$ within that group & certified\\
+interval-eigen rescue & $2$ & $1.02227$ & certified\\
+combined & $10$ & $1.02227$ & certified\\
+\bottomrule
+\end{tabular}
+\caption{Validated packet closure for the ten frozen binary anchors.}
+\label{tab:audit}
+\end{table}
+
+The two rescue radii are approximately $5.473\times10^{-14}$ and
+$3.006\times10^{-14}$, whereas the corresponding Frobenius uppers are
+$7.735\times10^{-14}$ and $4.248\times10^{-14}$.  The right-channel gap lower
+is only $6.146\times10^{-14}$, explaining its thin $1.02227$ crossing margin.
+All imaginary radii returned by the validated Hermitian eigenproblems are at
+the negligible Arb rounding scale.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/factorized_arb_snapshot_packet.pdf}
+\caption{Validated gaps and radii, gap ratios and rescue methods,
+projector/frame radii, and the two sharp norm extractions.}
+\label{fig:audit}
+\end{figure}
+
+The packet result is exact relative to the archived binary matrices, but its
+quality is nonuniform.  The coarse right channel gives the RH-141 projector
+radius
+\[
+ \frac{e}{g_H-e}=0.9574,
+\]
+and a polar-aligned frame radius about $1.193$.  This rules out complete
+subspace swapping but permits a large rotation.  The remaining eight fine
+or well-separated channels are much tighter.
+
+\section{Consequence and claim boundary}
+The finite interface now reads
+\[
+ \text{binary source model}
+ \xrightarrow[\text{512-bit Arb}]{\text{direct normalized Gram}}
+ \text{snapshot ball}
+ \xrightarrow[\text{factor gap}]{g>2e}
+ \text{rank-four projector ball}
+\]
+at all ten anchors.  This removes the six universal norm-ball walls of
+RH-141 without assuming that a floating SVD is exact.
+
+The next map is nonlinear and branch dependent: adaptive width or threshold
+selection followed by a Ritz/polar update.  Strict threshold margins can make
+that branch locally constant; a threshold contact cannot.  Broad coarse
+projector balls may require a projector-level enclosure rather than a direct
+frame-coordinate Lipschitz estimate.
+
+We have not enclosed a thresholded recursive update, intervalized the
+continuum source construction, proved a uniform all-level packet gap,
+controlled the RH-139 tail tube or normalized-base liminf, established Stage
+A, constructed a Hilbert--Polya operator, identified zeta zeros, or proved
+the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

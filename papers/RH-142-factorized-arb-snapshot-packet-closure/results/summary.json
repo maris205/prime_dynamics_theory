@@ -1,0 +1,54 @@
+{
+  "audit": {
+    "channel_count": 10,
+    "frobenius_certificate_count": 8,
+    "interval_eigen_rescue_count": 2,
+    "maximum_eigen_imaginary_radius": 2.053928589431495e-152,
+    "maximum_polar_aligned_frame_radius": 1.1925514103708714,
+    "maximum_projector_radius": 0.957356090691869,
+    "maximum_snapshot_operator_upper": 9.002549200738388e-08,
+    "minimum_gap_ratio": 1.0222717073212084,
+    "packet_certified_count": 10,
+    "packet_failure_count": 0,
+    "total_elapsed_seconds": 20.06370575398614
+  },
+  "program_boundary": {
+    "all_ten_frozen_binary_source_packets_certified": true,
+    "coarse_projector_enclosures_are_tight": false,
+    "continuum_source_model_intervalized": false,
+    "direct_arb_normalized_snapshot_enclosure": true,
+    "factorized_normalized_gap_lower": true,
+    "hilbert_polya_operator": false,
+    "hybrid_frobenius_interval_eigen_packet_certificate": true,
+    "riemann_hypothesis": false,
+    "stage_A": false,
+    "thresholded_recursive_packet_update_enclosed": false,
+    "uniform_all_level_packet_theorem": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "8065449b13621138f1823f8072f55fdb1076f4068cc9d37bf9c7cc787f4ea5a9",
+    "README.md": "a9ca893c1962208402a23e23359a7d2aa42e7b4e82156575f1c43e332ba30f47",
+    "THEOREM_LEDGER.md": "a2d4b9af0b82e4ee7869c91accf8afbb053a78339c153ac74280213fd06708b6",
+    "UPDATED_ROADMAP.md": "8e3d58900227084f7a37390a0bd8e3bd98d214feb44c6070bd81d737a7f9f4d7",
+    "factorized-arb-snapshot-packet-closure.pdf": "17a22b33a8d1e5a876412f8dc8b2c10d427396dcfde9fcb533371ef8eb626bf5",
+    "figures/factorized_arb_snapshot_packet.pdf": "7de9f65813957a8984b07999e6fb78c0e3fa5f826abfb64841e3077044667b46",
+    "figures/factorized_arb_snapshot_packet.png": "473ae58947af046f64cc40385bf6e97a4ffec17f2601eeecfc3bbac8e3a89733",
+    "main.pdf": "17a22b33a8d1e5a876412f8dc8b2c10d427396dcfde9fcb533371ef8eb626bf5",
+    "main.tex": "2ca415539fac4d532a855a0d00f55fa58faf8e44eeabbabaac1efd6a59c0be79",
+    "pyproject.toml": "a90fafe1b15458517639e690c8a800223bbf2c7f7929153d2e67ef14dd415ace",
+    "references.bib": "19c8c337ff4ca7431ba3fbcdc6ca390d64ec368b928d4db6053e938cb071c2b4",
+    "requirements.txt": "10ad4375e7165536e8496c81514f9387b9376daf0b793f4f87e2d99e28c11a5c"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "de3e1956db118e0ce00ef332d43c56b7fea18c6855a9adad76710b7c89a87ed6",
+    "results/factorized_arb_audit.json": "b671d433adaee86fbce94bb4c6c0633e66242ea8c52eacdef0f12a9573850a60",
+    "results/factorized_arb_smoke.json": "9ba674fa6c6799e5b4bdf277728cabf070c485b05367f3eacdfb0e79e06835dc"
+  },
+  "route_consequence": "Direct 512-bit Arb evaluation preserves the low-rank cancellation that the universal RH-140 state bound discarded. Eight channels pass with a Frobenius enclosure and the two coarse channels are rescued by validated interval eigenvalue radii, closing all ten frozen binary source packets. The coarse right projector ball remains broad, so recursive threshold stability is the next unresolved interface.",
+  "status": "rh142_factorized_arb_snapshot_packet_closure_archived",
+  "theorem": {
+    "direct_arb_snapshot_enclosure": true,
+    "factorized_normalized_gap_lower": true,
+    "hybrid_packet_closure": true
+  }
+}

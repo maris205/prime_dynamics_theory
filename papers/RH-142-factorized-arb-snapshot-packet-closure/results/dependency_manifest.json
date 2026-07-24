@@ -1,0 +1,45 @@
+{
+  "external_inputs": {
+    "rh141_audit": {
+      "path": "papers/RH-141-gap-stable-spectral-packet-enclosure/results/spectral_packet_audit.json",
+      "sha256": "7029f467fdf4c483a0a0a88580d5edecc3cb0734c5442ed2ef6c73f0e59e1692"
+    },
+    "rh141_source": {
+      "path": "papers/RH-141-gap-stable-spectral-packet-enclosure/src/spectral_packet/enclosure.py",
+      "sha256": "07b2010e0a0cc6582040a307692e6aea8d47800a468194d3aa4a740690fafe0b"
+    },
+    "rh141_summary": {
+      "path": "papers/RH-141-gap-stable-spectral-packet-enclosure/results/summary.json",
+      "sha256": "cf738e22fd02501d6918f5117bef16072eee875b95040b44ac75d1914757a441"
+    },
+    "rh77_model_source": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/experiments/run_effective_rank_audit.py",
+      "sha256": "f1ea040fd00577c2775fea8cc1bc4bf416cae76d06dd06b3a6b5ee27116cd3c3"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "86916d45a1d4b1197ad0d28c93e4fdc64c3a2f9c9283a60deb15d77b236daec7",
+    "experiments/build_factorized_arb_audit.py": "23d22800e5683d21ea07df96139106a5fb899c92b4a017df735976e0f33e783b",
+    "experiments/make_figures.py": "791db7a72b987205ec3336b2b2220a75b1228272dff7c0bc41b28e53fc02e765",
+    "experiments/verify_archive.py": "2d10af3439d6997fe7864ccecf082ab3a75e9a872fc174bdc0444f47525baebe",
+    "src/factorized_packet/__init__.py": "d6e7863cc2a722c0ed9cd74ed49af902dae3940f9844f3a75f87f44499b4125b",
+    "src/factorized_packet/bounds.py": "9b13ca39bb559da50ab4b84fd9bc4e4d123a2ecafb0cafeb3f9a191b12b434b9",
+    "tests/test_archived_results.py": "b661145d1eebb7e90e2a75a51526d3f01a7744c2f3f20453163b65ae504c68b8",
+    "tests/test_theory.py": "1fec9fe1e24ecfa8952184c7408df2aea55bbddf27cddb1a02594a34ca9139dd"
+  },
+  "publication_artifacts": {
+    ".gitignore": "8065449b13621138f1823f8072f55fdb1076f4068cc9d37bf9c7cc787f4ea5a9",
+    "README.md": "a9ca893c1962208402a23e23359a7d2aa42e7b4e82156575f1c43e332ba30f47",
+    "THEOREM_LEDGER.md": "a2d4b9af0b82e4ee7869c91accf8afbb053a78339c153ac74280213fd06708b6",
+    "UPDATED_ROADMAP.md": "8e3d58900227084f7a37390a0bd8e3bd98d214feb44c6070bd81d737a7f9f4d7",
+    "factorized-arb-snapshot-packet-closure.pdf": "17a22b33a8d1e5a876412f8dc8b2c10d427396dcfde9fcb533371ef8eb626bf5",
+    "figures/factorized_arb_snapshot_packet.pdf": "7de9f65813957a8984b07999e6fb78c0e3fa5f826abfb64841e3077044667b46",
+    "figures/factorized_arb_snapshot_packet.png": "473ae58947af046f64cc40385bf6e97a4ffec17f2601eeecfc3bbac8e3a89733",
+    "main.pdf": "17a22b33a8d1e5a876412f8dc8b2c10d427396dcfde9fcb533371ef8eb626bf5",
+    "main.tex": "2ca415539fac4d532a855a0d00f55fa58faf8e44eeabbabaac1efd6a59c0be79",
+    "pyproject.toml": "a90fafe1b15458517639e690c8a800223bbf2c7f7929153d2e67ef14dd415ace",
+    "references.bib": "19c8c337ff4ca7431ba3fbcdc6ca390d64ec368b928d4db6053e938cb071c2b4",
+    "requirements.txt": "10ad4375e7165536e8496c81514f9387b9376daf0b793f4f87e2d99e28c11a5c"
+  },
+  "status": "all_rh142_inputs_sources_and_publication_artifacts_hashed"
+}
