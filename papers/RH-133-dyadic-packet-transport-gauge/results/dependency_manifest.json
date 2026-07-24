@@ -1,0 +1,41 @@
+{
+  "external_inputs": {
+    "rh130_audit": {
+      "path": "papers/RH-130-floor-free-semidefinite-directional-audit/results/floor_free_audit.json",
+      "sha256": "f71b77248fbbf7cc027147b8c41f3c93691aa2a02d7ee01a15ce1a3c5bcd1f35"
+    },
+    "rh130_summary": {
+      "path": "papers/RH-130-floor-free-semidefinite-directional-audit/results/summary.json",
+      "sha256": "6439cc70ace61917fc5dff2d028b2193be431da48e2e038c11a9be66a1ec155d"
+    },
+    "rh132_summary": {
+      "path": "papers/RH-132-canonical-partial-isometry-forcing-gauge/results/summary.json",
+      "sha256": "f22cc2b1c89c55438e598a24499ac28ed01a49e7aae9e38175a5cc1ba0a2ab92"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "1df0f45e7fc827d15a6518fa6aaea2e1d91b74fe8ae7b749c3cb370c4be0f8aa",
+    "experiments/build_dyadic_gauge_audit.py": "c437de336519d663e4999a61c8eeb93ef3e2beb8c8aa6642de9ee3d89fd8a5a9",
+    "experiments/make_figures.py": "2348f023b4c195876459c3986d43919b23c65c63d3afca471b98a3ffd9078867",
+    "experiments/verify_archive.py": "5c09374350a2c405356122a3df2d071a5cc12aa4c83d1de46041484c1f5933a9",
+    "src/dyadic_packet_gauge/__init__.py": "b618130bb14ae9a1ebad9be1c7b1f6e8bb4c0ed590784908713cd02eb83cd0e7",
+    "src/dyadic_packet_gauge/gauge.py": "bd8627ebb2c7df7e968fca1927d858e93e7bfaa01103eea6283fa7c190380a0b",
+    "tests/test_archived_results.py": "0be18315171a56dccd8775a5124fe149b9302e1cb0649d72f73a4199eeba1399",
+    "tests/test_theory.py": "3cf115d567f7640dafb3e135209233188fdcce4cff7d19ea1f007e2e2063ca8b"
+  },
+  "publication_artifacts": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "16fdc933f86b1a815951a1036033d6b1f3c83750ba99c0eab316da52fd7875ff",
+    "THEOREM_LEDGER.md": "0248a8ffb96ca887bb448388e16ab3db23fa6ee510c58e751d911ccce9fe346b",
+    "UPDATED_ROADMAP.md": "873f5605d1bdb6d7c0cbc3567a38221104d892a710a709b191c8a488f4c610ae",
+    "dyadic-packet-transport-gauge.pdf": "fd45b19f8d106bb11ab65437631091da86b38706edf5397aa847092083342938",
+    "figures/dyadic_packet_transport_gauge.pdf": "35fdaa0bbb2ad83bcb6c61646d0434a2c07453a4828c26d376c9d73a21ff89af",
+    "figures/dyadic_packet_transport_gauge.png": "9195a630c1d96fd94e5fd5a799e1aa6b06f80b61497fd47078b9e4a90d6a3692",
+    "main.pdf": "fd45b19f8d106bb11ab65437631091da86b38706edf5397aa847092083342938",
+    "main.tex": "a67d653186ed73ec5acfa5e7b96394effbaf7222edbfd44949e90bcc06f58a30",
+    "pyproject.toml": "cf3134ffab1edcb4b338f50315074eca7c2b7ee3bd2c65a1f9adedbab6150a39",
+    "references.bib": "033096f2445e5414634491d60e5c9360d26080fe3086fa26355434fd5a755ba2",
+    "requirements.txt": "ee0b3b059c46c177bd2fc41734441b41074392b6b173bbef4fd36a8c06d93531"
+  },
+  "status": "all_rh133_inputs_sources_and_publication_artifacts_hashed"
+}
