@@ -1,0 +1,245 @@
+{
+  "audit_summary": {
+    "claim_boundary_violation_count": 0,
+    "clean_suffix_chain_count": 18,
+    "constructive_layer_count": 4,
+    "factorized_packet_certified_count": 10,
+    "maximum_correlated_reanchoring_gain_orders": 48.647302421975496,
+    "median_correlated_reanchoring_gain_orders": 26.539506290453897,
+    "minimal_open_interface_count": 3,
+    "minimum_correlated_reanchoring_gain_orders": 16.130855213305605,
+    "mixed_layer_count": 4,
+    "outward_transition_count": 330,
+    "positive_tube_chain_count": 28,
+    "previous_frontier_packet_count": 4,
+    "projective_summability_finite_trend_supported": false,
+    "strict_threshold_branch_count": 360,
+    "synthesis_layer_count": 1,
+    "top_priority_interface": "E-update",
+    "top_priority_score": 15,
+    "truth_table_case_count": 8,
+    "truth_table_closed_case_count": 1,
+    "upstream_archive_verification_count": 9,
+    "upstream_paper_count": 9
+  },
+  "frontier_mapping": {
+    "RH-139 P_B positive base liminf": [
+      "E-cocycle"
+    ],
+    "RH-139 P_E source enclosure": [
+      "E-source",
+      "E-update"
+    ],
+    "RH-139 P_O outward radii": [
+      "E-update"
+    ],
+    "RH-139 P_V controlled viability": [
+      "E-cocycle"
+    ]
+  },
+  "layers": [
+    {
+      "archive_verified": true,
+      "claim_boundary_violation": false,
+      "contribution": "sharp normalized snapshot enclosure",
+      "kind": "constructive",
+      "paper": 140,
+      "summary_path": "papers/RH-140-normalized-snapshot-enclosure/results/summary.json",
+      "summary_sha256": "a3b65c090ea87e67ae1906de3f0b58c2a5390a6407f2b7a58c745ae633d43c9f"
+    },
+    {
+      "archive_verified": true,
+      "claim_boundary_violation": false,
+      "contribution": "gap-stable packet theorem and universal-radius wall",
+      "kind": "mixed",
+      "paper": 141,
+      "summary_path": "papers/RH-141-gap-stable-spectral-packet-enclosure/results/summary.json",
+      "summary_sha256": "cf738e22fd02501d6918f5117bef16072eee875b95040b44ac75d1914757a441"
+    },
+    {
+      "archive_verified": true,
+      "claim_boundary_violation": false,
+      "contribution": "10/10 factorized Arb packet closure",
+      "kind": "constructive",
+      "paper": 142,
+      "summary_path": "papers/RH-142-factorized-arb-snapshot-packet-closure/results/summary.json",
+      "summary_sha256": "a399a2c3475be1296b9af822846a1a2bd1d5c4f980e112e3a26fbd7e590fcc7d"
+    },
+    {
+      "archive_verified": true,
+      "claim_boundary_violation": false,
+      "contribution": "sharp clipped-threshold branch radius",
+      "kind": "constructive",
+      "paper": 143,
+      "summary_path": "papers/RH-143-threshold-branch-stability-radius/results/summary.json",
+      "summary_sha256": "a561c0c72face6a63cf05d7aafb2607183e45a0aa8971500c7921b16696372e2"
+    },
+    {
+      "archive_verified": true,
+      "claim_boundary_violation": false,
+      "contribution": "exact backward controlled kernels and two genuine finite obstructions",
+      "kind": "mixed",
+      "paper": 144,
+      "summary_path": "papers/RH-144-backward-block-controlled-viability/results/summary.json",
+      "summary_sha256": "13a2e8bf509d5b60cc2c265ad8059358a2296e8b8ddc1e153eea8c74da2474fe"
+    },
+    {
+      "archive_verified": true,
+      "claim_boundary_violation": false,
+      "contribution": "delayed-start theorem and isolation of the coarse bad births",
+      "kind": "mixed",
+      "paper": 145,
+      "summary_path": "papers/RH-145-delayed-start-superunit-birth-isolation/results/summary.json",
+      "summary_sha256": "ae4bdb54e9f444c1e31caebbc55915a28328a526e378a154a1d308b45c30ff66"
+    },
+    {
+      "archive_verified": true,
+      "claim_boundary_violation": false,
+      "contribution": "sharp projective base recurrence; direct product route is lossy",
+      "kind": "mixed",
+      "paper": 146,
+      "summary_path": "papers/RH-146-projective-gram-base-recurrence/results/summary.json",
+      "summary_sha256": "eab229f17f420e476e0b1ca25dd6d0dbe6d19fb71a9358c47ee07f44dc7fbe27"
+    },
+    {
+      "archive_verified": true,
+      "claim_boundary_violation": false,
+      "contribution": "correlated support tube and signed cocycle",
+      "kind": "constructive",
+      "paper": 147,
+      "summary_path": "papers/RH-147-correlated-base-tail-viability-tube/results/summary.json",
+      "summary_sha256": "2b2a723066ba0e8af94c1be75ac83e39af65fec58abd75048fd5c46ed64d2657"
+    },
+    {
+      "archive_verified": true,
+      "claim_boundary_violation": false,
+      "contribution": "conditional source-to-support composition and three open interfaces",
+      "kind": "synthesis",
+      "paper": 148,
+      "summary_path": "papers/RH-148-conditional-source-directional-support-composition/results/summary.json",
+      "summary_sha256": "edc6e28958910d62224404923ddca5d82ebb0e6b6e2c0c05a217636a2da8f3ef"
+    }
+  ],
+  "previous_rh139_summary_path": "papers/RH-139-ten-layer-controlled-viability-review/results/summary.json",
+  "previous_rh139_summary_sha256": "9b0b71741a451ded09df8e4c65806e347839f4f7684ec917d7979e9e77ffd39f",
+  "priority_ranking": [
+    {
+      "dependency_leverage": 5,
+      "falsification_value": 5,
+      "interface": "E-update",
+      "priority_score": 15,
+      "tractability": 5
+    },
+    {
+      "dependency_leverage": 5,
+      "falsification_value": 5,
+      "interface": "E-cocycle",
+      "priority_score": 13,
+      "tractability": 3
+    },
+    {
+      "dependency_leverage": 5,
+      "falsification_value": 4,
+      "interface": "E-source",
+      "priority_score": 11,
+      "tractability": 2
+    }
+  ],
+  "route_consequence": "RH-140--RH-149 reduces the directional program to an inclusion-minimal three-interface frontier. The next highest-value task is E-update: interval transport from certified source packets through thresholded recursion into the outward assembly. The correlated support cocycle is primary; unsigned projective summability remains a rigorous but empirically unsupported fallback.",
+  "route_decisions": {
+    "fallback": "summable projective Gram variation",
+    "next_experiment": "propagate RH-142 packet balls through RH-143 recursive updates",
+    "primary": "correlated support cocycle with interval reanchoring",
+    "stop_condition": "any branch-radius exhaustion or outward interval blow-up is recorded as an obstruction"
+  },
+  "status": "rh149_ten_layer_source_support_review",
+  "theorem_boundary": {
+    "all_level_directional_support_proved": false,
+    "correlated_cocycle_is_primary_route": true,
+    "finite_end_to_end_interval_bridge_closed": false,
+    "hilbert_polya_operator": false,
+    "inclusion_minimal_three_interface_frontier": true,
+    "nine_layer_archive_review_complete": false,
+    "projective_summability_is_fallback_route": true,
+    "riemann_hypothesis": false,
+    "three_interface_sufficiency": true,
+    "uniform_stage_A_closed": false
+  },
+  "truth_table": [
+    {
+      "E-cocycle": false,
+      "E-source": false,
+      "E-update": false,
+      "composition_closed": false,
+      "missing": [
+        "E-source",
+        "E-update",
+        "E-cocycle"
+      ]
+    },
+    {
+      "E-cocycle": true,
+      "E-source": false,
+      "E-update": false,
+      "composition_closed": false,
+      "missing": [
+        "E-source",
+        "E-update"
+      ]
+    },
+    {
+      "E-cocycle": false,
+      "E-source": false,
+      "E-update": true,
+      "composition_closed": false,
+      "missing": [
+        "E-source",
+        "E-cocycle"
+      ]
+    },
+    {
+      "E-cocycle": true,
+      "E-source": false,
+      "E-update": true,
+      "composition_closed": false,
+      "missing": [
+        "E-source"
+      ]
+    },
+    {
+      "E-cocycle": false,
+      "E-source": true,
+      "E-update": false,
+      "composition_closed": false,
+      "missing": [
+        "E-update",
+        "E-cocycle"
+      ]
+    },
+    {
+      "E-cocycle": true,
+      "E-source": true,
+      "E-update": false,
+      "composition_closed": false,
+      "missing": [
+        "E-update"
+      ]
+    },
+    {
+      "E-cocycle": false,
+      "E-source": true,
+      "E-update": true,
+      "composition_closed": false,
+      "missing": [
+        "E-cocycle"
+      ]
+    },
+    {
+      "E-cocycle": true,
+      "E-source": true,
+      "E-update": true,
+      "composition_closed": true,
+      "missing": []
+    }
+  ]
+}
