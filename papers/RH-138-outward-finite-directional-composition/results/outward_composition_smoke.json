@@ -1,0 +1,2318 @@
+{
+  "audit_summary": {
+    "bridge_certification_failure_count": 0,
+    "chain_count": 3,
+    "decimal16_positive_base_count": 15,
+    "decimal18_positive_base_count": 17,
+    "decimal20_positive_base_count": 18,
+    "fp64_lost_base_count": 2,
+    "fp64_positive_base_count": 16,
+    "maximum_bound_additive_inflation": 1.542256060713744e-23,
+    "maximum_bound_inflation": 1.0,
+    "maximum_forcing_padding": 2.87223229344818e-46,
+    "maximum_positive_support_lower": 0.08998967336673003,
+    "median_positive_support_lower": 2.1251149091867833e-05,
+    "minimum_positive_support_lower": 1.0365725459187261e-10,
+    "positive_support_chain_count": 2,
+    "positive_support_transition_count": 17,
+    "raw_certification_failure_count": 0,
+    "scale_count": 3,
+    "support_above_1e-4_count": 6,
+    "support_above_1e-6_count": 12,
+    "support_above_1e-8_count": 14,
+    "support_dominance_failure_count": 0,
+    "tail_dominance_failure_count": 0,
+    "terminal_above_1e-4_count": 0,
+    "terminal_above_1e-6_count": 0,
+    "terminal_above_1e-8_count": 0,
+    "terminal_positive_count": 2,
+    "transition_count": 18
+  },
+  "precision_decimal_digits": 80,
+  "rounded_decimal_digits": 40,
+  "route_consequence": "The RH-137 finite-horizon envelope and the directional normalized base can be composed through two independently outward-guarded Loewner residuals. On the frozen 80-digit reference assembly, fp64-rounded matrices with archived spectral radii certify every raw recurrence and normalized bridge. The resulting finite support lower is positive on exactly the same 328 transitions and 28 chains, but this remains a finite reference-assembly certificate rather than an all-level interval model theorem.",
+  "rows": [
+    {
+      "chain_positive": true,
+      "side": "left",
+      "sigma": 0.16,
+      "steps": [
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -7.620972576602221,
+            "value": 2.393466886398883e-08
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": -45.03551735849015,
+            "value": 9.214730572730808e-46
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -69.99567862621736,
+            "value": 1.010000000000001e-70
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -71.99999999999996,
+            "value": 1.0000000000001085e-72
+          },
+          "decimal_precision_base_positive": {
+            "16": true,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -7.620972576602221,
+            "value": 2.393466886398883e-08
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -7.620972576602221,
+            "value": 2.393466886398883e-08
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -20.80603114645057,
+            "value": 1.5630355418498392e-21
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -69.69897000433602,
+            "value": 2e-70
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -64.99999991314111,
+            "value": 1.0000002e-65
+          },
+          "recurrent": false,
+          "selected_kind": "birth",
+          "selected_weight": 0.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 1,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -7.620972576602221,
+            "value": 2.393466886398883e-08
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 2,
+          "tau": null,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -45.03551735849015,
+            "value": 9.214730572730808e-46
+          }
+        },
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -9.455682091890846,
+            "value": 3.50201424335699e-10
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": -38.909917548983195,
+            "value": 1.2305023601045757e-39
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -69.99567862621736,
+            "value": 1.01e-70
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -72.0,
+            "value": 1e-72
+          },
+          "decimal_precision_base_positive": {
+            "16": false,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -9.455682091890846,
+            "value": 3.50201424335699e-10
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -9.455682091890846,
+            "value": 3.50201424335699e-10
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "fp64_base_positive": false,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -23.091211032593474,
+            "value": 8.105670909740359e-24
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -69.69897000433602,
+            "value": 2e-70
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -64.99999991314111,
+            "value": 1.0000002e-65
+          },
+          "recurrent": false,
+          "selected_kind": "birth",
+          "selected_weight": 0.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 2,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -9.455682091890846,
+            "value": 3.50201424335699e-10
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 3,
+          "tau": null,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -38.909917548983195,
+            "value": 1.2305023601045757e-39
+          }
+        },
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -9.984400297825156,
+            "value": 1.0365725459187261e-10
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": -34.955320008257715,
+            "value": 1.1083578250010639e-35
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -69.99567862621736,
+            "value": 1.01e-70
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -72.0,
+            "value": 1e-72
+          },
+          "decimal_precision_base_positive": {
+            "16": false,
+            "18": false,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -9.984400297825156,
+            "value": 1.0365725459187261e-10
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -9.984400297825156,
+            "value": 1.0365725459187261e-10
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "fp64_base_positive": false,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -26.46617271798716,
+            "value": 3.41843465061157e-27
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -69.69897000433602,
+            "value": 2e-70
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -64.99999991314111,
+            "value": 1.0000002e-65
+          },
+          "recurrent": false,
+          "selected_kind": "birth",
+          "selected_weight": 0.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 3,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -9.984400297825156,
+            "value": 1.0365725459187261e-10
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 4,
+          "tau": null,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -34.955320008257715,
+            "value": 1.1083578250010639e-35
+          }
+        }
+      ],
+      "terminal_support_lower": {
+        "infinite": false,
+        "log10": -9.984400297825156,
+        "value": 1.0365725459187261e-10
+      },
+      "threshold": 1e-08
+    },
+    {
+      "chain_positive": false,
+      "side": "left",
+      "sigma": 0.08,
+      "steps": [
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -3.2454204836521208,
+            "value": 0.0005683024343218436
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": -54.514073461062104,
+            "value": 3.0614455453166055e-55
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -69.99567722162968,
+            "value": 1.0100032665297659e-70
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -71.9998581595798,
+            "value": 1.0003266529765857e-72
+          },
+          "decimal_precision_base_positive": {
+            "16": true,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -3.2454204836521208,
+            "value": 0.0005683024343218436
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -3.2454204836521208,
+            "value": 0.0005683024343218436
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -20.323265586609,
+            "value": 4.750446303147962e-21
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -69.69897000433602,
+            "value": 2e-70
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -64.99999991314111,
+            "value": 1.0000002e-65
+          },
+          "recurrent": false,
+          "selected_kind": "birth",
+          "selected_weight": 0.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1.0000000000000003e-70
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 1,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -3.2454204836521208,
+            "value": 0.0005683024343218436
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 2,
+          "tau": null,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -54.514073461062104,
+            "value": 3.0614455453166055e-55
+          }
+        },
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -4.120851482098748,
+            "value": 7.570917572897733e-05
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": -50.71302306850955,
+            "value": 1.9363191093535387e-51
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -69.99567862599528,
+            "value": 1.0100000005164594e-70
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -71.99999997757045,
+            "value": 1.0000000516459449e-72
+          },
+          "decimal_precision_base_positive": {
+            "16": true,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -4.120851482098748,
+            "value": 7.570917572897733e-05
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -4.120851482098748,
+            "value": 7.570917572897733e-05
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -23.041917180628797,
+            "value": 9.079936668352535e-24
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -69.69897000433602,
+            "value": 2e-70
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -64.99999991314111,
+            "value": 1.0000002e-65
+          },
+          "recurrent": false,
+          "selected_kind": "birth",
+          "selected_weight": 0.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 2,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -4.120851482098748,
+            "value": 7.570917572897733e-05
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 3,
+          "tau": null,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -50.71302306850955,
+            "value": 1.9363191093535387e-51
+          }
+        },
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -5.9085374736437375,
+            "value": 1.2344187972020378e-06
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": -45.51751468147104,
+            "value": 3.0372834138231565e-46
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -69.99567862621736,
+            "value": 1.0100000000000033e-70
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -71.99999999999986,
+            "value": 1.0000000000003292e-72
+          },
+          "decimal_precision_base_positive": {
+            "16": true,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -5.9085374736437375,
+            "value": 1.2344187972020378e-06
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -5.9085374736437375,
+            "value": 1.2344187972020378e-06
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -23.827454576435006,
+            "value": 1.4878029776710168e-24
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -69.69897000433602,
+            "value": 2e-70
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -64.99999991314111,
+            "value": 1.0000002e-65
+          },
+          "recurrent": false,
+          "selected_kind": "birth",
+          "selected_weight": 0.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 3,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -5.9085374736437375,
+            "value": 1.2344187972020378e-06
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 4,
+          "tau": null,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -45.51751468147104,
+            "value": 3.0372834138231565e-46
+          }
+        },
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -5.900399347912295,
+            "value": 1.257768320973159e-06
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": -22.8118435144026,
+            "value": 1.542256060713744e-23
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -67.59403839117782,
+            "value": 2.546605125406028e-68
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -54.160297312471826,
+            "value": 6.913575143259708e-55
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -54.16029731247185,
+            "value": 6.913575143259453e-55
+          },
+          "decimal_precision_base_positive": {
+            "16": true,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -5.900399347912295,
+            "value": 1.257768320973159e-06
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -5.904168249773376,
+            "value": 1.2469003597144295e-06
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": -45.54178043919189,
+            "value": 2.87223229344818e-46
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -67.59403839918761,
+            "value": 2.54660507843836e-68
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -27.632063954138722,
+            "value": 2.3331144629048492e-28
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": -5.328201002477224,
+            "value": 4.6967668003941155e-06
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -67.59233635273281,
+            "value": 2.5566050784383598e-68
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -47.546101812974534,
+            "value": 2.843794349948693e-48
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -47.546101812974534,
+            "value": 2.843794349948693e-48
+          },
+          "recurrent": false,
+          "selected_kind": "birth",
+          "selected_weight": 0.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 4,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -5.904168249773376,
+            "value": 1.2469003597144295e-06
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 5,
+          "tau": null,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -5.328201002477224,
+            "value": 4.6967668003941155e-06
+          }
+        },
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -8.247100842547177,
+            "value": 5.661078243622693e-09
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -67.311546881976,
+            "value": 4.880374148922882e-68
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -39.38643938202137,
+            "value": 4.107339653216144e-40
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -39.38643938202137,
+            "value": 4.107339653216144e-40
+          },
+          "decimal_precision_base_positive": {
+            "16": false,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -8.247100842547177,
+            "value": 5.661078243622693e-09
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -67.32065944163983,
+            "value": 4.7790388206932145e-68
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -29.399351478957453,
+            "value": 3.9870209807746385e-30
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": 1.0057608767029942,
+            "value": 10.133532780260646
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": -2.0413081956845818,
+            "value": 0.009092677846613422
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -67.31974339685848,
+            "value": 4.78912974747168e-68
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -29.482293992343195,
+            "value": 3.293866608971048e-30
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -29.482293992343195,
+            "value": 3.293866608971048e-30
+          },
+          "recurrent": true,
+          "selected_kind": "blend",
+          "selected_weight": 1.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 5,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 6,
+          "tau": 3.646376104137678,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": 1.0057608767029942,
+            "value": 10.133532780260646
+          }
+        }
+      ],
+      "terminal_support_lower": {
+        "infinite": false,
+        "log10": null,
+        "value": 0.0
+      },
+      "threshold": 1e-08
+    },
+    {
+      "chain_positive": true,
+      "side": "left",
+      "sigma": 0.04,
+      "steps": [
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -1.312041577577117,
+            "value": 0.0487481818354207
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": -59.34599990544913,
+            "value": 4.508168026894155e-60
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -69.90945034907527,
+            "value": 1.2318268068763685e-70
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -70.63483634660645,
+            "value": 2.3182680687636845e-71
+          },
+          "decimal_precision_base_positive": {
+            "16": true,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -1.312041577577117,
+            "value": 0.0487481818354207
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -1.312041577577117,
+            "value": 0.0487481818354207
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -19.49812533160105,
+            "value": 3.175957399396762e-20
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -69.69897000433602,
+            "value": 2e-70
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -64.99999991314111,
+            "value": 1.0000002e-65
+          },
+          "recurrent": false,
+          "selected_kind": "birth",
+          "selected_weight": 0.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1.0000000000000027e-70
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 1,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -1.312041577577117,
+            "value": 0.0487481818354207
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1.0000000000000002e-70
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 2,
+          "tau": null,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -59.34599990544913,
+            "value": 4.508168026894155e-60
+          }
+        },
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -1.0458073245291115,
+            "value": 0.08998967336673003
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": -57.68006482264258,
+            "value": 2.088984306515754e-58
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -69.99362503622017,
+            "value": 1.0147871606538758e-70
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -71.83011520874375,
+            "value": 1.4787160653875715e-72
+          },
+          "decimal_precision_base_positive": {
+            "16": true,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -1.0458073245291115,
+            "value": 0.08998967336673003
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -1.0458073245291115,
+            "value": 0.08998967336673003
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -21.200084210854055,
+            "value": 6.308350120351856e-22
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -69.69897000433602,
+            "value": 2e-70
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -64.99999991314111,
+            "value": 1.0000002e-65
+          },
+          "recurrent": false,
+          "selected_kind": "birth",
+          "selected_weight": 0.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1.0000000000000002e-70
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 2,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -1.0458073245291115,
+            "value": 0.08998967336673003
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -45.39794000867204,
+            "value": 4e-46
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 3,
+          "tau": null,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -57.68006482264258,
+            "value": 2.088984306515754e-58
+          }
+        },
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -2.6122717547951058,
+            "value": 0.00244190208228824
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": -54.10747507053465,
+            "value": 7.807732569662019e-55
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -69.99567807547194,
+            "value": 1.0100012808203804e-70
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -71.99994437823965,
+            "value": 1.0001280820380425e-72
+          },
+          "decimal_precision_base_positive": {
+            "16": true,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -2.6122717547951058,
+            "value": 0.00244190208228824
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -2.6122717547951058,
+            "value": 0.00244190208228824
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -21.67835295431112,
+            "value": 2.0972347527638002e-22
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -69.69897000433602,
+            "value": 2e-70
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -64.99999122734008,
+            "value": 1.0000202e-65
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -64.99999991314111,
+            "value": 1.0000002e-65
+          },
+          "recurrent": false,
+          "selected_kind": "birth",
+          "selected_weight": 0.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -45.39794000867204,
+            "value": 4e-46
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 3,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -2.6122717547951058,
+            "value": 0.00244190208228824
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -50.60205999132796,
+            "value": 2.5e-51
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 4,
+          "tau": null,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -54.10747507053465,
+            "value": 7.807732569662019e-55
+          }
+        },
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -3.74684949661449,
+            "value": 0.00017912264903906168
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": -49.65297502473361,
+            "value": 2.22343775171291e-50
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -63.41907040438728,
+            "value": 3.8100405302271183e-64
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -63.414398077614884,
+            "value": 3.851251871645894e-64
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -65.38498324906942,
+            "value": 4.121134141877557e-66
+          },
+          "decimal_precision_base_positive": {
+            "16": true,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -3.74684949661449,
+            "value": 0.00017912264903906168
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -3.746849564431564,
+            "value": 0.0001791226210682412
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -22.24956414435724,
+            "value": 5.629059712576224e-23
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": -14.81701052704617,
+            "value": 1.5240158120908473e-15
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -69.69897000433602,
+            "value": 2e-70
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -45.16933082659816,
+            "value": 6.771255064184453e-46
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -45.16933082659816,
+            "value": 6.771255064184453e-46
+          },
+          "recurrent": false,
+          "selected_kind": "birth",
+          "selected_weight": 0.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -50.60205999132796,
+            "value": 2.5e-51
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 4,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -3.746849564431564,
+            "value": 0.0001791226210682412
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -48.60205999132796,
+            "value": 2.5e-49
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 5,
+          "tau": null,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -14.81701052704617,
+            "value": 1.5240158120908473e-15
+          }
+        },
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -4.196272365062801,
+            "value": 6.363962837900975e-05
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -65.35192644898656,
+            "value": 4.4470657547117494e-66
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -33.51792899380067,
+            "value": 3.034387259329585e-34
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -33.51792899380067,
+            "value": 3.034387259329585e-34
+          },
+          "decimal_precision_base_positive": {
+            "16": true,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -4.196272365062801,
+            "value": 6.363962837900975e-05
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -4.1962731906371795,
+            "value": 6.363950740303859e-05
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -67.41908275702382,
+            "value": 3.8099321627979e-68
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -23.752284164480976,
+            "value": 1.7689511320270306e-24
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": -12.624427900285466,
+            "value": 2.374499594293242e-13
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": -1.9365926892141483,
+            "value": 0.011571970311869573
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -67.41793119337738,
+            "value": 3.8200478825010195e-68
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -29.78770516685931,
+            "value": 1.6304025020513992e-30
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -29.78770516685931,
+            "value": 1.6304025020513992e-30
+          },
+          "recurrent": true,
+          "selected_kind": "blend",
+          "selected_weight": 1.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -48.60205999132796,
+            "value": 2.5e-49
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 5,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -4.196273211569615,
+            "value": 6.363950433569627e-05
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 6,
+          "tau": 4.913299386812353,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -12.624427900285466,
+            "value": 2.374499594293242e-13
+          }
+        },
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -3.988105527538193,
+            "value": 0.0001027766534763839
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -68.48404230816867,
+            "value": 3.280633322306679e-69
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -30.210252715622353,
+            "value": 6.162363100792432e-31
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -30.210252715622353,
+            "value": 6.162363100792432e-31
+          },
+          "decimal_precision_base_positive": {
+            "16": true,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -3.988105527538193,
+            "value": 0.0001027766534763839
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -3.988111498376135,
+            "value": 0.00010277524047541511
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -68.48404230816888,
+            "value": 3.2806333223050867e-69
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -25.621543587286357,
+            "value": 2.390322022374724e-26
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": -10.798087509246903,
+            "value": 1.5918879333138737e-11
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": -1.9694900921275875,
+            "value": 0.010727781216153191
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -68.47086413905325,
+            "value": 3.381706100426702e-69
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -29.344650856096955,
+            "value": 4.522193525852269e-30
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -29.344650856096955,
+            "value": 4.522193525852269e-30
+          },
+          "recurrent": true,
+          "selected_kind": "blend",
+          "selected_weight": 1.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 6,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -3.9881124586262175,
+            "value": 0.00010277501323369737
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 7,
+          "tau": 4.492603070895828,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -10.798087509246903,
+            "value": 1.5918879333138737e-11
+          }
+        },
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -4.672525080892888,
+            "value": 2.125567588252325e-05
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -67.29992855627668,
+            "value": 5.012696883415117e-68
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -32.33220269974983,
+            "value": 4.6536883963591934e-33
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -32.33220269974983,
+            "value": 4.6536883963591934e-33
+          },
+          "decimal_precision_base_positive": {
+            "16": true,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -4.672525080892888,
+            "value": 2.125567588252325e-05
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -4.672601549293525,
+            "value": 2.1251933618874393e-05
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -67.31011827027561,
+            "value": 4.896454573488321e-68
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -27.62591500756653,
+            "value": 2.3663827587462014e-28
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": -8.547419625300902,
+            "value": 2.8351782902058924e-09
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": -1.8029739110241962,
+            "value": 0.015740774197414775
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -67.30921828501349,
+            "value": 4.906611981230295e-68
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -29.61445818905041,
+            "value": 2.4296393400835376e-30
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -29.61445818905041,
+            "value": 2.4296393400835376e-30
+          },
+          "recurrent": true,
+          "selected_kind": "blend",
+          "selected_weight": 1.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 7,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -4.672617581812964,
+            "value": 2.1251149091867833e-05
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -60.38721614317434,
+            "value": 4.100000001e-61
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 8,
+          "tau": 7.059276329147354,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -8.547419625300902,
+            "value": 2.8351782902058924e-09
+          }
+        },
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -5.453348482972722,
+            "value": 3.5208823794269188e-06
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -67.44561534103588,
+            "value": 3.5841374719837624e-68
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -34.53095536900685,
+            "value": 2.9447242377228363e-35
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -34.53095536900685,
+            "value": 2.9447242377228363e-35
+          },
+          "decimal_precision_base_positive": {
+            "16": true,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -5.453348482972722,
+            "value": 3.5208823794269188e-06
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -5.4558943284381085,
+            "value": 3.500303252634642e-06
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -67.44601618061559,
+            "value": 3.5808309566475475e-68
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -28.7545086742934,
+            "value": 1.759913512172199e-29
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": -5.5224322344712675,
+            "value": 3.0030859735162792e-06
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": -1.545997634567096,
+            "value": 0.02844476600161964
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -67.44477063813524,
+            "value": 3.5911154043075635e-68
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -29.508119344852137,
+            "value": 3.1037065671569316e-30
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -29.508119344852137,
+            "value": 3.1037065671569316e-30
+          },
+          "recurrent": true,
+          "selected_kind": "blend",
+          "selected_weight": 1.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -60.38721614317434,
+            "value": 4.100000001e-61
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 8,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -5.4563615220263655,
+            "value": 3.496539815565471e-06
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 9,
+          "tau": 13.563720192617742,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -5.5224322344712675,
+            "value": 3.0030859735162792e-06
+          }
+        },
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -6.0808642935572434,
+            "value": 8.301101161755209e-07
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -67.40201611613429,
+            "value": 3.962633291376339e-68
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -30.845023595890538,
+            "value": 1.4288163266024854e-31
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -30.845023595890538,
+            "value": 1.4288163266024854e-31
+          },
+          "decimal_precision_base_positive": {
+            "16": true,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -6.0808642935572434,
+            "value": 8.301101161755209e-07
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -6.086246793003282,
+            "value": 8.198855022399566e-07
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -67.40201614016634,
+            "value": 3.962633072100663e-68
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -28.886454617300494,
+            "value": 1.2988092790962716e-29
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": -4.659654813005384,
+            "value": 2.189501197189934e-05
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": -1.9649410224670376,
+            "value": 0.010840741221457648
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -67.40090969511931,
+            "value": 3.972741479512877e-68
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -29.915139540173893,
+            "value": 1.2157952990548417e-30
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -29.915139540173893,
+            "value": 1.2157952990548417e-30
+          },
+          "recurrent": true,
+          "selected_kind": "blend",
+          "selected_weight": 1.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 9,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -6.089011992255019,
+            "value": 8.146817877491733e-07
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 10,
+          "tau": 4.550459505386158,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -4.659654813005384,
+            "value": 2.189501197189934e-05
+          }
+        },
+        {
+          "base_lower": {
+            "infinite": false,
+            "log10": -7.085364345574366,
+            "value": 8.215531296937601e-08
+          },
+          "bound_additive_inflation": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "bound_inflation": 1.0,
+          "bridge_certified": true,
+          "bridge_guard": {
+            "infinite": false,
+            "log10": -68.15537803345495,
+            "value": 6.992330806538008e-69
+          },
+          "bridge_numeric_slack": {
+            "infinite": false,
+            "log10": -36.71252683006746,
+            "value": 1.9385328725738522e-37
+          },
+          "bridge_outward_slack": {
+            "infinite": false,
+            "log10": -36.71252683006746,
+            "value": 1.9385328725738522e-37
+          },
+          "decimal_precision_base_positive": {
+            "16": true,
+            "18": true,
+            "20": true
+          },
+          "exact_base": {
+            "infinite": false,
+            "log10": -7.085364345574366,
+            "value": 8.215531296937601e-08
+          },
+          "exact_candidate": {
+            "infinite": false,
+            "log10": -7.735042617967519,
+            "value": 1.8405913726201988e-08
+          },
+          "forcing_padding": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "forcing_radius": {
+            "infinite": false,
+            "log10": -68.15928604958421,
+            "value": 6.929692290561037e-69
+          },
+          "fp64_base_positive": true,
+          "fp64_gram_radius": {
+            "infinite": false,
+            "log10": -31.98571792410414,
+            "value": 1.0334324060553064e-32
+          },
+          "nominal_target_bound": {
+            "infinite": false,
+            "log10": -0.20315930340636199,
+            "value": 0.6263840588108119
+          },
+          "raw_certified": true,
+          "raw_factor": {
+            "infinite": false,
+            "log10": -1.298574082121086,
+            "value": 0.05028354846624513
+          },
+          "raw_guard": {
+            "infinite": false,
+            "log10": -68.15275314408095,
+            "value": 7.034720645407662e-69
+          },
+          "raw_numeric_slack": {
+            "infinite": false,
+            "log10": -29.479116769009032,
+            "value": 3.318052328929487e-30
+          },
+          "raw_outward_slack": {
+            "infinite": false,
+            "log10": -29.479116769009032,
+            "value": 3.318052328929487e-30
+          },
+          "recurrent": true,
+          "selected_kind": "blend",
+          "selected_weight": 1.0,
+          "source_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "source_time": 10,
+          "support_dominance_holds": true,
+          "support_lower": {
+            "infinite": false,
+            "log10": -9.808475978170694,
+            "value": 1.5542612581684546e-10
+          },
+          "tail_bound_dominates_actual": true,
+          "target_gram_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_tail_radius": {
+            "infinite": false,
+            "log10": -70.0,
+            "value": 1e-70
+          },
+          "target_time": 11,
+          "tau": 24.745176814717507,
+          "validated_target_bound": {
+            "infinite": false,
+            "log10": -0.20315930340636199,
+            "value": 0.6263840588108119
+          }
+        }
+      ],
+      "terminal_support_lower": {
+        "infinite": false,
+        "log10": -9.808475978170694,
+        "value": 1.5542612581684546e-10
+      },
+      "threshold": 1e-08
+    }
+  ],
+  "status": "rh138_outward_finite_directional_composition_audit",
+  "theorem_boundary": {
+    "finite_directional_certificate_audited": false,
+    "hilbert_polya_operator": false,
+    "outward_normalized_base_lower": true,
+    "outward_two_residual_composition_theorem": true,
+    "reference_assembly_is_interval_source_model": false,
+    "riemann_hypothesis": false,
+    "uniform_positive_base_liminf": false,
+    "uniform_stage_A_closed": false
+  }
+}
