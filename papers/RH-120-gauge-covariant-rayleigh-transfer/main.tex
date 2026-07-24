@@ -1,0 +1,154 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,natbib,microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\title{Gauge-Covariant Rayleigh Transfer\\\large A Sharp Cross-Level Theorem for Directional Tail Gramians}
+\author{Prime Dynamics Theory Program}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The directional route of RH-114 isolates a positive Gramian $G$ for four
+recent directions and a positive tail upper $D$, with relative constant
+$\gamma^2=\lambda_{\max}(G^{-1/2}DG^{-1/2})$.  We prove the basic
+cross-level theorem needed to compare two such pairs.  If $S$ is invertible
+and
+\[
+ G'\succeq aS^*GS,\qquad D'\preceq bS^*DS,
+\]
+then $\gamma'\leq\sqrt{b/a}\,\gamma$.  In dimension four,
+$\sqrt{\det G'}\geq a^2|\det S|\sqrt{\det G}$.  Both conclusions are
+simultaneously sharp, and exact congruence leaves $\gamma$ invariant.  A
+4,096-instance audit has zero failures.  The result supplies exact transfer
+algebra; it does not prove that the physical scale sequence has uniform
+values of $a$, $b$, or $S$.
+\end{abstract}
+
+\section{Relative directional data}
+Let $G\succ0$ and $D\succeq0$ act on a four-dimensional frame coordinate
+space.  Define
+\begin{equation}\label{eq:gamma}
+ \gamma(G,D)^2=\lambda_{\max}(G^{-1/2}DG^{-1/2})
+ =\inf\{t^2:D\preceq t^2G\}.
+\end{equation}
+When $G=Y^*Y$ is the recent-action Gramian and $D\succeq R^*R$ is a tail
+upper, RH-114 gives the volume lower
+$(1-\gamma)_+^4\sqrt{\det G}$ for $Y+R$.  The unresolved issue is how this
+pair changes from one level to the next.  Coordinates themselves may rotate
+or shear, so a comparison that silently identifies two frames is not
+intrinsic.  We therefore include an invertible gauge $S$.
+
+\section{The transfer theorem}
+\begin{theorem}[Gauge-covariant Rayleigh transfer]\label{thm:transfer}
+Let $G,G'\succ0$, $D,D'\succeq0$, and let $S$ be invertible.  If $a>0$,
+$b\geq0$, and
+\begin{equation}\label{eq:loewner}
+ G'\succeq aS^*GS,\qquad D'\preceq bS^*DS,
+\end{equation}
+then
+\begin{equation}\label{eq:gammatransfer}
+ \gamma(G',D')\leq\sqrt{\frac ba}\,\gamma(G,D).
+\end{equation}
+\end{theorem}
+\begin{proof}
+By definition, $D\preceq\gamma(G,D)^2G$.  Congruence by $S$ and
+\eqref{eq:loewner} give
+\[
+ D'\preceq bS^*DS
+ \preceq b\gamma(G,D)^2S^*GS
+ \preceq\frac ba\gamma(G,D)^2G'.
+\]
+The variational characterization in \eqref{eq:gamma} proves the claim.
+\end{proof}
+
+The proof uses only Loewner order and congruence, so it remains valid over a
+complex Hilbert space with transposes replaced by adjoints
+\citep{Bhatia2007,HornJohnson1991}.
+
+\begin{corollary}[Four-volume transfer]\label{cor:volume}
+Under the first inequality in \eqref{eq:loewner}, in dimension four,
+\begin{equation}\label{eq:volume}
+ \sqrt{\det G'}\geq a^2|\det S|\sqrt{\det G}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Determinant is monotone on positive definite matrices.  Hence
+$\det G'\geq\det(aS^*GS)=a^4|\det S|^2\det G$.
+\end{proof}
+
+\begin{corollary}[Exact gauge invariance]
+If $G'=S^*GS$ and $D'=S^*DS$, then
+$\gamma(G',D')=\gamma(G,D)$ and
+$\sqrt{\det G'}=|\det S|\sqrt{\det G}$.
+\end{corollary}
+\begin{proof}
+Theorem~\ref{thm:transfer} gives one inequality.  Apply it again with
+$S^{-1}$ to obtain the reverse inequality.  The determinant identity is
+exact.
+\end{proof}
+
+\section{Sharpness and information content}
+Take any $G\succ0$, set $D=\gamma^2G$, and choose an invertible $S$.  For
+$a>0$ and $b\geq0$, put
+\[
+ G'=aS^*GS,\qquad D'=bS^*DS.
+\]
+Then
+\[
+ \gamma(G',D')=\sqrt{b/a}\,\gamma,
+ \qquad
+ \sqrt{\det G'}=a^2|\det S|\sqrt{\det G}.
+\]
+Thus neither factor can be improved from the two Loewner hypotheses alone.
+In particular, a good geometric alignment of $G$ is insufficient if the
+same gauge makes $D$ grow rapidly.  The meaningful next quantity is the
+smallest admissible $b$ among gauges that align the two recent Gramians.
+
+The theorem is deliberately one-sided.  It does not assert that a gauge is
+unique, well conditioned, or physically natural.  Those are separate
+questions.  It also shows exactly where a numerical enclosure must enter:
+one must certify the two matrix inequalities, not merely observe that their
+eigenvalues are close.
+
+\section{Computational audit}
+We generated 4,096 pairs of random positive definite $4\times4$ Gramians,
+random invertible gauges, gram factors over three decades, and tail factors
+over three decades.  Target Gramians were enlarged by independent PSD
+increments and target tails were contracted inside the allowed upper.  The
+audit directly evaluates both minimum Loewner slacks, both generalized
+Rayleigh constants, and both determinants.
+
+There are zero hypothesis, gamma, or volume failures.  A separate
+scalar-congruence record attains both bounds to relative error below
+$10^{-12}$.  Figure~\ref{fig:audit} displays the efficiency distributions;
+values below one represent legitimate slack introduced in the random target
+pair.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/gauge_covariant_rayleigh_transfer.pdf}
+\caption{Transferred versus actual relative-tail constants and four-volume
+lower bounds.  The independent sharp family attains equality in both.}
+\label{fig:audit}
+\end{figure}
+
+\section{Consequence for the route}
+RH-120 removes one algebraic ambiguity from the directional-Rayleigh
+frontier packet: cross-level transport is possible without identifying the
+two frame coordinates.  What remains is physical rather than formal.  One
+must choose gauges for the archived scale pairs, determine the least tail
+inflation compatible with exact Gram alignment, and then seek a uniform or
+recursive bound on those constants.  RH-121 addresses the optimal-gauge
+problem and audits the existing five-scale chain.
+
+No all-level physical gauge law, uniform Stage A, Hilbert--Polya operator,
+zeta-zero identification, or Riemann Hypothesis conclusion is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
