@@ -1,0 +1,215 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,natbib,microtype,array}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\title{Gap-Stable Spectral Packet Enclosures\\\large Projector Certification, Polar Frame Alignment, and a Sharp Crossing Wall}
+\author{Prime Dynamics Theory Program}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-140 converts validated source-state residuals into operator-norm balls for
+trace-normalized Gram snapshots.  We determine exactly when such a ball fixes
+a spectral packet.  Let $\widehat A$ be Hermitian, let $\widehat P$ project
+onto its top $r$ eigenvalues, let
+\[
+ g=\lambda_r(\widehat A)-\lambda_{r+1}(\widehat A),
+ \qquad \|A-\widehat A\|\leq\varepsilon.
+\]
+If $g>2\varepsilon$, then the top-$r$ projector $P$ of $A$ is uniquely
+separated and
+\[
+ \|P-\widehat P\|\leq\frac{\varepsilon}{g-\varepsilon}.
+\]
+After canonical polar alignment, orthonormal packet frames satisfy
+\[
+ \|U-\widehat UO\|
+ \leq\sqrt{2-2\sqrt{1-s^2}},
+ \qquad s=\|P-\widehat P\|.
+\]
+The threshold $g=2\varepsilon$ is sharp: at equality a two-dimensional
+example becomes degenerate, and beyond it the leading subspace may swap
+completely.  No basis inside a multiple cluster is intrinsically stable, so
+the result certifies projectors and polar-aligned frames, not ordered
+eigenvectors.
+
+The RH-140 universal balls certify four of ten rank-four anchor packets.
+The six failures occur at the three coarser scales and are rigorous gap walls
+for the available norm-ball information.  In contrast, replacing the
+universal radius by the quadratic exact-SVD diagnostic makes all ten pass;
+the smallest margin is only $1.0213$, at the coarsest right channel.  Thus
+the next interface problem is sharply localized: validate the quadratic
+snapshot cancellation, including its small backward-error defect, before
+attempting a thresholded packet chain.
+\end{abstract}
+
+\section{From a matrix ball to a packet}
+A small perturbation of a Hermitian matrix need not determine an eigenvector.
+Eigenvalues may cross, an eigenvalue may be multiple, and a numerical routine
+may rotate a basis arbitrarily inside a fixed invariant subspace.  The
+coordinate-free object is the spectral projector onto an isolated cluster.
+RH-140 supplies a ball $\|A-\widehat A\|\leq\varepsilon$; the missing datum is
+therefore the separation of the intended cluster.
+
+For the source compression considered here, $\widehat A$ has rank at most
+four.  Its top-four gap is the smallest retained normalized singular energy.
+This value can be extremely small at the coarser anchors even when total
+rank-four energy capture is excellent.  Energy capture and packet
+identifiability are consequently different assertions.
+
+\section{Approximate-gap enclosure}
+We state the finite-dimensional theorem for a top cluster; the same argument
+applies to any separated interval.
+
+\begin{theorem}[Gap-certified packet]\label{thm:packet}
+Let $A,\widehat A$ be Hermitian matrices with
+$\|A-\widehat A\|\leq\varepsilon$.  Let $\widehat P$ be the top-$r$
+spectral projector of $\widehat A$, and define
+$g=\lambda_r(\widehat A)-\lambda_{r+1}(\widehat A)$.  If
+$g>2\varepsilon$, then $A$ has a positive top-$r$ gap and its top-$r$
+projector $P$ obeys
+\[
+ \|P-\widehat P\|
+ =\|\sin\Theta(P,\widehat P)\|
+ \leq \frac{\varepsilon}{g-\varepsilon}<1.
+\]
+\end{theorem}
+
+\begin{proof}
+Weyl's inequality gives
+\[
+ \lambda_r(A)-\lambda_{r+1}(A)\geq g-2\varepsilon>0,
+\]
+so the exact top cluster is well defined.  Regard $\widehat P$ as an
+approximate invariant subspace for $A$.  Its residual is
+$(I-\widehat P)(A-\widehat A)\widehat P$ and has norm at most
+$\varepsilon$.  The selected approximate spectrum lies above
+$\lambda_r(\widehat A)$, whereas the exact unwanted spectrum lies below
+$\lambda_{r+1}(A)\leq\lambda_{r+1}(\widehat A)+\varepsilon$.
+Their separation is at least $g-\varepsilon$.  The residual form of the
+Davis--Kahan sine theorem now gives the displayed bound
+\citep{DavisKahan1970,StewartSun1990}.
+\end{proof}
+
+The estimate is outward: only the approximate gap and the norm radius are
+needed.  It is nontrivial exactly on the no-crossing side of the threshold.
+
+\section{Canonical frame alignment}
+Suppose $U$ and $\widehat U$ are orthonormal frames for $P$ and
+$\widehat P$.  Their columns are not canonical.  Let $O$ be the polar factor
+solving the orthogonal Procrustes alignment between the frames.
+
+\begin{proposition}[Polar-aligned frame ball]\label{prop:frame}
+If $s=\|P-\widehat P\|<1$, then
+\[
+ \min_{O^*O=I}\|U-\widehat UO\|
+ =2\sin\!\left(\frac{\theta_{\max}}2\right)
+ =\sqrt{2-2\sqrt{1-s^2}},
+\]
+where $\sin\theta_{\max}=s$.  The minimizing $O$ is the polar alignment.
+\end{proposition}
+
+\begin{proof}
+Choose principal frames.  The singular values of
+$\widehat U^*U$ are $\cos\theta_j$.  Polar alignment pairs the principal
+vectors, and each two-frame difference has singular value
+$2\sin(\theta_j/2)$.  Taking the maximum proves the formula.  Arbitrary
+rotations within either frame cannot improve the largest principal pair
+\citep{Bhatia1997}.
+\end{proof}
+
+This statement is the correct way to feed a packet into later frame-based
+calculations.  An enclosure for ordered eigenvectors would be false whenever
+the selected cluster contains a repeated eigenvalue, even though the packet
+projector itself can be perfectly stable.
+
+\section{The sharp two-radius wall}
+The condition in Theorem~\ref{thm:packet} cannot be weakened using only
+$g$ and $\varepsilon$.  Let
+\[
+ \widehat A=\begin{pmatrix}g/2&0\\0&-g/2\end{pmatrix},
+ \qquad
+ E=\begin{pmatrix}-\varepsilon&0\\0&\varepsilon\end{pmatrix}.
+\]
+At $\varepsilon=g/2$, the perturbed matrix is zero and its leading projector
+is not unique.  For $\varepsilon>g/2$, the leading coordinate swaps and the
+projector distance is one.  Thus a failed $g>2\varepsilon$ gate is not merely
+a weakness of Davis--Kahan: the same data permit complete packet loss.
+
+Additional structure can still cross the wall.  A correlated perturbation,
+an interval residual orthogonal to the selected singular spaces, or a direct
+resolvent enclosure may be much smaller than the ambient norm ball.  Such
+information must be supplied explicitly.
+
+\section{Anchor audit}
+For each RH-140 rank-one, rank-two, and rank-four compressed state, we form
+the approximate normalized snapshot and measure its retained-to-omitted gap.
+The certified radius is inherited unchanged from the 160-bit Arb state
+residual.  A 4,096-instance synthetic audit of stable random Hermitian
+perturbations has zero violations of Theorem~\ref{thm:packet}.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{cccc}
+\toprule
+packet rank & universal stable & universal walls & quadratic diagnostic stable\\
+\midrule
+one & $7/10$ & $3/10$ & $10/10$\\
+two & $7/10$ & $3/10$ & $10/10$\\
+four & $4/10$ & $6/10$ & $10/10$\\
+\bottomrule
+\end{tabular}
+\caption{Finite packet gates.  The last column is diagnostic, not interval
+validated.}
+\label{tab:gates}
+\end{table}
+
+For rank four, both channels at $\sigma=0.02$ and $0.01$ pass.  The maximum
+certified projector radius among these four is $0.3991$, and the corresponding
+polar-aligned frame radius is below $0.408$.  Both channels at
+$\sigma=0.16,0.08,0.04$ fail, sometimes by many orders of magnitude.  These
+are not declared approximately stable.
+
+The ideal exact-SVD radius from RH-140 is $q^2$ rather than $q$.  It crosses
+all ten rank-four gates.  The smallest gap ratio
+$g/(2q^2)=1.0213$ occurs for the coarsest right channel, so even that route
+has little spare room there.  A validated orthogonality defect larger than
+about two percent of the ideal budget could close the gate.  This narrow
+margin is useful negative information: it tells the next calculation exactly
+where outward rounding must be concentrated.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/gap_stable_spectral_packet.pdf}
+\caption{Rank-four gaps versus universal radii, universal and quadratic gap
+ratios, certified projector/frame balls, and the sharp crossing wall.}
+\label{fig:audit}
+\end{figure}
+
+\section{Consequence and claim boundary}
+RH-141 completes the abstract map
+\[
+ \text{snapshot ball}+\text{isolating gap}
+ \longrightarrow \text{projector ball}
+ \longrightarrow \text{polar-aligned frame ball}.
+\]
+It also shows that the present universal state-to-snapshot bound is not
+sufficient for six of the intended rank-four anchors.  The most economical
+next step is therefore not a larger thresholded simulation.  It is a direct
+Arb enclosure of the normalized Gram difference that preserves the
+orthogonal-SVD quadratic cancellation and quantifies the float SVD defect.
+
+We have not interval-validated that quadratic radius, certified all ten
+rank-four packets, enclosed any recursive threshold update, proved a uniform
+all-level gap, controlled the RH-139 viability tube or normalized-base
+liminf, established Stage A, constructed a Hilbert--Polya operator, identified
+zeta zeros, or proved the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
