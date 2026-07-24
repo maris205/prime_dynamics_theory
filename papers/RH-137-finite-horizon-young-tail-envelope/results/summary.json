@@ -1,0 +1,64 @@
+{
+  "audit": {
+    "actual_safe_chain_count": 28,
+    "actual_safe_transition_count": 328,
+    "chain_count": 30,
+    "dominance_failure_count": 0,
+    "first_birth_count": 24,
+    "greedy_safe_chain_count": 28,
+    "greedy_safe_transition_count": 328,
+    "long_run_blocked_and_finite_unsafe_count": 2,
+    "long_run_blocked_but_finite_safe_count": 31,
+    "long_run_blocked_recurrent_count": 33,
+    "maximum_bound_to_actual_ratio": 18.428895596067466,
+    "maximum_greedy_bound": 10.133532780260646,
+    "maximum_safe_greedy_bound": 0.6263840588108119,
+    "median_positive_greedy_bound": 1.2010325663531699e-14,
+    "metric_endpoint_safe_chain_count": 28,
+    "metric_endpoint_safe_transition_count": 328,
+    "minimum_positive_greedy_bound": 4.351591216257736e-25,
+    "polar_safe_chain_count": 21,
+    "polar_safe_transition_count": 318,
+    "recurrent_transition_count": 216,
+    "scale_count": 5,
+    "transition_count": 330,
+    "zero_target_count": 90
+  },
+  "program_boundary": {
+    "global_orthogonal_horizon_optimizer": false,
+    "greedy_horizon_optimality_within_finite_candidate_family": true,
+    "hilbert_polya_operator": false,
+    "pointwise_optimal_young_envelope": true,
+    "riemann_hypothesis": false,
+    "sharp_finite_safety_radius": true,
+    "uniform_infinite_horizon_safety": false,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "ab1455107cc80f018858bdfca6a58af456d6f4f13f549e1d646de05c00e0becf",
+    "THEOREM_LEDGER.md": "b003ccfb6807bebe42ccdcd972574017e6405b86c5b5a6e3a114ac22d18f87b1",
+    "UPDATED_ROADMAP.md": "c6c3c72ec6c661abe2cc6c2f0f4bc191561e3517b768171b2f7213f60522c49d",
+    "figures/finite_horizon_young_tail_envelope.pdf": "e826c7c4ecf2a4d38d5f9fb01ffae4810289375abdcf7f3ae784522ec0ebdaea",
+    "figures/finite_horizon_young_tail_envelope.png": "0575b212d9d414ad2a4dffa16cacc56469876bfedd4a30c7ed9cc35e841440ea",
+    "finite-horizon-young-tail-envelope.pdf": "76e12daa20bd897c7092aca3684a37366b08ae8479c772be59bb09645ac2fa40",
+    "main.pdf": "76e12daa20bd897c7092aca3684a37366b08ae8479c772be59bb09645ac2fa40",
+    "main.tex": "848b71ffcd789fd7fed13da4c349ce03b1b181e191e7b68967997e8dea31bb91",
+    "pyproject.toml": "e9ed9805282b40d69210d9379e7ce171a9914748fda87166475ce7e0b5b4d80a",
+    "references.bib": "bc16a02eb5e755bc2fcf83f3feb0cc87170460588a18821bd094afc76ed5d45c",
+    "requirements.txt": "ee0b3b059c46c177bd2fc41734441b41074392b6b173bbef4fd36a8c06d93531"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "28016b50d27b10a8f26f047fe6bec411368de64aa20280922cb1407d5652651d",
+    "results/finite_horizon_audit.json": "3932e0704672ccae0500a1dba6bc55e6dce05dc3ef5f356bd7720c448e68ab4e",
+    "results/finite_horizon_smoke.json": "2f23994bdf1aa90d409ce9179efcf3259c31766dbd07164fae9014e3290d36e7"
+  },
+  "route_consequence": "Long-run contractivity and finite-horizon viability are distinct. Pointwise Young optimization turns each candidate gauge into a monotone nonlinear envelope. Greedy propagation is horizon-optimal within the fixed finite gauge family and crosses 31 of the 33 recurrent steps that cannot support a contractive affine fixed point; the two remaining failures coincide with actual relative tails above one.",
+  "status": "rh137_finite_horizon_young_tail_envelope_archived",
+  "theorem": {
+    "finite_candidate_greedy_horizon_optimality": true,
+    "global_gauge_optimizer": false,
+    "pointwise_optimal_young_envelope": true,
+    "sharp_safety_radius": true
+  }
+}

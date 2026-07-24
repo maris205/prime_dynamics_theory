@@ -1,0 +1,1336 @@
+{
+  "audit_summary": {
+    "actual_safe_chain_count": 2,
+    "actual_safe_transition_count": 17,
+    "chain_count": 3,
+    "dominance_failure_count": 0,
+    "first_birth_count": 2,
+    "greedy_safe_chain_count": 2,
+    "greedy_safe_transition_count": 17,
+    "long_run_blocked_and_finite_unsafe_count": 1,
+    "long_run_blocked_but_finite_safe_count": 2,
+    "long_run_blocked_recurrent_count": 3,
+    "maximum_bound_to_actual_ratio": 6.434224345645424,
+    "maximum_greedy_bound": 10.133532780260646,
+    "maximum_safe_greedy_bound": 0.6263840588108119,
+    "median_positive_greedy_bound": 1.5029605759032426e-06,
+    "metric_endpoint_safe_chain_count": 2,
+    "metric_endpoint_safe_transition_count": 17,
+    "minimum_positive_greedy_bound": 1.5240158120908473e-15,
+    "polar_safe_chain_count": 1,
+    "polar_safe_transition_count": 15,
+    "recurrent_transition_count": 7,
+    "scale_count": 3,
+    "transition_count": 18,
+    "zero_target_count": 9
+  },
+  "blend_points": 17,
+  "precision_decimal_digits": 80,
+  "route_consequence": "Long-run contractivity and finite-horizon viability are distinct. Pointwise Young optimization turns each candidate gauge into a monotone nonlinear envelope. Greedy propagation is horizon-optimal within the fixed finite gauge family and crosses 31 of the 33 recurrent steps that cannot support a contractive affine fixed point; the two remaining failures coincide with actual relative tails above one.",
+  "rows": [
+    {
+      "actual_chain_safe": true,
+      "greedy_chain_safe": true,
+      "metric_endpoint_chain_safe": true,
+      "polar_chain_safe": true,
+      "side": "left",
+      "sigma": 0.16,
+      "steps": [
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "candidate_count": 1,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "dominates_actual": true,
+            "endpoint": null,
+            "frame_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "frame_defect": 0.12065091721202317,
+            "kind": "birth",
+            "metric_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "safe": true,
+            "safety_radius": null,
+            "tau": null,
+            "weight": 0.0
+          },
+          "long_run_orthogonal_contractivity_possible": true,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_safe": true,
+          "recurrent": false,
+          "source_time": 1,
+          "target_time": 2
+        },
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "candidate_count": 1,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "dominates_actual": true,
+            "endpoint": null,
+            "frame_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "frame_defect": 0.503607716036054,
+            "kind": "birth",
+            "metric_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "safe": true,
+            "safety_radius": null,
+            "tau": null,
+            "weight": 0.0
+          },
+          "long_run_orthogonal_contractivity_possible": true,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_safe": true,
+          "recurrent": false,
+          "source_time": 2,
+          "target_time": 3
+        },
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "candidate_count": 1,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "dominates_actual": true,
+            "endpoint": null,
+            "frame_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "frame_defect": 0.6420380047423401,
+            "kind": "birth",
+            "metric_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "safe": true,
+            "safety_radius": null,
+            "tau": null,
+            "weight": 0.0
+          },
+          "long_run_orthogonal_contractivity_possible": true,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_safe": true,
+          "recurrent": false,
+          "source_time": 3,
+          "target_time": 4
+        }
+      ],
+      "threshold": 1e-08
+    },
+    {
+      "actual_chain_safe": false,
+      "greedy_chain_safe": false,
+      "metric_endpoint_chain_safe": false,
+      "polar_chain_safe": false,
+      "side": "left",
+      "sigma": 0.08,
+      "steps": [
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "candidate_count": 1,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "dominates_actual": true,
+            "endpoint": null,
+            "frame_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "frame_defect": 0.948335290792849,
+            "kind": "birth",
+            "metric_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "safe": true,
+            "safety_radius": null,
+            "tau": null,
+            "weight": 0.0
+          },
+          "long_run_orthogonal_contractivity_possible": true,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_safe": true,
+          "recurrent": false,
+          "source_time": 1,
+          "target_time": 2
+        },
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "candidate_count": 1,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "dominates_actual": true,
+            "endpoint": null,
+            "frame_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "frame_defect": 1.3954573425952879,
+            "kind": "birth",
+            "metric_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "safe": true,
+            "safety_radius": null,
+            "tau": null,
+            "weight": 0.0
+          },
+          "long_run_orthogonal_contractivity_possible": true,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_safe": true,
+          "recurrent": false,
+          "source_time": 2,
+          "target_time": 3
+        },
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "candidate_count": 1,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "dominates_actual": true,
+            "endpoint": null,
+            "frame_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "frame_defect": 0.5373509290609152,
+            "kind": "birth",
+            "metric_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "safe": true,
+            "safety_radius": null,
+            "tau": null,
+            "weight": 0.0
+          },
+          "long_run_orthogonal_contractivity_possible": true,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_safe": true,
+          "recurrent": false,
+          "source_time": 3,
+          "target_time": 4
+        },
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": -5.328201002477224,
+            "value": 4.6967668003941155e-06
+          },
+          "candidate_count": 1,
+          "first_birth": true,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": -5.328201002477224,
+              "value": 4.6967668003941155e-06
+            },
+            "bound": {
+              "infinite": false,
+              "log10": -5.328201002477224,
+              "value": 4.6967668003941155e-06
+            },
+            "dominates_actual": true,
+            "endpoint": null,
+            "frame_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "frame_defect": 1.0687962030462204,
+            "kind": "birth",
+            "metric_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": -5.328201002477224,
+              "value": 4.6967668003941155e-06
+            },
+            "safe": true,
+            "safety_radius": null,
+            "tau": null,
+            "weight": 0.0
+          },
+          "long_run_orthogonal_contractivity_possible": true,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": -5.328201002477224,
+            "value": 4.6967668003941155e-06
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": -5.328201002477224,
+            "value": 4.6967668003941155e-06
+          },
+          "polar_safe": true,
+          "recurrent": false,
+          "source_time": 4,
+          "target_time": 5
+        },
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": -5.328201002477224,
+            "value": 4.6967668003941155e-06
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": 0.9748024667743381,
+            "value": 9.436315800490762
+          },
+          "candidate_count": 33,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": 0.9733998952172385,
+              "value": 9.405889994899066
+            },
+            "bound": {
+              "infinite": false,
+              "log10": 1.0057608767029942,
+              "value": 10.133532780260646
+            },
+            "dominates_actual": true,
+            "endpoint": 0,
+            "frame_base": {
+              "infinite": false,
+              "log10": -0.34858757112163447,
+              "value": 0.4481386782208302
+            },
+            "frame_defect": 1.1998924012669607,
+            "kind": "blend",
+            "metric_base": {
+              "infinite": false,
+              "log10": 3.8558905078040677,
+              "value": 7176.133473034758
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": 1.0057608767029942,
+              "value": 10.133532780260646
+            },
+            "safe": false,
+            "safety_radius": 0.0,
+            "tau": 3.646376104137678,
+            "weight": 1.0
+          },
+          "long_run_orthogonal_contractivity_possible": false,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": 1.0057608767029942,
+            "value": 10.133532780260646
+          },
+          "metric_endpoint_safe": false,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": 3.8558905078040677,
+            "value": 7176.133473034758
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": 2.2053577035755034,
+            "value": 160.45664363664494
+          },
+          "polar_safe": false,
+          "recurrent": true,
+          "source_time": 5,
+          "target_time": 6
+        }
+      ],
+      "threshold": 1e-08
+    },
+    {
+      "actual_chain_safe": true,
+      "greedy_chain_safe": true,
+      "metric_endpoint_chain_safe": true,
+      "polar_chain_safe": false,
+      "side": "left",
+      "sigma": 0.04,
+      "steps": [
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "candidate_count": 1,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "dominates_actual": true,
+            "endpoint": null,
+            "frame_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "frame_defect": 1.2149236260589251,
+            "kind": "birth",
+            "metric_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "safe": true,
+            "safety_radius": null,
+            "tau": null,
+            "weight": 0.0
+          },
+          "long_run_orthogonal_contractivity_possible": true,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_safe": true,
+          "recurrent": false,
+          "source_time": 1,
+          "target_time": 2
+        },
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "candidate_count": 1,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "dominates_actual": true,
+            "endpoint": null,
+            "frame_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "frame_defect": 1.3186581840853693,
+            "kind": "birth",
+            "metric_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "safe": true,
+            "safety_radius": null,
+            "tau": null,
+            "weight": 0.0
+          },
+          "long_run_orthogonal_contractivity_possible": true,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_safe": true,
+          "recurrent": false,
+          "source_time": 2,
+          "target_time": 3
+        },
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "candidate_count": 1,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "dominates_actual": true,
+            "endpoint": null,
+            "frame_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "frame_defect": 1.0437694824414765,
+            "kind": "birth",
+            "metric_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "safe": true,
+            "safety_radius": null,
+            "tau": null,
+            "weight": 0.0
+          },
+          "long_run_orthogonal_contractivity_possible": true,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_safe": true,
+          "recurrent": false,
+          "source_time": 3,
+          "target_time": 4
+        },
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": -14.81701052704617,
+            "value": 1.5240158120908473e-15
+          },
+          "candidate_count": 1,
+          "first_birth": true,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": -14.81701052704617,
+              "value": 1.5240158120908473e-15
+            },
+            "bound": {
+              "infinite": false,
+              "log10": -14.81701052704617,
+              "value": 1.5240158120908473e-15
+            },
+            "dominates_actual": true,
+            "endpoint": null,
+            "frame_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "frame_defect": 0.8862762351811593,
+            "kind": "birth",
+            "metric_base": {
+              "infinite": false,
+              "log10": null,
+              "value": 0.0
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": -14.81701052704617,
+              "value": 1.5240158120908473e-15
+            },
+            "safe": true,
+            "safety_radius": null,
+            "tau": null,
+            "weight": 0.0
+          },
+          "long_run_orthogonal_contractivity_possible": true,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": -14.81701052704617,
+            "value": 1.5240158120908473e-15
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": -14.81701052704617,
+            "value": 1.5240158120908473e-15
+          },
+          "polar_safe": true,
+          "recurrent": false,
+          "source_time": 4,
+          "target_time": 5
+        },
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": -14.81701052704617,
+            "value": 1.5240158120908473e-15
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": -12.646176399026631,
+            "value": 2.2585182330304408e-13
+          },
+          "candidate_count": 33,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": -12.64695612767411,
+              "value": 2.254466946367349e-13
+            },
+            "bound": {
+              "infinite": false,
+              "log10": -12.624427900285466,
+              "value": 2.374499594293242e-13
+            },
+            "dominates_actual": true,
+            "endpoint": 0,
+            "frame_base": {
+              "infinite": false,
+              "log10": -14.081613892038586,
+              "value": 8.286785700436003e-15
+            },
+            "frame_defect": 0.8878337193992358,
+            "kind": "blend",
+            "metric_base": {
+              "infinite": false,
+              "log10": -0.6473498214440668,
+              "value": 0.2252424167900216
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": -12.624427900285466,
+              "value": 2.374499594293242e-13
+            },
+            "safe": true,
+            "safety_radius": 4.439660309933752,
+            "tau": 4.913299386812353,
+            "weight": 1.0
+          },
+          "long_run_orthogonal_contractivity_possible": true,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": -12.624427900285466,
+            "value": 2.374499594293242e-13
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": -0.6473498214440668,
+            "value": 0.2252424167900216
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": -12.135437871303465,
+            "value": 7.320860454572737e-13
+          },
+          "polar_safe": true,
+          "recurrent": true,
+          "source_time": 5,
+          "target_time": 6
+        },
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": -12.646176399026631,
+            "value": 2.2585182330304408e-13
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": -10.927619530227782,
+            "value": 1.1813551251729504e-11
+          },
+          "candidate_count": 33,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": -10.929158184813005,
+              "value": 1.1771771275005289e-11
+            },
+            "bound": {
+              "infinite": false,
+              "log10": -10.798087509246903,
+              "value": 1.5918879333138737e-11
+            },
+            "dominates_actual": true,
+            "endpoint": 0,
+            "frame_base": {
+              "infinite": false,
+              "log10": -11.556814979888303,
+              "value": 2.7745018588147482e-12
+            },
+            "frame_defect": 1.522407222832624,
+            "kind": "blend",
+            "metric_base": {
+              "infinite": false,
+              "log10": -0.2373831788700614,
+              "value": 0.5789176908195035
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": -10.799105135146924,
+              "value": 1.5881622355794567e-11
+            },
+            "safe": true,
+            "safety_radius": 1.7273555195872952,
+            "tau": 4.492603070895828,
+            "weight": 1.0
+          },
+          "long_run_orthogonal_contractivity_possible": true,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": -10.798087509246903,
+            "value": 1.5918879333138737e-11
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": -0.2373831788700614,
+            "value": 0.5789176908195035
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": -8.25549223875368,
+            "value": 5.5527454030337875e-09
+          },
+          "polar_safe": true,
+          "recurrent": true,
+          "source_time": 6,
+          "target_time": 7
+        },
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": -10.927619530227782,
+            "value": 1.1813551251729504e-11
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": -8.712743708563858,
+            "value": 1.9375650473926217e-09
+          },
+          "candidate_count": 33,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": -8.716364490271411,
+              "value": 1.9214784130718858e-09
+            },
+            "bound": {
+              "infinite": false,
+              "log10": -8.547419625300902,
+              "value": 2.8351782902058924e-09
+            },
+            "dominates_actual": true,
+            "endpoint": 0,
+            "frame_base": {
+              "infinite": false,
+              "log10": -9.154268162326645,
+              "value": 7.010223069114035e-10
+            },
+            "frame_defect": 1.1376769159831435,
+            "kind": "blend",
+            "metric_base": {
+              "infinite": false,
+              "log10": -0.05370101768568486,
+              "value": 0.8836880503858521
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": -8.552216639009275,
+              "value": 2.804034553163711e-09
+            },
+            "safe": true,
+            "safety_radius": 1.1315611257742892,
+            "tau": 7.059276329147354,
+            "weight": 1.0
+          },
+          "long_run_orthogonal_contractivity_possible": true,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": -8.547419625300902,
+            "value": 2.8351782902058924e-09
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": -0.05370101768568503,
+            "value": 0.8836880503858517
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": -4.99896109455813,
+            "value": 1.002395031700672e-05
+          },
+          "polar_safe": true,
+          "recurrent": true,
+          "source_time": 7,
+          "target_time": 8
+        },
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": -8.712743708563858,
+            "value": 1.9375650473926217e-09
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": -5.668660912621902,
+            "value": 2.1445643753140652e-06
+          },
+          "candidate_count": 33,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": -5.672997049813789,
+              "value": 2.123258885365172e-06
+            },
+            "bound": {
+              "infinite": false,
+              "log10": -5.5224322344712675,
+              "value": 3.0030859735162792e-06
+            },
+            "dominates_actual": true,
+            "endpoint": 0,
+            "frame_base": {
+              "infinite": false,
+              "log10": -6.117389679696897,
+              "value": 7.631507235272777e-07
+            },
+            "frame_defect": 1.3714723447413049,
+            "kind": "blend",
+            "metric_base": {
+              "infinite": false,
+              "log10": 0.16527230141837673,
+              "value": 1.4630942429012643
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": -5.525453127505272,
+              "value": 2.9822694006532498e-06
+            },
+            "safe": true,
+            "safety_radius": 0.6822878817430374,
+            "tau": 13.563720192617742,
+            "weight": 1.0
+          },
+          "long_run_orthogonal_contractivity_possible": false,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": -5.5224322344712675,
+            "value": 3.0030859735162792e-06
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": 0.16527230141837665,
+            "value": 1.463094242901264
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": -0.2238187568401548,
+            "value": 0.5972844980031645
+          },
+          "polar_safe": true,
+          "recurrent": true,
+          "source_time": 8,
+          "target_time": 9
+        },
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": -5.668660912621902,
+            "value": 2.1445643753140652e-06
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": -5.019065895079742,
+            "value": 9.57048848186057e-06
+          },
+          "candidate_count": 33,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": -5.022697249931434,
+              "value": 9.490798437043138e-06
+            },
+            "bound": {
+              "infinite": false,
+              "log10": -4.659654813005384,
+              "value": 2.189501197189934e-05
+            },
+            "dominates_actual": true,
+            "endpoint": 0,
+            "frame_base": {
+              "infinite": false,
+              "log10": -5.078978135283486,
+              "value": 8.337231576641584e-06
+            },
+            "frame_defect": 0.7973649432041636,
+            "kind": "blend",
+            "metric_base": {
+              "infinite": false,
+              "log10": -0.8726564086659848,
+              "value": 0.1340736989710881
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": -4.673415526919997,
+              "value": 2.1212139427708334e-05
+            },
+            "safe": true,
+            "safety_radius": 7.415503775475612,
+            "tau": 4.550459505386158,
+            "weight": 1.0
+          },
+          "long_run_orthogonal_contractivity_possible": true,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": -4.659654813005384,
+            "value": 2.189501197189934e-05
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": -0.8726564086659848,
+            "value": 0.1340736989710881
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": 4.159142274000993,
+            "value": 14425.878630135488
+          },
+          "polar_safe": false,
+          "recurrent": true,
+          "source_time": 9,
+          "target_time": 10
+        },
+        {
+          "actual_source": {
+            "infinite": false,
+            "log10": -5.019065895079742,
+            "value": 9.57048848186057e-06
+          },
+          "actual_target": {
+            "infinite": false,
+            "log10": -1.0116555030213055,
+            "value": 0.09735191456834083
+          },
+          "candidate_count": 33,
+          "first_birth": false,
+          "greedy": {
+            "birth": {
+              "infinite": false,
+              "log10": -1.0148706537821548,
+              "value": 0.09663386414234117
+            },
+            "bound": {
+              "infinite": false,
+              "log10": -0.20315930340636199,
+              "value": 0.6263840588108119
+            },
+            "dominates_actual": true,
+            "endpoint": 0,
+            "frame_base": {
+              "infinite": false,
+              "log10": -0.31033950998473,
+              "value": 0.4893960840892255
+            },
+            "frame_defect": 1.4131048262491306,
+            "kind": "blend",
+            "metric_base": {
+              "infinite": false,
+              "log10": 1.5623341802699058,
+              "value": 36.50347252610166
+            },
+            "oracle_bound": {
+              "infinite": false,
+              "log10": -0.2128721604805648,
+              "value": 0.612530670558332
+            },
+            "safe": true,
+            "safety_radius": 0.0017243404378350258,
+            "tau": 24.74517681471751,
+            "weight": 1.0
+          },
+          "long_run_orthogonal_contractivity_possible": false,
+          "metric_endpoint_bound": {
+            "infinite": false,
+            "log10": -0.20315930340636199,
+            "value": 0.6263840588108119
+          },
+          "metric_endpoint_safe": true,
+          "minimum_metric_base": {
+            "infinite": false,
+            "log10": 1.5623341802699058,
+            "value": 36.50347252610166
+          },
+          "polar_bound": {
+            "infinite": false,
+            "log10": 10.927050926961082,
+            "value": 84537797146.4434
+          },
+          "polar_safe": false,
+          "recurrent": true,
+          "source_time": 10,
+          "target_time": 11
+        }
+      ],
+      "threshold": 1e-08
+    }
+  ],
+  "status": "rh137_finite_horizon_young_tail_envelope_audit",
+  "theorem_boundary": {
+    "global_orthogonal_horizon_optimizer": false,
+    "greedy_horizon_optimality_within_finite_candidate_family": true,
+    "hilbert_polya_operator": false,
+    "pointwise_optimal_young_envelope": true,
+    "riemann_hypothesis": false,
+    "sharp_finite_safety_radius": true,
+    "uniform_infinite_horizon_safety": false,
+    "uniform_stage_A_closed": false
+  }
+}
