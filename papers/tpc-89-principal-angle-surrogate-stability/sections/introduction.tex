@@ -1,0 +1,117 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The TPC-32 matched shell reduces one high-row fixed-shift problem to
+the distinguished zero-frequency concentration of a literal
+post-bin coefficient \(A_X\) \citep{WangTPC32}.  Writing
+\[
+ Z_X=\sum_nA_X(n),\qquad
+ D_X=\sum_n|A_X(n)|^2,
+\]
+the statistic is
+\[
+ \Flat_X=\frac{|Z_X|^2}{D_X}.
+\]
+TPC-81 and TPC-82 separate the two arithmetic obligations behind
+this quotient: determinant energy must survive, and the signed zero
+mode must cancel \citep{WangTPC81,WangTPC82}.  TPC-88 then factors
+the same statistic into post-bin magnitude spreading and relative
+\(\ell^1\) phase cancellation \citep{WangTPC88}.
+
+The present paper asks a different, operational question:
+
+\begin{quote}
+If the literal coefficient is replaced by an analytically or
+numerically tractable surrogate, how accurately must that surrogate
+approximate the coefficient before its zero-mode geometry transfers?
+\end{quote}
+
+There is a canonical Hilbert-space formulation.  On the actual
+support \(\Omega\), let
+\[
+ e=\frac{\one}{\sqrt{\#\Omega}}.
+\]
+For a nonzero coefficient \(a\), define
+\[
+ \rho(a)=\frac{|\langle a,e\rangle|}{\|a\|_2}.
+\]
+This is the cosine of the projective angle from \(a\) to the constant
+line.  Since
+\[
+ \langle a,e\rangle=\frac{1}{\sqrt{\#\Omega}}\sum_{\omega\in\Omega}
+ a_\omega,
+\]
+one has the exact identity
+\[
+ \Flat(a)=\#\Omega\,\rho(a)^2.
+\]
+Thus the zero-frequency gate is a principal-angle gate.
+
+The principal angle is especially well suited to surrogate
+analysis because it is invariant under nonzero scalar
+renormalization.  More importantly, its perturbation law is exact.
+If \(a\) lies in the relative ball
+\[
+ \|a-b\|_2\le\delta\|b\|_2,\qquad \delta<1,
+\]
+then the projective angle between \(a\) and \(b\) is at most
+\(\arcsin\delta\).  This yields sharp upper and lower envelopes for
+\(\rho(a)\), and in particular
+\[
+ |\rho(a)-\rho(b)|\le\delta.
+\]
+The constant is best possible.
+
+This elementary fact has a nontrivial consequence for the TPC
+program.  The critical zero-mode scale is \(1/J_X\), not merely a
+quantity tending to zero.  Therefore a surrogate with relative
+\(\ell^2\) error \(o(1)\) may preserve its energy scale while
+completely failing to preserve the required zero-mode scale.
+Uniform transfer requires \(O(1/J_X)\) accuracy.  A two-dimensional
+tangent construction shows that this order cannot be improved.
+
+\subsection{Main contributions}
+
+The paper establishes the following.
+\begin{enumerate}[label=(\roman*),leftmargin=2.3em]
+\item It identifies determinant flatness with the squared
+principal-angle cosine on the prescribed actual support:
+\[
+ D=\frac{|Z|^2}{S}+D_\perp,\qquad
+ \Flat=S\rho^2.
+\]
+\item It gives the sharp two-sided perturbation envelope for
+\(\rho\) under relative \(\ell^2\) error, including all boundary
+cases and equality constructions.
+\item It audits the simpler quotient estimate
+\[
+ \rho(a)\le\frac{\rho(b)+\delta}{1-\delta}
+\]
+and shows that the exact projective result is stronger.
+\item It proves sharp transfer inequalities for determinant
+flatness, coherent energy, orthogonal energy, and the zero mode.
+\item It proves that \(O(1/J)\) relative accuracy is the correct
+uniform threshold for transferring \(\rho\ll1/J\), whereas \(o(1)\)
+is not enough.
+\item It shows that preserving a two-sided
+\(\rho\asymp1/J\) statement needs a constant margin; an error of the
+same size as the lower signal can erase that signal exactly.
+\item It gives a literal same-support \(\Lone\) certificate for the
+fixed-\(h_0\) TPC-32 coefficient.
+\item It isolates zero padding as a normalization trap:
+\(\rho\) changes under padding although \(\Flat\) does not.
+\item It keeps the determinant-energy and physical-loss ledgers
+independent.
+\end{enumerate}
+
+\subsection{Audit levels}
+
+We use the established terminology.  An \(\Lzero\) result is finite
+Hilbert-space algebra or an abstract finite counterexample.  An
+\(\Lone\) result places that algebra on the literal fixed-\(h_0\)
+coefficient with its actual bins and original normalization.  An
+\(\Ltwo\) result is a new growing-\(X\) arithmetic estimate for that
+coefficient.  All angle and perturbation theorems below are
+\(\Lzero\).  The same-frame implication for \(A_X\) is \(\Lone\).
+No surrogate satisfying its hypotheses is constructed, and no
+\(\Ltwo\) estimate is claimed.

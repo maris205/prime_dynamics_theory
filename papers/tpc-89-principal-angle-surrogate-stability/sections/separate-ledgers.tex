@@ -1,0 +1,172 @@
+\section{Separate determinant and physical ledgers}
+\label{sec:separate-ledgers}
+
+The same exponent \(1/400\) appears in several interfaces, but the
+corresponding quantities are not interchangeable.  This section
+records the ledgers explicitly.
+
+\subsection{Determinant-energy and zero-mode ledger}
+
+On a conditional natural-support branch, write
+\begin{equation}
+ S_X=X^{o(1)}Q_X,
+\label{eq:ledger-support}
+\end{equation}
+and suppose the literal coefficient satisfies
+\begin{align}
+ |Z_X|
+ &\le
+ X^{-\eta_Z+o(1)}Q_X^2,
+\label{eq:ledger-Z}\\
+ D_X
+ &\ge
+ X^{-\lambda_D+o(1)}Q_X^3J_X^2.
+\label{eq:ledger-D}
+\end{align}
+These are hypotheses, not results of the present paper.
+
+\begin{proposition}[Principal-angle exponent dictionary]
+\label{prop:angle-exponent-dictionary}
+Under
+\eqref{eq:ledger-support}--\eqref{eq:ledger-D},
+\begin{equation}
+ \rho_X
+ \le
+ \frac{
+ X^{\lambda_D/2-\eta_Z+o(1)}
+ }{J_X}.
+\label{eq:angle-exponent-dictionary}
+\end{equation}
+Consequently, the recorded bounds certify the critical angle scale
+\(\rho_X\le X^{o(1)}/J_X\) whenever
+\begin{equation}
+ \boxed{\lambda_D\le2\eta_Z.}
+\label{eq:determinant-ledger}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:ledger-support}--\eqref{eq:ledger-D} into
+\[
+ \rho_X=\frac{|Z_X|}{\sqrt{S_XD_X}}.
+\]
+The denominator has scale
+\[
+ \sqrt{S_XD_X}
+ \ge
+ X^{-\lambda_D/2-o(1)}Q_X^2J_X.
+\]
+This proves \eqref{eq:angle-exponent-dictionary}.  The exponent of
+\(X\) outside \(J_X^{-1}\) is nonpositive precisely under
+\eqref{eq:determinant-ledger}.
+\end{proof}
+
+\begin{remark}[A sufficient recorded-bounds condition]
+The condition \(\lambda_D\le2\eta_Z\) is the TPC-81/TPC-82
+compatibility ledger for these particular recorded bounds
+\citep{WangTPC81,WangTPC82}.  It is not claimed to be necessary for
+the physical packet if either estimate is nonoptimal.
+\end{remark}
+
+\subsection{Surrogate-accuracy ledger}
+
+The surrogate parameter
+\[
+ \delta_X=\frac{\|a_X-b_X\|_2}{\|b_X\|_2}
+\]
+has two distinct jobs:
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item \(\delta_X=o(1)\) transfers the determinant-energy scale by
+\eqref{eq:energy-transfer};
+\item \(\delta_X\le X^{o(1)}/J_X\) transfers the critical
+principal-angle scale by
+\eqref{eq:literal-rho-stability}.
+\end{enumerate}
+The second is strictly stronger.  Neither hypothesis is presently
+verified for a literal TPC-32 surrogate.
+
+\subsection{Physical-loss ledger}
+
+The complete physical reduction has its own fixed-power loss
+\(\Lambda_{\rm phys}\).  The inherited endpoint rule is
+\begin{equation}
+ \boxed{\Lambda_{\rm phys}<\frac1{400}.}
+\label{eq:physical-loss-ledger}
+\end{equation}
+Equality or excess is a stop condition.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash}p{0.22\textwidth}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{0.23\textwidth}@{}}
+\toprule
+Ledger & Certified comparison & Status here\\
+\midrule
+Determinant angle
+&
+\(\lambda_D\le2\eta_Z\) transfers the recorded \(Z_X,D_X\)
+bounds to \(\rho_X\le X^{o(1)}/J_X\)
+&
+Conditional \(\Lone\); no \(Z_X\) or \(D_X\) estimate proved
+\\
+\addlinespace
+Surrogate stability
+&
+\(\rho(b_X),\delta_X\le X^{o(1)}/J_X\) transfers the angle and
+flatness target
+&
+Exact \(\Lone\) implication; no surrogate constructed
+\\
+\addlinespace
+Physical reassembly
+&
+\(\Lambda_{\rm phys}<1/400\)
+&
+Independent inherited stop rule
+\\
+\bottomrule
+\end{tabularx}
+\caption{The three comparisons have different inputs and cannot be
+merged without an explicit crosswalk.}
+\label{tab:separate-ledgers}
+\end{table}
+
+\begin{proposition}[No automatic ledger conversion]
+\label{prop:no-ledger-conversion}
+The identities and perturbation inequalities of this paper do not
+imply any of the following conversions:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item a determinant-energy loss \(\lambda_D\) is a physical
+reassembly loss;
+\item the approximation exponent in \(\delta_X\) is a saving in
+\(\eta_Z\);
+\item a numerical surrogate error may be subtracted from
+\(\Lambda_{\rm phys}\);
+\item the inequalities
+\eqref{eq:determinant-ledger} and
+\eqref{eq:physical-loss-ledger} may be added into one budget.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The determinant ledger compares the literal post-bin zero mode with
+literal post-bin energy.  The surrogate ledger compares two vectors
+on that same coefficient space.  The physical ledger records losses
+in the upstream and downstream arithmetic reassembly.  No theorem
+above identifies any pair of these quantities.  Therefore no
+conversion follows.
+\end{proof}
+
+\begin{remark}[What a valid crosswalk would require]
+To enter a surrogate construction into the physical ledger, one
+would need a literal theorem that tracks its approximation error
+through every mask, determinant bin, polarization, and outer
+normalization.  To enter determinant-energy loss into the physical
+ledger, one would need a theorem expressing that loss as an
+independent consumption of the final saving.  Until such statements
+are proved, the ledgers remain separate and double counting is
+forbidden.
+\end{remark}

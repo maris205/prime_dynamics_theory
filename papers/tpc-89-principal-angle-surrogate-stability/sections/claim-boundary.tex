@@ -1,0 +1,128 @@
+\section{Claim boundary and next gate}
+\label{sec:claim-boundary}
+
+\begin{theorem}[Audited conclusion]
+\label{thm:audited-conclusion}
+Let \(a\ne0\) be a finite complex coefficient on its prescribed
+support of size \(S\).  Then
+\[
+ D(a)=\frac{|Z(a)|^2}{S}+D_\perp(a),\qquad
+ \Flat(a)=S\rho(a)^2.
+\]
+If \(a\) is approximated by \(b\ne0\) with
+\[
+ \|a-b\|_2\le\delta\|b\|_2,\qquad\delta<1,
+\]
+then the sharp envelope
+\[
+ L(\rho(b),\delta)\le\rho(a)\le
+ U(\rho(b),\delta)
+\]
+holds, and in particular
+\[
+ |\rho(a)-\rho(b)|\le\delta.
+\]
+The constant is optimal.  Consequently,
+\[
+ \rho(b_J)=O(J^{-1}),\quad
+ \delta_J=O(J^{-1})
+\quad\Longrightarrow\quad
+ \rho(a_J)=O(J^{-1}),
+\]
+and this order of relative accuracy is uniformly sharp.
+
+For the literal fixed-\(h_0\) TPC-32 coefficient on its actual
+support, the conditional same-frame hypotheses
+\[
+ \rho(b_X),\delta_X
+ \le\frac{X^{o(1)}}{J_X}
+\]
+certify
+\[
+ \Flat_X\le X^{1/400+o(1)}.
+\]
+\end{theorem}
+
+\begin{proof}
+Combine
+\cref{thm:orthogonal-decomposition,thm:sharp-envelope,cor:optimal-additive-stability,thm:sharp-accuracy-barrier,thm:literal-surrogate-certificate}.
+\end{proof}
+
+\paragraph{What is proved.}
+The orthogonal decomposition, exact angle envelope, equality
+constructions, padding law, \(J^{-1}\) accuracy barrier, and finite
+countermodels are unconditional \(\Lzero\) results.  Their placement
+on the actual fixed-\(h_0\) determinant support is an exact
+\(\Lone\) stability certificate.
+
+\paragraph{What is not proved.}
+No same-frame surrogate for \(A_X\) is constructed.  No bound
+\(\delta_X\le X^{o(1)}/J_X\) is proved.  No determinant-energy lower
+bound, distinguished zero-mode estimate, growing fixed-shift
+M{\"o}bius-correlation estimate, or full-block remainder estimate is
+proved.  Thus there is no new \(\Ltwo\) arithmetic theorem.
+
+\paragraph{Support rule.}
+The angle must be computed on the actual post-bin support of the
+literal coefficient.  Zero padding changes \(\rho\).  A surrogate
+with a different grid or support is covered only after an exact map
+places it on the literal bins.  Otherwise a separate union-frame
+theorem is required and the present certificate does not apply.
+
+\paragraph{Degenerate branches.}
+If \(A_X=0\), one may set \(\Flat_X=0\) by convention, but
+\(\rho_X\) is left undefined and no division by \(D_X\) is made.
+This branch does not certify determinant-energy survival.  If
+\(A_X\ne0\) and \(S_X=1\), then
+\(\rho_X=\Flat_X=1\); the flatness upper target is numerically
+automatic for large \(X\), while the nontrivial two-dimensional
+sharpness constructions are inapplicable.
+
+\paragraph{Accuracy rule.}
+Relative error \(o(1)\) is sufficient to transfer a nonzero
+determinant-energy scale, but not a \(J^{-1}\) principal-angle
+scale.  For a one-sided upper target, \(O(J^{-1})\) is the sharp
+uniform order.  For a two-sided \(\asymp J^{-1}\) statement, the
+error constant must also remain strictly below the lower signal
+constant.
+
+\paragraph{Ledger rule.}
+The determinant compatibility condition
+\[
+ \lambda_D\le2\eta_Z
+\]
+and the physical stop rule
+\[
+ \Lambda_{\rm phys}<1/400
+\]
+belong to different ledgers.  The surrogate error belongs to a
+third stability interface.  None may be added to, subtracted from,
+or substituted for another without a proved literal crosswalk.
+
+\paragraph{Arithmetic claim boundary.}
+Nothing here specializes the prescribed nonzero \(h_0\) to \(2\),
+breaches the sieve parity barrier, proves a fixed-shift
+Hardy--Littlewood asymptotic, gives a prime-pair lower bound, or
+proves the twin-prime conjecture.  The critical-angle certificate
+only states what an eventual surrogate theorem would have to
+resolve.
+
+\paragraph{Next gate.}
+The most direct positive continuation is to construct a literal
+same-frame surrogate \(b_X\) for which both
+\[
+ \rho(b_X)\le\frac{X^{o(1)}}{J_X}
+\quad\text{and}\quad
+ \|A_X-b_X\|_2
+ \le\frac{X^{o(1)}}{J_X}\|b_X\|_2
+\]
+can be proved.  If only \(\delta_X=o(1)\) is accessible, a different
+route must establish additional signed orthogonality of the error,
+for example a direct improvement of
+\[
+ |Z(A_X-b_X)|
+ \le\sqrt{S_X}\|A_X-b_X\|_2.
+\]
+Failure of both routes would itself identify a precise
+nonidentifiability barrier, rather than evidence for a prime-pair
+claim.

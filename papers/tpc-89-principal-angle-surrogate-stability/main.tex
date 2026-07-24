@@ -1,0 +1,81 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,enumitem,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Principal-Angle Stability of Determinant Flatness: Sharp Surrogate Transfer and the Critical Inverse-J Accuracy Barrier},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Flat}{\mathfrak F}
+\newcommand{\canc}{\mathfrak c}
+\newcommand{\Seff}{S_{\mathrm{eff}}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\dist}{\operatorname{dist}}
+
+\title{\textbf{Principal-Angle Stability of Determinant Flatness:}\\
+Sharp Surrogate Transfer and the Critical \(J^{-1}\)
+Accuracy Barrier}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\noindent\textbf{Keywords:}
+principal angle; determinant flatness; zero mode; surrogate
+approximation; relative \(\ell^2\) error; fixed shift; stability
+threshold.
+
+\medskip
+\noindent\textbf{Literal-frame convention.}
+Every physical statement concerns one prescribed nonzero shift
+\(h_0\), the already aggregated TPC-32 determinant coefficient, its
+actual post-bin support, and its original global normalization.
+Surrogates are compared only after they have been placed on that
+same literal support.  No statement is specialized to \(h_0=2\).
+
+\input{sections/introduction}
+\input{sections/principal-angle-geometry}
+\input{sections/sharp-perturbation}
+\input{sections/critical-surrogate-threshold}
+\input{sections/literal-crosswalk}
+\input{sections/separate-ledgers}
+\input{sections/claim-boundary}
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

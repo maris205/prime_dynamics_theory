@@ -1,0 +1,200 @@
+\section{Exact principal-angle geometry}
+\label{sec:principal-angle-geometry}
+
+Let \(\Omega\) be a nonempty finite set, put \(S=\#\Omega\), and
+equip \(\C^\Omega\) with the inner product
+\[
+ \langle x,y\rangle
+ =\sum_{\omega\in\Omega}x_\omega\overline{y_\omega},
+\]
+linear in the first variable.  Let
+\[
+ e=\frac{\one}{\sqrt S},\qquad
+ P_0x=\langle x,e\rangle e,\qquad
+ P_\perp=I-P_0.
+\]
+The line \(\C e\) is the constant mode on the prescribed frame.
+
+\begin{definition}[Literal finite statistics]
+\label{def:literal-finite-statistics}
+For \(a\in\C^\Omega\), define
+\[
+ Z(a)=\sum_{\omega\in\Omega}a_\omega,\qquad
+ D(a)=\|a\|_2^2,\qquad
+ D_\perp(a)=\|P_\perp a\|_2^2.
+\]
+For \(a\ne0\), define
+\begin{equation}
+ \rho(a)
+ =\frac{|Z(a)|}{\sqrt{S D(a)}}
+ =\frac{|\langle a,e\rangle|}{\|a\|_2},
+\qquad
+ \Flat(a)=\frac{|Z(a)|^2}{D(a)}.
+\label{eq:rho-flat-def}
+\end{equation}
+The zero vector is treated as a separate branch; no quotient by
+\(D(0)\) is used.
+\end{definition}
+
+\begin{theorem}[Orthogonal zero-mode decomposition]
+\label{thm:orthogonal-decomposition}
+For every \(a\in\C^\Omega\),
+\begin{equation}
+ a=\frac{Z(a)}{S}\one+P_\perp a
+\label{eq:vector-decomposition}
+\end{equation}
+and
+\begin{equation}
+ \boxed{
+ D(a)=\frac{|Z(a)|^2}{S}+D_\perp(a).}
+\label{eq:energy-decomposition}
+\end{equation}
+If \(a\ne0\), then
+\begin{equation}
+ \boxed{
+ \rho(a)^2
+ =\frac{|Z(a)|^2/S}{D(a)}
+ =1-\frac{D_\perp(a)}{D(a)},
+ \qquad
+ \Flat(a)=S\rho(a)^2.}
+\label{eq:principal-flatness}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Since
+\[
+ \langle a,e\rangle=\frac{Z(a)}{\sqrt S},
+\]
+one has
+\[
+ P_0a=\frac{Z(a)}{\sqrt S}\frac{\one}{\sqrt S}
+ =\frac{Z(a)}{S}\one.
+\]
+The decomposition \eqref{eq:vector-decomposition} is orthogonal.
+Pythagoras gives \eqref{eq:energy-decomposition}, and division by
+\(D(a)>0\) gives \eqref{eq:principal-flatness}.
+\end{proof}
+
+\begin{corollary}[Equality cases]
+\label{cor:principal-equality-cases}
+For every nonzero \(a\),
+\[
+ 0\le\rho(a)\le1,\qquad 0\le\Flat(a)\le S.
+\]
+Moreover,
+\[
+ \rho(a)=0
+ \Longleftrightarrow Z(a)=0,
+\]
+and
+\[
+ \rho(a)=1
+ \Longleftrightarrow
+ a\in\C\one\setminus\{0\}.
+\]
+\end{corollary}
+
+\begin{proof}
+These statements follow from
+\eqref{eq:principal-flatness}.  The equality \(\rho(a)=1\) is
+equivalent to \(P_\perp a=0\).
+\end{proof}
+
+\begin{remark}[Scale and phase invariance]
+\label{rem:scale-phase-invariance}
+For every \(c\in\C\setminus\{0\}\),
+\[
+ \rho(ca)=\rho(a),\qquad
+ \Flat(ca)=\Flat(a).
+\]
+Thus \(\rho\) is naturally a function on complex projective space,
+not on a chosen normalization of the coefficient.
+\end{remark}
+
+\subsection{Relation to the two-level factorization}
+
+For comparison with TPC-88, define, for \(a\ne0\),
+\[
+ M(a)=\|a\|_1,\qquad
+ \canc(a)=\frac{|Z(a)|}{M(a)},\qquad
+ \Seff(a)=\frac{M(a)^2}{D(a)}.
+\]
+
+\begin{proposition}[Exact dictionary]
+\label{prop:tpc88-dictionary}
+For every nonzero \(a\in\C^\Omega\),
+\begin{equation}
+ \boxed{
+ \rho(a)
+ =\canc(a)\sqrt{\frac{\Seff(a)}{S}},
+ \qquad
+ \Flat(a)
+ =\canc(a)^2\Seff(a)
+ =S\rho(a)^2.}
+\label{eq:tpc88-dictionary}
+\end{equation}
+In particular, \(\rho(a)\le\canc(a)\).
+\end{proposition}
+
+\begin{proof}
+The first identity follows by inserting
+\(M(a)/\sqrt{D(a)}=\sqrt{\Seff(a)}\) into
+\eqref{eq:rho-flat-def}.  The remaining identities follow by
+squaring.  Since \(\Seff(a)\le S\) by Cauchy--Schwarz,
+\(\rho(a)\le\canc(a)\).
+\end{proof}
+
+\begin{remark}[Different normalization questions]
+The coefficient \(\canc\) measures signed cancellation relative to
+the actual post-bin \(\ell^1\) mass.  The coefficient \(\rho\)
+measures the angle to the constant line relative to \(\ell^2\)
+energy and actual support.  They are equivalent up to subpower
+factors only when \(\Seff/S=X^{o(1)}\); they should not be
+interchanged without that input.
+\end{remark}
+
+\subsection{The prescribed-frame rule}
+
+\begin{proposition}[Zero-padding law]
+\label{prop:zero-padding}
+Let \(a\in\C^\Omega\setminus\{0\}\), and extend \(a\) by zero to a
+larger frame \(\widetilde\Omega\supset\Omega\) of size
+\(\widetilde S=S+K\).  Denote the padded vector by
+\(\widetilde a\).  Then
+\begin{equation}
+ Z(\widetilde a)=Z(a),\qquad
+ D(\widetilde a)=D(a),\qquad
+ \Flat(\widetilde a)=\Flat(a),
+\label{eq:padding-invariants}
+\end{equation}
+but
+\begin{equation}
+ \boxed{
+ \rho_{\widetilde\Omega}(\widetilde a)
+ =\sqrt{\frac{S}{S+K}}\,
+ \rho_\Omega(a).}
+\label{eq:padding-rho}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Padding changes neither the sum nor the squared norm, proving
+\eqref{eq:padding-invariants}.  Apply
+\(\Flat=S\rho^2\) on the two frames to obtain
+\eqref{eq:padding-rho}.
+\end{proof}
+
+\begin{remark}[Why actual support is mandatory]
+\label{rem:actual-support-mandatory}
+Arbitrary padding can make \(\rho\) as small as desired without
+changing the physical coefficient or its flatness.  Therefore a
+claim such as \(\rho\ll1/J\) has content only after the frame has
+been prescribed.  Throughout the physical crosswalk, that frame is
+the actual support of the literal determinant coefficient.  The
+present theorem applies to an external-grid surrogate only after an
+exact identification has produced a vector on this literal frame.
+External coordinates must otherwise be handled by a separately
+stated union-frame theorem; no such cross-frame transfer is claimed
+here.
+\end{remark}

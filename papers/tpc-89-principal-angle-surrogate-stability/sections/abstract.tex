@@ -1,0 +1,73 @@
+\begin{abstract}
+Let \(a=(a_\omega)_{\omega\in\Omega}\ne0\) be a complex coefficient
+on its prescribed finite support, let \(S=\#\Omega\), and put
+\[
+ Z=\sum_{\omega\in\Omega}a_\omega,\qquad
+ D=\sum_{\omega\in\Omega}|a_\omega|^2,\qquad
+ \rho(a)=\frac{|Z|}{\sqrt{SD}}.
+\]
+Thus \(\rho(a)\) is the cosine of the projective angle between \(a\)
+and the constant vector.  If
+\[
+ a=\frac{Z}{S}\one+a_\perp,
+\]
+then the exact orthogonal decomposition is
+\[
+ D=\frac{|Z|^2}{S}+\|a_\perp\|_2^2,\qquad
+ \Flat(a):=\frac{|Z|^2}{D}=S\rho(a)^2.
+\]
+
+We determine the sharp perturbation law for this angle.  If
+\(\|a-b\|_2\le\delta\|b\|_2\), \(0\le\delta<1\), and
+\(r=\rho(b)\), then, for support dimension at least two,
+\[
+ L(r,\delta)\le\rho(a)\le U(r,\delta),
+\]
+where, with \(\alpha=\arccos r\) and
+\(\gamma=\arcsin\delta\),
+\[
+ L(r,\delta)=\cos\!\bigl(\min\{\tfrac{\pi}{2},\alpha+\gamma\}\bigr),
+ \qquad
+ U(r,\delta)=\cos\!\bigl((\alpha-\gamma)_+\bigr).
+\]
+Both endpoints are attained.  In particular,
+\[
+ |\rho(a)-\rho(b)|\le\delta,
+\]
+with optimal constant \(1\).  The frequently obtained estimate
+\[
+ \rho(a)\le\frac{\rho(b)+\delta}{1-\delta}
+\]
+is valid, but is not sharp; its denominator is an artifact of
+separately estimating the numerator and norm.
+
+This exact stability law identifies a critical surrogate barrier.
+To transfer an upper target \(\rho\ll J^{-1}\), relative
+\(\ell^2\) error \(O(J^{-1})\) is sufficient and, uniformly over
+surrogates, necessary in order.  Merely \(o(1)\) error is
+insufficient: there are two-dimensional examples with
+\(\rho(b_J)=0\), relative error \(\delta_J\to0\), and
+\(\rho(a_J)=\delta_J\gg J^{-1}\).  Uniformly preserving a
+two-sided \(\rho\asymp J^{-1}\) law from the norm hypothesis alone
+additionally requires a fixed margin between the error constant and
+the surrogate's lower constant.
+
+Finally, we attach the theorem to the literal fixed-\(h_0\) TPC-32
+determinant packet.  On its actual support \(S_X\ll Q_X\), a
+same-frame surrogate satisfying
+\[
+ \rho(b_X)\le\frac{X^{o(1)}}{J_X},
+ \qquad
+ \frac{\|A_X-b_X\|_2}{\|b_X\|_2}
+ \le\frac{X^{o(1)}}{J_X}
+\]
+would certify
+\[
+ \Flat(A_X)\le X^{1/400+o(1)}
+\]
+at the critical scales.  This is an exact \(\Lone\) stability
+certificate, not a construction of such a surrogate and not a new
+\(\Ltwo\) estimate.  The determinant-energy ledger
+\(\lambda_D\le2\eta_Z\) and the independent physical-loss ledger
+\(\Lambda_{\rm phys}<1/400\) are kept separate.
+\end{abstract}

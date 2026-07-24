@@ -1,0 +1,256 @@
+\section{Literal fixed-shift crosswalk}
+\label{sec:literal-crosswalk}
+
+Fix one nonzero integer \(h_0\).  At the high-\(\beta\) TPC-32
+endpoint, retain the scales
+\begin{equation}
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)},\qquad
+ C_X=\lfloor J_X\rfloor.
+\label{eq:critical-scales}
+\end{equation}
+Let
+\[
+ A_X(n)=A_{C_X}(n)
+\]
+be the literal signed normalized-determinant coefficient after all
+three matched channels and every native contribution in each
+determinant bin have been aggregated \citep{WangTPC32}.  Define
+\begin{equation}
+ \Omega_X=\supp A_X,\qquad
+ S_X=\#\Omega_X,\qquad
+ Z_X=\sum_{n\in\Omega_X}A_X(n),\qquad
+ D_X=\sum_{n\in\Omega_X}|A_X(n)|^2.
+\label{eq:literal-statistics}
+\end{equation}
+TPC-32 gives the imported support envelope
+\begin{equation}
+ S_X\ll X^{o(1)}Q_X.
+\label{eq:literal-support-envelope}
+\end{equation}
+When \(A_X\ne0\), view
+\[
+ a_X=(A_X(n))_{n\in\Omega_X}\in\C^{\Omega_X}
+\]
+and define
+\begin{equation}
+ \rho_X
+ =
+ \frac{|Z_X|}{\sqrt{S_XD_X}},
+ \qquad
+ \Flat_X
+ =
+ \frac{|Z_X|^2}{D_X}
+ =
+ S_X\rho_X^2.
+\label{eq:literal-rho-flat}
+\end{equation}
+
+\begin{definition}[Literal same-frame surrogate]
+\label{def:literal-surrogate}
+A literal same-frame surrogate is a nonzero vector
+\[
+ b_X\in\C^{\Omega_X}
+\]
+whose coordinate \(b_X(n)\) corresponds to the same normalized
+determinant bin \(n\) as \(A_X(n)\).  Define
+\begin{equation}
+ \delta_X
+ =
+ \frac{\|a_X-b_X\|_2}{\|b_X\|_2},
+ \qquad
+ \rho(b_X)
+ =
+ \frac{\left|\sum_{n\in\Omega_X}b_X(n)\right|}
+ {\sqrt{S_X}\|b_X\|_2}.
+\label{eq:literal-surrogate-statistics}
+\end{equation}
+No separately chosen surrogate support or channel-wise
+renormalization is permitted in these definitions.
+\end{definition}
+
+\begin{theorem}[Literal surrogate stability certificate]
+\label{thm:literal-surrogate-certificate}
+Assume \(A_X\ne0\), \(S_X\ge2\), and \(\delta_X<1\).  Then
+\begin{equation}
+ |\rho_X-\rho(b_X)|\le\delta_X.
+\label{eq:literal-rho-stability}
+\end{equation}
+In particular, if
+\begin{equation}
+ \rho(b_X)\le\frac{X^{o(1)}}{J_X},
+ \qquad
+ \delta_X\le\frac{X^{o(1)}}{J_X},
+\label{eq:literal-surrogate-hypotheses}
+\end{equation}
+then
+\begin{equation}
+ \boxed{
+ \rho_X\le\frac{X^{o(1)}}{J_X},
+ \qquad
+ \Flat_X\le X^{1/400+o(1)}.}
+\label{eq:literal-surrogate-conclusion}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:literal-rho-stability} is
+\cref{cor:optimal-additive-stability} on the frame \(\Omega_X\).
+The hypotheses \eqref{eq:literal-surrogate-hypotheses} therefore
+give
+\[
+ \rho_X\le\frac{X^{o(1)}}{J_X}.
+\]
+Using \eqref{eq:literal-support-envelope},
+\[
+ \Flat_X
+ =S_X\rho_X^2
+ \le
+ X^{o(1)}\frac{Q_X}{J_X^2}.
+\]
+The critical exponents in \eqref{eq:critical-scales} give
+\[
+ \frac{Q_X}{J_X^2}
+ =
+ X^{(267-266)/400+o(1)}
+ =
+ X^{1/400+o(1)}.
+\]
+\end{proof}
+
+\begin{remark}[Logical status of the certificate]
+\label{rem:certificate-status}
+\Cref{thm:literal-surrogate-certificate} is a deterministic
+implication.  It does not construct \(b_X\), bound \(\delta_X\), or
+prove its zero-mode angle.  Verifying
+\eqref{eq:literal-surrogate-hypotheses} for the growing literal
+fixed-shift family is precisely additional arithmetic or structural
+work.
+\end{remark}
+
+\begin{remark}[A numerical surrogate must resolve the small angle]
+\label{rem:numerical-resolution}
+A computation showing only
+\(\delta_X=o(1)\) can accurately reproduce the determinant energy
+while missing the critical zero-mode angle by many powers of
+\(J_X\).  To serve as a rigorous certificate without further signed
+error structure, it must control the global relative \(\ell^2\)
+error at \(X^{o(1)}/J_X\) resolution on the literal frame.
+\end{remark}
+
+\subsection{Natural-support equivalence}
+
+TPC-83 and TPC-88 identify a conditional natural mass--energy
+branch in which
+\begin{equation}
+ S_X=X^{o(1)}Q_X.
+\label{eq:natural-support}
+\end{equation}
+Here and below this denotes two-sided comparability up to subpower
+factors \citep{WangTPC83,WangTPC88}.
+
+\begin{proposition}[Critical angle equivalence on the natural branch]
+\label{prop:natural-angle-equivalence}
+Assume \eqref{eq:natural-support}.  Then
+\begin{equation}
+ \boxed{
+ \Flat_X\le X^{1/400+o(1)}
+ \quad\Longleftrightarrow\quad
+ \rho_X\le\frac{X^{o(1)}}{J_X}.}
+\label{eq:natural-angle-equivalence}
+\end{equation}
+Without the lower half of \eqref{eq:natural-support}, the angle
+condition remains sufficient by
+\eqref{eq:literal-support-envelope}, but the converse need not hold.
+\end{proposition}
+
+\begin{proof}
+The identity \(\Flat_X=S_X\rho_X^2\) and
+\eqref{eq:natural-support} give
+\[
+ \rho_X^2
+ =
+ X^{-267/400+o(1)}\Flat_X.
+\]
+Thus the flatness exponent \(1/400\) is equivalent to
+\[
+ \rho_X
+ \le
+ X^{-133/400+o(1)}
+ =
+ \frac{X^{o(1)}}{J_X}.
+\]
+The one-sided statement follows exactly as in
+\cref{thm:literal-surrogate-certificate}.
+\end{proof}
+
+\begin{proposition}[Relative-\(\ell^1\) and principal-angle
+thresholds]
+\label{prop:canc-rho-thresholds}
+On the natural post-bin mass branch of TPC-88,
+\[
+ \Seff(A_X)=X^{o(1)}Q_X,\qquad
+ S_X=X^{o(1)}Q_X.
+\]
+Consequently,
+\begin{equation}
+ \rho_X=X^{o(1)}\canc_X.
+\label{eq:canc-rho-natural}
+\end{equation}
+Hence the TPC-88 relative-cancellation threshold
+\(\canc_X\le X^{o(1)}/J_X\) and the present principal-angle
+threshold are equivalent up to subpower factors on that branch.
+\end{proposition}
+
+\begin{proof}
+Use the exact dictionary
+\[
+ \rho_X=\canc_X\sqrt{\frac{\Seff(A_X)}{S_X}}
+\]
+from \cref{prop:tpc88-dictionary}.
+\end{proof}
+
+\subsection{Direct zero-mode error scale}
+
+\begin{proposition}[Why \(J^{-1}\) produces a \(Q^2\) zero-mode
+error]
+\label{prop:direct-zero-mode-scale}
+Suppose a same-frame surrogate has
+\[
+ S_X\ll X^{o(1)}Q_X,\qquad
+ D(b_X)\ll X^{o(1)}Q_X^3J_X^2,
+\]
+and
+\[
+ \delta_X\le\frac{X^{o(1)}}{J_X}.
+\]
+Then
+\begin{equation}
+ |Z(a_X)-Z(b_X)|
+ \le X^{o(1)}Q_X^2.
+\label{eq:direct-zero-mode-scale}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Apply \eqref{eq:zero-mode-transfer}:
+\[
+ |Z(a_X)-Z(b_X)|
+ \le
+ \sqrt{S_X}\,\delta_X\sqrt{D(b_X)}
+ \le
+ X^{o(1)}
+ Q_X^{1/2}J_X^{-1}
+ \bigl(Q_X^3J_X^2\bigr)^{1/2}
+ =
+ X^{o(1)}Q_X^2.
+\]
+\end{proof}
+
+\begin{remark}
+This computation explains the same threshold in the unnormalized
+zero mode: \(J_X^{-1}\) is exactly the relative energy accuracy
+that converts the natural determinant norm into the \(Q_X^2\)
+zero-mode scale.  The proposition is conditional and provides no
+such approximation for the physical coefficient.
+\end{remark}

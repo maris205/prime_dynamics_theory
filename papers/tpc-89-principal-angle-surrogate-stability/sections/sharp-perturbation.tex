@@ -1,0 +1,326 @@
+\section{Sharp relative-\texorpdfstring{\(\ell^2\)}{l2}
+perturbation theory}
+\label{sec:sharp-perturbation}
+
+For nonzero vectors \(x,y\) in a complex Hilbert space, define their
+projective angle by
+\[
+ \angle(x,y)
+ =\arccos\frac{|\langle x,y\rangle|}
+ {\|x\|_2\|y\|_2}
+ \in[0,\pi/2].
+\]
+This angle is unchanged by multiplying either vector by a nonzero
+complex scalar.  It is the standard one-dimensional principal angle
+and the Fubini--Study distance between the corresponding projective
+points; see, for example, \citet{Bhatia1997,StewartSun1990}.
+
+\begin{lemma}[A relative ball is a projective cone]
+\label{lem:relative-ball-cone}
+Let \(b\ne0\) and suppose
+\[
+ \|a-b\|_2\le\delta\|b\|_2,\qquad 0\le\delta<1.
+\]
+Then \(a\ne0\) and
+\begin{equation}
+ \boxed{
+ \angle(a,b)\le\arcsin\delta.}
+\label{eq:projective-cone}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The reverse triangle inequality gives
+\(\|a\|_2\ge(1-\delta)\|b\|_2>0\).
+Let \(\widehat b=b/\|b\|_2\).  Since
+\(a/\|b\|_2\) belongs to the complex line \(\C a\),
+\[
+ \dist(\widehat b,\C a)
+ \le
+ \left\|\widehat b-\frac{a}{\|b\|_2}\right\|_2
+ \le\delta.
+\]
+Orthogonal projection onto \(\C a\) gives
+\[
+ \dist(\widehat b,\C a)
+ =
+ \sqrt{1-
+ \frac{|\langle a,b\rangle|^2}
+ {\|a\|_2^2\|b\|_2^2}}
+ =
+ \sin\angle(a,b).
+\]
+Because the angle lies in \([0,\pi/2]\), this proves
+\eqref{eq:projective-cone}.
+\end{proof}
+
+\begin{theorem}[Sharp principal-angle envelope]
+\label{thm:sharp-envelope}
+Let \(\Omega\) have size \(S\ge2\), let \(a,b\in\C^\Omega\) with
+\(b\ne0\), and suppose
+\begin{equation}
+ \|a-b\|_2\le\delta\|b\|_2,\qquad 0\le\delta<1.
+\label{eq:relative-error-hyp}
+\end{equation}
+Put
+\[
+ r=\rho(b),\qquad
+ \alpha=\arccos r,\qquad
+ \gamma=\arcsin\delta.
+\]
+Then
+\begin{equation}
+ \boxed{
+ L(r,\delta)\le\rho(a)\le U(r,\delta),}
+\label{eq:sharp-envelope}
+\end{equation}
+where
+\begin{align}
+ L(r,\delta)
+ &=
+ \cos\!\left(
+ \min\left\{\frac{\pi}{2},\alpha+\gamma\right\}\right)
+ \notag\\
+ &=
+ \bigl(
+ r\sqrt{1-\delta^2}
+ -\delta\sqrt{1-r^2}
+ \bigr)_+,
+\label{eq:L-envelope}\\
+ U(r,\delta)
+ &=
+ \cos\!\left((\alpha-\gamma)_+\right)
+\notag\\
+ &=
+ \begin{cases}
+ r\sqrt{1-\delta^2}
+ +\delta\sqrt{1-r^2},
+ &\delta<\sqrt{1-r^2},\\[2mm]
+ 1,&\delta\ge\sqrt{1-r^2}.
+ \end{cases}
+\label{eq:U-envelope}
+\end{align}
+For every \(r\in[0,1]\) and \(\delta\in[0,1)\), both endpoints
+allowed by \eqref{eq:sharp-envelope} are attained by vectors in a
+two-dimensional subspace.  Hence the envelope is sharp.
+\end{theorem}
+
+\begin{proof}
+Let \(e=\one/\sqrt S\).  Since
+\[
+ \rho(x)=\cos\angle(x,e),
+\]
+put \(\theta=\angle(a,e)\).  The projective angle obeys the triangle
+inequality.  By \cref{lem:relative-ball-cone},
+\[
+ \max\{0,\alpha-\gamma\}
+ \le\theta\le
+ \min\left\{\frac{\pi}{2},\alpha+\gamma\right\}.
+\]
+The cosine is decreasing on \([0,\pi/2]\), which gives the first
+forms of \(L\) and \(U\).  The addition formulas give
+\eqref{eq:L-envelope} and the first branch of
+\eqref{eq:U-envelope}.  The lower expression is positive exactly
+when \(\delta<r\); the upper ray reaches the constant line exactly
+when \(\delta\ge\sqrt{1-r^2}\).
+
+It remains to prove sharpness.  Normalize \(\|b\|_2=1\), multiply
+by a global phase, and choose a unit vector \(f\perp e\) so that
+\[
+ b=\cos\alpha\,e+\sin\alpha\,f.
+\]
+Such an \(f\) exists because \(S\ge2\).  When
+\(\sin\alpha=0\), choose any unit vector orthogonal to \(e\).
+
+If \(\alpha\ge\gamma\), define
+\[
+ u_+
+ =
+ \cos(\alpha-\gamma)e+\sin(\alpha-\gamma)f,
+ \qquad
+ a_+=\cos\gamma\,u_+.
+\]
+Then \(a_+\) is the orthogonal projection of \(b\) onto
+\(\C u_+\), so
+\[
+ \|a_+-b\|_2=\sin\gamma=\delta
+\]
+and \(\rho(a_+)=\cos(\alpha-\gamma)=U(r,\delta)\).
+If \(\alpha<\gamma\), the constant ray is within distance
+\(\sin\alpha\le\delta\) of \(b\); its projection
+\(a_+=\cos\alpha\,e\) attains \(\rho(a_+)=1\).
+
+For the lower endpoint, if
+\(\alpha+\gamma\le\pi/2\), define
+\[
+ u_-
+ =
+ \cos(\alpha+\gamma)e+\sin(\alpha+\gamma)f,
+ \qquad
+ a_-=\cos\gamma\,u_-.
+\]
+Again \(\|a_--b\|_2=\delta\), and
+\(\rho(a_-)=\cos(\alpha+\gamma)=L(r,\delta)\).
+If \(\alpha+\gamma>\pi/2\), the orthogonal ray \(\C f\) is within
+distance \(\cos\alpha=r\le\delta\) of \(b\); the projection
+\(a_-=\sin\alpha\,f\) attains \(\rho(a_-)=0\).
+The endpoint cases follow by continuity or the same formulas.
+\end{proof}
+
+\begin{remark}[The one-dimensional exception]
+If \(S=1\), every nonzero vector lies on the constant line and
+\(\rho\equiv1\).  The inequalities above remain valid as bounds,
+but their lower endpoint need not be attainable.  All nontrivial
+sharpness phenomena begin in dimension two.
+\end{remark}
+
+\begin{corollary}[Optimal additive stability]
+\label{cor:optimal-additive-stability}
+Under the hypotheses of \cref{thm:sharp-envelope},
+\begin{equation}
+ \boxed{
+ |\rho(a)-\rho(b)|\le\delta.}
+\label{eq:rho-one-lipschitz}
+\end{equation}
+The constant \(1\) is optimal for every \(0<\delta<1\).
+\end{corollary}
+
+\begin{proof}
+The angle \(\angle(a,e)\) differs from
+\(\angle(b,e)\) by at most \(\gamma=\arcsin\delta\).
+Among two angles in \([0,\pi/2]\) at distance at most \(\gamma\),
+the largest possible difference of their cosines is
+\(\sin\gamma=\delta\).  Equivalently, this follows directly from
+\eqref{eq:L-envelope}--\eqref{eq:U-envelope}.
+
+For sharpness choose orthonormal \(e,f\), put \(b=f\), and set
+\[
+ u=\delta e+\sqrt{1-\delta^2}\,f,\qquad
+ a=\sqrt{1-\delta^2}\,u.
+\]
+Then
+\[
+ \|a-b\|_2=\delta\|b\|_2,\qquad
+ \rho(b)=0,\qquad
+ \rho(a)=\delta.
+\]
+\end{proof}
+
+\subsection{The quotient bound and its exact audit}
+
+\begin{corollary}[Elementary quotient bounds]
+\label{cor:quotient-bounds}
+Under \eqref{eq:relative-error-hyp},
+\begin{equation}
+ \frac{(\rho(b)-\delta)_+}{1+\delta}
+ \le\rho(a)\le
+ \min\left\{
+ 1,\frac{\rho(b)+\delta}{1-\delta}
+ \right\}.
+\label{eq:quotient-bounds}
+\end{equation}
+In particular,
+\begin{equation}
+ \boxed{
+ \rho(a)\le
+ \frac{\rho(b)+\delta}{1-\delta}.}
+\label{eq:requested-quotient-bound}
+\end{equation}
+These bounds are valid but generally not sharp.  The stronger
+consequence of the exact envelope is
+\begin{equation}
+ (\rho(b)-\delta)_+\le\rho(a)
+ \le\min\{1,\rho(b)+\delta\}.
+\label{eq:stronger-additive-bounds}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Cauchy--Schwarz gives
+\[
+ |Z(a)-Z(b)|
+ =
+ |\langle a-b,\one\rangle|
+ \le\sqrt S\,\|a-b\|_2
+ \le\sqrt S\,\delta\|b\|_2.
+\]
+Also,
+\[
+ (1-\delta)\|b\|_2
+ \le\|a\|_2
+ \le(1+\delta)\|b\|_2.
+\]
+Combining the upper numerator estimate with the lower norm estimate,
+and the lower numerator estimate with the upper norm estimate,
+proves \eqref{eq:quotient-bounds}.  Equation
+\eqref{eq:stronger-additive-bounds} is
+\cref{cor:optimal-additive-stability}.
+\end{proof}
+
+\begin{remark}[Where \(1-\delta\) came from]
+The denominator in \eqref{eq:requested-quotient-bound} is produced
+by optimizing the numerator and denominator independently.  Those
+two triangle inequalities cannot generally be saturated in the
+same direction.  The projective-cone argument retains their joint
+geometry and removes the artificial denominator.
+\end{remark}
+
+\subsection{Energy, zero mode, and flatness transfer}
+
+\begin{proposition}[Complete elementary transfer ledger]
+\label{prop:elementary-transfer-ledger}
+Under \eqref{eq:relative-error-hyp},
+\begin{align}
+ (1-\delta)^2D(b)
+ &\le D(a)\le(1+\delta)^2D(b),
+\label{eq:energy-transfer}\\
+ |Z(a)-Z(b)|
+ &\le\sqrt S\,\delta\sqrt{D(b)},
+\label{eq:zero-mode-transfer}\\
+ \left|
+ \sqrt{D_\perp(a)}-\sqrt{D_\perp(b)}
+ \right|
+ &\le\delta\sqrt{D(b)}.
+\label{eq:perp-energy-transfer}
+\end{align}
+Moreover,
+\begin{equation}
+ S L(\rho(b),\delta)^2
+ \le\Flat(a)\le
+ S U(\rho(b),\delta)^2,
+\label{eq:exact-flatness-transfer}
+\end{equation}
+and hence
+\begin{equation}
+ \boxed{
+ \bigl(\sqrt{\Flat(b)}-\sqrt S\,\delta\bigr)_+^2
+ \le\Flat(a)\le
+ \min\left\{
+ S,\bigl(\sqrt{\Flat(b)}+\sqrt S\,\delta\bigr)^2
+ \right\}.}
+\label{eq:additive-flatness-transfer}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The norm triangle inequality proves
+\eqref{eq:energy-transfer}.  Cauchy--Schwarz proves
+\eqref{eq:zero-mode-transfer}.  Since \(P_\perp\) is a contraction,
+\[
+ \|P_\perp(a-b)\|_2\le\|a-b\|_2,
+\]
+and the reverse triangle inequality proves
+\eqref{eq:perp-energy-transfer}.  Finally use
+\(\Flat=S\rho^2\), \cref{thm:sharp-envelope}, and
+\cref{cor:optimal-additive-stability}.
+\end{proof}
+
+\begin{remark}[Different accuracy scales]
+\label{rem:different-accuracy-scales}
+Any \(\delta=o(1)\) transfers the \(\ell^2\)-energy scale
+multiplicatively through \eqref{eq:energy-transfer}.  It does not
+necessarily transfer a much smaller angle
+\(\rho\asymp1/J\).  The latter task requires error at the angle's
+own scale.  This distinction is the source of the critical
+surrogate barrier in the next section.
+\end{remark}

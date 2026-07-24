@@ -1,0 +1,239 @@
+\section{The critical surrogate-accuracy threshold}
+\label{sec:critical-surrogate-threshold}
+
+The perturbation theorem is most transparent for a general target
+scale \(\tau\to0\).  The TPC application later sets
+\(\tau=1/J\).
+
+\begin{theorem}[One-sided target transfer]
+\label{thm:one-sided-target-transfer}
+Let \(a_j,b_j\) be nonzero vectors on the same frames of dimension
+at least two, let \(\tau_j>0\) satisfy \(\tau_j\to0\), and fix
+constants \(C,K\ge0\).  Suppose
+\[
+ \|a_j-b_j\|_2\le\delta_j\|b_j\|_2.
+\]
+\begin{equation}
+ \rho(b_j)\le C\tau_j,\qquad
+ \delta_j\le K\tau_j
+\label{eq:one-sided-transfer-hyp}
+\end{equation}
+implies, for all sufficiently large \(j\),
+\begin{equation}
+ \boxed{
+\rho(a_j)\le(C+K)\tau_j.}
+\label{eq:one-sided-transfer-conc}
+\end{equation}
+If \(C+K>0\), the asymptotic coefficient \(C+K\) cannot be
+uniformly reduced using only \eqref{eq:one-sided-transfer-hyp}.
+\end{theorem}
+
+\begin{proof}
+Apply \eqref{eq:stronger-additive-bounds}.  For sharpness, take
+\[
+ r_j=C\tau_j,\qquad \delta_j=K\tau_j
+\]
+for all sufficiently large \(j\), and choose the upper equality
+case from \cref{thm:sharp-envelope}.  Since \(r_j,\delta_j\to0\),
+the first branch of \eqref{eq:U-envelope} applies and gives
+\[
+ \frac{\rho(a_j)}{\tau_j}
+ =
+ C\sqrt{1-K^2\tau_j^2}
+ +K\sqrt{1-C^2\tau_j^2}
+ \longrightarrow C+K.
+\]
+Thus no smaller uniform asymptotic coefficient follows from the two
+scalar bounds alone.
+\end{proof}
+
+\begin{corollary}[Critical \(J^{-1}\) sufficiency]
+\label{cor:J-sufficiency}
+If
+\[
+ \rho(b_J)=O(J^{-1}),\qquad
+ \frac{\|a_J-b_J\|_2}{\|b_J\|_2}=O(J^{-1}),
+\]
+then
+\[
+ \rho(a_J)=O(J^{-1}).
+\]
+The same statement holds with \(O(J^{-1})\) replaced throughout by
+\(J^{-1}X^{o(1)}\) along a critical TPC scale \(J=J_X\).
+\end{corollary}
+
+\begin{proof}
+Apply \cref{thm:one-sided-target-transfer} with
+\(\tau_J=J^{-1}\).  A sum of two subpower multiples of \(J_X^{-1}\)
+is again a subpower multiple of \(J_X^{-1}\).
+\end{proof}
+
+\begin{theorem}[Two-sided scale transfer with margin]
+\label{thm:two-sided-transfer}
+Suppose, for fixed \(0<c\le C\) and \(0\le\vartheta<1\),
+\begin{equation}
+ \frac{c}{J}\le\rho(b_J)\le\frac{C}{J},
+ \qquad
+ \delta_J\le\frac{\vartheta c}{J}.
+\label{eq:two-sided-margin-hyp}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \frac{(1-\vartheta)c}{J}
+ \le\rho(a_J)\le
+ \frac{C+\vartheta c}{J}.}
+\label{eq:two-sided-margin-conc}
+\end{equation}
+Thus a controlled \(O(J^{-1})\) error preserves
+\(\rho\asymp J^{-1}\).  In particular,
+\(\delta_J=o(J^{-1})\) preserves every fixed two-sided
+\(\rho(b_J)\asymp J^{-1}\) law.
+\end{theorem}
+
+\begin{proof}
+Use
+\[
+ \rho(b_J)-\delta_J
+ \le\rho(a_J)\le
+ \rho(b_J)+\delta_J
+\]
+from \cref{cor:optimal-additive-stability}.
+\end{proof}
+
+\begin{remark}[Upper scale versus two-sided scale]
+\label{rem:upper-vs-two-sided}
+An error \(K/J\) with arbitrary fixed \(K\) always preserves the
+upper order \(O(1/J)\).  To preserve a lower bound as well, the
+error constant must stay below the surrogate's lower constant.
+Saying only ``\(O(1/J)\)'' suppresses this necessary margin.
+\end{remark}
+
+\subsection{Sharp countermodels}
+
+\begin{example}[Why \(o(1)\) is not enough]
+\label{ex:o1-not-enough}
+Let \(e,f\) be orthonormal in \(\C^2\), let
+\(\delta_J\to0\), and put
+\begin{equation}
+ b_J=f,\qquad
+ u_J=\delta_Je+\sqrt{1-\delta_J^2}\,f,\qquad
+ a_J=\sqrt{1-\delta_J^2}\,u_J.
+\label{eq:tangent-countermodel}
+\end{equation}
+Then
+\begin{equation}
+ \frac{\|a_J-b_J\|_2}{\|b_J\|_2}
+ =\delta_J,\qquad
+ \rho(b_J)=0,\qquad
+ \rho(a_J)=\delta_J.
+\label{eq:tangent-countermodel-values}
+\end{equation}
+Choosing \(\delta_J=J^{-1/2}\) gives a surrogate with relative error
+\(o(1)\) and perfect zero mode, while
+\[
+ \rho(a_J)=J^{-1/2}\gg J^{-1}.
+\]
+Thus structure-free \(o(1)\) relative approximation does not
+transfer the critical scale.
+\end{example}
+
+\begin{remark}[Actual two-point support]
+Take
+\[
+ e=2^{-1/2}(1,1),\qquad
+ f=2^{-1/2}(1,-1).
+\]
+For every sufficiently small positive \(\delta_J\), both coordinates
+of \(a_J\) and \(b_J\) are nonzero.  Hence the countermodel already
+lives on one common actual support of size two; it is not a padding
+artifact.
+\end{remark}
+
+\begin{example}[Sharp order \(J^{-1}\)]
+\label{ex:J-sharp-order}
+In \cref{ex:o1-not-enough}, choose \(\delta_J=K/J\) for a fixed
+\(K>0\).  Then
+\[
+ \rho(b_J)=0,\qquad
+ \rho(a_J)=\frac{K}{J}.
+\]
+Consequently the perturbation contribution enters at exactly the
+\(J^{-1}\) scale.  A uniform theorem that tolerates
+\(\delta_J\gg J^{-1}\) cannot conclude
+\(\rho(a_J)=O(J^{-1})\).
+\end{example}
+
+\begin{example}[A lower signal can be erased]
+\label{ex:lower-signal-erased}
+Fix \(c>0\), let \(r_J=c/J<1\), and set
+\[
+ b_J=r_Je+\sqrt{1-r_J^2}\,f,\qquad
+ a_J=\sqrt{1-r_J^2}\,f.
+\]
+Then
+\[
+ \rho(b_J)=\frac{c}{J},\qquad
+ \rho(a_J)=0,\qquad
+ \frac{\|a_J-b_J\|_2}{\|b_J\|_2}
+ =\frac{c}{J}.
+\]
+Thus an error with the same leading constant as the lower signal can
+destroy two-sided comparability.  The margin in
+\cref{thm:two-sided-transfer} is not cosmetic.
+\end{example}
+
+\begin{theorem}[Sharp order-of-accuracy barrier]
+\label{thm:sharp-accuracy-barrier}
+Consider all same-frame pairs \((a_J,b_J)\) in dimension at least
+two.  Uniform transfer of
+\[
+ \rho(b_J)=O(J^{-1})
+ \quad\Longrightarrow\quad
+ \rho(a_J)=O(J^{-1})
+\]
+from a relative-error hypothesis
+\[
+ \|a_J-b_J\|_2\le\delta_J\|b_J\|_2
+\]
+with a prescribed tolerance \(\delta_J\ge0\) holds if
+\(\delta_J=O(J^{-1})\), and fails in general whenever
+\(J\delta_J\) is unbounded.  In particular, failure can occur even
+when \(\delta_J=o(1)\).
+\end{theorem}
+
+\begin{proof}
+Sufficiency is \cref{cor:J-sufficiency}.  If
+\(J\delta_J\) is unbounded, pass to a subsequence on which it tends
+to infinity and put
+\[
+ \varepsilon_J
+ =
+ \min\left\{\frac12,\sqrt{\frac{\delta_J}{J}}\right\}.
+\]
+Eventually \(\delta_J>J^{-1}\), so
+\(\varepsilon_J\le\delta_J\), while
+\[
+ J\varepsilon_J
+ =
+ \min\left\{\frac J2,\sqrt{J\delta_J}\right\}
+ \longrightarrow\infty.
+\]
+Use the tangent construction of \cref{ex:o1-not-enough} with actual
+relative error \(\varepsilon_J\) on that subsequence.  Then
+\(\rho(b_J)=0\), whereas
+\[
+ J\rho(a_J)=J\varepsilon_J
+\]
+is unbounded.  The remaining indices may be filled by any exact
+pair \(a_J=b_J\perp e\).
+\end{proof}
+
+\begin{remark}[What the barrier does not say]
+The theorem is a uniform worst-case statement.  A special surrogate
+may transfer with weaker norm accuracy if one separately proves
+that its error is almost orthogonal to the constant mode, or proves
+a signed estimate for \(Z(a-b)\) stronger than Cauchy--Schwarz.
+Such information is additional structure, not a consequence of
+\(\delta=o(1)\).
+\end{remark}
