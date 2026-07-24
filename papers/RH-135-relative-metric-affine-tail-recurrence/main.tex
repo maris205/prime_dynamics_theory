@@ -1,0 +1,234 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,natbib,microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\title{Relative-Metric Affine Tail Recurrences\\\large Exact Coefficients, Vanishing-Forcing Obstructions, and a 330-Step Audit}
+\author{Prime Dynamics Theory Program}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-134 proved a strongly contractive raw memory-tail recurrence, with old-tail
+coefficient below $0.003914$.  We now transport the recent Gram metric and
+derive the exact scalar coefficients controlling the relative Rayleigh
+constant.  Suppose
+\[
+ D'\preceq rO^*DO+F,
+\]
+where $G,G'\succ0$ are the source and target recent Gramians and $O$ is an
+orthogonal target-to-source frame map.  If
+$\gamma^2=\|G^{-1/2}DG^{-1/2}\|$, then
+\[
+ (\gamma')^2\leq\rho\gamma^2+q,
+\]
+with the sharp coefficients
+\[
+ \rho=r\,\|G^{1/2}O(G')^{-1/2}\|^2,
+ \qquad
+ q=\|(G')^{-1/2}F(G')^{-1/2}\|.
+\]
+Thus raw decay is multiplied by a Gram-comparability factor, and absolute
+forcing is divided by the weakest target metric direction.
+
+Both amplifications are unavoidable.  Without a target Gram lower bound one
+may have $\|F_\varepsilon\|\to0$ while $q_\varepsilon\to\infty$; similarly,
+an arbitrarily small raw factor need not give $\rho<1$.  For the Young family
+from RH-134, write
+$\rho=A(1+\tau)$ and
+$q=q_b+B(1+\tau^{-1})$.  A contractive parameter exists exactly when
+$A<1$, after which the affine fixed floor $q/(1-\rho)$ can be optimized.
+
+A 90-decimal audit of all 330 temporal updates has zero recurrence failures.
+The classification is sharp: 90 zero-tail transitions are trivial, all 24
+first births are contractive, and among 216 recurrent nonzero-tail updates
+only 51 admit any subunit $\rho$; 165 do not.  The median recurrent metric
+base is $9.045$ and the maximum is $3.03\times10^7$, despite the raw
+$1/512$ decay.  Every one of the 75 nontrivial contractive cases has optimized
+fixed floor below $4.70\times10^{-6}$.  The affine mechanism is therefore
+excellent when the metric gate opens, but the polar frame gauge fails that
+gate on most recurrent steps.
+\end{abstract}
+
+\section{The metric bridge}
+Let $G,D\succeq0$ be a source Gram/tail pair with $G\succ0$, and similarly
+let $G',D'$ be the target pair.  Assume a raw reduced-coordinate recurrence
+\[
+ D'\preceq rO^*DO+F,
+ \qquad r\geq0,\quad F\succeq0,
+\]
+where $O$ is orthogonal.  Define the normalized tails
+\[
+ A=G^{-1/2}DG^{-1/2},\qquad
+ A'=(G')^{-1/2}D'(G')^{-1/2}.
+\]
+Conjugating the recurrence by $(G')^{-1/2}$ gives
+\[
+ A'\preceq rH^*AH+Q,
+\]
+where
+\[
+ H=G^{1/2}O(G')^{-1/2},\qquad
+ Q=(G')^{-1/2}F(G')^{-1/2}.
+\]
+This identity separates the source dynamics from the target metric exactly.
+
+\begin{theorem}[Sharp relative affine recurrence]\label{thm:relative}
+With
+\[
+ \gamma^2=\|A\|,\qquad (\gamma')^2=\|A'\|,
+\]
+one has
+\[
+ (\gamma')^2\leq\rho\gamma^2+q,
+\]
+where
+\[
+ \rho=r\|H\|^2,
+ \qquad q=\|Q\|.
+\]
+Equivalently, $\|H\|^2$ is the least $a$ such that
+$O^*GO\preceq aG'$, and $q$ is the least scalar with $F\preceq qG'$.
+The two coefficients are separately sharp.
+\end{theorem}
+
+\begin{proof}
+Since $0\preceq A\preceq\gamma^2I$, one has
+$H^*AH\preceq\gamma^2H^*H\preceq\gamma^2\|H\|^2I$.
+Likewise $Q\preceq\|Q\|I$.  Taking the largest eigenvalue proves the bound.
+The equivalent Loewner characterizations are generalized Rayleigh formulas.
+Sharpness follows by choosing $A$ and $Q$ supported on a top singular vector
+of $H$, with all inequalities aligned in that direction
+\citep{HornJohnson1991,Bhatia1997}.
+\end{proof}
+
+The theorem is exactly the RH-123 recurrence, now with source-level formulas
+for both coefficients.  It also explains why the tiny Euclidean forcing
+norms in RH-134 were not yet decisive.
+
+\section{Two sharp metric obstructions}
+\begin{proposition}[Vanishing absolute forcing can diverge relatively]\label{prop:forcing}
+There are positive target Gramians $G'_\varepsilon$ and positive forcings
+$F_\varepsilon$ such that
+\[
+ \|F_\varepsilon\|\longrightarrow0,
+ \qquad
+ \|(G'_\varepsilon)^{-1/2}F_\varepsilon
+ (G'_\varepsilon)^{-1/2}\|\longrightarrow\infty.
+\]
+\end{proposition}
+\begin{proof}
+Take
+$G'_\varepsilon=\operatorname{diag}(1,\varepsilon^2)$ and
+$F_\varepsilon=\operatorname{diag}(0,\varepsilon)$.  Then
+$\|F_\varepsilon\|=\varepsilon$, while the relative forcing norm is
+$1/\varepsilon$.
+\end{proof}
+
+\begin{proposition}[Raw contraction need not be relative contraction]\label{prop:metric}
+For every $r>0$ and $M>0$ there are $G,G'\succ0$ and orthogonal $O$ for
+which $r\|G^{1/2}O(G')^{-1/2}\|^2>M$.
+\end{proposition}
+\begin{proof}
+Take $G=I$, $G'=\varepsilon I$, and $O=I$.  The coefficient is
+$r/\varepsilon$, which exceeds $M$ for sufficiently small $\varepsilon$.
+\end{proof}
+
+Neither obstruction is numerical.  They show that a uniform relative
+recurrence requires a physical comparison of recent Gramians, not only a
+better tail estimate.  Outward validation can certify such a comparison once
+it exists, but cannot create the missing gap \citep{Kato1995,Higham2002}.
+
+\section{Optimizing the Young tradeoff}
+The RH-134 moving-frame family has, after metric normalization,
+\[
+ \rho(\tau)=A(1+\tau),
+ \qquad
+ q(\tau)=q_b+B(1+\tau^{-1}),
+ \qquad \tau>0.
+\]
+Here $A$ combines memory decay, envelope ratio, and Gram comparison;
+$q_b$ is the relative boundary-slice forcing; and $B$ is the relative base
+of frame forcing.
+
+\begin{proposition}[Contractive feasibility and fixed-floor objective]\label{prop:opt}
+A parameter with $\rho(\tau)<1$ exists if and only if $A<1$.  On the
+interval $0<\tau<A^{-1}-1$, the eventual scalar floor is bounded by
+\[
+ \Phi(\tau)=\frac{q_b+B(1+\tau^{-1})}{1-A(1+\tau)}.
+\]
+Its minimum gives the sharpest conclusion available from this Young family.
+If $A\geq1$, no choice of $\tau$ can make the recurrence contractive.
+\end{proposition}
+\begin{proof}
+The infimum of $A(1+\tau)$ over $\tau>0$ is $A$, proving the feasibility
+criterion.  Iterating a scalar affine recurrence with fixed
+$\rho<1$ gives the floor $q/(1-\rho)$; substitution gives $\Phi$.
+\end{proof}
+
+This optimization cannot trade forcing against a metric base already above
+one.  That binary gate is the key diagnostic in the finite audit.
+
+\section{Ninety-decimal temporal audit}
+We rebuild all 30 temporal chains of RH-134 and form the reduced Gramians,
+weighted tails, metric factors, birth forcing, and frame forcing at 90
+decimal digits.  Every transition is checked directly against
+Theorem~\ref{thm:relative}.  The Young parameter is optimized on a dense
+logarithmic grid over its contractive interval when that interval exists.
+
+All 330 recurrences pass.  Ninety target tails are zero and are trivially
+feasible.  Twenty-four transitions are first births; their old-tail
+coefficient is zero, and all have subunit optimized fixed floor.  The
+remaining 216 transitions carry a nonzero old tail.  Of these, only 51 have
+$A<1$, while 165 have $A\geq1$ and admit no subunit $\rho$ for any
+$\tau>0$.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/relative_metric_affine_tail_recurrence.pdf}
+\caption{The target-Gram metric factor, not the raw memory decay, is the
+dominant contractivity gate.}
+\label{fig:audit}
+\end{figure}
+
+The recurrent metric base ranges from $0.05069$ to $3.0306\times10^7$, with
+median $9.04495$.  The underlying Gram comparison factor reaches
+$10^{16.326}$.  Blocking becomes more frequent at finer scales: the
+$\sigma=0.04$ recurrent updates are all blocked, while scales $0.02$ and
+$0.01$ retain 24 and 27 contractive recurrent updates, respectively.  The
+right channel has 96 blocked recurrent steps and only 12 feasible ones; the
+left channel has 69 blocked and 39 feasible.
+
+For the 75 nontrivial feasible updates---24 births plus 51 recurrent
+steps---the optimized fixed floor is uniformly excellent on the frozen
+data: it lies between $4.35\times10^{-25}$ and
+$4.70\times10^{-6}$, with median $3.09\times10^{-19}$.  Therefore forcing
+size is not the current finite bottleneck once metric contractivity holds.
+The worst blocked update is the left $\sigma=0.08$ final transition, where
+$A\approx3.03\times10^7$ and $q_b\approx9.406$.
+
+\section{Route consequence and boundary}
+RH-135 closes the algebraic path from the exact memory recursion to the
+relative affine Rayleigh recurrence.  It also gives a decisive negative
+finite result for the unmodified temporal polar gauge: most recurrent steps
+are not contractive because recent-Gram metrics change much more violently
+than the raw memory tail decays.
+
+The next constructive attempt should therefore be metric-aware.  One must
+choose an orthogonal/frame transport that balances two costs: frame defect,
+which raises forcing, and Gram inflation, which raises $\rho$.  The polar
+gauge minimizes Euclidean frame displacement but not this affine fixed-floor
+objective.  A metric-balanced Procrustes or generalized polar problem is the
+natural next gate.
+
+We have not proved uniform subunit $\rho$, uniform fixed floor, a cross-scale
+relative recurrence, a positive normalized-base liminf, uniform Stage A, a
+Hilbert--Polya operator, zeta-zero identification, or the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

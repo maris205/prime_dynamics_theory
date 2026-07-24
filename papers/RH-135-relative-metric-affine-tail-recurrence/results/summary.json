@@ -1,0 +1,68 @@
+{
+  "audit": {
+    "birth_contractive_feasible_count": 24,
+    "chain_count": 30,
+    "contractive_feasible_count": 165,
+    "contractive_infeasible_count": 165,
+    "first_birth_count": 24,
+    "maximum_metric_decay_base": 30306008.127676707,
+    "maximum_metric_factor_log10": 16.3260811007469,
+    "maximum_optimized_fixed_floor": 4.6967668003941155e-06,
+    "maximum_q_birth_log10": 0.9733998952172385,
+    "maximum_q_frame_base_log10": -0.8882948083982969,
+    "median_metric_factor_log10": 3.665627097087106,
+    "median_optimized_fixed_floor": 0.0,
+    "median_q_birth_log10": -13.97928448726236,
+    "median_recurrent_metric_decay_base": 9.044954187527043,
+    "minimum_optimized_fixed_floor": 0.0,
+    "minimum_recurrent_metric_decay_base": 0.05069174829466273,
+    "nontrivial_contractive_feasible_count": 75,
+    "nontrivial_target_transition_count": 240,
+    "optimized_fixed_floor_subunit_count": 165,
+    "recurrence_failure_count": 0,
+    "recurrent_contractive_feasible_count": 51,
+    "recurrent_contractive_infeasible_count": 165,
+    "recurrent_transition_count": 216,
+    "scale_count": 5,
+    "transition_count": 330,
+    "zero_target_transition_count": 90
+  },
+  "program_boundary": {
+    "cross_scale_relative_recurrence_proved": false,
+    "hilbert_polya_operator": false,
+    "relative_metric_affine_recurrence_theorem": true,
+    "riemann_hypothesis": false,
+    "sharp_metric_amplification_coefficients": true,
+    "temporal_rho_q_audited": true,
+    "uniform_stage_A_closed": false,
+    "uniform_subunit_fixed_floor_proved": false,
+    "uniform_subunit_rho_proved": false,
+    "vanishing_absolute_forcing_obstruction": true
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "a0321df810dcca7d21048cbb20c06bb6340f6ef678665caa362484f4b780769c",
+    "THEOREM_LEDGER.md": "7915544f15b6bf4539f0aaccce6a20295d3c2a6f53c649fe0673c00bbc5270d5",
+    "UPDATED_ROADMAP.md": "ba29d5898f0e693e0a38efe155ccc0f56192d580c409bc5ba2c4f1818674aade",
+    "figures/relative_metric_affine_tail_recurrence.pdf": "b3662d3bccafbd75fa070107556d5650d3d1daa2303fd1f2629da032296f1981",
+    "figures/relative_metric_affine_tail_recurrence.png": "3b7650ff289e5a21c46ce24f2f05250f4a74d2b224f2f3def3dfb1c2149262b4",
+    "main.pdf": "9615500f79372e857483d3b0808534c83c2bcad4b841528503b41aa85134bbee",
+    "main.tex": "682a611e0c32c3068aecedecbf55591c521440af71fc9dd2b23f15ce6860340e",
+    "pyproject.toml": "9dab180892fadc2b0e76b9f419ff7b5bb0087ced306d8afe7707789b4383f73c",
+    "references.bib": "95b082c2e05b7a93c7a2a4d0e142f0ee59f6f7d80415781a002841cc8042f8c1",
+    "relative-metric-affine-tail-recurrence.pdf": "9615500f79372e857483d3b0808534c83c2bcad4b841528503b41aa85134bbee",
+    "requirements.txt": "ee0b3b059c46c177bd2fc41734441b41074392b6b173bbef4fd36a8c06d93531"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "dcf73a89ec56ed7bf4b24a9129072b22c2d74114716a8d77ac569dc28e675918",
+    "results/relative_affine_audit.json": "ad176037cd9ecff0a75e1f3e09a71a3bc5fde5dee756e1a738f51e2aa4ae9ee8",
+    "results/relative_affine_smoke.json": "2353249a34c6ed0a16b6d46a177436191db84f8edf4881d3314a2466384833f6"
+  },
+  "route_consequence": "The raw memory recurrence converts exactly into gamma_{t+1}^2 <= rho_t gamma_t^2 + q_t. Both coefficients expose target-Gram amplification. Tiny Euclidean forcing is not enough without a metric lower bound. The 90-digit temporal audit determines how often a contractive Young parameter exists and how often the optimized affine fixed floor is subunit.",
+  "status": "rh135_relative_metric_affine_tail_recurrence_archived",
+  "theorem": {
+    "metric_gap_obstructions": true,
+    "sharp_relative_affine_coefficients": true,
+    "young_fixed_floor_optimization": true
+  }
+}

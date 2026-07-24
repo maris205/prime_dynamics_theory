@@ -1,0 +1,487 @@
+{
+  "audit_summary": {
+    "birth_contractive_feasible_count": 1,
+    "chain_count": 2,
+    "contractive_feasible_count": 7,
+    "contractive_infeasible_count": 1,
+    "first_birth_count": 1,
+    "maximum_metric_decay_base": 30306008.127676707,
+    "maximum_metric_factor_log10": 15.705849069733341,
+    "maximum_optimized_fixed_floor": 4.6967668003941155e-06,
+    "maximum_q_birth_log10": 0.9733998952172385,
+    "maximum_q_frame_base_log10": -0.8882948083982969,
+    "median_metric_factor_log10": 9.814625938846198,
+    "median_optimized_fixed_floor": 0.0,
+    "median_q_birth_log10": -2.1774005536299925,
+    "median_recurrent_metric_decay_base": 30306008.127676707,
+    "minimum_optimized_fixed_floor": 0.0,
+    "minimum_recurrent_metric_decay_base": 30306008.127676707,
+    "nontrivial_contractive_feasible_count": 1,
+    "nontrivial_target_transition_count": 2,
+    "optimized_fixed_floor_subunit_count": 7,
+    "recurrence_failure_count": 0,
+    "recurrent_contractive_feasible_count": 0,
+    "recurrent_contractive_infeasible_count": 1,
+    "recurrent_transition_count": 1,
+    "scale_count": 2,
+    "transition_count": 8,
+    "zero_target_transition_count": 6
+  },
+  "depth": 5,
+  "eta": 0.001953125,
+  "precision_decimal_digits": 90,
+  "route_consequence": "The raw memory recurrence converts exactly into gamma_{t+1}^2 <= rho_t gamma_t^2 + q_t. Both coefficients expose target-Gram amplification. Tiny Euclidean forcing is not enough without a metric lower bound. The 90-digit temporal audit determines how often a contractive Young parameter exists and how often the optimized affine fixed floor is subunit.",
+  "rows": [
+    {
+      "side": "left",
+      "sigma": 0.16,
+      "steps": [
+        {
+          "first_birth": false,
+          "frame_defect_norm": 0.12065091721202317,
+          "metric_decay_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_factor": {
+            "infinite": false,
+            "log10": 10.78380282110214,
+            "value": 60785895777.07744
+          },
+          "minimum_principal_cosine": 0.9927216780879492,
+          "optimization": {
+            "contractive_feasible": true,
+            "fixed_floor": 0.0,
+            "q": 0.0,
+            "rho": 0.0,
+            "tau": 1e-08
+          },
+          "optimized_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "optimized_fixed_floor_subunit": true,
+          "optimized_subunit_rho": true,
+          "q_birth": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "q_frame_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "recurrence_holds": true,
+          "source_gamma_squared": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "source_time": 1,
+          "tail_envelope_ratio": null,
+          "target_gamma_squared": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "target_time": 2
+        },
+        {
+          "first_birth": false,
+          "frame_defect_norm": 0.503607716036054,
+          "metric_decay_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_factor": {
+            "infinite": false,
+            "log10": 15.705849069733341,
+            "value": 5079828727036394.0
+          },
+          "minimum_principal_cosine": 0.8731896341744753,
+          "optimization": {
+            "contractive_feasible": true,
+            "fixed_floor": 0.0,
+            "q": 0.0,
+            "rho": 0.0,
+            "tau": 1e-08
+          },
+          "optimized_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "optimized_fixed_floor_subunit": true,
+          "optimized_subunit_rho": true,
+          "q_birth": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "q_frame_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "recurrence_holds": true,
+          "source_gamma_squared": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "source_time": 2,
+          "tail_envelope_ratio": null,
+          "target_gamma_squared": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "target_time": 3
+        },
+        {
+          "first_birth": false,
+          "frame_defect_norm": 0.6420380047423401,
+          "metric_decay_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_factor": {
+            "infinite": false,
+            "log10": 15.187013624411252,
+            "value": 1538202895072512.0
+          },
+          "minimum_principal_cosine": 0.7938936002332383,
+          "optimization": {
+            "contractive_feasible": true,
+            "fixed_floor": 0.0,
+            "q": 0.0,
+            "rho": 0.0,
+            "tau": 1e-08
+          },
+          "optimized_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "optimized_fixed_floor_subunit": true,
+          "optimized_subunit_rho": true,
+          "q_birth": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "q_frame_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "recurrence_holds": true,
+          "source_gamma_squared": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "source_time": 3,
+          "tail_envelope_ratio": null,
+          "target_gamma_squared": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "target_time": 4
+        }
+      ],
+      "threshold": 1e-08
+    },
+    {
+      "side": "left",
+      "sigma": 0.08,
+      "steps": [
+        {
+          "first_birth": false,
+          "frame_defect_norm": 0.948335290792849,
+          "metric_decay_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_factor": {
+            "infinite": false,
+            "log10": 7.072854921911985,
+            "value": 11826464.212028058
+          },
+          "minimum_principal_cosine": 0.5503300881184204,
+          "optimization": {
+            "contractive_feasible": true,
+            "fixed_floor": 0.0,
+            "q": 0.0,
+            "rho": 0.0,
+            "tau": 1e-08
+          },
+          "optimized_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "optimized_fixed_floor_subunit": true,
+          "optimized_subunit_rho": true,
+          "q_birth": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "q_frame_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "recurrence_holds": true,
+          "source_gamma_squared": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "source_time": 1,
+          "tail_envelope_ratio": null,
+          "target_gamma_squared": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "target_time": 2
+        },
+        {
+          "first_birth": false,
+          "frame_defect_norm": 1.3954573425952879,
+          "metric_decay_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_factor": {
+            "infinite": false,
+            "log10": 7.026746476205624,
+            "value": 10635219.952611672
+          },
+          "minimum_principal_cosine": 0.026349402498449415,
+          "optimization": {
+            "contractive_feasible": true,
+            "fixed_floor": 0.0,
+            "q": 0.0,
+            "rho": 0.0,
+            "tau": 1e-08
+          },
+          "optimized_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "optimized_fixed_floor_subunit": true,
+          "optimized_subunit_rho": true,
+          "q_birth": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "q_frame_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "recurrence_holds": true,
+          "source_gamma_squared": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "source_time": 2,
+          "tail_envelope_ratio": null,
+          "target_gamma_squared": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "target_time": 3
+        },
+        {
+          "first_birth": false,
+          "frame_defect_norm": 0.5373509290609152,
+          "metric_decay_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_factor": {
+            "infinite": false,
+            "log10": 6.966659741107362,
+            "value": 9261039.597186428
+          },
+          "minimum_principal_cosine": 0.8556269895186862,
+          "optimization": {
+            "contractive_feasible": true,
+            "fixed_floor": 0.0,
+            "q": 0.0,
+            "rho": 0.0,
+            "tau": 1e-08
+          },
+          "optimized_bound": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "optimized_fixed_floor_subunit": true,
+          "optimized_subunit_rho": true,
+          "q_birth": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "q_frame_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "recurrence_holds": true,
+          "source_gamma_squared": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "source_time": 3,
+          "tail_envelope_ratio": null,
+          "target_gamma_squared": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "target_time": 4
+        },
+        {
+          "first_birth": true,
+          "frame_defect_norm": 1.0687962030462204,
+          "metric_decay_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "metric_factor": {
+            "infinite": false,
+            "log10": 9.43930058548442,
+            "value": 2749796693.9696507
+          },
+          "minimum_principal_cosine": 0.428837338176991,
+          "optimization": {
+            "contractive_feasible": true,
+            "fixed_floor": 4.6967668003941155e-06,
+            "q": 4.6967668003941155e-06,
+            "rho": 0.0,
+            "tau": 1e-08
+          },
+          "optimized_bound": {
+            "infinite": false,
+            "log10": -5.328201002477224,
+            "value": 4.6967668003941155e-06
+          },
+          "optimized_fixed_floor_subunit": true,
+          "optimized_subunit_rho": true,
+          "q_birth": {
+            "infinite": false,
+            "log10": -5.328201002477224,
+            "value": 4.6967668003941155e-06
+          },
+          "q_frame_base": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "recurrence_holds": true,
+          "source_gamma_squared": {
+            "infinite": false,
+            "log10": null,
+            "value": 0.0
+          },
+          "source_time": 4,
+          "tail_envelope_ratio": null,
+          "target_gamma_squared": {
+            "infinite": false,
+            "log10": -5.328201002477224,
+            "value": 4.6967668003941155e-06
+          },
+          "target_time": 5
+        },
+        {
+          "first_birth": false,
+          "frame_defect_norm": 0.6445976002853728,
+          "metric_decay_base": {
+            "infinite": false,
+            "log10": 7.4815287353681335,
+            "value": 30306008.127676707
+          },
+          "metric_factor": {
+            "infinite": false,
+            "log10": 10.189951292207978,
+            "value": 15486429229.282032
+          },
+          "minimum_principal_cosine": 0.7922469668531703,
+          "optimization": {
+            "contractive_feasible": false,
+            "fixed_floor": Infinity,
+            "q": Infinity,
+            "rho": 30306008.127676707,
+            "tau": null
+          },
+          "optimized_bound": {
+            "infinite": true,
+            "log10": null,
+            "value": null
+          },
+          "optimized_fixed_floor_subunit": false,
+          "optimized_subunit_rho": false,
+          "q_birth": {
+            "infinite": false,
+            "log10": 0.9733998952172385,
+            "value": 9.405889994899066
+          },
+          "q_frame_base": {
+            "infinite": false,
+            "log10": -0.8882948083982969,
+            "value": 0.1293317611701291
+          },
+          "recurrence_holds": true,
+          "source_gamma_squared": {
+            "infinite": false,
+            "log10": -5.328201002477224,
+            "value": 4.6967668003941155e-06
+          },
+          "source_time": 5,
+          "tail_envelope_ratio": 1.001953125,
+          "target_gamma_squared": {
+            "infinite": false,
+            "log10": 0.9748024667743381,
+            "value": 9.436315800490762
+          },
+          "target_time": 6
+        }
+      ],
+      "threshold": 1e-08
+    }
+  ],
+  "status": "rh135_relative_metric_affine_tail_recurrence_audit",
+  "theorem_boundary": {
+    "cross_scale_relative_recurrence_proved": false,
+    "hilbert_polya_operator": false,
+    "relative_metric_affine_recurrence_theorem": true,
+    "riemann_hypothesis": false,
+    "sharp_metric_amplification_coefficients": true,
+    "temporal_rho_q_audited": false,
+    "uniform_stage_A_closed": false,
+    "uniform_subunit_fixed_floor_proved": false,
+    "uniform_subunit_rho_proved": false,
+    "vanishing_absolute_forcing_obstruction": true
+  }
+}
