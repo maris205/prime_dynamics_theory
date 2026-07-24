@@ -1,0 +1,290 @@
+\section{The literal fixed-shift determinant interface}
+\label{sec:physical-interface}
+
+Fix one nonzero integer \(h_0\).  On the high-\(\beta\) TPC-32 row,
+\begin{equation}
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)},\qquad
+ C_X=\lfloor J_X\rfloor.
+\label{eq:critical-scales}
+\end{equation}
+Let
+\[
+ A_X(n)=A_{C_X}(n)
+\]
+be the literal matched normalized-determinant coefficient after all
+three physical channels and every native contribution in a
+determinant fiber have been summed.  Write
+\[
+ S_X=\supp A_X,\quad s_X=|S_X|,\quad
+ Z_X=\sum_nA_X(n),\quad D_X=\sum_n|A_X(n)|^2.
+\]
+TPC-32 proves
+\begin{equation}
+ A_X(0)=0,\qquad s_X\ll Q_X,
+\label{eq:physical-zero-support}
+\end{equation}
+and places the integer support in a fixed multiple of
+\([-Q_X,Q_X]\) \citep{WangTPC32}.
+
+Strengthen the harmless auxiliary padding choice.  Put
+\[
+ Y_X=\left\lceil4B_{\mathcal D}Q_X+4\right\rceil
+\]
+and use Bertrand's postulate to choose a prime
+\begin{equation}
+ Y_X<q_X<2Y_X.
+\label{eq:physical-modulus}
+\end{equation}
+The integer support is then injective modulo \(q_X\), residue \(0\)
+represents only the literal bin \(n=0\), and \(q_X\asymp Q_X\) may be
+arranged with constants depending only on the fixed determinant
+range.  Since that containing arc has length at most
+\(2B_{\mathcal D}Q_X+1<q_X/2\), its complement has length
+\(H_X>q_X/2\).  This stronger choice changes no physical coefficient;
+it only adds zero coordinates to the auxiliary Fourier embedding.
+
+Define the padded cyclic coefficient and its Fourier transform by
+\begin{equation}
+ \widetilde A_X(a)
+ =
+ \sum_{\substack{n\in\Z\\n\equiv a\;(\bmod q_X)}}A_X(n),
+ \qquad
+ \widehat{\widetilde A}_X(r)
+ =
+ \sum_{a\in\Z/q_X\Z}\widetilde A_X(a)e_{q_X}(-ra).
+\label{eq:padded-cyclic-coefficient}
+\end{equation}
+No wrap gives
+\begin{equation}
+ \sum_a\widetilde A_X(a)=Z_X,\qquad
+ \sum_a|\widetilde A_X(a)|^2=D_X,\qquad
+ \widetilde A_X(0)=A_X(0)=0.
+\label{eq:no-wrap-identities}
+\end{equation}
+For readability, the remainder of this section writes
+\(\widehat A_X=\widehat{\widetilde A}_X\) and uses
+\(\supp A_X\) for the corresponding cyclic support.
+
+\begin{theorem}[Literal coherent-reassembly interface]
+\label{thm:literal-interface}
+For the physical packet above,
+\begin{equation}
+ \boxed{
+ Z_X=-\sum_{r=1}^{q_X-1}\widehat A_X(r).}
+\label{eq:literal-one-zero}
+\end{equation}
+If \(K_X=(\Z/q_X\Z)\setminus\supp A_X\) and
+\[
+ m_X(r)=\frac1{|K_X|}\sum_{k\in K_X}e_{q_X}(rk),
+\]
+then
+\begin{align}
+ Z_X&=-\sum_{r=1}^{q_X-1}m_X(r)\widehat A_X(r),
+ \label{eq:literal-optimal-reassembly}\\
+ \sum_{r=1}^{q_X-1}|m_X(r)|^2
+ &=\frac{s_X}{q_X-s_X},
+ \label{eq:literal-multiplier-mass}\\
+ |Z_X|^2&\le s_XD_X.
+ \label{eq:literal-support-bound}
+\end{align}
+The multiplier is determined by the actual zero set after complete
+physical aggregation.
+\end{theorem}
+
+\begin{proof}
+The padding and \eqref{eq:physical-zero-support} verify the hypotheses
+of \cref{prop:one-zero,thm:optimal-kernel,thm:sharp-support-bound}.
+\end{proof}
+
+\begin{remark}[Correction to an earlier route exclusion]
+Equation \eqref{eq:literal-one-zero} shows that a theorem for nonzero
+frequencies can control \(Z_X\) if it controls their exact coherent
+sum.  Therefore ``nonzero frequency'' is not by itself a kill
+condition.  What remains insufficient is a result that leaves an
+uncontrolled exceptional multiplier mass, averages away the fixed
+\(h_0\), replaces the literal phases or support, or supplies only
+unsigned mean-square dispersion.
+\end{remark}
+
+\subsection{Mesoscopic low-frequency reduction}
+
+The verified TPC-32 upper envelopes include
+\[
+ s_X\ll Q_X,\qquad
+ D_X\ll X^{o(1)}\frac{N_{0,X}^2}{Q_X},
+ \qquad N_{0,X}=J_XQ_X^2.
+\]
+Since \(q_X\asymp Q_X\),
+\begin{equation}
+ q_XD_X\ll X^{o(1)}N_{0,X}^2.
+\label{eq:physical-fourier-energy}
+\end{equation}
+Apply the fixed-order zero-arc filter of
+\cref{thm:low-frequency-reduction} to obtain, for
+\(1\le R<q_X/2\),
+\begin{equation}
+ \boxed{
+ |Z_X|
+ \ll_k
+ \max_{0<d_{q_X}(r,0)\le R}|\widehat A_X(r)|
+ +X^{o(1)}N_{0,X}R^{1/2-k}.}
+\label{eq:physical-low-frequency}
+\end{equation}
+
+\begin{theorem}[Critical-window criterion]
+\label{thm:critical-window}
+Write
+\[
+ Q_X=X^{\beta+o(1)},\qquad J_X=X^{1-\beta+o(1)}
+\]
+and fix \(\eta_Z\ge0\), \(k\ge2\), and
+\(R_X=X^{\rho+o(1)}<q_X/2\).  Suppose
+\begin{equation}
+ \max_{0<d_{q_X}(r,0)\le R_X}|\widehat A_X(r)|
+ \le X^{-\eta_Z+o(1)}Q_X^2
+\label{eq:low-window-hypothesis}
+\end{equation}
+and
+\begin{equation}
+ (k-\tfrac12)\rho>1-\beta+\eta_Z.
+\label{eq:window-condition}
+\end{equation}
+Then
+\begin{equation}
+ |Z_X|\le X^{-\eta_Z+o(1)}Q_X^2.
+\label{eq:zero-mode-conclusion}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The first term of \eqref{eq:physical-low-frequency} has the required
+size by \eqref{eq:low-window-hypothesis}.  The second, divided by the
+target scale, is
+\[
+ X^{o(1)}
+ \frac{J_XQ_X^2R_X^{1/2-k}}
+ {X^{-\eta_Z}Q_X^2}
+ =
+ X^{1-\beta+\eta_Z-(k-1/2)\rho+o(1)},
+\]
+which has a fixed-power saving under
+\eqref{eq:window-condition}.
+\end{proof}
+
+\begin{corollary}[Triangular critical row]
+\label{cor:triangular-critical}
+At \(\beta=267/400\), with \(\eta_Z=0\) and \(k=2\), it is enough to
+prove \eqref{eq:low-window-hypothesis} on
+\begin{equation}
+ R_X=X^{133/600+\varepsilon}
+\label{eq:triangular-window}
+\end{equation}
+for every sufficiently small fixed \(\varepsilon>0\); explicitly one
+may take
+\[
+ 0<\varepsilon<\frac{267}{400}-\frac{133}{600}
+ =\frac{107}{240}.
+\]
+This window then satisfies \(R_X<q_X/2\) for large \(X\) and is
+polynomially shorter than \(q_X=X^{267/400+o(1)}\).
+\end{corollary}
+
+\begin{proof}
+Here
+\[
+ (k-\tfrac12)\rho
+ =\frac32\left(\frac{133}{600}+\varepsilon\right)
+ =\frac{133}{400}+\frac32\varepsilon
+ >1-\beta.
+\]
+\end{proof}
+
+\begin{remark}[Higher fixed order]
+For every fixed \(k\ge2\), the sufficient window condition is
+\[
+ \rho>\frac{1-\beta+\eta_Z}{k-1/2}.
+\]
+The order \(k\) must remain fixed unless every \(k\)-dependent
+constant is audited.  Equality gives no fixed-power tail reserve.
+\end{remark}
+
+\subsection{What remains arithmetic}
+
+The support bound alone gives
+\begin{equation}
+ |Z_X|\ll X^{o(1)}Q_X^2J_X,
+\label{eq:trivial-physical-scale}
+\end{equation}
+which is the natural absolute-mass scale.  The TPC-32 zero-mode target
+is instead
+\begin{equation}
+ |Z_X|\le X^{o(1)}Q_X^2,
+\label{eq:physical-target}
+\end{equation}
+or a fixed-power improvement thereof.  Thus finite reassembly does
+not create cancellation.  Its advance is a rigorous localization:
+the missing arithmetic estimate can be confined to
+\eqref{eq:low-window-hypothesis}, while the high-frequency tail is
+absorbed by the already proved energy upper bound.
+
+\begin{corollary}[Exact form of a valid Fourier advance]
+\label{cor:valid-fourier-advance}
+A nonzero-frequency argument closes
+\eqref{eq:physical-target} if it proves, for a literal reconstruction
+multiplier \(m\),
+\[
+ \left|
+ \sum_{r=1}^{q_X-1}m(r)\widehat A_X(r)
+ \right|
+ \le X^{o(1)}Q_X^2.
+\]
+More generally, the low-window hypothesis of
+\cref{thm:critical-window} or the two-term bound of
+\cref{thm:exceptional-ledger} closes the target at the corresponding
+scale.
+\end{corollary}
+
+\begin{proof}
+Use the exact reconstruction identity associated with \(m\), then
+apply \cref{thm:critical-window,thm:exceptional-ledger} as applicable.
+\end{proof}
+
+\begin{remark}[The minimal packet-level input]
+The pointwise maximum in \eqref{eq:low-window-hypothesis} is a
+convenient sufficient condition, not the minimal one.  The minimal
+new input bounds the complete packet-level signed sum
+\[
+ \sum_{0<d_{q_X}(r,0)\le R_X}
+ m_k(r)\widehat A_X(r)
+\]
+at the target scale.  Taking absolute values over native columns
+before their outer reassembly may lose a fixed power and must not be
+silently substituted.
+\end{remark}
+
+\begin{remark}[Affine twisted form and resonances]
+Expanding a literal low-frequency coefficient retains the TPC-85
+fixed-shift affine pair
+\[
+ D_t=D_0+st,\qquad U_t=U_0+at,\qquad
+ sU_0-aD_0=h_0,
+\]
+now with the additive normalized-determinant character
+\[
+ e_{q_X}\!\left(-r\Delta^\#_{\alpha,\gamma}(j)\right).
+\]
+Both polarizations, all three matched channels, the exact content
+cutoff, joint mask, and complete outer sum remain present.  A nonzero
+\(r\) does not guarantee oscillation in every native column:
+resonant slopes, short fibers, and bounded fibers need their own
+return estimate.  No such estimate is proved here.
+\end{remark}
+
+\begin{remark}[This is not an arithmetic estimate]
+\Cref{cor:valid-fourier-advance} is an equivalence of interfaces.  It
+does not prove the displayed upper bound.  In particular it neither
+converts a generic dispersion theorem into a zero-mode estimate nor
+removes the fixed-shift affine M\"obius correlation isolated in
+TPC-85.
+\end{remark}

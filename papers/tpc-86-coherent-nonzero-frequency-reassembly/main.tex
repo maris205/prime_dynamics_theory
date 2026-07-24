@@ -1,0 +1,118 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,capitalise,noabbrev]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\F}{\mathbb F}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\ee}{\mathrm e}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{\textbf{From a Deleted Bin to a Zero Arc:}\\
+Stable Padded Fourier Reassembly and the
+Low-Frequency Fixed-Shift Gate}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let \(A:\Z/q\Z\to\C\) have support \(S\), let
+\(D=\sum_n|A(n)|^2\), and let
+\(Z=\widehat A(0)=\sum_nA(n)\).  When \(A(0)=0\), Fourier inversion
+gives the exact identity
+\[
+ Z=-\sum_{r\ne0}\widehat A(r).
+\]
+Thus the distinguished zero mode can be recovered from the nonzero
+frequencies, but only as a coherent signed reassembly.  We prove a
+stronger support-aware theorem.  If \(K=(\Z/q\Z)\setminus S\), then
+every weight \(w\) supported on \(K\) with \(\sum_Kw=1\) gives
+\[
+ Z=-\sum_{r\ne0}m_w(r)\widehat A(r),\qquad
+ m_w(r)=\sum_{k\in K}w(k)\ee^{2\pi i rk/q}.
+\]
+The unique minimum-\(\ell^2\) kernel among zero-set averages is
+obtained by taking \(w\) uniform on \(K\).  Its squared norm is
+\[
+ \sum_{r\ne0}|m_K(r)|^2=\frac{|S|}{q-|S|},
+\]
+and Parseval then recovers exactly the sharp physical inequality
+\[
+ |Z|^2\le |S|D.
+\]
+Positive-density overpadding gives more.  A fixed \(k\)-fold
+interval filter supported in the zero arc has Wiener norm \(O_k(1)\)
+and multiplier decay
+\[
+ |m_k(r)|\ll_k d_q(r,0)^{-k}.
+\]
+For the literal TPC-32 packet this yields, unconditionally,
+\[
+ |Z_X|\ll_k
+ \max_{0<d_q(r,0)\le R}|\widehat A_X(r)|
+ +
+ X^{o(1)}N_{0,X}R^{1/2-k}.
+\]
+At the critical row, the triangular case \(k=2\) reduces the full
+\(q_X=X^{267/400+o(1)}\) frequency problem to the low window
+\(R=X^{133/600+\varepsilon}\) for sufficiently small fixed
+\(\varepsilon>0\).  We also derive an exact
+multiplier-weighted exceptional-frequency budget and prove that
+mean-square dispersion alone cannot improve the sharp support bound.
+Applied at one fixed nonzero shift, the result corrects an overly
+strong ``nonzero frequencies cannot see the zero mode'' formulation:
+coherent nonzero-frequency control can close the zero-mode gate, but
+generic frequency estimates and unweighted exceptional-set counts by
+themselves cannot.
+The Fourier theorems are \(\Lzero\), and their literal attachment is
+\(\Lone\).  No new \(\Ltwo\) M\"obius-correlation estimate is proved.
+\end{abstract}
+
+\noindent\textbf{Keywords:} distinguished zero mode; finite Fourier
+transform; coherent reassembly; exceptional frequencies; actual
+support; fixed shift; determinant coefficient.
+
+\medskip
+\noindent\textbf{Convention.}
+Every arithmetic application uses one prescribed \(h_0\ne0\), the
+literal high-\(\beta\) TPC-32 coefficient after complete determinant
+aggregation, its actual nonzero support, and its original global
+normalization.  No assertion is specialized to \(h_0=2\).
+
+\input{sections/introduction}
+\input{sections/fourier-reconstruction}
+\input{sections/optimal-kernel}
+\input{sections/zero-arc-filter}
+\input{sections/exceptional-budget}
+\input{sections/physical-interface}
+\input{sections/claim-boundary}
+
+\begingroup
+\sloppy
+\hbadness=10000
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

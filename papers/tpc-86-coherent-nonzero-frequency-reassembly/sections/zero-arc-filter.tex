@@ -1,0 +1,143 @@
+\section{Stable reconstruction from a zero arc}
+\label{sec:zero-arc-filter}
+
+The minimum-\(\ell^2\) kernel in \cref{thm:optimal-kernel} is optimal
+for arbitrary zero sets.  When the complement of the support contains
+a long cyclic interval, a different choice has bounded Wiener norm
+and polynomial Fourier decay.
+
+Let \(C\subset G\) be a cyclic interval of length \(H\) on which
+\(A\) vanishes.  Fix an integer \(k\ge2\), independent of \(q\), and
+choose \(L\) so that
+\begin{equation}
+ k(L-1)+1\le H.
+\label{eq:filter-support-condition}
+\end{equation}
+Let \(u_L\) be the uniform probability measure on an interval of
+length \(L\).  Translate the \(k\)-fold cyclic convolution
+\(u_L^{*k}\) so that its support lies in \(C\), and call the resulting
+probability measure \(p_k\).  Define
+\[
+ m_k(r)=\sum_{x\in C}p_k(x)e_q(rx).
+\]
+Translation changes only the phase of \(m_k\), while convolution gives
+\begin{equation}
+ |m_k(r)|
+ =
+ \left|
+ \frac1L\sum_{j=0}^{L-1}e_q(rj)
+ \right|^k.
+\label{eq:filter-multiplier}
+\end{equation}
+
+\begin{theorem}[Stable zero-arc filter]
+\label{thm:stable-zero-arc}
+Assume \(H\ge\delta q\) for a fixed \(\delta>0\), and choose \(L\)
+maximal subject to \eqref{eq:filter-support-condition}.  For every
+fixed \(k\ge2\),
+\begin{align}
+ Z&=-\sum_{r\ne0}m_k(r)\widehat A(r),
+ \label{eq:filtered-reassembly}\\
+ \sum_{r\ne0}|m_k(r)|&\ll_{k,\delta}1,
+ \label{eq:wiener-bound}\\
+ |m_k(r)|&\ll_{k,\delta}
+ (1+d_q(r,0))^{-k},
+ \label{eq:filter-decay}
+\end{align}
+where \(d_q(r,0)=\min(r,q-r)\) for the representative
+\(0\le r<q\).
+\end{theorem}
+
+\begin{proof}
+The first identity is \cref{thm:weighted-reconstruction} with
+\(w=p_k\).  Since \(H\ge\delta q\) and \(k\) is fixed, maximality
+gives \(L\asymp_{k,\delta}q\).  The geometric-sum formula yields
+\[
+ \left|
+ \frac1L\sum_{j=0}^{L-1}e_q(rj)
+ \right|
+ \le
+ \min\left\{1,\frac{q}{2L\,d_q(r,0)}\right\},
+\]
+after changing an absolute constant.  Raising to the \(k\)-th power
+gives \eqref{eq:filter-decay}.  Summing
+\(\min(1,Cd^{-k})\) over the two frequencies at each distance
+\(d\) proves \eqref{eq:wiener-bound}, because \(k>1\).
+\end{proof}
+
+\begin{proposition}[Exact triangular Wiener norm]
+\label{prop:triangular-wiener}
+For \(k=2\),
+\begin{equation}
+ \sum_{r\ne0}|m_2(r)|=\frac qL-1.
+\label{eq:triangular-wiener}
+\end{equation}
+Hence positive-density padding gives a constant Wiener norm.
+\end{proposition}
+
+\begin{proof}
+By \eqref{eq:filter-multiplier},
+\[
+ |m_2(r)|=|\widehat u_L(r)|^2.
+\]
+Parseval gives
+\(\sum_r|\widehat u_L(r)|^2=q\|u_L\|_2^2=q/L\).
+The \(r=0\) term is one.
+\end{proof}
+
+\begin{proposition}[Order-optimality of the Wiener norm]
+\label{prop:wiener-optimality}
+Suppose coefficients \(c_r\), \(r\ne0\), satisfy
+\[
+ \widehat A(0)
+ =-\sum_{r\ne0}c_r\widehat A(r)
+\]
+for every \(A\) supported in a fixed nonempty allowed arc.  Then
+\[
+ \sum_{r\ne0}|c_r|\ge1.
+\]
+Thus \eqref{eq:wiener-bound} has the optimal constant order.
+\end{proposition}
+
+\begin{proof}
+Take \(A\) to be a point mass at any allowed coordinate \(n\).  Then
+\(\widehat A(0)=1\) and \(|\widehat A(r)|=1\), so the triangle
+inequality gives the claim.
+\end{proof}
+
+\begin{theorem}[Low-frequency reduction]
+\label{thm:low-frequency-reduction}
+Under the hypotheses of \cref{thm:stable-zero-arc}, for
+\(1\le R<q/2\),
+\begin{equation}
+ \boxed{
+ |Z|
+ \ll_{k,\delta}
+ \max_{0<d_q(r,0)\le R}|\widehat A(r)|
+ +R^{1/2-k}\sqrt{qD}.}
+\label{eq:abstract-low-frequency}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+On \(0<d_q(r,0)\le R\), use the maximum and
+\eqref{eq:wiener-bound}.  On the complementary frequencies,
+Cauchy--Schwarz, \eqref{eq:filter-decay}, and Parseval give
+\begin{align*}
+ \sum_{d_q(r,0)>R}|m_k(r)\widehat A(r)|
+ &\le
+ \left(\sum_{d_q(r,0)>R}|m_k(r)|^2\right)^{1/2}
+ \left(\sum_r|\widehat A(r)|^2\right)^{1/2}\\
+ &\ll_{k,\delta}
+ \left(\sum_{d>R}d^{-2k}\right)^{1/2}\sqrt{qD}\\
+ &\ll_{k,\delta}R^{1/2-k}\sqrt{qD}.
+\end{align*}
+\end{proof}
+
+\begin{remark}[Why positive-density padding matters]
+If \(H/q\to0\), then \(L/q\to0\), and both the Wiener norm and the
+decay constant incur a factor depending on \(q/H\).  Such a loss must
+be entered into the physical ledger.  The low-frequency theorem below
+therefore makes the harmless stronger auxiliary choice that leaves a
+zero arc of positive density.
+\end{remark}

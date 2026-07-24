@@ -1,0 +1,101 @@
+\section{Exact reconstruction from structural zeros}
+\label{sec:fourier-reconstruction}
+
+Let \(G=\Z/q\Z\), where \(q\ge2\), and write
+\[
+ e_q(x)=\ee^{2\pi i x/q}.
+\]
+For \(A:G\to\C\), use the unnormalized Fourier transform
+\begin{equation}
+ \widehat A(r)=\sum_{n\in G}A(n)e_q(-rn),
+ \qquad r\in G.
+\label{eq:dft}
+\end{equation}
+Then
+\begin{equation}
+ A(n)=\frac1q\sum_{r\in G}\widehat A(r)e_q(rn),
+\qquad
+ \sum_{r\in G}|\widehat A(r)|^2
+ =q\sum_{n\in G}|A(n)|^2.
+\label{eq:inversion-parseval}
+\end{equation}
+Put
+\[
+ Z=\widehat A(0)=\sum_nA(n),\qquad
+ D=\sum_n|A(n)|^2.
+\]
+
+\begin{proposition}[One-zero coherent reconstruction]
+\label{prop:one-zero}
+If \(A(k)=0\) for some \(k\in G\), then
+\begin{equation}
+ \boxed{
+ Z=-\sum_{r\ne0}\widehat A(r)e_q(rk).}
+\label{eq:one-zero}
+\end{equation}
+In particular, if \(A(0)=0\), then
+\begin{equation}
+ Z=-\sum_{r\ne0}\widehat A(r).
+\label{eq:zero-coordinate}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Insert \(n=k\) in Fourier inversion and multiply by \(q\):
+\[
+ 0=Z+\sum_{r\ne0}\widehat A(r)e_q(rk).
+\]
+\end{proof}
+
+\begin{remark}[What the identity does and does not say]
+\Cref{prop:one-zero} proves that nonzero Fourier modes determine the
+zero mode once a structural zero is known.  It does not bound the
+coherent sum on the right.  A mean square, a pointwise estimate on
+generic \(r\), or an exceptional-set count must still be combined
+with the exact phases \(e_q(rk)\).
+\end{remark}
+
+The single-zero identity is not optimal when \(A\) has many zero
+coordinates.  Let
+\[
+ S=\supp A,\qquad s=|S|,\qquad K=G\setminus S,\qquad k=|K|=q-s.
+\]
+Assume \(K\ne\varnothing\).  For a weight \(w:K\to\C\) satisfying
+\begin{equation}
+ \sum_{x\in K}w(x)=1,
+\label{eq:weight-normalization}
+\end{equation}
+define
+\begin{equation}
+ m_w(r)=\sum_{x\in K}w(x)e_q(rx).
+\label{eq:multiplier}
+\end{equation}
+
+\begin{theorem}[Weighted zero-set reconstruction]
+\label{thm:weighted-reconstruction}
+For every \(w\) satisfying \eqref{eq:weight-normalization},
+\begin{equation}
+ \boxed{
+ Z=-\sum_{r\ne0}m_w(r)\widehat A(r).}
+\label{eq:weighted-reconstruction}
+\end{equation}
+Moreover,
+\begin{equation}
+ \sum_{r\ne0}|m_w(r)|^2
+ =q\sum_{x\in K}|w(x)|^2-1.
+\label{eq:multiplier-parseval}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Multiply the inversion identity \(A(x)=0\), \(x\in K\), by \(w(x)\)
+and sum over \(K\).  The \(r=0\) term is \(Z\) because
+\(\sum_Kw=1\); the remaining terms give
+\eqref{eq:weighted-reconstruction}.  Parseval applied to the
+zero-extension of \(w\) gives
+\[
+ \sum_{r\in G}|m_w(r)|^2=q\sum_{x\in K}|w(x)|^2.
+\]
+Since \(m_w(0)=1\), removing \(r=0\) proves
+\eqref{eq:multiplier-parseval}.
+\end{proof}

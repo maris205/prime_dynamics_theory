@@ -1,0 +1,130 @@
+\section{A multiplier-weighted exceptional-frequency budget}
+\label{sec:exceptional-budget}
+
+Let \(m=m_w\) be any exact reconstruction multiplier from
+\cref{thm:weighted-reconstruction}.  For
+\(E\subseteq G\setminus\{0\}\), put
+\[
+ M_E^2=\sum_{r\in E}|m(r)|^2,\qquad
+ H_E^2=\sum_{r\in E}|\widehat A(r)|^2,
+\]
+and let \(E^c\) denote the complement inside
+\(G\setminus\{0\}\).
+
+\begin{theorem}[Exact exceptional-frequency ledger]
+\label{thm:exceptional-ledger}
+For every \(E\subseteq G\setminus\{0\}\),
+\begin{equation}
+ |Z|\le M_EH_E+M_{E^c}H_{E^c}.
+\label{eq:exceptional-l2}
+\end{equation}
+If in addition
+\[
+ |\widehat A(r)|\le U
+ \qquad(r\in E^c),
+\]
+then
+\begin{equation}
+ |Z|
+ \le
+ M_EH_E
+ +
+U\sum_{r\in E^c}|m(r)|
+ \le
+ M_EH_E+U\sqrt{|E^c|}\,M_{E^c}.
+\label{eq:exceptional-pointwise}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Split the exact sum
+\[
+ Z=-\sum_{r\ne0}m(r)\widehat A(r)
+\]
+over \(E\) and \(E^c\).  Apply Cauchy--Schwarz on both pieces to get
+\eqref{eq:exceptional-l2}.  On \(E^c\), the pointwise hypothesis
+gives the first bound in \eqref{eq:exceptional-pointwise}; a second
+Cauchy--Schwarz gives the last bound.
+\end{proof}
+
+\begin{corollary}[A sufficient coherent transfer criterion]
+\label{cor:coherent-criterion}
+Suppose a family \(A_X\) has target scale \(T_X>0\).  If for some
+exceptional sets \(E_X\),
+\[
+ M_{E_X}H_{E_X}=o(T_X)
+ \quad\text{and}\quad
+ M_{E_X^c}H_{E_X^c}=o(T_X),
+\]
+then \(Z_X=o(T_X)\).  The same conclusion follows from the two terms
+on the right of \eqref{eq:exceptional-pointwise}.
+\end{corollary}
+
+\begin{proof}
+Apply \cref{thm:exceptional-ledger}.
+\end{proof}
+
+\begin{remark}[Cardinality is not the correct currency]
+The exceptional contribution is controlled by \(M_EH_E\), not by
+\(|E|\) alone.  A small set can carry a large fraction of the
+reassembly multiplier or of the Fourier energy.  Conversely a large
+set may be harmless if one of those weighted masses is small.
+Accordingly, an ``all but few frequencies'' theorem needs an explicit
+multiplier-weighted return to the literal coefficient.
+\end{remark}
+
+\begin{example}[A bounded exceptional set can carry the zero mode]
+\label{ex:bounded-exceptional-set}
+Let \(q\) be a large prime, put \(s=\lfloor q/8\rfloor\), and define
+\[
+ A(n)=e_q(n)\mathbf1_{\{1,\ldots,s\}}(n).
+\]
+The coefficient has a zero arc of positive density and \(A(0)=0\).
+Its zero mode is a geometric sum with
+\[
+ |Z|\asymp s.
+\]
+Moreover,
+\[
+ \widehat A(r)
+ =\sum_{n=1}^{s}e_q((1-r)n),
+\]
+so \(\widehat A(1)=s\), while
+\[
+ |\widehat A(r)|
+ \ll
+ \min\left\{s,\frac{q}{d_q(r,1)}\right\}.
+\]
+For every fixed \(\varepsilon>0\), only
+\(O_\varepsilon(1)\) frequencies exceed \(\varepsilon s\), yet one
+of them carries the natural zero-mode scale.  Therefore an
+all-but-bounded-exceptional-set pointwise theorem does not control
+\(Z\) unless the exceptional contribution is returned.
+\end{example}
+
+\begin{proposition}[No automatic gain from the optimal zero-set kernel]
+\label{prop:no-automatic-gain}
+For the uniform zero-set multiplier \(m_K\), using only
+\[
+ M_E^2+M_{E^c}^2=\frac{s}{q-s},
+\qquad
+ H_E^2+H_{E^c}^2=qD-|Z|^2,
+\]
+the best universal consequence of
+\eqref{eq:exceptional-l2} is the sharp support bound
+\(|Z|^2\le sD\).
+\end{proposition}
+
+\begin{proof}
+Cauchy--Schwarz in \(\C^2\) gives
+\[
+ M_EH_E+M_{E^c}H_{E^c}
+ \le
+ \left(\frac{s}{q-s}\right)^{1/2}
+ (qD-|Z|^2)^{1/2}.
+\]
+This is exactly the inequality used in
+\cref{thm:sharp-support-bound}, and its rearrangement is
+\(|Z|^2\le sD\).  Equality is attained by the common-phase
+extremizers there, so no smaller universal constant follows.
+\end{proof}

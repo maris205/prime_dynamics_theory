@@ -1,0 +1,66 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The high-row fixed-shift route isolates a literal determinant
+coefficient
+\[
+ A_X(n)=A_{C_X}(n),\qquad
+ Z_X=\sum_nA_X(n),\qquad
+ D_X=\sum_n|A_X(n)|^2.
+\]
+TPC-81 and TPC-82 record \(D_X\) and \(Z_X\) as the two remaining
+arithmetic statistics in the conditional flatness transfer
+\citep{WangTPC81,WangTPC82}.  TPC-83 reduces natural determinant
+energy to survival of the actual post-bin \(\ell^1\) mass
+\citep{WangTPC83}.  TPC-85 then audits several operations that do not
+manufacture cancellation: Fourier centering, determinant-fiber
+conditional expectation, and content inversion
+\citep{WangTPC85}.
+
+There is, however, a subtle correction to a common exclusion.
+The physical TPC-32 Fourier modulus is chosen large enough that the
+determinant support embeds without wrap, and the literal determinant
+bin \(n=0\) vanishes.  Fourier inversion at that structural zero
+expresses \(Z_X\) as a sum of all nonzero Fourier modes.  Consequently
+a sufficiently coherent theorem for those modes can control \(Z_X\).
+What fails is the unproved passage from generic, mean-square, or
+all-but-exceptional frequency information to that particular signed
+sum.
+
+This paper makes the distinction exact.  Its main results are:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item every zero coordinate gives an exact nonzero-frequency
+reconstruction of the zero mode;
+\item among kernels obtained by averaging structural zeros, the
+unique minimum-\(\ell^2\) kernel averages them uniformly;
+\item the optimal kernel and Parseval recover the sharp support
+inequality \(|Z|^2\le |S|D\), with no loss;
+\item positive-density zero-arc padding produces fixed-order smooth
+filters with bounded Wiener norm and polynomial frequency decay;
+\item the resulting tail estimate reduces the literal zero-mode
+problem to a mesoscopic low-frequency window;
+\item exceptional frequencies must be measured by their mass under
+the reconstruction multiplier, not merely by cardinality;
+\item total nonzero-frequency energy alone gives no improvement over
+the sharp support bound; and
+\item the literal TPC-32 packet satisfies all finite hypotheses, but none of
+the finite identities supplies new arithmetic cancellation.
+\end{enumerate}
+
+The point is not to relabel the zero-mode problem as a Fourier
+problem.  The exact identity instead says what a valid Fourier input
+must estimate.  It also prevents two opposite errors: declaring that
+nonzero frequencies are logically irrelevant, and declaring that a
+generic dispersion estimate automatically controls their coherent
+sum.
+
+\subsection{Audit levels}
+
+We use the established three-level terminology.  An \(\Lzero\)
+statement is finite algebra or an abstract countermodel.  An
+\(\Lone\) statement attaches that algebra to the literal
+fixed-\(h_0\) carrier with complete native aggregation, actual support,
+and global normalization.  An \(\Ltwo\) statement is a new
+growing-\(X\) arithmetic estimate for that carrier.  The main Fourier
+theorems below are \(\Lzero\); \cref{sec:physical-interface} is
+\(\Lone\); the missing coherent M\"obius estimate is \(\Ltwo\).

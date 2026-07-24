@@ -1,0 +1,95 @@
+\section{The optimal support-averaged kernel}
+\label{sec:optimal-kernel}
+
+\begin{theorem}[Unique minimum-norm reconstruction]
+\label{thm:optimal-kernel}
+Among all complex weights \(w\) supported on \(K\) and satisfying
+\(\sum_Kw=1\), the unique minimizer of
+\[
+ \sum_{r\ne0}|m_w(r)|^2
+\]
+is the uniform weight
+\[
+ w_K(x)=\frac1k,\qquad x\in K.
+\]
+Writing \(m_K=m_{w_K}\), one has
+\begin{equation}
+ \boxed{
+ \sum_{r\ne0}|m_K(r)|^2
+ =\frac{s}{q-s}.}
+\label{eq:optimal-norm}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Cauchy--Schwarz and \(\sum_Kw=1\) give
+\[
+ 1\le k\sum_{x\in K}|w(x)|^2,
+\]
+with equality exactly when \(w(x)=1/k\) on \(K\).  Insert the minimum
+\(\sum_K|w|^2=1/k\) into
+\eqref{eq:multiplier-parseval}:
+\[
+ \min_w\sum_{r\ne0}|m_w(r)|^2
+ =\frac qk-1=\frac{s}{q-s}.
+\]
+\end{proof}
+
+\begin{theorem}[Optimal Fourier proof of the support bound]
+\label{thm:sharp-support-bound}
+For every \(A:G\to\C\) with nonempty complement of its support,
+\begin{equation}
+ \boxed{|Z|^2\le sD.}
+\label{eq:sharp-support-bound}
+\end{equation}
+The constant \(s\) is sharp for every prescribed nonempty support
+set \(S\).
+\end{theorem}
+
+\begin{proof}
+Use \cref{thm:weighted-reconstruction} with \(w=w_K\) and apply
+Cauchy--Schwarz:
+\[
+ |Z|^2
+ \le
+ \frac{s}{q-s}
+ \sum_{r\ne0}|\widehat A(r)|^2.
+\]
+By Parseval,
+\[
+ \sum_{r\ne0}|\widehat A(r)|^2=qD-|Z|^2.
+\]
+Therefore
+\[
+ |Z|^2\le\frac{s}{q-s}(qD-|Z|^2),
+\]
+which rearranges to \eqref{eq:sharp-support-bound}.  If
+\(A(n)=c\ne0\) on \(S\) and is zero off \(S\), then
+\(|Z|^2=s^2|c|^2=sD\), proving sharpness.
+\end{proof}
+
+\begin{remark}[No gain was hidden in Fourier space]
+The direct physical proof of \eqref{eq:sharp-support-bound} is
+Cauchy--Schwarz on \(S\).  The value of
+\cref{thm:sharp-support-bound} is diagnostic: it proves that the
+minimum-norm use of all structural zeros gives exactly, and not more
+than, the sharp physical support inequality.  Any improvement must
+use arithmetic information about the coherent Fourier sum, not a
+different normalization of the same finite data.
+\end{remark}
+
+\begin{corollary}[Mean-square dispersion is insufficient]
+\label{cor:mean-square-insufficient}
+Knowledge of \(s\), \(D\), and the exact nonzero-frequency energy
+\[
+ \sum_{r\ne0}|\widehat A(r)|^2=qD-|Z|^2
+\]
+cannot yield a universal improvement over
+\eqref{eq:sharp-support-bound}.  Constant-modulus, common-phase
+coefficients on \(S\) attain equality.
+\end{corollary}
+
+\begin{proof}
+The displayed identity is Parseval, and the extremizers in the proof
+of \cref{thm:sharp-support-bound} have the claimed data.
+\end{proof}
