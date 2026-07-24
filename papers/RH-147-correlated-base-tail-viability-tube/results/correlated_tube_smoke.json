@@ -1,0 +1,230 @@
+{
+  "audit_summary": {
+    "chain_count": 2,
+    "clean_suffix_chain_count": 0,
+    "clean_suffix_minimum_tube_beta": null,
+    "clean_suffix_positive_chain_count": 0,
+    "common_1e_10_tube_chain_count": 1,
+    "common_1e_4_tube_chain_count": 0,
+    "common_1e_6_tube_chain_count": 0,
+    "common_1e_8_tube_chain_count": 0,
+    "local_loss_multiplier_count": 2,
+    "local_multiplier_count": 2,
+    "local_recovery_multiplier_count": 0,
+    "maximum_correlation_gain_over_rectangle": 1.0,
+    "maximum_local_support_multiplier": 0.2959932409998081,
+    "maximum_positive_tube_beta": 1.0365725459187261e-10,
+    "maximum_reanchoring_gain_over_projective": 5.996192854495296e+25,
+    "median_correlation_gain_over_rectangle": 1.0,
+    "median_local_support_multiplier": 0.1553123980092098,
+    "median_positive_tube_beta": 1.0365725459187261e-10,
+    "median_reanchoring_gain_over_projective": 5.996192854495296e+25,
+    "minimum_correlation_gain_over_rectangle": 1.0,
+    "minimum_local_support_multiplier": 0.014631555018611452,
+    "minimum_positive_tube_beta": 1.0365725459187261e-10,
+    "minimum_reanchoring_gain_over_projective": 5.996192854495296e+25,
+    "positive_tube_chain_count": 1,
+    "positive_tube_transition_count": 7,
+    "scale_count": 2,
+    "support_recomputation_failure_count": 0,
+    "transition_count": 8
+  },
+  "route_consequence": "A single support tube K_beta transports the controlled tail and normalized base through a signed logarithmic cocycle, retaining recovery steps that unsigned projective variation discards. The outward finite archive has 28 complete K_1e-10 chains and an 18-chain clean suffix above 1.5e-10. Direct statewise reanchoring improves the RH-146 projective product by 16--48 orders, but an all-level cross-scale cocycle remains unproved.",
+  "rows": [
+    {
+      "correlation_gain_over_rectangle": 1.0,
+      "local_support_multipliers": [
+        0.014631555018611452,
+        0.2959932409998081
+      ],
+      "maximal_common_tube_beta": 1.0365725459187261e-10,
+      "minimum_log_cocycle_from_first_state": -5.441993439256814,
+      "positive_tube": true,
+      "projective_terminal_lower": 1.7287178232461558e-36,
+      "reanchoring_gain_over_projective": 5.996192854495296e+25,
+      "rectangular_packet_beta": 1.0365725459187261e-10,
+      "side": "left",
+      "sigma": 0.16,
+      "steps": [
+        {
+          "archive_support_lower": 2.393466886398883e-08,
+          "base_lower": 2.393466886398883e-08,
+          "source_time": 1,
+          "support_lower": 2.393466886398883e-08,
+          "support_recomputation_holds": true,
+          "tail_upper": 9.214730572730808e-46,
+          "target_time": 2,
+          "tube_base_requirements": {
+            "1e-04": 0.0001,
+            "1e-06": 1e-06,
+            "1e-08": 1e-08,
+            "1e-10": 1e-10
+          }
+        },
+        {
+          "archive_support_lower": 3.50201424335699e-10,
+          "base_lower": 3.50201424335699e-10,
+          "source_time": 2,
+          "support_lower": 3.50201424335699e-10,
+          "support_recomputation_holds": true,
+          "tail_upper": 1.2305023601045757e-39,
+          "target_time": 3,
+          "tube_base_requirements": {
+            "1e-04": 0.0001,
+            "1e-06": 1e-06,
+            "1e-08": 1e-08,
+            "1e-10": 1e-10
+          }
+        },
+        {
+          "archive_support_lower": 1.0365725459187261e-10,
+          "base_lower": 1.0365725459187261e-10,
+          "source_time": 3,
+          "support_lower": 1.0365725459187261e-10,
+          "support_recomputation_holds": true,
+          "tail_upper": 1.1083578250010639e-35,
+          "target_time": 4,
+          "tube_base_requirements": {
+            "1e-04": 0.0001,
+            "1e-06": 1e-06,
+            "1e-08": 1e-08,
+            "1e-10": 1e-10
+          }
+        }
+      ],
+      "support_recomputation_failure_count": 0,
+      "terminal_log_cocycle_from_first_state": -5.441993439256814,
+      "threshold": 1e-08,
+      "transition_count": 3,
+      "tube_membership": {
+        "1e-04": false,
+        "1e-06": false,
+        "1e-08": false,
+        "1e-10": true
+      }
+    },
+    {
+      "correlation_gain_over_rectangle": null,
+      "local_support_multipliers": [],
+      "maximal_common_tube_beta": 0.0,
+      "minimum_log_cocycle_from_first_state": null,
+      "positive_tube": false,
+      "projective_terminal_lower": 1.499311740933022e-29,
+      "reanchoring_gain_over_projective": null,
+      "rectangular_packet_beta": 0.0,
+      "side": "left",
+      "sigma": 0.08,
+      "steps": [
+        {
+          "archive_support_lower": 0.0005683024343218436,
+          "base_lower": 0.0005683024343218436,
+          "source_time": 1,
+          "support_lower": 0.0005683024343218436,
+          "support_recomputation_holds": true,
+          "tail_upper": 3.0614455453166055e-55,
+          "target_time": 2,
+          "tube_base_requirements": {
+            "1e-04": 0.0001,
+            "1e-06": 1e-06,
+            "1e-08": 1e-08,
+            "1e-10": 1e-10
+          }
+        },
+        {
+          "archive_support_lower": 7.570917572897733e-05,
+          "base_lower": 7.570917572897733e-05,
+          "source_time": 2,
+          "support_lower": 7.570917572897733e-05,
+          "support_recomputation_holds": true,
+          "tail_upper": 1.9363191093535387e-51,
+          "target_time": 3,
+          "tube_base_requirements": {
+            "1e-04": 0.0001,
+            "1e-06": 1e-06,
+            "1e-08": 1e-08,
+            "1e-10": 1e-10
+          }
+        },
+        {
+          "archive_support_lower": 1.2344187972020378e-06,
+          "base_lower": 1.2344187972020378e-06,
+          "source_time": 3,
+          "support_lower": 1.2344187972020378e-06,
+          "support_recomputation_holds": true,
+          "tail_upper": 3.0372834138231565e-46,
+          "target_time": 4,
+          "tube_base_requirements": {
+            "1e-04": 0.0001,
+            "1e-06": 1e-06,
+            "1e-08": 1e-08,
+            "1e-10": 1e-10
+          }
+        },
+        {
+          "archive_support_lower": 1.2469003597144295e-06,
+          "base_lower": 1.257768320973159e-06,
+          "source_time": 4,
+          "support_lower": 1.2469003597144293e-06,
+          "support_recomputation_holds": true,
+          "tail_upper": 4.6967668003941155e-06,
+          "target_time": 5,
+          "tube_base_requirements": {
+            "1e-04": 0.00010087159821344657,
+            "1e-06": 1.0087159821344656e-06,
+            "1e-08": 1.0087159821344657e-08,
+            "1e-10": 1.0087159821344657e-10
+          }
+        },
+        {
+          "archive_support_lower": 0.0,
+          "base_lower": 5.661078243622693e-09,
+          "source_time": 5,
+          "support_lower": 0.0,
+          "support_recomputation_holds": true,
+          "tail_upper": 10.133532780260646,
+          "target_time": 6,
+          "tube_base_requirements": {
+            "1e-04": Infinity,
+            "1e-06": Infinity,
+            "1e-08": Infinity,
+            "1e-10": Infinity
+          }
+        }
+      ],
+      "support_recomputation_failure_count": 0,
+      "terminal_log_cocycle_from_first_state": null,
+      "threshold": 1e-08,
+      "transition_count": 5,
+      "tube_membership": {
+        "1e-04": false,
+        "1e-06": false,
+        "1e-08": false,
+        "1e-10": false
+      }
+    }
+  ],
+  "sharp_witnesses": {
+    "multiplier_equality": "y'=F(y), a'=r a",
+    "negative_cocycle_obstruction": "kappa_n=1/2 gives support 2^{-n}",
+    "tube_boundary": "a=beta/phi(y)"
+  },
+  "status": "rh147_correlated_base_tail_viability_tube_audit",
+  "theorem_boundary": {
+    "all_level_support_cocycle_verified": false,
+    "correlated_support_tube_theorem": true,
+    "cross_scale_reset_constructed": false,
+    "finite_outward_tube_audited": false,
+    "hilbert_polya_operator": false,
+    "lower_bounded_log_cocycle_support_theorem": true,
+    "negative_log_cocycle_obstruction": true,
+    "riemann_hypothesis": false,
+    "sharp_correlated_tube_multiplier_proved": true,
+    "uniform_stage_A_closed": false
+  },
+  "tube_levels": [
+    1e-10,
+    1e-08,
+    1e-06,
+    0.0001
+  ]
+}

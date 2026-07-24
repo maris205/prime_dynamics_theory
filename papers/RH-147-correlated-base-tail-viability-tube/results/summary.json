@@ -1,0 +1,70 @@
+{
+  "audit": {
+    "chain_count": 30,
+    "clean_suffix_chain_count": 18,
+    "clean_suffix_minimum_tube_beta": 1.5542612581684546e-10,
+    "clean_suffix_positive_chain_count": 18,
+    "common_1e_10_tube_chain_count": 28,
+    "common_1e_4_tube_chain_count": 12,
+    "common_1e_6_tube_chain_count": 15,
+    "common_1e_8_tube_chain_count": 21,
+    "local_loss_multiplier_count": 194,
+    "local_multiplier_count": 292,
+    "local_recovery_multiplier_count": 98,
+    "maximum_correlation_gain_over_rectangle": 1.0178473965484385,
+    "maximum_local_support_multiplier": 14.760108207321647,
+    "maximum_positive_tube_beta": 0.0015192435637047328,
+    "maximum_reanchoring_gain_over_projective": 4.43917659424724e+48,
+    "median_correlation_gain_over_rectangle": 1.0,
+    "median_local_support_multiplier": 0.6010937775194569,
+    "median_positive_tube_beta": 2.3642860078720045e-06,
+    "median_reanchoring_gain_over_projective": 3.463429011082919e+26,
+    "minimum_correlation_gain_over_rectangle": 1.0,
+    "minimum_local_support_multiplier": 0.00019078139238421087,
+    "minimum_positive_tube_beta": 1.0365725459187261e-10,
+    "minimum_reanchoring_gain_over_projective": 1.3516218793913698e+16,
+    "positive_tube_chain_count": 28,
+    "positive_tube_transition_count": 328,
+    "scale_count": 5,
+    "support_recomputation_failure_count": 0,
+    "transition_count": 330
+  },
+  "program_boundary": {
+    "all_level_support_cocycle_verified": false,
+    "correlated_support_tube_theorem": true,
+    "cross_scale_reset_constructed": false,
+    "finite_outward_tube_audited": true,
+    "hilbert_polya_operator": false,
+    "lower_bounded_log_cocycle_support_theorem": true,
+    "negative_log_cocycle_obstruction": true,
+    "riemann_hypothesis": false,
+    "sharp_correlated_tube_multiplier_proved": true,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "91b9b88a3d406554e43253fd93ef35cf31b2c27d846c142a81fa14abd7660cb2",
+    "README.md": "50f50ea0400d408bd182fac384e78ea98aaebf81174d2cfd1728fab3b6467843",
+    "THEOREM_LEDGER.md": "57822618a21d616e8b189bc8981378973fd7f1238c421492b7875dc49a2aa210",
+    "UPDATED_ROADMAP.md": "90d914ef5efffbf4d858b87e3408d98aca98f4484a5b66f6dbe4513e1fa3c9d7",
+    "correlated-base-tail-viability-tube.pdf": "f3d43e47a9b66be04fe3c0a25942301b09cc53c704c5f86042f4202ad49dcdfb",
+    "figures/correlated_base_tail_tube.pdf": "86430f85b13e5474c869ae349b5cfe3fe0594abc64347e743361f5294ab36ba1",
+    "figures/correlated_base_tail_tube.png": "5a114e2a244bdf79eca77ffcc0c3cc423250a49cb7b1423b32f0ae0bd7e680b4",
+    "main.pdf": "f3d43e47a9b66be04fe3c0a25942301b09cc53c704c5f86042f4202ad49dcdfb",
+    "main.tex": "a7528b2067dc6938bb1948bdef6540adbb70bad65154b42cba7ff206c70f9bbf",
+    "pyproject.toml": "c711b45238e589a2e898b5b7cb11a669669cce73638bddca5be85abd87a74471",
+    "references.bib": "7cb734e1c45ddb742a0eeb70317f9515c78da8f08a7e15e7a0f8414cb6ebbf0b",
+    "requirements.txt": "408aa57fdb2c5a55bd8a4ee2356c6deab1623d728dbad693e1a35ac2c5e6ebf1"
+  },
+  "result_hashes": {
+    "results/correlated_tube_audit.json": "83568385831479dbff65a6c52f2abc13301bd119f17461efc95f91e33055d3d6",
+    "results/correlated_tube_smoke.json": "15f0e26399f5d14340cd8300e42b1d77cd1d2522a5c7f4c57ef0e176c55e64dd",
+    "results/dependency_manifest.json": "b8cd1d449c27fdc22f707e53d196ab6f6f157bede29cb9bec57ebfa9e3fb2d54"
+  },
+  "route_consequence": "A single support tube K_beta transports the controlled tail and normalized base through a signed logarithmic cocycle, retaining recovery steps that unsigned projective variation discards. The outward finite archive has 28 complete K_1e-10 chains and an 18-chain clean suffix above 1.5e-10. Direct statewise reanchoring improves the RH-146 projective product by 16--48 orders, but an all-level cross-scale cocycle remains unproved.",
+  "status": "rh147_correlated_base_tail_viability_tube_archived",
+  "theorem": {
+    "correlated_tube": true,
+    "log_cocycle_support": true,
+    "sharp_transition_multiplier": true
+  }
+}
