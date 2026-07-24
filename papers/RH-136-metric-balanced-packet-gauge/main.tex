@@ -1,0 +1,258 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,natbib,microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\title{Metric-Balanced Packet Gauges\\\large An Exact Orthogonal Minimax Theorem, a 33-Step Obstruction, and Recovery of 132 Tail Recurrences}
+\author{Prime Dynamics Theory Program}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The Euclidean polar gauge used in RH-135 makes consecutive packet frames as
+close as possible, but only 51 of 216 recurrent nonzero-tail transitions have
+a contractive relative-metric recurrence in that gauge.  We separate the
+intrinsic obstruction from the gauge artifact.  For positive definite recent
+Gramians $G,G'$ with increasingly ordered eigenvalues $g_i,g'_i$, define
+\[
+ \kappa(O)=\lambda_{\max}\!\left((G')^{-1/2}O^*GO(G')^{-1/2}\right),
+ \qquad O\in O(r).
+\]
+We prove the exact orthogonal minimax formula
+\[
+ \min_{O\in O(r)}\kappa(O)=\max_i\frac{g_i}{g'_i}.
+\]
+The same minimum is attained in both components of $O(r)$.  Consequently, if
+the raw memory coefficient satisfies $a\max_i(g_i/g'_i)\geq1$, then no
+orthogonal packet gauge can make the RH-134 Young recurrence contractive.
+
+For forcing control we construct a deterministic 33-point family: the
+Euclidean polar gauge, two determinant-compatible metric-optimal eigenframe
+gauges, and polar projections of 17 affine interpolation points toward each
+endpoint.  We choose the candidate minimizing the optimized affine fixed
+floor $q/(1-\rho)$, without claiming global optimality for that nonconvex
+objective.  An 80-decimal audit gives an exact finite classification.  Of 216
+recurrent transitions, 33 are impossible for every orthogonal gauge and 183
+are possible.  The finite metric-balanced family recovers all 183, including
+132 missed by the Euclidean polar gauge, and loses none of the original 51.
+All 183 optimized fixed floors are subunit; the median is
+$1.29\times10^{-14}$ and the maximum is $2.514\times10^{-3}$.  Thus the
+previous majority obstruction was primarily a gauge artifact, while the
+remaining 33 transitions form a sharp obstruction within the orthogonal
+moving-frame recurrence itself.
+\end{abstract}
+
+\section{From Euclidean alignment to metric alignment}
+Let $G,D\succcurlyeq0$ denote a recent Gramian and a memory tail in reduced
+packet coordinates, with $G\succ0$.  For the next time step use $G',D'$.
+RH-134 and RH-135 reduce the moving-frame estimate to
+\begin{equation}\label{eq:raw}
+ D'\preceq a(1+\tau)O^*DO+F_b+(1+\tau^{-1})F_f(O),
+ \qquad \tau>0,
+\end{equation}
+where $a>0$ contains the memory decay and envelope ratio, $F_b$ is the
+boundary-slice forcing, and $F_f(O)$ is the frame-motion forcing.  After
+normalization by $G'$, the old-tail coefficient is
+\[
+ \rho(O,\tau)=a(1+\tau)\kappa(O),
+ \quad
+ \kappa(O)=\left\|G^{1/2}O(G')^{-1/2}\right\|^2.
+\]
+The Euclidean polar gauge minimizes
+$\|U'-UO\|$, where $U,U'$ are consecutive packet frames
+\citep{Schonemann1966}.  It need not
+minimize $\kappa(O)$ because the latter depends on anisotropic recent-Gram
+directions.  This distinction explains the large metric factors observed in
+RH-135.
+
+The quantity $\kappa(O)$ is also the least $c$ for which
+\begin{equation}\label{eq:loewner}
+ O^*GO\preceq cG'.
+\end{equation}
+It therefore admits a complete orthogonal minimax solution using standard
+Loewner-order eigenvalue monotonicity \citep{Bhatia1997,HornJohnson1991}.
+
+\section{Exact orthogonal metric minimax}
+Write the increasingly ordered eigenvalues as
+\[
+ 0<g_1\leq\cdots\leq g_r,
+ \qquad
+ 0<g'_1\leq\cdots\leq g'_r.
+\]
+
+\begin{theorem}[Ordered-eigenframe minimax]\label{thm:minimax}
+For positive definite $G,G'\in\mathbb{R}^{r\times r}$,
+\[
+ \min_{O\in O(r)}
+ \lambda_{\max}\!\left((G')^{-1/2}O^*GO(G')^{-1/2}\right)
+ =\max_{1\leq i\leq r}\frac{g_i}{g'_i}.
+\]
+If $G=U\operatorname{diag}(g_i)U^*$ and
+$G'=V\operatorname{diag}(g'_i)V^*$, then $O_*=UV^*$ attains the minimum.
+For either prescribed determinant sign, a minimizer exists.
+\end{theorem}
+
+\begin{proof}
+Suppose \eqref{eq:loewner} holds for some $c$.  Eigenvalue monotonicity under
+the Loewner order gives
+\[
+ g_i=\lambda_i(O^*GO)\leq c\lambda_i(G')=cg'_i
+\]
+for every $i$, hence $c\geq\max_i g_i/g'_i$.  Conversely, for $O_*=UV^*$,
+$O_*^*GO_*=V\operatorname{diag}(g_i)V^*$ and $G'$ is diagonal in the same
+frame.  Its generalized eigenvalues are exactly $g_i/g'_i$, proving
+attainment.  Replacing $U$ by $US$, where $S$ is any diagonal sign matrix,
+does not change the aligned quadratic form.  Choosing the product of the
+signs gives either determinant component of $O(r)$.
+\end{proof}
+
+The proof is elementary, but it is sharp: no information about packet angles
+or frame smoothness can lower this value.  It converts a nonconvex search over
+$O(r)$ into one ordered spectral ratio.
+
+\begin{corollary}[Universal orthogonal-gauge obstruction]\label{cor:wall}
+Let
+\[
+ A_*=a\max_i\frac{g_i}{g'_i}.
+\]
+If $A_*\geq1$, then $\rho(O,\tau)>1$ for every $O\in O(r)$ and every
+$\tau>0$.  If $A_*<1$, a metric-optimal $O_*$ and a sufficiently small
+$\tau>0$ give $\rho(O_*,\tau)<1$.
+\end{corollary}
+
+Thus $A_*=1$ is an exact contractivity wall for the entire RH-134 orthogonal
+recurrence family.  It is stronger than diagnosing one failed gauge and
+weaker than ruling out nonorthogonal or enlarged-state recurrences.
+
+\section{Balancing metric decay against frame forcing}
+Metric-optimal alignment can move the frame substantially.  In the present
+recurrence, the normalized forcing has the form
+\[
+ q(O,\tau)=q_b+B(O)(1+\tau^{-1}),
+ \qquad
+ B(O)=c_f\|U'-UO\|^2,
+\]
+where $q_b$ and $c_f$ are fixed by the transition and target Gramian.  Once
+$\rho<1$, iteration gives the scalar fixed-floor objective
+\begin{equation}\label{eq:floor}
+ \Phi(O,\tau)=\frac{q_b+B(O)(1+\tau^{-1})}
+ {1-a\kappa(O)(1+\tau)}.
+\end{equation}
+The polar gauge minimizes $B$, while Theorem~\ref{thm:minimax} minimizes
+$\kappa$.  Neither endpoint generally minimizes \eqref{eq:floor}.
+
+We use the following finite, reproducible compromise.  Let $O_p$ be the
+Euclidean polar gauge.  Among the determinant-compatible sign variants of
+the ordered-eigenframe minimizer, select the two with smallest frame defect;
+call them $O_{m,1},O_{m,2}$.  For each endpoint and each
+$s\in\{0,1/16,\ldots,1\}$, project
+$(1-s)O_p+sO_{m,j}$ back to $O(r)$ by polar decomposition.  Duplicate
+matrices are removed.  In every audited transition this gives 33 candidates.
+For each candidate we optimize $\tau$ over its contractive interval and then
+choose the smallest finite $\Phi$.
+
+\begin{proposition}[Contractivity completeness of the finite family]
+The preceding candidate family contains a contractive gauge if and only if
+some orthogonal gauge is contractive.
+\end{proposition}
+\begin{proof}
+The family contains $O_{m,1}$ at $s=1$.  By
+Theorem~\ref{thm:minimax} and Corollary~\ref{cor:wall}, this endpoint is
+contractive for some $\tau$ exactly when $A_*<1$, which is exactly the
+existence condition over all orthogonal gauges.
+\end{proof}
+
+This proposition concerns feasibility only.  The 33-point interpolation is
+not proved to find the global minimum of \eqref{eq:floor}.  That distinction
+is essential: the orthogonal minimax classification is exact, while the
+reported fixed floors are certified upper bounds from a finite strategy.
+
+\section{Eighty-decimal packet audit}
+We rebuild the 30 dyadic packet chains used in RH-130--RH-135.  The packet
+rank is four, the memory depth is eight, and the decay is $\eta=1/512$.  At
+each recurrent nonzero-tail transition we compute the source and target
+Gramians, the exact minimax ratio, both selected metric endpoints, all polar
+interpolants, the frame and birth forcing, and the optimized Young floor.
+All generalized $4\times4$ spectra are recomputed at 80 decimal digits, with
+high precision serving as a numerical audit rather than an interval proof
+\citep{Higham2002}.
+
+There are 216 recurrent transitions.  The minimax test classifies 183 as
+orthogonally contractive and 33 as impossible.  The Euclidean polar gauge
+finds only 51 of the 183 possible cases.  The metric-balanced family finds
+all 183, recovering 132 and losing none.  Every recovered transition has a
+subunit fixed-floor bound.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{rrrrr}
+\toprule
+$\sigma$ & recurrent & possible & polar & balanced \\
+\midrule
+0.08 & 6   & 0  & 0  & 0 \\
+0.04 & 36  & 21 & 0  & 21 \\
+0.02 & 72  & 63 & 24 & 63 \\
+0.01 & 102 & 99 & 27 & 99 \\
+\midrule
+total & 216 & 183 & 51 & 183 \\
+\bottomrule
+\end{tabular}
+\caption{Exact orthogonal feasibility versus the two finite gauge choices.
+The coarsest audited scale has no recurrent nonzero-tail transition.}
+\label{tab:counts}
+\end{table}
+
+The exact lower base $A_*$ ranges from $0.002036$ to $7176.13$, with median
+$0.08996$.  Among feasible transitions its maximum is $0.90814$, close
+enough to the wall that forcing control is nontrivial.  The 33 universal
+obstructions are concentrated in all six $\sigma=0.08$ transitions, 15 at
+$\sigma=0.04$, nine at $\sigma=0.02$, and three at $\sigma=0.01$; 26 occur
+on the right channel and seven on the left.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/metric_balanced_packet_gauge.pdf}
+\caption{The minimax wall gives an exact feasibility classification.  The
+balanced gauge reaches every feasible transition, while the forcing floor
+remains subunit despite larger frame displacement.}
+\label{fig:audit}
+\end{figure}
+
+The price of metric alignment is visible in frame motion.  The median frame
+defect rises from $0.2215$ for the polar gauge to $1.4091$ for the selected
+balanced gauge.  On feasible transitions the median defect ratio is $9.22$
+and the maximum is about $5.59\times10^3$.  Nevertheless the strong raw
+memory decay absorbs that cost: the 183 optimized floors range from
+$7.95\times10^{-24}$ to $2.513\times10^{-3}$, with median
+$1.294\times10^{-14}$.  Only two exceed $10^{-4}$, and none reaches one.
+Principal-frame similarity is not a proxy for the minimax wall: its
+correlation with $\log_{10}A_*$ is only $-0.174$ on this frozen audit.
+
+\section{What is closed, and what remains open}
+RH-136 closes the orthogonal gauge-selection question at the level of
+contractive feasibility.  The 165 failures reported in RH-135 split into 132
+gauge artifacts and 33 genuine obstructions for every orthogonal gauge.
+For the 183 feasible transitions, forcing is no longer the finite bottleneck:
+the explicit finite candidate family gives small fixed floors throughout.
+
+The next question is composition.  A transitionwise subunit floor does not
+by itself give a scale-uniform normalized volume or capacity lower bound.
+The coefficients vary in time, and the 33 blocked transitions must be
+isolated, bypassed by a reset/birth mechanism, or handled by a larger state
+space.  A useful next invariant should therefore couple the affine tail law
+to recent-Gram volume and identify exactly when a blocked step destroys a
+multi-step certificate.
+
+We have not proved that the 33-point family globally minimizes the affine
+objective, that a nonorthogonal gauge cannot bypass the 33 walls, a uniform
+cross-scale recurrence, a positive normalized-capacity liminf, uniform Stage
+A, a Hilbert--Polya operator, zeta-zero identification, or the Riemann
+Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

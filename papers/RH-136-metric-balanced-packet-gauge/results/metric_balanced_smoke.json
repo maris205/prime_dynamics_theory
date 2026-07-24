@@ -1,0 +1,581 @@
+{
+  "audit_summary": {
+    "balanced_contractive_feasible_count": 4,
+    "balanced_subunit_fixed_floor_count": 4,
+    "chain_count": 3,
+    "lost_polar_contractive_count": 0,
+    "maximum_balanced_fixed_floor": 3.504417418098898e-05,
+    "maximum_metric_decay_lower_bound": 7176.133473034758,
+    "median_balanced_fixed_floor": 1.1305170666402382e-07,
+    "median_balanced_frame_defect": 1.1998924012669607,
+    "median_metric_decay_lower_bound": 0.8836880503858521,
+    "median_polar_frame_defect": 0.6445976002853728,
+    "minimum_balanced_fixed_floor": 3.694778101264287e-13,
+    "minimum_metric_decay_lower_bound": 0.13407369897108803,
+    "newly_recovered_contractive_count": 4,
+    "orthogonal_contractivity_impossible_count": 3,
+    "orthogonal_contractivity_possible_count": 4,
+    "polar_contractive_feasible_count": 0,
+    "recurrent_transition_count": 7,
+    "scale_count": 3
+  },
+  "blend_points": 17,
+  "precision_decimal_digits": 80,
+  "route_consequence": "Ordered Gram eigenframe matching gives the exact best metric factor available to any orthogonal frame gauge. This separates transitions that are universally blocked within the RH-134 orthogonal recurrence from those blocked only by the Euclidean polar choice. A deterministic interpolation audit measures how many recurrent steps can be recovered without making the optimized forcing floor superunit.",
+  "rows": [
+    {
+      "side": "left",
+      "sigma": 0.16,
+      "steps": [
+        {
+          "first_birth": false,
+          "recurrent": false,
+          "source_time": 1,
+          "target_time": 2
+        },
+        {
+          "first_birth": false,
+          "recurrent": false,
+          "source_time": 2,
+          "target_time": 3
+        },
+        {
+          "first_birth": false,
+          "recurrent": false,
+          "source_time": 3,
+          "target_time": 4
+        }
+      ],
+      "threshold": 1e-08
+    },
+    {
+      "side": "left",
+      "sigma": 0.08,
+      "steps": [
+        {
+          "first_birth": false,
+          "recurrent": false,
+          "source_time": 1,
+          "target_time": 2
+        },
+        {
+          "first_birth": false,
+          "recurrent": false,
+          "source_time": 2,
+          "target_time": 3
+        },
+        {
+          "first_birth": false,
+          "recurrent": false,
+          "source_time": 3,
+          "target_time": 4
+        },
+        {
+          "first_birth": true,
+          "recurrent": false,
+          "source_time": 4,
+          "target_time": 5
+        },
+        {
+          "balanced": {
+            "frame_defect": 1.1998924012669607,
+            "improves_polar": false,
+            "metric_decay": {
+              "infinite": false,
+              "log10": 3.8558905078040677,
+              "value": 7176.133473034758
+            },
+            "optimization": {
+              "contractive_feasible": false,
+              "fixed_floor": Infinity,
+              "q": Infinity,
+              "rho": 7176.133473034758,
+              "tau": null
+            },
+            "q_frame_base": {
+              "infinite": false,
+              "log10": -0.34858757112163447,
+              "value": 0.4481386782208302
+            }
+          },
+          "candidate_count": 33,
+          "first_birth": false,
+          "metric_decay_minimum": {
+            "infinite": false,
+            "log10": 3.8558905078040677,
+            "value": 7176.133473034758
+          },
+          "metric_minimum_factor": {
+            "infinite": false,
+            "log10": 6.564313064643913,
+            "value": 3667018.193285036
+          },
+          "minimum_principal_cosine": 0.7922469668531703,
+          "orthogonal_contractivity_possible": false,
+          "polar": {
+            "frame_defect": 0.6445976002853728,
+            "metric_decay": {
+              "infinite": false,
+              "log10": 7.4815287353681335,
+              "value": 30306008.127676707
+            },
+            "optimization": {
+              "contractive_feasible": false,
+              "fixed_floor": Infinity,
+              "q": Infinity,
+              "rho": 30306008.127676707,
+              "tau": null
+            },
+            "q_frame_base": {
+              "infinite": false,
+              "log10": -0.8882948083982969,
+              "value": 0.1293317611701291
+            }
+          },
+          "q_birth": {
+            "infinite": false,
+            "log10": 0.9733998952172385,
+            "value": 9.405889994899066
+          },
+          "recurrent": true,
+          "source_time": 5,
+          "target_time": 6
+        }
+      ],
+      "threshold": 1e-08
+    },
+    {
+      "side": "left",
+      "sigma": 0.04,
+      "steps": [
+        {
+          "first_birth": false,
+          "recurrent": false,
+          "source_time": 1,
+          "target_time": 2
+        },
+        {
+          "first_birth": false,
+          "recurrent": false,
+          "source_time": 2,
+          "target_time": 3
+        },
+        {
+          "first_birth": false,
+          "recurrent": false,
+          "source_time": 3,
+          "target_time": 4
+        },
+        {
+          "first_birth": true,
+          "recurrent": false,
+          "source_time": 4,
+          "target_time": 5
+        },
+        {
+          "balanced": {
+            "frame_defect": 0.8878337193992358,
+            "improves_polar": true,
+            "metric_decay": {
+              "infinite": false,
+              "log10": -0.6473498214440668,
+              "value": 0.2252424167900216
+            },
+            "optimization": {
+              "contractive_feasible": true,
+              "fixed_floor": 3.694778101264287e-13,
+              "q": 2.6005217784087127e-13,
+              "rho": 0.2961629339746112,
+              "tau": 0.31486306262955804
+            },
+            "q_frame_base": {
+              "infinite": false,
+              "log10": -14.081613892038586,
+              "value": 8.286785700436003e-15
+            }
+          },
+          "candidate_count": 33,
+          "first_birth": false,
+          "metric_decay_minimum": {
+            "infinite": false,
+            "log10": -0.6473498214440668,
+            "value": 0.2252424167900216
+          },
+          "metric_minimum_factor": {
+            "infinite": false,
+            "log10": 2.0610727353957783,
+            "value": 115.09931404873961
+          },
+          "minimum_principal_cosine": 0.9498935787796429,
+          "orthogonal_contractivity_possible": true,
+          "polar": {
+            "frame_defect": 0.3165641205833569,
+            "metric_decay": {
+              "infinite": false,
+              "log10": 2.481169465314797,
+              "value": 302.8094785340144
+            },
+            "optimization": {
+              "contractive_feasible": false,
+              "fixed_floor": Infinity,
+              "q": Infinity,
+              "rho": 302.8094785340144,
+              "tau": null
+            },
+            "q_frame_base": {
+              "infinite": false,
+              "log10": -14.977353781888114,
+              "value": 1.0535283289695578e-15
+            }
+          },
+          "q_birth": {
+            "infinite": false,
+            "log10": -12.64695612767411,
+            "value": 2.254466946367349e-13
+          },
+          "recurrent": true,
+          "source_time": 5,
+          "target_time": 6
+        },
+        {
+          "balanced": {
+            "frame_defect": 1.522407222832624,
+            "improves_polar": true,
+            "metric_decay": {
+              "infinite": false,
+              "log10": -0.2373831788700614,
+              "value": 0.5789176908195035
+            },
+            "optimization": {
+              "contractive_feasible": true,
+              "fixed_floor": 9.241171808025643e-11,
+              "q": 2.669570952478634e-11,
+              "rho": 0.7111220299832319,
+              "tau": 0.22836465573643602
+            },
+            "q_frame_base": {
+              "infinite": false,
+              "log10": -11.556814979888303,
+              "value": 2.7745018588147482e-12
+            }
+          },
+          "candidate_count": 33,
+          "first_birth": false,
+          "metric_decay_minimum": {
+            "infinite": false,
+            "log10": -0.2373831788700614,
+            "value": 0.5789176908195035
+          },
+          "metric_minimum_factor": {
+            "infinite": false,
+            "log10": 2.4718851286363828,
+            "value": 296.40472920935827
+          },
+          "minimum_principal_cosine": 0.022830754756585574,
+          "orthogonal_contractivity_possible": true,
+          "polar": {
+            "frame_defect": 1.397976570077921,
+            "metric_decay": {
+              "infinite": false,
+              "log10": 3.8609903128163126,
+              "value": 7260.897614123356
+            },
+            "optimization": {
+              "contractive_feasible": false,
+              "fixed_floor": Infinity,
+              "q": Infinity,
+              "rho": 7260.897614123356,
+              "tau": null
+            },
+            "q_frame_base": {
+              "infinite": false,
+              "log10": -11.630876865853065,
+              "value": 2.339500455832536e-12
+            }
+          },
+          "q_birth": {
+            "infinite": false,
+            "log10": -10.929158184813005,
+            "value": 1.1771771275005289e-11
+          },
+          "recurrent": true,
+          "source_time": 6,
+          "target_time": 7
+        },
+        {
+          "balanced": {
+            "frame_defect": 1.1376769159831435,
+            "improves_polar": true,
+            "metric_decay": {
+              "infinite": false,
+              "log10": -0.05370101768568486,
+              "value": 0.8836880503858521
+            },
+            "optimization": {
+              "contractive_feasible": true,
+              "fixed_floor": 2.2601100160996738e-07,
+              "q": 1.4485639575128521e-08,
+              "rho": 0.9359073696769561,
+              "tau": 0.05909248095897984
+            },
+            "q_frame_base": {
+              "infinite": false,
+              "log10": -9.154268162326645,
+              "value": 7.010223069114035e-10
+            }
+          },
+          "candidate_count": 33,
+          "first_birth": false,
+          "metric_decay_minimum": {
+            "infinite": false,
+            "log10": -0.05370101768568486,
+            "value": 0.8836880503858521
+          },
+          "metric_minimum_factor": {
+            "infinite": false,
+            "log10": 2.6555689400607196,
+            "value": 452.44827843313794
+          },
+          "minimum_principal_cosine": 0.7196781106329766,
+          "orthogonal_contractivity_possible": true,
+          "polar": {
+            "frame_defect": 0.7487614965621869,
+            "metric_decay": {
+              "infinite": false,
+              "log10": 3.2516535893246634,
+              "value": 1785.0631689579852
+            },
+            "optimization": {
+              "contractive_feasible": false,
+              "fixed_floor": Infinity,
+              "q": Infinity,
+              "rho": 1785.0631689579852,
+              "tau": null
+            },
+            "q_frame_base": {
+              "infinite": false,
+              "log10": -9.517619047283727,
+              "value": 3.0365536084027387e-10
+            }
+          },
+          "q_birth": {
+            "infinite": false,
+            "log10": -8.716364490271411,
+            "value": 1.9214784130718858e-09
+          },
+          "recurrent": true,
+          "source_time": 7,
+          "target_time": 8
+        },
+        {
+          "balanced": {
+            "frame_defect": 1.7765404520292105,
+            "improves_polar": false,
+            "metric_decay": {
+              "infinite": false,
+              "log10": 0.16527230141837665,
+              "value": 1.463094242901264
+            },
+            "optimization": {
+              "contractive_feasible": false,
+              "fixed_floor": Infinity,
+              "q": Infinity,
+              "rho": 1.463094242901264,
+              "tau": null
+            },
+            "q_frame_base": {
+              "infinite": false,
+              "log10": -5.8926135872169585,
+              "value": 1.2805201380784779e-06
+            }
+          },
+          "candidate_count": 33,
+          "first_birth": false,
+          "metric_decay_minimum": {
+            "infinite": false,
+            "log10": 0.16527230141837673,
+            "value": 1.4630942429012643
+          },
+          "metric_minimum_factor": {
+            "infinite": false,
+            "log10": 2.8745422623879002,
+            "value": 749.1042523545677
+          },
+          "minimum_principal_cosine": 0.48164261488698806,
+          "orthogonal_contractivity_possible": false,
+          "polar": {
+            "frame_defect": 1.0181919122768681,
+            "metric_decay": {
+              "infinite": false,
+              "log10": 4.774411580704184,
+              "value": 59485.56360144992
+            },
+            "optimization": {
+              "contractive_feasible": false,
+              "fixed_floor": Infinity,
+              "q": Infinity,
+              "rho": 59485.56360144992,
+              "tau": null
+            },
+            "q_frame_base": {
+              "infinite": false,
+              "log10": -6.3761045029266885,
+              "value": 4.206254024273637e-07
+            }
+          },
+          "q_birth": {
+            "infinite": false,
+            "log10": -5.672997049813789,
+            "value": 2.123258885365172e-06
+          },
+          "recurrent": true,
+          "source_time": 8,
+          "target_time": 9
+        },
+        {
+          "balanced": {
+            "frame_defect": 0.7973649432041636,
+            "improves_polar": true,
+            "metric_decay": {
+              "infinite": false,
+              "log10": -0.8726564086659848,
+              "value": 0.1340736989710881
+            },
+            "optimization": {
+              "contractive_feasible": true,
+              "fixed_floor": 3.504417418098898e-05,
+              "q": 2.4068378207884418e-05,
+              "rho": 0.31319887626454024,
+              "tau": 1.3360202535478567
+            },
+            "q_frame_base": {
+              "infinite": false,
+              "log10": -5.078978135283486,
+              "value": 8.337231576641584e-06
+            }
+          },
+          "candidate_count": 33,
+          "first_birth": false,
+          "metric_decay_minimum": {
+            "infinite": false,
+            "log10": -0.8726564086659849,
+            "value": 0.13407369897108803
+          },
+          "metric_minimum_factor": {
+            "infinite": false,
+            "log10": 1.8366135523098335,
+            "value": 68.64573387319513
+          },
+          "minimum_principal_cosine": 0.9891171911021095,
+          "orthogonal_contractivity_possible": true,
+          "polar": {
+            "frame_defect": 0.1475317518223849,
+            "metric_decay": {
+              "infinite": false,
+              "log10": 4.382957167033065,
+              "value": 24152.226176208387
+            },
+            "optimization": {
+              "contractive_feasible": false,
+              "fixed_floor": Infinity,
+              "q": Infinity,
+              "rho": 24152.226176208387,
+              "tau": null
+            },
+            "q_frame_base": {
+              "infinite": false,
+              "log10": -6.544521411865443,
+              "value": 2.8541617926000574e-07
+            }
+          },
+          "q_birth": {
+            "infinite": false,
+            "log10": -5.022697249931434,
+            "value": 9.490798437043138e-06
+          },
+          "recurrent": true,
+          "source_time": 9,
+          "target_time": 10
+        },
+        {
+          "balanced": {
+            "frame_defect": 1.4131048262491306,
+            "improves_polar": false,
+            "metric_decay": {
+              "infinite": false,
+              "log10": 1.5623341802699058,
+              "value": 36.50347252610166
+            },
+            "optimization": {
+              "contractive_feasible": false,
+              "fixed_floor": Infinity,
+              "q": Infinity,
+              "rho": 36.50347252610166,
+              "tau": null
+            },
+            "q_frame_base": {
+              "infinite": false,
+              "log10": -0.31033950998473,
+              "value": 0.4893960840892255
+            }
+          },
+          "candidate_count": 33,
+          "first_birth": false,
+          "metric_decay_minimum": {
+            "infinite": false,
+            "log10": 1.5623341802699058,
+            "value": 36.50347252610166
+          },
+          "metric_minimum_factor": {
+            "infinite": false,
+            "log10": 4.271604141245737,
+            "value": 18689.77793336405
+          },
+          "minimum_principal_cosine": 0.9894325287050498,
+          "orthogonal_contractivity_possible": false,
+          "polar": {
+            "frame_defect": 0.1453786180629665,
+            "metric_decay": {
+              "infinite": false,
+              "log10": 6.767908437956206,
+              "value": 5860146.023838947
+            },
+            "optimization": {
+              "contractive_feasible": false,
+              "fixed_floor": Infinity,
+              "q": Infinity,
+              "rho": 5860146.023838947,
+              "tau": null
+            },
+            "q_frame_base": {
+              "infinite": false,
+              "log10": -2.2856871968456387,
+              "value": 0.0051797977560625805
+            }
+          },
+          "q_birth": {
+            "infinite": false,
+            "log10": -1.0148706537821548,
+            "value": 0.09663386414234117
+          },
+          "recurrent": true,
+          "source_time": 10,
+          "target_time": 11
+        }
+      ],
+      "threshold": 1e-08
+    }
+  ],
+  "status": "rh136_metric_balanced_packet_gauge_audit",
+  "theorem_boundary": {
+    "cross_scale_relative_recurrence_proved": false,
+    "deterministic_polar_metric_interpolation_audited": false,
+    "global_affine_objective_optimizer_proved": false,
+    "hilbert_polya_operator": false,
+    "metric_contractivity_lower_obstruction": true,
+    "orthogonal_metric_minimax_theorem": true,
+    "riemann_hypothesis": false,
+    "uniform_metric_balanced_recurrence_proved": false,
+    "uniform_stage_A_closed": false
+  }
+}
