@@ -1,0 +1,71 @@
+{
+  "audit": {
+    "archive_verification_failure_count": 0,
+    "base_liminf_obstruction_terminal": 0.000244081034903588,
+    "constructive_layer_count": 7,
+    "finite_safe_chain_count": 28,
+    "floor_free_complete_chain_count": 0,
+    "forbidden_claim_failure_count": 0,
+    "metric_balanced_contractive_count": 183,
+    "minimum_viability_margin": 3.557326498870598e-15,
+    "mixed_layer_count": 3,
+    "outward_positive_chain_count": 28,
+    "reviewed_upstream_layer_count": 9,
+    "sample_count": 4096,
+    "tail_gap_obstruction_terminal": 3.549246348397331e-15,
+    "total_layer_count_including_review": 10,
+    "viability_floor_failure_count": 0
+  },
+  "program_boundary": {
+    "controlled_viability_eventual_support_theorem": true,
+    "eventual_uniform_tail_gap_proved_for_model": false,
+    "hilbert_polya_operator": false,
+    "positive_normalized_base_liminf_proved_for_model": false,
+    "riemann_hypothesis": false,
+    "source_model_interval_enclosure_proved": false,
+    "tail_gap_and_base_liminf_architecture_sharp": true,
+    "ten_layer_archive_reviewed": true,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "ae0ad9a2a2f6a742c2435fea5f8290aca38a8e5d7431739f93e688e8ff628ecc",
+    "README.md": "29e2394fbe9dca40e6b7652d4b769ebe97f903fbce1a22df7d289a4cd6d27322",
+    "THEOREM_LEDGER.md": "0696c04403b7f34505df7db87bd35a55d6255ebfd034761221fd3db8d36c2f7d",
+    "UPDATED_ROADMAP.md": "b9fe3e842fec875e7c02068d5a505f430dbfe9fbb6848bac867adf11aa848931",
+    "figures/ten_layer_controlled_viability_review.pdf": "685b11d7bbbeee3702a28c33bf2ecef50a82561de678de50065221e8dc518c54",
+    "figures/ten_layer_controlled_viability_review.png": "4bd92f03c2de82b2a6d31756ddafc3f15bb1b9188d0cb87e4a6d2c6e24259b58",
+    "main.pdf": "bbaa2395ca5628703396862fde961d9e84f4395c0ba1f19538f32368c0565cca",
+    "main.tex": "a1cf40f8cf17ed349897878f2393ca6b1bb66fe4905332f56e78342e4c5cbf47",
+    "pyproject.toml": "aaafa8cee534428b945e4d1662cf6eb9bdb4d0572df5b0879266d59e7fb13525",
+    "references.bib": "faa2dec8f1a9e9c5d63dfa32094f4352ca9ed7975bab5656b39e835a985b509e",
+    "requirements.txt": "b6efa8218da0501de62ea68dcf20c52b995433d53ca4f46f6afd2d12226a981e",
+    "ten-layer-controlled-viability-review.pdf": "bbaa2395ca5628703396862fde961d9e84f4395c0ba1f19538f32368c0565cca"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "243c525f4d60c418027257975b24a355c8ef31b2ba3705c535c2dc33ea6fb4d0",
+    "results/ten_layer_review.json": "bed42e77e8c29098eb8c2d2c2fde36bf4a96b900eec6f08ded7fb71d59d8a157",
+    "results/ten_layer_review_smoke.json": "5266733d7a57a2ac44d0556aa5397f997ffc78e4ccfccd36c6e302b09a7a14bf"
+  },
+  "revised_frontier": {
+    "independent_assembly_addition": [
+      "all_level_outward_radii_and_residual_guards"
+    ],
+    "mathematical_exact_matrix_frontier": [
+      "eventual_uniform_controlled_tail_gap",
+      "positive_normalized_base_liminf"
+    ],
+    "removed_as_unnecessary": [
+      "subunit_affine_coefficient_at_every_step"
+    ],
+    "validated_common_assembly_addition": [
+      "source_model_exact_or_interval_enclosure"
+    ]
+  },
+  "route_consequence": "RH-130--RH-138 replace the old per-step contraction obligation by a weaker controlled-viability packet: an eventual uniform subunit envelope is enough even when isolated metric bases exceed one. Within the directional candidate architecture, this tail gap and a positive normalized-base liminf are both sharp and irreducible. The finite reference route is now outwardly closed on 28/30 chains; the all-level frontier is source enclosure, controlled viability, and base liminf, with all-level outward radii added for independent assemblies.",
+  "status": "rh139_ten_layer_controlled_viability_review_archived",
+  "theorem": {
+    "controlled_viability_eventual_support": true,
+    "revised_minimal_frontier": true,
+    "tail_gap_and_base_liminf_architecture_sharp": true
+  }
+}

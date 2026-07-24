@@ -1,0 +1,147 @@
+{
+  "audit_summary": {
+    "archive_verification_failure_count": 0,
+    "base_liminf_obstruction_terminal": 0.000244081034903588,
+    "constructive_layer_count": 2,
+    "finite_safe_chain_count": null,
+    "floor_free_complete_chain_count": 0,
+    "forbidden_claim_failure_count": 0,
+    "metric_balanced_contractive_count": null,
+    "minimum_viability_margin": 3.557326498870598e-15,
+    "mixed_layer_count": 1,
+    "outward_positive_chain_count": null,
+    "reviewed_upstream_layer_count": 3,
+    "sample_count": 128,
+    "tail_gap_obstruction_terminal": 3.549246348397331e-15,
+    "total_layer_count_including_review": 4,
+    "viability_floor_failure_count": 0
+  },
+  "layers": [
+    {
+      "archive_status": "rh130_floor_free_semidefinite_directional_audit_archived",
+      "archive_verified": true,
+      "audit": {
+        "chain_count": 24,
+        "exact_discrete_rank_four_count": 120,
+        "finite_superunit_gamma_transfer_count": 5,
+        "fp64_rank_four_chain_count": 24,
+        "fp64_supported_rank_counts": {
+          "4": 120
+        },
+        "infinite_tail_factor_count": 24,
+        "maximum_condition_log10": 9.984400297825156,
+        "minimum_tail_dominance_slack": 0.0,
+        "pair_count": 96,
+        "positive_chain_count": 0,
+        "positive_floor_free_candidate_count": 118,
+        "positive_transfer_count": 67,
+        "scale_count": 5,
+        "state_count": 120,
+        "subunit_floor_free_gamma_count": 118
+      },
+      "directory": "RH-130-floor-free-semidefinite-directional-audit",
+      "finite": "118/120 positive snapshots, 67/96 positive transfers, 0/24 complete chains.",
+      "forbidden_claim_values": {
+        "hilbert_polya_operator": false,
+        "riemann_hypothesis": false,
+        "uniform_stage_A_closed": false
+      },
+      "kind": "mixed",
+      "number": 130,
+      "obstruction": "24 rank births and five further superunit transfers block naive composition.",
+      "result": "Floor-free semidefinite rank-four reconstruction and exact-Gram minimax.",
+      "summary_sha256": "6439cc70ace61917fc5dff2d028b2193be431da48e2e038c11a9be66a1ec155d",
+      "theorem_count": 2
+    },
+    {
+      "archive_status": "rh131_singular_gram_support_rayleigh_theory_archived",
+      "archive_verified": true,
+      "audit": {
+        "compatible_failure_count": 0,
+        "compatible_sample_count": 4096,
+        "kernel_leakage_sample_count": 1024,
+        "leakage_detection_failure_count": 0,
+        "maximum_gamma_error": 1.2212453270876722e-15,
+        "maximum_sharp_volume_error": 3.552713678800501e-15,
+        "minimum_outward_margin": 6.088004727081153e-10,
+        "outward_failure_count": 0,
+        "rh130_full_tail_state_count": 66,
+        "rh130_rank_creation_pair_count": 24,
+        "rh130_zero_tail_state_count": 54
+      },
+      "directory": "RH-131-singular-gram-support-rayleigh-theory",
+      "finite": "5,120 random/support tests with zero failures; rank births classified exactly.",
+      "forbidden_claim_values": {
+        "hilbert_polya_operator": false,
+        "riemann_hypothesis": false,
+        "uniform_stage_A_closed": false
+      },
+      "kind": "constructive",
+      "number": 131,
+      "obstruction": "Kernel leakage makes the full-space quotient infinite.",
+      "result": "Kernel compatibility, Moore--Penrose Rayleigh quotient, and sharp pseudovolume law.",
+      "summary_sha256": "9a836b377451720c9bd2667c44a4a25a14b233143932d576d6876c4840e3dec8",
+      "theorem_count": 3
+    },
+    {
+      "archive_status": "rh132_canonical_partial_isometry_forcing_gauge_archived",
+      "archive_verified": true,
+      "audit": {
+        "equal_rank_procrustes_sample_count": 2048,
+        "forcing_dominance_failure_count": 0,
+        "maximum_partial_isometry_defect": 2.9983423303509722e-15,
+        "minimum_random_procrustes_gap": -1.7763568394002505e-15,
+        "minimum_unmatched_trace_slack": 3.853618611975151e-19,
+        "partial_isometry_failure_count": 0,
+        "procrustes_failure_count": 0,
+        "rh130_four_to_four_count": 42,
+        "rh130_subunit_birth_forcing_count": 22,
+        "rh130_zero_to_four_count": 24,
+        "rh130_zero_to_zero_count": 30,
+        "sample_count": 4096,
+        "unmatched_lower_failure_count": 0
+      },
+      "directory": "RH-132-canonical-partial-isometry-forcing-gauge",
+      "finite": "4,096-case audit with zero failures; 22/24 birth strengths are subunit.",
+      "forbidden_claim_values": {
+        "hilbert_polya_operator": false,
+        "riemann_hypothesis": false,
+        "uniform_stage_A_closed": false
+      },
+      "kind": "constructive",
+      "number": 132,
+      "obstruction": "Unmatched target range forces a nonzero additive term.",
+      "result": "Canonical polar partial isometry and trace-minimal positive forcing.",
+      "summary_sha256": "f22cc2b1c89c55438e598a24499ac28ed01a49e7aae9e38175a5cc1ba0a2ab92",
+      "theorem_count": 3
+    }
+  ],
+  "revised_frontier": {
+    "independent_assembly_addition": [
+      "all_level_outward_radii_and_residual_guards"
+    ],
+    "mathematical_exact_matrix_frontier": [
+      "eventual_uniform_controlled_tail_gap",
+      "positive_normalized_base_liminf"
+    ],
+    "removed_as_unnecessary": [
+      "subunit_affine_coefficient_at_every_step"
+    ],
+    "validated_common_assembly_addition": [
+      "source_model_exact_or_interval_enclosure"
+    ]
+  },
+  "route_consequence": "RH-130--RH-138 replace the old per-step contraction obligation by a weaker controlled-viability packet: an eventual uniform subunit envelope is enough even when isolated metric bases exceed one. Within the directional candidate architecture, this tail gap and a positive normalized-base liminf are both sharp and irreducible. The finite reference route is now outwardly closed on 28/30 chains; the all-level frontier is source enclosure, controlled viability, and base liminf, with all-level outward radii added for independent assemblies.",
+  "status": "rh139_ten_layer_controlled_viability_review",
+  "theorem_boundary": {
+    "controlled_viability_eventual_support_theorem": true,
+    "eventual_uniform_tail_gap_proved_for_model": false,
+    "hilbert_polya_operator": false,
+    "positive_normalized_base_liminf_proved_for_model": false,
+    "riemann_hypothesis": false,
+    "source_model_interval_enclosure_proved": false,
+    "tail_gap_and_base_liminf_architecture_sharp": true,
+    "ten_layer_archive_reviewed": false,
+    "uniform_stage_A_closed": false
+  }
+}
