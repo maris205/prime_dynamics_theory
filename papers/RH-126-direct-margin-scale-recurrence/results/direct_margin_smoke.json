@@ -1,0 +1,180 @@
+{
+  "audit_summary": {
+    "chain_count": 4,
+    "endpoint_dominance_failure_count": 0,
+    "endpoint_positive_pair_count": 0,
+    "full_profile_dominance_failure_count": 0,
+    "full_profile_positive_pair_count": 0,
+    "maximum_endpoint_relative_error": 0.0005558577402359874,
+    "maximum_terminal_margin": -6.151037131443392e-15,
+    "median_endpoint_relative_error": 3.845678923008971e-05,
+    "minimum_endpoint_relative_error": 5.5539937076936665e-09,
+    "minimum_terminal_margin": -5.471365259544797e-06,
+    "pair_count": 4,
+    "positive_terminal_chain_count": 0
+  },
+  "chains": [
+    {
+      "levels": [
+        {
+          "margin_lower": 6.075175255969081e-08,
+          "sigma": 0.16
+        },
+        {
+          "margin_lower": -5.471365259544797e-06,
+          "sigma": 0.08
+        }
+      ],
+      "phase": 0.25,
+      "positive_terminal": false,
+      "side": "left",
+      "terminal_margin_lower": -5.471365259544797e-06,
+      "threshold": 1e-08
+    },
+    {
+      "levels": [
+        {
+          "margin_lower": 6.065050869904113e-11,
+          "sigma": 0.16
+        },
+        {
+          "margin_lower": -7.182916459497798e-08,
+          "sigma": 0.08
+        }
+      ],
+      "phase": 0.5,
+      "positive_terminal": false,
+      "side": "left",
+      "terminal_margin_lower": -7.182916459497798e-08,
+      "threshold": 1e-08
+    },
+    {
+      "levels": [
+        {
+          "margin_lower": -2.4840750629723234e-12,
+          "sigma": 0.16
+        },
+        {
+          "margin_lower": -1.8281988782014734e-10,
+          "sigma": 0.08
+        }
+      ],
+      "phase": 0.75,
+      "positive_terminal": false,
+      "side": "left",
+      "terminal_margin_lower": -1.8281988782014734e-10,
+      "threshold": 1e-08
+    },
+    {
+      "levels": [
+        {
+          "margin_lower": -9.069754519674565e-14,
+          "sigma": 0.16
+        },
+        {
+          "margin_lower": -6.151037131443392e-15,
+          "sigma": 0.08
+        }
+      ],
+      "phase": 1.0,
+      "positive_terminal": false,
+      "side": "left",
+      "terminal_margin_lower": -6.151037131443392e-15,
+      "threshold": 1e-08
+    }
+  ],
+  "pairs": [
+    {
+      "endpoint_dominance_holds": true,
+      "endpoint_error": 5.5933104403692946e-06,
+      "endpoint_lower": -5.471365259544797e-06,
+      "endpoint_relative_error": 0.0005558577402359874,
+      "endpoint_scale": 2.0072710929250293,
+      "full_profile_dominance_holds": true,
+      "full_profile_error": 0.0004042527475893334,
+      "full_profile_lower": -0.00040413577323701095,
+      "full_profile_relative_error": 0.04188002160804678,
+      "full_profile_scale": 1.925514736960751,
+      "pair_id": "0.16-0.08:left:1e-08:p0.25",
+      "phase": 0.25,
+      "side": "left",
+      "source_margin": 6.075175255969081e-08,
+      "source_sigma": 0.16,
+      "target_margin": 5.71525573306e-06,
+      "target_sigma": 0.08,
+      "threshold": 1e-08
+    },
+    {
+      "endpoint_dominance_holds": true,
+      "endpoint_error": 7.18423920255131e-08,
+      "endpoint_lower": -7.182916459497798e-08,
+      "endpoint_relative_error": 7.567951142770846e-05,
+      "endpoint_scale": 0.2181045013930431,
+      "full_profile_dominance_holds": true,
+      "full_profile_error": 2.2853610994439314e-05,
+      "full_profile_lower": -2.2853597677370092e-05,
+      "full_profile_relative_error": 0.023510021456917357,
+      "full_profile_scale": 0.22333869281113314,
+      "pair_id": "0.16-0.08:left:1e-08:p0.50",
+      "phase": 0.5,
+      "side": "left",
+      "source_margin": 6.065050869904113e-11,
+      "source_sigma": 0.16,
+      "target_margin": 7.185562089289605e-08,
+      "target_sigma": 0.08,
+      "threshold": 1e-08
+    },
+    {
+      "endpoint_dominance_holds": true,
+      "endpoint_error": 1.8140141912884296e-10,
+      "endpoint_lower": -1.8281988782014734e-10,
+      "endpoint_relative_error": 1.2340670324709529e-06,
+      "endpoint_scale": 0.5710241604345541,
+      "full_profile_dominance_holds": true,
+      "full_profile_error": 3.912531163126978e-06,
+      "full_profile_lower": -3.912532658472469e-06,
+      "full_profile_relative_error": 0.02592674725403845,
+      "full_profile_scale": 0.5862222929772875,
+      "pair_id": "0.16-0.08:left:1e-08:p0.75",
+      "phase": 0.75,
+      "side": "left",
+      "source_margin": -2.4840750629723234e-12,
+      "source_sigma": 0.16,
+      "target_margin": 1.7998295406556665e-10,
+      "target_sigma": 0.08,
+      "threshold": 1e-08
+    },
+    {
+      "endpoint_dominance_holds": true,
+      "endpoint_error": 2.2109618061195364e-15,
+      "endpoint_lower": -6.151037131443392e-15,
+      "endpoint_relative_error": 5.5539937076936665e-09,
+      "endpoint_scale": 0.04344191780127267,
+      "full_profile_dominance_holds": true,
+      "full_profile_error": 1.0357752648620597e-07,
+      "full_profile_lower": -1.0357753248722252e-07,
+      "full_profile_relative_error": 0.20646851869298494,
+      "full_profile_scale": 0.05474504614288127,
+      "pair_id": "0.16-0.08:left:1e-08:p1.00",
+      "phase": 1.0,
+      "side": "left",
+      "source_margin": -9.069754519674565e-14,
+      "source_sigma": 0.16,
+      "target_margin": -1.7291134749850992e-15,
+      "target_sigma": 0.08,
+      "threshold": 1e-08
+    }
+  ],
+  "route_consequence": "A direct support margin obeys a sharp Weyl recurrence under scalar scale alignment. On the finite phase-matched singular profiles only 26/96 endpoint fits and 6/96 full four-mode fits retain a positive one-step margin, and none of the 24 endpoint chains stays positive through all five scales. The algebraic route remains valid, but this scalar alignment is a poor finite mechanism.",
+  "status": "rh126_direct_margin_scale_recurrence_audit",
+  "theorem_boundary": {
+    "all_level_scale_alignment_proved": false,
+    "five_scale_profile_barrier_audited": false,
+    "hilbert_polya_operator": false,
+    "optimal_scalar_profile_fit": true,
+    "profile_fit_is_operator_transport_proof": false,
+    "riemann_hypothesis": false,
+    "sharp_direct_margin_recurrence": true,
+    "uniform_stage_A_closed": false
+  }
+}

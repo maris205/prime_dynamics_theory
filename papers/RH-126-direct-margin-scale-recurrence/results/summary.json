@@ -1,0 +1,51 @@
+{
+  "audit": {
+    "chain_count": 24,
+    "endpoint_dominance_failure_count": 0,
+    "endpoint_positive_pair_count": 26,
+    "full_profile_dominance_failure_count": 0,
+    "full_profile_positive_pair_count": 6,
+    "maximum_endpoint_relative_error": 0.08203873221679836,
+    "maximum_terminal_margin": -8.453402756827649e-11,
+    "median_endpoint_relative_error": 0.0018560968358670498,
+    "minimum_endpoint_relative_error": 5.424365657908282e-09,
+    "minimum_terminal_margin": -0.013955697087371148,
+    "pair_count": 96,
+    "positive_terminal_chain_count": 0
+  },
+  "program_boundary": {
+    "all_level_scale_alignment_proved": false,
+    "five_scale_profile_barrier_audited": true,
+    "hilbert_polya_operator": false,
+    "optimal_scalar_profile_fit": true,
+    "profile_fit_is_operator_transport_proof": false,
+    "riemann_hypothesis": false,
+    "sharp_direct_margin_recurrence": true,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "8065449b13621138f1823f8072f55fdb1076f4068cc9d37bf9c7cc787f4ea5a9",
+    "README.md": "3ce40d1ddb6b098167143f27b34260c97d37bf98c081ac1abf2d29efe43e4edf",
+    "THEOREM_LEDGER.md": "bbfdc625a8eb45e0eab1b8deb9c6056c1cb0da3583663076d7aaa66a5a5b9676",
+    "UPDATED_ROADMAP.md": "d3c09a7ef37c77ec4bc788cd12274f2135b81eb007f70e443979b1c34dd8e75b",
+    "direct-margin-scale-recurrence.pdf": "0a500335963978bc5cd6e8f83dd5205060fdfd509a91e7465792ebabdf0f6f66",
+    "figures/direct_margin_scale_recurrence.pdf": "4b78060164650ce3b066526665c7c8e5f145f3512047d94a84bdffe3fb02ce7a",
+    "figures/direct_margin_scale_recurrence.png": "247fce58fa64dff71110e9cb68b873298be7ac7392c51a4dd9876a8b0c92997e",
+    "main.pdf": "0a500335963978bc5cd6e8f83dd5205060fdfd509a91e7465792ebabdf0f6f66",
+    "main.tex": "e182ddf74b128a6d5d035cb66bf34c0b6ea476fbc7fdf632ec09f19eb257c116",
+    "pyproject.toml": "b5ef866b8a40f83a158d6dcb226333bcfdbadd1eeefb0618dc083741ab268ff7",
+    "references.bib": "8dbd1bf442747a0327b03b23327039f33b12f05e79c050fa0eba7c97860bbf33",
+    "requirements.txt": "408aa57fdb2c5a55bd8a4ee2356c6deab1623d728dbad693e1a35ac2c5e6ebf1"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "91cde2a80410a223654d02049a6bca0a2d67dfb71f818469d142fe4ac5cfb067",
+    "results/direct_margin_audit.json": "48d36f9c5172140926a5aa1f0d0b21168e7ab9912dfa5bb6d4783c67da499ac8",
+    "results/direct_margin_smoke.json": "f813f269b08c02ebcab148a614c09049c8247a420aab8f2872a0cae33f122831"
+  },
+  "route_consequence": "A direct support margin obeys a sharp Weyl recurrence under scalar scale alignment. On the finite phase-matched singular profiles only 26/96 endpoint fits and 6/96 full four-mode fits retain a positive one-step margin, and none of the 24 endpoint chains stays positive through all five scales. The algebraic route remains valid, but this scalar alignment is a poor finite mechanism.",
+  "status": "rh126_direct_margin_scale_recurrence_archived",
+  "theorem": {
+    "optimal_scalar_profile_fit": true,
+    "sharp_direct_margin_recurrence": true
+  }
+}
