@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}\usepackage[margin=1in]{geometry}\usepackage{amsmath,amssymb,amsthm,graphicx,natbib,microtype}\newtheorem{theorem}{Theorem}\newtheorem{corollary}[theorem]{Corollary}
+\title{Conditional Eventual Directional Support\\\large Contractive Rayleigh Recurrences and an Explicit Liminf Floor}\author{Prime Dynamics Theory Program}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+We close the RH-120--RH-127 directional algebra conditionally.  Let
+$x_n=\gamma_n^2$ and suppose eventually
+$x_{n+1}\leq\rho x_n+q$ with $0\leq\rho<1$.  Then
+$\limsup x_n\leq x_*=q/(1-\rho)$.  If $x_*<1$ and
+\[
+\liminf_n\frac{V_n}{L_n^4C_n}\geq A_*>0,
+\]
+the directional candidates satisfy
+\[
+\liminf_n B_n\geq(1-\sqrt{x_*})^4A_*.
+\]
+Every threshold strictly below this value is eventually supported.  The
+constant-coefficient floor is sharp.  A 4,096-recurrence audit has zero
+failures.  The theorem isolates, but does not prove, the remaining physical
+all-level packet.
+\end{abstract}
+\section{Affine limsup theorem}
+\begin{theorem}[Contractive Rayleigh recurrence]\label{thm:affine}
+Suppose nonnegative $x_n$ obeys, for all sufficiently large $n$,
+$x_{n+1}\leq\rho x_n+q$ with $0\leq\rho<1$.  Then
+\[
+\limsup_{n\to\infty}x_n\leq\frac{q}{1-\rho}.
+\]
+The same conclusion holds if eventually $\rho_n\leq\rho$ and $q_n\leq q$.
+\end{theorem}
+\begin{proof}
+Iteration gives
+$x_{N+k}\leq\rho^kx_N+q(1-\rho^k)/(1-\rho)$.  Let $k\to\infty$.
+The nonstationary version is dominated by the same recurrence.
+\end{proof}
+
+\section{Eventual support closure}
+Let $A_n=V_n/(L_n^4C_n)$ and
+$B_n=(1-\sqrt{x_n})_+^4A_n$.  RH-125 proves that $B_n$ is a valid lower
+candidate whenever its finite matrix hypotheses and RH-127 guards hold.
+
+\begin{theorem}[Conditional eventual support]\label{thm:support}
+Under Theorem~\ref{thm:affine}, suppose
+$x_*=q/(1-\rho)<1$ and $\liminf A_n\geq A_*>0$.  Then
+\[
+\liminf B_n\geq(1-\sqrt{x_*})^4A_*.
+\]
+Consequently every $\tau<(1-\sqrt{x_*})^4A_*$ satisfies $B_n>\tau$ for all
+sufficiently large $n$.
+\end{theorem}
+\begin{proof}
+The map $x\mapsto(1-\sqrt x)_+^4$ is continuous and decreasing.  Combine
+the limsup bound for $x_n$ with the liminf bound for $A_n$, then use the
+definition of liminf.  Strict inequality for $\tau$ gives eventual support.
+\end{proof}
+
+For constant equality $x_{n+1}=\rho x_n+q$ and $A_n=A_*$, the limit equals
+the displayed floor, proving sharpness.  The argument is elementary but its
+inputs preserve the one-sided matrix logic developed in the previous layers
+\citep{HornJohnson1991,Bhatia2007}.
+
+\section{Audit and exact remaining packet}
+The audit samples 4,096 contractive coefficient caps, subunit fixed points,
+positive bases, and nonstationary recurrences dominated by those caps.
+There are zero affine-envelope or support-floor failures.  A constant
+coefficient record approaches the theorem floor to relative error below
+$10^{-10}$.
+\begin{figure}[h]\centering\includegraphics[width=\textwidth]{figures/conditional_eventual_directional_support.pdf}\caption{The support factor over the contractive phase diagram and representative affine envelopes.}\end{figure}
+
+The remaining physical packet is now explicit: validated all-level
+coefficients with $\rho<1$ and $q/(1-\rho)<1$, a positive liminf for
+$V_n/(L_n^4C_n)$, and either a common operator assembly or RH-127 outward
+radii.  The four finite RH-125 edges cannot establish these eventual facts.
+No uniform Stage A, Hilbert--Polya operator, zeta-zero identification, or
+Riemann Hypothesis conclusion is claimed.
+\bibliographystyle{plainnat}\bibliography{references}\end{document}
