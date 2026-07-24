@@ -1,0 +1,215 @@
+\section{An exact sufficient certificate for the TPC-18 cover gate}
+\label{sec:tpc18-crosswalk}
+
+TPC-18 proves a stopping dichotomy inside an admissible symmetric tail
+block and states a conditional global implication under two additional
+inputs \citep{WangTPC18}: a primitive generic determinant-dispersion
+estimate and an all-block representation of the upstream hard packet
+up to \(o(X)\) in the physical statistic.  The present section gives
+an exact zero-remainder certificate for the second input and records
+the distinct controlled-residual route.
+
+\subsection{The physical incidence system}
+
+For a fixed nonzero \(h_0\), let \(w_X\) be the literal atomic
+coefficient of the hard packet inherited from the upstream normal
+form.  Construct \(\Omega_X\) from the union of its active atoms and
+the atoms of every proposed TPC-18 block.  Let \(b_{j,X}\) be the
+literal coefficient of the \(j\)-th candidate block, including both
+the prefix and complementary-tail pieces, and form
+\[
+ B_X=(b_{1,X}\ \cdots\ b_{m_X,X}).
+\]
+The upstream derivation also determines an allowed coefficient set
+\(\mathscr C_X\).  It may be a singleton, a partition-of-unity
+polytope, or another explicitly derived set.
+
+\begin{definition}[Exact TPC-18 full-block certificate]
+\label{def:tpc18-certificate}
+An exact full-block cover certificate at scale \(X\) consists of:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the complete literal row list \(\Omega_X\), with native keys and
+  zero target coefficients retained on every leakage row;
+\item the exact weighted incidence matrix \(B_X\);
+\item an allowed coefficient \(c_X\in\mathscr C_X\) satisfying
+  \[
+  B_Xc_X=w_X;
+  \]
+\item a proof-producing exact verification of the equality, together
+  with a rigorous bound for the coefficient amplification in the
+  physical normalization.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[The original unit cover]
+If the upstream normal form requires the unweighted sum of all
+candidate blocks, then
+\(\mathscr C_X=\{\one\}\), and the certificate is the single identity
+\[
+ B_X\one=w_X.
+\]
+Finding some \(c_X\in\R^{m_X}\) is not a substitute.  Allowing
+different coefficients changes the decomposition unless that freedom
+has been derived upstream.  Failure of the exact identity
+\(B_X\one=w_X\) does not by itself refute the original TPC-18
+hypothesis: the separate controlled-residual route may still prove
+\(\mathcal T_X(w_X-B_X\one)=o(X)\).
+\end{remark}
+
+\begin{theorem}[Conditional exact-cover transfer]
+\label{thm:tpc18-cover-transfer}
+Assume an exact TPC-18 full-block certificate in the sense of
+\cref{def:tpc18-certificate}.  Let the normalized physical functional
+be \(\mathcal T_X\), and suppose each certified block has a decomposition
+\[
+ \mathcal T_X(b_{j,X})=M_{j,X}+E_{j,X}.
+\]
+Then
+\begin{equation}
+ \mathcal T_X(w_X)
+ =
+ \sum_{j=1}^{m_X}c_{j,X}M_{j,X}
+ +
+ O\!\left(
+ \sum_{j=1}^{m_X}|c_{j,X}||E_{j,X}|
+ \right).
+ \label{eq:tpc18-exact-transfer}
+\end{equation}
+Consequently, if the upstream calibrated main term equals
+\(\sum_jc_{j,X}M_{j,X}\) and the displayed weighted error is
+admissible, the all-block reassembly step is valid with no overlap
+correction beyond \(B_Xc_X=w_X\).
+\end{theorem}
+
+\begin{proof}
+This is \cref{thm:exact-reassembly} applied on the literal TPC-18
+frame.  The hypotheses about the calibrated main term and error are
+stated separately because they are not consequences of incidence
+feasibility.
+\end{proof}
+
+\begin{proposition}[Controlled-residual route]
+\label{prop:tpc18-controlled-residual}
+Let \(c_X\) be the coefficient prescribed by the upstream
+decomposition, put \(r_X=w_X-B_Xc_X\), and retain the original
+physical functional \(\mathcal T_X\).  Then
+\[
+ \mathcal T_X(w_X)
+ =
+ \sum_jc_{j,X}\mathcal T_X(b_{j,X})
+ +
+ \mathcal T_X(r_X).
+\]
+Thus a theorem proving \(\mathcal T_X(r_X)=o(X)\), together with the
+required block estimates and the calibrated main term, can verify the
+original asymptotic all-block hypothesis even when \(r_X\ne0\).
+Euclidean smallness of \(r_X\) alone does not supply this theorem.
+\end{proposition}
+
+\begin{proof}
+The identity is \cref{prop:residual-remainder}.  The remaining
+statements distinguish an assumed physical remainder estimate from
+the Euclidean incidence calculation.
+\end{proof}
+
+\begin{corollary}[A checkable failure certificate]
+\label{cor:tpc18-failure-certificate}
+If unrestricted synthesis is permitted and
+\[
+ r_X=(I-B_XB_X^\dagger)w_X\ne0,
+\]
+then \(r_X/\|r_X\|_2\) certifies that the proposed block family cannot
+exactly cover the TPC-18 hard packet.  If nonnegative synthesis is required,
+any Farkas vector from \cref{thm:farkas-cone} certifies failure of that
+allowed exact cover.  Such a certificate is a rigorous negative
+\(\Lone\) result for the zero-remainder route; it does not rule out a
+controlled physical residual and is not an arithmetic cancellation
+theorem.
+\end{corollary}
+
+\subsection{What this does not supply}
+
+\begin{proposition}[Independent downstream inputs]
+\label{prop:independent-downstream-inputs}
+Even an exact, well-conditioned full-block certificate does not imply:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the TPC-18 primitive generic determinant-dispersion estimate;
+\item a determinant-energy lower bound or distinguished zero-mode
+  cancellation estimate for a later post-bin coefficient;
+\item the prefix estimate for a block outside the published TPC-17
+  geometry;
+\item an admissible bound for an approximate-cover residual;
+\item a fixed-shift Hardy--Littlewood asymptotic.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The certificate is the coefficient identity \(B_Xc_X=w_X\).
+Items (i)--(iii) are analytic estimates on the columns, item (iv) is
+an estimate on a vector outside their exact synthesis, and item (v)
+requires the full upstream and downstream theorem chain.  None is a
+linear-algebraic consequence of column-space membership.
+\end{proof}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash}p{0.25\textwidth}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{0.23\textwidth}@{}}
+\toprule
+Check & Exact question & Status in this paper\\
+\midrule
+Support overlap
+&
+Does every target atom occur, and how many columns touch it?
+&
+Necessary diagnostic only
+\\
+\addlinespace
+Literal cover
+&
+Does an allowed \(c_X\) satisfy \(B_Xc_X=w_X\) on all native rows?
+&
+Exact certificate schema; not instantiated globally
+\\
+\addlinespace
+Coefficient cost
+&
+Is \(\sum_j|c_{j,X}||E_{j,X}|\) within the physical error?
+&
+Exact accounting formula
+\\
+\addlinespace
+Primitive determinant dispersion
+&
+Are the TPC-18 generic residual columns small at fixed \(h_0\)?
+&
+Independent unproved arithmetic input
+\\
+\addlinespace
+Full theorem chain
+&
+Do all upstream identities, block estimates, and endpoint budgets
+hold simultaneously?
+&
+Not proved
+\\
+\bottomrule
+\end{tabularx}
+\caption{Set coverage, coefficient coverage, and arithmetic
+cancellation are different gates.}
+\label{tab:tpc18-gates}
+\end{table}
+
+\begin{remark}[Present status]
+\label{rem:present-tpc18-status}
+This paper does not enumerate the full physical atom list of the
+TPC-16/TPC-18 normal form, exhibit an allowed exact \(c_X\), or bound
+the physical image of a nonzero residual.  Therefore the TPC-18
+all-block representation remains an independent open gate.  The
+result here is a rigorous format in which a future exact certificate,
+controlled-residual theorem, or negative exact-route certificate can
+be stated and checked.
+\end{remark}

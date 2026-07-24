@@ -1,0 +1,113 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The TPC-18 stopping argument isolates a primitive
+large-determinant/low-gcd residual inside each admissible symmetric
+tail block \citep{WangTPC18}.  Its conditional global conclusion
+requires more than a good estimate on each block: the physical hard
+packet must be represented by the entire proposed block family, with
+the correct unit coefficients, overlaps, masks, and normalization, up
+to a controlled \(o(X)\) physical remainder.  That requirement was
+deliberately left as an all-block representation hypothesis.
+
+A bounded-overlap partition is often enough for inequalities because
+one may estimate each atom a bounded number of times.  It is not
+enough for an identity.  If two blocks overlap, the shared atom
+receives the sum of both block coefficients.  If the block weights
+cannot reproduce the target coefficient exactly, dividing by a
+support multiplicity does not repair signs, phases, masks, or
+nonconstant block profiles.  This distinction is especially important
+when a later argument is calibrated to a single global main term.
+An exact coefficient identity is a sufficient, zero-remainder way to
+verify this hypothesis.  It is stronger than the original asymptotic
+statement: a nonzero coefficient residual may also be admissible if a
+separate theorem proves that its physical image is \(o(X)\).
+
+The purpose of this paper is to turn that qualitative warning into an
+exact finite-dimensional certificate.  Let \(\Omega_X\) be the actual
+atom set and let \(w_X\) be the literal coefficient of the physical
+packet.  Each candidate block contributes one exact column \(b_j\).
+The synthesis matrix
+\[
+ B_X=(b_1\ \cdots\ b_m)
+\]
+contains all overlap information.  A zero-remainder cover is precisely
+\[
+ B_Xc_X=w_X,
+\]
+together with the coefficient restrictions demanded by the
+decomposition.  Linear algebra then separates three questions:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item does the target lie in the column space?
+\item if signed coefficients are forbidden, does it lie in the
+  allowed cone or polytope?
+\item if it does, what coefficient amplification is paid when the
+  block estimates are reassembled?
+\end{enumerate}
+
+\subsection{Main results}
+
+The first result is the exact subspace certificate.  With
+\(P_B=BB^\dagger\),
+\[
+ \inf_c\|w-Bc\|_2=\|(I-P_B)w\|_2.
+\]
+The residual is zero exactly when a cover exists.  When it is nonzero,
+its normalized direction annihilates every candidate block while
+detecting the target, so it is a short dual certificate of failure.
+
+The second result is the constrained analogue.  For real
+nonnegative coefficients, a cover exists exactly when
+\[
+ B^{\mathsf T}y\ge0\quad\Longrightarrow\quad
+ \langle y,w\rangle\ge0.
+\]
+Failure therefore has a Farkas witness.  Cone projection yields the
+quantitative distance formula
+\[
+ \dist(w,B\R_+^m)
+ =
+ \max_{\substack{\|y\|_2\le1\\B^{\mathsf T}y\le0}}
+ \langle y,w\rangle.
+\]
+A support-function formula handles any closed convex allowed
+coefficient image.
+
+The third result consists of sharp countermodels.  A disjoint
+partition of \(2n\) atoms into \(n\) two-point blocks has overlap one,
+covers every atom as a set, and yet may have relative least-squares
+defect exactly \(1/\sqrt{10}\) for every \(n\).  A separate two-column
+example has an exact signed cover but no nonnegative cover, with cone
+distance \(1/\sqrt2\).  Thus neither bounded overlap nor full set
+coverage implies exact or asymptotically approximate coefficient
+coverage.
+
+Finally, we state the only automatic normalization transfer.  If
+\(Bc=w\) exactly, then every linear physical statistic with its
+original normalizer satisfies the exact reassembly identity, and the
+block error is amplified by \(\|c\|_1\).  If
+\(w=Bc+r\) only approximately, the physical remainder is the
+additional term carried by \(r\).  Small Euclidean residual alone
+does not remove it, although a separate physical bound on that term
+can verify the original asymptotic TPC-18 route.
+
+\subsection{Claim levels}
+
+The projection identities, dual formulas, counterexamples, and
+conditioning bounds are unconditional \(\Lzero\) statements.  Their
+literal placement on the TPC-18 atom space gives an exact \(\Lone\)
+certificate schema.  We do not construct the physical incidence
+matrix from the whole preceding normal form, prove its feasibility,
+or prove the primitive determinant-dispersion estimate.  Consequently
+there is no new \(\Ltwo\) arithmetic theorem.
+
+\subsection{Organization}
+
+\Cref{sec:literal-model} defines the literal atom and block spaces.
+\Cref{sec:dual-certificates} gives exact subspace, cone, and convex
+certificates.  \Cref{sec:counterexamples} proves the overlap and
+coarsening obstructions.  \Cref{sec:stability-normalization} records
+conditioning and normalization costs.
+\Cref{sec:tpc18-crosswalk} states the precise conditional crosswalk to
+TPC-18.  \Cref{sec:separate-ledgers,sec:claim-boundary} keep the
+remaining gates and claim boundary explicit.

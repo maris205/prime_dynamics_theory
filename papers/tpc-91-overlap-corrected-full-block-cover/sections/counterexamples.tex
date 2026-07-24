@@ -1,0 +1,214 @@
+\section{Bounded overlap does not imply coverage}
+\label{sec:counterexamples}
+
+Bounded overlap provides an upper-norm inequality.  It does not
+provide a lower frame bound, surjectivity, or coefficient feasibility.
+
+\begin{lemma}[What overlap actually controls]
+\label{lem:overlap-upper-bound}
+Put \(S_j=\{\omega\in\Omega:I_{\omega j}=1\}\).  For the weighted
+incidence matrix \eqref{eq:weighted-incidence},
+\begin{equation}
+ \|Bc\|_2^2
+ \le
+ \Delta(I)
+ \sum_{\omega\in\Omega}\sum_{j=1}^m
+ I_{\omega j}|g_{\omega j}c_j|^2.
+ \label{eq:overlap-upper-bound}
+\end{equation}
+In particular, if \(|g_{\omega j}|\le G\), then
+\[
+ \|Bc\|_2^2
+ \le
+ \Delta(I)G^2
+ \sum_{j=1}^m |c_j|^2|S_j|.
+\]
+\end{lemma}
+
+\begin{proof}
+For each row \(\omega\), Cauchy--Schwarz gives
+\[
+ \left|
+ \sum_j I_{\omega j}g_{\omega j}c_j
+ \right|^2
+ \le
+ \left(\sum_jI_{\omega j}\right)
+ \sum_jI_{\omega j}|g_{\omega j}c_j|^2.
+\]
+Sum over \(\omega\).  The last displayed specialization follows by
+interchanging the sums and using
+\(\sum_\omega I_{\omega j}=|S_j|\).
+\end{proof}
+
+\begin{remark}
+The right side of \eqref{eq:overlap-upper-bound} is an upper synthesis
+bound.  No reverse inequality follows from \(\Delta(I)<\infty\):
+columns may be linearly dependent, miss directions, or conflict with
+the target weights.
+\end{remark}
+
+\subsection{A disjoint full-support family with fixed residual}
+
+\begin{theorem}[Overlap one, but no asymptotic cover]
+\label{thm:partition-counterexample}
+For every \(n\ge1\), there is an unweighted incidence matrix
+\(B_n\in\{0,1\}^{2n\times n}\) and a positive target
+\(w_n\in\R^{2n}\) such that:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item every atom lies in exactly one block, so
+  \(\Delta(I)=1\) and the blocks partition the full support;
+\item no signed, complex, or nonnegative exact cover exists;
+\item the exact least-squares defect is
+  \[
+  \dist(w_n,\ran B_n)=\sqrt{\frac n2};
+  \]
+\item the relative defect is the fixed constant
+  \[
+  \frac{\dist(w_n,\ran B_n)}{\|w_n\|_2}
+  =\frac1{\sqrt{10}}.
+  \]
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Let
+\[
+ b_j=e_{2j-1}+e_{2j},
+ \qquad
+ w_n=\sum_{j=1}^n(e_{2j-1}+2e_{2j}).
+\]
+The columns have disjoint supports and every row is present once.
+For any \(c=(c_j)\),
+\[
+ \|w_n-B_nc\|_2^2
+ =
+ \sum_{j=1}^n
+ \left(|1-c_j|^2+|2-c_j|^2\right).
+\]
+Each summand is uniquely minimized at \(c_j=3/2\), where it equals
+\(1/2\).  The minimizer is nonnegative, so imposing
+\(c\ge0\) does not improve or worsen the minimum.  Hence the squared
+defect is \(n/2\), whereas
+\(\|w_n\|_2^2=5n\).  The positive defect excludes every exact cover.
+\end{proof}
+
+\begin{corollary}[No approximate-cover consequence]
+\label{cor:no-approx-from-overlap}
+Even the conjunction of bounded overlap, full set coverage, positive
+target weights, and a disjoint block partition does not imply
+\[
+ \dist(w_X,\ran B_X)=o(\|w_X\|_2).
+\]
+\end{corollary}
+
+\subsection{Signed feasibility does not imply allowed feasibility}
+
+\begin{theorem}[A sharp two-column cone obstruction]
+\label{thm:cone-counterexample}
+Let
+\[
+ B=
+ \begin{pmatrix}
+ 1&0\\
+ 1&1
+ \end{pmatrix},
+ \qquad
+ w=
+ \begin{pmatrix}
+ 1\\0
+ \end{pmatrix}.
+\]
+Then:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item every row occurs in a block and the overlap degree is two;
+\item \(Bc=w\) has the unique signed solution \(c=(1,-1)^{\mathsf T}\);
+\item no nonnegative cover exists;
+\item
+  \[
+  \dist(w,B\R_+^2)=\frac1{\sqrt2}.
+  \]
+\end{enumerate}
+The vector \(y=(-1,1)^{\mathsf T}\) is a Farkas certificate:
+\[
+ B^{\mathsf T}y=(0,1)^{\mathsf T}\ge0,
+ \qquad
+ \langle y,w\rangle=-1<0.
+\]
+\end{theorem}
+
+\begin{proof}
+The signed equation gives \(c_1=1\) from the first row and
+\(c_1+c_2=0\) from the second.  For \(c_1,c_2\ge0\),
+\[
+ \|w-Bc\|_2^2
+ =
+ (1-c_1)^2+(c_1+c_2)^2.
+\]
+At fixed \(c_1\), the minimum in \(c_2\ge0\) occurs at \(c_2=0\).
+The remaining quadratic is minimized at \(c_1=1/2\), with value
+\(1/2\).  The displayed Farkas signs are immediate.
+\end{proof}
+
+\subsection{Native-key collapse can create a false cover}
+
+Let \(A:\K^\Omega\to\K^\Gamma\) aggregate literal atoms into coarse
+classes, for example by summing all atoms with equal numerical
+determinant.
+
+\begin{proposition}[Coarse feasibility need not lift]
+\label{prop:coarse-does-not-lift}
+The coarse equation
+\begin{equation}
+ ABc=Aw
+ \label{eq:coarse-cover}
+\end{equation}
+is necessary but not sufficient for the literal equation \(Bc=w\).
+The failure can occur with one block, one coarse key, and overlap one.
+\end{proposition}
+
+\begin{proof}
+Take two literal atoms with the same coarse key,
+\[
+ A=\begin{pmatrix}1&1\end{pmatrix},
+ \qquad
+ B=e_1,
+ \qquad
+ w=e_2.
+\]
+Then \(AB=Aw=1\), so \(c=1\) solves the coarse equation.  But
+\(Bc=e_1\ne e_2=w\), and the literal defect is
+\(\|e_2-e_1\|_2=\sqrt2\).  The two atoms may have the same determinant
+and different provenance; aggregation has hidden exactly that
+difference.
+\end{proof}
+
+\begin{remark}[Union-frame rule]
+If a candidate column emits atoms outside \(\supp w\), the correct
+universe is the union of target and column supports, with target
+coefficient zero on the extra rows.  Deleting those rows can turn
+leakage into a false exact cover, just as
+\cref{prop:coarse-does-not-lift} turns a literal mismatch into a
+coarse identity.
+\end{remark}
+
+\begin{example}[Overlap two and inconsistent multiplicity]
+\label{ex:three-row-overlap}
+Let
+\[
+ B=
+ \begin{pmatrix}
+ 1&0\\
+ 1&1\\
+ 0&1
+ \end{pmatrix},
+ \qquad
+ w=(1,1,1)^{\mathsf T}.
+\]
+The first and third rows force \(c_1=c_2=1\), while the middle row
+would then equal \(2\).  Thus there is no exact cover although every
+atom is covered and the overlap is two.  The least-squares solution is
+\(c_1=c_2=2/3\), with residual
+\((1,-1,1)^{\mathsf T}/3\) and relative defect \(1/3\).
+It gives a three-row binary example of why an ad hoc division by
+overlap multiplicity cannot replace the literal system.
+\end{example}

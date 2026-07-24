@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{booktabs,enumitem,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Overlap-Corrected Full-Block Cover Certificates: Incidence Geometry, Dual Obstructions, and the TPC-18 Interface},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\K}{\mathbb K}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\phys}{\mathrm{phys}}
+\newcommand{\cov}{\mathrm{cov}}
+\newcommand{\eps}{\varepsilon}
+
+\title{\textbf{Overlap-Corrected Full-Block Cover Certificates:}\\
+Incidence Geometry, Dual Obstructions, and the TPC-18 Interface}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\noindent\textbf{Keywords:}
+exact block cover; incidence matrix; bounded overlap; Farkas lemma;
+least-squares residual; fixed shift; determinant dispersion.
+
+\medskip
+\noindent\textbf{Literal-frame convention.}
+Every interface statement concerns one prescribed nonzero shift
+\(h_0\), the actual active atoms of the physical packet, their native
+keys, and the original global normalization.  Equal determinant
+values are not used to identify distinct atoms.  No statement is
+specialized to \(h_0=2\).
+
+\input{sections/introduction}
+\input{sections/literal-model}
+\input{sections/dual-certificates}
+\input{sections/counterexamples}
+\input{sections/stability-normalization}
+\input{sections/tpc18-crosswalk}
+\input{sections/separate-ledgers}
+\input{sections/claim-boundary}
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

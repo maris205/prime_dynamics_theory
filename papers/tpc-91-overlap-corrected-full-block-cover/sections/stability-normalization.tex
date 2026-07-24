@@ -1,0 +1,224 @@
+\section{Least-squares stability and exact normalization}
+\label{sec:stability-normalization}
+
+\subsection{Conditioning of the unrestricted certificate}
+
+Assume \(B\ne0\), and let \(\sigma_+(B)\) be its smallest positive
+singular value.
+
+\begin{proposition}[Minimum-norm synthesis and target stability]
+\label{prop:least-squares-stability}
+The vector
+\[
+ c^\dagger=B^\dagger w
+\]
+is the unique minimum-norm least-squares coefficient, and
+\begin{equation}
+ \|c^\dagger\|_2
+ \le
+ \frac{\|P_Bw\|_2}{\sigma_+(B)}
+ \le
+ \frac{\|w\|_2}{\sigma_+(B)}.
+ \label{eq:min-norm-bound}
+\end{equation}
+For two targets \(w,w'\),
+\begin{align}
+ \left|
+ \dist(w,\ran B)-\dist(w',\ran B)
+ \right|
+ &\le\|w-w'\|_2,
+ \label{eq:residual-lipschitz}\\
+ \|B^\dagger w-B^\dagger w'\|_2
+ &\le
+ \frac{\|w-w'\|_2}{\sigma_+(B)}.
+ \label{eq:coefficient-lipschitz}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+The singular-value decomposition gives the minimum-norm property and
+\(\|B^\dagger\|_{2\to2}=\sigma_+(B)^{-1}\), proving
+\cref{eq:min-norm-bound,eq:coefficient-lipschitz}.  The distance to a
+fixed nonempty closed set is \(1\)-Lipschitz:
+\[
+ \dist(w,\ran B)
+ \le
+ \|w-w'\|_2+\dist(w',\ran B),
+\]
+and the reverse inequality follows by interchanging \(w,w'\).
+\end{proof}
+
+\begin{remark}[Residual stability versus coefficient stability]
+The residual defect is always stable with constant one.  The
+synthesis coefficients may be unstable when
+\(\sigma_+(B)\) is small.  Therefore a numerically tiny residual is
+not by itself a well-conditioned symbolic certificate.
+\end{remark}
+
+\begin{proposition}[Column perturbation with bounded coefficients]
+\label{prop:column-perturbation}
+Let \(\widetilde B=B+E\).  If \(Bc=w\), then
+\begin{equation}
+ \dist(w,\ran\widetilde B)
+ \le
+ \|E\|_{2\to2}\|c\|_2.
+ \label{eq:column-perturbation}
+\end{equation}
+More generally, if \(\varnothing\ne\mathscr C\) is contained in the
+radius-\(R\) ball, then
+\begin{equation}
+ \left|
+ \dist(w,B\mathscr C)
+ -
+ \dist(w,\widetilde B\mathscr C)
+ \right|
+ \le
+ R\|E\|_{2\to2}.
+ \label{eq:allowed-image-stability}
+\end{equation}
+No uniform bound of this form follows for an unbounded coefficient
+cone without an a priori bound on the relevant coefficients.
+\end{proposition}
+
+\begin{proof}
+Using the same coefficient \(c\),
+\[
+ \|w-\widetilde Bc\|_2=\|Ec\|_2,
+\]
+which proves \eqref{eq:column-perturbation}.  For every
+\(c\in\mathscr C\),
+\[
+ \|Bc-\widetilde Bc\|_2\le R\|E\|_{2\to2}.
+\]
+Thus the two attainable sets have Hausdorff distance at most the
+right side, and their distances from \(w\) differ by no more than
+that amount.
+\end{proof}
+
+\subsection{The exact normalization identity}
+
+Let \(\mathcal N_X>0\) be the original global normalizer and let
+\(\Phi_{\omega,X}\in\C\) be the physical contribution of atom
+\(\omega\).  Define the normalized linear statistic
+\begin{equation}
+ \mathcal T_X(v)
+ =
+ \frac1{\mathcal N_X}
+ \sum_{\omega\in\Omega_X}
+ v_\omega\Phi_{\omega,X}.
+ \label{eq:physical-functional}
+\end{equation}
+No atom-dependent renormalization is allowed in this definition.
+
+\begin{theorem}[Exact reassembly and coefficient cost]
+\label{thm:exact-reassembly}
+If \(Bc=w\) exactly, then
+\begin{equation}
+ \mathcal T_X(w)
+ =
+ \sum_{j=1}^m c_j\mathcal T_X(b_j).
+ \label{eq:exact-physical-reassembly}
+\end{equation}
+If, on the same normalization,
+\[
+ \mathcal T_X(b_j)=M_j+O(E_j),
+\]
+then
+\begin{equation}
+ \mathcal T_X(w)
+ =
+ \sum_{j=1}^m c_jM_j
+ +
+ O\!\left(\sum_{j=1}^m|c_j|E_j\right).
+ \label{eq:coefficient-amplification}
+\end{equation}
+In particular, a uniform block error \(E\) is amplified by at most
+\(\|c\|_1E\).
+\end{theorem}
+
+\begin{proof}
+Apply the same linear functional \(\mathcal T_X\) to \(Bc=w\).
+The error estimate follows from the triangle inequality.
+\end{proof}
+
+\begin{definition}[Exact-cover amplification]
+\label{def:cover-amplification}
+For an allowed exact cover, define
+\[
+ \tau_{\cov}(B,w;\mathscr C)
+ =
+ \inf_{\substack{c\in\mathscr C\\Bc=w}}\|c\|_1,
+\]
+with value \(+\infty\) when no exact cover exists.  When block errors
+are nonuniform, the intrinsic cost is instead
+\[
+ \inf_{\substack{c\in\mathscr C\\Bc=w}}
+ \sum_j|c_j|E_j.
+\]
+\end{definition}
+
+\begin{remark}[Logarithmic estimates]
+If every block has error \(O(X(\log X)^{-A})\) for arbitrary fixed
+\(A\), then a cover cost
+\(\|c_X\|_1=O((\log X)^C)\) preserves arbitrary logarithmic saving
+after increasing \(A\).  The weaker statement
+\(\|c_X\|_1=X^{o(1)}\) is not enough for that conclusion:
+\(\exp(\sqrt{\log X})=X^{o(1)}\) dominates every fixed power of
+\(\log X\).  The exact product
+\(\|c_X\|_1E_X\) must be checked.
+\end{remark}
+
+\subsection{Why an approximate cover is a different theorem}
+
+\begin{proposition}[Residual remainder identity]
+\label{prop:residual-remainder}
+For an arbitrary coefficient \(c\), put \(r=w-Bc\).  Then
+\begin{equation}
+ \mathcal T_X(w)
+ =
+ \sum_jc_j\mathcal T_X(b_j)
+ +
+ \mathcal T_X(r).
+ \label{eq:residual-remainder}
+\end{equation}
+The Euclidean statement
+\(\|r\|_2=o(\|w\|_2)\) does not, by itself, imply
+\(\mathcal T_X(r)=o(1)\) or any prescribed physical error bound.
+\end{proposition}
+
+\begin{proof}
+The identity follows by linearity.  For the obstruction, let
+\(\eps_n\downarrow0\), take one block \(B_n=e_2\), \(c_n=1\),
+and
+\[
+ w_n=e_2+\eps_ne_1,\qquad r_n=w_n-B_nc_n=\eps_ne_1.
+\]
+Define \(\mathcal T_n(v)=\eps_n^{-1}v_1\).  Then
+\(\|r_n\|_2/\|w_n\|_2\to0\), but
+\(\mathcal T_n(r_n)=1\).  Equivalently, the only automatic estimate is
+\[
+ |\mathcal T_X(r)|
+ \le
+ \|\mathcal T_X\|_{2\to\C}\|r\|_2,
+\]
+and the physical operator norm has not been bounded by an incidence
+calculation.
+\end{proof}
+
+\begin{corollary}[Exactness threshold for a pure cover argument]
+\label{cor:exactness-threshold}
+A block-cover argument transports the original physical statistic
+without a new remainder estimate only when
+\(w\in B\mathscr C\) in the literal frame.  When
+\(B\mathscr C\) is closed, this is equivalent to
+\(\eps_{\cov}=0\).  If no exact allowed cover is used, closure
+requires an independent bound for \(\mathcal T_X(r)\) on the
+explicitly identified residual.
+\end{corollary}
+
+\begin{remark}
+This corollary does not say that approximate covers are useless.  It
+says that they are not exact covers.  A physical norm estimate for
+the residual could be valuable, but it is an additional arithmetic
+input and must be labeled as such.
+\end{remark}

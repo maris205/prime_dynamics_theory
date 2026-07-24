@@ -1,0 +1,151 @@
+\section{The literal atom--block model}
+\label{sec:literal-model}
+
+\subsection{Atoms, native keys, and weighted incidence}
+
+Fix \(X\) and one prescribed nonzero shift \(h_0\).  Let
+\(\Omega=\Omega_X\) be a finite set of \emph{literal atoms}.  An atom
+retains every key needed to reconstruct its physical contribution:
+source variables, divisor variables, dyadic masks, determinant row,
+residue data, and any provenance label.  Two atoms with the same
+numerical determinant remain distinct when their other native keys
+differ.
+
+Let \(\K\) be either \(\R\) or \(\C\), and equip
+\(\K^\Omega\) with the Euclidean inner product and norm.  The target
+coefficient is
+\[
+ w=(w_\omega)_{\omega\in\Omega}\in\K^\Omega.
+\]
+The set \(\Omega\) is the actual active universe: it contains both the
+support of \(w\) and every atom emitted by a candidate block.  Thus a
+column that produces an unwanted atom is represented by a nonzero
+entry in a row where \(w_\omega=0\); such leakage cannot be deleted
+by restricting the matrix after the fact.
+
+Let \(\mathcal J=\{1,\dots,m\}\) index the candidate blocks.  For
+block \(j\), let
+\[
+ I_{\omega j}=\one_{\{\omega\text{ occurs in block }j\}}
+\]
+be its support incidence and let \(g_{\omega j}\in\K\) be its exact
+unit block coefficient.  The \emph{weighted incidence matrix} is
+\begin{equation}
+ B_{\omega j}=I_{\omega j}g_{\omega j}.
+ \label{eq:weighted-incidence}
+\end{equation}
+Its \(j\)-th column \(b_j\) is therefore the literal coefficient
+vector delivered by one unit of that block.  In the unweighted set
+cover model \(g_{\omega j}=1\), but the weighted form is essential
+when masks, signs, or phases vary inside a block.
+
+\begin{definition}[Overlap degree]
+\label{def:overlap-degree}
+The support overlap degree is
+\[
+ \Delta(I)=\max_{\omega\in\Omega}
+ \sum_{j=1}^m I_{\omega j}.
+\]
+It counts how many candidate columns touch an atom.  It contains no
+information about the values \(g_{\omega j}\), the target \(w_\omega\),
+or the existence of a synthesis coefficient.
+\end{definition}
+
+\subsection{Exact and constrained covers}
+
+\begin{definition}[Literal cover]
+\label{def:literal-cover}
+Let \(\varnothing\ne\mathscr C\subseteq\K^m\) be the allowed
+coefficient set.  A vector \(c\in\mathscr C\) is an
+\emph{exact literal cover} when
+\begin{equation}
+ Bc=w.
+ \label{eq:exact-cover}
+\end{equation}
+The cover defect is
+\begin{equation}
+ \eps_{\cov}(B,w;\mathscr C)
+ =
+ \dist(w,B\mathscr C)
+ =
+ \inf_{c\in\mathscr C}\|w-Bc\|_2.
+ \label{eq:cover-defect}
+\end{equation}
+\end{definition}
+
+\begin{remark}[Membership versus zero distance]
+\label{rem:membership-vs-distance}
+Exact feasibility is the membership statement
+\[
+ w\in B\mathscr C.
+\]
+If \(B\mathscr C\) is closed, this is equivalent to
+\(\eps_{\cov}=0\).  Without closedness, zero distance need not be
+attained and is not an exact cover.  Every later use of
+\(\eps_{\cov}=0\) as a binary certificate is therefore accompanied by
+closedness; otherwise the membership statement is used directly.
+\end{remark}
+
+The relevant choices of \(\mathscr C\) include:
+\[
+ \K^m
+ \quad\text{(unrestricted signed or complex synthesis)},\qquad
+ \R_+^m
+ \quad\text{(nonnegative synthesis)},
+\]
+as well as affine or polyhedral rules that encode a prescribed
+partition of unity.  The coefficient rule is part of the theorem:
+an unrestricted solution does not certify a nonnegative cover.
+
+\begin{remark}[No multiplicity division]
+\label{rem:no-multiplicity-division}
+Replacing every target coefficient by
+\(w_\omega/\sum_jI_{\omega j}\) is not an overlap correction.  It
+changes the target and ignores the block profiles \(g_{\omega j}\).
+The only exact correction in the present model is solving
+\eqref{eq:exact-cover}.
+\end{remark}
+
+\subsection{Determinant compatibility is metadata, not coverage}
+
+For every atom \(\omega\), let
+\(\mathfrak d(\omega)\) denote its literal determinant key and let
+\(\mathfrak p(\omega)\) denote the rest of its provenance.  A
+candidate column is called \emph{TPC-18 compatible} only if every
+nonzero entry:
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item belongs to the same prescribed shift \(h_0\);
+\item obeys the required block geometry and masks;
+\item carries its native pair
+  \((\mathfrak d(\omega),\mathfrak p(\omega))\); and
+\item uses the same physical atomic normalization as \(w\).
+\end{enumerate}
+Compatibility is checked before \(B\) is formed.  A solution using
+an incompatible column is not a physical cover.
+
+\begin{proposition}[Compatibility and coverage are independent]
+\label{prop:compatibility-independent}
+Neither of the following implications is valid in general:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item every column is determinant-compatible
+  \(\Longrightarrow w\in\ran B\);
+\item \(w\in\ran B\)
+  \(\Longrightarrow\) the columns are determinant-compatible.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For (i), take any compatible nonzero column \(b_1\) and a target not
+in its one-dimensional span.  For (ii), append to a valid synthesis
+system an algebraically identical column whose provenance metadata is
+wrong; its span is unchanged.  Column-space membership alone cannot
+inspect metadata.
+\end{proof}
+
+\begin{remark}[Determinant energy]
+The Gram matrix \(G=B^*B\) records column overlap and, under an exact
+cover, gives \(\|w\|_2^2=c^*Gc\).  This identity is not a lower bound
+for the literal determinant energy in another coefficient space and
+does not estimate a distinguished zero mode.  Such arithmetic
+comparisons remain separate inputs.
+\end{remark}

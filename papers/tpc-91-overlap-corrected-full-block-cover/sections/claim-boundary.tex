@@ -1,0 +1,110 @@
+\section{Audited conclusion and next certificate}
+\label{sec:claim-boundary}
+
+\begin{theorem}[Audited finite-dimensional conclusion]
+\label{thm:audited-conclusion}
+Let \(w\) be a literal finite atom coefficient, let \(B\) contain the
+exact candidate block columns, and let \(\mathscr C\) encode the
+allowed synthesis coefficients.
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item For unrestricted coefficients,
+  \[
+  \eps_{\cov}
+  =
+  \|(I-BB^\dagger)w\|_2,
+  \]
+  and, when the residual is nonzero, its normalized direction is an
+  optimal dual obstruction.
+\item For nonnegative real coefficients, Farkas' alternative is exact
+  and
+  \[
+  \eps_{\cov}
+  =
+  \max_{\substack{\|y\|_2\le1\\B^{\mathsf T}y\le0}}
+  \langle y,w\rangle.
+  \]
+\item For a closed convex attainable image, the support-function
+  formula \eqref{eq:convex-distance-dual} is exact.
+\item Bounded overlap, even overlap one with every atom covered, does
+  not imply an exact or \(o(1)\)-relative cover.
+\item An exact cover transports the original global normalization
+  with coefficient cost
+  \(\sum_j|c_j|E_j\).  An approximate cover leaves the independent
+  physical remainder \(\mathcal T_X(w-Bc)\).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Combine
+\cref{thm:subspace-certificate,thm:farkas-cone,thm:convex-dual,thm:partition-counterexample,thm:exact-reassembly,prop:residual-remainder}.
+\end{proof}
+
+\paragraph{What is proved.}
+The literal synthesis model, exact residual formulas, dual
+certificates, explicit finite counterexamples, target and column
+stability bounds, and coefficient-amplification identity are
+unconditional \(\Lzero\) results.  They provide an exact
+\(\Lone\) format for auditing a proposed TPC-18 cover.
+
+\paragraph{What is not proved.}
+No complete physical atom list \(w_X\), incidence matrix \(B_X\), or
+allowed exact solution \(c_X\) is constructed for the full TPC-18
+normal form, and no nonzero residual is controlled in the physical
+statistic.  No primitive generic determinant-dispersion estimate,
+prefix extension, determinant-energy survival theorem, or
+distinguished zero-mode estimate is proved.  Hence the TPC-18
+all-block representation and every \(\Ltwo\) arithmetic gate remain
+open.
+
+\paragraph{Support and key rule.}
+The certificate must be checked on the union of actual target and
+candidate-block supports.  Native atoms may not be merged merely
+because they have the same determinant.  Every extra column atom is a
+row with target coefficient zero.  A certificate after aggregation is
+only necessary unless a separate lifting theorem is proved.
+
+\paragraph{Coefficient rule.}
+The allowed set \(\mathscr C_X\) comes from the upstream
+decomposition.  A signed solution does not certify a nonnegative
+cover, and an arbitrary solution does not certify the original unit
+all-block identity.  Exact feasibility and coefficient amplification
+must both be verified.
+
+\paragraph{Normalization rule.}
+Only \(B_Xc_X=w_X\) gives pure algebraic transport under the original
+global normalizer.  A least-squares residual, however small in
+\(\ell^2\), requires a new physical remainder theorem.  Such a theorem
+could verify the original asymptotic TPC-18 route, but the residual may
+not be discarded by bounded overlap or numerical conditioning.
+
+\paragraph{Ledger rule.}
+The exact-cover condition \(w_X\in B_X\mathscr C_X\) (equivalently
+\(\eps_{\cov}=0\) when the attainable image is closed), the post-bin determinant rule
+\(\lambda_D\le2\eta_Z\), and the strict endpoint rule
+\(\Lambda_{\phys}<1/400\) are independent.  Equality or excess in the
+last rule stops the route.  No gain or loss is charged twice.
+
+\paragraph{Arithmetic claim boundary.}
+All statements retain one prescribed nonzero \(h_0\).  Nothing
+specializes it to \(2\), proves a fixed-shift Hardy--Littlewood
+asymptotic, gives a prime-pair lower bound, breaches the parity
+barrier, or implies the twin-prime conjecture.
+
+\paragraph{Next exact task.}
+A genuine advance on this gate must export the upstream hard packet
+and all candidate TPC-18 blocks to the same literal row list, then do
+one of the following:
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item produce an exact symbolic or interval-verified allowed
+  coefficient \(c_X\) with \(B_Xc_X=w_X\) and acceptable
+  amplification;
+\item produce a dual residual or Farkas vector proving that the
+  proposed block family cannot exactly cover the packet; or
+\item isolate an explicit residual \(r_X\) and prove a new physical
+  bound for \(\mathcal T_X(r_X)\).
+\end{enumerate}
+The first would close only the exact zero-remainder interface.  The
+second would rule out that block family only as an exact
+zero-remainder route; it would not exclude a separately controlled
+residual route.  The third would define such a residual route.  None,
+by itself, proves the independent TPC-18 determinant-dispersion input.

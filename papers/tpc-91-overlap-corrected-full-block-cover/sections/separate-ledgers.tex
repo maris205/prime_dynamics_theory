@@ -1,0 +1,164 @@
+\section{Separate feasibility, determinant, and physical ledgers}
+\label{sec:separate-ledgers}
+
+Several losses can occur near the same endpoint, but they measure
+different objects.  We record them separately to prevent an incidence
+gain from being counted as arithmetic cancellation.
+
+\subsection{The cover ledger}
+
+The exact feasibility entry is binary:
+\begin{equation}
+ \boxed{w_X\in B_X\mathscr C_X.}
+ \label{eq:cover-ledger}
+\end{equation}
+When \(B_X\mathscr C_X\) is closed, this is equivalent to
+\(\eps_{\cov}(B_X,w_X;\mathscr C_X)=0\).  The original asymptotic
+TPC-18 representation also admits a distinct route in which the
+prescribed coefficient leaves \(r_X\ne0\) but a new theorem proves
+\(\mathcal T_X(r_X)=o(X)\).
+When it holds, the quantitative reassembly cost is the exact product
+\[
+ \sum_j|c_{j,X}||E_{j,X}|,
+\]
+minimized over allowed exact covers if there is a choice.  If
+\(\|c_X\|_1=X^{\lambda_{\cov}+o(1)}\) with
+\(\lambda_{\cov}>0\), that amplification is a physical-interface loss
+only when it is not already present in the block error.  It is never a
+zero-mode saving.
+
+\subsection{The determinant/zero-mode ledger}
+
+On a separate conditional post-bin branch, suppose
+\[
+ S_X=X^{o(1)}Q_X,\qquad
+ |Z_X|\le X^{-\eta_Z+o(1)}Q_X^2,\qquad
+ D_X\ge
+ X^{-\lambda_D+o(1)}Q_X^3J_X^2.
+\]
+These are hypotheses about a literal coefficient, not conclusions of
+the incidence model.  Its principal angle
+\[
+ \rho_X=\frac{|Z_X|}{\sqrt{S_XD_X}}
+\]
+then satisfies
+\[
+ \rho_X
+ \le
+ \frac{X^{\lambda_D/2-\eta_Z+o(1)}}{J_X}.
+\]
+Thus the recorded estimates certify the critical angle scale under
+\begin{equation}
+ \boxed{\lambda_D\le2\eta_Z.}
+ \label{eq:determinant-ledger}
+\end{equation}
+This is the inherited determinant/zero-mode compatibility rule
+\citep{WangTPC89}.  Solving \(B_Xc_X=w_X\) neither improves
+\(\lambda_D\) nor proves \(\eta_Z>0\).
+
+\subsection{The strict physical-loss ledger}
+
+Let \(\Lambda_{\phys}\) be the sum of fixed-power losses actually
+incurred by the full physical reduction and downstream comparison,
+excluding every loss already represented in
+\(\lambda_D-2\eta_Z\).  The route remains viable only under the strict
+rule
+\begin{equation}
+ \boxed{\Lambda_{\phys}<\frac1{400}.}
+ \label{eq:physical-loss-ledger}
+\end{equation}
+Equality or excess is a stop condition.  If a polynomial
+exact-cover amplification is newly incurred, it is charged here once.
+It may not also be inserted into \(\lambda_D\) or subtracted from
+\(\eta_Z\).
+
+\begin{theorem}[No automatic conversion among ledgers]
+\label{thm:no-ledger-conversion}
+None of the following implications follows from the results of this
+paper:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \(w_X\in B_X\mathscr C_X
+  \Longrightarrow\lambda_D\le2\eta_Z\);
+\item \(\lambda_D\le2\eta_Z
+  \Longrightarrow w_X\in B_X\mathscr C_X\);
+\item bounded overlap
+  \(\Longrightarrow\Lambda_{\phys}=0\);
+\item a small Euclidean cover residual
+  \(\Longrightarrow\) a saving in \(\eta_Z\);
+\item determinant-compatible column metadata
+  \(\Longrightarrow\) the TPC-18 generic determinant estimate.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The cover ledger concerns membership of one target vector in an
+allowed linear image.  The determinant ledger compares a zero mode
+with an energy of a literal post-bin coefficient.  The physical
+ledger accumulates losses in arithmetic reassembly, and the TPC-18
+generic estimate bounds a fixed-shift correlation inside each
+compatible column.  The counterexamples in
+\cref{sec:counterexamples} already separate support overlap from
+linear feasibility, while \cref{prop:residual-remainder} separates
+Euclidean residual size from a physical statistic.  No theorem
+identifies the remaining quantities, so no listed conversion follows.
+\end{proof}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash}p{0.22\textwidth}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{0.25\textwidth}@{}}
+\toprule
+Ledger & Required statement & Status here\\
+\midrule
+Literal zero-remainder cover
+&
+Exact membership \(w_X\in B_X\mathscr C_X\) on all native rows
+&
+Sufficient zero-remainder route; physical feasibility unproved
+\\
+\addlinespace
+Coefficient amplification
+&
+Weighted block error fits the target error
+&
+Exact formula; no physical \(c_X\) constructed
+\\
+\addlinespace
+Determinant/zero mode
+&
+\(\lambda_D\le2\eta_Z\)
+&
+Independent conditional post-bin ledger
+\\
+\addlinespace
+Physical endpoint
+&
+\(\Lambda_{\phys}<1/400\), strictly
+&
+Independent inherited stop rule
+\\
+\addlinespace
+TPC-18 arithmetic
+&
+Primitive generic determinant dispersion at the same fixed \(h_0\)
+&
+Independent unproved \(\Ltwo\) input
+\\
+\bottomrule
+\end{tabularx}
+\caption{The same gain or loss may not be moved between rows without
+a literal crosswalk theorem.}
+\label{tab:independent-ledgers}
+\end{table}
+
+\begin{remark}[TPC-18 gate independence]
+The all-block representation in the first row is still its own gate.
+The present paper makes the exact zero-remainder route falsifiable by
+an exact residual or Farkas vector, but does not declare the original
+asymptotic gate closed: a separate controlled-residual route may
+remain.  Even if the representation gate were closed, the last row
+would remain open.
+\end{remark}

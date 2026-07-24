@@ -1,0 +1,213 @@
+\section{Projection and dual certificates}
+\label{sec:dual-certificates}
+
+\subsection{Unrestricted coefficients}
+
+Let \(B^\dagger\) be the Moore--Penrose pseudoinverse and let
+\[
+ P_B=BB^\dagger
+\]
+be the orthogonal projection onto \(\ran B\)
+\citep{GolubVanLoan2013}.  Write
+\begin{equation}
+ q_*=P_Bw,\qquad
+ r_*=(I-P_B)w.
+ \label{eq:subspace-projection}
+\end{equation}
+
+\begin{theorem}[Exact subspace cover certificate]
+\label{thm:subspace-certificate}
+For \(B\in\K^{n\times m}\) and \(w\in\K^n\),
+\begin{align}
+ \inf_{c\in\K^m}\|w-Bc\|_2
+ &=\|r_*\|_2,
+ \label{eq:least-squares-distance}\\
+ \|r_*\|_2
+ &=
+ \max_{\substack{y\in\K^n\\
+                  \|y\|_2\le1,\ B^*y=0}}
+ \operatorname{Re}\langle y,w\rangle.
+ \label{eq:subspace-dual}
+\end{align}
+In particular, the following are equivalent:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \(Bc=w\) for some \(c\in\K^m\);
+\item \(r_*=0\);
+\item \(\langle y,w\rangle=0\) for every \(y\in\ker B^*\).
+\end{enumerate}
+If \(r_*\ne0\), then
+\[
+ y_*=\frac{r_*}{\|r_*\|_2}
+\]
+is a unit dual obstruction satisfying
+\[
+ B^*y_*=0,\qquad
+ \operatorname{Re}\langle y_*,w\rangle=\|r_*\|_2.
+\]
+\end{theorem}
+
+\begin{proof}
+The orthogonal decomposition
+\[
+ w-Bc=r_*+(q_*-Bc),
+\qquad
+ r_*\perp\ran B,
+\]
+gives
+\[
+ \|w-Bc\|_2^2
+ =
+ \|r_*\|_2^2+\|q_*-Bc\|_2^2.
+\]
+This proves \eqref{eq:least-squares-distance}; equality is attained,
+for example, at \(c=B^\dagger w\).
+
+If \(B^*y=0\) and \(\|y\|_2\le1\), then
+\[
+ \operatorname{Re}\langle y,w\rangle
+ =
+ \operatorname{Re}\langle y,r_*\rangle
+ \le\|r_*\|_2.
+\]
+When \(r_*\ne0\), equality holds at \(y_*\).  When \(r_*=0\), the
+maximum is zero because \(y=0\) is feasible.  This proves
+\eqref{eq:subspace-dual} and the equivalences.
+\end{proof}
+
+\begin{corollary}[A posteriori lower bound]
+\label{cor:dual-lower-bound}
+Any vector \(y\) with \(B^*y=0\) and \(\|y\|_2\le1\) certifies
+\[
+ \|w-Bc\|_2
+ \ge
+ \operatorname{Re}\langle y,w\rangle
+\]
+for every \(c\).  Thus a rational or interval-verified \(y\) can
+certify a nonzero cover defect without computing a pseudoinverse.
+\end{corollary}
+
+\subsection{Nonnegative coefficients}
+
+Suppose now that \(B\) and \(w\) are real and that
+\(\mathscr C=\R_+^m\).  The attainable set
+\[
+ K=B\R_+^m
+\]
+is a finitely generated closed convex cone.
+
+\begin{theorem}[Farkas and quantitative cone certificates]
+\label{thm:farkas-cone}
+Exactly one of the following alternatives holds:
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item there is \(c\ge0\) such that \(Bc=w\);
+\item there is \(y\in\R^n\) such that
+  \(B^{\mathsf T}y\ge0\) and \(\langle y,w\rangle<0\).
+\end{enumerate}
+Moreover,
+\begin{equation}
+ \dist(w,K)
+ =
+ \max_{\substack{y\in\R^n\\
+                  \|y\|_2\le1,\ B^{\mathsf T}y\le0}}
+ \langle y,w\rangle.
+ \label{eq:cone-distance-dual}
+\end{equation}
+If \(q=P_Kw\), \(r=w-q\), and \(r\ne0\), then
+\[
+ B^{\mathsf T}r\le0,\qquad
+ \langle r,q\rangle=0,
+\]
+so \(-r\) is a Farkas obstruction and \(r/\|r\|_2\) attains
+\eqref{eq:cone-distance-dual}.
+\end{theorem}
+
+\begin{proof}
+The alternative is the finite-dimensional Farkas lemma
+\citep{Schrijver1986}.  For the quantitative statement, the
+projection inequality for the closed convex cone \(K\) gives
+\[
+ \langle w-q,z-q\rangle\le0
+ \qquad(z\in K).
+\]
+Taking \(z=0\) and \(z=2q\) yields
+\(\langle r,q\rangle=0\).  Taking \(z=tBe_j\), \(t\ge0\), gives
+\(B^{\mathsf T}r\le0\).  Hence the right side of
+\eqref{eq:cone-distance-dual} is at least \(\|r\|_2\).
+Conversely, if \(B^{\mathsf T}y\le0\), then
+\(\langle y,z\rangle\le0\) for all \(z\in K\), and therefore
+\[
+ \langle y,w\rangle
+ \le
+ \langle y,w-q\rangle
+ \le
+ \|r\|_2
+\]
+for \(\|y\|_2\le1\).  This proves the formula.  Finally,
+\[
+ \langle-r,w\rangle
+ =
+ -\langle r,q+r\rangle
+ =
+ -\|r\|_2^2<0,
+\]
+so \(-r\) has the required Farkas signs.
+\end{proof}
+
+\subsection{General convex rules with closed attainable images}
+
+For a nonempty set \(\mathscr C\subseteq\K^m\), define its support
+function
+\[
+ \sigma_{\mathscr C}(u)
+ =
+ \sup_{c\in\mathscr C}
+ \operatorname{Re}\langle u,c\rangle.
+\]
+The projection and support-function formulation below is standard
+finite-dimensional convex analysis
+\citep{Rockafellar1970,BauschkeCombettes2017}.
+
+\begin{theorem}[Convex allowed-set dual]
+\label{thm:convex-dual}
+Let \(\mathscr C\) be nonempty and convex, and assume
+\(B\mathscr C\) is closed.  Then
+\begin{equation}
+ \dist(w,B\mathscr C)
+ =
+ \max_{\|y\|_2\le1}
+ \left\{
+ \operatorname{Re}\langle y,w\rangle
+ -
+ \sigma_{\mathscr C}(B^*y)
+ \right\}.
+ \label{eq:convex-distance-dual}
+\end{equation}
+In particular, an allowed exact cover exists if and only if the
+right side is zero.
+\end{theorem}
+
+\begin{proof}
+Put \(K=B\mathscr C\), and let \(q=P_Kw\).  For every
+\(\|y\|_2\le1\) and \(z\in K\),
+\[
+ \operatorname{Re}\langle y,w\rangle-\sigma_K(y)
+ \le
+ \operatorname{Re}\langle y,w-z\rangle
+ \le
+ \|w-z\|_2.
+\]
+Taking the infimum in \(z\) gives the upper bound by
+\(\dist(w,K)\).  If \(w\notin K\), the projection inequality shows
+that \(y=(w-q)/\|w-q\|_2\) supports \(K\) at \(q\); hence
+\(\sigma_K(y)=\operatorname{Re}\langle y,q\rangle\), and equality
+holds.  If \(w\in K\), \(y=0\) gives equality at zero.  Finally,
+\(\sigma_K(y)=\sigma_{\mathscr C}(B^*y)\).
+\end{proof}
+
+\begin{remark}[Closedness]
+The image of an arbitrary closed convex set under a linear map need
+not be closed.  The hypothesis in \cref{thm:convex-dual} is automatic
+for the coefficient sets used most often here: compact polytopes and
+polyhedra.  It is stated explicitly rather than hidden in the
+projection notation.
+\end{remark}
