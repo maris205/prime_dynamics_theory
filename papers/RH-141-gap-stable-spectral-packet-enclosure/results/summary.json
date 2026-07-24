@@ -1,0 +1,55 @@
+{
+  "audit": {
+    "channel_rank_record_count": 30,
+    "maximum_certified_rank4_frame_radius": 0.4076096610746277,
+    "maximum_certified_rank4_projector_radius": 0.3990545610908516,
+    "minimum_rank4_ideal_svd_gap_ratio": 1.0213167889571424,
+    "minimum_rank4_universal_gap_ratio": 1.7706877744500395e-07,
+    "rank1_universal_stable_count": 7,
+    "rank2_universal_stable_count": 7,
+    "rank4_ideal_svd_stable_count": 10,
+    "rank4_universal_gap_wall_count": 6,
+    "rank4_universal_stable_count": 4,
+    "synthetic_failure_count": 0,
+    "synthetic_maximum_actual_to_bound_ratio": 0.8911819927336743
+  },
+  "program_boundary": {
+    "all_ten_rank4_packets_certified": false,
+    "approximate_gap_projector_enclosure": true,
+    "hilbert_polya_operator": false,
+    "polar_aligned_frame_enclosure": true,
+    "quadratic_svd_radius_interval_validated": false,
+    "rank4_universal_anchor_packet_count_is_four": true,
+    "riemann_hypothesis": false,
+    "stage_A": false,
+    "threshold_update_enclosed": false,
+    "two_radius_gap_obstruction": true,
+    "uniform_all_level_packet_gap": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "8065449b13621138f1823f8072f55fdb1076f4068cc9d37bf9c7cc787f4ea5a9",
+    "README.md": "b12bb9c9866aa5b81aa2a5feb54b5c0084843e7488acf70e23f22c1ddae117cc",
+    "THEOREM_LEDGER.md": "74f1a3b1006ac9fcb387713d5b7043ccaf743112f680eedaf176b631c9343f6d",
+    "UPDATED_ROADMAP.md": "54d0db5acf4eb7388d52f79b6a1277881c1129031f44220a9ebfd693c95c6500",
+    "figures/gap_stable_spectral_packet.pdf": "a98f8f22c781a749d8e1655730daefdb5bb65edcd99349ebf62f1341804514c5",
+    "figures/gap_stable_spectral_packet.png": "d14927052bd33ae4b67ce6b9e5c2944d1385361492c73c8acf289e0c64c77cd6",
+    "gap-stable-spectral-packet-enclosure.pdf": "d85474204a2e987675a3efe6732a4bc4e38f11bdb0b3a3d45b133c9bbb56b7f5",
+    "main.pdf": "d85474204a2e987675a3efe6732a4bc4e38f11bdb0b3a3d45b133c9bbb56b7f5",
+    "main.tex": "a2e649b3d43f1af0a1ba94e401a2e3a06c024774a1e4544848bdc1f783d0118c",
+    "pyproject.toml": "f58d136cc537135c7e0c79421d9d618e33ab26c38d648817b43dde2f6b21714a",
+    "references.bib": "c8620e31058c0ca26d998b92f8f011c8a6573840ae825c7531b5cebe8bba0e1a",
+    "requirements.txt": "408aa57fdb2c5a55bd8a4ee2356c6deab1623d728dbad693e1a35ac2c5e6ebf1"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "eae17a98ec8ca3b1fc717d137f691d286627ffe67c844f14becb1de2b4bd5d86",
+    "results/spectral_packet_audit.json": "7029f467fdf4c483a0a0a88580d5edecc3cb0734c5442ed2ef6c73f0e59e1692",
+    "results/spectral_packet_smoke.json": "79e623957790521c0ff7cfe4d834de86ca371ca08d54896ee03590cbfe3839f7"
+  },
+  "route_consequence": "The RH-140 universal balls certify four of ten rank-four anchor projectors. The other six are genuine gap walls for that information set. All ten would pass under the quadratic orthogonal-SVD radius, with the coarse right channel only 2.1% above the sharp crossing threshold; interval validation of the quadratic cancellation is therefore the next source-interface target.",
+  "status": "rh141_gap_stable_spectral_packet_enclosure_archived",
+  "theorem": {
+    "approximate_gap_projector_enclosure": true,
+    "polar_aligned_frame_enclosure": true,
+    "two_radius_gap_obstruction": true
+  }
+}

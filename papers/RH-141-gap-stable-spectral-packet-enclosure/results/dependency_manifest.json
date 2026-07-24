@@ -1,0 +1,45 @@
+{
+  "external_inputs": {
+    "rh140_audit": {
+      "path": "papers/RH-140-normalized-snapshot-enclosure/results/snapshot_enclosure_audit.json",
+      "sha256": "f39d9bd4fbd4833e537bea76d832da5487f14a5f88e468e30a9f110d121f958c"
+    },
+    "rh140_source": {
+      "path": "papers/RH-140-normalized-snapshot-enclosure/src/snapshot_enclosure/bounds.py",
+      "sha256": "6a66dc8356f699cf8fa4614b96918c2b0ce0a4c51e38cda83493a7d86b38ee92"
+    },
+    "rh140_summary": {
+      "path": "papers/RH-140-normalized-snapshot-enclosure/results/summary.json",
+      "sha256": "a3b65c090ea87e67ae1906de3f0b58c2a5390a6407f2b7a58c745ae633d43c9f"
+    },
+    "rh77_model_source": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/experiments/run_effective_rank_audit.py",
+      "sha256": "f1ea040fd00577c2775fea8cc1bc4bf416cae76d06dd06b3a6b5ee27116cd3c3"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "bf66365bcbc0f9c119e8b03df458ec6c0cd08f799169917d73aec7e2ec168ebf",
+    "experiments/build_packet_audit.py": "b9b4479f3bd1e48200a845aedb60228ce3d45b755d4e4037e0c5eb20550df84c",
+    "experiments/make_figures.py": "69e6dcce20b167df3dfc7fc0179d6d8449f4a291c69d8cfb6ed11c477d578c0a",
+    "experiments/verify_archive.py": "527c56197e137bbb50e6439c3601276e88b3e253c2f7435350b984b0fca85abb",
+    "src/spectral_packet/__init__.py": "ae5f4e31fd221758f0b17db5d4fb80c25cf961b0b683610e4892e85df4f1f860",
+    "src/spectral_packet/enclosure.py": "07b2010e0a0cc6582040a307692e6aea8d47800a468194d3aa4a740690fafe0b",
+    "tests/test_archived_results.py": "dc540eebdff3423f8141bfe9aeec78a4ca9462ad5f310a188574e0424e1587bb",
+    "tests/test_theory.py": "09b4261b5fcaf216e77d333135fb26b1298ebee745e0d321f99504dd9adf0483"
+  },
+  "publication_artifacts": {
+    ".gitignore": "8065449b13621138f1823f8072f55fdb1076f4068cc9d37bf9c7cc787f4ea5a9",
+    "README.md": "b12bb9c9866aa5b81aa2a5feb54b5c0084843e7488acf70e23f22c1ddae117cc",
+    "THEOREM_LEDGER.md": "74f1a3b1006ac9fcb387713d5b7043ccaf743112f680eedaf176b631c9343f6d",
+    "UPDATED_ROADMAP.md": "54d0db5acf4eb7388d52f79b6a1277881c1129031f44220a9ebfd693c95c6500",
+    "figures/gap_stable_spectral_packet.pdf": "a98f8f22c781a749d8e1655730daefdb5bb65edcd99349ebf62f1341804514c5",
+    "figures/gap_stable_spectral_packet.png": "d14927052bd33ae4b67ce6b9e5c2944d1385361492c73c8acf289e0c64c77cd6",
+    "gap-stable-spectral-packet-enclosure.pdf": "d85474204a2e987675a3efe6732a4bc4e38f11bdb0b3a3d45b133c9bbb56b7f5",
+    "main.pdf": "d85474204a2e987675a3efe6732a4bc4e38f11bdb0b3a3d45b133c9bbb56b7f5",
+    "main.tex": "a2e649b3d43f1af0a1ba94e401a2e3a06c024774a1e4544848bdc1f783d0118c",
+    "pyproject.toml": "f58d136cc537135c7e0c79421d9d618e33ab26c38d648817b43dde2f6b21714a",
+    "references.bib": "c8620e31058c0ca26d998b92f8f011c8a6573840ae825c7531b5cebe8bba0e1a",
+    "requirements.txt": "408aa57fdb2c5a55bd8a4ee2356c6deab1623d728dbad693e1a35ac2c5e6ebf1"
+  },
+  "status": "all_rh141_inputs_sources_and_publication_artifacts_hashed"
+}
