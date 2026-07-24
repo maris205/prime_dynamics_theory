@@ -1,0 +1,91 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The high-row fixed-shift route isolates the literal determinant
+coefficient
+\[
+ A_X(n)=A_{\lfloor J_X\rfloor}(n)
+\]
+only after the three matched physical channels and every native
+contribution in the determinant fiber have been aggregated.  Its
+post-bin statistics are
+\[
+ Z_X=\sum_nA_X(n),\qquad
+ M_X=\sum_n|A_X(n)|,\qquad
+ D_X=\sum_n|A_X(n)|^2.
+\]
+TPC-32 asks for an upper bound on the normalized zero-frequency
+concentration
+\[
+ \Flat_X=\frac{|Z_X|^2}{D_X},
+\]
+while TPC-83 shows that survival of the natural determinant energy
+is equivalent, up to subpower factors, to survival of the literal
+post-bin \(\ell^1\) mass \(M_X\)
+\citep{WangTPC32,WangTPC83}.  These statements leave a useful
+question:
+
+\begin{quote}
+Once post-bin mass and energy have survived, exactly how much
+cancellation among determinant bins is still required?
+\end{quote}
+
+The answer is an identity rather than an estimate.  Write
+\[
+ \canc_X=\frac{|Z_X|}{M_X},
+ \qquad
+ \SeffX=\frac{M_X^2}{D_X}.
+\]
+Then
+\[
+ \Flat_X=\canc_X^2\SeffX.
+\]
+The two factors have different meanings.  The effective support
+\(\SeffX\) depends only on the magnitudes
+\((|A_X(n)|)\); the relative cancellation \(\canc_X\) records how
+the complex phases reassemble.  Neither factor may be substituted
+for the other.
+
+This paper makes the split exact and performs the endpoint
+arithmetic.  Its main contributions are:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item an edge-safe definition covering both nonzero and identically
+zero complex sequences;
+\item the exact factorization
+\(\Flat=\canc^2\Seff\);
+\item sharp ranges and complete elementary equality cases;
+\item for a nonzero coefficient, a joint lower edge
+\((2-\Seff)_+\le\Flat\), showing what very concentrated magnitude
+profiles force even under optimal phase opposition;
+\item exact counterexamples showing that identical magnitude data
+can produce maximal or complete zero-mode cancellation;
+\item a literal crosswalk to the fixed-\(h_0\) TPC-32 coefficient;
+\item a proof that natural post-bin mass implies
+\(\SeffX=X^{o(1)}Q_X\);
+\item the critical equivalence
+\[
+ \Flat_X\le X^{1/400+o(1)}
+ \quad\Longleftrightarrow\quad
+ \frac{|Z_X|}{M_X}\le\frac{X^{o(1)}}{J_X};
+\]
+and
+\item a two-level exponent ledger that reproduces, without double
+counting, the TPC-82 compatibility condition
+\(2\eta_Z\ge\lambda_D\).
+\end{enumerate}
+
+The factorization does not create phase cancellation.  It identifies
+its exact relative scale after the magnitude-spreading level has
+been fixed.
+
+\subsection{Audit levels}
+
+We retain the established three-level terminology.  An \(\Lzero\)
+statement is finite algebra or an abstract finite counterexample.  An
+\(\Lone\) statement identifies the same quantities on the literal
+fixed-\(h_0\) carrier with its original aggregation and
+normalization.  An \(\Ltwo\) statement is a new growing-\(X\)
+arithmetic estimate for that carrier.  The finite theorems in
+\cref{sec:finite-factorization,sec:sharp-range} are \(\Lzero\).
+The crosswalk and conditional exponent implications are \(\Lone\).
+No \(\Ltwo\) input is asserted.

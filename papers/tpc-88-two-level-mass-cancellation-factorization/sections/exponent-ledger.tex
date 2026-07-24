@@ -1,0 +1,209 @@
+\section{The exact two-level exponent ledger}
+\label{sec:exponent-ledger}
+
+The natural regime is the zero-loss corner of a more general
+conditional ledger.  The purpose of this section is bookkeeping:
+none of the displayed exponent profiles is proved for the physical
+coefficient.
+
+\begin{definition}[Two-sided exponent profile]
+\label{def:exponent-profile}
+Assume \(A_X\ne0\) for all sufficiently large \(X\).  Let
+\[
+ Q_X=X^{\beta+o(1)},\qquad
+ J_X=X^{1-\beta+o(1)},\qquad
+ N_{0,X}=J_XQ_X^2.
+\]
+A two-sided profile \((\mu,\lambda,\eta_{\canc})\), with
+\(\mu,\lambda,\eta_{\canc}\ge0\), means
+\begin{align}
+ M_X&=X^{-\mu+o(1)}N_{0,X},
+ \label{eq:mass-profile}\\
+ D_X&=X^{-\lambda+o(1)}
+       \frac{N_{0,X}^2}{Q_X},
+ \label{eq:energy-profile}\\
+ \canc_X&=X^{-\eta_{\canc}+o(1)}.
+ \label{eq:cancellation-profile}
+\end{align}
+The exponent \(\eta_{\canc}\) measures relative cancellation against
+the actual post-bin mass.  A finite profile of this form forces
+\(Z_X\ne0\) eventually.  If \(Z_X=0\) on a subsequence, then
+\(\Flat_X=0\) there and every flatness upper bound is automatic; no
+finite \(\eta_{\canc}\) or \(\eta_Z\) is assigned on that zero-mode
+subsequence.
+\end{definition}
+
+\begin{theorem}[Profile identities]
+\label{thm:profile-identities}
+Under \cref{def:exponent-profile},
+\begin{align}
+ \SeffX
+ &=
+ X^{\beta+\lambda-2\mu+o(1)},
+ \label{eq:effective-profile}\\
+ \Flat_X
+ &=
+ X^{\beta+\lambda-2\mu-2\eta_{\canc}+o(1)}.
+ \label{eq:flatness-profile}
+\end{align}
+The TPC-32 bound
+\[
+ \Flat_X\le X^{\chi+o(1)}
+\]
+is certified by the profile exactly when
+\begin{equation}
+ \boxed{
+ 2\eta_{\canc}
+ \ge
+ \beta-\chi+\lambda-2\mu.}
+\label{eq:relative-ledger}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Divide the square of \eqref{eq:mass-profile} by
+\eqref{eq:energy-profile}:
+\[
+ \SeffX
+ =
+ X^{-2\mu+\lambda+o(1)}Q_X,
+\]
+which is \eqref{eq:effective-profile}.  Multiply by
+\(\canc_X^2\) and use the exact factorization to obtain
+\eqref{eq:flatness-profile}.  Comparing its exponent with \(\chi\)
+gives \eqref{eq:relative-ledger}.
+\end{proof}
+
+\begin{proposition}[Feasible mass--energy wedge]
+\label{prop:feasible-wedge}
+Any two-sided profile compatible with the verified TPC-32 envelopes
+satisfies
+\begin{equation}
+ \boxed{\mu\le\lambda\le2\mu.}
+\label{eq:feasible-wedge}
+\end{equation}
+Consequently,
+\[
+ \beta-\mu
+ \le
+ \beta+\lambda-2\mu
+ \le
+ \beta,
+\]
+subject also to the trivial nonnegative effective-support exponent.
+\end{proposition}
+
+\begin{proof}
+The lower mass-to-energy inequality and \(S_X\ll Q_X\) give
+\[
+ D_X\gg X^{-2\mu+o(1)}
+ \frac{N_{0,X}^2}{Q_X}.
+\]
+Comparison with \eqref{eq:energy-profile} yields
+\(\lambda\le2\mu\).  Conversely,
+\[
+ M_X\ge\frac{D_X}{L_X}
+ \gg X^{-\lambda+o(1)}N_{0,X}
+\]
+by \eqref{eq:atom-envelope}.  Comparison with
+\eqref{eq:mass-profile} yields \(\mu\le\lambda\).
+The effective-support bounds follow from
+\eqref{eq:effective-profile}.
+\end{proof}
+
+\subsection{Reconciliation with the absolute zero-mode ledger}
+
+Define the signed absolute zero-mode exponent \(\eta_Z\) by
+\begin{equation}
+ |Z_X|=X^{-\eta_Z+o(1)}Q_X^2.
+\label{eq:absolute-Z-profile}
+\end{equation}
+It may be negative if the zero mode is larger than \(Q_X^2\).
+
+\begin{proposition}[Relative-to-absolute exponent dictionary]
+\label{prop:relative-absolute-dictionary}
+Under the two-sided profile,
+\begin{equation}
+ \boxed{
+ \eta_Z
+ =
+ \eta_{\canc}+\mu-(1-\beta).}
+\label{eq:eta-dictionary}
+\end{equation}
+At the critical TPC-32 endpoint
+\[
+ \chi=\frac1{400},
+ \qquad
+ \beta=\frac{267}{400},
+\]
+the relative ledger \eqref{eq:relative-ledger} is exactly
+\begin{equation}
+ \boxed{2\eta_Z\ge\lambda.}
+\label{eq:absolute-ledger}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+From \(|Z_X|=\canc_XM_X\),
+\[
+ |Z_X|
+ =
+ X^{-\eta_{\canc}-\mu+o(1)}
+ J_XQ_X^2
+ =
+ X^{-\eta_{\canc}-\mu+1-\beta+o(1)}Q_X^2,
+\]
+which proves \eqref{eq:eta-dictionary}.  At the critical endpoint,
+\[
+ \beta-\chi
+ =
+ \frac{266}{400}
+ =
+ 2(1-\beta).
+\]
+Substitute
+\(\eta_{\canc}=\eta_Z-\mu+(1-\beta)\) into
+\eqref{eq:relative-ledger}; all mass terms cancel, leaving
+\(2\eta_Z\ge\lambda\).
+\end{proof}
+
+\begin{corollary}[Natural corner]
+\label{cor:natural-corner}
+At \(\mu=\lambda=0\), the critical relative requirement is
+\[
+ \eta_{\canc}\ge\frac{133}{400}=1-\beta,
+\]
+equivalently
+\[
+ \canc_X\le\frac{X^{o(1)}}{J_X}.
+\]
+\end{corollary}
+
+\begin{proof}
+Insert \(\mu=\lambda=0\) and
+\(\beta-\chi=266/400\) into
+\eqref{eq:relative-ledger}.
+\end{proof}
+
+\begin{remark}[No duplicated gain]
+The mass exponent \(\mu\) appears once in the effective-support level
+and once, with the opposite bookkeeping role, in the conversion from
+relative to absolute cancellation.  Equation
+\eqref{eq:absolute-ledger} shows that it cancels exactly.  Assigning
+the same mass gain or loss again in the TPC-82 absolute ledger would
+double count it \citep{WangTPC82}.
+\end{remark}
+
+\begin{definition}[Independent physical-loss ledger]
+\label{def:physical-loss-ledger}
+Let \(\Lambda_{\mathrm{phys}}\) be the sum of fixed-power losses
+actually incurred by the full physical interface and downstream
+comparison, excluding any loss already represented in
+\(\lambda-2\eta_Z\).  The route continues only under the strict rule
+\[
+ \boxed{\Lambda_{\mathrm{phys}}<\frac1{400}.}
+\]
+Equality or excess is a stop condition.  This ledger is independent
+of \eqref{eq:absolute-ledger}; the same loss is never charged in
+both.
+\end{definition}

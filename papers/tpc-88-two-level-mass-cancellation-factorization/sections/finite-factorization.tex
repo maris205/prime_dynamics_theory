@@ -1,0 +1,156 @@
+\section{Exact two-level factorization}
+\label{sec:finite-factorization}
+
+Let \(a=(a_n)_{n\in\Z}\) be finitely supported and complex.  Define
+\begin{equation}
+ S=\#\supp a,\qquad
+ L=\|a\|_\infty,\qquad
+ M=\|a\|_1,\qquad
+ D=\|a\|_2^2,\qquad
+ Z=\sum_na_n.
+\label{eq:SLMDZ}
+\end{equation}
+
+\subsection{The zero sequence}
+
+\begin{lemma}[Edge equivalence]
+\label{lem:zero-edge}
+The following are equivalent:
+\[
+ a=0,\qquad M=0,\qquad D=0.
+\]
+Whenever they hold, \(S=L=Z=0\).
+\end{lemma}
+
+\begin{proof}
+Both \(M\) and \(D\) are sums of nonnegative terms and vanish exactly
+when every coefficient vanishes.  The remaining conclusions are
+then immediate.
+\end{proof}
+
+For \(a=0\), ratios such as \(M^2/D\) and \(|Z|/M\) are formally
+\(0/0\).  We remove the ambiguity by convention:
+\begin{equation}
+ \canc(0)=0,\qquad
+ \Seff(0)=0,\qquad
+ \Flat(0)=0.
+\label{eq:zero-convention}
+\end{equation}
+This agrees with the zero-flatness convention used in the physical
+route.  All division in the remainder of the finite theory is
+restricted to \(a\ne0\).
+
+\subsection{The factorization}
+
+\begin{definition}[Two levels]
+\label{def:two-level-statistics}
+For \(a\ne0\), define
+\begin{equation}
+ \canc(a)=\frac{|Z|}{M},\qquad
+ \Seff(a)=\frac{M^2}{D},\qquad
+ \Flat(a)=\frac{|Z|^2}{D}.
+\label{eq:two-level-statistics}
+\end{equation}
+We call \(\canc\) the relative phase-cancellation coefficient,
+\(\Seff\) the effective support, and \(\Flat\) the zero-frequency
+concentration.
+\end{definition}
+
+\begin{theorem}[Exact mass--cancellation factorization]
+\label{thm:exact-factorization}
+For every finitely supported complex sequence,
+\begin{equation}
+ \boxed{\Flat(a)=\canc(a)^2\Seff(a).}
+\label{eq:exact-factorization}
+\end{equation}
+For \(a\ne0\), the elementary ranges are
+\begin{equation}
+ 0\le\canc(a)\le1,\qquad
+ 1\le\Seff(a)\le S,\qquad
+ 0\le\Flat(a)\le\Seff(a)\le S.
+\label{eq:elementary-ranges}
+\end{equation}
+All three statistics are invariant under multiplication of \(a\)
+by a nonzero complex scalar.
+\end{theorem}
+
+\begin{proof}
+For \(a=0\), \eqref{eq:exact-factorization} is
+\(0=0^2\cdot0\) by convention.  Suppose \(a\ne0\).
+Then \(M,D>0\), and direct multiplication gives
+\[
+ \canc^2\Seff
+ =
+ \frac{|Z|^2}{M^2}\frac{M^2}{D}
+ =
+ \frac{|Z|^2}{D}
+ =
+ \Flat.
+\]
+The triangle inequality gives \(|Z|\le M\), hence
+\(0\le\canc\le1\).  Also
+\[
+ D\le M^2
+\]
+and Cauchy--Schwarz on the exact support gives
+\[
+ M^2\le SD.
+\]
+Thus \(1\le\Seff\le S\).  The remaining bounds follow from the
+factorization.  Each numerator and denominator has the same
+homogeneity needed for scalar invariance.
+\end{proof}
+
+\begin{remark}[Magnitude level versus phase level]
+\label{rem:magnitude-phase}
+The statistic \(\Seff\) depends only on
+\((|a_n|)\).  For fixed magnitudes, changing phases leaves
+\(\Seff\), \(M\), and \(D\) unchanged but can change \(\canc\) and
+\(\Flat\).  This is the exact sense in which the factorization has
+two levels.
+\end{remark}
+
+\subsection{Equality cases}
+
+\begin{theorem}[Equality dictionary]
+\label{thm:equality-dictionary}
+Let \(a\ne0\).
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \(\canc=1\) if and only if all nonzero coefficients lie on one
+closed complex ray: there is \(\zeta\in\C\), \(|\zeta|=1\), such
+that
+\[
+ a_n=\zeta|a_n|
+ \qquad(n\in\supp a).
+\]
+\par
+\item \(\canc=0\) and \(\Flat=0\) if and only if \(Z=0\).
+\item \(\Seff=S\) if and only if \(|a_n|\) is constant on
+\(\supp a\).
+\item \(\Seff=1\) if and only if \(S=1\).
+\item \(\Flat=\Seff\) if and only if the common-ray condition in
+(i) holds.
+\item \(\Flat=S\) if and only if \(a_n\) is one fixed nonzero complex
+number on \(\supp a\).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Part (i) is the equality case of the complex triangle inequality.
+Part (ii) follows from \(D,M>0\).  Part (iii) is the equality case of
+\[
+ \left(\sum_{n\in\supp a}|a_n|\right)^2
+ \le S\sum_{n\in\supp a}|a_n|^2.
+\]
+For (iv), expand
+\[
+ M^2
+ =D+2\sum_{m<n}|a_m||a_n|.
+\]
+Equality \(M^2=D\) holds exactly when at most one coefficient is
+nonzero.  Parts (v) and (vi) follow from
+\(\Flat=\canc^2\Seff\): equality in (v) requires
+\(\canc=1\), while equality \(\Flat=S\) requires both
+\(\canc=1\) and \(\Seff=S\).  The latter two conditions say that
+all moduli and all phases agree.
+\end{proof}

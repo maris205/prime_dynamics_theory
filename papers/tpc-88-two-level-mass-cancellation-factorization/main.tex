@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,microtype,tabularx}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,capitalise,noabbrev]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Seff}{S_{\mathrm{eff}}}
+\newcommand{\SeffX}{S_{\mathrm{eff},X}}
+\newcommand{\canc}{\mathfrak c}
+\newcommand{\Flat}{\mathfrak F}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{\textbf{Two-Level Mass--Cancellation Factorization}\\
+of Determinant Flatness:\\
+Effective Support, Relative Phase Cancellation,
+and the Critical \(1/J\) Threshold}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For a finitely supported complex sequence \(a=(a_n)\), put
+\[
+ Z=\sum_na_n,\qquad
+ M=\sum_n|a_n|,\qquad
+ D=\sum_n|a_n|^2.
+\]
+When \(a\ne0\), define the relative phase-cancellation coefficient
+\(\canc=|Z|/M\), the effective support
+\(\Seff=M^2/D\), and the zero-frequency concentration
+\(\Flat=|Z|^2/D\).  We prove the exact two-level factorization
+\[
+ \boxed{\Flat=\canc^2\Seff.}
+\]
+It separates magnitude spreading among coefficient bins from phase
+cancellation across those bins.  For \(a\ne0\), we determine all
+elementary equality cases and prove the sharp joint strip
+\[
+ (2-\Seff)_+\le \Flat\le \Seff\le\#\supp a.
+\]
+The upper edge is attained precisely by common-phase coefficients;
+the effective-support edge is attained precisely by constant
+modulus.  The lower edge at \(\Seff=1\) is attained by one
+coefficient, its portion \(1<\Seff\le2\) by two nonzero antiparallel
+coefficients, and its zero portion by zero-sum configurations.
+
+We then attach the identity to the literal fixed-\(h_0\) TPC-32
+normalized-determinant coefficient.  In the natural post-bin mass
+regime of TPC-83, the inherited upper envelopes and the mass--energy
+equivalence imply
+\[
+ \Seff(A_X)=X^{o(1)}Q_X.
+\]
+Consequently, at
+\[
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)},
+\]
+the TPC-32 flatness threshold
+\(\Flat(A_X)\le X^{1/400+o(1)}\) is equivalent to the relative
+cancellation requirement
+\[
+ \boxed{\frac{|Z_X|}{M_X}\le\frac{X^{o(1)}}{J_X}.}
+\]
+Since \(M_X=X^{o(1)}J_XQ_X^2\) in that regime, this is also
+equivalent, up to subpower factors, to
+\(|Z_X|\le X^{o(1)}Q_X^2\).
+An exact exponent ledger reconciles this factorization with the
+TPC-82 condition \(2\eta_Z\ge\lambda_D\).
+
+The finite identities are \(\Lzero\), and their attachment to the
+literal fixed-shift coefficient is \(\Lone\).  No natural-mass lower
+bound and no new \(\Ltwo\) cancellation estimate is proved.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+effective support; zero-frequency concentration; post-bin mass;
+relative cancellation; fixed shift; determinant coefficient;
+flatness threshold.
+
+\medskip
+\noindent\textbf{Convention.}
+Every arithmetic statement concerns one prescribed nonzero
+\(h_0\), the already aggregated TPC-32 determinant coefficient, and
+its original global normalization.  No statement is specialized to
+\(h_0=2\).
+
+\input{sections/introduction}
+\input{sections/finite-factorization}
+\input{sections/sharp-range}
+\input{sections/literal-crosswalk}
+\input{sections/natural-mass-threshold}
+\input{sections/exponent-ledger}
+\input{sections/claim-boundary}
+
+\begingroup
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

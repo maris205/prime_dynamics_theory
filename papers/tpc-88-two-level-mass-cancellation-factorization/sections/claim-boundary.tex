@@ -1,0 +1,111 @@
+\section{Claim boundary and operational consequences}
+\label{sec:claim-boundary}
+
+\begin{theorem}[Audited conclusion]
+\label{thm:audited-conclusion}
+For every finitely supported complex coefficient,
+\[
+ \Flat=\canc^2\Seff.
+\]
+For every nonzero coefficient,
+\[
+ (2-\Seff)_+\le\Flat\le\Seff\le S.
+\]
+For the literal TPC-32 determinant coefficient at one fixed nonzero
+\(h_0\), natural post-bin mass survival implies
+\[
+ \SeffX=X^{o(1)}Q_X.
+\]
+At
+\[
+ \beta=\frac{267}{400},
+\]
+the TPC-32 condition
+\[
+ \Flat_X\le X^{1/400+o(1)}
+\]
+is then equivalent to
+\[
+ \frac{|Z_X|}{M_X}
+ \le\frac{X^{o(1)}}{J_X},
+\]
+and to the absolute target
+\[
+ |Z_X|\le X^{o(1)}Q_X^2.
+\]
+\end{theorem}
+
+\begin{proof}
+Combine
+\cref{thm:exact-factorization,thm:sharp-strip,thm:natural-effective-support,thm:critical-one-over-J,cor:relative-absolute}.
+\end{proof}
+
+\paragraph{What is proved.}
+The factorization, sharp strip, equality cases, and finite
+countermodels are unconditional \(\Lzero\) results.  Their
+identification on the already aggregated fixed-\(h_0\) coefficient,
+together with the conditional natural-mass and exponent transfers,
+is an \(\Lone\) result.
+
+\paragraph{What is not proved.}
+This paper proves no lower bound for \(M_X\) or \(D_X\), no upper
+bound for \(\canc_X\) or \(Z_X\), and no new fixed-shift
+M{\"o}bius-correlation estimate.  It proves no parity breakthrough, no
+Hardy--Littlewood asymptotic, no prime-pair lower bound, and no
+twin-prime result.  Nothing is specialized from a general nonzero
+\(h_0\) to \(h_0=2\).
+
+\paragraph{Edge-case rule.}
+If \(A_X=0\), then \(M_X=D_X=Z_X=0\) and the convention
+\(\canc_X=\SeffX=\Flat_X=0\) preserves the exact factorization and
+the nonnegative upper bounds.  The lower strip
+\((2-\SeffX)_+\le\Flat_X\) is asserted only for \(A_X\ne0\).
+This trivial flatness does not certify natural mass or energy
+survival.  No expression containing \(M_X^{-1}\) or \(D_X^{-1}\)
+may be used on that branch.
+
+\paragraph{Normalization rule.}
+Only the post-bin mass
+\[
+ M_X=\sum_n|A_X(n)|
+\]
+enters the factorization.  A raw absolute mass or TPC-32 majorant
+cannot be substituted for it.  Likewise, actual support
+\(S_X\asymp Q_X\) would not by itself imply
+\(\SeffX\asymp Q_X\).
+
+\paragraph{Exponent rule.}
+The shorthand \(1/J_X\) is valid at the critical endpoint only in
+the natural mass--energy corner.  With nonzero losses, the correct
+relative requirement is
+\[
+ 2\eta_{\canc}
+ \ge
+ \beta-\chi+\lambda-2\mu.
+\]
+At \(\chi=1/400\) this is equivalent to the absolute ledger
+\(2\eta_Z\ge\lambda\).  Neither the geometric \(1/400\) baseline nor
+any mass exponent may be spent twice.
+
+\paragraph{Independent physical-loss rule.}
+The compatibility \(2\eta_Z\ge\lambda\) is not the full-route loss
+budget.  Separately, every fixed-power loss actually entering the
+physical interface and downstream comparison, but not already
+represented in \(\lambda-2\eta_Z\), must satisfy
+\[
+ \Lambda_{\mathrm{phys}}<\frac1{400}.
+\]
+Equality or excess stops the route, and no loss is charged in both
+ledgers.
+
+\paragraph{Next gate.}
+After natural post-bin mass is established, the remaining arithmetic
+task is exactly a relative phase-cancellation theorem at scale
+\[
+ \frac{|Z_X|}{M_X}\ll\frac{X^{o(1)}}{J_X}.
+\]
+Without natural mass, the full profile
+\((\mu,\lambda,\eta_{\canc})\) must be measured first.  A numerical
+observation, averaged-shift result, or generic-frequency estimate may
+motivate that theorem but is not an \(\Ltwo\) substitute for the
+literal fixed-\(h_0\) bound.

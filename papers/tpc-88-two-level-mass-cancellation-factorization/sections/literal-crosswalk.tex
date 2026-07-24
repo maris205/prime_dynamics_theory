@@ -1,0 +1,111 @@
+\section{Literal fixed-shift crosswalk}
+\label{sec:literal-crosswalk}
+
+Fix one nonzero integer \(h_0\).  On the high-\(\beta\) TPC-32 row,
+put
+\begin{equation}
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)},\qquad
+ C_X=\lfloor J_X\rfloor,
+\label{eq:critical-scales}
+\end{equation}
+and
+\begin{equation}
+ N_{0,X}=J_XQ_X^2.
+\label{eq:N0}
+\end{equation}
+Let
+\[
+ A_X(n)=A_{C_X}(n),\qquad n\in\Z,
+\]
+be the literal signed normalized-determinant coefficient after all
+three matched channels and all native contributions in each
+determinant bin have been summed.  Define
+\begin{equation}
+\begin{aligned}
+ S_X&=\#\supp A_X,&
+ L_X&=\|A_X\|_\infty,\\
+ M_X&=\|A_X\|_1,&
+ D_X&=\|A_X\|_2^2,\\
+ Z_X&=\sum_nA_X(n).
+\end{aligned}
+\label{eq:literal-statistics}
+\end{equation}
+If \(A_X=0\), use the convention
+\[
+ \canc_X=\SeffX=\Flat_X=0.
+\]
+Otherwise put
+\begin{equation}
+ \canc_X=\frac{|Z_X|}{M_X},\qquad
+ \SeffX=\frac{M_X^2}{D_X},\qquad
+ \Flat_X=\frac{|Z_X|^2}{D_X}.
+\label{eq:literal-two-level}
+\end{equation}
+
+\begin{proposition}[Imported TPC-32 envelopes]
+\label{prop:tpc32-envelopes}
+For the coefficient above,
+\begin{align}
+ S_X&\ll Q_X,\label{eq:support-envelope}\\
+ M_X&\ll X^{o(1)}N_{0,X},\label{eq:mass-envelope}\\
+ L_X&\ll X^{o(1)}\frac{N_{0,X}}{Q_X},
+ \label{eq:atom-envelope}\\
+ D_X&\ll X^{o(1)}\frac{N_{0,X}^2}{Q_X}.
+ \label{eq:energy-envelope}
+\end{align}
+Every quantity is post-aggregation and uses the original global
+normalization.
+\end{proposition}
+
+\begin{proof}
+At \(C_X=\lfloor J_X\rfloor\), one has
+\(C_X\le J_X\ll Q_X\), so the support, post-fiber majorant,
+singleton, and energy estimates of TPC-32 apply
+\citep{WangTPC32}.  Their literal specialization is exactly
+\eqref{eq:support-envelope}--\eqref{eq:energy-envelope}, as recorded
+in TPC-83 \citep{WangTPC83}.
+\end{proof}
+
+\begin{theorem}[Literal two-level identity]
+\label{thm:literal-factorization}
+For every \(X\),
+\begin{equation}
+ \boxed{\Flat_X=\canc_X^2\SeffX.}
+\label{eq:literal-factorization}
+\end{equation}
+When \(A_X\ne0\),
+\begin{equation}
+ (2-\SeffX)_+\le\Flat_X\le\SeffX\le S_X\ll Q_X.
+\label{eq:literal-sharp-strip}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Apply
+\cref{thm:exact-factorization,thm:sharp-strip} to \(A_X\).
+The zero case follows from the common convention, and the final
+support bound is \eqref{eq:support-envelope}.
+\end{proof}
+
+\begin{remark}[Post-bin means post-bin]
+\label{rem:post-bin-only}
+The mass \(M_X\) in \eqref{eq:literal-two-level} is
+\[
+ \sum_n\left|A_X(n)\right|,
+\]
+after cancellation within every determinant bin.  A raw atomic mass,
+the absolute TPC-32 majorant, a pre-bin mass, or a sum of separately
+renormalized channel masses may upper-bound \(M_X\), but cannot
+replace it in \eqref{eq:literal-factorization}.  TPC-83 gives exact
+finite counterexamples to every such reverse substitution
+\citep{WangTPC83}.
+\end{remark}
+
+\begin{remark}[Broad support is not yet effective support]
+The estimate \(S_X\asymp Q_X\), even if independently known, would
+not imply \(\SeffX\asymp Q_X\): the magnitude mass could be
+concentrated on a much smaller subset.  The effective-support
+conclusion below uses the literal mass and energy scales, not support
+cardinality alone.
+\end{remark}

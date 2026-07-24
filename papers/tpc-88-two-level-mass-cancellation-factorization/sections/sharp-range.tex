@@ -1,0 +1,158 @@
+\section{A sharp joint range and phase countermodels}
+\label{sec:sharp-range}
+
+The factorization gives the upper edge
+\(\Flat\le\Seff\).  There is also a universal lower edge when the
+magnitude profile is too concentrated to cancel completely.
+
+\begin{theorem}[Sharp effective-support strip]
+\label{thm:sharp-strip}
+For every nonzero finitely supported complex sequence,
+\begin{equation}
+ \boxed{
+ (2-\Seff)_+\le\Flat\le\Seff.}
+\label{eq:sharp-strip}
+\end{equation}
+The upper equality is characterized by
+\cref{thm:equality-dictionary}.  If \(\Seff<2\), equality on the
+lower edge occurs exactly in the following cases:
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item \(S=1\); or
+\item \(S=2\) and the two coefficients are antiparallel.
+\end{enumerate}
+If \(\Seff\ge2\), equality on the displayed zero lower edge occurs
+exactly when \(Z=0\).
+\end{theorem}
+
+\begin{proof}
+Writing the support as a finite ordered set,
+\begin{align*}
+ |Z|^2
+ &=
+ D+2\sum_{m<n}\operatorname{Re}(a_m\overline{a_n})\\
+ &\ge
+ D-2\sum_{m<n}|a_m||a_n|\\
+ &=
+ D-(M^2-D)
+ =
+ 2D-M^2.
+\end{align*}
+Division by \(D\) gives
+\(\Flat\ge2-\Seff\); nonnegativity gives the positive part.
+The upper edge is already in \cref{thm:exact-factorization}.
+
+When \(\Seff<2\), the lower right side is positive.  Equality requires
+\[
+ \operatorname{Re}(a_m\overline{a_n})
+ =-|a_m||a_n|
+\]
+for every pair of nonzero coefficients.  Thus every pair must be
+antiparallel.  This is possible for one coefficient, vacuously, or
+for two coefficients, and is impossible for three nonzero complex
+numbers.  Conversely, one coefficient or two antiparallel
+coefficients gives equality.  When \(\Seff\ge2\), the displayed
+lower edge is zero, so equality there is equivalent to
+\(\Flat=0\), hence to \(Z=0\).
+\end{proof}
+
+\begin{proposition}[Sharpness of the lower edge up to its zero endpoint]
+\label{prop:positive-edge-sharp}
+Every value \(s_{\rm e}\in[1,2]\) occurs on the lower edge
+of \eqref{eq:sharp-strip}; the endpoint \(s_{\rm e}=2\) is the zero
+endpoint.  More precisely, \(s_{\rm e}=1\)
+is attained by one nonzero coefficient, while for every
+\(1<s_{\rm e}\le2\) there are two nonzero antiparallel coefficients
+for which
+\[
+ \Seff=s_{\rm e},
+ \qquad
+ \Flat=2-s_{\rm e}.
+\]
+\end{proposition}
+
+\begin{proof}
+For \(s_{\rm e}=1\), take the one-point sequence \(a=(1)\).
+For the remaining values, take \(a=(1,-t)\) with \(0<t\le1\).
+Then
+\[
+ \Seff(t)=\frac{(1+t)^2}{1+t^2},
+ \qquad
+ \Flat(t)=\frac{(1-t)^2}{1+t^2}
+ =2-\Seff(t).
+\]
+The continuous function \(\Seff(t)\) increases from \(1\) to \(2\).
+\end{proof}
+
+\begin{proposition}[Pointwise sharpness of both edges]
+\label{prop:both-edges-sharp}
+For every \(s_{\rm e}\ge1\), some nonzero finite sequence satisfies
+\[
+ \Seff=s_{\rm e},
+ \qquad
+ \Flat=\Seff.
+\]
+For every \(s_{\rm e}\ge2\), some nonzero finite sequence satisfies
+\[
+ \Seff=s_{\rm e},
+ \qquad
+ \Flat=0.
+\]
+Thus both pieces of the boundary in \eqref{eq:sharp-strip} are
+pointwise attainable.
+\end{proposition}
+
+\begin{proof}
+Choose an integer \(k\ge s_{\rm e}\).  For one coefficient of
+magnitude \(1\) and \(k-1\) coefficients of common magnitude
+\(t\in[0,1]\), all with the same phase, the effective support is
+\[
+ E_k(t)
+ =
+ \frac{(1+(k-1)t)^2}{1+(k-1)t^2}.
+\]
+It increases continuously from \(1\) to \(k\), and the common-phase
+condition gives \(\Flat=\Seff\).
+
+For the zero edge, choose \(k\) with \(2k\ge s_{\rm e}\) and use
+opposite pairs with magnitudes
+\[
+ (1,1,t,t,\ldots,t,t).
+\]
+Their signed coefficients may be written
+\[
+ (1,-1,t,-t,\ldots,t,-t).
+\]
+They sum to zero, while their effective support is
+\[
+ 2E_k(t),
+\]
+which increases continuously from \(2\) to \(2k\).  Hence every
+\(s_{\rm e}\ge2\) occurs with \(\Flat=0\).
+\end{proof}
+
+\begin{example}[Same magnitude level, opposite phase outcomes]
+\label{ex:same-magnitude-opposite-phase}
+Let \(S\ge2\) be even and \(L>0\).  On a support of size \(S\), let
+\[
+ a_n=L
+\]
+for every \(n\), and let \(b_n\) consist of \(S/2\) values \(L\)
+and \(S/2\) values \(-L\).  Both sequences have
+\[
+ M=SL,\qquad D=SL^2,\qquad \Seff=S.
+\]
+But
+\[
+ \canc(a)=1,\quad \Flat(a)=S,
+ \qquad
+ \canc(b)=0,\quad \Flat(b)=0.
+\]
+Thus even exact natural effective support does not imply any phase
+cancellation.
+\end{example}
+
+\begin{remark}[Complex phases cause no hidden hypothesis]
+All proofs are over \(\C\).  The terms ``common phase'' and
+``antiparallel'' are equality conditions in the complex triangle
+inequality, not assumptions that the physical coefficient is real.
+\end{remark}

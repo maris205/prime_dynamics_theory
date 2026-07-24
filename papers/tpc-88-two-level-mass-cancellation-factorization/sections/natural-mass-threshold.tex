@@ -1,0 +1,195 @@
+\section{Natural mass and the critical relative-cancellation threshold}
+\label{sec:natural-mass-threshold}
+
+\begin{definition}[Natural post-bin mass regime]
+\label{def:natural-mass-regime}
+The literal coefficient is in the natural post-bin mass regime if
+\begin{equation}
+ M_X\ge X^{-o(1)}N_{0,X}.
+\label{eq:natural-mass-lower}
+\end{equation}
+Together with \eqref{eq:mass-envelope}, this means
+\[
+ M_X=X^{o(1)}N_{0,X},
+\]
+where the notation denotes two-sided comparability up to subpower
+factors.
+\end{definition}
+
+TPC-83 proves that \eqref{eq:natural-mass-lower} is equivalent to
+natural determinant-energy survival:
+\begin{equation}
+ D_X\ge
+ X^{-o(1)}\frac{N_{0,X}^2}{Q_X}.
+\label{eq:natural-energy-lower}
+\end{equation}
+Combined with \eqref{eq:energy-envelope}, this gives two-sided
+subpower comparability for \(D_X\).
+
+\begin{theorem}[Natural mass forces natural effective support]
+\label{thm:natural-effective-support}
+In the natural post-bin mass regime,
+\begin{equation}
+ \boxed{
+ \SeffX=X^{o(1)}Q_X.}
+\label{eq:natural-effective-support}
+\end{equation}
+Equivalently,
+\[
+ X^{-o(1)}Q_X\le\SeffX\le X^{o(1)}Q_X.
+\]
+Consequently,
+\begin{equation}
+ S_X\ge\SeffX\ge X^{-o(1)}Q_X,
+\label{eq:broad-actual-support}
+\end{equation}
+recovering the broad-actual-support conclusion of TPC-83.
+\end{theorem}
+
+\begin{proof}
+Use the mass lower bound and the energy upper bound:
+\[
+ \SeffX=\frac{M_X^2}{D_X}
+ \ge
+ \frac{
+ X^{-o(1)}N_{0,X}^2
+ }{
+ X^{o(1)}N_{0,X}^2/Q_X
+ }
+ =
+ X^{-o(1)}Q_X.
+\]
+For the reverse inequality, use the mass upper bound and the
+TPC-83 energy lower bound:
+\[
+ \SeffX
+ \le
+ \frac{
+ X^{o(1)}N_{0,X}^2
+ }{
+ X^{-o(1)}N_{0,X}^2/Q_X
+ }
+ =
+ X^{o(1)}Q_X.
+\]
+Finally, \(\SeffX\le S_X\) by
+\cref{thm:exact-factorization}.
+\end{proof}
+
+\begin{remark}[No phase information has been gained]
+\Cref{thm:natural-effective-support} fixes the magnitude-spreading
+level up to subpower factors.  It gives no upper bound for
+\(\canc_X\).  The common-phase and balanced-phase examples in
+\cref{ex:same-magnitude-opposite-phase} both have maximal effective
+support.
+\end{remark}
+
+\subsection{A general threshold conversion}
+
+\begin{theorem}[Effective-support to cancellation conversion]
+\label{thm:threshold-conversion}
+Suppose, for fixed exponents \(\sigma,\chi\ge0\), that
+\[
+ \SeffX=X^{\sigma+o(1)}.
+\]
+Then
+\begin{equation}
+ \boxed{
+ \Flat_X\le X^{\chi+o(1)}
+ \quad\Longleftrightarrow\quad
+ \canc_X\le X^{(\chi-\sigma)/2+o(1)}.}
+\label{eq:general-threshold-conversion}
+\end{equation}
+When \(\sigma>\chi\), the right side is a genuine relative
+cancellation requirement.
+\end{theorem}
+
+\begin{proof}
+The exact factorization gives
+\[
+ \canc_X^2=\frac{\Flat_X}{\SeffX}.
+\]
+Insert the two-sided asymptotic for \(\SeffX\) in either direction
+and take square roots.
+\end{proof}
+
+\begin{theorem}[Critical \(1/J\) equivalence]
+\label{thm:critical-one-over-J}
+Assume the natural post-bin mass regime at
+\[
+ \beta=\frac{267}{400}.
+\]
+Then the TPC-32 flatness threshold and the relative cancellation
+requirement are equivalent:
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ \Flat_X\le X^{1/400+o(1)}
+ &\quad\Longleftrightarrow\quad
+ \canc_X=\frac{|Z_X|}{M_X}\\
+ &\le
+ X^{-133/400+o(1)}
+ =
+ \frac{X^{o(1)}}{J_X}.
+ \end{aligned}}
+\label{eq:critical-one-over-J}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \cref{thm:natural-effective-support},
+\[
+ \SeffX=X^{267/400+o(1)}.
+\]
+Apply \cref{thm:threshold-conversion} with
+\(\sigma=267/400\) and \(\chi=1/400\):
+\[
+ \frac{\sigma-\chi}{2}
+ =
+ \frac12\left(\frac{267}{400}-\frac1{400}\right)
+ =
+ \frac{133}{400}.
+\]
+The critical scale relation gives
+\[
+ J_X=X^{133/400+o(1)}.
+\]
+\end{proof}
+
+\begin{corollary}[Relative and absolute zero-mode targets]
+\label{cor:relative-absolute}
+In the same natural mass regime, the following three statements are
+equivalent up to subpower factors:
+\begin{align}
+ \Flat_X&\le X^{1/400+o(1)},
+ \label{eq:equiv-flatness}\\
+ \frac{|Z_X|}{M_X}&\le\frac{X^{o(1)}}{J_X},
+ \label{eq:equiv-relative}\\
+ |Z_X|&\le X^{o(1)}Q_X^2.
+ \label{eq:equiv-absolute}
+\end{align}
+\end{corollary}
+
+\begin{proof}
+The first two are equivalent by
+\cref{thm:critical-one-over-J}.  Natural mass gives
+\[
+ X^{-o(1)}J_XQ_X^2
+ \le M_X\le
+ X^{o(1)}J_XQ_X^2.
+\]
+Multiplying \eqref{eq:equiv-relative} by the upper bound for \(M_X\)
+gives \eqref{eq:equiv-absolute}.  Conversely, divide
+\eqref{eq:equiv-absolute} by the lower bound for \(M_X\).
+\end{proof}
+
+\begin{remark}[Why the factor is \(1/J\)]
+The \(1/J_X\) is not inserted heuristically.  It is the square-root
+gap between the natural effective-support exponent \(267/400\) and
+the allowed flatness exponent \(1/400\):
+\[
+ \frac12\left(\frac{267}{400}-\frac1{400}\right)
+ =
+ \frac{133}{400}.
+\]
+\end{remark}
