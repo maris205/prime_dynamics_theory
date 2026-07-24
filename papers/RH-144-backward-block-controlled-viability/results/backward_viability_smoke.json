@@ -1,0 +1,104 @@
+{
+  "audit_summary": {
+    "chain_count": 2,
+    "full_unit_start_radius_count": 1,
+    "maximum_obstruction_minimum_floor": 9.535221756069195,
+    "minimum_obstruction_minimum_floor": 9.535221756069195,
+    "minimum_positive_backward_radius": 1.0,
+    "near_boundary_policy_safe_count": 1,
+    "obstructed_chain_count": 1,
+    "obstruction_identifiers": [
+      "0.08:left:1e-08"
+    ],
+    "viable_chain_count": 1
+  },
+  "precision_decimal_digits": 80,
+  "route_consequence": "Backward dynamic programming gives exact scalar viability kernels for every finite candidate family. Twenty-eight chains admit the entire initial interval [0,1), while the two coarse left chains have empty kernels because every available control has an unavoidable floor above the safety wall. This proves those failures are not greedy-choice artifacts and supplies the correct block/reset criterion for an all-level P_V theorem.",
+  "rows": [
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.16,
+      "start_viability_radius": 1.0,
+      "step_count": 3,
+      "threshold": 1e-08,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "full_unit_start_radius": false,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.0
+      ],
+      "near_boundary_policy_safe": false,
+      "obstruction_minimum_floor": 9.535221756069195,
+      "obstruction_step": 4,
+      "obstruction_target_radius": 1.0,
+      "selected_controls": [],
+      "side": "left",
+      "sigma": 0.08,
+      "start_viability_radius": 0.0,
+      "step_count": 5,
+      "threshold": 1e-08,
+      "viable_from_zero": false,
+      "zero_kernel_count": 5
+    }
+  ],
+  "status": "rh144_backward_block_controlled_viability",
+  "theorem_boundary": {
+    "all_level_repeating_block_hypothesis_verified": false,
+    "closed_form_young_preimage_radius": true,
+    "controlled_backward_viability_kernel": true,
+    "delayed_start_after_coarse_birth_proved": false,
+    "hilbert_polya_operator": false,
+    "normalized_base_liminf": false,
+    "repeating_block_invariance_theorem": true,
+    "riemann_hypothesis": false,
+    "stage_A": false,
+    "two_rh137_failures_are_candidate_family_obstructions": false,
+    "uniform_controlled_tail_gap": false
+  }
+}

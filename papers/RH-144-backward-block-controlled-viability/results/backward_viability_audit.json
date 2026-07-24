@@ -1,0 +1,2972 @@
+{
+  "audit_summary": {
+    "chain_count": 30,
+    "full_unit_start_radius_count": 28,
+    "maximum_obstruction_minimum_floor": 9.535221756069195,
+    "minimum_obstruction_minimum_floor": 9.535221756069195,
+    "minimum_positive_backward_radius": 0.0017243404378350258,
+    "near_boundary_policy_safe_count": 28,
+    "obstructed_chain_count": 2,
+    "obstruction_identifiers": [
+      "0.08:left:1e-08",
+      "0.08:left:1e-06"
+    ],
+    "viable_chain_count": 28
+  },
+  "precision_decimal_digits": 80,
+  "route_consequence": "Backward dynamic programming gives exact scalar viability kernels for every finite candidate family. Twenty-eight chains admit the entire initial interval [0,1), while the two coarse left chains have empty kernels because every available control has an unavoidable floor above the safety wall. This proves those failures are not greedy-choice artifacts and supplies the correct block/reset criterion for an all-level P_V theorem.",
+  "rows": [
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.16,
+      "start_viability_radius": 1.0,
+      "step_count": 3,
+      "threshold": 1e-08,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.16,
+      "start_viability_radius": 1.0,
+      "step_count": 3,
+      "threshold": 1e-06,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.16,
+      "start_viability_radius": 1.0,
+      "step_count": 3,
+      "threshold": 0.0001,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        }
+      ],
+      "side": "right",
+      "sigma": 0.16,
+      "start_viability_radius": 1.0,
+      "step_count": 3,
+      "threshold": 1e-08,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        }
+      ],
+      "side": "right",
+      "sigma": 0.16,
+      "start_viability_radius": 1.0,
+      "step_count": 3,
+      "threshold": 1e-06,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        }
+      ],
+      "side": "right",
+      "sigma": 0.16,
+      "start_viability_radius": 1.0,
+      "step_count": 3,
+      "threshold": 0.0001,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "full_unit_start_radius": false,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.0
+      ],
+      "near_boundary_policy_safe": false,
+      "obstruction_minimum_floor": 9.535221756069195,
+      "obstruction_step": 4,
+      "obstruction_target_radius": 1.0,
+      "selected_controls": [],
+      "side": "left",
+      "sigma": 0.08,
+      "start_viability_radius": 0.0,
+      "step_count": 5,
+      "threshold": 1e-08,
+      "viable_from_zero": false,
+      "zero_kernel_count": 5
+    },
+    {
+      "backward_radii": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "full_unit_start_radius": false,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.0
+      ],
+      "near_boundary_policy_safe": false,
+      "obstruction_minimum_floor": 9.535221756069195,
+      "obstruction_step": 4,
+      "obstruction_target_radius": 1.0,
+      "selected_controls": [],
+      "side": "left",
+      "sigma": 0.08,
+      "start_viability_radius": 0.0,
+      "step_count": 5,
+      "threshold": 1e-06,
+      "viable_from_zero": false,
+      "zero_kernel_count": 5
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.10090255920146607,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.10090255920146607,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        3.0004296421504386e-07,
+        0.0001681925194531116
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.08,
+      "start_viability_radius": 1.0,
+      "step_count": 5,
+      "threshold": 0.0001,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6834800957882725,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.6834800957882725,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        1.7694094355832618e-06,
+        0.00042456481162687465
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "right",
+      "sigma": 0.08,
+      "start_viability_radius": 1.0,
+      "step_count": 5,
+      "threshold": 1e-08,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6834800957882725,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.6834800957882725,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        1.7694094355832618e-06,
+        0.00042456481162687465
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "right",
+      "sigma": 0.08,
+      "start_viability_radius": 1.0,
+      "step_count": 5,
+      "threshold": 1e-06,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.020054208765024208,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.020054208765024208,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        9.752454768631556e-09,
+        0.00035983045266671564
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "right",
+      "sigma": 0.08,
+      "start_viability_radius": 1.0,
+      "step_count": 5,
+      "threshold": 0.0001,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.06451428966606919,
+        0.014531376469157935,
+        0.008412776475910962,
+        0.007438838445874367,
+        0.011068881755103878,
+        0.0017243404378350258,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.0017243404378350258,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        1.5240158120908473e-15,
+        2.374499594293242e-13,
+        1.5918879333138737e-11,
+        2.835178290205892e-09,
+        3.0030859735162792e-06,
+        2.1895011971899342e-05,
+        0.626384058810812
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.04,
+      "start_viability_radius": 1.0,
+      "step_count": 10,
+      "threshold": 1e-08,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.7720418309691882,
+        0.6822878817430374,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.6822878817430374,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        1.5240158120908473e-15,
+        2.374499594293242e-13,
+        1.5918879333138737e-11,
+        2.835178290205892e-09,
+        3.0030859735162792e-06,
+        2.1895011971899342e-05,
+        8.228844873823267e-05
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.04,
+      "start_viability_radius": 1.0,
+      "step_count": 10,
+      "threshold": 1e-06,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.2993729191949892,
+        0.06743152711868516,
+        0.03904055103160343,
+        0.022168336621953135,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.022168336621953135,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        1.5240158120908473e-15,
+        2.374499594293242e-13,
+        1.5778736735873033e-11,
+        1.2564480531937244e-10,
+        3.11694895702118e-06,
+        1.5063507315771272e-06,
+        1.662117690325427e-05
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.04,
+      "start_viability_radius": 1.0,
+      "step_count": 10,
+      "threshold": 0.0001,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.03249672139423018,
+        0.029511613339559997,
+        0.05969041339116187,
+        0.006492249343365803,
+        0.019540541985705998,
+        0.23644599382857873,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.006492249343365803,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        3.2100425296007967e-17,
+        1.88686324976695e-14,
+        2.8596923664322543e-12,
+        3.5531804805358722e-12,
+        1.521510111263322e-09,
+        4.9492050769440565e-06,
+        0.0059538095352909114
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "right",
+      "sigma": 0.04,
+      "start_viability_radius": 1.0,
+      "step_count": 10,
+      "threshold": 1e-08,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.03249672139423018,
+        0.029511613339559997,
+        0.05969041339116187,
+        0.006492249343365803,
+        0.019540541985705998,
+        0.23644599382857873,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.006492249343365803,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        3.2100425296007967e-17,
+        1.88686324976695e-14,
+        2.8596923664322543e-12,
+        3.5531804805358722e-12,
+        1.521510111263322e-09,
+        4.9492050769440565e-06,
+        0.0059538095352909114
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "right",
+      "sigma": 0.04,
+      "start_viability_radius": 1.0,
+      "step_count": 10,
+      "threshold": 1e-06,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.13777246977320726,
+        0.1251168456400852,
+        0.2530620857763512,
+        0.0275242743050315,
+        0.08283454196651509,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.0275242743050315,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        3.2100425296007967e-17,
+        1.88686324976695e-14,
+        2.8596923664322543e-12,
+        3.5531804805358722e-12,
+        1.521510111263322e-09,
+        4.9492050769440565e-06,
+        3.58893189310081e-05
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "right",
+      "sigma": 0.04,
+      "start_viability_radius": 1.0,
+      "step_count": 10,
+      "threshold": 0.0001,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        1.363901664375088e-21,
+        7.612025968124614e-21,
+        5.856391831017748e-20,
+        2.462204486116355e-19,
+        2.142335790703991e-17,
+        2.180565290126512e-17,
+        1.1932549387848543e-16,
+        4.954546004518145e-15,
+        7.594944253944203e-14,
+        6.272876123910897e-13,
+        3.79996412030208e-11,
+        2.6089749781755197e-10,
+        2.192399029884013e-09
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.8125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.8125
+        }
+      ],
+      "side": "left",
+      "sigma": 0.02,
+      "start_viability_radius": 1.0,
+      "step_count": 16,
+      "threshold": 1e-08,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        1.363901664375088e-21,
+        7.612025968124614e-21,
+        5.856391831017748e-20,
+        2.462204486116355e-19,
+        2.142335790703991e-17,
+        2.180565290126512e-17,
+        1.1932549387848543e-16,
+        4.954546004518145e-15,
+        7.594944253944203e-14,
+        6.272876123910897e-13,
+        3.79996412030208e-11,
+        2.6089749781755197e-10,
+        2.192399029884013e-09
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.8125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.8125
+        }
+      ],
+      "side": "left",
+      "sigma": 0.02,
+      "start_viability_radius": 1.0,
+      "step_count": 16,
+      "threshold": 1e-06,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        1.363901664375088e-21,
+        7.612025968124614e-21,
+        5.856391831017748e-20,
+        2.462204486116355e-19,
+        2.142335790703991e-17,
+        2.180565290126512e-17,
+        1.1932549387848543e-16,
+        4.954546004518145e-15,
+        7.594944253944203e-14,
+        6.272876123910897e-13,
+        3.79996412030208e-11,
+        2.6089749781755197e-10,
+        2.192399029884013e-09
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.8125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.8125
+        }
+      ],
+      "side": "left",
+      "sigma": 0.02,
+      "start_viability_radius": 1.0,
+      "step_count": 16,
+      "threshold": 0.0001,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6011596227101441,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6922159446831746,
+        1.0,
+        1.0,
+        1.0,
+        0.9029827474834589,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.6011596227101441,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        3.2311566579477643e-22,
+        2.4226945035496562e-20,
+        3.402593448620423e-18,
+        4.1087826759524814e-18,
+        2.808802401515269e-17,
+        1.734149071452593e-16,
+        9.851643443510582e-16,
+        3.8713320182692914e-15,
+        7.053422008422371e-13,
+        1.5962593931531502e-12,
+        1.9028450241757862e-11,
+        4.279110458997866e-10,
+        7.671939786707227e-09
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.6875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.8125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.1875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.75
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "right",
+      "sigma": 0.02,
+      "start_viability_radius": 1.0,
+      "step_count": 16,
+      "threshold": 1e-08,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6011596227101441,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6922159446831746,
+        1.0,
+        1.0,
+        1.0,
+        0.9029827474834589,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.6011596227101441,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        3.2311566579477643e-22,
+        2.4226945035496562e-20,
+        3.402593448620423e-18,
+        4.1087826759524814e-18,
+        2.808802401515269e-17,
+        1.734149071452593e-16,
+        9.851643443510582e-16,
+        3.8713320182692914e-15,
+        7.053422008422371e-13,
+        1.5962593931531502e-12,
+        1.9028450241757862e-11,
+        4.279110458997866e-10,
+        7.671939786707227e-09
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.6875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.8125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.1875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.75
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "right",
+      "sigma": 0.02,
+      "start_viability_radius": 1.0,
+      "step_count": 16,
+      "threshold": 1e-06,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6011596227101441,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6922159446831746,
+        1.0,
+        1.0,
+        1.0,
+        0.9029827474834589,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.6011596227101441,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        3.2311566579477643e-22,
+        2.4226945035496562e-20,
+        3.402593448620423e-18,
+        4.1087826759524814e-18,
+        2.808802401515269e-17,
+        1.734149071452593e-16,
+        9.851643443510582e-16,
+        3.8713320182692914e-15,
+        7.053422008422371e-13,
+        1.5962593931531502e-12,
+        1.9028450241757862e-11,
+        4.279110458997866e-10,
+        7.671939786707227e-09
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.6875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.8125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.1875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.75
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "right",
+      "sigma": 0.02,
+      "start_viability_radius": 1.0,
+      "step_count": 16,
+      "threshold": 0.0001,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        5.140627961228283e-24,
+        1.8750460548487458e-22,
+        5.623152036551317e-21,
+        2.452098808535815e-20,
+        1.6093480340568588e-19,
+        6.990891585773369e-20,
+        9.133826164920343e-19,
+        4.887825273244413e-17,
+        6.524897176560413e-16,
+        3.0010945678389155e-15,
+        1.5029549926822093e-14,
+        6.116791067636019e-14,
+        9.766392358948297e-13,
+        4.4671820387169934e-12,
+        7.816968514169906e-11,
+        4.871847295599957e-10,
+        2.7105031804714195e-09,
+        2.0863756243853962e-08
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.6875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5625
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.4375
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5625
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5625
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.75
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.75
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.9375
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.9375
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.01,
+      "start_viability_radius": 1.0,
+      "step_count": 21,
+      "threshold": 1e-08,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        5.140627961228283e-24,
+        1.8750460548487458e-22,
+        5.623152036551317e-21,
+        2.452098808535815e-20,
+        1.6093480340568588e-19,
+        6.990891585773369e-20,
+        9.133826164920343e-19,
+        4.887825273244413e-17,
+        6.524897176560413e-16,
+        3.0010945678389155e-15,
+        1.5029549926822093e-14,
+        6.116791067636019e-14,
+        9.766392358948297e-13,
+        4.4671820387169934e-12,
+        7.816968514169906e-11,
+        4.871847295599957e-10,
+        2.7105031804714195e-09,
+        2.0863756243853962e-08
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.6875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5625
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.4375
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5625
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5625
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.75
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.75
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.9375
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.9375
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.01,
+      "start_viability_radius": 1.0,
+      "step_count": 21,
+      "threshold": 1e-06,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 1.0,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        5.140627961228283e-24,
+        1.8750460548487458e-22,
+        5.623152036551317e-21,
+        2.452098808535815e-20,
+        1.6093480340568588e-19,
+        6.990891585773369e-20,
+        9.133826164920343e-19,
+        4.887825273244413e-17,
+        6.524897176560413e-16,
+        3.0010945678389155e-15,
+        1.5029549926822093e-14,
+        6.116791067636019e-14,
+        9.766392358948297e-13,
+        4.4671820387169934e-12,
+        7.816968514169906e-11,
+        4.871847295599957e-10,
+        2.7105031804714195e-09,
+        2.0863756243853962e-08
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.6875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5625
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.4375
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5625
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5625
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.75
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.75
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.9375
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.9375
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "left",
+      "sigma": 0.01,
+      "start_viability_radius": 1.0,
+      "step_count": 21,
+      "threshold": 0.0001,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.8577390446403786,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.8577390446403786,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        4.351591216257736e-25,
+        7.338718967538105e-24,
+        1.4756725080298318e-22,
+        3.1731416258990184e-21,
+        1.994112540632261e-18,
+        1.7237090501765159e-18,
+        3.2390375493740788e-18,
+        5.019685085719197e-18,
+        2.0778238486134607e-16,
+        3.090313046988328e-16,
+        1.094564456969847e-14,
+        2.518286351511193e-14,
+        2.465517336209085e-13,
+        8.561294310597293e-13,
+        4.1691088700745476e-11,
+        1.3884488874491485e-10,
+        4.835195498450694e-09,
+        3.155947398979476e-09
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.75
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.4375
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.75
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.8125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.3125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.375
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "right",
+      "sigma": 0.01,
+      "start_viability_radius": 1.0,
+      "step_count": 21,
+      "threshold": 1e-08,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.8577390446403786,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.8577390446403786,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        4.351591216257736e-25,
+        7.338718967538105e-24,
+        1.4756725080298318e-22,
+        3.1731416258990184e-21,
+        1.994112540632261e-18,
+        1.7237090501765159e-18,
+        3.2390375493740788e-18,
+        5.019685085719197e-18,
+        2.0778238486134607e-16,
+        3.090313046988328e-16,
+        1.094564456969847e-14,
+        2.518286351511193e-14,
+        2.465517336209085e-13,
+        8.561294310597293e-13,
+        4.1691088700745476e-11,
+        1.3884488874491485e-10,
+        4.835195498450694e-09,
+        3.155947398979476e-09
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.75
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.4375
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.75
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.8125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.3125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.375
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "right",
+      "sigma": 0.01,
+      "start_viability_radius": 1.0,
+      "step_count": 21,
+      "threshold": 1e-06,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    },
+    {
+      "backward_radii": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.8577390446403786,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_unit_start_radius": true,
+      "minimum_positive_backward_radius": 0.8577390446403786,
+      "near_boundary_forward_trajectory": [
+        0.99,
+        0.0,
+        0.0,
+        0.0,
+        4.351591216257736e-25,
+        7.338718967538105e-24,
+        1.4756725080298318e-22,
+        3.1731416258990184e-21,
+        1.994112540632261e-18,
+        1.7237090501765159e-18,
+        3.2390375493740788e-18,
+        5.019685085719197e-18,
+        2.0778238486134607e-16,
+        3.090313046988328e-16,
+        1.094564456969847e-14,
+        2.518286351511193e-14,
+        2.465517336209085e-13,
+        8.561294310597293e-13,
+        4.1691088700745476e-11,
+        1.3884488874491485e-10,
+        4.835195498450694e-09,
+        3.155947398979476e-09
+      ],
+      "near_boundary_policy_safe": true,
+      "obstruction_minimum_floor": null,
+      "obstruction_step": null,
+      "obstruction_target_radius": null,
+      "selected_controls": [
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 1,
+          "kind": "birth",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.75
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.4375
+        },
+        {
+          "candidate_count": 33,
+          "kind": "polar",
+          "weight": 0.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.5
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.75
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.8125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.3125
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.875
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 0.375
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        },
+        {
+          "candidate_count": 33,
+          "kind": "blend",
+          "weight": 1.0
+        }
+      ],
+      "side": "right",
+      "sigma": 0.01,
+      "start_viability_radius": 1.0,
+      "step_count": 21,
+      "threshold": 0.0001,
+      "viable_from_zero": true,
+      "zero_kernel_count": 0
+    }
+  ],
+  "status": "rh144_backward_block_controlled_viability",
+  "theorem_boundary": {
+    "all_level_repeating_block_hypothesis_verified": false,
+    "closed_form_young_preimage_radius": true,
+    "controlled_backward_viability_kernel": true,
+    "delayed_start_after_coarse_birth_proved": false,
+    "hilbert_polya_operator": false,
+    "normalized_base_liminf": false,
+    "repeating_block_invariance_theorem": true,
+    "riemann_hypothesis": false,
+    "stage_A": false,
+    "two_rh137_failures_are_candidate_family_obstructions": true,
+    "uniform_controlled_tail_gap": false
+  }
+}

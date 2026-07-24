@@ -1,0 +1,55 @@
+{
+  "audit": {
+    "chain_count": 30,
+    "full_unit_start_radius_count": 28,
+    "maximum_obstruction_minimum_floor": 9.535221756069195,
+    "minimum_obstruction_minimum_floor": 9.535221756069195,
+    "minimum_positive_backward_radius": 0.0017243404378350258,
+    "near_boundary_policy_safe_count": 28,
+    "obstructed_chain_count": 2,
+    "obstruction_identifiers": [
+      "0.08:left:1e-08",
+      "0.08:left:1e-06"
+    ],
+    "viable_chain_count": 28
+  },
+  "program_boundary": {
+    "all_level_repeating_block_hypothesis_verified": false,
+    "closed_form_young_preimage_radius": true,
+    "controlled_backward_viability_kernel": true,
+    "delayed_start_after_coarse_birth_proved": false,
+    "hilbert_polya_operator": false,
+    "normalized_base_liminf": false,
+    "repeating_block_invariance_theorem": true,
+    "riemann_hypothesis": false,
+    "stage_A": false,
+    "two_rh137_failures_are_candidate_family_obstructions": true,
+    "uniform_controlled_tail_gap": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "8065449b13621138f1823f8072f55fdb1076f4068cc9d37bf9c7cc787f4ea5a9",
+    "README.md": "ffa87725958fb4d14b5606266534a048fed8173f73d76a9af735a3a5e986bfa6",
+    "THEOREM_LEDGER.md": "720da4c1a3366021d4f6e3b98a04a1cf1e129d2ab870dce539a0e093f9517852",
+    "UPDATED_ROADMAP.md": "81705a2faa37fe848d646c3e2824bccdc6865b9380b52d9857cddf3a4baec084",
+    "backward-block-controlled-viability.pdf": "681e8f8bbfc6ad12a68b273426d6ba0fddb500acdaf33d35591bf0c921ddc955",
+    "figures/backward_block_viability.pdf": "c69d82ce379f1d2fcbfa1b1cff58b980bfedc74d442d4402b8a460b439202b6f",
+    "figures/backward_block_viability.png": "e7d09dcd730cb9703a69275e88af1490559990e36d667affe30d706fef8b8ebf",
+    "main.pdf": "681e8f8bbfc6ad12a68b273426d6ba0fddb500acdaf33d35591bf0c921ddc955",
+    "main.tex": "73c766c938eac12cfa5b00aea419f76a93a028745d7f17ee98b14206f5d5e5bb",
+    "pyproject.toml": "b992f0584be3ac0023f98d6f2fead6e25612eb281e0424c3ef908a4ae4976dd5",
+    "references.bib": "0f8de928e02629e0e7e361314bdbd3733785fe7c48abbb6dee559fae98d2c0f8",
+    "requirements.txt": "fd291221898aaf54eb80c0b9f8e9f85f46b016e87e5c3756f1230b27c30e1095"
+  },
+  "result_hashes": {
+    "results/backward_viability_audit.json": "a2a1ec370236f5e0750e2275bbe25cb9da368bb963f87b71403c3c98e08ddb0b",
+    "results/backward_viability_smoke.json": "9fd13d771be7db91960a8bbf999230a9a37908ec9aba6509690fe987a762bdb3",
+    "results/dependency_manifest.json": "6fdae7b13c75c26728228762a73c6db2c98aa55a51000706cada6d0e3a4f251f"
+  },
+  "route_consequence": "Backward dynamic programming gives exact scalar viability kernels for every finite candidate family. Twenty-eight chains admit the entire initial interval [0,1), while the two coarse left chains have empty kernels because every available control has an unavoidable floor above the safety wall. This proves those failures are not greedy-choice artifacts and supplies the correct block/reset criterion for an all-level P_V theorem.",
+  "status": "rh144_backward_block_controlled_viability_archived",
+  "theorem": {
+    "closed_form_young_preimage": true,
+    "controlled_backward_kernel": true,
+    "repeating_block_invariance": true
+  }
+}

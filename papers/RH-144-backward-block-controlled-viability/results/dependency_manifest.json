@@ -1,0 +1,45 @@
+{
+  "external_inputs": {
+    "rh137_audit": {
+      "path": "papers/RH-137-finite-horizon-young-tail-envelope/results/finite_horizon_audit.json",
+      "sha256": "3932e0704672ccae0500a1dba6bc55e6dce05dc3ef5f356bd7720c448e68ab4e"
+    },
+    "rh137_source": {
+      "path": "papers/RH-137-finite-horizon-young-tail-envelope/experiments/build_finite_horizon_audit.py",
+      "sha256": "fc24389cb36e65ac813cbe3333ff62a2516e5e9972b3d59d8f62040f6ab2bede"
+    },
+    "rh137_summary": {
+      "path": "papers/RH-137-finite-horizon-young-tail-envelope/results/summary.json",
+      "sha256": "31d9c5ac66cdeaf2b0f983856f0edd2b47a47862e81c837a9f5e0e9c16b1e892"
+    },
+    "rh139_summary": {
+      "path": "papers/RH-139-ten-layer-controlled-viability-review/results/summary.json",
+      "sha256": "9b0b71741a451ded09df8e4c65806e347839f4f7684ec917d7979e9e77ffd39f"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "1df974d0fa13868b6e13e79dfa8f3a2452ba14f34d240dfb89a198d5a1e5e978",
+    "experiments/build_backward_viability_audit.py": "65a5751a59e4188625215314131eda101262d44e4f29fd30f34fbcaa110fae92",
+    "experiments/make_figures.py": "7285e17ce3b571260776086ec2793fb559efaecd7dcfd3dfed0d8f6b3c202dad",
+    "experiments/verify_archive.py": "e4082b97c254d786fb5b7421fa5ff2dbd4d446a0efc2335861dcc0521897989c",
+    "src/backward_viability/__init__.py": "e654c5c60271189afc6ac3bd82f57b22f2f907ad4e380e1a0c9436fc717ab6ba",
+    "src/backward_viability/kernels.py": "38c89d38df6bcfffc83f7b22e26e62c044a7b744802bce0ca95ec31a40b271c3",
+    "tests/test_archived_results.py": "5c0740234b5493b42c1923ea46b4c4e089a52058296122cd472e86b4c4e429c1",
+    "tests/test_theory.py": "b1b204e58417f3df184d653b9a3faad89a71951e80923b1a2d8e7e07a74f086e"
+  },
+  "publication_artifacts": {
+    ".gitignore": "8065449b13621138f1823f8072f55fdb1076f4068cc9d37bf9c7cc787f4ea5a9",
+    "README.md": "ffa87725958fb4d14b5606266534a048fed8173f73d76a9af735a3a5e986bfa6",
+    "THEOREM_LEDGER.md": "720da4c1a3366021d4f6e3b98a04a1cf1e129d2ab870dce539a0e093f9517852",
+    "UPDATED_ROADMAP.md": "81705a2faa37fe848d646c3e2824bccdc6865b9380b52d9857cddf3a4baec084",
+    "backward-block-controlled-viability.pdf": "681e8f8bbfc6ad12a68b273426d6ba0fddb500acdaf33d35591bf0c921ddc955",
+    "figures/backward_block_viability.pdf": "c69d82ce379f1d2fcbfa1b1cff58b980bfedc74d442d4402b8a460b439202b6f",
+    "figures/backward_block_viability.png": "e7d09dcd730cb9703a69275e88af1490559990e36d667affe30d706fef8b8ebf",
+    "main.pdf": "681e8f8bbfc6ad12a68b273426d6ba0fddb500acdaf33d35591bf0c921ddc955",
+    "main.tex": "73c766c938eac12cfa5b00aea419f76a93a028745d7f17ee98b14206f5d5e5bb",
+    "pyproject.toml": "b992f0584be3ac0023f98d6f2fead6e25612eb281e0424c3ef908a4ae4976dd5",
+    "references.bib": "0f8de928e02629e0e7e361314bdbd3733785fe7c48abbb6dee559fae98d2c0f8",
+    "requirements.txt": "fd291221898aaf54eb80c0b9f8e9f85f46b016e87e5c3756f1230b27c30e1095"
+  },
+  "status": "all_rh144_inputs_sources_and_publication_artifacts_hashed"
+}
