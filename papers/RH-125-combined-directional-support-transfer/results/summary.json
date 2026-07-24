@@ -1,0 +1,54 @@
+{
+  "audit": {
+    "above_1e-8_transfer_count": 95,
+    "chain_count": 24,
+    "chain_dominance_failure_count": 0,
+    "maximum_one_step_efficiency": 0.9999999999997481,
+    "maximum_terminal_lower": 0.08265340939881345,
+    "median_one_step_efficiency": 0.9999960063622728,
+    "median_terminal_lower": 0.025939530786084852,
+    "minimum_one_step_efficiency": 6.054472422982332e-05,
+    "minimum_terminal_lower": 1.130453499465325e-07,
+    "nonzero_transfer_count": 96,
+    "one_step_dominance_failure_count": 0,
+    "pair_count": 96,
+    "terminal_above_1e-4_count": 21,
+    "terminal_above_1e-6_count": 23,
+    "terminal_above_1e-8_count": 24
+  },
+  "program_boundary": {
+    "combined_directional_transfer_theorem": true,
+    "defect_gamma_volume_normalization_composition": true,
+    "five_scale_regularized_chain_audited": true,
+    "hilbert_polya_operator": false,
+    "physical_all_level_recurrence_proved": false,
+    "regularized_chain_is_physical_support_certificate": false,
+    "riemann_hypothesis": false,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "8065449b13621138f1823f8072f55fdb1076f4068cc9d37bf9c7cc787f4ea5a9",
+    "README.md": "83773e8720cfb8b68a4266f98aa2b8f9888b1b04f1a810a294290d0da73bd65f",
+    "THEOREM_LEDGER.md": "b5ac12498ce9f069b2345138639f47574a214e4e0066ff3f35c28870282d7c2b",
+    "UPDATED_ROADMAP.md": "b18b02c000d64d8ef7123c5ed044dc1d0b8f48da45982f99723f93871dcd9b06",
+    "combined-directional-support-transfer.pdf": "24b543bde36f99b44c1dd1c3b0d7dfc335d3bf1452fc11413b5fa1679c24036f",
+    "figures/combined_directional_support_transfer.pdf": "c2dea078e782df88d2795002095787cb63d612a46f45a6246a34a8f23b59b008",
+    "figures/combined_directional_support_transfer.png": "f5f619ecb04ddef7f1f15d0044dce8a5c9f34f4beec17d4f01b75b8b5c954925",
+    "main.pdf": "24b543bde36f99b44c1dd1c3b0d7dfc335d3bf1452fc11413b5fa1679c24036f",
+    "main.tex": "a0d91a796503bb185dc47c678c16ecaf9091270a6400208e3b96d4ebdb9ad787",
+    "pyproject.toml": "bf645f035e364afcc9d1b6ee42f18c2d0a41bb0942b5dab4bf42c76c1b5a98cd",
+    "references.bib": "8dbd1bf442747a0327b03b23327039f33b12f05e79c050fa0eba7c97860bbf33",
+    "requirements.txt": "408aa57fdb2c5a55bd8a4ee2356c6deab1623d728dbad693e1a35ac2c5e6ebf1"
+  },
+  "result_hashes": {
+    "results/combined_transfer_audit.json": "18da5a54bc68e8c0336e4c89a2adb69f7949c1c4b76d38dc02237afdf38f6204",
+    "results/combined_transfer_smoke.json": "f2724b1606ce9f86c581f96810fdfd430ab2fec043dae8195b0e20d931449a3a",
+    "results/dependency_manifest.json": "b0ec562daaa508797ae431356235b98a470024b388571d9fa5a74ecf804d7994"
+  },
+  "route_consequence": "The gamma recurrence, determinant transfer, leading normalization, and capacity upper compose into one directional candidate theorem. On the explicitly regularized five-scale diagnostic all 96 transfers are nonzero and all 24 chains remain above 1e-8, but the conditioning floor prevents interpreting this as a physical support proof.",
+  "status": "rh125_combined_directional_support_transfer_archived",
+  "theorem": {
+    "combined_directional_transfer": true,
+    "iterated_candidate_lower": true
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "audit_summary": {
+    "above_1e-8_transfer_count": 4,
+    "chain_count": 4,
+    "chain_dominance_failure_count": 0,
+    "maximum_one_step_efficiency": 0.9999999568346802,
+    "maximum_terminal_lower": 0.0005683032935389485,
+    "median_one_step_efficiency": 0.9999912910543797,
+    "median_terminal_lower": 3.8652088634628454e-05,
+    "minimum_one_step_efficiency": 0.8190564174901818,
+    "minimum_terminal_lower": 7.47055164870689e-07,
+    "nonzero_transfer_count": 4,
+    "one_step_dominance_failure_count": 0,
+    "pair_count": 4,
+    "terminal_above_1e-4_count": 1,
+    "terminal_above_1e-6_count": 3,
+    "terminal_above_1e-8_count": 4
+  },
+  "chains": [
+    {
+      "dominance_holds": true,
+      "levels": [
+        {
+          "lower": 1.2169953164302959e-05,
+          "sigma": 0.16
+        },
+        {
+          "lower": 0.0005683032935389485,
+          "sigma": 0.08
+        }
+      ],
+      "phase": 0.25,
+      "side": "left",
+      "terminal_candidate": 0.0005683033180699429,
+      "terminal_efficiency": 0.9999999568346802,
+      "terminal_lower": 0.0005683032935389485,
+      "threshold": 1e-08
+    },
+    {
+      "dominance_holds": true,
+      "levels": [
+        {
+          "lower": 1.0008692684912731e-06,
+          "sigma": 0.16
+        },
+        {
+          "lower": 7.571557213612476e-05,
+          "sigma": 0.08
+        }
+      ],
+      "phase": 0.5,
+      "side": "left",
+      "terminal_candidate": 7.571578645310299e-05,
+      "terminal_efficiency": 0.9999971694545052,
+      "terminal_lower": 7.571557213612476e-05,
+      "threshold": 1e-08
+    },
+    {
+      "dominance_holds": true,
+      "levels": [
+        {
+          "lower": 1.0105090421843873e-06,
+          "sigma": 0.16
+        },
+        {
+          "lower": 1.5886051331321532e-06,
+          "sigma": 0.08
+        }
+      ],
+      "phase": 0.75,
+      "side": "left",
+      "terminal_candidate": 1.5886283070025292e-06,
+      "terminal_efficiency": 0.9999854126542541,
+      "terminal_lower": 1.5886051331321532e-06,
+      "threshold": 1e-08
+    },
+    {
+      "dominance_holds": true,
+      "levels": [
+        {
+          "lower": 1.9669210937433226e-06,
+          "sigma": 0.16
+        },
+        {
+          "lower": 7.47055164870689e-07,
+          "sigma": 0.08
+        }
+      ],
+      "phase": 1.0,
+      "side": "left",
+      "terminal_candidate": 9.120924382228458e-07,
+      "terminal_efficiency": 0.8190564174901818,
+      "terminal_lower": 7.47055164870689e-07,
+      "threshold": 1e-08
+    }
+  ],
+  "pairs": [
+    {
+      "dominance_holds": true,
+      "efficiency": 0.9999999568346802,
+      "gamma_upper": 1.0862580103801361e-08,
+      "multiplier": 46.69724573845543,
+      "pair_id": "0.16-0.08:left:1e-08:p0.25",
+      "phase": 0.25,
+      "side": "left",
+      "source_candidate": 1.2169953164302959e-05,
+      "source_sigma": 0.16,
+      "target_candidate": 0.0005683033180699429,
+      "target_lower": 0.0005683032935389485,
+      "target_sigma": 0.08,
+      "threshold": 1e-08
+    },
+    {
+      "dominance_holds": true,
+      "efficiency": 0.9999971694545052,
+      "gamma_upper": 7.119755295767432e-07,
+      "multiplier": 75.64981213806242,
+      "pair_id": "0.16-0.08:left:1e-08:p0.50",
+      "phase": 0.5,
+      "side": "left",
+      "source_candidate": 1.0008692684912731e-06,
+      "source_sigma": 0.16,
+      "target_candidate": 7.571578645310299e-05,
+      "target_lower": 7.571557213612476e-05,
+      "target_sigma": 0.08,
+      "threshold": 1e-08
+    },
+    {
+      "dominance_holds": true,
+      "efficiency": 0.9999854126542541,
+      "gamma_upper": 6.171751844019626e-06,
+      "multiplier": 1.5720840356837509,
+      "pair_id": "0.16-0.08:left:1e-08:p0.75",
+      "phase": 0.75,
+      "side": "left",
+      "source_candidate": 1.0105090421843873e-06,
+      "source_sigma": 0.16,
+      "target_candidate": 1.5886283070025292e-06,
+      "target_lower": 1.5886051331321532e-06,
+      "target_sigma": 0.08,
+      "threshold": 1e-08
+    },
+    {
+      "dominance_holds": true,
+      "efficiency": 0.8190564174901818,
+      "gamma_upper": 0.07026195235266144,
+      "multiplier": 0.37980942257777095,
+      "pair_id": "0.16-0.08:left:1e-08:p1.00",
+      "phase": 1.0,
+      "side": "left",
+      "source_candidate": 1.9669210937433226e-06,
+      "source_sigma": 0.16,
+      "target_candidate": 9.120924382228458e-07,
+      "target_lower": 7.47055164870689e-07,
+      "target_sigma": 0.08,
+      "threshold": 1e-08
+    }
+  ],
+  "route_consequence": "The gamma recurrence, determinant transfer, leading normalization, and capacity upper compose into one directional candidate theorem. On the explicitly regularized five-scale diagnostic all 96 transfers are nonzero and all 24 chains remain above 1e-8, but the conditioning floor prevents interpreting this as a physical support proof.",
+  "source_archive": "papers/RH-121-optimal-gram-gauge-pairing/results/optimal_gauge_smoke.json",
+  "status": "rh125_combined_directional_support_transfer_audit",
+  "theorem_boundary": {
+    "combined_directional_transfer_theorem": true,
+    "defect_gamma_volume_normalization_composition": true,
+    "five_scale_regularized_chain_audited": false,
+    "hilbert_polya_operator": false,
+    "physical_all_level_recurrence_proved": false,
+    "regularized_chain_is_physical_support_certificate": false,
+    "riemann_hypothesis": false,
+    "uniform_stage_A_closed": false
+  }
+}
