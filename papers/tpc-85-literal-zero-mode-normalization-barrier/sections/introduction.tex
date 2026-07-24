@@ -1,0 +1,176 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The determinant-frequency route of TPC-32 separates a literal signed
+arithmetic packet into coefficients \(A_C(n)\) indexed by a normalized
+row determinant \citep{WangTPC32}.  Parseval and the additive large
+sieve control the family of determinant frequencies in mean, but the
+physical reassembly selects one distinguished member:
+\[
+ \widehat A_{C,q}(0)=\sum_nA_C(n).
+\]
+An exceptional-frequency theorem is permitted to place this one
+frequency in its exceptional set.  TPC-81 and TPC-82 therefore retain
+the bound for this zero mode as an independent arithmetic premise
+\citep{WangTPC81,WangTPC82}.
+
+This paper asks whether three natural reorganizations can reduce that
+premise: subtracting a mean, conditioning raw atoms on determinant
+fibers, or expanding the small-content indicator by M\"obius
+inversion.  Each operation is useful, but each has an exact limitation.
+Centering subtracts the unknown zero mode itself.  Conditional
+expectation preserves the total integral and changes the post-bin
+energy by a fiber-mass factor.  Content inversion returns the full
+shell in its principal term.  These are normalization statements, not
+heuristic objections.
+
+\subsection{The literal object and the scope of the audit}
+
+Throughout, \(h_0\in\Z\setminus\{0\}\) is one fixed integer.  It is not
+averaged, allowed to vary with \(X\), or specialized to \(2\).  The
+content cutoff is always
+\begin{equation}
+ C=\lfloor J\rfloor.
+ \label{eq:intro-physical-cutoff}
+\end{equation}
+The coefficient \(A_C\) is formed from the complete signed matched
+atoms before any norm or Fourier estimate is taken.  In particular,
+the actual row-pair mask, fixed residue factors, smooth weights, both
+polarizations of the rank-two cutoff shell, and all native keys remain
+inside the coefficient.  The energy
+\[
+ D_X=\sum_n|A_C(n)|^2
+\]
+is the physical post-aggregation energy, not raw atom energy, an
+unsigned majorant, or a sum of pre-bin squares.
+Here ``physical post-aggregation'' refers to the hard raw matched
+coefficient of TPC-32.  The calibrated packet contains two additional
+drift legs.  They are restored only after the raw estimate and are
+charged in the downstream physical ledger; they are not silently
+inserted into \(A_C\), \(Z_X\), or \(D_X\).
+
+The audit has three levels.
+\begin{definition}[Proof levels]
+\label{def:proof-levels}
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.5em]
+ \item \(\Lzero\) consists of finite identities in Fourier analysis,
+ conditional expectation, divisor inversion, and affine
+ parametrization, together with explicit structure-free
+ countermodels that make a logical nonimplication exact.
+ \item \(\Lone\) consists of a literal transfer or obstruction at the
+ same fixed \(h_0\), with all physical keys and the global
+ normalization retained.
+ \item \(\Ltwo\) is a new asymptotic arithmetic estimate for the
+ actual growing family, strong enough to save a fixed power after
+ complete reassembly.
+\end{enumerate}
+\end{definition}
+The theorems proved here are \(\Lzero\); their crosswalk to \(Z_X\) is
+\(\Lone\).  No \(\Ltwo\) estimate is proved.
+
+\subsection{Main results}
+
+The first result is an orthogonal constant-mode identity.  After
+embedding the determinant support injectively into a cyclic group of
+order \(q\) using the strong physical padding,
+\begin{equation}
+ A_C^\circ=A_C-\frac{Z_X}{q}\one
+ \label{eq:intro-centered-coefficient}
+\end{equation}
+satisfies
+\begin{equation}
+ \boxed{
+ D_X=\|A_C^\circ\|_2^2+\frac{|Z_X|^2}{q}.}
+ \label{eq:intro-constant-mode-energy}
+\end{equation}
+At the deleted determinant bin, Fourier inversion gives the
+additional exact identity
+\begin{equation}
+ \boxed{
+ Z_X=-\sum_{r\ne0}\widehat A_{C,q}(r).}
+ \label{eq:intro-coherent-reassembly}
+\end{equation}
+Thus centering or mean-square information alone does not estimate the
+removed constant coefficient, but a coherent estimate for the full
+nonzero-frequency sum can do so.  A generic-frequency theorem must
+return its exceptional nonzero modes and the coherent reassembly; it
+need not separately state a pointwise theorem at \(r=0\).
+
+The second result starts with a general finite positive atomic measure
+\(\rho\), a signed density \(f\), and a bin map \(\nu\).  If
+\[
+ A(n)=\int_{\nu=n}f\,d\rho,\qquad
+ M_n=\rho(\nu=n),
+\]
+then
+\begin{equation}
+ \boxed{
+ \left\|\E_\rho(f\mid\sigma(\nu))\right\|_{L^2(\rho)}^2
+ =\sum_{M_n>0}\frac{|A(n)|^2}{M_n}.}
+ \label{eq:intro-conditional-energy}
+\end{equation}
+Moreover,
+\[
+ \int\E_\rho(f\mid\sigma(\nu))\,d\rho
+ =\int f\,d\rho
+ =\sum_nA(n).
+\]
+Thus conditioning neither produces \(D_X\) nor cancels \(Z_X\).
+
+The third result applies the cumulative content projector
+\[
+ \eta_{\le C}(t)
+ =\sum_{\substack{c\mid t\\c\le C}}\mu(t/c).
+\]
+For a target gcd \(G\),
+\[
+ \sum_{\substack{t\mid G\\t>1}}\eta_{\le C}(t)
+ =-\one_{G>C}.
+\]
+Consequently the \(t=1\) term is exactly the unrestricted full shell,
+and the remaining terms are exactly minus the large-content shell.
+At \eqref{eq:intro-physical-cutoff}, the known large-content estimate
+only gives the already recorded \(X^{o(1)}Q^2\) splice error
+\citep{WangTPC30,WangTPC32}.
+
+Finally, we trace the raw hard physical column reduction to two affine
+M\"obius signs and compare its quantifiers with the available
+correlation theorems.  The fixed-determinant equation is
+\[
+ su_0-ad_0=h_0,\qquad a=\ell jv,
+\]
+but \(s\) and \(a\) grow with \(X\), some fibers have bounded length,
+and the column must be returned through a joint mask and an outer
+sum.  Theorems for fixed affine forms, averaged shifts, almost-all
+scales, or almost-all interval origins do not automatically supply
+that package.  Content completion belongs to this raw reassembly,
+whereas the calibrated drift is returned only afterward.
+
+\subsection{A black-box Tauberian boundary}
+
+We also give a deterministic sequence \(c_n\in\{-1,1\}\) such that,
+for every \(1\le\omega(x)\le x\) with \(\omega(x)\to\infty\),
+\[
+ \sum_{x/\omega(x)<n\le x}\frac{c_n}{n}
+ =o(\log\omega(x)),
+\]
+while \(\sum_{n\le X}c_n\) has size comparable to \(X\) along an
+infinite dyadic subsequence.  This proves that no structure-free
+Tauberian implication converts a Tao-shaped logarithmic estimate into
+ordinary cancellation.  Because the constructed sequence is not
+multiplicative, this statement does not rule out a conversion based
+on additional M\"obius structure.
+
+\subsection{Organization}
+
+\Cref{sec:literal-zero-mode} fixes the literal coefficient and the
+coefficient-value/Fourier-frequency distinction.
+\Cref{sec:constant-mode} proves the no-wrap constant-mode
+decomposition.  \Cref{sec:conditional-expectation} proves the
+conditional-expectation barrier, and
+\cref{sec:content-projector} proves the content-projector
+reassembly.  \Cref{sec:affine-interface} records the exact affine
+interface.  \Cref{sec:literature-quantifiers} audits the available
+theorems, while \cref{sec:log-counterexample} gives the Tauberian
+counterexample.  The endpoint ledger and claim boundary appear in
+\cref{sec:endpoint-ledger,sec:claim-boundary}.

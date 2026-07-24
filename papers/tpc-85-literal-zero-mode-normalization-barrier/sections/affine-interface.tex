@@ -1,0 +1,263 @@
+\section{The fixed-shift affine M\"obius interface}
+\label{sec:affine-interface}
+
+The preceding sections show that neither Fourier centering,
+conditional expectation, nor content inversion removes \(Z_X\).
+Opening an ultra divisor on one polarized leg instead exposes a
+two-sign affine M\"obius correlation.  We record the exact form and
+the costs that remain outside it.
+
+\subsection{Reflection of one physical column}
+
+Fix one opposite row and one of the two polarizations in
+\eqref{eq:literal-two-leg-polarization}.  On the opened ultra leg,
+write a row as \(m=\ell d\), and reflect a divisor \(u\) by
+\begin{equation}
+ \ell d j+h_0=us.
+ \label{eq:affine-reflection}
+\end{equation}
+The actual row-gcd mask can be expanded after the opposite row has
+been fixed.  On one divisor layer \(v\), write
+\[
+ d=v\widetilde d.
+\]
+Primitive support gives
+\begin{equation}
+ (s,\ell jv)=1,
+ \qquad
+ (s\ell jv,h_0)=1.
+ \label{eq:affine-slope-coprimality}
+\end{equation}
+Hence there is a unique residue
+\(\widetilde d_0\pmod s\) satisfying
+\[
+ \ell jv\widetilde d_0+h_0\equiv0\pmod s.
+\]
+Put
+\begin{equation}
+ \widetilde u_0
+ =\frac{\ell jv\widetilde d_0+h_0}{s},
+ \qquad
+ a=\ell jv.
+ \label{eq:affine-origin-a}
+\end{equation}
+Every solution on this layer is
+\begin{equation}
+ \widetilde d_r=\widetilde d_0+sr,
+ \qquad
+ u_r=\widetilde u_0+ar,
+ \label{eq:affine-two-forms}
+\end{equation}
+and the determinant is the original fixed shift:
+\begin{equation}
+ \boxed{
+ s\widetilde u_0-a\widetilde d_0=h_0\ne0.}
+ \label{eq:affine-fixed-determinant}
+\end{equation}
+
+\begin{proposition}[Literal affine-column interface]
+\label{prop:affine-column-interface}
+For each fixed opposite row, polarization, and layer
+\((\ell,j,s,v)\), the inner arithmetic sequence produced by the
+actual mask has the form
+\begin{equation}
+ \boxed{
+ \cC_{\ell,j,s,v}(I)
+ =
+ \sum_{r\in I}
+ \mu(\widetilde d_0+sr)
+ \mu(\widetilde u_0+ar)
+ \one_{\left(v,\,
+   (\widetilde d_0+sr)(\widetilde u_0+ar)\right)=1}
+ \rho(r)W(r),}
+ \label{eq:affine-literal-correlation}
+\end{equation}
+where:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.3em]
+ \item \(a=\ell jv\),
+ \((a,s)=1\), \((as,h_0)=1\), and
+ \(s\widetilde u_0-a\widetilde d_0=h_0\);
+ \item \(I\) is the union of at most two intervals and
+ \begin{equation}
+ |I|\ll 1+\frac{D}{sv};
+ \label{eq:affine-fiber-length}
+ \end{equation}
+ \item \(\rho\) is a bounded fixed-period factor and \(W\) retains
+ the logarithmic and smooth physical weights;
+ \item the outside coefficient retains the opposite row, the
+ row-gcd divisor coefficient, and the remaining physical factors;
+ \item summation of the divisor coefficients for a fixed opposite
+ squarefree row costs \(X^{o(1)}\), as does expansion of the displayed
+ local coprimality condition.
+\end{enumerate}
+The symmetric construction covers the second polarization.
+\end{proposition}
+
+\begin{proof}
+This is the actual-mask column disintegration of TPC-33
+\citep{WangTPC33}, with the shift renamed \(h_0\).  The congruence
+preceding \eqref{eq:affine-origin-a} gives
+\eqref{eq:affine-two-forms} and
+\eqref{eq:affine-fixed-determinant}.  Sampling a row interval of
+length \(O(D/v)\) in a residue class modulo \(s\) gives
+\eqref{eq:affine-fiber-length}.  Exact sign fusion on squarefree
+support supplies the two M\"obius factors.  The row-gcd projector is
+expanded only after the opposite row is fixed, yielding the
+\(X^{o(1)}\) divisor mass.  Exchanging the row labels gives the other
+polarization.
+\end{proof}
+
+\begin{remark}[Column complexity is not matrix complexity]
+\label{rem:affine-mask-complexity}
+The \(X^{o(1)}\) divisor cost in
+\cref{prop:affine-column-interface} is a statement for one fixed
+opposite row.  It is not an \(X^{o(1)}\) projective decomposition of
+the complete joint row-pair mask.  Returning the column estimates
+through the outer row sum remains part of the physical gate.
+\end{remark}
+
+\subsection{Integral normal form}
+
+The geometry in \eqref{eq:affine-fixed-determinant} has a useful
+coordinate-free description.  Assume
+\[
+ a,s\in\N,\qquad (a,s)=1,\qquad(as,h_0)=1.
+\]
+Choose \(x,y\in\Z\) such that \(sx-ay=1\).
+
+\begin{proposition}[Fixed-determinant normal form]
+\label{prop:affine-normal-form}
+Every integral solution of
+\begin{equation}
+ sU-aD=h_0
+ \label{eq:affine-normal-equation}
+\end{equation}
+has a unique representation
+\begin{equation}
+ U_t=h_0x+at,\qquad
+ D_t=h_0y+st,\qquad t\in\Z.
+ \label{eq:affine-normal-forms}
+\end{equation}
+Furthermore,
+\begin{equation}
+ \gcd(D_t,U_t)
+ =\gcd(D_t,h_0)
+ =\gcd(U_t,h_0)
+ =\gcd(h_0,t).
+ \label{eq:affine-gcd-identities}
+\end{equation}
+Whenever \(D_t,U_t>0\), on the primitive layer \((t,h_0)=1\),
+\begin{equation}
+ \mu(D_t)\mu(U_t)=\mu(D_tU_t),
+ \label{eq:affine-mobius-fusion}
+\end{equation}
+and the reducible quadratic \(D_tU_t\) has discriminant \(h_0^2\).
+\end{proposition}
+
+\begin{proof}
+The matrix
+\[
+ \begin{pmatrix}x&a\\y&s\end{pmatrix}
+\]
+has determinant one.  Applying it to \((h_0,t)^{\mathsf T}\) gives
+\eqref{eq:affine-normal-forms}; applying its integral inverse proves
+uniqueness.  A unimodular map preserves the ideal generated by the
+two coordinates, which gives
+\(\gcd(D_t,U_t)=\gcd(h_0,t)\).  The remaining gcd identities follow
+from \((as,h_0)=1\).  On the primitive layer the two forms are
+coprime, proving \eqref{eq:affine-mobius-fusion}.  Finally,
+\[
+ D_tU_t
+ =as t^2+h_0(sx+ay)t+h_0^2xy
+\]
+has discriminant
+\[
+ h_0^2\{(sx+ay)^2-4asxy\}
+ =h_0^2(sx-ay)^2=h_0^2.
+\]
+\end{proof}
+
+\begin{remark}[Structural identity, not cancellation]
+The broad normal-form class contains the classical adjacent
+correlation: with \(a=s=h_0=1\), \(x=1\), and \(y=0\), one obtains
+\(\mu(t)\mu(t+1)\).  Therefore a theorem uniform over the entire
+normal-form class would contain an open Chowla case.  This observation
+does not prove that the narrower physical subfamily in
+\eqref{eq:affine-literal-correlation} is equivalent to that classical
+case.
+\end{remark}
+
+\subsection{The complete reassembly gate}
+
+Let \(\theta\) collect the fixed opposite row, polarization,
+\((\ell,j,s,v)\), interval component, residue factor, and smooth
+separation index.  An exact use of
+\cref{prop:affine-column-interface} must have the form
+\begin{equation}
+ Z_X
+ =\sum_{\theta\in\Theta_X}
+ W_{\theta,X}\cC_{\theta,X}
+ +E_{\rm content},
+ \label{eq:affine-global-interface}
+\end{equation}
+where \(\cC_{\theta,X}\) has
+\eqref{eq:affine-literal-correlation} and
+\begin{equation}
+ E_{\rm content}=-\cS_{>C}^{\rm sh}.
+ \label{eq:affine-content-error}
+\end{equation}
+This is the reassembly of the raw hard coefficient
+\eqref{eq:literal-AC}.  The calibrated drift legs are not part of
+\(A_C\), \(Z_X\), or \(D_X\).
+Equation \eqref{eq:affine-global-interface} is an interface, not an
+estimate.
+
+\begin{proposition}[Sufficient uniform affine budget]
+\label{prop:affine-sufficient-budget}
+Suppose \eqref{eq:affine-global-interface} has been verified with all
+native keys and both polarizations, and suppose that, for some
+\(\eta_Z\ge0\),
+\begin{align}
+ \sum_{\theta\in\Theta_X}
+ |W_{\theta,X}\cC_{\theta,X}|
+ &\le X^{-\eta_Z+o(1)}Q^2,
+ \label{eq:affine-correlation-budget}\\
+ |E_{\rm content}|
+ &\le X^{-\eta_Z+o(1)}Q^2.
+ \label{eq:affine-error-budget}
+\end{align}
+Then
+\begin{equation}
+ |Z_X|\le X^{-\eta_Z+o(1)}Q^2.
+ \label{eq:affine-zero-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Apply the triangle inequality once, after the exact global
+reassembly \eqref{eq:affine-global-interface}, and use
+\cref{eq:affine-correlation-budget,eq:affine-error-budget}.
+\end{proof}
+
+\begin{remark}[Why the sufficient condition is demanding]
+The absolute sum in \eqref{eq:affine-correlation-budget} is not
+asserted here.  It may discard useful outer cancellation and can cost
+a fixed power.  A stronger future argument may instead estimate the
+complete outer operator.  Either route must still cover growing
+\(a,s\), the \(O(1)\)-length fibers allowed by
+\eqref{eq:affine-fiber-length}, the actual mask, and the same fixed
+\(h_0\).
+\end{remark}
+
+\begin{remark}[The calibrated drift is downstream]
+\label{rem:affine-drift-downstream}
+TPC-32 writes the complete calibrated cutoff difference as the raw
+matched shell plus two explicitly bounded drift legs.  Those legs
+must be restored when the raw estimate is returned to the calibrated
+physical packet, and their loss belongs in the complete downstream
+ledger.  Inserting them into
+\eqref{eq:affine-global-interface}, however, would change its left
+side from the raw \(Z_X\) defined in \eqref{eq:literal-Z-D} to a
+different calibrated zero mode.  The two normalizations are therefore
+kept separate.
+\end{remark}

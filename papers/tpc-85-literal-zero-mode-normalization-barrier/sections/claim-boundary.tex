@@ -1,0 +1,105 @@
+\section{Claim boundary and conclusion}
+\label{sec:claim-boundary}
+
+\subsection{What has been proved}
+
+The paper proves the following unconditional statements.
+\begin{enumerate}[label=\textup{(\arabic*)},leftmargin=2.5em]
+ \item For the actual TPC-32 determinant coefficient at
+ \(C=\lfloor J\rfloor\),
+ \[
+ A_C(0)=0
+ \quad\text{and}\quad
+ \widehat A_{C,q}(0)=Z_X
+ \]
+ are different assertions: the first does not by itself make the
+ second vanish.
+ \item Every no-wrap cyclic realization has the orthogonal
+ decomposition
+ \[
+ D_X=\|A_C^\circ\|_2^2+\frac{|Z_X|^2}{q}.
+ \]
+ Under the strong physical padding, it also has the coherent
+ reassembly
+ \[
+ Z_X=-\sum_{r\ne0}\widehat A_{C,q}(r).
+ \]
+ \item Conditional expectation onto determinant fibers has norm
+ \(\sum_n|A_C(n)|^2/M_n\), preserves \(Z_X\), and cannot be identified
+ with the post-bin energy without fiber-mass control.
+ \item The cumulative content projector has full-shell \(t=1\) term
+ and negative large-content \(t>1\) reassembly; it does not center the
+ zero mode.
+ \item The opened physical column has a fixed-determinant affine
+ M\"obius interface, but its slopes grow, some fibers are bounded,
+ and the complete joint-mask reassembly remains part of the gate.
+ \item Logarithmic cancellation does not imply ordinary cancellation
+ for arbitrary bounded sequences; the conversion needs additional
+ structure.
+\end{enumerate}
+
+Items (1)--(4) are finite \(\Lzero\) identities, while item (6) is an
+explicit structure-free \(\Lzero\) countermodel.  Their exact placement
+in the literal matched packet, together with the theorem-quantifier
+audit, is an \(\Lone\) diagnosis.  None is a new \(\Ltwo\)
+M\"obius-correlation estimate.
+
+\subsection{Explicit exclusions}
+
+This paper does not prove:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.3em]
+ \item a bound of the form
+ \(|Z_X|\le X^{-\eta_Z+o(1)}Q^2\) with a new
+ \(\eta_Z>0\);
+ \item the physical determinant-energy lower bound for \(D_X\);
+ \item a uniform Chowla or Elliott theorem for the growing affine
+ family in \eqref{eq:affine-literal-correlation};
+ \item a full-block cover or the downstream uniform remainder bounds
+ of the original route \citep{WangTPC18};
+ \item a fixed-\(h_0\) Hardy--Littlewood asymptotic;
+ \item a breach of the general sieve parity barrier;
+ \item a prime-pair lower bound or the twin-prime conjecture.
+\end{enumerate}
+No conclusion is specialized from a general fixed nonzero \(h_0\) to
+\(h_0=2\).  The appearance of the two signs
+\(\mu(D_r)\mu(U_r)\) identifies an arithmetic gate; it does not solve
+that gate.  Sieve parity remains a genuine boundary
+\citep{HeathBrown1982Parity,IwaniecKowalski2004}.
+
+\subsection{Conclusion}
+
+The distinguished zero mode is not hidden in the notation.  It is the
+total mass of the literal determinant coefficient and, modulo the
+known large-content error, the complete matched shell.  The three
+most immediate reorganizations have exact outcomes:
+\[
+\begin{array}{ccl}
+\text{Fourier centering}
+&\longrightarrow&
+\text{subtracts }(Z_X/q)\one,\\
+\text{coherent nonzero-frequency reassembly}
+&\longrightarrow&
+\text{returns }-\sum_{r\ne0}\widehat A_{C,q}(r)=Z_X,\\
+\text{conditional expectation}
+&\longrightarrow&
+\text{preserves }Z_X\text{ and inserts }M_n^{-1},\\
+\text{content inversion}
+&\longrightarrow&
+\text{returns the full shell at }t=1.
+\end{array}
+\]
+None creates cancellation.  The coherent Fourier identity does,
+however, identify a valid alternative route: control the full
+phase-sensitive sum of the nonzero modes, including every exceptional
+nonzero mode.
+
+The surviving positive interfaces are the coherent Fourier
+reassembly \eqref{eq:constant-coherent-reassembly} and the
+fixed-determinant affine correlation
+\eqref{eq:affine-literal-correlation}.  The next arithmetic advance
+must either prove a uniform estimate that survives one of these
+literal reassemblies, isolate a rigorously controlled physical sector,
+or establish a sharper impossibility theorem for a proposed transfer.
+Whichever outcome occurs, it must retain the same \(h_0\), the actual
+\(r=0\), \(C=\lfloor J\rfloor\), one global normalization, and the
+strict loss rule \(\Lambda_{\rm phys}<1/400\).

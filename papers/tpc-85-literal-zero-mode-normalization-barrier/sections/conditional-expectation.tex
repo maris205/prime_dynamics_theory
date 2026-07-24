@@ -1,0 +1,208 @@
+\section{Conditional expectation and the fiber-mass barrier}
+\label{sec:conditional-expectation}
+
+A second possible route is to regard determinant aggregation as a
+conditional expectation.  This is exact only after the underlying
+atomic measure is specified.  The resulting norm carries the masses
+of the determinant fibers.
+
+\subsection{A finite atomic theorem}
+
+Let \(\Omega\) be a finite set, let \(\rho\) be a positive measure with
+\(\rho(\{\omega\})>0\) for every \(\omega\in\Omega\), and let
+\[
+ \nu:\Omega\longrightarrow\cB
+\]
+be a finite bin map.  For \(n\in\nu(\Omega)\), define
+\begin{equation}
+ \Omega_n=\nu^{-1}(\{n\}),\qquad
+ M_n=\rho(\Omega_n),\qquad
+ A(n)=\int_{\Omega_n}f\,d\rho,
+ \label{eq:ce-fibers}
+\end{equation}
+where \(f:\Omega\to\C\).  Put
+\begin{equation}
+ Z=\sum_nA(n)=\int_\Omega f\,d\rho,
+ \qquad
+ D_{\rm bin}=\sum_n|A(n)|^2.
+ \label{eq:ce-Z-D}
+\end{equation}
+
+\begin{theorem}[Conditional-expectation normalization identity]
+\label{thm:ce-normalization}
+Let \(\cG=\sigma(\nu)\).  On \(\Omega_n\),
+\begin{equation}
+ \E_\rho(f\mid\cG)=\frac{A(n)}{M_n}.
+ \label{eq:ce-formula}
+\end{equation}
+Consequently,
+\begin{align}
+ \boxed{
+ \|\E_\rho(f\mid\cG)\|_{L^2(\rho)}^2
+ =\sum_n\frac{|A(n)|^2}{M_n},}
+ \label{eq:ce-energy}\\
+ \boxed{
+ \int_\Omega\E_\rho(f\mid\cG)\,d\rho
+ =\int_\Omega f\,d\rho=Z,}
+ \label{eq:ce-preserves-Z}\\
+ \|f\|_{L^2(\rho)}^2
+ =\|\E_\rho(f\mid\cG)\|_{L^2(\rho)}^2
+ +\|f-\E_\rho(f\mid\cG)\|_{L^2(\rho)}^2.
+ \label{eq:ce-pythagoras}
+\end{align}
+In particular, conditional expectation naturally controls the
+fiber-normalized energy in \eqref{eq:ce-energy}, not
+\(D_{\rm bin}\).
+\end{theorem}
+
+\begin{proof}
+A \(\cG\)-measurable function is constant on each nonempty fiber.
+The defining integral identity for conditional expectation forces
+that constant on \(\Omega_n\) to be
+\[
+ \frac{1}{\rho(\Omega_n)}\int_{\Omega_n}f\,d\rho
+ =\frac{A(n)}{M_n}.
+\]
+Integrating its squared modulus gives
+\[
+ \sum_nM_n\left|\frac{A(n)}{M_n}\right|^2
+ =\sum_n\frac{|A(n)|^2}{M_n},
+\]
+which proves \eqref{eq:ce-energy}.  Integrating without the square
+proves \eqref{eq:ce-preserves-Z}.  Finally, conditional expectation
+is the orthogonal projection from \(L^2(\rho)\) onto
+\(L^2(\cG,\rho)\), giving \eqref{eq:ce-pythagoras}.
+\end{proof}
+
+\begin{corollary}[Comparison requires fiber-mass bounds]
+\label{cor:ce-mass-comparison}
+If
+\[
+ 0<M_{\min}\le M_n\le M_{\max}<\infty
+\]
+on the active bins, then
+\begin{equation}
+ M_{\min}\|\E_\rho(f\mid\cG)\|_2^2
+ \le D_{\rm bin}
+ \le
+ M_{\max}\|\E_\rho(f\mid\cG)\|_2^2.
+ \label{eq:ce-mass-comparison}
+\end{equation}
+Without quantitative control of \(M_{\min}\) and \(M_{\max}\), the
+two energies are not uniformly equivalent.
+\end{corollary}
+
+\begin{proof}
+Write
+\[
+ D_{\rm bin}
+ =\sum_n M_n\frac{|A(n)|^2}{M_n}
+\]
+and bound \(M_n\) above and below.
+\end{proof}
+
+\subsection{Application to the determinant map}
+
+Take
+\[
+ \Omega
+ =\{\omega\in\cI_X:c(\omega)\le C\},
+ \qquad
+ \nu(\omega)=\Delta^\#(\omega).
+\]
+With counting measure and \(f(\omega)=w_X(\omega)\),
+\eqref{eq:literal-AC} becomes
+\[
+ A(n)=A_C(n).
+\]
+More generally, a preassigned positive native atom measure can be
+used by absorbing its density into \(f\).  Once that measure is
+chosen, it must remain the same through all bins if one global raw
+normalizer is to be retained.
+
+\begin{proposition}[Literal determinant conditioning]
+\label{prop:literal-ce}
+For the literal determinant map,
+\begin{equation}
+ \|\E(f\mid\sigma(\Delta^\#))\|_2^2
+ =\sum_n\frac{|A_C(n)|^2}{M_n},
+ \qquad
+ \int\E(f\mid\sigma(\Delta^\#))=Z_X.
+ \label{eq:literal-ce}
+\end{equation}
+Therefore:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.3em]
+ \item the conditional-expectation contraction from raw atomic
+ energy does not by itself prove a lower bound for \(D_X\);
+ \item conditional expectation cannot create cancellation of
+ \(Z_X\);
+ \item replacing the pushforward mass \(M_n\) by unit mass in every
+ bin is a new normalization, not an identity.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The two identities are
+\cref{eq:ce-energy,eq:ce-preserves-Z}.  The contraction controls the
+left side of the first identity, while the physical energy is
+\[
+ D_X=\sum_n|A_C(n)|^2.
+\]
+These differ by the factors \(M_n\).  The second identity proves
+part (b).  Finally, the pushforward measure
+\(\nu_\ast\rho\) assigns mass \(M_n\) to bin \(n\).  Replacing it by
+counting measure assigns mass one and therefore reweights bin \(n\)
+by \(M_n^{-1}\), proving part (c).
+\end{proof}
+
+\begin{remark}[Centering after conditioning]
+Subtracting the global mean
+\[
+ f^\circ=f-\frac{Z_X}{\rho(\Omega)}
+\]
+does give \(\int f^\circ\,d\rho=0\), but it uses the unknown
+\(Z_X\).  Its aggregate in bin \(n\) is
+\[
+ A_C(n)-\frac{M_n}{\rho(\Omega)}Z_X,
+\]
+which is not the cyclic centering
+\(A_C(n)-Z_X/q\) unless an additional equal-fiber-mass identity is
+proved.  The two centering procedures must not be conflated.
+\end{remark}
+
+\subsection{Sharp finite examples}
+
+\begin{example}[A single large fiber]
+\label{ex:ce-single-fiber}
+Let \(\Omega=\{1,\ldots,M\}\), give each atom unit mass, put all atoms
+in one bin, and take \(f\equiv1\).  Then
+\[
+ Z=M,\qquad D_{\rm bin}=M^2,\qquad
+ \|\E(f\mid\cG)\|_2^2=M.
+\]
+Thus the conditional-expectation energy and post-bin energy differ
+by the full fiber mass.
+\end{example}
+
+\begin{example}[Raw energy can die inside a bin]
+\label{ex:ce-bin-cancellation}
+Place two unit-mass atoms in one bin and give them values \(1\) and
+\(-1\).  Their raw \(L^2\) energy is \(2\), but
+\[
+ A(n)=0,\qquad D_{\rm bin}=0,\qquad
+ \E(f\mid\cG)=0.
+\]
+Hence positive raw atomic energy does not survive determinant
+aggregation without a separate anti-cancellation or lower-modulus
+statement.
+\end{example}
+
+\begin{example}[Unit-bin normalization can hide arbitrary mass]
+Take two bins with aggregate values \(A(1)=A(2)=1\), but with fiber
+masses \(M_1=1\) and \(M_2=M\).  Then \(D_{\rm bin}=2\), whereas
+\[
+ \|\E(f\mid\cG)\|_2^2=1+\frac1M.
+\]
+Counting each bin with unit mass would return \(2\), but that is the
+norm in a different measure space.
+\end{example}

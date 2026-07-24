@@ -1,0 +1,139 @@
+\section{The content projector returns the full shell}
+\label{sec:content-projector}
+
+The small-content indicator in \eqref{eq:literal-AC} admits an exact
+common-divisor M\"obius expansion.  At nonzero determinant frequency,
+this expansion can expose useful separated phases.  At \(r=0\), its
+principal term is the original unrestricted amplitude.
+
+\subsection{Cumulative common-divisor inversion}
+
+For \(C\ge1\), define
+\begin{equation}
+ \eta_{\le C}(t)
+ =\sum_{\substack{c\mid t\\c\le C}}\mu(t/c).
+ \label{eq:content-eta}
+\end{equation}
+
+\begin{lemma}[Exact cumulative projector]
+\label{lem:content-projector}
+For every positive integer \(G\),
+\begin{equation}
+ \boxed{
+ \one_{G\le C}
+ =\sum_{t\mid G}\eta_{\le C}(t).}
+ \label{eq:content-projector}
+\end{equation}
+Moreover,
+\begin{equation}
+ \eta_{\le C}(1)=1,
+ \qquad
+ \boxed{
+ \sum_{\substack{t\mid G\\t>1}}\eta_{\le C}(t)
+ =-\one_{G>C}.}
+ \label{eq:content-nontrivial-reassembly}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Reversing the divisor sums gives
+\begin{align*}
+ \sum_{t\mid G}\eta_{\le C}(t)
+ &=
+ \sum_{\substack{c\mid G\\c\le C}}
+ \sum_{k\mid G/c}\mu(k).
+\end{align*}
+The inner sum equals one precisely when \(c=G\) and is zero
+otherwise.  This proves \eqref{eq:content-projector}.  The value at
+\(t=1\) is immediate from \eqref{eq:content-eta}.  Subtracting it
+from \eqref{eq:content-projector} gives
+\[
+ \one_{G\le C}-1=-\one_{G>C},
+\]
+which is \eqref{eq:content-nontrivial-reassembly}.
+\end{proof}
+
+\subsection{\texorpdfstring{Physical reassembly at \(r=0\)}
+{Physical reassembly at r=0}}
+
+Apply \cref{lem:content-projector} to
+\[
+ G=c(\omega)
+ =\gcd(N_\alpha(j),N_\gamma(j))
+\]
+for every literal atom \(\omega=(\alpha,\gamma,j)\).
+
+\begin{theorem}[No content-projector centering]
+\label{thm:content-no-centering}
+At the physical cutoff \(C=\lfloor J\rfloor\),
+\begin{equation}
+ \boxed{
+ Z_X
+ =\sum_{\omega\in\cI_X}w_X(\omega)
+  \sum_{t\mid c(\omega)}\eta_{\le C}(t)
+ =\cS_{\rm full}^{\rm sh}-\cS_{>C}^{\rm sh}.}
+ \label{eq:content-physical-reassembly}
+\end{equation}
+More precisely:
+\begin{align}
+ \text{\(t=1\) contribution}
+ &=\cS_{\rm full}^{\rm sh},
+ \label{eq:content-t-one}\\
+ \text{sum of all \(t>1\) contributions}
+ &=-\cS_{>C}^{\rm sh}.
+ \label{eq:content-t-greater-one}
+\end{align}
+Thus the content projector does not annihilate or center the
+distinguished zero mode.
+\end{theorem}
+
+\begin{proof}
+Multiply \eqref{eq:content-projector} by \(w_X(\omega)\) and sum over
+\(\omega\).  The left side is the small-content sum, hence \(Z_X\).
+Because \(\eta_{\le C}(1)=1\), the \(t=1\) term sums every literal atom
+with its original signed coefficient, which is
+\(\cS_{\rm full}^{\rm sh}\).  Equation
+\eqref{eq:content-nontrivial-reassembly} shows pointwise that the
+remaining divisor terms equal \(-\one_{c(\omega)>C}\).  Their sum is
+\(-\cS_{>C}^{\rm sh}\).
+\end{proof}
+
+\begin{corollary}[The principal term contains the hard problem]
+\label{cor:content-hard-principal}
+Using \eqref{eq:literal-large-content-bound},
+\begin{equation}
+ Z_X
+ =\cS_{\rm full}^{\rm sh}+O(X^{o(1)}Q^2).
+ \label{eq:content-full-mod-error}
+\end{equation}
+Therefore a bound
+\(|Z_X|\ll X^{o(1)}Q^2\) is, at the same scale, a cancellation
+statement for the unrestricted full matched shell.  It is not
+obtained by estimating only the nonprincipal projector terms.
+\end{corollary}
+
+\begin{proof}
+Combine \cref{thm:content-no-centering} with
+\eqref{eq:literal-large-content-bound}.
+\end{proof}
+
+\begin{remark}[Exact reassembly versus termwise absolute bounds]
+The useful estimate for the \(t>1\) terms comes from their exact
+reassembly into the large-content shell.  Replacing that signed sum by
+\[
+ \sum_{\omega}|w_X(\omega)|
+ \sum_{\substack{t\mid c(\omega)\\t>1}}
+ |\eta_{\le C}(t)|
+\]
+can be much larger and does not create a bound for the \(t=1\) term.
+The fact that nontrivial divisors appear in the expansion is not, by
+itself, oscillation of the physical zero mode.
+\end{remark}
+
+\begin{remark}[Row calibration is a different operation]
+The calibrated row prefix subtracts a row-dependent term and produces
+two explicit drift legs; see \cref{rem:literal-calibration}.  Content
+inversion acts on the common target gcd.  Neither identity says that
+\(\sum_nA_C(n)\) vanishes, and the two operations must not be combined
+into an unrecorded ``centered'' coefficient.
+\end{remark}

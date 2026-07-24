@@ -1,0 +1,123 @@
+\section{A black-box log-to-unweighted counterexample}
+\label{sec:log-counterexample}
+
+The mismatch between \eqref{eq:lit-tao-log} and the ordinary physical
+sum is not a cosmetic choice of weight.  We now show that no
+structure-free Tauberian principle can reverse it.
+
+\begin{definition}[Dyadic alternating sequence]
+\label{def:dyadic-sequence}
+For \(n\ge1\), define
+\begin{equation}
+ c_n=(-1)^{\lfloor\log_2n\rfloor}.
+ \label{eq:dyadic-sequence}
+\end{equation}
+Thus \(c_n=(-1)^k\) on
+\(2^k\le n<2^{k+1}\).
+\end{definition}
+
+\begin{theorem}[Logarithmic cancellation without ordinary
+cancellation]
+\label{thm:log-counterexample}
+There is an absolute constant \(K_0\) such that, for every \(x\ge2\)
+and \(1\le\omega\le x\),
+\begin{equation}
+ \left|
+ \sum_{x/\omega<n\le x}\frac{c_n}{n}
+ \right|\le K_0.
+ \label{eq:dyadic-uniform-log-bound}
+\end{equation}
+Consequently, for every function satisfying
+\(1\le\omega(x)\le x\) and \(\omega(x)\to\infty\),
+\begin{equation}
+ \sum_{x/\omega(x)<n\le x}\frac{c_n}{n}
+ =o(\log\omega(x)).
+ \label{eq:dyadic-log-cancellation}
+\end{equation}
+On the other hand, for
+\(X_K=2^{K+1}-1\),
+\begin{equation}
+ \sum_{n\le X_K}c_n
+ =\frac{1-(-2)^{K+1}}3,
+ \label{eq:dyadic-large-partial-sum}
+\end{equation}
+so
+\begin{equation}
+ \left|\sum_{n\le X_K}c_n\right|
+ \asymp X_K.
+ \label{eq:dyadic-no-ordinary-cancellation}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let
+\[
+ H_k=\sum_{2^k\le n<2^{k+1}}\frac1n.
+\]
+Integral comparison gives
+\begin{equation}
+ H_k=\log2+O(2^{-k}).
+ \label{eq:dyadic-block-harmonic-mass}
+\end{equation}
+The interval \((x/\omega,x]\) meets at most two dyadic blocks
+partially.  The harmonic mass of each partial block is \(O(1)\).
+All remaining blocks form a consecutive range, say
+\(k=m,\ldots,M\), and their contribution is
+\begin{align*}
+ \sum_{k=m}^M(-1)^kH_k
+ &=
+ \log2\sum_{k=m}^M(-1)^k
+ +O\left(\sum_{k=m}^M2^{-k}\right)
+ =O(1).
+\end{align*}
+This proves the uniform bound
+\eqref{eq:dyadic-uniform-log-bound}.  Dividing it by
+\(\log\omega(x)\to\infty\) proves
+\eqref{eq:dyadic-log-cancellation}.
+
+Every complete block \(2^k\le n<2^{k+1}\) has \(2^k\) terms.
+Therefore
+\[
+ \sum_{n\le X_K}c_n
+ =\sum_{k=0}^K(-1)^k2^k
+ =\frac{1-(-2)^{K+1}}3,
+\]
+which proves
+\cref{eq:dyadic-large-partial-sum,eq:dyadic-no-ordinary-cancellation}.
+\end{proof}
+
+\begin{corollary}[No structure-free Tauberian black box]
+\label{cor:no-tauberian-black-box}
+For bounded sequences in general, an estimate of the form
+\begin{equation}
+ \sum_{x/\omega(x)<n\le x}\frac{a_n}{n}
+ =o(\log\omega(x))
+ \label{eq:abstract-log-hypothesis}
+\end{equation}
+for every \(1\le\omega(x)\le x\) with
+\(\omega(x)\to\infty\) does not imply
+\(\sum_{n\le X}a_n=o(X)\).
+\end{corollary}
+
+\begin{proof}
+Take \(a_n=c_n\) and apply \cref{thm:log-counterexample}.
+\end{proof}
+
+\begin{remark}[The precise scope of the counterexample]
+\label{rem:counterexample-not-multiplicative}
+The sequence \(c_n\) is not multiplicative.  Therefore
+\cref{cor:no-tauberian-black-box} does not show that a conversion is
+impossible for M\"obius or Liouville correlations.  It shows that such
+a conversion must use additional structure not present in the
+logarithmic estimate alone.  In particular, partial summation cannot
+be run backwards without quantitative information controlling the
+ordinary partial sums or their variation across scales.
+\end{remark}
+
+\begin{remark}[Direction of easy transfer]
+An ordinary estimate with sufficiently uniform control of partial
+sums can often be converted to a logarithmically weighted estimate by
+summation by parts.  The counterexample concerns the reverse
+direction, which loses the dyadic block mass hidden by the \(1/n\)
+weight.
+\end{remark}

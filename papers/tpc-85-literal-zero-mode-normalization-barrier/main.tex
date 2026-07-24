@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.74in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,longtable,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Literal Zero-Mode Disintegration: Constant-Mode Identities, Conditional-Expectation Normalization Barriers, and the Fixed-Shift Affine Correlation Gate},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\E}{\mathbb E}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{Literal Zero-Mode Disintegration:\\
+Constant-Mode Identities, Conditional-Expectation Normalization
+Barriers,\\
+and the Fixed-Shift Affine Correlation Gate}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\noindent\textbf{Keywords:} distinguished zero mode; determinant
+coefficient; conditional expectation; normalization barrier;
+fixed-shift affine correlation; logarithmic average; sieve parity.\\[0.5em]
+\noindent\textbf{Convention.} Every physical statement retains the
+same fixed nonzero integer shift \(h_0\), the literal matched-shell
+coefficient, the actual determinant frequency \(r=0\), the content
+cutoff \(C=\lfloor J\rfloor\), complete native keys, and one global
+post-aggregation normalization.  The symbols \(A_C,Z_X,D_X\) refer
+throughout to the raw hard matched coefficient; calibrated drift legs
+are returned only in the downstream physical ledger.  No
+averaged-shift, almost-all-scale, frozen-family, or bin-renormalized
+substitute is identified with the physical packet.\\[0.5em]
+\noindent\textbf{MSC 2020:} Primary 11N37, 42A16; Secondary 11A25,
+28A35, 60A10.
+
+\input{sections/introduction}
+\input{sections/literal-zero-mode}
+\input{sections/constant-mode}
+\input{sections/conditional-expectation}
+\input{sections/content-projector}
+\input{sections/affine-interface}
+\input{sections/literature-quantifiers}
+\input{sections/logarithmic-counterexample}
+\input{sections/endpoint-ledger}
+\input{sections/claim-boundary}
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

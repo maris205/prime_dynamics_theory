@@ -1,0 +1,190 @@
+\section{No-wrap constant-mode decomposition}
+\label{sec:constant-mode}
+
+The determinant support of the physical coefficient lies in
+\[
+ [-B_{\mathscr D}Q,B_{\mathscr D}Q]\cap\Z
+\]
+for a fixed \(B_{\mathscr D}\) \citep{WangTPC32}.  We retain the
+strong physical padding used there and choose an integer \(q\) so that
+\begin{equation}
+ q>2B_{\mathscr D}Q+2,
+ \qquad q\asymp Q.
+ \label{eq:constant-no-wrap-q}
+\end{equation}
+Thus reduction modulo \(q\) is injective on the support and no
+nonzero determinant bin is congruent to zero modulo \(q\).  Define
+the padded cyclic coefficient
+\begin{equation}
+ \widetilde A_C(a)
+ =\sum_{\substack{n\in\Z\\n\equiv a\;(\mathrm{mod}\ q)}}A_C(n),
+ \qquad a\in\Z/q\Z.
+ \label{eq:constant-padded-A}
+\end{equation}
+The no-wrap condition gives
+\begin{equation}
+ \sum_{a\; (q)}|\widetilde A_C(a)|^2=D_X,
+ \qquad
+ \sum_{a\; (q)}\widetilde A_C(a)=Z_X,
+ \qquad
+ \widetilde A_C(0)=A_C(0)=0.
+ \label{eq:constant-padded-identities}
+\end{equation}
+
+\subsection{The orthogonal projection}
+
+Equip \(\C^{\Z/q\Z}\) with the unnormalized inner product
+\[
+ \langle f,g\rangle_q
+ =\sum_{a\; (q)}f(a)\overline{g(a)}.
+\]
+Let \(\one_q\) be the constant-one vector and define
+\begin{equation}
+ P_0f=\frac{\langle f,\one_q\rangle_q}{q}\one_q,
+ \qquad
+ P_\perp=I-P_0.
+ \label{eq:constant-projections}
+\end{equation}
+
+\begin{theorem}[Exact constant-mode disintegration and coherent
+reassembly]
+\label{thm:constant-mode}
+Set
+\begin{equation}
+ A_C^\circ=P_\perp\widetilde A_C
+ =\widetilde A_C-\frac{Z_X}{q}\one_q.
+ \label{eq:constant-centered-A}
+\end{equation}
+Then
+\begin{align}
+ \sum_{a\; (q)}A_C^\circ(a)&=0,
+ \label{eq:constant-centered-sum}\\
+ \widetilde A_C
+ &=A_C^\circ+\frac{Z_X}{q}\one_q,
+ \label{eq:constant-decomposition}\\
+ \boxed{
+ D_X
+ =\|A_C^\circ\|_{\ell^2(\Z/q\Z)}^2
+  +\frac{|Z_X|^2}{q}.}
+ \label{eq:constant-energy-decomposition}
+\end{align}
+For the unnormalized finite Fourier transform
+\[
+ \widehat f(r)=\sum_{a\; (q)}f(a)e_q(-ra),
+\]
+one has
+\begin{equation}
+ \widehat{A_C^\circ}(0)=0,
+ \qquad
+ \widehat{A_C^\circ}(r)
+ =\widehat A_{C,q}(r)\quad(r\ne0),
+ \label{eq:constant-fourier-decomposition}
+\end{equation}
+and hence
+\begin{equation}
+ \boxed{
+ \sum_{\substack{r\; (q)\\r\ne0}}
+ |\widehat A_{C,q}(r)|^2
+ =qD_X-|Z_X|^2
+ =q\|A_C^\circ\|_2^2.}
+ \label{eq:constant-nonzero-frequency-energy}
+\end{equation}
+The deleted determinant bin also gives the exact coherent identity
+\begin{equation}
+ \boxed{
+ Z_X=-\sum_{\substack{r\; (q)\\r\ne0}}
+       \widehat A_{C,q}(r).}
+ \label{eq:constant-coherent-reassembly}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:constant-padded-identities},
+\[
+ P_0\widetilde A_C=\frac{Z_X}{q}\one_q.
+\]
+The ranges of \(P_0\) and \(P_\perp\) are orthogonal, while
+\(\|\one_q\|_2^2=q\).  Pythagoras therefore gives
+\eqref{eq:constant-energy-decomposition}.  The Fourier transform of
+\((Z_X/q)\one_q\) equals \(Z_X\) at \(r=0\) and zero otherwise.
+This proves \eqref{eq:constant-fourier-decomposition}.  Finite
+Parseval then gives
+\eqref{eq:constant-nonzero-frequency-energy}.  Finally, Fourier
+inversion at the cyclic coordinate \(a=0\), together with
+\(\widetilde A_C(0)=0\), gives
+\[
+ 0=\frac1q\left(
+ Z_X+\sum_{\substack{r\; (q)\\r\ne0}}
+ \widehat A_{C,q}(r)\right),
+\]
+which is \eqref{eq:constant-coherent-reassembly}.
+\end{proof}
+
+\begin{corollary}[What centering alone does and does not prove]
+\label{cor:centering-no-cancellation}
+Let
+\[
+ S_X=\#\supp A_C.
+\]
+For the literal coefficient,
+\begin{equation}
+ \boxed{
+ |Z_X|^2\le S_XD_X\le(q-1)D_X\le qD_X.}
+ \label{eq:constant-cauchy}
+\end{equation}
+The final \(qD_X\) bound is the projection bound for an unrestricted
+cyclic vector, but it is not sharp for the physically padded
+coefficient because the zero coordinate is absent.  The centering
+identity alone produces no fixed-power improvement over
+\eqref{eq:constant-cauchy}.  On the other hand,
+\eqref{eq:constant-coherent-reassembly} shows that a genuinely
+coherent estimate for all nonzero Fourier modes can estimate \(Z_X\);
+merely declaring the centered zero Fourier mode to vanish cannot.
+\end{corollary}
+
+\begin{proof}
+Cauchy--Schwarz on the exact support gives
+\[
+ |Z_X|^2
+ =\left|\sum_{a\in\supp\widetilde A_C}
+            \widetilde A_C(a)\right|^2
+ \le S_XD_X.
+\]
+The strong padding and \(\widetilde A_C(0)=0\) give
+\(S_X\le q-1\).  The last assertions follow from
+\cref{eq:constant-energy-decomposition,eq:constant-coherent-reassembly}.
+\end{proof}
+
+\begin{remark}[Dependence on the ambient group]
+The decomposition is canonical after the physical no-wrap modulus
+\(q\) has
+been chosen.  Centering only on the set
+\(\supp A_C\) is not an invariant replacement: exact cancellations
+can change that support, and adding zero bins changes its average.
+Different admissible no-wrap values of \(q\) give different constant
+vectors, although the physical sum \(Z_X\) itself is independent of
+\(q\).
+\end{remark}
+
+\begin{remark}[Weaker no-wrap padding]
+If one assumes only
+\(q>\diam(\supp A_C)\), reduction remains injective but a nonzero
+integer bin can lie in residue class zero.  In that case Fourier
+inversion gives the more general identity
+\[
+ Z_X=q\widetilde A_C(0)
+ -\sum_{\substack{r\; (q)\\r\ne0}}\widehat A_{C,q}(r).
+\]
+The strong physical choice \eqref{eq:constant-no-wrap-q} is what
+identifies \(\widetilde A_C(0)\) with the deleted literal bin
+\(A_C(0)=0\).
+\end{remark}
+
+\begin{example}[Deleting the bin \(n=0\) is not centering]
+Fix any \(z\in\C\) and take an abstract coefficient supported at
+\(n=1\) with \(A(1)=z\).  Then \(A(0)=0\), but
+\(\widehat A(0)=z\) and \(D=|z|^2\).  This finite example is not a
+model of the physical arithmetic; it isolates the logical
+nonimplication between the two zero statements in
+\cref{prop:two-zeros}.
+\end{example}

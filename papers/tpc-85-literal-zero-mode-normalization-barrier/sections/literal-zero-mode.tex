@@ -1,0 +1,241 @@
+\section{The literal matched coefficient and its distinguished zero mode}
+\label{sec:literal-zero-mode}
+
+We restate the minimum part of the TPC-32 packet needed for the
+normalization analysis.  This prevents an abstract coefficient
+sequence from being silently substituted for the physical object.
+
+\subsection{Rows, targets, and complete matched atoms}
+
+Let the physical rows be
+\[
+ \alpha=(\ell_\alpha,d_\alpha),\qquad
+ m_\alpha=\ell_\alpha d_\alpha\asymp Q,
+\]
+and similarly for \(\gamma\).  For an allowed orbit index \(j\), set
+\begin{equation}
+ N_\alpha(j)=m_\alpha j+h_0,
+ \qquad
+ N_\gamma(j)=m_\gamma j+h_0.
+ \label{eq:literal-targets}
+\end{equation}
+The primitive support conditions inherited from the packet ensure
+that every common target divisor can be cancelled against \(j\), so
+that it divides \(m_\alpha-m_\gamma\)
+\citep{WangTPC30,WangTPC32}.
+
+For a cutoff \(Y\), write the cumulative divisor prefix as
+\begin{equation}
+ \mathsf A_{m,Y}(j)
+ =\sum_{\substack{w\le Y\\w\mid mj+h_0}}b_R(w),
+ \label{eq:literal-divisor-prefix}
+\end{equation}
+where \(b_R\) is the divisor coefficient fixed by the physical
+construction.  The matched cutoff kernel is
+\begin{equation}
+ \cK^{\rm sh}_{\alpha,\gamma}(j)
+ =
+ \mathsf A_{m_\alpha,U_0}(j)
+ \mathsf A_{m_\gamma,U_0}(j)
+ -
+ \mathsf A_{m_\alpha,T}(j)
+ \mathsf A_{m_\gamma,T}(j).
+ \label{eq:literal-matched-kernel}
+\end{equation}
+Put
+\[
+ \mathsf C_m
+ =\mathsf A_{m,U_0}-\mathsf A_{m,T},
+ \qquad
+ \mathsf H_m
+ =\frac{\mathsf A_{m,U_0}+\mathsf A_{m,T}}2
+ =\mathsf A_{m,T}+\frac12\mathsf C_m.
+\]
+The three physical channels and the exact two-leg polarization are
+\begin{equation}
+ \cK^{\rm sh}_{\alpha,\gamma}
+ =
+ \mathsf A_{m_\alpha,T}\mathsf C_{m_\gamma}
+ +\mathsf C_{m_\alpha}\mathsf A_{m_\gamma,T}
+ +\mathsf C_{m_\alpha}\mathsf C_{m_\gamma}
+ \label{eq:literal-three-channel-expansion}
+\end{equation}
+and
+\begin{equation}
+ \boxed{
+ \cK^{\rm sh}_{\alpha,\gamma}
+ =\mathsf C_{m_\alpha}\mathsf H_{m_\gamma}
+  +\mathsf H_{m_\alpha}\mathsf C_{m_\gamma}.}
+ \label{eq:literal-two-leg-polarization}
+\end{equation}
+Both terms in \eqref{eq:literal-two-leg-polarization} are retained;
+none of the arguments below deletes a polarization or separates the
+three channels by a triangle inequality.
+
+Let \(\cI_X\) denote the complete finite set of allowed triples
+\(\omega=(\alpha,\gamma,j)\).  Define
+\begin{equation}
+ w_X(\omega)
+ =
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \mathfrak A_{\alpha,\gamma}(j)
+ \cK^{\rm sh}_{\alpha,\gamma}(j).
+ \label{eq:literal-complete-atom}
+\end{equation}
+Here the two \(\gamma\)'s are the literal opened-row coefficients and
+\(\mathfrak A_{\alpha,\gamma}(j)\) is the actual joint multiplier.  It
+contains the off-diagonal row mask, the fixed residue conditions, and
+the physical smooth weights.  Thus \(w_X\) is a signed or complex
+amplitude, not its absolute majorant.
+
+\begin{remark}[Calibration convention]
+\label{rem:literal-calibration}
+The calibrated prefix used in TPC-32 moves an explicit mean term into
+two drift legs.  Those legs are part of the literal matched-shell
+ledger.  The operation does not assert that the determinant
+coefficient introduced below has zero total sum.
+\end{remark}
+
+\subsection{Content and normalized determinant}
+
+For \(\omega=(\alpha,\gamma,j)\), put
+\begin{equation}
+ c(\omega)
+ =\gcd(N_\alpha(j),N_\gamma(j)),
+ \qquad
+ \Delta^\#(\omega)
+ =\frac{m_\alpha-m_\gamma}{c(\omega)}.
+ \label{eq:literal-content-determinant}
+\end{equation}
+The primitive support makes \(\Delta^\#(\omega)\) an integer whenever
+the off-diagonal atom is active.  At the physical cutoff
+\begin{equation}
+ \boxed{C=\lfloor J\rfloor,}
+ \label{eq:literal-C-equals-J}
+\end{equation}
+define
+\begin{equation}
+ \boxed{
+ A_C(n)
+ =
+ \sum_{\omega\in\cI_X}
+ w_X(\omega)
+ \one_{c(\omega)\le C}
+ \one_{\Delta^\#(\omega)=n},
+ \qquad n\in\Z.}
+ \label{eq:literal-AC}
+\end{equation}
+This is aggregation before squaring.  The two physical quantities of
+interest are
+\begin{equation}
+ \boxed{
+ Z_X=\sum_{n\in\Z}A_C(n),
+ \qquad
+ D_X=\sum_{n\in\Z}|A_C(n)|^2.}
+ \label{eq:literal-Z-D}
+\end{equation}
+The first is the distinguished zero mode; the second is the literal
+post-bin energy.
+
+\begin{proposition}[Two meanings of zero]
+\label{prop:two-zeros}
+The off-diagonal row mask implies
+\begin{equation}
+ A_C(0)=0.
+ \label{eq:literal-bin-zero}
+\end{equation}
+For every auxiliary modulus \(q\), however,
+\begin{equation}
+ \widehat A_{C,q}(0)
+ :=\sum_{n\in\Z}A_C(n)e_q(0)
+ =Z_X,
+ \label{eq:literal-fourier-zero}
+\end{equation}
+and \eqref{eq:literal-bin-zero} gives no cancellation in
+\eqref{eq:literal-fourier-zero}.
+\end{proposition}
+
+\begin{proof}
+If \(\Delta^\#(\omega)=0\), then
+\(m_\alpha=m_\gamma\).  Such an atom is deleted by the actual
+off-diagonal mask, proving \eqref{eq:literal-bin-zero}.  At Fourier
+frequency \(r=0\), the character
+\(e_q(-r n)\) equals one for every determinant bin \(n\), which gives
+\eqref{eq:literal-fourier-zero}.  Deleting the single bin \(n=0\)
+does not force the sum over the remaining bins to vanish.
+\end{proof}
+
+\begin{remark}[Frequency typing]
+The \(r=0\) in \eqref{eq:literal-fourier-zero} is the finite Fourier
+frequency of the normalized determinant.  It is not an orbit-variable
+Poisson zero mode and not a zero mode of a centered divisor kernel.
+\end{remark}
+
+\subsection{The full-shell splice}
+
+Let
+\begin{align}
+ \cS_{\rm full}^{\rm sh}
+ &=\sum_{\omega\in\cI_X}w_X(\omega),\\
+ \cS_{>C}^{\rm sh}
+ &=\sum_{\omega\in\cI_X}
+   w_X(\omega)\one_{c(\omega)>C}.
+ \label{eq:literal-large-content-shell}
+\end{align}
+
+\begin{proposition}[Exact zero-mode/full-shell identity]
+\label{prop:zero-full-shell}
+At the literal cutoff \eqref{eq:literal-C-equals-J},
+\begin{equation}
+ \boxed{
+ Z_X
+ =\cS_{\rm full}^{\rm sh}-\cS_{>C}^{\rm sh}.}
+ \label{eq:literal-zero-full-shell}
+\end{equation}
+In the inherited physical range,
+\begin{equation}
+ |\cS_{>C}^{\rm sh}|
+ \ll_{\varepsilon,h_0,\cD}
+ X^\varepsilon
+ \left(Q^2+\frac{XQ}{C}\right)
+ =X^{o(1)}Q^2.
+ \label{eq:literal-large-content-bound}
+\end{equation}
+Consequently, up to an \(X^{o(1)}Q^2\) error, estimating \(Z_X\) is
+the same problem as estimating the complete matched shell.
+\end{proposition}
+
+\begin{proof}
+Exact contents partition \(\cI_X\), so summing
+\eqref{eq:literal-AC} over \(n\) gives the small-content shell.  Its
+complement is \eqref{eq:literal-large-content-shell}, proving
+\eqref{eq:literal-zero-full-shell}.  The first inequality in
+\eqref{eq:literal-large-content-bound} is the inherited
+large-content estimate \citep{WangTPC30,WangTPC32}.  The physical
+scale relation \(JQ=X^{1+o(1)}\), together with
+\(C=\lfloor J\rfloor\), gives
+\(XQ/C=X^{o(1)}Q^2\).
+\end{proof}
+
+\begin{corollary}[The coherent completion required from generic
+frequencies]
+\label{cor:generic-coherent-completion}
+Under the strong physical no-wrap padding
+\eqref{eq:constant-no-wrap-q}, the distinguished mode satisfies
+\[
+ Z_X=-\sum_{r\ne0}\widehat A_{C,q}(r).
+\]
+Consequently, a generic-frequency or mean-square theorem controls
+\(Z_X\) only after it also controls the coherent sum of the retained
+nonzero modes and every exceptional nonzero mode.  A direct estimate
+at \(r=0\) is sufficient, but it is not logically necessary.
+\end{corollary}
+
+\begin{proof}
+This is \eqref{eq:constant-coherent-reassembly}.  Bounds for most
+individual modes do not estimate the displayed sum when the
+uncontrolled nonzero modes or the phase-coherent reassembly can carry
+the full mass.  Conversely, any estimate for the complete coherent
+sum is already an estimate for \(Z_X\), regardless of whether a
+separate pointwise theorem was stated at \(r=0\).
+\end{proof}

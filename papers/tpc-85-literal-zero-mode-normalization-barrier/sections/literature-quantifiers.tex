@@ -1,0 +1,193 @@
+\section{Quantifier audit of available correlation theorems}
+\label{sec:literature-quantifiers}
+
+The affine sequence \eqref{eq:affine-literal-correlation} resembles
+several established multiplicative-correlation problems.  Resemblance
+of the summand is not enough: the averaging measure, coefficient
+range, selected shift, selected scale, interval length, and outer
+reassembly are theorem hypotheses.
+
+\subsection{Fixed-form logarithmic correlation}
+
+For fixed \(a_1,a_2\in\N\) and
+\(b_1,b_2\in\Z_{\ge0}\) with
+\(a_1b_2-a_2b_1\ne0\), Tao proved the logarithmically averaged
+two-point Chowla estimate
+\begin{equation}
+ \sum_{x/\omega(x)<n\le x}
+ \frac{\lambda(a_1n+b_1)\lambda(a_2n+b_2)}{n}
+ =o(\log\omega(x)),
+ \label{eq:lit-tao-log}
+\end{equation}
+where \(1\le\omega(x)\le x\) and \(\omega(x)\to\infty\)
+\citep{Tao2016LogChowla}.  The Elliott form of the theorem treats
+more general bounded multiplicative functions under its
+nonpretentiousness hypotheses and contains fixed-form M\"obius
+analogues.
+
+This is a genuine parity-breaking correlation theorem in its stated
+logarithmic setting.  It does not, without additional arguments,
+provide the physical estimate because:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.3em]
+ \item the slopes \(s\) and \(a=\ell jv\), and the intercepts, vary
+ polynomially with \(X\);
+ \item the required sum is dyadic or ordinary rather than weighted
+ by \(1/n\);
+ \item the packet contains many intervals, some of length \(O(1)\);
+ \item fixed residue factors, growing auxiliary moduli, and the
+ actual joint mask must be retained;
+ \item all columns and both polarizations must be reassembled with a
+ quantitative fixed-power budget.
+\end{enumerate}
+The entropy decrement argument is one mechanism in the proof of
+\eqref{eq:lit-tao-log}; it is not a black-box rule that deletes the
+logarithmic weight or supplies uniformity in growing affine
+coefficients.
+
+\subsection{Averaged shifts}
+
+Matom\"aki, Radziwi{\l}{\l}, and Tao proved, for fixed \(k\) and
+\(1\le H=H(X)\le X\) with \(H(X)\to\infty\),
+\begin{equation}
+ \sum_{h_1,\ldots,h_k\le H}
+ \left|
+ \sum_{n\le X}
+ \lambda(n+h_1)\cdots\lambda(n+h_k)
+ \right|
+ =o(H^kX).
+ \label{eq:lit-mrt-shift-average}
+\end{equation}
+See \citet{MatomakiRadziwillTao2015}.  This ordinary, unweighted
+estimate is strong on average over shifts.  It does not select one
+prescribed \(h_0\).  An exceptional shift may be the same \(h_0\) for
+every \(X\) while \eqref{eq:lit-mrt-shift-average} remains true.
+Nor does the theorem directly carry the growing two-slope geometry
+and outer mask of \eqref{eq:affine-literal-correlation}.
+
+\subsection{Almost-all scales}
+
+Tao and Ter\"av\"ainen proved unweighted cases of Chowla and Elliott
+at all scales outside a set of zero logarithmic density
+\citep{TaoTeravainen2019}.  For fixed Liouville shifts, the stated
+Chowla cases include odd \(k\) and \(k=2\).  In particular, their
+binary result is much closer to the ordinary fixed-shift correlation than
+\eqref{eq:lit-tao-log}.  The remaining quantifier is nevertheless
+essential: a prescribed sparse family of physical scales may lie
+inside a zero-logarithmic-density exceptional set.  A block theorem
+that must hold at every selected scale cannot discard that family
+without a separate scale-selection or interpolation argument.
+
+\subsection{Almost-all short intervals}
+
+The short-interval theory of Matom\"aki and Radziwi{\l}{\l} gives
+mean-value control for multiplicative functions on almost all short
+intervals \citep{MatomakiRadziwill2016}.  Such results are a central
+input to later correlation theorems.  A literal affine fiber,
+however, has a prescribed origin determined by
+\((\ell,j,s,v,\widetilde d_0)\).  An exceptional set of interval
+origins may contain that prescribed origin.  In addition, the bound
+\(|I|=O(1)\) permitted by \eqref{eq:affine-fiber-length} supplies no
+asymptotic short-interval parameter.
+
+The same paper also proves a fixed-shift ordinary bound away from the
+trivial extremum for the mean of
+\(\lambda(n)\lambda(n+1)\): its absolute value is at most
+\(1-\delta\) for some \(\delta>0\).  This is an important
+nontrivial-correlation theorem, but it is not an \(o(X)\) cancellation
+statement, a power-saving estimate, or a theorem uniform over the
+growing affine family in \eqref{eq:affine-literal-correlation}.
+
+\clearpage
+\subsection{The quantifier table}
+
+\begin{table}[ht]
+\centering
+\small
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{
+  >{\raggedright\arraybackslash}p{0.18\textwidth}
+  >{\raggedright\arraybackslash}p{0.28\textwidth}
+  >{\raggedright\arraybackslash}X}
+\toprule
+Result & Native strength & Missing literal input\\
+\midrule
+Tao 2016
+& Fixed nonproportional affine forms; logarithmic weight; general
+two-point Elliott form
+& Ordinary/dyadic weight, uniform growing coefficients, short-fiber
+and complete outer-reassembly bounds\\
+\addlinespace
+Matom\"aki--Radziwi{\l}{\l}--Tao 2015
+& Ordinary correlations averaged over \(h_1,\ldots,h_k\)
+& Selection of the prescribed \(h_0\), the physical two-slope
+family, and the literal mask\\
+\addlinespace
+Tao--Ter\"av\"ainen 2019
+& Unweighted correlations at scales outside a zero-log-density set
+& Every prescribed physical scale, growing affine coefficients, and
+a fixed-power reassembly rate\\
+\addlinespace
+Matom\"aki--Radziwi{\l}{\l} 2016
+& Multiplicative mean values on almost all short intervals
+& The prescribed fiber origin, two-sign affine product, and
+\(O(1)\)-length fibers\\
+\bottomrule
+\end{tabularx}
+\caption{The theorem may be strong in its native quantifiers while
+still failing to imply the literal fixed-\(h_0\) packet estimate.}
+\label{tab:quantifier-audit}
+\end{table}
+
+\subsection{Elementary localization barriers}
+
+\begin{proposition}[Averages do not select a prescribed member]
+\label{prop:lit-average-selection}
+Let \(h_0\) be fixed.  A bound of the form
+\[
+ \frac1H\sum_{h\le H}|B_X(h)|=o(1)
+\]
+does not logically imply \(B_X(h_0)=o(1)\).  Likewise, a statement
+holding outside a zero-logarithmic-density set of scales does not
+logically imply the statement along a prescribed sparse sequence of
+scales.
+\end{proposition}
+
+\begin{proof}
+For the first assertion, set \(B_X(h_0)=1\) and \(B_X(h)=0\) for
+\(h\ne h_0\).  The average is \(1/H=o(1)\), while the selected value
+is one.  For the second, place every prescribed sparse scale in the
+exceptional set.  For example, the set
+\(\{2^k:k\ge0\}\) has zero logarithmic density since
+\[
+ \frac{1}{\log X}
+ \sum_{\substack{2^k\le X}}\frac1{2^k}
+ \longrightarrow0.
+\]
+The almost-all-scale assertion may therefore hold off that set while
+failing at every selected dyadic scale.
+\end{proof}
+
+\begin{remark}[Logical countermodel versus arithmetic counterexample]
+\Cref{prop:lit-average-selection} is a statement about quantifiers.
+It does not assert that the actual M\"obius correlation is exceptional
+at \(h_0\) or at dyadic scales.  It shows only that an additional
+localization theorem is required before an averaged result can be
+invoked for the literal packet.
+\end{remark}
+
+\begin{corollary}[What a callable theorem must match]
+\label{cor:lit-callable-checklist}
+To enter \eqref{eq:affine-global-interface} without an unreturned
+average, an analytic theorem or a proved auxiliary transfer must
+explicitly match:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.5em]
+ \item the same fixed \(h_0\);
+ \item the actual ranges of \(a,s,\widetilde d_0,\widetilde u_0\);
+ \item the ordinary physical interval and its weight;
+ \item long and bounded-length fibers;
+ \item periodic, coprimality, and joint-mask factors;
+ \item a uniform rate surviving the complete outer sum.
+\end{enumerate}
+Failure to match one item may still yield a valid frozen, averaged, or
+restricted-sector theorem, but not the literal \(Z_X\) bound.
+\end{corollary}

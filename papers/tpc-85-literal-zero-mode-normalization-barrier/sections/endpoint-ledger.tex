@@ -1,0 +1,178 @@
+\section{Endpoint ledger and operational stop rules}
+\label{sec:endpoint-ledger}
+
+The normalization barriers above matter because the physical route
+has a fixed endpoint budget.  We record the two-exponent transfer
+without changing the hypotheses of TPC-81 and TPC-82
+\citep{WangTPC81,WangTPC82}.
+Throughout this section \(Z_X\) and \(D_X\) remain the raw hard
+quantities of \eqref{eq:literal-Z-D}.  The calibrated drift is restored
+only after that raw gate and is charged separately in
+\(\Lambda_{\rm phys}\).
+
+\subsection{Zero mode and determinant energy}
+
+Assume \(D_X>0\) and define
+\begin{equation}
+ \mathfrak F_{h_0}(X)
+ =\frac{|Z_X|^2}{D_X}.
+ \label{eq:endpoint-flatness}
+\end{equation}
+At the critical physical scales,
+\begin{equation}
+ Q=X^{267/400+o(1)},
+ \qquad
+ J=X^{133/400+o(1)}.
+ \label{eq:endpoint-critical-scales}
+\end{equation}
+
+\begin{proposition}[Two-exponent transfer]
+\label{prop:endpoint-two-exponent}
+Suppose the literal coefficient at the same fixed \(h_0\) and
+\(C=\lfloor J\rfloor\) satisfies
+\begin{align}
+ |Z_X|
+ &\le X^{-\eta_Z+o(1)}Q^2,
+ \label{eq:endpoint-Z-hypothesis}\\
+ D_X
+ &\ge X^{-\lambda_D+o(1)}Q^3J^2.
+ \label{eq:endpoint-D-hypothesis}
+\end{align}
+Then
+\begin{equation}
+ \boxed{
+ \mathfrak F_{h_0}(X)
+ \le
+ X^{1/400+\lambda_D-2\eta_Z+o(1)}.}
+ \label{eq:endpoint-two-exponent-bound}
+\end{equation}
+The recorded hypotheses imply the TPC-32 threshold
+\begin{equation}
+ \mathfrak F_{h_0}(X)\le X^{1/400+o(1)}
+ \label{eq:endpoint-tpc32-threshold}
+\end{equation}
+whenever
+\begin{equation}
+ 2\eta_Z\ge\lambda_D.
+ \label{eq:endpoint-compatibility}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Divide the square of \eqref{eq:endpoint-Z-hypothesis} by
+\eqref{eq:endpoint-D-hypothesis}:
+\[
+ \mathfrak F_{h_0}(X)
+ \le
+ X^{\lambda_D-2\eta_Z+o(1)}\frac{Q}{J^2}.
+\]
+By \eqref{eq:endpoint-critical-scales},
+\[
+ \frac{Q}{J^2}
+ =X^{(267-266)/400+o(1)}
+ =X^{1/400+o(1)}.
+\]
+This proves \eqref{eq:endpoint-two-exponent-bound}, and
+\eqref{eq:endpoint-compatibility} gives
+\eqref{eq:endpoint-tpc32-threshold}.
+\end{proof}
+
+\begin{remark}[A sufficient ledger, not a converse]
+\Cref{prop:endpoint-two-exponent} describes what the two recorded
+bounds imply.  It does not claim that
+\eqref{eq:endpoint-compatibility} is necessary for every possible
+proof of \eqref{eq:endpoint-tpc32-threshold}.  Equality
+\(2\eta_Z=\lambda_D\) reaches the conditional threshold with no
+fixed-power reserve.
+\end{remark}
+
+\subsection{The strict physical loss rule}
+
+Let \(\Lambda_{\rm phys}\) denote the sum of all fixed-power losses
+actually incurred by the complete physical route, including any
+activation, localization, mask decomposition, dictionary, short-fiber,
+outer-reassembly, and remainder losses that are not already part of a
+baseline exponent.
+
+\begin{definition}[Strict endpoint rule]
+\label{def:strict-endpoint-rule}
+The route continues only under
+\begin{equation}
+ \boxed{\Lambda_{\rm phys}<\frac1{400}.}
+ \label{eq:strict-endpoint-rule}
+\end{equation}
+If \(\Lambda_{\rm phys}=1/400\) or
+\(\Lambda_{\rm phys}>1/400\), the fixed-power route stops.
+\end{definition}
+
+\begin{remark}[The baseline is not a second allowance]
+The \(1/400\) in
+\eqref{eq:endpoint-two-exponent-bound} is the geometric baseline
+\(Q/J^2\).  It is not another \(1/400\) that may be spent after
+\eqref{eq:strict-endpoint-rule}.  Likewise,
+\(2\eta_Z=\lambda_D\) supplies zero slack; it is not evidence of a
+positive reserve.
+\end{remark}
+
+\subsection{Route-II success and kill certificates}
+
+\begin{definition}[Literal zero-mode success certificate]
+\label{def:route-success}
+A proposed affine-correlation advance qualifies as a literal
+\(\Ltwo\) input for \eqref{eq:endpoint-Z-hypothesis} only if it
+verifies all of the following:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.5em]
+ \item one exact identity returning the complete \(Z_X\) of
+ \eqref{eq:literal-Z-D}, with the same fixed \(h_0\),
+ \(C=\lfloor J\rfloor\), and Fourier frequency \(r=0\);
+ \item both polarizations, all matched channels, complete native keys,
+ and the actual joint mask;
+ \item the physical post-aggregation normalization, with no
+ fiber-by-fiber unit renormalization;
+ \item uniform estimates for growing affine coefficients, with long
+ and \(O(1)\)-length fibers separately charged;
+ \item no unreturned average over shifts, coefficients, interval
+ origins, frequencies, or scales;
+ \item if nonzero determinant frequencies are used in place of a
+ direct \(r=0\) estimate, the complete coherent identity
+ \eqref{eq:constant-coherent-reassembly}, including every exceptional
+ nonzero mode, is returned;
+ \item a complete fixed-power ledger satisfying
+ \eqref{eq:strict-endpoint-rule}.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Kill or downgrade certificate]
+\label{def:route-kill}
+A calculation is downgraded to a frozen, averaged, restricted-sector,
+or negative-transfer result if any of the following occurs:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.3em]
+ \item only one fixed column is controlled and the outer row/mask
+ reassembly is not returned;
+ \item absolute outer summation costs an unbudgeted fixed power;
+ \item the invoked theorem fixes its slopes while the physical slopes
+ grow with \(X\);
+ \item a positive proportion of the required mass lies in fibers with
+ no asymptotic length parameter and no separate outer-reassembly or
+ exact short-fiber estimate controls that sector;
+ \item the estimate is only logarithmic, averaged-shift,
+ almost-all-origin, or almost-all-scale, with no proved localization
+ returning the physical member;
+ \item the estimate is only generic-\(r\), with no control of the
+ exceptional nonzero modes and no coherent completion through
+ \eqref{eq:constant-coherent-reassembly};
+ \item conditional expectation replaces \(D_X\) by
+ \(\sum_n|A_C(n)|^2/M_n\);
+ \item the available \(o(1)\) is not uniform enough to support a
+ claimed fixed-power exponent;
+ \item the complete physical loss reaches or exceeds \(1/400\).
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[A downgrade can still be a theorem]
+\Cref{def:route-kill} is a claim-label rule, not a reason to discard a
+correct result.  A frozen logarithmic affine theorem, an averaged
+parameter theorem, a restricted-sector saving, or an exact no-go
+statement may be independently publishable.  It must simply not be
+reported as the literal fixed-\(h_0\) zero-mode estimate.
+\end{remark}
