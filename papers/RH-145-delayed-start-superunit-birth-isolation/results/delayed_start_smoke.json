@@ -1,0 +1,74 @@
+{
+  "audit_summary": {
+    "empty_kernel_superunit_count": 2,
+    "first_clean_suffix_chain_count": null,
+    "first_clean_suffix_cutoff": null,
+    "first_clean_suffix_minimum_terminal_floor": null,
+    "minimum_superunit_candidate_family_floor": 9.535221756069195,
+    "suffix_count": 2,
+    "superunit_birth_anchor_count": 1,
+    "superunit_birth_count": 2
+  },
+  "route_consequence": "The only two superunit birth coefficients occur at one finite anchor and have empty candidate-family kernels. Deleting the finite prefix through sigma=0.08 leaves a clean 18-chain suffix from sigma=0.04, with all outward terminal floors positive. This makes delayed start logically admissible, but finite anchors do not prove that no superunit birth recurs at untested future levels.",
+  "status": "rh145_delayed_start_superunit_birth_isolation",
+  "suffixes": [
+    {
+      "clean_forward_suffix": false,
+      "clean_outward_suffix": false,
+      "cutoff_sigma": 0.16,
+      "forward_chain_count": 30,
+      "forward_safe_count": 28,
+      "minimum_positive_outward_terminal_floor": 1.0365725459187261e-10,
+      "outward_chain_count": 30,
+      "outward_positive_count": 28
+    },
+    {
+      "clean_forward_suffix": false,
+      "clean_outward_suffix": false,
+      "cutoff_sigma": 0.08,
+      "forward_chain_count": 24,
+      "forward_safe_count": 22,
+      "minimum_positive_outward_terminal_floor": 1.5542612581684546e-10,
+      "outward_chain_count": 24,
+      "outward_positive_count": 22
+    }
+  ],
+  "superunit_events": [
+    {
+      "birth": 9.405889994899066,
+      "candidate_family_minimum_floor": 9.535221756069195,
+      "empty_backward_kernel": true,
+      "greedy_bound": 10.133532780260646,
+      "side": "left",
+      "sigma": 0.08,
+      "source_time": 5,
+      "target_time": 6,
+      "threshold": 1e-08
+    },
+    {
+      "birth": 9.405889994899066,
+      "candidate_family_minimum_floor": 9.535221756069195,
+      "empty_backward_kernel": true,
+      "greedy_bound": 10.133532780260646,
+      "side": "left",
+      "sigma": 0.08,
+      "source_time": 5,
+      "target_time": 6,
+      "threshold": 1e-06
+    }
+  ],
+  "theorem_boundary": {
+    "all_future_levels_are_free_of_superunit_births": false,
+    "all_level_delayed_start_reset_constructed": false,
+    "clean_finer_anchor_suffix_from_sigma_0_04": false,
+    "delayed_start_directional_support_theorem": true,
+    "finite_anchor_superunit_events_isolated": false,
+    "finite_prefix_invariance_of_limsup_liminf": true,
+    "hilbert_polya_operator": false,
+    "infinitely_recurrent_superunit_floor_obstruction": true,
+    "normalized_base_liminf": false,
+    "riemann_hypothesis": false,
+    "stage_A": false,
+    "uniform_controlled_tail_gap": false
+  }
+}
