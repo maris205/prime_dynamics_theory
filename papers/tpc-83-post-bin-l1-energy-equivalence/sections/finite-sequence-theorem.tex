@@ -1,0 +1,96 @@
+\section{A sharp finite-sequence theorem}
+\label{sec:finite-sequence}
+
+The algebra is independent of arithmetic and is stated over
+\(\C\).
+
+\begin{theorem}[Mass--energy sandwich]
+\label{thm:mass-energy-sandwich}
+Let \(a=(a_n)\) be a nonzero finitely supported complex sequence and
+write
+\[
+ S=\#\supp a,\qquad
+ L=\|a\|_\infty,\qquad
+ M=\|a\|_1,\qquad
+ D=\|a\|_2^2.
+\]
+Then
+\begin{equation}
+\boxed{
+ \frac{M^2}{S}\le D\le LM.}
+\label{eq:mass-energy-sandwich}
+\end{equation}
+Equivalently,
+\begin{equation}
+ M\ge\frac{D}{L},
+ \qquad
+ S\ge\frac{D}{L^2}.
+\label{eq:reverse-sandwich}
+\end{equation}
+Equality holds in either inequality of
+\eqref{eq:mass-energy-sandwich} if and only if
+\(|a_n|\) is constant on \(\supp a\).  In that case both
+inequalities are equalities.
+\end{theorem}
+
+\begin{proof}
+Cauchy--Schwarz on the exact support gives
+\[
+ M^2
+ =\left(\sum_{n\in\supp a}|a_n|\right)^2
+ \le
+ S\sum_{n\in\supp a}|a_n|^2
+ =SD.
+\]
+This is the first inequality.  For the second,
+\[
+ D=\sum_n|a_n|^2
+ \le L\sum_n|a_n|
+ =LM.
+\]
+The first formula in \eqref{eq:reverse-sandwich} is a rearrangement
+of \(D\le LM\).  Also
+\[
+ D=\sum_{n\in\supp a}|a_n|^2\le SL^2,
+\]
+which gives the second formula.
+
+Equality in Cauchy--Schwarz occurs exactly when the vector
+\((|a_n|)_{n\in\supp a}\) is proportional to the all-ones vector.
+Equality in \(D\le LM\) occurs exactly when each nonzero
+\(|a_n|\) equals \(L\).  These are the same constant-modulus
+condition.  This is the classical equality case of the elementary
+norm inequalities \citep{HardyLittlewoodPolya1952}.
+\end{proof}
+
+\begin{remark}[Phases are unrestricted]
+The theorem uses only the moduli of the post-bin entries.  The phases
+of the nonzero \(a_n\) can be arbitrary.  Consequently equality in
+\eqref{eq:mass-energy-sandwich} says nothing about the zero mode
+\(\sum_na_n\).
+\end{remark}
+
+\begin{corollary}[Effective support]
+\label{cor:effective-support}
+The quantity
+\[
+ S_{\rm eff}(a):=\frac{M^2}{D}
+\]
+satisfies
+\[
+ 1\le S_{\rm eff}(a)\le S.
+\]
+It equals \(S\) precisely for constant-modulus support.
+\end{corollary}
+
+\begin{proof}
+The upper bound is the first inequality of
+\eqref{eq:mass-energy-sandwich}.  The lower bound follows from
+\(M^2\ge D\), since
+\[
+ \left(\sum_n|a_n|\right)^2
+ \ge\sum_n|a_n|^2.
+\]
+The equality characterization follows from
+\cref{thm:mass-energy-sandwich}.
+\end{proof}

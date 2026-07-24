@@ -1,0 +1,112 @@
+\section{Sharpness at every exponent}
+\label{sec:sharpness}
+
+The constant-modulus equality cases of
+\cref{thm:mass-energy-sandwich} already show sharpness in finite
+dimension.  We now match the arithmetic normalization and show that
+the exponent transfers cannot be improved from only
+\[
+ S_X\ll Q_X,\qquad
+ L_X\ll X^{o(1)}N_{0,X}/Q_X.
+\]
+Rounding an integer support size changes only fixed or subpower
+factors and will be suppressed.
+
+\begin{proposition}[Sharpness of mass-to-energy loss]
+\label{prop:sharp-mass-energy}
+Fix \(\mu\ge0\).  There are finite sequences with
+\[
+ S_X\asymp Q_X,\qquad
+ L_X\le\frac{N_{0,X}}{Q_X},
+\]
+for which
+\[
+ M_X=X^{-\mu}N_{0,X},
+\qquad
+ D_X\asymp
+ X^{-2\mu}\frac{N_{0,X}^2}{Q_X}.
+\]
+Thus the exponent \(2\mu\) in
+\eqref{eq:energy-from-mass} is best possible.
+\end{proposition}
+
+\begin{proof}
+Choose \(S_X=\lceil Q_X\rceil\) nonzero coordinates and give each
+coordinate modulus
+\[
+ t_X=\frac{X^{-\mu}N_{0,X}}{S_X}.
+\]
+Then
+\[
+ M_X=S_Xt_X=X^{-\mu}N_{0,X}
+\]
+and
+\[
+ D_X=S_Xt_X^2
+=\frac{X^{-2\mu}N_{0,X}^2}{S_X}
+\asymp
+X^{-2\mu}\frac{N_{0,X}^2}{Q_X}.
+\]
+Also \(t_X\ll N_{0,X}/Q_X\).  Arbitrary unit phases may be attached
+to the coordinates.
+\end{proof}
+
+\begin{proposition}[Sharpness of energy-to-mass and support losses]
+\label{prop:sharp-energy-mass}
+Fix \(\lambda\ge0\) in a range for which
+\(X^{-\lambda}Q_X\to\infty\).  There are finite sequences satisfying
+\[
+ L_X=\frac{N_{0,X}}{Q_X}
+\]
+and
+\begin{align}
+ S_X&\asymp X^{-\lambda}Q_X,\label{eq:sharp-support}\\
+ M_X&\asymp X^{-\lambda}N_{0,X},\label{eq:sharp-mass}\\
+ D_X&\asymp
+ X^{-\lambda}\frac{N_{0,X}^2}{Q_X}.
+\label{eq:sharp-energy}
+\end{align}
+Consequently, neither the mass exponent \(\lambda\) nor the support
+exponent \(\lambda\) in
+\cref{thm:two-sided-transfer} can be improved from the stated
+envelope.
+\end{proposition}
+
+\begin{proof}
+Choose
+\[
+ S_X=\lfloor X^{-\lambda}Q_X\rfloor
+\]
+coordinates, all of modulus \(N_{0,X}/Q_X\).  Then
+\eqref{eq:sharp-support}--\eqref{eq:sharp-energy} follow by direct
+calculation.  This sequence has constant modulus on its support and
+therefore attains equality on both sides of
+\eqref{eq:mass-energy-sandwich}.
+\end{proof}
+
+\begin{remark}[Very sparse range]
+If \(X^{-\lambda}Q_X\) is bounded, the lower support conclusion is
+at most a constant-scale statement.  The theorem remains valid, but
+there is no stronger power-scale support conclusion to extract from
+the envelope alone.
+\end{remark}
+
+\begin{example}[Why the support upper bound is needed]
+Let \(M=1\) and spread this mass uniformly over \(K\) coordinates.
+Then \(D=1/K\).  Allowing \(K\) to exceed the physical
+\(O(Q_X)\) determinant range would make energy arbitrarily smaller
+than the scale in \eqref{eq:energy-from-mass}.  Thus the first
+transfer uses the verified physical support interval, not merely
+finiteness.
+\end{example}
+
+\begin{example}[Why the singleton bound is needed]
+A one-point sequence of amplitude \(T\) has
+\[
+ D=T^2,\qquad M=T,\qquad L=T.
+\]
+Without an upper bound for \(L\) in the physical normalization, an
+energy lower bound does not determine the normalized mass scale
+\(N_{0,X}\).  The reverse transfer therefore genuinely uses the
+TPC-32 singleton estimate.
+\end{example}

@@ -1,0 +1,106 @@
+\section{The literal matched determinant coefficient}
+\label{sec:literal-coefficient}
+
+Fix once and for all a nonzero integer shift \(h_0\).  We work on
+the high-\(\beta\) TPC-32 matched packet
+\begin{equation}
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)}.
+\label{eq:high-beta-scales}
+\end{equation}
+In particular \(J_X\ll Q_X\).  Put
+\begin{equation}
+ C_X=\lfloor J_X\rfloor,\qquad
+ N_{0,X}=J_XQ_X^2.
+\label{eq:matched-scales}
+\end{equation}
+Hence \(C_X\le J_X\) and \(C_X\ll Q_X\), so the imported TPC-32
+support, singleton, and energy estimates apply in their stated
+range.
+All fixed support and smoothness data are suppressed from the
+notation; implied constants may depend on them and on \(h_0\), but
+not on \(X\).
+
+The signed normalized-determinant coefficient is
+\begin{equation}
+ A_X(n):=A_{C_X}(n),\qquad n\in\Z,
+\label{eq:literal-A}
+\end{equation}
+where \(A_{C_X}\) is formed only after the three matched physical
+channels and every native contribution in the determinant fiber have
+been summed.  Define
+\begin{equation}
+\begin{aligned}
+ S_X&=\#\supp A_X,\\
+ L_X&=\|A_X\|_\infty,\\
+ M_X&=\|A_X\|_1=\sum_n|A_X(n)|,\\
+ D_X&=\|A_X\|_2^2=\sum_n|A_X(n)|^2.
+\end{aligned}
+\label{eq:SLMD}
+\end{equation}
+When \(A_X=0\), all four quantities are zero.  Every division by
+\(S_X\) below is restricted to the nonzero case.
+
+\begin{proposition}[Verified TPC-32 envelope]
+\label{prop:tpc32-envelope}
+For the literal coefficient in \eqref{eq:literal-A},
+\begin{align}
+ S_X&\ll Q_X,\label{eq:support-upper}\\
+ M_X&\ll X^{o(1)}N_{0,X},\label{eq:mass-upper}\\
+ L_X&\ll
+ X^{o(1)}\frac{N_{0,X}}{Q_X},\label{eq:atom-upper}\\
+ D_X&\ll
+ X^{o(1)}\frac{N_{0,X}^2}{Q_X}.
+\label{eq:energy-upper}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+TPC-32 proves that the determinant support is contained in a fixed
+multiple of
+\([ -Q_X,Q_X]\cap(\Z\setminus\{0\})\), giving
+\eqref{eq:support-upper}.  It also constructs a post-fiber absolute
+majorant \(A_{C_X}^+\) with
+\[
+ \sum_n A_{C_X}^+(n)\ll X^{o(1)}N_{0,X}
+\]
+and
+\[
+ \max_n A_{C_X}^+(n)
+ \ll X^{o(1)}Q_X(C_X+J_X).
+\]
+Since \(C_X\le J_X\) and
+\(N_{0,X}/Q_X=J_XQ_X\), the second estimate is
+\[
+ \max_n A_{C_X}^+(n)
+ \ll X^{o(1)}\frac{N_{0,X}}{Q_X}.
+\]
+The literal inequalities
+\[
+ |A_X(n)|\le A_{C_X}^+(n)
+\]
+give \eqref{eq:mass-upper} and \eqref{eq:atom-upper}.  Finally,
+\[
+ D_X\le L_XM_X
+\]
+gives \eqref{eq:energy-upper}; this is also the energy estimate stated
+in TPC-32 \citep{WangTPC32}.
+\end{proof}
+
+\begin{remark}[The atom bound is already normalized]
+\label{rem:no-renormalization}
+The bound \eqref{eq:atom-upper} is used only in the normalization in
+which TPC-32 proves it for the complete matched coefficient.  It is
+not divided by a number of channels, triplets, fibers, or
+components, and no diagonal or componentwise normalization is
+inserted.  Any alternative normalization would require a new literal
+comparison theorem.
+\end{remark}
+
+\begin{remark}[Actual versus available support]
+The number \(S_X\) is the exact nonzero support after determinant
+aggregation.  The interval of length \(O(Q_X)\) supplies only the
+upper bound \eqref{eq:support-upper}.  It does not say that
+\(S_X\asymp Q_X\); a lower support bound will instead follow
+conditionally from energy survival in \cref{cor:support-forced}.
+\end{remark}

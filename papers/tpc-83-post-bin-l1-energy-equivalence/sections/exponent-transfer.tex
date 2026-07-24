@@ -1,0 +1,164 @@
+\section{Sharp exponent transfer on the matched shell}
+\label{sec:exponent-transfer}
+
+We now apply \cref{thm:mass-energy-sandwich} to the literal
+coefficient \(A_X\).  Every occurrence of \(o(1)\) may denote a
+different function tending to zero.
+
+\begin{theorem}[Two-sided post-bin exponent transfer]
+\label{thm:two-sided-transfer}
+Let \(A_X=A_{C_X}\) be the fixed-\(h_0\) matched coefficient of
+\cref{sec:literal-coefficient}, and assume the verified envelope
+\cref{prop:tpc32-envelope}.
+
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item If, for some fixed \(\mu\ge0\),
+\begin{equation}
+ M_X\ge X^{-\mu+o(1)}N_{0,X},
+\label{eq:mass-lower-mu}
+\end{equation}
+then
+\begin{equation}
+\boxed{
+ D_X\ge
+ X^{-2\mu+o(1)}
+ \frac{N_{0,X}^2}{Q_X}.}
+\label{eq:energy-from-mass}
+\end{equation}
+
+\item If, for some fixed \(\lambda\ge0\),
+\begin{equation}
+ D_X\ge
+ X^{-\lambda+o(1)}
+ \frac{N_{0,X}^2}{Q_X},
+\label{eq:energy-lower-lambda}
+\end{equation}
+then
+\begin{equation}
+\boxed{
+ M_X\ge
+ X^{-\lambda+o(1)}N_{0,X}.}
+\label{eq:mass-from-energy}
+\end{equation}
+
+\item Under \eqref{eq:energy-lower-lambda}, the exact determinant
+support satisfies
+\begin{equation}
+\boxed{
+ S_X\ge X^{-\lambda-o(1)}Q_X.}
+\label{eq:support-from-energy}
+\end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:support-upper} and the first half of
+\eqref{eq:mass-energy-sandwich},
+\[
+ D_X\ge\frac{M_X^2}{S_X}
+ \gg
+ X^{-2\mu+o(1)}
+ \frac{N_{0,X}^2}{Q_X},
+\]
+which proves (i), after absorbing fixed constants into \(X^{o(1)}\).
+
+For (ii), use \(D_X\le L_XM_X\) and
+\eqref{eq:atom-upper}:
+\[
+ M_X
+ \ge\frac{D_X}{L_X}
+ \gg
+ \frac{
+ X^{-\lambda+o(1)}N_{0,X}^2/Q_X
+ }{
+ X^{o(1)}N_{0,X}/Q_X
+ }
+ =
+ X^{-\lambda+o(1)}N_{0,X}.
+\]
+
+Finally, \(D_X\le S_XL_X^2\).  Hence
+\[
+ S_X
+ \ge\frac{D_X}{L_X^2}
+ \gg
+ \frac{
+ X^{-\lambda+o(1)}N_{0,X}^2/Q_X
+ }{
+ X^{o(1)}N_{0,X}^2/Q_X^2
+ }
+ =
+ X^{-\lambda-o(1)}Q_X.
+\]
+This proves (iii).
+\end{proof}
+
+\begin{definition}[Subpower natural survival]
+\label{def:subpower-survival}
+We say that the post-bin mass survives at its natural scale if
+\begin{equation}
+ M_X\ge X^{-o(1)}N_{0,X}.
+\label{eq:natural-mass}
+\end{equation}
+We say that the determinant energy survives at its natural scale if
+\begin{equation}
+ D_X\ge
+ X^{-o(1)}\frac{N_{0,X}^2}{Q_X}.
+\label{eq:natural-energy}
+\end{equation}
+These are lower-bound statements.  Their matching upper bounds are
+already contained in \cref{prop:tpc32-envelope}.
+\end{definition}
+
+\begin{corollary}[Subpower equivalence]
+\label{cor:subpower-equivalence}
+For the literal matched coefficient,
+\begin{equation}
+\boxed{
+ M_X\ge X^{-o(1)}N_{0,X}
+ \quad\Longleftrightarrow\quad
+ D_X\ge
+ X^{-o(1)}\frac{N_{0,X}^2}{Q_X}.}
+\label{eq:subpower-equivalence}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+If \(M_X\ge X^{-o(1)}N_{0,X}\), then
+\[
+ D_X\ge\frac{M_X^2}{S_X}
+ \ge X^{-o(1)}\frac{N_{0,X}^2}{Q_X}
+\]
+by \eqref{eq:support-upper}.  Conversely, if the displayed
+determinant-energy lower bound holds, then
+\[
+ M_X\ge\frac{D_X}{L_X}
+ \ge X^{-o(1)}N_{0,X}
+\]
+by \eqref{eq:atom-upper}.  Thus no varying ``fixed exponent'' is
+being inserted into \cref{thm:two-sided-transfer}.
+\end{proof}
+
+\begin{corollary}[Natural energy forces broad actual support]
+\label{cor:support-forced}
+If \eqref{eq:natural-energy} holds, then
+\[
+ S_X\ge X^{-o(1)}Q_X.
+\]
+Together with \(S_X\ll Q_X\), the actual support then occupies the
+available determinant scale up to subpower loss.
+\end{corollary}
+
+\begin{proof}
+Repeat the proof of part (iii) of
+\cref{thm:two-sided-transfer} with the subpower lower bound
+\eqref{eq:natural-energy}.
+\end{proof}
+
+\begin{remark}[The asymmetry is real]
+A mass loss \(\mu\) may be spread evenly across \(Q_X\) bins, so the
+energy loss doubles to \(2\mu\).  In the reverse direction, energy
+can be carried by only \(X^{-\lambda}Q_X\) bins at the maximal
+allowed amplitude, giving mass loss \(\lambda\).  The model sequences
+in \cref{sec:sharpness} make both mechanisms exact.
+\end{remark}

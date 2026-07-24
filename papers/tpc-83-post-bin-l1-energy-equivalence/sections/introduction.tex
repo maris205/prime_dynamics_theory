@@ -1,0 +1,82 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The TPC-81 transfer architecture isolates the determinant energy
+\[
+ D_X=\sum_n|A_{C_X}(n)|^2
+\]
+as one of the two remaining arithmetic statistics in the matched
+fixed-shift route \citep{WangTPC81}.  TPC-82 then records the
+zero-slack relation between energy survival and distinguished
+zero-mode cancellation \citep{WangTPC82}.  A lower bound for \(D_X\)
+is not presently known at the natural scale.  Before returning to the
+more elaborate pre-bin completion machinery, it is useful to ask a
+strictly post-bin question:
+\begin{quote}
+How much of the determinant energy problem is already equivalent to
+survival of the actual post-bin \(\ell^1\) mass?
+\end{quote}
+
+For the literal coefficient, the answer is exact and asymmetric.  A
+lower \(\ell^1\) mass with loss \(\mu\) yields an energy lower bound
+with loss \(2\mu\).  Conversely, an energy lower bound with loss
+\(\lambda\) yields an \(\ell^1\) lower bound with the same loss
+\(\lambda\).  At subpower resolution, the two survival statements
+are equivalent.  This uses only two physical upper bounds already
+proved in TPC-32: the determinant support has size \(O(Q_X)\), and a
+single determinant bin has amplitude at most
+\(X^{o(1)}N_{0,X}/Q_X\) \citep{WangTPC32}.
+
+The result is elementary, but it closes a useful interface.  It
+replaces the broad question ``does the energy survive binning?'' by
+the equivalent subpower question ``does a natural amount of
+\(\ell^1\) mass survive after binning?''  This is not a replacement
+of arithmetic by norm interpolation.  TPC-32 supplies only the upper
+bound
+\[
+ M_X\ll X^{o(1)}N_{0,X};
+\]
+the matching lower bound remains open.  Moreover, \(M_X\) is formed
+after all literal atoms with the same determinant have been summed.
+A large raw absolute mass gives no such lower bound.
+
+The paper has five main conclusions.
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item We prove the sharp universal inequalities
+\[
+ M^2/S\le D\le LM
+\]
+for a finite complex sequence, including all equality cases.
+\item We insert the actual TPC-32 support and singleton bounds at
+\(C_X=\lfloor J_X\rfloor\), obtaining the two-sided exponent
+transfer.
+\item We prove that natural determinant energy forces a quantitatively
+large actual support.  Thus energy cannot survive at its natural
+scale on a subpower-small fraction of the available determinant
+range.
+\item We give extremizing model sequences showing that the factors
+\(2\mu\), \(\lambda\), and the support exponent cannot be improved
+from the stated data.
+\item We separate the actual post-bin mass from every pre-bin or raw
+absolute majorant and give exact cancellation counterexamples.
+\end{enumerate}
+
+The distinction from the distinguished zero frequency is equally
+important.  The mass
+\[
+ M_X=\sum_n|A_X(n)|
+\]
+forgets the phases between different determinant bins.  The zero
+mode
+\[
+ Z_X=\sum_n A_X(n)
+\]
+depends on those phases.  Two sequences can have identical
+\((S,L,M,D)\) and opposite zero-mode behavior.  Therefore the present
+equivalence advances the energy side only; it neither proves nor
+models zero-frequency cancellation.
+
+All physical statements keep one prescribed \(h_0\ne0\), the actual
+coefficient \(A_{C_X}\), the complete matched aggregation, and the
+global TPC-32 normalization.  No assertion is specialized to
+\(h_0=2\).

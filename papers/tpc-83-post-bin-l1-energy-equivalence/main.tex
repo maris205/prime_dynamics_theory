@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.74in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Post-Bin L1 Mass and Determinant-Energy Survival at a Fixed Shift},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{Post-Bin \(\ell^1\) Mass and Determinant-Energy Survival\\
+at a Fixed Shift:\\
+Sharp Two-Sided Exponent Transfer for the Matched Shell}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\noindent\textbf{Keywords:} fixed shift; determinant coefficient;
+post-bin mass; energy survival; sharp norm interpolation; matched
+shell; endpoint audit.\\[0.5em]
+\noindent\textbf{Convention.} Every arithmetic statement concerns
+the high-\(\beta\) TPC-32 post-bin coefficient at one fixed nonzero
+\(h_0\), with
+\(Q_X=X^{267/400+o(1)}\),
+\(J_X=X^{133/400+o(1)}\), and
+\(C_X=\lfloor J_X\rfloor\).  Thus \(C_X\le J_X\ll Q_X\), as required
+by the imported determinant envelope.  Complete native aggregation,
+exact active support, and the original global normalization are
+retained.  The post-bin \(\ell^1\) mass is never replaced by a
+pre-bin or raw absolute majorant.\\[0.5em]
+\noindent\textbf{MSC 2020:} Primary 11N37, 15A63; Secondary 11A25,
+42A16.
+
+\input{sections/introduction}
+\input{sections/literal-coefficient}
+\input{sections/finite-sequence-theorem}
+\input{sections/exponent-transfer}
+\input{sections/sharpness}
+\input{sections/non-substitution}
+\input{sections/endpoint-audit}
+\input{sections/claim-boundary}
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

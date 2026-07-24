@@ -1,0 +1,131 @@
+\section{Why raw and pre-bin masses cannot be substituted}
+\label{sec:non-substitution}
+
+The distinction between a post-bin coefficient and an atomic
+majorant is exact.  Let \(\cY_X\) be a native pre-bin key set, let
+\(\nu_X:\cY_X\to\Z\) be the determinant label, and write the literal
+atomic contribution as \(b_X(y)\).  In the simplest unit-multiplier
+model,
+\begin{equation}
+ A_X(n)=
+ \sum_{\substack{y\in\cY_X\\\nu_X(y)=n}}b_X(y).
+\label{eq:atomic-binning}
+\end{equation}
+The same discussion applies with archived multipliers absorbed into
+\(b_X(y)\).
+
+Define the fiberwise absolute majorant and raw absolute mass by
+\begin{equation}
+ A_X^+(n)=
+ \sum_{\substack{y\in\cY_X\\\nu_X(y)=n}}|b_X(y)|,
+ \qquad
+ M_{{\rm raw},X}=\sum_{y\in\cY_X}|b_X(y)|.
+\label{eq:raw-majorant}
+\end{equation}
+Then
+\begin{equation}
+ M_X=\sum_n|A_X(n)|
+ \le\sum_nA_X^+(n)
+ =M_{{\rm raw},X}.
+\label{eq:one-way-raw}
+\end{equation}
+
+\begin{proposition}[No reverse raw-mass inequality]
+\label{prop:no-raw-reverse}
+There is no positive universal constant \(c\) such that
+\[
+ M_X\ge c\,M_{{\rm raw},X}
+\]
+for all literal determinant aggregations, even when the raw support,
+raw absolute values, determinant fiber, and global normalization are
+fixed.
+\end{proposition}
+
+\begin{proof}
+Put two atoms in the same determinant fiber and take their
+contributions to be \(1\) and \(-1\).  Then
+\[
+ M_{{\rm raw},X}=2,\qquad A_X(n)=0,\qquad M_X=D_X=0.
+\]
+Scaling both atoms makes the raw mass arbitrarily large while the
+post-bin coefficient remains zero.
+\end{proof}
+
+\begin{corollary}[Majorants give upper bounds only]
+\label{cor:majorant-upper-only}
+The two TPC-32 majorant statistics
+\[
+ \sum_nA_{C_X}^+(n)
+ \quad\text{and}\quad
+ \max_nA_{C_X}^+(n)
+\]
+validly imply upper bounds for \(M_X\) and \(L_X\).  They do not
+imply a lower bound for \(M_X\), \(D_X\), or \(S_X\).
+\end{corollary}
+
+\begin{proof}
+The upper implications follow from
+\(|A_X(n)|\le A_{C_X}^+(n)\).  The counterexample in
+\cref{prop:no-raw-reverse} rules out every positive reverse
+implication.
+\end{proof}
+
+\begin{remark}[No channelwise renormalization]
+The cancellation in \cref{prop:no-raw-reverse} occurs before the
+post-bin statistics are measured.  Renormalizing each atom, channel,
+triplet, or component separately would erase that cancellation and
+change the coefficient.  The only allowed \(M_X\) is the norm of the
+already aggregated \(A_X\) in the original global normalization.
+\end{remark}
+
+\subsection{Mass and energy do not control the zero mode}
+
+Let
+\[
+ Z_X=\sum_nA_X(n)
+\]
+be the distinguished zero-frequency coefficient.
+
+\begin{proposition}[Identical norm data, different zero modes]
+\label{prop:norms-not-zero-mode}
+For every even \(S\) and every \(L>0\), there are two sequences with
+identical \((S,L,M,D)\) but zero modes of magnitudes \(SL\) and
+\(0\), respectively.
+\end{proposition}
+
+\begin{proof}
+On a support of size \(S\), take
+\[
+ a_n=L
+\]
+for every coordinate and take
+\[
+ b_n=(-1)^nL.
+\]
+Both sequences satisfy
+\[
+ \#\supp=S,\qquad
+ \|\cdot\|_\infty=L,\qquad
+ \|\cdot\|_1=SL,\qquad
+ \|\cdot\|_2^2=SL^2.
+\]
+The first zero mode is \(SL\), while the second is zero.
+\end{proof}
+
+\begin{remark}[No flatness theorem]
+\Cref{prop:norms-not-zero-mode} shows that even exact knowledge of
+all four post-bin statistics in \eqref{eq:SLMD} does not prove the
+TPC-32 distinguished-frequency flatness condition.  The current
+paper concerns energy survival, not cancellation among determinant
+bins.
+\end{remark}
+
+\subsection{Observation versus premise}
+
+Numerically observing \(M_X\) or \(D_X\) on a finite cutoff is useful
+for locating possible loss.  It is not a growing-\(X\) lower bound.
+Likewise, an exact upper bound for the raw majorant is not evidence
+that the post-bin mass is close to that upper bound.  A valid
+arithmetic input must be stated directly for \(M_X\) or \(D_X\) with
+the fixed \(h_0\), the literal coefficient, and the original
+quantifiers.

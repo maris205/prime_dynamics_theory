@@ -1,0 +1,108 @@
+\section{The exponent and endpoint audit}
+\label{sec:endpoint-audit}
+
+\subsection{What exponent enters the energy ledger}
+
+Suppose a future argument proves
+\[
+ M_X\ge X^{-\mu+o(1)}N_{0,X}.
+\]
+\Cref{thm:two-sided-transfer} certifies the determinant-energy loss
+\begin{equation}
+ \lambda_D\le2\mu
+\label{eq:lambda-from-mu}
+\end{equation}
+in the notation
+\[
+ D_X\ge
+ X^{-\lambda_D+o(1)}
+ \frac{N_{0,X}^2}{Q_X}.
+\]
+This is a one-way certified upper bound on the loss exponent; the
+actual energy may be larger.  Conversely, an independently proved
+energy loss \(\lambda_D\) certifies a post-bin mass loss at most
+\(\lambda_D\).
+
+The TPC-82 zero-slack ledger compares this energy loss with a
+distinguished-zero-mode gain \(\eta_Z\):
+\begin{equation}
+ 2\eta_Z\ge\lambda_D.
+\label{eq:zero-slack-import}
+\end{equation}
+Thus, if the mass route is the only energy input and there are no
+additional energy losses, the sufficient compatibility condition is
+\[
+ \eta_Z\ge\mu.
+\]
+If an auxiliary squared-energy loss \(\lambda_{\rm aux}\) is present,
+the recorded condition becomes
+\[
+ 2\eta_Z\ge2\mu+\lambda_{\rm aux}.
+\]
+The present paper proves none of these lower or cancellation
+hypotheses; it only identifies their exact transfer.
+
+\subsection{The strict physical loss rule}
+
+The \(1/400\) appearing at the high-row TPC-32 flatness endpoint is
+not an allowance that may be reused for mass, energy, dictionary, or
+cover losses.  In the full physical comparison, every fixed-power
+loss must be derived in the same literal carrier and counted once.
+Writing their complete sum as \(\Lambda_{\rm phys}\), the operational
+rule remains
+\begin{equation}
+\boxed{
+ \Lambda_{\rm phys}<\frac1{400}
+ \quad\text{to continue};\qquad
+ \Lambda_{\rm phys}\ge\frac1{400}
+ \quad\text{to stop}.}
+\label{eq:strict-loss-boundary}
+\end{equation}
+Equality is in the stopping case.  An open term cannot be assigned
+zero loss, and \eqref{eq:lambda-from-mu} cannot be counted twice under
+both the mass and energy names.
+
+\subsection{The L0/L1/L2 ledger}
+
+\begin{definition}[Stage labels]
+\label{def:stage-labels}
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
+\item \(\Lzero\) is finite algebra independent of the physical
+carrier.
+\item \(\Lone\) is an exact interface retaining the fixed nonzero
+\(h_0\), literal coefficient, complete native aggregation, actual
+support, global normalization, and original quantifiers.
+\item \(\Ltwo\) is a new asymptotic arithmetic estimate for that
+literal growing carrier, strong enough to reduce a positive exponent
+in the physical ledger.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Stage classification of this paper]
+\label{prop:stage-classification}
+\Cref{thm:mass-energy-sandwich} is an exact \(\Lzero\) theorem.
+\Cref{thm:two-sided-transfer,cor:subpower-equivalence} form an exact
+\(\Lone\) equivalence for the actual TPC-32 matched coefficient.  This
+paper proves no unconditional \(\Ltwo\) estimate.
+\end{proposition}
+
+\begin{proof}
+The finite theorem uses no arithmetic.  The transfer inserts the
+verified literal support and singleton bounds while preserving every
+item in \cref{def:stage-labels}(2).  However, neither
+\eqref{eq:mass-lower-mu} nor
+\eqref{eq:energy-lower-lambda} is proved here for any growing
+physical packet.  Hence no new asymptotic lower bound is available to
+enter the \(\Ltwo\) ledger.
+\end{proof}
+
+\begin{remark}[What would count as the next advance]
+A proof of
+\[
+ M_X\ge X^{-o(1)}N_{0,X}
+\]
+for the actual fixed-\(h_0\) coefficient would, by
+\cref{cor:subpower-equivalence}, close the natural determinant-energy
+gate.  A lower bound for a raw majorant, an averaged shift, a selected
+subsequence of cutoffs, or a renormalized component would not.
+\end{remark}
