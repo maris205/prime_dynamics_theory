@@ -1,0 +1,45 @@
+{
+  "audit": {
+    "conclusion_failure_count": 0,
+    "hypothesis_failure_count": 0,
+    "maximum_efficiency": 0.9983421556221848,
+    "minimum_efficiency": 0.0064334393478505045,
+    "sample_count": 4096,
+    "sharp_relative_error": 1.9100611176346782e-16
+  },
+  "program_boundary": {
+    "constant_coefficient_iteration": true,
+    "defect_stable_affine_recurrence": true,
+    "hilbert_polya_operator": false,
+    "riemann_hypothesis": false,
+    "scalar_sharpness": true,
+    "uniform_physical_coefficients_proved": false,
+    "uniform_stage_A_closed": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "8065449b13621138f1823f8072f55fdb1076f4068cc9d37bf9c7cc787f4ea5a9",
+    "README.md": "4b38577404931ebd398052a2708c19a9d0582e83c230e3ac846dd1f6487d23c3",
+    "THEOREM_LEDGER.md": "60a88ae27197eae1b4656eab9aac84f1bd85fd3a536cb4d9a7f12c5680beaae4",
+    "UPDATED_ROADMAP.md": "b1f317cff006c6b59c515f966385975ed2531e97720d9f52a100f0b9eac33dc5",
+    "defect-stable-rayleigh-recurrence.pdf": "2320ab652b8d26871754c977432457e1b671f1cbe46cf82096787d6e1d78b36d",
+    "figures/defect_stable_rayleigh_recurrence.pdf": "a3937fe2a0433c824f84c71e3a64da518540e1a6f51b3f3695f22349c88bbf89",
+    "figures/defect_stable_rayleigh_recurrence.png": "55dea2b00bd27edee39181a848ee6ce351126f2fd39d8dfa6a8774a0bcb905f2",
+    "main.pdf": "2320ab652b8d26871754c977432457e1b671f1cbe46cf82096787d6e1d78b36d",
+    "main.tex": "7efbbe8609f605b8c564098379b9e3d6ce48363a4911600150532dd929611393",
+    "pyproject.toml": "271fa1cbcdc1a8d2f530d73a8d4b8961923ec5200beccd8f64dad099999882c0",
+    "references.bib": "8dbd1bf442747a0327b03b23327039f33b12f05e79c050fa0eba7c97860bbf33",
+    "requirements.txt": "408aa57fdb2c5a55bd8a4ee2356c6deab1623d728dbad693e1a35ac2c5e6ebf1"
+  },
+  "result_hashes": {
+    "results/defect_recurrence_audit.json": "a4516522a83999374d88b446f0b72625624d472a12383800dddeaaac46454fab",
+    "results/defect_recurrence_smoke.json": "502ea3cfee98415557f8d260b98e5639edaf6900b66a245ecb292c680fdf72e7",
+    "results/dependency_manifest.json": "4c90d07ba5974f1b8c9bfd772f7a421f4410eca5976dae4f46d2ddb1b2ede4ba"
+  },
+  "route_consequence": "Relative Gram loss and additive tail error combine into an exact affine upper recurrence for gamma squared. This is the form needed by outward transport, but no physical all-level coefficients are inferred.",
+  "status": "rh123_defect_stable_rayleigh_recurrence_archived",
+  "theorem": {
+    "constant_coefficient_iteration": true,
+    "defect_stable_affine_recurrence": true,
+    "scalar_sharpness": true
+  }
+}
