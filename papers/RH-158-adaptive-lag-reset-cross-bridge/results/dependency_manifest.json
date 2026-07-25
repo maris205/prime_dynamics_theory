@@ -1,0 +1,49 @@
+{
+  "external_inputs": {
+    "rh151_reset_audit": {
+      "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/reset_packet_audit.json",
+      "sha256": "0c0b9c1ca5c941239fda71d06fbcdfff15607e267bc94ecf9c99945b9c5f4072"
+    },
+    "rh152_overlap_audit": {
+      "path": "papers/RH-152-reset-transition-overlap-coherence/results/overlap_audit.json",
+      "sha256": "e53c5dddbfbf9e4d03261966fb157cb875f7676e485a493e9566a5b50969faad"
+    },
+    "rh154_suffix_audit": {
+      "path": "papers/RH-154-half-horizon-delayed-reset-suffix/results/suffix_audit.json",
+      "sha256": "11234a3571bde94a7d8f87d42a6001fde4a415accba99a1dbd0f502fb7cf285d"
+    },
+    "rh157_archive": {
+      "path": "papers/RH-157-spectral-reset-cross-action-cancellation/results/archive_verification.json",
+      "sha256": "d125803b5c1ec97edef88037d8a47dd9bc99d382cba8a9483c463ef3c7552632"
+    },
+    "rh157_summary": {
+      "path": "papers/RH-157-spectral-reset-cross-action-cancellation/results/summary.json",
+      "sha256": "8bdf6f958ee4356487036e440a65e7131147eb2d98eff0f807487007f4c40e23"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "3a40c597c85f6275580871abdde83252e62b5f916737be0e40396438ffd5711f",
+    "experiments/build_lag_audit.py": "fa3d89e211105bbc3553a3d46300bd385348506e765f15af4aca5e87e835e5f5",
+    "experiments/make_figures.py": "34a888115ba99f2d333bed3d730ce80424628689dc653f4f89dfaceec9590fde",
+    "experiments/verify_archive.py": "6455086974616ab368ba7e4c3c231574744836b19d0b13c4edfc1a5bffbb030e",
+    "src/lag_reset_bridge/__init__.py": "2250d78aed942c713d29ad16dd3f40a7822fff690a235c5cca0f5b00c88b4c4c",
+    "src/lag_reset_bridge/bounds.py": "59849d0a0ad11839917d0a02d8db0cfd2740bf1655315cc7a351ea09b0216752",
+    "tests/test_archived_results.py": "3423aed3819cec4bd56ff92839fa74fd7b9a6ace3234e3aaec382ed31b71b257",
+    "tests/test_theory.py": "6c2c00b1fa2a179a6b69c6925e7ed28af1ba3e282cc158a84caf00788ff8bb5e"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "7163582af6327f1ca3ce29330e5cb466b2d69083cf34afcce8f5a62cbb075e66",
+    "THEOREM_LEDGER.md": "8021edf54c8696332d36d32799546a72daa2aa74aebfe2c8988990f5e27c5878",
+    "UPDATED_ROADMAP.md": "c422d808fb52a1b260670f14907094b33b5c0f284130dfdc443e11bb4d6d0791",
+    "adaptive-lag-reset-cross-bridge.pdf": "b1faf0074dd04455a708813b4bda2ed78f36293f843124848697922cb02dc083",
+    "figures/adaptive_lag_reset_cross_bridge.pdf": "7243d9793809f40310fe51275945c59f6e4d4f112c0a854ef87d4c1d271ca996",
+    "figures/adaptive_lag_reset_cross_bridge.png": "99d30b3a6aefc4de83fb3f7bcb5f0398660114cd691eb940a15461f95e4e8974",
+    "main.pdf": "b1faf0074dd04455a708813b4bda2ed78f36293f843124848697922cb02dc083",
+    "main.tex": "88dd74ec250c4c7b8874bda3ebd9460137ef4e1c3bf3d116eb9d27341ed5d282",
+    "pyproject.toml": "d7020b6b28db17e9f39839c52306a677203015ebdc29a43c3f1cae6846bb936a",
+    "references.bib": "326063976a31dfdd35b324532fc303804d73ac13e26550629ea237c3f3ff70ca",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd"
+  },
+  "status": "all_rh158_inputs_sources_and_publication_artifacts_hashed"
+}

@@ -1,0 +1,110 @@
+{
+  "audit": {
+    "adaptive_failure_count": 0,
+    "adaptive_four_mode_certificate_count": 120,
+    "candidate_count": 694,
+    "certificate_counts_by_lag_horizon": {
+      "1": 76,
+      "2": 84,
+      "3": 92,
+      "4": 101,
+      "5": 106,
+      "6": 112,
+      "7": 117,
+      "8": 120
+    },
+    "channel_count": 10,
+    "half_suffix_certificate_counts_by_lag_horizon": {
+      "1": 18,
+      "2": 26,
+      "3": 34,
+      "4": 43,
+      "5": 48,
+      "6": 54,
+      "7": 59,
+      "8": 62
+    },
+    "half_suffix_target_count": 62,
+    "maximum_first_certifying_lag": 8,
+    "maximum_lag": 8,
+    "maximum_selected_normalized_base_lower": 0.5224658729940377,
+    "maximum_selected_path_inverse_upper": 66866032.63203917,
+    "median_selected_normalized_base_lower": 0.037097514227334344,
+    "minimum_selected_fourth_cross_lower": 3.1807702483603953e-16,
+    "minimum_selected_normalized_base_lower": 2.587419843405482e-14,
+    "minimum_selected_path_overlap_lower": 1.4955276403236843e-08,
+    "scalar_centering_recovered_target_count_at_maximum_lag": 2,
+    "selected_lag_histogram": {
+      "1": 31,
+      "2": 19,
+      "3": 11,
+      "4": 7,
+      "5": 10,
+      "6": 8,
+      "7": 19,
+      "8": 15
+    },
+    "target_count": 120,
+    "terminal_certificate_counts_by_lag_horizon": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 4,
+      "5": 4,
+      "6": 4,
+      "7": 7,
+      "8": 10
+    },
+    "terminal_target_count": 10,
+    "uncentered_certificate_counts_by_lag_horizon": {
+      "1": 73,
+      "2": 83,
+      "3": 91,
+      "4": 99,
+      "5": 105,
+      "6": 111,
+      "7": 116,
+      "8": 118
+    }
+  },
+  "program_boundary": {
+    "all_frozen_update_targets_four_mode_certified_with_lag_at_most_eight": true,
+    "all_half_suffix_targets_four_mode_certified": true,
+    "all_terminal_targets_four_mode_certified": true,
+    "complete_outward_directional_assembly": false,
+    "finite_adaptive_lag_optimization": true,
+    "general_lag_innovation_identity": true,
+    "hilbert_polya_operator": false,
+    "riemann_hypothesis": false,
+    "scalar_centered_cross_action_radius": true,
+    "stage_A": false,
+    "uniform_all_level_bounded_lag_law": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "7163582af6327f1ca3ce29330e5cb466b2d69083cf34afcce8f5a62cbb075e66",
+    "THEOREM_LEDGER.md": "8021edf54c8696332d36d32799546a72daa2aa74aebfe2c8988990f5e27c5878",
+    "UPDATED_ROADMAP.md": "c422d808fb52a1b260670f14907094b33b5c0f284130dfdc443e11bb4d6d0791",
+    "adaptive-lag-reset-cross-bridge.pdf": "b1faf0074dd04455a708813b4bda2ed78f36293f843124848697922cb02dc083",
+    "figures/adaptive_lag_reset_cross_bridge.pdf": "7243d9793809f40310fe51275945c59f6e4d4f112c0a854ef87d4c1d271ca996",
+    "figures/adaptive_lag_reset_cross_bridge.png": "99d30b3a6aefc4de83fb3f7bcb5f0398660114cd691eb940a15461f95e4e8974",
+    "main.pdf": "b1faf0074dd04455a708813b4bda2ed78f36293f843124848697922cb02dc083",
+    "main.tex": "88dd74ec250c4c7b8874bda3ebd9460137ef4e1c3bf3d116eb9d27341ed5d282",
+    "pyproject.toml": "d7020b6b28db17e9f39839c52306a677203015ebdc29a43c3f1cae6846bb936a",
+    "references.bib": "326063976a31dfdd35b324532fc303804d73ac13e26550629ea237c3f3ff70ca",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "f23be6dcd524e4792bf069d16375afa6547500f3fcd795233243c25a0619ced6",
+    "results/lag_audit.json": "4e0291f5e911287e789c91f34ef63b9ace36437dcdde8b04f970ad069be89fc7",
+    "results/lag_smoke.json": "ae69b518064f2517fb80f1080a52ed2cd96cbc7c4b0354c9a2ddceea096f6094"
+  },
+  "route_consequence": "Scalar centering halves the dominant projector-motion cost for nearly positive recent Grams. Choosing the strongest certified cross base among the previous eight reset packets then gives a positive fourth-cross lower at all 120 frozen update targets, including all 62 delayed-half and all 10 terminal targets. This closes the finite lagged cross bridge, but an all-level bounded-lag law and the remaining outward assembly are still open.",
+  "status": "rh158_adaptive_lag_reset_cross_bridge_archived",
+  "theorem": {
+    "asymptotically_sharp_spread_coefficient": true,
+    "finite_eight_lag_bridge": true,
+    "general_lag_identity": true,
+    "scalar_centered_action_radius": true
+  }
+}
