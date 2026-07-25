@@ -1,0 +1,2690 @@
+{
+  "audit_summary": {
+    "archive_verified_paper_count": 8,
+    "exact_obstruction_gate_count": 1,
+    "finite_certified_gate_count": 7,
+    "finite_closed_route_count": 2,
+    "gate_count": 10,
+    "hash_check_count": 319,
+    "hash_failure_count": 0,
+    "internal_dependency_edge_count": 16,
+    "internal_dependency_graph_acyclic": true,
+    "open_gate_count": 2,
+    "paper_count": 8,
+    "program_closed_route_count": 0,
+    "publication_file_count": 96
+  },
+  "dependency_edges": [
+    {
+      "from": 151,
+      "to": 152
+    },
+    {
+      "from": 151,
+      "to": 153
+    },
+    {
+      "from": 151,
+      "to": 155
+    },
+    {
+      "from": 151,
+      "to": 157
+    },
+    {
+      "from": 151,
+      "to": 158
+    },
+    {
+      "from": 152,
+      "to": 153
+    },
+    {
+      "from": 152,
+      "to": 158
+    },
+    {
+      "from": 153,
+      "to": 154
+    },
+    {
+      "from": 153,
+      "to": 156
+    },
+    {
+      "from": 154,
+      "to": 155
+    },
+    {
+      "from": 154,
+      "to": 156
+    },
+    {
+      "from": 154,
+      "to": 157
+    },
+    {
+      "from": 154,
+      "to": 158
+    },
+    {
+      "from": 155,
+      "to": 156
+    },
+    {
+      "from": 156,
+      "to": 157
+    },
+    {
+      "from": 157,
+      "to": 158
+    }
+  ],
+  "gates": [
+    {
+      "evidence": "RH-151",
+      "global_status": "finite_certified",
+      "index": 1,
+      "key": "packet_localization",
+      "name": "packet localization / direct reset"
+    },
+    {
+      "evidence": "RH-152",
+      "global_status": "finite_certified",
+      "index": 2,
+      "key": "transition_coherence",
+      "name": "reset transition coherence"
+    },
+    {
+      "evidence": "RH-153",
+      "global_status": "finite_certified",
+      "index": 3,
+      "key": "correlated_congruence",
+      "name": "correlated congruence transport"
+    },
+    {
+      "evidence": "RH-154",
+      "global_status": "finite_certified",
+      "index": 4,
+      "key": "delayed_suffix",
+      "name": "delayed terminal-half conditioning"
+    },
+    {
+      "evidence": "RH-155",
+      "global_status": "finite_certified",
+      "index": 5,
+      "key": "native_tail_gate",
+      "name": "native recent/tail subunit gate"
+    },
+    {
+      "evidence": "RH-156",
+      "global_status": "finite_certified",
+      "index": 6,
+      "key": "native_support",
+      "name": "native support floor"
+    },
+    {
+      "evidence": "RH-157",
+      "global_status": "exact_obstruction",
+      "index": 7,
+      "key": "contemporaneous_cross",
+      "name": "contemporaneous directional cross"
+    },
+    {
+      "evidence": "RH-158",
+      "global_status": "finite_certified",
+      "index": 8,
+      "key": "lagged_cross",
+      "name": "bounded-lag directional cross"
+    },
+    {
+      "evidence": "not proved",
+      "global_status": "open",
+      "index": 9,
+      "key": "all_level_laws",
+      "name": "uniform all-level endpoint laws"
+    },
+    {
+      "evidence": "not recomposed",
+      "global_status": "open",
+      "index": 10,
+      "key": "downstream_assembly",
+      "name": "typed downstream outward assembly"
+    }
+  ],
+  "metrics": {
+    "contemporaneous_active_count": 80,
+    "contemporaneous_active_four_mode_count": 54,
+    "contemporaneous_exact_zero_count": 50,
+    "correlated_congruence_positive": 120,
+    "delayed_half_count": 62,
+    "delayed_half_overlap_floor": 0.06663973169046591,
+    "independent_congruence_failures": 52,
+    "independent_congruence_positive": 68,
+    "lagged_cross_base_floor": 2.587419843405482e-14,
+    "lagged_cross_implied_native_fourth_floor": 1.0097539022517332e-31,
+    "lagged_four_mode_count": 120,
+    "lagged_fourth_cross_floor": 3.1807702483603953e-16,
+    "lagged_path_overlap_floor": 1.4955276403236843e-08,
+    "lagged_target_count": 120,
+    "native_snapshot_count": 130,
+    "native_subunit_count": 130,
+    "native_support_floor": 3.262044201851107e-08,
+    "native_support_positive_count": 120,
+    "native_support_transition_count": 120,
+    "reset_snapshot_count": 130,
+    "reset_snapshots_certified": 130,
+    "transition_count": 120,
+    "transition_overlap_certified": 120,
+    "universal_recent_norm_upper": 1.0019569471623981,
+    "universal_recursive_informative_count": 11
+  },
+  "papers": [
+    {
+      "archive_status": "all_rh151_archive_hashes_verified",
+      "check_count": 41,
+      "checks": [
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "archive_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/.gitignore"
+        },
+        {
+          "actual": "e5faf6c13253120e483b46a79533e76b4fe9aeb5af95478d41757724040aa096",
+          "category": "archive_publication",
+          "expected": "e5faf6c13253120e483b46a79533e76b4fe9aeb5af95478d41757724040aa096",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/README.md"
+        },
+        {
+          "actual": "7586b847e970d28da3550c67a592dca33732b03f551ed22e49cf57af39bb2cf5",
+          "category": "archive_publication",
+          "expected": "7586b847e970d28da3550c67a592dca33732b03f551ed22e49cf57af39bb2cf5",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "472a434e009a705040ecc68bde1be1f043e65fcb250b1459fa53f0bfb6382e26",
+          "category": "archive_publication",
+          "expected": "472a434e009a705040ecc68bde1be1f043e65fcb250b1459fa53f0bfb6382e26",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "272c6a89a07388e071afd29b310e5dbd3611dc0cb9ae6fe6e509349e70bac878",
+          "category": "archive_publication",
+          "expected": "272c6a89a07388e071afd29b310e5dbd3611dc0cb9ae6fe6e509349e70bac878",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/figures/ky_fan_reset_packet_atlas.pdf"
+        },
+        {
+          "actual": "f20d62cc13e52f4061d015fea28dbbd7f81327d0a5e3be298ade593296a0e673",
+          "category": "archive_publication",
+          "expected": "f20d62cc13e52f4061d015fea28dbbd7f81327d0a5e3be298ade593296a0e673",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/figures/ky_fan_reset_packet_atlas.png"
+        },
+        {
+          "actual": "7a2b26ef77943979a15f63f1922f11d69aef06e61d9f4c4478d657da85e78346",
+          "category": "archive_publication",
+          "expected": "7a2b26ef77943979a15f63f1922f11d69aef06e61d9f4c4478d657da85e78346",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/ky-fan-reset-packet-atlas.pdf"
+        },
+        {
+          "actual": "7a2b26ef77943979a15f63f1922f11d69aef06e61d9f4c4478d657da85e78346",
+          "category": "archive_publication",
+          "expected": "7a2b26ef77943979a15f63f1922f11d69aef06e61d9f4c4478d657da85e78346",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/main.pdf"
+        },
+        {
+          "actual": "a15a058a0243a51e2ceb336a00b358962fe9c69e5f2fcd57a0d64dc225d3eb40",
+          "category": "archive_publication",
+          "expected": "a15a058a0243a51e2ceb336a00b358962fe9c69e5f2fcd57a0d64dc225d3eb40",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/main.tex"
+        },
+        {
+          "actual": "f9e9e9d0af037c9524b22b6cee2417af59698e33e940d686578e7bbea23df9d8",
+          "category": "archive_publication",
+          "expected": "f9e9e9d0af037c9524b22b6cee2417af59698e33e940d686578e7bbea23df9d8",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/pyproject.toml"
+        },
+        {
+          "actual": "abd9a73220d552d9c0bcb1200c6e9f39f00a8807eef8d96106d4ee93377a390a",
+          "category": "archive_publication",
+          "expected": "abd9a73220d552d9c0bcb1200c6e9f39f00a8807eef8d96106d4ee93377a390a",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/references.bib"
+        },
+        {
+          "actual": "3c3dad8ee055d905681bf8fc315c816b9453bce4af4b341bf10e7bb9b1a8a512",
+          "category": "archive_publication",
+          "expected": "3c3dad8ee055d905681bf8fc315c816b9453bce4af4b341bf10e7bb9b1a8a512",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/requirements.txt"
+        },
+        {
+          "actual": "8fef0485f1d29983adee4feb2a85ce38aa48d1b3cbc0654bac29314026138d5e",
+          "category": "result",
+          "expected": "8fef0485f1d29983adee4feb2a85ce38aa48d1b3cbc0654bac29314026138d5e",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/dependency_manifest.json"
+        },
+        {
+          "actual": "0c0b9c1ca5c941239fda71d06fbcdfff15607e267bc94ecf9c99945b9c5f4072",
+          "category": "result",
+          "expected": "0c0b9c1ca5c941239fda71d06fbcdfff15607e267bc94ecf9c99945b9c5f4072",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/reset_packet_audit.json"
+        },
+        {
+          "actual": "4e2eb080076962e6171ab838a6b6ecd7e1c4eb3f209ef3eb1af678e742ed9dfc",
+          "category": "result",
+          "expected": "4e2eb080076962e6171ab838a6b6ecd7e1c4eb3f209ef3eb1af678e742ed9dfc",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/reset_packet_smoke.json"
+        },
+        {
+          "actual": "9ab057e19c3ad9dd7f23b659478739628f0dd495bd657ee4055f9564eeb54493",
+          "category": "local_source",
+          "expected": "9ab057e19c3ad9dd7f23b659478739628f0dd495bd657ee4055f9564eeb54493",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/experiments/build_archive.py"
+        },
+        {
+          "actual": "2cfda567f60c2ca54c011c1c055cef514f29b5f4ac88a9faa996ddc39419ccb3",
+          "category": "local_source",
+          "expected": "2cfda567f60c2ca54c011c1c055cef514f29b5f4ac88a9faa996ddc39419ccb3",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/experiments/build_reset_packet_audit.py"
+        },
+        {
+          "actual": "f262fc48343736fa03fb767771e7ebcee36ec794e5b05dc82d17306e2bf23722",
+          "category": "local_source",
+          "expected": "f262fc48343736fa03fb767771e7ebcee36ec794e5b05dc82d17306e2bf23722",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/experiments/make_figures.py"
+        },
+        {
+          "actual": "ea695b155677aba2b903813299f36aafe0f4845709d70522c8eb739f205eada1",
+          "category": "local_source",
+          "expected": "ea695b155677aba2b903813299f36aafe0f4845709d70522c8eb739f205eada1",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/experiments/verify_archive.py"
+        },
+        {
+          "actual": "0865d40513b9fdb0a13aa4418da46b52dca7e0db9d6777006f2ce9bf8f112a22",
+          "category": "local_source",
+          "expected": "0865d40513b9fdb0a13aa4418da46b52dca7e0db9d6777006f2ce9bf8f112a22",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/src/reset_packet/__init__.py"
+        },
+        {
+          "actual": "0f1aff20ff224966378c85f969579ca0888eff035e8a87be502a689b33031646",
+          "category": "local_source",
+          "expected": "0f1aff20ff224966378c85f969579ca0888eff035e8a87be502a689b33031646",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/src/reset_packet/bounds.py"
+        },
+        {
+          "actual": "714f6e441e54f03deec378138040f707cab01b85fed1621e3907d7c97c4dd14e",
+          "category": "local_source",
+          "expected": "714f6e441e54f03deec378138040f707cab01b85fed1621e3907d7c97c4dd14e",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/tests/test_archived_results.py"
+        },
+        {
+          "actual": "07be59f7c1ae9284c549d998a28cdfbda47508164ac42b7df0b39bf377889380",
+          "category": "local_source",
+          "expected": "07be59f7c1ae9284c549d998a28cdfbda47508164ac42b7df0b39bf377889380",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/tests/test_theory.py"
+        },
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "manifest_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/.gitignore"
+        },
+        {
+          "actual": "e5faf6c13253120e483b46a79533e76b4fe9aeb5af95478d41757724040aa096",
+          "category": "manifest_publication",
+          "expected": "e5faf6c13253120e483b46a79533e76b4fe9aeb5af95478d41757724040aa096",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/README.md"
+        },
+        {
+          "actual": "7586b847e970d28da3550c67a592dca33732b03f551ed22e49cf57af39bb2cf5",
+          "category": "manifest_publication",
+          "expected": "7586b847e970d28da3550c67a592dca33732b03f551ed22e49cf57af39bb2cf5",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "472a434e009a705040ecc68bde1be1f043e65fcb250b1459fa53f0bfb6382e26",
+          "category": "manifest_publication",
+          "expected": "472a434e009a705040ecc68bde1be1f043e65fcb250b1459fa53f0bfb6382e26",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "272c6a89a07388e071afd29b310e5dbd3611dc0cb9ae6fe6e509349e70bac878",
+          "category": "manifest_publication",
+          "expected": "272c6a89a07388e071afd29b310e5dbd3611dc0cb9ae6fe6e509349e70bac878",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/figures/ky_fan_reset_packet_atlas.pdf"
+        },
+        {
+          "actual": "f20d62cc13e52f4061d015fea28dbbd7f81327d0a5e3be298ade593296a0e673",
+          "category": "manifest_publication",
+          "expected": "f20d62cc13e52f4061d015fea28dbbd7f81327d0a5e3be298ade593296a0e673",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/figures/ky_fan_reset_packet_atlas.png"
+        },
+        {
+          "actual": "7a2b26ef77943979a15f63f1922f11d69aef06e61d9f4c4478d657da85e78346",
+          "category": "manifest_publication",
+          "expected": "7a2b26ef77943979a15f63f1922f11d69aef06e61d9f4c4478d657da85e78346",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/ky-fan-reset-packet-atlas.pdf"
+        },
+        {
+          "actual": "7a2b26ef77943979a15f63f1922f11d69aef06e61d9f4c4478d657da85e78346",
+          "category": "manifest_publication",
+          "expected": "7a2b26ef77943979a15f63f1922f11d69aef06e61d9f4c4478d657da85e78346",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/main.pdf"
+        },
+        {
+          "actual": "a15a058a0243a51e2ceb336a00b358962fe9c69e5f2fcd57a0d64dc225d3eb40",
+          "category": "manifest_publication",
+          "expected": "a15a058a0243a51e2ceb336a00b358962fe9c69e5f2fcd57a0d64dc225d3eb40",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/main.tex"
+        },
+        {
+          "actual": "f9e9e9d0af037c9524b22b6cee2417af59698e33e940d686578e7bbea23df9d8",
+          "category": "manifest_publication",
+          "expected": "f9e9e9d0af037c9524b22b6cee2417af59698e33e940d686578e7bbea23df9d8",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/pyproject.toml"
+        },
+        {
+          "actual": "abd9a73220d552d9c0bcb1200c6e9f39f00a8807eef8d96106d4ee93377a390a",
+          "category": "manifest_publication",
+          "expected": "abd9a73220d552d9c0bcb1200c6e9f39f00a8807eef8d96106d4ee93377a390a",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/references.bib"
+        },
+        {
+          "actual": "3c3dad8ee055d905681bf8fc315c816b9453bce4af4b341bf10e7bb9b1a8a512",
+          "category": "manifest_publication",
+          "expected": "3c3dad8ee055d905681bf8fc315c816b9453bce4af4b341bf10e7bb9b1a8a512",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/requirements.txt"
+        },
+        {
+          "actual": "fca791e6d04b4691ea0a104092f4e168ca09f02bfeb693f86af6b786e779fc9d",
+          "category": "external_input",
+          "expected": "fca791e6d04b4691ea0a104092f4e168ca09f02bfeb693f86af6b786e779fc9d",
+          "match": true,
+          "path": "papers/RH-150-temporal-anchor-packet-transport-obstruction/results/archive_verification.json"
+        },
+        {
+          "actual": "4ed58fbeb8fd4a95ad74d731c29cf51711aed22daec6ac21e477f44df311afa7",
+          "category": "external_input",
+          "expected": "4ed58fbeb8fd4a95ad74d731c29cf51711aed22daec6ac21e477f44df311afa7",
+          "match": true,
+          "path": "papers/RH-150-temporal-anchor-packet-transport-obstruction/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "d3d73944ff14f9d491709359467fc7bcdff3d8836d9f8362793abd934f66d3e9",
+          "category": "external_input",
+          "expected": "d3d73944ff14f9d491709359467fc7bcdff3d8836d9f8362793abd934f66d3e9",
+          "match": true,
+          "path": "papers/RH-150-temporal-anchor-packet-transport-obstruction/results/summary.json"
+        },
+        {
+          "actual": "7b3518402760cc602670ec994266117327c561a7f673b2399fc922ae06b11794",
+          "category": "external_input",
+          "expected": "7b3518402760cc602670ec994266117327c561a7f673b2399fc922ae06b11794",
+          "match": true,
+          "path": "papers/RH-84-ky-fan-tail-majorization/results/summary.json"
+        },
+        {
+          "actual": "c316c414e8cc89b171b420f738f4829487c7df137a22f70d2d07127b6d70cd1b",
+          "category": "external_input",
+          "expected": "c316c414e8cc89b171b420f738f4829487c7df137a22f70d2d07127b6d70cd1b",
+          "match": true,
+          "path": "papers/RH-94-source-seeded-four-direction-horizon-refresh/results/summary.json"
+        },
+        {
+          "actual": "123b4a59da8d0e640567d6b4f720dd82e157a424054c009ea6048bb4ce95c398",
+          "category": "external_input",
+          "expected": "123b4a59da8d0e640567d6b4f720dd82e157a424054c009ea6048bb4ce95c398",
+          "match": true,
+          "path": "papers/RH-96-gap-weighted-weak-mode-quotient/results/weak_mode_quotient_audit.json"
+        }
+      ],
+      "directory": "RH-151-ky-fan-reset-packet-atlas",
+      "external_input_count": 6,
+      "failure_count": 0,
+      "local_source_count": 8,
+      "match_count": 41,
+      "paper": 151,
+      "publication_file_count": 12,
+      "summary_status": "rh151_ky_fan_reset_packet_atlas_archived"
+    },
+    {
+      "archive_status": "all_rh152_archive_hashes_verified",
+      "check_count": 39,
+      "checks": [
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "archive_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/.gitignore"
+        },
+        {
+          "actual": "bde93c25eec4f4a78fc67b6048cf63fa9d4b7c8cf7e3066529553177cf6475fb",
+          "category": "archive_publication",
+          "expected": "bde93c25eec4f4a78fc67b6048cf63fa9d4b7c8cf7e3066529553177cf6475fb",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/README.md"
+        },
+        {
+          "actual": "858219227cd722c51287c5720e1c190cb95638c82711b12034009bd1e84dcf01",
+          "category": "archive_publication",
+          "expected": "858219227cd722c51287c5720e1c190cb95638c82711b12034009bd1e84dcf01",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "13009afe91e5e34d7e105a1b929047c5261859c290b93c84c0bcc17a2a531e2d",
+          "category": "archive_publication",
+          "expected": "13009afe91e5e34d7e105a1b929047c5261859c290b93c84c0bcc17a2a531e2d",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "528ed2f13e5417af0f022026bc987fcd13b4fbee498801df5f5cfe3970c7a7ca",
+          "category": "archive_publication",
+          "expected": "528ed2f13e5417af0f022026bc987fcd13b4fbee498801df5f5cfe3970c7a7ca",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/figures/reset_transition_overlap_coherence.pdf"
+        },
+        {
+          "actual": "42cd0ead355ae37172d0330d3b77b7a5951fa50e9dcb02d2236933327ba2e472",
+          "category": "archive_publication",
+          "expected": "42cd0ead355ae37172d0330d3b77b7a5951fa50e9dcb02d2236933327ba2e472",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/figures/reset_transition_overlap_coherence.png"
+        },
+        {
+          "actual": "59d89cddc00399802d079dd860094500a173efabed27e6e89abe166b372739ac",
+          "category": "archive_publication",
+          "expected": "59d89cddc00399802d079dd860094500a173efabed27e6e89abe166b372739ac",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/main.pdf"
+        },
+        {
+          "actual": "991c16ddb1a5c47b21586bf9c104b8dac6fd9769621d1b01f685e534fe7c362a",
+          "category": "archive_publication",
+          "expected": "991c16ddb1a5c47b21586bf9c104b8dac6fd9769621d1b01f685e534fe7c362a",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/main.tex"
+        },
+        {
+          "actual": "0443318c9b45af73f1e84d77379905cc53901909373a51869a5111ddaa31b28d",
+          "category": "archive_publication",
+          "expected": "0443318c9b45af73f1e84d77379905cc53901909373a51869a5111ddaa31b28d",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/pyproject.toml"
+        },
+        {
+          "actual": "ea63d62a9a7665043829c7764f002c9232270bab6816444da23f395f128bb43d",
+          "category": "archive_publication",
+          "expected": "ea63d62a9a7665043829c7764f002c9232270bab6816444da23f395f128bb43d",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/references.bib"
+        },
+        {
+          "actual": "b6efa8218da0501de62ea68dcf20c52b995433d53ca4f46f6afd2d12226a981e",
+          "category": "archive_publication",
+          "expected": "b6efa8218da0501de62ea68dcf20c52b995433d53ca4f46f6afd2d12226a981e",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/requirements.txt"
+        },
+        {
+          "actual": "59d89cddc00399802d079dd860094500a173efabed27e6e89abe166b372739ac",
+          "category": "archive_publication",
+          "expected": "59d89cddc00399802d079dd860094500a173efabed27e6e89abe166b372739ac",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/reset-transition-overlap-coherence.pdf"
+        },
+        {
+          "actual": "eadbfb81664d237d183c0df2231d29514fa495f3372ace0a06ad580691107d40",
+          "category": "result",
+          "expected": "eadbfb81664d237d183c0df2231d29514fa495f3372ace0a06ad580691107d40",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/results/dependency_manifest.json"
+        },
+        {
+          "actual": "e53c5dddbfbf9e4d03261966fb157cb875f7676e485a493e9566a5b50969faad",
+          "category": "result",
+          "expected": "e53c5dddbfbf9e4d03261966fb157cb875f7676e485a493e9566a5b50969faad",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/results/overlap_audit.json"
+        },
+        {
+          "actual": "f1d3f07fd53bed733b9b0c0f48046ff1bfaaceda07814f43a306d1fbe6fa9e37",
+          "category": "result",
+          "expected": "f1d3f07fd53bed733b9b0c0f48046ff1bfaaceda07814f43a306d1fbe6fa9e37",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/results/overlap_smoke.json"
+        },
+        {
+          "actual": "3467e9e85fa365ca10986ffdce7050f5baaee07d918224b2b1aef32cd109586e",
+          "category": "local_source",
+          "expected": "3467e9e85fa365ca10986ffdce7050f5baaee07d918224b2b1aef32cd109586e",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/experiments/build_archive.py"
+        },
+        {
+          "actual": "00d532566d85e94856611d6b34d9a769765e0479f98a69f3560f1613c77acef7",
+          "category": "local_source",
+          "expected": "00d532566d85e94856611d6b34d9a769765e0479f98a69f3560f1613c77acef7",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/experiments/build_overlap_audit.py"
+        },
+        {
+          "actual": "66ba55d27f6c3b85e256f811121f24d9edb87c7d20c23d0fd62c6ac41524a07d",
+          "category": "local_source",
+          "expected": "66ba55d27f6c3b85e256f811121f24d9edb87c7d20c23d0fd62c6ac41524a07d",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/experiments/make_figures.py"
+        },
+        {
+          "actual": "24c7427d92aa4dfd9a930f09f147e8cd5e2e1793011245df8247ed5efe5ee3dc",
+          "category": "local_source",
+          "expected": "24c7427d92aa4dfd9a930f09f147e8cd5e2e1793011245df8247ed5efe5ee3dc",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/experiments/verify_archive.py"
+        },
+        {
+          "actual": "ce5d3b0b286bf0dcb9f54ae16393cb030979a95e11b444619dda32d6c63b0459",
+          "category": "local_source",
+          "expected": "ce5d3b0b286bf0dcb9f54ae16393cb030979a95e11b444619dda32d6c63b0459",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/src/reset_overlap/__init__.py"
+        },
+        {
+          "actual": "2d4c7920b3353bcfcef1748b0421d4119ca3a7de511995b40293c126ac03d0fd",
+          "category": "local_source",
+          "expected": "2d4c7920b3353bcfcef1748b0421d4119ca3a7de511995b40293c126ac03d0fd",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/src/reset_overlap/bounds.py"
+        },
+        {
+          "actual": "425f956981e2a1ee57a29cfdfc1813d75689e692128935a76d9615c14fb508a3",
+          "category": "local_source",
+          "expected": "425f956981e2a1ee57a29cfdfc1813d75689e692128935a76d9615c14fb508a3",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/tests/test_archived_results.py"
+        },
+        {
+          "actual": "6d1440d2d88485ddb1bf2429a63b5273ad54200d0eca5f61e4a0e9bb107a0c47",
+          "category": "local_source",
+          "expected": "6d1440d2d88485ddb1bf2429a63b5273ad54200d0eca5f61e4a0e9bb107a0c47",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/tests/test_theory.py"
+        },
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "manifest_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/.gitignore"
+        },
+        {
+          "actual": "bde93c25eec4f4a78fc67b6048cf63fa9d4b7c8cf7e3066529553177cf6475fb",
+          "category": "manifest_publication",
+          "expected": "bde93c25eec4f4a78fc67b6048cf63fa9d4b7c8cf7e3066529553177cf6475fb",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/README.md"
+        },
+        {
+          "actual": "858219227cd722c51287c5720e1c190cb95638c82711b12034009bd1e84dcf01",
+          "category": "manifest_publication",
+          "expected": "858219227cd722c51287c5720e1c190cb95638c82711b12034009bd1e84dcf01",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "13009afe91e5e34d7e105a1b929047c5261859c290b93c84c0bcc17a2a531e2d",
+          "category": "manifest_publication",
+          "expected": "13009afe91e5e34d7e105a1b929047c5261859c290b93c84c0bcc17a2a531e2d",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "528ed2f13e5417af0f022026bc987fcd13b4fbee498801df5f5cfe3970c7a7ca",
+          "category": "manifest_publication",
+          "expected": "528ed2f13e5417af0f022026bc987fcd13b4fbee498801df5f5cfe3970c7a7ca",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/figures/reset_transition_overlap_coherence.pdf"
+        },
+        {
+          "actual": "42cd0ead355ae37172d0330d3b77b7a5951fa50e9dcb02d2236933327ba2e472",
+          "category": "manifest_publication",
+          "expected": "42cd0ead355ae37172d0330d3b77b7a5951fa50e9dcb02d2236933327ba2e472",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/figures/reset_transition_overlap_coherence.png"
+        },
+        {
+          "actual": "59d89cddc00399802d079dd860094500a173efabed27e6e89abe166b372739ac",
+          "category": "manifest_publication",
+          "expected": "59d89cddc00399802d079dd860094500a173efabed27e6e89abe166b372739ac",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/main.pdf"
+        },
+        {
+          "actual": "991c16ddb1a5c47b21586bf9c104b8dac6fd9769621d1b01f685e534fe7c362a",
+          "category": "manifest_publication",
+          "expected": "991c16ddb1a5c47b21586bf9c104b8dac6fd9769621d1b01f685e534fe7c362a",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/main.tex"
+        },
+        {
+          "actual": "0443318c9b45af73f1e84d77379905cc53901909373a51869a5111ddaa31b28d",
+          "category": "manifest_publication",
+          "expected": "0443318c9b45af73f1e84d77379905cc53901909373a51869a5111ddaa31b28d",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/pyproject.toml"
+        },
+        {
+          "actual": "ea63d62a9a7665043829c7764f002c9232270bab6816444da23f395f128bb43d",
+          "category": "manifest_publication",
+          "expected": "ea63d62a9a7665043829c7764f002c9232270bab6816444da23f395f128bb43d",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/references.bib"
+        },
+        {
+          "actual": "b6efa8218da0501de62ea68dcf20c52b995433d53ca4f46f6afd2d12226a981e",
+          "category": "manifest_publication",
+          "expected": "b6efa8218da0501de62ea68dcf20c52b995433d53ca4f46f6afd2d12226a981e",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/requirements.txt"
+        },
+        {
+          "actual": "59d89cddc00399802d079dd860094500a173efabed27e6e89abe166b372739ac",
+          "category": "manifest_publication",
+          "expected": "59d89cddc00399802d079dd860094500a173efabed27e6e89abe166b372739ac",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/reset-transition-overlap-coherence.pdf"
+        },
+        {
+          "actual": "ca5b7b1129274a75e0d4db159a2d67c91af841c6e56a4eb7589bd32bbb70739a",
+          "category": "external_input",
+          "expected": "ca5b7b1129274a75e0d4db159a2d67c91af841c6e56a4eb7589bd32bbb70739a",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/archive_verification.json"
+        },
+        {
+          "actual": "0c0b9c1ca5c941239fda71d06fbcdfff15607e267bc94ecf9c99945b9c5f4072",
+          "category": "external_input",
+          "expected": "0c0b9c1ca5c941239fda71d06fbcdfff15607e267bc94ecf9c99945b9c5f4072",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/reset_packet_audit.json"
+        },
+        {
+          "actual": "472a434e009a705040ecc68bde1be1f043e65fcb250b1459fa53f0bfb6382e26",
+          "category": "external_input",
+          "expected": "472a434e009a705040ecc68bde1be1f043e65fcb250b1459fa53f0bfb6382e26",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "74fe5959476f897210aa21f8f119d78caf5f844cf0a51b7fb60f8bfe3cb44955",
+          "category": "external_input",
+          "expected": "74fe5959476f897210aa21f8f119d78caf5f844cf0a51b7fb60f8bfe3cb44955",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/summary.json"
+        }
+      ],
+      "directory": "RH-152-reset-transition-overlap-coherence",
+      "external_input_count": 4,
+      "failure_count": 0,
+      "local_source_count": 8,
+      "match_count": 39,
+      "paper": 152,
+      "publication_file_count": 12,
+      "summary_status": "rh152_reset_transition_overlap_coherence_archived"
+    },
+    {
+      "archive_status": "all_rh153_archive_hashes_verified",
+      "check_count": 40,
+      "checks": [
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "archive_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/.gitignore"
+        },
+        {
+          "actual": "6b43f52475d2e7a4f7c9d6df4f512857c45a8571076ee034942ac9107707a653",
+          "category": "archive_publication",
+          "expected": "6b43f52475d2e7a4f7c9d6df4f512857c45a8571076ee034942ac9107707a653",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/README.md"
+        },
+        {
+          "actual": "7376f38979c52c411a38c290e4622388e1ca9af2b70715380e886a1501445764",
+          "category": "archive_publication",
+          "expected": "7376f38979c52c411a38c290e4622388e1ca9af2b70715380e886a1501445764",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "0422ee76157cb4b086acaa310327877cb525f67650e37c0c1bd42f779b67ee9d",
+          "category": "archive_publication",
+          "expected": "0422ee76157cb4b086acaa310327877cb525f67650e37c0c1bd42f779b67ee9d",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "fc70de0d99628672b2fb5c205cd91f92a18f3e41f3641ef1f5c5fa76b2d47a7a",
+          "category": "archive_publication",
+          "expected": "fc70de0d99628672b2fb5c205cd91f92a18f3e41f3641ef1f5c5fa76b2d47a7a",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/congruence-covariant-reset-transport.pdf"
+        },
+        {
+          "actual": "3bebea719fa4c8b033560ae900d8faffd687f31aa1641f81d0b9ea27bf6c3dc5",
+          "category": "archive_publication",
+          "expected": "3bebea719fa4c8b033560ae900d8faffd687f31aa1641f81d0b9ea27bf6c3dc5",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/figures/congruence_covariant_reset_transport.pdf"
+        },
+        {
+          "actual": "6ecaf072a7e23d088cde224e333914d29a948e7463ed1cf7fa36872e9685cc64",
+          "category": "archive_publication",
+          "expected": "6ecaf072a7e23d088cde224e333914d29a948e7463ed1cf7fa36872e9685cc64",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/figures/congruence_covariant_reset_transport.png"
+        },
+        {
+          "actual": "fc70de0d99628672b2fb5c205cd91f92a18f3e41f3641ef1f5c5fa76b2d47a7a",
+          "category": "archive_publication",
+          "expected": "fc70de0d99628672b2fb5c205cd91f92a18f3e41f3641ef1f5c5fa76b2d47a7a",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/main.pdf"
+        },
+        {
+          "actual": "6d8b74f1aa5785de2e790239d8771a36f35b11117c6da73389380a114362b3a7",
+          "category": "archive_publication",
+          "expected": "6d8b74f1aa5785de2e790239d8771a36f35b11117c6da73389380a114362b3a7",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/main.tex"
+        },
+        {
+          "actual": "a4dbb07ed36bd7b2c8c3ae9b4b2ceb3ff7fd41262b75c2078652213ef9f92636",
+          "category": "archive_publication",
+          "expected": "a4dbb07ed36bd7b2c8c3ae9b4b2ceb3ff7fd41262b75c2078652213ef9f92636",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/pyproject.toml"
+        },
+        {
+          "actual": "b5c4ea3ad1dfc2bd3171bae8e2ee653955389ceb66de12e1c65a8027401aa399",
+          "category": "archive_publication",
+          "expected": "b5c4ea3ad1dfc2bd3171bae8e2ee653955389ceb66de12e1c65a8027401aa399",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/references.bib"
+        },
+        {
+          "actual": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "category": "archive_publication",
+          "expected": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/requirements.txt"
+        },
+        {
+          "actual": "fb431ea360e0adba569850860a6c57667937cb2d7f1e4b33c10372e3f015723d",
+          "category": "result",
+          "expected": "fb431ea360e0adba569850860a6c57667937cb2d7f1e4b33c10372e3f015723d",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/results/congruence_audit.json"
+        },
+        {
+          "actual": "c908866450b3af2a4f664f451858012e5c2e0aeb08d3e500f1b7bf64bedf32e3",
+          "category": "result",
+          "expected": "c908866450b3af2a4f664f451858012e5c2e0aeb08d3e500f1b7bf64bedf32e3",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/results/congruence_smoke.json"
+        },
+        {
+          "actual": "139a11afca2b138838b51dc14258f4359113b0da45594528f7516bfc553a9d6a",
+          "category": "result",
+          "expected": "139a11afca2b138838b51dc14258f4359113b0da45594528f7516bfc553a9d6a",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/results/dependency_manifest.json"
+        },
+        {
+          "actual": "04a45406387206d245744c92d1652682b68a0ba55e0b74fef7f16fadbc5366c6",
+          "category": "local_source",
+          "expected": "04a45406387206d245744c92d1652682b68a0ba55e0b74fef7f16fadbc5366c6",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/experiments/build_archive.py"
+        },
+        {
+          "actual": "8e3480492f47f5e62f7c3c76bb8b14e540edd197903577e03226d422d20f4df0",
+          "category": "local_source",
+          "expected": "8e3480492f47f5e62f7c3c76bb8b14e540edd197903577e03226d422d20f4df0",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/experiments/build_congruence_audit.py"
+        },
+        {
+          "actual": "9894818841cc19ff750d82b8112442067f2bf81659f671fc6eebc985690da2f4",
+          "category": "local_source",
+          "expected": "9894818841cc19ff750d82b8112442067f2bf81659f671fc6eebc985690da2f4",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/experiments/make_figures.py"
+        },
+        {
+          "actual": "253099764b9f07aaeca8abb7f32459f3d115da6b9cd80a720eaf2996d47565e3",
+          "category": "local_source",
+          "expected": "253099764b9f07aaeca8abb7f32459f3d115da6b9cd80a720eaf2996d47565e3",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/experiments/verify_archive.py"
+        },
+        {
+          "actual": "d4de909f497d09e2c78b94d8cce0a01d2e01176f1531b336f02dfb0e8cf8d56d",
+          "category": "local_source",
+          "expected": "d4de909f497d09e2c78b94d8cce0a01d2e01176f1531b336f02dfb0e8cf8d56d",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/src/reset_congruence/__init__.py"
+        },
+        {
+          "actual": "406226be31e6766990b8b560587232ed5ed44a4d6a78aa46887f58a595691e16",
+          "category": "local_source",
+          "expected": "406226be31e6766990b8b560587232ed5ed44a4d6a78aa46887f58a595691e16",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/src/reset_congruence/bounds.py"
+        },
+        {
+          "actual": "9fd1cd57dae51cc529e753ff15d35f8d4020df052a32ca0021339d79353dcc38",
+          "category": "local_source",
+          "expected": "9fd1cd57dae51cc529e753ff15d35f8d4020df052a32ca0021339d79353dcc38",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/tests/test_archived_results.py"
+        },
+        {
+          "actual": "f5f1fc1cc49a6d42923df11599e21541ea1246abb7482aacacd0f0eb11bae79f",
+          "category": "local_source",
+          "expected": "f5f1fc1cc49a6d42923df11599e21541ea1246abb7482aacacd0f0eb11bae79f",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/tests/test_theory.py"
+        },
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "manifest_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/.gitignore"
+        },
+        {
+          "actual": "6b43f52475d2e7a4f7c9d6df4f512857c45a8571076ee034942ac9107707a653",
+          "category": "manifest_publication",
+          "expected": "6b43f52475d2e7a4f7c9d6df4f512857c45a8571076ee034942ac9107707a653",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/README.md"
+        },
+        {
+          "actual": "7376f38979c52c411a38c290e4622388e1ca9af2b70715380e886a1501445764",
+          "category": "manifest_publication",
+          "expected": "7376f38979c52c411a38c290e4622388e1ca9af2b70715380e886a1501445764",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "0422ee76157cb4b086acaa310327877cb525f67650e37c0c1bd42f779b67ee9d",
+          "category": "manifest_publication",
+          "expected": "0422ee76157cb4b086acaa310327877cb525f67650e37c0c1bd42f779b67ee9d",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "fc70de0d99628672b2fb5c205cd91f92a18f3e41f3641ef1f5c5fa76b2d47a7a",
+          "category": "manifest_publication",
+          "expected": "fc70de0d99628672b2fb5c205cd91f92a18f3e41f3641ef1f5c5fa76b2d47a7a",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/congruence-covariant-reset-transport.pdf"
+        },
+        {
+          "actual": "3bebea719fa4c8b033560ae900d8faffd687f31aa1641f81d0b9ea27bf6c3dc5",
+          "category": "manifest_publication",
+          "expected": "3bebea719fa4c8b033560ae900d8faffd687f31aa1641f81d0b9ea27bf6c3dc5",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/figures/congruence_covariant_reset_transport.pdf"
+        },
+        {
+          "actual": "6ecaf072a7e23d088cde224e333914d29a948e7463ed1cf7fa36872e9685cc64",
+          "category": "manifest_publication",
+          "expected": "6ecaf072a7e23d088cde224e333914d29a948e7463ed1cf7fa36872e9685cc64",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/figures/congruence_covariant_reset_transport.png"
+        },
+        {
+          "actual": "fc70de0d99628672b2fb5c205cd91f92a18f3e41f3641ef1f5c5fa76b2d47a7a",
+          "category": "manifest_publication",
+          "expected": "fc70de0d99628672b2fb5c205cd91f92a18f3e41f3641ef1f5c5fa76b2d47a7a",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/main.pdf"
+        },
+        {
+          "actual": "6d8b74f1aa5785de2e790239d8771a36f35b11117c6da73389380a114362b3a7",
+          "category": "manifest_publication",
+          "expected": "6d8b74f1aa5785de2e790239d8771a36f35b11117c6da73389380a114362b3a7",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/main.tex"
+        },
+        {
+          "actual": "a4dbb07ed36bd7b2c8c3ae9b4b2ceb3ff7fd41262b75c2078652213ef9f92636",
+          "category": "manifest_publication",
+          "expected": "a4dbb07ed36bd7b2c8c3ae9b4b2ceb3ff7fd41262b75c2078652213ef9f92636",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/pyproject.toml"
+        },
+        {
+          "actual": "b5c4ea3ad1dfc2bd3171bae8e2ee653955389ceb66de12e1c65a8027401aa399",
+          "category": "manifest_publication",
+          "expected": "b5c4ea3ad1dfc2bd3171bae8e2ee653955389ceb66de12e1c65a8027401aa399",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/references.bib"
+        },
+        {
+          "actual": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "category": "manifest_publication",
+          "expected": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/requirements.txt"
+        },
+        {
+          "actual": "0c0b9c1ca5c941239fda71d06fbcdfff15607e267bc94ecf9c99945b9c5f4072",
+          "category": "external_input",
+          "expected": "0c0b9c1ca5c941239fda71d06fbcdfff15607e267bc94ecf9c99945b9c5f4072",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/reset_packet_audit.json"
+        },
+        {
+          "actual": "74fe5959476f897210aa21f8f119d78caf5f844cf0a51b7fb60f8bfe3cb44955",
+          "category": "external_input",
+          "expected": "74fe5959476f897210aa21f8f119d78caf5f844cf0a51b7fb60f8bfe3cb44955",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/summary.json"
+        },
+        {
+          "actual": "a017ec0c4eba18ec712f2a98d48468eedbdf90242138316f8911c78fe9f93e5b",
+          "category": "external_input",
+          "expected": "a017ec0c4eba18ec712f2a98d48468eedbdf90242138316f8911c78fe9f93e5b",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/results/archive_verification.json"
+        },
+        {
+          "actual": "e53c5dddbfbf9e4d03261966fb157cb875f7676e485a493e9566a5b50969faad",
+          "category": "external_input",
+          "expected": "e53c5dddbfbf9e4d03261966fb157cb875f7676e485a493e9566a5b50969faad",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/results/overlap_audit.json"
+        },
+        {
+          "actual": "39c95299f1a56687bfe35d8470bf90f6117bcc3c2a80f934b05282e116b2fadd",
+          "category": "external_input",
+          "expected": "39c95299f1a56687bfe35d8470bf90f6117bcc3c2a80f934b05282e116b2fadd",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/results/summary.json"
+        }
+      ],
+      "directory": "RH-153-congruence-covariant-reset-transport",
+      "external_input_count": 5,
+      "failure_count": 0,
+      "local_source_count": 8,
+      "match_count": 40,
+      "paper": 153,
+      "publication_file_count": 12,
+      "summary_status": "rh153_congruence_covariant_reset_transport_archived"
+    },
+    {
+      "archive_status": "all_rh154_archive_hashes_verified",
+      "check_count": 39,
+      "checks": [
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "archive_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/.gitignore"
+        },
+        {
+          "actual": "debfc49c014fbb0648237dd110501f6a4fdc7ccc1e99144a0bb3b1652313caf8",
+          "category": "archive_publication",
+          "expected": "debfc49c014fbb0648237dd110501f6a4fdc7ccc1e99144a0bb3b1652313caf8",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/README.md"
+        },
+        {
+          "actual": "5817e01201c4fb86e8ff7a023206682486aaf69fc6f11ed5721abf352b645957",
+          "category": "archive_publication",
+          "expected": "5817e01201c4fb86e8ff7a023206682486aaf69fc6f11ed5721abf352b645957",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "09c115130c89ce7ba135dd5bdf7c826cfe54a52a4fbd0a39b105e94864e1daf9",
+          "category": "archive_publication",
+          "expected": "09c115130c89ce7ba135dd5bdf7c826cfe54a52a4fbd0a39b105e94864e1daf9",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "c241c3d13bad45825d368bbe91b0ea076eea81fca3fbc35a06f7becb62bed9fa",
+          "category": "archive_publication",
+          "expected": "c241c3d13bad45825d368bbe91b0ea076eea81fca3fbc35a06f7becb62bed9fa",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/figures/half_horizon_delayed_reset_suffix.pdf"
+        },
+        {
+          "actual": "6cfafa58eea1ed46e93fca927fc93477adfa742667f9ec0e18e40d0970e5d2fe",
+          "category": "archive_publication",
+          "expected": "6cfafa58eea1ed46e93fca927fc93477adfa742667f9ec0e18e40d0970e5d2fe",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/figures/half_horizon_delayed_reset_suffix.png"
+        },
+        {
+          "actual": "a4680e0f13e17ea2ce25fd11599dbba63b62b62e92bdb59373da4cf3dd7ccf02",
+          "category": "archive_publication",
+          "expected": "a4680e0f13e17ea2ce25fd11599dbba63b62b62e92bdb59373da4cf3dd7ccf02",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/half-horizon-delayed-reset-suffix.pdf"
+        },
+        {
+          "actual": "a4680e0f13e17ea2ce25fd11599dbba63b62b62e92bdb59373da4cf3dd7ccf02",
+          "category": "archive_publication",
+          "expected": "a4680e0f13e17ea2ce25fd11599dbba63b62b62e92bdb59373da4cf3dd7ccf02",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/main.pdf"
+        },
+        {
+          "actual": "54e38b8ffa20f4c008943295da7d97d3035c13addcd34fe6f7151ff1f147e537",
+          "category": "archive_publication",
+          "expected": "54e38b8ffa20f4c008943295da7d97d3035c13addcd34fe6f7151ff1f147e537",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/main.tex"
+        },
+        {
+          "actual": "49e21ef3a413943f808c5784915ce15ace0d1e7bf038a240c7142c607bfa088c",
+          "category": "archive_publication",
+          "expected": "49e21ef3a413943f808c5784915ce15ace0d1e7bf038a240c7142c607bfa088c",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/pyproject.toml"
+        },
+        {
+          "actual": "9284f8c867f58eeceb4aa6f1e0e2adb24871fd2a071c621e6b23f5c59d696eb8",
+          "category": "archive_publication",
+          "expected": "9284f8c867f58eeceb4aa6f1e0e2adb24871fd2a071c621e6b23f5c59d696eb8",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/references.bib"
+        },
+        {
+          "actual": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "category": "archive_publication",
+          "expected": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/requirements.txt"
+        },
+        {
+          "actual": "b5de0cb6493e947b2f408a6c168ac5af502ce2e6c0e0500b6fa6f6c2e266daec",
+          "category": "result",
+          "expected": "b5de0cb6493e947b2f408a6c168ac5af502ce2e6c0e0500b6fa6f6c2e266daec",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/results/dependency_manifest.json"
+        },
+        {
+          "actual": "11234a3571bde94a7d8f87d42a6001fde4a415accba99a1dbd0f502fb7cf285d",
+          "category": "result",
+          "expected": "11234a3571bde94a7d8f87d42a6001fde4a415accba99a1dbd0f502fb7cf285d",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/results/suffix_audit.json"
+        },
+        {
+          "actual": "fc2c5f0b7686985a4968b6d0166e8e6d839bd4279dbca4d2335723f84a4ee30f",
+          "category": "result",
+          "expected": "fc2c5f0b7686985a4968b6d0166e8e6d839bd4279dbca4d2335723f84a4ee30f",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/results/suffix_smoke.json"
+        },
+        {
+          "actual": "1ca040c98ea502ffe71dc4a55efffd3fabf748f3edd73770c22fa5a6558789c7",
+          "category": "local_source",
+          "expected": "1ca040c98ea502ffe71dc4a55efffd3fabf748f3edd73770c22fa5a6558789c7",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/experiments/build_archive.py"
+        },
+        {
+          "actual": "f28c36954003a3b74fe5897770d54a8a0f2bcedbe83c32321c477d8cad051f59",
+          "category": "local_source",
+          "expected": "f28c36954003a3b74fe5897770d54a8a0f2bcedbe83c32321c477d8cad051f59",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/experiments/build_suffix_audit.py"
+        },
+        {
+          "actual": "230cc556ce1ceb8cde3432456641bca36646062e7033ccd5e9e3fbd8ae4ad0c1",
+          "category": "local_source",
+          "expected": "230cc556ce1ceb8cde3432456641bca36646062e7033ccd5e9e3fbd8ae4ad0c1",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/experiments/make_figures.py"
+        },
+        {
+          "actual": "6cf3eea9fb8ade7b36517a667de593530209d70c1b2be9b8bdf4cfcd86873edf",
+          "category": "local_source",
+          "expected": "6cf3eea9fb8ade7b36517a667de593530209d70c1b2be9b8bdf4cfcd86873edf",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/experiments/verify_archive.py"
+        },
+        {
+          "actual": "fc9bd01b44578c72c8962b858060eb17da32396f1774b87fceeb4f0877bb8b4c",
+          "category": "local_source",
+          "expected": "fc9bd01b44578c72c8962b858060eb17da32396f1774b87fceeb4f0877bb8b4c",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/src/delayed_suffix/__init__.py"
+        },
+        {
+          "actual": "8ab31d21b9d8aee451483c3c36085bd3a17fbf933f68cfca3be524f205b86065",
+          "category": "local_source",
+          "expected": "8ab31d21b9d8aee451483c3c36085bd3a17fbf933f68cfca3be524f205b86065",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/src/delayed_suffix/bounds.py"
+        },
+        {
+          "actual": "c5c0c75483fa78ce3ba75647a9c571344a65c806d5a240d915d2bb51263c784b",
+          "category": "local_source",
+          "expected": "c5c0c75483fa78ce3ba75647a9c571344a65c806d5a240d915d2bb51263c784b",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/tests/test_archived_results.py"
+        },
+        {
+          "actual": "3f09010cdfb55626c73b1d04bab226a413a8bec94c586dbf13bd6a2e19d0ec86",
+          "category": "local_source",
+          "expected": "3f09010cdfb55626c73b1d04bab226a413a8bec94c586dbf13bd6a2e19d0ec86",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/tests/test_theory.py"
+        },
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "manifest_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/.gitignore"
+        },
+        {
+          "actual": "debfc49c014fbb0648237dd110501f6a4fdc7ccc1e99144a0bb3b1652313caf8",
+          "category": "manifest_publication",
+          "expected": "debfc49c014fbb0648237dd110501f6a4fdc7ccc1e99144a0bb3b1652313caf8",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/README.md"
+        },
+        {
+          "actual": "5817e01201c4fb86e8ff7a023206682486aaf69fc6f11ed5721abf352b645957",
+          "category": "manifest_publication",
+          "expected": "5817e01201c4fb86e8ff7a023206682486aaf69fc6f11ed5721abf352b645957",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "09c115130c89ce7ba135dd5bdf7c826cfe54a52a4fbd0a39b105e94864e1daf9",
+          "category": "manifest_publication",
+          "expected": "09c115130c89ce7ba135dd5bdf7c826cfe54a52a4fbd0a39b105e94864e1daf9",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "c241c3d13bad45825d368bbe91b0ea076eea81fca3fbc35a06f7becb62bed9fa",
+          "category": "manifest_publication",
+          "expected": "c241c3d13bad45825d368bbe91b0ea076eea81fca3fbc35a06f7becb62bed9fa",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/figures/half_horizon_delayed_reset_suffix.pdf"
+        },
+        {
+          "actual": "6cfafa58eea1ed46e93fca927fc93477adfa742667f9ec0e18e40d0970e5d2fe",
+          "category": "manifest_publication",
+          "expected": "6cfafa58eea1ed46e93fca927fc93477adfa742667f9ec0e18e40d0970e5d2fe",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/figures/half_horizon_delayed_reset_suffix.png"
+        },
+        {
+          "actual": "a4680e0f13e17ea2ce25fd11599dbba63b62b62e92bdb59373da4cf3dd7ccf02",
+          "category": "manifest_publication",
+          "expected": "a4680e0f13e17ea2ce25fd11599dbba63b62b62e92bdb59373da4cf3dd7ccf02",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/half-horizon-delayed-reset-suffix.pdf"
+        },
+        {
+          "actual": "a4680e0f13e17ea2ce25fd11599dbba63b62b62e92bdb59373da4cf3dd7ccf02",
+          "category": "manifest_publication",
+          "expected": "a4680e0f13e17ea2ce25fd11599dbba63b62b62e92bdb59373da4cf3dd7ccf02",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/main.pdf"
+        },
+        {
+          "actual": "54e38b8ffa20f4c008943295da7d97d3035c13addcd34fe6f7151ff1f147e537",
+          "category": "manifest_publication",
+          "expected": "54e38b8ffa20f4c008943295da7d97d3035c13addcd34fe6f7151ff1f147e537",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/main.tex"
+        },
+        {
+          "actual": "49e21ef3a413943f808c5784915ce15ace0d1e7bf038a240c7142c607bfa088c",
+          "category": "manifest_publication",
+          "expected": "49e21ef3a413943f808c5784915ce15ace0d1e7bf038a240c7142c607bfa088c",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/pyproject.toml"
+        },
+        {
+          "actual": "9284f8c867f58eeceb4aa6f1e0e2adb24871fd2a071c621e6b23f5c59d696eb8",
+          "category": "manifest_publication",
+          "expected": "9284f8c867f58eeceb4aa6f1e0e2adb24871fd2a071c621e6b23f5c59d696eb8",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/references.bib"
+        },
+        {
+          "actual": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "category": "manifest_publication",
+          "expected": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/requirements.txt"
+        },
+        {
+          "actual": "7ba121f25eeda790db0c0c92e6624148b7e361b58e32d9ee171e88f77d032af6",
+          "category": "external_input",
+          "expected": "7ba121f25eeda790db0c0c92e6624148b7e361b58e32d9ee171e88f77d032af6",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/results/archive_verification.json"
+        },
+        {
+          "actual": "fb431ea360e0adba569850860a6c57667937cb2d7f1e4b33c10372e3f015723d",
+          "category": "external_input",
+          "expected": "fb431ea360e0adba569850860a6c57667937cb2d7f1e4b33c10372e3f015723d",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/results/congruence_audit.json"
+        },
+        {
+          "actual": "0422ee76157cb4b086acaa310327877cb525f67650e37c0c1bd42f779b67ee9d",
+          "category": "external_input",
+          "expected": "0422ee76157cb4b086acaa310327877cb525f67650e37c0c1bd42f779b67ee9d",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "9a640b13ac1a7c5ccf0542afef34c38b7af76ff2cceb3610d9679f15866b8ddb",
+          "category": "external_input",
+          "expected": "9a640b13ac1a7c5ccf0542afef34c38b7af76ff2cceb3610d9679f15866b8ddb",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/results/summary.json"
+        }
+      ],
+      "directory": "RH-154-half-horizon-delayed-reset-suffix",
+      "external_input_count": 4,
+      "failure_count": 0,
+      "local_source_count": 8,
+      "match_count": 39,
+      "paper": 154,
+      "publication_file_count": 12,
+      "summary_status": "rh154_half_horizon_delayed_reset_suffix_archived"
+    },
+    {
+      "archive_status": "all_rh155_archive_hashes_verified",
+      "check_count": 40,
+      "checks": [
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "archive_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/.gitignore"
+        },
+        {
+          "actual": "41164e329653b83644239cb56347833cfa04b880b1b1fe1cfc36699a2f02460f",
+          "category": "archive_publication",
+          "expected": "41164e329653b83644239cb56347833cfa04b880b1b1fe1cfc36699a2f02460f",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/README.md"
+        },
+        {
+          "actual": "8f977fd8cb03479ee8d566e06aa4824d97143193ed2acdabf6c68753794be743",
+          "category": "archive_publication",
+          "expected": "8f977fd8cb03479ee8d566e06aa4824d97143193ed2acdabf6c68753794be743",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "ac0a3888f28b9ddcd8b40ad8778d83293d0fbaf521c4bc63b8269aef56f72932",
+          "category": "archive_publication",
+          "expected": "ac0a3888f28b9ddcd8b40ad8778d83293d0fbaf521c4bc63b8269aef56f72932",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "1b7452d9e9fb37eeaccee23d5fef4c65183ea09366288d3141d2f0df364be6a9",
+          "category": "archive_publication",
+          "expected": "1b7452d9e9fb37eeaccee23d5fef4c65183ea09366288d3141d2f0df364be6a9",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/figures/native_spectral_reset_memory_pair.pdf"
+        },
+        {
+          "actual": "ac863e746c319c42c16cf61810c6c56b0aeee33b3ed328378f5e28e771be2b6a",
+          "category": "archive_publication",
+          "expected": "ac863e746c319c42c16cf61810c6c56b0aeee33b3ed328378f5e28e771be2b6a",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/figures/native_spectral_reset_memory_pair.png"
+        },
+        {
+          "actual": "8b3d7d46ebced349a101f3e7cb9995fb864ad33fe935575004f0f28bc4083c44",
+          "category": "archive_publication",
+          "expected": "8b3d7d46ebced349a101f3e7cb9995fb864ad33fe935575004f0f28bc4083c44",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/main.pdf"
+        },
+        {
+          "actual": "2510b974a864ec35ebc36d646739bf1319fbc9ac38427a9306239f158c780389",
+          "category": "archive_publication",
+          "expected": "2510b974a864ec35ebc36d646739bf1319fbc9ac38427a9306239f158c780389",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/main.tex"
+        },
+        {
+          "actual": "8b3d7d46ebced349a101f3e7cb9995fb864ad33fe935575004f0f28bc4083c44",
+          "category": "archive_publication",
+          "expected": "8b3d7d46ebced349a101f3e7cb9995fb864ad33fe935575004f0f28bc4083c44",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/native-spectral-reset-memory-pair.pdf"
+        },
+        {
+          "actual": "4b0546a166f6b108a603b1878ec426b1107db99af52993d063c915b031472829",
+          "category": "archive_publication",
+          "expected": "4b0546a166f6b108a603b1878ec426b1107db99af52993d063c915b031472829",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/pyproject.toml"
+        },
+        {
+          "actual": "19b22e3a18a42becbd6f238bf9b6534815d0920ddfd2cbe17c7c98625ae7b6fe",
+          "category": "archive_publication",
+          "expected": "19b22e3a18a42becbd6f238bf9b6534815d0920ddfd2cbe17c7c98625ae7b6fe",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/references.bib"
+        },
+        {
+          "actual": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "category": "archive_publication",
+          "expected": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/requirements.txt"
+        },
+        {
+          "actual": "094fc26526985e0de97630c8fca32cb174ecd161cb853d0dee728578ffc00fe3",
+          "category": "result",
+          "expected": "094fc26526985e0de97630c8fca32cb174ecd161cb853d0dee728578ffc00fe3",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/results/dependency_manifest.json"
+        },
+        {
+          "actual": "4d540a3c638a342ceb9699ec3f0407a6435c4fc2ef87d1da3acebfd9175e39f2",
+          "category": "result",
+          "expected": "4d540a3c638a342ceb9699ec3f0407a6435c4fc2ef87d1da3acebfd9175e39f2",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/results/memory_pair_audit.json"
+        },
+        {
+          "actual": "d6182aebe0f04102f7c9a84ced2ec2cfff7e24ea3bf8e8b0288b24af3f8084b8",
+          "category": "result",
+          "expected": "d6182aebe0f04102f7c9a84ced2ec2cfff7e24ea3bf8e8b0288b24af3f8084b8",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/results/memory_pair_smoke.json"
+        },
+        {
+          "actual": "4511d5d480f1073b0dd324b538016abcfcd1f4d151133d63f290c1ed3c9652a2",
+          "category": "local_source",
+          "expected": "4511d5d480f1073b0dd324b538016abcfcd1f4d151133d63f290c1ed3c9652a2",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/experiments/build_archive.py"
+        },
+        {
+          "actual": "37ae17b901c407ff673c5b291d47ec2767b414f3d48bf181709ee267c4f0e746",
+          "category": "local_source",
+          "expected": "37ae17b901c407ff673c5b291d47ec2767b414f3d48bf181709ee267c4f0e746",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/experiments/build_memory_pair_audit.py"
+        },
+        {
+          "actual": "23f98101f6a2b99be5a7bf11b2c3d142f95f05e2844b93e3a112567ac1ad137c",
+          "category": "local_source",
+          "expected": "23f98101f6a2b99be5a7bf11b2c3d142f95f05e2844b93e3a112567ac1ad137c",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/experiments/make_figures.py"
+        },
+        {
+          "actual": "412bb92d38db33dafaca5cdc2a7804b403e0e5b4391ea3a82aa12b5f18a9e708",
+          "category": "local_source",
+          "expected": "412bb92d38db33dafaca5cdc2a7804b403e0e5b4391ea3a82aa12b5f18a9e708",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/experiments/verify_archive.py"
+        },
+        {
+          "actual": "aca81abcbc4f315c1fd0da7e68cda09f769a5c2178d893117052961ba2f36b75",
+          "category": "local_source",
+          "expected": "aca81abcbc4f315c1fd0da7e68cda09f769a5c2178d893117052961ba2f36b75",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/src/reset_memory_pair/__init__.py"
+        },
+        {
+          "actual": "4397a385a8d06cbb6e52d6ae09adbf765ec5edf968339d9d1bd0557f1ad491c6",
+          "category": "local_source",
+          "expected": "4397a385a8d06cbb6e52d6ae09adbf765ec5edf968339d9d1bd0557f1ad491c6",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/src/reset_memory_pair/bounds.py"
+        },
+        {
+          "actual": "e1603bd8ae0a56095a2d58aeeeeaef1caa760aab378be443969f771b93b7d6b3",
+          "category": "local_source",
+          "expected": "e1603bd8ae0a56095a2d58aeeeeaef1caa760aab378be443969f771b93b7d6b3",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/tests/test_archived_results.py"
+        },
+        {
+          "actual": "20c3684fe766ce951cafbd36112fc8d5bca6e2688c85f90bc2b9f325c50f60b4",
+          "category": "local_source",
+          "expected": "20c3684fe766ce951cafbd36112fc8d5bca6e2688c85f90bc2b9f325c50f60b4",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/tests/test_theory.py"
+        },
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "manifest_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/.gitignore"
+        },
+        {
+          "actual": "41164e329653b83644239cb56347833cfa04b880b1b1fe1cfc36699a2f02460f",
+          "category": "manifest_publication",
+          "expected": "41164e329653b83644239cb56347833cfa04b880b1b1fe1cfc36699a2f02460f",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/README.md"
+        },
+        {
+          "actual": "8f977fd8cb03479ee8d566e06aa4824d97143193ed2acdabf6c68753794be743",
+          "category": "manifest_publication",
+          "expected": "8f977fd8cb03479ee8d566e06aa4824d97143193ed2acdabf6c68753794be743",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "ac0a3888f28b9ddcd8b40ad8778d83293d0fbaf521c4bc63b8269aef56f72932",
+          "category": "manifest_publication",
+          "expected": "ac0a3888f28b9ddcd8b40ad8778d83293d0fbaf521c4bc63b8269aef56f72932",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "1b7452d9e9fb37eeaccee23d5fef4c65183ea09366288d3141d2f0df364be6a9",
+          "category": "manifest_publication",
+          "expected": "1b7452d9e9fb37eeaccee23d5fef4c65183ea09366288d3141d2f0df364be6a9",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/figures/native_spectral_reset_memory_pair.pdf"
+        },
+        {
+          "actual": "ac863e746c319c42c16cf61810c6c56b0aeee33b3ed328378f5e28e771be2b6a",
+          "category": "manifest_publication",
+          "expected": "ac863e746c319c42c16cf61810c6c56b0aeee33b3ed328378f5e28e771be2b6a",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/figures/native_spectral_reset_memory_pair.png"
+        },
+        {
+          "actual": "8b3d7d46ebced349a101f3e7cb9995fb864ad33fe935575004f0f28bc4083c44",
+          "category": "manifest_publication",
+          "expected": "8b3d7d46ebced349a101f3e7cb9995fb864ad33fe935575004f0f28bc4083c44",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/main.pdf"
+        },
+        {
+          "actual": "2510b974a864ec35ebc36d646739bf1319fbc9ac38427a9306239f158c780389",
+          "category": "manifest_publication",
+          "expected": "2510b974a864ec35ebc36d646739bf1319fbc9ac38427a9306239f158c780389",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/main.tex"
+        },
+        {
+          "actual": "8b3d7d46ebced349a101f3e7cb9995fb864ad33fe935575004f0f28bc4083c44",
+          "category": "manifest_publication",
+          "expected": "8b3d7d46ebced349a101f3e7cb9995fb864ad33fe935575004f0f28bc4083c44",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/native-spectral-reset-memory-pair.pdf"
+        },
+        {
+          "actual": "4b0546a166f6b108a603b1878ec426b1107db99af52993d063c915b031472829",
+          "category": "manifest_publication",
+          "expected": "4b0546a166f6b108a603b1878ec426b1107db99af52993d063c915b031472829",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/pyproject.toml"
+        },
+        {
+          "actual": "19b22e3a18a42becbd6f238bf9b6534815d0920ddfd2cbe17c7c98625ae7b6fe",
+          "category": "manifest_publication",
+          "expected": "19b22e3a18a42becbd6f238bf9b6534815d0920ddfd2cbe17c7c98625ae7b6fe",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/references.bib"
+        },
+        {
+          "actual": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "category": "manifest_publication",
+          "expected": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/requirements.txt"
+        },
+        {
+          "actual": "0c0b9c1ca5c941239fda71d06fbcdfff15607e267bc94ecf9c99945b9c5f4072",
+          "category": "external_input",
+          "expected": "0c0b9c1ca5c941239fda71d06fbcdfff15607e267bc94ecf9c99945b9c5f4072",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/reset_packet_audit.json"
+        },
+        {
+          "actual": "74fe5959476f897210aa21f8f119d78caf5f844cf0a51b7fb60f8bfe3cb44955",
+          "category": "external_input",
+          "expected": "74fe5959476f897210aa21f8f119d78caf5f844cf0a51b7fb60f8bfe3cb44955",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/summary.json"
+        },
+        {
+          "actual": "ab3edf2e26c4b8d9a3705a7fae012e112dbf552279af64961cfa8ae3896cde88",
+          "category": "external_input",
+          "expected": "ab3edf2e26c4b8d9a3705a7fae012e112dbf552279af64961cfa8ae3896cde88",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/results/archive_verification.json"
+        },
+        {
+          "actual": "11234a3571bde94a7d8f87d42a6001fde4a415accba99a1dbd0f502fb7cf285d",
+          "category": "external_input",
+          "expected": "11234a3571bde94a7d8f87d42a6001fde4a415accba99a1dbd0f502fb7cf285d",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/results/suffix_audit.json"
+        },
+        {
+          "actual": "f5066e9c9f84b58e4cf98f77ee0ab4462c3700b21e295e62f7804269e9e71b5e",
+          "category": "external_input",
+          "expected": "f5066e9c9f84b58e4cf98f77ee0ab4462c3700b21e295e62f7804269e9e71b5e",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/results/summary.json"
+        }
+      ],
+      "directory": "RH-155-native-spectral-reset-memory-pair",
+      "external_input_count": 5,
+      "failure_count": 0,
+      "local_source_count": 8,
+      "match_count": 40,
+      "paper": 155,
+      "publication_file_count": 12,
+      "summary_status": "rh155_native_spectral_reset_memory_pair_archived"
+    },
+    {
+      "archive_status": "all_rh156_archive_hashes_verified",
+      "check_count": 40,
+      "checks": [
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "archive_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/.gitignore"
+        },
+        {
+          "actual": "121e614a819ae36b76c195bc272e2c128e4e9e515e9182bf92aaaa108af547ff",
+          "category": "archive_publication",
+          "expected": "121e614a819ae36b76c195bc272e2c128e4e9e515e9182bf92aaaa108af547ff",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/README.md"
+        },
+        {
+          "actual": "920d850667f4faa0a1b6d6768cf5101194178c9227a7dd379b0a664634a9ac10",
+          "category": "archive_publication",
+          "expected": "920d850667f4faa0a1b6d6768cf5101194178c9227a7dd379b0a664634a9ac10",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "5dd2d17253a0ca7c7ef074402addcd9e14576da6cced1646f17388147e3dde22",
+          "category": "archive_publication",
+          "expected": "5dd2d17253a0ca7c7ef074402addcd9e14576da6cced1646f17388147e3dde22",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "b271716e1584cfadfed53b4752429f0e7d6c3d85d61e5e9b4150f4211528215d",
+          "category": "archive_publication",
+          "expected": "b271716e1584cfadfed53b4752429f0e7d6c3d85d61e5e9b4150f4211528215d",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/figures/native_reset_support_floor.pdf"
+        },
+        {
+          "actual": "5d88d11a6833f314700c4faba60f42620dc7e8acf5d043340c4d5849cec390e4",
+          "category": "archive_publication",
+          "expected": "5d88d11a6833f314700c4faba60f42620dc7e8acf5d043340c4d5849cec390e4",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/figures/native_reset_support_floor.png"
+        },
+        {
+          "actual": "0088290a092eb54888ddaf8d56ed372f4a479b61b95e5115af04958aee590018",
+          "category": "archive_publication",
+          "expected": "0088290a092eb54888ddaf8d56ed372f4a479b61b95e5115af04958aee590018",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/main.pdf"
+        },
+        {
+          "actual": "5926c12cfcd2c6c25d27ef288eb8a0350958baf0d921b40ea36ee1740cd74dbc",
+          "category": "archive_publication",
+          "expected": "5926c12cfcd2c6c25d27ef288eb8a0350958baf0d921b40ea36ee1740cd74dbc",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/main.tex"
+        },
+        {
+          "actual": "0088290a092eb54888ddaf8d56ed372f4a479b61b95e5115af04958aee590018",
+          "category": "archive_publication",
+          "expected": "0088290a092eb54888ddaf8d56ed372f4a479b61b95e5115af04958aee590018",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/native-reset-support-floor.pdf"
+        },
+        {
+          "actual": "bd761a847344d189f639fd992dc196d0aa984ebbc2fd9c94f05a29487358f255",
+          "category": "archive_publication",
+          "expected": "bd761a847344d189f639fd992dc196d0aa984ebbc2fd9c94f05a29487358f255",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/pyproject.toml"
+        },
+        {
+          "actual": "19b22e3a18a42becbd6f238bf9b6534815d0920ddfd2cbe17c7c98625ae7b6fe",
+          "category": "archive_publication",
+          "expected": "19b22e3a18a42becbd6f238bf9b6534815d0920ddfd2cbe17c7c98625ae7b6fe",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/references.bib"
+        },
+        {
+          "actual": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "category": "archive_publication",
+          "expected": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/requirements.txt"
+        },
+        {
+          "actual": "c1451a08f8545fdc282f20f86d44f19d572722cc84c0241956c0739da318d035",
+          "category": "result",
+          "expected": "c1451a08f8545fdc282f20f86d44f19d572722cc84c0241956c0739da318d035",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/results/dependency_manifest.json"
+        },
+        {
+          "actual": "ae0968cece5b488b938b42ff42a66daaa3889f2f06abb140bfd9bd9a2babe75a",
+          "category": "result",
+          "expected": "ae0968cece5b488b938b42ff42a66daaa3889f2f06abb140bfd9bd9a2babe75a",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/results/support_audit.json"
+        },
+        {
+          "actual": "274501987d8cad9952387c0d140590ef1b7ec6017134061835ebff6115585781",
+          "category": "result",
+          "expected": "274501987d8cad9952387c0d140590ef1b7ec6017134061835ebff6115585781",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/results/support_smoke.json"
+        },
+        {
+          "actual": "5d1ae20861964a32162955543e122ce855bf6a66dbcd8567af3a3d3a4114ffe6",
+          "category": "local_source",
+          "expected": "5d1ae20861964a32162955543e122ce855bf6a66dbcd8567af3a3d3a4114ffe6",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/experiments/build_archive.py"
+        },
+        {
+          "actual": "c5c3d778bfe3de0b7413fe7ee3a50354d879509d9b54e7612206104050b2e850",
+          "category": "local_source",
+          "expected": "c5c3d778bfe3de0b7413fe7ee3a50354d879509d9b54e7612206104050b2e850",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/experiments/build_support_audit.py"
+        },
+        {
+          "actual": "30553ebeb752c32348cd9124af08c5cb1a49c93d9ecb4df4518bcd6cba510689",
+          "category": "local_source",
+          "expected": "30553ebeb752c32348cd9124af08c5cb1a49c93d9ecb4df4518bcd6cba510689",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/experiments/make_figures.py"
+        },
+        {
+          "actual": "56ff003544aa3cc821bb0c16e6e4975609bfa169a56a0f18a99d08e6854f704d",
+          "category": "local_source",
+          "expected": "56ff003544aa3cc821bb0c16e6e4975609bfa169a56a0f18a99d08e6854f704d",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/experiments/verify_archive.py"
+        },
+        {
+          "actual": "92a5b48f40e1cdedc230a58b501b6e061de4cdf4245b710925703a274f0b563c",
+          "category": "local_source",
+          "expected": "92a5b48f40e1cdedc230a58b501b6e061de4cdf4245b710925703a274f0b563c",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/src/reset_support/__init__.py"
+        },
+        {
+          "actual": "d474fff8aed33e5257e77b4e4345fbfaf3d755eef51f4f1e59e5abe588a10068",
+          "category": "local_source",
+          "expected": "d474fff8aed33e5257e77b4e4345fbfaf3d755eef51f4f1e59e5abe588a10068",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/src/reset_support/bounds.py"
+        },
+        {
+          "actual": "7e4e22ef5a69b92e2c337d659ec9e84c6f4b06c5b2f3a861e5b169d788e5a4e2",
+          "category": "local_source",
+          "expected": "7e4e22ef5a69b92e2c337d659ec9e84c6f4b06c5b2f3a861e5b169d788e5a4e2",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/tests/test_archived_results.py"
+        },
+        {
+          "actual": "78766bdaed8df03e0db50a478f12892b1176ba10b10ecb630b643f4b6aa32dd0",
+          "category": "local_source",
+          "expected": "78766bdaed8df03e0db50a478f12892b1176ba10b10ecb630b643f4b6aa32dd0",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/tests/test_theory.py"
+        },
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "manifest_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/.gitignore"
+        },
+        {
+          "actual": "121e614a819ae36b76c195bc272e2c128e4e9e515e9182bf92aaaa108af547ff",
+          "category": "manifest_publication",
+          "expected": "121e614a819ae36b76c195bc272e2c128e4e9e515e9182bf92aaaa108af547ff",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/README.md"
+        },
+        {
+          "actual": "920d850667f4faa0a1b6d6768cf5101194178c9227a7dd379b0a664634a9ac10",
+          "category": "manifest_publication",
+          "expected": "920d850667f4faa0a1b6d6768cf5101194178c9227a7dd379b0a664634a9ac10",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "5dd2d17253a0ca7c7ef074402addcd9e14576da6cced1646f17388147e3dde22",
+          "category": "manifest_publication",
+          "expected": "5dd2d17253a0ca7c7ef074402addcd9e14576da6cced1646f17388147e3dde22",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "b271716e1584cfadfed53b4752429f0e7d6c3d85d61e5e9b4150f4211528215d",
+          "category": "manifest_publication",
+          "expected": "b271716e1584cfadfed53b4752429f0e7d6c3d85d61e5e9b4150f4211528215d",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/figures/native_reset_support_floor.pdf"
+        },
+        {
+          "actual": "5d88d11a6833f314700c4faba60f42620dc7e8acf5d043340c4d5849cec390e4",
+          "category": "manifest_publication",
+          "expected": "5d88d11a6833f314700c4faba60f42620dc7e8acf5d043340c4d5849cec390e4",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/figures/native_reset_support_floor.png"
+        },
+        {
+          "actual": "0088290a092eb54888ddaf8d56ed372f4a479b61b95e5115af04958aee590018",
+          "category": "manifest_publication",
+          "expected": "0088290a092eb54888ddaf8d56ed372f4a479b61b95e5115af04958aee590018",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/main.pdf"
+        },
+        {
+          "actual": "5926c12cfcd2c6c25d27ef288eb8a0350958baf0d921b40ea36ee1740cd74dbc",
+          "category": "manifest_publication",
+          "expected": "5926c12cfcd2c6c25d27ef288eb8a0350958baf0d921b40ea36ee1740cd74dbc",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/main.tex"
+        },
+        {
+          "actual": "0088290a092eb54888ddaf8d56ed372f4a479b61b95e5115af04958aee590018",
+          "category": "manifest_publication",
+          "expected": "0088290a092eb54888ddaf8d56ed372f4a479b61b95e5115af04958aee590018",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/native-reset-support-floor.pdf"
+        },
+        {
+          "actual": "bd761a847344d189f639fd992dc196d0aa984ebbc2fd9c94f05a29487358f255",
+          "category": "manifest_publication",
+          "expected": "bd761a847344d189f639fd992dc196d0aa984ebbc2fd9c94f05a29487358f255",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/pyproject.toml"
+        },
+        {
+          "actual": "19b22e3a18a42becbd6f238bf9b6534815d0920ddfd2cbe17c7c98625ae7b6fe",
+          "category": "manifest_publication",
+          "expected": "19b22e3a18a42becbd6f238bf9b6534815d0920ddfd2cbe17c7c98625ae7b6fe",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/references.bib"
+        },
+        {
+          "actual": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "category": "manifest_publication",
+          "expected": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/requirements.txt"
+        },
+        {
+          "actual": "fb431ea360e0adba569850860a6c57667937cb2d7f1e4b33c10372e3f015723d",
+          "category": "external_input",
+          "expected": "fb431ea360e0adba569850860a6c57667937cb2d7f1e4b33c10372e3f015723d",
+          "match": true,
+          "path": "papers/RH-153-congruence-covariant-reset-transport/results/congruence_audit.json"
+        },
+        {
+          "actual": "11234a3571bde94a7d8f87d42a6001fde4a415accba99a1dbd0f502fb7cf285d",
+          "category": "external_input",
+          "expected": "11234a3571bde94a7d8f87d42a6001fde4a415accba99a1dbd0f502fb7cf285d",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/results/suffix_audit.json"
+        },
+        {
+          "actual": "a8d1e799a32a56c8f87efa629cc0cac3ef61b2fe2580957c8de8b4bc05d1a96b",
+          "category": "external_input",
+          "expected": "a8d1e799a32a56c8f87efa629cc0cac3ef61b2fe2580957c8de8b4bc05d1a96b",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/results/archive_verification.json"
+        },
+        {
+          "actual": "4d540a3c638a342ceb9699ec3f0407a6435c4fc2ef87d1da3acebfd9175e39f2",
+          "category": "external_input",
+          "expected": "4d540a3c638a342ceb9699ec3f0407a6435c4fc2ef87d1da3acebfd9175e39f2",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/results/memory_pair_audit.json"
+        },
+        {
+          "actual": "bf6fc60e717e269365496bd988d850ea8e5305b94d4906d648a4f95d255c9598",
+          "category": "external_input",
+          "expected": "bf6fc60e717e269365496bd988d850ea8e5305b94d4906d648a4f95d255c9598",
+          "match": true,
+          "path": "papers/RH-155-native-spectral-reset-memory-pair/results/summary.json"
+        }
+      ],
+      "directory": "RH-156-native-reset-support-floor",
+      "external_input_count": 5,
+      "failure_count": 0,
+      "local_source_count": 8,
+      "match_count": 40,
+      "paper": 156,
+      "publication_file_count": 12,
+      "summary_status": "rh156_native_reset_support_floor_archived"
+    },
+    {
+      "archive_status": "all_rh157_archive_hashes_verified",
+      "check_count": 40,
+      "checks": [
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "archive_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/.gitignore"
+        },
+        {
+          "actual": "0e67e44168c9585ff105ac2d956d2a052442f51ad2b7f090abf43f872d574f59",
+          "category": "archive_publication",
+          "expected": "0e67e44168c9585ff105ac2d956d2a052442f51ad2b7f090abf43f872d574f59",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/README.md"
+        },
+        {
+          "actual": "389f292b8c46800c7cb3ca8ac2bdaa5687daeabee26b7dc450cc5523680004fd",
+          "category": "archive_publication",
+          "expected": "389f292b8c46800c7cb3ca8ac2bdaa5687daeabee26b7dc450cc5523680004fd",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "ed3cf505280fc58f841db0d9f3eaad37dec5615717cea0cea0d474b566a4afb8",
+          "category": "archive_publication",
+          "expected": "ed3cf505280fc58f841db0d9f3eaad37dec5615717cea0cea0d474b566a4afb8",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "bcd5adc726cec74c65638bf65f7b5f7ef7ba46499085615ee8481b27755d4d4f",
+          "category": "archive_publication",
+          "expected": "bcd5adc726cec74c65638bf65f7b5f7ef7ba46499085615ee8481b27755d4d4f",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/figures/spectral_reset_cross_action_cancellation.pdf"
+        },
+        {
+          "actual": "8d2f0b4f016e812c6b5b85891877090029c2e36c7a8cdb9de766907d4fdc9856",
+          "category": "archive_publication",
+          "expected": "8d2f0b4f016e812c6b5b85891877090029c2e36c7a8cdb9de766907d4fdc9856",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/figures/spectral_reset_cross_action_cancellation.png"
+        },
+        {
+          "actual": "272a47660a3504bbbe4c1512556cd9b117bd59f9790b656db0cbda004f5e63c8",
+          "category": "archive_publication",
+          "expected": "272a47660a3504bbbe4c1512556cd9b117bd59f9790b656db0cbda004f5e63c8",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/main.pdf"
+        },
+        {
+          "actual": "346e966fdee523e6203ca3ab6577413c78ae0d5448b9d18ba20d609a84b6063b",
+          "category": "archive_publication",
+          "expected": "346e966fdee523e6203ca3ab6577413c78ae0d5448b9d18ba20d609a84b6063b",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/main.tex"
+        },
+        {
+          "actual": "a5de04183b3c53a2760edc16ed18f3db605d15d3c874e656292d325420dfebe3",
+          "category": "archive_publication",
+          "expected": "a5de04183b3c53a2760edc16ed18f3db605d15d3c874e656292d325420dfebe3",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/pyproject.toml"
+        },
+        {
+          "actual": "326063976a31dfdd35b324532fc303804d73ac13e26550629ea237c3f3ff70ca",
+          "category": "archive_publication",
+          "expected": "326063976a31dfdd35b324532fc303804d73ac13e26550629ea237c3f3ff70ca",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/references.bib"
+        },
+        {
+          "actual": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "category": "archive_publication",
+          "expected": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/requirements.txt"
+        },
+        {
+          "actual": "272a47660a3504bbbe4c1512556cd9b117bd59f9790b656db0cbda004f5e63c8",
+          "category": "archive_publication",
+          "expected": "272a47660a3504bbbe4c1512556cd9b117bd59f9790b656db0cbda004f5e63c8",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/spectral-reset-cross-action-cancellation.pdf"
+        },
+        {
+          "actual": "19da7de3765be012c1033d2f3c08d292855e0dcd9ea6e27809b30961b2fd6843",
+          "category": "result",
+          "expected": "19da7de3765be012c1033d2f3c08d292855e0dcd9ea6e27809b30961b2fd6843",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/results/cross_audit.json"
+        },
+        {
+          "actual": "7659382c176109d2e66d2c62f6afdb87c6dc11f56decce5652055eee84b732d3",
+          "category": "result",
+          "expected": "7659382c176109d2e66d2c62f6afdb87c6dc11f56decce5652055eee84b732d3",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/results/cross_smoke.json"
+        },
+        {
+          "actual": "de00f0ab81b49025c6d4d02190d3fa401b1d2b08994039025e06c119ef2b7243",
+          "category": "result",
+          "expected": "de00f0ab81b49025c6d4d02190d3fa401b1d2b08994039025e06c119ef2b7243",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/results/dependency_manifest.json"
+        },
+        {
+          "actual": "e4ab4a89b3eb725772d006093802185722d1055ec3ba33cb1bd304afaa4a692e",
+          "category": "local_source",
+          "expected": "e4ab4a89b3eb725772d006093802185722d1055ec3ba33cb1bd304afaa4a692e",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/experiments/build_archive.py"
+        },
+        {
+          "actual": "93157a497e74a52c70c5d87f66f27493e541f7883867819093207f8e1803122e",
+          "category": "local_source",
+          "expected": "93157a497e74a52c70c5d87f66f27493e541f7883867819093207f8e1803122e",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/experiments/build_cross_audit.py"
+        },
+        {
+          "actual": "57cd267ac56f1f3e7bf2b69d48ae5f863aa3bf079e07692ed6d78c295110f486",
+          "category": "local_source",
+          "expected": "57cd267ac56f1f3e7bf2b69d48ae5f863aa3bf079e07692ed6d78c295110f486",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/experiments/make_figures.py"
+        },
+        {
+          "actual": "121318a156d13eafb8a656a9613c5f53c2306fddced4caf7bcb3fea2e2b4451f",
+          "category": "local_source",
+          "expected": "121318a156d13eafb8a656a9613c5f53c2306fddced4caf7bcb3fea2e2b4451f",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/experiments/verify_archive.py"
+        },
+        {
+          "actual": "e8a848d5c4eb0c9b56ccfe195c9aade4b0160d2d5af19aea506bcf7f2661f7e5",
+          "category": "local_source",
+          "expected": "e8a848d5c4eb0c9b56ccfe195c9aade4b0160d2d5af19aea506bcf7f2661f7e5",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/src/cross_cancellation/__init__.py"
+        },
+        {
+          "actual": "4d58ad6112a499fe718228812a1d463151072e35182930ffa620ab010e999082",
+          "category": "local_source",
+          "expected": "4d58ad6112a499fe718228812a1d463151072e35182930ffa620ab010e999082",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/src/cross_cancellation/bounds.py"
+        },
+        {
+          "actual": "240122e1d626ffe9f2f990692d91e5eee14ab22c315559a561e948dcb70d4d7c",
+          "category": "local_source",
+          "expected": "240122e1d626ffe9f2f990692d91e5eee14ab22c315559a561e948dcb70d4d7c",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/tests/test_archived_results.py"
+        },
+        {
+          "actual": "10b95ba227504b31a497dafeced50b993cac78fc6afc42beb477b44d671b80f8",
+          "category": "local_source",
+          "expected": "10b95ba227504b31a497dafeced50b993cac78fc6afc42beb477b44d671b80f8",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/tests/test_theory.py"
+        },
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "manifest_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/.gitignore"
+        },
+        {
+          "actual": "0e67e44168c9585ff105ac2d956d2a052442f51ad2b7f090abf43f872d574f59",
+          "category": "manifest_publication",
+          "expected": "0e67e44168c9585ff105ac2d956d2a052442f51ad2b7f090abf43f872d574f59",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/README.md"
+        },
+        {
+          "actual": "389f292b8c46800c7cb3ca8ac2bdaa5687daeabee26b7dc450cc5523680004fd",
+          "category": "manifest_publication",
+          "expected": "389f292b8c46800c7cb3ca8ac2bdaa5687daeabee26b7dc450cc5523680004fd",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "ed3cf505280fc58f841db0d9f3eaad37dec5615717cea0cea0d474b566a4afb8",
+          "category": "manifest_publication",
+          "expected": "ed3cf505280fc58f841db0d9f3eaad37dec5615717cea0cea0d474b566a4afb8",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "bcd5adc726cec74c65638bf65f7b5f7ef7ba46499085615ee8481b27755d4d4f",
+          "category": "manifest_publication",
+          "expected": "bcd5adc726cec74c65638bf65f7b5f7ef7ba46499085615ee8481b27755d4d4f",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/figures/spectral_reset_cross_action_cancellation.pdf"
+        },
+        {
+          "actual": "8d2f0b4f016e812c6b5b85891877090029c2e36c7a8cdb9de766907d4fdc9856",
+          "category": "manifest_publication",
+          "expected": "8d2f0b4f016e812c6b5b85891877090029c2e36c7a8cdb9de766907d4fdc9856",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/figures/spectral_reset_cross_action_cancellation.png"
+        },
+        {
+          "actual": "272a47660a3504bbbe4c1512556cd9b117bd59f9790b656db0cbda004f5e63c8",
+          "category": "manifest_publication",
+          "expected": "272a47660a3504bbbe4c1512556cd9b117bd59f9790b656db0cbda004f5e63c8",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/main.pdf"
+        },
+        {
+          "actual": "346e966fdee523e6203ca3ab6577413c78ae0d5448b9d18ba20d609a84b6063b",
+          "category": "manifest_publication",
+          "expected": "346e966fdee523e6203ca3ab6577413c78ae0d5448b9d18ba20d609a84b6063b",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/main.tex"
+        },
+        {
+          "actual": "a5de04183b3c53a2760edc16ed18f3db605d15d3c874e656292d325420dfebe3",
+          "category": "manifest_publication",
+          "expected": "a5de04183b3c53a2760edc16ed18f3db605d15d3c874e656292d325420dfebe3",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/pyproject.toml"
+        },
+        {
+          "actual": "326063976a31dfdd35b324532fc303804d73ac13e26550629ea237c3f3ff70ca",
+          "category": "manifest_publication",
+          "expected": "326063976a31dfdd35b324532fc303804d73ac13e26550629ea237c3f3ff70ca",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/references.bib"
+        },
+        {
+          "actual": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "category": "manifest_publication",
+          "expected": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/requirements.txt"
+        },
+        {
+          "actual": "272a47660a3504bbbe4c1512556cd9b117bd59f9790b656db0cbda004f5e63c8",
+          "category": "manifest_publication",
+          "expected": "272a47660a3504bbbe4c1512556cd9b117bd59f9790b656db0cbda004f5e63c8",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/spectral-reset-cross-action-cancellation.pdf"
+        },
+        {
+          "actual": "0c0b9c1ca5c941239fda71d06fbcdfff15607e267bc94ecf9c99945b9c5f4072",
+          "category": "external_input",
+          "expected": "0c0b9c1ca5c941239fda71d06fbcdfff15607e267bc94ecf9c99945b9c5f4072",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/reset_packet_audit.json"
+        },
+        {
+          "actual": "11234a3571bde94a7d8f87d42a6001fde4a415accba99a1dbd0f502fb7cf285d",
+          "category": "external_input",
+          "expected": "11234a3571bde94a7d8f87d42a6001fde4a415accba99a1dbd0f502fb7cf285d",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/results/suffix_audit.json"
+        },
+        {
+          "actual": "2c0f8e0051c2ab495e1e42d69f4a0f9d6b812674abe9a7d961859777e88f4286",
+          "category": "external_input",
+          "expected": "2c0f8e0051c2ab495e1e42d69f4a0f9d6b812674abe9a7d961859777e88f4286",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/results/archive_verification.json"
+        },
+        {
+          "actual": "ae0968cece5b488b938b42ff42a66daaa3889f2f06abb140bfd9bd9a2babe75a",
+          "category": "external_input",
+          "expected": "ae0968cece5b488b938b42ff42a66daaa3889f2f06abb140bfd9bd9a2babe75a",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/results/support_audit.json"
+        },
+        {
+          "actual": "5619008fc4ad5abc95ae078f511639b30189d08964b41b320cd5a622c1fce8e1",
+          "category": "external_input",
+          "expected": "5619008fc4ad5abc95ae078f511639b30189d08964b41b320cd5a622c1fce8e1",
+          "match": true,
+          "path": "papers/RH-156-native-reset-support-floor/results/summary.json"
+        }
+      ],
+      "directory": "RH-157-spectral-reset-cross-action-cancellation",
+      "external_input_count": 5,
+      "failure_count": 0,
+      "local_source_count": 8,
+      "match_count": 40,
+      "paper": 157,
+      "publication_file_count": 12,
+      "summary_status": "rh157_spectral_reset_cross_action_cancellation_archived"
+    },
+    {
+      "archive_status": "all_rh158_archive_hashes_verified",
+      "check_count": 40,
+      "checks": [
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "archive_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/.gitignore"
+        },
+        {
+          "actual": "7163582af6327f1ca3ce29330e5cb466b2d69083cf34afcce8f5a62cbb075e66",
+          "category": "archive_publication",
+          "expected": "7163582af6327f1ca3ce29330e5cb466b2d69083cf34afcce8f5a62cbb075e66",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/README.md"
+        },
+        {
+          "actual": "8021edf54c8696332d36d32799546a72daa2aa74aebfe2c8988990f5e27c5878",
+          "category": "archive_publication",
+          "expected": "8021edf54c8696332d36d32799546a72daa2aa74aebfe2c8988990f5e27c5878",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "c422d808fb52a1b260670f14907094b33b5c0f284130dfdc443e11bb4d6d0791",
+          "category": "archive_publication",
+          "expected": "c422d808fb52a1b260670f14907094b33b5c0f284130dfdc443e11bb4d6d0791",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "b1faf0074dd04455a708813b4bda2ed78f36293f843124848697922cb02dc083",
+          "category": "archive_publication",
+          "expected": "b1faf0074dd04455a708813b4bda2ed78f36293f843124848697922cb02dc083",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/adaptive-lag-reset-cross-bridge.pdf"
+        },
+        {
+          "actual": "7243d9793809f40310fe51275945c59f6e4d4f112c0a854ef87d4c1d271ca996",
+          "category": "archive_publication",
+          "expected": "7243d9793809f40310fe51275945c59f6e4d4f112c0a854ef87d4c1d271ca996",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/figures/adaptive_lag_reset_cross_bridge.pdf"
+        },
+        {
+          "actual": "99d30b3a6aefc4de83fb3f7bcb5f0398660114cd691eb940a15461f95e4e8974",
+          "category": "archive_publication",
+          "expected": "99d30b3a6aefc4de83fb3f7bcb5f0398660114cd691eb940a15461f95e4e8974",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/figures/adaptive_lag_reset_cross_bridge.png"
+        },
+        {
+          "actual": "b1faf0074dd04455a708813b4bda2ed78f36293f843124848697922cb02dc083",
+          "category": "archive_publication",
+          "expected": "b1faf0074dd04455a708813b4bda2ed78f36293f843124848697922cb02dc083",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/main.pdf"
+        },
+        {
+          "actual": "88dd74ec250c4c7b8874bda3ebd9460137ef4e1c3bf3d116eb9d27341ed5d282",
+          "category": "archive_publication",
+          "expected": "88dd74ec250c4c7b8874bda3ebd9460137ef4e1c3bf3d116eb9d27341ed5d282",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/main.tex"
+        },
+        {
+          "actual": "d7020b6b28db17e9f39839c52306a677203015ebdc29a43c3f1cae6846bb936a",
+          "category": "archive_publication",
+          "expected": "d7020b6b28db17e9f39839c52306a677203015ebdc29a43c3f1cae6846bb936a",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/pyproject.toml"
+        },
+        {
+          "actual": "326063976a31dfdd35b324532fc303804d73ac13e26550629ea237c3f3ff70ca",
+          "category": "archive_publication",
+          "expected": "326063976a31dfdd35b324532fc303804d73ac13e26550629ea237c3f3ff70ca",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/references.bib"
+        },
+        {
+          "actual": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "category": "archive_publication",
+          "expected": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/requirements.txt"
+        },
+        {
+          "actual": "f23be6dcd524e4792bf069d16375afa6547500f3fcd795233243c25a0619ced6",
+          "category": "result",
+          "expected": "f23be6dcd524e4792bf069d16375afa6547500f3fcd795233243c25a0619ced6",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/results/dependency_manifest.json"
+        },
+        {
+          "actual": "4e0291f5e911287e789c91f34ef63b9ace36437dcdde8b04f970ad069be89fc7",
+          "category": "result",
+          "expected": "4e0291f5e911287e789c91f34ef63b9ace36437dcdde8b04f970ad069be89fc7",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/results/lag_audit.json"
+        },
+        {
+          "actual": "ae69b518064f2517fb80f1080a52ed2cd96cbc7c4b0354c9a2ddceea096f6094",
+          "category": "result",
+          "expected": "ae69b518064f2517fb80f1080a52ed2cd96cbc7c4b0354c9a2ddceea096f6094",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/results/lag_smoke.json"
+        },
+        {
+          "actual": "3a40c597c85f6275580871abdde83252e62b5f916737be0e40396438ffd5711f",
+          "category": "local_source",
+          "expected": "3a40c597c85f6275580871abdde83252e62b5f916737be0e40396438ffd5711f",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/experiments/build_archive.py"
+        },
+        {
+          "actual": "fa3d89e211105bbc3553a3d46300bd385348506e765f15af4aca5e87e835e5f5",
+          "category": "local_source",
+          "expected": "fa3d89e211105bbc3553a3d46300bd385348506e765f15af4aca5e87e835e5f5",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/experiments/build_lag_audit.py"
+        },
+        {
+          "actual": "34a888115ba99f2d333bed3d730ce80424628689dc653f4f89dfaceec9590fde",
+          "category": "local_source",
+          "expected": "34a888115ba99f2d333bed3d730ce80424628689dc653f4f89dfaceec9590fde",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/experiments/make_figures.py"
+        },
+        {
+          "actual": "6455086974616ab368ba7e4c3c231574744836b19d0b13c4edfc1a5bffbb030e",
+          "category": "local_source",
+          "expected": "6455086974616ab368ba7e4c3c231574744836b19d0b13c4edfc1a5bffbb030e",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/experiments/verify_archive.py"
+        },
+        {
+          "actual": "2250d78aed942c713d29ad16dd3f40a7822fff690a235c5cca0f5b00c88b4c4c",
+          "category": "local_source",
+          "expected": "2250d78aed942c713d29ad16dd3f40a7822fff690a235c5cca0f5b00c88b4c4c",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/src/lag_reset_bridge/__init__.py"
+        },
+        {
+          "actual": "59849d0a0ad11839917d0a02d8db0cfd2740bf1655315cc7a351ea09b0216752",
+          "category": "local_source",
+          "expected": "59849d0a0ad11839917d0a02d8db0cfd2740bf1655315cc7a351ea09b0216752",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/src/lag_reset_bridge/bounds.py"
+        },
+        {
+          "actual": "3423aed3819cec4bd56ff92839fa74fd7b9a6ace3234e3aaec382ed31b71b257",
+          "category": "local_source",
+          "expected": "3423aed3819cec4bd56ff92839fa74fd7b9a6ace3234e3aaec382ed31b71b257",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/tests/test_archived_results.py"
+        },
+        {
+          "actual": "6c2c00b1fa2a179a6b69c6925e7ed28af1ba3e282cc158a84caf00788ff8bb5e",
+          "category": "local_source",
+          "expected": "6c2c00b1fa2a179a6b69c6925e7ed28af1ba3e282cc158a84caf00788ff8bb5e",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/tests/test_theory.py"
+        },
+        {
+          "actual": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "category": "manifest_publication",
+          "expected": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/.gitignore"
+        },
+        {
+          "actual": "7163582af6327f1ca3ce29330e5cb466b2d69083cf34afcce8f5a62cbb075e66",
+          "category": "manifest_publication",
+          "expected": "7163582af6327f1ca3ce29330e5cb466b2d69083cf34afcce8f5a62cbb075e66",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/README.md"
+        },
+        {
+          "actual": "8021edf54c8696332d36d32799546a72daa2aa74aebfe2c8988990f5e27c5878",
+          "category": "manifest_publication",
+          "expected": "8021edf54c8696332d36d32799546a72daa2aa74aebfe2c8988990f5e27c5878",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/THEOREM_LEDGER.md"
+        },
+        {
+          "actual": "c422d808fb52a1b260670f14907094b33b5c0f284130dfdc443e11bb4d6d0791",
+          "category": "manifest_publication",
+          "expected": "c422d808fb52a1b260670f14907094b33b5c0f284130dfdc443e11bb4d6d0791",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/UPDATED_ROADMAP.md"
+        },
+        {
+          "actual": "b1faf0074dd04455a708813b4bda2ed78f36293f843124848697922cb02dc083",
+          "category": "manifest_publication",
+          "expected": "b1faf0074dd04455a708813b4bda2ed78f36293f843124848697922cb02dc083",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/adaptive-lag-reset-cross-bridge.pdf"
+        },
+        {
+          "actual": "7243d9793809f40310fe51275945c59f6e4d4f112c0a854ef87d4c1d271ca996",
+          "category": "manifest_publication",
+          "expected": "7243d9793809f40310fe51275945c59f6e4d4f112c0a854ef87d4c1d271ca996",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/figures/adaptive_lag_reset_cross_bridge.pdf"
+        },
+        {
+          "actual": "99d30b3a6aefc4de83fb3f7bcb5f0398660114cd691eb940a15461f95e4e8974",
+          "category": "manifest_publication",
+          "expected": "99d30b3a6aefc4de83fb3f7bcb5f0398660114cd691eb940a15461f95e4e8974",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/figures/adaptive_lag_reset_cross_bridge.png"
+        },
+        {
+          "actual": "b1faf0074dd04455a708813b4bda2ed78f36293f843124848697922cb02dc083",
+          "category": "manifest_publication",
+          "expected": "b1faf0074dd04455a708813b4bda2ed78f36293f843124848697922cb02dc083",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/main.pdf"
+        },
+        {
+          "actual": "88dd74ec250c4c7b8874bda3ebd9460137ef4e1c3bf3d116eb9d27341ed5d282",
+          "category": "manifest_publication",
+          "expected": "88dd74ec250c4c7b8874bda3ebd9460137ef4e1c3bf3d116eb9d27341ed5d282",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/main.tex"
+        },
+        {
+          "actual": "d7020b6b28db17e9f39839c52306a677203015ebdc29a43c3f1cae6846bb936a",
+          "category": "manifest_publication",
+          "expected": "d7020b6b28db17e9f39839c52306a677203015ebdc29a43c3f1cae6846bb936a",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/pyproject.toml"
+        },
+        {
+          "actual": "326063976a31dfdd35b324532fc303804d73ac13e26550629ea237c3f3ff70ca",
+          "category": "manifest_publication",
+          "expected": "326063976a31dfdd35b324532fc303804d73ac13e26550629ea237c3f3ff70ca",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/references.bib"
+        },
+        {
+          "actual": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "category": "manifest_publication",
+          "expected": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd",
+          "match": true,
+          "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/requirements.txt"
+        },
+        {
+          "actual": "0c0b9c1ca5c941239fda71d06fbcdfff15607e267bc94ecf9c99945b9c5f4072",
+          "category": "external_input",
+          "expected": "0c0b9c1ca5c941239fda71d06fbcdfff15607e267bc94ecf9c99945b9c5f4072",
+          "match": true,
+          "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/reset_packet_audit.json"
+        },
+        {
+          "actual": "e53c5dddbfbf9e4d03261966fb157cb875f7676e485a493e9566a5b50969faad",
+          "category": "external_input",
+          "expected": "e53c5dddbfbf9e4d03261966fb157cb875f7676e485a493e9566a5b50969faad",
+          "match": true,
+          "path": "papers/RH-152-reset-transition-overlap-coherence/results/overlap_audit.json"
+        },
+        {
+          "actual": "11234a3571bde94a7d8f87d42a6001fde4a415accba99a1dbd0f502fb7cf285d",
+          "category": "external_input",
+          "expected": "11234a3571bde94a7d8f87d42a6001fde4a415accba99a1dbd0f502fb7cf285d",
+          "match": true,
+          "path": "papers/RH-154-half-horizon-delayed-reset-suffix/results/suffix_audit.json"
+        },
+        {
+          "actual": "d125803b5c1ec97edef88037d8a47dd9bc99d382cba8a9483c463ef3c7552632",
+          "category": "external_input",
+          "expected": "d125803b5c1ec97edef88037d8a47dd9bc99d382cba8a9483c463ef3c7552632",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/results/archive_verification.json"
+        },
+        {
+          "actual": "8bdf6f958ee4356487036e440a65e7131147eb2d98eff0f807487007f4c40e23",
+          "category": "external_input",
+          "expected": "8bdf6f958ee4356487036e440a65e7131147eb2d98eff0f807487007f4c40e23",
+          "match": true,
+          "path": "papers/RH-157-spectral-reset-cross-action-cancellation/results/summary.json"
+        }
+      ],
+      "directory": "RH-158-adaptive-lag-reset-cross-bridge",
+      "external_input_count": 5,
+      "failure_count": 0,
+      "local_source_count": 8,
+      "match_count": 40,
+      "paper": 158,
+      "publication_file_count": 12,
+      "summary_status": "rh158_adaptive_lag_reset_cross_bridge_archived"
+    }
+  ],
+  "route_consequence": "The route lattice has two finite survivors with different output types: a native compression-support seed and an adaptive-lag directional-cross seed. The contemporaneous directional route is exactly obstructed and the current branch-free recursive route is finitely noninformative. A directional cross lower implies a same-packet native eigenvalue lower when complement energy is bounded, whereas native positivity alone cannot recover cross rank. No route is program-complete because uniform all-level laws and typed downstream assembly remain open.",
+  "route_matrix": {
+    "contemporaneous": [
+      "certified",
+      "certified",
+      "optional",
+      "optional",
+      "optional",
+      "optional",
+      "obstruction",
+      "not_required",
+      "open",
+      "open"
+    ],
+    "lagged": [
+      "certified",
+      "certified",
+      "optional",
+      "optional",
+      "optional",
+      "optional",
+      "not_required",
+      "certified",
+      "open",
+      "open"
+    ],
+    "native": [
+      "certified",
+      "certified",
+      "certified",
+      "optional",
+      "certified",
+      "certified",
+      "not_required",
+      "not_required",
+      "open",
+      "open"
+    ],
+    "recursive": [
+      "obstruction",
+      "not_required",
+      "not_required",
+      "not_required",
+      "not_required",
+      "not_required",
+      "not_required",
+      "not_required",
+      "open",
+      "open"
+    ]
+  },
+  "routes": [
+    {
+      "finite_seed_state": "rejected",
+      "first_program_unresolved": "recursive packet transport",
+      "first_seed_failure": "recursive packet transport",
+      "name": "recursive",
+      "program_state": "rejected",
+      "seed_requirements": [
+        {
+          "gate": "recursive packet transport",
+          "state": "obstruction"
+        }
+      ]
+    },
+    {
+      "finite_seed_state": "finite_closed",
+      "first_program_unresolved": "uniform all-level laws",
+      "first_seed_failure": null,
+      "name": "native",
+      "program_state": "open",
+      "seed_requirements": [
+        {
+          "gate": "packet localization",
+          "state": "certified"
+        },
+        {
+          "gate": "transition coherence",
+          "state": "certified"
+        },
+        {
+          "gate": "correlated congruence",
+          "state": "certified"
+        },
+        {
+          "gate": "native tail gate",
+          "state": "certified"
+        },
+        {
+          "gate": "native support",
+          "state": "certified"
+        }
+      ]
+    },
+    {
+      "finite_seed_state": "rejected",
+      "first_program_unresolved": "contemporaneous cross",
+      "first_seed_failure": "contemporaneous cross",
+      "name": "contemporaneous",
+      "program_state": "rejected",
+      "seed_requirements": [
+        {
+          "gate": "packet localization",
+          "state": "certified"
+        },
+        {
+          "gate": "transition coherence",
+          "state": "certified"
+        },
+        {
+          "gate": "contemporaneous cross",
+          "state": "obstruction"
+        }
+      ]
+    },
+    {
+      "finite_seed_state": "finite_closed",
+      "first_program_unresolved": "uniform all-level laws",
+      "first_seed_failure": null,
+      "name": "lagged",
+      "program_state": "open",
+      "seed_requirements": [
+        {
+          "gate": "packet localization",
+          "state": "certified"
+        },
+        {
+          "gate": "transition coherence",
+          "state": "certified"
+        },
+        {
+          "gate": "lagged cross",
+          "state": "certified"
+        }
+      ]
+    }
+  ],
+  "status": "rh159_ten_layer_reset_route_review",
+  "theorem_boundary": {
+    "eight_paper_archive_reverified": true,
+    "finite_route_lattice_classified": true,
+    "hilbert_polya_operator": false,
+    "positive_block_directional_to_native_theorem": true,
+    "riemann_hypothesis": false,
+    "stage_A": false,
+    "strict_nonimplication_native_to_directional": true,
+    "uniform_all_level_reset_theorem": false
+  },
+  "typed_route_conclusion": {
+    "any_program_route_closed": false,
+    "contemporaneous_directional_route_rejected": true,
+    "directional_to_native_with_complement_upper": true,
+    "lagged_directional_finite_seed_closed": true,
+    "minimal_open_frontier": [
+      "uniform all-level endpoint laws",
+      "typed downstream outward assembly"
+    ],
+    "native_finite_seed_closed": true,
+    "native_to_directional_implication": false,
+    "recursive_branch_free_route_rejected_at_current_bounds": true
+  }
+}
