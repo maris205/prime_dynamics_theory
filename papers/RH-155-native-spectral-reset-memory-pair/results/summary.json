@@ -1,0 +1,55 @@
+{
+  "audit": {
+    "bound_dominance_failure_count": 0,
+    "channel_count": 10,
+    "half_suffix_snapshot_count": 62,
+    "half_suffix_subunit_count": 62,
+    "infinite_horizon_geometric_tail_mass_upper": 2.847732921402515e-14,
+    "maximum_half_suffix_recent_tail_ratio_upper": 0.2246958551552405,
+    "maximum_memory_split_identity_residual": 4.867638771578121e-16,
+    "maximum_nominal_native_recent_tail_ratio": 2.8789306739248305e-05,
+    "maximum_recent_tail_ratio_upper": 0.2246958551552405,
+    "minimum_selected_eigenvalue_to_twice_tail_margin": 2.7252301879558667,
+    "snapshot_count": 130,
+    "subunit_recent_tail_count": 130,
+    "tail_active_snapshot_count": 80
+  },
+  "program_boundary": {
+    "all_frozen_native_pairs_subunit": true,
+    "directional_cross_action_identified": false,
+    "half_suffix_native_pairs_subunit": true,
+    "hilbert_polya_operator": false,
+    "riemann_hypothesis": false,
+    "sharp_subunit_gate": true,
+    "spectral_packet_recent_tail_loewner_bound": true,
+    "stage_A": false,
+    "uniform_all_level_packet_eigenvalue_lower": false,
+    "universal_geometric_tail_mass": true
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "41164e329653b83644239cb56347833cfa04b880b1b1fe1cfc36699a2f02460f",
+    "THEOREM_LEDGER.md": "8f977fd8cb03479ee8d566e06aa4824d97143193ed2acdabf6c68753794be743",
+    "UPDATED_ROADMAP.md": "ac0a3888f28b9ddcd8b40ad8778d83293d0fbaf521c4bc63b8269aef56f72932",
+    "figures/native_spectral_reset_memory_pair.pdf": "1b7452d9e9fb37eeaccee23d5fef4c65183ea09366288d3141d2f0df364be6a9",
+    "figures/native_spectral_reset_memory_pair.png": "ac863e746c319c42c16cf61810c6c56b0aeee33b3ed328378f5e28e771be2b6a",
+    "main.pdf": "8b3d7d46ebced349a101f3e7cb9995fb864ad33fe935575004f0f28bc4083c44",
+    "main.tex": "2510b974a864ec35ebc36d646739bf1319fbc9ac38427a9306239f158c780389",
+    "native-spectral-reset-memory-pair.pdf": "8b3d7d46ebced349a101f3e7cb9995fb864ad33fe935575004f0f28bc4083c44",
+    "pyproject.toml": "4b0546a166f6b108a603b1878ec426b1107db99af52993d063c915b031472829",
+    "references.bib": "19b22e3a18a42becbd6f238bf9b6534815d0920ddfd2cbe17c7c98625ae7b6fe",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "094fc26526985e0de97630c8fca32cb174ecd161cb853d0dee728578ffc00fe3",
+    "results/memory_pair_audit.json": "4d540a3c638a342ceb9699ec3f0407a6435c4fc2ef87d1da3acebfd9175e39f2",
+    "results/memory_pair_smoke.json": "d6182aebe0f04102f7c9a84ced2ec2cfff7e24ea3bf8e8b0288b24af3f8084b8"
+  },
+  "route_consequence": "A trace-one geometric memory tail has a dynamics-free operator upper. On the native top spectral reset packet, the selected full-memory eigenvalue converts this into D <= tau/(lambda_r-tau) R. All 130 frozen pairs, including all 62 delayed half-suffix snapshots, have subunit ratio; the worst certified upper is 0.2247. This closes a native reset memory pair but not its identification with the directional cross-action Gram.",
+  "status": "rh155_native_spectral_reset_memory_pair_archived",
+  "theorem": {
+    "geometric_tail_mass": true,
+    "native_reset_pair_bound": true,
+    "sharp_subunit_gate": true
+  }
+}
