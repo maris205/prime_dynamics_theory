@@ -1,0 +1,84 @@
+{
+  "audit": {
+    "all_directional_finite_checks_pass": true,
+    "all_native_finite_checks_pass": true,
+    "archive_paper_count": 9,
+    "archive_publication_hash_count": 108,
+    "archive_publication_hash_failure_count": 0,
+    "archive_verified_paper_count": 9,
+    "directional_additional_clause_count": 1,
+    "native_finite_clause_count": 3,
+    "omission_witness_count": 5,
+    "upstream_open_gate_count": 2
+  },
+  "conditional_interfaces": {
+    "directional_addition": [
+      "eventual bounded-lag normalized fourth-cross certificate"
+    ],
+    "downstream": [
+      "a typed assembly theorem accepting the selected native or directional seed"
+    ],
+    "native": [
+      "eventual reset overlap lower",
+      "eventual selected weak eigenvalue above twice the tail upper",
+      "eventual selected spectral upper"
+    ]
+  },
+  "constants": {
+    "directional_consecutive_overlap_floor": 6.028322033794897e-48,
+    "directional_observed_path_floor": 2.1194103152416188e-23,
+    "first_cross_upper": 0.224445912607531,
+    "fourth_cross_lower": 3.1807702483603953e-16,
+    "maximum_lag": 8,
+    "minimum_local_lagged_base_floor": 2.587419843405482e-14,
+    "minimum_local_native_support_floor": 3.262044201851107e-08,
+    "native_global_relative_tail_upper": 0.2246958551552405,
+    "native_global_support_floor": 2.447775137826019e-12,
+    "native_interface_recent_full_ratio_lower": 2.0160840535155745e-13,
+    "native_interface_relative_tail_upper": 0.2246958551552405,
+    "native_interface_support_floor": 3.0883399805979587e-12,
+    "overlap_lower": 8.986632471029187e-05,
+    "selected_eigenvalue_to_twice_tail_global_margin": 2.7252301879558667,
+    "selected_full_eigenvalue_lower": 1.5521455449283774e-13,
+    "selected_full_eigenvalue_upper": 1.0006973020555503,
+    "selected_path_overlap_lower": 1.4955276403236843e-08,
+    "tail_mass_upper": 2.8477329214025155e-14
+  },
+  "program_boundary": {
+    "any_eventual_interface_proved_for_the_prime_dynamics_sequence": false,
+    "conditional_directional_all_level_floor": true,
+    "conditional_native_all_level_floor": true,
+    "finite_hypothesis_audit": true,
+    "hilbert_polya_operator": false,
+    "interface_omission_witnesses": true,
+    "riemann_hypothesis": false,
+    "stage_A": false,
+    "typed_downstream_assembly_proved": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "7c33302033157ccbdb027766baeee313f318e2835d353d110a8aa984349f5d38",
+    "THEOREM_LEDGER.md": "288c2c0a2398a77f6215474eedad4ee5928a3196d44e73c3ba9f2c769c68fb10",
+    "UPDATED_ROADMAP.md": "7078282937aa8c03b5774f27ec49fd3bba6e48c95f1f37597cd2bc88d1b3fefd",
+    "conditional-all-level-reset-dichotomy.pdf": "f406489b942ebeadc58d21d849913d5b4abc061b9ecf91177c70d40d59b1f940",
+    "figures/conditional_all_level_reset_dichotomy.pdf": "677587abf0f8b7b1b28d91e8f12b836887b0ca44f6eb311d3352634f29839c4a",
+    "figures/conditional_all_level_reset_dichotomy.png": "7cb045b806a4c865d7832d9a5c360ec97f7839b9573ee4956e1fca3026958ace",
+    "main.pdf": "f406489b942ebeadc58d21d849913d5b4abc061b9ecf91177c70d40d59b1f940",
+    "main.tex": "3af46b78c0f30933cedb43f91cb35ff4f91a53fd5237874a30bb209bcf050632",
+    "pyproject.toml": "dc515f493d222874e0b12e42fdf70cd90d6575fa24679fa388334a6c5f1b162c",
+    "references.bib": "326063976a31dfdd35b324532fc303804d73ac13e26550629ea237c3f3ff70ca",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd"
+  },
+  "result_hashes": {
+    "results/conditional_audit.json": "a9ed4c460d129e089f005787f6e6fe1280149afe76f669c13bf36bb6811512d9",
+    "results/dependency_manifest.json": "976a35763211b5712d95c22b5d8643698a70d513a7f3e38dfa47b6c53fb0cc34"
+  },
+  "route_consequence": "Three eventual interfaces give a uniform native reset-support floor: overlap conditioning, selected weak eigenvalue versus tail mass, and selected spectral spread. Adding a bounded-lag normalized fourth-cross interface gives a uniform directional seed. Explicit witnesses make both interface sets inclusion-minimal for these formulas. All clauses pass on the frozen atlas, but no finite audit proves that any clause persists eventually; the result is a falsifiable conditional roadmap, not Stage A or an RH result.",
+  "status": "rh160_conditional_all_level_reset_dichotomy_archived",
+  "theorem": {
+    "adaptive_lag_directional_floor": true,
+    "interface_minimality_with_witnesses": true,
+    "outward_lag_certificate": true,
+    "three_interface_native_floor": true
+  }
+}

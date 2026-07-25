@@ -1,0 +1,85 @@
+{
+  "external_inputs": {
+    "rh151_archive": {
+      "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/archive_verification.json",
+      "sha256": "ca5b7b1129274a75e0d4db159a2d67c91af841c6e56a4eb7589bd32bbb70739a"
+    },
+    "rh152_archive": {
+      "path": "papers/RH-152-reset-transition-overlap-coherence/results/archive_verification.json",
+      "sha256": "a017ec0c4eba18ec712f2a98d48468eedbdf90242138316f8911c78fe9f93e5b"
+    },
+    "rh152_overlap_audit": {
+      "path": "papers/RH-152-reset-transition-overlap-coherence/results/overlap_audit.json",
+      "sha256": "e53c5dddbfbf9e4d03261966fb157cb875f7676e485a493e9566a5b50969faad"
+    },
+    "rh153_archive": {
+      "path": "papers/RH-153-congruence-covariant-reset-transport/results/archive_verification.json",
+      "sha256": "7ba121f25eeda790db0c0c92e6624148b7e361b58e32d9ee171e88f77d032af6"
+    },
+    "rh154_archive": {
+      "path": "papers/RH-154-half-horizon-delayed-reset-suffix/results/archive_verification.json",
+      "sha256": "ab3edf2e26c4b8d9a3705a7fae012e112dbf552279af64961cfa8ae3896cde88"
+    },
+    "rh155_archive": {
+      "path": "papers/RH-155-native-spectral-reset-memory-pair/results/archive_verification.json",
+      "sha256": "a8d1e799a32a56c8f87efa629cc0cac3ef61b2fe2580957c8de8b4bc05d1a96b"
+    },
+    "rh155_memory_audit": {
+      "path": "papers/RH-155-native-spectral-reset-memory-pair/results/memory_pair_audit.json",
+      "sha256": "4d540a3c638a342ceb9699ec3f0407a6435c4fc2ef87d1da3acebfd9175e39f2"
+    },
+    "rh156_archive": {
+      "path": "papers/RH-156-native-reset-support-floor/results/archive_verification.json",
+      "sha256": "2c0f8e0051c2ab495e1e42d69f4a0f9d6b812674abe9a7d961859777e88f4286"
+    },
+    "rh156_support_audit": {
+      "path": "papers/RH-156-native-reset-support-floor/results/support_audit.json",
+      "sha256": "ae0968cece5b488b938b42ff42a66daaa3889f2f06abb140bfd9bd9a2babe75a"
+    },
+    "rh157_archive": {
+      "path": "papers/RH-157-spectral-reset-cross-action-cancellation/results/archive_verification.json",
+      "sha256": "d125803b5c1ec97edef88037d8a47dd9bc99d382cba8a9483c463ef3c7552632"
+    },
+    "rh158_archive": {
+      "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/results/archive_verification.json",
+      "sha256": "eecfd36408f1e2f8ddb5df84de8fcbdc903e085637747787c88a48f68de8a950"
+    },
+    "rh158_lag_audit": {
+      "path": "papers/RH-158-adaptive-lag-reset-cross-bridge/results/lag_audit.json",
+      "sha256": "4e0291f5e911287e789c91f34ef63b9ace36437dcdde8b04f970ad069be89fc7"
+    },
+    "rh159_archive": {
+      "path": "papers/RH-159-ten-layer-reset-route-review/results/archive_verification.json",
+      "sha256": "3c06aec1a48cf7e63a7c88b85c5525333fab30602c0285eedf55bb78e01ea716"
+    },
+    "rh159_route_audit": {
+      "path": "papers/RH-159-ten-layer-reset-route-review/results/route_audit.json",
+      "sha256": "bc5d57f70fa3cd828b755f286f911e42fadef612b5bcd1676cee4080026c96ae"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "06923a2ae8715aa9908680f28bbf4d162310bb19c602e1c19bf6a3d9a6d0a610",
+    "experiments/build_conditional_audit.py": "455370edd60d1ec81d9ce8090aab432192ac8ae660873705c28157a2aba9c290",
+    "experiments/make_figures.py": "a0cdeb554e7339eca9424d9bb2d10025cb301dea0a7db2f01728bbc4421ae72e",
+    "experiments/verify_archive.py": "d83a0a3ccffe1ca8ca42e165851f6e549210d98dde859ff20e66a5c859401ec2",
+    "src/reset_dichotomy/__init__.py": "d0b4f1f30f5358c8b4603899c9a496d0eed27608a84587363ea70f191fc29931",
+    "src/reset_dichotomy/bounds.py": "01f4949d91fcf1aabf8f6d67611ea3e767a6248d2df7faee2d97471b4f5854a8",
+    "tests/test_archived_results.py": "7537ac14aabca948b22b63026a4b545dd4511da347b8aad7c3c8233ff7de14c3",
+    "tests/test_theory.py": "d0a0e5091c0ebb96155bf305cebc9406815b17141039fabc21304ef014e835f9"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "7c33302033157ccbdb027766baeee313f318e2835d353d110a8aa984349f5d38",
+    "THEOREM_LEDGER.md": "288c2c0a2398a77f6215474eedad4ee5928a3196d44e73c3ba9f2c769c68fb10",
+    "UPDATED_ROADMAP.md": "7078282937aa8c03b5774f27ec49fd3bba6e48c95f1f37597cd2bc88d1b3fefd",
+    "conditional-all-level-reset-dichotomy.pdf": "f406489b942ebeadc58d21d849913d5b4abc061b9ecf91177c70d40d59b1f940",
+    "figures/conditional_all_level_reset_dichotomy.pdf": "677587abf0f8b7b1b28d91e8f12b836887b0ca44f6eb311d3352634f29839c4a",
+    "figures/conditional_all_level_reset_dichotomy.png": "7cb045b806a4c865d7832d9a5c360ec97f7839b9573ee4956e1fca3026958ace",
+    "main.pdf": "f406489b942ebeadc58d21d849913d5b4abc061b9ecf91177c70d40d59b1f940",
+    "main.tex": "3af46b78c0f30933cedb43f91cb35ff4f91a53fd5237874a30bb209bcf050632",
+    "pyproject.toml": "dc515f493d222874e0b12e42fdf70cd90d6575fa24679fa388334a6c5f1b162c",
+    "references.bib": "326063976a31dfdd35b324532fc303804d73ac13e26550629ea237c3f3ff70ca",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd"
+  },
+  "status": "all_rh160_inputs_sources_and_publication_artifacts_hashed"
+}
