@@ -1,0 +1,54 @@
+{
+  "audit": {
+    "below_1e_1_count": 19,
+    "below_1e_2_count": 6,
+    "below_1e_3_count": 2,
+    "channel_count": 10,
+    "invertible_transition_count": 120,
+    "maximum_inverse_overlap_upper": 11127.638781532096,
+    "maximum_log_inverse_drawdown": 32.015003716578875,
+    "maximum_polar_transition_radius": 0.011695090712005637,
+    "median_robust_overlap_lower": 0.9018345015544125,
+    "minimum_robust_overlap_lower": 8.986632471029188e-05,
+    "polar_stability_failure_count": 0,
+    "transition_count": 120
+  },
+  "program_boundary": {
+    "all_frozen_reset_transitions_invertible": true,
+    "frame_overlap_lower": true,
+    "hilbert_polya_operator": false,
+    "outward_assembly_closed": false,
+    "polar_transition_bound": true,
+    "riemann_hypothesis": false,
+    "robust_principal_angle_triangle": true,
+    "stage_A": false,
+    "uniform_overlap_lower": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "bde93c25eec4f4a78fc67b6048cf63fa9d4b7c8cf7e3066529553177cf6475fb",
+    "THEOREM_LEDGER.md": "858219227cd722c51287c5720e1c190cb95638c82711b12034009bd1e84dcf01",
+    "UPDATED_ROADMAP.md": "13009afe91e5e34d7e105a1b929047c5261859c290b93c84c0bcc17a2a531e2d",
+    "figures/reset_transition_overlap_coherence.pdf": "528ed2f13e5417af0f022026bc987fcd13b4fbee498801df5f5cfe3970c7a7ca",
+    "figures/reset_transition_overlap_coherence.png": "42cd0ead355ae37172d0330d3b77b7a5951fa50e9dcb02d2236933327ba2e472",
+    "main.pdf": "59d89cddc00399802d079dd860094500a173efabed27e6e89abe166b372739ac",
+    "main.tex": "991c16ddb1a5c47b21586bf9c104b8dac6fd9769621d1b01f685e534fe7c362a",
+    "pyproject.toml": "0443318c9b45af73f1e84d77379905cc53901909373a51869a5111ddaa31b28d",
+    "references.bib": "ea63d62a9a7665043829c7764f002c9232270bab6816444da23f395f128bb43d",
+    "requirements.txt": "b6efa8218da0501de62ea68dcf20c52b995433d53ca4f46f6afd2d12226a981e",
+    "reset-transition-overlap-coherence.pdf": "59d89cddc00399802d079dd860094500a173efabed27e6e89abe166b372739ac"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "eadbfb81664d237d183c0df2231d29514fa495f3372ace0a06ad580691107d40",
+    "results/overlap_audit.json": "e53c5dddbfbf9e4d03261966fb157cb875f7676e485a493e9566a5b50969faad",
+    "results/overlap_smoke.json": "f1d3f07fd53bed733b9b0c0f48046ff1bfaaceda07814f43a306d1fbe6fa9e37"
+  },
+  "route_consequence": "All 120 consecutive reset transitions remain invertible after their certified packet balls are inserted. The worst robust overlap is 8.99e-5 and the largest inverse overlap is 1.11e4, so finite coherence survives but is strongly nonuniform. The next layer must test whether outward Gram/tail maps tolerate this condition-number drawdown.",
+  "status": "rh152_reset_transition_overlap_coherence_archived",
+  "theorem": {
+    "angular_overlap_lower": true,
+    "inverse_overlap_control": true,
+    "polar_aligned_frame_lower": true,
+    "polar_transition_control": true
+  }
+}
