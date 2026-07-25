@@ -1,0 +1,129 @@
+{
+  "audit": {
+    "conditional_macro_gate_count": 0,
+    "consecutive_numbering": true,
+    "current_first_missing_gate": "A",
+    "current_unconditional_claim_level": "foundation",
+    "declared_publication_hash_count": 1717,
+    "declared_publication_hash_failure_count": 0,
+    "full_mvp_completion_bundle": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "full_mvp_completion_bundle_count": 1,
+    "hilbert_polya_completion_bundle": [
+      "A",
+      "B",
+      "C"
+    ],
+    "macro_gate_count": 6,
+    "main_tex_count": 160,
+    "milestone_input_count": 17,
+    "mvp_assumption_claim_level": "completed_zeta_identity",
+    "numbered_paper_count": 160,
+    "open_macro_gate_count": 5,
+    "pdf_directory_count": 160,
+    "proved_macro_gate_count": 1,
+    "readme_count": 160,
+    "rejected_shortcut_count": 9,
+    "review_anchor_count": 10,
+    "summary_archive_count": 131,
+    "test_directory_count": 156,
+    "verification_archive_count": 131
+  },
+  "claim_ladder": {
+    "conditional_if_A_B_C": "a Hilbert--Polya candidate with the required intrinsic counting law, but no arithmetic zero identity",
+    "conditional_if_A_through_E": "a self-adjoint realization of the completed-zeta spectral divisor; only at this point does the usual Hilbert--Polya implication place represented nontrivial zeros on the critical line",
+    "proved_now": "rigorous dynamical and fixed-noise spectral foundation only",
+    "unconditional_riemann_hypothesis": false
+  },
+  "gates": [
+    {
+      "content": "ordered sieve-kneading coordinate, parity geometry, fixed-noise intrinsic determinant, and deterministic pole data",
+      "evidence": "RH-1--45",
+      "falsifier": "none within stated scope; stronger conjugacy and direct Markov self-adjointness are already rejected",
+      "key": "F",
+      "name": "rigorous dynamical foundation",
+      "status": "proved"
+    },
+    {
+      "content": "joint small-noise/mesh limit with an exact moving-cloud quotient, tracked pole divisor, and target-independent normalization",
+      "evidence": "RH-46--160 conditional reset-support spine; typed determinant assembly still absent",
+      "falsifier": "reset overlap, tail separation, selected spread, or typed assembly fails along an infinite scale sequence",
+      "key": "A",
+      "name": "canonical all-level intrinsic determinant",
+      "status": "open"
+    },
+    {
+      "content": "inner/unitary completion retaining directed temporal traces and independent of arbitrary packet gauges",
+      "evidence": "RH-8, RH-80 and roadmap",
+      "falsifier": "every completion is noncanonical, orientation-blind, or introduces arbitrary spectrum",
+      "key": "B",
+      "name": "order-sensitive canonical scattering completion",
+      "status": "open"
+    },
+    {
+      "content": "canonical self-adjoint realization whose own high-energy law has the Riemann--von Mangoldt form",
+      "evidence": "not reached",
+      "falsifier": "the canonical object has bounded phase, logarithmic rank, power-law Weyl growth, or wrong multiplicities",
+      "key": "C",
+      "name": "self-adjoint generator and intrinsic counting law",
+      "status": "open"
+    },
+    {
+      "content": "target-independent transform producing von Mangoldt prime-power weights, archimedean terms, and a controlled test class",
+      "evidence": "arithmetic interface absent",
+      "falsifier": "weights require inserted zero/prime data or cannot match the completed explicit formula uniformly",
+      "key": "D",
+      "name": "prime-power explicit trace formula",
+      "status": "open"
+    },
+    {
+      "content": "completed-zeta determinant identity with no missing or spurious levels and correct multiplicity",
+      "evidence": "not reached",
+      "falsifier": "unmatched gamma/trivial-zero factors, extra spectral points, missing levels, or multiplicity mismatch",
+      "key": "E",
+      "name": "complete spectral-divisor identity",
+      "status": "open"
+    }
+  ],
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "5281da055dd2d779f54525dba5188342c952f8ba16b748edb2c4593d66d633c2",
+    "THEOREM_LEDGER.md": "9ad7b2dadd705a4c491fbd940b23a0dd4cb6e98b885f97fae3d4d72fbadb6105",
+    "UPDATED_ROADMAP.md": "069bf523f822101c77522cb72d5a177c630db8f7d282fb2714459a8685432467",
+    "conditional-prime-dynamics-hilbert-polya-roadmap.pdf": "04425b5ffb9f39060d899f187b77e31d8d5ac2826dc72cbc8a7addc67e51e5bb",
+    "figures/conditional_mvp_roadmap.pdf": "b3417906c0d1c81f120ca222aecca703bb756de5e271c47adfb4f27c387d263e",
+    "figures/conditional_mvp_roadmap.png": "9f482c83e0cb128b8fb234887c2490d8509eb85234bce83799f22ec0668f36f3",
+    "main.pdf": "04425b5ffb9f39060d899f187b77e31d8d5ac2826dc72cbc8a7addc67e51e5bb",
+    "main.tex": "5f7f582287d820e2984f11cc3deae2fb5ed1deec0c7035e0f6a72fc2d8797ea2",
+    "pyproject.toml": "4c643d7a18f774445d41d2ee98d1e4d761a76981ad32d753331e1f94b3c82df2",
+    "references.bib": "9234aed153fdd5556a46d4d5a1dadbd58225a92be5da1c4389c4a40664f7dabe",
+    "requirements.txt": "44f068d0df72a1cfee6232f18a998bfa62b664807c6080247cc07d6453065dbe"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "e7f775ec79d6591b015d0430850d0e2da34d3b19db8f4d523731a2e5217e752e",
+    "results/mvp_audit.json": "9b08a8e7ac01a1cb79615124a68a0b8586c656554df970ee9cbab962690097f9"
+  },
+  "route_consequence": "The 160-paper program supports a rigorous dynamical and fixed-noise determinant foundation and a sharply falsifiable conditional Stage-A spine. A complete Hilbert--Polya route can be stated as five additional macro interfaces A--E, but none may be inferred from finite certification or numerical resemblance. Assuming all five yields a completed-zeta spectral identity for a self-adjoint generator and hence the standard conditional Hilbert--Polya implication; proving the interfaces is the remaining mathematics.",
+  "status": "rh_mvp1_conditional_prime_dynamics_hilbert_polya_roadmap_archived",
+  "theorem": {
+    "conditional_mvp_implication": true,
+    "spectral_divisor_closure": true,
+    "status_aware_completion_frontier": true
+  },
+  "theorem_boundary": {
+    "all_160_numbered_papers_present": true,
+    "all_macro_assumptions_proved": false,
+    "canonical_self_adjoint_operator_constructed": false,
+    "completion_debt_audited": true,
+    "conditional_macro_implication": true,
+    "prime_power_trace_formula_proved": false,
+    "riemann_hypothesis_proved": false,
+    "stage_A_proved": false,
+    "zeta_spectral_identity_proved": false
+  }
+}
