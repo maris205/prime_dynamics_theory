@@ -1,0 +1,127 @@
+\section{Conditional synthesis}
+\label{sec:conditional}
+
+The following implication is the only global theorem of TPC-MVP1.
+Its proof is short because the difficulty has been made explicit in
+the hypotheses.
+
+\begin{theorem}[\Ctag\ Conditional fixed-shift Hardy--Littlewood
+synthesis]
+\label{thm:conditional-hl}
+Fix an admissible nonzero even integer \(h_0\) and
+\(W\in C_c^\infty((0,\infty))\).  Assume H1--H9 for the literal TPC
+carrier, with every estimate taken in the same physical
+normalization and quantifier scope.  Then
+\begin{equation}
+\sum_{n\ge1}\Lambda(n)\Lambda(n+h_0)W(n/X)
+=
+\Ssing(h_0)X\int_0^\infty W(t)\,dt+o(X).
+\label{eq:conditional-hl}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Hypotheses H1, H4, and H6 produce an exhaustive subpower-size
+classification of physical blocks.  Every term assigned to the soft
+remainder contributes \(o(X)\) after the complete outer summation.
+The two established exceptional returns together with H2 handle the
+resonant blocks; H3 handles the generic signed blocks; and H4 returns
+every remaining short, high, ultra, boundary, and outer block.  Thus
+every nonsoft raw block entering synthesis satisfies
+\[
+\max_{b\in\BX^{\mathrm{ns}}}|\mathcal P_b|
+\le X^{1-\sigma_*+o(1)}.
+\]
+Hypothesis H5 certifies that the determinant/zero-mode transfer used
+in that statement has no unrecorded incompatibility.  H7 returns all
+auxiliary parameters to the prescribed \(h_0\), and H9 gives
+\[
+\left|
+\mathscr S_X\bigl(\{\mathcal P_b\}_{b\in\BX^{\mathrm{ns}}}\bigr)
+\right|
+\le
+X^{1-\sigma_*+\Lambda_{\mathrm{phys}}+o(1)}
+=o(X),
+\]
+because \(\Lambda_{\mathrm{phys}}<\sigma_*\).  H8 identifies this
+synthesis output with \(B_{h_0,\delta}(X)\), up to the already
+recorded \(o(X)\) remainder.  Therefore
+\[
+B_{h_0,\delta}(X)=o(X).
+\]
+Insert this in the established identity
+\eqref{eq:hard-packet-anchor}.
+\end{proof}
+
+\begin{remark}[What the theorem does and does not prove]
+\cref{thm:conditional-hl} proves an implication from explicit
+unproved hypotheses to the target correlation.  It does not prove
+H1--H9.  In particular H3 contains the unresolved growing
+fixed-\(h_0\) arithmetic cancellation, and the conjunction of the
+hypotheses may be stronger than \eqref{eq:conditional-hl}.
+\end{remark}
+
+\subsection{The conditional prime-pair consequence}
+
+\begin{corollary}[\Ctag\ Conditional fixed-gap prime pairs]
+\label{cor:conditional-pairs}
+Assume H1--H9 for a fixed admissible even \(h_0\) and for one fixed
+nonnegative, nonzero \(W\in C_c^\infty((1,2))\).  Then
+\[
+\#\{p\in[X,2X+O_{h_0}(1)]:
+      p\ \text{and}\ p+h_0\ \text{are prime}\}
+\gg_{h_0,W}\frac{X}{(\log X)^2}
+\]
+for all sufficiently large \(X\).
+\end{corollary}
+
+\begin{proof}
+Since \(\Ssing(h_0)>0\) and \(\int W>0\),
+\cref{thm:conditional-hl} gives
+\[
+\mathcal C_{h_0,W}(X)\gg_{h_0,W}X.
+\]
+The terms for which \(n\) or \(n+h_0\) is a prime power of exponent
+at least two contribute at most
+\[
+O_{h_0,W}\!\left(X^{1/2}(\log X)^2\right)=o(X).
+\]
+The remaining mass comes from prime-prime pairs, and each term is at
+most \(O_W((\log X)^2)\).  Division gives the stated lower bound.
+\end{proof}
+
+\begin{corollary}[\Ctag\ Conditional \(h_0=2\) specialization]
+\label{cor:conditional-twins}
+If H1--H9 are eventually proved for the prescribed shift \(h_0=2\),
+then \cref{cor:conditional-pairs} implies infinitely many twin primes.
+\end{corollary}
+
+\begin{remark}[No sharp unsmoothing is needed for infinitude]
+A single fixed nonnegative smooth weight already yields the
+conditional lower bound in \cref{cor:conditional-pairs}.  Smooth
+majorants and minorants may recover sharper interval formulations,
+but positivity and removal of higher prime powers are not the new
+parity-facing input.  That input is H3, or an equally strong signed
+replacement for a failed positive route.
+\end{remark}
+
+\subsection{A proof skeleton in nine moves}
+
+The conditional theorem may be read as the following end-to-end
+program:
+\begin{enumerate}[leftmargin=2em]
+\item calibrate the singular-series main term and isolate
+  \(B_{h_0,\delta}\);
+\item export the literal coefficient into canonical native packets;
+\item return the two established exceptional resonance branches;
+\item prove or replace the \(W_X,\PX,\XX\) positive resonance gates;
+\item prove signed generic affine M\"obius cancellation on the actual
+  carrier;
+\item return every short, high, ultra, boundary, and outer sector;
+\item verify determinant energy and the distinguished zero mode;
+\item reassemble and localize to the prescribed \(h_0\) with strict
+  endpoint slack; and
+\item reconnect to the original hard packet and use positivity only
+  after the weighted asymptotic is obtained.
+\end{enumerate}
+No move may be deleted by renaming its output.

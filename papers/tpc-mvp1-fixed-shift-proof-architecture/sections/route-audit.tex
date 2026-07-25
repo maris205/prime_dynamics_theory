@@ -1,0 +1,43 @@
+\section{Finite route audit}
+\label{sec:route-audit}
+
+The standard-library script
+\texttt{experiments/tpc\_mvp1\_route\_audit.py} encodes the dependency
+graph used in this paper.  It audits 98 recorded items:
+\begin{itemize}[leftmargin=2em]
+\item 19 nodes are typed as established, hypothetical, or
+  conditional;
+\item all 18 declared dependency edges have valid endpoints and the
+  graph is acyclic;
+\item all nine hypotheses are ancestors of the conditional
+  Hardy--Littlewood node;
+\item no established node is labeled \(\Ltwo\);
+\item all ten route gates contain nonempty go, stop, and fallback
+  records;
+\item the TPC-103--120 queue is consecutive and has 18 entries; and
+\item five rational identities in the scale and endpoint ledgers are
+  exact.
+\end{itemize}
+The committed output is
+\texttt{experiments/tpc\_mvp1\_route\_audit.json}.
+
+In particular the audit checks
+\[
+\frac{267}{400}+\frac{133}{400}=1,
+\qquad
+\frac{267}{800}-\frac{67}{400}=\frac{133}{800},
+\]
+\[
+\frac1{200}=2\cdot\frac1{400},
+\qquad
+\frac1{400}-\frac1{500}=\frac1{2000}>0.
+\]
+The sample \(1/500\) is only a consistency witness for strict endpoint
+slack, not a proved physical loss.
+
+\begin{remark}[Certificate scope]
+The route audit verifies graph syntax, claim typing, and rational
+bookkeeping.  It does not test H1--H9, asymptotic M\"obius
+cancellation, prime-pair data, or the plausibility of a parity
+breakthrough.  A passing finite audit is \(\Lzero\) evidence only.
+\end{remark}

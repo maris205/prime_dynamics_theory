@@ -1,0 +1,104 @@
+\section{Purpose, claim taxonomy, and the fixed-shift target}
+\label{sec:scope-target}
+
+\subsection{Four claim tags and three proof levels}
+
+Every major statement in this paper carries one of four logical tags:
+\[
+\Etag\ \text{established},\qquad
+\Htag\ \text{working hypothesis},\qquad
+\Ctag\ \text{conditional synthesis},\qquad
+\Ntag\ \text{not established}.
+\]
+The tags answer a different question from the inherited proof levels:
+\(\Lzero\) denotes finite algebra, exact model identities, abstract
+operator theorems, or countermodels; \(\Lone\) denotes a literal
+physical-frame interface preserving the actual arithmetic typing; and
+\(\Ltwo\) is reserved for a new growing estimate on the complete
+coefficient attached to one prescribed nonzero shift \(h_0\).
+
+\begin{definition}[Promotion rule]
+\label{def:promotion}
+An averaged-shift, almost-all-scale, frozen-family, random-sign,
+support-only, positive-square, or surrogate-carrier estimate is not an
+\(\Ltwo\) estimate for the physical fixed-\(h_0\) coefficient unless
+an explicit theorem returns it to that coefficient with all losses
+and exceptional sectors controlled.
+\end{definition}
+
+This paper is an \(\Lone\) synthesis.  A conditional implication may
+have an \(\Ltwo\) conclusion while none of its unproved hypotheses is
+promoted to an established \(\Ltwo\) theorem.
+
+\subsection{The target correlation}
+
+Fix throughout a nonzero even integer \(h_0\), and let
+\(W\in C_c^\infty((0,\infty))\) be fixed.  Write
+\[
+\mathcal C_{h_0,W}(X)
+=
+\sum_{n\ge1}\Lambda(n)\Lambda(n+h_0)W(n/X).
+\]
+If \(\nu_{h_0}(p)\) is the number of residue classes occupied by
+\(\{0,-h_0\}\pmod p\), define the usual singular series
+\[
+\Ssing(h_0)
+=
+\prod_p
+\frac{1-\nu_{h_0}(p)/p}{(1-1/p)^2}.
+\]
+It is positive for every fixed admissible even \(h_0\).  The centered
+defect is the classical prime-pair target
+\cite{HardyLittlewood1923,FriedlanderIwaniec2010}:
+\begin{equation}
+\Delta_{h_0,W}(X)
+=
+\mathcal C_{h_0,W}(X)
+-\Ssing(h_0)X\int_0^\infty W(t)\,dt.
+\label{eq:defect}
+\end{equation}
+
+\begin{proposition}[\Etag\ Established hard-packet anchor]
+\label{prop:anchor}
+The TPC fixed-shift local-model reduction gives, for a suitable fixed
+\(0<\delta<1/2\),
+\begin{equation}
+\Delta_{h_0,W}(X)
+=
+B_{h_0,\delta}(X)
++O_{A,h_0,W,\delta}\!\left(X(\log X)^{-A}\right)
+\label{eq:hard-packet-anchor}
+\end{equation}
+for every fixed \(A>0\), where \(B_{h_0,\delta}\) is an explicitly
+defined bilinear hard packet.  Consequently the weighted
+Hardy--Littlewood asymptotic is equivalent, within that reduction, to
+\[
+B_{h_0,\delta}(X)=o(X).
+\]
+\end{proposition}
+
+This is the entrance to the architecture, not an estimate of the hard
+packet.  The purpose of the later TPC layers is to expose its literal
+geometry without replacing it by an easier random or averaged object
+\cite{WangTPC15,WangTPC18}.
+
+\subsection{Six invariants that no route may drop}
+\label{subsec:invariants}
+
+Every hypothesis and every future promotion is audited against:
+\begin{enumerate}[label=\textbf{I\arabic*.},leftmargin=2.6em]
+\item the literal physical coefficients, including their signs and
+  reconstruction multipliers;
+\item one prescribed nonzero \(h_0\), not an averaged or subsequently
+  chosen shift;
+\item physical atomic normalization and exactly one global
+  normalization;
+\item canonical or losslessly invertible native keys, without
+  null-pair inflation;
+\item the actual active support, masks, prefixes, polarizations, short
+  fibers, and boundary sectors; and
+\item a nonduplicated endpoint ledger whose total physical loss is
+  strictly below \(1/400\).
+\end{enumerate}
+Failure of any item prevents a claim of final proof progress.  In
+particular, equality at the physical endpoint is a stop.

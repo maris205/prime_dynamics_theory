@@ -1,0 +1,94 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={TPC-MVP1: A Falsifiable Proof Architecture for Fixed-Shift Prime-Pair Correlations: Verified Interfaces, Explicit Working Hypotheses, and Stop-Go Tests at the Parity Frontier},
+  pdfauthor={Liang Wang},
+  pdfsubject={A conditional and falsifiable roadmap for the TPC fixed-shift prime-pair program},
+  pdfkeywords={fixed-shift prime pairs, parity barrier, Mobius correlation, determinant dispersion, conditional synthesis, proof roadmap}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{hypothesis}[theorem]{Working Hypothesis}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Etag}{\textcolor{green!45!black}{\textbf{[E]}}}
+\newcommand{\Htag}{\textcolor{orange!70!black}{\textbf{[H]}}}
+\newcommand{\Ctag}{\textcolor{blue!65!black}{\textbf{[C]}}}
+\newcommand{\Ntag}{\textcolor{red!65!black}{\textbf{[N]}}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Ssing}{\mathfrak S}
+\newcommand{\BX}{\mathcal B_X}
+\newcommand{\PX}{\mathfrak P_X}
+\newcommand{\XX}{\mathfrak X_X}
+\newcommand{\HX}{\mathcal H_X}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{\textbf{TPC-MVP1: A Falsifiable Proof Architecture}\\
+\textbf{for Fixed-Shift Prime-Pair Correlations:}\\
+Verified Interfaces, Explicit Working Hypotheses,\\
+and Stop--Go Tests at the Parity Frontier}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\noindent\textbf{Keywords:} fixed-shift prime pairs; parity barrier;
+M\"obius correlation; determinant dispersion; literal arithmetic
+carrier; conditional synthesis; falsifiable roadmap.
+
+\medskip
+\noindent\fcolorbox{red!55!black}{red!3}{%
+\begin{minipage}{0.96\linewidth}
+\textbf{Status statement.}
+The TPC series has established many exact algebraic, spectral,
+provenance, and literal physical-interface results, but no growing
+fixed-\(h_0\) arithmetic cancellation theorem.  TPC-MVP1 is a
+\emph{minimum viable proof program}: a falsifiable conditional
+architecture, not a proof of a prime-pair theorem and not a claim that
+the remaining hypotheses are merely technical.
+\end{minipage}}
+
+\input{sections/scope-and-target}
+\input{sections/century-audit}
+\input{sections/established-ledger}
+\input{sections/mvp-hypotheses}
+\input{sections/conditional-synthesis}
+\input{sections/dependency-and-dynamics}
+\input{sections/stop-go}
+\input{sections/future-queue}
+\input{sections/negative-results}
+\input{sections/route-audit}
+\input{sections/claim-boundary}
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

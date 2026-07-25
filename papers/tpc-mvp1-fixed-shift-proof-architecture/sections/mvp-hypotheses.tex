@@ -1,0 +1,226 @@
+\section{The minimum viable hypothesis stack}
+\label{sec:hypotheses}
+
+Set
+\[
+\sigma_*=\frac1{400}.
+\]
+The architecture has three macro hypotheses:
+\[
+\begin{gathered}
+\boxed{\mathbf L\ \text{literal completeness}}
+\quad+\quad
+\boxed{\mathbf P\ \text{literal packet saving}}
+\quad+\quad
+\boxed{\mathbf S\ \text{physical synthesis}}\\
+\Longrightarrow\quad B_{h_0,\delta}(X)=o(X).
+\end{gathered}
+\]
+They are resolved below into nine gates.  The resolution is
+intentionally redundant enough to be falsifiable: a failed gate names
+the object and the route that failed.
+
+\subsection{Macro hypothesis
+\texorpdfstring{\(\mathbf L\)}{L}: literal completeness}
+
+\begin{hypothesis}[\Htag\ H1: canonical physical synthesis]
+\label{hyp:canonical-synthesis}
+There is a provenance-preserving canonical packet family
+\(\{\mathcal P_b\}_{b\in\BX}\), with
+\(|\BX|=X^{o(1)}\), defined from the actual fixed-\(h_0\) coefficient.
+On the actual support, this family is an exhaustive disjoint
+classification into exceptional resonant, remaining resonant,
+generic, and returned-complement packets; no physical block lies
+outside these classes.
+Its keys retain every invariant in
+\cref{subsec:invariants}.  The synthesis map is the inherited physical
+map, not an arbitrary signed representation, and its cost is entered
+once in \(\Lambda_{\mathrm{phys}}\).
+\end{hypothesis}
+
+\begin{hypothesis}[\Htag\ H4: high-frequency and boundary return]
+\label{hyp:high}
+The high-frequency reconstruction tail, ultra-long residual
+complement, short and bounded fibers, slope collisions, both
+polarizations, endpoint bands, and outer keys are either
+assigned to a soft remainder whose \emph{complete outer sum} is
+\(o(X)\) in the original normalization, or retained as packet terms
+that satisfy the same raw saving \(X^{1-\sigma_*+o(1)}\) used below.
+Write \(\BX^{\mathrm{ns}}\subseteq\BX\) for the indices of these
+retained nonsoft packets.
+No favorable sector is silently promoted to the full coefficient.
+\end{hypothesis}
+
+\begin{hypothesis}[\Htag\ H6: full-block physical return]
+\label{hyp:full-block}
+The TPC-18 block family covers the literal physical tail in one
+carrier and one quantifier scope.  Either an exact certificate
+\(Bc=w\) holds, or the uncovered physical remainder is estimated
+separately by \(o(X)\).  Overlap, missing blocks, and normalization
+are included in the synthesis operator.
+\end{hypothesis}
+
+\begin{hypothesis}[\Htag\ H7: prescribed-shift localization]
+\label{hyp:localization}
+Every frozen, aliased, frequency-averaged, or auxiliary-parameter
+estimate used by the route returns, with subcritical recorded cost, to
+the same prescribed nonzero \(h_0\).  An almost-all or averaged-shift
+statement does not satisfy this hypothesis.
+\end{hypothesis}
+
+\begin{hypothesis}[\Htag\ H8: literal tail reconnection]
+\label{hyp:reconnection}
+After all packet estimates and reassembly, the output intertwines
+exactly with the original hard packet \(B_{h_0,\delta}(X)\) in
+\eqref{eq:hard-packet-anchor}.  There is no second global
+normalization, omitted branch, duplicated atom, or substitution of a
+surrogate Gram matrix for the native physical Gram matrix.
+\end{hypothesis}
+
+Together, H1, H4, H6, H7, and H8 constitute macro hypothesis
+\(\mathbf L\).  They are structural and analytic, but they are not
+declared easy.
+
+\subsection{Macro hypothesis
+\texorpdfstring{\(\mathbf P\)}{P}: packet saving}
+
+\begin{hypothesis}[\Htag\ H2: literal positive resonance]
+\label{hyp:resonance}
+On the actual growing TPC-102 invertible carrier,
+\begin{equation}
+B_X\le X^{o(1)},\qquad
+W_X\le X^{o(1)},\qquad
+\PX\le X^{o(1)}Q_X^2,\qquad
+\XX\le X^{o(1)}Q_X^2.
+\label{eq:resonance-hypothesis}
+\end{equation}
+These bounds use the opened atomic weights and active widths, not an
+ambient branch census.  The exact inherited normalization transports
+\eqref{eq:three-ledger}, including its leading exceptional term and
+the two E5 returns, to the raw packet target
+\[
+|\mathcal P_{b,\mathrm{res}}|
+\le X^{1-\sigma_*+o(1)}.
+\]
+\end{hypothesis}
+
+The last sentence is part of the hypothesis because
+\eqref{eq:three-ledger} is a native \(TT^*\)-scale statement.  A
+normalization crosswalk must be proved rather than inferred by
+dimension counting.
+
+\begin{hypothesis}[\Htag\ H3: restricted generic affine arithmetic]
+\label{hyp:generic}
+For every actual long generic affine block, retain in the same sum the
+literal M\"obius weights, the \(r\)-dependent phase, the affine
+character, the reconstruction multiplier, all prefixes, and the fixed
+\(h_0\).  Its normalized signed \(TT^*\) correlation satisfies the
+working target
+\begin{equation}
+\mathcal G_{b,\mathrm{gen}}^{\mathrm{signed}}
+\ll
+XQ_b\,X^{-1/200+o(1)},
+\label{eq:generic-ttstar}
+\end{equation}
+and, jointly, its exact physical \(TT^*\) normalization supplies the
+packet target
+\begin{equation}
+|\mathcal P_{b,\mathrm{gen}}|
+\ll
+X^{1-\sigma_*+o(1)}.
+\label{eq:generic-packet}
+\end{equation}
+The estimate is required only for the literal coefficient family
+generated by the TPC dictionary, not for arbitrary slopes, arbitrary
+weights, or a uniform Chowla family.
+\end{hypothesis}
+
+No derivation of \eqref{eq:generic-packet} from
+\eqref{eq:generic-ttstar} is asserted in this paper.  The two displays
+are joint parts of H3.  A future proof must exhibit the exact
+normalizing prefactor that turns the \(1/200\) quadratic saving into a
+\(1/400\) packet saving.
+
+Hypothesis H3 is the parity-facing arithmetic gate.  It is the
+boldest assumption in the paper and may contain most of the difficulty
+of the original problem.  Calling it ``spectral'' does not make it a
+proved cancellation theorem.
+
+\begin{hypothesis}[\Htag\ H5: determinant and distinguished zero mode]
+\label{hyp:det-zero}
+On the actual post-bin coefficient, there exist exponents
+\(\lambda_D,\eta_Z\ge0\) such that
+\[
+D_X\ge
+X^{-\lambda_D+o(1)}Q_X^3J_X^2,
+\qquad
+|Z_X|\le
+X^{-\eta_Z+o(1)}Q_X^2,
+\]
+and
+\[
+\lambda_D\le2\eta_Z.
+\]
+The corresponding literal transfer inequality is assumed to
+introduce no further fixed-power loss beyond the exponents already
+charged in this determinant ledger and in
+\(\Lambda_{\mathrm{phys}}\).
+Ambient, random-model, pre-bin, or support-only energy is not a
+substitute for \(D_X\), and a nonzero-frequency spectral gap is not a
+substitute for the estimate of \(Z_X\).
+\end{hypothesis}
+
+H2, H3, and H5 constitute macro hypothesis \(\mathbf P\).  H2 is a
+sufficient positive route for the resonance sector.  If it fails, a
+signed filter-before-majorant replacement may be inserted, but the
+replacement must still deliver the packet bound at the same
+normalization.
+
+\subsection{Macro hypothesis
+\texorpdfstring{\(\mathbf S\)}{S}: strict physical endpoint}
+
+\begin{hypothesis}[\Htag\ H9: endpoint feasibility]
+\label{hyp:endpoint}
+After every frame, grouping, missing-high, localization, cover,
+boundary, and native-Gram cost has been charged exactly once, the
+physical synthesis operator obeys
+\[
+\left|
+\mathscr S_X\bigl(\{\mathcal P_b\}_{b\in\BX^{\mathrm{ns}}}\bigr)
+\right|
+\le
+X^{\Lambda_{\mathrm{phys}}+o(1)}
+\max_{b\in\BX^{\mathrm{ns}}}|\mathcal P_b|,
+\]
+with
+\[
+\Lambda_{\mathrm{phys}}<\sigma_*=\frac1{400}.
+\]
+\end{hypothesis}
+
+Subpower block multiplicity is absorbed in the \(o(1)\).  Equality
+\(\Lambda_{\mathrm{phys}}=1/400\) does not close the route.  The
+compatibility \(\lambda_D=2\eta_Z\) in H5 is not reusable as physical
+endpoint slack.
+
+\subsection{Strength and nonminimality}
+
+\begin{remark}[The stack may be stronger than the target]
+The conjunction H1--H9 is designed to imply a scalar
+Hardy--Littlewood asymptotic, but the converse is neither claimed nor
+expected.  A scalar asymptotic need not imply a positive bound on
+every fiber, a uniform cross-map majorant, or a canonical frame
+estimate.  Thus ``minimum viable'' means a compact program exposing
+the interfaces currently identified in this series; it does not mean
+a logically minimal or independently easier reformulation of the
+twin-prime problem.
+\end{remark}
+
+\begin{remark}[The three resonance ledgers are not all remaining
+obstacles]
+The quantities \(W_X,\PX,\XX\) are the remaining ledgers in one
+positive resonant subcarrier.  Generic signed arithmetic, full-block
+return, fixed-\(h_0\) localization, determinant/zero-mode
+compatibility, high-frequency return, and the strict endpoint remain
+independent.
+\end{remark}
