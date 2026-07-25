@@ -1,0 +1,198 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,natbib,microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\title{A Native Reset Support Floor\\\large Sharp Endpoint Composition and a 62-Step Common Finite Tube}
+\author{Prime Dynamics Theory Program}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The reset route now has three compatible ingredients.  RH-153 transports a
+correlated Gram--tail pair through an overlap congruence without changing its
+relative tail.  RH-154 supplies a well-conditioned terminal half.  RH-155
+constructs a native recent/tail pair with a subunit Loewner ratio at all 130
+frozen snapshots.
+
+We compose these ingredients in one sharp endpoint theorem.  Suppose the
+selected full-memory eigenvalues lie in $[\ell,u]$, the old tail has operator
+mass at most $\tau$, and the reset overlap singular values lie in
+$[\alpha,\beta]$.  If $\ell>2\tau$, then the transported native support
+satisfies
+\[
+ \mathcal S\geq
+ \frac{\alpha}{\beta}
+ \sqrt{\frac{\ell-\tau}{u}}
+ \left(1-\sqrt{\frac{\tau}{\ell-\tau}}\right)^4.
+\]
+The formula is jointly sharp from these scalar endpoints.
+
+All 120 frozen transitions have positive support lower.  The minimum is
+$3.26204\times10^{-8}$, the median is $3.26385\times10^{-4}$, and 111 and
+74 transitions exceed $10^{-6}$ and $10^{-4}$ respectively.  All 62
+terminal-half transitions form a common finite tube with the same minimum.
+This closes the finite native reset architecture.  The support functional is
+not yet identified with the projected-cross directional quantity used in the
+earlier Stage-A route.
+\end{abstract}
+
+\section{The endpoint data}
+Let $M=R+D$ be the full, recent, and old-tail memories compressed to the
+exact reset packet.  RH-155 gives
+\[
+ \ell I\preceq M\preceq uI,
+ \qquad 0\preceq D\preceq\tau I,
+\]
+so
+\[
+ R\succeq(\ell-\tau)I,qquad
+ D\preceq xR,quad x=\frac{\tau}{\ell-\tau}.
+\]
+Let $C$ be an invertible overlap map with singular values in
+$[\alpha,\beta]$, and transport both matrices by
+$\Phi_C(A)=C^{-*}AC^{-1}$.  The relative tail $x$ is unchanged by RH-153.
+
+For a positive pair define the native support functional
+\[
+ \mathcal S(G,D)=
+ \sqrt{\frac{\lambda_{\min}(G)}{\lambda_{\max}(G)}}
+ \left(1-\sqrt{\gamma^2(G,D)}\right)_+^4,
+\]
+where $\gamma^2(G,D)=\inf\{y:D\preceq yG\}$.
+
+\section{Sharp support composition}
+\begin{theorem}[Native reset support theorem]\label{thm:support}
+Assume $0<\alpha\leq\beta$, $0\leq\tau<\ell\leq u$, and use the endpoint
+data above.  Then
+\[
+ \mathcal S(\Phi_C(R),\Phi_C(D))\geq
+ \frac{\alpha}{\beta}
+ \sqrt{\frac{\ell-\tau}{u}}
+ \left(1-\sqrt{\frac{\tau}{\ell-\tau}}\right)_+^4.
+\]
+The right side is positive exactly when $\ell>2\tau$ and $\alpha>0$.
+The complete expression is sharp from the five scalar endpoints.
+\end{theorem}
+\begin{proof}
+The recent eigenvalue endpoints give
+\[
+ a(R):=\sqrt{\lambda_{\min}(R)/\lambda_{\max}(R)}
+ \geq\sqrt{(\ell-\tau)/u},
+\]
+because $R\preceq M\preceq uI$.  Inverse congruence lowers this normalized
+base by at most $\alpha/\beta$.  Loewner covariance preserves the tail ratio,
+which is at most $\tau/(\ell-\tau)$.  The fourth-power factor is decreasing,
+so multiplication proves the formula.
+
+For sharpness, take two dimensions with
+$M=\operatorname{diag}(u,\ell)$,
+$D=\operatorname{diag}(0,\tau)$, and
+$C=\operatorname{diag}(\alpha,\beta)$.  Assigning the $u$ direction to
+$\alpha$ and the $\ell-\tau$ direction to $\beta$ attains the base endpoint,
+while the second direction attains the tail ratio.  Hence all factors are
+simultaneously attained \citep{Bhatia1997,HornJohnson2013}.
+\end{proof}
+
+\begin{corollary}[Common finite tube]\label{cor:tube}
+For any finite reset family satisfying the theorem, the minimum of the
+displayed endpoint lowers is a valid common support floor.  Congruence
+conditioning is paid once per independently reset snapshot, not multiplied
+through a recursive chain.
+\end{corollary}
+
+The last sentence is essential.  The atlas is reanchored at every snapshot;
+we do not multiply 120 support lowers or inverse-overlap factors.
+
+\section{Frozen support audit}
+For each RH-153 transition we use its robust overlap lower and selected
+full-memory eigenvalue upper.  The lower selected eigenvalue is the minimum
+of the independently reconstructed RH-153 and RH-155 outward values.  The
+geometric tail mass is taken from RH-155.  Since overlaps of orthonormal
+frames have $\beta\leq1$, we set $\beta=1$.
+
+Every one of the 120 transitions is positive.  The smallest lower,
+$3.26204\times10^{-8}$, is the terminal $\sigma=0.01$ left snapshot.  There
+the recent-base lower is $4.2620\times10^{-7}$ and the conservative tail
+factor is $0.0765374$.  Thus the weakest support is caused by both terminal
+spectral thinning and the largest certified tail ratio, not by an overlap
+birth spike.
+
+The median support lower is $3.26385\times10^{-4}$ and the maximum is
+$0.197087$.  All 120 exceed $10^{-8}$, 111 exceed $10^{-6}$, and 74 exceed
+$10^{-4}$.  The RH-154 terminal-half family contains 62 transitions; all are
+positive and their common floor is again $3.26204\times10^{-8}$.  Delayed
+start improves conditioning while leaving the terminal support wall visible.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/native_reset_support_floor.pdf}
+\caption{All transition support lowers, separation of base and tail losses,
+full-versus-delayed channel floors, and threshold counts.}
+\label{fig:audit}
+\end{figure}
+
+\section{A conditional all-level endpoint criterion}
+The finite formula also identifies the exact analytic packets needed for an
+eventual theorem.  Let $(\ell_n,u_n,\tau_n,\alpha_n,\beta_n)$ be outward
+endpoint data for an all-level reset family and suppose each transition is
+reanchored independently.
+
+\begin{corollary}[Eventual endpoint criterion]\label{cor:eventual}
+Assume that, after a finite index,
+\[
+ \ell_n\geq\ell_*>2\tau_*,\qquad
+ \tau_n\leq\tau_*,\qquad
+ u_n\leq u_*<\infty,
+\]
+and
+\[
+ 0<\alpha_*\leq\alpha_n\leq\beta_n\leq\beta_*<\infty.
+\]
+Then the native reset support has the uniform eventual floor
+\[
+ \liminf_{n\to\infty}\mathcal S_n\geq
+ \frac{\alpha_*}{\beta_*}
+ \sqrt{\frac{\ell_*-\tau_*}{u_*}}
+ \left(1-\sqrt{\frac{\tau_*}{\ell_*-\tau_*}}\right)^4>0.
+\]
+For trace-one geometric memory one may take
+$\tau_*=\eta^d/(1-\eta)$.
+\end{corollary}
+\begin{proof}
+Apply Theorem~\ref{thm:support} at every sufficiently large index and use
+monotonicity in the five endpoints.  A finite omitted prefix does not alter
+the liminf.
+\end{proof}
+
+Within this scalar endpoint architecture, none of the three qualitative
+requirements can simply be dropped.  If $\alpha_n/\beta_n\to0$, the chart
+can flatten the normalized base.  If $\ell_n\downarrow2\tau_*$, the tail
+factor tends to zero.  If $u_n/(\ell_n-\tau_n)\to\infty$, the recent base can
+vanish even while the tail remains subunit.  Diagonal examples realize all
+three boundaries.  Thus the next asymptotic work is not an unspecified
+compactness argument: it must control overlap conditioning, the selected
+weak eigenvalue relative to the universal tail mass, and the selected
+spectral spread.
+
+\section{What has and has not closed}
+The finite native route is now internally complete: source-memory balls
+select reset packets, overlaps provide coherent charts, correlated
+congruence preserves the tail ratio, a delayed suffix removes finite birth
+conditioning, and Theorem~\ref{thm:support} supplies one common positive
+support floor.
+
+However, this native functional uses the recent memory compressed directly
+to the reset packet.  The older directional construction used a projected
+cross action, a four-direction frame, wedge volume, leading singular value,
+and capacity.  Equality or domination between those functionals has not been
+proved.  Nor have we established all-level endpoint laws, Stage A, a
+Hilbert--Polya operator, zeta-zero identification, or the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
