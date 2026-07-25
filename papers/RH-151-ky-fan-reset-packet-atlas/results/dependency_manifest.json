@@ -1,0 +1,53 @@
+{
+  "external_inputs": {
+    "rh150_archive": {
+      "path": "papers/RH-150-temporal-anchor-packet-transport-obstruction/results/archive_verification.json",
+      "sha256": "fca791e6d04b4691ea0a104092f4e168ca09f02bfeb693f86af6b786e779fc9d"
+    },
+    "rh150_roadmap": {
+      "path": "papers/RH-150-temporal-anchor-packet-transport-obstruction/UPDATED_ROADMAP.md",
+      "sha256": "4ed58fbeb8fd4a95ad74d731c29cf51711aed22daec6ac21e477f44df311afa7"
+    },
+    "rh150_summary": {
+      "path": "papers/RH-150-temporal-anchor-packet-transport-obstruction/results/summary.json",
+      "sha256": "d3d73944ff14f9d491709359467fc7bcdff3d8836d9f8362793abd934f66d3e9"
+    },
+    "rh84_summary": {
+      "path": "papers/RH-84-ky-fan-tail-majorization/results/summary.json",
+      "sha256": "7b3518402760cc602670ec994266117327c561a7f673b2399fc922ae06b11794"
+    },
+    "rh94_summary": {
+      "path": "papers/RH-94-source-seeded-four-direction-horizon-refresh/results/summary.json",
+      "sha256": "c316c414e8cc89b171b420f738f4829487c7df137a22f70d2d07127b6d70cd1b"
+    },
+    "rh96_audit": {
+      "path": "papers/RH-96-gap-weighted-weak-mode-quotient/results/weak_mode_quotient_audit.json",
+      "sha256": "123b4a59da8d0e640567d6b4f720dd82e157a424054c009ea6048bb4ce95c398"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "9ab057e19c3ad9dd7f23b659478739628f0dd495bd657ee4055f9564eeb54493",
+    "experiments/build_reset_packet_audit.py": "2cfda567f60c2ca54c011c1c055cef514f29b5f4ac88a9faa996ddc39419ccb3",
+    "experiments/make_figures.py": "f262fc48343736fa03fb767771e7ebcee36ec794e5b05dc82d17306e2bf23722",
+    "experiments/verify_archive.py": "ea695b155677aba2b903813299f36aafe0f4845709d70522c8eb739f205eada1",
+    "src/reset_packet/__init__.py": "0865d40513b9fdb0a13aa4418da46b52dca7e0db9d6777006f2ce9bf8f112a22",
+    "src/reset_packet/bounds.py": "0f1aff20ff224966378c85f969579ca0888eff035e8a87be502a689b33031646",
+    "tests/test_archived_results.py": "714f6e441e54f03deec378138040f707cab01b85fed1621e3907d7c97c4dd14e",
+    "tests/test_theory.py": "07be59f7c1ae9284c549d998a28cdfbda47508164ac42b7df0b39bf377889380"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "e5faf6c13253120e483b46a79533e76b4fe9aeb5af95478d41757724040aa096",
+    "THEOREM_LEDGER.md": "7586b847e970d28da3550c67a592dca33732b03f551ed22e49cf57af39bb2cf5",
+    "UPDATED_ROADMAP.md": "472a434e009a705040ecc68bde1be1f043e65fcb250b1459fa53f0bfb6382e26",
+    "figures/ky_fan_reset_packet_atlas.pdf": "272c6a89a07388e071afd29b310e5dbd3611dc0cb9ae6fe6e509349e70bac878",
+    "figures/ky_fan_reset_packet_atlas.png": "f20d62cc13e52f4061d015fea28dbbd7f81327d0a5e3be298ade593296a0e673",
+    "ky-fan-reset-packet-atlas.pdf": "7a2b26ef77943979a15f63f1922f11d69aef06e61d9f4c4478d657da85e78346",
+    "main.pdf": "7a2b26ef77943979a15f63f1922f11d69aef06e61d9f4c4478d657da85e78346",
+    "main.tex": "a15a058a0243a51e2ceb336a00b358962fe9c69e5f2fcd57a0d64dc225d3eb40",
+    "pyproject.toml": "f9e9e9d0af037c9524b22b6cee2417af59698e33e940d686578e7bbea23df9d8",
+    "references.bib": "abd9a73220d552d9c0bcb1200c6e9f39f00a8807eef8d96106d4ee93377a390a",
+    "requirements.txt": "3c3dad8ee055d905681bf8fc315c816b9453bce4af4b341bf10e7bb9b1a8a512"
+  },
+  "status": "all_rh151_inputs_sources_and_publication_artifacts_hashed"
+}
