@@ -1,0 +1,56 @@
+{
+  "audit": {
+    "channel_count": 10,
+    "correlated_base_above_1e_4_count": 74,
+    "correlated_base_above_1e_6_count": 113,
+    "correlated_base_above_1e_8_count": 120,
+    "correlated_positive_base_count": 120,
+    "independent_positive_definite_count": 68,
+    "independent_positive_definite_failure_count": 52,
+    "independent_relative_norm_below_one_count": 119,
+    "maximum_independent_pullback_radius": 0.757905950337658,
+    "maximum_independent_radius_to_minimum_ratio": 146946016383.58118,
+    "median_correlated_pulled_base_lower": 0.00032668601420757,
+    "minimum_correlated_pulled_base_lower": 2.2304489231861772e-07,
+    "transition_count": 120
+  },
+  "program_boundary": {
+    "all_frozen_correlated_bases_positive": true,
+    "generalized_tail_ratio_invariance": true,
+    "hilbert_polya_operator": false,
+    "independent_ball_route_closes": false,
+    "independent_inverse_congruence_radius": true,
+    "loewner_congruence_covariance": true,
+    "native_reset_tail_assembly": false,
+    "riemann_hypothesis": false,
+    "sharp_normalized_base_transport_lower": true,
+    "stage_A": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "6b43f52475d2e7a4f7c9d6df4f512857c45a8571076ee034942ac9107707a653",
+    "THEOREM_LEDGER.md": "7376f38979c52c411a38c290e4622388e1ca9af2b70715380e886a1501445764",
+    "UPDATED_ROADMAP.md": "0422ee76157cb4b086acaa310327877cb525f67650e37c0c1bd42f779b67ee9d",
+    "congruence-covariant-reset-transport.pdf": "fc70de0d99628672b2fb5c205cd91f92a18f3e41f3641ef1f5c5fa76b2d47a7a",
+    "figures/congruence_covariant_reset_transport.pdf": "3bebea719fa4c8b033560ae900d8faffd687f31aa1641f81d0b9ea27bf6c3dc5",
+    "figures/congruence_covariant_reset_transport.png": "6ecaf072a7e23d088cde224e333914d29a948e7463ed1cf7fa36872e9685cc64",
+    "main.pdf": "fc70de0d99628672b2fb5c205cd91f92a18f3e41f3641ef1f5c5fa76b2d47a7a",
+    "main.tex": "6d8b74f1aa5785de2e790239d8771a36f35b11117c6da73389380a114362b3a7",
+    "pyproject.toml": "a4dbb07ed36bd7b2c8c3ae9b4b2ceb3ff7fd41262b75c2078652213ef9f92636",
+    "references.bib": "b5c4ea3ad1dfc2bd3171bae8e2ee653955389ceb66de12e1c65a8027401aa399",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd"
+  },
+  "result_hashes": {
+    "results/congruence_audit.json": "fb431ea360e0adba569850860a6c57667937cb2d7f1e4b33c10372e3f015723d",
+    "results/congruence_smoke.json": "c908866450b3af2a4f664f451858012e5c2e0aeb08d3e500f1b7bf64bedf32e3",
+    "results/dependency_manifest.json": "139a11afca2b138838b51dc14258f4359113b0da45594528f7516bfc553a9d6a"
+  },
+  "route_consequence": "Transporting a reset Gram and tail through one common inverse-overlap congruence preserves their Loewner ratio exactly and costs only one overlap condition factor in the normalized base. All 120 frozen correlated base lowers remain positive. Separating packet, Gram, and overlap balls before inversion loses positive definiteness on 52 transitions, so the next layer must build and transport a native correlated reset pair.",
+  "status": "rh153_congruence_covariant_reset_transport_archived",
+  "theorem": {
+    "generalized_tail_ratio_invariance": true,
+    "independent_inverse_congruence_radius": true,
+    "loewner_congruence_covariance": true,
+    "sharp_transported_base_lower": true
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "external_inputs": {
+    "rh151_audit": {
+      "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/reset_packet_audit.json",
+      "sha256": "0c0b9c1ca5c941239fda71d06fbcdfff15607e267bc94ecf9c99945b9c5f4072"
+    },
+    "rh151_summary": {
+      "path": "papers/RH-151-ky-fan-reset-packet-atlas/results/summary.json",
+      "sha256": "74fe5959476f897210aa21f8f119d78caf5f844cf0a51b7fb60f8bfe3cb44955"
+    },
+    "rh152_archive": {
+      "path": "papers/RH-152-reset-transition-overlap-coherence/results/archive_verification.json",
+      "sha256": "a017ec0c4eba18ec712f2a98d48468eedbdf90242138316f8911c78fe9f93e5b"
+    },
+    "rh152_audit": {
+      "path": "papers/RH-152-reset-transition-overlap-coherence/results/overlap_audit.json",
+      "sha256": "e53c5dddbfbf9e4d03261966fb157cb875f7676e485a493e9566a5b50969faad"
+    },
+    "rh152_summary": {
+      "path": "papers/RH-152-reset-transition-overlap-coherence/results/summary.json",
+      "sha256": "39c95299f1a56687bfe35d8470bf90f6117bcc3c2a80f934b05282e116b2fadd"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "04a45406387206d245744c92d1652682b68a0ba55e0b74fef7f16fadbc5366c6",
+    "experiments/build_congruence_audit.py": "8e3480492f47f5e62f7c3c76bb8b14e540edd197903577e03226d422d20f4df0",
+    "experiments/make_figures.py": "9894818841cc19ff750d82b8112442067f2bf81659f671fc6eebc985690da2f4",
+    "experiments/verify_archive.py": "253099764b9f07aaeca8abb7f32459f3d115da6b9cd80a720eaf2996d47565e3",
+    "src/reset_congruence/__init__.py": "d4de909f497d09e2c78b94d8cce0a01d2e01176f1531b336f02dfb0e8cf8d56d",
+    "src/reset_congruence/bounds.py": "406226be31e6766990b8b560587232ed5ed44a4d6a78aa46887f58a595691e16",
+    "tests/test_archived_results.py": "9fd1cd57dae51cc529e753ff15d35f8d4020df052a32ca0021339d79353dcc38",
+    "tests/test_theory.py": "f5f1fc1cc49a6d42923df11599e21541ea1246abb7482aacacd0f0eb11bae79f"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "6b43f52475d2e7a4f7c9d6df4f512857c45a8571076ee034942ac9107707a653",
+    "THEOREM_LEDGER.md": "7376f38979c52c411a38c290e4622388e1ca9af2b70715380e886a1501445764",
+    "UPDATED_ROADMAP.md": "0422ee76157cb4b086acaa310327877cb525f67650e37c0c1bd42f779b67ee9d",
+    "congruence-covariant-reset-transport.pdf": "fc70de0d99628672b2fb5c205cd91f92a18f3e41f3641ef1f5c5fa76b2d47a7a",
+    "figures/congruence_covariant_reset_transport.pdf": "3bebea719fa4c8b033560ae900d8faffd687f31aa1641f81d0b9ea27bf6c3dc5",
+    "figures/congruence_covariant_reset_transport.png": "6ecaf072a7e23d088cde224e333914d29a948e7463ed1cf7fa36872e9685cc64",
+    "main.pdf": "fc70de0d99628672b2fb5c205cd91f92a18f3e41f3641ef1f5c5fa76b2d47a7a",
+    "main.tex": "6d8b74f1aa5785de2e790239d8771a36f35b11117c6da73389380a114362b3a7",
+    "pyproject.toml": "a4dbb07ed36bd7b2c8c3ae9b4b2ceb3ff7fd41262b75c2078652213ef9f92636",
+    "references.bib": "b5c4ea3ad1dfc2bd3171bae8e2ee653955389ceb66de12e1c65a8027401aa399",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd"
+  },
+  "status": "all_rh153_inputs_sources_and_publication_artifacts_hashed"
+}
