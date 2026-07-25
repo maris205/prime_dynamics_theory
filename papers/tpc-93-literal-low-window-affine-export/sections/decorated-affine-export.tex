@@ -1,0 +1,433 @@
+\section{Decorated affine-column export}
+\label{sec:decorated-affine-export}
+
+The TPC-33 column theorem was stated for the untwisted distinguished
+shell.  Its proof uses pointwise row-gcd inversion, divisor
+reflection, and sign fusion.  These operations commute with any
+scalar decoration attached to the original physical atom.  We record
+that principle before applying it to the determinant character.
+
+\subsection{A pointwise decoration lemma}
+
+\begin{lemma}[Decorated reindexing]
+\label{lem:decorated-reindexing}
+Let a finite sum be written as
+\[
+ S=\sum_{\omega\in\Omega}a(\omega),
+\]
+and suppose a finite exact expansion and reindexing gives
+\[
+ a(\omega)
+ =
+ \sum_{\xi\in\Xi(\omega)}a_\xi(\omega),\qquad
+ \{(\omega,\xi):\omega\in\Omega,\ \xi\in\Xi(\omega)\}
+ \longleftrightarrow\mathcal P.
+\]
+For every function \(F:\Omega\to\C\),
+\[
+ \sum_{\omega\in\Omega}F(\omega)a(\omega)
+ =
+ \sum_{p\in\mathcal P}
+ F(\omega(p))a_p.
+\]
+In particular, a pointwise projector or change of variables remains
+exact after multiplication by \(F\), provided the provenance map
+\(p\mapsto\omega(p)\) is retained.
+\end{lemma}
+
+\begin{proof}
+Multiply the finite identity for \(a(\omega)\) by \(F(\omega)\), sum
+over \(\omega\), and use the stated bijective reindexing.  No
+estimate or interchange of an infinite sum is involved.
+\end{proof}
+
+\begin{remark}[Why provenance is part of the statement]
+The conclusion fails if two distinct source atoms are merged before
+the value of \(F\) is known.  Equal affine forms or equal
+determinants do not imply equal determinant phases: the opposite row,
+exact content, and source polarization remain part of
+\(\omega(p)\).
+\end{remark}
+
+\subsection{Lossless native keys}
+
+Apply the exact polarization \eqref{eq:row-polarization}.  For the
+left-ultra leg, fix the opposite row
+\[
+ \gamma=(\ell',e),\qquad n_\gamma=\ell'e,
+\]
+open an ultra divisor \(u\), and write
+\[
+ \ell d j+h_0=u\sigma.
+\]
+On a row-gcd layer \(v\mid d,e\), write \(d=vD\).  The TPC-33
+reflection gives
+\begin{equation}
+ D_\theta(t)=d_\theta+\sigma_\theta t,\qquad
+ U_\theta(t)=u_\theta+a_\theta t,\qquad
+ a_\theta=\ell_\theta j_\theta v_\theta,
+\label{eq:affine-native-forms}
+\end{equation}
+with
+\begin{equation}
+ \sigma_\theta u_\theta-a_\theta d_\theta=h_0,\qquad
+ (a_\theta,\sigma_\theta)=1,\qquad
+ (a_\theta\sigma_\theta,h_0)=1.
+\label{eq:affine-native-determinant}
+\end{equation}
+The affine parameter ranges over one of at most two intervals
+\(I_\theta\), and
+\begin{equation}
+ |I_\theta|\ll 1+\frac{D_X^{\rm row}}
+ {\sigma_\theta v_\theta},
+\label{eq:affine-native-length}
+\end{equation}
+where \(D_X^{\rm row}\) denotes the dyadic row scale, not the
+determinant energy.
+
+To avoid suppressing data, define the left provenance key
+\begin{equation}
+ \theta=
+ (L,\gamma,\ell,j,\sigma,v,\iota).
+\label{eq:affine-provenance-key}
+\end{equation}
+Here \(L\) records the polarization, \(\iota\) records which of the
+at most two interval components occurs, and \(v\) is the actual
+row-gcd-projector divisor.  The fixed-period factor and the literal
+smooth, logarithmic, Mellin/BV, residue, and source-prefix factors
+are evaluated as functions in \(\rho_\theta\) and
+\(W_{\theta,X}\); they are not replaced by a new anonymous key.
+Right-ultra keys have the symmetric form with \(\alpha\) fixed and
+are marked by \(R\).
+
+For a left key, set
+\begin{align}
+ n_\theta&=n_\gamma=\ell'e,
+\label{eq:affine-opposite-row}\\
+ M_\theta(t)&=\ell_\theta v_\theta D_\theta(t),
+\label{eq:affine-moving-row}\\
+ P_\theta&=n_\theta j_\theta+h_0,
+\label{eq:affine-opposite-target}\\
+ G_\theta(t)&=\gcd(
+ \sigma_\theta U_\theta(t),P_\theta).
+\label{eq:affine-native-content}
+\end{align}
+Define the determinant orientation by
+\begin{equation}
+ \varepsilon_\theta=
+ \begin{cases}
+ +1,&\theta\text{ is left-ultra},\\
+ -1,&\theta\text{ is right-ultra}.
+ \end{cases}
+\label{eq:affine-orientation}
+\end{equation}
+Thus the ordered row determinant inherited from
+\((\alpha,\gamma)\) is always
+\begin{equation}
+ \Delta^\#_\theta(t)
+ =
+ \varepsilon_\theta
+ \frac{M_\theta(t)-n_\theta}{G_\theta(t)}.
+\label{eq:affine-oriented-determinant}
+\end{equation}
+The equality
+\[
+ \sigma_\theta U_\theta(t)
+ =
+ M_\theta(t)j_\theta+h_0
+\]
+holds identically.  Define the retained local mask
+\begin{equation}
+ \chi_\theta(t)
+ =
+ \one_{\left(v_\theta,\,
+ D_\theta(t)U_\theta(t)\right)=1}
+ \rho_\theta(t),
+\label{eq:affine-local-mask}
+\end{equation}
+where \(\rho_\theta\) is the fixed-period factor from the actual-mask
+column theorem.  Let \(W_{\theta,X}(t)\) contain the remaining literal
+smooth and logarithmic factors, and let \(c_{\theta,X}\) contain the
+opposite-row coefficient and all factors constant on the affine
+fiber.  These are the literal TPC-33 factors evaluated on the source
+atom reconstructed below; no new fiber normalization is introduced.
+
+\subsection{The source--child inverse and projector multiplicity}
+
+Let \(G_X^{\rm row}=X^{\kappa_0}\) denote the row-gcd cutoff of the
+actual TPC-33 mask and put
+\[
+ \lambda_{G_X^{\rm row}}(v)
+ =
+ \sum_{\substack{g\mid v\\g\le G_X^{\rm row}}}\mu(v/g).
+\]
+A left preprojector source atom is
+\begin{equation}
+ \omega=(L,\alpha,\gamma,j,u),\qquad
+ \alpha=(\ell,d),\quad\gamma=(\ell',e),
+\label{eq:source-left-atom}
+\end{equation}
+where \(u\) is one opened divisor in the left ultra increment and
+\[
+ \ell dj+h_0=u\sigma.
+\]
+For every algebraic child divisor \(v\mid d,e\), choose the canonical
+representative \(d_{\omega,v}\in\{0,\ldots,\sigma-1\}\) satisfying
+\begin{equation}
+ \ell jv d_{\omega,v}+h_0\equiv0\pmod{\sigma},
+\label{eq:source-canonical-residue}
+\end{equation}
+and define
+\begin{equation}
+ t_{\omega,v}
+ =
+ \frac{d/v-d_{\omega,v}}{\sigma},
+ \qquad
+ u_{\omega,v}
+ =
+ \frac{\ell jv d_{\omega,v}+h_0}{\sigma}.
+\label{eq:source-to-child}
+\end{equation}
+Target primitivity gives \((\ell jv,\sigma)=1\), so the residue is
+unique and \(t_{\omega,v}\in\Z\).  Use disjoint integer interval
+components for the retained near-diagonal set and let \(\iota\) be
+the unique component containing \(t_{\omega,v}\).
+
+The corresponding child key has
+\[
+ d_\theta=d_{\omega,v},\qquad
+ u_\theta=u_{\omega,v},\qquad
+ \sigma_\theta=\sigma,\qquad v_\theta=v.
+\]
+For a right preprojector atom
+\[
+ \omega=(R,\alpha,\gamma,j,u),\qquad
+ \alpha=(\ell,d),\quad\gamma=(\ell',e),
+\]
+the same construction is made after exchanging
+\((\alpha,\ell,d)\) with \((\gamma,\ell',e)\).
+
+\begin{theorem}[Explicit source--child reconstruction]
+\label{thm:source-child-reconstruction}
+The preceding construction has the following properties.
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item For every left child \(p=(\theta,t)\), the inverse provenance
+map is
+\begin{equation}
+ \omega(p)
+ =
+ \left(
+ L,\,
+ (\ell_\theta,v_\theta D_\theta(t)),\,
+ \gamma_\theta,\,
+ j_\theta,\,
+ U_\theta(t)
+ \right).
+\label{eq:child-to-source-left}
+\end{equation}
+For every right child it is
+\begin{equation}
+ \omega(p)
+ =
+ \left(
+ R,\,
+ \alpha_\theta,\,
+ (\ell_\theta,v_\theta D_\theta(t)),\,
+ j_\theta,\,
+ U_\theta(t)
+ \right).
+\label{eq:child-to-source-right}
+\end{equation}
+\item For a fixed source atom and fixed \(v\mid d,e\),
+\((\theta,t_{\omega,v})\) is its unique child on that projector
+layer.  Hence the algebraic source multiplicity is exactly
+\(\tau((d,e))\); the interval component introduces no further
+multiplicity.
+\item The multiplicity is projector-weighted, not a duplication of
+the physical atom:
+\begin{equation}
+ \sum_{v\mid d,e}\lambda_{G_X^{\rm row}}(v)
+ =
+ \one_{(d,e)\le G_X^{\rm row}}.
+\label{eq:source-projector-multiplicity}
+\end{equation}
+On the physical squarefree support the moving sign is reconstructed
+term by term as
+\begin{align}
+ &\mu(d)(-\mu(u)\log u)
+ \one_{(d,e)\le G_X^{\rm row}}
+\notag\\
+ &\quad=
+ \sum_{v\mid d,e}
+ \bigl[-\mu(v)\lambda_{G_X^{\rm row}}(v)\bigr]
+ \mu(d/v)\mu(u)\log u\,
+ \one_{(v,(d/v)u)=1}.
+\label{eq:source-sign-reassembly}
+\end{align}
+\item The labels \(L\) and \(R\) form a disjoint union and correspond
+to the two summands of \eqref{eq:row-polarization}.  Thus both
+polarizations occur once before their intentional projector
+multiplicity.
+\end{enumerate}
+Consequently there is a concrete bijection
+\[
+ \{(\omega,v):\omega\text{ is a retained source atom},\
+                 v\mid d_\omega,e_\omega\}
+ \longleftrightarrow
+ \{(\theta,t):\theta\in\Theta_X,\ t\in I_\theta\}.
+\]
+The forward map is \eqref{eq:source-to-child}, with its polarization
+and interval label, while
+\eqref{eq:child-to-source-left}--\eqref{eq:child-to-source-right}
+give its actual child-to-source inverse.
+\end{theorem}
+
+\begin{proof}
+For a left source, \(d=v(d/v)\) and
+\[
+ \ell jv(d/v)+h_0=u\sigma.
+\]
+Reduction modulo \(\sigma\) gives
+\eqref{eq:source-canonical-residue}, so
+\(d/v=d_{\omega,v}+\sigma t_{\omega,v}\).  Therefore
+\[
+ vD_\theta(t_{\omega,v})=d.
+\]
+Using the affine determinant identity at the same parameter gives
+\[
+ \sigma U_\theta(t_{\omega,v})
+ =
+ \ell jvD_\theta(t_{\omega,v})+h_0
+ =
+ u\sigma,
+\]
+and hence \(U_\theta(t_{\omega,v})=u\).  This proves
+\eqref{eq:child-to-source-left}; it also proves uniqueness because
+the residue and the disjoint interval component are canonical.  The
+right formula follows by the displayed exchange of rows.
+
+There is one algebraic child for each divisor of \((d,e)\), proving
+the multiplicity assertion.  Reversing the two divisor sums in the
+definition of \(\lambda_{G_X^{\rm row}}\) proves
+\eqref{eq:source-projector-multiplicity}.  On physical support,
+\(d\) and \(u\) are squarefree and target primitivity gives
+\((d,u)=1\).  Thus
+\[
+ \mu(v)\mu(d/v)=\mu(d),\qquad
+ \one_{(v,(d/v)u)=1}=1,
+\]
+and \eqref{eq:source-sign-reassembly} follows from
+\eqref{eq:source-projector-multiplicity}.  Finally, the polarization
+labels and disjoint integer interval convention prove (iv) and the
+claimed child parametrization.
+\end{proof}
+
+\begin{corollary}[Constructed ledger is lossless]
+\label{cor:constructed-ledger-lossless}
+The native ledger \(\Theta_X\) constructed above is lossless in the
+following concrete sense:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item it contains the left and right polarizations once each;
+\item every row-gcd child retains its coefficient, its projector
+divisor, and the inverse source atom
+\eqref{eq:child-to-source-left} or
+\eqref{eq:child-to-source-right};
+\item the maps
+\(\theta,t\mapsto(M_\theta(t),n_\theta,j_\theta)\) and
+\(\theta,t\mapsto G_\theta(t)\) are recorded;
+\item all masks and weights are retained in
+\(c_{\theta,X}\chi_\theta(t)W_{\theta,X}(t)\); and
+\item summing the ledger gives the original global coefficient, not
+a collection of separately normalized columns.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+Items (i)--(iii) are
+\cref{thm:source-child-reconstruction}.  The TPC-33 fixed-period and
+literal weights are evaluated on the reconstructed source in
+\(\chi_\theta W_{\theta,X}\), which proves (iv).
+Equation \eqref{eq:source-sign-reassembly}, followed by the exact
+two-term polarization, proves (v).
+\end{proof}
+
+\subsection{The native affine formula}
+
+\begin{theorem}[Complete decorated affine export]
+\label{thm:decorated-affine-export}
+Let \(\Theta_X\) be the native child ledger constructed in
+\cref{thm:source-child-reconstruction}, with the literal weights
+specified in \cref{cor:constructed-ledger-lossless}.  Then
+\begin{equation}
+ \boxed{\begin{aligned}
+ \Low_{K,R}(A_X)
+ ={}&
+ \sum_{\theta\in\Theta_X}c_{\theta,X}
+ \sum_{t\in I_\theta}
+ \mu(D_\theta(t))\mu(U_\theta(t))
+ \chi_\theta(t)W_{\theta,X}(t)
+ \\[-1mm]
+ &\quad\times
+ \one_{G_\theta(t)\le C_X}
+ \Ker_{K,R,X}\!\left(
+ \varepsilon_\theta
+ \frac{M_\theta(t)-n_\theta}{G_\theta(t)}
+ \right).
+ \end{aligned}}
+\label{eq:decorated-affine-export}
+\end{equation}
+For a right-ultra key, the displayed definitions are read with the
+two row labels exchanged.  In every key the two affine signs have
+determinant \(h_0\).
+\end{theorem}
+
+\begin{proof}
+Apply \cref{lem:decorated-reindexing} to each term of the exact
+polarization \eqref{eq:row-polarization}.  Take as decoration
+\[
+ F(\alpha,\gamma,j)
+ =
+ \one_{G_{\alpha,\gamma}(j)\le C_X}
+ \Ker_{K,R,X}\!\left(
+ \Delta^\#_{\alpha,\gamma}(j)\right).
+\]
+The explicit source--child construction and sign reassembly in
+\cref{thm:source-child-reconstruction} give
+\eqref{eq:affine-native-forms}--\eqref{eq:affine-local-mask} with
+the original projector multiplicity.
+The retained provenance map evaluates \(F\) as
+\[
+ \one_{G_\theta(t)\le C_X}
+ \Ker_{K,R,X}\!\left(
+ \varepsilon_\theta
+ \frac{M_\theta(t)-n_\theta}{G_\theta(t)}\right).
+\]
+By \cref{cor:constructed-ledger-lossless}, summing this constructed ledger
+reassembles exactly the two terms of
+\eqref{eq:row-polarization}, and hence produces
+\eqref{eq:row-native-export}.  The determinant identity is
+\eqref{eq:affine-native-determinant}; the right polarization is
+symmetric.
+\end{proof}
+
+\begin{corollary}[Fixed-\(h_0\) representation with an unresolved
+content mask]
+\label{cor:fixed-h-mask-representation}
+Equation \eqref{eq:decorated-affine-export} is a complete
+fixed-\(h_0\) affine representation.  Its price is that
+\(G_\theta(t)\), and hence the exact content and determinant phase,
+remains a native arithmetic function of \(t\).
+\end{corollary}
+
+\begin{proof}
+Every term is displayed in
+\eqref{eq:decorated-affine-export}, and
+\eqref{eq:affine-native-determinant} is independent of \(t\).
+\end{proof}
+
+\begin{remark}[No low-rank matrix conclusion]
+The \(X^{o(1)}\) row-gcd-projector mass is columnwise after the
+opposite row is fixed.  \Cref{thm:decorated-affine-export} does not
+give a low-cost projective decomposition of the full joint row-pair
+mask or authorize absolute summation over all columns.
+\end{remark}

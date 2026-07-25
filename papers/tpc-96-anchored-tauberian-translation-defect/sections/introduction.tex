@@ -1,0 +1,64 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Logarithmic correlation theorems naturally weight an arithmetic
+variable \(m\) by \(1/m\).  A physical affine fiber, however, is often
+written after translation as
+\[
+ m=r+n,\qquad 1\le n\le N.
+\]
+The inherited weight is \(1/(r+n)\), not \(1/n\).  Replacing it by
+\(1/n\) changes both the primitive and its Tauberian inverse.
+
+TPC-87 isolated the exact signed Ces\`aro defect for the unshifted
+primitive and warned that a translated reciprocal weight must be
+transferred rather than relabelled \citep{WangTPC87}.  The present
+paper computes that transfer exactly.  The new term is elementary,
+but its scale is decisive when the physical origin is comparable to
+or larger than the fiber length.
+
+The distinction is also required when comparing the literal packet
+with logarithmically averaged Chowla and Elliott theorems.  Tao's
+two-point theorem has fixed affine coefficients and a logarithmic
+window \citep{Tao2016LogChowla}.  Averaged-shift and almost-all-scale
+results have different quantifiers
+\citep{MatomakiRadziwillTao2015,TaoTeravainen2019}.  None may be
+attached to a polynomially growing, prescribed fixed-\(h_0\) family
+without checking coefficients, origins, prefixes, masks, and the
+outer sum.
+
+\subsection{Main contributions}
+
+We prove:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.5em]
+\item the exact anchored Abel identity and its necessary-and-sufficient
+  signed defect;
+\item the exact necessary-and-sufficient terminal condition and its
+  consequences in the regimes \(r=o(N)\), \(r\asymp N\), and
+  \(r\gg N\);
+\item exact counterexamples showing that unnormalized logarithmic
+  smallness and per-fiber qualitative cancellation do not survive
+  translation or growing outer mass;
+\item a prefix-uniform positive criterion for genuinely short
+  translated fibers;
+\item the signed and absolute aggregate certificates for the complete
+  literal affine packet; and
+\item a separate determinant and physical-loss ledger that prevents
+  a Tauberian normalization change from being counted as arithmetic
+  cancellation.
+\end{enumerate}
+
+\subsection{What changes in the TPC route}
+
+The correct fiber-level datum is
+\[
+ \cT_{r,N}(L)
+ =
+ \left(1+\frac rN\right)L_N
+ -\frac1N\sum_{m<N}L_m,
+\]
+not the unshifted defect alone.  This refines the Tauberian branch of
+the TPC-92 roadmap \citep{WangTPC92}.  It does not estimate the datum
+for the actual M\"obius coefficient.  That remains an arithmetic
+problem after the literal low-frequency export of TPC-93
+\citep{WangTPC93}.

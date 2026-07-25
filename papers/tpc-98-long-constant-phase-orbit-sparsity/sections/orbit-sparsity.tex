@@ -1,0 +1,65 @@
+\section{One orbit point per moving row}
+\label{sec:orbit-sparsity}
+
+The complement \(\sigma\) in \eqref{eq:opened-factorization} is not a
+free affine slope.  It remembers the physical target:
+\[
+ m_\alpha j+h_0=u\sigma.
+\]
+This provenance converts conductor degeneracy into orbit sparsity.
+
+\begin{theorem}[Orbit sparsity on the constant branch]
+\label{thm:orbit-sparsity}
+Fix a moving physical row \(\alpha\).  Among all orbit points
+\(j\in\cJ_X\), at most one can support a conductor-one key
+obtained by opening the ultra divisor on that row.
+\end{theorem}
+
+\begin{proof}
+By \cref{thm:constant-dichotomy}, a conductor-one key satisfies
+\(q_X\mid\sigma\).  The factorization
+\eqref{eq:opened-factorization} then gives
+\begin{equation}
+ m_\alpha j+h_0\equiv0\pmod{q_X}.
+\label{eq:orbit-congruence}
+\end{equation}
+Since \(q_X\nmid m_\alpha\), this congruence has exactly one residue
+class
+\[
+ j\equiv-h_0m_\alpha^{-1}\pmod{q_X}.
+\]
+By \cref{lem:padding-consequences}, \(\cJ_X\) contains at most one
+integer in that class.
+\end{proof}
+
+\begin{corollary}[Both polarizations]
+\label{cor:both-polarizations-sparse}
+For the left-ultra polarization, each left moving row admits at most
+one constant-sector orbit point while the right row remains arbitrary.
+For the right-ultra polarization, the symmetric statement holds with
+the row labels exchanged.
+\end{corollary}
+
+\begin{remark}[Divisor choices do not restore the \(J_X\) factor]
+\label{rem:divisor-choices}
+At the unique possible orbit point, several divisors \(u\) can make
+\(\sigma=(m_\alpha j+h_0)/u\) divisible by \(q_X\).  Their total
+absolute coefficient is \(X^{o(1)}\) by
+\eqref{eq:ultra-envelope}.  Thus divisor multiplicity is a soft
+factor; it cannot restore \(J_X\) distinct orbit points.
+\end{remark}
+
+\begin{proposition}[Sharpness of the one-point statement]
+\label{prop:one-point-sharp}
+The conclusion of \cref{thm:orbit-sparsity} cannot be improved to
+zero using only interval length and primitivity.  For any prime
+\(q\nmid m\) and any fixed \(h_0\), an interval containing
+\(-h_0m^{-1}\pmod q\) has one solution of
+\(q\mid mj+h_0\).
+\end{proposition}
+
+\begin{proof}
+Choose the canonical representative of the unique residue class and
+an interval containing it.  No M\"obius sign or target mask has been
+used, so nothing in the stated hypotheses forbids that point.
+\end{proof}

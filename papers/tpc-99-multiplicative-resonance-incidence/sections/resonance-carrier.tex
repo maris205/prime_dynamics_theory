@@ -1,0 +1,92 @@
+\section{From archimedean resonance to a product window}
+\label{sec:resonance-carrier}
+
+Let \(q\) be an odd prime and identify each nonzero residue with its
+unique signed representative in \((-q/2,q/2)\).  For
+\(1\le H\le(q-1)/2\), define
+\begin{equation}
+ E_H
+ =
+ \{x\in\mathbb F_q^\times:|\widetilde x|\le H\}
+ =
+ \{\pm1,\ldots,\pm H\}.
+\label{eq:EH}
+\end{equation}
+Thus \(|E_H|=2H\).
+
+For \(1\le N\le q\), put
+\begin{equation}
+ H_q(N)
+ =
+ \min\!\left\{\frac{q-1}{2},\left\lfloor\frac qN\right\rfloor\right\}.
+\label{eq:HqN}
+\end{equation}
+
+\begin{lemma}[Exact resonance window]
+\label{lem:exact-resonance-window}
+Let \(1\le N\le q\) and \(r,\omega\in\mathbb F_q^\times\).  Then
+\[
+ N\left\|\frac{\widetilde{r\omega}}q\right\|\le1
+ \quad\Longleftrightarrow\quad
+ r\omega\in E_{H_q(N)}.
+\]
+\end{lemma}
+
+\begin{proof}
+For \(N\ge2\), the left side is equivalent to
+\[
+ |\widetilde{r\omega}|\le q/N.
+\]
+The absolute residue is a positive integer, so this is equivalent to
+\(|\widetilde{r\omega}|\le\lfloor q/N\rfloor=H_q(N)\).
+For \(N=1\), both sides hold for every nonzero residue because
+\(H_q(1)=(q-1)/2\).
+\end{proof}
+
+\begin{remark}[The range \(N>q\)]
+If \(N>q\), no nonzero residue can be resonant because
+\(|\widetilde{r\omega}|\ge1>q/N\).  Thus
+\cref{lem:exact-resonance-window} also recovers the conductor--length
+bound from TPC-94.
+\end{remark}
+
+\begin{definition}[Resonance incidence operator]
+\label{def:KH}
+On \(G=\mathbb F_q^\times\), set
+\begin{equation}
+ (K_Hb)(\omega)
+ =
+ \sum_{r\in G}b(r)\one_{E_H}(r\omega).
+\label{eq:KH}
+\end{equation}
+For \(a,b:G\to\mathbb C\), define
+\begin{equation}
+ \mathcal I_H(a,b)
+ =
+ \sum_{\omega\in G}a(\omega)(K_Hb)(\omega).
+\label{eq:incidence-form}
+\end{equation}
+\end{definition}
+
+\begin{proposition}[Biregularity and total incidence]
+\label{prop:biregular}
+The bipartite graph
+\[
+ r\sim\omega
+ \quad\Longleftrightarrow\quad
+ r\omega\in E_H
+\]
+is \(2H\)-regular on both copies of \(G\).  In particular, for every
+\(S\subseteq G\),
+\[
+ \sum_{\omega\in G}
+ \#\{r\in S:r\omega\in E_H\}
+ =2H|S|.
+\]
+\end{proposition}
+
+\begin{proof}
+For fixed \(r\), multiplication by \(r\) is a bijection and exactly
+\(2H\) values of \(\omega\) send \(r\omega\) into \(E_H\).  The same
+argument with the roles reversed proves both statements.
+\end{proof}

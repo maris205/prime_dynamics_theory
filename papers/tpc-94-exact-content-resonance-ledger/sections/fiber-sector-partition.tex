@@ -1,0 +1,210 @@
+\section{Fiber length and an exhaustive sector partition}
+\label{sec:fiber-sector-partition}
+
+\subsection{Exact resolved length}
+
+Let the native interval be
+\[
+ I_\theta=[L_\theta,U_\theta]\cap\Z,
+ \qquad N_\theta^{(0)}=|I_\theta|.
+\]
+For a soluble branch, the resolved interval is
+\[
+ I_{\theta,b}^\ast
+ =
+ \{z\in\Z:\tau_{\theta,b}+B_{\theta,b}z\in I_\theta\}.
+\]
+
+\begin{proposition}[Progression thinning]
+\label{prop:progression-thinning}
+The resolved cardinality is
+\begin{align}
+ N_{\theta,b}
+ =
+ \max\biggl\{0,\,
+ &\left\lfloor
+ \frac{U_\theta-\tau_{\theta,b}}{B_{\theta,b}}
+ \right\rfloor
+ -
+ \left\lceil
+ \frac{L_\theta-\tau_{\theta,b}}{B_{\theta,b}}
+ \right\rceil
+ +1\biggr\},
+\label{eq:exact-resolved-length}
+\end{align}
+and
+\begin{equation}
+ N_{\theta,b}
+ \le
+ \left\lceil
+ \frac{N_\theta^{(0)}}{B_{\theta,b}}
+ \right\rceil
+ \le
+ \frac{N_\theta^{(0)}}{B_{\theta,b}}+1.
+\label{eq:resolved-length-bound}
+\end{equation}
+In particular:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item if \(B_{\theta,b}\ge N_\theta^{(0)}\), the fiber has at most
+  one point;
+\item for any integer \(Y\ge1\), if
+  \(B_{\theta,b}\ge N_\theta^{(0)}/Y\), then
+  \(N_{\theta,b}\le Y\);
+\item if \(q_X\nmid\ell_\theta v_\theta\sigma_\theta\),
+  \(q_X\mid\Omega_\xi\), and
+  \(N_\theta^{(0)}\le q_X\), then the fiber has at most one point.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The first formula is obtained by solving the two endpoint
+inequalities for \(z\).  An interval of \(N_\theta^{(0)}\)
+consecutive integers contains at most
+\(\lceil N_\theta^{(0)}/B\rceil\) members of one class modulo \(B\),
+which proves \eqref{eq:resolved-length-bound}.  Parts (i) and (ii)
+follow immediately.  In part (iii), the divisibility of
+\(\Omega_\xi=\ell_\theta v_\theta\sigma_\theta B\) forces
+\(q_X\mid B\); now use part (i).
+\end{proof}
+
+\begin{remark}[Short is a physical return, not a deletion]
+The estimate \(N_{\theta,b}\le Y\) does not make the corresponding
+term zero.  It identifies a short-fiber return whose complete outer
+coefficient, masks, and reconstruction-multiplier mass must still be
+bounded.
+\end{remark}
+
+\subsection{General disjoint partition}
+
+Fix an integer short threshold \(Y_X\ge1\) and a conductor threshold
+\(Q_X^{\rm cond}\ge2\).  Let \(\Xi_X\) be the finite set of all
+resolved \((\theta,c,\kappa,r)\) keys before estimating any sector.
+Put in \(\Null\) every insoluble key, empty interval, or squareful
+\(B\) branch, as well as every key with \(\mu(\kappa)=0\).  Such
+terms are exactly zero.
+
+For every remaining key define:
+\begin{align*}
+ \Short
+ &=
+ \{\xi:N_\xi\le Y_X\},\\
+ \Const
+ &=
+ \{\xi:N_\xi>Y_X,\ q_\xi^\ast=1\},\\
+ \LowRes
+ &=
+ \{\xi:N_\xi>Y_X,\ 2\le q_\xi^\ast\le Q_X^{\rm cond},
+              \ \mathcal R(\xi)\},\\
+ \LowGen
+ &=
+ \{\xi:N_\xi>Y_X,\ 2\le q_\xi^\ast\le Q_X^{\rm cond},
+              \ \neg\mathcal R(\xi)\},\\
+ \HighRes
+ &=
+ \{\xi:N_\xi>Y_X,\ q_\xi^\ast>Q_X^{\rm cond},
+              \ \mathcal R(\xi)\},\\
+ \HighGen
+ &=
+ \{\xi:N_\xi>Y_X,\ q_\xi^\ast>Q_X^{\rm cond},
+              \ \neg\mathcal R(\xi)\}.
+\end{align*}
+
+\begin{theorem}[Mutually exclusive complete sector partition]
+\label{thm:complete-sector-partition}
+One has the disjoint union
+\begin{equation}
+ \boxed{
+ \Xi_X
+ =
+ \Null\sqcup\Short\sqcup\Const
+ \sqcup\LowRes\sqcup\LowGen
+ \sqcup\HighRes\sqcup\HighGen.}
+\label{eq:complete-sector-partition}
+\end{equation}
+Consequently the literal resolved low window is the exact sum of
+the six potentially nonzero sector contributions.  No exceptional,
+constant, resonant, or short fiber is hidden in the generic term.
+\end{theorem}
+
+\begin{proof}
+Every key is first either structurally null or nonnull.  A nonnull
+key is short or long.  A long key has conductor \(1\), between
+\(2\) and \(Q_X^{\rm cond}\), or larger than
+\(Q_X^{\rm cond}\).  In each nonconstant conductor range exactly one
+of \(\mathcal R(\xi)\) and its negation holds.  These successive
+binary and trinary alternatives are disjoint and exhaustive.
+\end{proof}
+
+\subsection{The natural prime-modulus specialization}
+
+\begin{corollary}[Five active sectors under the prime-modulus gap]
+\label{cor:natural-sector-collapse}
+Assume the hypotheses of
+\cref{thm:prime-modulus-conductor-gap} and choose
+\[
+ C_X\le Y_X,\qquad
+ C_X\le Q_X^{\rm cond}<q_X.
+\]
+Then:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \(q_\xi^\ast\le Q_X^{\rm cond}\) is equivalent to
+  \(q_X\mid\Omega_\xi\);
+\item \(q_\xi^\ast>Q_X^{\rm cond}\) is equivalent to
+  \(q_X\nmid\Omega_\xi\);
+\item \(\LowRes=\varnothing\).
+\end{enumerate}
+Thus the only active sectors are
+\[
+ \Short,\quad\Const,\quad\LowGen,\quad
+ \HighRes,\quad\HighGen.
+\]
+\end{corollary}
+
+\begin{proof}
+The conductor gap gives (i) and (ii).  If
+\(\xi\in\LowRes\), then
+\[
+ N_\xi\le q_\xi^\ast\le C_X\le Y_X
+\]
+by \cref{lem:resonance-conductor-length}, contradicting the long
+condition \(N_\xi>Y_X\).
+\end{proof}
+
+\begin{corollary}[Four active sectors on canonical support]
+\label{cor:literal-four-sector-collapse}
+Under all hypotheses and threshold choices of
+\cref{cor:natural-sector-collapse}, use the literal common-target
+provenance proved in
+\cref{prop:literal-content-divides-phase-slope}.  Then
+\[
+ \LowRes=\LowGen=\varnothing.
+\]
+The complete structurally nonnull partition is
+\begin{equation}
+ \boxed{
+ \Xi_X\setminus\Null
+ =
+ \Short\sqcup\Const\sqcup\HighRes\sqcup\HighGen.}
+\label{eq:literal-four-sector-partition}
+\end{equation}
+Every key in \(\Const\) has a phase constant for all low-window
+frequencies.  Every key in \(\HighRes\cup\HighGen\) has conductor
+exactly \(q_X\).
+\end{corollary}
+
+\begin{proof}
+Apply \cref{thm:literal-binary-conductor}: the only conductors are
+\(1\) and \(q_X\).  The first belongs to \(\Const\) after short
+fibers are removed, and the second is above
+\(Q_X^{\rm cond}<q_X\).
+\end{proof}
+
+\begin{remark}[Why predicates must not be conflated]
+Constancy implies resonance, but is separated first because it has
+no additive variation at all.  Low conductor and resonance can
+overlap for arbitrary thresholds, which is why both
+\(\LowRes\) and \(\LowGen\) appear in the general partition.
+Shortness depends on \(B\) and the native interval; it is not a
+frequency property.  The hierarchical definition is what makes
+\eqref{eq:complete-sector-partition} genuinely disjoint.
+\end{remark}

@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Invertible Ultra-Divisor Linearization on the Nonconstant Branch: Exact Orbit Preimages, Diagonal Cell Energy, and the Cross-Cell Gate},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{Invertible Ultra-Divisor Linearization on the Nonconstant Branch:\\
+Exact Orbit Preimages, Diagonal Cell Energy,\\
+and the Cross-Cell Gate}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\noindent\textbf{Keywords:} fixed shift; ultra divisor; no-wrap
+prime; native phase multiplier; affine orbit; resonance preimage;
+collision energy; exceptional sector.
+
+\medskip
+\noindent\textbf{Literal-frame convention.}
+Every physical statement retains one prescribed nonzero integer
+\(h_0\), both matched polarizations, the original row weights, every
+opened divisor and exact-content child, the actual masks and support,
+the signed low-frequency lift, every native provenance key, and the
+single original global normalization.  A cell below is a lossless
+partition of literal keys, never a quotient by equal multipliers.
+
+\input{sections/introduction}
+\input{sections/literal-frame}
+\input{sections/ultra-split}
+\input{sections/invertible-linearization}
+\input{sections/resonance-preimages}
+\input{sections/collision-energy}
+\input{sections/native-crosswalk}
+\input{sections/regression}
+\input{sections/route-ledger}
+\input{sections/claim-boundary}
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

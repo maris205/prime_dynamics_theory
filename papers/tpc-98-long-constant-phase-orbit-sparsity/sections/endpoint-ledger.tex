@@ -1,0 +1,65 @@
+\section{Endpoint and route ledger}
+\label{sec:endpoint-ledger}
+
+At the critical scales,
+\[
+ Q_X^2
+ =\frac{N_{0,X}}{J_X}
+ =X^{-133/400+o(1)}N_{0,X}.
+\]
+Consequently \cref{thm:literal-constant-bound} places the entire
+conductor-one sector exactly at the target amplitude scale.  It carries
+no fixed-power loss, but also supplies no additional fixed-power
+reserve.
+
+\begin{corollary}[Removal as a polynomial obstruction]
+\label{cor:constant-removed}
+The conductor-one sector cannot be responsible for a failure of
+every strict amplitude saving below \(133/400\).  Any remaining
+polynomial obstruction in the TPC-93 low window must lie in the
+short sector, the nonconstant \(q_X\)-conductor resonant sector, the
+generic arithmetic sector, or their outer reassembly.
+\end{corollary}
+
+\begin{proof}
+For every fixed \(\varepsilon>0\),
+\[
+ X^{o(1)}Q_X^2
+ \ll_\varepsilon
+ N_{0,X}X^{-133/400+\varepsilon}.
+\]
+Apply \cref{thm:literal-constant-bound}.
+\end{proof}
+
+\subsection{Independent ledgers}
+
+This sector estimate is not entered twice.  In particular:
+\begin{align}
+ \lambda_D&\le2\eta_Z,
+\label{eq:determinant-ledger}\\
+ \Lambda_{\rm phys}&<\frac1{400}
+\label{eq:physical-ledger}
+\end{align}
+remain logically separate requirements.  The first relates a future
+determinant-energy lower bound to zero-mode cancellation.  The
+second counts all other literal fixed-power losses.  The soft factor
+in \eqref{eq:main-constant-bound} creates no new fixed exponent in
+either ledger.
+
+TPC-18 full-block reassembly and primitive generic determinant
+dispersion also remain independent.  Eliminating one exceptional
+low-frequency sector proves neither.
+
+\subsection{The next arithmetic target}
+
+The literal conductor gap now leaves a cleaner split:
+\begin{enumerate}[leftmargin=2em]
+\item \emph{short fibers}: occupancy must be summed across native
+  keys without replacing the actual weights by unit coefficients;
+\item \emph{nonconstant resonant fibers}: the phase has conductor
+  \(q_X\) but too little archimedean variation on its own interval;
+\item \emph{generic fibers}: a weighted two-form M\"obius estimate
+  and coherent outer reassembly are still required.
+\end{enumerate}
+The next paper should attack the resonant incidence geometry before
+attempting a generic correlation theorem.

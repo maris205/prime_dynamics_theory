@@ -1,0 +1,109 @@
+\section{The anchored Abel identity}
+\label{sec:anchored-identity}
+
+\begin{definition}[Translated logarithmic primitive]
+\label{def:translated-primitive}
+For \(r\ge0\), define
+\[
+ S_N=\sum_{n=1}^Na_n,\qquad
+ L_{r,N}=\sum_{n=1}^N\frac{a_n}{r+n},
+ \qquad L_{r,0}=0.
+\]
+\end{definition}
+
+\begin{theorem}[Exact anchored Tauberian identity]
+\label{thm:anchored-identity}
+For every complex sequence, every real \(r\ge0\), and every
+\(N\ge1\),
+\begin{align}
+ S_N
+ &=(r+N)L_{r,N}-\sum_{m=0}^{N-1}L_{r,m},
+ \label{eq:anchored-abel}\\
+ \frac{S_N}{N}
+ &=
+ \left(1+\frac rN\right)L_{r,N}
+ -\frac1N\sum_{m=0}^{N-1}L_{r,m}.
+ \label{eq:anchored-defect-identity}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Since
+\[
+ a_n=(r+n)(L_{r,n}-L_{r,n-1}),
+\]
+summation and a shift of index give
+\begin{align*}
+ S_N
+ &=
+ \sum_{n=1}^N(r+n)L_{r,n}
+ -\sum_{m=0}^{N-1}(r+m+1)L_{r,m}\\
+ &=(r+N)L_{r,N}-\sum_{m=0}^{N-1}L_{r,m},
+\end{align*}
+because \(L_{r,0}=0\).  Division by \(N\) proves the second
+identity.
+\end{proof}
+
+\begin{definition}[Anchored backward defect]
+\label{def:anchored-defect}
+For a finite sequence \(L=(L_m)_{0\le m\le N}\) with \(L_0=0\), put
+\begin{equation}
+ \cT_{r,N}(L)
+ :=
+ \left(1+\frac rN\right)L_N
+ -\frac1N\sum_{m=0}^{N-1}L_m.
+ \label{eq:anchored-defect}
+\end{equation}
+The usual signed backward Ces\`aro defect is
+\[
+ \cT_{0,N}(L)=L_N-\frac1N\sum_{m<N}L_m.
+\]
+\end{definition}
+
+\begin{corollary}[Exact decomposition of the translation cost]
+\label{cor:translation-cost}
+\begin{equation}
+ \boxed{\quad
+ \cT_{r,N}(L)
+ =\cT_{0,N}(L)+\frac rN L_N.
+ \quad}
+\label{eq:translation-cost}
+\end{equation}
+Consequently \(S_N/N\to0\) along any family of triples
+\((r,N,a)\) if and only if \(\cT_{r,N}(L_r)\to0\).
+\end{corollary}
+
+\begin{proof}
+Subtract the two definitions and use
+\cref{eq:anchored-defect-identity}.
+\end{proof}
+
+\begin{remark}[The anchor is part of the main term]
+\label{rem:anchor-main-term}
+Equation \eqref{eq:translation-cost} is exact.  There is no reason for
+\((r/N)L_N\) to be small merely because \(L_N=o(1)\).  The relevant
+terminal scale is \(N/r\) when \(r\gg N\).
+\end{remark}
+
+\begin{proposition}[Absolute oscillation bound]
+\label{prop:absolute-anchored}
+Define
+\[
+ \cA_N(L)=\frac1N\sum_{m=0}^{N-1}|L_N-L_m|.
+\]
+Then
+\begin{equation}
+ \left|\frac{S_N}{N}\right|
+ \le \cA_N(L_r)+\frac rN|L_{r,N}|.
+\label{eq:absolute-anchored}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Write the unshifted defect as
+\[
+ \cT_{0,N}(L)=\frac1N\sum_{m<N}(L_N-L_m)
+\]
+and apply the triangle inequality in
+\eqref{eq:translation-cost}.
+\end{proof}

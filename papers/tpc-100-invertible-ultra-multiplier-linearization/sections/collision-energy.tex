@@ -1,0 +1,203 @@
+\section{Exact recovery of branch mass and collision energy}
+\label{sec:collision-energy}
+
+Fix \(H\), and retain only opened atoms with \(q_X\nmid u_p\).
+Let \(\mathcal C_H\) be their fine cells of inherited width
+\(\mathsf H_\beta=H\).  By lossless reconstruction, for each
+\(j\in J_C\) there is a unique
+\[
+ p_C(j)=(\beta_C(j),z_C(j)).
+\]
+Define the opened coefficient
+\begin{equation}
+ w_C(j)
+ =
+ w_{\beta_C(j),z_C(j)}
+\label{eq:correct-cell-weight}
+\end{equation}
+using \eqref{eq:atom-weight}, and put
+\begin{equation}
+ a^{\rm inv}_{H,C}(\omega)
+ =
+ \sum_{j\in J_C}
+ w_C(j)\one_{\{\omega_C(j)=\omega\}},
+\qquad
+ a_H^{\rm inv}=\sum_{C\in\mathcal C_H}a^{\rm inv}_{H,C}.
+\label{eq:correct-cell-census}
+\end{equation}
+
+\begin{proposition}[Exact return to the branch census]
+\label{prop:branch-census-return}
+One has
+\begin{align}
+ a_H^{\rm inv}(\omega)
+ =
+ \sum_{\substack{\beta:\mathsf H_\beta=H\\\omega_\beta=\omega}}
+ \ \sum_{\substack{z\in I_\beta^\ast\\q_X\nmid u_{\beta,z}}}
+ w_{\beta,z}.
+\label{eq:invertible-branch-census}
+\end{align}
+Together with the analogous \(q_X\mid u_{\beta,z}\) sum, this
+recovers the exact TPC-99 census
+\[
+ a_H(\omega)
+ =
+ \sum_{\substack{\beta:\mathsf H_\beta=H\\\omega_\beta=\omega}}w_\beta.
+\]
+\end{proposition}
+
+\begin{proof}
+The fine cells partition the \(r\)-free opened atoms and
+\((C,j)\) reconstructs \((\beta,z)\).  Reindex the finite sum in
+\eqref{eq:correct-cell-census}, then use
+\eqref{eq:branch-weight}.  Every atom weight appears exactly once.
+\end{proof}
+
+\begin{remark}[Why the atom coefficient is forced]
+Replacing \(w_C(j)\) by the full branch mass \(w_\beta\) would repeat
+that mass once for every \(z\).  Replacing \(w_\beta\) by a
+cell-count normalization would alter the TPC-99 carrier.  The only
+lossless positive refinement is the opened coefficient
+\eqref{eq:atom-weight}, followed by exact re-summation.
+\end{remark}
+
+Put
+\[
+ M_C=\sum_{j\in J_C}w_C(j),\qquad
+ M_H=\sum_C M_C.
+\]
+
+\begin{theorem}[Exact opened-atom collision energy]
+\label{thm:correct-collision-energy}
+For every inherited width \(H\),
+\begin{align}
+ \|a_H^{\rm inv}\|_2^2
+ ={}&
+ \sum_{C\in\mathcal C_H}
+ \sum_{j\in J_C}w_C(j)^2
+\notag\\
+ &+
+ \sum_{\substack{C,D\in\mathcal C_H\\C\ne D}}
+ \sum_{\substack{j\in J_C,\ k\in J_D\\
+                  \omega_C(j)=\omega_D(k)}}
+ w_C(j)w_D(k).
+\label{eq:correct-uncentered-energy}
+\end{align}
+All internal cell collisions are diagonal.
+\end{theorem}
+
+\begin{proof}
+Expand \(\sum_\omega a_H^{\rm inv}(\omega)^2\).
+Inside one cell, \cref{thm:fine-cell-injectivity} makes equality of
+multipliers equivalent to equality of atoms.  Distinct-cell terms
+remain exactly under \eqref{eq:correct-cross-congruence}.
+\end{proof}
+
+\subsection{Centered decomposition}
+
+Center on \(\mathbb F_q^\times\):
+\[
+ (a_H^{\rm inv})^\circ
+ =
+ a_H^{\rm inv}-\frac{M_H}{q-1}\one.
+\]
+Define
+\begin{align}
+ \mathfrak D_H^\circ
+ &=
+ \sum_C
+ \left\{
+ \sum_{j\in J_C}w_C(j)^2-\frac{M_C^2}{q-1}
+ \right\},
+\label{eq:correct-diagonal}\\
+ \mathfrak X_H^\circ
+ &=
+ \sum_{C\ne D}
+ \left\{
+ \sum_{\substack{j\in J_C,\ k\in J_D\\
+                  \omega_C(j)=\omega_D(k)}}
+ w_C(j)w_D(k)
+ -
+ \frac{M_CM_D}{q-1}
+ \right\}.
+\label{eq:correct-cross-energy}
+\end{align}
+
+\begin{corollary}[Exact centered energy]
+\label{cor:correct-centered-energy}
+\begin{equation}
+ \boxed{
+ \|(a_H^{\rm inv})^\circ\|_2^2
+ =
+ \mathfrak D_H^\circ+\mathfrak X_H^\circ,}
+\label{eq:correct-centered-energy}
+\end{equation}
+and \(\mathfrak D_H^\circ\ge0\).
+\end{corollary}
+
+\begin{proof}
+Subtract \(M_H^2/(q-1)\) from
+\eqref{eq:correct-uncentered-energy} and split
+\[
+ M_H^2=\sum_CM_C^2+\sum_{C\ne D}M_CM_D.
+\]
+Fine-cell injectivity gives \(|J_C|\le q-1\); hence
+\[
+ M_C^2
+ \le |J_C|\sum_jw_C(j)^2
+ \le(q-1)\sum_jw_C(j)^2.
+\]
+\end{proof}
+
+\begin{remark}[Singleton form of the diagonal gate]
+\label{rem:singleton-diagonal}
+By \cref{thm:lossless-atom-cells}(ii), every \(C\) contains one
+opened atom \(p=(\beta,z)\).  Therefore
+\begin{equation}
+ \mathfrak D_H^\circ
+ =
+ \frac{q-2}{q-1}
+ \sum_{\substack{p=(\beta,z):\ \mathsf H_\beta=H\\q\nmid u_p}}
+ w_{\beta,z}^{\,2}.
+\label{eq:singleton-diagonal}
+\end{equation}
+Thus the diagonal gate is exactly an opened-atom weight
+second-moment problem, not a consequence of multiplier dispersion.
+Every collision between distinct atoms remains in
+\(\mathfrak X_H^\circ\).
+\end{remark}
+
+\begin{remark}[What the cross term contains]
+\(\mathfrak X_H^\circ\) includes:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item atoms from different branches;
+\item different content or projector children of one source atom;
+  and
+\item different \(z\)'s of the same branch \(\beta\).
+\end{enumerate}
+In case (iii), the multipliers are identically equal because they
+are both \(\omega_\beta\).  The exact branchwise concentration is
+therefore retained, not disguised as cellwise dispersion.
+\end{remark}
+
+\begin{proposition}[Exact cell form of the incidence carrier]
+\label{prop:correct-cell-carrier}
+For any frequency weight \(b\),
+\begin{align}
+ \sum_{\omega,r}a_H^{\rm inv}(\omega)b(r)
+ \one_{E_H}(r\omega)
+ =
+ \sum_{C}\sum_{j\in J_C}w_C(j)
+ \sum_rb(r)
+ \one_{E_H}\!\left(rA_C(m_Cj+h_0)\right).
+\label{eq:correct-cell-carrier}
+\end{align}
+For fixed \(C,r\), the \(j\)'s are exactly the preimages in
+\eqref{eq:correct-resonance-preimage}.
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:correct-cell-census} and
+\eqref{eq:fine-cell-map}, then interchange finite sums.  The width
+is \(H=\mathsf H_\beta\) throughout.
+\end{proof}

@@ -1,0 +1,157 @@
+\section{Atomwise invertible multiplier linearization}
+\label{sec:linearization}
+
+\subsection{Integer provenance at the branch level}
+
+\begin{lemma}[Canonical integer factorization]
+\label{lem:correct-integer-factorization}
+Write
+\(\sigma_\beta=g_\beta\sigma_{\beta,0}\).  Then
+\begin{equation}
+ \frac{\Omega_\beta}{c_\beta}
+ =
+ \kappa_\beta\ell_\beta v_\beta\sigma_{\beta,0}
+ =
+ \kappa_\beta\ell_\beta v_\beta
+ \frac{\sigma_\beta}{g_\beta}
+ \in\mathbb Z.
+\label{eq:correct-integer-factorization}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Since
+\(b_\beta=g_\beta B_\beta=c_\beta\kappa_\beta\),
+\[
+ \Omega_\beta
+ =
+ \ell_\beta v_\beta
+ (g_\beta\sigma_{\beta,0})B_\beta
+ =
+ c_\beta\kappa_\beta\ell_\beta
+ v_\beta\sigma_{\beta,0}.
+\]
+\end{proof}
+
+\begin{example}[No integer quotient \(\ell vB/c\)]
+\label{ex:no-integer-coefficient}
+Take
+\[
+ c=2,\quad\kappa=1,\quad b=2,\quad
+ \sigma=2,\quad g=2,\quad B=1,\quad\ell=v=1.
+\]
+Then \(\Omega/c=1\), but \(c\nmid\ell vB\).  Therefore
+\((\ell vB/c)\sigma\) has the correct rational value but does not
+exhibit an integer coefficient.  Division by \(c\) below is a
+finite-field inversion, not this extra integer divisibility.
+\end{example}
+
+\subsection{The actual opened value is the invertible divisor}
+
+\begin{theorem}[Atomwise affine multiplier formula]
+\label{thm:atomwise-linearization}
+Let \(p=(\beta,z)\) be a nonconstant opened atom with
+\(q_X\nmid u_p\).  Define
+\begin{equation}
+ A_p
+ =
+ \varepsilon_\beta\ell_\beta v_\beta B_\beta
+ (c_\beta u_p)^{-1}
+ \in\mathbb F_{q_X}^{\times}.
+\label{eq:atom-A}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \omega_\beta
+ =
+ A_p(m_pj_p+h_0)
+ \quad\text{in }\mathbb F_{q_X}^{\times}.}
+\label{eq:atom-affine-omega}
+\end{equation}
+Equivalently,
+\begin{equation}
+ A_p
+ =
+ \varepsilon_\beta\kappa_\beta\ell_\beta v_\beta
+ (u_pg_\beta)^{-1}.
+\label{eq:atom-A-second}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+All factors in \eqref{eq:atom-A} are nonzero modulo \(q_X\).
+Reduce the branch multiplier and use the atom source identity:
+\begin{align*}
+ \omega_\beta
+ &\equiv
+ \varepsilon_\beta\ell_\beta v_\beta B_\beta
+ c_\beta^{-1}\sigma_\beta\\
+ &\equiv
+ \varepsilon_\beta\ell_\beta v_\beta B_\beta
+ (c_\beta u_p)^{-1}(m_pj_p+h_0).
+\end{align*}
+This proves \eqref{eq:atom-affine-omega}.  The identity
+\(B_\beta g_\beta=c_\beta\kappa_\beta\) gives
+\eqref{eq:atom-A-second}.
+\end{proof}
+
+\begin{remark}[Dependence on \(z\)]
+The left side \(\omega_\beta\) is constant for
+\(z\in I_\beta^\ast\).  The coefficient \(A_p\) and source row
+\(m_p\) generally vary with \(z\), because
+\[
+ u_p=U_\theta(\tau_\beta+B_\beta z),\qquad
+ m_p=M_\theta(\tau_\beta+B_\beta z).
+\]
+No theorem here treats \(u\) or \(m\) as fixed on \(\beta\).
+\end{remark}
+
+\begin{theorem}[Fine-cell injectivity]
+\label{thm:fine-cell-injectivity}
+Let \(C\) be a fine provenance cell consisting of atoms with
+\(q_X\nmid u_p\).  Then the common values in
+\cref{thm:lossless-atom-cells} define
+\[
+ A_C=
+ \varepsilon_C\ell_Cv_CB_C(c_Cu_C)^{-1},
+\]
+and
+\begin{equation}
+ p\longmapsto\omega_{\beta(p)}
+ =
+ A_C(m_Cj_p+h_0)
+\label{eq:fine-cell-map}
+\end{equation}
+is injective on \(P_C\).
+\end{theorem}
+
+\begin{proof}
+By \cref{thm:lossless-atom-cells}(ii), \(P_C\) is already a
+singleton.  Equivalently, one may verify the affine implication
+directly as follows.
+If two atoms \(p,p'\in P_C\) have equal multipliers, then
+\[
+ A_Cm_C(j_p-j_{p'})=0\pmod{q_X}.
+\]
+Since \(A_Cm_C\ne0\), the two orbit coordinates are congruent
+modulo \(q_X\).  They lie in the true orbit window of diameter below
+\(q_X\), so \(j_p=j_{p'}\).  By
+\cref{thm:lossless-atom-cells}(i), the common cell record and this
+coordinate reconstruct the same \((\beta,z)\).  Hence \(p=p'\).
+\end{proof}
+
+\begin{remark}
+This theorem records compatibility of the affine formula with the
+lossless provenance partition.  It supplies no nontrivial
+within-cell dispersion because the maximally literal cells are
+singletons.
+\end{remark}
+
+\begin{remark}[Same branch, different atoms]
+If \(z\ne z'\) belong to one branch \(\beta\), then both atoms have
+the same \(\omega_\beta\), but their opened source values generally
+differ.  They therefore lie in different fine cells, and their
+collision is retained as a cross-cell term.  Fine-cell injectivity
+does not convert a branchwise point mass into dispersed mass.
+\end{remark}

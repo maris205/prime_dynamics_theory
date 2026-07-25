@@ -1,0 +1,165 @@
+\section{Exact compressed shared-target census}
+\label{sec:compressed-census}
+
+The rigidity of \cref{lem:one-shared-target} makes the full
+shared-target correlation computable from group sums without a pair
+table.  For \(s\in\{L,R\}\), set
+\begin{equation}
+ U_s(k,T)=\sum_{t\in G_s(k,T)}u_t,\qquad
+ E_s(k,T)=\sum_{t\in G_s(k,T)}|u_t|^2.
+\label{eq:group-sum-energy}
+\end{equation}
+All empty-group quantities are zero.
+
+Let \(C_{\tar}\) denote the ordered part of
+\(C_{\eqc}\) whose distinct vertices share at least one complete
+target in any slot.  Split it by the unique slot relation from
+\cref{lem:one-shared-target}.
+
+\begin{theorem}[Exact compressed target-correlation identity]
+\label{thm:compressed-target-correlation}
+For every finite canonical parent packet,
+\begin{equation}
+ \boxed{
+ C_{\tar}=C_{LL}+C_{RR}+C_{LR},}
+\label{eq:compressed-Ctar}
+\end{equation}
+where
+\begin{align}
+ C_{LL}
+ &=
+ \sum_{k,T}\left(
+ |U_L(k,T)|^2-E_L(k,T)
+ \right),
+\label{eq:C-LL}\\
+ C_{RR}
+ &=
+ \sum_{k,T}\left(
+ |U_R(k,T)|^2-E_R(k,T)
+ \right),
+\label{eq:C-RR}\\
+ C_{LR}
+ &=
+ 2\operatorname{Re}
+ \sum_{k,T}U_L(k,T)\overline{U_R(k,T)}.
+\label{eq:C-LR}
+\end{align}
+Each displayed sum is exact; no pair is deleted or counted twice.
+\end{theorem}
+
+\begin{proof}
+For a fixed left group,
+\[
+ |U_L|^2-E_L
+ =
+ \sum_{\substack{t,t'\in G_L\\t\ne t'}}
+ u_t\overline{u_{t'}},
+\]
+which is the ordered same-left contribution.  Sum over \((k,T)\).
+The right contribution is identical.
+
+A canonical off-diagonal parent never belongs to both
+\(G_L(k,T)\) and \(G_R(k,T)\), because \(x_t\ne y_t\).  Thus
+\[
+ U_L(k,T)\overline{U_R(k,T)}
+\]
+contains precisely one orientation of every cross-slot pair at
+target \(T\); adding its conjugate gives the ordered two-orientation
+sum.  Finally, \cref{lem:one-shared-target} says that the four slot
+relations are disjoint on distinct vertices.  Hence
+\eqref{eq:C-LL}--\eqref{eq:C-LR} have neither omissions nor
+overlaps.
+\end{proof}
+
+\subsection{Exact degrees from group counts}
+
+Let \(\deg_{\tar}(t)\) be the degree of \(t\) in
+\(\mathscr G_{\tar}\), and let
+\[
+ \Delta_{\tar}=\max_{t\in\cT_X}\deg_{\tar}(t).
+\]
+
+\begin{proposition}[Exact degree identity]
+\label{prop:exact-degree}
+For a vertex \(t\) with
+\[
+ k=\nu(t),\qquad x=x_t,\qquad y=y_t,
+\]
+one has
+\begin{equation}
+ \boxed{
+ \deg_{\tar}(t)
+ =
+ g_L(k,x)+g_R(k,x)
+ +g_L(k,y)+g_R(k,y)-2.}
+\label{eq:exact-degree}
+\end{equation}
+Consequently,
+\begin{equation}
+ \Delta_{\tar}\ll_{\eps,h_0,\mathscr D}X^\eps.
+\label{eq:subpower-degree}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The neighbors sharing \(x\) consist of
+\[
+ G_L(k,x)\setminus\{t\}
+ \quad\text{and}\quad
+ G_R(k,x).
+\]
+The neighbors sharing \(y\) consist of
+\[
+ G_R(k,y)\setminus\{t\}
+ \quad\text{and}\quad
+ G_L(k,y).
+\]
+By \cref{lem:one-shared-target}, these four neighbor lists are
+disjoint.  Their cardinalities give \eqref{eq:exact-degree}.
+Equation \eqref{eq:subpower-degree} follows from
+\cref{cor:target-group-divisor-bound}.
+\end{proof}
+
+\begin{corollary}[Composite-key audit invariant]
+\label{cor:composite-audit}
+In a correctly inverse-aggregated archive:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the composite key \((\nu,x,y)\) occurs once;
+\item every pair of distinct parent identifiers occurs in at most one
+  target-slot join; and
+\item the neighbor count produced by the joins equals
+  \eqref{eq:exact-degree}.
+\end{enumerate}
+Failure of any item is an archive or canonicalization failure before
+it is evidence for arithmetic coherence.
+\end{corollary}
+
+\begin{proof}
+The three assertions are respectively
+\cref{thm:composite-uniqueness,lem:one-shared-target,prop:exact-degree}.
+\end{proof}
+
+\subsection{Exact duplicates}
+
+\begin{proposition}[No off-diagonal full-target duplicates]
+\label{prop:no-full-target-duplicates}
+Suppose the phrase ``exact physical duplicate'' includes the
+canonical normalized determinant and the two ordered complete targets,
+as required by the native archive schema.  Then after canonical parent
+aggregation its off-diagonal class is empty.
+\end{proposition}
+
+\begin{proof}
+Two such records have equal composite key \((\nu,x,y)\), so
+\cref{thm:composite-uniqueness} makes their parent keys equal.  They
+are not an off-diagonal pair.
+\end{proof}
+
+\begin{remark}[Coefficient coincidence is different]
+Two distinct keys may happen to have the same numerical complex
+coefficient \(u_t=u_{t'}\) while their targets differ.  That equality
+does not satisfy \cref{prop:no-full-target-duplicates}; it belongs to
+a separately defined coefficient-level relation.  Calling it an exact
+physical duplicate without the target fields would weaken the schema
+and invalidate the uniqueness audit.
+\end{remark}

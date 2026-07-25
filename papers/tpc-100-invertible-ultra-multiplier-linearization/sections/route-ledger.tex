@@ -1,0 +1,70 @@
+\section{Route and exponent ledger}
+\label{sec:route-ledger}
+
+The provenance-corrected route is
+\[
+\begin{array}{c|c|c}
+\text{literal object}&\text{proved status}&\text{remaining input}\\ \hline
+q_X\mid\Omega_\beta
+ &O(X^{o(1)}Q_X^2)\text{ in TPC-98}&\text{none here}\\
+q_X\nmid\Omega_\beta,\ q_X\mid U_\theta(t_\beta(z))
+ &O(X^{o(1)}Q_X^2)\text{ here}&\text{none here}\\
+q_X\nmid\Omega_\beta,\ q_X\nmid U_\theta(t_\beta(z))
+ &\text{atomwise }\omega=A(mj+h_0)
+ &\text{three explicit gates}\\
+\text{nonconstant generic fibers}
+ &\text{literal export only}
+ &\text{signed two-form cancellation}.
+\end{array}
+\]
+
+The exact order of indices is now part of the theorem:
+\[
+ \beta
+ \longrightarrow
+ \{(\beta,z):z\in I_\beta^\ast\}
+ \longrightarrow
+ \text{TPC-93 source inverse}
+ \longrightarrow
+ \operatorname{del}_j\text{ cells}.
+\]
+The reverse sum first restores the opened atoms, then
+\(w_\beta=\sum_z w_{\beta,z}\), and finally the TPC-99 census.  One
+may not start with a branchwise fixed \(u\) or \(m\).
+
+The next positive inputs are therefore:
+\begin{enumerate}[leftmargin=2em]
+\item the principal atom-mass gate
+  \eqref{eq:correct-principal-gate};
+\item an opened diagonal-weight ledger
+  \eqref{eq:correct-diagonal-gate}; and
+\item the centered cross-cell estimate
+  \eqref{eq:correct-cross-gate}, including the forced collisions
+  between different \(z\)'s of one branch.
+\end{enumerate}
+Alternatively one must return to the signed branch sum before
+forming a positive census.
+
+No polynomial exponent is spent by the finite reindexing.  The
+determinant compatibility
+\[
+ \lambda_D\le2\eta_Z
+\]
+and the strict physical ledger
+\[
+ \Lambda_{\rm phys}<\frac1{400}
+\]
+remain independent.  The
+\(\sqrt{q_X}\log q_X\) factor is charged only if the TPC-99 positive
+incidence route is used.
+
+\begin{remark}[Sharper stop rule after the audit]
+Same-\(\beta\), different-\(z\) atoms have identical multipliers.
+Moreover the maximally literal cells are singletons, because their
+retained source data already recover \(j\).  Consequently atomwise
+linearization alone cannot prove branchwise dispersion.  Any future
+argument must quantitatively control those forced cross-cell
+collisions, find a genuinely coarser lossless structure, or retain
+signed \(z\)-fiber cancellation.  Ignoring them is now an explicit
+provenance failure.
+\end{remark}

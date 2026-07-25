@@ -1,0 +1,124 @@
+\section{Claim boundary and next gate}
+\label{sec:claim-boundary}
+
+\begin{theorem}[Audited conclusion]
+\label{thm:audited-conclusion}
+Let \(P\) be an orthogonal projection on a prescribed finite
+actual-support frame, let \(B=PA\), and let \(R=(I-P)A\).
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item If \(P\one=\one\), then
+  \[
+  Z(B)=Z(A),\qquad
+  D(A)=D(B)+D(R),
+  \]
+  and every nonzero projected branch satisfies
+  \[
+  \rho(A)\le\rho(B),\qquad
+  \Flat(A)\le\Flat(B).
+  \]
+  The zero projected branch forces \(Z(A)=0\).
+\item For arbitrary \(P\),
+  \[
+  Z(B)-Z(A)
+  =
+  -\langle R,(I-P)\one\rangle
+  \]
+  and
+  \[
+  |Z(B)-Z(A)|
+  \le
+  \sqrt S\,\kappa(P)\|R\|_2
+  \]
+  with optimal constant.
+\item If \(B\ne0\), the critical structure-free condition is
+  \[
+  \kappa(P)
+  \frac{\|R\|_2}{\|B\|_2}
+  =O(J^{-1}).
+  \]
+  It is vacuous for an exactly constant-preserving projection and
+  returns the TPC-89 \(J^{-1}\) residual order when
+  \(\kappa(P)\asymp1\).
+\item Every unsafe \(P\) has the unique minimal constant completion
+  \(P^\sharp\) from \eqref{eq:completed-projection}.
+\end{enumerate}
+For the literal fixed-\(h_0\) TPC coefficient, a zero-mode-safe
+orthogonal surrogate meeting the projected critical angle bound
+certifies
+\[
+ \Flat_X\le X^{1/400+o(1)}
+\]
+without a relative approximation hypothesis.
+\end{theorem}
+
+\begin{proof}
+Combine
+\cref{thm:safe-projection-law,thm:sharp-zero-defect,thm:critical-sharpness,thm:minimal-completion,thm:literal-safe-certificate}.
+\end{proof}
+
+\paragraph{What is proved at \(\Lzero\).}
+The projection ledger, exact monotonicity, equality cases, partition
+variance law, nested hierarchy, weighted compression theorem,
+unweighted counterexample, sharp defect bound, product threshold,
+and rank-one completion are unconditional finite-dimensional
+theorems.
+
+\paragraph{What is proved at \(\Lone\).}
+Once an explicitly constructed operator is verified on the literal
+post-bin frame, the paper gives a proof-carrying certificate that
+transfers projected zero-mode and energy bounds to the physical
+coefficient in the correct directions.  The checklist in
+\cref{prop:promotion-checklist} is part of this interface.
+
+\paragraph{What is not proved at \(\Ltwo\).}
+No constant-preserving projection with a small projected flatness is
+constructed for the growing arithmetic family.  No projected
+determinant-energy lower bound, low-window cancellation estimate,
+affine M{\"o}bius-correlation theorem, full-block return, or
+fixed-shift asymptotic is proved.
+
+\paragraph{No free averaging.}
+Block averaging cannot manufacture a smaller physical flatness when
+it is performed as a same-frame constant-preserving orthogonal
+projection.  It can manufacture apparent cancellation if block
+multiplicities are deleted, if the operator misses the constant
+mode, or if an ensemble/frequency average is substituted for the
+physical bins.  Those operations are outside the safe theorem.
+
+\paragraph{No contradiction with the accuracy barrier.}
+The TPC-89 barrier concerns arbitrary error directions.
+Constant-preserving orthogonal projection removes precisely the
+zero-mode component of the error.  In the defective case, the sharp
+product \(\kappa r\) restores the same critical order.  These are
+complementary statements.
+
+\paragraph{Arithmetic boundary.}
+Nothing here specializes the prescribed nonzero \(h_0\) to \(2\),
+proves a growing fixed-shift M{\"o}bius or Liouville correlation,
+crosses the sieve parity barrier, proves a Hardy--Littlewood
+asymptotic, gives a prime-pair lower bound, or proves the twin-prime
+conjecture.
+
+\paragraph{Next gate.}
+The most useful continuation is a literal projection census:
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
+\item define candidate blocks from the native TPC-32/TPC-93 keys;
+\item verify their exact inverse map, global weights, and
+  \(P_X\one=\one\);
+\item compute the projected zero mode and energy without deleting
+  any sector;
+\item prove or disprove
+  \[
+  \rho(P_XA_X)\le\frac{X^{o(1)}}{J_X}
+  \]
+  for one growing family; and
+\item if constants are not preserved, test the sharp fallback
+  \[
+  \kappa_Xr_X
+  \le\frac{X^{o(1)}}{J_X}.
+  \]
+\end{enumerate}
+A positive estimate would promote the projection route.  A lower
+bound showing every admissible coarse projection has excessive
+flatness would be a precise negative certificate and would redirect
+the program toward the low-window/Tauberian or full-block routes.

@@ -1,0 +1,240 @@
+\section{The sharp dominance-energy certificate}
+\label{sec:dominance-energy}
+
+We first work with an arbitrary finite complex packet partitioned into
+fibers.  For each fiber define
+\begin{equation}
+ R_n=\sum_{t\in F_n}|u_t|,\qquad
+ r_{\max,n}=\max_{t\in F_n}|u_t|,\qquad
+ d_n=(2r_{\max,n}-R_n)_+,
+\label{eq:fiber-defect}
+\end{equation}
+with all three quantities zero for an empty fiber.  Put
+\begin{equation}
+ D_{\dom}:=\sum_nd_n^2,\qquad
+ D_{\rm align}:=\sum_nR_n^2.
+\label{eq:dominance-alignment-energies}
+\end{equation}
+
+TPC-84 proves that, with the fiber moduli fixed and phases free, the
+resultant magnitude in fiber \(n\) fills the complete interval
+\([d_n,R_n]\) \citep{WangTPC84}.  Squaring before summing gives the
+energy statement missing from the earlier mass route.
+
+\begin{theorem}[Sharp free-phase determinant-energy interval]
+\label{thm:sharp-energy-interval}
+Fix a finite fiber partition and all native moduli
+\((|u_t|)_{t\in\cT}\).  Allow the phases of the native coefficients to
+vary independently.  Then the set of attainable determinant energies
+is exactly
+\begin{equation}
+ \boxed{
+ \left\{
+ \sum_n\left|\sum_{t\in F_n}u_t\right|^2
+ \right\}
+ =
+ [D_{\dom},D_{\rm align}].}
+\label{eq:sharp-energy-interval}
+\end{equation}
+In particular, every actual phase assignment satisfies
+\begin{equation}
+ \boxed{D\ge D_{\dom}=\sum_nd_n^2.}
+\label{eq:dominance-energy-lower}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For each nonempty fiber, the attainable resultant magnitudes form
+\([d_n,R_n]\); hence the attainable squared magnitudes form
+\([d_n^2,R_n^2]\).  The phases of disjoint fibers may be chosen
+independently.  A Minkowski sum of finitely many real intervals is the
+interval whose endpoints are the sums of their endpoints.  This proves
+\eqref{eq:sharp-energy-interval} and its lower bound.
+\end{proof}
+
+\begin{corollary}[Sharp free-phase coherence interval]
+\label{cor:sharp-coherence-interval}
+With the same fixed moduli, \(E_{\rm trip}\) is fixed and the complete
+attainable interval of ordered equal-fiber coherence is
+\begin{equation}
+ \boxed{
+ C_{\eqc}\in
+ [D_{\dom}-E_{\rm trip},\
+  D_{\rm align}-E_{\rm trip}].}
+\label{eq:sharp-coherence-interval}
+\end{equation}
+Every point of the interval is attained in the unrestricted
+free-phase comparison class.
+\end{corollary}
+
+\begin{proof}
+Use \(C_{\eqc}=D-E_{\rm trip}\) and
+\cref{thm:sharp-energy-interval}.
+\end{proof}
+
+\begin{remark}[Optimality and physical realizability]
+\label{rem:free-phase-optimality}
+The lower bounds in
+\cref{eq:dominance-energy-lower,eq:sharp-coherence-interval} apply
+to the literal packet because they use its actual moduli.  Endpoint
+attainability is optimality in the larger class in which native phases
+may vary independently.  Physical phases can be coupled by rows,
+masks, and divisor kernels, so an extremizing free-phase assignment
+need not be realized by the arithmetic packet.  Therefore
+\(D_{\dom}\) is the strongest universal modulus-only certificate, not
+a formula for the actual energy.
+\end{remark}
+
+\subsection{Comparison with the post-bin mass route}
+
+TPC-84's sharp modulus-only post-bin mass is
+\[
+ M_{\min}^{\rm mag}=\sum_nd_n.
+\]
+Using all active determinant bins, TPC-83 then gives
+\[
+ D\ge\frac{(M_{\min}^{\rm mag})^2}{S},
+ \qquad S=\#\{n:A(n)\ne0\}.
+\]
+The direct energy certificate is never weaker.
+
+\begin{proposition}[Support-refined comparison]
+\label{prop:support-refined-comparison}
+Let
+\[
+ S_{\dom}=\#\{n:d_n>0\}.
+\]
+Also write
+\[
+ S_{\rm actual}=\#\{n:A(n)\ne0\},
+ \qquad
+ S_{\rm raw}=\#\{n:F_n\ne\varnothing\}.
+\]
+If \(S_{\dom}>0\), then
+\begin{equation}
+ D_{\dom}
+ \ge
+ \frac{(\sum_nd_n)^2}{S_{\dom}}
+ \ge
+ \frac{(\sum_nd_n)^2}{S_{\rm actual}}
+ \ge
+ \frac{(\sum_nd_n)^2}{S_{\rm raw}},
+\label{eq:direct-better-global}
+\end{equation}
+where every displayed denominator is positive.  Any of the three
+inequalities can be strict.
+\end{proposition}
+
+\begin{proof}
+Cauchy--Schwarz on the positive defects gives the first inequality.
+For \(d_n>0\), the reverse triangle inequality gives
+\[
+ |A(n)|\ge d_n>0.
+\]
+Thus
+\[
+ S_{\dom}\le S_{\rm actual}\le S_{\rm raw},
+\]
+which gives the remaining comparisons.  Strictness occurs, for
+example, when the positive defects are nonconstant or when either
+support inclusion is proper.
+\end{proof}
+
+The raw-fiber count is used in
+\cref{prop:support-refined-comparison}; it is not substituted for the
+actual post-bin support in any TPC-83 norm identity.
+
+\subsection{A quantitative dominant-share theorem}
+
+\begin{definition}[Uniformly dominant fibers]
+\label{def:dominant-fibers}
+For \(0<\eps\le1/2\), let
+\[
+ \cG_\eps
+ =
+ \left\{
+ n:R_n>0,\quad r_{\max,n}\ge(1/2+\eps)R_n
+ \right\}.
+\]
+Write
+\[
+ R_{\cG_\eps}=\sum_{n\in\cG_\eps}R_n.
+\]
+\end{definition}
+
+\begin{theorem}[Dominant-share energy lower bound]
+\label{thm:dominant-share}
+For every finite packet and \(0<\eps\le1/2\),
+\begin{equation}
+ \boxed{
+ D
+ \ge4\eps^2\sum_{n\in\cG_\eps}R_n^2
+ \ge
+ \frac{4\eps^2R_{\cG_\eps}^2}
+ {\#\cG_\eps},}
+\label{eq:dominant-share-bound}
+\end{equation}
+where the second expression is omitted if
+\(\cG_\eps=\varnothing\).
+\end{theorem}
+
+\begin{proof}
+For \(n\in\cG_\eps\),
+\[
+ d_n=2r_{\max,n}-R_n\ge2\eps R_n>0.
+\]
+Consequently \(\cG_\eps\subseteq\supp A\).
+Insert this in \eqref{eq:dominance-energy-lower}.  The second
+inequality is Cauchy--Schwarz on \(\cG_\eps\).
+\end{proof}
+
+\medskip
+\begin{corollary}[Exponent transfer for the literal packet]
+\label{cor:dominant-exponent}
+Suppose, as additional hypotheses on the literal growing packet, that
+for fixed \(\mu,\kappa,\xi\ge0\),
+\begin{align}
+ R_X&\ge X^{-\mu+o(1)}N_{0,X},
+\label{eq:raw-lower-hyp}\\
+ \eps_X&\ge X^{-\kappa+o(1)},
+\label{eq:dominance-margin-hyp}\\
+ R_{\cG_{\eps_X}}
+ &\ge X^{-\xi+o(1)}R_X.
+\label{eq:dominant-share-hyp}
+\end{align}
+Then
+\begin{equation}
+ \boxed{
+ D_X
+ \ge
+ X^{-2(\mu+\kappa+\xi)+o(1)}
+ \frac{N_{0,X}^2}{Q_X}.}
+\label{eq:dominant-exponent-output}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The imported determinant interval gives
+\(\cG_{\eps_X}\subseteq\supp A_X\) and hence
+\(\#\cG_{\eps_X}\ll Q_X\).  Insert
+\eqref{eq:raw-lower-hyp}--\eqref{eq:dominant-share-hyp} into
+\eqref{eq:dominant-share-bound}.
+\end{proof}
+
+\begin{remark}[What is still missing]
+\Cref{cor:dominant-exponent} proves an exponent-exact implication, not
+its hypotheses.  In particular, the TPC-32 raw absolute-mass upper
+bound cannot replace \eqref{eq:raw-lower-hyp}.  A finite census can
+measure \(D_{\dom}\) and the dominant share at sampled scales, but a
+uniform lower bound for the growing literal packet remains an
+\(\Ltwo\) problem.
+\end{remark}
+
+\begin{example}[Sharp phase-blind stop model]
+\label{ex:balanced-fibers}
+Put two equal moduli in every fiber.  Then \(d_n=0\) and
+\(D_{\dom}=0\), however large the raw mass is.  Opposite phases make
+the actual energy zero, while aligned phases make it maximal.  Thus a
+zero dominance certificate kills only the modulus-only route; it does
+not upper-bound the actual signed energy.
+\end{example}

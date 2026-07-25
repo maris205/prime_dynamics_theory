@@ -1,0 +1,86 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{booktabs,enumitem,float,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Shared-Target Rigidity and Dominance Energy in Fixed-Shift Determinant Fibers: Sharp Phase Envelopes, Compressed Census Identities, and a Loss-One Coherence Barrier},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\eqc}{\mathrm{eq}}
+\newcommand{\tar}{\mathrm{tar}}
+\newcommand{\dom}{\mathrm{dom}}
+
+\title{\textbf{Shared-Target Rigidity and Dominance Energy}\\
+\textbf{in Fixed-Shift Determinant Fibers:}\\
+Sharp Phase Envelopes, Compressed Census Identities,\\
+and a Loss-One Coherence Barrier}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\noindent\textbf{Keywords:}
+fixed shift; determinant fiber; native key; target collision;
+dominance energy; coherence graph; exact census.
+
+\medskip
+\noindent\textbf{Literal-frame convention.}
+Every physical statement retains one prescribed nonzero shift
+\(h_0\), canonical parent native keys, exact active targets, the
+actual post-bin coefficient, and the original global normalization.
+No statement is specialized to \(h_0=2\).
+
+\input{sections/introduction}
+\input{sections/literal-packet}
+\input{sections/dominance-energy}
+\input{sections/shared-target-rigidity}
+\input{sections/compressed-census}
+\input{sections/loss-one-barrier}
+\input{sections/regression-schema}
+\input{sections/claim-boundary}
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

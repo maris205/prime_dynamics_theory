@@ -1,0 +1,251 @@
+\section{Branches, opened atoms, and lossless cells}
+\label{sec:literal-frame}
+
+\subsection{The resolved branch is the primary key}
+
+Fix a soluble nonempty canonical branch
+\[
+ \beta=(\theta,c,\kappa),\qquad
+ \theta=(L,\gamma,\ell,j,\sigma,v,\iota).
+\]
+Put
+\begin{equation}
+ b_\beta=c_\beta\kappa_\beta,\qquad
+ g_\beta=(b_\beta,\sigma_\beta),\qquad
+ B_\beta=\frac{b_\beta}{g_\beta}.
+\label{eq:branch-content}
+\end{equation}
+Content resolution gives one progression
+\[
+ t_\beta(z)=\tau_\beta+B_\beta z,
+ \qquad z\in I_\beta^\ast.
+\]
+Its cardinality is \(N_\beta=\#I_\beta^\ast\).  On the
+nonconstant resonant carrier, the TPC-99 exact resonance-window
+lemma gives \(N_\beta\le q_X\) for every nonzero resonant
+frequency, and defines the width
+\[
+ H_q(N)=
+ \min\!\left\{\frac{q-1}{2},\left\lfloor\frac qN\right\rfloor\right\},
+\]
+is
+\begin{equation}
+ \mathsf H_\beta=H_{q_X}(N_\beta).
+\label{eq:branch-width}
+\end{equation}
+Branches with \(N_\beta>q_X\) have no nonzero resonance and are not
+entered into a width census.  The source-level
+\(q_X\mid u_p\) bound below does not use \(\mathsf H_\beta\) and may be
+applied before this restriction.
+\(\mathsf H_\beta\) denotes only this resonance width; it is not the
+robustness-content variable denoted \(H_\beta\) in the general
+TPC-94 normalization.  On the canonical branch that earlier content
+equals \(1\).
+The phase slope and native multiplier are constant on this
+\(z\)-fiber:
+\begin{equation}
+ \Omega_\beta
+ =
+ \ell_\beta v_\beta\sigma_\beta B_\beta,
+\qquad
+ \omega_\beta
+ =
+ \varepsilon_\beta\frac{\Omega_\beta}{c_\beta}
+ \pmod{q_X}.
+\label{eq:branch-multiplier}
+\end{equation}
+
+The actual source values are not constant on the fiber.  For
+\(z\in I_\beta^\ast\), define
+\begin{equation}
+ p=(\beta,z),\qquad
+ u_p=U_\theta(t_\beta(z)),\qquad
+ m_p=M_\theta(t_\beta(z)).
+\label{eq:opened-atom-values}
+\end{equation}
+Here \(p\) is an \(r\)-free opened atom.  Since
+\[
+ M_\theta(t)=\ell_\theta v_\theta D_\theta(t),
+\qquad
+ \sigma_\theta U_\theta(t)
+ =
+ M_\theta(t)j_\theta+h_0,
+\]
+every atom satisfies the exact source identity
+\begin{equation}
+ m_pj_p+h_0=\sigma_pu_p,
+\qquad
+ j_p=j_\theta,\quad\sigma_p=\sigma_\theta.
+\label{eq:atom-source-identity}
+\end{equation}
+Different \(z\)'s of one branch generally give different \(u_p\)
+and \(m_p\), while \(j_p,\sigma_p,\omega_\beta,\mathsf H_\beta\) remain
+fixed.
+
+\subsection{Exact atomization of the TPC-99 weight}
+
+Let \(A_{\beta,X}\) be the literal outer branch coefficient from
+TPC-94 and let \(\mathcal W_{\beta,X}(z)\) contain the actual smooth,
+periodic, extraction, and coprimality masks.  Define
+\begin{align}
+ w_{\beta,z}
+ ={}&
+ |A_{\beta,X}|\,
+ |\mathcal W_{\beta,X}(z)|
+ \mu^2(\widetilde D_\beta(z))
+ \mu^2(V_\beta(z)),
+\label{eq:atom-weight}\\
+ w_\beta
+ ={}&
+ \sum_{z\in I_\beta^\ast}w_{\beta,z}.
+\label{eq:branch-weight}
+\end{align}
+Thus \(w_\beta\) is exactly the proof-carrying TPC-99 branch weight:
+in the notation of that paper,
+\[
+ w_\beta=w_{\beta,X}
+ =|A_{\beta,X}|\,\mathcal A_{\beta,X}.
+\]
+The refinement \eqref{eq:branch-weight} is an equality, not a second
+copy of the branch mass.
+
+For exact width \(H\), the native census is therefore
+\begin{align}
+ a_H(\omega)
+ &=
+ \sum_{\substack{\beta:
+       \mathsf H_\beta=H\\\omega_\beta=\omega}}w_\beta
+\notag\\
+ &=
+ \sum_{\substack{p=(\beta,z):
+       \mathsf H_\beta=H\\\omega_\beta=\omega}}w_{\beta,z}.
+\label{eq:atomized-census}
+\end{align}
+The frequency \(r\) is not part of \(p\); it remains in the
+low-window weight \(b_X(r)=|\mathfrak m_{K,X}(r)|\).
+
+\begin{remark}[Width is not cell occupancy]
+\label{rem:width-not-cell}
+Throughout the paper,
+\[
+ \mathsf H_p=\mathsf H_\beta=H_{q_X}(\#I_\beta^\ast).
+\]
+It is the resonance width of the original branch \(z\)-fiber.  It
+is never replaced by \(|J_C|\), by the number of opened atoms in a
+cell, or by the size of either ultra-divisor submass.
+\end{remark}
+
+\subsection{The augmented atom record}
+
+TPC-93 gives an explicit inverse from a child \((\theta,t)\) to the
+preprojector source atom.  Augment \(p=(\beta,z)\) by:
+\begin{itemize}[leftmargin=2em]
+\item the child coordinate
+  \(t_p=\tau_\beta+B_\beta z\) and the inverse source atom, including
+  polarization, actual moving and opposite rows, \(j_p\), and the
+  opened value \(u_p\);
+\item the projector divisor \(v_p\), interval component, actual
+  masks, prefix, residue, smooth, and reconstruction labels;
+\item \(c_\beta,\kappa_\beta,b_\beta,g_\beta,B_\beta\), the branch
+  interval \(I_\beta^\ast\), \(N_\beta,\mathsf H_\beta\), and \(z\); and
+\item every label needed to reverse the exact-content and source
+  reconstructions; the atom weight \(w_{\beta,z}\) is attached as a
+  coefficient payload, not used as a grouping label.
+\end{itemize}
+Redundant derived values such as \(m_p,u_p,\sigma_p\) are retained
+on purpose; they are provenance checks, not new multiplicities.
+
+\begin{definition}[Fine provenance cell]
+\label{def:fine-cell}
+Flatten the augmented provenance record: \(\beta\) is not kept as an
+opaque token that could secretly retain \(j_\theta\).  Let
+\(\operatorname{del}_j(p)\) delete the single native coordinate
+\(j_p\) and its redundant copies, while deleting no independent
+coordinate.  The attached numerical weight is not part of this
+projection.  A fine cell \(C\) is one fiber of
+\(\operatorname{del}_j\).  Write
+\[
+ P_C=\{p:\operatorname{del}_j(p)=C\},\qquad
+ J_C=\{j_p:p\in P_C\}.
+\]
+\end{definition}
+
+\begin{theorem}[Lossless opened-atom disintegration]
+\label{thm:lossless-atom-cells}
+Assume the TPC-93 child-to-source inverse and the TPC-94 exact
+content reconstruction.  Then:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \((C,j_p)\) reconstructs the unique pair \((\beta,z)\), its
+  \(r\)-free source atom, and its weight \(w_{\beta,z}\);
+\item in fact \(C\) already determines
+  \[
+   j_p=\frac{\sigma_pu_p-h_0}{m_p},
+  \]
+  so every nonempty fine cell \(P_C\) is a singleton;
+\item all \(p\in P_C\) have common values
+  \(m_C,u_C,\ell_C,v_C,c_C,B_C,\varepsilon_C,\mathsf H_C\); and
+\item summing the cells gives exactly the second line of
+  \eqref{eq:atomized-census}.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The flattened augmented record contains every coordinate of
+\((\beta,z)\), its TPC-93 inverse source record, and every
+reconstruction label.  It contains no opaque branch identifier.
+The map \(\operatorname{del}_j\) removes only the native \(j\)
+coordinate and direct stored copies, so restoring that coordinate
+restores the original record and its attached coefficient.  This
+proves (i).  The retained physical coordinates
+\(m_p,u_p,\sigma_p\) remain.  Their source identity
+\eqref{eq:atom-source-identity} determines the displayed integer
+\(j_p\), proving (ii).  Every quantity in (iii) remains in the
+deletion record, either as a native coordinate or an explicitly
+retained source value.  Finally, the cells form a disjoint partition
+of the opened atoms, so (iv) is just finite reindexing of
+\eqref{eq:atomized-census}.
+\end{proof}
+
+\begin{remark}[No claim that \(\theta\) fixes \(u\)]
+The cell fixes the \emph{opened source value}
+\(u_C=U_\theta(t_p)\) only after \(z\) has been opened and the source
+inverse recorded.  The branch \(\beta\), and in particular
+\(\theta\), does not fix \(u\) or \(m\) along its full resolved
+fiber.
+\end{remark}
+
+\begin{remark}[The fine-cell injection is deliberately vacuous]
+\label{rem:singleton-cells}
+The singleton conclusion is not an equidistribution statement.  It
+is the unavoidable price of retaining the complete source inverse
+while deleting only the displayed \(j\)-coordinate: the determinant
+identity algebraically recovers that coordinate.  Consequently all
+collisions between distinct opened atoms, including same-\(\beta\)
+different-\(z\) collisions, occur in the cross-cell ledger.
+\end{remark}
+
+\subsection{Strong no-wrap consequences}
+
+The strengthened prime of TPC-98 may be taken, still with
+\(q_X\asymp Q_X\), larger than every actual source row, every
+relevant row difference, and the orbit diameter.  On active
+canonical support,
+\begin{equation}
+ 0<m_p,\ell_p,v_p,c_\beta,B_\beta,b_\beta<q_X,
+\qquad
+ \operatorname{diam}(\mathcal J_X)<q_X.
+\label{eq:atom-no-wrap}
+\end{equation}
+Hence \(m_p,\ell_p,v_p,c_\beta,B_\beta\) are invertible modulo
+\(q_X\).  On the nonconstant branch,
+\begin{equation}
+ q_X\nmid\Omega_\beta
+ \quad\Longleftrightarrow\quad
+ q_X\nmid\sigma_\beta,
+\qquad
+ \omega_\beta\in\mathbb F_{q_X}^{\times}.
+\label{eq:atom-nonconstant}
+\end{equation}
+The equivalence uses the literal bound \(B_\beta<q_X\) and the
+nonvanishing of \(\ell_\beta,v_\beta\) modulo \(q_X\)
+\citep{WangTPC98}.

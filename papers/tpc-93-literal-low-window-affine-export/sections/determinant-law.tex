@@ -1,0 +1,277 @@
+\section{Content-factor extraction and fixed-determinant preservation}
+\label{sec:determinant-law}
+
+The resolved formula \eqref{eq:fully-resolved-inner-sum} still uses
+the value \(U_{\theta,b}^\ast(z)\).  The defining congruence forces a
+factor \(B_{\theta,b}\) from that value.  Extracting it is essential
+before invoking the fixed-determinant local theory of TPC-90.
+
+\subsection{The two-stage determinant law}
+
+On a soluble branch, put \(B=B_{\theta,b}\),
+\(\tau=\tau_{\theta,b}\), and define
+\begin{equation}
+ V_{\theta,b}(z)
+ =
+ \frac{U_\theta(\tau+Bz)}{B}.
+\label{eq:det-reduced-V}
+\end{equation}
+This is integral because \(B\mid U_\theta(\tau)\).  More explicitly,
+\begin{align}
+ \mathcal D_{\theta,b}(z)
+ &:=
+ D_\theta(\tau+Bz)
+ =
+ D_\theta(\tau)+\sigma_\theta Bz,
+\label{eq:det-reduced-D}\\
+ V_{\theta,b}(z)
+ &=
+ \frac{U_\theta(\tau)}B+a_\theta z.
+\label{eq:det-reduced-V-affine}
+\end{align}
+
+\begin{theorem}[Content-progression determinant law]
+\label{thm:content-progression-determinant}
+Let a nonempty literal resolved term satisfy
+\[
+ b=c\kappa\mid P_\theta,\qquad
+ b\mid\sigma_\theta U_\theta(t),
+\qquad
+ B=\frac b{(b,\sigma_\theta)}.
+\]
+Then:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the unreduced reparametrized pair
+\[
+ \mathcal D_{\theta,b}(z),\qquad
+ U_\theta(\tau+Bz)
+\]
+has coefficient determinant \(Bh_0\);
+\item the second value factors exactly as
+\[
+ U_\theta(\tau+Bz)=B\,V_{\theta,b}(z);
+\]
+\item the reduced pair
+\[
+ \mathcal D_{\theta,b}(z)
+ =
+ D_\theta(\tau)+(\sigma_\theta B)z,\qquad
+ V_{\theta,b}(z)
+ =
+ \frac{U_\theta(\tau)}B+a_\theta z
+\]
+has coefficient determinant exactly \(h_0\):
+\begin{equation}
+ \boxed{
+ (\sigma_\theta B)\frac{U_\theta(\tau)}B
+ -
+ a_\theta D_\theta(\tau)
+ =
+ h_0;}
+\label{eq:det-preserved}
+\end{equation}
+\item on every nonempty literal branch,
+\begin{equation}
+ (a_\theta,\sigma_\theta B)=1,\qquad
+ (a_\theta\sigma_\theta B,h_0)=1;
+\label{eq:det-reduced-slope-primitivity}
+\end{equation}
+\item the reduced forms are individually primitive:
+\begin{equation}
+ \gcd(D_\theta(\tau),\sigma_\theta B)=1,\qquad
+ \gcd(U_\theta(\tau)/B,a_\theta)=1.
+\label{eq:det-reduced-form-primitivity}
+\end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The unreduced forms have origins
+\(D_\theta(\tau),U_\theta(\tau)\) and slopes
+\(\sigma_\theta B,a_\theta B\).  Their determinant is
+\[
+ (\sigma_\theta B)U_\theta(\tau)
+ -(a_\theta B)D_\theta(\tau)
+ =
+ B\{\sigma_\theta U_\theta(\tau)
+ -a_\theta D_\theta(\tau)\}
+ =
+ Bh_0.
+\]
+The progression was chosen so that \(B\mid U_\theta(\tau)\), proving
+the factorization.  Dividing the second origin and slope by \(B\)
+gives \eqref{eq:det-preserved}.
+
+For a nonempty term, \(b\) divides both physical targets.  Primitive
+target support therefore gives
+\begin{equation}
+ (b,h_0)=1
+\label{eq:det-b-coprime-h}
+\end{equation}
+and, on every contributing source atom, \(b\) is coprime to the
+moving row and \(j_\theta\).  In particular \((B,h_0)=1\).
+Solubility gives \((a_\theta,B)=1\) by
+\cref{lem:one-progression}; combine this with
+\((a_\theta,\sigma_\theta)=1\) and
+\((a_\theta\sigma_\theta,h_0)=1\) from
+\eqref{eq:affine-native-determinant} to obtain
+\eqref{eq:det-reduced-slope-primitivity}.
+
+Any common divisor of \(D_\theta(\tau)\) and
+\(\sigma_\theta B\) divides the left side of
+\eqref{eq:det-preserved}, hence \(h_0\); this contradicts
+\((\sigma_\theta B,h_0)=1\).  The second primitive identity is
+proved in the same way using \((a_\theta,h_0)=1\).
+\end{proof}
+
+\subsection{Exact M\"obius extraction}
+
+\begin{lemma}[Forced content factor in the M\"obius sign]
+\label{lem:forced-mobius-factor}
+For \(B\ge1\) and \(V\ge1\),
+\begin{equation}
+ \mu(BV)
+ =
+ \begin{cases}
+ \mu(B)\mu(V)\one_{(B,V)=1},&\mu^2(B)=1,\\
+ 0,&\mu^2(B)=0.
+ \end{cases}
+\label{eq:forced-mobius-factor}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If \(B\) is not squarefree, then \(BV\) is not squarefree.  If \(B\)
+is squarefree and \((B,V)>1\), again \(BV\) has a squared prime
+factor.  On the remaining branch, multiplicativity of \(\mu\) gives
+the identity.
+\end{proof}
+
+\begin{theorem}[Fixed-\(h_0\) reduced native export]
+\label{thm:fixed-h-reduced-export}
+In the fully resolved low-window formula, every branch with
+\(\mu^2(B_{\theta,b})=0\) vanishes.  On the remaining branches,
+\eqref{eq:fully-resolved-inner-sum} equals
+\begin{align}
+ \mu(B_{\theta,b})\zeta_{\theta,b,c,r}
+ \sum_{z\in I_{\theta,b}^\ast}
+ &\mu(\mathcal D_{\theta,b}(z))
+ \mu(V_{\theta,b}(z))
+ \one_{(B_{\theta,b},V_{\theta,b}(z))=1}
+\notag\\
+ &\times
+ \chi_\theta(\tau_{\theta,b}+B_{\theta,b}z)
+ W_{\theta,X}(\tau_{\theta,b}+B_{\theta,b}z)
+ \notag\\
+ &\times
+ e_{cq_X}(-r\varepsilon_\theta\Omega_{\theta,b}z).
+\label{eq:fixed-h-reduced-inner}
+\end{align}
+The two M\"obius arguments in
+\eqref{eq:fixed-h-reduced-inner} are individually primitive affine
+forms with the same prescribed determinant \(h_0\).  All extracted
+factors and masks remain literal.
+\end{theorem}
+
+\begin{proof}
+Use
+\[
+ U_{\theta,b}^\ast(z)
+ =
+ B_{\theta,b}V_{\theta,b}(z)
+\]
+in \eqref{eq:fully-resolved-inner-sum} and apply
+\cref{lem:forced-mobius-factor}.  The determinant and primitive
+claims are \cref{thm:content-progression-determinant}.
+\end{proof}
+
+\begin{corollary}[Exact TPC-90 local split after content extraction]
+\label{cor:tpc90-after-extraction}
+For every reduced branch in
+\cref{thm:fixed-h-reduced-export}, the TPC-90 identity applies:
+\begin{align}
+ &\mu(\mathcal D_{\theta,b}(z))
+ \mu(V_{\theta,b}(z))
+\notag\\
+ &\quad=
+ \mu^2(\mathcal D_{\theta,b}(z))
+ \mu^2(V_{\theta,b}(z))
+ \lambda(\mathcal D_{\theta,b}(z))
+ \lambda(V_{\theta,b}(z)).
+\label{eq:tpc90-reduced-split}
+\end{align}
+Its simultaneous squarefree local root counts are those for a
+primitive determinant-\(h_0\) pair.  The extra mask
+\(\one_{(B_{\theta,b},V_{\theta,b}(z))=1}\), the sign
+\(\mu(B_{\theta,b})\), and the additive determinant character remain
+outside that identity.
+\end{corollary}
+
+\begin{proof}
+Apply the exact identity \(\mu=\mu^2\lambda\) to the two positive
+reduced forms.  The hypotheses of the TPC-90 primitive local
+classification follow from
+\cref{thm:content-progression-determinant}.
+\end{proof}
+
+\subsection{The precise provenance boundary}
+
+We now isolate the exact obstruction to an untracked determinant
+change.
+
+\begin{theorem}[No silent determinant relabeling]
+\label{thm:no-silent-relabeling}
+After the substitution \(t=\tau+Bz\), the unreduced pair has
+determinant \(Bh_0\).  Therefore it cannot be entered into a theorem
+whose hypothesis is determinant \(h_0\) by simply retaining its two
+unreduced values and changing the determinant label.  A valid
+fixed-\(h_0\) entry must instead perform
+\[
+ U(\tau+Bz)=B\,V(z)
+\]
+and retain:
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item the branch deletion \(\mu^2(B)=0\);
+\item the outer sign \(\mu(B)\);
+\item the coprimality mask \(\one_{(B,V(z))=1}\); and
+\item the original content, phase, polarization, and outer
+provenance keys.
+\end{enumerate}
+Dropping any one of (a)--(c) changes the literal coefficient.
+\end{theorem}
+
+\begin{proof}
+The determinant statements follow from
+\cref{thm:content-progression-determinant}.  The three coefficient
+effects are the exhaustive cases of
+\eqref{eq:forced-mobius-factor}.  The remaining provenance is needed
+to reverse the finite expansion in
+\cref{thm:content-expanded-window}; without it one no longer has the
+source coefficient \eqref{eq:row-literal-A}.
+\end{proof}
+
+\begin{example}[The two determinants are visibly different]
+\label{ex:two-determinants}
+Take
+\[
+ D(t)=t,\qquad U(t)=t+1,\qquad h_0=1.
+\]
+Restrict to \(2\mid U(t)\), so \(t=1+2z\).  The unreduced pair
+\[
+ 1+2z,\qquad2+2z
+\]
+has determinant \(2\).  Extracting the forced factor from the second
+value gives
+\[
+ 1+2z,\qquad1+z,
+\]
+whose determinant is \(1\).  The equality
+\[
+ \mu(2+2z)
+ =
+ -\mu(1+z)\one_{(2,1+z)=1}
+\]
+shows why the sign and coprimality mask cannot be omitted.  This is a
+finite algebraic example, not a model of the complete physical
+packet.
+\end{example}

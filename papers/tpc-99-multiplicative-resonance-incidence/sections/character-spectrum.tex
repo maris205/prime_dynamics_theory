@@ -1,0 +1,113 @@
+\section{Exact multiplicative character spectrum}
+\label{sec:character-spectrum}
+
+Let \(\widehat G\) be the group of multiplicative characters of
+\(G\).  For \(f:G\to\mathbb C\), use
+\[
+ \widehat f(\chi)
+ =\sum_{x\in G}f(x)\overline{\chi(x)}.
+\]
+The inverse and Parseval formulas are
+\[
+ f(x)=\frac1{q-1}\sum_{\chi\in\widehat G}
+ \widehat f(\chi)\chi(x),
+ \qquad
+ \sum_\chi|\widehat f(\chi)|^2
+ =(q-1)\sum_x|f(x)|^2.
+\]
+
+\begin{theorem}[Complete singular spectrum]
+\label{thm:complete-spectrum}
+The singular values of \(K_H\) are
+\[
+ \left|\widehat{\one_{E_H}}(\chi)\right|,
+ \qquad \chi\in\widehat G.
+\]
+More precisely,
+\[
+ K_H\chi
+ =
+ \left(\sum_{x\in E_H}\chi(x)\right)\overline\chi.
+\]
+\end{theorem}
+
+\begin{proof}
+For \(\omega\in G\), substitute \(x=r\omega\):
+\[
+ (K_H\chi)(\omega)
+ =\sum_{x\in E_H}\chi(x\omega^{-1})
+ =\overline{\chi(\omega)}
+  \sum_{x\in E_H}\chi(x).
+\]
+Characters form an orthogonal basis, and conjugation permutes that
+basis.  The claimed singular values follow.
+\end{proof}
+
+\begin{theorem}[Parity nullspace]
+\label{thm:parity-nullspace}
+For every multiplicative character,
+\begin{equation}
+ \widehat{\one_{E_H}}(\chi)
+ =
+ \bigl(1+\overline{\chi(-1)}\bigr)
+ \sum_{n=1}^H\overline{\chi(n)}.
+\label{eq:parity-factor}
+\end{equation}
+Hence every odd character, characterized by \(\chi(-1)=-1\), is an
+exact zero singular mode of \(K_H\).
+\end{theorem}
+
+\begin{proof}
+Split \(E_H\) into \(1,\ldots,H\) and their negatives.  The negative
+half contributes
+\(\overline{\chi(-1)}\sum_{n\le H}\overline{\chi(n)}\).
+\end{proof}
+
+\begin{remark}[Not the sieve parity barrier]
+The nullspace in \cref{thm:parity-nullspace} is ordinary symmetry of
+a finite multiplicative convolution kernel.  It is not a breach of
+the sieve parity barrier and gives no prime-pair lower bound.
+\end{remark}
+
+\begin{proposition}[Principal and Hilbert--Schmidt ledgers]
+\label{prop:HS-ledger}
+For the principal character \(\chi_0\),
+\[
+ \widehat{\one_{E_H}}(\chi_0)=2H.
+\]
+Moreover
+\begin{equation}
+ \sum_{\chi\ne\chi_0}
+ |\widehat{\one_{E_H}}(\chi)|^2
+ =
+ 2H(q-1-2H).
+\label{eq:HS-ledger}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The first identity is \(|E_H|=2H\).  Parseval gives
+\[
+ \sum_\chi|\widehat{\one_{E_H}}(\chi)|^2
+ =(q-1)|E_H|=2H(q-1).
+\]
+Subtract the principal square \(4H^2\).
+\end{proof}
+
+\begin{corollary}[Classical nonprincipal bound]
+\label{cor:PV-bound}
+Uniformly for \(1\le H\le(q-1)/2\),
+\[
+ \max_{\substack{\chi\ne\chi_0\\\chi(-1)=1}}
+ |\widehat{\one_{E_H}}(\chi)|
+ \ll\sqrt q\log q.
+\]
+When the indexing set is empty (in particular for \(q=3\)), the
+maximum is understood to be \(0\).
+\end{corollary}
+
+\begin{proof}
+Apply the P\'olya--Vinogradov inequality to the incomplete character
+sum in \eqref{eq:parity-factor}
+\citep[Chapter~12]{IK2004}.
+\end{proof}

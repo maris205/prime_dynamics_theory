@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Literal Resonance after TPC-101: Verified Branch Closures, the Three-Ledger Master Inequality, and a Stop-Go Roadmap},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{Literal Resonance after TPC-101:\\
+Verified Branch Closures, the Three-Ledger Master Inequality,\\
+and a Stop--Go Roadmap}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\noindent\textbf{Keywords:} fixed-shift M\"obius correlation;
+literal resonance; proof audit; multiplier census; cross-cell
+dispersion; parity barrier; stop--go roadmap.
+
+\medskip
+\noindent\textbf{Audit convention.}
+Every statement is labeled by what it actually proves:
+\(\Lzero\) for finite algebra or model identities, \(\Lone\) for
+literal physical-frame certificates and conditional reassembly, and
+\(\Ltwo\) only for a growing fixed nonzero-\(h_0\) arithmetic
+estimate.  No support-only, averaged, frozen-family, or surrogate
+gain is reported as \(\Ltwo\).
+
+\input{sections/scope-invariants}
+\input{sections/dependency-audit}
+\input{sections/master-inequality}
+\input{sections/positive-route}
+\input{sections/alternative-routes}
+\input{sections/exponent-ledger}
+\input{sections/stop-go}
+\input{sections/next-batch}
+\input{sections/regression}
+\input{sections/claim-boundary}
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

@@ -1,0 +1,89 @@
+\section{Exact counterexamples and sharpness}
+\label{sec:counterexamples}
+
+\begin{example}[Vanishing primitive, nonvanishing ordinary mean]
+\label{ex:constant-obstruction}
+Let \(a_n=1\), and let \(r_N/N\to\infty\).  Then
+\[
+ \frac{S_N}{N}=1,
+\qquad
+ L_{r_N,N}=\cH_{r_N,N}
+ =\frac{N}{r_N}\{1+o(1)\}=o(1).
+\]
+Moreover
+\[
+ \cT_{0,N}(L_{r_N,\cdot})=o(1),
+\qquad
+ \frac{r_N}{N}L_{r_N,N}=1+o(1).
+\]
+Thus the entire ordinary mean is carried by the anchor term.
+\end{example}
+
+\begin{proof}
+The harmonic estimate follows uniformly from
+\[
+ \frac{N}{r_N+N}\le\cH_{r_N,N}\le\frac{N}{r_N}.
+\]
+The anchored identity gives the last assertion; alternatively,
+\(L_{r_N,m}=m/r_N+O(m^2/r_N^2)\) uniformly for \(m\le N\).
+\end{proof}
+
+\begin{example}[Tuned terminal scale]
+\label{ex:tuned-anchor}
+Let \(r\ge N\) and let \(a_n=\xi\) be constant.  Then
+\[
+ \frac{S_N}{N}=\xi,\qquad
+ L_{r,N}=\xi\cH_{r,N}.
+\]
+Choosing \(\xi=\delta r/N\) gives
+\[
+ L_{r,N}=\delta\{1+O(N/r)\},
+\qquad
+ S_N/N=\delta r/N.
+\]
+Hence a terminal primitive of order \(\delta\) can amplify by
+\(r/N\), and the scale \(N/r\) in
+\cref{thm:regime-criterion} cannot be enlarged uniformly.
+\end{example}
+
+\begin{example}[Per-fiber \(o(1)\) does not aggregate]
+\label{ex:outer-mass}
+For each integer \(M\), take \(M\) fibers with \(r_\theta=0\),
+\(N_\theta=1\), \(c_\theta=1\), and
+\(a_{\theta,1}=1/M\).  Each fiber satisfies
+\[
+ |\cT_{0,1}(L_\theta)|=\frac1M=o(1),
+\]
+but
+\[
+ \sum_{\theta=1}^M
+ c_\theta N_\theta\cT_{0,1}(L_\theta)=1.
+\]
+Thus a qualitative bound on every fiber is not an aggregate
+certificate when the outer coefficient mass grows.
+\end{example}
+
+\begin{remark}[Scope of the counterexamples]
+The examples are structure-free \(\Lzero\) obstructions.  They do not
+give lower bounds for the literal affine M\"obius packet.  They prove
+that a proposed transfer theorem using only the displayed hypotheses
+is false.
+\end{remark}
+
+\begin{proposition}[No anchor-free black box]
+\label{prop:no-anchor-free}
+There is no function \(\Phi(\varepsilon)\to0\) such that, uniformly
+for all \(r,N\) and all \(|a_n|\le1\),
+\[
+ |L_{r,N}|\le\varepsilon,\qquad
+ |\cT_{0,N}(L_r)|\le\varepsilon
+ \quad\Longrightarrow\quad
+ |S_N|/N\le\Phi(\varepsilon).
+\]
+\end{proposition}
+
+\begin{proof}
+Use \cref{ex:constant-obstruction} and choose \(r_N/N\to\infty\)
+fast enough that both hypotheses tend to zero, while
+\(S_N/N=1\).
+\end{proof}

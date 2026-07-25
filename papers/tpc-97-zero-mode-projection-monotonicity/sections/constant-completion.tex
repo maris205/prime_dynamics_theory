@@ -1,0 +1,127 @@
+\section{Minimal rank-one constant completion}
+\label{sec:constant-completion}
+
+An unsafe orthogonal projection has a canonical repair.  It adds
+exactly the direction in which the constant vector is missing.
+
+\begin{theorem}[Minimal constant completion]
+\label{thm:minimal-completion}
+Let \(P\) be an orthogonal projection and let
+\[
+ q=(I-P)\one.
+\]
+If \(q=0\), put \(P^\sharp=P\).  If \(q\ne0\), define
+\begin{equation}
+ P^\sharp x
+ =
+ Px+
+ \frac{\langle x,q\rangle}{\|q\|_2^2}q.
+\label{eq:completed-projection}
+\end{equation}
+Then:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \(P^\sharp\) is the orthogonal projection onto
+  \[
+  \Ran P\oplus\C q
+  =
+  \Ran P+\C\one;
+  \]
+\item \(P^\sharp\one=\one\);
+\item \(\Ran P^\sharp\) is the smallest subspace containing
+  \(\Ran P\) and \(\one\);
+\item for every \(A\),
+  \begin{equation}
+  D(P^\sharp A)
+  =
+  D(PA)+
+  \frac{|\langle A,q\rangle|^2}{\|q\|_2^2},
+  \label{eq:completion-energy}
+  \end{equation}
+  and
+  \begin{equation}
+  Z(P^\sharp A)=Z(A).
+  \label{eq:completion-zero}
+  \end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Because \(q\in\Ker P=(\Ran P)^\perp\), the second term in
+\eqref{eq:completed-projection} is the orthogonal projection onto
+\(\C q\), perpendicular to \(P\).  Their sum is therefore the
+orthogonal projection onto \(\Ran P\oplus\C q\).
+
+Since \(\one=P\one+q\),
+\[
+ \Ran P+\C\one
+ =
+ \Ran P\oplus\C q.
+\]
+Also
+\[
+ \langle\one,q\rangle
+ =
+ \langle P\one+q,q\rangle
+ =
+ \|q\|_2^2,
+\]
+so \eqref{eq:completed-projection} gives
+\[
+ P^\sharp\one=P\one+q=\one.
+\]
+Any subspace containing both \(\Ran P\) and \(\one\) contains
+\(q=\one-P\one\), proving minimality.  Orthogonality of the two
+summands in \(P^\sharp A\) gives
+\eqref{eq:completion-energy}, and
+\eqref{eq:completion-zero} follows from
+\cref{prop:preservation-criterion}.
+\end{proof}
+
+\begin{corollary}[Repaired monotonicity]
+\label{cor:repaired-monotonicity}
+Let \(A\ne0\).  If \(P^\sharp A=0\), then \(Z(A)=0\).  Otherwise,
+\[
+ \rho(A)\le\rho(P^\sharp A),
+\qquad
+ \Flat(A)\le\Flat(P^\sharp A).
+\]
+\end{corollary}
+
+\begin{proof}
+Apply \cref{thm:safe-projection-law} to \(P^\sharp\).
+\end{proof}
+
+\begin{remark}[The repair is exact but not free]
+\label{rem:repair-not-free}
+The added coefficient is
+\[
+ \langle A,q\rangle
+ =
+ Z(A)-Z(PA).
+\]
+Thus rank-one completion identifies the unique missing scalar, but
+does not estimate it.  If that scalar is already available from an
+exact provenance ledger, the completion restores a safe
+same-frame projection.  If it is the unknown arithmetic zero mode,
+writing \(P^\sharp\) does not solve the arithmetic problem.
+\end{remark}
+
+\begin{proposition}[Uniqueness at minimal range]
+\label{prop:minimal-uniqueness}
+The operator \(P^\sharp\) is the unique orthogonal projection \(Q\)
+such that
+\[
+ \Ran Q=\Ran P+\C\one.
+\]
+If \(q\ne0\), every constant-preserving orthogonal projection whose
+range contains \(\Ran P\) has rank at least
+\(\operatorname{rank}P+1\), with equality precisely when its range
+equals \(\Ran P^\sharp\).
+\end{proposition}
+
+\begin{proof}
+An orthogonal projection is uniquely determined by its range.
+When \(q\ne0\), \(\one\notin\Ran P\), so adjoining \(\one\) raises
+the dimension by one.  Every range containing both objects contains
+their span.
+\end{proof}

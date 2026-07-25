@@ -1,0 +1,179 @@
+\section{The prescribed finite frame}
+\label{sec:finite-frame}
+
+Let \(\Omega\) be a nonempty finite set and put
+\[
+ S=\#\Omega,\qquad
+ H=\C^\Omega.
+\]
+Equip \(H\) with the counting-measure inner product
+\[
+ \langle x,y\rangle
+ =
+ \sum_{\omega\in\Omega}
+ x_\omega\overline{y_\omega},
+\]
+linear in the first variable.  Let \(\one\) be the constant vector,
+so \(\|\one\|_2=\sqrt S\), and put
+\[
+ e=\frac{\one}{\sqrt S}.
+\]
+
+\begin{definition}[Literal zero-mode statistics]
+\label{def:literal-statistics}
+For \(A\in H\), define
+\[
+ Z(A)=\langle A,\one\rangle
+ =\sum_{\omega\in\Omega}A_\omega,
+\qquad
+ D(A)=\|A\|_2^2.
+\]
+For \(A\ne0\), define
+\[
+ \rho(A)
+ =\frac{|Z(A)|}{\sqrt{S}\|A\|_2},
+\qquad
+ \Flat(A)
+ =\frac{|Z(A)|^2}{D(A)}
+ =S\rho(A)^2.
+\]
+The zero vector is a separate branch; no quotient by \(D(0)\) is
+used.
+\end{definition}
+
+\begin{remark}[The frame is part of the statistic]
+\label{rem:frame-part-statistic}
+The quantity \(\Flat\) is unchanged by zero padding, but \(\rho\)
+is not.  If \(K\) zero coordinates are appended, then
+\[
+ \rho_{\rm padded}(A)
+ =
+ \sqrt{\frac{S}{S+K}}\,\rho_\Omega(A).
+\]
+Thus every statement about \(\rho\) requires a prescribed frame.
+Here the frame is always the actual support or an exactly weighted
+representation of it, as in \cref{sec:block-averaging}.
+\end{remark}
+
+Let \(P:H\to H\) be an orthogonal projection:
+\[
+ P^2=P,\qquad P^\ast=P.
+\]
+For a fixed \(A\), write
+\begin{equation}
+ B=PA,\qquad
+ R=(I-P)A.
+\label{eq:BR-def}
+\end{equation}
+For the constant vector, write
+\begin{equation}
+ p=P\one,\qquad
+ q=(I-P)\one,\qquad
+ \kappa(P)=\frac{\|q\|_2}{\sqrt S}.
+\label{eq:pq-kappa-def}
+\end{equation}
+
+\begin{lemma}[Orthogonal ledger]
+\label{lem:orthogonal-ledger}
+The decompositions
+\[
+ A=B+R,\qquad
+ \one=p+q
+\]
+are orthogonal.  In particular,
+\begin{align}
+ D(A)&=D(B)+D(R),
+\label{eq:energy-pythagoras}\\
+ S&=\|p\|_2^2+\|q\|_2^2,
+\label{eq:constant-pythagoras}\\
+ 0&\le\kappa(P)\le1.
+\end{align}
+Moreover,
+\[
+ B,p\in\Ran P,\qquad
+ R,q\in\Ker P=(\Ran P)^\perp.
+\]
+\end{lemma}
+
+\begin{proof}
+These are the standard range--kernel decompositions for an
+orthogonal projection \citep[Chapter I]{Bhatia1997}.  Applying
+Pythagoras first to \(A\) and then to \(\one\) gives
+\eqref{eq:energy-pythagoras} and
+\eqref{eq:constant-pythagoras}.
+\end{proof}
+
+\begin{lemma}[Zero-mode defect identity]
+\label{lem:zero-mode-defect}
+For every \(A\in H\),
+\begin{equation}
+ \boxed{
+ Z(B)-Z(A)
+ =
+ \langle A,(P-I)\one\rangle
+ =
+ -\langle R,q\rangle.}
+\label{eq:zero-mode-defect}
+\end{equation}
+Equivalently,
+\begin{equation}
+ Z(A)=\langle B,p\rangle+\langle R,q\rangle,
+\qquad
+ Z(B)=\langle B,p\rangle.
+\label{eq:split-zero-mode}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Self-adjointness gives
+\[
+ Z(B)=\langle PA,\one\rangle
+ =\langle A,P\one\rangle.
+\]
+Subtracting \(\langle A,\one\rangle\) gives the first identity in
+\eqref{eq:zero-mode-defect}.  Since
+\((P-I)\one=-q\) and \(B\perp q\),
+\[
+ \langle A,q\rangle
+ =\langle B+R,q\rangle
+ =\langle R,q\rangle.
+\]
+The split formulas follow by expanding
+\(\langle B+R,p+q\rangle\).
+\end{proof}
+
+\begin{proposition}[The exact preservation criterion]
+\label{prop:preservation-criterion}
+The following conditions are equivalent:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \(P\one=\one\);
+\item \(\one\in\Ran P\);
+\item \(\Ker P\subset\one^\perp\);
+\item \(Z(PA)=Z(A)\) for every \(A\in H\).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The equivalence of (i) and (ii) follows because an orthogonal
+projection fixes precisely its range.  Conditions (ii) and (iii)
+are equivalent because \(\Ker P=(\Ran P)^\perp\).  Condition (i)
+implies (iv) by \cref{lem:zero-mode-defect}.  Conversely, if (iv)
+holds, then
+\[
+ \langle A,(P-I)\one\rangle=0
+\]
+for every \(A\), hence \((P-I)\one=0\).
+\end{proof}
+
+\begin{remark}[General operators]
+\label{rem:general-operators}
+For a general linear map \(T\), the correct condition is
+\[
+ T^\ast\one=\one,
+\]
+not merely \(T\one=\one\).  Orthogonal projections identify the two
+because \(P^\ast=P\).  The present monotonicity theorem also uses
+orthogonal energy splitting, so it should not be transferred to an
+arbitrary averaging matrix without separately checking adjoint
+mass preservation and norm contraction.
+\end{remark}

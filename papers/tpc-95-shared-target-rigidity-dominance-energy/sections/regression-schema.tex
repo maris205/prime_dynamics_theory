@@ -1,0 +1,145 @@
+\section{Audit-ready census and finite regression}
+\label{sec:regression-schema}
+
+The main theorems require no numerical experiment.  A finite census is
+nevertheless useful for measuring the sharp dominance certificate and
+for deciding which remaining pairing relation deserves analysis.  The
+schema below separates theorem inputs from diagnostics.
+
+\subsection{Required parent fields}
+
+For every scale \(X\) and fixed nonzero \(h_0\), each canonical parent
+record stores:
+
+\begin{enumerate}[leftmargin=2.2em]
+\item experiment revision, parameter manifest, global
+  \((Q_X,J_X,C_X,N_{0,X})\), and fixed-support identifiers;
+\item canonical parent identifier \((\alpha,\gamma,j)\), exact row
+  identifiers and slopes \(m_\alpha,m_\gamma\), and the positive orbit
+  coordinate \(j\);
+\item exact targets \(x_t,y_t\), content \(c_t=(x_t,y_t)\), signed
+  determinant numerator \(m_\alpha-m_\gamma\), and exact quotient
+  \(\nu(t)\);
+\item the final exact or directed-interval value of \(u_t\), with the
+  matched-channel and divisor expansion tree pointing back to this
+  parent;
+\item physical and computational multiplicities in different fields,
+  together with the inverse-aggregation check; and
+\item every active support, mask, orientation, cutoff, and provenance
+  flag needed to reconstruct the literal coefficient.
+\end{enumerate}
+
+The canonical serialization includes the exact integer composite keys
+\[
+ (\nu,x,y),\qquad(\nu,L,x),\qquad(\nu,R,y).
+\]
+Hashes may detect file changes but do not replace the exact equality
+tests.
+
+\subsection{Derived statistics}
+
+One determinant sort computes, for every \(n\),
+\[
+ R_n,\quad r_{\max,n},\quad d_n,\quad A_X(n),\quad |A_X(n)|^2.
+\]
+It returns
+\[
+ R_X,\ M_X,\ D_X,\ E_{{\rm trip},X},\
+ C_{\eqc,X},\ D_{\dom,X}.
+\]
+
+Two target-group sorts compute
+\[
+ g_s(k,T),\quad U_s(k,T),\quad E_s(k,T),
+ \qquad s\in\{L,R\}.
+\]
+\Cref{eq:compressed-Ctar,eq:exact-degree} then return
+\[
+ C_{\tar,X},\quad
+ \Delta_{\tar,X},\quad
+ C_{{\rm other},X}=C_{\eqc,X}-C_{\tar,X}
+\]
+without enumerating pairs.  Comparison sorting costs
+\[
+ O(N_{\rm rec}\log N_{\rm rec})
+\]
+and \(O(N_{\rm rec})\) external storage, with bounded-memory merge
+runs when necessary.
+
+\subsection{Mandatory invariants}
+
+Every completed run verifies:
+\begin{align}
+ c_t&=(x_t,y_t),&
+ c_t\nu(t)&=m_\alpha-m_\gamma,\label{eq:census-native-invariants}\\
+ D_X-E_{{\rm trip},X}&=C_{\eqc,X},&
+ D_X&\ge D_{\dom,X},\label{eq:census-energy-invariants}\\
+ C_{\tar,X}
+ &=C_{LL,X}+C_{RR,X}+C_{LR,X},&
+ |C_{\tar,X}|&\le\Delta_{\tar,X}E_{{\rm trip},X}.
+\label{eq:census-target-invariants}
+\end{align}
+It also requires:
+
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item uniqueness of \((\nu,x,y)\);
+\item at most one target-slot equality for every distinct
+  equal-determinant pair in a bounded direct regression;
+\item agreement of the exact degree formula with direct neighbor
+  counts in that bounded regression; and
+\item agreement of the compressed correlation with a direct ordered
+  pair sum.
+\end{enumerate}
+
+The companion script
+\texttt{experiments/tpc95\_certificate.py} checks these identities
+exactly on finite primitive integer packets.  It is a regression test,
+not evidence for an asymptotic lower bound.
+
+\subsection{Decision rules}
+
+\paragraph{Dominance go.}
+A theorem proving
+\[
+ D_{\dom,X}
+ \ge
+ X^{-\lambda+o(1)}
+ \frac{N_{0,X}^2}{Q_X}
+\]
+immediately proves the same lower bound for \(D_X\).  The
+dominant-share hypotheses of
+\cref{cor:dominant-exponent} are a sufficient route.
+
+\paragraph{Dominance stop.}
+If an exact analysis proves
+\[
+ D_{\dom,X}
+ \le
+ X^{-c+o(1)}
+ \frac{N_{0,X}^2}{Q_X}
+\]
+on an unbounded sequence for some fixed \(c>0\), then the
+modulus-only natural-dominance certificate fails on that sequence.
+The conclusion does not upper-bound \(D_X\) and does not kill signed
+phase structure.
+
+\paragraph{Shared-target stop.}
+\Cref{thm:target-loss-one} already stops the shared-target class as a
+main term for every fixed loss below one.  No computation is needed
+for that exponent conclusion.  A nonzero census value remains useful
+only as a finite normalization check or as a lower-order term.
+
+\paragraph{Remaining-pairing go.}
+For a new determinant-preserving relation, archive an exact
+conjugation-closed edge rule, prove or compute its degree without
+duplicating edges, and apply
+\cref{cor:general-degree-barrier}.  Passing the degree capacity test
+is necessary but not sufficient: a positive main term and a
+one-sided remainder estimate are still required.
+
+\paragraph{Promotion boundary.}
+Finite scaling plots for \(D_{\dom}\), \(C_{\tar}\), or a remaining
+class are \(\Lone\) diagnostics.  Promotion to \(\Ltwo\) requires a
+uniform growing-\(X\) estimate for the actual fixed-\(h_0\) packet,
+including all masks, short fibers, exceptional sectors, and the
+original global normalization.

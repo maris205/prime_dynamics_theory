@@ -1,0 +1,94 @@
+\begin{abstract}
+TPC-93 resolves the exact-content condition
+\[
+ b=c\kappa\mid \sigma U(t)
+\]
+by writing \(t=\tau+Bz\), where
+\(B=b/(b,\sigma)\).  This paper audits the two structures created by
+that substitution: the affine determinant and the additive phase.
+
+For an individually primitive pair
+\[
+ D(t)=d+\sigma t,\qquad U(t)=u+at,\qquad
+ \sigma u-ad=h_0\ne0,
+\]
+a soluble content progression gives
+\[
+ U(\tau+Bz)=B\,V(z).
+\]
+The unreduced pair \((D(\tau+Bz),U(\tau+Bz))\) has determinant
+\(Bh_0\), whereas the semi-reduced pair
+\((D(\tau+Bz),V(z))\) has determinant \(h_0\).  In the general
+abstract setting the first form can acquire the exact content
+\[
+ H=\gcd(D(\tau),\sigma B)=\gcd(B,h_0).
+\]
+After extracting it, the primitive pair has determinant \(h_0/H\),
+and
+\[
+\mu(D(\tau+Bz))\mu(U(\tau+Bz))
+=
+\mu(H)\mu(B)\mu(\widetilde D(z))\mu(V(z))
+\,\one_{(H,\widetilde D(z))=1}
+\,\one_{(B,V(z))=1}.
+\]
+Thus squareful \(B\) vanishes identically, and the apparent
+growing determinant \(Bh_0\) is a representation effect, not by
+itself a growing-determinant obstruction.  On the literal canonical
+TPC-32 support, \(b\) is a common target divisor and
+\((b,h_0)=1\); hence \(H=1\) and the reduced primitive determinant is
+exactly the prescribed \(h_0\).
+
+The determinant character becomes
+\[
+ \zeta_{\xi}\exp\!\left(
+ -2\pi i\,\frac{\varepsilon_\xi\widetilde r_\xi\ell_\xi v_\xi
+ \sigma_\xi B_\xi}{c_\xi q_X}z\right).
+\]
+Here \(\varepsilon_\xi\in\{+1,-1\}\) records the source
+polarization, and \(\widetilde r_\xi\) is the unique least-absolute
+signed lift of the low-window class \(r_\xi\bmod q_X\).
+Its exact conductor is
+\[
+ q_\xi^\ast
+ =
+ \frac{c_\xi q_X}
+ {\gcd(c_\xi q_X,
+ \widetilde r_\xi\ell_\xi v_\xi\sigma_\xi B_\xi)}.
+\]
+For prime \(q_X\), \(c_\xi<q_X\), and nonzero low-window
+\(r_\xi\), there is a conductor gap: if \(q_X\) divides the phase
+slope then \(q_\xi^\ast\le c_\xi\), while otherwise
+\(q_\xi^\ast\ge q_X\).  Exact constancy, low conductor,
+archimedean resonance, and generic oscillation are therefore
+different predicates.
+
+The literal common-target provenance is stronger:
+\[
+ b_\xi\mid M_\xi(z)-n_\xi,\qquad
+ b_\xi\mid\ell_\xi v_\xi\sigma_\xi B_\xi.
+\]
+Hence \(c_\xi\) divides the phase slope, and the conductor is exactly
+\[
+ q_\xi^\ast\in\{1,q_X\}.
+\]
+It equals \(1\) precisely on the constant branch
+\(q_X\mid\ell_\xi v_\xi\sigma_\xi B_\xi\); otherwise it equals
+\(q_X\).  Thus no nonconstant low-conductor sector survives in the
+literal packet.
+
+We give a mutually exclusive and exhaustive abstract partition into
+null, short, long constant, long low-conductor resonant/generic, and
+long high-conductor resonant/generic sectors, and prove its
+four-sector literal collapse.  Each exceptional return is charged by
+\[
+ \sum_{r\ {\rm in\ the\ sector}}
+ |\mathfrak m_{K,X}(r)|,
+\]
+not by the number of frequencies.  All determinant, conductor, and
+partition results are \(\Lzero\); by the complete
+lossless provenance theorem established in TPC-93, their identification
+with that literal packet is \(\Lone\).  No \(\Ltwo\) cancellation,
+fixed-shift prime-pair estimate, parity breach, or twin-prime
+conclusion is proved.
+\end{abstract}

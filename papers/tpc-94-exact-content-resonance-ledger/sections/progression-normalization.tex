@@ -1,0 +1,221 @@
+\section{Two-stage normalization on a content progression}
+\label{sec:progression-normalization}
+
+We first work in an abstract affine setting.  This separates the
+algebra that is always true from the stronger coprimality supplied
+by the literal TPC-32 provenance.
+
+\subsection{One progression and the forced factor}
+
+Let
+\begin{equation}
+ D(t)=d+\sigma t,\qquad U(t)=u+at,
+ \qquad \sigma u-ad=h_0\ne0.
+\label{eq:abstract-native-pair}
+\end{equation}
+Assume that the two forms are individually primitive and that
+\[
+ (a,\sigma)=1.
+\]
+For \(b\ge1\), put
+\begin{equation}
+ g=(b,\sigma),\qquad B=b/g.
+\label{eq:abstract-B}
+\end{equation}
+Then
+\[
+ b\mid\sigma U(t)\quad\Longleftrightarrow\quad B\mid U(t).
+\]
+Because \((u,a)=1\), the last congruence has no solution if
+\((a,B)>1\), and has exactly one residue class modulo \(B\) if
+\((a,B)=1\).  We henceforth work on the soluble branch and choose
+\(\tau\) with
+\[
+ U(\tau)\equiv0\pmod B.
+\]
+
+Set
+\begin{align}
+ d_B&=D(\tau),&
+ v_B&=\frac{U(\tau)}B,
+\label{eq:normalized-origins}\\
+ D_B(z)&=D(\tau+Bz)=d_B+\sigma Bz,&
+ V_B(z)&=\frac{U(\tau+Bz)}B=v_B+az.
+\label{eq:semi-reduced-pair}
+\end{align}
+The raw second value is \(U(\tau+Bz)=BV_B(z)\).
+
+\begin{proposition}[Raw and semi-reduced determinants]
+\label{prop:raw-semi-determinants}
+The unreduced pair
+\[
+ D_B(z),\qquad U(\tau+Bz)
+\]
+has determinant \(Bh_0\).  The semi-reduced pair
+\[
+ D_B(z),\qquad V_B(z)
+\]
+has determinant \(h_0\):
+\begin{equation}
+ (\sigma B)v_B-a d_B=h_0.
+\label{eq:semi-reduced-determinant}
+\end{equation}
+Moreover,
+\[
+ (v_B,a)=1,\qquad (a,\sigma B)=1.
+\]
+\end{proposition}
+
+\begin{proof}
+The raw origins are \(d_B,Bv_B\) and the raw slopes are
+\(\sigma B,aB\), so the determinant is
+\[
+ (\sigma B)(Bv_B)-(aB)d_B
+ =
+ B\{\sigma U(\tau)-aD(\tau)\}
+ =
+ Bh_0.
+\]
+Dividing the second form by \(B\) gives
+\eqref{eq:semi-reduced-determinant}.  Since \((a,B)=1\),
+\[
+ (v_B,a)=(Bv_B,a)=(U(\tau),a)=(u,a)=1.
+\]
+The last assertion follows from \((a,\sigma)=(a,B)=1\).
+\end{proof}
+
+\subsection{The robustness content in the first form}
+
+The semi-reduced first form need not be primitive in an arbitrary
+noncanonical packet.
+
+\begin{theorem}[Exact robustness content and determinant palette]
+\label{thm:robustness-content}
+Let
+\begin{equation}
+ H=\gcd(d_B,\sigma B).
+\label{eq:robustness-H-definition}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{H=\gcd(B,h_0).}
+\label{eq:robustness-H}
+\end{equation}
+Writing
+\[
+ \widetilde D_B(z)
+ =
+ \frac{D_B(z)}H
+ =
+ \frac{d_B}H+\frac{\sigma B}H z,
+\]
+the pair \((\widetilde D_B,V_B)\) is individually primitive and has
+determinant
+\begin{equation}
+ \boxed{\det(\widetilde D_B,V_B)=h_0/H.}
+\label{eq:primitive-palette-determinant}
+\end{equation}
+In particular, as \(B\) varies, the primitive determinant belongs to
+the finite set
+\[
+ \{h_0/H:H\mid |h_0|\}.
+\]
+\end{theorem}
+
+\begin{proof}
+Translation does not change the content of the first native form, so
+\[
+ (d_B,\sigma)=(d,\sigma)=1.
+\]
+Consequently
+\[
+ (d_B,\sigma B)=(d_B,B).
+\]
+The identity \eqref{eq:semi-reduced-determinant} gives
+\[
+ a d_B=\sigma Bv_B-h_0.
+\]
+Since \((a,B)=1\),
+\[
+ (d_B,B)=(ad_B,B)=(h_0,B),
+\]
+which proves \eqref{eq:robustness-H}.  Dividing the first row of
+\eqref{eq:semi-reduced-determinant} by \(H\) proves
+\eqref{eq:primitive-palette-determinant}.  The definition of \(H\)
+makes \(\widetilde D_B\) primitive, while
+\cref{prop:raw-semi-determinants} makes \(V_B\) primitive.
+\end{proof}
+
+\begin{remark}[What is a representation artifact]
+\label{rem:representation-artifact}
+The determinant \(Bh_0\) belongs to the unreduced pair in which the
+forced factor \(B\) is still inside the second value.  It is not the
+determinant of the two M\"obius-variable forms after exact content
+extraction.  The only remaining determinant change is the fixed
+content \(H\mid h_0\), and even that disappears on the literal
+canonical branch proved in \cref{sec:literal-canonical-branch}.
+\end{remark}
+
+\subsection{Exact M\"obius extraction}
+
+\begin{lemma}[Universal M\"obius content identity]
+\label{lem:universal-mobius-content}
+For positive integers \(m,n\),
+\begin{equation}
+ \mu(mn)
+ =
+ \mu(m)\mu(n)\one_{(m,n)=1}.
+\label{eq:universal-mobius-content}
+\end{equation}
+The formula includes the squareful case: if \(m\) is not squarefree,
+both sides vanish.
+\end{lemma}
+
+\begin{proof}
+If \((m,n)=1\), this is multiplicativity.  If a prime divides both,
+then \(mn\) is divisible by its square and both sides of
+\eqref{eq:universal-mobius-content} vanish because of the indicator.
+\end{proof}
+
+\begin{theorem}[Two-stage M\"obius normalization]
+\label{thm:two-stage-mobius-normalization}
+On positive values,
+\begin{align}
+ &\mu(D(\tau+Bz))\mu(U(\tau+Bz))
+\notag\\
+ &\quad=
+ \mu(H)\mu(B)
+ \mu(\widetilde D_B(z))\mu(V_B(z))
+ \one_{(H,\widetilde D_B(z))=1}
+ \one_{(B,V_B(z))=1}.
+\label{eq:two-stage-mobius-normalization}
+\end{align}
+Hence:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item if \(B\) is squareful, the original product vanishes for every
+  \(z\);
+\item if \(B\) is squarefree, then \(H\mid B\) is squarefree and the
+  surviving coefficient contains the literal signs
+  \(\mu(B)\mu(H)\) and both displayed coprimality masks;
+\item if \(H=1\), the primitive M\"obius pair has determinant exactly
+  \(h_0\).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Use
+\[
+ D(\tau+Bz)=H\widetilde D_B(z),\qquad
+ U(\tau+Bz)=BV_B(z)
+\]
+and apply \cref{lem:universal-mobius-content} twice.  The conclusions
+follow from \(H=(B,h_0)\mid B\).
+\end{proof}
+
+\begin{remark}[No mask may be silently deleted]
+Even when \(B\) and \(H\) are squarefree, the two coprimality
+indicators in \eqref{eq:two-stage-mobius-normalization} are genuine
+periodic arithmetic masks.  Absorbing their coefficients into the
+outer key is harmless; replacing either mask by \(1\) changes the
+literal sum.
+\end{remark}

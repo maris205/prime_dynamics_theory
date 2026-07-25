@@ -1,0 +1,86 @@
+\section{The corrected TPC-99 crosswalk}
+\label{sec:native-crosswalk}
+
+TPC-99 proves for the full branch census
+\begin{align}
+ \mathcal I_H(a_H,b_X)
+ ={}&
+ \frac{2H}{q_X-1}\|a_H\|_1\|b_X\|_1
+ +\mathcal R_H,
+\label{eq:correct-imported-incidence}\\
+ |\mathcal R_H|
+ \ll_K{}&
+ \sqrt{q_X}\log q_X\,\|a_H^\circ\|_2,
+\label{eq:correct-imported-remainder}
+\end{align}
+with \(\|b_X\|_1+\|b_X\|_2\ll_K1\)
+\citep{WangTPC99}.  The exact atomization gives
+\[
+ a_H=a_H^{q\mid u}+a_H^{\rm inv}.
+\]
+The positive incidence form is linear in \(a_H\).  The first term is
+returned directly by \cref{thm:opened-q-u-bound}; no centered-energy
+estimate for it is needed.
+
+\begin{theorem}[Corrected sufficient gates for the invertible
+submass]
+\label{thm:corrected-three-gates}
+Assume the literal atomization and source inverse in
+\cref{thm:lossless-atom-cells}.  After the
+\(q_X\mid u_p\) return, the remaining nonconstant resonant carrier
+is \(O(X^{o(1)}Q_X^2)\) if
+\begin{align}
+ \sum_H\frac{H}{q_X}M_H
+ &\ll X^{o(1)}Q_X^2,
+\label{eq:correct-principal-gate}\\
+ \sum_H\sqrt{\mathfrak D_H^\circ}
+ &\ll X^{o(1)}Q_X^{3/2},
+\label{eq:correct-diagonal-gate}\\
+ \sum_H\sqrt{|\mathfrak X_H^\circ|}
+ &\ll X^{o(1)}Q_X^{3/2}.
+\label{eq:correct-cross-gate}
+\end{align}
+Here every \(H\) is \(H_q(N_\beta)\), and every mass in
+\(M_H,\mathfrak D_H^\circ,\mathfrak X_H^\circ\) is the opened
+coefficient \eqref{eq:atom-weight}.
+\end{theorem}
+
+\begin{proof}
+Apply \eqref{eq:correct-imported-incidence} to
+\(a_H^{\rm inv}\).  The principal term is controlled by
+\eqref{eq:correct-principal-gate}.  From
+\eqref{eq:correct-centered-energy},
+\[
+ \|(a_H^{\rm inv})^\circ\|_2
+ \le
+ \sqrt{\mathfrak D_H^\circ}
+ +\sqrt{|\mathfrak X_H^\circ|}.
+\]
+The last two gates therefore give
+\[
+ \sum_H\|(a_H^{\rm inv})^\circ\|_2
+ \ll X^{o(1)}Q_X^{3/2}.
+\]
+Since \(q_X\asymp Q_X\), the factor in
+\eqref{eq:correct-imported-remainder} returns
+\(O(X^{o(1)}Q_X^2)\).  Add the already controlled
+\(q_X\mid u_p\) atom submass.
+\end{proof}
+
+\begin{remark}[No diagonal theorem is hidden]
+Fine-cell injectivity identifies the diagonal term but does not
+bound its atom weights.  In particular, splitting \(w_\beta\) into
+\(w_{\beta,z}\) does not reduce the original point mass at
+\(\omega_\beta\): all cross terms between its \(z\)-atoms reappear
+in \(\mathfrak X_H^\circ\).
+\end{remark}
+
+\begin{remark}[Sufficient positive route only]
+Neither \eqref{eq:correct-principal-gate},
+\eqref{eq:correct-diagonal-gate}, nor
+\eqref{eq:correct-cross-gate} is proved here.  A proof-carrying
+polynomial obstruction in the corresponding termwise bounds would
+stop this sufficient principal-plus-absolute-remainder
+implementation, not the original signed M\"obius sum, which retains
+phase constants and cancellation across frequencies and branches.
+\end{remark}

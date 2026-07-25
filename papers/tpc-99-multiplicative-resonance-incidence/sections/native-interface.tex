@@ -1,0 +1,200 @@
+\section{The literal native-multiplier interface}
+\label{sec:native-interface}
+
+\subsection{The frequency-free branch key}
+
+The resolved TPC-93 key
+\(\xi=(\theta,c,\kappa,r)\) contains the low frequency \(r\).
+It must not be inserted into a census and then paired with every
+frequency a second time.  We therefore use the frequency-free
+TPC-94 branch
+\[
+ \beta=(\theta,c,\kappa).
+\]
+Let \(\mathfrak B_X^{\mathrm{nc}}\) be the finite set of soluble,
+nonempty literal branches \(\beta\) for which all inherited masks
+hold,
+\[
+ c\mid\Omega_\beta,\qquad q_X\nmid\Omega_\beta.
+\]
+Throughout this section every sum over \(\beta\) is restricted to
+\(\mathfrak B_X^{\mathrm{nc}}\).
+Here \(\theta\) retains the polarization, opposite row,
+\(\ell,j,\sigma,v\), interval component, actual masks, projector
+labels, and all continuous separation data.  It fixes the reflected
+ultra family, not one value of the opened divisor: the latter is
+\(U_\theta(t)\) along the affine fiber.
+
+For every soluble, nonempty branch put
+\[
+ b_\beta=c\kappa,\qquad
+ N_\beta=\#I_\beta^\ast,\qquad
+ \Omega_\beta=\ell_\theta v_\theta\sigma_\theta B_\beta.
+\]
+Thus \(N_\beta\) is the cardinality of the resolved
+\(z\)-fiber \(I_\beta^\ast\); it is not an orbit length in \(j\).
+Let \(A_{\beta,X}\) be the exact TPC-94 outer coefficient and let
+\begin{equation}
+ \mathcal A_{\beta,X}
+ =
+ \sum_{z\in I_\beta^\ast}
+ |\mathcal W_{\beta,X}(z)|
+ \mu^2(\widetilde D_\beta(z))
+ \mu^2(V_\beta(z)).
+\label{eq:uniform-branch-mass}
+\end{equation}
+The exact branch sum satisfies
+\[
+ |S_{\beta,X}(r)|\le\mathcal A_{\beta,X}
+ \quad\text{for every }r,
+\]
+so the frequency-independent proof-carrying weight is
+\begin{equation}
+ w_{\beta,X}
+ =
+ |A_{\beta,X}|\,\mathcal A_{\beta,X}.
+\label{eq:base-branch-weight}
+\end{equation}
+This is the literal multiplier-mass return of TPC-94, not a new
+uniformity assumption \citep{WangTPC94}.
+
+On the nonconstant branch, literal provenance gives
+\(c\mid\Omega_\beta\) and \(q_X\nmid\Omega_\beta\).  Define
+\begin{equation}
+ \omega_\beta
+ =
+ \varepsilon_\theta\frac{\Omega_\beta}{c}
+ \pmod{q_X}
+ \in\mathbb F_{q_X}^{\times}.
+\label{eq:native-omega}
+\end{equation}
+The sign remains in the source key even though \(E_H=-E_H\).
+Branches with \(N_\beta>q_X\) have no resonant nonzero frequency by
+\cref{lem:exact-resonance-window}; they contribute zero to the
+carrier below and are not discarded from the full signed formula.
+
+For each exact width \(H\), define
+\begin{equation}
+ a_H(\omega)
+ =
+ \sum_{\substack{\beta:\ 1\le N_\beta\le q_X\\
+  H_{q_X}(N_\beta)=H\\
+  \omega_\beta=\omega}}
+ w_{\beta,X}.
+\label{eq:native-census}
+\end{equation}
+Equal multipliers are grouped only after every branch has received
+its own weight; the provenance bag remains recoverable.
+
+Let
+\[
+ b_X(r)=|\mathfrak m_{K,X}(r)|
+ \one_{\{0<d_{q_X}(r,0)\le R_X\}},
+\]
+extended by zero to \(G\).  TPC-93 gives
+\begin{equation}
+ \|b_X\|_1\ll_K1,\qquad
+ \|b_X\|_2\ll_K1.
+\label{eq:filter-norms}
+\end{equation}
+
+\begin{definition}[Positive literal resonance carrier]
+\label{def:positive-carrier}
+Set
+\begin{equation}
+ \mathcal C_{\mathrm{res},X}^{\mathrm{abs}}
+ =
+ \sum_{\substack{\beta:\ 1\le N_\beta\le q_X}}
+ w_{\beta,X}
+ \sum_{r\in G}
+ b_X(r)\,
+ \one_{E_{H_{q_X}(N_\beta)}}(r\omega_\beta).
+\label{eq:positive-carrier}
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Literal positive majorant and exact census identity]
+\label{thm:literal-carrier}
+The absolute value of the signed nonconstant resonant contribution
+is at most \(\mathcal C_{\mathrm{res},X}^{\mathrm{abs}}\), and
+\begin{equation}
+ \boxed{
+ \mathcal C_{\mathrm{res},X}^{\mathrm{abs}}
+ =
+ \sum_{H=1}^{(q_X-1)/2}
+ \mathcal I_H(a_H,b_X).}
+\label{eq:carrier-sum}
+\end{equation}
+For each \(H\),
+\begin{align}
+ \mathcal I_H(a_H,b_X)
+ ={}&
+ \frac{2H}{q_X-1}
+ \|a_H\|_1\|b_X\|_1
+ +\mathcal R_H(a_H,b_X),
+\label{eq:literal-principal-remainder}\\
+ |\mathcal R_H(a_H,b_X)|
+ \ll_K{}&
+ \sqrt{q_X}\log q_X\,\|a_H^\circ\|_2.
+\label{eq:literal-remainder-bound}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+In the exact TPC-94 sector formula, the outer coefficient and branch
+mass obey
+\[
+ |A_{\beta,X}\mathfrak m_{K,X}(r)
+   \zeta_{\beta,r}S_{\beta,X}(r)|
+ \le w_{\beta,X}b_X(r).
+\]
+The unit phase has disappeared only after taking absolute values.
+\Cref{lem:exact-resonance-window} supplies the indicator in
+\eqref{eq:positive-carrier}; for \(N_\beta>q_X\) it is identically
+zero.  This proves the majorization without pairing one branch with
+any unintended frequency.  Grouping the finite sum by the exact
+pair \((H,\omega_\beta)\) gives the identity
+\eqref{eq:carrier-sum}.  Now apply
+\cref{thm:principal-nonprincipal,cor:spectral-bound} and
+\eqref{eq:filter-norms}.
+\end{proof}
+
+\begin{corollary}[A concrete sufficient gate]
+\label{cor:sufficient-gate}
+The complete resonance carrier is
+\(O(X^{o(1)}Q_X^2)\) if
+\begin{align}
+ \sum_H\frac{H}{q_X}\|a_H\|_1
+ &\ll X^{o(1)}Q_X^2,
+\label{eq:principal-gate}\\
+ \sum_H\|a_H^\circ\|_2
+ &\ll
+ \frac{X^{o(1)}Q_X^2}
+ {\sqrt{q_X}\log q_X}.
+\label{eq:dispersion-gate}
+\end{align}
+Since \(q_X\asymp Q_X\), the second target is
+\[
+ \sum_H\|a_H^\circ\|_2
+ \ll
+ X^{o(1)}Q_X^{3/2}.
+\]
+\end{corollary}
+
+\begin{proof}
+Sum \eqref{eq:literal-principal-remainder} over \(H\), use
+\eqref{eq:filter-norms}, and insert
+\eqref{eq:principal-gate}--\eqref{eq:dispersion-gate}.
+\end{proof}
+
+\begin{remark}[Sufficient, not necessary]
+The absolute carrier discards signed cancellation inside each affine
+sum and across native keys.  Failure of
+\eqref{eq:principal-gate} or \eqref{eq:dispersion-gate} is not a
+lower bound for the carrier and does not disprove the original
+signed route.  A proof-carrying polynomial obstruction in one of
+the actual termwise bounds only stops this sufficient
+principal-plus-absolute-remainder implementation; a sharper
+filter-sensitive estimate could retain cancellation between those
+pieces.
+\end{remark}

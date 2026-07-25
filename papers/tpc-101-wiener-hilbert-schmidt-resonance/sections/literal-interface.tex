@@ -1,0 +1,120 @@
+\section{Return to the frequency-free literal census}
+\label{sec:literal-interface}
+
+We use the corrected TPC-99 crosswalk.  Its base key is
+\[
+ \beta=(\theta,c,\kappa),
+\]
+not the resolved key \((\theta,c,\kappa,r)\) containing a frequency.
+For each soluble nonconstant branch, put
+\[
+ w_{\beta,X}
+ =
+ |A_{\beta,X}|\mathcal A_{\beta,X},
+\]
+where \(A_{\beta,X}\) is the exact outer coefficient and
+\(\mathcal A_{\beta,X}\) is the uniform absolute mass of the
+resolved \(z\)-fiber.  Thus \(w_{\beta,X}\) is independent of \(r\)
+and includes one copy of every source, content, projector, mask, and
+global-normalization factor.
+
+For
+\[
+ 1\le N_\beta\le q_X,\qquad
+ H_\beta=H_{q_X}(N_\beta),\qquad
+ \omega_\beta
+ =
+ \varepsilon_\theta\frac{\Omega_\beta}{c}
+ \pmod{q_X},
+\]
+TPC-99 defines
+\begin{equation}
+ a_H(\omega)
+ =
+ \sum_{\substack{\beta:H_\beta=H\\
+                  \omega_\beta=\omega}}
+ w_{\beta,X}.
+\label{eq:literal-census}
+\end{equation}
+The branch length \(N_\beta\) is the resolved \(z\)-fiber
+cardinality; \(j\) is already retained in \(\theta\).  Branches with
+\(N_\beta>q_X\) have no resonant nonzero frequency.
+
+The fixed positive frequency weight is
+\[
+ b_X(r)
+ =
+ |\mathfrak m_{K,X}(r)|
+ \one_{\{0<d_{q_X}(r,0)\le R_X\}},
+\qquad
+ B_X=\|b_X\|_1\ll_K1.
+\]
+The phase of \(\mathfrak m_{K,X}\) is lost only because this is the
+positive carrier, not the original signed low window.
+
+\begin{theorem}[Width-sensitive literal carrier bound]
+\label{thm:literal-width-bound}
+Let \(\mathcal C_{\mathrm{res},X}^{\mathrm{abs}}\) be the corrected
+TPC-99 positive nonconstant resonance carrier.  Then
+\begin{align}
+ \mathcal C_{\mathrm{res},X}^{\mathrm{abs}}
+ \le{}&
+ B_X
+ \sum_H\frac{2H}{q_X-1}\|a_H\|_1
+\notag\\
+ &+
+ B_X\sum_Hg_{q_X}(H)\|a_H^\circ\|_2.
+\label{eq:literal-width-bound}
+\end{align}
+In particular, it is \(O(X^{o(1)}Q_X^2)\) if
+\begin{align}
+ \sum_H\frac{H}{q_X}\|a_H\|_1
+ &\ll X^{o(1)}Q_X^2,
+\label{eq:new-principal-gate}\\
+ \sum_Hg_{q_X}(H)\|a_H^\circ\|_2
+ &\ll X^{o(1)}Q_X^2.
+\label{eq:new-centered-gate}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+TPC-99 gives the exact positive-census identity
+\[
+ \mathcal C_{\mathrm{res},X}^{\mathrm{abs}}
+ =
+ \sum_H\cI_H(a_H,b_X).
+\]
+Apply \eqref{eq:principal-remainder} and then
+\cref{thm:wiener-hs} to every width.  The first gate is sufficient
+for the displayed principal term because \(q_X-1\asymp q_X\) and
+\(B_X\ll_K1\); the second controls the remaining sum.
+\end{proof}
+
+\begin{corollary}[Strict weakening of the old centered gate]
+\label{cor:old-implies-new}
+The TPC-99 condition
+\[
+ \sum_H\|a_H^\circ\|_2
+ \ll
+ \frac{X^{o(1)}Q_X^2}{\sqrt{q_X}\log q_X}
+\]
+implies \eqref{eq:new-centered-gate}.  The converse is false even at
+the level of abstract nonnegative censuses.
+\end{corollary}
+
+\begin{proof}
+Use \(g_{q_X}(H)\le\sqrt{q_X}\); the logarithm is a soft factor.  For
+the converse, take a nonnegative point-mass census at one width
+\(H=O(1)\), with centered norm of order \(Q_X^2\).  The new left
+side is \(O(Q_X^2)\),
+whereas the old target requires the norm to be
+\(O(Q_X^{3/2+o(1)})\).
+\end{proof}
+
+\begin{remark}[No positive carrier identity with the signed sum]
+The crosswalk covers every frequency-free branch once and preserves
+its exact magnitude and support.  It still uses
+\(|A_{\beta,X}S_{\beta,X}(r)\mathfrak m_{K,X}(r)|\), so
+\eqref{eq:literal-width-bound} is an upper bound, not an equality
+with the signed affine M\"obius contribution.
+\end{remark}

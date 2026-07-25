@@ -1,0 +1,73 @@
+\begin{abstract}
+TPC-98 returns the constant-phase branch at the endpoint scale, and
+TPC-99 rewrites the remaining conductor-\(q_X\) resonance as a
+multiplicative incidence problem.  A literal provenance audit shows
+that its weight is attached to a resolved branch
+\(\beta=(\theta,c,\kappa)\), not to a free orbit point.  The native
+key \(\theta\) fixes \(j_\theta,\sigma_\theta\), while the actual
+opened divisor and moving source row vary along the resolved
+\(z\)-fiber.  We build the multiplier linearization only after
+respecting this indexing.
+
+First refine the branch absolute mass exactly into opened atoms
+\[
+ p=(\beta,z),\qquad
+ t_p=\tau_\beta+B_\beta z,\qquad
+ u_p=U_\theta(t_p),\qquad
+ m_p=M_\theta(t_p).
+\]
+Their source identity is
+\[
+ m_pj_\theta+h_0=\sigma_\theta u_p.
+\]
+The branch length remains
+\(N_\beta=\#I_\beta^\ast\), and its TPC-99 resonance width is
+\(\mathsf H_\beta=H_{q_X}(N_\beta)\); neither quantity is recomputed from an
+opened-atom cell.
+
+On the nonconstant branch, split the opened atoms according to
+\(q_X\mid u_p\).  If \(q_X\mid u_p\), then
+\(q_X\mid m_pj_\theta+h_0\).  Strong no-wrap leaves at most one
+orbit point for each actual moving source row.  Reassembling the
+source inverse, both polarizations, all content and projector
+children, masks, and low-frequency multiplier mass gives
+\[
+ \boxed{\mathcal L^{q\mid u}_{K,R,X}
+ \ll X^{o(1)}Q_X^2.}
+\]
+
+If \(q_X\nmid u_p\), the native multiplier of \(\beta\) satisfies
+\[
+ \omega_\beta
+ =
+ \varepsilon_\beta\frac{\Omega_\beta}{c_\beta}
+ \equiv
+ A_p(m_pj_\theta+h_0)\pmod{q_X},
+\quad
+ A_p=\varepsilon_\beta\ell_\beta v_\beta B_\beta
+ (c_\beta u_p)^{-1}.
+\]
+The integer provenance is
+\(\Omega_\beta/c_\beta
+=\kappa_\beta\ell_\beta v_\beta(\sigma_\beta/g_\beta)\);
+\(\ell vB/c\) need not be integral.  We augment every atom by its
+TPC-93 child-to-source inverse and form cells by deleting only the
+coordinate \(j_\theta\).  All other branch, \(z\)-fiber, source,
+content, mask, and width labels remain.  Thus a cell and \(j\)
+recover the unique atom.  In fact the retained physical values
+\(m_p,u_p,\sigma_p\) and the source identity already recover \(j\),
+so these maximally literal cells are singletons.  Their internal
+injectivity is therefore exact but vacuous; every distinct-atom
+collision remains in the cross-cell ledger.
+
+The exact TPC-99 census is recovered because the opened weights
+satisfy \(w_\beta=\sum_z w_{\beta,z}\).  Its centered energy splits
+into an opened-atom diagonal ledger and an explicit cross-cell
+collision excess.  Cross-cell pairs include different \(z\)'s of
+the same branch as well as different branches.  The resulting
+principal, diagonal, and cross-cell estimates are sufficient gates,
+not theorems proved here.  The finite identities are \(\Lzero\);
+the complete \(q_X\mid u_p\) return and literal crosswalk are
+\(\Lone\).  No \(\Ltwo\) fixed-shift cancellation, parity
+breakthrough, or prime-pair theorem is claimed.
+\end{abstract}

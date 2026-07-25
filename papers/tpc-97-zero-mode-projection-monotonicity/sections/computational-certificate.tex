@@ -1,0 +1,50 @@
+\section{Executable finite certificate}
+\label{sec:computational-certificate}
+
+The script
+\begin{center}
+\texttt{experiments/check\_projection\_identities.py}
+\end{center}
+is a finite regression certificate for the algebraic statements in
+this paper.  It uses exact rational arithmetic to check:
+
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item every set partition of frames of size at most five and every
+  coefficient in \(\{-2,-1,0,1,2\}^\Omega\), excluding only the
+  all-zero coefficient, for zero-mode preservation, Pythagoras,
+  within-block variance, and flatness monotonicity;
+\item every coordinate projection on frames of size at most five
+  for the exact constant-defect identity, the sharp Cauchy bound,
+  and rank-one constant completion; and
+\item the weighted versus unweighted three-point counterexample.
+\end{enumerate}
+
+It also generates seeded random complex orthogonal projections.  Safe
+projectors are built by including the normalized constant vector in
+an orthonormal basis; defective projectors are repaired by the
+rank-one formula in \eqref{eq:completed-projection}.  The random
+checks cover the full identities, norm monotonicity, defect bound,
+and repaired zero-mode preservation.
+
+The archived run completed
+\[
+ 172{,}480
+\]
+exact block cases,
+\[
+ 111{,}110
+\]
+exact coordinate-projection cases, including
+\[
+ 107{,}205
+\]
+nontrivial sharp-equality residuals, and \(1{,}000\) seeded random
+cases in each of the safe and defective classes.  Every check
+passed.
+
+\begin{remark}[Role of the computation]
+The script is not evidence for any asymptotic arithmetic claim.  It
+guards orientation, conjugation, block-weight, zero-branch, and
+normalization conventions in exact finite models.  The proofs in
+the preceding sections are the mathematical justification.
+\end{remark}

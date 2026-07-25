@@ -1,0 +1,53 @@
+\section{Route and exponent ledger}
+\label{sec:route-ledger}
+
+The positive exceptional route now reads
+\[
+\begin{array}{c|c}
+\text{piece}&\text{status}\\ \hline
+\text{conductor one}
+ &O(X^{o(1)}Q_X^2)\text{ in TPC-98}\\
+q_X\nmid\Omega,\ q_X\mid u
+ &O(X^{o(1)}Q_X^2)\text{ in TPC-100}\\
+\text{principal nonconstant resonance}
+ &\displaystyle\sum_H\frac{2H}{q_X-1}
+ M_H^{\mathrm{inv}}\text{ gate}\\
+\text{centered nonconstant resonance}
+ &\displaystyle\sum_Hg_{q_X}(H)
+ \|(a_H^{\mathrm{inv}})^\circ\|_2\text{ gate}.
+\end{array}
+\]
+The centered row is strictly sharper than the TPC-99
+worst-eigenvalue return.  Under a subpower opened-atom cap, its
+diagonal part follows from the principal row by
+\cref{thm:principal-diagonal-transfer}.  The remaining positive
+obligation is therefore:
+\begin{enumerate}[leftmargin=2em]
+\item verify the literal principal mass;
+\item verify the normalized opened-atom cap; and
+\item control the width-weighted cross-cell excess
+  \eqref{eq:weighted-cross-gate}.
+\end{enumerate}
+If the atom cap fails at polynomial scale, it must be entered in the
+physical budget and the diagonal gate reopens.  If proof-carrying
+cross-cell alignment makes \eqref{eq:weighted-cross-gate} fail at a
+polynomial scale, this termwise positive modulus-incidence
+implementation stops and one must use a sharper filter-sensitive
+bound or retain signed affine arithmetic.
+
+The ledgers remain independent:
+\[
+ \lambda_D\le2\eta_Z
+\]
+is the determinant/zero-mode compatibility, whereas
+\[
+ \Lambda_{\mathrm{phys}}<\frac1{400}
+\]
+is the strict endpoint-loss condition.  No part of the
+Hilbert--Schmidt gain is charged twice as a physical exponent, and
+equality at \(1/400\) remains a stop.
+
+TPC-18 full-block reassembly and primitive determinant dispersion
+remain independent.  The present theorem improves one resonance
+operator estimate; it proves neither global reassembly nor
+fixed-\(h_0\) M\"obius cancellation.

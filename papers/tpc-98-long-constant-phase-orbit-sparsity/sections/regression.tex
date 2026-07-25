@@ -1,0 +1,27 @@
+\section{Exact finite regression}
+\label{sec:regression}
+
+The script
+\texttt{experiments/tpc98\_certificate.py} checks the finite
+divisibility mechanism independently of asymptotic notation.  It
+enumerates nonzero signed shifts, primes, primitive rows, orbit
+intervals shorter than the prime, opened factorizations
+\(mj+h_0=u\sigma\), content steps \(B\), and native factors
+\(\ell,v\).  It verifies:
+\begin{enumerate}[leftmargin=2em]
+\item every orbit congruence has at most one point in the interval;
+\item literal common-target provenance gives
+  \(B\le b\le|m-n|<q\);
+\item on every active literal key,
+  \(q\mid\ell v\sigma B\) is equivalent to \(q\mid\sigma\);
+\item every enumerated constant key comes from the unique orbit
+  congruence \(mj+h_0\equiv0\pmod q\); and
+\item the absolute exact-content multiplicity is bounded by
+  \(\tau(G)^2\).
+\end{enumerate}
+
+The regression is deliberately finite.  It tests exact logic,
+signs of \(h_0\), both row orientations, and consequences of the
+imported primitive-content provenance; it does
+not test the asymptotic row \(\ell^1\) estimate, divisor bounds, or
+any M\"obius cancellation theorem.

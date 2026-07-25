@@ -1,0 +1,60 @@
+\section{The literal constant-phase equivalence}
+\label{sec:dichotomy}
+
+One soluble exact-content key has
+\[
+ b=c\kappa,\qquad
+ B=\frac{b}{(b,\sigma)},
+\]
+and phase slope
+\begin{equation}
+ \Omega=\ell v\sigma B.
+\label{eq:phase-slope}
+\end{equation}
+Literal target provenance gives \(c\mid\Omega\), and TPC-94 therefore
+reduces the algebraic phase conductor to \(1\) or \(q_X\).  For every
+nonzero low frequency, conductor \(1\) is exactly \(q_X\mid\Omega\).
+
+\begin{theorem}[Literal constant-phase equivalence]
+\label{thm:constant-dichotomy}
+On every opened-active literal key,
+\begin{equation}
+ q_X\mid\Omega
+ \quad\Longleftrightarrow\quad
+ q_X\mid\sigma.
+\label{eq:constant-equivalence}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+\Cref{lem:content-step-below-q} gives \(0<B<q_X\).
+The prime \(q_X\) divides neither \(\ell\) nor \(v\) by
+\cref{lem:padding-consequences}.  Euclid's lemma applied to
+\(\Omega=\ell v\sigma B\) gives the forward implication in
+\eqref{eq:constant-equivalence}; the reverse implication is
+immediate.
+\end{proof}
+
+\begin{corollary}[No hidden progression-step alternative]
+\label{cor:qB-return}
+The general algebraic possibility \(q_X\mid B\) is empty on
+opened-active literal support.  Thus every opened-active
+conductor-one key, including a one-point key, retains the target
+divisibility \(q_X\mid\sigma\).
+\end{corollary}
+
+\begin{remark}[Algebraic conductor versus interval constancy]
+On a singleton interval every character is pointwise constant, even
+when its algebraic conductor is \(q_X\).  The sector treated here is
+the conductor-one sector \(q_X\mid\Omega\), not the larger class of
+all characters whose restriction happens to be constant on one
+point.  Those nonconstant-conductor singletons remain in the short
+sector.
+\end{remark}
+
+\begin{remark}[Why primality matters]
+For a composite padding modulus, its prime factors could split among
+\(\ell,v,\sigma,B\), and \eqref{eq:constant-equivalence} would
+not follow.  The prime no-wrap choice is doing genuine arithmetic
+work here, although it remains an auxiliary embedding.
+\end{remark}

@@ -1,0 +1,160 @@
+\section{Prefix-complete aggregate reassembly}
+\label{sec:aggregate}
+
+Let \(\Theta_X\) be a finite native-key set.  For each
+\(\theta\in\Theta_X\), let \(\rho_{\theta,X}\ge0\) be the literal
+origin, \(N_{\theta,X}\ge1\) the returned length, and
+\[
+ b_{\theta,X}(n),\qquad 1\le n\le N_{\theta,X},
+\]
+the complete local coefficient after retaining the affine M\"obius
+factors, periodic factors, smooth weight, residue and coprimality
+masks, and the additive determinant phase when present.  Define
+\begin{align}
+ S_{\theta,X}(N)
+ &:=
+ \sum_{n\le N}b_{\theta,X}(n),
+ \label{eq:fiber-sum}\\
+ L_{\theta,X}^{(\rho)}(N)
+ &:=
+ \sum_{n\le N}
+ \frac{b_{\theta,X}(n)}{\rho_{\theta,X}+n}.
+\label{eq:fiber-anchored-primitive}
+\end{align}
+The symbol \(\rho_{\theta,X}\) is an interval origin; it is unrelated
+to the Fourier frequency \(r\) used in the TPC-93 low window.
+
+\begin{theorem}[Exact anchored packet identity]
+\label{thm:aggregate-identity}
+Suppose the literal raw packet has the exact reassembly
+\begin{equation}
+ Z_X=
+ \sum_{\theta\in\Theta_X}
+ c_{\theta,X}
+ S_{\theta,X}(N_{\theta,X})
+ +E_{\mathrm{ret},X}.
+\label{eq:literal-reassembly}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ Z_X=
+ \sum_{\theta\in\Theta_X}
+ c_{\theta,X}N_{\theta,X}
+ \cT_{\rho_{\theta,X},N_{\theta,X}}
+ (L_{\theta,X}^{(\rho)})
+ +E_{\mathrm{ret},X}.}
+\label{eq:aggregate-signed}
+\end{equation}
+In particular,
+\begin{align}
+ |Z_X|
+ \le{}&
+ \sum_{\theta\in\Theta_X}
+ |c_{\theta,X}|N_{\theta,X}
+ \left|
+ \cT_{\rho_{\theta,X},N_{\theta,X}}
+ (L_{\theta,X}^{(\rho)})
+ \right|
+ \notag\\
+ &+|E_{\mathrm{ret},X}|.
+\label{eq:aggregate-absolute}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Apply \cref{thm:anchored-identity} to every finite fiber in
+\eqref{eq:literal-reassembly}.  No limiting interchange is required.
+The inequality follows after the exact outer sum has been formed.
+\end{proof}
+
+\begin{remark}[Literal TPC-93 convention]
+\label{rem:tpc93-convention}
+In a TPC-93 application the native key must include the low Fourier
+frequency, polarization, exact-content child, masks, and interval
+component.  The sign in the exact relation
+\[
+ Z_X=-\operatorname{Low}_X+\operatorname{Tail}_X,
+\]
+together with the reconstruction multiplier and each
+frequency-dependent unit phase, stays in \(c_{\theta,X}\) or
+\(b_{\theta,X}\) according to its literal location.  The returned
+remainder is then
+\[
+ E_{\mathrm{ret},X}=\operatorname{Tail}_X,
+\]
+not an invented content error.  The complete source--child inverse
+and multiplicity reconstruction established in TPC-93 supplies this
+\(\Lone\) attachment \citep{WangTPC93}.
+\end{remark}
+
+\begin{corollary}[Quantitative zero-mode certificate]
+\label{cor:zero-mode-certificate}
+At the critical physical scales, if
+\begin{align}
+ &\sum_{\theta\in\Theta_X}
+ |c_{\theta,X}|N_{\theta,X}
+ \left|
+ \cT_{\rho_{\theta,X},N_{\theta,X}}
+ (L_{\theta,X}^{(\rho)})
+ \right|
+ +|E_{\mathrm{ret},X}|
+ \notag\\
+ &\hspace{35mm}\le
+ X^{-\eta_Z+o(1)}Q_X^2,
+\label{eq:aggregate-target}
+\end{align}
+then
+\[
+ |Z_X|\le X^{-\eta_Z+o(1)}Q_X^2.
+\]
+\end{corollary}
+
+\begin{proof}
+Use \eqref{eq:aggregate-absolute}.
+\end{proof}
+
+\begin{remark}[Signed aggregate is the minimal target]
+\label{rem:signed-minimal}
+The absolute certificate \eqref{eq:aggregate-target} is sufficient,
+not necessary.  The exact minimal object is the signed outer sum in
+\eqref{eq:aggregate-signed}.  Taking absolute values before native
+outer reassembly may lose a fixed power.  Any argument exploiting
+outer cancellation must still retain every native coefficient and
+origin.
+\end{remark}
+
+\begin{remark}[Bounded fibers]
+\label{rem:bounded-fibers}
+A fiber with \(N_{\theta,X}=O(1)\) has no internal asymptotic
+parameter.  It remains in \eqref{eq:aggregate-signed} exactly and
+must be controlled by its coefficient mass or by cancellation after
+outer reassembly.  Deleting it because a long-fiber theorem does not
+apply changes \(Z_X\).
+\end{remark}
+
+\begin{proposition}[Coefficient-mass promotion rule]
+\label{prop:coefficient-mass}
+Suppose a subset \(\Theta_X^\star\) satisfies
+\[
+ \left|
+ \cT_{\rho_{\theta,X},N_{\theta,X}}
+ (L_{\theta,X}^{(\rho)})
+ \right|
+ \le\varepsilon_X
+ \quad(\theta\in\Theta_X^\star).
+\]
+Its absolute contribution is at most
+\[
+ \varepsilon_X
+ \sum_{\theta\in\Theta_X^\star}
+ |c_{\theta,X}|N_{\theta,X}.
+\]
+Therefore a uniform \(o(1)\) defect is useful only relative to the
+actual weighted outer mass.
+\end{proposition}
+
+\begin{proof}
+This is the corresponding part of
+\eqref{eq:aggregate-absolute}.
+\end{proof}

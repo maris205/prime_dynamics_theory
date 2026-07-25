@@ -1,0 +1,250 @@
+\section{Exact-content expansion and progression resolution}
+\label{sec:content-progression}
+
+\subsection{Content inversion inside the low window}
+
+The content in \eqref{eq:affine-native-content} is
+\[
+ G_\theta(t)=\gcd(
+ \sigma_\theta U_\theta(t),P_\theta).
+\]
+For \(c\ge1\), exact common-divisor inversion gives
+\begin{equation}
+ \one_{G_\theta(t)=c}
+ =
+ \sum_{\kappa\ge1}\mu(\kappa)
+ \one_{c\kappa\mid\sigma_\theta U_\theta(t)}
+ \one_{c\kappa\mid P_\theta}.
+\label{eq:content-exact-projector}
+\end{equation}
+The sum is finite.
+
+\begin{lemma}[Phase-compatible content inversion]
+\label{lem:phase-content-inversion}
+For every native key \(\theta\), affine parameter \(t\), and
+frequency \(r\),
+\begin{align}
+ &\one_{G_\theta(t)\le C_X}
+ e_{q_X}\!\left(
+ -r\varepsilon_\theta
+ \frac{M_\theta(t)-n_\theta}{G_\theta(t)}\right)
+\notag\\
+ &\quad=
+ \sum_{1\le c\le C_X}\sum_{\kappa\ge1}
+ \mu(\kappa)
+ \one_{c\kappa\mid P_\theta}
+ \one_{c\kappa\mid\sigma_\theta U_\theta(t)}
+ e_{cq_X}\!\left(
+ -r\varepsilon_\theta
+ (M_\theta(t)-n_\theta)\right).
+\label{eq:phase-content-inversion}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Fix \(c\).  If \(c\kappa\) divides both targets, primitive target
+support implies \(c\mid M_\theta(t)-n_\theta\), so the lifted
+character on the right is well defined.  Summing \(\mu(\kappa)\)
+over divisors of \(G_\theta(t)/c\) vanishes unless
+\(G_\theta(t)=c\).  On the surviving term,
+\[
+ e_{cq_X}\!\left(
+ -r\varepsilon_\theta(M_\theta(t)-n_\theta)\right)
+ =
+ e_{q_X}\!\left(
+ -r\varepsilon_\theta
+ \frac{M_\theta(t)-n_\theta}{c}\right).
+\]
+Summing \(c\le C_X\) proves the identity.
+\end{proof}
+
+\begin{theorem}[Complete content-expanded low window]
+\label{thm:content-expanded-window}
+With the notation of \cref{thm:decorated-affine-export},
+\begin{align}
+ \Low_{K,R}(A_X)
+ ={}&
+ \sum_{\theta\in\Theta_X}
+ \sum_{1\le c\le C_X}
+ \sum_{\kappa\ge1}
+ \sum_{r\in\Win_X(R)}
+ c_{\theta,X}\mu(\kappa)
+ \mathfrak m_{K,X}(r)
+ \one_{c\kappa\mid P_\theta}
+ \notag\\
+ &\quad\times
+ \sum_{t\in I_\theta}
+ \mu(D_\theta(t))\mu(U_\theta(t))
+ \chi_\theta(t)W_{\theta,X}(t)
+ \one_{c\kappa\mid\sigma_\theta U_\theta(t)}
+ \notag\\
+ &\quad\times
+ e_{cq_X}\!\left(
+ -r\varepsilon_\theta
+ (M_\theta(t)-n_\theta)\right).
+\label{eq:content-expanded-window}
+\end{align}
+Every sum is finite.  In particular, the right side is one coherent
+outer sum; the \((c,\kappa,r)\) terms have not been replaced by their
+absolute values.
+\end{theorem}
+
+\begin{proof}
+Expand \(\Ker_{K,R,X}\) in
+\eqref{eq:decorated-affine-export}, apply
+\cref{lem:phase-content-inversion}, and interchange finite sums.
+\end{proof}
+
+\begin{remark}[Why \(c\) and \(\kappa\) are different keys]
+The integer \(c\) is the candidate exact content and determines the
+phase modulus \(cq_X\).  The integer \(\kappa\) is a signed
+inclusion--exclusion variable.  Replacing \(c\) by
+\(b=c\kappa\) in the phase would change the normalized determinant
+character.
+\end{remark}
+
+\subsection{Solving the native divisibility condition}
+
+Fix an active tuple \((\theta,c,\kappa)\), put
+\begin{equation}
+ b=c\kappa,\qquad
+ g_{\theta,b}=(b,\sigma_\theta),\qquad
+ B_{\theta,b}=\frac{b}{g_{\theta,b}}.
+\label{eq:progression-B}
+\end{equation}
+
+\begin{lemma}[One progression or none]
+\label{lem:one-progression}
+The native divisibility condition satisfies
+\begin{equation}
+ b\mid\sigma_\theta U_\theta(t)
+ \quad\Longleftrightarrow\quad
+ B_{\theta,b}\mid U_\theta(t).
+\label{eq:progression-divisibility-reduction}
+\end{equation}
+Moreover:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item if \((a_\theta,B_{\theta,b})>1\), there is no solution;
+\item if \((a_\theta,B_{\theta,b})=1\), there is one residue
+\(\tau_{\theta,b}\pmod{B_{\theta,b}}\) such that every solution is
+\[
+ t=\tau_{\theta,b}+B_{\theta,b}z,\qquad z\in\Z.
+ \]
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Write \(b=gB\) and \(\sigma_\theta=g\sigma'\).  By the definition of
+\(g\), \((B,\sigma')=1\).  Therefore
+\[
+ gB\mid g\sigma' U_\theta(t)
+ \quad\Longleftrightarrow\quad B\mid U_\theta(t),
+\]
+which proves \eqref{eq:progression-divisibility-reduction}.
+
+The inherited primitive relations imply
+\((a_\theta,u_\theta)=1\): a common divisor would divide
+\(\sigma_\theta u_\theta-a_\theta d_\theta=h_0\), contrary to
+\((a_\theta,h_0)=1\).  Hence if a prime divides both
+\(a_\theta\) and \(B\), it does not divide \(u_\theta\), and the
+congruence \(u_\theta+a_\theta t\equiv0\pmod B\) is insoluble.
+When \((a_\theta,B)=1\), the slope is invertible modulo \(B\), giving
+one residue class.
+\end{proof}
+
+On the soluble branch, define
+\begin{align}
+ I_{\theta,b}^\ast
+ &=
+ \{z\in\Z:
+ \tau_{\theta,b}+B_{\theta,b}z\in I_\theta\},
+\label{eq:progression-resolved-interval}\\
+ D_{\theta,b}^\ast(z)
+ &=
+ D_\theta(\tau_{\theta,b}+B_{\theta,b}z),
+\label{eq:progression-D}\\
+ U_{\theta,b}^\ast(z)
+ &=
+ U_\theta(\tau_{\theta,b}+B_{\theta,b}z),
+\label{eq:progression-U}\\
+ M_{\theta,b}^\ast(z)
+ &=
+ \ell_\theta v_\theta D_{\theta,b}^\ast(z).
+\label{eq:progression-M}
+\end{align}
+The set \(I_{\theta,b}^\ast\) is an interval for each interval
+component already contained in \(\theta\), possibly empty.  Put
+\begin{equation}
+ \Omega_{\theta,b}
+ =
+ \ell_\theta v_\theta\sigma_\theta B_{\theta,b}.
+\label{eq:progression-phase-slope}
+\end{equation}
+
+\begin{proposition}[Resolved phase formula]
+\label{prop:resolved-phase}
+On a soluble branch,
+\begin{align}
+ &e_{cq_X}\!\left(
+ -r\varepsilon_\theta
+ (M_{\theta,b}^\ast(z)-n_\theta)\right)
+\notag\\
+ &\quad=
+ \zeta_{\theta,b,c,r}\,
+ e_{cq_X}(-r\varepsilon_\theta\Omega_{\theta,b}z),
+\label{eq:progression-resolved-phase}
+\end{align}
+where
+\[
+ \zeta_{\theta,b,c,r}
+ =
+ e_{cq_X}\!\left(
+ -r\varepsilon_\theta
+ (M_\theta(\tau_{\theta,b})-n_\theta)\right)
+\]
+has modulus one.
+\end{proposition}
+
+\begin{proof}
+The moving row satisfies
+\[
+ M_{\theta,b}^\ast(z)
+ =
+ M_\theta(\tau_{\theta,b})
+ +
+ \ell_\theta v_\theta\sigma_\theta
+ B_{\theta,b}z.
+\]
+Insert this identity in the character and separate the constant
+phase.
+\end{proof}
+
+\begin{corollary}[Fully resolved window]
+\label{cor:fully-resolved-window}
+The right side of \eqref{eq:content-expanded-window} may be restricted
+to tuples satisfying
+\[
+ b=c\kappa\mid P_\theta,\qquad
+ (a_\theta,B_{\theta,b})=1,
+\]
+and the inner \(t\)-sum replaced exactly by
+\begin{align}
+ \zeta_{\theta,b,c,r}
+ \sum_{z\in I_{\theta,b}^\ast}
+ &\mu(D_{\theta,b}^\ast(z))
+ \mu(U_{\theta,b}^\ast(z))
+ \chi_\theta(\tau_{\theta,b}+B_{\theta,b}z)
+\notag\\
+ &\times
+ W_{\theta,X}(\tau_{\theta,b}+B_{\theta,b}z)
+ e_{cq_X}(-r\varepsilon_\theta\Omega_{\theta,b}z).
+\label{eq:fully-resolved-inner-sum}
+\end{align}
+No content or frequency term has been omitted.
+\end{corollary}
+
+\begin{proof}
+Use \cref{lem:one-progression,prop:resolved-phase} in
+\eqref{eq:content-expanded-window}.  Insoluble and empty branches
+contribute zero.
+\end{proof}

@@ -1,0 +1,88 @@
+\begin{abstract}
+Let \(\Omega\) be a prescribed finite support of size \(S\), let
+\(A\in\C^\Omega\), and put
+\[
+ Z(A)=\langle A,\one\rangle,\qquad
+ D(A)=\|A\|_2^2,\qquad
+ \rho(A)=\frac{|Z(A)|}{\sqrt{S D(A)}},\qquad
+ \Flat(A)=\frac{|Z(A)|^2}{D(A)}.
+\]
+For an orthogonal projection \(P\), write
+\[
+ B=PA,\qquad R=(I-P)A,\qquad
+ q=(I-P)\one .
+\]
+The exact projection ledger is
+\[
+ D(A)=D(B)+D(R),\qquad
+ Z(B)-Z(A)=-\langle R,q\rangle
+          =\langle A,(P-I)\one\rangle .
+\]
+
+If \(P\one=\one\), then \(q=0\), so the zero mode is preserved
+exactly while energy can only decrease.  Whenever \(B\ne0\),
+\[
+ \rho(A)^2
+ =\rho(B)^2\frac{D(B)}{D(A)},\qquad
+ \Flat(A)
+ =\Flat(B)\frac{D(B)}{D(A)}.
+\]
+Thus
+\[
+ \rho(A)\le\rho(B),\qquad
+ \Flat(A)\le\Flat(B).
+\]
+Constant-preserving orthogonal coarsening is therefore a
+\emph{conservative} flatness surrogate: it may create false
+negatives, but cannot create a false positive by artificially
+reducing the physical zero-mode ratio.  This gives a structural
+exception to the general \(J^{-1}\) surrogate-accuracy barrier:
+a one-sided flatness certificate transfers without requiring
+\(\|A-PA\|_2/\|PA\|_2=O(J^{-1})\).
+
+For a partition of the actual support, ordinary block averaging is
+exactly such a projection.  We prove the within-block variance
+identity, monotonicity along nested partitions, and the precise
+weighted compressed representation.  Replacing block multiplicities
+by an unweighted compressed grid can manufacture perfect apparent
+cancellation; a three-point counterexample shows that the
+actual-support convention is essential.
+
+If \(P\one\ne\one\), define the normalized constant defect
+\[
+ \kappa(P)=\frac{\|(I-P)\one\|_2}{\sqrt S}.
+\]
+Then the sharp structure-free estimate is
+\[
+ |Z(B)-Z(A)|
+ \le\sqrt S\,\kappa(P)\|R\|_2.
+\]
+For \(B\ne0\), with \(r=\|R\|_2/\|B\|_2\),
+\[
+ \frac{(\rho(B)-\kappa(P)r)_+}{\sqrt{1+r^2}}
+ \le\rho(A)\le
+ \frac{\rho(B)+\kappa(P)r}{\sqrt{1+r^2}}.
+\]
+Equality in the zero-mode bound is attained by taking the residual
+parallel to the missing constant direction.  Consequently, retaining
+a critical \(J^{-1}\) zero-mode scale from norm information alone
+requires
+\[
+ \kappa(P)r=O(J^{-1});
+\]
+when \(\kappa(P)\) stays bounded below, the TPC-89
+\(O(J^{-1})\) relative-accuracy barrier returns.  We also give the
+unique minimal rank-one completion
+\[
+ P^\sharp=P+
+ \frac{\langle\,\cdot\,,q\rangle}{\|q\|_2^2}q
+\]
+that adjoins the missing constant mode.
+
+On the literal fixed-\(h_0\) TPC determinant frame, any
+constant-preserving orthogonal surrogate satisfying the projected
+critical bound immediately certifies the same bound for the physical
+coefficient.  This is an exact \(\Lone\) certificate.  The paper
+constructs no arithmetic projection estimate and proves no new
+\(\Ltwo\) fixed-shift cancellation theorem.
+\end{abstract}

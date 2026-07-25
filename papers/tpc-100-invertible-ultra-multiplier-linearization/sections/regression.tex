@@ -1,0 +1,47 @@
+\section{Exact provenance regression}
+\label{sec:regression}
+
+The script
+\texttt{experiments/tpc100\_certificate.py} models the literal order
+\[
+ \beta=(\theta,c,\kappa)
+ \longrightarrow
+ (\beta,z)
+ \longrightarrow
+ \text{source inverse}
+ \longrightarrow
+ \operatorname{del}_j\text{ cells}.
+\]
+It constructs \(4{,}096\) resolved branches,
+\(6{,}851\) opened atoms, and \(6{,}851\) fine cells over small
+no-wrap primes.  Using exact integer and rational arithmetic, it
+checks:
+\begin{enumerate}[leftmargin=2em]
+\item the affine determinant identity and the source equality
+  \(m_{\beta,z}j_\theta+h_0=\sigma_\theta u_{\beta,z}\);
+\item the exact mass equality
+  \(w_\beta=\sum_z w_{\beta,z}\) and equality of the branch and atom
+  multiplier censuses;
+\item reconstruction of \((\beta,z)\) and its \(r\)-free source from
+  the fine cell together with \(j\), and the stronger fact that the
+  retained physical source coordinates force every fine cell to be
+  a singleton;
+\item inheritance of \(H_q(N_\beta)\), including explicit examples
+  where it differs from \(H_q(|J_C|)\);
+\item both finite-field coefficients, atomwise linearization, and
+  fine-cell injectivity;
+\item forced cross-cell collisions between different \(z\)'s of one
+  branch;
+\item exact resonance preimages, cross-cell congruences and partner
+  counts; and
+\item uncentered and centered opened-atom energy identities.
+\end{enumerate}
+The certificate completes \(208{,}811\) exact checks, including both
+polarization signs.  Its SHA-256
+hash is
+\[
+\texttt{EF308431ED63AC09D93B3E45C4B8915FDD851D7C32237AF192CB48DAA9A36E4F}.
+\]
+No randomness or floating-point comparison is used.  The
+certificate verifies finite provenance algebra only; it is not
+evidence for any asymptotic gate.

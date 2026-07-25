@@ -1,0 +1,186 @@
+\section{The literal arithmetic gate and endpoint ledger}
+\label{sec:physical-gate}
+
+\subsection{What the export reduces}
+
+At the critical scales, choose
+\[
+ R_X=X^{\varrho+o(1)}<q_X/2,\qquad
+ \varrho<\frac{267}{400},
+\]
+and fixed \(K\ge2\).  For a desired zero-mode rate
+\[
+ |Z_X|\le X^{-\eta_Z+o(1)}Q_X^2,
+\]
+the inherited high-frequency tail has a fixed-power reserve when
+\begin{equation}
+ (K-\tfrac12)\varrho
+ >
+ \frac{133}{400}+\eta_Z.
+\label{eq:gate-tail-condition}
+\end{equation}
+The often quoted second-order choice
+\[
+ K=2,\qquad
+ R_X=X^{133/600+\varepsilon}
+\]
+belongs to the zero-loss corner \(\eta_Z=0\) for fixed
+\[
+ 0<\varepsilon<\frac{107}{240}.
+\]
+For the same window and positive \(\eta_Z\), one additionally needs
+\(\eta_Z<3\varepsilon/2\).
+
+\begin{theorem}[Exact sufficient sector certificate]
+\label{thm:sector-certificate}
+Assume \eqref{eq:gate-tail-condition}.  If a future theorem proves
+\begin{equation}
+ \left|
+ \Low_{\Short,X}
+ +\Low_{\Res,X}
+ +\Low_{\Gen,X}
+ \right|
+ \le
+ X^{-\eta_Z+o(1)}Q_X^2,
+\label{eq:gate-coherent-sector-target}
+\end{equation}
+then
+\[
+ |Z_X|\le X^{-\eta_Z+o(1)}Q_X^2.
+\]
+A stronger sufficient condition is
+\begin{equation}
+ |\Low_{\Short,X}|
+ +|\Low_{\Res,X}|
+ +|\Low_{\Gen,X}|
+ \le
+ X^{-\eta_Z+o(1)}Q_X^2.
+\label{eq:gate-separate-sector-target}
+\end{equation}
+Neither estimate is proved here.
+\end{theorem}
+
+\begin{proof}
+Use \eqref{eq:sector-sum} in
+\eqref{eq:row-tail-return}.  Under
+\eqref{eq:gate-tail-condition}, the tail is smaller than the target
+by a fixed power.  The second displayed hypothesis implies the first
+by the triangle inequality.
+\end{proof}
+
+\begin{remark}[The coherent certificate is weaker]
+Equation \eqref{eq:gate-coherent-sector-target} permits cancellation
+between the three returned sectors.  Requiring three separate bounds
+may lose a fixed power.  A proof may use either route, but must state
+which outer cancellations survive.
+\end{remark}
+
+\subsection{Sector-specific tasks}
+
+\paragraph{Short fibers.}
+By \cref{prop:resolved-occupancy}, large values of
+\(\sigma_\theta v_\theta B_\xi\) automatically enter the short
+sector.  These fibers have no asymptotic averaging parameter.  They
+must be returned by an exact enumeration, an outer-energy estimate,
+or a physical counting theorem.  Calling them negligible because
+each is short does not bound their number or outer coefficient mass.
+
+\paragraph{Long resonant fibers.}
+Exact resonances satisfy
+\eqref{eq:exact-resonance}; near resonances satisfy
+\(N_\xi\delta_\xi\le1\).  The additive determinant phase provides no
+uniform power saving on this sector.  A viable estimate must instead
+use the two-sign arithmetic, a structural outer cancellation, or a
+proved small multiplier/provenance mass.
+
+\paragraph{Long generic fibers.}
+Here the additive phase makes more than one resolvable turn, and the
+reduced M\"obius pair has the fixed determinant \(h_0\).  This is the
+natural sector for a large-sieve, bilinear, \(TT^\ast\), or
+phase-sensitive affine-correlation theorem.  Such a theorem still
+must be uniform in the growing slopes, the content-factor masks,
+prefixes, interval origins, and complete outer ledger.
+
+\paragraph{Local squarefree split.}
+\Cref{cor:tpc90-after-extraction} applies TPC-90 without changing the
+determinant.  It classifies local square-power support but leaves the
+weighted Liouville product.  The extracted \(\mu(B_\xi)\) may
+participate in outer cancellation, but no such cancellation is
+proved by the factorization itself.
+
+\subsection{A provenance success certificate}
+
+The following definition records the minimum data that a later
+arithmetic estimate must return.
+
+\begin{definition}[Callable low-window theorem]
+\label{def:callable-low-window}
+A future estimate is callable for the literal TPC-86 gate only if it
+returns:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the same filter multiplier
+\(\mathfrak m_{K,X}(r)\) and every \(r\in\Win_X(R_X)\);
+\item both polarizations and the complete constructed source--child
+ledger \(\Theta_X\), including its inverse provenance and projector
+multiplicity;
+\item every \(c,\kappa,B,\mu(B)\), content mask, and exact phase;
+\item the short, resonant, and generic sectors, either separately or
+through their complete coherent sum;
+\item the same fixed nonzero \(h_0\), interval origins, prefixes,
+weights, and one global post-aggregation normalization; and
+\item a quantitative outer rate compatible with
+\eqref{eq:gate-tail-condition} and the physical endpoint ledger.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Downgrade conditions]
+\label{prop:low-window-downgrade}
+An estimate is not the literal low-window certificate if it:
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item treats only one generic frequency or one fixed affine column;
+\item deletes exact or near resonances;
+\item assumes every fiber length tends to infinity;
+\item uses the unreduced determinant-\(Bh_0\) pair but labels it
+determinant \(h_0\);
+\item extracts \(B\) but omits \(\mu(B)\) or
+\(\one_{(B,V)=1}\);
+\item sums an exceptional-set cardinality without its reconstruction
+multiplier and outer coefficients; or
+\item leaves an unreturned average over shifts, scales, origins, or
+native keys.
+\end{enumerate}
+Such a result may remain valid at a restricted, frozen, averaged, or
+negative-transfer level.
+\end{proposition}
+
+\begin{proof}
+Each item changes or omits a term in the exact master formula
+\eqref{eq:sector-master-formula} or in the fixed-\(h_0\) reduction
+\eqref{eq:fixed-h-reduced-inner}.  It therefore estimates a different
+coefficient unless a separate return theorem is supplied.
+\end{proof}
+
+\subsection{Independent ledgers}
+
+If future work proves
+\[
+ D_X\ge X^{-\lambda_D+o(1)}Q_X^3J_X^2
+\]
+and the zero-mode bound at rate \(\eta_Z\), the determinant
+compatibility remains
+\begin{equation}
+ \boxed{\lambda_D\le2\eta_Z.}
+\label{eq:gate-determinant-ledger}
+\end{equation}
+Separately, every fixed-power loss introduced by the sector
+partition, coefficient amplification, short-fiber return, masks,
+outer reassembly, and downstream physical comparison, excluding
+losses already recorded in
+\(\lambda_D-2\eta_Z\), must satisfy
+\begin{equation}
+ \boxed{\Lambda_{\rm phys}<\frac1{400}.}
+\label{eq:gate-physical-ledger}
+\end{equation}
+Equality in \eqref{eq:gate-determinant-ledger} has no determinant
+reserve; equality in \eqref{eq:gate-physical-ledger} stops the
+physical route.  The same cost is not entered in both ledgers.

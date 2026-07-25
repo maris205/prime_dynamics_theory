@@ -1,0 +1,60 @@
+\begin{abstract}
+TPC-99 diagonalizes the multiplicative resonance carrier but bounds
+its nonprincipal part by the largest incomplete-character
+eigenvalue, costing \(\sqrt q\log q\) at every resonance width.
+That estimate treats the low-window reconstruction weight as an
+arbitrary \(L^2\) vector.  In the literal problem this weight is
+fixed and has bounded Wiener mass.  We exploit that asymmetry.
+
+For \(G=\mathbb F_q^\times\),
+\(E_H=\{\pm1,\ldots,\pm H\}\), and
+\[
+ \cI_H(a,b)
+ =
+ \sum_{\omega,r\in G}
+ a(\omega)b(r)\one_{E_H}(r\omega),
+\]
+write \(\mathcal R_H(a,b)\) for the nonprincipal part.  We prove
+that the exact norm of this functional in the centered \(a\)
+variable is
+\[
+ \mathfrak S_H(b)^2
+ =
+ \frac1{q-1}
+ \sum_{\chi\ne\chi_0}
+ |\widehat{\one_{E_H}}(\chi)|^2
+ |\widehat b(\overline\chi)|^2.
+\]
+Consequently
+\[
+ |\mathcal R_H(a,b)|
+ \le
+ \|b\|_1
+ \sqrt{\frac{2H(q-1-2H)}{q-1}}\,
+ \|a^\circ\|_2.
+\]
+The factor is exact using only \(\|b\|_1\): a point mass \(b\)
+attains it.  It vanishes at \(H=(q-1)/2\), and for the literal width
+\(H_q(N)\) it is at most \(\sqrt{2q/N}\) whenever \(N\ge3\).
+
+Applied to the corrected frequency-free TPC-99 census and its fixed
+filter \(b_X=|\mathfrak m_{K,X}|\), this replaces the uniform
+\(Q_X^{3/2}\) centered-energy target by the weaker
+width-sensitive gate
+\[
+ \sum_H
+ \sqrt{\frac{2H(q_X-1-2H)}{q_X-1}}\,
+ \|a_H^\circ\|_2
+ \ll X^{o(1)}Q_X^2.
+\]
+After TPC-100 separately returns its \(q_X\mid u\) subcarrier, its
+exact singleton-cell decomposition produces separate
+width-weighted atomic-diagonal and cross-cell gates.  The singleton
+fact itself supplies no dispersion.  We also prove an
+abstract principal-to-diagonal transfer under a stated maximum-atom
+bound.  The finite-group theorem is \(\Lzero\), and
+the literal crosswalk is \(\Lone\).  The principal mass, literal
+atom cap, and cross-cell estimate are not proved here; no
+\(\Ltwo\) fixed-shift cancellation or prime-pair conclusion is
+claimed.
+\end{abstract}

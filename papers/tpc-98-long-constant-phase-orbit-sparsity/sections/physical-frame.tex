@@ -1,0 +1,143 @@
+\section{The literal frame and a stronger harmless padding}
+\label{sec:physical-frame}
+
+\subsection{Rows, orbit points, and opened divisors}
+
+Fix \(h_0\in\Z\setminus\{0\}\).  On one physical dyadic packet a row
+is
+\[
+ \alpha=(\ell_\alpha,d_\alpha),\qquad
+ m_\alpha=\ell_\alpha d_\alpha\asymp_{\mathscr D}Q_X,
+\]
+and its orbit target is
+\begin{equation}
+ N_\alpha(j)=m_\alpha j+h_0.
+\label{eq:physical-target}
+\end{equation}
+The joint orbit support lies in a fixed union of intervals contained
+in an interval \(\cJ_X\) of diameter \(O_{\mathscr D}(J_X)\).
+The two row coefficients satisfy the imported bounds
+\begin{equation}
+ \sum_\alpha|\gamma_\alpha^{(i)}|
+ \ll_{\mathscr D}Q_X,
+ \qquad i=1,2.
+\label{eq:row-l1}
+\end{equation}
+These are the literal row coefficients, including prime-source,
+squarefree-divisor, smooth, and residue factors
+\citep{WangTPC33}.
+
+Opening the ultra increment on the moving row gives
+\begin{equation}
+ N_\alpha(j)=u\sigma,
+ \qquad T_X<u\le U_{0,X},
+\label{eq:opened-factorization}
+\end{equation}
+where \(u\) carries the M\"obius--logarithmic ultra coefficient and
+\(\sigma\) is the complementary divisor.  The actual-mask
+disintegration further introduces a row-gcd divisor \(v\mid
+d_\alpha,d_\gamma\), at most two row-coordinate intervals, and
+projector children whose total absolute coefficient mass, for each
+fixed opposite row (one physical column), is
+\begin{equation}
+ X^{o(1)}.
+\label{eq:projector-soft-mass}
+\end{equation}
+The same columnwise statement holds after exchanging the two
+polarizations.  No full-matrix low-rank or projective-mass conclusion
+is inferred from it.
+
+\subsection{Soft divisor envelopes}
+
+All effective targets are \(X^{O(1)}\).  The elementary divisor
+bound and the explicit matched coefficients therefore give,
+uniformly on the literal support,
+\begin{align}
+ \sum_{\substack{u\mid N\\T_X<u\le U_{0,X}}}
+ |\mu(u)|\log u
+ &\le X^{o(1)},\label{eq:ultra-envelope}\\
+ |\mathsf H_m(j)|
+ +|\mathsf A_{m,T_X}(j)|
+ +|\mathsf A_{m,U_{0,X}}(j)|
+ &\le X^{o(1)}.
+\label{eq:prefix-envelope}
+\end{align}
+Every \(o(1)\) here is uniform over the fixed dyadic data
+\(\mathscr D\).  No cancellation is used in
+\eqref{eq:ultra-envelope}--\eqref{eq:prefix-envelope}.
+
+\subsection{The strengthened no-wrap prime}
+
+TPC-86 chooses an auxiliary prime \(q_X\asymp Q_X\) large enough to
+embed the determinant support injectively \citep{WangTPC86}.  Since
+all of the following quantities are \(O_{\mathscr D}(Q_X)\),
+Bertrand's postulate permits the same choice to satisfy
+\begin{equation}
+\begin{split}
+ q_X>{}&
+ 2\max_\alpha m_\alpha,\qquad
+ 2\max_{\alpha,\gamma}|m_\alpha-m_\gamma|,\qquad
+ 2\max_\alpha d_\alpha,\qquad
+ 2\operatorname{diam}(\cJ_X),
+\end{split}
+\label{eq:strong-padding}
+\end{equation}
+as well as the original determinant no-wrap inequalities.  Enlarging
+the fixed comparison constant changes neither the physical packet
+nor any exponent.
+
+\begin{lemma}[Immediate consequences]
+\label{lem:padding-consequences}
+For all sufficiently large \(X\), the choice
+\eqref{eq:strong-padding} has
+\[
+ q_X\nmid m_\alpha,\qquad q_X\nmid\ell_\alpha,\qquad
+ q_X\nmid v
+\]
+on every active row and row-gcd layer.  Moreover any residue class
+modulo \(q_X\) meets \(\cJ_X\) in at most one integer.
+\end{lemma}
+
+\begin{proof}
+Every displayed positive integer is strictly between \(0\) and
+\(q_X\).  The final assertion follows because two distinct
+representatives of one residue class differ by at least \(q_X\),
+whereas \(\operatorname{diam}(\cJ_X)<q_X\).
+\end{proof}
+
+\begin{lemma}[Literal content steps are below \(q_X\)]
+\label{lem:content-step-below-q}
+Call a child \emph{opened-active} when its two row targets, primitive
+masks, and exact-content divisibilities all hold before row-gcd
+projector reassembly; its parent is allowed to cancel after that
+reassembly.  For every opened-active exact-content child,
+\[
+ 1\le B_\xi\le b_\xi<q_X.
+\]
+\end{lemma}
+
+\begin{proof}
+Write \(b_\xi=c_\xi\kappa_\xi\).  This integer divides both
+physical targets
+\[
+ M_\xi j_\xi+h_0,\qquad n_\xi j_\xi+h_0.
+\]
+The primitive target provenance imported in TPC-93--TPC-94 gives
+\((b_\xi,j_\xi)=1\).  Subtracting the targets therefore gives
+\[
+ b_\xi\mid(M_\xi-n_\xi)j_\xi
+ \quad\Longrightarrow\quad
+ b_\xi\mid M_\xi-n_\xi.
+\]
+The physical off-diagonal mask has \(M_\xi\ne n_\xi\), while
+\eqref{eq:strong-padding} gives
+\(|M_\xi-n_\xi|<q_X\).  Hence
+\(b_\xi\le|M_\xi-n_\xi|<q_X\).  Finally
+\(B_\xi=b_\xi/(b_\xi,\sigma_\xi)\le b_\xi\).
+\end{proof}
+
+\begin{remark}
+The modulus is still only an auxiliary Fourier-padding device.
+\Cref{lem:padding-consequences} does not impose a congruence on the
+original sum and does not select a subsequence of scales.
+\end{remark}

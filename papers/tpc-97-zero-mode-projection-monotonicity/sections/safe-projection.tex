@@ -1,0 +1,168 @@
+\section{Constant-preserving projections are conservative}
+\label{sec:safe-projection}
+
+We now impose the exact safe condition
+\[
+ P\one=\one.
+\]
+Then \(q=0\), so every discarded residual has zero sum.
+
+\begin{theorem}[Exact safe-projection law]
+\label{thm:safe-projection-law}
+Let \(P\) be an orthogonal projection with \(P\one=\one\), and let
+\(A\ne0\).  Put \(B=PA\) and \(R=(I-P)A\).  Then
+\begin{equation}
+ \boxed{
+ Z(B)=Z(A),\qquad
+ D(A)=D(B)+D(R).}
+\label{eq:safe-ledger}
+\end{equation}
+If \(B=0\), then \(Z(A)=0\) and hence \(\rho(A)=\Flat(A)=0\).
+If \(B\ne0\), then
+\begin{equation}
+ \boxed{
+ \rho(A)^2
+ =
+ \rho(B)^2\frac{D(B)}{D(A)},\qquad
+ \Flat(A)
+ =
+ \Flat(B)\frac{D(B)}{D(A)}.}
+\label{eq:exact-projection-monotonicity}
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{
+ \rho(A)\le\rho(B),\qquad
+ \Flat(A)\le\Flat(B).}
+\label{eq:projection-monotonicity}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The first formula follows from
+\cref{prop:preservation-criterion}; the second is
+\eqref{eq:energy-pythagoras}.  If \(B=0\), zero-mode preservation
+gives \(Z(A)=Z(B)=0\).  If \(B\ne0\), insert the common numerator
+\(|Z(A)|^2=|Z(B)|^2\) into the definitions:
+\[
+ \frac{\rho(A)^2}{\rho(B)^2}
+ =
+ \frac{D(B)}{D(A)},
+\qquad
+ \frac{\Flat(A)}{\Flat(B)}
+ =
+ \frac{D(B)}{D(A)}.
+\]
+The conclusion follows from \(D(B)\le D(A)\).  When the common zero
+mode vanishes, both sides of the identities are zero.
+\end{proof}
+
+\begin{corollary}[Exact residual factor]
+\label{cor:residual-factor}
+Under the hypotheses of \cref{thm:safe-projection-law}, suppose
+\(B\ne0\), and put
+\[
+ r=\frac{\|R\|_2}{\|B\|_2}.
+\]
+Then
+\begin{equation}
+ \rho(A)=\frac{\rho(B)}{\sqrt{1+r^2}},
+\qquad
+ \Flat(A)=\frac{\Flat(B)}{1+r^2}.
+\label{eq:residual-factor}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+By Pythagoras,
+\[
+ \frac{D(A)}{D(B)}=1+r^2.
+\]
+Apply \eqref{eq:exact-projection-monotonicity}.
+\end{proof}
+
+\begin{corollary}[One-sided certificate without approximation]
+\label{cor:no-accuracy-certificate}
+Let \(T\ge0\).  Under the hypotheses of
+\cref{thm:safe-projection-law},
+\[
+ \Flat(B)\le T
+ \quad\Longrightarrow\quad
+ \Flat(A)\le T,
+\]
+where the branch \(B=0\) is interpreted by the conclusion
+\(\Flat(A)=0\).  Likewise, on the same frame,
+\[
+ \rho(B)\le\tau
+ \quad\Longrightarrow\quad
+ \rho(A)\le\tau.
+\]
+No upper bound on \(\|A-B\|_2/\|B\|_2\) is required.
+\end{corollary}
+
+\begin{proof}
+This is \eqref{eq:projection-monotonicity}, including the zero
+branch in \cref{thm:safe-projection-law}.
+\end{proof}
+
+\begin{remark}[Why this does not contradict TPC-89]
+\label{rem:no-contradiction-tpc89}
+TPC-89 controls an arbitrary same-frame error.  Here
+\[
+ A-B=R\perp\Ran P,\qquad
+ \one\in\Ran P,
+\]
+so \(R\perp\one\).  The dangerous tangent direction toward the
+constant line is excluded exactly, not approximately.  This extra
+orthogonality is the structural information that TPC-89 explicitly
+allows as an escape from its worst-case \(J^{-1}\) barrier
+\citep{WangTPC89}.
+\end{remark}
+
+\begin{proposition}[Equality classification]
+\label{prop:safe-equality}
+Suppose \(P\one=\one\), \(A\ne0\), and \(B=PA\ne0\).
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item If \(Z(A)=0\), then
+  \(\rho(A)=\rho(B)=\Flat(A)=\Flat(B)=0\), regardless of \(R\).
+\item If \(Z(A)\ne0\), equality in either inequality of
+  \eqref{eq:projection-monotonicity} holds if and only if \(R=0\),
+  equivalently \(A\in\Ran P\).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The first statement follows from zero-mode preservation.  In the
+second branch, \eqref{eq:exact-projection-monotonicity} has nonzero
+numerator.  Equality is equivalent to \(D(A)=D(B)\), and by
+Pythagoras this is equivalent to \(D(R)=0\).
+\end{proof}
+
+\begin{proposition}[Safe energy and zero-mode dominance]
+\label{prop:safe-dominance-ledger}
+Suppose \(P\one=\one\).  Any bounds proved for \(B=PA\) of the form
+\[
+ D(B)\ge L,\qquad |Z(B)|\le U
+\]
+imply, for the original coefficient,
+\[
+ D(A)\ge L,\qquad |Z(A)|\le U.
+\]
+Thus a constant-preserving projected packet may simultaneously
+provide a determinant-energy lower certificate and a zero-mode
+upper certificate.
+\end{proposition}
+
+\begin{proof}
+Use \(D(A)\ge D(B)\) and \(Z(A)=Z(B)\).
+\end{proof}
+
+\begin{remark}[Conservative does not mean easy]
+\label{rem:conservative-not-easy}
+Coarsening reduces the denominator while preserving the numerator,
+so it usually makes \(\rho\) and \(\Flat\) larger.  A projected
+upper bound is therefore safe but potentially harder to prove.
+Projection monotonicity supplies no cancellation estimate for
+\(B\); it only guarantees that a proved estimate cannot be a
+false positive created by the coarsening.
+\end{remark}

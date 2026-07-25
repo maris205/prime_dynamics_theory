@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,enumitem,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Zero-Mode-Safe Orthogonal Coarsening: Exact Projection Monotonicity, Constant-Defect Sharpness, and the Critical Inverse-J Interface},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Flat}{\mathfrak F}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{\textbf{Zero-Mode-Safe Orthogonal Coarsening:}\\
+Exact Projection Monotonicity, Constant-Defect Sharpness,\\
+and the Critical \(J^{-1}\) Interface}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\noindent\textbf{Keywords:}
+zero mode; orthogonal projection; block averaging; conditional
+expectation; determinant flatness; actual support; surrogate;
+constant-mode defect.
+
+\medskip
+\noindent\textbf{Literal-frame convention.}
+Every physical statement is made on the actual post-bin support of
+the already aggregated coefficient for one prescribed nonzero shift
+\(h_0\), with its native bins and one global atomic normalization.
+A block-compressed vector is interpreted with its exact block
+multiplicities.  No statement is specialized to \(h_0=2\).
+
+\input{sections/introduction}
+\input{sections/finite-frame}
+\input{sections/safe-projection}
+\input{sections/block-averaging}
+\input{sections/constant-defect}
+\input{sections/constant-completion}
+\input{sections/critical-interface}
+\input{sections/literal-crosswalk}
+\input{sections/computational-certificate}
+\input{sections/claim-boundary}
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

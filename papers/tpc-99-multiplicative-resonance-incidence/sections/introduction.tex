@@ -1,0 +1,71 @@
+\section{Introduction}
+\label{sec:introduction}
+
+TPC-93 writes the literal low-frequency reconstruction term as a
+coherent sum of primitive fixed-determinant affine fibers
+\citep{WangTPC93}.  TPC-94 computes the exact additive conductor:
+on literal support it is \(1\) or the no-wrap prime \(q_X\)
+\citep{WangTPC94}.  TPC-98 returns the entire conductor-one sector at
+the critical amplitude scale \(X^{o(1)}Q_X^2\)
+\citep{WangTPC98}.  The next exceptional branch therefore has
+conductor \(q_X\).
+
+High conductor is not the same as visible oscillation.  If a
+frequency-free resolved branch \(\beta=(\theta,c,\kappa)\) contains
+\(N_\beta\) points in its \(z\)-fiber and its reduced phase is
+\[
+ e_{q_X}(-r\omega_\beta z),
+ \qquad \omega_\beta\in\mathbb F_{q_X}^{\times},
+\]
+then the archimedean resonance condition is
+\begin{equation}
+ N_\beta
+ \left\|\frac{r\omega_\beta}{q_X}\right\|
+ \le1.
+\label{eq:resonance-condition}
+\end{equation}
+Even with \(q_X\nmid r\omega_\beta\), this can hold throughout a short
+or arithmetically aligned interval.
+
+The product \(r\omega_\beta\) suggests using the multiplicative group
+\(\mathbb F_{q_X}^{\times}\), not the additive Fourier transform that
+created the low window.  The resonance window is symmetric about
+zero, and this symmetry has an exact spectral consequence: every
+odd multiplicative character is annihilated.  The remaining even
+spectrum consists of classical incomplete character sums.
+
+\subsection{Main contributions}
+
+This paper proves:
+\begin{enumerate}[leftmargin=2em]
+\item the exact multiplicative convolution model for fixed resonance
+  width \(H\);
+\item its complete character spectrum, principal mode, odd-character
+  nullspace, and Hilbert--Schmidt identity;
+\item exact principal/nonprincipal bilinear decompositions and
+  \(L^2\) bounds;
+\item a positive literal resonance majorant with lossless
+  frequency-free key coverage, grouped by native phase multiplier
+  and exact width;
+\item a sufficient spectral-dispersion condition that would return
+  that carrier at \(X^{o(1)}Q_X^2\); and
+\item sharp concentration examples showing why conductor and
+  cardinality alone cannot prove the condition.
+\end{enumerate}
+
+The carrier is a positive or modulus-weighted majorant.  Actual
+affine M\"obius sums can retain \(r\)-dependent phases and signed
+weights.  We therefore do not claim that character diagonalization
+alone evaluates the signed resonant contribution.
+
+\subsection{Why this is progress}
+
+Before this reduction, ``resonance'' was only a pointwise exception.
+The present result identifies its precise collective geometry.  A
+future proof can now aim at one of two concrete targets: show that
+the native multiplier mass has a small principal component and
+controlled even-character spectrum, or exploit signed arithmetic
+before taking the incidence majorant.  A proof-carrying polynomial
+obstruction to the displayed termwise bounds is a stop for that
+sufficient implementation, not a lower bound for the signed
+coefficient.

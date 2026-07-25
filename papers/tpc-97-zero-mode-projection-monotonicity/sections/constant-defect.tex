@@ -1,0 +1,172 @@
+\section{The missing-constant defect}
+\label{sec:constant-defect}
+
+We now drop the assumption \(P\one=\one\).  Retain
+\[
+ B=PA,\qquad R=(I-P)A,\qquad
+ q=(I-P)\one,\qquad
+ \kappa=\frac{\|q\|_2}{\sqrt S}.
+\]
+
+\begin{theorem}[Sharp zero-mode defect bound]
+\label{thm:sharp-zero-defect}
+For every orthogonal projection \(P\) and every \(A\in H\),
+\begin{equation}
+ \boxed{
+ Z(B)-Z(A)
+ =
+ \langle A,(P-I)\one\rangle
+ =
+ -\langle R,q\rangle,}
+\label{eq:sharp-defect-identity}
+\end{equation}
+and hence
+\begin{equation}
+ \boxed{
+ |Z(B)-Z(A)|
+ \le
+ \|R\|_2\|q\|_2
+ =
+ \sqrt S\,\kappa\|R\|_2.}
+\label{eq:sharp-defect-bound}
+\end{equation}
+The coefficient is sharp.  If \(q\ne0\), equality holds for every
+prescribed residual norm when \(R\) is a scalar multiple of \(q\).
+\end{theorem}
+
+\begin{proof}
+The identity is \cref{lem:zero-mode-defect}; Cauchy--Schwarz gives
+the inequality.  Given \(t\ge0\), choose
+\[
+ R=t\,e^{i\theta}\frac{q}{\|q\|_2}.
+\]
+Then \(R\in\Ker P\), \(\|R\|_2=t\), and
+\[
+ |\langle R,q\rangle|
+ =t\|q\|_2.
+\]
+Thus the constant cannot be improved from norm information alone.
+\end{proof}
+
+\begin{remark}[The sharper residual norm]
+\label{rem:residual-not-full}
+The immediate estimate from the first pairing in
+\eqref{eq:sharp-defect-identity} is
+\[
+ |Z(B)-Z(A)|
+ \le\|A\|_2\|q\|_2.
+\]
+Orthogonality removes the projected component and replaces
+\(\|A\|_2\) by the smaller \(\|R\|_2\).  Both the constant defect
+and the discarded coefficient energy are therefore necessary in
+the sharp ledger.
+\end{remark}
+
+\begin{theorem}[Defective projection envelope]
+\label{thm:defective-envelope}
+Assume \(B\ne0\) and put
+\[
+ r=\frac{\|R\|_2}{\|B\|_2}.
+\]
+Then
+\begin{equation}
+ \boxed{
+ \frac{(\rho(B)-\kappa r)_+}{\sqrt{1+r^2}}
+ \le\rho(A)\le
+ \frac{\rho(B)+\kappa r}{\sqrt{1+r^2}}.}
+\label{eq:defective-rho-envelope}
+\end{equation}
+Equivalently, at the unnormalized zero-mode level,
+\begin{equation}
+ \boxed{
+ \frac{|Z(A)-Z(B)|}{\sqrt S\,\|B\|_2}
+ \le\kappa r.}
+\label{eq:normalized-zero-defect}
+\end{equation}
+The coefficient of \(\kappa r\) in
+\eqref{eq:normalized-zero-defect} is optimal.
+\end{theorem}
+
+\begin{proof}
+The triangle and reverse triangle inequalities applied to
+\[
+ Z(A)=Z(B)+\langle R,q\rangle
+\]
+give
+\[
+ \bigl(|Z(B)|-\sqrt S\,\kappa\|R\|_2\bigr)_+
+ \le |Z(A)|
+ \le
+ |Z(B)|+\sqrt S\,\kappa\|R\|_2.
+\]
+Pythagoras gives
+\[
+ \|A\|_2=\|B\|_2\sqrt{1+r^2}.
+\]
+Division proves \eqref{eq:defective-rho-envelope}.  Equation
+\eqref{eq:normalized-zero-defect} and its optimality follow from
+\cref{thm:sharp-zero-defect}.
+\end{proof}
+
+\begin{corollary}[Product criterion]
+\label{cor:product-criterion}
+Let \(\tau>0\).  The norm data guarantee
+\[
+ |Z(A)-Z(B)|
+ \le\tau\sqrt S\,\|B\|_2
+\]
+whenever
+\begin{equation}
+ \kappa(P)
+ \frac{\|(I-P)A\|_2}{\|PA\|_2}
+ \le\tau.
+\label{eq:kappa-r-criterion}
+\end{equation}
+This product order is uniformly necessary: for \(q\ne0\), residuals
+parallel to \(q\) attain equality.
+\end{corollary}
+
+\begin{proof}
+This is exactly \eqref{eq:normalized-zero-defect}, together with
+the equality construction in \cref{thm:sharp-zero-defect}.
+\end{proof}
+
+\begin{example}[An unsafe projection can manufacture perfect
+cancellation]
+\label{ex:unsafe-false-positive}
+Let \(S\ge2\), let
+\[
+ e=\frac{\one}{\sqrt S},
+\]
+choose a unit vector \(f\perp e\), and let \(P\) be the orthogonal
+projection onto \(\C f\).  Then
+\[
+ P\one=0,\qquad \kappa(P)=1.
+\]
+For
+\[
+ A=f+r e,\qquad r>0,
+\]
+one has
+\[
+ B=PA=f,\qquad
+ \rho(B)=0,\qquad
+ \rho(A)=\frac{r}{\sqrt{1+r^2}}.
+\]
+Thus the projected vector reports perfect cancellation while the
+physical vector does not.  For small \(r\), the error is exactly
+first order:
+\[
+ \rho(A)=r+O(r^3).
+\]
+\end{example}
+
+\begin{remark}[No monotonicity without the constant]
+\label{rem:no-monotonicity-unsafe}
+The unsafe projected energy still satisfies \(D(B)\le D(A)\), but
+its numerator is a different zero mode.  Energy contraction alone
+therefore gives no comparison between \(\Flat(A)\) and
+\(\Flat(B)\).  \Cref{ex:unsafe-false-positive} shows that the
+constant-preservation hypothesis in
+\cref{thm:safe-projection-law} cannot be dropped.
+\end{remark}

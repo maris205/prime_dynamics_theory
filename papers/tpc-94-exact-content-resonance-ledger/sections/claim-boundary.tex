@@ -1,0 +1,140 @@
+\section{Physical interface and audited claim boundary}
+\label{sec:claim-boundary}
+
+\subsection{The exact advance}
+
+\begin{theorem}[Audited content-progression and resonance ledger]
+\label{thm:audited-content-resonance-ledger}
+Import the established TPC-93 Theorem 3.3, Corollary 3.4, and
+Theorem 3.5 (Complete Decorated Affine Export), including their
+lossless inverse provenance and multiplicity reconstruction.  Then,
+for every literal TPC-93 content-resolved low-window term:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the raw reparametrized determinant is \(Bh_0\);
+\item the forced factor \(U(\tau+Bz)=BV(z)\) restores determinant
+  \(h_0\);
+\item in an arbitrary extension, the only further primitive
+  determinant is \(h_0/H\), where \(H=(B,h_0)\mid h_0\);
+\item on canonical TPC-32 support, \(b\) is an actual common target
+  divisor, so \((b,h_0)=1\), \(H=1\), and the primitive determinant
+  remains the prescribed \(h_0\);
+\item squareful \(B\) branches vanish, while squarefree branches
+  retain the exact sign and coprimality mask in
+  \eqref{eq:literal-normalized-mobius-pair};
+\item the additive phase retains oriented slope
+  \(\varepsilon_\theta\Omega
+  =\varepsilon_\theta\ell v\sigma B\) and has exact conductor
+  \eqref{eq:resolved-conductor};
+\item canonical target provenance gives \(b\mid\Omega\), so the
+  literal conductor is exactly \(1\) or \(q_X\), with no
+  nonconstant low-conductor sector;
+\item the prime-modulus conductor gap and the disjoint partitions
+  \eqref{eq:complete-sector-partition} and
+  \eqref{eq:literal-four-sector-partition} hold; and
+\item every absolute exceptional return is charged by
+  \eqref{eq:multiplier-mass-return}, not by frequency cardinality.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Items (i)--(v) are
+\cref{prop:raw-semi-determinants,thm:robustness-content,thm:two-stage-mobius-normalization,thm:canonical-H-one,cor:literal-normalized-mobius-pair}.
+Items (vi)--(ix) are
+\cref{prop:literal-content-divides-phase-slope,thm:literal-binary-conductor,thm:prime-modulus-conductor-gap,thm:complete-sector-partition,cor:literal-four-sector-collapse,thm:multiplier-mass-return}.
+\end{proof}
+
+\subsection{Promotion requirements}
+
+The exact decomposition becomes a zero-mode estimate only after the
+complete signed sum satisfies the TPC-92 target
+\[
+ |Z_X|
+ \le X^{-\eta_Z+o(1)}Q_X^2
+\]
+with all short, constant, low-conductor, resonant, generic, content,
+and tail returns included \citep{WangTPC92}.  Sufficient sectorwise
+proofs may be combined, but cancellation across sectors is also
+allowed if established for the exact coherent outer sum.
+
+Any future theorem must retain:
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
+\item the signed multiplier \(\mathfrak m_{K,X}(r)\);
+\item the polarization orientation \(\varepsilon_\theta\) and the
+  signed lift \(\widetilde r\) in every modulus-\(cq_X\) character;
+\item the exact \((c,\kappa)\) distinction and the phase modulus
+  \(cq_X\), not \(bq_X\);
+\item the factor \(\mu(B)\) and mask
+  \(\one_{(B,V)=1}\);
+\item the original and reduced determinant labels;
+\item both polarizations, every native interval and source key, and
+  one global normalization; and
+\item every returned sector under multiplier-mass accounting.
+\end{enumerate}
+
+\subsection{Separate ledgers}
+
+No exponent is gained in this paper.  The literal \(\Lone\)
+identification above imports the cited TPC-93
+lossless-provenance theorem and its explicit inverse ledger.  If later work proves a
+zero-mode saving \(\eta_Z\) and a determinant-mass loss
+\(\lambda_D\), the compatibility condition remains
+\[
+ \lambda_D\le2\eta_Z.
+\]
+Independently, all physical localization, short-fiber, completion,
+and reassembly losses must satisfy the strict endpoint rule
+\[
+ \Lambda_{\rm phys}<\frac1{400}.
+\]
+The same sector loss cannot be entered in both ledgers.  Equality in
+the physical ledger is not a reserve.
+
+\subsection{Finite regression certificate}
+
+The deterministic script
+\texttt{experiments/tpc94\_certificate.py} performs
+\(2{,}275{,}219\) exact integer checks:
+\[
+\begin{array}{lr}
+\text{normalization and M\"obius extraction}&205{,}885,\\
+\text{two-polarization phase splitting}&1{,}989{,}680,\\
+\text{signed lifts and conductors}&57{,}954,\\
+\text{progression lengths}&21{,}600,\\
+\text{sector boundaries}&100.
+\end{array}
+\]
+It also records the abstract representative-ambiguity witness
+\[
+ (q,c,\Omega)=(3,2,1),
+\]
+for which the representatives \(2\) and \(-1\) would give conductors
+\(3\) and \(6\) without
+\eqref{eq:signed-frequency-lift}.  These checks are reproducible
+finite identity regressions.  They are not evidence for asymptotic
+cancellation and do not independently re-run the upstream TPC-93
+source--child inverse certificate.
+
+\subsection{What is not proved}
+
+\begin{itemize}[leftmargin=2em]
+\item No constant, resonant, low-conductor, or short sector is shown
+  to have the required aggregate saving.
+\item No fixed-form theorem is promoted to the literal growing
+  family.
+\item No oscillatory estimate for the high-conductor generic sector
+  is proved.
+\item No determinant-energy lower bound or full-block reassembly is
+  supplied.
+\item No fixed-\(h_0\) prime-pair estimate, parity breach, or
+  twin-prime conclusion follows.
+\end{itemize}
+
+\begin{remark}[Next theorem targets]
+The cleanest next attempts are now explicit: prove that the literal
+constant and low-conductor multiplier masses are affordable; return
+all \(B\)-shortened fibers under the global normalization; and seek
+a uniform weighted two-form estimate on the high-conductor generic
+sector.  A rigorous lower bound showing that one returned sector
+already exceeds its allowable budget is an equally valid negative
+certificate for that route.
+\end{remark}

@@ -1,0 +1,91 @@
+\section{Exact bilinear decompositions}
+\label{sec:bilinear-bounds}
+
+For \(f:G\to\mathbb C\), write
+\[
+ \overline f=\frac1{q-1}\sum_{x\in G}f(x),
+ \qquad
+ f^\circ=f-\overline f\,\one_G.
+\]
+
+\begin{theorem}[Principal/nonprincipal identity]
+\label{thm:principal-nonprincipal}
+For arbitrary \(a,b:G\to\mathbb C\),
+\begin{align}
+ \mathcal I_H(a,b)
+ ={}&
+ \frac{2H}{q-1}
+ \left(\sum_\omega a(\omega)\right)
+ \left(\sum_r b(r)\right)
+ +\mathcal R_H(a,b),
+\label{eq:principal-decomposition}\\
+ \mathcal R_H(a,b)
+ ={}&
+ \frac1{q-1}
+ \sum_{\chi\ne\chi_0}
+ \widehat{\one_{E_H}}(\chi)
+ \widehat a(\overline\chi)
+ \widehat b(\overline\chi).
+\label{eq:nonprincipal-exact}
+\end{align}
+Only even nonprincipal characters contribute to
+\eqref{eq:nonprincipal-exact}.
+\end{theorem}
+
+\begin{proof}
+Insert multiplicative Fourier inversion for
+\(\one_{E_H}(r\omega)\) into
+\eqref{eq:incidence-form}.  The principal term is the first term of
+\eqref{eq:principal-decomposition}.  The parity assertion follows
+from \cref{thm:parity-nullspace}.
+\end{proof}
+
+\begin{corollary}[Spectral norm bound]
+\label{cor:spectral-bound}
+Let
+\[
+ M_H=\max_{\chi\ne\chi_0}
+ |\widehat{\one_{E_H}}(\chi)|.
+\]
+Then
+\begin{equation}
+ |\mathcal R_H(a,b)|
+ \le
+ M_H\|a^\circ\|_2\|b^\circ\|_2
+ \ll
+ \sqrt q\log q\,
+ \|a^\circ\|_2\|b^\circ\|_2.
+\label{eq:spectral-bilinear-bound}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Use Cauchy--Schwarz in \eqref{eq:nonprincipal-exact}, followed by
+Parseval and \cref{cor:PV-bound}.  Odd characters already vanish.
+\end{proof}
+
+\begin{proposition}[Exact centered operator norm]
+\label{prop:centered-operator}
+\[
+ \left\|
+ K_Hb-\frac{2H}{q-1}
+ \left(\sum_rb(r)\right)\one_G
+ \right\|_2
+ \le M_H\|b^\circ\|_2.
+\]
+The best constant is exactly \(M_H\).
+\end{proposition}
+
+\begin{proof}
+On the character basis, the centered operator deletes the principal
+mode and has the nonprincipal singular values from
+\cref{thm:complete-spectrum}.  Their maximum is \(M_H\), and an
+extremizing character gives equality.
+\end{proof}
+
+\begin{remark}[Two distinct tasks]
+The principal term in \eqref{eq:principal-decomposition} is a density
+term of size \(2H/(q-1)\).  The remainder is a multiplicative
+dispersion term.  A proof must control both; a small nonprincipal
+spectrum cannot compensate for an unaffordable principal mass.
+\end{remark}

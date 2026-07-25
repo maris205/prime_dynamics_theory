@@ -1,0 +1,108 @@
+\section{Scale and exponent ledger}
+\label{sec:exponent-ledger}
+
+The current physical scales are
+\[
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)},\qquad
+ q_X\asymp Q_X.
+\]
+The endpoint-scale branch return is
+\[
+ Q_X^2=X^{534/400+o(1)}.
+\]
+
+\subsection{What TPC-101 saves on a long fiber}
+
+The previous worst-eigenvalue factor was
+\[
+ q_X^{1/2}
+ =
+ X^{267/800+o(1)}
+\]
+apart from logarithms.  On a resolved branch of length
+\(N\ge J_X\), TPC-101 gives
+\[
+ g_{q_X}(H_{q_X}(N))
+ \le
+ \sqrt{\frac{2q_X}{N}}
+ \le
+ X^{67/400+o(1)}.
+\]
+The difference is
+\[
+ \frac{267}{800}-\frac{67}{400}
+ =
+ \frac{133}{800}.
+\]
+Thus the spectral return gains a factor
+\[
+ J_X^{1/2}=X^{133/800+o(1)}
+\]
+on that length block.
+
+\begin{remark}[Support qualification]
+This gain is rigorous \emph{on branches known to satisfy}
+\(N\ge J_X\).  The full literal packet also contains short fibers.
+No global \(J_X^{1/2}\) saving may be entered until their weighted
+mass is separately returned.
+\end{remark}
+
+\subsection{No new physical loss}
+
+The function \(g_q(H)\) is part of an exact finite-group norm bound.
+It is not a new smoothing parameter and spends no physical exponent
+by itself.  The obligations
+\[
+ \mathfrak P_X,\qquad W_X,\qquad\mathfrak X_X
+\]
+must be estimated in the already normalized physical frame.
+Artificially enlarging the support to make a large-sieve theorem
+applicable would create a new loss, which must be entered explicitly
+in \(\Lambda_{\mathrm{phys}}\).
+
+\subsection{Endpoint stop}
+
+The final rule remains
+\[
+ \Lambda_{\mathrm{phys}}<\frac1{400}.
+\]
+A derivation reaching equality does not close the endpoint.
+Subpower factors, logarithms, and fixed comparison constants are
+absorbed in \(X^{o(1)}\); a fixed positive power is not.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}
+ p{0.29\textwidth}
+ p{0.24\textwidth}
+ X@{}}
+\toprule
+Quantity & Present target & Accounting rule\\
+\midrule
+\(\mathfrak P_X\) &
+\(X^{o(1)}Q_X^2\) &
+Positive principal mass; centered cancellation cannot pay it
+\\
+\(W_X\) &
+\(X^{o(1)}\) &
+Pointwise normalized atom cap; any power loss is physical
+\\
+\(\mathfrak X_X\) &
+\(X^{o(1)}Q_X^2\) &
+Already includes the width factor \(g_q(H)\)
+\\
+\(\lambda_D\) &
+\(\le2\eta_Z\) &
+Independent determinant/zero-mode compatibility
+\\
+\(\Lambda_{\rm phys}\) &
+\(<1/400\) &
+Strict endpoint; equality is a stop
+\\
+\bottomrule
+\end{tabularx}
+\caption{Nonduplicated exponent ledger.}
+\label{tab:exponent-ledger}
+\end{table}

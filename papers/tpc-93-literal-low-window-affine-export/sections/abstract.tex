@@ -1,0 +1,112 @@
+\begin{abstract}
+Let \(A_X\) be the already aggregated fixed-\(h_0\) determinant
+coefficient of TPC-32, embedded without wrap in
+\(\mathbb Z/q_X\mathbb Z\), and let \(\mathfrak m_{K,X}\) be the
+order-\(K\) zero-arc reconstruction multiplier of TPC-86.  We export
+the complete low-frequency functional
+\[
+ \Low_{K,R}(A_X)
+ =
+ \sum_{0<d_{q_X}(r,0)\le R}
+ \mathfrak m_{K,X}(r)\widehat A_X(r)
+\]
+to the native affine variables of the two polarized physical
+columns.  The first exact formula is row-native:
+\[
+ \Low_{K,R}(A_X)
+ =
+ \sum_{\alpha\ne\gamma}\sum_j
+ w_{\alpha,\gamma,j}\,
+ \one_{G_{\alpha,\gamma}(j)\le C_X}
+ \Ker_{K,R,X}\!\left(
+ \frac{m_\alpha-m_\gamma}{G_{\alpha,\gamma}(j)}\right),
+\]
+where
+\(\Ker_{K,R,X}(y)=\sum_{0<d_q(r,0)\le R}
+\mathfrak m_{K,X}(r)e_q(-ry)\).
+No frequency, channel, or exceptional sector has been estimated or
+discarded.
+
+After opening one ultra leg and applying the actual row-mask
+projector, every left column has
+\[
+ D_\theta(t)=d_\theta+\sigma_\theta t,\qquad
+ U_\theta(t)=u_\theta+a_\theta t,\qquad
+ \sigma_\theta u_\theta-a_\theta d_\theta=h_0,
+\]
+with the exact two-M\"obius sign
+\(\mu(D_\theta(t))\mu(U_\theta(t))\); the right polarization is
+symmetric.  We prove a decorated-column principle showing that the
+small-content indicator and determinant character survive this
+pointwise disintegration.  Exact content inversion then gives the
+complete multiplier-weighted expansion
+\[
+\sum_{\theta,c,\kappa,r}
+ c_{\theta,X}\mu(\kappa)\mathfrak m_{K,X}(r)
+ \one_{c\kappa\mid P_\theta}
+ \sum_{t\in I_\theta}
+ \mu(D_\theta(t))\mu(U_\theta(t))
+ W_\theta(t)
+ \one_{c\kappa\mid\sigma_\theta U_\theta(t)}
+ e_{cq_X}\!\left(
+ -r\varepsilon_\theta(M_\theta(t)-n_\theta)\right).
+\]
+All masks and provenance factors are retained inside
+\(c_{\theta,X}\) and \(W_\theta\).  An explicit child-to-source
+inverse and projector-weighted multiplicity identity prove that this
+key list reassembles the literal source coefficient.
+
+Writing \(b=c\kappa\),
+\[
+ B_{\theta,b}=\frac{b}{(b,\sigma_\theta)},
+\]
+the divisibility condition either has no solution or restricts
+\(t\) to one class \(t=\tau+B_{\theta,b}z\).  On that class the
+determinant character has slope
+\(\ell_\theta v_\theta\sigma_\theta B_{\theta,b}\).
+The unreduced forms
+\[
+ D_\theta(\tau+Bz),\qquad U_\theta(\tau+Bz)
+\]
+have determinant \(Bh_0\), but the divisibility condition also gives
+\[
+ U_\theta(\tau+Bz)=B\,V_{\theta,b}(z).
+\]
+On the nonzero M\"obius support, \(B\) is squarefree and
+\[
+ \mu(BV)=\mu(B)\mu(V)\one_{(B,V)=1}.
+\]
+After this exact content-factor extraction, the reduced pair
+\[
+ D_{\theta,b}(z),\qquad V_{\theta,b}(z)
+\]
+has slopes \((\sigma_\theta B,a_\theta)\) and determinant exactly
+\[
+ \boxed{h_0.}
+\]
+Physical primitivity also gives
+\((a_\theta,\sigma_\theta B)=1\) and
+\((a_\theta\sigma_\theta B,h_0)=1\).  Thus the low window can be
+resolved into unmasked fixed-\(h_0\) affine intervals, but only after
+retaining the extracted sign \(\mu(B)\) and the new coprimality mask.
+Treating the unreduced \(Bh_0\) pair as though its determinant were
+\(h_0\) is the precise provenance error.
+
+For every threshold \(H_X\), we finally partition every resolved
+native term, without deletion, into short fibers, long resonant
+fibers satisfying
+\[
+ N_\xi
+ \left\|
+ \frac{r_\xi\ell_\xi v_\xi\sigma_\xi B_\xi}
+ {c_\xi q_X}
+ \right\|_{\mathbb R/\mathbb Z}\le1,
+\]
+and the complementary long generic fibers.  This supplies the
+complete representation requested by TPC-92 Deliverable 1A and
+identifies the exact arithmetic inputs still missing.  The finite
+reindexing and determinant law are \(\Lzero\); their attachment to
+the literal packet is \(\Lone\).  No \(\Ltwo\) cancellation,
+fixed-shift prime-pair lower bound, parity breach, or twin-prime
+conclusion is proved.
+\end{abstract}

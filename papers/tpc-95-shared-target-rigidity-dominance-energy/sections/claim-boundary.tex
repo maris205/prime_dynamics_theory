@@ -1,0 +1,124 @@
+\section{Audited conclusion and next gate}
+\label{sec:claim-boundary}
+
+\begin{theorem}[Audited determinant-fiber conclusion]
+\label{thm:audited-conclusion}
+For every finite native determinant packet, let
+\[
+ d_n=(2r_{\max,n}-R_n)_+.
+\]
+Then
+\[
+ D\ge\sum_nd_n^2,
+\]
+and this is the sharp lower endpoint over all phase assignments with
+the same fiber moduli.  The corresponding free-phase coherence range
+is
+\[
+ \left[
+ \sum_nd_n^2-E_{\rm trip},\
+ \sum_nR_n^2-E_{\rm trip}
+ \right].
+\]
+
+For the canonical parent TPC-32 packet at one prescribed nonzero
+\(h_0\), the composite key
+\[
+ (\nu(t),x_t,y_t)
+\]
+is injective.  Distinct equal-determinant parents share at most one
+complete target in any slot.  Their complete shared-target
+correlation has the exact compressed formula
+\eqref{eq:compressed-Ctar}, and
+\[
+ |C_{\tar,X}|
+ \le
+ X^{-1+o(1)}Q_X^3J_X^2.
+\]
+Conditional on any future lower bound
+\[
+ D_X\ge
+ X^{-\lambda_D+o(1)}Q_X^3J_X^2
+ \quad\text{with fixed }\lambda_D<1,
+\]
+one has
+\[
+ |C_{\tar,X}|=o(D_X),
+\]
+and the remaining non-target-sharing coherence carries
+\((1-o(1))D_X\).
+\end{theorem}
+
+\begin{proof}
+Combine
+\cref{thm:sharp-energy-interval,cor:sharp-coherence-interval,thm:composite-uniqueness,lem:one-shared-target,thm:compressed-target-correlation,thm:target-loss-one,cor:target-negligible}.
+\end{proof}
+
+\paragraph{Exact progress.}
+The paper adds one positive and one negative certificate.  The
+positive certificate is the exact modulus-only determinant-energy
+floor \(D_{\dom}\), with a sharp dominant-share exponent transfer.
+The negative certificate is a loss-one theorem for every
+same-determinant complete-target collision, including left--right
+cross-sharing.  It converts the TPC-84 shared-target candidate from an
+open possible main term into a rigorously lower-order class on every
+future below-one energy branch.
+
+\paragraph{Canonical duplicate rule.}
+If an exact physical duplicate includes both ordered complete targets,
+then after canonical parent aggregation its off-diagonal class is
+empty.  Repeated computational children must not be counted as native
+coherence.  Equal numerical coefficient values on different targets
+are a different relation and receive no conclusion from the duplicate
+statement.
+
+\paragraph{What is not proved.}
+No lower bound is proved for
+\[
+ R_X,\qquad M_X,\qquad D_{\dom,X},\qquad D_X.
+\]
+No upper bound is proved for the distinguished zero mode.  No
+positive main term is obtained from a shared-divisor class with
+distinct targets, a determinant-preserving symmetry, or the unpaired
+remainder.  Hence the paper contains no new \(\Ltwo\) growing
+fixed-shift arithmetic estimate.
+
+\paragraph{Level ledger.}
+\Cref{thm:sharp-energy-interval,cor:sharp-coherence-interval} are
+\(\Lzero\) finite geometry.
+\Cref{thm:composite-uniqueness,thm:compressed-target-correlation,thm:target-loss-one}
+are \(\Lone\) results on the literal fixed-shift
+carrier.  The conditional statement \(|C_{\tar}|=o(D)\) is asserted
+only under the future lower bound with \(\lambda_D<1\).
+
+\paragraph{Independent endpoint ledgers.}
+Any future determinant lower and zero-mode upper bounds still require
+\[
+ \lambda_D\le2\eta_Z.
+\]
+All other physical fixed-power losses separately require
+\[
+ \Lambda_{\rm phys}<1/400.
+\]
+The same loss is never counted in both, and equality in the physical
+ledger is a stop.
+
+\paragraph{Arithmetic claim boundary.}
+Nothing is specialized from a general prescribed \(h_0\ne0\) to
+\(h_0=2\).  The paper proves no unweighted Chowla estimate, no breach
+of the sieve parity barrier, no fixed-shift Hardy--Littlewood
+asymptotic, no prime-pair lower bound, and no twin-prime conclusion.
+
+\paragraph{Next gate.}
+Run the exact \(D_{\dom}\) and compressed \(C_{\tar}\) diagnostics on
+the literal archive.  Analytically, the next positive theorem must
+either:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item prove a raw-mass lower bound together with a macroscopic
+  dominant-fiber share;
+\item find a high-capacity determinant-preserving pairing that does
+  not share complete targets and control its signed remainder; or
+\item prove the determinant-energy lower bound directly by a
+  different arithmetic mechanism.
+\end{enumerate}
+Shared-target coherence is no longer one of those doors.

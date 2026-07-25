@@ -1,0 +1,112 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Let \(A_X(n)\) be the literal signed normalized-determinant coefficient
+obtained after the three TPC-32 matched cutoff channels and all native
+contributions in each determinant fiber have been aggregated
+\citep{WangTPC32}.  TPC-83 proves, using the actual support and
+singleton envelopes, that natural post-bin mass and natural
+determinant energy are equivalent:
+\[
+ \|A_X\|_1\ge X^{-o(1)}N_{0,X}
+ \quad\Longleftrightarrow\quad
+ \|A_X\|_2^2
+ \ge X^{-o(1)}\frac{N_{0,X}^2}{Q_X}.
+\]
+This identifies the correct variable but supplies neither lower bound
+\citep{WangTPC83}.
+
+TPC-84 then opens the coefficient into canonical native determinant
+fibers.  It proves the sharp resultant interval from the native
+moduli and the exact identity
+\[
+ D=E_{\rm trip}+C_{\eqc}.
+\]
+Since \(E_{\rm trip}\) lies at most on the loss-one scale, a future
+energy lower bound with fixed loss below one must be carried by
+positive off-diagonal equal-determinant coherence
+\citep{WangTPC84}.  The paper lists exact duplicates,
+determinant-preserving symmetries, shared targets or divisors, and an
+unpaired remainder as candidate classes, while deliberately assigning
+no unproved sign or size to them.
+
+The present paper performs the next two exact steps.
+
+\begin{enumerate}[leftmargin=2.2em]
+\item We square the sharp fiber resultant before summing.  This gives
+  the optimal modulus-only energy certificate
+  \[
+   D_{\dom}=\sum_n(2r_{\max,n}-R_n)_+^2.
+  \]
+  It is never weaker than first summing the defects and then applying
+  Cauchy--Schwarz with the entire support, and it can be strictly
+  stronger when the surviving defect is concentrated.
+\item We show that a same-determinant shared-target graph is too
+  sparse to supply the required coherence.  The key is not a
+  heuristic independence claim.  It is an exact parametrization:
+  fixing a determinant and one affine target leaves at most a
+  divisor-bounded number of canonical parent keys.  This yields a
+  subpower degree and hence a loss-one absolute bound for the whole
+  shared-target class.
+\end{enumerate}
+
+The second result is stronger than saying that no positive
+shared-target main term has been found.  It proves that even perfect
+phase alignment inside that declared class cannot reach any
+determinant-energy scale with fixed loss below one.  Thus this
+particular door is closed.  The conclusion is class-local: sharing a
+selected divisor without sharing a complete target is a different
+relation and remains open.
+
+\subsection{Main results}
+
+The finite geometry gives the exact free-phase range
+\[
+ D\in
+ \left[
+ \sum_nd_n^2,\ \sum_nR_n^2
+ \right].
+\]
+Subtracting the fixed triplet diagonal gives the exact free-phase
+range of \(C_{\eqc}\).  A dominant share of the raw mass therefore
+supplies a deterministic energy lower bound with an explicit exponent
+ledger.
+
+For the arithmetic rigidity, write one canonical parent as
+\[
+ t=(\alpha,\gamma,j),\qquad
+ x_t=m_\alpha j+h_0,\qquad
+ y_t=m_\gamma j+h_0,
+\]
+and
+\[
+ \nu(t)=
+ \frac{m_\alpha-m_\gamma}{(x_t,y_t)}.
+\]
+The physical orbit has \(j>0\), and the row mask has
+\(m_\alpha\ne m_\gamma\).  We prove:
+
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the composite key \((\nu(t),x_t,y_t)\) identifies \(t\);
+\item two distinct equal-determinant keys share at most one target,
+  even if left--right cross-sharing is allowed;
+\item the target-sharing correlation is an exact sum of compressed
+  left, right, and cross group statistics;
+\item every target group has divisor-bounded cardinality; and
+\item the resulting coherence is at most the loss-one scale.
+\end{enumerate}
+
+The target-group formula also provides an audit invariant for a future
+native-key census.  It requires only sorting by exact integer keys and
+does not create a quadratic pair table.
+
+\subsection{Claim discipline}
+
+The sharp phase results are \(\Lzero\) finite algebra.  Their placement
+on the literal post-bin coefficient and the target-collision bound are
+\(\Lone\) results because they preserve the fixed nonzero \(h_0\),
+canonical parent keys, active target support, and global normalization.
+There is no new \(\Ltwo\) theorem: no lower bound for raw mass,
+post-bin mass, determinant energy, or the distinguished zero mode is
+proved.  In particular, no sieve-parity, prime-pair, or twin-prime
+conclusion is claimed.

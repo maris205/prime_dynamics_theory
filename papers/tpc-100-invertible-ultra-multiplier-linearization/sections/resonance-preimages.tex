@@ -1,0 +1,124 @@
+\section{Exact preimages with the inherited branch width}
+\label{sec:preimages}
+
+Let \(q=q_X\) and
+\[
+ E_H=\{\pm1,\ldots,\pm H\}
+ \subset\mathbb F_q^\times.
+\]
+For a branch \(\beta\) of length \(N_\beta\le q\), TPC-99 proves
+\[
+ \beta\text{ is resonant at }r
+ \quad\Longleftrightarrow\quad
+ r\omega_\beta\in E_{\mathsf H_\beta},
+\quad
+ \mathsf H_\beta=H_q(N_\beta).
+\]
+Every atom inherits this same test.
+
+By \cref{thm:lossless-atom-cells}, every \(j\in J_C\) corresponds to
+a unique atom \(p_C(j)\in P_C\).  Write
+\[
+ \omega_C(j)=\omega_{\beta(p_C(j))}.
+\]
+
+\begin{theorem}[Exact resonance preimage in a fine cell]
+\label{thm:correct-resonance-preimage}
+Let \(C\) be a \(q\nmid u_p\) cell, fix
+\(r\in\mathbb F_q^\times\), and let
+\[
+ \mathsf H_C=\mathsf H_{\beta(p)}=H_q(N_{\beta(p)})
+ \qquad(p\in P_C).
+\]
+Then
+\begin{align}
+ \{j\in J_C:r\omega_C(j)\in E_{\mathsf H_C}\}
+ =
+ J_C\cap
+ \bigcup_{s\in E_{\mathsf H_C}}
+ \left\{
+ m_C^{-1}\big((rA_C)^{-1}s-h_0\big)
+ \right\}
+ \pmod q.
+\label{eq:correct-resonance-preimage}
+\end{align}
+Consequently,
+\begin{equation}
+ \#\{j\in J_C:r\omega_C(j)\in E_{\mathsf H_C}\}
+ \le\min\{|J_C|,2\mathsf H_C\}.
+\label{eq:correct-resonance-count}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Use \eqref{eq:fine-cell-map} and solve
+\[
+ rA_C(m_Cj+h_0)=s\pmod q
+\]
+for each \(s\in E_{\mathsf H_C}\).  All coefficients are invertible and
+distinct \(s\)'s give distinct residues.  Each residue meets the
+no-wrap orbit window in at most one integer.
+\end{proof}
+
+\begin{remark}
+The bound uses \(2\mathsf H_C=2H_q(N_\beta)\), not
+\(2H_q(|J_C|)\).  Atomization changes neither the phase length nor
+the resonance threshold of the original branch.
+\end{remark}
+
+\begin{corollary}[Exact multiplier preimage]
+\label{cor:correct-multiplier-preimage}
+For \(y\in\mathbb F_q^\times\),
+\begin{equation}
+ \{j\in J_C:\omega_C(j)=y\}
+ =
+ J_C\cap
+ \left\{
+ m_C^{-1}(A_C^{-1}y-h_0)
+ \right\}
+ \pmod q,
+\label{eq:correct-multiplier-preimage}
+\end{equation}
+and this set has cardinality zero or one.
+\end{corollary}
+
+\begin{proposition}[Exact cross-cell collision]
+\label{prop:correct-cross-collision}
+For fine cells \(C,D\) and atoms
+\(p_C(j),p_D(k)\),
+\begin{equation}
+ \omega_C(j)=\omega_D(k)
+ \quad\Longleftrightarrow\quad
+ A_Cm_Cj-A_Dm_Dk
+ \equiv h_0(A_D-A_C)\pmod q.
+\label{eq:correct-cross-congruence}
+\end{equation}
+For fixed \(j\), at most one \(k\in J_D\) solves this congruence, and
+vice versa.  Thus
+\begin{equation}
+ \#\{(j,k)\in J_C\times J_D:
+ \omega_C(j)=\omega_D(k)\}
+ \le\min\{|J_C|,|J_D|\}.
+\label{eq:correct-cross-count}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Expand
+\[
+ A_C(m_Cj+h_0)=A_D(m_Dk+h_0)
+\]
+and rearrange.  Since \(A_Dm_D\ne0\), one \(k\bmod q\) is possible;
+no-wrap gives at most one integer in \(J_D\).  Exchange the cells
+for the symmetric count.
+\end{proof}
+
+\begin{remark}[Fine cells are singletons]
+Because the deletion record retains every coordinate other than
+\(j\), including \(\sigma,z\) and the actual source values, the
+source identity reconstructs \(j\) and every fine cell is a
+singleton.  Thus the preimage and partner bounds are exact but
+formally trivial on these cells.  The result is a lossless collision
+identity, not a claim that a large set of orbit points has already
+been equidistributed.
+\end{remark}

@@ -1,0 +1,23 @@
+\section{Exact finite regression}
+\label{sec:regression}
+
+The script
+\texttt{experiments/tpc101\_certificate.py} enumerates odd primes,
+every admissible width, complete multiplicative-character tables,
+and deterministic complex test weights.  It verifies:
+\begin{enumerate}[leftmargin=2em]
+\item the direct incidence remainder against
+  \eqref{eq:exact-remainder};
+\item the exact fixed-filter norm inequality and an explicitly
+  constructed Fourier extremizer;
+\item the Wiener-to-Hilbert--Schmidt bound;
+\item equality for a one-frequency atom;
+\item the full-window zero remainder and the resolved-length bound;
+  and
+\item the principal-to-diagonal transfer on deterministic finite
+  opened-cell ledgers.
+\end{enumerate}
+Roots of unity are evaluated in floating arithmetic; all set,
+cardinality, endpoint, and ledger data are deterministic.  The
+reported roundoff tolerance is numerical verification of finite
+identities, not evidence for an asymptotic census bound.

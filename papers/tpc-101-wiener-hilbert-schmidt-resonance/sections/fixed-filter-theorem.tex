@@ -1,0 +1,146 @@
+\section{The exact fixed-filter functional norm}
+\label{sec:fixed-filter}
+
+Let \(q\) be an odd prime, put \(G=\mathbb F_q^\times\), and write
+\(n=q-1\).  For \(1\le H\le n/2\), set
+\[
+ E_H=\{\pm1,\ldots,\pm H\}\subset G.
+\]
+For \(f:G\to\C\), use
+\[
+ \widehat f(\chi)
+ =
+ \sum_{x\in G}f(x)\overline{\chi(x)},\qquad
+ f^\circ=f-\frac1n\Big(\sum_xf(x)\Big)\one_G.
+\]
+Parseval reads
+\[
+ \sum_{\chi\in\widehat G}|\widehat f(\chi)|^2
+ =
+ n\sum_{x\in G}|f(x)|^2.
+\]
+
+TPC-99 proves the exact decomposition
+\begin{align}
+ \cI_H(a,b)
+ ={}&
+ \frac{2H}{n}
+ \left(\sum_\omega a(\omega)\right)
+ \left(\sum_r b(r)\right)
+ +\mathcal R_H(a,b),
+\label{eq:principal-remainder}\\
+ \mathcal R_H(a,b)
+ ={}&
+ \frac1n
+ \sum_{\chi\ne\chi_0}
+ \widehat{\one_{E_H}}(\chi)
+ \widehat a(\overline\chi)
+ \widehat b(\overline\chi).
+\label{eq:exact-remainder}
+\end{align}
+
+\begin{definition}[Fixed-filter spectral mass]
+\label{def:fixed-filter-mass}
+For \(b:G\to\C\), define
+\begin{equation}
+ \mathfrak S_H(b)^2
+ =
+ \frac1n
+ \sum_{\chi\ne\chi_0}
+ |\widehat{\one_{E_H}}(\chi)|^2
+ |\widehat b(\overline\chi)|^2.
+\label{eq:fixed-filter-mass}
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Exact fixed-filter norm]
+\label{thm:exact-fixed-filter}
+For every \(a,b:G\to\C\),
+\begin{equation}
+ |\mathcal R_H(a,b)|
+ \le
+ \mathfrak S_H(b)\,\|a^\circ\|_2.
+\label{eq:exact-functional-bound}
+\end{equation}
+For fixed \(b\), the constant \(\mathfrak S_H(b)\) is the exact
+operator norm of the functional
+\[
+ a^\circ\longmapsto\mathcal R_H(a,b)
+\]
+on the centered subspace of \(\ell^2(G)\).
+\end{theorem}
+
+\begin{proof}
+Cauchy--Schwarz in \eqref{eq:exact-remainder} gives
+\begin{align*}
+ |\mathcal R_H(a,b)|
+ &\le
+ \frac1n
+ \left(
+ \sum_{\chi\ne\chi_0}
+ |\widehat a(\overline\chi)|^2
+ \right)^{1/2}
+ \left(
+ \sum_{\chi\ne\chi_0}
+ |\widehat{\one_{E_H}}(\chi)|^2
+ |\widehat b(\overline\chi)|^2
+ \right)^{1/2}\\
+ &=\|a^\circ\|_2\,\mathfrak S_H(b)
+\end{align*}
+by Parseval.  Equality in Cauchy--Schwarz is attained by prescribing
+the nonprincipal Fourier coefficients of \(a\) proportional to the
+complex conjugates of
+\[
+ \widehat{\one_{E_H}}(\chi)\widehat b(\overline\chi)
+\]
+with the corresponding index reversal.  Fourier inversion produces
+a centered \(a\), proving exactness.
+\end{proof}
+
+\begin{theorem}[Wiener-to-Hilbert--Schmidt transfer]
+\label{thm:wiener-hs}
+For every \(b:G\to\C\),
+\begin{align}
+ \mathfrak S_H(b)
+ &\le
+ \|b\|_1
+ \sqrt{\frac{2H(q-1-2H)}{q-1}},
+\label{eq:wiener-hs-mass}\\
+ |\mathcal R_H(a,b)|
+ &\le
+ \|b\|_1
+ \sqrt{\frac{2H(q-1-2H)}{q-1}}\,
+ \|a^\circ\|_2.
+\label{eq:wiener-hs-bound}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+The elementary Wiener bound gives
+\[
+ |\widehat b(\chi)|\le\sum_{r\in G}|b(r)|=\|b\|_1.
+\]
+TPC-99's exact nonprincipal Hilbert--Schmidt ledger is
+\[
+ \sum_{\chi\ne\chi_0}
+ |\widehat{\one_{E_H}}(\chi)|^2
+ =
+ 2H(q-1-2H).
+\]
+Insert both facts into \eqref{eq:fixed-filter-mass}, then use
+\cref{thm:exact-fixed-filter}.
+\end{proof}
+
+\begin{remark}[No character-sum theorem is used]
+The factor in \eqref{eq:wiener-hs-bound} comes from the complete
+nonprincipal squared spectrum, not from P\'olya--Vinogradov or a
+pointwise estimate for one character.  It is therefore sensitive to
+the resonance width and to the purely principal endpoint.
+\end{remark}
+
+\begin{remark}[Why the asymmetric norm is legitimate]
+The theorem does not claim a smaller operator norm for arbitrary
+pairs \((a,b)\).  It fixes \(b\), uses its actual Wiener mass, and
+takes the norm only in the unknown census \(a\).  This is precisely
+the asymmetry of the literal reconstruction filter.
+\end{remark}

@@ -1,0 +1,97 @@
+\section{Resolved-length interpretation}
+\label{sec:length-weighted}
+
+Recall
+\[
+ H_q(N)
+ =
+ \min\left\{\frac{q-1}{2},\left\lfloor\frac qN\right\rfloor\right\}.
+\]
+
+\begin{proposition}[Exact endpoint and long-fiber gain]
+\label{prop:length-gain}
+For \(1\le N\le q\),
+\begin{align}
+ g_q(H_q(N))&=0,
+ &&N=1,2,
+\label{eq:length-endpoint}\\
+ g_q(H_q(N))&\le\sqrt{\frac{2q}{N}},
+ &&N\ge3.
+\label{eq:length-gain}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+For \(N=1,2\), one has
+\(H_q(N)=(q-1)/2\), so
+\cref{prop:full-window} applies.  For \(N\ge3\),
+\[
+ H_q(N)\le\frac qN.
+\]
+Combine this with \(g_q(H)\le\sqrt{2H}\).
+\end{proof}
+
+To expose the gain without merging lengths, refine
+\eqref{eq:literal-census} by the exact resolved cardinality:
+\begin{equation}
+ a_N(\omega)
+ =
+ \sum_{\substack{\beta\text{ in the corrected nonconstant carrier}\\
+                  1\le N_\beta=N\le q_X\\
+                  \omega_\beta=\omega}}
+ w_{\beta,X}.
+\label{eq:exact-length-census}
+\end{equation}
+Then
+\[
+ a_H
+ =
+ \sum_{\substack{1\le N\le q_X\\
+                  H_{q_X}(N)=H}}
+ a_N,
+\qquad
+ a_H^\circ
+ =
+ \sum_{\substack{1\le N\le q_X\\
+                  H_{q_X}(N)=H}}
+ a_N^\circ.
+\]
+
+\begin{corollary}[A resolved-length sufficient gate]
+\label{cor:length-gate}
+The centered condition \eqref{eq:new-centered-gate} follows from
+\begin{equation}
+ \sqrt{q_X}
+ \sum_{N=3}^{q_X}
+ \frac{\|a_N^\circ\|_2}{\sqrt N}
+ \ll X^{o(1)}Q_X^2.
+\label{eq:length-weighted-gate}
+\end{equation}
+The exact-length contributions \(N=1,2\) incur no centered cost.
+\end{corollary}
+
+\begin{proof}
+Use the triangle inequality in the preceding decomposition and then
+\eqref{eq:length-gain}.  The harmless factor \(\sqrt2\) is absorbed
+in the implied constant.
+\end{proof}
+
+\begin{remark}[This is a sufficient refinement]
+Splitting \(a_H\) into exact lengths can lose cancellation between
+different \(N\) having the same width.  Therefore
+\eqref{eq:length-weighted-gate} is a transparent sufficient
+condition, not a necessary reformulation of
+\eqref{eq:new-centered-gate}.
+\end{remark}
+
+\begin{remark}[Polynomial meaning]
+If a packet is supported on resolved lengths
+\(N\ge N_{\min}\ge3\), its centered spectral factor is at most
+\[
+ O\!\left(\sqrt{\frac{q_X}{N_{\min}}}\right).
+\]
+Thus a polynomial lower bound for genuine fiber length translates
+directly into a polynomial saving over the previous uniform
+\(\sqrt{q_X}\) cost.  Establishing such support for the full literal
+packet is a separate physical statement.
+\end{remark}

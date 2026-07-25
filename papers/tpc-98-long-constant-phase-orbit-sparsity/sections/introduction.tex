@@ -1,0 +1,84 @@
+\section{Introduction}
+\label{sec:introduction}
+
+On the high-\(\beta\) endpoint row, the physical scales are
+\[
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)},\qquad
+ N_{0,X}=J_XQ_X^2.
+\]
+The zero-mode route isolated in TPC-85--TPC-88 asks for the
+amplitude scale
+\begin{equation}
+ X^{o(1)}Q_X^2
+ =
+ X^{o(1)}\frac{N_{0,X}}{J_X}.
+\label{eq:target-amplitude}
+\end{equation}
+TPC-93 gives an exact low-frequency export of the literal matched
+shell \citep{WangTPC93}.  After exact-content resolution, one
+surviving affine key \(\xi\) has two primitive forms of determinant
+\(h_0\), a finite interval of affine parameters, and additive phase
+\[
+ e_{c_\xi q_X}\!
+ \left(-r_\xi\varepsilon_\xi
+       \Omega_\xi z\right),
+ \qquad
+ \Omega_\xi
+ =\ell_\xi v_\xi\sigma_\xi B_\xi.
+\]
+TPC-94 proves that literal common-target provenance gives
+\(c_\xi\mid\Omega_\xi\); since \(q_X\) is prime and
+\(0<|r_\xi|<q_X\), the reduced conductor is exactly \(1\) or
+\(q_X\) \citep{WangTPC94}.  Conductor \(1\) is equivalent to
+\begin{equation}
+ q_X\mid\Omega_\xi.
+\label{eq:constant-condition}
+\end{equation}
+The reconstruction filter gives this branch its full low-frequency
+multiplier mass, so Fourier decay alone supplies no discount.
+
+The present paper uses a different feature: the no-wrap modulus is
+auxiliary.  It may be enlarged by a fixed factor without changing a
+single physical coefficient.  Once it dominates all rows, row
+differences, and orbit diameters, exact common-target provenance
+makes the progression step divide a nonzero row difference below
+\(q_X\).  The remaining native factors except the complementary
+divisor \(\sigma_\xi\) are also below \(q_X\).  Consequently
+\eqref{eq:constant-condition} forces \(q_X\mid\sigma_\xi\), and the
+original orbit target occupies one residue class modulo \(q_X\).
+The actual orbit interval is shorter than \(q_X\), hence at most one
+orbit point survives for each moving row.
+
+\subsection{What is new}
+
+The main result, \cref{thm:literal-constant-bound}, is a literal
+growing-packet upper bound, not merely a finite-dimensional model.
+It uses no cancellation of M\"obius signs: orbit sparsity alone
+replaces the usual \(O(J_X)\) orbit count by \(O(1)\) on the entire
+conductor-one branch.  The two row \(\ell^1\) bounds then give
+\(X^{o(1)}Q_X^2\).
+
+This is a one-sector closure.  In particular:
+\begin{itemize}[leftmargin=2em]
+\item the apparent \(q_X\mid B_\xi\) alternative is proved absent on
+  active literal support, rather than discarded;
+\item no estimate is inferred for a nonconstant phase merely from
+  its conductor \(q_X\);
+\item the bound has only soft reserve at
+  \eqref{eq:target-amplitude}; and
+\item the determinant compatibility
+  \(\lambda_D\le2\eta_Z\) and the strict physical budget
+  \(\Lambda_{\rm phys}<1/400\) remain separate.
+\end{itemize}
+
+\subsection{Organization}
+
+\Cref{sec:physical-frame} records the exact imported frame and the
+strengthened no-wrap choice.  \Cref{sec:dichotomy} proves the
+divisibility dichotomy.  \Cref{sec:orbit-sparsity} proves the
+one-orbit-point theorem.  \Cref{sec:mass-bound} restores every
+literal multiplier and proves the endpoint-scale bound.
+\Cref{sec:regression} describes the exact finite certificate, and
+\cref{sec:endpoint-ledger,sec:claim-boundary} state what has and has
+not advanced.

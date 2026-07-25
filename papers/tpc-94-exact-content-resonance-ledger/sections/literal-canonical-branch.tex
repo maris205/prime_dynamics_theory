@@ -1,0 +1,145 @@
+\section{The literal canonical branch}
+\label{sec:literal-canonical-branch}
+
+The robustness theorem deliberately did not assume that \(b\) came
+from the TPC-32 canonical common-target projector.  We now restore
+that provenance exactly by importing the established TPC-93
+Theorem 3.3, Corollary 3.4, and Theorem 3.5 (Complete Decorated
+Affine Export), whose explicit inverse and multiplicity reconstruction
+furnish the required lossless source-to-decorated ledger.
+
+For a left-polarized TPC-93 key,
+\[
+ \sigma_\theta U_\theta(t)
+ =
+ M_\theta(t)j_\theta+h_0,
+\qquad
+ P_\theta=n_\theta j_\theta+h_0.
+\]
+An active content-inversion key satisfies
+\[
+ b=c\kappa\mid\sigma_\theta U_\theta(t),
+ \qquad
+ b\mid P_\theta.
+\]
+Thus \(b\) is literally a common divisor of the two original targets,
+not merely a divisor of a reduced surrogate.
+For a right-polarized key the two row labels are exchanged.  The
+same common-target statements hold, while the determinant-character
+orientation is recorded separately by
+\(\varepsilon_\theta=-1\).
+
+\begin{theorem}[Literal removal of the robustness content]
+\label{thm:canonical-H-one}
+On the TPC-32 primitive target support, import the established
+TPC-93 Theorem 3.3, Corollary 3.4, and Theorem 3.5, including their
+lossless inverse provenance and multiplicity reconstruction
+\citep{WangTPC93}.  Then
+every active content-inversion key in either polarization satisfies
+\begin{equation}
+ (b,h_0)=1.
+\label{eq:canonical-b-coprime-h}
+\end{equation}
+Consequently
+\[
+ (B,h_0)=1,\qquad H=1.
+\]
+The two affine M\"obius arguments after extracting \(B\) are
+individually primitive and have the same prescribed determinant
+\(h_0\):
+\[
+ D_\theta(\tau+Bz),\qquad
+ V_{\theta,b}(z)=\frac{U_\theta(\tau+Bz)}B.
+\]
+\end{theorem}
+
+\begin{proof}
+The TPC-32 common-target-divisor lemma states that every common
+target divisor \(w\) is coprime to the physical product containing
+the fixed shift \(h_0\) \citep{WangTPC32}.  Apply it with
+\[
+ w=b,\quad
+ N_m=\sigma_\theta U_\theta(t),\quad
+ N_n=P_\theta.
+\]
+This proves \eqref{eq:canonical-b-coprime-h}.  Since \(B\mid b\),
+\((B,h_0)=1\).  Now apply
+\cref{thm:robustness-content} to obtain \(H=1\) and the primitive
+determinant \(h_0\).
+\end{proof}
+
+\begin{corollary}[Literal normalized M\"obius pair]
+\label{cor:literal-normalized-mobius-pair}
+On the literal canonical branch,
+\begin{align}
+ &\mu(D_\theta(\tau+Bz))
+ \mu(U_\theta(\tau+Bz))
+\notag\\
+ &\quad=
+ \mu(B)
+ \mu(D_\theta(\tau+Bz))
+ \mu(V_{\theta,b}(z))
+ \one_{(B,V_{\theta,b}(z))=1}.
+\label{eq:literal-normalized-mobius-pair}
+\end{align}
+Every squareful \(B\) branch is identically zero.  Every surviving
+branch is a primitive determinant-\(h_0\) TPC-90 pair with one extra
+coprimality mask and the extracted sign \(\mu(B)\)
+\citep{WangTPC90}.
+\end{corollary}
+
+\begin{proof}
+Set \(H=1\) in
+\eqref{eq:two-stage-mobius-normalization}.
+\end{proof}
+
+\begin{proposition}[Literal content divisibility]
+\label{prop:literal-content-divides-phase-slope}
+Under the imported lossless-provenance theorem above, for every
+active canonical content key in either polarization and every
+\(z\in\Z\),
+\begin{equation}
+ b\mid M_\theta(\tau+Bz)-n_\theta.
+\label{eq:literal-b-divides-row-difference}
+\end{equation}
+Consequently
+\begin{equation}
+ b\mid\Omega_{\theta,b}
+ =\ell_\theta v_\theta\sigma_\theta B,
+ \qquad
+ c\mid\Omega_{\theta,b}.
+\label{eq:literal-content-divides-phase-slope}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The defining progression gives
+\[
+ b\mid M_\theta(\tau+Bz)j_\theta+h_0,
+ \qquad
+ b\mid n_\theta j_\theta+h_0
+\]
+for every integer \(z\).  Subtraction gives
+\[
+ b\mid
+ \{M_\theta(\tau+Bz)-n_\theta\}j_\theta.
+\]
+The TPC-32 common-target-divisor lemma gives
+\((b,j_\theta)=1\), so \(j_\theta\) may be cancelled, proving
+\eqref{eq:literal-b-divides-row-difference}.  Subtract that
+divisibility at \(z+1\) and \(z\).  The difference is
+\(\Omega_{\theta,b}\), proving
+\eqref{eq:literal-content-divides-phase-slope}.  Finally \(c\mid b\).
+The right polarization is identical after exchanging the two row
+labels; the sign \(\varepsilon_\theta=-1\) affects the oriented phase
+but not any displayed divisibility.
+\end{proof}
+
+\begin{remark}[Why the abstract palette is still needed]
+The conclusion \(H=1\) depends on three exact provenance facts:
+\(\sigma U\) and \(P\) are the original targets, \(b\) divides both,
+and the TPC-32 primitive support has not been enlarged.  If any of
+these facts is lost under a future completion or surrogate, one must
+return to \cref{thm:robustness-content}; the correct primitive
+determinant is then \(h_0/H\), not a silently relabeled \(h_0\).
+\end{remark}

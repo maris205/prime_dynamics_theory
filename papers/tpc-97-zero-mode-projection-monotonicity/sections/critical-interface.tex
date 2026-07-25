@@ -1,0 +1,186 @@
+\section{The critical inverse-\texorpdfstring{\(J\)}{J} interface}
+\label{sec:critical-interface}
+
+Let \(\tau_j\to0\) be a target angle scale.  The TPC application
+will set \(\tau_j=J_j^{-1}\).
+
+\begin{theorem}[Safe and defective transfer dichotomy]
+\label{thm:critical-dichotomy}
+Let \(P_j\) be orthogonal projections on prescribed finite frames,
+let
+\[
+ B_j=P_jA_j\ne0,\qquad
+ R_j=(I-P_j)A_j,
+\]
+and put
+\[
+ \kappa_j
+ =
+ \frac{\|(I-P_j)\one\|_2}{\sqrt{S_j}},
+\qquad
+ r_j=\frac{\|R_j\|_2}{\|B_j\|_2}.
+\]
+Suppose
+\[
+ \rho(B_j)\le C\tau_j.
+\]
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item If \(\kappa_j=0\), then
+  \[
+  \rho(A_j)\le C\tau_j
+  \]
+  for arbitrary \(r_j\).
+\item If
+  \[
+  \kappa_jr_j\le K\tau_j,
+  \]
+  then
+  \[
+  \rho(A_j)\le(C+K)\tau_j.
+  \]
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Part (i) is \cref{cor:no-accuracy-certificate}.  For part (ii),
+\cref{thm:defective-envelope} gives
+\[
+ \rho(A_j)
+ \le
+ \frac{\rho(B_j)+\kappa_jr_j}{\sqrt{1+r_j^2}}
+ \le(C+K)\tau_j.
+\]
+\end{proof}
+
+\begin{theorem}[Sharpness at the target scale]
+\label{thm:critical-sharpness}
+Uniform transfer of a zero-mode error target
+\[
+ |Z(A)-Z(PA)|
+ \le C\tau\sqrt S\,\|PA\|_2
+\]
+from only the two norm parameters \(\kappa(P)\) and
+\(r=\|(I-P)A\|_2/\|PA\|_2\) requires
+\[
+ \kappa(P)r=O(\tau)
+\]
+in order.  In particular, on any class where
+\(\kappa(P)\ge\kappa_0>0\), the structure-free relative residual
+requirement returns as
+\[
+ r=O(\tau).
+\]
+For \(\tau=J^{-1}\), this is the TPC-89 critical order.
+\end{theorem}
+
+\begin{proof}
+Sufficiency is \cref{cor:product-criterion}.  For necessity, when
+\(q=(I-P)\one\ne0\), choose \(R\) parallel to \(q\).
+\Cref{thm:sharp-zero-defect} then gives the exact normalized defect
+\[
+ \frac{|Z(A)-Z(PA)|}{\sqrt S\,\|PA\|_2}
+ =\kappa(P)r.
+\]
+No smaller uniform order follows from the two norms.  If
+\(\kappa(P)\ge\kappa_0\), the stated residual order is necessary.
+\end{proof}
+
+\begin{example}[Sharp angle failure beyond \(J^{-1}\)]
+\label{ex:J-failure}
+Use the projection from
+\cref{ex:unsafe-false-positive}, so \(\kappa=1\), and let
+\[
+ B_J=f,\qquad
+ A_J=f+r_Je.
+\]
+Then
+\[
+ \rho(B_J)=0,\qquad
+ \rho(A_J)=\frac{r_J}{\sqrt{1+r_J^2}}.
+\]
+If \(Jr_J\) is unbounded, then \(J\rho(A_J)\) is unbounded along a
+subsequence.  Thus even a perfect projected zero mode need not
+transfer the critical angle when the missing-constant residual is
+larger than order \(J^{-1}\).
+\end{example}
+
+\begin{remark}[The product tradeoff]
+\label{rem:product-tradeoff}
+The defective case does not always require
+\(r=O(J^{-1})\).  An approximately constant-preserving projection
+with \(\kappa=o(1)\) can tolerate a larger residual, provided
+\[
+ \kappa r=O(J^{-1}).
+\]
+The two factors have different meanings: \(\kappa\) is an operator
+defect known before seeing \(A\), while \(r\) measures the discarded
+energy of the particular coefficient.  They should be recorded
+separately before their product is compared with the target.
+\end{remark}
+
+\subsection{Unnormalized critical scale}
+
+The same condition appears in the physical zero-mode normalization.
+Assume along a critical family that
+\begin{equation}
+ S_X\le X^{o(1)}Q_X,\qquad
+ D(B_X)\le X^{o(1)}Q_X^3J_X^2,
+\label{eq:critical-upper-scales}
+\end{equation}
+where \(B_X=P_XA_X\ne0\).
+
+\begin{proposition}[Defect at the \(Q^2\) scale]
+\label{prop:Q2-defect}
+Under \eqref{eq:critical-upper-scales}, put
+\[
+ \kappa_X
+ =
+ \frac{\|(I-P_X)\one\|_2}{\sqrt{S_X}},
+\qquad
+ r_X
+ =
+ \frac{\|(I-P_X)A_X\|_2}{\|P_XA_X\|_2}.
+\]
+Then
+\begin{equation}
+ |Z(A_X)-Z(B_X)|
+ \le
+ X^{o(1)}\kappa_Xr_X Q_X^2J_X.
+\label{eq:Q2-defect}
+\end{equation}
+Hence a sufficient condition for
+\[
+ |Z(A_X)-Z(B_X)|
+ \le X^{-\eta_Z+o(1)}Q_X^2
+\]
+is
+\begin{equation}
+ \boxed{
+ \kappa_Xr_X
+ \le
+ \frac{X^{-\eta_Z+o(1)}}{J_X}.}
+\label{eq:physical-product-target}
+\end{equation}
+For a constant-preserving projection, the defect is identically
+zero and this approximation condition disappears.
+\end{proposition}
+
+\begin{proof}
+By \cref{thm:sharp-zero-defect},
+\[
+ |Z(A_X)-Z(B_X)|
+ \le
+ \sqrt{S_X}\,\kappa_Xr_X\sqrt{D(B_X)}.
+\]
+Insert \eqref{eq:critical-upper-scales} to obtain
+\eqref{eq:Q2-defect}; the final statement follows immediately.
+\end{proof}
+
+\begin{remark}[Zero-mode and energy goals remain distinct]
+\label{rem:zero-energy-distinct}
+Exact zero-mode preservation does not by itself prove that the
+projected energy is large.  Conversely, a large projected energy
+does not estimate its zero mode.  \Cref{prop:safe-dominance-ledger}
+shows that proved projected bounds transfer in the correct
+directions, but both inputs still require their own arguments.
+\end{remark}

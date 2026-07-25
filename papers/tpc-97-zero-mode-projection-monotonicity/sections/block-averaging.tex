@@ -1,0 +1,228 @@
+\section{Block averaging on the actual support}
+\label{sec:block-averaging}
+
+Let
+\[
+ \mathcal B=\{B_1,\ldots,B_m\}
+\]
+be a partition of \(\Omega\) into nonempty blocks.  For
+\(\omega\in B_j\), define
+\begin{equation}
+ (P_{\mathcal B}A)_\omega
+ =
+ \overline A_j
+ :=
+ \frac{1}{|B_j|}
+ \sum_{\nu\in B_j}A_\nu.
+\label{eq:block-average}
+\end{equation}
+
+\begin{proposition}[Block averaging is a safe projection]
+\label{prop:block-safe}
+The operator \(P_{\mathcal B}\) is the orthogonal projection onto
+the subspace of vectors that are constant on each block.  Moreover,
+\[
+ P_{\mathcal B}\one=\one.
+\]
+Consequently,
+\begin{align}
+ Z(P_{\mathcal B}A)&=Z(A),
+\label{eq:block-zero-mode}\\
+ D(P_{\mathcal B}A)
+ &=
+ \sum_{j=1}^m |B_j|\,|\overline A_j|^2,
+\label{eq:block-energy}\\
+ D(A)-D(P_{\mathcal B}A)
+ &=
+ \sum_{j=1}^m\sum_{\omega\in B_j}
+ |A_\omega-\overline A_j|^2.
+\label{eq:within-block-variance}
+\end{align}
+If \(P_{\mathcal B}A\ne0\), then
+\[
+ \Flat(A)\le\Flat(P_{\mathcal B}A),
+\qquad
+ \rho(A)\le\rho(P_{\mathcal B}A),
+\]
+where both statistics use the original frame size \(S\).
+\end{proposition}
+
+\begin{proof}
+The formula \eqref{eq:block-average} is idempotent and its range is
+the block-constant subspace.  For every block-constant \(C\),
+\[
+ \langle A-P_{\mathcal B}A,C\rangle
+ =
+ \sum_{j=1}^m
+ \overline{C_j}
+ \sum_{\omega\in B_j}
+ (A_\omega-\overline A_j)
+ =0.
+\]
+Hence the projection is orthogonal.  It clearly fixes \(\one\).
+Equation \eqref{eq:block-zero-mode} follows by summing block means
+with their multiplicities.  Equations \eqref{eq:block-energy} and
+\eqref{eq:within-block-variance} are Pythagoras written block by
+block.  The final conclusion is
+\cref{thm:safe-projection-law}.
+\end{proof}
+
+\begin{corollary}[Exact flatness gap]
+\label{cor:block-flatness-gap}
+If \(Z(A)\ne0\) and \(P_{\mathcal B}A\ne0\), then
+\begin{equation}
+ \Flat(P_{\mathcal B}A)-\Flat(A)
+ =
+ \frac{|Z(A)|^2
+ \bigl(D(A)-D(P_{\mathcal B}A)\bigr)}
+ {D(P_{\mathcal B}A)D(A)}.
+\label{eq:flatness-gap}
+\end{equation}
+Thus the inflation is exactly controlled by the discarded
+within-block variance.
+\end{corollary}
+
+\begin{proof}
+Subtract the two fractions with the common numerator
+\(|Z(A)|^2\), and use \eqref{eq:within-block-variance}.
+\end{proof}
+
+\subsection{Nested coarse-graining}
+
+Say that \(\mathcal B_{\rm fine}\) refines
+\(\mathcal B_{\rm coarse}\) if every fine block is contained in a
+coarse block.  Then
+\[
+ \Ran P_{\rm coarse}
+ \subset
+ \Ran P_{\rm fine}.
+\]
+
+\begin{theorem}[Monotone certificate ladder]
+\label{thm:nested-monotonicity}
+Let \(P_{\rm fine}\) and \(P_{\rm coarse}\) be the block projections
+of nested partitions, with the fine partition refining the coarse
+partition.  Then
+\begin{equation}
+ D(P_{\rm coarse}A)
+ \le D(P_{\rm fine}A)
+ \le D(A),
+\label{eq:nested-energy}
+\end{equation}
+and all three vectors have the same zero mode.  On every nonzero
+branch,
+\begin{equation}
+ \boxed{
+ \Flat(A)
+ \le\Flat(P_{\rm fine}A)
+ \le\Flat(P_{\rm coarse}A),}
+\label{eq:nested-flatness}
+\end{equation}
+with the analogous inequalities for \(\rho\), all computed on the
+same frame \(\Omega\).
+\end{theorem}
+
+\begin{proof}
+Because the ranges are nested,
+\[
+ P_{\rm coarse}P_{\rm fine}=P_{\rm coarse}.
+\]
+Apply norm contraction first to \(P_{\rm fine}A\), and then to
+\(A\), to obtain \eqref{eq:nested-energy}.  Both projections fix
+constants, hence preserve \(Z(A)\).  Dividing the common squared
+zero mode by the ordered energies proves
+\eqref{eq:nested-flatness}.
+\end{proof}
+
+\begin{remark}[Safe false negatives]
+\label{rem:false-negatives}
+A coarse block certificate may fail because its denominator has
+lost too much within-block energy.  Refining the partition can only
+improve the projected upper ratio.  Conversely, if even a coarse
+level meets the desired upper bound, every finer level and the
+physical coefficient meet it.  The ladder can therefore locate the
+coarsest provably sufficient resolution without risking a false
+positive.
+\end{remark}
+
+\subsection{Compression requires weights}
+
+The range of \(P_{\mathcal B}\) has \(m\) degrees of freedom, but
+replacing it by an unweighted vector in \(\C^m\) changes both the
+zero mode and the Hilbert norm.  The correct compressed space is
+\[
+ H_{\mathcal B}
+ =
+ \C^m,\qquad
+ \langle x,y\rangle_{\mathcal B}
+ =
+ \sum_{j=1}^m |B_j|x_j\overline{y_j}.
+\]
+
+\begin{proposition}[Weighted compressed isometry]
+\label{prop:weighted-compression}
+The map
+\[
+ C_{\mathcal B}:\Ran P_{\mathcal B}\to H_{\mathcal B},
+\qquad
+ C_{\mathcal B}(P_{\mathcal B}A)
+ =
+ (\overline A_1,\ldots,\overline A_m),
+\]
+is an isometry.  In compressed coordinates the physical statistics
+are
+\begin{align}
+ Z_{\rm phys}
+ &=
+ \sum_{j=1}^m |B_j|\overline A_j,
+\label{eq:weighted-zero}\\
+ D_{\rm phys}
+ &=
+ \sum_{j=1}^m |B_j||\overline A_j|^2,
+\label{eq:weighted-energy}\\
+ S_{\rm phys}
+ &=
+ \sum_{j=1}^m |B_j|=S.
+\label{eq:weighted-support}
+\end{align}
+These reproduce exactly the same-frame projected statistics.
+\end{proposition}
+
+\begin{proof}
+Equations \eqref{eq:weighted-energy} and
+\eqref{eq:weighted-support} give the norm identity, while
+\eqref{eq:weighted-zero} is \eqref{eq:block-zero-mode}.
+\end{proof}
+
+\begin{example}[Unweighted compression manufactures cancellation]
+\label{ex:unweighted-false-cancellation}
+Let
+\[
+ \Omega=\{1,2,3\},\qquad
+ B_1=\{1\},\quad B_2=\{2,3\},
+\]
+and take the already block-constant vector
+\[
+ A=(1,-1,-1).
+\]
+Then
+\[
+ Z_{\rm phys}=1-2=-1,\qquad
+ D_{\rm phys}=1+2=3,\qquad
+ \Flat_{\rm phys}=\frac13.
+\]
+The unweighted compressed vector \((1,-1)\), however, has apparent
+sum \(0\) and apparent flatness \(0\).  No averaging error occurred:
+the false cancellation was created solely by deleting the
+multiplicities \((1,2)\).  Weighted compression restores the exact
+physical values.
+\end{example}
+
+\begin{remark}[Atomic normalization rule]
+\label{rem:atomic-normalization}
+If literal atoms carry prescribed positive weights rather than unit
+weights, the same theorem holds in the weighted Hilbert space and
+block means must use those weights.  Changing from physical atomic
+weights to unit block weights is a change of coefficient, not a
+harmless coordinate compression.
+\end{remark}

@@ -1,0 +1,93 @@
+\section{Sharpness and endpoint geometry}
+\label{sec:sharpness}
+
+Put
+\begin{equation}
+ g_q(H)
+ =
+ \sqrt{\frac{2H(q-1-2H)}{q-1}}.
+\label{eq:gq}
+\end{equation}
+
+\begin{proposition}[Sharpness from a frequency atom]
+\label{prop:delta-sharp}
+Fix \(r_0\in G\), and let
+\[
+ b=B\one_{\{r_0\}},\qquad B\in\C.
+\]
+Then
+\[
+ \mathfrak S_H(b)=|B|g_q(H)=\|b\|_1g_q(H).
+\]
+Consequently \eqref{eq:wiener-hs-mass} cannot be improved uniformly
+using only \(q,H\), and \(\|b\|_1\).
+\end{proposition}
+
+\begin{proof}
+For every multiplicative character,
+\[
+ \widehat b(\chi)=B\overline{\chi(r_0)},
+\]
+whose modulus is \(|B|\).  The assertion follows from
+\eqref{eq:fixed-filter-mass} and the exact Hilbert--Schmidt ledger.
+\end{proof}
+
+\begin{proposition}[The full-window endpoint is purely principal]
+\label{prop:full-window}
+If \(H=(q-1)/2\), then \(E_H=G\),
+\[
+ g_q(H)=0,\qquad
+ \mathcal R_H(a,b)=0
+\]
+for every \(a,b\).  Thus
+\[
+ \cI_H(a,b)
+ =
+ \left(\sum_\omega a(\omega)\right)
+ \left(\sum_r b(r)\right).
+\]
+\end{proposition}
+
+\begin{proof}
+The indicator of \(E_H\) is the constant function on \(G\), so all
+of its nonprincipal Fourier coefficients vanish.  The formula also
+follows directly from the fact that every pair \((r,\omega)\) is an
+edge.
+\end{proof}
+
+\begin{remark}[Two-point fibers]
+For odd \(q\),
+\[
+ H_q(1)=H_q(2)=\frac{q-1}{2}.
+\]
+Hence resolved fibers of length one or two have a full resonance
+window.  Their multiplier distribution affects only the principal
+mass, not the centered spectral remainder.  This exact endpoint was
+hidden by a uniform \(\sqrt q\log q\) majorant.
+\end{remark}
+
+\begin{proposition}[Comparison with the worst-eigenvalue route]
+\label{prop:comparison}
+For every \(H\),
+\[
+ g_q(H)\le\sqrt{2H}\le\sqrt q.
+\]
+If \(H=o(q)\), the ratio between \(g_q(H)\) and a
+\(\sqrt q\log q\) cost tends to zero polynomially whenever
+\(H\le q^{1-\delta}\), apart from logarithms.  At
+\(H=(q-1)/2\), the ratio is exactly zero.
+\end{proposition}
+
+\begin{proof}
+Drop the factor
+\((q-1-2H)/(q-1)\le1\) in \eqref{eq:gq}; the second inequality uses
+\(2H\le q-1\).
+\end{proof}
+
+\begin{remark}[What sharpness means]
+\Cref{prop:delta-sharp} is a sharp statement for the information
+\(\|b\|_1\) alone.  The actual reconstruction filter may have
+additional structure, so a still better filter-specific theorem is
+not ruled out.  Conversely, one cannot simply delete \(g_q(H)\)
+without using such new structure.
+\end{remark}

@@ -1,0 +1,125 @@
+\section{What the positive route must now prove}
+\label{sec:positive-route}
+
+\subsection{Gate P: principal mass}
+
+The exact obligation is
+\[
+ \mathfrak P_X
+ =
+ \sum_H\frac{2H}{q_X-1}M_H^{\mathrm{inv}}
+ =
+ \sum_{\substack{\beta\in\mathfrak B_X^{\mathrm{nc}}\\
+                   1\le N_\beta\le q_X}}
+ \frac{2H_{q_X}(N_\beta)}{q_X-1}
+ \sum_{\substack{z\in I_\beta^\ast\\
+                   q_X\nmid u_{\beta,z}}}
+ w_{\beta,z}
+ \le X^{o(1)}Q_X^2.
+\]
+For a branch of resolved \(z\)-fiber length \(N_\beta\ge3\),
+\[
+ \frac{H_{q_X}(N_\beta)}{q_X}
+ \le\frac1{N_\beta}.
+\]
+This suggests opening the positive mass before grouping by \(H\)
+and proving an inverse-length estimate.  It does \emph{not} justify
+replacing \(M_H^{\mathrm{inv}}\) by an ambient count:
+\(M_H^{\mathrm{inv}}\) contains the literal
+row coefficients, content and projector masses, masks, and one
+global normalization.
+
+After the \(q_X\mid u_{\beta,z}\) atoms have been returned, the
+remaining invertible endpoint atoms with \(N_\beta=1,2\) are purely
+principal.  They receive no centered TPC-101 cost, so they must be
+returned entirely through \(\mathfrak P_X\).  Calling them ``short''
+does not make them negligible.
+
+\subsection{Gate W: maximum opened-atom weight}
+
+TPC-101 needs
+\[
+ W_X=\max w_C(j)\le X^{o(1)}
+\]
+to derive the diagonal gate from Gate P.  This must be checked by
+writing one atom literally:
+\begin{equation}
+ w_C(j)
+ =
+ \left|
+ \mathsf R_C(j)\,
+ \mathsf C_C(j)\,
+ \mathsf S_C(j)\,
+ \mathsf N_X
+ \right|.
+\label{eq:literal-atom-template}
+\end{equation}
+Here \(\mathsf R_C\) contains the row coefficients,
+\(\mathsf C_C\) the content and projector coefficient,
+\(\mathsf S_C\) the local and smooth weights, and
+\(\mathsf N_X\) the single global normalization.
+An \(\ell^1\) bound for all rows does not by itself imply the desired
+pointwise cap after a different normalization.  Conversely, if each
+factor in \eqref{eq:literal-atom-template} has a subpower pointwise
+envelope, Gate W is a local bookkeeping theorem rather than a new
+M\"obius-cancellation theorem.
+
+\subsection{Gate X: genuine cross-cell excess}
+
+TPC-100 gives the exact collision support
+\[
+ A_Cm_Cj-A_Dm_Dk
+ \equiv h_0(A_D-A_C)\pmod{q_X}.
+\]
+The remaining ledger is
+\[
+ \mathfrak X_X
+ =
+ \sum_Hg_{q_X}(H)
+ \sqrt{|\mathfrak X_H^\circ|}.
+\]
+At the fully literal TPC-100 resolution, retaining
+\((m,u,\sigma)\) already recovers
+\(j=(\sigma u-h_0)/m\), so every fine cell is a singleton.
+The resulting same-cell ``injectivity'' is therefore tautological
+and supplies no dispersion gain.  All collisions between distinct
+opened atoms---including atoms from the same parent \(\beta\)---stay
+in the cross-cell term, and different cells may also induce the same
+affine map.  A valid proof should therefore:
+\begin{enumerate}[leftmargin=2em]
+\item aggregate identical maps only after retaining a recoverable
+  provenance bag and exact total weight;
+\item separate identical-map mass from genuinely distinct-map
+  collisions;
+\item center with the physical baseline \(M_CM_D/(q_X-1)\); and
+\item use the width factor \(g_{q_X}(H)\) before summing over \(H\).
+\end{enumerate}
+
+\begin{proposition}[Correct order of attack]
+\label{prop:attack-order}
+Within the positive route, Gate W should be audited before a new
+diagonal-energy theorem, and Gate P before a global cross-cell
+large sieve.
+\end{proposition}
+
+\begin{proof}
+If Gates P and W hold, the diagonal term already follows from
+\cref{thm:master}; a separate diagonal theorem would duplicate work.
+If the actual principal term \(B_X\mathfrak P_X\) fails
+polynomially, centered dispersion cannot repair the
+\emph{termwise upper bound} in \cref{thm:master}, so a cross-cell
+theorem alone would not close this three-ledger route.  A sharper
+filter-sensitive positive theorem could still use cancellation
+between the principal and nonprincipal pieces.  A lower bound for
+\(\mathfrak P_X\) alone is not a stop certificate unless one also
+knows \(B_X\ge X^{-o(1)}\).  The stated order tests the cheapest kill
+conditions first.
+\end{proof}
+
+\begin{remark}[What counts as forward progress]
+A proof of Gate W is \(\Lone\) bookkeeping progress.  A proof of
+Gate P or Gate X for the actual growing census is closer to an
+arithmetic estimate, but it becomes \(\Ltwo\) only after its exact
+role in the full growing fixed-\(h_0\) coefficient and all remaining
+reassembly losses is verified.
+\end{remark}

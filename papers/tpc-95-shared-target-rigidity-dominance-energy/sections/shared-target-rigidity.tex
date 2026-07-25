@@ -1,0 +1,217 @@
+\section{Exact shared-target rigidity}
+\label{sec:shared-target-rigidity}
+
+We return to the literal canonical parent set
+\(\cT_X\) of \cref{sec:literal-packet}.  The positivity of the orbit
+coordinate and the signed canonical determinant together make target
+collisions much more rigid than a generic equality of integers.
+
+\begin{theorem}[Ordered composite-key uniqueness]
+\label{thm:composite-uniqueness}
+Let
+\[
+ t=(\alpha,\gamma,j),\qquad
+ t'=(\alpha',\gamma',j')
+\]
+be canonical parent keys with
+\begin{equation}
+ \nu(t)=\nu(t'),\qquad
+ x_t=x_{t'},\qquad
+ y_t=y_{t'}.
+\label{eq:ordered-collision-hyp}
+\end{equation}
+Then \(t=t'\).  Equivalently, the map
+\begin{equation}
+ t\longmapsto(\nu(t),x_t,y_t)
+\label{eq:composite-key-map}
+\end{equation}
+is injective on the canonical parent archive.
+\end{theorem}
+
+\begin{proof}
+The two target equalities imply
+\[
+ m_\alpha j=m_{\alpha'}j',
+ \qquad
+ m_\gamma j=m_{\gamma'}j'.
+\]
+The ordered target pairs have the same gcd, say \(c\).  Equality of
+the normalized determinants therefore gives
+\[
+ m_\alpha-m_\gamma
+ =
+ m_{\alpha'}-m_{\gamma'}=:d.
+\]
+The off-diagonal mask makes \(d\ne0\).  Subtracting the two target
+equalities gives
+\[
+ dj=dj',
+\]
+so \(j=j'\).  It follows that
+\[
+ m_\alpha=m_{\alpha'},\qquad
+ m_\gamma=m_{\gamma'}.
+\]
+The physical row-slope uniqueness then gives
+\(\alpha=\alpha'\) and \(\gamma=\gamma'\).
+\end{proof}
+
+\begin{remark}[Canonical-parent premise]
+\label{rem:uniqueness-premise}
+The theorem is a statement about mathematical parent keys.  Two
+computational expansion rows may have the same parent; they must be
+inverse-aggregated before \eqref{eq:composite-key-map} is tested.
+Conversely, equality of the two complex numbers \(u_t=u_{t'}\)
+without equality of their ordered targets is merely a coefficient
+coincidence and is not a physical duplicate in the present sense.
+\end{remark}
+
+For the most inclusive target-sharing statement, allow equality
+between either slot of one ordered target pair and either slot of the
+other.
+
+\begin{definition}[Any-slot shared-target graph]
+\label{def:target-graph}
+The graph \(\mathscr G_{\tar}\) has vertex set \(\cT_X\).  Distinct
+vertices \(t,t'\) are joined when
+\[
+ \nu(t)=\nu(t')
+ \quad\text{and}\quad
+ \{x_t,y_t\}\cap\{x_{t'},y_{t'}\}\ne\varnothing.
+\]
+\end{definition}
+
+\begin{lemma}[A distinct pair shares at most one target]
+\label{lem:one-shared-target}
+Two distinct vertices of \(\mathscr G_{\tar}\) satisfy exactly one
+of the four possible target equalities
+\[
+ x_t=x_{t'},\quad x_t=y_{t'},\quad
+ y_t=x_{t'},\quad y_t=y_{t'}.
+\]
+In particular, no off-diagonal edge is counted by two target-slot
+relations.
+\end{lemma}
+
+\begin{proof}
+Because \(j>0\) and \(m_\alpha\ne m_\gamma\), one has
+\[
+ x_t-y_t=(m_\alpha-m_\gamma)j\ne0,
+\]
+and similarly \(x_{t'}\ne y_{t'}\).  Thus two equalities that use the
+same target slot of one vertex would force the two targets of the
+other vertex to coincide.
+
+It remains to consider two perfect matchings between the slots.  The
+ordered matching
+\[
+ x_t=x_{t'},\qquad y_t=y_{t'}
+\]
+forces \(t=t'\) by \cref{thm:composite-uniqueness}.  For the crossed
+matching
+\[
+ x_t=y_{t'},\qquad y_t=x_{t'},
+\]
+the contents agree.  Since the determinants agree, the signed row
+differences agree:
+\[
+ m_\alpha-m_\gamma
+ =
+ m_{\alpha'}-m_{\gamma'}=:d\ne0.
+\]
+But target differences now give
+\[
+ dj=x_t-y_t
+ =-(x_{t'}-y_{t'})
+ =-dj'.
+\]
+Hence \(j'=-j\), contradicting \(j,j'>0\).
+\end{proof}
+
+\subsection{Divisor parametrization of one target group}
+
+For \(s\in\{L,R\}\), write
+\[
+ T_L(t)=x_t,\qquad T_R(t)=y_t,
+\]
+and define
+\begin{equation}
+ G_s(k,T)
+ =
+ \{t\in\cT_X:\nu(t)=k,\ T_s(t)=T\},
+\qquad
+ g_s(k,T)=\#G_s(k,T).
+\label{eq:target-groups}
+\end{equation}
+
+\begin{proposition}[Exact candidate parametrization]
+\label{prop:target-parametrization}
+Fix \(k\ne0\) and a positive target \(T\).
+
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item Every \(t=(\alpha,\gamma,j)\in G_L(k,T)\) is determined by a
+  pair of positive divisors
+  \[
+   m_\alpha\mid T-h_0,\qquad c_t\mid T,
+  \]
+  through
+  \[
+   j=\frac{T-h_0}{m_\alpha},\qquad
+   m_\gamma=m_\alpha-kc_t.
+  \]
+\item Every \(t\in G_R(k,T)\) is determined by
+  \[
+   m_\gamma\mid T-h_0,\qquad c_t\mid T,
+  \]
+  through
+  \[
+   j=\frac{T-h_0}{m_\gamma},\qquad
+   m_\alpha=m_\gamma+kc_t.
+  \]
+\end{enumerate}
+The formulas are necessary candidate conditions.  The physical row,
+primitive, support, mask, and exact-gcd tests may only remove
+candidates.
+\end{proposition}
+
+\begin{proof}
+For the left group, \(T=m_\alpha j+h_0\), so
+\(m_\alpha j=T-h_0\).  Also \(c_t=(x_t,y_t)\mid x_t=T\), and
+\(\nu(t)=k\) gives
+\[
+ m_\alpha-m_\gamma=kc_t.
+\]
+The row slope determines the row key uniquely.  These equations prove
+(i).  The right-hand argument is symmetric.
+\end{proof}
+
+\medskip
+\begin{corollary}[Uniform divisor bound]
+\label{cor:target-group-divisor-bound}
+Uniformly in \(k\), \(T\), and the physical packet,
+\begin{equation}
+ \boxed{
+ g_L(k,T),\ g_R(k,T)
+ \le
+ \tau(|T-h_0|)\tau(T)
+ \ll_{\eps,h_0,\mathscr D}X^\eps.}
+\label{eq:target-group-divisor-bound}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The first estimate counts the divisor pairs in
+\cref{prop:target-parametrization}.  On the physical support,
+\(T\asymp_{\mathscr D}X\) and \(T-h_0\asymp_{\mathscr D}X\).
+The standard divisor bound \(\tau(n)\ll_\eps n^\eps\) gives the last
+estimate \citep{IwaniecKowalski2004}.
+\end{proof}
+
+\begin{remark}[What was not used]
+No cancellation in \(u_t\), no distribution of primes, and no
+average over \(h_0\) enters
+\cref{prop:target-parametrization,cor:target-group-divisor-bound}.
+The estimate is a structural count on one prescribed shift.  It is
+also only an upper bound for a collision class; it does not lower-bound
+the raw or post-bin mass.
+\end{remark}

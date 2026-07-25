@@ -1,0 +1,178 @@
+\section{The complete row-native low window}
+\label{sec:row-window}
+
+\subsection{The literal coefficient}
+
+Fix \(h_0\in\Z\setminus\{0\}\).  A physical row is
+\[
+ \alpha=(\ell_\alpha,d_\alpha),\qquad
+ m_\alpha=\ell_\alpha d_\alpha\asymp Q_X,
+\]
+and
+\[
+ N_\alpha(j)=m_\alpha j+h_0.
+\]
+For a second row \(\gamma\), put
+\begin{equation}
+ G_{\alpha,\gamma}(j)
+ =
+ \gcd(N_\alpha(j),N_\gamma(j)),\qquad
+ \Delta^\#_{\alpha,\gamma}(j)
+ =
+ \frac{m_\alpha-m_\gamma}{G_{\alpha,\gamma}(j)}.
+\label{eq:row-content-determinant}
+\end{equation}
+Primitive target support makes the last quantity a nonzero integer
+on the off-diagonal physical support.
+
+Let
+\[
+ \mathsf A_{m,Y}(j)
+ =
+ \sum_{\substack{w\le Y\\w\mid mj+h_0}}b_R(w),
+\qquad
+ C_m(j)=\mathsf A_{m,U_0}(j)-\mathsf A_{m,T}(j),
+\]
+and
+\[
+ \mathsf H_m(j)
+ =
+ \frac{\mathsf A_{m,U_0}(j)+\mathsf A_{m,T}(j)}2.
+\]
+The exact two-leg polarization is
+\begin{equation}
+ \mathcal K^{\rm sh}_{\alpha,\gamma}(j)
+ =
+ C_{m_\alpha}(j)\mathsf H_{m_\gamma}(j)
+ +
+ \mathsf H_{m_\alpha}(j)C_{m_\gamma}(j).
+\label{eq:row-polarization}
+\end{equation}
+Define the complete signed atom
+\begin{equation}
+ w_{\alpha,\gamma,j}
+ =
+ \gamma_\alpha^{(1)}\gamma_\gamma^{(2)}
+ \mathfrak A_{\alpha,\gamma}(j)
+ \mathcal K^{\rm sh}_{\alpha,\gamma}(j).
+\label{eq:row-complete-atom}
+\end{equation}
+The already aggregated determinant coefficient is
+\begin{equation}
+ A_X(n)
+ =
+ \sum_{\substack{\alpha\ne\gamma\\j}}
+ w_{\alpha,\gamma,j}
+ \one_{G_{\alpha,\gamma}(j)\le C_X}
+ \one_{\Delta^\#_{\alpha,\gamma}(j)=n},
+\qquad C_X=\lfloor J_X\rfloor.
+\label{eq:row-literal-A}
+\end{equation}
+The sum in \eqref{eq:row-literal-A} is taken before any norm or
+Fourier estimate.
+
+Choose the strong no-wrap prime modulus \(q_X\asymp Q_X\) from
+TPC-86 and identify \(A_X\) with its zero-padded cyclic coefficient.
+Then
+\begin{equation}
+ \widehat A_X(r)
+ =
+ \sum_{\substack{\alpha\ne\gamma\\j}}
+ w_{\alpha,\gamma,j}
+ \one_{G_{\alpha,\gamma}(j)\le C_X}
+ e_{q_X}\!\left(
+ -r\Delta^\#_{\alpha,\gamma}(j)\right).
+\label{eq:row-Fourier-coefficient}
+\end{equation}
+
+\subsection{The reconstruction multiplier}
+
+Fix an integer \(K\ge2\).  Let \(p_{K,X}\) be the chosen translated
+\(K\)-fold interval probability supported inside the positive-density
+zero arc of the padded coefficient, and define
+\begin{equation}
+ \mathfrak m_{K,X}(r)
+ =
+ \sum_{x\; (q_X)}p_{K,X}(x)e_{q_X}(rx).
+\label{eq:row-filter-multiplier}
+\end{equation}
+TPC-86 proves
+\[
+ Z_X=-\sum_{r\ne0}\mathfrak m_{K,X}(r)\widehat A_X(r),
+\qquad
+ |\mathfrak m_{K,X}(r)|
+ \ll_K(1+d_{q_X}(r,0))^{-K}.
+\]
+For \(1\le R<q_X/2\), put
+\begin{align}
+ \Win_X(R)
+ &=
+ \{r\in\Z/q_X\Z:0<d_{q_X}(r,0)\le R\},
+\label{eq:row-window-set}\\
+ \Low_{K,R}(A_X)
+ &=
+ \sum_{r\in\Win_X(R)}
+ \mathfrak m_{K,X}(r)\widehat A_X(r),
+\label{eq:row-low-functional}\\
+ \Ker_{K,R,X}(y)
+ &=
+ \sum_{r\in\Win_X(R)}
+ \mathfrak m_{K,X}(r)e_{q_X}(-ry).
+\label{eq:row-window-kernel}
+\end{align}
+Because \(R<q_X/2\), every class in \(\Win_X(R)\) has a unique
+signed lift \(\widetilde r\in\Z\) with
+\(0<|\widetilde r|=d_{q_X}(r,0)\le R\).  Whenever an ordinary
+integer divisibility involving a frequency is written below, we use
+this lift and suppress the tilde.
+
+\begin{theorem}[Exact row-native low-window export]
+\label{thm:row-native-export}
+For the literal coefficient \eqref{eq:row-literal-A},
+\begin{equation}
+ \boxed{
+ \Low_{K,R}(A_X)
+ =
+ \sum_{\substack{\alpha\ne\gamma\\j}}
+ w_{\alpha,\gamma,j}
+ \one_{G_{\alpha,\gamma}(j)\le C_X}
+ \Ker_{K,R,X}\!\left(
+ \Delta^\#_{\alpha,\gamma}(j)\right).}
+\label{eq:row-native-export}
+\end{equation}
+Moreover,
+\begin{equation}
+ Z_X=-\Low_{K,R}(A_X)+\Tail_{K,R,X},
+\qquad
+ |\Tail_{K,R,X}|
+ \ll_K X^{o(1)}N_{0,X}R^{1/2-K}.
+\label{eq:row-tail-return}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:row-Fourier-coefficient} into
+\eqref{eq:row-low-functional} and interchange the finite sums.  The
+inner frequency sum is exactly \eqref{eq:row-window-kernel}, proving
+\eqref{eq:row-native-export}.  Split the exact TPC-86 reconstruction
+at \(d_{q_X}(r,0)=R\).  Its Cauchy--Schwarz tail estimate, together
+with the inherited upper bound
+\(q_XD_X\ll X^{o(1)}N_{0,X}^2\), gives
+\eqref{eq:row-tail-return}.
+\end{proof}
+
+\begin{remark}[Why this is already a complete window]
+\Cref{thm:row-native-export} sums the two polarizations through
+\eqref{eq:row-polarization}, uses the exact content rather than a
+majorant, and retains every frequency in \(\Win_X(R)\) with its
+original multiplier.  It is not a maximum over \(r\), a
+generic-frequency estimate, or an absolute sum over physical atoms.
+\end{remark}
+
+\begin{remark}[Filter choice]
+Different translations of the zero-arc filter change
+\(\mathfrak m_{K,X}(r)\) by a phase.  The theorem holds for the one
+filter fixed in \eqref{eq:row-filter-multiplier}.  Replacing it by its
+absolute value changes the coherent functional and is not an
+identity.
+\end{remark}

@@ -1,0 +1,144 @@
+\section{Introduction}
+\label{sec:introduction}
+
+TPC-86 reduces the distinguished zero-mode problem to a coherent
+low-frequency window for the literal normalized-determinant
+coefficient \citep{WangTPC86}.  At the critical row,
+\[
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)},\qquad
+ N_{0,X}=J_XQ_X^2,
+\]
+and an order-\(K\) zero-arc filter gives
+\begin{equation}
+ |Z_X|
+ \ll_K
+ \left|
+ \sum_{0<d_{q_X}(r,0)\le R_X}
+ \mathfrak m_{K,X}(r)\widehat A_X(r)
+ \right|
+ +
+ X^{o(1)}N_{0,X}R_X^{1/2-K}.
+\label{eq:intro-low-window}
+\end{equation}
+The minimal arithmetic input is the signed multiplier-weighted sum,
+not a maximum over generic frequencies.  TPC-92 therefore lists a
+literal export of that sum as its first next-stage deliverable
+\citep{WangTPC92}.
+
+The word ``export'' carries more content than inserting an additive
+character in an abstract affine sum.  The physical coefficient has:
+\begin{itemize}[leftmargin=2em]
+\item two polarized cutoff legs;
+\item an exact common-target content \(G\le C_X=\lfloor J_X\rfloor\);
+\item a normalized determinant
+\((m_\alpha-m_\gamma)/G\);
+\item a joint row-pair mask;
+\item an opposite row fixed outside each affine column;
+\item row-gcd divisor layers and fixed-period factors;
+\item long and bounded-length affine fibers; and
+\item one outer reassembly under the original normalization.
+\end{itemize}
+Every one of these data affects either the phase or the coefficient.
+
+This paper performs that export exactly.  It also identifies a
+content-factor extraction that is invisible at determinant frequency
+zero.  Once exact content inversion imposes
+\[
+ c\kappa\mid \sigma U(t),
+\]
+solving the divisibility condition restricts the affine parameter to
+one progression \(t=\tau+Bz\).  The unreduced reparametrized pair has
+determinant \(Bh_0\), but the same divisibility also gives
+\[
+ U(\tau+Bz)=B\,V(z).
+\]
+Extracting this literal content factor restores determinant \(h_0\):
+\[
+\begin{array}{ccl}
+\bigl(D(\tau+Bz),U(\tau+Bz)\bigr)
+&:&\det=Bh_0,\\[1mm]
+\bigl(D(\tau+Bz),V(z)\bigr)
+&:&\det=h_0.
+\end{array}
+\]
+On the nonzero M\"obius support, the extraction contributes the
+literal factor \(\mu(B)\) and the mask \(\one_{(B,V)=1}\).  Dropping
+either one is an invalid hybrid; retaining both gives a genuine
+fixed-\(h_0\) affine family.
+
+\subsection{Main results}
+
+The exact chain has four steps.
+
+\paragraph{Row-native window.}
+We first keep the physical rows and prove that the complete
+low-window functional is obtained by replacing the determinant
+character with one finite kernel
+\[
+ \Ker_{K,R,X}(y)
+ =
+ \sum_{0<d_{q_X}(r,0)\le R}
+ \mathfrak m_{K,X}(r)e_{q_X}(-ry).
+\]
+This identity already returns every low frequency with the correct
+multiplier and phase.
+
+\paragraph{Decorated affine columns.}
+The TPC-33 reflection and row-gcd projection are pointwise identities
+\citep{WangTPC33}.  We prove that they remain valid after multiplication
+by the small-content determinant decoration.  This produces an exact
+two-sign affine formula for both polarizations, with the opposite row
+and every separation key retained in the outer provenance tuple.  The
+source-to-child construction, its inverse, and the
+projector-weighted child multiplicity are all displayed explicitly;
+losslessness is therefore a conclusion rather than an interface
+assumption.
+
+\paragraph{Content-progression reduction.}
+We expand exact content by the TPC-32 common-divisor projector
+\citep{WangTPC32}.  The resulting congruence is solved explicitly and
+the two-stage determinant law
+\[
+ Bh_0\longrightarrow h_0
+\]
+is proved after exact extraction of the forced factor \(B\) from one
+affine value.  This is an algebraic theorem, not a heuristic
+normalization.
+
+\paragraph{Complete sector partition.}
+Every resolved term is assigned to exactly one of three sets:
+short, long resonant, or long generic.  Resonance is measured by the
+actual phase increment on the resolved progression.  The partition
+is an equality.  In particular, neither exact resonances nor
+near-resonant long fibers are hidden inside an exceptional
+``generic'' remainder.
+
+\subsection{Proof levels}
+
+We use the established labels:
+\begin{description}[leftmargin=3em,style=nextline]
+\item[\(\Lzero\)]
+finite Fourier identities, exact projector expansions, affine
+reparametrization, determinant laws, and set partitions;
+\item[\(\Lone\)]
+an exact attachment to the same fixed-\(h_0\) TPC-32 coefficient,
+with its full native key list and global normalization;
+\item[\(\Ltwo\)]
+a new growing-\(X\) cancellation estimate for the resulting literal
+window or one of its returned sectors.
+\end{description}
+The new theorems are \(\Lzero\), and the export is \(\Lone\).
+No \(\Ltwo\) estimate is asserted.
+
+\subsection{Organization}
+
+\Cref{sec:row-window} gives the exact row-native window.
+\Cref{sec:decorated-affine-export} proves the decorated-column
+principle and the native affine formula.
+\Cref{sec:content-progression} resolves exact content.
+\Cref{sec:determinant-law} proves fixed-determinant preservation and
+the provenance theorem.  The short/resonant/generic partition appears in
+\cref{sec:sector-partition}.  \Cref{sec:physical-gate} records the
+remaining arithmetic estimates and endpoint ledgers, and
+\cref{sec:claim-boundary} states the audited conclusion.

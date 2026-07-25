@@ -1,0 +1,69 @@
+\section{Sharp obstructions and stop tests}
+\label{sec:sharp-obstructions}
+
+\begin{example}[A full resonant low window at conductor \(q\)]
+\label{ex:delta-obstruction}
+Take \(\omega=1\), \(1\le R\le H\), and let \(b\) be supported on
+\(\{1,\ldots,R\}\) with nonnegative values.  Then
+\[
+ r\omega=r\in E_H
+\]
+for every active frequency, so
+\[
+ (K_Hb)(1)=\|b\|_1.
+\]
+The phase has algebraic conductor \(q\) for every nonzero \(r\), yet
+the incidence gives no saving at all.
+\end{example}
+
+\begin{proposition}[No conductor-only density bound]
+\label{prop:no-conductor-only}
+There is no constant \(C\), independent of \(q,H\), such that
+\[
+ (K_Hb)(\omega)
+ \le C\frac{H}{q}\|b\|_1
+\]
+for all nonnegative \(b\) and all \(\omega\in G\).
+\end{proposition}
+
+\begin{proof}
+Use \cref{ex:delta-obstruction} with \(b=\one_{\{1\}}\).  The left
+side is \(1\), whereas \(CH/q\) can tend to \(0\).
+\end{proof}
+
+\begin{example}[Principal concentration]
+\label{ex:principal-concentration}
+If \(a\equiv A\) with \(A\ge0\), and \(b\ge0\), then
+\(a^\circ=0\) and the
+nonprincipal remainder vanishes exactly, but
+\[
+ \mathcal I_H(a,b)
+ =\frac{2H}{q-1}
+ \|a\|_1\sum_rb(r).
+\]
+Thus perfect multiplicative equidistribution does not remove the
+principal density ledger.
+\end{example}
+
+\begin{example}[Odd-character null mode]
+\label{ex:odd-null}
+If \(a=\chi\) is an odd multiplicative character and \(b\) is
+arbitrary, then the \(\chi\)-component of the resonance carrier is
+annihilated exactly.  This is the strongest possible spectral
+cancellation, but the literal positive envelope \(a_H\) need not
+lie in that subspace.
+\end{example}
+
+\subsection{Route decision}
+
+The incidence route continues only if a proof-carrying native census
+or theorem supplies both \eqref{eq:principal-gate} and
+\eqref{eq:dispersion-gate} for this termwise implementation.  A
+proved polynomial obstruction in the principal bound calls for
+restoring cancellation before that split, or for a genuinely
+filter-sensitive positive theorem.  An obstruction in the centered
+even-character bound calls for a second native averaging variable,
+the signed route, or the full-block route.  These are stop tests for
+the displayed sufficient method, not lower bounds for the original
+signed coefficient.  No amount of repeating ``conductor \(q_X\)''
+changes them.

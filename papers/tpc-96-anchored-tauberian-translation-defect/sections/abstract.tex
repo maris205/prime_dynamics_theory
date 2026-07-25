@@ -1,0 +1,61 @@
+\begin{abstract}
+Let \(a_1,\ldots,a_N\in\C\), let \(r\ge0\) be real
+translation, and put
+\[
+ S_N=\sum_{n\le N}a_n,\qquad
+ L_{r,N}=\sum_{n\le N}\frac{a_n}{r+n},\qquad L_{r,0}=0.
+\]
+The logarithmic primitive on a translated interval has an exact
+Tauberian inverse that differs from the unshifted one:
+\[
+ \boxed{\quad
+ S_N=(r+N)L_{r,N}-\sum_{m<N}L_{r,m},\qquad
+ \frac{S_N}{N}
+ =
+ \left(1+\frac rN\right)L_{r,N}
+ -\frac1N\sum_{m<N}L_{r,m}.
+ \quad}
+\]
+Thus ordinary cancellation is equivalent to vanishing of an
+\emph{anchored backward Ces\`aro defect}.  The extra term
+\((r/N)L_{r,N}\) is not an error that may be dropped after translating
+a physical fiber.
+
+We prove the exact terminal criterion: once the unshifted signed
+defect is \(o(1)\), ordinary cancellation holds if and only if
+\((r/N)L_{r,N}=o(1)\).  Thus \(r=0\) needs no terminal condition;
+for \(0<r=o(N)\) the exact scale is \(L_{r,N}=o(N/r)\), with
+boundedness only a convenient stronger hypothesis; for
+\(r\asymp N\) one needs \(L_{r,N}=o(1)\); and for \(r\gg N\) one
+needs \(L_{r,N}=o(N/r)\).
+The constant sequence gives the exact obstruction:
+\[
+ L_{r,N}=\sum_{n\le N}\frac1{r+n}\sim\frac Nr=o(1)
+ \quad(r/N\to\infty),
+ \qquad S_N/N=1.
+\]
+Hence even an unnormalized \(o(1)\) logarithmic statement can be
+useless on a short translated fiber.
+
+For a physical packet
+\[
+ Z_X=\sum_{\theta\in\Theta_X}
+ c_{\theta,X}S_{\theta,X}(N_{\theta,X})
+ +E_{\mathrm{ret},X},
+\]
+we obtain the exact signed aggregate formula
+\[
+ Z_X=\sum_{\theta\in\Theta_X}
+ c_{\theta,X}N_{\theta,X}
+ \cT_{\rho_{\theta,X},N_{\theta,X}}(L_{\theta,X})
+ +E_{\mathrm{ret},X}.
+\]
+This identifies the quantitative certificate that a logarithmic
+theorem must return after every literal origin, prefix, outer
+coefficient, mask, and content term has been restored.  The identities
+and counterexamples are \(\Lzero\); attachment to a complete native
+packet is an \(\Lone\) certificate.  No uniform estimate for the
+growing fixed-\(h_0\) affine M\"obius family is proved, so there is no
+new \(\Ltwo\) arithmetic saving, parity breakthrough, or prime-pair
+consequence.
+\end{abstract}

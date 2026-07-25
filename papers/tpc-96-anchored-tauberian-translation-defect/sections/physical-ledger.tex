@@ -1,0 +1,103 @@
+\section{The literal fixed-shift ledger}
+\label{sec:ledger}
+
+At the critical row retain
+\[
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)},\qquad
+ N_{0,X}=J_XQ_X^2.
+\]
+Write the determinant-energy lower loss and zero-mode gain as
+\[
+ D_X\ge X^{-\lambda_D+o(1)}Q_X^3J_X^2,
+ \qquad
+ |Z_X|\le X^{-\eta_Z+o(1)}Q_X^2.
+\]
+The determinant compatibility remains
+\begin{equation}
+ \lambda_D\le2\eta_Z.
+\label{eq:determinant-ledger}
+\end{equation}
+Equality is usable but leaves no reserve.
+
+\begin{definition}[Physical loss ledger]
+\label{def:physical-ledger}
+Let \(\Lambda_{\mathrm{phys}}\) be the sum of fixed-power losses
+actually incurred by coefficient growth, localization, translation,
+prefix return, masks, short-fiber treatment, content completion,
+outer reassembly, dictionary transfer, and downstream calibrated
+drift, after removing every loss already represented by
+\(\lambda_D-2\eta_Z\).  The physical route continues only if
+\begin{equation}
+ \boxed{\qquad
+ \Lambda_{\mathrm{phys}}<\frac1{400}.
+ \qquad}
+\label{eq:physical-ledger}
+\end{equation}
+\end{definition}
+
+\begin{proposition}[No saving from an identity]
+\label{prop:no-saving-identity}
+The passage from \eqref{eq:literal-reassembly} to
+\eqref{eq:aggregate-signed} spends no fixed power and supplies no
+positive \(\eta_Z\).  A positive \(\eta_Z\) is certified only by a
+quantitative estimate for the actual signed aggregate or a sufficient
+absolute bound such as \eqref{eq:aggregate-target}.
+\end{proposition}
+
+\begin{proof}
+\Cref{eq:aggregate-signed} is equality for the same coefficient.
+Changing coordinates cannot by itself reduce its absolute value.
+\end{proof}
+
+\begin{remark}[Independent accounts]
+\label{rem:independent-accounts}
+The compatibility \eqref{eq:determinant-ledger} compares two
+statistics of the same post-bin coefficient.  The strict inequality
+\eqref{eq:physical-ledger} records losses in separate physical maps.
+They are not added into one budget, and the same translation or
+localization loss is never charged twice.
+\end{remark}
+
+\begin{proposition}[Anchored branch stop test]
+\label{prop:stop-test}
+A rigorous parameter-consistent lower bound showing that every
+allowed logarithmic input in a specified class has
+\[
+ \left|
+ \sum_{\theta}
+ c_{\theta,X}N_{\theta,X}
+ \cT_{\rho_{\theta,X},N_{\theta,X}}(L_{\theta,X}^{(\rho)})
+ \right|
+ \ge X^{-\eta_Z+\delta+o(1)}Q_X^2
+\]
+for some fixed \(\delta>0\), together with
+\[
+ |E_{\mathrm{ret},X}|
+ =
+ o\!\left(
+ \left|
+ \sum_{\theta}
+ c_{\theta,X}N_{\theta,X}
+ \cT_{\rho_{\theta,X},N_{\theta,X}}
+ (L_{\theta,X}^{(\rho)})
+ \right|\right),
+\]
+kills that transfer class at the claimed target.  Equivalently, one
+may prove the corresponding lower bound directly for the complete
+\(Z_X\).  A lower bound merely of the same
+\(X^{-\eta_Z+o(1)}Q_X^2\) scale does not contradict an upper bound at
+that scale.  Likewise, an
+unavoidable translation loss with
+\(\Lambda_{\mathrm{phys}}\ge1/400\) stops the assembled physical
+route.  Failure of a currently available theorem to supply uniformity
+is not such a lower bound.
+\end{proposition}
+
+\begin{proof}
+The fixed gap \(X^\delta\), and the exclusion of cancellation by the
+returned remainder, force the complete coefficient above the claimed
+target.  The physical-loss assertion is the strict endpoint rule.
+The last sentence distinguishes an absent input from an impossibility
+theorem.
+\end{proof}

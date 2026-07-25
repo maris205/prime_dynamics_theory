@@ -1,0 +1,30 @@
+\section{Finite audit certificate}
+\label{sec:regression}
+
+The script
+\texttt{experiments/tpc102\_audit.py} checks:
+\begin{enumerate}[leftmargin=2em]
+\item the disjoint branch partition
+  \[
+  q_X\mid\Omega,\qquad
+  q_X\nmid\Omega,\ q_X\mid u,\qquad
+  q_X\nmid\Omega,\ q_X\nmid u;
+  \]
+\item deterministic opened-cell ledgers against the
+  principal-to-diagonal radical in \eqref{eq:master};
+\item the exact endpoint
+  \(g_q(H_q(1))=g_q(H_q(2))=0\);
+\item the length inequality
+  \(g_q(H_q(N))\le\sqrt{2q/N}\) for \(N\ge3\); and
+\item the rational exponent identities
+  \[
+  \frac{267}{800}-\frac{67}{400}
+  =
+  \frac{133}{800}.
+  \]
+\end{enumerate}
+This certificate tests the logic and exponent bookkeeping of the
+audit.  It does not test
+\eqref{eq:principal-obligation},
+\eqref{eq:atom-obligation}, or
+\eqref{eq:cross-obligation} on the growing literal packet.

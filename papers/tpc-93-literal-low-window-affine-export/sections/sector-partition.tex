@@ -1,0 +1,258 @@
+\section{An exact short/resonant/generic partition}
+\label{sec:sector-partition}
+
+\subsection{Resolved native indices}
+
+Let \(\Xi_X(K,R)\) be the set of all tuples
+\begin{equation}
+ \xi=(\theta,c,\kappa,r)
+\label{eq:sector-index}
+\end{equation}
+that occur in \cref{thm:fixed-h-reduced-export}, including:
+\[
+ 1\le c\le C_X,\qquad
+ r\in\Win_X(R),\qquad
+ b_\xi=c\kappa\mid P_\theta,
+\]
+\[
+ \mu^2(B_\xi)=1,\qquad
+ (a_\theta,B_\xi)=1,\qquad
+ I_\xi:=I_{\theta,b_\xi}^\ast\ne\varnothing.
+\]
+Write
+\begin{align}
+ N_\xi&=\#I_\xi,
+\label{eq:sector-occupancy}\\
+ \Omega_\xi
+ &=
+ \ell_\theta v_\theta\sigma_\theta B_\xi,
+\label{eq:sector-phase-slope}\\
+ \delta_\xi
+ &=
+ \left\|
+ \frac{r\Omega_\xi}{cq_X}
+ \right\|_{\mathbb R/\mathbb Z}.
+\label{eq:sector-phase-distance}
+\end{align}
+The complete outer coefficient is
+\begin{equation}
+ \mathfrak c_{\xi,X}
+ =
+ c_{\theta,X}\mu(\kappa)\mu(B_\xi)
+ \mathfrak m_{K,X}(r)
+ \zeta_{\theta,b_\xi,c,r}.
+\label{eq:sector-outer-coefficient}
+\end{equation}
+Put
+\begin{align}
+ F_{\xi,X}(z)
+ ={}&
+ \mu(\mathcal D_{\theta,b_\xi}(z))
+ \mu(V_{\theta,b_\xi}(z))
+ \one_{(B_\xi,V_{\theta,b_\xi}(z))=1}
+ \notag\\
+ &\times
+ \chi_\theta(\tau_{\theta,b_\xi}+B_\xi z)
+ W_{\theta,X}(\tau_{\theta,b_\xi}+B_\xi z).
+\label{eq:sector-inner-coefficient}
+\end{align}
+Then the fully resolved exact formula is
+\begin{equation}
+ \boxed{
+ \Low_{K,R}(A_X)
+ =
+ \sum_{\xi\in\Xi_X(K,R)}
+ \mathfrak c_{\xi,X}
+ \sum_{z\in I_\xi}
+ F_{\xi,X}(z)
+ e_{cq_X}(-r\varepsilon_\theta\Omega_\xi z).}
+\label{eq:sector-master-formula}
+\end{equation}
+All variables on the right are components of \(\xi\); the repeated
+symbols \(c,r,\theta\) are not newly summed inside the inner sum.
+
+\begin{proposition}[Resolved occupancy]
+\label{prop:resolved-occupancy}
+Every resolved interval satisfies
+\begin{equation}
+ N_\xi
+ \le
+ 1+\frac{|I_\theta|}{B_\xi}
+ \ll
+ 1+\frac{D_X^{\rm row}}
+ {\sigma_\theta v_\theta B_\xi}.
+\label{eq:resolved-occupancy}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The values \(t=\tau_{\theta,b}+B_\xi z\) are spaced by \(B_\xi\)
+inside \(I_\theta\).  Apply
+\eqref{eq:affine-native-length}.
+\end{proof}
+
+\subsection{The three sectors}
+
+Let \(H_X\ge1\) be any chosen occupancy threshold.  Define disjoint
+sets:
+\begin{align}
+ \Xi_{\Short}
+ &=
+ \{\xi:N_\xi\le H_X\},
+\label{eq:sector-short}\\
+ \Xi_{\Res}
+ &=
+ \{\xi:N_\xi>H_X,\ N_\xi\delta_\xi\le1\},
+\label{eq:sector-resonant}\\
+ \Xi_{\Gen}
+ &=
+ \{\xi:N_\xi>H_X,\ N_\xi\delta_\xi>1\}.
+\label{eq:sector-generic}
+\end{align}
+Call them the short, long resonant, and long generic sectors.
+The resonant sector includes both exact resonances and phases that
+move by at most one turn at the natural fiber resolution.
+
+\begin{theorem}[Complete native sector decomposition]
+\label{thm:complete-sector-decomposition}
+For every \(H_X\ge1\),
+\begin{equation}
+ \Xi_X(K,R)
+ =
+ \Xi_{\Short}\,\dot\cup\,
+ \Xi_{\Res}\,\dot\cup\,
+ \Xi_{\Gen},
+\label{eq:sector-partition}
+\end{equation}
+and
+\begin{equation}
+ \boxed{
+ \Low_{K,R}(A_X)
+ =
+ \Low_{\Short,X}
+ +
+ \Low_{\Res,X}
+ +
+ \Low_{\Gen,X},}
+\label{eq:sector-sum}
+\end{equation}
+where each term is \eqref{eq:sector-master-formula} restricted to the
+corresponding set.  This identity retains both polarizations, every
+exact-content projector term, every low frequency, and every
+resolved fiber.
+\end{theorem}
+
+\begin{proof}
+Every \(\xi\) first satisfies exactly one of
+\(N_\xi\le H_X\) and \(N_\xi>H_X\).  In the latter case it satisfies
+exactly one of \(N_\xi\delta_\xi\le1\) and
+\(N_\xi\delta_\xi>1\).  Restrict the finite sum
+\eqref{eq:sector-master-formula} to the resulting disjoint sets.
+\end{proof}
+
+\begin{proposition}[One-step and observed resonance criteria]
+\label{prop:exact-resonance}
+The one-step multiplier of the determinant character equals one
+precisely when
+\begin{equation}
+ \delta_\xi=0
+ \quad\Longleftrightarrow\quad
+ cq_X\mid r\ell_\theta v_\theta
+ \sigma_\theta B_\xi.
+\label{eq:exact-resonance}
+\end{equation}
+If \(N_\xi\ge2\), this is also equivalent to the character being
+constant on the resolved interval \(I_\xi\).  If \(N_\xi=1\), the
+character is vacuously constant on its single observed point for
+every value of \(\delta_\xi\); such a singleton belongs to the short
+sector for every \(H_X\ge1\).
+
+For all sufficiently large \(X\), \(c<q_X\).  Since
+\(0<d_{q_X}(r,0)<q_X/2\), an exact resonance in particular requires
+\[
+ q_X\mid
+ \ell_\theta v_\theta\sigma_\theta B_\xi.
+\]
+No theorem presently excludes that divisibility on every literal
+key.
+\end{proposition}
+
+\begin{proof}
+The phase increment from \(z\) to \(z+1\) is
+\[
+ e_{cq_X}(-r\varepsilon_\theta\Omega_\xi).
+\]
+It equals one exactly under the divisibility in
+\eqref{eq:exact-resonance}.  An integer interval with at least two
+points contains two consecutive integers, which proves the observed
+constancy assertion.  The singleton assertion is immediate from
+\eqref{eq:sector-short}.  The critical scales give
+\(c\le C_X<q_X\), and the chosen representative of a nonzero
+low frequency is not divisible by the prime \(q_X\).  Euclid's lemma
+gives the final necessary condition.
+\end{proof}
+
+\begin{remark}[Near resonance is not exact resonance]
+The condition \(N_\xi\delta_\xi\le1\) is quantitative and depends on
+the actual occupancy.  It does not assert the exact divisibility in
+\eqref{eq:exact-resonance}.  It records that additive oscillation
+alone is too slow on that particular interval to be treated as a
+uniformly generic phase.
+\end{remark}
+
+\subsection{Deterministic sector budgets}
+
+For \(\mathcal A\in\{\Short,\Res,\Gen\}\), define the literal
+absolute envelope
+\begin{equation}
+ \mathfrak B_{\mathcal A,X}
+ =
+ \sum_{\xi\in\Xi_{\mathcal A}}
+ |\mathfrak c_{\xi,X}|
+ \sum_{z\in I_\xi}|F_{\xi,X}(z)|.
+\label{eq:sector-absolute-envelope}
+\end{equation}
+
+\begin{proposition}[Safe but possibly expensive return]
+\label{prop:sector-safe-return}
+For every sector,
+\begin{equation}
+ |\Low_{\mathcal A,X}|
+ \le\mathfrak B_{\mathcal A,X}.
+\label{eq:sector-trivial-bound}
+\end{equation}
+Consequently,
+\begin{equation}
+ |\Low_{K,R}(A_X)|
+ \le
+ \mathfrak B_{\Short,X}
+ +\mathfrak B_{\Res,X}
+ +\mathfrak B_{\Gen,X}.
+\label{eq:sector-total-envelope}
+\end{equation}
+These inequalities are sufficient return estimates, not claims that
+the envelopes have the required physical size.
+\end{proposition}
+
+\begin{proof}
+Apply the triangle inequality after the exact decomposition
+\eqref{eq:sector-sum}; all characters have modulus one.
+\end{proof}
+
+\begin{remark}[Where coherence may be lost]
+Although
+\(\sum_r|\mathfrak m_{K,X}(r)|\ll_K1\), absolute summation over
+\((c,\kappa)\), native columns, or polarizations can destroy
+projector and outer-row cancellation.  The bounded Wiener norm
+therefore does not imply that
+\eqref{eq:sector-total-envelope} is subpower relative to the
+physical target.
+\end{remark}
+
+\begin{remark}[Generic phase is not a signed estimate]
+The inequality \(N_\xi\delta_\xi>1\) says that the additive character
+makes more than one resolvable turn.  The coefficient
+\(F_{\xi,X}\) still contains two M\"obius/Liouville signs, masks, and
+varying weights.  No geometric-series bound applies unless a future
+theorem controls the partial sums or variation of that coefficient.
+\end{remark}

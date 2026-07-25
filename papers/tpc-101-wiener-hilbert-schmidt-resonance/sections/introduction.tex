@@ -1,0 +1,94 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The literal low-window export retains the original fixed nonzero
+shift, source rows, exact-content branches, projector children,
+actual masks, and reconstruction multiplier
+\citep{WangTPC93,WangTPC94}.  After the conductor-one branch is
+returned, TPC-99 identifies every remaining resonant nonconstant
+branch with an incidence condition
+\[
+ r\omega_\beta\in E_H
+ \subset\mathbb F_{q_X}^{\times}.
+\]
+Its multiplicative-character theorem is exact.  The quantitative
+return used there, however, invokes the largest nonprincipal
+singular value
+\[
+ \max_{\chi\ne\chi_0}
+ |\widehat{\one_{E_H}}(\chi)|
+ \ll\sqrt q\log q
+\]
+and then pays this worst value against the whole centered multiplier
+census \citep{WangTPC99}.
+
+There is an unused asymmetry.  The multiplier census \(a_H\) is the
+unknown growing object, but the frequency weight
+\[
+ b_X(r)
+ =
+ |\mathfrak m_{K,X}(r)|
+ \one_{\{0<d_{q_X}(r,0)\le R_X\}}
+\]
+is fixed by the zero-arc reconstruction and satisfies
+\(\|b_X\|_1\ll_K1\).  Instead of bounding the operator uniformly for
+all \(b\), one may compute the exact norm of the scalar functional
+\(a\mapsto\mathcal R_H(a,b_X)\).  Cauchy--Schwarz then falls on the
+\emph{whole} nonprincipal spectrum, whose squared mass is known
+exactly:
+\[
+ \sum_{\chi\ne\chi_0}
+ |\widehat{\one_{E_H}}(\chi)|^2
+ =2H(q-1-2H).
+\]
+This exchanges a worst-eigenvalue cost for a
+Wiener-to-Hilbert--Schmidt transfer.
+
+\subsection{What changes}
+
+Define
+\[
+ g_q(H)
+ =
+ \sqrt{\frac{2H(q-1-2H)}{q-1}}.
+\]
+The old nonprincipal return was
+\[
+ |\mathcal R_H(a_H,b_X)|
+ \ll_K\sqrt q\log q\,\|a_H^\circ\|_2.
+\]
+The new one is
+\[
+ |\mathcal R_H(a_H,b_X)|
+ \ll_K g_q(H)\|a_H^\circ\|_2.
+\]
+This is never worse up to harmless constants and is asymptotically
+better when \(H=o(q)\); the improvement is polynomial when
+\(H\le q^{1-\delta}\) for a fixed \(\delta>0\), apart from
+logarithms.  It also records the exact endpoint:
+\(g_q((q-1)/2)=0\), because \(E_H=G\) and the incidence operator is
+purely principal.
+
+\subsection{What does not change}
+
+The principal term
+\[
+ \frac{2H}{q-1}\|a_H\|_1\|b_X\|_1
+\]
+is untouched.  Nor does the theorem estimate the native census.
+TPC-100 decomposes its centered energy into an opened-atom diagonal
+ledger and a cross-cell collision excess
+\citep{WangTPC100}; the present theorem merely assigns the correct
+width cost to those quantities.  Thus it opens a wider analytic
+door without relabeling an interface result as fixed-shift
+arithmetic cancellation.
+
+\subsection{Organization}
+
+\Cref{sec:fixed-filter} proves the exact functional norm and its
+Wiener bound.  \Cref{sec:sharpness} proves sharpness and endpoint
+behavior.  \Cref{sec:literal-interface} returns the estimate to the
+frequency-free literal census.  \Cref{sec:length-weighted} records
+the resolved-length gain, and \cref{sec:diagonal-transfer} combines
+it with the TPC-100 cell ledger.  The remaining sections give the
+finite certificate, route ledger, and claim boundary.

@@ -1,0 +1,189 @@
+\section{Sharp translation regimes}
+\label{sec:regime-criteria}
+
+\begin{theorem}[Exact terminal criterion and regime corollaries]
+\label{thm:regime-criterion}
+Consider a family indexed by \(X\), with anchors \(r_X\), lengths
+\(N_X\to\infty\), primitives \(L_X\), and ordinary sums \(S_X\).
+Assume
+\[
+ \cT_{0,N_X}(L_X)=o(1).
+\]
+Then
+\begin{equation}
+ \frac{S_X}{N_X}=o(1)
+ \quad\Longleftrightarrow\quad
+ \frac{r_X}{N_X}L_X(N_X)=o(1).
+\label{eq:exact-terminal-criterion}
+\end{equation}
+Consequently:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.5em]
+\item If \(r_X=0\), no terminal condition is needed.
+\item If \(0<r_X=o(N_X)\), the exact terminal scale is
+  \(L_X(N_X)=o(N_X/r_X)\); the stronger bound
+  \(L_X(N_X)=O(1)\) is a convenient sufficient condition.
+\item If \(r_X\asymp N_X\), then the two conditions
+  \[
+  \cT_{0,N_X}(L_X)=o(1),\qquad L_X(N_X)=o(1)
+  \]
+  imply \(S_X/N_X=o(1)\).
+\item If \(r_X/N_X\to\infty\), then
+  \[
+  \cT_{0,N_X}(L_X)=o(1),\qquad
+  L_X(N_X)=o(N_X/r_X)
+  \]
+  imply \(S_X/N_X=o(1)\).
+\end{enumerate}
+The terminal condition in \eqref{eq:exact-terminal-criterion} is
+necessary and sufficient without additional structure.
+\end{theorem}
+
+\begin{proof}
+The identity
+\[
+ \cT_{r_X,N_X}(L_X)
+ =
+ \cT_{0,N_X}(L_X)
+ +\frac{r_X}{N_X}L_X(N_X)
+\]
+and
+\(S_X/N_X=\cT_{r_X,N_X}(L_X)\) prove
+\eqref{eq:exact-terminal-criterion}.  The regime statements are
+immediate.  The examples in
+\cref{ex:constant-obstruction,ex:tuned-anchor} show that the anchor
+term cannot be removed.
+\end{proof}
+
+For a positive comparison scale define the translated harmonic mass
+\begin{equation}
+ \cH_{r,N}:=\sum_{n=1}^N\frac1{r+n}.
+\label{eq:harmonic-mass}
+\end{equation}
+
+\begin{lemma}[Short translated harmonic mass]
+\label{lem:short-harmonic-mass}
+For \(r\ge N\ge1\),
+\begin{equation}
+ \frac{N}{r+N}\le\cH_{r,N}\le\frac Nr,
+ \qquad
+ \left(1+\frac rN\right)\cH_{r,N}\le2.
+\label{eq:short-harmonic-bounds}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Each denominator lies between \(r+1\) and \(r+N\).  The displayed
+bounds follow by comparison; the last uses \(N/r\le1\).
+\end{proof}
+
+\begin{theorem}[Prefix-uniform criterion for short translated fibers]
+\label{thm:short-prefix-uniform}
+Assume \(r\ge N\) and
+\begin{equation}
+ \max_{1\le m\le N}
+ \frac{|L_{r,m}|}{\cH_{r,m}}
+ \le\varepsilon.
+\label{eq:relative-prefix-input}
+\end{equation}
+Then
+\begin{equation}
+ \left|\frac{S_N}{N}\right|\le3\varepsilon.
+\label{eq:short-prefix-output}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \cref{thm:anchored-identity},
+\begin{align*}
+ \left|\frac{S_N}{N}\right|
+ &\le
+ \left(1+\frac rN\right)|L_{r,N}|
+ +\frac1N\sum_{m<N}|L_{r,m}|\\
+ &\le
+ 2\varepsilon+
+ \frac{\varepsilon}{N}\sum_{m<N}\cH_{r,m}.
+\end{align*}
+Since \(\cH_{r,m}\le m/r\le1\), the last average is at most
+\(\varepsilon\).
+\end{proof}
+
+\begin{remark}[The quantifier is strong]
+\label{rem:prefix-quantifier}
+The hypothesis is uniform in every prefix and normalized by its
+actual translated harmonic mass.  A statement only at the terminal
+endpoint, or one with an \(o(1)\) error not measured relative to
+\(\cH_{r,m}\), does not imply \eqref{eq:relative-prefix-input}.
+Moreover the case \(m=1\) reads \(|a_1|\le\varepsilon\).  For a
+unit-modulus arithmetic sequence this cannot hold with
+\(\varepsilon=o(1)\).  A realistic application must peel a finite
+initial segment, return it exactly to the outer sum, and impose the
+relative estimate only on the remaining prefixes.  The theorem is a
+strong sufficient certificate, not a claim that literal M\"obius
+fibers already satisfy it.
+\end{remark}
+
+\begin{corollary}[Cutoff-prefix certificate]
+\label{cor:cutoff-prefix}
+Assume \(r\ge N\), fix \(1\le M\le N\), and suppose
+\[
+ \sup_{M\le m\le N}
+ \frac{|L_{r,m}|}{\cH_{r,m}}
+ \le\varepsilon.
+\]
+Then
+\begin{equation}
+ \left|\frac{S_N}{N}\right|
+ \le
+ 3\varepsilon
+ +
+ \frac1N\sum_{m=0}^{M-1}|L_{r,m}|.
+\label{eq:cutoff-prefix-output}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Use \cref{eq:anchored-defect-identity}.  The terminal term is at
+most
+\[
+ \left(1+\frac rN\right)\varepsilon\cH_{r,N}
+ \le
+ \varepsilon\left(1+\frac Nr\right)
+ \le2\varepsilon.
+\]
+The controlled part of the backward average is at most
+\[
+ \frac{\varepsilon}{N}
+ \sum_{m=M}^{N-1}\cH_{r,m}
+ \le\varepsilon,
+\]
+and the omitted prefixes give the last term in
+\eqref{eq:cutoff-prefix-output}.
+\end{proof}
+
+\begin{proposition}[Smooth terminal bound]
+\label{prop:smooth-terminal}
+Suppose, for every \(0\le m\le N\),
+\[
+ L_{r,m}=\ell_{r,m}+e_{r,m},
+\]
+where
+\[
+ \cT_{0,N}(\ell)=0.
+\]
+Then
+\[
+ \left|\frac{S_N}{N}\right|
+ \le
+ \frac rN|\ell_{r,N}|
+ +\left(1+\frac rN\right)|e_{r,N}|
+ +\frac1N\sum_{m<N}|e_{r,m}|.
+\]
+Thus a model primitive transfers only after its anchor term and the
+full prefix error have both been controlled.
+\end{proposition}
+
+\begin{proof}
+Insert \(L=\ell+e\) into
+\eqref{eq:anchored-defect-identity} and use the assumed cancellation
+of the unshifted model defect.
+\end{proof}

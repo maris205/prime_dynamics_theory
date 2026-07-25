@@ -1,0 +1,90 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{booktabs,enumitem,float,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Exact-Content Progression Normalization and Resonance: Fixed-Determinant Recovery, Conductor Sectors, and Multiplier-Mass Accounting},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\cond}{\operatorname{cond}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Win}{\mathscr W}
+\newcommand{\Short}{\mathfrak S}
+\newcommand{\Const}{\mathfrak C}
+\newcommand{\LowRes}{\mathfrak L_{\rm res}}
+\newcommand{\LowGen}{\mathfrak L_{\rm gen}}
+\newcommand{\HighRes}{\mathfrak H_{\rm res}}
+\newcommand{\HighGen}{\mathfrak H_{\rm gen}}
+\newcommand{\Null}{\mathfrak N}
+
+\title{\textbf{Exact-Content Progression Normalization}\\
+\textbf{and Resonance:}\\
+Fixed-Determinant Recovery, Conductor Sectors,\\
+and Multiplier-Mass Accounting}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\noindent\textbf{Keywords:}
+exact content; affine progression; fixed determinant; M\"obius
+factorization; additive conductor; resonance; short fiber;
+multiplier mass.
+
+\medskip
+\noindent\textbf{Literal-frame convention.}
+Every physical statement retains one prescribed \(h_0\ne0\), the
+actual content variables \(c,\kappa\), both polarizations, every
+native interval and mask, the signed reconstruction multiplier, and
+one global post-aggregation normalization.  The orientation
+\(\varepsilon_\theta\) and the unique least-absolute signed lift of
+each low-window class are never suppressed.  No statement is
+specialized to \(h_0=2\).
+
+\input{sections/introduction}
+\input{sections/progression-normalization}
+\input{sections/literal-canonical-branch}
+\input{sections/phase-conductor}
+\input{sections/fiber-sector-partition}
+\input{sections/multiplier-mass-ledger}
+\input{sections/claim-boundary}
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

@@ -1,0 +1,115 @@
+\section{Dependency audit: TPC-93 through TPC-101}
+\label{sec:dependency-audit}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}
+ >{\raggedright\arraybackslash}p{0.09\textwidth}
+ >{\raggedright\arraybackslash}p{0.32\textwidth}
+ >{\raggedright\arraybackslash}p{0.14\textwidth}
+ >{\raggedright\arraybackslash}X@{}}
+\toprule
+Paper & Verified advance & Level & What remains\\
+\midrule
+TPC-93 &
+Exact low-window export; explicit source--child inverse,
+projector multiplicity, both polarizations, and tail return &
+\(\Lzero/\Lone\) &
+No growing affine cancellation estimate
+\\
+TPC-94 &
+Exact-content progression; determinant \(Bh_0\to h_0\);
+literal conductor \(1\) or \(q_X\); exact fiber length &
+\(\Lzero/\Lone\) &
+Exceptional branch mass and nonconstant resonance
+\\
+TPC-95 &
+Sharp free-phase dominance energy, target rigidity, and compressed
+collision census &
+\(\Lzero/\Lone\) &
+Actual determinant lower bound and loss \(<1\)
+\\
+TPC-96 &
+Exact anchored Tauberian identity and translation-defect criterion &
+\(\Lzero\) &
+The required uniform prefix input; averages alone do not suffice
+\\
+TPC-97 &
+Constant-preserving projection monotonicity and exact defect when
+constants are not preserved &
+\(\Lzero/\Lone\) &
+Projection cannot manufacture normalized zero-mode gain
+\\
+TPC-98 &
+Full literal conductor-one branch returned at
+\(X^{o(1)}Q_X^2\) &
+\(\Lone\) &
+No obligation remains for that branch
+\\
+TPC-99 &
+Exact multiplicative resonance spectrum; corrected
+frequency-free positive census &
+\(\Lzero/\Lone\) &
+Principal and centered census gates
+\\
+TPC-100 &
+The \(q_X\mid u\) nonconstant branch returned; invertible branch
+linearized; exact singleton-cell diagonal/cross-cell split &
+\(\Lzero/\Lone\) &
+Fine-cell injectivity is tautological; all distinct-atom
+collisions remain in the cross ledger
+\\
+TPC-101 &
+Fixed-filter norm; \(\sqrt q\log q\) replaced by exact
+\(g_q(H)\); principal-to-diagonal transfer under atom cap &
+\(\Lzero/\Lone\) &
+Principal mass, literal atom cap, width-weighted cross excess
+\\
+\bottomrule
+\end{tabularx}
+\caption{Proof-state audit.  No row in the table is an \(\Ltwo\)
+fixed-shift arithmetic theorem.}
+\label{tab:dependency-audit}
+\end{table}
+
+\subsection{Two foundations repaired rather than assumed}
+
+The TPC-93 lossless export now contains an explicit source--child
+map and inverse, rather than citing an anonymous decorated ledger.
+Its singleton statement also distinguishes algebraic conductor one
+from a character that is merely constant on one observed point
+\citep{WangTPC93}.
+
+The TPC-99 census is indexed by
+\(\beta=(\theta,c,\kappa)\), not by
+\((\theta,c,\kappa,r)\).  Its weight
+\[
+ w_{\beta,X}
+ =
+ |A_{\beta,X}|\mathcal A_{\beta,X}
+\]
+is uniform in \(r\), and \(N_\beta\) is the resolved
+\(z\)-fiber cardinality.  This prevents a second frequency
+cross-product and keeps the global normalization literal
+\citep{WangTPC94,WangTPC99}.
+
+\subsection{Useful negative information}
+
+TPC-96 rules out a common Tauberian shortcut: a small logarithmic
+primitive on a translated interval yields the desired terminal
+average only when the anchor defect has the required scale
+\citep{WangTPC96}.  TPC-97 rules out another shortcut:
+constant-preserving orthogonal coarsening can only improve a
+zero-mode-to-energy ratio; a nonconstant-preserving projection
+needs its explicit defect budget \citep{WangTPC97}.  These are not
+failed papers.  They remove invalid proof paths before polynomial
+losses are hidden in them.
+
+\begin{remark}[The dominance branch remains available]
+TPC-95 proves an exact dominance-energy identity and a sharp
+shared-target rigidity bound \citep{WangTPC95}.  It remains a
+parallel signed/energy route, but its conditional lower-energy input
+has not become an arithmetic theorem merely because the resonance
+route advanced.
+\end{remark}

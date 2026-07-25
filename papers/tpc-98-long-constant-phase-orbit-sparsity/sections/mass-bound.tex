@@ -1,0 +1,207 @@
+\section{A fully opened literal mass bound}
+\label{sec:mass-bound}
+
+\subsection{Why the moving ultra sum must be opened first}
+
+On the left-ultra polarization the signed factor
+\[
+ C_{m_\alpha}(j)
+ =
+ \sum_{\substack{u\mid N_\alpha(j)\\T_X<u\le U_{0,X}}}
+ a_R(u)
+\]
+contains both conductor-one children
+\[
+ q_X\mid\sigma=\frac{N_\alpha(j)}u
+\]
+and nonconstant children.  Cancellation between those two classes
+can make \(C_{m_\alpha}(j)\) smaller than the conductor-one
+subsum.  Therefore \(|C_{m_\alpha}(j)|\) is not an upper bound for
+the absolute constant-sector child mass.  The row-gcd projector has
+the same issue: its children may cancel even when their absolute
+constant-sector mass is nonzero.
+
+We consequently take total variation only after every relevant child
+has been opened.  This order also includes projector children whose
+unexpanded parent is killed by the actual mask; such children cancel
+in the full projector identity but cannot be silently deleted from a
+sectorwise absolute majorant.
+
+\subsection{Columnwise projector variation}
+
+Fix an opposite row
+\(\gamma=(\ell_\gamma,e_\gamma)\).  Let
+\(\lambda_{G_X}(v)\) be the exact row-gcd projector coefficient.
+If the local coprimality indicator is also expanded, its coefficient
+mass is at most \(2^{\omega(v)}\).  Put
+\begin{equation}
+ \mathfrak P_\gamma
+ =
+ \sum_{v\mid e_\gamma}
+ |\lambda_{G_X}(v)|\,2^{\omega(v)}.
+\label{eq:column-projector-variation}
+\end{equation}
+The literal TPC-33 divisor bounds give, uniformly in the fixed
+column,
+\begin{equation}
+ \mathfrak P_\gamma\le X^{o(1)}.
+\label{eq:column-projector-soft}
+\end{equation}
+For example, on squarefree \(e_\gamma\), the elementary bounds
+\(|\lambda_{G_X}(v)|\le\tau(v)\) and
+\(\tau(v)=2^{\omega(v)}\) give
+\(\mathfrak P_\gamma\le5^{\omega(e_\gamma)}=X^{o(1)}\).
+
+The point is the order of quantifiers: \eqref{eq:column-projector-soft}
+is used inside the sum over \(\gamma\).  It is never promoted to a
+low-rank decomposition of the full row matrix.
+
+\subsection{The fully opened left majorant}
+
+Let
+\[
+ \mathcal U_q(\alpha,j)
+ =
+ \left\{
+ u:
+ \begin{array}{c}
+ u\mid N_\alpha(j),\quad T_X<u\le U_{0,X},\\
+ q_X\mid N_\alpha(j)/u
+ \end{array}
+ \right\}.
+\]
+After opening the ultra divisor, row-gcd projector, local
+coprimality children, exact-content children, finite residue labels,
+and interval components, the total variation of the left
+conductor-one sector is bounded by
+\begin{align}
+ \mathcal V_L
+ \le{}&
+ X^{o(1)}
+ \sum_\gamma|\gamma_\gamma^{(2)}|
+ \mathfrak P_\gamma
+ \sum_\alpha|\gamma_\alpha^{(1)}|
+ \sum_{\substack{j\in\cJ_X\\
+                 q_X\mid N_\alpha(j)}}
+ \notag\\
+ &\qquad\times
+ \left(
+ \sum_{u\in\mathcal U_q(\alpha,j)}
+ |a_R(u)|
+ \right)
+ |\mathsf H_{m_\gamma}(j)|.
+\label{eq:fully-opened-left-majorant}
+\end{align}
+Here the leading soft factor includes:
+\begin{itemize}[leftmargin=2em]
+\item the exact-content total variation
+  \[
+  \sum_{\substack{c\mid G\\c\le C_X}}
+  \sum_{\kappa\mid G/c}|\mu(\kappa)|
+  \le\tau(G)^2=X^{o(1)};
+  \]
+\item at most two interval components and the finite periodic/residue
+  separation; and
+\item the total-variation norm of the absolutely convergent
+  Mellin/BV representation.
+\end{itemize}
+The finite projective mass and the uniform Mellin/BV
+total-variation control are precisely the separation statements
+proved in TPC-25 and TPC-33, uniformly in
+\((\alpha,\gamma,j,u,v,c,\kappa)\)
+\citep{WangTPC25,WangTPC33,WangTPC93}.
+Tonelli's theorem applies to this nonnegative majorant.  Thus
+continuous separation variables remain inside their total-variation
+integral and do not become fictitious finite native keys.
+
+\begin{proposition}[Fully opened polarization bound]
+\label{prop:polarization-bound}
+Each exact polarization has conductor-one child variation
+\[
+ \mathcal V_L,\mathcal V_R
+ \ll_{\mathscr D,h_0}X^{o(1)}Q_X^2.
+\]
+\end{proposition}
+
+\begin{proof}
+For each moving row \(\alpha\), the \(j\)-sum in
+\eqref{eq:fully-opened-left-majorant} contains at most one point by
+\cref{thm:orbit-sparsity}.  At that point,
+\[
+ \sum_{u\in\mathcal U_q(\alpha,j)}|a_R(u)|
+ \le
+ \sum_{\substack{u\mid N_\alpha(j)\\T_X<u\le U_{0,X}}}
+ |\mu(u)|\log u
+ \le X^{o(1)}
+\]
+by \eqref{eq:ultra-envelope}, while
+\(|\mathsf H_{m_\gamma}(j)|\le X^{o(1)}\) by
+\eqref{eq:prefix-envelope}.  Hence
+\begin{align*}
+ \mathcal V_L
+ &\le
+ X^{o(1)}
+ \sum_\gamma|\gamma_\gamma^{(2)}|\mathfrak P_\gamma
+ \sum_\alpha|\gamma_\alpha^{(1)}|\\
+ &\le
+ X^{o(1)}
+ \left(\sum_\gamma|\gamma_\gamma^{(2)}|\right)
+ \left(\sum_\alpha|\gamma_\alpha^{(1)}|\right)
+ \ll X^{o(1)}Q_X^2
+\end{align*}
+by \eqref{eq:column-projector-soft} and \eqref{eq:row-l1}.
+The right-ultra term is identical after exchanging the rows.
+\end{proof}
+
+\subsection{Restoring the reconstruction frequencies}
+
+For fixed \(K\ge2\), the translated low-window reconstruction
+multiplier obeys
+\begin{equation}
+ \sum_{0<d_{q_X}(r,0)\le R_X}
+ |\mathfrak m_{K,X}(r)|
+ \ll_K1.
+\label{eq:filter-l1}
+\end{equation}
+The conductor-one predicate is independent of the nonzero low
+frequency after the literal divisibility \(c_\xi\mid\Omega_\xi\) has
+been imposed.  The orientation and fixed phase have modulus one.
+Thus restoring all frequencies costs only
+\eqref{eq:filter-l1}, not their cardinality.
+
+\begin{theorem}[Endpoint-scale constant-sector bound]
+\label{thm:literal-constant-bound}
+Let \(\mathcal L^{\rm const}_{K,R,X}\) be the sum of all fully opened
+literal TPC-93 low-window children that
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item occur in either exact polarization, including children of
+  projector parents that cancel only after reassembly;
+\item retain every native mask, exact-content label, interval
+  component, prefix, and original coefficient; and
+\item have algebraic conductor \(1\), equivalently
+  \(q_X\mid\Omega_\xi\).
+\end{enumerate}
+Then
+\begin{equation}
+ \boxed{
+ |\mathcal L^{\rm const}_{K,R,X}|
+ \ll_{K,h_0,\mathscr D}
+ X^{o(1)}Q_X^2.}
+\label{eq:main-constant-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The absolute value of the sector sum is at most
+\(\mathcal V_L+\mathcal V_R\) times the frequency multiplier
+\(\ell^1\) mass.  Apply
+\cref{prop:polarization-bound} and \eqref{eq:filter-l1}.
+\end{proof}
+
+\begin{remark}[No quotient estimate]
+The proof works directly with opened physical children, fixed
+opposite columns, and their native total variation.  Equal
+determinants, affine forms, phase multipliers, or targets are never
+merged.  Neither signed prefix cancellation nor projector
+cancellation is used as an upper bound for a selected sector.
+\end{remark}

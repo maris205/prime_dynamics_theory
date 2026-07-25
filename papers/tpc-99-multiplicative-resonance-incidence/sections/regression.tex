@@ -1,0 +1,27 @@
+\section{Exact finite regression}
+\label{sec:regression}
+
+The script
+\texttt{experiments/tpc99\_certificate.py} enumerates odd primes,
+all admissible widths \(H\), and all multiplicative characters using
+a primitive root.  It verifies:
+\begin{enumerate}[leftmargin=2em]
+\item exact resonance-window equivalence;
+\item \(2H\)-biregularity and total edge counts;
+\item the parity factor
+  \eqref{eq:parity-factor} and exact annihilation of every odd
+  character;
+\item the principal singular value and
+  Hilbert--Schmidt identity \eqref{eq:HS-ledger};
+\item direct incidence sums against their multiplicative Fourier
+  reconstruction for deterministic complex test weights; and
+\item the delta concentration obstruction; the direct Fourier
+  reconstruction includes its principal contribution.
+\end{enumerate}
+The spectral comparison uses high-precision floating arithmetic only
+to evaluate roots of unity.  Graph, degree, cardinality, and
+resonance assertions are checked by exact integer arithmetic;
+character parity and complex annihilation are checked numerically
+in the primitive-root character enumeration.  The
+certificate is a finite regression, not an asymptotic character-sum
+or M\"obius theorem.

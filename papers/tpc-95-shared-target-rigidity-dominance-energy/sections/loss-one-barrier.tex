@@ -1,0 +1,175 @@
+\section{The loss-one shared-target barrier}
+\label{sec:loss-one-barrier}
+
+The degree identity becomes an arithmetic scale bound through a
+finite graph inequality.
+
+\begin{lemma}[Degree--energy inequality]
+\label{lem:degree-energy}
+Let \(\mathscr G=(V,E)\) be a finite simple graph of maximum degree
+\(\Delta\), and attach coefficients \(u_v\in\C\).  Then
+\begin{equation}
+ \boxed{
+ \left|
+ \sum_{\{v,w\}\in E}
+ \left(u_v\overline{u_w}+u_w\overline{u_v}\right)
+ \right|
+ \le
+ \Delta\sum_{v\in V}|u_v|^2.}
+\label{eq:degree-energy}
+\end{equation}
+The factor \(\Delta\) is best possible.
+\end{lemma}
+
+\begin{proof}
+For every edge,
+\[
+ |u_v\overline{u_w}+u_w\overline{u_v}|
+ \le2|u_v||u_w|
+ \le|u_v|^2+|u_w|^2.
+\]
+Summing assigns \(|u_v|^2\) exactly \(\deg(v)\) times and proves
+\eqref{eq:degree-energy}.  For sharpness, take the complete graph
+\(K_{\Delta+1}\) and \(u_v=1\) for every vertex.  The left side is
+\(\Delta(\Delta+1)\), while the energy is \(\Delta+1\).
+\end{proof}
+
+\begin{remark}[Relation to spectral majorants]
+Equation \eqref{eq:degree-energy} is equivalently the adjacency
+operator bound
+\(\|A_{\mathscr G}\|_{2\to2}\le\Delta\).  The degree constant is
+sharp, but a large degree is only a necessary combinatorial capacity:
+it supplies no favorable sign for the actual coefficient.  This is
+the same distinction between a nonnegative graph majorant and a signed
+operator emphasized in TPC-68 \citep{WangTPC68}.
+\end{remark}
+
+\begin{theorem}[Shared-target coherence is at most loss one]
+\label{thm:target-loss-one}
+For the literal fixed-\(h_0\) matched packet,
+\begin{equation}
+ \boxed{
+ |C_{\tar,X}|
+ \le
+ X^{o(1)}E_{{\rm trip},X}
+ \le
+ X^{-1+o(1)}Q_X^3J_X^2.}
+\label{eq:target-loss-one}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Apply \cref{lem:degree-energy} to
+\(\mathscr G_{\tar}\), use the subpower degree
+\eqref{eq:subpower-degree}, and then the imported triplet-diagonal
+bound \eqref{eq:Etrip-loss-one}.
+\end{proof}
+
+\begin{corollary}[Conditional removal from every below-one main term]
+\label{cor:target-negligible}
+Assume that a future theorem proves, along a growing sequence,
+\begin{equation}
+ D_X
+ \ge
+ X^{-\lambda_D+o(1)}Q_X^3J_X^2
+ \qquad\text{for a fixed }0\le\lambda_D<1.
+\label{eq:future-D-lower}
+\end{equation}
+Then
+\begin{equation}
+ |C_{\tar,X}|=o(D_X),\qquad
+ E_{{\rm trip},X}=o(D_X).
+\label{eq:target-diagonal-negligible}
+\end{equation}
+If
+\[
+ C_{{\rm other},X}
+ =
+ C_{\eqc,X}-C_{\tar,X},
+\]
+then
+\begin{equation}
+ \boxed{
+ C_{{\rm other},X}=(1-o(1))D_X>0.}
+\label{eq:other-carries-D}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Divide \eqref{eq:target-loss-one} and
+\eqref{eq:Etrip-loss-one} by \eqref{eq:future-D-lower}.  The ratio is
+\(X^{-1+\lambda_D+o(1)}=o(1)\).  Now use
+\[
+ D_X
+ =
+ E_{{\rm trip},X}
+ +C_{\tar,X}
+ +C_{{\rm other},X}.
+\]
+\end{proof}
+
+\begin{remark}[The hypothesis is essential]
+\label{rem:conditional-oD}
+This paper does not prove \eqref{eq:future-D-lower}.  Without it,
+\eqref{eq:target-loss-one} is an absolute upper bound and one cannot
+write \(|C_{\tar}|=o(D)\), since \(D\) itself may vanish.  The
+conditional quantifier in
+\cref{cor:target-negligible} is therefore part of the theorem, not a
+stylistic caveat.
+\end{remark}
+
+\subsection{A general pairing-degree kill rule}
+
+\begin{corollary}[Pairing-degree exponent barrier]
+\label{cor:general-degree-barrier}
+Let \(\mathscr P_X\) be any conjugation-closed simple pairing class on
+the canonical native keys, and let \(C_{\mathscr P,X}\) be its ordered
+coherence.  If its maximum degree satisfies
+\[
+ \Delta_{\mathscr P,X}\le X^{\theta+o(1)}
+\]
+for fixed \(\theta\ge0\), then
+\begin{equation}
+ |C_{\mathscr P,X}|
+ \le
+ X^{\theta-1+o(1)}Q_X^3J_X^2.
+\label{eq:general-degree-barrier}
+\end{equation}
+Thus the class cannot by itself carry a lower bound with fixed loss
+\(\lambda_D<1-\theta\).
+\end{corollary}
+
+\begin{proof}
+Use \cref{lem:degree-energy} and
+\eqref{eq:Etrip-loss-one}.  Comparison with the proposed lower scale
+gives the final assertion.
+\end{proof}
+
+\begin{remark}[What survives the kill]
+The shared-target class has \(\theta=0\), so it is removed from every
+below-one main term.  This does not treat:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item sharing a selected divisor while both complete targets differ;
+\item a determinant-preserving symmetry with no target equality;
+\item a broad signed remainder not described by a sparse graph; or
+\item phase coupling that proves a direct lower bound for
+  \(D_{\dom}\) or \(D\).
+\end{enumerate}
+These are the honest remaining coherence routes.
+\end{remark}
+
+\subsection{Endpoint ledgers}
+
+If a future determinant lower bound has loss \(\lambda_D\) and a
+distinguished zero-mode estimate has gain \(\eta_Z\), the inherited
+determinant compatibility remains
+\[
+ \lambda_D\le2\eta_Z.
+\]
+Separately, the full physical route must satisfy
+\[
+ \Lambda_{\rm phys}<\frac1{400}.
+\]
+Equality in the second inequality is a stop.  The loss-one
+shared-target estimate is a route-removal theorem; it is not a
+positive loss to be charged again in either ledger.

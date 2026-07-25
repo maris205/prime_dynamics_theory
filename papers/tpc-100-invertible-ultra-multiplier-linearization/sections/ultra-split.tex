@@ -1,0 +1,122 @@
+\section{The opened ultra-value split}
+\label{sec:ultra-split}
+
+The split is made after \eqref{eq:branch-weight}, at the atom level:
+\begin{equation}
+ w_\beta
+ =
+ \sum_{\substack{z\in I_\beta^\ast\\q_X\mid u_{\beta,z}}}
+ w_{\beta,z}
+ +
+ \sum_{\substack{z\in I_\beta^\ast\\q_X\nmid u_{\beta,z}}}
+ w_{\beta,z}.
+\label{eq:atom-ultra-split}
+\end{equation}
+This is a partition of one branch absolute mass.  It does not assert
+that \(u\) is an outer key of \(\beta\).
+
+\begin{theorem}[One orbit point for a fixed actual source row]
+\label{thm:atom-q-u-one-point}
+Fix an actual moving source row \(m\).  Among orbit points
+\(j\in\mathcal J_X\), at most one orbit coordinate can occur for
+opened atoms satisfying
+\[
+ m_p=m,\qquad q_X\mid u_p.
+\]
+\end{theorem}
+
+\begin{proof}
+For such an atom, \eqref{eq:atom-source-identity} gives
+\[
+ q_X\mid u_p
+ \quad\Longrightarrow\quad
+ mj_p+h_0\equiv0\pmod{q_X}.
+\]
+Since \(q_X\nmid m\), this fixes one residue class for \(j_p\).
+The actual orbit support has diameter below \(q_X\), hence contains
+at most one representative.  The theorem does not rule out several
+literal children over that same reconstructed source point; those
+children are restored with their recorded absolute multiplicities
+below.
+\end{proof}
+
+\begin{remark}
+The theorem does not fix \(\beta\) and then vary \(j\): a branch
+already fixes \(j_\theta\).  It first uses the TPC-93 inverse
+\[
+ (\beta,z)\longmapsto
+ (\text{polarization, actual source rows},j_p,u_p)
+\]
+and then counts the reconstructed source atoms by their actual
+moving row.
+\end{remark}
+
+\subsection{Restoring the physical absolute ledger}
+
+The imported physical estimates are:
+\begin{align}
+ \sum_\alpha|\gamma_\alpha^{(i)}|
+ &\ll_{\mathscr D}Q_X,\qquad i=1,2,
+\label{eq:source-row-l1}\\
+ \sum_{\substack{u\mid N\\T_X<u\le U_{0,X}}}
+ |\mu(u)|\log u
+ &\le X^{o(1)},
+\label{eq:source-ultra-envelope}\\
+ \sum_{0<d_{q_X}(r,0)\le R_X}
+ |\mathfrak m_{K,X}(r)|
+ &\ll_K1.
+\label{eq:source-filter-envelope}
+\end{align}
+The opposite-prefix envelope, row-gcd projector mass,
+exact-content absolute multiplicity, finite separation, interval
+split, and local-mask reconstruction each have total mass
+\(X^{o(1)}\) on the literal packet
+\citep{WangTPC93,WangTPC98}.
+
+\begin{theorem}[Complete return of the opened \(q_X\mid u_p\)
+submass]
+\label{thm:opened-q-u-bound}
+Let \(\mathcal L^{q\mid u}_{K,R,X}\) be the part of the
+nonconstant absolute low-window carrier obtained from the first sum
+in \eqref{eq:atom-ultra-split}.  Under the imported literal
+source-to-child inverse and the estimates above,
+\begin{equation}
+ \boxed{
+ |\mathcal L^{q\mid u}_{K,R,X}|
+ \ll_{K,h_0,\mathscr D}
+ X^{o(1)}Q_X^2.}
+\label{eq:opened-q-u-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Apply the TPC-93 inverse to every opened atom.  On the left-ultra
+polarization, \cref{thm:atom-q-u-one-point} leaves at most one orbit
+point for each actual moving row.  At that point, summing all actual
+opened values \(u_p=U_\theta(t_p)\) divisible by \(q_X\) is bounded
+by the full envelope \eqref{eq:source-ultra-envelope}.  The opposite
+prefix and bounded local factors cost \(X^{o(1)}\).  Thus the source
+shell is
+\[
+ \ll X^{o(1)}
+ \left(\sum_\alpha|\gamma_\alpha^{(1)}|\right)
+ \left(\sum_\gamma|\gamma_\gamma^{(2)}|\right)
+ \ll X^{o(1)}Q_X^2.
+\]
+The right-ultra polarization is symmetric.
+
+Now restore the row-gcd children through their projector weights and
+overcount the exact-content, coprimality, interval, residue, smooth,
+and mask children by their recorded soft absolute multiplicities.
+This reconstructs the atom weights in \eqref{eq:atom-weight}; it
+does not attach the full \(w_\beta\) to each \(z\).  Finally use
+\eqref{eq:source-filter-envelope} for all low frequencies and apply
+the original global normalization once.
+\end{proof}
+
+\begin{remark}[Disjoint from the constant return]
+The ambient branch has \(q_X\nmid\sigma_\beta\).  TPC-98 treats
+\(q_X\mid\sigma_\beta\), whereas
+\cref{thm:opened-q-u-bound} treats atom values
+\(q_X\mid U_\theta(t_\beta(z))\).  The two subledgers are disjoint.
+\end{remark}

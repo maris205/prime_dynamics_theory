@@ -1,0 +1,116 @@
+\section{Claim boundary and conclusion}
+\label{sec:claim-boundary}
+
+\begin{theorem}[Audited Deliverable 1A conclusion]
+\label{thm:audited-conclusion}
+For the literal high-row TPC-32 coefficient at one prescribed
+nonzero \(h_0\), the complete TPC-86 multiplier-weighted
+low-frequency window admits:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the exact row-native formula
+\eqref{eq:row-native-export};
+\item the constructed, lossless two-polarization affine formula
+\eqref{eq:decorated-affine-export};
+\item the exact-content expansion
+\eqref{eq:content-expanded-window};
+\item the one-progression resolution
+\eqref{eq:fully-resolved-inner-sum};
+\item the exact content-factor extraction
+\eqref{eq:fixed-h-reduced-inner}, whose reduced affine pair has
+determinant \(h_0\); and
+\item the disjoint short/resonant/generic decomposition
+\eqref{eq:sector-sum}.
+\end{enumerate}
+No native key, low frequency, exact-content term, resonance, bounded
+fiber, or polarization is deleted in these identities.
+\end{theorem}
+
+\begin{proof}
+Items (i)--(vi) are
+\cref{thm:row-native-export,thm:decorated-affine-export,thm:content-expanded-window,cor:fully-resolved-window,thm:fixed-h-reduced-export,thm:complete-sector-decomposition},
+respectively.
+\end{proof}
+
+\paragraph{What is new.}
+The paper proves three exact advances.
+First, the full coherent TPC-86 window is now written in the native
+affine variables rather than represented by a schematic twisted
+column.  Second, exact content resolution is reconciled with the
+fixed determinant: the unreduced progression has determinant
+\(Bh_0\), but the forced factor \(B\) in one M\"obius argument can be
+extracted exactly, restoring determinant \(h_0\) together with the
+literal sign and coprimality mask.  Third, the resulting physical
+family is partitioned into explicit short, resonant, and generic
+sectors with no exceptional remainder.
+
+\paragraph{Proof levels.}
+The Fourier reindexing, phase-compatible content inversion,
+progression solution, M\"obius extraction, determinant identities,
+and sector partition are finite \(\Lzero\) theorems.  Their
+attachment to the already aggregated TPC-32 coefficient through the
+actual TPC-33 column decomposition is an \(\Lone\) theorem.
+
+\paragraph{Finite regression certificate.}
+The standard-library script
+\path{experiments/verify_literal_export.py} separately exercises
+both source polarizations, the explicit source--child inverse,
+projector and sign reassembly, phase-compatible content inversion,
+progression resolution, determinant reduction, and M\"obius
+extraction on deterministic finite instances.  This guards the
+literal bookkeeping; it is not evidence for an \(\Ltwo\) estimate.
+
+\paragraph{What is not proved.}
+This paper proves no nontrivial upper bound for any of
+\[
+ \Low_{\Short,X},\qquad
+ \Low_{\Res,X},\qquad
+ \Low_{\Gen,X},
+\]
+no new bound for \(Z_X\), no post-bin mass or determinant-energy lower
+bound, and no growing fixed-\(h_0\) Liouville/M\"obius correlation
+estimate.  It proves no \(\Ltwo\) saving.
+
+\paragraph{The surviving arithmetic fork.}
+The next positive step may:
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item control short fibers by their complete outer mass or an exact
+physical return;
+\item bound the multiplier/provenance mass of resonant fibers or use
+the fixed-\(h_0\) sign correlation there;
+\item prove a phase-sensitive estimate for the long generic reduced
+pair; or
+\item estimate the complete signed sum of all three sectors without
+separate absolute bounds.
+\end{enumerate}
+Any one-sector theorem is progress at its native level only after the
+other two sectors are returned.
+
+\paragraph{Stop rules.}
+A generic-frequency theorem does not pass if it leaves resonant
+multiplier mass uncontrolled.  A long-fiber theorem does not pass if
+the aggregate bounded-fiber contribution is unreturned.  A
+determinant-\(h_0\) theorem cannot be applied to the unreduced
+determinant-\(Bh_0\) pair.  After extracting \(B\), the factors
+\(\mu(B)\) and \(\one_{(B,V)=1}\) are mandatory.  Any unavoidable
+fixed-power return loss reaching \(1/400\) stops the physical branch.
+
+\paragraph{Independent requirements.}
+The zero-mode and determinant-energy exponents still require
+\[
+ \lambda_D\le2\eta_Z.
+\]
+The separate physical ledger still requires
+\[
+ \Lambda_{\rm phys}<1/400.
+\]
+TPC-18 full-block reassembly and primitive determinant dispersion
+remain independent downstream gates; the affine export proves
+neither one.
+
+\paragraph{Final boundary.}
+Nothing is specialized to \(h_0=2\).  The paper does not prove a
+fixed-shift Hardy--Littlewood asymptotic, breach the sieve parity
+barrier, give a prime-pair lower bound, or prove the twin-prime
+conjecture.  Its contribution is a complete literal representation
+and a corrected fixed-determinant content reduction on which the next
+arithmetic estimate can be stated without hidden sectors.

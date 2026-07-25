@@ -1,0 +1,204 @@
+\section{Literal fixed-shift crosswalk}
+\label{sec:literal-crosswalk}
+
+Fix one prescribed integer \(h_0\ne0\).  At the high-\(\beta\)
+endpoint, retain the critical scales
+\begin{equation}
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)}.
+\label{eq:critical-scales}
+\end{equation}
+Let \(A_X\) be the already aggregated fixed-\(h_0\) determinant
+coefficient from TPC-32, on its actual post-bin support
+\[
+ \Omega_X=\supp A_X,\qquad
+ S_X=\#\Omega_X\ll X^{o(1)}Q_X
+\]
+\citep{WangTPC32}.  Put
+\[
+ Z_X=Z(A_X),\qquad
+ D_X=D(A_X),\qquad
+ \Flat_X=\frac{|Z_X|^2}{D_X}
+\]
+on the nonzero branch.
+
+\begin{definition}[Literal orthogonal surrogate]
+\label{def:literal-orthogonal-surrogate}
+A literal orthogonal surrogate is a vector
+\[
+ B_X=P_XA_X\in\C^{\Omega_X},
+\]
+where:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \(P_X\) is an orthogonal projection for the original global
+  atomic inner product;
+\item every output coordinate is mapped to the same physical
+  determinant bin as its input coordinate;
+\item no native row, channel, mask, content, resonance, short-fiber,
+  or polarization sector is deleted before the map; and
+\item if coordinates are compressed, their exact physical
+  multiplicities are retained as in
+  \cref{prop:weighted-compression}.
+\end{enumerate}
+It is \emph{zero-mode safe} if \(P_X\one=\one\).
+\end{definition}
+
+\begin{theorem}[Literal safe-projection certificate]
+\label{thm:literal-safe-certificate}
+Let \(B_X=P_XA_X\) be a zero-mode-safe literal orthogonal surrogate.
+Then
+\begin{equation}
+ Z(B_X)=Z_X,\qquad
+ D(B_X)\le D_X.
+\label{eq:literal-dominance}
+\end{equation}
+If \(B_X=0\), then \(Z_X=0\) and \(\Flat_X=0\) whenever
+\(A_X\ne0\).  If \(B_X\ne0\) and
+\begin{equation}
+ \rho(B_X)
+ \le\frac{X^{o(1)}}{J_X},
+\label{eq:projected-angle-target}
+\end{equation}
+then
+\begin{equation}
+ \boxed{
+ \rho(A_X)
+ \le\frac{X^{o(1)}}{J_X},
+ \qquad
+ \Flat_X
+ \le X^{1/400+o(1)}.}
+\label{eq:literal-flatness-target}
+\end{equation}
+No relative approximation hypothesis between \(A_X\) and \(B_X\)
+is needed.
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:literal-dominance} and the zero branch follow
+from \cref{thm:safe-projection-law}.  On the nonzero branch,
+\[
+ \rho(A_X)\le\rho(B_X).
+\]
+Therefore \eqref{eq:projected-angle-target} gives the first
+conclusion in \eqref{eq:literal-flatness-target}.  Using
+\(\Flat_X=S_X\rho(A_X)^2\),
+\[
+ \Flat_X
+ \le
+ X^{o(1)}\frac{Q_X}{J_X^2}
+ =
+ X^{(267-266)/400+o(1)}
+ =
+ X^{1/400+o(1)}.
+\]
+\end{proof}
+
+\begin{corollary}[Projected energy certificate]
+\label{cor:projected-energy-certificate}
+Under the hypotheses of \cref{thm:literal-safe-certificate}, a
+proved lower bound
+\[
+ D(B_X)
+ \ge
+ X^{-\lambda_D+o(1)}Q_X^3J_X^2
+\]
+implies the same lower bound for \(D_X\).  If a projected zero-mode
+estimate
+\[
+ |Z(B_X)|
+ \le
+ X^{-\eta_Z+o(1)}Q_X^2
+\]
+is also proved, then the physical coefficient inherits it exactly.
+\end{corollary}
+
+\begin{proof}
+Use \eqref{eq:literal-dominance}.
+\end{proof}
+
+\begin{remark}[What changed relative to TPC-89]
+\label{rem:literal-bypass}
+For an arbitrary same-frame surrogate, TPC-89 requires
+\[
+ \frac{\|A_X-B_X\|_2}{\|B_X\|_2}
+ \le\frac{X^{o(1)}}{J_X}
+\]
+to transfer \eqref{eq:projected-angle-target} in the worst case
+\citep{WangTPC89}.  The present theorem removes that requirement
+only for the narrower class
+\[
+ B_X=P_XA_X,\qquad
+ P_X=P_X^\ast=P_X^2,\qquad
+ P_X\one=\one.
+\]
+It is a structural bypass, not an improvement of the general
+perturbation constant.
+\end{remark}
+
+\subsection{Interfaces with the low-window export}
+
+TPC-93 exports the literal low-frequency zero-mode packet into
+decorated affine fibers, retaining content factors, resonant and
+short sectors, both polarizations, and the fixed determinant
+\citep{WangTPC93}.  This creates possible block labels, but does not
+automatically define a projection on \(\C^{\Omega_X}\).
+
+\begin{proposition}[Promotion checklist]
+\label{prop:promotion-checklist}
+A grouping derived from the TPC-93 affine ledger may invoke
+\cref{thm:literal-safe-certificate} only after proving:
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
+\item a lossless map from every decorated source atom back to its
+  physical determinant bin;
+\item that the proposed operation is an orthogonal projection for
+  the single global atomic normalization;
+\item that it fixes the physical constant vector, or else that the
+  defect product in \eqref{eq:physical-product-target} is met;
+\item that compressed block coordinates carry their exact
+  multiplicities;
+\item that all native keys and every short, constant, resonant, and
+  generic sector are returned; and
+\item an actual estimate for the projected coefficient at the
+  required growing fixed-\(h_0\) scale.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Items 1--4 place the operator in the Hilbert space of
+\cref{def:literal-orthogonal-surrogate}; item 5 ensures it is the
+complete coefficient rather than a deleted-sector model.  Only
+then does item 6 supply the hypothesis
+\eqref{eq:projected-angle-target} or the separate projected
+zero-mode/energy bounds.  Without any item, the relevant theorem
+concerns a different coefficient or remains conditional.
+\end{proof}
+
+\begin{remark}[Frequency averaging is not bin projection]
+\label{rem:frequency-not-bin}
+Averaging Fourier frequencies, affine origins, shifts, or decorated
+fibers is not, by itself, a projection on the physical determinant
+bins.  A literal inverse map must show that the operation equals
+some \(P_X\) on \(\C^{\Omega_X}\).  Otherwise the projected
+monotonicity theorem does not apply.
+\end{remark}
+
+\subsection{Independent endpoint ledgers}
+
+If future work proves both exponents in
+\cref{cor:projected-energy-certificate}, the determinant
+compatibility remains
+\begin{equation}
+ \boxed{\lambda_D\le2\eta_Z.}
+\label{eq:determinant-ledger}
+\end{equation}
+Separately, all physical fixed-power costs not already recorded in
+\(\lambda_D-2\eta_Z\) must satisfy
+\begin{equation}
+ \boxed{\Lambda_{\rm phys}<\frac1{400}.}
+\label{eq:physical-ledger}
+\end{equation}
+Projection monotonicity itself incurs no exponent loss, but neither
+ledger may be inferred from that fact.  Equality in
+\eqref{eq:determinant-ledger} has no determinant reserve; equality
+in \eqref{eq:physical-ledger} stops the physical route
+\citep{WangTPC92}.

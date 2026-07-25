@@ -1,0 +1,68 @@
+\begin{abstract}
+After the conductor-one sector is returned at the endpoint scale,
+the unresolved TPC-94 exceptional branch has algebraic conductor
+equal to the strong no-wrap prime \(q_X\) but insufficient
+archimedean variation on its affine interval.  We isolate the exact
+finite-field geometry of this resonance.
+
+For an odd prime \(q\), put \(G=\mathbb F_q^\times\) and
+\[
+ E_H=\{\pm1,\ldots,\pm H\}\subset G,
+ \qquad 1\le H\le(q-1)/2.
+\]
+The resonance carrier is the multiplicative incidence operator
+\[
+ (K_Hb)(\omega)
+ =\sum_{r\in G}b(r)\one_{E_H}(r\omega).
+\]
+We diagonalize it exactly by multiplicative characters.  Its
+singular values are
+\[
+ \left|\widehat{\one_{E_H}}(\chi)\right|
+ =
+ \left|
+ (1+\overline{\chi(-1)})
+ \sum_{n\le H}\overline{\chi(n)}
+ \right|.
+\]
+Thus every odd character is an exact null mode.  The principal
+singular value is \(2H\), and
+\[
+ \sum_{\chi\ne\chi_0}
+ |\widehat{\one_{E_H}}(\chi)|^2
+ =2H(q-1-2H).
+\]
+For nonprincipal even characters the P\'olya--Vinogradov inequality
+gives \(O(\sqrt q\log q)\).
+
+Consequently, for arbitrary weights \(a,b\) on \(G\), the incidence
+bilinear form has the exact principal/nonprincipal decomposition
+\[
+ \sum_{\omega,r}a(\omega)b(r)\one_{E_H}(r\omega)
+ =
+ \frac{2H}{q-1}\Big(\sum_\omega a(\omega)\Big)
+ \Big(\sum_r b(r)\Big)
+ +\mathcal R_H(a,b),
+\]
+with
+\[
+ |\mathcal R_H(a,b)|
+ \ll\sqrt q\log q\,
+ \|a^\circ\|_2\|b^\circ\|_2.
+\]
+For a frequency-free literal branch \(\beta=(\theta,c,\kappa)\)
+with resolved \(z\)-fiber length \(1\le N_\beta\le q_X\) and
+nonzero phase multiplier \(\omega_\beta\), resonance is exactly
+\[
+ r\omega_\beta\in E_{H_{q_X}(N_\beta)},\qquad
+ H_q(N)=\min\{(q-1)/2,\lfloor q/N\rfloor\}.
+\]
+Branches with \(N_\beta>q_X\) have no resonant nonzero frequency.
+This converts the resonant-sector census into a family of
+multiplicative spectral diagnostics and gives an explicit sufficient
+native-dispersion gate.  A sharp delta-mass example proves that
+conductor \(q_X\) alone gives no saving.  The paper proves exact
+\(\Lzero\) incidence theory and an \(\Lone\) literal certificate
+interface, but no new signed M\"obius estimate or \(\Ltwo\) bound for
+the growing fixed-shift packet.
+\end{abstract}

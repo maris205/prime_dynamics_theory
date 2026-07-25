@@ -1,0 +1,99 @@
+\section{Introduction}
+\label{sec:introduction}
+
+TPC-93 writes the literal low-frequency reconstruction term as
+primitive determinant-\(h_0\) affine M\"obius fibers while retaining
+the physical child-to-source inverse \citep{WangTPC93}.  TPC-94
+resolves exact content and proves that a literal additive conductor
+is \(1\) or the strong no-wrap prime \(q_X\)
+\citep{WangTPC94}.  TPC-98 returns the conductor-one branch at
+\(X^{o(1)}Q_X^2\) \citep{WangTPC98}.  TPC-99 then writes
+nonconstant resonance as
+\[
+ r\omega_\beta\in E_{\mathsf H_\beta},\qquad
+ \omega_\beta
+ =
+ \varepsilon_\beta\frac{\Omega_\beta}{c_\beta}
+ \in\mathbb F_{q_X}^{\times},
+\]
+and isolates a centered multiplier-dispersion gate
+\citep{WangTPC99}.
+
+The native indices impose a constraint on any further refinement.
+A TPC-93 key
+\[
+ \theta=(L,\gamma,\ell,j,\sigma,v,\iota)
+\]
+already fixes \(j\) and \(\sigma\).  After content resolution,
+\(\beta=(\theta,c,\kappa)\) fixes the progression and the resolved
+fiber \(I_\beta^\ast\).  Along that fiber,
+\[
+ t=\tau_\beta+B_\beta z,
+\]
+the actual source data are
+\[
+ u_{\beta,z}=U_\theta(t),\qquad
+ m_{\beta,z}=M_\theta(t).
+\]
+Thus \(u\) and \(m\) are \emph{opened atom values}; neither is a
+fixed outer coordinate of \(\beta\).  The branch resonance width is
+computed before opening:
+\[
+ N_\beta=\#I_\beta^\ast,\qquad
+ \mathsf H_\beta=H_{q_X}(N_\beta).
+\]
+
+\subsection{The provenance-safe route}
+
+This paper follows four steps.
+\begin{enumerate}[leftmargin=2em]
+\item Split the exact branch absolute mass losslessly as
+  \(w_\beta=\sum_{z\in I_\beta^\ast}w_{\beta,z}\), producing
+  \(r\)-free atoms \(p=(\beta,z)\).
+\item Apply the TPC-93 inverse to each atom, recording its actual
+  polarization, source row pair, opened divisor, row-gcd child,
+  masks, content labels, and original branch width.
+\item Split the atom mass by \(q_X\mid u_{\beta,z}\).  Return the
+  divisible-\(u\) submass on the source ledger, where the physical
+  row-\(\ell^1\) and divisor envelopes apply.
+\item On \(q_X\nmid u_{\beta,z}\), linearize the branch multiplier
+  using the actual source identity and group atoms only through a
+  deletion map whose sole deleted coordinate is \(j\).
+\end{enumerate}
+
+This order matters.  Splitting by a fictitious branchwise \(u\), or
+assigning the full \(z\)-fiber mass independently to every opened
+atom, would change the TPC-99 census.
+
+\subsection{What advances}
+
+The \(q_X\mid u_{\beta,z}\) opened submass is returned at the target
+scale.  On the complementary submass, every fine provenance cell
+has an affine multiplier
+\[
+ \omega=A(mj+h_0)
+\]
+with \(A,m\ne0\bmod q_X\), hence only diagonal internal collisions.
+Because the retained source values already determine \(j\), every
+such fine cell is a singleton.  The complete centered energy is
+therefore an exact sum of a single-atom diagonal ledger and a
+cross-cell excess; no within-cell dispersion gain is inferred.
+
+This is deliberately a fine decomposition.  Two atoms belonging to
+the same \(\beta\) but different \(z\)'s normally have different
+source values \(u_{\beta,z},m_{\beta,z}\), so they lie in different
+cells while retaining the same \(\omega_\beta\).  Their collision is
+therefore present in the cross-cell term.  No false dispersion is
+created by atomizing the branch weight.
+
+\subsection{Organization}
+
+\Cref{sec:literal-frame} constructs the opened-atom ledger and its
+lossless cells.  \Cref{sec:ultra-split} treats
+\(q_X\mid u_{\beta,z}\).  \Cref{sec:linearization} proves the
+integer and finite-field formulas.  \Cref{sec:preimages} gives exact
+resonance preimages and collision congruences.
+\Cref{sec:collision-energy,sec:native-crosswalk} reassemble the
+original TPC-99 census and state the remaining gates.  The final
+sections record the finite certificate, route ledger, and claim
+boundary.

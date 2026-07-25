@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Multiplicative Resonance Incidence at the No-Wrap Prime: Exact Character Spectrum, Parity Nullspace, and the Native Dispersion Gate},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\F}{\mathbb F}
+\newcommand{\G}{\mathcal G}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{Multiplicative Resonance Incidence at the No-Wrap Prime:\\
+Exact Character Spectrum, Parity Nullspace,\\
+and the Native Dispersion Gate}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\noindent\textbf{Keywords:} affine M\"obius correlation;
+archimedean resonance; multiplicative characters; incidence
+operator; no-wrap prime; exceptional sector; spectral gate.
+
+\medskip
+\noindent\textbf{Literal-frame convention.}
+The physical interface always retains one prescribed nonzero
+\(h_0\), both polarizations, every native key and exact-content
+child, the actual support and masks, and the original global
+normalization.  The finite-field operator below controls the
+resonance incidence carrier; it is never substituted for the signed
+arithmetic sum without an explicit crosswalk.
+
+\input{sections/introduction}
+\input{sections/resonance-carrier}
+\input{sections/character-spectrum}
+\input{sections/bilinear-bounds}
+\input{sections/native-interface}
+\input{sections/sharp-obstructions}
+\input{sections/regression}
+\input{sections/route-ledger}
+\input{sections/claim-boundary}
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

@@ -1,0 +1,131 @@
+\section{The literal native packet}
+\label{sec:literal-packet}
+
+Fix \(h_0\in\Z\setminus\{0\}\).  We work on the high-\(\beta\)
+matched packet
+\begin{equation}
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)},\qquad
+ C_X=\lfloor J_X\rfloor,
+\label{eq:critical-scales}
+\end{equation}
+with
+\begin{equation}
+ N_{0,X}=J_XQ_X^2,\qquad Q_XJ_X\asymp_{\mathscr D}X.
+\label{eq:natural-scales}
+\end{equation}
+The symbol \(\mathscr D\) contains fixed support, smoothness,
+residue, orientation, and positive-margin data.  Dependence on these
+data and on \(h_0\) is suppressed.
+
+\subsection{Canonical parent rule}
+
+A canonical parent native key is
+\[
+ t=(\alpha,\gamma,j).
+\]
+The rows are ordered and off-diagonal.  Their slopes satisfy
+\[
+ m_\alpha\asymp Q_X,\qquad
+ m_\gamma\asymp Q_X,\qquad
+ m_\alpha\ne m_\gamma,
+\]
+and the primitive orbit support has
+\[
+ j\asymp_{\mathscr D}J_X>0.
+\]
+In the TPC-32 row construction the slope is represented as
+\(m_\alpha=\ell_\alpha d_\alpha\); the prime-size separation makes
+the integer slope determine the row key uniquely
+\citep{WangTPC30,WangTPC31,WangTPC32}.  We use only this uniqueness,
+not the displayed mnemonic decomposition.
+
+\begin{definition}[Canonical parent archive]
+\label{def:canonical-parent}
+The set \(\cT_X\) contains exactly one record for each mathematical
+parent triple \((\alpha,\gamma,j)\).  Matched-shell channels, cutoff
+levels, divisor openings, and other computational children are first
+inverse-aggregated into their parent.  Their sum is the literal
+coefficient \(u_t\in\C\).  A computational copy is not a second
+native key, while a genuinely distinct parent retains its distinct
+row or orbit identity.
+\end{definition}
+
+\begin{remark}[Why the premise is explicit]
+\label{rem:canonical-premise}
+Without \cref{def:canonical-parent}, copying one archive row \(K\)
+times would create an arbitrary target-group multiplicity and an
+arbitrary off-diagonal ``coherence'' without changing the physical
+formula.  Every uniqueness and degree statement below is therefore
+made only after canonical parent aggregation.  This is the same
+inverse-multiplicity rule required by the TPC-84 census schema.
+\end{remark}
+
+For \(t=(\alpha,\gamma,j)\), define the ordered targets, full content,
+and canonical determinant
+\begin{equation}
+\begin{aligned}
+ x_t&=m_\alpha j+h_0,&
+ y_t&=m_\gamma j+h_0,\\
+ c_t&=(x_t,y_t),&
+ \nu(t)&=\frac{m_\alpha-m_\gamma}{c_t}.
+\end{aligned}
+\label{eq:native-targets}
+\end{equation}
+Primitive target geometry gives
+\[
+ c_t\mid m_\alpha-m_\gamma,\qquad
+ (c_t,m_\alpha m_\gamma h_0)=1,
+\]
+so \(\nu(t)\in\Z\setminus\{0\}\)
+\citep{WangTPC30,WangTPC31}.  Both targets are positive and
+\(\asymp_{\mathscr D}X\).
+
+\subsection{Fibers and energies}
+
+For \(n\in\Z\setminus\{0\}\), put
+\begin{equation}
+ F_n=\{t\in\cT_X:\nu(t)=n\},\qquad
+ A_X(n)=\sum_{t\in F_n}u_t.
+\label{eq:fiber-coefficient}
+\end{equation}
+Define
+\begin{equation}
+\begin{aligned}
+ R_X&=\sum_{t\in\cT_X}|u_t|,&
+ M_X&=\sum_n|A_X(n)|,\\
+ E_{{\rm trip},X}&=\sum_{t\in\cT_X}|u_t|^2,&
+ D_X&=\sum_n|A_X(n)|^2.
+\end{aligned}
+\label{eq:global-statistics}
+\end{equation}
+The ordered equal-determinant coherence is
+\begin{equation}
+ C_{\eqc,X}
+ =
+ \sum_n
+ \sum_{\substack{t,t'\in F_n\\t\ne t'}}
+ u_t\overline{u_{t'}}.
+\label{eq:equal-coherence}
+\end{equation}
+Opening \(|A_X(n)|^2\) gives the exact identity
+\begin{equation}
+ \boxed{D_X=E_{{\rm trip},X}+C_{\eqc,X}.}
+\label{eq:D-E-C}
+\end{equation}
+
+The imported literal envelopes are
+\begin{align}
+ \#\supp A_X&\ll Q_X,\label{eq:support-envelope}\\
+ R_X&\ll X^{o(1)}N_{0,X},\label{eq:raw-envelope}\\
+ E_{{\rm trip},X}&\ll X^{o(1)}N_{0,X}.
+\label{eq:Etrip-envelope}
+\end{align}
+The last bound and \eqref{eq:natural-scales} imply
+\begin{equation}
+ E_{{\rm trip},X}
+ \ll X^{-1+o(1)}Q_X^3J_X^2.
+\label{eq:Etrip-loss-one}
+\end{equation}
+These are upper bounds only.  In particular,
+\eqref{eq:raw-envelope} is not a raw-mass lower bound.

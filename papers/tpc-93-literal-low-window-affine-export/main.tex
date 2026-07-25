@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{booktabs,enumitem,float,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Literal Low-Window Affine Export: Content-Factor Extraction, Resonance Sectors, and Fixed-Determinant Preservation},
+  pdfauthor={Liang Wang}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Win}{\mathscr W}
+\newcommand{\Low}{\mathcal L}
+\newcommand{\Tail}{\mathcal E}
+\newcommand{\Ker}{\mathcal K}
+\newcommand{\Res}{\mathrm{res}}
+\newcommand{\Gen}{\mathrm{gen}}
+\newcommand{\Short}{\mathrm{short}}
+
+\title{\textbf{Literal Low-Window Affine Export:}\\
+Content-Factor Extraction, Resonance Sectors,\\
+and Fixed-Determinant Preservation}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\noindent\textbf{Keywords:}
+low-frequency window; determinant character; affine M\"obius column;
+exact content; resonance; short fiber; provenance; fixed shift.
+
+\medskip
+\noindent\textbf{Literal-frame convention.}
+Every physical formula retains one prescribed \(h_0\ne0\), the
+actual small-content coefficient, both cutoff polarizations, every
+native row, divisor, interval, mask and separation key, and one global
+post-aggregation normalization.  No statement is specialized to
+\(h_0=2\).
+
+\input{sections/introduction}
+\input{sections/row-window}
+\input{sections/decorated-affine-export}
+\input{sections/content-progression}
+\input{sections/determinant-law}
+\input{sections/sector-partition}
+\input{sections/physical-gate}
+\input{sections/claim-boundary}
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

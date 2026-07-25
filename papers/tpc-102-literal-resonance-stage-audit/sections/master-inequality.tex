@@ -1,0 +1,172 @@
+\section{The three-ledger master inequality}
+\label{sec:master-inequality}
+
+Let
+\(\mathcal C_{\mathrm{exc},X}^{\mathrm{abs}}\) denote the positive
+literal resonant carrier after the TPC-93--TPC-94 low-window export.
+It is a majorant for the signed resonant contribution, not an
+identity with it.
+
+TPC-98 and TPC-100 give the disjoint split
+\[
+ \mathcal C_{\mathrm{exc},X}^{\mathrm{abs}}
+ =
+ \mathcal C_{\mathrm{const},X}^{\mathrm{abs}}
+ +
+ \mathcal C_{q\mid u,X}^{\mathrm{abs}}
+ +
+ \mathcal C_{\mathrm{inv},X}^{\mathrm{abs}},
+\]
+where
+\begin{align}
+ \mathcal C_{\mathrm{const},X}^{\mathrm{abs}}
+ &\ll X^{o(1)}Q_X^2,
+\label{eq:constant-return}\\
+ \mathcal C_{q\mid u,X}^{\mathrm{abs}}
+ &\ll X^{o(1)}Q_X^2.
+\label{eq:q-u-return}
+\end{align}
+The remaining term has \(q_X\nmid u\) and the exact cellwise
+multiplier
+\[
+ \omega=A(mj+h_0)
+ \quad\text{in }\mathbb F_{q_X}^{\times}.
+\]
+
+For each exact resonance width \(H\) on the remaining invertible
+branch, write
+\[
+ M_H^{\mathrm{inv}}=\|a_H^{\mathrm{inv}}\|_1,\qquad
+ \|(a_H^{\mathrm{inv}})^\circ\|_2^2
+ =
+ \mathfrak D_H^\circ+\mathfrak X_H^\circ.
+\]
+Define
+\begin{align}
+ B_X&=\|b_X\|_1,
+\label{eq:BX}\\
+ \mathfrak P_X
+ &=
+ \sum_H\frac{2H}{q_X-1}M_H^{\mathrm{inv}},
+\label{eq:PX}\\
+ \mathfrak X_X
+ &=
+ \sum_Hg_{q_X}(H)
+ \sqrt{|\mathfrak X_H^\circ|},
+\label{eq:XX}\\
+ W_X
+ &=
+ \max_{H,C,j}w_C(j),
+\label{eq:WX}\\
+ \mathcal H_X
+ &=
+ \{H:g_{q_X}(H)>0,\ M_H^{\mathrm{inv}}>0\}.
+\label{eq:HX}
+\end{align}
+The maximum is taken only over the actual \(q_X\nmid u\)
+opened-atom support after one global normalization.
+
+\begin{theorem}[Three-ledger master inequality]
+\label{thm:master}
+Assume the literal source-to-branch and branch-to-opened-atom
+crosswalks of TPC-93--TPC-100.  Then
+\begin{align}
+ \mathcal C_{\mathrm{exc},X}^{\mathrm{abs}}
+ \ll{}&
+ X^{o(1)}Q_X^2
+ +
+ B_X
+ \left[
+ \mathfrak P_X
+ +
+ \sqrt{
+ W_X|\mathcal H_X|(q_X-1)\mathfrak P_X}
+ +
+ \mathfrak X_X
+ \right].
+\label{eq:master}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+The first term contains
+\eqref{eq:constant-return}--\eqref{eq:q-u-return}.  On the
+invertible branch, TPC-101 gives
+\[
+ \mathcal C_{\mathrm{inv},X}^{\mathrm{abs}}
+ \le
+ B_X\mathfrak P_X
+ +
+ B_X\sum_Hg_{q_X}(H)
+ \|(a_H^{\mathrm{inv}})^\circ\|_2.
+\]
+The TPC-100 centered decomposition implies
+\[
+ \|(a_H^{\mathrm{inv}})^\circ\|_2
+ \le
+ \sqrt{\mathfrak D_H^\circ}
+ +
+ \sqrt{|\mathfrak X_H^\circ|}.
+\]
+The second sum is \(\mathfrak X_X\).  For the first, each diagonal
+ledger obeys
+\[
+ 0\le\mathfrak D_H^\circ
+ \le\sum_{C,j}w_C(j)^2
+ \le W_XM_H^{\mathrm{inv}}.
+\]
+Cauchy--Schwarz over \(\mathcal H_X\), together with
+\[
+ g_{q_X}(H)^2\le2H,
+\]
+gives
+\[
+ \sum_Hg_{q_X}(H)\sqrt{\mathfrak D_H^\circ}
+ \le
+ \sqrt{
+ W_X|\mathcal H_X|(q_X-1)\mathfrak P_X}.
+\]
+Combining the three displays proves \eqref{eq:master}.
+\end{proof}
+
+\begin{corollary}[Conditional closure of positive resonance]
+\label{cor:positive-closure}
+Suppose
+\[
+ q_X\asymp Q_X,\qquad B_X\ll_K1,
+\]
+and
+\begin{align}
+ \mathfrak P_X&\le X^{o(1)}Q_X^2,
+\label{eq:principal-obligation}\\
+ W_X&\le X^{o(1)},
+\label{eq:atom-obligation}\\
+ \mathfrak X_X&\le X^{o(1)}Q_X^2.
+\label{eq:cross-obligation}
+\end{align}
+Then
+\[
+ \mathcal C_{\mathrm{exc},X}^{\mathrm{abs}}
+ \ll X^{o(1)}Q_X^2.
+\]
+\end{corollary}
+
+\begin{proof}
+Since
+\(|\mathcal H_X|\le(q_X-1)/2\), the middle radical in
+\eqref{eq:master} is
+\[
+ \le
+ X^{o(1)}
+ \sqrt{q_X^2Q_X^2}
+ \ll X^{o(1)}Q_X^2.
+\]
+The remaining terms have the same bound.
+\end{proof}
+
+\begin{remark}[Sufficient, not necessary]
+\Cref{cor:positive-closure} closes a positive-majorant route.
+Failure of one obligation does not imply a large signed resonant
+sum; cancellation discarded in forming
+\(\mathcal C_{\mathrm{exc},X}^{\mathrm{abs}}\) may still be decisive.
+\end{remark}

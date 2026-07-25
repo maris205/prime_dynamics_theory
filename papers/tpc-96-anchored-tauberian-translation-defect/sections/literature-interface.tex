@@ -1,0 +1,64 @@
+\section{Quantifier audit for logarithmic correlation theorems}
+\label{sec:literature}
+
+The two-point logarithmically averaged Chowla theorem controls fixed
+affine forms on a multiplicative interval with the reciprocal weight
+of the original arithmetic variable \citep{Tao2016LogChowla}.  The
+averaged Chowla theorem averages the shifts
+\citep{MatomakiRadziwillTao2015}.  Structural results at almost all
+scales retain an almost-all qualifier \citep{TaoTeravainen2019}.
+These are major arithmetic inputs, but their quantifiers are not
+interchangeable with the literal TPC packet.
+
+\begin{proposition}[Literal promotion checklist]
+\label{prop:promotion-checklist}
+A logarithmic theorem can be promoted to a certificate for
+\eqref{eq:literal-reassembly} only after verifying:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.5em]
+\item the same prescribed \(h_0\) and the actual slopes and
+  intercepts, including their growth with \(X\);
+\item the original arithmetic variable and therefore the true anchor
+  \(\rho_{\theta,X}\);
+\item uniformity in every prefix required by partial summation or
+  dyadic recursion;
+\item all interval origins, masks, smooth weights, periodic factors,
+  polarizations, and native outer keys;
+\item an exact return of short, resonant, content, and endpoint
+  sectors; and
+\item a quantitative aggregate rate meeting
+  \eqref{eq:aggregate-target}, or a direct bound for the signed sum
+  \eqref{eq:aggregate-signed}.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Items (i)--(v) identify the sequence and frame in
+\eqref{eq:fiber-anchored-primitive}.  Item (vi) is precisely the
+hypothesis needed by \cref{thm:aggregate-identity}.  Omitting the
+anchor contradicts \cref{prop:no-anchor-free}; omitting outer mass
+contradicts \cref{ex:outer-mass}.
+\end{proof}
+
+\begin{remark}[Fixed forms versus growing forms]
+Tao's theorem is stated for fixed \(a_1,a_2,b_1,b_2\) with nonzero
+determinant.  The literal columns have slopes, intercepts, origins,
+and masks depending on \(X\), while preserving one fixed nonzero
+determinant \(h_0\) after the exact content reduction.  No uniformity
+in that entire growing family is inferred here.
+\end{remark}
+
+\begin{remark}[Averaged shifts do not select \(h_0\)]
+An estimate averaged over many shifts can show that most shifts are
+good without identifying the one prescribed physical shift.  It
+remains at its averaged level until a literal selection theorem is
+proved.
+\end{remark}
+
+\begin{remark}[Logarithmic normalization]
+A normalized bound \(L_{r,N}=o(\cH_{r,N})\) has different strength in
+different regimes.  For \(r\ge N\), a prefix-uniform version is enough
+by \cref{thm:short-prefix-uniform}.  For \(r=0\),
+\(\cH_{0,N}\asymp\log N\), and qualitative
+\(o(\log N)\) cancellation alone does not control the unshifted
+signed defect; this is the sharp gap of TPC-87.
+\end{remark}

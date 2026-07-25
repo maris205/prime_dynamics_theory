@@ -1,0 +1,330 @@
+\section{The phase after content resolution}
+\label{sec:phase-conductor}
+
+The content-factor normalization changes the M\"obius arguments but
+does not divide the determinant character.  This is the second
+provenance boundary.
+
+\subsection{Signed frequency lift and polarization}
+
+The Fourier window \(\Win_X(R)\) consists of residue classes modulo
+the odd prime \(q_X\).  For every \(r\in\Win_X(R)\), let
+\begin{equation}
+ \widetilde r\in\mathbb Z,\qquad
+ -\frac{q_X}{2}<\widetilde r<\frac{q_X}{2},
+ \qquad
+ \widetilde r\equiv r\pmod{q_X},
+\label{eq:signed-frequency-lift}
+\end{equation}
+be the unique signed lift.  Thus
+\[
+ 0<|\widetilde r|=d_{q_X}(r,0)<q_X/2,
+ \qquad q_X\nmid\widetilde r.
+\]
+We retain the source orientation
+\(\varepsilon_\theta\in\{+1,-1\}\).  The multiplier
+\(\mathfrak m_{K,X}(r)\) remains a function of the residue class;
+only its lift into a character modulo \(cq_X\) uses
+\(\widetilde r\).  Without \eqref{eq:signed-frequency-lift}, a
+general character modulo \(cq_X\) need not be invariant under
+replacing an integer representative by that representative plus
+\(q_X\).
+
+\subsection{Exact phase increment}
+
+Write
+\[
+ M_\theta(t)=\ell_\theta v_\theta D_\theta(t).
+\]
+After \(t=\tau+Bz\),
+\[
+ M_\theta(\tau+Bz)
+ =
+ M_\theta(\tau)
+ +\ell_\theta v_\theta\sigma_\theta Bz.
+\]
+For a resolved key
+\[
+ \xi=(\theta,c,\kappa,r),\qquad b=c\kappa,
+\]
+put
+\begin{align}
+ \Omega_\xi
+ &=
+ \ell_\theta v_\theta\sigma_\theta B_{\theta,b},
+\label{eq:phase-Omega}\\
+ \alpha_\xi
+ &=
+ \frac{\varepsilon_\theta\widetilde r\Omega_\xi}{c q_X}
+ \pmod 1,
+\label{eq:phase-alpha}\\
+ \zeta_\xi
+ &=
+ e_{c q_X}\!\left(
+ -\varepsilon_\theta\widetilde r
+ (M_\theta(\tau)-n_\theta)\right).
+\label{eq:phase-zeta}
+\end{align}
+Then
+\begin{equation}
+ e_{c q_X}\!\left(
+ -\varepsilon_\theta\widetilde r
+ (M_\theta(\tau+Bz)-n_\theta)\right)
+ =
+ \zeta_\xi e(-\alpha_\xi z),
+\label{eq:phase-resolved}
+\end{equation}
+where \(e(x)=e^{2\pi ix}\).
+
+\begin{remark}[Determinant and phase slope are different data]
+\label{rem:determinant-phase-different}
+Extracting \(B\) from \(U\), or \(H\) from \(D\), changes the affine
+pair used in the M\"obius correlation.  It does not change
+\(\Omega_\xi\) in \eqref{eq:phase-Omega}, because the additive
+character was attached to the original moving row.  The arithmetic
+determinant \(h_0/H\) and the additive phase conductor must therefore
+be recorded separately.
+\end{remark}
+
+\subsection{Exact rational conductor}
+
+\begin{definition}[Resolved additive conductor]
+\label{def:resolved-conductor}
+The additive conductor of \(\xi\) is
+\begin{equation}
+ q_\xi^\ast
+ =
+ \cond(\alpha_\xi)
+ :=
+ \frac{c q_X}{\gcd(cq_X,\widetilde r\Omega_\xi)}.
+\label{eq:resolved-conductor}
+\end{equation}
+It is the least positive period of \(z\mapsto e(-\alpha_\xi z)\).
+\end{definition}
+
+\begin{proposition}[Constant phase]
+\label{prop:constant-phase}
+The phase in \eqref{eq:phase-resolved} is constant in \(z\) if and
+only if
+\begin{equation}
+ q_\xi^\ast=1
+ \quad\Longleftrightarrow\quad
+ c q_X\mid \widetilde r\Omega_\xi.
+\label{eq:constant-phase}
+\end{equation}
+This is an exact arithmetic condition, not the inequality defining
+near resonance.
+\end{proposition}
+
+\begin{proof}
+The character is constant precisely when
+\(\alpha_\xi=0\) in \(\mathbb R/\mathbb Z\), which is equivalent to
+\eqref{eq:constant-phase}.
+\end{proof}
+
+\begin{theorem}[Prime-modulus conductor gap]
+\label{thm:prime-modulus-conductor-gap}
+Suppose \(q_X\) is prime,
+\[
+ 1\le c\le C_X<q_X,
+ \qquad
+ 0<|\widetilde r|<q_X/2.
+\]
+Then \(q_X\nmid\widetilde r\) and:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item if \(q_X\mid\Omega_\xi\), writing
+  \(\Omega_\xi=q_X\Omega_\xi'\), one has
+  \begin{equation}
+   q_\xi^\ast
+   =
+   \frac{c}{(c,\widetilde r\Omega_\xi')}
+   \le c\le C_X;
+  \label{eq:low-conductor-formula}
+  \end{equation}
+\item if \(q_X\nmid\Omega_\xi\), then
+  \begin{equation}
+   q_\xi^\ast
+   =
+   q_X\frac{c}{(c,\widetilde r\Omega_\xi)}
+   \ge q_X.
+  \label{eq:high-conductor-formula}
+  \end{equation}
+\end{enumerate}
+Thus no conductor lies strictly between \(C_X\) and \(q_X\).
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:signed-frequency-lift},
+\(q_X\nmid\widetilde r\).  Also \((c,q_X)=1\).
+
+If \(q_X\mid\Omega_\xi\), cancel \(q_X\) from numerator and
+denominator in \eqref{eq:resolved-conductor} to obtain
+\eqref{eq:low-conductor-formula}.  If
+\(q_X\nmid\Omega_\xi\), then
+\(q_X\nmid\widetilde r\Omega_\xi\), so
+\[
+ (cq_X,\widetilde r\Omega_\xi)
+ =
+ (c,\widetilde r\Omega_\xi).
+\]
+This gives \eqref{eq:high-conductor-formula}.
+\end{proof}
+
+\begin{corollary}[Explicit constant branch]
+\label{cor:explicit-constant-branch}
+Under the hypotheses of
+\cref{thm:prime-modulus-conductor-gap}, constancy is possible only
+when \(q_X\mid\Omega_\xi\).  Writing
+\(\Omega_\xi=q_X\Omega_\xi'\), it occurs precisely when
+\begin{equation}
+ c\mid \widetilde r\Omega_\xi'.
+\label{eq:constant-divisibility}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Combine \cref{prop:constant-phase} with
+\eqref{eq:low-conductor-formula}.
+\end{proof}
+
+\begin{theorem}[Binary conductor on the literal packet]
+\label{thm:literal-binary-conductor}
+Use the literal common-target provenance proved in
+\cref{prop:literal-content-divides-phase-slope}.  Put
+\begin{equation}
+ \omega_\xi=\Omega_\xi/c\in\Z.
+\label{eq:literal-reduced-phase-slope}
+\end{equation}
+Under the prime-modulus hypotheses of
+\cref{thm:prime-modulus-conductor-gap},
+\begin{equation}
+ \boxed{
+ q_\xi^\ast
+ =
+ \frac{q_X}{(q_X,\widetilde r\omega_\xi)}
+ =
+ \begin{cases}
+ 1,&q_X\mid\omega_\xi,\\
+ q_X,&q_X\nmid\omega_\xi.
+ \end{cases}}
+\label{eq:literal-binary-conductor}
+\end{equation}
+Because \((c,q_X)=1\), the first case is equivalent to
+\(q_X\mid\Omega_\xi\).  Thus:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \(q_X\mid\Omega_\xi\) makes the phase constant for
+  \emph{every} low-window frequency \(r\);
+\item \(q_X\nmid\Omega_\xi\) gives exact conductor \(q_X\) for
+  \emph{every} low-window frequency; and
+\item no literal nonconstant phase has conductor between \(2\) and
+  \(q_X-1\).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:literal-content-divides-phase-slope},
+\(c\mid\Omega_\xi\).  Cancel \(c\) in
+\eqref{eq:resolved-conductor} to get the first equality in
+\eqref{eq:literal-binary-conductor}.  The modulus \(q_X\) is prime
+and \(q_X\nmid\widetilde r\), so the gcd in the denominator is either \(q_X\)
+or \(1\).  Finally \((c,q_X)=1\) makes
+\(q_X\mid\omega_\xi\) equivalent to \(q_X\mid\Omega_\xi\).
+\end{proof}
+
+\begin{remark}[Literal representative invariance]
+\label{rem:literal-representative-invariance}
+The signed lift is essential for the general abstract phase.  On the
+literal packet, however,
+\[
+ c\mid M_\theta(\tau+Bz)-n_\theta,
+ \qquad c\mid\Omega_\xi.
+\]
+Replacing \(\widetilde r\) by
+\(\widetilde r+kq_X\) therefore multiplies the full character by
+\[
+ e_c\!\left(
+ -k\varepsilon_\theta
+ (M_\theta(\tau+Bz)-n_\theta)\right)=1.
+\]
+Thus the literal phase and its binary conductor are genuinely
+functions of \(r\bmod q_X\); the convention
+\eqref{eq:signed-frequency-lift} additionally makes every abstract
+statement unambiguous.
+\end{remark}
+
+\begin{corollary}[Literal resonance test on the nonconstant branch]
+\label{cor:literal-resonance-test}
+If \(q_X\nmid\Omega_\xi\), then
+\begin{equation}
+ \mathcal R(\xi)
+ \quad\Longleftrightarrow\quad
+ N_\xi\,d_{q_X}(\widetilde r\omega_\xi,0)\le q_X.
+\label{eq:literal-resonance-test}
+\end{equation}
+In particular, a nonconstant resonant fiber has \(N_\xi\le q_X\).
+\end{corollary}
+
+\begin{proof}
+Use
+\[
+ \|\alpha_\xi\|_{\mathbb R/\mathbb Z}
+ =
+ \frac{d_{q_X}(\widetilde r\omega_\xi,0)}{q_X}
+\]
+in \eqref{eq:archimedean-resonance}.  The last assertion also follows
+from \cref{lem:resonance-conductor-length} and
+\(q_\xi^\ast=q_X\).
+\end{proof}
+
+\begin{remark}[Where low conductor can come from]
+Since
+\[
+ \Omega_\xi=\ell_\theta v_\theta\sigma_\theta B_{\theta,b},
+\]
+the condition \(q_X\mid\Omega_\xi\) can come either from a native
+slope factor or from the content step \(B_{\theta,b}\).  If
+\(q_X\nmid\ell_\theta v_\theta\sigma_\theta\), then it forces
+\(q_X\mid B_{\theta,b}\), which also shortens the resolved fiber by
+at least a factor \(q_X\).  No such size conclusion is valid when
+\(q_X\) already divides a native slope factor.
+\end{remark}
+
+\subsection{Archimedean resonance}
+
+Let \(N_\xi\) be the cardinality of the resolved \(z\)-interval.
+Define
+\begin{equation}
+ \mathcal R(\xi)
+ \quad\Longleftrightarrow\quad
+ N_\xi\|\alpha_\xi\|_{\mathbb R/\mathbb Z}\le1.
+\label{eq:archimedean-resonance}
+\end{equation}
+
+\begin{lemma}[Nonconstant resonance forces a conductor-length bound]
+\label{lem:resonance-conductor-length}
+If \(q_\xi^\ast>1\) and \(\mathcal R(\xi)\), then
+\begin{equation}
+ N_\xi\le q_\xi^\ast.
+\label{eq:resonance-length-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+In lowest terms \(\alpha_\xi=p/q_\xi^\ast\) with
+\((p,q_\xi^\ast)=1\) and \(p\not\equiv0\pmod{q_\xi^\ast}\).
+Therefore
+\[
+ \|\alpha_\xi\|_{\mathbb R/\mathbb Z}\ge1/q_\xi^\ast.
+\]
+Insert this in \eqref{eq:archimedean-resonance}.
+\end{proof}
+
+\begin{remark}[No automatic oscillatory saving]
+On a constant or resonant fiber the additive phase supplies no
+uniform cancellation.  On a low-conductor fiber it is periodic, but
+the M\"obius signs, coprimality masks, and smooth weights need not be
+constant on phase periods.  Even on a high-conductor generic fiber,
+partial sums of the full weighted M\"obius product still require a
+new arithmetic estimate.  The conductor calculation alone is
+\(\Lzero\), not \(\Ltwo\).
+\end{remark}

@@ -1,0 +1,100 @@
+\section{Recommended next batch}
+\label{sec:next-batch}
+
+The next papers should test the cheapest literal gates before
+attempting a new deep cancellation theorem.
+
+\subsection*{TPC-103: normalized opened-atom cap}
+
+Write \(w_C(j)\) from the TPC-93 source atom through TPC-94 content
+inversion and the TPC-100 \((\beta,z)\) refinement.  Prove or refute
+\[
+ W_X\le X^{o(1)}.
+\]
+Required outputs:
+\begin{itemize}[leftmargin=2em]
+\item an exact factor list with one global normalization;
+\item pointwise bounds for row, logarithmic, divisor, projector, and
+  smooth factors;
+\item a finite inverse-provenance regression; and
+\item a polynomial-loss counterexample if the cap fails.
+\end{itemize}
+
+\subsection*{TPC-104: principal mass by resolved length}
+
+Open
+\[
+ \mathfrak P_X
+ =
+ \sum_{\substack{\beta\in\mathfrak B_X^{\mathrm{nc}}\\
+                   1\le N_\beta\le q_X}}
+ \frac{2H_{q_X}(N_\beta)}{q_X-1}
+ \sum_{\substack{z\in I_\beta^\ast\\
+                   q_X\nmid u_{\beta,z}}}
+ w_{\beta,z}
+\]
+before grouping equal multipliers.  Use
+\[
+ \frac{H_q(N)}q\le\frac1N,\qquad N\ge3,
+\]
+together with the harmless exact conversion from \(q\) to \(q-1\),
+and return the remaining invertible \(N=1,2\) mass literally.  No
+ambient branch count may replace the displayed opened-atom mass.
+
+\subsection*{TPC-105: canonical affine-map aggregation}
+
+For invertible opened atoms, store
+\[
+ \omega_C(j)=s_Cj+t_C,\qquad
+ s_C=A_Cm_C,\quad t_C=A_Ch_0.
+\]
+Aggregate cells with identical \((s_C,t_C)\) only after attaching a
+recoverable provenance bag.  Split
+\(\mathfrak X_H^\circ\) into:
+\[
+ \text{identical-map concentration}
+ \quad+\quad
+ \text{genuinely distinct-map incidence}.
+\]
+The first is a new mass ledger; the second is the honest geometric
+door.
+
+\subsection*{TPC-106: width-weighted cross-map estimate}
+
+Attempt
+\[
+ \sum_Hg_{q_X}(H)
+ \sqrt{|\mathfrak X_{H,\mathrm{distinct}}^\circ|}
+ \ll X^{o(1)}Q_X^2
+\]
+using an additive Fourier dual, a restricted affine large sieve, or
+a determinant-aware incidence theorem.  The theorem must retain the
+actual map support and physical weights.
+
+\subsection*{Fallback sequence}
+
+If TPC-103 exhibits an uncompensated polynomial atom loss, or if
+TPC-104 proves
+\(B_X\mathfrak P_X\ge X^\delta Q_X^2\), do not spend another paper
+on positive cross-cell dispersion.  Move directly to:
+\begin{enumerate}[leftmargin=2em]
+\item signed filter-before-majorant reconstruction;
+\item divisor-twisted character or additive Fourier analysis;
+\item comparison with the TPC-95 dominance-energy route; and
+\item a full TPC-18 reassembly audit.
+\end{enumerate}
+
+\begin{proposition}[Decision order]
+\label{prop:next-order}
+The order TPC-103 \(\to\) TPC-104 \(\to\) TPC-105
+\(\to\) TPC-106 minimizes the risk of proving an expensive theorem
+that cannot close \eqref{eq:master}.
+\end{proposition}
+
+\begin{proof}
+TPC-103 tests whether the diagonal transfer is available.  TPC-104
+tests a term that no centered theorem can cancel.  Only after both
+pass is the cross-cell term the unique positive resonance
+obstruction.  TPC-105 then removes artificial identical-map
+duplication before TPC-106 attacks genuine dispersion.
+\end{proof}

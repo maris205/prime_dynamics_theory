@@ -1,0 +1,126 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The low-window export of TPC-93 writes the distinguished
+zero-frequency functional as one coherent sum over native affine
+keys, exact contents, inclusion--exclusion variables, and Fourier
+frequencies \citep{WangTPC93}.  One inner term has the shape
+\begin{align}
+ \sum_{t\in I_\theta}
+ &\mu(D_\theta(t))\mu(U_\theta(t))
+ W_{\theta,X}(t)
+ \one_{c\kappa\mid\sigma_\theta U_\theta(t)}
+\notag\\[-1mm]
+ &\qquad\times
+ e_{c q_X}\!\left(
+ -\varepsilon_\theta\widetilde r
+ (M_\theta(t)-n_\theta)\right),
+\label{eq:intro-native-term}
+\end{align}
+where
+\[
+ D_\theta(t)=d_\theta+\sigma_\theta t,\qquad
+ U_\theta(t)=u_\theta+a_\theta t,
+\]
+\[
+ \sigma_\theta u_\theta-a_\theta d_\theta=h_0,
+ \qquad
+ M_\theta(t)=\ell_\theta v_\theta D_\theta(t).
+\]
+Here \(\varepsilon_\theta=+1\) on the left polarization and
+\(\varepsilon_\theta=-1\) on the right polarization.  For
+\(r\in\Win_X(R)\subset\mathbb Z/q_X\mathbb Z\),
+\(\widetilde r\) denotes its unique signed lift with
+\(-q_X/2<\widetilde r<q_X/2\).  This lift, rather than an unspecified
+integer representative of \(r\), is used in every character modulo
+\(cq_X\).
+All omitted factors in \eqref{eq:intro-native-term} are fixed by the
+outer key; no fiber is renormalized separately.
+
+Put \(b=c\kappa\), \(g=(b,\sigma_\theta)\), and \(B=b/g\).
+The content condition reduces to \(B\mid U_\theta(t)\).  On a
+soluble branch it selects one class \(t=\tau+Bz\).  Two questions
+must then be kept separate.
+
+\paragraph{Which determinant is relevant?}
+If one merely substitutes \(t=\tau+Bz\), both slopes gain a factor
+\(B\), and the raw determinant is \(Bh_0\).  But the congruence
+itself forces \(U(\tau+Bz)=BV(z)\).  Extracting that factor returns a
+determinant-\(h_0\) pair, together with an outer sign and a
+coprimality mask.  A further fixed content can occur in the first
+form outside the canonical TPC-32 support.  The exact answer is the
+finite palette \(h_0/H\), \(H=(B,h_0)\), rather than an uncontrolled
+growing determinant.
+
+\paragraph{Which phase is relevant?}
+Content-factor extraction does not divide the determinant character.
+The phase increment remains
+\[
+ \alpha_\xi
+ =
+ \frac{\varepsilon_\xi\widetilde r_\xi
+ \ell_\xi v_\xi\sigma_\xi B_\xi}
+ {c_\xi q_X}
+ \pmod 1.
+\]
+Its rational conductor, its distance to the nearest integer, and
+the resolved fiber length encode three distinct mechanisms:
+periodicity, near constancy, and shortness.
+
+\subsection{Main results}
+
+The first theorem gives the full two-stage normalization:
+\[
+\begin{array}{ccl}
+(D(\tau+Bz),U(\tau+Bz))
+&:&\det=Bh_0,\\
+(D(\tau+Bz),V(z))
+&:&\det=h_0,\\
+(\widetilde D(z),V(z))
+&:&\det=h_0/H,\quad H=(B,h_0).
+\end{array}
+\]
+It also gives the exact M\"obius masks at both extractions.  The
+literal common-target provenance of TPC-32 forces \(H=1\)
+\citep{WangTPC32}.
+
+The second theorem computes the exact additive conductor.  Because
+the TPC-86 modulus is prime and the content \(c\) is smaller than
+that modulus, every nonconstant phase has either conductor at most
+\(c\) or conductor at least \(q_X\); there is no middle range
+\citep{WangTPC86}.  On the literal common-target branch one has the
+stronger divisibility \(c\mid\Omega\), so the two possibilities
+collapse to conductor \(1\) and conductor \(q_X\).
+
+The third theorem gives a disjoint and exhaustive sector partition.
+Its natural specialization uses a short-fiber threshold at least as
+large as the content cutoff.  In that regime a long nonconstant
+low-conductor fiber cannot also be resonant.  In the literal packet
+there is no nonconstant low-conductor fiber at all.
+
+Finally, we formulate the exact multiplier-mass ledger.  A set of
+exceptional frequencies is inexpensive only when its
+reconstruction-multiplier mass is inexpensive after the literal
+outer coefficients and fiber masses are restored.  Cardinality by
+itself is not the relevant quantity.
+
+\subsection{Proof levels}
+
+Affine substitution, content extraction, conductor reduction,
+fiber counting, and finite set partitions are \(\Lzero\).  Verifying
+that \(b\) is exactly a canonical common-target divisor and restoring
+all TPC-93 provenance is an \(\Lone\) attachment here: it is the
+direct application of the complete lossless source-to-decorated
+theorem and its explicit inverse ledger established in TPC-93.
+Any growing-\(X\) saving for a returned sector is
+\(\Ltwo\), and remains open here.
+
+\subsection{Organization}
+
+\Cref{sec:progression-normalization} proves the general normalization
+theorem.  The literal canonical specialization is
+\cref{sec:literal-canonical-branch}.  Exact phase conductors are
+computed in \cref{sec:phase-conductor}; the sector partition appears
+in \cref{sec:fiber-sector-partition}.  Multiplier-mass accounting and
+the audited claim boundary occupy
+\cref{sec:multiplier-mass-ledger,sec:claim-boundary}.

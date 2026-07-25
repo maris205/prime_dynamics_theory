@@ -1,0 +1,266 @@
+\section{Multiplier-mass accounting}
+\label{sec:multiplier-mass-ledger}
+
+We now state the accounting rule that turns the set partition into a
+valid physical return.
+
+\subsection{Normalized branch sums}
+
+Let
+\[
+ \beta=(\theta,c,\kappa)
+\]
+be a soluble nonempty branch, with \(b=c\kappa\), progression step
+\(B_\beta\), and robustness content \(H_\beta\).  Combine the
+literal smooth weights and all native periodic masks with the two
+extraction masks into
+\begin{align}
+ \mathcal W_{\beta,X}(z)
+ ={}&
+ \chi_\theta(\tau_\beta+B_\beta z)
+ W_{\theta,X}(\tau_\beta+B_\beta z)
+\notag\\
+ &\times
+ \one_{(H_\beta,\widetilde D_\beta(z))=1}
+ \one_{(B_\beta,V_\beta(z))=1}.
+\label{eq:normalized-branch-weight}
+\end{align}
+Define
+\begin{equation}
+ S_{\beta,X}(r)
+ =
+ \sum_{z\in I_\beta^\ast}
+ \mu(\widetilde D_\beta(z))\mu(V_\beta(z))
+ \mathcal W_{\beta,X}(z)e(-\alpha_{\beta,r}z).
+\label{eq:normalized-branch-sum}
+\end{equation}
+The exact outer coefficient, apart from the unit phase
+\(\zeta_{\beta,r}\), is
+\begin{equation}
+ A_{\beta,X}
+ =
+ c_{\theta,X}\mu(\kappa)\mu(B_\beta)\mu(H_\beta)
+ \one_{c\kappa\mid P_\theta}.
+\label{eq:normalized-outer-coefficient}
+\end{equation}
+On the canonical TPC-32 branch, \(H_\beta=1\).
+
+For a sector \(\mathfrak E\) in
+\cref{thm:complete-sector-partition}, its exact contribution is
+\begin{equation}
+ \mathcal L_X(\mathfrak E)
+ =
+ \sum_{\beta}
+ A_{\beta,X}
+ \sum_{\substack{r\in\Win_X(R_X)\\
+                 (\beta,r)\in\mathfrak E}}
+ \mathfrak m_{K,X}(r)\zeta_{\beta,r}
+ S_{\beta,X}(r).
+\label{eq:exact-sector-contribution}
+\end{equation}
+The low window is the signed sum of these sector contributions.
+
+\subsection{The correct exceptional cost}
+
+\begin{definition}[Branchwise multiplier mass]
+\label{def:branchwise-multiplier-mass}
+For a branch \(\beta\) and a sector \(\mathfrak E\), put
+\begin{equation}
+ \mathfrak M_{\beta,X}(\mathfrak E)
+ =
+ \sum_{\substack{r\in\Win_X(R_X)\\
+                 (\beta,r)\in\mathfrak E}}
+ |\mathfrak m_{K,X}(r)|.
+\label{eq:branchwise-multiplier-mass}
+\end{equation}
+Also put
+\begin{equation}
+ \mathcal A_{\beta,X}
+ =
+ \sum_{z\in I_\beta^\ast}
+ |\mathcal W_{\beta,X}(z)|
+ \mu^2(\widetilde D_\beta(z))\mu^2(V_\beta(z)).
+\label{eq:branch-absolute-mass}
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Multiplier-mass return inequality]
+\label{thm:multiplier-mass-return}
+For every sector \(\mathfrak E\),
+\begin{equation}
+ \boxed{
+ |\mathcal L_X(\mathfrak E)|
+ \le
+ \sum_\beta
+ |A_{\beta,X}|\,
+ \mathcal A_{\beta,X}\,
+ \mathfrak M_{\beta,X}(\mathfrak E).}
+\label{eq:multiplier-mass-return}
+\end{equation}
+In particular, a frequency-cardinality bound is not a replacement
+for the multiplier mass in
+\eqref{eq:multiplier-mass-return}.
+\end{theorem}
+
+\begin{proof}
+The unit phase has modulus one and
+\[
+ |S_{\beta,X}(r)|\le\mathcal A_{\beta,X}.
+\]
+Apply the triangle inequality to
+\eqref{eq:exact-sector-contribution}, retaining the literal branch
+coefficient.  The resulting inner sum is exactly
+\eqref{eq:branchwise-multiplier-mass}.
+\end{proof}
+
+\begin{remark}[Sufficient, not necessary]
+\Cref{thm:multiplier-mass-return} is the correct absolute return of
+one exceptional sector.  Cancellation may also occur between its
+frequencies or outer branches, so the inequality is not claimed to
+be necessary.  What is invalid is to discard the sector using only
+the number of frequencies without proving a bound for the weighted
+sum that actually occurs.
+\end{remark}
+
+\subsection{Consequences of filter decay}
+
+TPC-86 supplies
+\[
+ |\mathfrak m_{K,X}(r)|
+ \ll_K(1+d_{q_X}(r,0))^{-K}.
+\]
+Therefore
+\begin{equation}
+ \mathfrak M_{\beta,X}(\mathfrak E)
+ \ll_K
+ \sum_{\substack{r\in\Win_X(R_X)\\
+                 (\beta,r)\in\mathfrak E}}
+ (1+d_{q_X}(r,0))^{-K}.
+\label{eq:multiplier-decay-mass}
+\end{equation}
+If every frequency in the sector has
+\(d_{q_X}(r,0)\ge R_0\), then
+\begin{equation}
+ \mathfrak M_{\beta,X}(\mathfrak E)
+ \ll_K R_0^{1-K}.
+\label{eq:far-frequency-mass}
+\end{equation}
+
+There is also an exact description of the constant sector.  When
+\(q_X\mid\Omega_\beta\), write
+\(\Omega_\beta=q_X\Omega_\beta'\) and put
+\[
+ \delta_\beta
+ =
+ \frac{c}{(c,\Omega_\beta')}.
+\]
+By \eqref{eq:constant-divisibility}, the constant frequencies are
+exactly the nonzero signed lifts \(\widetilde r\) divisible by
+\(\delta_\beta\).  Hence
+\begin{equation}
+ \mathfrak M_{\beta,X}(\Const)
+ \ll_K \delta_\beta^{-K}.
+\label{eq:constant-multiplier-mass}
+\end{equation}
+This can be small when \(\delta_\beta\) grows, but can be of constant
+order when \(\delta_\beta=1\).  It gives no cancellation inside the
+corresponding affine M\"obius sum.
+
+\begin{corollary}[No filter-mass discount for a literal constant
+branch]
+\label{cor:no-literal-constant-discount}
+On canonical common-target support,
+\[
+ q_X\mid\Omega_\beta
+ \quad\Longrightarrow\quad
+ c\mid\Omega_\beta/q_X
+ \quad\Longrightarrow\quad
+ \delta_\beta=1.
+\]
+Hence, if the branch is long, every low-window frequency belongs to
+\(\Const\) and
+\begin{equation}
+ \mathfrak M_{\beta,X}(\Const)
+ =
+ \sum_{r\in\Win_X(R_X)}
+ |\mathfrak m_{K,X}(r)|
+ \ll_K1.
+\label{eq:literal-constant-full-mass}
+\end{equation}
+The bound is uniform but gives no decaying factor.
+\end{corollary}
+
+\begin{proof}
+Canonical support gives \(c\mid\Omega_\beta\).  Since
+\((c,q_X)=1\), the additional divisibility
+\(q_X\mid\Omega_\beta\) implies
+\(c\mid\Omega_\beta/q_X\).  Thus \(\delta_\beta=1\).
+\Cref{thm:literal-binary-conductor} makes the phase constant for
+every \(r\), and the filter decay is summable for \(K\ge2\).
+\end{proof}
+
+\begin{remark}[One heavy frequency can dominate]
+The decay in \eqref{eq:multiplier-decay-mass} distinguishes a
+singleton near frequency \(1\) from many far frequencies.  Their
+cardinalities point in the opposite direction from their possible
+costs.  This is why the exceptional ledger must use
+\(\mathfrak M_{\beta,X}\).
+\end{remark}
+
+\subsection{What each sector asks for}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}
+ >{\raggedright\arraybackslash}p{0.18\textwidth}
+ >{\raggedright\arraybackslash}p{0.31\textwidth}
+ >{\raggedright\arraybackslash}X@{}}
+\toprule
+Sector & Exact structure & Missing input or valid return\\
+\midrule
+\(\Short\)
+&
+\(N_\xi\le Y_X\), often because \(B_\xi\) is large
+&
+Return full branch mass times multiplier mass; prove it fits the
+physical budget.
+\\
+\addlinespace
+\(\Const\)
+&
+\(cq_X\mid\widetilde r\Omega_\xi\)
+&
+No phase cancellation; use M\"obius correlation, outer coherence, or
+the exact mass bound \eqref{eq:constant-multiplier-mass}.
+\\
+\addlinespace
+\(\LowRes,\LowGen\)
+&
+Exact period \(q_\xi^\ast\le Q_X^{\rm cond}\)
+&
+Split with all masks retained; periodicity alone does not control the
+M\"obius product.  These sectors are empty on literal canonical
+support.
+\\
+\addlinespace
+\(\HighRes\)
+&
+\(N_\xi\|\alpha_\xi\|\le1\)
+&
+Near-constant phase; requires an arithmetic or outer-coherence
+estimate.
+\\
+\addlinespace
+\(\HighGen\)
+&
+High conductor and \(N_\xi\|\alpha_\xi\|>1\)
+&
+Natural candidate for hybrid additive/M\"obius cancellation, still
+an \(\Ltwo\) theorem.
+\\
+\bottomrule
+\end{tabularx}
+\caption{Exact sector meaning and the remaining proof obligations.}
+\label{tab:sector-obligations}
+\end{table}

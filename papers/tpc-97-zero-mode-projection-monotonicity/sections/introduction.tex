@@ -1,0 +1,133 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The determinant-flatness route separates one signed coefficient into
+three literal statistics:
+\[
+ \text{zero mode }Z,\qquad
+ \text{energy }D,\qquad
+ \text{actual support size }S.
+\]
+TPC-88 gives the exact mass--cancellation factorization, while
+TPC-89 identifies
+\[
+ \rho=\frac{|Z|}{\sqrt{SD}}
+\]
+as the projective angle to the constant line
+\citep{WangTPC88,WangTPC89}.  For a general same-frame surrogate
+\(B\), TPC-89 proves a sharp worst-case fact: transferring the
+critical target \(\rho\ll J^{-1}\) from only a relative
+\(\ell^2\) approximation requires
+\[
+ \frac{\|A-B\|_2}{\|B\|_2}=O(J^{-1}).
+\]
+An \(o(1)\) approximation need not suffice.
+
+That theorem treats the error as an arbitrary direction.  The
+present paper asks whether a structured surrogate can avoid this
+worst case.  The answer is exact.
+
+Suppose \(B=PA\), where \(P\) is an orthogonal projection on the
+\emph{same prescribed physical frame}.  If the constant vector lies
+in \(\Ran P\), then the residual is automatically orthogonal to the
+constant vector.  Hence
+\[
+ Z(PA)=Z(A)
+\]
+with no approximation, while Pythagoras gives
+\[
+ D(PA)\le D(A).
+\]
+The projected flatness is therefore at least the physical flatness.
+This reverses the usual concern about surrogate optimism:
+constant-preserving orthogonal coarsening is pessimistic in exactly
+the direction needed for a one-sided upper certificate.
+
+The observation is elementary, but three distinctions make its
+literal use nontrivial.
+
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item The projection must act on the actual post-bin frame.  A
+  compressed block vector must retain block multiplicities.
+\item Preserving constants as an output, \(P\one=\one\), is enough
+  here only because \(P=P^\ast\).  For a general linear surrogate
+  the zero-mode condition is \(T^\ast\one=\one\).
+\item A flat projected coefficient is a valid certificate only after
+  its own arithmetic bound has been proved.  Projection monotonicity
+  does not estimate that coefficient.
+\end{enumerate}
+
+If the projection misses the constant vector, the exact obstruction
+is not the entire residual but one scalar pairing:
+\[
+ Z(PA)-Z(A)
+ =
+ \langle A,(P-I)\one\rangle.
+\]
+Writing \(q=(I-P)\one\), orthogonality sharpens this to
+\[
+ Z(PA)-Z(A)=-\langle (I-P)A,q\rangle.
+\]
+The resulting bound is governed by the product of two dimensionless
+quantities:
+\[
+ \kappa(P)
+ =\frac{\|q\|_2}{\sqrt S},
+\qquad
+ r(A;P)
+ =\frac{\|(I-P)A\|_2}{\|PA\|_2}.
+\]
+The critical interface becomes
+\[
+ \kappa(P)r(A;P)\ll J^{-1}.
+\]
+This interpolates between the exact safe case \(\kappa=0\) and the
+general TPC-89 barrier when \(\kappa\asymp1\).
+
+\subsection{Main contributions}
+
+The paper proves the following finite-dimensional statements.
+
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
+\item An exact zero-mode/energy ledger for every orthogonal
+  projection, including the defect identity and its sharp equality
+  cases.
+\item Exact flatness monotonicity for every constant-preserving
+  projection, with a multiplicative formula and equality
+  classification.
+\item A monotone hierarchy for nested coarse-grainings and a
+  within-block variance formula for partition averages.
+\item A weighted compression theorem and an explicit counterexample
+  to unweighted block compression.
+\item Sharp constant-defect bounds and the product criterion
+  \(\kappa r=O(J^{-1})\).
+\item The minimal rank-one constant completion of an unsafe
+  projection.
+\item An exact \(\Lone\) crosswalk to the literal fixed-\(h_0\)
+  determinant coefficient and the TPC-92/TPC-93 continuation
+  program \citep{WangTPC92,WangTPC93}.
+\end{enumerate}
+
+\subsection{Logical level}
+
+The projection identities, sharpness constructions, partition laws,
+and rank-one completion are unconditional \(\Lzero\) results.
+Applying them to a fully specified operator on the literal
+TPC determinant bins is an \(\Lone\) certificate interface.  No
+operator is shown here to have a small projected zero-mode ratio for
+the growing fixed-\(h_0\) arithmetic family.  Consequently there is
+no new \(\Ltwo\) arithmetic estimate, no parity breakthrough, and no
+prime-pair conclusion.
+
+\subsection{Organization}
+
+\Cref{sec:finite-frame} fixes the frame and statistics.
+\Cref{sec:safe-projection} proves the safe projection theorem.
+\Cref{sec:block-averaging} treats literal block averages and
+compression.  \Cref{sec:constant-defect} gives the sharp defective
+case, and \cref{sec:constant-completion} repairs it.
+\Cref{sec:critical-interface} isolates the \(J^{-1}\) threshold.
+\Cref{sec:literal-crosswalk} gives the fixed-shift attachment,
+\cref{sec:computational-certificate} records the executable finite
+certificate, and \cref{sec:claim-boundary} states the exact claim
+boundary.

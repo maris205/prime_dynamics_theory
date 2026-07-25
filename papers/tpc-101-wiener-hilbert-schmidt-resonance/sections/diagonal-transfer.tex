@@ -1,0 +1,175 @@
+\section{Cell energy and a principal-to-diagonal transfer}
+\label{sec:diagonal-transfer}
+
+TPC-100 first returns the \(q_X\mid u\) subcarrier at
+\(O(X^{o(1)}Q_X^2)\).  It then refines the remaining
+\(q_X\nmid u\) mass into opened atoms and groups those atoms into
+lossless cells while retaining the parent branch length
+\(N_\beta\).  Write \(a_H^{\mathrm{inv}}\) for this invertible-ultra
+census.  For every exact width \(H\), TPC-100 proves
+\begin{equation}
+ \|(a_H^{\mathrm{inv}})^\circ\|_2^2
+ =
+ \mathfrak D_H^\circ+\mathfrak X_H^\circ,
+\qquad
+ \mathfrak D_H^\circ\ge0,
+\label{eq:tpc100-energy}
+\end{equation}
+where \(\mathfrak D_H^\circ\) is the one-cell diagonal ledger and
+\(\mathfrak X_H^\circ\) is the centered excess from collisions
+between distinct cells.
+
+At the maximally literal TPC-100 resolution, a cell retains
+\((m,u,\sigma)\), so the source identity recovers
+\[
+ j=\frac{\sigma u-h_0}{m}.
+\]
+Every such fine cell is therefore a singleton.  Consequently
+\[
+ \mathfrak D_H^\circ
+ =
+ \frac{q_X-2}{q_X-1}
+ \sum_{\substack{p=(\beta,z):\,H_\beta=H\\
+                  q_X\nmid u_p}}
+ w_{\beta,z}^{\,2}.
+\]
+This is an exact atomic diagonal ledger, not an intra-cell
+dispersion gain; every collision between distinct opened atoms
+remains in \(\mathfrak X_H^\circ\).
+
+\begin{theorem}[Width-weighted cell gates]
+\label{thm:width-cell-gates}
+After the \(q_X\mid u\) return, the full principal condition
+\eqref{eq:new-principal-gate} (or its restriction to the invertible
+census), together with the two estimates
+\begin{align}
+ \sum_Hg_{q_X}(H)\sqrt{\mathfrak D_H^\circ}
+ &\ll X^{o(1)}Q_X^2,
+\label{eq:weighted-diagonal-gate}\\
+ \sum_Hg_{q_X}(H)\sqrt{|\mathfrak X_H^\circ|}
+ &\ll X^{o(1)}Q_X^2
+\label{eq:weighted-cross-gate}
+\end{align}
+are sufficient to return the remaining invertible positive
+nonconstant resonance carrier.  Adding the already returned
+\(q_X\mid u\) piece gives
+\(O(X^{o(1)}Q_X^2)\) for the complete positive nonconstant carrier.
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:tpc100-energy},
+\[
+ \|(a_H^{\mathrm{inv}})^\circ\|_2
+ \le
+ \sqrt{\mathfrak D_H^\circ}
+ +
+ \sqrt{|\mathfrak X_H^\circ|}.
+\]
+Multiply by \(g_{q_X}(H)\), sum over \(H\), and apply
+\cref{thm:literal-width-bound}.
+\end{proof}
+
+There is an abstract way to discharge the diagonal condition from
+the principal ledger.  It isolates exactly the additional local
+fact that must be checked in the literal weights.
+
+\begin{definition}[Opened-atom cap]
+\label{def:atom-cap}
+Let \(w_C(j)\ge0\) be the normalized \(q_X\nmid u\) opened-atom
+weights used in the TPC-100 cell census, so
+\[
+ M_H^{\mathrm{inv}}
+ =
+ \|a_H^{\mathrm{inv}}\|_1
+ =
+ \sum_{C,j}w_C(j).
+\]
+Put
+\[
+ W_X=\max_{H,C,j}w_C(j)
+\]
+over the actual support, with the convention \(W_X=0\) when that
+support is empty, and let
+\(\mathcal H_X
+=\{H:g_{q_X}(H)>0,\ M_H^{\mathrm{inv}}>0\}\).
+\end{definition}
+
+\begin{theorem}[Principal-to-diagonal transfer]
+\label{thm:principal-diagonal-transfer}
+Define the principal mass without the bounded filter factor by
+\[
+ \mathfrak P_X^{\mathrm{inv}}
+ =
+ \sum_H\frac{2H}{q_X-1}M_H^{\mathrm{inv}}.
+\]
+Then
+\begin{equation}
+ \boxed{
+ \sum_Hg_{q_X}(H)\sqrt{\mathfrak D_H^\circ}
+ \le
+ \sqrt{
+ W_X\,|\mathcal H_X|\,(q_X-1)\,
+ \mathfrak P_X^{\mathrm{inv}}}.}
+\label{eq:principal-diagonal-transfer}
+\end{equation}
+Consequently, if
+\[
+ q_X\asymp Q_X,\qquad
+ W_X\le X^{o(1)},\qquad
+ \mathfrak P_X^{\mathrm{inv}}\le X^{o(1)}Q_X^2,
+\]
+then \eqref{eq:weighted-diagonal-gate} follows automatically.
+\end{theorem}
+
+\begin{proof}
+The diagonal definition and nonnegativity give
+\[
+ 0\le\mathfrak D_H^\circ
+ \le\sum_{C,j}w_C(j)^2
+ \le W_XM_H^{\mathrm{inv}}.
+\]
+Therefore Cauchy--Schwarz over the active widths yields
+\begin{align*}
+ \sum_Hg_{q_X}(H)\sqrt{\mathfrak D_H^\circ}
+ &\le
+ \sqrt{W_X}
+ \sum_{H\in\mathcal H_X}
+ g_{q_X}(H)\sqrt{M_H^{\mathrm{inv}}}\\
+ &\le
+ \sqrt{
+ W_X|\mathcal H_X|
+ \sum_Hg_{q_X}(H)^2M_H^{\mathrm{inv}}}.
+\end{align*}
+Since
+\[
+ g_{q_X}(H)^2\le2H,
+\]
+the last sum is at most
+ \((q_X-1)\mathfrak P_X^{\mathrm{inv}}\), proving
+\eqref{eq:principal-diagonal-transfer}.  Finally
+\(|\mathcal H_X|\le(q_X-1)/2\) and \(q_X\asymp Q_X\).
+The full principal mass dominates
+\(\mathfrak P_X^{\mathrm{inv}}\) because the opened weights are
+nonnegative.
+\end{proof}
+
+\begin{remark}[A real reduction, not a hidden proof]
+Once the literal atom cap \(W_X\le X^{o(1)}\) and the principal gate
+are verified, no separate diagonal-energy theorem is needed.  This
+paper does not assert that cap: an opened atom includes its actual
+row coefficients, exact-content and projector factors, smooth
+weights, and the single global normalization.  Bounding that
+specific quantity is the next literal audit, not a formal
+consequence of row \(\ell^1\) mass.
+\end{remark}
+
+\begin{remark}[The cross-cell door remains]
+The transfer does not control
+\(\mathfrak X_H^\circ\).  TPC-100 shows that its support obeys an
+exact affine collision congruence, but distinct cells can still
+align maximally.  Since the fine cells are singleton, this includes
+all collisions between distinct atoms, even two atoms under the
+same parent branch.  The surviving positive route is therefore the
+weighted cross-cell gate \eqref{eq:weighted-cross-gate}, or a return
+to signed arithmetic before the positive census is formed.
+\end{remark}
