@@ -1,0 +1,289 @@
+{
+  "audit_summary": {
+    "certified_recursive_update_count": 2,
+    "channel_count": 2,
+    "complete_transport_chain_count": 0,
+    "decisive_direction_instability_count": 2,
+    "earliest_failure_time": 2,
+    "equal_rank_vacuous_transfer_count": 2,
+    "failure_gate_counts": {
+      "branch": 2,
+      "direction_gap": 0,
+      "ritz_gap": 0,
+      "source_seed": 0
+    },
+    "ideal_time_zero_rank_four_gate_count": 2,
+    "informative_inherited_seed_count": 0,
+    "latest_failure_time": 2,
+    "maximum_certified_prefix_updates": 1,
+    "maximum_memory_gram_radius": 7.469917609353119e-16,
+    "maximum_source_seed_projector_radius": 5.363372606510704e-15,
+    "minimum_certified_prefix_updates": 1,
+    "minimum_decisive_failure_ratio": 152215015.63329542,
+    "minimum_source_seed_gap_lower": 0.02110258953850639,
+    "rank_mismatch_channel_count": 0,
+    "scale_count": 1,
+    "simultaneous_branch_direction_failure_count": 2,
+    "source_aligned_seed_certificate_count": 2,
+    "total_elapsed_seconds": 0.02388518600491807
+  },
+  "inherited_rank": 4,
+  "limitations": [
+    "A failed universal radius gate means that the archived norm-ball information is insufficient; it does not prove that the exact recursive update itself fails.",
+    "The center eigenspaces and singular values are realized numerically, with conservative local backward proxies included in the gates.",
+    "Only the five frozen scales, two channels, and primary threshold 1e-8 are audited.",
+    "No outward RH-138 assembly is attempted after recursive packet transport loses certification.",
+    "No Stage A, Hilbert--Polya operator, zeta-zero identification, or Riemann Hypothesis result is claimed."
+  ],
+  "maximum_width": 4,
+  "minimum_width": 2,
+  "precision_bits": 384,
+  "primary_threshold": 1e-08,
+  "rounding_multiplier": 128.0,
+  "route_consequence": "The ten RH-142 packet balls cannot seed RH-96: eight have the wrong rank, and the two equal-rank temporal transfers are vacuous. A corrected time-zero clock-rank construction certifies all ten source packets, but the universal norm-ball recursion stops on every channel after only one to three updates, at branch, direction-gap, or Ritz-gap gates. The source packet is therefore not the immediate finite bottleneck; the next route must enclose the joint output packet without separately resolving weak enrichment directions, or redesign the temporal start/update gauge.",
+  "rows": [
+    {
+      "channels": [
+        {
+          "anchor_compatibility": {
+            "informative": false,
+            "inherited_projector_radius": 0.609735872852051,
+            "inherited_rank": 4,
+            "inherited_time": 4,
+            "nominal_center_projector_distance": 0.8651797947312889,
+            "obstruction": "vacuous_triangle_transfer",
+            "rank_compatible": true,
+            "target_rank": 4,
+            "target_time": 0,
+            "transferred_radius": 1.0
+          },
+          "clock_rank": 4,
+          "dimension": 32,
+          "elapsed_seconds": 0.014485068008070812,
+          "ideal_time_zero_rank_four_transplant": {
+            "candidate_gap": 0.024083253604115163,
+            "gap_ratio": 4.11100092670733,
+            "normalized_snapshot_operator_radius": 0.0029291228624709204,
+            "packet_gate": true,
+            "rank": 4,
+            "tail_energy_fraction": 0.005445710166093465
+          },
+          "inherited_horizon": 4,
+          "maximum_memory_gram_radius": 7.469917609353119e-16,
+          "refresh_endpoint": 4,
+          "side": "left",
+          "source_columns": 16,
+          "transport": {
+            "certified_prefix_updates": 1,
+            "complete_chain": false,
+            "first_failure_gate": "branch",
+            "first_failure_time": 2,
+            "source_seed": {
+              "certified": true,
+              "eigen_backward_proxy": 4.55209310124093e-13,
+              "gap_lower": 0.02110258953850639,
+              "gram_radius": 1.1318105065726392e-16,
+              "nominal_gap": 0.021102589539416808,
+              "projector_radius": 5.363372606510704e-15,
+              "source_svd_to_gram_packet_distance": 2.4595991786829495e-15
+            },
+            "steps": [
+              {
+                "absolute_branch_radius": 6.075175195696117e-08,
+                "branch_radius_ratio": 2.0943238100391445e-07,
+                "branch_stable": true,
+                "cross_singular_values": [
+                  0.005013017681570341,
+                  0.0003713413586461964,
+                  0.0001252167519019624,
+                  6.08018827412944e-08
+                ],
+                "direction_gap": 6.08018827412944e-08,
+                "direction_gap_ratio": 4.1851941054661926e-07,
+                "direction_projector_radius": 2.0925974906294304e-07,
+                "direction_stable": true,
+                "effective_cross_radius": 1.2723384062505597e-14,
+                "enriched_projector_radius": 2.0925975442631564e-07,
+                "failure_gate": null,
+                "gram_frobenius_norm_upper": 0.9563069747715908,
+                "gram_operator_radius": 1.8566628805433564e-16,
+                "input_projector_radius": 5.363372606510704e-15,
+                "intrinsic_cross_radius": 1.0443727551864481e-14,
+                "local_cross_backward_proxy": 2.2796565106411166e-15,
+                "local_relative_backward_proxy": 4.547473508864641e-13,
+                "output_projector_radius": 0.004665292777427235,
+                "ritz_gap_lower": 8.618982481483487e-05,
+                "ritz_gap_ratio": 0.009287257778219638,
+                "ritz_operator_radius": 4.002335604574815e-07,
+                "ritz_stable": true,
+                "selected_width": 4,
+                "time": 1
+              },
+              {
+                "absolute_branch_radius": 6.065050648333162e-11,
+                "branch_radius_ratio": 152215015.63329542,
+                "branch_stable": false,
+                "cross_singular_values": [
+                  0.004352490534426432,
+                  2.040865809702429e-06,
+                  1.2766050254939747e-07,
+                  1.04175412434101e-10
+                ],
+                "direction_gap": 1.04175412434101e-10,
+                "direction_gap_ratio": 177237940.83114403,
+                "direction_projector_radius": null,
+                "direction_stable": false,
+                "effective_cross_radius": 0.009231917792527609,
+                "enriched_projector_radius": null,
+                "failure_gate": "branch",
+                "gram_frobenius_norm_upper": 0.9894253408053542,
+                "gram_operator_radius": 2.304784200032751e-16,
+                "input_projector_radius": 0.004665292777427235,
+                "intrinsic_cross_radius": 0.00923191779252563,
+                "local_cross_backward_proxy": 1.9792835402888302e-15,
+                "local_relative_backward_proxy": 4.547473508864641e-13,
+                "output_projector_radius": null,
+                "ritz_gap_lower": null,
+                "ritz_gap_ratio": null,
+                "ritz_operator_radius": null,
+                "ritz_stable": false,
+                "selected_width": 4,
+                "time": 2
+              }
+            ]
+          }
+        },
+        {
+          "anchor_compatibility": {
+            "informative": false,
+            "inherited_projector_radius": 0.957356090691869,
+            "inherited_rank": 4,
+            "inherited_time": 4,
+            "nominal_center_projector_distance": 0.996315165536283,
+            "obstruction": "vacuous_triangle_transfer",
+            "rank_compatible": true,
+            "target_rank": 4,
+            "target_time": 0,
+            "transferred_radius": 1.0
+          },
+          "clock_rank": 4,
+          "dimension": 16,
+          "elapsed_seconds": 0.009400117996847257,
+          "ideal_time_zero_rank_four_transplant": {
+            "candidate_gap": 0.04979967214484668,
+            "gap_ratio": 1.9239326544903765,
+            "normalized_snapshot_operator_radius": 0.012942155752857662,
+            "packet_gate": true,
+            "rank": 4,
+            "tail_energy_fraction": 0.014451715606951746
+          },
+          "inherited_horizon": 4,
+          "maximum_memory_gram_radius": 4.2352096382154066e-16,
+          "refresh_endpoint": 4,
+          "side": "right",
+          "source_columns": 16,
+          "transport": {
+            "certified_prefix_updates": 1,
+            "complete_chain": false,
+            "first_failure_gate": "branch",
+            "first_failure_time": 2,
+            "source_seed": {
+              "certified": true,
+              "eigen_backward_proxy": 4.554054012191931e-13,
+              "gap_lower": 0.03613782569192153,
+              "gram_radius": 9.566222079070265e-17,
+              "nominal_gap": 0.036137825692832345,
+              "projector_radius": 2.647149322325937e-15,
+              "source_svd_to_gram_packet_distance": 2.296136796630254e-15
+            },
+            "steps": [
+              {
+                "absolute_branch_radius": 8.684224413997799e-09,
+                "branch_radius_ratio": 4.150127165716954e-06,
+                "branch_stable": true,
+                "cross_singular_values": [
+                  0.06788877046343916,
+                  0.0012243556765482093,
+                  1.2594314608491788e-05,
+                  9.363112205474434e-09
+                ],
+                "direction_gap": 9.363112205474434e-09,
+                "direction_gap_ratio": 7.698430791557188e-06,
+                "direction_projector_radius": 3.84923021229479e-06,
+                "direction_stable": true,
+                "effective_cross_radius": 3.604063565371466e-14,
+                "enriched_projector_radius": 3.849230214941939e-06,
+                "failure_gate": null,
+                "gram_frobenius_norm_upper": 0.9340022232779663,
+                "gram_operator_radius": 2.235104257240923e-16,
+                "input_projector_radius": 2.647149322325937e-15,
+                "intrinsic_cross_radius": 5.168397130526467e-15,
+                "local_cross_backward_proxy": 3.087223852318819e-14,
+                "local_relative_backward_proxy": 4.547473508864641e-13,
+                "output_projector_radius": 0.0386952930041837,
+                "ritz_gap_lower": 0.00019301090254641447,
+                "ritz_gap_ratio": 0.07450749659655546,
+                "ritz_operator_radius": 7.190379582287538e-06,
+                "ritz_stable": true,
+                "selected_width": 4,
+                "time": 1
+              },
+              {
+                "absolute_branch_radius": 1.9178517951811854e-10,
+                "branch_radius_ratio": 394362210.14873624,
+                "branch_stable": false,
+                "cross_singular_values": [
+                  0.0011868618799374573,
+                  7.455276201973482e-05,
+                  1.831578953433307e-06,
+                  2.036538002353449e-10
+                ],
+                "direction_gap": 2.036538002353449e-10,
+                "direction_gap_ratio": 742758811.0915203,
+                "direction_projector_radius": null,
+                "direction_stable": false,
+                "effective_cross_radius": 0.07563282726853737,
+                "enriched_projector_radius": null,
+                "failure_gate": "branch",
+                "gram_frobenius_norm_upper": 0.9772871762511166,
+                "gram_operator_radius": 2.713566134139501e-16,
+                "input_projector_radius": 0.0386952930041837,
+                "intrinsic_cross_radius": 0.07563282726853683,
+                "local_cross_backward_proxy": 5.397222957696873e-16,
+                "local_relative_backward_proxy": 4.547473508864641e-13,
+                "output_projector_radius": null,
+                "ritz_gap_lower": null,
+                "ritz_gap_ratio": null,
+                "ritz_operator_radius": null,
+                "ritz_stable": false,
+                "selected_width": 4,
+                "time": 2
+              }
+            ]
+          }
+        }
+      ],
+      "clock_rank": 4,
+      "fine_dimension": 32,
+      "half_log_clock": 1.769091146743121,
+      "sigma": 0.16
+    }
+  ],
+  "status": "rh150_temporal_anchor_packet_transport_obstruction",
+  "theorem_boundary": {
+    "actual_exact_recursive_chain_disproved": false,
+    "all_source_aligned_clock_rank_seeds_certified": false,
+    "any_complete_recursive_transport_chain": false,
+    "different_rank_projectors_have_unit_distance": true,
+    "finite_E_update_interface_closed": false,
+    "hilbert_polya_operator": false,
+    "joint_gauge_free_output_packet_enclosure_open": true,
+    "outward_cross_direction_ritz_transport_theorem": true,
+    "rh142_packets_are_valid_rh96_seeds": false,
+    "riemann_hypothesis": false,
+    "sharp_branch_direction_and_ritz_information_gates": true,
+    "stage_A": false,
+    "typed_temporal_rank_anchor_theorem": true,
+    "uniform_all_level_packet_transport": false
+  }
+}

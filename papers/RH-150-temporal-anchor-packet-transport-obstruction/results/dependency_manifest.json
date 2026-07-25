@@ -1,0 +1,77 @@
+{
+  "external_inputs": {
+    "rh142_archive": {
+      "path": "papers/RH-142-factorized-arb-snapshot-packet-closure/results/archive_verification.json",
+      "sha256": "e4d1869d3359046679f7efccd23e67d34e691b98f5e8ccde327bfcd36b5ca59c"
+    },
+    "rh142_audit": {
+      "path": "papers/RH-142-factorized-arb-snapshot-packet-closure/results/factorized_arb_audit.json",
+      "sha256": "b671d433adaee86fbce94bb4c6c0633e66242ea8c52eacdef0f12a9573850a60"
+    },
+    "rh142_summary": {
+      "path": "papers/RH-142-factorized-arb-snapshot-packet-closure/results/summary.json",
+      "sha256": "a399a2c3475be1296b9af822846a1a2bd1d5c4f980e112e3a26fbd7e590fcc7d"
+    },
+    "rh143_archive": {
+      "path": "papers/RH-143-threshold-branch-stability-radius/results/archive_verification.json",
+      "sha256": "04f1eed889bb662d8a4850935c01c04b3de6412c16ccc14a15efe068f06296d1"
+    },
+    "rh143_bounds": {
+      "path": "papers/RH-143-threshold-branch-stability-radius/src/threshold_branch/bounds.py",
+      "sha256": "ea6ae916bd15468c6604585ab90834ef6c211d20254eea4c0411b6fa00cc0d2c"
+    },
+    "rh143_summary": {
+      "path": "papers/RH-143-threshold-branch-stability-radius/results/summary.json",
+      "sha256": "a561c0c72face6a63cf05d7aafb2607183e45a0aa8971500c7921b16696372e2"
+    },
+    "rh149_roadmap": {
+      "path": "papers/RH-149-ten-layer-source-support-review/UPDATED_ROADMAP.md",
+      "sha256": "7808116130d9183cee426c7b735950d6d10f3dd8b8070b087e71a928f0fece6c"
+    },
+    "rh77_model_builder": {
+      "path": "papers/RH-77-postblock-effective-rank-compression/experiments/run_effective_rank_audit.py",
+      "sha256": "f1ea040fd00577c2775fea8cc1bc4bf416cae76d06dd06b3a6b5ee27116cd3c3"
+    },
+    "rh82_rank_clock": {
+      "path": "papers/RH-82-half-log-postblock-rank-clock/src/half_log_rank/bounds.py",
+      "sha256": "4433277802bf2e1fb0544c988dc34f1e814de9c375178126995aa691e0da5609"
+    },
+    "rh94_source_audit": {
+      "path": "papers/RH-94-source-seeded-four-direction-horizon-refresh/experiments/run_source_seeded_horizon_audit.py",
+      "sha256": "08c362d8561752ec1f44d7337a64b27bfa92a60eb8600baee5bf36cbbb5c05e8"
+    },
+    "rh96_audit": {
+      "path": "papers/RH-96-gap-weighted-weak-mode-quotient/results/weak_mode_quotient_audit.json",
+      "sha256": "123b4a59da8d0e640567d6b4f720dd82e157a424054c009ea6048bb4ce95c398"
+    },
+    "rh96_summary": {
+      "path": "papers/RH-96-gap-weighted-weak-mode-quotient/results/summary.json",
+      "sha256": "04c21ca5111f0835613d4e8528c51455283135c0583c0d0fe75f7c08fb08dc3e"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "2102e5b8bbf2c8e68344dd715550c4079e12acb7877418c2312f1826ceba5aa9",
+    "experiments/build_packet_transport_audit.py": "a3e7ef85347a2f827f07821a18afc8683a59c031a4faf74aba0bdb06493b9bf0",
+    "experiments/make_figures.py": "2a341f203defd197ed679d9e2033d1d502652062b3ad1a9c8224e89b23ca64d5",
+    "experiments/verify_archive.py": "fffaebcb0fb075e47973be2b75fbee2c8c51b0d0b6c8c386c48af81ed3d60000",
+    "src/packet_transport/__init__.py": "1360de11a17f01c326203ba16d499a1673f0835d308bd6c385160b855ed3506f",
+    "src/packet_transport/bounds.py": "144460f7606470d6caf0371d248c869d0ae745becb7f8da599c336d87bf86a39",
+    "tests/test_archived_results.py": "fc68603986668b53831a891130db85fa8c73da2f1a342fb5a1fa90f5a2e7627c",
+    "tests/test_theory.py": "072f24fc0997a311c300fba5fe65b4c8bd3776de46fabdd497919510494ba96a"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "60f80f0e520fc7008498250d1249214f8257fc9e4ae43dd23851777e1f3c1b61",
+    "THEOREM_LEDGER.md": "3f821a64483e0e2bfd6612777640d01385a5d1c26cdcf9b212c10290148802a1",
+    "UPDATED_ROADMAP.md": "4ed58fbeb8fd4a95ad74d731c29cf51711aed22daec6ac21e477f44df311afa7",
+    "figures/temporal_anchor_packet_transport.pdf": "4b187564b80c690ed0f1ec0bf698193f3d10aa6b85abacb92d751ddfe7df11e4",
+    "figures/temporal_anchor_packet_transport.png": "88156102496e8f7b4b44acec36a67ee9d5a6b0045e4a43f79ba22c61f9f1fb8b",
+    "main.pdf": "a792a908f61bf5917e91d0cabecd7ea88910a1b2af7773df8b128aa9b7baf938",
+    "main.tex": "e5bdff00ecaf40f39d323f8cffab66b4c50a98e5c20b2397fd208ef9da394534",
+    "pyproject.toml": "9883049bcc20eea78e33f3e414ae6eb31d670f9ee34c1cc3ce367b683e875234",
+    "references.bib": "34e5324b9e669e35890049a9f9f6084d5bfa24602431f0d271287d0148d9a1a0",
+    "requirements.txt": "3c3dad8ee055d905681bf8fc315c816b9453bce4af4b341bf10e7bb9b1a8a512",
+    "temporal-anchor-packet-transport-obstruction.pdf": "a792a908f61bf5917e91d0cabecd7ea88910a1b2af7773df8b128aa9b7baf938"
+  },
+  "status": "all_rh150_inputs_sources_and_publication_artifacts_hashed"
+}

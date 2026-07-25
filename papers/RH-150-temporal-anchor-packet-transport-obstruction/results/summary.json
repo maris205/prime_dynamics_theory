@@ -1,0 +1,72 @@
+{
+  "audit": {
+    "certified_recursive_update_count": 17,
+    "channel_count": 10,
+    "complete_transport_chain_count": 0,
+    "decisive_direction_instability_count": 7,
+    "earliest_failure_time": 2,
+    "equal_rank_vacuous_transfer_count": 2,
+    "failure_gate_counts": {
+      "branch": 7,
+      "direction_gap": 0,
+      "ritz_gap": 3,
+      "source_seed": 0
+    },
+    "ideal_time_zero_rank_four_gate_count": 3,
+    "informative_inherited_seed_count": 0,
+    "latest_failure_time": 3,
+    "maximum_certified_prefix_updates": 2,
+    "maximum_memory_gram_radius": 2.6411971382375843e-15,
+    "maximum_source_seed_projector_radius": 2.875754733955967e-13,
+    "minimum_certified_prefix_updates": 1,
+    "minimum_decisive_failure_ratio": 1.5055864496838283,
+    "minimum_source_seed_gap_lower": 0.0003303289229211533,
+    "rank_mismatch_channel_count": 8,
+    "scale_count": 5,
+    "simultaneous_branch_direction_failure_count": 7,
+    "source_aligned_seed_certificate_count": 10,
+    "total_elapsed_seconds": 71.21633567506797
+  },
+  "program_boundary": {
+    "actual_exact_recursive_chain_disproved": false,
+    "all_source_aligned_clock_rank_seeds_certified": true,
+    "any_complete_recursive_transport_chain": false,
+    "different_rank_projectors_have_unit_distance": true,
+    "finite_E_update_interface_closed": false,
+    "hilbert_polya_operator": false,
+    "joint_gauge_free_output_packet_enclosure_open": true,
+    "outward_cross_direction_ritz_transport_theorem": true,
+    "rh142_packets_are_valid_rh96_seeds": false,
+    "riemann_hypothesis": false,
+    "sharp_branch_direction_and_ritz_information_gates": true,
+    "stage_A": false,
+    "typed_temporal_rank_anchor_theorem": true,
+    "uniform_all_level_packet_transport": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "60f80f0e520fc7008498250d1249214f8257fc9e4ae43dd23851777e1f3c1b61",
+    "THEOREM_LEDGER.md": "3f821a64483e0e2bfd6612777640d01385a5d1c26cdcf9b212c10290148802a1",
+    "UPDATED_ROADMAP.md": "4ed58fbeb8fd4a95ad74d731c29cf51711aed22daec6ac21e477f44df311afa7",
+    "figures/temporal_anchor_packet_transport.pdf": "4b187564b80c690ed0f1ec0bf698193f3d10aa6b85abacb92d751ddfe7df11e4",
+    "figures/temporal_anchor_packet_transport.png": "88156102496e8f7b4b44acec36a67ee9d5a6b0045e4a43f79ba22c61f9f1fb8b",
+    "main.pdf": "a792a908f61bf5917e91d0cabecd7ea88910a1b2af7773df8b128aa9b7baf938",
+    "main.tex": "e5bdff00ecaf40f39d323f8cffab66b4c50a98e5c20b2397fd208ef9da394534",
+    "pyproject.toml": "9883049bcc20eea78e33f3e414ae6eb31d670f9ee34c1cc3ce367b683e875234",
+    "references.bib": "34e5324b9e669e35890049a9f9f6084d5bfa24602431f0d271287d0148d9a1a0",
+    "requirements.txt": "3c3dad8ee055d905681bf8fc315c816b9453bce4af4b341bf10e7bb9b1a8a512",
+    "temporal-anchor-packet-transport-obstruction.pdf": "a792a908f61bf5917e91d0cabecd7ea88910a1b2af7773df8b128aa9b7baf938"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "c39bfb84d0c3230a00bc997388c50bffc12b1516cff771551b4229b4736f5ee3",
+    "results/packet_transport_audit.json": "e676f624e60be513206ec62d55221970b223e81eca006a0243828d4fdf40df53",
+    "results/packet_transport_smoke.json": "d32b04ac31ffd76c97cc9806b8abbbc4d077e56acf4cf68b91670397a65d1d5f"
+  },
+  "route_consequence": "The ten RH-142 packet balls cannot seed RH-96: eight have the wrong rank, and the two equal-rank temporal transfers are vacuous. A corrected time-zero clock-rank construction certifies all ten source packets, but the universal norm-ball recursion stops on every channel after only one to three updates, at branch, direction-gap, or Ritz-gap gates. The source packet is therefore not the immediate finite bottleneck; the next route must enclose the joint output packet without separately resolving weak enrichment directions, or redesign the temporal start/update gauge.",
+  "status": "rh150_temporal_anchor_packet_transport_obstruction_archived",
+  "theorem": {
+    "finite_universal_information_obstruction": true,
+    "outward_one_step_packet_transport": true,
+    "typed_temporal_rank_anchor": true
+  }
+}
