@@ -1,0 +1,45 @@
+{
+  "external_inputs": {
+    "rh153_archive": {
+      "path": "papers/RH-153-congruence-covariant-reset-transport/results/archive_verification.json",
+      "sha256": "7ba121f25eeda790db0c0c92e6624148b7e361b58e32d9ee171e88f77d032af6"
+    },
+    "rh153_audit": {
+      "path": "papers/RH-153-congruence-covariant-reset-transport/results/congruence_audit.json",
+      "sha256": "fb431ea360e0adba569850860a6c57667937cb2d7f1e4b33c10372e3f015723d"
+    },
+    "rh153_roadmap": {
+      "path": "papers/RH-153-congruence-covariant-reset-transport/UPDATED_ROADMAP.md",
+      "sha256": "0422ee76157cb4b086acaa310327877cb525f67650e37c0c1bd42f779b67ee9d"
+    },
+    "rh153_summary": {
+      "path": "papers/RH-153-congruence-covariant-reset-transport/results/summary.json",
+      "sha256": "9a640b13ac1a7c5ccf0542afef34c38b7af76ff2cceb3610d9679f15866b8ddb"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "1ca040c98ea502ffe71dc4a55efffd3fabf748f3edd73770c22fa5a6558789c7",
+    "experiments/build_suffix_audit.py": "f28c36954003a3b74fe5897770d54a8a0f2bcedbe83c32321c477d8cad051f59",
+    "experiments/make_figures.py": "230cc556ce1ceb8cde3432456641bca36646062e7033ccd5e9e3fbd8ae4ad0c1",
+    "experiments/verify_archive.py": "6cf3eea9fb8ade7b36517a667de593530209d70c1b2be9b8bdf4cfcd86873edf",
+    "src/delayed_suffix/__init__.py": "fc9bd01b44578c72c8962b858060eb17da32396f1774b87fceeb4f0877bb8b4c",
+    "src/delayed_suffix/bounds.py": "8ab31d21b9d8aee451483c3c36085bd3a17fbf933f68cfca3be524f205b86065",
+    "tests/test_archived_results.py": "c5c0c75483fa78ce3ba75647a9c571344a65c806d5a240d915d2bb51263c784b",
+    "tests/test_theory.py": "3f09010cdfb55626c73b1d04bab226a413a8bec94c586dbf13bd6a2e19d0ec86"
+  },
+  "publication_artifacts": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "debfc49c014fbb0648237dd110501f6a4fdc7ccc1e99144a0bb3b1652313caf8",
+    "THEOREM_LEDGER.md": "5817e01201c4fb86e8ff7a023206682486aaf69fc6f11ed5721abf352b645957",
+    "UPDATED_ROADMAP.md": "09c115130c89ce7ba135dd5bdf7c826cfe54a52a4fbd0a39b105e94864e1daf9",
+    "figures/half_horizon_delayed_reset_suffix.pdf": "c241c3d13bad45825d368bbe91b0ea076eea81fca3fbc35a06f7becb62bed9fa",
+    "figures/half_horizon_delayed_reset_suffix.png": "6cfafa58eea1ed46e93fca927fc93477adfa742667f9ec0e18e40d0970e5d2fe",
+    "half-horizon-delayed-reset-suffix.pdf": "a4680e0f13e17ea2ce25fd11599dbba63b62b62e92bdb59373da4cf3dd7ccf02",
+    "main.pdf": "a4680e0f13e17ea2ce25fd11599dbba63b62b62e92bdb59373da4cf3dd7ccf02",
+    "main.tex": "54e38b8ffa20f4c008943295da7d97d3035c13addcd34fe6f7151ff1f147e537",
+    "pyproject.toml": "49e21ef3a413943f808c5784915ce15ace0d1e7bf038a240c7142c607bfa088c",
+    "references.bib": "9284f8c867f58eeceb4aa6f1e0e2adb24871fd2a071c621e6b23f5c59d696eb8",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd"
+  },
+  "status": "all_rh154_inputs_sources_and_publication_artifacts_hashed"
+}

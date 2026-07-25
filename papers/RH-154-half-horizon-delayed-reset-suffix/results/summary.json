@@ -1,0 +1,52 @@
+{
+  "audit": {
+    "channel_count": 10,
+    "full_common_overlap_floor": 8.986632471029187e-05,
+    "full_inverse_overlap_upper": 11127.638781532098,
+    "full_maximum_log_inverse_drawdown": 32.01500371657888,
+    "full_transition_count": 120,
+    "half_suffix_common_overlap_floor": 0.06663973169046591,
+    "half_suffix_inverse_overlap_upper": 15.006062819173522,
+    "half_suffix_maximum_log_inverse_drawdown": 8.972982784298202,
+    "half_suffix_minimum_correlated_base_floor": 2.2304489231861772e-07,
+    "half_suffix_transition_count": 62,
+    "minimum_retained_fraction_at_overlap_0_05": 0.5882352941176471,
+    "transition_count_at_overlap_0_05": 99
+  },
+  "program_boundary": {
+    "finite_prefix_cocycle_invariance": true,
+    "finite_prefix_support_invariance": true,
+    "half_suffix_frozen_certificate": true,
+    "hilbert_polya_operator": false,
+    "native_reset_tail_assembly": false,
+    "riemann_hypothesis": false,
+    "sharp_fixed_retention_suffix_floor": true,
+    "stage_A": false,
+    "uniform_all_level_suffix_floor": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "a7462b3a4af137bdd17344e434529518207f89efa5468950b72c795a09d7f6ad",
+    "README.md": "debfc49c014fbb0648237dd110501f6a4fdc7ccc1e99144a0bb3b1652313caf8",
+    "THEOREM_LEDGER.md": "5817e01201c4fb86e8ff7a023206682486aaf69fc6f11ed5721abf352b645957",
+    "UPDATED_ROADMAP.md": "09c115130c89ce7ba135dd5bdf7c826cfe54a52a4fbd0a39b105e94864e1daf9",
+    "figures/half_horizon_delayed_reset_suffix.pdf": "c241c3d13bad45825d368bbe91b0ea076eea81fca3fbc35a06f7becb62bed9fa",
+    "figures/half_horizon_delayed_reset_suffix.png": "6cfafa58eea1ed46e93fca927fc93477adfa742667f9ec0e18e40d0970e5d2fe",
+    "half-horizon-delayed-reset-suffix.pdf": "a4680e0f13e17ea2ce25fd11599dbba63b62b62e92bdb59373da4cf3dd7ccf02",
+    "main.pdf": "a4680e0f13e17ea2ce25fd11599dbba63b62b62e92bdb59373da4cf3dd7ccf02",
+    "main.tex": "54e38b8ffa20f4c008943295da7d97d3035c13addcd34fe6f7151ff1f147e537",
+    "pyproject.toml": "49e21ef3a413943f808c5784915ce15ace0d1e7bf038a240c7142c607bfa088c",
+    "references.bib": "9284f8c867f58eeceb4aa6f1e0e2adb24871fd2a071c621e6b23f5c59d696eb8",
+    "requirements.txt": "f33f5f3d2508441faeff602a77807447d11a470190e14e5fc711da2295b139cd"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "b5de0cb6493e947b2f408a6c168ac5af502ce2e6c0e0500b6fa6f6c2e266daec",
+    "results/suffix_audit.json": "11234a3571bde94a7d8f87d42a6001fde4a415accba99a1dbd0f502fb7cf285d",
+    "results/suffix_smoke.json": "fc2c5f0b7686985a4968b6d0166e8e6d839bd4279dbca4d2335723f84a4ee30f"
+  },
+  "route_consequence": "Deleting a finite reset prefix does not change an eventual support or bounded-drawdown theorem. Retaining the terminal half of every frozen chain gives the sharp common overlap floor 0.06664 for that retention rule, reduces the inverse upper to 15.01 and the maximum log drawdown to 8.973, while preserving the positive correlated-base minimum. The next interface is the native reset Gram-tail pair.",
+  "status": "rh154_half_horizon_delayed_reset_suffix_archived",
+  "theorem": {
+    "finite_prefix_invariance": true,
+    "sharp_retention_suffix_floor": true
+  }
+}
