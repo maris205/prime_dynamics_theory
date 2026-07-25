@@ -1,0 +1,385 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{microtype}
+\setlength{\emergencystretch}{3em}
+\def\Urlmuskip{0mu plus 1mu}
+
+\hypersetup{
+  pdftitle={Coherent Prime-Square Blocks on Literal Residual Fibers: Exact Gram Geometry, Sharp Saturation, and a Route-Switch Certificate},
+  pdfauthor={Liang Wang},
+  pdfsubject={Sharp finite-dimensional saturation theorem for coherent terminal-prime squares on the literal fixed-shift residual carrier},
+  pdfkeywords={coherent prime square, residual fiber, Gram matrix, saturation, fixed shift, parity barrier}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cB}{\mathcal B}
+
+\title{\bfseries Coherent Prime-Square Blocks on Literal Residual Fibers:\\
+Exact Gram Geometry, Sharp Saturation, and a Route-Switch Certificate}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+In the literal fixed-shift residual carrier, the terminal-prime
+coordinate is injective before it is forgotten, while the physical
+output coherently adds all terminal primes in one residual fiber.
+We isolate one actual fiber \(y=(\gamma,s,j)\), write its inherited
+amplitudes as \(b_{y,p}\), and study the prime square
+\[
+  \cG_y=\left|\sum_{p\in\cP_y}b_{y,p}\right|^2
+\]
+against the resolved diagonal
+\(\cD_y=\sum_p|b_{y,p}|^2\).
+The exact Gram operator is the rank-one all-ones matrix.  For fixed
+moduli \(a_{y,p}=|b_{y,p}|\), the complete free-phase range is
+\[
+ \left[(2a_{y,\max}-R_y)_+^2,\ R_y^2\right],
+ \qquad R_y=\sum_pa_{y,p}.
+\]
+Consequently the usual Bessel bound
+\(\cG_y\le|\cP_y|\cD_y\) is sharp, and no coefficient-blind
+improvement follows from terminal-prime injectivity, support size,
+occupancy, or the diagonal energy.  Equal moduli already admit both
+perfect saturation and maximal alignment on the same resolved
+support.
+
+We give an exact coefficient-specific route certificate in terms of
+the physical alignment ratio, and a dominant-atom lower certificate.
+Applied to the literal TPC residual map, these are \(\Lone\)
+identities and stop/go tests.  They do not estimate the actual
+growing coefficients and therefore provide no \(\Ltwo\) fixed-shift
+arithmetic saving, parity breakthrough, prime-pair asymptotic, or
+twin-prime conclusion.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords:} coherent prime square; residual fiber;
+rank-one Gram matrix; phase saturation; fixed shift; parity barrier.
+
+\section{Question and claim boundary}
+
+TPC-MVP1 lists a coherent prime-square test as an alternative attack
+on the generic signed gate \citep{WangMVP1}.  The phrase
+``prime square'' here means the squared norm of a coherent sum over
+terminal primes, not a restriction to integers \(p^2\).
+
+The literal residual map of TPC-55 first keeps the terminal-prime
+label and then forgets it \citep{WangTPC55}.  At one prescribed
+\(h_0\ne0\), its physical output fiber has key
+\[
+ y=(\gamma,s,j),\qquad
+ \cP_y=\{p:\ (\gamma,s,j,p)\text{ is active}\}.
+\]
+The terminal-prime coordinate is injective before the forgetful map.
+Thus every \(p\in\cP_y\) has one inherited complex amplitude
+\(b_{y,p}\), but all of them are coherently added at the output.
+The static-mask and resolved-energy results upstream do not estimate
+this final coherent sum \citep{WangTPC50,WangTPC55}.
+
+This paper answers the coefficient-blind part of the question
+completely.  It does not claim a bound for the literal amplitudes as
+\(X\to\infty\).
+
+\section{The literal block and its exact Gram operator}
+
+\begin{definition}[Resolved and coherent energies]
+For a nonempty finite fiber \(\cP_y\), put
+\[
+ k_y=|\cP_y|,\qquad
+ \cD_y=\sum_{p\in\cP_y}|b_{y,p}|^2,\qquad
+ \cG_y=\left|\sum_{p\in\cP_y}b_{y,p}\right|^2.
+\]
+Also write
+\[
+ a_{y,p}=|b_{y,p}|,\qquad
+ R_y=\sum_pa_{y,p},\qquad
+ a_{y,\max}=\max_pa_{y,p},
+\]
+and
+\[
+ d_y=(2a_{y,\max}-R_y)_+.
+\]
+The zero fiber is treated separately, with all quantities equal to
+zero.
+\end{definition}
+
+\begin{proposition}[Exact coherent-prime Gram identity]
+\label{prop:gram}
+Order \(\cP_y=\{p_1,\dots,p_{k_y}\}\), put
+\(b_y=(b_{y,p_i})_i\), and let
+\(\mathbf J_{k_y}=\one\one^*\).  Then
+\[
+ \boxed{\cG_y=b_y^*\mathbf J_{k_y}b_y.}
+\]
+The spectrum of \(\mathbf J_{k_y}\) is
+\(\{k_y,0,\dots,0\}\).  Hence
+\[
+ 0\le\cG_y\le k_y\cD_y,
+\]
+and the upper constant \(k_y\) is optimal.
+\end{proposition}
+
+\begin{proof}
+The quadratic form expands to
+\[
+ b_y^*\one\one^*b_y
+ =|\one^*b_y|^2
+ =\left|\sum_pb_{y,p}\right|^2.
+\]
+The spectral statement is immediate.  Cauchy--Schwarz gives the
+upper bound, and equality holds when all entries are equal.
+\end{proof}
+
+\begin{remark}[Where the obstruction sits]
+Prime-resolved injectivity controls the map before \(\mathbf J_k\)
+is applied.  It does not diagonalize \(\mathbf J_k\).  Distinct
+terminal primes are precisely the off-diagonal modes inside this
+rank-one quadratic form.
+\end{remark}
+
+\section{Sharp phase saturation}
+
+\begin{theorem}[Complete free-phase interval]
+\label{thm:interval}
+Fix a fiber and its moduli \((a_p)_{p\in\cP}\).  Allow the phases of
+\(b_p=a_pe^{i\theta_p}\) to vary independently.  Then
+\[
+ \boxed{
+ \left\{\left|\sum_pb_p\right|^2:
+        \theta_p\in\mathbb R\right\}
+ =
+ [d^2,R^2],}
+ \qquad
+ d=(2a_{\max}-R)_+.
+\]
+Every point of the interval is attained.
+\end{theorem}
+
+\begin{proof}
+The possible lengths of a polygonal sum of segments of prescribed
+lengths \(a_p\) form the interval
+\([d,R]\).  The lower endpoint is the reverse triangle inequality,
+attained by placing a longest segment opposite all others; when the
+longest segment does not dominate, the segments close to a polygon
+and the lower endpoint is zero.  Continuous rotation of one segment,
+together with induction on the number of segments, fills the whole
+interval.  Squaring gives the result.
+\end{proof}
+
+\begin{corollary}[Sharp saturation dichotomy]
+\label{cor:dichotomy}
+The moduli alone force a positive coherent square if and only if
+\[
+ a_{\max}>\frac{R}{2}.
+\]
+In that case every phase assignment satisfies
+\[
+ \cG\ge(2a_{\max}-R)^2.
+\]
+If \(a_{\max}\le R/2\), the strongest universal modulus-only lower
+bound is zero.
+\end{corollary}
+
+\begin{corollary}[Same-support nonidentifiability]
+\label{cor:roots}
+For every \(k\ge2\), there are two coefficient vectors on the same
+\(k\)-prime support with the same unit moduli and the same diagonal
+energy \(k\), but with coherent squares \(0\) and \(k^2\),
+respectively.
+\end{corollary}
+
+\begin{proof}
+Use the \(k\)-th roots of unity in the first vector and \(k\) copies
+of \(1\) in the second.
+\end{proof}
+
+\begin{remark}[Physical versus comparison phases]
+The lower bound \(d_y^2\) applies to the literal fiber because it uses
+its actual moduli.  Attainability in \cref{thm:interval} belongs to
+the larger free-phase comparison class.  It does not say that the
+arithmetic coefficient realizes a root-of-unity phase pattern.
+\end{remark}
+
+\section{Coefficient-specific certificates}
+
+The finite geometry identifies exactly which additional statistic a
+coherent-prime argument must control.
+
+\begin{definition}[Alignment and cancellation ratios]
+For \(\cD_y>0\), set
+\[
+ \alpha_y=\frac{\cG_y}{k_y\cD_y}\in[0,1],
+ \qquad
+ \beta_y=\frac{\cG_y}{R_y^2}\in[0,1].
+\]
+For a finite family \(\cB\) of disjoint fibers, define
+\[
+ \cD_{\cB}=\sum_{y\in\cB}\cD_y,\qquad
+ \cG_{\cB}=\sum_{y\in\cB}\cG_y,\qquad
+ K_{\cB}=\max_{y\in\cB}k_y.
+\]
+\end{definition}
+
+\begin{proposition}[Exact block go certificate]
+\label{prop:go}
+For every nonzero block,
+\[
+ \frac{\cG_{\cB}}{K_{\cB}\cD_{\cB}}
+ =
+ \sum_{y\in\cB}
+ \frac{k_y\cD_y}{K_{\cB}\cD_{\cB}}\,\alpha_y.
+\]
+In particular, a coefficient-specific improvement
+\[
+ \cG_{\cB}\le\varepsilon_X K_{\cB}\cD_{\cB}
+\]
+is equivalent to the displayed weighted alignment average being at
+most \(\varepsilon_X\).
+\end{proposition}
+
+\begin{proof}
+Substitute \(\cG_y=k_y\cD_y\alpha_y\) and sum.
+\end{proof}
+
+\begin{proposition}[Dominant-prime lower certificate]
+\label{prop:dominance}
+Let \(\cB_\epsilon\) be the fibers satisfying
+\[
+ a_{y,\max}\ge\left(\frac12+\epsilon\right)R_y.
+\]
+Then
+\[
+ \boxed{
+ \cG_{\cB}
+ \ge4\epsilon^2
+ \sum_{y\in\cB_\epsilon}R_y^2.}
+\]
+This bound is phase-independent and sharp at the single-fiber level.
+\end{proposition}
+
+\begin{proof}
+On such a fiber,
+\(d_y=2a_{y,\max}-R_y\ge2\epsilon R_y\).
+Apply \cref{thm:interval} and sum.
+\end{proof}
+
+\begin{remark}[Upper saving and lower survival are different tasks]
+A dispersion route may seek small \(\alpha_y\), while an
+energy-survival route may seek a positive dominant share.  The same
+unsigned occupancy statement cannot supply both.  The two directions
+must be labeled separately.
+\end{remark}
+
+\section{Application to the TPC-109 queue item}
+
+On the literal TPC-55 carrier, the amplitudes \(b_{y,p}\) include the
+source coefficient, masks, terminal-prime weight, fixed \(h_0\), and
+all retained profile factors.  Therefore
+\cref{prop:gram,thm:interval,prop:go,prop:dominance} apply without
+changing the physical output map.  This is the positive content of
+the test.
+
+The test also gives a rigorous stop certificate:
+
+\begin{theorem}[TPC-109 route decision]
+\label{thm:decision}
+Terminal-prime injectivity, the exact active prime support,
+subpower fiber multiplicity, and the resolved diagonal energy do not
+imply any coefficient-blind improvement over
+\[
+ \cG_{\cB}\le K_{\cB}\cD_{\cB}.
+\]
+Nor do they imply a positive lower comparison
+\(\cG_{\cB}\gg\cD_{\cB}\).
+Any improvement in either direction must use one of:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the literal phase relation among the actual \(b_{y,p}\);
+\item a proved dominant-prime share;
+\item an arithmetic average that is subsequently localized back to
+the same prescribed \(h_0\); or
+\item cancellation across a larger physical reassembly that retains
+all provenance.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The upper bound and its sharpness are
+\cref{prop:gram}.  The lower obstruction is
+\cref{cor:roots}.  These examples retain support, moduli, diagonal
+energy, and multiplicity.  Hence none of those unsigned invariants
+can decide the coherent square.
+\end{proof}
+
+\section{Level ledger and next gate}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.32\textwidth}X@{}}
+\toprule
+Statement & Status\\
+\midrule
+Rank-one Gram identity and sharp phase interval
+& Unconditional finite-dimensional theorem (\(\Lzero\)).\\
+Identification with one literal residual fiber
+& Exact interface at prescribed \(h_0\) (\(\Lone\)).\\
+Coefficient-blind Bessel improvement
+& Rigorously stopped by same-support saturation.\\
+Dominant-prime or alignment estimate for the growing coefficient
+& Not proved; arithmetic input required.\\
+Fixed-\(h_0\) polynomial saving, parity breach, or prime-pair theorem
+& Not claimed (\(\Ltwo\) remains open).\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The coherent-prime corridor therefore remains open only as a
+\emph{coefficient-specific} route.  TPC-110 should not recycle the
+resolved diagonal as if it were the post-bin determinant energy.  It
+must analyze the exact binning kernel and the angle of the literal
+coefficient to that kernel.
+
+\paragraph{Explicit exclusions.}
+Nothing in this paper proves the generic affine M\"obius hypothesis
+of TPC-MVP1, the determinant-energy bound, the distinguished
+zero-mode bound, the compatibility
+\(\lambda_D\le2\eta_Z\), the independent physical endpoint
+\(\Lambda_{\rm phys}<1/400\), a Hardy--Littlewood asymptotic, or the
+twin-prime conjecture.  No statement is specialized to \(h_0=2\).
+
+\begingroup
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

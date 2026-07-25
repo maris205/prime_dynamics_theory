@@ -1,0 +1,613 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Literal Generic-Affine Mobius Dispersion},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact TT-star kernels, frequency averaging, and the restricted arithmetic gap in the TPC program},
+  pdfkeywords={fixed shift, Mobius correlation, affine forms, TT-star, Chowla conjecture, parity barrier}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{hypothesis}[theorem]{Working hypothesis}
+\crefname{hypothesis}{working hypothesis}{working hypotheses}
+\Crefname{hypothesis}{Working hypothesis}{Working hypotheses}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\F}{\mathbb F}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\e}{\mathrm e}
+
+\title{Literal Generic-Affine M\"obius Dispersion:\\
+Exact \(TT^*\) Kernels, a Chowla-Level Uniformity Barrier,\\
+and the Restricted Arithmetic Hypothesis}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We audit the first parity-facing arithmetic gate in TPC-MVP1.
+After the exact TPC-93 content extraction, a literal generic block
+has two primitive affine forms
+\[
+ D(z)=d+sz,\qquad V(z)=u+az,\qquad su-ad=h_0\ne0,
+\]
+the extracted sign and coprimality mask, the actual smooth and
+periodic weights, and an additive phase
+\(\e(-\alpha z)\) satisfying \(N\|\alpha\|>1\).  We write this
+block without suppressing any coefficient and prove the exact
+\(TT^*\) identity
+\[
+ \left|\sum_{z\in I}A(z)\e(-\alpha z)\right|^2
+ =
+ \sum_{|h|<N}\e(-\alpha h)
+ \sum_{\substack{z,z+h\in I}}
+ A(z+h)\overline{A(z)}.
+\]
+The off-diagonal kernel contains four literal M\"obius values.
+Both shifted affine pairs still have determinant \(h_0\), but no
+local-support theorem makes this four-sign correlation small.
+
+For a \(q\)-invertible phase slope we also prove the complete
+frequency identity
+\[
+ \sum_{r\in\F_q}
+ \left|\sum_{z\in I}A(z)e_q(-r\omega z)\right|^2
+ =
+ q\sum_{u\in\F_q}
+ \left|\sum_{\substack{z\in I\\z\equiv u\;(\mathrm{mod}\ q)}}
+ A(z)\right|^2.
+\]
+This is a rigorous average-frequency ceiling, with an explicit
+aliasing term, but it does not select the literal low-frequency
+filter or control coherent outer reassembly.
+
+Two obstructions explain why the gate remains open.  Genericity
+alone yields only a constant geometric-series gain and is saturated
+by bounded phase-matched coefficients.  More seriously, a broad
+prefix-uniform power-saving theorem for all generic twists of
+\(\lambda(n)\lambda(n+h_0)\) would, by Abel summation, imply a
+power-saving ordinary two-point Chowla estimate.  Existing
+logarithmically averaged or shift-averaged results do not have the
+literal growing-family quantifiers.
+
+We therefore formulate a restricted hypothesis only for the actual
+TPC block family and give an exact outer-loss ledger at the numerical
+exponent \(1/200\); the physical \(TT^*\) crosswalk remains a
+separate requirement.  The identities,
+frequency theorem, and obstruction are \(\Lzero\); the literal
+dictionary is \(\Lone\).  No new \(\Ltwo\) fixed-\(h_0\) M\"obius
+estimate is proved, and H3 remains an explicit hypothesis.
+\end{abstract}
+
+\noindent\textbf{Keywords:} fixed-shift affine M\"obius
+correlation; generic phase; \(TT^*\); frequency aliasing; Chowla
+barrier; parity problem.
+
+\medskip
+\noindent\textbf{Audit convention.}
+\(\Lzero\) means exact finite algebra or a model obstruction,
+\(\Lone\) an exact crosswalk to the physical fixed-\(h_0\) carrier,
+and \(\Ltwo\) only a growing arithmetic estimate on that carrier.
+An average over frequencies, forms, shifts, or scales is not promoted
+to a result for the prescribed physical coefficient.
+
+\section{The H3 target and its literal block}
+
+TPC-MVP1 isolates the working target
+\begin{equation}
+ \mathcal G_{b,\mathrm{gen}}^{\mathrm{signed}}
+ \ll XQ_b\,X^{-1/200+o(1)}
+\label{eq:h3-target}
+\end{equation}
+for every actual long generic packet, together with a separately
+specified physical \(TT^*\) normalization that must yield the
+\(1/400\) packet saving \citep{WangTPCMVP1}.  Neither part is known.
+
+TPC-93 supplies the exact generic block.  Its resolved key
+\(\xi=(\theta,c,\kappa,r)\) determines an interval
+\(I_\xi\subset\mathbb Z\), \(N_\xi=|I_\xi|\), and
+\begin{align}
+ D_\xi(z)&=d_\xi+s_\xi z,&
+ V_\xi(z)&=u_\xi+a_\xi z,
+\label{eq:forms}\\
+ s_\xi u_\xi-a_\xi d_\xi&=h_0\ne0,&
+ \alpha_\xi&=
+ \frac{r\varepsilon_\theta\Omega_\xi}{cq_X}
+ \pmod1.
+\label{eq:det-phase}
+\end{align}
+The generic condition is
+\begin{equation}
+ N_\xi\|\alpha_\xi\|_{\mathbb R/\mathbb Z}>1.
+\label{eq:generic}
+\end{equation}
+The exact coefficient is
+\begin{align}
+ A_{\xi,X}(z)
+ ={}&
+ \mu(D_\xi(z))\mu(V_\xi(z))
+ \one_{(B_\xi,V_\xi(z))=1}
+\notag\\
+ &\times
+ \chi_\theta(\tau_\xi+B_\xi z)
+ W_{\theta,X}(\tau_\xi+B_\xi z),
+\label{eq:literal-coefficient}
+\end{align}
+and the block transform is
+\begin{equation}
+ S_{\xi,X}
+ =
+ \sum_{z\in I_\xi}
+ A_{\xi,X}(z)\e(-\alpha_\xi z),
+\qquad
+ \e(t)=e^{2\pi it}.
+\label{eq:block-transform}
+\end{equation}
+The complete outer coefficient retains
+\[
+ \mathfrak c_{\xi,X}
+ =
+ c_{\theta,X}\mu(\kappa)\mu(B_\xi)
+ \mathfrak m_{K,X}(r)\zeta_{\xi,X}.
+\]
+The generic low window is exactly
+\begin{equation}
+ \operatorname{Low}_{\mathrm{Gen},X}
+ =
+ \sum_{\xi\in\Xi_{\mathrm{Gen}}}
+ \mathfrak c_{\xi,X}S_{\xi,X}.
+\label{eq:generic-low-window}
+\end{equation}
+These formulas retain both polarizations, all prefixes and masks,
+the moving coefficients, and one prescribed \(h_0\)
+\citep{WangTPC93}.
+
+\section{Exact \texorpdfstring{\(TT^*\)}{TT-star} and the
+four-sign kernel}
+
+For \(h\in\mathbb Z\), define
+\begin{equation}
+ C_{\xi,X}(h)
+ =
+ \sum_{\substack{z\in I_\xi\\z+h\in I_\xi}}
+ A_{\xi,X}(z+h)\overline{A_{\xi,X}(z)}.
+\label{eq:shift-correlation}
+\end{equation}
+
+\begin{theorem}[Literal one-block \(TT^*\)]
+\label{thm:block-ttstar}
+For every resolved block,
+\begin{equation}
+ \boxed{
+ |S_{\xi,X}|^2
+ =
+ \sum_{|h|<N_\xi}
+ \e(-\alpha_\xi h)C_{\xi,X}(h).}
+\label{eq:block-ttstar}
+\end{equation}
+The diagonal is
+\[
+ C_{\xi,X}(0)=\sum_{z\in I_\xi}|A_{\xi,X}(z)|^2.
+\]
+For \(h\ne0\), the arithmetic factor in
+\(C_{\xi,X}(h)\) is
+\begin{align}
+ &\mu(D_\xi(z+h))\mu(V_\xi(z+h))
+\mu(D_\xi(z))\mu(V_\xi(z)),
+\label{eq:four-mobius}
+\end{align}
+times the two exact coprimality masks, the shifted periodic/local
+factor
+\[
+ \chi_\theta(\tau_\xi+B_\xi(z+h))
+ \overline{\chi_\theta(\tau_\xi+B_\xi z)},
+\]
+and the corresponding shifted physical weights.
+\end{theorem}
+
+\begin{proof}
+Expand \(|S_{\xi,X}|^2\), set \(h=z-z'\), and group terms with the
+same difference.
+\end{proof}
+
+\begin{proposition}[Fixed determinant survives the shift]
+\label{prop:shifted-determinant}
+For every integer \(h\), the shifted pair
+\[
+ D_{\xi,h}(z)=D_\xi(z+h),\qquad
+ V_{\xi,h}(z)=V_\xi(z+h)
+\]
+has the same determinant \(h_0\):
+\[
+ s_\xi(u_\xi+a_\xi h)
+ -a_\xi(d_\xi+s_\xi h)=h_0.
+\]
+\end{proposition}
+
+\begin{proof}
+The two \(a_\xi s_\xi h\) terms cancel.
+\end{proof}
+
+\begin{remark}[Why \(TT^*\) is not yet a saving]
+TPC-90 classifies the squarefree local support and writes the
+remaining signs as a Liouville parity correlation
+\citep{WangTPC90}.  In \eqref{eq:four-mobius}, \(TT^*\) raises the
+correlation order from two signs to four.  A useful \(TT^*\)
+argument must gain from frequency or outer averaging; the formal
+identity alone does not bound the off-diagonal kernel.
+\end{remark}
+
+\section{A complete-frequency theorem and the aliasing ledger}
+
+On the nonconstant \(q_X\)-invertible branch, literal provenance
+gives \(c\mid\Omega_\xi\) and
+\[
+ \omega_\xi
+ =
+ \varepsilon_\theta\frac{\Omega_\xi}{c}
+ \pmod{q_X}
+ \in\F_{q_X}^\times.
+\]
+Thus the phase is \(e_{q_X}(-r\omega_\xi z)\).
+
+\begin{theorem}[Exact full-frequency alias identity]
+\label{thm:full-frequency}
+Let \(q\) be prime, \(\omega\in\F_q^\times\), \(I\subset\mathbb Z\)
+finite, and \(A:I\to\C\).  Put
+\[
+ S(r)=\sum_{z\in I}A(z)e_q(-r\omega z).
+\]
+Then
+\begin{equation}
+ \boxed{
+ \sum_{r\in\F_q}|S(r)|^2
+ =
+ q\sum_{u\in\F_q}
+ \left|
+ \sum_{\substack{z\in I\\z\equiv u\;(\mathrm{mod}\ q)}}
+ A(z)
+ \right|^2.}
+\label{eq:alias-parseval}
+\end{equation}
+If the residues of \(I\) modulo \(q\) are distinct, in particular
+if \(I\) is an interval of length at most \(q\), then
+\begin{equation}
+ \sum_{r\in\F_q}|S(r)|^2
+ =
+ q\sum_{z\in I}|A(z)|^2.
+\label{eq:no-wrap-parseval}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Expanding the left side and using additive orthogonality gives
+\[
+ \sum_{r\in\F_q}e_q(-r\omega(z-z'))
+ =
+ q\one_{\{z\equiv z'\pmod q\}},
+\]
+because \(\omega\ne0\).  Group the remaining pairs by their residue
+class.
+\end{proof}
+
+\begin{corollary}[Filtered one-block ceiling]
+\label{cor:filtered-ceiling}
+For any \(\mathcal R\subseteq\F_q\) and filter \(m\) supported on
+\(\mathcal R\),
+\begin{equation}
+ \left|\sum_{r\in\mathcal R}m(r)S(r)\right|
+ \le
+ \|m\|_2\sqrt q
+ \left(
+ \sum_{u\in\F_q}
+ \left|\sum_{\substack{z\in I\\z\equiv u\pmod q}}A(z)\right|^2
+ \right)^{1/2}.
+\label{eq:filtered-ceiling}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Apply Cauchy--Schwarz on \(\mathcal R\), enlarge to all frequencies,
+and use \cref{thm:full-frequency}.
+\end{proof}
+
+\begin{remark}[Average frequency is not the literal gate]
+\Cref{eq:filtered-ceiling} is unconditional, but it has a
+\(\sqrt q\) cost and must still be summed with the physical outer
+coefficients.  It does not prove \eqref{eq:h3-target}; nor may the
+complete-frequency average be reported as control of one prescribed
+low-window combination.
+\end{remark}
+
+\section{Two sharp barriers}
+
+\subsection{Genericity alone gives no power}
+
+\begin{proposition}[Geometric sum and coefficient-blind saturation]
+\label{prop:generic-saturation}
+For an interval \(I\) of length \(N\),
+\[
+ \left|\sum_{z\in I}\e(-\alpha z)\right|
+ \le
+ \min\left\{N,\frac1{2\|\alpha\|}\right\}.
+\]
+Hence \(N\|\alpha\|>1\) supplies at most a constant-factor conclusion
+near the generic boundary.  Moreover, among coefficients satisfying
+\(|A(z)|=1\), the choice \(A(z)=\e(\alpha z)\) gives
+\[
+ \left|\sum_{z\in I}A(z)\e(-\alpha z)\right|=N.
+\]
+\end{proposition}
+
+\begin{proof}
+The first statement is the standard finite geometric-series bound.
+The second is immediate term by term.
+\end{proof}
+
+The saturation coefficient is not claimed to be the literal
+M\"obius coefficient.  It proves that generic phase, bounded
+weights, and interval length alone cannot imply a power saving.
+
+\subsection{A broad generic theorem reaches ordinary Chowla}
+
+\begin{lemma}[Twisted-prefix removal]
+\label{lem:twist-removal}
+Let \(|b_n|\le1\), \(0<\delta<1\), and
+\(\alpha_N=N^{-1+\delta}\).  If
+\[
+ \max_{1\le T\le N}
+ \left|\sum_{n\le T}b_n\e(\alpha_Nn)\right|
+ \le C N^{1-\eta},
+\]
+then
+\begin{equation}
+ \left|\sum_{n\le N}b_n\right|
+ \le C'(1+N^\delta)N^{1-\eta}
+ \ll N^{1-\eta+\delta}.
+\label{eq:abel-transfer}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let
+\(B(T)=\sum_{n\le T}b_n\e(\alpha_Nn)\).
+Partial summation applied to
+\(b_n=B(n)-B(n-1)\) after removal of the twist gives
+\[
+ \left|\sum_{n\le N}b_n\right|
+ \le
+ \max_{T\le N}|B(T)|
+ \left(1+N|1-\e(-\alpha_N)|\right).
+\]
+Use \(|1-\e(-t)|\le2\pi\|t\|\).
+\end{proof}
+
+\begin{corollary}[Broad-family Chowla barrier]
+\label{cor:chowla-barrier}
+Let \(\lambda\) denote the Liouville function.  Fix \(h_0>0\).
+Suppose a theorem gave, for some
+\(\eta>0\), the preceding prefix bound with
+\[
+ b_n=\lambda(n)\lambda(n+h_0)
+\]
+for every sufficiently large \(N\) and every generic phase
+\(\alpha_N=N^{-1+\delta}\), where \(0<\delta<\eta\).
+Then
+\[
+ \sum_{n\le N}\lambda(n)\lambda(n+h_0)
+ \ll N^{1-(\eta-\delta)},
+\]
+a power-saving ordinary two-point Chowla estimate.
+\end{corollary}
+
+\begin{proof}
+Since \(N\|\alpha_N\|=N^\delta>1\), these twists are generic.  Apply
+\cref{lem:twist-removal}.
+\end{proof}
+
+\begin{remark}[Restricted does not mean equivalent]
+The literal H3 family contains only the phases, forms, masks, and
+weights generated by the TPC dictionary.  It is not asserted to
+contain every pair \((n,n+h_0)\) and every
+\(\alpha_N=N^{-1+\delta}\).  Therefore
+\cref{cor:chowla-barrier} does not prove H3 equivalent to Chowla.
+It explains why a convenient uniform theorem over arbitrary affine
+forms and generic phases would be unexpectedly deep.
+\end{remark}
+
+\section{\texorpdfstring{\hspace{0.35em}}{}Why existing averaged theorems do not fill the gap}
+
+The logarithmically averaged two-point Chowla theorem controls fixed
+affine forms with reciprocal weight
+\citep{Tao2016LogChowla}.  Shift-averaged results average the
+prescribed displacement \citep{MatomakiRadziwillTao2015}.  The
+literal TPC blocks instead require:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item growing slopes and intercepts but one prescribed nonzero
+determinant \(h_0\);
+\item ordinary smooth physical weights and actual interval origins;
+\item uniform control of every prefix needed by partial summation;
+\item exact content and coprimality masks;
+\item the specified low-frequency multiplier and both
+polarizations; and
+\item coherent outer reassembly at a quantitative power rate.
+\end{enumerate}
+TPC-96 proves that these quantifiers cannot be supplied by an
+anchor-free Tauberian conversion \citep{WangTPC96}.  This comparison
+is a quantifier audit, not a criticism of the averaged theorems.
+
+\section{The restricted hypothesis and an exact loss ledger}
+
+For a block, put
+\[
+ V_{\xi,X}=\sum_{z\in I_\xi}|A_{\xi,X}(z)|,
+\qquad
+ \Delta_{\xi,X}
+ =
+ \begin{cases}
+ |S_{\xi,X}|/V_{\xi,X},&V_{\xi,X}>0,\\
+ 0,&V_{\xi,X}=0.
+ \end{cases}
+\]
+Define the actual outer absolute mass
+\begin{equation}
+ \mathcal M_{\mathrm{Gen},X}
+ =
+ \sum_{\xi\in\Xi_{\mathrm{Gen}}}
+ |\mathfrak c_{\xi,X}|V_{\xi,X}.
+\label{eq:outer-mass}
+\end{equation}
+
+\begin{theorem}[Exact termwise exponent ledger]
+\label{thm:outer-ledger}
+If, for fixed exponents \(\eta,\ell_{\mathrm{out}}\ge0\),
+\begin{align}
+ \sup_{\xi\in\Xi_{\mathrm{Gen}}}\Delta_{\xi,X}
+ &\le X^{-\eta+o(1)},
+\label{eq:block-saving}\\
+ \mathcal M_{\mathrm{Gen},X}
+ &\le X^{\ell_{\mathrm{out}}+o(1)}XQ_X,
+\label{eq:outer-loss}
+\end{align}
+then
+\begin{equation}
+ |\operatorname{Low}_{\mathrm{Gen},X}|
+ \le XQ_X\,X^{-(\eta-\ell_{\mathrm{out}})+o(1)}.
+\label{eq:net-saving}
+\end{equation}
+Thus this termwise route reaches the numerical exponent \(1/200\)
+for the displayed linear generic window if
+\(\eta-\ell_{\mathrm{out}}\ge1/200\).  Identifying that bound with the
+normalized quadratic object in \eqref{eq:h3-target} still requires
+the exact physical \(TT^*\) crosswalk and prefactor.
+\end{theorem}
+
+\begin{proof}
+Apply the triangle inequality to
+\eqref{eq:generic-low-window}, insert
+\(|S_{\xi,X}|=\Delta_{\xi,X}V_{\xi,X}\), and use
+\eqref{eq:block-saving}--\eqref{eq:outer-loss}.
+\end{proof}
+
+\begin{remark}[Sufficient, deliberately not necessary]
+\Cref{thm:outer-ledger} discards cancellation between blocks.  A
+coherent \(TT^*\) theorem may be strictly stronger.  Conversely,
+the scale \(XQ_X\) in \eqref{eq:outer-loss} is not asserted for the
+physical coefficient; it is a separately auditable normalization
+condition.
+\end{remark}
+
+\begin{hypothesis}[Restricted actual-family arithmetic gate]
+\label{hyp:restricted-gate}
+For every actual generic packet \(b\), the complete normalized
+signed \(TT^*\) object built from
+\eqref{eq:literal-coefficient}--\eqref{eq:generic-low-window},
+including all prefixes, satisfies
+\[
+ \mathcal G_{b,\mathrm{gen}}^{\mathrm{signed}}
+ \ll XQ_b\,X^{-1/200+o(1)}.
+\]
+The exact physical \(TT^*\) prefactor is recorded separately and
+converts this quadratic saving to the packet target without an
+unrecorded loss.
+\end{hypothesis}
+
+\begin{remark}
+\Cref{hyp:restricted-gate} is H3 stated on the now explicit
+block dictionary.  It is not proved in this paper.  The point is to
+prevent its replacement by a theorem for arbitrary weights, fixed
+forms, averaged shifts, or a complete-frequency mean.
+\end{remark}
+
+\section{Deterministic regression certificate}
+
+The script \texttt{experiments/tpc108\_certificate.py} verifies:
+\begin{itemize}[leftmargin=2em]
+\item the direct and shifted-correlation forms of
+\cref{thm:block-ttstar};
+\item the full-frequency alias identity, including an interval
+longer than \(q\);
+\item coefficient-blind saturation in
+\cref{prop:generic-saturation}; and
+\item the finite Abel inequality underlying
+\cref{lem:twist-removal}.
+\end{itemize}
+The output is an algebraic regression certificate only.
+
+\section{Claim boundary and next gate}
+
+\subsection*{Proved}
+
+The literal generic block has an exact \(TT^*\) correlation kernel
+with four M\"obius factors, and both shifted pairs preserve
+determinant \(h_0\).  Complete-frequency averaging has the exact
+alias formula \eqref{eq:alias-parseval}.  Genericity alone cannot
+give a power saving, and a broad prefix-uniform generic-twist theorem
+would imply a power-saving ordinary Chowla estimate.  The termwise
+outer-loss law \eqref{eq:net-saving} is exact.  These results are
+\(\Lzero\); their attachment to the imported TPC-93 coefficient is
+\(\Lone\).
+
+\subsection*{Not proved}
+
+This paper does not prove:
+\begin{itemize}[leftmargin=2em]
+\item \cref{hyp:restricted-gate} or
+\eqref{eq:h3-target};
+\item a growing fixed-\(h_0\) M\"obius or Liouville cancellation
+estimate;
+\item the physical outer-mass bound \eqref{eq:outer-loss};
+\item conversion of a complete-frequency mean into the literal
+low-window combination;
+\item the separate \(1/400\) packet normalization, full-block
+return, determinant/zero-mode compatibility, or endpoint budget;
+or
+\item a parity breakthrough, Hardy--Littlewood asymptotic,
+prime-pair lower bound, or twin-prime theorem.
+\end{itemize}
+Nothing is specialized to \(h_0=2\).
+
+\subsection*{Verdict}
+
+TPC-108 advances the route by replacing the phrase ``generic affine
+dispersion'' with one exact arithmetic object and two precise
+obstructions.  It does not open H3.  The next rational move is
+TPC-109's coherent prime-square block test: exploit special
+structure of one actual residual block, or prove a
+coefficient-blind saturation theorem.  Such a theorem stops only
+the subroute based on support, moduli, occupancy, and diagonal
+energy; it does not rule out gains from literal arithmetic phase
+relations or a proved dominant-prime statistic.
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

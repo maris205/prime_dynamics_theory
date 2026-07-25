@@ -1,0 +1,494 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Width-Weighted Incidence after the Canonical Affine Quotient},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact character coherence and sharp alignment obstructions for the TPC distinct-map ledger},
+  pdfkeywords={fixed shift, affine incidence, multiplicative characters, resonance width, parity barrier}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\C}{\mathbb C}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Xdist}{\mathfrak Y_{\mathrm{dist},X}}
+\newcommand{\YH}{\mathfrak Y_H^\circ}
+
+\title{Width-Weighted Incidence after the Canonical Affine Quotient:\\
+Exact Character Coherence, Sharp Alignment Obstructions,\\
+and the Positive-Route Decision}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-105 aggregates identical literal affine multiplier maps while
+retaining their input profiles and complete provenance.  This paper
+analyzes the remaining genuinely distinct-map term.  Let
+\(G=\F_q^\times\), let
+\(\phi(j)=A_\phi(m_\phi j+h_0)\) be the canonical maps at one
+resonance width, and let \(f_\phi:G\to[0,\infty)\) be the exact
+pushforward of the opened-atom input profile.  For
+\(M_\phi=\sum_yf_\phi(y)\), the ordered distinct-map excess is
+\[
+ \YH
+ =
+ \sum_{\phi\ne\psi}
+ \left\{
+  \sum_{y\in G}f_\phi(y)f_\psi(y)
+  -\frac{M_\phi M_\psi}{q-1}
+ \right\}.
+\]
+We prove the exact multiplicative-character identity
+\[
+ \YH
+ =
+ \frac1{q-1}\sum_{\chi\ne\chi_0}
+ \sum_{\phi\ne\psi}
+ \widehat f_\phi(\chi)
+ \overline{\widehat f_\psi(\chi)}
+ =
+ \|a_H^\circ\|_2^2
+ -\sum_\phi\|f_\phi^\circ\|_2^2,
+\qquad a_H=\sum_\phi f_\phi.
+\]
+Thus the exact missing datum is cross-map character coherence, not
+the number of distinct formulas.  If
+\(\mathcal E_H=\sum_\phi\|f_\phi^\circ\|_2^2\) and
+\(\kappa_H=|\YH|/\mathcal E_H\), then
+\[
+ 0\le\kappa_H\le |\Phi_H|-1,
+\qquad
+ \sum_Hg_q(H)\sqrt{|\YH|}
+ =
+ \sum_Hg_q(H)\sqrt{\kappa_H\mathcal E_H}.
+\]
+The upper endpoint is sharp even inside the physical map shape
+\(A(mj+h_0)\): distinct maps supported at one input can all hit one
+output.  Hence map distinctness, no-wrap injectivity, and width
+weighting alone cannot prove the TPC-106 target.  We give a
+two-ledger sufficient criterion and an exact deterministic
+certificate, but do not estimate the actual growing profiles.
+The identities and obstruction are \(\Lzero\); their literal
+crosswalk is \(\Lone\).  No \(\Ltwo\) fixed-\(h_0\) arithmetic
+estimate, parity breakthrough, or prime-pair result is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} fixed-shift affine carrier;
+distinct-map incidence; character coherence; resonance width;
+positive majorant; parity barrier.
+
+\medskip
+\noindent\textbf{Audit convention.}
+\(\Lzero\) denotes exact finite algebra or a finite countermodel,
+\(\Lone\) a literal physical-interface statement, and \(\Ltwo\)
+only a growing fixed nonzero-\(h_0\) arithmetic estimate.  The
+prescribed \(h_0\), physical weights, actual support, and native
+normalization are never replaced by an averaged or model family.
+
+\section{Scope and imported interface}
+
+TPC-99--TPC-102 reduce the positive nonconstant resonance sector to
+a principal ledger, an opened-atom diagonal ledger, and a
+width-weighted cross-cell ledger
+\citep{WangTPC99,WangTPC101,WangTPC102}.  TPC-105 then quotients
+identical affine maps without replacing an input profile by its
+total mass \citep{WangTPC105}.  The remaining proposed estimate is
+\begin{equation}
+ \Xdist
+ :=
+ \sum_Hg_{q_X}(H)
+ \sqrt{|\YH|}
+ \ll X^{o(1)}Q_X^2,
+\label{eq:tpc106-target}
+\end{equation}
+where
+\[
+ g_q(H)
+ =
+ \sqrt{\frac{2H(q-1-2H)}{q-1}}.
+\]
+The square root contains an absolute value because the centered
+ordered cross term need not be nonnegative.
+Even a proof of \eqref{eq:tpc106-target} closes the full positive
+cross ledger only together with the independent TPC-105 conditions
+\[
+ U_X\le X^{o(1)},\qquad
+ \mathfrak P_X\le X^{o(1)}Q_X^2.
+\]
+Those conditions return the identical-map ledger and are not
+reproved or assumed true here.
+
+We analyze exactly what information can imply
+\eqref{eq:tpc106-target}.  The paper does not assert that the actual
+TPC profiles satisfy the resulting coherence bounds.
+
+\section{Canonical maps and exact pushforwards}
+
+Fix an odd prime \(q\), put \(G=\F_q^\times\), and fix
+\(h_0\in G\).  At one active width \(H\), let \(\Phi_H\) be the
+canonical set of pairwise distinct maps
+\begin{equation}
+ \phi(j)=s_\phi j+t_\phi
+ =A_\phi(m_\phi j+h_0),
+ \qquad A_\phi,m_\phi\in G.
+\label{eq:physical-map}
+\end{equation}
+The identity with the right-hand expression is part of the literal
+fixed-\(h_0\) interface.
+
+For each \(\phi\), let \(J_\phi\subseteq\F_q\) be its actual active
+input support, with \(\phi(J_\phi)\subseteq G\), and let
+\(\nu_\phi:J_\phi\to[0,\infty)\) be the provenance-preserving
+opened-atom profile.  Define
+\begin{align}
+ f_\phi(y)
+ &=
+ \sum_{j\in J_\phi}
+ \nu_\phi(j)\one_{\{\phi(j)=y\}},
+\label{eq:pushforward}\\
+ M_\phi&=\sum_{j\in J_\phi}\nu_\phi(j)
+       =\sum_{y\in G}f_\phi(y),
+\qquad
+ a_H=\sum_{\phi\in\Phi_H}f_\phi.
+\label{eq:masses}
+\end{align}
+Since \(s_\phi\ne0\), each map is injective on \(\F_q\); nevertheless
+different maps may have arbitrarily aligned pushforwards.
+
+\begin{definition}[Ordered distinct-map excess]
+\label{def:distinct-excess}
+Set
+\begin{equation}
+ \YH
+ =
+ \sum_{\substack{\phi,\psi\in\Phi_H\\\phi\ne\psi}}
+ \left[
+  \sum_{y\in G}f_\phi(y)f_\psi(y)
+  -\frac{M_\phi M_\psi}{q-1}
+ \right].
+\label{eq:distinct-excess}
+\end{equation}
+\end{definition}
+
+The ordered convention agrees with expanding the squared
+\(\ell^2(G)\) norm.  Each unordered pair therefore occurs twice.
+
+\section{Exact character-coherence theorem}
+
+For \(f:G\to\C\), use
+\[
+ \widehat f(\chi)
+ =
+ \sum_{y\in G}f(y)\overline{\chi(y)},
+\qquad
+ f^\circ=f-\frac1{q-1}\left(\sum_yf(y)\right)\one_G.
+\]
+
+\begin{theorem}[Three exact forms of the distinct-map ledger]
+\label{thm:three-forms}
+For every family in \cref{eq:physical-map}--\cref{eq:masses},
+\begin{align}
+ \YH
+ &=
+ \sum_{\phi\ne\psi}
+ \langle f_\phi^\circ,f_\psi^\circ\rangle,
+\label{eq:gram-form}\\
+ &=
+ \frac1{q-1}\sum_{\chi\ne\chi_0}
+ \sum_{\phi\ne\psi}
+ \widehat f_\phi(\chi)
+ \overline{\widehat f_\psi(\chi)},
+\label{eq:character-form}\\
+ &=
+ \|a_H^\circ\|_2^2
+ -\sum_{\phi\in\Phi_H}\|f_\phi^\circ\|_2^2.
+\label{eq:energy-difference}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+The bracket in \eqref{eq:distinct-excess} is exactly
+\(\langle f_\phi^\circ,f_\psi^\circ\rangle\), giving
+\eqref{eq:gram-form}.  Multiplicative Parseval on \(G\) deletes the
+principal character and gives \eqref{eq:character-form}.  Finally,
+expand
+\[
+ \left\|\sum_\phi f_\phi^\circ\right\|_2^2
+ =
+ \sum_\phi\|f_\phi^\circ\|_2^2
+ +\sum_{\phi\ne\psi}
+ \langle f_\phi^\circ,f_\psi^\circ\rangle.
+\]
+\end{proof}
+
+\begin{remark}[Why a map total is insufficient]
+The character vector \(\widehat f_\phi(\chi)\), not merely
+\(M_\phi=\widehat f_\phi(\chi_0)\), determines the nonprincipal
+cross term.  This is the precise reason that the canonical quotient
+must retain the complete input profile and provenance bag.
+\end{remark}
+
+\begin{definition}[Internal energy and coherence]
+\label{def:coherence}
+Put
+\[
+ \mathcal E_H
+ =
+ \sum_{\phi\in\Phi_H}\|f_\phi^\circ\|_2^2,
+\qquad
+ \kappa_H
+ =
+ \begin{cases}
+ |\YH|/\mathcal E_H,
+   &\mathcal E_H>0,\\
+ 0,&\mathcal E_H=0.
+ \end{cases}
+\]
+\end{definition}
+
+\begin{proposition}[Sharp universal coherence range]
+\label{prop:coherence-range}
+If \(K_H=|\Phi_H|\), then
+\begin{equation}
+ 0\le\kappa_H\le K_H-1.
+\label{eq:coherence-range}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The lower bound is definitional.  By Cauchy--Schwarz,
+\begin{align*}
+ |\YH|
+ &\le
+ \sum_{\phi\ne\psi}
+ \|f_\phi^\circ\|_2\|f_\psi^\circ\|_2\\
+ &=
+ \left(\sum_\phi\|f_\phi^\circ\|_2\right)^2
+ -\sum_\phi\|f_\phi^\circ\|_2^2
+ \le(K_H-1)\mathcal E_H.
+\end{align*}
+\end{proof}
+
+\begin{corollary}[Exact two-ledger reduction]
+\label{cor:two-ledger}
+The TPC-106 left side has the exact form
+\begin{equation}
+ \Xdist
+ =
+ \sum_Hg_{q_X}(H)\sqrt{\kappa_H\mathcal E_H}
+\label{eq:exact-width-ledger}
+\end{equation}
+and obeys
+\begin{equation}
+ \Xdist
+ \le
+ \left(\sum_Hg_{q_X}(H)^2\kappa_H\right)^{1/2}
+ \left(\sum_H\mathcal E_H\right)^{1/2}.
+\label{eq:two-ledger-bound}
+\end{equation}
+In particular, bounds
+\[
+ \sum_Hg_{q_X}(H)^2\kappa_H
+ \le X^{o(1)}Q_X^2,
+\qquad
+ \sum_H\mathcal E_H
+ \le X^{o(1)}Q_X^2
+\]
+are sufficient for \eqref{eq:tpc106-target}.
+\end{corollary}
+
+\begin{proof}
+The identity follows from \cref{def:coherence}; the inequality is
+Cauchy--Schwarz in \(H\).
+\end{proof}
+
+This reduction separates the amount of centered mass carried by
+each map from the alignment of distinct maps.  Neither ledger is
+estimated here for the actual growing coefficient.
+
+\section{Sharp physical-shape alignment obstruction}
+
+The next result shows that the word ``distinct'' has no quantitative
+dispersion content by itself.
+
+\begin{theorem}[Distinct physical maps can align perfectly]
+\label{thm:sharp-alignment}
+Let \(q\ge5\), choose \(h_0,j_0,y_0\in G\), and let
+\(\mathcal M\subseteq G\setminus\{-h_0j_0^{-1}\}\) have cardinality
+\(K\).  For \(m\in\mathcal M\), set
+\[
+ A_m=\frac{y_0}{mj_0+h_0},
+\qquad
+ \phi_m(j)=A_m(mj+h_0).
+\]
+Then the \(\phi_m\) are pairwise distinct maps of the literal shape
+\eqref{eq:physical-map}.  If every profile is the singleton
+\(\nu_m=w\one_{\{j_0\}}\), \(w>0\), then
+\begin{align}
+ f_m&=w\one_{\{y_0\}},\\
+ \mathcal E_H
+ &=K w^2\frac{q-2}{q-1},\\
+ \YH
+ &=K(K-1)w^2\frac{q-2}{q-1},\\
+ \kappa_H&=K-1.
+\end{align}
+Thus \eqref{eq:coherence-range} is sharp.
+\end{theorem}
+
+\begin{proof}
+Every denominator defining \(A_m\) is nonzero and
+\(\phi_m(j_0)=y_0\).  If \(\phi_m=\phi_{m'}\), equality of the
+constant terms gives \(A_mh_0=A_{m'}h_0\), hence \(A_m=A_{m'}\);
+equality of slopes then gives \(m=m'\).  The centered norm of
+\(w\one_{\{y_0\}}\) on a set of size \(q-1\) is
+\(w^2(1-1/(q-1))\).  Every ordered distinct pair has the same
+centered inner product, so the formulas follow.
+\end{proof}
+
+\begin{corollary}[No geometry-only TPC-106 theorem]
+\label{cor:no-geometry-only}
+No bound with subpower coherence can follow solely from:
+\begin{itemize}[leftmargin=2em]
+\item pairwise distinctness of the canonical maps;
+\item the fixed-\(h_0\) form \(A(mj+h_0)\);
+\item injectivity of each map on its no-wrap input support; and
+\item the resonance width \(H\).
+\end{itemize}
+Additional information about the actual profiles, weights, or
+arithmetic signs is necessary.
+\end{corollary}
+
+\begin{remark}[What the countermodel does not prove]
+The construction is an exact finite obstruction to a
+coefficient-blind argument.  It is not asserted to occur with
+polynomial mass inside the literal TPC coefficient.  Therefore it
+does not prove that the actual positive route fails.
+\end{remark}
+
+\section{Literal audit and route decision}
+
+For the actual coefficient, a proof-carrying TPC-106 certificate
+must list, at every active \(H\):
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item every canonical map
+\(\phi(j)=A_\phi(m_\phi j+h_0)\);
+\item the recoverable provenance bag and exact profile
+\(\nu_\phi(j)\);
+\item the actual support condition \(\phi(j)\ne0\) and all inherited
+masks;
+\item one copy of the physical opened-atom weight under the native
+global normalization;
+\item the exact values of \(\mathcal E_H\) and either
+\(\YH\) or the character vectors in
+\eqref{eq:character-form}; and
+\item the width-weighted sum in \eqref{eq:exact-width-ledger}.
+\end{enumerate}
+Ambient map counts or a random-map model cannot replace these data.
+
+\begin{proposition}[Stop--go statement]
+\label{prop:stop-go}
+The following conclusions have different strengths.
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item A verified bound \eqref{eq:tpc106-target} for the actual
+growing profiles is a go certificate for the distinct-map part of
+the positive resonance route.
+\item A verified polynomial lower obstruction in the actual
+\(\Xdist\), at its native normalization and with no compensating
+signed term, stops this positive termwise route and triggers signed
+filtering before majorization.
+\item \Cref{cor:no-geometry-only} already stops every proof based
+only on map distinctness, but does not decide (a) or (b).
+\end{enumerate}
+\end{proposition}
+
+\section{\texorpdfstring{\hspace{0.35em}}{}Deterministic regression certificate}
+
+The script \texttt{experiments/tpc106\_certificate.py} checks, over
+several small primes:
+\begin{itemize}[leftmargin=2em]
+\item equality of the direct centered-Gram form and the
+energy-difference form in \cref{thm:three-forms};
+\item the sharp family in \cref{thm:sharp-alignment}; and
+\item the coherence bound \(\kappa_H\le K_H-1\).
+\end{itemize}
+It uses exact rational arithmetic.  The character form in
+\cref{thm:three-forms} is proved analytically by multiplicative
+Fourier inversion; it is not separately tested by this script.  The
+certificate verifies finite algebra, not asymptotic arithmetic
+cancellation.
+
+\section{Claim boundary}
+
+\subsection*{Proved}
+
+The canonical distinct-map ledger has the exact character and Gram
+forms in \cref{thm:three-forms}.  Its width-weighted target is
+exactly the energy--coherence ledger
+\eqref{eq:exact-width-ledger}.  The universal coherence factor is at
+most \(K_H-1\), and this endpoint is achieved by pairwise distinct
+maps of the literal fixed-\(h_0\) shape.  These are \(\Lzero\)
+results.  Importing the TPC-105 quotient profiles without changing
+support, coefficients, or normalization gives the stated
+\(\Lone\) interface.
+
+\subsection*{Not proved}
+
+This paper does not prove:
+\begin{itemize}[leftmargin=2em]
+\item \eqref{eq:tpc106-target} for the actual growing profiles;
+\item a subpower bound for \(\mathcal E_H\) or \(\kappa_H\);
+\item that the sharp alignment countermodel has substantial mass in
+the physical packet;
+\item closure or failure of the full positive resonance route;
+\item a signed affine M\"obius estimate, determinant/zero-mode
+compatibility, full-block return, or the strict physical endpoint;
+or
+\item a parity breakthrough, Hardy--Littlewood asymptotic,
+prime-pair lower bound, or twin-prime theorem.
+\end{itemize}
+Nothing is specialized to \(h_0=2\).
+
+\subsection*{Verdict}
+
+TPC-106 makes a genuine route decision at the theorem-design level:
+canonical quotienting removes artificial identical-map duplication,
+but distinctness alone supplies no dispersion.  The remaining
+positive door is precisely a weighted character-coherence theorem
+for the actual profiles.  If that theorem cannot be proved or is
+falsified on the literal coefficient, the mathematically correct
+fallback is to retain the signs before taking absolute values, as
+developed in TPC-107.
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

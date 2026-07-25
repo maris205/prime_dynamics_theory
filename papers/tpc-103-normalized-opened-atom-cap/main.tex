@@ -1,0 +1,563 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,enumitem,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={The Normalized Opened-Atom Cap in the Literal Resonance Carrier},
+  pdfauthor={Liang Wang},
+  pdfsubject={TPC-103 literal pointwise factor audit},
+  pdfkeywords={fixed shift, opened atom, literal coefficient, divisor bound, resonance carrier}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\PX}{\mathfrak P_X}
+\newcommand{\XX}{\mathfrak X_X}
+\newcommand{\HX}{\mathcal H_X}
+
+\title{\textbf{The Normalized Opened-Atom Cap}\\
+\textbf{in the Literal Resonance Carrier:}\\
+A Pointwise Factor Audit and Diagonal Transfer}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-101 reduces the diagonal part of the positive multiplicative
+resonance carrier to two inputs: the resolved principal mass and a
+pointwise cap \(W_X\) for the normalized opened-atom weights.
+TPC-102 records \(W_X\le X^{o(1)}\) as the first inexpensive gate
+after its three-ledger audit.  We close that gate in the literal
+TPC-33--TPC-100 frame.
+
+An invertible opened atom is \(p=(\beta,z)\), with exact weight
+\[
+ w_p
+ =
+ |A_{\beta,X}|\,|\mathcal W_{\beta,X}(z)|
+ \mu^2(\widetilde D_\beta(z))\mu^2(V_\beta(z)).
+\]
+We pull this coefficient back through the lossless TPC-93
+source--child inverse and place every factor in exactly one of six
+ledgers: physical rows, the opened logarithmic leg, the matched
+prefix, the row-gcd projector, exact content, and bounded
+local/smooth data.  The literal row formula gives pointwise
+\(O(\log X)\) coefficients; the logarithmic leg is \(O(\log X)\);
+the matched prefixes, projector coefficients, and every remaining
+divisor expansion are bounded by a fixed power of the maximal
+divisor function on \(X^{O(1)}\).  No second column or fiber
+normalization occurs.  Consequently, for a fixed integer \(A\),
+\[
+ \boxed{\quad
+ W_X:=\max_{p\ {\rm active}}w_p
+ \ll
+ (\log X)^A
+ \left(\max_{n\le X^{A}}\tau(n)\right)^A
+ =X^{o(1)}.\quad}
+\]
+The maximum is over the actual \(q_X\nmid u_p\) support and retains
+one prescribed \(h_0\ne0\), both polarizations, all source,
+content, projector, interval and mask labels, and the inherited
+physical normalization.
+
+Combining the cap with the TPC-101 transfer shows that the
+width-weighted opened-atom diagonal ledger follows from the
+principal ledger; no separate diagonal-energy theorem is needed.
+This is a genuine \(\Lone\) closure of Gate W, not an \(\Ltwo\)
+arithmetic saving.  The principal mass, cross-atom collisions,
+generic signed M\"obius sector, full-block return, and strict
+physical endpoint remain open.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+opened atom; literal coefficient; pointwise cap; divisor bound;
+multiplicative resonance; fixed shift; provenance.
+
+\medskip
+\noindent\textbf{Literal-frame convention.}
+All physical statements keep one prescribed \(h_0\in\Z\setminus
+\{0\}\), the actual active support, both polarizations, every native
+source and child label, and the unique inherited physical
+normalization.  Nothing is specialized to \(h_0=2\).
+
+\section{The first post-audit gate}
+\label{sec:introduction}
+
+At the critical TPC scales,
+\[
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)},\qquad q_X\asymp Q_X.
+\]
+After the conductor-one and \(q_X\mid u\) branches have been
+returned, TPC-102 bounds the remaining positive resonant carrier by
+\begin{equation}
+ \mathcal C_{\mathrm{exc},X}^{\mathrm{abs}}
+ \ll
+ X^{o(1)}Q_X^2+
+ B_X\left[
+ \PX+
+ \sqrt{W_X|\HX|(q_X-1)\PX}+\XX
+ \right].
+\label{eq:master}
+\end{equation}
+Here \(B_X\ll1\) is the Wiener mass of the fixed low-window filter,
+\(\PX\) is the principal resonance mass, \(\XX\) is the
+width-weighted cross-atom excess, and \(W_X\) is the maximum
+opened-atom weight on the actual invertible support
+\citep{WangTPC101,WangTPC102}.
+
+The purpose of this paper is deliberately narrow: prove the
+pointwise bound
+\[
+ W_X\le X^{o(1)}
+\]
+from the literal factor list.  This is not a cancellation problem.
+It is nevertheless not a consequence of the row \(\ell^1\) bound:
+an abstract vector of \(\ell^1\)-mass \(Q_X\) may place all its mass
+on one coordinate.  The actual TPC row coefficient has a much
+stronger pointwise formula, and that formula must survive the entire
+source--child crosswalk.
+
+\section{The exact opened atom}
+\label{sec:atom}
+
+\subsection{Native record}
+
+Let
+\[
+ \beta=(\theta,c,\kappa),\qquad
+ \theta=(L,\gamma,\ell,j,\sigma,v,\iota)
+\]
+be a soluble, nonempty nonconstant branch in the canonical
+TPC-94 ledger.  Put
+\[
+ b_\beta=c_\beta\kappa_\beta,\qquad
+ g_\beta=(b_\beta,\sigma_\beta),\qquad
+ B_\beta=b_\beta/g_\beta.
+\]
+The resolved progression is
+\[
+ t_\beta(z)=\tau_\beta+B_\beta z,\qquad
+ z\in I_\beta^\ast.
+\]
+An \(r\)-free opened atom is
+\[
+ p=(\beta,z),\qquad
+ u_p=U_\theta(t_\beta(z)),\qquad
+ m_p=M_\theta(t_\beta(z)),
+\]
+and it obeys the exact source identity
+\begin{equation}
+ m_pj_\theta+h_0=\sigma_\theta u_p.
+\label{eq:source}
+\end{equation}
+We restrict to the remaining invertible support
+\[
+ 1\le N_\beta:=\#I_\beta^\ast\le q_X,\qquad q_X\nmid u_p.
+\]
+The restrictions are part of the actual support, not an ambient
+rectangular completion.
+
+TPC-94 and TPC-100 define
+\begin{align}
+ A_{\beta,X}
+ &=
+ c_{\theta,X}\mu(\kappa_\beta)\mu(B_\beta),
+\label{eq:outer}\\
+ w_p=w_{\beta,z}
+ &=
+ |A_{\beta,X}|\,
+ |\mathcal W_{\beta,X}(z)|
+ \mu^2(\widetilde D_\beta(z))
+ \mu^2(V_\beta(z)).
+\label{eq:weight}
+\end{align}
+On canonical support the robustness content is one.  Equation
+\eqref{eq:weight} is the exact positive atomization:
+\[
+ w_\beta=\sum_{z\in I_\beta^\ast}w_{\beta,z}.
+\]
+There is no division by \(N_\beta\), no cell-count normalization,
+and no second frequency factor \citep{WangTPC94,WangTPC100}.
+
+\begin{definition}[Literal atom cap]
+\label{def:cap}
+Let \(\mathscr P_X^{\mathrm{inv}}\) be the preceding actual support
+after the single inherited normalization.  Set
+\[
+ W_X=
+ \begin{cases}
+ \max_{p\in\mathscr P_X^{\mathrm{inv}}}w_p,
+   &\mathscr P_X^{\mathrm{inv}}\ne\varnothing,\\
+ 0,&\mathscr P_X^{\mathrm{inv}}=\varnothing.
+ \end{cases}
+\]
+\end{definition}
+
+\subsection{Why the word ``normalized'' introduces no new scalar}
+
+The physical units in \eqref{eq:weight} are exactly those of the
+TPC-93 low-window coefficient.  TPC-93 explicitly reassembles the
+two polarized physical rows and states that no new fiber
+normalization is introduced.  Thus ``normalized opened atom'' means
+an atom of the already normalized physical coefficient, not the
+probability weight \(w_p/\sum w_p\).  In particular, this paper
+does not insert a factor \(N_\beta^{-1}\), \(Q_X^{-1}\), or a
+columnwise renormalization.
+
+\section{A six-ledger pointwise factorization}
+\label{sec:factors}
+
+The upstream coefficient contains many labels, but only finitely
+many kinds of factors.  Pull \(p\) back through the explicit
+TPC-93 child-to-source inverse.  Group its multiplicative factors
+as
+\begin{equation}
+ w_p=
+ |\mathsf R_p\,\mathsf U_p\,\mathsf H_p\,
+   \mathsf V_p\,\mathsf C_p\,\mathsf S_p|.
+\label{eq:six-factor}
+\end{equation}
+This is a partition of the factors already present in
+\eqref{eq:weight}, with the following meaning.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}
+ >{\raggedright\arraybackslash}p{0.13\textwidth}
+ >{\raggedright\arraybackslash}p{0.34\textwidth}
+ >{\raggedright\arraybackslash}X@{}}
+\toprule
+Ledger & Literal content & Pointwise envelope\\
+\midrule
+\(\mathsf R_p\) &
+The two physical row coefficients
+\(\gamma_{\alpha_p}^{(1)}\gamma_{\gamma_p}^{(2)}\) &
+\(\ll(\log X)^2\)\\
+\(\mathsf U_p\) &
+The opened coefficient \(-\mu(u_p)\log u_p\) on the moving leg &
+\(\ll\log X\)\\
+\(\mathsf H_p\) &
+The matched half-prefix on the opposite leg and any already
+evaluated residual prefix &
+\(X^{o(1)}\)\\
+\(\mathsf V_p\) &
+The row-gcd projector coefficient and its coprimality indicator &
+\(\le\tau(v_p)\) in modulus\\
+\(\mathsf C_p\) &
+\(\mu(\kappa_\beta)\mu(B_\beta)\), squarefree indicators, and
+the two exact-content extraction masks &
+\(\le1\) in modulus\\
+\(\mathsf S_p\) &
+Fixed-period, residue, smooth, Mellin/BV, interval, and actual
+support factors, including the outer active-divisibility indicator
+and the location of the single global normalization &
+\(X^{o(1)}\) pointwise\\
+\bottomrule
+\end{tabularx}
+\caption{Every source factor is charged exactly once.  The table
+does not replace the full provenance record by six anonymous
+numbers; it only groups factors for a pointwise estimate.}
+\label{tab:factors}
+\end{table}
+
+More explicitly, this is a crosswalk to the upstream formula, not a
+new schematic coefficient.  The factors inside \(c_{\theta,X}\) and
+\(\mathcal W_{\beta,X}(z)\) are assigned to
+\(\mathsf R_p,\mathsf U_p,\mathsf H_p,\mathsf V_p,\mathsf S_p\);
+\(\mu(\kappa_\beta)\mu(B_\beta)\) and the two squarefree extraction
+factors are assigned to \(\mathsf C_p\); and the active-divisibility
+indicator and inherited normalization are recorded once in
+\(\mathsf S_p\).  Unit phases disappear upon taking the modulus and
+are not additional positive-weight factors.
+
+\begin{lemma}[Physical row factors]
+\label{lem:rows}
+Uniformly on the actual dyadic packet,
+\[
+ |\mathsf R_p|\ll_{\mathscr D}(\log X)^2.
+\]
+\end{lemma}
+
+\begin{proof}
+The literal TPC-25/TPC-33 row formula is
+\[
+ \gamma_\alpha^{(i)}
+ =
+ \mu(d_\alpha)(\log\ell_\alpha)
+ \omega_D^{(i)}(d_\alpha)
+ \psi_L^{(i)}(\ell_\alpha/L)\zeta_\alpha^{(i)}.
+\]
+The final three factors are fixed and bounded on the physical
+packet, while \(\ell_\alpha\le X^{O(1)}\).  Hence each row
+coefficient is \(O_{\mathscr D}(\log X)\)
+\citep{WangTPC25,WangTPC33}.  In fact TPC-25 records directly
+\(\|\gamma^{(i)}\|_\infty\ll\log(2L)\).  Both polarizations use
+the same estimate.
+\end{proof}
+
+\begin{lemma}[Divisor-type factors]
+\label{lem:divisor}
+There are fixed constants \(A_0,C_0>0\), depending only on the
+dyadic data and the fixed decomposition, such that
+\[
+ |\mathsf U_p\mathsf H_p\mathsf V_p
+   \mathsf C_p\mathsf S_p|
+ \ll
+ (\log X)^{A_0}
+ \Delta_X^{A_0},
+ \qquad
+ \Delta_X:=\max_{1\le n\le X^{C_0}}\tau(n).
+\]
+\end{lemma}
+
+\begin{proof}
+All effective targets, divisors, row coordinates, and content
+variables are at most \(X^{C_0}\) for one fixed \(C_0\).
+The opened logarithmic coefficient is at most \(O(\log X)\).
+TPC-98 records the uniform bounds
+\[
+ \sum_{\substack{u\mid N\\T_X<u\le U_{0,X}}}
+ |\mu(u)|\log u=X^{o(1)}
+\]
+and
+\[
+ |\mathsf H_m(j)|+
+ |\mathsf A_{m,T_X}(j)|+
+ |\mathsf A_{m,U_{0,X}}(j)|=X^{o(1)}
+\]
+on the literal support \citep{WangTPC98}.  More explicitly, these
+are bounded by a fixed product of powers of \(\log X\) and divisor
+functions of effective integers.
+
+For the projector,
+\[
+ \lambda_{G_X^{\mathrm{row}}}(v)
+ =
+ \sum_{\substack{d\mid v\\d\le G_X^{\mathrm{row}}}}\mu(v/d),
+\]
+so \(|\lambda_{G_X^{\mathrm{row}}}(v)|\le\tau(v)\).
+Every M\"obius factor, squarefree indicator, and coprimality mask
+has modulus at most one.  The fixed smooth and residue factors are
+bounded.  The absolutely convergent separation representation has
+bounded total projective mass, so each of its retained coefficient
+atoms is bounded by that mass.  The number of multiplicative
+factor types is fixed, giving the displayed envelope.
+\end{proof}
+
+\section{Closure of Gate W}
+\label{sec:cap}
+
+\begin{theorem}[Normalized opened-atom cap]
+\label{thm:cap}
+For the actual TPC-100 invertible opened-atom support, with the
+literal TPC-33--TPC-94 factors and the single inherited physical
+normalization,
+\begin{equation}
+ \boxed{
+ W_X
+ \ll_{\mathscr D,h_0}
+ (\log X)^A
+ \left(\max_{n\le X^A}\tau(n)\right)^A
+ =X^{o(1)}}
+\label{eq:cap}
+\end{equation}
+for one fixed \(A>0\).
+\end{theorem}
+
+\begin{proof}
+If the support is empty there is nothing to prove.  Otherwise apply
+\cref{lem:rows,lem:divisor} to the exact partition
+\eqref{eq:six-factor}.  The classical divisor estimate, uniformly
+for \(n\le X^A\), is
+\[
+ \tau(n)
+ \le
+ \exp\!\left(O_A\!\left(\frac{\log X}{\log\log X}\right)\right)
+ =X^{o(1)}.
+\]
+A fixed product of this quantity and powers of \(\log X\) remains
+\(X^{o(1)}\).  No count over rows, children, contents, or branches
+occurs in a pointwise maximum.
+\end{proof}
+
+\begin{remark}[Uniformity and the fixed shift]
+The exponent \(o(1)\) is uniform over the fixed dyadic packet data
+and the one prescribed \(h_0\).  The result is not an average over
+shifts.  The condition \(q_X\nmid u_p\) merely selects the actual
+invertible support and does not enlarge the maximum.
+\end{remark}
+
+\begin{corollary}[The diagonal ledger is no longer independent]
+\label{cor:diagonal}
+Let
+\[
+ \PX=
+ \sum_H\frac{2H}{q_X-1}M_H^{\mathrm{inv}}.
+\]
+Then the TPC-101 principal-to-diagonal transfer becomes
+\[
+ \sum_Hg_{q_X}(H)\sqrt{\mathfrak D_H^\circ}
+ \le
+ X^{o(1)}
+ \sqrt{|\HX|(q_X-1)\PX}.
+\]
+Consequently, if
+\[
+ \PX\le X^{o(1)}Q_X^2,
+\]
+then
+\[
+ \sum_Hg_{q_X}(H)\sqrt{\mathfrak D_H^\circ}
+ \le X^{o(1)}Q_X^2.
+\]
+\end{corollary}
+
+\begin{proof}
+Insert \cref{thm:cap} into the exact TPC-101 transfer
+\[
+ \sum_Hg_{q_X}(H)\sqrt{\mathfrak D_H^\circ}
+ \le
+ \sqrt{W_X|\HX|(q_X-1)\PX}.
+\]
+Use \(|\HX|\le(q_X-1)/2\) and \(q_X\asymp Q_X\).
+\end{proof}
+
+\begin{remark}[What was and was not removed]
+The corollary removes the need for a separate positive
+opened-atom diagonal theorem.  It does not prove the principal
+bound, and it does not touch the distinct-atom cross ledger
+\(\XX\).  In particular, same-branch different-\(z\) atoms still
+collide in that cross ledger.
+\end{remark}
+
+\section{Why an \texorpdfstring{\(\ell^1\)}{l1} row bound was insufficient}
+\label{sec:obstruction}
+
+\begin{proposition}[Sharp abstract obstruction]
+\label{prop:l1-obstruction}
+Knowledge only of
+\[
+ \sum_\alpha|\gamma_\alpha^{(i)}|\le Q_X
+\]
+cannot imply a subpower opened-atom cap.  Indeed, there are
+nonnegative abstract row families satisfying this inequality for
+which one two-row atom has weight \(Q_X^2\).
+\end{proposition}
+
+\begin{proof}
+Take one active row in each polarization and give both rows
+coefficient \(Q_X\); set all other row coefficients to zero and
+all local factors to one.  Each \(\ell^1\) bound is saturated, while
+the product atom has weight \(Q_X^2\).
+\end{proof}
+
+\begin{remark}[The counterexample is not physical]
+\Cref{prop:l1-obstruction} does not contradict
+\cref{thm:cap}: it deliberately discards the explicit TPC-33 row
+formula.  It explains why TPC-101 and TPC-102 correctly isolated
+Gate W instead of inferring it from an aggregate norm.
+\end{remark}
+
+\section{Finite provenance regression}
+\label{sec:certificate}
+
+The deterministic script
+\texttt{experiments/tpc103\_atom\_cap\_audit.py} performs three
+kinds of exact checks:
+\begin{enumerate}[leftmargin=2em]
+\item the row-gcd projector identity
+\[
+ \sum_{v\mid(d,e)}
+ \sum_{\substack{g\mid v\\g\le G}}\mu(v/g)
+ =
+ \one_{(d,e)\le G};
+\]
+\item the source-to-child and child-to-source round trip on both
+polarizations for finite primitive samples; and
+\item a schema audit that assigns every literal factor category
+to exactly one of the six ledgers in \eqref{eq:six-factor}.
+\end{enumerate}
+The committed JSON records the counts and the claim boundary.
+These are regression tests for finite identities; they are not
+numerical evidence for an asymptotic M\"obius estimate.  The
+asymptotic input in \cref{thm:cap} is only the standard divisor
+bound.
+
+\section{Route consequence and claim boundary}
+\label{sec:boundary}
+
+\subsection*{Proved here}
+
+\begin{itemize}[leftmargin=2em]
+\item The exact opened atom has a six-ledger factor audit with no
+duplicated normalization.
+\item Every literal pointwise factor is logarithmic, bounded, or
+divisor-function sized on \(X^{O(1)}\).
+\item The actual normalized cap satisfies \(W_X=X^{o(1)}\).
+\item Therefore the TPC-101 width-weighted diagonal gate follows
+from the unresolved principal gate.
+\end{itemize}
+
+The finite factor partition is \(\Lzero\); its lossless attachment
+to the actual growing fixed-\(h_0\) carrier and the resulting cap
+are \(\Lone\) bookkeeping progress.
+
+\subsection*{Not proved here}
+
+\begin{itemize}[leftmargin=2em]
+\item No bound for \(\PX\) or \(\XX\) is proved.
+\item No positive-resonance closure, generic affine M\"obius
+cancellation, determinant lower bound, zero-mode saving,
+high-frequency return, or TPC-18 full-block cover is proved.
+\item No fixed-power saving for the complete growing fixed-\(h_0\)
+coefficient is obtained; hence no \(\Ltwo\) event occurs.
+\item No Hardy--Littlewood asymptotic, prime-pair lower bound,
+parity breakthrough, or twin-prime conclusion is proved or implied.
+\end{itemize}
+
+The strict physical endpoint remains
+\[
+ \Lambda_{\mathrm{phys}}<\frac1{400}.
+\]
+The present subpower cap spends no fixed exponent in that ledger.
+The next gate is the resolved principal-mass disintegration; the
+cross-map quotient comes only after that positive principal term is
+understood, in accordance with TPC-MVP1
+\citep{WangTPCMVP1}.
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

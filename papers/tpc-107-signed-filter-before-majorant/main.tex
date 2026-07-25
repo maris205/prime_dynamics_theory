@@ -1,0 +1,537 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Signed Filtering before Majorization},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact literal reconstruction and signed resonance energy in the TPC program},
+  pdfkeywords={fixed shift, signed filter, Mobius correlation, resonance, parity barrier}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\F}{\mathbb F}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{Signed Filtering before Majorization:\\
+Exact Literal Reconstruction, a Canonical Signed Energy,\\
+and Sharp Separation from Positive Resonance}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The positive TPC resonance route takes absolute values before the
+low-window reconstruction filter.  This is safe, but TPC-106 shows
+that distinct affine maps can remain perfectly aligned.  We return
+to the exact TPC-93 expansion and move the filter ahead of
+majorization.
+
+For the completely opened, frequency-free literal atoms \(p\), let
+\(a_p\) retain the source coefficient, both M\"obius signs, the
+extracted \(\mu(B)\), all masks and weights, and the one physical
+normalization.  Let \(\psi_p(r)\) be the exact unit phase,
+\(\omega_p\) the native multiplier, and \(H_p\) the inherited
+resonance width.  With the signed reconstruction multiplier
+\(\mathfrak m_X(r)\), the resonant contribution is exactly
+\[
+ \mathcal S_{\mathrm{res},X}
+ =
+ \sum_r\mathfrak m_X(r)
+ \sum_p a_p\psi_p(r)
+ \one_{E_{H_p}}(r\omega_p).
+\]
+Finite reordering gives the filter-first identity
+\[
+ \mathcal S_{\mathrm{res},X}
+ =
+ \sum_pa_p\mathcal K_p,\qquad
+ \mathcal K_p
+ =
+ \sum_r\mathfrak m_X(r)\psi_p(r)
+ \one_{E_{H_p}}(r\omega_p).
+\]
+Consequently the filtered-atom majorant
+\(\sum_p|a_p||\mathcal K_p|\) is always no larger than the
+pre-filter positive carrier.
+
+We also identify the canonical unfiltered signed frequency energy
+\[
+ \mathcal E_{\mathrm{sig},X}
+ =
+ \sum_r\left|
+ \sum_pa_p\psi_p(r)\one_{E_{H_p}}(r\omega_p)
+ \right|^2
+\]
+and prove its exact positive-semidefinite \(TT^*\) Gram formula.
+Thus
+\[
+ |\mathcal S_{\mathrm{res},X}|
+ \le\|\mathfrak m_X\|_2
+ \mathcal E_{\mathrm{sig},X}^{1/2}.
+\]
+Two sharp examples delimit the result.  Signed atoms can cancel
+completely while the positive carrier is nonzero; conversely, a
+phase gauge can saturate the positive carrier.  Hence filtering
+before majorization preserves a real cancellation channel but does
+not manufacture cancellation.  The reconstruction and inequalities
+are \(\Lzero\), and their imported literal dictionary is \(\Lone\).
+The growing fixed-\(h_0\) bound for
+\(\mathcal E_{\mathrm{sig},X}\) is a new \(\Ltwo\) arithmetic gate
+and is not proved.
+\end{abstract}
+
+\noindent\textbf{Keywords:} fixed-shift M\"obius correlation;
+signed reconstruction filter; resonance energy; \(TT^*\);
+positive majorant; parity barrier.
+
+\medskip
+\noindent\textbf{Audit convention.}
+\(\Lzero\) denotes finite identities and sharp finite examples,
+\(\Lone\) their exact attachment to the literal fixed-\(h_0\)
+dictionary, and \(\Ltwo\) only a growing fixed-shift arithmetic
+estimate.  No cancellation created by a model coefficient is
+reported as progress on the physical packet.
+
+\section{Why the order of operations matters}
+
+TPC-93 exports the complete low window into fixed-determinant affine
+fibers while retaining the two M\"obius signs, content extraction,
+both polarizations, exact phases, and provenance
+\citep{WangTPC93}.  TPC-99--TPC-102 then construct a positive
+resonance carrier by taking absolute values and derive exact
+finite-group bounds for it \citep{WangTPC99,WangTPC102}.  This route
+is sufficient, not equivalent to the signed low window.
+
+TPC-105 removes identical-map duplication, while TPC-106 proves
+that pairwise distinct maps can still align perfectly
+\citep{WangTPC105,WangTPC106}.  The prescribed fallback in
+TPC-MVP1 is therefore
+\[
+ \text{signed filter}
+ \longrightarrow
+ \text{arithmetic estimate}
+ \longrightarrow
+ \text{majorization},
+\]
+with no early deletion of phases or M\"obius signs
+\citep{WangTPCMVP1}.  The purpose of this paper is to make that
+fallback exact.
+
+\section{The frequency-free literal atom dictionary}
+
+Let \(q=q_X\) and \(G=\F_q^\times\).  Extend every frequency weight
+by zero outside the actual low window.  Let \(\mathcal P_X\) be the
+finite set of fully opened, frequency-free atoms in the unresolved
+\(q_X\)-invertible nonconstant carrier with inherited branch length
+\(1\le N_p\le q_X\).  Branches with \(N_p>q_X\) have no resonant
+nonzero frequency and remain in the separate generic return.  The
+conductor-one and
+\(q_X\mid u\) pieces may be absent only because their disjoint exact
+returns were already recorded in TPC-98 and TPC-100
+\citep{WangTPC102}.  An atom
+\(p\in\mathcal P_X\) retains:
+\begin{itemize}[leftmargin=2em]
+\item the source row, polarization, opposite row, interval
+component, content \(c\), projector \(\kappa\), extracted factor
+\(B\), and resolved point \(z\);
+\item the two reduced affine values
+\[
+ D_p=d_p+s_pz,\qquad V_p=u_p+a_p'z,
+ \qquad s_pu_p-a_p'd_p=h_0\ne0;
+\]
+\item the factors
+\(\mu(\kappa)\mu(B)\mu(D_p)\mu(V_p)\),
+\(\one_{(B,V_p)=1}\), every inherited mask, and the exact physical
+weight;
+\item the native multiplier
+\(\omega_p\in G\), inherited width \(H_p\), and every
+\(r\)-dependent unit phase.
+\end{itemize}
+
+To avoid a collision of notation, write \(\alpha_p\in\C\) for the
+complete \(r\)-independent signed coefficient of the atom, including
+one copy of the global normalization.  Write
+\(\psi_p:G\to\C\) for its exact phase, with
+\(|\psi_p(r)|\in\{0,1\}\); a zero records an inactive source
+condition.  In the TPC-93 notation, the additive part of this phase
+contains
+\[
+ e_{cq_X}(-r\varepsilon_\theta\Omega_pz),
+\]
+and the remaining \(r\)-dependent source phase is retained rather
+than set to one.
+
+Equivalently, the allowed atom set and factor split may be recorded
+as
+\[
+ \mathcal P_X=
+ \left\{(\theta,c,\kappa,z):
+ \begin{array}{l}
+ z\in I_{\theta,c,\kappa}^{\ast},\
+ 1\le N_{\theta,c,\kappa}\le q_X,\
+ q_X\nmid u_p,\\
+ \omega_p\in G,\ \text{and every inherited literal mask is active}
+ \end{array}\right\},
+\]
+and
+\begin{align*}
+ \alpha_p
+ &=
+ \mathcal N_Xc_{\theta,X}
+ \mu(\kappa_p)\mu(B_p)\mu(D_p)\mu(V_p)
+ \one_{(B_p,V_p)=1}\mathcal W_p^{(0)},\\
+ \psi_p(r)
+ &=
+ \zeta_{p,r}
+ e_{c_pq_X}(-r\varepsilon_\theta\Omega_pz)
+ \mathcal W_p^{(r)}.
+\end{align*}
+Here \(\mathcal N_X\) is the single inherited global normalization,
+\(\mathcal W_p^{(0)}\) is the product of all remaining
+\(r\)-independent literal weights and masks, and
+\(\mathcal W_p^{(r)}\) is the product of the remaining
+\(r\)-dependent unit phases or zero source masks.  This is a
+partition of the TPC-93 master coefficient, not a new
+renormalization.
+
+Let
+\[
+ \rho_p(r)
+ =
+ \one_{E_{H_p}}(r\omega_p),
+\qquad
+ \mathfrak m_X(r)=\mathfrak m_{K,X}(r)
+ \one_{\{0<d_{q_X}(r,0)\le R_X\}}.
+\]
+The filter is signed and complex; the previously used positive
+weight is \(|\mathfrak m_X(r)|\).
+
+\begin{theorem}[Exact signed resonant reconstruction]
+\label{thm:literal-reconstruction}
+Under the TPC-93 source-to-child inverse and exact-content
+crosswalk, the complete signed resonant contribution is
+\begin{equation}
+ \boxed{
+ \mathcal S_{\mathrm{res},X}
+ =
+ \sum_{r\in G}\mathfrak m_X(r)
+ \sum_{p\in\mathcal P_X}
+ \alpha_p\psi_p(r)\rho_p(r).}
+\label{eq:signed-frequency-form}
+\end{equation}
+Every literal opened atom occurs once.  No polarization, content
+factor, phase, mask, or fixed-\(h_0\) determinant is changed.
+\end{theorem}
+
+\begin{proof}
+Start with the finite TPC-93 sector master formula, split the
+complete outer coefficient into the signed reconstruction
+multiplier and the remaining source phase, and open the resolved
+fiber point \(z\).  The source-to-child inverse makes
+\((\theta,c,\kappa,z)\) a frequency-free atom, while the resonance
+test supplies \(\rho_p(r)\).  Reindexing finite sums gives
+\eqref{eq:signed-frequency-form}.  The exact content extraction is
+the step that retains determinant \(h_0\) and the factor
+\(\mu(B)\one_{(B,V_p)=1}\).
+\end{proof}
+
+\begin{remark}[Scope]
+\Cref{thm:literal-reconstruction} imports the previously proved
+literal dictionary.  It is not a new estimate for the inner
+M\"obius sum.
+\end{remark}
+
+\section{Filter first, majorize second}
+
+\begin{definition}[Atomwise filtered kernel]
+\label{def:atom-kernel}
+For \(p\in\mathcal P_X\), put
+\begin{equation}
+ \mathcal K_p
+ =
+ \sum_{r\in G}
+ \mathfrak m_X(r)\psi_p(r)\rho_p(r).
+\label{eq:atom-kernel}
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Filter-before-majorant identity and domination]
+\label{thm:filter-first}
+One has
+\begin{align}
+ \mathcal S_{\mathrm{res},X}
+ &=
+ \sum_{p\in\mathcal P_X}\alpha_p\mathcal K_p,
+\label{eq:filter-first-identity}\\
+ |\mathcal S_{\mathrm{res},X}|
+ &\le
+ \underbrace{\sum_p|\alpha_p||\mathcal K_p|}
+ _{\mathcal C_{\mathrm{filt},X}}
+ \le
+ \underbrace{\sum_p|\alpha_p|
+ \sum_r|\mathfrak m_X(r)|\rho_p(r)}
+ _{\mathcal C_{\mathrm{preabs},X}}.
+\label{eq:majorant-chain}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Interchange the two finite sums in
+\eqref{eq:signed-frequency-form}.  The first inequality is the
+triangle inequality after filtering.  For the second, apply the
+triangle inequality inside \eqref{eq:atom-kernel} and use
+\(|\psi_p(r)|\le1\).
+\end{proof}
+
+\begin{remark}[Relation to the positive census]
+After the literal fiber mass is opened into the atoms \(p\), the
+last term of \eqref{eq:majorant-chain} is the corresponding
+pre-filter positive carrier.  If one first replaces the signed
+fiber by a uniform absolute mass, it may be still larger.
+\end{remark}
+
+\begin{proposition}[The separation can be complete]
+\label{prop:complete-separation}
+There exist two signed atoms with identical
+\((\psi,\rho)\) and coefficients \(\alpha_1=1\),
+\(\alpha_2=-1\) for which
+\[
+ \mathcal S_{\mathrm{res}}=0,\qquad
+ \mathcal C_{\mathrm{filt}}=2|\mathcal K_1|,
+\qquad
+ \mathcal C_{\mathrm{preabs}}
+ =2\sum_r|\mathfrak m(r)|\rho_1(r).
+\]
+If \(\mathcal K_1\ne0\), both positive quantities are nonzero.
+\end{proposition}
+
+\begin{proof}
+The two atom contributions cancel at every frequency before the
+filter is applied.
+\end{proof}
+
+\begin{proposition}[No automatic phase saving]
+\label{prop:gauge-saturation}
+Given any nonzero filter \(\mathfrak m\) and nonempty resonance
+support \(\rho\), there is a unit phase \(\psi\) on that support such
+that
+\[
+ \left|
+ \sum_r\mathfrak m(r)\psi(r)\rho(r)
+ \right|
+ =
+ \sum_r|\mathfrak m(r)|\rho(r).
+\]
+\end{proposition}
+
+\begin{proof}
+On points where \(\mathfrak m(r)\ne0\), choose
+\(\psi(r)=\overline{\mathfrak m(r)}/|\mathfrak m(r)|\); choose any
+unit value elsewhere.
+\end{proof}
+
+The last proposition is a coefficient-blind sharpness statement.
+The literal phases are not freely chosen, but no theorem may infer a
+saving merely from their unit modulus.
+
+\section{\texorpdfstring{\hspace{0.35em}}{}The canonical signed energy and exact
+\texorpdfstring{\(TT^*\)}{TT-star}}
+
+Define the unfiltered signed frequency profile
+\begin{equation}
+ F_X(r)
+ =
+ \sum_{p\in\mathcal P_X}
+ \alpha_p\psi_p(r)\rho_p(r)
+\label{eq:signed-profile}
+\end{equation}
+and its energy
+\begin{equation}
+\mathcal E_{\mathrm{sig},X}
+=
+\sum_{r\in G}|F_X(r)|^2.
+\label{eq:signed-energy}
+\end{equation}
+This is canonical for the full finite frequency group, not an
+extremal minimum: restricting the sum to
+\(\operatorname{supp}\mathfrak m_X\) can only decrease it and gives
+another valid sufficient bound.
+
+\begin{theorem}[Exact signed Gram identity]
+\label{thm:signed-gram}
+Let
+\begin{equation}
+ \Gamma_{p,p'}
+ =
+ \sum_{r\in G}
+ \psi_p(r)\overline{\psi_{p'}(r)}
+ \rho_p(r)\rho_{p'}(r).
+\label{eq:gram-kernel}
+\end{equation}
+Then \(\Gamma\) is positive semidefinite and
+\begin{equation}
+ \boxed{
+ \mathcal E_{\mathrm{sig},X}
+ =
+ \sum_{p,p'}
+ \alpha_p\overline{\alpha_{p'}}
+ \Gamma_{p,p'}.}
+\label{eq:signed-ttstar}
+\end{equation}
+Moreover,
+\begin{equation}
+ |\mathcal S_{\mathrm{res},X}|
+ \le
+ \|\mathfrak m_X\|_2
+ \mathcal E_{\mathrm{sig},X}^{1/2}.
+\label{eq:energy-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Expand \eqref{eq:signed-energy} using
+\eqref{eq:signed-profile} to obtain
+\eqref{eq:signed-ttstar}.  The matrix is the Gram matrix of the
+vectors \(r\mapsto\psi_p(r)\rho_p(r)\).  Finally,
+\(\mathcal S_{\mathrm{res},X}=\langle\overline{\mathfrak m_X},
+F_X\rangle\) up to the chosen inner-product convention, so
+Cauchy--Schwarz gives \eqref{eq:energy-bound}.
+\end{proof}
+
+\begin{corollary}[A precise signed replacement gate]
+\label{cor:signed-gate}
+Since the inherited low-window filter satisfies
+\(\|\mathfrak m_X\|_2\ll_K1\), the bound
+\begin{equation}
+ \mathcal E_{\mathrm{sig},X}^{1/2}
+ \ll X^{o(1)}Q_X^2
+\label{eq:signed-gate}
+\end{equation}
+is sufficient to return the signed resonant contribution at the
+native TPC-102 scale.
+\end{corollary}
+
+\begin{remark}[Why this remains arithmetic]
+The off-diagonal entries of \eqref{eq:signed-ttstar} retain products
+of the actual M\"obius signs, source phases, and masks.  Bounding
+\eqref{eq:signed-gate} is therefore not finite spectral algebra.  It
+is a growing fixed-\(h_0\) arithmetic estimate.
+\end{remark}
+
+\section{What information survives}
+
+The signed profile in \eqref{eq:signed-profile} preserves
+simultaneously:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the signed reconstruction multiplier;
+\item the \(r\)-dependent source and determinant phases;
+\item both M\"obius signs and the extracted \(\mu(B)\);
+\item the coprimality mask \(\one_{(B,V)=1}\);
+\item the actual moving affine row and fixed determinant \(h_0\);
+\item both polarizations and all outer keys; and
+\item the one physical post-aggregation normalization.
+\end{enumerate}
+Replacing any item by an independent model variable changes the
+Gram matrix.  Conversely, identical signed atoms may be combined
+before absolute values provided their complete provenance remains
+recoverable.
+
+\par\medskip
+\begin{proposition}[Positive failure does not imply signed failure]
+\label{prop:route-logic}
+A polynomial obstruction in the principal or distinct-map term of a
+positive carrier does not yield a lower bound for
+\(\mathcal E_{\mathrm{sig},X}\) or
+\(|\mathcal S_{\mathrm{res},X}|\).
+\end{proposition}
+
+\begin{proof}
+\Cref{prop:complete-separation} gives an exact finite example with a
+nonzero positive carrier and zero signed profile.  Therefore no
+implication exists without additional literal information.
+\end{proof}
+
+\section{Deterministic regression certificate}
+
+The script \texttt{experiments/tpc107\_certificate.py} checks:
+\begin{itemize}[leftmargin=2em]
+\item the frequency-first and atom-filtered forms of the signed sum;
+\item the positive-majorant chain;
+\item the exact Gram identity and positive-semidefinite quadratic
+form on deterministic rational/complex examples;
+\item complete signed cancellation with positive absolute mass; and
+\item phase-gauge saturation.
+\end{itemize}
+These are finite regression checks, not numerical evidence for
+\eqref{eq:signed-gate}.
+
+\section{Claim boundary and route verdict}
+
+\subsection*{Proved}
+
+The exact literal signed resonant sum can be filtered before
+majorization.  The resulting atomwise majorant never exceeds the
+corresponding pre-filter positive carrier.  The canonical unfiltered
+signed frequency energy has the positive-semidefinite \(TT^*\) identity
+\eqref{eq:signed-ttstar}, and
+\eqref{eq:signed-gate} is a sufficient replacement gate.  Sharp
+finite examples show both complete improvement and complete
+saturation.  These are \(\Lzero\) statements; the imported
+source-to-atom crosswalk is \(\Lone\).
+
+\subsection*{Not proved}
+
+This paper does not prove:
+\begin{itemize}[leftmargin=2em]
+\item \eqref{eq:signed-gate} for the growing physical coefficient;
+\item a M\"obius or Liouville cancellation theorem on the actual
+fixed-\(h_0\) carrier;
+\item that the literal phases realize either sharp finite example;
+\item closure of the generic affine sector, high-frequency return,
+full-block reassembly, or the strict physical endpoint; or
+\item a parity breakthrough, prime-pair lower bound, or twin-prime
+theorem.
+\end{itemize}
+Nothing is specialized to \(h_0=2\).
+
+\subsection*{Verdict}
+
+TPC-107 opens the signed fallback corridor exactly, but it does not
+walk through the parity-facing door.  Its gain is architectural:
+cancellation discarded by the positive route is now represented by
+one explicit Gram energy.  TPC-108 must determine what arithmetic
+input could control the analogous literal generic-affine
+M\"obius sums without disguising an unproved Chowla-type estimate.
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

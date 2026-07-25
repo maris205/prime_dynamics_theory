@@ -1,0 +1,390 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{microtype}
+\setlength{\emergencystretch}{3em}
+\def\Urlmuskip{0mu plus 1mu}
+
+\hypersetup{
+  pdftitle={The Distinguished Determinant Zero Mode: Exact Coarsening Invariance, Signed-Prefix Duality, and a Cancellation Obstruction},
+  pdfauthor={Liang Wang},
+  pdfsubject={An energy-independent exact criterion for the distinguished zero mode of the literal fixed-shift determinant coefficient},
+  pdfkeywords={zero mode, determinant frequency, summation by parts, signed prefix, Liouville correlation, parity barrier}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\BV}{\mathrm{BV}_*}
+
+\title{\bfseries The Distinguished Determinant Zero Mode:\\
+Exact Coarsening Invariance, Signed-Prefix Duality,\\
+and a Cancellation Obstruction}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For the literal post-bin determinant coefficient
+\(A_X(n)\), the distinguished frequency is
+\[
+ Z_X=\sum_nA_X(n).
+\]
+We first prove that \(Z_X\) is exactly invariant under every
+provenance-preserving partition and coarsening of the native atoms:
+determinant binning can change energy but cannot create zero-mode
+cancellation.  We then insert the literal fixed-\(h_0\) affine
+M\"obius split.  On each ordered physical fiber the remaining sign
+is
+\[
+ \sigma(r)=\mu^2(L_1(r))\mu^2(L_2(r))
+            \lambda(L_1(r))\lambda(L_2(r)).
+\]
+If \(S(k)=\sum_{i\le k}\sigma(r_i)\), discrete summation by parts
+gives the sharp dual identity
+\[
+ \sup_{\|W\|_{\BV}\le1}
+ \left|\sum_i\sigma(r_i)W(r_i)\right|
+ =\max_k|S(k)|.
+\]
+Thus the exact structure-free norm controlling the weighted zero
+mode is a signed-prefix discrepancy, not determinant energy,
+support density, or nonzero-frequency dispersion.
+
+For the actual outer synthesis we obtain a fully explicit sufficient
+criterion involving its literal coefficients, fiber variations,
+signed-prefix discrepancies, and content remainder.  The criterion
+is fiberwise sharp for uniform control over the declared weight
+class; after summing outer keys it is sufficient and need not be
+necessary.  No
+power saving is proved for the growing physical signs.  This is an
+\(\Lzero/\Lone\) reduction and obstruction theorem.  It does not
+establish the exponent \(\eta_Z>0\), a parity breakthrough, or a
+prime-pair conclusion.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords:} distinguished zero mode; determinant
+frequency; signed-prefix discrepancy; summation by parts; fixed shift.
+
+\section{The distinguished frequency}
+
+Fix a prescribed \(h_0\ne0\).  Let \(\cT_X\) be the canonical native
+archive and \(\nu:\cT_X\to\cN_X\) the determinant map.  For literal
+coefficients \(u_t\), define
+\[
+ A_X(n)=\sum_{\nu(t)=n}u_t,\qquad
+ Z_X=\sum_{n\in\cN_X}A_X(n),\qquad
+ D_X=\sum_{n\in\cN_X}|A_X(n)|^2.
+\]
+This is the normalized determinant-DFT frequency \(r=0\) of
+TPC-32, not an orbit or transfer-operator zero mode
+\citep{WangTPC32,WangTPC81}.
+
+\begin{theorem}[Exact coarsening invariance]
+\label{thm:invariance}
+Let \(\pi:\cT_X\to Y\) be any finite partition map, and form
+\[
+ C_\pi(y)=\sum_{\pi(t)=y}u_t.
+\]
+Then
+\[
+ \boxed{\sum_{y\in Y}C_\pi(y)=\sum_{t\in\cT_X}u_t=Z_X.}
+\]
+In particular, determinant binning, content binning, or any further
+exact coarsening preserves the distinguished zero mode.
+\end{theorem}
+
+\begin{proof}
+The fibers of \(\pi\) form a disjoint partition of \(\cT_X\), so the
+finite sums may be interchanged.
+\end{proof}
+
+\begin{remark}[Energy behaves differently]
+The identity in \cref{thm:invariance} has no analogue for
+\(\sum_y|C_\pi(y)|^2\): coarsening creates cross terms and can either
+raise or lower energy.  Hence an energy census and a zero-mode
+estimate are logically independent.
+\end{remark}
+
+\section{Literal affine sign decomposition}
+
+TPC-90 resolves a primitive physical branch into affine forms
+\[
+ L_{1,\theta,X}(r)=d_{\theta,X}+s_{\theta,X}r,\qquad
+ L_{2,\theta,X}(r)=u_{\theta,X}+a_{\theta,X}r
+\]
+with the same prescribed determinant
+\[
+ s_{\theta,X}u_{\theta,X}
+ -a_{\theta,X}d_{\theta,X}=h_0.
+\]
+Assume, on the declared block, that content, masks, both
+polarizations, and all native outer keys have been retained and that
+the literal outer reassembly has been verified.  Its zero-mode
+interface then has the form
+\begin{equation}
+ Z_X
+ =
+ \sum_{\theta\in\Theta_X}
+ c_{\theta,X}
+ \sum_{r\in\cI_{\theta,X}}
+ W_{\theta,X}(r)\sigma_{\theta,X}(r)
+ +E_{\mathrm{content},X},
+\label{eq:outer}
+\end{equation}
+where
+\[
+ \sigma_{\theta,X}(r)
+ =
+ \mu^2(L_1(r))\mu^2(L_2(r))
+ \lambda(L_1(r))\lambda(L_2(r))
+ \in\{-1,0,1\}.
+\]
+This is the exact split \(\mu=\mu^2\lambda\)
+\citep{WangTPC90}.  Local squarefree density determines where
+\(\sigma\) vanishes, but not the signs on its active support.
+
+\section{Sharp signed-prefix duality}
+
+We now prove the energy-free analytic statement used by the literal
+zero-mode route.
+
+\begin{definition}[Terminal variation norm]
+For an ordered finite list \(w=(w_1,\dots,w_N)\), define
+\[
+ \|w\|_{\BV}
+ =
+ |w_N|+\sum_{k=1}^{N-1}|w_k-w_{k+1}|.
+\]
+\end{definition}
+
+\begin{theorem}[Exact Abel duality]
+\label{thm:duality}
+Let \(\sigma_1,\dots,\sigma_N\in\C\), and put
+\[
+ S_k=\sum_{i=1}^k\sigma_i.
+\]
+Then every \(w\in\C^N\) satisfies the exact identity
+\[
+ \sum_{i=1}^N\sigma_iw_i
+ =
+ S_Nw_N+
+ \sum_{k=1}^{N-1}S_k(w_k-w_{k+1}),
+\]
+and
+\[
+ \boxed{
+ \sup_{\|w\|_{\BV}\le1}
+ \left|\sum_{i=1}^N\sigma_iw_i\right|
+ =
+ \max_{1\le k\le N}|S_k|.}
+\]
+\end{theorem}
+
+\begin{proof}
+Put
+\[
+ d_k=w_k-w_{k+1}\quad(k<N),\qquad d_N=w_N.
+\]
+Then \(w_i=\sum_{k=i}^Nd_k\), so
+\[
+ \sum_i\sigma_iw_i=\sum_kS_kd_k.
+\]
+Also \(\|w\|_{\BV}=\sum_k|d_k|\).  The upper bound is
+\(\ell^1\)-\(\ell^\infty\) duality.  Equality is obtained by placing
+all \(d\)-mass at an index where \(|S_k|\) is maximal, with the
+conjugate phase of \(S_k\).
+\end{proof}
+
+\begin{corollary}[Literal fiber bound]
+\label{cor:fiber}
+Order one actual interval
+\(\cI_{\theta,X}=\{r_1<\cdots<r_N\}\), and define
+\[
+ \Delta_{\theta,X}
+ =
+ \max_{1\le k\le N}
+ \left|\sum_{i=1}^k\sigma_{\theta,X}(r_i)\right|,
+\qquad
+ V_{\theta,X}
+ =
+ \|(W_{\theta,X}(r_i))_{i=1}^N\|_{\BV}.
+\]
+Then
+\[
+ \left|
+ \sum_{r\in\cI_{\theta,X}}
+ W_{\theta,X}(r)\sigma_{\theta,X}(r)
+ \right|
+ \le
+ \Delta_{\theta,X}V_{\theta,X},
+\]
+with optimal constant for the declared variation norm.
+\end{corollary}
+
+\begin{remark}[The ordering is part of the statement]
+The order is the literal translated integer order on the physical
+fiber.  Reordering signs to improve their prefixes changes the
+coefficient and is not permitted.
+\end{remark}
+
+\section{A complete energy-independent go criterion}
+
+\begin{theorem}[Outer zero-mode certificate]
+\label{thm:outer}
+Assume the exact literal reassembly \eqref{eq:outer}.  Then
+\[
+ \boxed{
+ |Z_X|
+ \le
+ \sum_{\theta\in\Theta_X}
+ |c_{\theta,X}|
+ \Delta_{\theta,X}V_{\theta,X}
+ +|E_{\mathrm{content},X}|.}
+\]
+Consequently, the desired estimate
+\[
+ |Z_X|\le X^{-\eta_Z+o(1)}Q_X^2
+\]
+follows if the right-hand side has that size.
+\end{theorem}
+
+\begin{proof}
+Apply \cref{cor:fiber} to every term of
+\eqref{eq:outer}, then use the triangle inequality.
+\end{proof}
+
+\begin{remark}[Sufficient, not necessary for one physical weight]
+The criterion allows no cancellation between different outer keys,
+so it may be stronger than the scalar target.  For uniform estimates
+over all weights with prescribed variation, however,
+\cref{thm:duality} shows that the prefix discrepancy is the exact
+operator norm.  A future proof may instead exploit literal outer
+cancellation, but it must retain the same coefficients and
+provenance.
+\end{remark}
+
+\begin{proposition}[Unsigned data cannot pass the criterion]
+\label{prop:unsigned}
+If the Liouville product in \(\sigma_{\theta,X}\) is replaced by the
+constant sign \(1\), then
+\[
+ \Delta_{\theta,X}
+ =
+ \#\{r_i:\mu^2(L_1(r_i))\mu^2(L_2(r_i))=1\}.
+\]
+Thus squarefree-support density, by itself, gives the full active
+mass rather than cancellation.
+\end{proposition}
+
+\begin{proof}
+Every nonzero summand is \(+1\), so the prefix sums are nonnegative
+and maximal at the terminal prefix.
+\end{proof}
+
+\section{Why determinant energy does not estimate the zero mode}
+
+For a vector \(A=(A(n))_{n\in\cN}\), Cauchy--Schwarz gives only
+\[
+ |Z(A)|^2\le|\cN|\,D(A).
+\]
+It is sharp for a constant vector.  On the same support and with the
+same moduli, roots of unity can have zero sum.  This finite
+nonidentifiability was isolated in TPC-82
+\citep{WangTPC82}.  TPC-97 further shows that
+constant-preserving projection preserves \(Z\) while reducing
+energy, so it cannot manufacture a better numerator
+\citep{WangTPC97}.
+
+\begin{theorem}[Independent-gate verdict]
+\label{thm:verdict}
+None of the following data implies a positive exponent
+\(\eta_Z\) for the actual growing coefficient:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item determinant support and multiplicities;
+\item the value or a lower bound of \(D_X\);
+\item unsigned squarefree density;
+\item cancellation at every nonzero determinant-DFT frequency; or
+\item exact provenance-preserving coarsening.
+\end{enumerate}
+A proof of \(\eta_Z>0\) must estimate the literal signed prefixes,
+exploit a comparably strong outer cancellation, or introduce another
+arithmetic theorem that controls the same scalar \(Z_X\).
+\end{theorem}
+
+\begin{proof}
+Items (i)--(ii) are defeated by aligned and root-of-unity vectors
+with the same support and moduli.  Item (iii) is
+\cref{prop:unsigned}.  A constant signal has no nonzero Fourier
+frequencies but has maximal zero mode, proving (iv).  Item (v) is
+\cref{thm:invariance}.
+\end{proof}
+
+\section{Audited conclusion and next gate}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.34\textwidth}X@{}}
+\toprule
+Statement & Status\\
+\midrule
+Coarsening invariance and Abel duality
+& Exact finite theorems (\(\Lzero\)).\\
+Literal affine-sign crosswalk
+& Exact provided the TPC-90 outer reassembly is verified on the
+declared block (\(\Lone\)).\\
+Bound for the actual \(\Delta_{\theta,X}\)
+& Not proved; parity-facing arithmetic input.\\
+Positive exponent \(\eta_Z\)
+& Not established.\\
+Determinant energy or physical endpoint
+& Independent and not charged here.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+TPC-111 therefore produces a sharp \emph{criterion}, not the desired
+cancellation estimate.  TPC-112 may combine a future
+\(\eta_Z\) with a future determinant exponent \(\lambda_D\), but it
+must record the current values as ``unproved'' and keep the physical
+endpoint ledger separate.
+
+\paragraph{Explicit exclusions.}
+No theorem here controls a growing two-form Liouville or M\"obius
+correlation at fixed \(h_0\).  Nothing is specialized to \(h_0=2\).
+The paper proves no \(\Ltwo\) saving, parity breach,
+Hardy--Littlewood asymptotic, prime-pair lower bound, or twin-prime
+theorem.
+
+\begingroup
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

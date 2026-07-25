@@ -1,0 +1,405 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{microtype}
+\setlength{\emergencystretch}{3em}
+\def\Urlmuskip{0mu plus 1mu}
+
+\hypersetup{
+  pdftitle={Post-Bin Determinant Energy on the Actual Support: Exact Binning SVD, Kernel Angle, and a Natural-Scale Obstruction},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact support-level analysis of determinant binning for the literal fixed-shift coefficient},
+  pdfkeywords={determinant energy, actual support, binning operator, kernel angle, fixed shift, parity barrier}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\Ker}{\operatorname{Ker}}
+
+\title{\bfseries Post-Bin Determinant Energy on the Actual Support:\\
+Exact Binning SVD, Kernel Angle, and a Natural-Scale Obstruction}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let \(\cT_X\) be the canonical parent archive of the literal
+fixed-\(h_0\) matched coefficient, let
+\(\nu:\cT_X\to\cN_X\) be its determinant map, and write
+\[
+ A_X(n)=\sum_{\nu(t)=n}u_t,\qquad
+ D_X=\sum_n|A_X(n)|^2.
+\]
+We analyze this \emph{post-bin} energy on its actual finite support,
+without replacing the coefficient by an ambient or random model.
+The normalized determinant-binning operator is a coisometry.  Its
+adjoint projection is exact averaging on every determinant fiber,
+and its kernel is the direct sum of the zero-sum subspaces of those
+fibers.  If \(\Pi_X\) denotes this projection and \(m_n\) the actual
+fiber multiplicity, then
+\[
+ D_X=\sum_nm_n\|(\Pi_Xu)_{F_n}\|_2^2.
+\]
+Thus determinant-energy survival is exactly a weighted angle problem
+between the literal coefficient and the binning kernel.
+
+This gives a sharp structural dichotomy.  If all determinant fibers
+are singletons, then \(D_X\) equals the pre-bin diagonal energy,
+whose imported upper envelope is one full power below the desired
+natural scale.  If collisions occur, the support map has a
+nontrivial kernel and support or occupancy alone supplies no lower
+angle.  Therefore any lower bound with loss
+\(\lambda_D<1\) must use positive equal-determinant off-diagonal
+coherence of the actual coefficient.  We give exact necessary and
+sufficient certificate statistics, but prove no growing arithmetic
+lower bound.  The result is an \(\Lzero/\Lone\) obstruction and
+interface theorem, not an \(\Ltwo\) parity advance.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords:} determinant binning; kernel angle;
+equal-determinant coherence; fixed shift.
+
+\section{Literal packet and the question}
+
+Fix one prescribed \(h_0\in\Z\setminus\{0\}\).  In the canonical
+parent archive of TPC-95, a native key \(t\in\cT_X\) carries its
+literal coefficient \(u_t\) and determinant \(\nu(t)\ne0\)
+\citep{WangTPC95}.  Computational children have already been
+inverse-aggregated, so duplicates are not counted as new physical
+keys.  Put
+\[
+ F_n=\{t\in\cT_X:\nu(t)=n\},\qquad
+ m_n=|F_n|,\qquad
+ A_X(n)=\sum_{t\in F_n}u_t.
+\]
+Only nonempty fibers occur in \(\cN_X=\nu(\cT_X)\).
+
+The two energies are
+\[
+ E_X=\sum_{t\in\cT_X}|u_t|^2,\qquad
+ D_X=\sum_{n\in\cN_X}|A_X(n)|^2.
+\]
+The imported scale ledger is
+\[
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)}
+\]
+and
+\[
+ E_X\ll X^{-1+o(1)}Q_X^3J_X^2.
+\]
+The open natural-scale target has the form
+\[
+ D_X\ge X^{-\lambda_D+o(1)}Q_X^3J_X^2
+\]
+with, at minimum, a fixed \(\lambda_D<1\)
+\citep{WangTPC81,WangTPC82,WangTPC102}.
+
+\section{Exact SVD of determinant binning}
+
+Let \(H_X=\C^{\cT_X}\), \(K_X=\C^{\cN_X}\), both with counting
+measure.  Define the raw and normalized binning maps
+\[
+ (B_Xv)_n=\sum_{t\in F_n}v_t,\qquad
+ (U_Xv)_n=\frac1{\sqrt{m_n}}\sum_{t\in F_n}v_t.
+\]
+
+\begin{theorem}[Actual-support binning SVD]
+\label{thm:svd}
+The normalized map satisfies
+\[
+ U_XU_X^*=I_{K_X}.
+\]
+Consequently \(\Pi_X=U_X^*U_X\) is the orthogonal projection onto
+the subspace of vectors constant on each determinant fiber, and
+\[
+ (\Pi_Xv)_t=\frac1{m_n}\sum_{s\in F_n}v_s
+ \quad(t\in F_n).
+\]
+Moreover,
+\[
+ \Ker B_X=\Ker U_X
+ =\bigoplus_{n\in\cN_X}
+ \left\{v\in\C^{F_n}:\sum_{t\in F_n}v_t=0\right\},
+\]
+so
+\[
+ \dim\Ker B_X=|\cT_X|-|\cN_X|.
+\]
+\end{theorem}
+
+\begin{proof}
+For \(w\in K_X\), the adjoint has
+\[
+ (U_X^*w)_t=\frac{w_n}{\sqrt{m_n}}
+ \quad(t\in F_n).
+\]
+Summing this over \(F_n\) and dividing by \(\sqrt{m_n}\) returns
+\(w_n\), proving \(U_XU_X^*=I\).  The projection formula follows.
+The kernel statements are the defining zero-sum conditions, one
+independent equation per nonempty fiber.
+\end{proof}
+
+\begin{corollary}[Exact post-bin energy identity]
+\label{cor:energy}
+For the literal coefficient \(u=(u_t)\),
+\[
+ \boxed{
+ D_X
+ =\sum_{n\in\cN_X}
+ m_n\|(\Pi_Xu)|_{F_n}\|_2^2.}
+\]
+If the actual carrier is empty, then \(D_X=0\) and the following
+extrema are omitted.  Otherwise, writing
+\[
+ m_{\min}=\min_nm_n,\qquad
+ m_{\max}=\max_nm_n,
+\]
+one has
+\[
+ m_{\min}\|\Pi_Xu\|_2^2
+ \le D_X\le
+ m_{\max}\|\Pi_Xu\|_2^2.
+\]
+\end{corollary}
+
+\begin{proof}
+On \(F_n\), the projected vector has constant value
+\(A_X(n)/m_n\), hence its squared norm is
+\(|A_X(n)|^2/m_n\).  Multiply by \(m_n\) and sum.
+\end{proof}
+
+\section{The exact kernel-angle certificate}
+
+\begin{definition}[Actual alignment statistics]
+For \(u\ne0\), define
+\[
+ \alpha_X=\frac{\|\Pi_Xu\|_2^2}{\|u\|_2^2}\in[0,1].
+\]
+If \(\Pi_Xu\ne0\), define its effective multiplicity
+\[
+ \overline m_X
+ =\frac{D_X}{\|\Pi_Xu\|_2^2}.
+\]
+If \(\Pi_Xu=0\), set \(\overline m_X=0\).
+\end{definition}
+
+\begin{proposition}[Necessary and sufficient energy statistic]
+\label{prop:criterion}
+For every nonzero literal coefficient,
+\[
+ \boxed{D_X=E_X\alpha_X\overline m_X,}
+\]
+where either \(\alpha_X=\overline m_X=0\), or
+\[
+ m_{\min}\le\overline m_X\le m_{\max}.
+\]
+Therefore a proposed lower bound for \(D_X\) is equivalent to the
+same lower bound for the product
+\(E_X\alpha_X\overline m_X\).
+\end{proposition}
+
+\begin{proof}
+The identity is the definition of \(\overline m_X\), with
+\(\|\Pi_Xu\|_2^2=E_X\alpha_X\).  The range follows from
+\cref{cor:energy}.
+\end{proof}
+
+\begin{remark}[Not a circular proof device]
+\Cref{prop:criterion} is a diagnostic factorization.  It is useful
+only if \(E_X\), \(\alpha_X\), and \(\overline m_X\) are estimated by
+independent literal arguments.  Renaming \(D_X/E_X\) as an angle is
+not an arithmetic lower bound.
+\end{remark}
+
+\begin{corollary}[Forced amplification below loss one]
+\label{cor:amplification}
+Suppose the imported upper envelope for \(E_X\) holds and, as an
+additional future theorem,
+\[
+ D_X\ge X^{-\lambda_D+o(1)}Q_X^3J_X^2
+\quad\text{for fixed }\lambda_D<1.
+\]
+Then
+\[
+ \boxed{
+ \alpha_X\overline m_X
+ =\frac{D_X}{E_X}
+ \ge X^{1-\lambda_D-o(1)}.}
+\]
+\end{corollary}
+
+\begin{proof}
+Divide the assumed lower bound by the imported upper bound for
+\(E_X\).
+\end{proof}
+
+\section{Sharp structural obstruction}
+
+\begin{theorem}[Singleton-or-kernel dichotomy]
+\label{thm:dichotomy}
+Exactly one of the following holds.
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item Every actual determinant fiber is a singleton.  Then
+\[
+ D_X=E_X\ll
+ X^{-1+o(1)}Q_X^3J_X^2,
+\]
+so the diagonal route alone cannot prove a lower bound with fixed
+\(\lambda_D<1\).
+\item At least one actual determinant fiber has multiplicity at
+least two.  Then \(B_X\) has a nontrivial zero-sum kernel on the
+actual carrier, and the support partition alone gives no positive
+lower bound for \(\alpha_X\).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+In the singleton case \(B_X\) is a coordinate relabeling, so
+\(D_X=E_X\), and the imported diagonal envelope applies.
+In the collision case, choose two coordinates in one fiber with
+values \(1,-1\) and all other coordinates zero.  This nonzero vector
+lies in \(\Ker B_X\), so its alignment is zero.  Hence no positive
+lower angle follows from the partition alone.
+\end{proof}
+
+\begin{proposition}[Full-support sharpness]
+\label{prop:full-support}
+Assume at least one collided fiber.  Among coefficient vectors
+nonzero on every carrier coordinate, the ratio
+\[
+ \frac{D(v)}{\|v\|_2^2}
+\]
+can approach zero whenever every fiber is collided; if singleton
+fibers also occur, the contribution of those fibers can be made
+arbitrarily small relative to a zero-sum collided component.
+Thus merely declaring every carrier key active does not create a
+uniform lower angle.
+\end{proposition}
+
+\begin{proof}
+On each collided fiber use nonzero roots of unity, whose sum is zero.
+If singleton fibers occur, assign them a common amplitude
+\(\varepsilon\) and let \(\varepsilon\to0\), while retaining a fixed
+zero-sum component on one collided fiber.
+\end{proof}
+
+\section{Off-diagonal coherence is unavoidable}
+
+Define the ordered equal-determinant coherence
+\[
+ C_{\mathrm{eq},X}
+ =\sum_n\sum_{\substack{t,s\in F_n\\t\ne s}}
+ u_t\overline{u_s}.
+\]
+Then the exact identity is
+\[
+ D_X=E_X+C_{\mathrm{eq},X}.
+\]
+
+\begin{theorem}[Necessary coherent main term]
+\label{thm:coherence}
+Under the hypothetical lower bound in
+\cref{cor:amplification}, with fixed \(\lambda_D<1\),
+\[
+ C_{\mathrm{eq},X}=(1-o(1))D_X.
+\]
+In particular, any successful below-loss-one energy theorem must
+produce asymptotically positive equal-determinant off-diagonal
+coherence on the actual coefficient.
+\end{theorem}
+
+\begin{proof}
+The imported diagonal envelope and the hypothetical lower bound give
+\[
+ \frac{E_X}{D_X}\ll X^{\lambda_D-1+o(1)}=o(1).
+\]
+Use \(C_{\mathrm{eq},X}=D_X-E_X\).
+\end{proof}
+
+TPC-95 proves that complete shared-target collisions are already
+lower order under any such future energy theorem
+\citep{WangTPC95}.  Therefore a successful coherent main term would
+have to lie in the remaining determinant-preserving structure, not
+in duplicated native targets.
+
+\section{Audited conclusion}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.34\textwidth}X@{}}
+\toprule
+Statement & Status\\
+\midrule
+Actual-support binning SVD and kernel
+& Exact finite theorem (\(\Lzero\)); literal identification is
+\(\Lone\).\\
+Natural-scale lower bound for \(D_X\)
+& Not proved.\\
+Support-only determinant-energy route
+& Stopped by the singleton-or-kernel dichotomy.\\
+Required new input
+& Arithmetic control of the literal kernel angle or positive
+equal-determinant coherence.\\
+Distinguished zero mode
+& Not estimated here; TPC-111 treats it independently.\\
+Parity or prime-pair consequence
+& None; no \(\Ltwo\) claim.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The paper establishes the strongest support-only statement available:
+the complete SVD, the exact diagnostic product, and a sharp
+obstruction.  It does not show that the actual coefficient is close
+to the binning kernel, nor that it stays away from it.
+
+\paragraph{Independent ledgers.}
+Even a future determinant exponent \(\lambda_D\) must be paired with
+an independently proved zero-mode exponent \(\eta_Z\) satisfying
+\(\lambda_D\le2\eta_Z\).  That compatibility is separate from the
+physical synthesis condition
+\(\Lambda_{\rm phys}<1/400\).  No loss in this paper is credited to
+both ledgers.
+
+\paragraph{Explicit exclusions.}
+No result is specialized to \(h_0=2\).  This paper proves no
+M\"obius or Liouville cancellation, no determinant-energy lower
+bound at a growing scale, no zero-mode estimate, no breach of the
+sieve parity barrier, no Hardy--Littlewood asymptotic, and no
+twin-prime theorem.
+
+\begingroup
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

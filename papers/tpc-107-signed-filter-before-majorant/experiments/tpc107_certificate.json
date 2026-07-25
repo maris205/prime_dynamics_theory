@@ -1,0 +1,25 @@
+{
+  "schema": "tpc-107-signed-filter-certificate-v1",
+  "status": "PASS",
+  "checks": 10,
+  "claim_boundary": {
+    "finite_reconstruction_only": true,
+    "actual_signed_energy_bound": false,
+    "fixed_h0_L2_estimate": false,
+    "prime_pair_result": false
+  },
+  "generic_example": {
+    "signed_sum_abs": 2.6839002812233033,
+    "filtered_majorant": 2.739729416567087,
+    "prefilter_majorant": 6.464561909611424,
+    "signed_energy": 9.956000916517656
+  },
+  "cancellation_example": {
+    "signed_sum_abs": 0.0,
+    "prefilter_majorant": 6.0
+  },
+  "gauge_saturation": {
+    "signed_sum_abs": 5.328397196713036,
+    "prefilter_majorant": 5.328397196713036
+  }
+}

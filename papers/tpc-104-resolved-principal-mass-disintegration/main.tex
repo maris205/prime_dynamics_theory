@@ -1,0 +1,554 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={Resolved Principal Mass Before Width Grouping},
+  pdfauthor={Liang Wang},
+  pdfsubject={TPC-104 exact endpoint and inverse-length disintegration},
+  pdfkeywords={principal mass, resonance width, inverse length, fixed shift, opened atoms}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\PX}{\mathfrak P_X}
+\newcommand{\EX}{\mathfrak E_X}
+\newcommand{\LX}{\mathfrak L_X}
+
+\title{\textbf{Resolved Principal Mass Before Width Grouping:}\\
+Exact Endpoint Return and an Inverse-Length Equivalence}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The positive multiplicative-resonance route contains the unresolved
+principal mass
+\[
+ \mathfrak P_X
+ =
+ \sum_\beta
+ \frac{2H_{q_X}(N_\beta)}{q_X-1}
+ \sum_{\substack{z\in I_\beta^\ast\\q_X\nmid u_{\beta,z}}}
+ w_{\beta,z},
+ \qquad
+ H_q(N)=
+ \min\!\left\{\frac{q-1}{2},\left\lfloor\frac qN\right\rfloor\right\}.
+\]
+We open this quantity before grouping equal widths or multipliers
+and obtain an exact endpoint/long-fiber disintegration.
+
+For \(N=1,2\), one has
+\[
+ \frac{2H_q(N)}{q-1}=1,\qquad
+ g_q(H_q(N))=0.
+\]
+Thus every remaining invertible atom on these fibers is purely
+principal and enters with its full physical weight.  For
+\(3\le N\le q\), the elementary but sharp uniform comparison
+\[
+ \frac1N
+ \le
+ \frac{2\lfloor q/N\rfloor}{q-1}
+ \le
+ \frac{2q}{(q-1)N}
+\]
+holds.  If
+\[
+ \mathfrak E_X
+ =
+ \sum_{\substack{\beta:N_\beta\le2\\z\in I_\beta^\ast\\
+                  q_X\nmid u_{\beta,z}}}w_{\beta,z},
+ \qquad
+ \mathfrak L_X
+ =
+ \sum_{\substack{\beta:3\le N_\beta\le q_X}}
+ \frac1{N_\beta}
+ \sum_{\substack{z\in I_\beta^\ast\\q_X\nmid u_{\beta,z}}}
+ w_{\beta,z},
+\]
+then
+\[
+ \boxed{
+ \mathfrak E_X+\mathfrak L_X
+ \le\mathfrak P_X
+ \le
+ \mathfrak E_X+
+ \frac{2q_X}{q_X-1}\mathfrak L_X.}
+\]
+Consequently the principal gate is equivalent, up to absolute
+constants and in the same physical normalization, to controlling
+the actual endpoint mass and inverse-length mass separately.
+
+This is an exact \(\Lone\) reduction, not a proof of either bound.
+We also give sharp positive countermodels showing that the
+\(1/N_\beta\) factor alone cannot control a polynomial number of
+branches, and that a long-fiber estimate cannot return the
+\(N=1,2\) mass.  No \(\Ltwo\) fixed-shift estimate or parity
+breakthrough is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+principal resonance; resolved length; endpoint fiber; inverse-length
+mass; positive majorant; fixed shift.
+
+\medskip
+\noindent\textbf{Literal-frame convention.}
+Every sum uses the actual \(q_X\nmid u\) opened atoms, their physical
+weights, one prescribed \(h_0\ne0\), and one inherited global
+normalization.  No ambient branch count replaces an opened mass,
+and nothing is specialized to \(h_0=2\).
+
+\section{The unresolved principal term}
+\label{sec:introduction}
+
+TPC-99 represents nonconstant resonance by the incidence window
+\[
+ E_H=\{\pm1,\ldots,\pm H\}\subset\mathbb F_q^\times.
+\]
+TPC-100 then opens each frequency-free branch
+\(\beta=(\theta,c,\kappa)\) into atoms
+\[
+ p=(\beta,z),\qquad
+ w_{\beta,z}\ge0,\qquad
+ w_\beta=\sum_{z\in I_\beta^\ast}w_{\beta,z},
+\]
+without changing its resolved length
+\[
+ N_\beta=\#I_\beta^\ast
+\]
+or its resonance width \(H_q(N_\beta)\)
+\citep{WangTPC99,WangTPC100}.  After separately returning the
+\(q_X\mid u_{\beta,z}\) submass, the remaining principal ledger is
+\begin{equation}
+ \PX
+ =
+ \sum_{\substack{\beta\\1\le N_\beta\le q_X}}
+ \rho_{q_X}(N_\beta)
+ \sum_{\substack{z\in I_\beta^\ast\\q_X\nmid u_{\beta,z}}}
+ w_{\beta,z},
+\qquad
+ \rho_q(N):=\frac{2H_q(N)}{q-1}.
+\label{eq:P}
+\end{equation}
+The frequency-filter factor \(B_X=\|b_X\|_1\ll1\) is not included
+in \(\PX\).
+
+TPC-102 proposes opening \eqref{eq:P} before grouping by equal
+width.  That order matters.  Grouping first hides the fact that
+full-width resonance occurs at \(N=1,2\) and
+that the remaining coefficient is exactly comparable to \(1/N\)
+\citep{WangTPC101,WangTPC102}.
+
+\section{The exact width coefficient}
+\label{sec:coefficient}
+
+Let \(q\) be an odd prime and \(1\le N\le q\).  Recall
+\[
+ H_q(N)=
+ \min\!\left\{\frac{q-1}{2},\left\lfloor\frac qN\right\rfloor\right\}.
+\]
+
+\begin{lemma}[The \(N=1,2\) full-width endpoint lengths]
+\label{lem:endpoints}
+For \(N=1,2\),
+\[
+ H_q(N)=\frac{q-1}{2},
+ \qquad
+ \rho_q(N)=1.
+\]
+For \(3\le N\le q\),
+\[
+ H_q(N)=\left\lfloor\frac qN\right\rfloor.
+\]
+\end{lemma}
+
+For \(q\ge5\), these are the only full-width lengths.  At the
+degenerate prime \(q=3\), \(N=3\) also has
+\(H_3(3)=(q-1)/2\); it is nevertheless included correctly in the
+\(N\ge3\) inverse-length ledger below.
+
+\begin{proof}
+For \(N=1\), the minimum in \(H_q(N)\) is visibly
+\((q-1)/2\).  Since \(q\) is odd,
+\(\lfloor q/2\rfloor=(q-1)/2\), proving the same assertion for
+\(N=2\).  If \(N\ge3\), then
+\[
+ \left\lfloor\frac qN\right\rfloor
+ \le\left\lfloor\frac q3\right\rfloor
+ \le\frac{q-1}{2}.
+\]
+\end{proof}
+
+\begin{lemma}[Sharp inverse-length comparison]
+\label{lem:comparison}
+For every odd prime \(q\) and \(3\le N\le q\),
+\begin{equation}
+ \frac1N
+ \le\rho_q(N)
+ \le\frac{2q}{(q-1)N}
+ \le\frac3N.
+\label{eq:comparison}
+\end{equation}
+The first inequality also holds for \(N=1,2\).
+\end{lemma}
+
+\begin{proof}
+Write \(k=\lfloor q/N\rfloor\) and \(q=kN+r\) with
+\(0\le r<N\).  Then
+\[
+ 2Nk-(q-1)=kN-r+1\ge N-r+1>0.
+\]
+Thus
+\[
+ \rho_q(N)=\frac{2k}{q-1}\ge\frac1N.
+\]
+The upper bound follows from \(k\le q/N\).  Finally
+\(2q/(q-1)\le3\) for \(q\ge3\).  At \(N=1,2\), use
+\cref{lem:endpoints}.
+\end{proof}
+
+\begin{remark}[Optimal constants]
+The lower constant \(1\) cannot be replaced uniformly by a number
+larger than \(1\): for \(N=(q+1)/2\),
+\[
+ N\rho_q(N)=\frac{q+1}{q-1}\longrightarrow1.
+\]
+The asymptotic upper constant \(2\) is also sharp, for example at
+\(N=q\), where \(N\rho_q(N)=2q/(q-1)\).
+\end{remark}
+
+\section{Resolved disintegration}
+\label{sec:disintegration}
+
+For one branch define its actual remaining invertible mass
+\[
+ M_\beta^{\mathrm{inv}}
+ =
+ \sum_{\substack{z\in I_\beta^\ast\\q_X\nmid u_{\beta,z}}}
+ w_{\beta,z}.
+\]
+This may be smaller than the full branch mass \(w_\beta\); no
+replacement by \(N_\beta\) or an ambient count is made.
+
+\begin{definition}[Endpoint and inverse-length ledgers]
+\label{def:ledgers}
+Set
+\begin{align}
+ \EX
+ &=
+ \sum_{\substack{\beta\\N_\beta=1,2}}
+ M_\beta^{\mathrm{inv}},
+\label{eq:E}\\
+ \LX
+ &=
+ \sum_{\substack{\beta\\3\le N_\beta\le q_X}}
+ \frac{M_\beta^{\mathrm{inv}}}{N_\beta}.
+\label{eq:L}
+\end{align}
+We also write
+\[
+ \EX=\mathfrak E_{1,X}+\mathfrak E_{2,X}
+\]
+for the exact \(N=1\) and \(N=2\) subledgers.
+\end{definition}
+
+\begin{theorem}[Exact endpoint/long-fiber disintegration]
+\label{thm:disintegration}
+The actual principal mass satisfies the identity
+\begin{equation}
+ \PX
+ =
+ \mathfrak E_{1,X}+\mathfrak E_{2,X}
+ +
+ \sum_{\substack{\beta\\3\le N_\beta\le q_X}}
+ \frac{2\lfloor q_X/N_\beta\rfloor}{q_X-1}
+ M_\beta^{\mathrm{inv}}.
+\label{eq:exact-disintegration}
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{
+ \EX+\LX
+ \le\PX
+ \le
+ \EX+\frac{2q_X}{q_X-1}\LX
+ \le\EX+3\LX.}
+\label{eq:equivalence}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Insert \cref{lem:endpoints} into \eqref{eq:P} for
+\(N_\beta=1,2\), and insert its long-fiber formula for
+\(N_\beta\ge3\).  This gives
+\eqref{eq:exact-disintegration}.  Apply
+\cref{lem:comparison} term by term to the nonnegative literal
+weights.
+\end{proof}
+
+\begin{corollary}[Equivalent formulation of Gate P]
+\label{cor:gate}
+The following are equivalent:
+\begin{align*}
+ \PX&\le X^{o(1)}Q_X^2,\\
+ \EX+\LX&\le X^{o(1)}Q_X^2,\\
+ \EX&\le X^{o(1)}Q_X^2
+ \quad\text{and}\quad
+ \LX\le X^{o(1)}Q_X^2.
+\end{align*}
+All three statements have the same quantifier scope and physical
+normalization.
+\end{corollary}
+
+\begin{proof}
+Use \eqref{eq:equivalence}, nonnegativity, and the fact that fixed
+constants are absorbed in \(X^{o(1)}\).
+\end{proof}
+
+\begin{remark}[What ``equivalent'' does not mean]
+\Cref{cor:gate} is an exact reduction of one sufficient positive
+gate.  It does not identify that gate with the original signed
+low-window sum.  A failure of \(\EX\) or \(\LX\) may stop the
+termwise positive route while signed frequency or branch
+cancellation remains possible.
+\end{remark}
+
+\section{The endpoint mass is exactly principal}
+\label{sec:endpoint}
+
+TPC-101 defines
+\[
+ g_q(H)=
+ \sqrt{\frac{2H(q-1-2H)}{q-1}}.
+\]
+
+\begin{proposition}[Exact \(N=1,2\) return]
+\label{prop:endpoint-return}
+For \(N_\beta=1,2\),
+\[
+ g_{q_X}(H_{q_X}(N_\beta))=0.
+\]
+Moreover, for the fixed positive frequency weight \(b_X\),
+the endpoint contribution to the multiplicative incidence carrier
+is exactly
+\begin{equation}
+ B_X\EX,\qquad B_X=\sum_{r\in\mathbb F_{q_X}^\times}b_X(r).
+\label{eq:endpoint-carrier}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+By \cref{lem:endpoints}, \(H=(q_X-1)/2\), so the displayed formula
+for \(g_q\) vanishes.  At this width,
+\[
+ E_H=\mathbb F_{q_X}^\times.
+\]
+Hence the incidence indicator is one for every pair
+\((r,\omega)\), and its bilinear form is the product of the two
+total masses.  The opened census mass at these two lengths is
+\(\EX\).
+\end{proof}
+
+\begin{remark}[No centered theorem can pay the endpoint]
+The vanishing of \(g_q(H)\) is not a saving on \(\EX\).  It says
+that the incidence operator has only its principal contribution at
+full width.  Every surviving endpoint atom therefore has to be
+returned through \eqref{eq:endpoint-carrier}, with its full physical
+weight.
+\end{remark}
+
+\section{Consequences of the atom cap}
+\label{sec:atom-cap}
+
+TPC-103 proves on the same actual support that
+\[
+ W_X:=\max_{\beta,z}w_{\beta,z}=X^{o(1)}.
+\]
+This is the literal pointwise result of TPC-103
+\citep{WangTPC103}.
+Let
+\[
+ \mathcal B_{\le2,X}^{\mathrm{inv}}
+ =
+ \{\beta:N_\beta\le2,\ M_\beta^{\mathrm{inv}}>0\},
+\qquad
+ \mathcal B_{\ge3,X}^{\mathrm{inv}}
+ =
+ \{\beta:3\le N_\beta\le q_X,\
+ M_\beta^{\mathrm{inv}}>0\}.
+\]
+
+\begin{proposition}[Exact-count sufficient conditions]
+\label{prop:count}
+One has
+\begin{align}
+ \EX
+ &\le2W_X
+ |\mathcal B_{\le2,X}^{\mathrm{inv}}|,
+\label{eq:E-count}\\
+ \LX
+ &\le W_X
+ |\mathcal B_{\ge3,X}^{\mathrm{inv}}|.
+\label{eq:L-count}
+\end{align}
+Thus a subpower atom cap plus an
+\(X^{o(1)}Q_X^2\) bound for each actual branch census is sufficient
+for Gate P.
+\end{proposition}
+
+\begin{proof}
+A branch of length \(N_\beta\) contains at most \(N_\beta\) opened
+atoms.  Hence
+\[
+ M_\beta^{\mathrm{inv}}\le N_\beta W_X.
+\]
+For \(N_\beta\le2\), sum this inequality directly.  For
+\(N_\beta\ge3\), divide by \(N_\beta\) before summing.
+\end{proof}
+
+\begin{remark}[Why this is not an ambient-count replacement]
+\Cref{prop:count} is only a sufficient corollary after the exact
+weighted identities have been proved.  It does not authorize
+replacing \(M_\beta^{\mathrm{inv}}\) by \(N_\beta\) in
+\eqref{eq:exact-disintegration}.  A future proof should use the
+literal weights whenever they improve the crude branch census.
+\end{remark}
+
+\section{Sharp positive obstructions}
+\label{sec:obstructions}
+
+\begin{proposition}[Inverse length does not eliminate branch count]
+\label{prop:branch-count}
+For every \(M\ge1\) and \(3\le N\le q\), there is an abstract
+nonnegative resolved census with \(M\) branches of length \(N\),
+unit atom cap, and
+\[
+ \LX=M,\qquad
+ \PX=M\,N\rho_q(N)\asymp M.
+\]
+Thus the \(1/N\) factor alone gives no bound independent of the
+number of active branches.
+\end{proposition}
+
+\begin{proof}
+Give every branch exactly \(N\) atoms of weight one.  Then
+\(M_\beta^{\mathrm{inv}}=N\), so its contribution to \(\LX\) is
+one.  The formula for \(\PX\) follows from
+\eqref{eq:P}, and \cref{lem:comparison} bounds
+\(N\rho_q(N)\) between \(1\) and \(3\).
+\end{proof}
+
+\begin{proposition}[Long fibers cannot return the endpoints]
+\label{prop:endpoint-obstruction}
+For every \(M\ge1\) there is an abstract nonnegative census with
+unit atom cap and \(M\) one-point branches such that
+\[
+ \LX=0,\qquad\EX=\PX=M.
+\]
+\end{proposition}
+
+\begin{proof}
+Take \(M\) branches with \(N_\beta=1\), one atom of weight one on
+each, and apply \cref{lem:endpoints}.
+\end{proof}
+
+\begin{remark}[Scope of the countermodels]
+The two constructions are \(\Lzero\) sharpness examples for the
+information used in a positive inequality.  They do not assert
+that the actual TPC carrier contains such a family and are not stop
+certificates for the physical route.  They prove that an actual
+mass or branch-incidence theorem is still needed.
+\end{remark}
+
+\section{Finite exact certificate}
+\label{sec:certificate}
+
+The script
+\texttt{experiments/tpc104\_principal\_mass\_audit.py} checks, using
+exact rational arithmetic:
+\begin{itemize}[leftmargin=2em]
+\item every \(1\le N\le q\) for a deterministic list of odd
+primes;
+\item the endpoint identities and both inequalities in
+\eqref{eq:comparison};
+\item the exact disintegration on deterministic weighted branch
+families; and
+\item the two countermodel formulas.
+\end{itemize}
+Its JSON output is a finite regression certificate, not numerical
+evidence that the actual growing ledgers satisfy their target.
+
+\section{Route decision and claim boundary}
+\label{sec:boundary}
+
+\subsection*{Established}
+
+\begin{itemize}[leftmargin=2em]
+\item The \(N=1,2\) invertible mass is returned exactly as a purely
+principal term.
+\item The long principal coefficient is uniformly and sharply
+comparable to \(1/N_\beta\).
+\item Gate P is equivalent to the pair of actual weighted bounds
+\(\EX,\LX\le X^{o(1)}Q_X^2\).
+\item The TPC-103 cap reduces crude control of those ledgers to
+actual branch censuses, but does not prove the censuses.
+\end{itemize}
+
+These are \(\Lzero\) coefficient identities and an \(\Lone\)
+lossless reduction on the actual fixed-\(h_0\) carrier.
+
+\subsection*{Not established}
+
+\begin{itemize}[leftmargin=2em]
+\item Neither \(\EX\) nor \(\LX\) is bounded at the target scale
+for the growing physical packet.
+\item No polynomial lower bound for either actual ledger is proved,
+so the positive route is not declared stopped.
+\item No cross-map estimate, signed affine M\"obius cancellation,
+full-block return, or strict endpoint closure is proved.
+\item No \(\Ltwo\) fixed-power saving, parity breakthrough,
+Hardy--Littlewood asymptotic, prime-pair lower bound, or twin-prime
+conclusion follows.
+\end{itemize}
+
+The next exact task is to quotient identical affine maps without
+losing their input profile or source provenance.  Only after that
+quotient is lossless should the genuinely distinct-map incidence
+be attacked, as prescribed by TPC-MVP1
+\citep{WangTPCMVP1}.
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

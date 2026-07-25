@@ -1,0 +1,700 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,enumitem,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+  pdftitle={A Provenance-Preserving Quotient of Literal Affine Maps},
+  pdfauthor={Liang Wang},
+  pdfsubject={TPC-105 exact map quotient and collision splitting},
+  pdfkeywords={affine map, provenance, collision energy, fixed shift, resonance carrier}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\PX}{\mathfrak P_X}
+\newcommand{\XX}{\mathfrak X_X}
+\newcommand{\KX}{\mathfrak K_X}
+\newcommand{\YX}{\mathfrak Y_X}
+
+\title{\textbf{A Provenance-Preserving Quotient}\\
+\textbf{of Literal Affine Maps:}\\
+Exact Collision Splitting and the Identical-Map Concentration Ledger}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-100 linearizes every remaining invertible opened atom as
+\[
+ \omega_p=A_p(m_pj_p+h_0)
+ \quad\text{in }\mathbb F_{q_X}^{\times},
+\]
+but its maximally literal fine cells are singletons.  Thus all
+distinct-atom collisions remain in the cross-cell ledger, and
+different cells may induce the same affine map.  We construct the
+canonical quotient required before a genuine cross-map estimate is
+attempted.
+
+Attach to an atom \(p\) the map
+\[
+ \phi_p(x)=s_px+t_p,\qquad
+ s_p=A_pm_p,\quad t_p=A_ph_0.
+\]
+Atoms are equivalent when their pairs \((s_p,t_p)\) agree.  A
+lossless quotient record consists of the full recoverable
+provenance bag together with the input profile
+\[
+ \nu_\phi(j)=
+ \sum_{\substack{p:\phi_p=\phi\\j_p=j}}w_p.
+\]
+The profile, not merely the total map weight, is necessary and
+sufficient for the positive multiplier census:
+\[
+ a_H^{\mathrm{inv}}(\omega)
+ =
+ \sum_\phi\sum_j
+ \nu_\phi(j)\one_{\{\phi(j)=\omega\}}.
+\]
+We give a two-point counterexample proving that map totals alone
+lose the census.
+
+Because \(h_0,A_p,m_p\) are nonzero modulo the strong no-wrap prime,
+two maps agree exactly when \(A_p=A_{p'}\) and
+\(m_p=m_{p'}\) modulo \(q_X\); no-wrap upgrades the latter to
+equality of the physical row integers.  Within one map, output
+collision is exactly equality of the input coordinates.
+Consequently the TPC-100 centered cross ledger splits identically as
+\[
+ \mathfrak X_H^\circ
+ =
+ \mathfrak K_H^\circ+\mathfrak Y_H^\circ,
+\]
+where \(\mathfrak K_H^\circ\) contains identical maps and
+\(\mathfrak Y_H^\circ\) contains genuinely distinct maps.
+
+If \(M_{H,\phi}\) is the mass of one map class,
+\(U_X=\max_{H,\phi}M_{H,\phi}\), and \(M_H\) is the total width
+mass, then
+\[
+ |\mathfrak K_H^\circ|\le U_XM_H,
+\]
+and therefore
+\[
+ \sum_Hg_{q_X}(H)\sqrt{|\mathfrak K_H^\circ|}
+ \le
+ \sqrt{U_X|\mathcal H_X|(q_X-1)\mathfrak P_X}.
+\]
+This is an exact \(\Lone\) reduction.  It exposes a new
+identical-map concentration ledger \(U_X\) and leaves the
+width-weighted distinct-map term as the honest TPC-106 geometric
+door.  Neither ledger is bounded here at the growing physical
+scale; no \(\Ltwo\) arithmetic saving or parity breakthrough is
+claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+affine map; provenance quotient; collision energy; identical maps;
+incidence; fixed shift; positive resonance.
+
+\medskip
+\noindent\textbf{Literal-frame convention.}
+Every quotient starts from the actual \(q_X\nmid u\) opened atoms,
+keeps one prescribed \(h_0\ne0\), their full source and child
+records, actual weights and support, both polarizations, and the
+single inherited physical normalization.  Nothing is specialized
+to \(h_0=2\).
+
+\section{Why a quotient is needed}
+\label{sec:introduction}
+
+Fix an exact resonance width \(H\).  TPC-100 partitions the actual
+invertible opened atoms into maximally literal fine cells.  Because
+each cell retains \(m,u,\sigma\), the source identity
+\[
+ mj+h_0=\sigma u
+\]
+recovers \(j\); every fine cell is therefore a singleton.  The
+resulting multiplier census is
+\begin{equation}
+ a_H^{\mathrm{inv}}(\omega)
+ =
+ \sum_{\substack{p:\,\mathsf H_p=H\\q_X\nmid u_p}}
+ w_p\one_{\{\omega_p=\omega\}},
+\label{eq:census}
+\end{equation}
+where \(w_p\ge0\) is the exact physical atom weight
+\citep{WangTPC100}.
+
+The centered energy has an atomic diagonal part and a cross part
+\[
+ \|(a_H^{\mathrm{inv}})^\circ\|_2^2
+ =
+ \mathfrak D_H^\circ+\mathfrak X_H^\circ.
+\]
+TPC-103 closes the maximum atom cap, so the diagonal part follows
+from the unresolved principal mass
+\citep{WangTPC101,WangTPC103}.  The cross part remains.  Before
+applying an incidence theorem to it, TPC-102 and TPC-MVP1 require
+identical affine maps to be aggregated without losing source
+recovery or exact weight \citep{WangTPC102,WangTPCMVP1}.
+
+The subtle point is that an affine map is an operator on an input,
+not merely a multiplier value.  Two atoms may carry the same map
+but occur at different \(j\)'s.  Their total class mass does not
+determine where that mass is sent.
+
+\section{Literal affine maps}
+\label{sec:maps}
+
+Write \(q=q_X\).  For all sufficiently large \(X\), the strong
+no-wrap choice gives
+\[
+ q>|h_0|,\qquad 0<m_p<q,\qquad q\nmid u_p.
+\]
+TPC-100 defines
+\[
+ A_p=
+ \varepsilon_p\ell_pv_pB_p(c_pu_p)^{-1}
+ \in\F_q^\times
+\]
+and proves
+\begin{equation}
+ \omega_p=A_p(m_pj_p+h_0).
+\label{eq:linearization}
+\end{equation}
+
+\begin{definition}[Literal affine-map record]
+\label{def:map}
+For an active atom \(p\), define
+\[
+ s_p=A_pm_p,\qquad t_p=A_ph_0,\qquad
+ \phi_p(x)=s_px+t_p.
+\]
+Thus \(s_p,t_p\in\F_q^\times\) and
+\(\omega_p=\phi_p(j_p)\).
+\end{definition}
+
+\begin{lemma}[Exact identical-map classification]
+\label{lem:classification}
+For two active atoms \(p,p'\),
+\[
+ \phi_p=\phi_{p'}
+ \quad\Longleftrightarrow\quad
+ A_p=A_{p'}\ \text{and}\ m_p=m_{p'}
+ \quad\text{in }\F_q.
+\]
+Under the strong no-wrap bounds, equality of \(m_p,m_{p'}\) in
+\(\F_q\) is equality as physical integers.
+\end{lemma}
+
+\begin{proof}
+Equality of the constant terms gives
+\[
+ h_0(A_p-A_{p'})=0.
+\]
+Since \(q\nmid h_0\), this forces \(A_p=A_{p'}\).  Equality of the
+slopes and invertibility of \(A_p\) then force
+\(m_p=m_{p'}\).  The converse is immediate.  Finally both physical
+row integers lie strictly between \(0\) and \(q\)
+\citep{WangTPC98}.
+\end{proof}
+
+\begin{corollary}[Collision inside one map]
+\label{cor:same-map-collision}
+If \(\phi_p=\phi_{p'}\), then
+\[
+ \omega_p=\omega_{p'}
+ \quad\Longleftrightarrow\quad
+ j_p=j_{p'}\pmod q.
+\]
+Since the actual orbit window has diameter below \(q\), this is
+equivalent to equality of the physical integers \(j_p=j_{p'}\).
+\end{corollary}
+
+\begin{proof}
+The common slope \(s_p\) is nonzero, so
+\(\phi_p(j_p)=\phi_p(j_{p'})\) exactly when
+\(j_p=j_{p'}\) modulo \(q\).  Apply no-wrap.
+\end{proof}
+
+\begin{remark}[What identical maps may still hide]
+Equality of \((A,m,j)\) does not identify the full atom.  Different
+content or projector children, complementary factorizations, masks,
+polarizations, or outer source labels may still contribute separate
+weights.  Those records may not be discarded.
+\end{remark}
+
+\section{The canonical provenance quotient}
+\label{sec:quotient}
+
+Let \(\mathscr P_H\) be the finite set of active invertible atoms at
+width \(H\).  Define
+\[
+ p\sim p'
+ \quad\Longleftrightarrow\quad
+ (s_p,t_p)=(s_{p'},t_{p'}).
+\]
+Let \(\Phi_H\) be the set of equivalence classes, identified with
+their common affine maps.
+
+\begin{definition}[Provenance bag and input profile]
+\label{def:profile}
+For \(\phi\in\Phi_H\), let
+\[
+ \mathscr B_\phi
+ =
+ \{(p,w_p,\mathfrak r_p):\phi_p=\phi\},
+\]
+where \(\mathfrak r_p\) is the complete TPC-100 augmented source
+and child record.  Define
+\begin{align}
+ \nu_\phi(j)
+ &=
+ \sum_{\substack{p\in\mathscr P_H\\
+                  \phi_p=\phi,\ j_p=j}}w_p,
+\label{eq:profile}\\
+ M_{H,\phi}
+ &=
+ \sum_j\nu_\phi(j),\qquad
+ M_H=\sum_{\phi\in\Phi_H}M_{H,\phi}.
+\label{eq:class-mass}
+\end{align}
+The canonical quotient record is
+\[
+ \mathscr Q_H
+ =
+ \{(\phi,\nu_\phi,\mathscr B_\phi):\phi\in\Phi_H\}.
+\]
+\end{definition}
+
+\begin{theorem}[Lossless quotient and exact census]
+\label{thm:quotient}
+The classes \(\mathscr B_\phi\) form a disjoint partition of the
+actual atoms, preserve every physical weight exactly once, and give
+\begin{equation}
+ \boxed{
+ a_H^{\mathrm{inv}}(\omega)
+ =
+ \sum_{\phi\in\Phi_H}\sum_{j\in\F_q}
+ \nu_\phi(j)\one_{\{\phi(j)=\omega\}}.}
+\label{eq:quotient-census}
+\end{equation}
+The analytic data \((\phi,\nu_\phi)\) recover the complete positive
+multiplier census, while the attached bags recover every original
+source atom and coefficient.
+\end{theorem}
+
+\begin{proof}
+Every atom has one and only one pair \((s_p,t_p)\), so the bags form
+a partition.  Reindex \eqref{eq:census} first by that pair and then
+by \(j_p\).  This gives \eqref{eq:quotient-census} and
+\[
+ \sum_{\phi,j}\nu_\phi(j)=\sum_pw_p=M_H.
+\]
+No weight is created or deleted.  Source recovery follows because
+the full augmented record \(\mathfrak r_p\) remains in the
+corresponding bag.
+\end{proof}
+
+\begin{proposition}[Map totals alone are not lossless]
+\label{prop:mass-only}
+The collection \(\{(\phi,M_{H,\phi})\}\) does not determine
+\(a_H^{\mathrm{inv}}\), even for one invertible affine map and one
+unit atom.
+\end{proposition}
+
+\begin{proof}
+Take \(q\ge5\), \(h_0=1\), and
+\(\phi(x)=x+1\).  One unit atom at \(j=0\) gives the census
+\(\delta_1\), while one unit atom at \(j=1\) gives
+\(\delta_2\).  Both quotient records have the same map and total
+mass one.  Their input profiles, and hence their multiplier
+censuses, differ.
+\end{proof}
+
+\begin{remark}[Minimal analytic payload]
+The proposition shows why ``aggregate identical maps with exact
+total weight'' is incomplete unless the input distribution is also
+retained.  The profile \(\nu_\phi\) is sufficient for every positive
+incidence calculation.  The provenance bag is additionally required
+for literal source recovery and later signed reconstruction.
+\end{remark}
+
+\section{Exact splitting of the cross ledger}
+\label{sec:splitting}
+
+Since the TPC-100 fine cells are singleton, its centered cross
+ledger can be written directly as
+\begin{equation}
+ \mathfrak X_H^\circ
+ =
+ \sum_{\substack{p,p'\in\mathscr P_H\\p\ne p'}}
+ w_pw_{p'}
+ \left(
+ \one_{\{\omega_p=\omega_{p'}\}}-\frac1{q-1}
+ \right).
+\label{eq:cross}
+\end{equation}
+The sum is ordered, matching the \(C\ne D\) convention in TPC-100.
+
+\begin{definition}[Identical- and distinct-map ledgers]
+\label{def:split}
+Let
+\begin{align}
+ \mathfrak K_H^\circ
+ &=
+ \sum_{\substack{p\ne p'\\\phi_p=\phi_{p'}}}
+ w_pw_{p'}
+ \left(
+ \one_{\{\omega_p=\omega_{p'}\}}-\frac1{q-1}
+ \right),
+\label{eq:K}\\
+ \mathfrak Y_H^\circ
+ &=
+ \sum_{\substack{p,p'\\\phi_p\ne\phi_{p'}}}
+ w_pw_{p'}
+ \left(
+ \one_{\{\omega_p=\omega_{p'}\}}-\frac1{q-1}
+ \right).
+\label{eq:Y}
+\end{align}
+\end{definition}
+
+\begin{theorem}[Canonical collision split]
+\label{thm:split}
+One has the exact identity
+\begin{equation}
+ \boxed{
+ \mathfrak X_H^\circ
+ =
+ \mathfrak K_H^\circ+\mathfrak Y_H^\circ.}
+\label{eq:split}
+\end{equation}
+Moreover, put
+\[
+ S_{\phi,j}
+ =
+ \sum_{\substack{p:\phi_p=\phi\\j_p=j}}w_p^2,
+\qquad
+ S_\phi=\sum_jS_{\phi,j}.
+\]
+Then the identical-map term has the profile formula
+\begin{equation}
+ \boxed{
+ \mathfrak K_H^\circ
+ =
+ \sum_{\phi,j}
+ \left(\nu_\phi(j)^2-S_{\phi,j}\right)
+ -
+ \frac1{q-1}
+ \sum_\phi
+ \left(M_{H,\phi}^2-S_\phi\right).}
+\label{eq:K-profile}
+\end{equation}
+The distinct-map term is
+\begin{equation}
+ \boxed{
+ \mathfrak Y_H^\circ
+ =
+ \sum_{\substack{\phi,\psi\in\Phi_H\\\phi\ne\psi}}
+ \sum_{j,k}
+ \nu_\phi(j)\nu_\psi(k)
+ \left(
+ \one_{\{\phi(j)=\psi(k)\}}-\frac1{q-1}
+ \right).}
+\label{eq:Y-profile}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The alternatives \(\phi_p=\phi_{p'}\) and
+\(\phi_p\ne\phi_{p'}\) partition every ordered pair \(p\ne p'\),
+giving \eqref{eq:split}.  Within one map,
+\cref{cor:same-map-collision} replaces output equality by
+\(j_p=j_{p'}\).  At fixed \((\phi,j)\), the mass of ordered distinct
+pairs is
+\[
+ \nu_\phi(j)^2-S_{\phi,j}.
+\]
+Across all inputs of the same map, the total ordered distinct-pair
+mass is
+\[
+ M_{H,\phi}^2-S_\phi.
+\]
+This proves \eqref{eq:K-profile}.  Reindexing pairs from two
+different classes by their two input coordinates gives
+\eqref{eq:Y-profile}.
+\end{proof}
+
+\begin{remark}[Centering may couple the two terms]
+Neither \(\mathfrak K_H^\circ\) nor
+\(\mathfrak Y_H^\circ\) is necessarily nonnegative.  Their exact
+sum is the native cross excess.  Bounding their absolute values
+separately is a sufficient route and may lose cancellation; it is
+not asserted to be necessary.
+\end{remark}
+
+\section{The identical-map concentration ledger}
+\label{sec:concentration}
+
+\begin{definition}[Maximum map-class mass]
+\label{def:U}
+Set
+\[
+ U_H=\max_{\phi\in\Phi_H}M_{H,\phi},
+\qquad
+ U_X=\max_HU_H,
+\]
+with zero used for an empty carrier.
+\end{definition}
+
+\begin{theorem}[Identical-map concentration bound]
+\label{thm:K-bound}
+For every width \(H\),
+\begin{equation}
+ \boxed{
+ |\mathfrak K_H^\circ|
+ \le
+ \sum_{\phi\in\Phi_H}
+ \left(M_{H,\phi}^2-S_\phi\right)
+ \le U_HM_H.}
+\label{eq:K-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For one ordered pair, the centered collision kernel is either
+\[
+ 1-\frac1{q-1}
+ \quad\text{or}\quad
+ -\frac1{q-1},
+\]
+so its modulus is at most one.  Summing the weights of all ordered
+distinct pairs inside identical-map classes gives the first bound.
+For the second,
+\[
+ \sum_\phi(M_{H,\phi}^2-S_\phi)
+ \le\sum_\phi M_{H,\phi}^2
+ \le U_H\sum_\phi M_{H,\phi}
+ =U_HM_H.
+\]
+\end{proof}
+
+Let
+\[
+ \mathcal H_X=
+ \{H:g_{q_X}(H)>0,\ M_H>0\},
+\qquad
+ \PX=\sum_H\frac{2H}{q_X-1}M_H.
+\]
+
+\begin{corollary}[Width-weighted transfer]
+\label{cor:transfer}
+The identical-map ledger obeys
+\begin{equation}
+ \boxed{
+ \sum_Hg_{q_X}(H)
+ \sqrt{|\mathfrak K_H^\circ|}
+ \le
+ \sqrt{
+ U_X|\mathcal H_X|(q_X-1)\PX}.}
+\label{eq:transfer}
+\end{equation}
+Hence, if
+\[
+ q_X\asymp Q_X,\qquad
+ U_X\le X^{o(1)},\qquad
+ \PX\le X^{o(1)}Q_X^2,
+\]
+then the left side of \eqref{eq:transfer} is
+\(X^{o(1)}Q_X^2\).
+\end{corollary}
+
+\begin{proof}
+By \cref{thm:K-bound},
+\[
+ \sum_Hg_q(H)\sqrt{|\mathfrak K_H^\circ|}
+ \le
+ \sqrt{U_X}\sum_{H\in\mathcal H_X}
+ g_q(H)\sqrt{M_H}.
+\]
+Cauchy--Schwarz and \(g_q(H)^2\le2H\) give
+\[
+ \le
+ \sqrt{
+ U_X|\mathcal H_X|
+ \sum_H2HM_H}
+ =
+ \sqrt{
+ U_X|\mathcal H_X|(q-1)\PX}.
+\]
+Use \(|\mathcal H_X|\le(q-1)/2\).
+\end{proof}
+
+\begin{corollary}[Exact sufficient distinct-map reduction]
+\label{cor:distinct}
+Suppose the hypotheses in \cref{cor:transfer} hold and
+\begin{equation}
+ \sum_Hg_{q_X}(H)
+ \sqrt{|\mathfrak Y_H^\circ|}
+ \le X^{o(1)}Q_X^2.
+\label{eq:distinct-target}
+\end{equation}
+Then the complete width-weighted cross gate satisfies
+\[
+ \sum_Hg_{q_X}(H)
+ \sqrt{|\mathfrak X_H^\circ|}
+ \le X^{o(1)}Q_X^2.
+\]
+\end{corollary}
+
+\begin{proof}
+Use \(\mathfrak X_H^\circ=\mathfrak K_H^\circ+
+\mathfrak Y_H^\circ\) and
+\[
+ \sqrt{|x+y|}\le\sqrt{|x|}+\sqrt{|y|}.
+\]
+Then apply \cref{cor:transfer} and \eqref{eq:distinct-target}.
+\end{proof}
+
+\section{Two exact nonimplications}
+\label{sec:nonimplications}
+
+\begin{proposition}[Atom cap does not imply map-class cap]
+\label{prop:atom-vs-map}
+For every \(R\ge1\), there is an abstract positive opened census
+with
+\[
+ W_X=1,\qquad U_X=R.
+\]
+It can be supported on one invertible affine map.
+\end{proposition}
+
+\begin{proof}
+Take \(R\) distinct provenance records, each of weight one, and
+attach all of them to the same map \(\phi(x)=x+1\).  Their map-class
+mass is \(R\), while every atom has weight one.
+\end{proof}
+
+\begin{proposition}[A quotient does not create dispersion]
+\label{prop:no-dispersion}
+Canonical aggregation preserves the census and its centered energy
+exactly.  In particular, no bound for
+\(\mathfrak Y_H^\circ\) or \(U_X\) follows from the quotient
+identity alone.
+\end{proposition}
+
+\begin{proof}
+Equation \eqref{eq:quotient-census} is an equality with the original
+census.  Therefore its \(\ell^2\) norm and centered energy are
+unchanged.  \Cref{prop:atom-vs-map} shows that one quotient class
+may have arbitrary positive mass in the abstract information
+model.
+\end{proof}
+
+\begin{remark}[Physical status]
+The countermodels prove nonimplications between abstract ledgers.
+They do not establish polynomial concentration in the actual TPC
+coefficient and hence do not stop the physical positive route.  A
+future theorem may use the exact classification in
+\cref{lem:classification} to bound actual class multiplicity or
+weight.
+\end{remark}
+
+\section{Finite exact regression}
+\label{sec:certificate}
+
+The deterministic script
+\texttt{experiments/tpc105\_map\_quotient\_audit.py} constructs
+finite weighted atom families over several prime fields and checks:
+\begin{enumerate}[leftmargin=2em]
+\item direct and quotient multiplier censuses agree;
+\item the map classification in \cref{lem:classification};
+\item the direct cross ledger equals both
+\(\mathfrak K_H^\circ+\mathfrak Y_H^\circ\) and the profile
+formulas;
+\item the concentration inequality \eqref{eq:K-bound}; and
+\item the mass-only and atom-cap counterexamples.
+\end{enumerate}
+All arithmetic is exact.  The certificate tests the finite
+reindexing and claim schema; it is not evidence for a growing
+distinct-map incidence estimate.
+
+\section{Route consequence and claim boundary}
+\label{sec:boundary}
+
+\subsection*{Established}
+
+\begin{itemize}[leftmargin=2em]
+\item Identical affine maps are classified exactly by the pair
+\((A_p,m_p)\), with physical integer recovery for \(m_p\).
+\item The canonical quotient retains the input profile needed for
+the positive census and the full bag needed for source recovery.
+\item The TPC-100 cross ledger splits exactly into identical- and
+distinct-map terms.
+\item The identical-map term is controlled by the new class-mass
+ledger \(U_X\), and \cref{cor:distinct} gives a precise sufficient
+door for TPC-106.
+\end{itemize}
+
+These are \(\Lzero\) algebraic identities and an \(\Lone\)
+provenance-preserving reduction on the actual fixed-\(h_0\) carrier.
+
+\subsection*{Not established}
+
+\begin{itemize}[leftmargin=2em]
+\item No bound \(U_X\le X^{o(1)}\) is proved for the actual carrier.
+\item The principal bounds isolated in TPC-104 remain unproved
+\citep{WangTPC104}.
+\item The distinct-map target \eqref{eq:distinct-target} is not
+proved.
+\item No signed affine M\"obius cancellation, full physical
+reassembly, strict \(1/400\) endpoint closure, or \(\Ltwo\)
+fixed-power saving is obtained.
+\item No parity breakthrough, Hardy--Littlewood asymptotic,
+prime-pair lower bound, or twin-prime conclusion is proved or
+implied.
+\end{itemize}
+
+The honest next step is width-weighted incidence on the genuine
+distinct-map quotient, with \(U_X\) carried as a separate
+concentration gate.  If either has a literal polynomial obstruction,
+the response is to retain the signed filter before majorization,
+not to claim that the original signed coefficient is large.
+
+\begingroup
+\scriptsize
+\setlength{\bibsep}{1pt}
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

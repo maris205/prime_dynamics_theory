@@ -1,0 +1,52 @@
+{
+  "schema": "tpc112-compatibility-audit-v1",
+  "status": "PASS",
+  "assertions_checked": 10,
+  "critical_scales": {
+    "beta": "267/400",
+    "one_minus_beta": "133/400",
+    "baseline": "1/400"
+  },
+  "sample_cone_cases": [
+    {
+      "lambda_D": "0",
+      "eta_Z": "0",
+      "reserve": "0",
+      "flatness_exponent": "1/400",
+      "status": "PASS_ZERO_RESERVE"
+    },
+    {
+      "lambda_D": "1/100",
+      "eta_Z": "1/100",
+      "reserve": "1/100",
+      "flatness_exponent": "-3/400",
+      "status": "PASS_WITH_RESERVE"
+    },
+    {
+      "lambda_D": "1/100",
+      "eta_Z": "1/200",
+      "reserve": "0",
+      "flatness_exponent": "1/400",
+      "status": "PASS_ZERO_RESERVE"
+    },
+    {
+      "lambda_D": "1/50",
+      "eta_Z": "1/200",
+      "reserve": "-1/100",
+      "flatness_exponent": "1/80",
+      "status": "RECORDED_PAIR_INSUFFICIENT"
+    }
+  ],
+  "current_route": {
+    "energy_exponent_certified": false,
+    "zero_exponent_certified": false,
+    "compatibility_status": "OPEN_INPUTS_NOT_TESTABLE",
+    "physical_endpoint_status": "OPEN"
+  },
+  "claim_boundary": {
+    "exact_exponent_cone": true,
+    "ledger_independence": true,
+    "fixed_h0_L2_progress": false,
+    "prime_pair_or_twin_prime_theorem": false
+  }
+}

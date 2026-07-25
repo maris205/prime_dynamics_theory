@@ -1,0 +1,401 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{microtype}
+\setlength{\emergencystretch}{3em}
+\def\Urlmuskip{0mu plus 1mu}
+
+\hypersetup{
+  pdftitle={Determinant-Zero Compatibility at the High-Beta Endpoint: Exact Exponent Cone, Reserve Accounting, and Stop Certificates},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact audit of determinant-energy and zero-mode exponent compatibility, separated from physical synthesis losses},
+  pdfkeywords={determinant energy, zero mode, exponent cone, endpoint budget, no double charging, fixed shift}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Flat}{\mathfrak F}
+\newcommand{\Lam}{\Lambda_{\mathrm{phys}}}
+
+\title{\bfseries Determinant--Zero Compatibility at the High-\(\boldsymbol\beta\) Endpoint:\\
+Exact Exponent Cone, Reserve Accounting, and Stop Certificates}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For the same literal fixed-\(h_0\) post-bin coefficient, suppose one
+has separately proved
+\[
+ D_X\ge X^{-\lambda_D+o(1)}Q_X^3J_X^2,\qquad
+ |Z_X|\le X^{-\eta_Z+o(1)}Q_X^2.
+\]
+At the high-\(\beta\) scales
+\[
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)},
+\]
+we recover the exact flatness ledger
+\[
+ \frac{|Z_X|^2}{D_X}
+ \le
+ X^{1/400-(2\eta_Z-\lambda_D)+o(1)}.
+\]
+Hence the recorded pair reaches the TPC-32 threshold exactly in the
+closed exponent cone
+\(\lambda_D\le2\eta_Z\).  Equality is compatible but has zero
+determinant reserve.
+
+We prove that this cone is logically independent of the strict
+physical synthesis condition
+\(\Lambda_{\mathrm{phys}}<1/400\).  A direct-product countermodel
+shows that no determinant reserve can, without a new intertwining
+theorem, be spent as physical condition-number slack.  Equality in
+the physical ledger is therefore a stop even though equality in the
+determinant cone is allowed.  Applying the audit to TPC-109--111,
+we find no certified exponent pair: the preceding papers prove exact
+saturation, kernel, and signed-prefix criteria, but neither a
+growing lower bound for \(D_X\) nor a growing upper bound for
+\(Z_X\).  The compatibility route remains open rather than passed
+or globally disproved.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords:} determinant energy; distinguished zero
+mode; exponent cone; reserve accounting; fixed shift; endpoint audit.
+
+\section{Typed inputs}
+
+Fix a prescribed \(h_0\ne0\).  The determinant statistics are
+\[
+ Z_X=\sum_nA_X(n),\qquad
+ D_X=\sum_n|A_X(n)|^2.
+\]
+Both must be formed after literal aggregation on the same actual
+support and under one normalization
+\citep{WangTPC81,WangTPC82}.  Define
+\[
+ \Flat_{h_0}(X)=
+ \begin{cases}
+ |Z_X|^2/D_X,&D_X>0,\\
+ 0,&D_X=0.
+ \end{cases}
+\]
+The zero branch is consistent because \(D_X=0\) forces \(A_X=0\)
+and hence \(Z_X=0\).
+
+\begin{definition}[Typed exponent certificate]
+A pair \((\lambda_D,\eta_Z)\in[0,\infty)^2\) is
+\emph{certified} only if the two displayed estimates
+\[
+ D_X\ge X^{-\lambda_D+o(1)}Q_X^3J_X^2,\qquad
+ |Z_X|\le X^{-\eta_Z+o(1)}Q_X^2
+\]
+are both proved for the same literal growing coefficient, the same
+fixed \(h_0\), and the same quantifier range.
+\end{definition}
+
+An upper bound for pre-bin energy cannot fill the first slot.
+A finite saturation theorem or a diagnostic ratio cannot fill either
+slot.  An averaged-shift zero-mode theorem cannot fill the second
+slot without a proved return to the prescribed \(h_0\).
+
+\section{The exact exponent cone}
+
+\begin{theorem}[General flatness transfer]
+\label{thm:general}
+Let
+\[
+ Q_X=X^{\beta+o(1)},\qquad
+ J_X=X^{1-\beta+o(1)}
+\]
+with \(0<\beta<1\).  Every certified pair satisfies
+\[
+ \boxed{
+ \Flat_{h_0}(X)
+ \le
+ X^{3\beta-2+\lambda_D-2\eta_Z+o(1)}.}
+\]
+\end{theorem}
+
+\begin{proof}
+Divide the square of the zero-mode upper bound by the energy lower
+bound:
+\[
+ \Flat_{h_0}(X)
+ \le
+ X^{\lambda_D-2\eta_Z+o(1)}
+ \frac{Q_X}{J_X^2}.
+\]
+The last ratio is \(X^{3\beta-2+o(1)}\).
+\end{proof}
+
+\begin{corollary}[Critical exponent cone]
+\label{cor:cone}
+At
+\[
+ \beta=\frac{267}{400},\qquad
+ 1-\beta=\frac{133}{400},
+\]
+put
+\[
+ \rho_{\mathrm{det}}=2\eta_Z-\lambda_D.
+\]
+Then
+\[
+ \boxed{
+ \Flat_{h_0}(X)
+ \le X^{1/400-\rho_{\mathrm{det}}+o(1)}.}
+\]
+The two recorded estimates imply the TPC-32 threshold
+\citep{WangTPC32}
+\[
+ \Flat_{h_0}(X)\le X^{1/400+o(1)}
+\]
+exactly when
+\[
+ \boxed{\lambda_D\le2\eta_Z.}
+\]
+\end{corollary}
+
+\begin{proof}
+The scale identity is
+\[
+ 3\frac{267}{400}-2=\frac1{400}.
+\]
+Now apply \cref{thm:general}.
+\end{proof}
+
+\begin{remark}[Sharp scope]
+The word ``exactly'' concerns logical deduction from the two recorded
+bounds.  If \(\lambda_D>2\eta_Z\), those bounds do not certify the
+threshold; the actual coefficient might satisfy sharper estimates.
+\end{remark}
+
+\section{Boundary and reserve classifications}
+
+\begin{definition}[Determinant reserve]
+The number
+\[
+ \rho_{\mathrm{det}}=2\eta_Z-\lambda_D
+\]
+is the reserve of the two-exponent transfer, provided the pair is
+certified.
+\end{definition}
+
+\begin{proposition}[Three determinant statuses]
+\label{prop:statuses}
+For a certified pair:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item if \(\rho_{\mathrm{det}}>0\), the flatness estimate has a fixed
+power reserve;
+\item if \(\rho_{\mathrm{det}}=0\), it reaches the threshold with no
+reserve;
+\item if \(\rho_{\mathrm{det}}<0\), the recorded pair fails this
+certificate, but does not prove the target false.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Read the exponent in \cref{cor:cone}.
+\end{proof}
+
+If only \(\eta_Z=0\) is available, compatibility forces
+\(\lambda_D=0\).  Thus a positive determinant-energy loss requires
+a compensating positive zero-mode gain in this ledger.
+
+\section{Independence from the physical endpoint}
+
+The complete route also has a synthesis operator whose separately
+derived fixed-power cost is denoted by \(\Lam\).  The inherited rule
+is
+\[
+ \boxed{\Lam<\frac1{400}.}
+\]
+Equality is a stop \citep{WangTPC82,WangTPC92,WangMVP1}.
+
+\begin{theorem}[No exchange rate between ledgers]
+\label{thm:independence}
+Without an additional literal intertwining theorem, neither
+\(\rho_{\mathrm{det}}\) nor the pair
+\((\lambda_D,\eta_Z)\) imposes any bound on \(\Lam\).  Conversely,
+the value of \(\Lam\) imposes no determinant-energy or zero-mode
+estimate.  Therefore the audited route requires the conjunction
+\[
+ \boxed{
+ \lambda_D\le2\eta_Z
+ \quad\text{and}\quad
+ \Lam<\frac1{400},}
+\]
+not a merged inequality such as
+\(\Lam<1/400+\rho_{\mathrm{det}}\).
+\end{theorem}
+
+\begin{proof}
+Take any finite coefficient vector realizing prescribed nonzero
+  statistics \(D\) and \(Z\).  On an independent two-dimensional
+  synthesis space, let the physical comparison operator be
+  \(\operatorname{diag}(1,X^L)\), with arbitrary \(L\ge0\).
+ Changing \(L\) changes its condition-number exponent but leaves \(D,Z\), and
+their reserve unchanged.  Conversely, fix the synthesis map to be
+an isometry and vary the coefficient vector between a constant
+vector and a zero-sum vector.  This changes the determinant
+flatness without changing the physical operator norm.
+
+These direct-product models do not describe the arithmetic
+coefficient.  They prove the logical point: a relationship between
+the ledgers requires a new map-specific theorem and cannot be
+created by bookkeeping.
+\end{proof}
+
+\begin{corollary}[Different equality rules]
+The boundary
+\[
+ \lambda_D=2\eta_Z
+\]
+passes the determinant compatibility test with zero reserve, while
+\[
+ \Lam=\frac1{400}
+\]
+fails the strict physical test.  The first equality may not be cited
+as slack for the second.
+\end{corollary}
+
+\section{No-double-charging protocol}
+
+\begin{definition}[Typed loss record]
+A fixed-power record consists of a source identifier, an exponent,
+and exactly one role:
+\[
+ \texttt{energy},\quad
+ \texttt{zero},\quad
+ \texttt{physical},\quad
+ \texttt{soft remainder}.
+\]
+If one analytic estimate genuinely enters two inequalities, the
+proof must display the joint inequality.  Merely copying its
+exponent into two rows is duplicate charging.
+\end{definition}
+
+\begin{proposition}[Valid ledger composition]
+\label{prop:ledger}
+A proof-carrying compatibility certificate must:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item cite distinct proved bounds for \(D_X\) and \(Z_X\), or one
+explicit joint theorem;
+\item compute \(\rho_{\mathrm{det}}\) once;
+\item list every physical map cost once under \(\Lam\);
+\item reject any repeated source identifier unless an exact
+factorization shows two disjoint uses; and
+\item leave open exponents open rather than assigning them zero.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Items (i)--(iii) reproduce the inequalities used in
+\cref{cor:cone,thm:independence}.  Repeating a multiplicative factor
+does not create a new estimate, proving (iv).  Assigning zero to an
+open term asserts a subpower theorem that has not been proved,
+proving (v).
+\end{proof}
+
+\section{Audit of TPC-109--111}
+
+TPC-109 proves a sharp phase-saturation theorem for the coherent
+terminal-prime square.  It supplies neither a growing energy lower
+bound nor a zero-mode upper bound \citep{WangTPC109}.
+
+TPC-110 proves the exact determinant-binning SVD and factors
+\[
+ D_X=E_X\alpha_X\overline m_X.
+\]
+It shows that support alone cannot lower-bound the kernel angle, but
+does not estimate that angle for the growing literal coefficient
+\citep{WangTPC110}.
+
+TPC-111 proves exact coarsening invariance and sharp signed-prefix
+duality.  Its outer criterion would imply a zero-mode exponent if the
+literal signed discrepancies were bounded, but no such growing
+arithmetic bound is proved \citep{WangTPC111}.
+
+\begin{theorem}[Current compatibility verdict]
+\label{thm:verdict}
+The established results through TPC-111 certify no pair
+\((\lambda_D,\eta_Z)\) in the exponent cone.  Therefore the
+determinant--zero route is currently
+\[
+ \boxed{\text{open inputs; compatibility not yet testable}.}
+\]
+It is neither a passed gate nor a global impossibility theorem.
+\end{theorem}
+
+\begin{proof}
+TPC-110 supplies no lower bound of the required form for \(D_X\), and
+TPC-111 supplies no upper bound of the required form for \(Z_X\).
+By the typed-certificate definition, there is no certified pair to
+insert into \cref{cor:cone}.
+\end{proof}
+
+\section{Stop/go table and claim boundary}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.24\textwidth}p{0.30\textwidth}X@{}}
+\toprule
+Gate & Go certificate & Stop or reroute certificate\\
+\midrule
+Energy
+& Literal lower bound with a recorded \(\lambda_D\)
+& Actual upper obstruction excluding the desired loss profile\\
+Zero mode
+& Literal upper bound with a recorded \(\eta_Z\)
+& Unavoidable signed-prefix or outer residual above target\\
+Compatibility
+& \(\lambda_D\le2\eta_Z\)
+& Recorded pair has \(\lambda_D>2\eta_Z\); seek sharper input\\
+Physical endpoint
+& \(\Lam<1/400\)
+& \(\Lam\ge1/400\), including equality\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{What is proved.}
+The exponent formula, compatibility cone, reserve classification,
+ledger independence, no-double-charging protocol, and current
+``inputs open'' verdict are rigorous \(\Lzero/\Lone\) audit results.
+
+\paragraph{What is not proved.}
+Neither input exponent is established for the actual growing
+coefficient.  No physical synthesis bound is established.  No
+\(\Ltwo\) fixed-\(h_0\) saving, parity breach, Hardy--Littlewood
+asymptotic, prime-pair lower bound, or twin-prime theorem is claimed.
+Nothing is specialized to \(h_0=2\).
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

@@ -1,0 +1,22 @@
+{
+  "schema": "tpc110-post-bin-energy-audit-v1",
+  "status": "PASS",
+  "partitions_tested": 4,
+  "kernel_dimensions": [
+    0,
+    2,
+    3,
+    4
+  ],
+  "assertions_checked": 19,
+  "endpoint_identities": {
+    "q_plus_j": "1",
+    "q_minus_2j": "1/400"
+  },
+  "claim_boundary": {
+    "exact_binning_svd": true,
+    "natural_scale_energy_lower_bound": false,
+    "zero_mode_estimate": false,
+    "fixed_h0_L2_progress": false
+  }
+}
