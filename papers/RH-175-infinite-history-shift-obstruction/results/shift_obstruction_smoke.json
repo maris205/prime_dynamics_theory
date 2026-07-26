@@ -1,0 +1,52 @@
+{
+  "all_finite_shift_spectra_zero": true,
+  "all_singular_floor_counts_match": true,
+  "maximum_log10_resolvent_lower_bound": 3.8253410006746904,
+  "maximum_relative_formula_error": 0.0,
+  "resolvent_case_count": 2,
+  "resolvent_records": [
+    {
+      "exact_lower_bound": 417.22895393296955,
+      "finite_spectrum_radius": 0.0,
+      "length": 4,
+      "log10_resolvent_lower_bound": 2.620374439009043,
+      "relative_formula_error": 0.0,
+      "resolvent_vector_norm": 417.22895393296955,
+      "spectral_fraction_of_shift_radius": 0.5
+    },
+    {
+      "exact_lower_bound": 6688.688959728955,
+      "finite_spectrum_radius": 0.0,
+      "length": 8,
+      "log10_resolvent_lower_bound": 3.8253410006746904,
+      "relative_formula_error": 0.0,
+      "resolvent_vector_norm": 6688.688959728955,
+      "spectral_fraction_of_shift_radius": 0.5
+    }
+  ],
+  "shift_radius": 0.044194173824159216,
+  "singular_records": [
+    {
+      "dimension": 8,
+      "expected_shift_floor_count": 6,
+      "length": 4,
+      "minimum_nonzero_singular_value": 0.0,
+      "singular_values_at_least_shift_weight": 6
+    },
+    {
+      "dimension": 16,
+      "expected_shift_floor_count": 14,
+      "length": 8,
+      "minimum_nonzero_singular_value": 0.0,
+      "singular_values_at_least_shift_weight": 14
+    }
+  ],
+  "status": "rh175_infinite_history_shift_obstruction_audit",
+  "theorem_boundary": {
+    "all_possible_history_completions_rejected": false,
+    "direct_fredholm_determinant_route": false,
+    "finite_nilpotent_spectra_detect_disk": false,
+    "infinite_history_not_compact_or_schatten": true,
+    "infinite_history_spectrum_contains_shift_disk": true
+  }
+}

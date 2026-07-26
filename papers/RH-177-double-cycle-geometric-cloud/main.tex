@@ -1,0 +1,355 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.04}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{The Double-Cycle Geometric Cloud\\
+\large An Exact Finite Operator Model for the RH-80 Moving Factor}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-176 identifies the reduced determinant of a length-$L$ cycle with the
+geometric section $\Pi_{L-1}$.  The moving factor required by RH-80 is the
+square
+\[
+ C_N(w)=\Pi_N(w/\lambda)^2,
+ \qquad \lambda=1.678573510428322\ldots.
+\]
+We give an exact finite normal operator realizing this factor.  Let
+$L=N+1$, restrict the cycle $C_L$ to the zero-mean subspace, scale by
+$\lambda^{-1}$, and take two copies:
+\[
+ K_N=\lambda^{-1}
+ \bigl(C_L^\circ\oplus C_L^\circ\bigr).
+\]
+Then
+\[
+ \det(I-wK_N)=\Pi_N(w/\lambda)^2=C_N(w).
+\]
+The construction has exactly $2N$ nonstationary modes, matching the cloud
+count.  Its complete periodic trace ledger is
+\[
+ \Tr K_N^m=
+ \frac{2}{\lambda^m}
+ \begin{cases}
+ N,&N+1\mid m,\\
+ -1,&N+1\nmid m.
+ \end{cases}
+\]
+Consequently the RH-80 geometric factor possesses a strict intrinsic
+finite-orbit representation, not merely a formal polynomial identity.
+
+We also recover the local scattering profile
+$(N+1)^{-1}\Pi_N(e^{s/(N+1)})\to(e^s-1)/s$.  A 192-case determinant audit and
+104 trace checks have maximum errors $9.48\times10^{-15}$ and below
+$10^{-10}$, respectively.  This closes the algebraic model factor only.  It
+does not identify the actual noisy cloud with $K_N$, select $N(\sigma)$,
+construct a physical Riesz projection, or prove complement convergence.
+\end{abstract}
+
+\section{The algebraic gap left by RH-80}
+
+RH-80 proves that fixed limiting pole cancellation cannot cross the pole
+circle.  Its correct sufficient replacement is division by the actual finite
+moving cloud polynomial \citep{WangRH80}.  In the canonical model that factor
+is
+\begin{equation}\label{eq:cloud}
+ C_N(w)=\Pi_N(w/\lambda)^2,
+ \qquad
+ \Pi_N(q)=1+q+\cdots+q^N.
+\end{equation}
+The theorem in RH-80 treats $C_N$ as a finite determinant once a reducing
+cloud exists, but it does not specify a canonical finite operator whose
+determinant is \eqref{eq:cloud}.
+
+RH-176 supplies one copy: a reduced cycle of length $N+1$ has determinant
+$\Pi_N$ \citep{WangRH176}.  Two copies therefore appear inevitable.  The
+point of this paper is to make that observation operator-theoretic and to
+record the resulting traces, multiplicities, and limitations.
+
+\section{Definition of the double-cycle cloud}
+
+Let $L=N+1$, let $C_L$ be the forward cycle on $\mathbb C^L$, and let
+$\cZ_L=\mathbf1_L^\perp$.  Write
+\[
+ C_L^\circ=C_L|_{\cZ_L}.
+\]
+Its eigenvalues are the nontrivial roots
+\[
+ \omega_k=e^{2\pi ik/L},
+ \qquad 1\le k\le N.
+\]
+Define the normal $2N$-dimensional operator
+\begin{equation}\label{eq:K}
+ K_N=\lambda^{-1}
+ \bigl(C_L^\circ\oplus C_L^\circ\bigr).
+\end{equation}
+
+\begin{theorem}[Exact double-cycle realization]\label{thm:det}
+For every $w\in\mathbb C$,
+\begin{equation}\label{eq:det}
+ \det(I-wK_N)
+ =\prod_{k=1}^N(1-w\omega_k/\lambda)^2
+ =\Pi_N(w/\lambda)^2.
+\end{equation}
+Thus $K_N$ realizes the exact RH-80 geometric moving factor.
+\end{theorem}
+
+\begin{proof}
+Apply the reduced-cycle determinant identity to each direct-sum copy:
+\[
+ \det(I-w\lambda^{-1}C_L^\circ)
+ =\frac{1-(w/\lambda)^L}{1-w/\lambda}
+ =\Pi_N(w/\lambda).
+\]
+Determinants multiply over finite invariant direct sums, proving
+\eqref{eq:det}.
+\end{proof}
+
+\begin{corollary}[Exact dimension dictionary]
+The model has cycle length $L=N+1$, reduced rank $N$ per copy, total cloud
+rank $2N$, and determinant degree $2N$.
+\end{corollary}
+
+This agrees with the RH-15 convention that an effective degree $N$ selects
+$2N$ parity-resolved cloud eigenvalues \citep{WangRH15}.  Agreement of counts
+does not identify the observed eigenvalues with the exact roots.
+
+\section{Complete periodic trace ledger}
+
+The cycle powers have
+\[
+ \Tr C_L^m=
+ \begin{cases}
+ L,&L\mid m,\\
+ 0,&L\nmid m.
+ \end{cases}
+\]
+Removing the stationary mode subtracts one from every power trace.
+
+\begin{theorem}[Double-cycle trace formula]\label{thm:trace}
+For every integer $m\ge1$,
+\begin{equation}\label{eq:trace}
+ \Tr K_N^m=
+ \frac{2}{\lambda^m}
+ \begin{cases}
+ N,&N+1\mid m,\\
+ -1,&N+1\nmid m.
+ \end{cases}
+\end{equation}
+Equivalently,
+\begin{equation}\label{eq:logdet}
+ \log\det(I-wK_N)
+ =-\sum_{m\ge1}\frac{w^m}{m}\Tr K_N^m
+\end{equation}
+for $|w|<\lambda$.
+\end{theorem}
+
+\begin{proof}
+On one reduced cycle,
+\[
+ \Tr(C_L^\circ)^m=\Tr C_L^m-1,
+\]
+which is $N$ when $L\mid m$ and $-1$ otherwise.  Scaling contributes
+$\lambda^{-m}$ and doubling contributes the factor two.  The finite
+log-determinant expansion is standard inside the reciprocal spectral radius
+\citep{Simon2005}.
+\end{proof}
+
+The negative background value $-2\lambda^{-m}$ is not an error.  It is the
+trace contribution of deleting two stationary modes.  At multiples of the
+cycle length, all phases align and the trace jumps to
+$2N\lambda^{-m}$.
+
+\section{Coefficient ledger of the squared geometric section}
+
+Writing
+\begin{equation}\label{eq:coefficients}
+ \Pi_N(q)^2=\sum_{j=0}^{2N}c_{N,j}q^j,
+\end{equation}
+the coefficients count pairs $(a,b)$ with
+$0\le a,b\le N$ and $a+b=j$.
+
+\begin{proposition}[Triangular coefficient law]\label{prop:coefficients}
+The exact coefficients are
+\begin{equation}\label{eq:triangular}
+ c_{N,j}=
+ \begin{cases}
+ j+1,&0\le j\le N,\\
+ 2N-j+1,&N<j\le2N.
+ \end{cases}
+\end{equation}
+Therefore
+\begin{equation}\label{eq:scaled-coefficients}
+ \det(I-wK_N)
+ =\sum_{j=0}^{2N}c_{N,j}\lambda^{-j}w^j.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For $j\le N$, the admissible pairs are
+$(0,j),(1,j-1),\ldots,(j,0)$, giving $j+1$.  For $j>N$, the square
+$[0,N]^2$ truncates both ends and leaves $2N-j+1$ pairs.  Substitute
+$q=w/\lambda$.
+\end{proof}
+
+The coefficient law gives a finite target for the physical Q interface.  A
+future Riesz cloud need not match individual exact roots before one can test
+its determinant: its normalized coefficients can first be compared with the
+triangular ledger \eqref{eq:scaled-coefficients}.  Newton identities make this
+equivalent to matching the power traces in Theorem~\ref{thm:trace}, but the
+two diagnostics have different numerical conditioning.
+
+\section{One-step square roots and the two-step double cycle}
+
+RH-15 uses the one-step cloud
+\begin{equation}\label{eq:one-step-roots}
+ \mu_{N,k}^{\pm}=\lambda^{-1/2}
+ \exp\left(\pm\frac{ik\pi}{N+1}\right),
+ \qquad 1\le k\le N.
+\end{equation}
+There are $2N$ roots and their regularized determinant is
+$\Pi_N(z^2/\lambda)$ \citep{WangRH15}.
+
+\begin{theorem}[Squaring produces the double-cycle multiset]
+\label{thm:squaring}
+The multiset of squares of the one-step roots
+\eqref{eq:one-step-roots} is exactly the spectrum of $K_N$:
+\begin{equation}\label{eq:squared-roots}
+ \{(\mu_{N,k}^{\pm})^2:1\le k\le N\}
+ =\biguplus_{j=1}^N
+ \left\{\lambda^{-1}e^{2\pi ij/(N+1)},
+ \lambda^{-1}e^{2\pi ij/(N+1)}\right\}
+\end{equation}
+with every nontrivial root appearing twice.
+\end{theorem}
+
+\begin{proof}
+Squaring gives
+$\lambda^{-1}e^{\pm2\pi ik/(N+1)}$.  As $k$ runs from one to $N$, the plus
+sign lists all nontrivial roots once, and the minus sign lists the same set in
+reverse order.  Hence each root has multiplicity two.
+\end{proof}
+
+This theorem supplies an exact algebraic adapter between the RH-15 one-step
+cloud and the RH-80 two-step squared factor.  It is consistent with the
+general identity relating a one-step regularized determinant to its symmetric
+two-step Fredholm completion.  It still does not prove that the physical
+one-step resonances square without leakage into the selected physical
+two-step Riesz cloud; that is an operator-selection problem, not a polynomial
+identity.
+
+\section{Normality, uniqueness, and orientation blindness}
+
+The operator $K_N$ is normal.  Among finite normal operators, its determinant
+fixes the multiset of eigenvalues and therefore fixes it up to unitary
+equivalence.  This is a useful limited canonicity: once $N$, $\lambda$, and
+the squared geometric factor are specified, no further normal spectral data
+are missing.
+
+However, orientation is not spectral data.  Replacing either cycle by its
+inverse conjugates and permutes the root set, leaving
+\eqref{eq:det} and all ordinary traces unchanged.  The same scalar cloud
+factor can therefore arise from
+\[
+ C_L^\circ\oplus C_L^\circ,
+ \qquad
+ C_L^\circ\oplus(C_L^\circ)^{-1},
+ \qquad\text{or}\qquad
+ (C_L^\circ)^{-1}\oplus(C_L^\circ)^{-1}.
+\]
+These completions carry different time arrows but the same determinant.
+RH-178 adds a rank-one directed marker to separate them.
+
+\section{Scattering coordinate}
+
+The finite section has a nontrivial edge scaling.  Put
+$q=e^{s/(N+1)}$.  Then
+\begin{equation}\label{eq:profile}
+ \frac1{N+1}\Pi_N(q)
+ =\frac{e^s-1}{(N+1)(e^{s/(N+1)}-1)}.
+\end{equation}
+
+\begin{proposition}[Geometric scattering profile]\label{prop:profile}
+For every $s\in\mathbb C$,
+\begin{equation}\label{eq:limit}
+ \frac1{N+1}\Pi_N(e^{s/(N+1)})
+ \longrightarrow \frac{e^s-1}{s},
+\end{equation}
+with the removable value one at $s=0$, locally uniformly in $s$.
+The normalized double-cycle determinant profile is the square of this limit.
+\end{proposition}
+
+\begin{proof}
+The denominator in \eqref{eq:profile} converges locally uniformly to $s$.
+The removable value follows by differentiation or continuity.  Squaring
+preserves locally uniform convergence on compact sets.
+\end{proof}
+
+This is the same canonical profile used in the RH-15 scattering analysis.
+Here it arises from a literal finite normal operator, not only from a
+polynomial approximation.
+
+\section{Audit}
+
+The audit uses degrees
+\[
+ N=1,2,3,4,7,12,20,32
+\]
+and 24 random complex spectral parameters per degree inside
+$|w|<0.8\lambda$, giving 192 determinant cases.  The maximum relative error
+between the eigenvalue product and $\Pi_N(w/\lambda)^2$ is
+$9.47\times10^{-15}$.
+
+For each degree it also checks powers up to
+$\min(2(N+1),20)$, for 104 trace cases.  The maximum absolute difference from
+\eqref{eq:trace} is below $10^{-10}$.  Finally, the five edge coordinates
+$s=-1,-1/2,0,1/2,1$ are evaluated; at $N=32$ the finite profile is already
+close to $(e^s-1)/s$.  These are implementation checks of exact finite
+identities.
+
+\section{Relation to the physical Gate-A program}
+
+The theorem closes an algebraic leaf that may be denoted
+$Q_{\rm geom}$:
+\[
+ \text{squared geometric cloud factor}
+ \Longleftrightarrow
+ \text{double reduced cycle determinant}.
+\]
+It does not close the physical cloud ledger $Q_{\rm phys}$.  The latter must
+prove that the actual noisy Riesz cloud has the same divisor or converges to
+it in the required coefficient sense.  Nor does this paper provide the
+physical packet-to-Riesz map $R$, the complementary Schatten limit $U$, the
+normalization leaf $Z$, or the directed limit $T$.
+
+The next two concrete tasks are:
+\begin{enumerate}[leftmargin=2em]
+\item supplement the scalar determinant with orientation-separating marked
+traces;
+\item compare $L=N+1$ with the reset clock rank and observed cloud degree.
+\end{enumerate}
+No self-adjoint Hilbert--Polya operator, prime-power trace formula, zeta
+divisor identity, or Riemann Hypothesis is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

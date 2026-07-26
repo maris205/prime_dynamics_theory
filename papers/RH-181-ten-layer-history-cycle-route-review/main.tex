@@ -1,0 +1,442 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.04}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Ten Layers from Reset Memory to Finite Cyclic Clouds\\
+\large A Route Review, One Shift No-Go Theorem, and Two Surviving Physical Frontiers}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-171 identified the physical packet-to-Riesz interface as the first open
+operator wall inside Gate A and split it into ambient realization, validated
+data, uniform margins, and shellwise transport.  RH-172--180 investigate the
+ambient leaf from the actual source-memory definition rather than from an
+abstract equal-rank packet.
+
+The reset memory has an exact finite history realization:
+$M_t=F_t^*F_t$, with a canonical polar packet and an exact rectangular
+cocycle $F_{t+1}=T_tF_t$.  On all 130 archived snapshots these identities and
+the stable polar factors are numerically sound.  However, none of the 120
+consecutive updates passes a symmetric $0.25$ primal/adjoint residual gate;
+the adjoint residual is always at least $0.3233$.  The simplest consecutive
+reset reducing-bundle hypothesis is therefore not supported by the finite
+data.
+
+The literal square infinite-history completion is rigorously rejected as a
+direct determinant operator: it contains a weighted unilateral shift, has a
+spectral disk, and no positive power is compact or Schatten.  A finite cyclic
+closure survives.  Its reduced determinant is exactly $\Pi_N$, two copies
+give the RH-80 factor $\Pi_N^2$, and a compressed rank-one edge marker
+separates forward from reverse orientation by exactly one.  The seven RH-15
+cloud rows imply a formal rank-to-cycle offset in $\{3,4\}$, but only one row
+overlaps the certified reset atlas.  An explicit conditional Schur theorem
+then lifts every doubled cycle root to a rank-two Riesz shell if a physical
+cycle embedding and uniform resolvent/coupling budgets are supplied.
+
+We formalize two surviving architecture-relative frontiers.  The reset-
+history branch is missing history-to-transfer realization, physical data,
+uniform margins, and shell transport.  The finite-cycle branch is missing
+cycle calibration, cycle-to-transfer realization, and the same three
+physical controls.  An aggregate audit records 2,600 finite formula or shell
+items with zero implementation/rank failures; this count is not a statistical
+sample size and coexists with the intentional RH-174 negative result.
+
+Neither branch closes physical R, and the cycle branch would require a typed
+redesign of the reset-seeded Gate-A assembly.  Q, U, Z, T and macro Gate A
+remain open; Gates B--E are untouched.  No Hilbert--Polya or Riemann-
+hypothesis conclusion is claimed.
+\end{abstract}
+
+\section{Coordinate before this batch}
+
+RH-161 gives a typed conditional assembly for a moving relative determinant
+once six obligations are met: a seed S, packet-to-Riesz lift R, cloud ledger
+Q, complementary Schatten limit U, canonical normalization Z, and directed
+marked limit T \citep{WangRH161}.  RH-162--171 then resolve the abstract
+proof architecture of R and arrive at
+\begin{equation}\label{eq:old-R}
+ R=X_{\rm phys}\wedge D_{\rm phys}\wedge
+ K_{\rm phys}\wedge H_{\rm phys},
+\end{equation}
+where X is ambient realization, D validated finite block data, K uniform
+Schur/graph margins, and H shellwise common-coordinate transport
+\citep{WangRH171}.
+
+At that point all four leaves remained physically open.  X was first because
+the RH-151 reset packet belongs to a source-memory Gram while the RH-80 cloud
+belongs to a noisy transfer operator.  The present batch asks whether the
+special form of that Gram supplies a canonical realization and, if so,
+whether that realization can support a determinant.
+
+\section{Layer-by-layer result}
+
+The nine research layers before this review are summarized below.
+\begin{center}
+\small
+\begin{tabular}{p{0.09\textwidth}p{0.57\textwidth}p{0.22\textwidth}}
+\toprule
+paper & principal result & strict status\\
+\midrule
+RH-172 & $M_t=F_t^*F_t$ and canonical polar packet in finite history space & exact finite theorem\\
+RH-173 & $F_{t+1}=T_tF_t$, explicit $T_t^*T_t$, and orthogonal reset counterexample & exact finite theorem\\
+RH-174 & 130 physical snapshots stable; zero of 120 updates pass a $0.25$ two-sided residual gate & floating finite-data result\\
+RH-175 & infinite weighted history has a spectral disk and no Schatten power & rigorous branch no-go\\
+RH-176 & reduced finite cycle determinant equals $\Pi_{L-1}$ & exact algebraic theorem\\
+RH-177 & double reduced cycle determinant equals RH-80's $\Pi_N^2$ factor & exact algebraic theorem\\
+RH-178 & one compressed rank-one marker separates orientation by exactly one & exact marked-trace theorem\\
+RH-179 & $r-L=\lceil h-N\rceil+1$; seven-row gap is $3$ or $4$ & exact arithmetic plus finite data\\
+RH-180 & explicit cyclic Schur budget preserves rank two at every root & conditional Riesz theorem\\
+\bottomrule
+\end{tabular}
+\end{center}
+The sequence contains both positive and negative information.  The negative
+results remove two shortcuts: Gram optimality does not imply temporal
+reduction, and literal infinite memory does not produce a direct Fredholm
+determinant.  The finite cyclic branch is not an arbitrary replacement; its
+determinant matches the already-required geometric factor exactly.
+
+\section{The reset-history branch}
+
+\subsection{What is now closed}
+
+For $S_t=A^tS_0$ and $\widehat S_t=S_t/\norm{S_t}_F$, define
+\[
+ F_tx=(\widehat S_tx,\sqrt\eta\widehat S_{t-1}x,
+ \ldots,\eta^{t/2}\widehat S_0x).
+\]
+RH-172 proves
+\begin{equation}\label{eq:gram}
+ M_t=F_t^*F_t
+\end{equation}
+and realizes every positive packet projection $P_t$ by the canonical partial
+polar isometry
+\begin{equation}\label{eq:polar}
+ J_t=F_tP_t(P_tM_tP_t|_{\operatorname{Ran}P_t})^{-1/2}.
+\end{equation}
+This is invariant under source-coordinate gauge and packet-frame gauge
+\citep{WangRH172}.
+
+RH-173 proves the exact time update
+\begin{equation}\label{eq:cocycle}
+ F_{t+1}=T_tF_t,
+ \qquad
+ T_t(y_0,\ldots,y_t)=
+ (r_tAy_0,\sqrt\eta y_0,\ldots,\sqrt\eta y_t),
+\end{equation}
+with
+\[
+ T_t^*T_t=operatorname{diag}(r_t^2A^*A+\eta I,
+ \eta I,\ldots,\eta I).
+\]
+Hence the finite source-memory-to-history leaf
+\[
+ X_{\rm mem\to hist}
+\]
+is closed exactly.  This is a genuine improvement over the RH-171 status,
+where no canonical ambient realization was known.
+
+\subsection{What the physical audit says}
+
+The RH-174 reconstruction covers five scales, two channels, 130 packets, and
+120 updates \citep{WangRH174}.  The maximum Gram and cocycle residuals are
+below $10^{-15}$, and all stable SVD polar packets have isometry defect below
+$3.6\times10^{-15}$.  The direct inverse-square-root formula becomes
+inaccurate at selected condition numbers up to $3.61\times10^{12}$, but the
+stable polar subspace remains well defined.
+
+Temporal coherence is asymmetric.  The primal median residual is $0.0288$,
+but the adjoint median is $0.7130$ and the adjoint minimum is $0.3233$.  The
+transported reset distance reaches $0.99999965$, with 23 values at least
+$0.90$.  Therefore the data do not support treating independently reset top
+packets as a two-sided reducing bundle for the one-step history cocycle.
+
+This is not an all-level no-go theorem.  It leaves open lagged packets,
+block-time packets, separate primal/dual packets, and direct transfer-space
+constructions.
+
+\subsection{Why the literal infinite completion is closed off}
+
+The most direct square completion of \eqref{eq:cocycle} acts on infinite
+history by
+\[
+ \mathcal L(y_0,y_1,\ldots)
+ =(By_0,qy_0,qy_1,\ldots),
+ \qquad q=\sqrt\eta.
+\]
+RH-175 proves
+\begin{equation}\label{eq:shift-spectrum}
+ \sigma(\mathcal L)=\sigma(B)\cup\overline{D(0,q)},
+ \qquad
+ \sigma_{\rm e}(\mathcal L)=\partial D(0,q),
+\end{equation}
+and no positive power is compact or Schatten \citep{WangRH175}.  Thus
+\[
+ \text{literal infinite history}
+ \not\longrightarrow
+ \text{direct Fredholm determinant}.
+\]
+Relative scattering against the shift background remains possible, but it is
+a different typed object.
+
+\section{The finite-cycle branch}
+
+\subsection{Exact determinant model}
+
+For the length-$L$ cycle $C_L$ and zero-mean restriction $C_L^\circ$,
+RH-176 proves
+\begin{equation}\label{eq:cycle-det}
+ \det(I-qC_L^\circ)=\frac{1-q^L}{1-q}=\Pi_{L-1}(q).
+\end{equation}
+The cycle differs from the nilpotent finite shift by one rank-one wrap edge of
+operator norm one.  It converges locally/strongly to the unilateral dynamics,
+not in operator norm \citep{WangRH176}.
+
+With $L=N+1$, RH-177 defines
+\begin{equation}\label{eq:double-cycle}
+ K_N=\lambda^{-1}
+ (C_L^\circ\oplus C_L^\circ)
+\end{equation}
+and proves
+\begin{equation}\label{eq:rh80-factor}
+ \det(I-wK_N)=\Pi_N(w/\lambda)^2,
+\end{equation}
+exactly the canonical RH-80 cloud factor \citep{WangRH177}.  The complete
+power-trace ledger is also explicit.  This closes an algebraic model leaf,
+not the physical cloud coefficient ledger.
+
+\subsection{Direction is additional data}
+
+Forward and reverse cycles have identical determinants and ordinary traces.
+RH-178 compresses the edge marker $J=|e_0\rangle\langle e_1|$ to the
+zero-mean space and proves
+\begin{equation}\label{eq:orientation}
+ \Tr(J^\circ C_L^\circ)=1-L^{-1},
+ \qquad
+ \Tr(J^\circ(C_L^\circ)^{-1})=-L^{-1}.
+\end{equation}
+The orientation gap is one and is stable under operator perturbations by a
+trace-duality bound \citep{WangRH178}.  Therefore the appropriate finite datum
+is
+\[
+ (\text{cloud determinant},\text{directed marked traces}),
+\]
+exactly the enhanced type anticipated by RH-161.
+
+\subsection{Clock calibration is narrow but not unique}
+
+Let
+$h_\sigma=\log(1/\sigma)/(2\log\lambda)$,
+$r_\sigma=\lceil h_\sigma\rceil+2$,
+$L_\sigma=N_\sigma+1$, and
+$d_\sigma=h_\sigma-N_\sigma$.  RH-179 proves the exact identity
+\begin{equation}\label{eq:clock}
+ r_\sigma-L_\sigma=\lceil d_\sigma\rceil+1.
+\end{equation}
+On all seven RH-15 cloud rows, the right side is three or four
+\citep{WangRH179}.  Only $\sigma=0.01$ overlaps the actual RH-151 reset atlas;
+there $r=7$, $N=3$, and $L=4$.  The remaining six ranks are formal clock
+predictions.  Therefore the cycle length is constrained but not physically
+selected.
+
+\subsection{Conditional Riesz shells}
+
+The doubled reduced cycle has roots
+$\zeta_k=\rho e^{2\pi ik/L}$ of multiplicity two and half-spacing
+$s_L=\rho\sin(\pi/L)$.  RH-180 considers a physical block candidate
+\[
+ A=\begin{pmatrix}K_L+E&B\\C&D\end{pmatrix}
+\]
+and circles of radius $\delta<s_L$.  If $\norm E=\varepsilon<\delta$, the
+complement disks are spectrum-free with contour resolvent bound $d$, and
+\begin{equation}\label{eq:cyclic-schur}
+ \frac{d\norm B\norm C}{\delta-\varepsilon}<1,
+\end{equation}
+then every root circle encloses a rank-two Riesz projection
+\citep{WangRH180}.  This is the exact finite theorem needed after a physical
+cycle embedding is found.
+
+\section{Two surviving architecture-relative frontiers}
+
+The old leaf $X_{\rm phys}$ is no longer a single opaque request.  There are
+two candidate routes to a physical finite cloud seed.
+
+For the reset-history route define
+\begin{equation}\label{eq:reset-route}
+ R_{\rm hist}=
+ M_H\wedge I_{HT}\wedge D\wedge K\wedge H,
+\end{equation}
+where $M_H$ is memory-to-history realization and $I_{HT}$ is a
+history-to-transfer map.  For the finite-cycle route define
+\begin{equation}\label{eq:cycle-route}
+ R_{\rm cyc}=
+ C_A\wedge C_{\rm cal}\wedge I_{CT}
+ \wedge D\wedge K\wedge H,
+\end{equation}
+where $C_A$ is exact cycle algebra, $C_{\rm cal}$ physical cycle calibration,
+and $I_{CT}$ cycle-to-transfer realization.
+
+The currently proved leaves are
+\[
+ M_H=\text{proved},
+ \qquad C_A=\text{proved}.
+\]
+All other displayed leaves are open.
+
+\begin{proposition}[Current minimal branch frontiers]\label{prop:frontier}
+Relative to \eqref{eq:reset-route}--\eqref{eq:cycle-route}, the reset-history
+branch has missing bundle
+\begin{equation}\label{eq:hist-frontier}
+ \boxed{\{I_{HT},D,K,H\}},
+\end{equation}
+and the finite-cycle branch has missing bundle
+\begin{equation}\label{eq:cycle-frontier}
+ \boxed{\{C_{\rm cal},I_{CT},D,K,H\}}.
+\end{equation}
+Neither branch is closed.  The no-go theorem for the literal infinite shift
+does not remove the finite reset-history route or the finite-cycle route.
+\end{proposition}
+
+\begin{proof}
+Each route is a conjunction.  Delete the two proved leaves and collect the
+remaining open leaves.  The RH-175 no-go object is an attempted square
+completion after $M_H$; it is not identical to the finite map $I_{HT}$ and is
+not a leaf of the finite-cycle route.
+\end{proof}
+
+The symbols $D,K,H$ are shared only at the architectural level.  Their actual
+contours, block decompositions, and transport coordinates can differ between
+branches.  A future implementation must type them branch by branch.
+
+\section{Relation to the macro Gate-A formula}
+
+The reset-history branch fits the existing RH-161 typed assembly: an eventual
+reset seed is lifted through R and then combined with Q, U, Z, and T.  The
+finite-cycle branch may bypass the reset seed entirely.  If it becomes
+primary, the Gate-A theorem must be restated with a cyclic seed type; RH-180
+alone does not authorize silently substituting a cycle for S.
+
+Consequently the safe macro status remains
+\begin{equation}\label{eq:macro}
+ S\text{ conditional},
+ \qquad R,Q,U,Z,T\text{ open},
+ \qquad \text{Gate A open}.
+\end{equation}
+The exact cycle factor advances a model for Q, not the physical Q leaf.  The
+finite edge marker advances a model for T, not the physical common-space
+marked limit.  The distinction between algebraic model and physical
+identification is maintained throughout.
+
+\section{Aggregate reproducibility audit}
+
+The RH-181 script reads the archived outputs of RH-172--180.  Its count of
+2,600 finite items is the sum below.
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+layer & recorded finite items & formula/rank failures\\
+\midrule
+RH-172 polar identities & 192 & 0\\
+RH-173 cocycle identities & 160 & 0\\
+RH-174 physical snapshots & 130 & 0 identity failures\\
+RH-175 resolvent cases & 15 & 0\\
+RH-176 cyclic determinants & 240 & 0\\
+RH-177 determinants and traces & 296 & 0\\
+RH-178 marked perturbations & 120 & 0\\
+RH-179 joined clock rows & 7 & 0 translation failures\\
+RH-180 matrices and root shells & 1,440 & 0 rank failures\\
+\midrule
+total & 2,600 & 0\\
+\bottomrule
+\end{tabular}
+\end{center}
+The root shells are nested inside the RH-180 matrices, and the rows across
+papers are not independent random samples.  The total is therefore a
+reproducibility ledger, not a statistical significance claim.
+
+The zero failure count refers to proved formula implementations and
+conditional rank counts.  It does not erase the RH-174 physical negative
+result: zero of 120 updates passes the selected two-sided residual gate.  That
+zero is a scientific outcome, not an implementation failure.
+
+\section{Recommended next physical experiment}
+
+The finite-cycle route is now algebraically cleaner, but it must be derived
+from data rather than reverse-engineered from the desired determinant.  The
+next paper should construct a target-independent finite temporal clock from
+the physical history cocycle.  A strict protocol is:
+\begin{enumerate}[leftmargin=2em]
+\item choose candidate lengths $L=r-3$ and $L=r-4$ before inspecting transfer
+eigenvalues;
+\item form consecutive stable history packet frames and their reduced
+cocycle matrices $B_t=V_{t+1}^*T_tV_t$;
+\item build the chronological product and a polar/Procrustes wrap map from
+the endpoint back to the seed, using only time-domain data;
+\item measure the wrap residual, primal and adjoint defects, cycle-root phase
+error, and the rank-one orientation mark;
+\item compare both integer branches on all available scales without choosing
+the better branch separately at each target spectral point;
+\item only if one branch survives, replace floating residuals by outward
+matrix balls and feed them into RH-180.
+\end{enumerate}
+If both candidate lengths fail badly, the finite-cycle physical branch is
+rejected while the direct transfer-space branch remains.  If one survives,
+the next wall is a validated cycle-to-transfer isometry and shrinking
+$L^{-1}$ contour budgets.
+
+\section{Longer-term roadmap}
+
+Even a successful RH-180 physical instantiation would close only a version of
+R.  The remaining Gate-A sequence is:
+\begin{enumerate}[leftmargin=2em]
+\item prove that the actual finite Riesz determinant has the geometric cloud
+coefficient ledger Q;
+\item prove a common-space $\mathcal S_1$ or $\mathcal S_2$ complement limit
+U;
+\item prove schedule, gauge, and zero-free normalization canonicity Z;
+\item transport the directed marked words and prove their limit T;
+\item assemble the canonical intrinsic relative determinant.
+\end{enumerate}
+Only after that would the program enter the scattering/unitary completion and
+self-adjoint questions associated with macro Gates B and C.  The
+$T\log T$ counting law, von Mangoldt prime-power trace formula, and completed
+zeta divisor identity belong to Gates C--E and have not been approached by
+this batch.
+
+\section{Final theorem boundary}
+
+The batch proves an exact finite history realization, its exact cocycle, a
+branch-specific infinite-shift no-go theorem, an exact finite cyclic cloud
+determinant, an exact directed marker, an integer clock translation, and a
+conditional rank-two cyclic Riesz theorem.  The finite physical audit is
+reported with its negative two-sided result.
+
+It does not prove a physical history-to-transfer or cycle-to-transfer map,
+unique cycle calibration, outward physical block budgets, uniform all-level
+Riesz shells, the actual cloud coefficient bridge, a Schatten complement
+limit, determinant canonicity, directed marked convergence, macro Gate A,
+any self-adjoint Hilbert--Polya operator, a $T\log T$ law, a prime-power trace
+formula, equality with the completed zeta divisor, or the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

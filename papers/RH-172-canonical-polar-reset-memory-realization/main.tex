@@ -1,0 +1,393 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.04}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Canonical Polar Realization of Reset-Memory Packets\\
+\large An Exact Finite-History Solution to the Source-Space Type Problem}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The reset atlas of RH-151 selects a clock-rank packet from a recursive
+source-memory Gram matrix.  The packet therefore lives in source-column
+space, whereas the moving-cloud determinant of RH-80 lives in a transfer
+space.  RH-162 correctly identified the resulting ambient-space type gap,
+but did not exploit the special Gram structure of the archived reset data.
+
+We factor that structure exactly.  If $S_k=A^kS_0$ and
+$\widehat S_k=S_k/\norm{S_k}_F$, define
+\[
+ F_t x=(\widehat S_t x,\sqrt\eta\widehat S_{t-1}x,
+ \ldots,\eta^{t/2}\widehat S_0x).
+\]
+Then the recursive memory is precisely $M_t=F_t^*F_t$.  For any rank-$r$
+spectral packet $P_t$ on which $M_t$ is positive, the partial polar map
+\[
+ J_t=F_tP_t\bigl(P_tM_tP_t|_{\Ran P_t}\bigr)^{-1/2}
+\]
+is an isometry from $\Ran P_t$ into the normalized history space.  Its range
+projection is canonical, independent of packet-frame gauge and covariant
+under every unitary change of source coordinates.  In an eigenframe
+$U_t^*M_tU_t=\Lambda_t$, the formula becomes
+$V_t=F_tU_t\Lambda_t^{-1/2}$.
+
+This closes a finite-dimensional source-memory-to-history realization,
+denoted $X_{\rm mem\to hist}$.  It does not identify the history space with
+the RH-80 transfer/determinant space and therefore does not close the
+physical interface $X_{\rm phys}$.  A 192-case complex synthetic audit
+checks the Gram, polar, source-gauge, and packet-gauge identities with maximum
+residual below $5.5\times10^{-15}$.  The theorem is exact; the audit validates
+only its implementation.  No all-level limit, Riesz cloud, canonical
+determinant, Hilbert--Polya operator, or Riemann-hypothesis conclusion is
+claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Gram factorization; polar decomposition; reset
+packet; finite history; gauge covariance; nonselfadjoint dynamics.
+
+\section{The precise type problem}
+
+RH-151 constructs, at each frozen scale and time, the top clock-rank spectral
+packet of a positive memory matrix \citep{WangRH151}.  The memory acts on the
+columns of the source $S_0$, not on the state space on which the production
+transfer operator acts.  Writing both packets with the same letter suppresses
+a genuine type distinction:
+\[
+ P_t^{\rm reset}\in\mathcal B(\cX),
+ \qquad
+ \Pi_t^{\rm cloud}\in\mathcal B(\cH_{\rm transfer}).
+\]
+RH-162 therefore required an ambient realization before applying a
+packet-to-Riesz theorem \citep{WangRH162}.
+
+The first question is narrower than the full physical bridge.  Does the
+particular reset memory already carry a canonical Hilbert-space realization,
+without fitting target eigenvectors or choosing an arbitrary injection?  The
+answer is yes.  The target is a normalized finite-history space determined by
+the source dynamics itself.  This paper constructs that target and proves its
+canonicity.  Whether it is the correct transfer target is left open.
+
+\section{Normalized source memory}
+
+Let $\cX$ and $\cY$ be finite-dimensional complex Hilbert spaces.  Let
+$A\in\mathcal B(\cY)$, let $S_0:\cX\to\cY$ be nonzero, and suppose
+$S_k=A^kS_0\ne0$ for $0\le k\le t$.  Fix $0\le\eta<1$ and put
+\[
+ \alpha_k=\norm{S_k}_F,
+ \qquad \widehat S_k=\alpha_k^{-1}S_k.
+\]
+The RH-94/RH-151 memory recursion is
+\begin{equation}\label{eq:memory-recursion}
+ M_{-1}=0,
+ \qquad
+ M_k=\widehat S_k^*\widehat S_k+\eta M_{k-1}.
+\end{equation}
+Every $M_k$ is positive semidefinite and
+$\operatorname{tr}M_k=1+\eta+\cdots+\eta^k$.
+
+Define the history space
+\[
+ \cK_t=\underbrace{\cY\oplus\cdots\oplus\cY}_{t+1\text{ copies}}
+\]
+with current time first, and define $F_t:\cX\to\cK_t$ by
+\begin{equation}\label{eq:history-factor}
+ F_tx=
+ \bigl(\widehat S_tx,\sqrt\eta\widehat S_{t-1}x,
+ \ldots,\eta^{t/2}\widehat S_0x\bigr).
+\end{equation}
+
+\begin{theorem}[Exact history Gram factorization]\label{thm:gram}
+For every finite time $t$,
+\begin{equation}\label{eq:gram-factorization}
+ M_t=F_t^*F_t
+ =\sum_{k=0}^t\eta^{t-k}\widehat S_k^*\widehat S_k.
+\end{equation}
+Consequently $\ker M_t=\ker F_t$ and
+$\rank M_t=\rank F_t$.
+\end{theorem}
+
+\begin{proof}
+The direct-sum norm has no cross terms, hence
+\[
+ \langle F_tx,F_ty\rangle
+ =\sum_{k=0}^t\eta^{t-k}
+ \langle\widehat S_kx,\widehat S_ky\rangle.
+\]
+This proves the second identity in \eqref{eq:gram-factorization}.  Iterating
+\eqref{eq:memory-recursion} gives the same sum.  Finally,
+$\langle M_tx,x\rangle=\norm{F_tx}^2$, so the kernels agree; rank equality
+follows in finite dimension.
+\end{proof}
+
+The factor $F_t$ is not introduced by an eigenvector fit.  It is forced by
+the actual recursion, including the normalization and forgetting weight.
+Thus the source memory already has an intrinsic realization, albeit on a
+history space rather than the desired transfer space.
+
+\section{Canonical realization of a reset packet}
+
+Let $P$ be a rank-$r$ orthogonal projection on $\cX$.  Assume
+\begin{equation}\label{eq:positive-packet}
+ PM_tP|_{\Ran P}>0.
+\end{equation}
+This condition is automatic when $P$ is spanned by $r$ positive eigenvalues
+of $M_t$.  On $\Ran P$ define
+\begin{equation}\label{eq:partial-polar}
+ J_{t,P}=F_tP\bigl(PM_tP|_{\Ran P}\bigr)^{-1/2}.
+\end{equation}
+
+\begin{theorem}[Canonical packet isometry]\label{thm:polar}
+Under \eqref{eq:positive-packet}, $J_{t,P}:\Ran P\to\cK_t$ is an isometry:
+\[
+ J_{t,P}^*J_{t,P}=I_{\Ran P}.
+\]
+Its range is $F_t(\Ran P)$, and its ambient projection is
+\begin{equation}\label{eq:realized-projection}
+ Q_{t,P}=J_{t,P}J_{t,P}^*.
+\end{equation}
+Both $J_{t,P}$ and $Q_{t,P}$ are determined by $(F_t,P)$; no target
+eigenbasis is chosen.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:gram},
+\[
+ (F_tP)^*(F_tP)|_{\Ran P}=PM_tP|_{\Ran P}.
+\]
+Substitution in \eqref{eq:partial-polar} gives
+$J_{t,P}^*J_{t,P}=I$.  The inverse square root is invertible on $\Ran P$,
+so multiplying by it does not change the image of $F_tP$.  Uniqueness is the
+uniqueness of the polar partial isometry on the initial space
+$(\ker F_tP)^\perp=\Ran P$ \citep{Higham2008}.
+\end{proof}
+
+Suppose now that $U:\mathbb C^r\to\cX$ is an orthonormal eigenframe,
+\[
+ U^*U=I_r,
+ \qquad P=UU^*,
+ \qquad U^*M_tU=\Lambda=\operatorname{diag}(\lambda_1,\ldots,\lambda_r),
+\]
+where every $\lambda_j>0$.  Then Theorem~\ref{thm:polar} becomes
+\begin{equation}\label{eq:frame-formula}
+ V=F_tU\Lambda^{-1/2},
+ \qquad V^*V=I_r,
+ \qquad Q_{t,P}=VV^*.
+\end{equation}
+This is the formula used by the numerical audit.
+
+\section{Gauge covariance and degeneracy}
+
+There are two unrelated gauges: a basis change in source space and a basis
+change inside the selected packet.  A canonical construction must handle
+both.
+
+\begin{proposition}[Source-coordinate covariance]\label{prop:source-gauge}
+Let $R$ be unitary on $\cX$ and replace every source state by
+$S_k'=S_kR$.  Then
+\[
+ F_t'=F_tR,
+ \qquad M_t'=R^*M_tR.
+\]
+If $P'=R^*PR$, the realized history projection is unchanged:
+\[
+ Q'_{t,P'}=Q_{t,P}.
+\]
+\end{proposition}
+
+\begin{proof}
+Frobenius norms are invariant under right unitary multiplication, so every
+normalized block transforms by $\widehat S_k'=\widehat S_kR$.  This proves
+the first two identities.  The positive compression transforms by unitary
+conjugacy, and functional calculus gives
+$(P'M_t'P')^{-1/2}=R^*(PM_tP)^{-1/2}R$ on the transformed range.  Hence
+$J'_{t,P'}R^*=J_{t,P}$ and the range projections agree.
+\end{proof}
+
+\begin{proposition}[Packet-frame equivariance]\label{prop:packet-gauge}
+In \eqref{eq:frame-formula}, replace $U$ by $UW$ for a unitary
+$W\in\mathbb C^{r\times r}$.  If the positive factor is transformed rather
+than rediagonalized, the polar frame becomes $VW$.  Therefore $VV^*$ is
+independent of packet frame.
+\end{proposition}
+
+At a repeated eigenvalue, an eigenframe is not canonical, but the spectral
+projection is canonical whenever the selected cluster is separated from its
+complement.  Theorem~\ref{thm:polar} is deliberately formulated with $P$,
+not with an ordered eigenbasis.  It therefore survives internal degeneracy.
+If the rank boundary itself has zero gap, the choice of $P$ is not canonical;
+this is a packet-selection issue already separated in RH-151.
+
+\section{Conditioning and stable evaluation}
+
+Formula \eqref{eq:frame-formula} is exact but can be a poor floating-point
+algorithm when $\lambda_r$ is very small.  Direct division by
+$\sqrt{\lambda_r}$ magnifies the Gram and eigenvector errors.  A stable
+implementation forms $X=F_tU$ and computes its thin singular value
+decomposition
+\[
+ X=L\Sigma R^*.
+\]
+The polar isometry is then
+\begin{equation}\label{eq:svd-polar}
+ V=LR^*,
+ \qquad H=R\Sigma R^*,
+ \qquad X=VH.
+\end{equation}
+In exact arithmetic \eqref{eq:svd-polar} equals
+\eqref{eq:frame-formula}.  Numerically it enforces orthonormal columns without
+explicitly applying a large inverse square root \citep{Higham2008}.
+
+\begin{remark}[What ``canonical'' means numerically]
+An SVD routine may choose different singular-vector phases or rotate a
+repeated singular subspace.  Those choices alter the frame $V$ but not the
+projection $VV^*$.  The mathematically canonical object is the polar partial
+isometry, or its range projection when only the realized subspace is needed.
+\end{remark}
+
+\section{Synthetic implementation audit}
+
+The reproducibility script generates 192 complex cases with source dimensions
+$6,9,12$, history lengths $1,2,4,7$, ranks one and three, and eight random
+trials per configuration.  Each case applies an independent unitary source
+gauge and an independent packet-frame gauge.  The maximum residuals are:
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+identity & maximum residual\\
+\midrule
+$F_t^*F_t=M_t$ & $7.16\times10^{-16}$\\
+$V^*V=I$ & $2.02\times10^{-15}$\\
+polar factorization $F_tU=VH$ & $1.42\times10^{-15}$\\
+source-gauge covariance & $1.26\times10^{-15}$\\
+packet-gauge equivariance & $5.43\times10^{-15}$\\
+packet-gauge projection invariance & $2.20\times10^{-15}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The audit is ordinary floating-point arithmetic and is not an interval
+certificate.  It checks that the code implements the proved identities.  It
+does not validate the upstream physical matrices or establish an asymptotic
+bound.
+
+\section{A universal property for competing ambient realizations}
+
+The history factor is canonical because the memory recursion specifies it,
+but the Gram matrix by itself never determines an ambient Hilbert space
+absolutely.  The precise residual freedom is unitary equivalence.
+
+\begin{proposition}[Universal property of the packet Gram]
+\label{prop:universal}
+Let $G:\Ran P\to\mathcal Z$ be another injective realization on a Hilbert
+space $\mathcal Z$ satisfying
+\begin{equation}\label{eq:competing-gram}
+ G^*G=PM_tP|_{\Ran P}.
+\end{equation}
+Let
+\[
+ W_G=G(G^*G)^{-1/2}
+\]
+be its polar isometry.  Then there is a unique unitary
+\[
+ U_G:F_t(\Ran P)\longrightarrow G(\Ran P)
+\]
+such that
+\begin{equation}\label{eq:universal-unitary}
+ U_GJ_{t,P}=W_G.
+\end{equation}
+Conversely, every unitary $U_G$ on the realized packet range produces a
+realization with the same compressed Gram.
+\end{proposition}
+
+\begin{proof}
+Both $J_{t,P}$ and $W_G$ are isometries with initial space $\Ran P$.
+Define $U_G(J_{t,P}x)=W_Gx$.  Isometry of both maps makes this definition
+well posed and inner-product preserving, and surjectivity onto $G(\Ran P)$
+is immediate.  Uniqueness follows because $J_{t,P}(\Ran P)$ is the whole
+domain of $U_G$.  Conversely, if
+$G=U_GJ_{t,P}(PM_tP)^{1/2}$, then $G^*G=PM_tP$.
+\end{proof}
+
+This proposition gives a necessary exact test for a proposed transfer-space
+realization.  If a candidate analysis map $G_t$ on the transfer side has the
+same packet Gram as $F_t$, then the packet portions of history and transfer
+space are canonically unitarily equivalent through
+\eqref{eq:universal-unitary}.  The remaining problem is no longer an
+equal-rank identification; it is to construct $G_t$ from the physical
+transfer dynamics and verify \eqref{eq:competing-gram}, or a controlled
+approximate version of it.
+
+\begin{corollary}[No exact Gram match, no exact isometric bridge]
+If a proposed transfer realization $G$ satisfies
+$G^*G\ne PM_tP$ on $\Ran P$, then no unitary between the two realized packet
+ranges can intertwine both analysis maps while fixing their source
+coordinates.  Any bridge must include a nontrivial positive polar correction.
+\end{corollary}
+
+Thus RH-172 supplies not only one ambient realization but also a comparison
+principle for every future one.  The physical leaf
+$X_{\rm hist\to transfer}$ can be attacked by estimating the Gram mismatch,
+the induced polar correction, and the commutator with time evolution.
+
+\section{Exact progress and remaining interface}
+
+The physical leaf $X_{\rm phys}$ from RH-171 can now be refined as
+\begin{equation}\label{eq:x-split}
+ X_{\rm phys}
+ =X_{\rm mem\to hist}\wedge X_{\rm hist\to transfer}.
+\end{equation}
+This paper proves the first factor at every finite time for every nonzero
+selected eigenvalue.  The second factor remains open.  In particular, the
+history space $\cK_t$ grows with $t$, is not the RH-80 transfer space, and has
+not been shown to intertwine the noisy transfer operator, its square, or the
+moving determinant cloud.
+
+The construction nevertheless removes one ambiguity.  Future attempts may
+no longer identify a source packet with a transfer packet by notation; they
+must either:
+\begin{enumerate}[leftmargin=2em]
+\item construct a bounded map from the canonical history realization into
+the transfer space and control its polar correction and commutator; or
+\item bypass reset memory and construct the Riesz cloud from a different
+intrinsic model.
+\end{enumerate}
+Failure of the first option would reject only the reset-history branch.
+
+\section{Theorem boundary}
+
+The exact results are finite-history Gram factorization, canonical polar
+realization, source-coordinate covariance, packet-gauge invariance, and the
+stable SVD evaluation rule.  They establish $X_{\rm mem\to hist}$.
+
+They do not establish a history-to-transfer intertwiner, a physical contour
+or Riesz projection, a uniform all-level packet gap, a Schatten complement,
+a canonical relative determinant, directed marked-trace convergence, a
+self-adjoint completion, a $T\log T$ law, a prime-power trace formula, a zeta
+divisor identity, or the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

@@ -1,0 +1,348 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.04}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\Ran}{\operatorname{Ran}}
+
+\title{A 130-Snapshot Audit of the Physical History Realization\\
+\large Stable Polar Packets, One-Sided Accuracy, and a Two-Sided Cocycle Failure}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-172 and RH-173 provide exact finite formulas for the reset-memory history
+factor $M_t=F_t^*F_t$, its canonical polar packet, and the rectangular update
+$F_{t+1}=T_tF_t$.  We now test those formulas on every reset snapshot in the
+five-scale RH-151 atlas: 130 packets and 120 consecutive updates across the
+left and right channels.
+
+The structural identities are numerically stable.  The maximum Gram residual
+is $8.30\times10^{-16}$, the maximum cocycle residual is
+$9.36\times10^{-16}$, and an SVD polar implementation keeps all 130 isometry
+defects below $3.57\times10^{-15}$.  Direct evaluation of
+$F_tU_t\Lambda_t^{-1/2}$ is less reliable because the selected Gram condition
+number reaches $3.61\times10^{12}$: only 103 of 130 direct formulas have
+isometry defect at most $10^{-8}$, with maximum defect
+$1.57\times10^{-5}$.
+
+Packet coherence is qualitatively different.  Ninety-five of 120 primal
+relative residuals are at most $0.10$, but every adjoint relative residual is
+larger than $0.25$; the observed range is $[0.3233,0.99998]$.  Consequently
+zero updates satisfy the symmetric $0.25$ two-sided gate.  The transported
+reset subspace has median distance $0.1873$ from the new reset packet, maximum
+distance $0.99999965$, and 23 distances at least $0.90$.
+
+Thus the canonical finite history realization is real and stable, but the
+most direct consecutive-reset reducing-bundle hypothesis is not supported by
+these frozen data.  This is a floating finite-data negative result, not an
+all-level no-go theorem.  It leaves open a different packet schedule, a
+lagged or block cocycle, a cyclic closure, and every direct transfer-space
+construction.  No physical Riesz interface or downstream Hilbert--Polya
+claim is closed.
+\end{abstract}
+
+\section{Question and data provenance}
+
+RH-151 certified 130 independently reset source-memory packets using Arb
+matrix balls and a clock-rank spectral gap \citep{WangRH151}.  RH-172 then
+proved that every such packet has a canonical finite history realization
+\citep{WangRH172}, while RH-173 derived the exact rectangular history cocycle
+and warned that Gram optimality alone does not imply invariance
+\citep{WangRH173}.  The present paper asks the concrete physical question:
+do the archived reset packets nevertheless behave as an approximately
+reducing cocycle bundle on the five frozen models?
+
+The models are rebuilt by the same RH-77/RH-94 routines used upstream
+\citep{WangRH77,WangRH94}.  The left channel acts on the fine bulk and the
+right channel on the coarse transposed bulk.  The source-memory space is the
+column space of the corresponding source matrix.  The forgetting parameter
+is
+\[
+ \eta=\frac1{512}.
+\]
+No eigensolver output from the RH-151 JSON is silently promoted to exact
+data; the states, memories, and packets are recomputed in double precision.
+
+\begin{center}
+\begin{tabular}{rrrrrrr}
+\toprule
+$\sigma$ & left dim. & right dim. & source cols. & rank & endpoint & snapshots\\
+\midrule
+$0.16$ & 32 & 16 & 16 & 4 & 4 & 10\\
+$0.08$ & 64 & 32 & 32 & 5 & 6 & 14\\
+$0.04$ & 128 & 64 & 64 & 6 & 11 & 24\\
+$0.02$ & 256 & 128 & 128 & 6 & 17 & 36\\
+$0.01$ & 512 & 256 & 256 & 7 & 22 & 46\\
+\midrule
+total & & & & & & 130\\
+\bottomrule
+\end{tabular}
+\end{center}
+Each scale contributes two channels.  Removing the ten initial snapshots
+leaves 120 consecutive updates.
+
+\section{Audited objects}
+
+For each channel, write $S_t=A^tS_0$, normalize
+$\widehat S_t=S_t/\norm{S_t}_F$, and set
+\[
+ F_tx=(\widehat S_tx,\sqrt\eta\widehat S_{t-1}x,
+ \ldots,\eta^{t/2}\widehat S_0x).
+\]
+The recomputed memory is $M_t=F_t^*F_t$.  If $U_t$ contains the top
+clock-rank eigenvectors and
+$U_t^*M_tU_t=\Lambda_t$, two floating realizations are compared:
+\begin{align}
+ V_t^{\rm dir}&=F_tU_t\Lambda_t^{-1/2},\label{eq:direct}\\
+ F_tU_t&=L_t\Sigma_tR_t^*,
+ \qquad V_t=L_tR_t^*.\label{eq:stable}
+\end{align}
+Equation \eqref{eq:direct} is the exact spectral formula.  Equation
+\eqref{eq:stable} evaluates the same polar factor by a thin SVD and is used
+for all subspace and cocycle diagnostics.
+
+For an update $t-1\to t$, let
+\[
+ r_{t-1}=\frac{\norm{S_{t-1}}_F}{\norm{S_t}_F}
+\]
+and let $T_{t-1}$ be the exact history cocycle.  The transported old packet
+is $W_t=T_{t-1}V_{t-1}$.  Its polar range is compared with $V_t$ using the
+operator distance between orthogonal projections.  We also compute
+\begin{align}
+ \epsilon_t^{\rm pr}
+ &=\frac{\norm{(I-V_tV_t^*)W_t}}
+ {\norm{W_t}},\label{eq:primal}\\
+ \epsilon_t^{\rm ad}
+ &=\frac{\norm{(I-V_{t-1}V_{t-1}^*)T_{t-1}^*V_t}}
+ {\norm{T_{t-1}^*V_t}}.\label{eq:adjoint}
+\end{align}
+The denominators make the two quantities dimensionless.  They are not
+outward-rounded upper bounds; they are diagnostics of the rebuilt floating
+matrices.
+
+\section{Exact-identity layer}
+
+The first result is an implementation validation of the exact theorems.
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+metric & minimum & median & maximum\\
+\midrule
+$\norm{F_t^*F_t-M_t}$
+& $0$ & $2.28\times10^{-16}$ & $8.30\times10^{-16}$\\
+relative $\norm{F_t-T_{t-1}F_{t-1}}_F$
+& $2.20\times10^{-16}$ & $6.04\times10^{-16}$ & $9.36\times10^{-16}$\\
+stable $\norm{V_t^*V_t-I}$
+& $4.86\times10^{-16}$ & $1.61\times10^{-15}$ & $3.57\times10^{-15}$\\
+stable polar relative factorization
+& $1.32\times10^{-16}$ & $1.77\times10^{-15}$ & $1.07\times10^{-14}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+All 130 stable polar packets have isometry defect below $10^{-12}$.  The
+history construction itself is therefore not the numerical weak point.
+
+\section{Conditioning and the direct inverse-square-root formula}
+
+The selected packet condition number
+\[
+ \kappa_t=\frac{\lambda_{t,1}}{\lambda_{t,r}}
+\]
+ranges from $1.095$ to $3.6048052854825\times10^{12}$, with median
+$1.721725\times10^6$.  Such values are compatible with a certified packet
+gap: separation from the next eigenvalue does not imply that the smallest
+selected eigenvalue is large in absolute terms.
+
+The direct formula \eqref{eq:direct} reflects this conditioning:
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+metric & minimum & median & maximum\\
+\midrule
+direct isometry defect
+& $1.27\times10^{-15}$ & $8.04\times10^{-12}$ & $1.57\times10^{-5}$\\
+direct-to-stable frame residual
+& $1.08\times10^{-15}$ & $4.03\times10^{-12}$ & $7.84\times10^{-6}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Only 103 of 130 direct evaluations have isometry defect at most $10^{-8}$.
+This is not a failure of the exact theorem.  It is a reproducible warning that
+the physical implementation should use a polar SVD or a validated inverse
+square root, not unguarded columnwise division by $\sqrt{\lambda_j}$.
+
+\section{Packet transport: one-sided success is insufficient}
+
+The global update statistics are
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+metric & minimum & median & maximum\\
+\midrule
+transported reset distance
+& $1.85\times10^{-5}$ & $0.187289$ & $0.99999965$\\
+primal relative residual
+& $3.11\times10^{-6}$ & $0.0288333$ & $0.721922$\\
+adjoint relative residual
+& $0.323269$ & $0.713027$ & $0.999976$\\
+transported packet condition number
+& $1.8373$ & $16.2016$ & $60.7507$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The transported packet itself is not severely conditioned.  The asymmetry is
+geometric: the old packet often maps close to the new packet, while the new
+packet does not pull back close to the old packet.
+
+At the chosen descriptive thresholds:
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+condition & count out of 120 updates\\
+\midrule
+transport distance $\le0.25$ & 66\\
+primal residual $\le0.10$ & 95\\
+adjoint residual $\le0.25$ & 0\\
+both primal and adjoint residuals $\le0.25$ & 0\\
+transport distance $\ge0.90$ & 23\\
+\bottomrule
+\end{tabular}
+\end{center}
+The value $0.25$ is not asserted to be a universal physical threshold.  It is
+used to make the directional imbalance visible.  More strongly, even the
+smallest observed adjoint residual is $0.323269$, so no threshold below that
+can pass one of these updates.
+
+\section{Scale-resolved behavior}
+
+The failure is not confined to one outlier scale.
+\begin{center}
+\begin{tabular}{rrrrrr}
+\toprule
+$\sigma$ & updates & median distance & max. distance & max. primal & min. adjoint\\
+\midrule
+$0.16$ & 8 & $0.3132$ & $0.9325$ & $0.0301$ & $0.3233$\\
+$0.08$ & 12 & $0.0440$ & $0.4251$ & $0.0403$ & $0.4136$\\
+$0.04$ & 22 & $0.0687$ & $1.0000$ & $0.2552$ & $0.4484$\\
+$0.02$ & 34 & $0.3972$ & $0.9997$ & $0.4187$ & $0.4808$\\
+$0.01$ & 44 & $0.2618$ & $1.0000$ & $0.7219$ & $0.4415$\\
+\bottomrule
+\end{tabular}
+\end{center}
+At $\sigma=0.08$, primal transport is especially accurate, yet the adjoint
+wall remains.  At finer scales both the worst primal residual and the largest
+packet jumps increase.  Five anchors cannot establish asymptotic monotonicity,
+but they do not support an emerging two-sided reducing bundle.
+
+\section{Secondary diagnostics: conditioning, side, and update age}
+
+Several descriptive correlations help distinguish numerical conditioning
+from genuine directional geometry.  They are computed on the archived finite
+rows and are not inferential statistics.
+
+First, the Pearson correlation between
+$\log_{10}\kappa_t$ and the logarithm of the direct-formula isometry defect is
+$0.9840$.  This near-linear relation confirms that the loss in
+\eqref{eq:direct} is governed primarily by inverse-square-root conditioning.
+It also explains why the stable SVD formula repairs the isometry without
+changing the selected range.
+
+Second, the transport distance correlates more strongly with the primal
+residual ($0.6500$) than with the adjoint residual ($0.3358$).  The primal and
+adjoint residuals themselves have correlation $0.5183$.  They share some
+difficult updates but are far from interchangeable.
+
+The two physical channels show different asymmetries:
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+side & updates & median distance & median primal & median adjoint\\
+\midrule
+left & 60 & $0.1285$ & $0.03287$ & $0.76172$\\
+right & 60 & $0.3064$ & $0.02675$ & $0.58765$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The right channel transports farther in median distance but has a smaller
+median adjoint defect.  Therefore no single scalar ``coherence score'' orders
+the channels consistently.
+
+Finally, the first two updates after each seed are substantially harder than
+later updates.  Across the 20 early updates, the median transport distance is
+$0.9594$, the median primal residual is $0.0854$, and the median adjoint
+residual is $0.9235$.  Across the remaining 100 updates, the corresponding
+medians are $0.1455$, $0.02447$, and $0.7033$.  This suggests that a delayed
+start or block warm-up deserves study, but the persistent later adjoint median
+shows that warm-up alone does not close the two-sided gate.
+
+\begin{remark}[Why these correlations do not upgrade the audit]
+The rows share scales, operators, and time histories, so they are strongly
+dependent.  The correlations summarize mechanisms inside this archive; they
+are not confidence intervals, asymptotic exponents, or evidence for a
+population law.
+\end{remark}
+
+\section{What the negative result does and does not say}
+
+The finite data reject the following immediate inference:
+\[
+ \text{independent top-Gram resets}
+ \Longrightarrow
+ \text{two-sided approximately reducing history bundle}.
+\]
+That inference was never a theorem, and RH-173 supplied an abstract exact
+counterexample.  RH-174 shows that the concern is active in the physical
+frozen models rather than merely pathological.
+
+The result does \emph{not} reject:
+\begin{enumerate}[leftmargin=2em]
+\item a lagged, block, or smoothed packet schedule;
+\item a Petrov--Galerkin construction with distinct primal and dual packets;
+\item a finite cyclic closure in which time orientation is stored by a wrap
+edge rather than consecutive reset invariance;
+\item a direct transfer-space Riesz construction that bypasses source memory;
+\item a different topology or an all-level theorem not captured by these
+five scales.
+\end{enumerate}
+It also does not invalidate the RH-151 reset certificates.  Those certificates
+establish packet selection at each snapshot; they do not claim temporal
+reduction.
+
+\section{Updated status of the physical realization leaf}
+
+The refined factorization remains
+\[
+ X_{\rm phys}
+ =X_{\rm mem\to hist}\wedge X_{\rm hist\to transfer}.
+\]
+The first factor is proved exactly and numerically stable.  A particularly
+simple candidate for the second factor--identify consecutive reset packets
+as a two-sided history cocycle bundle and then map that bundle onward--is not
+supported by the current audit.  The next theoretical step should therefore
+study the square infinite-history completion and determine whether it can
+carry a determinant.  If the weighted shift makes that impossible, a finite
+cyclic closure becomes the natural alternative.
+
+The audit is not interval arithmetic.  No outward residual bound, physical
+history-to-transfer map, Riesz contour, all-level asymptotic estimate,
+Schatten complement, canonical determinant, Hilbert--Polya operator, zeta
+identity, or Riemann Hypothesis is proved.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

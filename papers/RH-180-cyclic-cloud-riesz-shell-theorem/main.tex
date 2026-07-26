@@ -1,0 +1,388 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.04}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{A Cyclic-Cloud Riesz-Shell Theorem\\
+\large Explicit Root Geometry, Directed Schur Budgets, and Rank-Two Persistence}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The double-cycle model gives an exact finite cloud determinant, but a physical
+application requires its roots to persist as Riesz shells of a generally
+nonnormal transfer operator.  We specialize the RH-162--166 packet-to-Riesz
+architecture to the normal cyclic seed and obtain completely explicit contour
+geometry.
+
+Let $L\ge3$, let $\rho>0$, and let
+$K_L$ be the doubled reduced cycle with roots
+$\zeta_k=\rho e^{2\pi ik/L}$, $1\le k<L$, each of multiplicity two.  The
+half-spacing is
+\[
+ s_L=\rho\sin(\pi/L).
+\]
+Embed $K_L$ isometrically into a Hilbert space and write a candidate physical
+operator in packet/complement blocks
+\[
+ A=\begin{pmatrix}K_L+E&B\\C&D\end{pmatrix}.
+\]
+Choose circles $\Gamma_k=\partial D(\zeta_k,\delta)$ with
+$\delta<s_L$.  If $\norm E=\varepsilon<\delta$, the complement disks contain
+no spectrum, their contour resolvent is bounded by $d$, and
+\[
+ \frac{d\norm B\norm C}{\delta-\varepsilon}<1,
+\]
+then every $\Gamma_k$ remains in the resolvent of $A$ and encloses a Riesz
+projection of rank exactly two.  The proof uses an explicit packet resolvent
+bound $(\delta-\varepsilon)^{-1}$ and a coupling homotopy controlled by the
+directed Schur product.
+
+A 192-matrix complex audit covers 1,248 root contours for
+$L=4,5,6,8,10,12$.  Every admissible contour encloses rank two, with zero
+certificate or rank failures.  The theorem is conditional: no physical
+embedding, perturbation ball, complement resolvent, or all-level uniform
+margin is supplied.  It converts a future physical cycle fit into explicit
+Riesz obligations but does not close interface R or Gate A.
+\end{abstract}
+
+\section{Why the cyclic model helps the Riesz problem}
+
+The general physical interface R of RH-171 requires an ambient realization,
+validated block data, uniform Schur margins, and shellwise transport
+\citep{WangRH171}.  For an arbitrary packet block, even choosing contours is
+difficult because a nonnormal spectral gap does not control the resolvent.
+
+The cyclic seed removes that ambiguity.  It is finite and normal, its roots
+are explicit, and the nearest-neighbor separation is known exactly.  A
+physical theorem would still need to show that some transfer-space block is
+close to the seed, but once such closeness is available the packet resolvent
+budget is closed form.
+
+\section{The doubled reduced cycle}
+
+Fix $L\ge3$ and $\rho>0$.  Let
+\begin{equation}\label{eq:roots}
+ \zeta_k=\rho e^{2\pi ik/L},
+ \qquad 1\le k\le L-1.
+\end{equation}
+Let $K_L$ be the normal diagonalizable operator whose eigenvalue multiset
+contains two copies of every $\zeta_k$.  Equivalently, $K_L$ is the direct
+sum of two reduced length-$L$ cycles scaled by $\rho$.
+
+The chord distance between adjacent roots is
+\[
+ |\zeta_{k+1}-\zeta_k|=2\rho\sin(\pi/L).
+\]
+Define the half-spacing
+\begin{equation}\label{eq:spacing}
+ s_L=\rho\sin(\pi/L).
+\end{equation}
+For every $0<\delta<s_L$, the closed disks
+$\overline D(\zeta_k,\delta)$ are pairwise disjoint.
+
+\begin{proposition}[Normal packet resolvent]\label{prop:normal-resolvent}
+On $\Gamma_k=\partial D(\zeta_k,\delta)$,
+\begin{equation}\label{eq:seed-resolvent}
+ \norm{(z-K_L)^{-1}}=\frac1\delta.
+\end{equation}
+If $\norm E\le\varepsilon<\delta$, then
+\begin{equation}\label{eq:perturbed-packet-resolvent}
+ \norm{(z-K_L-E)^{-1}}
+ \le\frac1{\delta-\varepsilon}
+ =:a.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For a normal finite matrix the resolvent norm is the reciprocal of the
+distance to its spectrum.  The contour has distance $\delta$ from its central
+root and greater distance from every other root.  The perturbation estimate
+follows from
+\[
+ z-K_L-E=(I-E(z-K_L)^{-1})(z-K_L)
+\]
+and the Neumann series.
+\end{proof}
+
+\section{Physical block form}
+
+Let $J:\mathbb C^{2(L-1)}\to\cH$ be an isometry and let $P=JJ^*$,
+$Q=I-P$.  In the corresponding orthogonal decomposition, write
+\begin{equation}\label{eq:block}
+ A=\begin{pmatrix}
+ K_L+E&B\\
+ C&D
+ \end{pmatrix}.
+\end{equation}
+Here $E$ is the packet-block modeling error, while $B$ and $C$ are the two
+directed couplings.  They need not be adjoints.
+
+Assume for every $k$ that
+\begin{equation}\label{eq:complement-free}
+ \overline D(\zeta_k,\delta)\subset\rho(D),
+ \qquad
+ \sup_{z\in\Gamma_k}\norm{(z-D)^{-1}}\le d.
+\end{equation}
+The disk condition ensures that the baseline complement contributes no
+enclosed spectral rank.  A boundary inverse estimate alone would be
+insufficient: complement eigenvalues could lie inside the contour.
+
+\section{The cyclic Riesz-shell theorem}
+
+\begin{theorem}[Rank-two cyclic shell persistence]\label{thm:riesz}
+Assume
+\begin{equation}\label{eq:geometry-assumptions}
+ 0<\delta<s_L,
+ \qquad
+ \norm E\le\varepsilon<\delta,
+\end{equation}
+and \eqref{eq:complement-free}.  If
+\begin{equation}\label{eq:schur}
+ \kappa:=\frac{d\norm B\norm C}{\delta-\varepsilon}<1,
+\end{equation}
+then every $\Gamma_k$ lies in $\rho(A)$ and its Riesz projection
+\begin{equation}\label{eq:riesz-projection}
+ \Pi_k=\frac1{2\pi i}\int_{\Gamma_k}(z-A)^{-1}\,dz
+\end{equation}
+has rank two.
+\end{theorem}
+
+\begin{proof}
+Consider the homotopy
+\[
+ A_s=\begin{pmatrix}
+ K_L+sE&sB\\
+ sC&D
+ \end{pmatrix},
+ \qquad 0\le s\le1.
+\]
+For $z\in\Gamma_k$, Proposition~\ref{prop:normal-resolvent} gives
+\[
+ \norm{(z-K_L-sE)^{-1}}
+ \le\frac1{\delta-s\varepsilon}
+ \le\frac1{\delta-\varepsilon}=a.
+\]
+The upper-left Schur complement after eliminating $z-D$ is
+\[
+ z-K_L-sE-s^2B(z-D)^{-1}C.
+\]
+Relative to $z-K_L-sE$, the feedback norm is at most
+\[
+ a\,s^2\norm B\,d\,\norm C\le\kappa<1.
+\]
+Hence the Schur complement and therefore $z-A_s$ are invertible for every
+$s$ and every point of the contour.
+
+Riesz projections vary continuously in operator norm along a resolvent-
+preserving homotopy, so their finite rank is constant \citep{Kato1995}.  At
+$s=0$, the operator is $K_L\oplus D$.  The disk contains exactly one doubled
+cycle root and, by \eqref{eq:complement-free}, no complement spectrum.
+Therefore the enclosed rank is two at $s=0$ and at $s=1$.
+\end{proof}
+
+\section{Full resolvent and projector-distance budgets}
+
+The Schur argument also gives an explicit full resolvent envelope.  Put
+$a=(\delta-\varepsilon)^{-1}$,
+$b=\norm B$, and $c=\norm C$.  On a root contour, let
+\[
+ \kappa=adbc<1.
+\]
+The inverse of the upper-left Schur complement has norm at most
+$a/(1-\kappa)$.  The standard block inverse formula therefore yields
+\begin{align}
+ \norm{R_{11}(z)}&\le\frac{a}{1-\kappa},
+ \label{eq:r11}\\
+ \norm{R_{12}(z)}&\le\frac{abd}{1-\kappa},
+ \label{eq:r12}\\
+ \norm{R_{21}(z)}&\le\frac{dca}{1-\kappa},
+ \label{eq:r21}\\
+ \norm{R_{22}(z)}&\le\frac{d}{1-\kappa}.
+ \label{eq:r22}
+\end{align}
+For example, the sum
+\begin{equation}\label{eq:full-resolvent}
+ M=\frac{a+abd+dca+d}{1-\kappa}
+\end{equation}
+is a conservative bound for the full block operator resolvent under the
+direct-sum one-norm.
+
+\begin{proposition}[Quantitative Riesz displacement]
+\label{prop:projector-distance}
+Along the homotopy in Theorem~\ref{thm:riesz}, suppose the full contour
+resolvent is uniformly bounded by $M$.  Then
+\begin{equation}\label{eq:projector-distance}
+ \norm{\Pi_k(A)-\Pi_k(K_L\oplus D)}
+ \le \delta M^2(\varepsilon+b+c).
+\end{equation}
+If the right side is less than one, the physical rank-two shell is a graph
+over the corresponding doubled cycle eigenspace.
+\end{proposition}
+
+\begin{proof}
+Differentiate the Riesz projection along $A_s$:
+\[
+ \frac{d\Pi_k(s)}{ds}
+ =\frac1{2\pi i}\int_{\Gamma_k}
+ (z-A_s)^{-1}A_s'(z-A_s)^{-1}\,dz.
+\]
+The derivative block has norm at most $\varepsilon+b+c$.  Since the contour
+length is $2\pi\delta$, integration over $s\in[0,1]$ gives
+\eqref{eq:projector-distance}.  Projection distance below one gives the usual
+invertible graph map \citep{Kato1995}.
+\end{proof}
+
+These bounds turn RH-180 into a direct validation target: a physical audit
+can report not only rank preservation but also graph distance and directional
+off-diagonal resolvent blocks.
+
+\section{Asymptotic scaling forced by growing cycle length}
+
+For large $L$,
+\begin{equation}\label{eq:spacing-asymptotic}
+ s_L=\rho\sin(\pi/L)\sim\frac{\pi\rho}{L}.
+\end{equation}
+Choose a fixed fraction $\delta=\theta s_L$ and require
+$\varepsilon\le\gamma\delta$ with $0<\gamma<1$.  Then
+\[
+ a=\frac1{\delta-\varepsilon}
+ \in\left[\frac1{\theta s_L},
+ \frac1{(1-\gamma)\theta s_L}\right]
+ \asymp L.
+\]
+If the complement resolvent bound $d$ remains $O(1)$, the Schur condition
+forces
+\begin{equation}\label{eq:coupling-scaling}
+ \norm B\norm C=O(L^{-1}).
+\end{equation}
+Thus bounded nonvanishing two-way coupling cannot support individually
+resolved shells of unbounded cycle length.  At least one of the following is
+needed: improving packet approximation, decaying directed feedback,
+complement resolvent improvement, or grouping several nearby roots into a
+coarser shell.
+
+This scaling law is a genuine constraint on any all-level cyclic route.  The
+finite RH-180 audit uses fixed small lengths and therefore tests the theorem,
+not the required $L\to\infty$ decay.
+
+\begin{remark}[Directed product, not a symmetric norm sum]
+The criterion uses
+$a\,d\,\norm B\,\norm C<1$.  A large coupling in one direction may be
+harmless if the return coupling is small.  Replacing the product by a
+symmetric requirement on $\norm B+\norm C$ discards this nonnormal structure,
+as emphasized in RH-163 \citep{WangRH163}.
+\end{remark}
+
+\section{Consequences for the cloud determinant}
+
+The Riesz projections $\Pi_k$ are pairwise annihilating because their
+contours are disjoint.  Their sum
+\[
+ \Pi_{\rm cyc}=\sum_{k=1}^{L-1}\Pi_k
+\]
+has rank $2(L-1)$.  On its invariant range, the physical finite cloud factor
+is
+\begin{equation}\label{eq:physical-factor}
+ C_A(w)=\det_{\Ran\Pi_{\rm cyc}}
+ (I-wA|_{\Ran\Pi_{\rm cyc}}).
+\end{equation}
+The theorem guarantees its degree and shell multiplicities.  It does not make
+$C_A$ exactly equal to the geometric polynomial when $E,B,C$ are nonzero.
+That stronger identification requires root-location or coefficient bounds.
+
+\begin{corollary}[Exact model limit]
+If $E=B=C=0$, then $\Pi_{\rm cyc}=P$ and
+\[
+ C_A(w)=\Pi_{L-1}(\rho w)^2.
+\]
+For small nonzero data satisfying Theorem~\ref{thm:riesz}, the divisor splits
+into the same $L-1$ rank-two shells but may move within the contours.
+\end{corollary}
+
+This distinction separates physical interface R (existence and rank of Riesz
+shells) from physical interface Q (identification of their determinant
+coefficients).
+
+\section{Omission mechanisms}
+
+Each hypothesis has a distinct role.
+\begin{description}[leftmargin=3.5em,style=nextline]
+\item[Root spacing.] If $\delta\ge s_L$, adjacent doubled roots can share a
+contour, so individual rank-two shells are not defined.
+\item[Packet perturbation.] If $\varepsilon\ge\delta$, a packet eigenvalue
+can cross its contour even with zero complement coupling.
+\item[Complement exclusion.] A bounded contour inverse does not rule out
+complement eigenvalues inside the disk; rank two can fail at the baseline.
+\item[Directed Schur margin.] In scalar blocks the contour determinant can
+vanish exactly when the feedback product reaches one.
+\item[Ambient isometry.] Without a target-independent $J$, the decomposition
+\eqref{eq:block} is not a physical statement and can be fitted after seeing
+the desired spectrum.
+\end{description}
+Thus the theorem is explicit but not self-instantiating.
+
+\section{Finite matrix audit}
+
+The audit uses
+\[
+ L=4,5,6,8,10,12,
+ \qquad \rho=\lambda^{-1},
+ \qquad \delta=0.35s_L,
+ \qquad \varepsilon=0.15\delta.
+\]
+For each length, 32 independent complex perturbations and directed couplings
+are generated.  The complement has three normal eigenvalues on radius
+$2.5\rho$, and the coupling norms are chosen so that the certified Schur
+product equals $0.20$.
+
+This gives 192 full matrices and 1,248 individual root contours.  Every
+budget is admissible, every contour encloses exactly two numerical
+eigenvalues, and the audit records zero rank failures and zero certificate
+failures.  These tests validate the formula and counting implementation; they
+are not samples of the physical transfer operator.
+
+\section{Physical obligations and next frontier}
+
+Theorem~\ref{thm:riesz} provides a finite conditional route from a cyclic
+model to Riesz shells.  To apply it physically one must still:
+\begin{enumerate}[leftmargin=2em]
+\item construct an isometry $J$ from a data-derived cycle into the noisy
+transfer/determinant space;
+\item validate $\norm E$, both coupling norms, and complement resolvents with
+outward bounds;
+\item prove an eventual uniform margin as $L$ grows and root spacing shrinks
+like $\pi\rho/L$;
+\item transport every fixed shell in common coordinates across scales;
+\item separately identify the resulting cloud factor and directed marks.
+\end{enumerate}
+The shrinking spacing is important: a fixed absolute modeling error cannot
+support arbitrarily long cycles.  The physical approximation must improve at
+least on the $L^{-1}$ contour scale.
+
+No physical input above is proved here.  Interface R, the cloud ledger Q, the
+Schatten complement U, normalization Z, directed limit T, macro Gate A, and
+all Hilbert--Polya or Riemann-hypothesis conclusions remain open.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

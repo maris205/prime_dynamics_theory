@@ -1,0 +1,331 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.04}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Orientation-Separating Marked Cycle Traces\\
+\large Why the Geometric Determinant Needs a Directed Rank-One Datum}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The double-cycle model of RH-177 realizes the RH-80 geometric cloud factor
+exactly, but a scalar determinant cannot determine temporal orientation.
+For every length $L$, the forward and reverse cycles $C_L$ and $C_L^{-1}$
+have the same determinant and the same ordinary power traces.  Hence the
+three doubled completions ``forward--forward'', ``forward--reverse'', and
+``reverse--reverse'' are spectrally indistinguishable.
+
+We add one rank-one edge marker.  Let
+$J=|e_0\rangle\langle e_1|$, let
+$Q=I-|\mathbf1\rangle\langle\mathbf1|$, and compress to the zero-mean cycle
+space.  For $L>2$,
+\[
+ \Tr(QJQ C_L)=1-\frac1L,
+ \qquad
+ \Tr(QJQ C_L^{-1})=-\frac1L.
+\]
+The orientation gap is exactly one.  Thus the enhanced finite datum
+\[
+ \bigl(\det(I-zC_L^\circ),
+ \{\Tr(J^\circ(C_L^\circ)^m)\}_{m\ge1}\bigr)
+\]
+retains both the cloud divisor and the time arrow.
+
+The marker is stable.  If $\norm{A-B}\le\varepsilon$ and
+$\norm A,\norm B\le R$, then for trace-class $J$,
+\[
+ |\Tr J(A^m-B^m)|
+ \le \norm J_1\,mR^{m-1}\varepsilon.
+\]
+In particular, the one-step orientation remains separated under two
+perturbations whenever their total marked error is less than one.  A
+120-case complex perturbation audit records zero bound failures; the exact
+orientation gap is one for all ten tested lengths.
+
+This closes an algebraic directed-marker leaf and explains why RH-161 kept
+marked traces as data independent of the determinant.  It does not establish
+a physical marker, common-space marked-trace convergence, or a directed limit
+for the noisy transfer dynamics.
+\end{abstract}
+
+\section{The scalar blindness problem}
+
+RH-177 constructs the finite normal cloud
+\[
+ K_N=\lambda^{-1}(C_{N+1}^\circ\oplus C_{N+1}^\circ)
+\]
+with determinant $\Pi_N(w/\lambda)^2$ \citep{WangRH177}.  The construction
+contains a hidden choice: each cycle can run forward or backward.  Spectral
+data alone cannot recover that choice because inversion merely permutes the
+roots of unity.
+
+This is the finite-cycle version of a general obstruction in noncommutative
+dynamics.  Products $AB$ and $BA$ have the same nonzero spectrum, while
+directed words can differ.  RH-8 and RH-161 therefore retained marked traces
+as an independent output type \citep{WangRH8,WangRH161}.  The present model
+allows the need for that enhancement to be proved in one line and repaired by
+one rank-one marker.
+
+\section{Forward and reverse cycles are spectrally identical}
+
+Let $L>2$ and define
+\[
+ C_Le_j=e_{j+1\bmod L}.
+\]
+Its inverse is the reverse cycle.  Both have eigenvalue multiset
+$\{e^{2\pi ik/L}:0\le k<L\}$.
+
+\begin{theorem}[Determinant and ordinary-trace blindness]\label{thm:blind}
+For every $z\in\mathbb C$ and every integer $m\ge1$,
+\begin{align}
+ \det(I-zC_L)&=\det(I-zC_L^{-1})=1-z^L,
+ \label{eq:det-blind}\\
+ \Tr C_L^m&=\Tr C_L^{-m}
+ =\begin{cases}L,&L\mid m,\\0,&L\nmid m.
+ \end{cases}
+ \label{eq:trace-blind}
+\end{align}
+The same equalities hold after restriction to the zero-mean space.
+\end{theorem}
+
+\begin{proof}
+Inversion permutes the $L$th roots of unity, proving
+\eqref{eq:det-blind}.  A cyclic permutation has a fixed basis vector under
+the $m$th power exactly when $L\mid m$; in that case every basis vector is
+fixed.  Removing the common stationary eigenvalue one subtracts one from both
+power traces and divides both determinants by $1-z$.
+\end{proof}
+
+Thus even the complete sequence of ordinary traces contains no orientation
+information.  An additional noncentral observable is necessary.
+
+\section{A rank-one edge marker}
+
+Define
+\begin{equation}\label{eq:J}
+ J=|e_0\rangle\langle e_1|.
+\end{equation}
+For every matrix $X$,
+\[
+ \Tr(JX)=\langle e_1,Xe_0\rangle.
+\]
+The marker therefore asks whether one application of the dynamics transports
+the vertex $0$ to the vertex $1$.
+
+\begin{theorem}[Exact orientation separation]\label{thm:marker}
+For $L>2$,
+\begin{equation}\label{eq:full-marker}
+ \Tr(JC_L)=1,
+ \qquad
+ \Tr(JC_L^{-1})=0.
+\end{equation}
+Let $P=L^{-1}|\mathbf1\rangle\langle\mathbf1|$ be the stationary projection,
+$Q=I-P$, and $J^\circ=QJQ$.  Then on the zero-mean cycle,
+\begin{equation}\label{eq:reduced-marker}
+ \Tr(J^\circ C_L^\circ)=1-\frac1L,
+ \qquad
+ \Tr(J^\circ(C_L^\circ)^{-1})=-\frac1L.
+\end{equation}
+In both the full and reduced models, the forward--reverse gap equals one.
+\end{theorem}
+
+\begin{proof}
+Since $C_Le_0=e_1$ and $C_L^{-1}e_0=e_{L-1}\perp e_1$, the full identities
+follow.  Because $Q$ commutes with the cycle and $PC_L=C_LP=P$,
+\[
+ \Tr(QJQ C_L)=\Tr(J(C_L-P))
+ =\Tr(JC_L)-\Tr(JP).
+\]
+Now $\Tr(JP)=\langle e_1,Pe_0\rangle=1/L$.  Apply the same calculation to
+$C_L^{-1}$.
+\end{proof}
+
+The compression correction $-1/L$ is the marker analogue of the $-1$
+background in the reduced power-trace ledger.  It affects both orientations
+equally and therefore preserves the unit gap.
+
+\section{Higher marked words}
+
+For $m\ge1$,
+\[
+ \Tr(JC_L^m)=
+ \begin{cases}
+ 1,&m\equiv1\pmod L,\\
+ 0,&\text{otherwise},
+ \end{cases}
+\]
+whereas
+\[
+ \Tr(JC_L^{-m})=
+ \begin{cases}
+ 1,&m\equiv-1\pmod L,\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\]
+Thus the entire marked sequence records the orientation and cycle length.
+One step already separates direction; the longer sequence supplies
+redundancy and can diagnose a noisy or perturbed cycle.
+
+\section{Reconstruction and marker minimality}
+
+The determinant and one marked trace form a complete descriptor of an exact
+oriented single cycle within this model class.
+
+\begin{proposition}[Reconstruction of length and orientation]
+\label{prop:reconstruct}
+Suppose $A$ is known a priori to be either $C_L^\circ$ or
+$(C_L^\circ)^{-1}$ for some $L>2$.  Then:
+\begin{enumerate}[leftmargin=2em]
+\item the degree of $\det(I-zA)=\Pi_{L-1}(z)$ determines $L$;
+\item the sign relative to $-1/L$ of $\Tr(J^\circ A)$ determines the
+orientation.
+\end{enumerate}
+Specifically, the marked value is $1-1/L$ in the forward case and $-1/L$ in
+the reverse case.
+\end{proposition}
+
+\begin{proof}
+The reduced dimension and determinant degree are $L-1$.  Once $L$ is known,
+Theorem~\ref{thm:marker} gives two distinct marked values separated by one.
+\end{proof}
+
+No scalar augmentation can use rank zero, while Theorem~\ref{thm:marker}
+shows rank one suffices.  In that elementary sense the edge marker is
+minimal.  The claim is model-relative: a physical system may require a more
+complicated state--observable marker to remain target independent.
+
+For a doubled cloud, retain ordered channel markers $J_1,J_2$.  Put
+$a=1-1/L$ and $b=-1/L$.  The four orientation choices have signatures
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+orientation & first mark & second mark\\
+\midrule
+forward--forward & $a$ & $a$\\
+forward--reverse & $a$ & $b$\\
+reverse--forward & $b$ & $a$\\
+reverse--reverse & $b$ & $b$\\
+\bottomrule
+\end{tabular}
+\end{center}
+If only the sum $J_1+J_2$ is observed, the two mixed orientations coincide.
+Thus an unordered scalar marker distinguishes three classes, whereas an
+ordered marker pair distinguishes all four.  This is directly relevant when
+the two cloud copies are assigned to left/right or parity channels.
+
+For a double cycle, choose markers $J_1,J_2$ on the two summands.  The scalar
+determinant is the same for all orientation pairs, while
+\[
+ \bigl(\Tr(J_1K),\Tr(J_2K)\bigr)
+\]
+distinguishes forward--forward, forward--reverse, and reverse--reverse after
+the common scale $\lambda^{-1}$ is removed.
+
+\section{Perturbative stability}
+
+\begin{theorem}[Marked-power Lipschitz bound]\label{thm:stability}
+Let $A,B$ be bounded operators with $\norm A,\norm B\le R$, let
+$J\in\mathcal S_1$, and let $m\ge1$.  Then
+\begin{equation}\label{eq:stability}
+ |\Tr J(A^m-B^m)|
+ \le \norm J_1\,mR^{m-1}\norm{A-B}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Use the telescoping identity
+\[
+ A^m-B^m=\sum_{k=0}^{m-1}A^{m-1-k}(A-B)B^k.
+\]
+Every summand has operator norm at most
+$R^{m-1}\norm{A-B}$.  The trace duality inequality
+$|\Tr(JX)|\le\norm J_1\norm X$ and the triangle inequality give
+\eqref{eq:stability} \citep{Simon2005}.
+\end{proof}
+
+\begin{corollary}[Robust one-step orientation]
+Let $A_+$ and $A_-$ approximate $C_L$ and $C_L^{-1}$ with errors
+$\varepsilon_+$ and $\varepsilon_-$.  For the reduced marker,
+\[
+ |\Tr(J^\circ A_+)-\Tr(J^\circ A_-)|
+ \ge1-\norm{J^\circ}_1(\varepsilon_++\varepsilon_-).
+\]
+Hence the marked traces remain distinct whenever the rightmost error term is
+less than one.
+\end{corollary}
+
+This criterion is target independent: the marker is specified by the cycle
+edge, not fitted to the perturbed eigenvectors.  A physical application must
+still identify what state--observable pair corresponds to that edge.
+
+\section{Enhanced finite determinant datum}
+
+The natural finite cyclic output is not the scalar determinant alone but
+\begin{equation}\label{eq:enhanced}
+ \mathfrak D_L(A,J)=
+ \left(
+ \det(I-zA),
+ \{\Tr(JA^m)\}_{m\in\mathcal M}
+ \right),
+\end{equation}
+where $\mathcal M$ is a fixed set of directed word lengths.  The first
+component determines the spectral divisor.  The second records temporal
+orientation.  They are logically independent: Theorem~\ref{thm:blind}
+shows that the first cannot reconstruct the second.
+
+For the prime-dynamics route, the finite enhanced datum should eventually be
+transported through the Riesz projection and then shown to converge in common
+coordinates.  RH-161 names this downstream obligation $T$; the present paper
+only proves that the finite model has a minimal and stable directional
+observable.
+
+\section{Audit}
+
+The exact audit uses lengths
+$3,4,5,7,11,16,24,32,48,64$.  In every case the reduced forward and reverse
+one-step marked traces have gap one to floating precision, while ordinary
+traces agree.  The minimum recorded gap is
+$0.9999999999999998$.
+
+For each length, twelve complex perturbations with operator norms
+$0.01,0.02,0.03$ are applied at powers one through five.  The exact observed
+marked error is compared with Theorem~\ref{thm:stability}.  All 120 cases
+satisfy the bound, with zero failures.  The audit validates arithmetic and
+does not certify a physical noisy cycle.
+
+\section{Boundary and next interface}
+
+RH-178 proves an algebraic directed-marker leaf:
+\[
+ \text{cycle determinant} + \text{rank-one marked traces}
+ \quad\text{retains spectrum and orientation}.
+\]
+It does not prove that the physical transfer dynamics carries this marker,
+that the marker is trace class uniformly across scales, or that marked words
+converge after Riesz transport.  Those remain parts of the physical $T$ leaf.
+
+The next paper turns to the integer calibration problem: how should the cycle
+length $L$ relate to the half-log reset rank and the observed RH-15 cloud
+degree?  No Gate-A closure, self-adjoint completion, zeta identity, or
+Riemann-hypothesis conclusion is made.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

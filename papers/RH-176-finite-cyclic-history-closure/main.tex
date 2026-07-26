@@ -1,0 +1,361 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.04}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Finite Cyclic Closure of Normalized History\\
+\large Exact Determinants, Strong Local Approximation, and the Wrap-Edge Boundary}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-175 proves that the literal infinite-history completion contains a
+weighted unilateral shift and cannot be a trace-ideal determinant operator.
+We replace the infinite tail by a finite clock.  Let $C_L$ be the unitary
+cycle on $\mathbb C^L$, $C_Le_j=e_{j+1\bmod L}$.  Then
+\[
+ \det(I-qC_L)=1-q^L.
+\]
+The stationary constant mode has eigenvalue one.  On its orthogonal
+complement $\cZ_L=\mathbf1^\perp$, the reduced cycle satisfies
+\[
+ \det_{\cZ_L}(I-qC_L)=
+ \frac{1-q^L}{1-q}=1+q+\cdots+q^{L-1}.
+\]
+Thus a finite cyclic history closure realizes the geometric polynomial
+exactly, without an infinite shift disk or a noncompact tail.
+
+The closure has a sharp topology boundary.  If $S_L$ is the nilpotent finite
+shift, then $C_L-S_L$ is one rank-one wrap edge of operator norm one, so there
+is no operator-norm approximation.  Under natural zero extensions,
+$C_L\to S$ strongly on every fixed finite-support vector: the local dynamics
+stabilize while the determinant is carried entirely by the distant wrap.
+This is precisely why the cyclic determinant can differ radically from the
+nilpotent finite-section determinant.
+
+A 240-case complex audit checks the reduced determinant identity and
+orientation invariance with maximum relative error $8.0\times10^{-15}$; all
+ten tested wrap defects have norm one and vanish on the chosen fixed-support
+vectors.  The result supplies an exact algebraic candidate, not a physical
+derivation of a cycle from the reset history or noisy transfer operator.
+\end{abstract}
+
+\section{From the shift wall to a finite clock}
+
+The infinite-history operator remembers every past block by shifting it one
+position.  Its constant nonzero tail weight produces the spectral disk and
+non-Schatten obstruction of RH-175 \citep{WangRH175}.  A finite memory of
+length $L$ has two obvious boundary conditions:
+\begin{enumerate}[leftmargin=2em]
+\item truncate the oldest block, producing a nilpotent shift;
+\item return the oldest block to the current boundary, producing a cycle.
+\end{enumerate}
+The first has trivial determinant $1$ and hides the shift disk in its
+pseudospectrum.  The second is unitary and stores the boundary information in
+one wrap edge.  This paper analyzes the second choice.
+
+\section{Full and reduced cycle determinants}
+
+Let $L\ge2$ and let $C_L$ act on the standard basis of $\mathbb C^L$ by
+\begin{equation}\label{eq:cycle}
+ C_Le_j=e_{j+1\bmod L}.
+\end{equation}
+The eigenvalues are the $L$th roots of unity
+$\omega_k=e^{2\pi ik/L}$, $0\le k<L$.
+
+\begin{theorem}[Full cyclic determinant]\label{thm:full}
+For every $q\in\mathbb C$,
+\begin{equation}\label{eq:full-det}
+ \det(I-qC_L)=\prod_{k=0}^{L-1}(1-q\omega_k)=1-q^L.
+\end{equation}
+The same identity holds for the reverse cycle $C_L^{-1}$.
+\end{theorem}
+
+\begin{proof}
+The polynomial $x^L-1$ factors as
+$\prod_{k=0}^{L-1}(x-\omega_k)$.  Substitute $x=q^{-1}$ and multiply by
+$q^L$, with continuity at $q=0$.  Inversion permutes the roots, so it leaves
+the determinant unchanged.
+\end{proof}
+
+The vector
+\[
+ \mathbf1_L=L^{-1/2}(1,\ldots,1)^T
+\]
+is the stationary eigenvector with eigenvalue one.  Let
+\[
+ Q_L=I-\mathbf1_L\mathbf1_L^*,
+ \qquad \cZ_L=Q_L\mathbb C^L.
+\]
+Because $Q_L$ commutes with $C_L$, the zero-mean space reduces the cycle.
+
+\begin{theorem}[Reduced cycle equals the geometric section]
+\label{thm:reduced}
+For every $q\in\mathbb C$,
+\begin{equation}\label{eq:geometric}
+ \det_{\cZ_L}(I-qC_L|_{\cZ_L})
+ =\prod_{k=1}^{L-1}(1-q\omega_k)
+ =\Pi_{L-1}(q),
+\end{equation}
+where
+\[
+ \Pi_{L-1}(q)=1+q+\cdots+q^{L-1}.
+\]
+The apparent quotient at $q=1$ is removable with value $L$.
+\end{theorem}
+
+\begin{proof}
+The full determinant splits over the stationary line and zero-mean space:
+\[
+ 1-q^L=(1-q)
+ \det_{\cZ_L}(I-qC_L|_{\cZ_L}).
+\]
+Division by $1-q$ gives the finite geometric identity for $q\ne1$, and
+continuity gives the value at one.
+\end{proof}
+
+This theorem is the first positive reason to prefer cyclic boundary
+conditions: the same polynomial that arose as the canonical pole section in
+RH-15 and RH-80 is already the reduced cycle determinant
+\citep{WangRH15,WangRH80}.
+
+\section{The wrap edge}
+
+Let $S_L$ be the nilpotent finite shift
+\[
+ S_Le_j=e_{j+1}\quad(0\le j<L-1),
+ \qquad S_Le_{L-1}=0.
+\]
+Then
+\begin{equation}\label{eq:wrap}
+ C_L-S_L=|e_0\rangle\langle e_{L-1}|.
+\end{equation}
+
+\begin{proposition}[Rank-one boundary, unit norm]\label{prop:wrap}
+The cyclic and nilpotent finite shifts differ by rank one and
+\begin{equation}\label{eq:norm-wall}
+ \norm{C_L-S_L}=1
+\end{equation}
+for every $L$.
+\end{proposition}
+
+\begin{proof}
+Equation \eqref{eq:wrap} is immediate from the basis action.  A rank-one
+operator $|u\rangle\langle v|$ has operator norm $\norm u\norm v=1$.
+\end{proof}
+
+\section{The determinant is exactly the wrap contribution}
+
+The rank-one determinant lemma gives a second proof of
+Theorem~\ref{thm:full} that exposes the boundary mechanism.  Since
+\[
+ C_L=S_L+|e_0\rangle\langle e_{L-1}|,
+\]
+write
+\[
+ I-qC_L=(I-qS_L)
+ \left[I-q(I-qS_L)^{-1}|e_0\rangle\langle e_{L-1}|\right].
+\]
+The nilpotent factor has determinant one.  The matrix determinant lemma then
+gives
+\begin{align}
+ \det(I-qC_L)
+ &=1-q\langle e_{L-1},(I-qS_L)^{-1}e_0\rangle
+ \label{eq:det-lemma}\\
+ &=1-q^L,
+\end{align}
+because
+\[
+ (I-qS_L)^{-1}e_0=e_0+qe_1+\cdots+q^{L-1}e_{L-1}.
+\]
+
+\begin{proposition}[Longest-return interpretation]\label{prop:return}
+The coefficient $-q^L$ in the full cyclic determinant is the product of the
+$L-1$ forward shift edges and the single wrap edge.  Removing any one edge
+makes the graph acyclic and returns determinant one.
+\end{proposition}
+
+\begin{proof}
+Equation \eqref{eq:det-lemma} shows that the wrap marker reads the amplitude
+of the unique path from $e_0$ to $e_{L-1}$ through the nilpotent shift.  That
+amplitude is $q^{L-1}$, and the wrap contributes the final factor $q$.  If an
+edge is removed, no closed permutation cycle of length $L$ remains, so the
+finite shift can be ordered triangularly with zero diagonal.
+\end{proof}
+
+This derivation clarifies why the wrap is invisible to every fixed local
+observation but decisive for the determinant: it is detected only after the
+longest possible return.
+
+\begin{corollary}[Multiple clock channels]
+For $m$ independent reduced cycles of the same length,
+\[
+ \det\left(I-q\bigoplus_{j=1}^m C_L^\circ\right)
+ =\Pi_{L-1}(q)^m.
+\]
+Thus the exponent of the geometric factor counts cyclic channels.  The RH-80
+square corresponds algebraically to two channels, while their physical
+interpretation and orientation remain separate questions.
+\end{corollary}
+
+The determinant distinction is entirely concentrated in this one edge:
+\[
+ \det(I-qS_L)=1,
+ \qquad
+ \det(I-qC_L)=1-q^L.
+\]
+Rank one is small in normalized rank but not small in operator norm, and its
+effect occurs at the longest cycle length $L$.
+
+\section{Strong local approximation without norm approximation}
+
+Embed $\mathbb C^L$ as the first $L$ coordinates of $\ell^2(\mathbb N_0)$
+and extend $C_L$ by zero on the complement; call the extension
+$\widetilde C_L$.  Let $S$ be the unilateral shift.
+
+\begin{theorem}[Local stabilization]\label{thm:strong}
+For every $x\in\ell^2(\mathbb N_0)$,
+\begin{equation}\label{eq:strong}
+ \widetilde C_Lx\longrightarrow Sx
+ \quad\text{in norm}.
+\end{equation}
+However,
+\begin{equation}\label{eq:no-norm}
+ \norm{\widetilde C_L-S}\ge1
+\end{equation}
+for every $L$.  Thus convergence is strong but not in operator norm.
+\end{theorem}
+
+\begin{proof}
+For a vector supported in coordinates $0,\ldots,m$, the two actions agree
+exactly once $L>m+1$: no mass reaches the wrap edge.  Finite-support vectors
+are dense, and both operators are contractions, so the convergence extends
+to every $x$.  On the other hand, for $e_L$ the cyclic extension vanishes
+while $Se_L=e_{L+1}$, proving \eqref{eq:no-norm}.
+\end{proof}
+
+This topology split is structurally useful.  Any fixed finite-time
+observation sees the unilateral history dynamics for sufficiently large
+$L$, while the determinant remembers the remote boundary through the term
+$q^L$.  There is no contradiction: determinants are not continuous under
+strong operator convergence without trace-ideal control \citep{Simon2005}.
+
+\section{Fourier modes, traces, and root spacing}
+
+The discrete Fourier basis
+\[
+ f_k=L^{-1/2}(1,\omega_k^{-1},\ldots,
+ \omega_k^{-(L-1)})^T,
+ \qquad \omega_k=e^{2\pi ik/L},
+\]
+diagonalizes the cycle:
+$C_Lf_k=\omega_kf_k$.  The stationary vector is $f_0$, so the reduced cycle
+contains exactly the modes $f_1,\ldots,f_{L-1}$.
+
+\begin{proposition}[Reduced trace and spacing ledger]\label{prop:ledger}
+For every integer $m\ge1$,
+\begin{equation}\label{eq:reduced-trace}
+ \Tr(C_L^\circ)^m=
+ \begin{cases}
+ L-1,&L\mid m,\\
+ -1,&L\nmid m.
+ \end{cases}
+\end{equation}
+The minimum distance between distinct reduced eigenvalues is
+\begin{equation}\label{eq:root-spacing}
+ \min_{j\ne k}|\omega_j-\omega_k|=2\sin(\pi/L).
+\end{equation}
+Consequently, circles of radius less than $\sin(\pi/L)$ isolate individual
+cycle roots.
+\end{proposition}
+
+\begin{proof}
+The full power trace is $L$ when $L\mid m$ and zero otherwise.  Removing the
+stationary eigenvalue subtracts one, proving \eqref{eq:reduced-trace}.  The
+nearest roots are adjacent on the unit circle; their chord length is
+$|e^{2\pi i/L}-1|=2\sin(\pi/L)$.
+\end{proof}
+
+The Fourier description makes the later physical obligations transparent.
+The geometric determinant fixes the phase grid, the trace ledger tests its
+periodic alignment, and the spacing determines the largest disjoint contour
+radius.  As $L$ grows, the spacing is asymptotic to $2\pi/L$, so any physical
+cycle approximation used for separate Riesz shells must improve with the
+clock length.  RH-180 turns this elementary geometry into a directed Schur
+certificate.
+
+Orientation reversal sends $f_k$ to the eigenvalue $\omega_k^{-1}$ and hence
+permutes the same Fourier grid.  This is why determinant and ordinary traces
+remain blind to the time arrow even though the edge action is reversed.
+
+\section{Cycle length as a memory clock}
+
+The reduced polynomial has degree $L-1$, exactly the number of nonstationary
+cycle modes.  Thus three integer quantities become equivalent within the
+model:
+\[
+ \text{cycle length }L
+ \quad\Longleftrightarrow\quad
+ \text{reduced dimension }L-1
+ \quad\Longleftrightarrow\quad
+ \deg\Pi_{L-1}.
+\]
+This does not yet specify how $L$ depends on noise.  It only gives a precise
+dictionary once one of the three quantities is known.  RH-179 will compare
+this dictionary with the half-log packet clock and observed cloud degrees.
+
+\section{Finite audit}
+
+The audit uses lengths
+\[
+ L=3,4,5,8,12,16,24,32,48,64
+\]
+and 24 random complex parameters per length inside $|q|<0.75$, for 240
+determinant cases.  It compares the eigenvalue product of both orientations
+with $\Pi_{L-1}(q)$.  The maximum relative geometric identity error is
+$7.99\times10^{-15}$, and the maximum forward--reverse determinant mismatch
+is below $10^{-12}$.
+
+For every tested length, the explicit wrap defect has operator norm one.  A
+test vector supported strictly before the boundary has action defect zero,
+illustrating Theorem~\ref{thm:strong}.  These calculations verify the
+implementation; Theorems~\ref{thm:full}--\ref{thm:strong} are exact algebra.
+
+\section{What is gained and what remains open}
+
+Finite cyclic closure solves two problems of the literal infinite history:
+\begin{enumerate}[leftmargin=2em]
+\item it is finite rank, so its determinant is ordinary and exact;
+\item after removing the stationary mode, its determinant is the canonical
+geometric section.
+\end{enumerate}
+It also creates two obligations.  First, the wrap edge must be derived from
+physical time evolution rather than inserted because it gives the desired
+polynomial.  Second, scalar determinants cannot distinguish $C_L$ from
+$C_L^{-1}$, so temporal orientation needs an enhanced observable.
+
+RH-177 addresses the exact doubled cloud factor; RH-178 supplies a directed
+rank-one marker.  No claim is made that the physical reset history, noisy
+transfer operator, or Riesz cloud is unitarily equivalent to this cycle.
+Gate A and every Hilbert--Polya conclusion remain open.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
